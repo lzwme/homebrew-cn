@@ -8,6 +8,7 @@ class Heatshrink < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "e516025ca4b7b5efb7e5aeb7f8977a7b2b09be3cdcd2d41a4f430a70c7b92b5e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4135d8d01abb01a3864191897728bddbc0791fa9356aa2537eeab61bdef9e1ff"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ceb0d2e8dff933f32c0aae21c396d5f2ea1bbffa163fced76f09e1b8b4680df8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f897e27aea76f1c2723f8cca5418f8d1cad173b0457348200b609e452f8584da"

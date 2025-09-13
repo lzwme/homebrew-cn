@@ -16,6 +16,7 @@ class Hubble < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c8c6991264c6cad9b99bc49dadd897ffe71c6638605da62b3888ea2500d98c3"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f09f18708146f7e6a6c3b258332d73f8bc5b3e151160d989f97f11cee9dededd"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "798337f3f2a8235c436074330de469dde784b93de77604f22b9123894bd7bfa5"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d52c44bc0824c1fd267fcb222c6c34e379843424735a19793f3d9b3d18fec5aa"

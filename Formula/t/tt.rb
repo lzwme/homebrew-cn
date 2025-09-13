@@ -14,6 +14,7 @@ class Tt < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "4c0e7f414a73d8a1f47ba8393f14ebb98b1ba7dafbd595c1913dca056b97bd3c"
     sha256 cellar: :any,                 arm64_sequoia: "6ab63d8e56f2df245cbe854bb9eb3206196edd57f2c4682be19787939b70c5eb"
     sha256 cellar: :any,                 arm64_sonoma:  "56a68cea046497844c9764d60fb95c9a853b94b221f0a1081519d3fb9e465ae1"
     sha256 cellar: :any,                 arm64_ventura: "cc0823f89f35c41d56f9bbf9201be2393b09672de59f813f81105efdacdbc48b"

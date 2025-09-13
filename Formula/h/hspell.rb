@@ -14,6 +14,7 @@ class Hspell < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_tahoe:    "a0c78516325cebda282510f1f2b02169c8f45055fb752055845617ebaac51664"
     sha256 arm64_sequoia:  "c40456d586f63147c43885dbad8c72e18bafae62f93305d96e29146465f053e8"
     sha256 arm64_sonoma:   "86f6240fcd352f4fe5579be572c0e50fb679b689b2e37e9c04c46ca485f8e6de"
     sha256 arm64_ventura:  "2fcc00698fda6279a021ece352de8c8c7597cabec4ae896416db031215e2dcbb"

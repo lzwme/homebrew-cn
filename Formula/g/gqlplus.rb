@@ -9,6 +9,7 @@ class Gqlplus < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "92a6bcc9e9e88f034dcd767bce32f2c9fb0b433ab4fbdbc13d2dbbe0e8b75849"
     sha256 cellar: :any,                 arm64_sequoia:  "655578c016ff8dadbc3acec3696e90fb7fbab95af8a0f749ec4d2384ab977221"
     sha256 cellar: :any,                 arm64_sonoma:   "c4534648d55a23ab49c6fd1e3a4c3c66ee928c7b4ab4cb1c10b9e132134a81f7"
     sha256 cellar: :any,                 arm64_ventura:  "a0306aa2fa07da51f02dec57525850ec4fe73e37d044fc34cb0b722cb83d1310"

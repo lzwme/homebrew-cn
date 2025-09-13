@@ -6,6 +6,7 @@ class Kingfisher < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73b92a36d33b9ecb8991417a1c78073bda29ec276af5521eeb6ccd6db5aca7bf"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "61445a2e016521835c1d3aa9a4871b3f663c729c5de23fe9b6a0aa588af17ef5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68aea58dca70009689b87424e5fe8ca6f33605c7b7b2903a474c0e60a365bf6b"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e901b63307690df58665d7d830090f7846a29775969b3b5aa8497fa6e10815cb"

@@ -8,6 +8,7 @@ class Tnef < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "44529baf2a4c808692492827a1e241d50d4664afb347e2c9efbd174459e77dfa"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "83bd5a4cd7402252e5b3652cb5660aa5ec15527623608cc08556dbb1c6b14b15"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3fa9d1e41b5eae6e4190c2d2a3a3c19c2ab8bffd9424aa69b6e0ea1f55d04f6e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "920a01f591be96275e201cfd5dc6e34014cfe036cf255ad5c67daa3167f327e7"

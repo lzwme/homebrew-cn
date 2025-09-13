@@ -16,6 +16,7 @@ class Pytorch < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any, arm64_tahoe:   "f38092ace3077aecd54eaced993b4c65e76a110c6afd61b22b04e6793b14fe2a"
     sha256 cellar: :any, arm64_sequoia: "1223681d8f2edcefa6a128c0aa05a8ef81728d5c58c0afcd22bc9b68b22aaa4d"
     sha256 cellar: :any, arm64_sonoma:  "f3a908b8b0e3c4b5365cea7170ea8c514874c14c0ecfa3e70a0dd274b76fb73a"
     sha256 cellar: :any, arm64_ventura: "35b80f40b3a64b43252d67e1f6492f4eaf953502b13b1093d0a2a512159a1303"

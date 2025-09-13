@@ -7,6 +7,7 @@ class Gopeed < Formula
   head "https://github.com/GopeedLab/gopeed.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "281fc666edada6006597bbd5dee4b7d75b3d52148c2904f3c4ff5e3b428d24d9"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b836716678f8174796016a4c43aff911348b9f55da4079ea52763e5b10aee160"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cab761744c03749f7d5e1cd9f33daee6bfceb4bf8605872428f6d36ffe34fb52"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0c695ae3d99da7dc66815515a121f746599e365ee792b1d57359e3e6d04f9b61"

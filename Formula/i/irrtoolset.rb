@@ -15,6 +15,7 @@ class Irrtoolset < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "eb7536136362e5471a79b098bbe9004b69696ec161b68e89f4e5fae18a1ad2ec"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c8f841c2b1f1181dfd110bb27a4d374ff43d204bda34a871aa260bd8c67c7e43"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "89d7ae76431629fd7703e8295dae62fbaae4ef6adba8b261e14d92ff409fc450"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5834b05bb5b3280a60032cca1d759d1ffd7f513118fdabe5e9ded8c7d08252de"

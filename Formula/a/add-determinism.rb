@@ -1,20 +1,23 @@
 class AddDeterminism < Formula
   desc "Build postprocessor to reset metadata fields for build reproducibility"
   homepage "https://github.com/keszybz/add-determinism"
-  url "https://ghfast.top/https://github.com/keszybz/add-determinism/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "ff23770171a16e8e9df97bfeacaccd9545e5a55157cada5f76ecc9aa5762698c"
+  url "https://ghfast.top/https://github.com/keszybz/add-determinism/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "20995b79d8bef3238e480f23e7a9b248ef3526a67b1b28b89e57954ed2999560"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "5a1f38d1d36f4c56ee8a025f92c03984e4d38fccc6f01791c6aed66876bab144"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "831ddbdb5f413ad31507abe11a6ad88e3f591439600a32c3bda7e27eee969c4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "767dc6d4f1508e275358111572148658c5e6a2c1cf43a4eac965c3d659d2ef4e"
   end
 
+  depends_on "llvm" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "libselinux"
   depends_on :linux
   depends_on "zlib"
 
   def install
+    ENV["RUSTFLAGS"] = "-C link-arg=-lselinux"
     system "cargo", "install", *std_cargo_args
   end
 

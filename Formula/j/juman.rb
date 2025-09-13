@@ -17,6 +17,7 @@ class Juman < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "68ea21f6a0d59d8aaca739e79302615c6dee8dfc5f5f15f6e686a3df478e8372"
     sha256 arm64_sequoia:  "8db93b953c7cb1eac967bb6b7ef3cce0479f2ebecca298de87b92aa8e5324013"
     sha256 arm64_sonoma:   "0fe537854a305d8678893c6e15fea60516513470425844c61c33cd378892ca86"
     sha256 arm64_ventura:  "1b844be8a1ab2d3d1a10245fb3c887c9175a7836c86275ea67b3dfdd8e3abc7e"

@@ -8,6 +8,7 @@ class Helmfile < Formula
   head "https://github.com/helmfile/helmfile.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a842efd043c8078a5823133653d4e7ad2f37bb80a330f004d34a92ff544e8840"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "28567c881f9776a0fb023657870140e2c5ce0d59bee2e700f5ec5c1c0e11123e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03b2d17c01a82ef7295f601984921cbe8abaafca7235de28862ae87da281611b"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a88b119a35ca83bbb9140ec9d6ca2daf35283a5f3559385eed4086264dc343d9"

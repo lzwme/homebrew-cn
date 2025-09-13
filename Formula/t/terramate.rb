@@ -7,6 +7,7 @@ class Terramate < Formula
   head "https://github.com/terramate-io/terramate.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "555dde82fc1d7ba8e4fd0bd88f3437786f0dc0af0b26dac6d3e5e1ef49254462"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "555dde82fc1d7ba8e4fd0bd88f3437786f0dc0af0b26dac6d3e5e1ef49254462"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "555dde82fc1d7ba8e4fd0bd88f3437786f0dc0af0b26dac6d3e5e1ef49254462"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "555dde82fc1d7ba8e4fd0bd88f3437786f0dc0af0b26dac6d3e5e1ef49254462"

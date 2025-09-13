@@ -7,6 +7,7 @@ class CargoHack < Formula
   head "https://github.com/taiki-e/cargo-hack.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "09b306279d820ad18c4b8ff8a506b89a3bff39ccf9f2941b83dbbaf859363d0b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "49b5a14e2de1321f7954507a1aae843a24e058e2f853b3da8b2965812d30d2bd"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "865b356936e147ef8f67e2f819c9aff72ba9b4f82458d1241810f8ca6fe8dd43"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a76e94d785dbfaa6ccf0664daeeb7448196fc414227f387f12c30f9ae950cd99"

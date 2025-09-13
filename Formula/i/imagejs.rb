@@ -15,6 +15,7 @@ class Imagejs < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "8300352570ea600d8dc4c6d8de40b4aa30a182db569bd3a2bb213b3d4ae92193"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e63b962d504ec008aa03bbbc391604e5ade5d25d0316d1b040cc053a56b2821f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "99187a2855b722b5b1e50cce08e0c12c22ee803f6420ea15c96852b2be06dac1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e76ab06468439a91138e802c3da8aa8d422a659aebb2abc94fea8a8f576d0b71"

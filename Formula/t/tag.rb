@@ -10,6 +10,7 @@ class Tag < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "dd8bc8fffd2b86efc0a22070b48426c82f98979625bf991332a633a83070cc85"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0276d10f3dbc55011085ba7d45f74a29760a8985108e946be3d2c6abf0bdfb34"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "22c9b07c4317b1d90da2431a3679babf1381a98c6c1311f565bdd83b94c88389"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f02aa65b8800efb9bc93089aded8bff111549d41f28e7ba223b02a1240d5c7b2"

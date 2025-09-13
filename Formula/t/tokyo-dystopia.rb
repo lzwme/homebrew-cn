@@ -13,6 +13,7 @@ class TokyoDystopia < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "a2f63111d93534d9aee115227c1f069d622d08d0df19e9d9664f653c28b60dc4"
     sha256 cellar: :any,                 arm64_sequoia:  "da35291f169e133bb8dcc321c5114ea62714f6e0eadab7a69cef121e0c76813f"
     sha256 cellar: :any,                 arm64_sonoma:   "16af9fb0facf080bd076d60cd306742fb641f7430cf0c14946e5e37d2d4dcb8c"
     sha256 cellar: :any,                 arm64_ventura:  "b668547ea69b42bff8b084ec960fb1d1b0233179b2b8b2ea5bb83b013ab81f84"

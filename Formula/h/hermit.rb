@@ -7,6 +7,7 @@ class Hermit < Formula
   head "https://github.com/cashapp/hermit.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18d80f4e2e1c0f42953b5e053bd39ab972aa53fda4c034c3732f590705b303e7"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e671cdf8325cef9a366851527910a609b47431ded147602c2f88b9a218bc138"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c34fd7f70223227fb61548ed5699c9ed3c11e946939238feee3f23e5969dd2ba"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e7ee02766f1529610a69be2bfcc4f0005a317ef39ae204ebe92258c1ecbfb5f1"

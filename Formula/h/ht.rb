@@ -9,6 +9,7 @@ class Ht < Formula
 
   bottle do
     rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:    "24189de18e537de36a5368d5e5a9e1017f07b25e16147467763496ff865e4a1b"
     sha256 cellar: :any,                 arm64_sequoia:  "4dcd72bf389cc8babbb16008ededd722842fa9a5fb3141cac62719e06931f7ff"
     sha256 cellar: :any,                 arm64_sonoma:   "94baa4793d98e0b2b965672e0881cbf1a5b4c85fab1f6f32b1a13553ffd4dddd"
     sha256 cellar: :any,                 arm64_ventura:  "f429f9b9cd7181b2f6ab5f7d75314c975657fe21ab2dbcb4a193b1a090f12bfb"
@@ -38,6 +39,12 @@ class Ht < Formula
       url "https://github.com/sebastianbiallas/ht/commit/a721310665267655d37d9e80db5234d2a7731895.patch?full_index=1"
       sha256 "def983c542112d66f472a4a32323948f812bdd30bb1aa54abc5cb5b3ffef1752"
     end
+  end
+
+  # Fix C++11 compatibility issues
+  patch do
+    url "https://github.com/sebastianbiallas/ht/commit/e52dfb86aa2c370d7d1ac2e046a4b9babc93bac9.patch?full_index=1"
+    sha256 "0119c3973d2cc4ac56c7f28061ce0426eab169695ae7b81e1514f9347740ab26"
   end
 
   def install

@@ -7,6 +7,7 @@ class BoshCli < Formula
   head "https://github.com/cloudfoundry/bosh-cli.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25b938dc596190a50e3bf41aaffc8a4fdb9c8f15f8e6be07f74d577c9c685181"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "25b938dc596190a50e3bf41aaffc8a4fdb9c8f15f8e6be07f74d577c9c685181"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25b938dc596190a50e3bf41aaffc8a4fdb9c8f15f8e6be07f74d577c9c685181"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "25b938dc596190a50e3bf41aaffc8a4fdb9c8f15f8e6be07f74d577c9c685181"

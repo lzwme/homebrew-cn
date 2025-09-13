@@ -6,6 +6,7 @@ class GphotosUploaderCli < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c496799ad9253eba958edbc09656b60f84e137c7339dc8dbace62f11d44aa71"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa748744f457796bf0f912c08991f28c726ad87c189612ed21ef2166b3830fa9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f789a31eba4645a812acba6da8454f978f0d77d5937df5b59fb8d7362929282"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "572fc38dfee39c7a521012aed7091c1e37d878693d7114f0148b0afba599cf46"

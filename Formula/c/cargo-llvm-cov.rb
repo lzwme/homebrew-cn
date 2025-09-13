@@ -8,6 +8,7 @@ class CargoLlvmCov < Formula
   head "https://github.com/taiki-e/cargo-llvm-cov.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d7a09b7598b0086958118d492e1ae2cff1f52cd03b127c2ea4c669b59175880"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f18730e1aab71a15c206e8cfbcf6679961325a009814aff36825bdfe2a363ac"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7df2a4b918695d307840ee8e1189a9f3f1df57c661f29aa4e44ea126b4a69f5"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "598d646215b0c46e8905ffb583ade2e154f378375730f3e1148a582582d3cebe"

@@ -8,6 +8,7 @@ class Urx < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6dd267008bc40803a7a9e2c3f163e2a1cdaa8d513c767eeb009ea8bb0912c10"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "939f467d16a57621fe8f15ac7411e030844ee2bdd128860e2723afa0dacc2826"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d26ba3ce1d6a804045d6d39d432d0e89b29a037ee2988583179ed9845ee4b2e7"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2813f0283278d238361b12a6fd4fd77d8b308a67784c5770cccbf9d51ca324c2"

@@ -7,6 +7,7 @@ class Hl < Formula
   head "https://github.com/pamburus/hl.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ba7464c646d110820969949f460dd611a531bc9c38928046d03a3214d1585f59"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c96e94dcb0827dc670d37e453d6647a6675c988a651b7be268bb80a631d1637"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17e560cbc74b1ca1f546468c77c0b984259e0a9c96c0a90ea2b2089c713aba2b"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ae6342232169888b1878fa9e28b8b905e8ca5897149e4d400ceedee963a2a5ad"

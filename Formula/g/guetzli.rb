@@ -9,6 +9,7 @@ class Guetzli < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "848e59c5a4a60bce70dc21cfc9501bbe56f15d7d76475b7043e21cb2740f4f41"
     sha256 cellar: :any,                 arm64_sequoia:  "a9d736ee968abfde99d6ccc42c9ca5793ea9d7b1e52b7127314a1f8fcfcf32fc"
     sha256 cellar: :any,                 arm64_sonoma:   "48791444d83a6bff9ff37b33b55422cebcca2c162e0d6c8daf3bbdaf62cc5bc7"
     sha256 cellar: :any,                 arm64_ventura:  "e914138a9bf24f33e5b66a2ae0721f64551a6d0e342d2aab989417a5290da0ee"

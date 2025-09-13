@@ -12,6 +12,7 @@ class Node < Formula
   end
 
   bottle do
+    sha256 arm64_tahoe:   "857bba96e620782d2f1dd4e2a21701ec32e69affa1eac7703f7d6654731efefe"
     sha256 arm64_sequoia: "56ea01001e0320e0b3b639d9bceb042996f39831a8ffd3995a5ac8cb52d498b2"
     sha256 arm64_sonoma:  "28ec403e1b76fbf7508ff83e623a9c18af3a68ecacf6c0834de9539051ea0d17"
     sha256 arm64_ventura: "a1aa3e4076ae89a3ec6083fa511d7123343a9ca4a3b25504291c17ce6595911b"

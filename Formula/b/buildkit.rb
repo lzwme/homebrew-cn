@@ -16,6 +16,7 @@ class Buildkit < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c76d4fa977da6189445dff9edf3355913de0283059a81225edeb8f007fb0f775"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "da1e9b6d016ff076cb7afe06129279dc874f8e98e04a44ccb1f8d6fed6a57144"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da1e9b6d016ff076cb7afe06129279dc874f8e98e04a44ccb1f8d6fed6a57144"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "da1e9b6d016ff076cb7afe06129279dc874f8e98e04a44ccb1f8d6fed6a57144"

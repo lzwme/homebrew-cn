@@ -13,6 +13,7 @@ class Hyperestraier < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "fddfdaa28011b5308a0195b816212d061a3b707dce5275ff26bb47ab09e22841"
     sha256 cellar: :any,                 arm64_sequoia:  "18f652254c3b115ffe6fad67be39dee791ef6b8f456122618762417eef74f4cb"
     sha256 cellar: :any,                 arm64_sonoma:   "5ac8a21fdb6d25f1855c3ab56253357c1938d3fe45d35f449e23dc28dd997a38"
     sha256 cellar: :any,                 arm64_ventura:  "381f8cb7f35472802af7f859b9b5369427a9260cf2470917f74f0e43d78915ec"

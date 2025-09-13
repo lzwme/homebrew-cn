@@ -8,6 +8,7 @@ class Cityhash < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "a48224df147a6510be1f81144df6c5060ec5c053121bed9ff26e3bc0344585ed"
     sha256 cellar: :any,                 arm64_sequoia:  "ce559172129f8c960379c6cfc4f513d8dce917f386f4471f1a1ab5766a0acffd"
     sha256 cellar: :any,                 arm64_sonoma:   "5a0d0a8fd944f2ce605734f896bf19bf634378f6754d604b026a22692f461361"
     sha256 cellar: :any,                 arm64_ventura:  "8b40df9470428bbabbd02a72658b34469a59c14d41f2782d0c6cd657aaa7613e"

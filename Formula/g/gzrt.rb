@@ -13,6 +13,7 @@ class Gzrt < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "057453d434a240760d24796e6ac12e0d6253d734527f31de476432d8e81b2818"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a8383b91ba90e35c7cf4110167a631482dbbf1798faf36ab193ab2072aadfec5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a0aafbc9d11bc14764a79f044072cf6bb3ae9686fca63c2ccdad9b7001c77c82"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d6dfe52fd268de29704f3367daa802012d68b7162d957716d96d9da41bef80e6"

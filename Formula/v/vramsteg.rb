@@ -14,6 +14,7 @@ class Vramsteg < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "a5479befe15922fb1599789c162d94db24b307d31ab67508ac4ca5ab2e416a8a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0fc0621375da82a15b6a36551f6fe423df69a79c656beae75ce15a6e6c331556"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f122182d7989681603772e5ca869e722b9a358e170f2f60135c635a51142a6a2"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2158611ee7a141add85d1e540484a167ca3ba679d9e0ce60d9381b938e20ecb1"

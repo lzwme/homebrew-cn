@@ -10,6 +10,7 @@ class Tcpstat < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "819e87c8105c753f181730fced67949dbc440e4a6e790c089f030134e6903ec3"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2e7c67338b0d6c0f83589d31ce70046af5888a6bb752e5f2d69361d81b57ef99"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "05facda1f2a318b0253ef9b01500561ed6791d0b5143c5aeb05d1187902a6758"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "50c363371b5503288c97c1a00b5dc678aa2e121fc5470bb42676bb1c107fc7da"

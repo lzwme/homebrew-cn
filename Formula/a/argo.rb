@@ -8,6 +8,7 @@ class Argo < Formula
   head "https://github.com/argoproj/argo-workflows.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "762cc5d87e5d67c1107e0a3c9852f48d2a2c8157ca03c9dbac65404705fc934f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd5c4f03ed75f6fc060f4529ecfa5e4faaa6d6f4749c3bafc9c578d014762c15"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57bf3fe79025e9cc73ebc04941e700f52f84ee44a11e59661c98a467c120eb89"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d474e6b8c21447cfc0f2893a4fa74673d9c861fe5da7b533bc2fadf8140ac1db"

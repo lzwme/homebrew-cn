@@ -18,6 +18,7 @@ class Argocd < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0fc081ea761f173b210c5995837c032e35aeb47b5b506cb69e6e9c0485ec5c1"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b428acd494423377e57b3365a58bf8cf92965ef00552e2429385a2e505749361"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a6312e725148fd5380d8b45c99686142b7a5d4bee34bf72f57a6cbd0e6d6fd4"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b32b28a2348ea11da4bc9b63b519d764cb38fa3aa888476b0bc73b22e2296c90"

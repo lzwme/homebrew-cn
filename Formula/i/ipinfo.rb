@@ -15,6 +15,7 @@ class Ipinfo < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "97ebf675a6aa3fd914b342df26584eaded1d0d5b7b31ff4a8d2531ad61ab9152"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ff62045518304b036f380fb7a14218208349858d1d1b5db7d39c3877e1361400"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4284a229bc38e71cb7ccd08df9056a350eb2e7a47b224e3f567eb8f4ec79d0fa"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "48870fd5a3ee495bbc62c79d5706403ccef08c28f00d503b7bd661315bf2016c"

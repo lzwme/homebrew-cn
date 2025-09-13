@@ -30,6 +30,7 @@ class Julia < Formula
   end
 
   bottle do
+    sha256                               arm64_tahoe:   "32e63aa0601dbf04d95979398c5de3f4dc7336b3900e7d6ccd972924dc223b4f"
     sha256 cellar: :any,                 arm64_sequoia: "0b0383a975eb655862d9ce049595e3e0862f0def36f985f219f72256c72d9d11"
     sha256 cellar: :any,                 arm64_sonoma:  "b254d61d5a1cb1ee5388c8efe2f98c29cc2baafa19fc9d3e5c9d1286e269a88c"
     sha256                               arm64_ventura: "1e1ff07e37ff59d0a35201bf34302a7276839f149004fea472f9c63739c20f81"

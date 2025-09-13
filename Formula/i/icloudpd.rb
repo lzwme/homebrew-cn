@@ -11,6 +11,7 @@ class Icloudpd < Formula
   head "https://github.com/icloud-photos-downloader/icloud_photos_downloader.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9364a5e42cf6375a7deafb630cd5fe417be0f66c4086bfe60b79deed4102a8bd"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7ef424df44d7a78d5fdcaded569e754e1173feceb41f03924e6f1759846666f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c81ac9077ed88296a7356b2c32362b3bff656c39875df70014415d348e2acc7"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3ed50a826c47a4b94d88c52bf19fa75eb0dac4f2f6e3ff40f3f14217df960d13"

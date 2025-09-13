@@ -15,6 +15,7 @@ class JfrogCli < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fcf4ccc9e270b19e2f2ba4fbc9c11bea64c7766dce2d45580c82338bfa5df711"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a6978e20da6a4a1d3caaa7e71c30d61c6d5896ee92eedf4416f7d688597a6fb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a6978e20da6a4a1d3caaa7e71c30d61c6d5896ee92eedf4416f7d688597a6fb"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "4a6978e20da6a4a1d3caaa7e71c30d61c6d5896ee92eedf4416f7d688597a6fb"

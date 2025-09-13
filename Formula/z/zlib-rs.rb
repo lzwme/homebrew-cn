@@ -7,6 +7,7 @@ class ZlibRs < Formula
   head "https://github.com/trifectatechfoundation/zlib-rs.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "859ac57d9978301b445b61052eecf2109c7ade9e333a6765b5b5e3a8807b73d9"
     sha256 cellar: :any,                 arm64_sequoia: "4a51ae18c3fc7fb801cbb64a391e28e5dc022383fc412f890f3385897a3cd512"
     sha256 cellar: :any,                 arm64_sonoma:  "8829610f18363a0665da0b4c01a4ecc547846bdf2cc013b85490c93d37def924"
     sha256 cellar: :any,                 arm64_ventura: "337ddb0376831e118ffbc5b95c206fdf848e0bf92b4e4031dd30540901aa34e2"

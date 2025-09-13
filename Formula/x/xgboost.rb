@@ -11,6 +11,7 @@ class Xgboost < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "30d5eab5d9c6c94e6bdf3a15c5cb5864235ef72ddec54fe24e47c4d2a5ab10ae"
     sha256 cellar: :any,                 arm64_sequoia: "90283850bc034c32485d67e03523284337da40cba581d91dbe23802564ab0f34"
     sha256 cellar: :any,                 arm64_sonoma:  "414bd6df6f375bb9375b4cc1e17787a0a90e6f67462baabd8454880f8445749d"
     sha256 cellar: :any,                 arm64_ventura: "e88313cfaf68176a466251dfa116322b94c4b7eeef5606059b46ea77ef41a0e5"

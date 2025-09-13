@@ -8,6 +8,7 @@ class Xlslib < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "0aceee9730d6524acd094d61efcf3b89387d79c7e10dc3bbbac4cf52ccb133ac"
     sha256 cellar: :any,                 arm64_sequoia:  "67eee141556944e992f338143289b2021e22023d5f205f571e56bca3a8c2b1f3"
     sha256 cellar: :any,                 arm64_sonoma:   "f3ac523156480b0b00cf8ef98e2687e7ca0ac2b6107186f14349a0566c57de76"
     sha256 cellar: :any,                 arm64_ventura:  "8a846a14e97ca4104d9d56be6ba54c6159a798b334b8172d1c941848bb3581aa"

@@ -15,6 +15,7 @@ class Tailwindcss < Formula
   end
 
   bottle do
+    sha256                               arm64_tahoe:   "37f13b869429ad703c83eab210fe0a81f648b97530ae4d2497ab73e760a9152f"
     sha256                               arm64_sequoia: "6e3446eb20430cec8acc63ddbb2011897c2c675517ad2db8353794594528ee03"
     sha256                               arm64_sonoma:  "2269f6ee703be749d8014ae88e9767d06c291b4f0dc96d3d321c9a2e33d8a9c7"
     sha256                               arm64_ventura: "e1be83ff20d210b8616f4bbcc777653b6246ace2a385978641f0815974bb6707"

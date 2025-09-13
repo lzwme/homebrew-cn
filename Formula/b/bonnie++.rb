@@ -13,6 +13,7 @@ class Bonniexx < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "751104c5d03e4f91086a337c4ed4b12acd1464170f67b994cf20ec30f6456176"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2cdb858040bf6e8c19142a19932a6aa6294c863a4b3f7b2faebd5ebcb945ee29"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "748ee8216cf3b93d071f7fd95977e3d7a7ef28dd3c73467b212ef9594b037f7d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "bb48f4977b6fffe6260f6adf6a20b15d0e33ef6f0f70a3d5fe36f3d1cd708c3c"

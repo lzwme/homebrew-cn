@@ -6,6 +6,7 @@ class Heroku < Formula
   license "ISC"
 
   bottle do
+    sha256                               arm64_tahoe:   "84404cdf40d0d4c878ac1034317d1ed90949601ce700cb73671a75a16bfc5c78"
     sha256                               arm64_sequoia: "4c5ae4565320f80478ee2aa54bdb582be65879e2fdbbe916b334bd2143e29d82"
     sha256                               arm64_sonoma:  "5b383d6a19d5a23997b5be5b565fc05ed160021b60129e52af419d5e98c9de12"
     sha256                               arm64_ventura: "3660c6c8bb2d0b8ab37cfb2fff59eb970132c7596ff4cf050d14f5b6c7aa7b6f"

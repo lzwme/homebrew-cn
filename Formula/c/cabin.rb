@@ -7,6 +7,7 @@ class Cabin < Formula
   head "https://github.com/cabinpkg/cabin.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "beb71dbc4d107c7296107d2781dfab1405dc184d5b9ad90ac875c51699378618"
     sha256 cellar: :any,                 arm64_sequoia: "5685234dede00370f7c46d3b6c0733d3291ab36c84b3ec865a7854e125fec004"
     sha256 cellar: :any,                 arm64_sonoma:  "53fbec25916411c2273c8b33724a2a14ad75205671539e4ca6d08f21167ecab7"
     sha256 cellar: :any,                 arm64_ventura: "eb9d82658aa6ea34f500dc9ce4630957c4f4d1b2b35136f974d91e348ffa5ee7"

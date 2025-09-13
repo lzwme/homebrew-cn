@@ -9,6 +9,7 @@ class Httpflow < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "5cbd7cedb1ff1b35afc85432620f05dd67f683d8192c67df5af172a583c762df"
     sha256 cellar: :any,                 arm64_sequoia:  "ac62f29bcb5a484af3755990f8ddd109dce6df7a261e281f9846a383457f815a"
     sha256 cellar: :any,                 arm64_sonoma:   "2c7c2232e112599cf10e22ac013df5cf5823f6071292fa91a5252480539c85b7"
     sha256 cellar: :any,                 arm64_ventura:  "4b3f8c7e2ac615472630e7913d4e0461199a5f9fc6204db04802c6829d359b1d"

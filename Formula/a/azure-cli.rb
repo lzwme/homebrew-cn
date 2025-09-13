@@ -17,6 +17,7 @@ class AzureCli < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "dd7a4f053beb103cd1d52114ab298a43b3eb8cbab0bbf29eddd2cf1f5a2a3455"
     sha256 cellar: :any,                 arm64_sequoia: "4dc0d475fa4942c9103329f7fbef45230d649d10a24ccaa27ab0dd46b665784b"
     sha256 cellar: :any,                 arm64_sonoma:  "a88b308154e3d6c026d4fef478f976c11f850e5066fc65efaa0fc906200e7a1a"
     sha256 cellar: :any,                 arm64_ventura: "27eccae01ffe822a3dde84966ca8546a62b13f3fc8f3c754f45623a5cd68ca57"

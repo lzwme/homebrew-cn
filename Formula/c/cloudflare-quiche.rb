@@ -13,6 +13,7 @@ class CloudflareQuiche < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "94cf2f6d446be6967e0ff5c897119207150b727f19393c6274be619010818ec6"
     sha256 cellar: :any,                 arm64_sequoia: "9fdfdfd55a6503b9aca9a34c7e35077df3041cafb794804f35346ff340821d57"
     sha256 cellar: :any,                 arm64_sonoma:  "ad2a4fbf4f65847baa4aeec6d238951104c14aba3a982c7b0eeb6f98df0ed157"
     sha256 cellar: :any,                 arm64_ventura: "9f08f4d1db96fe372ed1d5a548fdedf54102442bffe182f33ebc4fd745fdc8fc"

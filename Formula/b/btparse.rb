@@ -8,6 +8,7 @@ class Btparse < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "6bcfac3d46e83b1217a57419de338fbea65b77c71d9a4f6de49665990e93b746"
     sha256 cellar: :any,                 arm64_sequoia:  "7da3060367c602412a91935267f6f8eef48d2c15fc0e5fcfd7a8bc42423ba281"
     sha256 cellar: :any,                 arm64_sonoma:   "783d3d629c204b19bfcfa7e64dc138f89432392c29838999b95364d814ab6445"
     sha256 cellar: :any,                 arm64_ventura:  "d58ac5298bb8bfc1859e5333d541ea89ce1dba5a629c1360b48857eb307f6350"

@@ -8,6 +8,7 @@ class Ijq < Formula
   head "https://git.sr.ht/~gpanders/ijq", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "1424364bc1af72aec3a282f2952bef6771abeb6be17cad3f4f9fe2b3eb4d4e9b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1f6d56b0207fbe0c580f29636d34c39e2d52349f649e04988a56f73d3ea9a1a8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a744ffeab4e167df5562e00df9f6881619690890b944e8812c36f6bf173c7b8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd09def3304b0cfcd714745a057853784b49e482a32d599db45c742d2eac3522"

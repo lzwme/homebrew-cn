@@ -8,6 +8,7 @@ class H264bitstream < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "77e29214581bbed1453a6aea582cafb5f4525634fca321e4ad503873722acabb"
     sha256 cellar: :any,                 arm64_sequoia:  "4616a724fcfbdc091a8be99a5746c3c1a20e9be058fd4acd09a3e4ac12ab7756"
     sha256 cellar: :any,                 arm64_sonoma:   "946ce648f0daf4e64a182e2f39811d0d78946a5150899dffe5984bb1926a88f2"
     sha256 cellar: :any,                 arm64_ventura:  "9fd917379072e27703bae053f19aefc1abbf328dfcf5857e6aa4192babe3fc48"

@@ -14,6 +14,7 @@ class Juliaup < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8afa800195e627070cda37d8f2832784e6c6e2e712b445ee317baad1a668831"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "124719225451633c8388a76501cc32a5d401f06d1b21ac804d04c1daab9231b9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5dad7c0608bb8e22d61de78a207ce79f74b41790dfd9291dd702dc239e825ab1"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "87736debfa797f45c848d407d861b2dc7121654e81a9cf03250bce6b1c288e98"

@@ -15,6 +15,7 @@ class Bsdiff < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "c1b39ac523c9bb26c5b194c20451b28be15bf1a8a5b59bab50a517f7619c472d"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5aa138e7ada53aa574d2bf31f2cfa65cd53692001a1d7e5ad6240fc72975d6b3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5dac6fb313e1df3f6c05870f8accc2f65615924124b9b24b481dc0c4e5f77193"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e83875207f8cc492079e701ba371bb08c89aaea95d47c0aa1d78069376dced12"

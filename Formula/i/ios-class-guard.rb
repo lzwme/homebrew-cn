@@ -21,6 +21,7 @@ class IosClassGuard < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "309a61c546e963a18349f50f48dcf782c98fedb310b248b9d2d9936d842d5ec1"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4de6dec4f0120a68ac884defc966d1e3ff7da2cae669cccf3b80f72cdf7e7ddc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2573d220e15167e7b384badba84c8c81a68e7ec3caf0335182693fac4bacc08e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2cfa45ab4d2e9f5ff160c3e88426c890c83d5a87997fff438e04d07cd4d68467"

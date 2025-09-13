@@ -8,6 +8,7 @@ class Id3v2 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "1e856b634b926775432b085357f04acfccdcb7a370ced3123c4362a90d6eaf3e"
     sha256 cellar: :any,                 arm64_sequoia:  "6d78452187f861e1e8ecf3a23a2e873e251ccda22403a855c86dff5aa6e5bb30"
     sha256 cellar: :any,                 arm64_sonoma:   "9bf6ca393764873ff61916821417e4bfbbe1564682ca2004fcbeef1525c211b7"
     sha256 cellar: :any,                 arm64_ventura:  "222ba809b014c313ebe411cff50e684b04ece17c3d2a380ac0b794b03c3aaae2"

@@ -7,6 +7,7 @@ class Bom < Formula
   head "https://github.com/kubernetes-sigs/bom.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d2df37362a07cdb818a262c36e8a4af13ec15d97bd6cf20c2e0c56465241b576"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2df37362a07cdb818a262c36e8a4af13ec15d97bd6cf20c2e0c56465241b576"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2df37362a07cdb818a262c36e8a4af13ec15d97bd6cf20c2e0c56465241b576"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d2df37362a07cdb818a262c36e8a4af13ec15d97bd6cf20c2e0c56465241b576"

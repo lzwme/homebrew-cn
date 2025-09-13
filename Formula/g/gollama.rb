@@ -7,6 +7,7 @@ class Gollama < Formula
   head "https://github.com/sammcj/gollama.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b968289b5ccd8574033d5a9e7f10a33037e47d94f1cd943ce1f180d1d59a9512"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5764230094d0eef2083d635182e03f9d2d074c386691fac5ee30f8c45038b79f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c1b0c072d882872d9e0a1b2e7e78ad71f5dc1da3de4c7fa38ac22f029ff589f"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "225d21f860afdad36d8cfdc7c0114012e36d494fb614acc28a1983ff3616a886"

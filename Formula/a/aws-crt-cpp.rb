@@ -6,6 +6,7 @@ class AwsCrtCpp < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "4568e422d4ea00b88c7d3d4ab414e7523c6929eb3b61bd39c3466262c831702e"
     sha256 cellar: :any,                 arm64_sequoia: "a22bb851768d32c3bace3280e599961e6b73e330443dc458d0b2e7ae0997dd3c"
     sha256 cellar: :any,                 arm64_sonoma:  "a3e4d9765dbbaaf3140f159de51d24014ada36693daee588d74fbeae7bf62252"
     sha256 cellar: :any,                 arm64_ventura: "0a43440df5f61d50a5702a738e87085c0e9bad5226cfab023241d29926290dce"

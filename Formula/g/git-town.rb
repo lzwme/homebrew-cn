@@ -7,6 +7,7 @@ class GitTown < Formula
   head "https://github.com/git-town/git-town.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ee0aa85af670c7e7fb9040789a5fb909af47ce4f6c020e18a84a415c051e909"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ee0aa85af670c7e7fb9040789a5fb909af47ce4f6c020e18a84a415c051e909"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ee0aa85af670c7e7fb9040789a5fb909af47ce4f6c020e18a84a415c051e909"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7ee0aa85af670c7e7fb9040789a5fb909af47ce4f6c020e18a84a415c051e909"

@@ -13,6 +13,7 @@ class Cksfv < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "98f4a00c83288bac3479fcd9e301409f3445d816bad334c6bd7632f302f8b638"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "96608dc540a21f5e14b2a1731b0d6350c00063db4528a1bcb56186188a157c00"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "25cb1cccb8aed81f49c5c9eee87e80c6148164a13060e59f429a61d91307a1c1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0664f91348b09bb20a99e87161d8d54d4ea946ff10a1f4798098441b2f1badd5"

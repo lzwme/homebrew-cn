@@ -8,6 +8,7 @@ class Bioawk < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "091d687b6c2584d1f0a47fbac10ba074ade881df4f0631022ae215ffed68343b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "581ec8168890f6010df9a49953f2d52a3a86020fc350cb7cdb64fae38e23b0c8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "781164882120d8b28e1cdac8b8db1f5c9a8bdedea381aedad9b35b6d185f2897"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a80d9d6887393ec604646dd2e79090bda1034f5947488995c383d29b8fbb2f47"

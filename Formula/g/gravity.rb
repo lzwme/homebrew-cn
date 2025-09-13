@@ -8,6 +8,7 @@ class Gravity < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "c40e91f9e2727a8fa187420366de0aa3477cd0826810c493badfebcbbb642689"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3b9deeeaa076effc41b7d65f16d152e75895327bb4692061afc8b86acc5c25fa"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1938bccfa92b1139af3b20ffd2acab61f7860bfaa0a08ddb233b365db300e59c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a3e27f2ccdad0ad0ea5b4c51406aa149a830647be7746fc5a331aa55ac537be8"

@@ -11,6 +11,7 @@ class Gdcm < Formula
   end
 
   bottle do
+    sha256 arm64_tahoe:   "1accde6746b52fa9b27e456f8e2d54deb80c9d7c2c463c5a882028f53dbcf2ea"
     sha256 arm64_sequoia: "0798219ea8b286ffe4b4cf9206165a32f84779c534d12b7110e1b90699c5a817"
     sha256 arm64_sonoma:  "3db7f3de8175f2c554bdae0b22aa5c813148193a485ccaca8c2cfbf8a00d8133"
     sha256 arm64_ventura: "6cdab0da0f1460b9b39575bb26545c42926990ca42a9887207cd4de2494ee81a"

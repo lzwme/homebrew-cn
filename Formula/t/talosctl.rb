@@ -7,6 +7,7 @@ class Talosctl < Formula
   head "https://github.com/siderolabs/talos.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de6b813806af5903d0f2e129fda2af0817e5ad36b137ee0570a9974aa9126caa"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a0e60bde0b99247b35e98ae240efb2e71f28de5f4347d02931006f2bf51b08d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "783ccbad2a6928aea24032388b3a512f4d94d48951ec861731207586f9ed1f7e"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e94156e33a0baf48098dd7b23b1eff5dea11f783e397eccc254ea644cec8952d"

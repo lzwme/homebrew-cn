@@ -10,6 +10,7 @@ class Bmon < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:    "93cdadcf5fec7072cb986a15fb5f6f3e405d09da4dbeb2048eff7b561b0b8af8"
     sha256 cellar: :any,                 arm64_sequoia:  "f32d98f5dbf21deda940949e6b11a722ad0d69a7acfc1841d2779ce5b3af12ed"
     sha256 cellar: :any,                 arm64_sonoma:   "f0b04892363966c2e28c0d4ac5a76a751acdeafbfdac6cf543a9b0db825c1aaf"
     sha256 cellar: :any,                 arm64_ventura:  "890364e7d54a6673fccb4091d9643e24ddb1dfd4a3b2102618cc0b7d67953771"

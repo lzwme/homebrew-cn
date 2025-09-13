@@ -7,6 +7,7 @@ class Hcloud < Formula
   head "https://github.com/hetznercloud/cli.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3cbec9f4636f748e875b2e05374576624315141589ba150f289284301bb0c2e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "445a0b523bc5fdae6280b07a09559fb9afd4ecd887a5bc3b643f62407b4577de"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0c981ed5adf0b444b1abdabbb7b71b3108b5958789c8fc9ecddd14d104bb6e1"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2b4e329a86d84fab27e851b443c34fc4f402f92df969eef1a286937d058c53c5"

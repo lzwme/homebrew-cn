@@ -12,6 +12,7 @@ class BlockGooseCli < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e75d25a54e048e5c9633cd05f87be83cf8d01bf91b8a4f38e8ae20f89b71bbf6"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "82634526540bcde053c2d5dd92777a4885adc4471f6e2c969960df20a4783b3d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "979da8b61cab876084b78e9952bec2d7b9aede1eb41a2d837aa5860d4c42f6d5"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "346b3df99116347d4cfeb5eddf1944fc60517d6b8b4a774e101b69400397a0b1"

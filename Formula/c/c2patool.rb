@@ -12,6 +12,7 @@ class C2patool < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "6f37c4c61598032b40fb14321ea4015c97cd20843ad49e4e1e2737a39f220a04"
     sha256 cellar: :any,                 arm64_sequoia: "6b75efa9aa64642ea2257a871ea17779f5d0fcd70bb3bce696859a5916a0c6f9"
     sha256 cellar: :any,                 arm64_sonoma:  "c4966fdf9104375ffe21604553aab977ed9147855c57044d91d23c1e6dd65002"
     sha256 cellar: :any,                 arm64_ventura: "e239606cbcbcedfa108676cccd1784e2aacdb51bc28b5cba5e8da7460f56c79d"

@@ -10,6 +10,7 @@ class Zrok < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "407f444ce0d5c66066270acaf9b4b7b134b60ae90f0085df1efa07847f96cc9e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "61c303c73b1777a89437e01437f971e03a993ef5d4c297e4fcad2c9a6fcb98b3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d989bfaae3e1e9add0f96dfbb8504453abe5ee9df6868e5894da55c196b2e017"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ef442380787be4753cb78c89b7ce2f105fba325b8d0e7846accf52a25d1ff679"

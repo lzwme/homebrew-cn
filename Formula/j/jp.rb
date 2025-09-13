@@ -9,6 +9,7 @@ class Jp < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "d7cea97678a221ad8241eb0c56c01fcb9b21d79e7da603735a09f60bf3bd9789"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "01da1efbfd32691e7a34fa8e13108bfd327d52cc9b76a349a900df7f3a6411c6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7f3a46aca24fd10a6f170d25b5f59ec1247a393f0aa71fa2e6d7d0994f4e3631"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ea0dcfefb673157d2c4492bfa9e2bc012f475e7dfa23e28b6c18ce5805474a59"

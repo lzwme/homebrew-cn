@@ -9,6 +9,7 @@ class Brpc < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "907180a60425188a23acc0a5d93784ba4047890dad76053ba69252951b78b0ae"
     sha256 cellar: :any, arm64_sequoia: "b8307576b1d30d75adc93078ad401a0e5f3742122af08b35841a2b684db88034"
     sha256 cellar: :any, arm64_sonoma:  "be4797e5ef97d0fbbb5e3f4fa8c27a9505eef89b02a6dd900a914d29eecbcda7"
     sha256 cellar: :any, arm64_ventura: "eca6d54d5f87b57105abbf5ba1501cd419caeccb8b49795b878468a31f4499bc"

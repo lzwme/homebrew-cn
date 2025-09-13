@@ -1,24 +1,27 @@
 class Diamond < Formula
   desc "Accelerated BLAST compatible local sequence aligner"
-  homepage "https://www.wsi.uni-tuebingen.de/lehrstuehle/algorithms-in-bioinformatics/software/diamond/"
-  url "https://ghfast.top/https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.13.tar.gz"
-  sha256 "d3d093b77d0ad8914f3e94dc53b9b2684cb77990765e1a2fe93ad022c28930f5"
+  homepage "https://github.com/bbuchfink/diamond"
+  url "https://ghfast.top/https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.14.tar.gz"
+  sha256 "161a5f008a0a2f38fbe014abc0943d2b9b482510a3a64e4e3ab7230ddddd484e"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cdb004a5f8e1f3aa3a3caecb60872bc1dc93322c65ca2f185e62ae5f90e6fb82"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5deb210bf9cb7790e85ba12423d470dfef522326f8048c57e30a9e077ccf827"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5161c709bb96f99aecd0b33b584c5254b8d98ece89c40f6e17173f9ee4310ee0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0805fec734a034b56d786381f6e290536b547287284fe49d3c917db77c624df1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "814fa54602ac1ead2779baec592af6a352bc63b47310ed4a882c595a0832147b"
-    sha256 cellar: :any_skip_relocation, ventura:       "ddce693dee8ad251c30a4339cb78a1697c89adbcda25de9f0636137390a34d99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "855f41e69ca7de3e5ba0ed58f11109b579e5afde0263edc9d7611cb8fc508295"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efe0a2ed40864c1c5aab11e2d7eac871ace638d377ae3efc8cf93c9a3cd2cdfc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca5dbb4e5e6245e3264052ca57fe5b0d47100c02c7acb241716270e1150f3937"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3cd9ddd5fb56ad384149bd93d8449e555e9baf90f46f88be8e86c48666898ab"
+    sha256 cellar: :any_skip_relocation, sonoma:        "942f4ef1ba277704334960d73e370c4b54efc498a997f42ffb272c174153cdb4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d8a29630ad50d1472dc9f013533d6d59e4b70e46285a882a837152d5e486d0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec1beede93f9550d4bb3967861d7bfdee08fcf15002e7feb3d8708525137bf04"
   end
 
   depends_on "cmake" => :build
 
   uses_from_macos "zlib"
+
+  # Fix to build error on macos
+  patch do
+    url "https://github.com/bbuchfink/diamond/commit/68963336dab5dd02a4ce5bf7a3e936cd919244b0.patch?full_index=1"
+    sha256 "5522d188beb8c6296f3cd39f5ab0a7ce8dffce265f0e8a761b873368c75befb8"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args

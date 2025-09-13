@@ -7,6 +7,7 @@ class ChromeCli < Formula
   head "https://github.com/prasmussen/chrome-cli.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d551c02cfc196db2d8e930c9c58c6aa6c397ad2cddd4990a6b368db465b3a467"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "628f12ae25a466c35328cd1578c6428ece0942416f07e5df663919edf68d1c6c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "807ae024d63682ce4573ea99c27172c606f370b96a21cff8a4626ba3aee8018b"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d06011bc7b3936bbcb44f2f4ab49b4749000af5c325d29afd85090148c8481ad"

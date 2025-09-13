@@ -14,6 +14,7 @@ class ElmFormat < Formula
     sha256 cellar: :any,                 arm64_ventura: "1f6526cc7adeb4fc019894188906cd9130f69a02912a73b1599394c16a777f9a"
     sha256 cellar: :any,                 sonoma:        "6586c687d47970c27ec7a1d5ece3a71b0137ef72f3d6e13db501a9e2d3be5dd5"
     sha256 cellar: :any,                 ventura:       "4895173ac11f28d140d23c7795ec46a17252862b99b8b17cb762a01e0c2f7e65"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f9b5d8604a3e94980d6b41a8655abfedef71dd6c8407ab2f96a52c04446e64b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0077781afea83af1e8bd983239763b30fae56285f04f86e4a03a849cd87b8f43"
   end
 

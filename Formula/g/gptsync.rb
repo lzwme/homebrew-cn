@@ -8,6 +8,7 @@ class Gptsync < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "bbe45718163e20c2768294dc78efc0193617838f559bcd5b1a5dda8cbec58beb"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ea49cd4b6cbba08342f764f78e56496a594edc524a8dd6ee3e0a475d6b558710"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "32b27f3cc32dfca25b1c1cbe4ca3518420cd1eb33cf867ec3d7d3941c536b4ba"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "81ad272478d34de44777be2688ad93d6bc82990ca97876a4ce7c4a9dee9be2fa"

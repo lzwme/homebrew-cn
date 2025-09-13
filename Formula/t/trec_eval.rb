@@ -8,6 +8,7 @@ class TrecEval < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "76b82a760b649ff274423803886addc93b50219638567a293aa3cfbb996da7bf"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fcdd6e403afdb47f056383b66c17ec205973b463c9f09e0991b5272eacddfaa7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "55f874cf4900def882e6d43572bb1da136c2b2fc4a457bdd0fee5a02e865b197"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "16c8aaa0d9b33883411eba081aee36c8dda1bc3e2ed8ea84e9883c9edf320e9a"

@@ -9,6 +9,7 @@ class JsonTable < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "15a5edca4af928b348bdd6eb9c121fec87b790aaf13431e8a0a1753756e3d433"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2a0e4783bbce7faa941caf2506f8b7d00503c2fd904f4902add6f3e1f29882f6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a11c671903d3c7095c3c9f650e1162afd2f6ccc189c8109162886182d8fd68f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e92d06b25f370ab9811406799e31be9e8f775e88ae9a9417940f4e8a54940c3"

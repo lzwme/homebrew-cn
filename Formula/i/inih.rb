@@ -6,6 +6,7 @@ class Inih < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "2da037de9e1fcd435b7f6ce72ad3f4d68daba4309177706b4985cb1a8b177410"
     sha256 cellar: :any,                 arm64_sequoia: "091fb8df3a4b359eb9901ca5cbbb3c933884eb7c5ae8f3501cfbe42bf45c9310"
     sha256 cellar: :any,                 arm64_sonoma:  "2e705b5f3bfd341b9d6f482bbaeee593d2471e89b39b676f8c2a343121fe0c96"
     sha256 cellar: :any,                 arm64_ventura: "1275d4633d996f2ebeb3ef1caaccf602fa379f8fae6bc5de7c5861734eeb4add"

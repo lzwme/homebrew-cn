@@ -9,6 +9,7 @@ class Brightness < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "0e6517dcfe7a3a982012ed8311ab590f4d071382d9e80ff60c8dba7dc0075e0a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "92e87e26e1e82ded8087e37e6e94624f80af2b1d84248fb70653da8c86688396"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7b58db49a33ceb05f73c15c3a138bf6f9c0c20902fc77395ebe980be328c3418"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9eeafad9f79ffee161eff12eb18073e5c3e22cdf00c727aead7f759e8d26b62"

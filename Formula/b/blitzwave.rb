@@ -8,6 +8,7 @@ class Blitzwave < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "af9617a5b1ac77f4118d9bed451601510403a32d7e45c1c0b0c67073f36a724b"
     sha256 cellar: :any,                 arm64_sequoia:  "6ddfd2d5b7388e38647c23c2556e37258da48bbb0408290ccc1e54c5970fc68f"
     sha256 cellar: :any,                 arm64_sonoma:   "358c1c33c449b774875a06bd2ec0dd68d306bf7a829ca7b79cd69d4ba9616dcb"
     sha256 cellar: :any,                 arm64_ventura:  "76ae73757551645b65f9215711c26a43d6dc9ef8226d9812abbf032ee4092921"

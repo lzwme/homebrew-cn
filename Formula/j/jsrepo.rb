@@ -6,6 +6,7 @@ class Jsrepo < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "521b2ede067dbb80308ea2d91469ea718ad703d6155ac5cbbeef65b493300082"
     sha256 cellar: :any,                 arm64_sequoia: "bd91139d3017edebf3939e09bc876a83241071d5aa3fc16fded29321ad4062d3"
     sha256 cellar: :any,                 arm64_sonoma:  "bd91139d3017edebf3939e09bc876a83241071d5aa3fc16fded29321ad4062d3"
     sha256 cellar: :any,                 arm64_ventura: "bd91139d3017edebf3939e09bc876a83241071d5aa3fc16fded29321ad4062d3"

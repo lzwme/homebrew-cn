@@ -6,6 +6,7 @@ class Kalker < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b9cc295c306de2a6bd64bb84980bb5a20b6ba873aba1b30b6c429b10bd993c4"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3a491f06efb90a2897916be0b7196e80a4ff4d9cd79ad005756f05a0b35872e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae8934b2db6234e18f5ef6e726dedc9e8c06c4b861710b0d563806bcb19cd529"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "894749ccb8da73ac24530b365159a6fc10447c2ed49f12bc7392f51542b9122d"

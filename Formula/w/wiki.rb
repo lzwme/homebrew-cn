@@ -5,8 +5,6 @@ class Wiki < Formula
   sha256 "529c6a58b3b5c5eb3faab07f2bf752155868b912e4f753e432d14040ff4f4262"
   license "MIT"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f04d4a1f0e1ff026faa5c23ff76285373b149aee6ea15cac6e15675566f2c0d5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ff6fe02817f0844c04ab7f49950a4002ddb29aec162412c8dae098ee3d8a27af"
@@ -22,6 +20,8 @@ class Wiki < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "bd1b52730bbf5bc503d3fece003b069e248261616d9d02767ef019d87659bdd8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "382e8b0d2644f4eaf1fd5132262dbe66a9c89549b0f38e96254ad37969a2a709"
   end
+
+  deprecate! date: "2025-09-12", because: :unmaintained
 
   depends_on "go" => :build
 

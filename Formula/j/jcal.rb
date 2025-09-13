@@ -13,6 +13,7 @@ class Jcal < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "aba60dbce990bacb3f58d4a08e1a5251e74d2d3f57965eb206f2bc15a7bd2390"
     sha256 cellar: :any,                 arm64_sequoia:  "31377fb6a087e5e70e9ae8a1bc7ac390db8efa860f7a956a759b27e710fe21e2"
     sha256 cellar: :any,                 arm64_sonoma:   "45f6803d072d0989897f3f1995abd33b4f1036b8b7921fb9abfa59ee9467df90"
     sha256 cellar: :any,                 arm64_ventura:  "199711a3aa65d8d6b5d7ae804e99f0025ad8eb59c77f37d4058566edc6c0d1eb"

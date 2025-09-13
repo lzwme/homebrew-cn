@@ -6,6 +6,7 @@ class Dqlite < Formula
   license "LGPL-3.0-only"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "2612b6440e208b6942c869af460909ac83f64d74d82c32cfbf0141a7e7d8c1b4"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "4fce20b238a62fa6905f384297b8db3ddb2444842295d12d50ec588e9c790646"
   end
 

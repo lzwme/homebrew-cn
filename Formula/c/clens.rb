@@ -8,6 +8,7 @@ class Clens < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "ae9f115b19edd75f00e434a0cbc10025f607c99482ca901323005abf3a9fc93a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "27badceb51069c0b5dcc5673744b149caa21eaf48719005480dbc0b6dcd8a153"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2c2082a66bc51ab50ef09640e4a4526111455a6545a21e9907c62469ea686d82"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e42ef7f7f467d0bbe324659c9fe2a89c0049968a580bd1115d93a8423af0fe1"

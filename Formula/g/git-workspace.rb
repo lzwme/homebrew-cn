@@ -23,6 +23,7 @@ class GitWorkspace < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "ff841dbfff6684c2d11c1e92d6ffbf4397d87c59cd1f04527b372c6df7ccdb37"
     sha256 cellar: :any,                 arm64_sequoia: "5ef41bffe5e1f4d2a3f3874db4cca0ec3924f7667c50f31834758581bf082132"
     sha256 cellar: :any,                 arm64_sonoma:  "c11ad5b5dee8c00c0d0421c2ab7e356160d70518911c760fd5b43187c1bc9eb6"
     sha256 cellar: :any,                 arm64_ventura: "f1e37cf9916870cbe619862abab8b9b6a5c0b0c63b8e69f6ca35768bb3ce8109"

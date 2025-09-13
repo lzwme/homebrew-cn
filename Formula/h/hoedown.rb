@@ -8,6 +8,7 @@ class Hoedown < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "73ef87613d6b099fc9431c878d5b38912eaa0e9d1fa5c60dd6710695e54065e0"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fb7b81c0d930df8830f4424d2737dfe94320153725066bf2669c24f9cbb9ef46"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9b1beec1ef5663b3a9f945403dbd5337e1c840faaa6662faf18e39c41c435963"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8ad1617812e2acc482387a1fed431b102a43cd3c641f4b639131a451c2608077"

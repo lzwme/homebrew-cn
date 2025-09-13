@@ -12,6 +12,7 @@ class Clarinet < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f376488eff2caf35ef36e146b1b10f37ed914bbdf8bc720e6b6a5d099cce1962"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd863f1bc97b93bffff1af34f0e182bec671d6a351d5b78c0f42703ec8f01c5a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "507a8ac3ecf6b555ce0b3dd8b3cbc3666b7d46aacd2a539a046740ff4c890114"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "be90d3814bdb9bc165e7782dd011e35d3dc73da9a05308f1c9860efec7319e46"

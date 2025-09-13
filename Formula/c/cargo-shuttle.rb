@@ -7,6 +7,7 @@ class CargoShuttle < Formula
   head "https://github.com/shuttle-hq/shuttle.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "dd6e06098fcfe70f338b6eaf9ead44976d090d18b05fdb374f51c47a8ed5a156"
     sha256 cellar: :any,                 arm64_sequoia: "87db38e27c724b005f4141c6e21aa96c2a81dc1cc6205538cef165077d8eb064"
     sha256 cellar: :any,                 arm64_sonoma:  "cfb1dd6ea4c8a01a0a6ae8f138b92748425e91cf8b9ed728372178c86b2f359e"
     sha256 cellar: :any,                 arm64_ventura: "c71f0e0c163602644d6a191fa4eb1d66f6bc35368f14c02843dbe71e9f29f568"

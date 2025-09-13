@@ -13,6 +13,7 @@ class Treecc < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "f2b78957fb3111f30628833a2f8de46fbb1e2b603fce6edefdee88936759372d"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9d079ee6685d1432e363a820725469f633d8d649e235e7bf95a549d8a34b7789"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c98884b6106530ec5a9e7984d5bd9c18637794f9e52168c4877a7f72c0f068a5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a9f078361781eeb11f2a5f595c0728c6753af61f8b2876c390d469bde5f1467"

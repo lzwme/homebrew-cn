@@ -10,6 +10,7 @@ class Jsonpp < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "42ceb483930d899b0d24a6c8a39fb5ff94e211796cc68ecc9de948612fae8361"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fee3f13de44648f26cf9c2928e2c0908117749ebed6265109b099c1259d7af2c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8abe179d20a4dfc3ced5d5f13d51480f284ee6bc1229025d643d22516321c2ce"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef3e05f55a21df7fe9b26309694de0a4678e3d6ada76dcad471687eb1a75ed99"

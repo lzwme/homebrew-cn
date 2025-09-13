@@ -7,6 +7,7 @@ class ClickhouseSqlParser < Formula
   head "https://github.com/AfterShip/clickhouse-sql-parser.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3821f51319a11da4e043be3076b5e3cd376d402dcd613a912c27233a2f1577b6"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a7c717fb67c67bb48de1705a051a81b885e3fc92be70b69bd3f7f40267baa76"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a7c717fb67c67bb48de1705a051a81b885e3fc92be70b69bd3f7f40267baa76"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9a7c717fb67c67bb48de1705a051a81b885e3fc92be70b69bd3f7f40267baa76"

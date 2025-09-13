@@ -12,6 +12,7 @@ class HyperMcp < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1ebfef44acefa02049bf5e852cf4e3f16be92b3e7a2cf8dd99763da1d1e16c5e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2a40f57cf3556706e5b717dada11611bdb7afa58dc9dc4551af71f27c7c32697"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ffe1bfa3373de6953edb64233ffe1520e6db93ed494fc9b34c99d9123eb585e"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3552476365a056ed3eb7a784a16fbfee4cad0353f4a761d00b8b9e935d4318db"

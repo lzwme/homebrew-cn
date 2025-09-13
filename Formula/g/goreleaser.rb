@@ -8,6 +8,7 @@ class Goreleaser < Formula
   head "https://github.com/goreleaser/goreleaser.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c382942e85e797f5b67eb8f2d667cf0beae75f5db4c5b5115b17e96ceb7c5037"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "829730ea63eb9e456f2826c2bbdadd46a140ce0ef28b345f17de21453e5497ed"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "829730ea63eb9e456f2826c2bbdadd46a140ce0ef28b345f17de21453e5497ed"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "829730ea63eb9e456f2826c2bbdadd46a140ce0ef28b345f17de21453e5497ed"

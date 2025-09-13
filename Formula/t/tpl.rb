@@ -9,6 +9,7 @@ class Tpl < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "c308e47d85f79d24b666e56b5c980f7593ca25816e5e73b614964a224bf82466"
     sha256 cellar: :any,                 arm64_sequoia:  "563eee39c340a994167ebeaa62bba135164a2873031485754b3bd237e235a313"
     sha256 cellar: :any,                 arm64_sonoma:   "648d49fb0cd54c646e5257ba9aba1b88867913b5cb54e8accdbdf45dcd2b038d"
     sha256 cellar: :any,                 arm64_ventura:  "2bfb6b7bbdfecfa9aa8e25c3841dd9dbc6d333c746792a446ac729536c643475"

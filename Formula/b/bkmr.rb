@@ -12,6 +12,7 @@ class Bkmr < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "abc4c0058f5e8591f81f543bc77039c29e7e45bd0b1416a381b900e8005a8bb9"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1310df867318122de59841dbaecfc0ae58d5729950a3819b13723afbf5155ea8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06330a9711b3f1c44d0a47a88a802a2bc930f2fc8f6b5535022e1691059f3d0f"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "928507808c72815ead4599f91b4e335b492edacbe4768ac34f2fa531fd37779a"

@@ -7,6 +7,7 @@ class TerraformInventory < Formula
   head "https://github.com/adammck/terraform-inventory.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "bcdc79974fa55bb1087fe38999c01b1136c56f0b733706bf9b87fb937e81aa9d"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8779884bc89245540e8bca1eae1ff1205e9dcfb406b2b306a5488cdc161547bf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "45e0a0a0852cc89534be9dc22760628b624e1e085d25b6a30bcd6ec1f25fb9d6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "49d755bc67a9ac995c186a4143723379d87ef43ea76018706302aad4ac135efe"

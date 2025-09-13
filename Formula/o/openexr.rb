@@ -4,16 +4,16 @@ class Openexr < Formula
   url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.4.0.tar.gz"
   sha256 "d7b31637d7adc359f5e5a7517ba918cb5997bc1a4ae7a808ec874cdf91da93c0"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0b87332a88c224b8090af828120ddbf32a054ebc5b854cf4f377e6c7e5064c99"
-    sha256 cellar: :any,                 arm64_sequoia: "9ade6e4cd035310443eb46105b4c83aa365815c91377bf696a0685393d6de755"
-    sha256 cellar: :any,                 arm64_sonoma:  "0bc589d05bb2b9f210473cf8d56ed83ef0dc7b2764a8a461bc2afc8803d2622e"
-    sha256 cellar: :any,                 arm64_ventura: "9ee980357bf552516799bcb6c7ca3a0deb6922337a8d99846b5edef95c62e937"
-    sha256 cellar: :any,                 sonoma:        "334fcb1af5ddc4888fb2d1a02b66141634597c0b9ce5a358d38af6b3be1a6d4f"
-    sha256 cellar: :any,                 ventura:       "78ce6f31f674d776a9f34f08ce9dda578b5698037b8c12252d97b5d2859ae692"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aacf9c9c68dae9fe9d5b7961ec2716847f581363d74760c4d1a8259020613e64"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99095f437c595ad947a9d78b869d9ef2940ed03b1465a763b886225e677d405e"
+    sha256 cellar: :any,                 arm64_sequoia: "c4c825d0859bc9cc9bf6086e69c25caffca882ef6c41f69913a796b650ece152"
+    sha256 cellar: :any,                 arm64_sonoma:  "e928cc92ecd460cec89f38e48b2060b4dbf5c6bc0bdcea88a88a1dfb1e46d344"
+    sha256 cellar: :any,                 arm64_ventura: "9ba599ee84193cd7e369deb04d5105caa7759d7b0130f329800ba88af73e70b2"
+    sha256 cellar: :any,                 sonoma:        "dd7af49befb4bd0a262e06e839d7bc01a7fb854cfeab0e91abc53985161c8f9b"
+    sha256 cellar: :any,                 ventura:       "3f968e598539290d5faef73e9109a975350909d11f14b543ebb3e9dda7e78589"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4484104eaaeccf2aa2742c49a0abae0f8acfc57b9ec31731dbee921897a4ebd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec8112e2e852862bd18e1111d6b17e9a6e74e3a140052f5365cada1ea52b5f8d"
   end
 
   depends_on "cmake" => :build
@@ -33,6 +33,9 @@ class Openexr < Formula
   link_overwrite "lib/libIlmThread.so"
 
   def install
+    # Workaround with `openjph` >= 0.23 that doesn't include the prefix for cmake files
+    inreplace "src/lib/OpenEXRCore/internal_ht.cpp", "<ojph_", "<openjph/ojph_"
+
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

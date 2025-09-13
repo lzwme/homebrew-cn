@@ -11,6 +11,7 @@ class Harlequin < Formula
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "ce0fb2348e3b45849ec98600aab9717ab36caaf48c3f63384512e2870e2a56f6"
     sha256 cellar: :any,                 arm64_sequoia: "2f7e3c61da5c81a62731f891a510abfccc254fe528820ca084f93abeaadfc34d"
     sha256 cellar: :any,                 arm64_sonoma:  "0afc3f95b075c49d580459b1c3fec8c7415da9c788acda94e3c670512594c038"
     sha256 cellar: :any,                 arm64_ventura: "e6131391ceea6874c3e8134e73440fff9a0cdbe5c1db466849e5cb9e4d1173ab"

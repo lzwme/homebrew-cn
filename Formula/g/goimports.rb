@@ -12,6 +12,7 @@ class Goimports < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b45ecb2d58281f3d0500728dd296ed6b9992c15ca210208a137823b00eea7c4"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b45ecb2d58281f3d0500728dd296ed6b9992c15ca210208a137823b00eea7c4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b45ecb2d58281f3d0500728dd296ed6b9992c15ca210208a137823b00eea7c4"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0b45ecb2d58281f3d0500728dd296ed6b9992c15ca210208a137823b00eea7c4"

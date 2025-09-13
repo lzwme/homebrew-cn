@@ -6,6 +6,7 @@ class GeminiCli < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256                               arm64_tahoe:   "e53f6fd4498c8bb19817e531f1f899be1de49d76855761f95143640bed528d4f"
     sha256                               arm64_sequoia: "20e4728f95b54e09bfd7c0b2b2508032726d50a4266f51780e5ed08432327111"
     sha256                               arm64_sonoma:  "eb5687df8e4c0ea08a28fb46f3eccb2fedf90c4efb4d01f960b7259923b153e0"
     sha256                               arm64_ventura: "15b9245524eb26637f1ad9fa00796ba5249df1efdff963533be2fa015ea1d9e5"

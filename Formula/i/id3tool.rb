@@ -10,8 +10,6 @@ class Id3tool < Formula
     regex(/href=.*?id3tool[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c0c5fde02924517f49e33c33f18430726f0b613bb013fa73d0eb035a6d34755f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e67faa6f3ae68053ff10e5e16e3dfad49dd3f67a578114109a143c6131c44391"
@@ -30,6 +28,9 @@ class Id3tool < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:    "15050e11c91c720f0382457f0daabad0e6edc395cfdcbbc50bad30ecfe551661"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbe4dde2f28fb22ebd981fa3faa4db03f327a43531c102a6a47a463e0f329d6b"
   end
+
+  # `nekohako.xware.cx` is not accessible
+  disable! date: "2025-09-12", because: :unmaintained
 
   def install
     system "./configure", "--disable-debug",

@@ -10,6 +10,7 @@ class Truecrack < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "fa006f2b40a1844949c625ee3ded3b0626420c1969b7595b5081ba471a8ce234"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f14ab900548cbe7d0b0f713604d6d63a7c41874e9d73d36f9aa0ff36ab58af33"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c14111bcb0920f73fa1af5ed3daed97cb19152ea38aa9583a75c5c9a05b47d81"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "dec2443fbc84baf2fddd59c65666390b490b3156354fe092eaa4440e3732c078"

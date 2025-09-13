@@ -10,6 +10,7 @@ class Gotags < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "c1e572bc38c42b4bf4b0dc789976cd496403f2eca5526d89580a2b92d1187c68"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f52b68fbe9bb332e8897c64df4b8843de5290cfd2160f1b1854b6939c1475d8e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fa2004a6a7f413ec2536eccbce3ebd62a17b30f1fdd37085ff6f007fd39e756f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "06c5aa68685eed2b5118a8dae5e6755fdb8a5498f134ea67640cf9b767b27433"

@@ -10,6 +10,7 @@ class Hfsutils < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "3d8d4be93e186cb4e5f1aee2e128bbe94f68341e463b3fa86ea5cf15c30d0603"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2a486e1123355f24eb17dd33821edbfa4c9f7f505ffa9009f8380a0000b4f45f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d2cb41e60bac6d99365b3efc77078c76f6d13c92d9cc5413065db01f739a8c9"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a8245a9a524d4f34c9a005a09a56f6d190ec20583c43fb8c1317fbc13827fc37"

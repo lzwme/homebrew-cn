@@ -3,12 +3,12 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.com/github/spec-kit"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.0.20.tar.gz"
-  sha256 "2046d7a3c43b33964006ef54ef56ad10a7c77c6ee6c86ddb5a72b2c6fa6b54ad"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.0.23.tar.gz"
+  sha256 "1c1dc7be917addbc80051009f9a3da4d9e02b6ecdae1de9032223cf06b34d13c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e2271d887952417adc570ebab1726a629e82330c91136c3a5cc613dfe0c94e94"
+    sha256 cellar: :any_skip_relocation, all: "357380bed162c09035fd5e5db2c171666f5116657a69cbdaa534956f6761e6f2"
   end
 
   depends_on "certifi"
@@ -84,6 +84,11 @@ class Specify < Formula
     sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
   end
 
+  resource "truststore" do
+    url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
+    sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
+  end
+
   resource "typer" do
     url "https://files.pythonhosted.org/packages/92/e8/2a73ccf9874ec4c7638f172efc8972ceab13a0e3480b389d6ed822f7a822/typer-0.17.4.tar.gz"
     sha256 "b77dc07d849312fd2bb5e7f20a7af8985c7ec360c45b051ed5412f64d8dc1580"
@@ -99,7 +104,9 @@ class Specify < Formula
   end
 
   test do
-    system bin/"specify", "init", "test-project", "--ai", "copilot", "--ignore-agent-tools"
-    assert_path_exists testpath/"test-project/memory/constitution.md"
+    system bin/"specify", "init", "test-project", "--ai", "copilot", "--script", "sh", "--ignore-agent-tools"
+    assert_path_exists testpath/"test-project/.specify/memory/constitution.md"
+
+    assert_match "Specify CLI is ready to use", shell_output("#{bin}/specify check")
   end
 end

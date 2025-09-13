@@ -8,6 +8,7 @@ class Jshon < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "ba745cfbfa0a47f539e46b599633805b202ca8766b1cce5831b49d6bf99ca7bf"
     sha256 cellar: :any,                 arm64_sequoia:  "c71de9488ca461a0438c85645c42ba5e5c8b81c9272c2639c258a5e6b80d5432"
     sha256 cellar: :any,                 arm64_sonoma:   "9f0b7bc5a2120f0ee203a1398bf9f35b45e3ba143adf38a6220c066db09e48f6"
     sha256 cellar: :any,                 arm64_ventura:  "143f521901ed3810e8b535bfe42acdb099026a2560c96a65095d977f5e1bb331"

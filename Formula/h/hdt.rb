@@ -8,6 +8,7 @@ class Hdt < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "669b29ec8ed486008cb630759f7e6b0c60fe3fb4c8a86664fcce126c13c38ca8"
     sha256 cellar: :any,                 arm64_sequoia:  "85d785dfa207bd588ef5e630b9a5adde0d98bac472119547d6128e0544de7bb4"
     sha256 cellar: :any,                 arm64_sonoma:   "606b24419877439b12ba1833394854122acf1342bf10fa6801b32d213e12f1aa"
     sha256 cellar: :any,                 arm64_ventura:  "a68a7b396c8b98c042548bd50ea2fc8736e1588be1c1f0d092bcc9d150df1f32"

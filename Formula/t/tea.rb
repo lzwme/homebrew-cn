@@ -7,6 +7,7 @@ class Tea < Formula
   head "https://gitea.com/gitea/tea.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "87cfe6646aa8dd571c5c19f51af124ef9515fae6090acf7952481aa1d0190c51"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "583f5f467ac41ee8780036f97b3c34e6e925c2c8175f17eed3cfb42401c6b982"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "583f5f467ac41ee8780036f97b3c34e6e925c2c8175f17eed3cfb42401c6b982"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "583f5f467ac41ee8780036f97b3c34e6e925c2c8175f17eed3cfb42401c6b982"

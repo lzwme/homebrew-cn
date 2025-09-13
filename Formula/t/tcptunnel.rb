@@ -8,6 +8,7 @@ class Tcptunnel < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "7a7efb2e5ce2524bfa04b2942b08e245786ac43a8bf4fe6bfd74ec31b9deef4c"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8cda7483257c117ca1f5fa465c9659b2dd6ca6e88705c95c19a299b0bbdd2319"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "566b47c82002d0bebdd2d445c83e6c32640e42cbbbb9d7b818b0519b62c0f252"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9503c7ec45671862d4d806931e056c9d0c6e7ea9cdda143bd17ea355b6c6a78a"

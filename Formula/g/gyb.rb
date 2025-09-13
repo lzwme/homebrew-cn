@@ -19,6 +19,7 @@ class Gyb < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc5241d9625d2796aac2ce82e964819b65ba2fee500aad880858b847a3926582"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4cd32551d7760193861b67971bdb55d9041e4d2bac2e60361569591eea52b7d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4dfc941d79128e422a5773bbd4714c19ff753b3e28d017ca9a877a4c01bfdc03"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "fd58be575d7c7b6efe2a1b2f194fbf30303571e1753d2726216eaf3fb7d7ae2e"

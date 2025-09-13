@@ -9,13 +9,12 @@ class JwtHack < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ba9109885de2e95de36eefeb4b8a8578d162ffc424080791b00e2ba1a94585f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ddd1a44241f3f273eee0f4b4790475041a1db4d0ea1639e9bfaf948e173f3f5b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1f311059d98670431048818181f3434a1f3b858d8ffe52819f00fbbd4d5d58c6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "09afbf532da0113f42a01ea74f8b8394d40786a5b41bfb91d8817b757e17c27d"
-    sha256 cellar: :any_skip_relocation, ventura:       "73db99c85339a1b2610d5478f1847d918384a5bc670e9a76b9685e8cd6e5dedf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ab5132ff6af86ba622082a5535e68034b3f1b1a638e6004677d42d09eb29aff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1189d0ad3cda89093337bb47ae8c6032246b98a695fbe8cfdbf84385bf12fde"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5c28d9090be92f5ae472584d4c6b2dbb2c038bfa6e2f148023345fe40f468b8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "853bfed2699d13d7956f451870fe7adc10954917a16c80c0bdb812e7fc0b864e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3d5c90a3426e9cc07efc5ebcb7050cdb82b63e1ac7e5ae0ac316b017e65c13fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbf365d16377f64f9ecb82e2fee811ede310fd4af54c1dedadbfb3fe9e31462d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94da9d3f057a84f868453aff625fefcd9ab1931fda4c3507b03af3409565e174"
   end
 
   depends_on "pkgconf" => :build
@@ -23,6 +22,12 @@ class JwtHack < Formula
 
   on_linux do
     depends_on "openssl@3" => :build
+  end
+
+  # add missing fields, upstream pr ref, https://github.com/hahwul/jwt-hack/pull/77
+  patch do
+    url "https://github.com/hahwul/jwt-hack/commit/7e607dd3d261a1a97e4bf1a056aecd9a3ba2f686.patch?full_index=1"
+    sha256 "52a71652d0621103994e175eb29ed26991e5fcfba459feeadf66ecc07688eb56"
   end
 
   def install

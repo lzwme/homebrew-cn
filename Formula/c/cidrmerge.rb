@@ -8,6 +8,7 @@ class Cidrmerge < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "a1557d597adadd169e8de642a61a2adcc610583022f4fbfc391a80c6bc7fe46e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "37c60d84cb5235c7e6f49d9be574b422aad1c9bcd2767a1ac54f037d068a1635"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3fe9d3fcede14ef8846b83305b225df17a92af3f0430277e47a93042abca5487"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "66c685d8c347fd583afe154475091c456ec7c9e7f0891542fbe1a46bebfad216"

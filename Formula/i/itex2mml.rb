@@ -19,6 +19,7 @@ class Itex2mml < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "9927eb95f7d9d7dddfc7c684ca069bfa8b612c519461ef5233aa54098b9ea8d9"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7218674b662a6415899e7eb4dc00ac2634c60837b7a4b9fa7a4019cf668d8890"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7d58887108a80df9633a6d0740d9c7c8e630ca95f440878d2b75bcd1ac626951"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "21fbfa1382c97a13c162899ec72451dccf4d9a4c368c3c0a3fc5e70db4173497"

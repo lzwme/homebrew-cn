@@ -7,6 +7,7 @@ class Carapace < Formula
   head "https://github.com/carapace-sh/carapace-bin.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "480497bd3606d78fa500a0479e7bd799a5b16bd9e0470db760c406696803ec79"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "480497bd3606d78fa500a0479e7bd799a5b16bd9e0470db760c406696803ec79"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "480497bd3606d78fa500a0479e7bd799a5b16bd9e0470db760c406696803ec79"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "480497bd3606d78fa500a0479e7bd799a5b16bd9e0470db760c406696803ec79"

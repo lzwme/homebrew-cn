@@ -7,6 +7,7 @@ class Ignite < Formula
   head "https://github.com/ignite/cli.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "631b69732431837e8d64dd62d05c8e7a13ee0cc2d64dc57469caf2b5d7a354fd"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "09e37bf37fe54f64d51de3078a3ebfde3c1474f566e2b0087d4ab109a47692ec"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c30b4d2d4c221326ffd6a506d6ab63d636d9b3972427244a1cf1f688c34626ae"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "45b34f9f06fa6488b4b0f1ff198f7a382d4d1651ed794e94dc04e621d52def2a"

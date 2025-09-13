@@ -9,6 +9,7 @@ class Ansible < Formula
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "ae61a40d92fb421b706dbe4feeb3d996f2bec2509f70d9f9b3d6c84c2550e047"
     sha256 cellar: :any,                 arm64_sequoia: "a14972267bd58edac7704196c9d4d36c324568fab7b0f97b46561e7e6365878d"
     sha256 cellar: :any,                 arm64_sonoma:  "fdf2820de20b9ab4b6c4072d3bc0db431e383abb7bf917bebabe50232ffcbf28"
     sha256 cellar: :any,                 arm64_ventura: "400a4afaff0852f55945e7cde09ec9f8f257fa68d4732905ef17f507ba8f1926"

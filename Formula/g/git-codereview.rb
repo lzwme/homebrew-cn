@@ -7,6 +7,7 @@ class GitCodereview < Formula
   head "https://github.com/golang/review.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd553d8c7d4d86e0eaf4619141954804677f7622c0f6f2503e60cf25dea3d652"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd553d8c7d4d86e0eaf4619141954804677f7622c0f6f2503e60cf25dea3d652"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd553d8c7d4d86e0eaf4619141954804677f7622c0f6f2503e60cf25dea3d652"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "dd553d8c7d4d86e0eaf4619141954804677f7622c0f6f2503e60cf25dea3d652"

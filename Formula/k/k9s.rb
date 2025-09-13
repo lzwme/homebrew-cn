@@ -14,6 +14,7 @@ class K9s < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e2c7bb4ec8796e1e3decf5ccc290ccd9157afab74ecdbb9b364c6b09a8d4c27"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "71bdebb63c3572b272c185594fa92cbb0ed874660298b408e40bbdd9a98a028f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0852ef462d130b1b850ef4ffd58883c3238cf17b7128523cc120d35f1b2cb929"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3f0f3c913aed0b1978613f1e29f8f9c7c5d1aa7b91ac1cf4eb1c0ff6a2cd54d9"

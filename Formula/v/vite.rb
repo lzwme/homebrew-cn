@@ -6,6 +6,7 @@ class Vite < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "cd49e6a514ff259a0ce37045d2d5d6d0347b9b6a7a51e393d8cf1e5194c9d20f"
     sha256 cellar: :any,                 arm64_sequoia: "f9f862ff8c9ab1430912e597a5d0890f142fad84f3df12e190786080ea9d9f0f"
     sha256 cellar: :any,                 arm64_sonoma:  "f9f862ff8c9ab1430912e597a5d0890f142fad84f3df12e190786080ea9d9f0f"
     sha256 cellar: :any,                 arm64_ventura: "f9f862ff8c9ab1430912e597a5d0890f142fad84f3df12e190786080ea9d9f0f"

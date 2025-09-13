@@ -8,6 +8,7 @@ class Ired < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "d022a67015d76e3fadf60c52e8af70afeb0d0a05c9ea7e0e856798623db17870"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "05e4599eb5ff1fd43a3865f5b14dc52db0eae92d3972fd83baa67bc1ad2b20fb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c0ca5910c721240b35e486d26d4f4fac34e55014fb3ecb92c41c89bb89c830f4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b152332ff671a52b4025c50746e88f84d91794e2fe433a9fddaddd10382b0cc"

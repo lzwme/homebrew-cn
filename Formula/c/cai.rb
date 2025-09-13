@@ -7,6 +7,7 @@ class Cai < Formula
   head "https://github.com/ad-si/cai.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bec82f6cf5bf77aa553f1f9ecfb5cf63840dedcdf3393e2885f5818e55d8aa72"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a6819ef2cd130e83a98ec23101d4c2cebd2fd45b52ef5d015e15a8b18ebb04a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "69abed5efde26e64f867bd8fdd7e428f5f611fd839a48cc6f45df78a16331627"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c9d7292bd88ae5b997ea3e9cd01a838210efd4b1d9ae39c601265c81f24bb984"

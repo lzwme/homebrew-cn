@@ -10,6 +10,7 @@ class Jobber < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_tahoe:    "66a3ab3ca421877c8d2e587ede10bd67c4bfc8ac66df67822b68fd4ea2a67d05"
     sha256 arm64_sequoia:  "fc6d39f5ff894aca7a8c037fcb599a2aaa4c5293614e56d6c4aaa6edca572be2"
     sha256 arm64_sonoma:   "b304010d591795e383764a1bc522eb495dfbe61dd6d864393443f3e8a08e4f91"
     sha256 arm64_ventura:  "bf6c94807680d1fefa82b1a1bda602454ccd86a6981ef3d4042cac8beaf209c0"

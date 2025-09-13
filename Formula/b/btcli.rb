@@ -9,6 +9,7 @@ class Btcli < Formula
   head "https://github.com/opentensor/btcli.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "e0ce4101d38aa9c70088a0e38ddc347ca6c24225a80358aa143384f92f6f0bdc"
     sha256 cellar: :any,                 arm64_sequoia: "205733c31f0b372707086a0e88be4204281205e54c9a628b81a83bbb3f0cff91"
     sha256 cellar: :any,                 arm64_sonoma:  "bf4f357823b6724d2640aa4ec320ae17cff64752a8ac796b1d6c7d208f4b9d08"
     sha256 cellar: :any,                 arm64_ventura: "e27e52182f28a82dd2c3ae19c0a406e1b49a199f82f9fb3d98f6d5b53aab1b37"

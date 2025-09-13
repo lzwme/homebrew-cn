@@ -8,6 +8,7 @@ class Ccache < Formula
   head "https://github.com/ccache/ccache.git", branch: "master"
 
   bottle do
+    sha256               arm64_tahoe:   "59c8dd1783dbd2fbb0671cedc0389ed43891a4ffe5dee010adb819b39bd30de1"
     sha256               arm64_sequoia: "e99e59f16c682d93fe0b9b5c7681cdce749f0b90291108fa74edcad569286d96"
     sha256 cellar: :any, arm64_sonoma:  "aa9c9558b72ef410e13c8718080ee0d98f67b2c3c04d11bf3ade424965bdd098"
     sha256               arm64_ventura: "35fed775f7dc5b4822e3b0ca5e59950b289a7840e776e7501133feb5c7830391"

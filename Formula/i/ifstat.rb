@@ -13,6 +13,7 @@ class Ifstat < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "6b215d7076e20b7465ac37f21c3141a87bb5801d17bbc238a9cf35ad5ebebd29"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7929e573cc9e8172c16c8a9d4a5c3ff51fb02ba824a70c4e749cea56e9d33ed2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "077e591c44a830e200e6587ea68eefdc06be3fd5ab6eafe867743b3f24a4d498"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c6dab0fa026b8e652bdefaf589924b6dab3ec148299090b9df4cb645aa5f7e7"

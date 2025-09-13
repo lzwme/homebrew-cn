@@ -9,6 +9,7 @@ class Takt < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "fb1c2a27bc7182659239d0ef52d07617a56aa6e0fb1498f531cd12e7b045d434"
     sha256 arm64_sequoia:  "89999aa891436126770e5d390013ec55a9f2eff6e569e046443de74b9cd648d5"
     sha256 arm64_sonoma:   "9cf5685481804bc8482d1f8d9eaa3b7e41465e70e8d04662e81243d9ac139aef"
     sha256 arm64_ventura:  "d9787c5847508262a9e7f4e61165e94c80a39efc54587a804a2fc20904acf42b"

@@ -14,6 +14,7 @@ class Ipv6calc < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "08235e0ba8b786f59963ae3db1e7137514aec83e218dd11e582212d2b0942e32"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3fc67a7ecfb7805480a9d4af97866763851b570742a4d19ca92bac2bbebb2da5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6172c77994817e23b21d59eb23311d15aef4518601a8936a82900fc0c2a9c416"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "290e5142336d042aea62f38e735fdfbb64e7f2dbe49f68690e7684be83f67fd2"

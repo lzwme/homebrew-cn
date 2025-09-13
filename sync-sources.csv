@@ -1709,7 +1709,7 @@ Homebrew-homebrew-core/Formula/e/ebook-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/ebook2cw.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/ecasound.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/eccodes.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/e/ecflow-ui.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/e/ecflow-ui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/echidna.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/ecl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/ecm.rb, Homebrew/homebrew-core, 0
@@ -3432,6 +3432,7 @@ Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.29.rb, Homebrew/homebrew-core,
 Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.30.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.31.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.32.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.33.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kubernetes-mcp-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubescape.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubeseal.rb, Homebrew/homebrew-core, 0
@@ -4096,6 +4097,8 @@ Homebrew-homebrew-core/Formula/lib/libscfg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libscrypt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libseccomp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libsecret.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libselinux.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libsepol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libserdes.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libserialport.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libshout.rb, Homebrew/homebrew-core, 1
@@ -4237,7 +4240,7 @@ Homebrew-homebrew-core/Formula/lib/libxml++@4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxml++@5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxml2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxmlb.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libxmlsec1.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libxmlsec1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libxmp-lite.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxmp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxmu.rb, Homebrew/homebrew-core, 0
@@ -6996,6 +6999,7 @@ Homebrew-homebrew-core/Formula/t/titlecase.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tivodecode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tkdiff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tkey-ssh-agent.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tkrzw.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tl-expected.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tldr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tldx.rb, Homebrew/homebrew-core, 1
@@ -9147,6 +9151,7 @@ Homebrew-homebrew-cask/Casks/e/epichrome.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/epilogue-playback.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/epoccam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/epoch-flip-clock.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/e/epson-print-layout.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/epub-to-pdf.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/epubmdimporter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/epubquicklook.rb, Homebrew/homebrew-cask, 1
@@ -14967,7 +14972,6 @@ Homebrew-homebrew-cask/Casks/u/ugg.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/uhk-agent.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/ui-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/ui-tars.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/u/ui.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/ukelele.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/ukrainian-typographic-keyboard.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/ukrainian-unicode-layout.rb, Homebrew/homebrew-cask, 1
@@ -14988,6 +14992,8 @@ Homebrew-homebrew-cask/Casks/u/unetbootin.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/unexpectedly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/ungoogled-chromium.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/unicodechecker.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/u/unifi-identity-endpoint.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/u/unifi-identity-enterprise.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unified-remote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/uniflash.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/uninstallpkg.rb, Homebrew/homebrew-cask, 0

@@ -21,6 +21,9 @@ class Wumpus < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "63f9a87dd8a82fc0bf2969cedfca5dd336e0e3575d6792bf3d8e19e6f3506332"
   end
 
+  # checksum got changed and no response from upstream, https://gitlab.com/esr/wumpus/-/issues/2
+  deprecate! date: "2025-09-12", because: :unmaintained
+
   def install
     system "make"
     system "make", "prefix=#{prefix}", "install"

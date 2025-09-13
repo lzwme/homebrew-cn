@@ -6,6 +6,7 @@ class IcannRdap < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "352c452c9ef665ece711bb01342c3781390aa320ac702dfac00b2a75ed1183e4"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "70d38d4a8ce06f1bacf93ab7c78f8a6e4b1318f356539b0d4a2539d1921929dc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "065c8f593a079ecca9cbeb45163050491d575e74b37f2249ff4f73a335084b9c"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1adb9b61c87c0e045373478be8254687a2685426553c073cad41cc7f3d890004"

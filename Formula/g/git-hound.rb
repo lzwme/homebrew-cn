@@ -9,6 +9,7 @@ class GitHound < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "15f176bb2320758e6a88797ee77011a189b7814857a0ed920dd4b32a3335012d"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "373e91c48dda4ac71e85490387430dbfdb73d27d72a0964a33933e8e6d5f1753"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "741af126dfc7d95d6d5b17efd48a36335e60fc1cf4847a5487e36a969739b2a0"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d2d41fc442a37b2902a182cb034a023bfcdb992fd27e7d668ddab3077bd07cd"

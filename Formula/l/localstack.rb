@@ -8,6 +8,7 @@ class Localstack < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "0b556116a15455513f2decfc2d4393e29233dcdedf878df383c60dc3b8f00a21"
     sha256 cellar: :any,                 arm64_sequoia: "064942b039d46beb004ec514125d6f4d5d0ae0232ed2813dc2bac930837295cf"
     sha256 cellar: :any,                 arm64_sonoma:  "bcb64ba6a6eb751acd228cc7c84947137c87ea397670783c9bf3a1775498c9a9"
     sha256 cellar: :any,                 arm64_ventura: "6140b1283e2e5b5f03010e3b0b49cad4428b36f10534a4d49a4534354cc0cab4"

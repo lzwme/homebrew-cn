@@ -7,6 +7,7 @@ class FzfMake < Formula
   head "https://github.com/kyu08/fzf-make.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8786caf5daf90384cca41a85e1a272a2ad14cbf2bb8c65588a37cebabfe5e9e4"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e00f0bf4be1b34568d1c6bceacfcc44c6ad35621c25324389a67c31a960a0ce"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5891f7052de2b659ca652d29ca5cd577f8d53efc36a0280fb6a1ab6c4ae1c799"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b00d80887e02b8e58e4b5dc65fb438de1678545cd241d8e47c0822335d2c6e67"

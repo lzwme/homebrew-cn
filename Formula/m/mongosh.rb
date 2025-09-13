@@ -8,6 +8,7 @@ class Mongosh < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256                               arm64_tahoe:   "18250abc4287a61b487172f705f42b0880ea5b3647bc27fb5b3fae23c31fc094"
     sha256                               arm64_sequoia: "601e71af05c365f1129e9a7274df01d7579319aa50f8e95d31e57186b43a8221"
     sha256                               arm64_sonoma:  "27e0df3a9a74950d061a8fe9f2fa2faea2f3d51f2b7dd0dab01d14149dfc654a"
     sha256                               arm64_ventura: "add8407a5cce26c1be761b5b2fce1e8b9fc3ca5daf8f7eafc3800d41bed38063"

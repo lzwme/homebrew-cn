@@ -10,6 +10,7 @@ class Heksa < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "1268c82b2fd88b4dd497010c2d7b897ea66d2a66d68e74987f64a3f5e2d21ddb"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ba04dda9e2366f4af82dc315932e46e298779ffd0a4a1e5bbf37f531b2c9b102"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b2e5970a9ac9da77a4e75733b5afe87fdba4704007b938e35855714c204ab9d8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "89b15d07d2e29580a0ee9b2f71fc60f36b71e2e7bfb8c460e24fcc5f005bd9e8"

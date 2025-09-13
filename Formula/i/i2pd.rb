@@ -6,6 +6,7 @@ class I2pd < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "b1e46138ec28478b5afcd12826198db06a06a3c4870f161faac1a3cb84555842"
     sha256 cellar: :any,                 arm64_sequoia: "cd47aa2172c982f58e69d49e68ca0ea2b7c84513cb1ee39346332e20f3f860ca"
     sha256 cellar: :any,                 arm64_sonoma:  "ea7d40766fe66d17d5ccb5d4fcbfae5784197e5f30b79f82bfd380c3a234a508"
     sha256 cellar: :any,                 arm64_ventura: "6a8ed761563b9d3addc5d27d6eb3bc89ca35e880f274d5ae8fb6efafb32df50b"

@@ -7,6 +7,7 @@ class IsFast < Formula
   head "https://github.com/Magic-JD/is-fast.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7fad53aafdc6f26096d8b0d78e3286bb7f32a6987dfc098077860ed50a226e7"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f9d792dd1d3f36ce2c01d17e0a6b8ded81940594e8d86171b4c503afbc5cf10"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c32f5c4bf5e5df7659d20fcf66364bfb0a5ab8d9059d7e394216357b9cc3634f"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b8bc007dcc8ae63a11f79e8539a05c336772ea9452b1ea28e06f3679088a3f83"

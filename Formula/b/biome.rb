@@ -12,6 +12,7 @@ class Biome < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a32c68606a82c5395e68bf97f2edf380f06afd9f5cc51df17afc335bccc7e049"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca8205a0a6111799b80fb9c0e5a2b5773e2bcb0e016a4640f2a8d7bf384d1c3b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f7f94025b6ebd0e824ea0515b2d05d4f412100ea64247d805bff75448bcd1c1"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "41ceb3e92e91e5f6ae5af68a74007002ac19c6085768bba14526e33bb60aac6c"

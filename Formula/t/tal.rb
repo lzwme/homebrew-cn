@@ -14,6 +14,7 @@ class Tal < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "a3aad8a5f10c8cee1e5b9dbfb673a6b05ff97774e5cb2f0f813b76c893b3e424"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "dd3c811b07d428e7beccf39eda7c3a0af73695f03188dfc7ea652472d492c794"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "94631ec0dafade563c1652e557981e5b4ed4f3583f3586bc9091be4d96c2b7b3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "717e28a9ea9f325fd72962d66372a1e4edc3b27e81ea54a861f8c54dceea0a56"

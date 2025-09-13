@@ -7,6 +7,7 @@ class Hydra < Formula
   head "https://github.com/vanhauser-thc/thc-hydra.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "1da116ec3e9e0c199532be9dab820da943fd90882a26c4299e5784783b680af2"
     sha256 cellar: :any,                 arm64_sequoia: "59462731671d23a67a26c61731967a0997cf97be55b47241bb7bc8773315d5b7"
     sha256 cellar: :any,                 arm64_sonoma:  "1587d19830a37949d7997933c8c2e0aabaef9d13ff054e588ae2c0461fd1b15b"
     sha256 cellar: :any,                 arm64_ventura: "e9ec5262f77f8f099f7d1fcf0a4c35d8cc66f71af7dd9629f4b662dfb4bbe125"

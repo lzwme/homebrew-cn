@@ -6,6 +6,7 @@ class Igrep < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "391741525996465c8daec9146826c5a7970ffe361a8587b420e627070f4ec583"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "434a63f52f457e3ab6cc31b65b9e68816fc7a61f68f207ce8256cbbdd821e638"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4d4909e6565fc5392780bd4e98ea21c7c3ac0c57c13de04718dcbae5d432f19"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "13aa62146a39d0ca77fd0447083250a91895c525366416a3a6b4f89cd7339916"

@@ -8,6 +8,7 @@ class Cifer < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "0ddcaf5c7910b356424491a71c0b42587701427aba17e0fdc02a9c088c148590"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8d9f5339ed8c92d74cc50214716df2c6082a559fdf26b004ff69e0468e3faf0e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7b6a222301feeb2df2db2337c86c5c5e0223e17d5df33bab506f5be9b9d7cd62"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e91e9087a69d7922fe1fe9f84e11e9f222c45d5b1b1cd794f1e7f0bf3a295c2"

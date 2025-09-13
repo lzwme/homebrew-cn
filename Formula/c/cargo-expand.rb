@@ -7,6 +7,7 @@ class CargoExpand < Formula
   head "https://github.com/dtolnay/cargo-expand.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e3c070ada8abce6d79f10316d11daf593cfb0aea72ad5a79891799ec5450487a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f1297bd6c41979bef12d675a6265024c737a6647297f36dd7ba80a613e6a3c4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "960864037efc716679dd0857fdc353e7f0f21992d77265ce63edf947193c330a"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "583c5977cd6d0e1848e91fdb7dd485a248e5dd4b4d38b101bd9187ef2c6401a1"

@@ -8,6 +8,7 @@ class Ttf2eot < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "d16324780cc0664cc3e5372cc1c6959062258a6480c23e4ca1791c0e0013f864"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a4063624dce85f67ce9f8d03c746e79350fd5ec24b3439cdef46e71bf1f07418"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "04c47f19d3aaac57af033502618dc069f0145102dc4296c17afd5ec871cdddeb"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "867b5d7d37b4ac230168ea41318dd3a6f9fed7b64dba3f6aed2e57ac3f89d9a8"

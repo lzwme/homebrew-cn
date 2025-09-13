@@ -9,6 +9,7 @@ class Poetry < Formula
   head "https://github.com/python-poetry/poetry.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "6e98d9a4d6c9023738492c65d79f6a85d8eeee6abddb7e859d57b3301aab0b99"
     sha256 cellar: :any,                 arm64_sequoia: "f4c7ba062dc04c5155362a74391f25e7742c73d8917c0d531a21c102071499a7"
     sha256 cellar: :any,                 arm64_sonoma:  "7e02732a48f55ffe4252ff9ab67756ce11914610d9db46c1e0c969b82b480f11"
     sha256 cellar: :any,                 arm64_ventura: "f9795d3fb273724a2f75fb132cf8d010010e17441f146124072b790d45f42a73"

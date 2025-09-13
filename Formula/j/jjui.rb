@@ -6,6 +6,7 @@ class Jjui < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4f8d38cf1b123d4c8f2a4357779aea4a010302b5fe941654a87a8a6635afe5f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "019d7b1c093451352bf55bb4e7d3eeb150470f4f8e6819b9d957c3a848520074"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "019d7b1c093451352bf55bb4e7d3eeb150470f4f8e6819b9d957c3a848520074"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "019d7b1c093451352bf55bb4e7d3eeb150470f4f8e6819b9d957c3a848520074"

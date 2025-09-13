@@ -10,6 +10,7 @@ class Swiftlint < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f33b770513e12ed36ebb72e3812c8f45817c6fce39ef9bdedeb10a752d66fdc5"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4cac8a981bfeaa142813a7a3adc6334ed26efdaed6e6affc985a9ff47528487e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34d8e5a9d66fefa9b415f1262586689be516b0ea54d8da45848555bf591dd72c"
     sha256 cellar: :any,                 arm64_ventura: "d1abea2e22df0547b7ec21cfc90f8e8944421decfab6da7629e9a04a0fc8bd47"

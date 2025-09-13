@@ -8,6 +8,7 @@ class Hilite < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "d0e8bd163b7a96b2ef1a79a9d69861cd045c6ffa351dbbda07bf25ba31899d68"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f3535152f7fa6b54957f00de4158dd790073c81737140ae90c16cbda8d37ba51"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "428126844c77fdfab8f4d4d007a3e5c2a743511b4005e71f91b74a4a162836d1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d2fa393a2cd13f75d3793c7d543ae3fd5a053cdfdd82ac722015912618fa596"

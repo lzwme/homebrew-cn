@@ -11,6 +11,7 @@ class Ubertooth < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "7013ad79a01ca1cf9d46d00110bc15a9610de9a2bf80a7951244ab2cfdf1adb7"
     sha256 cellar: :any,                 arm64_sequoia: "fa7215f06163e3333e33b92dd89476ced1eaa8f7ca3c2f5e790494832cb73cac"
     sha256 cellar: :any,                 arm64_sonoma:  "640cbd39fd3290bec4eecaef753ba84135b5c000b08d7c0fe455971df354390e"
     sha256 cellar: :any,                 arm64_ventura: "dbf1e2cf18fba265c0119a87fd659ee8331d2bd54dcdd3bf07eabda6de17cb41"

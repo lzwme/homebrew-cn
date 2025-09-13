@@ -15,6 +15,7 @@ class Ipv6toolkit < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "f317e770c7df9af2a13078f51d280e87f370b32757e08168ebb8a997847409cf"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "84e046d00d2c97f7aa83e87b5f81264820bf1a2303adc3a8f32b2af23aeac8df"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e4a45d913f12fe71fcbb19db2cee10a04016f3a501b0719be848e6c9840c4449"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1b2e4c72b667645eecf35a6fd6f5a155833a859d0871f8774d1c507cdac5eb1"

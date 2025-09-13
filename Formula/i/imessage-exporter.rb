@@ -6,6 +6,7 @@ class ImessageExporter < Formula
   license "GPL-3.0-only"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e8e1d0a521292fc6b477bdc1b3d7464348797175ae0ec4a89777cddc58d67367"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "58e74f4311ca7af5df6a88cf1e794dd54992c861b61b1c7556694febea2fc7c7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "550356357868889a8cc73757fca11ebe231575e7548d07966015b7bd8ea7185c"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d190f66454234a72f929d78199c516ebf5a8e75a6526481133fc55160eb0d2b9"

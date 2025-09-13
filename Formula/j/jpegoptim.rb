@@ -9,6 +9,7 @@ class Jpegoptim < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "ca5eab39e7a7285722a98c9c082ad3c50c26c9f3fde4c09a8f8cf76f66c6cd4c"
     sha256 cellar: :any,                 arm64_sequoia:  "6f2da3ecfcd521abededbff7aa2d8578773ef9951e9ad2b859fd5cdc05470102"
     sha256 cellar: :any,                 arm64_sonoma:   "ca3a05d563b803911fcec6940ee9a26bd6e7bb21519e5841947635c856e1bc50"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ebded7c6ca4bc0d67213156202bf36cecf058ed16552c085f6b48dd57a334fd2"

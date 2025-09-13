@@ -12,6 +12,7 @@ class Xk6 < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b54203055be8230ee493f379ffa9511603a0d6b5cf1d0b13308da533da52bba"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b54203055be8230ee493f379ffa9511603a0d6b5cf1d0b13308da533da52bba"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b54203055be8230ee493f379ffa9511603a0d6b5cf1d0b13308da533da52bba"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2b54203055be8230ee493f379ffa9511603a0d6b5cf1d0b13308da533da52bba"
