@@ -9,6 +9,7 @@ class Ccheck < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "26489d1d45ade5e4462eaa3083558f872018bcd9d9e47b98e122f2dd086b402a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f0f8816e58c6387289a2ba6392a03b40c93f1f4e6fe840ff840b7550a476a7c2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26ab4d218b0474e6c6d7ad9c11f89b17a7d98e846d5305972722edc87e5b0205"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "44342aa8159dc8a960a1c59447e4de8a178cf1e6ed40baae0ebdd7fd3a58f194"

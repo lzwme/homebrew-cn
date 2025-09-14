@@ -13,12 +13,14 @@ class Lazydocker < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d56e3e9243fcce363bcc3af848e66be911f855a1b00c52cfdfe6dce245a7c60e"
     sha256 cellar: :any_skip_relocation, sonoma:        "223526b606bffcc7ff56767b65e135fdc82b6df8575a8c21897a7ec4608404c8"
     sha256 cellar: :any_skip_relocation, ventura:       "223526b606bffcc7ff56767b65e135fdc82b6df8575a8c21897a7ec4608404c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "335cea467351d4cff8e9ae2ae331d6b2d85fc0ea19aa9c82a507a26c6adfe321"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "43b3ee2215c9e3f64e30c9a06037fbac3cf78c58e9cb150ff1e3e42f657a67bf"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     ldflags = "-s -w -X main.version=#{version} -X main.date=#{time.iso8601} -X main.buildSource=#{tap.user}"
     system "go", "build", "-mod=vendor", *std_go_args(ldflags:)
   end

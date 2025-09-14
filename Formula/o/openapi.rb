@@ -7,6 +7,7 @@ class Openapi < Formula
   head "https://github.com/speakeasy-api/openapi.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73caf015378bd5a0c58bbfc077097e9f08931aad8f7264e28319e56e641bd9d1"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "73caf015378bd5a0c58bbfc077097e9f08931aad8f7264e28319e56e641bd9d1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73caf015378bd5a0c58bbfc077097e9f08931aad8f7264e28319e56e641bd9d1"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "73caf015378bd5a0c58bbfc077097e9f08931aad8f7264e28319e56e641bd9d1"

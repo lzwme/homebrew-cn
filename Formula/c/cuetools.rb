@@ -9,6 +9,7 @@ class Cuetools < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "608a2dff1244ef93b65739924ea96977afc75052374eb4da5fbb261b48f29413"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c25785b0909d4b8ecee88b331ae515e491427126db45af75fbbcc1e94bd287a9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d73bc896a9509dae8389723d55e686f56d361f361ce19913092d7e3c294acdd1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "66cbde230df93cb4cd662c02ff028989e141f6c2cf0e50769a60c4c3bac95c48"

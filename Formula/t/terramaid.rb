@@ -7,6 +7,7 @@ class Terramaid < Formula
   head "https://github.com/RoseSecurity/Terramaid.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9e1e2c426929b914905c827f9b35aa50789fc07316ad9a6bd4d673eea741b8f3"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e1e2c426929b914905c827f9b35aa50789fc07316ad9a6bd4d673eea741b8f3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e1e2c426929b914905c827f9b35aa50789fc07316ad9a6bd4d673eea741b8f3"
     sha256 cellar: :any_skip_relocation, sonoma:        "aad356c90ad9687a54ec5e5858b8822dece1ced6960b243dca37e900abc07649"

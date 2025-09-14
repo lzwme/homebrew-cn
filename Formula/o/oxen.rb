@@ -1,8 +1,8 @@
 class Oxen < Formula
   desc "Data VCS for structured and unstructured machine learning datasets"
   homepage "https://www.oxen.ai/"
-  url "https://ghfast.top/https://github.com/Oxen-AI/Oxen/archive/refs/tags/v0.37.0.tar.gz"
-  sha256 "bcbfb67838ce2b065dc968963431f2d18a3cab002613f7bd2ab0b670577e4d4b"
+  url "https://ghfast.top/https://github.com/Oxen-AI/Oxen/archive/refs/tags/v0.37.2.tar.gz"
+  sha256 "f399c0fb2d60af298d8a1b968f5d3b4e8853fb8448290d193bb551635c731183"
   license "Apache-2.0"
   head "https://github.com/Oxen-AI/Oxen.git", branch: "main"
 
@@ -16,12 +16,10 @@ class Oxen < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9aa96612c3e08ea162bd8ab0ccbdf885f1bcc960782d4a0023fb44ceb27d5507"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "caa335e6a2b2e7055edff9a5da5fa0cbda20c0d12369b329b17dbe715194afe7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bb9b6c1c2a03e0cf5a37ede1a92b0e7a944a85781e5561a9160493312e15c3fd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5916e6e95c88fae3cac66f9d5267c45a971e741b0ff69ec391ed0c50d7d45ef0"
-    sha256 cellar: :any_skip_relocation, ventura:       "22bdc91f215bb87839f5130734d264682addb27948fb0153feee02be15418693"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fadd9f21a229c0c6169b504d3b3c7f6298a1ea28824d95731f8b49a9145cf47"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32e55dabef96576b2d7117db0659acf5f4e2134afbbdfb3789eec16bb99ecef1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37ccb8a5c74c6a069f6d2f3e75b778ed204ffa80b2f3e021471223e52448d5c9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "990b3829b8360648abe49e8155fe2a97035cfd3cd1058abac3d6823eeb356030"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "842be46ee7e5a26dd1598b74d5f46ec3d935aff5570759c2388f09184b537f6d"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys
@@ -36,9 +34,6 @@ class Oxen < Formula
     depends_on "openssl@3"
   end
 
-  # upstream bug report, https://github.com/Oxen-AI/Oxen/issues/139
-  patch :DATA
-
   def install
     cd "oxen-rust" do
       system "cargo", "install", *std_cargo_args(path: "src/cli")
@@ -52,29 +47,3 @@ class Oxen < Formula
     assert_match "default_host = \"hub.oxen.ai\"", (testpath/".config/oxen/auth_config.toml").read
   end
 end
-
-__END__
-diff --git a/oxen-rust/Cargo.lock b/oxen-rust/Cargo.lock
-index 3f6c3af..d9f34d2 100644
---- a/oxen-rust/Cargo.lock
-+++ b/oxen-rust/Cargo.lock
-@@ -4429,6 +4429,7 @@ version = "0.37.0"
- dependencies = [
-  "async-trait",
-  "bytesize",
-+ "chrono",
-  "clap",
-  "colored 2.2.0",
-  "dialoguer",
-diff --git a/oxen-rust/src/cli/Cargo.toml b/oxen-rust/src/cli/Cargo.toml
-index e716b57..ab1e39c 100644
---- a/oxen-rust/src/cli/Cargo.toml
-+++ b/oxen-rust/src/cli/Cargo.toml
-@@ -6,6 +6,7 @@ edition = "2021"
- [dependencies]
- async-trait = "0.1.80"
- bytesize = "1.3.0"
-+chrono = "0.4.30"
- clap = { version = "4.2.7", features = ["cargo", "derive"] }
- colored = "2.0.0"
- dialoguer = "0.11.0"

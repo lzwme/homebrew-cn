@@ -7,6 +7,7 @@ class Esbuild < Formula
   head "https://github.com/evanw/esbuild.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb71f5be2eaa8d660fff63fd86256f3ca1e9f434e08248aa84d951ead2bbb4c7"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6c8af59a81717233cccab20767bc1665e354107de6f608626a7569d01a3496c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6c8af59a81717233cccab20767bc1665e354107de6f608626a7569d01a3496c"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a6c8af59a81717233cccab20767bc1665e354107de6f608626a7569d01a3496c"

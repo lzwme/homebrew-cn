@@ -13,6 +13,7 @@ class Lzop < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "20091ae058723e28c6d638439220471a1c3862add310adb16aa7cde1e3ad4f1c"
     sha256 cellar: :any,                 arm64_sequoia:  "e29c398855c02fe9980a6365c4285c941988a3baa6fae5357dde1ae2ffed178e"
     sha256 cellar: :any,                 arm64_sonoma:   "3cb9969e29778a627ab2a0c634bc43f30c73ffff9960c51fa27f6eb1945b3ea1"
     sha256 cellar: :any,                 arm64_ventura:  "f797bf586d6db6240f6984be8f115a91f0218e3db024668f926b8a694ff2b57a"

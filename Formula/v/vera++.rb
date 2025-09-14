@@ -27,6 +27,7 @@ class Veraxx < Formula
   # Also uses unmaintained/EOL versions of `boost` and `lua` as resources.
   # Last release on 2015-01-22
   deprecate! date: "2024-10-09", because: :does_not_build
+  disable! date: "2025-10-09", because: :does_not_build
 
   depends_on "cmake" => :build
 

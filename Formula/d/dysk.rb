@@ -8,6 +8,7 @@ class Dysk < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8538715ee9a473304d602ca1f1b62883b97bf748b2b848c03a0a04c1c7abfcc"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "69a722cf0f7880bff7c8a4eca3e7f548ca41e19698cba2a74ccee9b6a7f46e4d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d4c4933d05dca6f4f754772b515ca38ee3871f626437a8ec59c0f4619138df7"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f45d5c56bc93ca60b8b5020aaeb7629dcee9769fb6537b8acdc67f2ee4bbfe8a"

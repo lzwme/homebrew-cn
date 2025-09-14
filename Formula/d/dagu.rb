@@ -6,6 +6,7 @@ class Dagu < Formula
   license "GPL-3.0-only"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4efa7c713b1853ffa32da0c53222f3b5546a6058b0f103f91fee37b310b31771"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "adf3d4223c36405288b29dd4fe4635733d0f01b79fd335806f5b999292dcb0dc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ae5178725c73d5e38e519c52f999c7f29fdcc7b9db8a8fb0210e5b670a10284"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "55269ed48907dea8a46cb3727a3f6c2136bfd08391af24e0c7a04fab61a77e33"

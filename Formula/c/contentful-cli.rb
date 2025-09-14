@@ -6,6 +6,7 @@ class ContentfulCli < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b2d9310fd5549e301c959e1080b5992b5ff3c5b24f018e7b1306566e3a29cba"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "97fa0750d03e58b720e59d4c1aff7e5b5cb1610205e6b05d978dca9efbc53126"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "97fa0750d03e58b720e59d4c1aff7e5b5cb1610205e6b05d978dca9efbc53126"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "97fa0750d03e58b720e59d4c1aff7e5b5cb1610205e6b05d978dca9efbc53126"

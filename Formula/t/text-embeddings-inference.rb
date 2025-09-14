@@ -6,6 +6,7 @@ class TextEmbeddingsInference < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8455cc43cae70c599001cf00e603bcd22883d6943536818b2f6435e38d432f6"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "92ea3cbcfa2bb27f55fcff8b8af03be5c91ad8a6406d1fd142e8203bd9e9c1fa"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86e8927ee419b2f68993caeb1769243904fc542849a7aaada9776e679c62a3d6"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d99c69b5b539b4e23fd5452f0e7a47f515bb5e97e52be6f3808c4f3d14d63031"

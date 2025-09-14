@@ -5,7 +5,13 @@ class Libsepol < Formula
   sha256 "ba630b59e50c5fbf9e9dd45eb3734f373cf78d689d8c10c537114c9bd769fa2e"
   license "LGPL-2.1-or-later"
 
+  livecheck do
+    url :stable
+    regex(/^libsepol[._-]v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "839f812ddb1af9b8b0f2457c23f3dd44d2233ed97b780c8b1cd84c30759d113d"
     sha256 cellar: :any,                 arm64_sequoia: "694496f68034e506cc74f711234a738bdc86fe6862c50c4d94056e7992c891e6"
     sha256 cellar: :any,                 arm64_sonoma:  "4acda6a9f6bb64c0054b960c8c89c0b99ae8efb2f4cf826d02945da75d230c0f"
     sha256 cellar: :any,                 sonoma:        "45d2a4183e993e5bff4bba540d7bc371008d9de8677f6bd47fdaa6a30e54a5de"

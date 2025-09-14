@@ -13,6 +13,7 @@ class Exiftags < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "b4c31682830f7f18a47fcaa2c2c61d28e1e36cca0ab480d41ffffde7731f7b06"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "43f7d6a7bd08e653cfde12d0f3cdcdb371b27bb4912a8f2bcda42120da960cb7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "499981c69ffb64e8bdc63a1b43a07884fa62a11034112483f00eca053836a031"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c0fa5c7f7ec7c138c3601aa24c6539210b2e8aa06694c2caa7edb936dbad92d"

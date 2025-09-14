@@ -9,6 +9,7 @@ class Libchaos < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:    "7e6429fc1638909e532b661ade2c4de6747e9ab3210f4b1d887d666af7517179"
     sha256 cellar: :any,                 arm64_sequoia:  "a06f03544d61ba6c17a360992f7397fcb0ed1eafb1027bb561cbe9e71c0bf2ad"
     sha256 cellar: :any,                 arm64_sonoma:   "e6b159ec85602b056a5cae0bda11203c4296f72fa6850e54e94067cf3360263d"
     sha256 cellar: :any,                 arm64_ventura:  "0e01bcaadb5cb22391c9671eed7f0a8a4852717f4ce45962f5bf088bcc025ca9"
@@ -35,6 +36,10 @@ class Libchaos < Formula
       -DLIBCHAOS_ENABLE_TESTING=OFF
       -DSKIP_CCACHE=ON
     ]
+
+    # Workaround to build with CMake 4
+    inreplace "CMakeLists.txt", "CMAKE_POLICY(SET CMP0050 OLD)", ""
+    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
 
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *args, *std_cmake_args
     system "cmake", "--build", "build"

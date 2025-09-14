@@ -14,6 +14,7 @@ class Cntlm < Formula
 
   bottle do
     rebuild 2
+    sha256 arm64_tahoe:    "730084818967f10d47a8458853ebb7a56bce4c2280759bda2f3c31d1edae9da3"
     sha256 arm64_sequoia:  "ac09c6fb2f75321560a0fedd69a9d520f9a62ee176cd7b8a03d8ea5964385f1a"
     sha256 arm64_sonoma:   "d0c3faca50823ec43395e72762071b26b1fe3860b7fa855f3f12080fb66025e3"
     sha256 arm64_ventura:  "f4674d812c8b17f3e78bea4dfd0bccf3149de7c0be14f9027d2f07724f3eaf32"

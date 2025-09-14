@@ -8,6 +8,7 @@ class Duckdb < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "8c6ade89a35735a3abca92a4e51b1aa6e3dfd1ce5e07ac4bd8aefdc3e769cd21"
     sha256 cellar: :any,                 arm64_sequoia: "c9532539855c59c223a90ee45476aa0dbe5cc2366c3d7d01bf909b2be0a0cf7a"
     sha256 cellar: :any,                 arm64_sonoma:  "93fdfccdcb39f9411940712851867cf8f580fc1bebd0d2d46f18046a9c297060"
     sha256 cellar: :any,                 arm64_ventura: "22ea67f016a8eaad512ac37c79d52c2b87223a47543c77bcbedd8b3e034b1c81"

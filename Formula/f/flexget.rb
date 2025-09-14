@@ -3,18 +3,16 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/cb/c8/a01013bc164c1862de210febe9afeae1f1a0e6aa73d2d0e5e86cfe79b47c/flexget-3.18.6.tar.gz"
-  sha256 "8a5cc71355e5ed6bd2f76ece867ad95c903718ca3103d4f991079ecf2a1ba5df"
+  url "https://files.pythonhosted.org/packages/e7/1b/5adf2147ceb31505d2c0b51bf1cb9e3d4ad5b09f7de95df1e0f0687f8fbf/flexget-3.18.7.tar.gz"
+  sha256 "68aa58b01ed15cec0c2720bbbb01b5e1163181f8c3fe1b32846d16a6296bd431"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "87c6b9d6f6c7406de8b5ee803b1787d7b09360a6c501b014a27b4b3ae1d38809"
-    sha256 cellar: :any,                 arm64_sonoma:  "a70afdd6a666a2bd0359e80f6554579dfcc639f9778d178cc485bff5aaf9de85"
-    sha256 cellar: :any,                 arm64_ventura: "3591a95fdd8459df1dff6b1c32d3cb934cef4353849047ab45f1529b3c502d46"
-    sha256 cellar: :any,                 sonoma:        "2819f012129ef93a64e0b48bd7844c365848823d1361bbafb41e2ebef0c09d8a"
-    sha256 cellar: :any,                 ventura:       "b709a7c32732ec7a610ac7a7bd2c2a8c13cb707bab0fbf25a36619c54a20ac38"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "58f52c501d756d99edd1ae4a65ba83607564a4ff3f0b3bcdd80f160a2cf74227"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b2aade7883f70043b877c9f84125472a2850cff5110194e25a6effc477f8a6d"
+    sha256 cellar: :any,                 arm64_sequoia: "d6b534c702cd3afea130c0a1be117977c9867040b58261b636663ae640d2f0e1"
+    sha256 cellar: :any,                 arm64_sonoma:  "d10bf0559df757620a1803fd413e3c306a9fb53b06f5c1b4f3b470802add174b"
+    sha256 cellar: :any,                 sonoma:        "be190fb368af9eea10a47f8797a49c23adc5f78ecd538191acd6daa7038c80c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9f993a0983c995bbf3843e65a901bd0d8cc268bb96bd4e02f374a368be5f2b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3310821c597ef20077e378360f56a5491b44515b1f290dcc2b25d502e3a6983a"
   end
 
   depends_on "rust" => :build
@@ -84,8 +82,8 @@ class Flexget < Formula
   end
 
   resource "feedparser" do
-    url "https://files.pythonhosted.org/packages/ff/aa/7af346ebeb42a76bf108027fe7f3328bb4e57a3a96e53e21fd9ef9dd6dd0/feedparser-6.0.11.tar.gz"
-    sha256 "c9d0407b64c6f2a065d0ebb292c2b35c01050cc0dc33757461aaabdc4c4184d5"
+    url "https://files.pythonhosted.org/packages/dc/79/db7edb5e77d6dfbc54d7d9df72828be4318275b2e580549ff45a962f6461/feedparser-6.0.12.tar.gz"
+    sha256 "64f76ce90ae3e8ef5d1ede0f8d3b50ce26bcce71dd8ae5e82b1cd2d4a5f94228"
   end
 
   resource "flask" do
@@ -239,8 +237,8 @@ class Flexget < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/bb/22/f1129e69d94ffff626bdb5c835506b3a5b4f3d070f17ea295e12c2c6f60f/pyparsing-3.2.3.tar.gz"
-    sha256 "b9c13f1ab8b3b542f72e28f634bad4de758ab3ce4546e4301970ad6fa77c38be"
+    url "https://files.pythonhosted.org/packages/98/c9/b4594e6a81371dfa9eb7a2c110ad682acf985d96115ae8b25a1d63b4bf3b/pyparsing-3.2.4.tar.gz"
+    sha256 "fff89494f45559d0f2ce46613b419f632bbb6afbdaed49696d322bcf98a58e99"
   end
 
   resource "pyrss2gen" do

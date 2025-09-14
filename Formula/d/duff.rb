@@ -8,6 +8,7 @@ class Duff < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "643c694ade386db6a76b2da2cabedb1068774a1d4bb9f6ab48b86703e0a58935"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c424b8c034bc699eee2d55c766aad34f4f7ea1f46a5c6f0a6a221159917fd396"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bd400550da914ee690f2ff0798da5a8438afcbc68dd337da29b85f694724bdb6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "176be0397d77a2aacf76fffda32a3d6e203eb7a803c626c52db2e563c2c49c3f"

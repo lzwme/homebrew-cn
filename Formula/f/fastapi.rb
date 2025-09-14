@@ -9,6 +9,7 @@ class Fastapi < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "0d9ef56dc0c4563d79db79cb54c80174142db21136259580c48e5f529f63f373"
     sha256 cellar: :any,                 arm64_sequoia: "da931f1df5297635d3eae900ab0e0a7fd06e2c950e95177f5baa1df2816a04c0"
     sha256 cellar: :any,                 arm64_sonoma:  "c23c5709c2311efac86c0f1672f756058911cfe180e1112ca6f5f12a9206dbda"
     sha256 cellar: :any,                 arm64_ventura: "2307d453a007baf998b85d9e1b79ed01821c407321f76b63859187415b6495b2"

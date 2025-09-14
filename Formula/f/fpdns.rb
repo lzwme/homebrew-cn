@@ -24,6 +24,7 @@ class Fpdns < Formula
   end
 
   deprecate! date: "2024-10-02", because: :repo_archived
+  disable! date: "2025-10-02", because: :repo_archived
 
   uses_from_macos "perl"
 

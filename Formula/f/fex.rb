@@ -8,6 +8,7 @@ class Fex < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "176a130c8c8b14eee48303c89fcab8d8dd6534e43fb042d8fab5b30486e2641b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d0777ac160fda3d6860d6a7077e98e05e0a7a80f75c4c15e39c58699bd9c22ff"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0265e802a5e8b6d206890f636723f6ba34c0da506b1de7b47f84208d8d93f278"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1baf47daa289d9a7d09cfdb695a4a1a51841458d992bbadc68a27780f81d7182"

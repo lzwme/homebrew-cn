@@ -9,6 +9,7 @@ class Fonttools < Formula
   head "https://github.com/fonttools/fonttools.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "008c589b355b04c4d71984b55bd979659cd641928afd67d5c1169fcaa82bb371"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ef2d329ebe6b954a67e1d7d8c94f1695c139f3889e2c0881b7a053a3a686c7a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0beb7bb33e0e16ea366002ae97a733ac0dbeb6e3a4561c8e60d41a3c3354780c"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3552dd3680945c10807aa4bad4b340bb9a9a5001b762cd868d37a95f6c436942"

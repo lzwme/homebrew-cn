@@ -9,6 +9,7 @@ class Azqr < Formula
   head "https://github.com/Azure/azqr.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e833a916638b9e1aa4cc31b2574c3d8c6973c1990652f39e699f19d962a14853"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e833a916638b9e1aa4cc31b2574c3d8c6973c1990652f39e699f19d962a14853"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e833a916638b9e1aa4cc31b2574c3d8c6973c1990652f39e699f19d962a14853"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e833a916638b9e1aa4cc31b2574c3d8c6973c1990652f39e699f19d962a14853"

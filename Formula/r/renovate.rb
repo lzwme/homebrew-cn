@@ -1,8 +1,8 @@
 class Renovate < Formula
   desc "Automated dependency updates. Flexible so you don't need to be"
   homepage "https://github.com/renovatebot/renovate"
-  url "https://registry.npmjs.org/renovate/-/renovate-41.112.0.tgz"
-  sha256 "84effa62a6a70aef64ef6c2cf54030b19a9c974e7c6d1a4491b7fde0294e67e5"
+  url "https://registry.npmjs.org/renovate/-/renovate-41.113.0.tgz"
+  sha256 "60c90324d84779c0781e5cd6850421e6ea5ff8658eaf6234cb1fb9c3d2803e7a"
   license "AGPL-3.0-only"
 
   # There are thousands of renovate releases on npm and the page the `Npm`
@@ -17,11 +17,11 @@ class Renovate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "714df86a1fb94670bd70fea886ce3e32a4e7a53abbb3b3a58860911d23563611"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41b23fc5d5fdbed6dba7227a640ec1c65e1a5ecadd391d072e3465095e0084aa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fc729474b8ee2f6ff914df49d8fa47b2d4406098e91f11a5ce16d4f35cf60dec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dffe134d78c68642d13858060579f72a1edd8e87fdaee2f9901857fb0e32881"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08eaee404be02cbf7de9b7eac0b52d4ff523dc333854234332a98c4861764cba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1497b36e07fd519988329363ba4a2add9f52c858e2a9cb8c617b2586ff2f93bb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46211279a339dadcf2b1ee2e05471dfbcd2284c9c1bd49afafcf0baba7c487b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c279420abbf0a3a138c24f134768df727a9c1b76088ebbf64424832aaec9ee1d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d3540b992d188fbe912d57feb7e14a7b9e1703e23ea21cdd440bdb757b18825"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de0f01e5a2f55f1222adcaf448626d5beb36759a15e7f51b38c79194befb198c"
   end
 
   depends_on "node@22"

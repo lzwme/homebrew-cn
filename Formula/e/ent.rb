@@ -11,6 +11,7 @@ class Ent < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "ff6411a4c5575cb11e6a3e1177df3a8e09ea6f361f5ae870ba21745aa33f1a9c"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b575b8008e74224742c5e78c22a496ee80c8a7efa3c62ba1856472f786d86d73"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f95e748a208f421f6d85b9e5445139c9f688f277ce72fbaed93449322b96abef"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9870a5d35b78ac2198a5f793e861dacb1961226df38d8d14dc3538a2f36775b"

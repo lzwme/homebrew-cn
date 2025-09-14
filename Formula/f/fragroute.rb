@@ -16,6 +16,7 @@ class Fragroute < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any, arm64_tahoe:    "ebec262153f742a8cbeab49c03b74b8323d709899f725630fe89cdee1e167114"
     sha256 cellar: :any, arm64_sequoia:  "23765e32fc33a439c133cea31e2e6c700d24bd1fe6f421cb973dab6db91dc69b"
     sha256 cellar: :any, arm64_sonoma:   "5e54c1e3b6e247a78a26be191c9919b3dde5ed5b9e8615f71706c008a934f9c9"
     sha256 cellar: :any, arm64_ventura:  "81e64dc3533f9469fbf91253816511df14307fe3260fbf3b4c3d2b0c2945adac"

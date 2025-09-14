@@ -7,6 +7,7 @@ class Fedify < Formula
   head "https://github.com/fedify-dev/fedify.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dac9f2b10e1775a6f100df58622fae969067e779b7ae3df08ae21b6fde2028b8"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "61c6721a2d1db4e83b5681a10ebca06b02efdb2e5754b6c599758630f962ebf7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0fe1fe50436d1a8e859188be1f4ec18592257bfe657bbbbff55cd20dd5179ae7"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e9d884817e92088553307a86e706ccee55a5d1e796f2ab6e32436ba42f74d79c"

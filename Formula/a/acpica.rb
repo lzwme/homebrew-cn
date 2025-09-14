@@ -14,6 +14,7 @@ class Acpica < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4272d5885464a91f2d73d4fd40572cd1119dd3433d14181aaf148b4c1a3676c"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f32cc9b31ebe6e473306036117315a4bc227380cebe27fe439d79ad10885aba"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d39e58cdf4e911d1b3db8ce1b967ac592c219fb4d089eacbf30386112a3e9ff"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7a484f87cc8f909f8fcd4ff3bdaca228e4f5417ba0436f7e4275047da7d4986e"

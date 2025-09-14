@@ -25,14 +25,9 @@ class Pnetcdf < Formula
   uses_from_macos "m4" => :build
 
   def install
-    # Work around asm incompatibility with new linker (FB13194320)
-    # https://github.com/Parallel-NetCDF/PnetCDF/issues/139
-    ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
-
-    system "./configure", *std_configure_args,
-                          "--disable-silent-rules",
-                          "--enable-shared"
-
+    system "./configure", "--disable-silent-rules",
+                          "--enable-shared",
+                          *std_configure_args
     system "make", "install"
   end
 

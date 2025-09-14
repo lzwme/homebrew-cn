@@ -7,6 +7,7 @@ class Comrak < Formula
   head "https://github.com/kivikakk/comrak.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "09cc3075e58bd6161187cf0765a5e09dac560c03661fe746393f05bb28ebdc39"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a9c053269e567c3177de519b04dc7f5e5aba60ccbbf655b34c4028c9b638550"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13b4055349338654073ff972a30dba306aa1a13bce39a0aabcea098af0c49822"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a210fc0eb28bbcfd4266bcf269ef5130e9fe9a0690107dde4a32784865ed9ce3"

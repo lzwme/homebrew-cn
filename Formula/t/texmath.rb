@@ -7,6 +7,7 @@ class Texmath < Formula
   head "https://github.com/jgm/texmath.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "adb3ffe49bb5f17dc8432722012fb451562937198ab75e9ad550c1e48738cec2"
     sha256 cellar: :any,                 arm64_sequoia: "0e45009df3593383e55eb88ab67acbcce97b9eeeb76144bd95b8d91fe7ed3fca"
     sha256 cellar: :any,                 arm64_sonoma:  "fca83b9e818bb4772d198e1566e5e59e9efd96a2d6066777dab48d148b997193"
     sha256 cellar: :any,                 arm64_ventura: "d404e82412439bb767daaf362bb8747228bf566a364a9108f827ef29efcd08a4"

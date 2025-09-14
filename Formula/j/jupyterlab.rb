@@ -11,6 +11,7 @@ class Jupyterlab < Formula
   ]
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "d9c7742c58784dd89e469bf5f987c1984bba9cb9408cfe7f58710b910cab446d"
     sha256 cellar: :any,                 arm64_sequoia: "0ac11a447d57d7fbcc355e29b95ee20a3681f6d6b81ef0247ba65b4b085ef477"
     sha256 cellar: :any,                 arm64_sonoma:  "425baffc27be9e00d30708e6e883f0d193e57b8e50015e1c8c442a28e0325836"
     sha256 cellar: :any,                 arm64_ventura: "95887a5c714f12ed948c070c065db9ac45fd702e54fce0686d87cbd995b18574"

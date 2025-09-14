@@ -12,6 +12,7 @@ class Kvazaar < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "30b30aa71cf6b2a44c6bbb9c45aef56bba642da143ad389662895b9cb823e1ac"
     sha256 cellar: :any,                 arm64_sequoia:  "8d9e19a77635ecf9a1c6b496b498b6a6c3e571bae726e440dd14dbf9aa6f15d6"
     sha256 cellar: :any,                 arm64_sonoma:   "1cbad0414bceb5d09a08e111e35cfae189f36a14979126346195b9c2885a08af"
     sha256 cellar: :any,                 arm64_ventura:  "0c93533adcc570792d6c19c12e1aba452de88a7b8145bdf07c17109108c07e9c"

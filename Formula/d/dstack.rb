@@ -8,6 +8,7 @@ class Dstack < Formula
   license "MPL-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "98191cb967ea6d9f0cad9d52ffacaf1fafa8771f8f824e28b5d37949e70c93d9"
     sha256 cellar: :any,                 arm64_sequoia: "375e7813dc4ff6d0b890a9bc3e44542ac617313f374752c6e733f5a8a1e8d307"
     sha256 cellar: :any,                 arm64_sonoma:  "0b2bb158914002225a0d414bb2dc086e8580eaf4f59f0f1f75de2f675f57b8b7"
     sha256 cellar: :any,                 arm64_ventura: "c77b5c6472527d1b5ecf8b8a94db4ca27628a4e07ea2e8d817563d3c58e743fd"

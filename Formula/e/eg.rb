@@ -9,6 +9,7 @@ class Eg < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256                               arm64_tahoe:    "8edac665cd76232a32ac5bb583b8002fa084c089a399a3d0c34e6843176fa47b"
     sha256                               arm64_sequoia:  "88dbfa7cf9217122bc925c3681ee19cefcdb758063696fa00577967301b34fbb"
     sha256                               arm64_sonoma:   "76e0f0b7dadc29420b7a83e10425eda231ba773ee90485838605b87d3934d964"
     sha256                               arm64_ventura:  "be6bd513bea9e8468a72127b84cb49d0ab0dc1d061c9fa42e799613ebb007357"

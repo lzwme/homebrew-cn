@@ -7,6 +7,7 @@ class ExcalidrawConverter < Formula
   head "https://github.com/sindrel/excalidraw-converter.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "144409f3df01c95af8cf105e4169dbe932ad63e8dee554a7483db563a91786ef"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbf2a3cccd67292ad498e23cc277d71be3206d44d94b1460e47f35ce21662def"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fbf2a3cccd67292ad498e23cc277d71be3206d44d94b1460e47f35ce21662def"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "fbf2a3cccd67292ad498e23cc277d71be3206d44d94b1460e47f35ce21662def"

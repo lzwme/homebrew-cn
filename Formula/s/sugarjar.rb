@@ -8,6 +8,7 @@ class Sugarjar < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d731cf9dd06f0efb0eccb44856e22e3e97ff62bf9324263c8ef04de30a11415"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd160e6f1f1274ca6ccd308d7a7b3561797957d2fdddaa97ed06d02b275b195d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd160e6f1f1274ca6ccd308d7a7b3561797957d2fdddaa97ed06d02b275b195d"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "dd160e6f1f1274ca6ccd308d7a7b3561797957d2fdddaa97ed06d02b275b195d"

@@ -7,6 +7,7 @@ class Kubeone < Formula
   head "https://github.com/kubermatic/kubeone.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d00a55f57e288a23fad937f287fe6148b342d8f5bd76265f4982d78816c8ce8"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c90c1f9f6302fe661267a2458c958f3081e6fcec4155de173339dcce2264725a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd8ac6e14888d19ad603837871b1d9ee69c2d1f83c8216d334f0a5bbb9271bc8"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9b602d32df5cd68264c64d5b25b064c81631648d297ff6d1fc7c78e58add538a"

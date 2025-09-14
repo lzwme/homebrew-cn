@@ -8,6 +8,7 @@ class Daemonize < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "44f7c8ffc66e91dd8390c9918dfac5d913fb1ff3099a5e29965b49e6c4560c21"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ac1001a5e4588bc098b708492cf6c90fe91b88ae7c28be94038fa25d1d15aaea"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "36f15dfa0b033d4e984a19e769caae8a42a3e4facf10d87f54f68ec275ae10ce"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd11e888912a0afdfac36c26b95f4d27b7aafaa2ce3ac41c14388683f9027df0"

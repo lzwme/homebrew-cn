@@ -12,6 +12,7 @@ class Codex < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f2f12ae4639c4326e9b188e19b26893820571999087c586265afb29c16a57a1"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c9e4348837a8a918df875648ba753feccbb5a95a5dc80c038bffc715e0c0994"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f60c8a449d58cd275f9eba6b1128212b2ff58c1db234c5b4d56f21f09a84fd8e"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "246dbb3625beca8a6d70e8749f0a267a78fa0362360c047d954049876bc642fe"

@@ -12,6 +12,7 @@ class Kubescape < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2fd98a6732f69d3524056cdaab945f75bf4166c0f2c44a747452669703b09fd8"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1a368d7b2e2648cc418e045e1592fb659bf9b4e00f38c470442a0a092f4bb64"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2cb2d7399bea7413b7e68161c47c0abb535606165560e7f094185d9d30cded2c"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "136247fbc9990992036a4fbfebd3ed6bf5e45a954f2402ffca5034dc0466a5a4"

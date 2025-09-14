@@ -11,6 +11,7 @@ class Victorialogs < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "65912ca0c6739e2f857f49c39e222b66fa09b294a3c23280ba7793ab5723c18f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4370f5db599019f34e0c4eaec3724d5f28eb027e0e85fd89ecb7c907408a9690"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e45b9ef2d731a9a73f753d2ca2b804dcc4a08224366cac610a13c409e03bba3"
     sha256 cellar: :any_skip_relocation, sonoma:        "f79bd1ccb70be85fe0d743293fb8921a833a742b4e312ec68e2088513af6c634"

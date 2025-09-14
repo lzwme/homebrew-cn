@@ -8,6 +8,7 @@ class Clpbar < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "428cfe8bba0bbe5074e6ea1f27f05ead41dd9fd65007b4ae9a9490e1673911af"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b0b9fe17e86d7a2f3af256a5a55343351fb8d8affe328a5293290ba83fc4d5ba"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6475090688882a9c4e55d754641a2739da88bad7cc68b3b5825c0454e8bcf89a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d3ff5e627cdb58179f1ea37f38cfa62e3ffc2751984d4d0c53c787f34f40f9c"

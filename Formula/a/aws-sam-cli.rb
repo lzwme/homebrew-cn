@@ -8,6 +8,7 @@ class AwsSamCli < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "088418e8ed358bc47bd5c86625df75718bcd9b06b3ccaca637abb6ad9ee4ed44"
     sha256 cellar: :any,                 arm64_sequoia: "bd24749c91e1f4496554fe06a861d4b02f78972145a81330bb467e695fcb9f17"
     sha256 cellar: :any,                 arm64_sonoma:  "4246a4307f87e1bb8fad0802d861056c3f219bd7e151e60790a1d62e2eb3edc5"
     sha256 cellar: :any,                 arm64_ventura: "c8970c97b97bccf5fa0344d89950865213b198dfdc4d240fa039501d01a054e4"

@@ -14,6 +14,7 @@ class Cheops < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "e22eb2ee77f28f3738d572be8a83cee17e20ee6c0a23919defdcc601443f4e5b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a19ba4057d685a8f61ecc2d198d517ae6859cf4a0479a153f3959ef832d45e20"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1de166d2e9dde915555db3c19377561aaea388583f255b84819ed8a0e0c1aeae"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "665487e5600fb7c185f31a9a5dcc5a5e9e819bd13b6cfdcf4ccf613a4e6f8cb7"

@@ -1,18 +1,16 @@
 class DvdxrwTools < Formula
   desc "DVD+-RW/R tools"
-  homepage "https://fy.chalmers.se/~appro/linux/DVD+RW/"
-  url "https://fy.chalmers.se/~appro/linux/DVD+RW/tools/dvd+rw-tools-7.1.tar.gz"
+  # Original URL no longer accessible: https://fy.chalmers.se/~appro/linux/DVD+RW/
+  homepage "https://en.wikipedia.org/wiki/Dvd+rw-tools"
+  url "https://deb.debian.org/debian/pool/main/d/dvd+rw-tools/dvd+rw-tools_7.1.orig.tar.gz"
+  mirror "https://fy.chalmers.se/~appro/linux/DVD+RW/tools/dvd+rw-tools-7.1.tar.gz"
   sha256 "f8d60f822e914128bcbc5f64fbe3ed131cbff9045dca7e12c5b77b26edde72ca"
   license "GPL-2.0-only"
-
-  livecheck do
-    url "https://fy.chalmers.se/~appro/linux/DVD+RW/tools/"
-    regex(/href=.*?dvd\+rw-tools[._-]v?(\d+(?:[.-]\d+)+)\.t/i)
-  end
 
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "8daeeb4d38982c4948e79c9ec20f0e600cbd0c6c55d56bb4f0b14c617e8600e8"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ef7c367570d1a514f8c5ee0c9a7b9e758dcd12a6ae8ece7fddc835f39ad9b319"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "da895c2f501018863f2db497206573a37ef717337e9f5c2dba6a5863bc989d77"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "031b8533eeb4ec71ab6f3e2b68826271b0c5ff3e97e0dddaebab9a721b43df53"
@@ -47,6 +45,7 @@ class DvdxrwTools < Formula
   patch :DATA
 
   def install
+    ENV.append "CXXFLAGS", "-Wno-reserved-user-defined-literal" if DevelopmentTools.clang_build_version >= 1700
     bin.mkpath
     man1.mkpath
     system "make", "prefix=#{prefix}", "install"
@@ -61,7 +60,7 @@ index a6a100b..03fc245 100644
 @@ -27,11 +27,13 @@ CXXFLAGS+=$(WARN) -D__unix -O2 -fno-exceptions
  LDLIBS	=-framework CoreFoundation -framework IOKit
  LINK.o	=$(LINK.cc)
- 
+
 +prefix?=/usr
 +
  # to install set-root-uid, `make BIN_MODE=04755 install'...
@@ -72,7 +71,7 @@ index a6a100b..03fc245 100644
 +	install -m $(BIN_MODE) $(CHAIN) $(prefix)/bin
 +	install -m 0644 growisofs.1 $(prefix)/share/man/man1
  ])
- 
+
  ifelse(OS,MINGW32,[
 diff --git a/transport.hxx b/transport.hxx
 index 35a57a7..467ce50 100644
@@ -83,6 +82,6 @@ index 35a57a7..467ce50 100644
  #include <poll.h>
  #include <sys/time.h>
 +#include <limits.h>
- 
+
  inline long getmsecs()
  { struct timeval tv;

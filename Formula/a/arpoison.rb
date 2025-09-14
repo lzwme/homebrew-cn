@@ -14,6 +14,7 @@ class Arpoison < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "befc347407af6f1c5581b82628c49605b87c84b2ce0b2d75f4641496c9ad8789"
     sha256 cellar: :any,                 arm64_sequoia:  "5290454e5c88457099cf20619c7bbb8368c13c8a33365791781c7ef693fa6a1e"
     sha256 cellar: :any,                 arm64_sonoma:   "2c6f2456c9b2ba1ac193df313e5b48ffe0ec438d0a4abce2a0913a77783e04a1"
     sha256 cellar: :any,                 arm64_ventura:  "fda2504283a2fc1da565c46545d392afca3bf569aab288480f0d2521898a1967"

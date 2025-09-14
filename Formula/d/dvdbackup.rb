@@ -9,6 +9,7 @@ class Dvdbackup < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any, arm64_tahoe:    "208d77cbe6a64a85548098e3fddf37053ad567406e1745b238fa40ca3a33915f"
     sha256 cellar: :any, arm64_sequoia:  "5689e478b50f13da8f0b4c4176281df944c3c8a095344e7f3fd6b2073cb7f937"
     sha256 cellar: :any, arm64_sonoma:   "bbca14aeee4082533a71f5e48ed2bc6e56ea02420179dfb09e11242e92f2fbe2"
     sha256 cellar: :any, arm64_ventura:  "e009a34c9e7cc319095b3a001b99aa8da5fecb6662ff4fa64daa75b932dbe79b"

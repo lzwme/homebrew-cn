@@ -8,6 +8,7 @@ class Flake < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "a74ce50f62b9fcfaad31673092ece8fb2abed1a710117f8ed0bd0e62d01bfe6a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9d0c8523afc14e96a58b6494cf494b13527d6ba7f11c125b779999b1ad088644"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "54ce4e48992d14357903109712f7b68241c69159d9d41b89cef79c9de2226f26"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "03f0ff1a603cfd656ddb342b5295fcc85b7b1a83216911d0593a18c6bf6dbcfa"

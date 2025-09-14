@@ -13,6 +13,7 @@ class Flarectl < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1ad5f090588698e86d1167e4229eebe2a108d4e2577139d567bb01e45977d80f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ad5f090588698e86d1167e4229eebe2a108d4e2577139d567bb01e45977d80f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ad5f090588698e86d1167e4229eebe2a108d4e2577139d567bb01e45977d80f"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1ad5f090588698e86d1167e4229eebe2a108d4e2577139d567bb01e45977d80f"

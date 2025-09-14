@@ -9,6 +9,7 @@ class ElmFormat < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "5056133df57fc96439054e34f04ec081bf08d317eefea981336c786a94dd8c2f"
     sha256 cellar: :any,                 arm64_sequoia: "793a01a476060deff0126e922ff4e6bf3d7f6d4666ee2e2ffa76114036a7838d"
     sha256 cellar: :any,                 arm64_sonoma:  "15e2ac52c016433bd4ca81958a352dc32d2ce8b309590001bf5cfeef87574941"
     sha256 cellar: :any,                 arm64_ventura: "1f6526cc7adeb4fc019894188906cd9130f69a02912a73b1599394c16a777f9a"

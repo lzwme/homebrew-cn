@@ -6,6 +6,7 @@ class NodeSass < Formula
   license "MIT"
 
   bottle do
+    sha256                               arm64_tahoe:   "a48e559f0f22395ff7c7658bf9a250a12245b7b16951f6de0a58648e5671a0d4"
     sha256                               arm64_sequoia: "2626c6d46b1e41aa9bf0ce7d20ddfaca813c24a6b62cf163dfefeb63fdddee18"
     sha256                               arm64_sonoma:  "68d4c40ba4d5ac4f5b694cb5b58b0310cf7395d2f9f02636587947442186531d"
     sha256                               arm64_ventura: "57872ae88543fe0b503431706eceb99e566945c97a46a55d2364442b4b61efde"

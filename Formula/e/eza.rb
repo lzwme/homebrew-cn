@@ -6,6 +6,7 @@ class Eza < Formula
   license "EUPL-1.2"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "20d98f2b70e9fbf3b6c50ccf6aebf35dc6dd58f8cab9bd3a52349e4f36aece54"
     sha256 cellar: :any,                 arm64_sequoia: "64c6b94fbc9ee2b76692dc5e6d73b1b399dd7d7f969949fadc4ee32936cb48a7"
     sha256 cellar: :any,                 arm64_sonoma:  "81c24fc59ccc9fb1ec6f9261980f17e8cbf55a12a96e53f121486fa36983c4df"
     sha256 cellar: :any,                 arm64_ventura: "b1426ae21834f3ec415e0f17236f26daf878ec8613862799fc4ffb696a946ca9"

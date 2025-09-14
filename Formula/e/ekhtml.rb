@@ -8,6 +8,7 @@ class Ekhtml < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "ab64bc1bb7447d50ce5f12aa6bb5f97c807c23f4895558c8c13cd8ff6b1de14e"
     sha256 cellar: :any,                 arm64_sequoia:  "89250f587a05bcbbe4c03909b5fc47a6b3717b59370eb15bc06bdd4fc7ceddda"
     sha256 cellar: :any,                 arm64_sonoma:   "a55dabeba03f720c3012f0ab26dedd80104e268d64831ac4eebe29f642d83e0c"
     sha256 cellar: :any,                 arm64_ventura:  "58b661aa5f68e984f1fda1ccf0dd9dd9a9ab0f445c9069d96893d558e441dac8"

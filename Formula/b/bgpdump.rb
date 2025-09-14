@@ -13,6 +13,7 @@ class Bgpdump < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "e7f3f18e49653d1dff36e3ff2c608c0e20a387687655fa22c84b57fe015a431a"
     sha256 cellar: :any,                 arm64_sequoia:  "58a05ac326e701a6417482c33a5660c4cac2ad9a3995e64dd064bc088e9e8a8f"
     sha256 cellar: :any,                 arm64_sonoma:   "9845446b9c11faac51f1180ad9493fcc523ce44bc5f8179fd2ab4a985323e360"
     sha256 cellar: :any,                 arm64_ventura:  "7d108fc2cd142cecb17da960a4ec7db84bd63178879596c9f9811ce7caf6f015"

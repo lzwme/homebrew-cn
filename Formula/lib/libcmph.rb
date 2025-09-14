@@ -8,6 +8,7 @@ class Libcmph < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "795cbd543a01cc09b16b32cd349b2c41ecf49511ec8dd413c9c992e044a7d1a0"
     sha256 cellar: :any,                 arm64_sequoia:  "43f6a25f51d2e29fc992882901b8fae82353d80efe71305bc6acf5bd852ff6c7"
     sha256 cellar: :any,                 arm64_sonoma:   "72be852d28eec60c8526c263938023f4eb33dfd58edbbcd77b33d1e319816f82"
     sha256 cellar: :any,                 arm64_ventura:  "dc5c4b140ee2e3ed459271e26f0fc47b9294626fbcad98a86d6326593a2ca764"

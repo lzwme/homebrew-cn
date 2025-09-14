@@ -12,6 +12,7 @@ class Direnv < Formula
     sha256 arm64_ventura: "968f2dd705d3a3223377b556f459c5c65db53a8fa6435a37ce84f27fbb5ed18c"
     sha256 sonoma:        "9b274c4ce7351773cd91a9418a2aeb16c72ed5685383a9ea97269c24b81c1c86"
     sha256 ventura:       "7754bbca76a16a6737177ea057d4db9c2ad1e55387b9f3ff5aafe05912807008"
+    sha256 arm64_linux:   "56ea5661ae3fc5537e236f2cecde9117b7dc83e90cce9269c5edb0d2209caa89"
     sha256 x86_64_linux:  "5a3705773719544d8c366610498528d6607de6a2961b2ecb1cdedb5781b9d1c6"
   end
 
@@ -19,10 +20,19 @@ class Direnv < Formula
   depends_on "bash"
 
   def install
+    ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     system "make", "install", "PREFIX=#{prefix}", "BASH_PATH=#{Formula["bash"].opt_bin}/bash"
   end
 
   test do
-    system bin/"direnv", "status"
+    assert_match "No .envrc or .env found", shell_output("#{bin}/direnv status")
+
+    ENV["TEST"] = "failed"
+    (testpath/".envrc").write "export TEST=passed"
+
+    assert_match "No .envrc or .env loaded", shell_output("#{bin}/direnv status")
+    system bin/"direnv", "allow"
+
+    assert_match "passed", shell_output("#{bin}/direnv exec . sh -c 'echo $TEST'")
   end
 end

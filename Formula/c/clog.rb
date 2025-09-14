@@ -4,7 +4,7 @@ class Clog < Formula
   url "https://ghfast.top/https://github.com/GothenburgBitFactory/clog/releases/download/v1.3.0/clog-1.3.0.tar.gz"
   sha256 "fed44a8d398790ab0cf426c1b006e7246e20f3fcd56c0ec4132d24b05d5d2018"
   license "MIT"
-  head "https://github.com/GothenburgBitFactory/clog.git", branch: "1.4.0"
+  head "https://github.com/GothenburgBitFactory/clog.git", branch: "master"
 
   livecheck do
     url "https://gothenburgbitfactory.org"
@@ -14,6 +14,7 @@ class Clog < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "c14c0f289d7f795ec4a4cf88ded115bbd95cbe14d1d2da796fc8e2cfd7b63090"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "324768db7056ee6258ee9bc6a19b15e325061e637a4074201e299f110979f81b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ca002e0ad80711f5ca0edc944efd4ab5c0eb5698eecce8913f53e961d7040a90"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f9bb8aee30f0a25183545a2a3e775fac4f8605aad93e63cb0928c8d196f3812a"
@@ -35,7 +36,9 @@ class Clog < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Workaround for CMake 4 compatibility
+    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

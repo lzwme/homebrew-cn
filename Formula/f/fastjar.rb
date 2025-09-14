@@ -13,6 +13,7 @@ class Fastjar < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "9d3f55c3b2f687a368a908be2045d117726942501be6d90377153619675323e0"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "04f3c15e78f2c33a9ef3a33561aced187286cdbbaa0ad29ace0f45f0701873fb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fc54e682bbb9eed396f0cd21f3ee472ff5473e49932cabd827a224ed01961e68"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b0499cae7fac86fbe57a98cbceffb53e2ff047cdadbcca9a103083a0cc6e9a20"

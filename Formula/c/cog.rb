@@ -12,6 +12,7 @@ class Cog < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b942a7bda912bca50448ad19ee83ec8442b991b8007f4d52e033199ac3ee01a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b942a7bda912bca50448ad19ee83ec8442b991b8007f4d52e033199ac3ee01a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b942a7bda912bca50448ad19ee83ec8442b991b8007f4d52e033199ac3ee01a"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5b942a7bda912bca50448ad19ee83ec8442b991b8007f4d52e033199ac3ee01a"

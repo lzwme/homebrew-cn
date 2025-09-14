@@ -29,6 +29,10 @@ class Cpputest < Formula
   depends_on "cmake" => :build
 
   def install
+    # Backport support for CMake 4. Remove in the next release
+    # https://github.com/cpputest/cpputest/commit/fbb8526750aa370e642da7c21a98d6efdf7a3f37
+    inreplace "CMakeLists.txt", /(cmake_minimum_required\(VERSION) 3\.1\)/, "\\1 3.8)" if build.stable?
+
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

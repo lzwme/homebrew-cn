@@ -8,6 +8,7 @@ class Grt < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "c6059dfbaae19edd07d9b9c4df53dc8797cfe6d918ce9cfec5628bfefc6ca3f7"
     sha256 cellar: :any,                 arm64_sequoia:  "074ba306d1024617ace8a0f056a9c55cf8cdb53ede10471eb77eeab5435f6e6d"
     sha256 cellar: :any,                 arm64_sonoma:   "4fb256ad0e810c361d218210ba816f27e7f36d0b03547dba8a503d804c7928d3"
     sha256 cellar: :any,                 arm64_ventura:  "b6aa8b0ecb30a18b3a1ddeb21a08f9b7aa12226bea2174a5bfce165e1e56e477"
@@ -27,7 +28,13 @@ class Grt < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", "build", "-B", "_build", "-DBUILD_TESTS=OFF", "-DBUILD_EXAMPLES=OFF", *std_cmake_args
+    args = %w[
+      -DBUILD_TESTS=OFF
+      -DBUILD_EXAMPLES=OFF
+    ]
+    # Workaround to build with CMake 4
+    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    system "cmake", "-S", "build", "-B", "_build", *args, *std_cmake_args
     system "cmake", "--build", "_build"
     system "cmake", "--install", "_build"
   end

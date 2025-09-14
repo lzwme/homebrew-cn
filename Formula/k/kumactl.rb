@@ -12,6 +12,7 @@ class Kumactl < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2032ac3a87a55f8a59bd4b4b198efa516d37c48bf0028ecd0277adbc226713d2"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a07e56dd01b7243a1a00f05d95ca8765c5321a78128cb86fe0271b77b6888f89"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eece7b37dedc1ed432261b85678d631f1211d187ec0f748b2bc7c07e080de66a"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "77571bcce74294e50b982d01d23f0e06e63fdd415d0d717f33aef590ac0b37fe"

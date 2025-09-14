@@ -7,6 +7,7 @@ class AstGrep < Formula
   head "https://github.com/ast-grep/ast-grep.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5c5c55a4b58065ace23fed0830dbf46350a4e7e6e350861abcc55d2bfa2c398"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "aacaec0844e60d8c59f8b3677d263a433afe96d012d8e62d5c32f883ec5363d7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9015f727146342acdc9416a6342077258f8d0f2b940be2f32bc252be4d0725e"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3c6521f6c377caa0c077eec66cace8066f4a14b6b77763af6b710fb6ed1913d5"

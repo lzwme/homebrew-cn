@@ -11,6 +11,7 @@ class Tkrzw < Formula
   end
 
   bottle do
+    sha256 arm64_tahoe:   "fc118de56a8fac03f58c69b8af87157ba99f837885e0bf92ba6a6c3190b72af4"
     sha256 arm64_sequoia: "ab5d487ff3e9827fdc4c61a698a2bd94ac7476b90530dcff5644a325ba8a93a7"
     sha256 arm64_sonoma:  "70cbd979207abeae3c522f5f1a8fd8bf72eeeafdd015e80d780b185e7668b14c"
     sha256 sonoma:        "c8a0f6879237655ef6a8e0a25293b3be58e87f6e65c0441690e409ad9337b75f"

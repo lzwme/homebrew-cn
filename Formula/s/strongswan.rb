@@ -12,6 +12,7 @@ class Strongswan < Formula
   end
 
   bottle do
+    sha256 arm64_tahoe:   "d9b7f3f2b29597a88c53bd2bf67e512010e4a8be456174ef4a448dedd76ad44d"
     sha256 arm64_sequoia: "f979b19cb45dfa5e0edcc2378f4de546db207c0e274f4cc6b35ab0717d8be705"
     sha256 arm64_sonoma:  "020a609cc20abd5cbaaef1176a2b6847063d9ec214bf27dcda1cf9dc69242fbc"
     sha256 arm64_ventura: "aebdb402d0eabc341bca2687a16c5f485d3bedc61960d03bc45d23c8c171f1b1"

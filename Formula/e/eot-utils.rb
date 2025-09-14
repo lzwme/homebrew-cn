@@ -13,6 +13,7 @@ class EotUtils < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "64e5e47e5219e1d27e3683f4c4d174c5cb79117aa6cbf99e1a6939530a359143"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "dcf1a3953bd2c4baedc5f004a95be4704f19c554d064c27e613a2384edbffd82"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "50db80cb120e30adb337ad7c89a227bc3a2d324f7f86415688704f67fd7afbe9"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f0213f9bcedaf984fcd8d2d03894e8a19e1a61c58775efe87d557946dfea9b4"

@@ -8,6 +8,7 @@ class OpenJtalk < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "cb7361d9bbf78cc39da0b9992981dc8485c7f5ac0f5f3f191f5e0b27c8c1b9ed"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "51df7e0512ffe97b112a49dcb57c51da678a0cce2893cf8e3a9430044aef7d7f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "01962b472c100d6d7e9e3b908f31bed428eabf103cdd8c0a64d5611b59bccb58"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "481210a86e81dd0e1deee82d4e046025d9b1cb273352b75744404f7bc30c9400"

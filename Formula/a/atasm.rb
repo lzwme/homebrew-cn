@@ -9,6 +9,7 @@ class Atasm < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "8350e6c0e2bbb8035e95f13ad05a77bf44aa99e6d93c3ceae54c0b3265bd4a29"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f9402a817b9438f3ba44ecf8ef38e70dcfe070a43251f9d62fe0785212b2d0e9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c4910e7d916c52776028f38d6b61858f7d0a4bc85bb46571f08bdcfbc6418df"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "727eea7c68b8de0a001e3b0937c429af8797af568433be534d74ada42a1925eb"

@@ -14,6 +14,7 @@ class Enca < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "4d3a21ddb033608bec30faf735d28d3f16f94f557394b495a638136957d77da4"
     sha256 arm64_sequoia:  "39e220bf0bc73df65cfbc2b9702a29ed48197a9c721760111cc4af07f771a912"
     sha256 arm64_sonoma:   "2528d77eb23d82075f2cb1d877ea170927c4bb16a38f1a05fa1494545973ef23"
     sha256 arm64_ventura:  "e15cd4000e00b96652d900fdce002e2180eed2fe09662ad0359fd176a4e1e3ce"

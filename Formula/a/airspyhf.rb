@@ -9,6 +9,7 @@ class Airspyhf < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "1c1fd82f7cb86587bd29d675af8ea216722ed5e0aee0eca6a137afc0adda0ca2"
     sha256 cellar: :any,                 arm64_sequoia:  "56ba130afa6a1ad1fe9fbda09e0ae0bfefd6eb4d2e5b5a88fa28b150c2a4c1f6"
     sha256 cellar: :any,                 arm64_sonoma:   "b747dbc3b901d77c790fd984fdbaf37979b0e3e7ef0aaca8d616be09353fbe37"
     sha256 cellar: :any,                 arm64_ventura:  "5fbaa0afc4b557fad2a08babdbe97253a76ab494b81dbc402fe0ca9d5c26674a"
@@ -29,7 +30,9 @@ class Airspyhf < Formula
   depends_on "libusb"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Workaround to build with CMake 4
+    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

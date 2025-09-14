@@ -9,6 +9,7 @@ class Libcsv < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:    "7e68ec2e60c356c84b0e330ad076afc58f0eb71eecd953ab4075821d835eb84d"
     sha256 cellar: :any,                 arm64_sequoia:  "c515471cacac39d4bdb089b73f0ca8f2405a7c90b7973203fda68ab10c28a630"
     sha256 cellar: :any,                 arm64_sonoma:   "5ffc7fff79c22779c3c5e74f553511a5d160be80d2fa147f675db2631af542fa"
     sha256 cellar: :any,                 arm64_ventura:  "98c6f484207a9291a7d5696a9eff9ecdb6c6579834b86f8df8731ae61d8f3f4e"

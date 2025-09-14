@@ -14,6 +14,7 @@ class Pdftohtml < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "d4d29ea04949e3054a63667e1563e018cf7b289cee59357ee46955d70f47f6cb"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "09de57926ddbd85906d6ed7dabf427f6314d13cab5de1c0e073a1288a3ea0b2a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb5b6f4137fd05ae7158f74fddf056193773308ea7195ffeec203928ac0bb52c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a18be87eedeec7c2bb94b6571e532ac3e04abf21567991c177d53f6740c71767"

@@ -8,6 +8,7 @@ class EmmyluaLs < Formula
   head "https://github.com/EmmyLuaLs/emmylua-analyzer-rust.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "62c18c4a37eed708d8dc427876e46e85967c7297d5a9da15fa12c4eca0cc503f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb3999b1d28914fd8ba25e10adef647cd8737b00c19e473476f61aa720abe688"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b1c2c25c16de040b1b81c743fe4d79b560cda326dfdb672daf4a84d9d04f8c4a"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "73a2f96e6591adcab4e023e8b30dbe93d69a7673b702c9852aa2996d8de0ba0f"

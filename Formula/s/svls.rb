@@ -7,6 +7,7 @@ class Svls < Formula
   head "https://github.com/dalance/svls.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7aa60524a14a95a07d297475c22f6a94770475e0405765b19217c280960bd823"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "10be4eb74761995e59e60ea16000a4a44bd69e64d55aaa7b0c38db5d0c5d9436"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f403608e739a9129585a1f9ae5ebd9d57889e45ee394888bd5cfd8b2f7381dc0"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2d8dc214a4fc8958c09e097d85d7fe262bb77b5865ad71ddc78ffb07ce84c798"

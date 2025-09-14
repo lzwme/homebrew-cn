@@ -11,6 +11,7 @@ class TyposLsp < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc311c6d1c41901c5b09f0aa6cfbc6b713553f0e635087715cdaf18b167e8113"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "649ad90d89fff278872dce372331b13810835220410de5ad18300182edbdca18"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7520486cd416562b19051969282cb009b7c6755132756e7bfd5d58fd9ba03f8"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7d2948a128701e4cfb04bffa47365a65fae7b44ed4d9d220bf32dca7d01b74b7"

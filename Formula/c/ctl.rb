@@ -8,6 +8,7 @@ class Ctl < Formula
   head "https://github.com/ampas/CTL.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "dfa050e2d9a41d8d9b2bde93e1286f9a172ed202cc0d9f61fe81a33244f6af03"
     sha256 cellar: :any,                 arm64_sequoia: "46dad0ccf20d7fcb923bc2cfff9d592d1abd347fa0a5418947f1acacc0fc1222"
     sha256 cellar: :any,                 arm64_sonoma:  "358beba8b7c3c72f2a578ecb251ad557e2e82b9bba028680dc604296f7048d4a"
     sha256 cellar: :any,                 arm64_ventura: "2dc49c04d46726e0f208cb2fd4be22d4e1bd65eae9f33874c4aa113c54c654b7"

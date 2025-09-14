@@ -9,6 +9,7 @@ class Vunnel < Formula
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "473622f795625939256d46a1bf9a33dda30428edbe2fe4705e37d3e1c585b339"
     sha256 cellar: :any,                 arm64_sequoia: "238884ee2f7d44cc2559be1923e92afd43680092fa78fee626bcae65ba664d86"
     sha256 cellar: :any,                 arm64_sonoma:  "b258cd0f291ccf452313c3a037f0f79caf57141dafc47d13c5d8838eaefff49b"
     sha256 cellar: :any,                 sonoma:        "05572096bea8347935c7b4230404b6a63651cf2905fe513ada35cd685fd2abe5"

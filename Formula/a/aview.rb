@@ -13,6 +13,7 @@ class Aview < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "f995d46c12b61d831e06aa42646204b6a732b3841ba9ba9e262d3f25ac81f901"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e0d6d2b0ec534cc1f23d9a43cca5d6e56afae2da62b68eb2f0675907456e0ad6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0209d8c38cb00d749453ae8525b7f54f730930f497026b01d4192c1a732deea8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "bab18a87647013db5d6556072629a8e138e664a7c7b8f2154179b5eaa6379f7d"

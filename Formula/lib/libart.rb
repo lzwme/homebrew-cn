@@ -15,6 +15,7 @@ class Libart < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "5ef5d23e77d46adf971b467cdba6493e2ffb2dc153042ebc994723c8f0fd0317"
     sha256 cellar: :any,                 arm64_sequoia:  "3a01d5d537487e82c16a96a58e50cbfc189c6e2312fc9b93ce3d0ae110585a00"
     sha256 cellar: :any,                 arm64_sonoma:   "b966bb5a144183755880f3256404abc104d91444d10620c9cafd847bcc76265d"
     sha256 cellar: :any,                 arm64_ventura:  "6264e9bdd039ee87e34893b8565f776309f21d9e0730a1cf48fa801453369cd5"

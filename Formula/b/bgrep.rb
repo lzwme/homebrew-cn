@@ -9,6 +9,7 @@ class Bgrep < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "cb6e6a68d53feffbff679a734db6345a373556ddd3f2d76e2f073b4d3f84d452"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e9084b991c90bd70740bce59c399d55365789b5226d8883067f552d2601fa0b2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e2246a9bc12ae07c1c2403b4efb0023bc96c22867bff0ad41d1d7381ef5b694a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b808abe4e0fd7be98cd1d9916c7e839f95cb086d28a987101aa51a73c22da87f"

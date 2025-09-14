@@ -13,6 +13,7 @@ class Autobench < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "3647ac7b205e7a115aae29fc33d72dc21ab5465b98081711240899fdbde2c096"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e205a771a8b315d263fbfb8cac87e6cf90dec528afeb9d755908a9139a2499cd"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "33abbf1a79c47258e22ff62a94c7d1ec19b304cce3a50780097bd65de10eac99"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1395f353dcbb83ca42019534ce574f19eabdfaf6e5fa203f9e16a5c5d199e0a0"

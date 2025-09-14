@@ -13,6 +13,7 @@ class Minikube < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3da9522694365cf193988a29bedcd8d4fcd430c51f20d16bb3124d48acb73a87"
     sha256 cellar: :any_skip_relocation, sonoma:        "4f7c49135a7d22a2954a3335019f9edaa7efb7dc3ec36a39c8611d74cca0a328"
     sha256 cellar: :any_skip_relocation, ventura:       "4a99e8fdb976b8d77d0236724f4234d339e578d65f2cdcfdfe021777820b4e61"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be418b1b637fb4a224e784771903d8632fefdc524a88123700c83072cdb9cde5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f41f1fd1112d6d4badf73883e1d48f7d69fa6cc70af14fb1daa5994123a80e79"
   end
 
@@ -21,6 +22,7 @@ class Minikube < Formula
   depends_on "kubernetes-cli"
 
   def install
+    ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     system "make"
     bin.install "out/minikube"
 

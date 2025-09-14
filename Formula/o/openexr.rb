@@ -7,6 +7,7 @@ class Openexr < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "3b8399fc525775833f8fba8d87e1f826395821fb89e731d6300637fb225e20f7"
     sha256 cellar: :any,                 arm64_sequoia: "c4c825d0859bc9cc9bf6086e69c25caffca882ef6c41f69913a796b650ece152"
     sha256 cellar: :any,                 arm64_sonoma:  "e928cc92ecd460cec89f38e48b2060b4dbf5c6bc0bdcea88a88a1dfb1e46d344"
     sha256 cellar: :any,                 arm64_ventura: "9ba599ee84193cd7e369deb04d5105caa7759d7b0130f329800ba88af73e70b2"

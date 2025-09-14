@@ -9,6 +9,7 @@ class Crc32c < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "8e3aaa27057bb4e44a84d7fcdef9f8fea950c18d34017a3212f4f4ee9d0e6f03"
     sha256 cellar: :any,                 arm64_sequoia:  "8ea83fd9714095d17ddcb3b8a8f70d2c5694f35b7b6edc17aa8b32e6952295c8"
     sha256 cellar: :any,                 arm64_sonoma:   "df5ea233eee7c04d4c606c33132e5a769761ea6466f711832c22393ce0ce7170"
     sha256 cellar: :any,                 arm64_ventura:  "3ada0a95e5f4b33f6a5caf7e56d9bfe608b44f01c7fd1be0db8f30d4102a473d"
@@ -27,6 +28,10 @@ class Crc32c < Formula
   depends_on "cmake" => :build
 
   def install
+    # Backport support for CMake 4. Remove on the next release when inreplace fails
+    # https://github.com/google/crc32c/commit/2bbb3be42e20a0e6c0f7b39dc07dc863d9ffbc07
+    inreplace "CMakeLists.txt", /(cmake_minimum_required\(VERSION) 3\.1\)/, "\\1 3.16)" if build.stable?
+
     args = %w[
       -DCRC32C_BUILD_TESTS=0
       -DCRC32C_BUILD_BENCHMARKS=0

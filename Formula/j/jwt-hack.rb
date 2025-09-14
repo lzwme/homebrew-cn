@@ -1,20 +1,20 @@
 class JwtHack < Formula
   desc "JSON Web Token Hack Toolkit"
   homepage "https://github.com/hahwul/jwt-hack"
-  url "https://ghfast.top/https://github.com/hahwul/jwt-hack/archive/refs/tags/v2.3.0.tar.gz"
-  sha256 "b5c0de9923d4ee20037873906223ac14c0c9b1e9623cc3a87e3ce5434d3ca0bf"
+  url "https://ghfast.top/https://github.com/hahwul/jwt-hack/archive/refs/tags/v2.3.1.tar.gz"
+  sha256 "1b80213f0c8e8a2e8d50a8fe1f9175fd777cba1547a56f163ab6ccf9d29a1b20"
   license "MIT"
   head "https://github.com/hahwul/jwt-hack.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5c28d9090be92f5ae472584d4c6b2dbb2c038bfa6e2f148023345fe40f468b8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "853bfed2699d13d7956f451870fe7adc10954917a16c80c0bdb812e7fc0b864e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3d5c90a3426e9cc07efc5ebcb7050cdb82b63e1ac7e5ae0ac316b017e65c13fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbf365d16377f64f9ecb82e2fee811ede310fd4af54c1dedadbfb3fe9e31462d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94da9d3f057a84f868453aff625fefcd9ab1931fda4c3507b03af3409565e174"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "58ac1d62e95f5bfddd19b7b1273e937b63bef9f6b2fab69194503520a2b31bdd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7fb99a1bfe03e19a8088f0f3f0e4aba346e664a9cf4276da966ac0d794c2d9e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3ff8df05fb3ffd10e4c5c0dc79b47b3fad162cc86797004fd03b76f4434e65a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "02e8f0d957a03cc263bdd2d09d218b8b35dafc4447bd0efe492bc5af4e9c583c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8715a9760ee5da2cb9e0ec0aacbb9f017d1a79569e1c4c423dff3a9852286b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1769eb46caf2738517efbdaf4ea2eb94d1a9266c850f52f39a3a23cea7a6f83"
   end
 
   depends_on "pkgconf" => :build
@@ -22,12 +22,6 @@ class JwtHack < Formula
 
   on_linux do
     depends_on "openssl@3" => :build
-  end
-
-  # add missing fields, upstream pr ref, https://github.com/hahwul/jwt-hack/pull/77
-  patch do
-    url "https://github.com/hahwul/jwt-hack/commit/7e607dd3d261a1a97e4bf1a056aecd9a3ba2f686.patch?full_index=1"
-    sha256 "52a71652d0621103994e175eb29ed26991e5fcfba459feeadf66ecc07688eb56"
   end
 
   def install

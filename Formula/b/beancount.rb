@@ -10,6 +10,7 @@ class Beancount < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c679b1cfe7150c50b85043650e14272680bfc4ee246fc48c8bd9c0bd5f5d7d44"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "39c80fbd4ff41b065982713794dc3c9a6f024c25b8ff7cb39ed28bda78d2ddf0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a423e9224c67f96095e9e5a2663ffd285088315890be3689abf742db767dbc4b"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "4ed2293c7df4680ef507cb497ea9e4367912650e944510ed05083b95331f7b3f"

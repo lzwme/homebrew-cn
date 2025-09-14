@@ -21,6 +21,7 @@ class DockerCompose < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "802566285b309590bb8a3431c79577dcc94f6264810739ec6fce260846a178ef"
     sha256 cellar: :any_skip_relocation, sonoma:        "2c030c2d49c1c8cd5ec7d67dca81eeb174a3ab4df8eb00b8c12ff78d399bf283"
     sha256 cellar: :any_skip_relocation, ventura:       "a7bc90097b057cb004b2941cb824de287e117254de13187e7f2bb9ead1a018a5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e78ab449d126f679f68ea3766642aa756f84afa71fe96ffcb62cc38141b36fc2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "91e6a21b0b9a59609136a57515f60b4e857679b10581ec6d5ba0d49cc04f92b1"
   end
 
@@ -29,6 +30,7 @@ class DockerCompose < Formula
   conflicts_with cask: "docker-desktop"
 
   def install
+    ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     ldflags = %W[
       -s -w
       -X github.com/docker/compose/v2/internal.Version=#{version}

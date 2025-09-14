@@ -14,6 +14,7 @@ class Cups < Formula
   end
 
   bottle do
+    sha256 arm64_tahoe:   "82a53180db14fe9e4d21d0a1786c75c5bb065dd60dc6393c7f69a64b024cddb7"
     sha256 arm64_sequoia: "70ee985cb5ece4650a0ae16a9d692317f169432bf1d69d2bc136d4cc9a5ce8b0"
     sha256 arm64_sonoma:  "911492a3ff757deb8a13cf83c58405407c814007d54e8d5713ff9332a7873dc7"
     sha256 arm64_ventura: "e44a25e754a0773c56fa56016b7bee4ae69e09f9d5c14888311aaa89947d8de2"

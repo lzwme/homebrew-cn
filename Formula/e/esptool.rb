@@ -8,6 +8,7 @@ class Esptool < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "3a718647244b162936eec610fd8e46f7fd82fb850281f15163d7ef88937aaf7a"
     sha256 cellar: :any,                 arm64_sequoia: "c4c0b829cb6a40b00ed709a16f672900ea0c78028c5fffaf4362d3c93cb656bc"
     sha256 cellar: :any,                 arm64_sonoma:  "0620d85ed8f210deb1d517d97a8d5347f34254e5631fd1e9e496051217b0eb9e"
     sha256 cellar: :any,                 arm64_ventura: "11db7398183d5ee30c8a51a7dec42bbee02d99625c81f7459cdc25ec54eb0da7"

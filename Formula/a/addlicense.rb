@@ -7,6 +7,7 @@ class Addlicense < Formula
   head "https://github.com/google/addlicense.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d805d6f3d40e1004189f3ac86a50250f2a2c7eef920127565c59f646f703ed30"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d805d6f3d40e1004189f3ac86a50250f2a2c7eef920127565c59f646f703ed30"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d805d6f3d40e1004189f3ac86a50250f2a2c7eef920127565c59f646f703ed30"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d805d6f3d40e1004189f3ac86a50250f2a2c7eef920127565c59f646f703ed30"

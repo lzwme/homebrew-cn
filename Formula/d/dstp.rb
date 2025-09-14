@@ -7,6 +7,7 @@ class Dstp < Formula
   head "https://github.com/ycd/dstp.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d846454cb98d9ca168c8a2975a2d551a00b444afa2a3a0599d4bc956e24c9b35"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d846454cb98d9ca168c8a2975a2d551a00b444afa2a3a0599d4bc956e24c9b35"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d846454cb98d9ca168c8a2975a2d551a00b444afa2a3a0599d4bc956e24c9b35"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d846454cb98d9ca168c8a2975a2d551a00b444afa2a3a0599d4bc956e24c9b35"

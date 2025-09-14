@@ -7,6 +7,7 @@ class SwiftOutdated < Formula
   head "https://github.com/kiliankoe/swift-outdated.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0482349c35b684746603a83a31c53dd0b5ae228b7adc1a43e9f86410c7c5510b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4a414053cd019a301a7d60a0e0b8d86903ab05c467213d173c108c45a759e92"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be7f055410b51f4c125edf24f19415e32a9a6f507df0b52756a3fd5976a90c8d"
     sha256 cellar: :any,                 arm64_ventura: "ac39a84605ea91bdbff7004218261f82f3ca82a2aa24cff8a56d110febb8a2dc"

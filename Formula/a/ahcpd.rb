@@ -14,6 +14,7 @@ class Ahcpd < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "7eb4adae6d9931eb81c4241ddb5475152e5908ba3fa4f1e3903aeb2f36f050ee"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4963298b5a52bcbef584be986fe4a4223a30aefffd2ab6f8372c63c6f8edf075"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b32065d48213f53843b0d0fbc736413cd84da5f87af3a6f1a3d283c6652538f3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8723c6d7d09c03950c296db788a025635ff54314925db39294d96f1d088111bc"

@@ -15,6 +15,7 @@ class Cmigemo < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "b8bf233fe044c8a2bd5bc24fc9bf11eed7aeb0464f67bd7d7ad48f6d9e8edbbf"
     sha256 cellar: :any,                 arm64_sequoia:  "68bc0630d1414e71d16c8a0f39add12897a7f874119a8eeae19e44f28df8706c"
     sha256 cellar: :any,                 arm64_sonoma:   "f5e1a00386582c24b8b0659a907f9f92a52aa22a428d054969d180f43d2a340a"
     sha256 cellar: :any,                 arm64_ventura:  "4da77419c2e50f2a97340f7d6ad6a125895c46ed40900ba6c60ffb73256185c3"

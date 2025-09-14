@@ -12,6 +12,7 @@ class Tun2proxy < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a77d0838e901435417b404ed1ba0d7052ff07f72231b159d54fdfeb8d08c11e5"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "39d7c1d768b59fd26bda77d8315542a43bc0fac169ebb3af0b5457905d41190c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de489762cdf4ab0874ac863c59acf15e53e4ef006998f3d3a78c3e1c87b5595e"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2c38db4d5a03385e7893ae93e64cad0dfc02fada00cede6fb47d8dc532aec2d5"

@@ -23,6 +23,7 @@ class Black < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c4ad364a6a98d8499106a758c664ffbaf1e818af2349256b5ee286854f9a33e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "49b07cf531d62e77ff6f69f9da81a18766f2d8d5769fdaebb3d3cff6045f9607"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b60423982fc49c9d793571d1315671537ebc934a8b02c2bb57b06853a2ec257"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "871521b20363443bdd2397066751ef2c33fd7fc08a6a2d88056971b3499a852e"

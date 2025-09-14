@@ -9,6 +9,7 @@ class Swiftdraw < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa1295db70d1e5b108046d1ac7cb801a15a6826742a970c7d190271d2e2b9e68"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4bdb212c2771659678ea1f8cd22339979a55f76561a4547c2fd5efc6e67d2f1a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4fd64178cf70a769b2fa0ccf6d634a806df91914a300721f638366b1ef6a444a"
     sha256 cellar: :any_skip_relocation, sonoma:        "2183ae401419163d66ff0f130932055e75d2d5888deee422fe2a991afcccd497"

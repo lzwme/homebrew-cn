@@ -7,6 +7,7 @@ class Futhark < Formula
   head "https://github.com/diku-dk/futhark.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "b8c6ac96421de2a0adffc2b80438a4126d8da58d3223cd5088b38f20eda1ec66"
     sha256 cellar: :any,                 arm64_sequoia: "bfbb2c2ec8abb82852696c2220851e9c8790b08affb9bf51e4d4175f0dd423e0"
     sha256 cellar: :any,                 arm64_sonoma:  "5470c14ccaffbb410d3855461e6d43ada21bbab4c9ef7b8d19e461872f1d0894"
     sha256 cellar: :any,                 arm64_ventura: "9655bbc2d0b351c5474cac08c17ba58198fc466c231626116f070f44421a47d8"

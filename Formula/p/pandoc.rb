@@ -8,6 +8,7 @@ class Pandoc < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "a2a714d9ed22107452cccebf11a234d953a03a4d0e5b255b0739b4d3364ec6c1"
     sha256 cellar: :any,                 arm64_sequoia: "3c56ef545678a26d526a8b4dd1f3c81fa01fa7570e06776082c2f4dbfadfb6ce"
     sha256 cellar: :any,                 arm64_sonoma:  "708d8c6efacab7e0b956c8569350efad991cfa7851da37efeb1b542a1f98b9f7"
     sha256 cellar: :any,                 arm64_ventura: "6c6505d4c3accd3e0aa0150b50dad2ad1dc5d40941c8b83114b5bd3425633bb5"

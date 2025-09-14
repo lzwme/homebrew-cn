@@ -14,6 +14,7 @@ class Etsh < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256                               arm64_tahoe:    "563a005afcf2e27e22f7be999febc8c5f2cb26659f6e12a8ef2081531f6ded4f"
     sha256                               arm64_sequoia:  "d67ffc1ce7bd60251ea6a60da6f2c4676d2ee3c32cdf22743398de0c2eb7cb05"
     sha256                               arm64_sonoma:   "94f5918f0bc1416a3a10328e6297dd831c2f65b588245cd7612bfbeedd169007"
     sha256                               arm64_ventura:  "8d172ed230004a39a1010ea98a5d6acfcf36e611a37fadb1ec4c354edd4cb42b"

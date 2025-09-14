@@ -8,6 +8,7 @@ class Yamlfix < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "7161524c4085fc0d1602ea091732478a4825c9bb45cdbf9a838f0344f7b8319a"
     sha256 cellar: :any,                 arm64_sequoia: "89e72af7bf19e17ab91d8796f45169665c8d2d489b48a8d0bb6b6bdc3634ebce"
     sha256 cellar: :any,                 arm64_sonoma:  "6bd054a555112cdb75e6371516ffa5796b080840bc0e66dedb976ff1a3c52394"
     sha256 cellar: :any,                 arm64_ventura: "f7dae85206da0cab3d12898f71d3c817ad28e17d44cfc4ffc8f3da87c9643a14"

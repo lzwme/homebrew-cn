@@ -13,6 +13,7 @@ class Libdca < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "d61a15b00846c5be3aac61ac0f853f1f86a3e8dff28aaf3df07f546cc8ca1c4b"
     sha256 cellar: :any,                 arm64_sequoia:  "0737b7bd914efce32ae323ecbb5fca30b14b39ef31d704a482883598303518b5"
     sha256 cellar: :any,                 arm64_sonoma:   "f8040bc44c93b05569e5f2cbce08e3b2377bd2445c4f305c2fb49f63a22850be"
     sha256 cellar: :any,                 arm64_ventura:  "d7c6080f57c3de053cb1e94bfc535b783389d9fde51c1cfe6e5c0e8b0c5245d8"

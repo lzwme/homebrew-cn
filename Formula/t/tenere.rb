@@ -6,6 +6,7 @@ class Tenere < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "bddcfb3d99b6ff5156f85cbd3b338ebd243570526f51d8d84c2fe3ff2a4abbaa"
     sha256 cellar: :any,                 arm64_sequoia: "0ef20facf1138986f008cd6fd4b7f0f4ee847c47f8e0f253471044d468222a14"
     sha256 cellar: :any,                 arm64_sonoma:  "0a7a2b4307ec2afb07dcb5c766c81d7a1454d3d0b668e69e4dc8de25e0f051b5"
     sha256 cellar: :any,                 arm64_ventura: "f1d6be5362295a0be1bf0e3d2c5e1a89f64f3e14521619e4ddcfef824a1f0af1"

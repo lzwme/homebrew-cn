@@ -1,18 +1,16 @@
 class Libpeas < Formula
   desc "GObject plugin library"
   homepage "https://wiki.gnome.org/Projects/Libpeas"
-  url "https://download.gnome.org/sources/libpeas/2.0/libpeas-2.0.7.tar.xz"
-  sha256 "1e9a9d69761d2109eff5b7c11d8c96b4867ccfaca2b921eded49401192769ec9"
+  url "https://download.gnome.org/sources/libpeas/2.2/libpeas-2.2.0.tar.xz"
+  sha256 "c2887233f084a69fabfc7fa0140d410491863d7050afb28677f9a553b2580ad9"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sequoia: "ee80bb2b9880d62c908d33623a1829f0a222bb6e402b00234f9deab1c7f0633d"
-    sha256 arm64_sonoma:  "a4cd71342b28480f0dbed845598c31042f0e2b5a3f2ffb132319dd4cb9a545fc"
-    sha256 arm64_ventura: "9e822ce3fd39ad794fce013f7c980d606d2586228a16d27309c77609e72c7e69"
-    sha256 sonoma:        "1459a702efa8caceea393ecabdade57e2cd976c47f06672c115e54e1f8105139"
-    sha256 ventura:       "6faa77fc4715669752208ed373a3a4d8605d509aedf50881a6f0e1909304480a"
-    sha256 arm64_linux:   "e93ed75627813c964c4ab489dce8f2f2b205f4514c151c90035dd9783c2d12e1"
-    sha256 x86_64_linux:  "f3dac6a0f9ba1aa331b51822dc12f11539e92080294ce7c95984add7360cb9d5"
+    sha256 arm64_sequoia: "62c9bee04b73e39a6cbc4c863e2dd2f9d80cf8daee4c0e12934de9ee48ea6b56"
+    sha256 arm64_sonoma:  "bc20458f8a32e06cb66b8281dc7b6893a73dd1ca20cad3f2e377954842f68c00"
+    sha256 sonoma:        "73e31e27dd9f0ae87ed1dc1a71ad608c0fce5c1256de6ecc140573ecf8e9fdc2"
+    sha256 arm64_linux:   "917a550712a770ee027117b97af9709008ba7a65893ae50239af51018f85d8e4"
+    sha256 x86_64_linux:  "5fc1a8bc9da800d2295294b8fe82d30e6802f82093fe42b2c77c066d7012698f"
   end
 
   depends_on "meson" => :build

@@ -13,6 +13,7 @@ class BalenaCli < Formula
   end
 
   bottle do
+    sha256                               arm64_tahoe:   "4e6a4ba9c50b173053bbf2ed5b2a8504f027ab72135095b71e5f840bb4afd4f5"
     sha256                               arm64_sequoia: "23bc2742eff329e537d641d2311cf1f2e6001a2065ca0817b304a85a85990a5e"
     sha256                               arm64_sonoma:  "5eabfda7f2f75e78091a2b0e3c955f8a3a3a6c57a6c6a855f452dc167ec4bb2c"
     sha256                               arm64_ventura: "af34a9731cd661ddb3ee4836de08224515cd337fc737dbbc992da0a564b3cdfe"

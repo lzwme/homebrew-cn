@@ -13,6 +13,7 @@ class Qprint < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "a29390a05c5e5744170726101f054366cf8c2cf8d8112b861574a4f9327d9ae1"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4ac2245e4a3f2c14009c6e9c3418374623e94b32f7f265ffe6cd30f0693299a5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1f2189ee3bf4741aa2c3625d23cdd55109db17d854f0a6a01bc00bd944b28f7b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "92e8b2bf88c82066a97efb04a8b65eab7f08a464d75bb9d4105e50a243f130cd"

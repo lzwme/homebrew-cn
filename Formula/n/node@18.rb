@@ -18,8 +18,8 @@ class NodeAT18 < Formula
   keg_only :versioned_formula
 
   # https://github.com/nodejs/release#release-schedule
-  # disable! date: "2025-04-30", because: :unsupported
   deprecate! date: "2024-10-29", because: :unsupported
+  disable! date: "2025-10-29", because: :unsupported
 
   depends_on "pkgconf" => :build
   depends_on "python-setuptools" => :build

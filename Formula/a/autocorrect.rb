@@ -9,6 +9,7 @@ class Autocorrect < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07336d44e695abd99a30be7352940131ca3f9df4655cf720eac870f6418be38f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "409c354bea8e7a35fdd4f1dddcc9f9196f7312116d78dd7796661fa5c62aaf61"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0bdb5b8e57154c4f40829c037f7cdbeec4e12974a2011be5ea0ef0d10aeb484d"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3f47e51ec5745aed08415a5f9fbdcdd4961f2c73d52cc07ab6862b74abf50f58"

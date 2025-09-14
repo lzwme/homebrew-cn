@@ -8,6 +8,7 @@ class Stylua < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6c1da578e4e27e0bc817c870e0acfb5911a6696bbb40f7b34330e4f2cdd3f40"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5cac08145d9bf7e5041b51bdb178656cc4f15b5c1d555057bf02554a014cae98"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79bbf43376aa36eb8f798fde745a2e011efde94157ed9b8c957f61a22692e406"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ec0963645a2459ed16b34550edfc97ad830b88ee90b7d5840ad761fa1cbb947e"

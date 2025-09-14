@@ -12,6 +12,12 @@ class Kytea < Formula
       url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
       sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
     end
+
+    # Fix build with newer Clang
+    patch do
+      url "https://github.com/neubig/kytea/commit/eab98ce9c45ccc4a0226a87fa6c40b6d0c5ba82b.patch?full_index=1"
+      sha256 "aabb381b38592432d97f789520c81e6df46808c611ff541aae093357c06921c6"
+    end
   end
 
   livecheck do
@@ -22,6 +28,7 @@ class Kytea < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "5ad912b4301454e3c29c5dd0f9b4c9b592d140d0ecc24cb12261408a7dc5ea56"
     sha256 arm64_sequoia:  "0afb996003e2ad0e1443b6a260fcebf6ae349022a1e082ae467bc96d77000b1f"
     sha256 arm64_sonoma:   "80b6a9d85ab58a17b68cf889c413a5bae57c27839ec5e77a787a2a4ae7753c71"
     sha256 arm64_ventura:  "ef9042105ea5b55cfc0dde6e495c287601ec8aad58d8e14342702e127a7d97dd"

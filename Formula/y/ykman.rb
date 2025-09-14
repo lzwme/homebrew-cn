@@ -9,6 +9,7 @@ class Ykman < Formula
   head "https://github.com/Yubico/yubikey-manager.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6909d0793a8d4a46fe2addead13463df85b23f74e8a1448de1ce6eee16e30726"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ac3af9f2abea7483614826752d9648e66203a0bf548d502fe7c58e67487d679"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "755808104b72db99dc35ca6e5ed2677ea2d39f14d23a77b11b2a0439266ee050"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ae149c8fc144ec9619abc1629a6fa6869f5c2f455f0f056f910174480c924c63"

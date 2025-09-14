@@ -9,6 +9,7 @@ class Ccat < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "21843d1726a746b8fcfffac1d1cfb9f28c56ecaa54d596ee041f531d78e02cdd"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "57638eda46f68bfaf966e488fb3f7f49c7fde0386cda8f751af2669186abc1e5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "777e245e58e51da009c714af7dfcf24f69bc26531a88dea591045f5067b6c7c1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d047b4aededd042be8d667533534bfa4fdf3335051b8f88013659030ceecfa0"

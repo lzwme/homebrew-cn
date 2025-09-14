@@ -9,6 +9,7 @@ class Abduco < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "c2c4bcd34f6b83f1a2b3a04e223b7eab8b29d6a39043127f422f59d7c38c7e6e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "216c0c4a4ac3e537b0846cb998b36ea986de0d42fb3b2c50b0dfdd4da38a7418"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6db16f93fb69cad1e8ef83fcbe67783e9dce80f5cf2e36caa56b85d81cf3938b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b07ab80b2d588ae9ed65d615b8e4f12bf04b8e86eec0ffd407a4955aef9a2dba"

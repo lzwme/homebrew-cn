@@ -8,6 +8,7 @@ class Base91 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "3c288d4a7310b87b44e080c9b10ae3f541945cc7ba1e990edd1006df84c6ad9e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c592a7056137ae37fd39f580b4f5b94abb84943d2c9910854ddf149d4099becf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "47951f7f2de89d984b7bbfa58b5c39ec6d1fad793516cb925478e907882ffae5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "67a2d373e37965d8f4af56c50d704340f2a85efd2563a1801e8b61eeaa1d8755"

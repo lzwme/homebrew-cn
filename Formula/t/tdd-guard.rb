@@ -1,17 +1,16 @@
 class TddGuard < Formula
   desc "Automated TDD enforcement for Claude Code"
   homepage "https://github.com/nizos/tdd-guard"
-  url "https://registry.npmjs.org/tdd-guard/-/tdd-guard-1.0.0.tgz"
-  sha256 "edd3a754771c724cceb6ab0f0a505e449614bd393aefd5d4f6b88d0682b26fd4"
+  url "https://registry.npmjs.org/tdd-guard/-/tdd-guard-1.0.1.tgz"
+  sha256 "78904f63711ed5d2a654258e3e5f30124773d81746ad7fd31dd255f49fe12db5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5ff2842dfbc41b0be65c40f34dd0f7cd3dd1034172c4fa171b2f43921e41654b"
-    sha256 cellar: :any,                 arm64_sonoma:  "5ff2842dfbc41b0be65c40f34dd0f7cd3dd1034172c4fa171b2f43921e41654b"
-    sha256 cellar: :any,                 arm64_ventura: "5ff2842dfbc41b0be65c40f34dd0f7cd3dd1034172c4fa171b2f43921e41654b"
-    sha256 cellar: :any,                 sonoma:        "4ff0c88dff92e1579767fd401da4b3e21edc9c35b8117c9e8fb71f3a7d1366c4"
-    sha256 cellar: :any,                 ventura:       "4ff0c88dff92e1579767fd401da4b3e21edc9c35b8117c9e8fb71f3a7d1366c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8124f22e16339cc5b66f4dc2b5e54757472f0e06aee3be34e55c64c70e7164f2"
+    sha256 cellar: :any,                 arm64_tahoe:   "0d88a3b0988f2116ca5beb77357df73e8bb6da8fd854cbb2b7c74c25e86004be"
+    sha256 cellar: :any,                 arm64_sequoia: "5e21739c97c607ae32e3d59176456392466607369e191cea965df9ad546e74a4"
+    sha256 cellar: :any,                 arm64_sonoma:  "5e21739c97c607ae32e3d59176456392466607369e191cea965df9ad546e74a4"
+    sha256 cellar: :any,                 sonoma:        "07a558015fc8f7c65e3c9977cbcadf240032ed0172f41d9d92a16b71edc7b51b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d50fac48b275807586a3ad1fa75d8a0804536840ac4da8ea6a0aec5d8fa00483"
   end
 
   depends_on "node"

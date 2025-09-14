@@ -12,6 +12,7 @@ class Cdncheck < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f2a6d74b130e2d6ebb8a40764d2f83405e885b5633cbbfdf027d7480720a666c"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "40440a18a4e92c012c23dd96280707f39b17ed95f356a47919c7b2ca36954f89"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ac31b11b311d0277164cae565e8973ba17523ea33f93e53c825945da77b65c3"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "751bc82c9e14970f6b2dfec7d6efd5589f67a9e24e1c8ba8eb440a412024dcab"

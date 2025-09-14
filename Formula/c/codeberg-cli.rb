@@ -7,6 +7,7 @@ class CodebergCli < Formula
   head "https://codeberg.org/Aviac/codeberg-cli.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "aae20e5cc0e139c361aeec6bf3a0e5893895ce9243664acb52dd1dc67cd0f551"
     sha256 cellar: :any,                 arm64_sequoia: "cd4dbc05182ca3546f636e0adeac3b23c187fe3ee64666fb54a03e0b213601bc"
     sha256 cellar: :any,                 arm64_sonoma:  "b7aab4dc62e541c5829689a7772881f75e9f84c6c802a983695584780d4c20cb"
     sha256 cellar: :any,                 arm64_ventura: "8406ae43d5de60f8ba5c2d29f012c19b770fb4864ed276f14b3e79b2df70baf7"

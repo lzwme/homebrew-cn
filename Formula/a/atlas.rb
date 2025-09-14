@@ -9,6 +9,7 @@ class Atlas < Formula
   head "https://github.com/ariga/atlas.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5150edc0fdd375f28c965ea050866320ca54306e8f9a75bd0441043336befcf2"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d25a049d58fa0d0a77e821a987b1693a067f8635038483a55581a5a73ab591d1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18d7e3f3442f36583fc4360304f866d02e37f85795ebbc76bbffac46fb9dd52d"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "180d80f3ba8cff9a61406e9fa42f83a0cd6c4e79f262e46fc110e13075937dd8"

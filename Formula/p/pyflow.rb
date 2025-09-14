@@ -23,6 +23,7 @@ class Pyflow < Formula
 
   # https://github.com/David-OConnor/pyflow/issues/193
   deprecate! date: "2024-10-06", because: :unmaintained
+  disable! date: "2025-10-06", because: :unmaintained
 
   depends_on "rust" => :build
   uses_from_macos "python" => :test

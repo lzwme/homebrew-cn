@@ -9,6 +9,7 @@ class Pdfalyzer < Formula
   head "https://github.com/michelcrypt4d4mus/pdfalyzer.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "db99d1b80f8217d4c085c6e87a6e4e2e33eca3700b376efcd91c61e40832bf45"
     sha256 cellar: :any,                 arm64_sequoia: "62dbacb5b7321209fc8d087c1f4878bfe2e9dbb1f81938d32f31768859567de8"
     sha256 cellar: :any,                 arm64_sonoma:  "5c28d22f07a063ec377aa21199edd22145e82cbb2bfabefd090f39287880b5b8"
     sha256 cellar: :any,                 arm64_ventura: "9ae04212bc7ac4d7295b155154c6f862a9a462003cad16ca8fc292353d098575"

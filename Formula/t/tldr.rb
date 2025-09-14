@@ -19,6 +19,7 @@ class Tldr < Formula
   end
 
   deprecate! date: "2024-10-24", because: :unmaintained, replacement_formula: "tlrc"
+  disable! date: "2025-10-24", because: :unmaintained, replacement_formula: "tlrc"
 
   depends_on "pkgconf" => :build
   depends_on "libzip"

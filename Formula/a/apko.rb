@@ -15,6 +15,7 @@ class Apko < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90a3b9ec22ee08ab0bc9e046a3fe0e459c3ad697c0a6729ad8ae848934d7ea80"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "14a6d021a50875412e90258ef2cff33cf1e455701e7c30c96e7c4c014057e877"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2b23e6620515d8cd287531d49d92fbd9ef1b2ad5c231278daaa5dd2ea6dfb02"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f806b063260a70232b8ded4737985d638655922080e6d72dfe9c60da77ef23cc"

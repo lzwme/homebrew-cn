@@ -8,6 +8,7 @@ class Lzfse < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "712821a6da6f0a4e597c597b3df2c804135d1f870ad4ffc9eb4e9b039aeac71c"
     sha256 cellar: :any,                 arm64_sequoia:  "4ece33c62d9b2e19ea17089e85b380c3e124413d45fab40e307231c6defec609"
     sha256 cellar: :any,                 arm64_sonoma:   "a10f2fce7192b49ddf9b0c34370dfd50d2a12264104342f36c731a9d6a69941b"
     sha256 cellar: :any,                 arm64_ventura:  "e6932c59d8f1f9462445d06f243af20c1c2a09c6eaaea3c5cc4ec8efb9466ce1"
@@ -29,7 +30,12 @@ class Lzfse < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    args = %W[
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
+    # Workaround to build with CMake 4
+    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

@@ -7,6 +7,7 @@ class Cddlib < Formula
   version_scheme 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "d689cf16077c6e02f851c4d2a45b73539c9ad2eab766ab75cbf3ab7c21b50267"
     sha256 cellar: :any,                 arm64_sequoia: "ac504ee11eb267b9968a1ea970356608880054457bfebd24f18820b1dc6010a1"
     sha256 cellar: :any,                 arm64_sonoma:  "afc609fa9a3560208e7441ad073a6959aa9f474483016b8aa5be9aef8a65ab0b"
     sha256 cellar: :any,                 arm64_ventura: "368d7e7af37feb06abebe16bebd54583353543abe5be0d57290c9f9ae96e3bbb"

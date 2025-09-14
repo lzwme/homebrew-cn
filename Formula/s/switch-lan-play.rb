@@ -9,6 +9,7 @@ class SwitchLanPlay < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "bc7be8d18040e7c518cd4f4eb42e99c53b4b8601b9f291d2ea766d3c8dade613"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "62c1155ae43a4751ab7efaeee9e02c57e8782186aac73312eb874289f7e6aec4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8281272397493ebd6fad9f2f53d61c62bd0302c1d3e898a0002874ab6c4ffce4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4caf1d51243835a1c8816372f07bce843840f38f0a8ceaad42dbd19c15fe9c5"
@@ -30,7 +31,9 @@ class SwitchLanPlay < Formula
   uses_from_macos "libpcap"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Workaround to build with CMake 4
+    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

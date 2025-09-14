@@ -15,6 +15,7 @@ class B43Fwcutter < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "5e27ebebb8d25a8d3c1ddd0e03b4a9f174117c1cb977c590b1c5300f5b45629f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "feebcb5d44b93e56fb3057568f06a25214d0c0aa2b03c48c0e8a068ecf5a1986"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "de90ea58c943e6a3a4da88710cfc5b1e29e646e1033ca280dac8730184346572"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e4d24a045df3b788ed629cd5f67509f5a0c5bff70fcd213f72107c2db166e3d9"

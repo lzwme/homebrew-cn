@@ -7,6 +7,7 @@ class Yozefu < Formula
   head "https://github.com/MAIF/yozefu.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "f6d986ff3f6b1367db0c55d643a9dd6d431ef9dc24ab7a36005cdc1f22eb784c"
     sha256 cellar: :any,                 arm64_sequoia: "ffaae0befc5386001b25d85bcb7a871457653e510d17f34ef5b36ece8a2b5a6e"
     sha256 cellar: :any,                 arm64_sonoma:  "ed6e426f4b3b434979f78e40a4af564eba2ba411a128600f139f92eac9017644"
     sha256 cellar: :any,                 arm64_ventura: "1ce78c6fd6264538ef59d4d31edc7948845afb2a495c1e8370f5bd67ca8d170b"

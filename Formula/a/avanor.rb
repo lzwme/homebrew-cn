@@ -8,6 +8,7 @@ class Avanor < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "f4e7392f6932b4478f15b384de5435734302d9758907fac70bb02d70e8307ea6"
     sha256 arm64_sequoia:  "88abecffbb226843739fc147a93b4ba8d7feeb105f4ae7f3580ceb719c16ce8f"
     sha256 arm64_sonoma:   "f230abf456ef3e8f748a444f6c4909ae3d94553e6fc7dee79a871d1b7639e9a7"
     sha256 arm64_ventura:  "ccc57d4f9e6be0a45d01a7498cd8f4503810d6f754847ca561e0404f705ad5b7"

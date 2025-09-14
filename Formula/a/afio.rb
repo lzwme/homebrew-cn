@@ -11,6 +11,7 @@ class Afio < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "f5c6e7fd1928e44f9b105d46afbe6615590f0021e16ca4332c71122e913f06dd"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d2aff60d7ee0309043a8a16fcc08fa31e97f926e891e0cba31fe0f68968f2ae5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f1827985d86c7da8918f35afafdd8cc7bf62fe20e8ebc627cdd77c7ac12b2ab0"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "181059011f90205cc99df3760661b795b59cda42e7bf18746403889e6305ac65"

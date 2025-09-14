@@ -6,6 +6,7 @@ class Gbox < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c74ac3b0baba4f4cf810a06af04291a4e72b4bbae7414e2d165d8a0426368e7"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5a268325bf77251c4e32f17a065803336fbe55496f203089149f9a20b978715"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16cd9e6f00804fde96ffbbbea5e0d71aaad00a090e5431357fcd718490ebcfb6"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3d9c418d5448c7328eacb03c307c287b59edc672c58567b76a7e23dc8a7364a6"

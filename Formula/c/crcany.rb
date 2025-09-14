@@ -9,6 +9,7 @@ class Crcany < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "310705bfcb672936583047b27aa427f521040ed64ac1caf7857658f0ad573bb5"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "edc3456fd296ee992ccd6dc5f64082b1b52789679ea5068c8326874ec600863c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c585ae637459f4db4fb77502ca167aa4375e1b518a193020a01353f98b8a064f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3146496202ceb4f73456d12996ad9cbdc506119617f4c5454882c3b3c7a0dcff"

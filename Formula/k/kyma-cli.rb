@@ -15,6 +15,7 @@ class KymaCli < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0bc104e06d044ef7850919836bbfe75abc57423cd6f33282f0390607ee6564f1"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d16775880e4e73cc164b669ee89dec1fb95068a322be3b70e4414ec215a78f7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c44cef51548a22c4565e34671323ba1a53573f4f4e4da4ba8865eee1441af7e"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2541cfd85e7290c4dd67dbf812abdcf2a31209835cf8f859334ba4c9a81f27f1"

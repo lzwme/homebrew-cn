@@ -13,6 +13,7 @@ class Fontconfig < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_tahoe:   "20f30c771e40a924e423a9652080c7097e16782ffb236344c368721c001b78a0"
     sha256 arm64_sequoia: "357516db5db5eb0cf5936333ef5845e600a0e01fbe80909b994f159b9d18bb22"
     sha256 arm64_sonoma:  "d3d81ce82b7fafa924ca50adb5199b952f9f6706303d599e6bee0c476ece908b"
     sha256 arm64_ventura: "8f07f7c568de41b1229cc5d437763739d4f3e892e9aa17b94fe9415c80ea40c0"

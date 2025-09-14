@@ -13,6 +13,7 @@ class Aescrypt < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "9b39aab473142edc7f8e5eaea2122edcd3bebcea70810914d8d9735a4d82fd0f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b4ec90c9ff44239c6cf43b35377e7ff709983c1b76577ea84cd8dbc638d763ee"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c7cb68631e925aa19e1e1c3cc513dab638b264b078d69a4033789e011876207b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c6719bff5edd5e48eea46096d02b2818e94491901d419de070a0927fb53bd5d"

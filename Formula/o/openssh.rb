@@ -15,6 +15,7 @@ class Openssh < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:   "7c10ac8dc8b6a14cfd638436c3c7f74017bec24a0a2e240d06e31b452195865a"
     sha256 arm64_sequoia: "7389e350d66dd63bfde69bf423bdc64ffc640e2cca096c05dc68aa98a546ef2a"
     sha256 arm64_sonoma:  "efda31ef626a2499082eb8fdcff8915377b29be10284cd502bd74753dc42621d"
     sha256 arm64_ventura: "83893341782c137e23dcdd013f87f89a12560495917813c7d183da60c21cce7b"

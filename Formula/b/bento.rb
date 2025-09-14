@@ -6,6 +6,7 @@ class Bento < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "386fa170b4a5844da82f0461b921d249194dc4940479c7979740f5c206bd06e3"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "44eb654f9dcf96d3ca45db0c2258dd1c051ce39390442b43b9594ece04533c5a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d4d81f86c30dc6320fbc50c6bbaff0b7352d9cc31e15866e660f452a8d18164"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b9a94be95bda0a163659dcb0ceecc523a6bb71820230635b3a1fe7a395027d6d"

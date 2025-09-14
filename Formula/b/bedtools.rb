@@ -8,6 +8,7 @@ class Bedtools < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "31fb10bdcf4acbae4eec588dfae4f131545f8cc87e45c7e6e7347adaf050645b"
     sha256 cellar: :any,                 arm64_sequoia:  "2e84cd0c3fa3bfe3fe5c55304cb4d53edfbffba792c40e98fc5a2c057d8e81b1"
     sha256 cellar: :any,                 arm64_sonoma:   "6b96362dc4065246cfd8a311991b81b13d1901feb8edd5db27c2911b47432f00"
     sha256 cellar: :any,                 arm64_ventura:  "31c196dcf1892f9a483abacfe84ed3922e09842d27c396880657fafd2dc98c52"

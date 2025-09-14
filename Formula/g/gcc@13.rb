@@ -15,6 +15,7 @@ class GccAT13 < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_tahoe:   "4a49130a31326970a261cb1df09c378d8c0dfd15d47302df2899d33c3cd38604"
     sha256 arm64_sequoia: "e1835cf4de5198be33cb475a8135d843518b70bf2f49c315ce666c953c01a5ac"
     sha256 arm64_sonoma:  "21756eed6420edce0053679ad4060e4368a3117003c89ee22db80dfb698c5140"
     sha256 arm64_ventura: "a5676bdda56fcce1c1c467f67ed90ad6330d8ef6e1c72b9f3b94606f50316c39"

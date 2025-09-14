@@ -14,6 +14,7 @@ class Sword < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_tahoe:    "b6f7db99646d56fa897070a7823dc5088fb5ee13be82b3399cb490314291d2e8"
     sha256 arm64_sequoia:  "0bbd46a628e21ec4c2cc033e16a03dca1a2ac3fb5e0ce282a5e60abf4c0b8f97"
     sha256 arm64_sonoma:   "12b0bef882eb3ccc8e41d2199726435ed32286fde77a8b9b6ba6792a6210acaf"
     sha256 arm64_ventura:  "2439903e03cee94fe9b519c1597d9bebda08eebb38f353f775202b637748403a"

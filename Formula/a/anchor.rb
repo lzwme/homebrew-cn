@@ -6,6 +6,7 @@ class Anchor < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "318ce5a652b7547e9b90361b2d16d9c379fdefb7e3a58cfd5ff7fb039c3cc410"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "97816dc2352a8936ed7afa38803abe519939b2be4dc72b82c968a4f199a08f38"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a7a859fe73e707cb3f44839285234a7687a1f24e42b934db66d65b096ab2d335"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ca4ffdfb9aae0ff812731a31069abd21513c73f62ea515987c5f46eef69cf7e3"

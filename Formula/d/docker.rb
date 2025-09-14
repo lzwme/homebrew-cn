@@ -19,6 +19,7 @@ class Docker < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "22832800661f1da1954b5e4025ab897f48ae84bfc4f5988b87313c1e50c6bbe1"
     sha256 cellar: :any_skip_relocation, sonoma:        "0edc16df66d8603b216c2093e30ba73a27387bf6c6a8833387680a974a5987f7"
     sha256 cellar: :any_skip_relocation, ventura:       "a32fe1348ee00282d3900f86e8f1272bfdfdd543813408d78c62c32d1b6adc9d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c055662664c02f22f34ce79ae79590e20b869e619aa043a75deeb93b2c3a1c46"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f68c19ae934558c8139a0028142717ffe5d1f00a660aa087ad029c1efb8a478"
   end
 
@@ -29,6 +30,7 @@ class Docker < Formula
   conflicts_with cask: "docker-desktop"
 
   def install
+    ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     # TODO: Drop GOPATH when merged/released: https://github.com/docker/cli/pull/4116
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
@@ -41,9 +43,6 @@ class Docker < Formula
       -X github.com/docker/cli/cli/version.Version=#{version}
       -X "github.com/docker/cli/cli/version.PlatformName=Docker Engine - Community"
     ]
-
-    # FIXME: we shouldn't need this, but patchelf.rb does not seem to work well with the layout of Aarch64 ELF files
-    ldflags += ["-extld", ENV.cc] if OS.linux? && Hardware::CPU.arm?
 
     system "go", "build", *std_go_args(ldflags:), "github.com/docker/cli/cmd/docker"
 

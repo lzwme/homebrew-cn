@@ -9,6 +9,7 @@ class LunchyGo < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "9073ddcd234f04940378a64e36b1657daf2f1519ad98e61691c7066b2fb881ba"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fba65395dd87db751184f0d6a5023465484f321d47b4cd62ff0095837656c1e6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ce24f8e0a143748b271ad64e33834336cc504c8e14f8dd61ebaac7b06f4eafd5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "bf0dbfac8d527789d752334946988aba0d6bc4a1858e1d94963a8214ee291041"

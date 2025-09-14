@@ -59,6 +59,11 @@ class Ekg2 < Formula
     end
   end
 
+  # Original source tarball is gone and we use Fedora copy but they already dropped package.
+  # ekg2 was also removed from other major distros like Debian/Ubuntu and Gentoo.
+  # Last release on 2011-03-17 and last commit on 2019-03-15.
+  deprecate! date: "2025-09-13", because: :unmaintained
+
   depends_on "pkgconf" => :build
   depends_on "openssl@3"
   depends_on "readline"
@@ -70,6 +75,9 @@ class Ekg2 < Formula
       ENV.append_to_cflags "-Wno-incompatible-function-pointer-types"
     end
 
+    # Workaround for newer readline
+    ENV.append_to_cflags "-DWANT_OBSOLETE_TYPEDEFS" if build.stable?
+
     args = %W[
       --enable-unicode
       --with-readline=#{Formula["readline"].opt_prefix}
@@ -77,6 +85,7 @@ class Ekg2 < Formula
       --without-libgadu
       --without-perl
       --without-python
+      --without-nls
     ]
     if OS.linux?
       # Newer ncurses has opaque structures so old plugin code no longer works

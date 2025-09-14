@@ -9,6 +9,7 @@ class Catimg < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "d92945a35325613398793b13459b570974bde19f5b0ad2fede646b1a44345dac"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e9760742a6ba00bbdef67c27c773d24b546c5060ef8be91965a6a3ae4f8b1d1a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "edf6de7eb7ba34dd5fc9387bfb41aae9a5f2f76eedaeeb01e644320d6465180f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7c748a7eab313176ecf7f82a9a4bafb26417dfec707fe041dd5f16033968e26"
@@ -28,7 +29,12 @@ class Catimg < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DMAN_OUTPUT_PATH=#{man1}", *std_cmake_args
+    args = %W[
+      -DMAN_OUTPUT_PATH=#{man1}
+    ]
+    # Workaround to build with CMake 4
+    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

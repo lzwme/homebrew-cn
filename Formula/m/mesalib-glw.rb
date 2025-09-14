@@ -28,6 +28,7 @@ class MesalibGlw < Formula
   # [^1]: https://docs.mesa3d.org/faq.html?highlight=glw#where-is-the-glw-library
   # [^2]: https://gitlab.freedesktop.org/mesa/glw
   deprecate! date: "2024-10-09", because: :repo_archived
+  disable! date: "2025-10-09", because: :repo_archived
 
   depends_on "pkgconf" => :build
   depends_on "libx11"

@@ -14,6 +14,7 @@ class Foremost < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "d52d6e93501d0378121aab45c81f3091eba21303e633ae7194670860e36a5740"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2fc223a574f2cc52cd6a40d668429f11a7211a34a206f49f1af4329f14a537db"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ba5d99373d1b35db5088801426f5c2f4d3f091887e0b96f561938008565212db"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6392cf002604c650162671aad2867f5247480eb2195472c1d403760430aec07f"

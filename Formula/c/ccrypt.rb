@@ -8,6 +8,7 @@ class Ccrypt < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "cebf96f7115ebb2be8b7f058e24de430aa06506c3dcfa5aaf9c0ff67d1bd780b"
     sha256 arm64_sequoia:  "030055fedb7e4f4136631b6cb57863d19dfbc34c422410ef246422471f6ee0b9"
     sha256 arm64_sonoma:   "6494f1e4ac165f00a8f1cadecc17a33175e0bc2e13d2c6111c4c0825416a43c2"
     sha256 arm64_ventura:  "8670e0da25badd930fe04316614c22caceec629bba9ae2fd4b1576f25d1c724f"

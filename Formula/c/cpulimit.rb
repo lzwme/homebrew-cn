@@ -9,6 +9,7 @@ class Cpulimit < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "b5d88d4e5afdf6bf19d2069b78a12afb77e1f5e2ddf3b34b1cae55528a8f7bd6"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7eca714845ccc7a47497489a5075812b50700960acc1eb7eeefbfd5921851a76"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8dab4e4b11b19e8c01a57593d15ec399ab4f25b8ccdc72299e3f67092d1beaf8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e94ecdb44d2b8f104510da469aaa27a879cbf41518c88315f346116203b9c944"

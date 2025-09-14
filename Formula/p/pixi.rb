@@ -15,6 +15,7 @@ class Pixi < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c09a5c6e9d178891520b3a9d8e30113c82bb84c37f737f63383a525eb731181"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "062dda1ce5fb1d599b3816cbc1014b0c100b9829a4017419e2fed5988c3aca64"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0df3d98fca44459c95aee568a43a9f670a2217f7a1b95e230f6ff6e07633f04e"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b23d4f662e4e803fc821dd4eda02afe1b225bf1450396207db18747bd5c5af2b"

@@ -13,6 +13,7 @@ class Avce00 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "380d933d3d32aa65c7afd933544c0f8a3d4b9fd349288627eeb6211753ad8c0c"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cbfe81486e3dc61f284643a89726e5d94927eaa359f3fe63664baaae8c9bc0ec"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3cbade903948049d8a8ce0e7d367d5740fcdd72c4f1fb67a355e1d43380c3b9"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9078894641a0060c43d87875285e11baab6f2a7f24c36f109f56687b2eaf5674"

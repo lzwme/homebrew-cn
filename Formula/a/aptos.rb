@@ -15,6 +15,7 @@ class Aptos < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c456f861b8d79dac24d27185f067406d26aefb769eaeb77f2e86cb66d92ccb3"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4dc9401ad736cf1b1f368e82e3931977ef549799a194c00dc92bc6ee9890c697"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7fbefe653a7f98a738e643f85d784076d8526a34b3f02adfb9b5ef9785d20d75"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a959486558dc10bb9f04fd13cd571103119c43cc939c6c9731bd61bfdf79a307"

@@ -9,6 +9,7 @@ class Flow < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "736ee4f9355681c26e5818bd74cc1900e63d5e25852c387dabc10f1fea42d4ae"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "131e5e41485f40138c9b7f1555bdd05d5d67cd6f501ba88699be38a68d7df4fa"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08197082e22609d0f562031f1cee8ca0b9ad5730414d3328e287376ab7b3abff"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8d9b59737a997cf267b3f05123497e8f845e0001accdb460e78c3ab0502d7af2"

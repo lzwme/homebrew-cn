@@ -9,6 +9,7 @@ class Conan < Formula
   head "https://github.com/conan-io/conan.git", branch: "develop2"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "6b2998fc71ceb600463f86fad28223006ae2aab6e296fb47120fa1c29f3cdbc5"
     sha256 cellar: :any,                 arm64_sequoia: "71e038c29427185fbb8a2c95e24106b514819ed70eda758718924269805f0543"
     sha256 cellar: :any,                 arm64_sonoma:  "906f329af84f6f84831da30fdd676d3a13c3c7d9ef302564fbb86502c60d1586"
     sha256 cellar: :any,                 arm64_ventura: "66754957c491c6c99f822e67a57ee33758b8ad0d4f6c3a006a31bda720799cd9"

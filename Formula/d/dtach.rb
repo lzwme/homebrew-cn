@@ -8,6 +8,7 @@ class Dtach < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "a3296ea100c480737f279e984c3e0cf25d0d5844aac527c09cf9cc1ff3bb4ada"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "df21c7a193afc665bc0d8e35b51990fa1c86a7d586acefc9248641e2fc93ac07"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "936dc52943de4d68d3acba73b5537df04e30ee6ed0e75148d7ed4270469c8675"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4f1ef3983dedfabc3580bf8348e913f58a25f858f3a5937664dd70014f0fa1a0"

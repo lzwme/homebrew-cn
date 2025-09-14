@@ -8,6 +8,7 @@ class Qstat < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256                               arm64_tahoe:    "588775a7cf8278e02f0a64a1567357dc445ac85016bc356a04715cdbf2cce1c3"
     sha256                               arm64_sequoia:  "bcce7c206dbb478fe19b9e6560c5c480d613fefeab90d30c0720b5e24ddb0090"
     sha256                               arm64_sonoma:   "f2a21de14cf56f81071c54f323b70b96d745203b3e7cc4343e3b49e9ca683dfa"
     sha256                               arm64_ventura:  "11a9a33fc7615e85441444af37ed41d87f0659f672d958824f7cca77eacd2729"

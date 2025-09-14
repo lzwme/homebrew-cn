@@ -17,6 +17,7 @@ class Dagger < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0e387ede20f716190e15f4a74384c74dd639a8e529cbd9115ab3d391a55b192c"
     sha256 cellar: :any_skip_relocation, sonoma:        "79fef65119064cc93d82a220304e516abb2b5b135fa65ca93ecb8f8f282c3526"
     sha256 cellar: :any_skip_relocation, ventura:       "f53c5cac286d5fd0d8a214f3925c91b36c3001cb48c83645a1a5476008cddaf3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "259a72e05cded4d8d42338c3d8db565c756a6a966e321a55750849098115370a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "96fe5ddfec92a81fb349a9e0c055e582b22d74f7ef0637db00c509f4bf478006"
   end
 
@@ -24,6 +25,7 @@ class Dagger < Formula
   depends_on "docker" => :test
 
   def install
+    ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     ldflags = %W[
       -s -w
       -X github.com/dagger/dagger/engine.Version=v#{version}

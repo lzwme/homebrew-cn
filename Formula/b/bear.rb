@@ -8,6 +8,7 @@ class Bear < Formula
   head "https://github.com/rizsotto/Bear.git", branch: "master"
 
   bottle do
+    sha256 arm64_tahoe:   "cc3e36ab251389b0a7c01f1e7adfd374c6ed66767c0292ceda5df7aaac7b4fe5"
     sha256 arm64_sequoia: "43efc46958f53da89cc962f95e1f43e45bc73ebccbb1f05f55e048f4284e680c"
     sha256 arm64_sonoma:  "5ca5fe464af013fb8eae719e62fea6473ab4b1632e291419d320a3b465cba25a"
     sha256 arm64_ventura: "05675a89ebb562a776ebeb7b2c6a62bf0760068ae764b4232cdc104999bf6d96"

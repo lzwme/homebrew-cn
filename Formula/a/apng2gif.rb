@@ -9,6 +9,7 @@ class Apng2gif < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:    "ed45a01466de66b866f9b894a9a12299c51b2f663facd8af4d262429b9507ada"
     sha256 cellar: :any,                 arm64_sequoia:  "0f86e3508b3328f66e3ada01096160126c5ef87912d0a6a187a0200293d0d93f"
     sha256 cellar: :any,                 arm64_sonoma:   "20bcd262d61b96408beb4146b7adc55fa3f18d5a9170949670245bc9e0128f58"
     sha256 cellar: :any,                 arm64_ventura:  "96885dd78971006a1a9c2110cf491436d16cb705fd29c67a8506c06c41cf867c"

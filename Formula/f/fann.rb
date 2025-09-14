@@ -8,6 +8,7 @@ class Fann < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "2ac389dc68554448627859dcea8a703c0d81adce8de6fd1c32a4f43ac467ec7a"
     sha256 cellar: :any,                 arm64_sequoia:  "1a57d8d2501d63d56451fb00bc9fed3e5596b0afd995638b1c290e6a7aa663f5"
     sha256 cellar: :any,                 arm64_sonoma:   "b89f592bc6efa6bc3098f6881b6e6af8adf0ca7a1dc3e6eb4677ba86f9ac44dc"
     sha256 cellar: :any,                 arm64_ventura:  "5d06935d9df379bbb543080a1cfb15503854cd88cb88c6d14186187fdd18607a"
@@ -26,7 +27,9 @@ class Fann < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Workaround to build with CMake 4
+    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

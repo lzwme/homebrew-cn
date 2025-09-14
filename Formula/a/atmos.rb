@@ -14,6 +14,7 @@ class Atmos < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ebeffca34f1351b902a51edf00824570734a4405fc3312d897e7c435107d024"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "44375969db686dcd19bf8d4525af8aa533557eb06e7081ad7869c1be6f088650"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00d2a9a0527886ea22852d9bddf45e6bb2604184654fa1521bfe2144d1f0a8c9"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "61901dbf4420d15c9e17dd39a0b4c187f19d2e6a2a8d40eb507b5270bfe063ba"

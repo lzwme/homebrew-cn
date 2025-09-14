@@ -8,6 +8,7 @@ class Cconv < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "bfb30a39eb38f85420bced927f9c1db3d53a584cf4536a474621ad27a4936303"
     sha256 cellar: :any,                 arm64_sequoia:  "09a537e89790d6af0c6c2f1bd9331b1860b86800285c55c5f4420317aeac02ce"
     sha256 cellar: :any,                 arm64_sonoma:   "da6b870d250ca95eff392c8da4c1e703d292a764c02df3b44f3a2ebf1ff06e31"
     sha256 cellar: :any,                 arm64_ventura:  "90c54593dd333d215cd536457021fde2a90c768b9d3cbac601be53d4b793f268"

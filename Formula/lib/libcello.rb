@@ -14,6 +14,7 @@ class Libcello < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "f29b04252a3f79f89b5ed93d519639c4cf6c6033036d42d8a60567f466a19a96"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0e380cf6073b22792954d22559177ff5ff3cbaf11fbe00948c27b675338ff116"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a2bbf7d05757a81aabb00b595b864d6a531004d0d0d02f70ef6763fe2621ab9"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "38071f3aa78102240020ea1e40db1c431f87fbf8d6d07308cb3952bd46577b41"

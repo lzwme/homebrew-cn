@@ -10,6 +10,7 @@ class Bsc < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "ba525929310367c18e193ffb95e0becc4d9ee009ab746286edf3815db231e5d0"
     sha256 cellar: :any,                 arm64_sequoia: "023b416fedba9f986345a7b06763995b843fedf2fc45d0428d0f6410fedb8b12"
     sha256 cellar: :any,                 arm64_sonoma:  "bb8dea8de8ae93ed8c76cbb488ea19645acc76e8aebc3560063024fa381c026a"
     sha256 cellar: :any,                 arm64_ventura: "5fa279ba7f86d9b0fff2ab75b8d8890b852764e67baeebbcd0125b8c7239825a"

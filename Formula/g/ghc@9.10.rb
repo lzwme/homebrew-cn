@@ -19,6 +19,7 @@ class GhcAT910 < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "621760fc88433b9cf482d926a5cea4072a2d0d26a1435be93e7d85c7bde4f249"
     sha256 cellar: :any,                 arm64_sequoia: "4ab20c497dd1c26e87b27787b5f392652619f72f34c1e313b60045cf8490fb86"
     sha256 cellar: :any,                 arm64_sonoma:  "8595c17b3500b2bcee8be823f5d4a0d3755f42a5637f09ba524402c2d1cd9dc5"
     sha256 cellar: :any,                 sonoma:        "752ae798ad44cd76405249c4896bc310e5a112538f310fc9cb6ac6f46d020651"
@@ -105,6 +106,11 @@ class GhcAT910 < Formula
     ENV["CXX"] = ENV["ac_cv_path_CXX"] = OS.linux? ? "c++" : ENV.cxx
     ENV["LD"] = ENV["MergeObjsCmd"] = "ld"
     ENV["PYTHON"] = which("python3.13")
+
+    # Workaround for https://gitlab.haskell.org/ghc/ghc/-/issues/26166
+    if DevelopmentTools.ld64_version == "1221.4"
+      inreplace "rts/rts.cabal", /("-Wl,-undefined,dynamic_lookup)"/, "\\1,-ld_classic\""
+    end
 
     binary = buildpath/"binary"
     resource("binary").stage do

@@ -13,6 +13,7 @@ class Tfmcp < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "4bd00155426fbe42e66b0407d99cf051e92a748c18170fc42af5353dd4f9565b"
     sha256 cellar: :any_skip_relocation, sonoma:        "362715e0769e7a47ba53e588141435f145a3463aa68033276f7ed104588d8634"
     sha256 cellar: :any_skip_relocation, ventura:       "231f29d10d19a1af5e6fa244d4867472a0e8e1d28eb32604ee1206e94642dad4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cb0be4c5bd966660398b8da91aab2c6bc6951904a56ba5bc3801f6dd0205e71"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "575a05e0b7b7c95fee7fedde98338e4dc02701b9d12df6e644e928c1c336dd2b"
   end
 

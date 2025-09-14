@@ -9,6 +9,7 @@ class CyclonedxPython < Formula
   head "https://github.com/CycloneDX/cyclonedx-python.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "c1e68e235844c2a2a3fd83467bc06f6ca07d0541413aa058d083446795f93305"
     sha256 cellar: :any,                 arm64_sequoia: "7d356aadc3dc1cde5399a873bc3f77b147135859c88b65b84d494327cf49b477"
     sha256 cellar: :any,                 arm64_sonoma:  "aee7de77760049eff4a22053da22609fac49bef717db0532d1869f040862432a"
     sha256 cellar: :any,                 arm64_ventura: "54e069c581a1b8da5ce4a06b72280dba84283634aae5f39d81edf9730dca6cd2"

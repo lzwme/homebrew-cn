@@ -11,6 +11,7 @@ class AwsLc < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "a2f8875bef06df439e9904903665fffdccaf99b93ff4dfe6d67e56308cdd5f4f"
     sha256 cellar: :any,                 arm64_sequoia: "9ff4316d3b6f8a6e296123a0d0be5ae624d5550ebc69573f8da4c2145c75191b"
     sha256 cellar: :any,                 arm64_sonoma:  "5dd030baaa313c3c996a10a654ee15c6e684ab0506ce4f6ae37c90dde305b145"
     sha256 cellar: :any,                 sonoma:        "a59481be8c68f2ca63bb7602aabccfa4455d92fb7b8a78d1f9a26f84e561f25b"

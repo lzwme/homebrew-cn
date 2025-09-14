@@ -15,6 +15,7 @@ class Zip < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83ba2b2ec5dae0c7d6b804ee92e433ed035b1350d679592280c7421d15bd5a8a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7cdb35f0192184dbe0c83432f61cb35d2f640925b750bd8d07ea3de8ae1c2a71"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "775099eb3b1a0f85dddef4df4ef0a596bf5224d9d715a5555c5009fdb55f95e8"
     sha256 cellar: :any_skip_relocation, sonoma:        "be38fc0beefdd3c6f662e57bd31f997ddba8cfbce7bf8137128fe2865b06529c"

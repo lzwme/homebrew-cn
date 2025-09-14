@@ -19,6 +19,7 @@ class Cloudiscovery < Formula
   end
 
   deprecate! date: "2024-10-11", because: :unmaintained
+  disable! date: "2025-10-11", because: :unmaintained
 
   depends_on "libyaml"
   depends_on "python@3.12"

@@ -33,8 +33,9 @@ class Hivex < Formula
   end
 
   def install
-    # Use `-ld_classic` to work around `-Wl,-M` usage
-    ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
+    # Work around `-Wl,-M` usage. This was fixed in parent project (libguestfs) but not yet in hivex
+    # https://github.com/libguestfs/libguestfs/commit/e17d794d11090b2f221bfd93acb6a8da046a2540
+    inreplace "configure", '"-Wl,-M -Wl,"', '"-Wl,-map -Wl,"' if DevelopmentTools.clang_build_version >= 1500
 
     args = %w[
       --disable-ocaml

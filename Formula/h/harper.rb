@@ -12,6 +12,7 @@ class Harper < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e9f91a512532c5e215d3875578d7e59027dcfd9fc2deaf1a8f054f6b04114aea"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6209a41bf28311b4df9988e1942f2788b775d54a0bb7181aab874b42282e5a2e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9b88bb3519c8ee0da83c26038e7122cc7f58293d02e6a0d5b39047135277155"
     sha256 cellar: :any_skip_relocation, sonoma:        "bb9326eaed841b756fdeb4fa798fa30c8972bba9c41a9f8d1e416b0f7b189638"

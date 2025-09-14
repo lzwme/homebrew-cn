@@ -13,6 +13,7 @@ class Opentofu < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9023d6b52ab74a60d5141f6c5349433a58afeb85327acdc1923e887fd57060fe"
     sha256 cellar: :any_skip_relocation, sonoma:        "0673618e932cf96b7468f84f12c80b9408d5f7dbce9771f27788a722bc5590fa"
     sha256 cellar: :any_skip_relocation, ventura:       "0673618e932cf96b7468f84f12c80b9408d5f7dbce9771f27788a722bc5590fa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57d9e1640de2438295857b712ba947afeb3099cbce272c0c450432c78e343922"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dc4025a3e579b2340176b7dc624a40537c9bf5ff7a4801839838644fb5168fd"
   end
 
@@ -21,13 +22,13 @@ class Opentofu < Formula
   conflicts_with "tenv", "tofuenv", because: "both install tofu binary"
 
   def install
+    ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     ldflags = "-s -w -X github.com/opentofu/opentofu/version.dev=no"
     system "go", "build", *std_go_args(output: bin/"tofu", ldflags:), "./cmd/tofu"
   end
 
   test do
-    minimal = testpath/"minimal.tf"
-    minimal.write <<~HCL
+    (testpath/"minimal.tf").write <<~HCL
       variable "aws_region" {
         default = "us-west-2"
       }

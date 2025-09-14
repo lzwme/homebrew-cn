@@ -12,6 +12,7 @@ class AzureStorageBlobsCpp < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "931d74b23882d65838aa1dcdee8b8f5c6a712b92e8e67ef67046fa63c7e6b0fc"
     sha256 cellar: :any,                 arm64_sequoia: "817d7f2c752d012232104d5396c1c90878223b8dc83a6855e7e12a2e16b1e8a2"
     sha256 cellar: :any,                 arm64_sonoma:  "149c06c8e6c669a6d34d1b94ea1b9738ef1ced29bf2d651badf107592907bf21"
     sha256 cellar: :any,                 arm64_ventura: "cbefd41db33f1e410ba5b3af57ba385415d5d72065232fa5a6edb71d8c8779c1"

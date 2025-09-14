@@ -13,6 +13,7 @@ class Flickcurl < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "a6338b6a11dd25f5a0ac9d3c6d0385e49b519b09f6f882a644ff7a76ac285cd0"
     sha256 cellar: :any,                 arm64_sequoia:  "3c35eff6c5e815cb9292d51b61a1ef74ee432630b234934863e11b3f2dcea4f4"
     sha256 cellar: :any,                 arm64_sonoma:   "6cb56f37cf48d22e339fb06c76714ac263e83e1bbd4f745cbba9ddad44b06f68"
     sha256 cellar: :any,                 arm64_ventura:  "3a7f75cacbb1175cfa2ee72dcda7f99f01ba138b7d488e008a9ece38fc8deaf1"

@@ -16,6 +16,7 @@ class Nss < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "5e041dd3d592f46faa1142650c72eeb8eec2b8d9779a11924302b39fb2d3b35a"
     sha256 cellar: :any,                 arm64_sequoia: "ee0e1c6b2d28608a98b202fe6416ddf4d946e29bd89f1b0d74999c9d9f1c0e61"
     sha256 cellar: :any,                 arm64_sonoma:  "ef81ddfa23b23802518dd1ae7de5002db7dbb50c195a813d2c5937c086eba621"
     sha256 cellar: :any,                 sonoma:        "112e124ff08084221c403e93afcb65fb872e7132ff4dfa88a422fe346a8e6b30"

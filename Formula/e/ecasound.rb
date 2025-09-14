@@ -13,6 +13,7 @@ class Ecasound < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "12e39a10c26842235843e303cf99bb10db7666a1fcd812d88b418ed2eae540c0"
     sha256 arm64_sequoia:  "44c42355a7959b320035dc42229da1ea6996934e220820a8e51c8c9b45e882ed"
     sha256 arm64_sonoma:   "fdcc51560354d8507e799d8d6e9f61b77cc31daddcc76afb058e78049d10695f"
     sha256 arm64_ventura:  "0e52338802663453eb4ed6cd44967b7b2baf80b5cc133a4ae42c36f6e4208fed"

@@ -9,6 +9,7 @@ class Ctail < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:    "90852c66651a883f061c0c6d2b2c1281e6b8e1cad687fd14e94a056f4fb62554"
     sha256 cellar: :any,                 arm64_sequoia:  "21800dfc7f1557473cc6fe1b4e0716d4fb100c86acbd6bbfe3751b36b02a37f6"
     sha256 cellar: :any,                 arm64_sonoma:   "4022c3a7de59341455b5be26f2ff72dfc10c4488b0268e18d30057bee351fc3e"
     sha256 cellar: :any,                 arm64_ventura:  "2b40393969bdf9a4676ee936099af2cfbe92c006e87ce6c62b44761d24328b10"

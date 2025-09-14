@@ -8,6 +8,7 @@ class Fcgiwrap < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "6732ddaccbb813164f5b5a0f8b09901f15681e82de377939f5a173b046902bc7"
     sha256 cellar: :any,                 arm64_sequoia:  "c5bbbd4868035ccb9d9f03b894456f3d2e61a167a55f3d934f8c093d26a27e84"
     sha256 cellar: :any,                 arm64_sonoma:   "8978a76429865262b1d5acef3279849a91f46a49adfdee6555a9e0985d355c77"
     sha256 cellar: :any,                 arm64_ventura:  "0037b9cebb42c65b4381625dd9ae10a228ad246527ffe73ba718f4c2a7d5b551"

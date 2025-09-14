@@ -25,6 +25,7 @@ class Plod < Formula
   # Upstream site shows error 503. As of deprecation date,
   # install-on-request: 0 (30 days), 1 (90 days), 12 (365 days)
   deprecate! date: "2024-09-14", because: :unmaintained
+  disable! date: "2025-09-14", because: :unmaintained
 
   def install
     system "sh", "plod.shar"

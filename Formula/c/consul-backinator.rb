@@ -9,6 +9,7 @@ class ConsulBackinator < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "ab0ec7b817355e3a6546b2b0d77026eb3c0bb22c99e7d5c582d8fb9d98b982df"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8839abd4d9ee77b2e2378c281bb982e4af742ea32996c592cbd70e39f882a131"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8dd6cbcb9488966e0c5452941ff2568e991cef265c705f3e20a465bb1346c238"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a382c9d7060ffefb09aa0aa62509ab46dddd90f9d65d0248bb6c75003869be3a"

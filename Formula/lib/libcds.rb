@@ -9,6 +9,7 @@ class Libcds < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "35d45642d081770329b82ecd4fd379a6e7a9b4aa3bf0edf7a1fb81d9ce3a755b"
     sha256 cellar: :any,                 arm64_sequoia:  "03307db4af7a248e4eed5333726ee17188845f0a28403a8a716816155835d411"
     sha256 cellar: :any,                 arm64_sonoma:   "b5c6a40402166f60d1d31f28a902a6bdc80c5a878cd5fca5f7f3bca2a02edb99"
     sha256 cellar: :any,                 arm64_ventura:  "3bfa1c273ba782515935e77ada3723426fc290f26b6bf046e9a03410895c6328"

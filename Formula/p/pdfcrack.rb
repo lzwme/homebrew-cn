@@ -8,6 +8,7 @@ class Pdfcrack < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "f8113a280defcb1e4851634066767a544febc31c201348c3ec35473199b1a9bd"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2b014cb16fb3c9c3d8d587c792f9d94d2c1c7efc6032cdffab864c3e8c93786f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "db85d14c7177eed695a8947e0d8ffb49c9378ac5b5a704a27a9375736b063e2d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fedea0ab3ba0838a429e8ed114d60d4f58da156c5c744fc2d20346e3a48a7f06"

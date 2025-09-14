@@ -8,6 +8,7 @@ class Ccd2iso < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "b0fdfe74cdd573d4b411974eb51ff6d8dd0be85e2ca817a42517d7651f21f638"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e7196c00e29751b4d90307dcc66d0d0f329dcce6bc4c9ce9ae88aceef81e55ee"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5c3859a54807a7d37e25bf568c22dd063ad9d613713242cc8e266e69f985cc59"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e1e557828fbb5b8b991d0710a5e2489a82bc8dad3b6136d2ddd17f2ced86c5a"

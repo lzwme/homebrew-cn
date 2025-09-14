@@ -7,6 +7,7 @@ class Faudio < Formula
   head "https://github.com/FNA-XNA/FAudio.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "ccbfeb2f8d1d7437d798f137521560d83bca8a86497089da6147d01b9916c13c"
     sha256 cellar: :any,                 arm64_sequoia: "64c3b6eddb7edf5c933823ccc8be3bdbb829ca9d0e8e4a291db17cdd763c065a"
     sha256 cellar: :any,                 arm64_sonoma:  "5e478fee9162d97a36258d3a4b20c64bb211e8fb26726445df6c7462951dff3c"
     sha256 cellar: :any,                 arm64_ventura: "2abf13f5129414678a140abdbb969c835fc1dbfa02fffe1a62bbbe778768bc05"

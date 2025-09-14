@@ -6,6 +6,7 @@ class FirebaseCli < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b59b7f6297b7f32f09b047ab8dfff1352a7775f7d99d9fa4bdec6a8d15a1db96"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3a2d312da40afe36ca1c7bd00edb55e33b232d95280c7dc15ebe2e8579a0930"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a3a2d312da40afe36ca1c7bd00edb55e33b232d95280c7dc15ebe2e8579a0930"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a3a2d312da40afe36ca1c7bd00edb55e33b232d95280c7dc15ebe2e8579a0930"

@@ -8,6 +8,7 @@ class Glib < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
+    sha256 arm64_tahoe:   "84904035f93f49a5517096dfe29ab6c1bdf1f803ee7d768dfdc287c29a6c5d24"
     sha256 arm64_sequoia: "7c3d1882370a0cffe94535a6db4af6d0f3d27bc10aeb3a34d0d2de46209dd12d"
     sha256 arm64_sonoma:  "9c40fc0a4b2aa9372b2ec78dae2ab14fdf0cb203dd1db69364629dd3e551ea51"
     sha256 arm64_ventura: "0cf47f3bff144ca35003cd0262248d0960b839f7cb40417ea62e8314cc40258b"

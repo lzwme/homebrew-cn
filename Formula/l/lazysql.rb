@@ -17,6 +17,7 @@ class Lazysql < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d65ce1718770d13839f9c33a4d4e52a33bfc12839abe9e8fc2d86c6604915d3a"
     sha256 cellar: :any_skip_relocation, sonoma:        "4e90f42c011395437ac73cac71ffba446e1766b17cc8da703a715a070a7cd2ff"
     sha256 cellar: :any_skip_relocation, ventura:       "4e90f42c011395437ac73cac71ffba446e1766b17cc8da703a715a070a7cd2ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02e15c1975d6114f85fe29c30fee2c06a8cd72329d6031193244f48bfbf7a873"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a890aadb0eacadb780951ea4b37b4c17206d90380cbece2066133c7e5e98a50"
   end
 
@@ -24,6 +25,7 @@ class Lazysql < Formula
   uses_from_macos "sqlite" => :test
 
   def install
+    ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
   end
 

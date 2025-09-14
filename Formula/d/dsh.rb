@@ -13,6 +13,7 @@ class Dsh < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "cbb546751736cb2f93c9f59a4851ad2157a1440e5f5e914c15f5efb8800f2196"
     sha256 arm64_sequoia:  "d73aea65a96f05c4040e1b38d8238dbaee979d65c886c388b3eb7d7f5b388295"
     sha256 arm64_sonoma:   "5ffc7bafd29a43adc43ae8eaa2d85d51c2231c62fce48da0103f310c9620387a"
     sha256 arm64_ventura:  "adc8a26e4eaaa0762e985cf8ad18e3249ae5854807672860f1250e181b88901a"

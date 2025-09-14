@@ -9,6 +9,7 @@ class Bam < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "4b8de9dd63dfda7b5b54d80b09458897660a18f8bc7e81ccf5fcf10e30890f69"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "adebb626ddcef7b484f65ffa378f7b8301106618b360871f442da91f2944a410"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3f96e777038d7de85e3cc3d52b30692f7980c1da78c82fa19447a1c0610c3e46"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b8e89910d5b1ebfbf030acf7e764ed714826bf7920f0dd5fe755861cee969784"

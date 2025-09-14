@@ -9,6 +9,7 @@ class Fava < Formula
   head "https://github.com/beancount/fava.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "26a1556baf7cd6e7b5e083b3d5f20aaa1ff24ebd7acfddbd92f74567d8a35e1c"
     sha256 cellar: :any,                 arm64_sequoia: "a399d16b527a276848746d026a5d6f9dcbe19a66e364f654bd568202f115b25d"
     sha256 cellar: :any,                 arm64_sonoma:  "6a3c8bf881164e8865cccf59c1dd544b1b56b8f29acd54cdbd08c5612ffea35d"
     sha256 cellar: :any,                 arm64_ventura: "2792cb06d0ebeb561da0125fce7d97a682af3b48cd9c206af16031e993679740"

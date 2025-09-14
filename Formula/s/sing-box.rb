@@ -1,16 +1,16 @@
 class SingBox < Formula
   desc "Universal proxy platform"
   homepage "https://sing-box.sagernet.org"
-  url "https://ghfast.top/https://github.com/SagerNet/sing-box/archive/refs/tags/v1.12.7.tar.gz"
-  sha256 "cf2c6b9782c95287720f5a64dfcc937b0d417df0168fcd358ccd58c324f2b924"
+  url "https://ghfast.top/https://github.com/SagerNet/sing-box/archive/refs/tags/v1.12.8.tar.gz"
+  sha256 "4d3da19e0819fdc12740539512dc3455ea030747c2fa04171967715fb26ff775"
   license "GPL-3.0-or-later"
   head "https://github.com/SagerNet/sing-box.git", branch: "dev-next"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "456e2970a463261f4526132bd6414760fa792e9d6c96ed4f4ee830764dc80cda"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "782ac3e6d9ace812cf5022c08417ec91ba3f4d70e169a3569e043eaee94320aa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e3a0c2e52ff58a134efb0596c7920dfd242e6e85283b7659b95a1b89d3c9f2fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "474a6c987b8e9dace8b1bde15fd0e1cb46523e7fd5564aba298eacaee7072c96"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "790f14093f1c0233a968f51b72d1b057f40f489b4ad650ce47fa82e697fae5e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "327595b7197c9c8d0547da33d6715fa528fca0dbfb5e3852eacc029991ca426b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4e5bd1f28073b74b33e90ea90d507d18944215c6c6f42bbc6a5e6ab681a90f40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3db0e8761832eac66eda87366febffa76a8c810aafd76799bc7d9a9cd26b2ec5"
   end
 
   depends_on "go" => :build

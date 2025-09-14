@@ -12,6 +12,7 @@ class ChainloopCli < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "50767eaabfe62e1e8e4ce99a02210f6fe4ff8320a19445bfadcd5ae57ff37cb3"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "678b18614dd4346e6df9f23f5f217d2482fe42520ff6ccc7964029b7c877d38f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e4fe692f10dec8a6c7879cdb92a2c7d95f13988ccc4561472571a62e03b5af53"
     sha256 cellar: :any_skip_relocation, sonoma:        "b83e0bad93732bf3e73b06a2148e4d10ec2fd0707b248eca5561d7dbc16e87bb"

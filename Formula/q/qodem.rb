@@ -8,6 +8,7 @@ class Qodem < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "62259c018c435331adcb0c9d99b72f119e03d4cb549a100e758f96deae273b8f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "82b1c05936cabb7c92111db07b6443f9dcf4313bb092321cdfb32b9b0866e675"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf3db8bf2f510749816adf4d24e383033ac3211742e922788dd0b0686287985b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c88b2b10336d0562d9858744dac90f4f895efa643ae7441170a2c33fafd76c23"

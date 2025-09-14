@@ -6,6 +6,7 @@ class AwsAmplify < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "43fea79cd8e688bb3f05d80dc5659f6c34676519809d29a2ba917e28232cd9ec"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "26d899ba91a0f6b99213827e6e317367693cae9d57b65db697ecf06b8b6619c9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26d899ba91a0f6b99213827e6e317367693cae9d57b65db697ecf06b8b6619c9"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "26d899ba91a0f6b99213827e6e317367693cae9d57b65db697ecf06b8b6619c9"

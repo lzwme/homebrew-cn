@@ -9,6 +9,7 @@ class Chaiscript < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "5a5e765882d43b75315f316297eca0a972b83c5e5c77c6b00bcc28ec4602bf64"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "23f3944333ce9fa19f2664e512b9e6c98ba1e3dad79a9d409788ad2c70832494"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4cb81d66432b2941bf247d97c156f7764a7c4e76446691925b25cea785cd9f0d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6424e3a8c19e9c654db8954af3910392f6849bd0b6dfc4725ff62c757988d8ec"
@@ -30,7 +31,9 @@ class Chaiscript < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Workaround to build with CMake 4
+    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

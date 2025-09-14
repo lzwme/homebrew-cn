@@ -12,6 +12,7 @@ class Aespipe < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5fc60a58b6bd7edc3b66eb41f00db8c6b5cd875ba16451ea1d17cb760e3f9240"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "30d621d103de66d7f34cb29a9b75022c1074d510880d7e953062569a6411c9d1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ca22c2423a32c3060e7a0bff95254c3051fd3a6af36e110620b28d1426bf5c3"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d0e76b53b8dff2ff1f1141f2c8ba3f1f779019d92ffdd3c18be26850cf60176d"

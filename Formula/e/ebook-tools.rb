@@ -9,6 +9,7 @@ class EbookTools < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "ecdd389cc82aa7712a09a23af8b9fe85cb3aad8f8634101b1933e757de7752a4"
     sha256 cellar: :any,                 arm64_sequoia:  "f5941a8ccff53411313a9126e9414bb6ee069ac5ac3b4ebf819d0b98bc757460"
     sha256 cellar: :any,                 arm64_sonoma:   "62256c5eb6880252f8110c8c35d9c84bd9838bce63de8af4377497d19da21d82"
     sha256 cellar: :any,                 arm64_ventura:  "019f7789541693a154f71bb507db24ab2cd3901f539e08e2ce2e51f53aae48da"
@@ -33,7 +34,12 @@ class EbookTools < Formula
   uses_from_macos "libxml2"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Workaround to build with CMake 4
+    args = %W[
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

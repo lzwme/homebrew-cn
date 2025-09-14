@@ -6,6 +6,7 @@ class QwenCode < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256                               arm64_tahoe:   "4108026e9bb486f365b7c49eabe675244eb57885edb04fffbd2f477b59760f4c"
     sha256                               arm64_sequoia: "f9e61f622226e24d21a14bee214242f2b4ee1ee53a7eaca69fdc4634d33146fa"
     sha256                               arm64_sonoma:  "f9ef28fb73c5f2e1bde79db194e65b3f920f74dff6b50bbf46f9a81866633476"
     sha256                               sonoma:        "71c17bc8a6739aeaadfd9d214ba081a5e147dec6c90a1353563ef21c9572ff77"

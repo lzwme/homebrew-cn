@@ -12,6 +12,7 @@ class Coredns < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc748c498df91d1f57566ce40413690e9699cab4193bb01e3fed39d5eeb35b01"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e803de5cd5f209ad17297c9bb1948cddb9ca8988c5b9a08ed677da2a456a2c25"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6514d3437f033e1b8b7568227b1c6083828b91593067201d48a4edd786791340"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "07c0c6ce12f42238fcd92e2e366f5ddba6328064040f68cc792cac531f6b24dd"

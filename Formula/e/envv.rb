@@ -8,6 +8,7 @@ class Envv < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "bdca25cfb60091dd430d3c09400d5d1498f03cb5a761c60750371643a2bb5ef2"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2110b9d05836da02e31062ad025810c86e863d23c8a585dcb227da34c20e3376"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "58710a70856d6c30fbb8615800486e82d73abd17eb31e557ecd4b9aa41bfda7d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2d47b445c7d02827f54b9cfd3341e2646d10f0156a9dcf27d7745988b1e4497"

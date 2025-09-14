@@ -7,6 +7,7 @@ class Hadolint < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "8dc7e9d3c068d317903f5b0a3d841fec7c81a02e334d8d1b16e117e791ad5296"
     sha256 cellar: :any,                 arm64_sequoia: "a8c8a959da09c91b1c95707a9586304d5367d449ca353a4604a53da364550766"
     sha256 cellar: :any,                 arm64_sonoma:  "1e539279669993dd266bb253e5a1763e6b9377286a40a16c3d2d030f9dde82fb"
     sha256 cellar: :any,                 arm64_ventura: "84e67e5b2bf0024a2bfb20c1f7dc1cf353935f21d6a622cac1ad56da2927be75"

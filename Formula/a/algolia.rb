@@ -7,6 +7,7 @@ class Algolia < Formula
   head "https://github.com/algolia/cli.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed3fe3b5b7f0a90081443986fbe756dfd14fc828fa3b50944dd6a2d3e64139ee"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed3fe3b5b7f0a90081443986fbe756dfd14fc828fa3b50944dd6a2d3e64139ee"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed3fe3b5b7f0a90081443986fbe756dfd14fc828fa3b50944dd6a2d3e64139ee"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ed3fe3b5b7f0a90081443986fbe756dfd14fc828fa3b50944dd6a2d3e64139ee"

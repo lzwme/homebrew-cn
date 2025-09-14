@@ -11,6 +11,7 @@ class WasiRuntimes < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d57406e4ccb8e0cef29f04cb5a1295cbc8e90b40f73d468e56daa29abca581b1"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac1d070ff4fff69404834edf89cbe1208d543d228f8a084ef156699dad4bd567"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8f0662a137df38a57d900f42db5e3e754b2af7763707a5a99d0aa63b3209cbb"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "04e85ad163095b307244791be089642cbdc004a900c9717ce94e7da7f97f2001"

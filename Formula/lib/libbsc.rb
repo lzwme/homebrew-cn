@@ -6,6 +6,7 @@ class Libbsc < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "854969cf0bcec5a2b0f200300dcb083612cb1d88aee5b22e192acde3460fbb2b"
     sha256 cellar: :any,                 arm64_sequoia: "b0413bddefb5d23873e1b3ef62f0faa6d54b6c47bc317108f3df4f4fa1ab9ce5"
     sha256 cellar: :any,                 arm64_sonoma:  "97a4a2cfdc8a9c65d0cfc5002dc652aea7dad01daf8fa3a11bfa662b5240c6ba"
     sha256 cellar: :any,                 arm64_ventura: "72cabda9eb1df38246c1a7e42f8a1b3c6aa3b8f27e1122aa039db04929b0a7de"

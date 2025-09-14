@@ -14,6 +14,7 @@ class Figlet < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "08cea07f0d5aa44680d79cf97dbae12da8f80e85deb70b36f0e701be0896efd5"
     sha256 arm64_sequoia:  "a157e5806797a85551f7773614157047dfa09fb38e76d6502cb93c79a207851c"
     sha256 arm64_sonoma:   "2af79123d12d6b8c4fc9a21fb3b7eae8405b2887bb06f14253e4a50166ac1220"
     sha256 arm64_ventura:  "0ebfa147cd1a513a86323167ab696a94b490dcd215d6685188bc376bf1313953"

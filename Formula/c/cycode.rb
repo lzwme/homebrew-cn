@@ -9,6 +9,7 @@ class Cycode < Formula
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "8ec131a4f69113d6c2ebeb67b5cbb4baf2390054e0f2c6ab373595572348f2c5"
     sha256 cellar: :any,                 arm64_sequoia: "4ee2a263b1e266ed920b7efa46d9db72ef37b0c04f2430a191c2efc00ef5104d"
     sha256 cellar: :any,                 arm64_sonoma:  "b9b25f562387a299d3e34f9ddbc337111a82d466ca5dd19196fd632cfbb91f00"
     sha256 cellar: :any,                 arm64_ventura: "a9ab02e4455d553aaa3dedcee7edf1a4fb0bf66051a1b18a1a7383ac5ec34413"

@@ -9,6 +9,7 @@ class Configen < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "6065f7176f6749015d33a8b03a07fd9d4274686f797b8aadc81e2632669b242c"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f4afca8fd4567771c799d14425f4085ddc23a1ca5f89e32890dba233919e3ae9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f5af8473413de2042d5216b397e93a126cb21577eafbcab7bbe3657047c676de"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1c460c8a01dbdd8cccb66749dea6543bb63430129ea4717ecc9a03e27b6674bd"

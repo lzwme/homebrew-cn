@@ -15,6 +15,7 @@ class Spidermonkey < Formula
   end
 
   bottle do
+    sha256 cellar: :any, arm64_tahoe:   "59ef0564f197856d20c11e2cbdc1bff8c6f02abc6f66ae240b0b8544765df3f4"
     sha256 cellar: :any, arm64_sequoia: "d7ed18f946e73a8fc6b13491ba262627bac6c01fd4b4dabf3248bd80db82aa42"
     sha256 cellar: :any, arm64_sonoma:  "aed949810733f91c9569c313eac65046ef3c43af3f46cace1008c52d22c8df60"
     sha256 cellar: :any, arm64_ventura: "cd6d29a9607555f93893f1c0bbf50264004e5614311af558f12bf6707c4d62b0"
@@ -69,7 +70,7 @@ class Spidermonkey < Formula
     if OS.mac?
       inreplace "build/moz.configure/toolchain.configure" do |s|
         # Help the build script detect ld64 as it expects logs from LD_PRINT_OPTIONS=1 with -Wl,-version
-        s.sub! '"-Wl,--version"', '"-Wl,-ld_classic,--version"' if DevelopmentTools.clang_build_version >= 1500
+        s.sub! '"-Wl,--version"', '"-Wl,-ld_classic,-v"' if DevelopmentTools.clang_build_version >= 1500
         # Allow using brew libraries on macOS (not officially supported)
         s.sub!(/^(\s*def no_system_lib_in_sysroot\(.*\n\s*if )bootstrapped and value:/, "\\1False:")
         # Work around upstream only allowing build on limited macOS SDK (14.4 as of Spidermonkey 128)

@@ -20,6 +20,7 @@ class FuzzyFind < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "6c68a4273ab53b216ddb7f7ade942b7e700bbfa900c5a7b97a6404577d4aec7f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9232687527d2937f2d743e0774e9073675887b2cac09cedddbf053a67db9e4b5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "187ec442ac4e7b4fa865dc8065ce6fc2a9d2e8e79c55fd3c3006b5e294b65619"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "81ff5be190dd0e8d539f7a0e3a366737db3fb72faae8c310f99ee462e4333f5b"

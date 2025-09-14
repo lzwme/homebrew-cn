@@ -8,6 +8,7 @@ class Avra < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "00e1f1cfce097d5ffae9d1c99fec5a225eddc92bf806227ee55aa50c585d442f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "761db2506786dee44f9e36284b588b38692bdef86870ebacf6d90472585627cd"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f170628778857bc28a0cb962dc7c44904c2d4400d56e2723c3df711d05acb9d5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1534538fee5207f6bae424a84ecf108e7c0100c513a853b777b817f6baa5e89"

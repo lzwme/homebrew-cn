@@ -13,6 +13,7 @@ class Batt < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8ce1d724a2c2021a99286c3eca7063226591c31b267269d23bbceb62464c45b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e047426364a02ab8876bd4156b85e51a23ec202ee742d5437d813d0995fad28e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1716f7f3acf89fb20b8200959af477d01bf39f7c476e68b56ef407bb3b7a80e0"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "dbd0010bb27fd1cd9bc1cdd92ef587c5bd83b241d49244ee72911e9c7190879d"

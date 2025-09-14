@@ -7,18 +7,24 @@ class Uvwasi < Formula
   head "https://github.com/nodejs/uvwasi.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "159baa0db413ff03f23669d061a25de2cb31b062b8cd34c61a7c0accc88dfba3"
-    sha256 cellar: :any,                 arm64_sequoia: "8b31bdacb3dce4e40fd0ac0e6336b1b7b1c22e8dd5fe5cfafc0b51bce6929f45"
-    sha256 cellar: :any,                 arm64_sonoma:  "cf6eb3a3af1367282339d67f382e6de64784acbb6ae2b187e0426eccde316b19"
-    sha256 cellar: :any,                 arm64_ventura: "5d12020d1e8759edd22722fc6ec2aa5a612caf8ce866d99a9ec3ab56b0b62037"
-    sha256 cellar: :any,                 sonoma:        "392d42e11570e542d8c92a15e9dee999a54123a4c6b5ce3a62bc8bb9c9f60a31"
-    sha256 cellar: :any,                 ventura:       "6f9d934dcf6137d14f5d7ca900bb4b98fabdc75f54b4ff50c1a5bf0d7887e08f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf3afd69d0ff59b4e9582c30ba2eba0e1191189fdbf60b90c78f780abe14f8c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "583140b528fddaf20e1206d0eadf158ac95dd4f7e00f14b8605c08c2c60f5f8f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c2742f168c40ecdcf97566b4bbca3419dc010995edbd25fd2805c45cccbe11fd"
+    sha256 cellar: :any,                 arm64_sequoia: "3bbe2380eb184f540f5b23a9cd2f92ef21a4779b04ff6068b6c3a0b4e7865c7e"
+    sha256 cellar: :any,                 arm64_sonoma:  "923e457efe87a95fd53031ca80440ce09ab3862a9ac7df374b3fe634c7001c23"
+    sha256 cellar: :any,                 sonoma:        "74534d557b0603f0fac5d6b4e98257bee2f372c55e0eabf97b0ac5ccbd10415d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc607f16b816da2d32a2d8a3eec770c64f8a497524dd1a33d5b6f252db0ac44d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2befd108f0cf4fffab4832dc834e0b7c4b8aec470ad95994435792c6b3ab9bcc"
   end
 
   depends_on "cmake" => :build
   depends_on "libuv"
+
+  # Apply open PR to remove find_dependency in CMake configuration file
+  # PR ref: https://github.com/nodejs/uvwasi/pull/313
+  patch do
+    url "https://github.com/nodejs/uvwasi/commit/fcc0be004867939389aba3cc715ea90b86ab869c.patch?full_index=1"
+    sha256 "4a3a388e9831709089270b7c6bc779d86257857192dee247d32ec360cd7819cc"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

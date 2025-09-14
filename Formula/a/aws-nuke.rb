@@ -7,6 +7,7 @@ class AwsNuke < Formula
   head "https://github.com/ekristen/aws-nuke.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "59f84259a2dc271d996543258a14ca09577a2562472232418221516ed7985e11"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "23b627e3828f2cb832af89b87e700c52495c405af63b12e9597e6351da18a715"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23b627e3828f2cb832af89b87e700c52495c405af63b12e9597e6351da18a715"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "23b627e3828f2cb832af89b87e700c52495c405af63b12e9597e6351da18a715"

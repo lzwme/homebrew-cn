@@ -12,12 +12,14 @@ class DockerBuildx < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "425914fbd1bf45db0d6cc4d66f16d5b2535b85e5a0f5e50d0b6d3d830b713431"
     sha256 cellar: :any_skip_relocation, sonoma:        "506a4f11c600f92ce236fdce5c3f51aea5948665783cfe6de81d50acf9b6c293"
     sha256 cellar: :any_skip_relocation, ventura:       "506a4f11c600f92ce236fdce5c3f51aea5948665783cfe6de81d50acf9b6c293"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "738a0ee9cd5d56e4be186a243f0cd2f01098c24fb7f872e49559696fb6732361"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f100782bb475d046eaba84062375c380ffa1524121fb01f998ee0d9088f6b3db"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     ldflags = %W[
       -s -w
       -X github.com/docker/buildx/version.Version=v#{version}
@@ -27,8 +29,7 @@ class DockerBuildx < Formula
     system "go", "build", *std_go_args(ldflags:), "./cmd/buildx"
 
     (lib/"docker/cli-plugins").install_symlink bin/"docker-buildx"
-
-    doc.install Dir["docs/reference/*.md"]
+    doc.install buildpath.glob("docs/reference/*.md")
 
     generate_completions_from_executable(bin/"docker-buildx", "completion")
   end

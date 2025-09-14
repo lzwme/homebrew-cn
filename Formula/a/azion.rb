@@ -7,6 +7,7 @@ class Azion < Formula
   head "https://github.com/aziontech/azion.git", branch: "dev"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "280b43f6f90063ecd6e4415dac398a9543514a8714bf4b603c653c89a7836138"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "280b43f6f90063ecd6e4415dac398a9543514a8714bf4b603c653c89a7836138"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "280b43f6f90063ecd6e4415dac398a9543514a8714bf4b603c653c89a7836138"
     sha256 cellar: :any_skip_relocation, sonoma:        "a27f5bbc214db74da51b7c928a0be9658d2cfb6f1f93774e80bc61558d92eea0"

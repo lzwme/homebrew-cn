@@ -15,6 +15,7 @@ class Espeak < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_tahoe:    "b3714356a1701d170fc7c6eb121a3db31c25e43c3ebae3e91dd5a6438d060c60"
     sha256 arm64_sequoia:  "c3130662b76d81b56b2202aa390e49548bf4c657781a82e2a411ab85962ee29a"
     sha256 arm64_sonoma:   "d36a7fc671b9d843dd352df7969883226346c0393a92878ec5c5692e70afcd49"
     sha256 arm64_ventura:  "d2ded3f1dd697a128defd54554a3ebee69a2ed566734449b755fbf649a76e885"
@@ -51,11 +52,20 @@ class Espeak < Formula
         inreplace "speech.h", "#define USE_ASYNC", "//#define USE_ASYNC"
       end
 
-      system "make", "speak", "DATADIR=#{share}/espeak-data", "PREFIX=#{prefix}"
+      cxxflags = []
+      # Workaround for newer Clang
+      cxxflags << "-Wno-c++11-narrowing" if DevelopmentTools.clang_build_version >= 1403
+
+      make_args = %W[
+        DATADIR=#{share}/espeak-data
+        PREFIX=#{prefix}
+        CXXFLAGS=#{cxxflags.join(" ")}
+      ]
+      system "make", "speak", *make_args
       bin.install "speak" => "espeak"
-      system "make", "libespeak.a", "DATADIR=#{share}/espeak-data", "PREFIX=#{prefix}"
+      system "make", "libespeak.a", *make_args
       lib.install "libespeak.a"
-      system "make", "libespeak.so", "DATADIR=#{share}/espeak-data", "PREFIX=#{prefix}"
+      system "make", "libespeak.so", *make_args
       # macOS does not use the convention libraryname.so.X.Y.Z. macOS uses the convention libraryname.X.dylib
       # See https://stackoverflow.com/questions/4580789/ld-unknown-option-soname-on-os-x/32280483#32280483
       libespeak = shared_library("libespeak", "1.#{version.major_minor}")

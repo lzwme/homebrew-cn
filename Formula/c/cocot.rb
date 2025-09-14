@@ -9,6 +9,7 @@ class Cocot < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "f6a142983575a21225d725208388e9952675f5b32b1e8b99b5cf26c32ab137a6"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e50202bee861bf0692cb72d1228e2ad10fa93cc047d61480b3e0c558c81746f1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2f9cbd95ef6d76b5354943e896cd03342392a266eeffe2784499ce138ad1fd22"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "efe840ebc69a0212b0563b64b05e44426624ee8ed3c0aa6ef8f8101d1ca7ea0c"

@@ -8,6 +8,7 @@ class Pk < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "1ef1dd86ba0dbedafb386987968dbdf0f22472cb290a7742e80e55efd6976b00"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "be0b36f6d80ee6d6191207faa7454eff5a35fac1aaa54cb3df986482bb4129fb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "df016243a24085cb085bd78cb4e2a0c0a58f0f017a94a09f5b9f7555e6739745"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ca0e954622b756edff41bb508288566a7a950c3a30e83ba0d8013289599afa0"

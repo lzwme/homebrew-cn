@@ -6,6 +6,7 @@ class Cdxgen < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "bf21ff97cdb42abbcdd56257b33d9ed337fabaf8426d9cef60d7ea5f33245a52"
     sha256 cellar: :any,                 arm64_sequoia: "4ab5a6f5f75984fde5b7618e4b1bc364c638c15a8c48dba7f3e30a973341781c"
     sha256 cellar: :any,                 arm64_sonoma:  "7916347df7958f271b13ffa898416dbd993bc77d1153def683824c73d6c3d7d5"
     sha256 cellar: :any,                 arm64_ventura: "1d1d7ea4b2726aaa9776c3f29fc29df7c05aafec58976e81eb4314022419dcbe"
