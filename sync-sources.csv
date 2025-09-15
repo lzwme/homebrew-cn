@@ -4388,6 +4388,7 @@ Homebrew-homebrew-core/Formula/m/mcp-get.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-inspector.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-proxy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-publisher.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mcp-server-kubernetes.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-toolbox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcphost.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcpm.rb, Homebrew/homebrew-core, 0
@@ -5080,6 +5081,7 @@ Homebrew-homebrew-core/Formula/o/opencl-clhpp-headers.rb, Homebrew/homebrew-core
 Homebrew-homebrew-core/Formula/o/opencl-headers.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opencl-icd-loader.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opencoarrays.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/opencode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opencolorio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openconnect.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opencore-amr.rb, Homebrew/homebrew-core, 0
@@ -6909,6 +6911,7 @@ Homebrew-homebrew-core/Formula/t/terramaid.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terramate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terrapin-scanner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terrascan.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/terratag.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/teslamate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tesseract-lang.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tesseract.rb, Homebrew/homebrew-core, 1
@@ -7151,6 +7154,7 @@ Homebrew-homebrew-core/Formula/t/tut.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tvnamer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/twarc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tweak.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tweakcc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/twine.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/twitch-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/twm.rb, Homebrew/homebrew-core, 0
@@ -13542,6 +13546,7 @@ Homebrew-homebrew-cask/Casks/o/overkill.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/overlayed.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/oversight.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/overt.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/overview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/ovice.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/ovito-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/ovito.rb, Homebrew/homebrew-cask, 0

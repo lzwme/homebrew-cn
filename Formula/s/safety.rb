@@ -9,6 +9,7 @@ class Safety < Formula
   head "https://github.com/pyupio/safety.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "ab2bedf1d1a29f6636f42dd44df0c6b145b749987382141b0033eff0eda20cd6"
     sha256 cellar: :any,                 arm64_sequoia: "17290158c9f4b7b0b0e0c643ac951b6a00d48086a04a2fa6f6fd54cacb2a8684"
     sha256 cellar: :any,                 arm64_sonoma:  "820465f1a0b918ba1590eeec843e18860433756898f1ce0cacc670f4e6670ef2"
     sha256 cellar: :any,                 arm64_ventura: "287391e036ab64a34873c1ddd0a8f3d80eda2ef95de8694e3619bbfac5bb4d2e"

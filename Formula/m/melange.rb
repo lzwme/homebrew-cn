@@ -12,6 +12,7 @@ class Melange < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55af7dcccb9c9e69c43619616095db053d2ce0d0ef164d641561ef997f641062"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c0fdf655be390affd6d51f40766a8d5a67830902277f06cc8f226fdfc954b6b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07fd84acb622f6a7e72e22bdf3985ecb8426901d2f1fc7845208d5e546d6f923"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f5b2e0298fb30afd686f60fb4806938d5f336dd8a563382689d989057d2aeef4"

@@ -16,6 +16,7 @@ class Dnscontrol < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d9641bef85740e3a8751fe387414598bad8ac64ef06939622b9db930e2091d18"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6cb415f15f851f8d3822232511217ad79378003533c29955782e0862086cb2bc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6cb415f15f851f8d3822232511217ad79378003533c29955782e0862086cb2bc"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "6cb415f15f851f8d3822232511217ad79378003533c29955782e0862086cb2bc"

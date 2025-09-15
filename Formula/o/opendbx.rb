@@ -16,6 +16,7 @@ class Opendbx < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "8cc990504a450685d677e758cf6741b058dd5b82e1ddf2f10c1e70bac003d58a"
     sha256 arm64_sequoia:  "b355d6e9d840dd066aa4e71bbc2b4ebcca2f13741b07153fcc91a159b0d1665c"
     sha256 arm64_sonoma:   "f5a84ad8458393c0dea21c9e640de968ae3184ddfcf0cf3f25136d376622d564"
     sha256 arm64_ventura:  "847f22724b3cd9e0fe820e25fdf778e5190f347b2bba2b81fda5753dacf44d67"

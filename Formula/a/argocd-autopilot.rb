@@ -8,6 +8,7 @@ class ArgocdAutopilot < Formula
   head "https://github.com/argoproj-labs/argocd-autopilot.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6413e513cbc1efeaad2aaf4afe34e8cdb1e2b38eff30197754f3c9d2fde65a3"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a030325b70b6a46c4d63136e638a852b25cfa90a871464f07724ea48951a7ccf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d34a4629f9d8089d89ca77a623618b73cb95c73afad228ffeb41a93ab021f067"
     sha256 cellar: :any_skip_relocation, sonoma:        "b5899d7d38572a62a7aacf3fb9b30536b3e970c8ef910015ed25ba7fbcf3051b"

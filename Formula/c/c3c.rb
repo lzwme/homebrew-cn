@@ -15,24 +15,24 @@ class C3c < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e360b9f4b170344b6c20d3345bca8240a69b82ec78ced5340da330344b521edb"
-    sha256 cellar: :any,                 arm64_sonoma:  "dea64f6da845b5aa4579745f82fb74d8f9850ab93c8ac4d0d91d79861d307bde"
-    sha256 cellar: :any,                 arm64_ventura: "7136c6295ba01a79492b2a034b7443eb54141a8194728577e97c5eb5bc1199e3"
-    sha256 cellar: :any,                 sonoma:        "89d197f2cf347e4134d09472abc105674b7be9deff7820a875e562a91416585c"
-    sha256 cellar: :any,                 ventura:       "4fcb0dcdc064f502a4b345c70ffe19d316d393e7732fc9218dbca46b9d49be34"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a42dbb3104b385594f63bdecb4580a0c2a14937854439936ffc12991db978efa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "843d035987148fc169211c4af85011969d62aaee18ce2688a09db1d3d31306cb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ff89768a0e195f9742f9c46ed77b30805f9b5acd02ebac8edc593d0fafe62451"
+    sha256 cellar: :any,                 arm64_sequoia: "35293748ec7d607f12a25a706557fc2723c13075c75d0018f9b15080c2d1ed9b"
+    sha256 cellar: :any,                 arm64_sonoma:  "4f5fc6efbf48553b20e1a906d0c685db1942c2e43f08f4b9dd8f66049cdec1bd"
+    sha256 cellar: :any,                 sonoma:        "b75b07f1f09301e0e00e9224dbc5d007ad5c1e69395d70374be1c2200ffd8c24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "97632dd1b1cbfea6bde91487d52f9fb641661cbb3534f42eead0c85e4b40749b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a892a71d12c9ede5657a4503db530cf0f1e8f28b5730ae25d9dee7d3f1a0ccd"
   end
 
   depends_on "cmake" => :build
-  depends_on "lld@20"
-  depends_on "llvm@20"
+  depends_on "lld"
+  depends_on "llvm"
 
   uses_from_macos "curl"
 
   def install
-    lld = Formula["lld@20"]
-    llvm = Formula["llvm@20"]
+    lld = Formula["lld"]
+    llvm = Formula["llvm"]
 
     args = [
       "-DC3_LINK_DYNAMIC=ON",

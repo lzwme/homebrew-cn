@@ -6,6 +6,7 @@ class Openapv < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "f5d59d46798eaa7a2f7aa0128c336a8bf69751c83607e1b76beec38e98c9b40f"
     sha256 cellar: :any,                 arm64_sequoia: "4338fcad05732c7704ac85d7cd094c9c75589117def176e24270449033aa28ea"
     sha256 cellar: :any,                 arm64_sonoma:  "fe0be30a5c3b1afd0be83b2e0b8cf4169e93091b57a467d4068138162c2ee551"
     sha256 cellar: :any,                 arm64_ventura: "ecb5318dd94fa54e445075fbe45944f3e08b43cae0b421c99a4d0bbe611147ed"

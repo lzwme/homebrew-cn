@@ -6,6 +6,7 @@ class Plutobook < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any, arm64_tahoe:   "b7b31876138b4c305719a9516ea3931ab6d1c97f7a6b85c9d31616abae55c435"
     sha256 cellar: :any, arm64_sequoia: "97bec7b8391ef9df32f955c2360c932fb602842086c23c2a985dd8cb48ea021c"
     sha256 cellar: :any, arm64_sonoma:  "c9857958665f5c1e39f6c2a3bfa24c0e3f1836fa42415dd78a490d8fd58bbd67"
     sha256 cellar: :any, arm64_ventura: "00a280132ef37a3393bcd50b8406329bba28862cb400d6e0a48c3709d1d1deac"

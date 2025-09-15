@@ -15,6 +15,7 @@ class HaskellLanguageServer < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "33067ba99216f57b1661133348bf218fa9adec89e8b01a8c36cd84eb31e386e9"
     sha256 cellar: :any,                 arm64_sequoia: "f0f9e4bfb8fc798ed8284843f66f1f2cca465f940c4309c055523867745e8f5d"
     sha256 cellar: :any,                 arm64_sonoma:  "0cf2ca696383443b8773c81c314b21d81971834d46c49e7fd57bfd8ca8de84b1"
     sha256 cellar: :any,                 sonoma:        "1e0c3e715f021ec3810b33f0ffd4f4198a446b10654a75378b2bd32613b6e3d2"

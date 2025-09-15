@@ -16,7 +16,7 @@ class Juise < Formula
   end
 
   head do
-    url "https://github.com/Juniper/juise.git", branch: "master"
+    url "https://github.com/Juniper/juise.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -28,6 +28,9 @@ class Juise < Formula
   depends_on "libslax"
 
   def install
+    # Work around undefined symbol ___res_9_state
+    ENV.append "LDFLAGS", "-lresolv" if DevelopmentTools.clang_build_version >= 1700
+
     system "sh", "./bin/setup.sh" if build.head?
 
     # Prevent sandbox violation where juise's `make install` tries to

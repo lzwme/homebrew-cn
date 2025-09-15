@@ -8,6 +8,7 @@ class Mosml < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "23b30d52a14bb794091e01411eb3ee9e69ad9fadfccb587f2a83cd0578536abb"
     sha256 cellar: :any,                 arm64_sequoia:  "4c5e5c68a5bafb747f9bf0ebf55e7e67f6ff97ad8107a788579db55b27a5a1c9"
     sha256 cellar: :any,                 arm64_sonoma:   "baf1606f54aca14fe0f9a0e734cea0518dc817fd42fb0b755364da0fa3362e9e"
     sha256 cellar: :any,                 arm64_ventura:  "697eb51321f126674f814f5cca5c08956104eb3d4181c04aa055afbf779f068e"

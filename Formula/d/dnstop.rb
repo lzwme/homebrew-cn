@@ -14,6 +14,7 @@ class Dnstop < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "46e3c705bd4c7649ab67f2712d623825f0006cb764e844131a654fe057de19ec"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "feab927b414e7fad8995bfb647c2b019bee68c8aa535b5b9cccdd12e048c81fe"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fa31ea8e4f50e891664b89fa0928c25affda0aff9c1aca5d1333e12e052cb413"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a172c0678ce76e45a73491379633aeb893dad579cbbf89047bf2c1c972332327"

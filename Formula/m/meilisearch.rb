@@ -14,6 +14,7 @@ class Meilisearch < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "148ed5935647834a1052d8ff6c329af32c11e7f1382779cd476ed08cb1be9f80"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3a9b2b62e40252fcae3171b1acae1943401e9c8706c5ea34b57dfaf1bc7ef60"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "543ce9e8cc8fd2b39ae17ab4252e66bc1b2706a0e7b177bc9fb15a4c68decabc"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "fc0dade83e5a3a50826e920a259eca2503e37b8e52d8e1ed3298f6f72e3c483d"

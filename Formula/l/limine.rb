@@ -11,6 +11,7 @@ class Limine < Formula
   end
 
   bottle do
+    sha256 arm64_tahoe:   "445cec31ba2f90ade17c22a1dd1f419d22c3f02677cdadbf82d226836995d314"
     sha256 arm64_sequoia: "d079f4f0474ab2b435fc46992d450cbe0595fd60ecebae2ad8308cc020a7b07d"
     sha256 arm64_sonoma:  "9a0e1ac7b93c0738abee1c87a6299e0cd14545e24dd60ed8d31c53f32e17341f"
     sha256 sonoma:        "4f016cd6dd62851872cb39924d52376154f63c639173c41b690cc0c3a4999be1"

@@ -9,6 +9,7 @@ class Prowler < Formula
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "4546bb0370ecc76b1e22309fc79fa6ce79d6dbd5b6753e73e74a9e2188b89139"
     sha256 cellar: :any,                 arm64_sequoia: "55e22385ff9167b1ea441e4f6607739af8217221df9ba221d2a62af0f4d68633"
     sha256 cellar: :any,                 arm64_sonoma:  "48b64bcb85f62e5ed59b779a85030658eef25c34de0f3d62de8cb536eba5598d"
     sha256 cellar: :any,                 sonoma:        "c43edda2ccf7fa339dcd332ea181c7f1c19daab943f9d01f4cb87e5110666fda"

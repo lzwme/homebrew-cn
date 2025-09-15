@@ -6,6 +6,7 @@ class Libpeas < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
+    sha256 arm64_tahoe:   "89faf4687f9d846c884aa2158c86e99a70b56b81c7119979e757833955ef8c6e"
     sha256 arm64_sequoia: "62c9bee04b73e39a6cbc4c863e2dd2f9d80cf8daee4c0e12934de9ee48ea6b56"
     sha256 arm64_sonoma:  "bc20458f8a32e06cb66b8281dc7b6893a73dd1ca20cad3f2e377954842f68c00"
     sha256 sonoma:        "73e31e27dd9f0ae87ed1dc1a71ad608c0fce5c1256de6ecc140573ecf8e9fdc2"

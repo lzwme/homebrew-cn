@@ -7,6 +7,7 @@ class Libformfactor < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "3203be1b64215626742226e0cf2711c99798d8a8f898235dcb7b653306acd5fc"
     sha256 cellar: :any,                 arm64_sequoia: "bec52e88151038c736cac82a2715adac4f5dd1c8a2a57a6845ee98391c730406"
     sha256 cellar: :any,                 arm64_sonoma:  "2e8443d960fbc50875813f5906f8193c17c6a04b81b2ea53d10a72f5c9c7ba60"
     sha256 cellar: :any,                 arm64_ventura: "cbd1accc07443366fd295ba1b20ba5f70dc26ee1d649f21617a35f215b1fae24"

@@ -9,6 +9,7 @@ class OpenSp < Formula
 
   bottle do
     rebuild 5
+    sha256 cellar: :any,                 arm64_tahoe:    "8686abb8d8b1f3054a19a2d57d9c2bc72820d9a5e7b61dcaea2188f103a50026"
     sha256 cellar: :any,                 arm64_sequoia:  "06f749f6c70ec8df9f8a171e3528d6d322b3d71cb59002fb4e02804f8b70bcdd"
     sha256 cellar: :any,                 arm64_sonoma:   "9e3db2e95f01de344894aad8d34353455085473885a961e3fbef3355cdaaf88f"
     sha256 cellar: :any,                 arm64_ventura:  "d6dc97e6caecf3c6090835b984cf03e7981f755e2a4e9bd884b874724fd62a34"

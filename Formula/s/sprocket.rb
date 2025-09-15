@@ -7,6 +7,7 @@ class Sprocket < Formula
   head "https://github.com/stjude-rust-labs/sprocket.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "5fcc1c2339eed7392209b6dbffba8131ee71355e09ae27543aaa561a5df722cd"
     sha256 cellar: :any,                 arm64_sequoia: "006d9ef5c6cebb620fae73dec90ea5a47b57641e1d2b732805039e251b2fd744"
     sha256 cellar: :any,                 arm64_sonoma:  "1b72b2708d510553cd780bb867fe776fb617055a2a36ccda11581641602ed11c"
     sha256 cellar: :any,                 arm64_ventura: "756d1ebca4466fa92b79c05e3a1f7df6293237af2ddac689333e85e7166353ae"

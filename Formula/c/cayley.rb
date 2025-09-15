@@ -10,6 +10,7 @@ class Cayley < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "003d129d37b6752ed0431b4a65c34f49edd46864957d45d294068da53c968178"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1886c195583c5d68c87f6e2cc50a52801990ea7bf973f2b8a61e2228e931adcf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "827ae743c95d1689023e7b2ed5bbdd09e0d2d773c5b4928a02fcba8800023995"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e67bcaea36c86606ed3578e19600d4afc712f7a611260881a633236b2a9ffc6"

@@ -9,6 +9,7 @@ class DarkMode < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "f6217678dfa4b8d1be25c7db9e62e604458cf16219b6cc5a4630f5c5d4bdb9f2"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e1ba7fd046acc377adb6e03543dfa8a5c4376e930ecce45b2ba464b23c808192"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "98777785e6fb000da0969b716bb7ee5397ce75872031c7c7d9ebed750cf38d2b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "220d410b3879326e6d7b359cf4ca5e4feeafa76b12998e4fcd64ef420ffc1f29"

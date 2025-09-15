@@ -22,6 +22,7 @@ class Loudmouth < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "6b102ebfa05ec64bba31c02b27a116e39020b136df40c25ddb1509d5fed1bef6"
     sha256 cellar: :any,                 arm64_sequoia:  "43729c1c6d565d8c39c43603f74ed9d9cec9c0245449e2b8e19f9b991fc44ea1"
     sha256 cellar: :any,                 arm64_sonoma:   "5c27c1b17205765db82cf291a090e65e50b6a5194fda067d000d70d58cf3717e"
     sha256 cellar: :any,                 arm64_ventura:  "439e0305cb6c6fa9305ef3ddeb6d35e330d35d245ac836fce6435c34bfa88e89"

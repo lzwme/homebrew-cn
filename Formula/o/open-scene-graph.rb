@@ -19,6 +19,7 @@ class OpenSceneGraph < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "21caca227210b058d46d4817c12baef568b934d7ef6d8db034c3945af8986ae1"
     sha256 arm64_sequoia:  "6f82524b6c4bc107bc9d1acf481a2743670d2688130fa4ec16b568626773e39e"
     sha256 arm64_sonoma:   "971d66667cdd6f8a063a541b21d4b0f13318ada4223187ecf77c4c074db944a9"
     sha256 arm64_ventura:  "a061b2925b3d50c71102706eb8ccb68669df838cd4a716da8a1534003a55bc33"

@@ -8,6 +8,7 @@ class Flexget < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "0d7e72e9e57f0eb443bc43993bee10258dccb29e0eb8170cf6abd80eae6673c8"
     sha256 cellar: :any,                 arm64_sequoia: "d6b534c702cd3afea130c0a1be117977c9867040b58261b636663ae640d2f0e1"
     sha256 cellar: :any,                 arm64_sonoma:  "d10bf0559df757620a1803fd413e3c306a9fb53b06f5c1b4f3b470802add174b"
     sha256 cellar: :any,                 sonoma:        "be190fb368af9eea10a47f8797a49c23adc5f78ecd538191acd6daa7038c80c5"

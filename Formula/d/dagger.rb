@@ -12,6 +12,7 @@ class Dagger < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e387ede20f716190e15f4a74384c74dd639a8e529cbd9115ab3d391a55b192c"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e387ede20f716190e15f4a74384c74dd639a8e529cbd9115ab3d391a55b192c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e387ede20f716190e15f4a74384c74dd639a8e529cbd9115ab3d391a55b192c"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0e387ede20f716190e15f4a74384c74dd639a8e529cbd9115ab3d391a55b192c"

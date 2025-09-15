@@ -18,6 +18,7 @@ class Netpbm < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
+    sha256 arm64_tahoe:   "7d080c7ebede731fe68de31cbe0ea7e0566063a97f3ec3b86a87aa37e2cd5951"
     sha256 arm64_sequoia: "7a2c4f7e057069298072f4b475a770fbcc4b486072ba5ee4fcfbe7e7f41434a9"
     sha256 arm64_sonoma:  "30f3d8b1b807bda8ea88a092f99c50d9889911d8bfe3be063fd2fad0f0351185"
     sha256 arm64_ventura: "2cf7cf11959257b6328ba7e1a3acb64792df4e229917203301db9ef991ba5978"

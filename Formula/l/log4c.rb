@@ -14,6 +14,7 @@ class Log4c < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "ea35b2efc5487ef7bdc2fb3cfe79889d49df229641fe0df54ee2d97ba5da6da6"
     sha256 arm64_sequoia:  "83103a56bdf9b8b2105f679fbeb44dca1c36c46d7afcc542b080e59e6e205f51"
     sha256 arm64_sonoma:   "0a21d82a2a2ee563678a110e2462a9236de30c358b8cfa62c9b919ca09e74ba8"
     sha256 arm64_ventura:  "3d35b584c96f856ebdc672621ae867fc0d14c56b193bc25fcd3f4b122cd9e250"

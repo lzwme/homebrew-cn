@@ -6,6 +6,7 @@ class Somo < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "09f8b7e68a7244f5e8c22130a6d8295632f40b0ba514b3ca17ee0e402d0631d9"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff92fa583e36ab6ff1bf876f7b03497152930ca15512bcaae416bd51c4f66810"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "401e1c65bcd88e3a6f022fd411b36b95c164d139dd0e3a7252fd52c1e8a7accf"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8bfcf91e8871572764d63c09923debc006b37a59f08d543416a02cf4eb32d296"

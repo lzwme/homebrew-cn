@@ -9,6 +9,7 @@ class Libmms < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:    "aa6cb8c3240b6fbcc6e58fc69c3e117ff0a1c1c1a3eaa22b6374d13a91b2c2fa"
     sha256 cellar: :any,                 arm64_sequoia:  "3bb78466780c6a9b24cf16bb0c333e5e62e8aca7b7f27a1175dcce96d369dd92"
     sha256 cellar: :any,                 arm64_sonoma:   "256fd337db7087fc76bbd4b119df0621377c33b231eb11e609680955b65b19dc"
     sha256 cellar: :any,                 arm64_ventura:  "c341b6abc297d20d408019a94893e6f9bb2859c34d3e100926bac2550a2d41b0"

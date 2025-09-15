@@ -7,6 +7,7 @@ class Rhai < Formula
   head "https://github.com/rhaiscript/rhai.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "51f4d6d9de53f3b7d8670d198ff2c67b3f1cab905f56321363313f3c05c95f8b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "09d1c838e78169868e40f03d2b17018cd044b1d780bc018f9136917275901af5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7208659b91f63561c5459260783a7e408b721304370a8d1cc063647e065b51ee"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8e4a4cc3b640ffc4e8479f2161be68df4137915a6a3934fa41793baa3b83ccce"

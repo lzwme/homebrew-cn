@@ -7,6 +7,7 @@ class SentryCli < Formula
   head "https://github.com/getsentry/sentry-cli.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "244c859f5160bbec6585ae55f2c3eea1dcb751334560db39986b3def46b42535"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4448460181002dae8165c2a41b6764a650c8f316f9460ebd1dff449924f0c8d2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30671a82d41d6ab36cb69beae15ce07939d8888e17708f477457664be444d7f2"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "31db3b87c8bb57f8f69e4b99d713ba4882188e26a4bf991e45bc47abdedd1c6a"

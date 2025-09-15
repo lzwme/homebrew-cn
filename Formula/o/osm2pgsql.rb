@@ -23,6 +23,7 @@ class Osm2pgsql < Formula
   depends_on "libosmium" => :build
   depends_on "lua" => :build
   depends_on "nlohmann-json" => :build
+  depends_on "protozero" => :build
 
   depends_on "libpq"
   depends_on "luajit"
@@ -42,12 +43,11 @@ class Osm2pgsql < Formula
     # Remove bundled libraries
     rm_r("contrib")
 
-    args = %W[
+    args = %w[
       -DEXTERNAL_CLI11=ON
       -DEXTERNAL_FMT=ON
       -DEXTERNAL_LIBOSMIUM=ON
       -DEXTERNAL_PROTOZERO=ON
-      -DPROTOZERO_INCLUDE_DIR=#{Formula["libosmium"].opt_libexec}/include
       -DWITH_LUAJIT=ON
     ]
 

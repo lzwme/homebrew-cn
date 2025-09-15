@@ -13,6 +13,7 @@ class Corkscrew < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "ddf9f9bccfc3f8abdac5ab156b3adebb82d263eec75503ca53b657dba4e310f3"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d17faa8d3e8eb0fe11107515daf53fd0f9d22caaaa0d32993ca6e961ee9559cf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8f7a6be3731dfae7b92f6da9091b3e4665473c77b58c6f4d21d2cf6c6c511750"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1bd52cc5c72e9ca3461dc63fdfb584ac3622a57effae88f14a8e7eab146a57b8"

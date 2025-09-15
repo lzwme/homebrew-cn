@@ -9,6 +9,7 @@ class KeeperCommander < Formula
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "8a49892d754b52850662750644d5c9b7c2448dd1e824f5f71fecde660dce99c9"
     sha256 cellar: :any,                 arm64_sequoia: "75c5cc6af281ea2a8a38c954f04957b8d63789c99167be1fc0312a0a2ace7671"
     sha256 cellar: :any,                 arm64_sonoma:  "0de7865ee1d369a64b36f0456e11b41b2dc230579412b1f85aeb953a7014ca80"
     sha256 cellar: :any,                 arm64_ventura: "6511305c915a9dac969a0cf6ae8ae1b03fa00e66ca56d03e36893a2936375d72"

@@ -14,6 +14,7 @@ class Gammu < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "c5ff78b2fb4a85fbe0dcd2e00a9e300cfe7ecabe3622334cd58b78c8c7208088"
     sha256 arm64_sequoia:  "328d278f52762b77bb0bc0061afc898e413c2e8cbae9af19c0043ebd2b61ab5d"
     sha256 arm64_sonoma:   "69cbe22c74e7c7456df798bd70fe89c77502d7793f1b3073b0e0cc5f7d919323"
     sha256 arm64_ventura:  "d8aa4848b10f257303dc4e0e88e76fed841dfe127d4b560f8d3fff2b005ff7a0"
@@ -42,10 +43,13 @@ class Gammu < Formula
     # Disable opportunistic linking against Postgres
     inreplace "CMakeLists.txt", "macro_optional_find_package (Postgres)", ""
 
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DBASH_COMPLETION_COMPLETIONSDIR=#{bash_completion}",
-                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    *std_cmake_args
+    args = %W[
+      -DBASH_COMPLETION_COMPLETIONSDIR=#{bash_completion}
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
+    # Workaround for CMake 4 compatibility
+    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

@@ -9,6 +9,7 @@ class Dwarf < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "54cf031b663cb175ebbdb2d6a9015afe24864ea2e46b531a67b6097e648ab636"
     sha256 cellar: :any,                 arm64_sequoia:  "18e5a2ac12431c5fd538a6c1101b53b8fb2c45652d0c6c9c84b30c36534293e9"
     sha256 cellar: :any,                 arm64_sonoma:   "2178e68ea91b6f9482ba9370ff84700d32689188cdcdf0de7eddacd650a42b66"
     sha256 cellar: :any,                 arm64_ventura:  "d0244af1e2cc656fa2c4d040caef6910ffdc6a8cff2480d315db3bc9fbe0a9e3"

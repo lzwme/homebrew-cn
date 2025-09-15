@@ -12,6 +12,7 @@ class Oxlint < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b493f7b450b325176c5b5d017837c20b3c71c409f9b2118afb64d07e54d6270"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4356f9cc5cd22e870c12fd3873167454166b36cb2093dde04f2da846d110e2ed"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e8231096ce49628eb71466244931c759d92a2585b58954b915d7d2e61115f45"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "337da9690da47d1c2dabe7cb1ae8af079bf052badad6791897f720524cb4b7df"

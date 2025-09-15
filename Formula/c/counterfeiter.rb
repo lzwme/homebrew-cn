@@ -12,6 +12,7 @@ class Counterfeiter < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "130d2eceffe514edcb9963172d3ba53e4f7f305c6bcba02a1b017f04bf6d66d3"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "130d2eceffe514edcb9963172d3ba53e4f7f305c6bcba02a1b017f04bf6d66d3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "130d2eceffe514edcb9963172d3ba53e4f7f305c6bcba02a1b017f04bf6d66d3"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "130d2eceffe514edcb9963172d3ba53e4f7f305c6bcba02a1b017f04bf6d66d3"

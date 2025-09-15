@@ -12,6 +12,7 @@ class Mise < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8cd55e5e9d372c47b80bbf937f4691f56d0acf23671eaeb147b09ce0ecd22f9a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "99b7bfa7a1896ad0017b673944e3480635044619ee4c45453da64b576e82ad35"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf611eebd4d1b82b0566681587e94dd26e50e678a2deed36db7a861a9829eb78"
     sha256 cellar: :any_skip_relocation, sonoma:        "2dfd0d09a565626dfe3c376cc13a5ae04d78c439c41dd165423233230d6f0f90"

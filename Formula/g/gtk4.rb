@@ -11,6 +11,7 @@ class Gtk4 < Formula
   end
 
   bottle do
+    sha256 arm64_tahoe:   "241bdcbcfb75e4cfc63fa4a4abbb1f2acfbc095301efeb87aa340c72233aa16e"
     sha256 arm64_sequoia: "407d2e5c9a62d7f73bd089d5840de234d2a784213de26527832039dd7fa0d60e"
     sha256 arm64_sonoma:  "4ba9ce818a0aee1ff5337c7b11f163196dd6274434c0c1a9adff5458259fd0e7"
     sha256 arm64_ventura: "61837f1ad10940e0e72dee79a287885cfd75cb78b50abe4509cc2ef002af71ef"

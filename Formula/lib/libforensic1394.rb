@@ -14,6 +14,7 @@ class Libforensic1394 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "b4a478a738e2f3bb22a8316561b54914bcf0e2e4f00d7b90005d27f0564413ec"
     sha256 cellar: :any,                 arm64_sequoia:  "a3ae5e839007a8f6cfa3ca2e176285a889085333678c2b5edc095d22326e8aa6"
     sha256 cellar: :any,                 arm64_sonoma:   "466e7d42777a5f74b206d6dfec30b026f6d61ad6a2c0c7e382ab21f9f09b4973"
     sha256 cellar: :any,                 arm64_ventura:  "b6210bfd2d11092c436dcc8732f3848795dc06af4cc97e77b51536fdec7eb4d4"
@@ -35,7 +36,7 @@ class Libforensic1394 < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

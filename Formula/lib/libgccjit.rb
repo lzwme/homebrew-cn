@@ -27,6 +27,7 @@ class Libgccjit < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_tahoe:   "7287477cc3c67e3289f770ee9c70fddfb39f6ea7b925fdb775b54939b22e0910"
     sha256 arm64_sequoia: "04adeecfca5beafcb7964f2138093b90908b5b04aa066e15cd7e5c76428b2ac8"
     sha256 arm64_sonoma:  "86fa84fb07098a91ff9a8cc82982ba74dcd1357bb6b807dabecd2c078e7950c3"
     sha256 arm64_ventura: "3e2ba2afd658bafda72aa3a4e86b49f6d973f3779b222675a3a9d2905c23a7ed"

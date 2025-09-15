@@ -10,6 +10,7 @@ class Osmfilter < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "1c75182ccbe17c6d0bf607a3301436d37728ca4964ea87ec91796b130931460a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1d86b7309f3fbd2c39a78416fe5dc0eac2b08c2ef0795e9c3d83c165ddf122e1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "864446d5bf53f85f504188be4f59c5f1fc1b902a647a1666de49bf467fa0fd0a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "06e67f6d61cc209499475b010c4bfe2375d5e3dcb4429e89485d6b03454322c6"

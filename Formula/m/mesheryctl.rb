@@ -10,6 +10,7 @@ class Mesheryctl < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95dac2f299b66e227cedb39ddedf7ac28fb4047c7f8b37965a15c9196fc26ed5"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "46dbf70b316f5fd5ebd268c1dfcf4937e72fa9f9dc639a6c43fb4aaab4855708"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46dbf70b316f5fd5ebd268c1dfcf4937e72fa9f9dc639a6c43fb4aaab4855708"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "46dbf70b316f5fd5ebd268c1dfcf4937e72fa9f9dc639a6c43fb4aaab4855708"

@@ -6,6 +6,7 @@ class Sh4d0wup < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "099af7350fa6b8abe3e0cdede86d930f195e06484082345a511ca64eea219b40"
     sha256 cellar: :any,                 arm64_sequoia: "61e657e991b147d09961e7a31cb8519a0a7d5da5c7549381cc093e6c0f09b865"
     sha256 cellar: :any,                 arm64_sonoma:  "c6a718415c847755a24e462bdbfcbbfbad1c0c4c5d5346917121bb7b2b817192"
     sha256 cellar: :any,                 arm64_ventura: "4ad860189d7456e964cb5bf9ca83d58fa42826749fe687f3b7a188df76a84cec"

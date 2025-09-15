@@ -7,6 +7,7 @@ class Pymupdf < Formula
   revision 2
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "a89eb4e12b90312f0ec063713b8ecb0a278724bb71114502720d0ceac092b8d5"
     sha256 cellar: :any,                 arm64_sequoia: "a482363699522cb8dc3e6d378e6656c4b1b3d9149612c078b4aec95492573c57"
     sha256 cellar: :any,                 arm64_sonoma:  "77c90c1d577194201e619ed094b6386b20f9e9b992465f257678efb64373ce8e"
     sha256 cellar: :any,                 sonoma:        "d8760f4225c5f6a5ea1cac7654142fd15f373c29afaa14e21dea98021bf93e0d"

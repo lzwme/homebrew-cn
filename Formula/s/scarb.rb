@@ -12,6 +12,7 @@ class Scarb < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7662232fcda851fe89a15adbea51809b3d480f07c0299f52ba65e5429150fe3f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8853abc029ba73a1cbe3f873fc681a3e9327afab00dc505837bb14a5ba9cba5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "816532d4d1e7bc5a64015ba46a682f18398c01b79a64ff58a84ab011647a49f0"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1b7be0019de432bf92b8a2c6e7f2d6d6c6567fb8270368ad7e0e39ab6ae61d2b"

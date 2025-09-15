@@ -12,6 +12,7 @@ class Libvirt < Formula
   end
 
   bottle do
+    sha256 arm64_tahoe:   "d57e7fdc4ee91a761e83a2552ec31b7d70ce135eabdb02fcdc17fc83e2b2e394"
     sha256 arm64_sequoia: "9190d52a481ddf2c476d47e73127258c01898c190ee8101dbe7ebe238aa91ba0"
     sha256 arm64_sonoma:  "14f46abe7c396d4e26b42e2013118aaa821167227c38c6bd5173d6b26ee47740"
     sha256 arm64_ventura: "78c6ad72f2fb7cc20260a2dde633847c58b392075269480daca0f93eb7e35332"

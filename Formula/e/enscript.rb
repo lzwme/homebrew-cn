@@ -11,6 +11,7 @@ class Enscript < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "8ec384c474020c7910824f10690c55502ceaa686c444c4989dd3785268dac77a"
     sha256 arm64_sequoia:  "2236c54447fc2e015995a2fa047dd406dbfefa9db547a10b305e5817482d8446"
     sha256 arm64_sonoma:   "3ef28a752ae04d37d64b0b42c1fb615fcb4c374ee67722f7d0884d8567f66734"
     sha256 arm64_ventura:  "9cc559ceab604c4464c02760b4c380f4c6c12a6f87e1dd3216ac8a2788746631"

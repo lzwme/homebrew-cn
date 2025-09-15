@@ -9,6 +9,7 @@ class Daemonlogger < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:    "0ced73ca63e8d048dbc4692cbadf68f13d834fb8e5bf642be31d4573d58d17bb"
     sha256 cellar: :any,                 arm64_sequoia:  "0be691de00ba4892bb91171da20c25ed0d3bda987d6d7345b35e095d06b8b848"
     sha256 cellar: :any,                 arm64_sonoma:   "d6fae15e4986a7f8046ff53a00d64927c225c75a03741c491b2a8bbd9c87f8f2"
     sha256 cellar: :any,                 arm64_ventura:  "beee453bd9b0404bd4a145fb466eaf3ed8212d24570bc4eb0fa5480cda06c4c9"

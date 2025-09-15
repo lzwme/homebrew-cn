@@ -15,6 +15,7 @@ class MenderArtifact < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "b3770d7111db296edf42fdc6cf83cebefa0b2bdf171b274074e6621ad0136fca"
     sha256 cellar: :any,                 arm64_sequoia: "80224c8592a5dc4827fa0a910636f7d34dcfd38bae207b5a4fdb2f948a0037b6"
     sha256 cellar: :any,                 arm64_sonoma:  "de1ae9470958c874522781e728982d9cb122fb91433137084fa5a8f32f97f853"
     sha256 cellar: :any,                 arm64_ventura: "36bb71ef0ae85788b6d791a694cc1fa1421998b0fcc6b393385f02b29d57c115"

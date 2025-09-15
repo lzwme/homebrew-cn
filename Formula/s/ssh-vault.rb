@@ -9,6 +9,7 @@ class SshVault < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3f76477017b8a045f5c6c89f58ea584fcca6c07829c6f4960b0824e75bcb99e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8bdbc585cc4e75dcfb0be8efc37c9eabb87964f220961be444444ca500d42f4f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3766d486d27843ffdccc43ba4d32c8d6d3c4cc684d7654578bfc921c094f0e2f"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a1a9fb86c8ee338853f2dd6734f656bc0133c7f0a95aa4f4967a005da52ea853"

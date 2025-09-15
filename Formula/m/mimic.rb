@@ -11,6 +11,7 @@ class Mimic < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "c5308faf93176da28184e555f4e6978817d59676b85b5382e6fd7fffb7611bad"
     sha256 arm64_sequoia:  "809c72a67bc515dc1ae83a7c03bf27c9a8bf9d38422aff57d65a58ae27a0bb1e"
     sha256 arm64_sonoma:   "27c12540e94a1f80ccfca3bd15f93a305f84e4c2233253df530dd3d7b1211140"
     sha256 arm64_ventura:  "05a0ae1e6862667edb0311db845d536bc98085e57793620e28f82a013bf58ff9"

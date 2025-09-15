@@ -12,6 +12,7 @@ class Foundry < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "ec89e4aa1e546f147766f4e20cc54235e8680071fcb6d41f5ea1861f58e8d170"
     sha256 cellar: :any,                 arm64_sequoia: "91283c5fdd74bcae12729f7ab8467214c16ef4b1e9a906fa56a3b2c5286b25c5"
     sha256 cellar: :any,                 arm64_sonoma:  "6d5cfaaed321f24404c7f0b61f3fce5c6f1f9e8e58d0c31febe8f48f1e863a43"
     sha256 cellar: :any,                 arm64_ventura: "1e3e2b4e1c57fd9dc07d8bdc25ea7da1a42aadf1c533720dd07e27feb0a35936"

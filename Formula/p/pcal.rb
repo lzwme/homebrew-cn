@@ -8,6 +8,7 @@ class Pcal < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "f1e0e7b42a908bec8dcf41782a3e4b9397955a95a9c0781ef8e21fbf2ef8a327"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e9cb1a02b94bf537f5f1aab6ee035a1ade559ce499f53afabff16e0795b21868"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "19b81c568f2c5aae1c0d148f8c9746f858613c11c2fb5196264f73297dbcb7b7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d837d4b3cb7b1133b733c4c688a1d36ef7117fd5b9668e8c671a38f46f6ed9b3"

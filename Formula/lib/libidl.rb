@@ -9,6 +9,7 @@ class Libidl < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "a0e91391470fe336c418566901c022fbd51387a87581ac820e72592c561001d7"
     sha256 cellar: :any,                 arm64_sequoia:  "dc9090a7f3672741f6edaa0564cc8c5cb28cb24e4bc43108d8953e05f3fb1eaf"
     sha256 cellar: :any,                 arm64_sonoma:   "555fa331e45efaead26f0b6ff68fd41f1a75223a68e5469fa041f4bb95676ad0"
     sha256 cellar: :any,                 arm64_ventura:  "c0d6a80577aeb880b24d8ec60c11a5f4e49e48ee5109e6a4dbbcfca24b2a05f3"

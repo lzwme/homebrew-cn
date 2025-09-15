@@ -8,6 +8,7 @@ class Gobo < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0aaba4f008e105ca513742945acfb21ba9a2de3bdc780f0bb8fb7a70659092a7"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "af40930a8fc0cff9154b8b8b68f106c4b7f3123ba4ac2dfd59867b6710e08fd8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6cc3bd3ed8ef2f699fda1145b075da7c5e0a08555e9c680c27514fb228240dee"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "70d705b128377d717e094addd8307fbead066ff640b292cbeebaefeca1699eb1"

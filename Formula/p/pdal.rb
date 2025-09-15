@@ -12,6 +12,7 @@ class Pdal < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "21cdcfe4658aaf1a1a40dd300b9fc6903bb02f9c98f87dd52113b43c15247d00"
     sha256 cellar: :any,                 arm64_sequoia: "3129cf73d69a612f587f0b9e421ee026618df1054efc2cedf7fe9aa0630cebca"
     sha256 cellar: :any,                 arm64_sonoma:  "5fbc01b27bd59193bc60583fe900beb894cd9c119ffa8f0b1d45b0dae0074237"
     sha256 cellar: :any,                 arm64_ventura: "7c289fafa602f7e1fd481c86985dc4cac1b0522df95728b3469737be107bd50c"

@@ -9,6 +9,7 @@ class Libiptcdata < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "1c4ed377f24990f0602ed171149c4da26c7986f746c7aa5c5486fc753dfc49e9"
     sha256 arm64_sequoia:  "ccdaa3847cffb9073eba5796d92eb08f1dd1c9b1bcda21f45d64a654f0dcfdac"
     sha256 arm64_sonoma:   "e7b09d218f871a5252b465841f6001896d867247175f228c3d50164cd9fefa1a"
     sha256 arm64_ventura:  "5543254a38d990ac3eabb48f51dda1eacd65fbea211200d825063385affcc014"

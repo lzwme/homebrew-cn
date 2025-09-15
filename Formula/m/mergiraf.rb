@@ -7,6 +7,7 @@ class Mergiraf < Formula
   head "https://codeberg.org/mergiraf/mergiraf.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a68c0a4d49e64b0402c57905518a207770d31d45741213c9a70c3cd11b9518c"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2e6a8146aa55f01db0f29a1e24dcaa9f7aa7f824e2d1d65e79987eca6f86bee"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f62b770c90353c325801f0554f6f34af4bf521bdc7fecd0a6cce37cb3003ac2"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f00ea39b15f3350193e0c42cb2eecef42228706be317ed4e20a3d2568cfa7ae2"

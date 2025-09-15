@@ -14,6 +14,7 @@ class Pakchois < Formula
 
   bottle do
     rebuild 3
+    sha256                               arm64_tahoe:    "7f225dfdf9d1ac84b9bbd38a83157664f5b03b6951a09b9888b8b67ab586ae59"
     sha256                               arm64_sequoia:  "9634938ed93d02adaa5e477a29ee2f128d058f63cfbbe9c460ead07b53ac23d1"
     sha256                               arm64_sonoma:   "c5e557c4172e6800ca80178acedc0a6029c4870ceb37ed56d6a3944f32a271ee"
     sha256                               arm64_ventura:  "d8467830fd424d6fea0a0f0ff82949262d55d4221fa2a2d630b0679d374c803f"

@@ -13,6 +13,7 @@ class Paperkey < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "fc50488f52f09cbf1b0fabc8ddefa543104654dff3a462d9d0dfdca67e89ffcf"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c5f29efd5bd3c2ce18f744e141fbb9e3013a0474a3d391efcd1ccfdf31bc9c73"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b249d92841f7cada3fbbad6ebfa77672ba9ce1925f3e8d6b1169049e35d2c161"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3334f86e54a5038f18b31f703a22981ef66b028cda73e2bc985db6a0c74a401e"

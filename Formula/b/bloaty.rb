@@ -20,6 +20,7 @@ class Bloaty < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any, arm64_tahoe:   "9f9eac5e929ab7ff98d1c7e72a3141af8e60f680cba3b01d361caeebe5e83f5d"
     sha256 cellar: :any, arm64_sequoia: "d212c8b3752a5e41898da81efca2cfc4c7acb0a7513ccb5c062bfb04b509730b"
     sha256 cellar: :any, arm64_sonoma:  "8c8fdb47b8d542f08b5dd9551b31acea337bc3594ddca79cee9996a4eee319b8"
     sha256 cellar: :any, arm64_ventura: "7dc089b9e3efe24537b5eac60fcd7c1678c309a02243e4217104f49b847db816"

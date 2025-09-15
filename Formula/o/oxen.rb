@@ -16,6 +16,7 @@ class Oxen < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a27f692263a73eed4b53fa0a0862dfedcc9706ef8f83101bf92c245cdaf767b7"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "32e55dabef96576b2d7117db0659acf5f4e2134afbbdfb3789eec16bb99ecef1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37ccb8a5c74c6a069f6d2f3e75b778ed204ffa80b2f3e021471223e52448d5c9"
     sha256 cellar: :any_skip_relocation, sonoma:        "990b3829b8360648abe49e8155fe2a97035cfd3cd1058abac3d6823eeb356030"

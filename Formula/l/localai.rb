@@ -7,6 +7,7 @@ class Localai < Formula
   head "https://github.com/mudler/LocalAI.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "342dad754991b71cbdb73ae33243010ecb201082d99fea597f7b63f38b2bd65d"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "941c59ac9ae6cc710e0425bfd263a2b1e44d6bc88764d04df917f8e1e26b08f8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8dff585a80af99c821e9b919b9a0b6ea165eb813ba825989319b92fbccb8c67c"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f336b73361dedf5f1c1669ff64fe221f486f062e6793de61d560f7c19c3a885f"

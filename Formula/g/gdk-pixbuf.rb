@@ -6,6 +6,7 @@ class GdkPixbuf < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
+    sha256 arm64_tahoe:   "359785b1836df9b39d174d894e503c8b36537392e2e0f69c058190ac87da79d9"
     sha256 arm64_sequoia: "6f700fa5c81318b97435d8485cac491a2668781edd89fc5cea7d5054bf8d12b4"
     sha256 arm64_sonoma:  "6d50c1f5c42407fcad71864a99eda0a0b324fdd46dc6eeea873ca605fd622413"
     sha256 sonoma:        "2a3f4e3fd6760413f3ec64cea4f85dd183a2824325e0abd013df9a1043d1145c"

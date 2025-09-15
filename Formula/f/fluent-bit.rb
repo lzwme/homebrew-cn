@@ -12,6 +12,7 @@ class FluentBit < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "352c3121163607a62a65ca8122479f334299235dc42ee74395281bba5a433cee"
     sha256 cellar: :any,                 arm64_sequoia: "2663aaaded5abcab3ca0cfaf1dcd0dbfe5aa39e6d240ca0c0483265e46d9a42e"
     sha256 cellar: :any,                 arm64_sonoma:  "a6b33222bf0dcc0de0ce0ff06b1ef36f64faea0b1890e77e50160af8037526c1"
     sha256 cellar: :any,                 arm64_ventura: "4653624adf3161eb299e8c37544b81c69a563120610c5fee824464328e523c53"

@@ -8,6 +8,7 @@ class Schemathesis < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "8c9409adf462d205e2e19d4f0f234fe089ab7850b05329aeefdd8eda93cffcfa"
     sha256 cellar: :any,                 arm64_sequoia: "d6b3f52b8b00ef3a0eb6de9808ec1d75fafa512e6bb339d5b374c6f91af77824"
     sha256 cellar: :any,                 arm64_sonoma:  "f77df70846461423acf29699663afe60c816fbc524a3903721154f0581ec0b38"
     sha256 cellar: :any,                 arm64_ventura: "3143f133d1c8ead25ea43416a1cc31efcadcc165940c83ab14ebbbe296ccbffb"

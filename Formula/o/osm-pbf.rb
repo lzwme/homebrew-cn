@@ -9,6 +9,7 @@ class OsmPbf < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any, arm64_tahoe:   "79c82d3644ff375920e5fa34076cd09bfdfb080a0dcc0e820bc66e07fe785a5d"
     sha256 cellar: :any, arm64_sequoia: "289c9fe1c963357ed19bca491fee0b8bfd5b78f0bd5549bdd41e61d7cd99f2a8"
     sha256 cellar: :any, arm64_sonoma:  "b82ecaa1adb427d3f3dec198406e58894454f74db816715e9d70a98dae416a40"
     sha256 cellar: :any, arm64_ventura: "3c2dd65cbe46d4c00339604db7f54835fb5c5312229ce1ec32d05f8587488d0d"

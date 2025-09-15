@@ -9,6 +9,7 @@ class Openhmd < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "67a5d2f64c142bf6a00d24f1b1e1af1051db91de9af1487980702af8f9d49759"
     sha256 cellar: :any,                 arm64_sequoia:  "743ff7cdd099472c22867b6883dbebb8731898e770c6c9a9c16e42a99de5b10a"
     sha256 cellar: :any,                 arm64_sonoma:   "f234246a30572beddda70313054bf10e58a96ee842bbeded6e1d1017febc0c02"
     sha256 cellar: :any,                 arm64_ventura:  "6b2e1d6170301fe50af6c5b9bee467a9c18f346cf2ff630338fd410bfbf992ff"

@@ -14,6 +14,7 @@ class Bookloupe < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "5fdd9c33dda4df9eb880724c9ebf43aba9c5c9ebcd3eaa3659c06dee3506a9af"
     sha256 cellar: :any,                 arm64_sequoia:  "7ba3e588146783e6f0257c71de17fd54e6f4690c272790982b98f58bbfbf62f3"
     sha256 cellar: :any,                 arm64_sonoma:   "24bf9a6ae43fe3f89408a72d83f31b770ed3a34b8cd1bc2a8966418015b0035c"
     sha256 cellar: :any,                 arm64_ventura:  "4421a88b7f0f464d3469a652e232134ae0f9402c48201515a3c04f9e9f267c45"

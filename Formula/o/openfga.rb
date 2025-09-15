@@ -7,6 +7,7 @@ class Openfga < Formula
   head "https://github.com/openfga/openfga.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5dde9da3dec2f814723c566ade9dc65b2d8669fdf29179ff28979924d0130304"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c1fc0f48a340f06c6a37ca5720df10385e729ceaba40d50b89751b6027f77b4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "088a56bb51574cba5afaa6a27265fc971fe39912ea025a3a9eedb45175cc5793"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1057747d696f8271d40cb288dd44dcb307d0dac60922db3cc35086d55584210b"

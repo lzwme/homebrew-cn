@@ -12,6 +12,7 @@ class RattlerIndex < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2183fc0e815e0dcd4fe08541ce86861f1b4c307327a1ef5cdab3fc345c052ae"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7227b01c23e9b707011c58ca03b5ddf7fee7a988ec355968f58a6a6668e8da05"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a76a72f23355b8d4232b414c288f7dd67b0324f03a85a75575c0c42841a1e08"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7cd4a0fa8e3d83e586076153fc7ced8f2e6e9ac98650d6ee795a8a169cce73c4"

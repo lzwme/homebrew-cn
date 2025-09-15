@@ -6,6 +6,7 @@ class AtSpi2Core < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
+    sha256 arm64_tahoe:   "b655a631d05ee3e4d6d5db104446bec6593d3f240d4dcad9dfc4010c1fbe69ae"
     sha256 arm64_sequoia: "eb6790869d525f4e60efa86d0f8d4393bcfa731b0ea428aed854d2bc369b2d19"
     sha256 arm64_sonoma:  "d3a71ffcdd7e6f41166381e05d6b659df11061150a60246b3e5d08339dcdcc8d"
     sha256 arm64_ventura: "ade98c260a0781f8243689f9f86ad8ad09acf446919d656ff44ca07a84cbdbf8"

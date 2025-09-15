@@ -15,6 +15,7 @@ class Hledger < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b0f9fb20f2e5dab4f950659b768efd67dbd8ca2273c531a93873259ac9e535e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c18f4f5f8e180151ab84eaeb262b678c2977d3464524e416377863035836ee8f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8068dd95c7314da3b1de914e06f806156f01b34fc8913d1215238316bfff4d9b"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "347d8316c18449aa8561c39163ee9721de574d777fe0e8cab2cd456a7b510b88"

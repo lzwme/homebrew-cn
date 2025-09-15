@@ -11,6 +11,7 @@ class CucumberRuby < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "7bf9179232a51b9aef4b8996562877eae7b7df99c7e6336c0963200494481751"
     sha256 cellar: :any,                 arm64_sequoia: "bf5055da839e360c7f6d648675ec1d529085fe3f6605c54ec08f254f0c69dd57"
     sha256 cellar: :any,                 arm64_sonoma:  "b1b7e2dcc64552aca2783bb1d7bde33ad53e516f0ad568b69e1412f9b68cb1a8"
     sha256 cellar: :any,                 arm64_ventura: "1413a9372c032ff5522dcfa88a1b8a5387db18c674fd43c101c9e2018bd67486"

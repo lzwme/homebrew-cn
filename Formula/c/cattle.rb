@@ -22,6 +22,7 @@ class Cattle < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256                               arm64_tahoe:    "e0a80736a4afb81659a8e8eaa4dee70a320bc7c8f7c756d14891c333f65748e6"
     sha256                               arm64_sequoia:  "502399f17e0777926e50b1a067eff9ff5520bcbf5457fb73156376891726d411"
     sha256                               arm64_sonoma:   "2e8272b2652bd83dda6c28b3b13464ef9adbd7f905bfa6a604e89bad92b5f652"
     sha256                               arm64_ventura:  "dbe7b8b3f8f215b8d73218e64e6f884b248da90095f2dc6ea8f73abf3db72f79"

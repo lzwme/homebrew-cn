@@ -6,7 +6,7 @@ class Lolcode < Formula
   url "https://ghfast.top/https://github.com/justinmeza/lci/archive/refs/tags/v0.11.2.tar.gz"
   sha256 "cb1065936d3a7463928dcddfc345a8d7d8602678394efc0e54981f9dd98c27d2"
   license "GPL-3.0-or-later"
-  head "https://github.com/justinmeza/lci.git", branch: "master"
+  head "https://github.com/justinmeza/lci.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
@@ -38,7 +38,9 @@ class Lolcode < Formula
   conflicts_with "lci", because: "both install `lci` binaries"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Workaround for CMake 4 compatibility
+    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
 
     # Don't use `make install` for this one file

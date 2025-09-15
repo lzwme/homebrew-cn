@@ -8,6 +8,7 @@ class Copier < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "4b576d1da9c24fda1867d9a8c4c10754fea7ae312887b1effafe2c8e9712e48d"
     sha256 cellar: :any,                 arm64_sequoia: "d1c3b14afe2892fe4a8206dd5ee4d6426e9c695177d4059ac3dbdc53c4d09114"
     sha256 cellar: :any,                 arm64_sonoma:  "0d850e27a27ac3019c6aa33e1f0580cfc0dda6f41678bd25090a8b870cf86dca"
     sha256 cellar: :any,                 arm64_ventura: "0f375b22fe84f9689de00405a5ea009a4d3e12c175ee95ef5a2bb251de0d38f3"

@@ -8,6 +8,7 @@ class Libgadu < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "cfc0b8f8f9e11600773fd1edcf8db8e797aad7d436fe9f92db2f9a50e08346e6"
     sha256 cellar: :any,                 arm64_sequoia:  "f4f5668e14d2fb3565732fb50bb526d106a8a26d396b3d54eeff627658a159ab"
     sha256 cellar: :any,                 arm64_sonoma:   "c0a47f65b2950adc32a349c14f576ce66da2f34b2fc342c1f37b11dfb8ab28ed"
     sha256 cellar: :any,                 arm64_ventura:  "ea113337d33a26b40502ef72b239b0e7eba6a01290372cb70f857e21d4daf2f1"

@@ -10,6 +10,7 @@ class PythonFreethreading < Formula
   end
 
   bottle do
+    sha256 arm64_tahoe:   "ba0f34a81582dec104b367859aba3bc512ff4201906b679afbd3b6df3e2e9393"
     sha256 arm64_sequoia: "b0aa53df2384bb27e37687fffaa335f8ef9c1670d5ba2ccda3bdf9ad98b583b1"
     sha256 arm64_sonoma:  "d17fe9d926c42bd725fc7191c03653f340143203584df0da205a27b4bdc48678"
     sha256 arm64_ventura: "a53071eabfe1badb1472255f81c5bfef576c7fd0d5cb531d4accedb281a67a47"

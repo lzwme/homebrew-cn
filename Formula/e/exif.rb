@@ -8,6 +8,7 @@ class Exif < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "bfb1b7b9782dd4c888442a3dc2d6872894e1acfde781fc8b819e631fd1f4ed23"
     sha256 cellar: :any,                 arm64_sequoia:  "f6cbeebd5b8041e6b8ce190a02911e9c53a0079648a35bcd7c279372cbef4afa"
     sha256 cellar: :any,                 arm64_sonoma:   "16650f088870ad4c8f97b7f9e5fcf49eb170409c90c59a4dd07979eaebd463bd"
     sha256 cellar: :any,                 arm64_ventura:  "834b4812f8e8828a2e6b274730df66ea88a093fd1342a45931f71e954fa07d0c"

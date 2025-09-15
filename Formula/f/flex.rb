@@ -18,6 +18,7 @@ class Flex < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "62ca8b8763bc2c97fe3ec02a4f55e410a6bf80ab26c291b0914313a82d004afe"
     sha256 arm64_sequoia:  "e675e024d2d6f1946303689717a345257cbfc6ba52c20b34447a25b75ae995ff"
     sha256 arm64_sonoma:   "0f7f1fc52a0326f07019c5e90dfc3dd728c69afaffc2e5a75154f132975e8b0b"
     sha256 arm64_ventura:  "900f81d92ac336f0deac4e23141807b77cd15c57460c55ddfafa873d62447d0c"

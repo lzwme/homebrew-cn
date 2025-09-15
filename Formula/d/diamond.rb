@@ -2,26 +2,21 @@ class Diamond < Formula
   desc "Accelerated BLAST compatible local sequence aligner"
   homepage "https://github.com/bbuchfink/diamond"
   url "https://ghfast.top/https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.14.tar.gz"
-  sha256 "161a5f008a0a2f38fbe014abc0943d2b9b482510a3a64e4e3ab7230ddddd484e"
+  sha256 "b15407ec06508dd71afbdb69da47a0983b9926e4b7f4591b0f3a13e64b38a536"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca5dbb4e5e6245e3264052ca57fe5b0d47100c02c7acb241716270e1150f3937"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3cd9ddd5fb56ad384149bd93d8449e555e9baf90f46f88be8e86c48666898ab"
-    sha256 cellar: :any_skip_relocation, sonoma:        "942f4ef1ba277704334960d73e370c4b54efc498a997f42ffb272c174153cdb4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d8a29630ad50d1472dc9f013533d6d59e4b70e46285a882a837152d5e486d0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec1beede93f9550d4bb3967861d7bfdee08fcf15002e7feb3d8708525137bf04"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c54bf0c92724f7764eab0aff1b060e6dbb6b6d3c82d0c4fefc2a1893a145943"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d32b3e54186ffc128a831170275fa662cc0105b62012473b8c16bdf0373f6942"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4d4b0e16051f2fd6e0c4e9ca60fc26a7208ed9329015d93017ce6cad48d1c040"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7d7fd6f4b89edd8b3a34e6f9f40cad91f9196d8b67b63b0bfabf8ddcbb7a7b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0015b12642350223a5b9b66762e027001ac554cf07cdce598c6352437bbeb886"
   end
 
   depends_on "cmake" => :build
 
   uses_from_macos "zlib"
-
-  # Fix to build error on macos
-  patch do
-    url "https://github.com/bbuchfink/diamond/commit/68963336dab5dd02a4ce5bf7a3e936cd919244b0.patch?full_index=1"
-    sha256 "5522d188beb8c6296f3cd39f5ab0a7ce8dffce265f0e8a761b873368c75befb8"
-  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args

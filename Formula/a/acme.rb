@@ -14,6 +14,7 @@ class Acme < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "f603308c41ccb1f3b81bef2ffccc7a3ec09b797133abb5d41f9574a95411f73b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "789ffc7764ec07db6142518896bff4aa1940980929b977fabb084ef12d1d4ea7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2c48aa0b38e6597799d22ec3c0ad8c8868c753918a92adb4f60ab7f9eabe945b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f8b137715ebc611f81b2e49445396488a26a0240a7e9fe24f8fb897aecf964f"

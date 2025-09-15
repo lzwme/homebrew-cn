@@ -1,16 +1,17 @@
 class ChiselTunnel < Formula
   desc "Fast TCP/UDP tunnel over HTTP"
   homepage "https://github.com/jpillora/chisel"
-  url "https://ghfast.top/https://github.com/jpillora/chisel/archive/refs/tags/v1.11.2.tar.gz"
-  sha256 "0ec189888eda10ec606dd948965910df9e5374ca8378f772bc2f56fccbbc7dee"
+  url "https://ghfast.top/https://github.com/jpillora/chisel/archive/refs/tags/v1.11.3.tar.gz"
+  sha256 "818e1a3470597119e687a6657edb373a449455757ca4351dc5f3a1a89bba1513"
   license "MIT"
   head "https://github.com/jpillora/chisel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1049f3436fb444ec030a3a72bd683e4b1f4b5b03792614f4fcc1e8c0102f97fa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1049f3436fb444ec030a3a72bd683e4b1f4b5b03792614f4fcc1e8c0102f97fa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59ba4b6702799362ee29fc43ff40979b5b8ee6c3836836140030c58a9a4c0f57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d85453104389b9aebc1f6e4f500f1a45529cbef269dada0afef991d4d69ad59a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b638b4ba292b0585336998be698480619bbcffed2eb44677e72818c6717f8868"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b638b4ba292b0585336998be698480619bbcffed2eb44677e72818c6717f8868"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b638b4ba292b0585336998be698480619bbcffed2eb44677e72818c6717f8868"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d3e5be84bf2849ddbf931b4142f069382fbdf7c6d567d377ac23153fcedd1a8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e04c08eb9c095bee99af08292b4f6a9e730441c40d7f60365f6831e384ec1dcc"
   end
 
   depends_on "go" => :build

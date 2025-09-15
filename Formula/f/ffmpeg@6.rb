@@ -14,6 +14,7 @@ class FfmpegAT6 < Formula
   end
 
   bottle do
+    sha256 arm64_tahoe:   "924801c8b0d91b0cee69ee6b0ec53dbbabd3f711cb6776c2eefcf3ca8540695e"
     sha256 arm64_sequoia: "4cb1af8e6606d715c87335c68611b7c577f7e03bec558392037acfcc92a99f36"
     sha256 arm64_sonoma:  "82f77ab190455ecd79100b0a081636c7b05e7f3aed8bd4070d27521f0045b284"
     sha256 arm64_ventura: "5235b80f1ea409062af874804cd2f028c4e73380b3496ecc6940ad54f49039f1"
