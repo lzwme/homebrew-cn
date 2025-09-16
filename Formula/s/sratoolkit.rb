@@ -51,6 +51,18 @@ class Sratoolkit < Formula
 
     (buildpath/"ncbi-vdb-source").install resource("ncbi-vdb")
 
+    # Issue ref: https://github.com/ncbi/sra-tools/issues/1096
+    if OS.mac? && DevelopmentTools.clang_build_version >= 1700
+      # Fix to error: static declaration of 'strchrnul' follows non-static declaration
+      inreplace "ncbi-vdb-source/interfaces/os/mac/os-native.h",
+                /^(\s*#\s*include\s*<.*>\s*)+/,
+                "\\0\n#include <string.h>\n#define strchrnul sratk_strchrnul\n"
+      # Fix to avoid fdopen() redefinition for vendored `zlib`
+      inreplace "ncbi-vdb-source/libs/ext/zlib/zutil.h",
+                "#        define fdopen(fd,mode) NULL /* No fdopen() */",
+                ""
+    end
+
     # Need to use HDF 1.10 API: error: too few arguments to function call, expected 5, have 4
     # herr_t h5e = H5Oget_info_by_name( self->hdf5_handle, buffer, &obj_info, H5P_DEFAULT );
     ENV.append_to_cflags "-DH5_USE_110_API"

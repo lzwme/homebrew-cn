@@ -1,5 +1,5 @@
 cask "zen@twilight" do
-  version "1.16t,20250914074921"
+  version "1.16t,20250915040615"
   sha256 :no_check
 
   url "https://ghfast.top/https://github.com/zen-browser/desktop/releases/download/twilight/zen.macos-universal.dmg",
@@ -16,7 +16,6 @@ cask "zen@twilight" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
 
   app "Twilight.app"
 

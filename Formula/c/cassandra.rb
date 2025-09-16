@@ -134,6 +134,7 @@ class Cassandra < Formula
     # Make sure tools are available
     bin.install Dir[buildpath/"tools/bin/*"]
     bin.write_exec_script Dir[libexec/"bin/*"]
+    rm bin/"cqlsh"
     (bin/"cqlsh").write_env_script libexec/"bin/cqlsh", PATH: "#{venv_bin}:$PATH"
   end
 

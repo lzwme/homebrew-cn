@@ -8,6 +8,7 @@ class Juise < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:   "7d7c0ee1120c72a4615a7c3eb947db45c9daf1c841e7e0a6dcadacfbd12e562b"
     sha256 arm64_sequoia: "2013383bad9ecb913d1888a0cb957fa78044bf13aa30ba2a3bf52275d0009c49"
     sha256 arm64_sonoma:  "666efd51556692b16cd32582a0aacf68272c8f5c5bb4315e188f59f73bea6ca4"
     sha256 arm64_ventura: "a13e8825285d6e81d404b71bbced2b2e64b90074077c8862366c1f44acb8e409"

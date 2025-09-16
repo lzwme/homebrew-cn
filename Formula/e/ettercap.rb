@@ -59,14 +59,13 @@ class Ettercap < Formula
   depends_on "gtk+3"
   depends_on "libmaxminddb"
   depends_on "libnet"
-  depends_on "ncurses" if DevelopmentTools.clang_build_version >= 1000
+  depends_on "ncurses"
   depends_on "openssl@3"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
   uses_from_macos "curl"
   uses_from_macos "libpcap"
-  uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
   on_macos do

@@ -32,7 +32,7 @@ class Passenger < Formula
   uses_from_macos "zlib"
 
   def install
-    if OS.mac? && MacOS.version >= :mojave && MacOS::CLT.installed?
+    if OS.mac? && MacOS::CLT.installed?
       ENV["SDKROOT"] = MacOS::CLT.sdk_path(MacOS.version)
     else
       ENV.delete("SDKROOT")

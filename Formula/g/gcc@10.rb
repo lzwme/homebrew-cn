@@ -84,7 +84,7 @@ class GccAT10 < Formula
       args << "--with-system-zlib"
 
       # Xcode 10 dropped 32-bit support
-      args << "--disable-multilib" if DevelopmentTools.clang_build_version >= 1000
+      args << "--disable-multilib"
 
       # System headers may not be in /usr/include
       sdk = MacOS.sdk_path_if_needed

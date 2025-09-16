@@ -23,7 +23,6 @@ class Ttfautohint < Formula
     sha256 cellar: :any,                 monterey:       "8ab23158e7597f79406f2bffd1e5557eb146d8055d73cbcea589cf26b57a32fc"
     sha256 cellar: :any,                 big_sur:        "0fceaf938c626642f90f505ca041b14c82696a8b9897504a92415296d635a292"
     sha256 cellar: :any,                 catalina:       "e5ad45157f4260f5cdfc68595ca2af5bd8524a342b47e3e39c78afa88da3b0d9"
-    sha256 cellar: :any,                 mojave:         "dc0fb9212fe1535397bb7c42468bd80902810895d05ebb70fb5da557a38b39f3"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "6e396a76f14968d0778b51a5093552d6e63e643ebc0b5d7f5b06719d8c8932f5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "68214f0cc124de6b895152c8b780ea5aae067ce0ac571074a472d1723260c94b"
   end

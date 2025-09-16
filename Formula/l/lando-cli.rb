@@ -12,6 +12,7 @@ class LandoCli < Formula
   end
 
   bottle do
+    sha256                               arm64_tahoe:   "a8162912b3182c59c3ad0cda5a4d4939b0e13e8944ec7c0bf49295161e9eef6d"
     sha256                               arm64_sequoia: "0462faed77467508036a3e711080a12e2604a8431a860ef8f760efd13e8ca85f"
     sha256                               arm64_sonoma:  "ce9746fc83090f533053636c5ca4c8f8105a5e01edd5a1df6f2576f9a9eb0614"
     sha256                               arm64_ventura: "3ffedd32aab715b7a1fd57e219989e0669809cb67619747b731efba50bd003f4"

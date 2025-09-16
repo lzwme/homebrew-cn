@@ -22,7 +22,6 @@ class Libzdb < Formula
   end
 
   depends_on "libpq"
-  depends_on macos: :high_sierra # C++ 17 is required
   depends_on "mariadb-connector-c"
   depends_on "sqlite"
 

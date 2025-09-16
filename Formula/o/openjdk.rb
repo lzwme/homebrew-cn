@@ -1,6 +1,6 @@
 class Openjdk < Formula
   desc "Development kit for the Java programming language"
-  homepage "https://openjdk.java.net/"
+  homepage "https://openjdk.org/"
   url "https://ghfast.top/https://github.com/openjdk/jdk24u/archive/refs/tags/jdk-24.0.2-ga.tar.gz"
   sha256 "d5a1b364de4335d86590d2e91eb8fce0560ade28759734c531915b8293e502e8"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
@@ -11,6 +11,7 @@ class Openjdk < Formula
   end
 
   bottle do
+    sha256 cellar: :any, arm64_tahoe:   "3264bbfe9ce08bdcaaef8698961ddcb3ee163fa38cf1a13eeca736c9af4fa9e7"
     sha256 cellar: :any, arm64_sequoia: "8bf81e5d8275e7f3254ea8763d35c31817493acd1aab32c2325cbf1bf24d9176"
     sha256 cellar: :any, arm64_sonoma:  "53b07864628ca14780510d3b0e45e4e508c249730d303ae088fc011692cd556c"
     sha256 cellar: :any, arm64_ventura: "7fbdfb2880f604f5b13e1fcee174c6b6492f8eddffbdc154bd9f6a769f686219"

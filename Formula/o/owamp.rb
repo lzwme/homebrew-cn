@@ -24,10 +24,6 @@ class Owamp < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "e66ca3211d8ae8e3bd1631451f1c014f14cc933f3d1150334a3dee37db3074c9"
     sha256 cellar: :any_skip_relocation, big_sur:        "d9599177f43e538b1fea107a4395cbd466ee5991e8c1d7e8d510baf32878a32a"
     sha256 cellar: :any_skip_relocation, catalina:       "a7bce114bb407f1663671ee68793b7751d512e0451cf9bbf35c1f36ad9b4c3f9"
-    sha256 cellar: :any_skip_relocation, mojave:         "22833b09d6faa093c2d186560cd22e328b9ab11efa8f9774543392e7dca127f2"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "0ce1d8385c1cb2036acbccbcd92ed5778c8ec0aa8e4db5c06a9ea018621f58dc"
-    sha256 cellar: :any_skip_relocation, sierra:         "afdeaab138caa02c535fd9d2b847c5b5b24273beef19271fc60415de16d0681f"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "6f86a33c176ba1394560b7707466c088930f13db102b7adc159e80e889fdc5cf"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "77ffadd4a4b4124cc3321d7a2a86d04beba9dc525f56f0883d9d358d70c97adf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7861b9b519cb1dd21940335fa2e904a72105938981e66637a4887db79988067b"
   end

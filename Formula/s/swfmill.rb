@@ -16,10 +16,6 @@ class Swfmill < Formula
     sha256 cellar: :any,                 monterey:       "1409bea1e846cda18e4206dc39027d195acb9fe0cae14f9a49842b945ba4befc"
     sha256 cellar: :any,                 big_sur:        "61d884a0d8fda68458267311da138851688cf5574f3d17152f7227c120653115"
     sha256 cellar: :any,                 catalina:       "be2f7f3666c78c37775bd41e2adb640f290bb3e73d8a0b4b04bae0f08e140fac"
-    sha256 cellar: :any,                 mojave:         "4eb93babe47a07ccb946b87a7e5515eef651b376c590231920a5acdcc6023aea"
-    sha256 cellar: :any,                 high_sierra:    "2516e0ca300458f626e1311673643e1cad03131fb77717fb4f6d10e5f7c6e522"
-    sha256 cellar: :any,                 sierra:         "f8f7530eb3697993d145bd67fcb44122319f3dadbd5a15535ae23ce33c1991fc"
-    sha256 cellar: :any,                 el_capitan:     "10165ef551225423c4d0b98b734aa112854bb836b6dcca675a0d2dd2adcee75a"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "2bebc009e2e758532b33a040716f1771d0accb522465e2fa1b7275bf82d17532"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e86fcc5ea5d803ac5f8f4bfe33090c4ceec8369bd8c026db34fdfd1b6aa997b"
   end

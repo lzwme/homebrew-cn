@@ -24,10 +24,6 @@ class Libpagemaker < Formula
     sha256 cellar: :any,                 monterey:       "ab84fad8e27045fcff614f404a2768caa62c4cdaff8cd4eebde7a295b49115fc"
     sha256 cellar: :any,                 big_sur:        "ccdd8cd950304039a111f5ee80658b809c040d83f6321701384bc96dc596b569"
     sha256 cellar: :any,                 catalina:       "9759e3d26a09e7b99bbf3c49f05bfa7724334b639245f5791d9bada9df977d68"
-    sha256 cellar: :any,                 mojave:         "05fafc8fea710cc53cd310192364d72b9458114b5404fdff8f6adbff2f9175bf"
-    sha256 cellar: :any,                 high_sierra:    "db0f93e5cf4cb6dfe4810b7cb8240db5c2c439a717d09def2f6163e3db6984c6"
-    sha256 cellar: :any,                 sierra:         "0809994f61c8cd34e4edca3496273f293d314e89da5e8ec2a3df280cf436ba37"
-    sha256 cellar: :any,                 el_capitan:     "10c23ab2759830f22ff8080cd4da18252fb719445bd651ab4664e785682c100a"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "bb6dd8ea44bbb80e0aab25f34c43061d030241747985963d7e60787a1d087c98"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9fc80c8b825f43efef4c8dd33e069eda4b3180ed908b74185286099829c625f9"
   end

@@ -6,6 +6,7 @@ class Decker < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "69f62142cfa66aa202be5c93fc256a2bd2df674be17b27b38f297b1bb4bd8a06"
     sha256 cellar: :any,                 arm64_sequoia: "10ebece6b16fe1c20a9473d9b4a746b5f37cfe91158dda2d8681dd4bf27eedcf"
     sha256 cellar: :any,                 arm64_sonoma:  "5acbe7e8e31b9beede0f735d94b3b320e3993b69db0a4317aeda9af4f168802b"
     sha256 cellar: :any,                 sonoma:        "2ccf365f9df42abddca3f2d2b9d2868cd6c68e8974989a63eaecd7538b5b62bf"

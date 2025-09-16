@@ -27,12 +27,6 @@ class Lftp < Formula
   end
 
   def install
-    # Work around "error: no member named 'fpclassify' in the global namespace"
-    if OS.mac? && MacOS.version == :high_sierra
-      ENV.delete("HOMEBREW_SDKROOT")
-      ENV.delete("SDKROOT")
-    end
-
     # Fix compile with newer Clang
     # https://github.com/lavv17/lftp/issues/611
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200

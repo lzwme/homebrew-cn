@@ -110,7 +110,6 @@ class Pidgin < Formula
       ENV.append "LDFLAGS", "-Wl,-rpath,#{perl_archlib}/CORE"
     end
 
-    ENV["ac_cv_func_perl_run"] = "yes" if OS.mac? && MacOS.version == :high_sierra
     if DevelopmentTools.clang_build_version >= 1600
       ENV.append_to_cflags "-Wno-incompatible-function-pointer-types -Wno-int-conversion"
     end

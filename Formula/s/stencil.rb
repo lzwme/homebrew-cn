@@ -7,6 +7,7 @@ class Stencil < Formula
   head "https://github.com/rgst-io/stencil.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d5e5b6336ab02561ebb89d7c1db7d274084d2d811f5c04f4cc7f36a378ea3c9"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c265e3732910d83b18f5694db6c46290b8d40527093948e91ec8cd565c57db5a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2051f4b0ca2988be4567a7ac554097b8020d88710588659ed9969804feea735"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "63c227b1b7cdc2df41c9762f600248f54e15e3b44dae0e57192cf2aceabef3c5"

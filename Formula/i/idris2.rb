@@ -23,10 +23,6 @@ class Idris2 < Formula
   depends_on "gmp" => :build
   depends_on "chezscheme"
 
-  on_high_sierra :or_older do
-    depends_on "zsh" => :build
-  end
-
   def install
     scheme = Formula["chezscheme"].opt_bin/"chez"
 

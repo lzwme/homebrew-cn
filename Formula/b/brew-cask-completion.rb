@@ -18,7 +18,6 @@ class BrewCaskCompletion < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "2154b23c163900381ba68cfc78f2d961f5599e3a7116368ad516a7b02e2b7b4e"
     sha256 cellar: :any_skip_relocation, big_sur:        "a5256bbd0456fc15083d843e7cc3778fd45dfd3562b14bf076e0a08bcc04948a"
     sha256 cellar: :any_skip_relocation, catalina:       "a5256bbd0456fc15083d843e7cc3778fd45dfd3562b14bf076e0a08bcc04948a"
-    sha256 cellar: :any_skip_relocation, mojave:         "a5256bbd0456fc15083d843e7cc3778fd45dfd3562b14bf076e0a08bcc04948a"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "cfa441fcc60e4cab5a4005009c18f286d160b9e515462ab3938d8a15509d5195"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3225d50a5098677d66fd4179c7fb07460129e158fc7f3ba4f1a35adb6bd8901e"
   end

@@ -16,8 +16,6 @@ class Wiki < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "2e3682a73a087bcd527262f35e0dcbc9e40d292b360b36ebf2926ec722385713"
     sha256 cellar: :any_skip_relocation, big_sur:        "d7c353ca381bdfad07569b445ff29fe592979e6623354df939452528ecec76c0"
     sha256 cellar: :any_skip_relocation, catalina:       "ff424f6afbc0d2baab91cee289157d9c90623fa19b7d51574b75df455da76cd6"
-    sha256 cellar: :any_skip_relocation, mojave:         "316687b381ca23ee0e81eb6e396d2c8c21a5eeaf05a9219ec56dd0024a8d9722"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "bd1b52730bbf5bc503d3fece003b069e248261616d9d02767ef019d87659bdd8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "382e8b0d2644f4eaf1fd5132262dbe66a9c89549b0f38e96254ad37969a2a709"
   end
 

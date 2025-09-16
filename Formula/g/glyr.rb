@@ -9,6 +9,7 @@ class Glyr < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "b4f97cce0791e26fdb4ada285bc982bb96548886442bde705a9c5d9656bbc8e5"
     sha256 cellar: :any,                 arm64_sequoia: "9ff02541efeba578a7e20d6d3ba1cd80c71d4f80e37306a35cb9b13e1e9ef4e8"
     sha256 cellar: :any,                 arm64_sonoma:  "783ce52f8a68f8d5900429fd33baf4d728523e19fe63fec93c1de3242ab157f3"
     sha256 cellar: :any,                 arm64_ventura: "d2cf724c8cfdb04e0c94643c4fc456ca85a75148429198eb11b3746c1d23047b"

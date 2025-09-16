@@ -79,7 +79,6 @@ class Gtk4 < Formula
     if OS.mac?
       args << "-Dx11-backend=false"
       args << "-Dmacos-backend=true"
-      args << "-Dprint-cups=disabled" if MacOS.version <= :mojave
     end
 
     # ensure that we don't run the meson post install script

@@ -6,6 +6,7 @@ class Electric < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "8da57d0828fb26fb905e9403508e42676811f60f378916df95641dcfe01399b7"
     sha256 cellar: :any,                 arm64_sequoia: "ab61e9537354788e61387ab579aec216c7bfcd718e68d71385bd7c512ead0b30"
     sha256 cellar: :any,                 arm64_sonoma:  "6d8c1c5936c0cf79b0f43af5addce2dbc8e3d61f74fe350fcebfb963f624d037"
     sha256 cellar: :any,                 arm64_ventura: "27df93896cbc5334c121ff77c668971687847f3ef9e1bbb65cd6bb59e016f132"

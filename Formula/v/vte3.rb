@@ -35,7 +35,6 @@ class Vte3 < Formula
   depends_on "gtk4"
   depends_on "icu4c@77"
   depends_on "lz4"
-  depends_on macos: :mojave
   depends_on "pango"
   depends_on "pcre2"
 

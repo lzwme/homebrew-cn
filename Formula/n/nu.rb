@@ -59,7 +59,6 @@ class Nu < Formula
   end
 
   def install
-    ENV.delete("SDKROOT") if OS.mac? && MacOS.version < :sierra
     ENV["PREFIX"] = prefix
     # Don't hard code path to clang.
     inreplace "tools/nuke", "/usr/bin/clang", ENV.cc

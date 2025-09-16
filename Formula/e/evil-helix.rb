@@ -2,18 +2,18 @@ class EvilHelix < Formula
   desc "Soft fork of the helix editor"
   homepage "https://github.com/usagi-flow/evil-helix"
   url "https://ghfast.top/https://github.com/usagi-flow/evil-helix/archive/refs/tags/release-20250823.tar.gz"
-  sha256 "bbfbad0993bb2f114d3f57b18f016d603b201a32c30e6561b6f5d3a4aad9d95b"
+  sha256 "a06ca03fb7726cd22728593c641fcae5c4bc3c05a1dfb809352e471c4679a0c3"
   license "MPL-2.0"
   head "https://github.com/usagi-flow/evil-helix.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b88ba2a8e44663f0242fca1189940497c6d2c28205e736058292d8331785c8d8"
-    sha256 cellar: :any,                 arm64_sonoma:  "3ca353128f2ac2638994354cdc7edc7c37a3053ab6dbb5b811be404bafb9a040"
-    sha256 cellar: :any,                 arm64_ventura: "e90dde6296037c02792859fa919410d271a621ed20d3e67cca953f2896d878d6"
-    sha256 cellar: :any,                 sonoma:        "03eea3ad14cf1f1afb152ec5923bd091232ff98747b9053df533ae3214bc94d3"
-    sha256 cellar: :any,                 ventura:       "f910f0b4ba0baa174f9d8e972ceef05c02ca3e3788484b364ffdcfb3b4ef6466"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb847b0239df09a4c218a92219ef830305c242b110343ee7260e84f26c042f58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "073dbdf5d1efafa23dedaa9887767b68ef5d6c81a4d47228746f5c0cd4aff9fd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "bd9e375d5af199078bc4c72711db7a521f2b5b3a97ef52fca95c2a5c20020464"
+    sha256 cellar: :any,                 arm64_sequoia: "e791d92c0c841e7ae072ba4d968fe134e027e57085d684ff1b16423f43c2d956"
+    sha256 cellar: :any,                 arm64_sonoma:  "ef3d09e17e23e71775b36e905045665d5019bc5f43734306bdcbe690e6e59c5b"
+    sha256 cellar: :any,                 sonoma:        "d65baae18537d61a3dfa818eab13ed9fda5afd9dc707a77bab3c2a9f07dda5db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "669efd02cadae489188de4da6d28656fd136e196ab412cc9e61ce33f1584b34b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83c58153ceaea968ab8f90bc7c651193bafcc73f8df93e12eb3d5b594a10cc2b"
   end
 
   depends_on "rust" => :build

@@ -24,10 +24,6 @@ class Libresample < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "e02f4a234566b65aee658630f4ff47f89b2a6fb9ec80bca40a9959288060b6b4"
     sha256 cellar: :any_skip_relocation, big_sur:        "623df9f095f427ee794211cd657ad1d1ff5e89f383aa304c9c94d7a27cac36a3"
     sha256 cellar: :any_skip_relocation, catalina:       "779b21b26d28a7318e67e0444b74ee5782715b523c1f79ba9bdff41c334cd312"
-    sha256 cellar: :any_skip_relocation, mojave:         "7973809674c5ca9dceaf822abaf482c2a8126928140fa056168644b1196005c2"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "42b971ed75ad6ba1bd6879c2b7cb5fb416706ed184291d12983e46ab6c90a20c"
-    sha256 cellar: :any_skip_relocation, sierra:         "b94dc206fa507bcdceb49534740c5c0dff0868a9d9333e4acd8922f22b10c912"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "ba2446005f2417fa81e5a5963d2273494396f8821ee95fd84ed9825342564598"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "07dabf0e5ac418d11d1cb1e20326ac69e20a199c620e6768c4411a7db878a2e6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c42f2a35518f75cc11ee79cdfd8985def6d079a7afd8b2b02f74ac82a165122"
   end

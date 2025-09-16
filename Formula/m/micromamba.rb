@@ -14,6 +14,7 @@ class Micromamba < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "f7391efc75547c6f6128c0c8fd4bdf204c7b04a5763bdd0a956dc219bce173d0"
     sha256 cellar: :any,                 arm64_sequoia: "f65e214161fae9448b1111bfdfacfc148789ac3adc19ee5fef8c77bf1e38c814"
     sha256 cellar: :any,                 arm64_sonoma:  "378222185b606aacce3c253fc79c69029df8530e937b957ed1eda069eb45d04f"
     sha256 cellar: :any,                 arm64_ventura: "0488bb88062183e6f6f83b8db23496ad5ca6536f27fb1af72a1545e195e8d7fa"

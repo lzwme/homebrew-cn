@@ -9,6 +9,7 @@ class Standardebooks < Formula
   head "https://github.com/standardebooks/tools.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92b82173a05e709fc858f4cd0019cc46dc38534d48a56ddbfffd83b5b02b4ef6"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b768aeaf156739f5fae69465feadbf7fff5985c6ed52eefaf0d819345a3721eb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "559003946a9742abfcfb3a856066c8df056d7d8f39bd2c3efd52250a71364723"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "bb436bdcf19bf80db9b988925891174ae58a1d5850951cc140f33502ee0d71b9"

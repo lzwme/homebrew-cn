@@ -414,7 +414,7 @@ class Qt < Formula
     system "cmake", "--build", "cmake"
     system "./cmake/test"
 
-    ENV.delete "CPATH" if OS.mac? && MacOS.version > :mojave
+    ENV.delete "CPATH" if OS.mac?
     mkdir "qmake" do
       system bin/"qmake", testpath/"test.pro"
       system "make"

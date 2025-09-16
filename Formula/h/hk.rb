@@ -7,6 +7,7 @@ class Hk < Formula
   head "https://github.com/jdx/hk.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "0ceebad3612accc1ed20755a2e4a7d1b408c22132d88fcb2dac8f0f30275106a"
     sha256 cellar: :any,                 arm64_sequoia: "c32dc570623a8e954180fc4944749a44ba151a79a3deccaf4a047b8c83ce8245"
     sha256 cellar: :any,                 arm64_sonoma:  "3c0f27d81dffe8c63c01d4f6367620069007ddf6ee02595b8e09bfea9bc079c3"
     sha256 cellar: :any,                 sonoma:        "452031b5236aa5d171b2d7ce974de2e5d78b90134072d72a1b83573757406fa7"

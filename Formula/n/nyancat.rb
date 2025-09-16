@@ -18,10 +18,6 @@ class Nyancat < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "777e0a4b2074525b1b9db1d5dc6e7756d3f8c3d1c03667cc28d80781b0cf7dd7"
     sha256 cellar: :any_skip_relocation, big_sur:        "9eef2795f2dc32491b4b948d39a8f68f6274964174ff735d3f42ee70c7035148"
     sha256 cellar: :any_skip_relocation, catalina:       "997fc4e89ef493a356e781543d69343e96a08547aba3bec53bd1db64b48f3436"
-    sha256 cellar: :any_skip_relocation, mojave:         "6f14b77291021020bc45ea2182063fe16215faee9862786763798362ac664822"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "2272aa5028ca779224f68fd25a3c07ff41c71bb7d14511186808a6b59bfe32c3"
-    sha256 cellar: :any_skip_relocation, sierra:         "413a6ff99b622e60b0878ca74c3051d0feac094a7eb1fa9e90db715735cdd2bf"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "2484fb6eabaaa65a988191b9c2f920d7290bc20f73dbf41e4a996e0306827364"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "f8ec43d463c0a65e4c50c3e3d2675fb3f89fba1503fc036b1b717eecda6a1511"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "69b8c44133a399fddd0b6b6db41d2dcd9ba2420a5c5b53e62409d14cfacadc85"
   end

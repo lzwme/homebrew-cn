@@ -20,12 +20,10 @@ class DarkMode < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "312e08579ba705193ec21f3f10f3b52ac69b752d301788846752f3e160105abf"
     sha256 cellar: :any_skip_relocation, big_sur:        "8ec98a0dfe32ff7933e9f44a4f4933e1e0da4929076e72ed79cbc296240c17dd"
     sha256 cellar: :any_skip_relocation, catalina:       "5533a6c879d399a84a61b0ee6d03e5baaa23c8d598ebc8c3ad1dbd0db6da8958"
-    sha256 cellar: :any_skip_relocation, mojave:         "692456cb6abf428b487c663b4718147fe4fffa5be956054700857d2d9ddb977f"
   end
 
   depends_on xcode: :build
   depends_on :macos
-  depends_on macos: :mojave
 
   def install
     # https://github.com/sindresorhus/dark-mode/blob/main/build

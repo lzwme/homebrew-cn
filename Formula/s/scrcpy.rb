@@ -11,6 +11,7 @@ class Scrcpy < Formula
   end
 
   bottle do
+    sha256 arm64_tahoe:   "bd7184271c4970c60c9855895d0468d79fabbab35eac3e8737cd8a58d637aa7d"
     sha256 arm64_sequoia: "efb4f4018da2954270957d977b1c7f7bb8a76daba5c308792dd4d2170ae0e3b0"
     sha256 arm64_sonoma:  "9370a52679f3e2cc21044a8f3d3b1106d07707e8311ed227118aea37044291af"
     sha256 arm64_ventura: "8aa2c202f7a8184a5293196b6dd7c9d869a5ebe693cbb8cbc49f5bd75bd64294"

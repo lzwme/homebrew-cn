@@ -58,12 +58,6 @@ class PerconaServer < Formula
 
   conflicts_with "mariadb", "mysql", because: "percona, mariadb, and mysql install the same binaries"
 
-  # https://github.com/percona/percona-server/blob/8.4/cmake/os/Darwin.cmake
-  fails_with :clang do
-    build 999
-    cause "Requires Apple Clang 10.0 or newer"
-  end
-
   # https://github.com/percona/percona-server/blob/8.4/cmake/os/Linux.cmake
   fails_with :gcc do
     version "9"

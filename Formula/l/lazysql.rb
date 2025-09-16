@@ -12,6 +12,7 @@ class Lazysql < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e8409c5fe9b4f71ddf4b9c4e228033201f5d00b9ff0b793b77fd620f82c0656"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d65ce1718770d13839f9c33a4d4e52a33bfc12839abe9e8fc2d86c6604915d3a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d65ce1718770d13839f9c33a4d4e52a33bfc12839abe9e8fc2d86c6604915d3a"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d65ce1718770d13839f9c33a4d4e52a33bfc12839abe9e8fc2d86c6604915d3a"

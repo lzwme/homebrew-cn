@@ -7,6 +7,7 @@ class DockerDebug < Formula
   head "https://github.com/zeromake/docker-debug.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "972fa49c80948a98642168ce1cb3529efaf162a11df1899dff8fdbc9cfb5dfd6"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2dfe42bbe836be8f2fd1345be00fb14810fa823ab353d9aababafdf0ba51737b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2dfe42bbe836be8f2fd1345be00fb14810fa823ab353d9aababafdf0ba51737b"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2dfe42bbe836be8f2fd1345be00fb14810fa823ab353d9aababafdf0ba51737b"

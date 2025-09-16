@@ -23,8 +23,6 @@ class Lft < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "4500b7cf6a00acc2b8edb3a7f608508e23e4102feddbd5bdadf6b4a9edf3066f"
     sha256 cellar: :any_skip_relocation, big_sur:        "d54a6ac61b9a1f7d1106dc0d8fbff8223b606baeb2ccca9a325f8f79e443fb77"
     sha256 cellar: :any_skip_relocation, catalina:       "c0b69000709a507f2ec0cc2ff286910e6f2629169367828cfdc26e184654f787"
-    sha256 cellar: :any_skip_relocation, mojave:         "83d6fa2b78fb9780fecb9287407825d1731f1c91da30bb75b15f26e632e0720b"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "e0370a6053bedd5c24f62583c2d19c3d0d2fab2fa5cf9003561e60694dad8642"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4745d9fd33ab816b785c90883a2b69e0e3e70b5176246e66adff849aada2eddf"
   end
 

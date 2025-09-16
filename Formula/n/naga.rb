@@ -18,10 +18,6 @@ class Naga < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "6b013d2185f67b684ab4f49db162fdb32bba2dc6914d9855c6f7fbb4bd5603f9"
     sha256 cellar: :any_skip_relocation, big_sur:        "58d4a48fe33e676993449a2cdf332f74b6858681bc5519374d6e7a8842df9434"
     sha256 cellar: :any_skip_relocation, catalina:       "4a397ca0cf60725415818826e47fbf20c4b9cad2bc754128ece0d50279b715fd"
-    sha256 cellar: :any_skip_relocation, mojave:         "0deef9e2936b7e5256c4f3e6f22c85389e3b8e53a586018854cbad3b983adc53"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "324d31a0ae721075843ff5e326f35efcd1a03d784e92ef8419b954b40a55fae3"
-    sha256 cellar: :any_skip_relocation, sierra:         "8baa28b92a0d6970a857c859b11e4a1df878db5270f259bd3ccfe3b5f57f3303"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "6ff3dd51d1cdeed9364c36c25d1c2794f973e2927077eaeb251fa0dbfc48a531"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "ff3c81dd29c36428f64d815f798bdb6c9a57aa7f73961c4eff5d5b08bd70cf07"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8ea8f618dc69a283560a3a51335c476824cee8bf5da7233620021e3c95f6fa7"
   end

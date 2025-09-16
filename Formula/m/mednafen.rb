@@ -28,7 +28,6 @@ class Mednafen < Formula
   depends_on "flac"
   depends_on "libsndfile"
   depends_on "lzo"
-  depends_on macos: :sierra # needs clock_gettime
   depends_on "musepack"
   depends_on "sdl2"
   depends_on "zstd"

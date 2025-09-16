@@ -2,7 +2,7 @@ class ApacheArrow < Formula
   desc "Columnar in-memory analytics layer designed to accelerate big data"
   homepage "https://arrow.apache.org/"
   license "Apache-2.0"
-  revision 5
+  revision 6
   head "https://github.com/apache/arrow.git", branch: "main"
 
   stable do
@@ -18,15 +18,12 @@ class ApacheArrow < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "11a45e7d86c6d663ad4850f7164e706b26b8bb2afb80b1be5525977a09be2251"
-    sha256 cellar: :any, arm64_sequoia: "a831bbc2b0bc3906d7a6cff8a9a7a2f135540146e974de25cb397c6ec8b0b206"
-    sha256 cellar: :any, arm64_sonoma:  "ba9ff23dd0b501553dbe5dccff2899c37dbef928989c9c4738f00c4f6d4c6ac5"
-    sha256 cellar: :any, arm64_ventura: "3855488d7c3df0b532c23340d18e3c91f4d1242e9c2ed9f25438d9ab02baacb7"
-    sha256 cellar: :any, sonoma:        "2483e43494d672a1d71c4f98809e1fddba418ecd1b660bb2fd602ccec390a1d8"
-    sha256 cellar: :any, ventura:       "2a58b770230894592bc4697cc0698a4a2ffb8687288fc3de79f96ba39385d083"
-    sha256               arm64_linux:   "e07a6fd683cf1d8c97e12d430f8ab7e3b0e734b1596ae3bf90c93a16c1dfdd71"
-    sha256               x86_64_linux:  "88c017ac20a81aa3a6fe845ac0a812f41774241b8a27f7ddd27e34d43df01525"
+    sha256 cellar: :any, arm64_tahoe:   "aa47912c9183c7abba4b3978341d181d857b614bf4df4baa6f7c7ab32f95736b"
+    sha256 cellar: :any, arm64_sequoia: "c8ab182054e789bcdc31d4a7a09e06c3d836fa9d5a62e8a0ab637ea18c17cbff"
+    sha256 cellar: :any, arm64_sonoma:  "7af234171e7f15482ccb667dcf5fffb195ee0daf07a74701befc62697c575ed4"
+    sha256 cellar: :any, sonoma:        "42deaeda4d7e70a9b84297bd9d258016822bf3292bfdbede51840f98f9244847"
+    sha256               arm64_linux:   "7e054601a0e69fb56fd1cf2857625087e1e848df3f3a444c7ae57897a40e438b"
+    sha256               x86_64_linux:  "90602be945bfeb39979c01f84b74d213f12bc3bbd64fa915edd4e61fd3d2253c"
   end
 
   depends_on "boost" => :build

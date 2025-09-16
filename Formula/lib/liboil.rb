@@ -26,10 +26,6 @@ class Liboil < Formula
     sha256 cellar: :any,                 monterey:       "85dc36f48c6496097f4aa02b580573a1c21a399e418464121a8f935f50a4a951"
     sha256 cellar: :any,                 big_sur:        "ca18b013a3853b8d751276c3aea1891d945cb510fd73c3f6704eeb84aba49216"
     sha256 cellar: :any,                 catalina:       "4568936a9d090ea8a2a349e4009a0b2f0a66edc49c93b4bda1a9c30d6ad64544"
-    sha256 cellar: :any,                 mojave:         "e8655c3c54d78829199c130758a73dce27e27d8a925cb9ec943a1d32522c13f6"
-    sha256 cellar: :any,                 high_sierra:    "3214b8910deb69c2c0138a5ece603515c089fa2178ead16e4106695dd6b4c4b4"
-    sha256 cellar: :any,                 sierra:         "f242435c284690879f84812481843e92c54adc190a8201aa31d550c262e1951d"
-    sha256 cellar: :any,                 el_capitan:     "7d76b7a220caeb8dbaef27b879f4f3ac0ad5b236b563961abd9484e8bc9e0160"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "12a6d9bd59ede96b60e33f1e1ffcf61b0c66bcd0f5886e6c3a0d76730d514985"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "64127180a4182632dbde62deafdcba4fa391ff4a675e85a6821cebee298887e1"
   end

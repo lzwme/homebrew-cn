@@ -13,6 +13,7 @@ class TailwindcssLanguageServer < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff46bfa5fb3d8475d51640f590837e78ef88a4ecb70fd4abdc370614313bd23b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "19d3d062fd2908486d1f9b6d416912f54c2bff349810af41907cd49429790989"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19d3d062fd2908486d1f9b6d416912f54c2bff349810af41907cd49429790989"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "19d3d062fd2908486d1f9b6d416912f54c2bff349810af41907cd49429790989"

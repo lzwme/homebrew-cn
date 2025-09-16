@@ -18,7 +18,6 @@ class Pcp < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "37aa1824b66b4581a3c2054c26731ee41ab757e3d768399ec43dedbfe2bc183e"
     sha256 cellar: :any_skip_relocation, big_sur:        "7fec012a0331f8ded437d4af20dd6ff527ca0b10ca8cfba73a40aa637358ec54"
     sha256 cellar: :any_skip_relocation, catalina:       "672ebdfce1cb30d596792cdc8652b1b2f00e19a66f9266a7796cf6b7b6d25a9f"
-    sha256 cellar: :any_skip_relocation, mojave:         "d5e48f3b7f8e0e0034dede947f94b0d5a23311e6ced60093b2cdfea9427389e2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "be128448d96fd7005c9cbda1c1ba2c71e7f7a58468c1c5bb3ec7a1f75c5109c5"
   end
 

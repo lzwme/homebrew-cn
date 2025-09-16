@@ -18,6 +18,7 @@ class StorjUplink < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77a7cd16d0434f450be05714c8d5a5515312f3efeb7606df1820ae5d116c6927"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "77a7cd16d0434f450be05714c8d5a5515312f3efeb7606df1820ae5d116c6927"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77a7cd16d0434f450be05714c8d5a5515312f3efeb7606df1820ae5d116c6927"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "77a7cd16d0434f450be05714c8d5a5515312f3efeb7606df1820ae5d116c6927"

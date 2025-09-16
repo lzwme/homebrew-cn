@@ -43,11 +43,6 @@ class Emacs < Formula
   conflicts_with cask: "emacs-app@pretest"
 
   def install
-    # Mojave uses the Catalina SDK which causes issues like
-    # https://github.com/Homebrew/homebrew-core/issues/46393
-    # https://github.com/Homebrew/homebrew-core/pull/70421
-    ENV["ac_cv_func_aligned_alloc"] = "no" if OS.mac? && MacOS.version == :mojave
-
     args = %W[
       --disable-acl
       --disable-silent-rules

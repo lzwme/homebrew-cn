@@ -18,8 +18,6 @@ class Pngpaste < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "e9a350b69811aa02e6b01d906cc184f35a8806e322bf62430b81bff8a6d27fd2"
     sha256 cellar: :any_skip_relocation, big_sur:        "20d394d6036f0ffe382b36151c15d3ea9b20ce9d1e5fe6166ce11546c5e871f4"
     sha256 cellar: :any_skip_relocation, catalina:       "692e8f099ee7426310daa078d6bf2103b763b4549804f1775a5238acb1ead616"
-    sha256 cellar: :any_skip_relocation, mojave:         "b67e349eaa3680c7be1746511a8a934e04320182d9396e75ca1936398d746779"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "eed393d2dbd516f60bdaa445df330a140853bee95cd49b0c3730345f57136676"
   end
 
   depends_on :macos

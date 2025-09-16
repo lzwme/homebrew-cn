@@ -9,6 +9,7 @@ class Lefthook < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fcf616444398bb1ece3febff9b0da795fc78f37618eaea010f32681422ad0a06"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "fcf616444398bb1ece3febff9b0da795fc78f37618eaea010f32681422ad0a06"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fcf616444398bb1ece3febff9b0da795fc78f37618eaea010f32681422ad0a06"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "fcf616444398bb1ece3febff9b0da795fc78f37618eaea010f32681422ad0a06"

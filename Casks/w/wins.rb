@@ -1,5 +1,5 @@
 cask "wins" do
-  version "2.6.2,43"
+  version "3.0,45"
   sha256 :no_check
 
   url "https://winswebsite.s3.us-east-005.backblazeb2.com/Wins.zip",
@@ -14,7 +14,6 @@ cask "wins" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
 
   app "Wins.app"
 

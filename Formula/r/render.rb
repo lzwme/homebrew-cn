@@ -7,6 +7,7 @@ class Render < Formula
   head "https://github.com/render-oss/cli.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c34ede29423cc4a513148ba4aea56e19dc68ce074222f8825824956e7a9d6772"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c34ede29423cc4a513148ba4aea56e19dc68ce074222f8825824956e7a9d6772"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c34ede29423cc4a513148ba4aea56e19dc68ce074222f8825824956e7a9d6772"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c34ede29423cc4a513148ba4aea56e19dc68ce074222f8825824956e7a9d6772"

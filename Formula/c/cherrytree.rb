@@ -12,6 +12,7 @@ class Cherrytree < Formula
   end
 
   bottle do
+    sha256 arm64_tahoe:   "27bf2c918a8967c4df0c2edadc7b04d0506c13be6b2b00d7ed1db77f0f72e7a2"
     sha256 arm64_sequoia: "b976816f9ed74bf1aff12b039ab79e459a119db7bcfa1bd2fd47a27e356aefa8"
     sha256 arm64_sonoma:  "a8c5c3bb63f5d0291cf6238f72100a9baad19a88f40c8997a5d2131e3f804905"
     sha256 sonoma:        "3432be4c085c80636532b606f87efd82a39dad85f7acb56ad10dd39758eaaff7"

@@ -7,6 +7,7 @@ class Sesh < Formula
   head "https://github.com/joshmedeski/sesh.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03b9b78a5840f9d069429489ad05244c4859b656d73bb0397069e147db30b8ef"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b5b5deb0b24a0b461877e75d71699a251e4c9edfe793d3debe304b909da47ea"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b5b5deb0b24a0b461877e75d71699a251e4c9edfe793d3debe304b909da47ea"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3b5b5deb0b24a0b461877e75d71699a251e4c9edfe793d3debe304b909da47ea"

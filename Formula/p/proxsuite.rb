@@ -4,7 +4,7 @@ class Proxsuite < Formula
   url "https://ghfast.top/https://github.com/Simple-Robotics/proxsuite/releases/download/v0.7.2/proxsuite-0.7.2.tar.gz"
   sha256 "dedda8e06b2880f99562622368abb0c0130cc2ab3bff0dc0b26477f88458a136"
   license "BSD-2-Clause"
-  head "https://github.com/Simple-Robotics/proxsuite.git", branch: "main"
+  head "https://github.com/Simple-Robotics/proxsuite.git", branch: "devel"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "55eeaba27c0759020f1af4fee87c57cd7f06250654985fcb314aafd65bd94bc2"
@@ -31,12 +31,20 @@ class Proxsuite < Formula
 
   def install
     system "git", "submodule", "update", "--init", "--recursive" if build.head?
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DPYTHON_EXECUTABLE=#{which(python3)}",
-                    "-DBUILD_UNIT_TESTS=OFF",
-                    "-DBUILD_PYTHON_INTERFACE=ON",
-                    "-DINSTALL_DOCUMENTATION=ON",
-                    *std_cmake_args
+
+    # Workaround to fix error: a template argument list is expected after
+    # a name prefixed by the template keyword [-Wmissing-template-arg-list-after-template-kw]
+    if DevelopmentTools.clang_build_version >= 1700
+      ENV.append_to_cflags "-Wno-missing-template-arg-list-after-template-kw"
+    end
+
+    args = %W[
+      -DPYTHON_EXECUTABLE=#{which(python3)}
+      -DBUILD_UNIT_TESTS=OFF
+      -DBUILD_PYTHON_INTERFACE=ON
+      -DINSTALL_DOCUMENTATION=ON
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

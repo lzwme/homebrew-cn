@@ -30,7 +30,6 @@ class Dosfstools < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "e288a32bae22472eb31806afad3a025220d7284ddf6cdbf5b48a196ec5831139"
     sha256 cellar: :any_skip_relocation, big_sur:        "c4f450bef47449fa57d911e1c3610cd65bf8d7fd661e3efc8a0a44c7d45510f5"
     sha256 cellar: :any_skip_relocation, catalina:       "df9afee3d6ec3da028a6fdd487b98800099f8aa248261c35ed2821e984b91a70"
-    sha256 cellar: :any_skip_relocation, mojave:         "4d910d3f83352692379e5ead97f3c52ab845cc187a1d791f655ed02ef7b7b9e6"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "0f175df17e208a3e33de63fa36168da5daff1fe7a5ae61be6e7e140838171b95"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "584daa5a52ed21b3b23eba4323ebec3fa8421062c9cac5d833e60b91da0a7636"
   end

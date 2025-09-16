@@ -32,6 +32,13 @@ class LastpassCli < Formula
     depends_on "curl"
   end
 
+  # Workaround for CMake 4 compatibility
+  # PR ref: https://github.com/lastpass/lastpass-cli/pull/716
+  patch do
+    url "https://github.com/lastpass/lastpass-cli/commit/31a4ad5f735933ff8e96403103d5b4f61faee945.patch?full_index=1"
+    sha256 "a4c2a16fd47942a511c0ebbce08bee5ffdb0d6141f6c9b60ce397db9e207d8be"
+  end
+
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 

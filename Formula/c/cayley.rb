@@ -21,8 +21,6 @@ class Cayley < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "b621ff9b1017dac7f6cbe723abbd85256d04be2f31b4e527a569d2b5d66e54bb"
     sha256 cellar: :any_skip_relocation, big_sur:        "9217369e4d1d1863fd23a2694a3962510a52380b385c199008191c302629f0ac"
     sha256 cellar: :any_skip_relocation, catalina:       "7fe446d8eaa6ed43ae226027feec3878e437708d4a59c5aab761ab249bc9ba56"
-    sha256 cellar: :any_skip_relocation, mojave:         "7084bd5b3b7dc66c9c50266f2831951f995901f2a326905c760646ebe66a3b96"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "0dc598decbc9c70660d22fc670f71581e7fec09e5c9d9bc13ccee4c88c758338"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "45af8318168453a8135a1a54814d483f7e80f2ea13ebf20a11c66f24304b1b00"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3068fa07874df5d0abb42373433c4f0997d2693f20b859bfdddf36390ea15fe"
   end

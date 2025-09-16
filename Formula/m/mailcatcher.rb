@@ -148,9 +148,7 @@ class Mailcatcher < Formula
   end
 
   def install
-    if OS.mac? && MacOS.version >= :mojave && MacOS::CLT.installed?
-      ENV["SDKROOT"] = ENV["HOMEBREW_SDKROOT"] = MacOS::CLT.sdk_path(MacOS.version)
-    end
+    ENV["SDKROOT"] = ENV["HOMEBREW_SDKROOT"] = MacOS::CLT.sdk_path(MacOS.version) if OS.mac? && MacOS::CLT.installed?
 
     ENV["GEM_HOME"] = libexec
     resources.each do |r|

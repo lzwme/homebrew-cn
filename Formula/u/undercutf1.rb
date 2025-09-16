@@ -7,6 +7,7 @@ class Undercutf1 < Formula
   head "https://github.com/JustAman62/undercut-f1.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b8cd2de2e8606f1841da9a79680c81d3526a8e0a87366155b11850957e91f372"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbf950497b0c21db856572b8065dbda41d31b1fdaef770be7a74aa21d4ef45e0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57474966c31723d9983810af80204e63f37576ba8e0ceb627a29b82e2fafac31"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c81adee4cddcdf39c0d1a42834050e1a7c117593566e25e58fdd9dbb7fe7b0e0"

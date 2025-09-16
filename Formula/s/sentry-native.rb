@@ -6,6 +6,7 @@ class SentryNative < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "f3ac84e2bdd14807084d3c7de31e005f1351e0cbf1d1f2ef8e6ec04b85a6b118"
     sha256 cellar: :any,                 arm64_sequoia: "eb797ea2740deae9aa4001c36300c678a1cb4d9e3492041be53c5b795f2671ac"
     sha256 cellar: :any,                 arm64_sonoma:  "25eef1afe842a39102514b4c8dda27f79866787878589b7f62b90a0ebb7e5539"
     sha256 cellar: :any,                 arm64_ventura: "062f0bf0ffec81ddb794992cfea7e15c26e7151e10bd3985e627ba708201d992"

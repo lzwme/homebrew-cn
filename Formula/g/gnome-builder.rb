@@ -7,6 +7,7 @@ class GnomeBuilder < Formula
   head "https://gitlab.gnome.org/GNOME/gnome-builder.git", branch: "main"
 
   bottle do
+    sha256 arm64_tahoe:   "24bc2ddbe487965f508680cf94cf71158d41f57501c7da3f53d7980c4026c6f3"
     sha256 arm64_sequoia: "2b8473b3e31ef49328a4ab54214fdbf6d3ff0aac579051d927846cee65384d9c"
     sha256 arm64_sonoma:  "ac63ed22fd95faf59ffdfdbb83e4f3a2de7d9ec486affd6fab7de4a962441cba"
     sha256 sonoma:        "1f1dd57073b9060a940cbac16c08121cb4708d9e257fcd49351fab47678c4d7f"

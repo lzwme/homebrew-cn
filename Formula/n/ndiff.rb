@@ -23,10 +23,6 @@ class Ndiff < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "731436f80a687a2e5d2a2d2a53bd338164bbcf828cd01297e14683caf4c93e22"
     sha256 cellar: :any_skip_relocation, big_sur:        "409ac74964648efd98d55c7b07ffcb90066e23b08a50b495b4e43183fd3a9aef"
     sha256 cellar: :any_skip_relocation, catalina:       "0998b523aa16873d2ed4d776d29df511154e941ffba972d7560176c82add4515"
-    sha256 cellar: :any_skip_relocation, mojave:         "1849064e29be787191a0e1dba0322ca1f06361cff18127a26a926e5e7c12c79c"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "e07f1749ab348c33f3918e0278ac4dacbb6aee0553dbb62434a8b59174d20746"
-    sha256 cellar: :any_skip_relocation, sierra:         "ed6f753f9fe240486de3b6589350fcc0e7afbe345ae2e01bf6b47e132de9be4e"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "6faf20ce4c88110019c76cc4253cd65e5743fab7cff109fc8a7d41c8f411012e"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "c030a5b399fa30e0f1ce974e9900718dead459f3fffd5d856ada54ebc277c204"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "417d767a85801798bdd56f860a6554abbac5cf980080106ab5767be4c53121ca"
   end

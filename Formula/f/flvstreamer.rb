@@ -17,10 +17,6 @@ class Flvstreamer < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "ce990e2bc2f6fe933e3203b6a62e0a7f42c899a29a4b77f453ba9ee93b82f8b5"
     sha256 cellar: :any_skip_relocation, big_sur:        "b148a052d107098db010c7f1884784dacba4f2f27e7ca9d50c9e3347096a4aa3"
     sha256 cellar: :any_skip_relocation, catalina:       "cfc6a5308ead52bccf753068f8de3a57abd47cf4bdf12d046ca540f3b38ebf8d"
-    sha256 cellar: :any_skip_relocation, mojave:         "207ffd2262cd3767e7443f9b389100eb8788ceeb48dbe06030452b4e30d132f3"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "52d09a95883b401b1d77d0e85354099cc351285a2243d00c257778033f36dbf6"
-    sha256 cellar: :any_skip_relocation, sierra:         "e257779383d236611212078f2e6db28d457d51a282d6163806e0232134a046b0"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "5a4b649ce0f2c32bca4091f4867a37cca0e8ae2a292d4ef29aa2949530bdd651"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "3a0a12cb4beb91c6bf0ba4f3a5c35a77fe77846ddde1aa9f38dbe1208ed18859"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "99df5a533003260eea6277d1fa2bb80d0354b666a6a99195c46813e3313c701f"
   end

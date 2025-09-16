@@ -25,7 +25,6 @@ class Pakchois < Formula
     sha256                               monterey:       "f53bdb6cb2f47b0ed2e1df5f2c80f9568c3b2c55463de2cfdfe742da945364c0"
     sha256 cellar: :any,                 big_sur:        "fd91b09bb010ac37483a910b0431c6082903ee843a15f4cc767bde57ce0b7267"
     sha256 cellar: :any,                 catalina:       "ca82f2950582bc54e46122eb71ff8e8acdc739772baf53ab2d545755f03303f8"
-    sha256 cellar: :any,                 mojave:         "cc98c7b706f27320ee7c673d906b4da22b402afe0d93b4c66f73a8cde86f7929"
     sha256                               arm64_linux:    "f1d80aa63347835060c9d57d93c36226dc116d3c4b573e3db74128a86e4bfc1b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9e96d8cef014042091db67065c8b02439cba4cfd381ca7651bc721ec120ad4a"
   end

@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v24.7.0/node-v24.7.0.tar.xz"
-  sha256 "cf74a77753b629ffebd2e38fb153a21001b2b7a3c365c0ec7332b120b98c7251"
+  url "https://registry.npmmirror.com/-/binary/node/v24.8.0/node-v24.8.0.tar.xz"
+  sha256 "1c03b362ebf4740d4758b9a3d3087e3de989f54823650ec80b47090ef414b2e0"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -12,14 +12,12 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "857bba96e620782d2f1dd4e2a21701ec32e69affa1eac7703f7d6654731efefe"
-    sha256 arm64_sequoia: "56ea01001e0320e0b3b639d9bceb042996f39831a8ffd3995a5ac8cb52d498b2"
-    sha256 arm64_sonoma:  "28ec403e1b76fbf7508ff83e623a9c18af3a68ecacf6c0834de9539051ea0d17"
-    sha256 arm64_ventura: "a1aa3e4076ae89a3ec6083fa511d7123343a9ca4a3b25504291c17ce6595911b"
-    sha256 sonoma:        "df38ab52a9cf33213d39fb95ef56adce350143f88ef37bfd46a5075c91de6517"
-    sha256 ventura:       "1b0e6c239183445aaa2340978fbb4c59b4829077e50526a7b6af328e49175bc2"
-    sha256 arm64_linux:   "1443d75e5cc87b8abade73990bf1a2f6febca2aec79fd3972856c1f271dae8fc"
-    sha256 x86_64_linux:  "431aaac6a9f5c925a2db39b1d597f92a77f4b1e71e7875d1d976e6395dd802cb"
+    sha256 arm64_tahoe:   "84bc0646f0e9366f5821dc157248006f8c0c2b433b312fb8ebf6f733977beca9"
+    sha256 arm64_sequoia: "8b83f07790558374365693d9a146bc3d3679108a9caf83309be3e960b4d6e284"
+    sha256 arm64_sonoma:  "e45a52838cc88d525f9599f8b8f67b57015dcd43111aac34d7734e8508570aab"
+    sha256 sonoma:        "93be56014ec9b6ec00f40a705ee1e609dc76d968612f235fab219a666ddccb3e"
+    sha256 arm64_linux:   "a62d7df567536fb22533d60a7c0911567c708321c1df95d77491852b2643058b"
+    sha256 x86_64_linux:  "a883d06900e9291857ead02efa75f2f70880d505419d357ded3ee65b164d80cb"
   end
 
   depends_on "pkgconf" => :build
@@ -46,7 +44,7 @@ class Node < Formula
 
   on_linux do
     # Avoid newer GCC which creates binary with higher GLIBCXX requiring runtime dependency
-    depends_on "gcc@12" => :build if DevelopmentTools.gcc_version("/usr/bin/gcc") < 12
+    depends_on "gcc@12" => :build if DevelopmentTools.gcc_version < 12
   end
 
   link_overwrite "bin/npm", "bin/npx"
@@ -67,22 +65,12 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-11.5.1.tgz"
-    sha256 "f4c82fbff74154f73bd5ce5a2b749700d55eaddebda97b16076bf7033040de34"
-  end
-
-  # Ensure vendored uvwasi is never built.
-  # https://github.com/nodejs/node/pull/59622
-  patch do
-    url "https://github.com/nodejs/node/commit/8025e1cfb95184d2191a46f2986b42630c0908f1.patch?full_index=1"
-    sha256 "f9cc06ba9ac2dcb98d67c89cac119a005da12b4b24e30b4f689e60041b5b94aa"
+    url "https://registry.npmjs.org/npm/-/npm-11.6.0.tgz"
+    sha256 "ddf7e6e42ae5b9e28d84945d1c37188f9a741af492507b513b3e80af5aeba4f1"
   end
 
   def install
     ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1699
-
-    # The new linker crashed during LTO due to high memory usage.
-    ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
 
     # make sure subprocesses spawned by make are using our Python 3
     ENV["PYTHON"] = which("python3.13")

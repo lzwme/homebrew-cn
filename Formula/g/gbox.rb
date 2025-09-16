@@ -1,18 +1,16 @@
 class Gbox < Formula
   desc "Provides environments for AI Agents to operate computer and mobile devices"
   homepage "https://gbox.ai"
-  url "https://ghfast.top/https://github.com/babelcloud/gbox/releases/download/v0.1.12/gbox-v0.1.12.tar.gz"
-  sha256 "66c1d3bb4b6772a06a54b4e071f78522a2b329880378a5df8ed1f8bdb5139727"
+  url "https://ghfast.top/https://github.com/babelcloud/gbox/releases/download/v0.1.13/gbox-v0.1.13.tar.gz"
+  sha256 "552005eee1351fc57ab4b2244736c4cabe3315b8053d8012b19f4c56aeafdacd"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c74ac3b0baba4f4cf810a06af04291a4e72b4bbae7414e2d165d8a0426368e7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5a268325bf77251c4e32f17a065803336fbe55496f203089149f9a20b978715"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16cd9e6f00804fde96ffbbbea5e0d71aaad00a090e5431357fcd718490ebcfb6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3d9c418d5448c7328eacb03c307c287b59edc672c58567b76a7e23dc8a7364a6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "297f7e36484e46d821891144f7f3ae8bd7478197622e9cb25e37e8c3a6985b5b"
-    sha256 cellar: :any_skip_relocation, ventura:       "59c1e97c129204fec935fd84e1806492131fc9b17d9d8681e0ad4de38be63bc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d4a3d999714d55a3c6b5275d7062b2fd19cb96e21ef1e8317dfbaeab9694e2d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "218971423448f53a21b18e7ce83f5a6876d7351dffebef12720b90adbb8abf13"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c7b1cc8aba50fa69fa822e57486f13f25eba1ba275c55faecf33737d8fdc173"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f472de71655d96108de1769f71a6f2abd9ef5dafe01f0da296812dc84759b45"
+    sha256 cellar: :any_skip_relocation, sonoma:        "30a4e76dc5768a2e4e346f1a1c7320aa234300189cd5bc92c5b343ffb407bea2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e618f823927a7e652e4c28a037250b1d23e9edd00ddc8582238994c541b7264"
   end
 
   depends_on "go" => :build

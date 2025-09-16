@@ -19,7 +19,7 @@ class HasteClient < Formula
 
   deprecate! date: "2025-04-18", because: :repo_archived
 
-  uses_from_macos "ruby", since: :high_sierra
+  uses_from_macos "ruby"
 
   resource "faraday" do
     url "https://rubygems.org/gems/faraday-0.17.6.gem"
@@ -27,7 +27,7 @@ class HasteClient < Formula
   end
 
   resource "json" do
-    on_system :linux, macos: :sierra_or_older do
+    on_linux do
       url "https://rubygems.org/gems/json-2.6.3.gem"
       sha256 "86aaea16adf346a2b22743d88f8dcceeb1038843989ab93cda44b5176c845459"
     end

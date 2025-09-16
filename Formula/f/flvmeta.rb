@@ -17,8 +17,6 @@ class Flvmeta < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "cc36bbb5f3c0542bbddc90be35e85bd5d059bb3373dc852b1bdf339dc0bf88e1"
     sha256 cellar: :any_skip_relocation, big_sur:        "e519203e5deb5c2f18f34b12095f4389a5a76d86f914379cb62e397b175e7466"
     sha256 cellar: :any_skip_relocation, catalina:       "bb16f5006d22ffaebba50c0d9c5cc962cf73dfcf1ca51d1e69735908ef9aa8cd"
-    sha256 cellar: :any_skip_relocation, mojave:         "176a5edcfbe2da366e27f67590c45870b59ad250cc7f2a51d7a8d0a18f12632b"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "2ef376486588157dc4e17914ab8ba62a1689aaf92fe101613f93fd0d05018fee"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "d45e880bb95c11493d7dff0a9bc84a06bf189f26e447fcbdb3794317c136cc7b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ee08a06c1340135e808d5f305f22d343264c7cd059c250bb0371dab7403a3d9"
   end

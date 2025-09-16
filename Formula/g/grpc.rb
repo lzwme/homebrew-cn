@@ -5,7 +5,7 @@ class Grpc < Formula
       tag:      "v1.74.1",
       revision: "893bdadd56dbb75fb156175afdaa2b0d47e1c15b"
   license "Apache-2.0"
-  revision 3
+  revision 4
   head "https://github.com/grpc/grpc.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
@@ -20,14 +20,12 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c3b83c7196fd2e213e1816cdadf7521f4a412abba7122ac7787992e4a2ff941e"
-    sha256 cellar: :any, arm64_sequoia: "b42d3868a6c0249445550eea74e34a8fd1ec33db982adae851c1f9f3cb0f2d17"
-    sha256 cellar: :any, arm64_sonoma:  "4d27e61a1be4f031aad7c187cbf967008f8f6d7ca4d64d9b3b4ca3e2062aab99"
-    sha256 cellar: :any, arm64_ventura: "007caede89a8d008c19026ee2a99a0fa7e6322989ab916c067247f585e95d15c"
-    sha256 cellar: :any, sonoma:        "4def0356a3fdc21b2fd92d1eef8d3a3e4b7e48962e5e39ebb770abf5efbfad94"
-    sha256 cellar: :any, ventura:       "5a8e74dfdc20e5ef30ee92af5a016e223f221a9ba5256fc3ddb077b607a5f420"
-    sha256               arm64_linux:   "b14ce340427911058ca70388be339175bc7d0a21178c6f953607d90ab1207aae"
-    sha256               x86_64_linux:  "2dde0a31f12647d09d7eba7dc328f6cc562ff6cbac5452d9b9bfecc7cfd046ec"
+    sha256 cellar: :any, arm64_tahoe:   "f08ca5a69e36b6fce720edc69767570e540b521cb97ad3812ed8b57f357ce763"
+    sha256 cellar: :any, arm64_sequoia: "cb7d307b09ba88e450417104d627d9013c41e03e06d107920c755992e6b99a7b"
+    sha256 cellar: :any, arm64_sonoma:  "dad98f5d59e21db38006ea76638fec56e44e6a6ef3c9eede3e4dd9568ebced1b"
+    sha256 cellar: :any, sonoma:        "4967d1bd22405df0248b76096ae28972691f5d1dace195d8e91d3d773d0fc2e9"
+    sha256               arm64_linux:   "6a758933b4224deb94ba47ead673e7ff7b5e87e27c937614ff91043e6b0386a5"
+    sha256               x86_64_linux:  "0109550da035d1a89be090338fd09f8bc7a10e759bf18aa84b50d455bc2955fa"
   end
 
   depends_on "autoconf" => :build

@@ -58,12 +58,6 @@ class PerconaServerAT80 < Formula
     depends_on "libtirpc"
   end
 
-  # https://github.com/percona/percona-server/blob/8.0/cmake/os/Darwin.cmake
-  fails_with :clang do
-    build 999
-    cause "Requires Apple Clang 10.0 or newer"
-  end
-
   # https://github.com/percona/percona-server/blob/Percona-Server-#{version}/cmake/boost.cmake
   resource "boost" do
     url "https://downloads.sourceforge.net/project/boost/boost/1.77.0/boost_1_77_0.tar.bz2"

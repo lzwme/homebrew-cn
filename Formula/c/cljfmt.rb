@@ -6,6 +6,7 @@ class Cljfmt < Formula
   license "EPL-1.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "98e602bf1c94a9be4d8c8d28cf4076246d4a7764cfbff7f87cf4934e7084ccf1"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b964ad8d5e233c888edc770ca27528ea6f697059abda7af11f74ac32677b04b9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "811039897680bffd757c679d3f2183be7a35041fb9d4f891d4439053c8c997ad"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d1552894debdafa2fdadf2e0e8ec9f8a64a90e82a50f54100677d820960eb6d0"

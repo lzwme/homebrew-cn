@@ -1,6 +1,6 @@
 cask "macfuse@dev" do
-  version "5.0.5"
-  sha256 "6906c8658b488171b7099eb0d2b669ff6c2186810111498c6cb1bc509d900afe"
+  version "5.0.6"
+  sha256 "388b92df38fa32bb98b9edbe5cdabb02361c4f7843fbe4067e589b91b714aa3f"
 
   url "https://ghfast.top/https://github.com/macfuse/macfuse/releases/download/macfuse-#{version}/macfuse-#{version}.dmg",
       verified: "github.com/macfuse/macfuse/"
@@ -17,7 +17,6 @@ cask "macfuse@dev" do
 
   auto_updates true
   conflicts_with cask: "macfuse"
-  depends_on macos: ">= :sierra"
 
   pkg "Extras/macFUSE #{version}.pkg"
 

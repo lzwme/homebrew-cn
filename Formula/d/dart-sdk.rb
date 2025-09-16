@@ -6,6 +6,7 @@ class DartSdk < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c4b95e2e31f23628127dfe79ead9dbfe0db810f3ce555a8b82827fe2840d075f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "181647029d0af64aca57398a19a6b97cabea84a57e3c797ddf47171dd93d5b66"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5e4af76140d6a3206b1a099d447ee9c1f5466ccbfb1134af231307afdb33a24"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7f152539fe24f666361cd531d7a557ce579c14d8bcf016c84cbbba61a878a918"

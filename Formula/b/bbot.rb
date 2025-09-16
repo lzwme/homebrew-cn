@@ -8,6 +8,7 @@ class Bbot < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "e37e17d2ecebe87b5b9a08307c497aeaf9497c0bbf228d5f8b470b10367dada3"
     sha256 cellar: :any,                 arm64_sequoia: "8e08c2282bd38f8fee507b90c5cff82e717ae79ffc754d2594e9d2a0b6759c08"
     sha256 cellar: :any,                 arm64_sonoma:  "6c2e96aab6104f84f399dbbb38a20b783d007ebd1d4cfced8f06a7cc85aea908"
     sha256 cellar: :any,                 arm64_ventura: "bdb55e62dea4206040291390ebe76647f65c01f13755b3c7ace1ebaf840ef41a"

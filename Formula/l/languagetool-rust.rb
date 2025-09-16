@@ -7,6 +7,7 @@ class LanguagetoolRust < Formula
   head "https://github.com/jeertmans/languagetool-rust.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02096d10da67614d3836987ac31febd352c284ec56bd861bd73e8c610a9cec39"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "58375defa38ac43d3943c08967a4fab9ac2bec7ffd69d042f02296defb1abbe2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "088c12e33f0960eca09b131d46e8e821947d7d330efdef500f6bf31c1587e295"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "353bb7ad7e99b30e66312284a0ee1b8058479f3892da5a3ee336b80a9d58cf10"

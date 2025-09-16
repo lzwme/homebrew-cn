@@ -1,9 +1,9 @@
 cask "cursor" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.6.14,64b72c9cd7e38203078327f881d5fe74930b2602"
-  sha256 arm:   "af9ae7fae0c114d6d6f2c9c859806bdad5c15b740a2307ee93482e55ad005ffc",
-         intel: "a3ab0aa98c2773cd936a3c2842a5a5a601fdac65fce429c812bf054cc58ac4e9"
+  version "1.6.23,9b5f3f4f2368631e3455d37672ca61b6dce8543e"
+  sha256 arm:   "1b05db444cd747e481cd3da8120f0bd99dedbf6fac76311615b7cd16f2076888",
+         intel: "3e2c9c1f07fff43fc0e3fedb8c6277d32cc7c2f31343eaae28441a1347e959b3"
 
   url "https://downloads.cursor.com/production/#{version.csv.second}/darwin/#{arch}/Cursor-darwin-#{arch}.zip"
   name "Cursor"
@@ -11,7 +11,7 @@ cask "cursor" do
   homepage "https://www.cursor.com/"
 
   livecheck do
-    url "https://api2.cursor.sh/updates/api/update/darwin-#{arch}/cursor/0.0.0/"
+    url "https://api2.cursor.sh/updates/api/update/darwin-#{arch}/cursor/0.0.0/stable"
     regex(%r{/production/(\h+)/darwin/#{arch}/Cursor[._-]darwin[._-]#{arch}\.zip}i)
     strategy :json do |json, regex|
       match = json["url"]&.match(regex)
@@ -22,7 +22,6 @@ cask "cursor" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
 
   app "Cursor.app"
   binary "#{appdir}/Cursor.app/Contents/Resources/app/bin/code", target: "cursor"

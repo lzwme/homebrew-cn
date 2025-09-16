@@ -7,6 +7,7 @@ class GopassJsonapi < Formula
   head "https://github.com/gopasspw/gopass-jsonapi.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "65b8e8bbcf30918991f7f1b29a50cbe645d2eb6e81e20b91362e4dd8f4104353"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e70311e42c120d8efb3eb0eb9e8d6ae8c9265881054b923628e3b3beed1137e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6116c3624ef9a88a596d8476fd998c684ee916f33579d6ec289f5810e980e3b7"
     sha256 cellar: :any_skip_relocation, sonoma:        "4c75f594eae3157cfd6baad3c358baca8b15d0992306c90a1d0a3bc997d1b2d5"

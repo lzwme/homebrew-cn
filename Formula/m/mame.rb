@@ -37,8 +37,6 @@ class Mame < Formula
   depends_on "sphinx-doc" => :build
   depends_on "flac"
   depends_on "jpeg-turbo"
-  # Need C++ compiler and standard library support C++17.
-  depends_on macos: :high_sierra
   depends_on "portaudio"
   depends_on "portmidi"
   depends_on "pugixml"

@@ -6,6 +6,7 @@ class NetlifyCli < Formula
   license "MIT"
 
   bottle do
+    sha256                               arm64_tahoe:   "0d0c05f4ea3a84e1a1ad7320d837b7079efc6a725252aecb58e8406ef4d576b7"
     sha256                               arm64_sequoia: "f6013398b495a61fe7efce9da3bcd2db96e157b63448ec682c68d355f581e509"
     sha256                               arm64_sonoma:  "f6bb3b7262e974d1642e6bf45321507399d9b1b487573c014693b82df496f434"
     sha256                               arm64_ventura: "8a8da504010c765191a6b3d10d224c807836dbdebbc16da00bb057e8b01fc603"

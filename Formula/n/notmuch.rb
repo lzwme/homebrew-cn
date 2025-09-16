@@ -41,7 +41,7 @@ class Notmuch < Formula
   depends_on "talloc"
   depends_on "xapian"
 
-  uses_from_macos "zlib", since: :sierra
+  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"

@@ -44,7 +44,6 @@ class Mpd < Formula
   depends_on "libsoxr"
   depends_on "libupnp"
   depends_on "libvorbis"
-  depends_on macos: :mojave # requires C++17 features unavailable in High Sierra
   depends_on "mpg123"
   depends_on "opus"
   depends_on "pcre2"

@@ -25,8 +25,6 @@ class PbcSig < Formula
     sha256 cellar: :any,                 monterey:       "49ba0b0e8757276a5ab822f942f321e7fe5b7efbb2340946e21f3042dbe579bd"
     sha256 cellar: :any,                 big_sur:        "9889f70fc5cf42a096c750b61008bf48a97bfece6179db5e7a631010749f1106"
     sha256 cellar: :any,                 catalina:       "47773fefdfeb3f7381046934974bbaf7f41a641c3d3f3af5802d07a7ea340ba6"
-    sha256 cellar: :any,                 mojave:         "134c203178bb93b406b4c5fb5aecf171db6473d558d0bf62cf9b1682b57448e9"
-    sha256 cellar: :any,                 high_sierra:    "79c31a3f1bcc2429648a2258974ccb1185cfe244d4fcbbfa2840c7393e7e058a"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "aa052f077db5ddb6e5a54e6b3fa56e350ca6877f208b0636cd703e63de2307d3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c1de36643e895261969f7c184fabb031cc2eae412846409a778b21290670d45"
   end

@@ -57,7 +57,7 @@ class Widelands < Formula
                     "-DOPTION_BUILD_CODECHECK=OFF",
                     "-DOPTION_BUILD_TESTS=OFF",
                     "-DOPTION_BUILD_WEBSITE_TOOLS=OFF",
-                    "-DPYTHON_EXECUTABLE=#{which("python3") || which("python")}",
+                    "-DPYTHON_EXECUTABLE=#{which("python3")}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

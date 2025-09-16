@@ -9,12 +9,13 @@ class Pdfrip < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "292ebaf47ad267c46b92b1bac0867f40de7b5b8da18e76c52b47f9f0149165a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8339046b619269dfb1ff6a34ee7600b08d12b3e010f81be19651156a1a8f8fe5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c5f63f9f61786ae79b683dee924b74fd24714fec9e26e7b610f7ce7069686123"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0667d550093d933128888b11e30b76dfa07dae2407c9c1fadab94d95c17a96d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db6c977f9189f34246c8a3cddbbcbc24d2bb6b10436affc8b787e47675d46b4a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1036db7676a0822b721390e43e797e7e846dbd3b4f0c35acc3fb71fee338f938"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68c75d4a427d4512dce141506acc4d3b02e8640d3fb54a30bfc0c9be4ffa525a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eeac32a01baca1d879c37adc93518653405ffc1437ef2551eed0d7bee45a9c13"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b27b773f78bba7b8d64b60cc5c8b8cdef12d45574be2d4881223bace41d64acd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0db2c8b883091a68cdda3fe1f4da41213bd041fbe8b93862b86e744baa60c75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de8fc88b6d291c32c7e3b0ed9fdda602f2a237e8478921f07b56bf550dbcbbde"
   end
 
   depends_on "cmake" => :build
@@ -41,31 +42,16 @@ end
 
 __END__
 diff --git a/Cargo.toml b/Cargo.toml
-index e0db059..8063d89 100644
+index e0db059..6cdba04 100644
 --- a/Cargo.toml
 +++ b/Cargo.toml
-@@ -5,7 +5,7 @@ edition = "2021"
+@@ -5,7 +5,8 @@ edition = "2021"
  authors = ["Mufeed VH <mufeed@lyminal.space>", "Pommaq"]
  
  [dependencies]
 -indicatif = "0.16.2"
-+indicatif = "0.18.0"
++console = { version = "0.16.0", features = ["std"] }
++indicatif = { version = "0.16.2", default-features = false }
  log = "0.4.19"
  anyhow = "1.0.72"
  crossbeam = "0.8.2"
-diff --git a/src/core/engine.rs b/src/core/engine.rs
-index 29980ee..093362a 100644
---- a/src/core/engine.rs
-+++ b/src/core/engine.rs
-@@ -49,8 +49,8 @@ pub fn crack_file(
- 
-     let progress_bar = ProgressBar::new(producer.size() as u64);
--    progress_bar.set_draw_delta(1000);
--    progress_bar.set_style(ProgressStyle::default_bar()
--        .template("{spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] {pos:>7}/{len:7} {percent}% {per_sec} ETA: {eta}"));
-+    let style = ProgressStyle::default_bar()
-+            .template("{spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] {pos:>7}/{len:7} {percent}% {per_sec} ETA: {eta}")?;
-+    progress_bar.set_style(style);
- 
-     loop {
-         match success_reader.try_recv() {

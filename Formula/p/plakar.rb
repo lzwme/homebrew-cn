@@ -1,8 +1,8 @@
 class Plakar < Formula
   desc "Create backups with compression, encryption and deduplication"
   homepage "https://plakar.io"
-  url "https://ghfast.top/https://github.com/PlakarKorp/plakar/archive/refs/tags/v1.0.3.tar.gz"
-  sha256 "6b2bd80a0ff83ff24df410526ebd16511d9d0c2c8ea2cc585c724cd140412743"
+  url "https://ghfast.top/https://github.com/PlakarKorp/plakar/archive/refs/tags/v1.0.4.tar.gz"
+  sha256 "f8a2e04366e383a69f1077fb0a3607a44418ab98da13fa4718a79ec633dd975c"
   license "ISC"
 
   livecheck do
@@ -11,13 +11,12 @@ class Plakar < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cddb115838d05c253a6faaf2d0b1e5f8faeb1976a3d2bed3c67b2e74bbccf55e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d0f0a0fe54ad0409a6258c22c21fa1e85a904bcc86b23f57e506cfc79657f98"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b82ea806131cf269785af68f79967e4e5b1b8f30456619496e3b01664c501988"
-    sha256 cellar: :any_skip_relocation, sonoma:        "42b74844170ac712cf39c61f7bf5e13ffbdcc6c39be9c95153ba69f28c79ad2c"
-    sha256 cellar: :any_skip_relocation, ventura:       "080cae3db5e1dc4971862d836cfccdaebcb48365f1647cc3e6ffdafd0e066a48"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "02ac82be4f8dcd3aefdeaac73d93075932cd2f548c8e6e388705841571e5ddc5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2749a0eab434179223d27b9f0aef79d8a37250f3ecf711f2cacc725d896fa2f9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd541aab41faafda34ff5082ce43ef9f2d3f3638f9ec79bcb66a62b9eb14c9e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f25f9d87c90cdb9242a19cc7fda93243ce679192c8a603f2db59b60ac4af5e84"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c09440d6f94f6f52a39bd0de9458e6588b953d0a82f3b0a020d82302d47bb8c2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "92be32f8055c7ae5b881a44631db8e14d892cf304563a610a01f8b34fe4db34e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "702d95c9ec88a775b5d7618bab78ad9faa2b62f82147d398369f2e4f0d9aecbc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39b25bd2cb6cfba3f2c7749f5fefbbbd1d2afbe1bdf72a6b15f7fd9da980851c"
   end
 
   depends_on "go" => :build

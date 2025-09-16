@@ -1,6 +1,6 @@
 cask "reader" do
-  version "0.1.1950"
-  sha256 "036b290f21b263e7e042010ad718d0b5e0a78c2b5ab5070f7b20591fb6e9d5dc"
+  version "0.1.1954"
+  sha256 "2ce0414f55818fca18c2301fb6bd8f61700492385a693b5ae5ac1c9c501f0b40"
 
   url "https://ghfast.top/https://github.com/readwiseio/reader-desktop-releases/releases/download/reader-desktop-v#{version}/Reader_#{version}_universal.dmg",
       verified: "github.com/readwiseio/reader-desktop-releases/"
@@ -14,7 +14,6 @@ cask "reader" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "Reader.app"
 

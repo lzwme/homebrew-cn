@@ -3,18 +3,17 @@ class MkdocsMaterial < Formula
 
   desc "Material Design theme for MkDocs"
   homepage "https://squidfunk.github.io/mkdocs-material/"
-  url "https://files.pythonhosted.org/packages/44/94/eb0fca39b19c2251b16bc759860a50f232655c4377116fa9c0e7db11b82c/mkdocs_material-9.6.19.tar.gz"
-  sha256 "80e7b3f9acabfee9b1f68bd12c26e59c865b3d5bbfb505fd1344e970db02c4aa"
+  url "https://files.pythonhosted.org/packages/ba/ee/6ed7fc739bd7591485c8bec67d5984508d3f2733e708f32714c21593341a/mkdocs_material-9.6.20.tar.gz"
+  sha256 "e1f84d21ec5fb730673c4259b2e0d39f8d32a3fef613e3a8e7094b012d43e790"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8d6ba0c57b617c919c3feb18fbc62f76323f620c190bb405a20200b854bfe923"
-    sha256 cellar: :any,                 arm64_sonoma:  "5acbd1097500236d56f319d5052f6419ea6e4d2e280af66a8b46eb876143b51e"
-    sha256 cellar: :any,                 arm64_ventura: "f7aa333b64fe7a89ec2e13523937f27975adb10d99ecdb292a09b042f181c6e9"
-    sha256 cellar: :any,                 sonoma:        "3a0c82b80448b17814fb48dc5b69c329f3e9935ec051cc9d736b3b9db7c10ad5"
-    sha256 cellar: :any,                 ventura:       "983afebdcc2126a554190392e1bf658389056e0796833a0970c54b92168718f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "129dfd7381596f654c8bcff5d89b06fb9469cbf95e2a9b7a85e6bb7f091706ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae6e260ac180ae26a4b2b50e412569918284978d5acce9202dc862fdfa7f7834"
+    sha256 cellar: :any,                 arm64_tahoe:   "2d07d366a3c3efac1f587b438cf9aa87cae20edd378090e2361b447f0ba6f63c"
+    sha256 cellar: :any,                 arm64_sequoia: "014fac542440468f3b97674b43994b67293939f663cfcd1037f292b5ad48e896"
+    sha256 cellar: :any,                 arm64_sonoma:  "9ff39c8a85c2903c91f11d66031923b9311427bf2d33f9137778a1c8be737136"
+    sha256 cellar: :any,                 sonoma:        "d75535656ffe9cc1db7f97c191cce805fe83c2c8dda7c4de048980cd37ded263"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a721fdf1bdf9f5ac1bff117ac110c19e041ebf81acc64d89c520c97ae517a6f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65a2d24e8ccd6a37ea8977a6e4e72a33180060b9e1f492e50299c9064969b0ad"
   end
 
   depends_on "libyaml"

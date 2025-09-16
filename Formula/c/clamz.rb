@@ -20,10 +20,6 @@ class Clamz < Formula
     sha256 cellar: :any,                 monterey:       "60b4d942e6b8fb59c134cd5776893216f6f5c9d44ac39023c81e1ed43f761e75"
     sha256 cellar: :any,                 big_sur:        "d7f6f8dc57d5498a54cd78356bc3097aa713a9000e876a6d3aaa12a10540d9d4"
     sha256 cellar: :any,                 catalina:       "6dc5a22ec8b190b91bc3e825a23063f6096f447ed24cabf6d5bcb19da8ef58f3"
-    sha256 cellar: :any,                 mojave:         "031520225192a8498bc21a4e69c539ea0811ed2773b7085ecf1e10b502f648de"
-    sha256 cellar: :any,                 high_sierra:    "0a0d293bb616f176c756c402b9d5d7528e42caa1767374d45b721b5a2e82094d"
-    sha256 cellar: :any,                 sierra:         "fd35e22d601781e32cf9c5264f351c989d732d0a516617e3431522fef55bde61"
-    sha256 cellar: :any,                 el_capitan:     "b960106e00e01e4dd8ff259feab6e0a1e399d373aa79d2b5d622f2ccf6f1e41b"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "57bbb9e4a40a6fba879e65f49b79177fe87c2c6a0592b4b06abc4a937535071c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bedccbcf92f7884cf99615ea347345f035a6693e953b6ebf90e51695e4351c95"
   end

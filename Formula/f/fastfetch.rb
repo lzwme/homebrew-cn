@@ -12,6 +12,7 @@ class Fastfetch < Formula
   end
 
   bottle do
+    sha256               arm64_tahoe:   "6d48654d6a8986648e5032b290e87f22a9e1367e0c3c869986b091bc81d37121"
     sha256               arm64_sequoia: "703eee08ba65d72a86a797611411c8e0c17868e3f327e133626c2a77a7503cd5"
     sha256               arm64_sonoma:  "429382c2c2bbdbca17a434639e0994b24ad0fce579c493ae079f96d99bf9d737"
     sha256               arm64_ventura: "2a7e45258bbf4219b7fb498e6059951b4636bac7ac20029abfb1fcdd9d310d5e"

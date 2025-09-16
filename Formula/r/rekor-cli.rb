@@ -11,6 +11,7 @@ class RekorCli < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b2e3d4989ae902e656c426f196735912ad2dfee1ce31c5924d7cbfaba1c91fb"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5a9cc8df23774293a651f4602ef1f203e6a1af71df5237fc2f2266e90bcc125"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5a9cc8df23774293a651f4602ef1f203e6a1af71df5237fc2f2266e90bcc125"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b5a9cc8df23774293a651f4602ef1f203e6a1af71df5237fc2f2266e90bcc125"

@@ -37,7 +37,6 @@ class Rust < Formula
   depends_on "libgit2"
   depends_on "libssh2"
   depends_on "llvm"
-  depends_on macos: :sierra
   depends_on "openssl@3"
   depends_on "pkgconf"
   depends_on "zstd"

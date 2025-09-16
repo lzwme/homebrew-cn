@@ -10,6 +10,7 @@ class Sherlock < Formula
   head "https://github.com/sherlock-project/sherlock.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d3ba4147f487a4cffcb0b6ac61047f18c6007fb2314e46e958745efd2541477"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd9a9a321ba763a03aa53add2b848e65b9b86e7f8d24230cdc510633eb45da39"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8aa05aca8555b6956a6dcf9041d2a4f0b1a7a11f4a15aa2092df1b37daabaa0f"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "badc2b1c67f578be7384cd7d131b8f878e80197cbf5b8731078e6b9792ae8713"
