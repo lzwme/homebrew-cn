@@ -9,6 +9,7 @@ class Malbolge < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "362a0dfad34c731bc75b81aa45736406c2b65b3f5f3c73894acb952d7025ec6d"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a27217c73ffd65f6eeb9249e6120ec69dfbc0121bf2bd721d9270c9173f543e8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "21e3313bf2fc20b33e637016710d778140383e9dbc2a4e45b14a564ddb081d30"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8dbf31191633eab5119ca16eda4b541264a42261c5c7b7103e50446d1505dfc0"

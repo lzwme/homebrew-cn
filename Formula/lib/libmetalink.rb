@@ -13,6 +13,7 @@ class Libmetalink < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "60767e9756e2cc9a6fb4c7057711e320d0d1d204913c107c2f866ddc982fea00"
     sha256 cellar: :any,                 arm64_sequoia:  "4ef91819c19bd453ad990a0cea47a38c4b11f527c6a04e91fbca1743bbe09e78"
     sha256 cellar: :any,                 arm64_sonoma:   "2d96d68b47cb11ebd54431713f613b092ef59e60cbb0ebde4752128035e8a3f5"
     sha256 cellar: :any,                 arm64_ventura:  "1684da3a02e39ed1a65dc154f06f309119cff3010a45efbbeb1d653081885bc8"

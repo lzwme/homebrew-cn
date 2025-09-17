@@ -13,6 +13,7 @@ class Mkhexgrid < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "7e545dda93b7418fc133c0c9f5d28a9a72fa1f390601b23cd1d69cb2d67dcee2"
     sha256 cellar: :any,                 arm64_sequoia:  "66907e9872e7fa397d62e89974e7ad0abfb9a2dc527f25d32606e0d6a73e93f5"
     sha256 cellar: :any,                 arm64_sonoma:   "2714d9b761672dd9ce249a18f1b24d7d0a954574383107b7b048924d11587fd4"
     sha256 cellar: :any,                 arm64_ventura:  "f506ce3ff66554b2586a73404a1af6d811024842b254218b67f7aa421f699d9b"

@@ -8,6 +8,7 @@ class Oterm < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "fe2e40369e5f4bb372db846d21829b9ea8e8d542ed00e5d462719eaf9755ca47"
     sha256 cellar: :any,                 arm64_sequoia: "3cfdf5922dba4f40770858368112a52dece94cacfe1881eafcd4761742f3fca3"
     sha256 cellar: :any,                 arm64_sonoma:  "b5b221bdbf4f71e950b615df303ebbc8e4313e18deda9abcddac4e487a431411"
     sha256 cellar: :any,                 sonoma:        "bfdc8dad0ab32d3d4f9addcf991fe6ecde38d35a5dfaacc1dabb52b18ac7140e"

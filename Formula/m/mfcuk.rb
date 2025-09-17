@@ -9,6 +9,7 @@ class Mfcuk < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "d64c65224a51793f1dd148741d3750dfed188a452c99793321837ee4e6ff98e0"
     sha256 cellar: :any,                 arm64_sequoia:  "102426161778216f2bf11462bbaa8bb369a883cc818b560491d85bc5307ef9d9"
     sha256 cellar: :any,                 arm64_sonoma:   "b607795d4f69c5e9a8b6cb6b6017411e8acff391b71ea51e86229352a9ea4a91"
     sha256 cellar: :any,                 arm64_ventura:  "c9ab885a21f8102b6a0f9256a565f35a2501a635880bc9e0f6aaf07c766fe97f"

@@ -9,6 +9,7 @@ class MecabJumandic < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "1916fed29c7a65bba61d492798c38869d624ea1496b03e77f2aca5ffd3cbfe9a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "874bddec7db567b9cfc77eae8df900cf54264d6b047aa72ad5de27f10c257f0a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6ebf13ddcc0af473110b91b1ef375fd0e002d1d5069f90010760ea0c9477cc80"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f033d5c87f53c348ad60a9de9e2f332248cc06d7c7bdfb32736ff86f2a9e080f"

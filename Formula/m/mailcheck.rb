@@ -8,6 +8,7 @@ class Mailcheck < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "c8e59c981638d71fa3e78a9998b696e677189346da07f918bc290752c289f1dc"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9826a29c8ea6cc9f8a3c2c1a85c39726d0412898ab38feccdc027ccf505a5662"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5892072eefc7d2c38a7acabbb05bb380943380d11e46ea2c6f514abe08979184"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "aa14d797b2b2de01428e52e56c0e26ffe36d72227393ec4554c0749b8189aa60"

@@ -11,6 +11,7 @@ class Lolcode < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "1eb6ed26315bf0661ada71178ff3d2cc437e374614f4162fe5327f060b255763"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8c4074b5d6a8c5412c5be4a9cfc5c2ee4ab4e5ac12338fdd05141d98fbcea538"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "41bf236e028b388c85213b0e45f10fa83aea6c4b283c96f86426313646424a52"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7bf8def14baaebde0558f5a5d7355d41dc46c1d62ad00fe36bf33b40735c3ed"

@@ -9,6 +9,7 @@ class ObjcCodegenutils < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "ae4db60ac9757d78ddb5870ca7b39d1de92d4ebda85497ee129e84c26e3f23ac"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "689a1e289323d187c0e1c89d5fb9c7c1292eb304ae9cbf265303ce701e14407a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd3e144fa7f8cddb59b171eae398fbf10d5d72b98bc0053da553e57213e26c7b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d068aa1c50d2e54ceddf2d21a04295829b30e7f3f5504c88364a1bddae5b1a1a"

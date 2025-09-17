@@ -16,6 +16,7 @@ class Ltl2ba < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "44343a3a706997bce508f8376785fa1f113926565bc18a57b0409545e1dff44d"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "18b178bd47a42ca3c5ab755e80cb5ec5a087807c1bef4fc064aa97a3ff18d76a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5527191de9afab610f9d220b2c62ceed062df2e5e2c99b1743381c57067b9535"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "89c79976b12030dc618c9466ad4f1f9f14fe9dff815850ac6ecc38ab10f63981"

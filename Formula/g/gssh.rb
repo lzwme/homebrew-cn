@@ -17,7 +17,7 @@ class Gssh < Formula
 
   deprecate! date: "2025-05-25", because: :repo_archived
 
-  depends_on "gradle" => :build
+  depends_on "gradle@8" => :build
   depends_on "openjdk@21"
 
   def install

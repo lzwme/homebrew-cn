@@ -946,7 +946,6 @@ Homebrew-homebrew-core/Formula/c/checkmake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/checkov.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/checkstyle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cheops.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/cherrybomb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cherrytree.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chezmoi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chezscheme.rb, Homebrew/homebrew-core, 1
@@ -2792,7 +2791,6 @@ Homebrew-homebrew-core/Formula/h/has.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hashcash.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hashcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hashlink.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/h/hashpump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/haskell-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/haskell-stack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/haste-client.rb, Homebrew/homebrew-core, 1
@@ -6088,10 +6086,10 @@ Homebrew-homebrew-core/Formula/r/rsyncy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rsyslog.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rtabmap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtags.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/r/rtaudio.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/rtaudio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtf2latex2e.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rtl_433.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/rtmidi.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/rtmidi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtmpdump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtorrent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtptools.rb, Homebrew/homebrew-core, 1
@@ -8879,6 +8877,7 @@ Homebrew-homebrew-cask/Casks/d/deepstream.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/deezer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/default-folder-x.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/default-handler.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/defguard-client.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/defold.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/defold@alpha.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/defold@beta.rb, Homebrew/homebrew-cask, 1

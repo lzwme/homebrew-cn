@@ -9,6 +9,7 @@ class Rttr < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "b7fbefc620c98f69bcb1b28040e8e12b972b59a462d6e0155eab4f9d962fe156"
     sha256 cellar: :any,                 arm64_sequoia:  "fb6ba7f707377b4817a16a4e9afa427d8e4117d8ea02b82d8af5e198c04cd6f6"
     sha256 cellar: :any,                 arm64_sonoma:   "e82299210a49d335b1563afe4dc0abaa3bcf1b6aeab8876f1904e9015b6cc101"
     sha256 cellar: :any,                 arm64_ventura:  "fa3316e83f1ef591accfaf47c509009633178b817e6a6d064c293faa53445bf0"

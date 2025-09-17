@@ -7,6 +7,7 @@ class Mcphost < Formula
   head "https://github.com/mark3labs/mcphost.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "24c1b87c51b2b6a10ef00e1e35a7b2219608fc954808ffa467b5ae01cf10e8c6"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9023920e8eb7416432a30ddec51e54474e688eaf4eb89d9da91f997e8300630"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9023920e8eb7416432a30ddec51e54474e688eaf4eb89d9da91f997e8300630"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b9023920e8eb7416432a30ddec51e54474e688eaf4eb89d9da91f997e8300630"

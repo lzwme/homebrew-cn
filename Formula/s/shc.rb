@@ -9,6 +9,7 @@ class Shc < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "f6761e8e367e12be8e6c775517cf9799ea7633944000c130ed26e32df8ebbc6f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "280ac078e9ec3e7fd245942e1b6d141288fec51877aa5d032e57ce8403d24a8c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c0e1db3eca184dfad518ba0f0ab5a1d4c66f34aca3097f44610a5471882ca311"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d30b347144b581af9b318135d285030075c9e00df94728b8e1430b7fa69606f1"

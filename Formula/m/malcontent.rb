@@ -7,6 +7,7 @@ class Malcontent < Formula
   head "https://github.com/chainguard-dev/malcontent.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "abd9bc4d63c07f9bdb9a7236039d56469bfe1831878d6717e2583bb45947a4b4"
     sha256 cellar: :any,                 arm64_sequoia: "382423b1d69e27dc4cd9eefa78ee2cbbf746fb58ae2f43ef5adbf1d365285ed2"
     sha256 cellar: :any,                 arm64_sonoma:  "27129313f1bbca192987d0e2fb9f23cb9395768382f33d61c0518de9ee8924ab"
     sha256 cellar: :any,                 arm64_ventura: "4ed5db01ad46dcf885c5e7a793dc87927f607f62017e558f663afca4896833f7"

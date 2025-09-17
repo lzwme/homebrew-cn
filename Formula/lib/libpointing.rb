@@ -8,6 +8,7 @@ class Libpointing < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "77cf45ea25e9ccec41d9be73e28da4d1c2568d9ab42000ba543e1d904853f6ed"
     sha256 cellar: :any,                 arm64_sequoia:  "fc963b2d475b92c4a7fd7a525d0ae301cedad7c825d50bd47f1e174be955ab51"
     sha256 cellar: :any,                 arm64_sonoma:   "2d7abf099808b966f2e79ff4ee050ae9ba2dcaa009577575a8ceceeb657e3cda"
     sha256 cellar: :any,                 arm64_ventura:  "79773a252a784d765237674545e3355bec847c95f9ac82cc89826936954f8990"

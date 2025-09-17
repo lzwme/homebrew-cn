@@ -14,6 +14,7 @@ class OsspUuid < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "d25ab2444dc60f7fec95cbdc75fee7b6594071e0cb203fd395e6fe29fefae1db"
     sha256 cellar: :any,                 arm64_sequoia:  "54fe9ac592343b06d7ce62e286cf0afd06f90be6c9aebd779102403c51cd55ea"
     sha256 cellar: :any,                 arm64_sonoma:   "54b71284924df66d47fb0544f6a20c058e4118b0b6c7e4e25938a9e5db0b19f9"
     sha256 cellar: :any,                 arm64_ventura:  "3285f1a05e275068e1c5aee7036066c23859b53f56fff5795e08cf18cd6d4d75"

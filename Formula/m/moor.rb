@@ -9,6 +9,7 @@ class Moor < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9fee7b6f49927199d07e320f9ac98d90999af1d78c9e94928b8cf7d17940e90b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9fee7b6f49927199d07e320f9ac98d90999af1d78c9e94928b8cf7d17940e90b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9fee7b6f49927199d07e320f9ac98d90999af1d78c9e94928b8cf7d17940e90b"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9fee7b6f49927199d07e320f9ac98d90999af1d78c9e94928b8cf7d17940e90b"

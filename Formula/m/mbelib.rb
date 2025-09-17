@@ -9,6 +9,7 @@ class Mbelib < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "fb72e50f6461676e8b9f0bc61ac16133652bc92e84a139f8db55db0f39952291"
     sha256 cellar: :any,                 arm64_sequoia:  "4303b80f4b00f9a5ba52109c0995c196d0d54b19f9d105520379206eb50b373c"
     sha256 cellar: :any,                 arm64_sonoma:   "cd9b0cc3c21687f175d3f4aee0229bd9b7aafe34eba6360f26f0619296a0acfe"
     sha256 cellar: :any,                 arm64_ventura:  "5efa031e17f6e6fbfa06cb1bab625af8721ec46b287044fa5cbb0e0567417a80"
@@ -26,7 +27,9 @@ class Mbelib < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Workaround for CMake 4 compatibility
+    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--build", "build", "--target", "test"
     system "cmake", "--install", "build"

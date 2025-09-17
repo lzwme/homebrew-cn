@@ -6,6 +6,7 @@ class Observerward < Formula
   license "GPL-3.0-only"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "145e67fc5657be1d4a28b2513d685c09eb735bc23bb84143240a41709f66c5a7"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c02752b94a04bc89cfa1b0c57e186ed7b539f797452819e734d6751b5c110d2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "352909ccd9cc903c156b3726e275cb8552204a5f82248ac58dbc21681bc73c29"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "72752dc1df1d7e73d2fa5ecd463bcd25c083217115f53ba2f48cea2e4b950e41"

@@ -13,6 +13,7 @@ class Mhash < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "4c77322acecec89a57350e794b5712a3f2cf530d0550000918584f8071a9c563"
     sha256 cellar: :any,                 arm64_sequoia:  "f9b2ec3b67100dfe39ef4bb32671b26b5dbff6044b02ddae177b9bb1429ae036"
     sha256 cellar: :any,                 arm64_sonoma:   "d9cc9da019d2ce0fe3aab219247d9ebd9f2fb744af69871d13dc97925e0e7295"
     sha256 cellar: :any,                 arm64_ventura:  "63173c41e68e4510a36b6c3301d8f556a5c15010bff40258853f4ec735c74c68"

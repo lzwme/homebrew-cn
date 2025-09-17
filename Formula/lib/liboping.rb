@@ -13,6 +13,7 @@ class Liboping < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "b799d5c3ab5ca9ace10e0b8e9f338111ce0220b1df97d3d5c025a18e0c6d47a6"
     sha256 cellar: :any,                 arm64_sequoia:  "5395bb6ef912f023eb75a29a46eb614a0fb9dec8f65fe29f40af6173d0f8f809"
     sha256 cellar: :any,                 arm64_sonoma:   "e2142ec221a13c7102978228b5d3ffd61a182952bb470ef0cd63fd1201ce6411"
     sha256 cellar: :any,                 arm64_ventura:  "4f96385d085c835f78741e71350fba8666a9692673abab3681722f7dc22fef1f"

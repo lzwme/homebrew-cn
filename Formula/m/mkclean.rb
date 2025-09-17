@@ -8,6 +8,7 @@ class Mkclean < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "bdff12bc960c01d63267c10c8b50d82711924792a21d0e92db9a96a951801c21"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b4d263e75e4ccfdc7eeb90529899374a43f38bafda669dd33c906e533f1e7738"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3d518850ce61f5e54380d36c14e6192ec43b52cc83fec9802a08e557d98a02b7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "33ee8ae207d85761440d0bfb65995068d7de526dda7f41c7828f4853eb499bd4"
@@ -25,7 +26,9 @@ class Mkclean < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Workaround for CMake 4 compatibility
+    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     bin.install "build/mkclean/mkclean"
   end

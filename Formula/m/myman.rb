@@ -9,6 +9,7 @@ class Myman < Formula
 
   bottle do
     rebuild 2
+    sha256 arm64_tahoe:    "ad0b203a8eb32295e620487891e41c177d0b4fb923060421f7b12dfab97b5c03"
     sha256 arm64_sequoia:  "0dc21521eed45cafe254d4827b33de42b08fd4be2eeae5dc0bfe88f6fe6dbf6f"
     sha256 arm64_sonoma:   "501fa86739940d84b19c81b0f93a3ddd81031f052760c8409bdfa3f61a86a406"
     sha256 arm64_ventura:  "4a37b7df0fde91a64eeec5ae4032d2c460b6524310c51819624c16c8904e7020"

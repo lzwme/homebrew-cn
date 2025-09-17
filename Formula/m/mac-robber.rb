@@ -8,6 +8,7 @@ class MacRobber < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "99a169217c9e38f7b17c74a953fe179c4ac781f840b2bf54d697af3cc5f6e21e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "872680f432b3c3542cf35f30795d0bb9cf0e03c12aacd2522644d0c2f56f2e4a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "857246f4d354a3df452fd928e59e15667f3e713928c1da2fd207e3163892ffdb"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3a95d6147c4806004b72f8dc70e77a4d3bcb4697dbf991193289facbf4d7b296"

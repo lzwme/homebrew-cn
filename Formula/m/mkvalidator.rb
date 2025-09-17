@@ -13,6 +13,7 @@ class Mkvalidator < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "482c49cc210fac2c0a124061fa36c9b9dd5217338698c14ce6cb2eb52fdbaf5a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3295228dd92c0233d71546962d8ae9ab3ea7611324e810b0446f601f8d9e9e07"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9b9b3070f946ba91f4789020f92b61a92c0a07956f63e9e4fb6b5b51858172f0"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b92708846e9acdc1e65588e3404f835f91ef55c272d2d28e37893b519a30c156"
@@ -30,7 +31,9 @@ class Mkvalidator < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Workaround for CMake 4 compatibility
+    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     bin.install "build/mkvalidator/mkvalidator"
   end

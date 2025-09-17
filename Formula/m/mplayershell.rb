@@ -9,6 +9,7 @@ class Mplayershell < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "60d548374e75eccb8dfb8ebb31df066dbb482f8bbd0ec5bf273c62392d323de6"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b95550c4987ef7c396da3dccfdd64e309be1d1945fec7f520215c674615174c8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e13d71055ed301f6cb2ce85ad882a79d6d9bb89768a65d343924683fec3eedc2"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "bead3e2b5b52cc95ff824b0ff5fce66e0abade2cb0b6dc423ff95234e0f3d607"

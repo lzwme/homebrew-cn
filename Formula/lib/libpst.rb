@@ -13,6 +13,7 @@ class Libpst < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "b128a0495dc919ab7254973196f07f1f9c3140e0e6ad420cb31aa65b7c86fd63"
     sha256 cellar: :any,                 arm64_sequoia:  "9f11e376789aaaa81e57b01967f3c9bf1148a6d14885045c311df75e80fad7f9"
     sha256 cellar: :any,                 arm64_sonoma:   "507bcf7846c89dac455e346c2c6bc713df84a70f5888660dd74bbc9b65c38d16"
     sha256 cellar: :any,                 arm64_ventura:  "7c34f9d5b589d9b126e0da006753bc9dcb8eba59aa3f2440bda561d7cea7521e"

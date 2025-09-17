@@ -14,6 +14,7 @@ class Masscan < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "9216a454fdb2cbfb9ac9b33ee69a1de877dab70ee3f6500bc32e2c5fde504c78"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ba24e0d2c22cbe2291a6e872a1f5d79df7c69922b0cebdbe0864c1caaa664b72"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ed9e05609c9f31867e5da2a9d10eebf62ca405613ff9a11ea82307871b8954f3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d67db10c93bcd8154956c4165289fbc04edce1b1d63a65af983150d9fafbcf43"

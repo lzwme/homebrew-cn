@@ -12,6 +12,7 @@ class NatsServer < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02cdbe6dd7bca3965977ff5ca945a35d9e68305602da40be3f7235fde78d39a9"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "02cdbe6dd7bca3965977ff5ca945a35d9e68305602da40be3f7235fde78d39a9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02cdbe6dd7bca3965977ff5ca945a35d9e68305602da40be3f7235fde78d39a9"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "02cdbe6dd7bca3965977ff5ca945a35d9e68305602da40be3f7235fde78d39a9"

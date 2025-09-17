@@ -9,6 +9,7 @@ class Lpc21isp < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "e9869885d3e10505fb16dd89ef1b5047a77e0b8a4231b9acb7f94c0da9099ea0"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "dc0f9ced6f8764ed8c4b7502ea6a4643621c3a4694530fbb9cfa02378b5ac760"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d7c6c595025ea9682779d982ece6f0bd5038a5e1284724aba37f93274ef35077"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ab5cc792a65bd498458aa93dc79e77e921c2cff17e1f17629915332b4e4134b"

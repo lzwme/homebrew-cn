@@ -8,6 +8,7 @@ class Mp3cat < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "a2e0124370647ca7c0f28de6ca280a78d6fd3fd93005a8dc60f9dffdea1fa665"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5320e93de9cf583fc6b074a45c450c4ebb0fc6b86dbf887c9d77196a34655271"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5c88c18fd159e395849b60bea5da8355546c7e3de34a521c5d5e9eb5f6ddd83"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "48fda37f67df97cd462cbcda6e81dddb94bb1aea9615b899225ca8ca0f4a6d49"

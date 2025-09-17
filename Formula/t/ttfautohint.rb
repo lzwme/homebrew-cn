@@ -13,6 +13,7 @@ class Ttfautohint < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "9efb3056dde7f1557a920fe397c958c996c0f34d2a03d8913255845f9661f2e2"
     sha256 cellar: :any,                 arm64_sequoia:  "707de245f1d8feaa830ef678f1d658c59a8a2ed6a8b1aba8aa65b9981e2d0758"
     sha256 cellar: :any,                 arm64_sonoma:   "9342d7fcb9ceff49803164315b7e08d844f4d7792589ec1b4a737265a39acb7c"
     sha256 cellar: :any,                 arm64_ventura:  "e783c67f64f6aeeaf22b635133eacac161f936bb5c71479109d5bc86ee188c98"
@@ -51,7 +52,7 @@ class Ttfautohint < Formula
 
   test do
     if OS.mac?
-      font_name = (MacOS.version >= :catalina) ? "Arial Unicode.ttf" : "Arial.ttf"
+      font_name = "Arial Unicode.ttf"
       font_dir = "/Library/Fonts"
     else
       font_name = "DejaVuSans.ttf"

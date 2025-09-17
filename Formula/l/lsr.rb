@@ -7,6 +7,7 @@ class Lsr < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee4d7eca5ce1db999d5e5efa67c6e8f5b9f5f681d17ec27a5212e1a8ef4c6b6e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1684d5db5fd99d451a80034ac2168b7e5ef5cb22a284ae9d9c587a7fa8f435bf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a27d7bc4981b7303039e18075037a0c87615c70f2cc7e63937b08a6593bed38"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "080c3bbf7a9ec1cef93b734868fac72f922ab66b5c9286a36fdb61d89ffb260a"

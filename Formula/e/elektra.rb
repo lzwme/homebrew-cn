@@ -26,6 +26,8 @@ class Elektra < Formula
   depends_on "doxygen" => :build
 
   def install
+    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
+
     args = %w[
       -DBINDINGS=cpp
       -DTOOLS=kdb;

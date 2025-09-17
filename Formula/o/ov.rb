@@ -8,6 +8,7 @@ class Ov < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1314b1576d52ae4eb6bf1fd97c682d44386b738712674c12d8f147e73d43024"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9053e18bf72c956ef949f97b3d2f4f072aae8790313f0b7fe11affe39d2432f8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9053e18bf72c956ef949f97b3d2f4f072aae8790313f0b7fe11affe39d2432f8"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9053e18bf72c956ef949f97b3d2f4f072aae8790313f0b7fe11affe39d2432f8"

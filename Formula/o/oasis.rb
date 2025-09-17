@@ -7,6 +7,7 @@ class Oasis < Formula
   head "https://github.com/oasisprotocol/cli.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7794efb7e41374684e9b890b04cf737ae16b9ca015c0c797e26254fc598c6805"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d01580c1501b1cd3752f87324f0ca81313d3bf24f7387690c888ffb93463414"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "162ce127366a89fef0e394c85c01bc4dc2efef98b6c0b09857ee9e0e5985c62c"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0b23fe916b5a85ba8caa24f572e198d3fa03d1129b416e19fa42c1518f3b5cfd"

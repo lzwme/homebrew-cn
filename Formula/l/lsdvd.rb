@@ -9,6 +9,7 @@ class Lsdvd < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "3c76b478a79a737e945b88591c6ded587afc79af0ae8a775d7646e9239be56d5"
     sha256 cellar: :any,                 arm64_sequoia:  "f9de3cf67cf812897d4afa2c329e1d9677a3f86977c4d8f359b9a2c259da2ca4"
     sha256 cellar: :any,                 arm64_sonoma:   "f1cd3a4917d6825315999218d37b76414eef62bf994f959250f0f95ca97d4659"
     sha256 cellar: :any,                 arm64_ventura:  "ba757936a28fde65072032578477812044621f4f8f73d9b9919c547ea902b402"

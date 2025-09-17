@@ -8,6 +8,7 @@ class Mp3val < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "b7165855c5d406a93a818986f684dcecde388a8e65cf0b5922e9f0b4a1fafccc"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e5c10f2c40b3db42ee31ebdff666e1f56da1b200829945556f269cc1be920c64"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ef2fd722be9a2d08c7d180ed19f6be46bc2944392f996b607ecacdd10ef1b0b2"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e063b1b72dc1265814eeac66793a4778a389aa0d0b5eaf1fe459e934195f8c6e"

@@ -9,6 +9,7 @@ class LtcTools < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "ec96e870047e02edacc44e7c436bbe4b818ad675effadfa4c809319594f7eb8b"
     sha256 cellar: :any,                 arm64_sequoia:  "50128bae6264b3239c9d2e8e0f9952e72c364349438382c36f35252c35eedcaa"
     sha256 cellar: :any,                 arm64_sonoma:   "539c3a74d0e1da9b7680063d41e735d3240bd2bb8454b2e93a7c42118b73c147"
     sha256 cellar: :any,                 arm64_ventura:  "bb595fe27ddac376f1ea097a824c17712c34dde20e01cb310388897b52f3f57d"

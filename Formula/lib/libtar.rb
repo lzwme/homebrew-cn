@@ -10,6 +10,7 @@ class Libtar < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:    "b2724a26b82c1a3567c55b318884a020858a64f1419e2e7991062b3ab49950fa"
     sha256 cellar: :any,                 arm64_sequoia:  "4c4e12298ea2527d81b280592e4442f703eb59473e9b22c171ca70be11c90575"
     sha256 cellar: :any,                 arm64_sonoma:   "63c312ae75aea7e67be7285c6abb9a34ce0079fd4a9629f02c48fe23fb0a6ca0"
     sha256 cellar: :any,                 arm64_ventura:  "5b5d861d3e7a24bfbb41d37e9ab4efe883e9f9403d01b6dc1509480f23f7f80f"

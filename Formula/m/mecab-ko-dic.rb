@@ -13,6 +13,7 @@ class MecabKoDic < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "411a3b0709b2f5450a05106102c7f41f8a3004954d34b54279c7a9ab2bad91c8"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4493b0c9c904a1fc3a0e1a25e6f394f6bd499bee75efeb01379121fc7e08abaa"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f9cd00df97f11f37a41f0c5eb56b98832126774d74a0cc98150dcb7a60d1ba78"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e9149e5ec1b85940657df3ed931d6ddbc83ea1a1e68767b9d27138c5d4ba451c"

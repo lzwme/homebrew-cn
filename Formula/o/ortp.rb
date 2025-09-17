@@ -24,6 +24,7 @@ class Ortp < Formula
   no_autobump! because: "resources cannot be updated automatically"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "07d48e8b8da10f7fe4f7d69781624ccb76701b2e9779425bdfcce688fd85faf6"
     sha256 cellar: :any,                 arm64_sequoia: "506778639c8e163edeee830bb79a72a5390da6b223c95b0b21b2fa167be4d4d0"
     sha256 cellar: :any,                 arm64_sonoma:  "0972aa70f7a4026a9617caf15d05dde152e91c17dfe2d9b0d7e9e7a1b0b1b328"
     sha256 cellar: :any,                 arm64_ventura: "e2e284f968698aa26ff807eb31fed886bcb3da26a2d34714e822e58ee11a9775"

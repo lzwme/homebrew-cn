@@ -15,6 +15,7 @@ class Mpdas < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_tahoe:    "42aa6fe164c3cd7c89bff4e7cbbe3b6488a6588067997a33b05b8e8b2f3673dc"
     sha256 arm64_sequoia:  "df5684e5298c02319fea93f70ecad6210c12b66bd1ca2686ec9758dcbeeba20d"
     sha256 arm64_sonoma:   "432d575a1263ee85112c5c4c9d20781507ee5c95245d3978f686ca272df74adc"
     sha256 arm64_ventura:  "a33d1f587e538bbc81db4d3bf60dc7c37c82ee462400c6051785e4338f1c46e1"

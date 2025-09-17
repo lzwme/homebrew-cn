@@ -13,6 +13,7 @@ class Mmix < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "7689d31c594d9eedf364554062db949537fddfca38576923554a2fbe0a9f9728"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1c3cedb93df0fcbe150243f8251870245301689823aa1f8275c897961e199a04"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "45fa11184bd917b9c6fed6910afb1f5b2cf9a92d1bec2a0d821e3b3c68ccb5e2"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf7b89901297da556ae769c209fae21d23057d4e0277197b3e317efbcef427a7"

@@ -14,6 +14,7 @@ class Mairix < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "e20af7636ab900ef85118c859bfe53528e668a058a22c1c28b71ad9e9cab0831"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4fe9dceecdc765588a0da520eac43995f92e4ee5b0c4c73debba1cc89bf24e26"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc607dc417397d6c0d44c2665b7a47528d3db54f7099ae8827b3dafde391fefd"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "588fe8d2cc66f1f63c8ba35ed5fed8df99c839cecc867107371c8d8b9741dd8a"

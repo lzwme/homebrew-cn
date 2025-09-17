@@ -7,6 +7,7 @@ class OsctrlCli < Formula
   head "https://github.com/jmpsec/osctrl.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13f55483d8b15b692578e71b275c575675eddf30beba12cf3392f703747b8752"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac87e5ecbe823937349cd61ab617352ba35772063245405941a2789c9d471caa"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6efcaee46ae2cbe2aa3e1d6168203fa6906da450011b121914a14182b78974cf"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7da06329ff13883d5e251064963de2785119b0f4f3bea06825cc66d4844b652b"

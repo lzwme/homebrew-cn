@@ -10,6 +10,7 @@ class MathComp < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f50db9749c2eb1e6c69d1cad4f5fc9643cf46fd676c5cc9472598d0333c2a58e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "eabe13a0de7a122bcfa7ce4263041ae8adcd4409fd20daa0d65e0380d85b84cf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eac1d24ea50f9cbe36b2674bf23aaa8207cb24ab173bd759c1ed5362dc3337ec"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "31dc0aeeba701290a8d61da65d90764317c4bcc08d7416d2432704969e84b399"

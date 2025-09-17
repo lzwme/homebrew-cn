@@ -8,6 +8,7 @@ class Multitime < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "44ade5e6e48db9bd18070d63223cc2f93bf359e9ff41d0007e2c528f045d672f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9f8212bee01aa77f3422303f6ff1d0e59bb2937be070934a857448e808adaa61"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a0439477342bced6548a46765025a9d860d571060b9319dfe480f977b8420e0c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "013f3d84765b886e4a877466669328c4ba0f8214ad2b9c97285fee79cfecaad4"

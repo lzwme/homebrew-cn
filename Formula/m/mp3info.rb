@@ -14,6 +14,7 @@ class Mp3info < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "1d0639d384ade218845be170da852cfc449bd37d136857ed765e42af992ca260"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e37b7f219ffcd93287b959d108fd79cf870a3e980f989962a8e7edd8b3d90106"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5f7b1c26df867fb0e9031c525710cdc3e3cab06f1885f8da99ed41753eee0735"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "81ac6e08be5d5bcdeb1fe53b6ae9967662fc31fcb18cd9de9a8758ced4a1d3a7"

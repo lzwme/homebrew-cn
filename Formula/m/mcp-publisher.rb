@@ -7,6 +7,7 @@ class McpPublisher < Formula
   head "https://github.com/modelcontextprotocol/registry.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bba32e606e019a19dd1951e46ece9c8f1d1322a98be5c81e3a05fdca487ab96f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "bba32e606e019a19dd1951e46ece9c8f1d1322a98be5c81e3a05fdca487ab96f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bba32e606e019a19dd1951e46ece9c8f1d1322a98be5c81e3a05fdca487ab96f"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "bba32e606e019a19dd1951e46ece9c8f1d1322a98be5c81e3a05fdca487ab96f"

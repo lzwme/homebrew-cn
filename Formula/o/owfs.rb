@@ -9,6 +9,7 @@ class Owfs < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "cfce021f58090c3ca7128b8cd83544f67ee1305486f639e0659f799381b2c0ea"
     sha256 cellar: :any,                 arm64_sequoia:  "9ffbd0a7e7138e0e41418388b894e28c1afa188d2182acd3f8518dfad76fd4a0"
     sha256 cellar: :any,                 arm64_sonoma:   "1366e03d70c70d75caede1b7144164ed21adf1396793cb0f75ce9cf3a7d6b1bc"
     sha256 cellar: :any,                 arm64_ventura:  "2c892df4127820daca0fbfd2a6ef3be23d85173ed4a67b04d5bd9501cc2c215a"

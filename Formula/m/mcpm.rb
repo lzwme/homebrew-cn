@@ -8,6 +8,7 @@ class Mcpm < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "f4c6f0ea0c41e5172e8f5b12cf3f0e9ced330fb419235c57a7da44ddc1116768"
     sha256 cellar: :any,                 arm64_sequoia: "48893765d94ba56adfe7a9d47a8af33b1a4716a0cbd74955db0fd4809e97853e"
     sha256 cellar: :any,                 arm64_sonoma:  "20bf72b0ffa9f4791f53c90ec8071e1851b5957cf9e41f3150013279f0e38291"
     sha256 cellar: :any,                 sonoma:        "e337724989735bf42a8515bd67108454b9398a6db7eadac8c7dc77a66fcaa4e4"

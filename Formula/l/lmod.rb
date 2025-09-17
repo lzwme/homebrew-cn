@@ -7,6 +7,7 @@ class Lmod < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "26782df9bb89baddabc9bfc91cd687080274150c798ec095895e7bad77bd0947"
     sha256 cellar: :any,                 arm64_sequoia: "025d09bbc64a285b582e8ae3a1f1dc1dc029a5e83e9a100dbc2bb6a83695f422"
     sha256 cellar: :any,                 arm64_sonoma:  "dae512dba1cb2c26c1e5e07b046a581eb651e02aa92bb1c101e4fcbad1bb7c6d"
     sha256 cellar: :any,                 arm64_ventura: "7e7a83d356066fe87d3798607691016c45966c2debae433677141af6c9f83517"

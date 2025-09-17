@@ -14,6 +14,7 @@ class Msdl < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "1624aa62efe3286085580bfc9482ff6e163e9dc3be33a0b485ebca7a0a91dd3a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9ab0083cb6623f31de8bd191354b00f627c0b7826646eae177337a2adc823dae"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "081c8df653ff58f6f08ae5758481e4fa94f4786f2465def703e93009f6ae91bd"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a22fd7fd9ae5684a10a7646d42a1397b700a31db017be4a40e95ad37ce2d02b"

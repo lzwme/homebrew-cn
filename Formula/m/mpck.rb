@@ -13,6 +13,7 @@ class Mpck < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "d2724946fd57b26d6af09556f4542e2eb04721e2f3043a0e8a38eed5144e0550"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "81d2d6e7ea068e0cc9f43913ca1e946efe3cadd19a6e89ee88a7b734dc800cee"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9eeb22c03ef069272b7a17479aa9c88b3778fd6ffbd4b9196da8b1b68bcee68a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "319209a5338628eebd83135c485ae2767ee55361437e420c8f3940d90de7ec6b"

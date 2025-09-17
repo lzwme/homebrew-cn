@@ -7,6 +7,7 @@ class Moribito < Formula
   head "https://github.com/ericschmar/moribito.git", branch: "develop"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37034fa0d7d8f39b905f495d15d385ebad49b085045dc6ea469d29af44e2194b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "37034fa0d7d8f39b905f495d15d385ebad49b085045dc6ea469d29af44e2194b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37034fa0d7d8f39b905f495d15d385ebad49b085045dc6ea469d29af44e2194b"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "37034fa0d7d8f39b905f495d15d385ebad49b085045dc6ea469d29af44e2194b"

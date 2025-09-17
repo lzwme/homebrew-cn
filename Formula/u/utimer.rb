@@ -11,6 +11,7 @@ class Utimer < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "e23eb9898bf6490db8dab00ca39f6c2b2e90fd358c3049e1f36a0c637ca06b6c"
     sha256 cellar: :any,                 arm64_sequoia:  "b81fca5d55f6c336477ac27ce66e9fb030be982864b54be675ee624b73444f7b"
     sha256 cellar: :any,                 arm64_sonoma:   "ee04213e439d3e859b16c5f0e07f19d70400a9dea3bcde536212cee288bfb6f6"
     sha256 cellar: :any,                 arm64_ventura:  "f4b18b839f3d9864738ba4e120852b0d3fae8d67c7d98b4ce370a89a9eb839ec"

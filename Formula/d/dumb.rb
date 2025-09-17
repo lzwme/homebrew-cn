@@ -32,6 +32,7 @@ class Dumb < Formula
     args = std_cmake_args + %w[
       -DBUILD_ALLEGRO4=OFF
       -DBUILD_EXAMPLES=ON
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     ]
 
     # Build shared library

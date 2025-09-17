@@ -14,6 +14,7 @@ class Mp3wrap < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "28af69383fd4f657495f0aedda9e53ac66cccce24bda0a280ebf5a79939cce6e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "881da7c1c1c1d3b667f6524d66c01de8d73e8a113b84763ea0d57395518c3523"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b5c9848d068d5f4f3758dc2629daea1ac755ce288b9663b302b13045bc9a1e0e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2bf343f21cede8d098ddb1c389818e91d8aaa8363601b1c3f56d02b2152285f"

@@ -8,6 +8,7 @@ class Mlogger < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "cc6b446dfb01998bc78128701dfbe10445b0b9433c0f089ada2a04061567e45e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3b373a36ead8caee769bdfd4632f783e948aa3f93605899ba5b08812250f9c69"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a33b7e72d83775458e4cdde286cde80c32e30d03d4580f12d74f07db43ded13c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3aa5e9292806dcc8150dafdd703720141806be0b610198826e8d226baad776d8"

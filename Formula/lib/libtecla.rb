@@ -13,6 +13,7 @@ class Libtecla < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "3883edbec56c880a52d9805b5fa4688136ccdb26fe9fe8b4c8b302b3f3c79de4"
     sha256 cellar: :any,                 arm64_sequoia:  "389b4e8a32591e201b3c174ce301bfaeb27a38dd8398992eff9171678d1b4bfc"
     sha256 cellar: :any,                 arm64_sonoma:   "30529250bd3e6f9e4533145538200757b6c0abc0592d192b3c3bb5f4fe25d8fc"
     sha256 cellar: :any,                 arm64_ventura:  "b2bad924df3143f0253bf5bee8dcb8522b905812bafd7134e64fabc2b278e94d"

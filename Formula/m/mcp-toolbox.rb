@@ -6,6 +6,7 @@ class McpToolbox < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6ea523ab9852ddd43cdf2a7d22cd0d8ed040dc52f5ffe37fa465917af92ca6a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6ea523ab9852ddd43cdf2a7d22cd0d8ed040dc52f5ffe37fa465917af92ca6a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e6ea523ab9852ddd43cdf2a7d22cd0d8ed040dc52f5ffe37fa465917af92ca6a"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e6ea523ab9852ddd43cdf2a7d22cd0d8ed040dc52f5ffe37fa465917af92ca6a"

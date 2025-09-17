@@ -1,20 +1,18 @@
 class Enzyme < Formula
   desc "High-performance automatic differentiation of LLVM"
   homepage "https://enzyme.mit.edu"
-  url "https://ghfast.top/https://github.com/EnzymeAD/Enzyme/archive/refs/tags/v0.0.196.tar.gz"
-  sha256 "2b9cfcb7c34e56fc8191423042df06241cf32928eefbb113ac3c5199e3361cb2"
+  url "https://ghfast.top/https://github.com/EnzymeAD/Enzyme/archive/refs/tags/v0.0.197.tar.gz"
+  sha256 "62c32c136a033fc09fd70b32277acd1fe813a673626458abe09c35dd79d9cbb8"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/EnzymeAD/Enzyme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1e12301478905b2ff73e6ee16ff2f29b3d4af7f8ecd1f6d8ff275f5a986f8a72"
-    sha256 cellar: :any,                 arm64_sequoia: "44815ad6c9c00b918925c0beded1c030ebfbb7cc53219ffa3c576c6344a36b70"
-    sha256 cellar: :any,                 arm64_sonoma:  "31e508dbac9c87b85940114b7b141c60835498b51445e0c76b7ce5d46e33842f"
-    sha256 cellar: :any,                 arm64_ventura: "c4964e4e5dbf57510019196df0b181522653b10afbf48da082138718b8c23403"
-    sha256 cellar: :any,                 sonoma:        "d0faa5d25739920faa96b0f20b952debf60d6c83a7cc61e5066ba8520307f9f3"
-    sha256 cellar: :any,                 ventura:       "814f338216b026ea5c9a5738edfffe354e95830a5ec7191f3207ee8e1131cf41"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "785b6d0f812f0c52b78b71e6dab72339f3c7a81f14714e9067e5bace79d43825"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fc4e7b2a40cab698af60612c5b339ce3da6b4ce04d456661774cba3cccda761"
+    sha256 cellar: :any,                 arm64_tahoe:   "e8b2024d72898f4aa4b5080359a26ec47b16f2978b5339708b247e078b8da2d2"
+    sha256 cellar: :any,                 arm64_sequoia: "065f91f25fe978a8490954935ce7bdc6e4d7346422c6dfbd26b74d3271d6d627"
+    sha256 cellar: :any,                 arm64_sonoma:  "6dfb287b07798171b3c68f324978a3e8e3661b9d506ff1a18f5c32985118c487"
+    sha256 cellar: :any,                 sonoma:        "e791db3abf13d95840f0699b523a89544b6208036a8efde2f472fea1e4ef9c27"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "46f3d69ad8d8a3a3abf68918697665ae21bc952d9aba9e529d26bb7e3bd12ff0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0b230fdb1a1116559ec2192bebf0ae15a4d7dbacfaf291c36f8f3844f68f8f0"
   end
 
   depends_on "cmake" => :build

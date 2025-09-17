@@ -8,8 +8,6 @@ cask "cocoapods" do
   desc "Dependency manager for Cocoa projects"
   homepage "https://cocoapods.org/"
 
-  caveats "#{token} disabled since 2024-12-16 in homebrew/cask as it is discontinued upstream"
-
   conflicts_with formula: "cocoapods"
 
   app "CocoaPods.app"
@@ -23,4 +21,6 @@ cask "cocoapods" do
   end
 
   zap trash: "~/Library/Preferences/org.cocoapods.CocoaPods.plist"
+
+  caveats "#{token} disabled since 2024-12-16 in homebrew/cask as it is discontinued upstream"
 end

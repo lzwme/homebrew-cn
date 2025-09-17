@@ -9,6 +9,7 @@ class Mspdebug < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256                               arm64_tahoe:    "a08a0168403ae075c0a9911267a269580acdc696a6614d337c9ebc2d8d3c5152"
     sha256                               arm64_sequoia:  "fffb3b1ca1b99e0186d8a36fa847918c4e533a935df4520a690ec285cdc16df3"
     sha256                               arm64_sonoma:   "b2afc19ddfc781ba82c0a1ec660cd0484285f4341bef4123f56c19b8e99c66c7"
     sha256                               arm64_ventura:  "56080d64e000643c6725ed8051485e0b85e8e5e386f7a57398a3ec06d59a699a"

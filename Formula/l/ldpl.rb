@@ -8,6 +8,7 @@ class Ldpl < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "e92a0b5d3a47afb232bef8c48a8c2902ddde3f2c7b0344333595e8d7bdc56eab"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6e33c979551ec86b80944f16b45b337ff39010f021aea26a1e150156abbbbeea"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8e793d5e90093676f1a1f9fe3d4919d50602c91d078e567af2b17deb6ebcc7f5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "bf6959046e581454ad99a0916570bb6ec7891ad1666829ee926d14ae9029886b"

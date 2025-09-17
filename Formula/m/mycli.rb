@@ -8,6 +8,7 @@ class Mycli < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "394683b0dd9569d579dd5a8c57a511ea7e6465e14d0728d8171663c2b986cb12"
     sha256 cellar: :any,                 arm64_sequoia: "47493fdc81dd19a912d1842e240d35ca976addb521d0b3068449aee78d23ec4a"
     sha256 cellar: :any,                 arm64_sonoma:  "3f5aed2af8c28c7bfce2b6b906ec811e208417be74771866c1e49153aa052aaf"
     sha256 cellar: :any,                 arm64_ventura: "a0e52f1d1e7f0d8f6ff10493e485efcf26dc5f30dc098a952cb755f742106ad2"

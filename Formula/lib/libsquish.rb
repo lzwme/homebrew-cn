@@ -26,9 +26,10 @@ class Libsquish < Formula
   depends_on "cmake" => :build
 
   def install
-    # Static and shared libraries have to be built using separate calls to cmake.
-    args = []
+    # Workaround for CMake 4 compatibility
+    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
     args << "-DBUILD_SQUISH_WITH_SSE2=OFF" if Hardware::CPU.arm?
+    # Static and shared libraries have to be built using separate calls to cmake.
     system "cmake", "-S", ".", "-B", "build_static", *std_cmake_args, *args
     system "cmake", "--build", "build_static"
     lib.install "build_static/libsquish.a"

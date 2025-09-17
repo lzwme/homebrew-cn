@@ -10,6 +10,7 @@ class Md5deep < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "c59d131c78aa6ee76fdfe35f4dd4488f5edfbdad5eb48eaa549396168adc31c5"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6d92356eb626035ee2f2e8b412b0a5ca36fa31a8d6d16fe583f9dfcd6ed57a19"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2e4229518a382d9eb9d0b5fe87118a0f4a532c33b535791db257432502ac9e31"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "34dc60be87a6f4d9306468492222ea35455aa08359603f2e1bffa3ae221405de"

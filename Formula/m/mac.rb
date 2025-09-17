@@ -14,6 +14,7 @@ class Mac < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "21e81e5a55b2873e431691731891ffcba0cf9aef87078e5ef7e84c949f4611bb"
     sha256 cellar: :any,                 arm64_sequoia: "d870d308a2fe0cfb5a4f8fafc4dc4a091d8557da02a93c2dfed303f76c9a1fd1"
     sha256 cellar: :any,                 arm64_sonoma:  "eb3e38806be70d38dbdeaf071e8a52f48f655715bd52af97bdde15558e44331c"
     sha256 cellar: :any,                 arm64_ventura: "a606fc5bf071d680bf4e89d53101b7b465a981e427efa37d9da9e58018d9c5a8"

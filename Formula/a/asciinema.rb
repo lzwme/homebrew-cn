@@ -11,6 +11,7 @@ class Asciinema < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "41c28efaeff36b255a7d1359399b858eec269bf4551251abc64829e38f818e1f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03e6f1aeea6cbdd5934390dd12a4d95c872fbcf7a3d5a560d6df63aa4f7d8c8a"
     sha256 cellar: :any_skip_relocation, sonoma:        "b2e28038ec2be3e45d9f090564b13befc66a4f6830b919a6a30dd36247c976c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "61825d586e41805ccdfffa0490b7cb20e4386d4bd28796a6731bf559caf5c510"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8d7552a66f6d03cc0488ea1299ccdd2e7b75ac9217a1d88325c4f472dfa2b61"
   end
 

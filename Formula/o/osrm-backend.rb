@@ -15,6 +15,7 @@ class OsrmBackend < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "a523c41c98db822786dc645c024d5874f0f3e79e88a98772d57754bfafa386dd"
     sha256 cellar: :any,                 arm64_sequoia: "429bafcaf7b635be6b0054cda48bb75a2284bff9dd1a31254bfa36edd39213b6"
     sha256 cellar: :any,                 arm64_sonoma:  "8b35c97fd01b53541fed0807aaca33249fc3cae5cdeda156c2b8cc4fcb6799b6"
     sha256 cellar: :any,                 arm64_ventura: "279149ff05cfe64f42403a6ce4e82dff3381a5ecaf79895eaa3b27f9a6d76c93"

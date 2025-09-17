@@ -15,6 +15,7 @@ class Ocproxy < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "232ed1e8370dfc9d92ffba5176c4792024f8a682e1091c427ed252a9c550c0d8"
     sha256 cellar: :any,                 arm64_sequoia:  "46d04d2d8fb1173d250c9a568512984ee10c67d0538224248858944a7c65dcf2"
     sha256 cellar: :any,                 arm64_sonoma:   "28eaf6815e07abd2aa324b3adb957523b49de41139079f3ab4480be043aa8a29"
     sha256 cellar: :any,                 arm64_ventura:  "a30cfaf7533957b5a7fab43d8123047d97ad5e989189556dfff3b539c6d771aa"

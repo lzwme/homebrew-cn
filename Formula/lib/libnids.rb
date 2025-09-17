@@ -9,6 +9,7 @@ class Libnids < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "8bf836ad1e90f2beb88013eb3ee3f3b04b20886ad3d83f55f289db886d723c8a"
     sha256 cellar: :any,                 arm64_sequoia:  "d746ed3de1862ca17be880cebad94a8a66579dedf5c33ddf40890b740917e1a1"
     sha256 cellar: :any,                 arm64_sonoma:   "39c7a9270f72443e129a815d5c6599739198425e9266e8adea4f14b577d8186c"
     sha256 cellar: :any,                 arm64_ventura:  "a9b786affb4887f607fabbe0df202bdf0d1601ae3210afbf6337577a23ca49ef"

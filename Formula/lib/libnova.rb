@@ -9,6 +9,7 @@ class Libnova < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "cf36faecd4340aba9996e78e9fb65737956fe1b102ca98627ca5259a1b316728"
     sha256 cellar: :any,                 arm64_sequoia:  "7c78e76239a8d99361a578d2726073d7cc300261a68effe3c189dd1edc2fbb4f"
     sha256 cellar: :any,                 arm64_sonoma:   "956371a814a279005c8b801707b40d0d7dce699c481f0bcac0ceb8cf8932505e"
     sha256 cellar: :any,                 arm64_ventura:  "41b9fe3eebdd1080259efefd73a04754c9e0837ee15abb839123d41e53019499"

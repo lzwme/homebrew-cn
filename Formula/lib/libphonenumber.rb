@@ -1,10 +1,9 @@
 class Libphonenumber < Formula
   desc "C++ Phone Number library by Google"
   homepage "https://github.com/google/libphonenumber"
-  url "https://ghfast.top/https://github.com/google/libphonenumber/archive/refs/tags/v9.0.13.tar.gz"
-  sha256 "46400323d2df4fdefd57bc46a34111dc2c4612da62ecd0cedebff5ad94e49b0b"
+  url "https://ghfast.top/https://github.com/google/libphonenumber/archive/refs/tags/v9.0.14.tar.gz"
+  sha256 "76e9f41fbe812fc12af2531f3128dfee33fb777c3d8ce599af16c88df2861326"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,11 +11,12 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9a407e99ec1df1d5861a98fe74867af85eff353592ede4a719c00f5dfb054758"
-    sha256 cellar: :any,                 arm64_sonoma:  "8fa93ad8bed72d907b5087fdd6dea7475b0101ea9ec519c4f1e6f9d41afe44f5"
-    sha256 cellar: :any,                 sonoma:        "7ee90dceb789f7a7d7ca4d5482ed7431109aa64efa139d9c426c508807c85813"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c114989f464fa1e639e7bc9182873a3f1110ed1a01e66c17c65ebbb16cf53e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21f8db6782b3985cce3a92843ca0033b2350e4fac329117f37f643ded81c04c1"
+    sha256 cellar: :any,                 arm64_tahoe:   "6307636bf3b1e7c93628c4bc5b71349b5e372cffba62b86f65df6f11a87969c4"
+    sha256 cellar: :any,                 arm64_sequoia: "c05672320b71e8834ec945a9ee23dcdd25dac495252a9ad0f658f1195bf8a006"
+    sha256 cellar: :any,                 arm64_sonoma:  "55fc947aae00562b49a4bc463ef0e69e60f020809789adf2348656114dfb054e"
+    sha256 cellar: :any,                 sonoma:        "868ffbae197ddb785477d69aa46b371eb3b43def1594f9748caee2e8046e99d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28cea8e25108247a12092f0b6a3af33b807a5085b0fa6a6f8ed8daa7236f82b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6c6496b539a6f57814f340f00dae6b11eb5f50078876dcf30cb903e32ef1da7"
   end
 
   depends_on "cmake" => [:build, :test]

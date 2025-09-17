@@ -9,6 +9,7 @@ class Ohcount < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "e44046c903fb421bf44b7dc8a9a4862d4cda4c7530dd3c6f6fd5c4e2f375b1ed"
     sha256 cellar: :any,                 arm64_sequoia:  "d537aa1e6a4a264ac45a9fa154b6dc8d0fdfae03fafe2cc2f81cdd4396aa5769"
     sha256 cellar: :any,                 arm64_sonoma:   "27c7e0899c7845d03e7f17f2a97f2fa6e47a6923fb1c232ce50551cd5a95122a"
     sha256 cellar: :any,                 arm64_ventura:  "2651774c46561b5dd0c6b71c9db1776367cbd6f31b83471abbe4ba54a92499c8"

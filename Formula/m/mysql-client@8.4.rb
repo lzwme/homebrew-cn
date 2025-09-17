@@ -15,6 +15,7 @@ class MysqlClientAT84 < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
+    sha256 arm64_tahoe:   "c67e9f0aee957d683b6acc56d327744cc82d9b4d6df5139dfe6328c7ffc7a340"
     sha256 arm64_sequoia: "3609f27603e56597c351bafb2ec87e78056d3c186bdd28d3de28bf302cc10c4d"
     sha256 arm64_sonoma:  "345d4f8422c0c0561fafaed5f3132c4441ae4a2ddc8609ebf255c72fbe4f189d"
     sha256 arm64_ventura: "d23e3b5c7933bbadb7121fe582ff41e72061cd82e4190fa73b60f00368112243"

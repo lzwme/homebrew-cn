@@ -8,6 +8,7 @@ class Lm4tools < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:    "eec32b7ca9a5f8f13607ac456703f4baaadcc32be01bc410c65c5a6295a5bc0d"
     sha256 cellar: :any,                 arm64_sequoia:  "4a41adde94def1ccf78e3ef033a1e121ab98ec9960db57ba2244a5ba0136d7df"
     sha256 cellar: :any,                 arm64_sonoma:   "13fcc858d9be77a53c1d7a541d3c314c1b98e03b48c2391850912f6dba3d6c85"
     sha256 cellar: :any,                 arm64_ventura:  "fe9a6bc3e16b5d44eb6eb84c108c47b2b6a766b0160326627596c339697ac862"

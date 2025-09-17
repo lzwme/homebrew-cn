@@ -5,12 +5,12 @@ class Arx < Formula
   version "3.9.1"
   sha256 "d410f22b9146335f510ec3e084c4cc70a695c78e0571cbb41b27896e88c0ed55"
 
-  depends_on "openjdk"
-
   livecheck do
     url :stable
     strategy :github_latest
   end
+
+  depends_on "openjdk"
 
   def install
     libexec.install Dir["*"]

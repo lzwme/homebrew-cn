@@ -8,6 +8,7 @@ class Lifelines < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 arm64_tahoe:    "c5cb2ca42297800da646da5d0503df4968cfc6a5426b355a1adcde9d34f455a5"
     sha256 arm64_sequoia:  "1f6bdc9020d5710b880583b1282be16a381ccc06e507fa708bba260fd5a256a0"
     sha256 arm64_sonoma:   "c7d6412aa87b5b3926d5bd6b04db7ca8005b31420b23120f76e5322b5b314fcf"
     sha256 arm64_ventura:  "a47b652141dd91cf3c2f88fc0fac232b93355645ce0319b9547504c6b8244145"

@@ -11,6 +11,7 @@ class MupdfTools < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f0334b7ecf3b6d2392efd12e73cbf1c82ecc94b35c47ff9d8bac3853358d72c"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "31d3b7280c334ca3be1603489485360c68deb3f0b34152843c18d49023f9dded"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59d5cc9014c99d4397d2d74bc873703b200830947ee773677e4eb2313724f233"
     sha256 cellar: :any_skip_relocation, sonoma:        "9ba41b174ab6fbac41be059bd17178d6efc5105eb01a0be06f5e37997112b04d"
