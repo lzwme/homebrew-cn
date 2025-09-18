@@ -11,6 +11,7 @@ class Postgis < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "693ea3521c4e928a74d28db1b42f5534f55495cef49a412fefc1145d82016ed9"
     sha256 cellar: :any,                 arm64_sequoia: "35b1d86a5ac4dea6594c5c67fb72e09cb2704cfa258733db2d0bc4d38b11fc67"
     sha256 cellar: :any,                 arm64_sonoma:  "2dd9280503bda0eb56904637d66ae582290ece6c9db6f0db2294b8c307cb7c61"
     sha256 cellar: :any,                 arm64_ventura: "72993a0b8b3820ee52fcc8a3a929332e3e4de1e70e5c2bee63720d489c339796"

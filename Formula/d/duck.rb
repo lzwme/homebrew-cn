@@ -12,6 +12,7 @@ class Duck < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "1812459174a458a88e6b19e74c98e470d11ca66a3e8fe51b9ef940f27144c18a"
     sha256 cellar: :any,                 arm64_sequoia: "90fd52cfbb685bb5236647ba95172aa0f4ae71b179e49517852f1b197ecfd954"
     sha256 cellar: :any,                 arm64_sonoma:  "db28ad374157b347461e56beb371b6917644b636b0eb5bd043297349a35dd244"
     sha256 cellar: :any,                 sonoma:        "7990688542beca48a2069f8535a94baffb2fc00b67161d36672a9cd6a2b902a8"

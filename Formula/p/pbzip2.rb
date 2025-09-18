@@ -8,6 +8,7 @@ class Pbzip2 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "484b76c243682d69066e15002d253fdc6179837c811a98855c53def0e830a761"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "09d47c48c9c64a8c026c28f30e3e0074f1f0a195d5886d37e1a15f6925ab91bc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "96fd12c7e49a4710a7d718412bc0d1cbda865873486489bb068ff49bd5c23dd9"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef28ddb3c52e0a2fba318d9a5e95dea37414a1a98d7e2c8277d2edccb8d09572"

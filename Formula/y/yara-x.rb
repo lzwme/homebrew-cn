@@ -1,8 +1,8 @@
 class YaraX < Formula
   desc "Tool to do pattern matching for malware research"
   homepage "https://virustotal.github.io/yara-x/"
-  url "https://ghfast.top/https://github.com/VirusTotal/yara-x/archive/refs/tags/v1.6.0.tar.gz"
-  sha256 "434375b4b776e112ad15657110d8b0dbe787ebae92a9f20a69f9e01f57002476"
+  url "https://ghfast.top/https://github.com/VirusTotal/yara-x/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "ad518c29a21eb1d2a2ba2808de538499633acba5ace1af987b789be0d0416994"
   license "BSD-3-Clause"
   head "https://github.com/VirusTotal/yara-x.git", branch: "main"
 
@@ -12,14 +12,12 @@ class YaraX < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5ee9b1a518fcf07b3fb9bc5619185de5afbfc425cc656881ae9b8a2beef5301c"
-    sha256 cellar: :any,                 arm64_sequoia: "e47c85e98f0133d4a29cb89be893e32d4caf80c69ce9a420d1473cb8a42d185c"
-    sha256 cellar: :any,                 arm64_sonoma:  "5f9c8463f210212410667749247b871e13862415e1775f0e8354bd78e3635aac"
-    sha256 cellar: :any,                 arm64_ventura: "7b28e75a6302ca0d653bc8336b906099878c3eb9a5d5b8c6eba3a94c18b39fd1"
-    sha256 cellar: :any,                 sonoma:        "ef00a2f81cd5ac604e9c5332bdae8f2023e5fe60baa27b7d4fa29c2a56c503c2"
-    sha256 cellar: :any,                 ventura:       "64a8fe12df9aee952bf718cbffd78c9acc6c184d8f6b493005438268a89debde"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bfc69c20b08f9f115be99e606de55bfbe53a3d69ce9a98128a5e2779533d73c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e1ab2fdcf5877b8cf902f904dd5242886fd35c6d6dbdd1e8a22daf0698169a5"
+    sha256 cellar: :any,                 arm64_tahoe:   "dbee1c396ae4d9a5de1a9e7292e87edb85a7efddbfc5f48973d74d0555e6d9df"
+    sha256 cellar: :any,                 arm64_sequoia: "b1e156487d005579a5661bb099b8037027c4fe7359bddbb5eca1e0ad84f8054b"
+    sha256 cellar: :any,                 arm64_sonoma:  "28205adcd00e95ec6cffa459fc96a0ea074b4e1062e4d98c18e798628b0ea369"
+    sha256 cellar: :any,                 sonoma:        "09888dcc862a2e7b0b61aa407fa3991b10210a9b68d8e8938a2c97b67dcb8659"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d94929f47a20fca6c0788f3214efaad169d7a8ba808dc845011d6eb0f1442e94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "477888ded674d249f98ea0c06863ba49202a6408eb48f27bcc737ae70b59c069"
   end
 
   depends_on "cargo-c" => :build

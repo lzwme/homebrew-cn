@@ -7,12 +7,13 @@ class Nghttp2 < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fefb5c3c6a7548903f70d7ba02dca5c2176cd57c42b871fa8fbad70a7511b9d3"
-    sha256 cellar: :any,                 arm64_sequoia: "a7e36a929b9a419297a3b61933546072148179e6c5b279c538c4b711cfe56f10"
-    sha256 cellar: :any,                 arm64_sonoma:  "06af7af6393af54eb1adf66233c9074c7b04a298bf382ced857cb4e33db5c2ed"
-    sha256 cellar: :any,                 sonoma:        "f7e33a5188e3aa3e043d3d5590253081018a78697e6b0be3435209bf2313b56a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ec21faca8444e3037defd2b954fe82ffee387ffc3e28db0fda43e9ba2f39c35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bfd1bb108307546b7958308c8f7c47cc9766dadd63c6db408bccf33cf7d4380"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "d3bdb94dd4692d8aa41f54e67191f3cf2e2cf03e53bad026031967b9b78900a5"
+    sha256 cellar: :any,                 arm64_sequoia: "35403d593507053fb6d2cf509e24f43897f7bf713f1b42f86e37867b54e9344c"
+    sha256 cellar: :any,                 arm64_sonoma:  "fd512ded8ffa48afc21c8231032c0f14e83e58f1b989ae59a031d43e97101cc0"
+    sha256 cellar: :any,                 sonoma:        "61bf7a85a2d978ad2e26477ec9ebed54d78b7125eca7d542a410b0411b70ed2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "353049568227077d092013686eb23bee9cbf5fef5350284ff11d5a4084e91e69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2de9fd14dd8545d06b1d0868427d78a1253ce90b02e2679103ec73ef2b074c2"
   end
 
   head do
@@ -38,10 +39,6 @@ class Nghttp2 < Formula
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
   end
 
-  on_linux do
-    depends_on "gcc"
-  end
-
   fails_with :clang do
     build 1500
     cause "Requires C++20 support"
@@ -53,8 +50,6 @@ class Nghttp2 < Formula
   end
 
   def install
-    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1500
-
     # fix for clang not following C++14 behaviour
     # https://github.com/macports/macports-ports/commit/54d83cca9fc0f2ed6d3f873282b6dd3198635891
     inreplace "src/shrpx_client_handler.cc", "return dconn;", "return std::move(dconn);"

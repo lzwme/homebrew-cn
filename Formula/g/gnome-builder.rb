@@ -48,7 +48,7 @@ class GnomeBuilder < Formula
   end
 
   fails_with :gcc do
-    version "11"
+    version "12"
     cause "https://gitlab.gnome.org/GNOME/gnome-builder/-/issues/2176"
   end
 

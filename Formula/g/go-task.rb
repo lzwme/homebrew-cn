@@ -1,17 +1,17 @@
 class GoTask < Formula
   desc "Task is a task runner/build tool that aims to be simpler and easier to use"
   homepage "https://taskfile.dev/"
-  url "https://ghfast.top/https://github.com/go-task/task/archive/refs/tags/v3.45.3.tar.gz"
-  sha256 "c72afa44e4e00f62e664d755960e7b8bf4d2712249197709c5585ca3f80f34b5"
+  url "https://ghfast.top/https://github.com/go-task/task/archive/refs/tags/v3.45.4.tar.gz"
+  sha256 "bca35c6d394be1c67422bb7aae9b1fc2cb83143a8a1d28f032388f1d926d3311"
   license "MIT"
   head "https://github.com/go-task/task.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d804f51f8c6521cac1b214a9cffb6e7f8df179f6282e7037077f13858c61ed9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d804f51f8c6521cac1b214a9cffb6e7f8df179f6282e7037077f13858c61ed9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d804f51f8c6521cac1b214a9cffb6e7f8df179f6282e7037077f13858c61ed9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7c87c86e8cd2e233bb6ecfe48e057c8637eaf34061040608422335dd5a23a6f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d4f658bd0cf4c653ec26ef9514a5ecbf2acf62cdc22752e06f294edaf3e6a07"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0874b8687f2653d1e92e0c4352089df2327b7b4b9798d174e5958b148c4fb99a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0874b8687f2653d1e92e0c4352089df2327b7b4b9798d174e5958b148c4fb99a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0874b8687f2653d1e92e0c4352089df2327b7b4b9798d174e5958b148c4fb99a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f59157076990f687c6f97c2382537ff0e5ad8d133041c4193e840976d0e78634"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ddd46e97f33014d88204cae04f6d64a16c945bee44a77af2a527b0839e28cea"
   end
 
   depends_on "go" => :build

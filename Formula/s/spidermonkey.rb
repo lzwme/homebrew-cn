@@ -1,9 +1,9 @@
 class Spidermonkey < Formula
   desc "JavaScript-C Engine"
   homepage "https://spidermonkey.dev"
-  url "https://archive.mozilla.org/pub/firefox/releases/128.14.0esr/source/firefox-128.14.0esr.source.tar.xz"
-  version "128.14.0"
-  sha256 "93b9ef6229f41cb22ff109b95bbf61a78395a0fe4b870192eeca22947cb09a53"
+  url "https://archive.mozilla.org/pub/firefox/releases/140.3.0esr/source/firefox-140.3.0esr.source.tar.xz"
+  version "140.3.0"
+  sha256 "efc6eb3c93756311bd2f9db3796c0bbee6e3f182975d857284168b3dec672316"
   license "MPL-2.0"
   head "https://hg.mozilla.org/mozilla-central", using: :hg
 
@@ -15,14 +15,12 @@ class Spidermonkey < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "59ef0564f197856d20c11e2cbdc1bff8c6f02abc6f66ae240b0b8544765df3f4"
-    sha256 cellar: :any, arm64_sequoia: "d7ed18f946e73a8fc6b13491ba262627bac6c01fd4b4dabf3248bd80db82aa42"
-    sha256 cellar: :any, arm64_sonoma:  "aed949810733f91c9569c313eac65046ef3c43af3f46cace1008c52d22c8df60"
-    sha256 cellar: :any, arm64_ventura: "cd6d29a9607555f93893f1c0bbf50264004e5614311af558f12bf6707c4d62b0"
-    sha256 cellar: :any, sonoma:        "967c8e4205f3b3cd3291e3fb08e5ed41bee5504058b49109d1d0bfca8b2235b3"
-    sha256 cellar: :any, ventura:       "461c36317870d73c1d736b1bcca339a8c05555e25bd459e4e960753341f51499"
-    sha256               arm64_linux:   "402640e7bc12ad03b192d75caf61f09f10f36f259d613b87c83079cfe41f06d0"
-    sha256               x86_64_linux:  "e69d78c1fc1e538682a94815bfa7deb8b9cf2afdbd9d704c9b57aa1f619dec68"
+    sha256 cellar: :any, arm64_tahoe:   "95ac8cacc5c17468b5d95fa09a2c2b561f26fb51f5db28b748821d6c5ce33248"
+    sha256 cellar: :any, arm64_sequoia: "e84cbe896437931f9fe7810513a02f24334f0243223a86c3ca3d78d50d9f1de3"
+    sha256 cellar: :any, arm64_sonoma:  "ae2f63455c66d0613827d037b47efc63f999fd4a2645ae6b47e1fee1814bee80"
+    sha256 cellar: :any, sonoma:        "ba72c6524dffaa63746489d14a97e848d2724c80ccf82f1f78fa23ca0f641431"
+    sha256               arm64_linux:   "ad60397bbbed429e4243badde7313318c0305aa0d23af5e03f7d131e335a7853"
+    sha256               x86_64_linux:  "53413cb1d9c379f486c380a25e80b08ba1d96b9c20e634cd6e3d2afe11b50522"
   end
 
   depends_on "cbindgen" => :build
@@ -56,11 +54,13 @@ class Spidermonkey < Formula
     end
   end
 
-  def install
-    # Workaround for ICU 76+
-    # Issue ref: https://bugzilla.mozilla.org/show_bug.cgi?id=1927380
-    inreplace "js/moz.configure", '"icu-i18n >= 73.1"', '"icu-i18n >= 73.1 icu-uc"'
+  # Apply patch used by `gjs` to work around https://bugzilla.mozilla.org/show_bug.cgi?id=1973994
+  patch do
+    url "https://github.com/ptomato/mozjs/commit/9aa8b4b051dd539e0fbd5e08040870b3c712a846.patch?full_index=1"
+    sha256 "5c2a8c804322ccacbc37f152a4a3d48a5fc2becffb1720a41e32c03899af0be6"
+  end
 
+  def install
     ENV.runtime_cpu_detection
 
     if OS.mac?

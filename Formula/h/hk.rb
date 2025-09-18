@@ -1,18 +1,18 @@
 class Hk < Formula
   desc "Git hook and pre-commit lint manager"
   homepage "https://hk.jdx.dev"
-  url "https://ghfast.top/https://github.com/jdx/hk/archive/refs/tags/v1.12.1.tar.gz"
-  sha256 "8921952478b496e8f615e75efa86fe8343e2d44538d4cfcb24ac06f499beab19"
+  url "https://ghfast.top/https://github.com/jdx/hk/archive/refs/tags/v1.13.7.tar.gz"
+  sha256 "770f874000763ed1c45cb2e129af1a91e754660c906538d6a92f130d61f2b93a"
   license "MIT"
   head "https://github.com/jdx/hk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0ceebad3612accc1ed20755a2e4a7d1b408c22132d88fcb2dac8f0f30275106a"
-    sha256 cellar: :any,                 arm64_sequoia: "c32dc570623a8e954180fc4944749a44ba151a79a3deccaf4a047b8c83ce8245"
-    sha256 cellar: :any,                 arm64_sonoma:  "3c0f27d81dffe8c63c01d4f6367620069007ddf6ee02595b8e09bfea9bc079c3"
-    sha256 cellar: :any,                 sonoma:        "452031b5236aa5d171b2d7ce974de2e5d78b90134072d72a1b83573757406fa7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7de6ac2732eb4bc1d0b24cd8528d62d0c6e1ba63bc094012f64d654f8779fa52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6344df1e600ce59c37d5dcc33219c00665d14eac6a68c8b5ab24b77e6b68038c"
+    sha256 cellar: :any,                 arm64_tahoe:   "023e562ddfbd3da659f841f249426714144b701576f7e7b1740a57e231f5d077"
+    sha256 cellar: :any,                 arm64_sequoia: "b01200ceb6bb5a67d245118eab21c0158ebf1dcddf623aa6c04573bbd337e05d"
+    sha256 cellar: :any,                 arm64_sonoma:  "2d6541139bab047f8877122c0ee7253b049db9bee12c2de4df76b63c859ac6cb"
+    sha256 cellar: :any,                 sonoma:        "b00088dcc5763099b8a705c7224c90608981cce3ae5bc7539275eb67e58e4455"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bdc70a7d039e55427a51ac5f80baebb3a1cdc613847ed6403d7f89272bede33c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee768efb725b349e3c1034ab9e63a4c5fb26686bb60f4b630c656d41b9a0aa91"
   end
 
   depends_on "rust" => [:build, :test]

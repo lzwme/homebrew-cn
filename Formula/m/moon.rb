@@ -1,8 +1,8 @@
 class Moon < Formula
   desc "Task runner and repo management tool for the web ecosystem, written in Rust"
   homepage "https://moonrepo.dev/moon"
-  url "https://ghfast.top/https://github.com/moonrepo/moon/archive/refs/tags/v1.40.2.tar.gz"
-  sha256 "b261f29005af531f409c24e5521a01e8951480a4d4a5fea9f7c03be89f769d7d"
+  url "https://ghfast.top/https://github.com/moonrepo/moon/archive/refs/tags/v1.40.3.tar.gz"
+  sha256 "4980c8059e22b69e76f67652b6959efc1f8aff4576dee3bf6f5d8c2e8a2d822b"
   license "MIT"
   head "https://github.com/moonrepo/moon.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Moon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ddcc8ef87bc249ba3a05f729b9bfb8e75af5039133bd7e99be8ad335443cddb0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93fe3f5e4b92dfd30ae212146476e28524cf6629396af2541152b9176f6fccb8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e127950bdb1a024ee7c2eb6ac4cbb01598b065e5d4c6bc96acc67d5f0151e672"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7a2a10aacb4914fef7899f363cfa4e7cc7b805c30d013ca752989c9ab15bfe87"
-    sha256 cellar: :any_skip_relocation, sonoma:        "81dde252563955210d4d5795e2a89fc9f33dbd31d6773244db9bfe303bc97968"
-    sha256 cellar: :any_skip_relocation, ventura:       "a5403a54dc28e50244cc2196cfe3f08a1d54b2ffc4d3b99663db5703d14a1c66"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5498840a02b98be2647e03337521cef44d89c00006653d64ba5ff5bbbda56f8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f67e1c697809cf0c1dc6365ec83456a7b97c4bbd414d236180c34cefe97a446"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "af47cb3cafcbc10d7594283dbbf2abf50bed693d06d0361fc8d083050c2fc73f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d46433cdbb287e260a103124765349cda8dae846d228b970b97f70b85867e3e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a9ff0a981dc7cbfcedae798e4c573fffcb5a096939745f193ca682b72fe2b85"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3a8aaec0568cd1856e9332de1f53f3a59a68f7bf78ea1677963aab90e570d247"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d731be1d99639e0979f99ea111e974192a61ed135b1328d510e81ceed92ffc69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "181f359ee424cdae251a5c95aecff929464624f3ca44b307ca32f50f206fd77b"
   end
 
   depends_on "pkgconf" => :build

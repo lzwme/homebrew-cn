@@ -1,8 +1,8 @@
 class Hledger < Formula
   desc "Easy plain text accounting with command-line, terminal and web UIs"
   homepage "https://hledger.org/"
-  url "https://ghfast.top/https://github.com/simonmichael/hledger/archive/refs/tags/1.50.tar.gz"
-  sha256 "2a4c4f13c5f46ff9dd3e5465103fe032891387e914b49608fbf45d1dc74f4cfb"
+  url "https://ghfast.top/https://github.com/simonmichael/hledger/archive/refs/tags/1.50.1.tar.gz"
+  sha256 "6e94e12f5cf58886af476f9f3a813ddd407049d1f6aefe98810b798a17562177"
   license "GPL-3.0-or-later"
   head "https://github.com/simonmichael/hledger.git", branch: "master"
 
@@ -15,14 +15,11 @@ class Hledger < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b0f9fb20f2e5dab4f950659b768efd67dbd8ca2273c531a93873259ac9e535e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c18f4f5f8e180151ab84eaeb262b678c2977d3464524e416377863035836ee8f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8068dd95c7314da3b1de914e06f806156f01b34fc8913d1215238316bfff4d9b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "347d8316c18449aa8561c39163ee9721de574d777fe0e8cab2cd456a7b510b88"
-    sha256 cellar: :any_skip_relocation, sonoma:        "85721acd3f1e13d40d96c477efd4ad9920a604c3504f50155dd9644afd513a1e"
-    sha256 cellar: :any_skip_relocation, ventura:       "29f6d4cbb3c7410c949f1f7c0a2ca489cb4f95a4555cb524faf197b5f00a3c8b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e85ef2e89653e777bf03c18c8c5c96b3f9a625e1b0b59a08a668dd19c08dd7fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35e546a33c87fac2357033d687e079542b3b4766dcf1531312474e83934256e9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b945e2c269d4303d09f85f3287e58ee913f6d03f018ef225a3cbf696096b5d6f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42254df6148820c370b4c69191946d2fbd9472b59e0e37b55863c1f6f0b8e2d9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7799dff7ae5119d356503c1591901f9f790d402093ea89ae7df1219eadd2a07c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b9809a5b7b01973228e6df6d2b9b5785e5ec10b47cc7e786f92be93b07e43a06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a51bc1131f95b05de3c17c40ace2368127ffa4b4bcbdc4d1d3eebe9309d9a30"
   end
 
   depends_on "ghc@9.10" => :build

@@ -1,8 +1,8 @@
 class Emscripten < Formula
   desc "LLVM bytecode to JavaScript compiler"
   homepage "https://emscripten.org/"
-  url "https://ghfast.top/https://github.com/emscripten-core/emscripten/archive/refs/tags/4.0.14.tar.gz"
-  sha256 "8ed77d6d3949ea9aaa50352dec8267915dd918cf61dc50f418b7aa41de32f92c"
+  url "https://ghfast.top/https://github.com/emscripten-core/emscripten/archive/refs/tags/4.0.15.tar.gz"
+  sha256 "47a703c948b8bdac7450a0db9392c793ad84f06d30de773603f48a99d0ebc33f"
   license all_of: [
     "Apache-2.0", # binaryen
     "Apache-2.0" => { with: "LLVM-exception" }, # llvm
@@ -16,14 +16,12 @@ class Emscripten < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7a045cdc006fabc61ced8888254f19411aa488ad9e84b721374d4d65989428d3"
-    sha256 cellar: :any,                 arm64_sequoia: "0471ad57ba87d5855215f264b2faff5e97e2d8f146ed08e82177bd97cd22af59"
-    sha256 cellar: :any,                 arm64_sonoma:  "e27642d9806327a0c1f4d2bb35906c1616ef81360005c9adf0b5d80575071cd5"
-    sha256 cellar: :any,                 arm64_ventura: "1d3cb4f43de2d9d4238159562f5a4c8220f963eb247c17b0ed47c89334397d40"
-    sha256 cellar: :any,                 sonoma:        "4a9571a2a0da8d078d88380ea664c77fd8cf745ddee9422664048b6b1217aa97"
-    sha256 cellar: :any,                 ventura:       "49476530346682fa6be80d97a31545b467d663ea91410630a13d8925a71e875d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec0c8218dbfdb9137a9ee3bdd7185ae79a229e082615887c9df3995d5c72d32d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f0d0f0c536c01d8d801faf019b4fd2a48a46780d10df36baa5d4e9ed855be15"
+    sha256 cellar: :any,                 arm64_tahoe:   "fd1a9f5e41694921dfb369c23782f82ae0537bee24d1458a090591928dc12271"
+    sha256 cellar: :any,                 arm64_sequoia: "93e1671c90df9f7e9e3b6fef262e9650151a18a9a34faa84c17d0774c94c0187"
+    sha256 cellar: :any,                 arm64_sonoma:  "50d8679c24e3c7492b5076e41b3a2b638b6f9137593614a6dd9597a7a4d7af10"
+    sha256 cellar: :any,                 sonoma:        "a39535882a1cd2a4ef27b17276cc287233c2de7294e090cf816603cd8bfd7536"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3011d17184b42513c25268ef119ffff3daacabb55b655974429da99c35c02c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1c8e1f7508a75dd11f3eff475f94b4012d98f474d906b0c2cce88a6d90e4476"
   end
 
   depends_on "cmake" => :build

@@ -1,10 +1,9 @@
 class Openimageio < Formula
   desc "Library for reading, processing and writing images"
   homepage "https://openimageio.readthedocs.io/en/stable/"
-  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v3.0.10.0.tar.gz"
-  sha256 "c424637af66fc6d04f202156c3f7cf4a5484ccbe07966d3d8a1fde27c7472721"
+  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v3.0.10.1.tar.gz"
+  sha256 "0f959ddb75e95640cd2fac5723fc273c71e0e68e0f8205a3c6247aaf5ef9391d"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/AcademySoftwareFoundation/OpenImageIO.git", branch: "main"
 
   livecheck do
@@ -14,14 +13,12 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ff60ffc013fc2ed1d518b005853b5e1f3312b5b20dc444d7439c237e1f3b84cd"
-    sha256 cellar: :any,                 arm64_sequoia: "c157baf2ca35711361f1343ae3335b4d1230ea19e31baf2852abbea084aa028a"
-    sha256 cellar: :any,                 arm64_sonoma:  "9e324feb990af0a04baa3541e5b285bc123eccd1aeed8af7f81b80d786073720"
-    sha256 cellar: :any,                 arm64_ventura: "f0a6126c4ddd760b49bbe7c66e6d0a63c9240f6aca87288062bc0d0c61bf296d"
-    sha256 cellar: :any,                 sonoma:        "1c137cc92ffe05ce3caedf48033d9d836c9a9188418f0bba64736701571dea02"
-    sha256 cellar: :any,                 ventura:       "697dda3787cbcbda48fec4555ad37949576a51d0aaf05cd314ec44df22fb907c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e571e09ff02dcd30a9482d044482390ec11c3304d8b2cfd2f7ff208739975dd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09d47d6f7820cec31fbf71b90321185ff5d324b089e1971cf4308b79ac67d554"
+    sha256 cellar: :any,                 arm64_tahoe:   "c6b236f8b64e3ecb32d0d0e8a7b229088daefa6bfde42766b33b30a4ba481692"
+    sha256 cellar: :any,                 arm64_sequoia: "9307f14a73f0de0302f77e53363bf5f729e4ee145fe04dc96d0fe3a55a100922"
+    sha256 cellar: :any,                 arm64_sonoma:  "6dfda03a12965988ff68486f2cb0b64714d3a3b450f36713163743c2319a2c0a"
+    sha256 cellar: :any,                 sonoma:        "0d8659593d23dfafcac5e7aa91c66606d01ffdac5e36ad3fda332fe8490c85a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "32561627a7a79df74a3b4d6d94cf2ab9475b83650284169d0a4eb291bef705d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "637ca9d7cacb564af62d8b32d57b7009aa69f30b3da03076619ebe6e9f679890"
   end
 
   depends_on "cmake" => :build

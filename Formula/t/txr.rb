@@ -33,7 +33,7 @@ class Txr < Formula
   end
 
   fails_with :gcc do
-    version "11"
+    version "12"
     cause "Segmentation faults running TXR"
   end
 

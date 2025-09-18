@@ -27,15 +27,26 @@ class Librcsc < Formula
 
   # Add missing header to fix build on Monterey
   # Issue ref: https://github.com/helios-base/librcsc/issues/88
+  patch do
+    url "https://github.com/helios-base/librcsc/commit/3361f89cf9bb99239a7483783b86de1648d5f359.patch?full_index=1"
+    sha256 "cd9df87f8f8dd0c7e3dd0a0bf325b9dd66f8ba9e42cb0e6fab230872dc5ce243"
+  end
+
+  # Backport simdjson fix for LLVM 19+ (Xcode 16.3+) to bundled copy
+  # https://github.com/simdjson/simdjson/commit/5d35e7ca1f1727ca57d31d4ae5f3954fe96337e3
   patch :DATA
 
   def install
+    # Workaround until upstream removes unnecessary Boost.System link
+    boost_workaround = ["--without-boost-system"]
+
     # Strip linkage to `boost`
     ENV.append "LDFLAGS", "-Wl,-dead_strip_dylibs" if OS.mac?
 
     system "./bootstrap"
     system "./configure", "--disable-silent-rules",
                           "--with-boost=#{Formula["boost"].opt_prefix}",
+                          *boost_workaround,
                           *std_configure_args
     system "make", "install"
   end
@@ -54,15 +65,24 @@ class Librcsc < Formula
 end
 
 __END__
-diff --git a/rcsc/rcg/parser_simdjson.cpp b/rcsc/rcg/parser_simdjson.cpp
-index 47c9d2c..8218669 100644
---- a/rcsc/rcg/parser_simdjson.cpp
-+++ b/rcsc/rcg/parser_simdjson.cpp
-@@ -43,6 +43,7 @@
-
- #include <string_view>
- #include <functional>
-+#include <unordered_map>
-
- namespace rcsc {
- namespace rcg {
+--- a/rcsc/rcg/simdjson/simdjson.h
++++ b/rcsc/rcg/simdjson/simdjson.h
+@@ -57,15 +57,15 @@ class base_formatter {
+   simdjson_inline void one_char(char c);
+ 
+   simdjson_inline void call_print_newline() {
+-      this->print_newline();
++      static_cast<formatter*>(this)->print_newline();
+   }
+ 
+   simdjson_inline void call_print_indents(size_t depth) {
+-      this->print_indents(depth);
++      static_cast<formatter*>(this)->print_indents(depth);
+   }
+ 
+   simdjson_inline void call_print_space() {
+-      this->print_space();
++      static_cast<formatter*>(this)->print_space();
+   }
+ 
+ protected:

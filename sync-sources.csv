@@ -313,6 +313,7 @@ Homebrew-homebrew-core/Formula/a/atomist-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/atool.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/atop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ats2-postiats.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/attempt-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/attr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/atuin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aubio.rb, Homebrew/homebrew-core, 0
@@ -2005,6 +2006,7 @@ Homebrew-homebrew-core/Formula/f/fits.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fizmo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fizsh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fizz.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fjira.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flac.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flac123.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flactag.rb, Homebrew/homebrew-core, 1
@@ -15102,7 +15104,7 @@ Homebrew-homebrew-cask/Casks/v/vimy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vincelwt-chatgpt.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vine-server.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vip-access.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/v/virtual-desktop-streamer.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/v/virtual-desktop-streamer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/virtual-ii.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/virtualbox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/virtualbox@6.rb, Homebrew/homebrew-cask, 0
