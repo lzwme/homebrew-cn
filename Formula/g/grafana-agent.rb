@@ -12,6 +12,7 @@ class GrafanaAgent < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "445b4e2c05d1e0370f5daf719c3bdf724d2a2c0ac7792d08fc4e62b7859425aa"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8947e913b3811be4c82cadf51e83bd39cc6c87b6bf13a6d0acfe132141794f2d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d6dcd2ec5dac8ec8dec064b8632768520d1f03d8e90ff4662128c97d180b091"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c491c1d0d721cb5e2d7e23cd394ae67d6397e73ecbcf1fd17d1a235858efbe81"

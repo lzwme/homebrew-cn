@@ -16,6 +16,7 @@ class Qbs < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia: "de23c0f6e1eb0db96bb05300afac1a38edad7ea59860fa94632b8c1380bbcdbc"
     sha256 cellar: :any,                 arm64_sonoma:  "73ed45e1ae002ab27f86d004f7003825478b59726d758996214c24147ce2c387"
     sha256 cellar: :any,                 arm64_ventura: "c04e7d54e0414f6fdea083c401f21fe4d7d7d7a5b00fa163f9180f23a3743972"
     sha256 cellar: :any,                 sonoma:        "e78f408be5a3413cdc154e7a25d00dce596c9eba58cf5188993b16b73e96425b"

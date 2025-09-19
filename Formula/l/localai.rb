@@ -1,17 +1,17 @@
 class Localai < Formula
   desc "OpenAI alternative"
   homepage "https://localai.io"
-  url "https://ghfast.top/https://github.com/mudler/LocalAI/archive/refs/tags/v3.5.1.tar.gz"
-  sha256 "fb843ac142bbea6c7fab165cfc0ca8a5f77a461bd98435d06b15f6b0a536b343"
+  url "https://ghfast.top/https://github.com/mudler/LocalAI/archive/refs/tags/v3.5.2.tar.gz"
+  sha256 "ec0d15a0c0310fdbf92acde3f35438d380e3c660d1cff4fc76c1850088553fec"
   license "MIT"
   head "https://github.com/mudler/LocalAI.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d10e36576d4fe6ac1fdc9c66af697b66c65f6bd0920172b53946e86d847f239"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fc09ad3519a96a6c5a703c62f8ff3c5f6656712f0ca978aeec0bc1edef56e5d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a776fa95b3db03684556e4e8f3a3494359f405a2f3df797a52cc8b0fe72274e7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "62950255fc30bda53901bf2f883cc9a29bb4effcae323c172d23d3038330f1e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5005995145b88229e498bc500022bdfd26882626c5840bd50c3a2b39b6601bb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6fe68347f814e0759e160381c1abb4a07bb0d03890fb811f2b0d5d713eaa3888"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "658809bb7c86a4a3356d7d3fd586c8b64b1955a74956ab08bcfdfba85d722395"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3df00beacd37590e061c0e9f7482b0706adc7a13af7a1f28195773e03b19c700"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e3e0af1a30813e09f40adcdfca30032607a4439ab434da5de19d48f1ca4c9a6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49971faa487593ba50eb13617327ee1ae6a3163957b2465cadabbac05314534a"
   end
 
   depends_on "go" => :build

@@ -3,20 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/c9/67/88cbc1c18f0c97f07b7e2a0d722f4297a2398f7e6c095a30ec80d75b2126/snakemake-9.11.2.tar.gz"
-  sha256 "d0905992f6db8f887bb40234336a7979d9088886a7cabfb4334557c400d66ec9"
+  url "https://files.pythonhosted.org/packages/f4/4b/5854d3ac3695a39a74d513cd8760df00a9de9ec5a5edd96e621905655a17/snakemake-9.11.3.tar.gz"
+  sha256 "db4e3405fbb104e561e4e466520df071ef77bf3e4faa205a1964dcb9c8519d25"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "273f2e04e98e63d889f823741b2201adfe2450512f7f09fd6a918698cfbc9dca"
-    sha256 cellar: :any,                 arm64_sequoia: "e2bdc15ed95be93d18f5325f7372a440595673107b5b865672297f6d25c26513"
-    sha256 cellar: :any,                 arm64_sonoma:  "9dbd4ad4ba273807c44107b88a2d559b4c2ca3e15c721261ddd1977083eeb42d"
-    sha256 cellar: :any,                 arm64_ventura: "551cf51db544d4c4725aa1f3c71ab98dae1a5a7f3097b0cd55aca80fd5e7aaeb"
-    sha256 cellar: :any,                 sonoma:        "bc2d39ea6b3dc588a65f3218355c2782dc03c896cc4ae1c75ede3454305f3fae"
-    sha256 cellar: :any,                 ventura:       "f080155778230b46f90241c50df5b839c4291625cb24e897e1f34e1a96508fde"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "65ad74dc0d18a8913de29d5d619044d9d4d7062064051ce9fe31903765a9d401"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b73c530297f34b13a35f32e90df91e30f436fd7f5273c634673634ccffa88ab"
+    sha256 cellar: :any,                 arm64_tahoe:   "27534ac0ed51d3695ee4a6a7bcc564bfc92df21269a41eaf89fbd47996eb761d"
+    sha256 cellar: :any,                 arm64_sequoia: "632c055aa64f06ff72702ea8d7d8d735bbffbe04eec2669e7b0c7ae878f2d516"
+    sha256 cellar: :any,                 arm64_sonoma:  "cfe06ea2f137b5398e8691056f632281be6ee7feab9ee41ee1e3f71dcad918a9"
+    sha256 cellar: :any,                 sonoma:        "37bd989f03526e041328ab2e3e9fe41eece8365c7d5cd79ae5f5a9ba2d0a504f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82e71bb82a5b46a98760d35456f4c0ba83b82f261b03325fac1728b24c644769"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e92b023015999665c8df3017ae679ef1db7fec65a6bdd8178870b79c8378fc34"
   end
 
   depends_on "rust" => :build
@@ -60,6 +58,7 @@ class Snakemake < Formula
     sha256 "bf429e7aef65921c69b4ed48f3d48d3eac1383b05d2df91884705842d974d0dc"
   end
 
+  # Workaround for docutils-0.22.1/docutils/__init__.py: Failed to restore metadata: File exists
   resource "docutils" do
     url "https://files.pythonhosted.org/packages/e9/86/5b41c32ecedcfdb4c77b28b6cb14234f252075f8cdb254531727a35547dd/docutils-0.22.tar.gz"
     sha256 "ba9d57750e92331ebe7c08a1bbf7a7f8143b86c476acd51528b042216a6aad0f"
@@ -141,8 +140,8 @@ class Snakemake < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/2a/80/336820c1ad9286a4ded7e845b2eccfcb27851ab8ac6abece774a6ff4d3de/psutil-7.0.0.tar.gz"
-    sha256 "7be9c3eba38beccb6495ea33afd982a44074b78f28c434a1f51cc07fd315c456"
+    url "https://files.pythonhosted.org/packages/b3/31/4723d756b59344b643542936e37a31d1d3204bcdc42a7daa8ee9eb06fb50/psutil-7.1.0.tar.gz"
+    sha256 "655708b3c069387c8b77b072fc429a57d0e214221d01c0a772df7dfedcb3bcd2"
   end
 
   resource "pulp" do
@@ -211,8 +210,8 @@ class Snakemake < Formula
   end
 
   resource "snakemake-interface-storage-plugins" do
-    url "https://files.pythonhosted.org/packages/7e/2d/ecd72f48e1ed49b5cc6651f1ed71ce1fdf9c86de8c241b62c0c6cd33ac51/snakemake_interface_storage_plugins-4.2.2.tar.gz"
-    sha256 "a9da228c21252e60b72ddcec68cdf581f695a9db177053b5bd565e002dc729eb"
+    url "https://files.pythonhosted.org/packages/dd/b3/cd5256e56cfe6fc51319a7d9df1a3a2a7584499fadd3c3fc5619ff39f74f/snakemake_interface_storage_plugins-4.2.3.tar.gz"
+    sha256 "95be93d1aa1c56c189d9ff661930a6475e847a79a74013822c9570c0ef691755"
   end
 
   resource "tabulate" do

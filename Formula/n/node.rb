@@ -12,12 +12,13 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "84bc0646f0e9366f5821dc157248006f8c0c2b433b312fb8ebf6f733977beca9"
-    sha256 arm64_sequoia: "8b83f07790558374365693d9a146bc3d3679108a9caf83309be3e960b4d6e284"
-    sha256 arm64_sonoma:  "e45a52838cc88d525f9599f8b8f67b57015dcd43111aac34d7734e8508570aab"
-    sha256 sonoma:        "93be56014ec9b6ec00f40a705ee1e609dc76d968612f235fab219a666ddccb3e"
-    sha256 arm64_linux:   "a62d7df567536fb22533d60a7c0911567c708321c1df95d77491852b2643058b"
-    sha256 x86_64_linux:  "a883d06900e9291857ead02efa75f2f70880d505419d357ded3ee65b164d80cb"
+    rebuild 1
+    sha256 arm64_tahoe:   "bb5c2204bad0a0ec27acf3a2415d6bd35585ccd8381f467263900a80ab2992ff"
+    sha256 arm64_sequoia: "1eda6648d5c79815fa0349cbcbf8c34b613ee6e3a748c10a12197876b0f36d12"
+    sha256 arm64_sonoma:  "20cd4de5384b83f3da1737fabcbcc103d6a1d45bbc4ca682b2e4f991809bbfc9"
+    sha256 sonoma:        "d4fee38361fb7644ebb2ed271a95b87fa4dfb133818e673be5c304ef53c74f99"
+    sha256 arm64_linux:   "1d23ca175553b7a7f9224f103605c1f887a6768a10676c7b598e1a926e9239a1"
+    sha256 x86_64_linux:  "8ee990f9e8809ad524e45a77299176c47f17986f69783d8c4ae7782742bf744c"
   end
 
   depends_on "pkgconf" => :build
@@ -40,11 +41,6 @@ class Node < Formula
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
-  end
-
-  on_linux do
-    # Avoid newer GCC which creates binary with higher GLIBCXX requiring runtime dependency
-    depends_on "gcc@12" => :build if DevelopmentTools.gcc_version < 12
   end
 
   link_overwrite "bin/npm", "bin/npx"
@@ -70,8 +66,6 @@ class Node < Formula
   end
 
   def install
-    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1699
-
     # make sure subprocesses spawned by make are using our Python 3
     ENV["PYTHON"] = which("python3.13")
 
@@ -214,9 +208,6 @@ class Node < Formula
   end
 
   test do
-    # Make sure Mojave does not have `CC=llvm_clang`.
-    ENV.clang if OS.mac?
-
     path = testpath/"test.js"
     path.write "console.log('hello');"
 

@@ -42,8 +42,6 @@ class Gource < Formula
   end
 
   def install
-    ENV.cxx11
-
     # Workaround for Boost 1.89.0 as upstream commit requires regenerating configure
     # https://github.com/acaudwell/Gource/commit/1b4e37d71506e6ad19f15190907852978507fc6a
     if build.stable?
@@ -51,9 +49,7 @@ class Gource < Formula
       ENV["with_boost_system"] = "no"
     end
 
-    # clang on Mt. Lion will try to build against libstdc++,
-    # despite -std=gnu++0x
-    ENV.libcxx
+    ENV.cxx11
     ENV.append "LDFLAGS", "-pthread" if OS.linux?
 
     system "autoreconf", "--force", "--install", "--verbose" if build.head?

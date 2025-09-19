@@ -1,8 +1,8 @@
 class Moon < Formula
   desc "Task runner and repo management tool for the web ecosystem, written in Rust"
   homepage "https://moonrepo.dev/moon"
-  url "https://ghfast.top/https://github.com/moonrepo/moon/archive/refs/tags/v1.40.3.tar.gz"
-  sha256 "4980c8059e22b69e76f67652b6959efc1f8aff4576dee3bf6f5d8c2e8a2d822b"
+  url "https://ghfast.top/https://github.com/moonrepo/moon/archive/refs/tags/v1.40.4.tar.gz"
+  sha256 "473029179d606418b986ddbcda8d1f74c806e7ccd3203c22f71ff6d9bf37f61d"
   license "MIT"
   head "https://github.com/moonrepo/moon.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Moon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "af47cb3cafcbc10d7594283dbbf2abf50bed693d06d0361fc8d083050c2fc73f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d46433cdbb287e260a103124765349cda8dae846d228b970b97f70b85867e3e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a9ff0a981dc7cbfcedae798e4c573fffcb5a096939745f193ca682b72fe2b85"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3a8aaec0568cd1856e9332de1f53f3a59a68f7bf78ea1677963aab90e570d247"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d731be1d99639e0979f99ea111e974192a61ed135b1328d510e81ceed92ffc69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "181f359ee424cdae251a5c95aecff929464624f3ca44b307ca32f50f206fd77b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e35bdada996d7db8eba0eca1f33e5e51d1b29ab563b7ae6d8bddd08222ad2ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "202462315c469a52a360c7c3038e19c7471f0ee97c1c7902fe5dfbd7c12bae02"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2fc83ab494bd1b44be1f14f27235b787900d538940d8fffe9fe761d0a110959b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4b481232d314c2a50a2256704534173a906fffcff46d32c61ed5b7a37b5eebc2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "06db1b5fa7216f1cd9a8f70b681543f5d611c513db12b0d9f342076d4513dc5b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed2de30ff5c357e4310ce43668cd3c3b3405c597d1dc65b2413b5cebfe909119"
   end
 
   depends_on "pkgconf" => :build

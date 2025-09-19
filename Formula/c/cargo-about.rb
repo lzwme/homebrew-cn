@@ -1,20 +1,18 @@
 class CargoAbout < Formula
   desc "Cargo plugin to generate list of all licenses for a crate"
   homepage "https://github.com/EmbarkStudios/cargo-about"
-  url "https://ghfast.top/https://github.com/EmbarkStudios/cargo-about/archive/refs/tags/0.8.0.tar.gz"
-  sha256 "753c36632d590725386bfce9963ea042eb2687da94f55aade9d0ffcbd7128246"
+  url "https://ghfast.top/https://github.com/EmbarkStudios/cargo-about/archive/refs/tags/0.8.1.tar.gz"
+  sha256 "909587cfebfe094fe0d1721a288eb280535cd61ce2e3a2046085a32523a564d5"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/EmbarkStudios/cargo-about.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e73bf6e2db27ddb02fb6a73bb207308c7a3e52ba96c1c9a75ceacc5b52be281"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b2a4440ab508f56fe93b9fbf0d906e5bff31d8b06744c3ad15ccf03aed522e6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45aa89dcf3d7aca2d231da56c3e5498285cdcc54edaa8e34a396427609e9fb0b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3d06052d6132f3ed8338fdc9d298254064c69bcabfbfb7d22461d109a5b75f2c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5aacc4f773f76881135afbf9db488fba16a7998cf9f0f1231f355017f9b1752c"
-    sha256 cellar: :any_skip_relocation, ventura:       "b3dfcc8a118c313b7b42db257bbe16c8e7bb2957ccb38ca7770ba23bccb97243"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aaa96e94c34b3d4a09e858d07a238f83d6e144b595ef6040ec52c23ccfa4f651"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e3d335511ceaa356ef5783a48b1a6c9c19b784e11a0a5451c164a29224c2e0a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77b358b770d9a704379e58799cdc6c64f2cb831e0ae3e08d99ee047d80ea1cd9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "186b56adfaf9a8e47ffc931591fa65c0d502d77bbfa3d86dc044719b792bb294"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f5aa18138065dfc98e5dddcf412e002b03dd646c8f3f648b6c6adda4bb18867"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f9c1ce66b6d3000dc08b38081c94c6a63bda1b380a39ca3ff2e7ce4c6af54eb3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "adda161ce59eabb761085e27279fdee063a7129636f90345f338b6773a8acf02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae125b5123f6608c9156840862991de0402de362f01314e57e1465393b26d19d"
   end
 
   depends_on "rust" => :build

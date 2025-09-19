@@ -1,18 +1,18 @@
 class Code2prompt < Formula
   desc "CLI tool to convert your codebase into a single LLM prompt"
   homepage "https://code2prompt.dev/"
-  url "https://ghfast.top/https://github.com/mufeedvh/code2prompt/archive/refs/tags/v4.0.0.tar.gz"
-  sha256 "8d5958a7ad8f906c6643bdf541404c008d89be6f26102a29f2c4f485a42b911d"
+  url "https://ghfast.top/https://github.com/mufeedvh/code2prompt/archive/refs/tags/v4.0.2.tar.gz"
+  sha256 "ea587473f2c66afa533f54d76abc45ad23623eaa3650ee7e8d0bc618ee75c0e7"
   license "MIT"
   head "https://github.com/mufeedvh/code2prompt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "37fa9bb30d4a91b9dd4f6df0ab2195f46d7d4c46899b9a7464b129ca3fbfc66f"
-    sha256 cellar: :any,                 arm64_sequoia: "009975fe56d00c4fe9971398f237d43fb808bbe5af442f64e78e366acaced0d6"
-    sha256 cellar: :any,                 arm64_sonoma:  "6a272bc9d14e3f08ebbeeb7252ab74ada3e3b9ff0910dd8df2f984ad37837325"
-    sha256 cellar: :any,                 sonoma:        "167da1a869c15dd2a634c3904cace612126d0d8cb86d38b52d66aeecb4dd6101"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c46693d8f26cfb4c311a8e0b1e547b9e41ebec852a2047531a5494cd532990f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "509b18b70a5c674ec72d4e2bf31002b36c27b8313ea1508410162b5fe9d1b825"
+    sha256 cellar: :any,                 arm64_tahoe:   "39e9acc3e7ddee5b590994cdf30e5d1e1424e85aeaa759b84fd3f8df710cdcf2"
+    sha256 cellar: :any,                 arm64_sequoia: "e9f49fee5ddea12d9683e131a68c8241eab35381ad1d5d79ab7bb5e69dec80ff"
+    sha256 cellar: :any,                 arm64_sonoma:  "c9ce03e8d805ca949b997a55a513632bcb6e02da39efac5d30fd12981253b239"
+    sha256 cellar: :any,                 sonoma:        "a6ec265b32a19d46f22f677ed9d15229652acc4c929f72ab9f3e4076db84f906"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34fd986896b0f0837cd417c3cd219bb236ce5f9ef3d45688680f85eaef95b96e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35b7d1ba2ae1c91fd857bdd897e3b8a9fb033fdeb7013bf131ba641146aab464"
   end
 
   depends_on "pkgconf" => :build

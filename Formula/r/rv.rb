@@ -6,6 +6,11 @@ class Rv < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/spinel-coop/rv.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4e114dd6c14e181e55d44b1f731abd2fd47aa9ea4d17e01b56a22243fcae97f1"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e9700d0e8de58f7bfb9fb05835b24b805b265355bb24a8aac141b538385a766"

@@ -1,18 +1,18 @@
 class Cookcli < Formula
   desc "CLI-tool for cooking recipes formated using Cooklang"
   homepage "https://cooklang.org"
-  url "https://ghfast.top/https://github.com/cooklang/cookcli/archive/refs/tags/v0.16.0.tar.gz"
-  sha256 "05cb33e3665b05aed28730d8676b875cc2e6ef825689f21b468a4ffc13bfb801"
+  url "https://ghfast.top/https://github.com/cooklang/cookcli/archive/refs/tags/v0.17.1.tar.gz"
+  sha256 "113e44c38de08f62d1e888e05795893c3813601d3334d15cc0ff096f9551561a"
   license "MIT"
   head "https://github.com/cooklang/cookcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5787da8e34447921294044fd847e7c3dab6a610927f2d969bd3b3f26c7e572e2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef64797f8e9449eb7fb187263b2226dc76c621c9613605cc01f9efae560a03d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3722ef48375f7580ee7b224390998a6cc579142e404d199e4287eb4ae9258aa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "68caf7b9b0b6fb06be676d7998a6228389765e390809d8eed03dac8ee06592d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed714379c494d3321c1b9439afb664f0eae31c8ef201a5cfa7c25b1beff2465f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "becd7c59c54ab9e2b441a78908f0c51d3a4b71f746afe1a67494030c4f3e31bf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "28ce1ee7fa21a056e1439106ea2da0debd9211169228ff4a4f68a7eecec405ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37e39686016ecbfa33f6a1ef95a0e4ce186bb9612cb2e78863c3191ceabe4441"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c632af5ca3a16a24c991cd4fadeb36c6c6cacf1c9bc26a3882c53394d409cf7d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b9487d6b04d57beceb8d06cfce278a5dc9dd38750cf3bc4b7680ff2f5ea07b34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "48cea9fbd0be5fcca43aba8ae887e3fa7bc79690813d29554c3b24f4af24a2de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "797ed4f181da7e74b2a727a0cb79ad68f9a38476df7e0fedf6996825e19ece5e"
   end
 
   depends_on "rust" => :build

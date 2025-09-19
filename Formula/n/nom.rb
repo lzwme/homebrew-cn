@@ -1,20 +1,18 @@
 class Nom < Formula
   desc "RSS reader for the terminal"
   homepage "https://github.com/guyfedwards/nom"
-  url "https://ghfast.top/https://github.com/guyfedwards/nom/archive/refs/tags/v2.14.0.tar.gz"
-  sha256 "575207aad706ebdbbde648a6948f073a202bd4b5810031ceb3a7de5eeae938b0"
+  url "https://ghfast.top/https://github.com/guyfedwards/nom/archive/refs/tags/v2.15.0.tar.gz"
+  sha256 "6097e96980e7de401e699f2608635e6bb57c09884f2d04d9dadd57a6374f330b"
   license "GPL-3.0-only"
   head "https://github.com/guyfedwards/nom.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b20c805ce43c3a22720e1fed1a8abf2341c144b60d1076f9d298cdcec2e52a50"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f08b63f2ed3f7b9f4a99edecd9afb3a38bddaba9aadee8050f13b8fff69994a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "437f1292938b070066bc61cb09e366140a49dee6e20d3fff785c8346572f1a0b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "84655f5d92aeb6029bcf33e77e3d3eb3c36211ea437ba2ecde9a34da33fcab15"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4d0fc91c589c4563032ac2692c0245d3613d0c4cf726f1c7976e75ee91e33742"
-    sha256 cellar: :any_skip_relocation, ventura:       "3b3e958df29f9a83b2e1b479fedc3c63832f9e95a3acec10865438b0b1106c8f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf517af832854720b7fcad7858559a7fc29f57cbcec78593e5908f0eb036d5d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63b0c2cbd89397241328ba0e34119adfeba97fe57a6e548d00dcf330de174f9f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f6fbfb521a301a3310d03b5ba292b8d1f50faaef1ed555e15091c3c65473756"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d519f1348258605c0a7e3226ffd28036e58df7471dbd12a04e080dfc470fe9c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40b4533c7646fff181cac42ead095b77c885e6dead03c3507b09da20b989bef3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1ecac47f089863eca5af5043b3cfbd6db8f5a5234e20888ff64a0a426b3f26a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "356d2b0699f6d9f1945379492e70ca91c4a68673a972a7dcb7cfe87e285ef0a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15fdfb3b8bff3b29e80e54d1e333915e940d300da54589adff2869620572d019"
   end
 
   depends_on "go" => :build

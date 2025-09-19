@@ -33,6 +33,10 @@ class GccAT9 < Formula
 
   on_macos do
     depends_on arch: :x86_64
+    # Align dates to remove Intel macOS support with brew
+    # https://docs.brew.sh/Support-Tiers#future-macos-support
+    deprecate! date: "2025-09-18", because: :unsupported
+    disable! date: "2026-09-18", because: :unsupported
   end
 
   on_linux do

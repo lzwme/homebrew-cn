@@ -2,10 +2,9 @@ class Gradle < Formula
   desc "Open-source build automation tool based on the Groovy and Kotlin DSL"
   homepage "https://www.gradle.org/"
   # TODO: Switch to `openjdk` 25 when 9.1.0 is released.
-  url "https://services.gradle.org/distributions/gradle-9.0.0-all.zip"
-  sha256 "f759b8dd5204e2e3fa4ca3e73f452f087153cf81bac9561eeb854229cc2c5365"
+  url "https://services.gradle.org/distributions/gradle-9.1.0-all.zip"
+  sha256 "b84e04fa845fecba48551f425957641074fcc00a88a84d2aae5808743b35fc85"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url "https://gradle.org/install/"
@@ -13,7 +12,7 @@ class Gradle < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1bc0d97ec6cb861e2a8a7e3be2743106b2e11aa23ba8be4b626243ae8f7174dc"
+    sha256 cellar: :any_skip_relocation, all: "e13126cd6030f1b0939f0ffd9f2b22b1cc2640631d96ff6076093bcd6f0fa839"
   end
 
   # https://github.com/gradle/gradle/blob/master/platforms/documentation/docs/src/docs/userguide/releases/compatibility.adoc

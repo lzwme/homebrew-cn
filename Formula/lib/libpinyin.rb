@@ -1,8 +1,8 @@
 class Libpinyin < Formula
   desc "Library to deal with pinyin"
   homepage "https://github.com/libpinyin/libpinyin"
-  url "https://ghfast.top/https://github.com/libpinyin/libpinyin/archive/refs/tags/2.10.2.tar.gz"
-  sha256 "8409bc81c8fce83f31649f7287e94cc71813947b1e767c544a782023ac2b5a22"
+  url "https://ghfast.top/https://github.com/libpinyin/libpinyin/archive/refs/tags/2.10.3.tar.gz"
+  sha256 "a49286721fb2b0234d86c095db9226246b0aa4a0bb6a885d0902da2743c56476"
   license "GPL-3.0-or-later"
 
   # Tags with a 90+ patch are unstable (e.g., the 2.9.91 tag is marked as
@@ -13,13 +13,12 @@ class Libpinyin < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "c3eff6787b4bc6cbf0e273a6ba581d8f3e084d446b2c80c6c67e4d6604461a05"
-    sha256 cellar: :any,                 arm64_sequoia: "699b9d73d9a1b5d16bddc316b6bc1318438ebfa7c690a55d0a62d1eaea44e723"
-    sha256 cellar: :any,                 arm64_sonoma:  "873af165cb45fd26a2c2530c25d0b9a2e069735d91c259552a3e15bd7b56f952"
-    sha256 cellar: :any,                 sonoma:        "55db6b57140725c04486323779e41975236593d7d0653cdbe8fed500a5f9e0f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad69490dffe944746572abc03f9fac9a07729271e7f00be47083d7afc6dd78d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e96c07a3b59e86a4f372d0fc46d534571901e89d713f6218ac8baa00eae3f13"
+    sha256 cellar: :any,                 arm64_tahoe:   "de407b23ef3deebd69bdda4160591705884a7b45fcf63518867f7218534dce74"
+    sha256 cellar: :any,                 arm64_sequoia: "73fe3debe8e55d78e4e2ba3fc01fa84aa97ef89dd60adf41596eadee37ddb040"
+    sha256 cellar: :any,                 arm64_sonoma:  "b6ec348b937f4a2a1da925a160be7dcad08b458eae3a1fa30f965a54c294fe2e"
+    sha256 cellar: :any,                 sonoma:        "c152806d01f00326521a8da08f1e4509d0b19a449e10f2dca16bbe2e08340164"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a06f3065cfd258fa3e25994e1067d57b2ee59f999f3441ad8b00174b198bf5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4bf5113220b57a9691995f825b0171c9bba1c63fd0aee0e9c6eb9c2f8023c44"
   end
 
   depends_on "autoconf" => :build
@@ -44,21 +43,6 @@ class Libpinyin < Formula
   resource "model" do
     url "https://downloads.sourceforge.net/libpinyin/models/model20.text.tar.gz"
     sha256 "59c68e89d43ff85f5a309489499cbcde282d2b04bd91888734884b7defcb1155"
-  end
-
-  # Fix build with Apple ld
-  # PR ref: https://github.com/libpinyin/libpinyin/pull/168
-  # Issue ref: https://github.com/libpinyin/libpinyin/issues/158
-  patch do
-    url "https://github.com/libpinyin/libpinyin/commit/5f5b34410ef43acef28208021fb5e38f0ca33076.patch?full_index=1"
-    sha256 "e8f19214941f58345886d5a512bea8108651892f6e647ea2e3117385a33c941d"
-  end
-
-  # Fix export of `_zhuyin_get_zhuyin_string` in libzhuyin
-  # PR ref: https://github.com/libpinyin/libpinyin/pull/169
-  patch do
-    url "https://github.com/libpinyin/libpinyin/commit/ad198143aa446478918484d1a49be3a60f50d453.patch?full_index=1"
-    sha256 "99f5824b8b285566555a309bfa5fcc06a50a07977250954587472ea62d83b361"
   end
 
   def install

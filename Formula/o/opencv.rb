@@ -32,9 +32,11 @@ class Opencv < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_sonoma: "a9ae56d67ce87ae14906b12b373c72b98aafb146a82c398a0f8a2c3b46f57546"
-    sha256 sonoma:       "24a9b60f1ac6e89f0444a5085eed844c8d2cc39e74de614a3b9c84b31b986a18"
-    sha256 x86_64_linux: "84dc9a1f0463ef21e1bd034cea5fea2afd5c8c811e3da953687dc4a6ff8ee822"
+    sha256 arm64_tahoe:   "cffc96f2c611941e16ea87f7b7b69cce99740d0ac67413bb3c851420dc634c62"
+    sha256 arm64_sequoia: "9a11ccb4a364d0d76db24564fc315d9c616497ba98f273c75913c8ded3e4894b"
+    sha256 arm64_sonoma:  "a9ae56d67ce87ae14906b12b373c72b98aafb146a82c398a0f8a2c3b46f57546"
+    sha256 sonoma:        "24a9b60f1ac6e89f0444a5085eed844c8d2cc39e74de614a3b9c84b31b986a18"
+    sha256 x86_64_linux:  "84dc9a1f0463ef21e1bd034cea5fea2afd5c8c811e3da953687dc4a6ff8ee822"
   end
 
   head do

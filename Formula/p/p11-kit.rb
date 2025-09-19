@@ -1,17 +1,17 @@
 class P11Kit < Formula
   desc "Library to load and enumerate PKCS#11 modules"
   homepage "https://p11-glue.freedesktop.org"
-  url "https://ghfast.top/https://github.com/p11-glue/p11-kit/releases/download/0.25.8/p11-kit-0.25.8.tar.xz"
-  sha256 "2fd4073ee2a47edafaae2c8affa2bcca64e0697f8881f68f580801ef43cab0ce"
+  url "https://ghfast.top/https://github.com/p11-glue/p11-kit/releases/download/0.25.9/p11-kit-0.25.9.tar.xz"
+  sha256 "f6512a10b2dcf2651cfd57dd767a36c6e44494ab37724c10d4304fe9f0a36497"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 arm64_tahoe:   "ef581d3e882b5a63bb27ffb0551b17e0ca30b8c0683ba4cfd4d9742079342f01"
-    sha256 arm64_sequoia: "4b4c6317a0f8d86da5d28f5d007e09261c399495702de85740f94434ca444ba6"
-    sha256 arm64_sonoma:  "fd33d5a316258e8ffef0e516431364dee2d3971becf35d089a817eb124a929d3"
-    sha256 sonoma:        "1c2e8ea6929035249d454facf9e2030c3ee9e7ad56b2b3fc1eb11de6998981a2"
-    sha256 arm64_linux:   "87dfc23bc554d901ff0bae3172d8d6cbd88c6a5385fe760df094f5d995100031"
-    sha256 x86_64_linux:  "c7e65a8168c796f263301a7ad748eebd1ead9db09cf16d669912c7000a98ed8a"
+    sha256 arm64_tahoe:   "184383aa79a57f0bb18aef941c0ca6ce68dfcb19571337b0b09be2fe68589964"
+    sha256 arm64_sequoia: "a31e4147c7072d39ee1e06f8fc2662366985d6688d6562dd0da8df6620c9d719"
+    sha256 arm64_sonoma:  "5b63b2f4654579eadc51c0c58f72149f6d76913b2cb2f074515ff0835dc0a27f"
+    sha256 sonoma:        "428b0ccda37b34b9516560d52d97bd9f2229aff5bd227ff7a4bc352fb7351752"
+    sha256 arm64_linux:   "a39b9a8cdfb23f37530f255b5e41c384b02776394fd889562d8f38bf1954a96b"
+    sha256 x86_64_linux:  "6a1620b7a97e86c05959c1087171808a2066d568f2e419449e7b8dc80fb1ce82"
   end
 
   head do

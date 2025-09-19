@@ -507,6 +507,7 @@ Homebrew-homebrew-core/Formula/b/beast.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/beautysh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bed.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bedops.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bedtk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bedtools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bee.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/beecrypt.rb, Homebrew/homebrew-core, 0
@@ -7450,6 +7451,7 @@ Homebrew-homebrew-core/Formula/w/wait4x.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wait_on.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wakatime-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wakeonlan.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/wal-g.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wal2json.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/walk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wallpaper.rb, Homebrew/homebrew-core, 1
