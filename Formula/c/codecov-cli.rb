@@ -3,17 +3,17 @@ class CodecovCli < Formula
 
   desc "Codecov's command-line interface"
   homepage "https://cli.codecov.io/"
-  url "https://files.pythonhosted.org/packages/ea/f1/79cbb1c28c6fcf637155c780bd4e68172c7ba0d43b104f0b08923f4d80b7/codecov_cli-11.2.2.tar.gz"
-  sha256 "d77f82d4c5f05ab0336071a14a95f643e8b6abf78ba101b3af58f4856ff7c428"
+  url "https://files.pythonhosted.org/packages/cf/93/57e484d41082818a91badfd64f31618431a0c55eeadbc1dde41f2ee4f6b7/codecov_cli-11.2.3.tar.gz"
+  sha256 "89cd48341b3fd7941760336d0fa03d99ee1a4cb262ac85d5e04089e5a25688e7"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3f2a8ce2deda31c156b440766b649c96744c52b027efb29ef790b75c6fc430cf"
-    sha256 cellar: :any,                 arm64_sequoia: "7a753f2eb67ab85f188e788f02434b94382dd636463752843ee8fd02326736bb"
-    sha256 cellar: :any,                 arm64_sonoma:  "1aa71d4759627dddd378b2744c00e450cac1f35d537452d8cc8969e13e8397ba"
-    sha256 cellar: :any,                 sonoma:        "3cff859fc047f1ba5a6a34e754494553e75817c8fa5836fb50a1b594112bfed3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ca53304a27fa9fc8453d616e0bd4aa76b92f9559fa14acc869e573d5db863d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72de1eefe9c250a1b2da8888a6623e6208287725cf08bfea3687dbc5ac412d3c"
+    sha256 cellar: :any,                 arm64_tahoe:   "aadf4a2374a70c622f052384d113d8354bb3fcf30ab73ebcb2a9abe84cccbabc"
+    sha256 cellar: :any,                 arm64_sequoia: "1b7f0687fb22a9c30a5bf317d94723571936d5db1b57c14bf9604c5f00f439d3"
+    sha256 cellar: :any,                 arm64_sonoma:  "31834fac73197d3975472fb1554abdcc9a45007c6c5e038e4f46ae1204080e6f"
+    sha256 cellar: :any,                 sonoma:        "36814402660c424350c8bad7e7695bd28386edf02d34e99535799ac881d817ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f996e37fc3fc0885ebefcee1379e2e2d7a1cd62226dff5e11d7690c858f4d6ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc7f54d7a4cbaf271554dc5388575e1193d440565e20f79f9e089af9f9062852"
   end
 
   depends_on "rust" => :build
@@ -31,8 +31,8 @@ class CodecovCli < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "idna" do

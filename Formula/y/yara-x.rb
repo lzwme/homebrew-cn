@@ -1,8 +1,8 @@
 class YaraX < Formula
   desc "Tool to do pattern matching for malware research"
   homepage "https://virustotal.github.io/yara-x/"
-  url "https://ghfast.top/https://github.com/VirusTotal/yara-x/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "ad518c29a21eb1d2a2ba2808de538499633acba5ace1af987b789be0d0416994"
+  url "https://ghfast.top/https://github.com/VirusTotal/yara-x/archive/refs/tags/v1.7.1.tar.gz"
+  sha256 "f74302102666c11c7e87578872e7cdd354c123139b17b2b7fb206c912766b593"
   license "BSD-3-Clause"
   head "https://github.com/VirusTotal/yara-x.git", branch: "main"
 
@@ -12,12 +12,12 @@ class YaraX < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dbee1c396ae4d9a5de1a9e7292e87edb85a7efddbfc5f48973d74d0555e6d9df"
-    sha256 cellar: :any,                 arm64_sequoia: "b1e156487d005579a5661bb099b8037027c4fe7359bddbb5eca1e0ad84f8054b"
-    sha256 cellar: :any,                 arm64_sonoma:  "28205adcd00e95ec6cffa459fc96a0ea074b4e1062e4d98c18e798628b0ea369"
-    sha256 cellar: :any,                 sonoma:        "09888dcc862a2e7b0b61aa407fa3991b10210a9b68d8e8938a2c97b67dcb8659"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d94929f47a20fca6c0788f3214efaad169d7a8ba808dc845011d6eb0f1442e94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "477888ded674d249f98ea0c06863ba49202a6408eb48f27bcc737ae70b59c069"
+    sha256 cellar: :any,                 arm64_tahoe:   "5676ff1c1a0ec59fbb72f3353d290129a217153870e1751f207675ac298784bd"
+    sha256 cellar: :any,                 arm64_sequoia: "9d040f1ffd3ac087f144ee2cd85cac832480d79f69cb2cf324efe55a84a7245d"
+    sha256 cellar: :any,                 arm64_sonoma:  "c917d38ae4148d6f59954abd3ca2f927c9045f4b8749f4d6b2ce2122ccaf308f"
+    sha256 cellar: :any,                 sonoma:        "96f480ef4c3d8c0c668cb02c20d30bc0a1fd93bc5829fc89640204bcf5cd5f5f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "026b67265a55d345e3e9075f604cc587a3976c5fb342f45985436d41d351330b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cc1214c04297a18015518331bf240f0ba9c963d3a014bec6212786e100eeb42"
   end
 
   depends_on "cargo-c" => :build

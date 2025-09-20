@@ -1,8 +1,8 @@
 class Mydumper < Formula
   desc "MySQL logical backup tool"
   homepage "https://github.com/mydumper/mydumper"
-  url "https://ghfast.top/https://github.com/mydumper/mydumper/archive/refs/tags/v0.19.3-3.tar.gz"
-  sha256 "678ed61d88d354750687610c871ab5fcba668be4274268c9aeafa9b53a8cbb8f"
+  url "https://ghfast.top/https://github.com/mydumper/mydumper/archive/refs/tags/v0.20.1-1.tar.gz"
+  sha256 "8abe5215b4ce159c60439ed4fc709fed3ee03e8ef12ce21666d3c21ce55d81e0"
   license "GPL-3.0-or-later"
   head "https://github.com/mydumper/mydumper.git", branch: "master"
 
@@ -13,14 +13,12 @@ class Mydumper < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3591f0982e59c32f6b41d1edd06972e100d77ed337e1b779dcfe11c4d913336e"
-    sha256 cellar: :any,                 arm64_sequoia: "9c470dc1fea731799de845187f2fbeffb59c814296689240a5dfb3b7d5756ae1"
-    sha256 cellar: :any,                 arm64_sonoma:  "f46ec7f6636a70ec96d8e887cf2d4deb96487c7cf73a31a0bd9fb2988aeb897a"
-    sha256 cellar: :any,                 arm64_ventura: "d03984e1c701bf73739f7fff4be327312b69790dcdec8ce11300c2660aea8585"
-    sha256 cellar: :any,                 sonoma:        "197f527858dbc06d663646466050c0a58f766ce3f692805ab05f00153b798fec"
-    sha256 cellar: :any,                 ventura:       "83ebafd7ed5012c45b32173702ceaaebd226ac633e7c0ba58a93950648d59292"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d9a6314b2a736df5433db2e2c36c2523fa65de46accca4a01f256017b2b49d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "207adef3664276674ee3e777946e3b6d8a2166abe10d67e9da16339354770a13"
+    sha256 cellar: :any,                 arm64_tahoe:   "4bfc9c0f567bb467e1a9ae52e669d0928c1c90c07aceddc61c7ab805d4ff8025"
+    sha256 cellar: :any,                 arm64_sequoia: "586da5be0bdc9d2dbe4843fd560236fe97c5b1dea7c2ece402a1b7f2cfc91d65"
+    sha256 cellar: :any,                 arm64_sonoma:  "5d85a241109f2eec02225a0a31938f6a47aeb6541fb5f730827d69fb423d8b96"
+    sha256 cellar: :any,                 sonoma:        "35a325c4b5553b27ffb16c300bf14316c10ed44ef12154b2da90cfe731e1e1c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "065ec5d1ea933f5d4443de7a36cbd0652ff20217b5b5b06b0c5ddc3131245829"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98965efe001c9c22de6705b09c0c3bead8672b1ae0e7a46ae68a8e4e9ff04e42"
   end
 
   depends_on "cmake" => :build

@@ -3,23 +3,22 @@ class Pdfalyzer < Formula
 
   desc "PDF analysis toolkit"
   homepage "https://github.com/michelcrypt4d4mus/pdfalyzer"
-  url "https://files.pythonhosted.org/packages/04/e1/0c345c69a02bd4be18ae30c60d5f29861faedf833b9c51e55d91c457e9ab/pdfalyzer-1.16.14.tar.gz"
-  sha256 "0abae20d4d01cc80a49a566732045a3b8e37cb2aa2ac46ef5286b4ce2f335f92"
+  url "https://files.pythonhosted.org/packages/71/35/03a2fc1a6204b7fefa264fe8e3128a25cd873825a30c393c517291e66b50/pdfalyzer-1.17.0.tar.gz"
+  sha256 "ee3eacb0309db749ac8559abe73e9b7cee1ea3fd46d00ff0947bd2e544e3d56a"
   license "GPL-3.0-or-later"
   head "https://github.com/michelcrypt4d4mus/pdfalyzer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "db99d1b80f8217d4c085c6e87a6e4e2e33eca3700b376efcd91c61e40832bf45"
-    sha256 cellar: :any,                 arm64_sequoia: "62dbacb5b7321209fc8d087c1f4878bfe2e9dbb1f81938d32f31768859567de8"
-    sha256 cellar: :any,                 arm64_sonoma:  "5c28d22f07a063ec377aa21199edd22145e82cbb2bfabefd090f39287880b5b8"
-    sha256 cellar: :any,                 arm64_ventura: "9ae04212bc7ac4d7295b155154c6f862a9a462003cad16ca8fc292353d098575"
-    sha256 cellar: :any,                 sonoma:        "4f8202449ecd055d29d053586ebb8d73b1dd692a8d737ca5edadc93b37a93d98"
-    sha256 cellar: :any,                 ventura:       "c8b561e7ae26258390e6f8d236536aabac506942b230fa546c628179a5175841"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d232520cadf5257919f1d77518cd753cb4973b93b6dc1dd3a91f6a22753d346a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4e70a5d4fdac464ab7484c3c1769ba90ee7cbb3a989013ef547010a35164dcf"
+    sha256 cellar: :any,                 arm64_tahoe:   "8113d2233601f07779ef37c4b2b741416ccfac37d93d090ee7671804d30bd5d3"
+    sha256 cellar: :any,                 arm64_sequoia: "cbc84a909aad08d708f6bf8c580e865bf359cd88ea5841f4e28e8fce599f7b32"
+    sha256 cellar: :any,                 arm64_sonoma:  "bd8831e38972f5e635f4d1fd7d28dbc71ce622c0be351de94b92b7f009db5be5"
+    sha256 cellar: :any,                 sonoma:        "cf140889ccb457a469db75b30e130511fad234a773ab03b8a1a35b861a24223e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "87e2b427300bcb36a7d65917331068376d5637d3e6e9f6f42f50cad21600f5a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab362dc7fde36be394d0e0e39d0b1707c7fe5647e46df002e464b3cc3e7cfc2b"
   end
 
   depends_on "openssl@3"
+  depends_on "pillow"
   depends_on "python@3.13"
 
   resource "anytree" do

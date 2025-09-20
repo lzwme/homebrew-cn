@@ -1362,6 +1362,7 @@ Homebrew-homebrew-core/Formula/d/darkstat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dart-sdk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dartsim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dasel.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dash-mpd-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dash-shell.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dashing.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dasht.rb, Homebrew/homebrew-core, 1
@@ -3379,6 +3380,7 @@ Homebrew-homebrew-core/Formula/k/ko.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/koji.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/koka.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kokkos.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/komac.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kommit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kompose.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kona.rb, Homebrew/homebrew-core, 1
@@ -4977,6 +4979,7 @@ Homebrew-homebrew-core/Formula/o/oakc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/oasdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oasis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oath-toolkit.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/oatpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oauth2_proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oauth2c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oauth2l.rb, Homebrew/homebrew-core, 1
@@ -12421,6 +12424,7 @@ Homebrew-homebrew-cask/Casks/i/iterm2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/iterm2@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/iterm2@nightly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itermai.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/itermbrowserplugin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ithoughtsx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itk-snap.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itraffic.rb, Homebrew/homebrew-cask, 1
@@ -13693,6 +13697,7 @@ Homebrew-homebrew-cask/Casks/p/piezo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pika.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pikopixel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pile.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/p/pimosa.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pine.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pineapple.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pinegrow.rb, Homebrew/homebrew-cask, 0

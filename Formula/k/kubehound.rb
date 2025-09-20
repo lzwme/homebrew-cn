@@ -1,8 +1,8 @@
 class Kubehound < Formula
   desc "Tool for building Kubernetes attack paths"
   homepage "https://kubehound.io"
-  url "https://ghfast.top/https://github.com/DataDog/KubeHound/archive/refs/tags/v1.6.4.tar.gz"
-  sha256 "63cb38cc12f33842a255852a45d2c795f8b20cd7de546154af1dc6a7c9fa0441"
+  url "https://ghfast.top/https://github.com/DataDog/KubeHound/archive/refs/tags/v1.6.5.tar.gz"
+  sha256 "a92b3a9e07f71d3462815e5b6d706a56aa1e7b6e99dd59926dfb31bea15fe73a"
   license "Apache-2.0"
   head "https://github.com/DataDog/KubeHound.git", branch: "main"
 
@@ -12,13 +12,11 @@ class Kubehound < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "99c9c87538558092c8a62136c16e7f196035f6a92400b92e1a83dbd8684518ab"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46205128162d5b6426da41d995af1a4b7ffc80922bf7be21d88b53b051b0bfde"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4efa0e3d2f31f208b9f6362e9d5a9a45dec95f63c1cffcc627e847aad8fc428b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "83b3bc446f6498809bb4aec69bd21599647b687bfe0070531d5242da25213adc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2030af4d1926d7e5b4030e2b2e50af328ebe5a9cf9f3240aeddc19122e745513"
-    sha256 cellar: :any_skip_relocation, ventura:       "673c01749b813c570f2044863796057528a5f032780f2e29dfc5579328dd24d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ff86c1799aba7da91ebd19693f46c67286d75ec041bf6b0a650455e634ebc68"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4389f31009dc324be19315c53d635b9f8ac354559a8089189c37d47ca4a59ebd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f5f80ac7b37055119254d8b1c021b73f79a90e3144564996de8d70b6a589a0b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f26b1cce56e82aa0692ff583ba0cfae00ed1f89beafdbdd220b726fa84f9bbc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b10d7b58c11853112ddfb8b02d7f9a2d98d47b807cdc9174f223a81ebeafd7d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0ca2e9b024218f6e8b8c8b378cd6f73fea92ca0804c7f517d6df02cf9aa441c"
   end
 
   depends_on "go" => [:build, :test]

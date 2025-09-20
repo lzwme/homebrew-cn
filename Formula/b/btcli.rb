@@ -3,18 +3,18 @@ class Btcli < Formula
 
   desc "Bittensor command-line tool"
   homepage "https://docs.bittensor.com/btcli"
-  url "https://files.pythonhosted.org/packages/9e/d1/c1e5ef51ff2655ad2cffb2d4bb27286aca1b91366fcd31ddc0df0297970c/bittensor_cli-9.11.1.tar.gz"
-  sha256 "41c7c25e5a344e08bdd638bbaf8285349fa90df39d2614271f7cc97f504e8ea9"
+  url "https://files.pythonhosted.org/packages/78/76/04ca9938fca72465ef129b783f3d960edf98ecb455ab03ffb43547068fac/bittensor_cli-9.11.2.tar.gz"
+  sha256 "11da18f7682e66f75cf5fc2f846ebe47b4b963c850f7a9394bf63609ed4fc09a"
   license "MIT"
   head "https://github.com/opentensor/btcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fcfc8391c4838e03da3c04a3ea2aa24e2dd09b012921f36e3f980660dbc3768d"
-    sha256 cellar: :any,                 arm64_sequoia: "680b70b712ff468d2549094482bdf16e343b501b51d47773dbcd2865aac6dafa"
-    sha256 cellar: :any,                 arm64_sonoma:  "ef72b11d5a5807018c2dc9ff92e5831982881ade8a9d65834fe3332be140808d"
-    sha256 cellar: :any,                 sonoma:        "2faf0bbc8e492977fd8034ff5603b3e10bc5b715f003e73004b025af3f0ecf5f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7da038adffe4fa23b01729c6def68f15faee8589b3baeb8a9e75465f2f8257f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e69a6b765f5a20dd1e757203c762158abcc54dc5abe1b9a73afce7667bdb448d"
+    sha256 cellar: :any,                 arm64_tahoe:   "2bf943944d0a13c14a663ca6cc07e43c5104949e28c640579c79245e63bb0f28"
+    sha256 cellar: :any,                 arm64_sequoia: "550adf63d0ba33478156bf321d7c4ac8187cade40e4adcdd3c3861bebd4c2cd0"
+    sha256 cellar: :any,                 arm64_sonoma:  "b3b53869b15efa54a8ac89151a26760de02a751917a5726c16032ad6be415e96"
+    sha256 cellar: :any,                 sonoma:        "b2dd34acac58799f16a693a2a110b41b352c199cca1ec24c861259753015d174"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60d296122acafdf44da8c1ba8e8f0e72ab940a2318abca566a9d43087506bf99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edac9e027918385d07e7832be211118d3bf8013ade078a0586237b9f5547417e"
   end
 
   depends_on "rust" => :build # for bittensor-wallet
@@ -83,8 +83,8 @@ class Btcli < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "frozenlist" do

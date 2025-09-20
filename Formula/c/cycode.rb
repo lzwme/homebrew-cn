@@ -3,18 +3,18 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/85/87/402fb9625d6e5401d32a8587164fc0bd7a802e94d13dd248c2e74313570a/cycode-3.4.3.tar.gz"
-  sha256 "575b5f451cfd6c038d624ff2666b8cb8991332d4056298e7f63b592ca499bc18"
+  url "https://files.pythonhosted.org/packages/75/4c/ffdaae086166f56f0b72f82ce8c538ed1c40e26fba61797e6969a0d36270/cycode-3.5.0.tar.gz"
+  sha256 "2687d19d00af0a25a1775b1b4690b9c526fd567101dbfb1c814a38c479829a66"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2c65f80b83703560a6ac7ce283bfe44bc71040dcc4702741c577e284b324901a"
-    sha256 cellar: :any,                 arm64_sequoia: "8bdccd2ebc63631ff39a88f2b53d195a07d1e6134472f1b643e997a437c1531f"
-    sha256 cellar: :any,                 arm64_sonoma:  "246a256ac8d3c7515809cf6ce233c0a6f86bc191304ea477d7ee0f2b6a1027fb"
-    sha256 cellar: :any,                 sonoma:        "eb70d1d3e212e36c03a974211dd3e01e07ffe89347491183775225eef498f92a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9371b9edaa35ef1e5f701f6050b5fa98a37dc6633a0eca7c3972c9c8b3bbd58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4f27841727d1ed2100235a70557553320a45524e467742934eaf0584017c8af"
+    sha256 cellar: :any,                 arm64_tahoe:   "5ce0f1f9124ca8715a66712727c19f428c083e4962ac6e91f37cc0dcf4838752"
+    sha256 cellar: :any,                 arm64_sequoia: "fe4dc037451a2dcb161417f9d0b4540f4f672cbd0be8e3d7aed24f5249e8df80"
+    sha256 cellar: :any,                 arm64_sonoma:  "5d10319f6ce0f9e655e0eec4e7c88dc5beddcafdb21c2746437f025b2b2d4dcb"
+    sha256 cellar: :any,                 sonoma:        "fd259d26f7021afa7f16320cf5c559ab6447e3d7f927d946106f667a789eba9c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b212132bda95f29128cfd46bea476540b951eef3eedca27820eb3e88f21af40c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aae799acfc1ee8381b04906445c1f58456c66c810c8675e46240997c9d2f906a"
   end
 
   depends_on "pkgconf" => :build
@@ -124,8 +124,8 @@ class Cycode < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/95/fd/d6e941a52446198b73e5e4a953441f667f1469aeb06fb382d9f6729d6168/mcp-1.14.0.tar.gz"
-    sha256 "2e7d98b195e08b2abc1dc6191f6f3dc0059604ac13ee6a40f88676274787fac4"
+    url "https://files.pythonhosted.org/packages/48/e9/242096400d702924b49f8d202c6ded7efb8841cacba826b5d2e6183aef7b/mcp-1.14.1.tar.gz"
+    sha256 "31c4406182ba15e8f30a513042719c3f0a38c615e76188ee5a736aaa89e20134"
   end
 
   resource "mdurl" do

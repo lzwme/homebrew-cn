@@ -7,6 +7,7 @@ class GetFlashVideos < Formula
   revision 4
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1792f9d20bc21a285d0034483f1701f505c64c8a18cc9d75b0befa92c63ce662"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e9585360bd6c0eedbb61d69471027f381bb98b90ec603d27e6054c070ff0bcd"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c98e92953a3439040ea3927924daf3752535f29b6f090d7110f2f4f27cd07aec"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5250458e7b842b0c47b8a0bf82d080088f1a15991b08b7c4b6b54a1af2694ecd"
@@ -178,7 +179,7 @@ class GetFlashVideos < Formula
   end
 
   test do
-    assert_match "Filename: BBC_-__Do_whatever_it_takes_to_get_him_to_talk.flv",
-      shell_output("#{bin}/get_flash_videos --info http://news.bbc.co.uk/2/hi/programmes/hardtalk/9560793.stm")
+    expected = "Filename: BBC_-_Antarctic_ice_bridge_shatters.flv"
+    assert_match expected, shell_output("#{bin}/get_flash_videos --info http://news.bbc.co.uk/1/hi/sci/tech/7983975.stm")
   end
 end

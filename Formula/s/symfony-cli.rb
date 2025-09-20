@@ -1,18 +1,16 @@
 class SymfonyCli < Formula
   desc "Build, run, and manage Symfony applications"
   homepage "https://github.com/symfony-cli/symfony-cli"
-  url "https://ghfast.top/https://github.com/symfony-cli/symfony-cli/archive/refs/tags/v5.12.0.tar.gz"
-  sha256 "327f8cc77e3ddec57a560520521a2da5aeee1dc8b9a45d53ac2e60487b0fba48"
+  url "https://ghfast.top/https://github.com/symfony-cli/symfony-cli/archive/refs/tags/v5.13.0.tar.gz"
+  sha256 "e21afada41ba7d5149ce55133f760100f8e875aec837855acef2968e8712248d"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d57e3e4bc93b6a80d9dc48ffbbaf88db10dfe9692c8fd9173e4464e6910fce6d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fdb9ec2212e40862422cca0ecebe09167f2e811db21119ee3870cde307930838"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f90063aa42eb21007d68085fa7d6206179557715c578562c785bec14a5fdb7fa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "af855856b78bac4b2668a840dad168de51316dafd90eaea722e402c196c549ae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "94880b4c05a6bb84f82acd36e1a855cc3b6aecd48ccc0688406f4669dfd62bec"
-    sha256 cellar: :any_skip_relocation, ventura:       "8121c2ecfc21c484cc33edd21705da4429d970cb515e84fd87ca2f39dbda3148"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e99423e8a0ad1207bdec43b1102ba926ac5a4e1e08b62801ee72a45c35a8482"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed819083eab782305b9c6de2313c66816c4f140bbe02ac5f0864196131b40429"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "887277e92ed2366b422a6f2392b4fa0cc3a10637f946056ad87f99a5d3f7d476"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb63440d3c549907d190df004f6415144b52d5740da4d06d3b1b08e69299a776"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5ebc75121ac96e37ce0e564d5155cffc515c1e85ecb80d220f1aa7079c5125a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5308570206bf19f80bc13bee7c11153f3a41a0cb3e1412d13fc2ba6316a9bd2"
   end
 
   depends_on "go" => :build

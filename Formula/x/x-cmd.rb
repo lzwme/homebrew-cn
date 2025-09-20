@@ -1,8 +1,8 @@
 class XCmd < Formula
   desc "Bootstrap 1000+ command-line tools in seconds"
   homepage "https://x-cmd.com"
-  url "https://ghfast.top/https://github.com/x-cmd/x-cmd/archive/refs/tags/v0.6.13.tar.gz"
-  sha256 "fc6c7eda5ca59adb051b6b5fb781ad6f7dcbb4181f80862270171a884b5bfe5f"
+  url "https://ghfast.top/https://github.com/x-cmd/x-cmd/archive/refs/tags/v0.6.14.tar.gz"
+  sha256 "869a3ac8fe6a62595c91502296b662ff4c86d6e053d17fa495969b2d4f1ea665"
   license all_of: ["AGPL-3.0-only", "MIT", "BSD-3-Clause"]
 
   head "https://github.com/x-cmd/x-cmd.git", branch: "X"
@@ -13,12 +13,12 @@ class XCmd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00fb651b0b84b8cdf9cc84aed8a02ca5a4aafafe0b7a867633530e91c89a8b05"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00fb651b0b84b8cdf9cc84aed8a02ca5a4aafafe0b7a867633530e91c89a8b05"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00fb651b0b84b8cdf9cc84aed8a02ca5a4aafafe0b7a867633530e91c89a8b05"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a6b539a0596b6de49e89ee228dfde638a72b444307c52b7a22214fff9c1169a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "df082579d7a66a903f415e7f22720c21f6725326a23e7126aec2c5b79fc58c70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df082579d7a66a903f415e7f22720c21f6725326a23e7126aec2c5b79fc58c70"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f0ae7fa80808f9884cb00d6cc9028f12dbfbf563bf4ad3a4a7b16e4055843d9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f0ae7fa80808f9884cb00d6cc9028f12dbfbf563bf4ad3a4a7b16e4055843d9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f0ae7fa80808f9884cb00d6cc9028f12dbfbf563bf4ad3a4a7b16e4055843d9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "659c89b1fb5a008abc29c53cfaa43f53a9236b10a356fb7d410ec5f7ca9866f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb6bc32547764b8e5128d1771b237bdd952380dabe37ee6c6bc00177fa25223c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb6bc32547764b8e5128d1771b237bdd952380dabe37ee6c6bc00177fa25223c"
   end
 
   def install

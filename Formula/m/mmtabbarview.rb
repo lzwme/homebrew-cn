@@ -8,6 +8,7 @@ class Mmtabbarview < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any, arm64_tahoe:    "a502f7deb3e18188669316c46c503980256b4286d0c52d1e211a772d45919844"
     sha256 cellar: :any, arm64_sequoia:  "9ae9758b04f5cbc6068b0e41266db2fbad7065d90134060c27bc73d36d780c2d"
     sha256 cellar: :any, arm64_sonoma:   "4b4fbe5492b90614b36b8a99101acbd15b0b9ebc4b415683c273114e47d3e1cb"
     sha256 cellar: :any, arm64_ventura:  "ec634de2a8f60f6d6d09c88cc8ce9293fd94ee07ba2181a7b07a3ee2f29d99ac"
@@ -27,7 +28,7 @@ class Mmtabbarview < Formula
     # Apply workaround for Sequoia based on ViennaRSS fork's fix.
     # This is done via inreplace as pathname has spaces.
     # Ref: https://github.com/ViennaRSS/MMTabBarView/commit/149fd82953a8078c4d60ce3fa855a853619eb3f9
-    if MacOS.version >= :sequoia
+    if DevelopmentTools.clang_build_version >= 1600
       inreplace "MMTabBarView/MMTabBarView/Styles/Mojave Tab Style/MMMojaveTabStyle+Assets.m",
                 "@import Darwin.Availability;", ""
     end
@@ -44,7 +45,7 @@ class Mmtabbarview < Formula
     (testpath/"test.m").write <<~OBJC
       #import <MMTabBarView/MMTabBarView.h>
       int main() {
-        MMTabBarView *view = [MMTabBarView alloc];
+        MMTabBarView *view = [[MMTabBarView alloc] init];
         [view release];
         return 0;
       }
