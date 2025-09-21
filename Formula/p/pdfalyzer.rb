@@ -3,18 +3,18 @@ class Pdfalyzer < Formula
 
   desc "PDF analysis toolkit"
   homepage "https://github.com/michelcrypt4d4mus/pdfalyzer"
-  url "https://files.pythonhosted.org/packages/71/35/03a2fc1a6204b7fefa264fe8e3128a25cd873825a30c393c517291e66b50/pdfalyzer-1.17.0.tar.gz"
-  sha256 "ee3eacb0309db749ac8559abe73e9b7cee1ea3fd46d00ff0947bd2e544e3d56a"
+  url "https://files.pythonhosted.org/packages/64/72/6dee64af8726e26693330a771207d969dab974a92511a5767518a0e5f4cf/pdfalyzer-1.17.3.tar.gz"
+  sha256 "a8bccda071434f7e5c2c475b5c5a42769991df2993586bf2114fc400f893b323"
   license "GPL-3.0-or-later"
   head "https://github.com/michelcrypt4d4mus/pdfalyzer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8113d2233601f07779ef37c4b2b741416ccfac37d93d090ee7671804d30bd5d3"
-    sha256 cellar: :any,                 arm64_sequoia: "cbc84a909aad08d708f6bf8c580e865bf359cd88ea5841f4e28e8fce599f7b32"
-    sha256 cellar: :any,                 arm64_sonoma:  "bd8831e38972f5e635f4d1fd7d28dbc71ce622c0be351de94b92b7f009db5be5"
-    sha256 cellar: :any,                 sonoma:        "cf140889ccb457a469db75b30e130511fad234a773ab03b8a1a35b861a24223e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "87e2b427300bcb36a7d65917331068376d5637d3e6e9f6f42f50cad21600f5a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab362dc7fde36be394d0e0e39d0b1707c7fe5647e46df002e464b3cc3e7cfc2b"
+    sha256 cellar: :any,                 arm64_tahoe:   "875f0fd6450a7c5a4865adc03142ce66f39f77dce49b942655394a487d022b74"
+    sha256 cellar: :any,                 arm64_sequoia: "462c73f5d0692e7a55507824ec218a9adacdb5dce6169349b8d63f5b0a9c6f9d"
+    sha256 cellar: :any,                 arm64_sonoma:  "0bb7b28a993365fcf458251f614158229cd60b933cb3ebdbdaad1d802a8c9cb1"
+    sha256 cellar: :any,                 sonoma:        "0ced01e7b76f11a3c9f18586e9726e6e5c7eecd7f4da778920fdb0e0171b1275"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd1e219e9f1c311d160d0d359ff55df8e81c0436d2173caa0d5e451007146c71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4950d4b024611d6117a7ca3c5e816a9ec55c20cc06e9ea099bb3769001b826a4"
   end
 
   depends_on "openssl@3"

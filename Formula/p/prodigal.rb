@@ -13,6 +13,7 @@ class Prodigal < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "53b753a4ebac8132ae38ba5c35f9c5466ea322b76bb87d4b408a11ace114ae9f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0586dd1f22c8cdb1ed73c2eefc20f80ff3ad711cfb16e2f72ca7f72798161f51"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7dfefaef30d736f08630c536dc66bfe2608c36793dde08eea5b3d13d3d7ff76f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a790b0ef414bf71bd6382b1e7e2acee149988003a3def80085c4ae555e436ed0"
@@ -39,6 +40,9 @@ class Prodigal < Formula
     end
   end
 
+  # Avoid undefined behavior accessing array at index -1
+  patch :DATA
+
   def install
     system "make", "install", "INSTALLDIR=#{bin}"
   end
@@ -51,3 +55,18 @@ class Prodigal < Formula
     assert_match "CDS", pipe_output("#{bin}/prodigal -q -p meta", fasta, 0)
   end
 end
+
+__END__
+diff --git a/main.c b/main.c
+index 0834a07..712135d 100644
+--- a/main.c
++++ b/main.c
+@@ -556,7 +556,7 @@ int main(int argc, char *argv[]) {
+         score_nodes(seq, rseq, slen, nodes, nn, meta[i].tinf, closed, is_meta);
+         record_overlapping_starts(nodes, nn, meta[i].tinf, 1);
+         ipath = dprog(nodes, nn, meta[i].tinf, 1);
+-        if(nodes[ipath].score > max_score) {
++        if(ipath >= 0 && nodes[ipath].score > max_score) {
+           max_phase = i;
+           max_score = nodes[ipath].score;
+           eliminate_bad_genes(nodes, ipath, meta[i].tinf);

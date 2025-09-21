@@ -14,6 +14,7 @@ class MacCleanupPy < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a8749860f79b1419cf473a2dd99ca883a9896ffad05ed63a61464a1a4248df47"
     sha256 cellar: :any_skip_relocation, sonoma:        "030481370e0b64877b42e698f7e423ec072041115eb854b6dc24d3b2fa5e7bcb"
     sha256 cellar: :any_skip_relocation, ventura:       "d5f8a4043143529a1f24cf9b3ad36ceeadedb95167dc11f35636a83b8db5c555"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26fc56c387165eee406f63645177abf67692e7653fbf2b437f20ed6f5041c375"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "747b0e16c2bd1073a88e54308b7b2d76367ad0abe93ea75c6da050640abd9c36"
   end
 

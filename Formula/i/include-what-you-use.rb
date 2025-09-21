@@ -1,14 +1,10 @@
 class IncludeWhatYouUse < Formula
   desc "Tool to analyze #includes in C and C++ source files"
   homepage "https://include-what-you-use.org/"
+  url "https://include-what-you-use.org/downloads/include-what-you-use-0.25.src.tar.gz"
+  sha256 "be81f9d5498881462465060ddc28b587c01254255c706d397d1a494d69eb5efd"
   license "NCSA"
-  revision 1
-
-  stable do
-    url "https://include-what-you-use.org/downloads/include-what-you-use-0.24.src.tar.gz"
-    sha256 "a23421ceff601d3ea215e8fa9292bfa8ca39eb1ac2098dbbedfc6cfe65541c10"
-    depends_on "llvm@20" # TODO: use `llvm` in 0.25
-  end
+  head "https://github.com/include-what-you-use/include-what-you-use.git", branch: "master"
 
   # This omits the 3.3, 3.4, and 3.5 versions, which come from the older
   # version scheme like `Clang+LLVM 3.5` (25 November 2014). The current
@@ -20,22 +16,16 @@ class IncludeWhatYouUse < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a687e26c677a72735d4d90756990d895f57394f1a177546a5f4caa3235d9aedd"
-    sha256 arm64_sequoia: "a4ddb8fded4e60f585786a9812ea44463605664e4e08f9699a46fbdba6d792bd"
-    sha256 arm64_sonoma:  "a84ad2297f240dfaf9c93b7faf3b0454fdaa3bf5894b6324942a518cd12aaf92"
-    sha256 arm64_ventura: "024a17a51b89dd85b62e2ed1cb27750d4a1c7e332111eef74754c3aa61254c97"
-    sha256 sonoma:        "af4b93c97732e208b154f0c8ad25704388db44b728415db0fc82d4b32c538bca"
-    sha256 ventura:       "98a1fa193264a29dd811f4acac7172999a991fe80e1894f7afedfb7ca64f7246"
-    sha256 arm64_linux:   "0ee5d2b838c652f4d129eaf73cdcac8a1c1b587153f6a8b76ebf6a7db4165e1f"
-    sha256 x86_64_linux:  "b08052109946612bea46917bd7e110d436618f49f214a07e84bf8c8c55dbbc39"
-  end
-
-  head do
-    url "https://github.com/include-what-you-use/include-what-you-use.git", branch: "master"
-    depends_on "llvm"
+    sha256 arm64_tahoe:   "98c00c4267b68a7d1d7650cefdd41d3f14946f689f544c150684ba94044c4176"
+    sha256 arm64_sequoia: "e7796887269100ce17a7fd7f1f2d7d3a21a2400bf139930316783aaae3279a91"
+    sha256 arm64_sonoma:  "4413bdbe8dad5c421d4c73129d35a505ea82e2c667888f94477a9e60cec06ba6"
+    sha256 sonoma:        "2e9b3c08f005502a54aa1423710b48365aacc26425bae1c323ea160155824c09"
+    sha256 arm64_linux:   "2e4362a4b9969a76fe629ea7652c26905539643992e0b72312f95f1267f6d538"
+    sha256 x86_64_linux:  "1acf1c3309c6ac3e4730fe8c691fb80fb5191b6e2d0cad5132359895e148f13a"
   end
 
   depends_on "cmake" => :build
+  depends_on "llvm"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 

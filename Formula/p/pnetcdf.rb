@@ -16,6 +16,7 @@ class Pnetcdf < Formula
     sha256 arm64_sequoia: "ec1741e4908ba779f792995be4683b91815886f71a064e528e386ad4a0f6da25"
     sha256 arm64_sonoma:  "574fb8c333ad1b5c41f411214c8aafc8c16bba0fdae87adab77e0f156c14bc3b"
     sha256 sonoma:        "b81de914fd1a1240034c507f426aa28b0cf959abd106824cf39fd7e030a1481a"
+    sha256 arm64_linux:   "f14a3eb2fdc8bdf79d7958132945e8756f9b5af261961efc7d943266b20a87cf"
     sha256 x86_64_linux:  "8a3e4533fbc8a1a5d1267dfe81cb3a1ab389ac4b0971de4eb6ade996bc2cc7a6"
   end
 

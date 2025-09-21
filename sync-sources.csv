@@ -3232,6 +3232,7 @@ Homebrew-homebrew-core/Formula/j/jprq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jq-lsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jql.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/jqp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jreleaser.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jrnl.rb, Homebrew/homebrew-core, 0
@@ -3398,7 +3399,7 @@ Homebrew-homebrew-core/Formula/k/kqwait.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kraftkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kraken2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/krakend.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/k/krane.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/krane.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/krb5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/krep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/krew.rb, Homebrew/homebrew-core, 0
@@ -3507,6 +3508,7 @@ Homebrew-homebrew-core/Formula/l/lazygit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazyjj.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazyjournal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazysql.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lazyssh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lbdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lbfgspp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lbzip2.rb, Homebrew/homebrew-core, 1
@@ -4857,6 +4859,7 @@ Homebrew-homebrew-core/Formula/n/ngrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/ngs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/ngspice.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/ngt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/ni.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nickel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nickle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nicotine-plus.rb, Homebrew/homebrew-core, 0
@@ -5386,6 +5389,7 @@ Homebrew-homebrew-core/Formula/p/pgroonga.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pgrouting.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgrx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgslice.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pgstream.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgsync.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgtoolkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgtune.rb, Homebrew/homebrew-core, 0
@@ -5599,6 +5603,7 @@ Homebrew-homebrew-core/Formula/p/primesieve.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/principalmapper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/prips.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/prism-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/privatebin-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/privoxy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/prjtrellis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/probe-rs-tools.rb, Homebrew/homebrew-core, 1
@@ -9384,6 +9389,7 @@ Homebrew-homebrew-cask/Casks/f/foxmail.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fpc-laz.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fpc-src-laz.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fractal-bot.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/frame0.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/framer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/franz.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/frappe-books.rb, Homebrew/homebrew-cask, 1
@@ -12825,7 +12831,7 @@ Homebrew-homebrew-cask/Casks/m/maa.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mac-mouse-fix.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mac-mouse-fix@2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mac2imgur.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/macai.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/macai.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macast.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macbreakz.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/maccleaner-pro.rb, Homebrew/homebrew-cask, 0
@@ -13526,6 +13532,7 @@ Homebrew-homebrew-cask/Casks/o/orka-vm-tools.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/orka.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/orka3.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oryoki.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/osaurus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/oscar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oscilloscope.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/osculator.rb, Homebrew/homebrew-cask, 0

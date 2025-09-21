@@ -11,6 +11,7 @@ class Komac < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "726323246c1a7ef794898113078323a0a62911f19a2f1bbc8e6ef1c3a7d2f7d2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59f4d6783d2b96ad26d7a377f87e6a712a7ed8442f61d1d27daf5c3a100d5391"
     sha256 cellar: :any_skip_relocation, sonoma:        "8ee73eb9019608ef7c5666546db312651aec21d4b611fa0ffe60dcad7f0fae79"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "240759489a1d204e5d7364277417331721f1b8b52bed7cef804fe84d6b92d553"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8559a3b61ba29529b37ee44fa5889cd5fb5ad7fbb4bfc921f8b4c9d29f18fe1"
   end
 
