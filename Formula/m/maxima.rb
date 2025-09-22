@@ -32,14 +32,11 @@ class Maxima < Formula
 
   def install
     ENV["LANG"] = "C" # per build instructions
-    system "./configure",
-           "--disable-debug",
-           "--disable-dependency-tracking",
-           "--prefix=#{prefix}",
-           "--enable-gettext",
-           "--enable-sbcl",
-           "--with-emacs-prefix=#{share}/emacs/site-lisp/#{name}",
-           "--with-sbcl=#{Formula["sbcl"].opt_bin}/sbcl"
+    system "./configure", "--enable-gettext",
+                          "--enable-sbcl",
+                          "--with-emacs-prefix=#{elisp}",
+                          "--with-sbcl=#{Formula["sbcl"].opt_bin}/sbcl",
+                          *std_configure_args
     system "make"
     system "make", "install"
   end

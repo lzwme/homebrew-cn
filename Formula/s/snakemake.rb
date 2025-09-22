@@ -3,18 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/f4/4b/5854d3ac3695a39a74d513cd8760df00a9de9ec5a5edd96e621905655a17/snakemake-9.11.3.tar.gz"
-  sha256 "db4e3405fbb104e561e4e466520df071ef77bf3e4faa205a1964dcb9c8519d25"
+  url "https://files.pythonhosted.org/packages/f8/33/ddabd917709da07ace24ce85fe4bec88ab40d4a682501aea33f136bf1d51/snakemake-9.11.4.tar.gz"
+  sha256 "37b13337c87124d3cbd345f7a6ec976d4c485ac5b60d3d3379dcfe41b426dbb2"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "27534ac0ed51d3695ee4a6a7bcc564bfc92df21269a41eaf89fbd47996eb761d"
-    sha256 cellar: :any,                 arm64_sequoia: "632c055aa64f06ff72702ea8d7d8d735bbffbe04eec2669e7b0c7ae878f2d516"
-    sha256 cellar: :any,                 arm64_sonoma:  "cfe06ea2f137b5398e8691056f632281be6ee7feab9ee41ee1e3f71dcad918a9"
-    sha256 cellar: :any,                 sonoma:        "37bd989f03526e041328ab2e3e9fe41eece8365c7d5cd79ae5f5a9ba2d0a504f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "82e71bb82a5b46a98760d35456f4c0ba83b82f261b03325fac1728b24c644769"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e92b023015999665c8df3017ae679ef1db7fec65a6bdd8178870b79c8378fc34"
+    sha256 cellar: :any,                 arm64_tahoe:   "fabac15c28955e13cec6430b9bb3a3228b4de6e7397ff9cc1cb95c3df93c4bde"
+    sha256 cellar: :any,                 arm64_sequoia: "313007a1e0e6b062ebab39e84b50781d430b9d9390d1361990870954bad22349"
+    sha256 cellar: :any,                 arm64_sonoma:  "f640b884aaf5d64423dcbb637e6041fdcc27e0156e38fac8e47f4340d5ff32d3"
+    sha256 cellar: :any,                 sonoma:        "9d2a880175eeb5394411aa0fd2580dd28ccd3ac9feba7766f5d2d0b28877fbaa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4406f954fe6b51732f011152847c8914c60b40c8cc33aa11b4140477b1079ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b120bf7482299e68cc0da411a4737dc51254ec16855de51cd8286562866e80be"
   end
 
   depends_on "rust" => :build
@@ -58,10 +58,9 @@ class Snakemake < Formula
     sha256 "bf429e7aef65921c69b4ed48f3d48d3eac1383b05d2df91884705842d974d0dc"
   end
 
-  # Workaround for docutils-0.22.1/docutils/__init__.py: Failed to restore metadata: File exists
   resource "docutils" do
-    url "https://files.pythonhosted.org/packages/e9/86/5b41c32ecedcfdb4c77b28b6cb14234f252075f8cdb254531727a35547dd/docutils-0.22.tar.gz"
-    sha256 "ba9d57750e92331ebe7c08a1bbf7a7f8143b86c476acd51528b042216a6aad0f"
+    url "https://files.pythonhosted.org/packages/4a/c0/89fe6215b443b919cb98a5002e107cb5026854ed1ccb6b5833e0768419d1/docutils-0.22.2.tar.gz"
+    sha256 "9fdb771707c8784c8f2728b67cb2c691305933d68137ef95a75db5f4dfbc213d"
   end
 
   resource "dpath" do

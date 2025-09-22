@@ -32,9 +32,12 @@ class BazelAT7 < Formula
   uses_from_macos "zip"
 
   on_linux do
+    # We use a workaround to prevent modification of the `bazel-real` binary
+    # but this means brew cannot rewrite paths for non-default prefix
+    on_arm do
+      pour_bottle? only_if: :default_prefix
+    end
     on_intel do
-      # We use a workaround to prevent modification of the `bazel-real` binary
-      # but this means brew cannot rewrite paths for non-default prefix
       pour_bottle? only_if: :default_prefix
     end
   end

@@ -8,9 +8,10 @@ class WhisperkitCli < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f4d70ab8aac4adae190a73fd0877a9be12e9ab9e1a97918f59c09bbd1fdc872"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3b8d2e7edbbbaebe36cbcd3c1403edec0e698a24bae2560d37d6b40e8a3b703"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d2fc834aca630f85b37c543aed47bc5eb736b12cb3f984035034631411bdab4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "982007b3ea8e82d10d921b22f42e6194cfa522d436fe7a88bebe90a79c1f1392"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75d2b956d492974b9dfbd27ee87c379af486b0e66d9a94df24420d7f46385c3b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef2041adae5c4abf8a4e52c9870fae60b06500cd279001866ac5b6dd1a753a33"
   end
 
   depends_on xcode: ["15.0", :build]
@@ -21,6 +22,7 @@ class WhisperkitCli < Formula
   uses_from_macos "swift"
 
   def install
+    ENV["BUILD_ALL"] = "1"
     system "swift", "build", "-c", "release", "--product", "whisperkit-cli", "--disable-sandbox"
     bin.install ".build/release/whisperkit-cli"
     generate_completions_from_executable(bin/"whisperkit-cli", "--generate-completion-script")

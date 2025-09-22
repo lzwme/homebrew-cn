@@ -25,37 +25,23 @@ class Acl2 < Formula
 
   def install
     # Remove prebuilt binaries
-    [
+    rm([
       "books/kestrel/axe/x86/examples/popcount/popcount-macho-64.executable",
       "books/kestrel/axe/x86/examples/factorial/factorial.macho64",
       "books/kestrel/axe/x86/examples/tea/tea.macho64",
-    ].each do |f|
-      (buildpath/f).unlink
-    end
+    ])
 
-    system "make",
-           "LISP=#{HOMEBREW_PREFIX}/bin/sbcl",
-           "ACL2=#{buildpath}/saved_acl2",
-           "USE_QUICKLISP=0",
-           "all", "basic"
-    system "make",
-           "LISP=#{HOMEBREW_PREFIX}/bin/sbcl",
-           "ACL2_PAR=p",
-           "ACL2=#{buildpath}/saved_acl2p",
-           "USE_QUICKLISP=0",
-           "all", "basic"
+    # Move files and then build to avoid saving build directory in files
     libexec.install Dir["*"]
 
-    (bin/"acl2").write <<~EOF
-      #!/bin/sh
-      export ACL2_SYSTEM_BOOKS='#{libexec}/books'
-      #{Formula["sbcl"].opt_bin}/sbcl --core '#{libexec}/saved_acl2.core' --userinit /dev/null --eval '(acl2::sbcl-restart)'
-    EOF
-    (bin/"acl2p").write <<~EOF
-      #!/bin/sh
-      export ACL2_SYSTEM_BOOKS='#{libexec}/books'
-      #{Formula["sbcl"].opt_bin}/sbcl --core '#{libexec}/saved_acl2p.core' --userinit /dev/null --eval '(acl2::sbcl-restart)'
-    EOF
+    sbcl = Formula["sbcl"].opt_bin/"sbcl"
+    system "make", "-C", libexec, "all", "basic", "LISP=#{sbcl}", "USE_QUICKLISP=0"
+    system "make", "-C", libexec, "all", "basic", "LISP=#{sbcl}", "USE_QUICKLISP=0", "ACL2_PAR=p"
+
+    ["acl2", "acl2p"].each do |acl2|
+      inreplace libexec/"saved_#{acl2}", Formula["sbcl"].prefix.realpath, Formula["sbcl"].opt_prefix
+      (bin/acl2).write_env_script libexec/"saved_#{acl2}", ACL2_SYSTEM_BOOKS: "#{libexec}/books"
+    end
   end
 
   test do

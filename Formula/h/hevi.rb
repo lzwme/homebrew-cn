@@ -12,6 +12,7 @@ class Hevi < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "6e9597a6ff6d8eeac1df5ad0bd524a8b2a1998af819df0dc5d2b2ff8f6037a23"
     sha256 cellar: :any_skip_relocation, sonoma:        "c023afee5920d4732b9a9dd8d85e0c2922a877cb51b288901ea93bbb90897b37"
     sha256 cellar: :any_skip_relocation, ventura:       "7ad8ac2263159c788705564b0a17d3f9052f237db3efffcd1e68f089314a4006"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "99c83848d5160f04004119a73ffe2a2ba4ad978cc8c5d99d6faccf2f56d1218c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "98a58cbce9389c32d13ddf68be6a62b89113000d5ae6f82711174b90cf63174e"
   end
 

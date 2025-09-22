@@ -24,12 +24,13 @@ class OrTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3d8be92dfa0ed3760900144bf706aed5b2c316d20592ce49b1050c4873b9a3b5"
-    sha256 cellar: :any, arm64_sequoia: "2bb0f282f2893aceb0b48cf723e1bb88006ec8e9cb6a27434cb2dd47cc639269"
-    sha256 cellar: :any, arm64_sonoma:  "95184c01386c70196cae423bfcfefe730f93ccba4fedc5a176cd4ebae7efbcd2"
-    sha256 cellar: :any, sonoma:        "47fd30353cf1e9506236084691ccc5ed15d052a5c98bad75fd0ffe217a6dbd75"
-    sha256               arm64_linux:   "0b879971f40682344bc0a3df6f1804e36aa3c4bd73be5fb37cbe646ed8712cf8"
-    sha256               x86_64_linux:  "3e0a5958c01be2b053b66cf99004cf1c97cbede0f5f3c40bf7a3bf86c9f8b767"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "68f1360be26513f2c7df331cc9d3a37b6f3a13ad4dc089235af2b566888b5ae5"
+    sha256 cellar: :any, arm64_sequoia: "74eaae9e575db9fab340a6f2ba562534f23bf701bdcfd6721760455618901f8a"
+    sha256 cellar: :any, arm64_sonoma:  "45b0bbc7a29c9b970d178799a82456045e7803accf760eb0538c830970ea325b"
+    sha256 cellar: :any, sonoma:        "8f2cef449475cecd3eec0b52b607598367203a7e068046a36874b645bd14f5a5"
+    sha256               arm64_linux:   "7082187fb6d7d4d40eaa9989be3a9ef4ed5d075da4478752ba6299319ba623ea"
+    sha256               x86_64_linux:  "ee29a34374a2340acd72ff771bbe37a05908d015f945e84ebf47b26cce200d2d"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -40,6 +41,7 @@ class OrTools < Formula
   depends_on "clp"
   depends_on "coinutils"
   depends_on "eigen"
+  depends_on "highs"
   depends_on "openblas"
   depends_on "osi"
   depends_on "protobuf"
@@ -52,9 +54,8 @@ class OrTools < Formula
   patch :DATA
 
   def install
-    # FIXME: Upstream enabled Highs support in their binary distribution, but our build fails with it.
     args = %w[
-      -DUSE_HIGHS=OFF
+      -DUSE_HIGHS=ON
       -DBUILD_DEPS=OFF
       -DBUILD_SAMPLES=OFF
       -DBUILD_EXAMPLES=OFF
@@ -112,6 +113,28 @@ class OrTools < Formula
                     *shell_output("pkg-config --cflags --libs #{absl_libs.join(" ")}").chomp.split,
                     "-o", "simple_sat_program"
     system "./simple_sat_program"
+
+    # Highs backend
+    (testpath/"highs_test.cc").write <<~EOS
+      #include "ortools/linear_solver/linear_solver.h"
+      using operations_research::MPSolver;
+      int main() {
+        if (!MPSolver::SupportsProblemType(MPSolver::HIGHS_LINEAR_PROGRAMMING)) return 1;
+        MPSolver solver("t", MPSolver::HIGHS_LINEAR_PROGRAMMING);
+        auto* x = solver.MakeNumVar(0.0, 1.0, "x");
+        auto* obj = solver.MutableObjective();
+        obj->SetCoefficient(x, 1.0);
+        obj->SetMaximization();
+        if (solver.Solve() != MPSolver::OPTIMAL) return 2;
+        return x->solution_value() > 0.99 ? 0 : 3;
+      }
+    EOS
+    system ENV.cxx, "-std=c++17", "highs_test.cc",
+                    "-I#{include}", "-L#{lib}", "-lortools",
+                    "-DOR_PROTO_DLL=", "-DPROTOBUF_USE_DLLS",
+                    *shell_output("pkg-config --cflags --libs #{absl_libs.join(" ")}").chomp.split,
+                    "-o", "highs_test"
+    system "./highs_test"
   end
 end
 

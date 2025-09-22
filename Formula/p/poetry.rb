@@ -3,18 +3,18 @@ class Poetry < Formula
 
   desc "Python package management tool"
   homepage "https://python-poetry.org/"
-  url "https://files.pythonhosted.org/packages/57/a6/28b83bb81911dc5b2a6a2be4006cceb29b0915b2f62d2e44192e315c2456/poetry-2.2.0.tar.gz"
-  sha256 "c6bc7e9d2d5aad4f6818cc5eef1f85fcfb7ee49a1aab3b4ff66d0c6874e74769"
+  url "https://files.pythonhosted.org/packages/19/28/f790e21769afaaa1f326d9634f9a5c700c4cdb4c468a1707c6db0b350505/poetry-2.2.1.tar.gz"
+  sha256 "bef9aa4bb00ce4c10b28b25e7bac724094802d6958190762c45df6c12749b37c"
   license "MIT"
   head "https://github.com/python-poetry/poetry.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9c0b38687f4c06d1ff83d90681b5d27618df2dd02c6aba2336f3aca07e3c850c"
-    sha256 cellar: :any,                 arm64_sequoia: "d0fd732273ec011190f086c727a76ae499af11e11d48afa60b6748b85af8f0f6"
-    sha256 cellar: :any,                 arm64_sonoma:  "bef20b6537b8b87c5d8b68229203021f9e637859563d8ba96673cc8f9ee2b127"
-    sha256 cellar: :any,                 sonoma:        "a1cab611ee4937e006333c9cbf3ba15a2f49765fbbeb8e8965ac909a88841e6e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad78f084cccb149cdc754b7f8d6f87038f587d5de99569e045832c07e02c778a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0632a395f1b6cf66acba741da3962f9cb2d54d9e4eb720b56daced8e1875de90"
+    sha256 cellar: :any,                 arm64_tahoe:   "204732b2525fec4f9a0f5c923d2346a40fff127c888f73bc6143fca9516e1628"
+    sha256 cellar: :any,                 arm64_sequoia: "83f7bdda5af058b44d9b580847d6444007579bbbbce2daa9a75b575a8bd182d7"
+    sha256 cellar: :any,                 arm64_sonoma:  "73f56ae7a67cac75a2cf254da9c3e1a5f79595aac2c60267a4f4f9b1d4cc36c8"
+    sha256 cellar: :any,                 sonoma:        "1175018faf520e3035eb610ca3642014b6eb0cc3a87454588851b23294710db9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "461721efe912b158f94cf98c40fe63b11568efd1479da23e7dbce1546583faa6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c00ec5860374da22d214388ef602a05ba1e124655bedc8a24afc9a48feaca949"
   end
 
   depends_on "cmake" => :build # for rapidfuzz
@@ -152,8 +152,8 @@ class Poetry < Formula
   end
 
   resource "pbs-installer" do
-    url "https://files.pythonhosted.org/packages/5e/c6/c2ee535a5ad13171fcad702afbce38f421b4432e6d547944d1f526a88ad7/pbs_installer-2025.9.2.tar.gz"
-    sha256 "0da1d59bb5c4d8cfb5aee29ac2a37b37d651a45ab5ede19d1331df9a92464b5d"
+    url "https://files.pythonhosted.org/packages/74/db/077daf042cbbb627275c4345d56fe3f8c2d394673d2b5c510958f84e4b0c/pbs_installer-2025.9.18.tar.gz"
+    sha256 "c0a51a7c1e015723bd8396f02e15b5876e439f74b0f45bbac436b189f903219f"
   end
 
   resource "pkginfo" do
@@ -167,8 +167,8 @@ class Poetry < Formula
   end
 
   resource "poetry-core" do
-    url "https://files.pythonhosted.org/packages/6c/73/8cc4cdc3992d9e03a749dd0ef7438093042a1ed197df8fcfc9dc9502ef0b/poetry_core-2.2.0.tar.gz"
-    sha256 "b4033b71b99717a942030e074fec7e3082e5fde7a8ed10f02cd2413bdf940b1f"
+    url "https://files.pythonhosted.org/packages/54/ef/a16c11de95b638341961765e072dfdd4c9a0be51d6b22d594c5f3255e4bb/poetry_core-2.2.1.tar.gz"
+    sha256 "97e50d8593c8729d3f49364b428583e044087ee3def1e010c6496db76bd65ac5"
   end
 
   resource "pyproject-hooks" do
@@ -232,8 +232,8 @@ class Poetry < Formula
   end
 
   resource "zstandard" do
-    url "https://files.pythonhosted.org/packages/09/1b/c20b2ef1d987627765dcd5bf1dadb8ef6564f00a87972635099bb76b7a05/zstandard-0.24.0.tar.gz"
-    sha256 "fe3198b81c00032326342d973e526803f183f97aa9e9a98e3f897ebafe21178f"
+    url "https://files.pythonhosted.org/packages/fd/aa/3e0508d5a5dd96529cdc5a97011299056e14c6505b678fd58938792794b1/zstandard-0.25.0.tar.gz"
+    sha256 "7713e1179d162cf5c7906da876ec2ccb9c3a9dcbdffef0cc7f70c3667a205f0b"
   end
 
   def install
