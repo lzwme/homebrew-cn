@@ -1,12 +1,12 @@
 class DbmlCli < Formula
   desc "Convert DBML file to SQL and vice versa"
   homepage "https://www.dbml.org/cli/"
-  url "https://registry.npmjs.org/@dbml/cli/-/cli-3.14.0.tgz"
-  sha256 "c225aae5d390a1378bc1cded01e83ec8f8518350b229c4a6ca5b6667b89d8756"
+  url "https://registry.npmjs.org/@dbml/cli/-/cli-3.14.1.tgz"
+  sha256 "0ab76369762733d2b7550b9ec91e116a5d9958f1af4947a050ef9d419ebb80c3"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a8b56b46480bdeb48d25857fe22d2e44c1c8bbe5518f905f5bfaacb9dc340ded"
+    sha256 cellar: :any_skip_relocation, all: "3bd611c7c1355c3364ddfe6dd0d2a097185c13172351f39a1f7832fd6e9d72b7"
   end
 
   depends_on "node"

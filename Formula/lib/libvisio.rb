@@ -1,10 +1,9 @@
 class Libvisio < Formula
   desc "Interpret and import Visio diagrams"
   homepage "https://wiki.documentfoundation.org/DLP/Libraries/libvisio"
-  url "https://dev-www.libreoffice.org/src/libvisio/libvisio-0.1.8.tar.xz"
-  sha256 "b4098ffbf4dcb9e71213fa0acddbd928f27bed30db2d80234813b15d53d0405b"
+  url "https://dev-www.libreoffice.org/src/libvisio/libvisio-0.1.9.tar.xz"
+  sha256 "4a61d086daa3f5c9db8a3fd1b6dbfc29ba756057aa6b3cc23878fd4854362af9"
   license "MPL-2.0"
-  revision 2
 
   livecheck do
     url "https://dev-www.libreoffice.org/src/"
@@ -12,14 +11,12 @@ class Libvisio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f219efa0f4394375f53d339182e8ecee9b3521071c2cc7f8815500045b73d999"
-    sha256 cellar: :any,                 arm64_sequoia: "b1d82aaa71ed70e5c67c507843c5e0ad1e7ed0baa1ddb0d65c92f382d2f209b8"
-    sha256 cellar: :any,                 arm64_sonoma:  "548d6e3a65308733f84b62d945aa751a23498898250d2d9d10fc58d6af475d85"
-    sha256 cellar: :any,                 arm64_ventura: "4cc867e8cbb1c6db5fceb6c50ccd440c90b7bccc9a71b4d251c4815ba69cc6c5"
-    sha256 cellar: :any,                 sonoma:        "59b2d3c7b44168b3778795e95f730e361ad392107ff4de14a2ef4356234a2bc8"
-    sha256 cellar: :any,                 ventura:       "cd2c9346d09b98e85f7bcee3da6571d6391b7456fc5feb61ba212ce9b8a7c68a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab24a12cdf48c1b40d932fffa7f37b0dff96177c343a77865c1a9dfc6620fc1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc9f80d9caf8b35a27876747278ec7dc4247de6ff8f06c96cec900a5a09167c0"
+    sha256 cellar: :any,                 arm64_tahoe:   "c6ad5516ab379653ef1db51d000c0912dd102198b918370884fad400e2391dc9"
+    sha256 cellar: :any,                 arm64_sequoia: "f1b4c41baf1cc4f4bf816ebef08e4543999dd4f184e1f58fab4ee9a9108be417"
+    sha256 cellar: :any,                 arm64_sonoma:  "1ddc8008522e26ec0ca37830d794b4cce3816eeffba5f6e97731c1cc3da59519"
+    sha256 cellar: :any,                 sonoma:        "14f07090c4e4177c274d520e2a809d0fab5bbd5ba072bf7006ece876b699397d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "14cd13048d1ca649d8f1074de0fdadbf37c877ec93633b9bfad77b6a9489edad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44832d4535f3bff59df5a1b80f5e2f3a8377274abf1324149df86001822517fd"
   end
 
   depends_on "boost" => :build

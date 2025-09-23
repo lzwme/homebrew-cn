@@ -1,17 +1,17 @@
 class Cloudflared < Formula
   desc "Cloudflare Tunnel client (formerly Argo Tunnel)"
   homepage "https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide"
-  url "https://ghfast.top/https://github.com/cloudflare/cloudflared/archive/refs/tags/2025.9.0.tar.gz"
-  sha256 "350d8d37a85355a34d3b48dcfde40497833c08233e49f5bed8cb4b690949552f"
+  url "https://ghfast.top/https://github.com/cloudflare/cloudflared/archive/refs/tags/2025.9.1.tar.gz"
+  sha256 "384283f05e55560e71d844991d3adbe7e2acaa278ce063b0c7efc84db8ec3849"
   license "Apache-2.0"
   head "https://github.com/cloudflare/cloudflared.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf2610c701929c4f1ccf3f03b79613398ec4151cc57bb179d65ec7d61cfed395"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ca3d67b51887aa4462f545830784b0f4573d7fa1bebeb1fcbed8ed7957b2618"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27135e36f6c2d1caafb6e7375b1dfd8f549d71b981fdfd01a503e859edd8c213"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d9549c54a0b5cb915c4ad57dff7d545fbc04b6ae4ae434e7081295365f004c9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60c624e8c060ca4d5c9ccb5285654dc35ce0f04e84b40b8fdb5286113203a842"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b4f95149382b0f06a7d11affc5d7bfa78dafb9be59e976e592338fc71ab715e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86fa5a859f5fe98c5355c41acf895d1c5e23b4c6d3767085014d8674233dc879"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cba71bf2d79ac8d7180d6b54aebd91575a8937d470988a88fc6bcd9da94c89c0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f1f8e46b1dd1d1777a6568fb7ba16949d1169f1c212f6aa86e96d3ba0c00a6ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31601dc399ad3971ab637ae47ee71c740fc220e1c4bb70e770390ead615d20a0"
   end
 
   depends_on "go" => :build

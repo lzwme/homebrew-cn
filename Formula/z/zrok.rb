@@ -1,8 +1,8 @@
 class Zrok < Formula
   desc "Geo-scale, next-generation sharing platform built on top of OpenZiti"
   homepage "https://zrok.io"
-  url "https://ghfast.top/https://github.com/openziti/zrok/releases/download/v1.1.4/source-v1.1.4.tar.gz"
-  sha256 "e1fc51924e197fff908b001b9f1f52179902233390dea06e78d8fa58932c65ff"
+  url "https://ghfast.top/https://github.com/openziti/zrok/releases/download/v1.1.5/source-v1.1.5.tar.gz"
+  sha256 "c36324ff2b242d91e1f6abf8e45e311c7d63357aecc5c30012337ac695dedd81"
   # The main license is Apache-2.0. ACKNOWLEDGEMENTS.md lists licenses for parts of code
   license all_of: ["Apache-2.0", "BSD-3-Clause", "MIT"]
   head "https://github.com/openziti/zrok.git", branch: "main"
@@ -10,11 +10,11 @@ class Zrok < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d806e6f23ac938ce6bd33a0c72820092cdb61ca5b4b33fbd52e47ac066636480"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1414f9fa104dfc046ab2fcdd6bd4260f2dcfcecf5d9e5091da70fdb7fc1a9ff6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f57c2da17b9e2749abab4de725e2a86fe554188877d32b5f06789265b157fc65"
-    sha256 cellar: :any_skip_relocation, sonoma:        "686536c85acc5689fc2fc74354f8aca18566dc70d81e78a9d24a68717106a0ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31936590638bbc211c0cc49f124822f4ed3b70c78ce4274b78f7921b8e87cfda"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ecd26f91b7617c760b2600ff432e08b4a89304abe1b1d2098fe0bb09cbf0486"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3bbbfd8991fde574c793e97bb560ca34888ea9dbdb433e229bc8764274dc4fc5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "616a3e643095247447f6dc687f655e68f2707687a6c7b4a12cf961baf82feed8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "913b96cf4da36ad10b13c73bea0705ec42bb85c16677090928948e88bb0c11c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "befc616d99c782f9aaaaa3386aa8a07573ab0fa2abbc4e02d37da53ef2bd414c"
   end
 
   depends_on "go" => :build

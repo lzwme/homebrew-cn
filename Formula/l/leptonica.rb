@@ -5,6 +5,11 @@ class Leptonica < Formula
   sha256 "3745ae3bf271a6801a2292eead83ac926e3a9bc1bf622e9cd4dd0f3786e17205"
   license "BSD-2-Clause"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "b0df5281a5e9df13b6a8f4ec4be8ad946e61a48dc79f79b58af42237901dda21"
     sha256 cellar: :any,                 arm64_sequoia: "d2d966918337ee5feda18544d4546734f77aeaf4dde87ae8979589bd97c799c1"

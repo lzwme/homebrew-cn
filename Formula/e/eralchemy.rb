@@ -6,14 +6,15 @@ class Eralchemy < Formula
   url "https://files.pythonhosted.org/packages/0e/c0/9c28acf903566a02de43f8fc6c572b8195ab0fa854016825e5690c77b57a/eralchemy-1.6.0.tar.gz"
   sha256 "8f82d329ec0cd9c04469adf36b8889b5ea2583e7e53c0fd2e784e176e1e27c7a"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b73a054d94feeb9cfb690124d22a98362f92ab00d5eeede5e8e21026a721f262"
-    sha256 cellar: :any,                 arm64_sequoia: "7c9320fb74e503c7351b505248ecb958ae6513a7e2e6f9d4373655340d5e69b6"
-    sha256 cellar: :any,                 arm64_sonoma:  "ad76090e5129b0242da09b1803f72eab996be0e3d85517d4d5c81161046075c0"
-    sha256 cellar: :any,                 sonoma:        "1f28d88544a49dc6762d9b244c870c8c8a318a95ceee14d45fcb7adecccb2d4c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "08895664489bd7834de2789ff18e71e8125b56d84c282bb65a004b5a9adb812d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad6928bf661621669f18a119165f256aa57dec4f50ae66eb18544dda58640fa8"
+    sha256 cellar: :any,                 arm64_tahoe:   "c1d31eba95b0fdfb714a74504e9740db4a43f0a651e765c71c7fc01759a6b66e"
+    sha256 cellar: :any,                 arm64_sequoia: "7d82a6d90f3541ae9f2e7a5c61081d15f751dff3c153755b3d6484195c3a8874"
+    sha256 cellar: :any,                 arm64_sonoma:  "5ce015f1099edbc09359683d2fc1a680df406d6a1a0234fa8222e7f3b25ca432"
+    sha256 cellar: :any,                 sonoma:        "f59434c6e3b43e4945b2618631c31fabe8aaa5767ac294a748c635f642a0f4e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce3c3223aaae7be9c17bb87d5c9960f33390962ed855f2a9b1566a3e1fadd71a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89c19b543fbf3ced88b2fa81590da847c312149a6d5ac63f38dbf851bb4f5fd4"
   end
 
   depends_on "pkgconf" => :build
