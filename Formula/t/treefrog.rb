@@ -13,6 +13,7 @@ class Treefrog < Formula
 
   bottle do
     sha256 arm64_tahoe:   "21710f9bbfe2bce24cc905ecc3b5f44d68613d5f62deaf3b5c7b5a04218a913e"
+    sha256 arm64_sequoia: "30e7a67a0f679e4df507fa385fad085f4ea5e723ee0c308c909701d84180ac14"
     sha256 arm64_sonoma:  "b58ca4317e30adedb59d41270a99d96c790e1cb1e5f40aa75e9805bff65eaf62"
     sha256 arm64_ventura: "20c25b9f4a108e4805a451b03cc260540fd025dce3a6941098b51d209336bf45"
     sha256 sonoma:        "088dbd82c52cb6fec05a1959fe3149663a9dcffd42d7d22670ca5d549a69e3e0"

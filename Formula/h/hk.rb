@@ -1,18 +1,20 @@
 class Hk < Formula
   desc "Git hook and pre-commit lint manager"
   homepage "https://hk.jdx.dev"
-  url "https://ghfast.top/https://github.com/jdx/hk/archive/refs/tags/v1.15.4.tar.gz"
-  sha256 "3292f6e9eedf1407f02e3bf6f6a37bf6f57f89210ab48bc867b309ed7280b3bf"
+  # pull from git tag to get submodules
+  url "https://github.com/jdx/hk.git",
+      tag:      "v1.15.5",
+      revision: "be534005c5267ed33295fc10d331aae1d162a788"
   license "MIT"
   head "https://github.com/jdx/hk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9da015f1b3337a900e55d415ecd0e1b7a389845411637bda37cbf00c01c0cad3"
-    sha256 cellar: :any,                 arm64_sequoia: "36beea1f213328813c8ab71c9869cd334266217eb196065f2f07fb5d5185ffe4"
-    sha256 cellar: :any,                 arm64_sonoma:  "41a63d295961fd948f57a2dd966689d69c2b2afcdbdf51974118c7bcf68318a4"
-    sha256 cellar: :any,                 sonoma:        "487c553f6559926b2c6fd3b82dab47d0f79227deabc21cfa490cb339d3da2eee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "01b79b14e2c9769f5bff4ee9080d512f70c3c062235b973400eebdc52b433c13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37ec10211f5e1c2cad61e7163bdc465dfca0754fd77cd1bf260136209eb49090"
+    sha256 cellar: :any,                 arm64_tahoe:   "cb9c17184bcb4c0e00c651048b32018192db64e87c2b93541fad777930b0207d"
+    sha256 cellar: :any,                 arm64_sequoia: "2f7a0878cc02048a5ab5402cf99d43154d6ad27c92d9b51d07b9c4a8a0dd8b49"
+    sha256 cellar: :any,                 arm64_sonoma:  "ddbf525e34eefaf939a8c705b58a0dd71ba6711789c711e980926801947a5a9f"
+    sha256 cellar: :any,                 sonoma:        "9da5ef25241cdf82417f5bf5bbf0bdcdb0051ca7664e57a7fd9336da222e4051"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fe0a7992cd9b58b8ed4f9f6325350843ff57a8a618244cab1c1dc0a2a58ee8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f34e9725b9c9126441de4644fa7fd8e005f59c79096a59bde32336b2b7e911ad"
   end
 
   depends_on "rust" => [:build, :test]
@@ -23,26 +25,7 @@ class Hk < Formula
 
   uses_from_macos "zlib"
 
-  resource "clx" do
-    url "https://ghfast.top/https://github.com/jdx/clx/archive/refs/tags/v0.2.19.tar.gz"
-    sha256 "b06f39d4f74fb93a4be89152ee87a3c04a25abb1b623466c6b817427a8502a73"
-  end
-
-  resource "ensembler" do
-    url "https://ghfast.top/https://github.com/jdx/ensembler/archive/refs/tags/v0.2.11.tar.gz"
-    sha256 "967f98f6dfd19b19e0aa91808ea5b81902d3cd6da254d0fdf10ffbaa756e22bb"
-  end
-
-  resource "xx" do
-    url "https://ghfast.top/https://github.com/jdx/xx/archive/refs/tags/v2.1.3.tar.gz"
-    sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-  end
-
   def install
-    %w[clx ensembler xx].each do |res|
-      (buildpath/res).install resource(res)
-    end
-
     # Ensure the correct `openssl` will be picked up.
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"

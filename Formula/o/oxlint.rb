@@ -1,30 +1,24 @@
 class Oxlint < Formula
   desc "Suite of high-performance tools for JavaScript and TypeScript written in Rust"
   homepage "https://oxc.rs/"
-  url "https://ghfast.top/https://github.com/oxc-project/oxc/archive/refs/tags/oxlint_v1.16.0.tar.gz"
-  sha256 "53fda71250a6fd37e7928510f6ec97de894e3dfdb0c959e3320eb9bd445b7654"
+  url "https://registry.npmjs.org/oxlint/-/oxlint-1.17.0.tgz"
+  sha256 "bf531ea49243f496c7d5499c224ad6ac5e24572ab8ee9f7e99a12d0b118fad06"
   license "MIT"
-  head "https://github.com/oxc-project/oxc.git", branch: "main"
-
-  livecheck do
-    url :stable
-    regex(/^oxlint[._-]v?(\d+(?:\.\d+)+)$/i)
-  end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0d726454b63a287931adb025a9e208acc6f499375acd5b4e57d8bfdd58fac36"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bf1375d47c30355fb2a99e421975a9259e1da14308b5d1dcf8857797cd2111a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "894059d25c8546e626ebd9ab0685ede0821e72e755802c8d0fa3a7dce2130585"
-    sha256 cellar: :any_skip_relocation, sonoma:        "05f87745df29614cf5a6be4b22710b58dec94497612b4d8154f6078115a7a123"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c959606a94d2d0c8dc4bad42934c7cf476354de4d33478506ab2469de36f163"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "897dec137037fef304cdc0ebc976dceb6e9a212128438103603857fb4d713a15"
+    sha256 cellar: :any,                 arm64_tahoe:   "a85043b67cfe1d3216e6b22530b50277bc994d98dd3f35a0dc9a8a642b0283e3"
+    sha256 cellar: :any,                 arm64_sequoia: "8a71786dddf2ccd2deae135914064777819ba81bbfdddcd86fc91725d53bfa82"
+    sha256 cellar: :any,                 arm64_sonoma:  "8a71786dddf2ccd2deae135914064777819ba81bbfdddcd86fc91725d53bfa82"
+    sha256 cellar: :any,                 sonoma:        "c6b1b8246fc514f89f0c33fcb08d379d1be6f6887f9d4c71863f2c66b3a70c5f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "40c28e83e37156186831b90895fecc8e1ca4beb8dc6479b1ce84b4d7eaf08bca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bfc9ef10eaddc429458c2ad150fc9d2f3be21522487d1b92feb103f05e9ad3d"
   end
 
-  depends_on "rust" => :build
+  depends_on "node"
 
   def install
-    ENV["OXC_VERSION"] = version.to_s
-    system "cargo", "install", *std_cargo_args(path: "apps/oxlint")
+    system "npm", "install", *std_npm_args
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do

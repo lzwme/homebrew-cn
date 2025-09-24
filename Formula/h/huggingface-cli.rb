@@ -3,16 +3,16 @@ class HuggingfaceCli < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/37/79/d71d40efa058e8c4a075158f8855bc2998037b5ff1c84f249f34435c1df7/huggingface_hub-0.35.0.tar.gz"
-  sha256 "ccadd2a78eef75effff184ad89401413629fabc52cefd76f6bbacb9b1c0676ac"
+  url "https://files.pythonhosted.org/packages/f6/42/0e7be334a6851cd7d51cc11717cb95e89333ebf0064431c0255c56957526/huggingface_hub-0.35.1.tar.gz"
+  sha256 "3585b88c5169c64b7e4214d0e88163d4a709de6d1a502e0cd0459e9ee2c9c572"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e03c4800b72c25e1a10e349f6ab22296cf0ca6259fe989e6a72659d19499056e"
-    sha256 cellar: :any,                 arm64_sequoia: "74479a5521e152f08d09a8a876731c1e8d5301d811cc204b04c3f93f842fd651"
-    sha256 cellar: :any,                 arm64_sonoma:  "a232151f4f964c15b5a0d49e79c34edea25ea54d606f8b62a4e03bafc1809a5f"
-    sha256 cellar: :any,                 sonoma:        "922a1019e0d8229fce76f09d5ddf148cc1829208f4e6b128a26b9a8973b56859"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c0dd784a156248565798fd66d61ec4790dda3d07cafeec70b18ff19b6c7316b"
+    sha256 cellar: :any,                 arm64_tahoe:   "c7bd4e918d24c4fb3a47ca66d9a9c8a8ad9dd0716fadbd7eab0bb3d5c9457e0a"
+    sha256 cellar: :any,                 arm64_sequoia: "39e6be0168197b224f79d6f666541ee66fda7a6a282d27256b7890c6465abb32"
+    sha256 cellar: :any,                 arm64_sonoma:  "24f83f11139514c7f1e58648e6e4f8ad427264cfefb73929d9b7637b32483b34"
+    sha256 cellar: :any,                 sonoma:        "7db39df2f0e742b24605e6a187bee1ac92c11a1aeff0df55803b0b7cc40c6ae7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2e0b79456252b55a2fccf7b961cf57831cc668a824f8cae7fdc7782b5cd50b9"
   end
 
   depends_on "pkgconf" => :build
@@ -98,8 +98,8 @@ class HuggingfaceCli < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz"
-    sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
+    url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
+    sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
   end
 
   def install

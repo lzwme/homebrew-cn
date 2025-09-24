@@ -308,6 +308,7 @@ Homebrew-homebrew-core/Formula/a/atkmm@2.28.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/atlantis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/atlas.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/atmos.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/atomic_queue.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/atomicparsley.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/atomist-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/atool.rb, Homebrew/homebrew-core, 0
@@ -1555,7 +1556,6 @@ Homebrew-homebrew-core/Formula/d/docker-ls.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/docker-machine-driver-vmware.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/docker-machine-driver-vultr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker-machine-nfs.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/docker-machine-parallels.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/docker-machine.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/docker-squash.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/docker.rb, Homebrew/homebrew-core, 0
@@ -2872,7 +2872,7 @@ Homebrew-homebrew-core/Formula/h/hive.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hivemind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hivex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hjson.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/h/hk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/hk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hledger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hlint.rb, Homebrew/homebrew-core, 0
@@ -5227,7 +5227,7 @@ Homebrew-homebrew-core/Formula/o/ox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oxen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oxipng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oxker.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/o/oxlint.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/oxlint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/p0f.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/p11-kit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/p7zip.rb, Homebrew/homebrew-core, 1
@@ -7876,6 +7876,7 @@ Homebrew-homebrew-core/Formula/z/zssh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zstd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsxd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zsync.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/z/zuban.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zug.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zurl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zx.rb, Homebrew/homebrew-core, 0
@@ -9358,6 +9359,7 @@ Homebrew-homebrew-cask/Casks/f/focusrite-saffire-mixcontrol.rb, Homebrew/homebre
 Homebrew-homebrew-cask/Casks/f/fog.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/foks.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/folder-colorizer.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/folder-preview-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/folding-at-home.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/folding-at-home@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/foldingtext.rb, Homebrew/homebrew-cask, 0
@@ -14027,6 +14029,7 @@ Homebrew-homebrew-cask/Casks/r/raycast.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/raze.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/razorsql.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rclone-browser.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/r/rclone-ui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rcloneview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/react-native-debugger.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/react-proto.rb, Homebrew/homebrew-cask, 1
@@ -15640,3 +15643,7 @@ shivammathur-homebrew-php/Formula/php@8.5-debug-zts.rb, shivammathur/homebrew-ph
 shivammathur-homebrew-php/Formula/php@8.5-debug.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.5-zts.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.5.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.6-debug-zts.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.6-debug.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.6-zts.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.6.rb, shivammathur/homebrew-php, 1

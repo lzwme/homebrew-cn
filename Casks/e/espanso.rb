@@ -1,25 +1,16 @@
 cask "espanso" do
-  arch arm: "M1", intel: "Intel"
+  version "2.2.7"
+  sha256 "1d671417f5a6b94a86b0ac575d8d8146e3a80b8c23275fd673640b8bc5028e6b"
 
-  version "2.2.1"
-  sha256 arm:   "419687d4d954630c8690e315eb7830b28f03b95521d720fc2bd960e084d49993",
-         intel: "369ad7eb9a30015a3836012970acd15b3b06c6f67349a89ced6bb3ae9c3f2d20"
-
-  url "https://ghfast.top/https://github.com/espanso/espanso/releases/download/v#{version}/Espanso-Mac-#{arch}.zip",
+  url "https://ghfast.top/https://github.com/espanso/espanso/releases/download/v#{version}/Espanso-Mac-Universal.zip",
       verified: "github.com/espanso/espanso/"
   name "Espanso"
   desc "Cross-platform Text Expander written in Rust"
   homepage "https://espanso.org/"
 
-  # Upstream may not mark unstable releases like `1.2.3-beta` as pre-release
-  # on GitHub, so they can end up as the "latest" release. They also tag
-  # versions that may not end up with a release and some releases use a stable
-  # version format but are marked as pre-release, so we can't rely on Git tags.
-  # This checks the first-party website's Installation page, which links to
-  # release files on GitHub.
   livecheck do
-    url "https://espanso.org/install/"
-    regex(%r{href=.*?/v?(\d+(?:\.\d+)+)/Espanso-Mac-#{arch}\.zip}i)
+    url :url
+    strategy :github_latest
   end
 
   app "Espanso.app"
