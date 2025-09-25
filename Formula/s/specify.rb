@@ -3,20 +3,20 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.com/github/spec-kit"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.0.52.tar.gz"
-  sha256 "fabc3dd22fa381c3d84e39982d54e4d0dcd6dd64582ecc98bc98fa9e9d4ab5ff"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.0.53.tar.gz"
+  sha256 "749503d545d2a7148867bda48179c788cfea325fa334a6941a248a54d6710de2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "223f87d237136cdfa1e0c9c4c1d83923c6f91a9b8a72613706028e9617cd910a"
+    sha256 cellar: :any_skip_relocation, all: "e66b50527c3127a200d93756ba02a215db0b1bd371c507f00a46ff449e7c8c9e"
   end
 
   depends_on "certifi"
   depends_on "python@3.13"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/f1/b4/636b3b65173d3ce9a38ef5f0522789614e590dab6a8d505340a4efe4c567/anyio-4.10.0.tar.gz"
-    sha256 "3f3fae35c96039744587aa5b8371e7e8e603c0702999535961dd336026973ba6"
+    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
+    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
   end
 
   resource "click" do
@@ -95,8 +95,8 @@ class Specify < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/03/ea/9cc57c3c627fd7a6a0907ea371019fe74c3ec00e3cf209a6864140a602ad/typer-0.19.1.tar.gz"
-    sha256 "cb881433a4b15dacc875bb0583d1a61e78497806741f9aba792abcab390c03e6"
+    url "https://files.pythonhosted.org/packages/21/ca/950278884e2ca20547ff3eb109478c6baf6b8cf219318e6bc4f666fad8e8/typer-0.19.2.tar.gz"
+    sha256 "9ad824308ded0ad06cc716434705f691d4ee0bfd0fb081839d2e426860e7fdca"
   end
 
   resource "typing-extensions" do

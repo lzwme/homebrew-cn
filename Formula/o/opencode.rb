@@ -1,17 +1,17 @@
 class Opencode < Formula
   desc "AI coding agent, built for the terminal"
   homepage "https://opencode.ai"
-  url "https://registry.npmjs.org/opencode-ai/-/opencode-ai-0.11.2.tgz"
-  sha256 "1fc50066457c00c8e45eaa451282af8c3fb24ed6bebc136f0f41374c80729c19"
+  url "https://registry.npmjs.org/opencode-ai/-/opencode-ai-0.11.3.tgz"
+  sha256 "82f911dcb05754e29cc6502a220ab4e34fe45b9e42fd52bec2f2b115ad2f1883"
   license "MIT"
 
   bottle do
-    sha256                               arm64_tahoe:   "a51f1273ca9976d82f162b37bbfe4e3584cbee07488b9b6c7e536b2b210b95e4"
-    sha256                               arm64_sequoia: "a51f1273ca9976d82f162b37bbfe4e3584cbee07488b9b6c7e536b2b210b95e4"
-    sha256                               arm64_sonoma:  "a51f1273ca9976d82f162b37bbfe4e3584cbee07488b9b6c7e536b2b210b95e4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "95b8fbab0235b890fcd63992cdf29b23ed683747f3e98fe95cef42899abac977"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ec5eba349a12a105012ef747f3d6384ce5aa53b2c580a81bf7e21c05406aa97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ecfa0b1cb893bc191cc1e81642590207a9ccef2af003197d51003bdc3a63b1fd"
+    sha256                               arm64_tahoe:   "8c3867fb8294935004a4c618fbf5bb196101967a30da616f81ec16377b2f527f"
+    sha256                               arm64_sequoia: "8c3867fb8294935004a4c618fbf5bb196101967a30da616f81ec16377b2f527f"
+    sha256                               arm64_sonoma:  "8c3867fb8294935004a4c618fbf5bb196101967a30da616f81ec16377b2f527f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "79de42b858dd8a6cf274241f95226e4ab34ecd50723af3a6386f4af658682e23"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "059e975477a0286bcb905302aa07a207b22116ad60bac7fe05cb316e0ba17540"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ed325ec813968997ca9d0fc695685674ab7232b0b8164b30d4b8f95ccdef1a2"
   end
 
   depends_on "node"

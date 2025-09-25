@@ -1,6 +1,6 @@
 cask "microsoft-edge@canary" do
-  version "142.0.3576.0,bbefdeb7-b002-4646-95e5-242df44c0524"
-  sha256 "493074a95ba549be9e5fcf6aaff8e8f12e8065df3efb8ed374a216d5a0d90a17"
+  version "142.0.3578.0,b66aa773-5a8a-465b-b388-6d60935cfc5c"
+  sha256 "3505e7c645ed0cb2153d40347614d98c0e9fa4ccd09756e90274313b435eb60f"
 
   url "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/#{version.csv.second}/MicrosoftEdgeCanary-#{version.csv.first}.dmg"
   name "Microsoft Edge Canary"

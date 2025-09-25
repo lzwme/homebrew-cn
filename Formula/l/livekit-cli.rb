@@ -1,17 +1,17 @@
 class LivekitCli < Formula
   desc "Command-line interface to LiveKit"
   homepage "https://livekit.io"
-  url "https://ghfast.top/https://github.com/livekit/livekit-cli/archive/refs/tags/v2.5.6.tar.gz"
-  sha256 "beea580f7ac7aa56bf4ae6c648437ee2fbb370588154f2902c450e9dece97607"
+  url "https://ghfast.top/https://github.com/livekit/livekit-cli/archive/refs/tags/v2.5.7.tar.gz"
+  sha256 "7654844eb98113ce170475dd9a5c82b83264d97668bba3178fdcbba211df0c07"
   license "Apache-2.0"
   head "https://github.com/livekit/livekit-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "869014d8cea1644d6c499ea0b3150af01d2c68c13dbfbb0dac111834e5d5eb9e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb4b6477fb646a15738d517c5d8a31e09981c14dd5e6a48d98243fe0c60be12d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a495e38ecda131fdeb8dae8669972e9d5789e73ecf6a15b852ac4a466cba1ed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a4cfb20314f7433068535739e04c42e70a7ed51b019290df9ea728c96174b3d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00d0ce764da0ee4440877ae26c34cbcbfe61353e760c839ee2fd8d917b78b522"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e2db0c95f57a60b18349a8cb4a3290f77fc5a2430f5161190f18c48184a01e3b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8cd1a2f4bfb3cf57a2e9e00ba9b8011834dfe00bb3200f7a075d0e04e07e6fb1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2408be81f0fba42c8be12f71b21c710783ab1f1f5f4814803498eb61608f2228"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dd2415d81a65dda7c77c6786d5d77ba2793ae9d4148b9099415a0cbe1877da6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42d48b60700aa18bd7596a18c20882a3f72efa6429c6869901273e3b2983c659"
   end
 
   depends_on "go" => :build

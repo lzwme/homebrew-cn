@@ -5,12 +5,12 @@ class Unisonlang < Formula
 
   stable do
     url "https://github.com/unisonweb/unison.git",
-        tag:      "release/0.5.48",
-        revision: "2824fce433fe13855ab8fcbf2c2ebbe0c9a5ab4c"
+        tag:      "release/0.5.49",
+        revision: "d85de68861c65d6419a6ac9df8022400adb27f4d"
 
     resource "local-ui" do
-      url "https://ghfast.top/https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/0.5.48.tar.gz"
-      sha256 "926420888083f94007e904b77bc6525f1881e27b800a9c8dd863450fccb6b474"
+      url "https://ghfast.top/https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/0.5.49.tar.gz"
+      sha256 "33f0043667cee96da2cf280e1ab364f3a537f36368b8dcc22ab652fe412a1222"
 
       livecheck do
         formula :parent
@@ -24,11 +24,11 @@ class Unisonlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "764ea9af9ac1913f32c4ba00442ca62ededd9ad647d02b6bbc5ed5032586cf92"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f943319de3ed6beed4682e66dbc2145a7fdeaabae34fff757d2b75ee70d69b5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d547c8dcdd51e0342704930ca78aaa87f89649742742f00f2d9627f31832ffdb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c77519553e37d06254c4a4d701fd328175d0577afd6cd1b9d65040ed968211c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56f22534de09557af873dcf3397681d976798682571fa8c3a279e00326c961dc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14d799f4d8116f0e1bfbeb2fcb519e281b92a4eda16216e22567b827fa28f95d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99f973cbdab57fde249a30d66dbfd80c4dafd914b425f6e88940c3a437677613"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0159bb8829c2b678aeb20ebbd8a37631237fd1195d912551a8fb1720eb552359"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8ca28b5775cb38ecdda78872c8a5a42b7a215ad8fd76b64cc9a179318455790e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7364d2513f2eef2e62ae03d1653737e212bb99c2ba22bb950d7dd8de78a8acca"
   end
 
   head do

@@ -1,8 +1,8 @@
 class Meilisearch < Formula
   desc "Ultra relevant, instant and typo-tolerant full-text search API"
   homepage "https://docs.meilisearch.com/"
-  url "https://ghfast.top/https://github.com/meilisearch/meilisearch/archive/refs/tags/v1.21.0.tar.gz"
-  sha256 "99ac928862a020ed2e4b0621dc64d997d3c6ab99b266260bc2caba417c73294f"
+  url "https://ghfast.top/https://github.com/meilisearch/meilisearch/archive/refs/tags/v1.22.0.tar.gz"
+  sha256 "23ec9f97b4bac7c2d779913b3fb6ce5ec5beb51239fdbd78a120f360ecb95826"
   license "MIT"
 
   # There can be a notable gap between when a version is tagged and a
@@ -14,12 +14,12 @@ class Meilisearch < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "99cb6964cd29dad2be2699dfa2526aed3daae0adf50018798e56c934ebd93121"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "328745cbed7af6b53e32237f705a2d1dd1a44207bdf0577202088d06af3e804a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79673e25cec88b2432f60c4da3632bd73f22d4101c8adec376a2e5a7ce5dc2ca"
-    sha256 cellar: :any_skip_relocation, sonoma:        "73fe7dea71d2a4599bee1b6e1639863d909712b37a8c97de50db94972b95aabc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1751a0b71c008d6cb940d5690cbe002bc9cd6f5bf07c58551e618024f8ed89b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f35ca5f99e0b413a275cde1e679a0b483a65f26f1928a3b622d429d8acfbdbd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2c5f27032b0b9ff0838005ef06212512717fc297dce190a9a5bf24f9f1d1d0c6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba7bd5ea502194920ff6273be0b486e9c3310eb8039a0ecd1c0fea10c64eab9a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10d11f0f9d889d1a237c52133961ab25125662123db4f7b7e66b6a01c1664e96"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7d1df5f027bb28585f8980dc3c495ddc8307b878a23badac8fc10fe3deeea5fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "70fda7d2c3b2bfe56513c7ea9ba25802fc44d1606fc12b0f0e620eddf0f7b96a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d12d59f3c375005a319112651686de2a6022ad114862af175b9185e184546d41"
   end
 
   depends_on "rust" => :build
