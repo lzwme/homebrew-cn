@@ -6,8 +6,8 @@ class Llvm < Formula
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
-    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.1/llvm-project-21.1.1.src.tar.xz"
-    sha256 "8863980e14484a72a9b7d2c80500e1749054d74f08f8c5102fd540a3c5ac9f8a"
+    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.2/llvm-project-21.1.2.src.tar.xz"
+    sha256 "1a417d1c8faf8d93e73fec1cbb76d393ed3218974c2283c7bac9672d3d47c54b"
 
     # Fix triple config loading for clang-cl
     # https://github.com/llvm/llvm-project/pull/111397
@@ -23,14 +23,12 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5032ffa3dee0109de164f602f2906dbfb107dbe04f5c6d7dbc415d3b5aee507e"
-    sha256 cellar: :any,                 arm64_sequoia: "1d1e860def7950d7753a213c6de93455c605ddf84b828bc8510b5caccf881277"
-    sha256 cellar: :any,                 arm64_sonoma:  "ad9c478fbba3951eed5c1a92d9fb2843765f9ff8a835df25a195eadecdcf2ed4"
-    sha256 cellar: :any,                 arm64_ventura: "f5df9612c5196f3e59233732e28754848505111dc6531aa316054635a3683ddb"
-    sha256 cellar: :any,                 sonoma:        "201b1bdb089228f41756615f1fee4832737bad38368c2ea1229fe4972cac2a00"
-    sha256 cellar: :any,                 ventura:       "b31ac949bbcf69d1362644a512d08b2840583a3efa42cea419dc2280bb715280"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4321b6bd43e49569b156ef5c6759adb83f1d2fdacdbf5fbdb624e73ddb6b2be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7211d2b52087eb62f0d3ed0bac9288b639d6ad4b68d82a161d6438acdd28468c"
+    sha256 cellar: :any,                 arm64_tahoe:   "f83226e978840c77fdc8c314ad9015c9ac4e5d86b3a02a0f1fb6b628415b1dc6"
+    sha256 cellar: :any,                 arm64_sequoia: "6d60ff5a488943c7f358ad09cf0df57bde124cd4be61d79768f61813972385e5"
+    sha256 cellar: :any,                 arm64_sonoma:  "0aaf56b7f3272987d17ab25fcc0bc89aa0632759e78c4f6aae4544f0d787afbc"
+    sha256 cellar: :any,                 sonoma:        "9c88c2c00ed4ee2d31611cd2fa93dd879002cc6a155d8c07695063b8912cc767"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d24d63d4eacaef9a54446b4fae5390e682c4d4956c551d78db220eab8b60a373"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "025ebf7bc0218c5cb2cf03822bf67a3b84ca113b162401316def0a72956d3bfa"
   end
 
   keg_only :provided_by_macos

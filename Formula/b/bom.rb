@@ -1,19 +1,17 @@
 class Bom < Formula
   desc "Utility to generate SPDX-compliant Bill of Materials manifests"
   homepage "https://kubernetes-sigs.github.io/bom/"
-  url "https://ghfast.top/https://github.com/kubernetes-sigs/bom/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "c0f08f765ec93d0b61bead2776b118cc2d18d8a200be6b53520856f751861c35"
+  url "https://ghfast.top/https://github.com/kubernetes-sigs/bom/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "ebef4f8c86cf614acb27be4696c1f5d2394c68bb9312e5b26736721f035689fe"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/bom.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d2df37362a07cdb818a262c36e8a4af13ec15d97bd6cf20c2e0c56465241b576"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2df37362a07cdb818a262c36e8a4af13ec15d97bd6cf20c2e0c56465241b576"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2df37362a07cdb818a262c36e8a4af13ec15d97bd6cf20c2e0c56465241b576"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d2df37362a07cdb818a262c36e8a4af13ec15d97bd6cf20c2e0c56465241b576"
-    sha256 cellar: :any_skip_relocation, sonoma:        "21138d3335d9e12dacb071ac92897b45293039d592ad063bf16dd14cdcd116c9"
-    sha256 cellar: :any_skip_relocation, ventura:       "21138d3335d9e12dacb071ac92897b45293039d592ad063bf16dd14cdcd116c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "163a281909261e7063257b791ebc3cc00c630564b78ad0182a6498feb4dc6844"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "99b4f083ab09978bdecc2718fa387c857700dbb12f1a4c581f59c0bf01522f81"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99b4f083ab09978bdecc2718fa387c857700dbb12f1a4c581f59c0bf01522f81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99b4f083ab09978bdecc2718fa387c857700dbb12f1a4c581f59c0bf01522f81"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1646b8a2de3c143c28009b4f4c3389e36acc916776e38dd3680e63d623556058"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6674782ab5e1a6f950f16c5af892218374afaf9c4805b7134495471811863c4c"
   end
 
   depends_on "go" => :build

@@ -1571,6 +1571,7 @@ Homebrew-homebrew-core/Formula/d/doctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/docuum.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docx2txt.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/doge.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/doggo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/doitlive.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dolphie.rb, Homebrew/homebrew-core, 1
@@ -5571,6 +5572,7 @@ Homebrew-homebrew-core/Formula/p/postgresql@14.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgresql@15.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgresql@16.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgresql@17.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/postgresql@18.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgrest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/posting.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/potrace.rb, Homebrew/homebrew-core, 0
@@ -5731,9 +5733,9 @@ Homebrew-homebrew-core/Formula/p/pympress.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pymupdf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyoxidizer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyp.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/pypy.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/pypy3.10.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/pypy3.9.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pypy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pypy3.10.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pypy3.9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyqt-builder.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyqt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyqt@5.rb, Homebrew/homebrew-core, 0
@@ -8683,6 +8685,7 @@ Homebrew-homebrew-cask/Casks/c/codeexpander.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/codekit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/codelite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/codeql.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/coderabbit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/coderunner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/codeship-jet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/codespace.rb, Homebrew/homebrew-cask, 0

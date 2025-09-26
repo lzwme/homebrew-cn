@@ -1,8 +1,8 @@
 class FlowCli < Formula
   desc "Command-line interface that provides utilities for building Flow applications"
   homepage "https://onflow.org"
-  url "https://ghfast.top/https://github.com/onflow/flow-cli/archive/refs/tags/v2.7.1.tar.gz"
-  sha256 "8f23eed9cea64f90f01d323d40e323f85f6145f3a2710975f1f24879a4452df8"
+  url "https://ghfast.top/https://github.com/onflow/flow-cli/archive/refs/tags/v2.7.2.tar.gz"
+  sha256 "a97c33336fc4ec996bee9741efde7344fb0b3c96775a62fc4bb3dcc4d915c775"
   license "Apache-2.0"
   head "https://github.com/onflow/flow-cli.git", branch: "master"
 
@@ -12,12 +12,12 @@ class FlowCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f9bdc390abc3c65c22112cf1c25696cbadc1efa730c5d7353660a5e09471e0e4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad979dad1853f0a27c8c2a0b1fb1d7cf592f285e52a52aa7ec695de2e184ca7f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57b581d9940a75ce7e7b510673f0cfad46954a00e18b74d31e9752f8644d79d7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3e6d2f28c226758c040147ed56290bbf629ae07db38ba196d66d151cc47fce47"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4de446105529ef63d69029b575fde0ea79703588e6f96a8c2c1b61c09b7aaaba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa29bb529845388d7484da9fe5559891aa53532b15d99604bdae8b32b31f550f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25502cab592a7e3cf52da1294ffd9ac6932a61211efdc3a21b2e6a81416b7e3a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd7b4a68573eeae6e78cd0a6f2a5986400fbb0a6625aef9308d34874cd8149d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dfa2798dc5adf4f40a0842059153b329811a19fc7205f8a9f08aa7163ea2f6ae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "572ff890a8d1da3dfc5654c7113a4f2fe1a257df12a061ea4f12f70488191943"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c64c7abbca12f74de1ad2164e355ac12f1314d02ad9a00041eae5225fa2b663"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c74d222fbea3e7078690729e5bb16ad1b5a28c37a19e00127c52bffe23172ac7"
   end
 
   depends_on "go" => :build

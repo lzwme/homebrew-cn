@@ -1,8 +1,8 @@
 class Yek < Formula
   desc "Fast Rust based tool to serialize text-based files for LLM consumption"
   homepage "https://github.com/bodo-run/yek"
-  url "https://ghfast.top/https://github.com/bodo-run/yek/archive/refs/tags/v0.23.0.tar.gz"
-  sha256 "6930ec4ca31a32e946b66e0b9db8afc46c8257b8b5b66fca2227b999a2262215"
+  url "https://ghfast.top/https://github.com/bodo-run/yek/archive/refs/tags/v0.25.0.tar.gz"
+  sha256 "ecbdf29ba2955fc33c4e43b3177577a08b05435523b1849924ec10605d2632bf"
   license "MIT"
   head "https://github.com/bodo-run/yek.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Yek < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e006c917c04a407a68291897e3bd171be3e5e2bb6f35439982b2378fe69fbe4e"
-    sha256 cellar: :any,                 arm64_sequoia: "0211d67697e9d905c88447d7795d2ebb0d4b0b5ad7ce558ef163f9b3ba7e02b2"
-    sha256 cellar: :any,                 arm64_sonoma:  "2d4ce747874f7e5640a80644e9c2ff2e2eccb04e6153f7424a531091d57bae29"
-    sha256 cellar: :any,                 sonoma:        "6a7f18faa8c9cc230c9c533da988ade923282b80ada2e0ed5e9908add8b48af2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9ea348b33d0839ae195e56100bfb9b3d8fe78688d06ba163b8cda7b23e0f88b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b45925f801663c82780e13876bfeaa81474053f5d4570d3abcac24171c1d19d4"
+    sha256 cellar: :any,                 arm64_tahoe:   "ac829ae377e2e7b82f3bc006de4466d2d772d3f9acbe78c4af3b69cd5ce59972"
+    sha256 cellar: :any,                 arm64_sequoia: "855b82000b222556ebcfe76a601a01947556d00d02cbd6174284ac428dd83af1"
+    sha256 cellar: :any,                 arm64_sonoma:  "16ad7af378996899494b182ca0dfa80b208c9d74e91518eceaddad2f602996f1"
+    sha256 cellar: :any,                 sonoma:        "ead185f22c47d3c306f5c3caee1f8d8a495d68ac2fa4d82d2e67c4283c4611b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8475649002f88a15bac8a83587e8e704d5e5a657de823886f6b46727c2a61a9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92e9ac6bee5dff5a363d8e19c6973a335381ee65a999612094d9adcc844ec5a5"
   end
 
   depends_on "pkgconf" => :build

@@ -20,6 +20,13 @@ class Xlearn < Formula
   depends_on "cmake" => :build
   depends_on arch: :x86_64 # https://github.com/aksnzhy/xlearn/issues/354
 
+  on_macos do
+    # Can be undeprecated if upstream decides to support arm64 macOS
+    # https://docs.brew.sh/Support-Tiers#future-macos-support
+    deprecate! date: "2025-09-25", because: :unsupported
+    disable! date: "2026-09-25", because: :unsupported
+  end
+
   def install
     inreplace "CMakeLists.txt", "set(CMAKE_INSTALL_PREFIX \"xLearn\")", ""
 

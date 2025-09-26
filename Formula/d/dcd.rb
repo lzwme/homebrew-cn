@@ -21,18 +21,10 @@ class Dcd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "658abefb0b260e852fb16078e353b453929f6f04fa8af8f636ed2d5e2aa89fca"
   end
 
-  on_macos do
-    depends_on "ldc" => :build
-  end
-
-  on_linux do
-    depends_on "dmd" => :build
-  end
+  depends_on "ldc" => :build
 
   def install
-    target = OS.mac? ? "ldc" : "dmd"
-    ENV.append "DFLAGS", "-fPIC" if OS.linux?
-    system "make", target
+    system "make", "ldc"
     bin.install "bin/dcd-client", "bin/dcd-server"
   end
 

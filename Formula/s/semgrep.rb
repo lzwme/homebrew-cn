@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.137.0",
-      revision: "044da33065e507d3a27a19507d52209a443e6028"
+      tag:      "v1.138.0",
+      revision: "319175c14170da2d8b072c882dd434dfc5bd2f0b"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
@@ -15,12 +15,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "840d321d56ec13cef33ee54ee919424983407d0db29fb7a9318402fd6b52d70a"
-    sha256 cellar: :any, arm64_sequoia: "07a01b05208869182dd3005f61f3a0147addc2a68b486c2b3ade77d054ebb288"
-    sha256 cellar: :any, arm64_sonoma:  "cfc46b2e46933697b57d79888b466f84a36beaf366160b0b323226a699a4d4f3"
-    sha256 cellar: :any, sonoma:        "340dd1a636e14fb60a7b1184c77925cb9b11eaa5bfd8d896e5c3bfdba2d5b5f3"
-    sha256               arm64_linux:   "ee5a7e1b4d14035b7e497b783b36ab39692bd44e854f8a47996989eed067d977"
-    sha256               x86_64_linux:  "a2c04e7443cbf8c1aa62de86da834389a1ad4907ae962edeb1b416e4b440f907"
+    sha256 cellar: :any, arm64_tahoe:   "b70f2c5ae72a70be05cc33ed25e647480b47016bdbf67669affb04494f6a1604"
+    sha256 cellar: :any, arm64_sequoia: "f288c64f9a8395eab9195e670a6584c46bc8dc475a6335a719a896494dff1c51"
+    sha256 cellar: :any, arm64_sonoma:  "0ab0da609857bd13ddf84bba8b867da41435bc50ba2b081807aba57d9cda6977"
+    sha256 cellar: :any, sonoma:        "0cc33c0dee8dd140446266014f545433d86d1913d740a121d15c2c4678c26c5f"
+    sha256               arm64_linux:   "f038233125c5256ebb14d2d4ccbafca08259e8fca3bac79094b087a27f78befd"
+    sha256               x86_64_linux:  "a7ff3577493538cdf9622faf5d3ce429dac089724209cb75d79cca4fbc353b73"
   end
 
   depends_on "autoconf" => :build
@@ -57,8 +57,8 @@ class Semgrep < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/f1/b4/636b3b65173d3ce9a38ef5f0522789614e590dab6a8d505340a4efe4c567/anyio-4.10.0.tar.gz"
-    sha256 "3f3fae35c96039744587aa5b8371e7e8e603c0702999535961dd336026973ba6"
+    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
+    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
   end
 
   resource "attrs" do
@@ -247,8 +247,8 @@ class Semgrep < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/68/85/1ea668bbab3c50071ca613c6ab30047fb36ab0da1b92fa8f17bbc38fd36c/pydantic_settings-2.10.1.tar.gz"
-    sha256 "06f0062169818d0f5524420a360d632d5857b83cffd4d42fe29597807a1614ee"
+    url "https://files.pythonhosted.org/packages/20/c5/dbbc27b814c71676593d1c3f718e6cd7d4f00652cefa24b75f7aa3efb25e/pydantic_settings-2.11.0.tar.gz"
+    sha256 "d0e87a1c7d33593beb7194adb8470fc426e95ba02af83a0f23474a04c9a08180"
   end
 
   resource "pygments" do
@@ -332,8 +332,8 @@ class Semgrep < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/5e/42/e0e305207bb88c6b8d3061399c6a961ffe5fbb7e2aa63c9234df7259e9cd/uvicorn-0.35.0.tar.gz"
-    sha256 "bc662f087f7cf2ce11a1d7fd70b90c9f98ef2e2831556dd078d131b96cc94a01"
+    url "https://files.pythonhosted.org/packages/71/57/1616c8274c3442d802621abf5deb230771c7a0fec9414cb6763900eb3868/uvicorn-0.37.0.tar.gz"
+    sha256 "4115c8add6d3fd536c8ee77f0e14a7fd2ebba939fed9b02583a97f80648f9e13"
   end
 
   resource "wcmatch" do

@@ -1,15 +1,15 @@
 class RubyBuild < Formula
   desc "Install various Ruby versions and implementations"
   homepage "https://rbenv.org/man/ruby-build.1"
-  url "https://ghfast.top/https://github.com/rbenv/ruby-build/archive/refs/tags/v20250916.1.tar.gz"
-  sha256 "3e2c33a21a21cda5b4f8725850f9f142a4af0a4062b8b40d1e3c9fae7b50f3b2"
+  url "https://ghfast.top/https://github.com/rbenv/ruby-build/archive/refs/tags/v20250925.tar.gz"
+  sha256 "a8407007559be6b694c1a0daa34cb4e4a914d6678367047140caee9597434487"
   license "MIT"
   head "https://github.com/rbenv/ruby-build.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8a76ebc39a871eceb40bef84098c1dd4bce352e8a671cfbd28de3c951c7318f2"
+    sha256 cellar: :any_skip_relocation, all: "43939f49b59a5ce290d31370fb99143d11e1b6d5530465b3fe61b98ab532f8a0"
   end
 
   depends_on "autoconf"

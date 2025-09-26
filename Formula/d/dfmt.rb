@@ -5,7 +5,7 @@ class Dfmt < Formula
       tag:      "v0.15.2",
       revision: "d8e43e23eca0aa32f064fe7efe8e74a9efa8018e"
   license "BSL-1.0"
-  head "https://github.com/dlang-community/dfmt.git", branch: "v0.x.x"
+  head "https://github.com/dlang-community/dfmt.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "5708ab6278be915f769fec47dfedf6545e4ab571ff609c8edca2ddf9a78be996"
@@ -20,22 +20,10 @@ class Dfmt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c388fa11efd8c658e529ec9279a87930751226248893b198de70abd6fbcfdc07"
   end
 
-  on_arm do
-    depends_on "ldc" => :build
-  end
-
-  on_intel do
-    depends_on "dmd" => :build
-  end
+  depends_on "ldc" => :build
 
   def install
-    target = if Hardware::CPU.arm?
-      "ldc"
-    else
-      ENV.append "DFLAGS", "-fPIC" if OS.linux?
-      "dmd"
-    end
-    system "make", target
+    system "make", "ldc"
     bin.install "bin/dfmt"
     bash_completion.install "bash-completion/completions/dfmt"
   end

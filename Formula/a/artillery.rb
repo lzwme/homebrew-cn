@@ -1,8 +1,8 @@
 class Artillery < Formula
   desc "Cloud-native performance & reliability testing for developers and SREs"
   homepage "https://www.artillery.io/"
-  url "https://registry.npmjs.org/artillery/-/artillery-2.0.25.tgz"
-  sha256 "bf1ac1e41d3eb337e2f6d66c39144c1e60fbaaab622604cf51a06beb6cc9d905"
+  url "https://registry.npmjs.org/artillery/-/artillery-2.0.26.tgz"
+  sha256 "ca5a8041225287dfecb83d4dda385e2a0e6539b9544fb8af3b6ffde5d8779993"
   license "MPL-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Artillery < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "b5cb57035cae633e56767202f6c42d4ccdc5c7a195089c8fb682be21fb0b4261"
-    sha256                               arm64_sequoia: "d63723495a9b9dcfceb0238ea15f2c663074e22fd6598479586c14e5a6f068ed"
-    sha256                               arm64_sonoma:  "48330dd76ca2cfbad3027b2cdb3b5f9671a2d5b165747f25510e3f17c56e96f2"
-    sha256                               sonoma:        "e6f4be4fa3ce7d6c43b75b61273fa382fc05bfa37a22548771345fcb08412e04"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dacd17a3186309f38c37cf910e56222b0760299ec0254e2d7b1b1d36b7335317"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65a1f95bad0f246ce7143633c7573b6e1418863d528c2670b7bdb08bd4597eae"
+    sha256                               arm64_tahoe:   "f2074443fca8be08e2348aec667a5cb4940f1a250a696fc1593ec626de373bbf"
+    sha256                               arm64_sequoia: "162ed91c8e41ef5249e6a8e53a9572f3e14aa565fc155745bae9680109b35a29"
+    sha256                               arm64_sonoma:  "26b358eef47e3bf5f1369428fb1a5e9c1514e36cb7e17267138ca9e5864070b0"
+    sha256                               sonoma:        "0fee749e63a4972e299d0c42aca8dc31f4e49fbd52054c80a90a21aaffab131b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f91181e8ee35c15ce8cf99015937e006d538b02a59133c4f4b726f67443e1a8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56e97b9cdeff224eeb42b67d0ac8d2ee155e4d81850eea7cd41f5fabbfe6bf23"
   end
 
   depends_on "node"

@@ -1,8 +1,8 @@
 class Nest < Formula
   desc "Neural Simulation Tool (NEST) with Python3 bindings (PyNEST)"
   homepage "https://www.nest-simulator.org/"
-  url "https://ghfast.top/https://github.com/nest/nest-simulator/archive/refs/tags/v3.8.tar.gz"
-  sha256 "eb255f8828be001abea0cddad2f14d78b70857fc82bece724551f27c698318c8"
+  url "https://ghfast.top/https://github.com/nest/nest-simulator/archive/refs/tags/v3.9.tar.gz"
+  sha256 "8e67b9dcb72b029f24f3d70ff6d3dd64776dc21bf3e458c822c862677d67d076"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,12 @@ class Nest < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256                               arm64_tahoe:   "ecdcb809374fd3ac133209090f0c4736018c36cfb315d5f2d93a25b69adbb908"
-    sha256                               arm64_sequoia: "77726b6e71f853c6df098f2d831f9a0af988f6bf7d31603da31d5b724af38e40"
-    sha256                               arm64_sonoma:  "8b96f0a8dc01bfd65c16a3a0c837e50b020b4a609fc4fed7e20af4fad94c479c"
-    sha256                               sonoma:        "459ff70045a53b33d2a08c6a543f1c02170a82b72d12b32e70e64401eb5a9aec"
-    sha256                               arm64_linux:   "ec8f35f23f1bd5693753ff042718a8f21743d5396df3496f8c1a426a87394664"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "091d19e726b0c3a4d99748a2b8ad2d9308ad89aa12fd856c019e475ecfc9651d"
+    sha256                               arm64_tahoe:   "065df993ca2c0bde55060073cfe54e12844b3e8b5f94e13b5d5a77919ea92b1a"
+    sha256                               arm64_sequoia: "70045b182e97cdcb9b51d99ba0f3c53f84566dddec80c1e1e98f69701c789c5c"
+    sha256                               arm64_sonoma:  "c848332448d8914ae7ab34424650c41714a6c44fcac3e2f7f51594da42badf8e"
+    sha256                               sonoma:        "15b4296b41bebab8cea62840c22806d55989029e3fba0ad10c05e961da3ad2eb"
+    sha256                               arm64_linux:   "7d7be1baad034757222d9633f129fa3d17b2ba18313d7a44d2bf762c6404dec3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38afd26389b92c2425a3b7ef6ffecf12dc9e597dba4fada55ea101ac51ef5ea3"
   end
 
   depends_on "cmake" => :build
@@ -32,12 +31,6 @@ class Nest < Formula
 
   on_macos do
     depends_on "libomp"
-  end
-
-  # Fix to error undeclared name not builtin: long
-  patch do
-    url "https://github.com/nest/nest-simulator/commit/cb7e1dadf8a8566b7340ad3a7ed13c173d35e6d0.patch?full_index=1"
-    sha256 "056fa912d7570bd98e2114355a5d0a6ca2bc0bc8cfd362bf39625dfc9df93c47"
   end
 
   def install

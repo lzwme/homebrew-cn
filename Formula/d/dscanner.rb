@@ -22,20 +22,10 @@ class Dscanner < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1216ef19a42105de9617742024eca673eb221d711526bf6dd2204537a70afd34"
   end
 
-  on_arm do
-    depends_on "ldc" => :build
-  end
-
-  on_intel do
-    depends_on "dmd" => :build
-  end
+  depends_on "ldc" => :build
 
   def install
-    # Fix for /usr/bin/ld: obj/dmd/containers/src/containers/ttree.o:
-    # relocation R_X86_64_32 against hidden symbol `__stop_minfo'
-    # can not be used when making a PIE object
-    ENV.append "DFLAGS", "-fPIC" if OS.linux? && Hardware::CPU.intel?
-    system "make", "all", "DC=#{Hardware::CPU.arm? ? "ldc2" : "dmd"}"
+    system "make", "all", "DC=ldc2"
     bin.install "bin/dscanner"
   end
 

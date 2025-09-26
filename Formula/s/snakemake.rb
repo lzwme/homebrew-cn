@@ -3,18 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/88/8c/c85bf3929280a8291bc6f8082c939eebe0aa91300636aca93c8ad1233386/snakemake-9.11.5.tar.gz"
-  sha256 "1fe8f2efc6c3f67000a20c3fe2976d29cfa147832da959f8f136f7529e0fc73c"
+  url "https://files.pythonhosted.org/packages/1b/c9/81959b1feec983944de61b907e63433d89c92873db21469f8dfeb6d93231/snakemake-9.11.6.tar.gz"
+  sha256 "6b86d0d379d6d661800fe531c2ea5cccdc9f793bcf1f6e8d3f271f8de36ce2a8"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "23acf6e14a1d5de16fd6c248adc2bb79ffe4f1b048711a55475afc89e685bc22"
-    sha256 cellar: :any,                 arm64_sequoia: "af7d36b47b543c38ec38d42428ee88affe51321dd9b4eeb29f08d179f97c02f6"
-    sha256 cellar: :any,                 arm64_sonoma:  "11e5cdf44bbaae177d5a12bbeff30f3999dadfb6061d0fd257ad1f653612f9b9"
-    sha256 cellar: :any,                 sonoma:        "36f5df7aa6e4ac23fe04d0400656899d7e70ac1bdfaf2224739f8c001d504103"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eca921014693737ca4f0e801128e3cbd09f19f7659fc85905fb6818739781a46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4172b10e61ae23a14dbfbbbbf83fbe2e597746a639d476704b491242a76c6d90"
+    sha256 cellar: :any,                 arm64_tahoe:   "07a6161ea2e1fdf653b36a66b430ed52f85278d4873d4b2c543491783e490ac5"
+    sha256 cellar: :any,                 arm64_sequoia: "cbf70fbd3085914bbc506b23eed582ab65214e1f0349c8d2ba50bbd2537274e1"
+    sha256 cellar: :any,                 arm64_sonoma:  "dbd3758e550737fd2ca3ba93004db2746ec27c226030171779f597e2bc1820ab"
+    sha256 cellar: :any,                 sonoma:        "f1483f86d4342314f434befa8b875f05846d52f22fc63eeb0d96299f3430e724"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18e123dcdc0345c488c42c862b089d712fb3eabe670abe05cdb26ffe8a9f7dd4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32723f013401381e1478ab97a7a370d9d81906501c9992cbec192dd2c9fddb93"
   end
 
   depends_on "rust" => :build

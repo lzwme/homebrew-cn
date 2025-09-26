@@ -1,8 +1,8 @@
 class Feluda < Formula
   desc "Detect license usage restrictions in your project"
   homepage "https://github.com/anistark/feluda"
-  url "https://ghfast.top/https://github.com/anistark/feluda/archive/refs/tags/v1.9.8.tar.gz"
-  sha256 "cb512ea32a3973b17a86e5c4c88bf5ba70f8e6cddda6a697172522e87b691070"
+  url "https://ghfast.top/https://github.com/anistark/feluda/archive/refs/tags/v1.10.0.tar.gz"
+  sha256 "3b58e78c4d8087db648c420b76a4524af5644f273da23bf728a3eb505b90f211"
   license "MIT"
   head "https://github.com/anistark/feluda.git", branch: "main"
 
@@ -15,14 +15,12 @@ class Feluda < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "10ed5292af87e91eb0874142c85841e69518d4b5bf90d77031a899992ac35072"
-    sha256 cellar: :any,                 arm64_sequoia: "94bdf34ff65f8b0729bc533839876b888e287ee121e49d3d706738b1ddf4c81c"
-    sha256 cellar: :any,                 arm64_sonoma:  "7ba6a06c3ae47361be31f9c00abe977cf0198985473668406d72283a95fc4e5f"
-    sha256 cellar: :any,                 arm64_ventura: "6973d87e5817d663db874179c06c3f2965d752e3c4f915d5f1299d662499ea86"
-    sha256 cellar: :any,                 sonoma:        "592339e97cd43fa5ea7e02f30ad0d4a3f1023d3d8c1c59ea7e49bd2b673473b5"
-    sha256 cellar: :any,                 ventura:       "ce60131895977c5270c8ab7bc7d4d287efb1491950c18f0694584334d8dcb1d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0a82398a8608dada7c9f969b9826918a4635c102b69559a8af7565f727f0261"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aba35c9012b54a43554ae933fb5c7eb31a6328e5e55beb4f0b79e9084cd57753"
+    sha256 cellar: :any,                 arm64_tahoe:   "8a014a196f4b41922838f02260011b1e2c04221924886c8fb2bf3cbcff849eb1"
+    sha256 cellar: :any,                 arm64_sequoia: "80acba8f26391a0682233171d7924bfe8d151e4ac1d69eee0fb8c3ce55bd3b95"
+    sha256 cellar: :any,                 arm64_sonoma:  "4de49ebab0ac63400cc593bd071962538c68081b5a793ce62d8450f65ae8857a"
+    sha256 cellar: :any,                 sonoma:        "32d52b228acdef60a9c2eb7212bc2587d54f57845436593239384ae77897e937"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f74489c550e22e1cf0f7f369a18365123279945c9ffb86263ac25b01cb91368"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b685e65846906f66720be653f317cc1ab53d237eb1ef717acf4ee3b75733dbfe"
   end
 
   depends_on "pkgconf" => :build

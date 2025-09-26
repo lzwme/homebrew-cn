@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/60/61/b190547c2b6f053650257eb72d17e49f0ac5f0c7c54673175a0c5982a612/prowler-5.12.1.tar.gz"
-  sha256 "5cc2767898da1971cfdd9e977e6863295804041369b8208db65f494819a8b810"
+  url "https://files.pythonhosted.org/packages/ce/6f/7492bc0ec09789b994401d09250b60ad6ed7381e8454486e9242e0f91e3d/prowler-5.12.2.tar.gz"
+  sha256 "51021c7459beee0701825022864c59cf7fd7f507ae471b54fd303a006fd4654f"
   license "Apache-2.0"
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4546bb0370ecc76b1e22309fc79fa6ce79d6dbd5b6753e73e74a9e2188b89139"
-    sha256 cellar: :any,                 arm64_sequoia: "55e22385ff9167b1ea441e4f6607739af8217221df9ba221d2a62af0f4d68633"
-    sha256 cellar: :any,                 arm64_sonoma:  "48b64bcb85f62e5ed59b779a85030658eef25c34de0f3d62de8cb536eba5598d"
-    sha256 cellar: :any,                 sonoma:        "c43edda2ccf7fa339dcd332ea181c7f1c19daab943f9d01f4cb87e5110666fda"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4a381f5849defcb2a05a7f20b649223998090f9729aba411e060741e7c94932"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ecaed22738e64516d59b71ac044e2972dae4aaca9ddf074bbdf63e1e6d28d476"
+    sha256 cellar: :any,                 arm64_tahoe:   "3e0d14a37ba2dc4290c70e3df36375bdcfca650b96e8127dc8b7daa15c192ca9"
+    sha256 cellar: :any,                 arm64_sequoia: "3b1ed2851312356375aecf30e55ebb1a0740b8e787873ede940cf4be3c16d893"
+    sha256 cellar: :any,                 arm64_sonoma:  "242b80218ab49d19356b527502c60b053fee9e6ef32d34640cc63471e14463c2"
+    sha256 cellar: :any,                 sonoma:        "5587e5a3cee59b4949fbccd97d64b895055fd863336d4d471c8ec873dab2a363"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60356af68c5597c3b39c264c49a80c236ec0394d95b8d6481b9a46434b0301aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b779b99201a5432cdaf0e50ebecba1deead9b8f95b342d89f03342c982d1a963"
   end
 
   depends_on "cmake" => :build
@@ -64,8 +64,8 @@ class Prowler < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/f1/b4/636b3b65173d3ce9a38ef5f0522789614e590dab6a8d505340a4efe4c567/anyio-4.10.0.tar.gz"
-    sha256 "3f3fae35c96039744587aa5b8371e7e8e603c0702999535961dd336026973ba6"
+    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
+    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
   end
 
   resource "attrs" do
@@ -249,8 +249,8 @@ class Prowler < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "click-plugins" do
@@ -389,8 +389,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/24/c3/f377fe1f927cb4d063289743504c5e83edb42ee65d277d8b21f522e27859/iamdata-0.1.202509121.tar.gz"
-    sha256 "3cb11a9a02dedf16673ab70980b1cde0b4ef28a965657dbdd020f7bd800f0c4f"
+    url "https://files.pythonhosted.org/packages/a5/9c/f4521ebf8afa0d8bde72f6ffdbc6d6dbdf23970af6045b1643023f04da97/iamdata-0.1.202509241.tar.gz"
+    sha256 "47e57850bfd55a5347d949c0737d591e0733ac1396c781a2c592f558cf2b58f3"
   end
 
   resource "idna" do
@@ -479,8 +479,8 @@ class Prowler < Formula
   end
 
   resource "msal" do
-    url "https://files.pythonhosted.org/packages/d5/da/81acbe0c1fd7e9e4ec35f55dadeba9833a847b9a6ba2e2d1e4432da901dd/msal-1.33.0.tar.gz"
-    sha256 "836ad80faa3e25a7d71015c990ce61f704a87328b1e73bcbb0623a18cbf17510"
+    url "https://files.pythonhosted.org/packages/cf/0e/c857c46d653e104019a84f22d4494f2119b4fe9f896c92b4b864b3b045cc/msal-1.34.0.tar.gz"
+    sha256 "76ba83b716ea5a6d75b0279c0ac353a0e05b820ca1f6682c0eb7f45190c43c2f"
   end
 
   resource "msal-extensions" do
@@ -589,8 +589,8 @@ class Prowler < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/00/dd/4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8c/pydantic-2.11.7.tar.gz"
-    sha256 "d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db"
+    url "https://files.pythonhosted.org/packages/ff/5d/09a551ba512d7ca404d785072700d3f6727a02f6f3c24ecfd081c7cf0aa8/pydantic-2.11.9.tar.gz"
+    sha256 "6b8ffda597a14812a7975c90b82a8a2e777d9257aba3453f973acd3c032a18e2"
   end
 
   resource "pydantic-core" do
@@ -614,8 +614,8 @@ class Prowler < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/bb/22/f1129e69d94ffff626bdb5c835506b3a5b4f3d070f17ea295e12c2c6f60f/pyparsing-3.2.3.tar.gz"
-    sha256 "b9c13f1ab8b3b542f72e28f634bad4de758ab3ce4546e4301970ad6fa77c38be"
+    url "https://files.pythonhosted.org/packages/f2/a5/181488fc2b9d093e3972d2a472855aae8a03f000592dbfce716a512b3359/pyparsing-3.2.5.tar.gz"
+    sha256 "2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6"
   end
 
   resource "python-dateutil" do
@@ -764,8 +764,8 @@ class Prowler < Formula
   end
 
   resource "xlsxwriter" do
-    url "https://files.pythonhosted.org/packages/a7/47/7704bac42ac6fe1710ae099b70e6a1e68ed173ef14792b647808c357da43/xlsxwriter-3.2.5.tar.gz"
-    sha256 "7e88469d607cdc920151c0ab3ce9cf1a83992d4b7bc730c5ffdd1a12115a7dbe"
+    url "https://files.pythonhosted.org/packages/46/2c/c06ef49dc36e7954e55b802a8b231770d286a9758b3d936bd1e04ce5ba88/xlsxwriter-3.2.9.tar.gz"
+    sha256 "254b1c37a368c444eac6e2f867405cc9e461b0ed97a3233b2ac1e574efb4140c"
   end
 
   resource "yarl" do

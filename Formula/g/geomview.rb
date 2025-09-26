@@ -38,6 +38,12 @@ class Geomview < Formula
 
   on_macos do
     depends_on arch: :x86_64 # https://github.com/orgs/Homebrew/discussions/6025
+
+    # Can be undeprecated if upstream decides to support arm64 macOS
+    # https://docs.brew.sh/Support-Tiers#future-macos-support
+    # TODO: Make `depends_on :linux` when removing macOS support
+    deprecate! date: "2025-09-25", because: :unsupported
+    disable! date: "2026-09-25", because: :unsupported
   end
 
   conflicts_with "clip", because: "both install `clip` binaries"
