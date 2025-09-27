@@ -1,8 +1,8 @@
 class Kitex < Formula
   desc "Golang RPC framework for microservices"
   homepage "https://github.com/cloudwego/kitex"
-  url "https://ghfast.top/https://github.com/cloudwego/kitex/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "2aa427b636048c107b07336f6cc6f6d8f1db338bb6ecce96f3db4f4b982d4064"
+  url "https://ghfast.top/https://github.com/cloudwego/kitex/archive/refs/tags/v0.15.1.tar.gz"
+  sha256 "46d2eddb728c4f27ac6a3a0d3a694b9932d4557961130a37c6d82977dae09bc1"
   license "Apache-2.0"
   head "https://github.com/cloudwego/kitex.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Kitex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a6e190007b39423f30a4d1b7ab612eee546c3c3559f7001df7c85b217ec4f56e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6e190007b39423f30a4d1b7ab612eee546c3c3559f7001df7c85b217ec4f56e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6e190007b39423f30a4d1b7ab612eee546c3c3559f7001df7c85b217ec4f56e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "834fa104766b9cac3f9d16347997e91afc16149681dc500808939d7fd682e80f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2ae279b4eca2c315f3b40c4056165245cee8b331ea6df4f542dfbed25d15753"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f90235664b0ea4c656f79b3d038724b1e5537802a43d41e439071b6ff51eed32"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f90235664b0ea4c656f79b3d038724b1e5537802a43d41e439071b6ff51eed32"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f90235664b0ea4c656f79b3d038724b1e5537802a43d41e439071b6ff51eed32"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ba53d9907cfc70e017f91ba88175382dfc6e973703667d0c953313452b36c844"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3dd67b3994fcde79de6509dc5c87f517e090799fdc8d4af3971ad4f9fe28492b"
   end
 
   depends_on "go" => [:build, :test]

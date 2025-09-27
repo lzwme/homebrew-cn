@@ -14,6 +14,7 @@ class Litecli < Formula
     sha256 cellar: :any,                 arm64_ventura: "9c4b27ef5403874111302baa42a1170aeba0aa19bcf017ba53465271ceb5d413"
     sha256 cellar: :any,                 sonoma:        "22a45a7bbe8161d8383f589b1b1786079b81176ba9a7ce89d108ce4802841385"
     sha256 cellar: :any,                 ventura:       "98a67d3cd4e60d2e9a89a8523da3c4f88ff02e052fceccf2fc95e27cf5217578"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "30daf7bdf4ab86a97289d1d868f1e28782ba8a9a0b97fc75653a1f99ba83690c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b50d740169a06f01df8351c57321a524efa4f8dcbc770d8530dc429b189de92f"
   end
 

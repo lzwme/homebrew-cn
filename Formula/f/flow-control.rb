@@ -15,6 +15,7 @@ class FlowControl < Formula
     sha256                               arm64_ventura: "43b0d3d1c6e4fa07bea855432a12d5928b7c78f83a4b1d573fa3504abfd758b0"
     sha256                               sonoma:        "82d5fded191d4b2debc77a45cf34b14f7bf61b742bae3819e29d680f57466449"
     sha256                               ventura:       "49ee95c05c45244f487ff45db7b123bf649036896fd75b933a776c01915c88b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc88a0d6015daf3c6652047f0b14d6f624ff0d907eff0650829fc06902bb780d"
     sha256                               x86_64_linux:  "47791b0fb0591a8eeb5c87c6fdf37061ed0457c7a6ae61b289e551f3daece8bb"
   end
 
@@ -28,6 +29,7 @@ class FlowControl < Formula
     # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case Hardware.oldest_cpu
     when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
+    when :armv8 then "xgene1" # Closest to `-march=armv8-a`
     else Hardware.oldest_cpu
     end
 

@@ -17,6 +17,7 @@ class Bigloo < Formula
     sha256 arm64_sequoia: "94b9559cbc116e2f6c197b2b656f257dd67a8b5a989c1795cd2bbe81056bfcb7"
     sha256 arm64_sonoma:  "f0c10fd7976cb0eac42f37408ac7672199a5ef17306720b33bba8f4c5ab0ec6f"
     sha256 sonoma:        "1ce2fd31a7a7d39ca08dd51e888ab21d6aa0b82e747e97eaa9349cca4970888a"
+    sha256 arm64_linux:   "dec793d2615180d1e9174f4c89083d8ab77195c6cbb5589a2ee2952dde557687"
     sha256 x86_64_linux:  "a56a68b65951a1ce99b2f4615929f6ef4c8f9b5dbb80348cbcfc94ba17da5e4c"
   end
 

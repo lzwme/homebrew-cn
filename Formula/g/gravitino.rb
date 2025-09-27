@@ -17,6 +17,7 @@ class Gravitino < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d873054da69be3d3a9595d737708f7282fd9b0df6f59b7c2e4b6b6979f66a2a2"
     sha256 cellar: :any_skip_relocation, sonoma:        "c9d53038e47aa88deadb696e19e1b9cab19996537261160982a5eae01d3fb9b7"
     sha256 cellar: :any_skip_relocation, ventura:       "976e7814856f21c4d1e2b8cdf7f8c53381ca0a28e576b07ed1ef4cf3144d4297"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fafeacb8afb939f53eafee24b2bd55378be21f2778f335e9980b40455762eb4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9432a842a266f9eb8e8277aa74863319499de21726ab1a57b8ed7457d7613c03"
   end
 

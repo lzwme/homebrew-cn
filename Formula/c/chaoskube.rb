@@ -1,8 +1,8 @@
 class Chaoskube < Formula
   desc "Periodically kills random pods in your Kubernetes cluster"
   homepage "https://github.com/linki/chaoskube"
-  url "https://ghfast.top/https://github.com/linki/chaoskube/archive/refs/tags/v0.35.0.tar.gz"
-  sha256 "bc032ac1ce1abfe75f4cea17f23f15a1ac36b6669c99f123e7c1d4fbb6709921"
+  url "https://ghfast.top/https://github.com/linki/chaoskube/archive/refs/tags/v0.36.0.tar.gz"
+  sha256 "07cbded64e66f61452b01ae3a11f5c6192bf160d740580a504d39eb423597a8e"
   license "MIT"
   head "https://github.com/linki/chaoskube.git", branch: "master"
 
@@ -12,13 +12,11 @@ class Chaoskube < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "666ea105bf9640874925f71b8f9e5b0da7bc218458b5c1c0087f613117d13ebd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "175ff90eee624e0fe6bb640a4645133925935cda6f0de21380af7c91bc5153e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72495e8d18d66656fad0d18f29a88e8f55d3ef37e89aa56bac24eafda7cf7f14"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "082ddd52530610338e1eb7f3f8fb0bac9ca5ca8c97e5f286a02d604a6a2a1d12"
-    sha256 cellar: :any_skip_relocation, sonoma:        "74a0d120558a46523562a4faba1f824bb5d3779039afb5e615290a2e7ac02bb0"
-    sha256 cellar: :any_skip_relocation, ventura:       "4e0f59315741696979c5145c7558e350e30f18748a870a2888fdfaf60a2a9119"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b23892e6e8ecfc587e7a7cbf8d974f4b8f05006312b4845eb07d97c5eeab3b63"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "160b8d4c2cd2698c05203f2c1a88ac4d80a76947e549a8440ef42743003f0981"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af07f7023810e073cd9aa80a5d80cd6993304dfbb7db52f40bd8fbb2f17baa2a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a174b2900778310bd759e795fa6ebe6356fb901e03af40ec6c78ed73a631cbf0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "00a09247af2f701fd0e0604276b804f3155e5566e179303ab131e6e03006f51d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d99ecd9428d82edc3c3b3505a7b608093bc04ca65893be1f698acad8d5b410a5"
   end
 
   depends_on "go" => :build

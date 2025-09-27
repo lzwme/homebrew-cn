@@ -1,8 +1,8 @@
 class Kubefirst < Formula
   desc "GitOps Infrastructure & Application Delivery Platform for kubernetes"
   homepage "https://kubefirst.konstruct.io/docs/"
-  url "https://ghfast.top/https://github.com/konstructio/kubefirst/archive/refs/tags/v2.10.0.tar.gz"
-  sha256 "ecb063b07688ac41974b09b1cb0a3598e0602dab6fd3bdba8cdbba3fff459ed1"
+  url "https://ghfast.top/https://github.com/konstructio/kubefirst/archive/refs/tags/v2.10.1.tar.gz"
+  sha256 "302a7292141502dd5cc43e2be198a04a7338c73f1a1163574e449cf9ece8ba59"
   license "MIT"
   head "https://github.com/konstructio/kubefirst.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Kubefirst < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c323c9caf96ddb0b76b3911cc8193f22ef401b92e5acafa5c545ce5bf7da111"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2da1ec2c492b517eb47ab743b2dc0925afe3d9a0572414a2f12fe5f911043c3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a84a65d1fd53d7989619b4c0b8089b5eb04997f960f4cad1f021bc030799f7b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4ddb6bf5502eb3fcca876159de59278ca296fc648cffe0bf0bdc0987ac179f9b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e36ef8042d0833f142698806539ad4d182352306e2e2bee6abf4e5617bc40b56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b1491b9a76228bc1870699c7908d696e0b62ec151770d6fecad3b9456781783"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbda1040d8682beb3a7419d1453566d1c798b14594d36f3c387a0ef1be063dcc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c79ec17a9b3aad6a739edd3e66ef9b7ce7fbd37b752384abf2beb8e2597cb6ac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7f746f991661bc6d11d4f346078dd06ff87a10c56ce2bfb412046edeffe5d16"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dae5e4bb1983e63fe154c0ffa483c25cec566ec1b2236bc7816b4a14bfa6090b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "52712a3096162506ad145340cd37660dd947d0ac3fba18ea82480b0ccd281bd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4748c9b855ac1e7756b0c8f6411349f3f6165eee8277e3969e25e1b9b95ebac2"
   end
 
   depends_on "go" => :build

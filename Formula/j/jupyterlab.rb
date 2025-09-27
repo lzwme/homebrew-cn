@@ -3,20 +3,20 @@ class Jupyterlab < Formula
 
   desc "Interactive environments for writing and running code"
   homepage "https://jupyter.org/"
-  url "https://files.pythonhosted.org/packages/b4/f1/062e250e4126babed8b62ed3dbe47dfb4761e310a235a815e87b4fe330a3/jupyterlab-4.4.8.tar.gz"
-  sha256 "a89e5a2e9f9295ae039356fc5247e5bfac64936126ab805e3ff8e47f385b0c7e"
+  url "https://files.pythonhosted.org/packages/45/b2/7dad2d0049a904d17c070226a4f78f81905f93bfe09503722d210ccf9335/jupyterlab-4.4.9.tar.gz"
+  sha256 "ea55aca8269909016d5fde2dc09b97128bc931230183fe7e2920ede5154ad9c2"
   license all_of: [
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "67e11241ace8b6061dcf2943fcda6b81f9559c1cbcaae931c694ee9183df9878"
-    sha256 cellar: :any,                 arm64_sequoia: "cf0a8567ce3a30305bc429cdbc5f703bec5e15a6917c3f349015dcf39a7ed530"
-    sha256 cellar: :any,                 arm64_sonoma:  "7d20e4dd88596f604044e1b335791ec91b4ea032cd1c3ba69d71340ce2f8696d"
-    sha256 cellar: :any,                 sonoma:        "47444cb6ea38e062c41065d6089e638950024eb146ffec9ca0388ca8f218483e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7433aa309a0f1d62c09a900707b36011fb6ebdd93270548f6663932a696b661"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab31f6a0353248aba6ddf6814f6ec66ad1d9f031cd3fd2246892c7f29ffbe93c"
+    sha256 cellar: :any,                 arm64_tahoe:   "c5f51ecabc45fcc6b944e8762dcfc8a1e6c81f7234767546a6b521501b916a4e"
+    sha256 cellar: :any,                 arm64_sequoia: "4b4f9444a18a1d5b0bdc3900497cb44e2ec288132b5a40963d39bdc367b0ed0a"
+    sha256 cellar: :any,                 arm64_sonoma:  "b51a0de87fb25b53e68352dd5d8f145c747af530a66272553a467e0fd7b474d2"
+    sha256 cellar: :any,                 sonoma:        "d3fbd4704bdf8f86efc35c100b45cf14c012ee475530dece7402d3f4f9f99858"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f72c8eeed69d947339531f5c3e0ba5f2c5f7e3a57a8228216b34294dff41c9e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3a84a67c250453655e2aeba56331c91688a2a3f548e6ce148b1d17627c27e73"
   end
 
   depends_on "cmake" => :build # for ipykernel
@@ -304,8 +304,8 @@ class Jupyterlab < Formula
   end
 
   resource "notebook" do
-    url "https://files.pythonhosted.org/packages/9f/21/9669982f9569e7478763837e0d35b9fd9f43de0eb5ab5d6ca620b8019cfc/notebook-7.4.5.tar.gz"
-    sha256 "7c2c4ea245913c3ad8ab3e5d36b34a842c06e524556f5c2e1f5d7d08c986615e"
+    url "https://files.pythonhosted.org/packages/36/e7/16b68f8c670d48da0c643ecc6dbb261459880d165f7a68422ce65c92b125/notebook-7.4.6.tar.gz"
+    sha256 "5135e79e3cf5187e987fc8385dc0d087d792757060268686016307a4d7e70af0"
   end
 
   resource "notebook-shim" do
@@ -394,8 +394,8 @@ class Jupyterlab < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "pyzmq" do

@@ -14,6 +14,7 @@ class Ramalama < Formula
     sha256 cellar: :any,                 arm64_ventura: "efeb0c94f1ae66d3b0e7aabaecf7ada095ddbca87d3ae0f316427ef4910ee9a7"
     sha256 cellar: :any,                 sonoma:        "993ec5113ca4533951a38b2da583b628d86d48d1e46e0f626c2a910236e3e374"
     sha256 cellar: :any,                 ventura:       "c43bee4b0deae819d1975ce196d81d6504d6d691b8b1768ca13b1961194dba84"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d556b0f6b2b270f22dcca6cda1ec1b7731e767c761c08a36006bf90b9cf75dbe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "93bfd367b056687762dff895d86c41b16e501e6a7e3742b0dfdaab2a7b69e137"
   end
 

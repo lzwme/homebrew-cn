@@ -10,6 +10,7 @@ class TddGuard < Formula
     sha256 cellar: :any,                 arm64_sequoia: "ca1ab9cf72ab8b91045e9928532738bc6c32c0c3516c824c679f1a31dfcc6f17"
     sha256 cellar: :any,                 arm64_sonoma:  "ca1ab9cf72ab8b91045e9928532738bc6c32c0c3516c824c679f1a31dfcc6f17"
     sha256 cellar: :any,                 sonoma:        "f6261eae2320db8312e88ec28980d2a8e58db997b2f67b217738b48b75812ba9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db62c53e70ca8a29702beb925eb4b06689c9c5bb65ac9f629c821dcf05dbd575"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a6d18c0123e80b6aa5c944d6e90959551b096e97b473159f22f5874bd8ab1ab"
   end
 

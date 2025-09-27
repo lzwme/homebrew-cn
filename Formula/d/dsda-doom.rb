@@ -1,10 +1,9 @@
 class DsdaDoom < Formula
   desc "Fork of prboom+ with a focus on speedrunning"
   homepage "https://github.com/kraflab/dsda-doom"
-  url "https://ghfast.top/https://github.com/kraflab/dsda-doom/archive/refs/tags/v0.29.3.tar.gz"
-  sha256 "9b9218d26055d2e2a3b830913cfe52f56b2a6dd4a16720634f0bc5dbe560fb84"
+  url "https://ghfast.top/https://github.com/kraflab/dsda-doom/archive/refs/tags/v0.29.4.tar.gz"
+  sha256 "f866db79381862080718668f582b0f358811a016db17680e507abb9250afbea5"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/kraflab/dsda-doom.git", branch: "master"
 
   livecheck do
@@ -13,14 +12,12 @@ class DsdaDoom < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5680666458962e6d3acc778c3751064fe74e2f34733df437b60665d444be1932"
-    sha256 arm64_sequoia: "a055e107d33729ce1251c9d4dddab9ec29c4df7e62e96875da12d8405ed669fd"
-    sha256 arm64_sonoma:  "f39be35e19a405dfb4f2d19959cc937f64f9d8f7df14ba877ae5e30b0032991b"
-    sha256 arm64_ventura: "891630b837903ceff3bb20177bca6ead60f6d488f5200062e02a2c93b57466d1"
-    sha256 sonoma:        "45485a08e04fcdb05c0c2786431ea68a494032db0b85a494c59a389317a3f03e"
-    sha256 ventura:       "e9a0cd7a8aad28b0c20c588e82b0517ecf84d8b910a96f4b4e5f88bec6efc4fb"
-    sha256 arm64_linux:   "9b892f7df0a302c769bc55e2314d6920ba8d5c9932abffdebde0c25cfc8e27c9"
-    sha256 x86_64_linux:  "ee6294b5d234e411f001f709e963a008dd39a15586295283610337be1b8e1f8f"
+    sha256 arm64_tahoe:   "97abb02a08acd3c763e109e891b66148f2d6103a605f05813f7a55d0d7de0bcb"
+    sha256 arm64_sequoia: "65be4eb9d9ec81c0c262449db661eb0905b7f67e1c97d552e76a52c34f5ad95c"
+    sha256 arm64_sonoma:  "4e884d4536861319933dcd27ed383b39b2671457af6541dae5e08548c18bbb1c"
+    sha256 sonoma:        "98ab1dbabeca9d84a81cbebab2b63a15f6525e44faa1807f94bf71ed52f84db2"
+    sha256 arm64_linux:   "fb91560cb710053417fc102bff45242ccaf8f7acdbc3b20cde172a59214259a8"
+    sha256 x86_64_linux:  "5c154ad60a1a8c093008eb446bd8512cbf8308e016c847274c55a7b54fe3fcd1"
   end
 
   depends_on "cmake" => :build

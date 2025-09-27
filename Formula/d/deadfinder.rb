@@ -1,18 +1,18 @@
 class Deadfinder < Formula
   desc "Finds broken links"
   homepage "https://rubygems.org/gems/deadfinder"
-  url "https://ghfast.top/https://github.com/hahwul/deadfinder/archive/refs/tags/1.9.0.tar.gz"
-  sha256 "79e0d4a6ff654bf47e11f0f2f4c2b48abe95fc1d4a7637fbefc3013775acc05d"
+  url "https://ghfast.top/https://github.com/hahwul/deadfinder/archive/refs/tags/1.9.1.tar.gz"
+  sha256 "60942329779ba01d92532bdd3a937bfd04686693b911e6193692daee9634b4e6"
   license "MIT"
   head "https://github.com/hahwul/deadfinder.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "eef05933df754b4189b70a78cbdf5903db5f9039ce7040dda05dee8e16cccc21"
-    sha256 cellar: :any,                 arm64_sequoia: "e606caf8153c323cc5b252b72926dd05d2a9932a86cfe42aa6574acf403a7edd"
-    sha256 cellar: :any,                 arm64_sonoma:  "ed4b65081b9d9da4ad0dfcbcaa66441d49fd2d21686d7f65c969fc80f70d4db7"
-    sha256 cellar: :any,                 sonoma:        "d5536721ca1d3442dc1a0193e3ba438feba366231b4fb12be82f710fe7db82c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfadf60e78598c3f108505d90839888a8213a7e90b386fedb63ce53ee2c8c909"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8ea8d9c8bcbdf23e6131090e3cc12288e2a0d7a26fcd8ef9f36df33dbc65bf1"
+    sha256 cellar: :any,                 arm64_tahoe:   "405a1f49dbe8d3101c7d0d6a3b71803da32ec85e23440ca7e354e9f88fe83ea0"
+    sha256 cellar: :any,                 arm64_sequoia: "3c3dd5a28a69643ee39a068a28dc303cacc79952af85ea8ba66a0566e1f14f0e"
+    sha256 cellar: :any,                 arm64_sonoma:  "9b84e34ab45600a1e11e7b980724176d931aedf78a80751e1170f65086ddf3fa"
+    sha256 cellar: :any,                 sonoma:        "180f24a6929595f8fb8d6eb090c3d23fd2188228a2c80fcc9798944690bc930e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "30bb304f102df86cbf940c57ce5d82e9bc1129d39e8d5232fbe0366275c5772e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e375f6d6d7a9df923f4b98bc89b013cf5eac285cdc9b10b9919430af80c1fbd"
   end
 
   depends_on "pkgconf" => :build

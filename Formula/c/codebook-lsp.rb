@@ -6,6 +6,11 @@ class CodebookLsp < Formula
   license "MIT"
   head "https://github.com/blopker/codebook.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13141b8673d294e2317b898e80e2c1a65f0a1a096ec3d5d249c33cfd934f7d15"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0e5b91f92e9d78a73a91acc4fb00e4ddc363d61cd7f7a7d2b8695f8da1c985a"

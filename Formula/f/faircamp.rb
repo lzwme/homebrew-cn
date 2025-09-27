@@ -12,6 +12,7 @@ class Faircamp < Formula
     sha256 cellar: :any,                 arm64_ventura: "5b4a63af1e44bb8d3b0e0a8c8601bc6cfb91858634712320523b38443302f62c"
     sha256 cellar: :any,                 sonoma:        "bc77d9686ef45d9b50dfe0a37678d15491e03e93336b90aeea59bd4027126951"
     sha256 cellar: :any,                 ventura:       "8c68f0948cd28f567cc110ff58cb500b3dc222ead293cba95048a903b34f0bfc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9bb7046dbaf08d5fab23c01b665ffd54fe600484d4eb8e0f4ee3e6166be3b0e7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4026686ab3c905d1afce726db05f6c80b30804417c27d6daca209402d882601f"
   end
 

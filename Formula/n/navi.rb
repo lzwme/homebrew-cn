@@ -12,6 +12,7 @@ class Navi < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e3ed6e03a9e3872469df60473a0ffd9fe8948a291c8dc8257d1cb67ee442dad4"
     sha256 cellar: :any_skip_relocation, sonoma:        "3a23f84baf95a5a955901f125840d05c11ecba50e7453ac0e18015471da15a2f"
     sha256 cellar: :any_skip_relocation, ventura:       "34775384b07e23691e7e8159dd684a39b627bd2ebb77433757e6df6ac6deec99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa4b10ede4b81b48185af35208e2dd75a196c04cac9fab7dd4eb398b5d3581c9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "58d36e08b9840f8a3080c62f126bb0da33f62972441ca609af73d1ae25d4bacf"
   end
 

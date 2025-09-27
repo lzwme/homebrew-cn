@@ -15,6 +15,7 @@ class Stella < Formula
     sha256 cellar: :any,                 arm64_sequoia: "470bf4006df3634a8ee8d49e9424569f0a9bafb600a2e6c72c4a66f424013c5b"
     sha256 cellar: :any,                 arm64_sonoma:  "0bb05c3c49f855456ae66086076ba5c51eaa4c146fbd34b688d98475dc8410dc"
     sha256 cellar: :any,                 sonoma:        "4e137c751a90176b2ae74f8bf4b5d41d4bdc2250b5dd225ce3746483abb8a202"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "307f9ee104dcde3fe968406b3991cb49a0ea10f732c46ae9509a9dd96246ced8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b316ebff91f8c1c19294ba17cda529c4a929b16f5c38a9c2ffd815f5ae91e032"
   end
 

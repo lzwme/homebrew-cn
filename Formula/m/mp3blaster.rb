@@ -28,6 +28,10 @@ class Mp3blaster < Formula
 
   uses_from_macos "ncurses"
 
+  on_linux do
+    depends_on "libvorbis"
+  end
+
   def install
     if DevelopmentTools.clang_build_version >= 1700
       # Fix to error: constant expression evaluates to -1 which cannot be narrowed to type 'unsigned int'

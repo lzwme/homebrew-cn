@@ -1,8 +1,8 @@
 class Atmos < Formula
   desc "Universal Tool for DevOps and Cloud Automation"
   homepage "https://github.com/cloudposse/atmos"
-  url "https://ghfast.top/https://github.com/cloudposse/atmos/archive/refs/tags/v1.191.0.tar.gz"
-  sha256 "c2098b9174f1cdef197254ce4d1876ea62994c4c2a07e46ba9739b54b8d826c1"
+  url "https://ghfast.top/https://github.com/cloudposse/atmos/archive/refs/tags/v1.192.0.tar.gz"
+  sha256 "33da2fd71ea33dd8a714369db2b65e2ce798c428bb8ae4805faaafc42ab2a4ef"
   license "Apache-2.0"
   head "https://github.com/cloudposse/atmos.git", branch: "main"
 
@@ -14,11 +14,11 @@ class Atmos < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81ca5bb7ef927623194e2b020edd40cdcea929ffad39792ce6d75eb8e1fc1a54"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "021fd5d79e6f9942abfcbb1a03f3bf970c295a77a0e659b8332316b269a419ee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7eb3aa301238630f5bb0da80cb975c09b3eae04e8a43179ad0d2ff58fb73bbaa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8616afb9bf637badcd464694ff397c13bcc48ce2edb060dca7f26c3e32b5676a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78be2d104b24b17a7528ae0c3af4d8f3cd39142c76bd6719dd190222d3089da1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "59ac7cc98fd0344cec3c51e63ee0661e9bc76a469ab99b83763181cf1c3918d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "353f6090ff89da276ae21bb9a8109b81e73125dd3f0b6c513df617229451552e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e28f65942f826a3a6a4d0a667dd7bfafeb201eff71c7d7e59e42e46172c86bfd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4aeb66155dca734c673760cd882d0980a433272a83d192a760aef7631a89046f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d14e71ee6dc81515040d5469969d1c6ef0b83f927c0fe404ad35b5b7ff84350"
   end
 
   depends_on "go" => :build

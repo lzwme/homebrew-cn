@@ -1,8 +1,8 @@
 class Dolt < Formula
   desc "Git for Data"
   homepage "https://github.com/dolthub/dolt"
-  url "https://ghfast.top/https://github.com/dolthub/dolt/archive/refs/tags/v1.59.12.tar.gz"
-  sha256 "b376894ffae3517ff32df9284b58570caf4bec9c960e0ec0b1b95e9c130a1b08"
+  url "https://ghfast.top/https://github.com/dolthub/dolt/archive/refs/tags/v1.59.13.tar.gz"
+  sha256 "19cf7dc1025e71b8e95ee90269398cc6a67e33f96b19141be97d63245ead5803"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/dolthub/dolt.git", branch: "main"
@@ -13,12 +13,12 @@ class Dolt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c773665f0d1e83cd6b4860eaa1e5439af1178cc491d6ffd4cd8193531f552eb5"
-    sha256 cellar: :any,                 arm64_sequoia: "a8be747b851dd102336881b2438a5847a1daf66113eca45a84ee31323a5e4941"
-    sha256 cellar: :any,                 arm64_sonoma:  "dd89145e3d9334e6155a20cd96c16995026933d7f4469c658bbf7152440f7ce2"
-    sha256 cellar: :any,                 sonoma:        "b1447d1f17fb67053e7f961864770df05198aefa5a07ed5d4cbcd54b549f7cd8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2830e8e8443ca609df5c4d78120bbca769d14885c6dfe4ddfa8076453e0aaa1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cfb309d73833eb4d16bff0c05065022efabb3c481191c9b4fdcacd35cbc6b08"
+    sha256 cellar: :any,                 arm64_tahoe:   "fc68c2ea21bde4fd30c08588d77a663d1647fa44edf119bdf1e16e1a7fdffe4d"
+    sha256 cellar: :any,                 arm64_sequoia: "859fc48ee8fe9303dfd0ec557f044558289f668acbded1b25e00963a9961ad90"
+    sha256 cellar: :any,                 arm64_sonoma:  "8866bd6e240c4d6e5da1694ffa1e3f4840ab0580b911c6257b580f7552b91574"
+    sha256 cellar: :any,                 sonoma:        "4de2665a73aaa6f23ad2f5b8872698dd498f84ce2235c81acf90e9fc154ea6b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c88322442a0e5a9ec87defaf2899b481dc62c4a5f0583f6a6ff6b8f75311e93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b601d26119a20222f6b8161c3a5bfd9186acf4a352cc4ee6c827cbe94b247fb"
   end
 
   depends_on "go" => :build

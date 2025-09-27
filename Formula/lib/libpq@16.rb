@@ -17,6 +17,7 @@ class LibpqAT16 < Formula
     sha256 arm64_ventura: "dfcf349344f6873404e5dcb56517d576096807012cb6c70e4293e070718b923d"
     sha256 sonoma:        "7b91801b83d33f1da86c646b9416e7d085c546fbdd67c1abcb6e7fdb06926622"
     sha256 ventura:       "15cfcd112efbb751f357dcd59b351a5ac7928ffe018867223f03a80be63c02bd"
+    sha256 arm64_linux:   "51ba3696ad449f3e2c85ff1d8d68ad206277ba145719d3710e6a55ffa141af60"
     sha256 x86_64_linux:  "71f6f37401e382d06055f4c0b9edd82c604c938cb75f217ef962d98a1b8d33ff"
   end
 
@@ -39,6 +40,8 @@ class LibpqAT16 < Formula
   end
 
   def install
+    ENV.runtime_cpu_detection
+
     system "./configure", "--disable-debug",
                           "--prefix=#{prefix}",
                           "--with-gssapi",
@@ -62,7 +65,7 @@ class LibpqAT16 < Formula
   end
 
   test do
-    (testpath/"libpq.c").write <<~EOS
+    (testpath/"libpq.c").write <<~C
       #include <stdlib.h>
       #include <stdio.h>
       #include <libpq-fe.h>
@@ -85,7 +88,7 @@ class LibpqAT16 < Formula
 
           return 0;
         }
-    EOS
+    C
     system ENV.cc, "libpq.c", "-L#{lib}", "-I#{include}", "-lpq", "-o", "libpqtest"
     assert_equal "Connection to database attempted and failed", shell_output("./libpqtest")
   end

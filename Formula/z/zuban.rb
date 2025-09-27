@@ -7,12 +7,13 @@ class Zuban < Formula
   head "https://github.com/zubanls/zuban.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9be116467c99bb220805a08675e2ca369445950a99aaf8e11bf454ce98a267bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0642961c33798ef05b2f66082463e1107d1e58ce3e71eb07802d0c2877e36c89"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b7e29c882e2c1f742bb49f6141c1d7138984cacf455db2d426d9cafb523aac6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b30176fc37fea3dc96efdaebe9f70c04e8ddb839a27e1e9673b43ea66669bd85"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "09fb22085b56d63f3041d91a5de4b4187206d23eeb905b45f2a5ed26fd62a5fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b301d092b3439afa2af2e02a4313f0fd25b55f08bf3989744767032e1646f99"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fb80083590b2004f6fb7053104b137e01fbcd43a40869cb63128ff3204ded837"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d34d90f759b9dcc91ae7c7834f85b24ed781134b4d1e2fbbc088b48f8e09f22e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f48bf74f069c1b90ff3b7a9bce368c823e62133eea00b1c0e91fadda5db488dc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "94e70cb51c38dd6279aa015cbefa71985e3cf54930c69fff5626c75090e8b2d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "05b26676e961acb4072a310a1e3371ee186c4ab97b315f42d0729104941f8ab0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2647791a08109f6295d8f62a2893a6fd66b4bcf25df029ae373058c3b019b18"
   end
 
   depends_on "mypy" => :build
@@ -21,9 +22,10 @@ class Zuban < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/zuban")
 
-    (lib/"typeshed").mkpath
-    cp_r Formula["mypy"].opt_libexec.glob("lib/python*/site-packages/mypy/typeshed")[0].children, lib/"typeshed"
-    bin.env_script_all_files(libexec/"bin", ZUBAN_TYPESHED: lib/"typeshed")
+    # Work around zubanls not reading ZUBAN_TYPESHED (https://github.com/zubanls/zuban/issues/53)
+    (typeshed = libexec/"lib/python3/site-packages/zuban/typeshed").mkpath
+    cp_r Formula["mypy"].opt_libexec.glob("lib/python*/site-packages/mypy/typeshed").first.children, typeshed
+    bin.env_script_all_files libexec/"bin", ZUBAN_TYPESHED: typeshed
   end
 
   test do
@@ -36,6 +38,6 @@ class Zuban < Formula
         return "nope"
     PY
     out = shell_output("#{bin}/zuban check #{testpath}/t.py 2>&1", 1)
-    assert_match(/(not assignable|incompatible|error)/i, out)
+    assert_match "Incompatible return value type", out
   end
 end

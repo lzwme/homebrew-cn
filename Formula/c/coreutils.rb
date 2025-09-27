@@ -7,12 +7,13 @@ class Coreutils < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "42775be0b21f589b670fc5374a8d003a60c8b5f258170d0bbd4f8b1b1a48ec16"
-    sha256 arm64_sequoia: "8aef2f29abfb504090365a44e07a174587d2e63544e2a2c6c36798809c71f51d"
-    sha256 arm64_sonoma:  "ba191812bf80327045bef0e95926bc3e7f7074799e77fc21db728476ecc66dfc"
-    sha256 sonoma:        "e921cf886d958f55bf4bd2af18e204f95cb298f3b219b46c161b6d202bf2e0aa"
-    sha256 arm64_linux:   "dc69ec29ac4edc956a9bd0fc99eebeeb53fc51f7cee42dbee05b3ce6a290f807"
-    sha256 x86_64_linux:  "93032c3dec30bf7c3d90c37410e6b791c418bcfbdba5fe2b09ea19df32d9e0fa"
+    rebuild 1
+    sha256 arm64_tahoe:   "a05deb3349451dbbe11abd0b339a835f97a989f08345afb8c3a45952a0df6ee3"
+    sha256 arm64_sequoia: "67c097eb1b01d8a5525c871e84260187d6308ae2965c013b0416bae62853c9dd"
+    sha256 arm64_sonoma:  "fce6e52bd1afd5e8e91446f0def571ff4339bac5d866a1c77d1d392a2ea07a18"
+    sha256 sonoma:        "69a6d4f328369ab2afc40032b6b44b68d765f308474cf6ad634fa1499ec38769"
+    sha256 arm64_linux:   "1f948fa0dbd69feab36f771aada788c3a651486d8a5e9734b01094df55e0c634"
+    sha256 x86_64_linux:  "d812e26edfa73bad913099488a6e6b86761c4275568592525d4e295142692af9"
   end
 
   head do
@@ -51,6 +52,12 @@ class Coreutils < Formula
   def breaks_macos_users
     %w[dir dircolors vdir]
   end
+
+  # Coreutils 9.8 had a bug in `tail` that made it seek to the wrong place in
+  # files. Only update src/tail.c from the upstream commit otherwise `autoconf`
+  # will be invoked.
+  # https://github.com/coreutils/coreutils/commit/914972e80dbf82aac9ffe3ff1f67f1028e1a788b.patch?full_index=1
+  patch :DATA
 
   def install
     ENV.runtime_cpu_detection
@@ -126,3 +133,19 @@ class Coreutils < Formula
     system bin/"gln", "-f", "test", "test.sha1"
   end
 end
+
+__END__
+
+diff --git a/src/tail.c b/src/tail.c
+index b8bef1d91cdb6cde2b666b6c1575376e075eaeb8..c7779c77dfe4cf5a672a265b6e796c7153590170 100644
+--- a/src/tail.c
++++ b/src/tail.c
+@@ -596,7 +596,7 @@ file_lines (char const *prettyname, int fd, struct stat const *sb,
+           goto free_buffer;
+         }
+
+-      pos = xlseek (fd, -bufsize, SEEK_CUR, prettyname);
++      pos = xlseek (fd, -(bufsize + bytes_read), SEEK_CUR, prettyname);
+       bytes_read = read (fd, buffer, bufsize);
+       if (bytes_read < 0)
+         {

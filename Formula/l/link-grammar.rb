@@ -1,18 +1,18 @@
 class LinkGrammar < Formula
   desc "Carnegie Mellon University's link grammar parser"
   homepage "https://github.com/opencog/link-grammar"
-  url "https://ghfast.top/https://github.com/opencog/link-grammar/archive/refs/tags/link-grammar-5.12.7.tar.gz"
-  sha256 "9278ab7a59e53b4e48c38c4655d6df53d86dacd14b6b6be5001937fef798ae9a"
+  url "https://ghfast.top/https://github.com/opencog/link-grammar/archive/refs/tags/link-grammar-5.12.8.tar.gz"
+  sha256 "125c2a66386fc3378a1f2288341e69c879fa022aaa6866a5c9d72b1e6db0e62c"
   license "LGPL-2.1-or-later"
   head "https://github.com/opencog/link-grammar.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "2b6141b94c8935abd0308a40b9c1ac10675d281ee6c182b040e8ac1fcd5830e4"
-    sha256 arm64_sequoia: "a479aad5c21c9a81b9cfebc504496bfe013f418ea863aa5355bfd1abea747f63"
-    sha256 arm64_sonoma:  "516a9a53c4e49fe44ff272561e66158b0713b372a0c0571d904d4bec89b8b338"
-    sha256 sonoma:        "186f915e6bb5f396e85b7f0c3672e3f6f26315ffb0c228a4981e7b803efcc453"
-    sha256 arm64_linux:   "0a725802760820101380cd46a5a7db4c3dead2b49761ff5c703a2a36954283d9"
-    sha256 x86_64_linux:  "08c745621a3da668b533e9acc802d2d82f1c12378006af7590dbfe348cd2b6df"
+    sha256 arm64_tahoe:   "6eb0ad564a474a263ae08a1a665d1a3c02ee40387f3672aea4ecfcc9eebf57fe"
+    sha256 arm64_sequoia: "1b1c3954812e0aac76763fbdc127f0dfebb469607c34c442cd217cc75f438ffd"
+    sha256 arm64_sonoma:  "a40491c80b26762861e987bcf7294d087d01adad9146af2efc23b9aa6fc806db"
+    sha256 sonoma:        "de00f0f44d66131671157db0f4ebfcc53c7f0fbd0ffd721f1407f58d8c21b7c9"
+    sha256 arm64_linux:   "03977ce68268e3602d530add892bb93efe2415a228989c696f14fd1959e077f0"
+    sha256 x86_64_linux:  "60882d4efc1ec8b2077bf9bddcff78dfe622d7f22167989967c0c22cf873b5f7"
   end
 
   depends_on "ant" => :build

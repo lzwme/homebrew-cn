@@ -3,12 +3,12 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.com/github/spec-kit"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.0.53.tar.gz"
-  sha256 "749503d545d2a7148867bda48179c788cfea325fa334a6941a248a54d6710de2"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.0.54.tar.gz"
+  sha256 "e5af711ed18afcb2cd240252dd791bd9847d0cd5c4b6dee59f293e971efe49eb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e66b50527c3127a200d93756ba02a215db0b1bd371c507f00a46ff449e7c8c9e"
+    sha256 cellar: :any_skip_relocation, all: "5954533ae398ee2c6fd67b8c6b72ff7e621717fe047891be0a98ff4cc151e9a8"
   end
 
   depends_on "certifi"
@@ -102,6 +102,14 @@ class Specify < Formula
   resource "typing-extensions" do
     url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
     sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+  end
+
+  # Fix for MarkupError: closing tag '[/bright_black]' at position 80 doesn't match any open tag
+  # Should be removed in the next release
+  # Issue ref: https://github.com/github/spec-kit/issues/593
+  patch do
+    url "https://github.com/github/spec-kit/commit/321edbc62e10e6621bf8b46c443a5c13139d05a1.patch?full_index=1"
+    sha256 "6d79c21869379740e5615b818501964bc754b041620195bd40f02bc5782a16b6"
   end
 
   def install

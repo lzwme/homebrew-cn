@@ -23,6 +23,7 @@ class Libprelude < Formula
   # shows libprelude has been dropped by Fedora, Gentoo and pkgsrc.
   # Last release on 2020-09-11
   deprecate! date: "2024-11-04", because: :unmaintained
+  disable! date: "2025-11-04", because: :unmaintained
 
   depends_on "pkgconf" => :build
   depends_on "python@3.12" => [:build, :test]
@@ -75,7 +76,7 @@ class Libprelude < Formula
     (testpath/"test.c").write <<~C
       #include <libprelude/prelude.h>
 
-      int main(int argc, const char* argv[]) {
+      int main(int argc, char* argv[]) {
         int ret = prelude_init(&argc, argv);
         if ( ret < 0 ) {
           prelude_perror(ret, "unable to initialize the prelude library");

@@ -18,6 +18,7 @@ class Dcd < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "6c9cb410387c80d7d596bb925cf90cc0d1dfc8c0f9d3780b0ad1302540352265"
     sha256 cellar: :any_skip_relocation, monterey:       "70550825ebf34833947ca9e7bcb9ec03292d6ecbf77e6691d4791eaadc4218ea"
     sha256 cellar: :any_skip_relocation, big_sur:        "5711120e29181ce752e1616c5777eea9864ac15d6583dc634aa3a9d9f47de647"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f1c5f7d42c7c39ac7e2bf1e937faf6fc06b909f3ddb01e53be9018f37b2793eb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "658abefb0b260e852fb16078e353b453929f6f04fa8af8f636ed2d5e2aa89fca"
   end
 

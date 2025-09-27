@@ -1,8 +1,8 @@
 class Kubetail < Formula
   desc "Logging tool for Kubernetes with a real-time web dashboard"
   homepage "https://www.kubetail.com/"
-  url "https://ghfast.top/https://github.com/kubetail-org/kubetail/archive/refs/tags/cli/v0.8.1.tar.gz"
-  sha256 "7726d538b90e0cdc13026846d918715cf5d2dfff580fdf2a83f3b9ee9271b73f"
+  url "https://ghfast.top/https://github.com/kubetail-org/kubetail/archive/refs/tags/cli/v0.8.2.tar.gz"
+  sha256 "447ba0e51fdd91c9a43c7e6b720f2af961f27d1ae791fc7ca6e8b039544c911c"
   license "Apache-2.0"
   head "https://github.com/kubetail-org/kubetail.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Kubetail < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "101aad49ec810a04e5b1a38e1314ce1939f7a4730414806ce03051bf383b4a63"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6dd62ab9228bc4cc53d96c35bbf5a877d102f4dbfea9180a17e0ed75dae0431d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8620e4bc5b5e0ba98fb8b9cd4946cea53e3fc380acfd685f6580f2600292e904"
-    sha256 cellar: :any_skip_relocation, sonoma:        "00cff9974c65306afbdeaae94d7c2f1b4e83d490bd2459e7a86c87dbcc56ec57"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa79a5c4d650c633736f5035b839b6a47235bbc108f777700b9ec6e9026bc76b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e467edd8f1c7367da5ab566002ab3893d9998e8d2e56213c5c61dcd95532760"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "baa6fc21521bf6edbc9dec7b4212acfdf82607abe1b17f192d94d048f7ac7250"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "41d61c5337f6a0dbaf0d9e7ce5ecea6d63c18464ca0e9b35192401f295332ed0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a61a2ec4aaed3ad1628c432266b3d8a0901d2c6408dc684899baedf774c57ae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4760dcbf6737d83fe6162ed0eb05f273fe5b265c16c4e1f3979e018c95bca602"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92f87faed8f6be6d47dab7ce5092cca065fb198e6f545555c05bc24424848ef9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a4a0c623133425df23b335c0e5ba5cb7bc0267ba2e99bd770c75757d0ed10b8"
   end
 
   depends_on "go" => :build

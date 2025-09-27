@@ -20,6 +20,7 @@ class Oxen < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "32e55dabef96576b2d7117db0659acf5f4e2134afbbdfb3789eec16bb99ecef1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37ccb8a5c74c6a069f6d2f3e75b778ed204ffa80b2f3e021471223e52448d5c9"
     sha256 cellar: :any_skip_relocation, sonoma:        "990b3829b8360648abe49e8155fe2a97035cfd3cd1058abac3d6823eeb356030"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b980b3875a0f98e11904d336ff0640e5dbe7d8b406872a39274e3ab88d67e5c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "842be46ee7e5a26dd1598b74d5f46ec3d935aff5570759c2388f09184b537f6d"
   end
 

@@ -14,6 +14,7 @@ class Smlpkg < Formula
     sha256 cellar: :any,                 arm64_sequoia: "a6d8ea56df569f46bf0a674cbdd5506fe90fa9a9377d5a2bb626eb51e7c2659d"
     sha256 cellar: :any,                 arm64_sonoma:  "bf39a2cb3d8362fe82da4e15466587cb521403386f0cc5d187d8bf542ab6facc"
     sha256 cellar: :any,                 sonoma:        "bc992113b06930535a168b765c1e9f0274e642d8bc1a886ecebf07ef574a05ee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8fda41d263626cf760a549e000900a2b8810667aea5816dc9157ac207406f2e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c781ec2d9590a65aaa91ccb66462d4527d5dbf5254ec3aacd939b73e5d322bf7"
   end
 

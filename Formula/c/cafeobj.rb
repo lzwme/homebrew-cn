@@ -23,6 +23,7 @@ class Cafeobj < Formula
     sha256 cellar: :any,                 arm64_sequoia: "f09b8ca7dd1989923e0c4655ea33c8a42a0c1d11bfbf42565abaccc48d0b530f"
     sha256 cellar: :any,                 arm64_sonoma:  "259398f625fe7637f8a2858d3ef6527afc3f37f6ca5ad6c981f531ac9d39fa90"
     sha256 cellar: :any,                 sonoma:        "04d7d82a328ad96e7dcf8fa3d9afabb1f84b0d386c1beed9eef271737ab9ac56"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f9e673420ee0cba67dc62168fc40be7d88e685929420bd0bc80ea7eba80fdc9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fefc0da02032b0c3f03aee866a9e6db0fbc3b9bcee757a71f5a682703e12ff0b"
   end
 

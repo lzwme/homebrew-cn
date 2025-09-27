@@ -20,6 +20,7 @@ class DamaskGrid < Formula
     sha256 cellar: :any,                 arm64_ventura: "54e10a41cc02bd30f299539ec959fe7ca12ca06fd01ace878c2129fc524e0461"
     sha256 cellar: :any,                 sonoma:        "6661014ac60efbbdccebbe66e140d030cf09bb34fa3d19134db7ef2b9978b955"
     sha256 cellar: :any,                 ventura:       "4e485ac7f53ad1987ad427af462fdb52d00318da802b31bd5050e6c6d475ed56"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "53fc80b04f85a67efc1c49a30c8007393a7de4d67f053e8b11a7d48c999793fd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b855ed39a0c7696e0f7c1efe0a7976a256219241fe59903797c5650da80c8f42"
   end
 

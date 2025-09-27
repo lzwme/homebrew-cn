@@ -21,6 +21,9 @@ class Radare2 < Formula
     sha256 x86_64_linux:  "d890838a320f89e6ec669d9c689a837df4039d37b448190b07a6105b20e2a89f"
   end
 
+  # Required for r2pm (https://github.com/radareorg/radare2-pm/issues/170)
+  depends_on "pkgconf"
+
   def install
     system "./configure", "--prefix=#{prefix}"
     system "make"

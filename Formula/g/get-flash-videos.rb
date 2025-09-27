@@ -13,6 +13,7 @@ class GetFlashVideos < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5250458e7b842b0c47b8a0bf82d080088f1a15991b08b7c4b6b54a1af2694ecd"
     sha256 cellar: :any_skip_relocation, sonoma:        "b85cf6d7f8b77d4c8e49a4229bb1f65dbd7d5bdf46e278dd6222eb30e002ade1"
     sha256 cellar: :any_skip_relocation, ventura:       "4b38c8850c54efd5fcec94048eb5e35452647c1f85d2852f49d312ec4e120bd7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a17c87aed4e3b726a9a289de42ee4c725cd5b75a4c0c842a051396eaa8708e4b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc6d8ca49c01ff7cf2af1d97ff3e287ee30617b40bda0db332f794768cdbdca3"
   end
 

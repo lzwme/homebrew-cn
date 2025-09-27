@@ -17,6 +17,7 @@ class Lighthouse < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5652f2a6ad850c03b04bbf6f66db22d80974873d2888143df58086d49e02c8e2"
     sha256 cellar: :any_skip_relocation, sonoma:        "99c65971f9ec95e28c03e67b88e680c94a76f57640bb9d148f8d6376c95683d5"
     sha256 cellar: :any_skip_relocation, ventura:       "65b3df6d77c81b8e0cbe540410a4e9b83d308413d038d1abf4adb978c2339af1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b284ef3e4160768f015754e66d920c039880375945670c701694f34062b73595"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5247ea2d2706c841aad73816a1fabd04ac5f0909f740fa43b46f484bbcb43b63"
   end
 
