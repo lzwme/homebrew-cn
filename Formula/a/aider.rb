@@ -587,7 +587,17 @@ class Aider < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources(without: "hf-xet")
+
+    resource("hf-xet").stage do
+      if ENV.effective_arch == :armv8
+        # Disable sha2-asm which requires a minimum of -march=armv8-a+crypto
+        inreplace "data/Cargo.toml",
+                  'sha2 = { workspace = true, features = ["asm"] }',
+                  "sha2 = { workspace = true }"
+      end
+      venv.pip_install Pathname.pwd
+    end
   end
 
   test do

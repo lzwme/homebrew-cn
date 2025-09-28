@@ -28,6 +28,7 @@ class Unisonlang < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "99f973cbdab57fde249a30d66dbfd80c4dafd914b425f6e88940c3a437677613"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0159bb8829c2b678aeb20ebbd8a37631237fd1195d912551a8fb1720eb552359"
     sha256 cellar: :any_skip_relocation, sonoma:        "8ca28b5775cb38ecdda78872c8a5a42b7a215ad8fd76b64cc9a179318455790e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "58f6de572c563be3f6b3492b0fb383a1cd21e242e68147f85e6ba3eac9fea6e4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7364d2513f2eef2e62ae03d1653737e212bb99c2ba22bb950d7dd8de78a8acca"
   end
 
@@ -57,10 +58,9 @@ class Unisonlang < Formula
 
     # Build and install the web interface
     resource("local-ui").stage do
-      with_env(npm_config_ignore_scripts: "elm,elm-format") do
-        system "npm", "install", *std_npm_args(prefix: false)
-      end
+      ENV["npm_config_ignore_scripts"] = "elm,elm-format"
 
+      system "npm", "install", *std_npm_args(prefix: false)
       # Install missing peer dependencies
       system "npm", "install", *std_npm_args(prefix: false), "favicons"
 

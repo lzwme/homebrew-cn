@@ -1,8 +1,8 @@
 class Hledger < Formula
   desc "Easy plain text accounting with command-line, terminal and web UIs"
   homepage "https://hledger.org/"
-  url "https://ghfast.top/https://github.com/simonmichael/hledger/archive/refs/tags/1.50.1.tar.gz"
-  sha256 "6e94e12f5cf58886af476f9f3a813ddd407049d1f6aefe98810b798a17562177"
+  url "https://ghfast.top/https://github.com/simonmichael/hledger/archive/refs/tags/1.50.2.tar.gz"
+  sha256 "cf9af9bdec5299dc5c541a0feebef9bbb163a2a4151056306f82758290d7a522"
   license "GPL-3.0-or-later"
   head "https://github.com/simonmichael/hledger.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Hledger < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b945e2c269d4303d09f85f3287e58ee913f6d03f018ef225a3cbf696096b5d6f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42254df6148820c370b4c69191946d2fbd9472b59e0e37b55863c1f6f0b8e2d9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7799dff7ae5119d356503c1591901f9f790d402093ea89ae7df1219eadd2a07c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b9809a5b7b01973228e6df6d2b9b5785e5ec10b47cc7e786f92be93b07e43a06"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ded5f79ecdc7f6099dfd814c50dbd3ce5e31450d8607733e0051643d66d452b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a51bc1131f95b05de3c17c40ace2368127ffa4b4bcbdc4d1d3eebe9309d9a30"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d5691550e337c8589419734f7d9101da6683ef6230fbaee8e60e329ed815ad2c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7525c50d105f0ccdcfb8a794cec71da7810dc3536d00e4f57b8885ae1fffb284"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72d8fc1a6c44cd7a417adb8d11d330724fb38213ed7882b5ad58793a4b96edea"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b7a48b55bbc7fb76e2b88fa4d4912113be57756f62e80b72052945fb9e1ddbc9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4b712bdad3c73e42cf93f2c595019afedecd8988867891a726aa230d721ca7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c4ea7a0ec33e6ecffeffb54473d4193e2cec486f3d7dad14c00fa4fc51d6065"
   end
 
   depends_on "ghc@9.10" => :build

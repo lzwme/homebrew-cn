@@ -10,6 +10,7 @@ class Libtensorflow < Formula
     sha256 cellar: :any,                 arm64_sequoia: "655650a749f31f659213bba3147b8fccd0f3c15f81380e753f41958b41d9fa9f"
     sha256 cellar: :any,                 arm64_sonoma:  "0aa1ef478705d4a5e1148482bc2f0cee12d1448e1fde9a2146349b5988f8a989"
     sha256 cellar: :any,                 sonoma:        "f6a05fbd2c75dcda4be2adf38a1da8a20cce45a7f87bb48c57ddb7101391db50"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8307fca51801bf44da97554ca97a0e574ea5838d7e91bc05f45c5f2ed6b88c4e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "be3f850fea6e58fce4a67eaa74ff884239e8180433eda0ef228eadf696f86739"
   end
 

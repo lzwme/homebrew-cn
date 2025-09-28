@@ -18,6 +18,7 @@ class Envoy < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "529a4b03f14bedffcfdfc8c739c43f10858098560f815da977cd481d18183141"
     sha256 cellar: :any_skip_relocation, sonoma:        "0e818f087fb2104e2c317c6321215cc09bc97c0ecb291036a275de7c7f625127"
     sha256 cellar: :any_skip_relocation, ventura:       "13c64c6a70aa87f4df7c3dd87254745fe800e26aeb545ef4e55ab58769b76781"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "826187db8e9a9d43bc22a4b3acd068d1aee85026f64586ee9bce6b27547422e6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "362ea90dc87ede34765d6433de6ea26bf6a2b46fc287c7cf29662902c553b3e9"
   end
 
