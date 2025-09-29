@@ -1,17 +1,17 @@
 class Jqp < Formula
   desc "TUI playground to experiment and play with jq"
   homepage "https://github.com/noahgorstein/jqp"
-  url "https://ghfast.top/https://github.com/noahgorstein/jqp/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "e88b32aeb21b8d000e17619f23a0c00a1eb86219112204031f63fb7cdfafacf0"
+  url "https://ghfast.top/https://github.com/noahgorstein/jqp/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "c70e83975edb1c1dacb0fb067a0685e9632e21360805ade3dda03e54751e4855"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92566027d91cd63e3b3f0d31c62381330ac6c8c1c944831a3fdc5308c9532ab7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92566027d91cd63e3b3f0d31c62381330ac6c8c1c944831a3fdc5308c9532ab7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92566027d91cd63e3b3f0d31c62381330ac6c8c1c944831a3fdc5308c9532ab7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e199de504b616c1b56b8ecbc62e83cd6bdca0ab5e069705dbd141435d721ed91"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "66e0876d220a5b0e6542e9102ed2986ccbd5c35503c1ff49b1cb4b28a0f693dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96c9c531b034f344c1c55120312b9664cc09d1aea6364042f84abda6cfe3edd3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "17f5afee30bb1f40cca378ee991b6ba46dd8cc95b1146765ee04985e150ab08a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17f5afee30bb1f40cca378ee991b6ba46dd8cc95b1146765ee04985e150ab08a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17f5afee30bb1f40cca378ee991b6ba46dd8cc95b1146765ee04985e150ab08a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a491c1f6699c1d793e9608d6f99c7b5042dfaca793924f09b47a4cb70fda8f1c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02e04e3abd5d401e10ced7c84ebc5eab5037430f6629c3e3e60575a44be5079a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bce8f30853634cdf279db4adbfa9cf434e968be3a5c2b38b164200ba62df296"
   end
 
   depends_on "go" => :build

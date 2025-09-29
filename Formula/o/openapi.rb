@@ -11,12 +11,15 @@ class Openapi < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1addc2d2f54522553f8e25ba96e5b196290d8c6418d90fce41daac4510fbefda"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1addc2d2f54522553f8e25ba96e5b196290d8c6418d90fce41daac4510fbefda"
     sha256 cellar: :any_skip_relocation, sonoma:        "8d4af7367d373b8944df8089d6b17542cb11621813cfdf9ae36cd29e72a1c1fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "35237786d1d30fc6d3969e50a6de7cf58138be8ce1f583c390258aba01dc4f2b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfe76acea35717d7cd1ada23c676f3a7764c368b752e07bc22d0aa8aa9dd847b"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X main.version=#{version}

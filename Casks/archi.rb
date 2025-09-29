@@ -6,7 +6,7 @@ cask "archi" do
          intel: "35958c4332ec3dc27b719a18154c57c4b22eef20881c4e69c3df94aa3b46ec27"
 
   url "https://www.archimatetool.com/downloads/archi/#{version}/Archi-Mac#{arch}-#{version}.dmg"
-  name "archi"
+  name "Archi"
   desc "ArchiMate Modelling Tool"
   homepage "https://www.archimatetool.com/"
 

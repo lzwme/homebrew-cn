@@ -11,12 +11,15 @@ class McpPublisher < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e3db8ec98b49488c8c6caf2e067c553d5c8982bba05fec9c822e234ce6024cf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e3db8ec98b49488c8c6caf2e067c553d5c8982bba05fec9c822e234ce6024cf"
     sha256 cellar: :any_skip_relocation, sonoma:        "2289b8df8e2ac3291b07c370e32c892c13c5fcf446458c2e8bae83f50c237a49"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfc41c030c81c04b7987f3f43627223f2659864d16a35ea96a6d234733240f1f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9962bba68b9361a64ca0059a5d33d257c7d51badec9cab1190c2d20a62eaa4d7"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = "-s -w -X main.Version=#{version} -X main.GitCommit=#{tap.user} -X main.BuildTime=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/publisher"
   end

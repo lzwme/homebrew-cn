@@ -35,7 +35,7 @@ class Node < Formula
   depends_on "uvwasi"
   depends_on "zstd"
 
-  uses_from_macos "python", since: :catalina
+  uses_from_macos "python"
   uses_from_macos "zlib"
 
   on_macos do

@@ -1914,7 +1914,7 @@ Homebrew-homebrew-core/Formula/f/fastjar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fastk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastlane.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastly.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/fastmcp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fastmcp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fastme.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fastmod.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastnetmon.rb, Homebrew/homebrew-core, 1
@@ -3196,6 +3196,7 @@ Homebrew-homebrew-core/Formula/j/jing-trang.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jinja2-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jinx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jira-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/jiratui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jj.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jjui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jless.rb, Homebrew/homebrew-core, 1
@@ -12216,6 +12217,7 @@ Homebrew-homebrew-cask/Casks/h/hancom-word.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/handbrake-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/handbrakebatch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/handshaker.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/h/handy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hapigo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/happymac.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/haptic-touch-bar.rb, Homebrew/homebrew-cask, 0

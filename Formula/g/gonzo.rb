@@ -11,12 +11,15 @@ class Gonzo < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b6024269c909eb0594c776bf2b3a4fd0c17aeb42247f7d015650e7fae2ec25e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b6024269c909eb0594c776bf2b3a4fd0c17aeb42247f7d015650e7fae2ec25e"
     sha256 cellar: :any_skip_relocation, sonoma:        "affaa2569a3ef599749de76935a6be6d3b94a470c3c5b19b29e162600e292643"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d132e46dbe65cec60d8f89131cfff94a6659141898a054af069a76db5e870394"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9fe4211762319801bb48236fe3b024f128d35a3369e601426f4f8b28ba05e9e"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X main.version=#{version}
