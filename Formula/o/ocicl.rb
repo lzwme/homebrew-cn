@@ -1,17 +1,17 @@
 class Ocicl < Formula
   desc "OCI-based ASDF system distribution and management tool for Common Lisp"
   homepage "https://github.com/ocicl/ocicl"
-  url "https://ghfast.top/https://github.com/ocicl/ocicl/archive/refs/tags/v2.6.7.tar.gz"
-  sha256 "488e6162d2a9b0f2e50376e583e06575ad0dbd1d5cc819393e00c33602dad8f9"
+  url "https://ghfast.top/https://github.com/ocicl/ocicl/archive/refs/tags/v2.7.0.tar.gz"
+  sha256 "3477659863514ac1188b7177ad9b75a93b580a42c67573cadb4bcb67142d4908"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd4ba2caa43af3a464021992cb84238aee90285b988f20b32c5e105898f87bb0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "720add1da9e06f06cf02c919026f174731fa14e90b62d726f2e6053d10820ae6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "971cd2db966fceca168c15af1dfca054ace6867dc4592284b422219af8f48b05"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d8fcd8508d369368f1376087ca40d304b84e48472bc8c0c375ec209a432b71b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3a6701dba23b63977aacdc9339efbfa566ce2ad8e8355ab4bc2504b4bd6bcfa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfc0d205f461ad35b8043e453e9fe91cec47d2195a35a6fead166e568643452d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc63ddc48e91008185e517a8f57f45831f8ddd4c297ae2bb2c2c34dd1d820d66"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b15e2c11e1727c3a4ad11102f340ac803da8f4cac4528bd71d0df0e1c6fe58c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1a8487d573ea22f265d6c4ce997e88cbf02f1e7de7d3f80e555a329c0df30dc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fcb32ad69a4b9baa8b041f50f62696842935017cba5bc37700a4d640300e9c07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7135e7a994f1a16304005857b13a0f0a9237d812065896d9d3fb2376bf6d263d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "466120e1972c68a26a42cb400ea9ee621b7f4b1ee582e3e3dd73be8ed3bac46d"
   end
 
   depends_on "sbcl"

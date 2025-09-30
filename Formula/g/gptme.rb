@@ -3,18 +3,18 @@ class Gptme < Formula
 
   desc "AI assistant in your terminal"
   homepage "https://gptme.org/docs/"
-  url "https://files.pythonhosted.org/packages/0c/db/e9359f2617ef994b7813ef9436f4fd5fb984e914a3a6515ff8400a7507f0/gptme-0.28.1.tar.gz"
-  sha256 "b371421fa2614576cb28156706d626c3244e3be1da75d08ef06aac13945fc94c"
+  url "https://files.pythonhosted.org/packages/47/9b/adf6a6eecf1fe9b702043b6e016367fda35dd34a232c6f6b95965cea4393/gptme-0.28.2.tar.gz"
+  sha256 "28b589c43dcfff46bb0f3d2a2b9699dc2fb8a9173d9569110f6150984d4c86fb"
   license "MIT"
   head "https://github.com/ErikBjare/gptme.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d81db70221a45e95d2c505fe9236b2d443a2b5f707d275c7fac12712aaaa7e9a"
-    sha256 cellar: :any,                 arm64_sequoia: "2e030413c546192ad678c4bdc9539c3d9c19323f316f52cda53596bb296ad7a0"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd2094ed43b6dde44bd9c2f79de833a4cb0f4da1313e549476071b27cee6fb99"
-    sha256 cellar: :any,                 sonoma:        "b5362a976f3be78e0f4ddcb58414dad4e5bd68f6ca4ac43fcdeb966001e9f63f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ce36966964d1184624e7cbb5e95b4ce2161b8d342e5bd9e5b8062ae1de3abf0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b88ae5d4d8b11049e4937cb14830ab1ab952b00e1e49331086c933f5870a819"
+    sha256 cellar: :any,                 arm64_tahoe:   "29b342087cbb71c9b9b349025d68fc233c0d2d08c4b6d46d755f6f61ba26f9eb"
+    sha256 cellar: :any,                 arm64_sequoia: "a297367fb591994a63862833994d07532f8650d6cad50d5878c42431966a74d8"
+    sha256 cellar: :any,                 arm64_sonoma:  "41a3fdb7cb1cf5819d0105428901417f417a4ae9057f7a5091e716a8a34195d5"
+    sha256 cellar: :any,                 sonoma:        "583d454ce5533581ba9e42fe6b1334119ef85bdfcab92bd9ce24550a4e513717"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6fb7897e90e287a10b2a45101cf1cc5b12df123a9a836234535acb75e63a0e97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91fe49822ca2b9e3b1f42349c8563c866e9703dda6b0e3b08858954c40eb12f3"
   end
 
   depends_on "rust" => :build
@@ -162,8 +162,8 @@ class Gptme < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/48/e9/242096400d702924b49f8d202c6ded7efb8841cacba826b5d2e6183aef7b/mcp-1.14.1.tar.gz"
-    sha256 "31c4406182ba15e8f30a513042719c3f0a38c615e76188ee5a736aaa89e20134"
+    url "https://files.pythonhosted.org/packages/0c/9e/e65114795f359f314d7061f4fcb50dfe60026b01b52ad0b986b4631bf8bb/mcp-1.15.0.tar.gz"
+    sha256 "5bda1f4d383cf539d3c035b3505a3de94b20dbd7e4e8b4bd071e14634eeb2d72"
   end
 
   resource "mdurl" do
@@ -177,8 +177,8 @@ class Gptme < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/62/9f/d11cc7fb2d60af14a97dbef4e3c7b23917387995c257951fdc321d8efd0a/openai-1.109.0.tar.gz"
-    sha256 "701e26d13e3953524ba99f44cf5fbbda40eafd41ba15a8d85b76229a2693cfe5"
+    url "https://files.pythonhosted.org/packages/c6/a1/a303104dc55fc546a3f6914c842d3da471c64eec92043aef8f652eb6c524/openai-1.109.1.tar.gz"
+    sha256 "d173ed8dbca665892a6db099b4a2dfac624f94d20a93f46eb0b56aae940ed869"
   end
 
   resource "parso" do
@@ -227,8 +227,8 @@ class Gptme < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/68/85/1ea668bbab3c50071ca613c6ab30047fb36ab0da1b92fa8f17bbc38fd36c/pydantic_settings-2.10.1.tar.gz"
-    sha256 "06f0062169818d0f5524420a360d632d5857b83cffd4d42fe29597807a1614ee"
+    url "https://files.pythonhosted.org/packages/20/c5/dbbc27b814c71676593d1c3f718e6cd7d4f00652cefa24b75f7aa3efb25e/pydantic_settings-2.11.0.tar.gz"
+    sha256 "d0e87a1c7d33593beb7194adb8470fc426e95ba02af83a0f23474a04c9a08180"
   end
 
   resource "pygments" do

@@ -3,17 +3,17 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/85/78/d34af4c7f14aa6a85b47165d17405a16c330a39fddd910a9427c52b7c1cf/flexget-3.18.11.tar.gz"
-  sha256 "54ba6f9f154a858f4503bf7898ec4f08f59cebad315a68629d66f40059605900"
+  url "https://files.pythonhosted.org/packages/0c/67/0d4de15fbc880f0aae307bdcf7c7f050d4e3cfb065800371c5ddbdc93f55/flexget-3.18.12.tar.gz"
+  sha256 "fc95f67f4aa08badf9700c4ea02d0965f46f428c81739798493d0ae405b248c2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "16653cdd056bd2ca90a7224b18c15abd0bea35532d65a24d2a6a22583124ae47"
-    sha256 cellar: :any,                 arm64_sequoia: "56ce2cb1652fb22e89c668c89e3988727cedd81d02bde66dcf5ef4c54161d68c"
-    sha256 cellar: :any,                 arm64_sonoma:  "c497426bcfdc2be14fdb990efad3f33abd77bd3864558411bb59c4f365083e1a"
-    sha256 cellar: :any,                 sonoma:        "23563ca37c01dcfe55c79a6ff1ef32031f4370d7ca4d8fde9458a9a5c362aab2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3bb99a6b306034f4aad3ca9408034ac7916bb594c0bd273e3f697fd40578aaba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "961493244db387be4fbb67d37cd5f05999313999766e72411807ab3e18e38790"
+    sha256 cellar: :any,                 arm64_tahoe:   "5ddbca08be00c179dad93c07f9cc3130d22a96e3c5f16c7923330d61c417abb2"
+    sha256 cellar: :any,                 arm64_sequoia: "200d9a839882a03138d8ffdaae3045f7227e0c2f98dfec14f98f6b3c236071dd"
+    sha256 cellar: :any,                 arm64_sonoma:  "be1f673861a17ebefc8e6c05fe07765b94460b4f42f57710644c853159bf95ac"
+    sha256 cellar: :any,                 sonoma:        "bb4d5fbe9f50b5f37bed4b6cbff6921f93b35755973b3889a034bd2f67a8d043"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c5de0636977903ce0fde159bb14807bb8b40e41591ea9039036bb7bfa4e8f9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3ab89ec54beaec758544fba1fd47e2e894e1678fa46f817fe21781d877f03e0"
   end
 
   depends_on "rust" => :build
@@ -48,8 +48,8 @@ class Flexget < Formula
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/85/2e/3e5079847e653b1f6dc647aa24549d68c6addb4c595cc0d902d1b19308ad/beautifulsoup4-4.13.5.tar.gz"
-    sha256 "5e70131382930e7c3de33450a2f54a63d5e4b19386eab43a5b34d594268f3695"
+    url "https://files.pythonhosted.org/packages/77/e9/df2358efd7659577435e2177bfa69cba6c33216681af51a707193dec162a/beautifulsoup4-4.14.2.tar.gz"
+    sha256 "2a98ab9f944a11acee9cc848508ec28d9228abfd522ef0fad6a02a72e0ded69e"
   end
 
   resource "blinker" do
@@ -188,8 +188,8 @@ class Flexget < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   resource "mdurl" do

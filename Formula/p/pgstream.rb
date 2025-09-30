@@ -15,7 +15,7 @@ class Pgstream < Formula
   end
 
   depends_on "go" => :build
-  depends_on "postgresql@17" => :test
+  depends_on "postgresql@18" => :test
   depends_on "wal2json" => :test
 
   def install
@@ -30,7 +30,7 @@ class Pgstream < Formula
 
     ENV["LC_ALL"] = "C"
 
-    postgresql = Formula["postgresql@17"]
+    postgresql = Formula["postgresql@18"]
     pg_ctl = postgresql.opt_bin/"pg_ctl"
     port = free_port
 

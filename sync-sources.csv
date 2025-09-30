@@ -1959,6 +1959,7 @@ Homebrew-homebrew-core/Formula/f/fend.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fennel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ferium.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fern-api.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/fernflower.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/feroxbuster.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ferron.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fetch-crl.rb, Homebrew/homebrew-core, 0
@@ -6186,6 +6187,7 @@ Homebrew-homebrew-core/Formula/s/samtools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/samurai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sane-backends.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sapling.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sarif-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sassc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/savana.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/saxon-b.rb, Homebrew/homebrew-core, 0
@@ -13063,6 +13065,7 @@ Homebrew-homebrew-cask/Casks/m/microsoft-openjdk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-openjdk@11.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-openjdk@17.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-openjdk@21.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/microsoft-openjdk@25.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-outlook.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-powerpoint.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-remote-desktop.rb, Homebrew/homebrew-cask, 0

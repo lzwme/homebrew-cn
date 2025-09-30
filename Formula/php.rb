@@ -1,11 +1,26 @@
 class Php < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.4.13.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.4.13.tar.xz"
-  sha256 "b4f27adf30bcf262eacf93c78250dd811980f20f3b90d79a3dc11248681842df"
   license "PHP-3.01"
+  revision 1
+
+  stable do
+    # Should only be updated if the new version is announced on the homepage, https://www.php.net/
+    url "https://www.php.net/distributions/php-8.4.13.tar.xz"
+    mirror "https://fossies.org/linux/www/php-8.4.13.tar.xz"
+    sha256 "b4f27adf30bcf262eacf93c78250dd811980f20f3b90d79a3dc11248681842df"
+
+    # Fix naming clash with libxml macro
+    # https://github.com/php/php-src/pull/19832
+    patch do
+      url "https://github.com/php/php-src/commit/24a03a2fb14f4b1b16fd2bdb296fc874a4e49cac.patch?full_index=1"
+      sha256 "84daba52c50deca17ffa739e43dcc0ac3a8c264e42b61891bf8f9effd299a3da"
+    end
+
+    # Backport fixes for curl on macOS.
+    # Remove after the next patch release.
+    patch :DATA
+  end
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
@@ -14,13 +29,12 @@ class Php < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 1
-    sha256 arm64_tahoe:   "d45a3a7f4da9e38ae404bc93f0c4ad97571201bd1b16a812be74dc640b32346e"
-    sha256 arm64_sequoia: "b016df12755d5bf98e9c7a6fbbdf3475ab487b1b3073edf644844255b377e7ff"
-    sha256 arm64_sonoma:  "53304cec0a8a13de8fbe996c9e729aced1e097a3e66bd5b59e20a0f25cc74b85"
-    sha256 sonoma:        "88820510ff569e12d5ed57b312ae62fad685b27e3a1de6779a413051f60b8e51"
-    sha256 arm64_linux:   "f45e33cc6c3e61a80e2f21799119e4943fb16daa20d2c5c2bd1c67f153a05c04"
-    sha256 x86_64_linux:  "8d127116f5495cc4a2ee1aea48fc390655924864e45954fd26d35ea923b98e67"
+    sha256 arm64_tahoe:   "cf2067f7d6934f9f415dbb0191d9ae0c57e3041df8aa18a7df49298bcc7939c1"
+    sha256 arm64_sequoia: "d42eebb781870887a50d5b6897dacdec41bcf58b1668c844e0b9e172d1fc0932"
+    sha256 arm64_sonoma:  "30538dc854f9c42292bbd18fa535e09e1fa139d0999a7ca8f1dd6c22f3da96aa"
+    sha256 sonoma:        "25ee770df5349d2d989bf132a12007e4eedfb630dbd0e66939ef08b6aabbbf10"
+    sha256 arm64_linux:   "733f4f2646e72d89ccf468bfa8efa177f2fc6801b22a8e2ba810a242b1f02734"
+    sha256 x86_64_linux:  "85fbd6ece47c4f43c5d8a65f6bcf08bedc1d1f7c2232cc4d410796a1a0532770"
   end
 
   head do
@@ -35,16 +49,13 @@ class Php < Formula
   depends_on "apr"
   depends_on "apr-util"
   depends_on "argon2"
-  depends_on "aspell"
   depends_on "autoconf"
   depends_on "capstone"
   depends_on "curl"
   depends_on "freetds"
   depends_on "gd"
-  depends_on "gettext"
   depends_on "gmp"
   depends_on "icu4c@77"
-  depends_on "krb5"
   depends_on "libpq"
   depends_on "libsodium"
   depends_on "libzip"
@@ -59,17 +70,14 @@ class Php < Formula
   uses_from_macos "xz" => :build
   uses_from_macos "bzip2"
   uses_from_macos "libedit"
-  uses_from_macos "libffi", since: :catalina
+  uses_from_macos "libffi"
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "gcc"
-
-    # PHP build system incorrectly links system libraries
-    # see https://github.com/php/php-src/issues/10680
-    patch :DATA
+    depends_on "gcc" => :build # must never be a runtime dependency
+    depends_on "gettext"
   end
 
   # https://github.com/Homebrew/homebrew-core/issues/235820
@@ -78,20 +86,8 @@ class Php < Formula
     cause "Performs worse due to lack of general global register variables"
   end
 
-  # Fix naming clash with libxml macro
-  # https://github.com/php/php-src/pull/19832
-  patch do
-    url "https://github.com/php/php-src/commit/24a03a2fb14f4b1b16fd2bdb296fc874a4e49cac.patch?full_index=1.patch?full_index=1"
-    sha256 "84daba52c50deca17ffa739e43dcc0ac3a8c264e42b61891bf8f9effd299a3da"
-  end
-
   def install
-    # GCC -Os performs worse than -O1 and significantly worse than -O2/-O3.
-    # We lack a DSL to enable -O2 so just use -O3 which is similar.
-    ENV.O3 if OS.mac?
-
-    # buildconf required due to system library linking bug patch
-    system "./buildconf", "--force"
+    system "./buildconf", "--force" if build.head?
 
     inreplace "configure" do |s|
       s.gsub! "$APXS_HTTPD -V 2>/dev/null | grep 'threaded:.*yes' >/dev/null 2>&1",
@@ -125,8 +121,6 @@ class Php < Formula
     # Identify build provider in php -v output and phpinfo()
     ENV["PHP_BUILD_PROVIDER"] = "Shivam Mathur"
 
-    # system pkg-config missing
-    ENV["KERBEROS_CFLAGS"] = " "
     if OS.mac?
       ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path_if_needed}/usr/include/sasl"
       ENV["SASL_LIBS"] = "-lsasl2"
@@ -151,6 +145,7 @@ class Php < Formula
       --with-config-file-path=#{config_path}
       --with-config-file-scan-dir=#{config_path}/conf.d
       --with-pear=#{pkgshare}/pear
+      --disable-intl
       --enable-bcmath
       --enable-calendar
       --enable-dba
@@ -158,7 +153,6 @@ class Php < Formula
       --enable-ftp
       --enable-fpm
       --enable-gd
-      --enable-intl
       --enable-mbregex
       --enable-mbstring
       --enable-mysqlnd
@@ -183,7 +177,6 @@ class Php < Formula
       --with-gettext=#{Formula["gettext"].opt_prefix}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-iconv#{headers_path}
-      --with-kerberos
       --with-layout=GNU
       --with-ldap=#{Formula["openldap"].opt_prefix}
       --with-libxml
@@ -193,7 +186,7 @@ class Php < Formula
       --with-mysqli=mysqlnd
       --with-ndbm#{headers_path}
       --with-openssl
-      --with-password-argon2
+      --with-password-argon2=#{Formula["argon2"].opt_prefix}
       --with-pdo-dblib=#{Formula["freetds"].opt_prefix}
       --with-pdo-mysql=mysqlnd
       --with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}
@@ -201,7 +194,6 @@ class Php < Formula
       --with-pdo-sqlite
       --with-pgsql=#{Formula["libpq"].opt_prefix}
       --with-pic
-      --with-pspell=#{Formula["aspell"].opt_prefix}
       --with-sodium
       --with-sqlite3
       --with-tidy=#{Formula["tidy-html5"].opt_prefix}
@@ -214,7 +206,6 @@ class Php < Formula
     if OS.mac?
       args << "--enable-dtrace"
       args << "--with-ldap-sasl"
-      args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}"
     else
       args << "--disable-dtrace"
       args << "--without-ldap-sasl"
@@ -259,6 +250,19 @@ class Php < Formula
     unless (var/"log/php-fpm.log").exist?
       (var/"log").mkpath
       touch var/"log/php-fpm.log"
+    end
+
+    cd "ext/intl" do
+      system bin/"phpize"
+      if OS.mac?
+        # rubocop:disable all
+        ENV["CC"] = "/usr/bin/clang"
+        ENV["CXX"] = "/usr/bin/clang++"
+        # rubocop:enable all
+      end
+      system "./configure", "--with-php-config=#{bin}/php-config"
+      system "make"
+      system "make", "install", "EXTENSION_DIR=#{lib}/php/#{orig_ext_dir}"
     end
   end
 
@@ -312,6 +316,7 @@ class Php < Formula
     system bin/"pear", "update-channels"
 
     %w[
+      intl
       opcache
     ].each do |e|
       ext_config_path = etc/"php/#{version.major_minor}/conf.d/ext-#{e}.ini"
@@ -360,6 +365,18 @@ class Php < Formula
     # https://github.com/Homebrew/homebrew-core/issues/28398
     assert_includes (bin/"php").dynamically_linked_libraries,
                     (Formula["libpq"].opt_lib/shared_library("libpq", 5)).to_s
+
+    (testpath/"test.php").write <<~PHP
+      <?php
+      $formatter = new NumberFormatter('en_US', NumberFormatter::DECIMAL);
+      echo $formatter->format(1234567), PHP_EOL;
+
+      $formatter = new MessageFormatter('de_DE', '{0,number,#,###.##} MB');
+      echo $formatter->format([12345.6789]);
+      ?>
+    PHP
+    assert_equal "1,234,567\n12.345,68 MB", shell_output("#{bin}/php test.php")
+    assert_match "intl", shell_output("#{bin}/php -m")
 
     system "#{sbin}/php-fpm", "-t"
     system "#{bin}/phpdbg", "-V"
@@ -454,47 +471,6 @@ class Php < Formula
 end
 
 __END__
-diff --git a/build/php.m4 b/build/php.m4
-index 176d4d4144..f71d642bb4 100644
---- a/build/php.m4
-+++ b/build/php.m4
-@@ -429,7 +429,7 @@ dnl
- dnl Adds a path to linkpath/runpath (LDFLAGS).
- dnl
- AC_DEFUN([PHP_ADD_LIBPATH],[
--  if test "$1" != "/usr/$PHP_LIBDIR" && test "$1" != "/usr/lib"; then
-+  if test "$1" != "$PHP_OS_SDKPATH/usr/$PHP_LIBDIR" && test "$1" != "/usr/lib"; then
-     PHP_EXPAND_PATH($1, ai_p)
-     ifelse([$2],,[
-       _PHP_ADD_LIBPATH_GLOBAL([$ai_p])
-@@ -476,7 +476,7 @@ dnl paths are prepended to the beginning of INCLUDES.
- dnl
- AC_DEFUN([PHP_ADD_INCLUDE], [
- for include_path in m4_normalize(m4_expand([$1])); do
--  AS_IF([test "$include_path" != "/usr/include"], [
-+  AS_IF([test "$include_path" != "$PHP_OS_SDKPATH/usr/include"], [
-     PHP_EXPAND_PATH([$include_path], [ai_p])
-     PHP_RUN_ONCE([INCLUDEPATH], [$ai_p], [m4_ifnblank([$2],
-       [INCLUDES="-I$ai_p $INCLUDES"],
-diff --git a/configure.ac b/configure.ac
-index 36c6e5e3e2..71b1a16607 100644
---- a/configure.ac
-+++ b/configure.ac
-@@ -190,6 +190,14 @@ PHP_ARG_WITH([libdir],
-   [lib],
-   [no])
-
-+dnl Support systems with system libraries/includes in e.g. /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk.
-+PHP_ARG_WITH([os-sdkpath],
-+  [for system SDK directory],
-+  [AS_HELP_STRING([--with-os-sdkpath=NAME],
-+    [Ignore system libraries and includes in NAME rather than /])],
-+  [],
-+  [no])
-+
- PHP_ARG_ENABLE([rpath],
-   [whether to enable runpaths],
-   [AS_HELP_STRING([--disable-rpath],
 diff --git a/ext/curl/interface.c b/ext/curl/interface.c
 index 965e4971267..651a9676a3e 100644
 --- a/ext/curl/interface.c

@@ -30,7 +30,7 @@ class Dynare < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "fftw"
-  depends_on "gcc"
+  depends_on "gcc" # for gfortran
   depends_on "gsl"
   depends_on "hdf5"
   depends_on "libmatio"
@@ -66,7 +66,8 @@ class Dynare < Formula
     octave = Formula["octave"]
     ENV.append "LDFLAGS", "-Wl,-rpath,#{octave.opt_lib}/octave/#{octave.version.major_minor_patch}" if OS.linux?
 
-    # Help meson find `suite-sparse` and `slicot`
+    # Help meson find `boost`, `suite-sparse` and `slicot`
+    ENV["BOOST_ROOT"] = Formula["boost"].opt_prefix
     ENV.append_path "LIBRARY_PATH", Formula["suite-sparse"].opt_lib
     ENV.append_path "LIBRARY_PATH", buildpath/"slicot/lib"
 
@@ -92,12 +93,6 @@ class Dynare < Formula
     ENV.cxx
     ENV.append "CXXFLAGS", "-std=c++17" # octave >= 10 requires c++17
     ENV.delete "LDFLAGS" # avoid overriding Octave flags
-
-    # Work around Xcode 15.0 ld error with GCC: https://github.com/Homebrew/homebrew-core/issues/145991
-    if OS.mac? && (MacOS::Xcode.version.to_s.start_with?("15.0") || MacOS::CLT.version.to_s.start_with?("15.0"))
-      ENV["LDFLAGS"] = shell_output("#{Formula["octave"].opt_bin}/mkoctfile --print LDFLAGS").chomp
-      ENV.append "LDFLAGS", "-Wl,-ld_classic"
-    end
 
     statistics = resource("statistics")
     testpath.install statistics

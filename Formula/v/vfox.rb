@@ -1,8 +1,8 @@
 class Vfox < Formula
   desc "Version manager with support for Java, Node.js, Flutter, .NET & more"
   homepage "https://vfox.dev/"
-  url "https://ghfast.top/https://github.com/version-fox/vfox/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "eb4c96c1f5ffe0d6f578d66b48110390e943ef1353f62470c66994d521e2f748"
+  url "https://ghfast.top/https://github.com/version-fox/vfox/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "f095ecf7174b5cdf25d6e82faecb34fc092a50dbe66e182151b188d3fa6696c9"
   license "Apache-2.0"
   head "https://github.com/version-fox/vfox.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Vfox < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1fb526dba9e9b28ce68d9c836c9bc7fe1b682b74c510beb8df51b85ab873d6e2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc8fef00caabe6ca147544847d4ac5bfb511f1973ee8a9ddaf7b30ada2c1b697"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b4b6dbfc4c4ee03791df93e0dc221df89de8572f8e39ebc80f2cc935329e418"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3d3fac3a4adfded00735ba1b7d1a1a8a8aedd365a7b8e9709e2977d68bab8324"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a791610138278cfd2c5f3ff898f7bd6435b7781f44bdd605ed39ce30ac9ca356"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6f1962768ed29aac485fb70abde10cc5431e18fc076e81fc29ed1ebd2a372636"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca125c328c244d649a77f809f5a2301736afd902825fe117d318d68b03ddb337"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d5402cede05836567a5ffff7b86d839eb77ca8b20cd9bc6b79c515b42f52585"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cf0c2e7701fa6536cda39b9e191fcaa236e16704f6fdbd54f5c3185061d20955"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c128e8a3aa27fc86cc18c14e497e36e7d78cdf579754019705563e5ab9c6c41d"
   end
 
   depends_on "go" => :build
