@@ -5,17 +5,16 @@ class PhpAT81Debug < Formula
   mirror "https://fossies.org/linux/www/php-8.1.33.tar.xz"
   sha256 "9db83bf4590375562bc1a10b353cccbcf9fcfc56c58b7c8fb814e6865bb928d1"
   license "PHP-3.01"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 2
-    sha256 arm64_tahoe:   "18796646b135bbd5d9d3da64e4afd1b97969fa371eef82b68ae74e98960181d5"
-    sha256 arm64_sequoia: "c428dc928ca060373c16d947b594acfcb54c4080f3a575bdefb831dbe0cdd1a5"
-    sha256 arm64_sonoma:  "3a50c2c828585522f1cdf7f0c46cd821814e61c69d7e53d7f8111b417256803f"
-    sha256 arm64_ventura: "bb1f20e0a47120df9126dd96bab5bf50bbbe0cc885bbd1ac2d90f184cbc0729b"
-    sha256 ventura:       "b6f6d85ecd00f8d3c1daf08fa2b38d896a0d7d0aca5877440ab2d566e5fd19d6"
-    sha256 arm64_linux:   "f4aef3db7d33148f8bdba0e36dc14d981841f4410b99f46ac288451729a9beb6"
-    sha256 x86_64_linux:  "509817bc38edab68870b8843f3e15864838ff810fce508a9a408e1ed0d143095"
+    sha256 arm64_tahoe:   "56d375e06d0770ba0cf7b97a96c523a99614628bd4e033369532784cb2850799"
+    sha256 arm64_sequoia: "ba812d33af27823497de679cd04d01f7df68a1d3f2e8c4629bb9a700bf271905"
+    sha256 arm64_sonoma:  "c16c15383db9a821cd3ac07503cde67b2d15fcb91e379022f8c6b7adb974791d"
+    sha256 sonoma:        "e14374242c30f6e3af7cba60e2594424f2a654f9c928e4e7ed978159d542ed8a"
+    sha256 arm64_linux:   "1fc69894534f5c7a3467d675b33274ddfe4e5334a1b89e62205465223e6c8dfe"
+    sha256 x86_64_linux:  "97c37ca731524626cf53aa2662c350ef7cf8741f221831c4bc64146c764f7965"
   end
 
   keg_only :versioned_formula
@@ -24,10 +23,8 @@ class PhpAT81Debug < Formula
   # https://www.php.net/supported-versions.php
   deprecate! date: "2025-12-31", because: :unsupported
 
-  depends_on "bison" => :build
   depends_on "httpd" => [:build, :test]
   depends_on "pkgconf" => :build
-  depends_on "re2c" => :build
   depends_on "apr"
   depends_on "apr-util"
   depends_on "argon2"
@@ -53,17 +50,13 @@ class PhpAT81Debug < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "libedit"
-  uses_from_macos "libffi", since: :catalina
+  uses_from_macos "libffi"
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "gcc"
-
-    # PHP build system incorrectly links system libraries
-    # see https://github.com/php/php-src/issues/10680
-    patch :DATA
+    depends_on "gcc" => :build # must never be a runtime dependency
   end
 
   # https://github.com/Homebrew/homebrew-core/issues/235820
@@ -71,6 +64,10 @@ class PhpAT81Debug < Formula
   fails_with :clang do
     cause "Performs worse due to lack of general global register variables"
   end
+
+  # Backport fixes for curl on macOS.
+  # Remove after the next patch release.
+  patch :DATA
 
   def install
     # GCC -Os performs worse than -O1 and significantly worse than -O2/-O3.
@@ -102,7 +99,7 @@ class PhpAT81Debug < Formula
 
       # apxs will interpolate the @ in the versioned prefix: https://bz.apache.org/bugzilla/show_bug.cgi?id=61944
       s.gsub! "LIBEXECDIR='$APXS_LIBEXECDIR'",
-              "LIBEXECDIR='" + "#{lib}/httpd/modules".gsub("@", "\\@") + "'"
+              "LIBEXECDIR='" + "#{lib}/httpd/modules".gsub("\\", "\\\\").gsub("@", "\\@") + "'"
     end
 
     # Update error message in apache sapi to better explain the requirements
@@ -154,6 +151,7 @@ class PhpAT81Debug < Formula
       --with-config-file-path=#{config_path}
       --with-config-file-scan-dir=#{config_path}/conf.d
       --with-pear=#{pkgshare}/pear
+      --disable-intl
       --enable-bcmath
       --enable-calendar
       --enable-dba
@@ -162,7 +160,6 @@ class PhpAT81Debug < Formula
       --enable-ftp
       --enable-fpm
       --enable-gd
-      --enable-intl
       --enable-mbregex
       --enable-mbstring
       --enable-mysqlnd
@@ -170,7 +167,6 @@ class PhpAT81Debug < Formula
       --enable-pcntl
       --enable-phpdbg
       --enable-phpdbg-readline
-      --enable-phpdbg-webhelper
       --enable-shmop
       --enable-soap
       --enable-sockets
@@ -198,7 +194,7 @@ class PhpAT81Debug < Formula
       --with-mysqli=mysqlnd
       --with-ndbm#{headers_path}
       --with-openssl
-      --with-password-argon2
+      --with-password-argon2=#{Formula["argon2"].opt_prefix}
       --with-pdo-dblib=#{Formula["freetds"].opt_prefix}
       --with-pdo-mysql=mysqlnd
       --with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}
@@ -219,7 +215,6 @@ class PhpAT81Debug < Formula
     if OS.mac?
       args << "--enable-dtrace"
       args << "--with-ldap-sasl"
-      args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}"
     else
       args << "--disable-dtrace"
       args << "--without-ldap-sasl"
@@ -232,21 +227,20 @@ class PhpAT81Debug < Formula
     system "make", "install"
 
     # Allow pecl to install outside of Cellar
-    extension_dir = Utils.safe_popen_read("#{bin}/php-config", "--extension-dir").chomp
+    extension_dir = Utils.safe_popen_read(bin/"php-config", "--extension-dir").chomp
     orig_ext_dir = File.basename(extension_dir)
     inreplace bin/"php-config", lib/"php", prefix/"pecl"
-    %w[development production].each do |mode|
-      inreplace "php.ini-#{mode}", %r{; ?extension_dir = "\./"},
-        "extension_dir = \"#{HOMEBREW_PREFIX}/lib/php/pecl/#{orig_ext_dir}\""
-    end
 
-    # Use OpenSSL cert bundle
     openssl = Formula["openssl@3"]
     %w[development production].each do |mode|
-      inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
-        "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\""
-      inreplace "php.ini-#{mode}", /; ?openssl\.capath=/,
-        "openssl.capath = \"#{openssl.pkgetc}/certs\""
+      inreplace "php.ini-#{mode}" do |s|
+        # Allow pecl to install outside of Cellar
+        s.gsub! %r{; ?extension_dir = "\./"}, "extension_dir = \"#{HOMEBREW_PREFIX}/lib/php/pecl/#{orig_ext_dir}\""
+
+        # Use OpenSSL cert bundle
+        s.gsub!(/; ?openssl\.cafile=/, "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\"")
+        s.gsub!(/; ?openssl\.capath=/, "openssl.capath = \"#{openssl.pkgetc}/certs\"")
+      end
     end
 
     config_files = {
@@ -264,6 +258,19 @@ class PhpAT81Debug < Formula
     unless (var/"log/php-fpm.log").exist?
       (var/"log").mkpath
       touch var/"log/php-fpm.log"
+    end
+
+    cd "ext/intl" do
+      system bin/"phpize"
+      if OS.mac?
+        # rubocop:disable all
+        ENV["CC"] = "/usr/bin/clang"
+        ENV["CXX"] = "/usr/bin/clang++"
+        # rubocop:enable all
+      end
+      system "./configure", "--with-php-config=#{bin}/php-config"
+      system "make"
+      system "make", "install", "EXTENSION_DIR=#{lib}/php/#{orig_ext_dir}"
     end
   end
 
@@ -290,9 +297,10 @@ class PhpAT81Debug < Formula
     pecl_path = HOMEBREW_PREFIX/"lib/php/pecl"
     pecl_path.mkpath
     ln_s pecl_path, prefix/"pecl" unless (prefix/"pecl").exist?
-    extension_dir = Utils.safe_popen_read("#{bin}/php-config", "--extension-dir").chomp
+    extension_dir = Utils.safe_popen_read(bin/"php-config", "--extension-dir").chomp
     php_basename = File.basename(extension_dir)
     php_ext_dir = opt_prefix/"lib/php"/php_basename
+    (pecl_path/php_basename).mkpath
 
     # fix pear config to install outside cellar
     pear_path = HOMEBREW_PREFIX/"share/pear@#{php_version}"
@@ -317,6 +325,7 @@ class PhpAT81Debug < Formula
     system bin/"pear", "update-channels"
 
     %w[
+      intl
       opcache
     ].each do |e|
       ext_config_path = etc/"php/#{php_version}/conf.d/ext-#{e}.ini"
@@ -325,10 +334,10 @@ class PhpAT81Debug < Formula
         inreplace ext_config_path,
           /#{extension_type}=.*$/, "#{extension_type}=#{php_ext_dir}/#{e}.so"
       else
-        ext_config_path.write <<~EOS
+        ext_config_path.write <<~INI
           [#{e}]
           #{extension_type}="#{php_ext_dir}/#{e}.so"
-        EOS
+        INI
       end
     end
   end
@@ -370,22 +379,35 @@ class PhpAT81Debug < Formula
     assert_includes (bin/"php").dynamically_linked_libraries,
                     (Formula["libpq"].opt_lib/shared_library("libpq", 5)).to_s
 
+    (testpath/"test.php").write <<~PHP
+      <?php
+      $formatter = new NumberFormatter('en_US', NumberFormatter::DECIMAL);
+      echo $formatter->format(1234567), PHP_EOL;
+
+      $formatter = new MessageFormatter('de_DE', '{0,number,#,###.##} MB');
+      echo $formatter->format([12345.6789]);
+      ?>
+    PHP
+    assert_equal "1,234,567\n12.345,68 MB", shell_output("#{bin}/php test.php")
+    assert_match "intl", shell_output("#{bin}/php -m")
+
     system "#{sbin}/php-fpm", "-t"
-    system "#{bin}/phpdbg", "-V"
-    system "#{bin}/php-cgi", "-m"
+    system bin/"phpdbg", "-V"
+    system bin/"php-cgi", "-m"
     # Prevent SNMP extension to be added
     refute_match(/^snmp$/, shell_output("#{bin}/php -m"),
       "SNMP extension doesn't work reliably with Homebrew on High Sierra")
+
     begin
       port = free_port
       port_fpm = free_port
 
       expected_output = /^Hello world!$/
-      (testpath/"index.php").write <<~EOS
+      (testpath/"index.php").write <<~PHP
         <?php
         echo 'Hello world!' . PHP_EOL;
         var_dump(ldap_connect());
-      EOS
+      PHP
       main_config = <<~EOS
         Listen #{port}
         ServerName localhost:#{port}
@@ -408,7 +430,7 @@ class PhpAT81Debug < Formula
         </FilesMatch>
       EOS
 
-      (testpath/"fpm.conf").write <<~EOS
+      (testpath/"fpm.conf").write <<~INI
         [global]
         daemonize=no
         [www]
@@ -418,7 +440,7 @@ class PhpAT81Debug < Formula
         pm.start_servers = 2
         pm.min_spare_servers = 1
         pm.max_spare_servers = 3
-      EOS
+      INI
 
       (testpath/"httpd-fpm.conf").write <<~EOS
         #{main_config}
@@ -430,24 +452,16 @@ class PhpAT81Debug < Formula
         </FilesMatch>
       EOS
 
-      pid = fork do
-        exec Formula["httpd"].opt_bin/"httpd", "-X", "-f", "#{testpath}/httpd.conf"
-      end
-      sleep 5
-
+      pid = spawn Formula["httpd"].opt_bin/"httpd", "-X", "-f", "#{testpath}/httpd.conf"
+      sleep 10
       assert_match expected_output, shell_output("curl -s 127.0.0.1:#{port}")
 
       Process.kill("TERM", pid)
       Process.wait(pid)
 
-      fpm_pid = fork do
-        exec sbin/"php-fpm", "-y", "fpm.conf"
-      end
-      pid = fork do
-        exec Formula["httpd"].opt_bin/"httpd", "-X", "-f", "#{testpath}/httpd-fpm.conf"
-      end
-      sleep 3
-
+      fpm_pid = spawn sbin/"php-fpm", "-y", "fpm.conf"
+      pid = spawn Formula["httpd"].opt_bin/"httpd", "-X", "-f", "#{testpath}/httpd-fpm.conf"
+      sleep 10
       assert_match expected_output, shell_output("curl -s 127.0.0.1:#{port}")
     ensure
       if pid
@@ -485,44 +499,110 @@ index 1e31934f..49d430c4 100644
  		setitimer(ITIMER_REAL, &no_timeout, NULL);
  # else
  		setitimer(ITIMER_PROF, &no_timeout, NULL);
-diff --git a/build/php.m4 b/build/php.m4
-index 3624a33a8e..d17a635c2c 100644
---- a/build/php.m4
-+++ b/build/php.m4
-@@ -425,7 +425,7 @@ dnl
- dnl Adds a path to linkpath/runpath (LDFLAGS).
- dnl
- AC_DEFUN([PHP_ADD_LIBPATH],[
--  if test "$1" != "/usr/$PHP_LIBDIR" && test "$1" != "/usr/lib"; then
-+  if test "$1" != "$PHP_OS_SDKPATH/usr/$PHP_LIBDIR" && test "$1" != "/usr/lib"; then
-     PHP_EXPAND_PATH($1, ai_p)
-     ifelse([$2],,[
-       _PHP_ADD_LIBPATH_GLOBAL([$ai_p])
-@@ -470,7 +470,7 @@ dnl
- dnl Add an include path. If before is 1, add in the beginning of INCLUDES.
- dnl
- AC_DEFUN([PHP_ADD_INCLUDE],[
--  if test "$1" != "/usr/include"; then
-+  if test "$1" != "$PHP_OS_SDKPATH/usr/include"; then
-     PHP_EXPAND_PATH($1, ai_p)
-     PHP_RUN_ONCE(INCLUDEPATH, $ai_p, [
-       if test "$2"; then
-diff --git a/configure.ac b/configure.ac
-index 36c6e5e3e2..71b1a16607 100644
---- a/configure.ac
-+++ b/configure.ac
-@@ -190,6 +190,14 @@ PHP_ARG_WITH([libdir],
-   [lib],
-   [no])
-
-+dnl Support systems with system libraries/includes in e.g. /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk.
-+PHP_ARG_WITH([os-sdkpath],
-+  [for system SDK directory],
-+  [AS_HELP_STRING([--with-os-sdkpath=NAME],
-+    [Ignore system libraries and includes in NAME rather than /])],
-+  [],
-+  [no])
-+
- PHP_ARG_ENABLE([rpath],
-   [whether to enable runpaths],
-   [AS_HELP_STRING([--disable-rpath],
+diff --git a/ext/curl/interface.c b/ext/curl/interface.c
+index 807b27cb78c..5decc3420e9 100644
+--- a/ext/curl/interface.c
++++ b/ext/curl/interface.c
+@@ -1453,11 +1453,11 @@ static int curl_fnmatch(void *ctx, const char *pattern, const char *string)
+ /* }}} */
+ 
+ /* {{{ curl_progress */
+-static size_t curl_progress(void *clientp, double dltotal, double dlnow, double ultotal, double ulnow)
++static int curl_progress(void *clientp, double dltotal, double dlnow, double ultotal, double ulnow)
+ {
+ 	php_curl *ch = (php_curl *)clientp;
+ 	php_curl_callback *t = ch->handlers.progress;
+-	size_t	rval = 0;
++	int rval = 0;
+ 
+ #if PHP_CURL_DEBUG
+ 	fprintf(stderr, "curl_progress() called\n");
+@@ -1818,8 +1818,8 @@ static void _php_curl_set_default_options(php_curl *ch)
+ {
+ 	char *cainfo;
+ 
+-	curl_easy_setopt(ch->cp, CURLOPT_NOPROGRESS,        1);
+-	curl_easy_setopt(ch->cp, CURLOPT_VERBOSE,           0);
++	curl_easy_setopt(ch->cp, CURLOPT_NOPROGRESS,        1L);
++	curl_easy_setopt(ch->cp, CURLOPT_VERBOSE,           0L);
+ 	curl_easy_setopt(ch->cp, CURLOPT_ERRORBUFFER,       ch->err.str);
+ 	curl_easy_setopt(ch->cp, CURLOPT_WRITEFUNCTION,     curl_write);
+ 	curl_easy_setopt(ch->cp, CURLOPT_FILE,              (void *) ch);
+@@ -1830,8 +1830,8 @@ static void _php_curl_set_default_options(php_curl *ch)
+ #ifndef ZTS
+ 	curl_easy_setopt(ch->cp, CURLOPT_DNS_USE_GLOBAL_CACHE, 1);
+ #endif
+-	curl_easy_setopt(ch->cp, CURLOPT_DNS_CACHE_TIMEOUT, 120);
+-	curl_easy_setopt(ch->cp, CURLOPT_MAXREDIRS, 20); /* prevent infinite redirects */
++	curl_easy_setopt(ch->cp, CURLOPT_DNS_CACHE_TIMEOUT, 120L);
++	curl_easy_setopt(ch->cp, CURLOPT_MAXREDIRS, 20L); /* prevent infinite redirects */
+ 
+ 	cainfo = INI_STR("openssl.cafile");
+ 	if (!(cainfo && cainfo[0] != '\0')) {
+@@ -1842,7 +1842,7 @@ static void _php_curl_set_default_options(php_curl *ch)
+ 	}
+ 
+ #ifdef ZTS
+-	curl_easy_setopt(ch->cp, CURLOPT_NOSIGNAL, 1);
++	curl_easy_setopt(ch->cp, CURLOPT_NOSIGNAL, 1L);
+ #endif
+ }
+ /* }}} */
+@@ -2289,7 +2289,7 @@ static int _php_curl_setopt(php_curl *ch, zend_long option, zval *zvalue, bool i
+ 			lval = zval_get_long(zvalue);
+ 			if (lval == 1) {
+ 				php_error_docref(NULL, E_NOTICE, "CURLOPT_SSL_VERIFYHOST no longer accepts the value 1, value 2 will be used instead");
+-				error = curl_easy_setopt(ch->cp, option, 2);
++				error = curl_easy_setopt(ch->cp, option, 2L);
+ 				break;
+ 			}
+ 			ZEND_FALLTHROUGH;
+@@ -2451,7 +2451,7 @@ static int _php_curl_setopt(php_curl *ch, zend_long option, zval *zvalue, bool i
+ 				return 1;
+ 			}
+ # endif
+-			error = curl_easy_setopt(ch->cp, option, lval);
++			error = curl_easy_setopt(ch->cp, option, (long) lval);
+ 			break;
+ 		case CURLOPT_SAFE_UPLOAD:
+ 			if (!zend_is_true(zvalue)) {
+@@ -2789,7 +2789,7 @@ static int _php_curl_setopt(php_curl *ch, zend_long option, zval *zvalue, bool i
+ 
+ 		case CURLOPT_FOLLOWLOCATION:
+ 			lval = zend_is_true(zvalue);
+-			error = curl_easy_setopt(ch->cp, option, lval);
++			error = curl_easy_setopt(ch->cp, option, (long) lval);
+ 			break;
+ 
+ 		case CURLOPT_HEADERFUNCTION:
+@@ -2807,7 +2807,7 @@ static int _php_curl_setopt(php_curl *ch, zend_long option, zval *zvalue, bool i
+ 					/* no need to build the mime structure for empty hashtables;
+ 					   also works around https://github.com/curl/curl/issues/6455 */
+ 					curl_easy_setopt(ch->cp, CURLOPT_POSTFIELDS, "");
+-					error = curl_easy_setopt(ch->cp, CURLOPT_POSTFIELDSIZE, 0);
++					error = curl_easy_setopt(ch->cp, CURLOPT_POSTFIELDSIZE, 0L);
+ 				} else {
+ 					return build_mime_structure_from_hash(ch, zvalue);
+ 				}
+@@ -2871,7 +2871,7 @@ static int _php_curl_setopt(php_curl *ch, zend_long option, zval *zvalue, bool i
+ 
+ 		case CURLOPT_POSTREDIR:
+ 			lval = zval_get_long(zvalue);
+-			error = curl_easy_setopt(ch->cp, CURLOPT_POSTREDIR, lval & CURL_REDIR_POST_ALL);
++			error = curl_easy_setopt(ch->cp, CURLOPT_POSTREDIR, (long) (lval & CURL_REDIR_POST_ALL));
+ 			break;
+ 
+ 		/* the following options deal with files, therefore the open_basedir check
+@@ -2906,11 +2906,11 @@ static int _php_curl_setopt(php_curl *ch, zend_long option, zval *zvalue, bool i
+ 			if (zend_is_true(zvalue)) {
+ 				curl_easy_setopt(ch->cp, CURLOPT_DEBUGFUNCTION, curl_debug);
+ 				curl_easy_setopt(ch->cp, CURLOPT_DEBUGDATA, (void *)ch);
+-				curl_easy_setopt(ch->cp, CURLOPT_VERBOSE, 1);
++				curl_easy_setopt(ch->cp, CURLOPT_VERBOSE, 1L);
+ 			} else {
+ 				curl_easy_setopt(ch->cp, CURLOPT_DEBUGFUNCTION, NULL);
+ 				curl_easy_setopt(ch->cp, CURLOPT_DEBUGDATA, NULL);
+-				curl_easy_setopt(ch->cp, CURLOPT_VERBOSE, 0);
++				curl_easy_setopt(ch->cp, CURLOPT_VERBOSE, 0L);
+ 			}
+ 			break;

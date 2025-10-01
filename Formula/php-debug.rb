@@ -1,11 +1,26 @@
 class PhpDebug < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.4.13.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.4.13.tar.xz"
-  sha256 "b4f27adf30bcf262eacf93c78250dd811980f20f3b90d79a3dc11248681842df"
   license "PHP-3.01"
+  revision 1
+
+  stable do
+    # Should only be updated if the new version is announced on the homepage, https://www.php.net/
+    url "https://www.php.net/distributions/php-8.4.13.tar.xz"
+    mirror "https://fossies.org/linux/www/php-8.4.13.tar.xz"
+    sha256 "b4f27adf30bcf262eacf93c78250dd811980f20f3b90d79a3dc11248681842df"
+
+    # Fix naming clash with libxml macro
+    # https://github.com/php/php-src/pull/19832
+    patch do
+      url "https://github.com/php/php-src/commit/24a03a2fb14f4b1b16fd2bdb296fc874a4e49cac.patch?full_index=1"
+      sha256 "84daba52c50deca17ffa739e43dcc0ac3a8c264e42b61891bf8f9effd299a3da"
+    end
+
+    # Backport fixes for curl on macOS.
+    # Remove after the next patch release.
+    patch :DATA
+  end
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
@@ -14,13 +29,12 @@ class PhpDebug < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 1
-    sha256 arm64_tahoe:   "32c832451a944fcdad19f8a36f516dac33f9bb6b1daa7389392df548777b22b5"
-    sha256 arm64_sequoia: "91e1bec63e17b1038d0e95684560b3d28ca7943b12dfe8db8d52fab1a8a66a82"
-    sha256 arm64_sonoma:  "d827f76ef796bcfd33015d6b54d8185ec58abaf097d9a128913ce39d93edfa21"
-    sha256 sonoma:        "919ef3198ce2877d4453b038c20ea0a588587ed74efa3d5b10f0577b7dd087b2"
-    sha256 arm64_linux:   "2017912be7fe1bc0e29c791b4ecf2323d852f1b063da731531f26f6550c5849e"
-    sha256 x86_64_linux:  "961ce8fefb040b800edee53e1eb9a543965694ce32185101eebdb9b20e523f07"
+    sha256 arm64_tahoe:   "16b86f43e00f0c260704579c03ae9f12bc9afd87157ffe89a43b94517d6cf7d9"
+    sha256 arm64_sequoia: "895704958de2c3f378d6226908181b74feabeeb91b6739a3e24d519bf15cef55"
+    sha256 arm64_sonoma:  "4cf7700a758c05f3041ad34e4b4fce18e9c44c94c55a84096f606ad2f5b79c46"
+    sha256 sonoma:        "7aa3bbe840661959eb696ce1e129f3c4d8fceb213af972d283e9e55b077d0b08"
+    sha256 arm64_linux:   "ba08c42cdbc10a16621806567c75789f2e09c7b76e16c634b39c686d64f97cd2"
+    sha256 x86_64_linux:  "a560c5b49795d32583143928d2b8da8a301b1aece3b6a042dce86068c976d31a"
   end
 
   head do
@@ -43,13 +57,12 @@ class PhpDebug < Formula
   depends_on "curl"
   depends_on "freetds"
   depends_on "gd"
-  depends_on "gettext"
   depends_on "gmp"
   depends_on "icu4c@77"
-  depends_on "krb5"
   depends_on "libpq"
   depends_on "libsodium"
   depends_on "libzip"
+  depends_on "net-snmp"
   depends_on "oniguruma"
   depends_on "openldap"
   depends_on "openssl@3"
@@ -61,17 +74,14 @@ class PhpDebug < Formula
   uses_from_macos "xz" => :build
   uses_from_macos "bzip2"
   uses_from_macos "libedit"
-  uses_from_macos "libffi", since: :catalina
+  uses_from_macos "libffi"
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "gcc"
-
-    # PHP build system incorrectly links system libraries
-    # see https://github.com/php/php-src/issues/10680
-    patch :DATA
+    depends_on "gcc" => :build # must never be a runtime dependency
+    depends_on "gettext"
   end
 
   # https://github.com/Homebrew/homebrew-core/issues/235820
@@ -80,20 +90,8 @@ class PhpDebug < Formula
     cause "Performs worse due to lack of general global register variables"
   end
 
-  # Fix naming clash with libxml macro
-  # https://github.com/php/php-src/pull/19832
-  patch do
-    url "https://github.com/php/php-src/commit/24a03a2fb14f4b1b16fd2bdb296fc874a4e49cac.patch?full_index=1.patch?full_index=1"
-    sha256 "84daba52c50deca17ffa739e43dcc0ac3a8c264e42b61891bf8f9effd299a3da"
-  end
-
   def install
-    # GCC -Os performs worse than -O1 and significantly worse than -O2/-O3.
-    # We lack a DSL to enable -O2 so just use -O3 which is similar.
-    ENV.O3 if OS.mac?
-
-    # buildconf required due to system library linking bug patch
-    system "./buildconf", "--force"
+    system "./buildconf", "--force" if build.head?
 
     inreplace "configure" do |s|
       s.gsub! "$APXS_HTTPD -V 2>/dev/null | grep 'threaded:.*yes' >/dev/null 2>&1",
@@ -127,8 +125,6 @@ class PhpDebug < Formula
     # Identify build provider in php -v output and phpinfo()
     ENV["PHP_BUILD_PROVIDER"] = "Shivam Mathur"
 
-    # system pkg-config missing
-    ENV["KERBEROS_CFLAGS"] = " "
     if OS.mac?
       ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path_if_needed}/usr/include/sasl"
       ENV["SASL_LIBS"] = "-lsasl2"
@@ -153,6 +149,7 @@ class PhpDebug < Formula
       --with-config-file-path=#{config_path}
       --with-config-file-scan-dir=#{config_path}/conf.d
       --with-pear=#{pkgshare}/pear
+      --disable-intl
       --enable-bcmath
       --enable-calendar
       --enable-dba
@@ -161,7 +158,6 @@ class PhpDebug < Formula
       --enable-ftp
       --enable-fpm
       --enable-gd
-      --enable-intl
       --enable-mbregex
       --enable-mbstring
       --enable-mysqlnd
@@ -186,7 +182,6 @@ class PhpDebug < Formula
       --with-gettext=#{Formula["gettext"].opt_prefix}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-iconv#{headers_path}
-      --with-kerberos
       --with-layout=GNU
       --with-ldap=#{Formula["openldap"].opt_prefix}
       --with-libxml
@@ -196,15 +191,15 @@ class PhpDebug < Formula
       --with-mysqli=mysqlnd
       --with-ndbm#{headers_path}
       --with-openssl
-      --with-password-argon2
+      --with-password-argon2=#{Formula["argon2"].opt_prefix}
       --with-pdo-dblib=#{Formula["freetds"].opt_prefix}
       --with-pdo-mysql=mysqlnd
       --with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}
       --with-pdo-pgsql=#{Formula["libpq"].opt_prefix}
       --with-pdo-sqlite
       --with-pgsql=#{Formula["libpq"].opt_prefix}
+      --with-snmp=#{Formula["net-snmp"].opt_prefix}
       --with-pic
-      --with-pspell=#{Formula["aspell"].opt_prefix}
       --with-sodium
       --with-sqlite3
       --with-tidy=#{Formula["tidy-html5"].opt_prefix}
@@ -217,7 +212,6 @@ class PhpDebug < Formula
     if OS.mac?
       args << "--enable-dtrace"
       args << "--with-ldap-sasl"
-      args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}"
     else
       args << "--disable-dtrace"
       args << "--without-ldap-sasl"
@@ -230,21 +224,20 @@ class PhpDebug < Formula
     system "make", "install"
 
     # Allow pecl to install outside of Cellar
-    extension_dir = Utils.safe_popen_read("#{bin}/php-config", "--extension-dir").chomp
+    extension_dir = Utils.safe_popen_read(bin/"php-config", "--extension-dir").chomp
     orig_ext_dir = File.basename(extension_dir)
     inreplace bin/"php-config", lib/"php", prefix/"pecl"
-    %w[development production].each do |mode|
-      inreplace "php.ini-#{mode}", %r{; ?extension_dir = "\./"},
-        "extension_dir = \"#{HOMEBREW_PREFIX}/lib/php/pecl/#{orig_ext_dir}\""
-    end
 
-    # Use OpenSSL cert bundle
     openssl = Formula["openssl@3"]
     %w[development production].each do |mode|
-      inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
-        "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\""
-      inreplace "php.ini-#{mode}", /; ?openssl\.capath=/,
-        "openssl.capath = \"#{openssl.pkgetc}/certs\""
+      inreplace "php.ini-#{mode}" do |s|
+        # Allow pecl to install outside of Cellar
+        s.gsub! %r{; ?extension_dir = "\./"}, "extension_dir = \"#{HOMEBREW_PREFIX}/lib/php/pecl/#{orig_ext_dir}\""
+
+        # Use OpenSSL cert bundle
+        s.gsub!(/; ?openssl\.cafile=/, "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\"")
+        s.gsub!(/; ?openssl\.capath=/, "openssl.capath = \"#{openssl.pkgetc}/certs\"")
+      end
     end
 
     config_files = {
@@ -262,6 +255,19 @@ class PhpDebug < Formula
     unless (var/"log/php-fpm.log").exist?
       (var/"log").mkpath
       touch var/"log/php-fpm.log"
+    end
+
+    cd "ext/intl" do
+      system bin/"phpize"
+      if OS.mac?
+        # rubocop:disable all
+        ENV["CC"] = "/usr/bin/clang"
+        ENV["CXX"] = "/usr/bin/clang++"
+        # rubocop:enable all
+      end
+      system "./configure", "--with-php-config=#{bin}/php-config"
+      system "make"
+      system "make", "install", "EXTENSION_DIR=#{lib}/php/#{orig_ext_dir}"
     end
   end
 
@@ -288,9 +294,10 @@ class PhpDebug < Formula
     pecl_path = HOMEBREW_PREFIX/"lib/php/pecl"
     pecl_path.mkpath
     ln_s pecl_path, prefix/"pecl" unless (prefix/"pecl").exist?
-    extension_dir = Utils.safe_popen_read("#{bin}/php-config", "--extension-dir").chomp
+    extension_dir = Utils.safe_popen_read(bin/"php-config", "--extension-dir").chomp
     php_basename = File.basename(extension_dir)
     php_ext_dir = opt_prefix/"lib/php"/php_basename
+    (pecl_path/php_basename).mkpath
 
     # fix pear config to install outside cellar
     pear_path = HOMEBREW_PREFIX/"share/pear"
@@ -315,6 +322,7 @@ class PhpDebug < Formula
     system bin/"pear", "update-channels"
 
     %w[
+      intl
       opcache
     ].each do |e|
       ext_config_path = etc/"php/#{version.major_minor}-debug/conf.d/ext-#{e}.ini"
@@ -323,10 +331,10 @@ class PhpDebug < Formula
         inreplace ext_config_path,
           /#{extension_type}=.*$/, "#{extension_type}=#{php_ext_dir}/#{e}.so"
       else
-        ext_config_path.write <<~EOS
+        ext_config_path.write <<~INI
           [#{e}]
           #{extension_type}="#{php_ext_dir}/#{e}.so"
-        EOS
+        INI
       end
     end
   end
@@ -364,22 +372,34 @@ class PhpDebug < Formula
     assert_includes (bin/"php").dynamically_linked_libraries,
                     (Formula["libpq"].opt_lib/shared_library("libpq", 5)).to_s
 
+    (testpath/"test.php").write <<~PHP
+      <?php
+      $formatter = new NumberFormatter('en_US', NumberFormatter::DECIMAL);
+      echo $formatter->format(1234567), PHP_EOL;
+
+      $formatter = new MessageFormatter('de_DE', '{0,number,#,###.##} MB');
+      echo $formatter->format([12345.6789]);
+      ?>
+    PHP
+    assert_equal "1,234,567\n12.345,68 MB", shell_output("#{bin}/php test.php")
+    assert_match "intl", shell_output("#{bin}/php -m")
+
     system "#{sbin}/php-fpm", "-t"
-    system "#{bin}/phpdbg", "-V"
-    system "#{bin}/php-cgi", "-m"
-    # Prevent SNMP extension to be added
-    refute_match(/^snmp$/, shell_output("#{bin}/php -m"),
-      "SNMP extension doesn't work reliably with Homebrew on High Sierra")
+    system bin/"phpdbg", "-V"
+    system bin/"php-cgi", "-m"
+
     begin
       port = free_port
       port_fpm = free_port
 
       expected_output = /^Hello world!$/
-      (testpath/"index.php").write <<~EOS
+      (testpath/"index.php").write <<~PHP
         <?php
         echo 'Hello world!' . PHP_EOL;
         var_dump(ldap_connect());
-      EOS
+        $session = new SNMP(SNMP::VERSION_1, '127.0.0.1', 'public');
+        var_dump(@$session->get('sysDescr.0'));
+      PHP
       main_config = <<~EOS
         Listen #{port}
         ServerName localhost:#{port}
@@ -402,7 +422,7 @@ class PhpDebug < Formula
         </FilesMatch>
       EOS
 
-      (testpath/"fpm.conf").write <<~EOS
+      (testpath/"fpm.conf").write <<~INI
         [global]
         daemonize=no
         [www]
@@ -412,7 +432,7 @@ class PhpDebug < Formula
         pm.start_servers = 2
         pm.min_spare_servers = 1
         pm.max_spare_servers = 3
-      EOS
+      INI
 
       (testpath/"httpd-fpm.conf").write <<~EOS
         #{main_config}
@@ -424,24 +444,16 @@ class PhpDebug < Formula
         </FilesMatch>
       EOS
 
-      pid = fork do
-        exec Formula["httpd"].opt_bin/"httpd", "-X", "-f", "#{testpath}/httpd.conf"
-      end
-      sleep 5
-
+      pid = spawn Formula["httpd"].opt_bin/"httpd", "-X", "-f", "#{testpath}/httpd.conf"
+      sleep 10
       assert_match expected_output, shell_output("curl -s 127.0.0.1:#{port}")
 
       Process.kill("TERM", pid)
       Process.wait(pid)
 
-      fpm_pid = fork do
-        exec sbin/"php-fpm", "-y", "fpm.conf"
-      end
-      pid = fork do
-        exec Formula["httpd"].opt_bin/"httpd", "-X", "-f", "#{testpath}/httpd-fpm.conf"
-      end
-      sleep 3
-
+      fpm_pid = spawn sbin/"php-fpm", "-y", "fpm.conf"
+      pid = spawn Formula["httpd"].opt_bin/"httpd", "-X", "-f", "#{testpath}/httpd-fpm.conf"
+      sleep 10
       assert_match expected_output, shell_output("curl -s 127.0.0.1:#{port}")
     ensure
       if pid
@@ -457,47 +469,6 @@ class PhpDebug < Formula
 end
 
 __END__
-diff --git a/build/php.m4 b/build/php.m4
-index 176d4d4144..f71d642bb4 100644
---- a/build/php.m4
-+++ b/build/php.m4
-@@ -429,7 +429,7 @@ dnl
- dnl Adds a path to linkpath/runpath (LDFLAGS).
- dnl
- AC_DEFUN([PHP_ADD_LIBPATH],[
--  if test "$1" != "/usr/$PHP_LIBDIR" && test "$1" != "/usr/lib"; then
-+  if test "$1" != "$PHP_OS_SDKPATH/usr/$PHP_LIBDIR" && test "$1" != "/usr/lib"; then
-     PHP_EXPAND_PATH($1, ai_p)
-     ifelse([$2],,[
-       _PHP_ADD_LIBPATH_GLOBAL([$ai_p])
-@@ -476,7 +476,7 @@ dnl paths are prepended to the beginning of INCLUDES.
- dnl
- AC_DEFUN([PHP_ADD_INCLUDE], [
- for include_path in m4_normalize(m4_expand([$1])); do
--  AS_IF([test "$include_path" != "/usr/include"], [
-+  AS_IF([test "$include_path" != "$PHP_OS_SDKPATH/usr/include"], [
-     PHP_EXPAND_PATH([$include_path], [ai_p])
-     PHP_RUN_ONCE([INCLUDEPATH], [$ai_p], [m4_ifnblank([$2],
-       [INCLUDES="-I$ai_p $INCLUDES"],
-diff --git a/configure.ac b/configure.ac
-index 36c6e5e3e2..71b1a16607 100644
---- a/configure.ac
-+++ b/configure.ac
-@@ -190,6 +190,14 @@ PHP_ARG_WITH([libdir],
-   [lib],
-   [no])
-
-+dnl Support systems with system libraries/includes in e.g. /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk.
-+PHP_ARG_WITH([os-sdkpath],
-+  [for system SDK directory],
-+  [AS_HELP_STRING([--with-os-sdkpath=NAME],
-+    [Ignore system libraries and includes in NAME rather than /])],
-+  [],
-+  [no])
-+
- PHP_ARG_ENABLE([rpath],
-   [whether to enable runpaths],
-   [AS_HELP_STRING([--disable-rpath],
 diff --git a/ext/curl/interface.c b/ext/curl/interface.c
 index 965e4971267..651a9676a3e 100644
 --- a/ext/curl/interface.c
@@ -591,7 +562,7 @@ index 965e4971267..651a9676a3e 100644
  		case CURLOPT_POSTREDIR:
  			lval = zval_get_long(zvalue);
 -			error = curl_easy_setopt(ch->cp, CURLOPT_POSTREDIR, lval & CURL_REDIR_POST_ALL);
-+			error = curl_easy_setopt(ch->cp, CURLOPT_POSTREDIR, (long) lval & CURL_REDIR_POST_ALL);
++			error = curl_easy_setopt(ch->cp, CURLOPT_POSTREDIR, (long) (lval & CURL_REDIR_POST_ALL));
  			break;
  
  		/* the following options deal with files, therefore the open_basedir check

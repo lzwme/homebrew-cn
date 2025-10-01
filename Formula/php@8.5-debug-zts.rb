@@ -1,21 +1,21 @@
 class PhpAT85DebugZts < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/php/php-src/archive/08ccbc46aa0f6ecf980e6aa7d105d79e1dd27884.tar.gz?commit=08ccbc46aa0f6ecf980e6aa7d105d79e1dd27884"
+  url "https://ghfast.top/https://github.com/php/php-src/archive/bcd4be7d50b3632e6191b880bd9ab458cc615b08.tar.gz?commit=bcd4be7d50b3632e6191b880bd9ab458cc615b08"
   version "8.5.0"
-  sha256 "89c9ccd903d8b3245e0ecc89206a4b9cf79c79f5f9a4e0f466f617328f54c7d7"
+  sha256 "cadaba80241a241fbec08a42bd77ca64f60822d28b440e26dd91828577e50b57"
   license "PHP-3.01"
   revision 5
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 2
-    sha256 arm64_tahoe:   "f5f6811b7509b3eba0c583e7b3fdf276f00fc59d73fbd5e8761c42bc882e1134"
-    sha256 arm64_sequoia: "3713790171da1aafe5fe811a493dcc5429ac36927ead6970e1529cb8637b94ab"
-    sha256 arm64_sonoma:  "1e0a8aea83c84f7468a2620c02bf0cde741377f690c28eb1b3fbadf66b996060"
-    sha256 sonoma:        "fd9ea9c9bbd3251ec990e34552d2cd1c2fbc9cd1c6282dd4b43b4f89583313ed"
-    sha256 arm64_linux:   "17c69c6e214be435a6af4a64fb1d9d199e3aa6b8ed995258f1b86a4e35360f45"
-    sha256 x86_64_linux:  "5c602f6531cc3238511b08f50bbd9102db171b82c67cf10eb6373b3c7bbc7d80"
+    rebuild 3
+    sha256 arm64_tahoe:   "4cea102bee3822c6ee4ec25f6e3bc928e23745ea85a06a8d6d38fc928573aefe"
+    sha256 arm64_sequoia: "f8fa6dc514024e600a5ec631bec57cbcff6150ab0421d2f97a2ff64e1a29c05e"
+    sha256 arm64_sonoma:  "71eee7e3772254d3dd886757b57630eb2799d1920d550e49f586fc8a008a558f"
+    sha256 sonoma:        "84f67a0bf5215d1037bf40e3b5ea7f81e333cda0011190eaedb43fb12ee17433"
+    sha256 arm64_linux:   "e1d39bf0e3084600227edf54b2aedb92cf6ac265a1ff0faa9325e8ac78f9b474"
+    sha256 x86_64_linux:  "7134b800ba4b425d6a0bb148990adf9c075f8683e24bfcd57054d44647481779"
   end
 
   keg_only :versioned_formula
@@ -51,7 +51,7 @@ class PhpAT85DebugZts < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "libedit"
-  uses_from_macos "libffi", since: :catalina
+  uses_from_macos "libffi"
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
   uses_from_macos "zlib"
@@ -75,7 +75,7 @@ class PhpAT85DebugZts < Formula
 
       # apxs will interpolate the @ in the versioned prefix: https://bz.apache.org/bugzilla/show_bug.cgi?id=61944
       s.gsub! "LIBEXECDIR='$APXS_LIBEXECDIR'",
-              "LIBEXECDIR='" + "#{lib}/httpd/modules".gsub("@", "\\@") + "'"
+              "LIBEXECDIR='" + "#{lib}/httpd/modules".gsub("\\", "\\\\").gsub("@", "\\@") + "'"
     end
 
     # Update error message in apache sapi to better explain the requirements
@@ -221,21 +221,20 @@ class PhpAT85DebugZts < Formula
     system "make", "install"
 
     # Allow pecl to install outside of Cellar
-    extension_dir = Utils.safe_popen_read("#{bin}/php-config", "--extension-dir").chomp
+    extension_dir = Utils.safe_popen_read(bin/"php-config", "--extension-dir").chomp
     orig_ext_dir = File.basename(extension_dir)
     inreplace bin/"php-config", lib/"php", prefix/"pecl"
-    %w[development production].each do |mode|
-      inreplace "php.ini-#{mode}", %r{; ?extension_dir = "\./"},
-        "extension_dir = \"#{HOMEBREW_PREFIX}/lib/php/pecl/#{orig_ext_dir}\""
-    end
 
-    # Use OpenSSL cert bundle
     openssl = Formula["openssl@3"]
     %w[development production].each do |mode|
-      inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
-        "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\""
-      inreplace "php.ini-#{mode}", /; ?openssl\.capath=/,
-        "openssl.capath = \"#{openssl.pkgetc}/certs\""
+      inreplace "php.ini-#{mode}" do |s|
+        # Allow pecl to install outside of Cellar
+        s.gsub! %r{; ?extension_dir = "\./"}, "extension_dir = \"#{HOMEBREW_PREFIX}/lib/php/pecl/#{orig_ext_dir}\""
+
+        # Use OpenSSL cert bundle
+        s.gsub!(/; ?openssl\.cafile=/, "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\"")
+        s.gsub!(/; ?openssl\.capath=/, "openssl.capath = \"#{openssl.pkgetc}/certs\"")
+      end
     end
 
     config_files = {
@@ -279,7 +278,7 @@ class PhpAT85DebugZts < Formula
     pecl_path = HOMEBREW_PREFIX/"lib/php/pecl"
     pecl_path.mkpath
     ln_s pecl_path, prefix/"pecl" unless (prefix/"pecl").exist?
-    extension_dir = Utils.safe_popen_read("#{bin}/php-config", "--extension-dir").chomp
+    extension_dir = Utils.safe_popen_read(bin/"php-config", "--extension-dir").chomp
     php_basename = File.basename(extension_dir)
 
     # fix pear config to install outside cellar
@@ -341,8 +340,8 @@ class PhpAT85DebugZts < Formula
                     (Formula["libpq"].opt_lib/shared_library("libpq", 5)).to_s
 
     system "#{sbin}/php-fpm", "-t"
-    system "#{bin}/phpdbg", "-V"
-    system "#{bin}/php-cgi", "-m"
+    system bin/"phpdbg", "-V"
+    system bin/"php-cgi", "-m"
     # Prevent SNMP extension to be added
     refute_match(/^snmp$/, shell_output("#{bin}/php -m"),
       "SNMP extension doesn't work reliably with Homebrew on High Sierra")
@@ -351,11 +350,11 @@ class PhpAT85DebugZts < Formula
       port_fpm = free_port
 
       expected_output = /^Hello world!$/
-      (testpath/"index.php").write <<~EOS
+      (testpath/"index.php").write <<~PHP
         <?php
         echo 'Hello world!' . PHP_EOL;
         var_dump(ldap_connect());
-      EOS
+      PHP
       main_config = <<~EOS
         Listen #{port}
         ServerName localhost:#{port}
@@ -378,7 +377,7 @@ class PhpAT85DebugZts < Formula
         </FilesMatch>
       EOS
 
-      (testpath/"fpm.conf").write <<~EOS
+      (testpath/"fpm.conf").write <<~INI
         [global]
         daemonize=no
         [www]
@@ -388,7 +387,7 @@ class PhpAT85DebugZts < Formula
         pm.start_servers = 2
         pm.min_spare_servers = 1
         pm.max_spare_servers = 3
-      EOS
+      INI
 
       (testpath/"httpd-fpm.conf").write <<~EOS
         #{main_config}
@@ -400,24 +399,16 @@ class PhpAT85DebugZts < Formula
         </FilesMatch>
       EOS
 
-      pid = fork do
-        exec Formula["httpd"].opt_bin/"httpd", "-X", "-f", "#{testpath}/httpd.conf"
-      end
-      sleep 5
-
+      pid = spawn Formula["httpd"].opt_bin/"httpd", "-X", "-f", "#{testpath}/httpd.conf"
+      sleep 10
       assert_match expected_output, shell_output("curl -s 127.0.0.1:#{port}")
 
       Process.kill("TERM", pid)
       Process.wait(pid)
 
-      fpm_pid = fork do
-        exec sbin/"php-fpm", "-y", "fpm.conf"
-      end
-      pid = fork do
-        exec Formula["httpd"].opt_bin/"httpd", "-X", "-f", "#{testpath}/httpd-fpm.conf"
-      end
-      sleep 3
-
+      fpm_pid = spawn sbin/"php-fpm", "-y", "fpm.conf"
+      pid = spawn Formula["httpd"].opt_bin/"httpd", "-X", "-f", "#{testpath}/httpd-fpm.conf"
+      sleep 10
       assert_match expected_output, shell_output("curl -s 127.0.0.1:#{port}")
     ensure
       if pid

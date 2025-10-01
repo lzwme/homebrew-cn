@@ -1,10 +1,10 @@
-cask "itunes-volume-control" do
-  version "1.7.7"
-  sha256 "e2699f2cc1fc4578fa0fb59294d208030ad5a48fd457713df9fae95077df2707"
+cask "volume-control" do
+  version "2.0.1"
+  sha256 "e490e0f7a18762fba3b6182b12bd43e8bdb7e28ca96e8a189972548ba2f56a22"
 
   url "https://ghfast.top/https://raw.githubusercontent.com/alberti42/Volume-Control/main/Releases/VolumeControl-v#{version}.zip",
-      verified: "raw.githubusercontent.com/alberti42/Volume-Control/main/Releases/"
-  name "iTunes Volume Control"
+      verified: "raw.githubusercontent.com/alberti42/Volume-Control/"
+  name "Volume Control"
   desc "Control the volume of Apple Music and Spotify using keyboard volume keys"
   homepage "https://github.com/alberti42/Volume-Control"
 
@@ -14,6 +14,7 @@ cask "itunes-volume-control" do
   end
 
   auto_updates true
+  depends_on macos: ">= :ventura"
 
   app "Volume Control.app"
 end

@@ -1,26 +1,26 @@
 class Jackett < Formula
   desc "API Support for your favorite torrent trackers"
   homepage "https://github.com/Jackett/Jackett"
-  url "https://ghfast.top/https://github.com/Jackett/Jackett/archive/refs/tags/v0.23.87.tar.gz"
-  sha256 "8d61bba5912d583b73c348681419423875e69752db0b4cff63b91e655180e93e"
+  url "https://ghfast.top/https://github.com/Jackett/Jackett/archive/refs/tags/v0.24.7.tar.gz"
+  sha256 "518151516f652dbb28246e201725072f844b8a0098ca260ae99b880bca979b3b"
   license "GPL-2.0-only"
   head "https://github.com/Jackett/Jackett.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9f62f49c51a088c5119da342d398198520c61bdf27534a00d896d2c1edccf9f0"
-    sha256 cellar: :any,                 arm64_sequoia: "79f5c4ea5289ea2139cb8bbbc5ed72829dfa816e7bc5143b654848b7378d069f"
-    sha256 cellar: :any,                 arm64_sonoma:  "63bea29b574284bc76b4c238ffecad743e830dfba6283a3ef6f20be98ef888a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "064be00846126724cbb9eb35c0927308f1e3134cf8f20316af2eaaeab7cf1a7d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c795007fffb362746bf972d761bd6dc785634f124584a9051179f48f2ad3c6b"
+    sha256 cellar: :any,                 arm64_tahoe:   "8caa53a5dc6d2adce1fd1f8f11e48a44335899bcde7c295f31cd3ef3f07b4d6f"
+    sha256 cellar: :any,                 arm64_sequoia: "8358452d2e707e045dfe86f483857fecb16a751120520d3ed25d547a0d05f416"
+    sha256 cellar: :any,                 arm64_sonoma:  "502f5de142b65f27ab04d4fafcfff9071f23ebdb7928d13c48a970e2dd1e5b12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1834b809803c0c7224a8d5afe1a72dbf4666b957ac831e043ecc92fec79a2b82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51cc4468b7010abe36562021d4cc5ac14a4307c89a38bf6de9b44c840e32c69d"
   end
 
-  depends_on "dotnet@8"
+  depends_on "dotnet"
 
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
     ENV["DOTNET_SYSTEM_GLOBALIZATION_INVARIANT"] = "1"
 
-    dotnet = Formula["dotnet@8"]
+    dotnet = Formula["dotnet"]
 
     args = %W[
       --configuration Release

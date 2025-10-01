@@ -41,7 +41,6 @@ class PythonAT313 < Formula
     depends_on "berkeley-db@5"
   end
 
-  link_overwrite "bin/2to3"
   link_overwrite "bin/idle3"
   link_overwrite "bin/pip3"
   link_overwrite "bin/pydoc3"
@@ -59,7 +58,6 @@ class PythonAT313 < Formula
   link_overwrite "Frameworks/Python.framework/Resources"
   link_overwrite "Frameworks/Python.framework/Versions/Current"
 
-  # Always update to latest release
   resource "flit-core" do
     url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
     sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
@@ -97,18 +95,14 @@ class PythonAT313 < Formula
     end
   end
 
-  def site_packages_cellar
-    lib_cellar/"site-packages"
-  end
+  def site_packages_cellar = lib_cellar/"site-packages"
 
   # The HOMEBREW_PREFIX location of site-packages.
-  def site_packages
-    HOMEBREW_PREFIX/"lib/python#{version.major_minor}/site-packages"
-  end
+  def site_packages = HOMEBREW_PREFIX/"lib/python#{version.major_minor}/site-packages"
 
-  def python3
-    bin/"python#{version.major_minor}"
-  end
+  def altinstall? = self != Formula["python3"]
+
+  def python3 = bin/"python#{version.major_minor}"
 
   def install
     # Unset these so that installing pip and setuptools puts them where we want
@@ -193,8 +187,13 @@ class PythonAT313 < Formula
     system "make"
 
     ENV.deparallelize do
+      # The `altinstall` target prevents the installation of files with only Python's major
+      # version in its name. This allows us to link multiple versioned Python formulae.
+      #   https://github.com/python/cpython#installing-multiple-versions
+      #
       # Tell Python not to install into /Applications (default for framework builds)
-      system "make", "install", "PYTHONAPPSDIR=#{prefix}"
+      target = "#{"alt" if altinstall?}install"
+      system "make", target, "PYTHONAPPSDIR=#{prefix}"
       system "make", "frameworkinstallextras", "PYTHONAPPSDIR=#{pkgshare}" if OS.mac?
     end
 
@@ -227,6 +226,9 @@ class PythonAT313 < Formula
       inreplace lib_cellar/"_sysconfigdata__darwin_darwin.py",
                 %r{('LINKFORSHARED': .*?) (Python.framework/Versions/3.\d+/Python)'}m,
                 "\\1 #{opt_prefix}/Frameworks/\\2'"
+
+      # For an altinstall, remove symlinks that conflict with the main Python formula.
+      rm frameworks.glob("Python.framework/{Headers,Python,Resources,Versions/Current}") if altinstall?
     else
       # Prevent third-party packages from building against fragile Cellar paths
       inreplace Dir[lib_cellar/"**/_sysconfigdata_*linux_x86_64-*.py",
@@ -238,6 +240,9 @@ class PythonAT313 < Formula
       inreplace bin/"python#{version.major_minor}-config",
                 'prefix_real=$(installed_prefix "$0")',
                 "prefix_real=#{opt_prefix}"
+
+      # For an altinstall, remove symlinks that conflict with the main Python formula.
+      rm lib/"libpython3.so" if altinstall?
     end
 
     # Remove the site-packages that Python created in its Cellar.
@@ -277,13 +282,18 @@ class PythonAT313 < Formula
       s.gsub!(/_PIP_VERSION = .*/, "_PIP_VERSION = \"#{resource("pip").version}\"")
     end
 
-    # Install unversioned symlinks in libexec/bin.
+    # Install unversioned (and for an altinstall, major-versioned) symlinks in libexec/bin.
     {
       "idle"          => "idle#{version.major_minor}",
       "pydoc"         => "pydoc#{version.major_minor}",
       "python"        => "python#{version.major_minor}",
       "python-config" => "python#{version.major_minor}-config",
-    }.each do |short_name, long_name|
+    }.merge(altinstall? ? {
+      "idle3"          => "idle#{version.major_minor}",
+      "pydoc3"         => "pydoc#{version.major_minor}",
+      "python3"        => "python#{version.major_minor}",
+      "python3-config" => "python#{version.major_minor}-config",
+    } : {}).each do |short_name, long_name|
       (libexec/"bin").install_symlink (bin/long_name).realpath => short_name
     end
 
@@ -312,14 +322,18 @@ class PythonAT313 < Formula
     rmdir root_site_packages/"bin"
 
     rm bin/"pip"
+    rm bin/"pip3" if altinstall?
     mv bin/"wheel", bin/"wheel#{version.major_minor}"
-    bin.install_symlink "wheel#{version.major_minor}" => "wheel3"
+    bin.install_symlink "wheel#{version.major_minor}" => "wheel3" unless altinstall?
 
-    # Install unversioned symlinks in libexec/bin.
+    # Install unversioned (and for an altinstall, major-versioned) symlinks in libexec/bin.
     {
       "pip"   => "pip#{version.major_minor}",
       "wheel" => "wheel#{version.major_minor}",
-    }.each do |short_name, long_name|
+    }.merge(altinstall? ? {
+      "pip3"   => "pip#{version.major_minor}",
+      "wheel3" => "wheel#{version.major_minor}",
+    } : {}).each do |short_name, long_name|
       (libexec/"bin").install_symlink (bin/long_name).realpath => short_name
     end
 
