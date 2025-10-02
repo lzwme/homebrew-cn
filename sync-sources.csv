@@ -745,6 +745,7 @@ Homebrew-homebrew-core/Formula/c/cadubi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/caesiumclt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/caf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cafeobj.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cagent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cahute.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/caire.rb, Homebrew/homebrew-core, 1
@@ -6833,7 +6834,7 @@ Homebrew-homebrew-core/Formula/t/tailspin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tailwindcss-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tailwindcss.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/takt.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/taktuk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/taktuk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tal.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/talhelper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/talisman.rb, Homebrew/homebrew-core, 1
@@ -12857,6 +12858,7 @@ Homebrew-homebrew-cask/Casks/l/lyricsx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lyx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/m3unify.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/maa.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/mac-monitor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mac-mouse-fix.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mac-mouse-fix@2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mac2imgur.rb, Homebrew/homebrew-cask, 1
@@ -14082,7 +14084,6 @@ Homebrew-homebrew-cask/Casks/r/recovery-disk-assistant.rb, Homebrew/homebrew-cas
 Homebrew-homebrew-cask/Casks/r/rectangle-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rectangle.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/recut.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/r/red-canary-mac-monitor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/red-eye.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/redcine-x-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/redeclipse.rb, Homebrew/homebrew-cask, 1

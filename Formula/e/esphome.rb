@@ -3,17 +3,17 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/3c/6e/086fc1670264eb33589079454abdfd4a182f533ab5de5f7e246f22146928/esphome-2025.9.2.tar.gz"
-  sha256 "77eba4d352259458699f72dd3467510d3288b68979389d06aeae083ff677b17b"
+  url "https://files.pythonhosted.org/packages/50/8d/85f92f8cd14f9dabc6a72b62c3dd98f91487f3f3475345b9756c1d9ce959/esphome-2025.9.3.tar.gz"
+  sha256 "49521ffff891bea5b04b53746e3cff876faecca9ff4e5daa96c02076a657994f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9f03746872987c49b110acdd8220fa1fd8e569c0590466eb03ff686d94eb3674"
-    sha256 cellar: :any,                 arm64_sequoia: "76a51bb70f6f905b299463f0d7c3f03a90b0e3aeb0963a4dbcce184fc89915dd"
-    sha256 cellar: :any,                 arm64_sonoma:  "dadeebfe5a15fc461adec341fea315e9be80a75626fbc1caa6c8ae5c71f64bab"
-    sha256 cellar: :any,                 sonoma:        "56b3eb4636078c438d37ba32ffba780c96333e22a52415f2ff79aa3669efacf7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "71577a5ca8a15cc3d55a3c5ae8e33e1c128fe26024f553a61123ff7a0c9d6373"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab7618957289c122a864184916cff5c1ecb774771c4cfdf4643ea8c2a9add669"
+    sha256 cellar: :any,                 arm64_tahoe:   "0d557c28c3bdf0028759544d3192934d61304e0682688c2ddcb4d8c3a3a55a39"
+    sha256 cellar: :any,                 arm64_sequoia: "5ce96017e12f88afb7c1d3bf83ceb86fad09c63830adc4c1da873f00133977b5"
+    sha256 cellar: :any,                 arm64_sonoma:  "7460a621a4e93bd16083d9a3c38c45f1d5e558c01b97bece0e84e2ad7b7cf829"
+    sha256 cellar: :any,                 sonoma:        "063b207ba20dc0b99c80f4d83651b9f24d5d1431ae73ef260832d183a22fddc8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3291611444f09d5da7daa7087a8dbb9c2d1fd2796dc19b125abf106a637f3b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2ddda16aa9667cbd28745fa505dbd280f122e021f68f76c81edee28b4fd9311"
   end
 
   depends_on "certifi"

@@ -3,10 +3,10 @@ require File.expand_path("../../Abstract/portable-formula", __dir__)
 class PortableOpenssl < PortableFormula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl.org/"
-  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-3.5.3/openssl-3.5.3.tar.gz"
-  mirror "https://www.openssl.org/source/openssl-3.5.3.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/openssl-3.5.3.tar.gz"
-  sha256 "c9489d2abcf943cdc8329a57092331c598a402938054dc3a22218aea8a8ec3bf"
+  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-3.5.4/openssl-3.5.4.tar.gz"
+  mirror "https://www.openssl.org/source/openssl-3.5.4.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/openssl-3.5.4.tar.gz"
+  sha256 "967311f84955316969bdb1d8d4b983718ef42338639c621ec4c34fddef355e99"
   license "Apache-2.0"
 
   livecheck do

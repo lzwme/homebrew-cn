@@ -10,6 +10,8 @@ class Sui < Formula
     regex(/^testnet[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
+  no_autobump! because: :bumped_by_upstream
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "46d446c3d1dc8fbbbff51f26b9148326b48ff4dca3a1f02fbbedd794fb417bc4"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "fea5159e13a655cced1d6df14c65e6b5452395a5851457604b6583b5e9236823"

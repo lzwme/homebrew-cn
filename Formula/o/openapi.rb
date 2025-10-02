@@ -1,18 +1,18 @@
 class Openapi < Formula
   desc "CLI tools for working with OpenAPI, Arazzo and Overlay specifications"
   homepage "https://github.com/speakeasy-api/openapi"
-  url "https://ghfast.top/https://github.com/speakeasy-api/openapi/archive/refs/tags/v1.7.4.tar.gz"
-  sha256 "bcb80f3526ff17433ff0bc0bed20ea7aaa84479d82b4a85b52e69663ab408a87"
+  url "https://ghfast.top/https://github.com/speakeasy-api/openapi/archive/refs/tags/v1.7.5.tar.gz"
+  sha256 "3c0869580484250d358b4f978864642c6a992b37ce8ec212505739c808ab72b2"
   license "MIT"
   head "https://github.com/speakeasy-api/openapi.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c809e3d7dc72a09166b51b09a50f2cf4ab6a5e042aabcf5a87a33b0e7a70873a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c809e3d7dc72a09166b51b09a50f2cf4ab6a5e042aabcf5a87a33b0e7a70873a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c809e3d7dc72a09166b51b09a50f2cf4ab6a5e042aabcf5a87a33b0e7a70873a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "738783cec372844de605a7a68cfc3332dd2fcc09f426b8d741966726dcfa1695"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5576057759cc44031a8d5aa8b73181e932518c2ed2722eec8eb9e9af65b92f2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1af88e3c1f2ff4388222bd843ea0cf83038a29be20aa497beb1967f06ab20e7c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d37c2bf60a15da4f5f4419c812df7fccb6589a8283721108ac79841bd22f860"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d37c2bf60a15da4f5f4419c812df7fccb6589a8283721108ac79841bd22f860"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d37c2bf60a15da4f5f4419c812df7fccb6589a8283721108ac79841bd22f860"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bd6ef5a5ce8c56b74c64327bd201ea0d970148acecb0409d08e2f7f319070c1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10dcd5f1df7d476c7a494e52a224b7a84d1f5315336ff6c3797ebe3b301c1dd4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9f340c85ae63b680bb3fd393ad187056ecff3a23b83d1e83be2951c3660e3f5"
   end
 
   depends_on "go" => :build

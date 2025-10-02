@@ -1,8 +1,8 @@
 class Martin < Formula
   desc "Blazing fast tile server, tile generation, and mbtiles tooling"
   homepage "https://martin.maplibre.org"
-  url "https://ghfast.top/https://github.com/maplibre/martin/archive/refs/tags/martin-v0.19.2.tar.gz"
-  sha256 "9dbe9dc4793b04c75f55145712eaf0619f7f282e620898ad896800461890809a"
+  url "https://ghfast.top/https://github.com/maplibre/martin/archive/refs/tags/martin-v0.19.3.tar.gz"
+  sha256 "0352758cb439bae89c110839b8f5500e3252dd1f5b419a22829d697fa23571ba"
   license any_of: ["Apache-2.0", "MIT"]
 
   livecheck do
@@ -11,12 +11,12 @@ class Martin < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c6eb9c526c13e8a3ac68526a12a1a9c022d215777760b9e7b027b759c5ee9c7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07ef036358414e70f5a7611b8aeba195ba57c2aaa607eafea83ced4782c41748"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2db8fa267dd806b0319dcc5ac83886cabe030af6e6dd94e4cbeab87d2f74a5da"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6c4d61a42de628c1f0d51688fce8ad45deeaf73688559227f2bbcbfcc9a1c5c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "29e446421b92368887463a928f5e1fbd9584b0c0be2ef2fca77ce4c9b2401784"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ef975a5961fc98cbd4026bedc2384ee9bfff0ee8b157f381e903b717fcf8cad"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a7062e4dc63f7184850b49300b1df3efa383dda05ae0e0de5ea7244b200f23b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92f7498d78ea3457c1eaed6231c5dc5982a1bb3bf254123142a02d8867ebc9d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6230edd0ad3a6d9aaff77d33855516ad46c1f88212b1c028544b1f0498dd7c2e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f9dbc84ae8a2fc8e4b6a3320c7b617b6f81ec28c3eb11616fb0272c303a70a20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "da859427c0e67f30a2e62891bf983d516821b2cc1715b96ece62b85c7f01638a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ea25c9496bdf3a6c0e44a7ae07e9f965f28cab082b149c4e6fe122a6b4de9e7"
   end
 
   depends_on "node" => :build

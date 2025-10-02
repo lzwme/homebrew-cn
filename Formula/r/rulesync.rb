@@ -1,20 +1,17 @@
 class Rulesync < Formula
   desc "Unified AI rules management CLI tool"
   homepage "https://github.com/dyoshikawa/rulesync"
-  url "https://registry.npmjs.org/rulesync/-/rulesync-1.2.6.tgz"
-  sha256 "b1720c9d5d503be533d86d1f9683a46ced635762b4a7081cfb006928e8623deb"
+  url "https://registry.npmjs.org/rulesync/-/rulesync-2.0.0.tgz"
+  sha256 "59f325052b837aecdf10741cf5f3b55e54465ac2c186e60dccb3454dbd5e27a6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a1b065de45ed2d5b88f666ec0408b7b82d2aecfea70e8130628e010063c4df3e"
+    sha256 cellar: :any_skip_relocation, all: "1acb4f83b07f180a6f9a97f55277c3895bc9a9db36666e8a97e8d15cbacf34e9"
   end
 
   depends_on "node"
 
   def install
-    # version patch, upstream pr ref, https://github.com/dyoshikawa/rulesync/pull/324
-    inreplace "dist/index.js", "1.2.5", version.to_s
-
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end

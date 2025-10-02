@@ -6,7 +6,7 @@ class Openssh < Formula
   version "10.0p2"
   sha256 "021a2e709a0edf4250b1256bd5a9e500411a90dddabea830ed59cef90eb9d85c"
   license "SSH-OpenSSH"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/"
@@ -16,12 +16,12 @@ class Openssh < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "6eab03df9f0a58e6e293e05ec29bf5b4fafd3ed58c47a7d743748a79e61217bf"
-    sha256 arm64_sequoia: "8d862a3312c763f29826c89654382a92d69c04b75ddd72196a4a6f59e805c428"
-    sha256 arm64_sonoma:  "b53da3f1d73f3694bc909347557908583519bfc2da0fbac75141c95f96830b34"
-    sha256 sonoma:        "7f331f4c51c5af092b9e9984bd0f130ef645cbf99007ae217bf212000a43dd16"
-    sha256 arm64_linux:   "0122c26d6889877913c13e68b36741386e6415963d6b17fcb821894de32c3fce"
-    sha256 x86_64_linux:  "1e3e3597a0a07f70b23a1ef8798455e95add501568cef95fb58cea137f7ede85"
+    sha256 arm64_tahoe:   "f7cc859066774293dcc465dc1b773c168ac8f05b5c02c9dfb6487451bfdd55e6"
+    sha256 arm64_sequoia: "039f81240e8383a4b24a04dc8518a43f1817e00a5d0771519e055de44f33401b"
+    sha256 arm64_sonoma:  "4c8e87dd933519a112728c586007f8bf851e816aabe5de48b91e8c408ae43efd"
+    sha256 sonoma:        "4d5cab12aede7e756135a91ea798f29ef0bf1c96cbb87a8335961a492d3e6e12"
+    sha256 arm64_linux:   "d8eea8b681811cd98abfe016d208388a8e88066d192ca33f40526a2af6aa093b"
+    sha256 x86_64_linux:  "6db70e5e07c7e350cf3de38d196c3ed48c3308abe05adcc4408c0c1a8cf7cfa7"
   end
 
   # Please don't resubmit the keychain patch option. It will never be accepted.

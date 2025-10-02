@@ -9,6 +9,7 @@ class Codex < Formula
   livecheck do
     url :stable
     regex(/^rust-v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do

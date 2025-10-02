@@ -3,20 +3,18 @@ class Libjcat < Formula
 
   desc "Library for reading Jcat files"
   homepage "https://github.com/hughsie/libjcat"
-  url "https://ghfast.top/https://github.com/hughsie/libjcat/releases/download/0.2.3/libjcat-0.2.3.tar.xz"
-  sha256 "f2f115aad8a8f16b8dde1ed55de7abacb91d0878539aa29b2b60854b499db639"
+  url "https://ghfast.top/https://github.com/hughsie/libjcat/releases/download/0.2.4/libjcat-0.2.4.tar.xz"
+  sha256 "caabf7c2d69493d1fa61982ff6556024cd20440643c2d522f146560ed1d700e3"
   license "LGPL-2.1-or-later"
   head "https://github.com/hughsie/libjcat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4adb85db0aef273ea25225d0938a6b8c69d61f2c488bb377bdc49467944dbed6"
-    sha256 cellar: :any, arm64_sequoia: "f81dac6097133f01ba6dc2890ea638bc19157b5532262f651523c5daf3a36ade"
-    sha256 cellar: :any, arm64_sonoma:  "008c768443345295eb167faf45cdca4cca66450522e430c1b5754335488f5a30"
-    sha256 cellar: :any, arm64_ventura: "40b6538beb4dcfc8a8eacffe717dccd84595284b564c43c4da4828f7683d1dc4"
-    sha256 cellar: :any, sonoma:        "e531fcf0517371bd203e66ac885f2a89b5f0f1e184d02e2c4949a3a2d92a644f"
-    sha256 cellar: :any, ventura:       "927a664154de77bcedf12dbb4f9232851ef9cc811b3b80308f9ccaca88d1d5b4"
-    sha256               arm64_linux:   "88a16575b027306459c033e2d982e34f1c0d22fb2f368482ede91f36a930dd01"
-    sha256               x86_64_linux:  "1d5b42e6de499edbb2107b66428da6be5d1695e7dd61b4cb5bc937f597e9ada9"
+    sha256 cellar: :any, arm64_tahoe:   "34acd692b18099dd4f68a4b793c8dec3b4ac4b23b1e1d41f420d56861f602b17"
+    sha256 cellar: :any, arm64_sequoia: "d84f7b92486d855a7024d171ce30c61406018c156434be896ceeafe8194f83ff"
+    sha256 cellar: :any, arm64_sonoma:  "a9f7e4a0936acf3a97dfb9210cb3f23bf71c1e074ca15c42c1c0b376bac5ae28"
+    sha256 cellar: :any, sonoma:        "cd00151986797d54cdf5be5c73bb15c61fc27d55c4a2265e54542192ac588901"
+    sha256               arm64_linux:   "ff2b545414a05b970edb915301ff287df1a874244440c333e0a6586f0377de9b"
+    sha256               x86_64_linux:  "82b6710bdd67960c45d7e7909f9672dbd017b064db4621d927bb35a3f6895999"
   end
 
   depends_on "gi-docgen" => :build
