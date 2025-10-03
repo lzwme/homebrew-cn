@@ -11,16 +11,15 @@ class PythonAT313 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "16a22bc6e667935458033ff52b3afe4675666b9ccff6fc4ac4804f9404689ad3"
-    sha256 arm64_sequoia: "821887b8f438c6a43828c9e893ee73e011012bb46fcac862974638e16d5228ce"
-    sha256 arm64_sonoma:  "0c85ea88bebad3a07e50dd310dbfb97386fa264cfe77b942a8418c9974fdb7cd"
-    sha256 arm64_ventura: "8f35604ec6b1993367b0bf35f7929e5015043bc8360f2c45a7202af584c70d89"
-    sha256 tahoe:         "d6eed7df4cfee4d64a5a04f062d29978ee46454bb7ca7f5217367cd3a1663e16"
-    sha256 sequoia:       "b0246f683ffca8b9dd5a7d38a15d80bd193c4c0f57de0c6977e946bc993d018e"
-    sha256 sonoma:        "38d730f020da80c489a6cc3218a6bb2f1a54d36c793940529f704f15e2be10ef"
-    sha256 ventura:       "0e3eacf506efbd2a0c54839a9b0d2904d3d079a80ef42cdb983e47764e74a5b5"
-    sha256 arm64_linux:   "34a7cd4e534d3ee4a2f9647724a1d6e602c1b7253932a47af95e0507e956dc7d"
-    sha256 x86_64_linux:  "b494e23f89ee8473eb8c9dd30d055305b0f954f97c8003b0150fb04936f4f119"
+    rebuild 1
+    sha256 arm64_tahoe:   "da1ce9287cbbf65595f990fae3d9e3629335df55724f195a38e0c63f44545193"
+    sha256 arm64_sequoia: "55fdda88837a68b7e852a0b2d561e66895b1e3a2fcc1feba351774ecfa3d11db"
+    sha256 arm64_sonoma:  "8bd3efa61d69c67e2887d1708844a459229c9bc131986b8f9e776a413c4c1cbe"
+    sha256 tahoe:         "953ea8a1a2ae56ab4a83f20aa547af0893ef18fa4ef1609ffe0b5455935d0f7e"
+    sha256 sequoia:       "ce5f7afbf5e430cac671f588a2fcc13084be6fe22fe89fc2f1cf00863916c336"
+    sha256 sonoma:        "cc7acaf714876dcca9557a26af3d20303330982d0980aac2c201907d88f24833"
+    sha256 arm64_linux:   "63f552873fe976c0e5b29bdf29dc1c8b1c3b5c669aab406117b2d7d3a6834a65"
+    sha256 x86_64_linux:  "e5b409711679f3018efec5d8b6c5ba09013133eccfb867ef4590565bbed6e1fe"
   end
 
   depends_on "pkgconf" => :build
@@ -410,22 +409,22 @@ class PythonAT313 < Formula
           sys.path.extend(library_packages)
           # the Cellar site-packages is a symlink to the HOMEBREW_PREFIX
           # site_packages; prefer the shorter paths
-          long_prefix = re.compile(r'#{rack}/(?:[0-9\\._abrc]+/Frameworks/Python\\.framework/Versions/#{version.major_minor}/)?lib/python#{version.major_minor}/site-packages')
+          long_prefix = re.compile(r'#{rack}/[0-9\\._abrc]+/(?:Frameworks/Python\\.framework/Versions/#{version.major_minor}/)?lib/python#{version.major_minor}/site-packages')
           sys.path = [long_prefix.sub('#{site_packages}', p) for p in sys.path]
           # Set the sys.executable to use the opt_prefix. Only do this if PYTHONEXECUTABLE is not
           # explicitly set and we are not in a virtualenv:
           if 'PYTHONEXECUTABLE' not in os.environ and sys.prefix == sys.base_prefix:
               sys.executable = sys._base_executable = '#{opt_bin}/python#{version.major_minor}'
       if 'PYTHONHOME' not in os.environ:
-          cellar_prefix = re.compile(r'#{rack}/[0-9\\._abrc]+/')
+          cellar_prefix = re.compile(r'#{rack}/[0-9\\._abrc]+(?=/|$)')
           if os.path.realpath(sys.base_prefix).startswith('#{rack}'):
-              new_prefix = cellar_prefix.sub('#{opt_prefix}/', sys.base_prefix)
+              new_prefix = cellar_prefix.sub('#{opt_prefix}', sys.base_prefix)
               site.PREFIXES[:] = [new_prefix if x == sys.base_prefix else x for x in site.PREFIXES]
               if sys.prefix == sys.base_prefix:
                   sys.prefix = new_prefix
               sys.base_prefix = new_prefix
           if os.path.realpath(sys.base_exec_prefix).startswith('#{rack}'):
-              new_exec_prefix = cellar_prefix.sub('#{opt_prefix}/', sys.base_exec_prefix)
+              new_exec_prefix = cellar_prefix.sub('#{opt_prefix}', sys.base_exec_prefix)
               site.PREFIXES[:] = [new_exec_prefix if x == sys.base_exec_prefix else x for x in site.PREFIXES]
               if sys.exec_prefix == sys.base_exec_prefix:
                   sys.exec_prefix = new_exec_prefix
@@ -498,6 +497,11 @@ class PythonAT313 < Formula
     system python3, "dbm_test.py"
 
     system bin/"pip#{version.major_minor}", "list", "--format=columns"
+
+    # Check our sitecustomize.py
+    assert_match HOMEBREW_CELLAR.to_s, shell_output("#{python3} -Sc 'import sys; print(sys.base_prefix)'")
+    refute_match HOMEBREW_CELLAR.to_s, shell_output("#{python3} -c 'import sys; print(sys.base_prefix)'")
+    refute_match site_packages_cellar.to_s, shell_output("#{python3} -c 'import sys; print(sys.path)'")
 
     # Verify our sysconfig patches
     sysconfig_path = "import sysconfig; print(sysconfig.get_paths(\"osx_framework_library\")[\"data\"])"

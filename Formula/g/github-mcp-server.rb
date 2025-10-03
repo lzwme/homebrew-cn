@@ -1,17 +1,17 @@
 class GithubMcpServer < Formula
   desc "GitHub Model Context Protocol server for AI tools"
   homepage "https://github.com/github/github-mcp-server"
-  url "https://ghfast.top/https://github.com/github/github-mcp-server/archive/refs/tags/v0.17.0.tar.gz"
-  sha256 "69b19ec6b02ba0f405bc6db0bb08c222aa3a134b22f39307e0fe29d321e20d62"
+  url "https://ghfast.top/https://github.com/github/github-mcp-server/archive/refs/tags/v0.17.1.tar.gz"
+  sha256 "2341db83f0ecce8088d05df8383998c86ee6e058575a817a1b6d86f19cfb863a"
   license "MIT"
   head "https://github.com/github/github-mcp-server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de9f7e406e9cb283a45b6be085e4833be5e3801330b5ac8932e499fda700c2f1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de9f7e406e9cb283a45b6be085e4833be5e3801330b5ac8932e499fda700c2f1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de9f7e406e9cb283a45b6be085e4833be5e3801330b5ac8932e499fda700c2f1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "44956d32d461f12c3a9ff9416133ec15a1636e3761f9a79c957013bc814bb1fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a6cfca324be0a417ca07a3e890b4ac412fc2047072cca13196d15e7ea3ab917"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe463172a6952a81b52cf9f003e716e354c5bfb5c8e253bfbba5ca98ab5ea217"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe463172a6952a81b52cf9f003e716e354c5bfb5c8e253bfbba5ca98ab5ea217"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe463172a6952a81b52cf9f003e716e354c5bfb5c8e253bfbba5ca98ab5ea217"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1db95295ba1b0c2436d72e6dd4496f027688db0961586c578654e58b8477ce06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c75e4ba8b1e23b501761d555e036f0d3c4bdeec77a010c644c7d9381d16225e5"
   end
 
   depends_on "go" => :build

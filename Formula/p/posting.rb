@@ -10,12 +10,13 @@ class Posting < Formula
   no_autobump! because: "contains non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "024e6704a5d64a77b855cfe4762874f1656fcc93f3523aa5789a3e938290de5d"
-    sha256 cellar: :any,                 arm64_sequoia: "7a70a6ac0efcc20585699f6dd8412ee70481cf2acd3ec1b78426c818df4d1bb1"
-    sha256 cellar: :any,                 arm64_sonoma:  "af24201bddc405a57306c07c72fc2acf3d355c43ecda91981df09c85c176033e"
-    sha256 cellar: :any,                 sonoma:        "2891aef7562b55ae433e3c9ab503b51f9206bcc3bc1132def7e05e5c9569a84d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "24b35daf29267fcc0b21cf4d7294d19957cd8c2631e7ed0e4f87ed93fd9a7f26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "129381d8205e337d61f3f36d596dacf729a38557b158f0a812d5c167cf0ef695"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "da5dfc9ff00416b865206b3764710a105ea103acb1df0e97a44d3b4331b97287"
+    sha256 cellar: :any,                 arm64_sequoia: "c98cb559915a760fd1fefe817551b5cfce88edbde77b61cdb7c5cc3dca8229a2"
+    sha256 cellar: :any,                 arm64_sonoma:  "d1cda9b87f6ca2d9b63b8253bd3808d25d58c45e37e0f84b57ca47465bf479f7"
+    sha256 cellar: :any,                 sonoma:        "66fe4f63c0d053d20e09f32b85da1577c727823baf1324c1b3c498307be1ad12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d3af2cf9f6515deab75a01047fe2cbebd25eb600b3a83c3cc08d0974972bad6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4429863ad2ea2e6b5f1617028df8dd75d83421833bfce7067681321a44509611"
   end
 
   depends_on "cmake" => :build
@@ -223,14 +224,8 @@ class Posting < Formula
   end
 
   resource "tree-sitter-sql" do
-    url "https://ghfast.top/https://github.com/DerekStride/tree-sitter-sql/archive/refs/tags/v0.3.7.tar.gz"
-    sha256 "a4aae1eeebe31dbbf7f823ee56b3ce257f6bb3f32fc5ee732bb785bce257fd3e"
-
-    # patch to include generated artifacts, upstream pr ref, https://github.com/DerekStride/tree-sitter-sql/pull/323
-    patch do
-      url "https://github.com/DerekStride/tree-sitter-sql/commit/e4d1a34b556e31ff473cd9ed10805489646b163a.patch?full_index=1"
-      sha256 "cd69ece539701cb8dce5cabd119c705e41c901606f39bf6c700e4bb25d3a8ce8"
-    end
+    url "https://ghfast.top/https://github.com/DerekStride/tree-sitter-sql/releases/download/v0.3.11/tree-sitter-sql-v0.3.11.tar.gz"
+    sha256 "a97a324eae9c81ed68f6e162b9b33f8911fc6442caa2950e57c498e2460d1387"
   end
 
   resource "tree-sitter-toml" do

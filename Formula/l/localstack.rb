@@ -3,17 +3,17 @@ class Localstack < Formula
 
   desc "Fully functional local AWS cloud stack"
   homepage "https://localstack.cloud/"
-  url "https://files.pythonhosted.org/packages/e9/32/de715f0f55dd368e707136c36faba305f7b374b4bc4443cbda749b155cfa/localstack-4.8.1.tar.gz"
-  sha256 "754ebfcf0c55cbbceee057b68b8b45092876e69125e2ab5d26d934c10a36ff6a"
+  url "https://files.pythonhosted.org/packages/fe/f9/a8ec712d4b1637ed59532902181b6da78a994f6a9461a30f27fc686403a8/localstack-4.9.0.tar.gz"
+  sha256 "90313fb4e7caaaba125d89d314c8c13384dbb7a021618ff13537cb24436de332"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bd0d5aa931e1e5053cec5dad5d34db08ed9aa80c3247e03c1cc942a4be8176bd"
-    sha256 cellar: :any,                 arm64_sequoia: "ad4f4834e211430fdc5a73286e785e0c9a890afc146f0877049ebdbf5a886ed5"
-    sha256 cellar: :any,                 arm64_sonoma:  "e2cf994ce15b346b6e091c58ebf66bccb26ecac79cb7ecf6fdf4eb6402e2a573"
-    sha256 cellar: :any,                 sonoma:        "353af2a286c54ff545173ae9678d111126c9d0ab5fe1ec2d75a8987bbaf83ccc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ce5bdc7acbbfa05cdac88fe463c160759b747264561c25d641694772d9688fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3507e12558874b0573d05017481e6ed3d0fe05bdfbc69bcf3a9abffb069bf81"
+    sha256 cellar: :any,                 arm64_tahoe:   "8558b7357bbe2a42a670c1524521f0e4bb5e88e4b6712d0f3e331fce2744662c"
+    sha256 cellar: :any,                 arm64_sequoia: "113da859f8b237c19ef6a3ae355854a10774554e1c5598779abe795d51984e15"
+    sha256 cellar: :any,                 arm64_sonoma:  "9fd1c77bc029cbb7ef7dcdc5779ba7b0af21a9777c9966e87e7cf341b51a7321"
+    sha256 cellar: :any,                 sonoma:        "fabbffc586c8764660af3141b1aa18c5f75038d5b770e76ad428cdfdfa1f076e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "892e126950706d0e8204647d20e0174dc505e221e446ae97a0e7de58c34c3ccc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5eb06b84b11e2026f859d1fe0ae708bd23ef174faaba5ab9812119d0989fa09f"
   end
 
   depends_on "rust" => :build # for orjson
@@ -44,8 +44,8 @@ class Localstack < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "dill" do
@@ -74,13 +74,13 @@ class Localstack < Formula
   end
 
   resource "localstack-core" do
-    url "https://files.pythonhosted.org/packages/12/0a/fef6905030f74dae6ad238e78c3e46fb2cc2ef68a10e70870d66055df436/localstack_core-4.8.1.tar.gz"
-    sha256 "7ade82edffa2632879d5ecf3ca857323f1254c9bce46de9f07bc3ce4d483acff"
+    url "https://files.pythonhosted.org/packages/ef/1b/e144df7f2a5f872a31420e7f376096b06f5294671f6dbade7552b97cc8b1/localstack_core-4.9.0.tar.gz"
+    sha256 "303d2d76461cdc434e67bfb0b01f1c1884ed2e4a9eb861abeb9660d65cbf0a41"
   end
 
   resource "localstack-ext" do
-    url "https://files.pythonhosted.org/packages/2d/db/66768c1b5dadd551c3cd89ba9d4c3be43e9370ef259fc8af5749c9138865/localstack_ext-4.8.1.tar.gz"
-    sha256 "eb3443b4b21c019b8b3331ea3cc62d7a05bba411889c60c4255faa7fd6e0068c"
+    url "https://files.pythonhosted.org/packages/ed/6e/4c757f098250ac2d96e3fb3dd5762b8c489953c9ce094ee9e7c20c263d99/localstack_ext-4.9.0.tar.gz"
+    sha256 "94fbafabe19b7ce9fb33d3b2a23eb1b1e587a96fe6e7f34ee8b1e7c0b17c3d5a"
   end
 
   resource "localstack-py-avro-schema" do
@@ -124,8 +124,8 @@ class Localstack < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/2a/80/336820c1ad9286a4ded7e845b2eccfcb27851ab8ac6abece774a6ff4d3de/psutil-7.0.0.tar.gz"
-    sha256 "7be9c3eba38beccb6495ea33afd982a44074b78f28c434a1f51cc07fd315c456"
+    url "https://files.pythonhosted.org/packages/b3/31/4723d756b59344b643542936e37a31d1d3204bcdc42a7daa8ee9eb06fb50/psutil-7.1.0.tar.gz"
+    sha256 "655708b3c069387c8b77b072fc429a57d0e214221d01c0a772df7dfedcb3bcd2"
   end
 
   resource "pygments" do
@@ -159,8 +159,8 @@ class Localstack < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "requests" do
