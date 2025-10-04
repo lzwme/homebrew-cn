@@ -91,6 +91,7 @@ Homebrew-homebrew-core/Formula/a/aircrack-ng.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/airshare.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/airspy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/airspyhf.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/airtable-mcp-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aiven-client.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/akamai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/akku.rb, Homebrew/homebrew-core, 0
@@ -971,6 +972,7 @@ Homebrew-homebrew-core/Formula/c/chordii.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chroma.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chromaprint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chrome-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/chrome-devtools-mcp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chrome-export.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chronograf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chrony.rb, Homebrew/homebrew-core, 0
@@ -4400,6 +4402,7 @@ Homebrew-homebrew-core/Formula/m/mcap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcfly.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcp-atlassian.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-get.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mcp-google-sheets.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-grafana.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcp-inspector.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-proxy.rb, Homebrew/homebrew-core, 0
@@ -4426,6 +4429,7 @@ Homebrew-homebrew-core/Formula/m/mdk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mdless.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mdp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mdq.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mdserve.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mdsh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mdt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mdv.rb, Homebrew/homebrew-core, 0
@@ -5155,6 +5159,7 @@ Homebrew-homebrew-core/Formula/o/openslp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssl@1.1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openssl@3.0.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/openssl@3.5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssl@3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openstackclient.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opensubdiv.rb, Homebrew/homebrew-core, 1
@@ -6496,6 +6501,7 @@ Homebrew-homebrew-core/Formula/s/sniffer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sniffglue.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sniffnet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/snobol4.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/snooze.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/snort.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/snow.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snowball.rb, Homebrew/homebrew-core, 1
@@ -8470,6 +8476,7 @@ Homebrew-homebrew-cask/Casks/b/brisync.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/brooklyn.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/browser-actions.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/browser-deputy.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/browseros.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/browserosaurus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/browserstacklocal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bruno.rb, Homebrew/homebrew-cask, 1
@@ -11230,7 +11237,7 @@ Homebrew-homebrew-cask/Casks/font/font-o/font-oleo-script.rb, Homebrew/homebrew-
 Homebrew-homebrew-cask/Casks/font/font-o/font-onest.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-o/font-oooh-baby.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-o/font-open-dyslexic-nerd-font.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-o/font-open-dyslexic.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-o/font-open-dyslexic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-o/font-open-iconic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-o/font-open-sans-hebrew-condensed.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-o/font-open-sans-hebrew.rb, Homebrew/homebrew-cask, 0
@@ -12319,6 +12326,7 @@ Homebrew-homebrew-cask/Casks/h/hyperkey.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/i1profiler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ia-markdown-dictionary.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ia-presenter.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/iaito.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/ibabel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ibackup-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ibackupbot.rb, Homebrew/homebrew-cask, 0

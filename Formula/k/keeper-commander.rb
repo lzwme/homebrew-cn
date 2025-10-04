@@ -3,18 +3,18 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/7f/f6/a56086f0fc8a200347ebf7d7c2520faaf4ea8c5fb5bad5bc55c0901afa17/keepercommander-17.1.11.tar.gz"
-  sha256 "6bdbc04f572abdb5810eafff559f57818b76fee6c4a471f694ddcc80d0c5ce09"
+  url "https://files.pythonhosted.org/packages/54/00/17fc049ef25b26f027f1c3c9cfe8da896e035c30b2bd1621aff0dd4d9e3e/keepercommander-17.1.12.tar.gz"
+  sha256 "511cd78b26ac15150c0c3a138fdceddbe57b756332af066fdfd15804ecdb7b36"
   license "MIT"
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b66168f2367df9fa538d4fcc3ff9069b61517dff15caf18e603419e1ae6fc826"
-    sha256 cellar: :any,                 arm64_sequoia: "3d8266c1d5a5101ada5c05a921bef5a4ee82b02e64a9bdd0cc4680cd22f8e6f8"
-    sha256 cellar: :any,                 arm64_sonoma:  "bf0ad7b3a960a5a3a2fe333e43c0dc1cd2d1bf228d618c81f73cce7d21cb9f97"
-    sha256 cellar: :any,                 sonoma:        "02f52cf64a5e319230a0219774eed9414ede98dd8cc1c5b3a6fdb2196bf2e9e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a210a637e9fd57355f3e0140d21ad3e4e4185ed36c3da06ae20e01590ce44f5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd814762c68eefce90d3628cc7cd2dcf4b045d9fbe81c99f7a8a98aff9da9f96"
+    sha256 cellar: :any,                 arm64_tahoe:   "b1b68955e7ced01041116c112f25c59699809d3a9331e2f0d282b5b5c8279dd8"
+    sha256 cellar: :any,                 arm64_sequoia: "a93215533b425838d5f049c3c790d1420b5987a333d015b75dca9d5c701720ae"
+    sha256 cellar: :any,                 arm64_sonoma:  "6dd17b3156613cc3614ac81c53f26a2485279f6c34bbc23b71c69ca4538b2158"
+    sha256 cellar: :any,                 sonoma:        "4348244c0140bbf7008f41618708771ab0a69bbafb81b8366c6454862808ea6c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc5a6533ab7fe6028b664a3fee9a27223bdf79ab6018038253bef42789b5aca4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "913fd93c7323457ea0c16ffd8529ef52d5ab8f0ba6b8da383408142daec4234f"
   end
 
   depends_on "pkgconf" => :build

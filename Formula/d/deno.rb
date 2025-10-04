@@ -1,18 +1,18 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.com/"
-  url "https://ghfast.top/https://github.com/denoland/deno/releases/download/v2.5.2/deno_src.tar.gz"
-  sha256 "44e9db8c52da72fed0ef8f990ab7ba3435562942752b5eafe845ff31bb643438"
+  url "https://ghfast.top/https://github.com/denoland/deno/releases/download/v2.5.3/deno_src.tar.gz"
+  sha256 "aa52219493d761df1b8fdf51a707ed0495374f9a45c348b5683aef821efc08b9"
   license "MIT"
   head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a952ede084478a564762c0d4cee3116699c579f29e3d6452e1f534a666588f3d"
-    sha256 cellar: :any,                 arm64_sequoia: "698629fac1172e33177ad3af37f1c347fa1e034ec552aac591360c6c2e15d3c0"
-    sha256 cellar: :any,                 arm64_sonoma:  "27d7d636a3b048eb0932a7556d35374ec7a0811c66c9dd2c93ee5e52245841c1"
-    sha256 cellar: :any,                 sonoma:        "2423c57574213bf7c5cdd2b05bb36381483ecb171cbca06851cd7c6aa87bf798"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa8dfa3521886c553bdf8a12be68fbe36852ee49a8d93a23c28c590df0357434"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66b8bea8ad23a052dc40dabf040cde9d05877f813cc7dc34f38fd118562ec7de"
+    sha256 cellar: :any,                 arm64_tahoe:   "abeacf934975ac9af6ebfed30d587a38e7c626b285ea914bbc824f098710eb04"
+    sha256 cellar: :any,                 arm64_sequoia: "6115c25500a09bf644dfdb0fc3fb9fee0c794fa8892df3be9984fbcff736dcb0"
+    sha256 cellar: :any,                 arm64_sonoma:  "be7bba78feacd82f2917e505a869f89820f93b0fc63c8dafdbd151f842b6aea6"
+    sha256 cellar: :any,                 sonoma:        "bc084e271fff44998807afe46a15f07c7a89ffa47bb4ef010f8f30f253ffcb99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c2d8cc5de568dafa17b9561847d9fdf1a2a6881b0f647a59556c72c31ee04b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ee4aaa2186cff8e10a36837a21de20ca8e0041772f018569efb3f6cb5317972"
   end
 
   depends_on "cmake" => :build

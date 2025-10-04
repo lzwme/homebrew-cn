@@ -3,8 +3,8 @@ class LlamaCpp < Formula
   homepage "https://github.com/ggml-org/llama.cpp"
   # CMake uses Git to generate version information.
   url "https://github.com/ggml-org/llama.cpp.git",
-      tag:      "b6670",
-      revision: "91a2a5655658bb9ab77894716b82fae7ecb4b4d1"
+      tag:      "b6680",
+      revision: "2aaf0a2a2056d75d0dd53ab8a181473760e6ab22"
   license "MIT"
   head "https://github.com/ggml-org/llama.cpp.git", branch: "master"
 
@@ -19,12 +19,12 @@ class LlamaCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "69cde1ba418b5a6f7ce322887f1c1eefd13328efd6f07b8677f857369a31c994"
-    sha256 cellar: :any,                 arm64_sequoia: "1da6170f32a4b0e17e78582093b9a041aa6e0b7aa10f514928d170f6d4d8a458"
-    sha256 cellar: :any,                 arm64_sonoma:  "8da9da201ac6aaa95459b00fc1211478b9d070d4089617bdf97e8868474433d3"
-    sha256 cellar: :any,                 sonoma:        "1e8ff45e4112b28562550c47c81e5095d2270d68ac44cd51400c179e436ad656"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "16f164f0ea7ad8be6f345636322807880788ad3467c23c399d5d3260bfa260bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a2f1635251674477a1d319ce5b92c23812ba5cefaacc5441a0c94c0b20ae7f5"
+    sha256 cellar: :any,                 arm64_tahoe:   "6437e6761d8c4718d5b97f20057c2ce7f978f1c1b94083213d7ef82e226a1696"
+    sha256 cellar: :any,                 arm64_sequoia: "435aab471703eb381e4223271f91bfb60d6afc9fb279e4a43d648d60cc1e8261"
+    sha256 cellar: :any,                 arm64_sonoma:  "cf9db79aaaaab7488b344ea9f2f5bf562d85de5d3fed115406ed50f2b05778b3"
+    sha256 cellar: :any,                 sonoma:        "b60f803fb32f5ab0963e6418075982c87bc0289b4fc31d849ef5bb0250ecf4de"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "58cf6647e08c87ed40868ed1f61356f57124dcd97015b5fb311e0ba446005691"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1443ae108f63216d09eb8029703a8a8dfbd2f80cad69d7858e6d9fb90d216bc"
   end
 
   depends_on "cmake" => :build

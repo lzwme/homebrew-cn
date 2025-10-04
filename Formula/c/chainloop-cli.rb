@@ -1,8 +1,8 @@
 class ChainloopCli < Formula
   desc "CLI for interacting with Chainloop"
   homepage "https://docs.chainloop.dev"
-  url "https://ghfast.top/https://github.com/chainloop-dev/chainloop/archive/refs/tags/v1.45.5.tar.gz"
-  sha256 "79b28c5e40ca745fbd8098384b9e93afa799d67c6518f7a82875d51418648bd8"
+  url "https://ghfast.top/https://github.com/chainloop-dev/chainloop/archive/refs/tags/v1.45.6.tar.gz"
+  sha256 "7bfeb69254727012e93c8885d7680774b2c99b5227235d1f3b69c926f8f56bce"
   license "Apache-2.0"
   head "https://github.com/chainloop-dev/chainloop.git", branch: "main"
 
@@ -12,11 +12,11 @@ class ChainloopCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6793f587a62600d62725df07087a93b4789b10f738238a290b8d080c914e5a0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "055bc55e0a462c5d9421076310bc5793d186a0526426e25f018850636671f5d8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1da5b7ed429b22ff64ad9e415e75844bb1f4ab2df6f16696e35b674432c66d0d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "669e3c5156199b12b3d808670dd018930ead3b6a42f3eccf55390400252562da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02e0e1a3a74888bef1c184c160762d67d8be9e72231edc5fe97e4afe5c7654b9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00b4503a05760ef0cf97dfe0732f3b35fc443f7d0d61f8b52e1b20db8aed32ce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "137aa612b7daae9e8e6d5242810fc8f512890b7983857198b13fadeb65320e08"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af9669457936dd9b30e2d46c8a11d4e3968ea062a1e90cf04e8fab3cc4af5d22"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d3446d4b6c598904b81462bbcec97d397ee8be3511b6a0f50cbde8f3f4622bfe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bc20295cefc9494defb0879b8faf47c6c61bdd6f115c35119d1bff11acd9372"
   end
 
   depends_on "go" => :build
@@ -35,6 +35,6 @@ class ChainloopCli < Formula
     assert_match version.to_s, shell_output("#{bin}/chainloop version 2>&1")
 
     output = shell_output("#{bin}/chainloop artifact download 2>&1", 1)
-    assert_match "authentication required, please run \"chainloop auth login\"", output
+    assert_match "run chainloop auth login", output
   end
 end

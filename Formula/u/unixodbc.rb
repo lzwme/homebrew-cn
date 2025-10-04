@@ -12,12 +12,13 @@ class Unixodbc < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ca79032ddd8290b1cd9e9943911659ba2cfd4adda184fe81338b23a6ec1a680c"
-    sha256 arm64_sequoia: "32d4bb10a53c451f4bf5c7c814a0350c82b3a6abc764481670521d1d9d166484"
-    sha256 arm64_sonoma:  "03d6e6955edb57f13ed650cc29081f5428a943488e22ce51fc52b255d233292d"
-    sha256 sonoma:        "fcd2cb6616f55a2706d1870c7d8117b46c718ea93c926e091746aeca5e7b48b5"
-    sha256 arm64_linux:   "ffd1aebf4638c5a5be04bdd3d989eeaaffe366ebc2dceaeed9ed215050d96853"
-    sha256 x86_64_linux:  "f61d1f1b5fe59f5e3205e94f3fe434a34043e7fd48b6c24b47c066b7e1d4042c"
+    rebuild 1
+    sha256 arm64_tahoe:   "7c9526b441435001124460466ddd9c036cc494d894b9131a2c1e03f3a0b4dc86"
+    sha256 arm64_sequoia: "e319fd6f83f15c3c96c570c4f9782ad0d964181a98da712905b94f589dddd921"
+    sha256 arm64_sonoma:  "f0363503a99f6f4ffa64b12eb5c99612250af7964c8be8906d3156a798065531"
+    sha256 sonoma:        "b033f17443c5fc20d3af8f904b90a3bf9bdf668efbfb8bdf0bac5b1bfc3ebc64"
+    sha256 arm64_linux:   "151b0f1ec0f4cc526c338542ce1a292ccc923e09c7f3f23bd178794a5b93dcb7"
+    sha256 x86_64_linux:  "5a7ce1eeb9ce55f3a61a9a9ae16123ad02bf67462abdd49d73a42058cab5db01"
   end
 
   depends_on "libtool"
@@ -28,6 +29,13 @@ class Unixodbc < Formula
   link_overwrite "include/odbcinst.h", "include/sql.h", "include/sqlext.h",
                  "include/sqltypes.h", "include/sqlucode.h"
   link_overwrite "lib/libodbc.a", "lib/libodbc.so"
+
+  # Fix segfault where `dst` is passed to `memcpy` instead of `*dst`
+  # https://github.com/lurcher/unixODBC/commit/97add92e08ed42102234055d55e098e1c8e5c1c0
+  patch do
+    url "https://github.com/lurcher/unixODBC/commit/97add92e08ed42102234055d55e098e1c8e5c1c0.patch?full_index=1"
+    sha256 "1cc28bbc3fcc4fc170c7b806ca9c1f69c9ecb0c599c7a7a7598da202eaa797e5"
+  end
 
   def install
     system "./configure", "--disable-debug",

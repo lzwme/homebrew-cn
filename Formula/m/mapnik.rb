@@ -36,6 +36,7 @@ class Mapnik < Formula
   depends_on "libpq"
   depends_on "libtiff"
   depends_on "libxml2"
+  depends_on "openssl@3"
   depends_on "proj"
   depends_on "sqlite"
   depends_on "webp"

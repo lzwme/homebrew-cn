@@ -1,9 +1,9 @@
 cask "session" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.16.10"
-  sha256 arm:   "44ce59bf43c53349b34ad80fff5a0920b7661fc7623accd896efbbe91285ba66",
-         intel: "a9bd41faf666301ac7554e388bdce166cf7d831e925b690f49d0cc9b1115724d"
+  version "1.17.1"
+  sha256 arm:   "6b08fdd11cbbd8e7ebcdbdd787ddd12e3f4a46fd2cdc09f0336bfc352bf97e2f",
+         intel: "f58c7cb4f394ce06315fc3a2a76a38f31b587b613dd7162660d944b92c695b8d"
 
   url "https://ghfast.top/https://github.com/session-foundation/session-desktop/releases/download/v#{version}/session-desktop-mac-#{arch}-#{version}.dmg",
       verified: "github.com/session-foundation/session-desktop/"
@@ -17,7 +17,7 @@ cask "session" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: ">= :ventura"
 
   app "Session.app"
 
