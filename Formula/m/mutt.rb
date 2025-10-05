@@ -10,29 +10,25 @@
 class Mutt < Formula
   desc "Mongrel of mail user agents (part elm, pine, mush, mh, etc.)"
   homepage "http://www.mutt.org/"
-  url "https://bitbucket.org/mutt/mutt/downloads/mutt-2.2.14.tar.gz"
-  sha256 "d162fb6d491e3af43d6f62f949b7e687bb0c7c2584da52c99a99354a25de14ef"
+  url "https://gitlab.com/muttmua/mutt/-/archive/mutt-2-2-15-rel/mutt-mutt-2-2-15-rel.tar.gz"
+  version "2.2.15"
+  sha256 "3c931dd65993d2e63a3dcd6bbf1fd88c033ae0f6e377c5d4f88b14fe9170817d"
   license "GPL-2.0-or-later"
-  revision 1
 
   # Livecheck uses GitLab tags to determine current version.
   # They all have `-rel` suffix which needs to be omitted.
-  #
-  # BitBucket strategy doesn't work for some reason.
   livecheck do
     url "https://gitlab.com/muttmua/mutt.git"
     regex(/^mutt[._-]v?(\d+(?:-\d+)+)-rel$/i)
   end
 
   bottle do
-    sha256 arm64_tahoe:   "1a873051960df2b490cbeefc0e8f01ef20db4ca770684bc078f29b04dac8d8b4"
-    sha256 arm64_sequoia: "ad1666b7a72c6ebc86c3ebe83ffdea86e58b72a9cda954531fee16fc01116c3e"
-    sha256 arm64_sonoma:  "9643a80c2b69b3bd3ced5b7dd6b11d4a93cf0c8e7ec4ab10194dade10792c968"
-    sha256 arm64_ventura: "8e52fb4d5a97894d9309c15f0be00c09b3480dca379b902186f1c54562761fb2"
-    sha256 sonoma:        "90f3cb0b88dd3687353c82114aad68fc43bc45fa4151398169479f5313f5bbe1"
-    sha256 ventura:       "3d7c6220370ad7283c98849a86f60585c64f3a25bbfd31537820916b6d53abdf"
-    sha256 arm64_linux:   "2df5f68439d230d72b8368b98d9a29693bd584f72e4c1997a2d821fe482265fe"
-    sha256 x86_64_linux:  "3383f34c489cc5e71986a18b8686359110108ed5cacd16fd59895c41431f9e28"
+    sha256 arm64_tahoe:   "75669d6239c44d5f13c52565e1c4b19f36b2e552f3b853c9ac98813437a8e181"
+    sha256 arm64_sequoia: "4e9df72dad1e0e9629c46428b23aead3bed33732340a94df9b80d503035089b8"
+    sha256 arm64_sonoma:  "c760d241f11a8ecda970ac6710eae57fd21e0ee6fbf7d2403bb383a2507d30b4"
+    sha256 sonoma:        "d4252e6a4f29d2ed772b2e6cb35443050233172162a184d1b020ccbee53dfed3"
+    sha256 arm64_linux:   "256483eb0551b850f40b2c42f9c7e36846e521492b88ae15243a6b51cd9cb9a9"
+    sha256 x86_64_linux:  "250d93e09deab42ad9b07ab66db482f8f482b6f22e46518382e101148a6e706f"
   end
 
   head do

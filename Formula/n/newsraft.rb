@@ -1,19 +1,17 @@
 class Newsraft < Formula
   desc "Terminal feed reader"
   homepage "https://codeberg.org/newsraft/newsraft"
-  url "https://codeberg.org/newsraft/newsraft/archive/newsraft-0.32.tar.gz"
-  sha256 "a3b5f4935189316b5962658f29669472798a3e40d62b4f60d66644af3f04d2d3"
+  url "https://codeberg.org/newsraft/newsraft/archive/newsraft-0.33.tar.gz"
+  sha256 "096478f6516fbc4e70851f52f196c7a0d4853ef87331a7f796e6052fe65097de"
   license "ISC"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2409740a3d16d3de3710672a5b2ad5c543d39dd3cf5d6d61fe90362563a9529d"
-    sha256 cellar: :any,                 arm64_sequoia: "aef5996f4f43703a4bf853f3c1bfffac22c4f26adafb56fc60febe38560e25f1"
-    sha256 cellar: :any,                 arm64_sonoma:  "05376dd0ebeadf2d1be377c276e1b8239e2a6889c43a7cf111eea322a41575ee"
-    sha256 cellar: :any,                 arm64_ventura: "4e9037da7751f16b74832954eb41c79e14db50f600f9e49daf149dbea3873559"
-    sha256 cellar: :any,                 sonoma:        "6de16eff0be4e61a95f00f4cc819fe8f993ed8b6e38a8092ead3b1a35e31f213"
-    sha256 cellar: :any,                 ventura:       "48fc2089152a6b78f4db25853f4d2364b7ea62592012868704c00db86426843a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6782552248c2cc1e59435acaf74f63a2379fa5e88e5af8734d27e62544558a2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7235defd2c251363a8657498691f362540bacbf241b2ed8b32fb5b2c3427244"
+    sha256 cellar: :any,                 arm64_tahoe:   "113f256779da58c7b90c4391668ee98fd4699b1e3924dc2ec3289aabb93b19b9"
+    sha256 cellar: :any,                 arm64_sequoia: "890c8b9f715dc1b5e1a582cf2b55fa9e1488c539b5cabb81c1444a828cd502f2"
+    sha256 cellar: :any,                 arm64_sonoma:  "557db8cce2fdb93d264e6a4e5466c9a8c53c799bcc6fde7e67faec2a750f8e83"
+    sha256 cellar: :any,                 sonoma:        "4d2bb7ff6f935c3d708483c5344fc0bffc0995da4b074f70a6254f291aa5914d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2574cb70f8e9d0309f00cad1a2dfe669396f6c068b58f7d6ca8b3574136819c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a161211d13e584349353730e8fbfbbf1a8fc62fd89c17ed503c20519024066b"
   end
 
   depends_on "scdoc" => :build

@@ -2,9 +2,9 @@ class Puzzles < Formula
   desc "Collection of one-player puzzle games"
   homepage "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/"
   # Extract https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles.tar.gz to get the version number
-  url "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles-20250904.2376227.tar.gz"
-  version "20250904"
-  sha256 "145f91489a86321995e5049a34e06955e2204b98c071025f916d0cbdd5719cf2"
+  url "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles-20250926.e00cb46.tar.gz"
+  version "20250926"
+  sha256 "0ac32b858a5a4d1333dfae24b796ff6c263aecf0a86304b9d05c70f268b64026"
   license "MIT"
   head "https://git.tartarus.org/simon/puzzles.git", branch: "main"
 
@@ -20,14 +20,12 @@ class Puzzles < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52a260608643882c7293dfac0399e4ae79c9d5e244c93c7fd4df03891cf51a36"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "926d319ead9a6bb23e46d8fa737a4e46bb37176e84b8dc78c2c32b6290547916"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e81ce6c817f6ce4b1394d4bf3166cbe4bb24e932a5fee15227f18a7694502ed"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6daa62e0cdfdd30a34ded0a2815e7f01d6b8300654a0a290c634a4a2ed9ad316"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6e590cdd951d73304d7b66436a0fc5d95e28de68f13b63843ea318d41aaa9b53"
-    sha256 cellar: :any_skip_relocation, ventura:       "2be4e89c857d65211c6a9b75ad4a27e005ce6ef871d5fda9492e8814e27985b0"
-    sha256                               arm64_linux:   "d67a493f08484a51ce258d5124d6690e89d28bc566597f87f93700dfbe59bfc9"
-    sha256                               x86_64_linux:  "7792d80ef04135951dcccc7d80358d1f7fa9d3f4aa0d7ae2471cc138f8f4027e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12a4d49a7e9090e18805cf6546998a579254625b29ebb3ed8d8a34795d2c3cb6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6796f9d9bd257477938f7dc38d77faa4cfa1e726e503ab079d2fb94904d4c7cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "093c290c5e4ab9d3917672d8201943c11994aa1203b1b468db651ff150578940"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4f16272cc63cb665273e838bb2b564dfd9c123cc703546376f18fedf77669eff"
+    sha256                               arm64_linux:   "8b846ff86a573e1668df29ea97a7e2fa561e3ae7f09534e64a1d77f282bba43d"
+    sha256                               x86_64_linux:  "cbf329c08d830af803324a5020eb69e6763d8d94255367fdd6d08a1eb08db7fe"
   end
 
   depends_on "cmake" => :build
@@ -46,6 +44,9 @@ class Puzzles < Formula
   conflicts_with "samba", because: "both install `net` binaries"
 
   def install
+    # Disable universal binaries
+    inreplace "cmake/platforms/osx.cmake", "set(CMAKE_OSX_ARCHITECTURES arm64 x86_64)", "" if OS.mac?
+
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

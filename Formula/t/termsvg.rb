@@ -1,18 +1,18 @@
 class Termsvg < Formula
   desc "Record, share and export your terminal as a animated SVG image"
   homepage "https://github.com/MrMarble/termsvg"
-  url "https://ghfast.top/https://github.com/MrMarble/termsvg/archive/refs/tags/v0.9.3.tar.gz"
-  sha256 "a8352a3b2f12de97a5b2935885a1938633f46b02a4965efa6f1117de4b9cce83"
+  url "https://ghfast.top/https://github.com/MrMarble/termsvg/archive/refs/tags/v0.9.4.tar.gz"
+  sha256 "0055e9383f726887546182966033ec9ad8be2fa9b506842697ebed71d2df42a0"
   license "GPL-3.0-only"
   head "https://github.com/MrMarble/termsvg.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ccbe6458f26a3a27b886ef5a1769c1eb5cb32c533015444b36a4b61fadc9e23"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ccbe6458f26a3a27b886ef5a1769c1eb5cb32c533015444b36a4b61fadc9e23"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ccbe6458f26a3a27b886ef5a1769c1eb5cb32c533015444b36a4b61fadc9e23"
-    sha256 cellar: :any_skip_relocation, sonoma:        "285ad5aba84d5b92adec6f8a405fb4241c2875e2a00d5806dba5c159354e408e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "867a2b6cdb1a33baf1d403a34e1e7e9945c23edda765f10052f37e17d6c03e7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8266922d6481d0ab3249ecb33138bed1c604883bed40834fe1ef289ea26ee7a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54909ac9da2dac07008a5b63d2bf9c3a161bd500734e36ffbf3393d3cddd85f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54909ac9da2dac07008a5b63d2bf9c3a161bd500734e36ffbf3393d3cddd85f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54909ac9da2dac07008a5b63d2bf9c3a161bd500734e36ffbf3393d3cddd85f0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7ac65544ad9f4e2b1f0953232a3184f44cdde9c8fcf8d5c0a9d0329fe87c56a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "41b86b1bef2d9a3fb7406ff6211ddb558229fcdcec8e335a0aa14c72530b173c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46dc677152b33ba924b355f803511c56d1ce9e4d1d75a5e07577adebf49b6ba2"
   end
 
   depends_on "go" => :build

@@ -6,14 +6,13 @@ class Alpscore < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a8b94faee3fd258973309650d1bfd520a8c18daffb59d39c23007d38a7639d50"
-    sha256 cellar: :any,                 arm64_sequoia: "d32af432da55d533b24bd30a60f8e2845ae2bfe97a3b00d5f53e0d58282eeafe"
-    sha256 cellar: :any,                 arm64_sonoma:  "d8e1ec2c2f445c059c8a6097f6900c4b3366b61f17bb4e985a047dfc71545cb5"
-    sha256 cellar: :any,                 arm64_ventura: "7c51b1fafed3d6683f0a7711239ae8dfb960a3f9242e98d04889397112a0bbed"
-    sha256 cellar: :any,                 sonoma:        "ded6b4a5102bf72ee89b709f48c7363e592435dbf8cab002ec173c7d392ccf47"
-    sha256 cellar: :any,                 ventura:       "5bb961582c752e10a6d731ccbd7d546c1c2d4193af2c0f5cc1254e193d4568b8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "99b0e57c0f9b7695869872b039c3d3723a86f4cf85a25eb44cbca47830a90d21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "992bb58ad888c4accb8a6758f3ec2b4b378af7523626efa5d6785de54c32bf3b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "86681a415ce9b23f7664b88625224dd56d8a55c718e698f2627cf627a34a36a9"
+    sha256 cellar: :any,                 arm64_sequoia: "f2ff9f51f2beb340a170abe4f12766fe64610c553ee3663b114b30e906bd63e6"
+    sha256 cellar: :any,                 arm64_sonoma:  "9dd1b63f515a48f80865690450291d797cda75ac505fb75454c1a86fd50f8c7d"
+    sha256 cellar: :any,                 sonoma:        "f104a219812971245726f55e4c1134f06871b6691f5730d90d6df3b243460410"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b97b22e40afaa673e367c222e424c8539d73e9c495e8a9e1660b2ff26fa94a2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f96e68846f519f016c8d6e661a6eebb6f8f2efbe44f8fc2ef6a64715fb825963"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -26,6 +25,13 @@ class Alpscore < Formula
   patch do
     url "https://github.com/ALPSCore/ALPSCore/commit/155e4327a78c1fa9442a179868994c8715582720.patch?full_index=1"
     sha256 "9cb67c3d457a99fc799a60e8fcae0af63b99ebb18b5279b449ce9c0c1445077a"
+  end
+
+  # Apply open PR to support Eigen 5.0.0
+  # PR ref: https://github.com/ALPSCore/ALPSCore/pull/651
+  patch do
+    url "https://github.com/ALPSCore/ALPSCore/commit/0a7952abb3570e48d04d435d7d9d16ecbd06fb2a.patch?full_index=1"
+    sha256 "f007f65367528149ce5c4ad871aea600bbe05dd374c100588d577a07e3a05818"
   end
 
   def install
