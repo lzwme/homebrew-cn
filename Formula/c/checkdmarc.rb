@@ -3,13 +3,13 @@ class Checkdmarc < Formula
 
   desc "Command-line parser for SPF and DMARC DNS records"
   homepage "https://domainaware.github.io/checkdmarc/"
-  url "https://files.pythonhosted.org/packages/97/e3/ef97bbb1f49638ff2a5c7c45b726fd9abbe2afb957fd0e0e44f6a0da6c37/checkdmarc-5.10.16.tar.gz"
-  sha256 "e0eadca6071785701d16c92d672ba911c26289daaf1ea3d1c05c76be7c2d7a7e"
+  url "https://files.pythonhosted.org/packages/b6/1d/80008be65bcb9a4073543bed998bce47891f8ff140e1f27683651258d3be/checkdmarc-5.11.1.tar.gz"
+  sha256 "145d943d6168404d5cf8980a252c2f99f82b1e37243660e1de60f15cee6871b6"
   license "Apache-2.0"
   head "https://github.com/domainaware/checkdmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1b6f9657409db80c9ea9e10ce3eef012485896e465460db7081ecf1256f8454c"
+    sha256 cellar: :any_skip_relocation, all: "dc96a17540fc78b4495e317467da9f5fe4cac3abed4965562876f5ea5c646953"
   end
 
   depends_on "certifi"

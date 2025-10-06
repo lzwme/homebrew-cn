@@ -3,8 +3,8 @@ class Prestodb < Formula
 
   desc "Distributed SQL query engine for big data"
   homepage "https://prestodb.io"
-  url "https://search.maven.org/remotecontent?filepath=com/facebook/presto/presto-server/0.293/presto-server-0.293.tar.gz", using: :nounzip
-  sha256 "dd0e8bb1919da27973961a35483f2fb795795c63d5a3684c50fc029c242d4840"
+  url "https://search.maven.org/remotecontent?filepath=com/facebook/presto/presto-server/0.294/presto-server-0.294.tar.gz"
+  sha256 "30364cf54ea068f9a0f9c140d857f07379124251a1a7fe17935ead4e9ec6c3d1"
   license "Apache-2.0"
 
   # Upstream has said that we should check Maven for Presto version information
@@ -16,15 +16,15 @@ class Prestodb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "45cd80935b6db206ab8616a14ba44a12a958e3db3e0c23d85903fdef027b393b"
+    sha256 cellar: :any_skip_relocation, all: "2b29226f67e82e5257ab5bf154521da407a8df43bfaed129122ef5b328096a26"
   end
 
   depends_on "openjdk@17"
   depends_on "python@3.13"
 
   resource "presto-cli" do
-    url "https://search.maven.org/remotecontent?filepath=com/facebook/presto/presto-cli/0.293/presto-cli-0.293-executable.jar"
-    sha256 "e64bdfdaaae45031fc3f88d235215896c1fddbf0a0485d3d3ece94864b510972"
+    url "https://ghfast.top/https://github.com/prestodb/presto/releases/download/0.294/presto-cli-0.294-executable.jar"
+    sha256 "26ad727b02d58b45916a1a690fdfa1ae01d133568df7058205b1f00169852c50"
 
     livecheck do
       formula :parent
@@ -35,14 +35,12 @@ class Prestodb < Formula
     java_version = "17"
     odie "presto-cli resource needs to be updated" if version != resource("presto-cli").version
 
-    # Manually extract tarball to avoid multiple copies/moves of over 2GB of files
-    libexec.mkpath
-    system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xzf", "presto-server-#{version}.tar.gz"
+    libexec.install Dir["*"]
 
     (libexec/"etc/node.properties").write <<~EOS
       node.environment=production
       node.id=ffffffff-ffff-ffff-ffff-ffffffffffff
-      node.data-dir=#{var}/presto/data
+      node.data-dir=#{var}/prestodb/data
     EOS
 
     (libexec/"etc/jvm.config").write <<~EOS

@@ -3,22 +3,20 @@ class Aider < Formula
 
   desc "AI pair programming in your terminal"
   homepage "https://aider.chat/"
-  url "https://files.pythonhosted.org/packages/4e/b5/5add755c93b11c0d699c08758693f6868401eeeeb108afa9d9c460144d02/aider_chat-0.86.0.tar.gz"
-  sha256 "8bd50e1ab4f813b3637bb11c7b9504fca081b5316bfa79678fd9c5992c9bf0b7"
+  url "https://files.pythonhosted.org/packages/87/60/42ee32c47d6711635d591c729eea6bc56fa244099a18e0b82da064951af9/aider_chat-0.86.1.tar.gz"
+  sha256 "48e489d20a4dfdd90ac4acc781f0170f688aaa5c5f2017d035e2d947fb801bbb"
   license "Apache-2.0"
   head "https://github.com/Aider-AI/aider.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ab23af47785a4b82ae01062fd831157db64d0cc54228383ba5cd75f9e1714b0a"
-    sha256 cellar: :any,                 arm64_sequoia: "e4da90429c464d7296ea543861bbddda60348f72d7facd89b075c29d24fcecd2"
-    sha256 cellar: :any,                 arm64_sonoma:  "501d8bdd8a5a7cef1c65891db0c8ac14b1b7824c450e1bf2f25523bd59c5c57b"
-    sha256 cellar: :any,                 arm64_ventura: "a494bf286304608bd144a53c0b695d2312694fce82320d23ef64f9d1a7e9c450"
-    sha256 cellar: :any,                 sonoma:        "167db8906d52d708d2443c7cddfadc10c4797cea6aa60b4635f990ab70a95553"
-    sha256 cellar: :any,                 ventura:       "01a84f04aaca1975267c6dc9b3df96bad426aa078d86e1310cf708ccd7593aa9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4eeb036b4592a30dd940adb7d0f074a239c514462fb0196a608d0335c8831ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d6c33b0b7fa5ca1c1639a74c8060f7a800b15240a8bdb52bde2d094bbfbfe9d"
+    sha256 cellar: :any,                 arm64_tahoe:   "2aa5827a91e34257b23736025c3c846f21d513c79dc76e18bba0da2097ef3a68"
+    sha256 cellar: :any,                 arm64_sequoia: "dee880baf97604e218f11c0e4f138bf357bec3f7d834e1c1851c51669dbc8039"
+    sha256 cellar: :any,                 arm64_sonoma:  "a84045ff0b91e8e7d61303e703bdc9e9e17b5db811a8cc2d1d61f94b32ba6169"
+    sha256 cellar: :any,                 sonoma:        "7caf878a831f28bf6439c8d8da31e4e91eae6e4412ae73eddc53073c4a209c78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8da3d6d56b808f761f6321929ca18db4c680d243807bef0c7df35081a50d4e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d4e5a61bdc9fe8f87c0916857225ed9b460fb9d50435ab64beac87a737b58de"
   end
 
   depends_on "pkgconf" => :build

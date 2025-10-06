@@ -1,11 +1,9 @@
 class Mill < Formula
   desc "Fast, scalable JVM build tool"
   homepage "https://mill-build.org/"
-  # TODO: Check if we can use `openjdk` 25+ when bumping the version.
-  url "https://search.maven.org/remotecontent?filepath=com/lihaoyi/mill-dist/0.12.11/mill-dist-0.12.11.jar"
+  url "https://search.maven.org/remotecontent?filepath=com/lihaoyi/mill-dist/1.0.6/mill-dist-1.0.6.exe"
   sha256 "567a44bee9006ac943f8cbec18c38637c544144726cdc699aa4f3584ed52ae93"
   license "MIT"
-  revision 1
 
   livecheck do
     url "https://search.maven.org/remotecontent?filepath=com/lihaoyi/mill-dist/maven-metadata.xml"
@@ -13,15 +11,15 @@ class Mill < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "56fc5b0defb92df981fa9e406356ed7138bb458cdfb00308c277f8d815c1219f"
+    sha256 cellar: :any_skip_relocation, all: "dae7e2a795434699b9f3a1f4349c83da49a34afbef678b79af64ca6e44d587e0"
   end
 
-  depends_on "openjdk@21"
+  depends_on "openjdk"
 
   def install
     libexec.install Dir["*"].shift => "mill"
     chmod 0555, libexec/"mill"
-    (bin/"mill").write_env_script libexec/"mill", Language::Java.overridable_java_home_env("21")
+    (bin/"mill").write_env_script libexec/"mill", Language::Java.overridable_java_home_env
   end
 
   test do

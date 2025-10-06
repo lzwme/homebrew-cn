@@ -1,17 +1,17 @@
 class Lmod < Formula
   desc "Lua-based environment modules system to modify PATH variable"
   homepage "https://lmod.readthedocs.io"
-  url "https://ghfast.top/https://github.com/TACC/Lmod/archive/refs/tags/8.7.66.tar.gz"
-  sha256 "b9103474c30c6057ed5ce84378c8c8705b6036f63589c4e6ad46132452551722"
+  url "https://ghfast.top/https://github.com/TACC/Lmod/archive/refs/tags/8.7.67.tar.gz"
+  sha256 "50c8d265e47eb6661ebe3af13df819b35db84cda3474ea0a7427c33b5767aaab"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bfdfc9ca4a1451573bfd403288674d9646d43163059cf40f643eddbf281dffc4"
-    sha256 cellar: :any,                 arm64_sequoia: "49b57d4154660aa91e886a98406307c2b44b710216a6e2834bb6395cf001d01e"
-    sha256 cellar: :any,                 arm64_sonoma:  "8a258029f2e351a4fe3f5649f8c9350d0e495a03f986bf24a220e1faac51a531"
-    sha256 cellar: :any,                 sonoma:        "d0397d4f8cac2d82bcf9e75cbf4589b60f4c9381dc7b00d084e1cae7001f176d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb3cf7824f719ecd6713b8f0ca9d4eff503136f0f5f4e91eb25898ba7e7af09b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "283335ec433c7b541d2cd53812cce434f1799eb6ce6fcf922b1a09aa032a5523"
+    sha256 cellar: :any,                 arm64_tahoe:   "99a63878030f350da1dce240354e5f6434ae6ff208d480e9efb6330c41633f6d"
+    sha256 cellar: :any,                 arm64_sequoia: "e0b403c9ce3441c7d737d20fe54a5d74835ba9065ea2d4e9ccbefd09eb564c05"
+    sha256 cellar: :any,                 arm64_sonoma:  "1ed1c2794b3916aa576a1fa15d4b6ea661f0bba367994e2c1c8713bcc05d86a3"
+    sha256 cellar: :any,                 sonoma:        "ac3dcf262c792fa6645af1bb951ab826eb1c7c43056f8f6be440616b4bd79f81"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f86448a5e3a0e9b1c825ab183c28e232c0426117aa26940a604648b438f7a679"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2bc380150249b951b801ed897cdc3900532ff922f43476682cd95fc99007cb3"
   end
 
   depends_on "luarocks" => :build

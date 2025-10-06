@@ -1,20 +1,18 @@
 class Gql < Formula
   desc "Git Query language is a SQL like language to perform queries on .git files"
   homepage "https://amrdeveloper.github.io/GQL/"
-  url "https://ghfast.top/https://github.com/AmrDeveloper/GQL/archive/refs/tags/0.40.0.tar.gz"
-  sha256 "e5ee71afc946922358cc73fcba95a06001864394b7c25341a7114b81fa2f36f7"
+  url "https://ghfast.top/https://github.com/AmrDeveloper/GQL/archive/refs/tags/0.41.0.tar.gz"
+  sha256 "087c97dc8c0b3e61f2576258bdf85e898f401ec37bbbeb1721c874c15f1c0fb5"
   license "MIT"
   head "https://github.com/AmrDeveloper/GQL.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02105fd62775c1a82f9ab521bd1d9edaf75d2d25a08ab6c5da4cd24f7f51ebbd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d067ebe79fd1387813fe23b7a4d5f4fc2145a1a41f662f641de5d15473b2a6eb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d7a765553fc6bfe16096f158b150ae2ddb1d708f22c5c5d3bd84fab41338d1d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "99918c99fbbef93e4f851c0f4ca18b959b5c7fa43e71e04672b52d33b39bf398"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2050538ffebfd69593746c6b4096d32afbacc0b5d7d5ca613119efa49f9c2708"
-    sha256 cellar: :any_skip_relocation, ventura:       "2f846e30b3041b728f78e2c99f51b1734c418c99f0477b6bab21e888d2adfd13"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e35b813cc7235b1189f17de6cc280ad7da9e7b1c6ba8aa2dee609519d362c5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ac640543049c3d594b5724e0d8bbbfde52960790187a5952f04511e27f4df64"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a5bf459e60c894c8d6b9af45d4b83149386785419aa654ae8147cb05211a093"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4920b576138bc6699efe4f4eb5645ae76c62185f7e7c9c4b85fcb91855864f3b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f447a58b681ddab7af89b257fbfeecb69baf831c4a67e12aa31d39f047d4001"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b1664272474c893ddb566372c950e91f0cd61c18c8f3889f2b5f9770dcd21b77"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c04427816e16bf4f92bc673f54a454600f1bc58e12aa4f1e8e188949e414dc2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c019988c654a71b759277bfc00e215c1b5a8d0e18289605892c767e9abfcac9"
   end
 
   depends_on "cmake" => :build

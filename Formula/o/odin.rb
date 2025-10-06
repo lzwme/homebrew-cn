@@ -2,23 +2,19 @@ class Odin < Formula
   desc "Programming language with focus on simplicity, performance and modern systems"
   homepage "https://odin-lang.org/"
   url "https://github.com/odin-lang/Odin.git",
-      tag:      "dev-2025-09",
-      revision: "42c2cb89b580acc228a5e54988b40cf56f99c95f"
-  version "2025-09"
+      tag:      "dev-2025-10",
+      revision: "3ad7240d3d70cdcfb05557510919d8d566aa8c59"
+  version "2025-10"
   license "BSD-3-Clause"
   head "https://github.com/odin-lang/Odin.git", branch: "master"
 
-  no_autobump! because: :incompatible_version_format
-
   bottle do
-    sha256                               arm64_tahoe:   "bae00cd3bae1b9454d812e222d881f50bd8794ea08da3c63d129e1f9de16c39a"
-    sha256                               arm64_sequoia: "a5e498ca1c762ba9d686e021a65ccb1c4c7584358189d27ba48f6604e9087b19"
-    sha256                               arm64_sonoma:  "796b8b218680d84461462926b6b26b3a00f5393fb3b0d0ff633667d436f4ba22"
-    sha256                               arm64_ventura: "59576eb80dc97be7ce3c8528e8d789c676957189e20c164f2c635021ae8f5977"
-    sha256 cellar: :any,                 sonoma:        "79e078fb35c88c9f2ab4bd5d49e8d2dcad5e141c2ecbcb12fcff24eb16db2dd6"
-    sha256 cellar: :any,                 ventura:       "a6ecb98d0909f15d9000e4c932e1a5ce9549f03046025bb1bd29ba76eb42b926"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f33f23f9b19d1b0523a2b903c4e161f572e8d65852206341692f202276e0d983"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0db190cc3a1efccc1e55cae3925b5185f49429724a2632d912e6f4453163cb2d"
+    sha256                               arm64_tahoe:   "bdbf56d6e83af1fe7ec3a3781150368ef833070d7695640168721457cd29c23f"
+    sha256                               arm64_sequoia: "ec03b290dda131f186fba8999d7c8e2c20c385456483ec022e9f356971bfd6d6"
+    sha256                               arm64_sonoma:  "57c6c745e01b6bb261bb8b37204c46d8efcbbaf916b1a7678bfbe99520a04ef8"
+    sha256 cellar: :any,                 sonoma:        "8609471bf83846c64c17e28e9c29d615e2ba6cf0f0eec285c151fca32dcc9f6f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bdd26d56b9539409e981e25945ca30dea31e747ff3bc1b0cb54536a336c79516"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9ff427d14447fa15a81beddb308dbf6efad644208c3ec7df86dbe63817edad9"
   end
 
   depends_on "glfw"

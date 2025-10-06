@@ -10,6 +10,7 @@ class SymfonyCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "60cf00e9f23e0f44edbe30a563846d6b603e4b4a82af4ef905c3a463ddd8d46f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c61a25fdf65182a60801ee2c7fc104f1a923056009e6c21f24988ca1c716f939"
     sha256 cellar: :any_skip_relocation, sonoma:        "558004031692844577a3debc3a86d7ae49d108207a416825e39df7373f388438"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "830600159c55497adf0a72437b8cad7db021b484e7650e160baa54a223534678"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf1f6c321b821551b6f6c053742a2a690d88026da44953afbc92786711895832"
   end
 
@@ -17,6 +18,8 @@ class SymfonyCli < Formula
   depends_on "composer" => :test
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.channel=stable", output: bin/"symfony")
   end
 

@@ -218,6 +218,7 @@ Homebrew-homebrew-core/Formula/a/arabica.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aravis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arcade-learning-environment.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/archey4.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/archgw.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/archi-steam-farm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/archivemount.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/archiver.rb, Homebrew/homebrew-core, 1
@@ -4752,6 +4753,7 @@ Homebrew-homebrew-core/Formula/m/mysql@8.0.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql@8.4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysqltuner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/n.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/n8n-mcp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/naabu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nacl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/naga-cli.rb, Homebrew/homebrew-core, 0
@@ -5620,7 +5622,7 @@ Homebrew-homebrew-core/Formula/p/prek.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/premake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/presenterm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prestd.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/prestodb.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/prestodb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prettier.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/prettierd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/prettyping.rb, Homebrew/homebrew-core, 1
@@ -7510,6 +7512,7 @@ Homebrew-homebrew-core/Formula/w/wasm3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasmedge.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasmer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasmtime.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/wassette.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/watch-sim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/watch.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/watcher.rb, Homebrew/homebrew-core, 1
@@ -7772,6 +7775,7 @@ Homebrew-homebrew-core/Formula/y/yaml2json.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yamlfix.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yamlfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yamllint.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/y/yamlresume.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yank.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yapf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yara-x.rb, Homebrew/homebrew-core, 1
@@ -12124,6 +12128,7 @@ Homebrew-homebrew-cask/Casks/g/gitx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/glance-chamburr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/glance.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/glaze-app.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/glide-browser.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/glimmerblocker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gltfquicklook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gluemotion.rb, Homebrew/homebrew-cask, 0
@@ -15442,7 +15447,7 @@ Homebrew-homebrew-cask/Casks/x/xscope.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xscreensaver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xsplit-vcam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xstation5.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/x/xtool-creative-space.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/x/xtool-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yaak.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yaak@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yacreader.rb, Homebrew/homebrew-cask, 1

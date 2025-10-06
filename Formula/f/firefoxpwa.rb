@@ -1,18 +1,18 @@
 class Firefoxpwa < Formula
   desc "Tool to install, manage and use Progressive Web Apps in Mozilla Firefox"
   homepage "https://pwasforfirefox.filips.si/"
-  url "https://ghfast.top/https://github.com/filips123/PWAsForFirefox/archive/refs/tags/v2.16.0.tar.gz"
-  sha256 "79174e0e19cac2b1a2b9cc226d9f7ad8a9a1bef079b79a3d9bf2bd29cb1ca87e"
+  url "https://ghfast.top/https://github.com/filips123/PWAsForFirefox/archive/refs/tags/v2.17.1.tar.gz"
+  sha256 "66d16fe3ba99790ff8a1e4e5f7c2a4f2b84055750b5caccff6cb9d6bec1d72f4"
   license "MPL-2.0"
   head "https://github.com/filips123/PWAsForFirefox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b261a6877543112b01257e11e9e7410a41b790c85ff092bcf84b57869e67ad9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae6a58acc9ee1c9b1245ed9e743e850da78da1d24f44aeb3e0793f840f7279af"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dac0d5ea3387e4e94b9956164a9ab153830a171ee390aca086840436cced4f9b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8c5734606bc7249305739acc8df35243c04ab2895ca0e72fcd291dca0f3a959a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ae7fac972298740f999c59c83bc8a1734cc22de20812a06eab7f18b48263443"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a158de443b148bd43cf8c2cc85c37e12dc7ff8f81d4317abe4182d9de62ca7ab"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a22d3b5644626743cf7c41b444e4f8c0964efdd3ad50aa2f09fc57800ee2da9a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05f6c7eeec0db36734c83ac77f62db204ae1821ae5d44ca4f5c7ea13e48ec862"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ca377b67ea5219e69e6e105f41ba1d479915c30daa00aefbdeaf0cbee0a3bd6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cdbb1d642e1b992382112f5e3559614e1f451fcda2b832bc2eed377384e3dcd7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5384bb06d6ef61a8cfff18ddfab6c19a22a684cbf8eae0d6872189eea445ef4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdc2ffc693a08aaa32624a8975d87624203f05da61d1318645fb0ef2cd41feed"
   end
 
   depends_on "pkgconf" => :build

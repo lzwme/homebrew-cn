@@ -1,6 +1,6 @@
 cask "macsyzones" do
-  version "1.8.1"
-  sha256 "a2bddc4b0d4b82118b1451288c89f5abb26db5eef9f830eee9866a614c68e48c"
+  version "1.9.2"
+  sha256 "6e8bc4a6a7e91db88ac6a26296cacaf00d9c69440a75f2c754a3eba16616dc3e"
 
   url "https://ghfast.top/https://github.com/rohanrhu/MacsyZones/releases/download/v#{version}/MacsyZones.zip",
       verified: "github.com/rohanrhu/MacsyZones/"

@@ -2,19 +2,14 @@ class Rocq < Formula
   desc "Proof assistant for higher-order logic"
   homepage "https://rocq-prover.org/"
   license "LGPL-2.1-only"
-  revision 1
 
   stable do
-    url "https://ghfast.top/https://github.com/rocq-prover/rocq/releases/download/V9.0.0/rocq-9.0.0.tar.gz"
-    sha256 "82f86646fd3d047f760837648195c73374beee667b1c9592d31c5426e3b43a51"
+    url "https://ghfast.top/https://github.com/rocq-prover/rocq/releases/download/V9.1.0/rocq-9.1.0.tar.gz"
+    sha256 "b236dc44f92e1eeca6877c7ee188a90c2303497fe7beb99df711ed5a7ce0d824"
 
     resource "stdlib" do
       url "https://ghfast.top/https://github.com/rocq-prover/stdlib/releases/download/V9.0.0/stdlib-9.0.0.tar.gz"
       sha256 "1ab6adc42dfc651ddc909604bae1a54ff5623cda837f93677a8b12aab9eec711"
-
-      livecheck do
-        formula :parent
-      end
     end
   end
 
@@ -24,14 +19,12 @@ class Rocq < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d1871041b4d1f98648b9cdbea19a5aeab152f0163d53845e3c74e1406a7d48e9"
-    sha256 arm64_sequoia: "1c8bf9b1e08912ccf86eceac13285b033a0791d921b5016d5dc9437dc8792264"
-    sha256 arm64_sonoma:  "dfd1896ea0ad7e59e8b0aba7b08f9cf1ec52dd64c096421d300be85236d53552"
-    sha256 arm64_ventura: "1d7f694924c703f08f8116ee66d2cbb21ea27eecf5fe36a0235d075738c3ea36"
-    sha256 sonoma:        "2303c145684cd605824862a5b4fd24bf68ab72348afbd88090c72cda0f1b518a"
-    sha256 ventura:       "b83ce741220395e1d45e34f1f3d7a92c16dfc5b825c6e99724758b53992b881b"
-    sha256 arm64_linux:   "b71ccca73282fdce2198310c9db26efabb6960115e2a76c2b5f609522eefbb40"
-    sha256 x86_64_linux:  "9f7bccdc7ebb68bbf99c31bbe796e5d12cc2e6a32b3859d83510bda63cf9cb9b"
+    sha256 arm64_tahoe:   "df231dd84d387ce8914fb260fd24685af7d6da6bb998c9d52efbf13b9718d9fa"
+    sha256 arm64_sequoia: "31e208459941d45b5c5e41278f79d6c40cd1abcb0b873c3ffc0df54f6cac6501"
+    sha256 arm64_sonoma:  "3aa44bda57467bfb3c27d928ef415e829f5c832ed59dbd4352b7e5ade3614c7c"
+    sha256 sonoma:        "5dc6e0ae4cc0764971fce661a642e28120742518254c3ca69c01cafd8e4619ea"
+    sha256 arm64_linux:   "b8ba5bae249958b1537e0edc72b0a29f78d0e1a840dadddd3f196ce19546abe4"
+    sha256 x86_64_linux:  "8069baf9a8804ce6945b8a808eaa88fa25e1b22b9334053e5570a3b3d7e14b78"
   end
 
   head do
@@ -60,7 +53,6 @@ class Rocq < Formula
     ENV.prepend_path "OCAMLPATH", Formula["ocaml-findlib"].opt_lib/"ocaml"
 
     packages = %w[rocq-runtime coq-core rocq-core coqide-server]
-    packages << "coq" if build.stable? # TODO: Remove on next release
 
     system "./configure", "-prefix", prefix,
                           "-mandir", man,

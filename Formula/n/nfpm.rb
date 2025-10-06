@@ -1,19 +1,17 @@
 class Nfpm < Formula
   desc "Simple deb and rpm packager"
   homepage "https://nfpm.goreleaser.com/"
-  url "https://ghfast.top/https://github.com/goreleaser/nfpm/archive/refs/tags/v2.43.1.tar.gz"
-  sha256 "12cc8d0d28eb338030ec4b1eff0afd87c35f6a43e9425a2480ba10690d8f02be"
+  url "https://ghfast.top/https://github.com/goreleaser/nfpm/archive/refs/tags/v2.43.2.tar.gz"
+  sha256 "906c313dc719c6a63c78d47dd9bdc11f8e5440c550d34013ca612d570b3fcaa0"
   license "MIT"
   head "https://github.com/goreleaser/nfpm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "579d609f05b4de97fcfcb7d91fa17bc82e99bd80460c26d834c5ff5051645374"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22ffce0a8946f990dda86836aa830db88eb0f5b60735573cc6fbc627a6fcbf0a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22ffce0a8946f990dda86836aa830db88eb0f5b60735573cc6fbc627a6fcbf0a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "22ffce0a8946f990dda86836aa830db88eb0f5b60735573cc6fbc627a6fcbf0a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a860ffe8973b003ba97af58a57ae6b4e35bccdc81561c9b5ef1ac8a1c16fe89"
-    sha256 cellar: :any_skip_relocation, ventura:       "4a860ffe8973b003ba97af58a57ae6b4e35bccdc81561c9b5ef1ac8a1c16fe89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9864efe69056f9cf5d64fc8cbc1df74de654d472bd4bf257da4add051af3553"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "731050be71c1ac2be8804982b62fc7ac58b6c55603448ab193c63d181c681f1b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "731050be71c1ac2be8804982b62fc7ac58b6c55603448ab193c63d181c681f1b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "731050be71c1ac2be8804982b62fc7ac58b6c55603448ab193c63d181c681f1b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7038ba87e5260695af43997fddb99981f98f92463fd92761d413c2b6f520a932"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1476ccb0db77febfc50f7a279f14823b7ec762e82c4aa52be1e9c1ed0a0f1013"
   end
 
   depends_on "go" => :build

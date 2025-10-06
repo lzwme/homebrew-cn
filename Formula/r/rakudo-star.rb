@@ -1,8 +1,9 @@
 class RakudoStar < Formula
   desc "Rakudo compiler and commonly used packages"
   homepage "https://rakudo.org/"
-  url "https://ghfast.top/https://github.com/rakudo/star/releases/download/2025.05/rakudo-star-2025.05.tar.gz"
-  sha256 "b5f6b5135599db0a18baf1ec660e78dddc8d8ca46d80576407bd5dcf70a4d574"
+  url "https://ghfast.top/https://github.com/rakudo/star/releases/download/2025.08.1/rakudo-star-2025.08.tar.gz"
+  version "2025.08.1"
+  sha256 "97abb0b5e748e6bdb69ef741b4bc11122b974588a376487813b706adc3d413b8"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,14 +12,12 @@ class RakudoStar < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "fe7095fb78f4608486e3451253abbf1dfb2def4665d1248d45b74114489b3742"
-    sha256 arm64_sequoia: "7a895bdf00ddf27ce11aa6efb3ab0bb6d75fca0a5434741504f663f647b1a906"
-    sha256 arm64_sonoma:  "45729625f5031385c361cf6c4f90fc9666605428da1b04e1268bdaff3af20143"
-    sha256 arm64_ventura: "55e28472b5488f597e09a23ea81f990d56f4e796879b261d4460be8374158907"
-    sha256 sonoma:        "2cdeb1c478e4da7097659e9c5ddf405e0499638343b6d2392d798404c6b7f0fb"
-    sha256 ventura:       "d48e786a4ee839ec4b3ac52169816f41bccb525ab0a70a9ea9ef3fa755c647ba"
-    sha256 arm64_linux:   "dd91e8d891e1b584f9ee9954a0d7d8956d21da8052144a13c876c095b63ddb91"
-    sha256 x86_64_linux:  "d29b7a6848a5fb3295166adc2b1fdbbc77c85bc5480048f644c79241431b51d9"
+    sha256 arm64_tahoe:   "5c45c6ddcb1fe6781647e0d85648d4f7476288d39dd4b292f8cd6349473e6ef6"
+    sha256 arm64_sequoia: "b36a1424d136c6f359e752e09b56ff142ce55eba295ed73775cf03a9596fbe77"
+    sha256 arm64_sonoma:  "9a78f8b3f9612c5414f8e2805389a963a4612b06d007761539e32da25af3702e"
+    sha256 sonoma:        "fcb8209a4f01321773ac9a967b325f88d601e1864e7e8f16a3452a82ea722daf"
+    sha256 arm64_linux:   "83b99fcb4f693cefe74785f0521dbb73e58820ff610590b3c252e8fdaff7e526"
+    sha256 x86_64_linux:  "9aad1e735c8c084daa3a7ed7d58bf23f734f4b62aa3899c1d88d51aaf0d73e43"
   end
 
   depends_on "bash" => :build
@@ -42,14 +41,6 @@ class RakudoStar < Formula
   conflicts_with "moarvm", "nqp", because: "rakudo-star currently ships with moarvm and nqp included"
   conflicts_with "parrot"
   conflicts_with "rakudo"
-
-  # Apply open Config::Parser::json PR to fix unittests run during install
-  # Ref: https://github.com/arjancwidlak/p6-Config-Parser-json/pull/1
-  patch do
-    url "https://github.com/arjancwidlak/p6-Config-Parser-json/commit/ca1a355c95178034b08ff9ebd1516a2e9d5bc067.patch?full_index=1"
-    sha256 "d13230dc7d8ec0b72c21bd17e99a62d959fb3559d483eb43ce6be7ded8a0492a"
-    directory "src/rakudo-star-modules/Config-Parser-json"
-  end
 
   # Allow adding arguments via inreplace to unbundle libraries in MoarVM
   patch :DATA
@@ -90,11 +81,12 @@ class RakudoStar < Formula
     # openssl module's brew --prefix openssl probe fails so set value here
     ENV["OPENSSL_PREFIX"] = Formula["openssl@3"].opt_prefix
 
+    rm buildpath.glob("src/rakudo-star-modules/**/*.o")
     system "bin/rstar", "install", "-p", prefix.to_s
 
     #  Installed scripts are now in share/perl/{site|vendor}/bin, so we need to symlink it too.
-    bin.install_symlink (share/"perl6/vendor/bin").children
-    bin.install_symlink (share/"perl6/site/bin").children
+    bin.install_symlink (share/"perl6/vendor/bin").children.select(&:executable?)
+    bin.install_symlink (share/"perl6/site/bin").children.select(&:executable?)
   end
 
   def post_install
@@ -121,15 +113,6 @@ class RakudoStar < Formula
     PERL
     assert_equal "test> brew\n[brew]", pipe_output("#{bin}/raku readline.raku", "brew\n", 0)
 
-    # Test LibXML module
-    (testpath/"libxml.raku").write <<~PERL
-      use LibXML::Document;
-      my LibXML::Document $doc .=  parse: :string('<Hello/>');
-      $doc.root.nodeValue = 'World!';
-      print $doc<Hello>;
-    PERL
-    assert_equal "<Hello>World!</Hello>", shell_output("#{bin}/raku libxml.raku")
-
     # Test DBIish module
     (testpath/"sqlite.raku").write <<~PERL
       use DBIish;
@@ -141,19 +124,6 @@ class RakudoStar < Formula
       $dbh.dispose;
     PERL
     assert_equal "([Sue] [Bob])\n", shell_output("#{bin}/raku sqlite.raku")
-
-    # Test Config::Parser::json module
-    (testpath/"test.json").write <<~JSON
-      { "foo": { "bar": [0, 1] } }
-    JSON
-    (testpath/"parser.raku").write <<~PERL
-      use Config;
-      use Config::Parser::json;
-      my $config = Config.new();
-      $config.=read("test.json");
-      print $config.get('foo.bar');
-    PERL
-    assert_equal "0 1", shell_output("#{bin}/raku parser.raku")
   end
 end
 
