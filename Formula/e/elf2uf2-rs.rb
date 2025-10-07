@@ -1,22 +1,17 @@
 class Elf2uf2Rs < Formula
   desc "Convert ELF files to UF2 for USB Flashing Bootloaders"
   homepage "https://github.com/JoNil/elf2uf2-rs"
-  url "https://ghfast.top/https://github.com/JoNil/elf2uf2-rs/archive/refs/tags/2.1.1.tar.gz"
-  sha256 "c6845f696112193bbe6517ab0c9b9fc85dff1083911557212412e07c506ccd7c"
+  url "https://ghfast.top/https://github.com/JoNil/elf2uf2-rs/archive/refs/tags/2.2.0.tar.gz"
+  sha256 "7fd821623343bf6af63543a008caf49c1b7ad9f7e6df24403ae9c7a6bf325b54"
   license "0BSD"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7bfbfb63a90f1f2f226d6eea8d4a0fb946bac13b9d09c30add16176cfc12745"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e82da1e4bda8f4e9b96a224bd39f0fa553df1f2b2f5685e3d26ea8d36db64ae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad84d3c1063a64c46201c1f3848ae783cf238e63dd215470e908642153d4eadd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9d8ad586061ca0882a16789b7242c86801e76389e525657ba1864ea33084dae9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b49813f898c7f808ceb5ec486e6336e5c05e78ac6eb28835eb19b25c2a12e56e"
-    sha256 cellar: :any_skip_relocation, ventura:       "459684a3cb259a2aba995e088130a2f9724c1589a7cbd11e9e4380ba1238024b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb8bd88d07dec80d7314766dd10b94d6ea0d9e3f1fd60129528549745da19c4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41046fe0f99aac047708fdb2204bb12220625173156e477322e7bd13f09c27e8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b6d36f51c622f0baf332930c8ae232cdf04395cfdae78fae45b8560ec51ab54"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b7ddb264f138b166b3f291dd3f98cb3beba2bff0a7823d36f45c2f4e98b80d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0a747e75dfe8250d1722d3781f57bdde73d5b7855150e3d4b344d94099d14a0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b88fb516410369897f97f16030f48eb276955bb32c9dbf446d532eca2add68a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e95dda0368015306a494e58f3bbd22717e23b592391b8b0dd0fcd30a0cd617c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f360ea5ae0f17d0a57012f80aa69c18a887d964211475e33414e32442d17616"
   end
 
   depends_on "rust" => :build
@@ -24,12 +19,6 @@ class Elf2uf2Rs < Formula
   on_linux do
     depends_on "pkgconf" => :build
     depends_on "systemd" # for libudev
-  end
-
-  # Fix compatibility issues with latest Rust: https://github.com/JoNil/elf2uf2-rs/issues/40, https://github.com/JoNil/elf2uf2-rs/pull/41
-  patch do
-    url "https://github.com/JoNil/elf2uf2-rs/commit/c1639b9e8bcaaaab653f9fa0e358fed0e8a7ce76.patch?full_index=1"
-    sha256 "3bbcfa39c01bd705f7b021c1e5117bd9a91fa51c4c13c998a43ba17adf9616a7"
   end
 
   def install

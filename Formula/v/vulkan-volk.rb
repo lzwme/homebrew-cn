@@ -1,8 +1,8 @@
 class VulkanVolk < Formula
   desc "Meta loader for Vulkan API"
   homepage "https://github.com/zeux/volk"
-  url "https://ghfast.top/https://github.com/zeux/volk/archive/refs/tags/vulkan-sdk-1.4.321.0.tar.gz"
-  sha256 "021ed905eea6f3e2cc8a60a21459ee7b43f98f32052ca30f27a3be390b7a4862"
+  url "https://ghfast.top/https://github.com/zeux/volk/archive/refs/tags/vulkan-sdk-1.4.328.0.tar.gz"
+  sha256 "048161dd5c099cc52e7bd48b9131a05ff96e379e26236132a7db66424e98cafa"
   license "MIT"
   head "https://github.com/zeux/volk.git", branch: "master"
 
@@ -12,14 +12,12 @@ class VulkanVolk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d36ab92be5e1264512fc1167e8a0783bfc4d94159030ba7c11d76cafc26f3489"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99e4c0586eaf099664769e549303fde82ba3cd50a1e8e163bfc18d0c525740db"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae9f2a9bdc89a383cca4d614129fd12c67156c0e0e378081589343ed79f56f7c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "09c600ff16bcf8ae87fcdb602e357a9325b723f01ae30bdfc22c7f6a786dbe8d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "02cff54f58df02f67611045a0920bb08db0cc867980a9911e5b74c0bad10ccca"
-    sha256 cellar: :any_skip_relocation, ventura:       "60eb51a1674bf27164fb44dd7bfeb65f64f1f66030652a068addc823f26a165c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "12867ef8aeb8fa56c168145d06c8eae971c6387b7b6669b680fb1391f06205c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ea8baa917dd5dac29ee7937d2776264f7099aefb2768a02afb33e09efc7d4d1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e3f6d2a4c0fb6f244e03f04f5f57141568021720e6c9ad8b1d340c1e085764c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5174abf0fee631e4cbc40c6c6347bce8ec2f1eb6fbbb632a270d8e9250039fe6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "482dc043c929e5894ecba5b79680efad993a36b2ff034f010b7b1610b4c1af3a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "479331d2eb51487b5e814bbf1904a9a4f3d3a520477b1b9f0bab1674c552ece4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b296af467243737215a4d540d1426cc283d0e21917b7043977a295f18478b97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fa7fd8a7d3089fa4fa00fb2055e1a92abdbc663a307b1ed8e097fdca5405db9"
   end
 
   depends_on "cmake" => :build

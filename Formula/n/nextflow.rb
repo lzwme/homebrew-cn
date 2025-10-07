@@ -2,10 +2,9 @@ class Nextflow < Formula
   desc "Reproducible scientific workflows"
   homepage "https://nextflow.io"
   # TODO: Check if we can use `openjdk` 25+ when bumping the version.
-  url "https://ghfast.top/https://github.com/nextflow-io/nextflow/archive/refs/tags/v25.04.7.tar.gz"
-  sha256 "561d55a29bbebd5c9135f82750331262bf034e0bbf56d014fa5115427fa5ed30"
+  url "https://ghfast.top/https://github.com/nextflow-io/nextflow/archive/refs/tags/v25.04.8.tar.gz"
+  sha256 "56883ccbfb0d8ad786c2c4a38b379aa3db2963248ccf6056a17ea9fcd61cc407"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,12 +12,12 @@ class Nextflow < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00375687acd20434d16dd7508cb244d94c93e993ca9244e1381a60462404aaa8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d00335e380850ab39fcc468403088045426fd71219097da3558ea21a24c2eee2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee07bbf3ac253b2c439ebdefa18aeaf2d72fb1897ccf0b5d68da6ec10abcd313"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cebe98da007e296d029eec5c1faef120900d065d04f87141e653a7f6147f009f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9ed037c229bf69fd021e5a45582f3e4e8284f27ff6630aa959e4f7f508d60bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c99bdad56d1826d3da3f781f733914cdd995dee8d54da24e2e168f498275b468"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "11b7da95ac1c29791aefc6bfcf78080e2ad22e163acae7b47aa801b370a627bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c579fc43e3228347df9fc19fdc0d14f2032d9aaa4b2362b0875d123e7357508"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3040aec77bc02247e282c6334825e25a8131d6b6320dcef2b67c94b694b5d906"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8713354c645af039d11e468bdad6043f7fff048e73d0ba839fdf052e5a169a2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "960825f509660273808f677856fc59d862851ac7e3d40c3fc349935a2956296e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ad10034c0721e0ea2bee3b62ca5f69a0d93e9d43f2ed586a39b413e8f23458e"
   end
 
   depends_on "gradle" => :build

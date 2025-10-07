@@ -5805,7 +5805,6 @@ Homebrew-homebrew-core/Formula/p/pytr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyupgrade.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyvim.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pywhat.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/pyyaml.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qalculate-gtk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qalculate-qt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qbe.rb, Homebrew/homebrew-core, 0
@@ -6139,11 +6138,11 @@ Homebrew-homebrew-core/Formula/r/ruby-build.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby-install.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby-lsp.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/ruby.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/ruby.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby@3.0.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/ruby@3.1.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/r/ruby@3.2.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/r/ruby@3.3.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/ruby@3.1.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/ruby@3.2.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/ruby@3.3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rubyfmt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/ruff-lsp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/ruff.rb, Homebrew/homebrew-core, 1
@@ -7822,6 +7821,7 @@ Homebrew-homebrew-core/Formula/y/ytt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yubico-piv-tool.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yubikey-agent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yuicompressor.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/y/yuque-dl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yutu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yydecode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yyjson.rb, Homebrew/homebrew-core, 1

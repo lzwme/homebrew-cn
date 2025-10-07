@@ -17,6 +17,7 @@ class AwsAuth < Formula
   end
 
   deprecate! date: "2025-03-14", because: :does_not_build # and :repo_removed
+  disable! date: "2025-10-06", because: :repo_removed
 
   depends_on "node"
 

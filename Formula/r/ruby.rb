@@ -2,6 +2,7 @@ class Ruby < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
   license "Ruby"
+  revision 1
   head "https://github.com/ruby/ruby.git", branch: "master"
 
   stable do
@@ -22,6 +23,12 @@ class Ruby < Formula
         regex(/href=.*?rubygems[._-]v?(\d+(?:\.\d+)+)\.t/i)
       end
     end
+
+    # Update the bundled openssl gem for compatibility with OpenSSL 3.6+
+    resource "openssl" do
+      url "https://ghfast.top/https://github.com/ruby/openssl/archive/refs/tags/v3.3.1.tar.gz"
+      sha256 "ca9b8f5940153e67b0d5e7e075ecd64b9d28b9f9b2f2c9f0748c1538734dfe10"
+    end
   end
 
   livecheck do
@@ -30,12 +37,12 @@ class Ruby < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "dfbb944f16f62a2ffe4d75e37d0e52d3ff895d5d65d58056a796c25cad6d85ec"
-    sha256 arm64_sequoia: "8db26d72de0d97182fa05e1cc48f2e86ab03c040831f2087705fc94eb0d067a0"
-    sha256 arm64_sonoma:  "e0690fb2ef65bc660808e8caf2cb73215c526fc9d0783256240d5c2425feb5a7"
-    sha256 sonoma:        "3cb2e3f7f8a20f0ba7cff089b9b7c1755c656fc85f99fe8073fdd09d77b616f7"
-    sha256 arm64_linux:   "0eb67642f5027acb33f304ab0ce165700216799dacba2cbb3ec53c71826cb329"
-    sha256 x86_64_linux:  "3dd735f812a07714372bb07f13e4d3eb167bb9bcaf3a778124dd4dc508066cbf"
+    sha256 arm64_tahoe:   "b23fa9e8a3e834fd1311063a4b8c264382132d9e549b77915bfc762955544ab9"
+    sha256 arm64_sequoia: "edb4b658978898ceaf658590c52e0ab6824eed65e0cc021d7c52a69bc3a3b454"
+    sha256 arm64_sonoma:  "05cfda9be6ae9dc8eff1e06ebfaf167aaf57c86579ec3e4349b26510718b43e7"
+    sha256 sonoma:        "5dd22c214b23fffe46e21e20a9bbfcf20dacb63ebf25f744ae5bdeddfef559ff"
+    sha256 arm64_linux:   "8cc1c5142162b37f64bd5d9dc33ec8247484b81ceac4b50f5b9f76530abe2ca0"
+    sha256 x86_64_linux:  "1001bf670e262052ce42d4d312afdaf439cbe58da9abf716897fb6ddc6aa24f0"
   end
 
   keg_only :provided_by_macos
@@ -73,6 +80,17 @@ class Ruby < Formula
   end
 
   def install
+    if build.stable?
+      openssl_gem_version = File.read("ext/openssl/openssl.gemspec")[/spec\.version\s*=\s*"(\d+(?:\.\d+)+)/, 1]
+      odie "Remove openssl resource!" if Version.new(openssl_gem_version) >= "3.3.1"
+      rm_r(%w[ext/openssl test/openssl])
+      resource("openssl").stage do
+        (buildpath/"ext").install "ext/openssl"
+        (buildpath/"ext/openssl").install "lib", "History.md", "openssl.gemspec"
+        (buildpath/"test").install "test/openssl"
+      end
+    end
+
     # otherwise `gem` command breaks
     ENV.delete("SDKROOT")
 

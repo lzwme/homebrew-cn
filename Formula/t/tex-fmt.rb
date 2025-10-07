@@ -1,20 +1,18 @@
 class TexFmt < Formula
   desc "Extremely fast LaTeX formatter written in Rust"
   homepage "https://wgunderwood.github.io/tex-fmt/"
-  url "https://ghfast.top/https://github.com/WGUNDERWOOD/tex-fmt/archive/refs/tags/v0.5.5.tar.gz"
-  sha256 "383c1620bf789945b04359127adb222118926eea7576910eb6779fb0dcdf9cdc"
+  url "https://ghfast.top/https://github.com/WGUNDERWOOD/tex-fmt/archive/refs/tags/v0.5.6.tar.gz"
+  sha256 "84422be49ede7bfaa42949d192a9d7dfb2317c9e68edf3cf6abc346c8a19f036"
   license "MIT"
   head "https://github.com/WGUNDERWOOD/tex-fmt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f4f5ce98ce153f7f7da164ee5966dac64a12fc817d7a0220916f05940fcaaeb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45757bf083d51e7d16f599afaec870417abe6e8691b5b408d8f0c0ace3425260"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "115ded0add4c2317395e13907e2f205dce9a53c154874a51b453338acad73410"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d5b5bf07197ab5a05da982261820ec10905dd27b760f3f0c0715d2cba4f7ed5c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "29c1b48634e64dcf41253f21e330e529db248c150e79f9be91bf5f897c887265"
-    sha256 cellar: :any_skip_relocation, ventura:       "10dc3e6347611707c23641d9306fc3ea515dcf54b2ab5f982c578f86a25e72ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3973667d4882d89574a002c7cb737ec934b1a502296466a64fff42826b143c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72f0e6eb4ec9c2ae4018168ff6f0388ae97805287e217106c14db8ff5767332b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "308e7c17a6e05131ff3e483eee3845fa7287c5b41c20b45d2832b7ee75763ed2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "529746e62639558106ed94dfdeceed69b8c021629fb0b3581aab111831373981"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "890703e95c42436f8f80d74d2819a726238eaedb25d096629e8e0d9af216b6f2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "93713998c6d2477d3981309c914b0cd7f54fd3eb7a5e2c7c3eb05c2d2c5eda83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3675c374858ef61f677ede0867d97efd2c06a7127ad8136d2c7a0fd5f5c83914"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6800478c7df7b44b8437fdcc3c87133dd812445db40c7f4c98c2af4ff151afb3"
   end
 
   depends_on "rust" => :build

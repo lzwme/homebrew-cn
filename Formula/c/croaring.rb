@@ -1,18 +1,18 @@
 class Croaring < Formula
   desc "Roaring bitmaps in C (and C++)"
   homepage "https://roaringbitmap.org"
-  url "https://ghfast.top/https://github.com/RoaringBitmap/CRoaring/archive/refs/tags/v4.4.1.tar.gz"
-  sha256 "640d8e2107a4143000b39bd011d026e81d80e8409abe65ed0684837776f60969"
+  url "https://ghfast.top/https://github.com/RoaringBitmap/CRoaring/archive/refs/tags/v4.4.2.tar.gz"
+  sha256 "11cc5d37b2d719e02936c71db83d3a5d1f3d27c59005348f4ee6417a63617b77"
   license "Apache-2.0"
   head "https://github.com/RoaringBitmap/CRoaring.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c68545b1e2500dac01cd2779c970e8b8f9a2243b44f12234b2036553c5f27035"
-    sha256 cellar: :any,                 arm64_sequoia: "e049bf4a718f9ec125635ec765bb04115a85dfd3b0acf8f11efc61d87d0f8069"
-    sha256 cellar: :any,                 arm64_sonoma:  "011856b292b0a7cd301f3b931cab058020e4fb7440670707f6ce53a40dd6328b"
-    sha256 cellar: :any,                 sonoma:        "9cc79eb2f04da6e884e017ab4b583ffd687a2a25b97e6560411612c97545cf73"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "985bd886e3a7da4461f731c8ee5e7b226169fd1baa3a1fb62f4e7401d74a5e6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ffe65fa6d1a0308224e8416bfb80d2a8877f80776d1cac3f077843fe420b326"
+    sha256 cellar: :any,                 arm64_tahoe:   "bdd7b03a75bb611081f0dbf5f2e76c6d363273f6362d241dddaac0cb9281c8fe"
+    sha256 cellar: :any,                 arm64_sequoia: "c9318da7633a08b64712d5944091440bcb2dc2b41220696e851044acf56f5648"
+    sha256 cellar: :any,                 arm64_sonoma:  "3c7f1be6487e91eb0128295a3b8058fd493b2853355de73cf6b0bb0c593f535d"
+    sha256 cellar: :any,                 sonoma:        "ee21ef439042bec0b9340e8c9d1adca939c83c34f3157434c0eb42f86a90abdc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2aa6345f1775c548acb09d3c5a48bce22b6f3e259b2d1ecd2ca94b051a10923"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c551dda816710eba9e09b5744fd9a668c38a32464774217ca3b28de876536416"
   end
 
   depends_on "cmake" => :build

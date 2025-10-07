@@ -11,12 +11,13 @@ class Lnav < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "81435ab1b41cc5b56ab2a92c5eef9fca43d824648d3425568c524288ec7f6ee3"
-    sha256 cellar: :any,                 arm64_sequoia: "624271a5f081874270693d12b9e3c198c23e3fbe3b198451bdd9e9564c8360e0"
-    sha256 cellar: :any,                 arm64_sonoma:  "93a90add80e6d36904eb68f9ac3e929afec7761cc574250461e9ac342cc9b20e"
-    sha256 cellar: :any,                 sonoma:        "127a67c37a77feeb88a325e139e29450cb9d5716018dcfc5efcc4c3b1d7919f5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e46055ab9c5a4880a8e1d8fb69abb70431b2cd603e4e060f823ffbf89885125"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "700d8f095d115fffc0f26201322e07cde5ad2a9027bb8542056d5289e4073874"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "87192e0c02be36248bea532176d3c8e2103aeaa62c8f2cbe2fc9a567c8cf5547"
+    sha256 cellar: :any,                 arm64_sequoia: "ceb331a54097ec199b506bfd03646907396f1431abe1d69c88f0b8737fb81277"
+    sha256 cellar: :any,                 arm64_sonoma:  "dd19a8d070edd6c6f8eb89328e72ad8d4329e6f0fa074aa3ac65a98a3b0aaa6e"
+    sha256 cellar: :any,                 sonoma:        "6830377816ea9dd669946e6ecf1314c88c33cb140f0acac0a58baea584a18619"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "636ded0548e73e1793d84ab28701d4af38d0380a166fd6d674c76e94d6a6220b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3dcb30b22cd92d66e5dea0190a0e5c3599f645b5832fe203539be80c26e4d767"
   end
 
   head do
@@ -40,6 +41,7 @@ class Lnav < Formula
   uses_from_macos "zlib"
 
   def install
+    system "./autogen.sh" if build.head?
     system "./configure", "--with-sqlite3=#{Formula["sqlite"].opt_prefix}",
                           "--with-libarchive=#{Formula["libarchive"].opt_prefix}",
                           *std_configure_args

@@ -1,10 +1,10 @@
 class SshCopyId < Formula
   desc "Add a public key to a remote machine's authorized_keys file"
   homepage "https://www.openssh.com/"
-  url "https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.0p2.tar.gz"
-  mirror "https://cloudflare.cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.0p2.tar.gz"
-  version "10.0p2"
-  sha256 "021a2e709a0edf4250b1256bd5a9e500411a90dddabea830ed59cef90eb9d85c"
+  url "https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.1p1.tar.gz"
+  mirror "https://cloudflare.cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.1p1.tar.gz"
+  version "10.1p1"
+  sha256 "b9fc7a2b82579467a6f2f43e4a81c8e1dfda614ddb4f9b255aafd7020bbf0758"
   license "SSH-OpenSSH"
   head "https://github.com/openssh/openssh-portable.git", branch: "master"
 
@@ -12,10 +12,8 @@ class SshCopyId < Formula
     formula "openssh"
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "008b7d12fec5d688411b2afa7c2c9139ee1e4645132dc0aaf7a7409d7dda1d63"
+    sha256 cellar: :any_skip_relocation, all: "ec522892492d3bc8b64a1f06a1bbd337dae932ebad6c932b1f859f8cbabc8db7"
   end
 
   keg_only :provided_by_macos

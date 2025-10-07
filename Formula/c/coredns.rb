@@ -1,8 +1,8 @@
 class Coredns < Formula
   desc "DNS server that chains plugins"
   homepage "https://coredns.io/"
-  url "https://ghfast.top/https://github.com/coredns/coredns/archive/refs/tags/v1.12.4.tar.gz"
-  sha256 "39713a5bfd6fd1a2df1caa7a8296c4327e48c51e964c83d5fea4ed3a5ba4df9f"
+  url "https://ghfast.top/https://github.com/coredns/coredns/archive/refs/tags/v1.13.0.tar.gz"
+  sha256 "9ad9d2a4ed708f235a6d0a3275cc0988973953228f539e50fdabe493c64a112f"
   license "Apache-2.0"
   head "https://github.com/coredns/coredns.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Coredns < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc748c498df91d1f57566ce40413690e9699cab4193bb01e3fed39d5eeb35b01"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e803de5cd5f209ad17297c9bb1948cddb9ca8988c5b9a08ed677da2a456a2c25"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6514d3437f033e1b8b7568227b1c6083828b91593067201d48a4edd786791340"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "07c0c6ce12f42238fcd92e2e366f5ddba6328064040f68cc792cac531f6b24dd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "687e82a85b5b1133ef325580b8481a9d6f641e09704b9b03c1efb654f66da6c6"
-    sha256 cellar: :any_skip_relocation, ventura:       "007d095c0c0cf7db0cf9cd3796eb3d7003f2652bec3b8fdbeb3221a3dddf9024"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0a325b1825f044ada7fe39b08ec408420455b798e1de12bba68a83c87e5b723"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf6e7811bdde66fa6aaa4bfa6ef2613554e56144552f79b1a507d574c047f44f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff5a33c71f41d3e94a63110636a07e05204122d36116d98834a8a4f4a7cb62fd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1cbd4d39f72d471266a500a4502a0161f8335c0b6be4d4a172f48c8c9e954ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1619c8e193a8bded1ad0097984b4245df9e9c2538d90b2dc189096018b02fe80"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1d52a0fb097a9807d9ad179080613f8e77b4a8f65e45438c10ab4600953399ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "91c27dac2930721dde165414720c65e947e4c8ba70f1ffe7d02aafe86e838e2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2f072a4aa05e3f2dedb66c32cbe176f6226c9f018d0011b0ce7effbc3bea34c"
   end
 
   depends_on "go" => :build

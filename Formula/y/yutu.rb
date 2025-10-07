@@ -1,19 +1,17 @@
 class Yutu < Formula
   desc "MCP server and CLI for YouTube"
   homepage "https://github.com/eat-pray-ai/yutu"
-  url "https://ghfast.top/https://github.com/eat-pray-ai/yutu/archive/refs/tags/v0.10.2.tar.gz"
-  sha256 "4b57f005467b9ac1606b80408b9a85287366619bb84e058dcb5d259047ae8950"
+  url "https://ghfast.top/https://github.com/eat-pray-ai/yutu/archive/refs/tags/v0.10.3.tar.gz"
+  sha256 "00c4ee6850705ae4557733580d9ebbd9f378a28eb39f3a261fb5df10e8764423"
   license "Apache-2.0"
   head "https://github.com/eat-pray-ai/yutu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16f626d589d5da7ecdd415db8905815ea1ce6cccc682854f0048b1d41a0faced"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16f626d589d5da7ecdd415db8905815ea1ce6cccc682854f0048b1d41a0faced"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16f626d589d5da7ecdd415db8905815ea1ce6cccc682854f0048b1d41a0faced"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "16f626d589d5da7ecdd415db8905815ea1ce6cccc682854f0048b1d41a0faced"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6536a8f3ff36d5f7f2ba61b1f332da63a9cfee977ecb46979f055abab1f4ac5e"
-    sha256 cellar: :any_skip_relocation, ventura:       "6536a8f3ff36d5f7f2ba61b1f332da63a9cfee977ecb46979f055abab1f4ac5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6613bae1df484caf8f2fb51f508cf6eb38bfa99111c63db4cbae4209e5049878"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d33cf0182cf6ff04a769a81a44bb0945a1dd624411e7481602effd6b70020db"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d33cf0182cf6ff04a769a81a44bb0945a1dd624411e7481602effd6b70020db"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d33cf0182cf6ff04a769a81a44bb0945a1dd624411e7481602effd6b70020db"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fd3c7e56880e904d1837b2ce878f7282f0a7a8fc1b665bcc25ba636ade375eb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3e5c22981d232278c70dc658e0c12218ae1e20482c7cb6cdfc5177b50078564"
   end
 
   depends_on "go" => :build
@@ -25,8 +23,8 @@ class Yutu < Formula
       -X #{mod}.Os=#{OS.mac? ? "darwin" : "linux"}
       -X #{mod}.Arch=#{Hardware::CPU.arch}
       -X #{mod}.Version=v#{version}
-      -X #{mod}.Commit=#{tap.user}
       -X #{mod}.CommitDate=#{time.iso8601}
+      -X #{mod}.Builder=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:)
 

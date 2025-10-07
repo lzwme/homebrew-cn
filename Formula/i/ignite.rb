@@ -1,17 +1,17 @@
 class Ignite < Formula
   desc "Build, launch, and maintain any crypto application with Ignite CLI"
   homepage "https://docs.ignite.com/"
-  url "https://ghfast.top/https://github.com/ignite/cli/archive/refs/tags/v29.4.0.tar.gz"
-  sha256 "c489fcf1905db1038a1d8b3a3ad6811a5ad6ed2f5807cdd16da8e5abe5924829"
+  url "https://ghfast.top/https://github.com/ignite/cli/archive/refs/tags/v29.4.1.tar.gz"
+  sha256 "be80089add623fc31219cb8e3df322a6db5325a1540d186ad3e87421335e6270"
   license "Apache-2.0"
   head "https://github.com/ignite/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3fe41e640e6ce1c160b57fadb2a15ec27cb583ecbc9368bb6bf771c9aafb298f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f5803810d8fae6a7c75ad6c51035926dc011f907d11e2029e97c41d5e5a4fe4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8cc6394d55081f1e3f612bd9353a48b08ccba7644a2f5610816e540a160f5aa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4dc287001d30393bbdb86d789ae4afd8248f645b3f4e5f80903427fd22de532b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2354a861f73b7103e17117f3df44d6d9887c912ecc99317963303f2da36f64b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e2ea850d1a09d7f7cbeb696450339899aa8237d84ddca9da7ebbb303604bab37"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebfef21ae8c1362a0fe6d4df689c76b9f1a5fdea720b1929426f9f754b895293"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c205d3c82cb44a4c9a28619f2ac401b858f7025a2f9666d4e68b8d2f0bbea43f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "03c2ec2e4105e1db9fa329ee43369b3eb0ce56cf90885a853b7d348ab630e383"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ee7fea79341d2a28d0aae55b7100ab28723995ff6d5164bb7e04c2e5222441e"
   end
 
   depends_on "go"
@@ -25,7 +25,7 @@ class Ignite < Formula
     ENV["DO_NOT_TRACK"] = "1"
     system bin/"ignite", "s", "chain", "mars"
     sleep 2
-    sleep 2 if OS.mac? && Hardware::CPU.intel?
+    sleep 5 if OS.mac? && Hardware::CPU.intel?
     assert_path_exists testpath/"mars/go.mod"
   end
 end

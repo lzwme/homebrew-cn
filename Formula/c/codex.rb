@@ -1,8 +1,8 @@
 class Codex < Formula
   desc "OpenAI's coding agent that runs in your terminal"
   homepage "https://github.com/openai/codex"
-  url "https://ghfast.top/https://github.com/openai/codex/archive/refs/tags/rust-v0.44.0.tar.gz"
-  sha256 "b873ffd11f5f39148baabf0d070dd27ffe5dc9028d6dd32ee75a043b26ab171e"
+  url "https://ghfast.top/https://github.com/openai/codex/archive/refs/tags/rust-v0.45.0.tar.gz"
+  sha256 "e9bafcbb7030fb3a7ec9ab845e43d830e2e45e2eee19898d443fe03a414b419e"
   license "Apache-2.0"
   head "https://github.com/openai/codex.git", branch: "main"
 
@@ -13,12 +13,12 @@ class Codex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f93ccc44619f8ec518736387bd06717ffe54c946ce528389719031e9978a2e2e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1ab8e65df003b87b67118fc88e2074e4f40ce163e988687262896187e008ba9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb979aeef80104393c73a47749569b437da948f21e3aa3882a65825b40fbc85d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e2ec76b9cadc0c50b9c236ff08a0b6162429c2644df94af4c26dff9fe49d1520"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "031469bc981aca6b3b83076a01219eee88a10af7db593fbbdbf37b45e0e2449b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5b9b6e8cd9da0ce5a29b300845758ec61ae1497d96810e5f6e2adc241093d3a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a879a8d0b67507bf572df11d557d06464b85174c61e3aa4aa12114acdca251b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9917eaccb86d5875a2d6e57e15c0a2fdc0693dc245daa99a842b459b0b8e498c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de74e6341aae57a5a49bafa0391e8276df39ac39ca5f654f72c95c392b92b485"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2842e23c4ac6f7ebff5acbd37827b810b56274ad5cf8e32b90f43f7dbe6daf26"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c03aef287372af6fb6e3cd78686574a83220ae6eb1d896c2e8a29b5b3d6c72a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37d1e5f40f79a7fbcea5b32fa1ed6613bdc3636db6fda5d7c41f7862e7d1ab49"
   end
 
   depends_on "rust" => :build

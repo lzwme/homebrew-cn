@@ -1,9 +1,9 @@
 class Mpich < Formula
   desc "Implementation of the MPI Message Passing Interface standard"
   homepage "https://www.mpich.org/"
-  url "https://www.mpich.org/static/downloads/4.3.1/mpich-4.3.1.tar.gz"
-  mirror "https://fossies.org/linux/misc/mpich-4.3.1.tar.gz"
-  sha256 "acc11cb2bdc69678dc8bba747c24a28233c58596f81f03785bf2b7bb7a0ef7dc"
+  url "https://www.mpich.org/static/downloads/4.3.2/mpich-4.3.2.tar.gz"
+  mirror "https://fossies.org/linux/misc/mpich-4.3.2.tar.gz"
+  sha256 "47d774587a7156a53752218c811c852e70ac44db9c502dc3f399b4cb817e3818"
   license "mpich2"
 
   livecheck do
@@ -12,14 +12,12 @@ class Mpich < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b3d6f0e24a24b144f584eb923d5f408da2456f3e40563e8fecfab0c4fd36c8a6"
-    sha256 cellar: :any,                 arm64_sequoia: "26b19ddaa079c787e0a5665c999a5a5bc3de8a8b75fe4e270cf4728aab122bf1"
-    sha256 cellar: :any,                 arm64_sonoma:  "0e2907b9052bd594ef9a9136a93989bc92666f1e2b9099b385e03f50f5d8b7de"
-    sha256 cellar: :any,                 arm64_ventura: "10f31ee723eafb5f160ccbbcbc2b8e6526faa7736b362c607b3a8b23a589b37e"
-    sha256 cellar: :any,                 sonoma:        "1423b89869d7afe1838bcaa57e2a17a5c251f016fbf8468e4c3ca049d4500d96"
-    sha256 cellar: :any,                 ventura:       "342289b771ccbf881a9fc8f54fe8d4e65c907373b5634a5a4e8cb509613238d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a23d4e7f4e6a658e9efa8bf571578e721dbf0c8f2f3444a7657928d2a649ca61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9df4b2cf8352ece5365b61ac5988962f85ffdd6b9cdeb9bf28f044729d4e35c4"
+    sha256 cellar: :any,                 arm64_tahoe:   "c665e1ef736243c7f4f5152dc89fa04c915ef6991e1376c67235eb4bd4a26406"
+    sha256 cellar: :any,                 arm64_sequoia: "e342829b8c641ff4e2808becd4b03fe80486011e37d190d88fe30457bcaee26e"
+    sha256 cellar: :any,                 arm64_sonoma:  "27e759f69a61fb56bb5d3cc2c4bd9e37f2b5e1e4ecf16c38c9809f75ef2912b6"
+    sha256 cellar: :any,                 sonoma:        "1c9137668c3581442add7eb2a555f3687db8168819d0e0a9ad8c004c21d9e290"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "61127138fe162b6a4bb7c9b280cbda43ba04692655126dc7fdbb768032c65e25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe8e8737dbbc297ee498df30ad75443c03b44a9ecd29eab77253dc9da1b6091d"
   end
 
   head do

@@ -1,20 +1,18 @@
 class Kew < Formula
   desc "Command-line music player"
   homepage "https://github.com/ravachol/kew"
-  url "https://ghfast.top/https://github.com/ravachol/kew/archive/refs/tags/v3.4.1.tar.gz"
-  sha256 "4a693d881f5f9d1ba70004c13b00ae6f75c2e592192574ac1d549a025fb3c511"
+  url "https://ghfast.top/https://github.com/ravachol/kew/archive/refs/tags/v3.5.1.tar.gz"
+  sha256 "e182ae670fc6e522dd312767dc24079a8b81dfb29053ec3867242c8dd591fd2d"
   license "GPL-2.0-only"
   head "https://github.com/ravachol/kew.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7e97980b672aeffd8ef46a9940d956b685108c7effe4c02655c0031055fb703a"
-    sha256 cellar: :any,                 arm64_sequoia: "42a93ffa2eccf067b073f91cab44b4f6a4d03a85729a706be35c94ccea2e0a84"
-    sha256 cellar: :any,                 arm64_sonoma:  "f1b565c5cfafe41eb395c201002c6a1289213392ea2b048f9357a8d40b100ae8"
-    sha256 cellar: :any,                 arm64_ventura: "6d49e4c7233cae8208281e236cbaad6278f836d4166647a4bfecca9a0d770cd5"
-    sha256 cellar: :any,                 sonoma:        "1d0388692397f39add18f3145da7df81c6ece0fb41d167c4f73527ddcbd7bed2"
-    sha256 cellar: :any,                 ventura:       "3b1ca10478e13978a3fc996ae751db187cbc9e97b7b0da089bc60c1d0dba2939"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "421e2f4dc683286c5d0e5394f96d39fa833b81de1c036836c2a25c76a5b1c7ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ca4f656b73d975f590e86f37bfd9bec38710a3fe8e3b594ada346fcecbf11a1"
+    sha256 arm64_tahoe:   "31a5bf6b1debc23781e0f2af9b0da8f529b8a20d2d01b1d8f93bcf2436ac8374"
+    sha256 arm64_sequoia: "26e9c6987557e591b634d9a074a84d76c9d292442eca9f152d06eee59ec32e3e"
+    sha256 arm64_sonoma:  "08db7a6bdc39967e5129e277ccfa3ae92013c55910631334b75afec99d9c60c8"
+    sha256 sonoma:        "18f9d1758b43d605e027e53f30ab9dda0adc87c4227b37e1e36f763f7ad1edd5"
+    sha256 arm64_linux:   "a11cdd6a5d8fe7832edfc6f82fc7d2e1a5308198b73f55ec7fcbc5d6664e6078"
+    sha256 x86_64_linux:  "8969da5812bb5b65b518569b1899b48b0f191c0a62560201f24a23d927767217"
   end
 
   depends_on "pkgconf" => :build

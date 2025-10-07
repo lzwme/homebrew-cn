@@ -4,6 +4,7 @@ class RubyAT33 < Formula
   url "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.9.tar.gz"
   sha256 "d1991690a4e17233ec6b3c7844c1e1245c0adce3e00d713551d0458467b727b1"
   license "Ruby"
+  revision 1
 
   livecheck do
     url "https://www.ruby-lang.org/en/downloads/"
@@ -11,14 +12,12 @@ class RubyAT33 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "aabd7321c254b72c44a0cf25b1d8f779adf25cfc51d3757d7ed83670d5de68f3"
-    sha256 arm64_sequoia: "00357f8965fe5ed1f6d1d9d5abdfeb06ffe142388042445d32865ff45a92b6cf"
-    sha256 arm64_sonoma:  "9788cd921328d3cbbd42a93a854e2390b246c2f965da3e28484b7be89976a8ef"
-    sha256 arm64_ventura: "46ccf4612387a76e3f727f60d63de47a0c244aa2939efe03c426a697b4950af2"
-    sha256 sonoma:        "50c9dcd475468d7a651c88fbc8f24ddac1db277194131fce5674edfbed785162"
-    sha256 ventura:       "698f5ab1a5492e7d413be9eeab05b9b1c285fb56129d57bde37561ed042b90c5"
-    sha256 arm64_linux:   "af85399d9f29a4326302eb232d51abe771ebf92537c235635cbe81311a467385"
-    sha256 x86_64_linux:  "a9ba72c25522522765b5f57fdefee7e788f35595ddd61a804013aed265450ecf"
+    sha256 arm64_tahoe:   "218fd8f200cefb6f890d4433ec7e882e3530367c541adf3119e4bd6bd4e6554b"
+    sha256 arm64_sequoia: "978b3f43d041e8b00e8b32c52748b9f54779ea2adb43085e384b3037f71dbc66"
+    sha256 arm64_sonoma:  "81b3985605a2b0993be1af51d035ec7c9765dc19cf49894f829d4254f40f4c08"
+    sha256 sonoma:        "40cc48f77235c31136c27610e38d0708e67ab71a15c8afcdd3f3c24a971dfc5c"
+    sha256 arm64_linux:   "688953c838f316e759a447be03139396188db355c148f20910438b7a70c5a0fb"
+    sha256 x86_64_linux:  "6b25d1b4ee71ad2288ce113dc8bf25cb1842e731185401a984339b18245f32f3"
   end
 
   keg_only :versioned_formula
@@ -47,6 +46,13 @@ class RubyAT33 < Formula
     end
   end
 
+  # Update the bundled openssl gem for compatibility with OpenSSL 3.6+
+  # Using 3.2.x series to match major/minor version of bundled gem
+  resource "openssl" do
+    url "https://ghfast.top/https://github.com/ruby/openssl/archive/refs/tags/v3.2.2.tar.gz"
+    sha256 "07b282b43090e9b223c7f1df54d5883851a63fa90faebcc4e18217a2e3c7faba"
+  end
+
   def api_version
     "3.3.0"
   end
@@ -56,6 +62,15 @@ class RubyAT33 < Formula
   end
 
   def install
+    openssl_gem_version = File.read("ext/openssl/openssl.gemspec")[/spec\.version\s*=\s*"(\d+(?:\.\d+)+)/, 1]
+    odie "Remove openssl resource!" if Version.new(openssl_gem_version) >= "3.2.2"
+    rm_r(%w[ext/openssl test/openssl])
+    resource("openssl").stage do
+      (buildpath/"ext").install "ext/openssl"
+      (buildpath/"ext/openssl").install "lib", "History.md", "openssl.gemspec"
+      (buildpath/"test").install "test/openssl"
+    end
+
     # otherwise `gem` command breaks
     ENV.delete("SDKROOT")
 
