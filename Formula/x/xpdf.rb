@@ -13,14 +13,12 @@ class Xpdf < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "d8cf28358dc00e7573b535cda3541be4fada72414eb58490cc4d5a11d48c8fab"
-    sha256 cellar: :any,                 arm64_sequoia: "1a7cfdc2ffff4e503971f9437af4af7622e3f7d27b3688a818bf953da2b5d397"
-    sha256 cellar: :any,                 arm64_sonoma:  "498ac9ead73ba9677b494feb653335acbc7ba85c41ea6001c52fa47e2bc8d364"
-    sha256 cellar: :any,                 arm64_ventura: "60bdb7303f2f3c8b2018862b04f00dfbb169b08c5a91365298b1f0b6f5e2779c"
-    sha256 cellar: :any,                 sonoma:        "0e6fb3a888aa52e6a8f98fd71a1e0408940624b9c32df49a976707fd3eeeeb04"
-    sha256 cellar: :any,                 ventura:       "479115c082b9a0b15c166da94c0f782dda3216186dbf62874666efa2c13505cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a6a861f923c14a27ced94e1c2a8b82a520e60d130656dd6ab3769aea2770b7c"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "cb4be570e78e5683aa5f8d1cd38863940ceff5c450841611b8c869cb2438a9e7"
+    sha256 cellar: :any,                 arm64_sequoia: "a427e2fdfcf6d7941ee319dc9dc483104177a6460cc8d198d5905934a4b5c1c7"
+    sha256 cellar: :any,                 arm64_sonoma:  "2fcac810f853552814f046a8c9121237cf1d6e2962e09977cc6e57e5b1bf26b8"
+    sha256 cellar: :any,                 sonoma:        "c7c880aa82976bfd35833f8a2cb71cfab406a15f293b09b38119ec5a95f1769a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be1968ec32654250b756e84e6dce636b032d6c439cb05ec58903f6b48b265aea"
   end
 
   depends_on "cmake" => :build
@@ -28,7 +26,8 @@ class Xpdf < Formula
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "libpng"
-  depends_on "qt"
+  depends_on "qtbase"
+  depends_on "qtsvg" => :no_linkage # for svg icons
 
   uses_from_macos "cups"
 

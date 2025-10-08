@@ -1,19 +1,17 @@
 class Favirecon < Formula
   desc "Uses favicon.ico to improve the target recon phase"
   homepage "https://github.com/edoardottt/favirecon"
-  url "https://ghfast.top/https://github.com/edoardottt/favirecon/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "72d8c7b8584322f5e82a140abc46c95ae3b86580353f7e79a395e2351b8293f1"
+  url "https://ghfast.top/https://github.com/edoardottt/favirecon/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "7feac1bebb04eead4c5c054e35ed925a3029904e783fc579a7a6d5e29fe01426"
   license "MIT"
   head "https://github.com/edoardottt/favirecon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78ef3cfd54fa6fd77ceece4382eec6297cb905d6ae8a161f1a3dcca471675a6d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebc4ff865a852564480d49a059d2ec8b4fbbac34e72c6af365557f2a6bd16a9c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ebc4ff865a852564480d49a059d2ec8b4fbbac34e72c6af365557f2a6bd16a9c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ebc4ff865a852564480d49a059d2ec8b4fbbac34e72c6af365557f2a6bd16a9c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "514f536af4919aedbdeed9facdfb99092371d498680871e09fb19a21b4aa94cc"
-    sha256 cellar: :any_skip_relocation, ventura:       "514f536af4919aedbdeed9facdfb99092371d498680871e09fb19a21b4aa94cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f47ca49a30aef22ce88fe13109b5aa79e3be9ff68387f3d66b28fc02253afa5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "24148b45f6af8b3bf04d326f518bb13f21ca8451e7e8bb7b136620211b542d88"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24148b45f6af8b3bf04d326f518bb13f21ca8451e7e8bb7b136620211b542d88"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24148b45f6af8b3bf04d326f518bb13f21ca8451e7e8bb7b136620211b542d88"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a56331bc32be1117c2a49575b6370f5e42b52792bd4052d5740f6aebee0c77ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f34ea1eb51f6fee500858b616af0e49a8e00e52a19979c22ecfacb69cc0e22d"
   end
 
   depends_on "go" => :build

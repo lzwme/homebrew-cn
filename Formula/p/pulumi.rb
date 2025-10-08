@@ -14,15 +14,19 @@ class Pulumi < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2effcf99c5caa38533c4c62af75ae065cb69a717591a3b7efc3af4cef4f53176"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa46c67ea9195199dcadd6c920ee8fa07a6dbed96702269796ccc58d502ee255"
     sha256 cellar: :any_skip_relocation, sonoma:        "577bd4feb3734cabe01a17118c9ef33e0762ef0edcb5e2f159e5648980893500"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "225bbd454b2d734fa3420cf3208eb9624d53d01f67bd9ec856c03af4c6687b59"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "67262c6387570935f9f6f3f9e43b6052d97cf36c4cb83d345dfcf6448a8482fe"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     cd "./sdk" do
       system "go", "mod", "download"
     end
+
     cd "./pkg" do
       system "go", "mod", "download"
     end

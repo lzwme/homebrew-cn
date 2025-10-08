@@ -19,13 +19,12 @@ class Coin3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3d769a1210dc23ab8078efc1d42b0efe286823724bcc46f38958decee1f58a35"
-    sha256 cellar: :any,                 arm64_sequoia: "f12890cb27880e8264ddbfe08d703fb5d6410b35fdd01c695a12389f74c14557"
-    sha256 cellar: :any,                 arm64_sonoma:  "cbbad59dc6fcaed95dff2046505dbbb598be6975e7aebe48f374c5b9640843eb"
-    sha256 cellar: :any,                 arm64_ventura: "67abd3bc56f46018583d11b31f16285b0f88ec5e448cfaacde23ea85633f947d"
-    sha256 cellar: :any,                 sonoma:        "611c65fb692d3083d53930190e20c381dcd42c919b8fcdfa9818d77a7e860d17"
-    sha256 cellar: :any,                 ventura:       "7ec6dfe36d40d60839b038311f19148ce6974a182196ce10fcd105b8b9e6b376"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee8540956c1239f9ae6837af9b9f201579a7ba51a6bdeb9fa2fc38cd2692cec9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "00913f751a45abbac7e226ec57996dca60ef8c5ffaf174961210f2e3486c9f46"
+    sha256 cellar: :any,                 arm64_sequoia: "76d0ae79918784f18c79e3148c919516ade76ee681ae05145eca1c76b4c6ea95"
+    sha256 cellar: :any,                 arm64_sonoma:  "d413285777da406be2ca5a63640c0a5fe1c9de4106cb070319e76099d2e5d3dd"
+    sha256 cellar: :any,                 sonoma:        "f87eaf2b4565796ac4167a98383f041367242b8159e5101f8a930ed69296e658"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f75296237d2e535a06e7851d3030d2d6715692b4dda2d5dbabfc84fdf338c6a5"
   end
 
   head do
@@ -39,7 +38,7 @@ class Coin3d < Formula
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
-  depends_on "qt"
+  depends_on "qtbase"
 
   uses_from_macos "expat"
 

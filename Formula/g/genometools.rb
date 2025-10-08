@@ -2,23 +2,18 @@ class Genometools < Formula
   desc "Versatile open source genome analysis software"
   homepage "https://genometools.org/"
   # genometools does not have source code on par with their binary dist on their website
-  url "https://ghfast.top/https://github.com/genometools/genometools/archive/refs/tags/v1.6.5.tar.gz"
-  sha256 "f71b95c84761847223cd52a17d30ad9e6d55854448c2139fcd0aac437f73fbbe"
+  url "https://ghfast.top/https://github.com/genometools/genometools/archive/refs/tags/v1.6.6.tar.gz"
+  sha256 "cc5d92c44708a4566a07650bbe7e9009fb602262548427814c04d3a7043d26e9"
   license "ISC"
   head "https://github.com/genometools/genometools.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "dc296a9eae3d801c489903c5c6a87d864d0fc1d867906dd36e5d0080763fc30d"
-    sha256 cellar: :any,                 arm64_sequoia: "c1a9595a2911398dab4d2b22c2b0182e1cf5b83f5c648ba3e61787ac9a2f9250"
-    sha256 cellar: :any,                 arm64_sonoma:  "fada49496d68c5b3270ca9a075e7ea313eeb9c9bdaa263e3f16d12b3cb087b69"
-    sha256 cellar: :any,                 arm64_ventura: "a6ee8e5efc50803249afd3d9eb483e48f0008840800075aa1ab3a382b3800fad"
-    sha256 cellar: :any,                 sonoma:        "a04778fc4c9cb45a2b8f728527e3d865f653c1674f19c1972ef8d1144afdb955"
-    sha256 cellar: :any,                 ventura:       "14a0b5028decdfcc90c0d3220cbe2b48880e346509a05507bb0dabbefa91a9f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd73938ff6ed8d07d1d3e028ff9b198e3439b7987daf61dd92c68b4c744926e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c570e15eef30b96b5ae3e6e398097589d6c8f9827a0694835071026e2793b3cf"
+    sha256 cellar: :any,                 arm64_tahoe:   "ede4a7e7dca0d91a489fd52b39da3aee15419f7789379622c2226946f96c701d"
+    sha256 cellar: :any,                 arm64_sequoia: "6a740b3d95366de0bb83169ff008ff123e5f518e4979bc149baab5c4f7c5d57b"
+    sha256 cellar: :any,                 arm64_sonoma:  "df602fd3a92a0b8247534d5f4d7694ca2813844e35dea1a25d7d31490fc0e118"
+    sha256                               sonoma:        "0dcd7cb3695785f842caa136a32a54dd40521f82c41d86cb6104636fd63dde41"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d98999031a025a7e137b9020637f62fbf6eceabc8d2c91549ff6453374d054cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31172f7051f88d8953348b1ba434ce27648955f3ec9734bbffa1dc41bdc90b20"
   end
 
   depends_on "pkgconf" => :build

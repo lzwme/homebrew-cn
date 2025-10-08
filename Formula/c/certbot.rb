@@ -3,19 +3,18 @@ class Certbot < Formula
 
   desc "Tool to obtain certs from Let's Encrypt and autoenable HTTPS"
   homepage "https://certbot.eff.org/"
-  url "https://files.pythonhosted.org/packages/42/7f/fd22e1bda654356e572e524762d4ee473d32a2c506960201d413073e5579/certbot-5.0.0.tar.gz"
-  sha256 "4e9e4680e812037b582cef7335570074390b455d24a3e09bcaa2fdc473dbcc0a"
+  url "https://files.pythonhosted.org/packages/3d/d7/358779f99a2336010a27e12c9fc99b14602b9a5410f890390fa3be08e598/certbot-5.1.0.tar.gz"
+  sha256 "d652a598f67af78ecf122860e85cd2e9c19a2bbe79a71775eccf6e8d642a4fca"
   license "Apache-2.0"
   head "https://github.com/certbot/certbot.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "35ecb33584eeae2560760a8b49d02068df51e07829414cb61487f1d7f358c9d4"
-    sha256 cellar: :any,                 arm64_sequoia: "d913f2592e1efaa3c63c1b14efc1e87100322542285ee0a2a3960ad9caca5a31"
-    sha256 cellar: :any,                 arm64_sonoma:  "3234eca1fb5d1cb43dbb50ad599c1257a0f907181e7e31fa61a38329c86c576a"
-    sha256 cellar: :any,                 sonoma:        "b5e4c8b0bb5183bc1fe2843793910a4cd4809257de44da5399cc1fdc730acc62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "70fc1d4fc1a4116c8d78a8fc6bdff4cc2c0512a74b0a558d1582cf81a879055a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da2355ad5c7de8067662765d4b9c92479d1cdf35576a53607a30641842cc6c8e"
+    sha256 cellar: :any,                 arm64_tahoe:   "2dafd177b02b33fb36a6afa4dd9308bc7077bb305a1ab382e742c80bd4ec665c"
+    sha256 cellar: :any,                 arm64_sequoia: "f9c768b787aa432cb583ce477ff06b5bd031413b395b4d6b06494bd44649a20e"
+    sha256 cellar: :any,                 arm64_sonoma:  "72547999b19d8772f63c20aaa49e594f52a0e601606e8cb58ea4dcfc08777e30"
+    sha256 cellar: :any,                 sonoma:        "a414ee6dd454736a4428102f6b24c40503fd4ed6342edb16e21fc32419db6a2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1bcd8e1a20bd158dd3d471ed61255414a0556b9e7231086bb3c87423acf6ab1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35285e2692f8416f284077f05d354556ec6bd3d603b52adcfe0dee6f545595a1"
   end
 
   depends_on "augeas"
@@ -27,28 +26,28 @@ class Certbot < Formula
   uses_from_macos "libffi"
 
   resource "acme" do
-    url "https://files.pythonhosted.org/packages/9f/11/2a8767ea1bac25ca73d952ca1d8bd701a65c84057e4ead8bda82fb086d9c/acme-5.0.0.tar.gz"
-    sha256 "b701b23e66d3c58352896a72caa13523d9f72b183a0ba1cde93e6713a450a391"
+    url "https://files.pythonhosted.org/packages/07/f6/897be0abeb0e64f0e6136a8a6369a54d2a603a44cb7a411f6d77dbafb4ac/acme-5.1.0.tar.gz"
+    sha256 "7b97820857d9baffed98bca50ab82bb6a636e447865d7a013a7bdd7972f03cda"
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
-    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
+    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
+    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
   end
 
   resource "certbot-apache" do
-    url "https://files.pythonhosted.org/packages/25/b0/6b9b6cc1e94d802ca361e7f0d64966dee85b4885ca344a14c407b201e62f/certbot_apache-5.0.0.tar.gz"
-    sha256 "c438b6cb4fda2fef5868b7111d130a96233ccccf5538c292e642a04a47c9dbb6"
+    url "https://files.pythonhosted.org/packages/dd/83/a38084ea9df81a1eda38b98fecf32ad2affa323487d752835e79ed5a8b9c/certbot_apache-5.1.0.tar.gz"
+    sha256 "83f7e7578bb06c57b3d27f82ebd3c113e6f7fc8a41dc722cdc143ac98064b0ef"
   end
 
   resource "certbot-dns-cloudflare" do
-    url "https://files.pythonhosted.org/packages/a9/96/6afc38a2f491b779f59cc547cd797dc2b6e0a2bca494a202732dc0029d20/certbot_dns_cloudflare-5.0.0.tar.gz"
-    sha256 "84c01b06b2b0055f1b551eb3c0bc82c0a275063207cf9ea7ddc1b67129c728a4"
+    url "https://files.pythonhosted.org/packages/30/a4/c2b7ed26d6704ea9126e2fb4d2be97d0afc2fedaa88a80ce61a6a8fec0d2/certbot_dns_cloudflare-5.1.0.tar.gz"
+    sha256 "6fea3d5e2c3db018f83bc074315a48588fb680c900f7fef3349eae6a2cfc4c6c"
   end
 
   resource "certbot-nginx" do
-    url "https://files.pythonhosted.org/packages/50/0f/b4e296e2b38a227f57347b3ebe6742271aec72e0e4728ce1b8266b6302c1/certbot_nginx-5.0.0.tar.gz"
-    sha256 "c8e4b86d2537a5d9de5801a6e3a8cf17fa4f12777479192d0e2978cbc6b18305"
+    url "https://files.pythonhosted.org/packages/fb/8a/08667f1f55ba95cbb2231a5cbb9f6dcdde0c3eca4f16194074016a98ec6c/certbot_nginx-5.1.0.tar.gz"
+    sha256 "fe41cdd8f54b0587b65b686aa142191ad1bf4f7abaa708a79d5ad662757fb07a"
   end
 
   resource "charset-normalizer" do
@@ -97,13 +96,13 @@ class Certbot < Formula
   end
 
   resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/04/8c/cd89ad05804f8e3c17dea8f178c3f40eeab5694c30e0c9f5bcd49f576fc3/pyopenssl-25.1.0.tar.gz"
-    sha256 "8d031884482e0c67ee92bf9a4d8cceb08d92aba7136432ffb0703c5280fc205b"
+    url "https://files.pythonhosted.org/packages/80/be/97b83a464498a79103036bc74d1038df4a7ef0e402cfaf4d5e113fb14759/pyopenssl-25.3.0.tar.gz"
+    sha256 "c981cb0a3fd84e8602d7afc209522773b94c1c2446a3c710a75b06fe1beae329"
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/98/c9/b4594e6a81371dfa9eb7a2c110ad682acf985d96115ae8b25a1d63b4bf3b/pyparsing-3.2.4.tar.gz"
-    sha256 "fff89494f45559d0f2ce46613b419f632bbb6afbdaed49696d322bcf98a58e99"
+    url "https://files.pythonhosted.org/packages/f2/a5/181488fc2b9d093e3972d2a472855aae8a03f000592dbfce716a512b3359/pyparsing-3.2.5.tar.gz"
+    sha256 "2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6"
   end
 
   resource "pyrfc3339" do
@@ -117,8 +116,8 @@ class Certbot < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "requests" do

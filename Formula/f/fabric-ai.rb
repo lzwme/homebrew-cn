@@ -7,17 +7,22 @@ class FabricAi < Formula
   head "https://github.com/danielmiessler/fabric.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6631f44ec4f5dd42127eedb5b503f6f2acbe0aee823d5ce65b005228d2a4ba3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6631f44ec4f5dd42127eedb5b503f6f2acbe0aee823d5ce65b005228d2a4ba3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e6631f44ec4f5dd42127eedb5b503f6f2acbe0aee823d5ce65b005228d2a4ba3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "83352d1d066d5a3432c95bdb5621a0572defadc5be17c0b981f4bf38ff6d4c1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a550fa188baaa3bb9bfd2663b2600994f50a8e668314757a82dd4ec25c98f661"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "165f3c14db3f93edd1b9ec627438b907c38f8d08381be09ed17bdc0448f220cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "165f3c14db3f93edd1b9ec627438b907c38f8d08381be09ed17bdc0448f220cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "165f3c14db3f93edd1b9ec627438b907c38f8d08381be09ed17bdc0448f220cb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7294c2ed6ccde95d950cae40f58bd9696f7d1e0a1053a296974650fcc7a47d5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "975cf82b4e998c3e070612495728b95003daff53b0464d996d6d7c8b02610416"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/fabric"
+    # Install completions
+    bash_completion.install "completions/fabric.bash" => "fabric-ai"
+    fish_completion.install "completions/fabric.fish" => "fabric-ai.fish"
+    zsh_completion.install "completions/_fabric" => "_fabric-ai"
   end
 
   test do

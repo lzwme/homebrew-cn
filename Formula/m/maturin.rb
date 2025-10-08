@@ -1,18 +1,18 @@
 class Maturin < Formula
   desc "Build and publish Rust crates as Python packages"
   homepage "https://github.com/PyO3/maturin"
-  url "https://ghfast.top/https://github.com/PyO3/maturin/archive/refs/tags/v1.9.5.tar.gz"
-  sha256 "a31bf063ef5bdabc807d1b205771509b203cf23f81e62e248fd66f0d0266f47c"
+  url "https://ghfast.top/https://github.com/PyO3/maturin/archive/refs/tags/v1.9.6.tar.gz"
+  sha256 "c8aef8af6cd3d5b3331191b21191ec92d7b4ee0633e0799351a01af1c5ea2a6c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/PyO3/maturin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f300b3756a51aed36f5e7581c81e886c2e5a69a1bbd77fa940602ae0f63e46f0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7432eefedef62f52648f45261f01a924884bb5eab34239de1315616a429b1a0f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62b7d3a28c01dbb1a253aa891f0c2482326f5a3473351116ba36d99bea12d656"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8215adff9cdba72c865b2ef184c1987e9374a31d97efb1eefe47bbdee1edcc99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d798b8b12172373e1201bbaff6f9126c5edabf71d0e585291be796d17a23852"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "494c95899ec95535d026c82aba7af9695b093b295656279b0b7b83f804181742"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e2c9b828a4167fc766732f43dad062accd023f2996894de7499be4f39ee5cd47"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e69b5f8ad86b655ef94449b9b55aa4835993d7382db7f6e68c4a91bb0a94138"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c63ce9e0b75363ded7f7340ba85ac9e30a15d895dd992ddf6aa93c1dd0e4b66e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8901c0238b3cf32c588e2dab70f7c719f6743ad0ce4d4a40a2623d0c5e018a33"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "58d77e99998d4fa0b03ccd2852415f58486cbc3c103a44359e2616178f8d5df9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "709f2ff8786982d0fddfbe2558d3b218a1a9838022869f9b981679078f47e57b"
   end
 
   depends_on "python@3.13" => :test

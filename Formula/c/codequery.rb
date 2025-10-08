@@ -6,17 +6,18 @@ class Codequery < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5f99050560435f60cee49d4ec8f7ffb1bf78de1c97287e82ddca630f3d4cfbb1"
-    sha256 cellar: :any,                 arm64_sequoia: "d6d9c0847352dfa561c400d122122253a25ec8581a18c7d76e100bf8ca733121"
-    sha256 cellar: :any,                 arm64_sonoma:  "441aed26d8bab82bf838568027a57033f7a9fec930840981fd0ef360dcb23c49"
-    sha256 cellar: :any,                 arm64_ventura: "7e7fff8e621e9e760732974ccfd9cc12f43d1e869a353af9e52f6440b4e6e73f"
-    sha256 cellar: :any,                 sonoma:        "293e7ddd4234c50510567af791016ad5405a8e6a68d20973619d9c24a8b851e1"
-    sha256 cellar: :any,                 ventura:       "e8e049d791b8e613c39de8317496941c732de6cab376455f03a673d54c372659"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23df699b0d89b71514dd0014238a1242496b9251274bccc29e38fddd0848d4eb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ec9b55288deede50bb5a39e76846aa3a0c7179be2a1ceb1f682b6de5291abdc3"
+    sha256 cellar: :any,                 arm64_sequoia: "683318cd26452dda4e8b6f103fcf5c0bacb6d886da49b3492e87dc8bab7ef35e"
+    sha256 cellar: :any,                 arm64_sonoma:  "1078139feee794760c6e6c42f33c49d308d4f308098e9913636d8054fe1da150"
+    sha256 cellar: :any,                 sonoma:        "57c3b03bff1a8f7a3311aff6a89c0fb2c530f2f361857af15a9b158ced25476b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18b9c0955396a9cd0b50d7b05d4e4b7edc97f8a7a32e693c64f5cfe7f16bbd1b"
   end
 
   depends_on "cmake" => :build
-  depends_on "qt"
+  depends_on "qttools" => :build
+  depends_on "qt5compat"
+  depends_on "qtbase"
   depends_on "sqlite"
 
   def install

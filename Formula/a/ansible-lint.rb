@@ -6,14 +6,15 @@ class AnsibleLint < Formula
   url "https://files.pythonhosted.org/packages/fc/9c/6191cb22ffee46412d7901d44a7b46884dfb6717ffc47aefa8db6a2bec95/ansible_lint-25.9.1.tar.gz"
   sha256 "d06ba52a069b756bf79208053a05fe9cafd53f16d69bac27aefc6a8d9cad3bb8"
   license all_of: ["MIT", "GPL-3.0-or-later"]
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ccdd72294a8156fce9cd99e8f395143b56e98f99072f3ac0f3a858e2873fd7ab"
-    sha256 cellar: :any,                 arm64_sequoia: "c9e9699e23f05d624fb01b64965df54de320bf977b7d0313c911b9c2dae60807"
-    sha256 cellar: :any,                 arm64_sonoma:  "30d4ddc778ee0fe0589da839557d373e50871076d2c43b62f7eb679781486e38"
-    sha256 cellar: :any,                 sonoma:        "dfb1867e98f34f98902fd88bad3aeab9a67cc4cb899fc6768c15d5a47f07b738"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f4d0a79d40bfa0de52f98e34414c063d0f35d1ffb8e3dc645e58a1b5ec72a40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "533a8734c316b37f5d768013adc3ed301ef9432fa448affba9b37990dc0ca244"
+    sha256 cellar: :any,                 arm64_tahoe:   "3f791579d427cf6d06764b132c7ff0f9e426ba913cd73fd7af27025ab6e69248"
+    sha256 cellar: :any,                 arm64_sequoia: "672242a769fd36a4f8eeff0511276cb03b70b3ae0255ab32096ba23e3bb838ac"
+    sha256 cellar: :any,                 arm64_sonoma:  "387f382d8a89b2121887b4a49ce16c0011cfee29b4f4fa48605a11ccc5707bb0"
+    sha256 cellar: :any,                 sonoma:        "5fca9cb8c52471cc8b369ce5c73e6b73d503e17b9d8036a087100ac39a1653f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4caf8e74eeb70cfa27165e614a4aaa9afe417847115fba96dc275c5b536f5d97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a698588cd4f9736a10b5589c6defc29630e77417a586b33be712b0fd7d671c4f"
   end
 
   depends_on "pkgconf" => :build
@@ -24,18 +25,18 @@ class AnsibleLint < Formula
   depends_on "python@3.13"
 
   resource "ansible-compat" do
-    url "https://files.pythonhosted.org/packages/ea/96/d5bcbd652dbcbf8611b32457d67b10e41e5e596e34460c25511ccfa6fbf1/ansible_compat-25.8.1.tar.gz"
-    sha256 "f29ab81264b3f04fb94ac2d7f68fe73efc2eb3cbe4ecf00f9b4742e77c41756f"
+    url "https://files.pythonhosted.org/packages/e3/06/5e66f1f0d482b21b0dc03c9b9e47cab58dd4efc770f41029bb244e86b608/ansible_compat-25.8.2.tar.gz"
+    sha256 "c5ae1ff70938f1e009cfc7df66c9faad223a3ccd0ad6b57400de53b2459a6164"
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/16/f1/1c21d3bff03fe9a5b51515307db7a76ec8b8972c70d5702cc3027c988a99/ansible_core-2.19.2.tar.gz"
-    sha256 "87fcbbc492ed16eb6adb0379bae0adbf69f3ce88a8440e7e88e0dcefa9f8a54c"
+    url "https://files.pythonhosted.org/packages/aa/20/036f20185b8a65de24b0759efa8666577804f42b31beccb96309c67aa6d4/ansible_core-2.19.3.tar.gz"
+    sha256 "243a69669a007be0794360bc4477f70e0128ce0091dc3af4c5cb81c6a466f573"
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
-    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
+    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
+    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
   end
 
   resource "black" do

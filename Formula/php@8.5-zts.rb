@@ -1,21 +1,21 @@
 class PhpAT85Zts < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/php/php-src/archive/90e270838ace8140406ff15993a1e9d37a98ab18.tar.gz?commit=90e270838ace8140406ff15993a1e9d37a98ab18"
+  url "https://ghfast.top/https://github.com/php/php-src/archive/1ca78dd98dc58602d1ae1518d471d0682bd20204.tar.gz?commit=1ca78dd98dc58602d1ae1518d471d0682bd20204"
   version "8.5.0"
-  sha256 "6054ced8dfc05082c01f0cc2e43ec04218eae142f23c01e54875ba516c629acd"
+  sha256 "674bcba94d4b0f3be1ebbbadc201d3f084e939f1cc2392de7522c12a5d714cfb"
   license "PHP-3.01"
   revision 5
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 5
-    sha256 arm64_tahoe:   "edb421893d99439719fe2199bde3bccfbd3fc5f7b7c9a96d64e83a286f23a83d"
-    sha256 arm64_sequoia: "1574911f928168d647496cd758f01051b3c4f966286751db3fa58d2aab79c9d4"
-    sha256 arm64_sonoma:  "a42317af9a7b290ebe7d9d52239cba2fec8fcd63e8ff87254a2fdc79c07b130c"
-    sha256 sonoma:        "679ed444da7c393943ba83dd2dce1f6d769e81d4bffebaedb02fa779f4630c51"
-    sha256 arm64_linux:   "e6bb88ff0dc2146e255ba5a3ef6942fa681c2e847047e35204789c795fb7cb03"
-    sha256 x86_64_linux:  "0b1702ed0d052821c48e432716c7c8fef0947aae436df8b5c99c3d9cf8169f1e"
+    rebuild 6
+    sha256 arm64_tahoe:   "fdb53099fab8c992d4032b5d0064f7a5b3381e0ea90891979403419b46a331af"
+    sha256 arm64_sequoia: "7a7949c932ff97c59e14a9efa6d7b236bb6528f790e6913151a21f1a95804f78"
+    sha256 arm64_sonoma:  "e48762a24ee88e2eec61f04f0d83ec160f9bf1f0f4edb9f3b94a0acd21d646e5"
+    sha256 sonoma:        "01d05b13200df06ba1ac30afa7e3ca9c092e595031cf117194674cc10c111142"
+    sha256 arm64_linux:   "d7be19444d4906b7d69fa44e0954699404d1453ec09a7292d5820009c040da6e"
+    sha256 x86_64_linux:  "3111598d0f2c124e83afb9bf276a535e81ed281fb43a9ccdcb86ec6aee715fe6"
   end
 
   keg_only :versioned_formula

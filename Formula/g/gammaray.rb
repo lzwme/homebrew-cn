@@ -7,19 +7,37 @@ class Gammaray < Formula
   head "https://github.com/KDAB/GammaRay.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6cc6dc89f74f66a223ab38551bd8f1bc8697826003367819cc723b52f99568ca"
-    sha256 cellar: :any,                 arm64_sequoia: "0a0b50e170779ff89fdb223f9685be9325b1a008eec6344741c6d1e1fe6e21d8"
-    sha256 cellar: :any,                 arm64_sonoma:  "5a0242bab26d1ab9577b71eb214634aa795422aaef7a2b30460e5fdbd7e54293"
-    sha256 cellar: :any,                 sonoma:        "d8d92e87bc1d89bea2fe753749d3c6469c16572d295ca14427a6f8554a671224"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5296aaef4e0cbd3a963a159ff3767c7cba427f4810e8d3c53588e1db4720c6eb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "dbd2e0542cd9ace17d401fe3d8c9f9b46a1b079706e873c3c8cb3bdd191058dc"
+    sha256 cellar: :any,                 arm64_sequoia: "18b2f69234eb8bbbfa11473781744c70993d42bd7d190fdf5bc12eaab1c5c966"
+    sha256 cellar: :any,                 arm64_sonoma:  "c480c1834c5797ebbb206e027df33b71a1270f41704a90227d0953323e80b104"
+    sha256 cellar: :any,                 sonoma:        "e128937e5279792055d4f39c523aee1799da2f669574cc63ded19371cbb03ee4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ff0f1aa862a5fe5b8f418afd78d2e0d4631f84f3982ecb8951bd22750e7516e"
   end
 
   depends_on "cmake" => :build
   depends_on "graphviz"
-  depends_on "qt"
+  depends_on "qt3d"
+  depends_on "qtbase"
+  depends_on "qtconnectivity"
+  depends_on "qtdeclarative"
+  depends_on "qtpositioning"
+  depends_on "qtscxml"
+  depends_on "qtsvg"
+  depends_on "qttools"
+
+  on_macos do
+    depends_on "qtlocation"
+    depends_on "qtwebchannel"
+  end
+
+  on_system :linux, macos: :sonoma_or_newer do
+    depends_on "qtwebengine"
+  end
 
   on_linux do
     depends_on "elfutils"
+    depends_on "qtwayland"
     depends_on "wayland"
   end
 

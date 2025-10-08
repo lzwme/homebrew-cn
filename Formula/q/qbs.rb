@@ -16,27 +16,24 @@ class Qbs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ea2a3fb3baa67563318e57be8602ce8223cbf2f6f1102556b28600b6fbf872c3"
-    sha256 cellar: :any,                 arm64_sequoia: "de23c0f6e1eb0db96bb05300afac1a38edad7ea59860fa94632b8c1380bbcdbc"
-    sha256 cellar: :any,                 arm64_sonoma:  "73ed45e1ae002ab27f86d004f7003825478b59726d758996214c24147ce2c387"
-    sha256 cellar: :any,                 arm64_ventura: "c04e7d54e0414f6fdea083c401f21fe4d7d7d7a5b00fa163f9180f23a3743972"
-    sha256 cellar: :any,                 sonoma:        "e78f408be5a3413cdc154e7a25d00dce596c9eba58cf5188993b16b73e96425b"
-    sha256 cellar: :any,                 ventura:       "027a239f45c910ddae143ede13b6117667122eba2979b75c929afbbfcbecda99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08a453229b6e2a073c41494aca5077a42207b3a37c1e895187e6e97a9b90465d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "744c54ac7722c99cd35fff1243b7149bc342e722b9f730656a3f948a313018b6"
+    sha256 cellar: :any,                 arm64_sequoia: "897b6fbf6667d4ba08ccc8baed8435d2dd2710d26a7400311e407a1fed49f9ce"
+    sha256 cellar: :any,                 arm64_sonoma:  "f362ce03374da267567565ddcbc3a04a698651c1b5a0d55d18148e28c8124c60"
+    sha256 cellar: :any,                 sonoma:        "0c3d67b19b77163bebd1245fbf4111ab96ceef403a5938550790dca2e07f560b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fa26c6fe79c5614f055df559f2c3aaa3f320698e52552257aa6654cfe06761d"
   end
 
   depends_on "cmake" => :build
-  depends_on "qt"
+  depends_on "qt5compat"
+  depends_on "qtbase"
 
   # Backport support for Xcode 26 from upstream commit:
   # https://github.com/qbs/qbs/commit/2f3e8254573045fab7ebd487aa773527a3da642c
   patch :DATA
 
   def install
-    qt_dir = Formula["qt"].opt_lib/"cmake/Qt6"
-
-    args = %W[
-      -DQt6_DIR=#{qt_dir}
+    args = %w[
       -DQBS_ENABLE_RPATH=NO
     ]
 

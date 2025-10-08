@@ -12,17 +12,17 @@ class Qmmp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3e09d5fcc07c81581ebf41e666068753591c240fb295c1593836e374a62c7fb4"
-    sha256 cellar: :any,                 arm64_sequoia: "2c58668033cd2b35d25f65efd43fe8bc14ab19f68af8e4e61a63285282e1ea27"
-    sha256 cellar: :any,                 arm64_sonoma:  "8ee64ac53b6d3dcc276d7e68485a41c944493932bb03c11dab019192b8e4d3c7"
-    sha256 cellar: :any,                 arm64_ventura: "091abe456fce70bebecd6c52dbc29023834b168b4ebce8965a7eec7376bad5e4"
-    sha256 cellar: :any,                 sonoma:        "e53841142aef6797006007106b28c75b135cf8cc2e2ab480cdc6c410cf2b7b97"
-    sha256 cellar: :any,                 ventura:       "9a6a1c5b18814608aba6ac5cab4b6831da5e5ddff4c911fb2992651cc9fc7f73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "937dffeceab76262364fb117c6e428a5b3509852266556ec7be2d71544f1afdf"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c604a65283991e1125a2dc60a7551b16436aa5697dec016a505f1b0758d41468"
+    sha256 cellar: :any,                 arm64_sequoia: "7719e3c694b28f9d492a7526b010fbc73e59a7a479269bc4a3417f48c6e47d78"
+    sha256 cellar: :any,                 arm64_sonoma:  "7e77fc19feca00f30339cf58f7224fb79c96b8d64ad65dcc264c1acf420084f7"
+    sha256 cellar: :any,                 sonoma:        "8b7f19774a1354a3cfdcb20d017a91b0075c0d106ab42dfc80a6d5e4f275f0f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2a46156648497b211069783e0cd1d0e393c9bfc8b65dc50d52d34496c113da4"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
+  depends_on "qttools" => :build
 
   # TODO: on linux: pipewire
   depends_on "faad2"
@@ -52,7 +52,8 @@ class Qmmp < Formula
   depends_on "opusfile"
   depends_on "projectm"
   depends_on "pulseaudio"
-  depends_on "qt"
+  depends_on "qtbase"
+  depends_on "qtmultimedia"
   depends_on "taglib"
   depends_on "wavpack"
   depends_on "wildmidi"

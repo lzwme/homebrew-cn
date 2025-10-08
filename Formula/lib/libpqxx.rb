@@ -1,17 +1,17 @@
 class Libpqxx < Formula
   desc "C++ connector for PostgreSQL"
   homepage "https://pqxx.org/development/libpqxx/"
-  url "https://ghfast.top/https://github.com/jtv/libpqxx/archive/refs/tags/7.10.2.tar.gz"
-  sha256 "9e109ffe12daa7b689da41dac05509f41b803f8405e38b1687b54e09df19000f"
+  url "https://ghfast.top/https://github.com/jtv/libpqxx/archive/refs/tags/7.10.3.tar.gz"
+  sha256 "c5ba455e4f28901297c18a76e533c466cbe8908d4b2ff6313235954bb37cef25"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ed21501081fd8404fb8e8a4b550f0f9d958185eb1f6dec863c63e751cf6ba198"
-    sha256 cellar: :any,                 arm64_sequoia: "96e2cb1bcd4a07516d7776fad1a5f95de023fc5248fbbb77757bb39d855a78a4"
-    sha256 cellar: :any,                 arm64_sonoma:  "0dec7d9673083805891550a4de3bc04cc5cf386e37dbc5e40d4d6be8ff88750c"
-    sha256 cellar: :any,                 sonoma:        "c37e557a9aec7bcb1a2003d756a74ed191e363c2f5a2d6fd47b39f5a075596ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "86e04928947649716b353f5f09e76e97cca4fcba3ee403afc09ab15e2b02174d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7430a7b89c6992d6ce6deffda1d173b096bcae4ea10c7312ea100033a89a7d4c"
+    sha256 cellar: :any,                 arm64_tahoe:   "91c06fabfc19493b74ff6c9d98cd4e725e39e1ad2226de8b004cc53da34423d0"
+    sha256 cellar: :any,                 arm64_sequoia: "6feca803d2051b747872573c6aa5f7fb4e4e82f68c2ce1702cb62306e519c707"
+    sha256 cellar: :any,                 arm64_sonoma:  "7dfa29f9b24b84fadbcff707da41678bbf5a89e509f8d596b0fb18622d4e6387"
+    sha256 cellar: :any,                 sonoma:        "b88b53fd6a80281c12f4814eb890c6aba651d1ca677dd4c35d0dcecaf1f90ad2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "311d05aa40fd590772075c752c99961319a64fadfa8a41d257c2a12e3f33a6d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04a5d4342e18c58adcaceaebb502c91cbb301daf71642afc306fca9bb420c386"
   end
 
   depends_on "pkgconf" => :build

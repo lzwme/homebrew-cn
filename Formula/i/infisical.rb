@@ -11,12 +11,15 @@ class Infisical < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "843596a54cd53bb2a8cdaabe6ad7dc7c271fd3b5ee990f74055dd20d74666bb6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "843596a54cd53bb2a8cdaabe6ad7dc7c271fd3b5ee990f74055dd20d74666bb6"
     sha256 cellar: :any_skip_relocation, sonoma:        "82e4750e2a2711ac692f36c4c8d7074f93b575e6fb43e578ce1b1f7c6c91cc24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca0caaddbcb8de40094776c03fd61b1a3a4488e4d2977a2631f67ec7c89dcfaa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "839dfb478c1529e4b578eebdec182698188213ba2d0076b272fdf4925c08577d"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X github.com/Infisical/infisical-merge/packages/util.CLI_VERSION=#{version}

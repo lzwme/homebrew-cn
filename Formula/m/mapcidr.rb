@@ -1,17 +1,17 @@
 class Mapcidr < Formula
   desc "Subnet/CIDR operation utility"
   homepage "https://projectdiscovery.io"
-  url "https://ghfast.top/https://github.com/projectdiscovery/mapcidr/archive/refs/tags/v1.1.95.tar.gz"
-  sha256 "f5d501a3cc742fac78ad84c9534af8342dd3936245f89ec85511e2bc4fb64dda"
+  url "https://ghfast.top/https://github.com/projectdiscovery/mapcidr/archive/refs/tags/v1.1.96.tar.gz"
+  sha256 "fdf2955f920f2197bcafd90009cae54b6766b890cb1481a673cf44fbf81d867c"
   license "MIT"
   head "https://github.com/projectdiscovery/mapcidr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8cdcb2bda8f943721a3f86b49621930c1aaecc5c9fea53e76abdd4888d75369"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e1a90b03b64e230a8765cbfa490ef9cb6fd05708e172f0bedcfc48c18bcefe6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4560d50968443f512b981abccb15b2ffb7e1fb83ea755081d1b4b91f364c62ce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8a9c7dc0495665e22afb09ce2c10a13820e11693020cc33ca902cf35f384c5c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56ea4d7d25ba222cd69ad9de7642a1dbc515aa5d2303fc1d09e5f7e9a978c4c8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e28c0009ed0514f019e0ffd41e14a4e7159a5914fead3015cc5d1f2185b82f1f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d78655c0b9ed6633a16c7cf12e99d21fe0cdc9debe1fd140ba6cacb8a7bf64c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57aed1540f1169b088e245a8321bbfabb82f4afc5801653a9bcf08be52141792"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3cf92d7df7cd70b386e8dfd7da1b7f331a4a0f4abad34ec2e35e6b525348c024"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7c96bb7fe839fd01b4af3d94703a5c9e3cb8f9fa69ed1fa9d09dfae6f5fc6d0"
   end
 
   depends_on "go" => :build

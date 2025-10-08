@@ -7,16 +7,15 @@ class Cpi < Formula
   head "https://github.com/treefrogframework/cpi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cc3c3aa9cd9224b34c95daaf3c9c4f6a361325952d8bc2857c601c8f1dd92feb"
-    sha256 cellar: :any,                 arm64_sequoia: "4fb9c614fd47c50de5d8892a92a8547ac6b26a3f59352a64d130da18f7b35ae1"
-    sha256 cellar: :any,                 arm64_sonoma:  "6ea70f72f4c3ec5bde7ce53d9ebc8a79dd9135ec83f590b8668286648aa33e1e"
-    sha256 cellar: :any,                 arm64_ventura: "950bd8ed8c9be7cf77e86e0b5bbd97f3128a943da8e9cd5e9918af4983345f01"
-    sha256 cellar: :any,                 sonoma:        "b55eac0ab86ee9ec0eff6de91deeee2c3951e1a6a4732247524ef07a5aa5f4ed"
-    sha256 cellar: :any,                 ventura:       "bfc54c256897170142b0fa6322c4ea5c6974eba9c2baf04235d8414717ba4873"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffbaf9abd3b664c754c881208938414a5abde81082e703796fc3ef1318196af4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ebc8bcf9165cc4f7d1fde637a79c4b871072c74b93358687311e97cd7e126cfd"
+    sha256 cellar: :any,                 arm64_sequoia: "6bea475fa5b517cf42faebb459b104fc8d868dfe5e03cf097e37eb7fb0512a0d"
+    sha256 cellar: :any,                 arm64_sonoma:  "391aa4186fc5c5c6f976bcf61bbd8ec7f311e352194b8595ad97da4db246a260"
+    sha256 cellar: :any,                 sonoma:        "80aa4416afead86fe0621e8c53874dbfd951ff6fc40e8a7641c26cd1a382ab31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be937b51660f2d5f2664a132c73b928706be340356100c74b7ebb507c7ec436b"
   end
 
-  depends_on "qt"
+  depends_on "qtbase"
 
   uses_from_macos "llvm"
 

@@ -9,14 +9,12 @@ class Icemon < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "d5699c05775376785a27e03c3122fec45f79bcb2e2addccd0ebfd984ec09c4a4"
-    sha256 cellar: :any,                 arm64_sequoia: "7e188a275db66c3eb974a2ed94b78e2626efe636c43fa26c38826a641b93f499"
-    sha256 cellar: :any,                 arm64_sonoma:  "61b7f50cdc52d8f6f4eddc624b469c9cd49156c5c6204395b84dff8674c7567b"
-    sha256 cellar: :any,                 arm64_ventura: "b88d2b0738b3514d76a232fdb95dfb2895e25cd50328518d10944e29a8972932"
-    sha256 cellar: :any,                 sonoma:        "a53d4a690cd9a53f921e18bb2884b65c324fec8ce99903bb7f09a001c9c7ca24"
-    sha256 cellar: :any,                 ventura:       "d69c741ab8a85b9ce7c6fe3817d25b16abd6fefcdd17c83aa04ae6027d7d013f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "623a817bb87eb94ad8ae250cfe74c1153545aa13d8813a4719f54d8fd3439f22"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "d5e4c9d47ec2de4753b84249d420914f615537a8716a8572766bf2f55d537842"
+    sha256 cellar: :any,                 arm64_sequoia: "780134490d63035a304cce1c56538ddce1dfe02ee84ccc61b99a4ad55d385e7a"
+    sha256 cellar: :any,                 arm64_sonoma:  "31a6bdad5b6498e066f6538d31aa06d544bcd6a6f21190ef0437303a5c59f577"
+    sha256 cellar: :any,                 sonoma:        "a6a7e36c351382149cc4bc6f38d02003b62de21a0dbda312c4416314a1f61dfb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f77bec647e7e05d5261669d24196f3cc83f86425df31ca9558593461b45a3bdf"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +24,7 @@ class Icemon < Formula
 
   depends_on "icecream"
   depends_on "lzo"
-  depends_on "qt"
+  depends_on "qtbase"
   depends_on "zstd"
 
   on_macos do

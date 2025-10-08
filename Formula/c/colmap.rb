@@ -6,11 +6,12 @@ class Colmap < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "38673b04e380657db56daca34d6f9bac63c6cf6fcdd9a84ebbf1820d5f56cce2"
-    sha256 cellar: :any, arm64_sequoia: "04f4acca4579eb55387f90840e8d6bd959c59cfc989423004c3f007405602618"
-    sha256 cellar: :any, arm64_sonoma:  "a695a903669295bf7c7d0600fda4d8c17aa00ae4a452a0de58c9a76e99c037f7"
-    sha256 cellar: :any, sonoma:        "f4d49e7926090e199c3e5a6e92d8825da1e124172dd157ed9bdb25cba74b1f7d"
-    sha256               x86_64_linux:  "b5bdae09804df82c4eb7dae50e41f167ff54909b369a67b2f533f99cad110e67"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "636dda7a476847cd390b24ccfaa54588a068b4cc5a21b0ff55ef2f116272f27a"
+    sha256 cellar: :any,                 arm64_sequoia: "aee8f246d50e04e7c3cc551627e890632f9038a9abd97fe421e71cec2217c38f"
+    sha256 cellar: :any,                 arm64_sonoma:  "8799ef68c3de223d423ce3fc3dab7dfc2adf1d0b9afeff0f30ab37305e06b577"
+    sha256 cellar: :any,                 sonoma:        "0eec12940518cd5aa0866ba3b875580d6ef6691eaadf7b3d93cf2a21fc40ffae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04bed90470071ac42ca664ed2e86df2f58ddce598bff88bbde1619b5236ed96d"
   end
 
   depends_on "cmake" => :build
@@ -29,7 +30,7 @@ class Colmap < Formula
   depends_on "metis"
   depends_on "openssl@3"
   depends_on "poselib"
-  depends_on "qt"
+  depends_on "qtbase"
   depends_on "suite-sparse"
 
   uses_from_macos "curl"

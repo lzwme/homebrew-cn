@@ -7,7 +7,7 @@ class Zrok < Formula
   license all_of: ["Apache-2.0", "BSD-3-Clause", "MIT"]
   head "https://github.com/openziti/zrok.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :bumped_by_upstream
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "69512d5888b0ab4f9a81010b546c4d1e7b48b52be839c8ff1cdd904a9bb1d7c1"
@@ -27,6 +27,8 @@ class Zrok < Formula
         system "npm", "run", "build"
       end
     end
+
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
 
     ldflags = %W[
       -s -w

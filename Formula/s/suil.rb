@@ -4,7 +4,7 @@ class Suil < Formula
   url "https://download.drobilla.net/suil-0.10.22.tar.xz"
   sha256 "d720969e0f44a99d5fba35c733a43ed63a16b0dab867970777efca4b25387eb7"
   license "ISC"
-  head "https://gitlab.com/lv2/suil.git", branch: "master"
+  head "https://gitlab.com/lv2/suil.git", branch: "main"
 
   livecheck do
     url "https://download.drobilla.net/"
@@ -12,14 +12,12 @@ class Suil < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "d72bbcdf5b36e8b6910246e266dd11530aec6985ee8471944d4a236629687b82"
-    sha256 arm64_sequoia: "3a131c8b4177cec651521981be98084c9f51164cda259d8f78d110c933e22989"
-    sha256 arm64_sonoma:  "aaf1ed83539d0430a42e90e4cb0aba34e226a948a3bca6cdb918aa9a8a5da0d7"
-    sha256 arm64_ventura: "64c64d93ac2c688372e8c4773fb44045a0a81c24fac5bc698bf4db8a931948f1"
-    sha256 sonoma:        "bc6e784d338b47e3a4e76edf8d3b4e781971c2188f120a41776db19b7459b16d"
-    sha256 ventura:       "fa22d68335ca3a5337904e2a9cd8d8e3e4f285512ded9b0c65190827f9980522"
-    sha256 x86_64_linux:  "a019ceaf7b2a6934baab2af852ef86aedc32559ba114d40a430b68f61c478cd3"
+    rebuild 2
+    sha256 arm64_tahoe:   "beeb7b73619489f0cee7601a170abc1290c16ee9ba097f57fcbd628fbd7d300d"
+    sha256 arm64_sequoia: "25a6bf27bf30c162f447f501020cd9eeb80c3cdea9c67f2cf342bf2717aa57c9"
+    sha256 arm64_sonoma:  "ead556e804f93c966a0100d8e8e94385848c98b757c2c1cd53a5f19514512caa"
+    sha256 sonoma:        "1c238cde79a053b3ff7799932eddb53d6128b098c21c98237c96fac207de9b1f"
+    sha256 x86_64_linux:  "80a3d62881ba344a399c18f69ba815c74dc54efdfa0a3a27078a79cdad24f31b"
   end
 
   depends_on "meson" => :build
@@ -40,7 +38,7 @@ class Suil < Formula
   on_linux do
     depends_on "glib"
     depends_on "gtk+3"
-    depends_on "qt"
+    depends_on "qtbase"
   end
 
   def install

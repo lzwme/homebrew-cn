@@ -8,13 +8,12 @@ class Pcl < Formula
   head "https://github.com/PointCloudLibrary/pcl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e6e11186394a3299ce3c17c8adb97d60f8ab750b0458bd229278c3ad6755ff52"
-    sha256 cellar: :any,                 arm64_sequoia: "8948b8096627f93807e4b0776587a833591aa8d2fc6e2e1b1746af7e9b79dbe1"
-    sha256 cellar: :any,                 arm64_sonoma:  "1e6bcc5ec5e8439f28279d96a4da0f6c4d36d7ca039e0701980da1c1463c6adb"
-    sha256 cellar: :any,                 arm64_ventura: "18e0f9c8f40bc9ad0a8fba24c271108072a8ae8a47e62e7de3e80ec1c6be2607"
-    sha256 cellar: :any,                 sonoma:        "555298752913e52820e547429dc75cacc52dfd42e5debb39d34c7822a3f1f9f2"
-    sha256 cellar: :any,                 ventura:       "97e98d574fc7a9ea3a162f4355c4cdb137db3f32f8b1c6fd17ef8c34ebfff1ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73aadfcc5e0d851dd9adb6f5075cc2c588057e60399222556d1355d1b77cc712"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c06cc9485a67cba638ab78dbd215b4c8839f420e26fffed015bd0f95c7c07a70"
+    sha256 cellar: :any,                 arm64_sequoia: "982b8332e9e6de238fbf34c31057dc15767166f63f7b2b9c3f57f55d682e9b01"
+    sha256 cellar: :any,                 arm64_sonoma:  "122837c0587bd4e41ec76a36c5840d657e64e0d8465b53fa87f64637fbd66c1f"
+    sha256 cellar: :any,                 sonoma:        "d65d4d87b0f7e60a4be06db963bdaff7dca9c2bfaf837a2a79998838c8e6fc10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0870d2eb742f352c2ca71955d0cd4711345bfec5beac6b8e903540a775d2cd64"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -29,7 +28,7 @@ class Pcl < Formula
   depends_on "libusb"
   depends_on "lz4"
   depends_on "qhull"
-  depends_on "qt"
+  depends_on "qtbase"
   depends_on "vtk"
 
   on_macos do

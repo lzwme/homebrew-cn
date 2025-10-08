@@ -14,12 +14,13 @@ class SyslogNg < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "cbedb827a9ab3950670e75e34ccb4cf91d47d211447329098aed3f743977dddf"
-    sha256 arm64_sequoia: "f51708af12a3ffcf4716c4298eb83e05921ac643ff26873e43704e94c09f120b"
-    sha256 arm64_sonoma:  "6fa6deb17a7ebe500c3e51a7ae72e41dfaf4a708aab746f9d02e5509cf5e7e2f"
-    sha256 sonoma:        "58a0cd03b46da2e1f345a08b629a143ee8458a274cbab2c2f30af5d7eceec848"
-    sha256 arm64_linux:   "d34421e58eaefdaf211ef778568971d838d65539157b2c2d515f26281c5a2fe4"
-    sha256 x86_64_linux:  "4ada32b8d3a0941bc0de4011c95c60060b00c49daf5a5e44aa225080cfae703a"
+    rebuild 1
+    sha256 arm64_tahoe:   "d9ffad275c00c7c4ebc36fb056d401579237d158ca71ac6a96a285f1ca8cf0ae"
+    sha256 arm64_sequoia: "16eca6e0d0428aaa07df1c772c3d19b596df484b0900d64a9e903bf53cecb090"
+    sha256 arm64_sonoma:  "c47c07ec19ba58f8dd2eb8b4a8df05ac7465ef61adf7a57db94c21d25c86fd9c"
+    sha256 sonoma:        "2f499692a03427a16afd39cd2eea857357434c1fd5c792a17c6ee2efa8184b83"
+    sha256 arm64_linux:   "1063046f956107b14f138b86f4f3c273ef3a7d77361ff2e66582dcbf29ccfee9"
+    sha256 x86_64_linux:  "1e2437bb231c11954c3b6041e335c4cec0605da9604219a4d2525af235ab66e4"
   end
 
   depends_on "pkgconf" => :build
@@ -35,7 +36,7 @@ class SyslogNg < Formula
   depends_on "libnet"
   depends_on "libpaho-mqtt"
   depends_on "librdkafka"
-  depends_on "mongo-c-driver@1"
+  depends_on "mongo-c-driver"
   depends_on "net-snmp"
   depends_on "openssl@3"
   depends_on "pcre2"

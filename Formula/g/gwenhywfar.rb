@@ -13,11 +13,12 @@ class Gwenhywfar < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "3293e8493aa6c334e5311aa7092589e2f07c292ad826e412c4e121d9007832e7"
-    sha256 arm64_sequoia: "8e4e5c840a4885103dbd14a68bdd5ce13c2e9fd3651f98e1fcf0e811308f37a2"
-    sha256 arm64_sonoma:  "013a1c3e0235f1aba1e4588ca2ce82ff94d7e5813b5334cee323362315302006"
-    sha256 sonoma:        "21e9b58b5bc10336fb12455dc0060a8f4e4d44e010552c421502567e7fee51c2"
-    sha256 x86_64_linux:  "f7d75d81fd16fe4e0cd7ff54322d7843104d39d8ef487413d0bbc6cf5a4e2a54"
+    rebuild 1
+    sha256 arm64_tahoe:   "c3e07fc19de3769a5c500e47668ba0058fcddd089eeb61f44896f6b604878c55"
+    sha256 arm64_sequoia: "ba0c84fbc7a140e08122a3bbb9eafae52335e981574fb24c26338b7b19ff209b"
+    sha256 arm64_sonoma:  "7d63c7b8d76c26181c107652e26d8f929a4be9e0a3548817b71db1eff91eaa3d"
+    sha256 sonoma:        "2275654e73a02e0a503047b68d2149404592a54030de67a8d41819e0c81e4a8b"
+    sha256 x86_64_linux:  "547e2e560c7c77100cb28d5d7562b50fe287a4d28cb604d4bbe620fc7512e289"
   end
 
   depends_on "gettext" => :build
@@ -27,7 +28,7 @@ class Gwenhywfar < Formula
   depends_on "libgpg-error"
   depends_on "openssl@3"
   depends_on "pkgconf" # gwenhywfar-config needs pkg-config for execution
-  depends_on "qt"
+  depends_on "qtbase"
 
   on_macos do
     depends_on "gettext"

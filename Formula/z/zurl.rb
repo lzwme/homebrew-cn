@@ -15,21 +15,19 @@ class Zurl < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "96bd58be6e3af459d80891cd6378f2c755dd81fa23d0a1554fbab6dbcbd1b353"
-    sha256 cellar: :any,                 arm64_sequoia: "5db8ddc67b025fcf2594d09c00e5e0368f93c71babec22b6f45338474a8c0ef5"
-    sha256 cellar: :any,                 arm64_sonoma:  "caac867d6cd84464d1432597b7f87521ad5d971e12aded4455068d0e227c7d6b"
-    sha256 cellar: :any,                 arm64_ventura: "db24a1c2b45dacb21bc6d983c7cc243e3a4c66e405e92ea1e1b755c920adf647"
-    sha256 cellar: :any,                 sonoma:        "3c269fb6fafc531fb6738e3e5b8f21085526b3278068bddd1f606342f5d14bb2"
-    sha256 cellar: :any,                 ventura:       "e97837c8f2141e8ff0dfe985fca0b6924a894b9a0fcc023a4808491eb67b3503"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e03115779822a91ea2c4547dae103f6538beeab596a56251aad671519c1becd8"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "41d2079d1fd2a900dca1029713552185f15f4e6d4823927a2b2be50f7c20a7db"
+    sha256 cellar: :any,                 arm64_sequoia: "bbd753d9817b81765da1018bbf987e927a8456e14fe2fff6c515ed985089f51f"
+    sha256 cellar: :any,                 arm64_sonoma:  "959deca1f83b07706a5e7975f8ecefc5d344a2377c3f963ca92f1c0b5d38266e"
+    sha256 cellar: :any,                 sonoma:        "7641342f8a326d2ea9bfe5a763e2619c8e9bcf4075752a1f228ee32c1eba14af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65d8a25744f4bdcf31b030aa132632d5be92c7a0d9c89e6c0f59d29bfce5a146"
   end
 
   depends_on "pkgconf" => :build
   depends_on "cmake" => :test # for scikit_build_core
   depends_on "cython" => :test # use brew cython as building it in test can cause time out
   depends_on "python@3.13" => :test
-  depends_on "qt"
+  depends_on "qtbase"
   depends_on "zeromq"
 
   uses_from_macos "curl"
@@ -39,7 +37,7 @@ class Zurl < Formula
   end
 
   def install
-    args = ["--qtselect=#{Formula["qt"].version.major}"]
+    args = ["--qtselect=#{Formula["qtbase"].version.major}"]
     args << "--extraconf=QMAKE_MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}" if OS.mac?
 
     system "./configure", "--prefix=#{prefix}", *args

@@ -7,13 +7,12 @@ class Pushpin < Formula
   head "https://github.com/fastly/pushpin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8659ba7f8f37102cc3e856258d06f74f10a47bc501ec14de06a3c4a504a00069"
-    sha256 cellar: :any,                 arm64_sequoia: "33ed26c14c533b50d5f14be0ff0cb049f32a80e495ac822c9b461a49424eaed9"
-    sha256 cellar: :any,                 arm64_sonoma:  "1434389dc49466bf5fd7db467fae69f1a4cb1a40fad0ba208424d9cd668561d8"
-    sha256 cellar: :any,                 arm64_ventura: "6a6e1589b2426b8865342dc8ca4e1e40f458566914b4d9bc2acfe5026a5913d3"
-    sha256 cellar: :any,                 sonoma:        "e556f7e386f9754072825140963bcf97500b0913028224c0c41e34b06ec5101e"
-    sha256 cellar: :any,                 ventura:       "794dab5892a1cd01292d6e30e5630f3a532dae8592a86c676822ea748e80f416"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37e7dd8b643404da43b6445a0d0af373eb2e13724797c7b78c00771844f41def"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "6e73465fe08f48d016e09eb9c16c6a530ffe64e30182ab4a5633ceb825b0a49c"
+    sha256 cellar: :any,                 arm64_sequoia: "bbf50845458b12667c07b7372591c597d2e9700000dc8a450952828d7502640d"
+    sha256 cellar: :any,                 arm64_sonoma:  "9f842c91529a5eae529bc5ccf2a6ffd2e395ae10ae39678b9f73d4308fe301c1"
+    sha256 cellar: :any,                 sonoma:        "854aaf2d9faf110d01d4981893f6943e8f19902d46b27071d9024c1337fc4f54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5adc9058a2d49d129e4190976cd973e3350ba8ca39957e4774a8c4e07cce25df"
   end
 
   depends_on "boost" => :build
@@ -22,7 +21,7 @@ class Pushpin < Formula
 
   depends_on "openssl@3"
   depends_on "python@3.13"
-  depends_on "qt"
+  depends_on "qtbase"
   depends_on "zeromq"
   depends_on "zurl"
 

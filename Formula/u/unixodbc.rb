@@ -1,9 +1,9 @@
 class Unixodbc < Formula
   desc "ODBC 3 connectivity for UNIX"
   homepage "https://www.unixodbc.org/"
-  url "https://www.unixodbc.org/unixODBC-2.3.13.tar.gz"
-  mirror "https://fossies.org/linux/privat/unixODBC-2.3.13.tar.gz"
-  sha256 "119afef5f4cb04e780ca6cf763265b9fb2b99c4c11349a3f9cab14069d2c7c2b"
+  url "https://www.unixodbc.org/unixODBC-2.3.14.tar.gz"
+  mirror "https://fossies.org/linux/privat/unixODBC-2.3.14.tar.gz"
+  sha256 "4e2814de3e01fc30b0b9f75e83bb5aba91ab0384ee951286504bb70205524771"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -12,13 +12,12 @@ class Unixodbc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "7c9526b441435001124460466ddd9c036cc494d894b9131a2c1e03f3a0b4dc86"
-    sha256 arm64_sequoia: "e319fd6f83f15c3c96c570c4f9782ad0d964181a98da712905b94f589dddd921"
-    sha256 arm64_sonoma:  "f0363503a99f6f4ffa64b12eb5c99612250af7964c8be8906d3156a798065531"
-    sha256 sonoma:        "b033f17443c5fc20d3af8f904b90a3bf9bdf668efbfb8bdf0bac5b1bfc3ebc64"
-    sha256 arm64_linux:   "151b0f1ec0f4cc526c338542ce1a292ccc923e09c7f3f23bd178794a5b93dcb7"
-    sha256 x86_64_linux:  "5a7ce1eeb9ce55f3a61a9a9ae16123ad02bf67462abdd49d73a42058cab5db01"
+    sha256 arm64_tahoe:   "16b4c2a9d565749bae947c75a100ec4628e57c427af5b542593f67474077b3cb"
+    sha256 arm64_sequoia: "e1522105d20545743c713e90c17bf6393d7a829ec01137ec0d6942bbc04ea2d2"
+    sha256 arm64_sonoma:  "39f022a55a502b3b1d46769705cc46c4aa9f9206b902558ed56cd47aab3d54d8"
+    sha256 sonoma:        "6fc56b53e2abd5b38ed655c2c32caae95753e6b6f5a9fe0a10c4b760a3974d2e"
+    sha256 arm64_linux:   "8e6e9979f6e88ae812222d215688d5b044e25f3182a70e3fbeec3ca07dd9f3d9"
+    sha256 x86_64_linux:  "3f04884aa241e341fea833df1fcb51ec7b181e5a75ff4a7b86ca87dc4c7a24dd"
   end
 
   depends_on "libtool"
@@ -29,13 +28,6 @@ class Unixodbc < Formula
   link_overwrite "include/odbcinst.h", "include/sql.h", "include/sqlext.h",
                  "include/sqltypes.h", "include/sqlucode.h"
   link_overwrite "lib/libodbc.a", "lib/libodbc.so"
-
-  # Fix segfault where `dst` is passed to `memcpy` instead of `*dst`
-  # https://github.com/lurcher/unixODBC/commit/97add92e08ed42102234055d55e098e1c8e5c1c0
-  patch do
-    url "https://github.com/lurcher/unixODBC/commit/97add92e08ed42102234055d55e098e1c8e5c1c0.patch?full_index=1"
-    sha256 "1cc28bbc3fcc4fc170c7b806ca9c1f69c9ecb0c599c7a7a7598da202eaa797e5"
-  end
 
   def install
     system "./configure", "--disable-debug",

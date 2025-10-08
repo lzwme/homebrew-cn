@@ -1,8 +1,8 @@
 class Sui < Formula
   desc "Next-generation smart contract platform powered by the Move programming language"
   homepage "https://sui.io"
-  url "https://ghfast.top/https://github.com/MystenLabs/sui/archive/refs/tags/testnet-v1.57.2.tar.gz"
-  sha256 "f810300c4b504e1331be1be38d9a9ba55a8cd0f56bfbb7bb19163cfd5846b03b"
+  url "https://ghfast.top/https://github.com/MystenLabs/sui/archive/refs/tags/testnet-v1.58.1.tar.gz"
+  sha256 "a97edd3a9ab55271f95c8aeb9969229088eb6156dcb1a261d71d2effe824689e"
   license "Apache-2.0"
 
   livecheck do
@@ -13,12 +13,12 @@ class Sui < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "46d446c3d1dc8fbbbff51f26b9148326b48ff4dca3a1f02fbbedd794fb417bc4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fea5159e13a655cced1d6df14c65e6b5452395a5851457604b6583b5e9236823"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6e6bb2c1f9a2a745a834841dae1849631dee28d27c1fdf91dad0867a42f3825"
-    sha256 cellar: :any_skip_relocation, sonoma:        "169899b3da212e5bc73c7b5404a7a9e91256382df028f10c477687ff7809b436"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bdcfa81f043cde67bb1b2d04ed06f4ef638940aadcc107670905a3d7fe44df8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0f883e7906d01b8222219b219807e7186417de96fb594c32bb9830dfe076efd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22e0c89274d85e8ffe4d87347d39f2dd787ad9a521e3597aaf18e937fd66c344"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4bb43c086df91930e8af8c054b6e278d0218eb77ead34e361428a1b6b8f98fa8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "094c047a65a8a3edc4f9e9c03a291e2a6ccd4cccd1584ffb3f5974c3b3f79a46"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c5d50c2f411d7eb82af38c38f43fa6c4223c549e74da23567e1a9106a6ddae73"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea4d562f8f109ab9f4c0f4a5b103a30b65fe5dc4b6aa364752a4c9905312adb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a05028c32dc214901abeefe2e300b60c47e8e0f9c18cc3f5789754e06ac59cfd"
   end
 
   depends_on "cmake" => :build

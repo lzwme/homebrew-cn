@@ -14,13 +14,12 @@ class Metview < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "6a0cad465b3334eda720ee0faf775b9d6a7f513c62cd595ae18d4a651bf2e21f"
-    sha256 arm64_sequoia: "08066751b73d204a2b781f35afaaea9168c1aca53bc3891ecea15057088f75b0"
-    sha256 arm64_sonoma:  "876917b5c9621b6efb3b45381e33741484588dbbda49fa69d01c1af12f79f830"
-    sha256 arm64_ventura: "328738471e53512d4f170c1792eb7dd4f44210ae134391e5aefb87f14a5dc719"
-    sha256 sonoma:        "8436e13d3f7adbd5862345c1d8e366d5b479121f0d089c428573c5853a619872"
-    sha256 ventura:       "4b989db8ccf78dbec26dddc01b0a4601b47f647bc4896271ff80f71bcbf424c4"
-    sha256 x86_64_linux:  "9913a8f66586218ffe992531c8fb2d29ba5d45282b428fe18beb00166ac1550d"
+    rebuild 1
+    sha256 arm64_tahoe:   "d3a67d82260e52fb5492b4aacda4a269e610b0f815727626cdc0e11afa57c0d5"
+    sha256 arm64_sequoia: "58d68231a3f452c1d91fbefbfc393858e906fab3c6438007fa343607132ac262"
+    sha256 arm64_sonoma:  "7a9e6ed00db35e8b844d2700f694f6a7f8898a070343960a5b35997431b64862"
+    sha256 sonoma:        "7fff956e0fd60ca305b99743ad1cb1f0c7bb337b5dfe3bd56cc57780f12b0d40"
+    sha256 x86_64_linux:  "6f16c80df89c3e659162ac7ed028d3a2617895642acdd8a444fe785169b7cc37"
   end
 
   depends_on "cmake" => :build
@@ -39,7 +38,9 @@ class Metview < Formula
   depends_on "openssl@3"
   depends_on "pango"
   depends_on "proj"
-  depends_on "qt"
+  depends_on "qt5compat"
+  depends_on "qtbase"
+  depends_on "qtsvg"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex"  => :build

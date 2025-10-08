@@ -7,13 +7,12 @@ class Libgr < Formula
   revision 1
 
   bottle do
-    sha256 arm64_tahoe:   "3b7b66b7608cff95d414a23067857a46e61b1f0ed58ce371bcee291e8a1f6e3e"
-    sha256 arm64_sequoia: "90000a93329b302423df61810193bc3968537fc37b2e2f7dbdd6d96bdf983397"
-    sha256 arm64_sonoma:  "3ce60c550dcd8720707e307b8ac7899815a941b579bd4f01b960675699ada710"
-    sha256 arm64_ventura: "cb3af42272d1ad444e7552f9fda7ec20de5756355d65d140500658c9466c541a"
-    sha256 sonoma:        "309cb93ea973b305a0503eae8890d1aa7c74724dbcf3451aceaa7892efacf4ad"
-    sha256 ventura:       "24a5a93b585691867de0d39daa4cad50d4bb5a9704a19b871444f187a1102e67"
-    sha256 x86_64_linux:  "e2515bd932c6012a30f536435b9a3e1cfb7d4c2523a61720dd2e98978a67fae0"
+    rebuild 1
+    sha256 arm64_tahoe:   "c419f470192d46b07acfdea62b272b63c7c558e304c2d5eec554a94a8d3a32c4"
+    sha256 arm64_sequoia: "e3d7abf46e0cd291f2eeea2b18e121f12b421b89bdb8e499676268344fc91464"
+    sha256 arm64_sonoma:  "ea87941cd1713773c4f5ef128fce8f25c6d6ba42a08b2b972b287a14f5ff61e7"
+    sha256 sonoma:        "4c89da88dd44c40f50933c68bbe381fc684b13b55832a9e3a02d5c527650b6ae"
+    sha256 x86_64_linux:  "0fbd45d4ee1913cd8041d17448ae2b72dcab0fb692604e46f4e02f3a80818128"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +25,7 @@ class Libgr < Formula
   depends_on "libtiff"
   depends_on "pixman"
   depends_on "qhull"
-  depends_on "qt"
+  depends_on "qtbase"
   depends_on "zeromq"
 
   uses_from_macos "zlib"

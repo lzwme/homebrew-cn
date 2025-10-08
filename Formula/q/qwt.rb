@@ -13,17 +13,21 @@ class Qwt < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "d5b661e35a9b33c14fc41fc7f7ae3d9522f6671985b0e2bdab855d258e82ad64"
-    sha256 cellar: :any,                 arm64_sequoia: "008c584f487a2ef67c088ffc6deeefcf2462b2b028bc064fbedabb6df9f707f7"
-    sha256 cellar: :any,                 arm64_sonoma:  "136f2812341e94fb98be285e00f938c7078aa855dd766be89e8b27b65ff61729"
-    sha256 cellar: :any,                 arm64_ventura: "be7a809955ab72f32520add889794883d4da77781387ba7110bf8ab75b03ce8d"
-    sha256 cellar: :any,                 sonoma:        "bf1e1368404ef259bdf0a446a2c5765ed38851d8fe8c050f5a6138a757f4044e"
-    sha256 cellar: :any,                 ventura:       "73c072ac764154eac4940a150ade2716b2b5240f0aec31438b808d1c80abc404"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13db11bcb1836554ed9d2d1be1e2a09c645f4278eeb282c1386554865915adc0"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "b9997bee5756f9c2f27627b70b4af65e8e83cf742a69fbf190bb82b745ade6f2"
+    sha256 cellar: :any,                 arm64_sequoia: "ad7400e7b47e1141ab0dc73e38ba9277e64815563ab09d098d291c279280c042"
+    sha256 cellar: :any,                 arm64_sonoma:  "7119f5e278adbd4ea156188b77c2f9a4cb50cce88d78407986c37e431c0a4195"
+    sha256 cellar: :any,                 sonoma:        "bfece3bd182b3bacc33ad714238fccbe59427aa405a4f0fe92bc3b7d9c8ac631"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f2c7c9b88d0214e3fdc7b8fcf9f412fd5f306eacc069adbc388683d1f0f9603"
   end
 
-  depends_on "qt"
+  depends_on "qttools" => :build
+  depends_on "qtbase"
+  depends_on "qtsvg"
+
+  on_macos do
+    depends_on "qttools"
+  end
 
   # Apply Fedora patch to fix pkgconfig file.
   # Issue ref: https://sourceforge.net/p/qwt/bugs/353/
@@ -73,7 +77,7 @@ class Qwt < Formula
     ENV.delete "CPATH"
     ENV["LC_ALL"] = "en_US.UTF-8"
 
-    system Formula["qt"].bin/"qmake", "test.pro"
+    system Formula["qtbase"].bin/"qmake", "test.pro"
     system "make"
     system "./test"
   end

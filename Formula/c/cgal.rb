@@ -10,7 +10,7 @@ class Cgal < Formula
   end
 
   depends_on "cmake" => [:build, :test]
-  depends_on "qt" => :test
+  depends_on "qtbase" => :test
   depends_on "boost"
   depends_on "eigen"
   depends_on "gmp"
@@ -30,7 +30,8 @@ class Cgal < Formula
   end
 
   test do
-    # https://doc.cgal.org/latest/Triangulation_2/Triangulation_2_2draw_triangulation_2_8cpp-example.html and  https://doc.cgal.org/latest/Algebraic_foundations/Algebraic_foundations_2interoperable_8cpp-example.html
+    # https://doc.cgal.org/latest/Triangulation_2/Triangulation_2_2draw_triangulation_2_8cpp-example.html
+    # https://doc.cgal.org/latest/Algebraic_foundations/Algebraic_foundations_2interoperable_8cpp-example.html
     (testpath/"surprise.cpp").write <<~CPP
       #include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
       #include <CGAL/Triangulation_2.h>
@@ -39,16 +40,17 @@ class Cgal < Formula
       #include <CGAL/Coercion_traits.h>
       #include <CGAL/IO/io.h>
       #include <fstream>
+
       typedef CGAL::Exact_predicates_inexact_constructions_kernel K;
-      typedef CGAL::Triangulation_2<K>                            Triangulation;
-      typedef Triangulation::Point                                Point;
+      typedef CGAL::Triangulation_2<K> Triangulation;
+      typedef Triangulation::Point Point;
 
       template <typename A, typename B>
       typename CGAL::Coercion_traits<A,B>::Type
       binary_func(const A& a , const B& b){
-          typedef CGAL::Coercion_traits<A,B> CT;
-          typename CT::Cast cast;
-          return cast(a)*cast(b);
+        typedef CGAL::Coercion_traits<A,B> CT;
+        typename CT::Cast cast;
+        return cast(a)*cast(b);
       }
 
       int main(int argc, char**) {
@@ -64,19 +66,18 @@ class Cgal < Formula
         return EXIT_SUCCESS;
        }
     CPP
+
     (testpath/"CMakeLists.txt").write <<~CMAKE
-      cmake_minimum_required(VERSION 3.1...3.15)
+      cmake_minimum_required(VERSION 3.15)
+      project(surprise)
       find_package(CGAL COMPONENTS Qt6)
       add_definitions(-DCGAL_USE_BASIC_VIEWER -DQT_NO_KEYWORDS)
-      include_directories(surprise BEFORE SYSTEM #{Formula["qt"].opt_include})
       add_executable(surprise surprise.cpp)
-      target_include_directories(surprise BEFORE PUBLIC #{Formula["qt"].opt_include})
       target_link_libraries(surprise PUBLIC CGAL::CGAL_Qt6)
     CMAKE
-    system "cmake", "-L", "-DQt6_DIR=#{Formula["qt"].opt_lib}/cmake/Qt6",
-           "-DCMAKE_PREFIX_PATH=#{Formula["qt"].opt_lib}",
-           "-DCMAKE_BUILD_RPATH=#{HOMEBREW_PREFIX}/lib", "-DCMAKE_PREFIX_PATH=#{prefix}", "."
-    system "cmake", "--build", ".", "-v"
-    assert_equal "15\n15", shell_output("./surprise").chomp
+
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    assert_equal "15\n15", shell_output("./build/surprise").chomp
   end
 end

@@ -1,18 +1,18 @@
 class FoxgloveCli < Formula
   desc "Foxglove command-line tool"
   homepage "https://github.com/foxglove/foxglove-cli"
-  url "https://ghfast.top/https://github.com/foxglove/foxglove-cli/archive/refs/tags/v1.0.26.tar.gz"
-  sha256 "86429da79e8108e827cb2ad66dc3c5aac84229b691dc7b171db08b5acb3a35c2"
+  url "https://ghfast.top/https://github.com/foxglove/foxglove-cli/archive/refs/tags/v1.0.27.tar.gz"
+  sha256 "361b39aca2fb763de14a3898ea063fcac2dbff0077344526c6183dbb78f47bd7"
   license "MIT"
   head "https://github.com/foxglove/foxglove-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d5947bdf3f815829b9c16782cda41050a16e5b5b79efc843cf771217dec19530"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "754ee2e063bf53f94466cf4b33b6cd14ffa887f6be0fe78e82929c7afa821405"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "908a0d7f62d3538a13b1e189b0145e8d1e53585bbc0674f4cc41e260b9b73ed4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d2bc35698d135838ce1049592c0ed0d0bbe89a53360c4da35ea0f398bfdc816b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "479da886a75377081092d874711b6ae2691877fd19aa415820f9d26dfeb8e0cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e70572bf5d9c4769a482d395e57928ec1d1111a52ff010a0c6d31a3a5099112"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "08306bf07c25aa06112bc24c68e5719b14fd37c168ad5fa6d36a0eeede955522"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ef4ecbf1a5a82ef06eb62ac6fa22b57a9a40ad2a4eb2df7b503d547212830b8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4cc8bad3a3c7f861a2aff2bc68c97517c804a877aec09ed2ae7d3098db88312b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cba2ff50095bc5a764d326f2ba0ec8fe682464e9f0b4cc4870267f8339991246"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa283ad647928adf844e537617438d8afdaebf790f505bf3c61e6322524ad9e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "975827cd02846278a65aa05d3d87cd273f93bbc6b36a72a74d5357139b897b6b"
   end
 
   depends_on "go" => :build

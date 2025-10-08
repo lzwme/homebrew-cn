@@ -1,6 +1,6 @@
 class Karchive < Formula
   desc "Reading, creating, and manipulating file archives"
-  homepage "https://api.kde.org/frameworks/karchive/html/index.html"
+  homepage "https://api.kde.org/karchive-index.html"
   url "https://download.kde.org/stable/frameworks/6.18/karchive-6.18.0.tar.xz"
   sha256 "fa24f703aa799e4ff5b9cc2e4a628745912ebfcc9f0c6bb6d92106ff9e02e26f"
   license all_of: [
@@ -17,19 +17,21 @@ class Karchive < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a90dca7969aa44c614397525754432d1d31001728e9431f26fe6f93ba376efc4"
-    sha256 cellar: :any,                 arm64_sequoia: "8c02d0d396dd0318775f3f57f3d25f997e58eb57e95b6b8c978e1182c73ecb87"
-    sha256 cellar: :any,                 arm64_sonoma:  "e18e468a09888b133a51918b27e45fb6137ded7bb5a55c6ea962f9349b5294e7"
-    sha256 cellar: :any,                 sonoma:        "f62ab22a731dacd1d96e16280b564cf9c97a6964f70d0fda37059e5dac0cd744"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc3d9c24511c00c8dc876416a6aeb64a4ee6bfa98b3f78b4dea1bbb0b0a46879"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "7d1eff35b7f4cc23f060c0702ad725f9a251e23852da8d6ef6f3b2aba2abd600"
+    sha256 cellar: :any,                 arm64_sequoia: "1b2fbb2368d8522731a41833359568fbaa1920fbcdf0ba53bcb4024885c4f8fa"
+    sha256 cellar: :any,                 arm64_sonoma:  "966c7c2c9bb5735fb891c0e3c87061af05fb19ec9afd1c78fe97397fc47df5c9"
+    sha256 cellar: :any,                 sonoma:        "103f540e8a8c6d3c8e8559c7176af2a174793eb3079a7b29fff0652043e776b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b67787820d0472d369ba9773823077558d47031051d2203c9fcdf7d2ba0ebe3"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "pkgconf" => :build
+  depends_on "qttools" => :build
   depends_on "openssl@3"
-  depends_on "qt"
+  depends_on "qtbase"
   depends_on "xz"
   depends_on "zstd"
 
@@ -56,7 +58,7 @@ class Karchive < Formula
 
     examples.each do |example|
       inreplace testpath/example/"CMakeLists.txt", /^project\(/, <<~CMAKE
-        cmake_minimum_required(VERSION 3.5)
+        cmake_minimum_required(VERSION 4.0)
         \\0
       CMAKE
 

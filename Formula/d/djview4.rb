@@ -13,22 +13,24 @@ class Djview4 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "785969a581b620444f9e36b43c68ec12bc297b3c004724b2f72113020de7b9c7"
-    sha256 cellar: :any,                 arm64_sequoia: "9439dcd56b6622af57a1f69955bf6681517b4d594f515af14b173c1ac35910e9"
-    sha256 cellar: :any,                 arm64_sonoma:  "b393017f8b974e7dc17a48f65941fc9ddde96ed8984d8512eee36c8696d92226"
-    sha256 cellar: :any,                 arm64_ventura: "ad42188575bb0381ad12eacebd07697e2e9ff2d006ee8ce2f6f13ea4dedb3b20"
-    sha256 cellar: :any,                 sonoma:        "7c6e8d7e367fb01bb6ab1ce25937baad8216b3eeba387c02b818f7181c5aded4"
-    sha256 cellar: :any,                 ventura:       "feb0dbe394dd086949cb1c383b4d88999073173b84fbaadde047160c064c4bdd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "782df64753001f0fcda840c52acda38ce36c0468d478eb05a669955e2c6f2b3c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "97d3a20862eef89b5dff5f2792ee3f5b08adcbb5c4edfc50d350030a9c326c67"
+    sha256 cellar: :any,                 arm64_sequoia: "b4e2f07c9690a2303f9b85c67ab95d6f5c2d6daa2da3bb8f64d69d36d3f003e8"
+    sha256 cellar: :any,                 arm64_sonoma:  "c4a5109035da18e8d56d78b553bc9d5bccd348e588d5eb887e026db3860911d3"
+    sha256 cellar: :any,                 sonoma:        "08d73ed6f8eab15a7ca0be2af8c9c5dd5464daef04ee28edea7167c9a84ba86a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aeb2ec0e8ceecffd35a1dde7d7b4a48a64dd762bab3225c711b8bc8cc3de3376"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "librsvg" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
+  depends_on "qttools" => :build
   depends_on "djvulibre"
   depends_on "libtiff"
-  depends_on "qt"
+  depends_on "qt5compat"
+  depends_on "qtbase"
 
   def install
     system "./autogen.sh", "--with-x=no",

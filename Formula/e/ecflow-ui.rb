@@ -11,21 +11,24 @@ class EcflowUi < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "ce542576b327447f5ef90bc25a086d350597376b3e46cbc8df29e0a198efff0a"
-    sha256                               arm64_sequoia: "0e3c8ec590ad0f93e6527da4b23b6c7f8698b6fdcfc33d3ae8481ac148c14df9"
-    sha256                               arm64_sonoma:  "f938b65073fa519e972cbd848b573138cd38a1bf1be64ba052b6790292cf29fc"
-    sha256                               arm64_ventura: "3003b3a4c2fdcbed612f61ef35258b7d6fdf351a89d741f1ec65cee079a6492b"
-    sha256                               sonoma:        "ddb4ca5825be94efb9a6a882bb93c2c1bb96ef18280fc0e785406dd53ce756c9"
-    sha256                               ventura:       "4750ee72a89f7f2b6c42bb9bd0f874cb90e1c460f656b4a8adbcff2873048852"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b15e4f3da6d0672a121e96fa26603b1aabfb7ae54803db1652eff912c3dfb9c"
+    rebuild 1
+    sha256 arm64_tahoe:   "deb4c2c11e82bd398037d8a7b44d4ebdb595051f4e1e1d734f955c885a8405f2"
+    sha256 arm64_sequoia: "ccbbe9ce0c49795d58fce1c62349fd4926f7a3f710a47bb75d9570d25b3693f1"
+    sha256 arm64_sonoma:  "3bcbed2f33d556792621927de123e00c1faadb6d3eb941c416a66bbd49e1e5b8"
+    sha256 sonoma:        "9c2c81eda98ca123f8fcb01839a5391c629cb9b165ba9807ba669f21d2b95acb"
+    sha256 x86_64_linux:  "606c52f77bcfc7e3f6eca5551e93f23a206edb70c95ad216f17fb504f8f19f32"
   end
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "openssl@3"
-  depends_on "qt"
+  depends_on "qt5compat"
+  depends_on "qtbase"
+  depends_on "qtcharts"
+  depends_on "qtsvg"
 
   uses_from_macos "libxcrypt"
+  uses_from_macos "zlib"
 
   # Replace boost::asio::deadline_timer since it was removed in Boost 1.89.0
   patch do

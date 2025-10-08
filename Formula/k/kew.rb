@@ -1,18 +1,18 @@
 class Kew < Formula
   desc "Command-line music player"
   homepage "https://github.com/ravachol/kew"
-  url "https://ghfast.top/https://github.com/ravachol/kew/archive/refs/tags/v3.5.1.tar.gz"
-  sha256 "e182ae670fc6e522dd312767dc24079a8b81dfb29053ec3867242c8dd591fd2d"
+  url "https://ghfast.top/https://github.com/ravachol/kew/archive/refs/tags/v3.5.2.tar.gz"
+  sha256 "7179e7f414468298311715b840ba57762b2416492d3f5616fcb957e3b83f1d43"
   license "GPL-2.0-only"
   head "https://github.com/ravachol/kew.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "31a5bf6b1debc23781e0f2af9b0da8f529b8a20d2d01b1d8f93bcf2436ac8374"
-    sha256 arm64_sequoia: "26e9c6987557e591b634d9a074a84d76c9d292442eca9f152d06eee59ec32e3e"
-    sha256 arm64_sonoma:  "08db7a6bdc39967e5129e277ccfa3ae92013c55910631334b75afec99d9c60c8"
-    sha256 sonoma:        "18f9d1758b43d605e027e53f30ab9dda0adc87c4227b37e1e36f763f7ad1edd5"
-    sha256 arm64_linux:   "a11cdd6a5d8fe7832edfc6f82fc7d2e1a5308198b73f55ec7fcbc5d6664e6078"
-    sha256 x86_64_linux:  "8969da5812bb5b65b518569b1899b48b0f191c0a62560201f24a23d927767217"
+    sha256 arm64_tahoe:   "c48a0fddccc3381171fac660a5817c2cdc2fa6a0dda0476da2e4b2c4356e72f0"
+    sha256 arm64_sequoia: "b2d6b6a754c7dd43cde0c8e28ec601253c0d4f5d1df9107013b77aef3e802c1a"
+    sha256 arm64_sonoma:  "5c4dedd8437206610293beaf8b41f8a4fc886ed29253e24394a94d55acc24c4e"
+    sha256 sonoma:        "66031d590db5edf81d02db823a4959ede516c2720e391fd04f025c8626e09765"
+    sha256 arm64_linux:   "530f61b8eb8c360e9781957ec2c3c63cddeeba8ccec139ad83c290669b98f2e3"
+    sha256 x86_64_linux:  "a83e203e21f324cc6fb57753dab7951b5b9876c5ab0beaebd53ee4813bb58f18"
   end
 
   depends_on "pkgconf" => :build

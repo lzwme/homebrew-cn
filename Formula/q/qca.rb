@@ -13,13 +13,12 @@ class Qca < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0229b68930888d2253c995259652bd0aa593f74cb3816ffd2f0b5ed1b11fab62"
-    sha256 cellar: :any,                 arm64_sequoia: "d871c47415fc2a30f6e9d30fa2150c2db33267f4c38d9178405f01efeb8446eb"
-    sha256 cellar: :any,                 arm64_sonoma:  "34733f886da3c245650bcf5ebd9fffd181f5d3d6cfc20e7bd83d282f49d7a1ea"
-    sha256 cellar: :any,                 arm64_ventura: "fde31b150907d119d0ebc8d4b9c2c1dacd504782c4fc35ff35aebc70d681b580"
-    sha256 cellar: :any,                 sonoma:        "3569fc2bfffc72a41357cda64923537a35d5c0ba1ae6bcd7254b8a8e940caf0b"
-    sha256 cellar: :any,                 ventura:       "b4c41c7d8a09e1935226f49d9d6903dcb4da754d6f42cb8d9fae7c28cc39f1bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4e249c1411c2ebcd0182e852501bee4fc5985c1af9b07589dd600f32de73858"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "81e3b152a9660b27637c135b59fb13e07a9f7ca944419cc162adcc52a919db4b"
+    sha256 cellar: :any,                 arm64_sequoia: "a1ee6516de34fc765d7ca60cf598f8f716f5bad4634a8fd1b195948e128fec12"
+    sha256 cellar: :any,                 arm64_sonoma:  "25e20fb1574789ed7b20656e4efadee81ba6ebe6e39b3d168eeb47bc60bfd32c"
+    sha256 cellar: :any,                 sonoma:        "6a3c15800f653ccd8451603eccc71abdedc94b975ffb03351a2a16efd2c8299a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39d29761f9f41df9c2687bab36309d5f1eb866da3b2f1b2561e06be725f51f2b"
   end
 
   depends_on "cmake" => :build
@@ -31,7 +30,8 @@ class Qca < Formula
   depends_on "nss"
   depends_on "openssl@3"
   depends_on "pkcs11-helper"
-  depends_on "qt"
+  depends_on "qt5compat"
+  depends_on "qtbase"
 
   uses_from_macos "cyrus-sasl"
 

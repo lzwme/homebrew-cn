@@ -8,18 +8,19 @@ class Pc6001vx < Formula
   head "https://github.com/eighttails/PC6001VX.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "44a00dd3bd364cace70e5326da1bea0f4505f154ada9755457cd36a9d697c883"
-    sha256 cellar: :any,                 arm64_sequoia: "99c4cd27b6c4435dc9192a36b26d8651029bbe33648a8466150f48c073a6c131"
-    sha256 cellar: :any,                 arm64_sonoma:  "6df7fb6487fe485bdc9d14481db605240933153a4d425fd141e6d04b63a506a0"
-    sha256 cellar: :any,                 arm64_ventura: "5d5b3239dc60d35eacb295499dd5085a14d4c4d45a028b23598c865165a41fdc"
-    sha256 cellar: :any,                 sonoma:        "205b536ca203afb6a108c1fae7da121dba540bdf0df7249836b687e31026154d"
-    sha256 cellar: :any,                 ventura:       "52ddfbe92ae410daa0d1baf724a0dd4827845b5b577cedc6335f13ea850d6b5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "408343d8640e1ebd04bde57db18525ae271908ae7150267d3304035d3927be4d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c3640b78c52caae41034980b2280579c6bb2499a4a4bc6132342e4e4785fd13b"
+    sha256 cellar: :any,                 arm64_sequoia: "8c21157b4335e3c97de381021b0a4e44002d04114b0214f4cef7429a0ed4e0ee"
+    sha256 cellar: :any,                 arm64_sonoma:  "b5ff45c2bbd4247b053c2035769d4f9484937c581c069545b9f260ab6b14d201"
+    sha256 cellar: :any,                 sonoma:        "155c94239fac16860061cdc20b9ee40b691254e25004ee12544fa9bf0af02154"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87fd8a3b22acf6318d2b75ed308a1a0afb924a3f9255d74aa1b4a1f5491fc569"
   end
 
   depends_on "pkgconf" => :build
+  depends_on "qttools" => :build
   depends_on "ffmpeg"
-  depends_on "qt"
+  depends_on "qtbase"
+  depends_on "qtmultimedia"
   depends_on "sdl2"
 
   on_macos do

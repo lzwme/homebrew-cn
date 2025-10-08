@@ -1,8 +1,8 @@
 class Fish < Formula
   desc "User-friendly command-line shell for UNIX-like operating systems"
   homepage "https://fishshell.com"
-  url "https://ghfast.top/https://github.com/fish-shell/fish-shell/releases/download/4.1.1/fish-4.1.1.tar.xz"
-  sha256 "aaf567cac98aa92fed9db3280801e2de45306169c8915e0fff1a61c07e56d2c1"
+  url "https://ghfast.top/https://github.com/fish-shell/fish-shell/releases/download/4.1.2/fish-4.1.2.tar.xz"
+  sha256 "52873934fc1ee21a1496e9f4521409013e540f77cbf29142a1b17ab93ffaafac"
   license "GPL-2.0-only"
 
   livecheck do
@@ -13,12 +13,12 @@ class Fish < Formula
   pour_bottle? only_if: :default_prefix
 
   bottle do
-    sha256                               arm64_tahoe:   "181f554cf645a14ced8cfb132482150d9767ee44bdcb8e537210b6d77515f9bf"
-    sha256                               arm64_sequoia: "274cf8f4ebfe8292e82451469fafa79ff7d3c6fc3aedc3f773990cd2b8d2a7f0"
-    sha256                               arm64_sonoma:  "2523567751c783b9ae703b4ab6e04c5b83af7943cc99881841be083aef43b9b2"
-    sha256                               sonoma:        "5dd8d7a0f49fccd4a54ada22b4b0c500c9915c162091fad8a537625060d3fc0e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33aa9d7a8feed55378a8422b56e26c27cf9ac78073880897387986457cccc438"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a34ad1eda5dccd6c753cfe0ad065c08d59939a27ed6280a00880d1cc8eccc407"
+    sha256                               arm64_tahoe:   "522ebefd01e47d714368b9872b46ba1791b580fe5acd88caadb0c92f2273d483"
+    sha256                               arm64_sequoia: "7c180ae437fb7c0a71f9135ae87cbfaec7af7f7a7658294071fb3f30bbf456cf"
+    sha256                               arm64_sonoma:  "abb89a295c051cbf5bbee6a8b7d031e62c2a0bbe29867c9060164bcab7f27afa"
+    sha256                               sonoma:        "19b7023040a1a1741545b13368188ddc4b666a2f0fee4a2e28bf67bca3185b7c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb3e080c57e8cf057d094459f3d03c160d7aff7d05644ce4695c5f7ce354950d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "134b1366f068a171dbdda51cf0283423085d5cddcd32ff01894abe2aebdcf9bb"
   end
 
   head do

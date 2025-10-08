@@ -1,8 +1,8 @@
 class Terragrunt < Formula
   desc "Thin wrapper for Terraform e.g. for locking state"
   homepage "https://terragrunt.gruntwork.io/"
-  url "https://ghfast.top/https://github.com/gruntwork-io/terragrunt/archive/refs/tags/v0.89.0.tar.gz"
-  sha256 "a3a519e0dc08f1fb84d89bd9b74f259942c8bf6cf8d7e3fa8d83daf9f0ecfe35"
+  url "https://ghfast.top/https://github.com/gruntwork-io/terragrunt/archive/refs/tags/v0.89.2.tar.gz"
+  sha256 "0f4ecea6b13bd892c8af0c3800bdd2f59c3f35fde24570ba4a679a9d6660cc63"
   license "MIT"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,11 +14,12 @@ class Terragrunt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a31cb158663058bc0c16fcdd7ca3bf021d6e13c6f394dd3e7492b4a31bc9b60c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a31cb158663058bc0c16fcdd7ca3bf021d6e13c6f394dd3e7492b4a31bc9b60c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a31cb158663058bc0c16fcdd7ca3bf021d6e13c6f394dd3e7492b4a31bc9b60c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aedb1f7f43d3720813db03ab4cfd4bafd0af166603d0d769718e0fbbbbcac5bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e8ccef40f877aceaab0fd6b98bc7f51f2c297c7394879138b812e50decddfbf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "53b4a7e08c3eb8c3f93f32b1c8877a469f56b5b30868ccb970e9df3e0399fd2d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53b4a7e08c3eb8c3f93f32b1c8877a469f56b5b30868ccb970e9df3e0399fd2d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53b4a7e08c3eb8c3f93f32b1c8877a469f56b5b30868ccb970e9df3e0399fd2d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ed8ee8a70594cd985b97178891ebe53bf6b3e03fbea685447c005cc9166c522b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2b3247fa974877d934aadd584c98cba353a9392412fd6d009626fafcd6787d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c4ac54db82e1577ca1084b72767a8af2445b5150d594518bb32fefff7d0efd4"
   end
 
   depends_on "go" => :build
@@ -27,6 +28,8 @@ class Terragrunt < Formula
   conflicts_with "tgenv", because: "tgenv symlinks terragrunt binaries"
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X github.com/gruntwork-io/go-commons/version.Version=#{version}

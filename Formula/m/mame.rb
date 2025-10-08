@@ -21,11 +21,12 @@ class Mame < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "58da0491c05871a9ef8c91183d7870bb166aafc20d53f21cb09ac61e84f683cb"
-    sha256 cellar: :any,                 arm64_sequoia: "08a3ba4ac1247b0bc427e45d014d284842469a21eb8426b1e71da169a675f764"
-    sha256 cellar: :any,                 arm64_sonoma:  "fe1b65d3fb021440a2778ab3105054cd7c8564d2e0fcb62f048bb5e3e1c6c2cd"
-    sha256 cellar: :any,                 sonoma:        "4f76ebae54bafc1944fa3e2dfa114caa8fc918433256360ccc1e234a98dc7bdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d41584ab574bfe45581a46f885e3286d1c124810c2a5070d6b41f4aff594ec4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "bba6528de3753f5171e9ed467a9cf1a07ab5f94d52cd654e15d2df4ce6ddd6b1"
+    sha256 cellar: :any,                 arm64_sequoia: "7dda2ab9730e054ea7c4578a38b461c23ef50d254579a8d9b437d2d90a17eab6"
+    sha256 cellar: :any,                 arm64_sonoma:  "b4a279a89b14852ac0be785931d0d31188f47631ffba540725c2bf5fb22f8368"
+    sha256 cellar: :any,                 sonoma:        "875f623d157efabdce421d476440b936f410f0484d5d2def4d7f8c6e3c150e9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a0710d15cddcc384fdb6ee17ad5eb83c26a1386fe054105d5da7f18a28e87d5"
   end
 
   # `asio`` v1.30.1 is bundled and it is not compatible with the `asio` formula
@@ -54,12 +55,12 @@ class Mame < Formula
     depends_on "libxi"
     depends_on "mesa"
     depends_on "pulseaudio"
-    depends_on "qt"
+    depends_on "qtbase"
     depends_on "sdl2_ttf"
   end
 
   def install
-    ENV["QT_HOME"] = Formula["qt"].opt_prefix if OS.linux?
+    ENV["QT_HOME"] = Formula["qtbase"].opt_prefix if OS.linux?
 
     # Cut sdl2-config's invalid option.
     inreplace "scripts/src/osd/sdl.lua", "--static", ""

@@ -17,11 +17,12 @@ class Kdoctools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1bcd188e14349f3059dc769d71646edac62bdb40975b25d48fb288d23f78353a"
-    sha256 cellar: :any,                 arm64_sequoia: "c56e54975113e2ba751a9e4d61ad4c42c620dbe38c813b02abc2d14a3ef42ec7"
-    sha256 cellar: :any,                 arm64_sonoma:  "a722a4d2fbbd194dcb8d59cb7155477134dae6d890f912c2fbad1e90e0d42d8a"
-    sha256 cellar: :any,                 sonoma:        "8f3aeca2c6dca868afea9ea91c013fb866e66aa285ac6ddbe0fd9c285a2bb17d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8fa204931409d35f12d0780c45ff042c489e1be2f1b160d716921b318a9d3af"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "cdfab65e44707cacdabf264ed2f9df412b5877936b5980009817064fcdf2fab8"
+    sha256 cellar: :any,                 arm64_sequoia: "562c90b9620f13782300d532fe3b76f423a38f828b211380a243028a730edc84"
+    sha256 cellar: :any,                 arm64_sonoma:  "92c7e75f5031d0202e9d35d9b692d984e338303e916105fb9c4d1a229106c0d8"
+    sha256 cellar: :any,                 sonoma:        "17bed30e103f20efc197c7e848e05a861c7f8afd1d6b679ca238a60a9d5a0b4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e74170aea8167b42dd0941a7528e1a58f6f3863a3dd9171779ac4ec0966cee0"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -29,9 +30,10 @@ class Kdoctools < Formula
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "gettext" => :build
   depends_on "ki18n" => :build
+  depends_on "qttools" => :build
   depends_on "docbook-xsl"
   depends_on "karchive"
-  depends_on "qt"
+  depends_on "qtbase"
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
@@ -63,11 +65,11 @@ class Kdoctools < Formula
   end
 
   test do
-    qt = Formula["qt"]
+    qt = Formula["qtbase"]
     qt_major = qt.version.major
 
     (testpath/"CMakeLists.txt").write <<~CMAKE
-      cmake_minimum_required(VERSION 3.5)
+      cmake_minimum_required(VERSION 4.0)
       include(FeatureSummary)
       find_package(ECM #{version} NO_MODULE)
       set_package_properties(ECM PROPERTIES TYPE REQUIRED)

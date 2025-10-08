@@ -14,17 +14,16 @@ class Qcachegrind < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "424ac5ecc534cd7b54dc2af372b6cb04175c7bc5c674f3f0d96cb3964d7c9426"
-    sha256 cellar: :any,                 arm64_sequoia: "b16db89e164f93666735793a546ec759886eae216064f58b4a48d9aaae30392d"
-    sha256 cellar: :any,                 arm64_sonoma:  "5d9bcf738d3fcaae9174e20ecb908411cf97fbe389e0b7b9e56a09bed8dd21da"
-    sha256 cellar: :any,                 arm64_ventura: "1ed635951e37a8a133c2e1f148491863c57bbc682b6a508eaf468a859357f91c"
-    sha256 cellar: :any,                 sonoma:        "fda1553797fe5d48c33ebc78214d7ebf91a01ad4ab0061c9a6b0cc530de5a3f4"
-    sha256 cellar: :any,                 ventura:       "ee61d9be61566f91b5ff85e5d0e02fc741624ca05889571ee108caf6fa086674"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fef398844ede335df0781d4f7660bdded9b64ae1f3c7e58873266caac78f55bd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ef7df3f20baa37dca0b57b60571a5f6e4378f837025e115cebaa7b4b2c6ec10c"
+    sha256 cellar: :any,                 arm64_sequoia: "b9f198d22ecaec1c636c7ae1650c68e98f3891c36a62d6fe48c2ce842d3b882a"
+    sha256 cellar: :any,                 arm64_sonoma:  "1eee9605500bfb7d11198e2b07b1de137137eda6a55bea2d79e381939dfb4f31"
+    sha256 cellar: :any,                 sonoma:        "870107303e9f5db717cd3c9834120f9df68a94e1dccc21f8058e53aef07f4b20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e58e897228a09ca2825630b2f3b3a40d432c3da6293f3f18a3ff819384f9dcd7"
   end
 
   depends_on "graphviz"
-  depends_on "qt"
+  depends_on "qtbase"
 
   def install
     args = %w[-config release]
@@ -33,7 +32,7 @@ class Qcachegrind < Formula
       args += %W[-spec #{spec}]
     end
 
-    qt = Formula["qt"]
+    qt = Formula["qtbase"]
     system qt.opt_bin/"qmake", *args
     system "make"
 

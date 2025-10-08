@@ -1,8 +1,8 @@
 class Juliaup < Formula
   desc "Julia installer and version multiplexer"
   homepage "https://github.com/JuliaLang/juliaup"
-  url "https://ghfast.top/https://github.com/JuliaLang/juliaup/archive/refs/tags/v1.18.0.tar.gz"
-  sha256 "11bb74282b93f5b335b72127e3c3bae74b0e2e026d153f12edd197e973be2b99"
+  url "https://ghfast.top/https://github.com/JuliaLang/juliaup/archive/refs/tags/v1.18.2.tar.gz"
+  sha256 "bac7e4985b8bc35dc9fc68a1340ecdc5b4a8861c6afb424d6b769725a70f97f3"
   license "MIT"
   head "https://github.com/JuliaLang/juliaup.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Juliaup < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc941d8f25a0afbed49d5e5380d8e262ce3f0afb5a8e88ba501c667983b8376e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87c638dfd6663bfe3a74546d765b261d2189197f8ee482722ff981dd59f80898"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e3f01c4512d6ecfe67f4fdf86b5ea75ced2e5490a4ccf64d05e2ff09983516e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d2bdaff539b55e495838d93c56b0d49a92caf1751a7b00ef79656045e8a83e85"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "957181ca2e54e89eac0bf000aeed9e9666227b378b3a9ce1e8654a5255e8cc51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99718aa91e376a9256019e302a5c3f265148a7327a0d4d718092d6c6576e95ad"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f10d92341ba76ac403869c67be2a208c6fb892cfe35bc21049be7ad3446f597c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad56cdf12e89ca94072a1e016035319e1065c7808f4bed33fb55c6f763e4747f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce66a35429706d7c5be346c3a7d66ed574b5e4ecaf8764cb312643a0e162b0ca"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e1246ea3a66d65bd6a5f02582854919920ec0b7d3fe5acbe24be3bc79c2b1bd7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d53157e39f05da6f47ae7b60a2ff747e5cb3b48fdfe4cf49d11bf5c82d5cd894"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8b37e078bbe3699726f9209b950bf86b24f763c6758197d4718643d97650060"
   end
 
   depends_on "rust" => :build

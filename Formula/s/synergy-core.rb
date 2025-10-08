@@ -1,23 +1,9 @@
 class SynergyCore < Formula
   desc "Synergy, the keyboard and mouse sharing tool"
   homepage "https://symless.com/synergy"
-  url "https://ghfast.top/https://github.com/symless/synergy/archive/refs/tags/v1.18.1.tar.gz"
-  sha256 "f340cf6ef4762dfc7b0e04d4d0dae542db7f6fb9b9aba4eaf786446047cdb1c4"
-
-  # The synergy-core/LICENSE file contains the following preamble:
-  #   This program is released under the GPL with the additional exemption
-  #   that compiling, linking, and/or using OpenSSL is allowed.
-  # This preamble is followed by the text of the GPL-2.0.
-  #
-  # The synergy-core license is a free software license but it cannot be
-  # represented with the brew `license` statement.
-  #
-  # The GitHub Licenses API incorrectly says that this project is licensed
-  # strictly under GPLv2 (rather than GPLv2 plus a special exception).
-  # This requires synergy-core to appear as an exception in:
-  #   audit_exceptions/permitted_formula_license_mismatches.json
-  # That exception can be removed if the nonfree GitHub Licenses API is fixed.
-  license :cannot_represent
+  url "https://ghfast.top/https://github.com/symless/synergy/archive/refs/tags/v1.19.0.tar.gz"
+  sha256 "c18750b6d6b217f8439199ac90bb4633ef0611d4a962a383c6b424a984f388fa"
+  license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
   head "https://github.com/symless/synergy-core.git", branch: "master"
 
   # This repository contains old 2.0.0 tags, one of which uses a stable tag
@@ -31,17 +17,17 @@ class SynergyCore < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "26678afbc7418065590ef6fa576ec661380275169ce64eb9b1243370844876a2"
-    sha256                               arm64_sequoia: "e3e3008c7e703c0db1d038bd27645f9479178fe14236bb16edc4960c6b27d21e"
-    sha256                               arm64_sonoma:  "8fbba2a9c2af13c41475ab2476be8020398b08962427224ee8608b7cfd0d4975"
-    sha256                               sonoma:        "36fcf36037acfd38774c2ec90b6d5dc213ba82fb34a8a0105c5bc0e84237c88f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2ac1cfccaafcc11cf0eb10836285efbb7a21a9d4c8a5e382bf97799056e8ce5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "84cbe86fc9c9078649380899f5efe79f500b8816ad5d0f0f6a78526328959092"
+    sha256 cellar: :any,                 arm64_sequoia: "08d10a75a4b369dd67bd04159a660d6d8ebed3a3934ecd062fae29d3afd42b51"
+    sha256 cellar: :any,                 arm64_sonoma:  "76bc87f5bedbb52183aca4f452a49a184a217a53a4f713dc1279c48882a1073c"
+    sha256 cellar: :any,                 sonoma:        "6ba729c50b1ce75370f5340183f96167daff313757d879983a4d718456717a7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aec5aca73d1ddde4e6b4c708d0a9038d2b189b078699aa946279f6a41cd1de94"
   end
 
   depends_on "cmake" => :build
   depends_on "openssl@3"
-  depends_on "pugixml"
-  depends_on "qt"
+  depends_on "qtbase"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1402
@@ -77,6 +63,9 @@ class SynergyCore < Formula
   end
 
   def install
+    # Avoid statically linking OpenSSL on macOS
+    inreplace "cmake/Libraries.cmake", "set(OPENSSL_USE_STATIC_LIBS TRUE)", ""
+
     mkdir_p buildpath/"ext/synergy-extra"
     (buildpath/"ext/synergy-extra").install resource("synergy-extra")
 
@@ -86,15 +75,10 @@ class SynergyCore < Formula
       inreplace "src/gui/CMakeLists.txt",
                 /"execute_process\(COMMAND \${MACDEPLOYQT_CMD}.*\)"/,
                 '"MESSAGE (\\"Skipping macdeployqt in Homebrew\\")"'
-    elsif OS.linux?
-      # Get rid of hardcoded installation path.
-      inreplace "cmake/Packaging.cmake", "set(CMAKE_INSTALL_PREFIX /usr)", ""
     end
 
     args = %w[
       -DBUILD_TESTS:BOOL=OFF
-      -DCMAKE_INSTALL_DO_STRIP=1
-      -DSYSTEM_PUGIXML:BOOL=ON
       -DSYNERGY_VERSION_RELEASE=ON
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

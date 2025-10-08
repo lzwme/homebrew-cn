@@ -21,11 +21,12 @@ class Mkvtoolnix < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "75f89848a9625beb9427b4d7a202f61c12c9999a64093cc7d5d25ded9859c475"
-    sha256 cellar: :any, arm64_sequoia: "fa5f79d1715935cea610e51f8a98fffef88ba5e2d2eb6434176af82d5961de10"
-    sha256 cellar: :any, arm64_sonoma:  "4ac57db30970b1f0115dc57239143665d0eb66144924c94069e2ab964d24a620"
-    sha256 cellar: :any, sonoma:        "8ef4e1a83d5768c51356d3bbae3702983304adea25cfa8d8064b2e5c6b84cc76"
-    sha256               x86_64_linux:  "d4faac56a9c0c085d8605443ec7c689f21055790781e54de99fb1b4c71010d8a"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "643eac71db818a4feb359fa12965db6550dddabb9c50a90ac9c8eda6a031d7da"
+    sha256 cellar: :any, arm64_sequoia: "a248a3be39d81dfbaa201932cbbeccb2c400a1f5cddfdbcda18015dd026f4d1e"
+    sha256 cellar: :any, arm64_sonoma:  "37a7dd36760f878e8b1adf2d0cdd3598e1762fcdbded25de3e4e946e532550e1"
+    sha256 cellar: :any, sonoma:        "c1f7a3d2fa3e2d47da01656e00890182e9c6493cbb25749ca1e02a6500bce204"
+    sha256               x86_64_linux:  "1ec9e24af31fd5286896561bfd1b3d85cbc27b5cc9204dfed28280b663c48ce3"
   end
 
   head do
@@ -49,7 +50,7 @@ class Mkvtoolnix < Formula
   depends_on "libogg"
   depends_on "libvorbis"
   depends_on "pugixml"
-  depends_on "qt"
+  depends_on "qtbase"
 
   uses_from_macos "libxslt" => :build
   uses_from_macos "ruby" => :build

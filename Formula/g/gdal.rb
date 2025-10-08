@@ -4,6 +4,7 @@ class Gdal < Formula
   url "https://ghfast.top/https://github.com/OSGeo/gdal/releases/download/v3.11.4/gdal-3.11.4.tar.gz"
   sha256 "0fa36ee34d4451db586d2bf78ea0dbfa3b0dfae0516587f8130d21add0ac9dad"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://download.osgeo.org/gdal/CURRENT/"
@@ -11,14 +12,12 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7a6c9ed5a1de24f1c165c76cd98c3d1e3c27f6e213b46900bcf70e9a57dfb60b"
-    sha256 arm64_sequoia: "ebacff0384f2fafa050ccf681609ce30ee12be0b5d027953b0ad2446b0c9af5b"
-    sha256 arm64_sonoma:  "cc0cb0e621b913b50b72a43fe7d0d4b08f3051ec0c290e6744de9e82f97f8035"
-    sha256 arm64_ventura: "bd16bd0206f8ebaa91802a08f7af64c76e8d3ed2c39ca8ea07cab7cde9bf171e"
-    sha256 sonoma:        "8957ced4957ef74140a9124ec9f5919a3a0e2cae86c59c6066c12c1b275d87a5"
-    sha256 ventura:       "49d0b6e3cbd21fe1de45b5ad0a05fdd3686a4024150dc98ecae1b5f1ab35b5f5"
-    sha256 arm64_linux:   "6826f1d14c85a6714bd2ef5e61f410b72aedb560fee577bb51f3798e7bd66aa5"
-    sha256 x86_64_linux:  "c5b15a801d7426f6e3e47d67e0fbb365c3f9e4bfda8d148f2e4200f5cdffdbb5"
+    sha256 arm64_tahoe:   "5d188be0ac27616189770bbfbbdefe1b9c3d820b6708393058207fbed649583f"
+    sha256 arm64_sequoia: "c6d342f55fa2059ea862c0d45d846234828aeaef9f8b16505358abb8ecf6e447"
+    sha256 arm64_sonoma:  "de17c4bc388c12b5807c65445487c0dfd8a329a509cab19e5285e3f6ccb38a7b"
+    sha256 sonoma:        "a6b7bc15ce26d74c3e7a5c09be39b109a8c66525635bc9fe3d83b1db942aca89"
+    sha256 arm64_linux:   "60fd17ccf419f63d7fef1ebe8784037ebf3e1c9d9c2fcb9847958f6aacb286f9"
+    sha256 x86_64_linux:  "b289d7ac2a0b1862cfeef119603e62f5299811a5977946fb148a68b2e43ad87a"
   end
 
   head do
@@ -88,6 +87,13 @@ class Gdal < Formula
 
   conflicts_with "avce00", because: "both install a cpl_conv.h header"
   conflicts_with "cpl", because: "both install cpl_error.h"
+
+  # Backport fix for `poppler` 25+ compatibility
+  # Remove in next release
+  patch do
+    url "https://github.com/OSGeo/gdal/commit/e91531e8ba9d1229574ad315948b1516fcf695b1.patch?full_index=1"
+    sha256 "9cb0b75b9442b3422ed8516dd1938a2934473ab70ba6f7d0568cebd16322e456"
+  end
 
   def python3
     "python3.13"

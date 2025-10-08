@@ -1,6 +1,6 @@
 class Threadweaver < Formula
   desc "Helper for multithreaded programming"
-  homepage "https://api.kde.org/frameworks/threadweaver/html/index.html"
+  homepage "https://api.kde.org/threadweaver-index.html"
   url "https://download.kde.org/stable/frameworks/6.18/threadweaver-6.18.0.tar.xz"
   sha256 "a6e7f4c90b9b9304ef67a0fffadd77655757c65f7bee00c35b38aefc869e3278"
   license "LGPL-2.0-or-later"
@@ -12,17 +12,19 @@ class Threadweaver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cee3bd055c497f8215738ebd65425e45d928cb51d3a562864210768f7b994dc5"
-    sha256 cellar: :any,                 arm64_sequoia: "51ea181e49d8d00d0587d76cc3e24c9375d8c7ab5bf7e45d50d94b658861bf0c"
-    sha256 cellar: :any,                 arm64_sonoma:  "015498d490fb567d684bd7079e3a9d171a49c599d0e038bf645a1639f65d9dd4"
-    sha256 cellar: :any,                 sonoma:        "8f28fd5d49b43c66c9be147a7be5ec0890add755d818244d3072ca4566f3499a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cc4a24f98d2adc04c9cbf609241057724abdef334bd15fd1bd7a4943a2dbbb7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "38b2dff08333f4124a05939da8ad519720dd9cc4f24399bf196601a1e24c17e4"
+    sha256 cellar: :any,                 arm64_sequoia: "90d2240578f73603cbc243f0d0c964731c258e0a6604b113b7f831c8c474e852"
+    sha256 cellar: :any,                 arm64_sonoma:  "1b414830699e19e1868fffbb93569f5b74a15d1b6658c1cdf3bfa9188fa882f5"
+    sha256 cellar: :any,                 sonoma:        "1d3bfc910f2b04ae1cd2630be462a0875576ae4ec583a7e2b5b2d4d6a91bd26d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b96c49bfc14531816d270de03569a10b335147092ec8c7adeb5e68f0201dc3d4"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
-  depends_on "qt"
+  depends_on "qttools" => :build
+  depends_on "qtbase"
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_QCH=ON", *std_cmake_args

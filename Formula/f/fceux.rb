@@ -20,13 +20,12 @@ class Fceux < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6cc28629e3494597032119b68b9ac16f4dbdb15920e72776e5b2d9b6c5d4ebd3"
-    sha256 cellar: :any,                 arm64_sequoia: "6ffd230662c648ff207944d0f19bcdf16b0a4c0c64886cbe10e9ab82f3ce33a4"
-    sha256 cellar: :any,                 arm64_sonoma:  "4bf00f6d14302b29943e393cd1fa29f05cf0fc8648855689a23e744008dda54f"
-    sha256 cellar: :any,                 arm64_ventura: "42009a33f97c7ced6c2f73ac8dee97309021c05df3291c139ba22d9f00cfa414"
-    sha256 cellar: :any,                 sonoma:        "768b9576ea9e0126862aaca7f8ca87aa3cd59d20450b1731e32c25ccc974637c"
-    sha256 cellar: :any,                 ventura:       "5a35b23ff1fcd66ffa5fe52ee0fa193434de77190fe85335ef1c980c9d5fd559"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e827f4a19e8ba53022fcb6852717f78a1d3273217d20a06254629ba63cff0d4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "a963c27f406d7c364e12c272e058e20eb2805a1002769fded6b0e998df0d0ab8"
+    sha256 cellar: :any,                 arm64_sequoia: "c0cdaad08a0323f11edb6db89c7f50c018b2e4f1021c5e1cad66ac18d3f5a305"
+    sha256 cellar: :any,                 arm64_sonoma:  "c03762741adede92ee199469213b5a6ebf7ee634fbe294c4ee3f3370b4494988"
+    sha256                               sonoma:        "e38989774281ec572e98c9e09f4ebfb4403665b6964a0c7845dfd9c7c824e2ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a8a531cd8a3c7be8f095419340bc7ecc76d387fa593757b3aa06515da3ce0a2"
   end
 
   depends_on "cmake" => :build
@@ -35,7 +34,7 @@ class Fceux < Formula
   depends_on "ffmpeg"
   depends_on "libarchive"
   depends_on "minizip"
-  depends_on "qt"
+  depends_on "qtbase"
   depends_on "sdl2"
   depends_on "x264"
   depends_on "x265"

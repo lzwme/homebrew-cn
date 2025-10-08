@@ -27,7 +27,7 @@ class Dxflib < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e71a7e5920a5c7d7029edcf188bebf88aea640021d459ba1e2c0fa7266970c3a"
   end
 
-  depends_on "qt" => :build
+  depends_on "qtbase" => :build
 
   # Sample DXF file made available under GNU LGPL license.
   # See https://people.math.sc.edu/Burkardt/data/dxf/dxf.html.

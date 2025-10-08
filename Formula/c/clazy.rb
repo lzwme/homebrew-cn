@@ -23,7 +23,7 @@ class Clazy < Formula
   end
 
   depends_on "cmake" => [:build, :test]
-  depends_on "qt" => :test
+  depends_on "qtbase" => :test
   depends_on "coreutils"
   depends_on "llvm"
 
@@ -51,13 +51,8 @@ class Clazy < Formula
       set(CMAKE_AUTOUIC ON)
 
       find_package(Qt6 COMPONENTS Core REQUIRED)
-
-      add_executable(test
-          test.cpp
-      )
-
-      target_link_libraries(test PRIVATE Qt6::Core
-      )
+      add_executable(test test.cpp)
+      target_link_libraries(test PRIVATE Qt6::Core)
     CMAKE
 
     (testpath/"test.cpp").write <<~CPP

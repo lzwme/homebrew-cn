@@ -6,18 +6,17 @@ class Qxmpp < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "27fec7f044bc99854eee648360d041d0e8011d693d7adcccbbed72047d80ef9a"
-    sha256 cellar: :any,                 arm64_sequoia: "9c91a6ab85555e57f0e8c9e1637df74d0ae8784c2e9757a06de75d0abfb98498"
-    sha256 cellar: :any,                 arm64_sonoma:  "927f6f32f2f6748c6db4bdcf726f503e4be2626a772babf37d2e8be17fc9fc64"
-    sha256 cellar: :any,                 arm64_ventura: "599abd8cea19f8951f3518bb649fbdd1cf7f35a3c85e414231a85aed0438060e"
-    sha256 cellar: :any,                 sonoma:        "2b4215786c74e012e8e6a22eda45ddb14e22493a260c57da48d2ff88c955ce7d"
-    sha256 cellar: :any,                 ventura:       "da033a9b7a6211fe8b598863765ca3feadf6deb390939e6fcb29f5e19817db4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31c2d1dbdec20af0800b293d32e01a8b009961a69d61538e3f6eea021269d187"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e3315ffad1d2eed41b393e66e6e34e0ad3c1ecd6cdda8217e69284c34e1c8af8"
+    sha256 cellar: :any,                 arm64_sequoia: "eb9a95ada615537a5833fe7f09ad83449b2febfb1a61c3b2b7ca20ec77df2459"
+    sha256 cellar: :any,                 arm64_sonoma:  "7b2b2678dc52cae05cbfd51cd4104b18071352f2518b299d006880cb250ccf8a"
+    sha256 cellar: :any,                 sonoma:        "c681cac483afb629b74f44ee126b04da4b9f74e938701e01214c000f8ce2473e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "864a83aea847d857299931bdc114931287d035c2375306b812bf01d97d2d7287"
   end
 
   depends_on "cmake" => :build
   depends_on xcode: :build
-  depends_on "qt"
+  depends_on "qtbase"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1400
@@ -43,7 +42,7 @@ class Qxmpp < Formula
 
   test do
     ENV.delete "CPATH"
-    (testpath/"test.pro").write <<~EOS
+    (testpath/"test.pro").write <<~QMAKE
       TEMPLATE     = app
       CONFIG      += console
       CONFIG      -= app_bundle
@@ -54,7 +53,7 @@ class Qxmpp < Formula
       LIBPATH     += #{lib}
       LIBS        += -lQXmppQt6
       QMAKE_RPATHDIR += #{lib}
-    EOS
+    QMAKE
 
     (testpath/"test.cpp").write <<~CPP
       #include <QXmppQt6/QXmppClient.h>
@@ -64,7 +63,7 @@ class Qxmpp < Formula
       }
     CPP
 
-    system "#{Formula["qt"].bin}/qmake", "test.pro"
+    system Formula["qtbase"].bin/"qmake", "test.pro"
     system "make"
     assert_path_exists testpath/"test", "test output file does not exist!"
     system "./test"

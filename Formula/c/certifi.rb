@@ -1,12 +1,12 @@
 class Certifi < Formula
   desc "Mozilla CA bundle for Python"
   homepage "https://github.com/certifi/python-certifi"
-  url "https://files.pythonhosted.org/packages/dc/67/960ebe6bf230a96cda2e0abcf73af550ec4f090005363542f0765df162e0/certifi-2025.8.3.tar.gz"
-  sha256 "e564105f78ded564e3ae7c923924435e1daa7463faeab5bb932bc53ffae63407"
+  url "https://files.pythonhosted.org/packages/4c/5b/b6ce21586237c77ce67d01dc5507039d444b630dd76611bbca2d8e5dcd91/certifi-2025.10.5.tar.gz"
+  sha256 "47c09d31ccf2acf0be3f701ea53595ee7e0b8fa08801c6624be771df09ae7b43"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b9364932b2e97249a92c11076b9cabe13ac5fdad56eac069f3ad33c02c53b8f0"
+    sha256 cellar: :any_skip_relocation, all: "de6342b72b69a473c6420dc822d0e103989bb68d8d06bc28fce4d82ec2da376f"
   end
 
   depends_on "python@3.12" => [:build, :test]
@@ -18,9 +18,6 @@ class Certifi < Formula
   end
 
   def install
-    # Avoid difference in generated METADATA files across bottles
-    inreplace "README.rst", "/usr/local", HOMEBREW_PREFIX
-
     pythons.each do |python|
       python_exe = python.opt_libexec/"bin/python"
       system python_exe, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
@@ -30,9 +27,6 @@ class Certifi < Formula
       rm prefix/site_packages/"certifi/cacert.pem"
       (prefix/site_packages/"certifi").install_symlink Formula["ca-certificates"].pkgetc/"cert.pem" => "cacert.pem"
     end
-
-    # Revert first inreplace to avoid difference in README.rst across bottles
-    inreplace "README.rst", HOMEBREW_PREFIX, "/usr/local"
   end
 
   test do

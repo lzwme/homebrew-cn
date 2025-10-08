@@ -1,9 +1,9 @@
 class Clamav < Formula
   desc "Anti-virus software"
   homepage "https://www.clamav.net/"
-  url "https://ghfast.top/https://github.com/Cisco-Talos/clamav/releases/download/clamav-1.4.3/clamav-1.4.3.tar.gz"
-  mirror "https://www.clamav.net/downloads/production/clamav-1.4.3.tar.gz"
-  sha256 "d874cabf3d4765b35b518ef535658a1e6ec74802006a1d613f9f124aa1343210"
+  url "https://ghfast.top/https://github.com/Cisco-Talos/clamav/releases/download/clamav-1.5.0/clamav-1.5.0.tar.gz"
+  mirror "https://www.clamav.net/downloads/production/clamav-1.5.0.tar.gz"
+  sha256 "09026c8b912b6c2a593d325318e99df7d763c9df013fff0d48ef3b2215fb53ee"
   license "GPL-2.0-or-later"
   head "https://github.com/Cisco-Talos/clamav.git", branch: "main"
 
@@ -13,14 +13,12 @@ class Clamav < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "401a63faaaabfef9425362d26c76e27ee9c46e551b0cdca6b3d9ad99bd284825"
-    sha256 arm64_sequoia: "251bf418c7dc47d360294ce30fdc3ff488999350856fd7d2b5389fb763563c3d"
-    sha256 arm64_sonoma:  "527382622ca74f0c7e5510b14d76ba2f62dcf8eab59e557d4239d73c612520f8"
-    sha256 arm64_ventura: "f67aac9831164aa14f229686286fb5e539b3d6628bd0b19531f93fcb933a04e1"
-    sha256 sonoma:        "f87e21de03dd8e9f6d3d0f42f549c335096a990d716f6168a44f7d7f32095366"
-    sha256 ventura:       "8a708db9eb56b97e584fe54d252eff885c26d1055cc82fc882351845e213def4"
-    sha256 arm64_linux:   "e5a7e558c3d1120eb35c232371dfd79f3b63a2550ae17ef8ee875db8a64f43a0"
-    sha256 x86_64_linux:  "87e9d72cfd741c30f3098924b2c1f27ff56205449fbac34847e72af11e181447"
+    sha256 arm64_tahoe:   "a5dc2b40636452f440767de1c22fd83a54ba33e8a4cf8026a8a1a2315c27e0c3"
+    sha256 arm64_sequoia: "ca453f0dcad5960d757268fa548a515ca785f774cd9085316e22f89855a06686"
+    sha256 arm64_sonoma:  "1834c53423def47efc360797b8a887ce86d01a033ba7307a5196dc72b91f0b6e"
+    sha256 sonoma:        "5eceed9bbf654d8a4e6b98de3d78f0fa0845f49d23236187a122df684aee6614"
+    sha256 arm64_linux:   "4f3720d476e42623c3b0517552eeabc79b9eecc9d2abf4cdf12c59b1a2320f45"
+    sha256 x86_64_linux:  "cfbd38f5382a681d9540dd35346e8f9adee3e7adaf954e823a70a56b0471a352"
   end
 
   depends_on "cmake" => :build
