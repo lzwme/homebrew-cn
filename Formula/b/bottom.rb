@@ -1,8 +1,8 @@
 class Bottom < Formula
   desc "Yet another cross-platform graphical process/system monitor"
   homepage "https://clementtsang.github.io/bottom/"
-  url "https://ghfast.top/https://github.com/ClementTsang/bottom/archive/refs/tags/0.11.1.tar.gz"
-  sha256 "0095ea9edb386ad7c49d845176314097713661d22ec42314e3be46426bc769ee"
+  url "https://ghfast.top/https://github.com/ClementTsang/bottom/archive/refs/tags/0.11.2.tar.gz"
+  sha256 "213fbea68a315e012a0ab37e3382a287f0424675a47de04801aef4758458e64b"
   license "MIT"
   head "https://github.com/ClementTsang/bottom.git", branch: "main"
 
@@ -15,14 +15,12 @@ class Bottom < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de9d22b6801ba8a01d0a8f4520a4459801733d5fa9194a2e48b3a3f4615321e6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc63eb85ed39399defbb86c7019ba0cd02f8d6124dd616dcbe20e797249c3eab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d593da907073b7b7d2faf03984475d1d5dd5dc8dc2eb05bc8c511e13ca474d22"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "56ba2aed8740f7a7294dbea9564ead057d4ee532a86a0c8fcaa590d02456d50e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "566e6a599d6c74f5ecd90e1b6cd33db2398794f6e372ab552af79bd03592d166"
-    sha256 cellar: :any_skip_relocation, ventura:       "1741b0c277cc36a1716b929eed10503de1b810bcc353ca78b532ef5f7ef58b79"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a181e21051afbac3f332a127d21d656692b3818f2f2d10983239c839a06708a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a66af1991ec590bf5669acf41a040cf303c89df26ffa6cfee579846bcd0a9940"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6728619f94b41a50bba7ff6ea4dac6cf0d9382d87f0ab031ae7b19149219bdf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f9549e2c36e8d5e2c6e8206a96a0c94284c07f344a84536e2ac1e42bbbb2c47d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84f462b70ed48cf7e21c693927e44771d9d84a81bb4ade6eb3755a93223fc448"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8b7d0d6cef2da08f34c7bbd680aa3aa2aab14d66f3240bbb1ed3e537b8bf7c5d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2069e2513be1b1fea0bde7cc7e9f1c5e15c960ef5e09ccd2e3a29bfdc24d1e63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15e8b97b0c29324c1612a17cd3214035e8f3e681aa2094c8f6ac1cf5966038b7"
   end
 
   depends_on "rust" => :build

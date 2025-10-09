@@ -29,6 +29,9 @@ class Qsoas < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d99b2b0c412e82eb58102d3722c32b5629773334ac81996ee6d4e58f0dffef3"
   end
 
+  # Can undeprecate if new release with Qt 6 support is available.
+  deprecate! date: "2026-05-19", because: "needs end-of-life Qt 5"
+
   depends_on "bison" => :build
   depends_on "gsl"
   depends_on "mruby"

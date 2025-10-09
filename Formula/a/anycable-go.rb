@@ -16,12 +16,14 @@ class AnycableGo < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "069768ead769f2c8d0aad1da61169eb4aba503323295996b4fb0e23c2b3e0895"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "069768ead769f2c8d0aad1da61169eb4aba503323295996b4fb0e23c2b3e0895"
     sha256 cellar: :any_skip_relocation, sonoma:        "384203a4e86860d9c77000c6d1f1bfaf84a535a6e7c17db9c1cd9e46c922ac82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "87acd55650f1548a25b0a6cb0bf27f60c2dbce68bb329fbf5db934e3789196c8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f677d4890764324e87b09225652e1b8977f30d541a017edfd59b5b648e043f0f"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
     ldflags = %w[
       -s -w
     ]

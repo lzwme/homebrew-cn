@@ -29,8 +29,11 @@ class Mgba < Formula
 
   head do
     url "https://github.com/mgba-emu/mgba.git", branch: "master"
+
+    depends_on "qttools" => :build
     depends_on "freetype"
-    depends_on "qt"
+    depends_on "qtbase"
+    depends_on "qtmultimedia"
   end
 
   depends_on "cmake" => :build

@@ -7,11 +7,12 @@ class Vtk < Formula
   head "https://gitlab.kitware.com/vtk/vtk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bc41804094f5aef67dca3afed9132876daf20bc3905ff6003f020dcfb68e3528"
-    sha256 cellar: :any, arm64_sequoia: "b9bf7a139d2204f47cf25cd79cf08d11bb056039cef398b057650741c4800feb"
-    sha256 cellar: :any, arm64_sonoma:  "176813f5270cceaf19cff422d931e8551b0585e7fed3391d004e048cc77ce1e4"
-    sha256 cellar: :any, sonoma:        "de9a19a0dc55d7bd49a326e9e31ac7651152fbc0d5e6cd5bdb592e988a285d1c"
-    sha256               x86_64_linux:  "07914299d58803d0efedb65d0c95ba66321eb2e34fb53e395adc696125d9f081"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "656878321ee65f06e5e71f43fe15e32d7b4e8562fbd4bf0dcefa582e35be5276"
+    sha256 cellar: :any,                 arm64_sequoia: "f4b88c54c7d07c16210f63fbe8449c9208cbd94797a0930a2ae6c1cc71e5eb00"
+    sha256 cellar: :any,                 arm64_sonoma:  "fd179cbf16d53f3f0bb14fd8ca4b8a860e3a0ef6d9572a881bc6bd5168657640"
+    sha256 cellar: :any,                 sonoma:        "e1403a4bc3fb633b4ca6dcce907042665362ee16c137e57dab8a81c124114644"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e0115a25fd34c8b0c6d42c4991de30d60ce6bd901f42ecd5f3217a3c59d53e8"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -35,7 +36,8 @@ class Vtk < Formula
   depends_on "pugixml"
   depends_on "pyqt"
   depends_on "python@3.13"
-  depends_on "qt"
+  depends_on "qtbase"
+  depends_on "qtdeclarative"
   depends_on "sqlite"
   depends_on "theora"
   depends_on "utf8cpp"

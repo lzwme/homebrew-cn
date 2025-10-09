@@ -1,8 +1,8 @@
 class SwiftProtobuf < Formula
   desc "Plugin and runtime library for using protobuf with Swift"
   homepage "https://github.com/apple/swift-protobuf"
-  url "https://ghfast.top/https://github.com/apple/swift-protobuf/archive/refs/tags/1.31.1.tar.gz"
-  sha256 "e34a0b82c8d07184f7bf3c50c97b8cd4ba0351236a8673ea434af4ce11ac1446"
+  url "https://ghfast.top/https://github.com/apple/swift-protobuf/archive/refs/tags/1.32.0.tar.gz"
+  sha256 "630887931bb51260f1602d2641e4a1dff3db260ed8ba62092cb9651007d7a115"
   license "Apache-2.0"
   head "https://github.com/apple/swift-protobuf.git", branch: "main"
 
@@ -12,12 +12,12 @@ class SwiftProtobuf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3742ea13e69e4edb46f0f9bd2718f3b98cde6548a1a34c2fa7c68f2565c18d10"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43696ac7c329ecb74e45bf3af57c93b5bd8c8b379962cfb0599406774b65f38a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81473fbf488b2080d4d350a4fc0956c655cd84e68b324fd259517e75aef63754"
-    sha256 cellar: :any_skip_relocation, sonoma:        "225ed48daeb016db92c0070a6b27b3a6fc896a0042b2fa46254a781594b8f6f5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "32c35d77fb868a9d18c2e5eef7a0d2c5e8ef67fa3c07c0745e718c3650202045"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bd814eee9399c834308f413cf4369a82397d76b4951be26dc57f68bec312509"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ebc235b0f54c194ed6734c85755cce7f8a219029008703bd32072947151a8b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "984280f0c66e09d2bcc2f73e81e53c9e1788124e3f11c3f33695140f69462e5a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e28d046fd59118fef7ae9d908d18f019fe36817b28737039b7c937d67065813e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d2eb97078edc5c5595b345847041c52d997db1370cd1d33bf83bc48a296105fa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfa10e2020b2e510a5668b3223e94eddd625ea0d4dba3ae04d97863b546e5cef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e74ef81c52e1544fb7bbf486839cd17ded15bb1e414ea48afb62db597b71f9e0"
   end
 
   depends_on xcode: ["15.3", :build]

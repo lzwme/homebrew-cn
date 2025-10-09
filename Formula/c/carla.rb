@@ -31,7 +31,8 @@ class Carla < Formula
     url "https://github.com/falkTX/Carla.git", branch: "main"
 
     depends_on "pyqt"
-    depends_on "qt"
+    depends_on "qtbase"
+    depends_on "qtsvg"
   end
 
   depends_on "pkgconf" => :build

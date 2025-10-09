@@ -6,18 +6,43 @@ class Pyqt < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c83505a5a4ddd6dfc587b7ed363074600024441a1d134308c0c7d1db5db126ef"
-    sha256 cellar: :any,                 arm64_sequoia: "4078ee6179ad1c0d96ea0bc1704847d12f4ce7ba4fd98487924150d18ec773dd"
-    sha256 cellar: :any,                 arm64_sonoma:  "713f37bc161900c3b7ee7cd678d38ad37736eed2e15b81dfcf359584df4bae6e"
-    sha256 cellar: :any,                 arm64_ventura: "16e46160b7dc30711f7ca5cc70fffa7f1adb4dc8cb4ccd14b632a457b914d768"
-    sha256 cellar: :any,                 sonoma:        "be7ad408bddb66cab773fe31d823a29efad50095d8f83e561e907bf06c5493c0"
-    sha256 cellar: :any,                 ventura:       "5c1c607206fcb46100485f3f128bd6974cb26b251c20cde71fba1cfd104c41fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce5852c49a5ba65f576acc90970705cd4d55ddaa2d6ecad39caed9fe9222d6e5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "1820f847952129b6d924a9d51f2ed552dfb2895f25e5eb2cb5eeea30364822fa"
+    sha256 cellar: :any,                 arm64_sequoia: "9c54a293ab582b07c15bcdb7a482f234e9fc7749dae8a6f1e46a7e7a9c00c52b"
+    sha256 cellar: :any,                 arm64_sonoma:  "3bad50695e74ede00e3dd16eac7f6f401466baeeca4adf219eafdd33a4836d09"
+    sha256 cellar: :any,                 sonoma:        "71e78e3042e36ffdc3920b11b03a8480bb5fe77e58248853ec38fea32549e515"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1039aab0395e8bc82cbd6e5ece3fa6b9fc47c10f84a05a2a36ebe20a2d0aa3b7"
   end
 
   depends_on "pyqt-builder" => :build
   depends_on "python@3.13"
-  depends_on "qt"
+  depends_on "qt3d"
+  depends_on "qtbase"
+  depends_on "qtcharts"
+  depends_on "qtconnectivity"
+  depends_on "qtdatavis3d"
+  depends_on "qtdeclarative"
+  depends_on "qtmultimedia"
+  depends_on "qtnetworkauth"
+  depends_on "qtpositioning"
+  depends_on "qtquick3d"
+  depends_on "qtremoteobjects"
+  depends_on "qtscxml"
+  depends_on "qtsensors"
+  depends_on "qtserialport"
+  depends_on "qtspeech"
+  depends_on "qtsvg"
+  depends_on "qttools"
+  depends_on "qtwebchannel"
+  depends_on "qtwebsockets"
+
+  on_macos do
+    depends_on "qtshadertools"
+  end
+
+  on_system :linux, macos: :sonoma_or_newer do
+    depends_on "qtwebengine"
+  end
 
   # extra components
   resource "pyqt6-3d" do

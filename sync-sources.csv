@@ -2674,6 +2674,7 @@ Homebrew-homebrew-core/Formula/g/grafana-alloy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grafana.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grails.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grammarly-languageserver.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/granted.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grantlee.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grap.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/graph-tool.rb, Homebrew/homebrew-core, 0
@@ -5774,6 +5775,7 @@ Homebrew-homebrew-core/Formula/p/pyqt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyqt@5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyrefly.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyright.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pyscn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyside.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyside@2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyspelling.rb, Homebrew/homebrew-core, 0
@@ -6129,6 +6131,7 @@ Homebrew-homebrew-core/Formula/r/rofs-filtered.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rogcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rogue.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rojo.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/rolesanywhere-credential-helper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/roll.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rolldice.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rollup.rb, Homebrew/homebrew-core, 0
@@ -12016,6 +12019,7 @@ Homebrew-homebrew-cask/Casks/font/font-w/font-windsong.rb, Homebrew/homebrew-cas
 Homebrew-homebrew-cask/Casks/font/font-w/font-winky-rough.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-w/font-winky-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-w/font-wire-one.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-w/font-with-a-syntax-highlighter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-w/font-wittgenstein.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-w/font-wix-madefor-display.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-w/font-wix-madefor-text.rb, Homebrew/homebrew-cask, 1
@@ -14732,6 +14736,7 @@ Homebrew-homebrew-cask/Casks/s/superslicer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/supersync.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/supertuxkart.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/superwhisper.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/supportcompanion.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/supremo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/surfeasy-vpn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/surfshark.rb, Homebrew/homebrew-cask, 0

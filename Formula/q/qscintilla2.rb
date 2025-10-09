@@ -19,19 +19,18 @@ class Qscintilla2 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "aa4fa6f737bf4f763141be4f1a423135db8bc050593130a41c0010efbf7f75d9"
-    sha256 cellar: :any,                 arm64_sequoia: "822e0a40143f821ebc7c57fc801457ee919b3cf6efc67139d469ea90a824671b"
-    sha256 cellar: :any,                 arm64_sonoma:  "eef138891327e8f9a5577972ee0c442ca7f3cf64c768541271418c0e577fbfae"
-    sha256 cellar: :any,                 arm64_ventura: "19e9c2e210f487a2a54f800c56e0e7b06bfaddf9d5a68a6bc2b54782a4d0d902"
-    sha256 cellar: :any,                 sonoma:        "62385ab067cc1fef525c0732f0b29b5044a2af79557bc49606a288b182b59a87"
-    sha256 cellar: :any,                 ventura:       "8a875755a790c4d437e29e2f93d8257bc3feeb0e7e56d0ebc2227f532eec7608"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d578937c4531c8cf6af62e88838e12e2431f46b042737da78841414a5c2fa92"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ddad06883c9c5df65b6e17804acb56dc53ea49684d385b4036df85de520bbc39"
+    sha256 cellar: :any,                 arm64_sequoia: "2c8fab512519b43c61d7f9134e1d2a0261d3cb737af1112841a127275ab280f5"
+    sha256 cellar: :any,                 arm64_sonoma:  "75d08b71d785906f8b87ec13f23cf9f767038140012dd24112802b21597e8c5a"
+    sha256 cellar: :any,                 sonoma:        "2519a181905c07eca38638de720e413cc37e7cf1b08411df6553c79e9e8e7098"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9ad462e34c307445b1a0cf51e33df61c75ef65dcf7e294b9e2ba67b480111ed"
   end
 
   depends_on "pyqt-builder" => :build
   depends_on "pyqt"
   depends_on "python@3.13"
-  depends_on "qt"
+  depends_on "qtbase"
 
   def python3
     "python3.13"
@@ -45,7 +44,7 @@ class Qscintilla2 < Formula
     end
 
     pyqt = Formula["pyqt"]
-    qt = Formula["qt"]
+    qt = Formula["qtbase"]
     site_packages = Language::Python.site_packages(python3)
 
     cd "src" do
@@ -78,7 +77,6 @@ class Qscintilla2 < Formula
 
       args = %W[
         --target-dir #{prefix/site_packages}
-
         --qsci-features-dir #{share}/qt/mkspecs/features
         --qsci-include-dir #{include}
         --qsci-library-dir #{lib}

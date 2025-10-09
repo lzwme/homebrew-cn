@@ -18,13 +18,12 @@ class Mlt < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "17a494b941cfd1d461a401911e740beecd4b8eafe0d13bc3a9012095fbc08131"
-    sha256 arm64_sequoia: "0c3a5c831cfe7ddb9408e429af70a3a30ec7ac6db8f81da9995cde669e7e483d"
-    sha256 arm64_sonoma:  "4b598973ef11d89bb7f97ef4674d1c82d10e795384e31136b335eaee7b5c7988"
-    sha256 arm64_ventura: "2b8776a511b6a429588f08937de41284c842803007d7568bdb8f567185619759"
-    sha256 sonoma:        "099633d6e641dc539f68946b535d790bcfc6028c4989af49a989f02f2cdc8fb2"
-    sha256 ventura:       "296847ba9350fc2166907a045e195ae76afeabf7be88b0405b7740ecb78bba9b"
-    sha256 x86_64_linux:  "83f198ba55bd1f942d03dc9956f7a38e210076b9a31184591a87f88790084129"
+    rebuild 1
+    sha256 arm64_tahoe:   "f3a15d4cbab669ba7e63aadca1acd6a93ea43d92f7001bb61f70b6592b611867"
+    sha256 arm64_sequoia: "a6e2b4608def05c0b65c582c3c91424db5fbcdc66cdfc234f7851aed43e2cfa5"
+    sha256 arm64_sonoma:  "b147a6c2b447e5f492378f852825fd3ccc6daba38ff9e4ce9d45e1c7b253b8af"
+    sha256 sonoma:        "b3978daa88aac4c0af94d25ad45df803671668c911c773388be602090ee23304"
+    sha256 x86_64_linux:  "06fad8eb1fdfc8ab37ad5624a3f19499a32beccae2f156e63c862b7c61b7cde4"
   end
 
   depends_on "cmake" => :build
@@ -43,7 +42,9 @@ class Mlt < Formula
   depends_on "libvorbis"
   depends_on "opencv"
   depends_on "pango"
-  depends_on "qt"
+  depends_on "qt5compat"
+  depends_on "qtbase"
+  depends_on "qtsvg"
   depends_on "rubberband"
   depends_on "sdl2"
   depends_on "sox"

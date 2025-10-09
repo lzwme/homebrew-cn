@@ -1,8 +1,8 @@
 class SpirvCross < Formula
   desc "Performing reflection and disassembling SPIR-V"
   homepage "https://github.com/KhronosGroup/SPIRV-Cross"
-  url "https://ghfast.top/https://github.com/KhronosGroup/SPIRV-Cross/archive/refs/tags/vulkan-sdk-1.4.328.0.tar.gz"
-  sha256 "9e6a072909985c2b8a82d39105ad9cb211e0dcc31d19ba71ce5839f2589d4f28"
+  url "https://ghfast.top/https://github.com/KhronosGroup/SPIRV-Cross/archive/refs/tags/vulkan-sdk-1.4.328.1.tar.gz"
+  sha256 "5b1149927e40a67396b440711543a3b1f9d004c844ca7293582a72c01cb69756"
   license all_of: [
     "Apache-2.0",
     "MIT",
@@ -18,12 +18,12 @@ class SpirvCross < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a540ddf3762a19748d3cb8bfc9bfb02365858dbde5b23ba3642820f2b56a98f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d343751184a727becafdae0f992827a76dbe5999887d5adbea54b809789d838e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4953cef9774c939de312c0125f3161aa44257c9db5b1d6070bd63d1bde796207"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aa0f0b82aa6545234ccc73652af368272b3480108bba6e3086fbd64e36c6f776"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9c1f048ec200e0e194e338c4a2a79691c3157ae2b7d56fc6dc8e3e4ce2e3d93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b4b47817ce785321e5152543fbc367ff742b35dd54f112005f6e3ec6917ba5a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05c4f8949044e5ffd935c30bf725e77abcabca2ce80bf820aab19f74ca7ce410"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5f82c0c5396ca4af47814944e3edbdc3e85ee444e711d93778156aa317aa708"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1124f7140927ff1eea880f0894b3064361629f92e7d4bd548dcd1582d3188fc9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c558f530f5ec6c20a352e134a13d180933273e5a87e44de05d791c1f8805ca82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0bf8aba874568cb4336c50e145aaec4341e4f9e9373b6d55d17bc3c4acf63bf9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e33c0bf6232d7e14f6691bf5da762e59eee76119388f2fafe11357c5b77a057"
   end
 
   depends_on "cmake" => :build

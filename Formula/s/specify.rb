@@ -3,12 +3,12 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.com/github/spec-kit"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.0.57.tar.gz"
-  sha256 "46e72ffd4ea835fc30b06d6e04cb415ddde572fffc2d64650cd160021c94b5ee"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.0.58.tar.gz"
+  sha256 "5f81d60e05b4f849ee283fd98990d19f2bd1c9e70062393c7835fadd52a88400"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3f8a8501ff1c6df3971dc08fc097137fa1ed8f1e65da4f644dd99986abefd312"
+    sha256 cellar: :any_skip_relocation, all: "2aacb8361e886861851b1a9417f89decd98383ef1267810aba0900c7d42adaec"
   end
 
   depends_on "certifi"
@@ -55,8 +55,8 @@ class Specify < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
-    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
+    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
+    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
   resource "pygments" do

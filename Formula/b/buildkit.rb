@@ -2,8 +2,8 @@ class Buildkit < Formula
   desc "Concurrent, cache-efficient, and Dockerfile-agnostic builder toolkit"
   homepage "https://github.com/moby/buildkit"
   url "https://github.com/moby/buildkit.git",
-      tag:      "v0.25.0",
-      revision: "14d1ccb56dbc5e1748c73cda77af2a61a5c3603a"
+      tag:      "v0.25.1",
+      revision: "1d4469a951d329d6815394b21084aeca512fcb0d"
   license "Apache-2.0"
   head "https://github.com/moby/buildkit.git", branch: "master"
 
@@ -16,11 +16,11 @@ class Buildkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8c7efd0c7fa793e0aaa73f15be13720d619794b848b1ba087abda0c635b824a9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c7efd0c7fa793e0aaa73f15be13720d619794b848b1ba087abda0c635b824a9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c7efd0c7fa793e0aaa73f15be13720d619794b848b1ba087abda0c635b824a9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "44801ba46ccce5215671f0861a1f218fa6524d9c6f56a800afcd08a0cc455a63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18256c2e4665b140eb3ab2dd24eae76165adbb7a98e913c8f6c5312f36e1d7a0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da73b3ea99c3dd3059714f2c45cb2afab392e141a4e7e48d7ec64abf8cd0d53c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da73b3ea99c3dd3059714f2c45cb2afab392e141a4e7e48d7ec64abf8cd0d53c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da73b3ea99c3dd3059714f2c45cb2afab392e141a4e7e48d7ec64abf8cd0d53c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dd48d41872875377dbd8fe7ef557048fa9b1cbded79f4344184f002669d39af5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6371b7e0ad7da333e7df2fe8713cfa0dca3d2dff82c220e9581aadfc6afb916"
   end
 
   depends_on "go" => :build

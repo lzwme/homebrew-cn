@@ -7,12 +7,12 @@ class ClangFormat < Formula
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
-    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.2/llvm-21.1.2.src.tar.xz"
-    sha256 "07656950a7081e3d8a0b8b6dd07926fad2458996c1c6bbfea1bd2529ed4c2798"
+    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.3/llvm-21.1.3.src.tar.xz"
+    sha256 "a80f2dbfa24a0c4d81089e6245936dcd0c662c90f643d1706bb44e7bc8338ff1"
 
     resource "clang" do
-      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.2/clang-21.1.2.src.tar.xz"
-      sha256 "5050e2028bb4d7ca80aadc6f4ae84d15b73747880520957ae1e907065a406c10"
+      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.3/clang-21.1.3.src.tar.xz"
+      sha256 "a70518c2d4c90b8b170732e1342a9854ec2babc310b41d5556a83f4b55a63d1d"
 
       livecheck do
         formula :parent
@@ -20,8 +20,8 @@ class ClangFormat < Formula
     end
 
     resource "cmake" do
-      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.2/cmake-21.1.2.src.tar.xz"
-      sha256 "9ccbaf5ed6bb9e0bcedd827a433fb8f73878b64556bbc1da1e17d88ec0bde0cc"
+      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.3/cmake-21.1.3.src.tar.xz"
+      sha256 "4db6f028b6fe360f0aeae6e921b2bd2613400364985450a6d3e6749b74bf733a"
 
       livecheck do
         formula :parent
@@ -29,8 +29,8 @@ class ClangFormat < Formula
     end
 
     resource "third-party" do
-      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.2/third-party-21.1.2.src.tar.xz"
-      sha256 "106f56f6d249bdd7f9c50316dd37b509c06f0c1cff658abe7dfbc08a91a109f2"
+      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.3/third-party-21.1.3.src.tar.xz"
+      sha256 "2bae76a7c7db4096b921589ae94c030727ee0dcb600bfe40353878937af61aa0"
 
       livecheck do
         formula :parent
@@ -45,12 +45,12 @@ class ClangFormat < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1352a666412ac474bb832b914b33cb5d06609c027be529c0a01c4f7eb91c46a0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8bc62bab6304951764fb64d7d01eb4b1f27f7ce5172f4265ca7a363fd0451c34"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84c7a2f60275517b3f77b1e3ec1576b599f255754f609737a1704efb9ccb5128"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5204020b9063d2c967c1d2c977680b5236f5d82f8c2a9102f007f3d17e82f97d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a69bef8e61b2167409eb0affec43dc17e243fe3eb3d0b52e5ae995177c63c6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3443ec27012c4476e07bb26d4a749fa6567708311e487237589e64815da5c1ca"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a44f2dbf8165944ad0c6545329af5bc782feeec82e2e7240ce7bda814a4714da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68c4bdc00f55d3a5268718990ea70224fcfa9a3bdba2c2c2bf17248d6af1e690"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c82c553fa450645641ab6496c3b6c82bb15c25b12c968550aee4fa7af525eece"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bf25229d5048e12e0932cb0b11d449f35e4e9473640930f431a99c048aefab2b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c23eeeddc65ad4093ebc62caadac808ae54ca3a2cd964abecac9d2799f641c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d18713cddbc537583ba11a6e0337b6bc3a4b4546b50d640035f91f746197680"
   end
 
   depends_on "cmake" => :build

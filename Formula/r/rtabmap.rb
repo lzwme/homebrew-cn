@@ -17,13 +17,12 @@ class Rtabmap < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256                               arm64_tahoe:   "b199d096ccdac528b930bee0e182a62a4f29491b5f6e9f4cab99c1357448d39f"
-    sha256                               arm64_sequoia: "0fe5c24783e6d87a04c08f8d8f28229d18f612491ac8c3ef44861766b8a8ae63"
-    sha256                               arm64_sonoma:  "5e5a0bbb1d6b8bbbf43786c1609f141c72da4bb1b696d3f096b9959d2728303f"
-    sha256                               arm64_ventura: "673bff5fa8a7f08217e2f3bdd09ece21cf8b65ad2dce5918fb679fc19171f4d9"
-    sha256                               sonoma:        "d49aefaffaef001c1e2507376cbd1bd4e24694e2c631b08377ca2512bbda63eb"
-    sha256                               ventura:       "2a2c4823e31f76de01e5ebdc4f496114d67c4422d079b2b4bdd0ab3ea3cb2d16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b982d916d9d60cef10136b03fbc37a397ac0f2d80b506eb1e86ec669987f7fdb"
+    rebuild 1
+    sha256                               arm64_tahoe:   "20a17805711d80ce4832d47579ed9364f7eab4efced20430b9f7ac71d0e86b6b"
+    sha256                               arm64_sequoia: "13d8848d802e0ce6afc36dc7b55c7fd758d841fde7865dd740c402af42b36818"
+    sha256                               arm64_sonoma:  "d8a8239c5d894d57f613789e70e27f9907dd05d0b2fe04d69407c714568cec78"
+    sha256                               sonoma:        "f765722a4937ee9af13ce4f84bc6a0d5152059eb88a66062d2b89318ad2ef6ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8db1652a2e0c0d1c6006fee21f2d2ea89e10a57996957c86838f3ade9cb09e95"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -33,7 +32,8 @@ class Rtabmap < Formula
   depends_on "opencv"
   depends_on "pcl"
   depends_on "pdal"
-  depends_on "qt"
+  depends_on "qtbase"
+  depends_on "qtsvg"
   depends_on "sqlite"
   depends_on "vtk"
 

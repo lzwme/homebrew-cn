@@ -1,14 +1,10 @@
 class Pocl < Formula
   desc "Portable Computing Language"
   homepage "https://portablecl.org/"
+  url "https://ghfast.top/https://github.com/pocl/pocl/archive/refs/tags/v7.1.tar.gz"
+  sha256 "1110057cb0736c74819ad65238655a03f7b93403a0ca60cdd8849082f515ca25"
   license "MIT"
-  revision 1
-
-  stable do
-    url "https://ghfast.top/https://github.com/pocl/pocl/archive/refs/tags/v7.0.tar.gz"
-    sha256 "f55caba8c3ce12bec7b683ce55104c7555e19457fc2ac72c6f035201e362be08"
-    depends_on "llvm@20" # TODO: use `llvm` next release, https://github.com/pocl/pocl/pull/1982
-  end
+  head "https://github.com/pocl/pocl.git", branch: "main"
 
   livecheck do
     url :stable
@@ -17,25 +13,19 @@ class Pocl < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "e39e3235300c89de9d68523fb5d25eab669f664ae0713760fa3f4bf94ee3c45c"
-    sha256 arm64_sequoia: "ce20bf8e55006a7e27ee297c9ade37a0f1d764eca612addd932083eb05653379"
-    sha256 arm64_sonoma:  "ad257d6295b26845ee36310ce3bd75a2dbc51d68c5f74fbea83e04715cf2a6ac"
-    sha256 arm64_ventura: "99dd1eb71561ce4ab0877ea116f71b7fe6c1ff0d192c9e01220ca891dc584ba9"
-    sha256 sonoma:        "c69a5c293303eb4674ae6e6a108bcf68b5a274e1d6a28c021dc6f781ea65bf7f"
-    sha256 ventura:       "84be53db65680a555f1c1d2f4def745ed949c6c5dd8b4510680ccecaa1ce98b5"
-    sha256 arm64_linux:   "4c2330ef849806b7ba65683d396f6cdd0bfae24c80ae2019b5f297d0ed19b8b4"
-    sha256 x86_64_linux:  "6e31505d8843897ac4f6ad07cb75c3c67ff7d2d8617defdca9fc4015a41ca222"
-  end
-
-  head do
-    url "https://github.com/pocl/pocl.git", branch: "main"
-    depends_on "llvm"
+    sha256 arm64_tahoe:   "cc45a16ddaf37efac69ad995690efe2979143b304c20c30179581b04161cf6b4"
+    sha256 arm64_sequoia: "03a539344b6f557b050cbda86913e9936cf7dfa3d157ee90e438b40eab16610d"
+    sha256 arm64_sonoma:  "c1492bebca73399ccdbe9db343f5c9999f58ec2dab464cf9249b4b8f07b287d6"
+    sha256 sonoma:        "ac55a8d49c48770e574446ff3ab95e023370059c0e954fe674103a7751fa9b27"
+    sha256 arm64_linux:   "4c88564ba6f258b924e62ea47306847a1a2ed9356f6723de2273d4235dc959a2"
+    sha256 x86_64_linux:  "b3fb64a5cd37f39d1e70240495f41a1d3e3b267911e50ed4a912b1da4edf162d"
   end
 
   depends_on "cmake" => :build
   depends_on "opencl-headers" => :build
   depends_on "pkgconf" => :build
   depends_on "hwloc"
+  depends_on "llvm"
   depends_on "opencl-icd-loader"
   uses_from_macos "python" => :build
 

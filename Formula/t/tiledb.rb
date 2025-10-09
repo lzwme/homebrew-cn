@@ -1,8 +1,8 @@
 class Tiledb < Formula
   desc "Universal storage engine"
   homepage "https://tiledb.com/"
-  url "https://ghfast.top/https://github.com/TileDB-Inc/TileDB/archive/refs/tags/2.29.0.tar.gz"
-  sha256 "5340e820323cdd48eac3cbd28ad55c1724f3f0b20dd2b88d196f336cffd92cdf"
+  url "https://ghfast.top/https://github.com/TileDB-Inc/TileDB/archive/refs/tags/2.29.1.tar.gz"
+  sha256 "e507b6edf2a3893038ae92c74b4756561f3c11a03c6c311c7ae76d40f924cc05"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Tiledb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "10a74e5c3058c7e75fab61ddccf610bb87b9f55d08d6450140e3a90b4b8c4ef5"
-    sha256 cellar: :any,                 arm64_sequoia: "a195072c143c898e1b70d633d05ea5ecbd3659ca460d726137afd4f891a68caa"
-    sha256 cellar: :any,                 arm64_sonoma:  "22768991d99b91ad2acbcd24516e8ea817be0ce568ab82b1e255f58800a76310"
-    sha256 cellar: :any,                 sonoma:        "38c236878e7b69c053caaa2d0b2e2dc304743040ec02ae92166f7e8d1634e3b3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "68bbb4e7f90d7665f3b74a747d5288c8985521450eb937c255df70f28d09be34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15df5ce31c24ab2b0418c150297fe75c509f172eb65b1e6d6d6ac0538385b5be"
+    sha256 cellar: :any,                 arm64_tahoe:   "2fb182526778c1ee5dbcb90bfe6b14625a85e7ea7cfc254429b6e3c951e3d010"
+    sha256 cellar: :any,                 arm64_sequoia: "797ea84f38bbee14931ef2be3775c9c12ce9ba0520e754045383d53c9accd73a"
+    sha256 cellar: :any,                 arm64_sonoma:  "6ef0cfe0ae29310bcc005403269d98e365cbe176412b22f6c7b7475b456d4a05"
+    sha256 cellar: :any,                 sonoma:        "bb5bf1f5fea8d6731a8d4a96730ad9dd0953f24919e23b8610b2b3060fee733b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d5569b052311c4710ce3ac5371804323e5301e92b745c61a3fa3977434747e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7abf318311253b7b9f2f9771386d209d04176729995f4daf7bbe3087ef3990cf"
   end
 
   depends_on "cmake" => :build

@@ -10,6 +10,7 @@ class YuqueDl < Formula
     sha256 cellar: :any,                 arm64_sequoia: "d226c087bc29796c3d6fa3064f93c7afd0b547b274dc7facaefa4102437462e7"
     sha256 cellar: :any,                 arm64_sonoma:  "d226c087bc29796c3d6fa3064f93c7afd0b547b274dc7facaefa4102437462e7"
     sha256 cellar: :any,                 sonoma:        "000953329ce9afabd28ab3de15ee079a3f6e0f36bbdde017d95d9236e8c9f30d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba5fe4834fec519d47a46ae1dd53bce11a4403b783bb8df10c8c810b1fdc8476"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7237877d2337be79ddfb00999acd2aa3e02ac17ba8d46e07fa812930e0507bba"
   end
 

@@ -1,8 +1,8 @@
 class Kubetui < Formula
   desc "TUI tool for monitoring and exploration of Kubernetes resources"
   homepage "https://github.com/sarub0b0/kubetui"
-  url "https://ghfast.top/https://github.com/sarub0b0/kubetui/archive/refs/tags/v1.9.0.tar.gz"
-  sha256 "c2af4ff04c4bbf6ae7639c592b9b17a57990c124e5631e737dcbe75df3e06797"
+  url "https://ghfast.top/https://github.com/sarub0b0/kubetui/archive/refs/tags/v1.9.1.tar.gz"
+  sha256 "d6ddf724a51766d6b83f8635c9fcaa233670c3748ca80bd84a733e20167f9cd9"
   license "MIT"
   head "https://github.com/sarub0b0/kubetui.git", branch: "main"
 
@@ -12,14 +12,12 @@ class Kubetui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "273cebb80f3355a10016b9c7d2b2dc4921703966f74d8afe27c39c27031cc2b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4529cd3626e0a0c57ee0ecc969acb0f84677d2d7d159ab67b70e6dc1d1bf6a37"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a09f0d9bd4daa1a3fd04f6ef567a79a5f4e8457b772402ef1e9a5f3879d1ff3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1f62aa14d051b842c42bcf3af28b27110aea08a632692dd4ed94356d58942064"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9143cc903a6854c87fe82d92c45d320e77502b97966010a690c6530ea49620c9"
-    sha256 cellar: :any_skip_relocation, ventura:       "dfe764016c7fae24f99b735569a33eb5e797eacb9f9b48eff8d1c218b4afbe33"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea3cb5fc4cd061635b508590e64cdc6e78053a5e2ea784d47bfde5767ef4fdec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ab2b8cf074e0733fbe6431feaee6fb70d93110244d27b2ff0ff769f61be6470"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b6ae8cd58cc7377985b3181092d63dc406486f9846a044ed8bb0dcc0bca9e6eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "172b942a2cfd463e16a87ee2ec8d01d3c3833d906e3c7110f4b76b18cc9799e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5ce0e7b3419bfce4aa9c2755468fc74f583b555335cd85e6ed2c570579976d0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "beb70b1484cd2f29c11f6193ddf3c0f9f6c6078584fdd18f24770ceb99c1dd7c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "08ee40ff45a2ea37d9703ff514ff88da0cc870a2f0be39c90dade533df71af2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2197ff9e8e7e87b4a487cbf469edf98814f6405f617ba00197ad842e4860c09f"
   end
 
   depends_on "rust" => :build

@@ -1,8 +1,8 @@
 class Bindfs < Formula
   desc "FUSE file system for mounting to another location"
   homepage "https://bindfs.org/"
-  url "https://bindfs.org/downloads/bindfs-1.18.2.tar.gz"
-  sha256 "8d8b010cd6a9d9634a45ace371c64009b4955c792b65a33cd511dc3dbab9b4a2"
+  url "https://bindfs.org/downloads/bindfs-1.18.3.tar.gz"
+  sha256 "178a723d7039bae3ab1cef2fc93e5e8693c4184f52519c0e9a1deee93b838df1"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,8 +11,8 @@ class Bindfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "83ecff2e9e51d713bf64d92a65d9e7eb3b527971752c5c9230a333abd4c1e9e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7a1c0beb5e01985b160b16184e0d0edb1ad741db6000f50ac8a8e9bd457985b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "c7175be7021371942980c3bcdf3358f755d3822c4310a9d0f03424914211ef62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "58d2a9498683ea93a9d06a9afa360a8fa580801fbda1b2dfb6eebd59ff211fd2"
   end
 
   head do

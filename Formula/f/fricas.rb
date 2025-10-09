@@ -1,21 +1,35 @@
 class Fricas < Formula
   desc "Advanced computer algebra system"
   homepage "https://fricas.github.io"
-  url "https://ghfast.top/https://github.com/fricas/fricas/archive/refs/tags/1.3.12.tar.gz"
-  sha256 "f201cf62e3c971e8bafbc64349210fbdc8887fd1af07f09bdcb0190ed5880a90"
   license "BSD-3-Clause"
   head "https://github.com/fricas/fricas.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/fricas/fricas/archive/refs/tags/1.3.12.tar.gz"
+    sha256 "f201cf62e3c971e8bafbc64349210fbdc8887fd1af07f09bdcb0190ed5880a90"
+
+    # Build fricas as a SBCL core file instead of standalone executable.
+    # Avoid patchelf issue on Linux and codesign issue on macOS.
+    patch do
+      url "https://github.com/fricas/fricas/commit/4d7624b86b1f4bfff799724f878cf3933459507d.patch?full_index=1"
+      sha256 "dbfbd13da8ca3eabe73c58b716dde91e8a81975ce9cafc626bd96ae6ab893409"
+    end
+    patch do
+      url "https://github.com/fricas/fricas/commit/03e4e83288ea46bb97f23c05816a9521f14734b7.patch?full_index=1"
+      sha256 "3b9dca32f6e7502fea08fb1a139d2929c89fe7f908ef73879456cbdd1f4f0421"
+    end
+  end
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "7c87044d00ac54aed75e3c74024198bfa1334da3cc66e378bb084e9bf34e8b2e"
-    sha256 cellar: :any,                 arm64_sequoia: "6a4986f527a329cda2916c92b2065ae6d41aab08377bf751195b26a88036fd50"
-    sha256 cellar: :any,                 arm64_sonoma:  "c254d2cb770eb7c6796fa9293b06d01c6ffb14be778254ab3a26fc17a8eb8bec"
-    sha256 cellar: :any,                 sonoma:        "9b27da492022588d3d26575fa5f103bfe38f6102679fce800ac4ef9ce8e76343"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc084992d8a884fc40ab26b670100ea7aa8e83e91baabb22a9eac3e3687ae9e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8412b5815cf0fa53cadd4b4608ba229c84aa50120023fe04279f4e19a9a83360"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "64703bf4baf959f9012dc8496cada512031b58b458f71c1aeb8773965bc18df5"
+    sha256 cellar: :any,                 arm64_sequoia: "5bcff86fb77d75170fc7510cb6f4a085b3f11ff6cbda79bd46e8c1ee25a06e44"
+    sha256 cellar: :any,                 arm64_sonoma:  "cb0c313b4aad8554ffc5599e29ea52b3d905135fff563214b0ecdcfdc1b5a56c"
+    sha256 cellar: :any,                 sonoma:        "8d0b0b27639999be31040f8929acd4f5ab96a45df1aceaccc6a27c802784a169"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "96074a0daf94443dc1872dcfe28189e0594da59f5eab8355c82e47609100e6a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0659521326a584d23e2901ef7088c8a23cc5a835f0c08642024505da1244abe5"
   end
 
   depends_on "gmp"
@@ -29,19 +43,10 @@ class Fricas < Formula
   depends_on "sbcl"
   depends_on "zstd"
 
-  on_linux do
-    # Patchelf will corrupt the SBCL core which is appended to binary.
-    on_arm do
-      pour_bottle? only_if: :default_prefix
-    end
-    on_intel do
-      pour_bottle? only_if: :default_prefix
-    end
-  end
-
   def install
     args = [
       "--with-lisp=sbcl",
+      "--enable-lisp-core",
       "--enable-gmp",
     ]
 
@@ -49,24 +54,6 @@ class Fricas < Formula
       system "../configure", *std_configure_args, *args
       system "make"
       system "make", "install"
-    end
-
-    # Work around patchelf corrupting the SBCL core which is appended to binary
-    # TODO: Find a better way to handle this in brew, either automatically or via DSL
-    if OS.linux? && build.bottle?
-      cd lib/"fricas" do
-        system "tar", "-czf", "target.tar.gz", "target"
-        rm_r("target")
-      end
-    end
-  end
-
-  def post_install
-    if (lib/"fricas/target.tar.gz").exist?
-      cd lib/"fricas" do
-        system "tar", "-xzf", "target.tar.gz"
-        rm("target.tar.gz")
-      end
     end
   end
 

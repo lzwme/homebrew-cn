@@ -1,20 +1,18 @@
 class Nelm < Formula
   desc "Kubernetes deployment tool that manages and deploys Helm Charts"
   homepage "https://github.com/werf/nelm"
-  url "https://ghfast.top/https://github.com/werf/nelm/archive/refs/tags/v1.12.2.tar.gz"
-  sha256 "6c75bb60534f3e0b085a953ea97bde5949d07219970ce5ac70ec5110de00ae15"
+  url "https://ghfast.top/https://github.com/werf/nelm/archive/refs/tags/v1.13.0.tar.gz"
+  sha256 "623b2455dfb66314862c31c16873492a1710332f8f0155fc1da5a08bb1d40c96"
   license "Apache-2.0"
   head "https://github.com/werf/nelm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52dd8c2a33f050278f8eae964183bd534025c03869774eb823161c66e2c2cf7b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "303b91fcc20ee0f189e46cb2c6f56ea719d75b4f112e4c526ad85f8bde1157a0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a29ff934db268e602045ffaf8b265dca00aba6c7173fe5918f69cb3f6c07dd3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "941658cf7949b3dd0e045bc0cc7bde4b5b18a1327ee5f69990eea891701a5040"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fbd3cb853a3bacf9e8504863a91d8941f501862b98a6ecf9f3195f32634f1b9f"
-    sha256 cellar: :any_skip_relocation, ventura:       "68f21db5e3ff1cb167e78d8bc56d95cd52f78cff23841e7a8e3d8a1490ebc251"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "354e9596f0ce6467818dec6aeea13184cdd8785264d58f1dcedb1d37fc312b6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8c8809712a94adbe4e106fb0dae0efcd4290c53bd5975392215feb77b51ad79"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cbc59b4207cb66857a3068b09a2b3e95b2bbb3b7eb25b7f05bd3d7632d260696"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a3d6a5ff83b61a4add0fa5e13309ce078c109e6ce743018df8b4a28babd0f55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "afeab8b1dbd0ac84b577aaab0f7ccf5a3850601e4119784b195082817e5ab09b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "79f72a3f75a570bfddf28bc7e59c267632cbb875e4b4ed71b3db1db0f4e71565"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c84f8d6223db7f1b87f580a4c9ee9974742accd3ada909fe7e633b9e0488ee54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37d8e35cace85e197914dcecebb858c3bfe72832f6a466ea4cfd054c05283dde"
   end
 
   depends_on "go" => :build

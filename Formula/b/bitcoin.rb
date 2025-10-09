@@ -9,7 +9,6 @@ class Bitcoin < Formula
     "BSL-1.0", # src/tinyformat.h
     "Sleepycat", # resource("bdb")
   ]
-  head "https://github.com/bitcoin/bitcoin.git", branch: "master"
 
   livecheck do
     url "https://bitcoincore.org/en/download/"
@@ -23,6 +22,13 @@ class Bitcoin < Formula
     sha256 cellar: :any, sonoma:        "b62278e3ada8701c9a542bee64adeaf50a5c8b1aa5b7cf172f9a96ddf24aed3b"
     sha256               arm64_linux:   "d1ca6acf2612a816805f118f1625b04ba332b23f1a97d2c3febed168862207a7"
     sha256               x86_64_linux:  "b7290cd2f6e3e5b41170d1d3fd7c7460c4a715bdb97cd5205655a68c454383cc"
+  end
+
+  head do
+    url "https://github.com/bitcoin/bitcoin.git", branch: "master"
+
+    # Move to stable block when updated to v30.0
+    depends_on "capnp" => :build
   end
 
   depends_on "boost" => :build

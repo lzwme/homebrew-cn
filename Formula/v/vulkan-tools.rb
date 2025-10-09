@@ -1,19 +1,10 @@
 class VulkanTools < Formula
   desc "Vulkan utilities and tools"
   homepage "https://github.com/KhronosGroup/Vulkan-Tools"
+  url "https://ghfast.top/https://github.com/KhronosGroup/Vulkan-Tools/archive/refs/tags/vulkan-sdk-1.4.328.0.tar.gz"
+  sha256 "2f4a801ca07793a478e1f4cdfbb5dc57d1810597cd8acb26ca275c78ca34655c"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-Tools.git", branch: "main"
-
-  stable do
-    url "https://ghfast.top/https://github.com/KhronosGroup/Vulkan-Tools/archive/refs/tags/vulkan-sdk-1.4.321.0.tar.gz"
-    sha256 "f897f76b1fae6b85b567ee86d7bc1ba6f5b1a13d3bfa5fe0f07fdb81609f7b75"
-
-    # Backport fix to build on Linux
-    patch do
-      url "https://github.com/KhronosGroup/Vulkan-Tools/commit/105d6c1fede00c3a9055e5a531ebf3d99bac406e.patch?full_index=1"
-      sha256 "d3dac23d470b81b4de346c8bac377e0bf8fbf67b862be5f020cb2a11f31a6950"
-    end
-  end
 
   livecheck do
     url :stable
@@ -21,12 +12,12 @@ class VulkanTools < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "e9da1e5a385d850e7ae896ccf7f7962444b6e1656300811c8b3ff37d4ea93f52"
-    sha256                               arm64_sequoia: "f8feeeba6366b86abf824fffda14ae21eb7c816505c59183df9e51c61d08e90d"
-    sha256                               arm64_sonoma:  "ee770f9a8f1c75ae812e4bab51923112fb2120a62e9e454ee0d08a5bf6b39484"
-    sha256 cellar: :any,                 sonoma:        "ec203cd8674170349b6aa10e48a954105c50167d6223a7a3f9c44a098df67524"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f313e99bf76d1562156644ec78047163a4dd264efb4c1fd359effb1c87449dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e745a8b95d4ff0b2e8bc0981fcfae77bad7c39aae256cc9ebe009f33d2e8fdc0"
+    sha256                               arm64_tahoe:   "9f8faa99c97f23f115a262801eae0ca15c998690456095952e82f581aae408d9"
+    sha256                               arm64_sequoia: "662a14228a307514a6945277029bd39d0ecc174ffeb54c2e82b6426a90351712"
+    sha256                               arm64_sonoma:  "ad53aa5c1184ba75785fe474a8c2ea3888cb6dc3a2fcdbdbcae96b4610400ef7"
+    sha256 cellar: :any,                 sonoma:        "3bd69e19a5bf9a7fd407d5eafc37d75fc96e81677a30277d4021322401724940"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "64c026f85b4c67779844e3acee7da75f8d17480ac1f739272fc7d6c9863320ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b67dee203c074a6d8d30019303d30b7d852bf71bda791a8361b082193ad66c0"
   end
 
   depends_on "cmake" => :build
