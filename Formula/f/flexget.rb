@@ -8,12 +8,13 @@ class Flexget < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cdf7158d93761da72407e791a5c41652757d825d9472633d494bdb3fca4f02f2"
-    sha256 cellar: :any,                 arm64_sequoia: "bd6fa7ad65953dbd9c724b40d3b68ea6d3903e2f6954b85dd4866cd3937e30c6"
-    sha256 cellar: :any,                 arm64_sonoma:  "3e2ed7a00228a275d2e1ec7b8b3fdf34ee20344850ee5a060cfdec0f7dbbd1d9"
-    sha256 cellar: :any,                 sonoma:        "414706bff79cdef2663397c6f9a6d92771864476722b8eeb1e37b7ce28d73a62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b975417d29bba73627de3b79ecc7f6bb6478fef020658faa29c8a2cdeac3bc2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7abf90af75aff86dc1459ab6f03fe252253707addc7c11c780b7c11a5beb342"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "98ea7386035968399c8fdffb5908afa81fde2f658691bd313d0abb00a6c8af0a"
+    sha256 cellar: :any,                 arm64_sequoia: "c5424f64c4981e79ca7b29edad6e4256549421d5469da678ce6880ff63b83f37"
+    sha256 cellar: :any,                 arm64_sonoma:  "25d8f575bc56c11664388816076fe95c397fc344de33276768714e34f3aeea65"
+    sha256 cellar: :any,                 sonoma:        "cdff16c3e6ea1a5a171101f93244513d12a15433e3707049a598895d27fb522e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02abc00cb1e213f26304eeeed3c0733a11d53a3a6d14482f92c86be9d0486963"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a8fa8e967308538ae3da85e228e19c62b47ce6238e86c531a3d6335ec21e4bc"
   end
 
   depends_on "rust" => :build
@@ -110,11 +111,6 @@ class Flexget < Formula
   resource "flask-restx" do
     url "https://files.pythonhosted.org/packages/43/89/9b9ca58cbb8e9ec46f4a510ba93878e0c88d518bf03c350e3b1b7ad85cbe/flask-restx-1.3.2.tar.gz"
     sha256 "0ae13d77e7d7e4dce513970cfa9db45364aef210e99022de26d2b73eb4dbced5"
-  end
-
-  resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/03/b8/704d753a5a45507a7aab61f18db9509302ed3d0a27ac7e0359ec2905b1a6/greenlet-3.2.4.tar.gz"
-    sha256 "0dca0d95ff849f9a364385f36ab49f50065d76964944638be9691e1832e9f86d"
   end
 
   resource "guessit" do
@@ -322,6 +318,11 @@ class Flexget < Formula
     sha256 "abb5d9ec790cc5e4f9431778029ba3e3d9ba9bd50cb306dad824824b2b362dcd"
   end
 
+  resource "transmission-rpc" do
+    url "https://files.pythonhosted.org/packages/68/b8/dc4debf525c3bb8a676f4fd0ab8534845e3b067c78a81ad05ac39014d849/transmission_rpc-7.0.11.tar.gz"
+    sha256 "5872322e60b42e368bc9c4724773aea4593113cb19bd2da589f0ffcdabe57963"
+  end
+
   resource "typing-extensions" do
     url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
     sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
@@ -363,6 +364,8 @@ class Flexget < Formula
   end
 
   def install
+    ENV["BUNDLE_WEBUI"] = "true"
+
     venv = virtualenv_install_with_resources without: "pyzstd"
     # We need to build separately to link to our `zstd`.
     resource("pyzstd").stage do
@@ -372,12 +375,25 @@ class Flexget < Formula
     end
   end
 
+  service do
+    run [opt_bin/"flexget", "--cron", "daemon", "start"]
+    keep_alive true
+  end
+
   test do
-    (testpath/"config.yml").write <<~END
+    (testpath/"config.yml").write <<~YAML
+      variables:
+        media_folder: ~/Downloads
+      web_server: yes
+      schedules:
+        - tasks: [task-1]
+          interval:
+            minutes: 30
       tasks:
         task-1:
           rss: https://example.com/rss
-    END
+          transmission: yes
+    YAML
     system bin/"flexget", "-c", "#{testpath}/config.yml", "check"
   end
 end

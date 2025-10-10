@@ -1,27 +1,24 @@
 class PythonAT312 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.12.11/Python-3.12.11.tgz"
-  sha256 "7b8d59af8216044d2313de8120bfc2cc00a9bd2e542f15795e1d616c51faf3d6"
+  url "https://www.python.org/ftp/python/3.12.12/Python-3.12.12.tgz"
+  sha256 "487c908ddf4097a1b9ba859f25fe46d22ccaabfb335880faac305ac62bffb79b"
   license "Python-2.0"
-  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
     regex(%r{href=.*?v?(3\.12(?:\.\d+)*)/?["' >]}i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 arm64_tahoe:   "1443684f05205bf2aca7b050fdea79c93fa4f52fdbf2f085c037aef09b19b0a0"
-    sha256 arm64_sequoia: "def10183b59dc780b09036cf5d29f3c67b10e763b8bb2eafd4baedc34a1b93a0"
-    sha256 arm64_sonoma:  "16a4f8b0c47ac577a41e449abcb43a0e59035488fecfa025deac9f8017d224c5"
-    sha256 tahoe:         "446a872d084b82dc83ae61fe1664375be4c7f8b4076b14fff466971081d63885"
-    sha256 sequoia:       "71abaa0da7993851e417791b9394641821e456c8fac59b89c9d53acb1112dfe6"
-    sha256 sonoma:        "fbb8cf281255632ed26196f721b9aab99dc97ffc642ac12dc52caef572127a71"
-    sha256 arm64_linux:   "75c82c8cefefa20a8a3c18b1c882ecf2b75c08fb52bc0c96df65e43de12bec71"
-    sha256 x86_64_linux:  "aa0c83c153f8aa3339b28497703906ef751cb865d6e6079239a31cbd0ab11656"
+    sha256 arm64_tahoe:   "a000fd4856f62bf895f00834763827b03270f1c9fdcb27326a32edac66b7fe05"
+    sha256 arm64_sequoia: "37ae53fa79a39a9918b800f0de9008318b243b1b6f8415f5b24b0344b106a260"
+    sha256 arm64_sonoma:  "ff9ad0e2b1201789a6aa20b0f0ac6a7d03cc65f2f46bff2f38df20913ce40691"
+    sha256 tahoe:         "d6894d85c2f62a457c6712aa72880992447d0df0ed5e3a34941aa1c52cf3ff63"
+    sha256 sequoia:       "2e3b6a481f9a045d891132156bf5aad07250c120e405eeabce3d9de1f8f5c78a"
+    sha256 sonoma:        "e0c7ced51385e5775e1026da4a75d79496e6a7837b9f443ecd4849744dc871d3"
+    sha256 arm64_linux:   "9d361e6dcd38088036b79a3d1f701eeef6a10071e5914bb2b8599b5a676105ef"
+    sha256 x86_64_linux:  "5b00594526236ecca6e83eef126f31f9c0bf0bdc1233313c44bc1613aba7e09f"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -52,7 +49,6 @@ class PythonAT312 < Formula
   link_overwrite "lib/python3.12/site-packages/pip*"
   link_overwrite "lib/python3.12/site-packages/wheel*"
 
-  # Always update to latest release
   resource "flit-core" do
     url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
     sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"

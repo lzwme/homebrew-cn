@@ -18,8 +18,6 @@ class ConfigFileValidator < Formula
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
-
     ldflags = "-s -w -X github.com/Boeing/config-file-validator.version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"validator"), "./cmd/validator"
   end

@@ -1,8 +1,8 @@
 class Redress < Formula
   desc "Tool for analyzing stripped Go binaries compiled with the Go compiler"
   homepage "https://github.com/goretk/redress"
-  url "https://ghfast.top/https://github.com/goretk/redress/archive/refs/tags/v1.2.39.tar.gz"
-  sha256 "4469c13058d2bb521993adbe8b249c20e0992e6c62df6c77a4475416442e7977"
+  url "https://ghfast.top/https://github.com/goretk/redress/archive/refs/tags/v1.2.40.tar.gz"
+  sha256 "dda2d634b463369e942d675513c3d9e7d18a707214b72175d7d2dd2d73e5a237"
   license "AGPL-3.0-only"
   head "https://github.com/goretk/redress.git", branch: "develop"
 
@@ -12,11 +12,12 @@ class Redress < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "febc5452a736522c1cbec7f19f1a5b389a6b355654b79f1d7ad65e82c41413f5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "febc5452a736522c1cbec7f19f1a5b389a6b355654b79f1d7ad65e82c41413f5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "febc5452a736522c1cbec7f19f1a5b389a6b355654b79f1d7ad65e82c41413f5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9f60c6ce35c4bf5a1e33d7e857867514411c8af318d66599273221853e96fc7d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2cf32b5e965405d2b18487c9aa4d7d542cc8a56e2667a0e3f83b533ded9fc7b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e5e0d2a6a1f14a150d60c023d851546d8d0e0a67c3ef8755bbc06dd06f251599"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5e0d2a6a1f14a150d60c023d851546d8d0e0a67c3ef8755bbc06dd06f251599"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5e0d2a6a1f14a150d60c023d851546d8d0e0a67c3ef8755bbc06dd06f251599"
+    sha256 cellar: :any_skip_relocation, sonoma:        "83e5dd724f1c6c2798356117f2c4e303cd1d99a400cc21fe4659b6b5cfd30157"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1817178b93fce77bf7b01c7b429c642eee0cbee2de63c224a626a24f0eac512e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "faec88a6be95a6b664ae571739402a64b2366fba549274418e64b63b907c0148"
   end
 
   depends_on "go" => :build

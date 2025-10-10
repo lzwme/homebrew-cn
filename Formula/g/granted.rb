@@ -18,8 +18,6 @@ class Granted < Formula
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
-
     ldflags = "-s -w -X github.com/common-fate/granted/internal/build.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/granted"
   end

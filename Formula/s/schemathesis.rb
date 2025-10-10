@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/fb/6a/0199e7bd0292d56e5b1a00412a163955ea5756715c8d08838d0ccbee3315/schemathesis-4.2.0.tar.gz"
-  sha256 "c0bc80108c9833ffd4bf1f1bbd97ffa2068f7316d1d80b5a734c9a0dec90b8b6"
+  url "https://files.pythonhosted.org/packages/2a/6c/86649815eb63dd52cc3f571bb594b59066728a69839da99ef9fc448df1cb/schemathesis-4.2.1.tar.gz"
+  sha256 "cb30ed17c6425a7740bae2164973e2fdf97fb90893004b85964c157d6df0bd64"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0424ae32410ed17c6c4f1abca5d7866f402666c33a079354439fbd26531aa1e6"
-    sha256 cellar: :any,                 arm64_sequoia: "688240c2b7d722460caecdbf44f8b6d062673e31e6748d23e7c8a554d95971a6"
-    sha256 cellar: :any,                 arm64_sonoma:  "cde77e008d4a1fc92b70c669dfb5eb7df65dc9956727611e94385c8f048ef60e"
-    sha256 cellar: :any,                 sonoma:        "9ec88d249cedc62291f8c5edaaea5b11c09644c014d3fc3b1641211bafc2927d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "925528e239f61083e5ec4e14b31f0a4d46623343125ca5d578ae57576219b8a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a49a98aaeed1e28dda70d5b08a485db898a7816818a21fa950e150f497034bbf"
+    sha256 cellar: :any,                 arm64_tahoe:   "d7160b2e9cc2da8fbddba2809c7d8044123fd09d7e7d27d8ef93244e67fd9f77"
+    sha256 cellar: :any,                 arm64_sequoia: "c493b7d070cc52b66aae6c780914ae3f5ec4003cbe29d976dd3a1576ad0e82a5"
+    sha256 cellar: :any,                 arm64_sonoma:  "d3bb6730ec8d58bd9eb93f5bc1a611b19a31dec954b7a3b489f3837b29ebf022"
+    sha256 cellar: :any,                 sonoma:        "49801617e422efc9123d7f6eb0e18a2c195a3e021b5edea65161f263d733e22a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "33baa1d587bdf706f0bb809cd7e58418000a8702358c82b98bb2c4d999adc4dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58024c5cfe20379f2e3f7a0e362a45de9b72d01659f0427d3eec05707fa86178"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -34,8 +34,8 @@ class Schemathesis < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
-    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
+    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
+    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
   end
 
   resource "backoff" do
@@ -89,8 +89,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/ad/4a/3c340178b986b44b4f71ddb04625c8fb8bf815e7c7e23a6aabb2ce17e849/hypothesis-6.140.2.tar.gz"
-    sha256 "b3b4a162134eeef8a992621de6c43d80e03d44704a3c3bfb5b9d0661b375b0d2"
+    url "https://files.pythonhosted.org/packages/18/7f/946343e32881b56adc0eba64e428ad2f85251f9ef16e3e4ec1b6ab80199b/hypothesis-6.140.3.tar.gz"
+    sha256 "4f4a09bf77af21e0cc3dffed1ea639812dc75d38f81308ec9fb0e33f8557b0cb"
   end
 
   resource "hypothesis-graphql" do
@@ -249,13 +249,13 @@ class Schemathesis < Formula
   end
 
   resource "tomli" do
-    url "https://files.pythonhosted.org/packages/18/87/302344fed471e44a87289cf4967697d07e532f2421fdaf868a303cbae4ff/tomli-2.2.1.tar.gz"
-    sha256 "cd45e1dc79c835ce60f7404ec8119f2eb06d38b1deba146f07ced3bbc44505ff"
+    url "https://files.pythonhosted.org/packages/52/ed/3f73f72945444548f33eba9a87fc7a6e969915e7b1acc8260b30e1f76a2f/tomli-2.3.0.tar.gz"
+    sha256 "64be704a875d2a59753d80ee8a533c3fe183e3f06807ff7dc2232938ccb01549"
   end
 
   resource "types-python-dateutil" do
-    url "https://files.pythonhosted.org/packages/0c/0a/775f8551665992204c756be326f3575abba58c4a3a52eef9909ef4536428/types_python_dateutil-2.9.0.20250822.tar.gz"
-    sha256 "84c92c34bd8e68b117bff742bc00b692a1e8531262d4507b33afcc9f7716cd53"
+    url "https://files.pythonhosted.org/packages/fc/83/24ed25dd0c6277a1a170c180ad9eef5879ecc9a4745b58d7905a4588c80d/types_python_dateutil-2.9.0.20251008.tar.gz"
+    sha256 "c3826289c170c93ebd8360c3485311187df740166dbab9dd3b792e69f2bc1f9c"
   end
 
   resource "typing-extensions" do

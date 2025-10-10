@@ -5787,6 +5787,7 @@ Homebrew-homebrew-core/Formula/p/python-freethreading.rb, Homebrew/homebrew-core
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.13.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-gdbm@3.14.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-launcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lsp-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-markdown.rb, Homebrew/homebrew-core, 0
@@ -5798,12 +5799,14 @@ Homebrew-homebrew-core/Formula/p/python-tk@3.10.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tk@3.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tk@3.12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tk@3.13.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-tk@3.14.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tk@3.9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-yq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python@3.10.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.12.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.13.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/python@3.14.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python@3.9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pythran.rb, Homebrew/homebrew-core, 0
@@ -7169,6 +7172,7 @@ Homebrew-homebrew-core/Formula/t/tpl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tpm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tproxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tracebox.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tracetest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tractorgen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tracy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tradcpp.rb, Homebrew/homebrew-core, 0

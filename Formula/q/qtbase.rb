@@ -21,11 +21,13 @@ class Qtbase < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "031dc8feea7e91068bad640f2384309b5d73983f5e13b63fd41019a492365d6a"
-    sha256 cellar: :any,                 arm64_sequoia: "f81cd92620f9a76049a118e983b68141d469825828fbc317e04c4449c3e7066d"
-    sha256 cellar: :any,                 arm64_sonoma:  "73404da080f30f866f0edd489527ed879a06a2a956f59c6ed52d47c7e32668f5"
-    sha256 cellar: :any,                 sonoma:        "6a51ae0cf024a196bba21a5ba75bf7d4c35aedcdae23476ff2f948cecb3602a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28447cd1dc3f8930358e067866bc3b68c24f26ab5a19ba7bd7d22e8978924a42"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "b71662b2a584d66df3cb7693453c0c685aeaac59bdbebf09c6525a95336c92d8"
+    sha256 cellar: :any,                 arm64_sequoia: "e01b6da67665aacb7251e9402f9ff61cdf15eefbe18d3bd162a4f031e24b0375"
+    sha256 cellar: :any,                 arm64_sonoma:  "e5e9230b6d4d803f2c82d317832ef225debd4218b0289ea58e1e2abffbb4f62a"
+    sha256 cellar: :any,                 sonoma:        "ea8dd5c6dd29e5d2c8477024026cb841d0982f01b3d698bd2751bff1875b3656"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0790ab124d71c60905dcc5d6a9023b9aebe0392c9e374422341eb3a2e068b95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d65327cb727685833b1706b1f431d61bc80e4172526fb8a61c27870979d1bbee"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -76,6 +78,13 @@ class Qtbase < Formula
     depends_on "xcb-util-keysyms"
     depends_on "xcb-util-renderutil"
     depends_on "xcb-util-wm"
+  end
+
+  # Add framework directory to Cflags on macOS
+  # Ref: https://codereview.qt-project.org/c/qt/qtbase/+/682915
+  patch do
+    url "https://codereview.qt-project.org/changes/qt%2Fqtbase~682915/revisions/1/patch?zip"
+    sha256 "41fc97843c891cc8c5fe513acfc5779bb42a2ac417e6c931efee08ed5eb62201"
   end
 
   def install

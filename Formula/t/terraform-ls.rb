@@ -1,8 +1,8 @@
 class TerraformLs < Formula
   desc "Terraform Language Server"
   homepage "https://github.com/hashicorp/terraform-ls"
-  url "https://ghfast.top/https://github.com/hashicorp/terraform-ls/archive/refs/tags/v0.38.1.tar.gz"
-  sha256 "cf9aadc9ccb5fa5f8a778a18e3c3961e5855acebac52fd5f3e59b5e934ac2c05"
+  url "https://ghfast.top/https://github.com/hashicorp/terraform-ls/archive/refs/tags/v0.38.2.tar.gz"
+  sha256 "7f309f0eb1ef42386c9bc29d0050d2607c456cb08ad1fa5966b04790c4779a11"
   license "MPL-2.0"
   head "https://github.com/hashicorp/terraform-ls.git", branch: "main"
 
@@ -12,11 +12,12 @@ class TerraformLs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d367e827b49a19d63ef1f0c4cc22df449be6fc86f16e8cc422c16aa485e37dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d367e827b49a19d63ef1f0c4cc22df449be6fc86f16e8cc422c16aa485e37dc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d367e827b49a19d63ef1f0c4cc22df449be6fc86f16e8cc422c16aa485e37dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6c7fd82ea0f58449594a774ae41675aade662bf9af21df4d1f26383e81f2bad1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63c838b3d6d1bc36f258ee290bf2b651f046e705a23315d56c2719bab6149d10"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e22dc5c03073df6d2cfb6327ddc9132130fcc31753621ffdb5c7d4fa87aa78d7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e22dc5c03073df6d2cfb6327ddc9132130fcc31753621ffdb5c7d4fa87aa78d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e22dc5c03073df6d2cfb6327ddc9132130fcc31753621ffdb5c7d4fa87aa78d7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5aa0bd88c9a2579fa25b2ab37a9f8c063619308153406bf52d24ad4c57553b57"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "008feee1598ebbcc0450e7ffea44bc8843bcaaf757ec2c6e80a70e1e40912026"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a52adac219fbde5f56abe43322ad66a0379387fc6aa663e512b6d1c5c03d3c4d"
   end
 
   depends_on "go" => :build

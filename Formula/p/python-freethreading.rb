@@ -1,24 +1,24 @@
 class PythonFreethreading < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.13.7/Python-3.13.7.tgz"
-  sha256 "6c9d80839cfa20024f34d9a6dd31ae2a9cd97ff5e980e969209746037a5153b2"
+  url "https://www.python.org/ftp/python/3.14.0/Python-3.14.0.tgz"
+  sha256 "88d2da4eed42fa9a5f42ff58a8bc8988881bd6c547e297e46682c2687638a851"
   license "Python-2.0"
-  revision 1
 
   livecheck do
     formula "python"
   end
 
   bottle do
-    sha256 arm64_tahoe:   "816ede3264d1a60e258aaf153d080b0f82cd4546bf4ff4ba804858e5c9869b26"
-    sha256 arm64_sequoia: "fddf7ca3e2cb381aa105e0431eca333da22e7e0ef166d20ba6fbb7ed2249be5c"
-    sha256 arm64_sonoma:  "2f337cdfb3b552b399fd03875e4ec9a2c41266dafdfcc6fc5eaf5c05e82ffe74"
-    sha256 tahoe:         "a3901af7892fb656216d585f60761310d83999a210c1ce34808207166f262b14"
-    sha256 sequoia:       "f9c30f434a95e97ca6c54d9313475734342617006ff9d7a215ed907f44e0922a"
-    sha256 sonoma:        "a907773e12007f807e8f32396f6e7897951e59747cd65fc45dd7dd0743587ce2"
-    sha256 arm64_linux:   "0e790fe15566f2c2957ebabea858e509a26ff6a04639efa5661c385c01a52ff3"
-    sha256 x86_64_linux:  "7726c5bdd44d5f5991f9a87e5b8f73e01cb3768fcf696aff29bfd01f1dba48c9"
+    rebuild 1
+    sha256 arm64_tahoe:   "1b49e584be645ead7942ac5c5607e0ecee6dac0b204bb0739121e8c39181a9f7"
+    sha256 arm64_sequoia: "46065c652bc4d27bfe9b0c7738566f9a90d0718b61841006bb0f997a920a9689"
+    sha256 arm64_sonoma:  "ad9dc24cb8f1135896e30c64d66ad5d9015310365b3e1448e70dfd7445858340"
+    sha256 tahoe:         "2ec62fe4443e0c9e5a92f714d8f3942dab37cc6298af95371a0d7277d8a6635a"
+    sha256 sequoia:       "490608aadade7e4a0c0916cfa6faf941efbfaad0d909debc719cf973a0f8351d"
+    sha256 sonoma:        "70c1e7d5c24dccf8fdf9b0a2e361eee1a8bf1d87ab878fa04deb02aa2e3e8cdf"
+    sha256 arm64_linux:   "60e0e956098b66f93e059ae84ecafc4ffe1ea882d0497ee904c47618f5227b2c"
+    sha256 x86_64_linux:  "26b39e8864d5fabadb7717ec392a2ad4f6aafb04812c9cb0dbe83826f7a38a0f"
   end
 
   depends_on "pkgconf" => :build
@@ -26,6 +26,7 @@ class PythonFreethreading < Formula
   depends_on "openssl@3"
   depends_on "sqlite"
   depends_on "xz"
+  depends_on "zstd"
 
   # not actually used, we just want this installed to ensure there are no conflicts.
   uses_from_macos "python" => :test
@@ -43,9 +44,6 @@ class PythonFreethreading < Formula
     depends_on "libnsl"
     depends_on "libtirpc"
   end
-
-  link_overwrite "lib/python3.13t/site-packages/pip*"
-  link_overwrite "lib/python3.13t/site-packages/wheel*"
 
   # Always update to latest release
   resource "flit-core" do
@@ -429,6 +427,7 @@ class PythonFreethreading < Formula
     system python3, "-c", "import pyexpat"
     system python3, "-c", "import readline"
     system python3, "-c", "import zlib"
+    system python3, "-c", "import _zstd"
 
     # tkinter is provided in a separate formula
     assert_match "ModuleNotFoundError: No module named '_tkinter'",

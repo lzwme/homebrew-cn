@@ -1,8 +1,8 @@
 class PythonAT313 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.13.7/Python-3.13.7.tgz"
-  sha256 "6c9d80839cfa20024f34d9a6dd31ae2a9cd97ff5e980e969209746037a5153b2"
+  url "https://www.python.org/ftp/python/3.13.8/Python-3.13.8.tgz"
+  sha256 "06108fe96f4089b7d9e0096cb4ca9c81ddcd5135f779a7de94cf59abcaa4b53f"
   license "Python-2.0"
 
   livecheck do
@@ -11,15 +11,14 @@ class PythonAT313 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "da1ce9287cbbf65595f990fae3d9e3629335df55724f195a38e0c63f44545193"
-    sha256 arm64_sequoia: "55fdda88837a68b7e852a0b2d561e66895b1e3a2fcc1feba351774ecfa3d11db"
-    sha256 arm64_sonoma:  "8bd3efa61d69c67e2887d1708844a459229c9bc131986b8f9e776a413c4c1cbe"
-    sha256 tahoe:         "953ea8a1a2ae56ab4a83f20aa547af0893ef18fa4ef1609ffe0b5455935d0f7e"
-    sha256 sequoia:       "ce5f7afbf5e430cac671f588a2fcc13084be6fe22fe89fc2f1cf00863916c336"
-    sha256 sonoma:        "cc7acaf714876dcca9557a26af3d20303330982d0980aac2c201907d88f24833"
-    sha256 arm64_linux:   "63f552873fe976c0e5b29bdf29dc1c8b1c3b5c669aab406117b2d7d3a6834a65"
-    sha256 x86_64_linux:  "e5b409711679f3018efec5d8b6c5ba09013133eccfb867ef4590565bbed6e1fe"
+    sha256 arm64_tahoe:   "2665712dfe507df08a3366fafe5676dc88a87d67d1dbf317859171e852b33812"
+    sha256 arm64_sequoia: "e205133e9f93fc634b7cde2a2a82186cc8361b9e0e2bcd07b280df6c208bfe35"
+    sha256 arm64_sonoma:  "938dd450a8f87965109b117d3ce4698b12604c816447fc4c68cea54b0bb56549"
+    sha256 tahoe:         "8f6ba7a60057ebb130475175cd9934f4fde4eb978a9ed13e668b59f7bf5e2846"
+    sha256 sequoia:       "f8bdde593ac63d31af2ce6d9bd502b4205b3a59090dfbeab5788dab86102ebd1"
+    sha256 sonoma:        "fef5fe547919a98032109c998e2232a17e2b47235f9cbc721534113e89af2d73"
+    sha256 arm64_linux:   "cf78e1b421151c17d90c14d1eb5f8290a4eebe8f908e70132d9596c885fd9bc3"
+    sha256 x86_64_linux:  "0df8c441a5734b0a2388cc3cc761da3f538e48db6710f6637a3515d4814756ef"
   end
 
   depends_on "pkgconf" => :build
@@ -40,22 +39,8 @@ class PythonAT313 < Formula
     depends_on "berkeley-db@5"
   end
 
-  link_overwrite "bin/idle3"
-  link_overwrite "bin/pip3"
-  link_overwrite "bin/pydoc3"
-  link_overwrite "bin/python3"
-  link_overwrite "bin/python3-config"
-  link_overwrite "bin/wheel3"
-  link_overwrite "share/man/man1/python3.1"
-  link_overwrite "lib/libpython3.so"
-  link_overwrite "lib/pkgconfig/python3.pc"
-  link_overwrite "lib/pkgconfig/python3-embed.pc"
   link_overwrite "lib/python3.13/site-packages/pip*"
   link_overwrite "lib/python3.13/site-packages/wheel*"
-  link_overwrite "Frameworks/Python.framework/Headers"
-  link_overwrite "Frameworks/Python.framework/Python"
-  link_overwrite "Frameworks/Python.framework/Resources"
-  link_overwrite "Frameworks/Python.framework/Versions/Current"
 
   resource "flit-core" do
     url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
@@ -445,11 +430,14 @@ class PythonAT313 < Formula
   def caveats
     <<~EOS
       Python is installed as
-        #{HOMEBREW_PREFIX}/bin/python3
+        #{HOMEBREW_PREFIX}/bin/python#{version.major_minor}
 
-      Unversioned symlinks `python`, `python-config`, `pip` etc. pointing to
-      `python3`, `python3-config`, `pip3` etc., respectively, are installed into
+      Unversioned and major-versioned symlinks `python`, `python3`, `python-config`, `python3-config`, `pip`, `pip3`, etc. pointing to
+      `python#{version.major_minor}`, `python#{version.major_minor}-config`, `pip#{version.major_minor}` etc., respectively, are installed into
         #{opt_libexec}/bin
+
+      If you do not need a specific version of Python, and always want Homebrew's `python3` in your PATH:
+        brew install python3
 
       `idle#{version.major_minor}` requires tkinter, which is available separately:
         brew install python-tk@#{version.major_minor}

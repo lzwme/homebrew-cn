@@ -18,8 +18,6 @@ class Swag < Formula
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
-
     # version patch PR, https://github.com/swaggo/swag/pull/2049
     inreplace "version.go", "1.16.4", version.to_s
 

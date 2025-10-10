@@ -3,20 +3,18 @@ class Xml2rfc < Formula
 
   desc "Tool to convert XML RFC7749 to the original ASCII or the new HTML look-and-feel"
   homepage "https://xml2rfc.tools.ietf.org/"
-  url "https://files.pythonhosted.org/packages/3a/b3/06d002c0cdaafce50abc5dca04ff293a63797c9a44f9a1c6750499d5f9b6/xml2rfc-3.30.2.tar.gz"
-  sha256 "dfd9f23288cfa805ad5bb613c9540dc1b349da98e117a16e0ca887d2261ed311"
+  url "https://files.pythonhosted.org/packages/e5/bf/958badb4a48c9a91abf1e4896f81a2164127f86b53b0b099fc024c849584/xml2rfc-3.31.0.tar.gz"
+  sha256 "0a1d4ccc4425aed39b5f0f833a8eb1e0f9e8f1897d3441c3a15877dee36cf484"
   license "BSD-3-Clause"
   head "https://github.com/ietf-tools/xml2rfc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "738600b798dfb002b47adcc8018195739ff7aeacf6ae5865bcca05ac7095ca31"
-    sha256 cellar: :any,                 arm64_sequoia: "6a762fb37d2aff293a8364579240d37d66ab7f26d69e3810886265a47e4317b0"
-    sha256 cellar: :any,                 arm64_sonoma:  "9ec6f3818af93969925b04b4717a38201184c8f1779f074783d6504de31edb8b"
-    sha256 cellar: :any,                 arm64_ventura: "d287122459a2118077044b5e5059787954baac2fcba92495fad1bcfac72120ab"
-    sha256 cellar: :any,                 sonoma:        "796af45558a80d8fc3c26301766fb6c4b883c8e49565527387cae2dcafcbf024"
-    sha256 cellar: :any,                 ventura:       "57e2645ca59ef6c8e78019a3b0ed2c5328f65ed308a3bd5b8d52ec502011ad77"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9634da04df063328049623825c0067b9ef52efe26db991c2a24089d86b6fa6a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7b4d320bdaef5be0d7ad5529ffd4b53e5c42ba07ad3b01fd1739069ac62194d"
+    sha256 cellar: :any,                 arm64_tahoe:   "29c602945150a037ce808f3c846b61d20e84ae24a01e294970994c8671f947a5"
+    sha256 cellar: :any,                 arm64_sequoia: "0eb552c809a93dac5e08c8d4cb15acad627cbdbf0131854eab22957ab256fb2d"
+    sha256 cellar: :any,                 arm64_sonoma:  "19cd0594ce8065ee45310bb6985a1ede46b5b5eda431f4855b0a73196fa05a0d"
+    sha256 cellar: :any,                 sonoma:        "161a248060923f89d102ec2dd147829514827af5be131afd51ff85d347089495"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a95ab7a578c0890c976ec9bd1d2eca46c2aafa978d8894f7852d0e61d8a36ccf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6df440c6a48534768f700487b47ce7975654a54f6098e5e1adc3a492aaafb0b"
   end
 
   depends_on "libyaml"
@@ -29,8 +27,8 @@ class Xml2rfc < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/dc/67/960ebe6bf230a96cda2e0abcf73af550ec4f090005363542f0765df162e0/certifi-2025.8.3.tar.gz"
-    sha256 "e564105f78ded564e3ae7c923924435e1daa7463faeab5bb932bc53ffae63407"
+    url "https://files.pythonhosted.org/packages/4c/5b/b6ce21586237c77ce67d01dc5507039d444b630dd76611bbca2d8e5dcd91/certifi-2025.10.5.tar.gz"
+    sha256 "47c09d31ccf2acf0be3f701ea53595ee7e0b8fa08801c6624be771df09ae7b43"
   end
 
   resource "charset-normalizer" do
@@ -64,18 +62,18 @@ class Xml2rfc < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/8f/bd/f9d01fd4132d81c6f43ab01983caea69ec9614b913c290a26738431a015d/lxml-6.0.1.tar.gz"
-    sha256 "2b3a882ebf27dd026df3801a87cf49ff791336e0f94b0fad195db77e01240690"
+    url "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz"
+    sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
-    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
+    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
+    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
   resource "pycountry" do
@@ -84,18 +82,13 @@ class Xml2rfc < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "requests" do
     url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
     sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
-  end
-
-  resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
-    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "sortedcontainers" do
@@ -109,8 +102,8 @@ class Xml2rfc < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz"
-    sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
+    url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
+    sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
   end
 
   def install

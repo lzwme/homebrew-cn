@@ -18,8 +18,6 @@ class Yutu < Formula
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
-
     mod = "github.com/eat-pray-ai/yutu/cmd"
     ldflags = %W[
       -s -w

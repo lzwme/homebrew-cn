@@ -9,12 +9,13 @@ class Ansible < Formula
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f9f99b5a12895d7336a014be8f334b42a529a12aef2a4090d450543e0b877c64"
-    sha256 cellar: :any,                 arm64_sequoia: "6aaf18be520dff3b8d3200c253a375520d70136faf2b54ce0e28d69722b0526e"
-    sha256 cellar: :any,                 arm64_sonoma:  "04187783adc5ef3e210cd4a1f9d3ec3a93f9eda776042ceb128a10e4215ffe43"
-    sha256 cellar: :any,                 sonoma:        "519c22bd76dd852d868bfd47942ec123af55bdc888e085d05307fc3008fc5404"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc76ab5063f31fb8e0b74035a0b5179db0d6437571bcd218d375520bf9faf7e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "190866352f90f3efe08d7e8ac7d30bfdd945de1784edb92a2762b38d98ae1c21"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "af02f920eb87e49a9abe1e42ab966486fe873dafd62e301a05126fd4a731d3f7"
+    sha256 cellar: :any,                 arm64_sequoia: "f29f74c3fbdac039e15c4347ede65e42192db5b0ed3b7d6d220d1adc8fc65bbc"
+    sha256 cellar: :any,                 arm64_sonoma:  "fc1ce520ebcd827e126afd724a0e70344edec70516349cfd7ad850738b09c519"
+    sha256 cellar: :any,                 sonoma:        "b9102372813fee077c6f3fb6482164ccf5f188ad391bb9c5d2c308cc42ab7315"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fcff18dec6ffc010122d9581dec9eead8c1e580479acd6ce29c8d54d5199cc07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2eca3fe673439408d088fa6880022071c8d6cfb284e49853de3c1c6ec0c0cca2"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -66,9 +67,10 @@ class Ansible < Formula
     sha256 "826996d74c5aa9f4b6916195547312ac6384bac3810b8517063f293248257b72"
   end
 
+  # passlib doesn't work with bcrypt v5+: https://github.com/ansible/ansible/issues/85919
   resource "bcrypt" do
-    url "https://files.pythonhosted.org/packages/d4/36/3329e2518d70ad8e2e5817d5a4cac6bba05a47767ec416c7d020a965f408/bcrypt-5.0.0.tar.gz"
-    sha256 "f748f7c2d6fd375cc93d3fba7ef4a9e3a092421b8dbf34d8d4dc06be9492dfdd"
+    url "https://files.pythonhosted.org/packages/bb/5d/6d7433e0f3cd46ce0b43cd65e1db465ea024dbb8216fb2404e919c2ad77b/bcrypt-4.3.0.tar.gz"
+    sha256 "3a3fd2204178b6d2adcf09cb4f6426ffef54762577a7c9b54c159008cb288c18"
   end
 
   resource "boto3" do

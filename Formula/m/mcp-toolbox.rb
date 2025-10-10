@@ -19,8 +19,6 @@ class McpToolbox < Formula
   conflicts_with "kahip", because: "both install `toolbox` binaries"
 
   def install
-    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
-
     ldflags = %W[
       -s -w
       -X github.com/googleapis/genai-toolbox/cmd.buildType=#{tap.user}

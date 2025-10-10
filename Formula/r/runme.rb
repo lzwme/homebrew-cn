@@ -1,19 +1,20 @@
 class Runme < Formula
   desc "Execute commands inside your runbooks, docs, and READMEs"
   homepage "https://runme.dev/"
-  url "https://ghfast.top/https://github.com/runmedev/runme/archive/refs/tags/v3.15.3.tar.gz"
-  sha256 "62318e0ca5bbb20c6cf063f35cd9f61258740639f9285e29f84c6eb7a5dbb712"
+  url "https://ghfast.top/https://github.com/runmedev/runme/archive/refs/tags/v3.15.4.tar.gz"
+  sha256 "6f47a80c73aeb97464884e91fef24168317585d2c7a05077567128d0533591e1"
   license "Apache-2.0"
   head "https://github.com/runmedev/runme.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bcb9618c58552486aa89490a4eb63e9c0e4c931d56bd1cc84fa65deedbf773a4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22d600f328e20fac3b5f30f24921711a9eed4b3e88da1f5f4fe5ae436e13931e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b550bb2eb45f608b79c63b6ad2c56b5188c18050492f5fcc44a9fffa2e7c6b8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d1b67a5d8b29078e29764f46bd01e0e240f1948310b8bce315d231f065bf8821"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa4e11f76a821165f9239992054ee4806de84c00a6a228970188eb4491ee5e56"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9dafe12cffc71e22ff3120889ea0061f6a96768a43f7857abcbd155530a154bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f377dcd850751174258a1b239c94e8f118d35193d099799240558efb8b53ed51"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6bfdd50520a6e1991c94155ea4b578d86fd9148bb47d23419362daa3329c421"
+    sha256 cellar: :any_skip_relocation, sonoma:        "95ebdf84b6cd207242e269f5f6c8438a5774da5741713719600866e9bdfa3661"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c91048e83532c626a68bed5b6f9440d9e0abed5830d3986e7c666bbc3b75949a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99d5a9197e647d5922a3dc8c16804bf07620fc231b59c28ae5e480b839470c30"
   end
 
   depends_on "go" => :build

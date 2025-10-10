@@ -19,8 +19,6 @@ class IcebergCli < Formula
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
-
     # See: https://github.com/apache/iceberg-go/pull/531
     inreplace "utils.go", "(unknown version)", version.to_s
 

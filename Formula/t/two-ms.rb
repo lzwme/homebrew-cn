@@ -18,8 +18,6 @@ class TwoMs < Formula
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
-
     ldflags = "-s -w -X github.com/checkmarx/2ms/v#{version.major}/cmd.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"2ms"), "main.go"
   end

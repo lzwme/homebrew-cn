@@ -1,8 +1,8 @@
 class Monero < Formula
   desc "Official Monero wallet and CPU miner"
   homepage "https://www.getmonero.org/downloads/#cli"
-  url "https://downloads.getmonero.org/cli/monero-source-v0.18.4.2.tar.bz2"
-  sha256 "e9ec2062b3547db58f00102e6905621116ab7f56a331e0bc9b9e892607b87d24"
+  url "https://downloads.getmonero.org/cli/monero-source-v0.18.4.3.tar.bz2"
+  sha256 "6ba5e082c8fa25216aba7aea8198f3e23d4b138df15c512457081e1eb3d03ff6"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,14 +11,12 @@ class Monero < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a12667101d0a4ec5d75dfe8c6decaabdd72d1ed14d222079cfc19295b5fab2c6"
-    sha256 cellar: :any,                 arm64_sequoia: "63458779ec8c4185b021361ca624162d0fb40d27f06a66ac60aedaa0d9f80407"
-    sha256 cellar: :any,                 arm64_sonoma:  "11caef7b0eae3e41b38666c229b7e1f4322f110bab7cab0cd32dd89d1e84b375"
-    sha256 cellar: :any,                 arm64_ventura: "5f65bc0ca66623fb0da584d72c3e0658a224349fd986e225a0d68e86c1908db4"
-    sha256 cellar: :any,                 sonoma:        "36896518b1e339f32d52da76d3b31fb6b0048d41222990cc58076f59ef6118d1"
-    sha256 cellar: :any,                 ventura:       "0b325f46374785eee8c8fa430582f8bfa1e207e0168f5ea21b9505528104e192"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2caa97db728719b76a468f7cd96153dd89de6100d643c6f02c15ee65272da42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a7638a239505ca25130fac091e7a2fca6aee3e918a37617db3a1f7d89e492c0"
+    sha256 cellar: :any,                 arm64_tahoe:   "0a503ca2da58ac2cc9e8ee8b5094405c13cf66bffe19b01c708f24cbb9e517cd"
+    sha256 cellar: :any,                 arm64_sequoia: "c030d0c005c518e099c7550701b76b6ebdd32e91713f5ea11b9dfa8cdbe1dc97"
+    sha256 cellar: :any,                 arm64_sonoma:  "0e34e02aefe0c4f89e7a130ffac64ef212eb99786825b97d47bf587488451659"
+    sha256 cellar: :any,                 sonoma:        "404f91b2d016fe784c7c5ed76d4aef06e0bdc69bb2d799d2190a0337d25ca75c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3f4578ebc42cea23753fcee740b47600f36919e5307928929801c254910a84c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba360aba976bc4ea77bd9e9f849e9f79e3a8ddc6a9fb855b6405da4071df1087"
   end
 
   head do

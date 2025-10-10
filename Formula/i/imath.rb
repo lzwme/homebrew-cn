@@ -1,19 +1,17 @@
 class Imath < Formula
   desc "Library of 2D and 3D vector, matrix, and math operations"
   homepage "https://imath.readthedocs.io/en/latest/"
-  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/Imath/archive/refs/tags/v3.2.1.tar.gz"
-  sha256 "b2c8a44c3e4695b74e9644c76f5f5480767355c6f98cde58ba0e82b4ad8c63ce"
+  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/Imath/archive/refs/tags/v3.2.2.tar.gz"
+  sha256 "b4275d83fb95521510e389b8d13af10298ed5bed1c8e13efd961d91b1105e462"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9651c2e6be0319635e32871113b62114ed28e6d02909cb9a20a5d270eb50a1cd"
-    sha256 cellar: :any,                 arm64_sequoia: "ee09da9303b9bf3adfc1914072e168e4ea26d951a04f382085bd536950cbfe38"
-    sha256 cellar: :any,                 arm64_sonoma:  "3c7b6425f73e3bba7545e6623936388294f5f8d66594475477e17edb8afc7406"
-    sha256 cellar: :any,                 arm64_ventura: "2b5ec21503c88bf54ffaae924922c69a270f3a9cda382714d2f03b2fe51e866c"
-    sha256 cellar: :any,                 sonoma:        "c2673b472af5299c359c6d8b7a2fa664b9289b1ecb69e29123a64914bbfef205"
-    sha256 cellar: :any,                 ventura:       "1105716a3869feae8ce50c2ccd20f9d17ccd8e4b970a66a27368d0cca659ca69"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "742a6635170ab0b122a7916d592c92b83e50ae01211a55eedd2603ed069e417b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f821e8883e12443a2487cb177cea3aa4a3092cae5212b8623f40d8c5027605d3"
+    sha256 cellar: :any,                 arm64_tahoe:   "ce46ad834b2daf8d6e85f8f2ffa5ee5bb0ef241d8f55effedf54bba69e8a6437"
+    sha256 cellar: :any,                 arm64_sequoia: "473751d9832776b48e077e901e51d68bc141f3b53f84d47ea92ea78acab812d2"
+    sha256 cellar: :any,                 arm64_sonoma:  "695ca118bef6d41442b21fe26c5f26dd22be274dc6a914b535e37b93907f9dc2"
+    sha256 cellar: :any,                 sonoma:        "72a4653f1f1b9e820fcb53cd85720264dd29d9de6346d97a600d8177799020af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be13320613472344b92cb55712581bdd059a5137d4f3edd60781b5d99946de95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66774757b29808a5fde422b5ddb395c14419f9e8d10bab44897777734fd52d26"
   end
 
   depends_on "cmake" => :build

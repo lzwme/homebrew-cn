@@ -1,18 +1,17 @@
 class Openexr < Formula
   desc "High dynamic-range image file format"
   homepage "https://www.openexr.com/"
-  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.4.0.tar.gz"
-  sha256 "d7b31637d7adc359f5e5a7517ba918cb5997bc1a4ae7a808ec874cdf91da93c0"
+  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.4.1.tar.gz"
+  sha256 "0d75aa277c33a4ed1fce2e272126f2d8dbd01adda82d7cf4fe67b99f6f7eedce"
   license "BSD-3-Clause"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "04393e92e8b7516b7bac837c4d6083e549333aa2a1cac42d5641cdd853b0778f"
-    sha256 cellar: :any,                 arm64_sequoia: "8c79277fc1662e8699332d4560a07fbf46340c9e273a05457a9fa39663d098bf"
-    sha256 cellar: :any,                 arm64_sonoma:  "c0f2d4b8b92b4c496eded2a1c167f474a77d2cc37366a0fa044d7a02d871101b"
-    sha256 cellar: :any,                 sonoma:        "9d8f92e1a24307fde039a7da38a1155638edc96e1bc65254dfccd26a9fcd5839"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c16f6b42676781d2a7f8ee8a85fe33ea660d088130305fc06e5977a7ab53b48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfa7a34d3cd993943fd62a73241ad0a0670b93371380a9f2dea7599b0fa46e84"
+    sha256 cellar: :any,                 arm64_tahoe:   "3738e25d89fc47be20189ac0a25ba15e139bce31ddb1ffc16edf9e91ee360767"
+    sha256 cellar: :any,                 arm64_sequoia: "72f6f0c2ab1cfaac6df72d9df3d3de2052f33a9d4981db2641f9e38d017e5520"
+    sha256 cellar: :any,                 arm64_sonoma:  "b717768d29cd65ef11d9056c88255f420631d0c90ea3d6d0908cd45ed3073aae"
+    sha256 cellar: :any,                 sonoma:        "aee5976cb6164cf99b4b1f641f4df203638960d6c2ed9b14c6565039e0844f40"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c24c82b57d8ade9ee3c51c95317b36df5c0237819923378812ff18cc7c761f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6764dbc6efd995393941c85fe666d29c8851830aedbebf92808be1334fea7e98"
   end
 
   depends_on "cmake" => :build
@@ -32,9 +31,6 @@ class Openexr < Formula
   link_overwrite "lib/libIlmThread.so"
 
   def install
-    # Workaround with `openjph` >= 0.23 that doesn't include the prefix for cmake files
-    inreplace "src/lib/OpenEXRCore/internal_ht.cpp", "<ojph_", "<openjph/ojph_"
-
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

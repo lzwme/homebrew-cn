@@ -19,7 +19,6 @@ class Cosign < Formula
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
     pkg = "sigs.k8s.io/release-utils/version"
     ldflags = %W[
       -s -w

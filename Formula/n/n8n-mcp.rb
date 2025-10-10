@@ -1,17 +1,17 @@
 class N8nMcp < Formula
   desc "MCP for Claude Desktop, Claude Code, Windsurf, Cursor to build n8n workflows"
   homepage "https://www.n8n-mcp.com/"
-  url "https://registry.npmjs.org/n8n-mcp/-/n8n-mcp-2.18.1.tgz"
-  sha256 "130710d203ded326c1b3f7970227cd7b4e605ed29bfed11e62047f2a0b77e8d5"
+  url "https://registry.npmjs.org/n8n-mcp/-/n8n-mcp-2.18.4.tgz"
+  sha256 "8028cecc47fd46fd824c1bfd6045e7f2dc9c4d3d78b7c6786cf7b74ec99321ec"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8457a0141c896e2c482aa5185abfd347438a61db78c6285a7b37f26c39acdf13"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e0af98e46790ffb59bd9311f1096acf540647e5975d8726757c16ee25ff0b12"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "640d9f7f6215d6049929a94a2ea44bb2d7e7717ed6c627ba43659d0314ae8164"
-    sha256 cellar: :any_skip_relocation, sonoma:        "57a124fddc9d778cb933fdae7004bac46bbbdee527ac709d2e0ad4909028ade2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3259fb41d6ff1283fa6b764f3e7bf4147e17c35d7783f249d540f0d6d66356cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f37e290ce24779e8a93bea29c0ef698daf12cb2d75680ea34a7d56865261024"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc6e4dc6d02e09b3a8ba49b49398c3bd066b222ef917c26312ac11e535e9bd48"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "02cfcceda2749b23bede05110c6ab835fb5ebd014b809c903eade5ff29ab10a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "299df0236e778c2e7b2a28ca3b4506da7842e784ff3fa8d1a58a3d4322ca57f8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5c623d1ec26e82b805db847666b4ed5085b1614574858d27e1fee421ad7628e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "159cbf72ff68821d3f30944849d859a13266fecf4d2d6c1851c5a53fe38ee1a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2410d53ea432858052aa3cdbe0be520854562bbb56a8133dbdfa656628f7d0c6"
   end
 
   depends_on "node"

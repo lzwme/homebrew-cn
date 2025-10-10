@@ -1,20 +1,20 @@
 class PhpAT74Debug < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/78eed5e70e3c16e2d310ccd95b9e247891033cf5.tar.gz"
+  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/4f5713607d60ffc702eb22aa84a199616cae9051.tar.gz"
   version "7.4.33"
-  sha256 "2514d5ba7da9f9546a3be16c88f11ab59fa89796a3cf2b6b3f747c596c7c8b21"
+  sha256 "6df3a2d0e2b7d7683408d530d832468a1034d1c821a29645bcfa66c852382691"
   license "PHP-3.01"
-  revision 11
+  revision 12
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_tahoe:   "620d8b911fd6aaf579c77778b37e39b330e27a3e165eba5b553572c1bf503d06"
-    sha256 arm64_sequoia: "8acdaee0e4b446fd64bfa3ad67c35600cb18a46e9298e61baed5c39de2cc925f"
-    sha256 arm64_sonoma:  "9d62bce91b1439a27565349743aa123d844d70404a6eefea840f6614791acea6"
-    sha256 sonoma:        "ed9874a2a939dae5f13ebdb41d98c50b1b055544437b4cd9e5b29380126e836c"
-    sha256 arm64_linux:   "47bb5f09911d307705e760985e53c8e01d1b8b89a59f466ed87b2d8b7dce1650"
-    sha256 x86_64_linux:  "290ddf4e1c3c795b764522b2e6584abfb881c3b1e4220616905d6fb50b758cab"
+    sha256 arm64_tahoe:   "63b4475e22131c0d6fcc9463908500725681f50b4af8dc16c2318ca5a4c910e9"
+    sha256 arm64_sequoia: "a61dae3ec1d8c5ef4f6b126fa6aa91ef91df7a3b82ffc68cae2bbc5a7de163eb"
+    sha256 arm64_sonoma:  "71e7511eefa182a304967723a0e1427ec49361a72b6851cda539a8d6bf433575"
+    sha256 sonoma:        "7104217b506620996a0cd24a95e853cb7622d37c54be92fd7535b63e48fd9300"
+    sha256 arm64_linux:   "d81b096c094f48bc440955e8286e2422047a0bce744add3b7e80c2bf0e0b4a51"
+    sha256 x86_64_linux:  "cb9bc4e219b4c290c22786b3fb08542c580d00231224e982cc4c3eece8572862"
   end
 
   keg_only :versioned_formula
@@ -82,13 +82,7 @@ class PhpAT74Debug < Formula
       ENV.append "LDFLAGS", "-lresolv"
     end
 
-    if OS.mac? && ENV.compiler.to_s.start_with?("gcc")
-      ENV.append "CFLAGS", "-Wno-incompatible-pointer-types"
-      ENV.append "CPPFLAGS", "-DL_ctermid=1024"
-      inreplace "ext/gd/gd.c", "func_p)()", "func_p)(...)"
-      inreplace "ext/gd/gd_ctx.c", "func_p)()", "func_p)(...)"
-      inreplace "ext/standard/scanf.c", "zend_long (*fn)()", "zend_long (*fn)(...)"
-    end
+    ENV.append "CFLAGS", "-Wno-incompatible-pointer-types" if OS.mac? && ENV.compiler.to_s.start_with?("gcc")
 
     # Work around to support `icu4c` 75, which needs C++17.
     ENV["ICU_CXXFLAGS"] = "-std=c++17"

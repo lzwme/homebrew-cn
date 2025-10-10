@@ -35,8 +35,6 @@ class Gh < Formula
 
     ldflags = %w[-s -w]
 
-    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
-
     with_env(
       "GH_VERSION"   => gh_version,
       "GO_LDFLAGS"   => ldflags.join(" "),

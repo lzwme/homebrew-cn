@@ -1,8 +1,8 @@
 class PgPartman < Formula
   desc "Partition management extension for PostgreSQL"
   homepage "https://github.com/pgpartman/pg_partman"
-  url "https://ghfast.top/https://github.com/pgpartman/pg_partman/archive/refs/tags/v5.2.4.tar.gz"
-  sha256 "462464d83389ef20256b982960646a1572341c0beb09eeff32b4a69f04e31b76"
+  url "https://ghfast.top/https://github.com/pgpartman/pg_partman/archive/refs/tags/v5.3.0.tar.gz"
+  sha256 "059b0ecdc424a8f432f848ef4b5d168a1f5273d46ce10cba61af7a37273a3bfd"
   license "PostgreSQL"
 
   livecheck do
@@ -11,13 +11,12 @@ class PgPartman < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9aa872814097e24a5251c1ff5b9c1962958f480ecb159a6ae80632bbd8be2ada"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "237456de81b9e9656dd9de9e54311e51ab859cabf251db79bcd0001ca727d6f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3360bd68ca5d0297445da2ae315fe2e5d59edb5df7490550081d0f80794174b3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1925b115886c4c53d4f52d18cee74d07617ee927a795eb48cac622f7948e4bf1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab848f61fc5c01cf74a13c5c340412fa9cc3a8e0e00f38f101abfc46ff251c40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b712bdf503c41e4fbbbcd9e7aced208586c7b52525cf6104c6fc58799b94eded"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c72acee55b9ac33b9fb519dcb6ee86ca3ffb3472f935cb8812e6fb4262154e04"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9bb9dd12d1df3fb333c0a275f88aa2feba0d568a54c3593fc275c4e9abe9d8f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54df8fe59479915aabe0083df844c8f8ae188ca97c159fa34447d5a67355547a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fbeaa1c6ba605d51fab63f8f06ef6e8498cd7674a654d7492a67683a75d9a075"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "25cc6985f0eadd0af844f26d9727b4eb4e116102141f59deaa6f182c79b991b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f4a748aa86c4b591372aa61c1b8075c05c1687ce57aafb9e1ffb60688905d62"
   end
 
   depends_on "postgresql@17" => [:build, :test]

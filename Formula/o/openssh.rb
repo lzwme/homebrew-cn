@@ -6,6 +6,7 @@ class Openssh < Formula
   version "10.1p1"
   sha256 "b9fc7a2b82579467a6f2f43e4a81c8e1dfda614ddb4f9b255aafd7020bbf0758"
   license "SSH-OpenSSH"
+  revision 1
 
   livecheck do
     url "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/"
@@ -13,12 +14,12 @@ class Openssh < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9e37d1bd4b73eb97dc2442a2268d545a162968fddcb526516a1402deb9777e05"
-    sha256 arm64_sequoia: "74406e3e95bf48de2272d28416d89f9d7b2ec2ff815830eaa872563338a32f9e"
-    sha256 arm64_sonoma:  "0e265f62df578b522e9e95d3a7ea67c833118c63b9417b3bea2050a6ddd9878a"
-    sha256 sonoma:        "811427242d6453e5c2dea534c9655d97d6d0ab9400ec22145fe19ca912cb1eae"
-    sha256 arm64_linux:   "5826f2eaf92babacd74c22b9eaebfe59ee16ae2cf048047868ba2b521616ab81"
-    sha256 x86_64_linux:  "a0eb7cf345a9efdea853c4dad1992f62483453a542d5fd69c8ba750e0088308f"
+    sha256 arm64_tahoe:   "80ca0cc0b0ee77beb76226996067a7f32531eab664cc2fed17a5c4e5e01cb783"
+    sha256 arm64_sequoia: "a49a24b8a86c3712f6ea4ef9da98dc56112fac509887d32b441f8617a787c2c6"
+    sha256 arm64_sonoma:  "b23c3cdc18b9ba937c76f13a75d81c2c6b4d8e3fea0acd8bc035c2c35e027eb2"
+    sha256 sonoma:        "02dc5bdd874de88761894d459ad093b5dcfe8e69ed9526e98b75f509a703c3f8"
+    sha256 arm64_linux:   "f028097be5733c39e032f32c2c17586ca4aa11394d998f11edcc4f27e1a08c76"
+    sha256 x86_64_linux:  "133fc0cd700bce16e7a6659c51a995cbcb8091ac5142a990b28b4e551e348323"
   end
 
   # Please don't resubmit the keychain patch option. It will never be accepted.
@@ -45,17 +46,16 @@ class Openssh < Formula
     sha256 "a273f86360ea5da3910cfa4c118be931d10904267605cdd4b2055ced3a829774"
   end
 
-  def install
-    if OS.mac?
-      ENV.append "CPPFLAGS", "-D__APPLE_SANDBOX_NAMED_EXTERNAL__"
+  # FIXME: non-interactive sudo/stdio is broken (e.g. used by ansible)
+  # Upstream Issue (already fixed): https://bugzilla.mindrot.org/show_bug.cgi?id=3872
+  # Can be removed if the patch is included in the next release
+  patch do
+    url "https://anongit.mindrot.org/openssh.git/patch/?id=beae06f56e0d0a66ca535896149d5fb0b2e8a1b4"
+    sha256 "3dc44a12e6452df72331756c1eb3fdb78f1bd40634713728258cc1882fc86200"
+  end
 
-      # FIXME: `ssh-keygen` errors out when this is built with optimisation.
-      # Reported upstream at https://bugzilla.mindrot.org/show_bug.cgi?id=3584
-      # Also can segfault at runtime: https://github.com/Homebrew/homebrew-core/issues/135200
-      if Hardware::CPU.intel? && DevelopmentTools.clang_build_version == 1403
-        inreplace "configure", "-fzero-call-used-regs=all", "-fzero-call-used-regs=used"
-      end
-    end
+  def install
+    ENV.append "CPPFLAGS", "-D__APPLE_SANDBOX_NAMED_EXTERNAL__" if OS.mac?
 
     args = %W[
       --sysconfdir=#{etc}/ssh

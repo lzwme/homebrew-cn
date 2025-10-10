@@ -1,8 +1,8 @@
 class SpirvTools < Formula
   desc "API and commands for processing SPIR-V modules"
   homepage "https://github.com/KhronosGroup/SPIRV-Tools"
-  url "https://ghfast.top/https://github.com/KhronosGroup/SPIRV-Tools/archive/refs/tags/vulkan-sdk-1.4.328.0.tar.gz"
-  sha256 "bdd1692ad5cba1bdf8ace0850bcacc32abc2abfaef373328689fa2809ab7027f"
+  url "https://ghfast.top/https://github.com/KhronosGroup/SPIRV-Tools/archive/refs/tags/vulkan-sdk-1.4.328.1.tar.gz"
+  sha256 "d00dc47df7163c2bacd70f090441e8fad96234f0e3b96c54ee9091a49e627adb"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/KhronosGroup/SPIRV-Tools.git", branch: "main"
@@ -13,15 +13,14 @@ class SpirvTools < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "0be295a024f1a74c59d0426daa776a4c14532064ff6ae8d17b62011769e0b562"
-    sha256 cellar: :any,                 arm64_sequoia: "2cfdb859265a69ced5fe61e77b15f12ac349f112659935579f510bd6d65e671e"
-    sha256 cellar: :any,                 arm64_sonoma:  "3808d96132563f8a196498693278c57f01221572481c2f0988d9ae31820208ae"
-    sha256 cellar: :any,                 tahoe:         "4c7e8c515e9c4c6f5fb088c5f9c0582deb1389121dbe49ad530be9d8bd60aa6a"
-    sha256 cellar: :any,                 sequoia:       "212a88b70a05b926dea7e74ddb4dbc97f39573e4790149542e95fc76d9457664"
-    sha256 cellar: :any,                 sonoma:        "5c71bb98721d624ce5d5655c3c8ee892d29b8faa72890d19cf973967950c7107"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec490ed828528454fedad4ca6bdd7d2fd4e7000c6976d468ca0810047764c443"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f07f1c2cd7de19f958f0613b1b52b90105de450b17ff44820f76ff7e15eb2555"
+    sha256 cellar: :any,                 arm64_tahoe:   "1543302ea068c0a2c81aa893fa96e827c06b2ed436ece69b92282e35ea7907d0"
+    sha256 cellar: :any,                 arm64_sequoia: "6df12b8a8057058470fdf155133b3a021ab096d2d0def41d547fe11199e7eca3"
+    sha256 cellar: :any,                 arm64_sonoma:  "2a6d58b98055e63541c81c4c9f830cbabb6fa09ff0d248fe3ce0580ff133540a"
+    sha256 cellar: :any,                 tahoe:         "a56b0aeaad4870083f19dc17376f165b35c6f5111433b12e67cd1b20c785b41f"
+    sha256 cellar: :any,                 sequoia:       "c443448c8edf65b6a6dcb88f03be28865a310c2845bbf7d59a1d4a1f3f1ae4a9"
+    sha256 cellar: :any,                 sonoma:        "dcfafdee5d630e07555c642f28bf7d4ae2ad70692a9615eda4128baeb315567c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e9bef63025272a7ee09eb6fc9af9a58ad3fb622ac01d47366fe734c366a8b44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "721d3f4c30d2ac9b6c27d369f41c066c5434feae2ad7bc42d49c348d17cd4804"
   end
 
   depends_on "cmake" => :build

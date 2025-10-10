@@ -1,22 +1,18 @@
 class Fontforge < Formula
   desc "Command-line outline and bitmap font editor/converter"
   homepage "https://fontforge.github.io"
-  url "https://ghfast.top/https://github.com/fontforge/fontforge/releases/download/20230101/fontforge-20230101.tar.xz"
-  sha256 "ca82ec4c060c4dda70ace5478a41b5e7b95eb035fe1c4cf85c48f996d35c60f8"
+  url "https://ghfast.top/https://github.com/fontforge/fontforge/releases/download/20251009/fontforge-20251009.tar.xz"
+  sha256 "69046500185a5581b58139dfad30c0b3d8128f00ebbfddc31f2fcf877e329e52"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/fontforge/fontforge.git", branch: "master"
 
   bottle do
-    rebuild 4
-    sha256 arm64_tahoe:   "dea450888b5033710532590ee4ca4624ae61c1861f7ccf6727f72dae6caf2ac9"
-    sha256 arm64_sequoia: "f3efe932a2d7e72caf599601b82ee40144cb2ea3a1bef0afd5698b20ab11ff94"
-    sha256 arm64_sonoma:  "0d843c5837f6634f8f3c2c2c2862f427f651d24670383e1a470a3e933e6065b4"
-    sha256 arm64_ventura: "a6c3b3307443666523cc29b8bec912c6b1f933fe96580f061478b257ad0a992f"
-    sha256 sonoma:        "174995c9c06977e05958d535f7065c443ecbd9b1a64f97c232f83296852866b9"
-    sha256 ventura:       "ca33c447dc43b3f8d73bd42eb933b1fe1882794898cf387e4f22714d20ee6420"
-    sha256 arm64_linux:   "4963da0c5611725c86b213cffd04f992fb778fa376ed5e0f58cd9144f7a55310"
-    sha256 x86_64_linux:  "91cc737d5d5ff50542c7737cfe8f8f693d64a103b07839d7047a21cb9149e1ee"
+    sha256 arm64_tahoe:   "8243fc1912064ee3473f4b47b475a42ca75d41b7f12dcb7e48fb6d08972b73fb"
+    sha256 arm64_sequoia: "1d1e28bec899066f42338f70cad7ccc45f943317f9b3745d352172d2bc3b4cf9"
+    sha256 arm64_sonoma:  "f10e8516cf513c8cb07e445caaa6eefbb1ee8d878967f60b4217b79ff74469f2"
+    sha256 sonoma:        "6f9e5800319bd7a8b5f9e09948f48ac60f39231ea0b3868790dba12afd59ec38"
+    sha256 arm64_linux:   "6d832984d50f3dac855a70b11bf4d355863c133ad9c5c896f549345a55b37beb"
+    sha256 x86_64_linux:  "39e1be688fa4fec3989fb159625f218c55a154b5c759ecd2943ae94b4fa0ebb3"
   end
 
   depends_on "cmake" => :build
@@ -46,13 +42,6 @@ class Fontforge < Formula
   on_macos do
     depends_on "brotli"
     depends_on "gettext"
-  end
-
-  # build patch for po translation files
-  # upstream bug report, https://github.com/fontforge/fontforge/issues/5251
-  patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/9403988/fontforge/20230101.patch"
-    sha256 "e784c4c0fcf28e5e6c5b099d7540f53436d1be2969898ebacd25654d315c0072"
   end
 
   def python3

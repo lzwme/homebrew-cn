@@ -1,10 +1,9 @@
 class PythonAT39 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.9.23/Python-3.9.23.tar.xz"
-  sha256 "61a42919e13d539f7673cf11d1c404380e28e540510860b9d242196e165709c9"
+  url "https://www.python.org/ftp/python/3.9.24/Python-3.9.24.tar.xz"
+  sha256 "668391afabd5083faafa4543753d190f82f33ce6ba22d6e9ac728b43644b278a"
   license "Python-2.0"
-  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,12 +11,12 @@ class PythonAT39 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4591e456035c349fdfea9354b78abf0f00051782156e3a4e3fa95108f29e4a4e"
-    sha256 arm64_sequoia: "ef795815f9f8c121c5edebfec01f3e1b8b91462981e33faddeeb80c8d8f8950a"
-    sha256 arm64_sonoma:  "64d4d9f42a39d9d482a457ce6a9ae470044fd5d5f9b884b9814b7636f46dfd93"
-    sha256 sonoma:        "90be58cf07ac72ebef288e1a9dd0c4f034c39efb39beeb0b7bb4241a57d766bf"
-    sha256 arm64_linux:   "c6968c42a4faea43b7a547cf1fd9a97dadafdd2005517362000d68ec4aadea40"
-    sha256 x86_64_linux:  "e882c7dc386a624ef22859968ee4a796210a7ae4074f94e978ccc9e66b68d5d2"
+    sha256 arm64_tahoe:   "c1740ccd90c69b9c8c767055f18c149c33430231d1b239b76cc295d13522919f"
+    sha256 arm64_sequoia: "f31c21e07521fbb34130f893b83885f2f60229fab8c584d52309f5fc5ab18b84"
+    sha256 arm64_sonoma:  "2fea1247267c392bf9a9a9d7ad7836209852383342b4fb5aefcdbddc2674d3c3"
+    sha256 sonoma:        "536846c88914b36d35009dffa5e8cb28f39d56a5eddc41051fedb406e4a2cb07"
+    sha256 arm64_linux:   "38c4acd925d5fbe917fa10386aadf6f3b6228e34331fa5d388d0610d214c63ea"
+    sha256 x86_64_linux:  "88fbeab5c8a0c9401d47b7150eca96f401f99b92f014756951ca22bd3602c21e"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
