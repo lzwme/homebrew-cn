@@ -4,8 +4,8 @@ class Coin3d < Formula
   license "BSD-3-Clause"
 
   stable do
-    url "https://ghfast.top/https://github.com/coin3d/coin/releases/download/v4.0.5/coin-4.0.5-src.tar.gz"
-    sha256 "0abc591cb49cbb8d97eb70251340f61cc1bd75a3ac1fa7c23907af6671c1079a"
+    url "https://ghfast.top/https://github.com/coin3d/coin/releases/download/v4.0.6/coin-4.0.6-src.tar.gz"
+    sha256 "e04a600809593feb2acbec4282803d1673926ddfa1d9fcd402f35ec26fc52e7e"
 
     resource "soqt" do
       url "https://ghfast.top/https://github.com/coin3d/soqt/releases/download/v1.6.4/soqt-1.6.4-src.tar.gz"
@@ -19,12 +19,12 @@ class Coin3d < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "00913f751a45abbac7e226ec57996dca60ef8c5ffaf174961210f2e3486c9f46"
-    sha256 cellar: :any,                 arm64_sequoia: "76d0ae79918784f18c79e3148c919516ade76ee681ae05145eca1c76b4c6ea95"
-    sha256 cellar: :any,                 arm64_sonoma:  "d413285777da406be2ca5a63640c0a5fe1c9de4106cb070319e76099d2e5d3dd"
-    sha256 cellar: :any,                 sonoma:        "f87eaf2b4565796ac4167a98383f041367242b8159e5101f8a930ed69296e658"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f75296237d2e535a06e7851d3030d2d6715692b4dda2d5dbabfc84fdf338c6a5"
+    sha256 cellar: :any,                 arm64_tahoe:   "40a953c5da778240ee206304efd942c4c6417e30520700ac37f54b17840d9559"
+    sha256 cellar: :any,                 arm64_sequoia: "f97cbf252a50387b2589db4f56bc474c45235095a017bcb1afd033e09c1f7c23"
+    sha256 cellar: :any,                 arm64_sonoma:  "a516f84b868ed0911b2d7ca6d3bbc29252501955a146147c8cad25f2914aced7"
+    sha256 cellar: :any,                 sonoma:        "758e7e7da2579c5462b5beff4370099d7d640d513c4ba2688b3a9d539b29270d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8857329b9b978a804adfa800124678ae573b981cd815f31a8017cf3d1c5fa6ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0f975512d3180a87c61ed8c5fb7b4a49c95065239a5379779261e98dd749f5d"
   end
 
   head do

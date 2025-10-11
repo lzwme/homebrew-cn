@@ -18,6 +18,7 @@ class Anubis < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "32fa71019c675cf01dffa9ff5fc619016fa3b9b8b2c1cabc737cf6fafbef7bbb"
     sha256 cellar: :any_skip_relocation, sonoma:        "ed3379344e5ec7af017eb02062b21c3906f4c280fd1e6982ce7f632bcf08b7a3"
     sha256 cellar: :any_skip_relocation, ventura:       "6a5e15acb5c16f7953658d62adc9ed630c544d7d1fe45f89e6d02c28cdc8d4de"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b09dae0f088230fce50061b765e14670918deac828d5ecb76e9e09644e56b0f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef17f1e143a3f82ca4a9291e51b6490a1dc0564ad5972f9284261fc48c2be72d"
   end
 

@@ -11,6 +11,7 @@ class Gotestsum < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "14e0a77f3a209ac4a89f01392dfe1287abd44e0feff5a074836a245c93175ce4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14e0a77f3a209ac4a89f01392dfe1287abd44e0feff5a074836a245c93175ce4"
     sha256 cellar: :any_skip_relocation, sonoma:        "56fbdac1bdbbd18d6bd1143d82682005c595e1853145b7bd719c3eb3ebbaf43a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a024bf29449f29cd313c0ef7beb3278d9fb1348c6f863cd08cd83c397cabe78"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "34e682e9cd93f3236142e4a9aafd45acb16b83fd069afeebeabf23b32e5a4243"
   end
 

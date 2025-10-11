@@ -11,6 +11,7 @@ class ManifestTool < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbf3bfa0de08498c8103ee559d7010ecdeb1f45c711b45da4f251c3ba87bf1d1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35fa8b8f4a1d8913864070048735074e585d7d7241f1a7fdf1aa8ffa77d8e1b2"
     sha256 cellar: :any_skip_relocation, sonoma:        "96cfe0869400dc028832b0d3e8b9cc90b8061ae4a852614dbd43f3d9a4ee354e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d836460da1d037f59c0853b1e2689c693ea159427ba29ee099b5738e23c7c0d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac682859f43c8871a1a178907a2c969dec9d7270add5bbed005fc46754c26b96"
   end
 

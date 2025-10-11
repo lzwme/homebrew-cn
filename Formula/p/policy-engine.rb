@@ -13,6 +13,7 @@ class PolicyEngine < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "140f936020aef4bec9555f01b75d4efc2bbe7e4cf24aceda756ec9ba466328a3"
     sha256 cellar: :any_skip_relocation, sonoma:        "828e03e6ac7d701c9a294bb80c58842888b6dc281e883bed99973c0c8d0d1a7f"
     sha256 cellar: :any_skip_relocation, ventura:       "828e03e6ac7d701c9a294bb80c58842888b6dc281e883bed99973c0c8d0d1a7f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c57f3894e5318ef5241a4e7785ffffb40c3add087859c20485c686b02f5b760"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d6c08b38966d9334e76d04d8a023781430c3fbac95b06ee55abae297eb3f081"
   end
 

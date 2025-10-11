@@ -16,6 +16,7 @@ class TrzszSsh < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "f69d82fa4beb36e67df26a299536e170b980e8671e980c14cf532448055f4114"
     sha256 cellar: :any_skip_relocation, ventura:        "f69d82fa4beb36e67df26a299536e170b980e8671e980c14cf532448055f4114"
     sha256 cellar: :any_skip_relocation, monterey:       "f69d82fa4beb36e67df26a299536e170b980e8671e980c14cf532448055f4114"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "cdbff2423566dc76c9e8285e638c395296d6e3594b25fec5f97271ac95dbd344"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "834702bbebecfa8ceb019bf703ac0d3c041e06f7ef78e10c0e3271fa53c07c8a"
   end
 

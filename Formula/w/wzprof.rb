@@ -19,6 +19,7 @@ class Wzprof < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "38d8f01a22a239c240d6e00db065fc8036f5ae039501925ec0df0a0366983bba"
     sha256 cellar: :any_skip_relocation, monterey:       "38d8f01a22a239c240d6e00db065fc8036f5ae039501925ec0df0a0366983bba"
     sha256 cellar: :any_skip_relocation, big_sur:        "38d8f01a22a239c240d6e00db065fc8036f5ae039501925ec0df0a0366983bba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1387c049a3862b7cf8daee964ed611fb4a6c4a77756b91d1e9d538447c6f70ec"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a163de238c1aa3233c725104f4a523cc26d6fd30c5c132d4e408415bdce3ac1d"
   end
 

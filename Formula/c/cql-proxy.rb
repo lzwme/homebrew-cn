@@ -13,6 +13,7 @@ class CqlProxy < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9bb3a1b8bf92e37379d4765635babee8424e20556d77448c7ddf8527879ca08e"
     sha256 cellar: :any_skip_relocation, sonoma:        "3dbc0fb6ba197d0580cad3327f8d6f10a4a3425fc9aa93a96043e45932a969a7"
     sha256 cellar: :any_skip_relocation, ventura:       "3dbc0fb6ba197d0580cad3327f8d6f10a4a3425fc9aa93a96043e45932a969a7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c66d460a5288fdc86c5316e917e2041da66e9a240cd7496706dfff88ac9d4f57"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5329be03e21ee3e5a58454aca78a6a08034b955efce86e2e2d14caff0e101b3"
   end
 

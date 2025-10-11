@@ -14,11 +14,12 @@ class Octave < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "2b7b3fd553c3ae4d242179c5fae9f57a4d683743db65afa4a4a2d956637a32b6"
-    sha256 arm64_sequoia: "03a1ecfb5e0ea9bf5c414d9ceb65941f086742d5568f1ea25b60ea182571e143"
-    sha256 arm64_sonoma:  "07a113786da7682645e09d0edbe1ff4b121e764506b8947ab2bf3b344e6ec5b9"
-    sha256 sonoma:        "abf9adb21cc5533bb5a633add5c8728e29172816e7da8164148b6dc418dda7b1"
-    sha256 x86_64_linux:  "01e12aea5d18aaa450ea32767745dd3af288f19a57d21182366f95d75e745589"
+    rebuild 1
+    sha256 arm64_tahoe:   "b83eb0676410572173c4befc49beba4c53e92ff6545cfb4f657f883afe01878c"
+    sha256 arm64_sequoia: "ed8eda61e1ee0492801d0a225cbf40ade65ac3b5c68ab8a2389e2c2eb0cf0579"
+    sha256 arm64_sonoma:  "a89a037602534ba7adc2fb70b77e349f060937b7c4d712c3eee36efc3183933a"
+    sha256 sonoma:        "35659321f8828b5d1230cfef3c2749d410f9ddbbbaab930bdc1c8828c5764af9"
+    sha256 x86_64_linux:  "23344131734979e1bafde92e0442a0b4ad74dd0b126c9e8644acd06aea65ad3d"
   end
 
   head do
@@ -57,7 +58,9 @@ class Octave < Formula
   depends_on "qhull"
   depends_on "qrupdate"
   depends_on "qscintilla2"
-  depends_on "qt"
+  depends_on "qt5compat"
+  depends_on "qtbase"
+  depends_on "qttools"
   depends_on "rapidjson"
   depends_on "readline"
   depends_on "suite-sparse"
@@ -80,6 +83,9 @@ class Octave < Formula
   end
 
   def install
+    # Workaround until release with https://hg.octave.org/octave/rev/8cf9d5e68c96
+    inreplace "configure", " --cflags-only-I $QT_", " --cflags $QT_" if build.stable?
+
     system "./bootstrap" if build.head?
     args = [
       "--disable-silent-rules",

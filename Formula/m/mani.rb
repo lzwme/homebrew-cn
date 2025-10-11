@@ -13,6 +13,7 @@ class Mani < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2df96b3f4f0206dbf5571b270269341d3d0c62e3c29826b682107501551a007f"
     sha256 cellar: :any_skip_relocation, sonoma:        "26dd3a03b1e5519eaa222b13a63617d03e89dbc771cd8c2ae50906e5bac2b38d"
     sha256 cellar: :any_skip_relocation, ventura:       "26dd3a03b1e5519eaa222b13a63617d03e89dbc771cd8c2ae50906e5bac2b38d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "08261f9b498d753946abed2dc552ee990d9a72cb30834ee53ee473e14ba94e8c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "64dfe83672401b0bf18860dd973a212f6c352517ca47f2955eae2a32ffceb636"
   end
 

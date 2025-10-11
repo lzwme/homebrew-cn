@@ -19,6 +19,7 @@ class Trino < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9caf9aa709b5d188d268df9aafc60487021b6e8b30c27b4f93a5172a47df134d"
     sha256 cellar: :any_skip_relocation, sonoma:        "1f78192a519c995d1c42f31229b277281a5072e347bef52164e5032eadb1726f"
     sha256 cellar: :any_skip_relocation, ventura:       "1f78192a519c995d1c42f31229b277281a5072e347bef52164e5032eadb1726f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fac2e33c3fd34fb992cb5007183e77ee93c723fc8d3d1f057095f67e8bb10505"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "98801d4ca23627319d3a02e7328760df5e9d1ea688c80c259f3fe654c5918360"
   end
 

@@ -19,6 +19,7 @@ class Seaweedfs < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "72144b35522e03afde6222858f949f04ac90d442849169f4405b333366dbdb13"
     sha256 cellar: :any_skip_relocation, sonoma:        "274df166b330a924de264d47265aae9341c3bec344c716dd98574755461cd821"
     sha256 cellar: :any_skip_relocation, ventura:       "502b5a966b4be1f84128d478981f06f0561def9d2eeb8b8ef3f17f1fdf5084b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "68f393f953d608c05d0d2022cc6950f75fdcb1862530d881a308b377e86483cf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1fa64fa862a40430cf8d82da238ed996b4982271f3028bb690206fee90ca1fa"
   end
 

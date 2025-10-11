@@ -13,6 +13,7 @@ class Sqlboiler < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "24bf4847e512fc0c4987ffb7aa9731270eb83642f874cceac6e3163be7ac7da5"
     sha256 cellar: :any_skip_relocation, sonoma:        "cd3b13555a393652a4f08d29c23239f57677db9f1ee7d451107ee660ce4c1aa7"
     sha256 cellar: :any_skip_relocation, ventura:       "cd3b13555a393652a4f08d29c23239f57677db9f1ee7d451107ee660ce4c1aa7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "15045ea97a8c55564a5ec41422248e32ebfcd7b7144b1201106135f408dc1890"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0d778d654efc38ee84e8f54d3a75a2286993a13c0ea8a5b28d160defa6367cb"
   end
 

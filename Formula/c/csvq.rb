@@ -22,6 +22,7 @@ class Csvq < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "3062a442b7fbdfe309ca430277257a6f9a86a6b98e4f3558f6342d56278e2a37"
     sha256 cellar: :any_skip_relocation, monterey:       "39141ce5a0342df70a2546b77a1800f9e4e4e71763d4464a53095009b07dc96d"
     sha256 cellar: :any_skip_relocation, big_sur:        "f2ab039ef6309cf727c9b908609c64d555539649c051baa792ccdfef3cc9d5b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f98ed8f73aef226ce5e326da496a85afbe069f613ff64273e2e1417630610d56"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d32956ca38f3f9d768739765fc3f7f3449e0c8f67d45dc2d55981e93fcc8edeb"
   end
 

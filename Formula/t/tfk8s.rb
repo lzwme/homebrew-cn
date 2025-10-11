@@ -19,6 +19,7 @@ class Tfk8s < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "fe55588c429a2f74bdcbf062b252b69d15462d3af30ad8694a6e903c07ce105d"
     sha256 cellar: :any_skip_relocation, monterey:       "eb8f3df61a59e34291ea70c2fd93620b2bace987e18a50e15ca6b36e540d68af"
     sha256 cellar: :any_skip_relocation, big_sur:        "3671bf1dfd597f92b38958f4a1836336de5110962d0222b5c829097121a41ec2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5c5aeeca332a3116ad97a6eec394df57815c497b3c1a2f312a4c95c872ce12e9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8abd3395c96d3cd264129a5811d98b07e010187b3c7bad9239a77d738c390e7c"
   end
 

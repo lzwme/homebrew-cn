@@ -13,6 +13,7 @@ class Kwok < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0c6429022bffc022ed2b64e3dd81dd5207e8ee0d42350e8e0d530d7ec298bbb1"
     sha256 cellar: :any_skip_relocation, sonoma:        "481cdb115719ed6de328dcd241de02069e57dda4a964bade6ae11ea97133f1ee"
     sha256 cellar: :any_skip_relocation, ventura:       "ddaf6d75cd5c04d5f872d8152f3c550388096185d62ac97f1230e0f3cad046c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a7a6767343dab0abab8c18b6d27792013ab03cd0adfe8952420b250890002d0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d74d3089b75892e4629a723c08daed077484c0ffa7c2b5726f8c95b77472780b"
   end
 

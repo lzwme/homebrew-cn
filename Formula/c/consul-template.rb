@@ -11,6 +11,7 @@ class ConsulTemplate < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2fdd58c6f09812fabfc679fa175197e2e7c65bc25dd269607003d2e0f335259"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2fdd58c6f09812fabfc679fa175197e2e7c65bc25dd269607003d2e0f335259"
     sha256 cellar: :any_skip_relocation, sonoma:        "d759503f5c78aed481472b733b86c859aa95c84cf2d154a3c6bb64fcb53adf51"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "27bac52e248306d8a7336129e6b291a44307ddf8c7429258622dfac842e3ec19"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbb6abd303067ca184a7543c872504943abc642003654f63f6a8a73a640b5030"
   end
 

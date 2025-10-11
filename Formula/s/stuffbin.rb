@@ -17,6 +17,7 @@ class Stuffbin < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "d4702c84d4e3addd0e01a547054d07ec4e275198b01faee3f9abec4357ebc036"
     sha256 cellar: :any_skip_relocation, ventura:        "28b0dddef2ae15146e894ca2259e7d74f14f44c3dcb91d54521673abed67a7c7"
     sha256 cellar: :any_skip_relocation, monterey:       "6b3252e69344f21f6d9876c1ed5d675c7ad7416b1d2834bcdb6a3eb73beb8144"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "642816fb11b7166f67a83ab88504281efac509bb72eeb7167244b6ee8420ec55"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "65cd393efa034045fa6f6fb9c3a3c376823f6349b70a187055f398d82323351d"
   end
 

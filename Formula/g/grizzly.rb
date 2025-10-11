@@ -13,6 +13,7 @@ class Grizzly < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9c00e5b79f192d86d855287c9abb183eede829f47d6892bfef011d0977fb45cc"
     sha256 cellar: :any_skip_relocation, sonoma:        "679f770b4eff802b8e9b6eb199fb9ae076f14093ea58342fcc1752d43985415f"
     sha256 cellar: :any_skip_relocation, ventura:       "679f770b4eff802b8e9b6eb199fb9ae076f14093ea58342fcc1752d43985415f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d86a0471bd365daf4e24ae7e8a4890dceb816eb939ae28819369a56d878dacf0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1cd0d526f55b71f84e88c4bda49551c661b56f7dcace86fbbbb637a27fd4274"
   end
 

@@ -13,6 +13,7 @@ class DerAscii < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c6b91afa38381784b23ba412b76988d4ee4c88be080ff8cc83e34925a9a5b8f3"
     sha256 cellar: :any_skip_relocation, sonoma:        "be6480d41a86adbc097cb14c49fae031990959b144ea5c23e81254e9394b32a2"
     sha256 cellar: :any_skip_relocation, ventura:       "be6480d41a86adbc097cb14c49fae031990959b144ea5c23e81254e9394b32a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9ee1882e2ea36ab23422b13622f255d01bd8839ef08de6866beffa90617fb11"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bca066b2304679127bbf35d34a9ecbfb5744d4fa149a373bb3651b47d0d88b6"
   end
 

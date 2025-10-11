@@ -11,6 +11,7 @@ class Gollama < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e633a3064717231a73953748639361c901d6c4f1a42d55190e88def49a47ab58"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c63041b6d9a2d4c1756269d151933d4a94f547d681256f3eac5ff90e54c8e9c"
     sha256 cellar: :any_skip_relocation, sonoma:        "30f6cb365b81aa718cdba94c5d76dd24978b4bef92fe5d0463c5e92f649d0597"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c993c4368a1a7ade20f9659fdbbf951043e98656f0f012d0b78c544175f7266"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "36013c4b4cc45d95c45d5f4b97e8a2177d29e21ce6635802e9d5afb6d889a5b7"
   end
 

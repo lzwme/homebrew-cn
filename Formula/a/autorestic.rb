@@ -15,6 +15,7 @@ class Autorestic < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "fe4791b279ef81457641763d07a23b02df7aeb2eafa8cd2ceaf72ba1ed9227c9"
     sha256 cellar: :any_skip_relocation, ventura:        "fe4791b279ef81457641763d07a23b02df7aeb2eafa8cd2ceaf72ba1ed9227c9"
     sha256 cellar: :any_skip_relocation, monterey:       "fe4791b279ef81457641763d07a23b02df7aeb2eafa8cd2ceaf72ba1ed9227c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "008bf52acf690ed12cb12f12d2827043f9748ce9dcbf99961acbfbd89a9eac0d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdcc8558f432a2b40971c51191e07ab9b8f21c60e3b8fd959f48a5139a483faa"
   end
 

@@ -20,6 +20,7 @@ class Hotbuild < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "c2c61c0aa4d1a3f4beda6764e28af6de0ff60e0fc1df445e52d941daa921a82b"
     sha256 cellar: :any_skip_relocation, big_sur:        "9c327c9eddb60305d8b6a5ba1a164ae1ae416f2f448048804f12a42dd07bc8dc"
     sha256 cellar: :any_skip_relocation, catalina:       "32cf72dbf642a44b7a6ad2182fb42946583004a9e87b8a3042f43f918d559c1a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "366131bed15afecd0f2cb86718a27699414b81ed6a8ac16303ffde07de5a70ee"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb2fa25a273f069d799eb0d30e31b73ca3a8e9fd319c76a6f0171a661fe68ad0"
   end
 

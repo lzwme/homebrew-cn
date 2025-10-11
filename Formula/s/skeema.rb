@@ -13,6 +13,7 @@ class Skeema < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1f69347b2966e25b60471a4d1ea58ed252ecbe6a3e786bf933defe59fe0bd6bf"
     sha256 cellar: :any_skip_relocation, sonoma:        "8cd1d16410a84b309e2e9981854d1cdbce275ee6360821d83aeaec751d5c618d"
     sha256 cellar: :any_skip_relocation, ventura:       "8cd1d16410a84b309e2e9981854d1cdbce275ee6360821d83aeaec751d5c618d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "528e608c93454694ade2ac95f9c0a89b1645ebceeeb3904a088c5c16e21a50b9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "50ac816cf45e24d02865b9d34cc0ec3ed700d8a5ae99321a8fa7494833901508"
   end
 

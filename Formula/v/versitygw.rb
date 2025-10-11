@@ -11,6 +11,7 @@ class Versitygw < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f3af83211ed29a6e80e527f4ff862c69ceb40b34850af1d00289949550f9189"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f98492e184a6715bbae1cff23908bfb942d2effe2539e63ee320f0df31f94040"
     sha256 cellar: :any_skip_relocation, sonoma:        "8bdc6dbed3e465e7ac7cca06fce1da77fa9b42f7436a18fe76b06cf6475af0b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1fde8a090ef2f04c36cefc3e1c71ca9bb0f71fa8414c2270826f0663652511c6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a0c2ffe3642acd703a6dafc99515b90afae8b8c6243ef0dd0bc527e81f7cab8"
   end
 

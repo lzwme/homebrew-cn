@@ -21,6 +21,7 @@ class Aurora < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "fc1e371ec7afa848b85dd45424209ed1d9da85985e9cf5cc21a6ae46071847bf"
     sha256 cellar: :any_skip_relocation, big_sur:        "714b7116c80107b6ffb0f5b8abba41ae5aa88708fe688e61144ca3a636b7fc4f"
     sha256 cellar: :any_skip_relocation, catalina:       "f3b45006b5b5c6f15166d11d1a740fb14f3b22c1d64b3b64397ed2958e9c882d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "8077df23766d9926fc9b8948ce0ea1861465dad40c42a3f7576a0599ce5f08b7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c045ae045444b0e5f6ad993b2d30697908b1925132ea47fe2d25b46e729a760c"
   end
 

@@ -13,6 +13,7 @@ class Md2pdf < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a3f31a7fd7fc59f484e62023b815331c624d0caac12e8573e3dce5a72a53d9f7"
     sha256 cellar: :any_skip_relocation, sonoma:        "1067ffc7b46773d8b98334e7ce11bc5e654f06ec4d891e545856191d5d0ca597"
     sha256 cellar: :any_skip_relocation, ventura:       "1067ffc7b46773d8b98334e7ce11bc5e654f06ec4d891e545856191d5d0ca597"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cc40647488a0594fb91fb6f0db586a5134a8c42f178ce4e22b0829f0aa68dd7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "210dde51799b9cd2fa6037e4f1be39042346be5ea96a1a4cceef8bfb8df00180"
   end
 

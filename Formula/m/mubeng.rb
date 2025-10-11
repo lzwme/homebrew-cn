@@ -13,6 +13,7 @@ class Mubeng < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d861eb83c6ac431a6dd5f3b4ac21886702859ecc595c273c0fcf3648fd6c9601"
     sha256 cellar: :any_skip_relocation, sonoma:        "f4c4a171a1183c4a5f2786dfd43c60e1f7d1974b1ac8c4ec7e49b71cf99da9c4"
     sha256 cellar: :any_skip_relocation, ventura:       "f4c4a171a1183c4a5f2786dfd43c60e1f7d1974b1ac8c4ec7e49b71cf99da9c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce56204c6fe76e17b551d782c71ba39ca92cdc003f841fbcf2d84c8298cf45fe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a67076731b843403953aa84c40487ff346fe6699833f46dfa07f6f95a6e515d"
   end
 

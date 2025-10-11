@@ -13,6 +13,7 @@ class Tgpt < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "6ca27e2b876508123185c8fb67b65af1aa156c0c3dadcbee75068c9e466f6528"
     sha256 cellar: :any_skip_relocation, sonoma:        "61e4f46de86ffc8116273f270809e7db38fe1567c496f85519f1895d757568e3"
     sha256 cellar: :any_skip_relocation, ventura:       "652445f4990a5d03d9c8a20339a28502ba45b2b02081058f6fa425ba491b62d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9fb13ae92813f7636af5f1e86da4443ad5dfac176f2380ad637a3e42065555c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d5f05da6f4436deb70610058e858992622bfe504aa815f1b0969529bb6a3fab"
   end
 

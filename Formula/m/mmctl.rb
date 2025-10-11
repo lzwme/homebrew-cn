@@ -16,6 +16,7 @@ class Mmctl < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab865f036afd3924924c274d7192eb66584ab3584a58934b4fe3a2f9de75da44"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab865f036afd3924924c274d7192eb66584ab3584a58934b4fe3a2f9de75da44"
     sha256 cellar: :any_skip_relocation, sonoma:        "0bdc11474696c25280de6975f2626e108dcd7292f23d428461f7b51ba06a0f3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "243afd23875d6070f76236702d258542731030814718b905729469f30540bb73"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4732c675431bae793e23c1a0549ef003440a49f931017bb28e87066d3882c70c"
   end
 

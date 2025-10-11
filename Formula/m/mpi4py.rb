@@ -1,19 +1,17 @@
 class Mpi4py < Formula
   desc "Python bindings for MPI"
   homepage "https://mpi4py.github.io/"
-  url "https://ghfast.top/https://github.com/mpi4py/mpi4py/releases/download/4.1.0/mpi4py-4.1.0.tar.gz"
-  sha256 "817492796bce771ccd809a6051cf68d48689815493b567a696ce7679260449cd"
+  url "https://ghfast.top/https://github.com/mpi4py/mpi4py/releases/download/4.1.1/mpi4py-4.1.1.tar.gz"
+  sha256 "eb2c8489bdbc47fdc6b26ca7576e927a11b070b6de196a443132766b3d0a2a22"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "54fc9c691a6deb1588201976eb6cae2d29f4fbe725818a9e4599b075cb4fca59"
-    sha256 cellar: :any, arm64_sequoia: "61a98a4cb90a3a16484e15c427afb8f98401ce4d6a5b4f40fdc419cb219799e7"
-    sha256 cellar: :any, arm64_sonoma:  "92a9daced60284a5d9cd9969719d3a29c2014d794b1cc2c9f40ed5cdf1cc2006"
-    sha256 cellar: :any, arm64_ventura: "761063a583be9a8f05e2fa7dc63c8ebac069785dbd5e968ebd161ed449132b18"
-    sha256 cellar: :any, sonoma:        "c8d291f48a76502621409a808db8a74492a4e3ebf66cd39402fabd550da912cb"
-    sha256 cellar: :any, ventura:       "2d8eacea786cc0bc99690dfece29172c435c92fd4dbc621d6a296881bd9a9610"
-    sha256               arm64_linux:   "3c4bbc35ab042230c0371df833fc924512ceadb2b315bf192b4b47c5dd78fc76"
-    sha256               x86_64_linux:  "b7a29ffe65f402fb6040a6a000fb43b8ead0826b8d0426f62a8f48779cefd8af"
+    sha256 cellar: :any, arm64_tahoe:   "b9eeb8c24989480fd139243a3bcb36b97bd4b60f214606ed2df83fad31980418"
+    sha256 cellar: :any, arm64_sequoia: "500955463e604c6d475fa55579140e1b8ac12a4cc620abe41b701df31f90bcc9"
+    sha256 cellar: :any, arm64_sonoma:  "652968b66f7a1c24729682d6c2a7e5108a2180a58609644daba4bcd347075512"
+    sha256 cellar: :any, sonoma:        "7ec983abf82540632443040173ec98709464999b9d183057705b85eb8727fe99"
+    sha256               arm64_linux:   "c9ee1abec879cf6b68b6d8265e8f1ab1b0bf41991b8e1cf4488950a0fc777a05"
+    sha256               x86_64_linux:  "4e6462f70e3a29ce0d389ce921962f50543506f771bf17db8e3dc77010c5d83d"
   end
 
   depends_on "open-mpi"

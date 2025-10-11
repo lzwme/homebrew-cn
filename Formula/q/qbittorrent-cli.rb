@@ -13,6 +13,7 @@ class QbittorrentCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e89063ee1ee9e114a32ce09eff29422cfb5b50f8a3ed324139e60828ab10123b"
     sha256 cellar: :any_skip_relocation, sonoma:        "78d01479e9ca94aa71093187fba7d532eca1057bd9b020bdf0440cb502c1ad0e"
     sha256 cellar: :any_skip_relocation, ventura:       "78d01479e9ca94aa71093187fba7d532eca1057bd9b020bdf0440cb502c1ad0e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "48f2a2cb1e4cab81c481d4240fc488381faa6ea03e6b1665b4b87e677be4e88e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0949049acfbe454c435d710c62a96ca0651d32108511aefbc1d9f07e6daebc68"
   end
 

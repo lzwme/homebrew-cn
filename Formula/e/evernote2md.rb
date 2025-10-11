@@ -13,6 +13,7 @@ class Evernote2md < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "4695d5deaf82ebc326e8fd8352df78e1bd0c152ee2019a15fc05b222aea70615"
     sha256 cellar: :any_skip_relocation, sonoma:        "478cce9d01b44842dd82b25fd1660e3447f1de3e85d094c2f54012a197b41c0a"
     sha256 cellar: :any_skip_relocation, ventura:       "478cce9d01b44842dd82b25fd1660e3447f1de3e85d094c2f54012a197b41c0a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c61ead54808398828d01a20218b5e1e4822af7c05238aab1aa945ff6507ead10"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a94b33b8d7f6b9bd261156e5a3d417d77bbc0dcf53e18f857984f187a610d8f"
   end
 

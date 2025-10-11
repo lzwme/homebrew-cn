@@ -13,6 +13,7 @@ class Kuzco < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "92ea2e24739100902ccbdd447c7f779c80d2206e4cc7c9109fa15b625bbb8d4b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92ea2e24739100902ccbdd447c7f779c80d2206e4cc7c9109fa15b625bbb8d4b"
     sha256 cellar: :any_skip_relocation, sonoma:        "bc0364b9f11c3dfcfee702960118e738295d22829df8fc8c6867e08c2100a2cf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "698b1f3600b860386d1f622762850e6795820e210da88c90da39e0ecf80447a7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a14b76519f88eb799a979d2ee94e664640a435a06c5a9553d9a4e1d0a5a3236"
   end
 

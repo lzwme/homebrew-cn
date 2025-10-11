@@ -20,6 +20,7 @@ class AwsIamAuthenticator < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "30b00798e3db33efc9b42ba48699c0d8e02b55b36c2865c300494aba78d0c67f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "102c406bfeb5e1f6366fa178913c2b8e9b8320babade82a544c616567a9db82d"
     sha256 cellar: :any_skip_relocation, sonoma:        "f8d9735769b97d46db97322e28191afb4b3ba8e5b7154a7861f5e65a39bba5b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37b5b051cf5b6d2b4da91dbf3e023613abc9b497ac0a4f9a55099067fe880db3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e69bc2c2f729cc788cc0a3763c0d50e61996df086c501589c4c33bf88b13e8d7"
   end
 

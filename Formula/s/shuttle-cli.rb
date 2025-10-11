@@ -13,6 +13,7 @@ class ShuttleCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "6239f4fa616ca21a781595b6da437d6debcb1ad013242c33c3a54aba9764da64"
     sha256 cellar: :any_skip_relocation, sonoma:        "5aed20ea25a270dd87249277003e75da31e91988fb461b95596b727bb35df25c"
     sha256 cellar: :any_skip_relocation, ventura:       "5aed20ea25a270dd87249277003e75da31e91988fb461b95596b727bb35df25c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0b8712fd91bde4dc653e8e37e4cb0030b864707178c2ec10b358fea9b14a0ef"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "be0bb28ca0505b75b4c6606f528eac6a2b6fdbb1e40e1ed3fb788793114daaff"
   end
 

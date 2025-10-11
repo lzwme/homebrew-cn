@@ -13,6 +13,7 @@ class Xurls < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b5b5a4fca9fccb9162ae07c8d883401d049a1823faf90766628480cebba4aa1e"
     sha256 cellar: :any_skip_relocation, sonoma:        "984597d394db29ff5f590173452dfa7333a90aec571508c292f5d7d2cc322edf"
     sha256 cellar: :any_skip_relocation, ventura:       "984597d394db29ff5f590173452dfa7333a90aec571508c292f5d7d2cc322edf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f5192b2f2074758f78e7b48523611b30496e269da961abdeadf017c3afe57fc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff7c2bd2e39eda3aa3d5fcf116a62ce740d594e4408a3166c9f6c66157ace5db"
   end
 

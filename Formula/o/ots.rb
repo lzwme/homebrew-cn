@@ -13,6 +13,7 @@ class Ots < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c078703b06ed8d14bc91d73307528444a9fdbac4b30b36db115fd3936792da45"
     sha256 cellar: :any_skip_relocation, sonoma:        "89e6c1a577e7d626108516f4fbb8c8019d8c48fb7306fe87ba215bb5c9731f95"
     sha256 cellar: :any_skip_relocation, ventura:       "89e6c1a577e7d626108516f4fbb8c8019d8c48fb7306fe87ba215bb5c9731f95"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba9ee98fbea6eaaf808e2d1e281498f94d88662210f3e5ac5a6d98226afdb7b4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1885731e0d68230f49366c27402326fdba9697f5ee4ced9ae0affda0127b1a88"
   end
 

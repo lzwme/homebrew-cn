@@ -17,6 +17,7 @@ class Kconf < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "7c3acf1e1e4b50f0768139f778540093c96566a5524c910b1aeb990ad480180f"
     sha256 cellar: :any_skip_relocation, ventura:        "3458e12b3ab15a5590da0c8967da531406be70c60c1e701bf40e60a8e42dce70"
     sha256 cellar: :any_skip_relocation, monterey:       "9c32f638d936965c04287be80f5b25b0a6252b6d87e3a1dabc23db18b57589b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "58922db06cb8ba21213152bd06fa5527900769b8fd34b691e0292b5b12e632c0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "116d253ca110da35e26bd037ccbec2286fb5d01fb8dfb2d1ced726cb371bc7ec"
   end
 

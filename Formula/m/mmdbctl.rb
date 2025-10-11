@@ -13,6 +13,7 @@ class Mmdbctl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1d83aff861970e82984f2a19c2fe0b969a786f5f2133148bfb51c3d88646426a"
     sha256 cellar: :any_skip_relocation, sonoma:        "bce3a893ebc1b01a1dbe6bcc7f972b634f4e463d7244373ff4dfb778a1639614"
     sha256 cellar: :any_skip_relocation, ventura:       "bce3a893ebc1b01a1dbe6bcc7f972b634f4e463d7244373ff4dfb778a1639614"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd2829f9d0625c9515220cefee9a09f1046b91e70b61434a0f8cd85d8df18fb0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fec967e1d52cb9782b28147f9c503a135d4b2ed175895ea79c139bdb59583b41"
   end
 

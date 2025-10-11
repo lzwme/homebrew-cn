@@ -16,6 +16,7 @@ class Kamel < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd808b03717da41c07bdf74749df777240cf428c772fb9a6420e6827cffc2722"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b22d2b6a1ee52a78fcebfdabc13684eef32ec4197a60b2e3d31daa7fae840154"
     sha256 cellar: :any_skip_relocation, sonoma:        "d66fea4cf9160c0af8996b0426c00012a126c2e619124c2d6dcd55ee8957a286"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "39744c2e48c8dddc207eeaecf386814c53a9390dbd83450304db4c2d9d29c958"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "04987ba2b75e6d5e0fc47c4c9e2d282173eacd1c0ebf0c492c241c3b64826b2b"
   end
 

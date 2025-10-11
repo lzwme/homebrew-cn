@@ -18,6 +18,7 @@ class CloudfoundryCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "040d4b8bcc2b715e55c2c12259010504c5bf169a1502a3080e268ad0ca1a11bc"
     sha256 cellar: :any_skip_relocation, sonoma:        "00ad7b993423c6e8505ca1f02b5c883c762557a072817afa5429bd4e66e7267a"
     sha256 cellar: :any_skip_relocation, ventura:       "00ad7b993423c6e8505ca1f02b5c883c762557a072817afa5429bd4e66e7267a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9349993cb64f02c076fa6fd17d9590d88b60db4a3cd732fc0974c188d7cc82f6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c498a547bb200f0950495d1f7bf1466c5fce72c111ab78510e39462669274f9b"
   end
 

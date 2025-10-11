@@ -1,8 +1,8 @@
 class ChainloopCli < Formula
   desc "CLI for interacting with Chainloop"
   homepage "https://docs.chainloop.dev"
-  url "https://ghfast.top/https://github.com/chainloop-dev/chainloop/archive/refs/tags/v1.46.0.tar.gz"
-  sha256 "9df4ce00cbb441837f480cf1dae2810ff453ff82e34f93ea3c5878748fe7edc8"
+  url "https://ghfast.top/https://github.com/chainloop-dev/chainloop/archive/refs/tags/v1.47.0.tar.gz"
+  sha256 "997359c4a22dbe1825caea1633fc6a897cd5b289eb9e3b2df628c0e094e31226"
   license "Apache-2.0"
   head "https://github.com/chainloop-dev/chainloop.git", branch: "main"
 
@@ -12,11 +12,12 @@ class ChainloopCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0192b7d1ee3f99a50853ccd56a6d63ed5b89ea581758f1e1261aa4c41b7ae072"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b911f1e7a5de2859dae89d8ca43747ed6799fcea79f0292b61c6965170366450"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6bbe5566e3a1594304235e9ab8760381a4db8837fb410f4e9a3e15c49210e95e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "83908b8b45ac465830fc490d42f37a75130cece9a3c3eeb4b8b857a2abd0ae05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "987f6dda2aa764d466f311c92085b6825398b75d8e421ed99512e82e67ea3391"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "649f3553565ceb4ae98bb6b5d2bdd8a447ccc4a2b586c52aa4de993df411f0e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84283266d3331c44c3c632db46f7eacdb3edd56c3a809a5a19d48c06d0206286"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "670d9f8205cd89767a3416044318026eb8a0709bd9d67abcb33c064426e01d14"
+    sha256 cellar: :any_skip_relocation, sonoma:        "375e12c289edea673723d5d9ac996ff661cbd99e4f98b27d9a58bc2ad5cefe1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e5b61680d187ac2b0169de0b64a62ad17689c33f7477e1453f20e85ebb9a66f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8727e54daa99846ade862a2f5aed1478750cc88e0437f19d76b18b99452bdd28"
   end
 
   depends_on "go" => :build

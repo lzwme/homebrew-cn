@@ -11,6 +11,7 @@ class WoodpeckerCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "dec179b763f7dd1a3dc62086bd6b1d625e02f0429811e4dd64d60f6f16ba460f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dec179b763f7dd1a3dc62086bd6b1d625e02f0429811e4dd64d60f6f16ba460f"
     sha256 cellar: :any_skip_relocation, sonoma:        "c0e71c0f48e2766d60f48123c10aa1403c5aa4d17fb410cd36441b5ff0d5927e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6f8268551a1b9171b2d61c7af2e4a5469c1018a4e18dc0590983e695a571cce"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfa4b5cce653fa4646334cfface31ad210ac5c3fd8469b1b2f9794e8646981eb"
   end
 

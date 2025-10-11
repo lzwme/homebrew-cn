@@ -13,6 +13,7 @@ class Azqr < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d80964d2d3827b2786d53dff0f0b4e9072fbadf7143737662e383c0efe5d4a3d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d80964d2d3827b2786d53dff0f0b4e9072fbadf7143737662e383c0efe5d4a3d"
     sha256 cellar: :any_skip_relocation, sonoma:        "939df40a981dde3aec791552a98a25d78c6a01446a5e627495a1632136c30aed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f65cd8a9ca6681eaddc3fc77170768ce7f5d8ddc55ab69b4ddfa91423f7d5a68"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "13be7a321070acb9f53aca9305b67426a247eae6f83429003f5a102c7367b4ed"
   end
 

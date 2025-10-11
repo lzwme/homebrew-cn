@@ -13,6 +13,7 @@ class Gickup < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "010143246859c06f678119c8afdc2b1b848afd290a607e3dfb5e2716da7aedbb"
     sha256 cellar: :any_skip_relocation, sonoma:        "bc7fc82b842276e632e1482d29c57768d959d1f5961c9aa8851addd698fafd5c"
     sha256 cellar: :any_skip_relocation, ventura:       "4b7a74b4ec817c45f921b3531c43a27e86ce2c021a8d9af52ee6c46c06132083"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a697edea33fd125adfc77e7f63d9b3acd228876cb55db1192d11702127eb1c5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b00e25d59053339e6f46f22b20063ef17516153d09d0cf5dd62a5bfe79724d5a"
   end
 

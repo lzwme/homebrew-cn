@@ -20,6 +20,7 @@ class SsllabsScan < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "9cd0b9e4f6980fb49897f09adb167a5a7be7f7d4405f261829b713cb262e713a"
     sha256 cellar: :any_skip_relocation, big_sur:        "bedc2ae76ea62f469af8ca941f894016b053edd0c598e4845bcbe95e73c344a3"
     sha256 cellar: :any_skip_relocation, catalina:       "01c7e2503e8793f79149a3115dffff286ab0db876ccbfe6d8bb11ed54f27ba38"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "edd29f50b8ff77077f310d961a60a6e58cd157e80925e58f586a020f90a56e67"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9298cfa3c9eb7b7effb0f924f9998e63406d3bfacd4b4df9785a0371138699e2"
   end
 

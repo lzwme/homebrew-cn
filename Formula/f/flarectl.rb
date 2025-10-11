@@ -19,6 +19,7 @@ class Flarectl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1ad5f090588698e86d1167e4229eebe2a108d4e2577139d567bb01e45977d80f"
     sha256 cellar: :any_skip_relocation, sonoma:        "23fddbdb9310f7d645c7f2958819d39b8f91efeed247d2c4555852bce7a4245b"
     sha256 cellar: :any_skip_relocation, ventura:       "23fddbdb9310f7d645c7f2958819d39b8f91efeed247d2c4555852bce7a4245b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "396cd2459e80c6ed540d39bb72542acfdda3c603bdecf5b02df222224ec8a313"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "43110a60ec6ce3bbaf46360197b2dc7eb17e7cb321eb8e630760c22b3e79706a"
   end
 

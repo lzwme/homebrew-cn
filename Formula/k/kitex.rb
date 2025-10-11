@@ -16,6 +16,7 @@ class Kitex < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f90235664b0ea4c656f79b3d038724b1e5537802a43d41e439071b6ff51eed32"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f90235664b0ea4c656f79b3d038724b1e5537802a43d41e439071b6ff51eed32"
     sha256 cellar: :any_skip_relocation, sonoma:        "ba53d9907cfc70e017f91ba88175382dfc6e973703667d0c953313452b36c844"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "da70cf6ca0d77cba38a7629ff4078967cc1617fe665de03209fdfd0381da3603"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3dd67b3994fcde79de6509dc5c87f517e090799fdc8d4af3971ad4f9fe28492b"
   end
 

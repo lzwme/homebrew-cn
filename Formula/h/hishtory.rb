@@ -18,6 +18,7 @@ class Hishtory < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e34db19bb53a5227bdda758dd4511b3268bba2a5edf4e97ab312d96a164f8c24"
     sha256 cellar: :any_skip_relocation, sonoma:        "d98870cb4d2d3427a139d11dbc40b9e8d94bea42b3be326074fb72363c8bd1fa"
     sha256 cellar: :any_skip_relocation, ventura:       "c406a562034cc2bdd76625c79616e6bf7362857cd0964c13636d5660a241f1d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "227898cca3bb2ddcfb1c9e63a6cf72f87c9315afee6a5667304df7fec902b085"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ff41cdcf4490c139d740a547cc565febf4326cc11d86ca2cd87eb49f615c73c"
   end
 

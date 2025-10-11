@@ -11,6 +11,7 @@ class Terramaid < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d9286e0b8856b587c83a56f03b6b3dc08613eae3fec76299525360091eefe69"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d9286e0b8856b587c83a56f03b6b3dc08613eae3fec76299525360091eefe69"
     sha256 cellar: :any_skip_relocation, sonoma:        "0a7e6f9cc76b33e119276a960ceb16bf6ca1ace2907bb147c8f1fd41b2c70f2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "05ec52f9c3e8a0cc7be2b94b452e261d0fa47c70c1c84c8ddf88e3bf1f7c5efa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d89d47b37e93c8f5bdddfa1247f11c8447b6f55f016b6b7960c96a19eba857b"
   end
 

@@ -11,14 +11,20 @@ class Chafa < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4864d37e43ebf771b17cc9195ce885b566ddb9374f4278fab5c79d630998daa3"
-    sha256 cellar: :any,                 arm64_sequoia: "411a2e13b828399d7ddef65cd14e70843de6ca70c441c7b673234c5c8a2905c4"
-    sha256 cellar: :any,                 arm64_sonoma:  "ec3913e5394e2d4e1fd9d9b14fe4e1cfdb9d286c540a964eda184046617f8e2d"
-    sha256 cellar: :any,                 arm64_ventura: "f118d8e83c58f87634dcde8ea5559455b3ac97717e6c1904028928e887f9594f"
-    sha256 cellar: :any,                 sonoma:        "c61f2dc4aec088da2f8ee58b0d531f1dcd6236ac254859aafdcb860addc7dccf"
-    sha256 cellar: :any,                 ventura:       "cde2384f2b98ca94c8cc4e84fb611782b74cd99444b32640815785ee83fa89bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "984e11e7dc20fbe41bfda805599364127542362b12937563e66b4e0a7d1eb373"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6137876e39395029f5a2f8ac4980a08acd60b4a29ccf92a6ea3dcc1564c4461b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "eb1e2282d672d0439434d1519b04e6d8e3202ab7edd295cb9f284514de065a07"
+    sha256 cellar: :any,                 arm64_sequoia: "44ef52795c501e98e7d1e213967f665589688c4fa487bbbbdb1ec76d8cca4038"
+    sha256 cellar: :any,                 arm64_sonoma:  "ce061ba4632caaf54e69ac1695387fdfcac2869f649c3d62b629c0317d72d4ed"
+    sha256 cellar: :any,                 sonoma:        "b253a0f400639cd5d42b2edb999f3feac3e09e5c17f93eeb95824a8d18abbe5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "07c973106fe70ff89574a8cf91014d5b1367825dbc8b66998a00445750f14dc8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe1447ecf41721b3491d0a545ba0175dc6ee00527bf4bcd1e03acda061e1482d"
+  end
+
+  head do
+    url "https://github.com/hpjansson/chafa.git", branch: "master"
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
   end
 
   depends_on "pkgconf" => :build
@@ -38,9 +44,10 @@ class Chafa < Formula
   end
 
   def install
+    with_env(NOCONFIGURE: "1") { system "./autogen.sh" } if build.head?
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
-    man1.install "docs/chafa.1"
+    man1.install "docs/chafa.1" if build.stable?
   end
 
   test do

@@ -18,6 +18,7 @@ class F2 < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "20b9ac62100ec247caee037f1bef031b4b9794cedf6776807c0cb603a41dc105"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20b9ac62100ec247caee037f1bef031b4b9794cedf6776807c0cb603a41dc105"
     sha256 cellar: :any_skip_relocation, sonoma:        "4cf1ad63cbd2dbec21a018c24c1e1a911db504187ec70214214b55cf73c59f2f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7819d9f0260b029e2926bbe36bcd954153a6c4ffea6b7f1359452d6869cd43b8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4784160f2ac8eeba3b140a355891b208463117ad21bf77ced6f3120c8c10c4df"
   end
 

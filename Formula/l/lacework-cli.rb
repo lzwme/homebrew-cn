@@ -20,6 +20,7 @@ class LaceworkCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8df3d1e727843a98b5da38d7ba910b4f28660b5e89113aa88ede6d11a6423c6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8df3d1e727843a98b5da38d7ba910b4f28660b5e89113aa88ede6d11a6423c6"
     sha256 cellar: :any_skip_relocation, sonoma:        "ffa1457ac40cb70b5d70ce855cb021eaeaed1b943dce353208f9088cfb7ce924"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "12ac4de974508b9c4d4abc1a1287cef8c6e217bcd973b0b717f523df9a4bbe63"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5688965c0930967685d411d2c647cb3ac68149b2cb7c19a3e19f70be530bb9c9"
   end
 

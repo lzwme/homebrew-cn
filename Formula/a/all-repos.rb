@@ -6,12 +6,13 @@ class AllRepos < Formula
   url "https://files.pythonhosted.org/packages/4a/bd/b23682af89619bf74844e3394de6d92f870b28e9d68747c7940f45fe079b/all_repos-1.30.0.tar.gz"
   sha256 "4407ca18c5d63428ec3d1af21a36527e999f04dffcd36cbfbd8e8c1d6792ec1b"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "682d934409fcf01972765afc9625c67329d5e13ce52f3970a8fb11beaa627503"
+    sha256 cellar: :any_skip_relocation, all: "205249e8fb5e720169314b5922be721aea001596835ae8289a3e7b2639425086"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "identify" do
     url "https://files.pythonhosted.org/packages/a2/88/d193a27416618628a5eea64e3223acd800b40749a96ffb322a9b55a49ed1/identify-2.6.12.tar.gz"

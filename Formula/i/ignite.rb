@@ -11,6 +11,7 @@ class Ignite < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f339fa290ab84310c7fda798e431879133b41758194e418b40e1d0d37d4141a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ca15c0af2b63b8ed9c441e0430c3dc98f857d4f7267e85b18f8771420428cab"
     sha256 cellar: :any_skip_relocation, sonoma:        "c0571d0732c31c870b4b362c2f886f50932e0bf9f882eccfc423580bcc22702a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "587f7f541451033cfb4ed1c0a71b07f7da238c47b5aca8aaa58302b33d6f39ee"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb7ae6e98b774521412dfb534ee53ebbde3ec4a9d978caca2f27a143622a9639"
   end
 

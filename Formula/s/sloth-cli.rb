@@ -18,6 +18,7 @@ class SlothCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "376063402c9cac1589b7502331bde641368c14eec1968affed12e98233fb23c5"
     sha256 cellar: :any_skip_relocation, sonoma:        "d583190bf96ecf2c6d997b51382aa470e99411eeabc8b10b8d361bbed62f86c2"
     sha256 cellar: :any_skip_relocation, ventura:       "1ac69a22fc2117ddaef0294a4b7d27f07c4ef4357c921e9483412fb623707681"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c46040620b2871ca167f8d91a46975f58c90cf814204166b682e201fa86180b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fc25e9c595fa04de2379fc1df0cc05958e4d0d425ddce2ce8b7f4b9b77b5bb8"
   end
 

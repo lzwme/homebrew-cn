@@ -4,17 +4,18 @@ class Meson < Formula
   url "https://ghfast.top/https://github.com/mesonbuild/meson/releases/download/1.9.1/meson-1.9.1.tar.gz"
   sha256 "4e076606f2afff7881d195574bddcd8d89286f35a17b4977a216f535dc0c74ac"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/mesonbuild/meson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "62234c408e3555dc00cae9ea9e1c1b2a155fc22db772b4b2b2b25bcada3be4d6"
+    sha256 cellar: :any_skip_relocation, all: "9a43ea2e4500ea0978506a8788ef6506b83c31e67b57719aef3e35cf5484e650"
   end
 
   depends_on "ninja"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
-    python3 = "python3.13"
+    python3 = "python3.14"
     system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
 
     bash_completion.install "data/shell-completions/bash/meson"

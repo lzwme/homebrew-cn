@@ -13,6 +13,7 @@ class MinioWarp < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2cf43dc0aff8a43b1e8504b82d25bf6a6ffbf6eb1061a518d1f7f27025edd789"
     sha256 cellar: :any_skip_relocation, sonoma:        "fe654767e1f8301f04ceead701c0a4f84996412f5669bfdd8e7ab44aee981271"
     sha256 cellar: :any_skip_relocation, ventura:       "c5b973d6938d2f01d0edb2018a7ca2cc4a2a5e59d6a3a6fb6772a32fbd174a57"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "86da586969b9522ac9cee46f37bbdbf43168167cb69be1ae63ca0182d31b8cd4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6873a14cc571d2c20bb2b85a80e7dab3df2825a1b1237631cdd3ef3c72e9aeba"
   end
 

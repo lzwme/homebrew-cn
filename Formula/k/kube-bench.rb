@@ -11,6 +11,7 @@ class KubeBench < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc8245aed689e3e0e3dd8fcdde3adbf11498309bc67f4aa1331a368d343bf579"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc8245aed689e3e0e3dd8fcdde3adbf11498309bc67f4aa1331a368d343bf579"
     sha256 cellar: :any_skip_relocation, sonoma:        "875a28f07dacf2e02540368a29978b925bc505a9602ce84e26529e0e01ef2227"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "547f466b21f670e488ff1e9e334afeb60627919aa3d18dd6c7115dc08262a4e5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "60b4e66138c7882ed5a41838bae9560625782262834c88e8e185281e83e368f3"
   end
 

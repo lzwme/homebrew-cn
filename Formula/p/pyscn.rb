@@ -1,23 +1,25 @@
 class Pyscn < Formula
   desc "Intelligent Python Code Quality Analyzer"
   homepage "https://github.com/ludo-technologies/pyscn"
-  url "https://ghfast.top/https://github.com/ludo-technologies/pyscn/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "bc6c797d1ff2723c06ef5e4e54ae71b78585226620bf9d9481472aea112c578b"
+  url "https://ghfast.top/https://github.com/ludo-technologies/pyscn/archive/refs/tags/v1.0.3.tar.gz"
+  sha256 "984409a69f7385a9ec3738a460f3a23ff045503958b0c6ff36757d1bea599b07"
   license "MIT"
   head "https://github.com/ludo-technologies/pyscn.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "498e35b1997b910c02c48f2ded0ff2971f05f3648d7f0bd4f5d84df26d3a83f9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82fabdabfc51c717d398d741df7417ba21aaa4d84f0e23913eb1f26847a2ae8c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "051fbed528a69c552aea59a89a7042b752461455908757b3358f87a32653df70"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a49b4b64137b7e742b4bd8bbb3431f9917d2925a14062b38d62eab7b55630e2b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2951b563bcd21ef32d753d93ead92dfb453c8b43bb813501b1c2ffee6eb8c923"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5efcaf5eaf06ba7cc521eb715eb7d7b5db12d3741cac06f089bf2b12968a23db"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "238d2ce57d08ef1b809967dffb476a0ad0ea7c3a1f76d75a1f9379f8c9cefdc2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a03d11215910ccc3e4578b366c218ccf1ad4c58f81b59806eeb420042b009d70"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f2557d6a8eacfc120064d0dbea11f3a03178ee109253871ec3fa60db27bde82"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e34b407bc54258658439318b6976aa36395803364a68fa121b1cad0681798b16"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fd5a6cd7e60e7933a2b9ac5bf0797f19d8f6f7290a754f3d5d8c8dc9378488d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb34c0b715fe45b2b548612de4690c82bd5ffb2a999f074f4ddadd967b429418"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1"
+
     ldflags = %W[
       -s -w
       -X github.com/ludo-technologies/pyscn/internal/version.Version=#{version}

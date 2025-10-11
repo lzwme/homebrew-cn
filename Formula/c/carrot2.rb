@@ -2,22 +2,23 @@ class Carrot2 < Formula
   desc "Search results clustering engine"
   homepage "https://search.carrot2.org/"
   url "https://github.com/carrot2/carrot2.git",
-      tag:      "release/4.8.2",
-      revision: "7095f6f97895668ad6bcc6bcf5689ed748c9945e"
+      tag:      "release/4.8.3",
+      revision: "e2e57a553b8d6015af23f43dfff245157a267bc8"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13e9707b629eec3787dfaa7c9523ce632b60cb9abc5347fdf917c745dda76b46"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ecb572491b0ee47cd972ea4df41d1323133149981226421bcd5f26df665053a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19c68f294a28703d3838d65f8323f6fc7be13d6373b14b0a536793d2352d18b2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a6498f81a05d2e2c81813678118358bd1a298b56213edeed63da73e13303a6e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26d3471987d904d9deae77dbf15c18713cb78667cb943feb1c96ec3393f3c45c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "851efb7ea413d096ad2ff96f9d2f726507065f8107922af401a87b7d65b8edce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "526625534a78b14fce2023d2927daec0b69b114c8974d4a868f3aafeeb935b47"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f977963b7a9c05ccf28d598b03b9ea585ab185613a314122ac39fbb74114a93"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6afd51b10e424be4f15eba55fc0458ab9146b7d9c9e6244a4c48cc36ed73fe18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f457acbc704c8bf66dbcec5cb24d44017f572fe88187536ecc2d363204d24f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73d0c05cf12b9da21aae87335be309884c8c682f65195ac31872176a5b9da2a8"
   end
 
   depends_on "gradle" => :build
   depends_on "node@22" => :build
   depends_on "yarn" => :build
-  depends_on "openjdk@21"
+  depends_on "openjdk"
 
   on_linux do
     on_arm do
@@ -44,7 +45,7 @@ class Carrot2 < Formula
     end
 
     (bin/"carrot2").write_env_script "#{libexec}/dcs/dcs",
-      JAVA_CMD:    "exec '#{Formula["openjdk@21"].opt_bin}/java'",
+      JAVA_CMD:    "exec '#{Formula["openjdk"].opt_bin}/java'",
       SCRIPT_HOME: libexec/"dcs"
   end
 
@@ -55,7 +56,7 @@ class Carrot2 < Formula
 
   test do
     port = free_port
-    fork { exec bin/"carrot2", "--port", port.to_s }
+    spawn bin/"carrot2", "--port", port.to_s
     sleep 20
     assert_match "Lingo", shell_output("curl -s localhost:#{port}/service/list")
   end

@@ -15,6 +15,7 @@ class Kubeaudit < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "c1bf1c8cf11944344d9002d983def83ba27189cc5f29f248afcbabb1c2db6750"
     sha256 cellar: :any_skip_relocation, ventura:        "c1bf1c8cf11944344d9002d983def83ba27189cc5f29f248afcbabb1c2db6750"
     sha256 cellar: :any_skip_relocation, monterey:       "c1bf1c8cf11944344d9002d983def83ba27189cc5f29f248afcbabb1c2db6750"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "503e6ad415a466e260758c702b91a589a1324365dfccbd77819c1e0702b37f25"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "36c94b606075a297fd812aa94fa7c8c95f5cac0dcec866d0f3d6d7c6ec6e8a74"
   end
 

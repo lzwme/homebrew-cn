@@ -13,6 +13,7 @@ class Parca < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "16ada657b4d2f78fc3315be1739a7d6ac5172c6c5c56be65c53af0014d086397"
     sha256 cellar: :any_skip_relocation, sonoma:        "a1fac35e98d19d1922d942b2801dd6e33872a2162a2a9845eb45b4649359896c"
     sha256 cellar: :any_skip_relocation, ventura:       "0e0dc6dde558aa5baa521c5182d92dbe359afbaf407db05b16811bb7b52e2bbe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1acb66f37865f541f85b61efd4d934a4bfb385c130f93c996be9bdfcdf7c08d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "243125d3d4e13b662a1439f2d9f0a0a482788bc6890645f6a2a24f3076a578f9"
   end
 

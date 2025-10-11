@@ -11,6 +11,7 @@ class Dockerfilegraph < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2a4bdec5bf0a8ac4e0a78c7c1eb3f59f346ce1a6332b07e24d0f8fa9d00812c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2a4bdec5bf0a8ac4e0a78c7c1eb3f59f346ce1a6332b07e24d0f8fa9d00812c"
     sha256 cellar: :any_skip_relocation, sonoma:        "e6a4f66f2c6b8d19626f993de642d7c7d0edd5b421c460dd8a9d5cc8979e0dfe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34af91fcb654a496f3a6b1b4922f8f816353ef3ab4945306344edd8dc0bde255"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "71254a91804c45cf519859dd644cd22e3da9d8eadf6b12e984ea916acc83349c"
   end
 

@@ -17,6 +17,7 @@ class Ali < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "f10493d0b0865a6b278382ceee4ac84b9f373b238721f949061a188eb03172ab"
     sha256 cellar: :any_skip_relocation, ventura:        "c1e614a1bb025e707f4535377c85ff1ed81dceb47e73f6079c7c3fc519cc7cd7"
     sha256 cellar: :any_skip_relocation, monterey:       "45e2b734e1662d30b68c7b47b2684399c5ecb5e13747f6f8036830983daefd37"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3b64df658e252aac13d38bf1fd272c53ba58f55efd77861e01622de875d06626"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b61422195f1f744328bea5388328f63b68c45e04543d117a83d8d5a155561cc"
   end
 

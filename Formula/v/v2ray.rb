@@ -16,6 +16,7 @@ class V2ray < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0051a9c23dfde63f18af63cf4a11e51f7ac8f4f29d8b85fb403439430fde6627"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0051a9c23dfde63f18af63cf4a11e51f7ac8f4f29d8b85fb403439430fde6627"
     sha256 cellar: :any_skip_relocation, sonoma:        "2fed57d874e8270d1afdb19dd1352a2e491d7a99b521a7a20920b8160e200a5d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "75d11a1df1a8c70c4daab36cc05e89268b937808a4081039669369cc265285e2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f0f37d9b02c3327815ca27865ac9bf00a2788afff2ac2662c642efebb0d6946"
   end
 

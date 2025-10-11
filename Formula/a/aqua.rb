@@ -16,6 +16,7 @@ class Aqua < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d88156a4ff7fdea00a11c10ba4955f5373893e99075b6dca0a99db964d131ec"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d88156a4ff7fdea00a11c10ba4955f5373893e99075b6dca0a99db964d131ec"
     sha256 cellar: :any_skip_relocation, sonoma:        "7f1ec063841d742a1f8506351c36e1bd8cb540cf015825390676b4b7a700c61e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e44186035914298473431f17195ca53832a4120306227716349558b2a7ce19ba"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "933a07b8e49c6bc08c114ccb71d5ec460e0d5ec965d4c71f3b3d02b910350057"
   end
 

@@ -10,6 +10,7 @@ class Pint < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3997e8815182439b2ffb88209632e9fdc959c1d44ab4e4f80602611ed0c68d4c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "517b9d81f7f9211ca28841b9da09f2c5516beb615f612cb79e0883610cbfcb9c"
     sha256 cellar: :any_skip_relocation, sonoma:        "be1c3a738e3ea55930575b1ddea7732530487800d9867f5047902f062ac6f811"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8999f610d396323c24ce25d9f5f9a8e45def994b3b4448aa0b71b2fbce153d9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "874ea02645fac96f66a20aab54ee5347fa15ad225c25a239206012fcfc6f6035"
   end
 

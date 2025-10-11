@@ -20,6 +20,7 @@ class Orgalorg < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "9609c5b392fa18422370ff6e1141699d277c7fda09160188f5c8b1891a47ab8c"
     sha256 cellar: :any_skip_relocation, ventura:        "9609c5b392fa18422370ff6e1141699d277c7fda09160188f5c8b1891a47ab8c"
     sha256 cellar: :any_skip_relocation, monterey:       "9609c5b392fa18422370ff6e1141699d277c7fda09160188f5c8b1891a47ab8c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "bc347549d933c2bc6eeff0f6a868e9022ce31d3f8603b5011a0c429a78c65e15"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ddfaf7984ff3194c6966fe2765fcd79fae9bc91a5f96a96c9baba7aed1c6885"
   end
 

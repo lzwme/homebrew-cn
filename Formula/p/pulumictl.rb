@@ -13,6 +13,7 @@ class Pulumictl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "07ef245cd91ed7be0b36a07f73b41e3c20a95c589a98ff50a1a41c401d90f0cb"
     sha256 cellar: :any_skip_relocation, sonoma:        "054af9bbe6d7c11b30814f7aae599fdba815b7baadd3c637982f28b1c1023ef2"
     sha256 cellar: :any_skip_relocation, ventura:       "054af9bbe6d7c11b30814f7aae599fdba815b7baadd3c637982f28b1c1023ef2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2527999f798d58194819b11fe1386555234c32ed4c2be61c086a2b91aae5ca11"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f708231496a7cf63fe03a18deead41fc8040f0eba7f76e8d8e9f85ebc3032aab"
   end
 

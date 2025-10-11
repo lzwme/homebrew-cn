@@ -15,6 +15,7 @@ class ForkCleaner < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "af32472674fdc61c16a52ebaa7c3aebffa22062f76b6df03ffc69e5976f0a218"
     sha256 cellar: :any_skip_relocation, ventura:        "6c13b60356d327f0a2b7823d8bb5ff6804b2aa296f091b2e58facf6419c79cce"
     sha256 cellar: :any_skip_relocation, monterey:       "bf6404b0b8f1513ce504b092829d9985736272dd37d3a54e6975cd3a0b35ef91"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "891976e2198cc6da85de62ae26501834af4b4f049a5b78c89df29af28d9523e4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "15e71b23dc1fe3b05714a8f2a02f3bafada4713ebabb244bfe8677de487e5a21"
   end
 

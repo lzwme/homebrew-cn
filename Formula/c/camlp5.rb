@@ -1,10 +1,9 @@
 class Camlp5 < Formula
   desc "Preprocessor and pretty-printer for OCaml"
   homepage "https://camlp5.github.io/"
-  url "https://ghfast.top/https://github.com/camlp5/camlp5/archive/refs/tags/8.03.01.tar.gz"
-  sha256 "057b8e06590cf29a1bd22b6c83aa5daa816d5cbb2ba2548409d474d7dc10c5b8"
+  url "https://ghfast.top/https://github.com/camlp5/camlp5/archive/refs/tags/8.04.00.tar.gz"
+  sha256 "b00579277a5f18209a33f4adc4df04a40b5ca09e1509e702b464aa68ca44fc34"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/camlp5/camlp5.git", branch: "master"
 
   livecheck do
@@ -13,25 +12,25 @@ class Camlp5 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "33d7a8a87bac47b7c1a38d86163721b35b08a504c607fdaaf8e7b9cfb0d4a396"
-    sha256 arm64_sequoia: "7959f6d3fa94680f0cfbd400e62278ca831ed6e9e172a799b92107521898e654"
-    sha256 arm64_sonoma:  "b358f825630a28395859a8d24034710241ff0ba374bab42ebe8c453f7398755f"
-    sha256 arm64_ventura: "a67366fe1a8eb1a88495973e2049d78151112a5d081803f3be2c6b0a38c4c616"
-    sha256 sonoma:        "d6a7484e9535bad4b3e42e581e0c0da75f4f778852950255dc46b929c25cdce7"
-    sha256 ventura:       "c2de76fb6bb6df777b902d91756821a5fb1718b7c5f2492599f492512b3285d7"
-    sha256 arm64_linux:   "5063e6e6c30363bf5e58adda45472123ebef8a12daa36dbf04279db8f955baf2"
-    sha256 x86_64_linux:  "7463bdc459d6b9a308f9598799f67fd6194f6070e5b4555b60a213dabd711d4c"
+    sha256 arm64_tahoe:   "0edae94f33230fc6758473fc87a68015d80bd8ef27136b3894623f557c825fe6"
+    sha256 arm64_sequoia: "a5de18f1d313dc38822127e6bab527b8a087e43764f3d2f73e06d34e52171ddd"
+    sha256 arm64_sonoma:  "14164e78308f79fa2e5f773e123b4241358f06cb2df839df6a647c9c801c0faa"
+    sha256 sonoma:        "9ac42eb31885820bdc5b222d1edb4b6d92ec2cb9a9fc41e67da7b7edc7291e60"
+    sha256 arm64_linux:   "60cfb728e026cc22f80cced8efba24a63809efb2bbeaf32f0957905cf8e71df1"
+    sha256 x86_64_linux:  "69739a1e454b0cff5feed77e228536406f86e0dc24a571aa3a2bb8cfb1cdeaf9"
   end
 
   depends_on "ocaml-findlib" => :build
   depends_on "opam" => :build
+  depends_on "pkgconf" => :build
   depends_on "camlp-streams"
   depends_on "ocaml"
+  depends_on "pcre2"
 
   uses_from_macos "m4" => :build
 
   def install
-    ENV["OPAMROOT"] = buildpath/".opam"
+    ENV["OPAMROOT"] = opamroot = buildpath/".opam"
     ENV["OPAMYES"] = "1"
 
     system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing", "--no-setup"
@@ -41,6 +40,8 @@ class Camlp5 < Formula
     system "opam", "exec", "--", "make", "world.opt"
     system "opam", "exec", "--", "make", "install"
     (lib/"ocaml/camlp5").install "etc/META"
+    libexec.install opamroot/"ocaml-system/lib/stublibs/dllpcre2_stubs.so"
+    bin.env_script_all_files libexec, CAML_LD_LIBRARY_PATH: libexec
   end
 
   test do

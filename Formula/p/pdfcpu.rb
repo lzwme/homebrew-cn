@@ -12,6 +12,7 @@ class Pdfcpu < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "6f141222f26821c8e9a2c6b359b73fee48040cc04ce127dd209968ef80e68d39"
     sha256 cellar: :any_skip_relocation, sonoma:        "6fa423d0867b75c977cede4c3b81673b91919d9bf564967bbe7b30232aab6755"
     sha256 cellar: :any_skip_relocation, ventura:       "6fa423d0867b75c977cede4c3b81673b91919d9bf564967bbe7b30232aab6755"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "95760e6e8ee78197b79a01fa5fea5ecead6f54f33791dc4457f3bfa79f9b2bf2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb75f27ec1367eeaeaabd10745b1c30ed25e7588760461db93bd7b8a18553c29"
   end
 

@@ -13,6 +13,7 @@ class Oauth2Proxy < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7b7f25b4651eb613fdd72c7c2feb1d179f3bc0b3696d4e5f7898c874fe50f629"
     sha256 cellar: :any_skip_relocation, sonoma:        "60cdd8f32912f026b1b4d79d65c6e26ab4d083cd6ac99dbd0972938d1785c122"
     sha256 cellar: :any_skip_relocation, ventura:       "4a47b133a8e94537de109b52b32dd4b6d61addc31d402ab153959619d1005335"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "58808a890908b1bd646297fd3e50823279873083fc4a477acd832f44e399fa28"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "19a332ed0f0b04571737bf898e5201351f93bbf1a098e87c4aa28984462b1d9e"
   end
 

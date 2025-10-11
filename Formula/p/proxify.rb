@@ -13,6 +13,7 @@ class Proxify < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "55d02209f5e215cc15c57df775866a9f95de9de9c797acce7ca87ba95c715aca"
     sha256 cellar: :any_skip_relocation, sonoma:        "d0b34a5b8faca1288c434e2181c24ad5770f8cbcc02cedb05f37fbe04442257c"
     sha256 cellar: :any_skip_relocation, ventura:       "4a80fa274bbc79f69b63d71aa4a823a0dbeaee02f802a30a01cc98b3b4cb7869"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "47ba9d44e07adf3fc672bcb94daf2e9d058ca432862206a9e115972af567c7ad"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6ae504f9d04fce697580389190a075d1707b2d658e6867cb12c5dc2e4c9d86e"
   end
 

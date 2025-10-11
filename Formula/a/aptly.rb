@@ -18,6 +18,7 @@ class Aptly < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5eed18d1e90c95d9f9d27c1bb4071b5918df5102d674ed4377f5ed48bb19963c"
     sha256 cellar: :any_skip_relocation, sonoma:        "13d85438f90917d1e5e0ec47d983373305e5cdf6880c8eca78d95dff2c6c6e29"
     sha256 cellar: :any_skip_relocation, ventura:       "13d85438f90917d1e5e0ec47d983373305e5cdf6880c8eca78d95dff2c6c6e29"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "816f00ebfe70c1dfeba581f6b8b3e046b727b7cd1c0aa49e2213814e4b22d505"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff56ef982a5265758be69344b4d222bebb20bc969382bffc6110604a627e3f2d"
   end
 

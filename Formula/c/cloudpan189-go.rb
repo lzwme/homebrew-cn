@@ -19,6 +19,7 @@ class Cloudpan189Go < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "6ab13514be4a47d60c22436daad9bd2ca0612b61eff549630d8548cb24405424"
     sha256 cellar: :any_skip_relocation, monterey:       "6ab13514be4a47d60c22436daad9bd2ca0612b61eff549630d8548cb24405424"
     sha256 cellar: :any_skip_relocation, big_sur:        "6ab13514be4a47d60c22436daad9bd2ca0612b61eff549630d8548cb24405424"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "42247f05683ad756a121dfabe4afd9074ad416ea13d681670e686dfb1b4cb68f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "21c193bc56690eef410bdbbce6d6b774fcf658f16b114ea0222afee18591d361"
   end
 

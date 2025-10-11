@@ -21,6 +21,7 @@ class Hof < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8e5275eb22672ae3f0bcf884becc77d6b34eda2b7ba84ffd3fe562fddbc3d5e5"
     sha256 cellar: :any_skip_relocation, sonoma:        "96a01bb5adfdee2ac9d77baf10cdbd99682f95e487ea6fc9b0a0be59d3492c19"
     sha256 cellar: :any_skip_relocation, ventura:       "96a01bb5adfdee2ac9d77baf10cdbd99682f95e487ea6fc9b0a0be59d3492c19"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0247c192be4a3d799e18e2c21587395e8294afcbb05daf3f2f91435f93e16743"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1649592d767a8d06f0db43de77032c854168d2626ba0113650942c1d3221e935"
   end
 

@@ -19,6 +19,7 @@ class FlintChecker < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "a173b1a8329d81cc39c220f535e84c940a3f4e3e8b7505d590fb7411571a6710"
     sha256 cellar: :any_skip_relocation, big_sur:        "167b3ab36ec6ddb5b07b4524d090596b18fd9267cf9da5161e78d11b1f988397"
     sha256 cellar: :any_skip_relocation, catalina:       "48211955f96e66b5254338d9f6ba56e6e35f6680fb0379190f5b4a3d8f6fe6f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "70ef7665f0a159f49400f121b6cedcf3b76f639dc517a422a0332d839fc1a8fd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "01e5b0c9b671bceb2c20ffac4f21f6bda8004d761746260ad82d6c16b13258ea"
   end
 

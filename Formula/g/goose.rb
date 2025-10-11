@@ -11,6 +11,7 @@ class Goose < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2c6066f878c5e0aeafbdbccadf574e324ed3d888c27869b3cfb7fad4828ea52"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "093568865fda9c25594bc98250c276a18da697ae11235f4d3977265a53293870"
     sha256 cellar: :any_skip_relocation, sonoma:        "74559ab416949e294e5de5648da820c96b651b50d9c866ef94f1cff6c4dd71eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac71ed3180cab9193c6bce59f909d030ea8b2deacefe96d1e8076256a362a364"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c31a5b03d697c746a4d67aad2308335d50505d9a7900627d87abfd3e787b4adb"
   end
 

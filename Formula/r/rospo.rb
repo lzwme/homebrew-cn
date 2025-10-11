@@ -1,19 +1,17 @@
 class Rospo < Formula
   desc "Simple, reliable, persistent ssh tunnels with embedded ssh server"
   homepage "https://github.com/ferama/rospo"
-  url "https://ghfast.top/https://github.com/ferama/rospo/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "098c84c2c6904761065aeb7fdacdbd53b59fa12cc3d0368f1ca1712993323efa"
+  url "https://ghfast.top/https://github.com/ferama/rospo/archive/refs/tags/v0.15.1.tar.gz"
+  sha256 "338157a7a34abf35f7fdb84a1667c49e07d95cd3ef33e8e5f9ce2cb0e55d4647"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2c351a98e482f1b3a92bfa76eec1643f15d2b6591f35440651df9c95bc27e46d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78ba435c179d319f9a69ab7ccb723016b6ae62c530233cb33c657439d0eded78"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78ba435c179d319f9a69ab7ccb723016b6ae62c530233cb33c657439d0eded78"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "78ba435c179d319f9a69ab7ccb723016b6ae62c530233cb33c657439d0eded78"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0421d64f7b8d2a15bf72950f9f0d1ba9716c55a78f76a6d6395a19097ad116cf"
-    sha256 cellar: :any_skip_relocation, ventura:       "0421d64f7b8d2a15bf72950f9f0d1ba9716c55a78f76a6d6395a19097ad116cf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ce0b096f5f4c199d47a79a07af40958cc5df0b8f5f60e83a2830530c61487c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "530ff6c3733b5f2ef745c4aced487c64a5c86baecdd28bf70d520ef2e9d090bd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "098ce38c1855fffde3d35d6ac17f8f83ae154014725a8a6e88200c5eb19c7135"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "098ce38c1855fffde3d35d6ac17f8f83ae154014725a8a6e88200c5eb19c7135"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "098ce38c1855fffde3d35d6ac17f8f83ae154014725a8a6e88200c5eb19c7135"
+    sha256 cellar: :any_skip_relocation, sonoma:        "04c2a346275bf6ad2b999c55f3e47531dbaa5c63be2db2e30ea43210f72ab6da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a09ced40fcb5678474430ece4175e646fa6ef02e87d87d32b8fe6650a388dba0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6448928c03fe0e27d84213e2ac02508ffdf652df73c6eefcc008df82c641c5a0"
   end
 
   depends_on "go" => :build

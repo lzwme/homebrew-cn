@@ -13,6 +13,7 @@ class Polaris < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9358381eafd550f2d3f29868511f18a5231d70b165bb8c1ea5f388b3b8004df6"
     sha256 cellar: :any_skip_relocation, sonoma:        "00f99f2b9212b04c51f9d29d26c63207384cdd3c7be2486051d01190041d479c"
     sha256 cellar: :any_skip_relocation, ventura:       "b5ca614681dcff2e7ef60cc199f31492d842334dca5889f6774a6912b0a3bf5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e3799c42eb664462773c69d5d2a2482d9f2a91351bb648c50937465cccf4bb7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a240ef4b373288ec3c6d20561acd04e3a3c7aa6d64027f0850fa323535b03b1e"
   end
 

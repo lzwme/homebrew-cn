@@ -14,6 +14,7 @@ class Dish < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "19198cee1c3db608abf9fd1ac9481db5a4468f620a4cf7e74bb5034dafd90cca"
     sha256 cellar: :any_skip_relocation, sonoma:        "9bb4679a8537a8fe7f7c305273573950a648e2378ada306bdc9d5e0b86297948"
     sha256 cellar: :any_skip_relocation, ventura:       "9bb4679a8537a8fe7f7c305273573950a648e2378ada306bdc9d5e0b86297948"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5af1f11ccfbc8b4ec42a4537d8e40426b366bd04eaa40c470aaedd0910158466"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "edbcb986db8daaacaad96da7f82e9bdfd1efac3a7d50a4df42fbeaa9cc385042"
   end
 

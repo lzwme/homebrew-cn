@@ -11,6 +11,7 @@ class Subfinder < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e1ae86daad76d90829041cc7d826808def24abbbfe148dc5b0780df3a61e1b5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "844e40d933ab2a261aae0deec7e20b53e52e9ed735742cbb5586cdc5e2e99690"
     sha256 cellar: :any_skip_relocation, sonoma:        "7e2039c4056b2893d3de6557a113c33c53f5dd34e9e89e3a8a260d7337350589"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb6b080231f2ffcfb7b94d5f1b02a544af0f3c445cfab13fc526c7748bdaa43f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f431031aea8794558f1bd04e41e399cf017ad0eb180a4d20bab4fde6fddd6284"
   end
 

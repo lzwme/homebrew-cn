@@ -13,6 +13,7 @@ class Qshell < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d40bdded5fa597ae35519b8c1d130d9fdd2ba831b8b7607ca3c892a4d98df63a"
     sha256 cellar: :any_skip_relocation, sonoma:        "fb202dbbeefd821950a549a7bfa5f60e90ff33795752d426ed063f98fe2242a9"
     sha256 cellar: :any_skip_relocation, ventura:       "fb202dbbeefd821950a549a7bfa5f60e90ff33795752d426ed063f98fe2242a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2203a9d4c63cdc004b8928ea709877a8f1eae2756b0713eb2cfd9e0453de7ed"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7c7b373ea3d5ca50d4e48d844aebece5ea22a4d959a02833822e1a14915d17c"
   end
 

@@ -11,6 +11,7 @@ class Forgejo < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "90ebd8eedd67b3363bbc448aa3b84e647a4279bcabfd515d207f25d19cf2d6c2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c46246692d956048417ea4abee26db022e5e075d980b7d5f785c0ff267e701d4"
     sha256 cellar: :any_skip_relocation, sonoma:        "37a86215cde465009fa7d99a3aa638ecd3ff2ea4d29c248ead130a15524df065"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "42fe95be5f46e4b20e7d7bfe7f18b04040ad90f1dec9bc852fa70e0b61273247"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0228b39fb26c4cc7017bb5f1de36cba8d45d50d283c5d0b934993c5a8c6d186b"
   end
 

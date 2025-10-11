@@ -13,6 +13,7 @@ class Arelo < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ef538d5b66f8ac04b533621fbfb9fcedc6d5fd0c540b832eb10b4aed0c8098d4"
     sha256 cellar: :any_skip_relocation, sonoma:        "95009e62522504a0a89f00aab23bceab8f11cc8353d2f00f86d4577992987d5a"
     sha256 cellar: :any_skip_relocation, ventura:       "95009e62522504a0a89f00aab23bceab8f11cc8353d2f00f86d4577992987d5a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e7c2e5ad4645eaee7142fd2e0adb900780c2574430e9d1112f500031eaad92f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "11eb0e7d3d3e786a081dc9cbc26aad40497e20dddd4782504a5043fac54bf845"
   end
 

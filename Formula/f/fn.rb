@@ -13,6 +13,7 @@ class Fn < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e284eabf4799ad4175683065ccbd8856a01e7726950ffec1b3137080ead1edeb"
     sha256 cellar: :any_skip_relocation, sonoma:        "95800a2b61242016d9af1066ed1ce21e1dddca3fb37c7a897b847ce3620017c4"
     sha256 cellar: :any_skip_relocation, ventura:       "95800a2b61242016d9af1066ed1ce21e1dddca3fb37c7a897b847ce3620017c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "13088fbb0ef72a9c40136f6f67e0a3b397f5018aceb66f1975f2cb26f1e974cb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b9b603653b1e11e063c8657dde89cea7a0fc8fac2cea5014bc2c07a6aa05cd2"
   end
 

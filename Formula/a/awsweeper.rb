@@ -20,6 +20,7 @@ class Awsweeper < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "54bc928c085313ad7b2cd353bbf4b7e49df992527526348ee0eb01437f9ca87b"
     sha256 cellar: :any_skip_relocation, big_sur:        "1855fe15c7d95a0dddf4487692bf75d6dc234c3ecd25457dffaeab3a2312ece8"
     sha256 cellar: :any_skip_relocation, catalina:       "76710715dee67793f3715dc1a902b18f259b4ed4b42515fbf13b641339b1f899"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6509b1bdbe77f14394f17818f3956b0bde26493eb49f1ad0088f4873cec209d9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "81776b638e309f839a362f70ba7d0621c2ca9e80f6472f334c5472049cbc3374"
   end
 

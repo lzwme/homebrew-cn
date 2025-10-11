@@ -17,6 +17,7 @@ class Pgrouting < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a726b05d0bb7a9e9595b56ab81382ead5cdffe5e1b5a4c87f615f362f3420549"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7cbfdcd6a1ebbff590ba6d8891e6771d374cb648600cbe7ddf8c5c349956e309"
     sha256 cellar: :any_skip_relocation, sonoma:        "4c5e7218e0d1621047793dfb8085bfd2229c4d581f50a226434b6e51d1556874"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "edf26d8ee0b61b633e621b699eff3210a01d6809c6560836c3ddd23e586a1525"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "761046a6b81bde4e46bffc7c7e07f79a2a4167ee2162fcf150be89abb2aa8f0f"
   end
 

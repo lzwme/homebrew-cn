@@ -13,6 +13,7 @@ class Kbld < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e5914c94a7d11a87cb50da141d7913119bc5fbddce61e675f7cfe1f089f6b763"
     sha256 cellar: :any_skip_relocation, sonoma:        "e16f16bb84b8253db8d6880a2f7fd0b17453304854f5616eebc79b3309cee1a5"
     sha256 cellar: :any_skip_relocation, ventura:       "e16f16bb84b8253db8d6880a2f7fd0b17453304854f5616eebc79b3309cee1a5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8704e427596d7f345d96aafe92ad710253a6d0b71f2251aec0719f450854cd2a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0563374feb038a4750aabfa4bad29dd930832fec19cbfae4f9d0d8b12eb963f"
   end
 

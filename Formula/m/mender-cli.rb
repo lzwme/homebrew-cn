@@ -19,6 +19,7 @@ class MenderCli < Formula
     sha256 cellar: :any,                 arm64_ventura: "c76bb683aab7e297d331c780d81520a954fbcd3e331370290f0fd6ef8764738a"
     sha256 cellar: :any,                 sonoma:        "e804a707060777c0a9ebe51378368a7321097a3ca95171b5f0f06e16dfe33be8"
     sha256 cellar: :any,                 ventura:       "6c5da0527d144a99695189ff297fb626d8fe9c7115488dd68a0ccd65ead01fa9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea88f82aff0c7dbc2996841254048b10039a4cfd0122427b79d611013e038917"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "694e117ca7bade40819fb48b43080babbc1a439bcf111ae61310f710ee61fb5d"
   end
 

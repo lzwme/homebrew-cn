@@ -10,6 +10,7 @@ class Alda < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d4ca1302163e7a0a35afd5a98b86b8c4b0c9607df2e48c9dced2fccb399d682"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3058e5e68f295158c638f9fca77218495d762fb9fae51a62303a416f3b12051e"
     sha256 cellar: :any_skip_relocation, sonoma:        "1e9db76b22de729bfc98c8ccb60d91dec15f127bed3de0f6ba18cb6f46916a3f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b927ab16d9df3c039935db537543a66f1244d0380daf511f74b5f84f6758e2e9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5eaf0475905ef9d87f2ca57532377b23536b24f53746b92dca99a57a54075d7"
   end
 

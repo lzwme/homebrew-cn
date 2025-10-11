@@ -18,6 +18,7 @@ class Gitea < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f6244cc8b99e4101d956c3526615c03b790f8bf1842e031af0619394a71976d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e6b58d718b1a4191391a730e3a2405a265d182ba4547c8c8b64c06eece043121"
     sha256 cellar: :any_skip_relocation, sonoma:        "cee262534d40821523c48a1eefda249a8909d7fb8f2dc1ac21a570d061311ac8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8505d0fc1180fcc3096c913ead6d56006dd93a35dd18bdd2ef2fc6d58fd493ce"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb24292a80e99b8cc0628d1ac47b3af36f74eb7517f9a616f4a786feadc56cff"
   end
 

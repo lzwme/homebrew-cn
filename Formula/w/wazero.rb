@@ -17,6 +17,7 @@ class Wazero < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c6c3e483291dbea6101c7498979e8f1186e5a3eeb71c594b4230d65a59599f27"
     sha256 cellar: :any_skip_relocation, sonoma:        "0047c80bd8e21271e33bd11ccd8f245b5c5ea63aebf33cabcd32e1cc8757330b"
     sha256 cellar: :any_skip_relocation, ventura:       "0047c80bd8e21271e33bd11ccd8f245b5c5ea63aebf33cabcd32e1cc8757330b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "437258bd10dbff1b11593eeef4fbbd3621624a4881e49e79502428a4fdb74c1b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff1579937c7bc3110eb9c001456a6d16dce670eb805e1492546dfedf05127391"
   end
 

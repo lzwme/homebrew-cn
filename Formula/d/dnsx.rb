@@ -13,6 +13,7 @@ class Dnsx < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "417e501ba0b141aef16653a4ff5decdb000095528f6ece7992fc328c453e0a78"
     sha256 cellar: :any_skip_relocation, sonoma:        "e3ecccf054559abc48f1657926ab611a679487b8b61f9c9f07b89482ff43a560"
     sha256 cellar: :any_skip_relocation, ventura:       "7b7ac5247f6c526bffa28726658c3853e1fc17cc717e5d6785dd47f0ce3401ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "72e82600dba097d60f52a2c94cadb674adbf65fbdd07461cdcc5c2bbfc706ae4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "80a9d8baefa0608d03aa71b6eb94ab58fa6c2261495fcea61b376459d272dbec"
   end
 

@@ -14,6 +14,7 @@ class Revive < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "dd3bb4a10d8dcb63213bd79d4a320a8e57cfe4ef45281ea533a7b25b7f98d88f"
     sha256 cellar: :any_skip_relocation, sonoma:        "d8931abba6f356b772bfbc2901b6fb4a2798170e9d09c3fe457dcfa3062b0b70"
     sha256 cellar: :any_skip_relocation, ventura:       "d8931abba6f356b772bfbc2901b6fb4a2798170e9d09c3fe457dcfa3062b0b70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5792ba3c8f17970c9b59b0131776557f35e2685ed36f07b27111da91b636ac19"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7385ad9d8ca802d6ccafb1563132461295a9aaa0c2d0f6f5661bba419045b08"
   end
 

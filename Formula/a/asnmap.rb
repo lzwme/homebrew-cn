@@ -15,6 +15,7 @@ class Asnmap < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "f859f48ef91d69fe448c33284462f5802177d73619e39dfcc4894ad359212273"
     sha256 cellar: :any_skip_relocation, ventura:        "5b3c2c268b3a78ba6aa1459dda4798c7ecba402acacc5a1ab64d9b0d0e7e6736"
     sha256 cellar: :any_skip_relocation, monterey:       "01cff6b7dea711d6716674b008cc915b7d86c40134e8378e2d964f3421d6ee3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9028f3436f84bf3c7b7310c7cb0f7c1230601805db6b6a6152dd72fd4af5818f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5cc586b3ac93d7c6d675338f46ec034d1c0d20e3f46306bbd56c7f964b8f0fec"
   end
 

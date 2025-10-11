@@ -11,6 +11,7 @@ class SingBox < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "398ab2e22c5a80c6015c6205c021e0cf96a982a67d3fd154a52c5bc9d2f1db3f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3ffa899f35a0ffe6f1529187f4e48264637dfa576955ae1b5aa80ed87295062"
     sha256 cellar: :any_skip_relocation, sonoma:        "f9343a48e7348f203bac0aeaccaa8c489ad8e1c37bbc3b1d9a1985d0debe27a7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "594c471639c172ae43cdef3dc8cd8c1766596fdf99ed0458aeb2261a065b385e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "58fb9c2ac64d408c1d614978161f35cbc4a84a507aebcd230476b3e577ae67bc"
   end
 

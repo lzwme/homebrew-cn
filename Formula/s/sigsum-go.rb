@@ -12,6 +12,7 @@ class SigsumGo < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ab6ab52d604a1c0b8f27e0bad63db7c0793a4c3aa6dbec75e44cf3c378cc1fd2"
     sha256 cellar: :any_skip_relocation, sonoma:        "8cb45ba2074a1aeef473f1f9cb2dc05442eedcf79f5138fdcae5d7c0510ebb7b"
     sha256 cellar: :any_skip_relocation, ventura:       "8cb45ba2074a1aeef473f1f9cb2dc05442eedcf79f5138fdcae5d7c0510ebb7b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28791134e85532f0ab926e26ffbbadd97c8422ae0e7cd3d453c095287ec1098c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1b33b5897a959403b4fe1d9c4e4c9076ba45bda9eb59ffbe25284082a3fefa1"
   end
 

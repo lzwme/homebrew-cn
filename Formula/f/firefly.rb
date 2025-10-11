@@ -18,6 +18,7 @@ class Firefly < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c19b1162fc6fd74ae127d982ccfb5960882014297adda054e7feab87615b21e8"
     sha256 cellar: :any_skip_relocation, sonoma:        "5a6e76d023ecf1e34786eb215cb68442c6fe258b7680f0fbd511e21e1200a7dc"
     sha256 cellar: :any_skip_relocation, ventura:       "3308f1b297227d14bda4ca2677fc43d84d89b4209f608b2cfb284b978b345c5f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b4a6c6b4d81f767e2ec31f98c91dc6af6cc0559c131389ee11a2d2229167f87"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fa41229e683fd285dd17a4a1c6988e7e8980cdefcacc7ca65d5480203e2e77b"
   end
 

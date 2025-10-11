@@ -1,8 +1,8 @@
 class Superfile < Formula
   desc "Modern and pretty fancy file manager for the terminal"
   homepage "https://superfile.netlify.app/"
-  url "https://ghfast.top/https://github.com/yorukot/superfile/archive/refs/tags/v1.3.3.tar.gz"
-  sha256 "f50f4e9c56dff67d3682216950db164fc6caaa1418049c59b42bf5e65d31d04f"
+  url "https://ghfast.top/https://github.com/yorukot/superfile/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "aa3ad00b3b89023c413a47f4f518f419d37ed3646eac3e9cfaf53d31e5dee82e"
   license "MIT"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,13 +14,12 @@ class Superfile < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18cf8fddb3c3ce306f084073086275c96fa08378911f77a9fbfb916f69abee41"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2effb87953c80ab50e0ab351599c4d9c1f3c89300a1451f8113bb4152d025567"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b823bdd45f7c323030ce9c81fa718443128388012bcbe5f1ba63f7b4f874f6cf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "851d247dd23aa52231ea96cc9540811df8e410d205df8971f8cc4064a3f90ca4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9d0a12f90d183d1790101dd58b524550046b93a46e334d87a2dac2611447d4ab"
-    sha256 cellar: :any_skip_relocation, ventura:       "f0d0a9b2f4ea1cedc0a54e58eb5b09942d4ca5ad6bf56e7144afe08597791b76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49271ebc391f9d5ea927c28f45cebb7ab8378d31952fd6fd2743c04b935ef828"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a186421dbc71c7d1c870004a24af1a6a1adf70512167c79183dd64ee7162848"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20fd7376d766f55ef9551a46512ec96c5f6e44834b3684a8d2d0d3abc0095585"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c59f76e26b950001394334dfc4852f9c3f2471f31bf52962f8731aa5c302dd8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d427f3bee44d568f7ae0965851193bfeac24ee33490a932e4e3b47207a177a83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e60b1b946d7a173b62ee3e3e2cfd8d83893e12341215d2a9fe6ed41addb54a51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ac1d6b2eb709afd8ce241449f7bf1baf1d6e73ddfe2b60ab1e3192d5ee21a19"
   end
 
   depends_on "go" => :build

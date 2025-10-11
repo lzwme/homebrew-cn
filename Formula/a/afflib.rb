@@ -9,21 +9,20 @@ class Afflib < Formula
   ]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "196c9cf17edbb798e24c511ae565f3b74d201d653a48246d22533e9e55be6337"
-    sha256 cellar: :any,                 arm64_sequoia: "b421ba045fb02e767029266042a2ef5cb78d727e51aa7d4778f740702c1799dc"
-    sha256 cellar: :any,                 arm64_sonoma:  "ab72e2df66d54b60282c0cd72622d0b87a040c28cc57364066bc2983cf4f535c"
-    sha256 cellar: :any,                 arm64_ventura: "a1c49c3b08d528875759b515107b347e349ffc11da766c6e5f582c5bf84bee46"
-    sha256 cellar: :any,                 sonoma:        "81a1a9e643a0ea333a235e64a02afda8c2a3a9cbc15cdd9ce267c5751812623c"
-    sha256 cellar: :any,                 ventura:       "14cfff06d69dc7b89260cf2522d8b084894f0584b68470ba5754130a642f48e4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "87c55f7acca8cf3a536c46fef31a35f3fad0b8238dfe73dae42a0c2c243d03c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30c8666fe681513980e6e8633483f84bd03cdb9203ffb13a0d2f3eb68596c954"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "db3b39ef1335b3f8a8285a7aa4fdecd8f7dc720719f1a4900aeae3b32a80414f"
+    sha256 cellar: :any,                 arm64_sequoia: "efdb247c3914a7f915a611100161c86380bba976856078094f2b80acfa7d9c12"
+    sha256 cellar: :any,                 arm64_sonoma:  "488454a73b94dd3e858bd582ff0aa72ceae15fceb51f54192b96f142ff7af4ce"
+    sha256 cellar: :any,                 sonoma:        "9638dd07d37bfc2ecce341bf7360e7a0681e529e89f991d580b31c2e67abfbf0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "df198c6d6c4ca05dca7821410d5ee80ad7618b3d50988c1ad62603a8b9c604ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85e81fadf3c44eae7e1354f6239ec86e6c9ee341382f9a1b6ccd17c5ea095daa"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => [:build, :test] # for bindings, avoid runtime dependency due to `expat`
+  depends_on "python@3.14" => [:build, :test] # for bindings, avoid runtime dependency due to `expat`
   depends_on "openssl@3"
   depends_on "readline"
 
@@ -32,7 +31,7 @@ class Afflib < Formula
   uses_from_macos "zlib"
 
   def python3
-    which("python3.13")
+    which("python3.14")
   end
 
   def install

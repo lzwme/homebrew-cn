@@ -21,6 +21,7 @@ class Leaf < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "6f6e8b0d0775041da2e114e277d6f4790ae4e2b72b1ed409398bc39507b437f1"
     sha256 cellar: :any_skip_relocation, big_sur:        "395fbe11a4e482bf227e460f239ee008f2f6b50e9d071699c703c87d452b8ec0"
     sha256 cellar: :any_skip_relocation, catalina:       "995eb379b3e25e45108bd3c2166baef1fcd6f6ede329572133b8b203261ff9fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "08577fa38b639cca561b8f84c89d5ea82b8d2f780d07910dcfd008c358512217"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a84a9c0400bd35d736290ce97440f83c844e728b0b79ab95c2b9f88446b2b127"
   end
 

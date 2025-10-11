@@ -1,19 +1,18 @@
 class Blocky < Formula
   desc "Fast and lightweight DNS proxy as ad-blocker for local network"
   homepage "https://0xerr0r.github.io/blocky/"
-  url "https://ghfast.top/https://github.com/0xerr0r/blocky/archive/refs/tags/v0.26.2.tar.gz"
-  sha256 "b6aadd53253fe51d1bd41a1c19911091b944657fd034cd3dfad8c139ac5870b3"
+  url "https://ghfast.top/https://github.com/0xerr0r/blocky/archive/refs/tags/v0.27.0.tar.gz"
+  sha256 "c8d333ac554f69a90111dfedbf4d5abce7da97fc54221025a580a5e094ff5d84"
   license "Apache-2.0"
   head "https://github.com/0xerr0r/blocky.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f4aab5e59951bb9fcc8e38f3686e517b64de55df10ba1698be8fab6f1fd5ae8b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98de841022b35ce277c2b1193bb5989061cc65a4aee83ea5f87f5bd067640c03"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "883392b4a72e8036338af0ba00278c38dc81447f26c50b72039773e1993845f2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "31fd03e5e27134526e51d1a46e5a8c49b876a05b55fd5465cd692c26946a588f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "442b143495141b70f31ac4371fd6b14490417aeb6c216bc9ccc971a557e42ef6"
-    sha256 cellar: :any_skip_relocation, ventura:       "5460f7ce1fdb2f0c2a6b38df5d99078c725548ff2c6ca54bd39bb8da7bc5cf18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a2f4857199ef4cdbc53feee624a863b306c50b2fbf4f9d5b4d87f3f943943a1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3e2158aa0ede4a4f8accf5501347fe0298da6be1bfba2e4dec9a8936820682d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a02093808c6316efd0add6b097f4e12bbba162ebe751e40cdeb15a35f7c0f87f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "651b3eeaf12549aadbd7a7b0f76a84f60bfe9731614dd9c4f76853aa31c4ef27"
+    sha256 cellar: :any_skip_relocation, sonoma:        "22cf7781fdb8feb0e266a8e9d21823e7b3b467805b9dc655c8acf92ba11b97e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9071f5389b8b2190063ccbd151fdf3b5c9f92024195bffa02927e8b1777dfe70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad621901770ab7cb2e5f849895939f2d5603a67dd0b53f37559ec82260d469c3"
   end
 
   depends_on "go" => :build

@@ -18,6 +18,7 @@ class OktaAwsCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "391a7c50e9b1c816c5b65122d29d6aacaadd19d01520e2c134774ad0ae592648"
     sha256 cellar: :any_skip_relocation, sonoma:        "89981ade5d232179f4f30d9842286cbcec53b012db792edce069837d8496eaf0"
     sha256 cellar: :any_skip_relocation, ventura:       "89981ade5d232179f4f30d9842286cbcec53b012db792edce069837d8496eaf0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b664ffeb276c2f87bcc51836aa3f5eb962e25d9fa6047865843ef74dd6759d2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0722e0df4cd81b34ebe80025de7393276c27ad51961f0691c31838ae810651e4"
   end
 

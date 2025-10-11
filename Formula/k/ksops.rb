@@ -17,6 +17,7 @@ class Ksops < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "364262faf875534b99ccc31bd7927081d4fe7cd621a76a56c301a6ab67f1a469"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "364262faf875534b99ccc31bd7927081d4fe7cd621a76a56c301a6ab67f1a469"
     sha256 cellar: :any_skip_relocation, sonoma:        "52792d1cb8bd04bc47e4879360db2941e1baf75858a7c60a70cb9763ebeecfea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b126ac5047ce953ed01692c3e66a8e81a43ee92ec39c604f9bf0a65a7d7f931"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6db3f9f9fc371dfa67d4fac397b1534af08e6b23ee6009e0eaa9269c101ffd96"
   end
 

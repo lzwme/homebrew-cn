@@ -17,6 +17,7 @@ class AwsConsole < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5031fcf4faff28bc4346d2bc96a9e9a86700fa97400cad285a223e245c94a468"
     sha256 cellar: :any_skip_relocation, sonoma:        "04a3b06b6d14ed8c797ead0b5c54d88c272be22869fd7c1dd6186eae7d3853f2"
     sha256 cellar: :any_skip_relocation, ventura:       "04a3b06b6d14ed8c797ead0b5c54d88c272be22869fd7c1dd6186eae7d3853f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "59984e965ed6fc885be49ff46239b60597f3e862582934d3cda503d42641f962"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "75e873fb45886368b0cefb0ed08483b03148202a0a0ce934c7dc4754102e450e"
   end
 

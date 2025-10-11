@@ -19,6 +19,7 @@ class TkeySshAgent < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "d3f4b8eeaf67e42b56043d539607a54f5a28eb6ecea69c3d62744ac027c8865d"
     sha256 cellar: :any_skip_relocation, ventura:        "80ff5be57d0784f94c05403897524d25f26779a0474eb5699833134f575fa7d2"
     sha256 cellar: :any_skip_relocation, monterey:       "464090fb25f2826ce0495ebd2d17c39276726044e3d6bc87ea22ceac9d7db469"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "008ad6f1db8ea8650a084cd5d75312202ae93222ad7835eb5b33d893dbd8ec29"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e001c74cb92e401e908892f2baedade9fc815124f6ca28b45db0c06c3599172"
   end
 

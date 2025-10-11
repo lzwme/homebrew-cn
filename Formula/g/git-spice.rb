@@ -13,6 +13,7 @@ class GitSpice < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d154d5fbd5e21690e3d773087fa6de97ccba6fce53001259e0575d24aa100ab1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d154d5fbd5e21690e3d773087fa6de97ccba6fce53001259e0575d24aa100ab1"
     sha256 cellar: :any_skip_relocation, sonoma:        "cfd3a331af4eb9ea86d2afe054c8e924cdf9495a9117568d2378a4d0709d4d53"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b952a7c9159b2c2a90e408359d763300ee623320e97bd36759fc1f784b1b8764"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "16fe96df7ecf638abce20b7e95b91519329826eecb97b51540545a8c4d4955e2"
   end
 

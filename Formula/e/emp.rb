@@ -20,6 +20,7 @@ class Emp < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "feac9d1b6f8545cc0b5b40c8c461c592d7ed0ce293b936dc17164b9e5bc14d01"
     sha256 cellar: :any_skip_relocation, big_sur:        "fc362d246942141f91da093183c54a8ff679bf263f0a4326d5bed7f94cbc8f59"
     sha256 cellar: :any_skip_relocation, catalina:       "8c4bca6eca037bbef2b1a65d1974b43b36c81274e20597a76e87703ec477ee1a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c8806e9c22c0e67d032dc91eda01f8d7fbb48789cf01cf824fca5fccd031dfa3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb37de82430eafff68026692172d7015a2a9462fbd52898980c3306fe39d74dc"
   end
 

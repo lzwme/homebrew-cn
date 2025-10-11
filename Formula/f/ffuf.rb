@@ -17,6 +17,7 @@ class Ffuf < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "6d1e47780f04c79704306c5a600adf74442579aeba5c3c160c4b3acd30d22b42"
     sha256 cellar: :any_skip_relocation, monterey:       "f9cf641ec6f9183c259d6224bc198b84edaa956f81de8605e8d32661d79cbcdd"
     sha256 cellar: :any_skip_relocation, big_sur:        "e82ed38ee7f97904e45e8597ccff0b9766265c911f5d392dd172b8fafc1bf205"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ee13b18573768c12d953a558f62e90fc3aea9d0113fb44528931ccab1e479888"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1fdb75ae3154de6dd3b07350b7934568fbdb9230e563d3d8f79fc1643196be3a"
   end
 

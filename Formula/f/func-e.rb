@@ -13,6 +13,7 @@ class FuncE < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "586d5eb8312d8cbf3103f596e3b764a163e02c0296ce7002805280230508f4b7"
     sha256 cellar: :any_skip_relocation, sonoma:        "f3e77d491e192ec02e4a1c4c46e25939e9ae2e2828eaa9e65aadf32780d51899"
     sha256 cellar: :any_skip_relocation, ventura:       "f3e77d491e192ec02e4a1c4c46e25939e9ae2e2828eaa9e65aadf32780d51899"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8377c65a355441e29c8ba4573582b1e92be7c1895eb0dfce21035bfc6be4b492"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d63fc1d4e59e3ac36ff8b550827115444c2be29436397963cd322fff15150ff"
   end
 

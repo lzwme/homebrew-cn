@@ -13,6 +13,7 @@ class Frizbee < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f3cccb25cf914098b92d2d170231b8ea4ae65a7e2ab325aaa2c834e027c026f5"
     sha256 cellar: :any_skip_relocation, sonoma:        "8350ae10a806428da912b930be21e87f5476630bf10d2c0fe4d00bbb7f7406c8"
     sha256 cellar: :any_skip_relocation, ventura:       "8350ae10a806428da912b930be21e87f5476630bf10d2c0fe4d00bbb7f7406c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ab85f12053cfac1496011784823d6c9a026d7d2b75c3e06e8aabfce9e9fdb11"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "99ccd2e57c9257a04aea350b7f284d8788311f636c071ac3113571b538f5dae8"
   end
 

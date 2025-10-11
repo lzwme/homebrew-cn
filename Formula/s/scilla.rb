@@ -13,6 +13,7 @@ class Scilla < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5e579131e2c41b493e3df24190c43ba8ca77214825c5dc3dca653b6c9a795ec3"
     sha256 cellar: :any_skip_relocation, sonoma:        "3fbe9853916a2c00f9b47249d7a96ec65401d85363d148b1462ee85c7e445a8b"
     sha256 cellar: :any_skip_relocation, ventura:       "3fbe9853916a2c00f9b47249d7a96ec65401d85363d148b1462ee85c7e445a8b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b06c4575cabb0d84000fb7224481cd7cf0c4b2328ee12e59bb50ea5efd36870b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c97bdc1e96d5caca0a9b9e7dff9b28ec3d497d58d751d524bda25b89e9194d4a"
   end
 

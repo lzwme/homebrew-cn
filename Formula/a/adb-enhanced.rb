@@ -6,17 +6,18 @@ class AdbEnhanced < Formula
   url "https://files.pythonhosted.org/packages/b6/c9/11f95027ba0bf13938abe329809154e6342181380d3530f26018325b79e7/adb_enhanced-2.7.1.tar.gz"
   sha256 "2f09d6edc663fd7fe34b9cb65232e5b85238c7c53bd8284b826fe62fbb039ae1"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "081f2ef20fd6be3e1bb0d8840a3e57de4f76dacaef8b3c58a147d6b4a3220c63"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dba59fec41a9d6f7220a78fcbf1a2880697b8356e9b2a0c0cf871e5334c47417"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41baf08c68351b847a54f16537c057461c93f83984cf46568cb94229405463f2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "744e13c7a1058febdd876756cc7b59a036bfaf6bcbf4737fbbe1bf749408a4b3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d1b1d970eac95076769eedf0768d8c57e1d7cded746339c3e080286a47c236d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa25013ba903c83b84e26cfd7011d9121ff37dda6c5a69287401c1dece74ff04"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79e4ba0ad8eff1c52d4f630af4039231824eae00171c113072768f53e7f60482"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8deefa2050df50026ff63acc7cd8d3e6addb5bf9ac067b71b830ceac04eff624"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "646209bc549d1c4fde9b65f8559be8de43251297ebd904449cd4db47a849e353"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7038c821594759b71f5333f03752e7178700970629b04d97b0af8f039b4db89a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "53ece69f192371adbcd68db594082cca95b8a65945e45c5ef242924924a9fcc7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a12e4cc653134bef9073855829d87e9931d927325e413b0340a5a3d44ef4d96"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "docopt" do
     url "https://files.pythonhosted.org/packages/a2/55/8f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9/docopt-0.6.2.tar.gz"

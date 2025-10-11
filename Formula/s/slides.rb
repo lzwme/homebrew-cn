@@ -18,6 +18,7 @@ class Slides < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "3ffaaae9819ccd022e0e2a7091b09389ec26bdd1eac7e3ff9c97b494a887b9d6"
     sha256 cellar: :any_skip_relocation, big_sur:        "47e7d151b73e9132506410808df33d3ee8516d4739d53fda0d8cd759d7ede76f"
     sha256 cellar: :any_skip_relocation, catalina:       "142e0dba029f7c87501f7a0460cc9e909819ed60f81e3da4255000a553275346"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "160d6346dd5d2bdfb54046afe29bd912fb1a481f11f063ddbf6a01380af15b48"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4bcfad497512ded3dbe7ed81e2683a3c67f211c0a811c7265d171e79212eebfe"
   end
 

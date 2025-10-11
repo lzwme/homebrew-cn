@@ -11,6 +11,7 @@ class Tfcmt < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "63e4a7dc88d9cbe39de88bbf3ab86801a43867f95dc8b9353b099c1382c579a9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63e4a7dc88d9cbe39de88bbf3ab86801a43867f95dc8b9353b099c1382c579a9"
     sha256 cellar: :any_skip_relocation, sonoma:        "1d4a2653cc8b2ce7f03c5d283d41af04cdf9f9546530d3e19d59598c02827552"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a65399c5f4122b404d9dcbcff2007134b150d3b860653791c9bd69bcd6969d0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec72c09333e81c102ffb4d5f0eaed361f54a839a38f1caf2418a565f39787683"
   end
 

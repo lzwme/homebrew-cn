@@ -11,6 +11,7 @@ class DdnsGo < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "adb4143b84054aa5c884a7ebe70fca2dff2ccb039374abc07fdd94d4cfe9c339"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "adb4143b84054aa5c884a7ebe70fca2dff2ccb039374abc07fdd94d4cfe9c339"
     sha256 cellar: :any_skip_relocation, sonoma:        "a721d5f5bcf5c23565dad4bbff5902fcebe4341fc77419a3b54ccda89d216057"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e6c5ee816555e499c5c5ab4111e1b694957b3784bcfda7b087391e974e0be59"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c813db3090adfd2c72aa8b56bb099c5402fe7ac7d02742d43040465319686967"
   end
 

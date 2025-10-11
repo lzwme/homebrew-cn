@@ -62,7 +62,7 @@ index 6e8a56a..0e7f06b 100644
      }
 
  #ifdef XMLSEC_DL_LIBLTDL
-+    lt_dlsetsearchpath("HOMEBREW_PREFIX/lib");
++    lt_dlsetsearchpath("@@HOMEBREW_PREFIX@@/lib");
      lib->handle = lt_dlopenext((char*)lib->filename);
      if(lib->handle == NULL) {
          xmlSecError(XMLSEC_ERRORS_HERE,

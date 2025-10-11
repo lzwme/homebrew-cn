@@ -24,6 +24,7 @@ class Flagd < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1c1be9a397de335ee8a293474c20fa344001190b3a7e1adc762ae685ef0e5268"
     sha256 cellar: :any_skip_relocation, sonoma:        "7da35ae4bd545fa9b9ae0f547d6b8fc377a034cc973e638139c8ba696536cc41"
     sha256 cellar: :any_skip_relocation, ventura:       "0dec4c7fcf3fe7be3bb23167b153887b2e2dc7afb52a2bfca529e839923c890c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02a3f67aa69c850e9ff180db4170a5250894c1b7db22a9a9baaece04cfe08990"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "61f8c0876041ddd70834ea658876fa57becf3a5393253f76291e6259bc6a8c9f"
   end
 

@@ -13,6 +13,7 @@ class Mantra < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7b327b97eb7cd1bed9e3cbbb8523501568762c1ab23b3b6f96a1004574d250ea"
     sha256 cellar: :any_skip_relocation, sonoma:        "ad0307f0e619dcdeb51cf5ae48aa906e7cb1d97133beb064e506ebc47cf4aa0f"
     sha256 cellar: :any_skip_relocation, ventura:       "ad0307f0e619dcdeb51cf5ae48aa906e7cb1d97133beb064e506ebc47cf4aa0f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d80b6e994904283deff4964a708498d2123a11b703dd4b41ef419fe7dc884504"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c37cc06e99d712dc61fcc3b708660da350183a0e3bb83bf1273c2c822ca324a"
   end
 

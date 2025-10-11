@@ -20,6 +20,7 @@ class Naml < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "2171e40ba252fb5716f30dc8cf05d2a83ea88616c92ed5c2b9e45d48f6521061"
     sha256 cellar: :any_skip_relocation, big_sur:        "7e4965a3e7d56956ba85367b8bb70bf78e096dd3cf2f07648c2e0efcfff503aa"
     sha256 cellar: :any_skip_relocation, catalina:       "badeb70412ea16c9b1e98efb7889cb6145d0f44a090c0d688b5e331c913c2cf3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e89f839a62cd34498050873134d6459be85c2e0dea8bfff8362914dba5f89d91"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfb2de73a6ca925bdb4599464e3e7759bcb823900ee2fe5ba0d0c3e4bb27d0c3"
   end
 

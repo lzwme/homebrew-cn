@@ -19,6 +19,7 @@ class K3sup < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b1bcfb7804eb82de0455f8423e2d25449b2cbbddd4830df77835c9fbec8b2a10"
     sha256 cellar: :any_skip_relocation, sonoma:        "325439e20d09e3bd86c280f4a72e5c807847c30f9f2be4b9dcc7f2a13c37a522"
     sha256 cellar: :any_skip_relocation, ventura:       "325439e20d09e3bd86c280f4a72e5c807847c30f9f2be4b9dcc7f2a13c37a522"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ed69b9d8fa164779439bd15965236b85301c72abefc974539e575051624e38c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b80a466b7a3f7775225d578091d3d1e9c94439c96a4fa17b25dcbc5fb693a07c"
   end
 

@@ -22,6 +22,7 @@ class StorjUplink < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d488a60d415486b4c09b14e2b1ad37b2920480907feb90be22e9ab40b66d622"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d488a60d415486b4c09b14e2b1ad37b2920480907feb90be22e9ab40b66d622"
     sha256 cellar: :any_skip_relocation, sonoma:        "8a8a631e6ce21ebcd14a798346fd5b0571cee01ff501d46e3272122741b69892"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb33f3ca47fc00c256031e9b80f7fafaf138a3cbae0e14b50211349cc2d49264"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c317eb991b442812d6d3c6d21ca0bb6bd32726fc9fe02778405968995be0e6c"
   end
 

@@ -6,9 +6,11 @@ class Got < Formula
   sha256 "b7a60c6761f6dc2810f676606a2b32eb7631c17a96dcc74b8d99b67b91e89f43"
   license "ISC"
 
+  # Since GitHub runners are not able to access the homepage, our Linux build
+  # requires FreeBSD mirror to exist before we can bump the version.
   livecheck do
-    url "https://gameoftrees.org/releases/portable/"
-    regex(/href=.*?got-portable[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/refs/heads/main/devel/got/distinfo"
+    regex(/got-portable[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: "GitHub runners are not abile to access the homepage or livecheck URL"

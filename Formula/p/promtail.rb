@@ -1,8 +1,8 @@
 class Promtail < Formula
   desc "Log agent for Loki"
   homepage "https://grafana.com/loki"
-  url "https://ghfast.top/https://github.com/grafana/loki/archive/refs/tags/v3.5.5.tar.gz"
-  sha256 "caae437c5add69761a3772c51b4bd32a5d5f03440fdf16966ab27c7036eb2701"
+  url "https://ghfast.top/https://github.com/grafana/loki/archive/refs/tags/v3.5.6.tar.gz"
+  sha256 "4deb052c2bac06b1509298d232c83740e71040f4e6c6c823329d3c44fc5c8b64"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/loki.git", branch: "main"
 
@@ -11,13 +11,12 @@ class Promtail < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "67b7a91f9c94a4a95b5b7e57da831f7ca4f589247b3d134875466a89c7e05459"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9c8a32ab57f058a8650e096d11f23faed7eb1544469287002ac15a68e8682bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f9f5db0139a284319cd080c09411b1cdb0e6c153f7d6a44143a4c77e11bb542"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "accb8388d640cae6b73f6cc171cc27e8cd196cd1d2bfab77d4397862c3c1ae3e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ac0b03c86d1318d1ee3fe2ea89475a170d965f1a61a89dc6271351cc6f9f3dd7"
-    sha256 cellar: :any_skip_relocation, ventura:       "8098b0181225164a834762cf1a04adbb4e07f2bb7036fc8dc72d830d18ee2fc5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30314d7ca54292164f5b3127eda28b541f7fc01047626fbdb8f751b03c30268a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "844183c6ef870c199d974b86b9d50d369944eca71e9a9a47d8d9b6462da2dccb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c0a5150842878a25726d31da9a6eb68a9bb165989a3ffbabfb19330b70b84a1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "400c8b486eada5c0f6ef8aea6cf5347c958dac0da2ca79eedf25f9b57ef1e3de"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f5d8ef614fd77d159de1be892e687cfeaebfb3b955b39925500002f9bb54ba9e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cd9d1fa87fd7b036c0c151e82c301fe433b464811831bfd219f493593df7d6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21692e97d4d40d79b5eef4b64a6408d8369bab22ca0290e87a3d17169a97d629"
   end
 
   depends_on "go" => :build

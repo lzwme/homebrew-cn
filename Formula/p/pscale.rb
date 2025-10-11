@@ -11,6 +11,7 @@ class Pscale < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2817570ca174d232ae999303afa2177edd738a8bef1f72eb7819662963984de3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "64ad7b2680077aca993141b28e98976a19ad73079d9d8a15682f2c727778c5df"
     sha256 cellar: :any_skip_relocation, sonoma:        "08afedb6763408a2dfe40a391608653465fd6e1cb74280fd57e1232eec4503ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e80da1afa7866596b3f1921b5725d721e39fc46a50f0a6b0f9c182d5fca07717"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4eb53d460d0740147fe6fe3ed08ebbfc05a7fe37ae8b4573f857af58495165b"
   end
 

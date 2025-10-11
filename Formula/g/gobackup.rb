@@ -15,6 +15,7 @@ class Gobackup < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "bf6001bf9cb50409b7e53664aa70a2e50014c8d0b03683e339d26e8dc59c9052"
     sha256 cellar: :any_skip_relocation, sonoma:        "99608d3b6097ae8ffc97047150ae2fe29945be524fb7f02948c3852868d62b90"
     sha256 cellar: :any_skip_relocation, ventura:       "99608d3b6097ae8ffc97047150ae2fe29945be524fb7f02948c3852868d62b90"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7d45e00f52ef8867321f08902d453fb5fe12291a2f6b1794a5dfeab5a5a440d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "518c737e3d8244496cfdebe3f99aca70a89a9c23e678a809c02364abe79ef8b5"
   end
 

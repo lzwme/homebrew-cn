@@ -15,6 +15,7 @@ class Define < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "5a7046386262e0c8ead170a8ae73d20ee45eaaf0827fa6e5877d34a27dfa3f1c"
     sha256 cellar: :any_skip_relocation, ventura:        "52b5e52db7f2a1cd770fb042a28781496fc7c15bcd441fc9d2b0ec24ccfba3c6"
     sha256 cellar: :any_skip_relocation, monterey:       "f7e89c50d429ffd8a461b0124838d1425fa7b9e06f87889952ce942dc8fb3cb3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c9855c15c07669af36ff3940ef7df1b025483855f2b74f0d1c61833a399dd66a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5ed09144379f9439b144f3f4e93e394203057f479d9edb6309fadf11183d17c"
   end
 

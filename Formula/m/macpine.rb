@@ -27,6 +27,7 @@ class Macpine < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ca655058d4c7ac1134b31af7cf7f55c1ab3243bba8e4331686079d7537606e39"
     sha256 cellar: :any_skip_relocation, sonoma:        "63ab14a337da3dc747fca028dc88a7a930e6ac4aa7bf5d4a71b24f3617e76a87"
     sha256 cellar: :any_skip_relocation, ventura:       "c0a753a0718f5fd255dacba09ae810821863cd06d33c851e4b8b1fc7a382aacc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef586a541322f8fc606a9c1f774cb61bfa02b79de0d2e2bbcc0418616d575f0e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4f3a0acb00ad76dce2be91cb1a699f62f43df42ef18519d127d27fa2b7cd79b"
   end
 

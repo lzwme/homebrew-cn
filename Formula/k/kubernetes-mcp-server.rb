@@ -1,17 +1,18 @@
 class KubernetesMcpServer < Formula
   desc "MCP server for Kubernetes"
   homepage "https://github.com/containers/kubernetes-mcp-server"
-  url "https://ghfast.top/https://github.com/containers/kubernetes-mcp-server/archive/refs/tags/v0.0.52.tar.gz"
-  sha256 "4f0fe6d7c8923aa300e7410649065792f77fc245e1517e6042091d3e2abbbbf1"
+  url "https://ghfast.top/https://github.com/containers/kubernetes-mcp-server/archive/refs/tags/v0.0.53.tar.gz"
+  sha256 "5611239695cc3a25c24ececa7a7e36e5b60eba7b26fac7d15128cfe4a735a929"
   license "Apache-2.0"
   head "https://github.com/containers/kubernetes-mcp-server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "357345441ca3f6a235eb22877c0ba7dd9b18228d4ff48952c4d5ebab603f62ee"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "764ce7c4ac4e2853cdd2898efd2bd162f67d5299ea16e9cb4b525d3177687f28"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d77c669a2506b8dc7e2fd27107435b76f0dcdb909ee6998d096525c8df0c4e5c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f0af45313354f2c1ba241d523d976758481de8e117d0c829fce8826b60afdeba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd23d6dff91a62a0e4b99ce76b5bf1d0fc8a5b5b1995be6b5609f973da83fe31"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5a579445171f042ff81a3ef5b6dde79fdc7bdaef683699729631663e0108cf6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a775a6e6b37087a57ad076da8c88e81a8c9ccab1eca0d2929e85f3216fd6072"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22b45f2b5ed588e440decc4d12ac6421b779b6c47b736a0babb20596b043cb4d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fa3e914711f0839a03901168a162d127de4ec49639617beafd3c77a4fa9cc369"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "73c7c154d9c223d949dfd51a36638f5848269e34659d076b1b2265b879dcb195"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af9e199ba4dd7434962b378162d84c424cc69f3c1d63254f03aa21ebf996cab2"
   end
 
   depends_on "go" => :build

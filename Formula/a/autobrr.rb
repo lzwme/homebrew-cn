@@ -11,6 +11,7 @@ class Autobrr < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0aa2555e8976f72c7992fadea4b5453ce3eaba1b03fe9d479db0196a1ecce883"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ea434c97025e19d272b864104e06121664c75ecb0654a46bece5efb6e1d39e1"
     sha256 cellar: :any_skip_relocation, sonoma:        "fa2c7dd4f0dca8f72f603549771fe5f5b31e531f373eabf370c5f304a0e6982d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "945592c7e141f9af74053160900059a399d299331c267f05eb2c1b2bcb128d37"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "170679c1ba216a4528662dae201b4c0f23bec749fa80653f846df1dc3cf65884"
   end
 

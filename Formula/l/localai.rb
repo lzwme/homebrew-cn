@@ -11,6 +11,7 @@ class Localai < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc4be1b2451ea3b3de53386e19fa803319571e4a6939b50f40d8b5d57ae686ad"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8046d90b1333fa4e5bbc7e16df5573cac01fa2603738603e27d492a969ba0045"
     sha256 cellar: :any_skip_relocation, sonoma:        "ddd45fe6a64ca6667a5d23e8044dc66b14b2ba8703854c6a3522751e6af5a0a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "78eee2ddddc5614b7fc3ed3662ede0735e270391ac9a5d78e6fb8cd4eca92df3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad08ec6dbbb9459ccce726a07486018ddc796d9f86ca5002a286a5c289dd91e0"
   end
 

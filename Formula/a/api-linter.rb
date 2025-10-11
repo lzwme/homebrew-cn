@@ -13,6 +13,7 @@ class ApiLinter < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "12bd1b466c3175983210bd818455918ac11502b0abadca934d66be631b66b48e"
     sha256 cellar: :any_skip_relocation, sonoma:        "e527afef6842be4adb9872ea73752cfeffb8a305d87d57891928ea145ac7e7cf"
     sha256 cellar: :any_skip_relocation, ventura:       "e527afef6842be4adb9872ea73752cfeffb8a305d87d57891928ea145ac7e7cf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ea32adaf18cdd20b912fcd804238e24650105da414558e1cf7acc969d111a27"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b981041250fb8851c3befaab8b0eb08bfc24407ef7a3685ca812f296e06ee914"
   end
 

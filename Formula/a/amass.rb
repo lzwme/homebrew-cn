@@ -13,6 +13,7 @@ class Amass < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "91cdfd185942688add2d63aec30c4b7fe8828c2fbc8072ab18010aac7e18813e"
     sha256 cellar: :any_skip_relocation, sonoma:        "58786c0989372a5d55673fff78637bbe533a4efac67979e379e666e5b5a98f18"
     sha256 cellar: :any_skip_relocation, ventura:       "58786c0989372a5d55673fff78637bbe533a4efac67979e379e666e5b5a98f18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2d310e25c95898c0c70021e1cd9319d9b8e1cd1aad50d54f2f7f4991547ebb0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "af6fec44a8e37e2acf94f169a8f888551fcfdd33a1d22b4d742204fc02ac85e6"
   end
 

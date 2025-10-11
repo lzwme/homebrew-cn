@@ -13,6 +13,7 @@ class Cntb < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ef9426c451eb50163a08bb2f0275194db90e6a560582add3fd63f45b758c4429"
     sha256 cellar: :any_skip_relocation, sonoma:        "f47955a60a9a69949e5a441a87de1b0ecc29fbad2b5e32a3fba24a7751f08031"
     sha256 cellar: :any_skip_relocation, ventura:       "f47955a60a9a69949e5a441a87de1b0ecc29fbad2b5e32a3fba24a7751f08031"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "53157a86cb8a7c98d7400dbf0c87c726d85659ae2f1d446285c7c654e7e89d32"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a72c88c25cfe526dbcac849cb91034c978c6f207588098e78440410795469e5e"
   end
 

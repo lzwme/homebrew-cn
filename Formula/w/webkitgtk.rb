@@ -1,8 +1,8 @@
 class Webkitgtk < Formula
   desc "GTK interface to WebKit"
   homepage "https://webkitgtk.org"
-  url "https://webkitgtk.org/releases/webkitgtk-2.50.0.tar.xz"
-  sha256 "e564b8099f9a3ae32409539b290bbd2ad084e99b6d22d4aac5e51e4554df8bc2"
+  url "https://webkitgtk.org/releases/webkitgtk-2.50.1.tar.xz"
+  sha256 "33e912ee6e3cdb4b9803715f50686af85a60af47f1cf72a6acc6a2db1bb3d9fe"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,8 +11,8 @@ class Webkitgtk < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "d485f64079b66c0a7cccc601f33dd0dedafce7063089fc9834b2605ca11eaa67"
-    sha256 x86_64_linux: "46b748d1b85e9fb96292a66ae8c62210d83b9dd7c44d73a2391d919e86664c95"
+    sha256 arm64_linux:  "795d3ce1aa2a886eec47c9bc22a0dffdb780c6a41edeca1767b058a15f82fa6e"
+    sha256 x86_64_linux: "810651d36f48190e8110095e08860341885794b1994238700d51eb8a54bc0125"
   end
 
   depends_on "cmake" => :build

@@ -18,6 +18,7 @@ class VirustotalCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6435c7783f637607c200a9610fc0a2eca11237de71245989593fb4a8e82267f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6435c7783f637607c200a9610fc0a2eca11237de71245989593fb4a8e82267f"
     sha256 cellar: :any_skip_relocation, sonoma:        "d290dab039ad26bd14c6306c662b6fdc04b96831c5925b24677e476da6bfd1a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "14f862e8f87ce5a7262002c7429afb48765024dfc301372f2b2107e84917a1e6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "69e50be69ffd0c5503f14e514af40c632d1d69d7b3c9e959da5e9f6a2c44359b"
   end
 

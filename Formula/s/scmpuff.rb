@@ -13,6 +13,7 @@ class Scmpuff < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5cb1859e64a1c7d5ed9865ef08504813424a0d372720f165f22eb8cdcf9d28c0"
     sha256 cellar: :any_skip_relocation, sonoma:        "0cb10c56e24bf596383ce3c2221b14cd37f70d886563b873073a0b7e49300f97"
     sha256 cellar: :any_skip_relocation, ventura:       "0cb10c56e24bf596383ce3c2221b14cd37f70d886563b873073a0b7e49300f97"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b259cbbf0237281e162eb941a0457b9fa17cceb5bc8ab5d8459fce85fbe77d25"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "23567d3e31ff884250b533cbf175f24cdb22265d3b42bde108fe3722aa99a302"
   end
 

@@ -7,7 +7,8 @@ class GitExtras < Formula
   head "https://github.com/tj/git-extras.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ab7f49444bdd81c79d987f8e86668b225d6cc74f01b09ac91f7b35cde0a9bb98"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "68e0ef44b443f683c0f8d21f1a72162ff1063377582b60855a7fbace9ad3a5ab"
   end
 
   on_linux do
@@ -22,6 +23,7 @@ class GitExtras < Formula
 
   def install
     system "make", "PREFIX=#{prefix}", "COMPL_DIR=#{bash_completion}", "INSTALL_VIA=brew", "install"
+    fish_completion.install "etc/git-extras.fish"
     pkgshare.install "etc/git-extras-completion.zsh"
   end
 

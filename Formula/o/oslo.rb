@@ -13,6 +13,7 @@ class Oslo < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1dc252e4e8d683047409636266e7c11e62725cc9ac3a21c394c1a0f04b644654"
     sha256 cellar: :any_skip_relocation, sonoma:        "bd87cd615862dce34c7e3372d0b2496cb34a4813a352fa0e9c677eaaaa2cbf95"
     sha256 cellar: :any_skip_relocation, ventura:       "bd87cd615862dce34c7e3372d0b2496cb34a4813a352fa0e9c677eaaaa2cbf95"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0cf3deec2c0c32fc60d36210e844c477b0aca9a9fdbd518ae364fc2b929e37e2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ab3bfa70149e279e8a2902afe6ff19044c128da80df54b70fd711ed3ac445be"
   end
 

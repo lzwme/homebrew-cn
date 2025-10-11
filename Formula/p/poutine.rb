@@ -11,6 +11,7 @@ class Poutine < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "98b67b6119c44a0a10a02d08863ad9414e004d0fd5ec9b5e626a86e638e5314c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca7982d4e0c55d42a3eb57dbc0981c56dd4eaef65d3313d2a046e7737d22b88a"
     sha256 cellar: :any_skip_relocation, sonoma:        "d0192b1c5a49c4616ce3e39d840ce33d718ec3b599d2f0b0b2e999f51f8f2c8d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6acee743e14adfe26b54b7afa84a8185deebc3a78fce8daaab054a056deb100"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "93b7d16c363e9e0c968977e794ee90c9677cca5c1a511990859d5c85ee5106b2"
   end
 

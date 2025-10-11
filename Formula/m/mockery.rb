@@ -19,6 +19,7 @@ class Mockery < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "57c54a0c6363e248ef3273ec97a299d5b27bdac86cdbf915ca68768278695792"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57c54a0c6363e248ef3273ec97a299d5b27bdac86cdbf915ca68768278695792"
     sha256 cellar: :any_skip_relocation, sonoma:        "477dcffccdcced8adb32e866c5f0362cfa668e72387d99356e837eb42b5b1bb4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26079132d9231c5e85ed05da3b2b137b8617451f3a558b2f1e534cd09d1b7ac4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddd52e55c94618d2854a116437b8e348a44146d12155eb8f22e1887e725ee823"
   end
 

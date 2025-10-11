@@ -18,6 +18,7 @@ class Jaguar < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5fa4b1ef31678f6af8c4e8dd8823bb4028c9331d62f5fabd10ba36520ca90e17"
     sha256 cellar: :any_skip_relocation, sonoma:        "b390115074a3f098dfc5f00ebc449fec8e362b5c715bcb48a7e323263e83441a"
     sha256 cellar: :any_skip_relocation, ventura:       "b390115074a3f098dfc5f00ebc449fec8e362b5c715bcb48a7e323263e83441a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9406b423e5d3c25212c335dc119f48fa1d19246919ade8e12768adc0f685ad04"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "87c02b0da12e2f437abdd825ec3f06093959e5b22419bf216a2c070e33bc8df1"
   end
 

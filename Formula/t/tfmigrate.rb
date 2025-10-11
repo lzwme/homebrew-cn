@@ -13,6 +13,7 @@ class Tfmigrate < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ef126861e4028b2c48bccb7eb5f72116aebfee30818603940c3ef8fd0916236c"
     sha256 cellar: :any_skip_relocation, sonoma:        "301aa0212bce66744d414925cc73a8a97ea4905f59a030d357d05ea196ccccc2"
     sha256 cellar: :any_skip_relocation, ventura:       "301aa0212bce66744d414925cc73a8a97ea4905f59a030d357d05ea196ccccc2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0990baac6fff9aecc7b64730009c0588d922c2e3e9fbade883e88e56e6dec9a8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd6c636409a4b4dee3a857647e8ed769accc7a2848fe22a70954603052ab94cb"
   end
 

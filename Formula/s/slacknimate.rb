@@ -20,6 +20,7 @@ class Slacknimate < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "c52156ca14ce584ef223869a98553a7411098452ad8af38999ac90076d4a8895"
     sha256 cellar: :any_skip_relocation, big_sur:        "d8120fd0cedd32b5be89ff29f2eed08d060a810820cfc23f6f74e1c7201ff5ad"
     sha256 cellar: :any_skip_relocation, catalina:       "52bd6b01115cb8e84d3479ff6dea669a98b17b60cc6090b3384ac44fdcbdd93a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1c7190147489c731c8266d014b7919c8ef489cef1d86fa4a2ebf8206bd2ba7d0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "198c82b7bdd71a589e1e9e811f10a8f619bf0fe1de0accb3b1c8aaeb5621049b"
   end
 

@@ -18,6 +18,7 @@ class Htmltest < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "c3090218a14bc1b7d07c024d6170a9282870d3c43f5d2484dc9580659566e35d"
     sha256 cellar: :any_skip_relocation, big_sur:        "26151c135b1d83a1f14cc600f2e70e69e8d5c1f0cbe7fc0c27287799ef5a454b"
     sha256 cellar: :any_skip_relocation, catalina:       "5318d8a460992bebaf2fd7f0df04d984a9694b5abe86aaac97431359612d3bf5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c328aad766bee209105e10d41c309e325d47b699eda97323293544c466ed9a17"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "86bac90087af2f141f80bfdc6e3c77220e26ec9097831d030b5f1c4264d7ddbc"
   end
 

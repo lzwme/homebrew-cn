@@ -14,6 +14,7 @@ class Sidekick < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1f5e190b61d1c87bb59f25cf984f5fdad673a7406eff0ccb3454bd68d0ce11ee"
     sha256 cellar: :any_skip_relocation, sonoma:        "d75fd55ec57420f0f8d4d769c8595427e2f93a6f826bfdbf5d96a144a90a41b6"
     sha256 cellar: :any_skip_relocation, ventura:       "d75fd55ec57420f0f8d4d769c8595427e2f93a6f826bfdbf5d96a144a90a41b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ca0bf33c36730419c4452ffb246562b00d594ee7e9ff677cd600dc587cb6392"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c30327aaf4244b393adc45eb87de8b24654c4ae8c7b837304f759b40df7c5045"
   end
 

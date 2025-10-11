@@ -11,6 +11,7 @@ class Slackdump < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "277731e59a8ba000c231465e49c7f44bd6baa701763e8cfef685c3cb8375c937"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "277731e59a8ba000c231465e49c7f44bd6baa701763e8cfef685c3cb8375c937"
     sha256 cellar: :any_skip_relocation, sonoma:        "84ab27b41939188e70664625a1c92067d98a85042e0e898f367e774c937d097c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "95552d84ec2741b7477fe2322d1230ab3d9a0e037335515f74614c9181350eb7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c7676bbac9a435922e3e7c5e4512b8e3c7ed238da92c47a0fb3293ccc43c5ff"
   end
 

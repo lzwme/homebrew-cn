@@ -20,6 +20,7 @@ class Ehco < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "321d48abbed4fd8b95819fe99bb469fd6003ffd8f1b2d5604cbbc61235edbf86"
     sha256 cellar: :any_skip_relocation, ventura:        "702dad8245708582ae80e98b18e421cfabf625446a7367c0f91f59ce9fb4ea40"
     sha256 cellar: :any_skip_relocation, monterey:       "4f6e8ee224725f9d7d5fe78ebf9db83950b878a8432856846c54cbd639510678"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e5e7c812f56a609d3307077547bf17f03e60bd69fc0e04a9130794ad23720105"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6fc15a224177b50b7f245e3071f6d1116e77f4e9317424decedb3b38a4d346e6"
   end
 

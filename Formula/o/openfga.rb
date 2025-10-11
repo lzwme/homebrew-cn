@@ -11,6 +11,7 @@ class Openfga < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "da1efec8407bf629c04d16154819810dd68ab88a0fc3a6fca97859594efe3ed3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "efb22e406fa91a35051bd7037049361ec73f9f1b00cd2fcacb9c01887bcc7fcb"
     sha256 cellar: :any_skip_relocation, sonoma:        "b71e90ff565a321cb60c008e26378f7d341d4f71ea23460794b5cd67384fcfa5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3c8ab82751eae1a2a90b7e635aa524deaf764828c7fe68684b7e8e56d634c06"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "68580fdec1549e38133c056ae0e4480197db82d0266994631ee4ba478919805e"
   end
 

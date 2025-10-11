@@ -13,6 +13,7 @@ class Kuttl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a200c41971635ed7a3653587e733f9ba432eef06741e418c9ca76ff8f8164d54"
     sha256 cellar: :any_skip_relocation, sonoma:        "02527ab79b8757cbdef026cf010d835ab249bcc7eef92c23900490afa334521f"
     sha256 cellar: :any_skip_relocation, ventura:       "02527ab79b8757cbdef026cf010d835ab249bcc7eef92c23900490afa334521f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bdd0cd38ae1c915ac7a95972ee3a8df7d04fc953f7dc596b4ff7b80c9416b81d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bda78e3404303c5bfcdc8f9a7d0c9b39c1315be6bce046589de118146e587712"
   end
 

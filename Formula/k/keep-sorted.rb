@@ -14,6 +14,7 @@ class KeepSorted < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "6ef6b1fa86aa500fb3c582e3b233ff8db11c930f14ecc688100278717f8fe93b"
     sha256 cellar: :any_skip_relocation, sonoma:        "3bc8e596dc3996b5876eb66a9f238f63d7fcbac4b957f6e31ef68ef4863264a6"
     sha256 cellar: :any_skip_relocation, ventura:       "3bc8e596dc3996b5876eb66a9f238f63d7fcbac4b957f6e31ef68ef4863264a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1dbc70735188f2f75638db1114da4d9426eb2cd2daad450f69fe1401345d8ff5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e89740e08e8b84defbdc44674ae60df767fb0dc1cc3ba9e63037caa2c40e018"
   end
 

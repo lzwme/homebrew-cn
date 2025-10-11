@@ -16,6 +16,7 @@ class Cloudquery < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ef9799d0c5333ea1f6de7bbee16a4d5ebd60ad3a663665c8e3b47dd3b19ebaa"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ef9799d0c5333ea1f6de7bbee16a4d5ebd60ad3a663665c8e3b47dd3b19ebaa"
     sha256 cellar: :any_skip_relocation, sonoma:        "ced1c09ec3d0b85ba0435bdaf70d2ca0406e0ce351aade05b627134a2440f48a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2950eeb10e94dc62f1bd6c0cf8ac5a03909f222275eb6f51f15faa437a81ea2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b733ba14a5ef9f133c3eb15aab0f4bb304f81d61b24c5727db5ce0de292c8cc3"
   end
 

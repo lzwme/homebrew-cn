@@ -13,6 +13,7 @@ class FuegoFirestore < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f86b1ba65cdafa226e82a3fc623eccbab6147244389fb05be05bb5c732439f27"
     sha256 cellar: :any_skip_relocation, sonoma:        "f9d3be6dd8c27d825b5a01a1e2ccce37308f4d77d82df895d36b39e614df16e9"
     sha256 cellar: :any_skip_relocation, ventura:       "f9d3be6dd8c27d825b5a01a1e2ccce37308f4d77d82df895d36b39e614df16e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60075175046d1005b6dd44b7b752c5363fb35802b4bc9a6a91cf3c45eb5221cf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f7ddfee2e393fd998a16ebf40f660dff9acef4c88b3b55179de33fb23328685"
   end
 

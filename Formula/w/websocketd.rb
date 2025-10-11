@@ -19,6 +19,7 @@ class Websocketd < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "5a769dfeb3f3062af01fb6ba0703e1d416dc648736e20103c1e0a31489796ddf"
     sha256 cellar: :any_skip_relocation, big_sur:        "cbdc36c8c64cb2b0f1f149242a4c82e5d3eebff521e45bdfc88aa7dced9d2440"
     sha256 cellar: :any_skip_relocation, catalina:       "944c9e728f5f1a7ba098207a0acf50b1e19209010c9d87c8cdd18758ec9c71b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "adb13dc1219a6097b858acc72220eeba2500ef475b975062538cc2034d7ef49a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "74fdd936d2632aaf2e484ef2f796d8d2f4f281f643ab23c414708363116ca9b8"
   end
 

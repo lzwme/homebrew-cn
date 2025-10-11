@@ -18,6 +18,7 @@ class Pop < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "4e17cddc694a0d7da02829d8dd7039dad792b31801468cd13beac526a0855d2b"
     sha256 cellar: :any_skip_relocation, monterey:       "4e17cddc694a0d7da02829d8dd7039dad792b31801468cd13beac526a0855d2b"
     sha256 cellar: :any_skip_relocation, big_sur:        "4e17cddc694a0d7da02829d8dd7039dad792b31801468cd13beac526a0855d2b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "cbff57ed23b8f4906e232d52655f96377bf72b0fee5c38ebad138c2764c977ba"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0be47be0676bdfcf2a246fc6295eb3b454328e35e827455f0c921ab1a723d1be"
   end
 

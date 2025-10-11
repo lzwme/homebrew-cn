@@ -15,6 +15,7 @@ class Velero < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e9d332e6a7f871d9662c57d48d7248e498c358ab44347541ac8fc7844a22c5d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f44c30f23d9531e9b2d2cf93afe7b767e3792ba96ebbd8d366bc61b4411a4757"
     sha256 cellar: :any_skip_relocation, sonoma:        "7bac20aec80c6b644a065993f18addca5ce3b8a666327ee4cfceb547ea5dadb9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1876b1caf821b0006677e5229edc16f5256f9c169229f9a94f74a1cefb9930e0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "992408148702639e9c6be5c4cb2d64a5ac4928cf7d0fb9d801b974dd7fc8e5f2"
   end
 

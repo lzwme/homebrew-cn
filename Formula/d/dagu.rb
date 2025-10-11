@@ -11,6 +11,7 @@ class Dagu < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "71156519f69ca7bb6dbf4322a0d2908939bf626d8dfc51e6c6edbe154079bb44"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3822973d189aaace5a33622a8dd8e00333317f1cded1fca048627d0a4c94622"
     sha256 cellar: :any_skip_relocation, sonoma:        "1dad03673330157f0553d2d9eed6133106c842c8ee69a5573d0033ece7053439"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b7ded102ae0f7655378a9cdbf0d6e8e302786faf5892f9d862ede01ac92a41e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcece8182364588b2c87591483e0262956d5d86fffb876d1723b864e2ed30f12"
   end
 

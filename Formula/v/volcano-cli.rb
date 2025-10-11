@@ -11,6 +11,7 @@ class VolcanoCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa4b9505f24d04917a6f03276e47411dcd4560629b739f13b201e668028d7452"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6b2364981682f4eabcda333112dae9209295536994d7223119629e6b09bbaa9"
     sha256 cellar: :any_skip_relocation, sonoma:        "0d67f7ed570525b1eaad996edbde306095182fa3c85916c3605c6791456cac3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "15f70bf49e9dc50d3a1aa0b03fc41f5f37a4c52cef60452501e5560a6b1632f5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2d068ecba92dbdfeccc8baeadaa348e8543a24d3d34874b67051a7f01e57da4"
   end
 

@@ -13,6 +13,7 @@ class Kor < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "71172adb348b393c81847f370a7bc4264d7ffd45152e410af4b4926ca87030b3"
     sha256 cellar: :any_skip_relocation, sonoma:        "6ba6e593f502112ecb199b22fda4f3212f39f1dd951e66887c470c1e6683896a"
     sha256 cellar: :any_skip_relocation, ventura:       "75ffcdce1455f0486de45104dd949d939d1e8940cd1d913d3dd48d718799578c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34823c6cd26e666c2e5b434b17e7110d2968d7933767c3cc03d9663613894d3d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "22e135043f8070c37c0e3e258edb40770e4f31aae74b6582f3cef7b5052fa3ca"
   end
 

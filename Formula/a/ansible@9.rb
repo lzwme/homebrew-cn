@@ -6,17 +6,15 @@ class AnsibleAT9 < Formula
   url "https://files.pythonhosted.org/packages/d1/63/a136e8c5ff5768c26edb2098dca116bd9cf430d8921fbbc4e199dca51655/ansible-9.13.0.tar.gz"
   sha256 "b389a97d1e85c2b2ad6ace9e94f410111f69cc5aa3845c930c873b34c0ddd6e2"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5407f32109c3ec6f67d5e36ee2214320c9e9b462938f1ffc3e45879af63c2880"
-    sha256 cellar: :any,                 arm64_sequoia: "3724755cf085d1f0fb7e6a453c1668494bfa9da897aad0551680645710466134"
-    sha256 cellar: :any,                 arm64_sonoma:  "74b38329ac2ebdd120da51b69815917b398b0326818ba6481dd606fbad36abf5"
-    sha256 cellar: :any,                 arm64_ventura: "8ef65f7ef64a597753ab4de4736550cb8a1d7e2e12f85ecc42b480fe992cc6c2"
-    sha256 cellar: :any,                 sonoma:        "c277ef8bc1ff8493b332b2fef7e037143c88a49372e21af2cf65f953c37547cd"
-    sha256 cellar: :any,                 ventura:       "e8c6415ccb0ef9b178dec3502488b107263e6fac8a88e2ce940917505f14d132"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3047313d205928e372824d83c4ec2a887b9d3352219898a0b73893c8356d605a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17778565c41b2703bce8cc8683fe92b5ce3d4a5c8407656bd7dbb229eb26447d"
+    sha256 cellar: :any,                 arm64_tahoe:   "bef02debe99b603e969d9295e9df9db8335d2b6438fcb8f0f1718532adcf71ce"
+    sha256 cellar: :any,                 arm64_sequoia: "613a787c1d1000ec1727ea94f775a74f48560a263b51b760cf2c8284447952d4"
+    sha256 cellar: :any,                 arm64_sonoma:  "dde826a84e33e36ddc25e59ed4725e988b65a87b6f688d1cce8f139cf7252095"
+    sha256 cellar: :any,                 sonoma:        "03f6d5da0eb012033bfe80a994353bb6be16dd366c9afc56ac2f3820c7ba4c26"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e03f4fda36d7fcfda73af945e8e076e4e18a18bca1fcf4f553090267201d9c65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3dff077fceb48206ebcf513b5deebd6199d107bc1ed354ef71c2cb44e250c75"
   end
 
   keg_only :versioned_formula
@@ -28,10 +26,10 @@ class AnsibleAT9 < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "certifi"
-  depends_on "cryptography"
   depends_on "libsodium" # for pynacl
   depends_on "libssh"
   depends_on "libyaml"
+  depends_on "openssl@3"
   depends_on "python@3.12" # must be 3.10-3.12
 
   uses_from_macos "krb5"
@@ -92,6 +90,11 @@ class AnsibleAT9 < Formula
     sha256 "1a661caa9175d26759571b2e19580f9d6393969e5dfca11fdb1f947a23e640d4"
   end
 
+  resource "cffi" do
+    url "https://files.pythonhosted.org/packages/eb/56/b1ba7935a17738ae8453301356628e8147c79dbb825bcbc73dc7401f9846/cffi-2.0.0.tar.gz"
+    sha256 "44d1b5909021139fe36001ae048dbdde8214afa20200eda0f64c068cac5d5529"
+  end
+
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
     sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
@@ -105,6 +108,11 @@ class AnsibleAT9 < Formula
   resource "cmd2" do
     url "https://files.pythonhosted.org/packages/a2/6a/bbd2cb85f5da7c6a53fea13ac1b15c4b1b31bfc5cbada31a0ee6be92e2e8/cmd2-2.6.1.tar.gz"
     sha256 "650a5892bf29b233d3d6775b5e3cc813648cff0d79134f707981f66baaed9f42"
+  end
+
+  resource "cryptography" do
+    url "https://files.pythonhosted.org/packages/4a/9b/e301418629f7bfdf72db9e80ad6ed9d1b83c487c471803eaa6464c511a01/cryptography-46.0.2.tar.gz"
+    sha256 "21b6fc8c71a3f9a604f028a329e5560009cc4a3a828bfea5fcba8eb7647d88fe"
   end
 
   resource "debtcollector" do
@@ -350,6 +358,11 @@ class AnsibleAT9 < Formula
   resource "pyasn1-modules" do
     url "https://files.pythonhosted.org/packages/e9/e6/78ebbb10a8c8e4b61a59249394a4a594c1a7af95593dc933a349c8d00964/pyasn1_modules-0.4.2.tar.gz"
     sha256 "677091de870a80aae844b1ca6134f54652fa2c8c5a52aa396440ac3106e941e6"
+  end
+
+  resource "pycparser" do
+    url "https://files.pythonhosted.org/packages/fe/cf/d2d3b9f5699fb1e4615c8e32ff220203e43b248e1dfcc6736ad9057731ca/pycparser-2.23.tar.gz"
+    sha256 "78816d4f24add8f10a06d6f05b4d424ad9e96cfebf68a4ddc99c65c0720d00c2"
   end
 
   resource "pynacl" do

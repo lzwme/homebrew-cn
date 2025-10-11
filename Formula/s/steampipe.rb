@@ -16,6 +16,7 @@ class Steampipe < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b8d9a24fab3e7346f12760aac96076a3f26c31526c52655acdee83cfbf68c49"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5573f6292e2f31587b9d0fadc1f98c7938d0a6c946fd61ceea288d99dd7d940b"
     sha256 cellar: :any_skip_relocation, sonoma:        "354c8d4e33e722329e4f7d074239625321c5ed0eec63b385446e7b4a301df5c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "96b213693cda61f9b281fc2ce065824c440b86c69434d8a08ecb8cc58285f079"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "187d776e167e1a751540c8ab60951b260276e7333c0870a9854b3c7ac9e52660"
   end
 

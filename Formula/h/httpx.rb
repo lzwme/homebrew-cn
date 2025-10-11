@@ -13,6 +13,7 @@ class Httpx < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "4757e8714859c18224b00fa223b0362cff43251f68ac69c4417ee102ff8a5a02"
     sha256 cellar: :any_skip_relocation, sonoma:        "f479dec45d1193d11c410fe7b3c9258e35d584ca16d6a78f20db3dabd49a99c9"
     sha256 cellar: :any_skip_relocation, ventura:       "22fbedf864cf9563c3b1d07ed3168dd84c5872ef9a08109661cb720aa431b180"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe9700a7e2df7bc60fd078f3464992d251a79d323715554f213d46044e23f098"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a1c2d362d76c5d35361ac41fac8bbcefa94dfef18d158dbabd0c1ea484a3281"
   end
 

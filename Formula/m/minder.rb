@@ -13,6 +13,7 @@ class Minder < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e9b66d403b70193a8e73f9f3a8cbcc5160a5755bcb70219c900ba8041b5f4663"
     sha256 cellar: :any_skip_relocation, sonoma:        "2e94fb55acf160374b5baf590692101fb83f00194a475209526e21ba353229f9"
     sha256 cellar: :any_skip_relocation, ventura:       "78da3fdc36850ed1241c0de248ab03448bdd8c991ca912369efb7a3d986f7730"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f11f787199af422a9d43816410fbf5cf484924d7227f88529ef2c25850d634be"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c876088f3f75bf0efd88000d368907856441f34fa588af161fa87e0885ba6903"
   end
 

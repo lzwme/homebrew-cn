@@ -14,6 +14,7 @@ class LicenseEye < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "967c6117d179e994b401c6e503c477dec9b3b783a27cbcc30e69f44b7f91fbc2"
     sha256 cellar: :any_skip_relocation, sonoma:        "1b919d6615ed5fa1169c192a1142a853d643b93a954cd9491a199775e8127994"
     sha256 cellar: :any_skip_relocation, ventura:       "1b919d6615ed5fa1169c192a1142a853d643b93a954cd9491a199775e8127994"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3135ba72eb8b736cd38acd27f1c3bf780016ebb77f95e759d6fd3c2bdee86447"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cdd6daeda967110aec797de72b28d868a1b8620755dfb1cdab2031a78817c8e"
   end
 

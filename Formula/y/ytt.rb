@@ -13,6 +13,7 @@ class Ytt < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "df0049384c4b323958071878cb575eb05b8f4ed31d318bc3e2d721752bd3b2e9"
     sha256 cellar: :any_skip_relocation, sonoma:        "551e538f70010d174fe740c7fb952a2a4c5e65c842b7cbb8ff35bfa05124de43"
     sha256 cellar: :any_skip_relocation, ventura:       "551e538f70010d174fe740c7fb952a2a4c5e65c842b7cbb8ff35bfa05124de43"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0ef1bf1260bd779d5f9bf9583cccdcaa354fd0f38e87f2442e93cfdd72579a8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5387c59c39c72bdd4425f8d0d54b338b5c0b4f4f5fa642f618a824285a490faa"
   end
 

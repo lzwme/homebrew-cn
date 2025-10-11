@@ -12,6 +12,7 @@ class Qrkey < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "bb0fc3c4115102c6544d9f753c2e16dba1533314099ff50385b7442689b378a4"
     sha256 cellar: :any_skip_relocation, sonoma:        "7d9d690e34e9d67f33134a59820b1c3d7936cf0c8b33e0f0297c58b0c7a25520"
     sha256 cellar: :any_skip_relocation, ventura:       "7d9d690e34e9d67f33134a59820b1c3d7936cf0c8b33e0f0297c58b0c7a25520"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa36d7f2c17914c7c27abb0854d381500385630ca14a0167df6042f7ddae198d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d151a47fbbc11d37a7e9613ecd6d9e0427ac8a54134cdd74e18d32f69b2dba9e"
   end
 

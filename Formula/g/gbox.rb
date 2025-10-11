@@ -10,6 +10,7 @@ class Gbox < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "210adedf864c938080296ea8b2371f3e0e42b0a6141be475c5926e2676d42c7c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d620be4ec6611f426524b032d21df31e7f91fcfced1f87f8ea2f471066c11c29"
     sha256 cellar: :any_skip_relocation, sonoma:        "2f8038dab9612607593132203de716f4b21b0d52ab6136725c2eb22801bc3248"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "88709e9dd7d0cbae03d0fd01a2f4d46ac8ddb9157d2c1cde8a07ad902bd1cf98"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "65c2f9c6c1ab3506e88df951ba0c5195967a7077b6ba809514cbd89e0f719d52"
   end
 

@@ -21,6 +21,7 @@ class SlsaVerifier < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "bcf61ec25f8d27700570040901164ae290b194cd0da63fa2e6468d45964d2774"
     sha256 cellar: :any_skip_relocation, sonoma:        "61d1c99d4454cf0ef9ea24751e1eae302d84f59f4c094f326b0d2a6e2e225c2e"
     sha256 cellar: :any_skip_relocation, ventura:       "8f635db74b4536deb743eda7c09aa6cf9982efdae9cc4faa48d8ddd5f6c59d99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "837a199f4e09837c9153a0bb98598cab4b79b0774221308b7e9f0399997b6727"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c83f420ac94e1c93f8ab68a0f831011f204bbe1b12774304dc01cca516bb1a1c"
   end
 

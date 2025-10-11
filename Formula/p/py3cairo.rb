@@ -4,23 +4,22 @@ class Py3cairo < Formula
   url "https://ghfast.top/https://github.com/pygobject/pycairo/releases/download/v1.28.0/pycairo-1.28.0.tar.gz"
   sha256 "26ec5c6126781eb167089a123919f87baa2740da2cca9098be8b3a6b91cc5fbc"
   license any_of: ["LGPL-2.1-only", "MPL-1.1"]
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a2b3ce626f7dd242e92a36183f2425175a2e2c83b876fec8958d733634c6ef1e"
-    sha256 cellar: :any, arm64_sequoia: "a3215f667bbecd5f84bd93fe29455894e9b051c088f69199224477652882f412"
-    sha256 cellar: :any, arm64_sonoma:  "98f74d9de2ff0b9da6a0f3752725925cd946dc007620beca4b8670933fdcccb3"
-    sha256 cellar: :any, arm64_ventura: "923bd6b36c154365fedc3d8cbc3f89f367749ea3c95852533db49d8d80907ee7"
-    sha256 cellar: :any, sonoma:        "5f0839825ff8083f998042f7bbd37c368e75afa03d011d2c3d6df14978493459"
-    sha256 cellar: :any, ventura:       "3ffe657d6f48d2ff7fcec7fb705de41c1c3eb4b64cdf539936fd4bd323f80233"
-    sha256               arm64_linux:   "e7b6f3f1a4edcd963b16352778e82f8cd65f31c47b130ecdf5301ae8a77b3510"
-    sha256               x86_64_linux:  "087eee4fa2c8b32998d1a57b09fd8b5256fe6b9deec5cef3c4593e715b10f988"
+    sha256 cellar: :any, arm64_tahoe:   "2c77e291f2095afb6e2d2904b2c64e43840de2d8d3b4819bddf52d136f1dadee"
+    sha256 cellar: :any, arm64_sequoia: "b77c713e6aa751c3506635993c0b64efcd61ef54eb73d25ec589293ae8ce4c4f"
+    sha256 cellar: :any, arm64_sonoma:  "10aa68f1f543afce5df0864afa7fed6e231afe0d3d39054e3e8bce0cddb3a59d"
+    sha256 cellar: :any, sonoma:        "f188206fc23ce8575ade7b42ff4590f42f3f7b04183cf5c8c1fbc140556ffb1a"
+    sha256               arm64_linux:   "83cfdf6e8e3a7a06d39961044cdc71e830fc218d5ac50dfc84354cc1184a861d"
+    sha256               x86_64_linux:  "f3ad42b50dc9862d076c5aeb4b660b52d85b8c8b62ae8ac219b20d5450ff47ce"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "cairo"
 
   def pythons

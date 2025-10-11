@@ -10,6 +10,7 @@ class Smug < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d405f3b7962c9b2d99292824dc71b75baa8bc9b873b34fbb08af1627176166c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d405f3b7962c9b2d99292824dc71b75baa8bc9b873b34fbb08af1627176166c"
     sha256 cellar: :any_skip_relocation, sonoma:        "f7bdf2548074e3929280340b6972e8593a1dac468ac94de1a63c22e943bc2369"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c41e2eaeb5c63ff0b393c89fafcd4181b6a3f8019202180a3e4a8585e194356e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3b895d062cacb011b964b3e17592bd72a42a15425f2776c0bd5362f10e4e26f"
   end
 

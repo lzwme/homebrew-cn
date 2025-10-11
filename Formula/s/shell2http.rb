@@ -15,6 +15,7 @@ class Shell2http < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "22c0f297ed31f96042fbd408d4fc53deb7e4a257fc9e00d5c24892419e10eb0f"
     sha256 cellar: :any_skip_relocation, ventura:        "b2664cf38188a0fab8f22804a6b82e9058e88b75d7ce2b4226c912885bfdf435"
     sha256 cellar: :any_skip_relocation, monterey:       "9ec711d670e18409cff61b8d40c06031c1990f13ef845d41fbedcdb22619a219"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "32a34cd43f452b6b9f97694d7de6374f86e0cc729e1eeaabbd503677a05a4065"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2924860684928b8e326d3298c72c447dbae5f7a7ab259e71bcf45e7906568ef4"
   end
 

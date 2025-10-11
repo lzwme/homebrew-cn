@@ -16,6 +16,7 @@ class AwsVault < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d6281397042319e866c692429bf6baad35319b280083818067af4623805f7a9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9db820c806e633fd4b251eebb77f89ee7afbe28a00f366d401913fa00726dd4d"
     sha256 cellar: :any_skip_relocation, sonoma:        "95f45e585595720f3ce762899acc96b01efad1b4617fed626bb385e9c8f938bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3aed462964b5c18144746feee774e68ffde6b121215cad97ef7ff36b624ac0c9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f85d528e5c5c368eb5cb60e0837fe3be91b119096142a561592bf1bc54ef83f"
   end
 

@@ -17,6 +17,7 @@ class Gebug < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "c8480f6e58a565ae8fe846128699ffd3a8a3990277468ff89a3a0f9098c5dea4"
     sha256 cellar: :any_skip_relocation, monterey:       "c8480f6e58a565ae8fe846128699ffd3a8a3990277468ff89a3a0f9098c5dea4"
     sha256 cellar: :any_skip_relocation, big_sur:        "c8480f6e58a565ae8fe846128699ffd3a8a3990277468ff89a3a0f9098c5dea4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "36f607990fbc237fe11cb9c3879ed288ad7c3b1dc780ff20689e3ad6560abfe0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b1810e5b52e8f5f5c9829025e39111c452b3a474fdb171d535d74d9a8492d68"
   end
 

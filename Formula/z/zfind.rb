@@ -13,6 +13,7 @@ class Zfind < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "42a14d6e1ee0eb40c0309c893b877c1e7440796eaf7209db195c576362f096e3"
     sha256 cellar: :any_skip_relocation, sonoma:        "f91bac0d8be49b7de9c64e288c9e8ce3430202d7fa6f258255fa97242dc52786"
     sha256 cellar: :any_skip_relocation, ventura:       "f91bac0d8be49b7de9c64e288c9e8ce3430202d7fa6f258255fa97242dc52786"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac0501815e21e830c29c41970de83f98ae716601343d65e94a61aa56e4963d0f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f07a3ba2af17209191e615c27b235be99fc748fba24f932b15d6005b588a6fb"
   end
 

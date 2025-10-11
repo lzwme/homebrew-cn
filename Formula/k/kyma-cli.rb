@@ -1,8 +1,8 @@
 class KymaCli < Formula
   desc "Kyma command-line interface"
   homepage "https://kyma-project.io"
-  url "https://ghfast.top/https://github.com/kyma-project/cli/archive/refs/tags/3.1.2.tar.gz"
-  sha256 "9e0735b535c6ec12804fd4290bf7652eb557ea2361deddee90715277672b3da5"
+  url "https://ghfast.top/https://github.com/kyma-project/cli/archive/refs/tags/3.2.0.tar.gz"
+  sha256 "9f58ca3c898e450aee12211cc47ee9bc1223e3fc1591dc9b467e1406b28dc639"
   license "Apache-2.0"
   head "https://github.com/kyma-project/cli.git", branch: "main"
 
@@ -15,11 +15,12 @@ class KymaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52bcf8f26b70dae8c8a79372591e010a60ca9cfb76fd1fed6d2e03b80e7c1d7e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66e7455231f20bb7c4427aef543c2589891c7d71ef5b381b16004f837e6beebb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9cb63990434cd132c9fa61314e1b24ded995543674c320a8bf425c514433fee4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2504c4dd3d65e66bcb085ba0995fdc31d9762d520a16977ba51cdda04d67b6e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7714e075856c8e2e67ef0bed627559e60b55952f70d7c3ab9397dff987bfd418"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f209e2271622adf9239a1fc7648d2ef0562f03e4c278bf602422860801bb16c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5714006d511f9702519770c3a34c1f981983dc352cba5eb777d38c528205a730"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7cae4cee86f16af89e8b4f5d7b4f35bfc94f58da7e4a29839cd399649bb2fb09"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dead6a1dcae6de0d7e730afbca1d3dfd45c9e3567d6902d495ce04498dad1adc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "291fb973bca696f80ebedb1325499d8255125dea3872b8da0cbcdb7c92c4aa2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac83d0fc00d3e3477eb8c977ae06edbd3e9e1cbae36e2478b409de5fa53ffd06"
   end
 
   depends_on "go" => :build

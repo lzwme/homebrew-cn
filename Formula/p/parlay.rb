@@ -13,6 +13,7 @@ class Parlay < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9068e1250bb228d85ba7aded90418b57b27dab63a8d68cedf760d281b2f4c31d"
     sha256 cellar: :any_skip_relocation, sonoma:        "ae13e29edb7eb752c6588b2fec0a0fb3881d56e1f44b2d711d71923d44641cf3"
     sha256 cellar: :any_skip_relocation, ventura:       "ae13e29edb7eb752c6588b2fec0a0fb3881d56e1f44b2d711d71923d44641cf3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a61328e36579dbc0e2128d755821cf20f0a36f28e7ec065d969c4794c4430cbf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0bd178923029b114ce65a76c9880b2c7c137fb8e2a125f103f61f9a8b280d45"
   end
 

@@ -18,6 +18,7 @@ class Azurehound < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "64d6761c3e56228bdf0e0e075362d759c49bab0929f0416fd2911d5520912656"
     sha256 cellar: :any_skip_relocation, sonoma:        "caea53081e59a5406172f0fe5640f09b0304270ed0ed5013415eb376c1c8c7fb"
     sha256 cellar: :any_skip_relocation, ventura:       "caea53081e59a5406172f0fe5640f09b0304270ed0ed5013415eb376c1c8c7fb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8df9b9dc0c4687801696e16ea66b83cad728ded1dd38cfaa6b66aa502ea49b2f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6aab27387ad1dc6345cb5c9d6e33b0857868b359f11cdc4aa3fc39dfe07dee7"
   end
 

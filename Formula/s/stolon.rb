@@ -20,6 +20,7 @@ class Stolon < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "6e82da7f0cd74193592f16415ba7386c7483bf9006814177df8086cc96e7b57a"
     sha256 cellar: :any_skip_relocation, big_sur:        "2955ce82d16c3601d928d8f7125bda27dde894fd9e8b8c8e2025a178c38cb640"
     sha256 cellar: :any_skip_relocation, catalina:       "6f8469a79e442788d8a8c774c7097ee45d1deeebb17968c79e4efbd37965e69f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "67caae9099da0e3af8994b0eac951f6148883b71cfdee78cd15a911bcf4b7d15"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "30ca55abf39725e1760d6610e38ea05f089fd382724da55c170f2cf914ee1050"
   end
 

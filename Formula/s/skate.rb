@@ -13,6 +13,7 @@ class Skate < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "51dffe30dad6853d764248411bd1b373e56795410d7480ffcee819a67cf5b641"
     sha256 cellar: :any_skip_relocation, sonoma:        "873150989401c84050ba2180e0edc835fd0daf05481d723626457ee6a7ff40cb"
     sha256 cellar: :any_skip_relocation, ventura:       "873150989401c84050ba2180e0edc835fd0daf05481d723626457ee6a7ff40cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d14356cf95cc1e3ccfbe9fc80ea1982f615afee372c2392149ee64ef5fe6fb8c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "698c00996b38d34b04b8adadba65ffc338f77ac2f58889a31721f3b54d2e4fff"
   end
 

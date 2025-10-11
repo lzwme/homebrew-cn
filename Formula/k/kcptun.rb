@@ -22,6 +22,7 @@ class Kcptun < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "fc7c784444bff8abe83d771a21dde16578a772ca63ce6109e00a8d7ada826d73"
     sha256 cellar: :any_skip_relocation, sonoma:        "cd3036565c3c658303b0cc8ff1088179ece5b1473501642ecb6e7702f3fdb39a"
     sha256 cellar: :any_skip_relocation, ventura:       "cd3036565c3c658303b0cc8ff1088179ece5b1473501642ecb6e7702f3fdb39a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb2aa6247e5e9df07a8ee80e303028587e2fed172ef447fa215eba4002e1ed35"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9208ce6607fbff620e403c5f143e4c67eede8b7ec75ed4a0e36961837e3b9f4"
   end
 

@@ -11,6 +11,7 @@ class Opa < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e63351802e01337694543828b639509ccac743335a0a6cd8a65d15c854d00ab"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d8f1c939e3608afab2c646121f1ebef323ea974d556e01dbc51a34a6bcdc36c"
     sha256 cellar: :any_skip_relocation, sonoma:        "cbb766e7b563e151d94a99958c4ca87b077c9f46f3150a49e98c83959671e416"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba255b6d14260275fa2cd52fd328f830f2489ab286f9f2b4679191ee319f2981"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b2843f1af717a9d79685a4737b179218de841a94b7fd542975c32fc8c61c7f1"
   end
 

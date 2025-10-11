@@ -11,6 +11,7 @@ class Fabio < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "dfa157e62af4a72a0566e6e5e84fd573fea4172f54a55aed94103d2a9e7ff82b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9007492471b2bdaf6cda1d301ae731e3886a5ef470236368b28b08a18abb1ee6"
     sha256 cellar: :any_skip_relocation, sonoma:        "edecd321f12a9488083d023d3f481d886dd3dd8772a00cd8af2bbf0c814be320"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc50b22172ee4d3a3e67834c8a3711f956dbe6e24fcc5ebbb75ca2e91ab3317a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f40302d0cdfd4d4061bd3f33cf755126dfb8451a7b78ed49efc6719ffb72ea3"
   end
 

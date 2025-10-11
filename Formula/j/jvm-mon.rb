@@ -20,6 +20,7 @@ class JvmMon < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "45ed63d60bbb978e2a1916675d38f7240ce6ea0d69b3510b05b9d3bc1e86e6a5"
     sha256 cellar: :any_skip_relocation, sonoma:        "1041bf832360e6d61b4a229e64d3db2ea3e210ce52c5de8285c3a53cd3783a9c"
     sha256 cellar: :any_skip_relocation, ventura:       "e5f8b80e136462bc508d6b3089048ecbeb0ef70ff38d9fabd20f23234a6b471a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f6fe2a99d138c77ad21c6774fac197ea841265eccb240cdc14dd25df6a740eb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "102d1f23f51c01a4c4959f508ad1d6c6b012ddfbaac2f142710fd04b2bfbb371"
   end
 

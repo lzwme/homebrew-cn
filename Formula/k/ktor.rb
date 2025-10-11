@@ -14,6 +14,7 @@ class Ktor < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "67e92b3134de86c1f73851c12756d0b60b8d395d62eb599cc0688e2539d92ce4"
     sha256 cellar: :any_skip_relocation, sonoma:        "b348f62c90905932ac7a0758eddb06ba18f61415034790c0d1cfb867e3512d5e"
     sha256 cellar: :any_skip_relocation, ventura:       "40853271a7712e7914374bbe56cbf5eba3f14586b5568991a78bff8d46283643"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e58b14f78b06fc59b575bbb1c624bba3ce15888a2c01073b358c31f47dc1920"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3d5add07175e7adaab1079cd90d759fedd35ab162f57268c511a23d388164c1"
   end
 

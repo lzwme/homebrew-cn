@@ -11,6 +11,7 @@ class Forcecli < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8ee6b9e0f480090edf979f120a68ddd86733ea75bc98b75b2c699e2806cb685"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8ee6b9e0f480090edf979f120a68ddd86733ea75bc98b75b2c699e2806cb685"
     sha256 cellar: :any_skip_relocation, sonoma:        "13ab3d6014bcc554d550913e48606ac443a8d155654813f90d71dbf0638c1728"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4afec4135313c188622817c4b0d9bb928c97b0f911f48c97a66fcba687b6200"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a48e330ec1d914c862707874fa66457ea82029876c75826dab81faca0d1c5c15"
   end
 

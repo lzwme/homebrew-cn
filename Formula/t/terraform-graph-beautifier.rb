@@ -17,6 +17,7 @@ class TerraformGraphBeautifier < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "967666b68ef9c9fe345f6d8386a43394f334f42a7b99dc6210b1daf40ddfbbbf"
     sha256 cellar: :any_skip_relocation, ventura:        "168a8f71bd4555a7ccb1adae9040df668957d296ea1c48d08229833445fcf2f8"
     sha256 cellar: :any_skip_relocation, monterey:       "ab5d8a20c580aa7d871511a0f2594d980931eec5c2be920bf25f0c2a452900f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "fc3a3550aa27a8ef0d719a9e9e256fdf9995034b3e67de8ece8c1f0812d3bc5a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfe06d0bcfb50ee315da696362d5a635846067f2601f2669b6b1274b8d8cff48"
   end
 

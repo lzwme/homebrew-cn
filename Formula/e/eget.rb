@@ -15,6 +15,7 @@ class Eget < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "eea1964d92f3d5fa7873604b3e19b0c01795e7c8540b842baef8c10ad5ebe20f"
     sha256 cellar: :any_skip_relocation, ventura:        "59ffb0c7a037e94eece3ef3a5b2c74d49644adea9eaaafeb1907fa7885ba671c"
     sha256 cellar: :any_skip_relocation, monterey:       "41b43a146547e10c0b6ad089441689d5eddf809e368e10bc79fb732146dbbd7c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5f163bd876079a21f57ff6dcc1c5ba91a5421d64f5c217eb16417690c7452652"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5a911326f33d7cd8d070d16b7f3bbd5de0327fb2919594efc8d218bb6f8fb6b"
   end
 

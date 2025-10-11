@@ -13,6 +13,7 @@ class Wails < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f6f98b0a5d0c15753a4410eb2580d4b663b8c91862d873af5789ccc0c9296be9"
     sha256 cellar: :any_skip_relocation, sonoma:        "e0cca6feb3ce022ff0875c747eb3440925aa672dda5b791bf7515e161f6354fc"
     sha256 cellar: :any_skip_relocation, ventura:       "e0cca6feb3ce022ff0875c747eb3440925aa672dda5b791bf7515e161f6354fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "887c9deaecbf4f4864a42d516644477c8b52ddbc84a570334d19aa893b094aba"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "199bb21c9f41e82c78e3b5c50c9ebe71bec297615d91deb6c323bfc8c8e47510"
   end
 

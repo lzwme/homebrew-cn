@@ -13,6 +13,7 @@ class Diffoci < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "94baef5d5a95a35f21622becbf6e538c1690c2266477ed37e240e4b4200e9253"
     sha256 cellar: :any_skip_relocation, sonoma:        "ea0566a0a0f19b46e4cfd41f8ec6f86480c841e0295bc25ad90604c0846c352b"
     sha256 cellar: :any_skip_relocation, ventura:       "b9e81c35c29ae56494fdfab84567ab17b9e0fd993de2e9c4d91a77fd63e0d3fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "445039f35a22af5204e8576d3c59e102067a80b53e1fa4a6b86585fce4f847ce"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2aad3bcf108466ce3eee0b7b541c09d591ccde343be82dfeff606af7d62dd2b"
   end
 

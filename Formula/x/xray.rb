@@ -18,6 +18,7 @@ class Xray < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ae072697abe3cbfe40ebfe6c0b766d2d5bb8b789389a88b678a3ce9d05a6ed63"
     sha256 cellar: :any_skip_relocation, sonoma:        "3ede56078ad6f89ce8536e38e12ec6729aa6d750624585b8788fbb34d15f1bb8"
     sha256 cellar: :any_skip_relocation, ventura:       "3ede56078ad6f89ce8536e38e12ec6729aa6d750624585b8788fbb34d15f1bb8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "959bdae370fc4a75c74b26321549bd64515fa67bfa30f08da327bef608b263c3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad89d5433512f712d169d08bde964a220e0c1ea827f98afa9fb96a91d45d6912"
   end
 

@@ -19,6 +19,7 @@ class Serve < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "205cfdc9a632e8c90d415bea94ab53e9a029afffb7d870fac8018bb937e43b98"
     sha256 cellar: :any_skip_relocation, monterey:       "205cfdc9a632e8c90d415bea94ab53e9a029afffb7d870fac8018bb937e43b98"
     sha256 cellar: :any_skip_relocation, big_sur:        "205cfdc9a632e8c90d415bea94ab53e9a029afffb7d870fac8018bb937e43b98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "380da6ada7f3ea7498102ad7ffcc2345be1d340bd1434cc3529f7efb264db128"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "40325f69042fb626e7100fb49097752721fa1cc376bcf3cf2f53f5e49b215efc"
   end
 

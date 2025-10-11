@@ -13,6 +13,7 @@ class Mods < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "679478d8a2130c41981b35df3755dc526696b284912031d86dc09f75db788fee"
     sha256 cellar: :any_skip_relocation, sonoma:        "75cacca99fb5c70b31d0b59fb23ba8572fa49d8f995cd3d666c3fdd37ae4d0fd"
     sha256 cellar: :any_skip_relocation, ventura:       "75cacca99fb5c70b31d0b59fb23ba8572fa49d8f995cd3d666c3fdd37ae4d0fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e5dba892702bd9cb1c41639be0e9e382c229604653aeb34d86bf6f81f7973d4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e5dd968e08dfe368e4f6e098671a827afe2904be869cea0499d9ec25e562cde"
   end
 

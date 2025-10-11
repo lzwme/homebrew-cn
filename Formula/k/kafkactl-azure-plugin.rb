@@ -12,6 +12,7 @@ class KafkactlAzurePlugin < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1a3e592a07ba5b304675f393e1cf4301c3665565790e19d0541825b5058e2471"
     sha256 cellar: :any_skip_relocation, sonoma:        "98e2a44851ac0c34061a2844fed3263583df18e271511b490c461181caa18fc2"
     sha256 cellar: :any_skip_relocation, ventura:       "98e2a44851ac0c34061a2844fed3263583df18e271511b490c461181caa18fc2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc616e8c44205c34039c53e1c8df5a974a6cbd498216324dfb2ecd36462e9297"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "52e1c850b386e6b1c77983111c37c70ac59011e661eb559eed90b7989f48d00f"
   end
 

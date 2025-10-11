@@ -17,6 +17,7 @@ class Authz0 < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "463ee39916da6ebe2df30fbf14805ea507a3c9be4881c5be47c8f538c34553d4"
     sha256 cellar: :any_skip_relocation, ventura:        "97e19733f1cab9bece649e12ef4ea454f05cb9596755d90901c74e7ebedcc56f"
     sha256 cellar: :any_skip_relocation, monterey:       "a3342b3b6def76d71b61f2a3c16cb9ce3ffed34787effd744d29de1a1277ebd1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "98a9bcfcd1fd8a2b5572144d3beb098e37b61fef453fdc06426a7fe4a29c5331"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c7d5364e993143029a3c66471ee76f88ed3f5e20e0094ba6aa497830b195fc6"
   end
 

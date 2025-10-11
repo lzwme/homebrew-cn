@@ -16,6 +16,7 @@ class Maxima < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3639a5695b25ec783eeecfe3b004d0bbcb80123a71e36264fefd4e8c121fdd55"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3e7eb978a518cc0f4c8ae10cbdc9d264fdc9cb5073943ec6ea6b8ee299561ce"
     sha256 cellar: :any_skip_relocation, sonoma:        "1bc578cc410ab3d33d100a3bef596ffda4d9e699573c3ac616f4a9a363dc21bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d93951fb50dcca5cce6ded3174be6f37935d15cdbabac6f2316434eeaaa5478"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3a8dfb9f06a4bcc9582782bdfead1ecaf9125ea14c01c6bf42674523645f11b"
   end
 

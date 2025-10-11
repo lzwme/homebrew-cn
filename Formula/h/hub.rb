@@ -20,6 +20,7 @@ class Hub < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "d4c647211cc8a8e9aa9bedfaa4cb079a3a5fafea3f8378c7eaf5c50e2503cd0e"
     sha256 cellar: :any_skip_relocation, big_sur:        "7c480f3de5f449a741f88718194c129d597f0fe0db8b2130c1ccf4daa9a8dfca"
     sha256 cellar: :any_skip_relocation, catalina:       "fdf05855839a9d7ec6e7bee6796e3cb5fc473500cffc002366cf98c09a805b69"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d46ee6b0e23f3b74b8f51d6651995bc8ebf8bfaeebcd407a1201723b17c8c681"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "213636e856404251ffd7897357ab91cc9519d3852e4b28cbb43575988d9bbc1b"
   end
 

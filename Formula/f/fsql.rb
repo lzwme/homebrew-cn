@@ -15,6 +15,7 @@ class Fsql < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "7e28627b044505df74811b404a61d49864b653834b4dc66be7a9a81abbaae3dd"
     sha256 cellar: :any_skip_relocation, ventura:        "7e28627b044505df74811b404a61d49864b653834b4dc66be7a9a81abbaae3dd"
     sha256 cellar: :any_skip_relocation, monterey:       "7e28627b044505df74811b404a61d49864b653834b4dc66be7a9a81abbaae3dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "bc30d152243d3fc0bc9f7e3bc02c71646dbc6b43c770d5b0d8d6bd4f6a463e36"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2eb74fbbc15dd391cebadef0d2b51591dd76b8ff2892b4c93e6754efa1e6526d"
   end
 

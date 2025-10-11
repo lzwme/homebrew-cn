@@ -11,6 +11,7 @@ class Vultr < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "879612d01a2224cfdeeaddd7d8afa85ce071742e8af0deabe8afd9bcd851e71c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "879612d01a2224cfdeeaddd7d8afa85ce071742e8af0deabe8afd9bcd851e71c"
     sha256 cellar: :any_skip_relocation, sonoma:        "7ff5eb9f6fde77ef29c3e113e1dcda6c0142c41b730a0163028ecf6faaf4bd75"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d91debae77ec8d0930597124fdfa1614736f797a88ae1e1df032a2121bee49c1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "26d0f20f4eab68a6dd7c023ff3cabd474ac26d25422f98614611c5277ed825f8"
   end
 

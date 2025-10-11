@@ -13,6 +13,7 @@ class Falco < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2121dc08b2cc2e6c793eba15ee0a2f5c47738ffe5868a46f81375a8cd51ceff4"
     sha256 cellar: :any_skip_relocation, sonoma:        "36e7f914791e3c758460a2f4c42460205e0b139c66923deade23828e04a4da11"
     sha256 cellar: :any_skip_relocation, ventura:       "36e7f914791e3c758460a2f4c42460205e0b139c66923deade23828e04a4da11"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "70a9c03da84efad552e916ba1ee82c3e55ba233f0346395f29b20f74258963f3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e23061f82fc96e1c79362b91044a743e4f965fe51d52ef8ff82610a9631c1864"
   end
 

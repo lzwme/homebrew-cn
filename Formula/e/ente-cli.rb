@@ -20,6 +20,7 @@ class EnteCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2efd5893df437f97c91a84d69d855629921325f6f397c84be29d072723019d91"
     sha256 cellar: :any_skip_relocation, sonoma:        "9fa97a816bcae266536982077798393b61a08859cfb455fee6a822640f8837ee"
     sha256 cellar: :any_skip_relocation, ventura:       "9fa97a816bcae266536982077798393b61a08859cfb455fee6a822640f8837ee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6698caaf273ea5141fec0ad91777d7e85f73f640b186c3332cea1a9513433fc2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fad672f160147e34db13a96d0867946b3cd5ac076d295eef48b4b3b485d8ace"
   end
 

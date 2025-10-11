@@ -20,6 +20,7 @@ class Minica < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "e65d5ccc5f4703009f8b2d0a460dc883711c71a4814c06921c2ea98dfd797f8a"
     sha256 cellar: :any_skip_relocation, ventura:        "93d40ba3ada1bee8b74febdd40b3bf37a4bdd91a24d4a62f342314a9d85cb736"
     sha256 cellar: :any_skip_relocation, monterey:       "6769f28dbd2b0295f87d007007b9cb61d5715e93a9b13f4b25de9466083fdc23"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7bb26e4da3fb0a4744f488416535864c2ef4b8ce4622f95cf591b76a18e2e03b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea318ca6a9231fd445ec38d2905f6b5de30ce697dcedeb9d8ae5127f9634500f"
   end
 

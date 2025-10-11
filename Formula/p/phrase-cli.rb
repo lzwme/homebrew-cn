@@ -12,6 +12,7 @@ class PhraseCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "285216ae8608cfde790a744c7f5c11f8a640bcefc928901d21d2b0a789a4957c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "285216ae8608cfde790a744c7f5c11f8a640bcefc928901d21d2b0a789a4957c"
     sha256 cellar: :any_skip_relocation, sonoma:        "186516c9a3310bedf7d964d4c6b915c85c9f9833151257f4dada9b2a82aa6f1b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a5f595aced006c5c368236e377e59edbdbc98e2085809743d8d7bb31cba4f48"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3a217ae87231cf87d719bd2162538f521234f580cb6c1bb279526ee572edbc8"
   end
 

@@ -10,6 +10,7 @@ class Mailpit < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "72a6d8367cd30539bf84f4420f1f2d38d49f1214cbbf30727fe5b8bad668f4d3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39ad747f01ead05fe899071a84db996e4ecb38291ebeef2ab8b64142ea04e28b"
     sha256 cellar: :any_skip_relocation, sonoma:        "0255cca36d0337f81ed133a102e567085ae48e35121f2095f33dd904afce577f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2375ea8f19071af8ec8e53b5223126f11e0fcc521550c6e6a4859b424a1eb96c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "734eeefa4e47d680be55a80b1ab58399b17997ab5eb20c48e43067450ba5fc06"
   end
 

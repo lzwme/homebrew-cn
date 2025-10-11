@@ -13,6 +13,7 @@ class Decompose < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1a6ac95d556532dcdb8ccb6bee22c93941e70d472d6fe2e2a04aee692e69fd12"
     sha256 cellar: :any_skip_relocation, sonoma:        "04959a2108da5a70a89780f02cc5691c39aa163d69921507743c56407b0353ac"
     sha256 cellar: :any_skip_relocation, ventura:       "04959a2108da5a70a89780f02cc5691c39aa163d69921507743c56407b0353ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa27ec55b119cb84366810752584caadd9a2fe6f6fd24237ef7090c85fa0a683"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1de0150f4dcf6163ee980363062881828b21085f5a44f38a1a14fad124a986d"
   end
 

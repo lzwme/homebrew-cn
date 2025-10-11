@@ -20,6 +20,7 @@ class Wsk < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "d03bbe56e6700b88bc9f7d2ffb645ce14195f104dfb3bfaa3bed3588bd67af4d"
     sha256 cellar: :any_skip_relocation, big_sur:        "2d325dac127e93392312f4a8a765cd01f5a7cfa31ac393e8fadfb8b68208d1a4"
     sha256 cellar: :any_skip_relocation, catalina:       "2e9b7418c6896b4adb3bc3f38d6d9884dc2c48dc1570a3c28f5339a62b094bc5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7d79b7999699bf03a08e0ba35efeb5bb712c78c2543ca88f8a61a539e337cee9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "96a83da4a02e7c018ce5f87968d5d786ddecd6c6f1e1f44a38f5df7c1e12d574"
   end
 

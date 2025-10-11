@@ -22,6 +22,7 @@ class MinioMc < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7ce210974c0bd2f273e67c10970ae25923326b31b1e7823aaeaae4aad73e8f5f"
     sha256 cellar: :any_skip_relocation, sonoma:        "06be6e6c3190957e688c8321892e4fe21118900564ad176ef24300bcb582853d"
     sha256 cellar: :any_skip_relocation, ventura:       "6e4576ab9c04b1d7f4a593b5329e126e09fd604c0c710be75a90edb6b21beb9b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f02a6a7dbcdeed12b5ced2c2dc39d125181ab5cb75078ed9607d2378424b499b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f8ddb10d84cbd05663a495bb04c778a3d5e4915b2b1c506cc98a6a2a1750dbd"
   end
 

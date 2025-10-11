@@ -16,6 +16,7 @@ class Vfox < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a38df6c58567cd7a94c52b9c90335011efc6ede3cf191271cb0e08fcd9f0a6f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0b4c2ceaf456217081ea7bd315a5f7ffe32a12e967dacf75a3bad0aad7d8ced"
     sha256 cellar: :any_skip_relocation, sonoma:        "34d78940fc00f412dad03d3d824fd133ce6c04950ce8d33f4ac3fe6863e596fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "21e0e83009356e950a690453fc3a761095a56c67601dda8ab42b6c10f9201bd1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ace3b9023e882a103df253691286eda34504cb7584e5005613e157418fc3ed0"
   end
 

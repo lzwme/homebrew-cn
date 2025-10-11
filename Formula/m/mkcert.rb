@@ -20,6 +20,7 @@ class Mkcert < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "dedd5384a47f6e10702990d15787658cb33ae5c8f45a96869adcc4e0c730b810"
     sha256 cellar: :any_skip_relocation, big_sur:        "26dd205eb0e33469922e8fd3b1828e91b2dfa920c7ffc2cc6f48494fd1c23d07"
     sha256 cellar: :any_skip_relocation, catalina:       "19ed89b5ee9243e2d6880462ac1b0fcec4db64d4b6f2cefe423b248050b6ae15"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "231294ec75a53e64f54d300c71d8b28a4b7c89ba468d426dc751ef242e9876d6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f674faa8be61e225ae604b2ffe215927f6ecbc992aac75e769185862820d2881"
   end
 

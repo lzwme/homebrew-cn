@@ -13,6 +13,7 @@ class LdFindCodeRefs < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b8fe7f8ffeef61b1ca2160f60d7b5dc13ae55482dff0c7cdf5adcfa0ec547e8d"
     sha256 cellar: :any_skip_relocation, sonoma:        "f2445c7dfdaf87d5075d6ed499179629095dc2445ec4eba04a7b18465179c95f"
     sha256 cellar: :any_skip_relocation, ventura:       "f2445c7dfdaf87d5075d6ed499179629095dc2445ec4eba04a7b18465179c95f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cebea5aeed380bd655c9d2e8af2fd14c2fbf33ab64228ba9256694be50d88218"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a33733870e77a06fbd6e96076ea78ac84a30c2549a3f6fb6694705911abe1e65"
   end
 

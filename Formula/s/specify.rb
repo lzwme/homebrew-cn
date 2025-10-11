@@ -3,12 +3,12 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.com/github/spec-kit"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.0.58.tar.gz"
-  sha256 "5f81d60e05b4f849ee283fd98990d19f2bd1c9e70062393c7835fadd52a88400"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.0.61.tar.gz"
+  sha256 "1254c105c727feca09acc2647fbbe752138bd1718ee1dd21f7dda435a0945668"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2aacb8361e886861851b1a9417f89decd98383ef1267810aba0900c7d42adaec"
+    sha256 cellar: :any_skip_relocation, all: "511b835519b37174ebe2cd86c9c4bff953ee59b07519e36a1df265bc664aeae1"
   end
 
   depends_on "certifi"
@@ -70,8 +70,8 @@ class Specify < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
-    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "shellingham" do

@@ -18,6 +18,7 @@ class ArduinoCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b1c2817ebb4d5156f2f60f7633e5e942804af6936d256886ee380aa52a5305a8"
     sha256 cellar: :any_skip_relocation, sonoma:        "55f3c059903e61aaf929d9e28c4493f4602d253eb3dee2db4f296c351f8d7349"
     sha256 cellar: :any_skip_relocation, ventura:       "83c5c94009164256b3d69af9244f409721b825852211b935a02b3cd941fae9b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a94b9756b8f7d8674e97134c47d5e36d7c561ded406f4ea109d1d1e1bd6147a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b871670ddad2f671f411a7fe9117a19e74f0ec831300207575813830964cd41f"
   end
 

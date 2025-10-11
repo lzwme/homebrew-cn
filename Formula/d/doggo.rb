@@ -13,6 +13,7 @@ class Doggo < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "659e186849f180769977ef2af67b9880c454b72d32853222ab69f396e51094f7"
     sha256 cellar: :any_skip_relocation, sonoma:        "e2bf2f469a3d501455d0c5db6005dd1f78a5a3916e31253361db0effd0d4cedf"
     sha256 cellar: :any_skip_relocation, ventura:       "e2bf2f469a3d501455d0c5db6005dd1f78a5a3916e31253361db0effd0d4cedf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "54a1e11c4521084f88c1b8127f45b5ad79b8dc05d5deabaf219df6e20de51ff0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6ef549e7c62a7cd3f1cf41dd03e7f99bf26e256f950ddc1b6c08d2a488debd5"
   end
 

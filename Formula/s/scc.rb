@@ -17,6 +17,7 @@ class Scc < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "cc5d63f13bfd23c3d3bf87ca06bc7672b30ef4a7a1bae4de2da433c9237e10ca"
     sha256 cellar: :any_skip_relocation, sonoma:        "2a0cb9eb296f0cfbcf651530d8ab7140e71c75d839c79ce58617a0ca1f19eed3"
     sha256 cellar: :any_skip_relocation, ventura:       "2a0cb9eb296f0cfbcf651530d8ab7140e71c75d839c79ce58617a0ca1f19eed3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "265fbcb5b6caef04893188520c4654c127dba5f5efbdeed07d9d8dfe723f56fe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2db851bce3a3f786f412d9cfbc7665d4ab8a80d778f5490700601187a81a0b4c"
   end
 

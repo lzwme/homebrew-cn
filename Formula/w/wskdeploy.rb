@@ -19,6 +19,7 @@ class Wskdeploy < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "e3d3c61f5b230af2a2a5776448d06985cee14f9c7aa5b51dc40179922d655df1"
     sha256 cellar: :any_skip_relocation, big_sur:        "c77d6ad2c5fa8acec45bf9507d840f3de1a125edb5759f6de49427efb454fd38"
     sha256 cellar: :any_skip_relocation, catalina:       "17ff44da88c60d8c8c3a17fd4e2844c90d1bf7fe460928ae21731da5a7f52740"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "64612b924eacd2f375233837be737190dce67172247069d910ca354dd00c60b0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "eabf999a20dc7a3ce1b521b85e4a60731b740413ea133e5299ea534b0c44764a"
   end
 

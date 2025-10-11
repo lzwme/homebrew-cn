@@ -19,6 +19,7 @@ class Apko < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "02844978f776e132ecd24ba972064e6a9d5bf54886bdcde19561ca9d0fd8772a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6c27e53fb9774352045a6c16a03174881a852904aea34c3eaef49d75dd497c2"
     sha256 cellar: :any_skip_relocation, sonoma:        "615369373a0a32974b7598ea60136d0cb37156d93437e184e601ade9666d968f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "999e4e443928dcdafe26baf686f4efabe5c49ff3dca74ebb9f2d730a34a2bb58"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b53b343424557e937aa740c78009295bca8f9822fc64d60d0020cd2e66427de"
   end
 

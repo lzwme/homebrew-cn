@@ -13,6 +13,7 @@ class Fdroidcl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a59042086a507fe60f17c0460f85ac81bc0e9ad650738e0b8c4c12879dcdd5a6"
     sha256 cellar: :any_skip_relocation, sonoma:        "8bfd91ccb97abe616d4fd3d32ccb498cf79a1787b9700860609de72b4f93c4a5"
     sha256 cellar: :any_skip_relocation, ventura:       "8bfd91ccb97abe616d4fd3d32ccb498cf79a1787b9700860609de72b4f93c4a5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7265c44fd957cfe968910913ded8f02f82565194b41b7ebf8d683784ab1b0261"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "77a94907960dcab6c2bcdc0b7e5b6364eb6e221cb52bf3aabb7fbdcc1a5bc93d"
   end
 

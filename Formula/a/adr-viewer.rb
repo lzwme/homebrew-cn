@@ -6,21 +6,18 @@ class AdrViewer < Formula
   url "https://files.pythonhosted.org/packages/1b/72/0f787da38d0f9d69c06b31d8f412735ed4fad383edd7f7d2286f4fc7b5b0/adr_viewer-1.4.0.tar.gz"
   sha256 "9a2f02a9feb3a6d03d055dd8599b20d34126f8e755b4b4ee1a353ecbbd590cef"
   license "MIT"
-  revision 3
+  revision 4
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "814a2ce34f66d5d4f80a7afe16a248aae42b46920b4003044419cc138b755812"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae4cd968f406792edc2acd31cf16b52c02f2e86b7fcf7ead074db74a459f428a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "683fa11655a13acfaf5dec1d2fa6b47b9df98e3423691745da8c46e967ee3acb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a53efd827bb4a2f8d5e37985c42031b7cb52bccf6a62b2027a0876629866d9db"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e7c0c39970d821411b41f596c200055508e4d9ed62dee8931f54396c853585c5"
-    sha256 cellar: :any_skip_relocation, ventura:       "59f780215b254d5007dacaeca3f38dc3067fc7b476a81d63104771ab4ecaafd8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f96efc5d3499cb7e1027af335e6462f62df4bb269ed7ce7fd9f617c31fed319c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0be24b13a206caaeaa1ab085627c82aed37e3e646c7b59ff159444464ec2143"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a3f6b7a95651b6fb125de9bf527bacacfaaedb388d7b04f70d4403b8035e2c8f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58ab44ead9b88068a4cd4a4d5e7623b5769c6b614e888374ba863e9d0e0a5d06"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc342d015274358ca7077ce8552140d0f71fec60c06c9567c11086ddb76ff447"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7b31b8e4db34d9255f45a69b7a1bafeb8c847766cd13fb7a855c0aa23fa8c88b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "831b524d372bbe7f6a292e141f1d87b0516e1f3f067cf24309066926ec397fdd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3043b26cd6a9c4f8dcf48da0045d79860b6697742b108eb49ef7695e3a1f94d"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/f0/3c/adaf39ce1fb4afdd21b611e3d530b183bb7759c9b673d60db0e347fd4439/beautifulsoup4-4.13.3.tar.gz"

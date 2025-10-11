@@ -17,6 +17,7 @@ class Terracognita < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "f01273cbda69dc4373fd896c787361f4f9b9da0ff70b5901fa96b551305cfbcd"
     sha256 cellar: :any_skip_relocation, monterey:       "f01273cbda69dc4373fd896c787361f4f9b9da0ff70b5901fa96b551305cfbcd"
     sha256 cellar: :any_skip_relocation, big_sur:        "f01273cbda69dc4373fd896c787361f4f9b9da0ff70b5901fa96b551305cfbcd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "4d473c1cace1654e96eb0340c230d73160b1bb00cb3c6e60506fd21fed971dc6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "22ca7df6e40ef40b990867a5a81b2e2b883f0867d1be7c8179c178d997e847a1"
   end
 

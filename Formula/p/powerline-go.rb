@@ -12,6 +12,7 @@ class PowerlineGo < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "fe228337f5d9019509b79924ec03bf73e8c567d35801ba004d203855ebf0ec99"
     sha256 cellar: :any_skip_relocation, sonoma:        "e42db1091864a2e65757b17b5ff2777912b98b43de30f9b3c9add5b60885dfbe"
     sha256 cellar: :any_skip_relocation, ventura:       "91422811ec55ebdb10ac1763fcb75da19723767491b5fa5988b4e7e2d5c085e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "07c6b48da3ddc88e3ff65484755edaa3d5951ebbbf5ff07eb48f7c17ad43dc24"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "18782f87199e7dbcc1470c2c13a6bd0d79bcf0dca59d60f75816c77a9479ac97"
   end
 

@@ -10,6 +10,7 @@ class VulsioGost < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "35a73401f7fa6b69b6af81402d8116722f47a846a8853fe87d34a5139c9f7bc1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35a73401f7fa6b69b6af81402d8116722f47a846a8853fe87d34a5139c9f7bc1"
     sha256 cellar: :any_skip_relocation, sonoma:        "0cd5c4ecf1ff7ce9d33aa4b3f6e95c5ba82810c8c0452b28466a7007f4ab3b00"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c62a7a554861cad139d2b4bf8d369a7b988cdd540cff391d63bf67cbf368b7f1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "68e4b8cff66df393723fad3e63f4bc186f5ee9dde268c2f3b9d1075ada5812d2"
   end
 

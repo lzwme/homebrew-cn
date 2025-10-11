@@ -17,6 +17,7 @@ class Shellz < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "fee1186791c0b7af5f978cd5170e0c1b1820cff57828e05d7b2274f93ff8f5f4"
     sha256 cellar: :any_skip_relocation, big_sur:        "cc03abb302fea67ca26f25d3d5835ef5480865a77838ef84c02e652f89809d9a"
     sha256 cellar: :any_skip_relocation, catalina:       "5909f7cc0f0bfce0ad949965618ebf4a8cbdd022571bb89cfa44645d28dd72b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ce95685184ad214c28f877aaa8bed43b66616a3441f4c8afbefe3365067d7e57"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "562f9886f5574cec74ea7419dfb9e7ffc88cddf253da7971744781c115f0a0f7"
   end
 

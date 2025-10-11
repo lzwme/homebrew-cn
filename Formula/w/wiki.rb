@@ -11,6 +11,7 @@ class Wiki < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "599b6bc13279811f7950b1ac2a170292f250aef8b5d3917254163b516984278c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "599b6bc13279811f7950b1ac2a170292f250aef8b5d3917254163b516984278c"
     sha256 cellar: :any_skip_relocation, sonoma:        "f1fb505814ff97dc285f4c587344383290a2ea9a17865cdb97f0a62b3d1d89ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eca2c5fde9cc0c01fdab8accc0a333b4ba6e713f8b1226b8b5e10dde71220d72"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9ab56294402a19bbdd03974ad3f685720da32d1c8676411b771941343fb5089"
   end
 

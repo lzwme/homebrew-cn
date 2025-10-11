@@ -3,18 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/69/ab/54a23a16ed102dd195297d99bf6f081c2a8c8d472b97e079d838ae36aa14/snakemake-9.12.0.tar.gz"
-  sha256 "7d479110bc05eb68bf4bb9caa2dcb231ceb1b0c0967180fd2f37574962a8dc24"
+  url "https://files.pythonhosted.org/packages/07/c7/f28b279a865fb1f4955f7abc21d23eb2ebea342c2f80ba2c76e0391f168f/snakemake-9.13.0.tar.gz"
+  sha256 "90bcf9cd17264ce80f9ab388a936c3b71676a5234aa0fa0e8837482e118064d1"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b5c58f8e2948befb36dc9ad8ba87974b22e193d0b97c990b7688e814cc4c519b"
-    sha256 cellar: :any,                 arm64_sequoia: "7eac0a5d131fc10b10773975ea3cf7943f15bc2990efa69832863cf57b86014f"
-    sha256 cellar: :any,                 arm64_sonoma:  "f5a67c71c975923f86789f585409736ed685f088ce1f64778702f0c0fd6cf147"
-    sha256 cellar: :any,                 sonoma:        "e38620d37d17fff7f6a9367bbb1a0ee2f7b53796ebefa9b0068513fb93a43f52"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "04e858f9725e2a43a8b51d3597c51844fcd1dc207eec0ff0fe69d24188136350"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb8fd0137908abf51659e23978baac582cc489d860c746718b0dfc3c345de963"
+    sha256 cellar: :any,                 arm64_tahoe:   "4d41d5d5f12d004367275c6be7d6bbd0de458a0dc4a2ad829fb76643df93fe70"
+    sha256 cellar: :any,                 arm64_sequoia: "1843481d6cf7b7793bebc652889f4e2f45748e095ff7a66124b5c0b87b7cad88"
+    sha256 cellar: :any,                 arm64_sonoma:  "cf03cf7f042b3d24c29bbdef11e8cb95663641895b3af455bb99743c581fabbc"
+    sha256 cellar: :any,                 sonoma:        "fa4220e203998502ff53f6cef87b11060cc7d72e62c6256cdfbc373b41ebe93a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1a432080ae313ecdaaaa80a0362c846da83e7535475a85d80799e5c8ab54329"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47638d6723fba540efeea347cec27b17b4e7d2189e3da2c2248dbb83636a6e82"
   end
 
   depends_on "rust" => :build
@@ -34,8 +34,8 @@ class Snakemake < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
-    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
+    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
+    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
   end
 
   resource "charset-normalizer" do
@@ -134,8 +134,8 @@ class Snakemake < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
-    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
+    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
+    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
   resource "psutil" do

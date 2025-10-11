@@ -21,6 +21,7 @@ class Kubergrunt < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a2412fe62c8bf8d416bc173aeeb6264eb324be1e65ae4ecfa36108033df49af3"
     sha256 cellar: :any_skip_relocation, sonoma:        "02e34b79897c6c9ad7eeb097b242d338241113ff5eb6070c9df65f03c45142c0"
     sha256 cellar: :any_skip_relocation, ventura:       "02e34b79897c6c9ad7eeb097b242d338241113ff5eb6070c9df65f03c45142c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db340827e03ad3467ad33e6e15f28b500c573ef04428e1929ca7254e609ff3f0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ccc160bc31408aff9e91c1d31dc272c4410f8b7ec876dbcefd1ccf4649e5d6d6"
   end
 

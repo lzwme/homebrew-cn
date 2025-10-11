@@ -11,6 +11,7 @@ class Dependabot < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3aa7c30b53a86357a5499d55c33498e3b0ea5931f87e8a3c9e31e45454571ecc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3aa7c30b53a86357a5499d55c33498e3b0ea5931f87e8a3c9e31e45454571ecc"
     sha256 cellar: :any_skip_relocation, sonoma:        "3bfd633a81eddf8c8b9ecc42104932926830b26a91a895061d66516b1ce97379"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7cf1b05a4b5ed1b5a6d7420a132798d196c042add6a50cf99a46ba985f813675"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b55362b23e5cb83a2536f33bfe880bcc560f2ed4f2f7f819a8e0b8c5cfaade3d"
   end
 

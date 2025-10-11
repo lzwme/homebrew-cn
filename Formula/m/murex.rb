@@ -18,6 +18,7 @@ class Murex < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "6fb444e047917a8161518848784d9f5ae58462c6b2ddf8774d842c25b92670f2"
     sha256 cellar: :any_skip_relocation, sonoma:        "589457c8c7503101910ae5b0ec181ed09d58e4e6d076d4dd66838d06ccdbee8e"
     sha256 cellar: :any_skip_relocation, ventura:       "589457c8c7503101910ae5b0ec181ed09d58e4e6d076d4dd66838d06ccdbee8e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d26d93f9ed5986195da37c0399310cc08e89a484a94da38d4caa40f6851ee0c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4b0ae3c7eea4d5da28c711a84cce0fe4401a368f0cd64157bb62211e5acf002"
   end
 

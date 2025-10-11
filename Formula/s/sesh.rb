@@ -11,6 +11,7 @@ class Sesh < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "88aa022a372fe16b3ec437059b16a6e027c680f59c204d9acffaea3ff24ab42f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88aa022a372fe16b3ec437059b16a6e027c680f59c204d9acffaea3ff24ab42f"
     sha256 cellar: :any_skip_relocation, sonoma:        "2ad16b80919a48847eebd1c443c50611727b468b2342685f7a5e4330f4cef6d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd50918c90a028b17939ae33712473d7ba426e83bc82ab4fbdbef222e3b96e32"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b01c2dc1b0bbdea6fc2ca52ae8df006fceaa1153421f031f41cbd4cc5d2899f"
   end
 

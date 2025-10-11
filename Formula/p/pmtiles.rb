@@ -15,6 +15,7 @@ class Pmtiles < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "347a861c053678f27a508138bf4274ff5cd92b4c372b1333cf0b07c9f2f46f89"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "347a861c053678f27a508138bf4274ff5cd92b4c372b1333cf0b07c9f2f46f89"
     sha256 cellar: :any_skip_relocation, sonoma:        "a616a99898e8001a2293b744184741cecd76d5c431097efa687426a4c36a58e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dce128f5a1a40db662bb221e07b215ea39a144778cac58f870cc1de8cd78fc66"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b1e9d42b29ed8c99ac042d63a940e1b14482f3416d5cd9912d1d84e12840759"
   end
 

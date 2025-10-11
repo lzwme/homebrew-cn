@@ -11,6 +11,7 @@ class Ov < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2596035fce4b5884d118134e4a00f02d840de1fff586146ab91483b55dc0852e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2596035fce4b5884d118134e4a00f02d840de1fff586146ab91483b55dc0852e"
     sha256 cellar: :any_skip_relocation, sonoma:        "e0cd2fb3dec2cbd1cb19f467586795d583405730585fc5e738f6632486f9f62f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34b4c94c32b3d807209c8e9bd1ae2eca645c55b8e798f2fb911f70d6890c7d76"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3d763f017f988be34d4e57a30094c388ffef927a64702356d50e4050929f6eb"
   end
 

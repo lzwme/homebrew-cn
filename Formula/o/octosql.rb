@@ -15,6 +15,7 @@ class Octosql < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "15616e45d1f71f3adf387cccca95f024f6a47ebac1eb43cad2bcf4033ba86eca"
     sha256 cellar: :any_skip_relocation, ventura:        "599c917127678f30d18e2992c5e313c9551e088f6c91641f2d41887ff006b073"
     sha256 cellar: :any_skip_relocation, monterey:       "e66e8404c28c51cd31a53ce95ac96341355948d807b7ece05ec46aca7ea95ec3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2c74938cd61568c5b569d3f86a0077aa1b0893aee68a8320386c373046728952"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d93635da70ab7707f9a337ce7d30badfaac5c31f3d2d40c55741cdd8ff3bf6ff"
   end
 

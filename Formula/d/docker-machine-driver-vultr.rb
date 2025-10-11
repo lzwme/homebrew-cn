@@ -13,6 +13,7 @@ class DockerMachineDriverVultr < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "fe5c031493451ee1fd50f8b330c9aa4bcad771c3313057a57e191bf0f7ba8ec5"
     sha256 cellar: :any_skip_relocation, sonoma:        "083a588c686e1ab4b850bed47b0dcc5b9de91c94165a05216fb2119766a5c736"
     sha256 cellar: :any_skip_relocation, ventura:       "083a588c686e1ab4b850bed47b0dcc5b9de91c94165a05216fb2119766a5c736"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "13d59e2bef0257369206c40d55506bf89aa251c38727b245bd83cb695c79d644"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcce498ca4b19b4843339a7fcc14dc039a38bd3083534eeb5fd42d71facd9ff9"
   end
 

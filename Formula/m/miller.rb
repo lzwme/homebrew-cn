@@ -13,6 +13,7 @@ class Miller < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e6504b651c26a492d62230e6c09532202e5c32df554cae00271b48eb3f52f7f7"
     sha256 cellar: :any_skip_relocation, sonoma:        "ee42004b75cd2da7573aad293dc14ae589600d069fc7e3838405f1623c5bc14d"
     sha256 cellar: :any_skip_relocation, ventura:       "2895f2675b024752364186edf3af51e5f99c89c0d6b239df445223773c8f89d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26f0467141b454008af70b577e31e2b7a95a7f3a998c0a0d1d646655b6053057"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0aa560465b9b2d0795ce24407319672b73be87b51035f4857254cb4ccea72d8a"
   end
 

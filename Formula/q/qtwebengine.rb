@@ -232,7 +232,6 @@ class Qtwebengine < Formula
 
     ENV["LC_ALL"] = "en_US.UTF-8"
     ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-    ENV["QTWEBENGINE_DISABLE_SANDBOX"] = "1"
     ENV.delete "CPATH" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "cmake"

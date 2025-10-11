@@ -17,6 +17,7 @@ class Clusterawsadm < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "be5b3a26dec54d9d22b37691138ba818a090c8c7e795c1632ba7b2b33d43c3b5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a60560f837122b6728a52e2e514195988545cac93e549ad919c2f8811bc6dffc"
     sha256 cellar: :any_skip_relocation, sonoma:        "32ca62afaaf72f78522f0207187f45c29863b3da949d869cedaae96d769148dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c54326a19b6de905373768cb05c4e57e82d65dd8cec61597809afed1204a7672"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca6e3ec8292970b0bec3d42850c4a299b61aace904ab8a2e4cb699e8c9a9212b"
   end
 

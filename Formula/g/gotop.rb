@@ -20,6 +20,7 @@ class Gotop < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "967cf5ea968270791932cef90aaeb8c131a695e142429d72a1694508c6a01dda"
     sha256 cellar: :any_skip_relocation, big_sur:        "61f87b013e7a20046a34ef65bfeb2cbc68a6e78df6f04baee64fa1bdc5be2d66"
     sha256 cellar: :any_skip_relocation, catalina:       "3948c3cf1d4a198462af0bbed422215a12bcd87266af2c9dd629eed8bcc27a6f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0c1f077e391f23aa8bb0dd8d4e1ee181b0bf3416c50ab26f718c73268711b201"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b4323239fa19e80fcec5d8ef9ba94b5be4015ae9ca0be3c3a74e06a86f15f29"
   end
 

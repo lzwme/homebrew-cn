@@ -13,6 +13,7 @@ class Dyff < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "18115a752f3777637541276711eebddf6ff22698170953f5adc27b8cd559d273"
     sha256 cellar: :any_skip_relocation, sonoma:        "fcf0f8f25381db4e7e58e35a904718c89dcdafd2791a3f814b6ac81f64a750de"
     sha256 cellar: :any_skip_relocation, ventura:       "fcf0f8f25381db4e7e58e35a904718c89dcdafd2791a3f814b6ac81f64a750de"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c0576d974f783ca0198f772a4ac9e91f9426f5f9cdcbaf13596778792db0b48"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "434f08df2e259dd43d676ad47773285915481510d7dc9724598fe6716145c75a"
   end
 

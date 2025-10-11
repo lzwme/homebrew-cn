@@ -20,6 +20,7 @@ class Scorecard < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "351c496a03c888ef7ff69146b9264e8f40a583dc16f23e105c3a0f17b685467e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "351c496a03c888ef7ff69146b9264e8f40a583dc16f23e105c3a0f17b685467e"
     sha256 cellar: :any_skip_relocation, sonoma:        "33bc563cc092decdd46e997eb9232535cb306efbac542a29509ade0aaa75ab9a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "68fa162e879005c3a7eb35e63222a3925c4a28ebf8d347f149bb9f740f26cf25"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "48c59c9037ece6a45bf092e71ab9e75646f2e93df8f7bcc05a9e417be2e1e910"
   end
 

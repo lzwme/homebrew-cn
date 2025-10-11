@@ -21,6 +21,7 @@ class Kubent < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "b9f9a862ec8458c562ec9643e4c6876475d1e77071730f2c6876b29403d641f1"
     sha256 cellar: :any_skip_relocation, ventura:        "b9f9a862ec8458c562ec9643e4c6876475d1e77071730f2c6876b29403d641f1"
     sha256 cellar: :any_skip_relocation, monterey:       "b9f9a862ec8458c562ec9643e4c6876475d1e77071730f2c6876b29403d641f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "cbc3d5e73162945f8edd742a5f1716b03405c10186c7d8c4915c8fd53e9a0f41"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a54e603d5dca3dd7c708ce765318b460eef6b5ca4407a28356edc0c16ae2bbe"
   end
 

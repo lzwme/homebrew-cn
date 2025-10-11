@@ -10,6 +10,7 @@ class Miniflux < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4726431e2f652754e5c23d0e787e14e5e7217ba812af1f005cbd5f8068ea079e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9287991981a9b470476c7156c2b4424adb32a80efd053597167000f12e6cc5d"
     sha256 cellar: :any_skip_relocation, sonoma:        "ec0f5f048b8401fa95cbc1dcd6ce770c99b280da32d31739dd5daf97463dc884"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8527d4466347bc232ccc079785e33111e46ae15bec9128f532b81208dc81c6bf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fa63ea605666ca80d09c27f44991e2b8df660d7a6423a5675fdeb1c90f929f9"
   end
 

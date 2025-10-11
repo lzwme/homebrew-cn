@@ -20,6 +20,7 @@ class Confd < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "ba0c1ddd10c298a6283a5d5bcad10304211a68b0d139e27f30c7ef34ae8d2aab"
     sha256 cellar: :any_skip_relocation, big_sur:        "8c337c7afdcf9d7bf7662f94d24fa326990e69344f6c23700ba2a5c0c540592e"
     sha256 cellar: :any_skip_relocation, catalina:       "34d59b3c47493cd00685c62997ac0385f52f90a5d99adb9ed5c98576c6c02452"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "844a6849db16075e11b3679e03bfc034b52365c0ef44f341835d80c4fb965617"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a67a6ca1953e416e2d1278d6426f8c98e778d829cbff9485d6e12cddd0067b50"
   end
 

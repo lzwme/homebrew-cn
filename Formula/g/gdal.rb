@@ -12,12 +12,13 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5d188be0ac27616189770bbfbbdefe1b9c3d820b6708393058207fbed649583f"
-    sha256 arm64_sequoia: "c6d342f55fa2059ea862c0d45d846234828aeaef9f8b16505358abb8ecf6e447"
-    sha256 arm64_sonoma:  "de17c4bc388c12b5807c65445487c0dfd8a329a509cab19e5285e3f6ccb38a7b"
-    sha256 sonoma:        "a6b7bc15ce26d74c3e7a5c09be39b109a8c66525635bc9fe3d83b1db942aca89"
-    sha256 arm64_linux:   "60fd17ccf419f63d7fef1ebe8784037ebf3e1c9d9c2fcb9847958f6aacb286f9"
-    sha256 x86_64_linux:  "b289d7ac2a0b1862cfeef119603e62f5299811a5977946fb148a68b2e43ad87a"
+    rebuild 1
+    sha256 arm64_tahoe:   "5315edce5aaa1fc92aa7dd26e9a55851d457f2c7a7368d081b8d427d9260629e"
+    sha256 arm64_sequoia: "612808fdb8e99ffbbf227bd1c94bf08ee6e1597024c126a73ea88db1bfc9452e"
+    sha256 arm64_sonoma:  "e4d9e9ff68089ea0f6c8bd0b28d61a268f10228fa312c2b674beec427f351e92"
+    sha256 sonoma:        "92359d7123145f41167ee158b0f72dd84261f00a6f14463e59c38cbe37be3ade"
+    sha256 arm64_linux:   "b957fea09d119321be5847df87031ce129f493bcc6cc52822bd96894f22027e6"
+    sha256 x86_64_linux:  "867bcaee45b0faff2032c06d5f771f3acdfae242619dbd13941a4b5165e53023"
   end
 
   head do
@@ -65,6 +66,7 @@ class Gdal < Formula
   depends_on "proj"
   depends_on "python@3.13"
   depends_on "qhull"
+  depends_on "sfcgal"
   depends_on "sqlite"
   depends_on "unixodbc"
   depends_on "webp"

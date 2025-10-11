@@ -18,6 +18,7 @@ class Amfora < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "aea294662496a802b0b372ac96c71b78a6df62ff654855c243677b5d7d4e4803"
     sha256 cellar: :any_skip_relocation, sonoma:        "f50a1331ec6c174d16aabe9908dbe16ca7b840bf44c7e76b384de67b5e5f2f67"
     sha256 cellar: :any_skip_relocation, ventura:       "f50a1331ec6c174d16aabe9908dbe16ca7b840bf44c7e76b384de67b5e5f2f67"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d9218f579fb7be31312ea53a6d59a7f6f63ea4a01216c64ab68b49c2899b34f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ccab595f65a7e440660a2981719199eef7e5cc82025a89f0cfa2936892fa57b"
   end
 

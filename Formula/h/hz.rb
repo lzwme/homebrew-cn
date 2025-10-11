@@ -18,6 +18,7 @@ class Hz < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "4ce4bbaf5113e48f449db2b510cd18797b23c40035d488bc1fc8a364a16d9a6c"
     sha256 cellar: :any_skip_relocation, sonoma:        "464319954276a791ad9366da2feb521563721204dc1ffe4c18e733b4a6acd4c0"
     sha256 cellar: :any_skip_relocation, ventura:       "464319954276a791ad9366da2feb521563721204dc1ffe4c18e733b4a6acd4c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "008152a484635e8ce1003b7167f3fe4e46a23364628a44ddd333767ef4c92ad3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9906a09535199349b1e5bae6c8b5ffd62b9f2a74437480d4783e705d4cc161a6"
   end
 

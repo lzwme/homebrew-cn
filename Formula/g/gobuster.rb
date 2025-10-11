@@ -13,6 +13,7 @@ class Gobuster < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b342220612d825ea80bd1c5569a291868e309ea1b29a9c074a98b6e8ccb6ea19"
     sha256 cellar: :any_skip_relocation, sonoma:        "b5ff54ece6cb45fe81471c6ef9e60ecbd5bdaaded4a76ccb5a47ce7214e4afb9"
     sha256 cellar: :any_skip_relocation, ventura:       "b5ff54ece6cb45fe81471c6ef9e60ecbd5bdaaded4a76ccb5a47ce7214e4afb9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb8b43b9b3bb9f2da7b8bef4818b16e23121586a8d8daad8dc057e3921c335f3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb7fce23ca43b8a3cad902ca7ee55062492b3412ce79175da1dbd04187a20483"
   end
 

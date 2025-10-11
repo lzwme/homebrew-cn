@@ -13,6 +13,7 @@ class Ghorg < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5159ba8cc4b9117d791d651a96c832f6e384b0e6caa69e38703d3f9e71434562"
     sha256 cellar: :any_skip_relocation, sonoma:        "f95e87d82a2fd8e5133c22bc0fa4e52bfa1956ac40cab0cfd2cc4642716fbd76"
     sha256 cellar: :any_skip_relocation, ventura:       "f95e87d82a2fd8e5133c22bc0fa4e52bfa1956ac40cab0cfd2cc4642716fbd76"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bcd83e69a6497826542cba06ac5a72b57932edf508f6435a2246902543cc217"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6b309d1e2ecf207e16a5ac1fd8cc57ecc4cff23caff628425bb23c75dd4026d"
   end
 

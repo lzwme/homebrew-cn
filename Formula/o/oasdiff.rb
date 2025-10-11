@@ -19,6 +19,7 @@ class Oasdiff < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "eb82a39e44dcda2cc1c4c712c5f8f82c84e9d9f5109e5f8afdcd815c4edcb712"
     sha256 cellar: :any_skip_relocation, sonoma:        "a0c386191ae5fd37be8dc2900796107df8ceedc03807fe4ed5fe5d3d9df0d9f7"
     sha256 cellar: :any_skip_relocation, ventura:       "a0c386191ae5fd37be8dc2900796107df8ceedc03807fe4ed5fe5d3d9df0d9f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "13fba98e9166b1e63762f2ad442bd641507435846ea455655b70fe554d802f7a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "adb371f77689c45db9bc52f4e47cc29d4da9ad9cb8dcd1abbd7464ce28e5ec1c"
   end
 

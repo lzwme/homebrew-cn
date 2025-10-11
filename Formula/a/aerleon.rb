@@ -6,21 +6,20 @@ class Aerleon < Formula
   url "https://files.pythonhosted.org/packages/aa/59/bdfba424f08f2942bac1c630653ef8177938421e0cfd00ccaf358744bbed/aerleon-1.11.0.tar.gz"
   sha256 "51ece6e194b802a21213a66a502e8b8f227b09542571c2b0d42b924750ec2dbb"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/aerleon/aerleon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cb7ff6ac7b71f4f376c979f35ee165e6718db1b3bd4c6e565805d4fcbc54e435"
-    sha256 cellar: :any,                 arm64_sequoia: "a10cad27d2a3d178ccc21fc62dd38db82a23cfbfed046e619ecd369d9552fe0e"
-    sha256 cellar: :any,                 arm64_sonoma:  "6518f3f30fca6e177bfa1a5276c3d0312d94b06aa633de27c2caeecb3a161595"
-    sha256 cellar: :any,                 arm64_ventura: "65b1e553caea3550e4c23fe7dff1f8c47945cd9ef0582a69fea35b3684d0fb86"
-    sha256 cellar: :any,                 sonoma:        "ed7505055efae335fcef1e62edb2e93564108670583820ee6692e41499beb545"
-    sha256 cellar: :any,                 ventura:       "faf93ce8fefbd9f989cf636329dd31542c9e62b653db96ecf3d0196c3b52afae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1cd64bcb7ed9967b2aaf1aa1061d4694ff0ace8ef8fd9bbba2357159589aeadc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ada6de6f6e2ebb2ca4399c335ad261da8e6c3852b0d8bec18c24ae8af6db851"
+    sha256 cellar: :any,                 arm64_tahoe:   "5bd619121aa28922bc80c156af0e2d7bb339ab8e45ac7a88ad7907cecc95e8a8"
+    sha256 cellar: :any,                 arm64_sequoia: "b9d3180d7832cd312734e5c77d4de93e8f398939da286d4b7e9b793dd7060522"
+    sha256 cellar: :any,                 arm64_sonoma:  "6e2f14b8727215e6ef700b9abb7cde455c8f76819fbd1a5c5726cbb52a234310"
+    sha256 cellar: :any,                 sonoma:        "f2ffce8c69f9fce3b2db6facf808d9d578904929a2aa2ae34ff492a0c6891e0f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6bdeb546adeb6444c76d34b7b41f3ca8e478aedffc96e1852e87fbc6a4628a6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b01c21822707df72e754e5839e00b7c5322a4597da0646768db534e4d573ca10"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   conflicts_with "cgrep", because: "both install `cgrep` binaries"
 

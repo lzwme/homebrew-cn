@@ -12,6 +12,7 @@ class Thanos < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "025c060a2c3fe17f1ed2d50a08f2a381ab488668dba3aed50129b4f463e29235"
     sha256 cellar: :any_skip_relocation, sonoma:        "3b0ae9f86bec8fd1d12d4f90417b008c98cec19d611ae331f09f187b2cb370bf"
     sha256 cellar: :any_skip_relocation, ventura:       "6991dc6b39a456d814d923195c8a1df5f2cfa41884982d850abe206649bffc6e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0aa542912ed42ca9e60e7a0fc659e2b3f0bb5c4a65ece06c22e21b6cd6095055"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "27308a942580a9b5c026a1a4086f0b41ed076cdc6e6ee0b1d75d7982ab72e52e"
   end
 

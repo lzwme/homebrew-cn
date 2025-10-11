@@ -13,6 +13,7 @@ class Leetgo < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1e1bf7464f09a589bad97c98b18b6e7f6114a8aaaa0e52f37223714d78bd77f6"
     sha256 cellar: :any_skip_relocation, sonoma:        "39dd443fcad5d45c1d061f2480690061ba9976735f2af87f719e0f3aca3433ea"
     sha256 cellar: :any_skip_relocation, ventura:       "ed9cc946beb4dbf2406f56fa71080824b64ac6ca23e46535334aee2eaa9054a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f1f602ca34abbe6524d9fc5bf501c8e8b588d51bf510285f584e947c423594f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa8b2dd33a551c7edd4b1e89cd25e011fbdef83d8cb8441fa839e4d4e4903389"
   end
 

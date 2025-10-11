@@ -12,6 +12,7 @@ class Tldx < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "84bddde265a819e8ca9466fa889b68ce364cc362c83d3c3f18e5491025bca97f"
     sha256 cellar: :any_skip_relocation, sonoma:        "4a1dbaa3bf0602624c72c21bbf828f50717d921de9891ffee378696a60ebe533"
     sha256 cellar: :any_skip_relocation, ventura:       "4a1dbaa3bf0602624c72c21bbf828f50717d921de9891ffee378696a60ebe533"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "def1739918a5766e8ee7b466e9b84b6b6abdd9c93b7561da1d0d8e817a924768"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc23b2e244244574127afec5b6194eb2d2ed206dd0e3fe42fb5f054154a9096f"
   end
 

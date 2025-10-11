@@ -21,6 +21,7 @@ class Massdriver < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "fa22709bd25d167b9191d7fa251f9a70686e0a5d970010ad36ddc115b37b5731"
     sha256 cellar: :any_skip_relocation, sonoma:        "c09572b599fbb3fdf2372b33d9fc27864a40ec4c2038ae76e03f229b46c4fcd6"
     sha256 cellar: :any_skip_relocation, ventura:       "c09572b599fbb3fdf2372b33d9fc27864a40ec4c2038ae76e03f229b46c4fcd6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0500a8c5af73af5dee174583b90310549fa29f72cdf50ec41d175c9f79e597bb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e308e44063ac23a97bb179b8a8cfe683deca7dad8187dbaa84fe66e27ee61b53"
   end
 

@@ -11,6 +11,7 @@ class Hcloud < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0457f9b1b73c2fd207bc02c6ba2d0dd6ac9e55d078040e5a5165d53c350d26d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eab7704f3431f8d00249f221057cc62e8de3ed7356ea8db5d590b0342dde6282"
     sha256 cellar: :any_skip_relocation, sonoma:        "f6cd22d51e9316c5f130f5995a8e1105c3b724a0012c4e1047e47e224f655cb5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b25796f116da00bc99dc13896054d7855bbf99777b10adc8d38ae2ae9a9a0cf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc7f38eb816da9d0bab01905baed3f6204ebf2b2af8dafe1a6c260d921d859b6"
   end
 

@@ -13,6 +13,7 @@ class CyclonedxGomod < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "265722bab2f4df44779e227d2a45ee302a98730f803ff0edbc35b4bd5d20f160"
     sha256 cellar: :any_skip_relocation, sonoma:        "f4aa6ed9b23eb79645acb210d928c754478c4b35c1883658e4db783eefaf61b6"
     sha256 cellar: :any_skip_relocation, ventura:       "f4aa6ed9b23eb79645acb210d928c754478c4b35c1883658e4db783eefaf61b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5bfff00a31c04f53d5ec3cc06a9a86ae5313fb340a8728b4cebca137ef73a177"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5fd68398150bd54eb229bffe89f2a83af73ab907b17df5f328fbeffd40753c9"
   end
 

@@ -18,6 +18,7 @@ class Crossplane < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "73c6aee4d00a87cc71fd82a5baf877b600a02a7d749bd126367dd8c35fb42aef"
     sha256 cellar: :any_skip_relocation, sonoma:        "14e107d4a74a2bba610e2ddda7851fe24f59ee63d7b076134cdd21772e2b302b"
     sha256 cellar: :any_skip_relocation, ventura:       "dd0f4e555ef54697b0abde16f136258898c3cb80a2615a21ed9d0609629212aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ea26c034711ab889ed1add6434a5327e3d3b63cb5932619effa1ab8247e518c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e7bc62e23e11691f46e8db131ad0eb7beb32d0c78907388732b6df3591a0880"
   end
 

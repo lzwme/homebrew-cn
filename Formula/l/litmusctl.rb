@@ -11,6 +11,7 @@ class Litmusctl < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "09bd1409cf724118f82f9cd2424ed81f0eff4289ad53c00981888c3aa7003c2d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09bd1409cf724118f82f9cd2424ed81f0eff4289ad53c00981888c3aa7003c2d"
     sha256 cellar: :any_skip_relocation, sonoma:        "98ce747b4545b195b910a15cfff891509578dda17cf23fbec71f9255281aff6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49d76f240132d44706c50e593ef22d37d19446f9bbf6434ad031b02a2b3f739a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "493eebf6ac5f4787ff4dda254964755216a747d09d622e27c9b295d8e26a0eae"
   end
 

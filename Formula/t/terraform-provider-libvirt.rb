@@ -12,6 +12,7 @@ class TerraformProviderLibvirt < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b4965933e5ec39c5f04ae18a08828df9e0dbbda8f7d80d1278c4951493fe9d15"
     sha256 cellar: :any_skip_relocation, sonoma:        "15e9fab3f999c737143ad9c66ff18fb3861f17035636179d3ffe752fbb120933"
     sha256 cellar: :any_skip_relocation, ventura:       "15e9fab3f999c737143ad9c66ff18fb3861f17035636179d3ffe752fbb120933"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c334e377f38bcb5959801706982f3c3ed8ca37b2da550351137ec7a49f800ed"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "42969edbf2abbbba627cf3bd855e749aba8a2cbf570e5da9fa1a45a912444374"
   end
 

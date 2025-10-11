@@ -1,8 +1,8 @@
 class Clarinet < Formula
   desc "Command-line tool and runtime for the Clarity smart contract language"
   homepage "https://www.hiro.so/clarinet"
-  url "https://ghfast.top/https://github.com/hirosystems/clarinet/archive/refs/tags/v3.8.0.tar.gz"
-  sha256 "a7e4face46f159b0599300d0b584c9ebf5a5c8c51e7ab9558d6cbca42f155737"
+  url "https://ghfast.top/https://github.com/hirosystems/clarinet/archive/refs/tags/v3.8.1.tar.gz"
+  sha256 "421193b19d89c7a1e01cac9fe0c7a18549bc26d9954c59e6681106b2a4403bbc"
   license "GPL-3.0-only"
   head "https://github.com/hirosystems/clarinet.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Clarinet < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf028aaf9a66a93dcda1d3ccaa085e2182b67b6573466fe0bcc8e6ec6a35d57c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59aad569ef9aba99d3ecaa7bbe8899afeaad59534a620ac6e40f2f4c3c1cd581"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d4753fcd0f44acbbb32c6672f9614d95de48d13e925c0e655d3751ca929be47"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e3a0ffd3d297486cee1a26d175aa99a1c7e12832976b0616659f0663f9e1b5d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8096e9637af0ca0312e660b614b5c181c2c9039039521007415b46313b6ec758"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "673d5d1ead54efc3b3ab66b35b57e15b36cadf4cb8518241b6e05be73c90e67b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4e28eb85cee90900ded151418b127065cd3b1a062fd06d50a9bf04e63e11ec73"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98b04240ac72915d99887ef54377c63c9ecd2df29c85f7ca7afc86acd6f75f31"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3cef0ae12e1ff2ea32463ca943e17fdd2de4201264e834c4ec0136fbee368da0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "98a0cbcea99b17eb542ef0c5483180e588d0f4870b4998960c30bf7e6831ae59"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a0834f30a483741dea101912a79a7a46daaf1654ccd57e5879fec3f62dadf77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6edd941df6de42e8081856ff976adf7c48bee118534a504d00bd41fa7e384fc"
   end
 
   depends_on "rust" => :build

@@ -17,6 +17,7 @@ class Slackcat < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "e9441a1cadead32172fd7eb5ea6b4416ab09b7dffe04584394bad221ba0c0533"
     sha256 cellar: :any_skip_relocation, big_sur:        "176aa3f2c1f088a0dce065034c8a6d381830679db2425c4b4d690823e0b1e022"
     sha256 cellar: :any_skip_relocation, catalina:       "344233ded56abb6b28a5b4cde44cc58713a63e7a2b49a84b8c47c0ebc9d2d3f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5dbd0c522ab28f8a9f4abcd681ab28a43a1a46e4db8e8f03c3a00d9f25ca2f3d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "96518aa5c2d2ddc1c62a1ee163748bc0909be294eebc290156a6ca1908d6216a"
   end
 

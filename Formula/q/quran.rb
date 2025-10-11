@@ -20,6 +20,7 @@ class Quran < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "1bc0099dede2f1cd7b27882858a763e8ed97c7ded46c8384cc20793f87fb1218"
     sha256 cellar: :any_skip_relocation, big_sur:        "0c585b46974099934335f6b8f3da950be3392f7f799d6153a68c5787d685c005"
     sha256 cellar: :any_skip_relocation, catalina:       "600167279eccfa40badfb475003949dca659d2545e9e65e1ea08ab57645d036b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "80f68e6c0762664536967f559c8543c726e14ecb1bbf87f5fedc3cf84b8c8caf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "93cc2a0059d0e6faf82b0723bebe80e77fb4056895ad6a6488be408c9123cb02"
   end
 

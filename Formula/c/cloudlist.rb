@@ -13,6 +13,7 @@ class Cloudlist < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7a14d6684860a6ef496dc5b65862ef0f29060d49292d96fd5a447ade69f862f0"
     sha256 cellar: :any_skip_relocation, sonoma:        "432374a4bd4b58a1f7e8fc2b636236cc51629ed2dcd78489733844b5a4f3e632"
     sha256 cellar: :any_skip_relocation, ventura:       "bc9838edd6c20e8d284902868aa1e88d05199fed36c5726723d263fc21ef5eba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bedbbb60c02445c4637a38c8758de70b2d9f5e3ac19f4f3c181e361536b4f8f0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3114ba22694e7c5f3b4cd24c016b5556fb2a570c461efe3cad27f27c34a3f63"
   end
 

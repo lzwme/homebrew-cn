@@ -15,6 +15,7 @@ class Glider < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "2cadbadff220b62c8c07db3672aea7160407b5b3e4f0b06e73cfc55285c6125a"
     sha256 cellar: :any_skip_relocation, ventura:        "254249a7b25bb02d6d21516eabbb0992e47030a8cf1570a7a11d433262e2583d"
     sha256 cellar: :any_skip_relocation, monterey:       "790df16eb1b61f3ac61d9619d9fe25e91309b4010504362f9a3b4343e73f7ff1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "589ee7459491b0c33f29de22537c31bd4ed337c34424c2d9a8681c03d109b925"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "66726d56a1303bd8f9aa06a36ae3694630a7ec53cf084dbf060ecfff2485767b"
   end
 

@@ -11,6 +11,7 @@ class Gauge < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "507c2563b1b71f709e29b88ef4fedf0cacf77dbac47bbbd60486b902f376b44d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5ea4ead2a3574c763938ec8a2420840665fd53bd3a28b293da77c44cb60c15c"
     sha256 cellar: :any_skip_relocation, sonoma:        "248f6456f321d8d81306f757584329db60567c65eb7557c88f67558f6ba3e3b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eeee2ed9cea33370a0bffd778b742785b4bdfb10440a46ae4af94ac0ae3e6635"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3454faf2db069086e3177b7a33f4859e19a176772183f6b8764b76262a876f64"
   end
 

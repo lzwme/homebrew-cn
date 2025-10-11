@@ -13,6 +13,7 @@ class SoftServe < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5548ba229f68f6102cde4dfb0947403776305ffb6455663e5fdf3241de7bfa00"
     sha256 cellar: :any_skip_relocation, sonoma:        "8c30ebdc67af3d0941502b1eb8470811d8991f0ae90ca748da78bf64197b5865"
     sha256 cellar: :any_skip_relocation, ventura:       "9360c312cac09e4bf97fd8b043a86c41cba44c7669b2dc97e555d21e7abd9865"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e37a04bc1f6445844d74ccb200332eb4c870b953be561858e529fbf9873f824c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1caef12c9b0601292400cb72639377935301747602e1804cedb6ad5dd4dba1d4"
   end
 

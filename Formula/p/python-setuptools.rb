@@ -4,13 +4,15 @@ class PythonSetuptools < Formula
   url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
   sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "83ebb533c2181540817970579431c38953d9743d68bea5b69799a790d726c4fe"
+    sha256 cellar: :any_skip_relocation, all: "90d1373d4b921632e3da896be98326b463867c0a4f9e742c6a98c09caae96fd7"
   end
 
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
 
   def pythons
     deps.map(&:to_formula)

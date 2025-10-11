@@ -13,6 +13,7 @@ class Tfprovidercheck < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5999fe7f5aa3878e386922f3ae60620217e21281a9eb206d43ea4accd48950f8"
     sha256 cellar: :any_skip_relocation, sonoma:        "ad3c0f23e2e60f0b0415a78664d1c937eda185ecaf2bb1c32b5422ac81d5e24e"
     sha256 cellar: :any_skip_relocation, ventura:       "ad3c0f23e2e60f0b0415a78664d1c937eda185ecaf2bb1c32b5422ac81d5e24e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2564548cfaddf04848f2f34174a0451843a87be03e12cdb2f5c410efba03f297"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea1b43a81af9d43ce3fd5e9aff2f6d642678a533fd867da44c4be37e55d3a7a2"
   end
 

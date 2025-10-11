@@ -10,6 +10,7 @@ class Ctrld < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa1d8f3181a7ef21c13128a232cb9a2c9db4880658b6a844b9f6533d6e82195a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa1d8f3181a7ef21c13128a232cb9a2c9db4880658b6a844b9f6533d6e82195a"
     sha256 cellar: :any_skip_relocation, sonoma:        "f73a8919ef8d3a5f6b449490e3a13c38d80aba2366c712fd10f69ff4d46fe5b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6722b92d1883ae94828b8f529f2a4ded2252c8e4af1d4646cc843ecb8e35bf91"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b57fe6595f991cf2d951dcad47167e2b15928dfa4adc231014710c8dad741f8"
   end
 

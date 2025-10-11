@@ -16,6 +16,7 @@ class MongodbAtlasCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "440cc75336c22ca4db13aa3014e0af446f6b29639cb6c7c8e53b3b9551f99760"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4541a38be7c265c58062b7988b0c6352d61a689bce63ea5ff97b53196c382780"
     sha256 cellar: :any_skip_relocation, sonoma:        "506bd3343b409e2e196cef7a483ecab7e2ebf0f786ec5817e1202aef9d0d9a35"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9df264d77dd8af150e1af3f6c4c439167320d0e1b14969fc37fd8a0c5317631"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fa2eb722ceebb073731c10627660a7543bd00533dd962ebc145dd8ba69563a8"
   end
 

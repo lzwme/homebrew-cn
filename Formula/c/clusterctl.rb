@@ -21,6 +21,7 @@ class Clusterctl < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5333d683d4e5579b4ae162fd1bda298fc95571234b80d02bd29e95fad28f742e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f31aac967863adcecf3eda175f8f04fd0a0a1bf92f9162453f477892a74c0ff7"
     sha256 cellar: :any_skip_relocation, sonoma:        "d675723187c43c90ad3dcf61ada2aaaf99c7b6440436cedf7eedaad614506110"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56504238bb26ed3f3cbffb58e893d2bf5b8624aa85e2b2317bcbc870361ce737"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ffdbd19f1718d8f724c131e60d3dbd498065e2d5af634051fbd30313a0474e8"
   end
 

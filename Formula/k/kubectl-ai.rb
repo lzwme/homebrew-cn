@@ -15,6 +15,7 @@ class KubectlAi < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6badf346972ae542805cbeb73139407d0533c3c0e37ced7b0a6129477f10a8d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e6badf346972ae542805cbeb73139407d0533c3c0e37ced7b0a6129477f10a8d"
     sha256 cellar: :any_skip_relocation, sonoma:        "896bac0091a05fb5c499d176d7489dee9519785b040387589ab344435525a331"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f50d2aa642fb2deafdeca2bd73fa04f269698010f68da0ef3055d934ac64a090"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0d27f2e2c00f5bb15a4f34b4f27a842e4015b23b65c028703882d86fc1225bc"
   end
 

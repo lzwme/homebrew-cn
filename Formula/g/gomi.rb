@@ -13,6 +13,7 @@ class Gomi < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "6ebe115f655c00e6755d3e0eae1208fe80ba957b51a291574b109268dd8d6bcb"
     sha256 cellar: :any_skip_relocation, sonoma:        "706809943057038c5131a01c1593c401cacab6dfc2b1da6f77ba73d6c1f73b46"
     sha256 cellar: :any_skip_relocation, ventura:       "706809943057038c5131a01c1593c401cacab6dfc2b1da6f77ba73d6c1f73b46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0306496b5a2c2f4e81d612a65680edab94d86a9712824c5be04e464e5d86d64"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1336b3d3bcb61d81006c1e8a491d3b83ca6b871d0323597a20187204160ad83b"
   end
 

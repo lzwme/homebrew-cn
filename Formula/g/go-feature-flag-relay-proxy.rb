@@ -11,6 +11,7 @@ class GoFeatureFlagRelayProxy < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fd0209e761f5e38976516b990d64b411db21dea072d8173880941516bd16bef"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "65fe86d2d9965cdadffa15c6f552809e9357b89fd3b5932b3a0bb05a144a7f1f"
     sha256 cellar: :any_skip_relocation, sonoma:        "7197d49bcd05ddb0d3def9a4207d8b404a6156f24c48c809034ed7ee8e98a735"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "905f71dd792eefb7113c80ff3208606552f1a052d63331c9413e538f0bdb1145"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce2f27d13b9618ff88a9836ad4d77d912d59d543443678254884c694a3a26203"
   end
 

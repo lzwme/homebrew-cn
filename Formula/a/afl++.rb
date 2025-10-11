@@ -5,6 +5,7 @@ class Aflxx < Formula
   version "4.34c"
   sha256 "b500b3d8012757ba6f3435814f7f36a474a1b722efce464216c87af0c515888c"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,17 +13,17 @@ class Aflxx < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "529b2888bcec3f03717df7fdacfc14ddab0e5dab07ad433d168129ca20451954"
-    sha256 arm64_sequoia: "4dbd60b15c583bdfe56bf1bd3342aedebdbeb5b179138b34430503377d9842f5"
-    sha256 arm64_sonoma:  "98335d68f9ee0b7eef244cdc226d547e2572ed4a37125895a86e2877358db902"
-    sha256 sonoma:        "2173a3cd5e2a2754a09a1d52275a9d531aedbbc414eab8b446166254456e4f1e"
-    sha256 arm64_linux:   "3e9187888bc3f7867e00cc6c4aa73c2cfbbf84bfcc1ae0f97118f61babc544f3"
-    sha256 x86_64_linux:  "a284a3950157643798c9fd7241eb90a736ec8996d63cf528084642a59ef30cb3"
+    sha256 arm64_tahoe:   "38501f46e62ba0ae835aedcc3964ebd52a2485dc360ce172919557a67c37a9e0"
+    sha256 arm64_sequoia: "45bb110c26cbeffe6e43b3c544d133a10fbc58e5cd9efc966240368471e3266e"
+    sha256 arm64_sonoma:  "8524f5f60c6b6c3a5d15c143ebf452518eccc779d435648f9564dba2dddcc676"
+    sha256 sonoma:        "a0edabd4ae32fb7ee22d9efd61ce3b17419804e5cfb174b97d846a11795055e7"
+    sha256 arm64_linux:   "edd24b5f5f8725c1152038783d1bb0d552fc5f5293cab154359e1d0f5ccdfe5e"
+    sha256 x86_64_linux:  "95d898801603c750a683ba2b060ae108dc7abcd8bda78c59d03715f89c21018e"
   end
 
   depends_on "coreutils" => :build
   depends_on "llvm"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "zlib"
 

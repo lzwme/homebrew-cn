@@ -13,6 +13,7 @@ class Piknik < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a5c60ad4cad0bbf6a504f28053f1668b8b209a6bf473a8c477f53a5bf7b4665b"
     sha256 cellar: :any_skip_relocation, sonoma:        "794e44f78e1ac05b76da93e9ebcd02080d4dae1fbcdb5e186fd8779215499136"
     sha256 cellar: :any_skip_relocation, ventura:       "794e44f78e1ac05b76da93e9ebcd02080d4dae1fbcdb5e186fd8779215499136"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1b1c1a5ddc70994723a063303873b3283283e42bc38267630ffe613195e16bd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec30a0fe6f7a5e8995c8f14174d5e7fd5e51a843db398bdf1e5d05b5a1c0fa74"
   end
 

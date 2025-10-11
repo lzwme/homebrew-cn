@@ -4,21 +4,22 @@ class Pygobject3 < Formula
   url "https://download.gnome.org/sources/pygobject/3.54/pygobject-3.54.3.tar.gz"
   sha256 "a8da09134a0f7d56491cf2412145e35aa74e91d760e8f337096a1cda0b92bae7"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ec1a61f1af16d64db9bc4ee3685d30736572bc5296a876b343f2a0701fa93856"
-    sha256 cellar: :any, arm64_sequoia: "25661b3cb0bc9eb486eac13541d40e829edbd7bc7b09242ab98329726d774cac"
-    sha256 cellar: :any, arm64_sonoma:  "8693f65ff672351e87e7cb1a62ee1cecba638567567c7951c66e59f668d89ef3"
-    sha256 cellar: :any, sonoma:        "e2a6b171d8cd3be641d517f308fcddaf745e7fc2cc25b2d15402948944216c98"
-    sha256               arm64_linux:   "81eecf4580130e10f5206ab5c2c138e87a7eacd1fe3022ace196815110455750"
-    sha256               x86_64_linux:  "e71432f52934f2705f611430bfdeeee421ab24a43d5c3f676606e32402d8b5c1"
+    sha256 cellar: :any, arm64_tahoe:   "d61b61b1d994bec4f8c144b793dc761820e4d19f708b7d517677d6d6e767bcc7"
+    sha256 cellar: :any, arm64_sequoia: "c963f635ea648b4156549b3be4250ef0ab26701bbae79fcf7b99cccbe051d31b"
+    sha256 cellar: :any, arm64_sonoma:  "572f9a5eb818687af44c57d9e809db01f11522c902c2e2cf786d755a6f7e2b51"
+    sha256 cellar: :any, sonoma:        "cba68f4f0dcab53fa90f45aeb3ea83fb4396b01e548adb02e0f00b1adfbc4554"
+    sha256               arm64_linux:   "8c166611816a1f114f20ab9b784a56035360035f2c27b732869a0f7a03690b4d"
+    sha256               x86_64_linux:  "fb2740d47d68d91e9cee1eec451dacbe2bf18d22692f791d8232ff012aa405cb"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
 
   depends_on "cairo"
   depends_on "glib"

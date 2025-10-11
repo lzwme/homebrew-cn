@@ -17,6 +17,7 @@ class Mmdbinspect < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "138f33a523623a3dafb7a96da79b98987f58abd46ac50bb8b87469bd9d81a289"
     sha256 cellar: :any_skip_relocation, ventura:        "5a8fd7d5ea482aee83bd485cd07782368efaa034643b8829e8a965906a6c233f"
     sha256 cellar: :any_skip_relocation, monterey:       "16793974693aa4a49b65689bd728af00fd109c1b6c6476c27c9ad7d4ce591eba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ce81e65aae5802033968369b4782dda971c200e6585defc30238b3b01f1c6a9a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec2a1905e63afdb38e62d24f3f4841e81ddf75f09ec102becab9415b10a81a23"
   end
 

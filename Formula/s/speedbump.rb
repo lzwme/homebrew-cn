@@ -19,6 +19,7 @@ class Speedbump < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "3c9b18929d4d11b231b45f1f6bef8eef9dcf2564ce7baab83f688817577b481c"
     sha256 cellar: :any_skip_relocation, monterey:       "c6ec49903634a0db12e85374e71e1f11239726916218e1eae07950bd5a2484c3"
     sha256 cellar: :any_skip_relocation, big_sur:        "93ec6fcd2dd65b2203d786ae5ebe5301b421b041460e5f4e88fec54026ead594"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ae045cae2fd336d9da73e4b33eebd244a35d804c61b2a08e8742ab2f0ead585e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "653ea4f77ffba07e1cd95c4d3805709c6c15f860641faf264a38d66bcc98ed78"
   end
 

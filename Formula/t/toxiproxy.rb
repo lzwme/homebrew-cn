@@ -12,6 +12,7 @@ class Toxiproxy < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a2fad1caee2311b6102a1f58d5f3a30de56f5df9f7e6a462ac3edebc36a64af9"
     sha256 cellar: :any_skip_relocation, sonoma:        "34c15b5c0ee7761719352512657dfabfe1971b672dc498f0dde8b31a066ae17b"
     sha256 cellar: :any_skip_relocation, ventura:       "8ab0b56d6ca497ad409b54a3f04c472faf10c972873a5fb07799655439b07e91"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be11e08a83dc827210a32100c31f7d94533b1dc526ee8b8ae597ab48d7e0454e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff23599856b2b7c08cd3873700a345b07480950ceb7f8d4484c6efaf492b6788"
   end
 

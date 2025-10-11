@@ -11,6 +11,7 @@ class SpicetifyCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8b358274e47af11a5d99cd5cb08a2fc3c0744aad14915b659dbdaadeed98d41"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8b358274e47af11a5d99cd5cb08a2fc3c0744aad14915b659dbdaadeed98d41"
     sha256 cellar: :any_skip_relocation, sonoma:        "cf2642739b56ab4fc4a73421a59f586e42f968db4b2e6a9b82cbbae65f0a469f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e25c75f973eae5c3e81f3951fa3430909fc855698d7d285a2a845c0d4d4a39c9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8020cfdabc4bf1b4967250944815e03cb8f8b5856ac4b19b71210c1ba67a7f7"
   end
 

@@ -12,6 +12,7 @@ class Testscript < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "32cde373625b9755ac45543595073083f253574b0bfdf50ce6d42fd8e20f08b0"
     sha256 cellar: :any_skip_relocation, sonoma:        "49b838e6643cee284d00a50e1cd8be9c5b3d67033856bc360deef31f2c629fcc"
     sha256 cellar: :any_skip_relocation, ventura:       "49b838e6643cee284d00a50e1cd8be9c5b3d67033856bc360deef31f2c629fcc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c20bb5d4ba2e8032f66e5c61ddeaf01d07052db00e6810814be3abc85714f992"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "022c023408e7ecc0d604e44d262d675fb4be88303ea8794b422f1b472009e1ab"
   end
 

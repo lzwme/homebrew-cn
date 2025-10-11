@@ -18,6 +18,7 @@ class Cortex < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ddcda7547e90bde4e7466eed576f853d1b024fa730f6a2083f35db2ece003a0f"
     sha256 cellar: :any_skip_relocation, sonoma:        "6b2f54b88703909eb151d7d7af35b576a36bb1d6f58c1401f7b1e884e14ca123"
     sha256 cellar: :any_skip_relocation, ventura:       "6b2f54b88703909eb151d7d7af35b576a36bb1d6f58c1401f7b1e884e14ca123"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0674abb6a826bec500568e9684488fba9c60192e5b8b737b541fd16f7b46414"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e5fd77ae5c2bc6afe90da427f3a780adb07896bb655c09c57b92e5b0423de2c"
   end
 

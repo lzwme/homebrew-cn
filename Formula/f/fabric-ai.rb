@@ -12,6 +12,7 @@ class FabricAi < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "165f3c14db3f93edd1b9ec627438b907c38f8d08381be09ed17bdc0448f220cb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "165f3c14db3f93edd1b9ec627438b907c38f8d08381be09ed17bdc0448f220cb"
     sha256 cellar: :any_skip_relocation, sonoma:        "7294c2ed6ccde95d950cae40f58bd9696f7d1e0a1053a296974650fcc7a47d5d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "531b169283c39f18c18b4932ab696f40a1dff6be14342cf8c1db869c2de91bb0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "975cf82b4e998c3e070612495728b95003daff53b0464d996d6d7c8b02610416"
   end
 

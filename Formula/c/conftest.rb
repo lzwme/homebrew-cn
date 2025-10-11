@@ -11,6 +11,7 @@ class Conftest < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9775c12b8041da285ea8a497dba7b0d3373b74461b57bf14239f84a6e811c2b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b34f54d3055277e9bc8cdd15bbf81bf1b6426a1e0e3073d88c7175d58a4cea56"
     sha256 cellar: :any_skip_relocation, sonoma:        "c28970942ab7e31e1bb5d4d7205454749058a87c437e388b072130c16d5af82f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "75f65e553044f0b35df573c059af0ff4fa8594de28171064a79b85ae8427afb1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff739d08b8a7fa4a052bd3296ac37c48221a3ca7237d525528ca996a268c8862"
   end
 

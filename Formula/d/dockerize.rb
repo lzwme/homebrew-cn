@@ -13,6 +13,7 @@ class Dockerize < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "bce2724a44498ef7a8f3af75fe83f9c9f0b655e808af100aeab35aba133d97dc"
     sha256 cellar: :any_skip_relocation, sonoma:        "f718902815c4f7fde3f6c6860c485dd62db8b8388cfa8898d52c2d9331293876"
     sha256 cellar: :any_skip_relocation, ventura:       "f718902815c4f7fde3f6c6860c485dd62db8b8388cfa8898d52c2d9331293876"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1876517dd21b7cf29f4dd54782894032e6343b5b0775285f08bc1e30cfe351f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "550dcae60f0801cc80da4f86ae9b741c95a6b655f09bd7b33bf2dcdaf2d4deff"
   end
 

@@ -13,6 +13,7 @@ class Jd < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "65c8688b9faa2ed36501f6cd8b07a424844c1addd0d5e9a5a800aac3b2acce32"
     sha256 cellar: :any_skip_relocation, sonoma:        "3528b572d310d68bbbb04d7ee487142e34e2a4402cc279b45c9fe89458b02624"
     sha256 cellar: :any_skip_relocation, ventura:       "3528b572d310d68bbbb04d7ee487142e34e2a4402cc279b45c9fe89458b02624"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f07f301c762898c1ae7c0ef3056a528a286ab3327324a95f021866134c34e82d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "105ce145b5b39abed50c84e01d71f75a0cdfc23cb6d67c627b81ff2d4a8ab177"
   end
 

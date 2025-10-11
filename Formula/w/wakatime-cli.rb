@@ -14,6 +14,7 @@ class WakatimeCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5f865313a2b4c3dcb382b18e04d30f6eb8448cfbfd2022243686ae3bd1372adf"
     sha256 cellar: :any_skip_relocation, sonoma:        "03e9b73352730afd93bbb1a4d69c83c200a3aa0a018439196a758f285cfd39b4"
     sha256 cellar: :any_skip_relocation, ventura:       "03e9b73352730afd93bbb1a4d69c83c200a3aa0a018439196a758f285cfd39b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de4c75bd897eb100a9e02677542318d0b964df86fd5188a3b0de53f92c666426"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8179095604d08f93c0d46842cd9851afd40bd2f124339b97a2ee0df752b79e30"
   end
 

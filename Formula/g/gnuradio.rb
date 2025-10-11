@@ -21,6 +21,7 @@ class Gnuradio < Formula
     sha256 cellar: :any,                 arm64_ventura: "84d3b06ea74c3b27b885e769b4c17a4d7cbce19db8e2802a2f721cdaf5878e36"
     sha256 cellar: :any,                 sonoma:        "bf9c4964f8db02895dc0867b779505164439980e326d5e0cad2bfe57b4b6eb8a"
     sha256 cellar: :any,                 ventura:       "f6a548aebafa9ba98a2eb5a61e047d62ec3c2d6bc601081e506a8ed463f0b1ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fdd964138057929185c5965786501cb15453db3cd6fe761468f51032347cf129"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0aeca0419d6660e716b0d3971851922d2fba527df1895e8cfcc9d4da8adaaae"
   end
 

@@ -13,6 +13,7 @@ class Seqkit < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e8cfb637b8f41b6c5bce9c7c91308d8ad1288a71cdfda62e0e134741ced3cc5c"
     sha256 cellar: :any_skip_relocation, sonoma:        "0f22207684037c12254d0be88a2a1f0d0a372fe2d8bd9d8c1e66509e150d5dc3"
     sha256 cellar: :any_skip_relocation, ventura:       "0f22207684037c12254d0be88a2a1f0d0a372fe2d8bd9d8c1e66509e150d5dc3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "695c1189897529b219fd3c4370a0f638264f771c31caab7fd4080b9a34f593d8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffc8a498f2d0bc0e44a36cc1f791d4b9ae542347e3eeeb77d222c775f6045644"
   end
 

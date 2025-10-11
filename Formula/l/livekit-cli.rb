@@ -11,6 +11,7 @@ class LivekitCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7758ba445bafddb4984fddb4f6ea9d2b5c2aa7d02508186868437e56873019d4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "443511a81c71b14c1f313e11bea0157bad247a46de74450dba48da2c243384f2"
     sha256 cellar: :any_skip_relocation, sonoma:        "12ad8cfd97993ad0ade3c83dc530d1cb268db81094a264099f1d9d6c57a4607e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4392517baf63be317123f1b3adf2a03155aa3c08faaa0389ba95a12c2ef1eb8f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5ddb2b4530361094ca09c5a143e8afc54fc4b226a777bc18b6989777f1e36a3"
   end
 

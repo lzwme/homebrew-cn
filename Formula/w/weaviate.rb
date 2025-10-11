@@ -10,6 +10,7 @@ class Weaviate < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bbacac59d0405a0b96211ae5e9ae299356cd9c58700248c944be8eade0aac3b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7bbacac59d0405a0b96211ae5e9ae299356cd9c58700248c944be8eade0aac3b"
     sha256 cellar: :any_skip_relocation, sonoma:        "b971cd5db3e4948ad5765e67260a6fcf610b31b2fbfa8a508833f3cc20738fb9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ec1c608d5a5d8c7a76e096974dde24e4512b6e824b35bd483471adb42e6129b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e940ef7599afaf1ef2ea3c7497ce42baf936c31148d2d367cfb94ca53f363a7f"
   end
 

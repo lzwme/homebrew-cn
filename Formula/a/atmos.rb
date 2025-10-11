@@ -18,6 +18,7 @@ class Atmos < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "809e827155dc1f8b51464bfa5f9caad00269c5a8ec822f40988f8ffe39f93ba4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad65ac0bf953ca483d6aac3d11551768ce8d90746a905508d4fb9917966a7d65"
     sha256 cellar: :any_skip_relocation, sonoma:        "eab802a8b7acd6d160867a05446f2e7f380e6896cc42a318fd4ca23086b21ce6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5187d6d5d1af6978c8f5211d4994e3efb2101690607f90b63cc826ab607a258e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "73aee3a52541e0654ca093a3d878c61a7f795ae0bba52a23bedb68eadcbef359"
   end
 

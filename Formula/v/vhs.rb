@@ -13,6 +13,7 @@ class Vhs < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "62e58ee735695f64fff35b0c32c1ddda7688d7da3c970652e3118ec8843394be"
     sha256 cellar: :any_skip_relocation, sonoma:        "555c4a74bb2df5b11488b54589a7b8b4cea5bcddba87ad9c1bf04a2054ffa154"
     sha256 cellar: :any_skip_relocation, ventura:       "555c4a74bb2df5b11488b54589a7b8b4cea5bcddba87ad9c1bf04a2054ffa154"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5f740a33f47dd36334f738d3e737470af49606c175729525b1436dae5ea5f33"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f1fe18a37fa617a10925711ff8d2c00ea7f61a9030537d478b2df88fe3aec46"
   end
 

@@ -16,6 +16,7 @@ class Arkade < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3098e71f367e3a8da74d930595c1108bc1f1ea5b99ca058ec6fc9179ebdb61b8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3098e71f367e3a8da74d930595c1108bc1f1ea5b99ca058ec6fc9179ebdb61b8"
     sha256 cellar: :any_skip_relocation, sonoma:        "93491ff6d691ee80f0893d5b0bf23bb5853b9d52dac077e5efae8fe54dcaea0a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a1dacd2dd177d1e46180378b25db1a466787cdbe9574a0e19beb703b4dfddbe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a06f6fd730d31fafcea771937cc7ee8b7539c0c880e4363d84756e787d18e9f0"
   end
 

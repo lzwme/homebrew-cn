@@ -13,6 +13,7 @@ class KamalProxy < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "060e0f6992d77247bb4daf6dcbaaeb0bc53768469c0d1fc1e67dc46b57f01cda"
     sha256 cellar: :any_skip_relocation, sonoma:        "14815fff3c55b5a86faf522f9f3d060ea30d059908f1ed0fb8c448866fa451ec"
     sha256 cellar: :any_skip_relocation, ventura:       "7dbb7ea2b7ed3dc7a06fedb1a563ecdb89d18f992d691a14a013398f343f4b83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "454e1da3b3fc882b1007faed2033dd3dc70e3aed4e5354891cb9ffc3c4bbb9bb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf8e6876771e9d510a93a42ce58dfed4f1b017ca0895c0ae11016a34168a9feb"
   end
 

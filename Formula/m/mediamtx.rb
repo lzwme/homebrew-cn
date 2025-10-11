@@ -13,6 +13,7 @@ class Mediamtx < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ad5090ce535e69f9dfc28f8aae9e272ca36ce8a1c1da37950a27fa384144c42"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ad5090ce535e69f9dfc28f8aae9e272ca36ce8a1c1da37950a27fa384144c42"
     sha256 cellar: :any_skip_relocation, sonoma:        "0aa7b815507ade4a675722637ebbb582477288ce52f1219776593b74f57c5c0a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e462a93b3783b3fa71522000015b7cdd2422f49485f52bb3b456b9664d1f2f83"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b62c3b9fad3a725b737ea3f56942709fc333aab62085a5d19777b58ceefaa27f"
   end
 

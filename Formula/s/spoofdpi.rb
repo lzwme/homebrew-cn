@@ -23,6 +23,7 @@ class Spoofdpi < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "28532b6f63c37431c6159c59707c6763f6788a3f8eded481a7ccf79f8b976683"
     sha256 cellar: :any_skip_relocation, ventura:        "28532b6f63c37431c6159c59707c6763f6788a3f8eded481a7ccf79f8b976683"
     sha256 cellar: :any_skip_relocation, monterey:       "28532b6f63c37431c6159c59707c6763f6788a3f8eded481a7ccf79f8b976683"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2f833b978c6f9f15ade32ce16641b752a1fc98d81b8df57e80d5be44588c2a5d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "16de959e4dd509269fb41e71a1fd3948581c3844b2ae035506d478313b09d615"
   end
 

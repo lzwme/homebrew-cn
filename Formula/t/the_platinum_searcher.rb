@@ -21,6 +21,7 @@ class ThePlatinumSearcher < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "b9f8d4628e265fe8cee61b17d40a0695316940d4805d84ee98de11abc6dc54fa"
     sha256 cellar: :any_skip_relocation, big_sur:        "63cc973af4c1fc612acb86c7a928f1680f84db7edfae52f374b95925c00761dc"
     sha256 cellar: :any_skip_relocation, catalina:       "79066cac44fd6cd21b8feadc9737045f98846832f15bd2a2e1fdaae3a8165e6d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c21d15d5a6ac396326e399a183e29cac1ac75f71215f8052eba4acc021b0ab3d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6ba21397a0538c990656c24ba157c5650ea62a26da823afdba238da37226d3b"
   end
 

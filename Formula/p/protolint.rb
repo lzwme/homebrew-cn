@@ -13,6 +13,7 @@ class Protolint < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7afab0c2bf2eabdfe873483fd2683056765a488d1f6f56eeecda301b752e2fc8"
     sha256 cellar: :any_skip_relocation, sonoma:        "bc91cad8bb74a6282339793fcac0d9f69b9cfa64679aaa62b996c6a3e6b64ae1"
     sha256 cellar: :any_skip_relocation, ventura:       "bc91cad8bb74a6282339793fcac0d9f69b9cfa64679aaa62b996c6a3e6b64ae1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "50ea3b0ea97b6f1706fa2552a34e6a74e78660cd22eaf84cac12f5891a7bfaea"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e9ad1c4fa4fe3bd3259266444237c81538570c920eeb4f6a7d8bc45578a258a"
   end
 

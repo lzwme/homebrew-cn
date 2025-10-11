@@ -12,6 +12,7 @@ class Wush < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c2320aac31be8d68acc3218db510cd3f91be381a695c01e5e8b6f9046e7569e4"
     sha256 cellar: :any_skip_relocation, sonoma:        "4ed8074f45bf38496a93c58f184b791b36e47363fda9c79d10cbd9bd8f36235b"
     sha256 cellar: :any_skip_relocation, ventura:       "d3e82478484e85ab52dcd10f1ec7cda04fb09f4e3f67d6a497c2ba3d50ebdfef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "260356e6d21223007286d84011a0ec629ae7b18b9be356cc1f67a4175183467e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef23622648237ddf0eb3829977a5137e06d4741d953754bb55029d2855ad96bf"
   end
 

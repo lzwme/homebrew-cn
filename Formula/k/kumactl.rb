@@ -18,6 +18,7 @@ class Kumactl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "77571bcce74294e50b982d01d23f0e06e63fdd415d0d717f33aef590ac0b37fe"
     sha256 cellar: :any_skip_relocation, sonoma:        "40d3a03752347556474764634695fd3596ec26ff1b85a04a40ddd2f3d7edf442"
     sha256 cellar: :any_skip_relocation, ventura:       "9cd59a59ef8d14eb556690798b9edeb6d68a398ffe4e011ad62b0126af57bb84"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "012d028e599af7b0a5f7f98ee6e47dee5cb9d35e0ee4bd1f3b49622864d46825"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3362602bbeebdccb0d75dd2710f10e1f64b6ae3265f15585d566887921be08ff"
   end
 

@@ -11,6 +11,7 @@ class ContainerStructureTest < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "26c63631775802c40ec12552e68fb579894b0bbd9ff5064924d479650f613c06"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26c63631775802c40ec12552e68fb579894b0bbd9ff5064924d479650f613c06"
     sha256 cellar: :any_skip_relocation, sonoma:        "6b1ca5ac1b3121bdc1e9e8f1863f73e4096d43f120f2dcdac202c241d1a03520"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa26ede2c6eef7a15882029892e8719407487e80e3fb968bddad65ac4e89348a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c3b923e12b6368b5a1991186d56cbae3db6a19f2fa1134bdd4a23b6d548560c"
   end
 

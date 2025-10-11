@@ -13,6 +13,7 @@ class GitBug < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a271df2167a6a767e15beb87eea6eed4245f09db052f3f61b1cd5136349709de"
     sha256 cellar: :any_skip_relocation, sonoma:        "d5bb614c77aca72bf32c5d2809befa82500f59fc5b603366d261cd83ac7f5762"
     sha256 cellar: :any_skip_relocation, ventura:       "8721018faf434cc44ecad8440923d69c41886c780e8e10ac73942d8532696de1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b84957c63e145ff5a12b5dac9cea8023ca7e7870f04f4ba92581a3811b11bd9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c614beca0af4af926599abdd8959820da8cb6621c7c4451ffaaef8cc00a9c268"
   end
 

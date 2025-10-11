@@ -13,6 +13,7 @@ class Csvtk < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "fac1f71c7cd43fdf92ee9c4142af9df200117e097ba4e2c6b14610bd6f1f956e"
     sha256 cellar: :any_skip_relocation, sonoma:        "f8aa4654478d26a028ff613490fa86e603ca73cedcab65d8680b9bef5ac4026d"
     sha256 cellar: :any_skip_relocation, ventura:       "f8aa4654478d26a028ff613490fa86e603ca73cedcab65d8680b9bef5ac4026d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3445b7f132b1d5348b9486735e9456cf3025df4aac09a168c9050def50246e74"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cb6c6db444aad11c72af872e744a396562da0d2a27f08456b910354e2f18a2f"
   end
 

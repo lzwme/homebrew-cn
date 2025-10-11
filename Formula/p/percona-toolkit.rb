@@ -21,6 +21,7 @@ class PerconaToolkit < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "15a499710d1aacc752986af8f2cc842a7652564a4938a5bc6b48e602cd8e4d59"
     sha256 cellar: :any_skip_relocation, sonoma:        "32586dd3bdacb64ecb568d550750a7f140542f4715c5dfb5c84898f719420040"
     sha256 cellar: :any_skip_relocation, ventura:       "5ee9f37aca9455631f1d4301bf141574ad8bf99601a6b5b52198fcfe31f5cb7f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6afb3a5188e3d60f607bdfe3ce49161b600d856ed0f3f6f4406f3776bf4da1fa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b43428c0da2027f1a735030216ad956da2ea4395fc7d5039b6cb90b3b443463a"
   end
 

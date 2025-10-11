@@ -19,6 +19,7 @@ class Pget < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "edb9edc985e7d466dcaaacdfdb31221c7109b2604777df7e9829aa4f0185dc25"
     sha256 cellar: :any_skip_relocation, monterey:       "0006e845fe431ee1e419028938963cb7a5258ded5d5b18c10a0670260bd6b86e"
     sha256 cellar: :any_skip_relocation, big_sur:        "6cc06f23fbd3eb30d66a1e8c6d00b63225d864d7221f4775b0679a277a05ea56"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5a6da0d673fdea5f2de05288170a73637d3e22b3a5505c46812e63ac468d60e3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6edaa4e8d20796136fa7f95f21390d4827e88b4f596b04756489cde00260fa6"
   end
 

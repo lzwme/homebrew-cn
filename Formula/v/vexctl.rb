@@ -10,6 +10,7 @@ class Vexctl < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a98d2b6408c16612ccb3d1db6ecdda65bbf6b40d4b07adca31dd8704666aafa4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a98d2b6408c16612ccb3d1db6ecdda65bbf6b40d4b07adca31dd8704666aafa4"
     sha256 cellar: :any_skip_relocation, sonoma:        "9db5167ea7db6957525725f29c57b9a72f0b758ec16f002a44af866e2100e138"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fdb980c111f359a32bc0597528f517846a2b806cb25b28cf09d3373ec315b47f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fee7ab65814a907c75c47fede705015488316e2e5d145e9f8822e1c3bc37f6be"
   end
 
