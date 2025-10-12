@@ -9,11 +9,12 @@ class AivenClient < Formula
   head "https://github.com/aiven/aiven-client.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0b00ec0af18034c5177ba15f1fbb501e47899f983af487ac2d18fe13702e0f7d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "0e25a56090195714eed5ef08eeac3051aafb09edab8c8448f7692d0f1ae5c3ac"
   end
 
   depends_on "certifi"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"

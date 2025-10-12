@@ -1,8 +1,8 @@
 class Bde < Formula
   desc "Basic Development Environment: foundational C++ libraries used at Bloomberg"
   homepage "https://github.com/bloomberg/bde"
-  url "https://ghfast.top/https://github.com/bloomberg/bde/archive/refs/tags/4.29.0.0.tar.gz"
-  sha256 "2f6e952092b8ac311afc8c113ead9d673d16a7cb1c76e350504c9785718cb7cb"
+  url "https://ghfast.top/https://github.com/bloomberg/bde/archive/refs/tags/4.30.0.0.tar.gz"
+  sha256 "4d7aec410a35e58cd3ccd302aeccbfdaf8ae2a0b954b3efbb47c3cf6cd241015"
   license "Apache-2.0"
 
   livecheck do
@@ -11,14 +11,12 @@ class Bde < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d9c2a99df4f44d9e6dbf3925ea5a869e3db37ef82004cbf556956072b73a0100"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "691f7e0da877b3441e5ea20e8ef576fd52c3aa2660b08ee8f9f72512a11063ae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ba3fe5df396f397d17e19fc233f81a50db35b08935435203e5ae53818fed2cd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5bf0ece129c462567c622599ce4acad3552c69d78f9b609153e0be29f94b97f9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cc8a114d99998e029a70ce224ff6854d824c76947970eac57923db7b60929cb7"
-    sha256 cellar: :any_skip_relocation, ventura:       "c7685008f2ead6437eeb3b14cbaaced6bfab2f9a2a25691661e6d85004da81a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2528eca3e18ebc4b501c07b3eb36442c287fc2d5a3ea0cc5c4a1522527065172"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8743eb505a9490252ebcefa014252b3ad2ec1c3756babc525585f9fd007b674f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "954db5129ad62c9720463e06000bb26ff2a24e85637544fbd37d9f7ea750f423"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6ddd0e431981855ee0e1551d35889c99f6a24cf9f395e4212403ad4bd4484d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83ba6dd416b42c4c7ad1db53b861d58963871e2cb8f5cd150e8d3f814b92faea"
+    sha256 cellar: :any_skip_relocation, sonoma:        "95f4f7a753dd45cb1ec5c7bb21b535daaf413cee1011f52f7ffabc9ba950e588"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0369cc9bae5ed399ffcd2efb1e4474052cb88a28355a455a96c6e492e5a3e46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a2a344b2294ffcf3f5416a6a4f188dfdba8add2f9501a51a99be4629d578c94"
   end
 
   depends_on "cmake" => :build

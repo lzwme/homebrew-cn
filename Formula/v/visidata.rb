@@ -8,10 +8,11 @@ class Visidata < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e3d5f4243f36d12249d4719368f24bb73edf7b972312c2a862a2aefb5831398d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "8be7f319d1633fce26ef5706d96174cf42244bea0f88da6114f7e5cf0ac9c962"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"

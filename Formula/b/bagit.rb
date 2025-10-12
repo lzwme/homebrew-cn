@@ -10,10 +10,11 @@ class Bagit < Formula
   head "https://github.com/LibraryOfCongress/bagit-python.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b11223ef3adee801477c593c9107ce0400cee4e9f1900cdaef12444a1aab4fae"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "cd75590862c752f2d6fa722470125ef7eb0c50bcace9dff268adfa600a71123d"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     virtualenv_install_with_resources

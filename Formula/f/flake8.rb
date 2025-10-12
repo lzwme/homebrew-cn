@@ -9,11 +9,11 @@ class Flake8 < Formula
   head "https://github.com/PyCQA/flake8.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "099a96d97181d73a9d76c5b633c6740361568cdb03010c084acd59a5bc93a8b8"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "615b6b5c6fba374b684583f57a51c6667a0fcc78ad65ed0e86027b4d93a8c308"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "mccabe" do
     url "https://files.pythonhosted.org/packages/e7/ff/0ffefdcac38932a54d2b5eed4e0ba8a408f215002cd178ad1df0f2806ff8/mccabe-0.7.0.tar.gz"

@@ -1,8 +1,8 @@
 class Nasm < Formula
   desc "Netwide Assembler (NASM) is an 80x86 assembler"
   homepage "https://www.nasm.us/"
-  url "https://www.nasm.us/pub/nasm/releasebuilds/3.00/nasm-3.00.tar.xz"
-  sha256 "85c51ffc7d2804274b16d1821e1dd84c1b9164120b0b1221b95bd57a89d278f2"
+  url "https://www.nasm.us/pub/nasm/releasebuilds/3.01/nasm-3.01.tar.xz"
+  sha256 "b7324cbe86e767b65f26f467ed8b12ad80e124e3ccb89076855c98e43a9eddd4"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Nasm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "068e7ce07b423159f2ed316cada16a18a6c0d3fa404b79ed7b6bcec4d18c3535"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6126cc68af10ddee8770180ed769611b14bdac77f9acc1c85408011ae98fdb55"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93b503ad90057283109124c968b2ff861b93152cbe8a28406c2a7b0d564d74d3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1f9ea5599a562f49789fd287ae73312bedab53ec52e0da9a26ca13321fbeb3e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "16df305a4d33ee046fe0657ad83f18218ad44c602498cfecbd784918394471af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d474eca8ca7672936d93a1dc01a8800dd439aaac04de37ed233a69f6b18d9c31"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5074568719d225be8b29c51a67afb5a4feec97f58736cd18cd1534eefa11df5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88f144c41ed757649726c4ed2247cdbc75621bdf57c2b27f17fc784c6e28d3f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eca617b897d2e594511ca59690799341e9600e2e511ee95e057a36b28dde0edd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "56b4849156efbe9ef0a4d615a36a4e58f5d9cc098a4c56e161489490189e6f56"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2653ec1582df302177334313b005f06c6ae4df44194f72742406eaa47e5b6065"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2bb9cd0b3ae85202e0584e4a088c9bcec70cccbb4f619465fae0210f95151dc"
   end
 
   head do
@@ -28,10 +28,6 @@ class Nasm < Formula
   end
 
   def install
-    # Work around upstream bug
-    # https://github.com/netwide-assembler/nasm/commit/dc247c9f9913e336200ecf8bb72152fdabdb3585#r167178007
-    inreplace "include/bytesex.h", "l32toh(", "le32toh("
-
     system "./autogen.sh" if build.head?
     system "./configure", "--prefix=#{prefix}"
     system "make", "manpages" if build.head?

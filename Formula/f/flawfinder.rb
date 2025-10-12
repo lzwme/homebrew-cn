@@ -17,11 +17,11 @@ class Flawfinder < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, all: "3d21cca878025689c10c24b55855c5cd035eb4dd0601707bc412eb17e97545ab"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, all: "ef4160192048471cc1fdda78cbfbda11725e3a826118988878a286f08a71d9a0"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     rewrite_shebang detected_python_shebang, "flawfinder.py"

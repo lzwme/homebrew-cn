@@ -8,17 +8,18 @@ class Apprise < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4b91625d0790d086718e5a0540b254d5ad86d6e9dfcbb2bb45d170c049e10bec"
-    sha256 cellar: :any,                 arm64_sequoia: "f698b24ff143a08b62cc78ad253257a32a6db0ba576c5b57e720402d79c5202f"
-    sha256 cellar: :any,                 arm64_sonoma:  "497b21707399bf8898be3eda61b374bb02c5f0796e83ba3d6bf51d4f64e19cf0"
-    sha256 cellar: :any,                 sonoma:        "a3ef7ec93389e4ef1311b3c9a9cfbde9c94963d9e1486399652e9fb7f1156f76"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c241a3c46d15e0e413925d112848467318f80bd4590ed6afc6aedcd0442b52ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6b3456dfb9c05da477e7390bb67f86bbf2f509cefdcf3169f18eef7c70782ad"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "b09464f2cd97606cd7ade6149ff5ee12c02d6813467bbe348c33ffff26e795ec"
+    sha256 cellar: :any,                 arm64_sequoia: "f2b365edd57773f103e68674a0b00c50f0778c0b5533124b5726f366b44554d2"
+    sha256 cellar: :any,                 arm64_sonoma:  "731ba916cf99f464ba07cd758c3e04ed7379294a1c4d8cc72720866024fc846b"
+    sha256 cellar: :any,                 sonoma:        "4a17373dab8009ff5df9533a22cbff84c7fd8cfea0fb2555889b4d8c9561cdb2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb69778718cf93a4451a7645b6b233360e49c20e82bedc1b6a54fc184644af0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53a79d91023be849d3cd9b00f17acc30eded33d92edb1af03dc2adc2c42acc65"
   end
 
   depends_on "certifi"
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"

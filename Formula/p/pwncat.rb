@@ -9,11 +9,11 @@ class Pwncat < Formula
   head "https://github.com/cytopia/pwncat.git", branch: "master"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, all: "c253e09b178311523ba3d2049c83ee52bdfb56f6544030d4caab4146d7e43d58"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, all: "b1d84dd6fab9c761c073e4c598688836ab8f5a07b15cf87f8eb3cd9f1afba9a1"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     virtualenv_install_with_resources

@@ -1,8 +1,8 @@
 class Flang < Formula
   desc "LLVM Fortran Frontend"
   homepage "https://flang.llvm.org/"
-  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.2/llvm-project-21.1.2.src.tar.xz"
-  sha256 "1a417d1c8faf8d93e73fec1cbb76d393ed3218974c2283c7bac9672d3d47c54b"
+  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.3/llvm-project-21.1.3.src.tar.xz"
+  sha256 "9c9db50d8046f668156d83f6b594631b4ca79a0d96e4f19bed9dc019b022e58f"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/llvm/llvm-project.git", branch: "main"
@@ -12,12 +12,12 @@ class Flang < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c91e58577f13f6cfc11b2eda471cfbf80eba7db0e0ae1aa8088171bdfa326b03"
-    sha256 cellar: :any,                 arm64_sequoia: "4fe6b6b610039a51ad4dc2b2291dc3e1a775d34ef8cadbd3f78402358747e9f2"
-    sha256 cellar: :any,                 arm64_sonoma:  "14137247164764f19a1ee964be23c0041834f56935b47371c3184c69f2eb011e"
-    sha256 cellar: :any,                 sonoma:        "6bd1393305710170662cd38ba22d8510945f208786adfab9b14edcb73bafb653"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9bae0382b158ccfc8ceb8ecd4f263b771680d0c717e7e61b684a799930afa91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ae008637939216b09edd9bf44f95f18d6e60b0fb8f185216b207e550d0fd666"
+    sha256 cellar: :any,                 arm64_tahoe:   "978bf017efcec82df07b01ab32008f90238e54b6eb5eb4932f051175ce670e2e"
+    sha256 cellar: :any,                 arm64_sequoia: "c8cc171a224b75b52b4c7b39d7d1b592046cf8033f2746b9f0343ae16bf023d4"
+    sha256 cellar: :any,                 arm64_sonoma:  "6c85e6b39ed6067c35f482a6a648cdbe2051b74a6f5ec1511180278d97375ede"
+    sha256 cellar: :any,                 sonoma:        "d9e603d2dc72a4204058ad29f0a76e41729ddb3c294b65e13514d647084ea73f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "79e90be209d0ba76b3b0e7e360c0c7064f8163fdd6165a747a6344b5c7a4b94a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32babfdd7c73835971faa4c25af455afb02868fbb9b673eb799f6a25eb936d9c"
   end
 
   depends_on "cmake" => :build

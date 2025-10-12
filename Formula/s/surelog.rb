@@ -7,21 +7,20 @@ class Surelog < Formula
   head "https://github.com/chipsalliance/Surelog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8f9f01c65b71b41a8f35550979e64abcbf54944cfca176a82cfc065f7fc0780a"
-    sha256 cellar: :any,                 arm64_sequoia: "731c51bf47968ebce7315e58d7b8fc45adef54664aa5bbe7ef8b114b9892d629"
-    sha256 cellar: :any,                 arm64_sonoma:  "198a98f4b56ee473bc860ae9270877296f604a0285a66bb15cb6d9157fa57b74"
-    sha256 cellar: :any,                 arm64_ventura: "97dbd2a05664ad8e177017f37ce29388223fdeb0f4cdfe627a01d714ef91a953"
-    sha256 cellar: :any,                 sonoma:        "958be06c4aad1786c140b4b298806866e867b93f7d04b447cf398f8e673efddb"
-    sha256 cellar: :any,                 ventura:       "9359fca618c82d9444ebc1ade7d3c68d45e355d28595f355ea7c37a2bce1b56e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "77413d1f767af4a4b1aba58a330ed6ecbc7e997c540e0bae73a01903faf7b995"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37c942ac0db6766038372e8ddef61fe96b06ef4856eb177adc2bed91bd55e796"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "66093d81ba27bdec93164720b4ad7a74dff68180740febc45e38d69fdc71d9c1"
+    sha256 cellar: :any,                 arm64_sequoia: "2370a598c0bd3f175e076cc279f4e1288b97d10d37ebb9e88997e43e6930aa70"
+    sha256 cellar: :any,                 arm64_sonoma:  "d6f0e16d64bd3d7bd5288c4e67acac3f1c6532547383ba57fe9f79b911bfe5d1"
+    sha256 cellar: :any,                 sonoma:        "414a3876730209a6dc97e206e8f364bd37a345c12483277b30ea8a7778ac0ac8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d759aa138eb2002443d6881c6cf3bec1e6c7f1d78089417ddc079afaf75a198"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "429877c5d363d0e611a33e01c5d77f88e2ac1c6253806b1c978581fa5e33cf21"
   end
 
   depends_on "antlr" => :build
   depends_on "cmake" => :build
   depends_on "nlohmann-json" => :build
   depends_on "openjdk" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "pkgconf" => :test
   depends_on "antlr4-cpp-runtime"
   depends_on "capnp"
@@ -37,7 +36,7 @@ class Surelog < Formula
                     "-DANTLR_JAR_LOCATION=#{antlr.opt_prefix}/antlr-#{antlr.version}-complete.jar",
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    "-DPython3_EXECUTABLE=#{which("python3.13")}",
+                    "-DPython3_EXECUTABLE=#{which("python3.14")}",
                     "-DSURELOG_BUILD_TESTS=OFF",
                     "-DSURELOG_USE_HOST_ALL=ON",
                     "-DSURELOG_WITH_ZLIB=ON",

@@ -6,13 +6,15 @@ class Internetarchive < Formula
   url "https://files.pythonhosted.org/packages/e5/ff/e152fcec2ebd19294f719a91a6ef1188734708d678991d51ffb51e81eb33/internetarchive-5.6.0.tar.gz"
   sha256 "b7e47f8a6739fa747c7894dd623392c2b8dd3302a9f686991c331688f065d86a"
   license "AGPL-3.0-or-later"
+  head "https://github.com/jjjake/internetarchive.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cbffe6bc8f9b95c8d0b5e8eaeb8788c192f41172579c367808d386489d51dfb2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c5a3ab5f786032fcc49055bdff76a1500499349066e4f262923b2feb61bf1ec5"
   end
 
   depends_on "certifi"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
@@ -50,7 +52,6 @@ class Internetarchive < Formula
   end
 
   def install
-    ENV["PIP_USE_PEP517"] = "1"
     virtualenv_install_with_resources
   end
 

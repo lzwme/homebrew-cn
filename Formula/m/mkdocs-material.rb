@@ -8,16 +8,17 @@ class MkdocsMaterial < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "230a76f47ba0b44c7a11205d6a12a685ca0a2160ff0fb850c9d4b3da68da9e81"
-    sha256 cellar: :any,                 arm64_sequoia: "30e7e71ee0bcf25c6e3456b506f51391ba30a5de9b9edcf022fbc40c875f5843"
-    sha256 cellar: :any,                 arm64_sonoma:  "4cf85a0031ebfa3e9c1c3ccbc47b1647245ce1e74c6ba37ac4a7e7ded06eff8a"
-    sha256 cellar: :any,                 sonoma:        "eee95677a85f757c501c88cc854fc8ef619ac324ae944d92c76216d272579b04"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "18447a6fe9dfa472d4d2f08501d60d87e3889aa0dd1da4e879539b48950bfc0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94816ef1606d15ccdcc9a0799bff548be7d7fe4d3b112ad136cab36916ed6cf7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "42353514b892c8018e4b2f0bc4d74504179e515130ae0cd3cdca1eac7b845d0a"
+    sha256 cellar: :any,                 arm64_sequoia: "588bd140efb9a208f1626fa160b366169ec059d40fe8f74713ce42069545aaa4"
+    sha256 cellar: :any,                 arm64_sonoma:  "0daa624d690efea58ef5af111074bd14fa0a1bff856c20b1decd91d4f3d81816"
+    sha256 cellar: :any,                 sonoma:        "80830be9c29ff13f91a9bc46a11f5d6508c7b193b242416e316268a182588f22"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e122bd2b1a8f20ec340049c2d0a4302d9c8a0b37e7144e20a5a60c5fafd0b4ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "364863a9c04efac37718cc027363d792029c98ea83a8263a737a2f24c93a9e4f"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   conflicts_with "mkdocs", because: "both install `mkdocs` binaries"
 
@@ -32,8 +33,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/dc/67/960ebe6bf230a96cda2e0abcf73af550ec4f090005363542f0765df162e0/certifi-2025.8.3.tar.gz"
-    sha256 "e564105f78ded564e3ae7c923924435e1daa7463faeab5bb932bc53ffae63407"
+    url "https://files.pythonhosted.org/packages/4c/5b/b6ce21586237c77ce67d01dc5507039d444b630dd76611bbca2d8e5dcd91/certifi-2025.10.5.tar.gz"
+    sha256 "47c09d31ccf2acf0be3f701ea53595ee7e0b8fa08801c6624be771df09ae7b43"
   end
 
   resource "charset-normalizer" do
@@ -112,8 +113,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
-    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
+    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
+    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
   resource "pygments" do
@@ -162,7 +163,6 @@ class MkdocsMaterial < Formula
   end
 
   def install
-    ENV["PIP_USE_PEP517"] = "1"
     virtualenv_install_with_resources
     bin.install_symlink libexec/"bin/mkdocs"
   end

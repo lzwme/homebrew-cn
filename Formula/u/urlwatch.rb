@@ -9,26 +9,25 @@ class Urlwatch < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5d0961035829d1c8c8ccbb2cf857dd2ef5aebf4a0861cb5d813996e9fa508172"
-    sha256 cellar: :any,                 arm64_sequoia: "14785843c477b914734aebaa654deaabcc89483b1694b94e95932d67d6858d12"
-    sha256 cellar: :any,                 arm64_sonoma:  "057415a63be93184efc9667e21210d37f8de43623d2dc061f4733bd1851e3e27"
-    sha256 cellar: :any,                 arm64_ventura: "fdf1d86201da20c68b96a2b2cc1ed8219cef73f62d1f76acc6acb7a4157448f0"
-    sha256 cellar: :any,                 sonoma:        "92a1a1ad70faa9b7bf14b55f56806a0cb77fe5d22448dc7696850bdcca59bc92"
-    sha256 cellar: :any,                 ventura:       "34308d52b967a4dcf66200020d6103906bb7a944011fe91fec7bddc00a7bad36"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d468350ec4e7379aa2260cacbbf01e4660acbe6eeb1eebef6051b96c525c4935"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cc505d2c507050283454878e43163d737c230742a0b7ce2eccc958b70f0cd6f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ea236318d1131719a6e57a455f3f8f77b38234a4f7d3934e70ff1aa2501f32d5"
+    sha256 cellar: :any,                 arm64_sequoia: "fb04b5ba8d463d374d68019d0c9b49bc5bfb6909138318a32117ff36124c194b"
+    sha256 cellar: :any,                 arm64_sonoma:  "7c4e8da6f2e2c90dca91f0b084fb6ae897ed06f9e1ec97c12d0e8f113c40d0eb"
+    sha256 cellar: :any,                 sonoma:        "2184dcfadbe944b36361a9e85bc40036d86774640f7c838dd13e9cad6ef0f70b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "39da67529211c63a0533556346a7b8580045fcd08d9446745a30d82c7a17d105"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fb0c11c63bb9871912bf09b8822befd11c47f5d384eab827feed8cde05f9683"
   end
 
   depends_on "certifi"
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "cssselect" do
@@ -52,8 +51,8 @@ class Urlwatch < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/ab/23/9894b3df5d0a6eb44611c36aec777823fc2e07740dabbd0b810e19594013/jaraco_functools-4.1.0.tar.gz"
-    sha256 "70f7e0e2ae076498e212562325e805204fc092d7b4c17e0e86c959e249701a9d"
+    url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
+    sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
   end
 
   resource "keyring" do
@@ -62,8 +61,8 @@ class Urlwatch < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/76/3d/14e82fc7c8fb1b7761f7e748fd47e2ec8276d137b6acfe5a4bb73853e08f/lxml-5.4.0.tar.gz"
-    sha256 "d12832e1dbea4be280b22fd0ea7c9b87f0d8fc51ba06e92dc62d52f804f78ebd"
+    url "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz"
+    sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
   end
 
   resource "minidb" do
@@ -72,23 +71,23 @@ class Urlwatch < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/ce/a0/834b0cebabbfc7e311f30b46c8188790a37f89fc8d756660346fe5abfd09/more_itertools-10.7.0.tar.gz"
-    sha256 "9fddd5403be01a94b204faadcff459ec3568cf110265d3c54323e1e866ad29d3"
+    url "https://files.pythonhosted.org/packages/ea/5d/38b681d3fce7a266dd9ab73c66959406d565b3e85f21d5e66e1181d93721/more_itertools-10.8.0.tar.gz"
+    sha256 "f638ddf8a1a0d134181275fb5d58b086ead7c6a72429ad725c67503f13ba30bd"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/fe/8b/3c73abc9c759ecd3f1f7ceff6685840859e8070c4d947c93fae71f6a0bf2/platformdirs-4.3.8.tar.gz"
-    sha256 "3d512d96e16bcb959a814c9f348431070822a6496326a4be0911c40b5a74c2bc"
+    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
+    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "urllib3" do

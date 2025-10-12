@@ -9,17 +9,18 @@ class Uvicorn < Formula
   head "https://github.com/encode/uvicorn.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1168e76d0b07c017ec3fc8874bbffebff9dbd52d3d0a4f8bf3d0b80662b11a89"
-    sha256 cellar: :any,                 arm64_sequoia: "08e495a0983ecec9324fd3d6fdd29d8ff8a6b98e02e0974f33aa7a333285de1e"
-    sha256 cellar: :any,                 arm64_sonoma:  "db040a956dff67a2875496e9bf1237f68f8eda7a355c71530f80f360ffb0786c"
-    sha256 cellar: :any,                 sonoma:        "815b4b5005c62c34978fef17068b440c97d53647fe0badb64d52f34a2b7362a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "34d3a986022c8bbc89a11c98ee793c0a4011aff341b712483769b00e7d300881"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92cbdb29bd821b94381ff45cd841bc64388f09bc1b3bb65d1ad82c75c2a1e6cd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "84cad3b8f96240ade1b9d1322641a07343123875d58ce085ff8ca1f2f96e97ac"
+    sha256 cellar: :any,                 arm64_sequoia: "8a761c2452cddd9490c82fdfa8d3f443afadbe9eef5222f1b955e34464bc12dc"
+    sha256 cellar: :any,                 arm64_sonoma:  "c571d38009616810910feffa4290b65c2a67eab0ea4be4d4f926a447c6c922ab"
+    sha256 cellar: :any,                 sonoma:        "e7b56a4f2846e489ba7ea323f072a43a9c1ef6519769b9fb45f499cceff088d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db0d430dc5c1601753523594a7810ccb75210ae7b81d50fb377d5553bed297fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ede0e6154f73eef851716fa67d4dfb1bb35714ddd72dfab1cc5f919a1538ae4"
   end
 
   depends_on "rust" => :build
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
@@ -37,8 +38,8 @@ class Uvicorn < Formula
   end
 
   resource "httptools" do
-    url "https://files.pythonhosted.org/packages/a7/9a/ce5e1f7e131522e6d3426e8e7a490b3a01f39a6696602e1c4f33f9e94277/httptools-0.6.4.tar.gz"
-    sha256 "4e93eee4add6493b59a5c514da98c939b244fce4a0d8879cd3f466562f4b7d5c"
+    url "https://files.pythonhosted.org/packages/b5/46/120a669232c7bdedb9d52d4aeae7e6c7dfe151e99dc70802e2fc7a5e1993/httptools-0.7.1.tar.gz"
+    sha256 "abd72556974f8e7c74a259655924a717a2365b236c882c3f6f8a45fe94703ac9"
   end
 
   resource "idna" do
@@ -52,8 +53,8 @@ class Uvicorn < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "sniffio" do

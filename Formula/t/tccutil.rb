@@ -10,19 +10,20 @@ class Tccutil < Formula
   head "https://github.com/jacobsalmela/tccutil.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "83f51a93c001db60b40e2b80c0699e1df29c15794c37e88913c95bcfc862885d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "973aa0820d9a988f0b53b060af19dabd769782101c73c073ca218ee75ef98457"
   end
 
   depends_on :macos
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/51/65/50db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4/packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   def python3
-    which("python3.13")
+    which("python3.14")
   end
 
   def install

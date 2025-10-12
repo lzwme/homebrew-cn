@@ -1,8 +1,8 @@
 class Wstunnel < Formula
   desc "Tunnel all your traffic over Websocket or HTTP2"
   homepage "https://github.com/erebe/wstunnel"
-  url "https://ghfast.top/https://github.com/erebe/wstunnel/archive/refs/tags/v10.4.4.tar.gz"
-  sha256 "69a12b8bbc2888dcefc84a90fbdf9925c7292e3b2839108a8aa1caf4a6758ffb"
+  url "https://ghfast.top/https://github.com/erebe/wstunnel/archive/refs/tags/v10.5.0.tar.gz"
+  sha256 "e83a4fe2fe17f7e26098b95bbb5d0efa5c02e6fc6f951aa14e697bb7698e683e"
   license "BSD-3-Clause"
   head "https://github.com/erebe/wstunnel.git", branch: "main"
 
@@ -15,14 +15,12 @@ class Wstunnel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9cbc95800492eabd31724da7bca539a725af989af124177c9e53482281114f13"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17b8c9207c050bb95f2ac59bd4da3f66c4a45e7349c95a095036e4849dfdad49"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e02f2dc9c9ad065763abe9d88edb73011f5c69dc226207500a59f0543b19a704"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0f81b8f904e262150dc08ea3f7a70a429469137b3e05408580b564ce51258a07"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8a525d20666f0c554451493bb56485f7180dea7d699de9b3e9e92711905f3ed5"
-    sha256 cellar: :any_skip_relocation, ventura:       "e7cc97543f71a3629bb9a925f9ea35cbbed08f38401afb90dfaee3ceab3652ab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e703956c9cb7e510f0f217a6f0cea26f63ee5393e9b739627bb3c4c1d29ba611"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2be586f0b41896c0b23e0691e0a0adb586a5dc3e0c99d46285715a56dfa0a291"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d9d492ce7eb4cb8dda20f66e8e18f53e8da3ac05800cc4ffcb466b0df18dae9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e49a22b39aea2e1193b977b301b672917e49e4beaa2a28554b93c357c1a9fd94"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15e3855c7b63768eb29937779fd29b20d11f20a28ceb146db3c49e8d2914c8fe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "96bf0f007cf659ae1318e4df7a375add8f9105089571d29abc96a256d33c8f15"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bab1f0247a0fe4c34704921aad7f094e02ba6c42d1e9177bad9d2ac28b24e75b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49ec47b615d818dc32837c7955940d76e2079c5a253a1c3a67b639943071a56d"
   end
 
   depends_on "rust" => :build

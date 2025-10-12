@@ -8,10 +8,11 @@ class Docutils < Formula
   license all_of: [:public_domain, "BSD-2-Clause", "GPL-3.0-or-later", "Python-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "25feb788160d84ea9bc516b9f561d114027d9a8f1be5541886376043a83176d5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "b2d908e4e43ec3f0f63dc6e9ff7572403cfbe27a3a068b356c71aae76b23c08c"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     virtualenv_install_with_resources

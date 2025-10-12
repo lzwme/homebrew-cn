@@ -9,16 +9,17 @@ class West < Formula
   head "https://github.com/zephyrproject-rtos/west.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "66568847019902ba316956786b4f6c6e48db4ae426d7783231124cccf0c12130"
-    sha256 cellar: :any,                 arm64_sequoia: "47f002d14deed7fd9f017e4521ff05ef6edb5e0c41287ddb08c73048b6c93301"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd833a328d54cd06887b80b96ef4b035ad002a9ded49f0825c24793868c083b7"
-    sha256 cellar: :any,                 sonoma:        "fa9790057ddf4ded85a519d9bfe789041d861f4199d016ae10a27a48b8e4618e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "efe31904fd51e35f8c75094239e2a71aa5bd8b61a70d242464cecfd284d750aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfb751967d1fc9703ad06727599040261503696c97b8926fc7112ff8b5555ab2"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "f870725d0d96ad5062cedb8513fd3ba49aaa38cae49d98dbf54610bbe61ca460"
+    sha256 cellar: :any,                 arm64_sequoia: "9b43c9ab44bcf6038552240e59c14530451e3b6a39fa36ba6bd83cb1e2859842"
+    sha256 cellar: :any,                 arm64_sonoma:  "22dd84e3fe1cad6e81fe1e333212ef5eb28c6dce4d9de0c7234255714cb24e78"
+    sha256 cellar: :any,                 sonoma:        "b00b0d9a49752f758cb38f4a38503f927c545f5e330557299f3ca7d3d14ee491"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aebbd91683301166bb13c402192372c33949595503c00afc1ee93b4f0b27920d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95330775a87e799568bbb903db4c95534fd1ff4c6f3335aa0c06c4244a5b104a"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "colorama" do
     url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
@@ -46,18 +47,13 @@ class West < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "ruamel-yaml" do
     url "https://files.pythonhosted.org/packages/3e/db/f3950f5e5031b618aae9f423a39bf81a55c148aecd15a34527898e752cf4/ruamel.yaml-0.18.15.tar.gz"
     sha256 "dbfca74b018c4c3fba0b9cc9ee33e53c371194a9000e694995e620490fd40700"
-  end
-
-  resource "ruamel-yaml-clib" do
-    url "https://files.pythonhosted.org/packages/d8/e9/39ec4d4b3f91188fad1842748f67d4e749c77c37e353c4e545052ee8e893/ruamel.yaml.clib-0.2.14.tar.gz"
-    sha256 "803f5044b13602d58ea378576dd75aa759f52116a0232608e8fdada4da33752e"
   end
 
   resource "six" do

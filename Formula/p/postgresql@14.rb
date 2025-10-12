@@ -11,14 +11,13 @@ class PostgresqlAT14 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "002ae23910d3ace860f30cdc7a3521db9969b155da1029ef9c56ac964928ad6e"
-    sha256 arm64_sequoia: "b50feb3e6ff5d43004896161fd4b888905dcaea3fe1115b5bca32ac9908840bc"
-    sha256 arm64_sonoma:  "c4e3df76ece87bd67c8d6f3f239db3d49bfaeb76efef6041713cf69fd0130fd4"
-    sha256 arm64_ventura: "0905ab88328e8c44d029b48816960c11904cbd460a68ba9288999beafb80ff18"
-    sha256 sonoma:        "a0ec7ebfe1f716bea613cda417333f8eb0ca8b06726b113ac8be9b29ea3d4150"
-    sha256 ventura:       "454b727db309f1aedc4b3b057a67db343de2f2c7e2bd7e87d58b794789608b35"
-    sha256 arm64_linux:   "7f39ad16f140518a190ece5cd57bc423ce2679bc31c9a0dde8aeadd80167487c"
-    sha256 x86_64_linux:  "a8e7b54928c579f30935cf611e3468138ec3a4fc9686dfeb7489e76929775dd2"
+    rebuild 1
+    sha256 arm64_tahoe:   "f654ad5909a87ed4081380315edf82329301abbff4e01fd4641073ea332fb3b6"
+    sha256 arm64_sequoia: "0254f39e196653fcd93ba8462fb0a33655c4b7dff7b961d21c9c53d4e473ad3f"
+    sha256 arm64_sonoma:  "b6d6b2344659a64b785164918e8019d39ee039e34710c584ae05729e785dc13e"
+    sha256 sonoma:        "771ebb371c41a42d72d9d1b3b9dd9dadb0298c293c9629ea479daa8b0222f9f9"
+    sha256 arm64_linux:   "7ccd62cb69a764c4a73ad09ba5e21e53abe56b1966e88f6c971b7547359eaf9c"
+    sha256 x86_64_linux:  "64f1d1dea887cf2d97220eb572e8cbd4e017d09ef0cc3db8707141462371dc8e"
   end
 
   # deprecating one year before the last release,
@@ -114,7 +113,7 @@ class PostgresqlAT14 < Formula
     # Don't initialize database, it clashes when testing other PostgreSQL versions.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system bin/"initdb", "--locale=C", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
+    system bin/"initdb", "--locale=en_US.UTF-8", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
   end
 
   def postgresql_datadir
@@ -132,7 +131,7 @@ class PostgresqlAT14 < Formula
   def caveats
     <<~EOS
       This formula has created a default database cluster with:
-        initdb --locale=C -E UTF-8 #{postgresql_datadir}
+        initdb --locale=en_US.UTF-8 -E UTF-8 #{postgresql_datadir}
     EOS
   end
 
@@ -145,7 +144,7 @@ class PostgresqlAT14 < Formula
   end
 
   test do
-    system bin/"initdb", testpath/"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
+    system bin/"initdb", "--locale=en_US.UTF-8", "-E UTF-8", testpath/"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
     assert_equal "#{HOMEBREW_PREFIX}/share/#{name}", shell_output("#{bin}/pg_config --sharedir").chomp
     assert_equal "#{HOMEBREW_PREFIX}/lib/#{name}", shell_output("#{bin}/pg_config --libdir").chomp
     assert_equal "#{HOMEBREW_PREFIX}/lib/#{name}", shell_output("#{bin}/pg_config --pkglibdir").chomp

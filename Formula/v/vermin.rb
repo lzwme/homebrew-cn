@@ -9,10 +9,11 @@ class Vermin < Formula
   head "https://github.com/netromdk/vermin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "952a58c5ea96f2e4e3bad8630e003979534fe4ecc0232f3aa258168a9ff7a3d8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "f98f5ae78d3a75725e6def0a1dc52381cfc23983f41236468da51c40bd5a641a"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     virtualenv_install_with_resources

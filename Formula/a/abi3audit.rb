@@ -6,15 +6,16 @@ class Abi3audit < Formula
   url "https://files.pythonhosted.org/packages/3f/c4/c87c370ba5c9e0821da2946bb8fd6ccf95c1c2869ef78368702d932e17ff/abi3audit-0.0.22.tar.gz"
   sha256 "60d2c7a0556e98316a5a0e18e3b232e3b047011353762126d7af0db5a7f10da0"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6e56de56e3e060bb818b4b9e3b493946d26f10cf181917d1199de68ec9497f84"
+    sha256 cellar: :any_skip_relocation, all: "661504bff33cd05d8e3e4044704567955dc8c15675039e5bde4ee67e6793be0e"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "certifi"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   on_linux do
     depends_on "rust" => :build

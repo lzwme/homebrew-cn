@@ -6,22 +6,23 @@ class Safety < Formula
   url "https://files.pythonhosted.org/packages/4c/5a/dc84e854574cc5c24a53e04180e18bf3590c8283b80a1b1b3d3ca4390031/safety-3.6.2.tar.gz"
   sha256 "2e148cd9a4ad2e387d2c142878b7b5a3a9cb9e6538167043faa1ba7023a032be"
   license "MIT"
+  revision 1
   head "https://github.com/pyupio/safety.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c2213e00d11cbac765cc7f9fabe93c73b30f9b38bb5643355415c3ad7c647900"
-    sha256 cellar: :any,                 arm64_sequoia: "5ab8764bd2af4a8a4e593c7a5b5f648589fb0afa00eb7f8f7004064ef980c936"
-    sha256 cellar: :any,                 arm64_sonoma:  "eda1c7ea04a69d56bb79fe0ccd18c5c69f65508e3da65f9de468c003c7cbaafb"
-    sha256 cellar: :any,                 sonoma:        "31b142222a2a18d62cc4ee89cca929252d0026b35931ba80517c6acfb5566e1f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c93427df198194e6188f5d0fe3b0bad4f01893e82747db12aba381a4ecb5815f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef956ebec862ba0bedb9d1287555f298e0373d1b21f11757aacab2febddf8248"
+    sha256 cellar: :any,                 arm64_tahoe:   "d751a28b6ac0ebcfbf0f85c45aebd40d8590da2dc945592fd95978bd5c33e218"
+    sha256 cellar: :any,                 arm64_sequoia: "65f0a052314932a555cca6a461eac29ec3333d0b0996efaf89c17b9d9e15e9f6"
+    sha256 cellar: :any,                 arm64_sonoma:  "a74431b7a319d4e0945f3a49776706f78a77b8dfdc452cceffc093288cfa046f"
+    sha256 cellar: :any,                 sonoma:        "f960bd7604ec1f4344deb0ad0ff33299311222faa5e917f31cf23a8d0a4deef5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "da837066f17038fa96afedb051a39206d30da4a01c10ec8d05fd35a0e1edb84a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8f2dfe251aa66a2280a6af2558d1f0bdf6d3a26d59fd85d94c023afcaeabea9"
   end
 
   depends_on "cmake" => :build
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "cryptography"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -34,8 +35,8 @@ class Safety < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/ce/bb/73a1f1c64ee527877f64122422dafe5b87a846ccf4ac933fe21bcbb8fee8/authlib-1.6.4.tar.gz"
-    sha256 "104b0442a43061dc8bc23b133d1d06a2b0a9c2e3e33f34c4338929e816287649"
+    url "https://files.pythonhosted.org/packages/cd/3f/1d3bbd0bf23bdd99276d4def22f29c27a914067b4cf66f753ff9b8bbd0f3/authlib-1.6.5.tar.gz"
+    sha256 "6aaf9c79b7cc96c900f0b284061691c5d4e61221640a948fe690b556a6d6d10b"
   end
 
   resource "charset-normalizer" do
@@ -54,8 +55,8 @@ class Safety < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/40/bb/0ab3e58d22305b6f5440629d20683af28959bf793d98d11950e305c1c326/filelock-3.19.1.tar.gz"
-    sha256 "66eda1888b0171c998b35be2bcc0f6d75c388a7ce20c3f3f37aa8e96c2dddf58"
+    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
+    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
   end
 
   resource "h11" do
@@ -94,8 +95,8 @@ class Safety < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   resource "marshmallow" do
@@ -109,8 +110,8 @@ class Safety < Formula
   end
 
   resource "nltk" do
-    url "https://files.pythonhosted.org/packages/3c/87/db8be88ad32c2d042420b6fd9ffd4a149f9a0d7f0e86b3f543be2eeeedd2/nltk-3.9.1.tar.gz"
-    sha256 "87d127bd3de4bd89a4f81265e5fa59cb1b199b27440175370f7417d2bc7ae868"
+    url "https://files.pythonhosted.org/packages/f9/76/3a5e4312c19a028770f86fd7c058cf9f4ec4321c6cf7526bab998a5b683c/nltk-3.9.2.tar.gz"
+    sha256 "0f409e9b069ca4177c1903c3e843eef90c7e92992fa4931ae607da6de49e1419"
   end
 
   resource "packaging" do
@@ -124,13 +125,13 @@ class Safety < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/ff/5d/09a551ba512d7ca404d785072700d3f6727a02f6f3c24ecfd081c7cf0aa8/pydantic-2.11.9.tar.gz"
-    sha256 "6b8ffda597a14812a7975c90b82a8a2e777d9257aba3453f973acd3c032a18e2"
+    url "https://files.pythonhosted.org/packages/c3/da/b8a7ee04378a53f6fefefc0c5e05570a3ebfdfa0523a878bcd3b475683ee/pydantic-2.12.0.tar.gz"
+    sha256 "c1a077e6270dbfb37bfd8b498b3981e2bb18f68103720e51fa6c306a5a9af563"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/ad/88/5f2260bdfae97aabf98f1778d43f69574390ad787afb646292a638c923d4/pydantic_core-2.33.2.tar.gz"
-    sha256 "7cb8bc3605c29176e1b105350d2e6474142d7c1bd1d9327c4a9bdb46bf827acc"
+    url "https://files.pythonhosted.org/packages/7d/14/12b4a0d2b0b10d8e1d9a24ad94e7bbb43335eaf29c0c4e57860e8a30734a/pydantic_core-2.41.1.tar.gz"
+    sha256 "1ad375859a6d8c356b7704ec0f547a58e82ee80bb41baa811ad710e124bc8f2f"
   end
 
   resource "pygments" do
@@ -149,8 +150,8 @@ class Safety < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
-    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "ruamel-yaml" do
@@ -209,8 +210,8 @@ class Safety < Formula
   end
 
   resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/f8/b1/0c11f5058406b3af7609f121aaa6b609744687f1d158b3c3a5bf4cc94238/typing_inspection-0.4.1.tar.gz"
-    sha256 "6ae134cc0203c33377d43188d4064e9b357dba58cff3185f22924610e70a9d28"
+    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
+    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do
@@ -227,6 +228,6 @@ class Safety < Formula
     assert_match version.to_s, shell_output("#{bin}/safety --version")
 
     assert_match "Safety is not authenticated, please first authenticate and try again.",
-      shell_output("#{bin}/safety check-updates", 1)
+                 shell_output("#{bin}/safety check-updates", 1)
   end
 end

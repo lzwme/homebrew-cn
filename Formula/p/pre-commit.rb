@@ -9,18 +9,17 @@ class PreCommit < Formula
   head "https://github.com/pre-commit/pre-commit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "43edc617080f7dffe1319f7de8dc182e0cfc6719b2b0ce3c4cf94a23f0bcee4c"
-    sha256 cellar: :any,                 arm64_sequoia: "5003a9e507228ba2e1cab97878504c7aebee61c9832a9cd30fd21019eca42b9c"
-    sha256 cellar: :any,                 arm64_sonoma:  "9cc0ffb7e8e73cdda810e8dc723db227d808907f9919fcab60d627b4b4118d91"
-    sha256 cellar: :any,                 arm64_ventura: "2265e0c22132c9e20cb6a0c98d9ee815669fef0a00e4494e952478d5fcdff413"
-    sha256 cellar: :any,                 sonoma:        "2a8095a8a1c1ee05a97eb03d6779d48e55c89ed2b1b04a9870e60a61e6c6afc9"
-    sha256 cellar: :any,                 ventura:       "36ada427dbca0b40ba4055948ef7f5bb0577baf3ad04fe2be56c3837d0bc94dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "02683330b0260a6fd99ed9822751a36bd5235e5abe0e4b7a7c750401a0f8027f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b06638faa4357af75024c04285840b21c3878ab8657e3c6e850191e6676cccfb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "68539bbf76255e4ad5fc5a17964ba30501238cb093a7dd7dfe43b2194e68f9eb"
+    sha256 cellar: :any,                 arm64_sequoia: "49391e8a3fced6ef0771634063b4d3fb3652cf34956571b13bcc7494fc086d05"
+    sha256 cellar: :any,                 arm64_sonoma:  "14203088fd2ff4ec749112ebb5d76ee45da5ef748e74d837b5a864d925e75bf8"
+    sha256 cellar: :any,                 sonoma:        "94bd944ac86f44ae5969ae93aa5ec1397afd330ab6826e34c0731bf540039e7a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "67d35d7e19d9537bb070d6293a98dd9ec3c45ece7c0a02479384cc8e88058942"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0569196fdb4a85648ce0d89f369ed96033538aef91a81f6c6c1335a0350832e0"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "cfgv" do
     url "https://files.pythonhosted.org/packages/11/74/539e56497d9bd1d484fd863dd69cbbfa653cd2aa27abfe35653494d85e94/cfgv-3.4.0.tar.gz"
@@ -33,13 +32,13 @@ class PreCommit < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/0a/10/c23352565a6544bdc5353e0b15fc1c563352101f30e24bf500207a54df9a/filelock-3.18.0.tar.gz"
-    sha256 "adbc88eabb99d2fec8c9c1b229b171f18afa655400173ddc653d5d01501fb9f2"
+    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
+    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
   end
 
   resource "identify" do
-    url "https://files.pythonhosted.org/packages/82/ca/ffbabe3635bb839aa36b3a893c91a9b0d368cb4d8073e03a12896970af82/identify-2.6.13.tar.gz"
-    sha256 "da8d6c828e773620e13bfa86ea601c5a5310ba4bcd65edf378198b56a1f9fb32"
+    url "https://files.pythonhosted.org/packages/ff/e7/685de97986c916a6d93b3876139e00eef26ad5bbbd61925d670ae8013449/identify-2.6.15.tar.gz"
+    sha256 "e4f4864b96c6557ef2a1e1c951771838f4edc9df3a72ec7118b338801b11c7bf"
   end
 
   resource "nodeenv" do
@@ -48,22 +47,22 @@ class PreCommit < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/fe/8b/3c73abc9c759ecd3f1f7ceff6685840859e8070c4d947c93fae71f6a0bf2/platformdirs-4.3.8.tar.gz"
-    sha256 "3d512d96e16bcb959a814c9f348431070822a6496326a4be0911c40b5a74c2bc"
+    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
+    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/8b/60/4f20960df6c7b363a18a55ab034c8f2bcd5d9770d1f94f9370ec104c1855/virtualenv-20.33.1.tar.gz"
-    sha256 "1b44478d9e261b3fb8baa5e74a0ca3bc0e05f21aa36167bf9cbf850e542765b8"
+    url "https://files.pythonhosted.org/packages/a4/d5/b0ccd381d55c8f45d46f77df6ae59fbc23d19e901e2d523395598e5f4c93/virtualenv-20.35.3.tar.gz"
+    sha256 "4f1a845d131133bdff10590489610c98c168ff99dc75d6c96853801f7f67af44"
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

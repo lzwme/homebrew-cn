@@ -14,17 +14,18 @@ class Reuse < Formula
   head "https://github.com/fsfe/reuse-tool.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b94a7a4dd90f3f016586f09850c2ea673af9732240a88fe8999ee4ff11bcda9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15a5d532193aad234de2afd688687e443a2fed962a48e03e5177be268137b72e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6f52383e243798fa8df2485ca8a6a26b0060d66f5fb67b6d20b24aa15147c1d"
-    sha256 cellar: :any_skip_relocation, tahoe:         "85dded7468eedbece5d9b0cae796dc3b59a66185471bd62b598f9fd1cb5d40bb"
-    sha256 cellar: :any_skip_relocation, sequoia:       "b97ccef2e8ac8ba187e8ee4ba2a8ee51ee2b8d43e687df3bf4d9c8472d1ae7f7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "83e6b31e9d621f1a289dfd8973d7cde17767264e0b22456abc519af822c76490"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "09d9c5ba25e1e04b415f303b59bc64bc98b629088b75d934a0e2ecbe64857295"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0658592215a02ef5ab44cd477a6b020d538c08179471884f5628ef4cdbb90301"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c7e5c081299f2dd99f9cded9533b1d98339ade2673b0fa8c28b095eeacb9361"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28e31ac3a0ee28ecbb84930ca144f59133378bbf9f3b5d199ec615d014597c6e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a281177f4bf74c2534f5c1350c4c8a1ebab59d8d23c43540b1498df5abdd0784"
+    sha256 cellar: :any_skip_relocation, tahoe:         "a60277164c86579bca503ba8322549189f99f507860ef7bdf94b5c954ef87309"
+    sha256 cellar: :any_skip_relocation, sequoia:       "b54e219e36a2c5f093c7c2670e6e69dc45604f01d7c7c44f3d444609dd363949"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9a8552c732cb24fbd5005fd9f128fefd585146797078c809d548f988eb35b0be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7dd1d69e6c909adff9279a409da8db1d0d71916ced211d6b18904722247bec51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14d0ae994487a1048854811fdf7604e9758bd19794b2ee8317e0c39d69d51773"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"

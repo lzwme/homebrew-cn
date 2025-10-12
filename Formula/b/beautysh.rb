@@ -8,11 +8,11 @@ class Beautysh < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "db3fc03fcc098082ae52debdee0bc7f353b793207d1cff2c05ea98f9d991bc83"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "8c08f73d137d26efea05a39b1e92e001d0e9076fec7a828c36eae365b5b5e30f"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "colorama" do
     url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
@@ -20,8 +20,8 @@ class Beautysh < Formula
   end
 
   resource "types-colorama" do
-    url "https://files.pythonhosted.org/packages/59/73/0fb0b9fe4964b45b2a06ed41b60c352752626db46aa0fb70a49a9e283a75/types-colorama-0.4.15.20240311.tar.gz"
-    sha256 "a28e7f98d17d2b14fb9565d32388e419f4108f557a7d939a66319969b2b99c7a"
+    url "https://files.pythonhosted.org/packages/99/37/af713e7d73ca44738c68814cbacf7a655aa40ddd2e8513d431ba78ace7b3/types_colorama-0.4.15.20250801.tar.gz"
+    sha256 "02565d13d68963d12237d3f330f5ecd622a3179f7b5b14ee7f16146270c357f5"
   end
 
   resource "types-setuptools" do

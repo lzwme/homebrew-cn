@@ -9,15 +9,15 @@ class Proselint < Formula
   head "https://github.com/amperser/proselint.git", branch: "main"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, all: "64dfc964e1a9bb4f8b7ad0f4c2387f8bf86cce14f14513575979cc6400557767"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, all: "eca80d4fc32861309f11f5a4c36ae7b2ec898d803e5dba3bb4ac7eed0be5902b"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   def install

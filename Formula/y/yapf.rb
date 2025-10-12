@@ -9,15 +9,15 @@ class Yapf < Formula
   head "https://github.com/google/yapf.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "f18f6eead958807f6b3df31f4a022c850efe1566b585dea3605c27c1b829ca42"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "55fb914de2771f27f304ac0b8fcdd5da19472f19ab59f9eacd8431e8dbaa4ec7"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
-    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
+    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
+    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
   def install

@@ -9,12 +9,13 @@ class KeeperCommander < Formula
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b1b68955e7ced01041116c112f25c59699809d3a9331e2f0d282b5b5c8279dd8"
-    sha256 cellar: :any,                 arm64_sequoia: "a93215533b425838d5f049c3c790d1420b5987a333d015b75dca9d5c701720ae"
-    sha256 cellar: :any,                 arm64_sonoma:  "6dd17b3156613cc3614ac81c53f26a2485279f6c34bbc23b71c69ca4538b2158"
-    sha256 cellar: :any,                 sonoma:        "4348244c0140bbf7008f41618708771ab0a69bbafb81b8366c6454862808ea6c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc5a6533ab7fe6028b664a3fee9a27223bdf79ab6018038253bef42789b5aca4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "913fd93c7323457ea0c16ffd8529ef52d5ab8f0ba6b8da383408142daec4234f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "130116d30a306446a4697e11fbd30b059197741f7b09677bfc8cb37c9a0166c3"
+    sha256 cellar: :any,                 arm64_sequoia: "0ba4ddce3f5208ff22855f653ff05a76a8f2a12eb4fa09882c27e18037c74e8b"
+    sha256 cellar: :any,                 arm64_sonoma:  "b628837aac1bc1d621959908275b6477d453b131adcb7d35ae48fcc7ab87b89c"
+    sha256 cellar: :any,                 sonoma:        "47622aed3c057c9c1d7fc6c91e0ddff004496eca3e716a0e5f790d365752b3ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4a0d0ff4775b40a433253b0a6c656f1162360a59f7d03c649f2951f120cd456"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aad0fb51e01a15c5c018422f3100faf55ea5184f2fe5fa7492078a917a7098e2"
   end
 
   depends_on "pkgconf" => :build
@@ -27,7 +28,7 @@ class KeeperCommander < Formula
   depends_on "libyaml"
   depends_on "opus"
   depends_on "pillow"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "srtp"
 
   on_macos do
@@ -57,6 +58,11 @@ class KeeperCommander < Formula
   resource "blinker" do
     url "https://files.pythonhosted.org/packages/21/28/9b3f50ce0e048515135495f198351908d99540d69bfdc8c1d15b73dc55ce/blinker-1.9.0.tar.gz"
     sha256 "b4ce2265a7abece45e7cc896e98dbebe6cead56bcf805a3d23136d145f5445bf"
+  end
+
+  resource "cbor2" do
+    url "https://files.pythonhosted.org/packages/3a/89/01df16cdc9c60c07956756c90fe92c684021003079e358a78e213bce45a2/cbor2-5.7.0.tar.gz"
+    sha256 "3f6d843f4db4d0ec501c46453c22a4fbebb1abfb5b740e1bcab34c615cd7406b"
   end
 
   resource "charset-normalizer" do
@@ -130,8 +136,8 @@ class KeeperCommander < Formula
   end
 
   resource "keeper-pam-webrtc-rs" do
-    url "https://files.pythonhosted.org/packages/f5/6e/21fb44759eb8133ae47c734165860df37aa68ab133e9a0b7cad25192ba3e/keeper_pam_webrtc_rs-1.0.0.tar.gz"
-    sha256 "b7b2f8ca4a93c80da421a09796ab32bc5fc52ebb5f7003a0257fe9d5426e2e0f"
+    url "https://files.pythonhosted.org/packages/02/a2/59cbb2b17f5e7d47629ddc31c052057efec3487ed53f8ac4143998f84337/keeper_pam_webrtc_rs-1.0.3.tar.gz"
+    sha256 "a0a2e602b6218fbd901fb361306d6e61b5e25ec9e1ab53065c14f421176b75f0"
   end
 
   resource "keeper-secrets-manager-core" do
@@ -190,13 +196,13 @@ class KeeperCommander < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/ff/5d/09a551ba512d7ca404d785072700d3f6727a02f6f3c24ecfd081c7cf0aa8/pydantic-2.11.9.tar.gz"
-    sha256 "6b8ffda597a14812a7975c90b82a8a2e777d9257aba3453f973acd3c032a18e2"
+    url "https://files.pythonhosted.org/packages/c3/da/b8a7ee04378a53f6fefefc0c5e05570a3ebfdfa0523a878bcd3b475683ee/pydantic-2.12.0.tar.gz"
+    sha256 "c1a077e6270dbfb37bfd8b498b3981e2bb18f68103720e51fa6c306a5a9af563"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/ad/88/5f2260bdfae97aabf98f1778d43f69574390ad787afb646292a638c923d4/pydantic_core-2.33.2.tar.gz"
-    sha256 "7cb8bc3605c29176e1b105350d2e6474142d7c1bd1d9327c4a9bdb46bf827acc"
+    url "https://files.pythonhosted.org/packages/7d/14/12b4a0d2b0b10d8e1d9a24ad94e7bbb43335eaf29c0c4e57860e8a30734a/pydantic_core-2.41.1.tar.gz"
+    sha256 "1ad375859a6d8c356b7704ec0f547a58e82ee80bb41baa811ad710e124bc8f2f"
   end
 
   resource "pygments" do
@@ -230,8 +236,8 @@ class KeeperCommander < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
-    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "tabulate" do

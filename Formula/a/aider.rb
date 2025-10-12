@@ -6,29 +6,38 @@ class Aider < Formula
   url "https://files.pythonhosted.org/packages/87/60/42ee32c47d6711635d591c729eea6bc56fa244099a18e0b82da064951af9/aider_chat-0.86.1.tar.gz"
   sha256 "48e489d20a4dfdd90ac4acc781f0170f688aaa5c5f2017d035e2d947fb801bbb"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/Aider-AI/aider.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2aa5827a91e34257b23736025c3c846f21d513c79dc76e18bba0da2097ef3a68"
-    sha256 cellar: :any,                 arm64_sequoia: "dee880baf97604e218f11c0e4f138bf357bec3f7d834e1c1851c51669dbc8039"
-    sha256 cellar: :any,                 arm64_sonoma:  "a84045ff0b91e8e7d61303e703bdc9e9e17b5db811a8cc2d1d61f94b32ba6169"
-    sha256 cellar: :any,                 sonoma:        "7caf878a831f28bf6439c8d8da31e4e91eae6e4412ae73eddc53073c4a209c78"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8da3d6d56b808f761f6321929ca18db4c680d243807bef0c7df35081a50d4e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d4e5a61bdc9fe8f87c0916857225ed9b460fb9d50435ab64beac87a737b58de"
+    sha256 cellar: :any,                 arm64_tahoe:   "c9670f9c05f57b607dcc518fe3271e48eca372a7429351996b387e12e65e69ff"
+    sha256 cellar: :any,                 arm64_sequoia: "d2f45f468c19a7d29c7cb2b8882b551009ac43e3b50ae4b7bac294c8a3ff075c"
+    sha256 cellar: :any,                 arm64_sonoma:  "f6732c1c087ba8fa961ef493553f6d7e9bf793a07f943adba9de0533b02821de"
+    sha256 cellar: :any,                 sonoma:        "a925911560bece950ceff26cdf09e56976f4523b7b4c394fe91b34d5d84f9616"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7289c98bf2792551be208d379e38745486f731e76244927a95daaebe9094035"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "770986e10792d59817c160930708e1b300da50e62826f65ad7f6dde6e03ea5eb"
   end
 
+  depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build # for pydantic_core
 
-  depends_on "certifi"
-  depends_on "cffi"
+  depends_on "certifi" => :no_linkage
+  depends_on "freetype"
+  depends_on "gcc" # for gfortran
+  depends_on "jpeg-turbo"
   depends_on "libyaml"
-  depends_on "numpy"
-  depends_on "pillow"
+  depends_on "openblas"
   depends_on "python@3.12" # py3.13 support issue, https://github.com/Aider-AI/aider/issues/3037
-  depends_on "scipy"
+
+  uses_from_macos "libffi"
+  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "patchelf" => :build
+  end
 
   # One way to update python resources:
   # 1. remove GitHub url resources
@@ -78,6 +87,11 @@ class Aider < Formula
   resource "cachetools" do
     url "https://files.pythonhosted.org/packages/6c/81/3747dad6b14fa2cf53fcf10548cf5aea6913e96fab41a3c198676f8948a5/cachetools-5.5.2.tar.gz"
     sha256 "1a661caa9175d26759571b2e19580f9d6393969e5dfca11fdb1f947a23e640d4"
+  end
+
+  resource "cffi" do
+    url "https://files.pythonhosted.org/packages/fc/97/c783634659c2920c3fc70419e3af40972dbaf758daa229a7d6ea6135c90d/cffi-1.17.1.tar.gz"
+    sha256 "1c39c6016c32bc48dd54561950ebd6836e1670f2ae46128f67cf49e789c52824"
   end
 
   resource "charset-normalizer" do
@@ -305,6 +319,11 @@ class Aider < Formula
     sha256 "307c3669428c5362aab27c8a1260aa8f47c4e91d3891f48be0141738d8d053e1"
   end
 
+  resource "numpy" do
+    url "https://files.pythonhosted.org/packages/65/6e/09db70a523a96d25e115e71cc56a6f9031e7b8cd166c1ac8438307c14058/numpy-1.26.4.tar.gz"
+    sha256 "2a02aba9ed12e4ac4eb3ea9421c420301a0c6460d9830d74a9df87efa4912010"
+  end
+
   resource "openai" do
     url "https://files.pythonhosted.org/packages/03/30/f0fb7907a77e733bb801c7bdcde903500b31215141cdb261f04421e6fbec/openai-1.99.1.tar.gz"
     sha256 "2c9d8e498c298f51bb94bcac724257a3a6cac6139ccdfc1186c6708f7a93120f"
@@ -328,6 +347,11 @@ class Aider < Formula
   resource "pexpect" do
     url "https://files.pythonhosted.org/packages/42/92/cc564bf6381ff43ce1f4d06852fc19a2f11d180f23dc32d9588bee2f149d/pexpect-4.9.0.tar.gz"
     sha256 "ee7d41123f3c9911050ea2c2dac107568dc43b2d3b0c7557a33212c398ead30f"
+  end
+
+  resource "pillow" do
+    url "https://files.pythonhosted.org/packages/f3/0d/d0d6dea55cd152ce3d6767bb38a8fc10e33796ba4ba210cbab9354b6d238/pillow-11.3.0.tar.gz"
+    sha256 "3828ee7586cd0b2091b6209e5ad53e20d0649bbe87164a459d0676e035e8f523"
   end
 
   resource "posthog" do
@@ -378,6 +402,11 @@ class Aider < Formula
   resource "pycodestyle" do
     url "https://files.pythonhosted.org/packages/11/e0/abfd2a0d2efe47670df87f3e3a0e2edda42f055053c85361f19c0e2c1ca8/pycodestyle-2.14.0.tar.gz"
     sha256 "c4b5b517d278089ff9d0abdec919cd97262a3367449ea1c8b49b91529167b783"
+  end
+
+  resource "pycparser" do
+    url "https://files.pythonhosted.org/packages/1d/b2/31537cf4b1ca988837256c910a668b553fceb8f069bedc4b1c826024b52c/pycparser-2.22.tar.gz"
+    sha256 "491c8be9c040f5390f5bf44a5b07752bd07f56edf992381b05c701439eec10f6"
   end
 
   resource "pydantic" do
@@ -463,6 +492,11 @@ class Aider < Formula
   resource "rsa" do
     url "https://files.pythonhosted.org/packages/da/8a/22b7beea3ee0d44b1916c0c1cb0ee3af23b700b6da9f04991899d0c555d4/rsa-4.9.1.tar.gz"
     sha256 "e7bdbfdb5497da4c07dfd35530e1a902659db6ff241e39d9953cad06ebd0ae75"
+  end
+
+  resource "scipy" do
+    url "https://files.pythonhosted.org/packages/0f/37/6964b830433e654ec7485e45a00fc9a27cf868d622838f6b6d9c5ec0d532/scipy-1.15.3.tar.gz"
+    sha256 "eae3cf522bc7df64b42cad3925c876e1b0b6c35c1337c93e12c0f366f55b0eaf"
   end
 
   resource "shtab" do
@@ -586,7 +620,7 @@ class Aider < Formula
   end
 
   def install
-    venv = virtualenv_install_with_resources(without: "hf-xet")
+    venv = virtualenv_install_with_resources(without: ["hf-xet", "numpy"])
 
     resource("hf-xet").stage do
       if ENV.effective_arch == :armv8
@@ -596,6 +630,13 @@ class Aider < Formula
                   "sha2 = { workspace = true }"
       end
       venv.pip_install Pathname.pwd
+    end
+
+    resource("numpy").stage do
+      python = venv.root/"bin/python"
+      system python, "-m", "pip", "install", "--config-settings=setup-args=-Dblas=openblas",
+                                             "--config-settings=setup-args=-Dlapack=openblas",
+                                             *std_pip_args(prefix: false, build_isolation: true), "."
     end
   end
 

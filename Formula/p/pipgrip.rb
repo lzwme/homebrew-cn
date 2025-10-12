@@ -9,17 +9,16 @@ class Pipgrip < Formula
   head "https://github.com/ddelange/pipgrip.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0956ab51da11b1fca04b9415ea25f052933e5cb52b1cf491ad22e1ad43ef795"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0956ab51da11b1fca04b9415ea25f052933e5cb52b1cf491ad22e1ad43ef795"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0956ab51da11b1fca04b9415ea25f052933e5cb52b1cf491ad22e1ad43ef795"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e0956ab51da11b1fca04b9415ea25f052933e5cb52b1cf491ad22e1ad43ef795"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0f71c0da21c9b1542d39a3b374018b938641957f8bd644c23af87562ee03e698"
-    sha256 cellar: :any_skip_relocation, ventura:       "0f71c0da21c9b1542d39a3b374018b938641957f8bd644c23af87562ee03e698"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f71c0da21c9b1542d39a3b374018b938641957f8bd644c23af87562ee03e698"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f71c0da21c9b1542d39a3b374018b938641957f8bd644c23af87562ee03e698"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "67752a5234171ce8d055afd391c179f19e7cf98984b005228c649ed22f330957"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67752a5234171ce8d055afd391c179f19e7cf98984b005228c649ed22f330957"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67752a5234171ce8d055afd391c179f19e7cf98984b005228c649ed22f330957"
+    sha256 cellar: :any_skip_relocation, sonoma:        "754a6d084aba7b4916d82b4787e63ec71bf4d53b83185496688a8e3f693c26c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "754a6d084aba7b4916d82b4787e63ec71bf4d53b83185496688a8e3f693c26c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "754a6d084aba7b4916d82b4787e63ec71bf4d53b83185496688a8e3f693c26c2"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "anytree" do
     url "https://files.pythonhosted.org/packages/bc/a8/eb55fab589c56f9b6be2b3fd6997aa04bb6f3da93b01154ce6fc8e799db2/anytree-2.13.0.tar.gz"
@@ -27,8 +26,8 @@ class Pipgrip < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "packaging" do

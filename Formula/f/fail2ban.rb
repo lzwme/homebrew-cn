@@ -13,19 +13,17 @@ class Fail2ban < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e377d350ac888f81be4dc4cdbcfde84822e3a8bb12f21797602728517d90e719"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f59d34135a5df4be2af65f51437d5443262ab7aca9e4fe6f321c75522f23c9a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f59d34135a5df4be2af65f51437d5443262ab7aca9e4fe6f321c75522f23c9a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5f59d34135a5df4be2af65f51437d5443262ab7aca9e4fe6f321c75522f23c9a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "506fcbd09269cb3a6c9b3b19b4e24aaf969e86568f113fd3ed925fe87032cc6d"
-    sha256 cellar: :any_skip_relocation, ventura:       "506fcbd09269cb3a6c9b3b19b4e24aaf969e86568f113fd3ed925fe87032cc6d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a546fb44894f82465d26ddfe88a3759b69a761891cdc922208674a948e9887f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51ddc960fd617aa7e844a7fb5f9e58d4af857e9934a82d2dca93257ee6a0c9f9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7ed27b54f7c5788e563843694f65c7dd205ad05079fd01a37e162f987ece3e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7ed27b54f7c5788e563843694f65c7dd205ad05079fd01a37e162f987ece3e1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a7ed27b54f7c5788e563843694f65c7dd205ad05079fd01a37e162f987ece3e1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cc25e9721b7898055def82c018165028cb21cfed3f2173d9b973bf9014b64908"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "71e926af73e9908433cc1d21315ff2dbe262fb0456fbd3fac6f13c01a55019e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71e926af73e9908433cc1d21315ff2dbe262fb0456fbd3fac6f13c01a55019e7"
   end
 
   depends_on "sphinx-doc" => :build
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   # Drop distutils: https://github.com/fail2ban/fail2ban/pull/3728
   patch do

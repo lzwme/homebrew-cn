@@ -6,13 +6,13 @@ class PgCron < Formula
   license "PostgreSQL"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "09735afcd85669a8b3c460864d987b45a85efa861b23d13d091d0a3044b9d65e"
-    sha256 cellar: :any,                 arm64_sequoia: "c6248b364e481b21ca81bfc63776271f8f3eda1ed42971b88c6b1b6cf87db682"
-    sha256 cellar: :any,                 arm64_sonoma:  "8f312f0971c68d69201ee2d4ed3b544c0572a4d36a2ebbc9ba8c5785ca20a556"
-    sha256 cellar: :any,                 sonoma:        "8eb54aed1bdff05c61bda87a5d30ec13beed7e14539eee17f9450748f67680bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "56feed3b8e5d423e83dc9218a3a17432e819b16fdd1045b7584593649fa3952d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58fc98446a6b2f23b701b53c391b8c4d052cbea137b0ea7e8fa7ff398bfe509a"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "a07a1ecf77295372c7976d26dddb193d94b529d87d133386e40379e8497dff55"
+    sha256 cellar: :any,                 arm64_sequoia: "903e9351b2bab78c495a3044933bf02a6407464f8afcd1c900415e95e9715d0e"
+    sha256 cellar: :any,                 arm64_sonoma:  "c4eed9429951152b6fae02fc2dbf701dff9edf553eb4035f3d1cfcc2708a11f3"
+    sha256 cellar: :any,                 sonoma:        "a046ebbb430f4eaa26638afcfe19082f19eaf984958d01e00650c931678d289e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e994552633f54d1d1e0a77ea71209671179bd649c65c9109564bf75e3bb035b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2a9efe94dba9e08e5a7444129f73aa88c7cb51eabf8378813f2edb18a119a8b"
   end
 
   depends_on "postgresql@17" => [:build, :test]
@@ -41,6 +41,7 @@ class PgCron < Formula
       # The major soversion is hardcoded to at least make sure compatibility version hasn't changed.
       # If it does change, then need to confirm if API/ABI change impacts running on older PostgreSQL.
       system "make", "install", "libpq=#{Formula["libpq"].opt_lib/shared_library("libpq", 5)}",
+                                "rpathdir=#{Formula["libpq"].opt_lib}",
                                 "pkglibdir=#{lib/postgresql.name}",
                                 "datadir=#{share/postgresql.name}"
       system "make", "clean"
@@ -48,14 +49,14 @@ class PgCron < Formula
   end
 
   test do
-    ENV["LC_ALL"] = "C"
+    ENV["LC_ALL"] = "en_US.UTF-8"
     postgresqls.each do |postgresql|
       pg_ctl = postgresql.opt_bin/"pg_ctl"
       psql = postgresql.opt_bin/"psql"
       port = free_port
 
       datadir = testpath/postgresql.name
-      system pg_ctl, "initdb", "-D", datadir
+      system pg_ctl, "initdb", "-D", datadir, "-o", "--locale=en_US.UTF-8", "-o", "'-E UTF-8'"
       (datadir/"postgresql.conf").write <<~EOS, mode: "a+"
 
         shared_preload_libraries = 'pg_cron'

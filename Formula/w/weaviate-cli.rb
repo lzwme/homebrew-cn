@@ -8,12 +8,13 @@ class WeaviateCli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "09e4a99e1f702ecedcff0da1bb93c754416bc3275f750059077af1140e785359"
-    sha256 cellar: :any,                 arm64_sequoia: "27085ee003a9cee4fe9eae255ba119f1c05e583126649296585f2df862dbc31f"
-    sha256 cellar: :any,                 arm64_sonoma:  "9fbb98bbc166cf3fcd6b6e5aaa81a9b9b6f8c7667ab3f1300c59ea381e545033"
-    sha256 cellar: :any,                 sonoma:        "8065fbe98eaf558efcca20060b47d0633dd7e9457de87cee08016baecb4ebf4c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f21feb1775b33e201202cc88b76d1733eb703a2199ece77620a3d0852c505726"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8768da9265e91943593c0d464f14d03f67eb6befa27f899c64a9b132db79158"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "75bbe26313c64d5f93e38cb64ad54590db945183d946f5537c61593e85c85a9d"
+    sha256 cellar: :any,                 arm64_sequoia: "5fdce84e2293fb06a3520df03f866c9bd1f150523f2f044a3c9e02d9a8da0d4b"
+    sha256 cellar: :any,                 arm64_sonoma:  "d060ee89720d54f44aa40e5284560e73a3514b900b66e44424b2730ef037ebdc"
+    sha256 cellar: :any,                 sonoma:        "6b5843a115cd39bab66780ec8a91c90192ae96dfca4a95311d9f1a60c899e000"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b6098b9a1199cb513c76bf7faf82bcdc141ba1430d4e9a41b17fc530f4612da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42595a233f7f5af10c27bdbc1f57e77be05ca4244d6540eef1e7340814510e97"
   end
 
   depends_on "ninja" => :build
@@ -21,8 +22,9 @@ class WeaviateCli < Formula
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "cryptography"
+  depends_on "numpy"
   depends_on "openssl@3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "libffi"
 
@@ -36,13 +38,13 @@ class WeaviateCli < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/f1/b4/636b3b65173d3ce9a38ef5f0522789614e590dab6a8d505340a4efe4c567/anyio-4.10.0.tar.gz"
-    sha256 "3f3fae35c96039744587aa5b8371e7e8e603c0702999535961dd336026973ba6"
+    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
+    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/ce/bb/73a1f1c64ee527877f64122422dafe5b87a846ccf4ac933fe21bcbb8fee8/authlib-1.6.4.tar.gz"
-    sha256 "104b0442a43061dc8bc23b133d1d06a2b0a9c2e3e33f34c4338929e816287649"
+    url "https://files.pythonhosted.org/packages/cd/3f/1d3bbd0bf23bdd99276d4def22f29c27a914067b4cf66f753ff9b8bbd0f3/authlib-1.6.5.tar.gz"
+    sha256 "6aaf9c79b7cc96c900f0b284061691c5d4e61221640a948fe690b556a6d6d10b"
   end
 
   resource "click" do
@@ -56,13 +58,13 @@ class WeaviateCli < Formula
   end
 
   resource "faker" do
-    url "https://files.pythonhosted.org/packages/3a/da/1336008d39e5d4076dddb4e0f3a52ada41429274bf558a3cc28030d324a3/faker-37.8.0.tar.gz"
-    sha256 "090bb5abbec2b30949a95ce1ba6b20d1d0ed222883d63483a0d4be4a970d6fb8"
+    url "https://files.pythonhosted.org/packages/c9/4b/ca43f6bbcef63deb8ac01201af306388670a172587169aab3b192f7490f0/faker-37.11.0.tar.gz"
+    sha256 "22969803849ba0618be8eee2dd01d0d9e2cd3b75e6ff1a291fa9abcdb34da5e6"
   end
 
   resource "grpcio" do
-    url "https://files.pythonhosted.org/packages/91/88/fe2844eefd3d2188bc0d7a2768c6375b46dfd96469ea52d8aeee8587d7e0/grpcio-1.75.0.tar.gz"
-    sha256 "b989e8b09489478c2d19fecc744a298930f40d8b27c3638afbfe84d22f36ce4e"
+    url "https://files.pythonhosted.org/packages/9d/f7/8963848164c7604efb3a3e6ee457fdb3a469653e19002bd24742473254f8/grpcio-1.75.1.tar.gz"
+    sha256 "3e81d89ece99b9ace23a6916880baca613c03a799925afb2857887efa8b1b3d2"
   end
 
   resource "h11" do
@@ -90,11 +92,6 @@ class WeaviateCli < Formula
     sha256 "185f87adef5bcc288449d98fb4fba07cea78bc036455dd44c5fc4a2fe78fed2c"
   end
 
-  resource "numpy" do
-    url "https://files.pythonhosted.org/packages/d0/19/95b3d357407220ed24c139018d2518fab0a61a948e68286a25f1a4d049ff/numpy-2.3.3.tar.gz"
-    sha256 "ddc7c39727ba62b80dfdbedf400d1c10ddfa8eefbd7ec8dcb118be8b56d31029"
-  end
-
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
     sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
@@ -111,13 +108,13 @@ class WeaviateCli < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/ff/5d/09a551ba512d7ca404d785072700d3f6727a02f6f3c24ecfd081c7cf0aa8/pydantic-2.11.9.tar.gz"
-    sha256 "6b8ffda597a14812a7975c90b82a8a2e777d9257aba3453f973acd3c032a18e2"
+    url "https://files.pythonhosted.org/packages/c3/da/b8a7ee04378a53f6fefefc0c5e05570a3ebfdfa0523a878bcd3b475683ee/pydantic-2.12.0.tar.gz"
+    sha256 "c1a077e6270dbfb37bfd8b498b3981e2bb18f68103720e51fa6c306a5a9af563"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/ad/88/5f2260bdfae97aabf98f1778d43f69574390ad787afb646292a638c923d4/pydantic_core-2.33.2.tar.gz"
-    sha256 "7cb8bc3605c29176e1b105350d2e6474142d7c1bd1d9327c4a9bdb46bf827acc"
+    url "https://files.pythonhosted.org/packages/7d/14/12b4a0d2b0b10d8e1d9a24ad94e7bbb43335eaf29c0c4e57860e8a30734a/pydantic_core-2.41.1.tar.gz"
+    sha256 "1ad375859a6d8c356b7704ec0f547a58e82ee80bb41baa811ad710e124bc8f2f"
   end
 
   resource "semver" do
@@ -136,8 +133,8 @@ class WeaviateCli < Formula
   end
 
   resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/f8/b1/0c11f5058406b3af7609f121aaa6b609744687f1d158b3c3a5bf4cc94238/typing_inspection-0.4.1.tar.gz"
-    sha256 "6ae134cc0203c33377d43188d4064e9b357dba58cff3185f22924610e70a9d28"
+    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
+    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "tzdata" do
@@ -151,13 +148,13 @@ class WeaviateCli < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz"
-    sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
+    url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
+    sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
   end
 
   resource "weaviate-client" do
-    url "https://files.pythonhosted.org/packages/f5/59/ff6d910425985e6ae19b17f9f9b1511aafb38cc2a146c9dbb01ffe3e3542/weaviate_client-4.16.10.tar.gz"
-    sha256 "c041e6ae5416b8db8ed53d961722f122b52516175da1d249601a87db327e9288"
+    url "https://files.pythonhosted.org/packages/bd/0e/e4582b007427187a9fde55fa575db4b766c81929d2b43a3dd8becce50567/weaviate_client-4.17.0.tar.gz"
+    sha256 "731d58d84b0989df4db399b686357ed285fb95971a492ccca8dec90bb2343c51"
   end
 
   def install

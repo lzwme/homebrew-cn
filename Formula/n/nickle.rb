@@ -1,8 +1,8 @@
 class Nickle < Formula
   desc "Desk calculator language"
   homepage "https://www.nickle.org/"
-  url "https://nickle.org/release/nickle-2.106.tar.xz"
-  sha256 "692ff0b392c0c69dadd4544b8a456a4d938b92f4c8f03f7200446dc09fba5d6d"
+  url "https://nickle.org/release/nickle-2.107.tar.xz"
+  sha256 "4062a51a8d9b36252f0e42e3e81717f00e9a51671731e643f18d8aedca4591f2"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Nickle < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "363c0c8081d99b828d43df3c52239379e1b1f5ccd7e0fbf4ff28eb94b6b025eb"
-    sha256 arm64_sequoia: "10a3be1081052d87a604b155ea1beb4e0f904299c9dbccf0ce059bf643632f81"
-    sha256 arm64_sonoma:  "b14238055c3db8d1433c93e64ca1c7d9b37945d057264dc2465fba85b44a0862"
-    sha256 sonoma:        "ec985b7e0c65d085b1ea87b51ac6c71daae2b0f2cf4d4e14991fb95f3338e578"
-    sha256 arm64_linux:   "d4f59efbaf588aae29b5ab81d37ac51435f2903f560b55314cfc7461e9419294"
-    sha256 x86_64_linux:  "89f5491bbb81f1a13eecb06529ffc69a6c7a3ffe1e8bd43b4b3f0ce8fb884c37"
+    sha256 arm64_tahoe:   "838ad1f26d463ffec7096dcbb01df1235ae8152f0e98977a63f532f41c5965dd"
+    sha256 arm64_sequoia: "9431c844eb3efde5fba6d9f57c3d4243a034f32c8867553178a909c0c78497e5"
+    sha256 arm64_sonoma:  "3b1d007963a108d223890ecd6b040a07c26aa02b99be7c10678b56dcb24a6e1f"
+    sha256 sonoma:        "6ca1ebe14f6ec2cd2bd74db0210e1cce6ef963098494dc75cc0bfbcafa0de61b"
+    sha256 arm64_linux:   "ccdaaaaca05199b4a5753293990df5fda320c2a0f19dbb1b0c98730f2aef6882"
+    sha256 x86_64_linux:  "17b67e1ea8bdc71774da5e09a60b23ce3198a09559b77676b62a7e1b170dbc40"
   end
 
   depends_on "meson" => :build

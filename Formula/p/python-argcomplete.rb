@@ -8,11 +8,11 @@ class PythonArgcomplete < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "c2cd4eb62d9b2b5a7ce86ae22159a097bfad8673e20b2386fd859b1f621490c4"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "5c8549eb5ef97fdf9d6c213c5f327bd2d5d8bce60c1b127635567d8ee581d035"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     virtualenv_install_with_resources

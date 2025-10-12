@@ -1,17 +1,17 @@
 class GnomePapers < Formula
   desc "Document viewer for PDF and other document formats aimed at the GNOME desktop"
   homepage "https://apps.gnome.org/Papers/"
-  url "https://download.gnome.org/sources/papers/49/papers-49.0.tar.xz"
-  sha256 "7a2b4dc405dc1cffdb865e2d9433cb5b74a94c6d141ae51f4146be21a7749a9a"
+  url "https://download.gnome.org/sources/papers/49/papers-49.1.tar.xz"
+  sha256 "4ab23a67897bddd6be2d6298210fff602cfec0f35688bc5bff270360b0784c29"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "18be55cfbe624296b7f3dc4549b73094d190ae4a959a4f6ec17d294c8da0a928"
-    sha256 arm64_sequoia: "e44b772e6c735ed06be26bd6ae1da5c3731cac381c73c1ac9f0a6c99eea3e5e5"
-    sha256 arm64_sonoma:  "9459ef7300aeefff8d84b734e015f53098a232882470dc0b1d7cde20039a083d"
-    sha256 sonoma:        "b7bcce6456588b3659632b3b29c7ff6ddb2e9051dc0344d0460cdb99092ecb79"
-    sha256 arm64_linux:   "8ba8a0fe343d71a4ad528765b900917902777688d121755cdc1307826841177b"
-    sha256 x86_64_linux:  "a49cc330ec81bee06f987638af6d56cb36bca833006f1806059c6bae614e1066"
+    sha256 arm64_tahoe:   "49fa0178bf812aead907e30a95a607cbff002e804fc9e1410bd0fb47e0555edf"
+    sha256 arm64_sequoia: "cdc8538c20006dac0caa965918e0f0137a9b6fff54bd762bf446fd1c4415c3d5"
+    sha256 arm64_sonoma:  "ab451ed4da911a2fa68788442b9caedb5d0cfcacf34dbe24c4ba2eb91a82bd75"
+    sha256 sonoma:        "8330aa12f7647fc2e95b995c53b5142de5c5c8b7ff013c2cbdd1afb7e2937d15"
+    sha256 arm64_linux:   "f9c5c14a687120936e6508ace5935c01de21ce01468557d22b4ca8756f4397d3"
+    sha256 x86_64_linux:  "fa6e239b5d32a4afe129233e611288cdb21f36c6e38b4e426787e3922c35a463"
   end
 
   depends_on "blueprint-compiler" => :build
@@ -22,7 +22,7 @@ class GnomePapers < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
-  depends_on "python@3.13" => :build # For blueprint-compiler
+  depends_on "python@3.14" => :build # For blueprint-compiler
   depends_on "rust" => :build
 
   depends_on "adwaita-icon-theme"
@@ -45,11 +45,6 @@ class GnomePapers < Formula
   on_macos do
     depends_on "gettext"
     depends_on "harfbuzz"
-  end
-
-  patch do
-    url "https://gitlab.gnome.org/nibon7/papers/-/commit/2ce41a255f5a75d4ec0c75b3a95a0bb198e1f06e.diff"
-    sha256 "84a3fd9fd4249edf82583f8a45e57f8c6ea8091dfff44377a21501133047eb43"
   end
 
   def install

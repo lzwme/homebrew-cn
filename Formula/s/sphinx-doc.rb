@@ -9,18 +9,17 @@ class SphinxDoc < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70dad29a4e53f789982ba376bf98095963fc3a411f3144c7221f329e13a5f3a3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a23d9ca9320d872ff28ef6641905e310fb553cff81aa333b540244ee5e02525"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dbbe5be730034172890daabc42ce65fe906b315b73575bdc2cf92fd367cf7273"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3cd93e8e752bbca189e1dbb78a930eab36da7fcbdc061eb34bb2a9b9f6ae140e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "005adc4e399e79b3bd90f4bdb12e52556d31f2e1eb4aaa8cc68f2914ea88f40c"
-    sha256 cellar: :any_skip_relocation, ventura:       "a1864deff57d08ce829f260e9479717552dc19bbb57d485061fa925430543d61"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a56c5c8e830e3020bb8926506c7702c9f715b5d2195cebd68332ee3e52db757"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc63e87bd769de7d18ac37ac7c0602cd5d032cc3dee376b32a43844339097ded"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4524efce03eab7048486ee1b3593ec0bb9d2f13a4c60ab7e502ea6fa70be12da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "176bb0d81624eb2442006571f5725b44726a78d7b3441cf242cfb2d42ec9dcbd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "104cf1bbfb9b6faa7e6ca209086daf3fd6ba4531f3a1d9ed2dc5a5af56cc698e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4e4525cae3d7223204f9dde2a2c92a063c5bd47ca775f0081a073157a6a03d7e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "685e7018008efa394609b9e59b51056a3c6055420e4e39f8a0d0544c88330e96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9674f74c1b2c831f5d2ddaa2544eb4c1fd5867d010ee0a7e614101e399ab578f"
   end
 
   depends_on "certifi"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "alabaster" do
     url "https://files.pythonhosted.org/packages/a6/f8/d9c74d0daf3f742840fd818d69cfae176fa332022fd44e3469487d5a9420/alabaster-1.0.0.tar.gz"
@@ -33,8 +32,8 @@ class SphinxDoc < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "docutils" do
@@ -58,13 +57,13 @@ class SphinxDoc < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   resource "numpydoc" do
-    url "https://files.pythonhosted.org/packages/ee/59/5d1d1afb0b9598e21e7cda477935188e39ef845bcf59cb65ac20845bfd45/numpydoc-1.8.0.tar.gz"
-    sha256 "022390ab7464a44f8737f79f8b31ce1d3cfa4b4af79ccaa1aac5e8368db587fb"
+    url "https://files.pythonhosted.org/packages/2f/19/7721093e25804cc82c7c1cdab0cce6b9343451828fc2ce249cee10646db5/numpydoc-1.9.0.tar.gz"
+    sha256 "5fec64908fe041acc4b3afc2a32c49aab1540cf581876f5563d68bb129e27c5b"
   end
 
   resource "packaging" do
@@ -73,13 +72,13 @@ class SphinxDoc < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/7c/2d/c3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84/pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "roman-numerals-py" do
@@ -120,11 +119,6 @@ class SphinxDoc < Formula
   resource "sphinxcontrib-serializinghtml" do
     url "https://files.pythonhosted.org/packages/3b/44/6716b257b0aa6bfd51a1b31665d1c205fb12cb5ad56de752dfa15657de2f/sphinxcontrib_serializinghtml-2.0.0.tar.gz"
     sha256 "e9d912827f872c029017a53f0ef2180b327c3f7fd23c87229f7a8e8b70031d4d"
-  end
-
-  resource "tabulate" do
-    url "https://files.pythonhosted.org/packages/ec/fe/802052aecb21e3797b8f7902564ab6ea0d60ff8ca23952079064155d1ae1/tabulate-0.9.0.tar.gz"
-    sha256 "0095b12bf5966de529c0feb1fa08671671b3368eec77d7ef7ab114be2c068b3c"
   end
 
   resource "urllib3" do

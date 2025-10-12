@@ -13,23 +13,22 @@ class Z3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e707ce569123704fa227f2859027dfa79ac7820eaabde5a6af7061a29a8aa8db"
-    sha256 cellar: :any,                 arm64_sequoia: "8bbe44a69095465f11dc2464ede13ed0ef1a9cb89815f5d904ad6bd7a56e2cd0"
-    sha256 cellar: :any,                 arm64_sonoma:  "2a55120fa49db52cb4d012f9fb5d6b8aeda5d4d926e55a5cd5be10b124a3c917"
-    sha256 cellar: :any,                 arm64_ventura: "f76e7f97ad512d009af4c34adea04b92fe67257d81e3c929d6b0c0405e09e7b1"
-    sha256 cellar: :any,                 sonoma:        "2ac2c4b41139f5fe17c9664f2b4e15064356430dd327f25ece21be9faa8ec68a"
-    sha256 cellar: :any,                 ventura:       "4da2809295c79702fe281151f274cbecfdcf26067d5a2bc7729ad4c880103163"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6c7ab7c617cffb8c1e238949aceaa40abe0fe39330eff35ab5cb5e64b9cbc58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9efccc815e8c7322db515d8b216e1081374f70874b5adcb8164a617ea4706640"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "b12ee473cae323d284ad873f698e5d3106b5b4ec889c0ff8e768c60607d27ad2"
+    sha256 cellar: :any,                 arm64_sequoia: "5a7c6a7e08ad16411cdfb035d9ab041b7a6e6cb7bbea3f5da76eeaa4e2262fb8"
+    sha256 cellar: :any,                 arm64_sonoma:  "f10289b165f59ae8ef6b36d96fa77f56845cdca0720980142f3325ecb1bbd0e2"
+    sha256 cellar: :any,                 sonoma:        "b4fc7383cb2109121269e77d3308c30ed7e9b3a4f688717a62f26251d2a7e56c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b2cabed7c95db0fcc44d0c0a1195b1d0433250ecf2d39aba20c18ac8fabeda6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6257625e9939d4b56b7870c4fcae0e8547029438f28c02162baaf662778c7b89"
   end
 
   depends_on "cmake" => :build
   # Has Python bindings but are supplementary to the main library
   # which does not need Python.
-  depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
 
   def python3
-    which("python3.13")
+    which("python3.14")
   end
 
   def install

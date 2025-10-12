@@ -9,24 +9,18 @@ class Todoman < Formula
   head "https://github.com/pimutils/todoman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "024bea37eed187445192eef3f0bc4aab84e9815e9a97605d1f62047936fa37f8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "637f9ef1c34fe16d767c6df4dffe91f852263ef90d47e60df8eedbc829dd4faf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "637f9ef1c34fe16d767c6df4dffe91f852263ef90d47e60df8eedbc829dd4faf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "637f9ef1c34fe16d767c6df4dffe91f852263ef90d47e60df8eedbc829dd4faf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8aa6899415c077a827ec757361510d984578bbfdbbed45407251a810d841494c"
-    sha256 cellar: :any_skip_relocation, ventura:       "8aa6899415c077a827ec757361510d984578bbfdbbed45407251a810d841494c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "637f9ef1c34fe16d767c6df4dffe91f852263ef90d47e60df8eedbc829dd4faf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "637f9ef1c34fe16d767c6df4dffe91f852263ef90d47e60df8eedbc829dd4faf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "9e003c9f9026bc99400996a18f27ed32701e4a03d8efa31541adcd4083f1a654"
   end
 
   depends_on "jq" # Needed for ZSH completions.
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   conflicts_with "bash-snippets", because: "both install `todo` binaries"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "click-log" do
@@ -35,8 +29,8 @@ class Todoman < Formula
   end
 
   resource "humanize" do
-    url "https://files.pythonhosted.org/packages/22/d1/bbc4d251187a43f69844f7fd8941426549bbe4723e8ff0a7441796b0789f/humanize-4.12.3.tar.gz"
-    sha256 "8430be3a615106fdfceb0b2c1b41c4c98c6b0fc5cc59663a5539b111dd325fb0"
+    url "https://files.pythonhosted.org/packages/98/1d/3062fcc89ee05a715c0b9bfe6490c00c576314f27ffee3a704122c6fd259/humanize-4.13.0.tar.gz"
+    sha256 "78f79e68f76f0b04d711c4e55d32bebef5be387148862cb1ef83d2b58e7935a0"
   end
 
   resource "icalendar" do
@@ -70,13 +64,13 @@ class Todoman < Formula
   end
 
   resource "urwid" do
-    url "https://files.pythonhosted.org/packages/46/2d/71550379ed6b34968e14f73b0cf8574dee160acb6b820a066ab238ef2d4f/urwid-3.0.2.tar.gz"
-    sha256 "e7cb70ba1e7ff45779a5a57e43c57581ee7de6ceefb56c432491a4a6ce81eb78"
+    url "https://files.pythonhosted.org/packages/bb/d3/09683323e2290732a39dc92ca5031d5e5ddda56f8d236f885a400535b29a/urwid-3.0.3.tar.gz"
+    sha256 "300804dd568cda5aa1c5b204227bd0cfe7a62cef2d00987c5eb2e4e64294ed9b"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz"
-    sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
+    url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
+    sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
   end
 
   def install

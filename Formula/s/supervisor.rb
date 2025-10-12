@@ -9,17 +9,11 @@ class Supervisor < Formula
   head "https://github.com/Supervisor/supervisor.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d1a68ce041e29ddbb3243a78077da5b7319335b708c7269c17101e22bad70c6b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1a68ce041e29ddbb3243a78077da5b7319335b708c7269c17101e22bad70c6b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1a68ce041e29ddbb3243a78077da5b7319335b708c7269c17101e22bad70c6b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d1a68ce041e29ddbb3243a78077da5b7319335b708c7269c17101e22bad70c6b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c94a5fa21547627537c69f8b8ebaa5f27072b8306769495d076080f235c7b9f8"
-    sha256 cellar: :any_skip_relocation, ventura:       "c94a5fa21547627537c69f8b8ebaa5f27072b8306769495d076080f235c7b9f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1a68ce041e29ddbb3243a78077da5b7319335b708c7269c17101e22bad70c6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1a68ce041e29ddbb3243a78077da5b7319335b708c7269c17101e22bad70c6b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "3ad1418d9387810ffedc4e281eb309045371119ca80cf1fbac67141079aa66c9"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     inreplace buildpath/"supervisor/skel/sample.conf" do |s|

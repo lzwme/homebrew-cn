@@ -4,24 +4,23 @@ class Scipy < Formula
   url "https://files.pythonhosted.org/packages/4c/3b/546a6f0bfe791bbb7f8d591613454d15097e53f906308ec6f7c1ce588e8e/scipy-1.16.2.tar.gz"
   sha256 "af029b153d243a80afb6eabe40b0a07f8e35c9adc269c019f364ad747f826a6b"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/scipy/scipy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f96f9f685193d313639627c319be7515f7322555375f2cdae5c19f9eef23a272"
-    sha256 cellar: :any,                 arm64_sequoia: "ab949c80e39fdb61080bfe88dccefe6c1c0641a02429015bf3fe808677ea5c41"
-    sha256 cellar: :any,                 arm64_sonoma:  "ea167510b98d450dfc2e1c6d00e91ffac9a2020c06128af553c9bdadaa670098"
-    sha256 cellar: :any,                 arm64_ventura: "ab9ab867b6ea7fd35828586614002cbf4bb1667a64b45101dc1f3a5515a499fc"
-    sha256 cellar: :any,                 sonoma:        "a1afbcd18e044b2c98ae48abc5690bd6cc1d57d637c7d7bdafdb8823a799ff9a"
-    sha256 cellar: :any,                 ventura:       "714f8dcd5e6349eb87ec854c46f088ab68afc31d3c43a70fa17ce5800dddc105"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9780635f8290d71c6bda522b9641d3b80b472709391eaf8fb3f6312ef64df84b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "244ac327909150d1be1ebc90cf73dc2f11ad82f9deb695805b6952bd8739bcb2"
+    sha256 cellar: :any,                 arm64_tahoe:   "cfb4f09c94e41afaef4519e1430849a37439505268c975d2040ac3cebb932844"
+    sha256 cellar: :any,                 arm64_sequoia: "fb2964767baeb4c5cbe9a4e7b712fe9445ffb400710bfc76fe97b456cbe74db3"
+    sha256 cellar: :any,                 arm64_sonoma:  "f80ce1c1d61723fb2b1ab3c49c8d2d44c725dc9b3cfb12a3970a789d030ea43d"
+    sha256 cellar: :any,                 sonoma:        "93a94d55deb948cf23414f77b4f971c033d3d362917356e28a6dcad1b8485909"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "08e4658b184d8959ac2d5edd643171553816f7002f85a832d0f95f80cb9a8118"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08ed52184eaac90f17f10c493ae8129f6655b1360437982345a91e94a1c79a5a"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "gcc" # for gfortran
   depends_on "numpy"
   depends_on "openblas"

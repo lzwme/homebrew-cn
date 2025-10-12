@@ -4,6 +4,7 @@ class Fastfetch < Formula
   url "https://ghfast.top/https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.53.0.tar.gz"
   sha256 "1488d9b738474e8ef8e8d78e2463722bf706e435857c849b3f480354ad62366e"
   license "MIT"
+  revision 1
   head "https://github.com/fastfetch-cli/fastfetch.git", branch: "dev"
 
   livecheck do
@@ -12,12 +13,12 @@ class Fastfetch < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "0aba51d7b33a46593a91c0e2078a54aecb5f3c15edc268126abcfdd9f5de2aa4"
-    sha256               arm64_sequoia: "5df3c119180702f4df106c212ad75f49535790b52db6b8b0ff16f88cf397ea4c"
-    sha256               arm64_sonoma:  "d4822ceb5505164b2b7c8a3e97945064e733c95f871222d1902be4ec578329df"
-    sha256 cellar: :any, sonoma:        "d44771ec9103085fbb02994dd2e9d02370681655453be957523d72bf9d43c5f4"
-    sha256               arm64_linux:   "3bfbcfee517e66868739eb37d0b306464b77c1209eea0a66a6577065697ac76f"
-    sha256               x86_64_linux:  "abcefd143a1dc69a9886b246fe8e012266b9485871f806c899f14fddbea1fc82"
+    sha256               arm64_tahoe:   "df1987861e4af9e35b200e6f0daa33abceefe7a3189efc834152bb58b5d8e214"
+    sha256               arm64_sequoia: "e846570a596f9b992faeeb0f95b4e8fe094292c9b8cf19226fda867846506136"
+    sha256               arm64_sonoma:  "4f139e858a73bd6c4afdf1d27b82775297d6b89b48019e4cac6c1ee9de56e3c1"
+    sha256 cellar: :any, sonoma:        "37fcc5db29369f5c45ca0784b77f4044fa67d26e989d724690e47110ba3ee540"
+    sha256               arm64_linux:   "4a51d568903c11a0793daad6a609c81ed47e40a09129e2e221f8ec3041d5d45e"
+    sha256               x86_64_linux:  "90f71bf63fd9cb6c80e7ae324cb01b31e685ca5ca00be280dc3108835a78aa27"
   end
 
   depends_on "chafa" => :build
@@ -25,7 +26,7 @@ class Fastfetch < Formula
   depends_on "glib" => :build
   depends_on "imagemagick" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "vulkan-loader" => :build
   depends_on "yyjson"
 

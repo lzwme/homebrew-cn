@@ -3,24 +3,21 @@ class GiDocgen < Formula
 
   desc "Documentation tool for GObject-based libraries"
   homepage "https://gnome.pages.gitlab.gnome.org/gi-docgen/"
-  url "https://files.pythonhosted.org/packages/49/03/b3202f4ae48f70db6c90402adf3350a8931034099ac6a006c5695d5e4740/gi_docgen-2025.4.tar.gz"
-  sha256 "7fe066da082a4edcf924063767404f9d04a998f6c0f0c475b180fd9823a72dc5"
+  url "https://files.pythonhosted.org/packages/70/2e/e0c9ea993a015347d72344f9714d359abc5a176ac989cd1320ae09b3a411/gi_docgen-2025.5.tar.gz"
+  sha256 "7fb2b5370d99849e52e74e9e584b7eeb5b5a3a95493d6752c88c0d251777f4bf"
   license any_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https://gitlab.gnome.org/GNOME/gi-docgen.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e25a47e7b56e4b7a2c1d2aad115f563225309329c75cd7c1eee3d19a5bb4e90c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2fe5b7cee17c264440cbfb6ecc9890f06a5bbf6a4df34b893b341067e2ea0eab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c885badbbcd109726793c5b980f5018911a63df61f3516100b5c4386f23dd67"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4635ee03be989f41ee90cdfe48367e323ae4d1058b2fdb5fb83135b1d0f4a44a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "322959c1fc686664aa93838da8afb5ed1478bb2301bb359920b7b745c84bc5fe"
-    sha256 cellar: :any_skip_relocation, ventura:       "2c4933d7cfe156d908b0a9bb4aa0d0668150e1c37b9c806194d69bfc352fa5d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "572510d350e49c62d6fa71c260b5d755f1b81915e7312b0f35d5ac4eddd7c28d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f53894500f08d8e9c84d14feea2322a6a93c5009fcde03a5693454d2a4c387d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4725273191ae21905d1e5b41f35c812a656f260c9b1b06bed3a5eb063376abe2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a042f4f2ce5095c6dd1cc701471d5c4153ea720f2b024c1b9c0834d5074052e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86b09a18c6bd7697cd248d556b25c149b095144eeae4f1a9dfb65a8e6810c684"
+    sha256 cellar: :any_skip_relocation, sonoma:        "406352246b4db0fbf97bc1bf900b3c9fdf0a20de3c79c1ea6e860e5c4d446ad7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "229a2956655a4328a02aba4dedd862dba806d21c075f3fec067034e7056cdedc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bca9fd9d2ef82bad430764d9080e798b582897c4dc1d233e0075a0309c34fb2"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "jinja2" do
     url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
@@ -28,13 +25,13 @@ class GiDocgen < Formula
   end
 
   resource "markdown" do
-    url "https://files.pythonhosted.org/packages/d7/c2/4ab49206c17f75cb08d6311171f2d65798988db4360c4d1485bd0eedd67c/markdown-3.8.2.tar.gz"
-    sha256 "247b9a70dd12e27f67431ce62523e675b866d254f900c4fe75ce3dda62237c45"
+    url "https://files.pythonhosted.org/packages/8d/37/02347f6d6d8279247a5837082ebc26fc0d5aaeaf75aa013fcbb433c777ab/markdown-3.9.tar.gz"
+    sha256 "d2900fe1782bd33bdbbd56859defef70c2e78fc46668f8eb9df3128138f2cb6a"
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   resource "packaging" do

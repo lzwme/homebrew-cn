@@ -1,20 +1,18 @@
 class BoshCli < Formula
   desc "Cloud Foundry BOSH CLI v2"
   homepage "https://bosh.io/docs/cli-v2/"
-  url "https://ghfast.top/https://github.com/cloudfoundry/bosh-cli/archive/refs/tags/v7.9.11.tar.gz"
-  sha256 "29152576ff3d20629f88317849c4fb5c0c0e43e00ecbd9f4490a2278394653eb"
+  url "https://ghfast.top/https://github.com/cloudfoundry/bosh-cli/archive/refs/tags/v7.9.12.tar.gz"
+  sha256 "009e40d4d7532e0e89c3dcd8ed561791c94592a497ada96f03556de5e9cefc6d"
   license "Apache-2.0"
   head "https://github.com/cloudfoundry/bosh-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25b938dc596190a50e3bf41aaffc8a4fdb9c8f15f8e6be07f74d577c9c685181"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25b938dc596190a50e3bf41aaffc8a4fdb9c8f15f8e6be07f74d577c9c685181"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25b938dc596190a50e3bf41aaffc8a4fdb9c8f15f8e6be07f74d577c9c685181"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "25b938dc596190a50e3bf41aaffc8a4fdb9c8f15f8e6be07f74d577c9c685181"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4794a8a600aa029b080a47f2ed2ef89ce342ef886ba8038d99e9a23fa10c9934"
-    sha256 cellar: :any_skip_relocation, ventura:       "4794a8a600aa029b080a47f2ed2ef89ce342ef886ba8038d99e9a23fa10c9934"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ccd060f309692b09993709914316e1a2871cac2ec20dda7a65c4ee911aa6bac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "265e39dc328d68f6bb1a1f3d03ae6679062597a655f051ba15c159b6bb9afe0c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c3d139bab014b8019520618f8bb7bcb8ab08f1d0413306bbdbc85f2371766d0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c3d139bab014b8019520618f8bb7bcb8ab08f1d0413306bbdbc85f2371766d0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c3d139bab014b8019520618f8bb7bcb8ab08f1d0413306bbdbc85f2371766d0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "faf260894e36c30f91d5da257545ae8b1854df59631361e50e063c7234df4403"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e9b1a6ec2052c6164feed44e405a621d6f4843842b92f65787d758fafe4d67c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c47b60b5854734b7b9afb0fc70dadbde15874aa6b00de319719b3d52ac96233"
   end
 
   depends_on "go" => :build

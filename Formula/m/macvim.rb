@@ -25,12 +25,11 @@ class Macvim < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "606e557b84fb2fc546388d022369d6362c0c8486e81ebb8d9a2c076365c91d22"
-    sha256 cellar: :any, arm64_sequoia: "7eed55dfdd99df0050437af8528d20382f13760845ae638f1bf505a415a3bfa3"
-    sha256 cellar: :any, arm64_sonoma:  "55fe4b8cd65abdae6855028c63607cde1a7d85e3a47de4673ced52abbb65128b"
-    sha256 cellar: :any, arm64_ventura: "17523b2cee9b5c9de657016799262bf547c1c8eb2cf20bac7169691490fc2c91"
-    sha256 cellar: :any, sonoma:        "2be24658c5b61ed7f725cc952b0a75b02c5fa53701921aec00af563f829089c5"
-    sha256 cellar: :any, ventura:       "848643f8227520cbc1f619dff734d8e3521568d4b2dd275edf98029761bb1760"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "6ce80ac9251b02957aac5b79e3f0ea3458db1eadf191025014ea410f9af885b1"
+    sha256 cellar: :any, arm64_sequoia: "7129bf4c94a515c95e3772042dde97289d0047032bd0b015cf793404c6759043"
+    sha256 cellar: :any, arm64_sonoma:  "c42009e9e2f8b9c00177af43d6835467537429d2d6ea025a41a5bb83af387ab9"
+    sha256 cellar: :any, sonoma:        "1096e8771956b2cec30b5af4b08c7dddaeafdca56b58cd6b0c9ba07a4af284ff"
   end
 
   depends_on "gettext" => :build
@@ -39,7 +38,7 @@ class Macvim < Formula
   depends_on "cscope"
   depends_on "lua"
   depends_on :macos
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "ruby"
 
   conflicts_with "ex-vi", because: "both install `vi` and `view` binaries"
@@ -94,7 +93,7 @@ class Macvim < Formula
     assert_match "+sodium", output
 
     # Simple test to check if MacVim was linked to Homebrew's Python 3
-    py3_exec_prefix = shell_output("#{Formula["python@3.13"].opt_libexec}/bin/python-config --exec-prefix")
+    py3_exec_prefix = shell_output("#{Formula["python@3.14"].opt_libexec}/bin/python-config --exec-prefix")
     assert_match py3_exec_prefix.chomp, output
     (testpath/"commands.vim").write <<~VIM
       :python3 import vim; vim.current.buffer[0] = 'hello python3'

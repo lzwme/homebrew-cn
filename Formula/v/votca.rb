@@ -6,17 +6,18 @@ class Votca < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "88602abcffa24d80a153c5c1463fcf7ed609e06d6f321a901993034d9a0ccd35"
-    sha256 cellar: :any,                 arm64_sequoia: "54c2de88fd8da7adc51cf1ff4fee9a4155f25a20e7c3184cbb18036362bb340f"
-    sha256 cellar: :any,                 arm64_sonoma:  "7a9c2b5109910aad26a8d1294a3bcdd63dad330f2e136f2ab339e58414838d8d"
-    sha256 cellar: :any,                 sonoma:        "6cc2671cca6ddb98e642b941523c017c20468c59e31d983bfb1d8fac5f1c6e3d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "479e6d8ea7651109c558f90220b609e566ae2388b56beabb0e4b6a6711b2960c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38fad623e875dd3a1016fb85971815877d0529044cb5b81b7aa90ba11684b7f1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "72a7e979c09e507ffd4e176f4804b8edd351d7f3530747e0acf2b5c4fe3fd71f"
+    sha256 cellar: :any,                 arm64_sequoia: "b7d2c9c5455447bbe46b1f76c6d6aa0f45fec3fea090271eb4f9ca92679a9d6b"
+    sha256 cellar: :any,                 arm64_sonoma:  "8d05fa695814e71319f9078d4ad488e7f7e77768fc231be3c711104fec726313"
+    sha256 cellar: :any,                 sonoma:        "cf6fbd2feda356e3d7ff6e54759e23bd0316bd5dd1f01f4eabfe06cc9cb80154"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bfd361e34b774e8075310e994bbdac0c21baf1a8881df5bb1d071de9636ac84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08e9ae1f533a07865cc299655e7ea5442b7553f0d97dc9b8fab961fffa47cfe0"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "boost"
   depends_on "eigen"
   depends_on "fftw"

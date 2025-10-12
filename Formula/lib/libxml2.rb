@@ -2,6 +2,7 @@ class Libxml2 < Formula
   desc "GNOME XML library"
   homepage "http://xmlsoft.org/"
   license "MIT"
+  revision 1
 
   stable do
     url "https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.8.tar.xz"
@@ -27,14 +28,12 @@ class Libxml2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2a60545c5e612a2da2b6a26e9eaf5497905355c57637179b8b041cbbc35584c7"
-    sha256 cellar: :any,                 arm64_sequoia: "12bbcf2668d6a0dd1493d167428acf67f262fb13b1982511eec7afadfe3d12fd"
-    sha256 cellar: :any,                 arm64_sonoma:  "d9eee4e34d98f846d6dae120a51272e32a3fd8306bfd5b0bfa8d2af5fb0fb06b"
-    sha256 cellar: :any,                 arm64_ventura: "3981cb3adaf892fe72ede95d825535dde86727697198bf6967999a5690eac877"
-    sha256 cellar: :any,                 sonoma:        "07d9dbde746514cdabdd7b3b3ab15d26f46bff4772926f3b8f7545a7c6c5e456"
-    sha256 cellar: :any,                 ventura:       "c4eb4a4ead8d6a1a214d3a3b5c01f50b492927b6c9f5f3eedd6988708bdfa2f4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c82daf83bbbcf9aba0ec01e4105446845a525cf87d6ef0716769a1909ed24d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03831d3b679e963d9be90a748746b447cc52a2398dc516dfd0ed7c26f9b431cf"
+    sha256 cellar: :any,                 arm64_tahoe:   "7f495f33976e8977673bc32ca1ec60ba7c95ed58581c7c6381182b6c8359f28a"
+    sha256 cellar: :any,                 arm64_sequoia: "9fa7b4af90e8822d5162734e346b2b1d8b1137a40511eb2973005f34ae7d41d0"
+    sha256 cellar: :any,                 arm64_sonoma:  "fb526ad2f56800092c03e29061f76c70d9ed56a660f2ee5cd51ab183df68b31e"
+    sha256 cellar: :any,                 sonoma:        "dad6d7981c65c4bbfecf02a610c079e1e2e196a456104fb8c6a8e18bad20af7a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b5a3a4bb21f47e4ce1d60744a2ba0ce73dbe475194c3a7083c946951df23458e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36b22e090190179d28083d080e23e6ff112cc690cc34604ea4f606628888368e"
   end
 
   head do
@@ -49,8 +48,8 @@ class Libxml2 < Formula
 
   depends_on "pkgconf" => [:build, :test]
   depends_on "python-setuptools" => :build
-  depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "icu4c@77"
   depends_on "readline"
 

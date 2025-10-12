@@ -1,22 +1,18 @@
 class Abpoa < Formula
   desc "SIMD-based C library for fast partial order alignment using adaptive band"
   homepage "https://github.com/yangao07/abPOA"
-  url "https://ghfast.top/https://github.com/yangao07/abPOA/releases/download/v1.5.4/abPOA-v1.5.4.tar.gz"
-  sha256 "15fc8c1ae07891d276009cf86d948105c2ba8a4a94823581f93744351c2fcf4a"
+  url "https://ghfast.top/https://github.com/yangao07/abPOA/releases/download/v1.5.5/abPOA-v1.5.5.tar.gz"
+  sha256 "2e2919dcadbc6713a6e248514e2d9e9cb93c53c5b36dd953a2909ad2e3fa6349"
   license "MIT"
   head "https://github.com/yangao07/abPOA.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "44928800cfa6cfc490c4c3099c2908d8d69d4a40be057ab916b8754b54576466"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d23123224da086f407a2026aed50483642b6cb1cd773a95677e8823a7d203f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c32ab54105465ce6413049fa3e0b61751b4380ecd7f9cb8e871d7aaa4fd0fefa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "be037ac65bb330b3c0346a0a73b9a52cd409c5d445bf5ea3b342c75937b6ff70"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d6a18508fc01c5180ba29e543e889bf14572e4c37dee0e3de40936881d6a92d7"
-    sha256 cellar: :any_skip_relocation, ventura:       "7b66dba3e1c7543bd65a85f1190be008acd8dc5246676df09674f3e30a9f890b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e22b15a4710bd352700931ef827c12fdcf6ba62177f120601dde18e2a6e6ace"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea53d24bfe80ecb229b8908a7e4cabbf5724b46e134272b00d776f261080c825"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "193726357f31962a176b28e7616fe993acd775b286359c63d6224973c1c939ab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "689ef67875138bd5e8726b3c6a169fb56878057b07e861062e664c03d4cd7770"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe22809a4dbd7882b8dd3d2d7ce5d556ef59b7b1f9e4c9811b94579c116c4614"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c21b07d695aec084a6b9e64ed5deff172907dbaeaa494b6ddf7dbc3ed41638d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d12ebfc06f1359e96e7975e73832cbcaaadfa7b636df4e90bc7fbd78c52f0a79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "215a8929dea50b7fff307c3950aaaf658ad29a303d8172fe0d24c375b6599e5e"
   end
 
   uses_from_macos "zlib"

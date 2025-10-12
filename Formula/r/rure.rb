@@ -1,20 +1,20 @@
 class Rure < Formula
   desc "C API for RUst's REgex engine"
   homepage "https://github.com/rust-lang/regex/tree/HEAD/regex-capi"
-  url "https://ghfast.top/https://github.com/rust-lang/regex/archive/refs/tags/1.11.3.tar.gz"
-  sha256 "df1a6ec1a1c9404716176acb969d254febb84bb0897e3e79bb475488e9613ce5"
+  url "https://ghfast.top/https://github.com/rust-lang/regex/archive/refs/tags/1.12.1.tar.gz"
+  sha256 "f767fa18691ed2a8cf140fb793f792f3f17acbe87ec4ddaf44ae72800607579f"
   license all_of: [
     "Unicode-TOU",
     any_of: ["Apache-2.0", "MIT"],
   ]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "648ca5379fb0e68d5e5d9340df453a47c884693c5ca4b7982dd5ef44990feaa1"
-    sha256 cellar: :any,                 arm64_sequoia: "0d7551fcdaa6dc28a11d39de255c0b8501b17579cf3f7d3d8212f79337179ed3"
-    sha256 cellar: :any,                 arm64_sonoma:  "af65868a8461dc49e22073f2807a81e078d7ce1a3139d110226792e467902bb5"
-    sha256 cellar: :any,                 sonoma:        "fca3c8f859aa3918f6a9968c7360244799d780771b837b98009736e7dac9459c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b549088cb0e05ddc34d049c79c9533a1755bd6d5d33a4b988ca3dbc728bda88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02b49f5de1163883ba630423f7b058407122d2393b27327efcdd2ff2b1ebdd52"
+    sha256 cellar: :any,                 arm64_tahoe:   "baff65e34d26f5ae9b23754fe045e58ed24737850ef554b81560dec0ff8ae2eb"
+    sha256 cellar: :any,                 arm64_sequoia: "da176e1e2773c2553101ec252d797debfb4c284839ba9dbec4ac3e5580c12b34"
+    sha256 cellar: :any,                 arm64_sonoma:  "5757f5da308e85edabee9ee5aea7a6346d772db4bf56ad4daf14863f97e94a45"
+    sha256 cellar: :any,                 sonoma:        "5c40e28faa86bc59e44f61177085a27ee31c1462c47edfdb99a45336b3168b17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "80c8482dae7b075343c4c7cbc4edcf179121512edcfc812b728366d43b3823be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c393ecc854213ee61f40955d3ad1d38dd54805507f3fa49c2d5a27c97fa35c3f"
   end
 
   depends_on "rust" => :build

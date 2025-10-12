@@ -1,20 +1,18 @@
 class Nyan < Formula
   desc "Colorizing `cat` command with syntax highlighting"
   homepage "https://github.com/toshimaru/nyan"
-  url "https://ghfast.top/https://github.com/toshimaru/nyan/archive/refs/tags/v1.2.3.tar.gz"
-  sha256 "6ce344a1ee870e618e15ae17a85497abc353bdfb30a8c1ddfcea5735aa17adce"
+  url "https://ghfast.top/https://github.com/toshimaru/nyan/archive/refs/tags/v1.2.4.tar.gz"
+  sha256 "308d95dc3ed978b52e4a6a058c32dd5cdcc24e1129329aa59a8261b7a23ed9c0"
   license "MIT"
   head "https://github.com/toshimaru/nyan.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1ab28edcaca037332f72300890326087494898d57b53ca9febfc6c938b46f375"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "162d4a673fe0248ab566149c72f5285581b5907031405fcb3388a3f8eb8f60ee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "162d4a673fe0248ab566149c72f5285581b5907031405fcb3388a3f8eb8f60ee"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "162d4a673fe0248ab566149c72f5285581b5907031405fcb3388a3f8eb8f60ee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c340d9b586c066ce42ca87bb7dd4627e7d299e0b0e2a83f5d7e9aaa563a42f84"
-    sha256 cellar: :any_skip_relocation, ventura:       "c340d9b586c066ce42ca87bb7dd4627e7d299e0b0e2a83f5d7e9aaa563a42f84"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "28b5292ba394f5a31046335210da8b4f8476363f3b59b58068e21798cbfbde20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb5f2b779d971396b9bc699b7d428c377c67aaa8af9c650613a4ae72a782e85e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "69ff68b4570d00000bd8b16ed1feac97ea1792a6d13795af476c8f0a2c5968e2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69ff68b4570d00000bd8b16ed1feac97ea1792a6d13795af476c8f0a2c5968e2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "69ff68b4570d00000bd8b16ed1feac97ea1792a6d13795af476c8f0a2c5968e2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "76a297e850df8a21a325896005e285a059070629716761378dc16fd2c7cad9db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4010d30c53c88986f6f0d99a6d877b14c99a800166e47fdaefbca4aef4c095f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47573a59cc0680f1d2d5bac4dcac7fc5bc2a459698e6f693d2468eb734e5bc24"
   end
 
   depends_on "go" => :build

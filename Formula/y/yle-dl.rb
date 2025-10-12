@@ -9,27 +9,26 @@ class YleDl < Formula
   head "https://github.com/aajanki/yle-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "20926ecb53d54db5b2f08a17f9c9fa63e9df157be5b1bd8067d158f2a7886f37"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef884e65ce096f77b9eff4abba1c8275d2919de7d27052036a9ae561f00e7eb8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bbf9f8d6e2fbaecf47184e3906f6b58bbce2a9cab4869976960cf716f84c3151"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f042834c38ee8da3dd3c54b4ca140369955994417bee956be82f3c51570fa72a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "beb99664d4b236a1a2a7b9d4587f63130d09e8f405f296599333f10d497ddb2c"
-    sha256 cellar: :any_skip_relocation, ventura:       "94b2831182b9fb7476a61515498d31a78f2791997c492e4bc142683cda5c2659"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "780b9d25430e7abdf9a45d7c2adcddb1c2763d642f62a8ce65cc57eae9fcd4d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d41b9952c54a2d3d0f3f9f4c34e8edde1f8e5bea688c109f9aa09c71533fbb0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0630fd9edc03fa57d574116c12b8494f05e0ec3e1564c879f6431bc131bebdd1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f021f22baa3cdceec01432ab2c72409f95e20448c3609a611e1a7f39803e12f6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8558f705675ed2a44797ffb4fc5a32c02e445e6ec2cdc3aa613f60c961e7ba9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ef70ee57200f5a42bcc5339adc3fce6c17e7b9097ca89a2bc1c45b3d61b1328f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b47a3be2e2f9efdb3c4db29d7f790470e05439871b9cc252602e1c5dee69c28"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87e8aa9962fbe6a87839626f227e55e12ebba3a87dc903c4f5cd3a223ccc0c7b"
   end
 
   depends_on "certifi"
   depends_on "ffmpeg"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "rtmpdump"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "configargparse" do
@@ -43,13 +42,13 @@ class YleDl < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/c5/ed/60eb6fa2923602fba988d9ca7c5cdbd7cf25faa795162ed538b527a35411/lxml-6.0.0.tar.gz"
-    sha256 "032e65120339d44cdc3efc326c9f660f5f7205f3a535c1fdbf898b29ea01fb72"
+    url "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz"
+    sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "urllib3" do

@@ -11,12 +11,13 @@ class PostgresqlAT18 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a71128a90eaa292286cb1b04fcd3bf04a7596f95216084e102dc98490667ce2f"
-    sha256 arm64_sequoia: "52f962d6392d9b0b151b3e0ea77235877cef627c8aa7743d5bc84459f29eff85"
-    sha256 arm64_sonoma:  "9f035575a3e3df570292b7ea1574e412af5688091c67e1b676302a31f5b3bcf1"
-    sha256 sonoma:        "0c179784cc6494120d0c63ff1224b61265fe8e2682cea47decfa9a9bd3c0c4fc"
-    sha256 arm64_linux:   "98a2c35d9cbfc4cfe539c53d19b417e8a1eb186f515bc1d98481b1fee67e7470"
-    sha256 x86_64_linux:  "5d2389399f70022f6173e00f5b37c5db8d788d42ae874f9fe135e87c70811dcc"
+    rebuild 1
+    sha256 arm64_tahoe:   "da2d4fc73f261c036b8a5775c3ddae44afe408b4c04be92f63106ac1473cc500"
+    sha256 arm64_sequoia: "560a2a77b1e929faf4f7e8c5772472c7c80938ab7fa0cca8816c905cf6d2e263"
+    sha256 arm64_sonoma:  "95468ac1a35c07beaff8c728b863a66d24057340e52cad052ff3a465a37a81a9"
+    sha256 sonoma:        "bfed1ba65aca099b4f43cc5b6b544cf03c791271095707ea5a9408099e2a41f7"
+    sha256 arm64_linux:   "3d2946a0e732125570a2b4b8b4ba8ccfdde7def666b1b12b72aa883e7224a138"
+    sha256 x86_64_linux:  "f17c915f70487169f45aada2cea3c9753044a4ac27832c26fe22dac5193b881d"
   end
 
   keg_only :versioned_formula
@@ -143,7 +144,7 @@ class PostgresqlAT18 < Formula
     # Don't initialize database, it clashes when testing other PostgreSQL versions.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system bin/"initdb", "--locale=C", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
+    system bin/"initdb", "--locale=en_US.UTF-8", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
   end
 
   def postgresql_datadir
@@ -161,7 +162,7 @@ class PostgresqlAT18 < Formula
   def caveats
     <<~EOS
       This formula has created a default database cluster with:
-        initdb --locale=C -E UTF-8 #{postgresql_datadir}
+        initdb --locale=en_US.UTF-8 -E UTF-8 #{postgresql_datadir}
 
       When uninstalling, some dead symlinks are left behind so you may want to run:
         brew cleanup --prune-prefix
@@ -170,7 +171,7 @@ class PostgresqlAT18 < Formula
 
   service do
     run [opt_bin/"postgres", "-D", f.postgresql_datadir]
-    environment_variables LC_ALL: "C"
+    environment_variables LC_ALL: "en_US.UTF-8"
     keep_alive true
     log_path f.postgresql_log_path
     error_log_path f.postgresql_log_path
@@ -178,7 +179,7 @@ class PostgresqlAT18 < Formula
   end
 
   test do
-    system bin/"initdb", testpath/"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
+    system bin/"initdb", "--locale=en_US.UTF-8", "-E UTF-8", testpath/"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
     [bin/"pg_config", HOMEBREW_PREFIX/"bin/pg_config-#{version.major}"].each do |pg_config|
       assert_equal "#{HOMEBREW_PREFIX}/share/#{name}", shell_output("#{pg_config} --sharedir").chomp
       assert_equal "#{HOMEBREW_PREFIX}/lib/#{name}", shell_output("#{pg_config} --libdir").chomp

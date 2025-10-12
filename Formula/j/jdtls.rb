@@ -17,11 +17,12 @@ class Jdtls < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "dcb7f8dac1838f7f2826d8f109ffc4ae1863ff23999b640bcca1b8de4e80a1bc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "fea0f6dd2f8bd73496d7c89af29b3b7b3d52f4fb1e88e745f250cc9cb130cd33"
   end
 
   depends_on "openjdk"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     libexec.install buildpath.glob("*") - buildpath.glob("config*win*")

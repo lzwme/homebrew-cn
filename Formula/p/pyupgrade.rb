@@ -9,10 +9,11 @@ class Pyupgrade < Formula
   head "https://github.com/asottile/pyupgrade.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "82272204428a326e7b9606a4f0595bff76ccfb3586134c45e61893800cf36090"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "8fe6a40d022d201b410e6ed96e5a4b0d92637ace5c73f38b1fd48a3151dd34a7"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "tokenize-rt" do
     url "https://files.pythonhosted.org/packages/69/ed/8f07e893132d5051d86a553e749d5c89b2a4776eb3a579b72ed61f8559ca/tokenize_rt-6.2.0.tar.gz"

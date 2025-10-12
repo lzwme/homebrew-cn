@@ -8,10 +8,11 @@ class Unoserver < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3798493d9ba959645c4fe719e058992a090777eafbe662100eba66aad1f5b13c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "5de729d1856ff399c3b65420322c5c477c1a45f0076641a2cd0f879fb7e9eb6b"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     virtualenv_install_with_resources

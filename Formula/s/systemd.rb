@@ -30,8 +30,9 @@ class Systemd < Formula
   head "https://github.com/systemd/systemd.git", branch: "main"
 
   bottle do
-    sha256 arm64_linux:  "279dedf4a12fcec24b6ca4bba00c186c44af1408b6b4f880f46cb946a0922754"
-    sha256 x86_64_linux: "f1865e9d3af6b637e5830c0e35e89dc28d3a63c7275c4ded4dfd3e7115262bd7"
+    rebuild 1
+    sha256 arm64_linux:  "4ef86f3974bbe8452b59304b3bd43cb4c7bd1f364ede9d6729728508e127f3ee"
+    sha256 x86_64_linux: "1f021c634d8e1441602f7917e9af55290f2f7c0dcd4707b082e3d50eb6dbddc5"
   end
 
   keg_only "it will shadow system systemd if linked"
@@ -46,7 +47,7 @@ class Systemd < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "glib"
   depends_on "libcap"
   depends_on "libxcrypt"
@@ -63,17 +64,17 @@ class Systemd < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/8f/bd/f9d01fd4132d81c6f43ab01983caea69ec9614b913c290a26738431a015d/lxml-6.0.1.tar.gz"
-    sha256 "2b3a882ebf27dd026df3801a87cf49ff791336e0f94b0fad195db77e01240690"
+    url "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz"
+    sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   def install
-    venv = virtualenv_create(buildpath/"venv", "python3.13")
+    venv = virtualenv_create(buildpath/"venv", "python3.14")
     venv.pip_install resources
     ENV.prepend_path "PATH", venv.root/"bin"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}/systemd"

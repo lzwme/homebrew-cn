@@ -7,25 +7,23 @@ class Autodiff < Formula
   head "https://github.com/autodiff/autodiff.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4bef2f7d2ad595103bedaf4946a7ac61b7d89298000b824e59ef534b47bb442"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e35fef20edd7f2dc9b18d7f1a7f37d7cde1bb6d9154d7a2992c283baf111855b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ffd7fdaf5ddf5ed5729344e6a1e8065a71aa29ab6c2038d51d0e2c0e3655c0a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "11282c10e5cee0cf915621a24c511a87a5721ceef2f659e2adbdd458c787bf74"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2534cac50c7135f77ee140e68802bb0751cd40e5e6f6950ba11115b18eb2b755"
-    sha256 cellar: :any_skip_relocation, ventura:       "70ba0bf70fe3212bcdf215f1210b44b3e093da1eb06140a397335d3cfd37ae14"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8200c3f1ef1a2bfe0f357b02ba8d63de6d89094623729b5e33ef7affd2f1d342"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "123363de8b59cbc789b655d7ed2fca5acb59dc9d39b5690df5d874a7e8bba85c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "620d8b6c709a47b79892842ddd6ccb12fd518d4de40c9a8a5cf43ee0d688afce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08fce1d7e81687a7751b642e63983eab3c04677c94d80a4745523420a9fb9c4b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63d28eb9d409228783102de73da196e27a2f97af4dd4cdabc9e44fcd123f4d8b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d1431aa37ae2bad5dbe3336eb2608b6a2efd6ed76ddc2b5994938ff543573979"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ab3130497e5656c57d72ae83e0c1a76471f6c2ffaae4950da86e0a7f3cf2d89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9ad4d0597d5f21df158b275b08414b38aed0064e183eed63fa277c62a9fc790"
   end
 
   depends_on "cmake" => :build
   depends_on "python-setuptools" => :build
-  depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "eigen"
   depends_on "pybind11"
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

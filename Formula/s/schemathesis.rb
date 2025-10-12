@@ -3,23 +3,23 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/2a/6c/86649815eb63dd52cc3f571bb594b59066728a69839da99ef9fc448df1cb/schemathesis-4.2.1.tar.gz"
-  sha256 "cb30ed17c6425a7740bae2164973e2fdf97fb90893004b85964c157d6df0bd64"
+  url "https://files.pythonhosted.org/packages/73/68/6e54cf0764896434e9dbba4898ce16829ea39b651ce8a1c48f247b174cd1/schemathesis-4.2.2.tar.gz"
+  sha256 "83e520258e9f34d3d085f688d0d9624ad7b21e8d916a14ddec7259d767da1c7e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d7160b2e9cc2da8fbddba2809c7d8044123fd09d7e7d27d8ef93244e67fd9f77"
-    sha256 cellar: :any,                 arm64_sequoia: "c493b7d070cc52b66aae6c780914ae3f5ec4003cbe29d976dd3a1576ad0e82a5"
-    sha256 cellar: :any,                 arm64_sonoma:  "d3bb6730ec8d58bd9eb93f5bc1a611b19a31dec954b7a3b489f3837b29ebf022"
-    sha256 cellar: :any,                 sonoma:        "49801617e422efc9123d7f6eb0e18a2c195a3e021b5edea65161f263d733e22a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33baa1d587bdf706f0bb809cd7e58418000a8702358c82b98bb2c4d999adc4dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58024c5cfe20379f2e3f7a0e362a45de9b72d01659f0427d3eec05707fa86178"
+    sha256 cellar: :any,                 arm64_tahoe:   "8e8276b71bf7f2ab2b98d93617b7d2d80ec495d12c318abaf3ae80703c8b0432"
+    sha256 cellar: :any,                 arm64_sequoia: "0580f7ac736c68795cc67529868dd04fcfda814af7904c1eb1ccca14d6eab384"
+    sha256 cellar: :any,                 arm64_sonoma:  "285db7deee514525910246af8f6bcccb5ee30b07b643a4345dce65962c461b05"
+    sha256 cellar: :any,                 sonoma:        "8c8e00e2fcb9e612e8be279c124e662050e59a6776031a7c9b12f340fb3027fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a13b0e7b9f329681c19b6d5f73aba60485f7a5f98e1548bc843ab4dea8a84b00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00edeb2f40f55c1ee1c9f9104b830284ecfbc634f9e285d186b896a834d658b1"
   end
 
   depends_on "rust" => :build # for rpds-py
   depends_on "certifi"
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   conflicts_with "st", because: "both install `st` binaries"
 
@@ -214,8 +214,8 @@ class Schemathesis < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
-    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "rpds-py" do

@@ -8,18 +8,19 @@ class Texttest < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "66f16f943aa8fe6b1ad79a04085956d16233c41a504bbb5028292cbeb9070800"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8dd820c229e7f64032d0649fd26d43e55c81dbee638e299e701f59a0c032c168"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35373fbc2123caf15748dee0554392b4b99fb4e2fdf9bdb7f8831b03118b8b44"
-    sha256 cellar: :any_skip_relocation, sonoma:        "95ca959231bd724c3413be77f68c0fde51b17b542d38e1a0f4546a309c850d5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "334a14d5dc1e681139b9040f7726c64bdab6d688705775858f457ff78f8ed20c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "716562ae9bd735808749541e51b31f457669be0b69911b284627444a41678461"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "66def708bd3edca475d00878e7a295156918753563a63e7bf8a6abbece577ab4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "707f18abde6bd5a5b501d23152c9f55ba7cdaede653995d7a6365104ed6b18b1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3cd8caf904a5695bd3e7d80008f2640a8df183a3849a82d9448ea6b153646033"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9c54892ff2a2092027639b777ee00852067dc36ed4c11f2c467426e94bbe5b6d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56731920709d9d0a9f293793fb0cefab826cee9bcedff9e45e012178dc0970f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37a505872aa2656f941827bdc33e9c9b0a1b8edcee4c34033b11f42c79b2b178"
   end
 
   depends_on "adwaita-icon-theme"
   depends_on "gtk+3"
   depends_on "pygobject3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "psutil" do
     url "https://files.pythonhosted.org/packages/b3/31/4723d756b59344b643542936e37a31d1d3204bcdc42a7daa8ee9eb06fb50/psutil-7.1.0.tar.gz"

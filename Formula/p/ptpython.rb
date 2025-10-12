@@ -9,10 +9,11 @@ class Ptpython < Formula
   head "https://github.com/prompt-toolkit/ptpython.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6199a5816dd34e7d1801ef4339a113bdcfecd9be19571966cddc72568b45a34a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "20735c91a2a9bdc85f85e15f4352e27025c0fcedc6d57ade2d9d2e34d07606c5"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
@@ -40,8 +41,8 @@ class Ptpython < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz"
-    sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
+    url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
+    sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
   end
 
   def install

@@ -6,25 +6,24 @@ class Tbb < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2653e09decb4e7e21ff51c97a4a362a4065fcd0e0e3917ee5e992dd977ffea54"
-    sha256 cellar: :any,                 arm64_sequoia: "3b3c683a03e8a36fe8a7a1f81b5e6efa99ca1009f2a173e4b79434406fb03f82"
-    sha256 cellar: :any,                 arm64_sonoma:  "886ab9f80b9249e368b0fcb51df91455511ae704e827e93e8a2c754eea1fcbbd"
-    sha256 cellar: :any,                 arm64_ventura: "c4f1908b707ba164fa3b201ddf35f89bb68b47e596b7a46fae7703b5c375385a"
-    sha256 cellar: :any,                 sonoma:        "1e37bd0a4c1f15bd70b6dd3a5f6b5e8a9f0c125e3b3f2c4cac34add223c0012f"
-    sha256 cellar: :any,                 ventura:       "e7d62cedf1b21d60db21e3231618d0bbe3841b8595b9d0bd1080143a5f3ada9e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a1b53293d7258979168c25c5fb44ad37605186dcc3f4429fd9860520ad73682"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdf49a4964c676f0d74e632b0c7e1ea4c2005db4e6fee0c0ddfa9441fcf9f107"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "562449162ee64e94b9bcfe57a1287e8f7948692b91c1c05feb84c171d3db1190"
+    sha256 cellar: :any,                 arm64_sequoia: "08bff4f7e78623c9b7e9b61c6810b00ed5b232f11f811d120bf88d5f2df56008"
+    sha256 cellar: :any,                 arm64_sonoma:  "6d7b9c81ae0e307a141bd1a574f14c0e1cc7f6edf561493c8e6ea2191acad6ac"
+    sha256 cellar: :any,                 sonoma:        "630005415bc765dfb56ac82e140455cf20d587ef3df4b9feb89a61665e4af9da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be3a77b27a5e4cd320c0c5300ae867ccddc4766a249a639a83945a37119a929a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e75bda17f7c53f25c2f885037344cf5986a5ebbb30abbd72bfe1ed31f813c05"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "python-setuptools" => :build
-  depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "swig" => :build
   depends_on "hwloc"
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

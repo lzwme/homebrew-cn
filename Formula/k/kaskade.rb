@@ -6,16 +6,16 @@ class Kaskade < Formula
   url "https://files.pythonhosted.org/packages/b5/6a/4a51af28c5537eb45ab7199a3220e25385171767e86ffabfb908ced2635e/kaskade-4.0.5.tar.gz"
   sha256 "7eedc2040f8c32a1870dcd1018ac0e20e4feab3b9a45a8152764dcc11a6e860e"
   license "MIT"
-  revision 3
+  revision 4
   head "https://github.com/sauljabin/kaskade.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2b4d2fb323421570042e826baf0372dd49a4465baa6afa240fd38f54d0e2ad47"
-    sha256 cellar: :any,                 arm64_sequoia: "3f60d71b1cb428124b6043f84a80ddece822e94b3873a96d9b040590ce6ee706"
-    sha256 cellar: :any,                 arm64_sonoma:  "e942addebbb4299021c6dc20a45550f5ae2d6bd88f3be2c7fa802269989068f2"
-    sha256 cellar: :any,                 sonoma:        "bf1667316b6699f264275d6456b01e6e8f6caf5873cebff1fcd87e469fc09586"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c9561eb899b25d50376a0c0c2bebd88c31d8548f665143085a4fc34016c90af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fec2e82952e35cfff68a0a759eed587b02649b17ef23c68b7b01b0375e4916f"
+    sha256 cellar: :any,                 arm64_tahoe:   "e9d17cf8df9ea1cf96ef36018a05e989e304af5972a6083118ee52eca1f85354"
+    sha256 cellar: :any,                 arm64_sequoia: "f3596b12ab574b2e7b43b79639af1cdf8104208a85aba0076de0a25e9f646914"
+    sha256 cellar: :any,                 arm64_sonoma:  "3605ab8b1d0d4d37103ecec6dd3cadf81227db764cd426fae2e06622fa65900d"
+    sha256 cellar: :any,                 sonoma:        "7270e08580eed7dfa48b5ff9710e1411b75179af45ed388ba4daa19b25a5fbe9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f320928d58002b68b52d0e8fedf6b6455888d4724cee00b3938f9a0abe280a0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27964615f7b733f1aa7084cc92295f3d51660c408ee60a4c319e2bb547bbb795"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -25,18 +25,18 @@ class Kaskade < Formula
   depends_on "python@3.13"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/f1/b4/636b3b65173d3ce9a38ef5f0522789614e590dab6a8d505340a4efe4c567/anyio-4.10.0.tar.gz"
-    sha256 "3f3fae35c96039744587aa5b8371e7e8e603c0702999535961dd336026973ba6"
+    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
+    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
-    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
+    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
+    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/ce/bb/73a1f1c64ee527877f64122422dafe5b87a846ccf4ac933fe21bcbb8fee8/authlib-1.6.4.tar.gz"
-    sha256 "104b0442a43061dc8bc23b133d1d06a2b0a9c2e3e33f34c4338929e816287649"
+    url "https://files.pythonhosted.org/packages/cd/3f/1d3bbd0bf23bdd99276d4def22f29c27a914067b4cf66f753ff9b8bbd0f3/authlib-1.6.5.tar.gz"
+    sha256 "6aaf9c79b7cc96c900f0b284061691c5d4e61221640a948fe690b556a6d6d10b"
   end
 
   resource "avro" do
@@ -65,13 +65,13 @@ class Kaskade < Formula
   end
 
   resource "confluent-kafka" do
-    url "https://files.pythonhosted.org/packages/e1/e4/cd2dc58cd583788a362c2d59d179a6537b81c3bf70c6a1907c508117ca77/confluent_kafka-2.11.1.tar.gz"
-    sha256 "a9366d9dc07a527ed0dcef9c24ba38238cf9dc63c3f53b79da15d45ce4459166"
+    url "https://files.pythonhosted.org/packages/78/5e/ceed3dd7e69ecdb1197b625fd6248fa1bbb44782def202609421b8a273fa/confluent_kafka-2.12.0.tar.gz"
+    sha256 "2a8d8734c6eaf30a751dde2ad75fc78b35aad60d66a3a7aa837c7513f36c29b7"
   end
 
   resource "fastavro" do
-    url "https://files.pythonhosted.org/packages/cc/ec/762dcf213e5b97ea1733b27d5a2798599a1fa51565b70a93690246029f84/fastavro-1.12.0.tar.gz"
-    sha256 "a67a87be149825d74006b57e52be068dfa24f3bfc6382543ec92cd72327fe152"
+    url "https://files.pythonhosted.org/packages/65/8b/fa2d3287fd2267be6261d0177c6809a7fa12c5600ddb33490c8dc29e77b2/fastavro-1.12.1.tar.gz"
+    sha256 "2f285be49e45bc047ab2f6bed040bb349da85db3f3c87880e4b92595ea093b2b"
   end
 
   resource "googleapis-common-protos" do
@@ -135,8 +135,8 @@ class Kaskade < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
-    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
+    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
+    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
   resource "protobuf" do
@@ -165,8 +165,8 @@ class Kaskade < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
-    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "rpds-py" do
@@ -180,8 +180,8 @@ class Kaskade < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/da/44/4b524b2f06e0fa6c4ede56a4e9af5edd5f3f83cf2eea5cb4fd0ce5bbe063/textual-6.1.0.tar.gz"
-    sha256 "cc89826ca2146c645563259320ca4ddc75d183c77afb7d58acdd46849df9144d"
+    url "https://files.pythonhosted.org/packages/a2/30/38b615f7d4b16f6fdd73e4dcd8913e2d880bbb655e68a076e3d91181a7ee/textual-6.2.1.tar.gz"
+    sha256 "4699d8dfae43503b9c417bd2a6fb0da1c89e323fe91c4baa012f9298acaa83e1"
   end
 
   resource "typing-extensions" do

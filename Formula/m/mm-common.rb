@@ -8,12 +8,13 @@ class MmCommon < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9b105ad896eeb16cfc9f158c87db7c4a63b03b3d58ae50fae9984b00feb02c24"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "6555a3ef530a9a88869752d8ed91867b30242d26d66b397906e46cda0e1eb8ef"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     system "meson", "setup", "build", *std_meson_args

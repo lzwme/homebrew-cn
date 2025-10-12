@@ -9,18 +9,17 @@ class Yamale < Formula
   head "https://github.com/23andMe/Yamale.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "aca00da46d14112387aef497332f9ebb8501d4ef8f780f28be2272e7945c863a"
-    sha256 cellar: :any,                 arm64_sequoia: "e48267ff74adef8ba5d4d66834e837278195007081f1ba45e3b9142d17edcc1b"
-    sha256 cellar: :any,                 arm64_sonoma:  "84c923dcb48dca1e6eed547ce3768edc50d1cf4a357cbbe777b76e0cf9d1df50"
-    sha256 cellar: :any,                 arm64_ventura: "7a25c95c119ca7c208907a8a8f96555ceacaeb99ca3e33742127a1024293461d"
-    sha256 cellar: :any,                 sonoma:        "da45cebb15964ac288acd319dc2bf59553a4248ee2e0ec33959267b3fe684ac4"
-    sha256 cellar: :any,                 ventura:       "5d79479b30e4a0b9060051b53726d56cc6b96cd7a5e107584b5ca4459d6ad259"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "206664ef4991756e905b44123fac164c8f8d05baaf348d90064b22240acd3eff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eef4d6178db727a8de6d7749a1e03f2fafe21384e58b20f7e29d2bd1f35450ca"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "f9d30005e80962e774c7e09dadc03714a7d1dc9739a0b03dd4db55c868a00038"
+    sha256 cellar: :any,                 arm64_sequoia: "381732e435c618369a90c067a4849f93a050deb6b2560859dd8a505aa7328a56"
+    sha256 cellar: :any,                 arm64_sonoma:  "41f6168a4aad718a78cb334ead86b3ddf1ac580743405b2a6c95a7f031b052f7"
+    sha256 cellar: :any,                 sonoma:        "badfaa6f0181fe03e824dc5e58e8175595ea994e6ac10cad8758ecf4d263b8ed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "338157f7ebe70a91901b5ee3b813108d07d95f29eec95abfaf8b1fb0bff903c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8701f790dc3291171d806a101ff4dbeca5d359905921efd3de7a39012faf449c"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"

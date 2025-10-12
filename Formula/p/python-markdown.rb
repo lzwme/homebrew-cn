@@ -9,10 +9,11 @@ class PythonMarkdown < Formula
   head "https://github.com/Python-Markdown/markdown.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3fb23d502577f2c1219bc47cf1c9a9f2ca21b3c3e689062722ce2cc4f861f504"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "43daa06408e2aad27172be846736935c73710e453ddcc781d29b68fc0b235d9a"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     virtualenv_install_with_resources

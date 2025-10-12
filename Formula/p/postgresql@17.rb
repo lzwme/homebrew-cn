@@ -11,14 +11,13 @@ class PostgresqlAT17 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "86ed5277ed31ce38d1d14a299a7a513660966e196ac0cc11c9220f801ae6f936"
-    sha256 arm64_sequoia: "09b3aeb56c96af3385c7b639e0e7a3cadd622b6d1c07db312d52f4cc9d12e29c"
-    sha256 arm64_sonoma:  "898d311395029e79fd4521cf3e2cf75b7881566b81dca70a6ae880474b9b99ca"
-    sha256 arm64_ventura: "cdf1081a0c2309937a09442c6f1f2fe98a33561ae0e90ce78eb1a47e595210f1"
-    sha256 sonoma:        "58f787763d7e05afaba56bde579c7a91099601729d5b46666a9b7070e230ef45"
-    sha256 ventura:       "f651b1226eb6069c01aa66fb904d98646b28d077f4aca84d6ac95208a9e231dc"
-    sha256 arm64_linux:   "2c6298826856b52990c5af83440388d65250986f3b127b40f548b24a11e23d55"
-    sha256 x86_64_linux:  "70733721dea61d18cc729e38966720aaef3cd807c25905524d3e51b23d2eba15"
+    rebuild 1
+    sha256 arm64_tahoe:   "414f2c7c21e50d5b2928efa985e0db9e94dbaf893f34506ba9bf357b731cf2c3"
+    sha256 arm64_sequoia: "0d45910e5c1b1df8f707960b7b3854a4eef08ce9da60db91dd633ad8b24e5cc0"
+    sha256 arm64_sonoma:  "75a39672f8b779c5d668c1e19e139f3ba7835617f41d21f7f05ea2bf8523b30a"
+    sha256 sonoma:        "b7b92a725fca35f974d036e3c3cfb5df67d269dc6139bb6debf01bf26ed4e560"
+    sha256 arm64_linux:   "a98397a993f02bf41f29ed25f339756df2b4f1977839e9293fa9997c74f03b4a"
+    sha256 x86_64_linux:  "2a3ffe4158f5966926463ad03a2d0450879f673b816e45fa3dc73e107c05fd06"
   end
 
   keg_only :versioned_formula
@@ -145,7 +144,7 @@ class PostgresqlAT17 < Formula
     # Don't initialize database, it clashes when testing other PostgreSQL versions.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system bin/"initdb", "--locale=C", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
+    system bin/"initdb", "--locale=en_US.UTF-8", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
   end
 
   def postgresql_datadir
@@ -163,7 +162,7 @@ class PostgresqlAT17 < Formula
   def caveats
     <<~EOS
       This formula has created a default database cluster with:
-        initdb --locale=C -E UTF-8 #{postgresql_datadir}
+        initdb --locale=en_US.UTF-8 -E UTF-8 #{postgresql_datadir}
 
       When uninstalling, some dead symlinks are left behind so you may want to run:
         brew cleanup --prune-prefix
@@ -172,7 +171,7 @@ class PostgresqlAT17 < Formula
 
   service do
     run [opt_bin/"postgres", "-D", f.postgresql_datadir]
-    environment_variables LC_ALL: "C"
+    environment_variables LC_ALL: "en_US.UTF-8"
     keep_alive true
     log_path f.postgresql_log_path
     error_log_path f.postgresql_log_path
@@ -180,7 +179,7 @@ class PostgresqlAT17 < Formula
   end
 
   test do
-    system bin/"initdb", testpath/"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
+    system bin/"initdb", "--locale=en_US.UTF-8", "-E UTF-8", testpath/"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
     [bin/"pg_config", HOMEBREW_PREFIX/"bin/pg_config-#{version.major}"].each do |pg_config|
       assert_equal "#{HOMEBREW_PREFIX}/share/#{name}", shell_output("#{pg_config} --sharedir").chomp
       assert_equal "#{HOMEBREW_PREFIX}/lib/#{name}", shell_output("#{pg_config} --libdir").chomp

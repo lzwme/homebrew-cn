@@ -1,20 +1,20 @@
 class FzfMake < Formula
   desc "Fuzzy finder with preview window for make, pnpm, yarn, just & task"
   homepage "https://github.com/kyu08/fzf-make"
-  url "https://ghfast.top/https://github.com/kyu08/fzf-make/archive/refs/tags/v0.62.0.tar.gz"
-  sha256 "eb514511f30974722d78065de333549c7ece6f8d9d0d695e9b668a2aed0eda87"
+  url "https://ghfast.top/https://github.com/kyu08/fzf-make/archive/refs/tags/v0.63.0.tar.gz"
+  sha256 "f216f88bb45a3ceb25379a31279acd2da22661a5b66baaa0a7ba965d3b74a31b"
   license "MIT"
   head "https://github.com/kyu08/fzf-make.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "15289eb53bc2d0f851f77827eff457af81d44497d77282baff1f6b18fb1b1048"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e106bb7887ba857b84ef28094724a267281a889902f852f4ae5df55a5def247a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a68406b22a4d1d764c134680a2fa3a5508b1f6662b1c36c74194050f516f42d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "02e27e7e8ef04664254910cf93c32e61dbe2287061f2eba8fece25547e0d69f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3b510b6b39957649a68eae5dfd93eaf8402988856e8ffc688c8b3bd411a0ffd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c14ab0a1f49ce5ed9d6fd2b4e54f5181b9b9cd5f2cd73a44af7d347377dde728"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ef9e6a44ba6cd611efa59440b23309f3e4df0d86434d444127f23d4cda3415a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b196e5969cbafce4b3d871b32f842b52155215d0e21dafdeae264e9b1c89e528"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f9bfdd9a6d4354e181fe8e155e9b152358af49a878db3d07197fc6d87085e86"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3f373eb865e210741a298c3cde9b7bbb361f7fa608cd900fd3ebb71b6b7be301"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fd9b0f16ff01a7db0278ae243e619b36c0601b6907f77d68de0b97af63429b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81e1ffd5997c4fa0cbad7390d5dbffe39527ef4a68c018ffaa350ad85bfa861f"
   end
 
   depends_on "rust" => :build

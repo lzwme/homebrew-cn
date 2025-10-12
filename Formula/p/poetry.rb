@@ -9,12 +9,13 @@ class Poetry < Formula
   head "https://github.com/python-poetry/poetry.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "204732b2525fec4f9a0f5c923d2346a40fff127c888f73bc6143fca9516e1628"
-    sha256 cellar: :any,                 arm64_sequoia: "83f7bdda5af058b44d9b580847d6444007579bbbbce2daa9a75b575a8bd182d7"
-    sha256 cellar: :any,                 arm64_sonoma:  "73f56ae7a67cac75a2cf254da9c3e1a5f79595aac2c60267a4f4f9b1d4cc36c8"
-    sha256 cellar: :any,                 sonoma:        "1175018faf520e3035eb610ca3642014b6eb0cc3a87454588851b23294710db9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "461721efe912b158f94cf98c40fe63b11568efd1479da23e7dbce1546583faa6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c00ec5860374da22d214388ef602a05ba1e124655bedc8a24afc9a48feaca949"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "3634e2e46795a773ef17e811c89a03bf2730aee8135c6d01d9a1a85b7a71a2ba"
+    sha256 cellar: :any,                 arm64_sequoia: "73154a8324caaa733cbcf4fa4b967c33ab2c7c9fd4d2346af71d11374c02f8ee"
+    sha256 cellar: :any,                 arm64_sonoma:  "ab15d46a72f4fbd2ff9917e491acd33bb223a2a4081e36b20265f1af1db19815"
+    sha256 cellar: :any,                 sonoma:        "84680fdd2134cef84d1172855cebce9d7abf5c6dd51eb618a817f2146fe595f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c20b4bfe11be553beecc812b5e033992b39dd54620fc1ef2511bcdb8ee5f759"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4bf4acdf938b4f10d98b311c76478446989061c5bc8ca543ddb7c19d7c21ce8"
   end
 
   depends_on "cmake" => :build # for rapidfuzz
@@ -22,7 +23,7 @@ class Poetry < Formula
   depends_on "python-setuptools" => :build # for zstandard to bypass build isolation
   depends_on "certifi"
   depends_on "cffi"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "zstd"
 
   uses_from_macos "libffi"
@@ -32,8 +33,8 @@ class Poetry < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/f1/b4/636b3b65173d3ce9a38ef5f0522789614e590dab6a8d505340a4efe4c567/anyio-4.10.0.tar.gz"
-    sha256 "3f3fae35c96039744587aa5b8371e7e8e603c0702999535961dd336026973ba6"
+    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
+    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
   end
 
   resource "build" do
@@ -67,8 +68,8 @@ class Poetry < Formula
   end
 
   resource "dulwich" do
-    url "https://files.pythonhosted.org/packages/2b/f3/13a3425ddf04bd31f1caf3f4fa8de2352700c454cb0536ce3f4dbdc57a81/dulwich-0.24.1.tar.gz"
-    sha256 "e19fd864f10f02bb834bb86167d92dcca1c228451b04458761fc13dabd447758"
+    url "https://files.pythonhosted.org/packages/82/d0/b1275f9609e0d32800daf72786e5bec5602e71dde8db4995d0420d6b5cec/dulwich-0.24.2.tar.gz"
+    sha256 "d474844cf81bf95a6537a80aeec59d714d5d77d8e83d6d37991e2bde54746ca7"
   end
 
   resource "fastjsonschema" do
@@ -77,8 +78,8 @@ class Poetry < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/40/bb/0ab3e58d22305b6f5440629d20683af28959bf793d98d11950e305c1c326/filelock-3.19.1.tar.gz"
-    sha256 "66eda1888b0171c998b35be2bcc0f6d75c388a7ce20c3f3f37aa8e96c2dddf58"
+    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
+    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
   end
 
   resource "findpython" do
@@ -142,8 +143,8 @@ class Poetry < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/45/b1/ea4f68038a18c77c9467400d166d74c4ffa536f34761f7983a104357e614/msgpack-1.1.1.tar.gz"
-    sha256 "77b79ce34a2bdab2594f490c8e80dd62a02d650b91a75159a63ec413b8d104cd"
+    url "https://files.pythonhosted.org/packages/4d/f2/bfb55a6236ed8725a96b0aa3acbd0ec17588e6a2c3b62a93eb513ed8783f/msgpack-1.1.2.tar.gz"
+    sha256 "3b60763c1373dd60f398488069bcdc703cd08a711477b5d480eecc9f9626f47e"
   end
 
   resource "packaging" do
@@ -152,8 +153,8 @@ class Poetry < Formula
   end
 
   resource "pbs-installer" do
-    url "https://files.pythonhosted.org/packages/74/db/077daf042cbbb627275c4345d56fe3f8c2d394673d2b5c510958f84e4b0c/pbs_installer-2025.9.18.tar.gz"
-    sha256 "c0a51a7c1e015723bd8396f02e15b5876e439f74b0f45bbac436b189f903219f"
+    url "https://files.pythonhosted.org/packages/9a/b5/4922c6818d15c22430d2e79c4ebce8b482007aed1baf419626e3e405c5ae/pbs_installer-2025.10.10.tar.gz"
+    sha256 "568999771793eb337c107b089272c2269a011b1770f0f16c7afb3dbbb4a72ae9"
   end
 
   resource "pkginfo" do
@@ -162,8 +163,8 @@ class Poetry < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
-    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
+    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
+    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
   resource "poetry-core" do
@@ -222,8 +223,8 @@ class Poetry < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/1c/14/37fcdba2808a6c615681cd216fecae00413c9dab44fb2e57805ecf3eaee3/virtualenv-20.34.0.tar.gz"
-    sha256 "44815b2c9dee7ed86e387b842a84f20b93f7f417f95886ca1996a72a4138eb1a"
+    url "https://files.pythonhosted.org/packages/a4/d5/b0ccd381d55c8f45d46f77df6ae59fbc23d19e901e2d523395598e5f4c93/virtualenv-20.35.3.tar.gz"
+    sha256 "4f1a845d131133bdff10590489610c98c168ff99dc75d6c96853801f7f67af44"
   end
 
   resource "xattr" do

@@ -9,27 +9,25 @@ class Ykman < Formula
   head "https://github.com/Yubico/yubikey-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6909d0793a8d4a46fe2addead13463df85b23f74e8a1448de1ce6eee16e30726"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ac3af9f2abea7483614826752d9648e66203a0bf548d502fe7c58e67487d679"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "755808104b72db99dc35ca6e5ed2677ea2d39f14d23a77b11b2a0439266ee050"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ae149c8fc144ec9619abc1629a6fa6869f5c2f455f0f056f910174480c924c63"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aaefc2cd5bdeece2423f47faf62faf46691dd5912997787433898446f39fd528"
-    sha256 cellar: :any_skip_relocation, ventura:       "eba5ae83ef27b8c1873e7b5faf2a8ac81d5484d80defc33c18b75f052a9bbd39"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "92164fa1f7d95a4dc2fa9f22de7e28c4b96c8873241a86f3f8f37b897f90049c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd87fa86529c4258f34f4cfd356443325cf886ff7f911b9161272bc98aadfc62"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbe7882af1ba4b5a251c58e775f405382e4d19e7ac86d6d1abdd39023f0948fc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14991f7289929523e9cceeaed383a0047cf94f728730a5e0b29313c72c5d990f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "002ba3444d9cc43ca195f51eb9f44ea4a9073923355887cbf3e1850e60e8d98a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "194c3b50e319727301c199ebc1652b6ad1085649c2e6abb26fa6d24fc922ed5f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a7fc0d787f903feac1306c4eb0de99f5e04a90360c445654cfd5299c70604d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5665d529fb05f130d4aae2e888e37dd23fa500579875c81c9de6d83fe91b9e0"
   end
 
+  depends_on "cmake" => :build # for more-itertools
   depends_on "swig" => :build
   depends_on "cryptography"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "pcsc-lite"
 
-  # pin pyscard to 2.0.8, upstream bug report, https://github.com/LudovicRousseau/pyscard/issues/169
-
   resource "click" do
-    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "fido2" do
@@ -73,8 +71,8 @@ class Ykman < Formula
   end
 
   resource "secretstorage" do
-    url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
-    sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
+    url "https://files.pythonhosted.org/packages/31/9f/11ef35cf1027c1339552ea7bfe6aaa74a8516d8b5caf6e7d338daf54fd80/secretstorage-3.4.0.tar.gz"
+    sha256 "c46e216d6815aff8a8a18706a2fbfd8d53fcbb0dce99301881687a1b0289ef7c"
   end
 
   def install
@@ -91,7 +89,6 @@ class Ykman < Formula
     end
 
     man1.install "man/ykman.1"
-
     generate_completions_from_executable(bin/"ykman", shell_parameter_format: :click)
   end
 

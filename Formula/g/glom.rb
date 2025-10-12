@@ -8,15 +8,15 @@ class Glom < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "26ff4cd82d540ca3d322b553f01d55c3389034204be7ba89b80bb0eb077ca678"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "dc38d90e8590bec828eb68b5ab522bd82225835c650e23a1eadd439eb99bd3c4"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/49/7c/fdf464bcc51d23881d110abd74b512a42b3d5d376a55a831b44c603ae17f/attrs-25.1.0.tar.gz"
-    sha256 "1c97078a80c814273a76b2a298a932eb681c87415c11dee0a6921de7f1b02c3e"
+    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
+    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
   end
 
   resource "boltons" do

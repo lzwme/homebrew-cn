@@ -9,11 +9,11 @@ class Pssh < Formula
   revision 6
 
   bottle do
-    rebuild 6
-    sha256 cellar: :any_skip_relocation, all: "518c2915f02b92510bef30b6a5826e8165fb9cdd3405e2355292e872fae6cc40"
+    rebuild 7
+    sha256 cellar: :any_skip_relocation, all: "eca6f0eb288fe3d7380175a230291c61a552b1e911421df9c093e8085217cf60"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   conflicts_with "putty", because: "both install `pscp` binaries"
 

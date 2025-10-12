@@ -25,19 +25,20 @@ class Vim < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "860944e9f955c71b6f1467e025b5c40f66e37539342ec7a6fcdcfe28e3a5ad0e"
-    sha256 arm64_sequoia: "1b0f565c24a22cfe4e79b470e189c1d526b6b1434b826ebf336ecf65bc626cea"
-    sha256 arm64_sonoma:  "7fbf2c32e2523377d41a3ee3bef989f7879ed5d21d22951b8fb36560cecbaf86"
-    sha256 sonoma:        "441832630e7862760091c1e1ad3aef50a5841a0d6e529739d77476e2e2fa9cab"
-    sha256 arm64_linux:   "1e58567d4d2786ce5182fdbf0bf5a127a3526e49fb721dcf1279119ac13f8a73"
-    sha256 x86_64_linux:  "c2f3d75e759cba89d4bcbb8f0742062be3dc79ccfde9c28db05b63fb417ab55e"
+    rebuild 1
+    sha256 arm64_tahoe:   "b5864d009163ba6cb3e3e212768a136a3e47ec04697d8a091e748fbab2bc206b"
+    sha256 arm64_sequoia: "59aa2db2b7cc943bbeba484927acf9287b0d277a455865fc0c68232888a7f94d"
+    sha256 arm64_sonoma:  "854c5c2f4e3c7a720aae9e3bfcf88127efb12088883305f1d167a00be27c970d"
+    sha256 sonoma:        "dd6e8820ed09d8ee783e91a22ba8bb855359dfde3879d54d94dc5ea77b081c27"
+    sha256 arm64_linux:   "f385cbd2c0cd2d99938fb88381144ab4131482c5407da72ac624a26a653be4b0"
+    sha256 x86_64_linux:  "e73eebe8fb1bdc7177d88319a0326882c1bbd28b1f459bcc098f92d74791832d"
   end
 
   depends_on "gettext"
   depends_on "libsodium"
   depends_on "lua"
   depends_on "ncurses"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "ruby"
 
   uses_from_macos "perl"
@@ -53,7 +54,7 @@ class Vim < Formula
     because: "vim and macvim both install vi* binaries"
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.13"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@3.14"].opt_libexec/"bin"
 
     # https://github.com/Homebrew/homebrew-core/pull/1046
     ENV.delete("SDKROOT")

@@ -9,14 +9,15 @@ class Principalmapper < Formula
   revision 5
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "92bf9195e8e64c0c3a776f4375e99b3aa236c82b374255be01d3b8fc3db67449"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "47b833ae3377b5c3b707df350aea43caba38636553ae5ce0549dbdb2c634b72f"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/61/23/42cc861466a34e45bd1783c3b3a547d5f723a8d21f6151cd1e3d84adfba6/botocore-1.38.40.tar.gz"
-    sha256 "aefbfe835a7ebe9bbdd88df3999b0f8f484dd025af4ebb3f3387541316ce4349"
+    url "https://files.pythonhosted.org/packages/5b/66/21d9ac0d37e5c4e55171466351cfc77404d8d664ccc17d4add6dba1dee99/botocore-1.40.50.tar.gz"
+    sha256 "1d3d5b5759c9cb30202cd5ad231ec8afb1abe5be0c088a1707195c2cbae0e742"
   end
 
   resource "jmespath" do
@@ -35,8 +36,8 @@ class Principalmapper < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/bb/22/f1129e69d94ffff626bdb5c835506b3a5b4f3d070f17ea295e12c2c6f60f/pyparsing-3.2.3.tar.gz"
-    sha256 "b9c13f1ab8b3b542f72e28f634bad4de758ab3ce4546e4301970ad6fa77c38be"
+    url "https://files.pythonhosted.org/packages/f2/a5/181488fc2b9d093e3972d2a472855aae8a03f000592dbfce716a512b3359/pyparsing-3.2.5.tar.gz"
+    sha256 "2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6"
   end
 
   resource "python-dateutil" do

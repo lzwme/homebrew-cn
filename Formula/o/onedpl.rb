@@ -8,11 +8,12 @@ class Onedpl < Formula
 
   livecheck do
     url :stable
-    regex(/^oneDPL[._-](\d+(?:\.\d+)+)(?:[._-]release)?$/i)
+    strategy :github_latest
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ad75b1275b00bcd6dc3c9bb5777e51692b730ee6aa1abf67138939ecf31d11c7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "72e973dd99028596ed7ac87d7aadc5594b91451eb6c69b0a248c6e9ba837661e"
   end
 
   depends_on "cmake" => :build

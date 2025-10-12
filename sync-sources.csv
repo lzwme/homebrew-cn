@@ -1366,7 +1366,6 @@ Homebrew-homebrew-core/Formula/d/darker.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/darkhttpd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/darkice.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/darklua.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/darksky-weather.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/darkstat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dart-sdk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dartsim.rb, Homebrew/homebrew-core, 1
@@ -1623,7 +1622,6 @@ Homebrew-homebrew-core/Formula/d/draco.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/draft.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/drafter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dragonbox.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/drake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/driftctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/driftwood.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/drill.rb, Homebrew/homebrew-core, 1
@@ -5462,7 +5460,6 @@ Homebrew-homebrew-core/Formula/p/pig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pigz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pike.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/piknik.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pillar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pillow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pinact.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pinboard-notes-backup.rb, Homebrew/homebrew-core, 1
@@ -5645,7 +5642,6 @@ Homebrew-homebrew-core/Formula/p/prjtrellis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/probe-rs-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/procmail.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/procps.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/procps@3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/procs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proctools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/procyon-decompiler.rb, Homebrew/homebrew-core, 1
@@ -5811,7 +5807,6 @@ Homebrew-homebrew-core/Formula/p/python@3.8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python@3.9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pythran.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pytorch.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pytouhou.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pytr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyupgrade.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyvim.rb, Homebrew/homebrew-core, 0
@@ -6465,7 +6460,6 @@ Homebrew-homebrew-core/Formula/s/simdjson.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/simdutf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/simg2img.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/simgrid.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/s/simh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/simple-amqp-client.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/simple-mtpfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/simple-obfs.rb, Homebrew/homebrew-core, 0
@@ -11825,6 +11819,8 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-sree-krushnadevaraya.rb, Homebrew/
 Homebrew-homebrew-cask/Casks/font/font-s/font-sriracha.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-srisakdi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-staatliches.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-s/font-stack-sans-headline.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-s/font-stack-sans-text.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-stalemate.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-stalinist-one.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-stardos-stencil.rb, Homebrew/homebrew-cask, 0

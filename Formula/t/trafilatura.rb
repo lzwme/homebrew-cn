@@ -9,18 +9,17 @@ class Trafilatura < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85d876aedfb6856877a0b8b516085e269fb1f3ea245478d52554c1cb7dd2f71d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2dba5c5d97a84916d481391ceffc678b42466a3829aeafb46bc4eaed0e4adc20"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "537d9dfb34dca073daf17b627497a5f01c3d8c7c649fb3ba4194156750323ec9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cdd750558e244188d93bc09c5d394e5cfa3041d0628e067d7a83c885e526a936"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7689a1b38175c218e2769291ec522f518b2b486d32297f5e62eca77f4f0efa2f"
-    sha256 cellar: :any_skip_relocation, ventura:       "b594755dc2b8b527781683d7d7ceb8690f4ed948d315f44a3ee4131003be7ff7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "83fb0dc11606bf0500168de65379dd48dff615e82ec37eed935be07f03aa5cda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed1b1ed709a99b821733cfee07fb052148b9321a3040047b672ef9cebd02a314"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78eeb8533c2e41af7dc4c93e93ed552aeb051edf082214038a63ccd26b980fe7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "985ab3f8594e40cfbf4d91afefbea3a0f5a9b58add3c5ba485fdaecb077c04af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67a57c816e4a8af511baff49bff416e0cf95af47be65d6d9e8f05e9f01ed961a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b28c628b22023d9f0ad4a61a23197bb3c40975e2f6964a2020ec36a8343a2269"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c6e645e3f89f424599cb55f7589fcbb74419a5fbe424c3f4ea7c0986ecb1efa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b6fb43a785f9db7f5993c5192019184ac67f5a93883277533d4707268bcc42a"
   end
 
   depends_on "certifi"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -31,8 +30,8 @@ class Trafilatura < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "courlan" do
@@ -41,8 +40,8 @@ class Trafilatura < Formula
   end
 
   resource "dateparser" do
-    url "https://files.pythonhosted.org/packages/bd/3f/d3207a05f5b6a78c66d86631e60bfba5af163738a599a5b9aa2c2737a09e/dateparser-1.2.1.tar.gz"
-    sha256 "7e4919aeb48481dbfc01ac9683c8e20bfe95bb715a38c1e9f6af889f4f30ccc3"
+    url "https://files.pythonhosted.org/packages/a9/30/064144f0df1749e7bb5faaa7f52b007d7c2d08ec08fed8411aba87207f68/dateparser-1.2.2.tar.gz"
+    sha256 "986316f17cb8cdc23ea8ce563027c5ef12fc725b6fb1d137c14ca08777c5ecf7"
   end
 
   resource "htmldate" do
@@ -61,8 +60,8 @@ class Trafilatura < Formula
   end
 
   resource "lxml-html-clean" do
-    url "https://files.pythonhosted.org/packages/79/b6/466e71db127950fb8d172026a8f0a9f0dc6f64c8e78e2ca79f252e5790b8/lxml_html_clean-0.4.2.tar.gz"
-    sha256 "91291e7b5db95430abf461bc53440964d58e06cc468950f9e47db64976cebcb3"
+    url "https://files.pythonhosted.org/packages/d9/cb/c9c5bb2a9c47292e236a808dd233a03531f53b626f36259dcd32b49c76da/lxml_html_clean-0.4.3.tar.gz"
+    sha256 "c9df91925b00f836c807beab127aac82575110eacff54d0a75187914f1bd9d8c"
   end
 
   resource "python-dateutil" do
@@ -76,8 +75,8 @@ class Trafilatura < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/8e/5f/bd69653fbfb76cf8604468d3b4ec4c403197144c7bfe0e6a5fc9e02a07cb/regex-2024.11.6.tar.gz"
-    sha256 "7ab159b063c52a0333c884e4679f8d7a85112ee3078fe3d9004b2dd875585519"
+    url "https://files.pythonhosted.org/packages/49/d3/eaa0d28aba6ad1827ad1e716d9a93e1ba963ada61887498297d3da715133/regex-2025.9.18.tar.gz"
+    sha256 "c5ba23274c61c6fef447ba6a39333297d0c247f53059dba0bca415cac511edc4"
   end
 
   resource "six" do

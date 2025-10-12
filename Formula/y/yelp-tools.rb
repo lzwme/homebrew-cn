@@ -11,15 +11,13 @@ class YelpTools < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any,                 arm64_tahoe:   "0b8f48ac1a51281d114801f3a5e73854a333aea2f69b01ee0625cbfb949605bb"
-    sha256 cellar: :any,                 arm64_sequoia: "b7fdc8113c53b2269004863275eb727529213a7306fe048195c6d772d068f9a7"
-    sha256 cellar: :any,                 arm64_sonoma:  "fecff16b031b801b36674d3ce40d9076a53d50a588874b6c1c003d2a53dd8c65"
-    sha256 cellar: :any,                 arm64_ventura: "552d5b45480d56d8c411142fdd7f7a425e63d84869d1f5bf67f1cc16fbea0ce7"
-    sha256 cellar: :any,                 sonoma:        "eb9926b85d1ba6364f317753ef6bbff66e60935d6acebbe0dbf760a2773357ab"
-    sha256 cellar: :any,                 ventura:       "9d91490539a030c77b1110b8c0a66a5a82ba7f904c958a3eff9b436e56f5f10c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4aa4c8857c9df493063cd25472fa61289d177b1834471590f041b4cd93837cc9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f59435fcac44fa0fb975fe0f65fbc6a2d93649c97b004fff1decd049dbc43517"
+    rebuild 6
+    sha256 cellar: :any,                 arm64_tahoe:   "7cc5521c969220f384b20411deb90d5e05f1d178d8203a52303ce5a89d38ab82"
+    sha256 cellar: :any,                 arm64_sequoia: "772ad45116fc15ae25475b985b6248b4c3c18c78116f012864c62aec91fca64f"
+    sha256 cellar: :any,                 arm64_sonoma:  "5a3a6c2a52bbae96adc5eaebe69181fd4b4451d2626deca6008dd012b1e54ca8"
+    sha256 cellar: :any,                 sonoma:        "2afea63853c934f240b83e6a48e83a107259c812a13e2725b033cc98ae0618f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8186b8958c98951dade64261639e1964cd136c2e806bd9eebce23fd6d0bef8a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9d7a219224a7171620bf7f88e571a7c2af1bf887601012691817c420f2f7361"
   end
 
   depends_on "gettext" => :build
@@ -28,13 +26,13 @@ class YelpTools < Formula
   depends_on "pkgconf" => :build
   depends_on "itstool"
   depends_on "libxml2"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "libxslt"
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/ef/f6/c15ca8e5646e937c148e147244817672cf920b56ac0bf2cc1512ae674be8/lxml-5.3.1.tar.gz"
-    sha256 "106b7b5d2977b339f1e97efe2778e2ab20e99994cbb0ec5e55771ed0795920c8"
+    url "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz"
+    sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
   end
 
   resource "yelp-xsl" do
@@ -59,7 +57,7 @@ class YelpTools < Formula
       ENV.append_path "PKG_CONFIG_PATH", share/"pkgconfig"
     end
 
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
     venv.pip_install resource("lxml")
     ENV.prepend_path "PATH", venv.root/"bin"
 

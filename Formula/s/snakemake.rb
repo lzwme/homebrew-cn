@@ -3,25 +3,25 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/07/c7/f28b279a865fb1f4955f7abc21d23eb2ebea342c2f80ba2c76e0391f168f/snakemake-9.13.0.tar.gz"
-  sha256 "90bcf9cd17264ce80f9ab388a936c3b71676a5234aa0fa0e8837482e118064d1"
+  url "https://files.pythonhosted.org/packages/47/76/1264d6c95a0ed34329243c48c9b21c794b9ef592de65a74134f76dbc9b98/snakemake-9.13.1.tar.gz"
+  sha256 "9d9edec24b6707d948b37a84b90b5af77a48ea133d511a82b5c6dfc6ab9add7b"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4d41d5d5f12d004367275c6be7d6bbd0de458a0dc4a2ad829fb76643df93fe70"
-    sha256 cellar: :any,                 arm64_sequoia: "1843481d6cf7b7793bebc652889f4e2f45748e095ff7a66124b5c0b87b7cad88"
-    sha256 cellar: :any,                 arm64_sonoma:  "cf03cf7f042b3d24c29bbdef11e8cb95663641895b3af455bb99743c581fabbc"
-    sha256 cellar: :any,                 sonoma:        "fa4220e203998502ff53f6cef87b11060cc7d72e62c6256cdfbc373b41ebe93a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1a432080ae313ecdaaaa80a0362c846da83e7535475a85d80799e5c8ab54329"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47638d6723fba540efeea347cec27b17b4e7d2189e3da2c2248dbb83636a6e82"
+    sha256 cellar: :any,                 arm64_tahoe:   "246ee57c3d947e14c3b0f3b314c01e4ba160dec1195a22e3a097b1f5761422d6"
+    sha256 cellar: :any,                 arm64_sequoia: "43c30e41889b774be6d3dda3ac1f7ac669873546e35105d2ca9ef4d795eac9b4"
+    sha256 cellar: :any,                 arm64_sonoma:  "ce4d85dc55e42e4340a50a414a25a857f645ed93c2f9dcda2343b8430eaf5eab"
+    sha256 cellar: :any,                 sonoma:        "908fdd5fae902fc514d4c0aab0870efcbab97476fd52b7bf5a08a0afc4f8c05f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "307507b77e15f54a827cc4904443e909462a984132f0937549aeba1f39cd4003"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91e3cb8eed847d7b411e500f2e0052a52d8535dd9a8abd4b81b7c7e054cdf164"
   end
 
   depends_on "rust" => :build
   depends_on "cbc"
   depends_on "certifi"
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
