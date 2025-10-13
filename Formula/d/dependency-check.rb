@@ -1,13 +1,13 @@
 class DependencyCheck < Formula
   desc "OWASP dependency-check"
   homepage "https://owasp.org/www-project-dependency-check/"
-  url "https://ghfast.top/https://github.com/dependency-check/DependencyCheck/releases/download/v12.1.6/dependency-check-12.1.6-release.zip"
-  sha256 "1d8a60e379099e33009d2d105daa9f52b27f4ac5dc1859a279c76fbc2096c2ed"
+  url "https://ghfast.top/https://github.com/dependency-check/DependencyCheck/releases/download/v12.1.7/dependency-check-12.1.7-release.zip"
+  sha256 "35479b3b7cb900125ab2a64208aeab7571b5dc6cd46c1f41d052661445969155"
   license "Apache-2.0"
   head "https://github.com/dependency-check/DependencyCheck.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d12e7bcac16f04fed5ede22eae340ddadc03df15e3800cdddc9da25e2714623d"
+    sha256 cellar: :any_skip_relocation, all: "52e738470912155ade6896ae8ca7c50e9b15589faf46dfdeb58232bfbc55160d"
   end
 
   depends_on "openjdk"

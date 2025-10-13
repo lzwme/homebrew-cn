@@ -7,15 +7,13 @@ class Weechat < Formula
   head "https://github.com/weechat/weechat.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "3760a027b13f43e0000b45063464b4b7f738fc7f15c1718c3643c81233d1fc5d"
-    sha256 arm64_sequoia: "49b2099f0a1e8a5e1e0956d2f12091b1795501ecaaf566c60434ea37f7af67d0"
-    sha256 arm64_sonoma:  "f71b979b629e34ab7ed293804d603a38f1655684c74b8aacf7ee1db8f3e2ca14"
-    sha256 arm64_ventura: "71284c1d91c338d6b7260c4f06357fe25da1422d4861a335a2238e1df9dd55ef"
-    sha256 sonoma:        "6ff2ebd94b1c5bea8605da2365e9ff974daa36aad3e58146b43eb2c182f9e156"
-    sha256 ventura:       "531a5daea68fdc0dd410737affe69b03642071f1ebfddea578018a0ac2d766aa"
-    sha256 arm64_linux:   "49a72bb5ba4b5344db4c4cdabe7b4f15d5370a1e506481271065b26526e74bee"
-    sha256 x86_64_linux:  "e69a378a9363872ac7f63fd65c909394493286ee770207741b86415352349ac8"
+    rebuild 2
+    sha256 arm64_tahoe:   "fe6fb4efbc0764836f935f9674f3862680b2bd12f6bace6ee4e30b3194f208c8"
+    sha256 arm64_sequoia: "18bca2597fe1656b6ce052100e48aa8d1407639d3929be7abf0c71660e0741a3"
+    sha256 arm64_sonoma:  "cba7ea407e89e6bb935dd5f10b07effc98a5e5ebff117e4ea04b8295c3b9bc3e"
+    sha256 sonoma:        "9cd8969995a1431bf6a5ca25a1e8650ba78d14fe166f65edc78b80a3a622df04"
+    sha256 arm64_linux:   "daf430902f3c7a1a46696f127fb36330b64cf628fdf40a049d1811607d12af31"
+    sha256 x86_64_linux:  "8e0eae0c7cddd2d0080d4e8606b03f326df81b323221721b2f149604dc0fe39b"
   end
 
   depends_on "asciidoctor" => :build
@@ -29,7 +27,7 @@ class Weechat < Formula
   depends_on "lua"
   depends_on "ncurses"
   depends_on "perl"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "ruby"
   depends_on "tcl-tk"
   depends_on "zstd"

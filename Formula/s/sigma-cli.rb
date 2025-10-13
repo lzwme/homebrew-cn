@@ -10,31 +10,29 @@ class SigmaCli < Formula
   head "https://github.com/SigmaHQ/sigma-cli.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "62389447e94c5fd887f3e78cc682b030ce951060c8825175901c70423c92979e"
-    sha256 cellar: :any,                 arm64_sequoia: "c52a3d701cb7954648073ab399acf23aa9ba92001c1616b78509f58a904c2aed"
-    sha256 cellar: :any,                 arm64_sonoma:  "54ff4d366f2bd84868094772ea97010b70eab5ff747025b713e81904fa793983"
-    sha256 cellar: :any,                 arm64_ventura: "7249cf7861b6cb71bc72f301d9a5d6063b9101253f95787b9221205c50072d8c"
-    sha256 cellar: :any,                 sonoma:        "cccba010339924acd2086d9067db8c9ba572cdd04be8fa0df1c12d60ca72d3ae"
-    sha256 cellar: :any,                 ventura:       "bc4db80a1e8db098cc30cf8bd4c785f6eef7ed645c209824d84976560b0558ed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9464d4ecedc600741583518048cd27c0126e1bef18130136527698bb795e6a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d24671a6f4c327b4b170eb1e4a47c5d97cddaac7848370e03d87e447821b80b"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "ccde194db00a05ca3a6b270c45038315ec21f53d1d4915ba540118adc7712b40"
+    sha256 cellar: :any,                 arm64_sequoia: "77e8ccc39d5b42a86d80a9d68020dfc1a1b51ce69167a4f3c96e06b681887cfb"
+    sha256 cellar: :any,                 arm64_sonoma:  "b6fe6a8243c8ae4a1d942fa5210266f490226f870ce8a7b741fc0ccb12a752ff"
+    sha256 cellar: :any,                 sonoma:        "37b40a2294883b7879c63a29b7d4632186daed7f0b5bbbe9543bf400e393374e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f6d367b7e528e29b9ba1243daea9e68fa066660ffebac8d7f5116e47ddaa399"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1726d31adcbfdf2759f6a52e550c74513b8d65ae9a5d1d8eafcc4fa12071aba0"
   end
 
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   conflicts_with "open-simh", because: "both install `sigma` binaries"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "colorama" do
@@ -53,8 +51,8 @@ class SigmaCli < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   resource "packaging" do
@@ -68,8 +66,8 @@ class SigmaCli < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/bb/22/f1129e69d94ffff626bdb5c835506b3a5b4f3d070f17ea295e12c2c6f60f/pyparsing-3.2.3.tar.gz"
-    sha256 "b9c13f1ab8b3b542f72e28f634bad4de758ab3ce4546e4301970ad6fa77c38be"
+    url "https://files.pythonhosted.org/packages/f2/a5/181488fc2b9d093e3972d2a472855aae8a03f000592dbfce716a512b3359/pyparsing-3.2.5.tar.gz"
+    sha256 "2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6"
   end
 
   resource "pysigma" do
@@ -89,13 +87,13 @@ class SigmaCli < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "urllib3" do
@@ -104,8 +102,8 @@ class SigmaCli < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz"
-    sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
+    url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
+    sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
   end
 
   def install

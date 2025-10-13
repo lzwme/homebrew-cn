@@ -10,17 +10,16 @@ class Distcc < Formula
   head "https://github.com/distcc/distcc.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "32c7926148b23328d8ceae1e7093685846864d97a1d250f587054d83bf07a877"
-    sha256 arm64_sequoia: "b98395e66b59e15e749f8653a24a7cdb21ed924ab38789987937b424087db48c"
-    sha256 arm64_sonoma:  "3f7592cb46c1103e012aa5321bc042a422cf4feff63f741df469ac0b360048dd"
-    sha256 arm64_ventura: "4e2d0d3d71ff226b128e3449b7ef1117dd6f27c46345fc29a293ae246f562dd4"
-    sha256 sonoma:        "80254e2dd3cb658907364565ee40c9f60a8aa303cbc9bcc20cf7e7a8c6024a94"
-    sha256 ventura:       "50459c98419e4b2d87f529ae4a058f90f011836cd157af010f81137e9468e531"
-    sha256 arm64_linux:   "938461a356c88827ebb319494279a8a41959be010e7102adbfe17e79f6da9b61"
-    sha256 x86_64_linux:  "92bb7674804a00828013b7a43534c3875624168e13934e3b099afcc8b50698a8"
+    rebuild 1
+    sha256 arm64_tahoe:   "09fcd33f368d1daff6716752ee32cf50cbb62f7acb0200a0a07bd676d65cd3f2"
+    sha256 arm64_sequoia: "232f2d8db68393c3f700e16d29d914e19aa565f2e8a6d2e0e3846c8b317fd931"
+    sha256 arm64_sonoma:  "a25d35cebbe97e9bb683c53994a2956e256d4f7dfb1bd024e1a412826ee7c1d1"
+    sha256 sonoma:        "ab7cc55d6cfae2c77316093229ae3668f7e34d2d80713e4eec5f2c41f69983d2"
+    sha256 arm64_linux:   "42071ee608cbbcfcc761fe4a9b18ed90499115dab3108c03ff72a27825a2beef"
+    sha256 x86_64_linux:  "d04aa534933e21b7e469f009c76e5bde6e50ecadecbab3d6de4f134db8f7eef2"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "libiberty" do
     url "https://ftp.debian.org/debian/pool/main/libi/libiberty/libiberty_20250315.orig.tar.xz"
@@ -45,7 +44,7 @@ class Distcc < Formula
   end
 
   def install
-    ENV["PYTHON"] = python3 = which("python3.13")
+    ENV["PYTHON"] = python3 = which("python3.14")
     site_packages = prefix/Language::Python.site_packages(python3)
 
     build_venv = virtualenv_create(buildpath/"venv", python3)

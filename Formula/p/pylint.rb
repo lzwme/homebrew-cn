@@ -3,28 +3,19 @@ class Pylint < Formula
 
   desc "It's not just a linter that annoys you!"
   homepage "https://github.com/pylint-dev/pylint"
-  url "https://files.pythonhosted.org/packages/04/9d/81c84a312d1fa8133b0db0c76148542a98349298a01747ab122f9314b04e/pylint-3.3.9.tar.gz"
-  sha256 "d312737d7b25ccf6b01cc4ac629b5dcd14a0fcf3ec392735ac70f137a9d5f83a"
+  url "https://files.pythonhosted.org/packages/b6/2f/e80cc4301c81c41a8836d726377daeebf5901a33c06ba8c2d5afb94f7612/pylint-4.0.0.tar.gz"
+  sha256 "62da212808c0681e49ffb125f0a994c685d912cf19ae373075649ebb5870ec28"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b070034ff24d4b5255057159962530ca8e479af3f8ad14a76aae7e763266b409"
+    sha256 cellar: :any_skip_relocation, all: "3d80a29b729ef057c93606fb8e161bd5b28d2ec88d3a8d7921aa2c122d0e4b74"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "astroid" do
-    url "https://files.pythonhosted.org/packages/39/33/536530122a22a7504b159bccaf30a1f76aa19d23028bd8b5009eb9b2efea/astroid-3.3.9.tar.gz"
-    sha256 "622cc8e3048684aa42c820d9d218978021c3c3d174fb03a9f0d615921744f550"
-
-    # fix `setuptools.errors.InvalidConfigError: 'project.license-files' is defined already`
-    # commit ref, https://github.com/pylint-dev/astroid/commit/9faee90fdb66049162834a8bb066c6cb40a0e449
-    patch :DATA
-  end
-
-  resource "astroid" do
-    url "https://files.pythonhosted.org/packages/18/74/dfb75f9ccd592bbedb175d4a32fc643cf569d7c218508bfbd6ea7ef9c091/astroid-3.3.11.tar.gz"
-    sha256 "1e5a5011af2920c7c67a53f65d536d65bfa7116feeaf2354d8b94f29573bb0ce"
+    url "https://files.pythonhosted.org/packages/a7/d1/6eee8726a863f28ff50d26c5eacb1a590f96ccbb273ce0a8c047ffb10f5a/astroid-4.0.1.tar.gz"
+    sha256 "0d778ec0def05b935e198412e62f9bcca8b3b5c39fdbe50b0ba074005e477aab"
   end
 
   resource "dill" do
@@ -33,8 +24,8 @@ class Pylint < Formula
   end
 
   resource "isort" do
-    url "https://files.pythonhosted.org/packages/1e/82/fa43935523efdfcce6abbae9da7f372b627b27142c3419fcf13bf5b0c397/isort-6.1.0.tar.gz"
-    sha256 "9b8f96a14cfee0677e78e941ff62f03769a06d412aabb9e2a90487b3b7e8d481"
+    url "https://files.pythonhosted.org/packages/63/53/4f3c058e3bace40282876f9b553343376ee687f3c35a525dc79dbd450f88/isort-7.0.0.tar.gz"
+    sha256 "5513527951aadb3ac4292a41a16cbc50dd1642432f5e8c20057d414bdafb4187"
   end
 
   resource "mccabe" do
@@ -43,8 +34,8 @@ class Pylint < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
-    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
+    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
+    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
   resource "tomlkit" do
@@ -64,36 +55,3 @@ class Pylint < Formula
     system bin/"pylint", "--exit-zero", "pylint_test.py"
   end
 end
-
-__END__
-diff --git a/pyproject.toml b/pyproject.toml
-index b0078e8..fcc3996 100644
---- a/pyproject.toml
-+++ b/pyproject.toml
-@@ -4,15 +4,15 @@ build-backend = "setuptools.build_meta"
-
- [project]
- name        = "astroid"
--license     = {text = "LGPL-2.1-or-later"}
- description = "An abstract syntax tree for Python with inference support."
- readme      = "README.rst"
- keywords    = ["static code analysis", "python", "abstract syntax tree"]
-+license     = "LGPL-2.1-or-later"
-+license-files = [ "LICENSE", "CONTRIBUTORS.txt" ]
- classifiers = [
-     "Development Status :: 6 - Mature",
-     "Environment :: Console",
-     "Intended Audience :: Developers",
--    "License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)",
-     "Operating System :: OS Independent",
-     "Programming Language :: Python",
-     "Programming Language :: Python :: 3",
-@@ -40,9 +40,6 @@ dynamic = ["version"]
- "Bug tracker"    = "https://github.com/pylint-dev/astroid/issues"
- "Discord server" = "https://discord.gg/Egy6P8AMB5"
-
--[tool.setuptools]
--license-files = ["LICENSE", "CONTRIBUTORS.txt"]  # Keep in sync with setup.cfg
--
- [tool.setuptools.package-dir]
- "" = "."

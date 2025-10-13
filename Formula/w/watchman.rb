@@ -9,12 +9,13 @@ class Watchman < Formula
   head "https://github.com/facebook/watchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5df3b0da0b29a7267ae6b8821fd4dc8134f370aff39353a9355867198cae0799"
-    sha256 cellar: :any,                 arm64_sequoia: "33eab52ccd8d8c126a41225ec432d7ae8eabd19f6223841ec500e4ba615ddc0c"
-    sha256 cellar: :any,                 arm64_sonoma:  "fb2e311409025f39ac349e792dc05ca333ad5e2585727c8554faf7cb4e174341"
-    sha256 cellar: :any,                 sonoma:        "2088f2721c881b7e1ac2b71211517297d2019facbeb3803f2e72820d67c53260"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "98298a85df3c1b84fa4e826d321d915e72c8d390d0a5f8c9f7b12d83f79a4715"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae7ca8949aea6c24b7efd05a25826c89894ed08a29b4da5506a06b6d4cdab438"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "6bd4a030a9373d844b15a8a83e1cdf5c3af9d7e0784c12525349662a2d2030ee"
+    sha256 cellar: :any,                 arm64_sequoia: "75cda70f404ac4a0a78795b195a0b15693b99ec3f612fe3503e9ad2bdbc9d5c9"
+    sha256 cellar: :any,                 arm64_sonoma:  "9a62e7c34523bf7926f23d975085192cbb089d856ed120298c9cc1418fc2a6bc"
+    sha256 cellar: :any,                 sonoma:        "7430e6db28920eab32a46ca0a6013abe60ff5c0bf913867444d7c596b97aba38"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecbec6651a01bbe8cf87688c10bf5ef09d78913abfb537d8119ad1b18d824b86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8873a3116bfd5d3e5a3961c42a660e17875974b3cdf82e7c63d84cf326a443e3"
   end
 
   depends_on "cmake" => :build
@@ -34,7 +35,7 @@ class Watchman < Formula
   depends_on "libevent"
   depends_on "openssl@3"
   depends_on "pcre2"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   on_linux do
     depends_on "boost"
@@ -51,7 +52,7 @@ class Watchman < Formula
     # Use the upstream default for WATCHMAN_STATE_DIR by unsetting it.
     args = %W[
       -DENABLE_EDEN_SUPPORT=ON
-      -DPython3_EXECUTABLE=#{which("python3.13")}
+      -DPython3_EXECUTABLE=#{which("python3.14")}
       -DWATCHMAN_VERSION_OVERRIDE=#{version}
       -DWATCHMAN_BUILDINFO_OVERRIDE=#{tap&.user || "Homebrew"}
       -DWATCHMAN_STATE_DIR=

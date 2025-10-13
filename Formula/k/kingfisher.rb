@@ -1,17 +1,17 @@
 class Kingfisher < Formula
   desc "MongoDB's blazingly fast secret scanning and validation tool"
   homepage "https://github.com/mongodb/kingfisher"
-  url "https://ghfast.top/https://github.com/mongodb/kingfisher/archive/refs/tags/v1.56.0.tar.gz"
-  sha256 "7ae5fa4202b6761df276665b65b2870abd80f81c8f88d3a6795a5bf71ab3d901"
+  url "https://ghfast.top/https://github.com/mongodb/kingfisher/archive/refs/tags/v1.57.0.tar.gz"
+  sha256 "2464256fafa5f7f5d6eea43e7390f991c56262a65d87b036c98d66021defd97a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6228874aedb739a3abcb781d6cacad7b1638264704a8b8b33e7e0067145891b2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1257a96665c3909328079e0de3a7870a217d5569d3f1a28ef28b2d094d1f4a6c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "610b580bdc3cba822a45325132dfb29bee0e2c2b5e9d0de1a0861b77ffc64b87"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ce4da4a7275d1c35762bb2165785f7783e482e1675e987b36445eac107b88884"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f9742c4f66c3b58c6ee67f0542cfda4ef59e28b22c48cc52e00c800b3534a3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96a6486f49d2b2e24990eefdfd40fb782801752d2afaa3f5d24646c1bd181533"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16ed162ade001465a55bef568c386d413f88a7b80a07daa79f31dc1de5f78c40"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "709813c327ec78874d6c921a3bca0f6ce6d95c825ec08b549a207cd59a380ef8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d655de19cac8ba56e488dfcaada02d8631c4d4d461dc0bbe2399792cc108034"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c4ba02414b34dd3d6ebe065a4dc7e76fd21c10ba8d862ba8a6bb511ba85191f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8c3ecfd8493f1a4e57cae3fef24f5d687899dce9a1598acdb6e49eb728266cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0051c61d54be0f42ffe38d510a96221c27b9202179e1c319047c2bbbc736dc8e"
   end
 
   depends_on "boost" => :build

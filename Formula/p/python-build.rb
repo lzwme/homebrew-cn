@@ -9,10 +9,11 @@ class PythonBuild < Formula
   head "https://github.com/pypa/build.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "de02fabf6590718fd459bd1f64fd57aa91b434d1feacc1aebecdc763513c1a7f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "05b71eea25849daef6ceb6289287114f1a9ef9f66e04cca4a1de4a5c4d5dd5c4"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
@@ -26,9 +27,6 @@ class PythonBuild < Formula
 
   def install
     virtualenv_install_with_resources
-
-    # Ensure uniform bottles by replacing a `/usr/local` reference in a comment.
-    inreplace libexec/"lib/python3.13/site-packages/build/env.py", "/usr/local", HOMEBREW_PREFIX
   end
 
   test do

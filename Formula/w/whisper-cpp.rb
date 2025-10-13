@@ -1,8 +1,8 @@
 class WhisperCpp < Formula
   desc "Port of OpenAI's Whisper model in C/C++"
   homepage "https://github.com/ggml-org/whisper.cpp"
-  url "https://ghfast.top/https://github.com/ggml-org/whisper.cpp/archive/refs/tags/v1.8.0.tar.gz"
-  sha256 "c006a5e472ee41e7a733d0bf7326e339c8b281d3a91a1c8a35468fa0a051940f"
+  url "https://ghfast.top/https://github.com/ggml-org/whisper.cpp/archive/refs/tags/v1.8.1.tar.gz"
+  sha256 "b7c6b05635e5fda85cbcc5a012d29b3a4ca1cc22d9fa54d5b6c33e4ac271e5e0"
   license "MIT"
   head "https://github.com/ggml-org/whisper.cpp.git", branch: "master"
 
@@ -12,12 +12,12 @@ class WhisperCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "af01745d8e901da2e15a2762cfb5b0b45f86c440f547e138967e881756871d5d"
-    sha256 cellar: :any,                 arm64_sequoia: "3e7bf9cc5ad26440353f021aa212a99bb7a5b73c3ab5104f09568567c4056269"
-    sha256 cellar: :any,                 arm64_sonoma:  "efda95b09b4a26cbf42b20f7f88a961aed922346f88121a7a4bfe93c31a2f8f8"
-    sha256 cellar: :any,                 sonoma:        "ead085a1fad2849b756b80b7df4ef0f83fb934aa1adafb3cb4675f0fd6e2fb8a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "73074b46e46d34be9041e519c5612b1a60882fbdbaefa2d663a22a478596a737"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74d9fd2a0ba02cb3e8f7933e6a6e3b4d6270083ed4cb1fb847b576b483b7759f"
+    sha256 cellar: :any,                 arm64_tahoe:   "ed053d90db828513775eefeaf31fe5855ce620f94691a79d8d007d90b1a01143"
+    sha256 cellar: :any,                 arm64_sequoia: "90a3bddf19bc4bfadc34d64eb0634e5da6b8701b7b9e6b7044ee985ffdf75766"
+    sha256 cellar: :any,                 arm64_sonoma:  "6de72ce54132faeac6872f2c2726c3ff7e4b33189f8dc72ea8afe86ecd00f2a4"
+    sha256 cellar: :any,                 sonoma:        "b0f750a103028da2db978161f13b34ad3895ddeb62764a6f2ee47187ac042c6e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "47d96c112aef37b79c0b5419cbec48feb057085573ed583e27e43d0a9934bc93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4876ac61cf894b10c790113481fc339989419198d27aabb89574663239980b30"
   end
 
   depends_on "cmake" => :build

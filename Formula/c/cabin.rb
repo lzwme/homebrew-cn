@@ -4,16 +4,16 @@ class Cabin < Formula
   url "https://ghfast.top/https://github.com/cabinpkg/cabin/archive/refs/tags/0.13.0.tar.gz"
   sha256 "f9115bb0566800beedb41106e00f44a7eaf1dea0fa6528281e31de5f80864177"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/cabinpkg/cabin.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "876eb4668247fbac986c3fd6bfb114684640ddc5be5db17b4f745d082fcf8926"
-    sha256 cellar: :any,                 arm64_sequoia: "6ab0d5b4f8f0cfd3d8c0251d9d0b905a3ecd28f92c3dab32fc86cbfcce5eafd6"
-    sha256 cellar: :any,                 arm64_sonoma:  "1164395228216093cf43e08f16f1ffdf4c2f7a12fdb24e93924158c73f53d155"
-    sha256 cellar: :any,                 sonoma:        "8a2af41347bf41feefc39c6e28d420a9bd6da2550022608605a92cef60eb1557"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "78178ba52dd8c248b40dcc9450ad780873b9b3c329d032010233268e9fdd089e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30a8896f233b63196d7dae8a32bc50979851fc57a5c925d18b3206ff835f8fd1"
+    sha256 cellar: :any,                 arm64_tahoe:   "663856f27130718ab2546ab4eecdca21d0fabaa3f5c08169657f4d133b7a2d5a"
+    sha256 cellar: :any,                 arm64_sequoia: "5cf95ebb404457edc95d68dc4c3bb5b20b8f17e8adce3798679ee497c5ea1ca1"
+    sha256 cellar: :any,                 arm64_sonoma:  "ca1d58b0198c1b4afbd3942b147c852483d8a4931f3531a4c5068c4778824328"
+    sha256 cellar: :any,                 sonoma:        "a71e816c3a97a91803ad64a6cbda528159f3a8bc4c7aa5793ada1603972bcf5d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dced8bcac90d26d06ef4174d1414ef2489b23fe9533c546f529caa85a4a6a6d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa46ee698d680709a16f68238b437eef55ad01b75cc64aa53844da3f397f2323"
   end
 
   depends_on "nlohmann-json" => :build

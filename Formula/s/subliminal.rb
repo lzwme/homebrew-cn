@@ -9,19 +9,18 @@ class Subliminal < Formula
   head "https://github.com/Diaoul/subliminal.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ffeb18bfc19b0b565e51f3f538e2221b8e1dbf15bfb8634376630301c83b8876"
-    sha256 cellar: :any,                 arm64_sequoia: "44b7e56396000cc9e645619408e589d2da11ed6cccb3108944326ba2f6527eb8"
-    sha256 cellar: :any,                 arm64_sonoma:  "fffd967abacc525827f2cb9559283fb4af68349d0d57d99b21191d07d7d0ec33"
-    sha256 cellar: :any,                 arm64_ventura: "ac1c7261e5e6a2786acf6b5b0c9e0f6b4d913ff1dbff63bad89f5d47b7fee0dd"
-    sha256 cellar: :any,                 sonoma:        "0400fa0ea9530919e9edfe038bed5c2d1bfea64bb07bc11672c1fa3d9df0c7d3"
-    sha256 cellar: :any,                 ventura:       "003d43d8c3d8bad8a6d586c5f2a3bb9f623d2111c1d977ba1431a917787758be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab2ab54d3ea4ec8b71d37e928b95de694199dd90511fb1eef3ccca1ce333d414"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f677db3683d441e0cf6fddf05e68f903e3aeadc7d9609cbe2935732e57b002d2"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ba6fc8a608c7da11cbcd3e4905b24be8bfb0fd4b2a842ba3562b176e3ba3a0a5"
+    sha256 cellar: :any,                 arm64_sequoia: "a1e8f36bb6bbe701952772e06ac8170204abb062510b5f529a429ac69601a33f"
+    sha256 cellar: :any,                 arm64_sonoma:  "7be5bf0de7e000f9a9e0d0f4d3c6e4d3b836a18c9322b5526ca769116014fb2c"
+    sha256 cellar: :any,                 sonoma:        "eb8030de4f1de8dcf493b31ca1816d6769cc8d5d823da98e4a8e2ce34803ff74"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "94a26521f0eb3c6b5a4c0b262c6e009f82ad2257775760403650475807a8acfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "604e9531849d1cd9f4818ce8f09b1f6f01e326c3e02e2686e44a5e86bf050841"
   end
 
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "babelfish" do
     url "https://files.pythonhosted.org/packages/c5/8f/17ff889327f8a1c36a28418e686727dabc06c080ed49c95e3e2424a77aa6/babelfish-0.6.1.tar.gz"
@@ -29,8 +28,8 @@ class Subliminal < Formula
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/85/2e/3e5079847e653b1f6dc647aa24549d68c6addb4c595cc0d902d1b19308ad/beautifulsoup4-4.13.5.tar.gz"
-    sha256 "5e70131382930e7c3de33450a2f54a63d5e4b19386eab43a5b34d594268f3695"
+    url "https://files.pythonhosted.org/packages/77/e9/df2358efd7659577435e2177bfa69cba6c33216681af51a707193dec162a/beautifulsoup4-4.14.2.tar.gz"
+    sha256 "2a98ab9f944a11acee9cc848508ec28d9228abfd522ef0fad6a02a72e0ded69e"
   end
 
   resource "chardet" do
@@ -44,13 +43,13 @@ class Subliminal < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "click-option-group" do
-    url "https://files.pythonhosted.org/packages/b9/9f/1f917934da4e07ae7715a982347e3c2179556d8a58d1108c5da3e8f09c76/click_option_group-0.5.7.tar.gz"
-    sha256 "8dc780be038712fc12c9fecb3db4fe49e0d0723f9c171d7cda85c20369be693c"
+    url "https://files.pythonhosted.org/packages/ef/ff/d291d66595b30b83d1cb9e314b2c9be7cfc7327d4a0d40a15da2416ea97b/click_option_group-0.5.9.tar.gz"
+    sha256 "f94ed2bc4cf69052e0f29592bd1e771a1789bd7bfc482dd0bc482134aff95823"
   end
 
   resource "decorator" do
@@ -64,8 +63,8 @@ class Subliminal < Formula
   end
 
   resource "dogpile-cache" do
-    url "https://files.pythonhosted.org/packages/e8/07/2257f13f9cd77e71f62076d220b7b59e1f11a70b90eb1e3ef8bdf0f14b34/dogpile_cache-1.4.0.tar.gz"
-    sha256 "b00a9e2f409cf9bf48c2e7a3e3e68dac5fa75913acbf1a62f827c812d35f3d09"
+    url "https://files.pythonhosted.org/packages/e7/c8/301ff89746e76745b937606df4753c032787c59ecb37dd4d4250bddc8929/dogpile_cache-1.5.0.tar.gz"
+    sha256 "849c5573c9a38f155cd4173103c702b637ede0361c12e864876877d0cd125eec"
   end
 
   resource "enzyme" do
@@ -89,8 +88,8 @@ class Subliminal < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
-    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
+    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
+    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
   resource "pymediainfo" do
@@ -109,8 +108,8 @@ class Subliminal < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "rebulk" do

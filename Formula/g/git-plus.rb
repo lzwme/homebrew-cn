@@ -9,11 +9,11 @@ class GitPlus < Formula
   head "https://github.com/tkrajina/git-plus.git", branch: "master"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, all: "87c0f95adbf84385ecf889a2efec12ffc43aa494baa99d7581d616db13e65306"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, all: "8f18e009da2544e32104e81494b96849e9ec4684042c9031c161402297339f42"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   conflicts_with "git-recent", because: "both install `git-recent` binaries"
 

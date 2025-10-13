@@ -8,10 +8,11 @@ class Mdformat < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8de37d6131f8a139fd4493056489324953ac35c54314d0bfbfe3d64064fffb64"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "2b3eda7a331556afcc6274bb271d156ced7fe62c893073aa0a710490b8b13e9c"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "markdown-it-py" do
     url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"

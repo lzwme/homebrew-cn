@@ -9,15 +9,16 @@ class Sip < Formula
   head "https://github.com/Python-SIP/sip.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea0a4cdc8a4015b7e0a7f61d137e3758d197e10fcde67f26044690cdfe0d1efa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea0a4cdc8a4015b7e0a7f61d137e3758d197e10fcde67f26044690cdfe0d1efa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea0a4cdc8a4015b7e0a7f61d137e3758d197e10fcde67f26044690cdfe0d1efa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fe1acd4a2a80307f1a8f310695b0978afc56e209fbb67a77a9f25fc857bbcec3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe1acd4a2a80307f1a8f310695b0978afc56e209fbb67a77a9f25fc857bbcec3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe1acd4a2a80307f1a8f310695b0978afc56e209fbb67a77a9f25fc857bbcec3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81d0c98f5ea41d1639847181abcaa834d9226f3322936944df0028cfc1a9e67a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81d0c98f5ea41d1639847181abcaa834d9226f3322936944df0028cfc1a9e67a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81d0c98f5ea41d1639847181abcaa834d9226f3322936944df0028cfc1a9e67a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6ad7638698802f279f90f11d21bbb329182db750f589b583b98f213d80cf67f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ad7638698802f279f90f11d21bbb329182db750f589b583b98f213d80cf67f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ad7638698802f279f90f11d21bbb329182db750f589b583b98f213d80cf67f3"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
@@ -30,7 +31,7 @@ class Sip < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

@@ -10,15 +10,16 @@ class Sby < Formula
   head "https://github.com/YosysHQ/sby.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "080ec1efa33e3d147b51b1444ed01fe0d48b9799da484333ad3dd2796f483ce1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "8dd5d6bd0ab2d9c3ac030dca982a6243b42aa27a5098ac3c0dd16edbd88889f2"
   end
 
   depends_on "yices2" => :test
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "yosys"
 
   def install
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
     venv.pip_install "click"
 
     system "make", "install", "PREFIX=#{prefix}"

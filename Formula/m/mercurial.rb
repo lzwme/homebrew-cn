@@ -6,6 +6,7 @@ class Mercurial < Formula
   url "https://www.mercurial-scm.org/release/mercurial-7.1.1.tar.gz"
   sha256 "47cf66ba89c175536faf844c9b4cd962eb432afb516c073e51f436bf3f0bc148"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://www.mercurial-scm.org/release/"
@@ -13,18 +14,20 @@ class Mercurial < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5fe2ad981097944a498924e030e01fb5b8b6d97d3d3b67758e2fd92c74690702"
-    sha256 arm64_sequoia: "bc8bececd85b3c7b8c337fc53a273d8a4887906cc6a6656fb371e10ed291f3b0"
-    sha256 arm64_sonoma:  "e5e1227d205f33b481d8023556bb55eb39315fe0351d68a376a14b8c6eab0bf4"
-    sha256 sonoma:        "86ca0d3d30328ed4da8fb7d37390ea43bc9c2fd4337f9dac8761dbbb7be0465f"
-    sha256 arm64_linux:   "27bf5c9dcb182aebe61e746815456d5320a1f85f41ffb743e41c5979b925955c"
-    sha256 x86_64_linux:  "46654ab14b457ed78df2d327fd37b6dd139b630ceab624bfb6ffc914543eb324"
+    sha256 arm64_tahoe:   "2f7e2500d7d2f23c9db3b435a21efbbcad3bd0260be9c381bfb7c4c68076b353"
+    sha256 arm64_sequoia: "f2b94f57c6709e8422db56881725a16efd0ac3749ae3a0b8628307c0363b2a44"
+    sha256 arm64_sonoma:  "2283ab948d4379a962d06b1619acc633bd6c197db43a26feeb27df6ad95723f2"
+    sha256 tahoe:         "94a4f8314a9fc356f71e4fbde21d06a71b230e0789b767ca96423e8b0cb28a20"
+    sha256 sequoia:       "fdc8f52368efbe545583bef6776e5a0cb258e8a0c24dab30ab1a61d19da2de0f"
+    sha256 sonoma:        "b2260380a2ac9206c6492c4e5ee88ec545369fc73bca017758bc6621372edc99"
+    sha256 arm64_linux:   "39924f36d773e519404c36192884abc7eed6a1272dc69b87e4aafc9274743f77"
+    sha256 x86_64_linux:  "1357b805ee2f04221bb558a999ca0ae4645e7002aa6b4f8a460e4693c736ecb3"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
-    python3 = "python3.13"
+    python3 = "python3.14"
     system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
 
     # Install chg (see https://www.mercurial-scm.org/wiki/CHg)

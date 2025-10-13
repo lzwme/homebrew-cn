@@ -9,20 +9,19 @@ class Showcert < Formula
   head "https://github.com/yaroslaff/showcert.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7db65d5003888d91d5882209b1cd9b0bf6dee69b8e125454c56ffbfc766c2ee"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e7db65d5003888d91d5882209b1cd9b0bf6dee69b8e125454c56ffbfc766c2ee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7db65d5003888d91d5882209b1cd9b0bf6dee69b8e125454c56ffbfc766c2ee"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e7db65d5003888d91d5882209b1cd9b0bf6dee69b8e125454c56ffbfc766c2ee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6aad6faee5150e4a343d9ca196f1b25970053c7938d80b897a86df9e23f206b9"
-    sha256 cellar: :any_skip_relocation, ventura:       "6aad6faee5150e4a343d9ca196f1b25970053c7938d80b897a86df9e23f206b9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2643a5f9d6dd150b412ac9f2135c12f04bb49013e5d03d0e7c4707db8cdcfa82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2643a5f9d6dd150b412ac9f2135c12f04bb49013e5d03d0e7c4707db8cdcfa82"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e24000cf619635b4af6d7d095368311ce2cbb2598e6a5550b8e657e10b50ff0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e24000cf619635b4af6d7d095368311ce2cbb2598e6a5550b8e657e10b50ff0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e24000cf619635b4af6d7d095368311ce2cbb2598e6a5550b8e657e10b50ff0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "46634e159c5f912a853c9b687de60856fe0007904e0ec3fcc817ab0f3f46d2f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8324bf217fde187a53feceebec72fc573bd09d4a5b98b7cf9cc2a67b2719d22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8324bf217fde187a53feceebec72fc573bd09d4a5b98b7cf9cc2a67b2719d22"
   end
 
-  depends_on "certifi"
-  depends_on "cryptography"
-  depends_on "libmagic"
-  depends_on "python@3.13"
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
+  depends_on "libmagic" => :no_linkage
+  depends_on "python@3.14"
 
   resource "pem" do
     url "https://files.pythonhosted.org/packages/05/86/16c0b6789816f8d53f2f208b5a090c9197da8a6dae4d490554bb1bedbb09/pem-23.1.0.tar.gz"
@@ -30,8 +29,8 @@ class Showcert < Formula
   end
 
   resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/04/8c/cd89ad05804f8e3c17dea8f178c3f40eeab5694c30e0c9f5bcd49f576fc3/pyopenssl-25.1.0.tar.gz"
-    sha256 "8d031884482e0c67ee92bf9a4d8cceb08d92aba7136432ffb0703c5280fc205b"
+    url "https://files.pythonhosted.org/packages/80/be/97b83a464498a79103036bc74d1038df4a7ef0e402cfaf4d5e113fb14759/pyopenssl-25.3.0.tar.gz"
+    sha256 "c981cb0a3fd84e8602d7afc209522773b94c1c2446a3c710a75b06fe1beae329"
   end
 
   resource "python-magic" do

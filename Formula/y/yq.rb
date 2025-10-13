@@ -1,8 +1,8 @@
 class Yq < Formula
   desc "Process YAML, JSON, XML, CSV and properties documents from the CLI"
   homepage "https://github.com/mikefarah/yq"
-  url "https://ghfast.top/https://github.com/mikefarah/yq/archive/refs/tags/v4.47.2.tar.gz"
-  sha256 "b1ed327337be9e044d8222c41f1437313b148ca73ec83946b1ff26e4ff785964"
+  url "https://ghfast.top/https://github.com/mikefarah/yq/archive/refs/tags/v4.48.1.tar.gz"
+  sha256 "591158368f8155421bd8821754a67b4478ee2cde205b7abfbf2d50f90769cf0e"
   license "MIT"
   head "https://github.com/mikefarah/yq.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Yq < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d56545a2e89ca64ff477691be19098f246b7f8b733c8b332a28a5562cf701b5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d56545a2e89ca64ff477691be19098f246b7f8b733c8b332a28a5562cf701b5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d56545a2e89ca64ff477691be19098f246b7f8b733c8b332a28a5562cf701b5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2d56545a2e89ca64ff477691be19098f246b7f8b733c8b332a28a5562cf701b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4c26fa72ff3bc32190c499cd753c95973a8409a28a3f10b11f32346980072a2a"
-    sha256 cellar: :any_skip_relocation, ventura:       "4c26fa72ff3bc32190c499cd753c95973a8409a28a3f10b11f32346980072a2a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac3695a93a6bf57b3aa093c73947497583aae5f48ddbb4d51bddbea73201ca9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e808fd97c9a3d1c6b3e4feb99c43d1ab967751d56ab102a89aa8f0da3d9cfc3e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4fa80ae6438de0ccabfbd8759a6902df0c51c42e015785e362ae3cea7af950a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fa80ae6438de0ccabfbd8759a6902df0c51c42e015785e362ae3cea7af950a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4fa80ae6438de0ccabfbd8759a6902df0c51c42e015785e362ae3cea7af950a7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a583726ae07c0fa05b53d5377630538bdf0c98fb5e3abdd36f5ec5417b05ab27"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d6a77108dd8ee100c2176f2b49938140c05842400b9c90f41407342ffdfd92a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1bf167eb9c36e2652c95b48ffb6f44ea8be0c8bcec9e93c2fbc59f64e87d40c"
   end
 
   depends_on "go" => :build

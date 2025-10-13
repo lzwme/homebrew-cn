@@ -7,24 +7,23 @@ class Doitlive < Formula
   sha256 "b6bcd25f9f037b7e96e34d68549306adb3e8c83f6e92c51ec2b225abc05b25c5"
   license "MIT"
   revision 3
-  head "https://github.com/sloria/doitlive.git", branch: "dev"
+  head "https://github.com/sloria/doitlive.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f96cf2c44e8967430023a39d83652cbfce3c79ea8e1193284ec5c6aabc13b2f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd433d05b749832e59cc133360f6a038b2d9ae472fcb05982074a334d675e884"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9132e01287a9fa33d7d541e59353728366c56430e07adab7bd42663b013f08f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a63ff879a0a23897fe227f6e12187d37cdba0158b5c167d91ae3c91a8d0ab103"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a497a679df8b0080ae7dc946d151ff691d37c14e9ae1fe85d9ce960a77779c5"
-    sha256 cellar: :any_skip_relocation, ventura:       "96bbbdc6cdfe5644e7668220fe22b1e08fbdc9ac7b6869b2937e436b148596e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f837192ceb65241ded4a6e05974605ab6ff1d91f1854c062a716d1f096bfb763"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e136dccbf09aa94920066d2d30942057f0818f6bf7a20ca9150cffd5dfd2f7c7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd010ee60ee386929902d4a84e49dcaef0252b8fd99f5cc3a9423c3c2577ecec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9d3ac22c0a128fb6cd4a53a17c220eed94b443c6b902d6ee8bd0e68ed98adc0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7a7fd196cb81600a7161cc3eb47ca2c05249e23e93ba5832db769a6070a59b3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5a974646bdea613259542c41e6c171196d8ee4a4b4f0ea1ede12b0cdc11b0ba1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "81e48751a6148e9dfb71de1a4853b5db9b62fde4aca9cc3b6d18d93d13c7ff93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f9590f214b22bb78730e0e5927dd6869ed4e6dd842218260936bac237fb0c6e"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "click-completion" do
@@ -43,8 +42,8 @@ class Doitlive < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   resource "shellingham" do

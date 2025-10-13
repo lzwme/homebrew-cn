@@ -9,25 +9,24 @@ class Hyfetch < Formula
   head "https://github.com/hykilpikonna/hyfetch.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a741ff07d2c06f5699c1f4033ce043ef552ed537fbd06af8aaba88e931bed153"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ecf7782b7ca99b2ea6ccf9a54e87e2c66a8bce760b5f7f3a992527aa95ad7f02"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e89c770eeece455da86877b6345728ca3916b7838a8b333d1560c10b7924159"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "72eacb11247a3faacce42064660b165d58372767ea95b67f12fe2eb1bc713a63"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a2f094b69ee84858776042ed1035b557ce3714e18e6f811d82eba87acaca236a"
-    sha256 cellar: :any_skip_relocation, ventura:       "a6167bc7bf433fb80a18ca06e123074bbf90f084cc2fd14cec953ab4b1640f13"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cabcff935bcf4eb9fd146cca0ee94dbfa84b3d8cdfa1051cb56544f01766b273"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6daced8169bc437ff28c950d27fea8a33f018fec96821f66ec4426be6c4632ab"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f82f4e50eb3c62eb0ab5cc82fc1c8e58e63afc463008d98a3ae25b801fbd8d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "725e98544ce86f0c7a2d18029459ce0276bcdd40286cb212b5134c967f49f01a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92bc28f88c2baa32f43123fb421d2c29ed17c713cd6f7d9e594d65baabbfdcdc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2bdf0d04b0cafe2b8cdfa67cc46e53218644a93b9810fbaca8052f3000dadcbf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aba0789b2ddad86dd18bee99a78966358616a168a0501a915f644547efa9a16f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ec37150375367a6669ce33826ecde93af7e81180b46016a389057f3345aa87a"
   end
 
   depends_on "rust" => :build
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     # Install to `buildpath` first or else `virtualenv_install_with_resources` will overwrite it.
     system "cargo", "install", *std_cargo_args(path: "crates/hyfetch", root: buildpath)
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources
     # Install the rust executable where the Python package expects it.
-    (libexec/Language::Python.site_packages("python3")/"hyfetch/rust").install "bin/hyfetch"
+    (venv.site_packages/"hyfetch/rust").install "bin/hyfetch"
   end
 
   test do

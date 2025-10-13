@@ -8,11 +8,12 @@ class B2Tools < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7a853a02cddfe2a39eba1e730affe5a073b691b332bbff3f4051ccbd57c8215d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "e9367aabbecfaa1ec9f43be2ee3e02a8a6bc0bcaa372eb4ddb3a0a3ddaaabe6c"
   end
 
   depends_on "certifi"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   conflicts_with "boost-build", because: "both install `b2` binaries"
 
@@ -47,8 +48,8 @@ class B2Tools < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "logfury" do
@@ -62,8 +63,8 @@ class B2Tools < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
-    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
+    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
+    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
   resource "python-dateutil" do
@@ -97,8 +98,8 @@ class B2Tools < Formula
   end
 
   resource "types-python-dateutil" do
-    url "https://files.pythonhosted.org/packages/0c/0a/775f8551665992204c756be326f3575abba58c4a3a52eef9909ef4536428/types_python_dateutil-2.9.0.20250822.tar.gz"
-    sha256 "84c92c34bd8e68b117bff742bc00b692a1e8531262d4507b33afcc9f7716cd53"
+    url "https://files.pythonhosted.org/packages/fc/83/24ed25dd0c6277a1a170c180ad9eef5879ecc9a4745b58d7905a4588c80d/types_python_dateutil-2.9.0.20251008.tar.gz"
+    sha256 "c3826289c170c93ebd8360c3485311187df740166dbab9dd3b792e69f2bc1f9c"
   end
 
   resource "urllib3" do
@@ -107,14 +108,13 @@ class B2Tools < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources
 
     system bin/"b2", "install-autocomplete", "--shell", "bash"
     bash_completion.install "#{Dir.home}/.bash_completion.d/b2"
 
     # Build an `:all` bottle by replacing comments
-    site_packages = libexec/Language::Python.site_packages("python3")
-    inreplace site_packages/"argcomplete-#{resource("argcomplete").version}.dist-info/METADATA",
+    inreplace venv.site_packages.glob("argcomplete-*.dist-info/METADATA"),
               "/opt/homebrew/bin/bash",
               "$HOMEBREW_PREFIX/bin/bash"
   end

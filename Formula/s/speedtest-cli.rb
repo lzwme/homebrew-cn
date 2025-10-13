@@ -12,10 +12,11 @@ class SpeedtestCli < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "77a4dc453d1e58aee76c4145eb1e917d7514762cfd76d6014454e4f37b40fec3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "93487be757c9b3763deeb1b1415ee8ad10c5a80fcc9ebaeacbb8fbac3e9b9474"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   # Support Python 3.10, remove on next release
   patch do

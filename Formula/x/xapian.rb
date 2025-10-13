@@ -12,17 +12,16 @@ class Xapian < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6b5ae1ddbb9193c0b9ed102309d69f52d64c03d43e45ab340e814eb4e48432f6"
-    sha256 cellar: :any,                 arm64_sequoia: "1eae8800f5f28c7231afd2bee2818d2065e5fed8e7d307c2fe1d797c8d8fbf4e"
-    sha256 cellar: :any,                 arm64_sonoma:  "95c8bb4a5a73ef642ab6e6d2ee6b59cf21217fa102333ced9696a14cff7f4da3"
-    sha256 cellar: :any,                 arm64_ventura: "d8b9b13a47f436a74438663123b567d95512cc7d91fe60c11eac10bca5555f55"
-    sha256 cellar: :any,                 sonoma:        "a1b006c534ecc66fea932078de4221d0d385b3391d20aea13a3bace640fa047c"
-    sha256 cellar: :any,                 ventura:       "19a9b99a6088ec521d2af29a14afc8f86b5674cd08330698e2d3a30caa1dfb19"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e45335d6b4555bd6fd7a6a85bfe6a1a9b635a4418cc9b43e7de957301d3c1d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f87d97371ec436679abfd002d828ff14a00b4e4355faeef1e385f67a2c25412d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "529da91065d00808e836e7ab0700d5344d58bed36dfb88109831b16370cf9582"
+    sha256 cellar: :any,                 arm64_sequoia: "014927707879ba359a2045d1f19ac3cfc96e3948a91729d51b6ec4bb38d221f7"
+    sha256 cellar: :any,                 arm64_sonoma:  "3fc2adca698ac9a8896ae7993284350fb05903306d434b82dfda72ce94df30a5"
+    sha256 cellar: :any,                 sonoma:        "f703e5658e96de70094b07bad06e40ec11a2361b56e3c2f6dd46855f647ccc9d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "70c6bae9ae2fee7cdf558e6f9d88c9f2180510f072b60065871ef76a12e3ebc3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eef2cd6c921c2a77443d79757e912be5f1d519e9dfa3b39e23bc7666203236eb"
   end
 
-  depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "sphinx-doc" => :build
 
   uses_from_macos "zlib"
@@ -43,7 +42,7 @@ class Xapian < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

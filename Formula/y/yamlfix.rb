@@ -3,18 +3,17 @@ class Yamlfix < Formula
 
   desc "Simple and configurable YAML formatter that keeps comments"
   homepage "https://lyz-code.github.io/yamlfix/"
-  url "https://files.pythonhosted.org/packages/55/df/75a9e3d05e56813d9ccc15db39627fc571bb7526586bbfb684ee9f488795/yamlfix-1.18.0.tar.gz"
-  sha256 "ae35891e08aa830e7be7abed6ca25e020aa5998551e4d76e2dc8909bf3c35d7e"
+  url "https://files.pythonhosted.org/packages/e8/5f/cea9f9a9027f3f7ac6b5345e654255518013e94d5c3146746a139be5c865/yamlfix-1.19.0.tar.gz"
+  sha256 "22f95ed2a5b88f46f06cf7922c616b6706d3596f23a0553138796ab909e5fa96"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "e720c2c592f6efb91c0ab63a956de72110017788bb42a3e7d9ec2d988afeea11"
-    sha256 cellar: :any,                 arm64_sequoia: "6fb7eae99ec3c289369789bfee26275d62e12a0aeae64ad3657fab8bf5d57a66"
-    sha256 cellar: :any,                 arm64_sonoma:  "c5f8d226531fe1558c55a6fbf1bb4b06d20171bcb598638664c19a3c284043c7"
-    sha256 cellar: :any,                 sonoma:        "7bec11971ee93f9afc4e28cd72cef317ede224a01a5cb6654e669b3003a777fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3b2b6e086af7d6de8a90400b8f0a9f0441884c1ba97d63246eb2b78ffdfd96f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "153c4438e2255b6bcfbb2fa8d2be85d7e417b412b1b7925d11276db549a36c6b"
+    sha256 cellar: :any,                 arm64_tahoe:   "eed0662dd28fe90d576ae3e9dc57d24f3e8ab6d63b25f25d0d10e284956efaa2"
+    sha256 cellar: :any,                 arm64_sequoia: "5c8de1332f7fd2d395ab11bb9d08765334701c23944f1ed9bbf4588ed9069161"
+    sha256 cellar: :any,                 arm64_sonoma:  "ef1c3f9924394b166451c4d39356e8f51f9b4be2750e8395f9eba2fd0fdd7a4c"
+    sha256 cellar: :any,                 sonoma:        "35b051c3d88dad959d91fc2e9db4dd12dbdcbac4cd6e6863e6e6ac8f8ac2f346"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f73796ab8d68b3fa5456ba40e4a40675d182b5429adf88119f39904d7d25a128"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8008d7f37865cb7a66593f744f02efac0bf69016e26f5618dfb01e3d578cea7"
   end
 
   depends_on "rust" => :build # for pydantic_core

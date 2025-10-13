@@ -4,6 +4,7 @@ class LibvirtPython < Formula
   url "https://download.libvirt.org/python/libvirt-python-11.7.0.tar.gz"
   sha256 "f65f80fe7dabb47c2ea887bec5f62509b756282acac4fa958ab74706c0b76c11"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url "https://download.libvirt.org/python/"
@@ -11,19 +12,17 @@ class LibvirtPython < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5e1be7e55bae99dc4a93102836e0ce7af80eac3b8bf5370d9def605869fbf645"
-    sha256 cellar: :any,                 arm64_sequoia: "e9a1ca2a0a5671bcf9c68d3f4bf5b82495737d24222128ddc04907ca141a0218"
-    sha256 cellar: :any,                 arm64_sonoma:  "9076512a8be4fe00e08d0ebfc46eb864d746103bc88a2733edbdb1c98a4cf18f"
-    sha256 cellar: :any,                 arm64_ventura: "e55ff103b440772cc22e99382f2a4ac08f0c60a5631ca4216c9327d1041e9b03"
-    sha256 cellar: :any,                 sonoma:        "2185011585275d853441e82050874cddd7946f18bb89a3a9f3b37339952a89f0"
-    sha256 cellar: :any,                 ventura:       "d3c3f950df8ef835f98e8f324f091278e8a1d3e0379761f02c8e6c77675fdf08"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7d5d96934c622a93861bf6851d0110618d10521bd346a697aeca12fe6bff354"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a266686bd1701e5015f1398655a8b7cb917be9df7ca11406013845e7e077fc99"
+    sha256 cellar: :any,                 arm64_tahoe:   "1deb0cb0a2a9dcc861be14d1af45c8186f50da6e41a83937aec77225e5d7b71b"
+    sha256 cellar: :any,                 arm64_sequoia: "e8dfbb5929729f2f8a98afd8582bcc8948d536ec7bb978c92b72c03c419e2e7a"
+    sha256 cellar: :any,                 arm64_sonoma:  "13ee2840382e5675a9c757b6b54933d8447d2e7bf14375febff2056d74f22012"
+    sha256 cellar: :any,                 sonoma:        "bb57ace6bee4b27eb1bbd774f92c02408f73fd955292ac0479218cf3e280e502"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1b7a3eee6393647a63aceef7bfc190813fbc8107ee49ad23c3a0be660a8a88c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "666e0f5e808e640568c99cddbe94bbf5c0793d0c61486edda3413786fd182a6c"
   end
 
   depends_on "pkgconf" => :build
   depends_on "libvirt"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def pythons
     deps.map(&:to_formula)

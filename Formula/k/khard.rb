@@ -8,17 +8,11 @@ class Khard < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "233a43b1af5d9cc99fb317e10ec0a1508276a1a64b81771d0035036298e9dd03"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce93fc04d30ced8a224d1c44597a1446b5b65dab074dd3e19518775b437bbd89"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8903230895d066074b7aee41a8e6de501184860cbf86ce5b1cc42acf9aedb40a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1d1e6b128ae04cf10d69d04a618f818d70486f5b4857e32eec69a920089596c1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b36da5861c3c4ef0f52dad66018508ddc509aa5ddb6072584f7b014fb7e7017a"
-    sha256 cellar: :any_skip_relocation, ventura:       "2c5f36e56f7daac1e7e058d1279abe04a365bb049d19a9636a65d9c1ce5560ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7c2da438d73230e52fb4e34e9ea6863edb218472054c93abe8ee58a382143d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "378bca01eb81424251db35f4068ac17162141a9b23031d5762399dc1bc242506"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "0a544ef6615a8cf663ea479529bf5aff5e79255a8d1d876c0dd14d65199833b5"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "configobj" do
     url "https://files.pythonhosted.org/packages/f5/c4/c7f9e41bc2e5f8eeae4a08a01c91b2aea3dfab40a3e14b25e87e7db8d501/configobj-5.0.9.tar.gz"
@@ -36,13 +30,8 @@ class Khard < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/39/87/6da0df742a4684263261c253f00edd5829e6aca970fff69e75028cccc547/ruamel.yaml-0.18.14.tar.gz"
-    sha256 "7227b76aaec364df15936730efbf7d72b30c0b79b1d578bbb8e3dcb2d81f52b7"
-  end
-
-  resource "ruamel-yaml-clib" do
-    url "https://files.pythonhosted.org/packages/20/84/80203abff8ea4993a87d823a5f632e4d92831ef75d404c9fc78d0176d2b5/ruamel.yaml.clib-0.2.12.tar.gz"
-    sha256 "6c8fbb13ec503f99a91901ab46e0b07ae7941cd527393187039aec586fdfd36f"
+    url "https://files.pythonhosted.org/packages/3e/db/f3950f5e5031b618aae9f423a39bf81a55c148aecd15a34527898e752cf4/ruamel.yaml-0.18.15.tar.gz"
+    sha256 "dbfca74b018c4c3fba0b9cc9ee33e53c371194a9000e694995e620490fd40700"
   end
 
   resource "six" do
@@ -51,12 +40,20 @@ class Khard < Formula
   end
 
   resource "vobject" do
-    url "https://files.pythonhosted.org/packages/47/06/c477d9a8b75471243f2b4eeef39cb639a1cf978990c11e9e56359ab01c82/vobject-0.9.8.tar.gz"
-    sha256 "db00a7f4db49397155dd8a6871e8a2a0175a6eba5a654c30e910f82b29514b58"
+    url "https://files.pythonhosted.org/packages/d0/8a/15c34b3d27c43fc81a467d0f66577afc5542326804c42f30557e31c3259e/vobject-0.9.9.tar.gz"
+    sha256 "ac44e5d7e2079d84c1d52c50a615b9bec4b1ba958608c4c7fe40cbf33247b38e"
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources without: "vobject"
+
+    # Workaround broken dynamic version: https://github.com/py-vobject/vobject/issues/121
+    # Upstream has unreleased fix by migrating to pyproject.toml
+    # https://github.com/py-vobject/vobject/commit/6d907ee2c986b065794c3a50afdfb5f5677830f1
+    resource("vobject").stage do |r|
+      inreplace "setup.cfg", "attr: vobject.VERSION", r.version.to_s
+      venv.pip_install Pathname.pwd
+    end
 
     (etc/"khard").install "doc/source/examples/khard.conf.example"
     zsh_completion.install "misc/zsh/_khard"

@@ -8,16 +8,17 @@ class AnsibleCreator < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "41da6114493aa4f38a0c6bc5b8dd886f84c39631a9ab9aa28e1375e51b6bd971"
-    sha256 cellar: :any,                 arm64_sequoia: "c74e0611b7f4e8a72f29883c1468f581689ac5157bda3a35b271afad1f5f3960"
-    sha256 cellar: :any,                 arm64_sonoma:  "ebc94cb5e66670ac2bdbb72131ef8264bdb077b12bf8daa5ed06eb1e8120271f"
-    sha256 cellar: :any,                 sonoma:        "31abe616acc38569853957573320760519a4c1ccd14e98901c2890771911b4bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee3dcb41eff0196b2128194ee53264c0cd4077fc54a837dc76f8fe0c54486356"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c338218da45832d995632efe951ec664d409a0689fbd046ea6a9d99fc4cead9a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e7f95da73ee7225f69646f98bc65a622671586865ef791db6a8175625e5c2135"
+    sha256 cellar: :any,                 arm64_sequoia: "5a504978f04c1cc4d94087b0919f2c36d1dba931e860ada1273f3f659f1130bc"
+    sha256 cellar: :any,                 arm64_sonoma:  "44e92b989165fde55a39ab1ccc644392a78d70f3f2b3c4ebccc7a564f50eb929"
+    sha256 cellar: :any,                 sonoma:        "41047727afb4782394c49769d9f3909095045d5d52dda28168dfac1fd14ff3db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a87fabcb23c07bda20cd6fac50ef5fb36277ad5ede19d67534873c905c6b0b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c2a782354aeb1c84e8f6e4e80d105f72168f8f9deb7bf62ce31a63104f19b06"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "jinja2" do
     url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
@@ -25,13 +26,13 @@ class AnsibleCreator < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   def install

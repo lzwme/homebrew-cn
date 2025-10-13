@@ -9,21 +9,20 @@ class CryticCompile < Formula
   head "https://github.com/crytic/crytic-compile.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76354911f07a6f4f01c43c621bc810a0ee8f4f2c535bc6a05a762c33f3861b82"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39f041a29cfabce763bf76b6ced058cc1e161cdc20b37d6c0167a3c39d8785ce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27abdac866172eed6198e928f423e0a36a426afac9a56e87d80ace979d23b215"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "91b58a45b01aff82e8b56b0ad0f33d6c4a1c84f1663d1175d72aeff13cf113d5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59b6d24eaa812ed4b2986a5ff480fc49f4a344a250ae0701bf64d1f2bb55fc35"
-    sha256 cellar: :any_skip_relocation, ventura:       "5ab48b6011bb20b59f8ba237e0b11ef5b19208cd069978c6d7aa2408e314b3bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf7956683946a642638436c47cca92952433b84ac75fd9600c4e56dbd82b0e25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f712f5194e8feaf6b88e2c71eab95e2f67b3ad64f0d535eb5ebe07a930b0efd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a352c8aee829e9c5cad5e597833e9cacc98ebc1e53039080f2e48a4741f2824"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e180c9e83e24af0987c15781f0336bdf3ad71576bd092ac7ce4e78bdfba7eb8d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "852c7196751e2ddeef00ef657db51f254a4538e2f155076706f5badb30b69ac5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d4914fbfdcedfb9db8e06479ada69122d01636ddea56564cfd9622fb906fc802"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "432cefc67997dfee5eedf62f8342bdf57e69c14830cee6fd081d061f74776317"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4572987a38327c4bf837c921838ee9af402983a33a1c1f13552b58399dbfa57c"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "cbor2" do
-    url "https://files.pythonhosted.org/packages/e4/aa/ba55b47d51d27911981a18743b4d3cebfabccbb0598c09801b734cec4184/cbor2-5.6.5.tar.gz"
-    sha256 "b682820677ee1dbba45f7da11898d2720f92e06be36acec290867d5ebf3d7e09"
+    url "https://files.pythonhosted.org/packages/3a/89/01df16cdc9c60c07956756c90fe92c684021003079e358a78e213bce45a2/cbor2-5.7.0.tar.gz"
+    sha256 "3f6d843f4db4d0ec501c46453c22a4fbebb1abfb5b740e1bcab34c615cd7406b"
   end
 
   resource "packaging" do
@@ -32,8 +31,8 @@ class CryticCompile < Formula
   end
 
   resource "pycryptodome" do
-    url "https://files.pythonhosted.org/packages/44/e6/099310419df5ada522ff34ffc2f1a48a11b37fc6a76f51a6854c182dbd3e/pycryptodome-3.22.0.tar.gz"
-    sha256 "fd7ab568b3ad7b77c908d7c3f7e167ec5a8f035c64ff74f10d47a4edd043d723"
+    url "https://files.pythonhosted.org/packages/8e/a6/8452177684d5e906854776276ddd34eca30d1b1e15aa1ee9cefc289a33f5/pycryptodome-3.23.0.tar.gz"
+    sha256 "447700a657182d60338bab09fdb27518f8856aecd80ae4c6bdddb67ff5da44ef"
   end
 
   resource "solc-select" do

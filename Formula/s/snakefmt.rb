@@ -9,10 +9,11 @@ class Snakefmt < Formula
   head "https://github.com/snakemake/snakefmt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7da20c190b9c66d20fbb0fba7ee055bfd7b83b2fbd0bdd95a07a7817631fdf86"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "a466b06eda132b18216f3f7daf9e390dac8488fb293d304691c1a0eac099989a"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "black" do
     url "https://files.pythonhosted.org/packages/d8/0d/cc2fb42b8c50d80143221515dd7e4766995bd07c56c9a3ed30baf080b6dc/black-24.10.0.tar.gz"
@@ -20,8 +21,8 @@ class Snakefmt < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "mypy-extensions" do
@@ -40,8 +41,8 @@ class Snakefmt < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
-    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
+    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
+    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
   def install

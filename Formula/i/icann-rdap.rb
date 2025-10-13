@@ -1,19 +1,17 @@
 class IcannRdap < Formula
   desc "Full-rich client for the Registry Data Access Protocol (RDAP) sponsored by ICANN"
   homepage "https://github.com/icann/icann-rdap/wiki"
-  url "https://ghfast.top/https://github.com/icann/icann-rdap/archive/refs/tags/v0.0.23.tar.gz"
-  sha256 "4ae3ff5943d18de353a18578e64e4bd8693b4a6553c2b7cdaf8c4b9acedb7f6f"
+  url "https://ghfast.top/https://github.com/icann/icann-rdap/archive/refs/tags/v0.0.24.tar.gz"
+  sha256 "53121b4caa1bdbc61ca2a122b7b915035553618616b9c47095821a9391aceddf"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "352c452c9ef665ece711bb01342c3781390aa320ac702dfac00b2a75ed1183e4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70d38d4a8ce06f1bacf93ab7c78f8a6e4b1318f356539b0d4a2539d1921929dc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "065c8f593a079ecca9cbeb45163050491d575e74b37f2249ff4f73a335084b9c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1adb9b61c87c0e045373478be8254687a2685426553c073cad41cc7f3d890004"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d2171420d6014d56eada10247a93948da4fe9152c0e2cf3801decaa0d18d444f"
-    sha256 cellar: :any_skip_relocation, ventura:       "c3464c0ee338bca517d7b7dcdaa2969f193865b7c86d127c8d84e203141b88db"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "79f8122c74ae08ab127e1cda739fbdafb783093db48c5b704911f60255eef7cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75bd95d6e2eb1d50bf4c518844c813af17bd2fbabc7ba5c546a8d7089d2ed210"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e16e55b9c027e263c8147292c3c167c6ea5b3c5a7e13f71b31655dda40c40b6d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33db490d8b3e7c57f37797e868c17da4da347ac45bbbd8094acfeab8ca230c01"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc1b9c95c5987c03252f33030c4ce6481acd5694d8cf0566c8d6cef1a6e671b6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "02fd2330a651c23be064baaee9561b931c25bea59159c325f0c05095cf558ab9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b3159322121509fa0602a3c3203fe222758b75d583f2db2f10aff95bd1438b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6dcbc0ce4096d9f2e7caf3ee61d383e97e1ef383f1558042935fd126a612f732"
   end
 
   depends_on "pkgconf" => :build

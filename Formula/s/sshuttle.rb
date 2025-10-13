@@ -9,10 +9,11 @@ class Sshuttle < Formula
   head "https://github.com/sshuttle/sshuttle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d669edd06d10b4232937eb339b4a8c17a96968625e8afc7991695dd6ccc21923"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "d2e5883c37f914d2101e5e1bca23c33181d1950c8ac727c520f17b3e059b61f7"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     # Building the docs requires installing

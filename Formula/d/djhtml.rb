@@ -8,10 +8,11 @@ class Djhtml < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "23b8d7cb6296a0802f3938e29b627b60e726edf0836a2621d8f6f4e468b0bafc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "2b5b263bf539b7f64e2f460e18dabf549fe8cc70785333fefb6ecb66f7e472dc"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     virtualenv_install_with_resources

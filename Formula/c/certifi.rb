@@ -7,7 +7,8 @@ class Certifi < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d1eb3e86754cc51d5fb9513b6067c75fd90005cea0fab11134f6a7b482989015"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "33b92b7c105cc455a61116ec9277b93c3480ad07542a11633615f8ea2945c022"
   end
 
   depends_on "python@3.14" => [:build, :test]
@@ -28,16 +29,14 @@ class Certifi < Formula
     rm site_packages/"certifi/cacert.pem"
     (site_packages/"certifi").install_symlink Formula["ca-certificates"].pkgetc/"cert.pem" => "cacert.pem"
 
-    link_dirs = site_packages.children - [site_packages/"certifi"]
     python.versioned_formulae.each do |extra_python|
       next if extra_python.version < oldest_python.version
 
       # Cannot use Python.site_packages as that requires formula to be installed
       extra_site_packages = lib/"python#{extra_python.version.major_minor}/site-packages"
-      extra_site_packages.install_symlink link_dirs
-
-      # Symlink grandchildren so cache ends up in correct directory
-      (extra_site_packages/"certifi").install_symlink site_packages.glob("certifi/*")
+      site_packages.find do |path|
+        (extra_site_packages/path.relative_path_from(site_packages)).dirname.install_symlink path if path.file?
+      end
     end
   end
 

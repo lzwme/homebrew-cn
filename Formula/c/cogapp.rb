@@ -8,10 +8,11 @@ class Cogapp < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "70a17354f67368a9dd17c748eec19fd8f25b58840aa71d79e7b1d0f65eabf701"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "a7137db8332857614eecfd870f6e44bbd9d5504fff07c508c684043b98ff4760"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     virtualenv_install_with_resources

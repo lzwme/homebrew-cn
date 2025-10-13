@@ -1,8 +1,8 @@
 class Msmtp < Formula
   desc "SMTP client that can be used as an SMTP plugin for Mutt"
   homepage "https://marlam.de/msmtp/"
-  url "https://marlam.de/msmtp/releases/msmtp-1.8.31.tar.xz"
-  sha256 "c262b11762d8582a3c6d6ca8d8b2cca2b1605497324ca27cc57fdc145a27119f"
+  url "https://marlam.de/msmtp/releases/msmtp-1.8.32.tar.xz"
+  sha256 "20cd58b58dd007acf7b937fa1a1e21f3afb3e9ef5bbcfb8b4f5650deadc64db4"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class Msmtp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b686be7fda6d731ca676842c9bc77494b5aaf609dd79752def7f8d651623f3dd"
-    sha256 cellar: :any, arm64_sequoia: "63eed4d34a40306fae1029f3a6e7f1f72cc5177686b620577c42c2d6efa9e1ef"
-    sha256 cellar: :any, arm64_sonoma:  "cfd986caacad5c5a535de055684861c6cdd5cf55becd1cb8a4ff15285f017f97"
-    sha256 cellar: :any, arm64_ventura: "1a52f0f95089875b40abffa6b42659202da260f00216ba31230b067a2d11ba05"
-    sha256 cellar: :any, sonoma:        "07fe7618912e51ef6f59acf7bd5b64c8c9381d2061173ee2535b00e087cfd447"
-    sha256 cellar: :any, ventura:       "b3232cd95e942a3de3ead54bf7d03a3112840dcd7c59666db3a505a25b99387b"
-    sha256               arm64_linux:   "7989647718bd6597160a12f439cc0446e1ff4594f6db275750cbe69ae29bd86e"
-    sha256               x86_64_linux:  "f0ca8d09377e55b9c933afa3b52a8e9bbcb2d98f04cc47f41192efec61aa7ab9"
+    sha256 cellar: :any, arm64_tahoe:   "fb73c1d4d6cf6a3eaa9d58dd28e92a3236b7391fae2d952b5905e4b2aaa69f2d"
+    sha256 cellar: :any, arm64_sequoia: "c4bb0636780fd6fc1b2fc13590d52b7b9b3332278494b15a6004a9b6dbf3afbb"
+    sha256 cellar: :any, arm64_sonoma:  "f7ad2eb8f4e8af3da9ac87aec6cab70ffa98851883b9fd91d10fa3fc8bee6c89"
+    sha256 cellar: :any, sonoma:        "48fd217589c9426abb52e7ab4f39f5cb1187cf0deb5771100d8e867d58339f40"
+    sha256               arm64_linux:   "f9d5377da5a884596453a9415f0bd97023e0e658c63b99cae4e1055d48576d4e"
+    sha256               x86_64_linux:  "d59eb5c9d9210d35fa752ba933abdc5f85f58df3106482273b8f73dec56b5bb4"
   end
 
   depends_on "pkgconf" => :build

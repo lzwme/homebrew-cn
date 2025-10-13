@@ -10,14 +10,15 @@ class GitRemoteCodecommit < Formula
   head "https://github.com/aws/git-remote-codecommit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6403e992fba39a49e3faa313955b9066ec7459930147d24d3ba1e325de4d4855"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "66afe42cbc7c5d898a9ea177dce0c84f610870c453788b51d57caea4735c3d82"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/09/61/20eceeccdce79ca238453389e9a8a9147a79417a07e22fa6715f1abd6421/botocore-1.38.39.tar.gz"
-    sha256 "2305f688e9328af473a504197584112f228513e06412038d83205ce8d1456f40"
+    url "https://files.pythonhosted.org/packages/5b/66/21d9ac0d37e5c4e55171466351cfc77404d8d664ccc17d4add6dba1dee99/botocore-1.40.50.tar.gz"
+    sha256 "1d3d5b5759c9cb30202cd5ad231ec8afb1abe5be0c088a1707195c2cbae0e742"
   end
 
   resource "jmespath" do

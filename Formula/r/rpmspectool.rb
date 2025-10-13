@@ -9,25 +9,25 @@ class Rpmspectool < Formula
   revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "e88e0681a686b19b82467ed2d5f4cc3c42d35133ee03063695d51076c4d034aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4c77cc55ad2dd5ef71b1f0e6f962181198567a56ce65828e3ed2c18cafed4cb6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "161f59ae6da91ec3195e04058af1a847b86478cef6e92a406663de142b2987e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "572697ef305b2ed1faa3cf687033c9163f538b3ed5caa95fd1b7423cd276f8b9"
   end
 
   depends_on "curl"
   depends_on :linux
   depends_on "openssl@3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "rpm"
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/7f/03/581b1c29d88fffaa08abbced2e628c34dd92d32f1adaed7e42fc416938b0/argcomplete-3.5.2.tar.gz"
-    sha256 "23146ed7ac4403b70bd6026402468942ceba34a6732255b9edf5b7354f68a6bb"
+    url "https://files.pythonhosted.org/packages/16/0f/861e168fc813c56a78b35f3c30d91c6757d1fd185af1110f1aec784b35d0/argcomplete-3.6.2.tar.gz"
+    sha256 "d0519b1bc867f5f4f4713c41ad0aba73a4a5f007449716b16f385f2166dc6adf"
   end
 
   resource "pycurl" do
-    url "https://files.pythonhosted.org/packages/c9/5a/e68b8abbc1102113b7839e708ba04ef4c4b8b8a6da392832bb166d09ea72/pycurl-7.45.3.tar.gz"
-    sha256 "8c2471af9079ad798e1645ec0b0d3d4223db687379d17dd36a70637449f81d6b"
+    url "https://files.pythonhosted.org/packages/e3/3d/01255f1cde24401f54bb3727d0e5d3396b67fc04964f287d5d473155f176/pycurl-7.45.7.tar.gz"
+    sha256 "9d43013002eab2fd6d0dcc671cd1e9149e2fc1c56d5e796fad94d076d6cb69ef"
   end
 
   def install

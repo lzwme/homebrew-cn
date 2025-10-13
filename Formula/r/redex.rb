@@ -41,14 +41,13 @@ class Redex < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3e018c9ed00340c5d6329280f07f4b8fa909d61aaba8c1ef48185c213420aa38"
-    sha256 cellar: :any,                 arm64_sequoia: "6fd7f506ee8571973646bb564d1c73a5e2ff5143e190d144d75cdcdd8fec2231"
-    sha256 cellar: :any,                 arm64_sonoma:  "df07315f29742d0a4d43f8d1ebc6a1bd68f082603fcf7fdd1196d3f728c0c32e"
-    sha256 cellar: :any,                 arm64_ventura: "3cc462535b6d47cd2a65e846a203431b3f09b684cd90b985b7d92f70b3024459"
-    sha256 cellar: :any,                 sonoma:        "45bf906a221af854ad97f570f32cc2d614d9701f14f64d29119e8add6340daa2"
-    sha256 cellar: :any,                 ventura:       "26ae6a587173f41403c4222044bcb6307adaeb42978c5cde5efe91f103880c62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33695004d04b690c9ef97ec7a1b93277933d9a2d19a67c5307aa838f3b3f60e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "972ea4c2f3357bf1adbf4777cf949aa636ab5e221e07383017053f236db28503"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ccd598d35c980d9c5220de5fa1a9bdcf3ff6c9cdd74e20f20143f7dc3dee5694"
+    sha256 cellar: :any,                 arm64_sequoia: "acd97e017326b3c2a1cff2eef31078a79ea1f5a0129531c31c1b2566e70648d4"
+    sha256 cellar: :any,                 arm64_sonoma:  "cd443c5e4f40643b584184041c3c6d4809bc6c7127bb64a67c169d89269029d2"
+    sha256 cellar: :any,                 sonoma:        "b499a2a789dd133952eb96a2c0a3c591daa178248a352db5bf1c62cc687f492e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2bfe2a1cdb1329411574b37c837686859e283dbcf22175a1a5bd9486b35b082e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f1ccda8d1eb737e03a2a3e01b34b171bde12f49a896b48224e63e95af76c12f"
   end
 
   depends_on "autoconf" => :build
@@ -57,7 +56,7 @@ class Redex < Formula
   depends_on "libtool" => :build
   depends_on "boost"
   depends_on "jsoncpp"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/4d/5b/dc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83d/setuptools-69.2.0.tar.gz"
@@ -76,7 +75,7 @@ class Redex < Formula
       ENV.cxx11
     end
 
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
     venv.pip_install resources
 
     python_scripts = %w[

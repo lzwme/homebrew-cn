@@ -9,12 +9,13 @@ class Scdl < Formula
   head "https://github.com/scdl-org/scdl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "772405f75b15fe5bbc34d1e59b1c2963dfb8b18cc891b578da2533115cf4ff6b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "cc872de3e2d6c02f77b7ac273d5640a64e26bb44200200c30e02d65b66563ba2"
   end
 
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "ffmpeg"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
@@ -47,8 +48,8 @@ class Scdl < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "six" do
@@ -67,8 +68,8 @@ class Scdl < Formula
   end
 
   resource "yt-dlp" do
-    url "https://files.pythonhosted.org/packages/7e/3a/343f7a0024ddd4c30f150e8d8f57fd7b924846f97d99fc0dcd75ea8d2773/yt_dlp-2025.7.21.tar.gz"
-    sha256 "46fbb53eab1afbe184c45b4c17e9a6eba614be680e4c09de58b782629d0d7f43"
+    url "https://files.pythonhosted.org/packages/58/8f/0daea0feec1ab85e7df85b98ec7cc8c85d706362e80efc5375c7007dc3dc/yt_dlp-2025.9.26.tar.gz"
+    sha256 "c148ae8233ac4ce6c5fbf6f70fcc390f13a00f59da3776d373cf88c5370bda86"
   end
 
   def install

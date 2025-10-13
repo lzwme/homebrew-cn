@@ -7,14 +7,13 @@ class Wxpython < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "38d620143e11e7c4beb27cd0a8cac430d727fdafffac432264cc760653ed1612"
-    sha256 cellar: :any, arm64_sequoia: "2507889ef35df2ea5539226cb11ea7036ce898c72d16a42f7acc05a154e5aada"
-    sha256 cellar: :any, arm64_sonoma:  "2b421f7072141f279b42af8d63e96fa62fef03f68c1437f7007117aef07c10ae"
-    sha256 cellar: :any, arm64_ventura: "533da5d3db0f8ee7650a59368679ff5a5a30aabeb81c04729bd9d19ef024765e"
-    sha256 cellar: :any, sonoma:        "a870b3b8197cc1044eaf7d010642fd04d3b322c51e0e26f3214b0b92b26747bf"
-    sha256 cellar: :any, ventura:       "6f07c4cc17affc2e9f1c3370218c6d8551b9a0096f799a2cbcc92184403c45d3"
-    sha256               arm64_linux:   "457db6b343eeb4be025a86d46c26e6ffc9b79917025ba77ba73bcb43254f5c65"
-    sha256               x86_64_linux:  "ffc761ef66d256d59c4711bf5d041ab7cb229d3172ef2bb009e13837cb27ac0a"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "8a416da81b00e340aedfb70409dd2756892f131e254487fbf9156a71b72f7e53"
+    sha256 cellar: :any, arm64_sequoia: "8fa76752837630fc7e483766625cd7d971374cb41cdf28e778f2acd098fb57f8"
+    sha256 cellar: :any, arm64_sonoma:  "5be8e6d76dcd20efb79201245869740e05ad04335765c8eca0a7c51b5794f3ab"
+    sha256 cellar: :any, sonoma:        "fc5a08d8e273c66763ba05448229a20ce65f5c514cf8fa59a5c2c9c8366c008b"
+    sha256               arm64_linux:   "6c49edde10b7f4471fa1396045a114d68e084b9f9e64c2af4aef2439bccf47de"
+    sha256               x86_64_linux:  "d9dece9868196fa78b4270172e955c87b04fa856ec02ede6bcfb1868e95cdb7b"
   end
 
   depends_on "doxygen" => :build
@@ -22,7 +21,7 @@ class Wxpython < Formula
   depends_on "sip" => :build
   depends_on "numpy"
   depends_on "pillow"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "wxwidgets@3.2" # issue ref: https://github.com/wxWidgets/Phoenix/issues/2764
 
   on_linux do
@@ -31,7 +30,7 @@ class Wxpython < Formula
   end
 
   def python
-    "python3.13"
+    "python3.14"
   end
 
   def install

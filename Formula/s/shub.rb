@@ -10,29 +10,27 @@ class Shub < Formula
   head "https://github.com/scrapinghub/shub.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ee267947680021fcfecb2e8b5efcc90eb170a593baab4543eeac9091f427f7ec"
-    sha256 cellar: :any,                 arm64_sequoia: "b50ce3a684b5a0c6014916ddf290ec96f02a12310aec9823d627ff64afcb9f8f"
-    sha256 cellar: :any,                 arm64_sonoma:  "4c61144b808b3607bc732681dd988eef9ba5b29ade333939aee617f879da24fd"
-    sha256 cellar: :any,                 arm64_ventura: "1dd27be818a64f165a9a3b9bdd05149fb7187fc9e9e414048e9de49bc42cf48c"
-    sha256 cellar: :any,                 sonoma:        "5761d8269c923690891ba20c1891c83f0a7f06e27bce0eb95cd8b59a864eaf41"
-    sha256 cellar: :any,                 ventura:       "7f0ca84ddbe6490849aac25a2ab90c526b0d968b9d9239da2e2c469c4c303478"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4370ad46cf66b857fe40b35055e44aac6c1ab82418d1b7e26a22213181504a46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e312b485c67099342faa54b7bfb4b8737afe94e7e2a34e791c265b1034c67e1f"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "4781bcf903876d3e70218937f589900ede7f534a4a893d67269763f3b06fda1a"
+    sha256 cellar: :any,                 arm64_sequoia: "35143c65a8df1962740d601e836e5c7fb048062d0da643033faa27c043f74471"
+    sha256 cellar: :any,                 arm64_sonoma:  "4a23c0592d955d8659b404cf6d1029d5c6757e77bad7e4dde9744b1579b50df6"
+    sha256 cellar: :any,                 sonoma:        "13a95f502590f8f3bdcb7139ae48d30225ef480be2b0bd8b30be80cc8fb49c24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "041317ea0a08ec8982747b92db67afd59271c15de11b04c6f3841393fe87cb5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e394a7dd1d0efb9755239aeceb9c316e51e6bd83ca2701a00a7b542f03d99d71"
   end
 
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "docker" do
@@ -51,18 +49,18 @@ class Shub < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "retrying" do
-    url "https://files.pythonhosted.org/packages/ce/70/15ce8551d65b324e18c5aa6ef6998880f21ead51ebe5ed743c0950d7d9dd/retrying-1.3.4.tar.gz"
-    sha256 "345da8c5765bd982b1d1915deb9102fd3d1f7ad16bd84a9700b85f64d24e8f3e"
+    url "https://files.pythonhosted.org/packages/c8/5a/b17e1e257d3e6f2e7758930e1256832c9ddd576f8631781e6a072914befa/retrying-1.4.2.tar.gz"
+    sha256 "d102e75d53d8d30b88562d45361d6c6c934da06fab31bd81c0420acb97a8ba39"
   end
 
   resource "scrapinghub" do

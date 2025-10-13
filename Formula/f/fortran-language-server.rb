@@ -9,11 +9,11 @@ class FortranLanguageServer < Formula
   head "https://github.com/hansec/fortran-language-server.git", branch: "master"
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any_skip_relocation, all: "7f545be88d71155c02f3022ca7c63f8c75f9010d1ac84f89353d96b15f3b0551"
+    rebuild 6
+    sha256 cellar: :any_skip_relocation, all: "85706cff2dc6e9aa31a471a87a2b387f41d4d0abc306b7c5546a50979f1c5dd7"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   conflicts_with "fortls", because: "both install `fortls` binaries"
 

@@ -8,10 +8,11 @@ class Cram < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "380d5fde8323ac893ae796f88c68426acda8933ef993101014a5ab839a8abcfd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "3a0f3b04ef44d789fb07fe79107eb12c410dfc5794a730f3ab2825c890a76228"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     virtualenv_install_with_resources

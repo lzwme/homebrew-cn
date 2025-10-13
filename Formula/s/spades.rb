@@ -14,19 +14,17 @@ class Spades < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ec418aef4f38a7b784b9dfe700f499442c54f486b86465888fb0ca1baf8767b9"
-    sha256 cellar: :any,                 arm64_sequoia: "336e4711b7e792297dd05b0051046da1a98b571b4e558bfceb4de0e493f2efed"
-    sha256 cellar: :any,                 arm64_sonoma:  "9fa28c167e3eb14b53ac5d411b2b34215a4981ef79a2e50593678bdea7a88998"
-    sha256 cellar: :any,                 arm64_ventura: "de12ae30dd5eda9126877cc8277d7afeb5e7d99571e133463a4a5bff6686c55e"
-    sha256 cellar: :any,                 sonoma:        "9d3e91551f652b76506b3bf66de0993e88d5a52837657ed872ed02383802bdb1"
-    sha256 cellar: :any,                 ventura:       "1d291e5b823b27f0e9ffa5d3d31f15a3ac9cc4812e5b80a05686daabd712be3b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "006fd83128b54085519a5b88843db9f27aa25cb1cce3830cf3e1e703fc64334d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a487ef4a83f4d7238fcd6560c1085144357a17d25609e6165b946e4e1bfd4040"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "dfb1b8e8a099823127b97e10c3cf6951b71fa135cbab935f82ebf4beb5fc4bd7"
+    sha256 cellar: :any,                 arm64_sequoia: "4434b0f70adbcc1995b80975edf1d35b0e171524f89e2de496e66cd664090407"
+    sha256 cellar: :any,                 arm64_sonoma:  "787fc89b652698b3610ecfde765de7dfb947a0517e5cd4ff35345303561fad21"
+    sha256 cellar: :any,                 sonoma:        "5c7ce0aa451474c9cb40dfaf9ea5d7d4331dafb3304eb3586e2fea88d3330a61"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c9ee246e19db295757ed9cbf2b4f3b75d2476620778e28411feae289bc7ed34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56929dd62ca2109f9194096c04452dbe7f572a9858cdc54d1fbeeb7743af4563"
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "bzip2" => :build
 
@@ -35,7 +33,7 @@ class Spades < Formula
   end
 
   def install
-    system "cmake", "-S", "src", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
+    system "cmake", "-S", "src", "-B", "build", *std_cmake_args
     # Build bundled zlib-ng with runtime detection
     with_env(HOMEBREW_CCCFG: ENV["HOMEBREW_CCCFG"]) do
       ENV.runtime_cpu_detection

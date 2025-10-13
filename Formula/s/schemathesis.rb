@@ -3,21 +3,21 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/73/68/6e54cf0764896434e9dbba4898ce16829ea39b651ce8a1c48f247b174cd1/schemathesis-4.2.2.tar.gz"
-  sha256 "83e520258e9f34d3d085f688d0d9624ad7b21e8d916a14ddec7259d767da1c7e"
+  url "https://files.pythonhosted.org/packages/ab/77/c32c2e2f976516c4a3b2c4b48c59f98fa4699aa7208ae2ee1b981c02a935/schemathesis-4.3.0.tar.gz"
+  sha256 "5039be9ede185ce261f963d7c3e06f6089c6e3e0407437bceef701fa5b123f27"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8e8276b71bf7f2ab2b98d93617b7d2d80ec495d12c318abaf3ae80703c8b0432"
-    sha256 cellar: :any,                 arm64_sequoia: "0580f7ac736c68795cc67529868dd04fcfda814af7904c1eb1ccca14d6eab384"
-    sha256 cellar: :any,                 arm64_sonoma:  "285db7deee514525910246af8f6bcccb5ee30b07b643a4345dce65962c461b05"
-    sha256 cellar: :any,                 sonoma:        "8c8e00e2fcb9e612e8be279c124e662050e59a6776031a7c9b12f340fb3027fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a13b0e7b9f329681c19b6d5f73aba60485f7a5f98e1548bc843ab4dea8a84b00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00edeb2f40f55c1ee1c9f9104b830284ecfbc634f9e285d186b896a834d658b1"
+    sha256 cellar: :any,                 arm64_tahoe:   "e1486ee7b6ed51e1faa614f2663d433913ceba5381522f7e9c932451680a2fda"
+    sha256 cellar: :any,                 arm64_sequoia: "251e0c69f39d198c77eab8ff5396b3212c4ba011f283b98ee2d86c3eb65ca2c7"
+    sha256 cellar: :any,                 arm64_sonoma:  "f790e0f476aa96a8b3935c551740c72357355dc19e4ceabdd2cc639e96fc6c8a"
+    sha256 cellar: :any,                 sonoma:        "2acd85ed3423024837468e9c797b2150d1c5feb71c2187c95c8284bf1625bf1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "31d229893a762e99bb0c4bd1b070acaeeafc048cf761f62f3cf775ddc25e2bd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e7a76036139480bbfc9e26a027b6bf9912ef9fee9fd9e05b628ddc2000e24b6"
   end
 
   depends_on "rust" => :build # for rpds-py
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "python@3.14"
 
@@ -104,8 +104,8 @@ class Schemathesis < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "iniconfig" do

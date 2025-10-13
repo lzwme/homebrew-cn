@@ -11,11 +11,11 @@ class Nyx < Formula
   no_autobump! because: "`update-python-resources` cannot update resource blocks"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, all: "b1d026eace451bd720e037824ccfa57cf000b339c960b470bdd048712d3f77cc"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, all: "900a2690900306640aeaaa863c7caddc2e217f690356e3ccada2ff531d7a78fa"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "stem" do
     url "https://files.pythonhosted.org/packages/b2/66/c5515de764bffae1347e671819711268da5c02bfab8406223526822fe5f6/stem-1.8.1.tar.gz"

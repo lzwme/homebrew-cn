@@ -11,18 +11,19 @@ class Spot < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "86c61c9ce1c883c3f526b244b71513a65f59bc2e288de316a8a51c7e390b4b16"
-    sha256 cellar: :any,                 arm64_sequoia: "bdcdf2c6e0cdfdb069e1f441515093ff6de5574dcd96573db4e92be42b60f37c"
-    sha256 cellar: :any,                 arm64_sonoma:  "37ab56362819a8b1acc947d3ed019ac65fdc5d1bfc3bcd292212019bbaec1d85"
-    sha256 cellar: :any,                 sonoma:        "5a96cfbea1ebc4f17f31ed9e3a067cf8b104e34c7a66266aa960c41783da24d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2972e9c0a4e173fba2f10ded58fce3e595df7011e1578ede135a330db9b4a60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b23f29a345f506db9db27633b3386b3171f53262825b7bcfa8dd768035c3e109"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "5ebf9188289b7edc8558dd316e429a07723a4fa592872c1c5f3b4fb0c79e2c4a"
+    sha256 cellar: :any,                 arm64_sequoia: "89d678e29946e21be3799d22cb1a4b20b02a1d02d8be3f257b7d0ec4766a236f"
+    sha256 cellar: :any,                 arm64_sonoma:  "376c92cbec2cd6fedf96112acceb8c75b62d1b6a56438c5c7be10158c0dd408b"
+    sha256 cellar: :any,                 sonoma:        "ff17fef6f1a6f44da93594979fc2562b01fe8ce3aa8619b4b459931643b17f45"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dcd58f0db3d6df6688c4151e193f82d1df6833053bde2754c1e33647d682957"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "515225f54b9e59ed573016bf29650ce5cda88d0dfcc83be0a978e08b32edd374"
   end
 
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

@@ -8,11 +8,11 @@ class EgExamples < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "b6a6f858143973b765badaf959c4b582872b80e2af1a0bd6d1d6d3e92a460add"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "da37695bd2e546b5078212271f95cc9999a12ea2c3bc0830c864cb47d585fdb8"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   conflicts_with "eg", because: "both install `eg` binaries"
 

@@ -9,10 +9,11 @@ class EyeD3 < Formula
   head "https://github.com/nicfit/eyeD3.git", branch: "0.9.x"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4ac971a65a624577f3d7ec97d49542d39400860e967a8823b78a94afd764f33b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "ae16b3eff6a5254049a8ba9cac20ae0109417ee0c1daaba5de6ada9a6a8119df"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "deprecation" do
     url "https://files.pythonhosted.org/packages/5a/d3/8ae2869247df154b64c1884d7346d412fed0c49df84db635aab2d1c40e62/deprecation-2.1.0.tar.gz"

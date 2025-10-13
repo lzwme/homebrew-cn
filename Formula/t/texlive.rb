@@ -36,14 +36,13 @@ class Texlive < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "0a817335de9a8d015b3704af15dae9ae11cd99629b41be84f7a4698d43bc2a0a"
-    sha256 arm64_sequoia: "dbb0b1a2a0b1d06263f2fe4e1b386cc2f682c4ab3a5d399b65cbfb3ce33ce4eb"
-    sha256 arm64_sonoma:  "e071d59282304b7664e026649c7b9d83df65202d5a558f0064cc58ee1415c03c"
-    sha256 arm64_ventura: "bf3f81f2101f658532f917b49cdb220c21e6b5465f27f0fcdefa4b361d0f119c"
-    sha256 sonoma:        "e0353127249a2ac7229787cdd7f2a555f115c9b2ff466f4e339557117c59a664"
-    sha256 ventura:       "b065a0aa04c54fdef596148f0fcae226fc38cd8bfca6632dd194bc04121ad0de"
-    sha256 arm64_linux:   "5124fbe9981c8e14b7b505701a62a75671eff00c910b0af49acbc2cd8d0e56e8"
-    sha256 x86_64_linux:  "6855a829bd2a7facbcaa400b2c3a5c342248abc606f479a538a03bbefdc6bacc"
+    rebuild 1
+    sha256 arm64_tahoe:   "bb72cec70fc9b442faec35816b8e5c9006b08534252dca16a299ddc2ea44182f"
+    sha256 arm64_sequoia: "4189f13ae380fdcd0b7183e2fdcb30a9c3b9e30767a9e94650da62d65e0774d2"
+    sha256 arm64_sonoma:  "075e9b05001a12a666e5b7d955e820e7131c699113a83334f0ee9ebbc22c2b22"
+    sha256 sonoma:        "f071ce2cbc2b8c45aeedfd9cc70f17c56460a9228d400c003201ae30d567a069"
+    sha256 arm64_linux:   "b0ff02eb93542fb35401627b1c800e214c123457c108e11898bb30c3bd260e4f"
+    sha256 x86_64_linux:  "c2332cb42c33291614a46cf51621585791fe6510f254bc008180d924305a07b3"
   end
 
   depends_on "pkgconf" => :build
@@ -70,7 +69,7 @@ class Texlive < Formula
   depends_on "pixman"
   depends_on "potrace"
   depends_on "pstoedit"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "ncurses"
   uses_from_macos "ruby"
@@ -344,7 +343,7 @@ class Texlive < Formula
   end
 
   def install
-    python3 = "python3.13"
+    python3 = "python3.14"
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resource("pygments")
 

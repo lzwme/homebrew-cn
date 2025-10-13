@@ -4,15 +4,14 @@ class Arrayfire < Formula
   url "https://ghfast.top/https://github.com/arrayfire/arrayfire/releases/download/v3.10.0/arrayfire-full-3.10.0.tar.bz2"
   sha256 "74e14b92a3e5a3ed6b79b000c7625b6223400836ec2ba724c3b356282ea741b3"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6a8bc49af4a93ce043a5939fcfc8676b9772c8a13c002784bfaa72126dd946d6"
-    sha256 cellar: :any,                 arm64_sequoia: "2e235aefac2e784bbc5893ced68651bc9c404c3764511457fe1f9efc74f2f426"
-    sha256 cellar: :any,                 arm64_sonoma:  "5f68d4310507bd292fe21e7161260800bb8692d2b5e4b124f16ff2d6638584ea"
-    sha256 cellar: :any,                 arm64_ventura: "5946c6c3ef87f7144131b81e175b531acd13fd2f02c512055cce3390b3512dd2"
-    sha256 cellar: :any,                 sonoma:        "139a3ef29ed968a2d7af163b5feecb64945227cfdf27a7c3176d89836d5a03d9"
-    sha256 cellar: :any,                 ventura:       "cc3895e552be5fc3d47db7b99bf0adcefb36244ca3f87b113740a9418b4318ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff80fa18880b67aafa10228bd2e5fdc9e91132538366f6cdf969c65e46b26efa"
+    sha256 cellar: :any,                 arm64_tahoe:   "a22c9b3e94e2f0794d91dd076ae42c2718c4c10926c32cd9d46c23b966334815"
+    sha256 cellar: :any,                 arm64_sequoia: "310d3c58ba5498515ca4ee9042b0543fea5238fdf31a9d9076eb41efb3e98e73"
+    sha256 cellar: :any,                 arm64_sonoma:  "aef0fce6a9a64e7450b288a1ca5e315778b01d1fea3e680e7fcfa11d72a7a8fd"
+    sha256 cellar: :any,                 sonoma:        "75d117bf6fc4e58e981aef90e9e898570cef349f8b386d77ab1ad55ea6f22eb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db1225d603aba9790ffa6aafc010deb189c15690af87ae842c253cc9db72d56a"
   end
 
   depends_on "boost" => :build

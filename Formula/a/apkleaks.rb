@@ -8,19 +8,17 @@ class Apkleaks < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a488291fde52d3221a0f72934d0d79c483c4ceef8d519ea2539dde8bfb55628a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53409d176d6c3ea2efa1575ac9a466f74dd8a5a7426be952b02787780f4ff858"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7377ef49f14020db31a4e72f6592c98af1ed270a530eb26e9e9de9cac21b72b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d1391422b4037f72e36b3b38901e0bc279e9c5770fc63cb00c674aff9dddc43a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8b9948be0cb74507608a58e1b99a5bc62bb745dc3b4b2d3a88a4785c670d708f"
-    sha256 cellar: :any_skip_relocation, ventura:       "2bc351029f9c9e53004fcf6cbdb2fc3a772c771dccc3052dd3a3dcedab122c59"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "441aff0993a838898a4695386c48a20fbdf7024389739176017d17cdd3d236d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63fdbb67007a469a23eb740eb1bfbc39e84abc92e04d706b79cf40b19d95dc95"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e1d47054ac171bb39a0dfac7971bee89f16e2b132939238516253626f00c0fa3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8ccba254372a410048df881690db842753db0d1cf44f6c949794eed76b6f949"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01db0cc2ba78d06e07a2dc9845d6a32537aff975e85f30a9c95940a2e76e32dc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "76049852fe10e2f7b4709f727f05eab86ae32aa3ae69bda6e1c8d8c5f13bbf38"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49af4612bade044c39289d429d0eb0d90e10e02fbef12b91147ecc3ef4c2616e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9720c048f854f1b5b8491c9a7857dc0d09400c7c092d6f06e32b6c4e2cea4c07"
   end
 
   depends_on "jadx"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -31,13 +29,13 @@ class Apkleaks < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/e7/6b/20c3a4b24751377aaa6307eb230b66701024012c29dd374999cc92983269/lxml-5.3.0.tar.gz"
-    sha256 "4e109ca30d1edec1ac60cdbe341905dc3b8f55b16855e03a54aaf59e51ec8c6f"
+    url "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz"
+    sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
   end
 
   resource "pyaxmlparser" do

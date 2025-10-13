@@ -9,10 +9,11 @@ class Gitup < Formula
   head "https://github.com/earwig/git-repo-updater.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4ef4421a9edad018b76acd44d00dc3bc99a980623ee00deef7a7aa60bce940d3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "2d3bc68a5d29336be64dee93e9440478a64716a47b3e3087f9e51ce1edd6842f"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "colorama" do
     url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
@@ -25,8 +26,8 @@ class Gitup < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/c0/89/37df0b71473153574a5cdef8f242de422a0f5d26d7a9e231e6f169b4ad14/gitpython-3.1.44.tar.gz"
-    sha256 "c87e30b26253bf5418b01b0660f818967f3c503193838337fe5e573331249269"
+    url "https://files.pythonhosted.org/packages/9a/c8/dd58967d119baab745caec2f9d853297cec1989ec1d63f677d3880632b88/gitpython-3.1.45.tar.gz"
+    sha256 "85b0ee964ceddf211c41b9f27a49086010a190fd8132a24e21f362a4b36a791c"
   end
 
   resource "smmap" do
