@@ -1,20 +1,18 @@
 class Bacon < Formula
   desc "Background rust code check"
   homepage "https://dystroy.org/bacon/"
-  url "https://ghfast.top/https://github.com/Canop/bacon/archive/refs/tags/v3.18.0.tar.gz"
-  sha256 "2136e7604bf92b209c1363393142e5bb369bbe06a4f75c7d6cbe16d3437ad9a0"
+  url "https://ghfast.top/https://github.com/Canop/bacon/archive/refs/tags/v3.19.0.tar.gz"
+  sha256 "2c49ca02687391d425f2cc9a19cae8227338def2d689d55ff5970cb70fd2b7f6"
   license "AGPL-3.0-or-later"
   head "https://github.com/Canop/bacon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ba8a2a6e1b03ccd67a90231a3c86b9b1d49756f9074a6bd9ca03851fc576064b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "084aad9dc9734030c27384df6c60e37d295565fc73eab14e0e3557e80c6958ce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb0afed3b3a5bf280c88e7432388eae7ead7d10d0748624dd22a871bf568c556"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "60ec6b5ad1144e8c8be95e184c87e60d43f282ba2bddcab69cdf64c564db0492"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8152871bdd5dd7c017d02e9d26e417eecef5259df43febfa316487ea34d674ea"
-    sha256 cellar: :any_skip_relocation, ventura:       "48a4b161e25f172b77f4cc45033f0e0b6adf18f4b9d69125bd50cfb56ce24188"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd63dd30973ae2734ee46129576abc9e7fc0861cff960a8fd9401b7a7ccdb281"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a00e8d847cc37c617c60b7dacac817edf4247959a5c697315c98e074a3dfef86"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10395f25be03ed834ca48c32535a85e459ce531ffe2f9a34a77cf2239ed1af5e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0524ca75127eb97f2983049a9f232ecc70bbb2ac97ef1bf011f2a6b0fa58d5ec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f69aa22695b557fd779e9fd15d4b81a03d7b9db884c23f30ae301198259e3b85"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3721d7f2c33acc8b8f63513eb9d04d0d82d00532b264627c8867d2693ec7dece"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aeae918c0a5b9ced620ad43aa09fda55cb7b2c6f9c73d9dabb39d308487f8c9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9199143c65a8eb63d7f08bce48ba0499343fd6e349aa1d3a39bef22cd2962ed2"
   end
 
   depends_on "pkgconf" => :build

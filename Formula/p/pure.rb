@@ -1,12 +1,12 @@
 class Pure < Formula
   desc "Pretty, minimal and fast ZSH prompt"
   homepage "https://github.com/sindresorhus/pure"
-  url "https://ghfast.top/https://github.com/sindresorhus/pure/archive/refs/tags/v1.23.0.tar.gz"
-  sha256 "b316fe5aa25be2c2ef895dcad150248a43e12c4ac1476500e1539e2d67877921"
+  url "https://ghfast.top/https://github.com/sindresorhus/pure/archive/refs/tags/v1.24.0.tar.gz"
+  sha256 "9f6822357e21567eb946ad4de867bc7aea32db3fd58d1d14076604daae305608"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "28aed9b8a2ba35c28ebce54940385451c28af560e0eb22181edd0b56dfd78dc7"
+    sha256 cellar: :any_skip_relocation, all: "bedbe228db62ce677631395a78e48945f99b00f80421a686b58c9d14fc6edc2c"
   end
 
   depends_on "zsh" => :test

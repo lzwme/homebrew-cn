@@ -1,17 +1,17 @@
 class Superhtml < Formula
   desc "HTML Language Server & Templating Language Library"
   homepage "https://github.com/kristoff-it/superhtml"
-  url "https://ghfast.top/https://github.com/kristoff-it/superhtml/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "e84b0f4c95187561c16d216fb520c1fb7362b4d8f0ff1cec8d4a3694fbd379b2"
+  url "https://ghfast.top/https://github.com/kristoff-it/superhtml/archive/refs/tags/v0.6.2.tar.gz"
+  sha256 "431d7189501e1b2e8da53c3ca8d6e7f1c642b523f3715c21cb8bfd2f8eef3971"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b4f35421ec563af57470210c14dbda4a8e9050dc6b246775c64656850d9d832"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ecf7687da152f5b98daeb631869096b1cee93283369bb78a414315fa72bae19a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b479060507e35d2ab4c92b1909764f48fc2a7acd017c5d7a6374684d4ef6876b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5273aa27979d30a8c4d2b0151d177d30109d4ec3b28dec2338295abbf8f1f827"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e77396abe94918e3af64ff87b0c37581743089cdbbb27ec1ad3a6e6bedc60691"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b116b12b4d104a638425ba9d23c1bb800d93c738f9d45cbafdf2404c22c7d08"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ecdeda20aba3c932e654ce1a7ad91174f5084cc83633c5d9cd6f1390daee912"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8012a4daf05ee0ddbb51d09172fadeb4fe23b21cadeed03a42c1663964bd52dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bae9719b4bb4567edaf1678911be594bfdc8d537996bb723f300c3fb0f2aad93"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f41742a7a7b61ce1e6bf019e897ae0b3f0076215353a8af4b7f53750533593f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b468973d40b401cf79782c7b85cf42696046c5064797af71a24de169e5b33d58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8874ee426039b691bb1faffd504ba20c22be4501f249d0bf8f84f2f46c636f5f"
   end
 
   depends_on "zig" => :build

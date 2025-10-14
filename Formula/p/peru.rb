@@ -8,28 +8,27 @@ class Peru < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b2b558447cc50f00af4576472d41b9e0943ca67009dda28c0c869f2bb60ceaaa"
-    sha256 cellar: :any,                 arm64_sequoia: "beeb4f77adc52280a01149f9cdfd3b4100d6c7dd92c51aa6fb59b4a4c1d50bd9"
-    sha256 cellar: :any,                 arm64_sonoma:  "6bcea08bb842546b71b214f6390e8cc31eff4b778000d178472526199a231b66"
-    sha256 cellar: :any,                 arm64_ventura: "b013421dad16894ef27b69c705cc52b729eaa7b404c70cd926b755c6ec11c461"
-    sha256 cellar: :any,                 sonoma:        "374514a3186c7992d46046a34c5293d75ca9681b767cd2a4a39d112a7e2ddc15"
-    sha256 cellar: :any,                 ventura:       "1ade107c73338fe0a62805099cc16d53e59ba95009055c01d6def097c4928dfc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fe0da4736ccecc7dd1b2609e57f76e1eeeddbac408f7d3cd83bb204220173e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55ed2401a2819caa9197b706d000b153c1893036ff291ca64e6b65bd949248ef"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "0e6db76fb7d9e625270f674647f7ffc117be781df15b587aa4eecfb7a23677ae"
+    sha256 cellar: :any,                 arm64_sequoia: "6c44172cb1bb4e9f68b248aeed7058107e48ec3b7b6920b1e4fdb8f98adbf822"
+    sha256 cellar: :any,                 arm64_sonoma:  "ae877adc898be55ea289ec5996aca6f9039ac44cc3a2c484b81f23f1be763816"
+    sha256 cellar: :any,                 sonoma:        "e063ed53447b77f612299323fda24cd5e34c8ff3713e3accd1e766e5d632e9ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18f0fd3c6af85d2ade9e26a75f0d8b444d42a1f41952c1aac1864fa9b8dcb7c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6f2ea8109ac0a0061e8ecd68292e2d7858ce4e1c061a55bd8c4514e38cc39b6"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   def install
     # Fix plugins (executed like an executable) looking for Python outside the virtualenv
     Dir["peru/resources/plugins/**/*.py"].each do |f|
-      inreplace f, "#! /usr/bin/env python3", "#!#{libexec}/bin/python3.13"
+      inreplace f, "#! /usr/bin/env python3", "#!#{libexec}/bin/python3.14"
     end
 
     virtualenv_install_with_resources

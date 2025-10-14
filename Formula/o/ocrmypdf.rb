@@ -8,26 +8,28 @@ class Ocrmypdf < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1f8ed40c4076df4a99cf3aa28c1fa158345b06b06647c9dc2751d1a60f15a8ca"
-    sha256 cellar: :any,                 arm64_sequoia: "6fe07bd9701379b4fb9d75d3a4d42fd9486851561e4807c320e204fa43044217"
-    sha256 cellar: :any,                 arm64_sonoma:  "096f35bea748f515505a84b82b82cd2adecb59c288e8c56161a7e7029341b3d7"
-    sha256 cellar: :any,                 sonoma:        "4fe0189730f40d80926f74c6209add8e78e096f3aad672c78ba1ab0c68038762"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3e6085422c0b5eca7762b83d043decb3a100e40f05241ce0d68883e581c92df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e50998a6a7b4449c7423ed830fc5025e2609e5f01ca465c86d788fdd00e1b9bb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c6c2c8648a04a2063b640d2bc3b51e835b82f1e86a2a9f034dce765bbb419df8"
+    sha256 cellar: :any,                 arm64_sequoia: "88e08437f1485cbdb4add6d13eedbe4acaa0e8be83365199662302c282021631"
+    sha256 cellar: :any,                 arm64_sonoma:  "d4b612f785f82ef55b1b566ac36b510a40cda3520739001444e8f7d0dd2e3412"
+    sha256 cellar: :any,                 sonoma:        "9a711c9cb85cf5d01088b58283dc614438f2545f27864f7ef93bca25d84b03f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82c006398f5ef76f3d18a933019cbd845079256377c4997e961f69e9212d3b69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2992d8bec85c4345bef105f9434881c7f027081db3e092b274d3ce37cedc27fa"
   end
 
+  depends_on "cmake" => :build # for pikepdf
   depends_on "pkgconf" => :build
-  depends_on "cryptography"
+  depends_on "cryptography" => :no_linkage
   depends_on "freetype"
   depends_on "ghostscript"
   depends_on "img2pdf"
   depends_on "jbig2enc"
   depends_on "libheif"
   depends_on "libpng"
-  depends_on "pillow"
+  depends_on "pillow" => :no_linkage
   depends_on "pngquant"
   depends_on "pybind11"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "qpdf"
   depends_on "tesseract"
   depends_on "unpaper"
@@ -57,8 +59,8 @@ class Ocrmypdf < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/8f/bd/f9d01fd4132d81c6f43ab01983caea69ec9614b913c290a26738431a015d/lxml-6.0.1.tar.gz"
-    sha256 "2b3a882ebf27dd026df3801a87cf49ff791336e0f94b0fad195db77e01240690"
+    url "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz"
+    sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
   end
 
   resource "markdown-it-py" do
@@ -82,8 +84,8 @@ class Ocrmypdf < Formula
   end
 
   resource "pi-heif" do
-    url "https://files.pythonhosted.org/packages/a1/3c/15d70bac37e50bd03ca2cdf7f7237d237c6f4e3e6d6cefdcc95b53dd708e/pi_heif-1.1.0.tar.gz"
-    sha256 "bac501008a000f2c560086d82e785e3ca2fc688b24b66c1d7dae537ef2fd6a6e"
+    url "https://files.pythonhosted.org/packages/bf/7b/7c7b2aeb4995906725f13b885884d5b22e4f2d55028e8941555d2789e5e7/pi_heif-1.1.1.tar.gz"
+    sha256 "42ece7c3b40569f295fd4d2b10f38d1cd5012ca548446a2ca33895f0d6900c4f"
   end
 
   resource "pikepdf" do
@@ -102,8 +104,8 @@ class Ocrmypdf < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
-    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "wrapt" do

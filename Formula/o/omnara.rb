@@ -10,21 +10,22 @@ class Omnara < Formula
   no_autobump! because: "contains non-PyPI resources"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "d7397983626a63d5de6efece2746ed7be265525f0451184c0b01de53c9b5ecf5"
-    sha256 cellar: :any,                 arm64_sequoia: "edeb8dfbcdaf17c1fe01d02fe5e5fca30a6daf51f5a8f4a406741cc01a48867e"
-    sha256 cellar: :any,                 arm64_sonoma:  "6156781ed61487d03e02c03b68f5b65ed66c409496e71b22fde3d15fe0e0cedb"
-    sha256 cellar: :any,                 sonoma:        "98975b0531eb47c1466fd2725c02f26adbf8aa1ea0e2cdfcf2e2f1d93e18a6b5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "69e9db0f038687963a6ece05002d34a2aa3186268dccb9c8458c17f3390c6a85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d45fdc02138e96045e03cc714e3f8dd8fca6cd5ef35b65694d9e2fb0681a5d1"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "1e280270269a51a8c34f195eba349526d3f56f155dc617ed8767d66cedaf33e9"
+    sha256 cellar: :any,                 arm64_sequoia: "b41b4aec1b5dbc7d9c525cd5835ba490b65128b04321395a10e03309c0a57705"
+    sha256 cellar: :any,                 arm64_sonoma:  "5aed4dc4f671e1744de27c6200e957a3705478ce1f1d9bee74e4fe279cf16a73"
+    sha256 cellar: :any,                 sonoma:        "0b38879438c7d757f40c83b3b8f7a6343bb3508e9eb9eb4710e7fbd034732588"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ef02fa82c8e8035d788e11e55343d7aa81ad99fe016956cc6bcac2babd880bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09b772c1be08b9b64d78314885882f95a8d2c81085ba3a7383c60d64e0091864"
   end
 
   depends_on "rust" => :build
-  depends_on "certifi"
-  depends_on "cryptography"
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "ripgrep"
+  depends_on "rpds-py" => :no_linkage
 
   on_linux do
     depends_on "openssl@3"
@@ -111,8 +112,8 @@ class Omnara < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/2e/ad/31a59efecca3b584440cafac6f69634f4661295c858912c2b2905280a089/fastapi-0.118.2.tar.gz"
-    sha256 "d5388dbe76d97cb6ccd2c93b4dd981608062ebf6335280edfa9a11af82443e18"
+    url "https://files.pythonhosted.org/packages/0a/f9/5c5bcce82a7997cc0eb8c47b7800f862f6b56adc40486ed246e5010d443b/fastapi-0.119.0.tar.gz"
+    sha256 "451082403a2c1f0b99c6bd57c09110ed5463856804c8078d38e5a1f1035dbbb7"
   end
 
   resource "fastmcp" do
@@ -141,13 +142,13 @@ class Omnara < Formula
   end
 
   resource "httpx-sse" do
-    url "https://files.pythonhosted.org/packages/63/7a/280d644f906f077e4f4a6d327e9b6e5a936624395ad1bf6ee9165a9d9959/httpx_sse-0.4.2.tar.gz"
-    sha256 "5bb6a2771a51e6c7a5f5c645e40b8a5f57d8de708f46cb5f3868043c3c18124e"
+    url "https://files.pythonhosted.org/packages/0f/4c/751061ffa58615a32c31b2d82e8482be8dd4a89154f003147acee90f2be9/httpx_sse-0.4.3.tar.gz"
+    sha256 "9b1ed0127459a66014aec3c56bebd93da3c1bc8bb6618c8082039a44889a755d"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "isodate" do
@@ -186,8 +187,8 @@ class Omnara < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/3d/a1/b1f328da3b153683d2ec34f849b4b6eac2790fb240e3aef06ff2fab3df9d/mcp-1.16.0.tar.gz"
-    sha256 "39b8ca25460c578ee2cdad33feeea122694cfdf73eef58bee76c42f6ef0589df"
+    url "https://files.pythonhosted.org/packages/5a/79/5724a540df19e192e8606c543cdcf162de8eb435077520cca150f7365ec0/mcp-1.17.0.tar.gz"
+    sha256 "1b57fabf3203240ccc48e39859faf3ae1ccb0b571ff798bbedae800c73c6df90"
   end
 
   resource "mdurl" do
@@ -296,18 +297,13 @@ class Omnara < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
-    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "rich-rst" do
     url "https://files.pythonhosted.org/packages/b0/69/5514c3a87b5f10f09a34bb011bc0927bc12c596c8dae5915604e71abc386/rich_rst-1.3.1.tar.gz"
     sha256 "fad46e3ba42785ea8c1785e2ceaa56e0ffa32dbe5410dec432f37e4107c4f383"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
   end
 
   resource "six" do

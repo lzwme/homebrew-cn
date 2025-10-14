@@ -567,7 +567,7 @@ Homebrew-homebrew-core/Formula/b/bison@2.7.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bit-git.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bitchx.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/b/bitcoin.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bitcoin.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bitlbee.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bitrise.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bittwist.rb, Homebrew/homebrew-core, 0
@@ -5744,6 +5744,7 @@ Homebrew-homebrew-core/Formula/p/py3cairo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pybind11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pycodestyle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pycparser.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pydantic-core.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyenv-ccache.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyenv-pip-migrate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyenv-virtualenv.rb, Homebrew/homebrew-core, 1
@@ -9325,6 +9326,7 @@ Homebrew-homebrew-cask/Casks/f/far2l.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/farrago.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fastclicker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fastdmg.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/fastmail.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fastmarks.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fastrawviewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fastscripts.rb, Homebrew/homebrew-cask, 0

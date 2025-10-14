@@ -4,6 +4,7 @@ class BoostPython3 < Formula
   url "https://ghfast.top/https://github.com/boostorg/boost/releases/download/boost-1.89.0/boost-1.89.0-b2-nodocs.tar.xz"
   sha256 "875cc413afa6b86922b6df3b2ad23dec4511c8a741753e57c1129e7fa753d700"
   license "BSL-1.0"
+  revision 1
   head "https://github.com/boostorg/boost.git", branch: "master"
 
   livecheck do
@@ -13,22 +14,20 @@ class BoostPython3 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "19318e145dda8b1a0033e8d4c50b14e8d28bfb4372fd847c6b5bce1a118b5258"
-    sha256 cellar: :any,                 arm64_sequoia: "9fc78a9b25bc31ea5d2e5252709b685d5c8a8bd7fb4c0f4e89113f61f0d85135"
-    sha256 cellar: :any,                 arm64_sonoma:  "f6fc46a18f6c019e3279a23f62fedf624f7eeb08f05e14e667e5de401155f4fc"
-    sha256                               arm64_ventura: "f30ee8fdeb54b9a69be3d397dc3d56513859ddc709dcb0642cc1fbf27f9198f8"
-    sha256 cellar: :any,                 sonoma:        "b667df9899f2b8a1d5b560d4d8e43228f3b6541b2e1dd3e660966396a6a822a7"
-    sha256 cellar: :any,                 ventura:       "1fd70752993ccd34bef6688d7cc840954ab6f1be78b371c2c67c7e044255c528"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc4781b134777c0b754521072e28eb6d825b64a9b381c57000a1dd372760a767"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81d4ec0fd2648db5a18efd3d3100b12142b7b90c7c6b312e229dfeee7ff0f171"
+    sha256 cellar: :any,                 arm64_tahoe:   "2fd4e2d3a8336e69231b449595d8106c8063ee1338b34e70e63bfca2143a3e2f"
+    sha256 cellar: :any,                 arm64_sequoia: "0ab536d70fa86ca34cfc414ab7039dd021bf84b02aece6d428d0d7283e5c7524"
+    sha256 cellar: :any,                 arm64_sonoma:  "5182495303b64350e28ddb198f62663e40197eb1f2eca0188457d61c3ee1f212"
+    sha256 cellar: :any,                 sonoma:        "8a03cbb7539ccc15ca16d6a271de8a9314a46d2b4ba8089216445fdebb1ca004"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d50c7bba1a1d00830067a11704e231feb60733c42ff78fc00d332c49c2e21bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "566977624d477de6a4e590776cba1e0cdeb7b22ff3b03ded5a1afb8ca2c4355b"
   end
 
   depends_on "numpy" => :build
   depends_on "boost"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

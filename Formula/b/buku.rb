@@ -10,19 +10,18 @@ class Buku < Formula
   head "https://github.com/jarun/buku.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c24a14a9888bb473839d4c064a82e5676a927412ab7ae66c2565b44a2dfb803"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69fc60603b898f2d6d26726efc388051de7e1c65b76f85f1cdc38132b8512c15"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2227b666af396d4d3d2a83622feb4a105781ecbc44a0fc1f061abe396bfb69cc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "21144834f453b881b0bb0fc83e87b8467ca1bf580ef17ba83fa532709ad65085"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e8ab85a315f80f9caf22f476615559eb820327e3fc1fb913e75683853376c402"
-    sha256 cellar: :any_skip_relocation, ventura:       "5b6d6a07e316007a09ff5841061432e63cf72f160bbf03f416ae8658d40a4b98"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b7f74fe9f592922d6d705f6e7eab029d21c88473dfad893c7310b84e03cd709"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53b1e28bf4469b9e5774dfa9d533705c1a914b6d8518dd6e3bf34056bcd33110"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a1f1557ab3d6578e9589b8e28fc2477ab3ec5fc3224bb5c7f9f81fc69e830b3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f94f9b0dc834181746d00e206d9fc50d4f330602acc33d7ea9b9eadcbec0c11"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2cc3e4e855f52937e2afcfa149e41eeb3dc313e9f54bbb997bf6b312e0957838"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d0fa70a3343c56a5c94ae4c0f22d24346e281fa56c3bbdfd1504942a28464319"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bd708874bf13051728a3c67e18dfb804860024005b049cfd57a15c13a5da4d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3faf4630b940657022c532f496614567061a255234b18fb397530aa5acf36ef3"
   end
 
-  depends_on "certifi"
-  depends_on "cryptography"
-  depends_on "python@3.13"
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
+  depends_on "python@3.14"
 
   uses_from_macos "libffi"
 
@@ -32,8 +31,8 @@ class Buku < Formula
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/d8/e4/0c4c39e18fd76d6a628d4dd8da40543d136ce2d1752bd6eeeab0791f4d6b/beautifulsoup4-4.13.4.tar.gz"
-    sha256 "dbb3c4e1ceae6aefebdaf2423247260cd062430a410e38c66f2baa50a8437195"
+    url "https://files.pythonhosted.org/packages/77/e9/df2358efd7659577435e2177bfa69cba6c33216681af51a707193dec162a/beautifulsoup4-4.14.2.tar.gz"
+    sha256 "2a98ab9f944a11acee9cc848508ec28d9228abfd522ef0fad6a02a72e0ded69e"
   end
 
   resource "blinker" do
@@ -42,13 +41,13 @@ class Buku < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "flask" do
-    url "https://files.pythonhosted.org/packages/c0/de/e47735752347f4128bcf354e0da07ef311a78244eba9e3dc1d4a5ab21a98/flask-3.1.1.tar.gz"
-    sha256 "284c7b8f2f58cb737f0cf1c30fd7eaf0ccfcde196099d24ecede3fc2005aa59e"
+    url "https://files.pythonhosted.org/packages/dc/6d/cfe3c0fcc5e477df242b98bfe186a4c34357b4847e87ecaef04507332dab/flask-3.1.2.tar.gz"
+    sha256 "bf656c15c80190ed628ad08cdfd3aaa35beb087855e2f494910aa3774cc4fd87"
   end
 
   resource "flask-admin" do
@@ -69,6 +68,13 @@ class Buku < Formula
   resource "html5lib" do
     url "https://files.pythonhosted.org/packages/ac/b6/b55c3f49042f1df3dcd422b7f224f939892ee94f22abcf503a9b7339eaf2/html5lib-1.1.tar.gz"
     sha256 "b2e5b40261e20f354d198eae92afc10d750afb487ed5e50f9c4eaf07c184146f"
+
+    # Fix to build with Python 3.14
+    # PR ref: https://github.com/html5lib/html5lib-python/pull/589
+    patch do
+      url "https://github.com/html5lib/html5lib-python/commit/b90dafff1bf342d34d539098013d0b9f318c7641.patch?full_index=1"
+      sha256 "779f8bab52308792b7ac2f01c3cd61335587640f98812c88cb074dce9fe8162d"
+    end
   end
 
   resource "itsdangerous" do
@@ -82,8 +88,8 @@ class Buku < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   resource "python-dateutil" do
@@ -97,18 +103,18 @@ class Buku < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/3f/f4/4a80cd6ef364b2e8b65b15816a843c0980f7a5a2b4dc701fc574952aa19f/soupsieve-2.7.tar.gz"
-    sha256 "ad282f9b6926286d2ead4750552c8a6142bc4c783fd66b0293547c8fe6ae126a"
+    url "https://files.pythonhosted.org/packages/6d/e6/21ccce3262dd4889aa3332e5a119a3491a95e8f60939870a3a035aabac0d/soupsieve-2.8.tar.gz"
+    sha256 "e2dd4a40a628cb5f28f6d4b0db8800b8f581b65bb380b97de22ba5ca8d72572f"
   end
 
   resource "types-python-dateutil" do
-    url "https://files.pythonhosted.org/packages/ef/88/d65ed807393285204ab6e2801e5d11fbbea811adcaa979a2ed3b67a5ef41/types_python_dateutil-2.9.0.20250516.tar.gz"
-    sha256 "13e80d6c9c47df23ad773d54b2826bd52dbbb41be87c3f339381c1700ad21ee5"
+    url "https://files.pythonhosted.org/packages/fc/83/24ed25dd0c6277a1a170c180ad9eef5879ecc9a4745b58d7905a4588c80d/types_python_dateutil-2.9.0.20251008.tar.gz"
+    sha256 "c3826289c170c93ebd8360c3485311187df740166dbab9dd3b792e69f2bc1f9c"
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
-    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
+    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
+    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "urllib3" do

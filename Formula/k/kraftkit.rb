@@ -1,10 +1,9 @@
 class Kraftkit < Formula
   desc "Build and use highly customized and ultra-lightweight unikernel VMs"
   homepage "https://unikraft.org/docs/cli"
-  url "https://ghfast.top/https://github.com/unikraft/kraftkit/archive/refs/tags/v0.11.6.tar.gz"
-  sha256 "7a0cd9b656c34ec801c8bef6716787292f7ab8eada15f6919002e2db267b0801"
+  url "https://ghfast.top/https://github.com/unikraft/kraftkit/archive/refs/tags/v0.12.2.tar.gz"
+  sha256 "b2efe5630f2baec5900d8a1926df650d056ed761f8e7ed9df3e76d5c33f735ba"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/unikraft/kraftkit.git", branch: "staging"
 
   livecheck do
@@ -13,14 +12,12 @@ class Kraftkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "168d1c9d8eefc670572499de24ff8ae9916d44b2d805b32e116f27c063610195"
-    sha256 cellar: :any,                 arm64_sequoia: "92dd7cf9b0a6ad13250d0e7336f05618a251b117d7506697f3b28e86a1b6d342"
-    sha256 cellar: :any,                 arm64_sonoma:  "0b3ee8d9088d401fc36b4aaa578c0c5bccf58063c309cc71b2c31244fce53868"
-    sha256 cellar: :any,                 arm64_ventura: "8812421ccc67f74a2530388fd2b3f4f8d8b50567862dbe016423ce36139231eb"
-    sha256 cellar: :any,                 sonoma:        "95dd5605349986b2cf50fceef06a4dac9fca433ac9a066e0364449c330d4dbc6"
-    sha256 cellar: :any,                 ventura:       "9c7c5d7d86b5c86e7f1353bbbe40e9681e14576b5dd98ce4539a02791828d8d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "72f75b1f3d8010b0773726003c9ad4edd7fcceffe7658cf6d01e0174ba1eb20a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "641a7982b36f6580ebe2e238d5c7b92d2bf9c50da5e17363f07e2c4b64abbc56"
+    sha256 cellar: :any,                 arm64_tahoe:   "d97f0c4b1e0a8d51677d329855e44e413879ff4815f4bcd36f420e67b278b509"
+    sha256 cellar: :any,                 arm64_sequoia: "aed23744682f5ff8bacd009b67182cde3d09d2499135e04c668a10ea0b62f06d"
+    sha256 cellar: :any,                 arm64_sonoma:  "92b9c51a7c7f9b732984758a2952ec436616de49f585d1d213ecfe7501317a72"
+    sha256 cellar: :any,                 sonoma:        "f8aa23c80789f77c982cab25574ab1d76bfa02fbc9666920f169744deb068245"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f703e08aec4d59c15742e07e645e483f9902f0c1d901178fc2b28503f99b312"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "516ace3a3fd2e5f1d8901eaeafd7b0ae12b7815a36e419ccac4ab396be1fa2da"
   end
 
   depends_on "go" => :build
@@ -32,6 +29,8 @@ class Kraftkit < Formula
   end
 
   def install
+    ENV["CGO_ENABLED"] = "1"
+
     ldflags = %W[
       -s -w
       -X kraftkit.sh/internal/version.version=#{version}

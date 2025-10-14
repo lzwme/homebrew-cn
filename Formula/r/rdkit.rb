@@ -5,6 +5,7 @@ class Rdkit < Formula
   url "https://ghfast.top/https://github.com/rdkit/rdkit/archive/refs/tags/Release_2025_09_1.tar.gz"
   sha256 "7fb3510b69af358009e2d0763c1d9665ac34f4c2cd3314cf5210ee3d5a33d501"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
   livecheck do
@@ -16,12 +17,12 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "43bf0a39e4868e6acad21c0cebc87eaf15cb00d705d4c5d386d99651953593e3"
-    sha256                               arm64_sequoia: "2ca0bb99d4a6848746d16933edb761f147531cc4264c378a3a0ac0ce1c82170a"
-    sha256                               arm64_sonoma:  "e1c92d539d117339ee0203ae65edb3dfde6fec4f917375b4fc53e328111bf6b0"
-    sha256 cellar: :any,                 sonoma:        "93410d8d4ed6b2cd1badbe9b349a57b30c53c2c9bd2167e3d77f07294d20dbb3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9248e6f000bc889f54eb38a81a6cd0d0dde17a263821629c84970814180d93c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "527b230f4354a56bcb75048d4f96b803bc675ebab10f3a823374e948ca7b77ff"
+    sha256                               arm64_tahoe:   "196b3bd7410b0dc65624d6d525cc51ca48c69f961f48c4b5d07c2d4b39729a87"
+    sha256                               arm64_sequoia: "fd165ec6200aaa8f8f9989942188fc9f296c3f462e8bdfd47fa002413c17e6a8"
+    sha256                               arm64_sonoma:  "709b6b9976a723b632f865c3d8b9798b977de85ab6e311f9b72b237d137fde2b"
+    sha256 cellar: :any,                 sonoma:        "cf228316aef4978ed51a650420ace449ddddf11b9606924ab5b47b4492f1582d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "442e8e1ab3ca1fbc1b0bd206db18309dbc53f6143ce86ccb11d753dbb2fb9626"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4da31b2d2ad9545c3021cbf4803ed237b9e23ccbf07cd081df32429b34941fa9"
   end
 
   depends_on "catch2" => :build
@@ -39,7 +40,7 @@ class Rdkit < Formula
   depends_on "maeparser"
   depends_on "numpy"
   depends_on "py3cairo"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "better_enums" do
     url "https://ghfast.top/https://github.com/aantron/better-enums/archive/refs/tags/0.11.3.tar.gz"
@@ -47,7 +48,7 @@ class Rdkit < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def postgresqls

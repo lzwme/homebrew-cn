@@ -10,43 +10,42 @@ class PassImport < Formula
   head "https://github.com/roddhjav/pass-import.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b439f4fdc85cb4a5285103bc8c3fc3526800e53611706534e53085ab68940776"
-    sha256 cellar: :any,                 arm64_sequoia: "59113cfc585169c49622aff41d2e9d816d3e44df9978d5b3c80d469abf6e879d"
-    sha256 cellar: :any,                 arm64_sonoma:  "434d68c3443172d74cba7292657dc1e9e9a03c1ce1c781cb7002cc34d701d8ff"
-    sha256 cellar: :any,                 arm64_ventura: "0063ce827cea806f2223ae3c01c57912e06716770911f630c864271698880d89"
-    sha256 cellar: :any,                 sonoma:        "886c4535d374cd68f9902119b43c9733a23f0c99fdd0879aa682c9e01bda9425"
-    sha256 cellar: :any,                 ventura:       "99635afc19cd18f9c90d538d0e21ca0f71fb4dc7110320b451cc375fc016d3e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c26ce676ee18c6e0b30305d8808a9bf22d6baa9dbef19a1d359c96fe7f4710c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9d80cb51ceebc3365946d91bd31998ad42b6808d136221c06c32f1358bf3179"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e959f05da5797bccad20b2a9b821b133700d1adf12159c74c30cb5a805503580"
+    sha256 cellar: :any,                 arm64_sequoia: "0c3715697a0606d21095be44571c74bc6ccae6f37b4a571147e9dbda8371e1c2"
+    sha256 cellar: :any,                 arm64_sonoma:  "2871cbf6f441743f95fa87fa5623db755873a7275f8f1ae7b1a25f2cec3e165a"
+    sha256 cellar: :any,                 sonoma:        "8903d1f226db631bf633237b50db3ce0a99b70ec6af9f3d16ac80117e1763e35"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb527b91d9d6d66c29c235a46e716b590cefef5cd5b8b938c18ddd3363fc4e73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "488aa015e30852a8673c59da4aaa89afe795d787b63e6a7c3826d7657bf6117d"
   end
 
   depends_on "certifi"
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "pyaml" do
-    url "https://files.pythonhosted.org/packages/c1/40/94f10f32ab952c5cca713d9ac9d8b2fdc37392d90eea403823eeac674c24/pyaml-25.5.0.tar.gz"
-    sha256 "5799560c7b1c9daf35a7a4535f53e2c30323f74cbd7cb4f2e715b16dd681a58a"
+    url "https://files.pythonhosted.org/packages/c4/01/41f63d66a801a561c9e335523516bd5f761bc43cc61f8b75918306bf2da8/pyaml-25.7.0.tar.gz"
+    sha256 "e113a64ec16881bf2b092e2beb84b7dcf1bd98096ad17f5f14e8fb782a75d99b"
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "urllib3" do

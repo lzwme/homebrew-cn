@@ -8,18 +8,17 @@ class PodmanCompose < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "46ce97b82c20142278e319e405b0860c7c14df8400ad163c45046b72d4abe0c6"
-    sha256 cellar: :any,                 arm64_sequoia: "bc95b8db01360328a27dbfe521331582424ff9e2558861ffb628fc991bfa0960"
-    sha256 cellar: :any,                 arm64_sonoma:  "106210fb886ed1a3ae18f353f5bb3b1d2406b84c6073f50309b45b08a10eef97"
-    sha256 cellar: :any,                 arm64_ventura: "339634a4030bdfa570be9810d7450ebc040c8602a8283b590a79118beb4b1b1b"
-    sha256 cellar: :any,                 sonoma:        "5b7cf2ab78f0a7c9ca04d7dd874e082ba2c879a26f2c85b84625b2328d94b90a"
-    sha256 cellar: :any,                 ventura:       "6db0a62d4d6abb3a7760c430194e48d6fc588ea1da8ebf56822bfaafa2f80c69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4962aad4d0ab9fca270ea362f25f506e8d002f02c75b8888bc1eb0e1e0ac3d4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "6d9765042f7c657a9988eba299ea87413ebc88b51dd301bf0824eb2f42cb5fbf"
+    sha256 cellar: :any,                 arm64_sequoia: "64ec31c99c8f3eef79b7bff65d15f3aa9fee7c3d2cf10db798934655650b2eb7"
+    sha256 cellar: :any,                 arm64_sonoma:  "b090788eeecfb9762576fc0579cca1e237dbe78fe81d1bf83ec5027ce654550c"
+    sha256 cellar: :any,                 sonoma:        "0c3fef86a51ea1e01f3b292042a21721adbb26b2d3220be6a4cf3d4a64ee1b9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2225e553f4109c8f560ede2cb744456f8c53e625ad1f168cc66f9d4cad789835"
   end
 
   depends_on "libyaml"
   depends_on "podman"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "python-dotenv" do
     url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
@@ -27,8 +26,8 @@ class PodmanCompose < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   def install

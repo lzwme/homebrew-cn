@@ -21,7 +21,7 @@ class Webkitgtk < Formula
   depends_on "gperf" => :build
   depends_on "perl" => :build
   depends_on "pkgconf" => [:build, :test]
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "ruby" => :build
   depends_on "unifdef" => :build
   depends_on "at-spi2-core"
@@ -80,7 +80,7 @@ class Webkitgtk < Formula
       -DUSE_JPEGXL=ON
       -DUSE_LIBBACKTRACE=OFF
       -DUSE_LIBHYPHEN=OFF
-      -DPython_EXECUTABLE=#{which("python3.13")}
+      -DPython_EXECUTABLE=#{which("python3.14")}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

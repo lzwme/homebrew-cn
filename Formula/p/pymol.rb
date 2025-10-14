@@ -10,14 +10,12 @@ class Pymol < Formula
   head "https://github.com/schrodinger/pymol-open-source.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "6955da607c1ecddad82bd0924aeb440efb416c32351f10f1f87e939c90781300"
-    sha256 cellar: :any,                 arm64_sequoia: "7b1f75d8119b84f1090be2954f124fa08ca3ebe34ec9b2ad68889ad5970be9b2"
-    sha256 cellar: :any,                 arm64_sonoma:  "748ce6bec5a5ed59d3520ace556d0cd32ae265fadbe58891f732898f8cb6da85"
-    sha256 cellar: :any,                 arm64_ventura: "355be7a610fda4208cadcaa6bf24e10ecc479436e1dcd1d621fa426c8467308f"
-    sha256 cellar: :any,                 sonoma:        "e2a9a1c776a564ce03f506933b04f85369db1d36b4f960c5616a1c3d020cf969"
-    sha256 cellar: :any,                 ventura:       "cb9de65d304f4c80ab4db5c75b70d8ed3cad27bc70c321d813545c3e88dfb447"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8c1e82b8585b97ab30d595ffbeb51404bf16650037f313f6c3395542f42ec4f"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "05c7ebc310a6c2ec2e91da1a897470ef61750b97c18d31879c80e9562bb4c7a0"
+    sha256 cellar: :any,                 arm64_sequoia: "262b8a1c6702c62c9e21d3593e0575e5496165b9d93d67841d9d2faa6ac94f67"
+    sha256 cellar: :any,                 arm64_sonoma:  "77dfd4698b6e5b90f3e4a9117301c020e6b3b67b16e5c76e1886a0f17a1c5612"
+    sha256 cellar: :any,                 sonoma:        "4958fb877f750f6d443c407c265a73839dfdc98a600845ca6f90af766d26925d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c162a6c917186bb44563bcf497476a0a5c7e4be2c2847a9337ac282d4831c396"
   end
 
   depends_on "cmake" => :build
@@ -31,7 +29,7 @@ class Pymol < Formula
   depends_on "netcdf"
   depends_on "numpy"
   depends_on "pyqt"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "libxml2"
 
@@ -68,7 +66,7 @@ class Pymol < Formula
   end
 
   def python3
-    which("python3.13")
+    which("python3.14")
   end
 
   def install

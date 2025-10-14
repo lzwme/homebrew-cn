@@ -6,14 +6,13 @@ class Profanity < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "a7cc2b3e861cb3d12a02341c8f874b40d43098f4643ea0c3436c300c60412f54"
-    sha256 arm64_sequoia: "df081e8fe94ff007d6b4bd3a1f8843de1756c62be4173da534dbc6420ae89f38"
-    sha256 arm64_sonoma:  "801eb3f994c2fd9b9ec8345e2f34cb22ae10b8a0a9634e5a05425610d26a41ab"
-    sha256 arm64_ventura: "e777d8e4d9eaa49db36f165b31fb4472e06bb3bd820f505ddce25e0549ed2488"
-    sha256 sonoma:        "9754d8ff9eaf93428ce7b5ee3324c1e724859c152c8fb810ce059167601d3468"
-    sha256 ventura:       "3a370dc3e765d5b4aae9994472ebf502fc1409356388a16e803352ae997c92cd"
-    sha256 arm64_linux:   "ad5ed73c5aea238ec66eea66552c4bbd14b2381c9a6d21f54880f469ebd993bf"
-    sha256 x86_64_linux:  "96bbdc1bd7b27e3e6b42e8e2e964b799ff20b5d2d7c520ef7f6d48aa97832bef"
+    rebuild 1
+    sha256 arm64_tahoe:   "f9b9d4492654717f9424c1e2f791a7090ca707aa0717890e7817934ad66692eb"
+    sha256 arm64_sequoia: "c0b93ead858fcc1b75252816960ed823229b1a26e13c23acf2fd9e6cf3e319aa"
+    sha256 arm64_sonoma:  "dfc08a97ed654765ec4e180b4be29f27997f44460c8b8cb00a86d5bd53f3b886"
+    sha256 sonoma:        "8992d942be22bb4ea9907fd43400795c022881ce0bca0502a80396eadfe90a8d"
+    sha256 arm64_linux:   "6d086793018f24cefa935a296be7b985a5fd749f16ed91f20f68b258c061fe50"
+    sha256 x86_64_linux:  "d71c0460eeeb71db2e81733d8745386265154e77329080a71d26733a5b58ecfe"
   end
 
   head do
@@ -35,7 +34,7 @@ class Profanity < Formula
   depends_on "libgcrypt"
   depends_on "libotr"
   depends_on "libstrophe"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "readline"
   depends_on "sqlite"
 
@@ -49,7 +48,7 @@ class Profanity < Formula
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.13"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@3.14"].opt_libexec/"bin"
 
     system "./bootstrap.sh" if build.head?
 

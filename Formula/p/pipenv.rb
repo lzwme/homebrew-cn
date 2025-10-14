@@ -8,32 +8,30 @@ class Pipenv < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52cd5741d03f0b5798c3746b569917b96c7c645a6304adf04abb95f43ea1a766"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d893071d832157295d63f41328a99011754fa494cae1145dae161b0f6a134523"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d893071d832157295d63f41328a99011754fa494cae1145dae161b0f6a134523"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d893071d832157295d63f41328a99011754fa494cae1145dae161b0f6a134523"
-    sha256 cellar: :any_skip_relocation, sonoma:        "012d62423d083b855864de35e3493e7e0195cb560a1720b166d8db3b7302789e"
-    sha256 cellar: :any_skip_relocation, ventura:       "012d62423d083b855864de35e3493e7e0195cb560a1720b166d8db3b7302789e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ed68be928dd68a2571a09ddac28d8eb376efd1fa246cae3f29be4a1658e6698"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ed68be928dd68a2571a09ddac28d8eb376efd1fa246cae3f29be4a1658e6698"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07cffcfd928212629021bb5f0ee06f81afdb9b37cbec8dea985436b4715e2877"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07cffcfd928212629021bb5f0ee06f81afdb9b37cbec8dea985436b4715e2877"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07cffcfd928212629021bb5f0ee06f81afdb9b37cbec8dea985436b4715e2877"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8e8db95cc1c6e320e5e6aef90b4ea31ecbb9708d5763244f2ec93e71917d4354"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e8db95cc1c6e320e5e6aef90b4ea31ecbb9708d5763244f2ec93e71917d4354"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e8db95cc1c6e320e5e6aef90b4ea31ecbb9708d5763244f2ec93e71917d4354"
   end
 
-  depends_on "certifi"
-  depends_on "python@3.13"
+  depends_on "certifi" => :no_linkage
+  depends_on "python@3.14"
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   resource "distlib" do
-    url "https://files.pythonhosted.org/packages/0d/dd/1bec4c5ddb504ca60fc29472f3d27e8d4da1257a854e1d96742f15c1d02d/distlib-0.3.9.tar.gz"
-    sha256 "a60f20dea646b8a33f3e7772f74dc0b2d0772d2837ee1342a00645c81edf9403"
+    url "https://files.pythonhosted.org/packages/96/8e/709914eb2b5749865801041647dc7f4e6d00b549cfe88b65ca192995f07c/distlib-0.4.0.tar.gz"
+    sha256 "feec40075be03a04501a973d81f633735b4b69f98b05450592310c0f401a4e0d"
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/0a/10/c23352565a6544bdc5353e0b15fc1c563352101f30e24bf500207a54df9a/filelock-3.18.0.tar.gz"
-    sha256 "adbc88eabb99d2fec8c9c1b229b171f18afa655400173ddc653d5d01501fb9f2"
+    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
+    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
   end
 
   resource "packaging" do
@@ -42,8 +40,8 @@ class Pipenv < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/fe/8b/3c73abc9c759ecd3f1f7ceff6685840859e8070c4d947c93fae71f6a0bf2/platformdirs-4.3.8.tar.gz"
-    sha256 "3d512d96e16bcb959a814c9f348431070822a6496326a4be0911c40b5a74c2bc"
+    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
+    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
   resource "setuptools" do
@@ -52,8 +50,8 @@ class Pipenv < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/56/2c/444f465fb2c65f40c3a104fd0c495184c4f2336d65baf398e3c75d72ea94/virtualenv-20.31.2.tar.gz"
-    sha256 "e10c0a9d02835e592521be48b332b6caee6887f332c111aa79a09b9e79efc2af"
+    url "https://files.pythonhosted.org/packages/a4/d5/b0ccd381d55c8f45d46f77df6ae59fbc23d19e901e2d523395598e5f4c93/virtualenv-20.35.3.tar.gz"
+    sha256 "4f1a845d131133bdff10590489610c98c168ff99dc75d6c96853801f7f67af44"
   end
 
   def install

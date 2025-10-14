@@ -4,20 +4,21 @@ class Opencolorio < Formula
   url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/refs/tags/v2.5.0.tar.gz"
   sha256 "124e2bfa8a9071959d6ddbb64ffbf78d3f6fe3c923ae23e96a6bbadde1af55b6"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/AcademySoftwareFoundation/OpenColorIO.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9bc3db962e7e25e36d4abb16918a9501ef5716f2ad98d660b6fb37ca60368203"
-    sha256 cellar: :any,                 arm64_sequoia: "5245f2fddc131ba247768a3b5b60bf7bf13e0f9b6b74fa6eabd2f84446e54950"
-    sha256 cellar: :any,                 arm64_sonoma:  "ed0ff9d02dfc2c5eecf684a84deda3c7afbbb69283ff887a7f4d8166d8671a9d"
-    sha256 cellar: :any,                 sonoma:        "4e40ec32c90362291b2a70f99bcad4e89b8fc2b01de96a7e29733dfb8bc78e44"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae718e50f8ac3c52f94aad223c7acba70a058f656ef6357d54828082a9df88f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfaddc5940f942ebe23f415e86a58f89b35b72fcc52ff83d583c33f3ebd7fec5"
+    sha256 cellar: :any,                 arm64_tahoe:   "738ce461e519c5fd7152f30062ac4a442804fbdd63ae512bbcd46611c65ec1b0"
+    sha256 cellar: :any,                 arm64_sequoia: "a3127f5babe50de226870be9f2131866579a3d8eec456f8ae09dde36923320c4"
+    sha256 cellar: :any,                 arm64_sonoma:  "48eb52eccef42fbfd2989e4d0594daaf8e92d8c3f26fd04fc9274cb2c65ff46b"
+    sha256 cellar: :any,                 sonoma:        "3880e7c3cd868f639b7e4e301bcffeea401d1759f37cb6668dcd051580520798"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "260e50ee7fec0ac4e8202e6218d6bbc78d3b3e7e07ae5c14feb0615a687f34eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b9c555f35b202205d39bbcb983aeb1eafba765b0bd8a709df860b23a3fe6a08"
   end
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
-  depends_on "python@3.13" => [:build, :test] # for bindings, avoid runtime dependency due to `expat`
+  depends_on "python@3.14" => [:build, :test] # for bindings, avoid runtime dependency due to `expat`
   depends_on "expat"
   depends_on "imath"
   depends_on "little-cms2"
@@ -32,7 +33,7 @@ class Opencolorio < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

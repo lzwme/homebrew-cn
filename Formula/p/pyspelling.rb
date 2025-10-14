@@ -8,26 +8,25 @@ class Pyspelling < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "18ddb16f81f214a25157456570ca04f67efff77f64cd7d9d6ec8048a7109d39b"
-    sha256 cellar: :any,                 arm64_sequoia: "56b569bbf6a38dc26c47df5325212468f75ddb5f5809672948294db126273c2a"
-    sha256 cellar: :any,                 arm64_sonoma:  "7524282f70b1fedadcb636fad65d98b8c5813a353c754e505eb0c9764dea7d4e"
-    sha256 cellar: :any,                 arm64_ventura: "776eda5513b84fbe395300fb59541abc0643ef5e631042f9deacfd76d0d85c11"
-    sha256 cellar: :any,                 sonoma:        "d6ca132d25a2d953ee71f58f5d92b70d994d49590187559a0c580d581dbf502c"
-    sha256 cellar: :any,                 ventura:       "df3a9d8e993ddfe610b55150104856c4ddb8b71564669fc96b98c182c9fffb65"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b514fcb5374cbaf19ca7870558d2b566368d44aba02d676ae66076a4959bfdd4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e453cb9ab623206b1ef428c7f939c1b1ec8af6a50e30ed0717980754a3b0bcf"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "89819bd6cc7ff5d2086219eeea23cc02919df6c0b285d75c8345df25ab811cd1"
+    sha256 cellar: :any,                 arm64_sequoia: "969cbf03524de3d355d2c40fa209014ea1894cb7bbacb319b5c61dc4796e8a69"
+    sha256 cellar: :any,                 arm64_sonoma:  "6e9be9f3470b46ceb00ebd748ffcd1c54fed46e98081a4c3213aa51e703a6c74"
+    sha256 cellar: :any,                 sonoma:        "46d705386136a7c97696bc228d6f093c8575cdbcacdea64f8edcdacec2b735ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a1391454dac6b31301316c09cf9a1c414d379e1322e931489c336cf6ee91223"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dddabe9caaca026b54f5860a184fe8e5dfec18c2174d2ac7c8bd976af51e70d"
   end
 
   depends_on "aspell" => :test
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/85/2e/3e5079847e653b1f6dc647aa24549d68c6addb4c595cc0d902d1b19308ad/beautifulsoup4-4.13.5.tar.gz"
-    sha256 "5e70131382930e7c3de33450a2f54a63d5e4b19386eab43a5b34d594268f3695"
+    url "https://files.pythonhosted.org/packages/77/e9/df2358efd7659577435e2177bfa69cba6c33216681af51a707193dec162a/beautifulsoup4-4.14.2.tar.gz"
+    sha256 "2a98ab9f944a11acee9cc848508ec28d9228abfd522ef0fad6a02a72e0ded69e"
   end
 
   resource "bracex" do
@@ -38,21 +37,28 @@ class Pyspelling < Formula
   resource "html5lib" do
     url "https://files.pythonhosted.org/packages/ac/b6/b55c3f49042f1df3dcd422b7f224f939892ee94f22abcf503a9b7339eaf2/html5lib-1.1.tar.gz"
     sha256 "b2e5b40261e20f354d198eae92afc10d750afb487ed5e50f9c4eaf07c184146f"
+
+    # Fix to build with Python 3.14
+    # PR ref: https://github.com/html5lib/html5lib-python/pull/589
+    patch do
+      url "https://github.com/html5lib/html5lib-python/commit/b90dafff1bf342d34d539098013d0b9f318c7641.patch?full_index=1"
+      sha256 "779f8bab52308792b7ac2f01c3cd61335587640f98812c88cb074dce9fe8162d"
+    end
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/8f/bd/f9d01fd4132d81c6f43ab01983caea69ec9614b913c290a26738431a015d/lxml-6.0.1.tar.gz"
-    sha256 "2b3a882ebf27dd026df3801a87cf49ff791336e0f94b0fad195db77e01240690"
+    url "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz"
+    sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
   end
 
   resource "markdown" do
-    url "https://files.pythonhosted.org/packages/d7/c2/4ab49206c17f75cb08d6311171f2d65798988db4360c4d1485bd0eedd67c/markdown-3.8.2.tar.gz"
-    sha256 "247b9a70dd12e27f67431ce62523e675b866d254f900c4fe75ce3dda62237c45"
+    url "https://files.pythonhosted.org/packages/8d/37/02347f6d6d8279247a5837082ebc26fc0d5aaeaf75aa013fcbb433c777ab/markdown-3.9.tar.gz"
+    sha256 "d2900fe1782bd33bdbbd56859defef70c2e78fc46668f8eb9df3128138f2cb6a"
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "six" do

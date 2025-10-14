@@ -9,21 +9,22 @@ class Pwntools < Formula
   head "https://github.com/Gallopsled/pwntools.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1959a0527965fc75a6acb93e1bda8132b10dfeb170fc9aac24e2423872c9b768"
-    sha256 cellar: :any,                 arm64_sequoia: "b7697ef823a528e85be2aafc31a50331e199b7c53e00f118833d525fda64472e"
-    sha256 cellar: :any,                 arm64_sonoma:  "c007b6e1534b9a40e04fdd3521258b699c6820f512a92e3159ea31b9c24bdd8d"
-    sha256 cellar: :any,                 sonoma:        "f28c91f3be0fbb8df34287f488450333934060b5fd0311dea160795c08f27a19"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1451ec04fa661a74ca9594fda092b9a4863957bf0f5c94713a1a95caf28a16d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a57c3543374f3d4de3ee7254e27d11951eb5a4fcc4d0d0f600aad2210f6c19f5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "4c355eda7c35221bc892f10b1ee92f1b7f91ce1ed8170f22fc8c05216ffc5710"
+    sha256 cellar: :any,                 arm64_sequoia: "b55c6551ef56de78b535e116434f699d1690918bd6085a42221cbd135968c561"
+    sha256 cellar: :any,                 arm64_sonoma:  "b11119452f91e64a62dce1eb574b64466629381d13c36914cd0c8a659095f28c"
+    sha256 cellar: :any,                 sonoma:        "541ed20ad304e85dde99114cff63f2c0ac2b313e2b09a254f5f3496a8022161a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7991431d3e5e52fc0e38a04d55a08bbc80b2bed541b320522e4d3fe44d74baf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f55b7d5850811f509a03834f25d042123337192d06cc1611299c88098662acc"
   end
 
   depends_on "rust" => :build # for bcrypt
   depends_on "capstone"
-  depends_on "certifi"
-  depends_on "cryptography"
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "libsodium" # for pynacl
-  depends_on "python@3.13"
-  depends_on "unicorn" # for unicorn resource
+  depends_on "python@3.14"
+  depends_on "unicorn" => :no_linkage # for unicorn resource
 
   uses_from_macos "libffi"
 

@@ -8,18 +8,17 @@ class Pytr < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe6aae99a6371d6dd98f92265d2072262f65eefa1819c8b3d652dd0bbab9e34c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e15180dc894fb8d6b5e8e0d428c2d475d3cfc3a4b9d35f483bb4ef39d7b3afa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f203c500eae91979de17e169e36e73bd74b4dde9dfb2020ad753f7d2ef14ac0a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "090fafa62e298525f98595525eb6d6067f3f4e0b031df693672c9d4baf7183e6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "259a655a1e4bcde2d31076f038b1c9d603eb493ae03ac013fea322cdc640dea4"
-    sha256 cellar: :any_skip_relocation, ventura:       "0a657f178c6ae21ac8f10a7cd1000ebf973eecc65e7ceee1d565e1241a25a770"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "acbadf148c8be40f6dfad04e50a2f08ffb73a89b33509157a4881ff6ac543ad1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3258625c0144224b99878d1fc501df98a51cd832213d31c8c773f883f165b28a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ce4afa2775d6b3801e1ddbd689da1afcb7a0a5eba86fc861fee2fef6941d63aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c246d51a03a047b132bc9ad7eb76d5c7b32990157d263455f2de1d16867268a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5340a8c3a09673d014cb6d70b25cd672644afc1af225de34f44179d9fb231ff6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dfb75231d784e3c3355874cd04f7fa2d8234d61c19f115b6eb0d4009085fb187"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7dca9ec90ace62ea5dd60fed9a42fd62269e051c9965eadbb7c220b0696b2e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "088a05e597cfd7e65a61503d74057a564ec8528c1f639e4a1c3e6221d364d251"
   end
 
-  depends_on "certifi"
-  depends_on "python@3.13"
+  depends_on "certifi" => :no_linkage
+  depends_on "python@3.14"
 
   resource "babel" do
     url "https://files.pythonhosted.org/packages/7d/6b/d52e42361e1aa00709585ecc30b3f9684b3ab62530771402248b1b1d6240/babel-2.17.0.tar.gz"
@@ -27,8 +26,8 @@ class Pytr < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "coloredlogs" do
@@ -47,8 +46,8 @@ class Pytr < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "packaging" do
@@ -67,8 +66,8 @@ class Pytr < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "requests-futures" do

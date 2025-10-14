@@ -12,12 +12,13 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a42882281fcec99195dc5e86ccf28e8cc2db8caee7732cd78347a5129201bf8e"
-    sha256 arm64_sequoia: "f1b312d342139b8f57371470c4189df0ba174b74133551a249d6a2ce3abf046b"
-    sha256 arm64_sonoma:  "babb5571b4e718b54a637888a62733729b0d3703c987ee0d86e851730b252b7b"
-    sha256 sonoma:        "49e6d2ff0d080f203d0990e79bbac961fea2f4dc4a6af92b20d176c32979f04f"
-    sha256 arm64_linux:   "4bf371f318df6bbefb8007fbf20d59b5af64f9b0c43b9ec56bd305cadedd8638"
-    sha256 x86_64_linux:  "82d793361cf1fbe091e731db6645c9a300af75059a415698038a1fb1d50ad0cd"
+    rebuild 1
+    sha256 arm64_tahoe:   "c89ca22e152b63293e4323b427bffb3f4fae6b0cfd52d342a76d07a0a0db1fd0"
+    sha256 arm64_sequoia: "b59155fcc0b6d1c75e5f5325179cd97d1fe6724d75e0cba0dd0bd4ae3f321cb7"
+    sha256 arm64_sonoma:  "37af88b764ea1a142c8b1148e6fd4fcd2f57eac2d68b0dc75c4b9a883dd1f745"
+    sha256 sonoma:        "7c4367eecd2baf026b90288615e5e8f04caf917170129d2bfab8017648eecbf7"
+    sha256 arm64_linux:   "452e05469390d8f9df7cf1acf15f0289c0209baac3ce63f07cd3e47365ddabcb"
+    sha256 x86_64_linux:  "410ceceb7654f10487dd822d503d710b728b41d5803b94acf7b195986dafb579"
   end
 
   depends_on "pkgconf" => :build
@@ -174,7 +175,9 @@ class Node < Formula
     ln_s libexec/"lib/node_modules/npm/bin/npm-cli.js", bin/"npm"
     ln_s libexec/"lib/node_modules/npm/bin/npx-cli.js", bin/"npx"
 
-    bash_completion.install bootstrap/"lib/utils/completion.sh" => "npm"
+    generate_completions_from_executable(bin/"npm", "completion",
+                                         shells:                 [:bash, :zsh],
+                                         shell_parameter_format: :none)
   end
 
   def post_install

@@ -9,17 +9,18 @@ class Pdfalyzer < Formula
   head "https://github.com/michelcrypt4d4mus/pdfalyzer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "aacd2256b7553c446ff28a34d194336f4d4c20938b61b93abadb18f3f43c0d93"
-    sha256 cellar: :any,                 arm64_sequoia: "ce5b266d3eac7007b4dcd377f9a187d146ccf40ca11b17b1517f1ea6ce0eeed0"
-    sha256 cellar: :any,                 arm64_sonoma:  "affb0cd72ada8a2396f004bac1c15a23f48d38c5ecfd174695b5267972090fe9"
-    sha256 cellar: :any,                 sonoma:        "6357b4696965592dc35247753c45e2d4e262dc6513316f0cac6290f3c044668c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "92ae8640107b342cd2688e018107be412bd42baf0d162e0cc37fa90931abbc0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7a53100579cc86a5b6477be2806ed75a48888e9d23a71e82d2fb3f6c65a0538"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "69c602cfd33512f0108e25ff9be7a7568ef589beb95b2f4ce76b42d47076d94b"
+    sha256 cellar: :any,                 arm64_sequoia: "fbab62d46b3cef7cd668c03f51c52e8e2466e484f0888c616acf0f54cf1b464a"
+    sha256 cellar: :any,                 arm64_sonoma:  "852910fdeeafdb3b760031473a6572c3b3ab681ca97931f6ce4d3b056e501f29"
+    sha256 cellar: :any,                 sonoma:        "190b71ebbfad656a9dff47c4752e78734a86ecf4e078e7ec536959522e6392ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a9d6a335afad6388c3753429985f97867d7be431ac9080840169f069d0d8089"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e01b6388a64591123356b8150a46dbcb9461239ffe47445eeca455edaa144c0c"
   end
 
   depends_on "openssl@3"
   depends_on "pillow"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "anytree" do
     url "https://files.pythonhosted.org/packages/bc/a8/eb55fab589c56f9b6be2b3fd6997aa04bb6f3da93b01154ce6fc8e799db2/anytree-2.13.0.tar.gz"
@@ -47,8 +48,8 @@ class Pdfalyzer < Formula
   end
 
   resource "pypdf" do
-    url "https://files.pythonhosted.org/packages/0b/ac/44d86f16b8ad9b42ea1da4b9aa145be71c89927566d9be87fe74bda1dfef/pypdf-6.1.0.tar.gz"
-    sha256 "0cba440d024da5a2a9304f03cd645346052827b84c5a461c6123e24ed5a3b0b9"
+    url "https://files.pythonhosted.org/packages/a6/85/4c0f12616db83c2e3ef580c3cfa98bd082e88fc8d02e136bad3bede1e3fa/pypdf-6.1.1.tar.gz"
+    sha256 "10f44d49bf2a82e54c3c5ba3cdcbb118f2a44fc57df8ce51d6fb9b1ed9bfbe8b"
   end
 
   resource "python-dotenv" do
@@ -57,8 +58,8 @@ class Pdfalyzer < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
-    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "rich-argparse-plus" do

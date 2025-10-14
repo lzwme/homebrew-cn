@@ -10,20 +10,19 @@ class Pythran < Formula
   head "https://github.com/serge-sans-paille/pythran.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06eb114076653c28cc5b7a62bea5edd0397b162d6910ed177403160f8c50b861"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b05f9f5d438629de63a6dffad208706e2f9713ed74f6f4decf4a4f4ae71622f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b05f9f5d438629de63a6dffad208706e2f9713ed74f6f4decf4a4f4ae71622f4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b05f9f5d438629de63a6dffad208706e2f9713ed74f6f4decf4a4f4ae71622f4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5604d6f544abd885a4c193e7c4661879f6cd987728e88e64f953ee31e5f6c20c"
-    sha256 cellar: :any_skip_relocation, ventura:       "5604d6f544abd885a4c193e7c4661879f6cd987728e88e64f953ee31e5f6c20c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "063f1a611ffd15661000c9c6ce8c20ab361d1c86438d32b5297104db7b5d9421"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "063f1a611ffd15661000c9c6ce8c20ab361d1c86438d32b5297104db7b5d9421"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ba138882ae0352d6e01ba04f7aaa06983cc3f1f77c1f6018def8db0420436f2a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba138882ae0352d6e01ba04f7aaa06983cc3f1f77c1f6018def8db0420436f2a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba138882ae0352d6e01ba04f7aaa06983cc3f1f77c1f6018def8db0420436f2a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eb21d693f082e1a34a0fc8049c1c36da9a88570683e1e58f6465fca470e19af9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "550ea45f043411e2b794b1359e80146f2c07cc3d97f4890a7cb5aabd75f77324"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "550ea45f043411e2b794b1359e80146f2c07cc3d97f4890a7cb5aabd75f77324"
   end
 
   depends_on "gcc" # for OpenMP
   depends_on "numpy"
   depends_on "openblas"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "beniget" do
     url "https://files.pythonhosted.org/packages/2e/27/5bb01af8f2860d431b98d0721b96ff2cea979106cae3f2d093ec74f6400c/beniget-0.4.2.post1.tar.gz"
@@ -41,8 +40,8 @@ class Pythran < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/8d/d2/ec1acaaff45caed5c2dedb33b67055ba9d4e96b091094df90762e60135fe/setuptools-80.8.0.tar.gz"
-    sha256 "49f7af965996f26d43c8ae34539c8d99c5042fbff34302ea151eaa9c207cd257"
+    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   def install
@@ -61,7 +60,7 @@ class Pythran < Formula
   end
 
   test do
-    python3 = which("python3.13")
+    python3 = which("python3.14")
     pythran = Formula["pythran"].opt_bin/"pythran"
 
     (testpath/"dprod.py").write <<~PYTHON

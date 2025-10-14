@@ -10,22 +10,21 @@ class Httpie < Formula
   head "https://github.com/httpie/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "acd7e0e6dfc5f70cdb233bbcd86b9f787ea61b8b512df597fbec0793c266af6b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbda2c1ab0caf612205ab7af6653a21a8dadcdb4109e5905fc28a16e34b3ed73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0055b5be143a4e97d1be67b9b193763e93e5eedb98551e78476ded275f7ef99"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8bb20fe439b3c2e0dc5c5cb532a386d8fb6472312e39b4f198868ae5b8d454ed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b2322111f5e6ab3012f33114b67caed2755918ecc0dd2e5f3309091d5174cdeb"
-    sha256 cellar: :any_skip_relocation, ventura:       "36d37512343ad7d18f23256f0e8a72ddcd96aad7421f2cfd8e0f60ad1ccd64c2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac7e30c0b40817c5fd95fbf1cf83c75b621049873ca27b673c245c6abdbd7481"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "070ba5a53bc32fb3667c76e4011b04a807ff7423103a5039ac4a27f8d8a49ed6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6cd5ebdfa42149066fc8219cbae95d2dee2df77a4bade748eba2a7e4ff478a31"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07270cb3f4679b81cbfba09a61437dd34557a523061d9129afecf313a24a0d4e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "97589007a68dfabd0d487e4a354ee0cd730e6a10fe1f1f90469be098a71ef13e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "33a6c1e2a0c06ae537f67d9883edc235c1c4578c6c3cc31ebac3f4ac2fc78451"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a04159d83a728bf43ebef3dd87e90957f603df1ff57975feeaa9a96debccac9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1ece0e8a0fd64a456934e5bb15a58470db7c3cd6f4886db2aa0205be7701f79"
   end
 
   depends_on "certifi"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "defusedxml" do
@@ -34,13 +33,13 @@ class Httpie < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
-    sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
+    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
+    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
   end
 
   resource "mdurl" do
@@ -49,8 +48,8 @@ class Httpie < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/3d/2c/5dad12e82fbdf7470f29bff2171484bf07cb3b16ada60a6589af8f376440/multidict-6.6.3.tar.gz"
-    sha256 "798a9eb12dab0a6c2e29c1de6f3468af5cb2da6053a20dfa3344907eed0937cc"
+    url "https://files.pythonhosted.org/packages/80/1e/5492c365f222f907de1039b91f922b93fa4f764c713ee858d235495d8f50/multidict-6.7.0.tar.gz"
+    sha256 "c6e99d9a65ca282e578dfea819cfa9c0a62b2499d8677392e09feaf305e9e6f5"
   end
 
   resource "pygments" do
@@ -64,8 +63,8 @@ class Httpie < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "requests-toolbelt" do
@@ -74,8 +73,8 @@ class Httpie < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/a1/53/830aa4c3066a8ab0ae9a9955976fb770fe9c6102117c8ec4ab3ea62d89e8/rich-14.0.0.tar.gz"
-    sha256 "82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "setuptools" do
@@ -91,7 +90,7 @@ class Httpie < Formula
   def install
     # We use a special file called __build_channel__.py to denote which source
     # was used to install httpie.
-    File.write("httpie/internal/__build_channel__.py", "BUILD_CHANNEL = \"homebrew\"")
+    File.write("httpie/internal/__build_channel__.py", 'BUILD_CHANNEL = "homebrew"')
 
     virtualenv_install_with_resources
 

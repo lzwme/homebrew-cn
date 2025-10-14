@@ -8,13 +8,13 @@ class PassGitHelper < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "5ca21ed77560dbc41f82d6963381ae882bde5e241db12fb2b8d02a187b2ca27c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "a87f16bb19ee93230218979b8939bcc37229405bc6630487e541e083309b2359"
   end
 
   depends_on "gnupg" => :test
   depends_on "pass"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "pyxdg" do
     url "https://files.pythonhosted.org/packages/b0/25/7998cd2dec731acbd438fbf91bc619603fc5188de0a9a17699a781840452/pyxdg-0.28.tar.gz"

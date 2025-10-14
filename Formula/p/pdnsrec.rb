@@ -11,18 +11,17 @@ class Pdnsrec < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "208a4cc406f6f7190d4b86c443296638625dd770b4ead37eb6153ca0dad8d390"
-    sha256 arm64_sequoia: "6af01a0b02114906fa491385259e9c0500b2e8ea26fcb0391a0249f6628f4115"
-    sha256 arm64_sonoma:  "f46a8cb127071ff5115a18b7b60a9b351a55b0a827a54523ef819a8843d78326"
-    sha256 arm64_ventura: "16c1f711c5c575ed8ba69d01b9dd1d6e46fccc4291ac352d515d0e46253a9b29"
-    sha256 sonoma:        "fec55e5d001e2fb771789a7eb7b7b881d2dd992edd8d6c46b49f25a5bb0ab56d"
-    sha256 ventura:       "109ccc1f50960db7619a810c0f0fa82865496cbf7dce0cdf5371656777a11de3"
-    sha256 arm64_linux:   "4bf7b1e6155c148ccc40464fab0478bb3867d4dba0436e780f5bf23a21aec583"
-    sha256 x86_64_linux:  "4191d1f1d33a3bb5de04198aa318bf8dd972505c4a95610248ea3e39ce354c9e"
+    rebuild 1
+    sha256 arm64_tahoe:   "b1eb204ba5badae13514fb5306c443df3a6aa0d99a96f7cd2f17062483933201"
+    sha256 arm64_sequoia: "a48c04c065ce45f9e4e9fff9540317701482cfe85260d21a2fa1989b826af4e1"
+    sha256 arm64_sonoma:  "b1eaf4b034e953c9eb323b7c93f35cdffa425bba433c8caf5652e486777ba141"
+    sha256 sonoma:        "2114a01bd1542640120c895854bc780b18388b1ccda2c2e344a7e9ae6c4291e0"
+    sha256 arm64_linux:   "ca9f5534c1c0d8eb5c73e482acb23a0a438bf89dc032d4cb6215814c775b35a7"
+    sha256 x86_64_linux:  "d75a475b665395141db5d42726abd61c904b379bd500fa352b4df7a7ad7f031f"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "rust" => :build
   depends_on "boost"
   depends_on "lua"

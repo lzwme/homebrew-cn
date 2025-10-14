@@ -1,8 +1,8 @@
 class Tinysparql < Formula
   desc "Low-footprint RDF triple store with SPARQL 1.1 interface"
   homepage "https://tinysparql.org/"
-  url "https://download.gnome.org/sources/tinysparql/3.10/tinysparql-3.10.0.tar.xz"
-  sha256 "fb0af98355ea1db700764cf4fa245884a199ca145ed42ed55f9a18c68552ca30"
+  url "https://download.gnome.org/sources/tinysparql/3.10/tinysparql-3.10.1.tar.xz"
+  sha256 "5a7f3e789db6671a550ed6280ed4f60a60bea77368da92be68dc7d8d7e230265"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
   head "https://gitlab.gnome.org/GNOME/tinysparql.git", branch: "main"
 
@@ -15,13 +15,12 @@ class Tinysparql < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "7d21caab597880797e3387df79d2eb9ccb2cc53d99c70e1831a3d09bbcdbfbfa"
-    sha256 arm64_sequoia: "fd62d5ed2ef69d01a291154d9a8be5d421fd610a42b022ed6c89d551da6f4baf"
-    sha256 arm64_sonoma:  "da029da1c38448dfb3fd53a065ef6785774cfff8dd6e2cf300e1f11c602543f0"
-    sha256 sonoma:        "be75e0ee38822145e345452791d05631a88404bb0dedf7c29d063965fbf80ca3"
-    sha256 arm64_linux:   "9093fffad5890d83dbacc8ce924e9a82146ed7c303d85d71fbd02df576447ecc"
-    sha256 x86_64_linux:  "50bf08823b13e6d15cc0520c101de74d3215d60e6b9150f5cff2272119011142"
+    sha256 arm64_tahoe:   "90a9d4e285934a23cfb38b4a8410f19f9b20e0086447f34d5489b953bf950253"
+    sha256 arm64_sequoia: "1f73787281850f174147e4a66a4be08baa96539bb61debc4f464cae1ab45eabe"
+    sha256 arm64_sonoma:  "236421dcbf8307292b06b0a8599a1a694d1cd4ac4faad453e0f53190a59e15fa"
+    sha256 sonoma:        "40eb8fa83ed0f88fabb44b05e68dec6ed7b79719929cab94e2037f40f1dab09c"
+    sha256 arm64_linux:   "41dee40c34bf2f0c6556060937d92f8eca469425a82707d098eeefea9a88b011"
+    sha256 x86_64_linux:  "d06043b1ac9cd894653d4ea399765da704dc8ba2e7768405b9f0ce9bea75dc47"
   end
 
   depends_on "gettext" => :build

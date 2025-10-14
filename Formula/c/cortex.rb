@@ -1,8 +1,8 @@
 class Cortex < Formula
   desc "Long term storage for Prometheus"
   homepage "https://cortexmetrics.io/"
-  url "https://ghfast.top/https://github.com/cortexproject/cortex/archive/refs/tags/v1.19.0.tar.gz"
-  sha256 "7cb6b312f67263e40fef3a99afb7d12bce69fe035e7b787b9c1efb4bf7a693bc"
+  url "https://ghfast.top/https://github.com/cortexproject/cortex/archive/refs/tags/v1.19.1.tar.gz"
+  sha256 "f60a9584860d8e38333aa3914024ce09ee470397fdca9c9f3b22dac7f7873a41"
   license "Apache-2.0"
   head "https://github.com/cortexproject/cortex.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Cortex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f4b133713c3b52a707bdf12aa38c1de0680112b055434a9123157077e0451a36"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ddcda7547e90bde4e7466eed576f853d1b024fa730f6a2083f35db2ece003a0f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ddcda7547e90bde4e7466eed576f853d1b024fa730f6a2083f35db2ece003a0f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ddcda7547e90bde4e7466eed576f853d1b024fa730f6a2083f35db2ece003a0f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6b2f54b88703909eb151d7d7af35b576a36bb1d6f58c1401f7b1e884e14ca123"
-    sha256 cellar: :any_skip_relocation, ventura:       "6b2f54b88703909eb151d7d7af35b576a36bb1d6f58c1401f7b1e884e14ca123"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0674abb6a826bec500568e9684488fba9c60192e5b8b737b541fd16f7b46414"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e5fd77ae5c2bc6afe90da427f3a780adb07896bb655c09c57b92e5b0423de2c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b62776abeb120125c7ea599f3fc47c7d7228a9b2f60111aee5ebb5bbf77e2571"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b62776abeb120125c7ea599f3fc47c7d7228a9b2f60111aee5ebb5bbf77e2571"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b62776abeb120125c7ea599f3fc47c7d7228a9b2f60111aee5ebb5bbf77e2571"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eaa377fe286bbe156180c732c1195df0a09e7905a5557ea73f1d7e2e2f9d94b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "849cadc60a79f7fac521fcf187b5bdcea6b5778bd1087963ca42d424ddc66d33"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f14f66931599bc196ad88eccf933599f6d0e69104754f48a3b97ac3839b87ec8"
   end
 
   depends_on "go" => :build

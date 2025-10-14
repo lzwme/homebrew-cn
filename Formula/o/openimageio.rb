@@ -4,6 +4,7 @@ class Openimageio < Formula
   url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v3.1.6.2.tar.gz"
   sha256 "a1e515e6a6ea9925a70c23db21dda37f3ce2c24780a6bfedd8685fea063f698a"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/AcademySoftwareFoundation/OpenImageIO.git", branch: "main"
 
   livecheck do
@@ -13,12 +14,12 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f4b5a1317d730100dda3bcfecebdc72111aa952f7fed9672ba9ec240a53f6ff8"
-    sha256 cellar: :any,                 arm64_sequoia: "d1d8f6fa8916d05aa2f8e0f5fb698a5e8c39fcae1e4015f06f5bcb8b6c50a10d"
-    sha256 cellar: :any,                 arm64_sonoma:  "41f7d01f366f0de3d0f43c967957df75741238fae672ce9ef7c462f6e5b41dd7"
-    sha256 cellar: :any,                 sonoma:        "3fcbfc9b0fc879c236b23ba4ce6c676ea1ecb8aae9e578de098029225430a73c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "783af3bc1bab870abe272c3f7300516ced0700a1bb633aeb74d516f5c1fa98a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5e4c72276410a7522cf071f14eb076e98e3f31c98e7afc3daf3b025bf20b0d2"
+    sha256 cellar: :any,                 arm64_tahoe:   "3a2ec3968e5fde528d08ee536d8bff65840e0375f4bf5be0bc6645d0cbcc6c12"
+    sha256 cellar: :any,                 arm64_sequoia: "d3fec18063cc0e9024718dc239fe72096952d0c80c824b21f9156ab9ba554b5e"
+    sha256 cellar: :any,                 arm64_sonoma:  "fb5b3e18db0332fe4add5ad2739fa648e11ee53154b52c662d59d53a55fe01e1"
+    sha256 cellar: :any,                 sonoma:        "a319d0ba0e5146718d0d2f9d3e9162976459639235365b8446e14ceafde2fd6e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6411860381b65615bf0f36a65f59005caf89f28aa7f9d276d101f9e1c64f2f95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56c7d99273142f9f31647764ed310413b56a37a40ab68101b979e6f9311fdf03"
   end
 
   depends_on "cmake" => :build
@@ -38,7 +39,7 @@ class Openimageio < Formula
   depends_on "opencolorio"
   depends_on "openexr"
   depends_on "pugixml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "tbb"
   depends_on "webp"
 
@@ -51,7 +52,7 @@ class Openimageio < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

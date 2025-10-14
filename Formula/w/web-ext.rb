@@ -1,17 +1,17 @@
 class WebExt < Formula
   desc "Command-line tool to help build, run, and test web extensions"
   homepage "https://github.com/mozilla/web-ext"
-  url "https://registry.npmjs.org/web-ext/-/web-ext-8.10.0.tgz"
-  sha256 "c1f66a6eef82c85b592b0ab66e16ba899a74729220cfbec3736f3743dbd7a924"
+  url "https://registry.npmjs.org/web-ext/-/web-ext-9.0.0.tgz"
+  sha256 "9cf3cfcce04470f2082765ced874ef0d00de415a65d6137924f2fa352c01bf54"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ac796c0cc872da49cc738c9a8551020c39bf5f31f90f1e8af71b5831e305a4b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ac796c0cc872da49cc738c9a8551020c39bf5f31f90f1e8af71b5831e305a4b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ac796c0cc872da49cc738c9a8551020c39bf5f31f90f1e8af71b5831e305a4b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4ac796c0cc872da49cc738c9a8551020c39bf5f31f90f1e8af71b5831e305a4b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a38f5e9b14c8420dbbbb898be65ed77b47a0821a504b4e81efda78e8616b1387"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a38f5e9b14c8420dbbbb898be65ed77b47a0821a504b4e81efda78e8616b1387"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc8e2cfba9abf8dca39f8421afe6cc91185721bb0bd323247c5d17b2f3e482df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc8e2cfba9abf8dca39f8421afe6cc91185721bb0bd323247c5d17b2f3e482df"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc8e2cfba9abf8dca39f8421afe6cc91185721bb0bd323247c5d17b2f3e482df"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cc8e2cfba9abf8dca39f8421afe6cc91185721bb0bd323247c5d17b2f3e482df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "22c036990df5fa2e7c90c4e21e5dd31f7decc3651483663af6523c68acd65ff4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22c036990df5fa2e7c90c4e21e5dd31f7decc3651483663af6523c68acd65ff4"
   end
 
   depends_on "node"

@@ -4,7 +4,7 @@ class Pinocchio < Formula
   url "https://ghfast.top/https://github.com/stack-of-tasks/pinocchio/releases/download/v3.8.0/pinocchio-3.8.0.tar.gz"
   sha256 "aa4664d95a54af7197354a80f5ad324cb291b00593886b78dd868b1fd13636ca"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
   head "https://github.com/stack-of-tasks/pinocchio.git", branch: "devel"
 
   livecheck do
@@ -13,12 +13,12 @@ class Pinocchio < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "c240dc4a96196bb13d55508582441854d944e0c1189285f87f2620ef3f9ab9a3"
-    sha256                               arm64_sequoia: "3b743220ccb4a9f80f2d7dfa06981188fb1d7b960b7bc673659abcba32f30b82"
-    sha256                               arm64_sonoma:  "5b7e5a57614e09d7b9e5444111c79b0e57dc996f00c8e7ebccccb5baa1f001b6"
-    sha256 cellar: :any,                 sonoma:        "fd13fc7b9fcde2a4d3e7d527d4fb9b8feb444af6c42014c73f4c7ff15c9a9b57"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5648b2ad9953c79d1d8c32e8c12e4c9323b64da1614606fd9a7cf9a46760bc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d45a35b27e9433f3437b9a751bc5d212e21d0d2972d6c3f7a332da52e14d2f59"
+    sha256                               arm64_tahoe:   "ad59d8f8645c1fe910aef054a362dc911d445655a04c360acef7ee6d80ccacae"
+    sha256                               arm64_sequoia: "0a1ca75e54973052a1ca1c6dfee6e75adec52017c43a211472bac1436b56ad21"
+    sha256                               arm64_sonoma:  "380a922baf90a9c088bd60b55cf4dd6bbaa7b45e56f4a725767c1792181ef2e0"
+    sha256 cellar: :any,                 sonoma:        "32d270cd511a9e56c7a0c82fad9bb455d5374dd8124567a8a9f4d3d4ff2994a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "af875d4f6244dbd34a2bc777c15b85d86d4f1823190d749fb3f7da10d1f6139b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af9b95baee413bd3831563b83fc4e3be81d353244d8cfe8ab87ff69713f23a74"
   end
 
   depends_on "cmake" => :build
@@ -31,7 +31,7 @@ class Pinocchio < Formula
   depends_on "console_bridge"
   depends_on "eigen"
   depends_on "eigenpy"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "urdfdom"
 
   on_macos do
@@ -43,7 +43,7 @@ class Pinocchio < Formula
   patch :DATA
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

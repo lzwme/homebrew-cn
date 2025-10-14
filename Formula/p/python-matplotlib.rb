@@ -8,21 +8,23 @@ class PythonMatplotlib < Formula
   license "PSF-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0375cdd64145c1f5e9b19c518662ca8d15dfdb51ce886c567ef03035671702c4"
-    sha256 cellar: :any,                 arm64_sequoia: "80928044bea6d5049973e2bb17db5a845596b1192fab7230e85aafefc96fd078"
-    sha256 cellar: :any,                 arm64_sonoma:  "b5f8a4cb9b6b7814b4dff4e3d44e825f139edf5baeb6e0aa264baf2e55a27298"
-    sha256 cellar: :any,                 sonoma:        "ea54e189a222420e185499b492818478f993583628e5c1dc5dda2bb91ba2d5c2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a055b05289843ac19054a86db254a6210613edc66ebefcb3abba73d12fca0080"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b534740911e2d14a73ec80079ae5cbabe7410589873a0b4780576b0f20b3898f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ef681c9b01992ddd9c51dacd5e0ac459bc33e6a28b05e5c66402891dfd89869b"
+    sha256 cellar: :any,                 arm64_sequoia: "9fbc1b0f4d473080a3b9459ecb016e5325689d348b11a0733f537ed864815c1e"
+    sha256 cellar: :any,                 arm64_sonoma:  "6f226ce14460cc7061fec37fbc7631a64da8ceeac5df9eb651ad44f6046c716e"
+    sha256 cellar: :any,                 sonoma:        "ba6f871691012ee1559a1c27a2b573f0e0bec4c9354f061e3b37eeccd061d756"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac62fe8d76734bdfce67c2a83c4fc88a40e9c3251143adb8ac400952bf9bcf84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93a4966b98ee3ea44019ef4ff132d0aebb8f8bca6aebe2a0f7c8dcb5836ec37f"
   end
 
+  depends_on "cmake" => :build # for contourpy
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "freetype"
   depends_on "numpy"
-  depends_on "pillow"
-  depends_on "python@3.13"
+  depends_on "pillow" => :no_linkage
+  depends_on "python@3.14"
   depends_on "qhull"
 
   on_linux do
@@ -70,7 +72,7 @@ class PythonMatplotlib < Formula
   end
 
   def python3
-    which("python3.13")
+    which("python3.14")
   end
 
   def install

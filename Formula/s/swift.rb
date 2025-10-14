@@ -19,12 +19,13 @@ class Swift < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "80b964d783f7bd68c077c363c7bf8e123e7917891ba70f7f3ec4272cafd1a212"
-    sha256 cellar: :any, arm64_sequoia: "6846b074dfee86c703e20e807de0e9d8c5891ee22aadc307543bdce42ca21592"
-    sha256 cellar: :any, arm64_sonoma:  "f5efdfa88c8ff25fd300bdecd43511fb3071928dbd8dd42db5dd7a29fb725906"
-    sha256 cellar: :any, sonoma:        "afb21127cba0fa2e9fb628aba25010c06073b3521cb980900b93a3ab15c160e8"
-    sha256               arm64_linux:   "cf136c1a0c95ceaaa59668d9753d0578c55def672dcc92e80b70ded7cca20443"
-    sha256               x86_64_linux:  "7671f8536fa4bfa653147dd62433dd2040441fa7e344d7f8c55eb1834c2ff5ee"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "ee2347d8ab854ab4335c931685c33419380aae1716feac45a954993ab0d77ba1"
+    sha256 cellar: :any, arm64_sequoia: "7da4ef3be641c5fea5cb70dce5aa70fd3613c83b8bd80b226c16adf1af1ab451"
+    sha256 cellar: :any, arm64_sonoma:  "ef065340c8dd686de7e4e2810dd2cae07dba27386fff7eea6b4a10b3c002b88f"
+    sha256 cellar: :any, sonoma:        "7df54bbe49c6146b2e0a2e89284edbc3e062f9e3738381de8a391f743fb8d822"
+    sha256               arm64_linux:   "b69426e8e76d862877f4559e5686dfbf6f467d6f617aaa675d01ebcc950845b7"
+    sha256               x86_64_linux:  "cdab9ba0ca3e6b0fc2ed962463f721cec156df3608891732877354bc618e3cbc"
   end
 
   keg_only :provided_by_macos
@@ -38,7 +39,7 @@ class Swift < Formula
   # is higher then that is likely why.
   depends_on xcode: ["14.3", :build]
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "llvm" => :build
   uses_from_macos "rsync" => :build
@@ -470,7 +471,7 @@ class Swift < Formula
         --swift-include-tests=0
         --llvm-include-tests=0
         --lldb-configure-tests=0
-        --lldb-extra-cmake-args=-DPython3_EXECUTABLE=#{which("python3.13")}
+        --lldb-extra-cmake-args=-DPython3_EXECUTABLE=#{which("python3.14")}
         --skip-build-benchmarks
         --build-swift-private-stdlib=0
         --install-swift

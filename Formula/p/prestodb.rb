@@ -16,11 +16,12 @@ class Prestodb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2b29226f67e82e5257ab5bf154521da407a8df43bfaed129122ef5b328096a26"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "dce59f84fccc89d3300e6cc5534ade9cf2640c03b7db6ed24d9f2ea1182430ad"
   end
 
   depends_on "openjdk@17"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "presto-cli" do
     url "https://ghfast.top/https://github.com/prestodb/presto/releases/download/0.294/presto-cli-0.294-executable.jar"

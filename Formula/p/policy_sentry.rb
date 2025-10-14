@@ -9,18 +9,19 @@ class PolicySentry < Formula
   head "https://github.com/salesforce/policy_sentry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "572a739cb37c4fe8e31c4a10f6560ac77b7922ab8ae8abbf0bc749a63ad2a7b9"
-    sha256 cellar: :any,                 arm64_sequoia: "041f33db5465fda56f5356fa95f70e400c8824699731a1f4e3e1fd486267db98"
-    sha256 cellar: :any,                 arm64_sonoma:  "d37859673824d2cfd536fa8e05b31e41e5b5c1a3418de528b65bf55b93c9b8d9"
-    sha256 cellar: :any,                 sonoma:        "e16772f986690893cfc3c5ae093857a1596aec6e130aaa639d38f82df1629e54"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ced623e45e6700d1d88b969e1fdbee78d28f6a466fa3a2f2a87952a81becb31e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65d8b6b4e9052c8fd9b5ae25af3b69aa8e1268a55452920ba0848ead4682508a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "074c4f24407743d54fe65753e32551173039fe70238ef9e292f820051f9911a0"
+    sha256 cellar: :any,                 arm64_sequoia: "b7bb0431dcc36eabe84332acf12e394fa800c83fdf1e715db1bf7a4d47576e09"
+    sha256 cellar: :any,                 arm64_sonoma:  "3ea133ab0ab3b812fa6ab471717a6a1d17bce667ccff44dd77f3f7416cc259e8"
+    sha256 cellar: :any,                 sonoma:        "bd2b002cb6d4ff8331a42ac75149b4bfe350982ca6ab7c93d50b5f09a6baeb9b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf0144de03e26e755cc384c6d2e4c2f46879aaa8c015d8db37293c02edd56845"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c123cbc2db34118ccbcb47142f16fbccfe30d57bfb6d802a163bb513c1f4839"
   end
 
   depends_on "rust" => :build # for orjson
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/77/e9/df2358efd7659577435e2177bfa69cba6c33216681af51a707193dec162a/beautifulsoup4-4.14.2.tar.gz"
@@ -38,8 +39,8 @@ class PolicySentry < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "orjson" do
@@ -58,8 +59,8 @@ class PolicySentry < Formula
   end
 
   resource "schema" do
-    url "https://files.pythonhosted.org/packages/d4/01/0ea2e66bad2f13271e93b729c653747614784d3ebde219679e41ccdceecd/schema-0.7.7.tar.gz"
-    sha256 "7da553abd2958a19dc2547c388cde53398b39196175a9be59ea1caf5ab0a1807"
+    url "https://files.pythonhosted.org/packages/fb/2e/8da627b65577a8f130fe9dfa88ce94fcb24b1f8b59e0fc763ee61abef8b8/schema-0.7.8.tar.gz"
+    sha256 "e86cc08edd6fe6e2522648f4e47e3a31920a76e82cce8937535422e310862ab5"
   end
 
   resource "soupsieve" do

@@ -8,19 +8,18 @@ class PulpCli < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "70bee84cde5f41f012f3f20adbe663d1ca3064141985171889b7d012bf7b3e18"
-    sha256 cellar: :any,                 arm64_sequoia: "a541d3b1434eb9c01d4d87fd7dee1abd934f10d034079aa0a22f6dbb38779178"
-    sha256 cellar: :any,                 arm64_sonoma:  "935c3ee12f46129e537691d8e14e8a89d21e1507f6b9e34fb6583798465bfdca"
-    sha256 cellar: :any,                 arm64_ventura: "e6ea4509d7a87d0eb1a54d24fd5689a6a40b2a101fb94ac3e87111a1b21401c6"
-    sha256 cellar: :any,                 sonoma:        "f77c6beb7cf77053ed878be4650d28e23049261cd136775d17c59c298c39876f"
-    sha256 cellar: :any,                 ventura:       "5f8477a68c944547efe69138704660a7ba9fec99398ca404617697d308ba7dec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45b625bd32427fac9b6a556c077d7704f11ccaf7c67c821d087b7b3d10932bb9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9a7383f097564bdaee324749555421b7240516dfef19c499f70fa10769d877c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "20a4a17e8320c7af50d1efb8b165f10bf7d3bd04b7ed56a5f65005c84ce3be77"
+    sha256 cellar: :any,                 arm64_sequoia: "e04a9e118a9169d044a5a713b0059ef211ab52d8c4ce39f855295137d128964e"
+    sha256 cellar: :any,                 arm64_sonoma:  "6ed57af48256a74c361117b2ac5f2247c0d5c53e29fcff5ec556d61a0b12fd66"
+    sha256 cellar: :any,                 sonoma:        "578bbcc0888c7c6f8b72a0503c3d8428b38a460f1741c1d64e86aaf0ad1be95f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "baa1428db20e9f79c1e6582b6852f2d3a169814832bb24eeb729b5937b384f96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3ee1ad8f90ac16fee4402acecbcf1ace6bd6e3f2cba228424c70d5b37ee5371"
   end
 
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
@@ -50,6 +49,8 @@ class PulpCli < Formula
   resource "pulp-glue" do
     url "https://files.pythonhosted.org/packages/b7/6d/d8bac57d69902a0836f1d5be9ebf14da4c401b638913a393725cadfe3fc0/pulp-glue-0.36.0.tar.gz"
     sha256 "627f6b42a612c4542850a9b5719255373c2399565c779a78d5468378ea584b7c"
+
+    patch :DATA
   end
 
   resource "pyyaml" do
@@ -78,6 +79,8 @@ class PulpCli < Formula
   end
 
   def install
+    # Unpin python for 3.14
+    inreplace "pyproject.toml", 'requires-python = ">=3.9,<3.14"', 'requires-python = ">=3.9"'
     virtualenv_install_with_resources
   end
 
@@ -95,3 +98,18 @@ class PulpCli < Formula
     assert_match "valid pulp-cli config", output
   end
 end
+
+__END__
+diff --git a/pyproject.toml b/pyproject.toml
+index 349a206..7db9eab 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -7,7 +7,7 @@ name = "pulp-glue"
+ version = "0.36.0"
+ description = "Version agnostic glue library to talk to pulpcore's REST API."
+ readme = "README.md"
+-requires-python = ">=3.9,<3.14"
++requires-python = ">=3.9,<3.15"
+ license = {text = "GPLv2+"}
+ authors = [
+   {name = "Pulp Team", email = "pulp-list@redhat.com"},

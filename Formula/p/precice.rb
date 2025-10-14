@@ -7,12 +7,13 @@ class Precice < Formula
   head "https://github.com/precice/precice.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "eb0cd637e274ce5e83c95d940a1d930efe1b41bcb363dec56defd2280a9b0346"
-    sha256 cellar: :any,                 arm64_sequoia: "bbdb841b40a0eddac119d9e1034c12066800022dc4d891daf8b373b8ddd2b1fb"
-    sha256 cellar: :any,                 arm64_sonoma:  "910052a11fe80c822d84800165b986dde31d6ca79e5504cae71fd68a15ddb08f"
-    sha256 cellar: :any,                 sonoma:        "e13276e0dfd3205a484d27c6ebcbd057f8d963c79caf8f950b5b2de4f89a7263"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aece0295b39c82d7cf8efe16e943532a0dfaa619446ff6c392ba2ce6f91cdcd2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11aaba40a9bc9c18462d0cada723347e40cfcca836ac2a9514edaabea220b69b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "7c456e7082ab2a026dd0805cb3866760da48c6d599a72789298f37b56cb13340"
+    sha256 cellar: :any,                 arm64_sequoia: "2f31dab890a00ca4dc49266f8126e6f33ebeff11f05cdcdc2bf95c9e6ba4d6c4"
+    sha256 cellar: :any,                 arm64_sonoma:  "17de77b45778f8394d43423a7d6ed02624d033ce19d8ec8cb8adf024df77b7f8"
+    sha256 cellar: :any,                 sonoma:        "751fa6ee50cf9bb085d3a89b95f9101391882d1fd3f3c3a2b18e5ca0c851e9f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dde18fbb9082d2bf672e311d5c1dc637210ed9be61cb05016806faf5ccceb378"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bce6c711ca7ddaf61b96baaeb5aab43df83be9e0f45c149790ff0345c8cbeb8"
   end
 
   depends_on "cmake" => :build
@@ -22,7 +23,7 @@ class Precice < Formula
   depends_on "numpy"
   depends_on "open-mpi"
   depends_on "petsc"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "libxml2"
 

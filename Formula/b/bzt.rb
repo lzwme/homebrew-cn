@@ -10,13 +10,13 @@ class Bzt < Formula
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "7df412d394621384e75f040ee2a2eee82168b0ce8e7c505ced2e0c580d41015d"
-    sha256 cellar: :any,                 arm64_sequoia: "311344decc3b8ca23241bc6c421b5e59c94d78424c9afeaad3a66793f1d33c0a"
-    sha256 cellar: :any,                 arm64_sonoma:  "c4eba7fd6b4601fd0e46334122a279d0c2e0b19565ce5c9ee29ff21e1bafd03e"
-    sha256 cellar: :any,                 sonoma:        "e24a686954ff101a7a6e13e329d81351011b1b6dfe1c208ad5c50a18fb9b8cf5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cdfba18cd2deed61d2a6bfc640b17e590987ce908c2445f2309061244e59d5a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bdebd5b869168752226db6dbaa01efb64b03a76796b3a193d28fee0d769d2e1"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "bb85beacb5e87bc31f609f7e88d4a6d8147388545fae2f896565134d0e6a2177"
+    sha256 cellar: :any,                 arm64_sequoia: "fb9dc79792cc1403c5ec9dd90b9a655aac73179a1368e3aa3f51cd75ad62df4b"
+    sha256 cellar: :any,                 arm64_sonoma:  "9f74463d95799b4220ad71f8618f29059dc91fc443b62986337ef9660943c641"
+    sha256 cellar: :any,                 sonoma:        "b3b13bced1d73ee0ec19cc88225b2ce265102ca31b4308bf711eede628de17e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "93290c256d77b2ae834e60307ca4f80c932832cb10dd9854b95020fc967e895d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b7a4bbb6b4a9fb1f448f9edd5467c9d914150a5a602daea6a9be1225f20a9ed"
   end
 
   depends_on "cmake" => :build
@@ -24,7 +24,7 @@ class Bzt < Formula
   depends_on "certifi"
   depends_on "libyaml"
   depends_on "numpy"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -117,8 +117,8 @@ class Bzt < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "influxdb" do

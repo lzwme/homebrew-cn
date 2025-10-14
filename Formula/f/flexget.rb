@@ -3,18 +3,17 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/24/88/aec0f6b1455e32a309df37001f55c6d985a216a375af46019397bfae252f/flexget-3.18.14.tar.gz"
-  sha256 "4f6f9f0a1179ece6814ee598a2bb3b15859b6bcad6e03963bb9d9793c6d4c02e"
+  url "https://files.pythonhosted.org/packages/ad/4c/4c06b47b640e70193f5210bab808fb3ba467e6ea85ceaf477b1c5385a1d9/flexget-3.18.15.tar.gz"
+  sha256 "fb231fecb10e4a1afe12b16cd7cceee7e97fc11ba2d71cd33ed7d3bd04f1ee72"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "98ea7386035968399c8fdffb5908afa81fde2f658691bd313d0abb00a6c8af0a"
-    sha256 cellar: :any,                 arm64_sequoia: "c5424f64c4981e79ca7b29edad6e4256549421d5469da678ce6880ff63b83f37"
-    sha256 cellar: :any,                 arm64_sonoma:  "25d8f575bc56c11664388816076fe95c397fc344de33276768714e34f3aeea65"
-    sha256 cellar: :any,                 sonoma:        "cdff16c3e6ea1a5a171101f93244513d12a15433e3707049a598895d27fb522e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "02abc00cb1e213f26304eeeed3c0733a11d53a3a6d14482f92c86be9d0486963"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a8fa8e967308538ae3da85e228e19c62b47ce6238e86c531a3d6335ec21e4bc"
+    sha256 cellar: :any,                 arm64_tahoe:   "57a7927d8d0cae4c96a382280ae94bd08668b12f752318044fc58317c7a74b5c"
+    sha256 cellar: :any,                 arm64_sequoia: "5c2a928ff241f635cdd65f58c4002e9ad4fed3b32c82ba63b4571be214246a22"
+    sha256 cellar: :any,                 arm64_sonoma:  "f831cdbd3992b13dcd14deb2ba610c0930b816d90844b60344541ba41f613f9a"
+    sha256 cellar: :any,                 sonoma:        "4e7c4cd205da18b396a6f677e7107814c972c2ae56bace682b8ef112dbe64481"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1874fc1edff359c388ec78c38d2d15d14391a589ca1b05d27b16a136303cd9ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b43edb7179807949409f38cc4901320ab7e541195296fe4636b19c5b748c97a9"
   end
 
   depends_on "rust" => :build
@@ -113,6 +112,11 @@ class Flexget < Formula
     sha256 "0ae13d77e7d7e4dce513970cfa9db45364aef210e99022de26d2b73eb4dbced5"
   end
 
+  resource "greenlet" do
+    url "https://files.pythonhosted.org/packages/03/b8/704d753a5a45507a7aab61f18db9509302ed3d0a27ac7e0359ec2905b1a6/greenlet-3.2.4.tar.gz"
+    sha256 "0dca0d95ff849f9a364385f36ab49f50065d76964944638be9691e1832e9f86d"
+  end
+
   resource "guessit" do
     url "https://files.pythonhosted.org/packages/d0/07/5a88020bfe2591af2ffc75841200b2c17ff52510779510346af5477e64cd/guessit-3.8.0.tar.gz"
     sha256 "6619fcbbf9a0510ec8c2c33744c4251cad0507b1d573d05c875de17edc5edbed"
@@ -124,8 +128,8 @@ class Flexget < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "importlib-resources" do
@@ -264,8 +268,8 @@ class Flexget < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
-    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
+    url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
+    sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
   end
 
   resource "requests" do
@@ -274,8 +278,8 @@ class Flexget < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
-    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "rpds-py" do
@@ -309,8 +313,8 @@ class Flexget < Formula
   end
 
   resource "sqlalchemy" do
-    url "https://files.pythonhosted.org/packages/d7/bc/d59b5d97d27229b0e009bd9098cd81af71c2fa5549c580a0a67b9bed0496/sqlalchemy-2.0.43.tar.gz"
-    sha256 "788bfcef6787a7764169cfe9859fe425bf44559619e1d9f56f5bddf2ebf6f417"
+    url "https://files.pythonhosted.org/packages/f0/f2/840d7b9496825333f532d2e3976b8eadbf52034178aac53630d09fe6e1ef/sqlalchemy-2.0.44.tar.gz"
+    sha256 "0ae7454e1ab1d780aee69fd2aae7d6b8670a581d8847f2d1e0f7ddfbf47e5a22"
   end
 
   resource "tempora" do

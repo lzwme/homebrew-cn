@@ -1,20 +1,18 @@
 class SoxNg < Formula
   desc "Sound eXchange NG"
   homepage "https://codeberg.org/sox_ng/sox_ng"
-  url "https://codeberg.org/sox_ng/sox_ng/releases/download/sox_ng-14.6.0.4/sox_ng-14.6.0.4.tar.gz"
-  sha256 "faf376b7054eac6da3c6c15897a42a8fd22147d5d5ea05921ff1afa1f4e7a7ab"
+  url "https://codeberg.org/sox_ng/sox_ng/releases/download/sox_ng-14.6.1/sox_ng-14.6.1.tar.gz"
+  sha256 "bb03126de6b3ce0049801466f067097eb73f8a2fc11e9239ed00744f42691145"
   license "GPL-2.0-only"
   head "https://codeberg.org/sox_ng/sox_ng.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d71a82586784fca8f39ffddd4f4bafc1f2f4ec00804999658aaeabef5ceb8a05"
-    sha256 cellar: :any,                 arm64_sequoia: "ef0c00d04f83842b9edf92aaee3eeab41227d15b6de9850e5f0fa8245aa8a155"
-    sha256 cellar: :any,                 arm64_sonoma:  "61c54bcac65f22b9301bc5cd0dd1e8473dcb9dbb1f38ce6d24e62bec16b479d1"
-    sha256 cellar: :any,                 arm64_ventura: "2d151503ad1b08204140a3cb8c21bd3f8f6aee89b36724e3f0f8e02d356c508a"
-    sha256 cellar: :any,                 sonoma:        "fe18c65c1616e6669bc19e8fa3aeb875151401cc896d99b42e3dceb8cbaa8daa"
-    sha256 cellar: :any,                 ventura:       "f32fa9425d8ee7bf73e1e5dd059efc3dd1c04548b86829775009c7cc0885412d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1c76e54d4f61ae88a9d68e98b1327eede12e9bc182b0fbdc91602b499def0b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bf84d712d160f16f36550a01fc8ba7e3e910f74f73e92643cb1fc76bba5a74e"
+    sha256 cellar: :any,                 arm64_tahoe:   "5437c62fed1f2d9b342a9cbb250fa0a8a3f99ebeafa211deb3a7802d0b26364d"
+    sha256 cellar: :any,                 arm64_sequoia: "6ad2694a01ee6a95257f3c3cc507a49338e1623a3da61fd290799d836aa90c5d"
+    sha256 cellar: :any,                 arm64_sonoma:  "a3103e7db24d520e2a99b62b5c6858b4d90d3b328493d164f59beb04364f8318"
+    sha256 cellar: :any,                 sonoma:        "c5b9ed609d9e0d20c0c439ec1e48840e39031539940083120ae7a2969be83a76"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "920751d9eccb44e953ec1a7aa4df663175968dd0c2649e1c1a5e3df76efb5905"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3c9c700e5f99fd5d80bd163dfa38126b2d11f25dddc9ebf96709623d7561b25"
   end
 
   depends_on "pkgconf" => :build

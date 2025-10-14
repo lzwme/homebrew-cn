@@ -8,19 +8,20 @@ class Plutoprint < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "51d74f165529178d75073de7ac6e9e724337ee5a3745e8ec2d01189b187196c8"
-    sha256 cellar: :any,                 arm64_sequoia: "1ca288bd85da025d0067ee3c3bc08a6e909696bfa0e92408b2edb37a362a9c1d"
-    sha256 cellar: :any,                 arm64_sonoma:  "10c68efbdc3d8b4f195e5695d21e1d650b9e600406dbf6c5d196652f231b9979"
-    sha256 cellar: :any,                 sonoma:        "e714602f0a380e8a163962fcdad2930cf316ddaf717ee72f4c715268f5b97f6d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebd801aadbab3e675dbfdab5b2d3b9293bbc1a7f9afade0c2370ad50ab4ccd8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "704746c55f3ad1874a3d56edfd3f417c1aa531ca961aae3ccb336fa7da7e2b09"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ee61df735c944b3a3175b2e334991facc2efb3e6a36004e03a3b6bfa9c55d2b3"
+    sha256 cellar: :any,                 arm64_sequoia: "56b3831569d7b22d9194d4af5fcc3ad5f9d4eabd3751cacebead3ff45b6f3cee"
+    sha256 cellar: :any,                 arm64_sonoma:  "83793fcf1f842cb335430289862178d0c151aa785089c8d663e7049529cbe073"
+    sha256 cellar: :any,                 sonoma:        "58f05010899888e358c582e519f5588554e9a4abc6a4f1fd439b5c78da8a29fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb85b3c719aff6570f47fd4192951e50de21e73425d30734bd395a7297d2ee40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6867799febf98cf466f256adf3bc35c91fd51a59c68117ac9674ac09ac72c540"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "plutobook"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1499
@@ -45,7 +46,7 @@ class Plutoprint < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

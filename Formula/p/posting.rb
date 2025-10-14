@@ -10,23 +10,23 @@ class Posting < Formula
   no_autobump! because: "contains non-PyPI resources"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "da5dfc9ff00416b865206b3764710a105ea103acb1df0e97a44d3b4331b97287"
-    sha256 cellar: :any,                 arm64_sequoia: "c98cb559915a760fd1fefe817551b5cfce88edbde77b61cdb7c5cc3dca8229a2"
-    sha256 cellar: :any,                 arm64_sonoma:  "d1cda9b87f6ca2d9b63b8253bd3808d25d58c45e37e0f84b57ca47465bf479f7"
-    sha256 cellar: :any,                 sonoma:        "66fe4f63c0d053d20e09f32b85da1577c727823baf1324c1b3c498307be1ad12"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d3af2cf9f6515deab75a01047fe2cbebd25eb600b3a83c3cc08d0974972bad6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4429863ad2ea2e6b5f1617028df8dd75d83421833bfce7067681321a44509611"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "7db79c4528cc7be97916f1405dc0c7dcdbb82457fbb66ff89859f1c1aff196a5"
+    sha256 cellar: :any,                 arm64_sequoia: "c639e1dd609b906ae933fc0673068799a6d5c378726d204292068acfdcd67509"
+    sha256 cellar: :any,                 arm64_sonoma:  "1ff075aae3c9463c8c0328842b279e5bfa1e620eba6181a82a152411ec46bec1"
+    sha256 cellar: :any,                 sonoma:        "7c2bd79c068b3c47b176cb31334fac0b9b6b86debba30e83794e42e5e1688239"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5931003d7282dee865f796f8962d211af48990eb11429a15c10e718f0a1388e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d30ee1ebc8be43a3c5be80bc5feebba7c32e7e2f44c96901398879315c4f4cc3"
   end
 
   depends_on "cmake" => :build
   depends_on "rust" => :build
 
   depends_on "brotli"
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
-  depends_on "tree-sitter"
+  depends_on "python@3.14"
+  depends_on "tree-sitter" => :no_linkage
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -44,8 +44,8 @@ class Posting < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/dc/67/960ebe6bf230a96cda2e0abcf73af550ec4f090005363542f0765df162e0/certifi-2025.8.3.tar.gz"
-    sha256 "e564105f78ded564e3ae7c923924435e1daa7463faeab5bb932bc53ffae63407"
+    url "https://files.pythonhosted.org/packages/4c/5b/b6ce21586237c77ce67d01dc5507039d444b630dd76611bbca2d8e5dcd91/certifi-2025.10.5.tar.gz"
+    sha256 "47c09d31ccf2acf0be3f701ea53595ee7e0b8fa08801c6624be771df09ae7b43"
   end
 
   resource "click" do
@@ -74,8 +74,8 @@ class Posting < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "linkify-it-py" do
@@ -104,18 +104,18 @@ class Posting < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
-    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
+    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
+    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/ff/5d/09a551ba512d7ca404d785072700d3f6727a02f6f3c24ecfd081c7cf0aa8/pydantic-2.11.9.tar.gz"
-    sha256 "6b8ffda597a14812a7975c90b82a8a2e777d9257aba3453f973acd3c032a18e2"
+    url "https://files.pythonhosted.org/packages/c3/da/b8a7ee04378a53f6fefefc0c5e05570a3ebfdfa0523a878bcd3b475683ee/pydantic-2.12.0.tar.gz"
+    sha256 "c1a077e6270dbfb37bfd8b498b3981e2bb18f68103720e51fa6c306a5a9af563"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/ad/88/5f2260bdfae97aabf98f1778d43f69574390ad787afb646292a638c923d4/pydantic_core-2.33.2.tar.gz"
-    sha256 "7cb8bc3605c29176e1b105350d2e6474142d7c1bd1d9327c4a9bdb46bf827acc"
+    url "https://files.pythonhosted.org/packages/7d/14/12b4a0d2b0b10d8e1d9a24ad94e7bbb43335eaf29c0c4e57860e8a30734a/pydantic_core-2.41.1.tar.gz"
+    sha256 "1ad375859a6d8c356b7704ec0f547a58e82ee80bb41baa811ad710e124bc8f2f"
   end
 
   resource "pydantic-settings" do
@@ -144,8 +144,8 @@ class Posting < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
-    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "sniffio" do
@@ -174,8 +174,8 @@ class Posting < Formula
   end
 
   resource "tree-sitter-css" do
-    url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter-css/archive/refs/tags/v0.23.2.tar.gz"
-    sha256 "5d442e8b04d8c743603172fb02664ae2b404f38f7a871d97cf2c89c1eedf8251"
+    url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter-css/archive/refs/tags/v0.25.0.tar.gz"
+    sha256 "03965344d8c0435dc54fb45b281578420bb7db8b99df4d34e7e74105a274cb79"
   end
 
   resource "tree-sitter-go" do
@@ -239,8 +239,8 @@ class Posting < Formula
   end
 
   resource "tree-sitter-yaml" do
-    url "https://ghfast.top/https://github.com/tree-sitter-grammars/tree-sitter-yaml/archive/refs/tags/v0.7.1.tar.gz"
-    sha256 "0626a1d89d713a46acd0581b745d3dcfe0b3714279eb6cf858fe78ff850a5a2b"
+    url "https://ghfast.top/https://github.com/tree-sitter-grammars/tree-sitter-yaml/archive/refs/tags/v0.7.2.tar.gz"
+    sha256 "aeaff5731bb8b66c7054c8aed33cd5edea5f4cd2ac71654f3f6c2ba2073d8fac"
   end
 
   resource "typing-extensions" do

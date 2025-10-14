@@ -6,14 +6,15 @@ class Censys < Formula
   url "https://files.pythonhosted.org/packages/ba/ef/c858baa23fa4edb496ba58ec329f9fa5df67b91ca755afa4219962231675/censys-2.2.18.tar.gz"
   sha256 "9410596197dc21d26dd5dfc83c0d58fde3768409d0f0ab0bc77570ec93473649"
   license "Apache-2.0"
+  head "https://github.com/censys/censys-python.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "bfa1a843b0537c428be308252a702ff639e44b469924ce91855a53f6847b52b8"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "8b16246c6a82f70061e1f50c491d96780a2e0cca4935d533719e9106453a4263"
   end
 
   depends_on "certifi"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "argcomplete" do
     url "https://files.pythonhosted.org/packages/16/0f/861e168fc813c56a78b35f3c30d91c6757d1fd185af1110f1aec784b35d0/argcomplete-3.6.2.tar.gz"
@@ -31,8 +32,8 @@ class Censys < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "markdown-it-py" do
@@ -56,8 +57,8 @@ class Censys < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
-    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "urllib3" do
@@ -66,13 +67,13 @@ class Censys < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources
 
     generate_completions_from_executable(libexec/"bin/register-python-argcomplete", "censys",
                                          shell_parameter_format: :arg)
 
     # Build an `:all` bottle by replacing comments
-    file = libexec/Language::Python.site_packages("python3")/"argcomplete-#{resource("argcomplete").version}.dist-info/METADATA"
+    file = venv.site_packages.glob("argcomplete-*.dist-info/METADATA")
     inreplace file, "/opt/homebrew/bin/bash", "$HOMEBREW_PREFIX/bin/bash"
   end
 
