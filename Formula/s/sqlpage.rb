@@ -1,21 +1,22 @@
 class Sqlpage < Formula
   desc "Web app builder using SQL queries to create dynamic webapps quickly"
   homepage "https://sql-page.com/"
-  url "https://ghfast.top/https://github.com/sqlpage/SQLpage/archive/refs/tags/v0.37.1.tar.gz"
-  sha256 "262ba8afda8b6849fe775cd7142566873200f811ba40e1f922781fe110f5fcec"
+  url "https://ghfast.top/https://github.com/sqlpage/SQLpage/archive/refs/tags/v0.38.0.tar.gz"
+  sha256 "08f4a7be79fe602009aea653725f4d1ae6fde01bf57dcf418f9c9fc8669a98de"
   license "MIT"
   head "https://github.com/sqlpage/SQLpage.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c60604adc9f6261e469494d43d0f02ed264d524796cea1e807ff5306af06e3a6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f4cec015dfcf9e78ee094523568169cb0521c33c4b89ac0dea3abd443a67f8d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a825c8c4225ade088b7e994c571f32f90912d9f51fae5c772855fd986437a38"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e70a806eda009308a2836678e667cc2878162146efaec43eec0723b33a76868c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aacf9e8b62a62e18621e7b39c2755049d5adf7ef07b06aef60f5ee5d69703646"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dee249c642255fe6d3b9343902d2b4c08c2a66eba6330e591ce0f85be161773f"
+    sha256 cellar: :any,                 arm64_tahoe:   "ce0ad2bb380754698289f1231a73d02090cabd8a28ae3780b6d99f76f4adfe2a"
+    sha256 cellar: :any,                 arm64_sequoia: "259f10866f01c2a924bd82ee74ad167cf6720b04f8b2d2997292973b0d13d181"
+    sha256 cellar: :any,                 arm64_sonoma:  "8d5a83af862200c39fe8ae95af2e297f624c66e1d8d84c11e7f3c0922666aae6"
+    sha256 cellar: :any,                 sonoma:        "705a6de5b05cf4f48820d3dfaf04ec4b2cd3041f671b704a4fe47b5e53baddb3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4cd198895763795d432ea30246f7deb15788cadb71d5f33662edaa23fe5d0bea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ff14bd895c6e7623a5d2174d79cf5b8e5f2f07fb307b1140c017ad8e757be17"
   end
 
   depends_on "rust" => :build
+  depends_on "unixodbc"
 
   def install
     system "cargo", "install", *std_cargo_args

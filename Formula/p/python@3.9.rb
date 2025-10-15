@@ -25,6 +25,7 @@ class PythonAT39 < Formula
 
   # https://devguide.python.org/versions/#versions
   deprecate! date: "2025-10-15", because: :deprecated_upstream
+  disable! date: "2026-10-15", because: :deprecated_upstream
 
   depends_on "pkgconf" => :build
   depends_on "gdbm"

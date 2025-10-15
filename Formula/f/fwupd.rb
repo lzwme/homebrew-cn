@@ -9,12 +9,13 @@ class Fwupd < Formula
   head "https://github.com/fwupd/fwupd.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "ad9533c4bccd3cdc0e90a8d9a5c7ebac809cd7eb7fb13de652cc23677404df09"
-    sha256 arm64_sequoia: "9b9292718d072381d61ae462cd9d6eeeab87053622ed22018211ca6d7640f80e"
-    sha256 arm64_sonoma:  "8a23572937b8211b554a6e4657a79538a8c584ef84a1bf99970f96a0f1dd49c8"
-    sha256 sonoma:        "3249c001936cb6465bba7c2fb699fa1b6ff8bf86880dc45edfc54d9830e8ffc9"
-    sha256 arm64_linux:   "632ea96f96eed85269e12ae5774b0bfdc21e2737f273b38d7d270a8ed5405e5d"
-    sha256 x86_64_linux:  "275524fe202b8c11195f3c18ed76ce7631946a216e9e520e560e6b909f832992"
+    rebuild 1
+    sha256 arm64_tahoe:   "de675556460d251695f7a38a516b81fa5e4d5e365b7836aed6f7e65a3d618b85"
+    sha256 arm64_sequoia: "2aeba4a0c99d1acef515c2bebb91d0c4967c7528392926070c305d3057aa2382"
+    sha256 arm64_sonoma:  "48b2068b583918b54220aa85013d14819ba11383cb9170aec8e63a6fb61bf156"
+    sha256 sonoma:        "b91aac4433f7a825fe4035dc86f412219f769bb4cc761e379e9c12a87d73cd82"
+    sha256 arm64_linux:   "93819e7c297c7a8efb3e8572ef980cbd0a1a9dee73b2ba82ac7ac54c9044414e"
+    sha256 x86_64_linux:  "3b21bb3faa1fa81e8ac48aeedc58216ff1eca86e581b16402137bb22e0ec6429"
   end
 
   depends_on "gettext" => :build # for msgfmt
@@ -22,7 +23,7 @@ class Fwupd < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "vala" => :build
 
   depends_on "glib"
@@ -56,12 +57,12 @@ class Fwupd < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

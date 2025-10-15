@@ -4,19 +4,17 @@ class Movgrab < Formula
   url "https://ghfast.top/https://github.com/ColumPaget/Movgrab/archive/refs/tags/3.1.2.tar.gz"
   sha256 "30be6057ddbd9ac32f6e3d5456145b09526cc6bd5e3f3fb3999cc05283457529"
   license "GPL-3.0-or-later"
-  revision 9
+  revision 10
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d301a6715733684dfeca756117b3fb4fb067ae24eca927657a4f810648ef13e1"
-    sha256 cellar: :any,                 arm64_sequoia: "eebe35ad85f24d6670b44de90e944d2ec6e7d8b3d678581d765b47a37b5921de"
-    sha256 cellar: :any,                 arm64_sonoma:  "8258f2373e9954cec98e1794809aceb67cb86a67b700534ca8e897399a462c1d"
-    sha256 cellar: :any,                 arm64_ventura: "be7032419023759e5106d77fe86d01c97967ae01cc30947fd6e35df5d6f9b0e5"
-    sha256 cellar: :any,                 sonoma:        "612d50cc540559cd4350504e7e31caa719e5f9bf1b68f6d0930328f4e56c0c17"
-    sha256 cellar: :any,                 ventura:       "44d0c548daababf4c81fd834331066cbfc94ff74b50df78d8689d21d4ab0f5a2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad5d58b74de4a42085e384ad4e090bd6f43c063119ee56dbba896653d20c1f60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "471324368d1763fdfac90349087bad2257726ba13eb462803435ed8c37a09131"
+    sha256 cellar: :any,                 arm64_tahoe:   "25557d01e1b440c88a1c606ec1bf4d309fb96f26b6552763c4f2133bf051bf18"
+    sha256 cellar: :any,                 arm64_sequoia: "2b1dae1c56de07dab28dd97d6169709b4711e34001161d8a8daf2b7b20303e0f"
+    sha256 cellar: :any,                 arm64_sonoma:  "a6616ac97c469fe1248b5bbfc4b453bad26b5d62380756c518a791026d4d454c"
+    sha256 cellar: :any,                 sonoma:        "1424eb3926a2a14e9d29afbd3bbc89ee69ada326d4c9a2834c9a15e7e0bcd080"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fdab47fe3bf34b8dad1b015721cf655f190aa0dfb67ad93eeda49c0c3c0c1acb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbcec355453382e09592b4d92ab23020bf52e6ea2a7d8c9cee74a523e50cf7d4"
   end
 
   depends_on "libressl"

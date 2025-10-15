@@ -1,21 +1,18 @@
 class MathComp < Formula
   desc "Mathematical Components for the Coq proof assistant"
   homepage "https://math-comp.github.io/math-comp/"
-  url "https://ghfast.top/https://github.com/math-comp/math-comp/archive/refs/tags/mathcomp-2.4.0.tar.gz"
-  sha256 "6307218d7e434fb6ffc81b9275c673d3f7f1f4884ad59b904abd205c437021a0"
+  url "https://ghfast.top/https://github.com/math-comp/math-comp/archive/refs/tags/mathcomp-2.5.0.tar.gz"
+  sha256 "3db2f4b1b7f9f5a12d3d0c4ba4e325a26a77712074200319660c0e67e25679f1"
   license "CECILL-B"
-  revision 4
   head "https://github.com/math-comp/math-comp.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff9e114a152936ef20294955fea51e5ff3ea8517e3c2edfa7118b876a9e28231"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30082a5dfdab43dab0366d5786849e9f083c9e65862a8fb9636fd0098fb93a28"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7b68e89c8367d4dd92552d89a3186116639c067f3b1b4fe3a64e4117c6bb5b2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3fe80b0b9b352c34d042ca6d1e92661473b645700f9fdd3fc29bd095f877ac0f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6e78761c625c53fe79ee04f3a2203bbdcb9d5baa2efcc162bb905b58f8fd6df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "909068d86716ce2c0f6d9d000d95617123dd3bf666bc245bc2147c0f4727bd3d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6ebdb3f0c5511e6e660fc529beafc659f4a178dfbe09daafa9a659ce9aaa2e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f13c9a57821e1e7a78ff873c1591590bdc09e42f70507e54752c510c13896c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7d28a5e6399ea7380f2ba29d4bd476c1d1883e3e8ee84c3d5e5e9b34a603df1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d41cc37c0ff9e7cc72c1dde6a453d0797fee10e14ad10a6e5efb40794c71b96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "222e8ece658e5273ced1047748b2c0c8942d45c70fdc40c1343fda9dc2728ea3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31ebbf2e8853abc7215f2535a0a7dff34246b2cb44d59488a47fdb07e02e9383"
   end
 
   depends_on "ocaml" => :build
@@ -30,7 +27,6 @@ class MathComp < Formula
 
     system "make"
     system "make", "install"
-    elisp.install "ssreflect/pg-ssr.el"
   end
 
   test do

@@ -4,18 +4,17 @@ class Networkit < Formula
   url "https://ghfast.top/https://github.com/networkit/networkit/archive/refs/tags/11.1.tar.gz"
   sha256 "c8db0430f6d7503eaf1e59fbf181374dc9eaa70f572c56d2efa75dd19a3548a9"
   license "MIT"
+  revision 1
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8554d4ca92547a052837dfa3949f9f5f8ba9dda2db92689b38abbb50d3571aeb"
-    sha256 cellar: :any,                 arm64_sequoia: "472a50deee447e0e9e0bf740f00e4b3b249797e3d582a78a343651dddbf761aa"
-    sha256 cellar: :any,                 arm64_sonoma:  "9818772678ceab5b2aa821024375443b8216889f4a70f66793610c3ed0ecb4fc"
-    sha256 cellar: :any,                 arm64_ventura: "2076c895a92bb11a20e247c107f6a190ac1a878cb944601f5de466ac55f49c83"
-    sha256 cellar: :any,                 sonoma:        "7cdd6d09da9f9d9c8fcaee9bbf82c8e7bf8a3a1ee58f21f25e4505a63939df88"
-    sha256 cellar: :any,                 ventura:       "7eafc01948f29effad09481dacf7ade9abee082ca9b1414c2244f0571d2f62bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e72b1db4cd8a202ba384791c2aa5a67de8bc4dbf5eba902e9b21a6403ad3fadc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d745c520d2e0211881030a888704232e07d48dc6e81fa4079584b886a3f65263"
+    sha256 cellar: :any, arm64_tahoe:   "eea2f6104c4737420512d88437d0181430254e9349a674d6eae84850a97a697b"
+    sha256 cellar: :any, arm64_sequoia: "4cb1ea5c0169d17ac2c6c75cd0cca09baa274a76823d5aa93beed997b0d25b2e"
+    sha256 cellar: :any, arm64_sonoma:  "9847f90f7fa1fed977b6e4931ec2c886600114a8222c7931e6ba52d747f12fb3"
+    sha256 cellar: :any, sonoma:        "8e40e5d67717edec14a48dc7895d73c65ee82da6afb562e1352b890a2d997c5c"
+    sha256               arm64_linux:   "900374b83c60b1885e5e0a90047935ae08d89d34caca37f9b291efff351c6c6a"
+    sha256               x86_64_linux:  "13aa55d4f8306d980d6109a5e77c3bd855278f44fc8293861348c3165bdd0f3a"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +25,7 @@ class Networkit < Formula
 
   depends_on "libnetworkit"
   depends_on "numpy"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "scipy"
 
   on_macos do
@@ -34,7 +33,7 @@ class Networkit < Formula
   end
 
   def python3
-    which("python3.13")
+    which("python3.14")
   end
 
   def install

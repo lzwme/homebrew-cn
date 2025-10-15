@@ -9,18 +9,19 @@ class Cloudsplaining < Formula
   head "https://github.com/salesforce/cloudsplaining.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6e831cb4f94fc37287db4600901f2f0331c0626fc81006d26dc505b56aa1a122"
-    sha256 cellar: :any,                 arm64_sequoia: "5b3e3a535a1a28c398036e0747c1006fa06485e4a45eda2802027cfaff152c44"
-    sha256 cellar: :any,                 arm64_sonoma:  "9e62b1d96ebd61aca3c214eea7f461fb0b65abdbd5530aa155b2c3ec1502278e"
-    sha256 cellar: :any,                 sonoma:        "2bd29c4a2a0511c39e31618ce40d743866db41f2103f001eb901f15e2d38d429"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0aabfa8a07c25b7ebe0def69a868712401b1f82f880630c83c677f55bdfdcb02"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbe87e610c61bce8abe00e86ad91b47cbf70c3bee6df2b485668ca5269dac29f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "b029c54550a9c69b7d18214faad6276c3a717c66e00aaa038288a86b4e6b3693"
+    sha256 cellar: :any,                 arm64_sequoia: "66f00293ed3edd39ad132ca5742c804ecd3a702ec77e716d962db936d117bdf3"
+    sha256 cellar: :any,                 arm64_sonoma:  "fb0b9ee33848dc1be4541ef3bce0de0449a899ae227e80fc8ead297ec62e9204"
+    sha256 cellar: :any,                 sonoma:        "4cdce525a9d48bf240fceb6c904654d8883e7a6165e9e377f1674105b9596430"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8aa4fe725c6e96f20396dd8f147cb5bb686e643bdc8cfcb6b2afbbc104cd82fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "153a121eb5c89605f357fda4fd5ded4a3454ee91cd6ae82d1ceb50aebc2a913c"
   end
 
   depends_on "rust" => :build # for orjson
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/77/e9/df2358efd7659577435e2177bfa69cba6c33216681af51a707193dec162a/beautifulsoup4-4.14.2.tar.gz"
@@ -28,13 +29,13 @@ class Cloudsplaining < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/ba/41/d4d73f55b367899ee377cd77c228748c18698ea3507c2a95b328f9152017/boto3-1.40.50.tar.gz"
-    sha256 "ae34363e8f34a49ab130d10c507a611926c1101d5d14d70be5598ca308e13266"
+    url "https://files.pythonhosted.org/packages/70/02/d3ee174681961dc2ebfe81f326e1b5e1ba338b7ff939e1e94eef76e7c65a/boto3-1.40.51.tar.gz"
+    sha256 "ed1b7750df07b2f2ece0141ff2ed0489db2ec2b5311a956d00a496b05fd4fadb"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/5b/66/21d9ac0d37e5c4e55171466351cfc77404d8d664ccc17d4add6dba1dee99/botocore-1.40.50.tar.gz"
-    sha256 "1d3d5b5759c9cb30202cd5ad231ec8afb1abe5be0c088a1707195c2cbae0e742"
+    url "https://files.pythonhosted.org/packages/ca/33/9e197d872adf1eadf8ecc259d0f451143326ff044d236b8971ff8bf980ee/botocore-1.40.51.tar.gz"
+    sha256 "a06de20408c3009e59e8f161a1146f1801d279d0923ab950349154900951bb20"
   end
 
   resource "cached-property" do
@@ -58,8 +59,8 @@ class Cloudsplaining < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "jinja2" do
@@ -113,8 +114,8 @@ class Cloudsplaining < Formula
   end
 
   resource "schema" do
-    url "https://files.pythonhosted.org/packages/d4/01/0ea2e66bad2f13271e93b729c653747614784d3ebde219679e41ccdceecd/schema-0.7.7.tar.gz"
-    sha256 "7da553abd2958a19dc2547c388cde53398b39196175a9be59ea1caf5ab0a1807"
+    url "https://files.pythonhosted.org/packages/fb/2e/8da627b65577a8f130fe9dfa88ce94fcb24b1f8b59e0fc763ee61abef8b8/schema-0.7.8.tar.gz"
+    sha256 "e86cc08edd6fe6e2522648f4e47e3a31920a76e82cce8937535422e310862ab5"
   end
 
   resource "six" do

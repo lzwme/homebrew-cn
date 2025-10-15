@@ -11,15 +11,16 @@ class NicotinePlus < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "86dd09af957c7be8e3c7559e1c9b67d2536f0c3025cd70bbe08a17d98ad1f89a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "80edf82b7afa3a964e69c28edab21a4a588144096efaa10f555b567b1c0bfa3e"
   end
 
   depends_on "adwaita-icon-theme"
   depends_on "gtk4"
   depends_on "libadwaita"
-  depends_on "py3cairo"
-  depends_on "pygobject3"
-  depends_on "python@3.13"
+  depends_on "py3cairo" => :no_linkage
+  depends_on "pygobject3" => :no_linkage
+  depends_on "python@3.14"
 
   on_linux do
     depends_on "gettext" => :build # for `msgfmt`

@@ -3,27 +3,26 @@ class Internetarchive < Formula
 
   desc "Python wrapper for the various Internet Archive APIs"
   homepage "https://github.com/jjjake/internetarchive"
-  url "https://files.pythonhosted.org/packages/e5/ff/e152fcec2ebd19294f719a91a6ef1188734708d678991d51ffb51e81eb33/internetarchive-5.6.0.tar.gz"
-  sha256 "b7e47f8a6739fa747c7894dd623392c2b8dd3302a9f686991c331688f065d86a"
+  url "https://files.pythonhosted.org/packages/d6/0b/17a2e3e5bf761bf8fb71f09ed267b2e8c52ddff173bbb473d7dc856f761b/internetarchive-5.6.1.tar.gz"
+  sha256 "879cf7fd490085761634a638d43d36abd77c0355354ffcf5e7a48a2d732a75d6"
   license "AGPL-3.0-or-later"
   head "https://github.com/jjjake/internetarchive.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "c5a3ab5f786032fcc49055bdff76a1500499349066e4f262923b2feb61bf1ec5"
+    sha256 cellar: :any_skip_relocation, all: "91bc187f18de2c0c25929860172e3f972d1cdfce26916a4f563af3f81496c9bc"
   end
 
   depends_on "certifi"
   depends_on "python@3.14"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "jsonpatch" do

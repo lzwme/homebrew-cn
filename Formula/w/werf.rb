@@ -1,8 +1,8 @@
 class Werf < Formula
   desc "Consistent delivery tool for Kubernetes"
   homepage "https://werf.io/"
-  url "https://ghfast.top/https://github.com/werf/werf/archive/refs/tags/v2.47.9.tar.gz"
-  sha256 "76897538b3cf8a68c0a7c6db47c16fc8bef3481d7b9f5d6913e31503a2c888b4"
+  url "https://ghfast.top/https://github.com/werf/werf/archive/refs/tags/v2.48.2.tar.gz"
+  sha256 "5955b5615a29c7f1f5287dfde4aa879b80e7820ca46b229884e077330432e4f8"
   license "Apache-2.0"
   head "https://github.com/werf/werf.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Werf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7bb3644019f51a0ac8ec5cca1e8892456b1b6d8e29194ed0c9e8aefb4bc92865"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "004818e46367d0fae49c5f27e62a7b0cd98f73591c7a3f8905fe31e270107c74"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "100a12d1d594970bb906ac67c0166d554204390bf815c7b5ac1ebf7f683e80cf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7cd81316af85a88f0ced951ab27befebbf1da5785ded8a4166c95c420c022858"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "62df843a4ab8e17f4208818cea58964ccaddc735ab111df5d0f5c815d510273d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4c49ad59985a3ace86299acf949199c379a0faed023ffb0fe448813372c373f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f295069478417bb74be20dc243a68e4663041b8d6bb2fcef31650c05bf319f6e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad327db6b37ee679d41720311c37e992a080a50bf4e9918c69a6640b1bab428c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d52ad7c548a08bbbd319fedd75724cf4787e35cb0918cce8e7812e338dc27c14"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ae633e1491b499a38e21f68b4d6ba5cdd7a0dc1d91ac6481baea1fb301c571bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a0ce5b65a55db2223d3a6c1add41eae01add7695a5792276a324a17cb1c7302"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b7dc9fe38c6070e34dabc1b45e144fc9853e225dce265c9cf5349e50d14dda6"
   end
 
   depends_on "go" => :build
@@ -32,6 +32,8 @@ class Werf < Formula
   end
 
   def install
+    ENV["CGO_ENABLED"] = "1"
+
     if OS.linux?
       ldflags = %W[
         -linkmode external

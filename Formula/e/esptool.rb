@@ -8,21 +8,22 @@ class Esptool < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1ed91101fdc989e3b120dcd313edcd9936116ccb52738e44586bfb71f3158988"
-    sha256 cellar: :any,                 arm64_sequoia: "6b024d24abf571c41416bba001d5c190d3f029767be7346644818ab357a96b31"
-    sha256 cellar: :any,                 arm64_sonoma:  "9db0e322136c6ac1838a8cdea9938f150d1e310697303ac97d992dcbae0f22ac"
-    sha256 cellar: :any,                 sonoma:        "613448540af4bb08dae73fbd2c37d7cb8ba6356faa86381925276252e3179d41"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ec01d1a79f1b93b166455d5e80f7457d9bd63d4221ef9023bc8436355666b2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "116297fd7fc2618bcafa938cfc8c116ccbc4328f8f27f52703fe59e2b3faff8e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "3fe406fb60b3ba2458ef30e4bf7bb977b9e2267f280a9739405e37c05d8db9db"
+    sha256 cellar: :any,                 arm64_sequoia: "3c38ee014e00253225a131aad707dc28f90877a28a514b2bccf59594a1d60954"
+    sha256 cellar: :any,                 arm64_sonoma:  "f9161234d6998dd28ec5996e7b375175aa7ce25926ebeac49f10933b6ac59f46"
+    sha256 cellar: :any,                 sonoma:        "ba428394c0d9e7d41a279f61fb3ca8f033ce448971ef161b64a5241f1f790038"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2509ed6c387cbb6be8af6a9c51bac059baec8f7206a4f4d332d40358cd7b67b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4ae7bdb9e915bf465262df680c64addb55e857e12cb8c91d557da49d828aa4f"
   end
 
-  depends_on "cryptography"
+  depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/99/b6/282f5f0331b3877d4e79a8aa1cf63b5113a10f035a39bef1fa1dfe9e9e09/bitarray-3.7.1.tar.gz"
-    sha256 "795b1760418ab750826420ae24f06f392c08e21dc234f0a369a69cc00444f8ec"
+    url "https://files.pythonhosted.org/packages/e8/c1/644ea86b6f1a0864f656a3b3ee5bf8c29daa895cb3233942315fe065ea3a/bitarray-3.7.2.tar.gz"
+    sha256 "27a59bb7c64c0d094057a3536e15fdd693f8520771ee75d9344b82d0a5ade2d0"
   end
 
   resource "bitstring" do
@@ -31,8 +32,8 @@ class Esptool < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "intelhex" do
@@ -61,8 +62,8 @@ class Esptool < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "reedsolo" do
@@ -71,18 +72,13 @@ class Esptool < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
-    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "rich-click" do
-    url "https://files.pythonhosted.org/packages/b7/a8/dcc0a8ec9e91d76ecad9413a84b6d3a3310c6111cfe012d75ed385c78d96/rich_click-1.8.9.tar.gz"
-    sha256 "fd98c0ab9ddc1cf9c0b7463f68daf28b4d0033a74214ceb02f761b3ff2af3136"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/9d/90/95cff624a176de6d00a4ddc4fb0238649bca09c19bd37d5b8d1962f8dcfc/rich_click-1.9.3.tar.gz"
+    sha256 "60839150a935604df1378b159da340d3fff91f912903e935da7cb615b5738c1b"
   end
 
   def install

@@ -9,24 +9,20 @@ class Eralchemy < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c1d31eba95b0fdfb714a74504e9740db4a43f0a651e765c71c7fc01759a6b66e"
-    sha256 cellar: :any,                 arm64_sequoia: "7d82a6d90f3541ae9f2e7a5c61081d15f751dff3c153755b3d6484195c3a8874"
-    sha256 cellar: :any,                 arm64_sonoma:  "5ce015f1099edbc09359683d2fc1a680df406d6a1a0234fa8222e7f3b25ca432"
-    sha256 cellar: :any,                 sonoma:        "f59434c6e3b43e4945b2618631c31fabe8aaa5767ac294a748c635f642a0f4e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce3c3223aaae7be9c17bb87d5c9960f33390962ed855f2a9b1566a3e1fadd71a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89c19b543fbf3ced88b2fa81590da847c312149a6d5ac63f38dbf851bb4f5fd4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "49a346cfaa425cda1007f4fc5cccca83546f2297770cb007d63d9f3b0f84e2e6"
+    sha256 cellar: :any,                 arm64_sequoia: "1ee8ae85a57cbceefb97b74b20b7471e107569152e7bb44708e9a44398a7ddb0"
+    sha256 cellar: :any,                 arm64_sonoma:  "7d5f1101a875838e742fb2649d37be7e22705606ee1b3256117cd8e82a000d5b"
+    sha256 cellar: :any,                 sonoma:        "d8d2db3e30495966876ddd5e78cd9105333ce3d89f88b71515a87eca3997b051"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c79fa38699df65ebad7ff99554d7775d9fe5b91a4a5c94e0ceccce3a2663d2d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17c170fcb2656f9089d5142b82ca21c6b9b2793cadd458505714b65803b237c9"
   end
 
   depends_on "pkgconf" => :build
   depends_on "graphviz"
   depends_on "libpq"
   depends_on "openssl@3"
-  depends_on "python@3.13"
-
-  resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/03/b8/704d753a5a45507a7aab61f18db9509302ed3d0a27ac7e0359ec2905b1a6/greenlet-3.2.4.tar.gz"
-    sha256 "0dca0d95ff849f9a364385f36ab49f50065d76964944638be9691e1832e9f86d"
-  end
+  depends_on "python@3.14"
 
   resource "pygraphviz" do
     url "https://files.pythonhosted.org/packages/66/ca/823d5c74a73d6b8b08e1f5aea12468ef334f0732c65cbb18df2a7f285c87/pygraphviz-1.14.tar.gz"
@@ -34,8 +30,8 @@ class Eralchemy < Formula
   end
 
   resource "sqlalchemy" do
-    url "https://files.pythonhosted.org/packages/d7/bc/d59b5d97d27229b0e009bd9098cd81af71c2fa5549c580a0a67b9bed0496/sqlalchemy-2.0.43.tar.gz"
-    sha256 "788bfcef6787a7764169cfe9859fe425bf44559619e1d9f56f5bddf2ebf6f417"
+    url "https://files.pythonhosted.org/packages/f0/f2/840d7b9496825333f532d2e3976b8eadbf52034178aac53630d09fe6e1ef/sqlalchemy-2.0.44.tar.gz"
+    sha256 "0ae7454e1ab1d780aee69fd2aae7d6b8670a581d8847f2d1e0f7ddfbf47e5a22"
   end
 
   resource "typing-extensions" do

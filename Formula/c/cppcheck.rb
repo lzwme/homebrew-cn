@@ -15,25 +15,24 @@ class Cppcheck < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "1a3d5b69399e25726585fb963445f97d2359a9796afe65dde81dd4f3e2e54d24"
-    sha256 arm64_sequoia: "eb0097b36c50984dbb4704c8b92fc9ddc3539b3b0aadacb3447da6d23ddcd8d7"
-    sha256 arm64_sonoma:  "c06383cecb03fc3211e5b454793ef27933502cc15fa82e5c691b74d232818159"
-    sha256 arm64_ventura: "b76f080212e75b4974ab8e9a7fd436cc40366a0f8f21263d9b2773f389d59a5e"
-    sha256 sonoma:        "e201b7dac8a206ce0666b1b45057145f4bfac0392618f309a20af1d6a653e367"
-    sha256 ventura:       "abb6c2780925ded8421fbe46c69266b6ae715e562ad6f4e8092be5d8bc69fc50"
-    sha256 arm64_linux:   "320398fbfeed342b0a4886ae92483bfc7031f75dfa1fe3758b578fb0addaac24"
-    sha256 x86_64_linux:  "bc93065d64304be2541b1ad5bb86588e6020a7e3a935e1415836b65d6f7200a5"
+    rebuild 1
+    sha256 arm64_tahoe:   "a53316e5dda8adbc073f148dba329587526ba3e54157fc7f3a787bf6564d70a8"
+    sha256 arm64_sequoia: "21609bea72c672a96df641fb801021593d132ba01c644b8afdf7a7abab513807"
+    sha256 arm64_sonoma:  "4434fdc861417f4ed8a30be05626e6a882520aa7c86861a44774f7a247976d45"
+    sha256 sonoma:        "b2f0389b3f98b42c7f3dc33c3b7b0899d85789df0d30ca7c6815e5ab77ce1d93"
+    sha256 arm64_linux:   "7ade4ca187c1cf2ff5fc385a0da4306bc437d313bf1a9d2cf8b1ebac74aaf2b6"
+    sha256 x86_64_linux:  "944a5e6a09e9ef9fd3988e2f878e07e43092ffde06b4e14a1b64bbdf601cd79b"
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "pcre"
   depends_on "tinyxml2"
 
   uses_from_macos "libxml2"
 
   def python3
-    which("python3.13")
+    which("python3.14")
   end
 
   def install

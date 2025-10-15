@@ -9,36 +9,34 @@ class Fiona < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "24ef6b90e3e2778d6289d1c1eb78189099db3f54c8ecd00070a652142cd6c03f"
-    sha256 cellar: :any,                 arm64_sequoia: "00b95ac4bf7772eb38a49123a2bda485fabb21c0e1c92ba49fb4630ddf9f0a8c"
-    sha256 cellar: :any,                 arm64_sonoma:  "00eadb2d61339a282cff600a0b0914decfc4ae1cb53ac1d4546b40528811147c"
-    sha256 cellar: :any,                 arm64_ventura: "3887127436fd935145d865af7549a050e7ad7b1b307ea295b412060beef310f7"
-    sha256 cellar: :any,                 sonoma:        "2a2cf6a51c01bc67a4bc2e661d0e0c2e0ffe0b09bb8b661e4071d6dab6d613a6"
-    sha256 cellar: :any,                 ventura:       "f13fc2f8c11c0f918f2761725e7483cdd91948d21041fa51c15a73bb3182bf13"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a306357c631c92a7f61e46b0211ea0d910a6883e849edc8c400e0bb122a804d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16820e10169e49e3787ff5c4507ce74a9fd95188d045fdd0173e00f4a08e9880"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "16703d2ca315cdbe991282fc708b1a57993e80ca3d5a4f7dc9ee6df0dc0feef1"
+    sha256 cellar: :any,                 arm64_sequoia: "f755ce1b5f43038af674e4f365911bcbb9fd48cca160ee90d908815112c381df"
+    sha256 cellar: :any,                 arm64_sonoma:  "ae0fc9040c71d69e67c65a8d7df5a9c94e8061f9eb1f2e53d1d2bc866cce0248"
+    sha256 cellar: :any,                 sonoma:        "f7aa8391aebbb211b90798fa7b1c5bf5283a412975a1e1a3a5bd785cfbb66385"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "027935ae5cbd4255b5eae9e26067c17f7081e248505536b72cdd8f61580154a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1da83baacb14a990f4b5065cdeccda6aa0bf5f75360ebe96e48d9d44c6bf7be"
   end
 
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "gdal"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   conflicts_with "fio", because: "both install `fio` binaries"
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
-    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
+    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
+    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "click-plugins" do
-    url "https://files.pythonhosted.org/packages/5f/1d/45434f64ed749540af821fd7e42b8e4d23ac04b1eda7c26613288d6cd8a8/click-plugins-1.1.1.tar.gz"
-    sha256 "46ab999744a9d831159c3411bb0c79346d94a444df9a3a3742e9ed63645f264b"
+    url "https://files.pythonhosted.org/packages/c3/a4/34847b59150da33690a36da3681d6bbc2ec14ee9a846bc30a6746e5984e4/click_plugins-1.1.1.2.tar.gz"
+    sha256 "d7af3984a99d243c131aa1a828331e7630f4a88a9741fd05c927b204bcf92261"
   end
 
   resource "cligj" do

@@ -11,15 +11,16 @@ class Mx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9f012b27b9609ef101db080e5f34f8abfb645538dd60311bae410e2dabbb2827"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "cd1f91185748aa6b03222f3dacdd0169b183c97696e877a91a32a835b0ce10b1"
   end
 
   depends_on "openjdk" => :test
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     libexec.install Dir["*"]
-    (bin/"mx").write_env_script libexec/"mx", MX_PYTHON: "#{Formula["python@3.13"].opt_libexec}/bin/python"
+    (bin/"mx").write_env_script libexec/"mx", MX_PYTHON: "#{Formula["python@3.14"].opt_libexec}/bin/python"
     bash_completion.install libexec/"bash_completion/mx" => "mx"
   end
 

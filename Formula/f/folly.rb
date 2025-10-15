@@ -1,18 +1,18 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
   homepage "https://github.com/facebook/folly"
-  url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2025.10.06.00.tar.gz"
-  sha256 "9ed3d1752c44ac9eb6dfd1ae88d7bc0bf4690152b8966dd0e12b1c0c3d3ca1f2"
+  url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2025.10.13.00.tar.gz"
+  sha256 "719423943d6076be646de388e825237c5c9352d6c0542860abdc1279104fd3ab"
   license "Apache-2.0"
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cf79bc43ec2de6a19915c44237e7c0e61b0900ad1b6e5b55401de465f71e8936"
-    sha256 cellar: :any,                 arm64_sequoia: "e1a4df22cf0e108969b8b10ad1e2aa07efa64f69108564cb1eebaca1851fbbf7"
-    sha256 cellar: :any,                 arm64_sonoma:  "a2f724ca1e332ccac0e79dd1bfdd43e2eb65c34ee07cf78f17001c5212954cd5"
-    sha256 cellar: :any,                 sonoma:        "8daa6c4e235a92e22faf62d414803bc422760437d636b0ebaf0b70138d84cfc1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7320323cd7fd8bcfc2235e1199197e3f9f32abdf03eff200cf2407713fe15c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9afc7783aa084b4f7796de4fc88e526eefad65e62c8bf39b9b625c17c71999e5"
+    sha256 cellar: :any,                 arm64_tahoe:   "a3b2b47bd753df2aa1c57508352afb1083767f2d797c7563981939b82ab42e9a"
+    sha256 cellar: :any,                 arm64_sequoia: "768d80c4bfe0f51cb611fc5c92c3e83de59789b8630bca79865a437a26d2d826"
+    sha256 cellar: :any,                 arm64_sonoma:  "a20da38f2006101c9136943387deb1e6432b2c482213ed526af56f397a0ec2c6"
+    sha256 cellar: :any,                 sonoma:        "63d5d4ee08b11f535c4a43dc54ac49e16d7f646d5869757f89ead0ab0905edca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1353fc8300e9e7570257b91fbef2cc1973bef579623a09014dbec78d41d0772"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "faf8207083bfb1e793cf397992f6dc8021022fe8355409810dcae2cfe381e5cd"
   end
 
   depends_on "cmake" => :build
@@ -116,7 +116,7 @@ index 7dafece7d..eaf8c2379 100644
      filesystem
      program_options
      regex
--    system
      thread
+-    system
    REQUIRED
  )

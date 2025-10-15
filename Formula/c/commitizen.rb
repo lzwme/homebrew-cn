@@ -9,18 +9,17 @@ class Commitizen < Formula
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5ba5bb428d3a95c1e52b988425efb54e50d70f1342e995c8bf3f22522341d52f"
-    sha256 cellar: :any,                 arm64_sequoia: "4503c3fb552f9b261c16d4b391456e9412b6f370153065971482b8d2d9701db2"
-    sha256 cellar: :any,                 arm64_sonoma:  "3623c09195badcb65be6d8d8623b73f75a1eac7de7dd1b4737b67eac4b11339a"
-    sha256 cellar: :any,                 arm64_ventura: "e9ece7a6db70ef1e33b0341de2411bf258dcd5337b4f967ca5866ec33d38866b"
-    sha256 cellar: :any,                 sonoma:        "b4543b745715b8d5126062fad7dab7f340f9368f0b8188e07f7c35be7fbd9dc5"
-    sha256 cellar: :any,                 ventura:       "3170e751ed39ed96bd2e99f749f1099c618164fd0e893c5b16c60e007a474099"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "23eb45c33b7031b1d1cba5a435886f2cba1a546e9e53bd87a5b73c803340ff45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e09ff3e24290230b3b59562004b9bbdd751179ed83dad64ab4f5430b09e4169"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "b1f2a57f4cdaf58dc2080805516b86619dcc4be4a8ce4a70558cccf02664594d"
+    sha256 cellar: :any,                 arm64_sequoia: "e1f236b01e9a2300233d67c494263d10a5959ad1082960347ffad742ddb4010a"
+    sha256 cellar: :any,                 arm64_sonoma:  "73edb092a82884f6c682490ffd55179936310d966ff015a1d84c77feafa92e4c"
+    sha256 cellar: :any,                 sonoma:        "ba6b0ad432d0e1011fc2355f79ec0c0c5de28cb085abdf74c6e1931bfbfe96d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44940a59607090b9cbfe6a25a6700ec86546959955f369ffbd89df580df54109"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b47592d60ccb6684d2a02d06006ccbf2917ea37abbd63e0898cec559882483b3"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "argcomplete" do
     url "https://files.pythonhosted.org/packages/16/0f/861e168fc813c56a78b35f3c30d91c6757d1fd185af1110f1aec784b35d0/argcomplete-3.6.2.tar.gz"
@@ -53,8 +52,8 @@ class Commitizen < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   resource "packaging" do
@@ -68,8 +67,8 @@ class Commitizen < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "questionary" do
@@ -88,8 +87,8 @@ class Commitizen < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz"
-    sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
+    url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
+    sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
   end
 
   resource "wrapt" do

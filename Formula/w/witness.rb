@@ -1,8 +1,8 @@
 class Witness < Formula
   desc "Automates, normalizes, and verifies software artifact provenance"
   homepage "https://witness.dev"
-  url "https://ghfast.top/https://github.com/in-toto/witness/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "4c178ede178d6a7296e60e9b349c5c4158b9ad3bddf17d035c72a6215ac80371"
+  url "https://ghfast.top/https://github.com/in-toto/witness/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "ec0e023353092ea749eac8c1452119b0ec097ba74952ca96c073293dd2689d9b"
   license "Apache-2.0"
   head "https://github.com/in-toto/witness.git", branch: "main"
 
@@ -12,14 +12,12 @@ class Witness < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86a545ff12e6cd6b41beb546d04a4ffe592976877da6f3e208656c5c0527a74c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4645fc8391c77acb98578f88e41b0001d42b44568fc4c07bb1aae4ed03d99f04"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77ff8923ccbff7c5b628d7c147b031ff19f955d4bfdc67ca8bf50fa57f25e7a8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d7e212c1c6484eadb4d0550f66fcd2149b775940989c9217365ba04e1cc6caf5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4b7c1abd60c7f8b47b2587c1496b6711aa11bf9949e9eb87e679a2bd97d53dba"
-    sha256 cellar: :any_skip_relocation, ventura:       "959c124169ea4f63dfa35df3f3b40d655aeb173114923c1ca101ad58e7d0e245"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de299e9fb8a737d54545cb591e5d6f31a0ebc13e62695791ef166795b65c5aed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "feeddaf898c3773ca1eb25c2039e0ef50e292fd0fe6dd20e4312f2802da38232"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "38a93bd6e749ef5b5dcc6b8923c738bb56203d7cf5315bd7f726fea4299b2910"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "963caad7e32d28af56b823b83019423adb5266e9848bd5e44c9dbb37153768a8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9981aa9ca6ac0e278eda0a3fe305ad353b5d99f029fe4508d57f4c23554c690"
+    sha256 cellar: :any_skip_relocation, sonoma:        "882e66c68b5902d14f4dc3943f931dd22313f336c15aa3813700b32b01319a73"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebc01fbbffe6b5d82ae26d4f135d64ab7c0d43d04fdb3d9c9ada1bca5836c01e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7784e36883044ab8bbef1f6af7b840a42d97dd91525604d5c294d04c2a997bed"
   end
 
   depends_on "go" => :build

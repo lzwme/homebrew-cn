@@ -20,6 +20,10 @@ class PythonTkAT39 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "75d144c971b8266750f99b1afbe9cb486d45be5d141f9ab15c9ce5af35e0bb13"
   end
 
+  # Follow up to python@3.9 deprecation
+  deprecate! date: "2025-10-15", because: :deprecated_upstream
+  disable! date: "2026-10-15", because: :deprecated_upstream
+
   depends_on "python@3.9"
   depends_on "tcl-tk@8"
 

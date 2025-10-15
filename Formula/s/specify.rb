@@ -3,12 +3,12 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.com/github/spec-kit"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.0.62.tar.gz"
-  sha256 "1029447ff9ba4642397c758ebcb2571042000847407f7924ae873756067f84b7"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.0.64.tar.gz"
+  sha256 "03b94657d046ba3df66d6f05d7f1815b5d2f632242727436679944025639473a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "406268570a69173241792d26d9ffd07592355a5f7377f3b9075759620bcf10b3"
+    sha256 cellar: :any_skip_relocation, all: "6e3914dbcc8faa10ae5242f90770a188a5607f4953647e4cc6cb582b9b54afe7"
   end
 
   depends_on "certifi"
@@ -40,8 +40,8 @@ class Specify < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "markdown-it-py" do

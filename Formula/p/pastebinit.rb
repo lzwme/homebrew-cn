@@ -14,6 +14,8 @@ class Pastebinit < Formula
   end
 
   depends_on "docbook2x" => :build
+  # Do not bump, `FancyURLopener` is removed in 3.14
+  # ref: https://docs.python.org/ko/dev/whatsnew/3.14.html#id12
   depends_on "python@3.13"
 
   # Remove for next release

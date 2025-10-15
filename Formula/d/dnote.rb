@@ -1,23 +1,30 @@
 class Dnote < Formula
   desc "Simple command-line notebook"
   homepage "https://www.getdnote.com"
-  url "https://ghfast.top/https://github.com/dnote/dnote/archive/refs/tags/cli-v0.15.2.tar.gz"
-  sha256 "d68fd975a91b1872d15c2bfea12a1b43d8878c9811d1df4876c07f3d10f05e4e"
+  url "https://ghfast.top/https://github.com/dnote/dnote/archive/refs/tags/cli-v0.15.3.tar.gz"
+  sha256 "e3fe1ba082fa3ecaca42a734149a00d4b1fd48b39a14245f26ec5f3fc5bd1bb9"
   license "GPL-3.0-only"
   head "https://github.com/dnote/dnote.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^cli[._-]v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca0d5c2c89e54661d1acef6bec74aa22397755e502d0d692c7e355d002493f69"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a1d3d6358a11edae43465a046927690efbd591b87b71a2cbbe78bde802c7c2a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8a29c44a56d826dca695c3307f46ebd784ad44d7c93d48b5248b8d678976c8f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f49a252c80178c5dc230dc95cfa45b4a34e748cf91ced442c1c5e9aa0e50a1d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15995657c95db000067ad4ad84586da2219c67af8b485b8bf9f95e3db03c1506"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1874739a52c05c5c86480cce7c5a4e2e3ecf43f18858a5de403c74fe37264c93"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b829fec07d5ee3fbab45f2c8ddc25a54f0278dd1fb25953674d1959f493e31e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "702adaeeb766a1fe713bb262f409bf96b3afe162e5b7e24c3ded6db1bce1a32f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2b8c0527ab722f773a0217f6340c889f8a56ca9954a21e7dcb6f918fda0dc7b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8b571f4cd5e31c846c955c45bb246e251f4a073d05eaa37f2b1f4210d448924f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2271fa682e269d6411bba2f124ccccf3c40ee59c6d9ceef932ae04a03a733d1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7267c840340c83202c15198bb678efcec32c4d5a469ad62be8e7ad651e9c987a"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1"
+
     ldflags = "-s -w -X main.versionTag=#{version} -X main.apiEndpoint=http://localhost:3000/api"
     system "go", "build", *std_go_args(ldflags:, tags: "fts5"), "./pkg/cli"
   end

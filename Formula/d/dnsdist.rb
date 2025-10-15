@@ -13,18 +13,19 @@ class Dnsdist < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "b2a19faf91fba7dbca19a619586d17fbab39375bb46ca880894857cbb5deed4a"
-    sha256 arm64_sequoia: "739932f49271509daf66a2d2fa4e266d21b40a3b43a389ff52ded7560b6fa9e7"
-    sha256 arm64_sonoma:  "8a33c281897ce7bcd3434044154b3cab918557ea651a55d429ffd064ae128341"
-    sha256 sonoma:        "986c3bd17146b58c0fec946e4595e27533bdcd8943265d5972adb79d5b6c4c2f"
-    sha256 arm64_linux:   "36b33dec50fb212992280bf256d4c57ee3489c72099e8f03a369115d2832788d"
-    sha256 x86_64_linux:  "b4b1d35c579951796aea9f9b84050f692c34f85fd5eb5cfe25b2ff95eb79d0d9"
+    rebuild 1
+    sha256 arm64_tahoe:   "dfea90bdb98efc4b827ed4c32ea6efbb1417e57623120ea43ab97d4a3d1f22da"
+    sha256 arm64_sequoia: "fc32d06a35b1611c4bb3ed43712359fc095d0c68b7772b9e48355728ce6494da"
+    sha256 arm64_sonoma:  "8ed1785bf9262c314b75defbcf3fac20972d70f430fbfa1cb5765e416cdedd08"
+    sha256 sonoma:        "d593835bf6940fa880d91beb34e8aa02e0ce0986abd9bdec8f3149882a2cee6c"
+    sha256 arm64_linux:   "6b0d88620b7c47cc49ffa88da13b9ccf1eb7ab03c2511ad80fd67bde8a06a07b"
+    sha256 x86_64_linux:  "1d32e7c0ec893b6233949e76ca6b9af53eec64290f506d93dfd6ec4ad9a5e0c4"
   end
 
   depends_on "boost" => :build
   depends_on "libyaml" => :build # for PyYaml
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "fstrm"
   depends_on "libnghttp2"
   depends_on "libsodium"
@@ -35,9 +36,9 @@ class Dnsdist < Formula
 
   uses_from_macos "libedit"
 
-  resource "PyYaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+  resource "pyyaml" do
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   def install

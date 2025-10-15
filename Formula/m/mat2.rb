@@ -8,7 +8,8 @@ class Mat2 < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7b534040135d940e613435f419dd0556e98b876b3ff9364d67dc001ac3412ec7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "7ada4d330d9f42d51d2b86378e08ad87ef31923a19737fd27ae7c215d133c06e"
   end
 
   depends_on "exiftool"
@@ -16,9 +17,9 @@ class Mat2 < Formula
   depends_on "gdk-pixbuf"
   depends_on "librsvg"
   depends_on "poppler"
-  depends_on "py3cairo"
-  depends_on "pygobject3"
-  depends_on "python@3.13"
+  depends_on "py3cairo" => :no_linkage
+  depends_on "pygobject3" => :no_linkage
+  depends_on "python@3.14"
 
   resource "mutagen" do
     url "https://files.pythonhosted.org/packages/81/e6/64bc71b74eef4b68e61eb921dcf72dabd9e4ec4af1e11891bbd312ccbb77/mutagen-1.47.0.tar.gz"

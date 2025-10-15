@@ -1,17 +1,17 @@
 class BehaviortreeCpp < Formula
   desc "Behavior Trees Library in C++"
   homepage "https://www.behaviortree.dev/"
-  url "https://ghfast.top/https://github.com/BehaviorTree/BehaviorTree.CPP/archive/refs/tags/4.7.3.tar.gz"
-  sha256 "17dc83b55b087fe6a489c0a7d16c9b02289d1e68c1298279667a9ab07f705b8b"
+  url "https://ghfast.top/https://github.com/BehaviorTree/BehaviorTree.CPP/archive/refs/tags/4.8.0.tar.gz"
+  sha256 "7464badd36d322b4eb459f32b2ae8ca05a3bb16dbd61ac03f1730cef6347f770"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "18c752c1594f0d59134c4f6c7db2816e4ec1dab66ca0a9ed1838b18bbc5fd63a"
-    sha256 cellar: :any,                 arm64_sequoia: "545aec96e8775878a29703c02206cf910a404b58dbcd51c15b43bfa74b59c0aa"
-    sha256 cellar: :any,                 arm64_sonoma:  "6664909f59c9bc6ed7b574676636ad787420cd46ef030fab0335988d0b2c321d"
-    sha256 cellar: :any,                 sonoma:        "c904edea805dd1c7af2d7c98a124390c8fcf53f6051a66d8cdae4f9e3cb9ca1a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85c73e1127c04a8eb6049cdbbc99ea5c5475ae9c48c37386cf16243678f3a224"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "577bb84679f48f13526d11ba2b3f8752df759cb34cd333f8dc765bee291985ca"
+    sha256 cellar: :any,                 arm64_tahoe:   "7bdc2c546b85ea2f55919a0767fd92c232a31ef55868522ee6e93a424d8339f4"
+    sha256 cellar: :any,                 arm64_sequoia: "3ea237d5cb825ebeb66ae1c8109cb508239516b267b0cb7f3a6fbc22bb62a270"
+    sha256 cellar: :any,                 arm64_sonoma:  "29dd96fca3c082a5e6a64f6836eff0a20ca7748a89c72c3dcef3d3b1e8843f15"
+    sha256 cellar: :any,                 sonoma:        "9221bd11326edfedb6f392e71dacef9428c7a66667d1f8a2e6629b623031b37d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c39715e5eed9e3e0db921de52a009f770674cc5a4fa4ba8806f14d36fb63490b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72ac6de94d65f1f7ecb681a00f3ead28fa2a5a37fbe1ee02747e92d7bdfda03e"
   end
 
   depends_on "cmake" => :build

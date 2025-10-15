@@ -15,14 +15,13 @@ class CoreLightning < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "25fd645a7b4c09a79eb8ff35b7b342edc9494f5d92ffa0cf51c39611ac502a01"
-    sha256 arm64_sequoia: "5009fb86bfe8b4f6885e5cc8b4045363fff758f9eb9c21201f2d502a2f39e4d1"
-    sha256 arm64_sonoma:  "295b9afa9429544e01f57537b554168be9cb1c997b5fac2213585fb9fa87b3ad"
-    sha256 arm64_ventura: "bbab3239de35f7d0e8c4013b496cfe43802f5aa1345d2edda939b60e8ba4190e"
-    sha256 sonoma:        "c50c88581f3876887c19e0a940edff438c729547753899bc18c3800fd20c7175"
-    sha256 ventura:       "b9f6623b48482c7fc94f43ebab0e79ea9bd4bff5f1c97d2b5f9239cc4d901695"
-    sha256 arm64_linux:   "a96ac48362a923563a1171b83d47cc77645f52493a51ce17860f91d80775e8bd"
-    sha256 x86_64_linux:  "5b00d3ec6f9bcf60c2d8b8722e5c9a3892815ac7abe60adf60a42181e2cca382"
+    rebuild 1
+    sha256 arm64_tahoe:   "acf72d46243f92547a60ae133be2e70f09351c15fd127bde71845508f17f9b4b"
+    sha256 arm64_sequoia: "575a43de7fd78adcb332b6af3661d5f6900d8da1cfa141edff59612cad7da36a"
+    sha256 arm64_sonoma:  "7ebf05047d584acf509a56eaedd4bb935ab0eacc4b6bbc3d063aaebdadaa1890"
+    sha256 sonoma:        "753d6d32cd9c49dbcdaed157995cc74a23ecc18759a47febd55a22bf0f04526f"
+    sha256 arm64_linux:   "2275d43614ce5b224eeb4585ef86840071cb7d4c3e23bd5dc102155ebbb96018"
+    sha256 x86_64_linux:  "9ccf024030268817ef76beb29f4079e3ff7f42af1f9a4d190c77f5f721143f01"
   end
 
   depends_on "autoconf" => :build
@@ -32,7 +31,7 @@ class CoreLightning < Formula
   depends_on "lowdown" => :build
   depends_on "pkgconf" => :build
   depends_on "protobuf" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "rust" => :build
   depends_on "bitcoin"
   depends_on "libsodium"
@@ -52,8 +51,8 @@ class CoreLightning < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   resource "setuptools" do
@@ -71,7 +70,7 @@ class CoreLightning < Formula
   def install
     rm_r(["external/libsodium", "external/lowdown"])
 
-    venv = virtualenv_create(buildpath/"venv", "python3.13")
+    venv = virtualenv_create(buildpath/"venv", "python3.14")
     venv.pip_install resources
     ENV.prepend_path "PATH", venv.root/"bin"
     ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin" if OS.mac?

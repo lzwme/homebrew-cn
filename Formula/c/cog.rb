@@ -12,21 +12,22 @@ class Cog < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52f469364f8866c4016cd433cb8cf9b11657e2ad6bae2b516452651599502260"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52f469364f8866c4016cd433cb8cf9b11657e2ad6bae2b516452651599502260"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52f469364f8866c4016cd433cb8cf9b11657e2ad6bae2b516452651599502260"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c1ec610e6e0f6583a81e2027436080a29c813f8e2422023668f672088fc3405e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "97e75d6710886a60bf0764d1be05cdec345b6f41f9e90c64effa4923a498a220"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a657e2bc81f01e5e755e76de05f8cc022da603b058a28e94f6569be8b12da51"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b0d7ce713afad995b4ce295fc28d5b9753777f5f6c4beee10cadf8c315e5d0d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0d7ce713afad995b4ce295fc28d5b9753777f5f6c4beee10cadf8c315e5d0d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0d7ce713afad995b4ce295fc28d5b9753777f5f6c4beee10cadf8c315e5d0d5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a2126cde70b8e56011c8857b31833b011f72ac77c76bfe79bff379127b835d92"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d21db0e8c506a414a5939f36c796074fe92eaa971ec46b68f6651f10aa026e79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ae6769d10f569e271aab438fd913a1ba0bbec0935dca42cfc0d7bd155dac67c"
   end
 
   depends_on "go" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
 
   conflicts_with "cocogitto", because: "both install `cog` binaries"
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

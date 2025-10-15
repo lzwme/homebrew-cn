@@ -4,14 +4,15 @@ class Cython < Formula
   url "https://files.pythonhosted.org/packages/a7/f6/d762df1f436a0618455d37f4e4c4872a7cd0dcfc8dec3022ee99e4389c69/cython-3.1.4.tar.gz"
   sha256 "9aefefe831331e2d66ab31799814eae4d0f8a2d246cbaaaa14d1be29ef777683"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9bad722f83c356020e597fc17d523292b041238c2f6594e67e28adf8276dddf8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4588c04df9f54b41a6eb21fa9f64cc193f1d147f26773c3e6f6241f175d031ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "38d316e16acfbc8fcdd6173b3a70462b9fdca535676427830635ea39e5731553"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dbf2ef8b9722d589c36e398abd02bc3f5703d9210c03e87b5cf5331640b993a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ad3fddab620092e3755e85fed1e7c825bf1a0f6d8e52b77d90abd99aba25122"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09ffc5aa327c0a08681b74073ddce14f803a927073181ade42a426cdb4ee9ab1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b6520538e3f78ff3b1da24a2cb1576f02c0b4bd582a76aab3932ec050e4b3520"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd1b246613a2ae5dd2f33c376a069795179149935f10ee141484ff47995877bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31c247aed8fe5fee90e9701db87865b9411d515306e819c936956ca13397cf3b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f8608af7653e550d63d5ca0a5e0dac40ccc8a7d11f38f20fe272f0bd4263ec1d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92f59446dd10ca529903c2f668c9294638b3a8103047f9c2bf1022df76462d7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e9dc4da4feb88a9eec5dfe0f147e4c32d979a9e2585de30842bfd5724dcdc0d"
   end
 
   keg_only <<~EOS
@@ -20,10 +21,10 @@ class Cython < Formula
   EOS
 
   depends_on "python-setuptools" => [:build, :test]
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

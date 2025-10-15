@@ -8,19 +8,18 @@ class Copier < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4b576d1da9c24fda1867d9a8c4c10754fea7ae312887b1effafe2c8e9712e48d"
-    sha256 cellar: :any,                 arm64_sequoia: "d1c3b14afe2892fe4a8206dd5ee4d6426e9c695177d4059ac3dbdc53c4d09114"
-    sha256 cellar: :any,                 arm64_sonoma:  "0d850e27a27ac3019c6aa33e1f0580cfc0dda6f41678bd25090a8b870cf86dca"
-    sha256 cellar: :any,                 arm64_ventura: "0f375b22fe84f9689de00405a5ea009a4d3e12c175ee95ef5a2bb251de0d38f3"
-    sha256 cellar: :any,                 sonoma:        "3d6155eca24920903c86ca2785e810c0ba8ffc34f35501aa7726d356f3262799"
-    sha256 cellar: :any,                 ventura:       "5446276d8040c7f6a39a1cc156a940b455c38d71a88db56ba569d84fd17f8622"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "69555f3902ba15318bfcfe0d39af02fb253cedafbb89730e24b7748e47b4cb5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b831f49dc1bae0f0f20b38b151ecf811119a45304b43140c25524ef8b2b722d8"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "84d4b986a8e2e25acf4bd8431a5c0ab12e2b59540c3f1b3eff0cdcd83d13a72d"
+    sha256 cellar: :any,                 arm64_sequoia: "326af91bc43327ec7a5d2c811b6235fcc98c4918b0018711e477f463f84a0443"
+    sha256 cellar: :any,                 arm64_sonoma:  "0e333c45318dac611bb832f10a9704b2afb5e363b80eaf3f98cacef9354c34cb"
+    sha256 cellar: :any,                 sonoma:        "d4f28c888931de224ccc5ed3df654ff52aa2095b69ddb7538d3f6a7c3d29a433"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "68052abd8a6afe8555d8d002dfb8463390490f85b125d288a9a1b152af048b4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46ac88472781aeca4c7970e2547e2f1809356f6c7391b573551235bd8ded5625"
   end
 
   depends_on "rust" => :build
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -53,8 +52,8 @@ class Copier < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   resource "packaging" do
@@ -68,8 +67,8 @@ class Copier < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
-    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
+    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
+    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
   resource "plumbum" do
@@ -83,13 +82,13 @@ class Copier < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/00/dd/4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8c/pydantic-2.11.7.tar.gz"
-    sha256 "d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db"
+    url "https://files.pythonhosted.org/packages/3c/a7/d0d7b3c128948ece6676a6a21b9036e3ca53765d35052dbcc8c303886a44/pydantic-2.12.1.tar.gz"
+    sha256 "0af849d00e1879199babd468ec9db13b956f6608e9250500c1a9d69b6a62824e"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/ad/88/5f2260bdfae97aabf98f1778d43f69574390ad787afb646292a638c923d4/pydantic_core-2.33.2.tar.gz"
-    sha256 "7cb8bc3605c29176e1b105350d2e6474142d7c1bd1d9327c4a9bdb46bf827acc"
+    url "https://files.pythonhosted.org/packages/00/e9/3916abb671bffb00845408c604ff03480dc8dc273310d8268547a37be0fb/pydantic_core-2.41.3.tar.gz"
+    sha256 "cdebb34b36ad05e8d77b4e797ad38a2a775c2a07a8fa386d4f6943b7778dcd39"
   end
 
   resource "pygments" do
@@ -98,8 +97,8 @@ class Copier < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "questionary" do
@@ -113,13 +112,13 @@ class Copier < Formula
   end
 
   resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/f8/b1/0c11f5058406b3af7609f121aaa6b609744687f1d158b3c3a5bf4cc94238/typing_inspection-0.4.1.tar.gz"
-    sha256 "6ae134cc0203c33377d43188d4064e9b357dba58cff3185f22924610e70a9d28"
+    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
+    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz"
-    sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
+    url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
+    sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
   end
 
   def install

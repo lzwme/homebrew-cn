@@ -13,12 +13,13 @@ class Nftables < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "1cdfede29ca680feb1d2adcc3a87fe2d085362050bafd708c12f840d634ea404"
-    sha256 x86_64_linux: "24f8155cd129fb16a9685b95170140db1df69ff00d1327674ff41609e37bb903"
+    rebuild 1
+    sha256 arm64_linux:  "5e00516cc3b2c2913b7951be59528c172b0f08b1d647c1aed03077dac8c6f59a"
+    sha256 x86_64_linux: "f57bf4df87b43a03ec87de442f592413521a03b39a5553bc1e493afa90778ffd"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "gmp"
   depends_on "jansson"
   depends_on "libedit"
@@ -29,7 +30,7 @@ class Nftables < Formula
   depends_on "readline"
 
   def install
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
     system "./configure", "--disable-silent-rules",
                           "--with-python-bin=#{venv.root}/bin/python3",
                           *std_configure_args

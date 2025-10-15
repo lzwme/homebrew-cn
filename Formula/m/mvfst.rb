@@ -1,18 +1,18 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
   homepage "https://github.com/facebook/mvfst"
-  url "https://ghfast.top/https://github.com/facebook/mvfst/archive/refs/tags/v2025.10.06.00.tar.gz"
-  sha256 "c643cc19a82cf4345185bbb5170410bb5b055b2b6aaf43ee76deab1bdd0d42d9"
+  url "https://ghfast.top/https://github.com/facebook/mvfst/archive/refs/tags/v2025.10.13.00.tar.gz"
+  sha256 "c6416c6c79c1a4b5b74d1aa1cf8ef8e80f625c28f6afc9154c8d7d77f796fcb6"
   license "MIT"
   head "https://github.com/facebook/mvfst.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "b475c0c51947c3d4452fa921a7692287c8ede572ee59301dc17f74d088ac1230"
-    sha256                               arm64_sequoia: "aaee36663f48c092b7bd80e81283836e364c221a89e6271c743c9063a8cbc0f8"
-    sha256                               arm64_sonoma:  "fca0c052757d4b6674f14c2a7dda39803dead0d838c258e5bb85a2c96f39ed1b"
-    sha256 cellar: :any,                 sonoma:        "8ffd2546fa492ead77d71a2e4f543ce7f4a4bef2aeb9ec80f1310cf7f546067b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf5d8359cabb3ebc80e0dbba4fbec8bdd8aea134ce35aeb3d8b8e3c7f7f5db40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7b2af44362f6870a5c07432644c260ca1dca4cc068c3da2bb849753e9820cf3"
+    sha256                               arm64_tahoe:   "3830655bbe218c618bde02f7e6c2151380219238e93ce8a67dd3d3c521bfd3bc"
+    sha256                               arm64_sequoia: "e80b84216758f447c663a2332dcf5cac386fd8fc33a2dda5c4504d7d14a52895"
+    sha256                               arm64_sonoma:  "746827b230d2a0fc4ad5e8ec7bd71c1f96c0e7752b62e991110179d99bd2c034"
+    sha256 cellar: :any,                 sonoma:        "42ef291cc612c4dbd40051314a5de5465971405b3262784d070812ab97bdcf24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4f4f73dce261368d18ea838e22f9ed4ae3f23cb66b62953557e89e0f5b576db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1d78dba1bc90c792b7e2228f9d779fe725001373299ff9ca1e0afa8fa046857"
   end
 
   depends_on "cmake" => [:build, :test]

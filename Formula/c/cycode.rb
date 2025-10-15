@@ -9,19 +9,21 @@ class Cycode < Formula
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3e1dd2c514e95b8069cb959c27babb0524645547f75dfcf013988d6e5164ec25"
-    sha256 cellar: :any,                 arm64_sequoia: "aa6a5dfc460c3f7119a509621f31187df88355263cbe28282a51e93a5ce1c85b"
-    sha256 cellar: :any,                 arm64_sonoma:  "f86160e80ead886b821df4e86bd113aaf8291f5f49f9bea567bc337e026e7367"
-    sha256 cellar: :any,                 sonoma:        "0653be17fb64577962e0d7ad1e673e86fed040000fab7238af98a6e2d50af811"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "19255a65dac2a755bc90129b5ff316d6addb7f48a6f3a4183c9520fcbf0dfd15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "101b1983abfce56a663b4259711df183e9f8ff60c96315952d87694f064a5392"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "2bc6ee405b3501c4f8f2e59732bd565dc30f83c46b46de43dba66a0460d8908f"
+    sha256 cellar: :any,                 arm64_sequoia: "976f77080273e56751a3d3e887807f619b8300a817ad3cbd1b831c9abf13f81f"
+    sha256 cellar: :any,                 arm64_sonoma:  "208fbcf574a4b691ffa80bc2f703b330f2fe6963db735bc93fab8fbb6619b367"
+    sha256 cellar: :any,                 sonoma:        "eaf1b8f1961348aac1088b14050ce6bfcd2c99f20724da898cbd2cee8e943840"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc188e25c183f0bc63d70a7ea5f9824ed10612847cfc212fc35a815b9b4aefaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36db129ab0808ac64e602056096b643ee897cefb967eb75f2c4a8cc71a929f56"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build # for mcp
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -94,13 +96,13 @@ class Cycode < Formula
   end
 
   resource "httpx-sse" do
-    url "https://files.pythonhosted.org/packages/63/7a/280d644f906f077e4f4a6d327e9b6e5a936624395ad1bf6ee9165a9d9959/httpx_sse-0.4.2.tar.gz"
-    sha256 "5bb6a2771a51e6c7a5f5c645e40b8a5f57d8de708f46cb5f3868043c3c18124e"
+    url "https://files.pythonhosted.org/packages/0f/4c/751061ffa58615a32c31b2d82e8482be8dd4a89154f003147acee90f2be9/httpx_sse-0.4.3.tar.gz"
+    sha256 "9b1ed0127459a66014aec3c56bebd93da3c1bc8bb6618c8082039a44889a755d"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "jsonschema" do
@@ -124,8 +126,8 @@ class Cycode < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/3d/a1/b1f328da3b153683d2ec34f849b4b6eac2790fb240e3aef06ff2fab3df9d/mcp-1.16.0.tar.gz"
-    sha256 "39b8ca25460c578ee2cdad33feeea122694cfdf73eef58bee76c42f6ef0589df"
+    url "https://files.pythonhosted.org/packages/5a/79/5724a540df19e192e8606c543cdcf162de8eb435077520cca150f7365ec0/mcp-1.17.0.tar.gz"
+    sha256 "1b57fabf3203240ccc48e39859faf3ae1ccb0b571ff798bbedae800c73c6df90"
   end
 
   resource "mdurl" do
@@ -149,13 +151,13 @@ class Cycode < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/c3/da/b8a7ee04378a53f6fefefc0c5e05570a3ebfdfa0523a878bcd3b475683ee/pydantic-2.12.0.tar.gz"
-    sha256 "c1a077e6270dbfb37bfd8b498b3981e2bb18f68103720e51fa6c306a5a9af563"
+    url "https://files.pythonhosted.org/packages/3c/a7/d0d7b3c128948ece6676a6a21b9036e3ca53765d35052dbcc8c303886a44/pydantic-2.12.1.tar.gz"
+    sha256 "0af849d00e1879199babd468ec9db13b956f6608e9250500c1a9d69b6a62824e"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/7d/14/12b4a0d2b0b10d8e1d9a24ad94e7bbb43335eaf29c0c4e57860e8a30734a/pydantic_core-2.41.1.tar.gz"
-    sha256 "1ad375859a6d8c356b7704ec0f547a58e82ee80bb41baa811ad710e124bc8f2f"
+    url "https://files.pythonhosted.org/packages/00/e9/3916abb671bffb00845408c604ff03480dc8dc273310d8268547a37be0fb/pydantic_core-2.41.3.tar.gz"
+    sha256 "cdebb34b36ad05e8d77b4e797ad38a2a775c2a07a8fa386d4f6943b7778dcd39"
   end
 
   resource "pydantic-settings" do
@@ -194,8 +196,8 @@ class Cycode < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
-    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
+    url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
+    sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
   end
 
   resource "requests" do
@@ -206,11 +208,6 @@ class Cycode < Formula
   resource "rich" do
     url "https://files.pythonhosted.org/packages/ab/3a/0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bc/rich-13.9.4.tar.gz"
     sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
   end
 
   resource "sentry-sdk" do
@@ -284,6 +281,9 @@ class Cycode < Formula
   end
 
   def install
+    # Unpin python for 3.14
+    inreplace "pyproject.toml", 'python = ">=3.9,<3.14"', 'python = ">=3.9"'
+
     virtualenv_install_with_resources
     # `shellingham` auto-detection doesn't work in Homebrew CI build environment so
     # disable it to allow `typer` to use argument as shell for completions

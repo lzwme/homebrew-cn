@@ -2,9 +2,9 @@ class Libressl < Formula
   desc "Version of the SSL/TLS protocol forked from OpenSSL"
   homepage "https://www.libressl.org/"
   # Please ensure when updating version the release is from stable branch.
-  url "https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.1.0.tar.gz"
-  mirror "https://mirrorservice.org/pub/OpenBSD/LibreSSL/libressl-4.1.0.tar.gz"
-  sha256 "0f71c16bd34bdaaccdcb96a5d94a4921bfb612ec6e0eba7a80d8854eefd8bb61"
+  url "https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.2.0.tar.gz"
+  mirror "https://mirrorservice.org/pub/OpenBSD/LibreSSL/libressl-4.2.0.tar.gz"
+  sha256 "0f7dba44d7cb8df8d53f2cfbf1955254bc128e0089595f1aba2facfaee8408b2"
   license "OpenSSL"
 
   livecheck do
@@ -13,14 +13,12 @@ class Libressl < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ade979e7704f2e16d9fa5522e1fc70503b0aff8ee799773364f3c82718c1afec"
-    sha256 arm64_sequoia: "d9e0e7a03efef02ecc9d4a4e61964dd5560fee9c3f75cd2d2898539ff21a9ae9"
-    sha256 arm64_sonoma:  "96c53ee52ddf5eb1343d1971702b59e6418a0b9e7a2c7bd065e01a6a7a8084e1"
-    sha256 arm64_ventura: "ff910b656712bbfac05e5b3c415ac2a095bfc1a0b5e2fe63d9ae17d08c4db1f7"
-    sha256 sonoma:        "cf815425b051c0bf2ba5e120d6534efb64d40ffdea1f0ac9a255654268305b7a"
-    sha256 ventura:       "1ba657e7e70e8056684957a68063c6f9ca201947bfb7d14037e76f1e692b8086"
-    sha256 arm64_linux:   "cda2a7c39bc04e8c0a195915c1461a592f46a6c06f3824594e54a8d26296f345"
-    sha256 x86_64_linux:  "9b3af04331913723669b17ed9878eaf78f039617f0841a99400ee649bc57a9b2"
+    sha256 arm64_tahoe:   "85687f0b76c346c583c423c6805812639e1a8948fafa197c28428222d1955743"
+    sha256 arm64_sequoia: "7dcc4e7c6e2c29af7f288d9e125bc44c3777c9ee766153591bc1c87e85647716"
+    sha256 arm64_sonoma:  "9e42a44178f7d0479e42ae4fed172e368788abbd5b049d75336e5dd6b7822c98"
+    sha256 sonoma:        "56c0432156bd7a807e25a3418a09cd9c03218c68a8f966cc45f3321f9df749ed"
+    sha256 arm64_linux:   "f2ea5ddeebbd96e3c8ba17e75233efd6b328769c61372ce3e7d6f8530c804ef2"
+    sha256 x86_64_linux:  "dd76c63493701593542603ad2d861ddb705b6dd89ed192fe1f75cb77036298fd"
   end
 
   head do

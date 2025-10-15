@@ -8,13 +8,13 @@ class Dtrx < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "a1c04af670ced811950bb65e3ad904f2fe306b495e9ce1ebc1f0c816d016c088"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "6ece1ab132929ed09513f54401e599bf72cfc2b6e3259a33c077d984e4460919"
   end
 
   # Include a few common decompression handlers in addition to the python dep
   depends_on "p7zip"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "xz"
 
   uses_from_macos "zip" => :test

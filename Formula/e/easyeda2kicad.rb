@@ -10,18 +10,17 @@ class Easyeda2kicad < Formula
   head "https://github.com/uPesy/easyeda2kicad.py.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0b99e1fab064fc0d855bfc64c8bc84473f5807a0a8b616f14e0a3c71bba875e1"
-    sha256 cellar: :any,                 arm64_sequoia: "ca4a1da140fed0775fce219fdc949815dbc2f40caeb84265e2a68b630ad79a9c"
-    sha256 cellar: :any,                 arm64_sonoma:  "0e4978fcf4183050761e4b428e20c5458aaa9f1985a75fa8705b30691e62c18f"
-    sha256 cellar: :any,                 arm64_ventura: "77002318fed574154a9d70f276b74ed051c394b6f10b534ec7229ebec4136a40"
-    sha256 cellar: :any,                 sonoma:        "eba8a9cac3e6abf87eca3821848aebff82f63f189689fdc4f38c5a167b241fc8"
-    sha256 cellar: :any,                 ventura:       "097bbdd985c8b6c1a6f6f40b060b45edf4d92b2551b7acb4dd815559d2e15e02"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0c1e471d05a94eb20b07b1ed2c49689f07c48fd48642652f7c2a8b78d96724a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a821a9287213946bbe364302f95659ab250a1aea2a69a1a661d9398d0efd9e40"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "9b83dbf5701b8228675a060d8b9a870b1b8cc5e83fdc653d8a350f3af37c7cdd"
+    sha256 cellar: :any,                 arm64_sequoia: "8ebff805bcc3f7615345f1207e3360de164b0eec09dbd2ca44dcda299c24a591"
+    sha256 cellar: :any,                 arm64_sonoma:  "c586cc40d90ad06e69ddf46bb5f5da80115c78846126c67c39bc94e5f435707a"
+    sha256 cellar: :any,                 sonoma:        "7052b9941fe5f08a0f5632e863c31ed46283958911e9aa275b48a0a521b11ecb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dff931eda2b6d312200c66e2669b30fbff313e73b0cde9e26e70370ea0b0054"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b20fe03657abc811d960b9a6c961d24e8ae0f778a4434e96e1071f42e19d836"
   end
 
   depends_on "rust" => :build
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -29,43 +28,43 @@ class Easyeda2kicad < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/73/f7/f14b46d4bcd21092d7d3ccef689615220d8a08fb25e564b65d20738e672e/certifi-2025.6.15.tar.gz"
-    sha256 "d747aa5a8b9bbbb1bb8c22bb13e22bd1f18e9796defa16bab421f7f7a317323b"
+    url "https://files.pythonhosted.org/packages/4c/5b/b6ce21586237c77ce67d01dc5507039d444b630dd76611bbca2d8e5dcd91/certifi-2025.10.5.tar.gz"
+    sha256 "47c09d31ccf2acf0be3f701ea53595ee7e0b8fa08801c6624be771df09ae7b43"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/00/dd/4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8c/pydantic-2.11.7.tar.gz"
-    sha256 "d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db"
+    url "https://files.pythonhosted.org/packages/3c/a7/d0d7b3c128948ece6676a6a21b9036e3ca53765d35052dbcc8c303886a44/pydantic-2.12.1.tar.gz"
+    sha256 "0af849d00e1879199babd468ec9db13b956f6608e9250500c1a9d69b6a62824e"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/ad/88/5f2260bdfae97aabf98f1778d43f69574390ad787afb646292a638c923d4/pydantic_core-2.33.2.tar.gz"
-    sha256 "7cb8bc3605c29176e1b105350d2e6474142d7c1bd1d9327c4a9bdb46bf827acc"
+    url "https://files.pythonhosted.org/packages/00/e9/3916abb671bffb00845408c604ff03480dc8dc273310d8268547a37be0fb/pydantic_core-2.41.3.tar.gz"
+    sha256 "cdebb34b36ad05e8d77b4e797ad38a2a775c2a07a8fa386d4f6943b7778dcd39"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
-    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
+    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
+    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/f8/b1/0c11f5058406b3af7609f121aaa6b609744687f1d158b3c3a5bf4cc94238/typing_inspection-0.4.1.tar.gz"
-    sha256 "6ae134cc0203c33377d43188d4064e9b357dba58cff3185f22924610e70a9d28"
+    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
+    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do
