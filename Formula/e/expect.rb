@@ -39,7 +39,7 @@ class Expect < Formula
   # Appears to fix a segfault on ARM Ventura:
   # https://github.com/Homebrew/homebrew-core/pull/123513
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/49c39ceebb547fc1965ae2c8d423fd8c082b52a7/expect/headers.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/expect/headers.diff"
     sha256 "7a4d5c958b3e51a08368cae850607066baf9c049026bec11548e8c04cec363ef"
   end
 

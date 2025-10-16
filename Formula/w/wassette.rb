@@ -1,18 +1,18 @@
 class Wassette < Formula
   desc "Security-oriented runtime that runs WebAssembly Components via MCP"
   homepage "https://github.com/microsoft/wassette"
-  url "https://ghfast.top/https://github.com/microsoft/wassette/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "552e5a31431abf37a7476ad343bbfc194d81b5b421dec1546345cdcc09fb5faa"
+  url "https://ghfast.top/https://github.com/microsoft/wassette/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "255e553c9d68cbc34b2b8d2e21650763b8878ae54454d1c17f8144f15f2fe13c"
   license "MIT"
   head "https://github.com/microsoft/wassette.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3453f658e82db85c13e56a6a3c424270f229d1eef0ca427a94798f49ab4439f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0dfa98b471573e777ee918611b489b689fa101f9a607020a0d3629ca726d19a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b5a2ce1eb7ac4ce63f6998be348414a2dd76255fd764172d3495ffb7bea236b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82f9753113c7604c0938ed56ad1d655bd02c4152ede8f12c6c7a69a141f583d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "00021b3e647beafe909db6ea81f7abbb68e93888c9de24f5fde5f7c3b7637b9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf3344168e0d17a624b4307ca548934bca9866991d880ba171a1fbce532206fe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8129b018a65b979a9d624ff37936864d9f8070e39e6f23e48b7b5dfaf918ede"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3742f95a49defe2ae42215f4589de42f3cf05d5962ea87c47899952f4874341"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93ec8445be4fd971290a5e9cf57d32c3bbaa7b3b7ec97dec5bd4c8ebd4be2518"
+    sha256 cellar: :any_skip_relocation, sonoma:        "640dfd173f410727b086dca7f9d3000e3ce5605b72ccc0ab866b0199104900b9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff3d3fdac281c6121397f63b642a9b8fcee3c61ebdf91e5fbe1ad2002d607a9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7d2f54e00921d6a0560d11af22f1c8c6271b9d0d543537821939c760aa8a470"
   end
 
   depends_on "pkgconf" => :build

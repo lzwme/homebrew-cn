@@ -87,7 +87,7 @@ class GlibcAT213 < Formula
   # Fix getconf files having random bytes at the end of their names.
   # Backport of patch included in 2.16.
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/d87dbbdadb5aa4899fd293be70f8087a412d6a59/glibc/2.13-getconf.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/glibc/2.13-getconf.diff"
     sha256 "e945c11c76655cba6f3e1c13d847e57d6e591a5af3fd7d3eb2c200475bfcdaed"
   end
 

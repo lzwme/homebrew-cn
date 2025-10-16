@@ -53,7 +53,7 @@ class LlvmAT12 < Formula
     # to allow building with GCC 5 and 6. Upstream bug:
     # https://bugs.llvm.org/show_bug.cgi?id=50732
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/f0b8ff8b7ad4c2e1d474b214cd615a98e0caa796/llvm/llvm.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/llvm/llvm.patch"
       sha256 "084adce7711b07d94197a75fb2162b253186b38d612996eeb6e2bc9ce5b1e6e2"
     end
   end

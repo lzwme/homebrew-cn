@@ -94,7 +94,7 @@ class GlibcAT217 < Formula
   # Backport of:
   # https://sourceware.org/git/?p=glibc.git;a=commit;h=43d06ed218fc8be58987bdfd00e21e5720f0b862
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/41fdb9d5ec21fc8165cd4bee89bd23d0c90572ee/glibc/2.17-aarch64-dl-machine.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/glibc/2.17-aarch64-dl-machine.diff"
     sha256 "ece66819f9ef3a1b73081d0f5cda8c814b5204d25c07f8a7adb8209ee286c39d"
   end
 

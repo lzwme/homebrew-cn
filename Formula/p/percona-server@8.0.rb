@@ -74,7 +74,7 @@ class PerconaServerAT80 < Formula
   # This should not be necessary when building inside `brew`.
   # https://github.com/Homebrew/homebrew-test-bot/pull/820
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/030f7433e89376ffcff836bb68b3903ab90f9cdc/mysql/boost-check.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/mysql/boost-check.patch"
     sha256 "af27e4b82c84f958f91404a9661e999ccd1742f57853978d8baec2f993b51153"
   end
 
@@ -305,11 +305,11 @@ index 4a7695ff..f640f5a5 100644
 --- i/sql/mf_iocache.cc
 +++ w/sql/mf_iocache.cc
 @@ -110,7 +110,7 @@ bool open_cached_file_encrypted(IO_CACHE *cache, const char *dir,
- 
+
    /* Generate password, it is a random string. */
    if (my_rand_buffer(password, sizeof(password)) != 0) DBUG_RETURN(true);
 -  password_str.append(password, sizeof(password));
 +  password_str.insert(password_str.end(), password, password + sizeof(password));
- 
+
    auto encryptor = std::make_unique<Aes_ctr_encryptor>();
    if (encryptor->open(password_str, 0)) DBUG_RETURN(true);

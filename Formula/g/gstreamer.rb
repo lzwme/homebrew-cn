@@ -2,16 +2,15 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 5
 
   stable do
-    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.5/gstreamer-1.26.5.tar.bz2"
-    sha256 "7f2c3016cec832170c1a1e6e9ede087282770955894c0cabf4637ee877a69941"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.7/gstreamer-1.26.7.tar.bz2"
+    sha256 "e6cd9267afc3d2c30f35a24567bdd1b3021034da8f7dc7533a10bd8870f23169"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.26.5/gst-plugins-rs-gstreamer-1.26.5.tar.bz2"
-      sha256 "19182e58c29a9c777f4d8325253560c6481a0c9d75819e81870c711916740b93"
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.26.7/gst-plugins-rs-gstreamer-1.26.7.tar.bz2"
+      sha256 "f7310ffcd37822e538e64cb6ca37858069c73eae10a19a96117824035facd33c"
 
       livecheck do
         formula :parent
@@ -25,14 +24,12 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e969a9aca3d98514b8359c820c14cb7870e9008d98ae179c32ba8708f0fc00bf"
-    sha256 arm64_sequoia: "18575de9f5680b58711272b2f46d139074f16d9ce7d4fd6f56df293040c8870d"
-    sha256 arm64_sonoma:  "5311791aa17b7cc6c4b75c354c2a3ab1eb87f4a10723344c3bdb2d53a0505799"
-    sha256 arm64_ventura: "80b9865406bfc3647a0cff6285a5309c0056d392730b5a40205ef5f615bafe0d"
-    sha256 sonoma:        "499e82a02201321d37a981f26b5f78bac0b99f8540203fc647d0cb4a74eca8b3"
-    sha256 ventura:       "421644c8a8a7451008bd3790dac48dcf7e1f0f63aa14547022f7e63a74fd3bf4"
-    sha256 arm64_linux:   "f4c7c60829aad5d356a19db08f168add79525fa09e13b4b6163e20a5d58fa5ab"
-    sha256 x86_64_linux:  "7e109bd41b133a951bc14b0da46a94ee3543761a107d782cd3183dd82d6c7b8b"
+    sha256 arm64_tahoe:   "0ac1f761ebbfd14305157df74552b205b045416b473e50987dba409515c752f8"
+    sha256 arm64_sequoia: "a30199e4492d48fc471d50b687b31566d998b5eed075743462d3644d80147ded"
+    sha256 arm64_sonoma:  "dcadf9e47bec2e724d937ed87b5c458cf6b4f7d8bcc1d21b8eb61c3ab023a459"
+    sha256 sonoma:        "b8a90832bb494315c73b2ca387eea57b9b65e39c0e203fce973b7424980b4e60"
+    sha256 arm64_linux:   "d1a4f537e419f0926839cd9bbee6a6fb716625301669b3e47a8b9ed866f80014"
+    sha256 x86_64_linux:  "6b96d3e17ffeb8a17d778fef5fe4a264632a1eb2b359bccfd301e4e2bc153711"
   end
 
   head do
@@ -98,7 +95,7 @@ class Gstreamer < Formula
   depends_on "orc"
   depends_on "pango"
   depends_on "pygobject3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "rtmpdump"
   depends_on "speex"
   depends_on "srt"
@@ -138,13 +135,13 @@ class Gstreamer < Formula
   end
 
   def python3
-    which("python3.13")
+    which("python3.14")
   end
 
   # These paths used to live in various `gst-*` formulae.
   link_overwrite "bin/gst-*", "lib/ligst*", "lib/libges*", "lib/girepository-1.0/Gst*-1.0.typelib"
   link_overwrite "lib/girepository-1.0/GES-1.0.typelib", "lib/gst-validate-launcher/*", "lib/gstreamer-1.0/*"
-  link_overwrite "lib/pkgconfig/gst*.pc", "lib/python3.13/site-packages/gi/overrides/*", "include/gstreamer-1.0/*"
+  link_overwrite "lib/pkgconfig/gst*.pc", "lib/python3.14/site-packages/gi/overrides/*", "include/gstreamer-1.0/*"
   link_overwrite "share/gir-1.0/Gst*.gir", "share/gir-1.0/GES-1.0.gir", "share/gstreamer-1.0/*"
   link_overwrite "share/locale/*/LC_MESSAGES/gst-*.mo", "share/man/man1/g*"
 

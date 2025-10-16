@@ -8,17 +8,19 @@ class Litecli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6eb691d5acea32623484aac6ef231bc63ac31540df36f0b1e589fbe4d51d0ec9"
-    sha256 cellar: :any,                 arm64_sequoia: "2aed64d5d9c67417f6a86b9ec850d0440a7e3cced452e83984a63ce0569f1240"
-    sha256 cellar: :any,                 arm64_sonoma:  "7565a4f690ce8c0aeda207676a7d18fbb52729242662fb506c07e10d328e7a4e"
-    sha256 cellar: :any,                 sonoma:        "6d18ceccdab2c9db709d6434103fc4ee532abf153a0afc5e4970ee1a0e2deeb3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "08281297a6f7dd95a3b355a482df71dfb11587e24f3b9d3673c0e2caa603cd14"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b169de9c679adcef559bc25eb2a4676e0e2f789eb2f3993dc3fc20ff47fbf5e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "7e10933e2ed5beb1127d4ebb291ae9061bb05409278d547d84c2dffe733f1eb9"
+    sha256 cellar: :any,                 arm64_sequoia: "44ca12bf51067ba5b6df161e5d76fb9fb2a788967f7bb48a33ac6d4e7602d543"
+    sha256 cellar: :any,                 arm64_sonoma:  "a2bdfad7593cfa357dced18f959548abebf8cbc95945f72c0c2f543fc9e48f4c"
+    sha256 cellar: :any,                 sonoma:        "733c5e5423aa0d09edb757ae069c40a7fa8f6404f54ef7ceda2263074863d17d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0cbb8863b1b03c21886cb85d947bd1853f9b1dd5335d0d55ae09b41914b12c3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "088d803203e8f0b34826bd6ce8e2faaf3da1a77a56e9923839173d9cf3de21f4"
   end
 
   depends_on "rust" => :build
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "sqlite"
 
@@ -30,11 +32,6 @@ class Litecli < Formula
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
     sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/dc/67/960ebe6bf230a96cda2e0abcf73af550ec4f090005363542f0765df162e0/certifi-2025.8.3.tar.gz"
-    sha256 "e564105f78ded564e3ae7c923924435e1daa7463faeab5bb932bc53ffae63407"
   end
 
   resource "cli-helpers" do
@@ -83,8 +80,8 @@ class Litecli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "jiter" do
@@ -108,8 +105,8 @@ class Litecli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/c6/a1/a303104dc55fc546a3f6914c842d3da471c64eec92043aef8f652eb6c524/openai-1.109.1.tar.gz"
-    sha256 "d173ed8dbca665892a6db099b4a2dfac624f94d20a93f46eb0b56aae940ed869"
+    url "https://files.pythonhosted.org/packages/de/90/8f26554d24d63ed4f94d33c24271559863223a67e624f4d2e65ba8e48dca/openai-2.3.0.tar.gz"
+    sha256 "8d213ee5aaf91737faea2d7fc1cd608657a5367a18966372a3756ceaabfbd812"
   end
 
   resource "pathspec" do
@@ -133,13 +130,13 @@ class Litecli < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/ff/5d/09a551ba512d7ca404d785072700d3f6727a02f6f3c24ecfd081c7cf0aa8/pydantic-2.11.9.tar.gz"
-    sha256 "6b8ffda597a14812a7975c90b82a8a2e777d9257aba3453f973acd3c032a18e2"
+    url "https://files.pythonhosted.org/packages/8d/35/d319ed522433215526689bad428a94058b6dd12190ce7ddd78618ac14b28/pydantic-2.12.2.tar.gz"
+    sha256 "7b8fa15b831a4bbde9d5b84028641ac3080a4ca2cbd4a621a661687e741624fd"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/ad/88/5f2260bdfae97aabf98f1778d43f69574390ad787afb646292a638c923d4/pydantic_core-2.33.2.tar.gz"
-    sha256 "7cb8bc3605c29176e1b105350d2e6474142d7c1bd1d9327c4a9bdb46bf827acc"
+    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
+    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
   end
 
   resource "pygments" do
@@ -208,8 +205,8 @@ class Litecli < Formula
   end
 
   resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/f8/b1/0c11f5058406b3af7609f121aaa6b609744687f1d158b3c3a5bf4cc94238/typing_inspection-0.4.1.tar.gz"
-    sha256 "6ae134cc0203c33377d43188d4064e9b357dba58cff3185f22924610e70a9d28"
+    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
+    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "wcwidth" do

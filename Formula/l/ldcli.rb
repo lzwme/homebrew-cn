@@ -1,23 +1,25 @@
 class Ldcli < Formula
   desc "CLI for managing LaunchDarkly feature flags"
   homepage "https://launchdarkly.com/docs/home/getting-started/ldcli"
-  url "https://ghfast.top/https://github.com/launchdarkly/ldcli/archive/refs/tags/v1.18.0.tar.gz"
-  sha256 "aa7fbdc5c952abfa49c6391f1f4f8307da598cef9305178b0785cc4d50ec597c"
+  url "https://ghfast.top/https://github.com/launchdarkly/ldcli/archive/refs/tags/v2.0.1.tar.gz"
+  sha256 "63fb0ffef7947dc8602cb362887e2b0b880f10033f66b75f027329c01a3ad876"
   license "Apache-2.0"
   head "https://github.com/launchdarkly/ldcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "57424741ba85872b09f178749332d33503eb3429ca50160dddc2fb34b9310e61"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99252847a6c42cdb0cd2dcee7d05b63fa9f3f3edc11666f215e861b38ea9e8d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce2224a3cf9bbf7b0464b48148c6ed8769e9e938de2c8d8fad7b11f8984592bc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4093b480ee0dd39170cbc01ed9ea2c335a18def939cb4b607af8f0e36aa6a782"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "87653af1f470e2bda37abf8fe41e10cb2d4aa083ac530bd419fa1c1c2555fa18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcc22492c537d7ca71562bdba5c8b302a106212d6c02972c2298ffc253fa9f32"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fb5d8fbfed896b65c29fc454f24895a1269daa6b048ad14b00d3ebbe525ac563"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "019c2d485ab3f1b223b4ac4871aad23648985a6b4778ccc6b13a8a6ee813ecd8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e13cc8e9a355ee8c6e76e3df55838dd2b20b42d2a3b767718da8e402aff2e5a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1acf61165891d4366ed0012103c3498ec7f4cf5fc76e421b272e8676c484c537"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "41af91ec268b6ccb904658bc054c1943391500cbef3ca9c7f15e668f687e7a4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23c7bcf363071f5e5d2fc58d876a46759459e768f1c70961c0b29717309240ed"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1"
+
     ldflags = %W[
       -s -w
       -X main.version=#{version}

@@ -27,7 +27,7 @@ class Lbzip2 < Formula
 
   # Fix crash on macOS >= 10.13.
   patch :p0 do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/6b276429dbe68323349e1eda09b7e5d5a1082671/lbzip2/gnulib-vasnprintf-port-to-macOS-10-13.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/lbzip2/gnulib-vasnprintf-port-to-macOS-10-13.diff"
     sha256 "5b931e071e511a9c56e529278c249d7b2c82bbc3deda3dd9b739b3bd67d3d969"
   end
 

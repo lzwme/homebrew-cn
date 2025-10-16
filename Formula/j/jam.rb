@@ -31,7 +31,7 @@ class Jam < Formula
   # * Fix a typo that leads to an undeclared function error:
   #   `parse.c:102:20: error: call to undeclared function 'yylineno'`
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/42252ab3d438f7ada66e83b92bb51a9178d3df10/jam/2.6.1-undeclared_functions.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/jam/2.6.1-undeclared_functions.diff"
     sha256 "d567cbaf3914f38bb8c5017ff01cc40fe85970c34d3ad84dbeda8c893518ffae"
   end
 

@@ -29,13 +29,13 @@ class Libmemcached < Formula
 
   # https://bugs.launchpad.net/libmemcached/+bug/1245562
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/c124288816b8753e28a3d949be0ff085f519400e/libmemcached/1.0.18.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libmemcached/1.0.18.patch"
     sha256 "afc8fe6ceb43e732484c632b08f69a79c4c88f71e50129fc2e2b2a9af1a33597"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 

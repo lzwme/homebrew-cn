@@ -1,8 +1,8 @@
 class Witness < Formula
   desc "Automates, normalizes, and verifies software artifact provenance"
   homepage "https://witness.dev"
-  url "https://ghfast.top/https://github.com/in-toto/witness/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "ec0e023353092ea749eac8c1452119b0ec097ba74952ca96c073293dd2689d9b"
+  url "https://ghfast.top/https://github.com/in-toto/witness/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "5c4702a0b15380f82c1e421c15582671321c5c0a406093129bcfe288c68693dc"
   license "Apache-2.0"
   head "https://github.com/in-toto/witness.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Witness < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "38a93bd6e749ef5b5dcc6b8923c738bb56203d7cf5315bd7f726fea4299b2910"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "963caad7e32d28af56b823b83019423adb5266e9848bd5e44c9dbb37153768a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9981aa9ca6ac0e278eda0a3fe305ad353b5d99f029fe4508d57f4c23554c690"
-    sha256 cellar: :any_skip_relocation, sonoma:        "882e66c68b5902d14f4dc3943f931dd22313f336c15aa3813700b32b01319a73"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebc01fbbffe6b5d82ae26d4f135d64ab7c0d43d04fdb3d9c9ada1bca5836c01e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7784e36883044ab8bbef1f6af7b840a42d97dd91525604d5c294d04c2a997bed"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25cde82fc6d757d7c1fbe61260802d1b190f010f2f49dee717cb52e541a89aab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97c4bc5582063c24500d7af959fb9bf248257c7c95a37304339246231198b252"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d359e467d168a50f63771f5e6f9d059e45b173f05ee88356760d0faa94e6cd8f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "93f926c0660d154aa6949728142111e098848fd0566a670719046a57cea0f4e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e215d4e64d94ac2a28724181a3214f7b80ae777639f4cb43da1393ea3bf85bb0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9e5f7f1f01c8f867e553fa0ea1dea63aca985e33bb5317b51d21147e3520799"
   end
 
   depends_on "go" => :build

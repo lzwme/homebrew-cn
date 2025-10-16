@@ -1,8 +1,8 @@
 class Xk6 < Formula
   desc "Build k6 with extensions"
   homepage "https://k6.io"
-  url "https://ghfast.top/https://github.com/grafana/xk6/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "3be2efbb757a3e65d3fa6e04352122cb6851e3f34861191c0bbc0b1add7d5780"
+  url "https://ghfast.top/https://github.com/grafana/xk6/archive/refs/tags/v1.2.2.tar.gz"
+  sha256 "32b6b7c5cdea86cf59b909d0a2be47a00b37cbef3e242842f4eb6aacf7b28fac"
   license "Apache-2.0"
   head "https://github.com/grafana/xk6.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Xk6 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a62610d739068ec84cb0ffc44267d708cc5e16c03de29844f21412fccafbabf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a62610d739068ec84cb0ffc44267d708cc5e16c03de29844f21412fccafbabf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a62610d739068ec84cb0ffc44267d708cc5e16c03de29844f21412fccafbabf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5dfc272f16de090b00471f786c87e5509b33fdd2d89553a9ae95340d5a369b8c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ddf1f4f52c67be7b5c3e6fc7e279254ebd0e2d69f0983581a2bc4a7a7e52303"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f521ad53bfec5658e80f4688f7136ac5d3dec516ffcfbb3e26f4b1daa002ca5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00c3283b257440c4d7ab1bfa8d872d199f4dbd7d330be2675ae7e117218b55a6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00c3283b257440c4d7ab1bfa8d872d199f4dbd7d330be2675ae7e117218b55a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00c3283b257440c4d7ab1bfa8d872d199f4dbd7d330be2675ae7e117218b55a6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fc94746c2b56a5a9f7dfa43b3345e0d35f99557bcab622890d5d9773d49139cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b2275b0811778e3fb444be87582f382aa5fb872e4a31a75c2a6e7ea34d632bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b288f4c6442ec7613f2eae53d9d8a66f3d06db7b3707df10ad42e944b055cb8"
   end
 
   depends_on "go"
@@ -32,7 +32,12 @@ class Xk6 < Formula
     assert_match "xk6 version #{version}", shell_output("#{bin}/xk6 version")
     assert_match "xk6 has now produced a new k6 binary", shell_output("#{bin}/xk6 build")
     system bin/"xk6", "new", "github.com/grafana/xk6-testing"
-    chdir "xk6-testing" do
+    cd "xk6-testing" do
+      system "git", "init"
+      system "git", "add", "."
+      system "git", "commit", "-m", "init commit"
+      system "git", "tag", "v0.0.1"
+
       lint_output = shell_output("#{bin}/xk6 lint")
       assert_match "✔ security", lint_output
       assert_match "✔ vulnerability", lint_output

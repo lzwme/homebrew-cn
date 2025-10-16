@@ -30,7 +30,7 @@ class Libpulsar < Formula
 
   # Backport of https://github.com/apache/pulsar-client-cpp/pull/477
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/93a4bb54004417c3742ca0e41183c662d9f417f5/libpulsar/asio.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libpulsar/asio.patch"
     sha256 "519ecb20d3721575a916f45e7e0d382ae61de38ceaee23b53b97c7b4fcdbc019"
   end
 
@@ -74,12 +74,12 @@ index 5cddf74..4bf45cf 100644
 +++ b/lib/ProtobufNativeSchema.cc
 @@ -39,8 +39,8 @@ SchemaInfo createProtobufNativeSchema(const google::protobuf::Descriptor* descri
      }
- 
+
      const auto fileDescriptor = descriptor->file();
 -    const std::string rootMessageTypeName = descriptor->full_name();
 -    const std::string rootFileDescriptorName = fileDescriptor->name();
 +    const std::string rootMessageTypeName = std::string(descriptor->full_name());
 +    const std::string rootFileDescriptorName = std::string(fileDescriptor->name());
- 
+
      FileDescriptorSet fileDescriptorSet;
      internalCollectFileDescriptors(fileDescriptor, fileDescriptorSet);

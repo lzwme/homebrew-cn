@@ -42,7 +42,7 @@ class LuaAT53 < Formula
     # Equivalent to the mac patch carried around here ... that will probably never get upstreamed
     # Inspired from https://www.linuxfromscratch.org/blfs/view/cvs/general/lua.html
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/c2d33768512f73b3590e15c47b319af50576b24c/lua@5.3/lua-so.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/lua@5.3/lua-so.patch"
       sha256 "b9bba9d10ed5d34335c831972a02ec48471ca1dbf95230edc13fe5f575d5542c"
     end
   end

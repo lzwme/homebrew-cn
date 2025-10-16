@@ -40,7 +40,7 @@ class Proctools < Formula
     "proctools-proctools.h" => "7c2ee6ac3dc7b26fb6738496fbabb1d1d065302a39207ae3fbacb1bc3a64371a",
   }.each do |name, sha|
     patch :p0 do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/f411d167/proctools/patch-#{name}.diff"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/proctools/patch-#{name}.diff"
       sha256 sha
     end
   end

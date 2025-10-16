@@ -1,8 +1,8 @@
 class Zeek < Formula
   desc "Network security monitor"
   homepage "https://zeek.org/"
-  url "https://ghfast.top/https://github.com/zeek/zeek/releases/download/v8.0.2/zeek-8.0.2.tar.gz"
-  sha256 "140d2e570812a8281e2e228a479da499a8c34260d44b9ba237aab0077f96a45c"
+  url "https://ghfast.top/https://github.com/zeek/zeek/releases/download/v8.0.3/zeek-8.0.3.tar.gz"
+  sha256 "c178a85e502835cef9584e9a5cb049b4a6abc00bd2bd3c07d4bc3466e5df6eee"
   license "BSD-3-Clause"
   head "https://github.com/zeek/zeek.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Zeek < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "206f08a85931e3834880d71f6bf5909b4b30df21fff83c6fbdf1227102cbbc0e"
-    sha256 arm64_sequoia: "52fb1dc1e716d4cf8ada9b17d516db33e6a350337a8a0ff04459065577ef84a0"
-    sha256 arm64_sonoma:  "bba42a9bab49b9b48562dffe82e7710c0716a8e260b2e1b61af46a8689b9c408"
-    sha256 sonoma:        "ebc2db220721e0801ef3f7c6cfa91fd3858d29f21c5f054b1fbde4d97374cfde"
-    sha256 arm64_linux:   "b9b22961c24bf11abce4f1e7a736b2b57c5ed114e69dcaca05ac25565eb77266"
-    sha256 x86_64_linux:  "b5e77777a4587f2ec90015575dd782c3e264701fcd54f9c7006e71c6c2cff163"
+    sha256 arm64_tahoe:   "ea35b88f3644d9ea0513bfb0fbd44a3f09a499e82772dd1a451ffeda0a349b30"
+    sha256 arm64_sequoia: "0f920d0131884663a525d0a8bc679dec9eab67a65f26af3ba63e3b5fa73ba675"
+    sha256 arm64_sonoma:  "b9b7ee380bb8710e750cadee507b314272e435070041cce4fd666ec4b69eb3b5"
+    sha256 sonoma:        "c7f92b22d700a690bd3537202bcbde50b23fb7fdf54c689038a5922f6761f019"
+    sha256 arm64_linux:   "ef454402dd3a9ad036c362f80e2c4035ded87f4af66dcf6492203c5ff49f2785"
+    sha256 x86_64_linux:  "79f390b2f373b842a550aec5fadee78fa0606ce0126427f195674478dffe1252"
   end
 
   depends_on "bison" => :build

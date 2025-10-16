@@ -33,7 +33,7 @@ class Ogmtools < Formula
 
   # Borrow patch from MacPorts
   patch :p0 do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/e4957439/ogmtools/common.h.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/ogmtools/common.h.diff"
     sha256 "2dd18dea6de0d2820221bde8dfea163101d0037196cb2e94cd910808d10119c0"
   end
 

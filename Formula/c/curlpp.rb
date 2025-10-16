@@ -26,7 +26,7 @@ class Curlpp < Formula
   patch do
     # build patch for curl 8.10+
     on_linux do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/0089ecdbd3df70aa0efc06801d82700bd24be023/curlpp/curl-8.10.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/curlpp/curl-8.10.patch"
       sha256 "77212f725bc4916432bff3cd6ecf009e6a24dcec31048a9311b02af8c9b7b338"
     end
   end

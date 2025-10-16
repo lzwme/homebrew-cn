@@ -8,25 +8,22 @@ class LanggraphCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "312febadcbcc1429a42614bad3550094c13b683dc29ab3006c21fa143775f993"
-    sha256 cellar: :any,                 arm64_sequoia: "07220790cbb9ebd321faa04fcf59c5da16dd1c4a874b8b8b9d3f88c66d86aab3"
-    sha256 cellar: :any,                 arm64_sonoma:  "c90c6958c9e81c431169d183a6735c08b8e9f3f4518e3e61131eb95939b57551"
-    sha256 cellar: :any,                 sonoma:        "3e07e05e1ecf79f5d2d0b0b878acd4e82881bcb2bbbf4fdaf5eec59eeeae99f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc1b8251ed805a55f09c716d4dc565672af73c409400cb27aad2b96526f776ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acf52a49f63b287c10a2aa0419a42ceeba12794a6ed22008834aad79539e97ab"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "778094095b9e7747ef5a858ecdffd296631ae43ce86386805dd23dd8a636e841"
+    sha256 cellar: :any,                 arm64_sequoia: "a1fb419401ba27936d86916018c21133dea82170c799079068af4748002b3ac3"
+    sha256 cellar: :any,                 arm64_sonoma:  "feaab3b4907f363e1947a497d3da3e2f05965ace036a93fcca2059d27c010fb4"
+    sha256 cellar: :any,                 sonoma:        "c6cd7fcbabd594e219fc42ce586fde2da9da84cc40d7eb24fb82338562c077e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0def5ceb008133216f635161de6aab3dcb4828ad2ba42460fd38223abb4b4af1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4f8bc404b44f0d09036274821cddb37014c2f51abca4037e58ef7b28da9984e"
   end
 
   depends_on "rust" => :build # for orjson
-  depends_on "python@3.13"
+  depends_on "certifi" => :no_linkage
+  depends_on "python@3.14"
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
     sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/4c/5b/b6ce21586237c77ce67d01dc5507039d444b630dd76611bbca2d8e5dcd91/certifi-2025.10.5.tar.gz"
-    sha256 "47c09d31ccf2acf0be3f701ea53595ee7e0b8fa08801c6624be771df09ae7b43"
   end
 
   resource "click" do
@@ -50,8 +47,8 @@ class LanggraphCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "langgraph-sdk" do

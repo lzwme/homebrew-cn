@@ -11,7 +11,7 @@ class Upscaledb < Formula
         revision: "60d39fc19888fbc5d8b713d30373095a41bf9ced"
 
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/31fa2b66ae637e8f1dc2864af869baa34604f8fe/upscaledb/2.2.1.diff"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/upscaledb/2.2.1.diff"
       sha256 "fc99845f15e87c8ba30598cfdd15f0f010efa45421462548ee56c8ae26a12ee5"
     end
 

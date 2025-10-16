@@ -12,12 +12,13 @@ class Halide < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0354fcb55ed8b27a8a7ade125158fd1e008d9f4b0d9583b70e8e4123c24ba5f2"
-    sha256 cellar: :any,                 arm64_sequoia: "7c2eb6c3b3f69dff79990ad1171129aedfef3ab1905b7f067e3e5b1d3ac5ee5f"
-    sha256 cellar: :any,                 arm64_sonoma:  "e03581effd20bf29fcf62bb80be357422643ef8d228f164100befcedd1f58a63"
-    sha256 cellar: :any,                 sonoma:        "a76b190fcc4e9031b0cdb86ce4967d1e9def5b10108516502372449d4130f6ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "528e90e57a8d44919965df10cc4148038e4503de75275a670b79f0a19a13371b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0d5f48b4535843002cb9c5b292f22607b6fce2c34822ca559684c23aa4f7ccf"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "530feb171d27ce1e4ee4a388dddc4109cbea2b7a8949754c87be3834dd825e1e"
+    sha256 cellar: :any,                 arm64_sequoia: "513484cc94e98264a6a8882aace19c70c507819e4bc9dd224501949374e23abc"
+    sha256 cellar: :any,                 arm64_sonoma:  "06ddd4f412b445c65dee2209477fec0fbc8951c14d35f4198c2cf81ef7ff9496"
+    sha256 cellar: :any,                 sonoma:        "f7e23e2dc174cf2746b91ea41c05ae816a4267bd6ec35f7a420f439707ad3e2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "649331aedc479125eeb13f911db36017c1e17af2f7ee4d75d707c5a4e43f4f79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63df6d5bc9cdf9da2359017aabda30d4ce68d95b2aeb2b79fe099ffe5adbbcdd"
   end
 
   depends_on "cmake" => :build
@@ -27,7 +28,7 @@ class Halide < Formula
   depends_on "libpng"
   depends_on "lld"
   depends_on "llvm"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "wabt"
 
   on_macos do
@@ -35,7 +36,7 @@ class Halide < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

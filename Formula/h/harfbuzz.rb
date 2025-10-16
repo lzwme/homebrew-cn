@@ -7,19 +7,20 @@ class Harfbuzz < Formula
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "16bf5f072611a61042b8876425600d2d3555afb8d37bfd7b46d03be1dbd3db32"
-    sha256 cellar: :any, arm64_sequoia: "d04d381a5f8f01a904e330415aca2953f73dd97b51cc39d836b2391d6431a748"
-    sha256 cellar: :any, arm64_sonoma:  "46c62445bcda9468877830a6bc482135ffba17cce546b76b1a7482a172f32dff"
-    sha256 cellar: :any, sonoma:        "8d10a3360c488f85fa50aa4d2aa33d8f709ecae0726fb6715c72703ff25cf1d4"
-    sha256               arm64_linux:   "d19a7955d0e83b43a44678864af12fcdc745759cad4b75f8f797522b43f368b2"
-    sha256               x86_64_linux:  "697a16864ae6c160a27710abcbbe8be5a188ec8a857043e0ad62680f4028edaf"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "e9b384e96325c4ca7f168c046051e7fb7e0c68f8c42dade3318f4bdbfbffdf7b"
+    sha256 cellar: :any, arm64_sequoia: "b4db264daa19318a3e8e3368e2e38a1dab65fab75123dd056a646362a21095d1"
+    sha256 cellar: :any, arm64_sonoma:  "0e340bd24ca32456b06c065347f74cb6b9a427a814f7d1909dd527d3778d40c2"
+    sha256 cellar: :any, sonoma:        "8723a67520f71142fb80d9a68ec9d431f5e8d9c93f277a668414588890912895"
+    sha256               arm64_linux:   "866e1da31dd7decdddc5785a6d6e079b7ff52c17f32aefa6175b3433fe8591e8"
+    sha256               x86_64_linux:  "b736960d0c89b51ba4ec9ce7ef298ec459d80777ca6151a217d55a09b47c9d18"
   end
 
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "pygobject3" => :test
   depends_on "cairo"
   depends_on "freetype"
@@ -56,6 +57,6 @@ class Harfbuzz < Formula
       shape = pipe_output("#{bin}/hb-shape 270b89df543a7e48e206a2d830c0e10e5265c630.ttf", "സ്റ്റ്").chomp
       assert_equal "[glyph201=0+1183|U0D4D=0+0]", shape
     end
-    system "python3.13", "-c", "from gi.repository import HarfBuzz"
+    system "python3.14", "-c", "from gi.repository import HarfBuzz"
   end
 end

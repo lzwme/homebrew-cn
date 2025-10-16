@@ -13,7 +13,7 @@ class CdDiscid < Formula
     # macOS fix; see https://github.com/Homebrew/homebrew/issues/46267
     # Already fixed in upstream head; remove when bumping version to >1.4
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/cd-discid/1.4.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/cd-discid/1.4.patch"
       sha256 "f53b660ae70e91174ab86453888dbc3b9637ba7fcaae4ea790855b7c3d3fe8e6"
     end
   end

@@ -1,8 +1,8 @@
 class Glm < Formula
   desc "C++ mathematics library for graphics software"
   homepage "https://glm.g-truc.net/"
-  url "https://ghfast.top/https://github.com/g-truc/glm/archive/refs/tags/1.0.1.tar.gz"
-  sha256 "9f3174561fd26904b23f0db5e560971cbf9b3cbda0b280f04d5c379d03bf234c"
+  url "https://ghfast.top/https://github.com/g-truc/glm/archive/refs/tags/1.0.2.tar.gz"
+  sha256 "f972c5f02cd9fff4d76351268d5ea62518c8972e1e9de5d1dd4910261b50ef54"
   # GLM is licensed under The Happy Bunny License or MIT License
   license "MIT"
   head "https://github.com/g-truc/glm.git", branch: "master"
@@ -13,26 +13,16 @@ class Glm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "3a60a08edf652d93a4a497286003653d9d3cc2df82f53ac659f12ef593ff7ca3"
-    sha256 cellar: :any,                 arm64_sequoia:  "6609c947e9ae4ec7c62ddd7ad0d2d64b65283675b57e6f5ab9a19194a607170a"
-    sha256 cellar: :any,                 arm64_sonoma:   "6ca85b0488bb2907b912c68c5720934164d86afe6b038cd9467a78f06122f75d"
-    sha256 cellar: :any,                 arm64_ventura:  "ccf69c567c8790a7c1efb53aa3b940f27f0bfcef50c31b486208c85eb77e37ad"
-    sha256 cellar: :any,                 arm64_monterey: "7aea1476f18c285480341c410a24955a05cceee4f664a720bc3457d2dfac2f0b"
-    sha256 cellar: :any,                 sonoma:         "f5d0210c66b9780f30ce6429c1f05bd29f60c6ccf93e16ad12aca20ac9af1079"
-    sha256 cellar: :any,                 ventura:        "17c95c99013f142a9e48e3c557705c74d19e9de27b730c9f49a295183fe9d3cd"
-    sha256 cellar: :any,                 monterey:       "27404b50e8c5ea47840a934e470a170e9846d4e20a60906e3545eb026c144345"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "d3ad208d3665c2e7b89d516cf4272ee8ce897bf0629d46a920000eac6ead5228"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4bb112c557b415df7d766a89422d73e6f6d10071c7e5750a54f5152f1603074"
+    sha256 cellar: :any,                 arm64_tahoe:   "a61ac3fc67b2eace8fec925731ae8452e1619d1ea8023be5bc9c9a22454ee3a1"
+    sha256 cellar: :any,                 arm64_sequoia: "aea7cff938cf25ae861008d1e531f4fda9c970418e874c840f4581a37df40a8d"
+    sha256 cellar: :any,                 arm64_sonoma:  "31421ae41806edae930012fa99361718421ec080090e39e2e818d88233742785"
+    sha256 cellar: :any,                 sonoma:        "564c811efe5d541249603ad3f824f830f5aaa072e0417a436ada3e7439c7c354"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63dd3d0f5999c81fb3bb63a61e7478a22ddbd2d23cd04f265a72e27815176250"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a57d8255fd7690fd00ee76f77ce7c462951938cda2a9ea4884f22ebf2c99bcee"
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
-
-  # Fix deprecated attribute handling with older Clang versions
-  patch do
-    url "https://github.com/g-truc/glm/commit/c00e7251e699dfb6ca61935b5a1fb0495093269a.patch?full_index=1"
-    sha256 "fba2d342643c4fcf586ed0da073c36d829a56bd41e04d9f63d9e06d2fc9777db"
-  end
 
   def install
     args = %w[

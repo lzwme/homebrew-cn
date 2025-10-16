@@ -30,7 +30,7 @@ class Rathole < Formula
 
   # rust 1.80 build patch, upstream bug report, https://github.com/rathole-org/rathole/issues/380
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/bd353c6adb3601f32de0fa87f3acd34a98da6ec1/rathole/rust-1.80.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/rathole/rust-1.80.patch"
     sha256 "deca6178df16517f752c309f6290678cbddb24cd3839057f746d0817405965f9"
   end
 

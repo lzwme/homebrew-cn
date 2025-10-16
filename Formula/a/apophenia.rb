@@ -34,7 +34,7 @@ class Apophenia < Formula
   # Fix compilation with POSIX basename(3)
   # Patches already accepted upstream, remove on next release
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/9aaa7da2cc8dab92f16744724797739088742a29/apophenia/posix-basename.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/apophenia/posix-basename.diff"
     sha256 "9d8d92c850cdb671032679e3ef46dafda96ffa6daf39769573392605cea41af3"
   end
 

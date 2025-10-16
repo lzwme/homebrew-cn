@@ -39,14 +39,14 @@ class Xplanet < Formula
   # patches bug in 1.3.1 with flag -num_times=2 (1.3.2 will contain fix, when released)
   # https://sourceforge.net/p/xplanet/code/208/tree/trunk/src/libdisplay/DisplayOutput.cpp?diff=5056482efd48f8457fc7910a:207
   patch :p2 do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/f952f1d/xplanet/xplanet-1.3.1-ntimes.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/xplanet/xplanet-1.3.1-ntimes.patch"
     sha256 "3f95ba8d5886703afffdd61ac2a0cd147f8d659650e291979f26130d81b18433"
   end
 
   # Fix compilation with giflib 5
   # https://xplanet.sourceforge.net/FUDforum2/index.php?t=msg&th=592
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/6b8519a9391b96477c38e1b1c865892f7bf093ca/xplanet/xplanet-1.3.1-giflib5.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/xplanet/xplanet-1.3.1-giflib5.patch"
     sha256 "0a88a9c984462659da37db58d003da18a4c21c0f4cd8c5c52f5da2b118576d6e"
   end
 

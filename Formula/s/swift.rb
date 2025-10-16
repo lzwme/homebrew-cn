@@ -153,7 +153,7 @@ class Swift < Formula
     # Workaround Homebrew sqlite3 not being found.
     # https://github.com/swiftlang/swift-llbuild/issues/901
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/0259d63a476200df801e400955e7a6f98a0ebb0e/swift/llbuild-sqlite3.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/swift/llbuild-sqlite3.patch"
       sha256 "184ce34784c532ec72d71673218fedb72dc09fdff13fd94c2331e1696d329def"
     end
   end
@@ -177,7 +177,7 @@ class Swift < Formula
 
     # Fix for lld to find -lsqlite3 when auto-linking is done via CMake
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/0259d63a476200df801e400955e7a6f98a0ebb0e/swift/swiftpm-sqlite3.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/swift/swiftpm-sqlite3.patch"
       sha256 "78a13abd5a301a3172c3c72ad19a5f1bcfd6c7f142ee90b9417124923dbdd6d1"
     end
   end
@@ -362,7 +362,7 @@ class Swift < Formula
   # This fixes output binaries from `swiftc` having a runpath pointing to the Cellar.
   # This should only be removed if an alternative solution is implemented.
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/5e4d9bb4d04c7c9004e95fecba362a843dc00bdd/swift/homebrew-resource-dir.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/swift/homebrew-resource-dir.diff"
     sha256 "5210ca0fd95b960d596c058f5ac76412a6987d2badf5394856bb9e31d3c68833"
   end
 
@@ -659,5 +659,5 @@ index cd68ea874a6..fff338411f4 100644
 +    APPEND PROPERTY INSTALL_RPATH "$ORIGIN/../../${SWIFT_SDK_${SWIFT_HOST_VARIANT_SDK}_LIB_SUBDIR}"
 +  )
  endif()
- 
+
  if(SWIFT_BUILD_SWIFT_SYNTAX)

@@ -26,7 +26,7 @@ class Ettercap < Formula
 
     # Backport libmaxminddb support. Remove in the next release.
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/1857153707716e38c40ebb5dc641a30a471e2962/ettercap/libmaxminddb-backport.diff"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/ettercap/libmaxminddb-backport.diff"
       sha256 "b7869963df256af7cfae0f9e936e6dac4ec51a8b38dcfef6ea909e81e3ab8d0e"
     end
   end

@@ -1,17 +1,17 @@
 class Scooter < Formula
   desc "Interactive find and replace in the terminal"
   homepage "https://github.com/thomasschafer/scooter"
-  url "https://ghfast.top/https://github.com/thomasschafer/scooter/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "e9e43e6d9b93c37a45b4879e401e624dd0596b1ff05a4000e5ec3f8a5fbc90f6"
+  url "https://ghfast.top/https://github.com/thomasschafer/scooter/archive/refs/tags/v0.8.2.tar.gz"
+  sha256 "4c70e0cf3a450b509c773b113bf21bc62ed228873bd45030b3359d391e3b188a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85be54bf201ca92bf50cf958310afe006f7534df6405d081175b18fdb64e452a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1659211605d243bd3b11615a35b1ecebe30ea636964e2a49a9be9249546b9a13"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0bdb621199b0bb673765f018ec85bb759cfb5f847163d1f54336b8c2b3cdae0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "365593febe47b04e5347cc9b3ba4525292d7f7da24480b057f7842e93f843bff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "db0bfc1a4b9df236a37982fd40990814afa20985463009857a42edd2270e84fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d44630b28af8068c15c037ac324af5a5edadefe2e796352e91b570e36e43ba1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10b632d61cf600afe40726ab3fc6b9cbef070dd39363ddbd1e4235072bfd7563"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ebc8812c6c8695dd7a7506ba895562649717ec50e8d4f4db73034bfdfb8712e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d465d494109ae528a34758bfc44d0f4989215abfec3b54c6ec1795269884f008"
+    sha256 cellar: :any_skip_relocation, sonoma:        "121ac5306d296c22ac21cf75d1aee4a8599c560b1c7c0fe112f7a8f4d6c16677"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "298472651f6f36cce3abe6a522854e30a950bc1c1b27f793932dbbe76ffcee76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1c919f6e7bc92fc84aa9a98c356b625711ecf1e707e1929cbe3212b7f2b5cb8"
   end
 
   depends_on "rust" => :build

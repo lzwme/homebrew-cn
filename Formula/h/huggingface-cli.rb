@@ -8,33 +8,34 @@ class HuggingfaceCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ab39d6949baf1fe49e6e60e8d38e249303ca1104b37f7fa6515c71bf7a9234e1"
-    sha256 cellar: :any,                 arm64_sequoia: "718b180bb4ca651175a724d478b42025197bc160dd38e0a0437c35f427f11b5b"
-    sha256 cellar: :any,                 arm64_sonoma:  "2640de2857d8f5616ee674d402131c26f3e7a00cebb6f1a94322a7b3ad7fa455"
-    sha256 cellar: :any,                 sonoma:        "023995068194d76280118093e9539753b2be7b27d80fabbcac3abe45027d0302"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1dbf5ea14f4502279c322cd516312b0fb75beb00daac6dc656906429c7f31f2"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "53b9c0ab5a370cce603e0df6ec79a42bcb862fc63a79e1a35d853b2593e7d907"
+    sha256 cellar: :any,                 arm64_sequoia: "5b2aa61c28820e0100cc8f1d34ed4dfceeebdf2e5fd8f56e992c15fb9beb592b"
+    sha256 cellar: :any,                 arm64_sonoma:  "e77df3acd6937239c5e3365dcb19c449c2b1fbf3ec04f59e9e827ef3ef384010"
+    sha256 cellar: :any,                 sonoma:        "f15d156d8adaaa107092504c739c0c405a428897cb27c0bdb44ce12e9968210f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63eada1c99af0204188c4c36d4348a57b7e08fe7e945ac8075cae37ad6a683f2"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build # for `hf-xet`
 
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "git-lfs"
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   on_linux do
     depends_on "openssl@3"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/40/bb/0ab3e58d22305b6f5440629d20683af28959bf793d98d11950e305c1c326/filelock-3.19.1.tar.gz"
-    sha256 "66eda1888b0171c998b35be2bcc0f6d75c388a7ce20c3f3f37aa8e96c2dddf58"
+    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
+    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
   end
 
   resource "fsspec" do
@@ -48,8 +49,8 @@ class HuggingfaceCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "inquirerpy" do

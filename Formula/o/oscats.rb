@@ -31,7 +31,7 @@ class Oscats < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
@@ -39,7 +39,7 @@ class Oscats < Formula
   # Patch submitted to discussion group:
   # https://groups.google.com/g/oscats/c/WZ7gRjkxmIk.
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/29a7d4c819af3ea8e48efb68bb98e6bd2a4b6196/oscats/linux.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/oscats/linux.patch"
     sha256 "95fcfa861ed75a9292a6dfbb246a62be3ad3bd9c63db43c3d283ba68069313af"
   end
 

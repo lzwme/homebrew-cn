@@ -157,7 +157,7 @@ class Glibc < Formula
   # - CVE-2025-8058
   # Plus various test suite fixes
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/cde13b7cd4b6f8a475656a377d48447fd824ac8a/glibc/2.35-cve-rollup-sep2025.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/glibc/2.35-cve-rollup-sep2025.patch"
     sha256 "ee42ca65793f8ea9f1cb3aeb5c9101ef412498a2635af11d576368cda8909f50"
   end
 

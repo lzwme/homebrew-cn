@@ -34,7 +34,7 @@ class Fdclone < Formula
   conflicts_with "fd", because: "both install `fd` binaries"
 
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/86107cf/fdclone/3.01b.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/fdclone/3.01b.patch"
     sha256 "c4159db3052d7e4abec57ca719ff37f5acff626654ab4c1b513d7879dcd1eb78"
   end
 

@@ -29,7 +29,7 @@ class Dvdbackup < Formula
   # Fix compatibility with libdvdread 6.1.0. See:
   # https://bugs.launchpad.net/dvdbackup/+bug/1869226
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/7d734fd4d41a331b403522249d96587a62fd85d5/dvdbackup/compat.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/dvdbackup/compat.patch"
     sha256 "12d54bc08b0eb2acf6429c256373d1d98ba3f6f14821c2bebbbb571eb7b9d82b"
   end
 

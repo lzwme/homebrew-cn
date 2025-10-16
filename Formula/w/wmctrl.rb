@@ -43,7 +43,7 @@ class Wmctrl < Formula
   # Fix for 64-bit arch. See:
   # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=362068
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/wmctrl/1.07.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/wmctrl/1.07.patch"
     sha256 "8599f75e07cc45ed45384481117b0e0fa6932d1fce1cf2932bf7a7cf884979ee"
   end
 

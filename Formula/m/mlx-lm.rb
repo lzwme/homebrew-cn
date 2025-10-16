@@ -6,13 +6,14 @@ class MlxLm < Formula
   url "https://ghfast.top/https://github.com/ml-explore/mlx-lm/archive/refs/tags/v0.28.2.tar.gz"
   sha256 "637de1ae34e30d845e1369563309997f57a6b1c1d6ce0e542fd5537cf9d253a3"
   license "MIT"
+  revision 1
   head "https://github.com/ml-explore/mlx-lm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e800f37db9d53e78e72cc2b4f2c99dccf4359d1cac0da1d14c3e6cafc39dba34"
-    sha256 cellar: :any, arm64_sequoia: "d0fba158e7f315909556e186e1e271377c57396f052f91bbac6757ee24646bba"
-    sha256 cellar: :any, arm64_sonoma:  "11b5e9bfc73059b93707ebca4d61b844406047d316cefae217c39e5080ab9d1c"
-    sha256 cellar: :any, sonoma:        "64a934c6557fb2b8892f90bb32b0a9f6f6943703cb814dc62500279063ce3430"
+    sha256 cellar: :any, arm64_tahoe:   "19dd02a3dde2c2b0f3cf4045ba5b16813e83b78423fe59d574f33ed7a4e2fd54"
+    sha256 cellar: :any, arm64_sequoia: "dd08a5070af342cad21f6a44a6dcc73cb5a653bad28237c31b1667adf604cc46"
+    sha256 cellar: :any, arm64_sonoma:  "0f3527eaf33b9452d3e0e5af3bd3b9715afc2cd8e2a783fbd2ae90bcc2d47026"
+    sha256 cellar: :any, sonoma:        "a13ebe0f0e57384354a935e72e7c942d188e1976548adf737c276c305f0d8993"
   end
 
   depends_on "pkgconf" => :build
@@ -23,16 +24,16 @@ class MlxLm < Formula
   depends_on macos: :ventura
   depends_on "mlx"
   depends_on "numpy"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/40/bb/0ab3e58d22305b6f5440629d20683af28959bf793d98d11950e305c1c326/filelock-3.19.1.tar.gz"
-    sha256 "66eda1888b0171c998b35be2bcc0f6d75c388a7ce20c3f3f37aa8e96c2dddf58"
+    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
+    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
   end
 
   resource "fsspec" do
@@ -51,8 +52,8 @@ class MlxLm < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "jinja2" do
@@ -106,8 +107,8 @@ class MlxLm < Formula
   end
 
   resource "transformers" do
-    url "https://files.pythonhosted.org/packages/e5/82/0bcfddd134cdf53440becb5e738257cc3cf34cf229d63b57bfd288e6579f/transformers-4.56.2.tar.gz"
-    sha256 "5e7c623e2d7494105c726dd10f6f90c2c99a55ebe86eef7233765abd0cb1c529"
+    url "https://files.pythonhosted.org/packages/f3/5c/a22c39dac2687f3fe2a6b97e2c1ae516e91cd4d3976a7a2b7c24ff2fae48/transformers-4.57.0.tar.gz"
+    sha256 "d045753f3d93f9216e693cdb168698dfd2e9d3aad1bb72579a5d60ebf1545a8b"
   end
 
   resource "typing-extensions" do

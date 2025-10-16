@@ -34,7 +34,7 @@ class VowpalWabbit < Formula
 
   # Reported at https://github.com/VowpalWabbit/vowpal_wabbit/issues/4700
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/33c6804c1051d206d3fbfa30beca1b6b4ab2f6d4/vowpal-wabbit/fmt11.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/vowpal-wabbit/fmt11.diff"
     sha256 "15f6f9013715bd1dc33456394b3f464aed863ef726479bb272a2f92db2ee7ea0"
   end
 

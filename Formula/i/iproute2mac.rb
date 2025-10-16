@@ -10,11 +10,12 @@ class Iproute2mac < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9177703b982fa2c580265be6812f51e9d4d213ec567b6e5731d87ff78716698b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "0d85742fb0bdd9665035fffd6c8870d91702aace1438c8b0c2c507492e0f462c"
   end
 
   depends_on :macos
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     libexec.install "src/iproute2mac.py"

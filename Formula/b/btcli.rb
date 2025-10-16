@@ -3,18 +3,18 @@ class Btcli < Formula
 
   desc "Bittensor command-line tool"
   homepage "https://docs.bittensor.com/btcli"
-  url "https://files.pythonhosted.org/packages/73/ff/e0d8d61e6f3fc78385e48be34ef445340ea64029f6cced70358a171905ad/bittensor_cli-9.13.0.tar.gz"
-  sha256 "e48ba5808704f7853b425820a0525e1f68dda38675ea6714b40097c14316967b"
+  url "https://files.pythonhosted.org/packages/a0/e2/ab3d34ab01bf3fd92d08a633201ae3d9e1cbdb4b7ead286bce3b501ac671/bittensor_cli-9.13.1.tar.gz"
+  sha256 "cf21ad269c1611accefa35688427e79152e7db1b4f1bb0045ec9b9e262e6bb93"
   license "MIT"
   head "https://github.com/opentensor/btcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "36257e36609bb65d3f3bb63eb421a97b4d1040f2b46bb59aa6c8885ed75820ed"
-    sha256 cellar: :any,                 arm64_sequoia: "c2450b081dbc67fe124b89f618516c2943cfb9b0d6cd3cda90bb15e7d4638553"
-    sha256 cellar: :any,                 arm64_sonoma:  "4155f4ff22deb7c109c430a8eb0cfbba9b8793fc26a689e4948779999c542873"
-    sha256 cellar: :any,                 sonoma:        "87211fdd0e26131514fc58267271669d1ca0ca9587e8ac7d61c3c5c7947b2e3f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6b1eed300b6c94f57d8f84faf32074af624484e388bd243489e488f3b19a8cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b25bb75f7c0359da2e43d1971944bc8c15cfff510248abcb69a3b082df5a71de"
+    sha256 cellar: :any,                 arm64_tahoe:   "6193d7b9d9c06661c752e8aed906df3963d30a443ac82a957393188af4bc1e96"
+    sha256 cellar: :any,                 arm64_sequoia: "e2cf7ee79a00e2d11205471b8044c392452a5518906a000eca0954d7ffaa7546"
+    sha256 cellar: :any,                 arm64_sonoma:  "1d17404bc86ace5a6765f2923a4b045f9a614edc48315837d1756bf34ce15984"
+    sha256 cellar: :any,                 sonoma:        "354275e87feb1448e6a0e1d25e6a8ef2b8fe63ec305ef76550e73383d82e20dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a16df5ed53e19d77a6ec5a2a327dac96057c60d1f3c8f2c4c8daabfdc4c81bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12c4e931520f9456cce9115fddff649b194cc0ef04e734e146fdb1737763dfb7"
   end
 
   depends_on "rust" => :build # for bittensor-wallet
@@ -78,8 +78,8 @@ class Btcli < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
@@ -103,8 +103,8 @@ class Btcli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "jinja2" do
@@ -138,8 +138,8 @@ class Btcli < Formula
   end
 
   resource "narwhals" do
-    url "https://files.pythonhosted.org/packages/87/76/9ca8f4d03f02b8289807d0c91eeb01fa6b7fdd6273769d5bd1f94773b40b/narwhals-2.7.0.tar.gz"
-    sha256 "e3fff7f1610fd3318ede78c969bc5954ce710d585eefdb689586fb69da3da43c"
+    url "https://files.pythonhosted.org/packages/ae/05/79a5b5a795f36c1aaa002d194c1ef71e5d95f7e1900155bbfde734815ab9/narwhals-2.8.0.tar.gz"
+    sha256 "52e0b22d54718264ae703bd9293af53b04abc995a1414908c3b807ba8c913858"
   end
 
   resource "netaddr" do
@@ -188,8 +188,8 @@ class Btcli < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
-    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "scalecodec" do

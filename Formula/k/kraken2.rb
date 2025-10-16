@@ -12,17 +12,16 @@ class Kraken2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da832fc408a971c58b1b9af2da8e4a47f15380352f8d40fac75d4331d45c40c7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b732d36ce47d98141c8d428b132ebec7e8005692321ff2d4cecd2c4cf0039109"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06ca8eba9fab9d0eecb9d9b37ece478ed2c9a54e1163b90f896b6a809002eadc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fd7c2282a9bb1ada0f2408901c5af731b581833e48e5e6657337f48dd963c84e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f7c71697836584e2c651c7dfc9420b0b72012fcf47c2990097f5f5c7531c50c5"
-    sha256 cellar: :any_skip_relocation, ventura:       "4acb1a0a318f21c6a821916580888395bc85839563015db2167fb32785dcfdfe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "25d4ec13898868eadc4008393a1c3d7ef8c3b6bf34ef903a78bafd300de9f2c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ca100381d28e5c0780b3cd4f765c895132d187a205a7345a3c6f880ab31cd82"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f9dcd5a087ad426dfef08436d8a8517c104eee08fac7022ff0b19c91538026f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2af9ee641dbc15c2e36617b050afd0b41587906ac574129d9407f0f1c5b59a55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19d90e268d28717c7d920f6af93a656075c6ca06b912cad818a8f0da7d58e5c4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c7ef796baf946db071abb11b0e5eaa227559959dbe1588a87ffb63b370a9004a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "041362df96a8f1891bedf999ce526f243a8e88982aaa26d60ccab4569b6ae19c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cee5aa8fdea5f6cd1d797c2698c6386ef4be8a0da7325b2a1ca619e1885ee12b"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "wget"
 
   uses_from_macos "perl"

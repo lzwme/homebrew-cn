@@ -13,7 +13,7 @@ class Gcc < Formula
     # Apple Silicon support, located at https://github.com/iains/gcc-14-branch
     patch do
       on_macos do
-        url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/575ffcaed6d3112916fed77d271dd3799a7255c4/gcc/gcc-15.1.0.diff"
+        url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/gcc/gcc-15.1.0.diff"
         sha256 "360fba75cd3ab840c2cd3b04207f745c418df44502298ab156db81d41edf3594"
       end
     end

@@ -10,19 +10,21 @@ class Kaskade < Formula
   head "https://github.com/sauljabin/kaskade.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e9d17cf8df9ea1cf96ef36018a05e989e304af5972a6083118ee52eca1f85354"
-    sha256 cellar: :any,                 arm64_sequoia: "f3596b12ab574b2e7b43b79639af1cdf8104208a85aba0076de0a25e9f646914"
-    sha256 cellar: :any,                 arm64_sonoma:  "3605ab8b1d0d4d37103ecec6dd3cadf81227db764cd426fae2e06622fa65900d"
-    sha256 cellar: :any,                 sonoma:        "7270e08580eed7dfa48b5ff9710e1411b75179af45ed388ba4daa19b25a5fbe9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f320928d58002b68b52d0e8fedf6b6455888d4724cee00b3938f9a0abe280a0d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27964615f7b733f1aa7084cc92295f3d51660c408ee60a4c319e2bb547bbb795"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c7e20c5370e68c03530d9e60dad4120c1dc18036588c22380a9205db1c03461e"
+    sha256 cellar: :any,                 arm64_sequoia: "c5a2e5a440bee1ec5cc20bc6fc19e0654fca9025e48c7b33457ff9b5b6cbbad7"
+    sha256 cellar: :any,                 arm64_sonoma:  "cc6889e6cffb1f3c389d50ae104241260e4a1e46f45d381feb6f9e44d4cf477b"
+    sha256 cellar: :any,                 sonoma:        "43f144b7461f3ea9ec934f0f66f381b6bce10036cb5d609a230e8ac8e536600e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "375adf0aaf97f7aea94aaea504d44057bca1b6966845515d4dc7a989bb104388"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5c45c35ac1950e1a107621e264b0c831d869c30ff4e9dfd65fcd458f5dea5c7"
   end
 
-  depends_on "rust" => :build # for rpds-py
-  depends_on "certifi"
-  depends_on "cryptography"
+  depends_on "rust" => :build # for orjson
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "librdkafka"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
@@ -45,13 +47,13 @@ class Kaskade < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/9d/61/e4fad8155db4a04bfb4734c7c8ff0882f078f24294d42798b3568eb63bff/cachetools-6.2.0.tar.gz"
-    sha256 "38b328c0889450f05f5e120f56ab68c8abaf424e1275522b138ffc93253f7e32"
+    url "https://files.pythonhosted.org/packages/cc/7e/b975b5814bd36faf009faebe22c1072a1fa1168db34d285ef0ba071ad78c/cachetools-6.2.1.tar.gz"
+    sha256 "3f391e4bd8f8bf0931169baf7456cc822705f4e2a31f840d218f445b9a854201"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
@@ -95,8 +97,8 @@ class Kaskade < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "jsonschema" do
@@ -155,8 +157,8 @@ class Kaskade < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
-    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
+    url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
+    sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
   end
 
   resource "requests" do
@@ -169,19 +171,14 @@ class Kaskade < Formula
     sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
-  end
-
   resource "sniffio" do
     url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
     sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/a2/30/38b615f7d4b16f6fdd73e4dcd8913e2d880bbb655e68a076e3d91181a7ee/textual-6.2.1.tar.gz"
-    sha256 "4699d8dfae43503b9c417bd2a6fb0da1c89e323fe91c4baa012f9298acaa83e1"
+    url "https://files.pythonhosted.org/packages/ff/51/51a0863339c4c3fa204f43044e52dfd688a7ee2ba2c987e021acc9583a42/textual-6.3.0.tar.gz"
+    sha256 "a89c557fa740611551dcf4f93643f33853eca488183ef5882200dde8e94315e8"
   end
 
   resource "typing-extensions" do
@@ -200,6 +197,10 @@ class Kaskade < Formula
   end
 
   def install
+    # Unpin python for 3.14
+    # Issue ref: https://github.com/sauljabin/kaskade/issues/65
+    inreplace "pyproject.toml", 'requires-python = ">=3.10,<3.14"', 'requires-python = ">=3.10"'
+
     # The source doesn't have a valid SOURCE_DATE_EPOCH, so here we set default.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
     virtualenv_install_with_resources

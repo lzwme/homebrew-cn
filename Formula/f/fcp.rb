@@ -30,7 +30,7 @@ class Fcp < Formula
 
   # rust 1.80 build patch, upstream pr ref, https://github.com/Svetlitski/fcp/pull/42
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/d4491a45e0f208e75d48bdc665db2d6e87813675/fcp/rust-1.80.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/fcp/rust-1.80.patch"
     sha256 "cd9057498c939c9a9999408128b0561a4a7c0bc618b0426216c7fe94e00a99da"
   end
 

@@ -9,16 +9,17 @@ class Ldeep < Formula
   head "https://github.com/franc-pentest/ldeep.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02e03fabdfa196638ed0f4a895d73394cfa4d0c0ac0ffc030e92ad2102dbe5f7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cba41f3382e8bfac0457ba6d9af2c0514a618437e13e7b316102d448bee926d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3fa5bd46feeb41a2ba88b692fc3e911f46d09d963aa5f142cb5c322570089fcd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "43e11aeda368a9fe1bbca0ccd1b57254da345e9c1f522c7163aa38890a10b7d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "88056046c79681dd93e342588eaa7a3caeb9207f908054821258db1c6feda2ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7614508aaa8f5c4aacba8d7549938652e1f627eb510e1a016305ef6e14ca02c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "173fedcceb95522500010113b9bf5a0581f4858c67a416728b1b7fcb08cfacdf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13e17f405d31367c90a180aaeef9ee37ae117b939236fc898139d2c932e4a95c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e8cbceb3e126f12281330f55abc17fee0dd9a737f1e6ba68e7cbe4b6321a294"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dc1b6af948befea40fb1edde767526e7f2e172748d52aab332a9892d64cc0d8b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bdb5ac42d8212cdebb899133698ffca2457f16d8e4a0e2ebc7755413d842fbdd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a5a6b607d6f811ca2d596d2cf1ddbd6a64d0b1aa6014994ff0c969482ec0d5f"
   end
 
-  depends_on "cryptography"
-  depends_on "python@3.13"
+  depends_on "cryptography" => :no_linkage
+  depends_on "python@3.14"
 
   uses_from_macos "krb5"
 
@@ -43,8 +44,8 @@ class Ldeep < Formula
   end
 
   resource "gssapi" do
-    url "https://files.pythonhosted.org/packages/72/c8/90912e90208bd20ed9384f299384cc9ee8f354758bd8650155eba33d4655/gssapi-1.10.0.tar.gz"
-    sha256 "f1495e0dc20bee3ad2839724d98ae723c7dae78c1ddea37a7c861c3c4bd77763"
+    url "https://files.pythonhosted.org/packages/b7/bf/95eed332e3911e2b113ceef5e6b0da807b22e45dbf897d8371e83b0a4958/gssapi-1.10.1.tar.gz"
+    sha256 "7b54335dc9a3c55d564624fb6e25fcf9cfc0b80296a5c51e9c7cf9781c7d295b"
   end
 
   resource "ldap3-bleeding-edge" do
@@ -88,6 +89,10 @@ class Ldeep < Formula
   end
 
   def install
+    # Unpin python for 3.14
+    # Issue ref: https://github.com/franc-pentest/ldeep/issues/143
+    inreplace "pyproject.toml", 'requires-python = ">=3.8.1,<3.14"', 'requires-python = ">=3.8.1"'
+
     virtualenv_install_with_resources
   end
 

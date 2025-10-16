@@ -27,7 +27,7 @@ class Hashcat < Formula
     sha256 x86_64_linux:  "c6313e643cf002cf3c16b9b075fe5c01880dac49301efcad3960c5023399e322"
   end
 
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "minizip"
   depends_on "xxhash"
 

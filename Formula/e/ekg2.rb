@@ -12,7 +12,7 @@ class Ekg2 < Formula
     # Fix the build on OS X 10.9+
     # bugs.ekg2.org/issues/152 [LOST LINK]
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/ekg2/0.3.1.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/ekg2/0.3.1.patch"
       sha256 "6efbb25e57581c56fe52cf7b70dbb9c91c9217525b402f0647db820df9a14daa"
     end
 

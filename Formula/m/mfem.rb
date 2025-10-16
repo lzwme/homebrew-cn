@@ -26,7 +26,7 @@ class Mfem < Formula
   # build patch to support Hypre 3.0, bug report, https://github.com/mfem/mfem/issues/5042
   # upstream pr ref, https://github.com/mfem/mfem/pull/4975
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/d8ff1b86ed42532d8f3f2e088a435e00bad46c95/mfem/4.8-support-hypre-3.0.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/mfem/4.8-support-hypre-3.0.patch"
     sha256 "e490973f6b74f71c54f6449a8832575eb96c1562468210c444847109470d114f"
   end
 

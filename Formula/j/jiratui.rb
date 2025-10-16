@@ -10,19 +10,20 @@ class Jiratui < Formula
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "acbf2dc2b73853b3502c8f7b2b02bf2830b53b2c088b4de78728d9299f97c0a5"
-    sha256 cellar: :any,                 arm64_sequoia: "4dc1b014be5a61f59610002f47c55e7e36acfc07121d8f4728294d72ceea8a78"
-    sha256 cellar: :any,                 arm64_sonoma:  "b0f6b1296eda3dbbe66f139cbf178f9dbe0594001565c1d70760025390281bb9"
-    sha256 cellar: :any,                 sonoma:        "0569628769a61c8b44cd1d0fda6f6010ccf81affa9d9980f366ee630576d3dff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "62663ac503a1b6a899a3eba05f2ba134f961591384bf61b9d1b58efa916855b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e3cea5680b979295b389995fac40586af49a274393aff2a5fa77736e7a6495d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "f68b1488a0275192230b41638565c263d27093519f304e44322d541d61a16a5c"
+    sha256 cellar: :any,                 arm64_sequoia: "7bb9e16911b3b74e6192e2ed661e6f63ba7b6536bd2ee2dfa52812e9822318ca"
+    sha256 cellar: :any,                 arm64_sonoma:  "b835c6e2e501144509b9d86df4086927d54cdaa7fb2951e0e92933d2100aa1e1"
+    sha256 cellar: :any,                 sonoma:        "d05389f2638ef8075f3dd4ff6d5764e29931cbf53870ccfc007f1c5ea893e2df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "282d07e5870f4b8474d2523753b8ac5738e732c6910b640c8ad3ad09af9370d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "914515849472282afce7c039243eb60697d5c54820fff77ca490cd54dc28dea9"
   end
 
   depends_on "rust" => :build
-  depends_on "certifi"
-  depends_on "cryptography"
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   # `tree-sitter-*` sdists are missing C headers and therefore we have to use GitHub sources
   # Resources can be updated the following way:
@@ -66,8 +67,8 @@ class Jiratui < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "linkify-it-py" do
@@ -91,18 +92,18 @@ class Jiratui < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
-    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
+    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
+    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/ae/54/ecab642b3bed45f7d5f59b38443dcb36ef50f85af192e6ece103dbfe9587/pydantic-2.11.10.tar.gz"
-    sha256 "dc280f0982fbda6c38fada4e476dc0a4f3aeaf9c6ad4c28df68a666ec3c61423"
+    url "https://files.pythonhosted.org/packages/8d/35/d319ed522433215526689bad428a94058b6dd12190ce7ddd78618ac14b28/pydantic-2.12.2.tar.gz"
+    sha256 "7b8fa15b831a4bbde9d5b84028641ac3080a4ca2cbd4a621a661687e741624fd"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/ad/88/5f2260bdfae97aabf98f1778d43f69574390ad787afb646292a638c923d4/pydantic_core-2.33.2.tar.gz"
-    sha256 "7cb8bc3605c29176e1b105350d2e6474142d7c1bd1d9327c4a9bdb46bf827acc"
+    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
+    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
   end
 
   resource "pydantic-settings" do
@@ -126,8 +127,8 @@ class Jiratui < Formula
   end
 
   resource "python-json-logger" do
-    url "https://files.pythonhosted.org/packages/9e/de/d3144a0bceede957f961e975f3752760fbe390d57fbe194baf709d8f1f7b/python_json_logger-3.3.0.tar.gz"
-    sha256 "12b7e74b17775e7d565129296105bbe3910842d9d0eb083fc83a6a617aa8df84"
+    url "https://files.pythonhosted.org/packages/29/bf/eca6a3d43db1dae7070f70e160ab20b807627ba953663ba07928cdd3dc58/python_json_logger-4.0.0.tar.gz"
+    sha256 "f58e68eb46e1faed27e0f574a55a0455eecd7b8a5b88b85a784519ba3cff047f"
   end
 
   resource "pyyaml" do
@@ -136,8 +137,8 @@ class Jiratui < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
-    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "six" do
@@ -151,8 +152,8 @@ class Jiratui < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/a2/30/38b615f7d4b16f6fdd73e4dcd8913e2d880bbb655e68a076e3d91181a7ee/textual-6.2.1.tar.gz"
-    sha256 "4699d8dfae43503b9c417bd2a6fb0da1c89e323fe91c4baa012f9298acaa83e1"
+    url "https://files.pythonhosted.org/packages/ff/51/51a0863339c4c3fa204f43044e52dfd688a7ee2ba2c987e021acc9583a42/textual-6.3.0.tar.gz"
+    sha256 "a89c557fa740611551dcf4f93643f33853eca488183ef5882200dde8e94315e8"
   end
 
   resource "tree-sitter" do
@@ -166,8 +167,8 @@ class Jiratui < Formula
   end
 
   resource "tree-sitter-css" do
-    url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter-css/archive/refs/tags/v0.23.2.tar.gz"
-    sha256 "5d442e8b04d8c743603172fb02664ae2b404f38f7a871d97cf2c89c1eedf8251"
+    url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter-css/archive/refs/tags/v0.25.0.tar.gz"
+    sha256 "03965344d8c0435dc54fb45b281578420bb7db8b99df4d34e7e74105a274cb79"
   end
 
   resource "tree-sitter-go" do
@@ -211,8 +212,8 @@ class Jiratui < Formula
   end
 
   resource "tree-sitter-rust" do
-    url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter-rust/archive/refs/tags/v0.23.2.tar.gz"
-    sha256 "71ce61738f8aff4531afed443572ca68aa74a66a07569a1d50863eb34787c782"
+    url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter-rust/archive/refs/tags/v0.24.0.tar.gz"
+    sha256 "79c9eb05af4ebcce8c40760fc65405e0255e2d562702314b813a5dec1273b9a2"
   end
 
   resource "tree-sitter-sql" do
@@ -231,8 +232,8 @@ class Jiratui < Formula
   end
 
   resource "tree-sitter-yaml" do
-    url "https://ghfast.top/https://github.com/tree-sitter-grammars/tree-sitter-yaml/archive/refs/tags/v0.7.1.tar.gz"
-    sha256 "0626a1d89d713a46acd0581b745d3dcfe0b3714279eb6cf858fe78ff850a5a2b"
+    url "https://ghfast.top/https://github.com/tree-sitter-grammars/tree-sitter-yaml/archive/refs/tags/v0.7.2.tar.gz"
+    sha256 "aeaff5731bb8b66c7054c8aed33cd5edea5f4cd2ac71654f3f6c2ba2073d8fac"
   end
 
   resource "typing-extensions" do
@@ -256,6 +257,10 @@ class Jiratui < Formula
   end
 
   def install
+    # Unpin Python for 3.14
+    # Issue ref: https://github.com/whyisdifficult/jiratui/issues/110
+    inreplace "pyproject.toml", 'requires-python = ">=3.10,<3.14"', 'requires-python = ">=3.10"'
+
     # The source doesn't have a valid SOURCE_DATE_EPOCH, so here we set default.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 

@@ -35,7 +35,7 @@ class Plank < Formula
 
   # fix build failures, upstream pr ref, https://github.com/pinterest/plank/pull/301
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/65b5a59920d2e06d62ce7fa0a9d7a6fcc72aa23d/plank/1.6.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/plank/1.6.patch"
     sha256 "782de4c235f03d5997c88506cd02e1cf97e5793fecf0e3bbff25d62f5393412a"
   end
 

@@ -29,7 +29,7 @@ class Stella < Formula
 
   # ventura build patch, upstream pr ref, https://github.com/stella-emu/stella/pull/1064
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/932732469b2d4ace873187b55973cce3e1627b34/stella/7.0c-ventura.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/stella/7.0c-ventura.patch"
     sha256 "6295953eced4509376f4deb7b1ab511df5fed10cff4fab40feaa4ca8c53922ad"
   end
 

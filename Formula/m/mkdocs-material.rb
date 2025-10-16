@@ -3,18 +3,17 @@ class MkdocsMaterial < Formula
 
   desc "Material Design theme for MkDocs"
   homepage "https://squidfunk.github.io/mkdocs-material/"
-  url "https://files.pythonhosted.org/packages/ff/d5/ab83ca9aa314954b0a9e8849780bdd01866a3cfcb15ffb7e3a61ca06ff0b/mkdocs_material-9.6.21.tar.gz"
-  sha256 "b01aa6d2731322438056f360f0e623d3faae981f8f2d8c68b1b973f4f2657870"
+  url "https://files.pythonhosted.org/packages/5f/5d/317e37b6c43325cb376a1d6439df9cc743b8ee41c84603c2faf7286afc82/mkdocs_material-9.6.22.tar.gz"
+  sha256 "87c158b0642e1ada6da0cbd798a3389b0bc5516b90e5ece4a0fb939f00bacd1c"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "42353514b892c8018e4b2f0bc4d74504179e515130ae0cd3cdca1eac7b845d0a"
-    sha256 cellar: :any,                 arm64_sequoia: "588bd140efb9a208f1626fa160b366169ec059d40fe8f74713ce42069545aaa4"
-    sha256 cellar: :any,                 arm64_sonoma:  "0daa624d690efea58ef5af111074bd14fa0a1bff856c20b1decd91d4f3d81816"
-    sha256 cellar: :any,                 sonoma:        "80830be9c29ff13f91a9bc46a11f5d6508c7b193b242416e316268a182588f22"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e122bd2b1a8f20ec340049c2d0a4302d9c8a0b37e7144e20a5a60c5fafd0b4ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "364863a9c04efac37718cc027363d792029c98ea83a8263a737a2f24c93a9e4f"
+    sha256 cellar: :any,                 arm64_tahoe:   "22d94b1617f66c6175f42c8e6f4aa5c3a737f52f6c31b793ca0f39ecf352b46f"
+    sha256 cellar: :any,                 arm64_sequoia: "4ea2ce5bde5ebf290d429f2458a77f27b92e3fc517c1abdb78411e54718c4746"
+    sha256 cellar: :any,                 arm64_sonoma:  "f90e95254ba5c15e0f2fdccc64373d3422a41494f63763f419a538a10c3c8af9"
+    sha256 cellar: :any,                 sonoma:        "789df137884896428c980b07e6c28c090c1426d2c1c49916246bf5eacb7b6d4f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1d4a97dea3e5497bc0bed4d362408a43eb5e65c8289a45d9d2a43b35196ea8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c0530a32ed9c445810b77d8e1e2866c9fa5423524e95b4ae0c448b19d308535"
   end
 
   depends_on "libyaml"
@@ -38,8 +37,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
@@ -58,8 +57,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "jinja2" do

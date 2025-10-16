@@ -29,7 +29,7 @@ class Linkerd < Formula
 
   # upstream PR to bump go to v1.22, https://github.com/linkerd/linkerd2/pull/12114
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/8e0c96d6f54eb3e6b6a690b7800995f3a3a6bb9c/linkerd/stable-2.14.10.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/linkerd/stable-2.14.10.patch"
     sha256 "0d634f7ca5036e75435a10318f3e6a7d6a5c40ee0c21689a5f1814dbc5ba6911"
   end
 

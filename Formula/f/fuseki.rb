@@ -1,13 +1,13 @@
 class Fuseki < Formula
   desc "SPARQL server"
   homepage "https://jena.apache.org/documentation/fuseki2/"
-  url "https://www.apache.org/dyn/closer.lua?path=jena/binaries/apache-jena-fuseki-5.5.0.tar.gz"
-  mirror "https://archive.apache.org/dist/jena/binaries/apache-jena-fuseki-5.5.0.tar.gz"
-  sha256 "6499189720e38726af9c0cf1d3b86cf377dcc3a6301b6ac75d0140e3de7e38f2"
+  url "https://www.apache.org/dyn/closer.lua?path=jena/binaries/apache-jena-fuseki-5.6.0.tar.gz"
+  mirror "https://archive.apache.org/dist/jena/binaries/apache-jena-fuseki-5.6.0.tar.gz"
+  sha256 "5833260ae40a4f0dadc92f11510ad836f00ef63f61ea25aabe16d02d697e818d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4cf938c4cacd1db4a46386220b3fa56fbba30fecb2d7d8c997985329c6e62128"
+    sha256 cellar: :any_skip_relocation, all: "0aa04767b6bdcb434dd3addd18ccfa99c0e196ce28289b4ad940b8436d1df0b1"
   end
 
   depends_on "openjdk"
@@ -22,7 +22,7 @@ class Fuseki < Formula
                                  FUSEKI_BASE: var/"fuseki",
                                  FUSEKI_HOME: libexec,
                                  FUSEKI_LOGS: var/"log/fuseki",
-                                 FUSEKI_RUN:  var/"run")
+                                 FUSEKI_RUN:  var/"run/fuseki")
       (libexec/exe).chmod 0755
     end
 

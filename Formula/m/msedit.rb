@@ -1,15 +1,15 @@
 class Msedit < Formula
   desc "Simple text editor with clickable interface"
   homepage "https://github.com/microsoft/edit"
-  url "https://ghfast.top/https://github.com/microsoft/edit/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "e4ba6ff1bfecfeff2492306f5850c714bf50ffdb3cc3bb5be3aa987289f240fe"
+  url "https://ghfast.top/https://github.com/microsoft/edit/archive/refs/tags/v1.2.1.tar.gz"
+  sha256 "41c719b08212fa4ab6e434a53242b2718ba313e8d24d090f244bb857d6a9d0fd"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c5e47e81d4b0f09ecf3668357290c1ab327e07e3c48b26523b307a24dfd11170"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85957f070c49135a21ed0bf51a56bbd70d96903811ae1cc4bc932373407b63d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78f78eba707fee6f5ddddc0038996738ca723cdf22586636da15ed3121583f79"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f7ad8fbbe96effc0b3aa6852a58743af226dff0b028f0cef15428e4987af52e5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "300de72b71a69bf416777351c3f771cd8f965581ca38933dab0b5f137c99115b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a609fc4363c7917cc775e1d343ca2e9f010dca3fd61d721b15ef26cb5533901e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a33cf49751e560b1dfbcc926e3b5ff70c01891acbd11cb582dc7f3ce1cb03473"
+    sha256 cellar: :any_skip_relocation, sonoma:        "776afb0bf80f2fbf1629d631cd8eb637c0996e5ca96f5d5e738c9d4f016fa148"
   end
 
   depends_on "rust" => :build

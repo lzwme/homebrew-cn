@@ -32,7 +32,7 @@ class Cdb < Formula
   # Fix build failure because of missing #include errno.h on Linux.
   # Patch has been submitted to the cdb mailing list.
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/515bc4f1322a1eb128d0e7a3a3db6544b94fc82a/cdb/errno.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/cdb/errno.patch"
     sha256 "9116b3577b29e01372a92ccbdbfa5f2b0957ae1b9f42f7df9bac101252f3538c"
   end
 

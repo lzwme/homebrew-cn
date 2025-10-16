@@ -35,7 +35,7 @@ class Alure < Formula
   # Reported by email to author on 2017-08-25
   patch do
     on_macos do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/eed63e836e/alure/unistd.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/alure/unistd.patch"
       sha256 "7852a7a365f518b12a1afd763a6a80ece88ac7aeea3c9023aa6c1fe46ac5a1ae"
     end
   end

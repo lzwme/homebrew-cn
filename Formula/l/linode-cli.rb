@@ -9,17 +9,18 @@ class LinodeCli < Formula
   head "https://github.com/linode/linode-cli.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b0798ee0525997b8a19dc435b78eabb5117e67894306fd7cb192c3f63d775de0"
-    sha256 cellar: :any,                 arm64_sequoia: "4b170723194402ce8f6a0ef9d7a55bf732c605bfbcc32c19665e6f8a0c1b3ecb"
-    sha256 cellar: :any,                 arm64_sonoma:  "d935f9e4a65f86f93dc411f22a451239dab224ac76aa0525ae011b298ee7b9b7"
-    sha256 cellar: :any,                 sonoma:        "0c76a4d8b468f09ba9ce89c3f84100eba8134bb9a6a37144f47e60ea6ad35a63"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "758509eb5730f90e13a99252b5e94d0c53a460de25fca01c3a5a9be37f48415a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c331ad1b720e8d4451cecf4dd0dccb7bd8b7ae7fb343c33f68035524572844b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "1c960c4e84f8203514f7ddea5be698c30752b6002d72bea5a25b869107d876f9"
+    sha256 cellar: :any,                 arm64_sequoia: "82431cfba3acd8d4c77be3780b50023f5a9f197738a2c487ddad721160451733"
+    sha256 cellar: :any,                 arm64_sonoma:  "03b30517506d5918e3dbda4b6949d05168cc8973eed595a22b351f1706f1aed3"
+    sha256 cellar: :any,                 sonoma:        "518c1f66422aa2593da43ff9f1e15d451c4ede7862d35a4717c7088f010f6fb3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2bc6417d45760eb58a816f451eb6b4d09796912dd7f2766f36fee1a1c13a56f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "586d6f00a59fda251d348cbaf3f0b56dda37a1fa1de95c7b39acd7024fdb3245"
   end
 
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
@@ -27,8 +28,8 @@ class LinodeCli < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "h11" do
@@ -47,8 +48,8 @@ class LinodeCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "linode-metadata" do
@@ -92,8 +93,8 @@ class LinodeCli < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
-    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "sniffio" do

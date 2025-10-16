@@ -49,7 +49,7 @@ class Cgit < Formula
   # cgit 1.2.2+ needs memrchr, for which macOS provides no implementation
   # https://lists.zx2c4.com/pipermail/cgit/2020-August/004510.html
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/5decb544ec505d0868ef79f03707fafb0e85e47c/cgit/memrchr-impl.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/cgit/memrchr-impl.patch"
     sha256 "3ab5044db3001b411b58309d70f00b0dee54df991ebc66da9406711ed4007f0f"
   end
 

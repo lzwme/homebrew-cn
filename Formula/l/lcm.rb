@@ -12,15 +12,13 @@ class Lcm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "1dcec315bc99d85506a8882e39e17283165a800cbd22a3bcc643bf404961b396"
-    sha256 cellar: :any,                 arm64_sequoia: "cd5794313c2136f837cc4235fedc5bcb6dfa1300cc3a5d9524a0346c1e91bd97"
-    sha256 cellar: :any,                 arm64_sonoma:  "adb6c73895ff02cd561aea543e2fbd756d7aa2205237dbad6138c4516c34d6ad"
-    sha256 cellar: :any,                 arm64_ventura: "000805ebd7cd74df1f20575e964a84a1e671c110861a0c94e09a47b417cf2818"
-    sha256 cellar: :any,                 sonoma:        "3caf4d4ac4e480add5a3b74601a7be8d6c7d9f455eb2ddfede706614e30ded77"
-    sha256 cellar: :any,                 ventura:       "231e26c5826e2ae3f6c5cf0725d45f21e7a49a88a39f5a3bcc8f058003d185b2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee71ab26af0ccabb7cd2a7b6648d9307293e6e72af5b061312cd49a7ea6c1375"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a73f26e38bef338372062dbc93ac8d69bd1fc27fe6df22e7d67c05d0cbc97023"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "38eded00423ba9f45368e5634d3d8937e244805400a725d751726bf87c4d3a3b"
+    sha256 cellar: :any,                 arm64_sequoia: "4e80a12ec4fd01f0b46db53073248672de8d5afe6461061fc0a322be967bef6f"
+    sha256 cellar: :any,                 arm64_sonoma:  "4bb2ead4981d9372f79102cb2af715174ff2bf070e0aeb719d82ab187fea7048"
+    sha256 cellar: :any,                 sonoma:        "5184db7cf28d7980361b3a069d642daa1d19baab99e0af938a99c4c1717a649a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e79ec267e99c4f2d9a1049ff9bbb493838577d407ba8db500afcd6ab56c3210b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab6d175fb759a02def0954cc93c8124f67ce38e354311b1ec459f82b9144d6fe"
   end
 
   depends_on "cmake" => :build
@@ -28,10 +26,10 @@ class Lcm < Formula
   depends_on "glib"
   depends_on "lua"
   depends_on "openjdk"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def python3
-    which("python3.13")
+    which("python3.14")
   end
 
   def install

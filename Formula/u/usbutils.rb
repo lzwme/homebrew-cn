@@ -38,7 +38,7 @@ class Usbutils < Formula
   conflicts_with "lsusb", "lsusb-laniksj", because: "both provide an `lsusb` binary"
 
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/24a6945778381a62ecdcc1d78bcc16b9f86778c1/usbutils/portable.patch"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/usbutils/portable.patch"
     sha256 "ec09531017e1fa45dbc37233b286a736a24d7f98668e38a92e3697559f739c7f"
   end
 

@@ -1,8 +1,8 @@
 class Cdk < Formula
   desc "Curses development kit provides predefined curses widget for apps"
   homepage "https://invisible-island.net/cdk/"
-  url "https://invisible-mirror.net/archives/cdk/cdk-5.0-20251001.tgz"
-  sha256 "18b196e601a65533d0dff32626fbb887514d8688e783d7f6098b4b4ebc64d853"
+  url "https://invisible-mirror.net/archives/cdk/cdk-5.0-20251014.tgz"
+  sha256 "0ed46949c680a5f42e342cc48a2ce60bcfc2cc8b9eebb176877b5a91f829435c"
   license "BSD-4-Clause-UC"
 
   livecheck do
@@ -11,12 +11,12 @@ class Cdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fee06e0178ead00b6cbee3d62147276eeb0382699a80dd53f7a20f8dbb12ea86"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d75434eba5167bda69a6b92e6715d7c6c888139c0453f82678fd8671a9bfa1b7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "98d0c2e6426c7ce8079920a8f92c40b33b7085c19fd4c52c0f5952b2683a8113"
-    sha256 cellar: :any_skip_relocation, sonoma:        "972f6f7663d8bb862277cd8a2396c07a6a70db668d35f0933d342fc33e2d72bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f18f3b47a9e5a49873e9f8ce889a05891a8aa4395057cc45a7eaf493827330fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ecd24b4910ec9afe92504dca0a091e3f25e4ed515b67b4fcf0e9d8caa026adc3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "587f92b6b6ccac672d9779aa539cf6407f5c6663981a65526048728d590e94fa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5d30b788e217dea97bcfbe00f8870aada4f82830a049b1c4438332d4defe9c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23214535daa04a6a731dde13d8b663639ccd32484a906a0fcfe90ab4a4935c05"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1061220f7666a70e7cd12c14259d5f682566f4639a9cb058e90fbc9ee03700e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "86b9027c86caf2acea7f70048b810073b50f0160cac2d7205925d57bfd1a0376"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53cf8a5b7aeae3d90f495dfc46900335106846aee7543d41fdc23476b1ff35e3"
   end
 
   uses_from_macos "ncurses"

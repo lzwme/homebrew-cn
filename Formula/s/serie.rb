@@ -1,18 +1,18 @@
 class Serie < Formula
   desc "Rich git commit graph in your terminal"
   homepage "https://github.com/lusingander/serie"
-  url "https://ghfast.top/https://github.com/lusingander/serie/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "626dee9c98d231f1ac9595e06ab61d3920da5711891f39c7d3b7ec69d5640ef1"
+  url "https://ghfast.top/https://github.com/lusingander/serie/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "2d6bcc68097f530e24acec42bed71da30cd2acfed1145d098801c484e08af3eb"
   license "MIT"
   head "https://github.com/lusingander/serie.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90609377f88e14321a86239c3fc2321711087777aa7351b9172e7ab84b2c0e97"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "594d4c07a9b8642857dc4939ff5c6f7fac259adc64e9224943cc2864a64df7d2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e65cc576ed95c5411a311ef4db0be72e5aab5cb69e259401b37821c4e0f2c2e3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5e9b5e6921a3978f1e3f02e9a06bf6e610ee93b0a06e54d00122dce693a3d336"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8daf36a80fc5f212d7ac379f033b1e88292fc597404433cc4779e340be6e6e1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f049daf4475bf3b4cf51964b2882fcbff83520c6859dba742cbd99ed5c33d593"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df909b1de16a46f7dd5ec860e9f18c4e58630312fbc589aef3f95b3a42ca4751"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc59da51297d2ac530350064027c606022716a6bc807583989ef471c2bb3349a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b1c9ed10ddcfd0e82c971e111a5802ad40d7440176e7bd9f31d11b2bd9b8a41"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a2f6c71a3e80c23cf751d8c9df2b421194b2516ee90083753144dd3cb6f6f50c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "690f20eeea59b1520288ea1dfcc492aa802224f13d892ab41dfd161f16bfa729"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7eb836a4ce168366f96261104c4fc4b3a5448156fc13d4d98923666c4d472989"
   end
 
   depends_on "rust" => :build

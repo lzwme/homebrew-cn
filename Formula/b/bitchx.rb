@@ -14,7 +14,7 @@ class Bitchx < Formula
     # https://sourceforge.net/p/bitchx/git/ci/4f63d4892995eec6707f194b462c9fc3184ee85d/
     # Remove with next release.
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/7a83dbb5d8e3a3070ff80a28d396868cdd6b23ac/bitchx/linux.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/bitchx/linux.patch"
       sha256 "99caa10f32bfe4727a836b8cc99ec81e3c059729e4bb90641be392f4e98255d9"
     end
 
@@ -93,7 +93,7 @@ index f607707..657a2bc 100644
 +++ b/source/expr2.c
 @@ -1192,7 +1204,7 @@ int	lexerr (expr_info *c, char *format, ...)
   * case 'operand' is set to 1.  When an operand is lexed, then the next token
-  * is expected to be a binary operator, so 'operand' is set to 0. 
+  * is expected to be a binary operator, so 'operand' is set to 0.
   */
 -__inline int	check_implied_arg (expr_info *c)
 +static __inline int	check_implied_arg (expr_info *c)
@@ -103,7 +103,7 @@ index f607707..657a2bc 100644
 @@ -1205,7 +1217,7 @@ __inline int	check_implied_arg (expr_info *c)
  	return c->operand;
  }
- 
+
 -__inline TOKEN 	operator (expr_info *c, char *x, int y, TOKEN z)
 +static __inline TOKEN 	operator (expr_info *c, char *x, int y, TOKEN z)
  {
@@ -112,7 +112,7 @@ index f607707..657a2bc 100644
 @@ -1216,7 +1228,7 @@ __inline TOKEN 	operator (expr_info *c, char *x, int y, TOKEN z)
  	return z;
  }
- 
+
 -__inline TOKEN 	unary (expr_info *c, char *x, int y, TOKEN z)
 +static __inline TOKEN 	unary (expr_info *c, char *x, int y, TOKEN z)
  {

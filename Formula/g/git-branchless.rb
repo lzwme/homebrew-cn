@@ -11,7 +11,7 @@ class GitBranchless < Formula
 
     # patch to build with rust 1.89 and bump git2 to 0.20
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/formula-patches/2d47380dce49c6b059369ff3378ab171c48f8fc3/git-branchless/0.10.0-build.patch"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/git-branchless/0.10.0-build.patch"
       sha256 "7624b6fe14a4d471636e4b22433507b2454b7ee311eac13c4d128cb688be234c"
     end
   end

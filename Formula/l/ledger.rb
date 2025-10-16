@@ -61,14 +61,13 @@ class Ledger < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "21afde616731facf47e8e0442f32b2a4521bda3c8a55718e9b16e4b576efdf98"
-    sha256 cellar: :any,                 arm64_sequoia: "24bc2c89d89b0f0b355c037a5d6315f1d653accfba24c1dc76e51bcf3bbdbd16"
-    sha256 cellar: :any,                 arm64_sonoma:  "3af2f35e72e3d5e50be515148bb1987c23cee6ee621fa17358b1fa50765cf227"
-    sha256 cellar: :any,                 arm64_ventura: "a9a4cca0fc9dc851603ca76d6d7f51638d7d8053529dc17636c694e7a18afe97"
-    sha256 cellar: :any,                 sonoma:        "4f1b9ad9ea6267c32ee381bd64f526529cf96d717f4609cfed985979a82497c7"
-    sha256 cellar: :any,                 ventura:       "36e9ef1b92e34221caa9d3d7e21fd0145f389842a37a3f499d2adb49b07ac5eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "464af7ae2d92d869baf3a3a45e60552b0e053b005b8f142e77bd6a8e07f04777"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdd22eb4b12f6e18fc396541142c0f8e9f952d3cfa27c319895e9617440e0cdd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "7afc1dd1857bd994826c06d94c004b114ef6ec065bcd4c35c98a75de1ca5c286"
+    sha256 cellar: :any,                 arm64_sequoia: "4923f6555416d2313dbef28d90aacff867b85050caee62de74d326153caeb5b0"
+    sha256 cellar: :any,                 arm64_sonoma:  "ffa87e96797ac02677bc7bb94377240d418d8da7c136b9f4982140ebeb4d1b65"
+    sha256 cellar: :any,                 sonoma:        "4bd58b8c7413e68a27169e4be6472474dfa7408ec5e2e0f79902c38491fae72a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "581cd827ed09b61e812177c58748bf0e05e1d8839125c4f0b5327a3c179359b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18475b1dd07eef63279f5fb596563e2a420aecbc7c60be38142220658e6acbfe"
   end
 
   depends_on "cmake" => :build
@@ -78,7 +77,7 @@ class Ledger < Formula
   depends_on "gpgme"
   depends_on "gpgmepp"
   depends_on "mpfr"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "mandoc" => :build
   uses_from_macos "libedit"
@@ -100,7 +99,7 @@ class Ledger < Formula
       end
     end
 
-    ENV.prepend_path "PATH", Formula["python@3.13"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@3.14"].opt_libexec/"bin"
 
     args = %W[
       --jobs=#{ENV.make_jobs}

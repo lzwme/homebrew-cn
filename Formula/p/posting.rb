@@ -3,20 +3,19 @@ class Posting < Formula
 
   desc "Modern API client that lives in your terminal"
   homepage "https://github.com/darrenburns/posting"
-  url "https://files.pythonhosted.org/packages/e8/91/34c4943a50253b3871938bbe131edc86df76d337c84e7caa5deb1a234c91/posting-2.9.1.tar.gz"
-  sha256 "c458a26efeeea3e200d91c50cde7a8dad5c26ef61f9ab04b57ffc596f09209a3"
+  url "https://files.pythonhosted.org/packages/b0/a6/9e0558c58d151a8db169ab6d6bd76aac6749e9acbc89d8a1c0f9aa9a81a9/posting-2.9.2.tar.gz"
+  sha256 "e97015308e80e07064f5f8ef90c6819c5a0ffeb6cbce094e55dd5a9f86e382b8"
   license "Apache-2.0"
 
   no_autobump! because: "contains non-PyPI resources"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "7db79c4528cc7be97916f1405dc0c7dcdbb82457fbb66ff89859f1c1aff196a5"
-    sha256 cellar: :any,                 arm64_sequoia: "c639e1dd609b906ae933fc0673068799a6d5c378726d204292068acfdcd67509"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ff075aae3c9463c8c0328842b279e5bfa1e620eba6181a82a152411ec46bec1"
-    sha256 cellar: :any,                 sonoma:        "7c2bd79c068b3c47b176cb31334fac0b9b6b86debba30e83794e42e5e1688239"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5931003d7282dee865f796f8962d211af48990eb11429a15c10e718f0a1388e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d30ee1ebc8be43a3c5be80bc5feebba7c32e7e2f44c96901398879315c4f4cc3"
+    sha256 cellar: :any,                 arm64_tahoe:   "7523163532d4b5d14289aa6ab0ad6cdf906888f4c53b3b20a3992392308eda52"
+    sha256 cellar: :any,                 arm64_sequoia: "f20df021ca0c4a9403990c7299bf9d3cef861859ca88be3340b3a550fa13cba3"
+    sha256 cellar: :any,                 arm64_sonoma:  "13b7e4cb4e0864f7cf96e28e3757807d25c82f83901260b6890d3a1d79f1cfaa"
+    sha256 cellar: :any,                 sonoma:        "6e007ac459987f23b7b9aa7d3c821557b6b3e38740ac2ac330be038c111975e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8eb169dc77f3b61ad2a4a0f2d242dab3f79c16bd8770f34f4ab53551c639ee4c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f293ec51b079b91b5a8436d49eddd45af5210e5f2606e957d277d57f41b58bd4"
   end
 
   depends_on "cmake" => :build
@@ -109,13 +108,13 @@ class Posting < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/c3/da/b8a7ee04378a53f6fefefc0c5e05570a3ebfdfa0523a878bcd3b475683ee/pydantic-2.12.0.tar.gz"
-    sha256 "c1a077e6270dbfb37bfd8b498b3981e2bb18f68103720e51fa6c306a5a9af563"
+    url "https://files.pythonhosted.org/packages/8d/35/d319ed522433215526689bad428a94058b6dd12190ce7ddd78618ac14b28/pydantic-2.12.2.tar.gz"
+    sha256 "7b8fa15b831a4bbde9d5b84028641ac3080a4ca2cbd4a621a661687e741624fd"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/7d/14/12b4a0d2b0b10d8e1d9a24ad94e7bbb43335eaf29c0c4e57860e8a30734a/pydantic_core-2.41.1.tar.gz"
-    sha256 "1ad375859a6d8c356b7704ec0f547a58e82ee80bb41baa811ad710e124bc8f2f"
+    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
+    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
   end
 
   resource "pydantic-settings" do
@@ -259,8 +258,8 @@ class Posting < Formula
   end
 
   resource "watchfiles" do
-    url "https://files.pythonhosted.org/packages/2a/9a/d451fcc97d029f5812e898fd30a53fd8c15c7bbd058fd75cfc6beb9bd761/watchfiles-1.1.0.tar.gz"
-    sha256 "693ed7ec72cbfcee399e92c895362b6e66d63dac6b91e2c11ae03d10d503e575"
+    url "https://files.pythonhosted.org/packages/c2/c9/8869df9b2a2d6c59d79220a4db37679e74f807c559ffe5265e08b227a210/watchfiles-1.1.1.tar.gz"
+    sha256 "a173cb5c16c4f40ab19cecf48a534c409f7ea983ab8fed0741304a1c0a31b3f2"
   end
 
   resource "xdg-base-dirs" do
