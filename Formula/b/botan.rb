@@ -4,6 +4,7 @@ class Botan < Formula
   url "https://botan.randombit.net/releases/Botan-3.9.0.tar.xz"
   sha256 "8c3f284b58ddd42e8e43e9fa86a7129d87ea7c3f776a80d3da63ec20722b0883"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/randombit/botan.git", branch: "master"
 
   livecheck do
@@ -12,19 +13,17 @@ class Botan < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c31c3906ab36e010087ded7fcac7ee943a5e79e1869b57bdac38f8665942e48d"
-    sha256 arm64_sequoia: "80a213f3f7a367421f573b1c800d301462c315262f4911e79ac4922020b5160d"
-    sha256 arm64_sonoma:  "d2a165badfa80afc40f78c91d43f1369e3c4f3028aa38f9673b9aba073ce6229"
-    sha256 arm64_ventura: "5dcd97b9a5a1e247895b073f8abed7347399e255b84485984eaf0a56a2fd60d8"
-    sha256 sonoma:        "ba9df5e7e02343af91895fb0c67babf29f66029945fd0947b5d6fed41576b421"
-    sha256 ventura:       "5771510c3bcd4d3516f917ca9769d804298c366f3381176aca32637cbfdf7def"
-    sha256 arm64_linux:   "b040893534e674ecc74de83979dd98e45a3ef5416bb74d03fab8779e5270d3d6"
-    sha256 x86_64_linux:  "c3c83864388e87c59ca19b6f411765b7d264bac735594a06963673456a498d03"
+    sha256 arm64_tahoe:   "20b605d280d09825a7359ba1efd0dda1bbd5e46aa43f810b2d6d484fdaa4bad0"
+    sha256 arm64_sequoia: "ad63b78c79ad1a173c3969852bcfc2e607409da2db79392fb7b1e04c5772b8e4"
+    sha256 arm64_sonoma:  "251d049d01a4800f9d3293dc6036fef0dd956428d8163b33d801aa05c91ad19c"
+    sha256 sonoma:        "2d5c2cbf49ca883571de31e78527f8e594e86ee56f1fe734bdc93e11438972ed"
+    sha256 arm64_linux:   "2694b54f044bbcc363bc16f9811d7c36d43ed248b186e9a8725bc4b7c4d7b788"
+    sha256 x86_64_linux:  "97dc2d75dfad93dd6a701f2e56b81f3b25d8aa86262073371a407fa53cb0891c"
   end
 
   depends_on "pkgconf" => :build
   depends_on "ca-certificates"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "sqlite"
 
   uses_from_macos "bzip2"
@@ -40,7 +39,7 @@ class Botan < Formula
   end
 
   def python3
-    which("python3.13")
+    which("python3.14")
   end
 
   def install

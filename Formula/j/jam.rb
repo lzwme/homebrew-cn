@@ -32,7 +32,7 @@ class Jam < Formula
   #   `parse.c:102:20: error: call to undeclared function 'yylineno'`
   patch do
     url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/jam/2.6.1-undeclared_functions.diff"
-    sha256 "d567cbaf3914f38bb8c5017ff01cc40fe85970c34d3ad84dbeda8c893518ffae"
+    sha256 "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
   end
 
   def install

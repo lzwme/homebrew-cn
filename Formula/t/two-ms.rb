@@ -6,6 +6,11 @@ class TwoMs < Formula
   license "Apache-2.0"
   head "https://github.com/Checkmarx/2ms.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_releases
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8fce6374448482ed170a96fc0f94664c676c13acb356ca503d7154bd1842327a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "949d5f3ad89d36ca81e11e51b1abc1e7cf77aabf68e139f2da0d2559dbfffb67"

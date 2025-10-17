@@ -2,19 +2,17 @@ class Ponyc < Formula
   desc "Object-oriented, actor-model, capabilities-secure programming language"
   homepage "https://www.ponylang.io/"
   url "https://github.com/ponylang/ponyc.git",
-      tag:      "0.59.0",
-      revision: "9a5a2d65b422c2ff104877ad4a0b7048eedba68c"
+      tag:      "0.60.1",
+      revision: "4f05c28ce49bd65641d4eac717cf85f6678f524b"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b3529197ec7be85418b037d7e8c2394b3064edbabd297e43a9655b578e1258a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "728c3386ec7bd017a34babadc96370b47a0eb4a9756a950cf0c2acc810bab034"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8bfee9875312e88092509e7f45326312f341f99da29d6568e36e96145f1ad39"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "95f1d38db12a9d94c316bd91cf96d36dfc29b1090dee086dcf56444b1c56326c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "92d259585ce0d1fe70c20526a227d73532a7a9547127d5b2ca86cf041a263b3b"
-    sha256 cellar: :any_skip_relocation, ventura:       "8df48e6967ddd333b5fbd49498cd412cdbc7026e04fde18e5e740e165641f1b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8606e19315e4e90e562865e6f3c9c2e9420c855a5250d1a47b227780fae0c8cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0759f7698a899a653162f55a54b7f3d416b3d13f35c28362d9c95d40d50ea512"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04d0c47585629ca9e0c2ab9f2ecb2685602415a0e698ab9218a4b05650c059ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11a901c6ebbd181be4f8032538ff8b5829dfd4243bed973f72791c40caf3aa35"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f2c107bb386f01e9b5e69918d466880712be2472888820828bfe06ae75a4a05"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6c0f8f3bafe0251581d4459c712f14a5bc1dc103b422a53ca681573ed4e2decd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "38fa6c0a4497e879fc16d70f753db39eb6393fb741281d28f7323dabeddc8795"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02d66ff1755803272861389a41d5ccefacf1b4545cdf820348e0665cc8db69f7"
   end
 
   depends_on "cmake" => :build

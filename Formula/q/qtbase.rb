@@ -78,6 +78,9 @@ class Qtbase < Formula
     depends_on "xcb-util-keysyms"
     depends_on "xcb-util-renderutil"
     depends_on "xcb-util-wm"
+
+    # https://github.com/orgs/Homebrew/discussions/6468#discussioncomment-14687372
+    pour_bottle? only_if: :default_prefix
   end
 
   # Add framework directory to Cflags on macOS

@@ -5,6 +5,7 @@ class ArmNoneEabiGdb < Formula
   mirror "https://ftp.gnu.org/gnu/gdb/gdb-16.3.tar.xz"
   sha256 "bcfcd095528a987917acf9fff3f1672181694926cc18d609c99d0042c00224c5"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
   livecheck do
@@ -14,15 +15,12 @@ class ArmNoneEabiGdb < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "61cb1672a27e0942073cfc58b3cd563cfbcfa2def49d6bd85846e84dc9639fbb"
-    sha256 arm64_sequoia: "1a7301cc72a0e20ca3210b0a039226319eaa33259670ef53d9f2fe57a3ad91ef"
-    sha256 arm64_sonoma:  "e3f460c763a63f70e0b3f93a9763638a3e2a358e561d3216d102cabea65cebb5"
-    sha256 arm64_ventura: "185b464524777e63901da56fb727d6ae6c3b1d776213294d330ca7ffa8c0b55f"
-    sha256 sonoma:        "0768015caa13cddc4e56cfa265e396bef30e786d052417d530595f6965fc6e13"
-    sha256 ventura:       "bafd4327eaf7943a9b11d28e9d99699245b8e1ff2302db8474a4466142446b15"
-    sha256 arm64_linux:   "2866df5b2c8bb8e5d8a7ee04b407cca220877c0494004cda4e35bb17af9b4069"
-    sha256 x86_64_linux:  "50f19c339ae4ea0e2e15300ef4d1720f3550c99cffe4ed4f9b3302a543e34d97"
+    sha256 arm64_tahoe:   "c2740373076acc200aa0157c156004d5e7a87276a38eef9c363ea2cdeb577f64"
+    sha256 arm64_sequoia: "f27a61727c7a0c34b9b5656173db8c49b9fbbd78b902644bbdbd1a6ebb32423c"
+    sha256 arm64_sonoma:  "b018d62e0c9398b4a04d4e046b6cea110eab0c162f3fe888226cd627f156b68d"
+    sha256 sonoma:        "995c4e02b1c766c51e5fa1b864c3194977617fa0830ce4fec42db7ba83878740"
+    sha256 arm64_linux:   "a3ee4b947887ee5c53f3e183c9267928a998784befad772a322baf7780f8c2ee"
+    sha256 x86_64_linux:  "0ecf24fbf0edc3dfe36e401357494e031a88f2457a44cce5a81c2bdc513dc1ce"
   end
 
   depends_on "pkgconf" => :build
@@ -30,7 +28,7 @@ class ArmNoneEabiGdb < Formula
   depends_on "gmp"
   depends_on "mpfr"
   depends_on "ncurses" # https://github.com/Homebrew/homebrew-core/issues/224294
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "readline"
   depends_on "xz" # required for lzma support
   depends_on "zstd"
@@ -63,7 +61,7 @@ class ArmNoneEabiGdb < Formula
       --with-curses
       --with-expat
       --with-lzma
-      --with-python=#{which("python3.13")}
+      --with-python=#{which("python3.14")}
       --with-system-readline
       --with-system-zlib
       --with-zstd

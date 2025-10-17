@@ -1,9 +1,9 @@
 class Go < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.25.2.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.25.2.src.tar.gz"
-  sha256 "3711140cfb87fce8f7a13f7cd860df041e6c12f7610f40cac6ec6fa2b65e96e4"
+  url "https://go.dev/dl/go1.25.3.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.25.3.src.tar.gz"
+  sha256 "a81a4ba593d0015e10c51e267de3ff07c7ac914dfca037d9517d029517097795"
   license "BSD-3-Clause"
   head "https://go.googlesource.com/go.git", branch: "master"
 
@@ -21,12 +21,12 @@ class Go < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90051b9544c65fbfdb60c1db01a6ac841179b9fff7c349862921ee37db815a57"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90051b9544c65fbfdb60c1db01a6ac841179b9fff7c349862921ee37db815a57"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90051b9544c65fbfdb60c1db01a6ac841179b9fff7c349862921ee37db815a57"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8cef63226eab81681d76d1c385ddc81be4b8727f88a07fcd798c4c5610ceffaf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a89c0f5c75f47f6c238233d3e3ace3d0cad0e2abe4f28f8d4e38bc3958bc230"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7938299072e9254d9578f166cf83fdae502f372c9b79168ff465c33238a25324"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7286d65cab0cbb069386268ba3cf2c183cb03728f19cece2af32526a5c60516"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7286d65cab0cbb069386268ba3cf2c183cb03728f19cece2af32526a5c60516"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7286d65cab0cbb069386268ba3cf2c183cb03728f19cece2af32526a5c60516"
+    sha256 cellar: :any_skip_relocation, sonoma:        "34af6f1e86b0ab33f4d5043fefdbefcb5957912cfb97d54f72548354276846d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "938362aa2f811c17b7fd78256a8de4efa0583bb5611588a0ed31f9dce3cfc3f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba9e247931690fb2df23e9a0ee8dc79d42e2658bd45f726f58df0e89b778d842"
   end
 
   depends_on macos: :monterey
@@ -122,7 +122,7 @@ class Go < Formula
 
     # Try running a sample using cgo without CC or CXX set to ensure that the
     # toolchain's default choice of compilers work
-    with_env(CC: nil, CXX: nil) do
+    with_env(CC: nil, CXX: nil, CGO_ENABLED: "1") do
       assert_equal "Hello from cgo!\n", shell_output("#{bin}/go run hello_cgo.go")
     end
   end

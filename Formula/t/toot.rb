@@ -3,14 +3,13 @@ class Toot < Formula
 
   desc "Mastodon CLI & TUI"
   homepage "https://toot.bezdomni.net/"
-  url "https://files.pythonhosted.org/packages/ae/04/77152f7fa4ca6a58da94ce92469ea8ad2e6c2f1d848f10246851b27a40a9/toot-0.50.1.tar.gz"
-  sha256 "7118e5c3985006f4d902349c384dad2355e2e7ef3f9a987b7b6a406a0f56e0d9"
+  url "https://files.pythonhosted.org/packages/7f/87/83a31c9f1e4da5d4a32713072d209317f9927c90000578aaad68bf82ed6a/toot-0.51.0.tar.gz"
+  sha256 "48e2c422c92aebca20c1913238b6dbff969a048ee4eaa70d62921a1e58415797"
   license "GPL-3.0-only"
   head "https://github.com/ihabunek/toot.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "5e67f9d4fb66f5e005972af75b277bb06047fe3958f3c0d5bc2659906b8e0c90"
+    sha256 cellar: :any_skip_relocation, all: "2dc9a4fd124c9932d55710871b36ae56ad75ea0324a6703d39bbfe456e953637"
   end
 
   depends_on "certifi"
@@ -23,8 +22,8 @@ class Toot < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
@@ -33,8 +32,8 @@ class Toot < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "python-dateutil" do

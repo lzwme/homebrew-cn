@@ -1,8 +1,8 @@
 class Ethereum < Formula
   desc "Official Go implementation of the Ethereum protocol"
   homepage "https://geth.ethereum.org/"
-  url "https://ghfast.top/https://github.com/ethereum/go-ethereum/archive/refs/tags/v1.16.4.tar.gz"
-  sha256 "f4cbfa29765b520e87d2e46452cdc04d418c143a703e51c05e5b852b33844bbc"
+  url "https://ghfast.top/https://github.com/ethereum/go-ethereum/archive/refs/tags/v1.16.5.tar.gz"
+  sha256 "4a5f2a2af0e7463bd67483e2d07c7ebd95913a9335c3e67a42090dc722fed744"
   license "LGPL-3.0-or-later"
   head "https://github.com/ethereum/go-ethereum.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Ethereum < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf13355e34db16f52c65f147351ae5107d6afd0c9b884e2fb94c90bb9700e7b4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec04b2033842665db6831f5fb656ec62919b10643229a645c53111d330db78c8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "924b78a2712c762faf44b7f1e940735f58cafbe16569a26c6c4a49fba5068712"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c21ede5742b3387822c435a0a8872cb148e5e8b7eca998d9b2fef8f3fc2ad926"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b54449f2ff5573eba97aeac7a382ebd5a0c04c131f767b91beba3d314e4fead0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36ac08f87f81b33e7d30116ac9d6ac45f56f0803618bbed1c76327e68d2183d2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2aee31cca88d26cb1ee5d8966d58a438917c455827aa461f6b1282237fec90ea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e7700cdf2a87da7e806407b915c3b38f4b15b5f9cc548f1990b0c4d454135c95"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "840a2d039f0b143ae6c1a72ef40cd1488973ad2ab0bc3a79fa2e63daf41c1fec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dff7f7309cdac5105f912ef288d6bcb4259c201b64b5e860d8cd13e66bd8898a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c94621f27690e775fafb820f4ee6d0b71cfc66483c6bfaf71b3aa7fcdac23ce4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e196637d713f5ac6894f2b3982d48e40b911023a22e1913de926803e9b628dcc"
   end
 
   depends_on "go" => :build

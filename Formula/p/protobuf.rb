@@ -1,8 +1,8 @@
 class Protobuf < Formula
   desc "Protocol buffers (Google's data interchange format)"
   homepage "https://protobuf.dev/"
-  url "https://ghfast.top/https://github.com/protocolbuffers/protobuf/releases/download/v32.1/protobuf-32.1.tar.gz"
-  sha256 "3feeabd077a112b56af52519bc4ece90e28b4583f4fc2549c95d765985e0fd3c"
+  url "https://ghfast.top/https://github.com/protocolbuffers/protobuf/releases/download/v33.0/protobuf-33.0.tar.gz"
+  sha256 "7a796fd9a7947d51e098ebb065d8f8b45ea0ac313ac89cc083456b3005329a1a"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,25 +11,18 @@ class Protobuf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0a9e0257f899e4f2cd72e5785c653d7ea530a576502ed9db1a5a11b819871800"
-    sha256 cellar: :any, arm64_sequoia: "b5a067f85f83be3bb590c18c221f59a828de1f09abe9e9a2c7edfb58f6294bcf"
-    sha256 cellar: :any, arm64_sonoma:  "c428de31aa824c89a790865d1df70fed74b686f3db4e74de07a247b8b72eafb7"
-    sha256 cellar: :any, sonoma:        "12040092975230c2eda4db4aeabc75f07cd64b30458fe6dc775bd52a44694967"
-    sha256               arm64_linux:   "832fc339ac68efbeea47cb71efac4e0c1c001c277b8ebcdc715ec358296a5128"
-    sha256               x86_64_linux:  "f4ba1e959a4d7ee36114aa689e1469a7e2b5c5df319a684263350da52698af63"
+    sha256 cellar: :any, arm64_tahoe:   "0ef02c40470fe4da9bedd2af6c0b612956747ec52f8bab958595ce75938862ca"
+    sha256 cellar: :any, arm64_sequoia: "220d0c9358fda8b85ce23cbb53596547f63895480c16498a6d3b8031710d4b21"
+    sha256 cellar: :any, arm64_sonoma:  "93081d8d03451281ff8601acf7e0b225e84fbf4a62eaa41275ee09f35dc150ad"
+    sha256 cellar: :any, sonoma:        "8a6f2a3f9550d806334f4ff97fc40f7d93aee9699e4b3437afaa50c5c7ff7791"
+    sha256               arm64_linux:   "c1c9bc2529d50ccc22964bc2c983d02aebae785bdd01dcd3c6b8ae0a36ff78f1"
+    sha256               x86_64_linux:  "a6adb7c0a034da56bffd83f3f3d6627ac4fbce960e33e4791b15db2d223de79b"
   end
 
   depends_on "cmake" => :build
   depends_on "googletest" => :build
   depends_on "abseil"
   uses_from_macos "zlib"
-
-  # Apply open PR to fix CRC32 usage on arm64 linux
-  # https://github.com/protocolbuffers/protobuf/pull/23164
-  patch do
-    url "https://github.com/protocolbuffers/protobuf/commit/1cd12a573b8d629ae69f6123e24db5c71e92e18c.patch?full_index=1"
-    sha256 "b1676b4c8a4a20dec9a7c0fe2c6e10ccf35673d6f3f6dce1ef303f37d0a0aa5b"
-  end
 
   def install
     # Keep `CMAKE_CXX_STANDARD` in sync with the same variable in `abseil.rb`.

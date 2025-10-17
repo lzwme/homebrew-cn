@@ -1,8 +1,8 @@
 class LibtorrentRakshasa < Formula
   desc "BitTorrent library with a focus on high performance"
   homepage "https://github.com/rakshasa/libtorrent"
-  url "https://ghfast.top/https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.16.0.tar.gz"
-  sha256 "ca3b96bc478db2cd282ccb87b91b169662d7c9298dbca9934f8556c2935cab73"
+  url "https://ghfast.top/https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.16.1.tar.gz"
+  sha256 "11cd86305fb6de4b14da928c36aa93a67f6360b3bb61224d6ab7cd67aaa7148b"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class LibtorrentRakshasa < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f91c420b639b5d60486ee42a655d4e5321794988de412abce563c8c979f4c0d2"
-    sha256 cellar: :any,                 arm64_sequoia: "92d392e3387c7e9b8b0aee4d0880746ff2541a2531188e612b50078f8eddb0b7"
-    sha256 cellar: :any,                 arm64_sonoma:  "549296e430bd7cecbb83bbc445d51a8c28b6125ec56872082fbf6251472f6765"
-    sha256 cellar: :any,                 arm64_ventura: "4d3da8cd5e92a66a8b6da8a3bd538b7ed4c26228cb68ae473475dab986d6cb39"
-    sha256 cellar: :any,                 sonoma:        "6634c748ecfa16093db13068a84f8c928f8bfa0d31e3f22146855c042c0b0ed9"
-    sha256 cellar: :any,                 ventura:       "66d5294dccd2d10af953f8386b6dd3e8d0b9b31a08b5b33b97609531305aaa59"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e00ccd0af020b3bdc6503a2f183a14cf5e6ea85f251fc09a5022eb32a00f2a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f5ae6dc91733225f0ce84355ac6594b528665cf53977f1b10c7aedaf56b8a69"
+    sha256 cellar: :any,                 arm64_tahoe:   "6623f58af047f1e04e7c29180bfc8ae5781a2f2e0c9df534d02381d7d79d87ba"
+    sha256 cellar: :any,                 arm64_sequoia: "19532c1afa59f2370777241b8e9b315985d5bc48128924cafd361faa20b78c3c"
+    sha256 cellar: :any,                 arm64_sonoma:  "1484851815baa218565061e8c73eeea335b8b2cbe3b83e92766463ac427a2b13"
+    sha256 cellar: :any,                 sonoma:        "6bb193347b30778d9eb4d5a41f16dfdfdbc546e4d8313bbe8733960e80073e84"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b31f25996e3ed02957c8172d1f53bd03c20c6cf3e47c547c474256fb0904d62b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4542ef23c4e4f0339630f67699b64a1738842f9b795af5f9d2e4f8e46c89e3e6"
   end
 
   depends_on "autoconf" => :build

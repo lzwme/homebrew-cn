@@ -3,12 +3,12 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.com/github/spec-kit"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.0.64.tar.gz"
-  sha256 "03b94657d046ba3df66d6f05d7f1815b5d2f632242727436679944025639473a"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.0.69.tar.gz"
+  sha256 "db8e8d7e6dd953747765d3ac6c52c759b344eb78ed175a285bd27c339afa9a32"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6e3914dbcc8faa10ae5242f90770a188a5607f4953647e4cc6cb582b9b54afe7"
+    sha256 cellar: :any_skip_relocation, all: "483af51eee3aff4e47bdb949ac43a9444278c27d8befd9e2cd7e1cde1dbf6263"
   end
 
   depends_on "certifi"

@@ -18,13 +18,6 @@ class CdDiscid < Formula
     end
   end
 
-  livecheck do
-    url :homepage
-    regex(/href=.*?cd-discid[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "6296e37d4a08d066d58baffa8ea53abf75c592f126ffcee9418ef293a9528a8e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9956c0cddca69b3a816e8bc553c0455adac71f67ee30041a9065ac7c4384c219"
@@ -40,6 +33,9 @@ class CdDiscid < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:    "92144152a7fa53e3cbe4c6eced912ab7a569079a1d40fb9a72c73635f70027c3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6e37cc61545d58bebb66ffffada804ca5e39e47e503684c7ed84cfa856dbb14"
   end
+
+  # Last commit was 9 years ago, upstream site is gone
+  deprecate! date: "2025-10-16", because: :unmaintained
 
   def install
     system "make", "CC=#{ENV.cc}"

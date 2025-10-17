@@ -1,23 +1,25 @@
 class HelmLs < Formula
   desc "Language server for Helm"
   homepage "https://github.com/mrjosh/helm-ls"
-  url "https://ghfast.top/https://github.com/mrjosh/helm-ls/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "b00eff8853b33d12d0e2b02e49a5a63e1273ff4decaf63ca2afbe066a12d4f0b"
+  url "https://ghfast.top/https://github.com/mrjosh/helm-ls/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "c3884704cbe556b7092929111a9791e290afe75fc3f6ecee7ff21f7794f85101"
   license "MIT"
   head "https://github.com/mrjosh/helm-ls.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "846aae040f43d7597dd50fc24ae0e3434c060228dfb5ffda404a8c46c1cbb3ec"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cdc8bed7d6943b0930e36895df1bf72aa16460569e461da69fb939d46428e10b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8fd78ee121033e1fbf8078ba1f04b59440627900e1caeb73451f5779d99ab6ef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1b6b91b7cb9e4b864b6bd1285123b18670ec4ebbb6f65593c29294bef54adc78"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1405f22c1ac4b3d0f54b2c4e3540a05d274b54e7d841d1d1f804806222c9d59d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3025754aa64fd2ddcb02cb5f6350da92ebb9bbd588aca8f9aa32b9231f3a461"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "abec07cb0e36b1fd6f4de583e7459d65368aaa7802750f4d0aeec0874382492f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f9d9b650486c7392ec69da65741fe137e936ac3049a3edd6796e185766f754e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "966b3146f57fd717e82dfa3b638f3e4696511074631bf7c8191ec87c82448b98"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0e93ade6b872412063bf6a7460b9b66f5e91b11767fdfce7d04d355ace41bb2b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca49d2720d2b007a8079687498f6e29f051738188a0db0e31ff0252156dd06ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bef97f8a048b57da16a38bec125a6919a4705fcc80d652b20b07fc3308111cf9"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X main.Version=#{version}

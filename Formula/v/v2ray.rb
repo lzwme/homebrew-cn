@@ -1,8 +1,8 @@
 class V2ray < Formula
   desc "Platform for building proxies to bypass network restrictions"
   homepage "https://v2fly.org/"
-  url "https://ghfast.top/https://github.com/v2fly/v2ray-core/archive/refs/tags/v5.40.0.tar.gz"
-  sha256 "14e333c7454781f0b44fe9cba1616e25accfb04cf0d9d31db7acdd33e2e8d0ac"
+  url "https://ghfast.top/https://github.com/v2fly/v2ray-core/archive/refs/tags/v5.41.0.tar.gz"
+  sha256 "c67caa2d73f35a9562ecaeb5184733c943c9dafb47e8f1cfeacb892a9247e9b5"
   license all_of: ["MIT", "CC-BY-SA-4.0"]
   head "https://github.com/v2fly/v2ray-core.git", branch: "master"
 
@@ -12,12 +12,12 @@ class V2ray < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0051a9c23dfde63f18af63cf4a11e51f7ac8f4f29d8b85fb403439430fde6627"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0051a9c23dfde63f18af63cf4a11e51f7ac8f4f29d8b85fb403439430fde6627"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0051a9c23dfde63f18af63cf4a11e51f7ac8f4f29d8b85fb403439430fde6627"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2fed57d874e8270d1afdb19dd1352a2e491d7a99b521a7a20920b8160e200a5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75d11a1df1a8c70c4daab36cc05e89268b937808a4081039669369cc265285e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f0f37d9b02c3327815ca27865ac9bf00a2788afff2ac2662c642efebb0d6946"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "719e2394b0475aac4e443ea5d018d8a221bc4f4bba68e1ed52e184f123a9c0c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "719e2394b0475aac4e443ea5d018d8a221bc4f4bba68e1ed52e184f123a9c0c8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "719e2394b0475aac4e443ea5d018d8a221bc4f4bba68e1ed52e184f123a9c0c8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6f1e2fd111799b674bb696db6f099837a359d0d3fcfb79c47460095d98a90ad8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d486a59d1f4f59b3a3b209a23e7025b785ee86f0d8a7884dedb34937f2d99c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d96ca58e2a379c9912e5672b68ea709e4d28ec028d11adaed366e96f5135df8"
   end
 
   depends_on "go" => :build

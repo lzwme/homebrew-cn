@@ -1,8 +1,8 @@
 class PythonAT313 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.13.8/Python-3.13.8.tgz"
-  sha256 "06108fe96f4089b7d9e0096cb4ca9c81ddcd5135f779a7de94cf59abcaa4b53f"
+  url "https://www.python.org/ftp/python/3.13.9/Python-3.13.9.tgz"
+  sha256 "c4c066af19c98fb7835d473bebd7e23be84f6e9874d47db9e39a68ee5d0ce35c"
   license "Python-2.0"
 
   livecheck do
@@ -11,14 +11,14 @@ class PythonAT313 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "2665712dfe507df08a3366fafe5676dc88a87d67d1dbf317859171e852b33812"
-    sha256 arm64_sequoia: "e205133e9f93fc634b7cde2a2a82186cc8361b9e0e2bcd07b280df6c208bfe35"
-    sha256 arm64_sonoma:  "938dd450a8f87965109b117d3ce4698b12604c816447fc4c68cea54b0bb56549"
-    sha256 tahoe:         "8f6ba7a60057ebb130475175cd9934f4fde4eb978a9ed13e668b59f7bf5e2846"
-    sha256 sequoia:       "f8bdde593ac63d31af2ce6d9bd502b4205b3a59090dfbeab5788dab86102ebd1"
-    sha256 sonoma:        "fef5fe547919a98032109c998e2232a17e2b47235f9cbc721534113e89af2d73"
-    sha256 arm64_linux:   "cf78e1b421151c17d90c14d1eb5f8290a4eebe8f908e70132d9596c885fd9bc3"
-    sha256 x86_64_linux:  "0df8c441a5734b0a2388cc3cc761da3f538e48db6710f6637a3515d4814756ef"
+    sha256 arm64_tahoe:   "028dc9444f968043ba9fcce8dff210b280a5faef0673d57114629bd1c95019bc"
+    sha256 arm64_sequoia: "a8bcf3730577fc6c9f8a301df6e2832b6d827d32d87b728963c099d93c1239ea"
+    sha256 arm64_sonoma:  "78d50c16a7ef0e6dd3206eaf0b4c64239c4133931683334da309cd3d63f7edcf"
+    sha256 tahoe:         "39bf75108322d0d521254a7c98fe0079e545b5cffe8f8d182e8ff4c30c018eea"
+    sha256 sequoia:       "2c6e61b5d2bdb3d9c1f27ba43cfa1235588c9ca4bd423c4d262fb4c17c4a7133"
+    sha256 sonoma:        "8f5313efae525a354eb52a1cb0a0087ea5edd74a37ae105ed3106325c3900982"
+    sha256 arm64_linux:   "735e8b9fb19146b596bc0e8b36a5c1e7c229f02f97aa9910e340cb440841a11b"
+    sha256 x86_64_linux:  "278e65d38b2641a25018d7b9cc4ba37ca17cbd1da178ead056159d8ba0f2f74f"
   end
 
   depends_on "pkgconf" => :build
@@ -67,7 +67,7 @@ class PythonAT313 < Formula
   # We (ab)use osx_framework_library to exploit pip behaviour to allow --prefix to still work.
   patch do
     url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/python/3.13-sysconfig.diff"
-    sha256 "e1c2699cf3e39731a19207ed69400a67336cda7767aa08f6f46029f26b1d733b"
+    sha256 "9f2eae1d08720b06ac3d9ef1999c09388b9db39dfb52687fc261ff820bff20c3"
   end
 
   def lib_cellar

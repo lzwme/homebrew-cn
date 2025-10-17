@@ -2,8 +2,8 @@ class AliyunCli < Formula
   desc "Universal Command-Line Interface for Alibaba Cloud"
   homepage "https://github.com/aliyun/aliyun-cli"
   url "https://github.com/aliyun/aliyun-cli.git",
-      tag:      "v3.0.306",
-      revision: "1e4fd3758317df8332a4dff1cb17fc39953d3e6d"
+      tag:      "v3.0.307",
+      revision: "a60633d3dfc233776e53a2ff2d0b28574d5ac576"
   license "Apache-2.0"
   head "https://github.com/aliyun/aliyun-cli.git", branch: "master"
 
@@ -13,12 +13,12 @@ class AliyunCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f3568b3522dda61e04702bf5d0f22da4e75d91415736e0193f5ca3101d957d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f3568b3522dda61e04702bf5d0f22da4e75d91415736e0193f5ca3101d957d3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f3568b3522dda61e04702bf5d0f22da4e75d91415736e0193f5ca3101d957d3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b8cbccf4b8ea00780bd49f16b81ff36cf631f8d88f36ddaa5c7ed2285f05756c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fe4f1036f4d453f5357ae128055c7272c4de8c94df6395985ee92bbb38e1b43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff6309fda88d59f9829e83c30f2c6158665367f95f6fd2181dab5cba082d87fa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b68af5d9c8650c8c22e61cc036b6aa6f618832fd984b78077c9cf25aef13d3b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b68af5d9c8650c8c22e61cc036b6aa6f618832fd984b78077c9cf25aef13d3b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b68af5d9c8650c8c22e61cc036b6aa6f618832fd984b78077c9cf25aef13d3b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7cfddee963df458b7cab8da9854a0791cdac649ebefa19401c748af1bc4fe094"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c457645192cdf5a62c4db02538465c96d932b4bbf5d1a398d3421d53bc2bdbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b45d294324831205ecccbb7a2a12a912278fe0d8cca1266042a90bfbcfd8385"
   end
 
   depends_on "go" => :build

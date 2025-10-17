@@ -3,18 +3,17 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://ocrmypdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/44/af/947d6abb0cb41f99971a7a4bd33684d3cee20c9e32c8f9dc90e8c5dcf21c/ocrmypdf-16.11.0.tar.gz"
-  sha256 "d89077e503238dac35c6e565925edc8d98b71e5289853c02cacbc1d0901f1be7"
+  url "https://files.pythonhosted.org/packages/13/11/dad06efcf749d77dfcebac0bdec7980f57a9d58a38f2fdc1e0e9ade84ec0/ocrmypdf-16.11.1.tar.gz"
+  sha256 "838ab69e0ee0f04feea0d5861a17badecab6d3beaed0e29a97058eadda58cbb1"
   license "MPL-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "c6c2c8648a04a2063b640d2bc3b51e835b82f1e86a2a9f034dce765bbb419df8"
-    sha256 cellar: :any,                 arm64_sequoia: "88e08437f1485cbdb4add6d13eedbe4acaa0e8be83365199662302c282021631"
-    sha256 cellar: :any,                 arm64_sonoma:  "d4b612f785f82ef55b1b566ac36b510a40cda3520739001444e8f7d0dd2e3412"
-    sha256 cellar: :any,                 sonoma:        "9a711c9cb85cf5d01088b58283dc614438f2545f27864f7ef93bca25d84b03f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "82c006398f5ef76f3d18a933019cbd845079256377c4997e961f69e9212d3b69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2992d8bec85c4345bef105f9434881c7f027081db3e092b274d3ce37cedc27fa"
+    sha256 cellar: :any,                 arm64_tahoe:   "da78df7b744c2fdc00f7feffc417738c6bf89eea416299699f7a8d7528440c3d"
+    sha256 cellar: :any,                 arm64_sequoia: "1329b3835e5f8b30f7540943a467314cdc41ecc78e314f1944372f182e3147ba"
+    sha256 cellar: :any,                 arm64_sonoma:  "93e10ad0649f0f369561458c9e63a20a20284da2bb7463cd8df03c3dfdba5845"
+    sha256 cellar: :any,                 sonoma:        "88f6ea27ce11e8a0ecadcd967613ade8ed92d2ccc0e03604e2eea4ce78dc656f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6a289a0d8bf898ca86464c288867a25e2196a6052896807a9af730af1c624e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39407b1826757734fe6d58998eebfd89474713bc1c2fd5894cd0add2f245eae6"
   end
 
   depends_on "cmake" => :build # for pikepdf
@@ -39,8 +38,8 @@ class Ocrmypdf < Formula
   uses_from_macos "libxslt"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "deprecated" do

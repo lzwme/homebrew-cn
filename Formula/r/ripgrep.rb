@@ -1,8 +1,8 @@
 class Ripgrep < Formula
   desc "Search tool like grep and The Silver Searcher"
   homepage "https://github.com/BurntSushi/ripgrep"
-  url "https://ghfast.top/https://github.com/BurntSushi/ripgrep/archive/refs/tags/14.1.1.tar.gz"
-  sha256 "4dad02a2f9c8c3c8d89434e47337aa654cb0e2aa50e806589132f186bf5c2b66"
+  url "https://ghfast.top/https://github.com/BurntSushi/ripgrep/archive/refs/tags/15.0.0.tar.gz"
+  sha256 "e6b2d35ff79c3327edc0c92a29dc4bb74e82d8ee4b8156fb98e767678716be7a"
   license "Unlicense"
   head "https://github.com/BurntSushi/ripgrep.git", branch: "master"
 
@@ -14,16 +14,12 @@ class Ripgrep < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "008591f53bfe421de26519403e091924cc935a3de285856fa42f5826ac697c6e"
-    sha256 cellar: :any,                 arm64_sequoia:  "b8bf5e73c9c9b441de067ec86ac167b071ecc2078dcb1d89d2cebbb151feab35"
-    sha256 cellar: :any,                 arm64_sonoma:   "47b9c3515c866b147f0e98735cab165d6471b9f28fab1ba2c57e59c43da5c10b"
-    sha256 cellar: :any,                 arm64_ventura:  "e14a94e84c028ff53c1be3b106fdeb5aca4d7c893a819e7fb967e0719b946a28"
-    sha256 cellar: :any,                 arm64_monterey: "ad8dc4ab475c84e2a1e60f5b3107f52dd59e33f84a08284b19681d8b98508fd7"
-    sha256 cellar: :any,                 sonoma:         "71d434eeabc2af220285b037f7264563ce9bc77a41af35eabe2213276a37ec2b"
-    sha256 cellar: :any,                 ventura:        "0cdb547c696992d08c6613c40934218964f4a061b5413c4b2f013c3f0c3ed253"
-    sha256 cellar: :any,                 monterey:       "2ce54302e4524ad28389aca5a16333d4193128e911de2881e6b0e953559d89cd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "68b2c253fc70593e0e9b6cb5a6f63097662fcfaf1bf76d54c22e5a1e3daa6a5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97d7cbd33b4d0ed09551e3dbc07f830d3df018c2aefbb2222a12ccfb829aae30"
+    sha256 cellar: :any,                 arm64_tahoe:   "69fb4ba07c0c4376cd4a9b2ec5e5af9358c4399a67dbc5524153e62c6020ba99"
+    sha256 cellar: :any,                 arm64_sequoia: "650633027b96270925635a8430f603c5e229ad577cc4c4151de4757f29c153bb"
+    sha256 cellar: :any,                 arm64_sonoma:  "2465017e2af1236b0eb832646de7b989b71ba12b73f9ae66d9b41bf9385d7dfc"
+    sha256 cellar: :any,                 sonoma:        "c543e16804d9e0d41cce22310153c99ddd5e05837f969401c3981d2ca5b32380"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fea86c48e8651ec09be43df1bfa7a9b2700bbb12df12482e3fc628a2348fcb4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a99b0650a17f70a1426d68dda6311a50ab541d3e3eb446accd9cb53e6e72cc1e"
   end
 
   depends_on "asciidoctor" => :build

@@ -83,7 +83,7 @@ class PythonAT314 < Formula
   # We (ab)use osx_framework_library to exploit pip behaviour to allow --prefix to still work.
   patch do
     url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/python/3.13-sysconfig.diff"
-    sha256 "e1c2699cf3e39731a19207ed69400a67336cda7767aa08f6f46029f26b1d733b"
+    sha256 "9f2eae1d08720b06ac3d9ef1999c09388b9db39dfb52687fc261ff820bff20c3"
   end
 
   def lib_cellar

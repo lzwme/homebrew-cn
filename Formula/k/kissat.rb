@@ -1,8 +1,8 @@
 class Kissat < Formula
   desc "Bare metal SAT solver"
   homepage "https://github.com/arminbiere/kissat"
-  url "https://ghfast.top/https://github.com/arminbiere/kissat/archive/refs/tags/rel-4.0.3.tar.gz"
-  sha256 "53ad0c86a3854cdbf16e871599de4eaaaf33a039c1fd3460e43c89ae2a8a0971"
+  url "https://ghfast.top/https://github.com/arminbiere/kissat/archive/refs/tags/rel-4.0.4.tar.gz"
+  sha256 "bfe93eaa6323b48011e4b1fcf74b3f2e20f9de544767e728009e5b2018296193"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,12 @@ class Kissat < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16a805b74aa6b67aac42116f921608e77067f3f553db17931a231d6dbdb1426f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0eb8fbbc0d871dafebe61c28e50c5fb4d91197ac25454773bd49addf8d8463a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3306c59f3974c880708161055d5b84cd329180547f573a3b928331f87d954a0e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5cc55b114c2d470012956c538e7004381ebb4991a8f493fdf65419eb5b16c9f7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "653211109e2c4ad824fb4d39bb1f1f907c0d6f3e1f0455448e56d8f7546ec03b"
-    sha256 cellar: :any_skip_relocation, ventura:       "fc191b61a8fe46d85a4796b18a6563763c46aa6b1e2549d656e5fcff30762d5c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a2c2652d7dedd33d9bb02ad38a44333d5e89268c61c11477772659569f764b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05888f8299dea43a8b164e6317277033fc2543a6f4aaa9a0b1d67b51e0dadc7b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "67e49c44458a442a6ccadbf16e9cf7ef419d22ac1d2fe2dd3f9a0e7c8c2ffb77"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b66a3192b73682075386abda2c27a6318b6a7f3364ef3cb2803624f3719833d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1fcaeae9f5035f8273ae2809bbdee818e7d3c2c160f19eb02c7953bd3d16f2ab"
+    sha256 cellar: :any_skip_relocation, sonoma:        "36eb3d024cbf5940ec33db9b59897ded7591b19981427caaa5d29f52da453706"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "21fcc0a15aaa6ac7487b457ad7d798c264c6b48ef24fe2b9789ffa1f630b6adf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "406b4eaf9bb50f011363ef603542d6739687619a3bd570da052ad3022b9069d5"
   end
 
   def install

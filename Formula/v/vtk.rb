@@ -7,12 +7,12 @@ class Vtk < Formula
   head "https://gitlab.kitware.com/vtk/vtk.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "656878321ee65f06e5e71f43fe15e32d7b4e8562fbd4bf0dcefa582e35be5276"
-    sha256 cellar: :any,                 arm64_sequoia: "f4b88c54c7d07c16210f63fbe8449c9208cbd94797a0930a2ae6c1cc71e5eb00"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd179cbf16d53f3f0bb14fd8ca4b8a860e3a0ef6d9572a881bc6bd5168657640"
-    sha256 cellar: :any,                 sonoma:        "e1403a4bc3fb633b4ca6dcce907042665362ee16c137e57dab8a81c124114644"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e0115a25fd34c8b0c6d42c4991de30d60ce6bd901f42ecd5f3217a3c59d53e8"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "eaeffd8adfb0d751affbca472ad5262eb8080cd69a93fba419eea65e4c284e04"
+    sha256 cellar: :any,                 arm64_sequoia: "c00bd8996fdeafbc88512f222086aa450f1f337a4032896b0578af4ce1e50d3f"
+    sha256 cellar: :any,                 arm64_sonoma:  "2a1607f21b1e98cd23b1ea45bc776d66b1b05387ee7c59f89180f9b10b4fcac9"
+    sha256 cellar: :any,                 sonoma:        "f7021fd6e91f4ce36d1b13e5deeda31de64b75781deb00e6486079f5c466c980"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73692fd4d3b2f8ac3ef7c57c904d2881f007c448f7407606215ebdd8f5da60cf"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -35,7 +35,7 @@ class Vtk < Formula
   depends_on "proj"
   depends_on "pugixml"
   depends_on "pyqt"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "qtbase"
   depends_on "qtdeclarative"
   depends_on "sqlite"
@@ -64,7 +64,7 @@ class Vtk < Formula
       ENV.remove "HOMEBREW_DEPENDENCIES", "expat"
     end
 
-    python = "python3.13"
+    python = "python3.14"
     qml_plugin_dir = lib/"qml/VTK.#{version.major_minor}"
     vtkmodules_dir = prefix/Language::Python.site_packages(python)/"vtkmodules"
     rpaths = [rpath, rpath(source: qml_plugin_dir), rpath(source: vtkmodules_dir)]

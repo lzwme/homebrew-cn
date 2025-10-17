@@ -3,8 +3,8 @@ class CoreLightning < Formula
 
   desc "Lightning Network implementation focusing on spec compliance and performance"
   homepage "https://github.com/ElementsProject/lightning"
-  url "https://ghfast.top/https://github.com/ElementsProject/lightning/releases/download/v25.09/clightning-v25.09.zip"
-  sha256 "a97f44647b83b44718094f1838c6c74e8dc90c0009f2773a37b17ff80004a67e"
+  url "https://ghfast.top/https://github.com/ElementsProject/lightning/releases/download/v25.09.1/clightning-v25.09.1.zip"
+  sha256 "99a1fe49232e9d71f8dc797d145be4e4bea7e1ed3abe0b0bdd3f16df2772fa14"
   license "MIT"
   head "https://github.com/ElementsProject/lightning.git", branch: "master"
 
@@ -15,13 +15,12 @@ class CoreLightning < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "acf72d46243f92547a60ae133be2e70f09351c15fd127bde71845508f17f9b4b"
-    sha256 arm64_sequoia: "575a43de7fd78adcb332b6af3661d5f6900d8da1cfa141edff59612cad7da36a"
-    sha256 arm64_sonoma:  "7ebf05047d584acf509a56eaedd4bb935ab0eacc4b6bbc3d063aaebdadaa1890"
-    sha256 sonoma:        "753d6d32cd9c49dbcdaed157995cc74a23ecc18759a47febd55a22bf0f04526f"
-    sha256 arm64_linux:   "2275d43614ce5b224eeb4585ef86840071cb7d4c3e23bd5dc102155ebbb96018"
-    sha256 x86_64_linux:  "9ccf024030268817ef76beb29f4079e3ff7f42af1f9a4d190c77f5f721143f01"
+    sha256 arm64_tahoe:   "70aa6057c849236f1e0c4b625bcb5e29703769d663f360310efd8e3624887f19"
+    sha256 arm64_sequoia: "a7ae8998f5246d1097e67687a53011f2f5987efceb2cc697e1401bb5a0db941e"
+    sha256 arm64_sonoma:  "aca23c8a7c92915d114f847b91ea621c0899d1dc9d9e9669b86ff6b1115fba25"
+    sha256 sonoma:        "dd86eb93762b74191a800ee3e1734ad1faa0ba0f43c335e0fe8b4949247d45c2"
+    sha256 arm64_linux:   "a5cd79bc56ae075e6379f236c5d8abfbad2e0a71502aeda914b1c74cfff26c9e"
+    sha256 x86_64_linux:  "283da980920cb731ac4668bdbcb7c06cb6307b131075956c0a5df4ed0d82533e"
   end
 
   depends_on "autoconf" => :build

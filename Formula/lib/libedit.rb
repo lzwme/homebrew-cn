@@ -1,9 +1,9 @@
 class Libedit < Formula
   desc "BSD-style licensed readline alternative"
   homepage "https://thrysoee.dk/editline/"
-  url "https://thrysoee.dk/editline/libedit-20250104-3.1.tar.gz"
-  version "20250104-3.1"
-  sha256 "23792701694550a53720630cd1cd6167101b5773adddcb4104f7345b73a568ac"
+  url "https://thrysoee.dk/editline/libedit-20251016-3.1.tar.gz"
+  version "20251016-3.1"
+  sha256 "21362b00653bbfc1c71f71a7578da66b5b5203559d43134d2dd7719e313ce041"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,14 +12,12 @@ class Libedit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7293ede7633d593ac7b9fcbcb8b6b6095c16b371bec5ef1a3190fbe48d9d8153"
-    sha256 cellar: :any,                 arm64_sequoia: "cea11c2d6de1a8a2cc22c08a71ab24aa2909793c65496b01c054b31973953229"
-    sha256 cellar: :any,                 arm64_sonoma:  "f8a921a04eb8a7a678646017c40f6ff7be5149bacde10e5df26d17623bc8fc71"
-    sha256 cellar: :any,                 arm64_ventura: "4b176c32e18719e5ec303bde3f4b64312fcd9f7a1e2426df1962290864ebedf9"
-    sha256 cellar: :any,                 sonoma:        "eed32540db79d8c02b3dd9076459f08a4f5660cfd6c54cb0db55b76379470126"
-    sha256 cellar: :any,                 ventura:       "1a5446ca536e448c52101e281a8dcbac549dd2306090972337a37bce022d6e4d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4845c0d7d9cea3199da9eb29bea21a0d62b7f4e8322ae90acaeb4a2dc39f295f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3de065ef66904f7758361d623fc96cbc5226663d919b3d6524f9b46bf3153692"
+    sha256 cellar: :any,                 arm64_tahoe:   "b7908d3b0cb2d06c816ad380e8b968d9a733d8d2715d3efee37d30c84859b97f"
+    sha256 cellar: :any,                 arm64_sequoia: "130c26a65749e81d3dc981db8886115e7203062b0fc4c44d23916c318294c67e"
+    sha256 cellar: :any,                 arm64_sonoma:  "601a2ed57d0c8465f70e33c7b70f5955e836fe7f6beac6472fe74375b1a1c092"
+    sha256 cellar: :any,                 sonoma:        "a974fd48c78b24aff3b5e1dd4abc5edc7976dbb7e8f8ad155c5ab396f0603e4c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea2ad9305e5d9c9e0c78631c9673aa7f027afeee465e149ef988e9f750ede779"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72a509c156cd1752a7b4e5bfee1c1d63e491c166f8871879f93958df06ce3ae6"
   end
 
   keg_only :provided_by_macos

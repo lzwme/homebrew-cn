@@ -2,8 +2,8 @@ class Calicoctl < Formula
   desc "Calico CLI tool"
   homepage "https://www.tigera.io/project-calico/"
   url "https://github.com/projectcalico/calico.git",
-      tag:      "v3.30.3",
-      revision: "3302e8bfd48e6375013d1d79ccb2c693306400a9"
+      tag:      "v3.30.4",
+      revision: "b370415ad69ddc139a0981f8c5c6773e4703846b"
   license "Apache-2.0"
   head "https://github.com/projectcalico/calico.git", branch: "master"
 
@@ -14,13 +14,12 @@ class Calicoctl < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4774a257e8583e582b178a779eb3fe9b6084bd5b4ead647f69d8a4f120a00420"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4774a257e8583e582b178a779eb3fe9b6084bd5b4ead647f69d8a4f120a00420"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4774a257e8583e582b178a779eb3fe9b6084bd5b4ead647f69d8a4f120a00420"
-    sha256 cellar: :any_skip_relocation, sonoma:        "01e1e40b59008bbe430bc15c6605b0884cb7a43890d4ac05924fdcbbe881b349"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4197a28caa1738e756c50803388d0c8f055121b2771c8f8b59bad6ae06e3cdfa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "506921cfdcba075e2b1a78a483d152546e28e488b5539a2d7446758aa9f168d2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "15777d0141d030233dc7e12ee0f97334db1ab4df74e935b9eb119588251ffa88"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15777d0141d030233dc7e12ee0f97334db1ab4df74e935b9eb119588251ffa88"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15777d0141d030233dc7e12ee0f97334db1ab4df74e935b9eb119588251ffa88"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6cc6d0bc776677789b9944e762d32350abc0bcb4039c8a3afcfbc220291dbc84"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "900cf0c2fda0b264e43264a2b5430642bac1dbc6a8914136c47f2dc5c766c672"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db865f9149b22dc02141ec9be1ccb4376b0fedfdf6e87048eca2e960ab435171"
   end
 
   depends_on "go" => :build

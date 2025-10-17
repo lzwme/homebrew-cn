@@ -11,7 +11,8 @@ class BlueprintCompiler < Formula
   head "https://gitlab.gnome.org/GNOME/blueprint-compiler.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2421f6d9a9b639e63bd93add35e7dd08fea14c137dfda9a4f5133de82f183e83"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "d935e3b6be2f9ca0baba92580a768de9e3bdc89f3d55e24113e39336456eb414"
   end
 
   depends_on "meson" => :build
@@ -19,10 +20,10 @@ class BlueprintCompiler < Formula
 
   depends_on "gtk4"
   depends_on "pygobject3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
-    python3 = "python3.13"
+    python3 = "python3.14"
     venv = virtualenv_create(libexec, python3)
 
     system "meson", "setup", "build", "-Dpython.platlibdir=#{venv.site_packages}",
