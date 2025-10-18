@@ -1,8 +1,8 @@
 class Squid < Formula
   desc "Advanced proxy caching server for HTTP, HTTPS, FTP, and Gopher"
   homepage "https://www.squid-cache.org/"
-  url "https://ghfast.top/https://github.com/squid-cache/squid/releases/download/SQUID_7_1/squid-7.1.tar.bz2"
-  sha256 "77e81d107a8fc10ec08f2bc36b38c9aa3d49cfdfab3270d67e001028aa6d8a2a"
+  url "https://ghfast.top/https://github.com/squid-cache/squid/releases/download/SQUID_7_2/squid-7.2.tar.bz2"
+  sha256 "2bbbc7b55912a81dc493122c74a5b1c5a33b20239b3e33d476dddf07874fbb81"
   license "GPL-2.0-or-later"
 
   # The Git repository contains tags for a higher major version that isn't the
@@ -15,14 +15,12 @@ class Squid < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "c4840fd548e112a8bbc1aad519b62d8c4c83f7bae49467563b3ca25f48a66616"
-    sha256 arm64_sequoia: "e5d41da43546f29e8d716313d9da5cc75b8b2a583b04176c6152a8713d4635cd"
-    sha256 arm64_sonoma:  "5fb6f6f02bb7f4b9df597b999dd854c864ed7e1de1972c92ea5a222904febb80"
-    sha256 arm64_ventura: "597b0aa9dd16fa1785d004269695362c5099ce58cf7a77a9a1538e7aa543d880"
-    sha256 sonoma:        "ea431f4e87332de47fa00a5b01a1c1d16cfe209801560d4c6d40e9d33c6257b7"
-    sha256 ventura:       "7c034b109868873e123437ac3d036889f5aee7142852f950b3bd972333fab6d1"
-    sha256 arm64_linux:   "c67bd9de94046f89e8bc9eea23f75ca56bc4d0d7ea81ba4cc8676e4da9b4e171"
-    sha256 x86_64_linux:  "b3f81a1434e3532567287e32d2fcc561502724e94bcb5715ff419d9c8d0cae1a"
+    sha256 arm64_tahoe:   "3c24a5f1cb2a991860831a3dac5bcf94b7921231d593953f0072fcb4d60b35a8"
+    sha256 arm64_sequoia: "25eb944f397881be303d454d4177a167f369b2232a93ee327545bb7e97e96c69"
+    sha256 arm64_sonoma:  "f65d585f6909c5e49aa7984b5d2dea4ba225b31c3923f2d9ff2dc03cf13bfcca"
+    sha256 sonoma:        "171aeec1c40349702836054f49a787dbebaa0b57fcfc88c1047768bb574e9ab3"
+    sha256 arm64_linux:   "837d738110e896b847a166337cdc0aef183e790abb779984dddd39c43f100d0a"
+    sha256 x86_64_linux:  "f3bb698cb95dcdb2e78712cfc4652a3ef11df72aae17dea08789d1b741aecd04"
   end
 
   head do

@@ -1,8 +1,8 @@
 class Livekit < Formula
   desc "Scalable, high-performance WebRTC server"
   homepage "https://livekit.io"
-  url "https://ghfast.top/https://github.com/livekit/livekit/archive/refs/tags/v1.9.1.tar.gz"
-  sha256 "88a0c51a1633c7a39c0a2623bbc982943b1a0d8ece1790f72c1391ae61085f30"
+  url "https://ghfast.top/https://github.com/livekit/livekit/archive/refs/tags/v1.9.2.tar.gz"
+  sha256 "2278c6d96312c72781fb52fc08ec653b5fa56cfbe957348b899df8de2e8703f4"
   license "Apache-2.0"
   head "https://github.com/livekit/livekit.git", branch: "master"
 
@@ -15,14 +15,12 @@ class Livekit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3274697334eb2d9b0f24d9c8eed4d914b5094ca52bb4d58d47d0815049c9bb1a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc56be398ab8da2ff2b6020a2fd6661e0c7b99edb2e3be538d6a4aa2ad22fa29"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc8f8cd1f8f51579c3903f0c48a1989c9a8f2fef4f581271b57c95e36136a8ae"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "73cf86e427181b8361b54d4209e3e336c67624db5a0b7649a24760a36e649dd5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b8066ae2f003bd42940d468c914c514b85c641d9e8519ef50bec3e7713686f70"
-    sha256 cellar: :any_skip_relocation, ventura:       "9ba2f5bd941d8d66b59d73cb7fa0b4febb3736196982e871296373926601a3ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5bb0714d5b2c10e09ada2643c4ebbfaa4cbf62b8b9e6e56ac4b0f4ad8e08f2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a013955174fd840df82f4f5bbfbdc763c5d50f2f0146754802d6bedcbc41cc75"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d2e9571c98d9867821a059d82e210ffb8e18fba2e60e86c6d3d71e503ec3b604"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00e778d9672b8358b734e5dc396d8945d6c44a02b97afea6138e396238ad8d74"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f308e9dad5dcfe2a3f9202f84757d83e0dfd3b1b1aa2001ded7add3f2f3fe7df"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c8ce44b3d86a81f74774be73692f9b19520ff470e8e562fabc0d0a12917466b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca80ecce41f4162225a1659eaea550520ba96eefc908c6d0c4e8fcf162a2a033"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b051f52c8c7c525264d5c3c41f214ff81c687cd6dd413722754391e3769c6bc0"
   end
 
   depends_on "go" => :build

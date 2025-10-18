@@ -12,12 +12,13 @@ class Zeek < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ea35b88f3644d9ea0513bfb0fbd44a3f09a499e82772dd1a451ffeda0a349b30"
-    sha256 arm64_sequoia: "0f920d0131884663a525d0a8bc679dec9eab67a65f26af3ba63e3b5fa73ba675"
-    sha256 arm64_sonoma:  "b9b7ee380bb8710e750cadee507b314272e435070041cce4fd666ec4b69eb3b5"
-    sha256 sonoma:        "c7f92b22d700a690bd3537202bcbde50b23fb7fdf54c689038a5922f6761f019"
-    sha256 arm64_linux:   "ef454402dd3a9ad036c362f80e2c4035ded87f4af66dcf6492203c5ff49f2785"
-    sha256 x86_64_linux:  "79f390b2f373b842a550aec5fadee78fa0606ce0126427f195674478dffe1252"
+    rebuild 1
+    sha256 arm64_tahoe:   "0edeaf58eb15735700f7f217f7936e9010e314a4724fc8daf742a55688c407b8"
+    sha256 arm64_sequoia: "aafd8012564786d628a5ca85331f9c718d22750b08c5b7447c1e37a41d629fc9"
+    sha256 arm64_sonoma:  "7cb65983bcc8dd5ff3d4befff4f9ed220f43ce1b39d83fe95e61c4e481f0ad1e"
+    sha256 sonoma:        "c9dc47e1b8d67104ff0f66c3875b06a378ec65f1e1cf9d00459a2d48bb1e2072"
+    sha256 arm64_linux:   "571dff895d843946edcfc9978aa1eaab5410c7584489072aa0b16e22e1657253"
+    sha256 x86_64_linux:  "df23e195c111cae0dc726efc6b695b0885ea22060655a75013f93905078aeb9c"
   end
 
   depends_on "bison" => :build
@@ -27,7 +28,7 @@ class Zeek < Formula
   depends_on "c-ares"
   depends_on "libmaxminddb"
   depends_on "openssl@3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "zeromq"
 
   uses_from_macos "krb5"
@@ -55,7 +56,7 @@ class Zeek < Formula
                     "-DCARES_LIBRARIES=#{Formula["c-ares"].opt_lib/shared_library("libcares")}",
                     "-DLibMMDB_LIBRARY=#{Formula["libmaxminddb"].opt_lib/shared_library("libmaxminddb")}",
                     "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
-                    "-DPYTHON_EXECUTABLE=#{which("python3.13")}",
+                    "-DPYTHON_EXECUTABLE=#{which("python3.14")}",
                     "-DZEEK_ETC_INSTALL_DIR=#{etc}",
                     "-DZEEK_LOCAL_STATE_DIR=#{var}",
                     *std_cmake_args

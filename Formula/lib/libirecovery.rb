@@ -1,18 +1,18 @@
 class Libirecovery < Formula
   desc "Library and utility to talk to iBoot/iBSS via USB"
   homepage "https://www.libimobiledevice.org/"
-  url "https://ghfast.top/https://github.com/libimobiledevice/libirecovery/releases/download/1.3.0/libirecovery-1.3.0.tar.bz2"
-  sha256 "f9e5485e5a7ee039dd32820bf1c88d65dc0e73322a95d5e9878b06bee02f3dc8"
+  url "https://ghfast.top/https://github.com/libimobiledevice/libirecovery/releases/download/1.3.1/libirecovery-1.3.1.tar.bz2"
+  sha256 "28a3a521782063c8eb2ee5f4c0f38a517e023853edb55856052cdd7ac400381b"
   license "LGPL-2.1-only"
   head "https://github.com/libimobiledevice/libirecovery.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "88698c7823a14bec2da158f1cfc360608a9d4a9ebef29cea6956eb93be004754"
-    sha256 cellar: :any,                 arm64_sequoia: "cd0733daaf78059503eb27ef698f97a5734f2062cffe8201aeaba6c6b20d598f"
-    sha256 cellar: :any,                 arm64_sonoma:  "e23201d201b371225729788f95281fe5367dfe9a367be2b6541bc0beb16f6468"
-    sha256 cellar: :any,                 sonoma:        "d710ddb939620c8b62f48163fde9082db53388e92d9791adb9d4d7dfbf4b07b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "606482a44dd42515748abd2f0938b560aa7572f7c8c89883ab7d34c9989cf7a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45640335f78a19c6012a5a2d2d0ca575a2ce2f0303b1d2be4a28df03b51afece"
+    sha256 cellar: :any,                 arm64_tahoe:   "14126dca02da81d6266e719840639fa3c7dba674a7fe5e22fe39c856f5f1eafd"
+    sha256 cellar: :any,                 arm64_sequoia: "5b65d2e4775295b517a4324c43c0f9553871fafe19f423b890d9355f76050a69"
+    sha256 cellar: :any,                 arm64_sonoma:  "d248aaefd0b49f856770bbc48c531b624b9e64ae203af153dc2f3be3cadeae49"
+    sha256 cellar: :any,                 sonoma:        "139905a8f27754ed0ad2546491a171679fc2823e1060dbf2e1ff7e09a3b9de8e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e51daa52330dffe61ac4fa323b48023c9d638e960d977ddd0bc834d2d5483639"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95cb02d908ffb064784fd215510258e01417621f2689df80a7e702c7b02b3d96"
   end
 
   depends_on "autoconf" => :build

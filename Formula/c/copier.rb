@@ -3,18 +3,17 @@ class Copier < Formula
 
   desc "Utility for rendering projects templates"
   homepage "https://copier.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/fc/88/11f7279c994526855576c3d1860fb9bfb950baf4d545b172089352a806de/copier-9.10.2.tar.gz"
-  sha256 "495159b796bc745a90238b2097053555f9e4283efc7181ee3b5402a5cbe21614"
+  url "https://files.pythonhosted.org/packages/82/c6/1f61fe2b011347c0b9d7637d02ef3dc1c2874640a4fd5fb059ea8b5493f2/copier-9.10.3.tar.gz"
+  sha256 "6e965d8f719678ee3bc5e611ef0d1b182d6b01a3d5385a5f1ba43aaade51caf7"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "84d4b986a8e2e25acf4bd8431a5c0ab12e2b59540c3f1b3eff0cdcd83d13a72d"
-    sha256 cellar: :any,                 arm64_sequoia: "326af91bc43327ec7a5d2c811b6235fcc98c4918b0018711e477f463f84a0443"
-    sha256 cellar: :any,                 arm64_sonoma:  "0e333c45318dac611bb832f10a9704b2afb5e363b80eaf3f98cacef9354c34cb"
-    sha256 cellar: :any,                 sonoma:        "d4f28c888931de224ccc5ed3df654ff52aa2095b69ddb7538d3f6a7c3d29a433"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "68052abd8a6afe8555d8d002dfb8463390490f85b125d288a9a1b152af048b4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46ac88472781aeca4c7970e2547e2f1809356f6c7391b573551235bd8ded5625"
+    sha256 cellar: :any,                 arm64_tahoe:   "2736ca176459263cf3f5c71f0745f41e4312780c543e58fee513a57fee3262cb"
+    sha256 cellar: :any,                 arm64_sequoia: "ac62d9278aee9755813726143e2d985db9262879a3d1a66bbb8b862ae8e71cb3"
+    sha256 cellar: :any,                 arm64_sonoma:  "6ba2e0500cacf519fa025faa4244bb41c94f290c9c78af741e1130ab071189cb"
+    sha256 cellar: :any,                 sonoma:        "4db31f6b313f36b3854cfdf3187de0cd1620f16f327c849815482edcb1f95348"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "da4402ef4dabecd52159896e6fe0d2412587b6af28241cf5aa82514ac7092ee5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0e59ce279a8f8820e1291199d73e15d6dd222c12e3656162417f68f29cb17e8"
   end
 
   depends_on "rust" => :build
@@ -82,13 +81,13 @@ class Copier < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/3c/a7/d0d7b3c128948ece6676a6a21b9036e3ca53765d35052dbcc8c303886a44/pydantic-2.12.1.tar.gz"
-    sha256 "0af849d00e1879199babd468ec9db13b956f6608e9250500c1a9d69b6a62824e"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/00/e9/3916abb671bffb00845408c604ff03480dc8dc273310d8268547a37be0fb/pydantic_core-2.41.3.tar.gz"
-    sha256 "cdebb34b36ad05e8d77b4e797ad38a2a775c2a07a8fa386d4f6943b7778dcd39"
+    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
+    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
   end
 
   resource "pygments" do

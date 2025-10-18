@@ -8,22 +8,19 @@ class Certsync < Formula
   license "MIT"
   revision 1
 
-  no_autobump! because: "has non-PyPI resources"
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "799e65c865e6fce8bc2a0acc59b4b31d792684c5e5c15298903aec8875b34783"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce9f96e07b826ca7f88e7324e519c77895a8067fb7a515467b01b8d340e11916"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32fc1c809f36a9d0e28157ccf6d00ca9e42deaec653b5da3234daa3eed3add44"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "555abc7e5f9f99cce2a30ee4bdc16f026e88e671493031d131bb927c91aa7f76"
-    sha256 cellar: :any_skip_relocation, sonoma:        "532555d93a5da39106b2f604aa15d2a1747b145c5a536ef2eefbd5581c37e586"
-    sha256 cellar: :any_skip_relocation, ventura:       "998bf723887fe7f207080371812376b60fce993cfbd1f3c2385dd46f246010f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8acb4485616f556af6d01c12d11e0d4ba99cc1fc50d5419d31a0745fb7dfe38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "424a8c8dda9bf9297d5b125aa9ab017bf299c695b8d03836d1109042251fd658"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e2cb1b6fdf1effccaf50ce5e24349ba2e2fef571fe7e3048596f619d5ff3e931"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eac68d574cf547671ddcc45b561dab031a8e97fe13428e8650b80b22696648e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16de351d6edbb4921446f3e025dcbce5061ab2e32c1948e6c54f25e1561d4f61"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b0df58285b8b772943480242b1defe0306d9aa6d1542cb710a0b861994994e5b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ed904a1a0ef1ad87c310cab3329c8190a9760cb2f09e8cac36973ff384a574e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "170093674865b39eb2f6a9e70b36b4e83da328e9b7683201b380ed7eb944a1de"
   end
 
-  depends_on "certifi"
-  depends_on "cryptography"
-  depends_on "python@3.13"
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
+  depends_on "python@3.14"
 
   uses_from_macos "libffi"
 
@@ -43,18 +40,18 @@ class Certsync < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
-    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/b5/4a/263763cb2ba3816dd94b08ad3a33d5fdae34ecb856678773cc40a3605829/dnspython-2.7.0.tar.gz"
-    sha256 "ce9c432eda0dc91cf618a5cedf1a4e142651196bbcd2c80e89ed5a907e5cfaf1"
+    url "https://files.pythonhosted.org/packages/8c/8b/57666417c0f90f08bcafa776861060426765fdb422eb10212086fb811d26/dnspython-2.8.0.tar.gz"
+    sha256 "181d3c6996452cb1189c4046c61599b84a5a86e099562ffde77d26984ff26d0f"
   end
 
   resource "dsinternals" do
@@ -63,13 +60,13 @@ class Certsync < Formula
   end
 
   resource "flask" do
-    url "https://files.pythonhosted.org/packages/c0/de/e47735752347f4128bcf354e0da07ef311a78244eba9e3dc1d4a5ab21a98/flask-3.1.1.tar.gz"
-    sha256 "284c7b8f2f58cb737f0cf1c30fd7eaf0ccfcde196099d24ecede3fc2005aa59e"
+    url "https://files.pythonhosted.org/packages/dc/6d/cfe3c0fcc5e477df242b98bfe186a4c34357b4847e87ecaef04507332dab/flask-3.1.2.tar.gz"
+    sha256 "bf656c15c80190ed628ad08cdfd3aaa35beb087855e2f494910aa3774cc4fd87"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "impacket" do
@@ -98,8 +95,8 @@ class Certsync < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   resource "pyasn1" do
@@ -128,13 +125,13 @@ class Certsync < Formula
   end
 
   resource "pyspnego" do
-    url "https://files.pythonhosted.org/packages/6b/f8/53f1fc851dab776a183ffc9f29ebde244fbb467f5237f3ea809519fc4b2e/pyspnego-0.11.2.tar.gz"
-    sha256 "994388d308fb06e4498365ce78d222bf4f3570b6df4ec95738431f61510c971b"
+    url "https://files.pythonhosted.org/packages/f9/e4/8b32a91aeba6fbc6943a630c44b2fe038615e5c7dec8814316fafdcf4bf4/pyspnego-0.12.0.tar.gz"
+    sha256 "e1d9cd3520a87a1d6db8d68783b17edc4e1464eae3d51ead411a51c82dbaae67"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "requests-ntlm" do
@@ -157,10 +154,9 @@ class Certsync < Formula
     sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
   end
 
-  # pypi artifact request, https://github.com/skelsec/unicrypto/issues/7
   resource "unicrypto" do
-    url "https://ghfast.top/https://github.com/skelsec/unicrypto/archive/refs/tags/0.0.10.tar.gz"
-    sha256 "3daefcdf8e71f9300032393ad85d7f22fc08d07dc05cf7776019b9480bd8506a"
+    url "https://files.pythonhosted.org/packages/87/2f/70e4cfaa94471f3f3f2680d02b12a63a113c26e0395c6423ac1fd590f7ad/unicrypto-0.0.11.tar.gz"
+    sha256 "44ab77bbf0e9ea6a4e957bc03d015cf837b9533c5319129e44d950be273d40a5"
   end
 
   resource "urllib3" do

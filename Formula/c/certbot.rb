@@ -9,19 +9,20 @@ class Certbot < Formula
   head "https://github.com/certbot/certbot.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2dafd177b02b33fb36a6afa4dd9308bc7077bb305a1ab382e742c80bd4ec665c"
-    sha256 cellar: :any,                 arm64_sequoia: "f9c768b787aa432cb583ce477ff06b5bd031413b395b4d6b06494bd44649a20e"
-    sha256 cellar: :any,                 arm64_sonoma:  "72547999b19d8772f63c20aaa49e594f52a0e601606e8cb58ea4dcfc08777e30"
-    sha256 cellar: :any,                 sonoma:        "a414ee6dd454736a4428102f6b24c40503fd4ed6342edb16e21fc32419db6a2a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1bcd8e1a20bd158dd3d471ed61255414a0556b9e7231086bb3c87423acf6ab1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35285e2692f8416f284077f05d354556ec6bd3d603b52adcfe0dee6f545595a1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c09b2ea3fc550f751eb1d5ad0d52eafb175b27f3a1458c2001513d2a334782ca"
+    sha256 cellar: :any,                 arm64_sequoia: "40bdade7dec7114f9a424fd6c3dc55f18edcefd986156c038ba008a972f7c7d8"
+    sha256 cellar: :any,                 arm64_sonoma:  "d24e51faa94e7ea253adaa5fdf41f8b2843e36ad508e501168535d99ca92269e"
+    sha256 cellar: :any,                 sonoma:        "fbf8e8f6985f305ee4589bf1926b53b2d29f6ba6cd924e956cf887af18ee5d9f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2288efdba2a92d39631903b55483e892520ca1a943e78f8aaef53886e5c66c0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86ee16d7ddaa6c48cb7f9e8b37482c7b3c2795758076fbcafb1aae42a3da6aad"
   end
 
   depends_on "augeas"
-  depends_on "certifi"
-  depends_on "cryptography"
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "libffi"
 
@@ -133,7 +134,7 @@ class Certbot < Formula
   def install
     if build.head?
       head_packages = %w[acme certbot certbot-apache certbot-nginx certbot-dns-cloudflare]
-      venv = virtualenv_create(libexec, "python3.13")
+      venv = virtualenv_create(libexec, "python3.14")
       venv.pip_install resources.reject { |r| head_packages.include? r.name }
       venv.pip_install_and_link head_packages.map { |pkg| buildpath/pkg }
       pkgshare.install buildpath/"certbot/examples"

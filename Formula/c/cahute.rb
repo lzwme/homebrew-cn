@@ -26,7 +26,7 @@ class Cahute < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => [:build, :test]
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "libusb"
   depends_on "sdl2"
 
@@ -36,7 +36,7 @@ class Cahute < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

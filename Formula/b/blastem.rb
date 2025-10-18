@@ -51,11 +51,17 @@ class Blastem < Formula
   depends_on "imagemagick" => :build
   depends_on "pillow" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "glew"
   depends_on "sdl2"
 
   uses_from_macos "zlib"
+
+  on_macos do
+    # Can be undeprecated if upstream decides to support arm64 macOS
+    deprecate! date: "2025-09-28", because: "is unsupported, https://docs.brew.sh/Support-Tiers#future-macos-support"
+    disable! date: "2026-09-28", because: "is unsupported, https://docs.brew.sh/Support-Tiers#future-macos-support"
+  end
 
   on_linux do
     depends_on "mesa"

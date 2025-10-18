@@ -9,22 +9,18 @@ class Offlineimap < Formula
   revision 3
   head "https://github.com/OfflineIMAP/offlineimap3.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd6dd12fe8c16d4dde77dd664d2a74ff190500faacccbabb7eb36541d5605e52"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2182b73d2eb5f2fc88614f4cd78889da9a8fa1cf7cf78e83884856f5dbc9e2da"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f075541e1fe801e4f1aae1391e7042d8dfc763910e556d6cbb84b7ecd222c89f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8ed6b9597ffe2c607b0098e3bf9b228412dbf51e06ca9046722874d178400131"
-    sha256 cellar: :any_skip_relocation, sonoma:        "923fa39061bc987f7b370d44df0bc9af79e2c7fa1682b2cddbe8d102d1b122f4"
-    sha256 cellar: :any_skip_relocation, ventura:       "19482c631666b82f1d13bdb2e73dbcc9fd6b97b00c5f0449077ef7b6b24fc1e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb60efdcd9b609890d2aaf97808112b99d4d4f233070f0832cf1c72741d36dd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5be2017abd6712c16b557a9f64631f9ee673c707bc80d48a79fe74181902bd54"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b2f3a0fd3ac8f2633e4787ba3e6874a38113a2762f720557999abe906c754db"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe87903fa864769f72337b116bbd9e14f3ee79614a811b0a85cbc6ab8d2edd19"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f1a28a3ca108dae4e0bc04832cda86fc8c808d4e171e0df6e8bb900e132570f6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eea4147c9b8aec69ccc1974caf0d08677cc370e98e690bc917405b7706256777"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b94a7824487d05f8565187c89317a0e703e1cf686ec74bfbbafaeac93818dca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9125706c6663f9878214df3a4943178b9c83617e48627d962532c547a229b4dc"
   end
 
   depends_on "certifi"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "krb5"
 

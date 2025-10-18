@@ -1,21 +1,18 @@
 class Stringtie < Formula
   desc "Transcript assembly and quantification for RNA-Seq"
   homepage "https://github.com/gpertea/stringtie"
-  url "https://ghfast.top/https://github.com/gpertea/stringtie/archive/refs/tags/v3.0.1.tar.gz"
-  sha256 "1e5cdc7a739d2cffa6dbbb4c28c1029476cc5002531a1438a1274ac381487a4f"
+  url "https://ghfast.top/https://github.com/gpertea/stringtie/archive/refs/tags/v3.0.2.tar.gz"
+  sha256 "8fc429eb7437cb62cd95440a3e28529719cc72133592ce8e02f5cf249ce3142e"
   license "MIT"
   head "https://github.com/gpertea/stringtie.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "780365bec7e6091368a852b69b9170aa8710ad5387a5caa520312899dc3e29d7"
-    sha256 cellar: :any,                 arm64_sequoia: "764025772d0ac9adc2126e50397cbc8f425ac2f0ffc62ddf196ee6f478b07d57"
-    sha256 cellar: :any,                 arm64_sonoma:  "b1185499c7e4d79e4fb71aab57c305804156a06abfeffdf77b45852f6b7959f4"
-    sha256 cellar: :any,                 sonoma:        "d1dc3799f40d69897a68f37144235c10688bea264d54ae6c4ee9cff7cee1e554"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d953ed47055c2826edde2e378b7a792b8976003fbeb8e325c4eee9d19e8b9a25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87cb579b09f49065becc0a3ce2b19363b2c719bb22f82f97421b82b3a3275ad5"
+    sha256 cellar: :any,                 arm64_tahoe:   "c14e68b1673b69143178f89c9f32c17466bf2b5af7a40e6a90c8f5bed61d27c5"
+    sha256 cellar: :any,                 arm64_sequoia: "1ac0cf98582d7ba1b1d00703941bf70209d9fc589c7b2b0fe87e638340543026"
+    sha256 cellar: :any,                 arm64_sonoma:  "2a5c3b277611d4b6506d841a870fa39b3a607fbb07e0c6e85c79a1319cb3a79b"
+    sha256 cellar: :any,                 sonoma:        "93ccbf7380a10bbb59bbef0ebd9a1d87d652009378912f6c107a913b37af7b67"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fc194a5e8f17f784e39435e940849cab87e43316c2121df72211484af6c18fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "997003f4c9ddf4bc5a6bc21e6102b890c248d5a8878e5c011aec37d5c3ed59a6"
   end
 
   depends_on "htslib"

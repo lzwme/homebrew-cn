@@ -9,21 +9,20 @@ class Badkeys < Formula
   head "https://github.com/badkeys/badkeys.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "eb836ec8e62ce944200bc75d60ce028cf84933d4543da2ed6c18edd0d700be1b"
-    sha256 cellar: :any,                 arm64_sequoia: "d9b93cdd512c2261bafb082c9811eaa3bbbb7b745a3b3032bb1fb6586da0be8c"
-    sha256 cellar: :any,                 arm64_sonoma:  "374d015560e5a086b8a25b850910fcaa6f446a4acd06b2a4a2335fb3aa9d1cb1"
-    sha256 cellar: :any,                 arm64_ventura: "f829a4ec2607d8a5bec5abed89c493810d23b313016f50037b4c9ca0ba3e32a9"
-    sha256 cellar: :any,                 sonoma:        "cd8c18499d61964fc953313888570c88285344aa2cf422507b73259bd91a1154"
-    sha256 cellar: :any,                 ventura:       "9669beff92409b650fa0da71c4ffe4fb85263456aac0733e942ad0e62c69378b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b144bd3666e2c5ee61dfc94996aa29dc207c700381052409146d309226a476c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ed17a1fbc143891f5abe5ef698124310c3c10813fd81932f0a6e50a6d3521c5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "9806b5e535be6712262a43feb4ebad23615bf12bc632df45dce500f555882a1e"
+    sha256 cellar: :any,                 arm64_sequoia: "39dfa6f5a1988016755b1bd5a07b58114190a5ff2867de0c702c22d9102be87d"
+    sha256 cellar: :any,                 arm64_sonoma:  "5d5496ecc3f90a28df364be7643446a5281228fc009e0ef090588221e89e040f"
+    sha256 cellar: :any,                 sonoma:        "1a70e69b84522bac473855776f8b8362b8578128330ddac987f09ae593374cc6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1302b0437d907419f57f5164792750ebc2245ac373672803d9da9dd136532a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bd97a3fd9c0cb48b4e9d2079f98d715b386a5688fd1455e7db2e8e9a4a5178d"
   end
 
   depends_on "cryptography"
   depends_on "gmp"
   depends_on "libmpc"
   depends_on "mpfr"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "gmpy2" do
     url "https://files.pythonhosted.org/packages/07/bd/c6c154ce734a3e6187871b323297d8e5f3bdf9feaafc5212381538bc19e4/gmpy2-2.2.1.tar.gz"

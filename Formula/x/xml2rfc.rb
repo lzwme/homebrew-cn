@@ -9,16 +9,18 @@ class Xml2rfc < Formula
   head "https://github.com/ietf-tools/xml2rfc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "29c602945150a037ce808f3c846b61d20e84ae24a01e294970994c8671f947a5"
-    sha256 cellar: :any,                 arm64_sequoia: "0eb552c809a93dac5e08c8d4cb15acad627cbdbf0131854eab22957ab256fb2d"
-    sha256 cellar: :any,                 arm64_sonoma:  "19cd0594ce8065ee45310bb6985a1ede46b5b5eda431f4855b0a73196fa05a0d"
-    sha256 cellar: :any,                 sonoma:        "161a248060923f89d102ec2dd147829514827af5be131afd51ff85d347089495"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a95ab7a578c0890c976ec9bd1d2eca46c2aafa978d8894f7852d0e61d8a36ccf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6df440c6a48534768f700487b47ce7975654a54f6098e5e1adc3a492aaafb0b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "cc0e3717a648d36434887e28b1f0efd99ac2b65c7492a6001f75e7ffa4809e87"
+    sha256 cellar: :any,                 arm64_sequoia: "c2d946772cdc683607584b14d0a10617b3035c17ad1570606186b2074ed8bd30"
+    sha256 cellar: :any,                 arm64_sonoma:  "d2b15b0c5389ae4b8bc105e21e94b411646946d7e19250b898adc6668d24ea70"
+    sha256 cellar: :any,                 sonoma:        "67736a7b67a57e46b185fbdfcd4e85b3f31783b487cb2d8969c95842b019ee23"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b8ea54680a7ccde27e73e92e3b1669a3df2d8f414dff76027db3902f2fd72d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43a237933650d6433443b04abb1e005b83fb49e410bca08c2183d8d208df078b"
   end
 
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
@@ -26,14 +28,12 @@ class Xml2rfc < Formula
     depends_on "libxslt"
   end
 
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/4c/5b/b6ce21586237c77ce67d01dc5507039d444b630dd76611bbca2d8e5dcd91/certifi-2025.10.5.tar.gz"
-    sha256 "47c09d31ccf2acf0be3f701ea53595ee7e0b8fa08801c6624be771df09ae7b43"
-  end
+  # Keep none-any.whl for `google-i18n-address`,
+  # if not then there will be an ModuleNotFoundError: No module named 'i18naddress'
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "configargparse" do
@@ -47,8 +47,8 @@ class Xml2rfc < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "intervaltree" do

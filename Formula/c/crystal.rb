@@ -5,8 +5,8 @@ class Crystal < Formula
 
   stable do
     # TODO: Replace arm64 linux bootstrap with official when available
-    url "https://ghfast.top/https://github.com/crystal-lang/crystal/archive/refs/tags/1.18.0.tar.gz"
-    sha256 "a83be65dedefd6c83238777b9cc0f980057de9e6e6f29a80f14fe184a554fadc"
+    url "https://ghfast.top/https://github.com/crystal-lang/crystal/archive/refs/tags/1.18.1.tar.gz"
+    sha256 "0cf2b5f4ffba50b29996ab66bedbf4deddea63b29ea7eca836f46ff23086e7af"
 
     resource "shards" do
       url "https://ghfast.top/https://github.com/crystal-lang/shards/archive/refs/tags/v0.19.1.tar.gz"
@@ -20,12 +20,12 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5f616f8763b81c60b55d77c7d8ea38e77b2cfe2ff44cc427e94173b81e7589ea"
-    sha256 cellar: :any,                 arm64_sequoia: "914187763c5ebb372044797c8631486c3798b64cda52e5eeadb50bb8dd634605"
-    sha256 cellar: :any,                 arm64_sonoma:  "34f041116cd17325b8647bc83b67f3ec46843657e1fe5ced026601c22aa7e221"
-    sha256 cellar: :any,                 sonoma:        "ed2bfde9138168610f426dc367bbe50ba154a860cfb4861b8d84d62767a4af31"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b83227b82e79198cca3c883efe38f549106f1d03783ce56c301c9a761a9e5143"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bcc51a711ba5d2633f6d1d17680926e0e89fa2e0ba12c772ae06bab1ef4023b"
+    sha256 cellar: :any,                 arm64_tahoe:   "e73a50965c70c8ee761d7e0ced6ca89f13a8d6e68734bbde0628f3fb86dc8777"
+    sha256 cellar: :any,                 arm64_sequoia: "346e3684d9dfd992a7bec568daf016218167c6eb5154b5062917c21bb9b36347"
+    sha256 cellar: :any,                 arm64_sonoma:  "8c48d21d25b9b98fa6f0a5160d078dcf80952762ea379918a756e25899b9a632"
+    sha256 cellar: :any,                 sonoma:        "e1a972c1b94fd4fd60da832d67c31a453cfe1e138b72abe3b979a3f2e169db70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd442c301a8d38e4d9ee605c982ed158122224333b8eee8ed0c68106b2df41c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c42e9b987d5f4e318bd7e94c40a9b430e2be27829073a63532132edaa60a80e"
   end
 
   head do

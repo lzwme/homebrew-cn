@@ -3,10 +3,9 @@ class Pytorch < Formula
 
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
-  url "https://ghfast.top/https://github.com/pytorch/pytorch/releases/download/v2.8.0/pytorch-v2.8.0.tar.gz"
-  sha256 "c70a2c9488f6f6e8af5982a10d1cc2c37b7df5e6506d839daa5d5e250953d7b5"
+  url "https://ghfast.top/https://github.com/pytorch/pytorch/releases/download/v2.9.0/pytorch-v2.9.0.tar.gz"
+  sha256 "c6980af3c0ea311f49f90987982be715e4d702539fea41e52f55ad7f0b105dc3"
   license "BSD-3-Clause"
-  revision 4
 
   livecheck do
     url :stable
@@ -16,12 +15,12 @@ class Pytorch < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "eb8494886527153f90fda754cd8b6aa644e846389a03e5a2486127969342a2c6"
-    sha256 cellar: :any, arm64_sequoia: "cbe99bffc7f6e31f9c801369897fc49d2ce01d1818a04de0f915e0796b44e44b"
-    sha256 cellar: :any, arm64_sonoma:  "0833d2adc8d3e16d16e29e44eb174e89b09565d9e38a1964a725388e9919e039"
-    sha256 cellar: :any, sonoma:        "5a46a4c7655e661ba4310ec49df4cd14f96e922148fad318d3610effe27b28d2"
-    sha256               arm64_linux:   "b260a123f15f57609e47534305c105ea52840bcc65407301fdb27cffed1045af"
-    sha256               x86_64_linux:  "8ea5e97ae92529e269191045bcc8957e3ab040db3d10e8904329ab4e41d8df4b"
+    sha256 cellar: :any, arm64_tahoe:   "7e058e9afa62a272e04e7fd848dd76579d677aa49d41a9b8117fa2610d8b37db"
+    sha256 cellar: :any, arm64_sequoia: "9f54190831f06186cce645472349edd64379c390ed603c5adb186be3d8a43322"
+    sha256 cellar: :any, arm64_sonoma:  "5d015c3abd6e77293ca963793b72feaabacc3f1762ccf97be8a9d33c4e7fdd01"
+    sha256 cellar: :any, sonoma:        "3b61917a41a63bc9fc66fe75938e88ba43b9dbfd89782d8657118ca330c12959"
+    sha256               arm64_linux:   "adb009a7d3de3fb96a0518bf0ca77483e0c4a9f521669e35e825ed520e47828e"
+    sha256               x86_64_linux:  "3c4581e40297185c27467e538e07c26c25bf9ef06d8151028367967c54a94f01"
   end
 
   depends_on "cmake" => :build
@@ -44,13 +43,13 @@ class Pytorch < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/0a/10/c23352565a6544bdc5353e0b15fc1c563352101f30e24bf500207a54df9a/filelock-3.18.0.tar.gz"
-    sha256 "adbc88eabb99d2fec8c9c1b229b171f18afa655400173ddc653d5d01501fb9f2"
+    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
+    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
   end
 
   resource "fsspec" do
-    url "https://files.pythonhosted.org/packages/8b/02/0835e6ab9cfc03916fe3f78c0956cfcdb6ff2669ffa6651065d5ebf7fc98/fsspec-2025.7.0.tar.gz"
-    sha256 "786120687ffa54b8283d942929540d8bc5ccfa820deb555a2b5d0ed2b737bf58"
+    url "https://files.pythonhosted.org/packages/de/e0/bab50af11c2d75c9c4a2a26a5254573c0bd97cea152254401510950486fa/fsspec-2025.9.0.tar.gz"
+    sha256 "19fd429483d25d28b65ec68f9f4adc16c17ea2c7c7bf54ec61360d478fb19c19"
   end
 
   resource "jinja2" do
@@ -59,8 +58,8 @@ class Pytorch < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   resource "mpmath" do
@@ -79,8 +78,8 @@ class Pytorch < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "setuptools" do
@@ -94,8 +93,8 @@ class Pytorch < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
-    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
+    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
+    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   def install

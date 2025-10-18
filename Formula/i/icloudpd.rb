@@ -11,18 +11,17 @@ class Icloudpd < Formula
   head "https://github.com/icloud-photos-downloader/icloud_photos_downloader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9364a5e42cf6375a7deafb630cd5fe417be0f66c4086bfe60b79deed4102a8bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7ef424df44d7a78d5fdcaded569e754e1173feceb41f03924e6f1759846666f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c81ac9077ed88296a7356b2c32362b3bff656c39875df70014415d348e2acc7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3ed50a826c47a4b94d88c52bf19fa75eb0dac4f2f6e3ff40f3f14217df960d13"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cf48729ee646c4c960deeafbef1173832216c7821d36e6fcb391d7f4ebd49d04"
-    sha256 cellar: :any_skip_relocation, ventura:       "79a3c77b867842428fdf648e1c5293245ce41d92d4da0b2bb500a8f6783fc0de"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aebecabffe74ddf04279b445b10caf54d06303bedf5107c60db2bb7888e89648"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb212b3b7fc50c489b5202c974615ada3846c95d5c89f3522d5ac4e06505b06d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c368fbae766deb3031218b05660f01f0e318dfcd0d888da7bd5a71cd91f2509f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56a9406983dcf97f5e9400bdeaf892f8d8924d44ec6b6b08cda48c5a3575de37"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "353b95e009e316343029fa9947649f3294c575058f3879eb8e9f17be6ee94c07"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2d5490c12179dcb6b164710a6b2da1c27451b147723f0557fa0e8356f460af95"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c73b5f8064713bbe595509c5d1a6ea6286e7c876b7ffea20ecf3173c04dc442"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d07535015b7507986865a538b5b7d9c0278cbb97575ba97e2dc720d45e1cb52b"
   end
 
   depends_on "certifi"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   on_macos do
     depends_on "gnu-sed" => :build
@@ -163,6 +162,8 @@ class Icloudpd < Formula
     # https://github.com/icloud-photos-downloader/icloud_photos_downloader/issues/922#issuecomment-2252928501
     system "scripts/patch_version"
 
+    # Unpin python for 3.14
+    inreplace "pyproject.toml", 'requires-python = ">=3.10,<3.14"', 'requires-python = ">=3.10"'
     virtualenv_install_with_resources
   end
 

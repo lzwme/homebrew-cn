@@ -3,8 +3,8 @@ class Torchvision < Formula
 
   desc "Datasets, transforms, and models for computer vision"
   homepage "https://pytorch.org/vision/stable/index.html"
-  url "https://ghfast.top/https://github.com/pytorch/vision/archive/refs/tags/v0.23.0.tar.gz"
-  sha256 "db5a91569e5eb4a3b02e9eaad6080335f5ae3824890a697f5618541999f04027"
+  url "https://ghfast.top/https://github.com/pytorch/vision/archive/refs/tags/v0.24.0.tar.gz"
+  sha256 "f799cdd1d67a3edbcdc6af8fb416fe1b019b512fb426c0314302cd81518a0095"
   license "BSD-3-Clause"
 
   livecheck do
@@ -15,14 +15,12 @@ class Torchvision < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6a11dd4adc5a7fc46d2d0e63d4ed4ec8b97e5c230e48c4791426e5a23ae31a88"
-    sha256 cellar: :any,                 arm64_sequoia: "dde2edbf7868bb33698d12bd1232ea51202e04dc0f0c12157c40bd61d65f5e0b"
-    sha256 cellar: :any,                 arm64_sonoma:  "35372083b2d7f01e60f20bceb909ce7cb23b044b31a6bb44fbd17d27c745b075"
-    sha256 cellar: :any,                 arm64_ventura: "537c9d9461ba7ce76625333971d708d05a107f0ddce2eb23b1999a7085ecadad"
-    sha256 cellar: :any,                 sonoma:        "253465e994198933cedcbf71cc3f51d63435eaf2d64470962a008b648dd46632"
-    sha256 cellar: :any,                 ventura:       "f965c4b2b3a7ef6cacfce1e75e810639c192e02b433fb9b429ec9172d0933a17"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "42d8d166488b045d06f299d10bc3199f081709e45340dba04190a5273125e1f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72b856c25d99e6ab1c1cee4448d55d0e929394616dff162c7d697c0389248ee9"
+    sha256 cellar: :any,                 arm64_tahoe:   "e4b6d2af2da3ce2dfd09941abb65598f174cacafdbadc230bcbff275f31ea49c"
+    sha256 cellar: :any,                 arm64_sequoia: "60e4d085fcabb9a91ac23e8d5a1a9c42ad8802e4e766cb19fcd0800fe12247e7"
+    sha256 cellar: :any,                 arm64_sonoma:  "fcfa90f312c4aa99846af5e5f8dff42607ce9fc5fcd4dc6b6d8c4e74aff015c1"
+    sha256 cellar: :any,                 sonoma:        "89a099bb4303411baa2ecd592dc04d51ba2cacee8d1df4b9353a69a4632a4c5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "68d1d99e4f42b119ca5bd4c568a9208d0d9868255445b442c17e4ce59d639369"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "359a8bcf0b1ce4cef8c291af048f4506a9e0f703ea1207f2ea36dc738e22a81a"
   end
 
   depends_on "cmake" => :build

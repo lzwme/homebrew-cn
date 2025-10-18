@@ -3,18 +3,18 @@ class Checkdmarc < Formula
 
   desc "Command-line parser for SPF and DMARC DNS records"
   homepage "https://domainaware.github.io/checkdmarc/"
-  url "https://files.pythonhosted.org/packages/98/ba/2aeff9bb95d3632662e21b6202b7a8f6a874c585501fa4fe4dc5ab881364/checkdmarc-5.12.7.tar.gz"
-  sha256 "517fe2f7e8936a4c7958720f6e11d85cd5f69e1439fd49b7eee192a56b2d83df"
+  url "https://files.pythonhosted.org/packages/31/e8/e20c06d31be8d3745dc50bb77d29a1c133e41b5c7dab381732a39dc433ff/checkdmarc-5.12.8.tar.gz"
+  sha256 "7c954ee1cf9004f7c1eb03ea847499544f8bfa5a5715b8b4988b35bb2fb53c77"
   license "Apache-2.0"
   head "https://github.com/domainaware/checkdmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "608ff1ac6126a672cd0e53a736123d9b4bd278f2c9e486af2c63052fa4ab3559"
+    sha256 cellar: :any_skip_relocation, all: "bf4a9e27b84eed89b01f635b4b310f1bd06d945436fc1f8f65d94ad118b3e9c5"
   end
 
-  depends_on "certifi"
-  depends_on "cryptography"
-  depends_on "python@3.13"
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
+  depends_on "python@3.14"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"

@@ -1,8 +1,8 @@
 class Libarchive < Formula
   desc "Multi-format archive and compression library"
   homepage "https://www.libarchive.org"
-  url "https://www.libarchive.org/downloads/libarchive-3.8.1.tar.xz"
-  sha256 "19f917d42d530f98815ac824d90c7eaf648e9d9a50e4f309c812457ffa5496b5"
+  url "https://www.libarchive.org/downloads/libarchive-3.8.2.tar.xz"
+  sha256 "db0dee91561cbd957689036a3a71281efefd131d35d1d98ebbc32720e4da58e2"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,14 +11,12 @@ class Libarchive < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d650c6739aecb62fbd713f8d6f2018aece1cda648f64ac5b1685fa45695a40f7"
-    sha256 cellar: :any,                 arm64_sequoia: "33b077565a53ca5ec7d802a3b86e38765f075cdcd3d63c43ba597b42ce2afcb8"
-    sha256 cellar: :any,                 arm64_sonoma:  "2b14673ed741aa5fd8fd51d02a921b2101e36fded71e5a29cba9e6223cbac880"
-    sha256 cellar: :any,                 arm64_ventura: "be0595be8e5f8c9bcab85247494bd5209c0e15f31f1a95c7e1d81ea1639f2609"
-    sha256 cellar: :any,                 sonoma:        "e5b8299cc88814bb13fe64e97832392aa3c7b168749cd48cd4e38effac946591"
-    sha256 cellar: :any,                 ventura:       "0d796b81038699e8f82625c44e828e3934f3a107cd21a604ee54f5c3a7da1f40"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4b588849dd058493a566a94816f8a05e754dcd2be862edac87279158ad6b9f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6ad0aa42b5dcb7be104e4f5f6bd758b258bd4c46b49baac6c5e9e7f4a964a4e"
+    sha256 cellar: :any,                 arm64_tahoe:   "0a3a9a4c056ddcdb96946e7c773fb5b771c40ed36096008fbb3e5ed19b8b66b6"
+    sha256 cellar: :any,                 arm64_sequoia: "c70fe23fc30fec7110789f54417155f8c0c6d033668e6b1edbd25543ff31d27d"
+    sha256 cellar: :any,                 arm64_sonoma:  "e3b83193c61506fd9a5553bc89727d9a715e46f0ccb7d31952f35c5237cb09b5"
+    sha256 cellar: :any,                 sonoma:        "93a051b1fc9b0bb44b2cec5f4af61659b51c349bb24b95dfeacf9a3c4a1850b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10f151984f3b6b7b59774659e930900da4170ee604269231d842eee083d435cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5d4dda2d93270fb1855a90351014b20327a9e203f6c967b1a66031593fdfc6d"
   end
 
   keg_only :provided_by_macos

@@ -1,8 +1,8 @@
 class DockerCompose < Formula
   desc "Isolated development environments using Docker"
   homepage "https://docs.docker.com/compose/"
-  url "https://ghfast.top/https://github.com/docker/compose/archive/refs/tags/v2.40.0.tar.gz"
-  sha256 "4b4a0989ac393f7c2bdacda565a167ee0c7347fb20d1e6110477ad4d18b28a02"
+  url "https://ghfast.top/https://github.com/docker/compose/archive/refs/tags/v2.40.1.tar.gz"
+  sha256 "1f6a066533f25ae61fac7b196c030d10693b8669f21f3798e738d70cea158853"
   license "Apache-2.0"
   head "https://github.com/docker/compose.git", branch: "main"
 
@@ -15,12 +15,12 @@ class DockerCompose < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d47f7f24c72e4cfee475a74500a102e10fe92f000063e3cb17b1a5fcdd0d576"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5e911ead5d0f5293392149bd3aa4bcdc17d00c421b10c527da901deb1e63f73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8f06c35e27dbe1b4a3eb99186ecc899bd3fe284194aed6fc8d7e80b07a5c8e0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9007ffe0b128a8ba4a00fe65562a53547a0a66a4ff0d0ddbfa8edbb46c344a82"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c50701802a50fd048825ca5eada7cab07990b5e635f133a19546e717fc09c946"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff58288afd95093afcbb79fbefcf111f06991f6699e6e73026db667cdbc05e08"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dfb00d44b39eb8b8a67ae282b9b48dc01a845c2068ac16a7f6132bea581235ba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d969f76442da070ec119f08f8d07c51be16bdbc3c26e8be61563e49d87bc4ee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1735de92ea4e745d5fe2d334986e0f37a1e475597d3edd0143aed9483684ff47"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cadbf06c7ad0f8c6996d16576af2bf2414b324603aa6a1629370d1dc82e4ee90"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fd02ccbfd98e7fc8cb598503614c0f5462be442a6203e6d309981c4865732ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01f07b6ee18a9d6f8683154e51e2c242657e36a85a713a537ac0914171ec0b3c"
   end
 
   depends_on "go" => :build

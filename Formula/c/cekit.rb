@@ -8,28 +8,26 @@ class Cekit < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "b9d015915d0c451b97f2c9406ba12a6dddfb423837cde0f3e7964750d56a53ef"
-    sha256 cellar: :any,                 arm64_sequoia: "d2f8831c610b2abfb398c173417afc377e77a70b94db09a123f23c052450c0f3"
-    sha256 cellar: :any,                 arm64_sonoma:  "8139a72bc96db48f85d9d70ad38378a5556c947f02e5f6810b577962e7e181f5"
-    sha256 cellar: :any,                 arm64_ventura: "e6158e2fc700c8f20fc57fc40541b5ad677bb260caf43b5fbcec7c8cb95ef206"
-    sha256 cellar: :any,                 sonoma:        "8a029bcd505e6ea9e20b419b8e4f8172a759dc16ff2099e63d9408388e093744"
-    sha256 cellar: :any,                 ventura:       "5f64f4d851ea7703fa7f204be8261607ee35219fc95bca447adbf94d3fb8f6b8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6251e9a307320ecf348e1270a2ec03811427460d276fceebd57dd45d45fb92fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9aaa87b50f5774325dca9be632a0d79ae75c1dc07c7d65c57f99e99ee3134d4d"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "5a7bd13fc7d7409f321604e7130ad10e9371672477f82812ed804de5e861e7eb"
+    sha256 cellar: :any,                 arm64_sequoia: "f2f4c51e06c24076f37fb1f73f4c8be5b65961e38e0f26542574a09ba0ebebb5"
+    sha256 cellar: :any,                 arm64_sonoma:  "653ca4927f72621e4590e9a38099fe985cc0c8bf8f36725d916eee7940299af0"
+    sha256 cellar: :any,                 sonoma:        "50f771db67098b4ddad445157f31c68daa2a02df6be18fce5c4b48d40806853e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "24e51037651c7b645a0b1ff7296b92789e4a2ac74215e27ef8348c87669da698"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95b7f381c7ec6609a3f012a517b3d696c57d3b4609fc76d061252c3035249c50"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "colorlog" do
-    url "https://files.pythonhosted.org/packages/d3/7a/359f4d5df2353f26172b3cc39ea32daa39af8de522205f512f458923e677/colorlog-6.9.0.tar.gz"
-    sha256 "bfba54a1b93b94f54e1f4fe48395725a3d92fd2a4af702f6bd70946bdc0c6ac2"
+    url "https://files.pythonhosted.org/packages/a2/61/f083b5ac52e505dfc1c624eafbf8c7589a0d7f32daa398d2e7590efa5fda/colorlog-6.10.1.tar.gz"
+    sha256 "eb4ae5cb65fe7fec7773c2306061a8e63e02efc2c72eba9d27b0fa23c94f1321"
   end
 
   resource "docopt" do
@@ -43,8 +41,8 @@ class Cekit < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   resource "packaging" do
@@ -63,13 +61,13 @@ class Cekit < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/ea/46/f44d8be06b85bc7c4d8c95d658be2b68f27711f279bf9dd0612a5e4794f5/ruamel.yaml-0.18.10.tar.gz"
-    sha256 "20c86ab29ac2153f80a428e1254a8adf686d3383df04490514ca3b79a362db58"
+    url "https://files.pythonhosted.org/packages/3e/db/f3950f5e5031b618aae9f423a39bf81a55c148aecd15a34527898e752cf4/ruamel.yaml-0.18.15.tar.gz"
+    sha256 "dbfca74b018c4c3fba0b9cc9ee33e53c371194a9000e694995e620490fd40700"
   end
 
   resource "six" do

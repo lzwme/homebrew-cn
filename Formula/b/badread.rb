@@ -8,19 +8,18 @@ class Badread < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e5bdbf37f5234814869e8dfe4a03fea167c8fee0d8e0b35c95eaf3f533a6028e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5938c3cea8d94f65b2a7b6c72766f127c81c9a6b0fc96fe5ed2f8d820898d5b0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c297b72a55ad77e5d55265960b8c18eac6558cab393c00d35585201317df19ef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b40ec3e8905345b20c7c70f723dddb18217421511fe188ab0fbf3b665b60f46a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1f6c2d20d2f85961db238a4bea9316fb46153c354d71b77b4325baf7105c97f0"
-    sha256 cellar: :any_skip_relocation, ventura:       "19885698a620d42a588f5e91421e978f470b016587cc7e907de3867bf0e891c1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8196a5a5cd8ac1211b0413d6ace9c8c82ec2467d737ec8224438d0098ec91aa1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7486cdbdd9b1c62830833a9dbef4abc4c25594860367bfd52f97266fdd867e2c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb61116ebca8bec9b22139071f9845635e88840e9911141661bd731c150e8027"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f79260fe61facfce61ea9af35c21fcf5398a5e372193dbaa800cb2a755d3502"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cef938bdf102e7b9c6b4aa11a50cffdfc572044de21a54b7fbac677d9718adcc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fb8cca5eec6cb16e79912f2ac38c4721461dd8e6278be9517fb9001311c33d7c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff8895a97c93ecbf53bf382cb0d77e6b588e559beb05332da4877fb032c99916"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9677618080b71fbe762f03a62173688539a4a56166f2f5b549e13a7aeffd586"
   end
 
   depends_on "numpy"
-  depends_on "python@3.13"
-  depends_on "scipy"
+  depends_on "python@3.14"
+  depends_on "scipy" => :no_linkage
 
   resource "edlib" do
     url "https://files.pythonhosted.org/packages/0c/dd/caa71ef15b46375e01581812e52ec8e3f4da0686f370e8b9179eb5f748fb/edlib-1.3.9.post1.tar.gz"

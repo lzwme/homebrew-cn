@@ -1,20 +1,17 @@
 class PostgresqlHll < Formula
   desc "PostgreSQL extension adding HyperLogLog data structures as a native data type"
   homepage "https://github.com/citusdata/postgresql-hll"
-  url "https://ghfast.top/https://github.com/citusdata/postgresql-hll/archive/refs/tags/v2.18.tar.gz"
-  sha256 "e2f55a6f4c4ab95ee4f1b4a2b73280258c5136b161fe9d059559556079694f0e"
+  url "https://ghfast.top/https://github.com/citusdata/postgresql-hll/archive/refs/tags/v2.19.tar.gz"
+  sha256 "d63d56522145f2d737e0d056c9cfdfe3e8b61008c12ca4c45bde7d9b942f9c46"
   license "Apache-2.0"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f2127db4c57a1859e589e8d6b073846c921403023651fa7b7dc307976555bd0a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68222bf3940f01f6e0fdb678793550e891216642508fda81c9d00399829299f6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99fef7555b3537c04f99342845460b847e89986f7cb48f6f66365734cd3aa2ee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ecbb627cf1d27c957afb6cdb6f7a3ecc7249ece09ff377686d7c1b6eeaa26fce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "538f2f44bca1e662c992bbc06a506159aaea51a1c409da1ed1eea86e863f688d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52f63b4a80e968c0633065248096e6579ab64aba28a8f6f04ea6633a72d85565"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "17db595caa269ee31d2b540fa9e441019ffac25b4062690824f5f726dcaa992d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e235a1f63bb5da5ac21e425ca4e051bf99a24eb6986e62eb8823e3dc010763e6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "69c8dad6e719c444fd0fea42b7def97b3503aa12875eca051f8488ada44d22c8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "214e7844d487ea202d54ebf8ae65677d980b8e371b26d29f067eb5f069a2a6d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c34d132dd0e9543d3c14e707bf16fc28c36a41c51f81ff9bf8f8f0b6f9ce51c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5e546957897b0dcb512910e16d9a5667e10f2bb1bc8d672eae77a21d49ee289"
   end
 
   depends_on "postgresql@17" => [:build, :test]

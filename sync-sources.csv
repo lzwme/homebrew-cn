@@ -887,7 +887,7 @@ Homebrew-homebrew-core/Formula/c/certgraph.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/certifi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/certigo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/certstrap.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/certsync.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/certsync.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cf-terraforming.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cf2tf.rb, Homebrew/homebrew-core, 0
@@ -932,7 +932,7 @@ Homebrew-homebrew-core/Formula/c/chaoskube.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chapel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chardet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/charls.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/charm-tools.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/charm-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/charm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/charmcraft.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chars.rb, Homebrew/homebrew-core, 1
@@ -1125,7 +1125,6 @@ Homebrew-homebrew-core/Formula/c/coder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codesnap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codespell.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/codevis.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/codex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coffeescript.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cogapp.rb, Homebrew/homebrew-core, 0
@@ -3128,7 +3127,7 @@ Homebrew-homebrew-core/Formula/i/ircd-irc2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ircii.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ired.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iredis.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/i/irrlicht.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/i/irrlicht.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/irrtoolset.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/irssi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/is-fast.rb, Homebrew/homebrew-core, 1
@@ -8317,6 +8316,7 @@ Homebrew-homebrew-cask/Casks/b/ba-connected.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/babeledit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/backblaze-downloader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/backblaze.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/backdrop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/background-music.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/backlog.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/backuploupe.rb, Homebrew/homebrew-cask, 0
@@ -8769,6 +8769,7 @@ Homebrew-homebrew-cask/Casks/c/coderabbit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/coderunner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/codeship-jet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/codespace.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/codex.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/codux.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/coffitivity-offline.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cog-app.rb, Homebrew/homebrew-cask, 0
@@ -12774,6 +12775,7 @@ Homebrew-homebrew-cask/Casks/l/latexdraw.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/latexit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/launchbar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/launchcontrol.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/launchos.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/launchpad-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/launchrocket.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/laverna.rb, Homebrew/homebrew-cask, 1
@@ -12962,6 +12964,7 @@ Homebrew-homebrew-cask/Casks/m/macloggerdx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macloggerdx@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macmediakeyforwarder.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macmorpheus.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/macpacker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macpar-deluxe.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macpass.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macpilot.rb, Homebrew/homebrew-cask, 0
@@ -13979,6 +13982,7 @@ Homebrew-homebrew-cask/Casks/p/prowritingaid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/proxifier.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/proximity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/proxy-audio-device.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/p/proxygen-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/proxyman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/prudent.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/prusaslicer.rb, Homebrew/homebrew-cask, 0

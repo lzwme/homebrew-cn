@@ -3,18 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/d5/d8/e883768c565983403d67d48dfc1c0d2d70eb92dc8609899ed1b77f4fa7fd/snakemake-9.13.2.tar.gz"
-  sha256 "df486badf78f5521f3e67d22a38dfd44b13cf3ddbfdbf881461986713fd7039a"
+  url "https://files.pythonhosted.org/packages/4c/bd/0d123817c0531c943726d94fccafb47fd1e59c60802719ff9873613e40c2/snakemake-9.13.3.tar.gz"
+  sha256 "6d9e7adb8e3e58cfdfebc89c1b6feb536d1e33615aa5dd987a3f45b20d7ba525"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fd3732e382b651171c414d3eeea6086412da349ca4ef7f9b36101f0b013c64d5"
-    sha256 cellar: :any,                 arm64_sequoia: "7c29b2eede01265c3974cf789c07b9ae8f60d77fb38b2e464e22de4ddda53ae0"
-    sha256 cellar: :any,                 arm64_sonoma:  "abc60de5874aff8dc872601511e03e0cc0afb81544c0f2441831e891880b1377"
-    sha256 cellar: :any,                 sonoma:        "69910fbb977c8b97d612db5c46a67eb79a3d2de2b88e9a7e9ded884add6315a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0ca350f5c15512c77c752cdaa4ad758aab841d9a8a22bed7f9b43ae31a784e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d27f3de7200cf9d7d4fcdb5a4de64bb89bbaa049a47a5ac147dd2d1bdb70839"
+    sha256 cellar: :any,                 arm64_tahoe:   "7569094e7ab9a229c6c2b3a35bc8ef4868687d0d5fad4f2ab4e71b048abf7766"
+    sha256 cellar: :any,                 arm64_sequoia: "321b435c78a290cfc4b028aa72ed84b8a230142dd1f1a1bb2be5c807aa79c6ef"
+    sha256 cellar: :any,                 arm64_sonoma:  "8039b8701f4d9ffa1522c6939d49c99457194e8304a8635870e8516db66fff4e"
+    sha256 cellar: :any,                 sonoma:        "75f16f864d6bda949e98ae99ff8bbfbf4e4bef57890b20b1075cffc0f2f483bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "22f0ac65f50886e8ce0656c5f100bee69215bad5c505e555a876c1ca9c5eedfd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50bbe8a781f7c849c544184972912323b91419f11a36f2171a5d2831d0416a55"
   end
 
   depends_on "rust" => :build
@@ -39,8 +39,8 @@ class Snakemake < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "conda-inject" do
@@ -89,8 +89,8 @@ class Snakemake < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "immutables" do
@@ -114,8 +114,8 @@ class Snakemake < Formula
   end
 
   resource "jupyter-core" do
-    url "https://files.pythonhosted.org/packages/99/1b/72906d554acfeb588332eaaa6f61577705e9ec752ddb486f302dafa292d9/jupyter_core-5.8.1.tar.gz"
-    sha256 "0a5f9706f70e64786b75acba995988915ebd4601c8a52e534a40b51c95f59941"
+    url "https://files.pythonhosted.org/packages/02/49/9d1284d0dc65e2c757b74c6687b6d319b02f822ad039e5c512df9194d9dd/jupyter_core-5.9.1.tar.gz"
+    sha256 "4d09aaff303b9566c3ce657f580bd089ff5c91f5f89cf7d8846c3cdf465b5508"
   end
 
   resource "markupsafe" do
@@ -154,8 +154,8 @@ class Snakemake < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
-    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
+    url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
+    sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
   end
 
   resource "requests" do

@@ -7,20 +7,19 @@ class Bup < Formula
   head "https://github.com/bup/bup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1eab9c210e11a5589cff8a1b39a8e59e26c05b20c8f3f4b3bc89443eed898c21"
-    sha256 cellar: :any,                 arm64_sequoia: "3104c10993ec9f6fa2d991ccdfccca6f0166cdf092bcd46c59698ed4683fef92"
-    sha256 cellar: :any,                 arm64_sonoma:  "0253b805259079f8bf8b404bd5614a77daad653fb18893f71074710683515fd1"
-    sha256 cellar: :any,                 arm64_ventura: "27a31a5719db34d087da2fc6832ceebb9ccda45b56165b3210f2a29fbc113c51"
-    sha256 cellar: :any,                 sonoma:        "3552da06ec87afbda580f929ca26090d3e119a8e5ede5405ec14f3908f0f0e95"
-    sha256 cellar: :any,                 ventura:       "f78d17b46c361affea770eb947415dc85d1b0790021b351b326e097ae59130e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d379f0883d1d731656ee060a7ada6554e61869522df8586f98c114d16228ce81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21c07a02ff6d5e575114a724084a05dc61257f4ae3fbd81c2f7e33e35b190b28"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "988236b03242dbd381dc6831d5ef5dea6fe9983e5f1d29134e0178b0869e060c"
+    sha256 cellar: :any,                 arm64_sequoia: "74c459719d6f665c6e3a98733891a40c69dafd6b3c3010b8d7ee852968b64749"
+    sha256 cellar: :any,                 arm64_sonoma:  "67e4b187cd72bbf2f744bf5aac6a822c3008a8c22835a3c4f0d02a7cd34f5674"
+    sha256 cellar: :any,                 sonoma:        "1363113a9ddbb8acbd4298a963cfa27d23dc2cda833d81efe1d073fc2a7265f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f827787f986ea7029b1f17aacbb360427c14d3c6d736abb1f4658d2d180f828"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f913e83384e3266a82fddd3cdabca334f122459a0f2ecaa0e519b49d52a3b986"
   end
 
   depends_on "pandoc" => :build
   depends_on "pkgconf" => :build
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "readline"
 
   on_linux do
@@ -28,7 +27,7 @@ class Bup < Formula
   end
 
   def python3
-    which("python3.13")
+    which("python3.14")
   end
 
   def install
