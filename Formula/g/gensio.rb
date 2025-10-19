@@ -6,12 +6,13 @@ class Gensio < Formula
   license all_of: ["LGPL-2.1-only", "GPL-2.0-only", "Apache-2.0"]
 
   bottle do
-    sha256 arm64_tahoe:   "3f24e3984dff7c86b997c5acc7e75b030916d2f4e50fc632e6c54778fb4a765d"
-    sha256 arm64_sequoia: "40677c845f93749b3f7b86f4d399a2383b4280ead8429d3edd31f90a8e3eaa54"
-    sha256 arm64_sonoma:  "a02b158d13901cdf6b084d94c0d829bcf260c8e68de4d60abadd48859c63a9db"
-    sha256 sonoma:        "379095d503b94140e55b993252044cd8739e735df2777b857054bc5aa19c62f5"
-    sha256 arm64_linux:   "b0d6bfe2a4dcc23f477fce1714871405f06b13ad5895424b346bcb6c9bfc9f05"
-    sha256 x86_64_linux:  "0e0f84a001b719f5a5d179fd4e474a3873e16205c201daf1818f54f693eb5a4a"
+    rebuild 1
+    sha256 arm64_tahoe:   "3b4ff35427dd32f4bb44491e483843cba1db330b5e09cc37f5bf103164b920fe"
+    sha256 arm64_sequoia: "10b45c554267200223222527b996cb7407fc53dce0a46a7e4cd3f1674d3a8269"
+    sha256 arm64_sonoma:  "076afbb6889cc4487c52b1be26022ba19ccb335e57aac3661333be7c8a336826"
+    sha256 sonoma:        "0cc0df5a11267b073daa009064988927886f35e86af3fc493955896f5e642a17"
+    sha256 arm64_linux:   "49b7e558af7bfaa2e4b3427aa4401266afcd3562b324a7889b23645607fbc5c4"
+    sha256 x86_64_linux:  "8b811a7e4b249d84319d1dc4f3e4ca362ec8adc83eb461f3ff343784ba6ec947"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,7 @@ class Gensio < Formula
 
   depends_on "glib"
   depends_on "openssl@3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "tcl-tk"
 
   on_macos do
@@ -36,10 +37,12 @@ class Gensio < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     tcltk = Formula["tcl-tk"]
     args = %W[
       --disable-silent-rules

@@ -8,16 +8,17 @@ class Gersemi < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6ab2002b610a56f9e91af089d9271f3a7afde765863e53572ead9ebfefe08def"
-    sha256 cellar: :any,                 arm64_sequoia: "4422d5427b8a26dd3ba442f323715ae6f4bea8e7241691c32dbec4960bc75331"
-    sha256 cellar: :any,                 arm64_sonoma:  "fada96cb91103e695b7b1d45a3a47816bccecfa6095ee9cab924ed68433403f2"
-    sha256 cellar: :any,                 sonoma:        "650a9184b40aa74c0c49204e0b4adf7e20d0fc33c20c069a706e3e50d37c72be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ba09e909ba3cbac9e54685c75fb434356947b62e728bdbb560567ff389c8e8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0aa64f1e2c67b80d64ee3732fb02725604b465f04ed6928fdcf52eb62048ac05"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "2103ed81a05f766725993411ed571328c4ecd6ee2999c5be92ff2d50445ca0d3"
+    sha256 cellar: :any,                 arm64_sequoia: "9b26db5689a43e2e27de764da8996248c0ae87e9c61d0fb31eb97b7c528acf71"
+    sha256 cellar: :any,                 arm64_sonoma:  "6971e7695d68cf2ba80e726e87ba422736e63ad454c5f5a6cb47d5030941c45e"
+    sha256 cellar: :any,                 sonoma:        "0734180a291b16240e7749040e504d36a45b2c55810bc776c2dbfb70d41bee7d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "233f3c1e8ead8e6c3c183552ad606d4bedc3e6f524daed4459ba1c0ce576f11f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3338770c35c0dbb5411cc24c3841974e85b7dc385913ad55d2377b31bda1a831"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"

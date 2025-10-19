@@ -6,6 +6,11 @@ class Yutu < Formula
   license "Apache-2.0"
   head "https://github.com/eat-pray-ai/yutu.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d33cf0182cf6ff04a769a81a44bb0945a1dd624411e7481602effd6b70020db"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d33cf0182cf6ff04a769a81a44bb0945a1dd624411e7481602effd6b70020db"

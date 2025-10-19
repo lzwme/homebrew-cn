@@ -1,8 +1,8 @@
 class Rakudo < Formula
   desc "Mature, production-ready implementation of the Raku language"
   homepage "https://rakudo.org"
-  url "https://ghfast.top/https://github.com/rakudo/rakudo/releases/download/2025.08/rakudo-2025.08.tar.gz"
-  sha256 "caaa43756ad38763f444210d2b28483e6ea00930da8951b3d69f2bd9b1d6a7f8"
+  url "https://ghfast.top/https://github.com/rakudo/rakudo/releases/download/2025.10/rakudo-2025.10.tar.gz"
+  sha256 "92201667468a9e0d5674c9a2f6a253f69fd058fe75451cd5c558b62c0c163b5d"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,14 +11,12 @@ class Rakudo < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d5d0d3bfd754cea3a56a4c017428a505afef9ea963450af60efcbbb0da28a630"
-    sha256 arm64_sequoia: "41c902a4da74cb0f7a92e7ee437302277dd1ca5bb4687b7abca1899d90b33021"
-    sha256 arm64_sonoma:  "d693f10159eaef42d0fb7d02210a80e41425e6ae805058d71489a596bdc7d7e2"
-    sha256 arm64_ventura: "7db4c3002973061f9fafb7ee5dfd1b52346fe6804ddf0e564bb428c6ecffac34"
-    sha256 sonoma:        "a7d4c423373d43bd62af13b42cb348a1862a3d73de938d35193a6a52cef456ae"
-    sha256 ventura:       "fbc089fb0685334d1058478fe54380513e0b735cfcc2195f843f6487f1bb2bcd"
-    sha256 arm64_linux:   "af2f2e1e65a513af5f00cfb5998f640741fa525498cac58946046882865057c6"
-    sha256 x86_64_linux:  "a052c7583cd90aaff43f36a1e2855c065a792b90046a95b1674c0ac6136b913f"
+    sha256 arm64_tahoe:   "1b4fc71038d5dc3bd17e4d4d919a3c7ca3365d5e1afa9c9417154e7ce663b69b"
+    sha256 arm64_sequoia: "c840e55f5f99530e4337af0f04bfcde180b94c07284110857c388850f5f17b20"
+    sha256 arm64_sonoma:  "55e90f4fdb13b1cb9a608a0ad86bc8d8211c4707895fddc88758c0b0e35d0ec0"
+    sha256 sonoma:        "90a18032814063c4630024af563229a4be33d8f5a1cf386b397db5f1939b4670"
+    sha256 arm64_linux:   "dc1a6e632d378c31def0747e00d0d6a28c75ee40d235d8249fe413c980d766c1"
+    sha256 x86_64_linux:  "913e8aa6b0e5b8fab758f3c061dea131fcd64e9f14e428a78294369e9ea53da4"
   end
 
   depends_on "moarvm"

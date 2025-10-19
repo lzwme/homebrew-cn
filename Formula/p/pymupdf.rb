@@ -4,24 +4,25 @@ class Pymupdf < Formula
   url "https://files.pythonhosted.org/packages/8d/9a/e0a4e92a85fc17be7c54afdbb113f0ade2a8bca49856d510e28bd249e462/pymupdf-1.26.5.tar.gz"
   sha256 "8ef335e07f648492df240f2247854d0e7c0467afb9c4dc2376ec30978ec158c3"
   license "AGPL-3.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "37d88d2c1ab3c903d6481aad93aff6eebeaf2b0aba98a4c060bd354c7540f5eb"
-    sha256 cellar: :any,                 arm64_sequoia: "4c9028ff28a06122c048e4b8af963ccee781a7317a5ec6d5b4fd3051b18f041d"
-    sha256 cellar: :any,                 arm64_sonoma:  "7d18abd0340fc3b7b3378d24d202c269a263f242c8185bb7b916032733912d86"
-    sha256 cellar: :any,                 sonoma:        "bded671083f9f455d64336df1aad479ff671f9e11a0fb12c591cdf502db48ba6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fdde563d760ce980393a3a9c85fca432ccdada3f80ca863b3e24a1c75147713"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af404d42a2eb55735a36fe2b2f47f1144f0e9760416ae64313cacffd10658600"
+    sha256 cellar: :any,                 arm64_tahoe:   "1640400684cc4f1594dd02915c209b704ff97fc1742d69df64bc47c1c24831fb"
+    sha256 cellar: :any,                 arm64_sequoia: "59912081b10b4c896ece7f2cd05f51e88fd9854cb4d210249fa5e414ced339b1"
+    sha256 cellar: :any,                 arm64_sonoma:  "659c39638924872743460103b9db35b0c16486234fd9a82330bdcd2541a0e08b"
+    sha256 cellar: :any,                 sonoma:        "54a156154fbbde2ce17a425d88db0a9021bc60a10dbd8f9171e2cfb7b4e2dd17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a84aa29e16196b5305b46cfedf7955cf102bc423e111df96e36b1533c66db053"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e23e19f4bce19c994553f6a69c8292b2309795de20aa0666a5bbdb486b295307"
   end
 
   depends_on "freetype" => :build
   depends_on "python-setuptools" => :build
   depends_on "swig" => :build
   depends_on "mupdf"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

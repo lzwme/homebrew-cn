@@ -3,18 +3,17 @@ class Sqlfluff < Formula
 
   desc "SQL linter and auto-formatter for Humans"
   homepage "https://docs.sqlfluff.com/"
-  url "https://files.pythonhosted.org/packages/a9/43/871e42d09ceddf510c976d7a0daa7c04c643b0f428c563c5f6b5337076f9/sqlfluff-3.4.2.tar.gz"
-  sha256 "1777272e4fdac5adef1b89ec25675426e77285d4dc95a055b12bd24181e33f40"
+  url "https://files.pythonhosted.org/packages/4c/a8/d3dc6c510cc3bba9abbf7a3052a96d5ce6771b71dda141846003fa37277a/sqlfluff-3.5.0.tar.gz"
+  sha256 "2d0a546078ffb021de7021b9a6c2a50e5eef590daa820d5f1b082d24a1d5e1d4"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "7b5c01ffbc960e4339fb92a0e804d8ef21e82001c9b39d9ca619415012afea66"
-    sha256 cellar: :any,                 arm64_sequoia: "951eb02d6da92a7fe56c243f5dc180c778ce8e83dd2d06d480cb949eb52e5b01"
-    sha256 cellar: :any,                 arm64_sonoma:  "db84894c373702d0b39657ea8a76d871f4f7e96ced1047efe505dd039497bbac"
-    sha256 cellar: :any,                 sonoma:        "8896ef0c1304a27d28030832180d2182e18a37ce9f528f5028b52f20fbe8cda0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e690e25a98cce64b663dcbb3350587574dde402afb14dff88e68e67e0e0eb49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5ff266b5bbfaf4a4973d910bf11c23db3bb235efcb191e5c8ac18acccafaab5"
+    sha256 cellar: :any,                 arm64_tahoe:   "38bf39a3bf4642507f39d79d03214961a9d59a1662b287c4cfa0fc34b321fe10"
+    sha256 cellar: :any,                 arm64_sequoia: "934f38345ceb15b6301f40fb4229a8a0e4ff6524c451d6ec6e706f0f89338055"
+    sha256 cellar: :any,                 arm64_sonoma:  "5e9c08b38cbde8fbcaa4109148f79418b336a09bb148528d42c37df33daa26fe"
+    sha256 cellar: :any,                 sonoma:        "1bd28e80102b1fc075b50577c43d176d36080e6251a5ccb2a26eff477d53bbd0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e11e3ef5e6e001a807a4917db91e71b77467b9a3b8c78a5a5a5232df7fe2167"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "016e8c48030aba31dc4b30ec87214ba69603fa9cf333dd6022a0f692fd443234"
   end
 
   depends_on "libyaml"
@@ -41,8 +40,8 @@ class Sqlfluff < Formula
   end
 
   resource "iniconfig" do
-    url "https://files.pythonhosted.org/packages/f2/97/ebf4da567aa6827c909642694d71c9fcf53e5b504f2d96afea02718862f3/iniconfig-2.1.0.tar.gz"
-    sha256 "3abbd2e30b36733fee78f9c7f7308f2d0050e88f0087fd25c2645f63c773e1c7"
+    url "https://files.pythonhosted.org/packages/8e/11/2f7713979d561602e14b8fdd99a0e2e8ff2d901de1041c42a23a4c33f2c3/iniconfig-2.2.0.tar.gz"
+    sha256 "1807d2bc2eb4231a5e40e2ecee093fc25fc0eb0e2840f01ea50a1d15380adbff"
   end
 
   resource "jinja2" do

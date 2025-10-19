@@ -4,24 +4,22 @@ class Vineyard < Formula
   url "https://ghfast.top/https://github.com/v6d-io/v6d/releases/download/v0.24.4/v6d-0.24.4.tar.gz"
   sha256 "055bab09ca67542ccb13229de8c176b7875b4ba8c8a818e942218dccc32a6bae"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
-    sha256                               arm64_tahoe:   "f1e3cf37c97f6df875c231ec0f5c9cf5ba6902efeaa160acea5100f2213f9e7b"
-    sha256                               arm64_sequoia: "cf36da22f881d05d547cc46b34e2e15aeb30bdd750b2760573206eabe771614e"
-    sha256                               arm64_sonoma:  "bc54a45dfec84b89eccc430cb9debb4a45fc122e0676cdeb4b701989f0df3058"
-    sha256                               arm64_ventura: "4a0e6285f2e73be22689cbfe3a4cc88cbb6651c0906f85e5596216ed35fdb4fb"
-    sha256                               sonoma:        "9f42fc3f8a47c153c93a99329d36722c270f548ddcf65e903a7baf436aef1e31"
-    sha256                               ventura:       "a9ca3695e70a7ad9ca21c9a42253561890203d63929eca1a6705849584fe6d00"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8eb9ea14c277b5e90afa79225c9f310a4cd01294bbcc2496f9035afe26816dd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c329a6792f3c91241c46d33722b1550fbb4a392e2d46b72c06cf1d8239ba86c3"
+    sha256                               arm64_tahoe:   "388703848a6fae1239d0513990fa0d0317cddd66d8d421d29ad4adf025c65e39"
+    sha256                               arm64_sequoia: "4c5443b768dd9089120473ce9433133f2d465dd883cbd8f1be67fefdc10455fb"
+    sha256                               arm64_sonoma:  "2e365658fce541b6df6659907fa801c252df280575f7d30064c7fe69b6e62876"
+    sha256                               sonoma:        "885299f05cee5c5e16f14c5329ecc67f796019c6b874fc7b33208552820c1313"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3db5ee41222f909dc047486254a3b7bb5f8dfdbb9eedb21abf257433fe1516c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3ef1fba309bea99d222332012d1a9e0a9bb82ec55813883cc015f31bc204053"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "llvm" => :build # for clang Python bindings
   depends_on "openssl@3" => :build # indirect (not linked) but CMakeLists.txt checks for it
   depends_on "python-setuptools" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "apache-arrow"
   depends_on "boost"
   depends_on "cpprestsdk"
@@ -85,7 +83,7 @@ class Vineyard < Formula
     headers = %w[args async child env environment io search_path]
     headers.each { |header| ENV.append "CXXFLAGS", "-include boost/process/v1/#{header}.hpp" }
 
-    python3 = "python3.13"
+    python3 = "python3.14"
     # LLVM is keg-only.
     llvm = deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+)?$/) }
     ENV.prepend_path "PYTHONPATH", llvm.opt_prefix/Language::Python.site_packages(python3)

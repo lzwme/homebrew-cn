@@ -15,8 +15,8 @@ class Yasm < Formula
   revision 2
 
   livecheck do
-    url "https://yasm.tortall.net/Download.html"
-    regex(/href=.*?yasm[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https://www.tortall.net/projects/yasm/releases/"
+    regex(/href=["']?yasm[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review

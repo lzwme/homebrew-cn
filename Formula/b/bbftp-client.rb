@@ -2,14 +2,17 @@ class BbftpClient < Formula
   desc "Secure file transfer software, optimized for large files"
   homepage "https://gitlab.in2p3.fr/cc-in2p3-hpss-service/bbftp"
   url "https://pkg.freebsd.org/ports-distfiles/bbftp-client-3.2.1.tar.gz"
-  mirror "http://software.in2p3.fr/bbftp/dist/bbftp-client-3.2.1.tar.gz"
   sha256 "4000009804d90926ad3c0e770099874084fb49013e8b0770b82678462304456d"
   license "GPL-2.0-or-later"
   revision 3
+  head "https://gitlab.in2p3.fr/cc-in2p3-hpss-service/bbftp.git", branch: "master"
 
   livecheck do
-    url "http://software.in2p3.fr/bbftp/download.html"
-    regex(/href=.*?bbftp-client[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :head
+    regex(/^(?:BBFTP|Version)[._-]v?(\d+(?:[._-]\d+)+[a-z]?)$/i)
+    strategy :git do |tags, regex|
+      tags.filter_map { |tag| tag[regex, 1]&.tr("_-", ".") }
+    end
   end
 
   no_autobump! because: :requires_manual_review

@@ -5,6 +5,11 @@ class Docfx < Formula
   sha256 "d97142ff71bd84e200e6d121f09f57d28379a0c9d12cb58f23badad22cc5c1b7"
   license "MIT"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "87e1caaf9835e784ac7521481d5e4c2be1a72d299b2377aa16cae651d1c9c18b"

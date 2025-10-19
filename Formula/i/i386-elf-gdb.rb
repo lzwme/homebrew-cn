@@ -14,15 +14,13 @@ class I386ElfGdb < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "4dda131d6b1684df57ee9b70b3902bc25dcbf5a4d42d7afaca53fd27b88d0120"
-    sha256 arm64_sequoia: "a8404abfee4bdd057c859323a3d3860c0e3dc91d6d1eaa9a8e8b396cd06f16ea"
-    sha256 arm64_sonoma:  "38e6e069cd8ffc3947627429e9623de6c142f334691b2cf5916aeabe1213d637"
-    sha256 arm64_ventura: "e78e568042d2142374827e9f972b311f24f09dbbc9ab93ad2169f38892fc1a19"
-    sha256 sonoma:        "234fff305c7934001f7bbdd0b85126c4ea4c93698bda3d2309e61b63b182b72a"
-    sha256 ventura:       "d34cc34bc0868a65dbafaf5abb4058f9ec41c393955e5afeaff27f348eeb6d90"
-    sha256 arm64_linux:   "17d3006eac24ac4a60269370022370cec2433938e2e3ea9d5ff3c9caf1c03d1a"
-    sha256 x86_64_linux:  "c29025ac9d4d8f200925d8e326e16c2691bda17c1efecfca873b1900b60317e0"
+    rebuild 2
+    sha256 arm64_tahoe:   "00d034cdd538897b54a0ab0e9bd1adbdc0bcadd488b51612f430e239340eb48e"
+    sha256 arm64_sequoia: "f1de96025601ca8294ffe433f6e2d45636c263436c658cd6701ca2c4bd152dc5"
+    sha256 arm64_sonoma:  "49f0bef3eca6436eefbbaa12bff36f9f56a38f7d0cdc6bf89edf5f6143c92db0"
+    sha256 sonoma:        "77b58e98df9c71a295ab4ff5ba70c3b581ed2e51c9aa35b19d4b08c86b94815d"
+    sha256 arm64_linux:   "be334bd0a02c8ec268a854ae875915895aada6e6fefb97413ceb9484998e8e38"
+    sha256 x86_64_linux:  "e4bcea3ae58286413f9b94e422582adc4cc16dec60e7d147409e1741efb03cf7"
   end
 
   depends_on "pkgconf" => :build
@@ -30,7 +28,7 @@ class I386ElfGdb < Formula
   depends_on "gmp"
   depends_on "mpfr"
   depends_on "ncurses" # https://github.com/Homebrew/homebrew-core/issues/224294
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "readline"
   depends_on "xz" # required for lzma support
   depends_on "zstd"
@@ -63,7 +61,7 @@ class I386ElfGdb < Formula
       --with-curses
       --with-expat
       --with-lzma
-      --with-python=#{which("python3.13")}
+      --with-python=#{which("python3.14")}
       --with-system-readline
       --with-system-zlib
       --with-zstd

@@ -9,21 +9,22 @@ class Forbidden < Formula
   head "https://github.com/ivan-sincek/forbidden.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5b554da93c74b675ffb4ddd0f975c400449aa862d63b0be91c57a8a3060e5b72"
-    sha256 cellar: :any,                 arm64_sequoia: "d2d4ba0bd65b85991d20273c1327b2c9b2457fb32132d15607e7aca0a8d23b3d"
-    sha256 cellar: :any,                 arm64_sonoma:  "52bfdf9db80dadcf0f887e57a486ca0658274207faaac7b02c53774fc027359a"
-    sha256 cellar: :any,                 sonoma:        "72f6a922e3d10b39e079435254ab8b635b4ffc54e137733ee298b05b6bd6fd48"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "07ed61d346fddce4235e53797a567fc7475b4d06df46def290cf297961f5d8e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5c8a59e58ab3d7ac0419a3bd12c658a435f27afbe9b220a5b8ddede61476a1d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "6d2449bc7a6faee99f55d2703b6d67b68af176d7b3a80184983c88390c2170c8"
+    sha256 cellar: :any,                 arm64_sequoia: "31bb2abca0a0c10c975274cbf97c0bb58dcef5d28526d7e93bb20761633a93b7"
+    sha256 cellar: :any,                 arm64_sonoma:  "cd1386367c865eba8d6828002194bb752f941aa6e6c94254792911d141baef46"
+    sha256 cellar: :any,                 sonoma:        "679d7392b7bc3c897cefc05c5cf37070cde5e7e03818866516da32b06aa377f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1c53b1bee230976572176da133591b286c5418a083879c7124db6a8aca65169"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "decf3ef82a1a3cf93995d6076e7c284cddbb95a39c95d1f4932597c17511aaec"
   end
 
-  depends_on "certifi"
-  depends_on "cffi"
-  depends_on "cryptography"
+  depends_on "certifi" => :no_linkage
+  depends_on "cffi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "curl"
   depends_on "openssl@3"
-  depends_on "pycparser"
-  depends_on "python@3.13"
+  depends_on "pycparser" => :no_linkage
+  depends_on "python@3.14"
 
   resource "about-time" do
     url "https://files.pythonhosted.org/packages/1c/3f/ccb16bdc53ebb81c1bf837c1ee4b5b0b69584fd2e4a802a2a79936691c0a/about-time-4.2.1.tar.gz"
@@ -41,8 +42,8 @@ class Forbidden < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "colorama" do
@@ -56,13 +57,13 @@ class Forbidden < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "pycurl" do
-    url "https://files.pythonhosted.org/packages/71/35/fe5088d914905391ef2995102cf5e1892cf32cab1fa6ef8130631c89ec01/pycurl-7.45.6.tar.gz"
-    sha256 "2b73e66b22719ea48ac08a93fc88e57ef36d46d03cb09d972063c9aa86bb74e6"
+    url "https://files.pythonhosted.org/packages/e3/3d/01255f1cde24401f54bb3727d0e5d3396b67fc04964f287d5d473155f176/pycurl-7.45.7.tar.gz"
+    sha256 "9d43013002eab2fd6d0dcc671cd1e9149e2fc1c56d5e796fad94d076d6cb69ef"
   end
 
   resource "pyjwt" do

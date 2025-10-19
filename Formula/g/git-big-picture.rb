@@ -9,12 +9,12 @@ class GitBigPicture < Formula
   head "https://github.com/git-big-picture/git-big-picture.git", branch: "main"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, all: "078b369dbc4edca8eea612e256c5ccef60333b26f90a91f4bf865fb89270941a"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, all: "21d63dfe6fd24c36ac844dbbf358e78e09d1ac3ebb10ff067ffdcea518464338"
   end
 
   depends_on "graphviz"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     virtualenv_install_with_resources

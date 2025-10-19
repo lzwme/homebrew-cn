@@ -8,13 +8,20 @@ class Cfv < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "fb2e9074946326a9618313d03fa78b596e0e65f68b11c3f83de2215a260731c0"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "99b44eb32592c111167965c026854d84137dde520cdce0dd4a60f129555ad3e0"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
+    # Fix to error: SystemError: buffer overflow
+    # Issue ref: https://github.com/cfv-project/cfv/issues/76
+    inreplace "lib/cfv/term.py" do |s|
+      s.gsub! "'\\0' * struct.calcsize('h h')", "b'\\\\0' * struct.calcsize('hhhh')"
+      s.gsub! "h, w = struct.unpack('h h'", "h, w, _, _ = struct.unpack('hhhh'"
+    end
+
     virtualenv_install_with_resources
   end
 

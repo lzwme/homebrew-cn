@@ -1,20 +1,18 @@
 class Atac < Formula
   desc "Simple API client (Postman-like) in your terminal"
   homepage "https://atac.julien-cpsn.com/"
-  url "https://ghfast.top/https://github.com/Julien-cpsn/ATAC/archive/refs/tags/v0.20.2.tar.gz"
-  sha256 "d2f8163a8df224c7dd07e5aa2db6c000938102fe5b637e583e2a123a731c1ea5"
+  url "https://ghfast.top/https://github.com/Julien-cpsn/ATAC/archive/refs/tags/v0.22.1.tar.gz"
+  sha256 "230fc1730fa8787a390232d88f286ba542e8627426ae9f7897f77d2a728b3578"
   license "MIT"
   head "https://github.com/Julien-cpsn/ATAC.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "93917f68169c2dbb3394340994b209417b43ac4987fbe7c799d0ec0c7de87b20"
-    sha256 cellar: :any,                 arm64_sequoia: "e737c4c00bf8ffba6c530c72621102b9653dfce857b7dd2cb14c1ea5817a3724"
-    sha256 cellar: :any,                 arm64_sonoma:  "7541ee353b11df848ccf8f43f75dc1bda53d4ff8643aa00dc715e40f089198ad"
-    sha256 cellar: :any,                 arm64_ventura: "92000dfb088d67ada800262ae6af2ba24eacd72974b9bb962650453b4f794f01"
-    sha256 cellar: :any,                 sonoma:        "dd3e472045a1be0d034b9ad6183ae9887bcf766d873695a947ac7f96820bfaaf"
-    sha256 cellar: :any,                 ventura:       "63532ef5bd19e50d3d4dcb987a53b6cbc8b846ec25e5567145674d2fed98ef96"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1382e745564f69ef678cfe6d546b49123c46dfe45839aab2ebc6b383501d403"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a747db706a32341404be11a517168bdce345bd6bd5834e7b43137af94d8dcc83"
+    sha256 cellar: :any,                 arm64_tahoe:   "d77d486ce20dc189f86e1ef0035987e7a41023d8f2e3aae4400d21134f4ae2aa"
+    sha256 cellar: :any,                 arm64_sequoia: "5256db3f3e645117605fed41808add96c55d8c33e6861e5d29984647b7a2d212"
+    sha256 cellar: :any,                 arm64_sonoma:  "a045d53a28a6f0ad7813e13f925185a92973e61f94d84ad9eee268ef71058475"
+    sha256 cellar: :any,                 sonoma:        "5fa9daaa8f15d443cbef8ef8fe030f00045d211672ff4973754a34eb484c78c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7fcaeb9ad46e445f7021cb8ae79eb4751f323ab19efea0192a59f4da1bed0fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b3282d2f3123a70069906d2c78245be6123b363c35598a13d106c158786cf1d"
   end
 
   depends_on "pkgconf" => :build
@@ -25,15 +23,10 @@ class Atac < Formula
     ENV["RUSTONIG_DYNAMIC_LIBONIG"] = "1"
     ENV["RUSTONIG_SYSTEM_LIBONIG"] = "1"
 
-    system "cargo", "install", *std_cargo_args
+    # Turn off shell completions to clipboard feature
+    system "cargo", "install", "--no-default-features", *std_cargo_args
 
-    # Completions and manpage are generated as files, not printed to stdout
-    system bin/"atac", "completions", "bash"
-    system bin/"atac", "completions", "fish"
-    system bin/"atac", "completions", "zsh"
-    bash_completion.install "atac.bash" => "atac"
-    fish_completion.install "atac.fish"
-    zsh_completion.install "_atac"
+    generate_completions_from_executable(bin/"atac", "completions")
 
     system bin/"atac", "man"
     man1.install "atac.1"

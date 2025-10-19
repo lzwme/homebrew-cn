@@ -8,17 +8,18 @@ class CfnLint < Formula
   license "MIT-0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "028c5cc13af803c26854aeaeebc816916e3148d3686d6713152dc18a0aa1b943"
-    sha256 cellar: :any,                 arm64_sequoia: "10bb02d51e57d19a3e23e79cb060770e289410618ee64f56d52792d1c351d9ee"
-    sha256 cellar: :any,                 arm64_sonoma:  "b628592da3921888f6625bd2b1a3d57bdb2f8889c62fb39bcfd499d7aa3326ba"
-    sha256 cellar: :any,                 sonoma:        "4749711ebf131ec438ba6394aa433c8c09aca8a6cc9169cbbea59f2c55dd704d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "689c43bb59d1bf2da64854d76f6e02bc37b2f17efc5d1bd5ba42ef997b038709"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af3ed32b38088bd92f9852611f390ed8acaf0d11ab4d30f99c749ee1f200e13f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "b6d96fc4d411095ce20e938e35661f3a2dd3c395ee96e7744913049d100efa86"
+    sha256 cellar: :any,                 arm64_sequoia: "2f743b3766072df31cfb205d5ee9d50da85c31b80d8aee74e6f4cf7221493f31"
+    sha256 cellar: :any,                 arm64_sonoma:  "2a050636df933012b254b9ba0fef3ebb5967c331afa9fafaf7cf1eb2e31e2937"
+    sha256 cellar: :any,                 sonoma:        "0ad4bbad8489b2d2a5dec708b46ac0a0702e641fe8430d658236621f5be3c683"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7845fdb32a2f4362386f6a0537a34bea745632ea6be89bcedeb8a6b420d782b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3ec92513e0b885794c15da6b96a2875621b24121c05cb853d24c13535a0a633"
   end
 
   depends_on "rust" => :build
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -36,13 +37,13 @@ class CfnLint < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/70/02/d3ee174681961dc2ebfe81f326e1b5e1ba338b7ff939e1e94eef76e7c65a/boto3-1.40.51.tar.gz"
-    sha256 "ed1b7750df07b2f2ece0141ff2ed0489db2ec2b5311a956d00a496b05fd4fadb"
+    url "https://files.pythonhosted.org/packages/50/d8/a279c054e0c9731172f05b3d118f3ffc9d74806657f84fc0c93c42d1bb5d/boto3-1.40.55.tar.gz"
+    sha256 "27e35b4fa9edd414ce06c1a748bf57cacd8203271847d93fc1053e4a4ec6e1a9"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/ca/33/9e197d872adf1eadf8ecc259d0f451143326ff044d236b8971ff8bf980ee/botocore-1.40.51.tar.gz"
-    sha256 "a06de20408c3009e59e8f161a1146f1801d279d0923ab950349154900951bb20"
+    url "https://files.pythonhosted.org/packages/a4/92/dce4842b2e215d213d34b064fcdd13c6a782c43344e77336bcde586e9229/botocore-1.40.55.tar.gz"
+    sha256 "79b6472e2de92b3519d44fc1eec8c5feced7f99a0d10fdea6dc93133426057c1"
   end
 
   resource "jmespath" do
@@ -81,8 +82,8 @@ class CfnLint < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/8d/35/d319ed522433215526689bad428a94058b6dd12190ce7ddd78618ac14b28/pydantic-2.12.2.tar.gz"
-    sha256 "7b8fa15b831a4bbde9d5b84028641ac3080a4ca2cbd4a621a661687e741624fd"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pydantic-core" do

@@ -1,19 +1,17 @@
 class Pgbackrest < Formula
   desc "Reliable PostgreSQL Backup & Restore"
   homepage "https://pgbackrest.org"
-  url "https://ghfast.top/https://github.com/pgbackrest/pgbackrest/archive/refs/tags/release/2.56.0.tar.gz"
-  sha256 "e4ed91be1c518817fd2909c99edc0d3661126fde86abf77a0d470da09741447f"
+  url "https://ghfast.top/https://github.com/pgbackrest/pgbackrest/archive/refs/tags/release/2.57.0.tar.gz"
+  sha256 "d794519c0ecb4ec17f41c4267d07fe80ab6b3ac9cc1de5c7984887c5e6d7448a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f1727886ba7c055789f170316df6aa3666742180f4099ecbb9ffd587876a0980"
-    sha256 cellar: :any, arm64_sequoia: "0a77ba3f63ff7096272d2dfa7e4110aadc35142b7145b836be40d1ab9e73ffa7"
-    sha256 cellar: :any, arm64_sonoma:  "12d5430093b5ee98673a1f36698c2c21bd226112d73a973d79a8e096c473a20e"
-    sha256 cellar: :any, arm64_ventura: "7e0176bc8b7384ec8a00f971ee82b6947fe48a341616ee8937029fdfee308da6"
-    sha256 cellar: :any, sonoma:        "910f8147299975e6832708e18d2060942b7517cb333f94f7cc07d7dfa3542d0c"
-    sha256 cellar: :any, ventura:       "7c1309e653236d9042bb77a0851e3d6854cfc64717d30277b5cff4cfe7397ad8"
-    sha256               arm64_linux:   "49c83e933c68b8bb8d3a3ec4f78e5618b8b919affc680c5108c6bc75d2bfb0f4"
-    sha256               x86_64_linux:  "12c203dadba354600c72fe36b2d1421b0bf7c379a2b2ee4f3e3953abb071a7f3"
+    sha256 cellar: :any, arm64_tahoe:   "8a8c360967998cee0ae02e55a31a722ce42ce57d9a2cf66e7d9ffbfee4ef5b2e"
+    sha256 cellar: :any, arm64_sequoia: "7998ebdb5fac0d09d13d88e764f4bbf1f01d95d651a689195e019a659b3d36c0"
+    sha256 cellar: :any, arm64_sonoma:  "d7901e3a61b966084f86a8941e611cf423bf5a95029930faa63dcff1b3882e78"
+    sha256 cellar: :any, sonoma:        "88390d24c0b4a788a38f8f10633a826f3784a6d70cd923cee61068bac9860c0f"
+    sha256               arm64_linux:   "c5f14f2d2fc6b3251bfd16688a9b0df51f70ee281bc5b2724f277649fdbfce9d"
+    sha256               x86_64_linux:  "c3c62af8aa93ded209ad328f0ea54b2bfbe2b22052d7fdf3894f83a9fbe08488"
   end
 
   depends_on "cmake" => :build

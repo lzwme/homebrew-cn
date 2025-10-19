@@ -9,16 +9,17 @@ class Gdtoolkit < Formula
   head "https://github.com/Scony/godot-gdscript-toolkit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "60e2e23d961c59e0daf35c4978c15143a8ff6b9498f3aa2149a799d625e297c5"
-    sha256 cellar: :any,                 arm64_sequoia: "0acdf3e15f12a6e93e597ff07ba2884eb42c294d694689e6434b7b127341e22b"
-    sha256 cellar: :any,                 arm64_sonoma:  "0f53c67d2eef6cd5c53e618a9b8e0fdea3af7bf92b03945f63186e64c7cf18a6"
-    sha256 cellar: :any,                 sonoma:        "0b583914afa84c90099677774de2875ccb17c74143469f356397a125d952c9e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6339fd9668d677d5efbfc209d5a8f8d729d7c0d9c97f6068b1c720e271f6a6b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73c5b0e9d9a43c104b34191ba24b146333f9cd6ea6b3918856dc9582a5d6a4ab"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "d6c17d46835130db35d368974625d777f12231fa0dba2a766c22f1637b63b05c"
+    sha256 cellar: :any,                 arm64_sequoia: "cc4514d0b4691e116e3937bb807d598909bd3050fb7e33730afd12cb52cb0365"
+    sha256 cellar: :any,                 arm64_sonoma:  "a6fdce0e5997466eca53cc5fa06dd2533249f6f4ccc67cc33467f9cdd4654a65"
+    sha256 cellar: :any,                 sonoma:        "f51de9f2ab4879db48646fcd0548d26bdf87bdf8cacd2047d5ac15126b93c3dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "308fb3375acf24412ed4126d15503cf8ad8fe181ee68ff9bb37a012171344959"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8affd1ec7249d34797488715e52464e5c3e5ee743ea93298129c77e4ac8f7f30"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "colorama" do
     url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"

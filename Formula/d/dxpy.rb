@@ -8,17 +8,18 @@ class Dxpy < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c1ddc8fb8c540749ac9d0dbaf49b6327901deab503aa79695b50a5128502df3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f7267309eb447e7e5ab2ec0335750f70dae31f37627e18f9ee68a45b483ac00"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e4439d5b0980382f7fe7472d00691967b68fe8e093b5738de0fe632fcfaff3b1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9597aefe716071b66f21c1dd7c214d953127c36189d1ab87825c7ce25e83819f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6cb2ef2f06b5fac493554df2bf7ec1be52287aa463fb49d5a1503bed9aeee560"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "734ae556a6a03ec6d52895a8cad2a1bbc7946113db6e0ac821e6d277f6b8c855"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ffad1b3a409acae0d81fdea0df2e701df80071b3ab719188b129d64376841d97"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f188a1929d5e0e567caa707894ed0a942af2d206dbe3ee6dd5cff3e5bab438e6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19aaeee55088b8b4ebba3c65a617f0e29f325e4318c2913175abab5ea6731b32"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5cb40fbd716904d4d60008b5066337225f2db2accf8a665bf076b13b146c5abc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9743608a3c0ee9520165f6090e4e309d636780629ad755babfb849f0e6983f41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83f81a61ae6908b2ea3ae10a0114ed0623178dd2c6a3246420379ce245df8f3c"
   end
 
   depends_on "certifi"
   depends_on "cryptography"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "libffi"
 
@@ -32,8 +33,8 @@ class Dxpy < Formula
   end
 
   resource "crc32c" do
-    url "https://files.pythonhosted.org/packages/7f/4c/4e40cc26347ac8254d3f25b9f94710b8e8df24ee4dddc1ba41907a88a94d/crc32c-2.7.1.tar.gz"
-    sha256 "f91b144a21eef834d64178e01982bb9179c354b3e9e5f4c803b0e5096384968c"
+    url "https://files.pythonhosted.org/packages/e3/66/7e97aa77af7cf6afbff26e3651b564fe41932599bc2d3dce0b2f73d4829a/crc32c-2.8.tar.gz"
+    sha256 "578728964e59c47c356aeeedee6220e021e124b9d3e8631d95d9a5e5f06e261c"
   end
 
   resource "psutil" do

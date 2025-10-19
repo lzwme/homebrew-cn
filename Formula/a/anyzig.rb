@@ -1,19 +1,19 @@
 class Anyzig < Formula
   desc "Universal zig executable that runs any version of zig"
   homepage "https://github.com/marler8997/anyzig"
-  url "https://ghfast.top/https://github.com/marler8997/anyzig/archive/refs/tags/v2025_08_13.tar.gz"
-  sha256 "13511963d0dc570f5fe47ec83a23ff2982b53f1516076014aab6ec54638c0f3e"
+  url "https://ghfast.top/https://github.com/marler8997/anyzig/archive/refs/tags/v2025_10_15.tar.gz"
+  sha256 "65ebdeca9e20ac347d094b504c3198eab25f130638e91554f517eef1c0275c2c"
   license "MIT"
 
+  no_autobump! because: :incompatible_version_format
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f74daea7c5a9f79f1ea462b12ae02cc87f5651ad9cf7ccbe3a20095a4f79e714"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a99919f4b637901bae427daed3dddf878f9451e91478865002cdc69ce6cd76c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75f2f35ec40057c925cc718abdf3459c81579e48024ed7b6ca241411997dea35"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "24180b09b6c8af369b6477ad37ceabd6e852cce19f6e19a8442eec86fcf94224"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3efd0d1c34480b8fd4174b30156740addf1afa7eedaf207b71f0602205d95569"
-    sha256 cellar: :any_skip_relocation, ventura:       "a5c9630295c2bbc7ebe1115812140c7cdff797e3caff6ee9d82a8935dc978f62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "830e8aaa8c8aabaa5252e53504f2dd18e113dc86aa12b18f8c574c264bb5cdd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d68a435c3c52c8d944409175fe05f977932382420388bda1f341edb3270d6cc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b742bd26786d46db9dfe46088fc423d3ea4020eb1bdab90fe871b1c157682822"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8b788c7f65dff73b02212d1b5bbd35f0d55106d4064853848371111a0cb0220"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05c25f2403072fba5eb711fd62b2f6e97d4d2753344e2ef0d0e330d920aa883a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0205666a6552cd3e57c8c65e4f842939d6cfae318506bc7fa482e9069e185802"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "259c4a5bcec54b7948dcc82ce6cc003575e63b5fa35049ac389ebe258c8b756e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b96df77ca3f2ffd21ff157661045237683a954504516c300c8965232329446c3"
   end
 
   depends_on "zig@0.14" => :build

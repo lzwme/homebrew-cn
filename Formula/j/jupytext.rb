@@ -3,18 +3,17 @@ class Jupytext < Formula
 
   desc "Jupyter notebooks as Markdown documents, Julia, Python or R scripts"
   homepage "https://jupytext.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/15/14/41faf71e168fcc6c48268f0fc67ba0d6acf6ee4e2c5c785c2bccb967c29d/jupytext-1.17.3.tar.gz"
-  sha256 "8b6dae76d63c95cad47b493c38f0d9c74491fb621dcd0980abfcac4c8f168679"
+  url "https://files.pythonhosted.org/packages/8c/2b/c96034a203a41659d58c149da5a0d5e5f11f24e41c9e1fef337cef1868e2/jupytext-1.18.0.tar.gz"
+  sha256 "3661c14adce99ec4b5eb9b60ad71d323ce5eccdf69ca33c730a53c61e46a3258"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ba7a1ae7e62e48fbefe93658d3a2806d05ea5b9af43645411fe54becdd1abfa4"
-    sha256 cellar: :any,                 arm64_sequoia: "5acffb82e831727d0cf97eaf379960aeb8a35c3cc7ba66bffedbf843b06024bb"
-    sha256 cellar: :any,                 arm64_sonoma:  "640cc79b6cb8e65d4081bf4078775dcb59d6da715114f912784074d17acd75e5"
-    sha256 cellar: :any,                 sonoma:        "2a2907d60bb248d8c2bf5f33cfcbd8df77779c0837d35246638981b61981d351"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "12a75517ff219520464761b4cc6482d4421d517aca4b6d214c0232700a8b2183"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82add6cf854568e942f148f75f7cf4039a5121c03e2c55c4f5071c8d6c5571d2"
+    sha256 cellar: :any,                 arm64_tahoe:   "2c97025e7fc4abd3c928364e9b964bfa8d8307b6697850f3ef9a94494483a72d"
+    sha256 cellar: :any,                 arm64_sequoia: "049a9457be1ab53eaa50cbc655481acc7334fed1e11926aec50de8198b206b8a"
+    sha256 cellar: :any,                 arm64_sonoma:  "8aa998043b3951e170ceda24d2f4e971173c9755990e3bee3796aca32352b049"
+    sha256 cellar: :any,                 sonoma:        "20707c373b9e6bda79edb798618d5cfa18418079d48ac9603ecddda21efec1e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57a7daa1b2ed7307ce0563b0c48f073753bdcfa63224176f2b230166de06add7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a0b12a5a8830c8b82e0afdc6f28fe75b82280f1a5eecf8a3ffafcacbca1a9a7"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -42,8 +41,8 @@ class Jupytext < Formula
   end
 
   resource "jupyter-core" do
-    url "https://files.pythonhosted.org/packages/99/1b/72906d554acfeb588332eaaa6f61577705e9ec752ddb486f302dafa292d9/jupyter_core-5.8.1.tar.gz"
-    sha256 "0a5f9706f70e64786b75acba995988915ebd4601c8a52e534a40b51c95f59941"
+    url "https://files.pythonhosted.org/packages/02/49/9d1284d0dc65e2c757b74c6687b6d319b02f822ad039e5c512df9194d9dd/jupyter_core-5.9.1.tar.gz"
+    sha256 "4d09aaff303b9566c3ce657f580bd089ff5c91f5f89cf7d8846c3cdf465b5508"
   end
 
   resource "markdown-it-py" do
@@ -82,8 +81,8 @@ class Jupytext < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
-    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
+    url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
+    sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
   end
 
   resource "rpds-py" do

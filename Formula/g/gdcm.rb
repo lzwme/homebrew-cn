@@ -11,18 +11,19 @@ class Gdcm < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "df478534e903f2c93f372d060edc4d35c2be4101b34ae0a5f450d27aca9cf239"
-    sha256 arm64_sequoia: "dc399581c79b6f0eb62df43c27030b30ba243ccd5a945535a81fd22e46a33d58"
-    sha256 arm64_sonoma:  "bcf58fa6bb77335ad410adee85831165170b7f8ebe52f05f6a4160bcef7b4c01"
-    sha256 sonoma:        "aea60c7011b3a8fbf80949883159d027acd168f0853f7ad753cb6ae227294dd6"
-    sha256 arm64_linux:   "da5f0632e0bb74d78035043778fb3242bd66ef857fc26fb588f5f9816a5c0d5d"
-    sha256 x86_64_linux:  "bb889a8dfb5d779e53d532675f2abb66e90958087690487dfc5c7e43a716165e"
+    rebuild 1
+    sha256 arm64_tahoe:   "6ce4c09d9f7fa7bda95ddc5d5e985f1ca279ddfd4b6250d477ac63ba6c5de68a"
+    sha256 arm64_sequoia: "56944709b1eef3d27bb1874f2b98de671f827df3a0a7cbded98564e80628082b"
+    sha256 arm64_sonoma:  "edef8d78b79f9648e3f32994001a6df3dc04901ab9ac3d9766295d51598ad1c0"
+    sha256 sonoma:        "c2dd510832249deb9315ef84a2fd22098babae2ddd6457c263f5ca5ce42d54d5"
+    sha256 arm64_linux:   "1c1a09e9234fb742986f0436b65c827aa945d9e366d1242e07e2e277c9ecd469"
+    sha256 x86_64_linux:  "4ba447c88a6e8ac5489bae3ede532c45669f55d50e9ed89eba2fd82b86dc4ad5"
   end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => [:build, :test] # for bindings, avoid runtime dependency due to `expat`
+  depends_on "python@3.14" => [:build, :test] # for bindings, avoid runtime dependency due to `expat`
   depends_on "swig" => :build
   depends_on "charls"
   depends_on "json-c"
@@ -34,12 +35,12 @@ class Gdcm < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "python@3.13"
+    depends_on "python@3.14"
     depends_on "util-linux" # for libuuid
   end
 
   def python3
-    which("python3.13")
+    which("python3.14")
   end
 
   def install

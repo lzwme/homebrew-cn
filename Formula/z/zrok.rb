@@ -1,8 +1,8 @@
 class Zrok < Formula
   desc "Geo-scale, next-generation sharing platform built on top of OpenZiti"
   homepage "https://zrok.io"
-  url "https://ghfast.top/https://github.com/openziti/zrok/releases/download/v1.1.9/source-v1.1.9.tar.gz"
-  sha256 "b0c0aed2bf78df89f57a505006d9edd5b67a9c041a348b50a68d0c640800d6e8"
+  url "https://ghfast.top/https://github.com/openziti/zrok/releases/download/v1.1.10/source-v1.1.10.tar.gz"
+  sha256 "1e6999f11be37fab066254d080a3593e37835a2f8d7927d13e8524acf5e6073d"
   # The main license is Apache-2.0. ACKNOWLEDGEMENTS.md lists licenses for parts of code
   license all_of: ["Apache-2.0", "BSD-3-Clause", "MIT"]
   head "https://github.com/openziti/zrok.git", branch: "main"
@@ -10,11 +10,11 @@ class Zrok < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc1a5364f6d72b5b061d85135a7e0d49dbef451092125cada8fe1e19f30bb37b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "02731d76cb6fbd28780cc8182d1bec22e309a72336df5438871b6fef38ca22d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bdc4d2654362b42d928ae2d181703acfd82da37cadff6bbec3c0211d2fdcf09f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b1c9513e50ba5acc8737b6fd71dbdd49180e2ca79e92e2f4df8acdb68635fd85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5dc3f12cdc076c8e3a23f8b457150a001f20d9f008d34038703323c2e22e46a3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f119049ac0ea153167191c0ee9da00a052ee1e7a523fb609820e123f96696e27"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "999818d3fa25c30120a5db6ba5a8dd7ce152593ca017bbf59f18cc7c35b2b1f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af66c3978664de1a290fc71ab5767e48a7caa81376dd59bd7c690593be4c9e72"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fd805e9a12731fefad3b83875236d3c22d2c1fbe8a4c52eed42ba9b35fe48d98"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b0c4c54227362d9b43651e76eb09b287fac2106eeece701a6656ca7e7a8fbf5"
   end
 
   depends_on "go" => :build
@@ -55,6 +55,6 @@ class Zrok < Formula
     assert_match(/[[a-f0-9]{40}]/, version_output)
 
     status_output = shell_output("#{bin}/zrok controller validate #{testpath}/ctrl.yml 2>&1")
-    assert_match(/expiration_timeout\s+:\s+24h0m0s/, status_output)
+    assert_match("expiration_timeout = 24h0m0s", status_output)
   end
 end

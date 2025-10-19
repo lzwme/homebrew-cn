@@ -1,10 +1,9 @@
 class Fastfetch < Formula
   desc "Like neofetch, but much faster because written mostly in C"
   homepage "https://github.com/fastfetch-cli/fastfetch"
-  url "https://ghfast.top/https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.53.0.tar.gz"
-  sha256 "1488d9b738474e8ef8e8d78e2463722bf706e435857c849b3f480354ad62366e"
+  url "https://ghfast.top/https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.54.0.tar.gz"
+  sha256 "e6a0516364bc0a4991a588537ee2abb538b86db41f7d9dff795d49baec990529"
   license "MIT"
-  revision 1
   head "https://github.com/fastfetch-cli/fastfetch.git", branch: "dev"
 
   livecheck do
@@ -13,12 +12,12 @@ class Fastfetch < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "df1987861e4af9e35b200e6f0daa33abceefe7a3189efc834152bb58b5d8e214"
-    sha256               arm64_sequoia: "e846570a596f9b992faeeb0f95b4e8fe094292c9b8cf19226fda867846506136"
-    sha256               arm64_sonoma:  "4f139e858a73bd6c4afdf1d27b82775297d6b89b48019e4cac6c1ee9de56e3c1"
-    sha256 cellar: :any, sonoma:        "37fcc5db29369f5c45ca0784b77f4044fa67d26e989d724690e47110ba3ee540"
-    sha256               arm64_linux:   "4a51d568903c11a0793daad6a609c81ed47e40a09129e2e221f8ec3041d5d45e"
-    sha256               x86_64_linux:  "90f71bf63fd9cb6c80e7ae324cb01b31e685ca5ca00be280dc3108835a78aa27"
+    sha256               arm64_tahoe:   "f1856032bf2be5bf320240d070292258ac5f38950535c6f0b884fc9c3410b164"
+    sha256               arm64_sequoia: "f1fb4bbaddad085c8ae4fd8b44c43dfd4760ee4b7364f4c3327569fd7ea0d900"
+    sha256               arm64_sonoma:  "90d85aba2898776f7cee3a9cfe23f68af23e3b469eae5962dd52ff7d52f129ab"
+    sha256 cellar: :any, sonoma:        "2570cb7b1d9b664615c0841d6c3d53c55e50da982e60f8ac0c0691baa151acad"
+    sha256               arm64_linux:   "79fd25366089ce10fede23d352b0b3aa871e5191ca0d13d8f1980b4b741f44b2"
+    sha256               x86_64_linux:  "1d09a46fdfbfa3c9563d6091026a0a872eb195f40b76b7312ca840e46ccfc1f5"
   end
 
   depends_on "chafa" => :build

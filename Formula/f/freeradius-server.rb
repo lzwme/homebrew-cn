@@ -14,20 +14,19 @@ class FreeradiusServer < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "cb979e4c7b3f1b85d374fa5be895081dc7e31904cf87539b3d6f7e7d0d96c79e"
-    sha256 arm64_sequoia: "6063a6adaebb53d19c4677da34e9fbb92682875047d17ec465394d7bd3018a03"
-    sha256 arm64_sonoma:  "8a80dda119bb5a5a1d3a0f3494699185751383275f0bfcfad217c32bcc5601f1"
-    sha256 arm64_ventura: "ab409f75783ba2740ac66a4caaae1b2dfcc325cf24d982b1b7b3aa35a1e1afca"
-    sha256 sonoma:        "0efd2ad25501001b530f1373a684881b02c7ad06c8829be91b3427a57e40bf72"
-    sha256 ventura:       "f4f9bef36f34e50e16a086913cdd0c0d82b9b6bec9436ad99d7d2467861ef7c5"
-    sha256 arm64_linux:   "df9ea57c317949304f50d7c3811556b7819fbd68cc67b2656f2d69cfd671bf14"
-    sha256 x86_64_linux:  "cdc657b0560a0a8e1cf68496c5104bff301daa10cb5150953cbcbd515034d326"
+    rebuild 1
+    sha256 arm64_tahoe:   "09ccb127b83740b49a08de330ed48bc85435d703fa661b5ca0ea3d3f2afff5c5"
+    sha256 arm64_sequoia: "01a673a28228d6c80437d5e3140d70a75186efb447aab5529fb9c36e56b1e1e4"
+    sha256 arm64_sonoma:  "ac918c458df5499bf5439ba7b4645ea2a4e0a9a2138398c1e8a876979befffb8"
+    sha256 sonoma:        "b2c60fdf10b697f223bb68cba09730491f0fd93da292375e48bad19f5ac2b3c3"
+    sha256 arm64_linux:   "84af5bacd9978572f465ac51cc4d2f7e8df5e65ecf85bd6aca3bf7462c444424"
+    sha256 x86_64_linux:  "bd785cecb322571268dfd34c34de9f77c054a401b8b8f2e6bfba537e1b447123"
   end
 
   depends_on "collectd"
   depends_on "json-c"
   depends_on "openssl@3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "talloc"
 
   uses_from_macos "krb5"

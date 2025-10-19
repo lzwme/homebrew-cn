@@ -9,20 +9,19 @@ class Ggshield < Formula
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a68a0a0610f9724b7282bbd1897998d7f3812fde262912dc459288e7f21dd670"
-    sha256 cellar: :any,                 arm64_sequoia: "6969448478249cbf959c7b8c9293dceca5bfe3a03338ec4e0112203011b7c6cc"
-    sha256 cellar: :any,                 arm64_sonoma:  "2c563ff1815792f5124b834a847a56058c1ff2e509eb20a9d6517c397166052b"
-    sha256 cellar: :any,                 arm64_ventura: "73152a4709b23b8ce3436c7ca3104bfad8d53dbe6a6730314324521e3501b418"
-    sha256 cellar: :any,                 sonoma:        "292fa2ba891f05708622f6a1871e09201dc0d2f0e239453cb7e16f13264e631a"
-    sha256 cellar: :any,                 ventura:       "8b91a5508e02c2dc137985faa6a3f0e7e9bc6e110ba192f510c2609efc69d924"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac9f63d27074159950b72593dc74dd6bcda11664a476adfe50684442a87a83be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "970110d2631990c41e0cd23e2580b49329a6e53e45ec048f405080f4d785ff2e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "d1253ae10c02516fa79e8c0ad4c579f4cd692d6c4a03f54edd9ac7b49ff0db7f"
+    sha256 cellar: :any,                 arm64_sequoia: "065ef31da4f3dfc31bd8b9d277893760a81e2dfef4107a9f62df5583644c0c14"
+    sha256 cellar: :any,                 arm64_sonoma:  "ae1f0e54038d7033063e071a2f98bfdadec981986e3947e3703463fa1e6d9f60"
+    sha256 cellar: :any,                 sonoma:        "fdfbd0fd8842d69473e0299f07fc6c67d455b87fe61dd536028ee0b9151488c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7cf0f65357305c9039cd26184ba1dac79c7b0d62f5db5eded1d281d57cb6ef5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3473fe9e0abb6775075aafe093ac158dfe1df19f26da4dc8c70bb9ea3c964413"
   end
 
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
@@ -40,8 +39,8 @@ class Ggshield < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "marshmallow" do
@@ -95,8 +94,8 @@ class Ggshield < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "requests" do
