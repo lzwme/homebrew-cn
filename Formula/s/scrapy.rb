@@ -9,13 +9,13 @@ class Scrapy < Formula
   head "https://github.com/scrapy/scrapy.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f123f08945b5ef60093a80c30e686a9c73e57dd2a8cf32fec621b736bdf3ca6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58e30205b543d0c170213030582bc050dc4d2cf8cc7191bbf8956af7e0f8872e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73e45754b3fcc4ad74473c840b3c4e6e3c8426386533f528d83e5d7c066530b7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "075d737925c49dde463156e08037077e8397460f3f9eeb65e074c85855c3c8ed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b461ce3255733d44e842e3a2788a30fa9edee997efcc7048d38483db2a25a041"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9f4f924cb6d42ceb8948c57ade654ca22170ff5446ed6d784cecd225e799a95"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e6ad00e1e92b18d769be87dcd6c9987b9585f2ffb44806af8654316395d20a1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4cca4260ed48e5e17c6bc42ee51117c600e8a6dcfb6470d0fbc3829439addcd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4fc12b6a66f8d955c27d37d7a58c7dc6e9138774815d576594873839db364e89"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0ec79422d86b905572c54163b6296313452bc684ae7a0999a08ac1f5182e5d31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9bd8b58fba97b7307efdfaa03af3925dd0c1d3238d8b8f0c7ef484669ec532c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "270fc2714a373cdbc178c0a88a1ffa7cae49021cb99f940070456657471606d9"
   end
 
   depends_on "certifi" => :no_linkage
@@ -163,6 +163,17 @@ class Scrapy < Formula
   resource "twisted" do
     url "https://files.pythonhosted.org/packages/13/0f/82716ed849bf7ea4984c21385597c949944f0f9b428b5710f79d0afc084d/twisted-25.5.0.tar.gz"
     sha256 "1deb272358cb6be1e3e8fc6f9c8b36f78eb0fa7c2233d2dbe11ec6fee04ea316"
+
+    # Fix asyncio error with Python 3.14, remove in next release
+    # PR ref: https://github.com/twisted/twisted/pull/12508
+    patch do
+      url "https://github.com/twisted/twisted/commit/c8a4c700a71c283bd65faee69820f88ec97966cb.patch?full_index=1"
+      sha256 "04b849f18e6ef01e7ee2903dba13ffa8bcb04c6d9c182d25410605320d819bd2"
+    end
+    patch do
+      url "https://github.com/twisted/twisted/commit/69b81f9038eea5ef60c30a3460abb4cc26986f72.patch?full_index=1"
+      sha256 "f999fc976327e955fbe82348dfd8c336925bc1f87cfaf4bd4c95deeb0570116d"
+    end
   end
 
   resource "typing-extensions" do

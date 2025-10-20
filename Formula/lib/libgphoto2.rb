@@ -1,8 +1,8 @@
 class Libgphoto2 < Formula
   desc "Gphoto2 digital camera library"
   homepage "http://www.gphoto.org/proj/libgphoto2/"
-  url "https://downloads.sourceforge.net/project/gphoto/libgphoto/2.5.32/libgphoto2-2.5.32.tar.bz2"
-  sha256 "02b29ab0bcfceda1c7f81c75ec7cb5e64d329cf4b8fd0fcd5bc5a89ff09561bc"
+  url "https://downloads.sourceforge.net/project/gphoto/libgphoto/2.5.33/libgphoto2-2.5.33.tar.bz2"
+  sha256 "c55504e725cf44b6ca67e1cd7504ad36dc98d7a0469a9e8d627fd0fb3848aa1d"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -10,17 +10,13 @@ class Libgphoto2 < Formula
     regex(%r{url=.*?/libgphoto2[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 arm64_tahoe:   "0a5b3e86a52ba18433aa26a723ba0541d7e150cd0a4e105887e8a0b0b3e6d421"
-    sha256 arm64_sequoia: "7b1623d4b3344b30dfc4ad0d367aea6723c66885c7de2b8a90396592b2782553"
-    sha256 arm64_sonoma:  "1d8ebf1c8da4b2faaa3ebae9db25ec16f0d7009ecfa375357559779e9e5c1b85"
-    sha256 arm64_ventura: "633b4bf8082baa3098da2912e448b8b20a6f7002270e40fef9638823c8a3dd0c"
-    sha256 sonoma:        "58a05c5466d4648e7378e92367daef9dc8f7610b3e491d7961923880b0e62230"
-    sha256 ventura:       "ef675c4400ad1f1121922f3559667dc914923cef9c3b9138f26ce3babcd67bcc"
-    sha256 arm64_linux:   "869891754e3bd0c041ed5b5bc70830e5d93f38fd7b5ecf87d622e59d05ccd3c2"
-    sha256 x86_64_linux:  "bcf2a78a43ec66f4dd69664c3b96ef61c6bb2dfed8db64c2de573e0ad3530506"
+    sha256 arm64_tahoe:   "c68e44acb62132269d8b640bfbdc216658e413793c7a17218a7c4f9e37eac1a8"
+    sha256 arm64_sequoia: "56c47cf232de5b4b179fca5b188ef3ed22d7f0804d98be2351b42c2cdefbf8a7"
+    sha256 arm64_sonoma:  "901f73be2f4d69442f67bf7bcc36ad8a8bedef3584c3a8d9518f525203c10085"
+    sha256 sonoma:        "e1c39e6008ef9e7d846cd4c7c6c20d7da5a4658d4ea98096544b5ee039d5b485"
+    sha256 arm64_linux:   "86cc3bc890a442918626e8a6243ef5abb72471a216a342a10329e7b4754c4c52"
+    sha256 x86_64_linux:  "addf5a20ef635d4498082be132fb0ce992132cc19a1d9d0d88b9f1fc54dd18f4"
   end
 
   head do

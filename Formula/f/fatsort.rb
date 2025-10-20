@@ -1,9 +1,9 @@
 class Fatsort < Formula
   desc "Sorts FAT16 and FAT32 partitions"
   homepage "https://fatsort.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/fatsort/fatsort-1.6.5.640.tar.xz"
-  version "1.6.5"
-  sha256 "630ece56d9eb3a55524af0aec3aade7854360eba949172a6cfb4768cb8fbe42e"
+  url "https://downloads.sourceforge.net/project/fatsort/fatsort-1.6.6.660.tar.xz"
+  version "1.6.6"
+  sha256 "9b1fb35451e2b5cec4ca02f0693aa4e7bb1b52e305014719bdf4fa586a44e0e9"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,21 +11,15 @@ class Fatsort < Formula
     regex(%r{url=.*?/fatsort[._-]v?(\d+(?:\.\d+)+)\.\d+\.t}i)
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "7ea0f8b6d5af676c26449bf6b8d94a395e5da595a3d6ec5826a53d54563e1a1a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "47f7e484d7283c661836b9cc8418b84c31865c546828f593cca451b4683271dc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "19232a80ff846e801ac176cbc07b67be6ae337b4b411159f98f3f1510659f982"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "592fcf0abcecbd68e972ef3d30f307913f332bd43c44bcf7fa61ebfd19014bc5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "17602321477fe03dd60ae1cef95f8c28e0d390b360ba5702ebff7eb6c0903713"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c26e2866f3b047c5c07ff66e4df5727db8d2f9b92d7ee12232b41c4fc1c8a5ae"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8689519ad4fbcab004d4e965475e17b151e13adcf0c34da2cf14798f0f031525"
-    sha256 cellar: :any_skip_relocation, ventura:        "a0f47c5a77ea5f44004012fdb01a9d8dd0e265766b82d78ee03abc5eabcf20fe"
-    sha256 cellar: :any_skip_relocation, monterey:       "c8573fed1249cc4be686d3b7c3e0be2dda4dfce65f3bebc4516ef7118c038d59"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9940ff3f816c8010d064c8a637375ffd7c1358ad60cb5bc6608d312be385874b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "4cb2c176c41ce1f4c3611ea8a99f34aff49d056a9cee9ac13c9cb5d4349051f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a8a2eae48b82643c9c5e3c31fcdadbf4b8a35d2caf8c2dc3406ebb5cd1f82ba"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee91ba0f011ade57860fec48d9b7a161b1713bf31ff6d681b16d30c9d758164c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3e1cfcb3c1fa725cda98283293a797c869d021a9d46796bc571060029aed10c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ebf4ac4a1e3b7d0ead6fac9733d7aae34ac675e5eda648a3fecc6fa566b76926"
+    sha256 cellar: :any_skip_relocation, sonoma:        "552cf897b24ae8fa803ecfb4859138f168c556fb58437c54144f2e2f71398459"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "48c9728d079d8606ebd4968c77ac44257d507ea7e48b1f502fc32b5a93cd8d27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cf1ec9d7602857ac81f0ffce04e678c9079d3bb023570a0e525fc646aeac6f7"
   end
 
   depends_on "help2man"

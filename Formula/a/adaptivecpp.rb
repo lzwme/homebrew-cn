@@ -4,17 +4,16 @@ class Adaptivecpp < Formula
   url "https://ghfast.top/https://github.com/AdaptiveCpp/AdaptiveCpp/archive/refs/tags/v25.02.0.tar.gz"
   sha256 "8cc8a3be7bb38f88d7fd51597e0ec924b124d4233f64da62a31b9945b55612ca"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
   head "https://github.com/AdaptiveCpp/AdaptiveCpp.git", branch: "develop"
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "37dd9cca4796ceef606befa403a354a6a19c4a87bbd7e3a2d0ce767539fc26bf"
-    sha256 arm64_sequoia: "b15d036cae2e39d5c4dabd86d8606d85aba8b777c93849ed01c7b69d95909777"
-    sha256 arm64_sonoma:  "17557ca2e27aacabcf97669602904b6e13ad9d19b715c9463e5d8216608279d0"
-    sha256 sonoma:        "bd71eb34aea708ced4cc1dd577ab816dbe00f2c6341022f369169e62074c71e7"
-    sha256 arm64_linux:   "68e47436f48595911a2fa1c08ca162c83f42ca60b69e64d5cd64d2d08e24d214"
-    sha256 x86_64_linux:  "5792881d3fa418198526fbbb381cead68d0eb343ce17095d5a90661e2e231123"
+    sha256 arm64_tahoe:   "b64dea8eba9f43b61be66118c129a95282af9774ff01ccb26462ca27c02ee2b4"
+    sha256 arm64_sequoia: "f8d303163cea44ae411f9e87ab47ee27d55c606947d53400ddb98bc0a5ded3d5"
+    sha256 arm64_sonoma:  "b3b96b81ff893ff2c13ee51aaae39b641578fb7396de843c45800eb06524de89"
+    sha256 sonoma:        "37f755b817e733580418205802ca9ee25b29714b02cd166cc6ac73360752ebbc"
+    sha256 arm64_linux:   "67ead23c19a08e8e48ab36fe97a5e602eb2508998bc4c93d098a3f369161a93a"
+    sha256 x86_64_linux:  "0007c52823b9d6ad8e2c13fe8a3d47f8d89b2230b4b6d626ab2c3718af24db64"
   end
 
   depends_on "cmake" => :build

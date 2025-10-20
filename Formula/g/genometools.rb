@@ -8,16 +8,17 @@ class Genometools < Formula
   head "https://github.com/genometools/genometools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ede4a7e7dca0d91a489fd52b39da3aee15419f7789379622c2226946f96c701d"
-    sha256 cellar: :any,                 arm64_sequoia: "6a740b3d95366de0bb83169ff008ff123e5f518e4979bc149baab5c4f7c5d57b"
-    sha256 cellar: :any,                 arm64_sonoma:  "df602fd3a92a0b8247534d5f4d7694ca2813844e35dea1a25d7d31490fc0e118"
-    sha256                               sonoma:        "0dcd7cb3695785f842caa136a32a54dd40521f82c41d86cb6104636fd63dde41"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d98999031a025a7e137b9020637f62fbf6eceabc8d2c91549ff6453374d054cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31172f7051f88d8953348b1ba434ce27648955f3ec9734bbffa1dc41bdc90b20"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "a18a88f6b025c750cfba1db4bea79eddfbb06842b43a1438974c2abda0a7db93"
+    sha256 cellar: :any,                 arm64_sequoia: "e3e6f65acd7d877ff6767a1d938c679a2a3f620933d3bb85730659fdf5e2d353"
+    sha256 cellar: :any,                 arm64_sonoma:  "b6256750e50b2b3c98dc8ba4ddd1f3b937992a8dd0a39af142016d5bf01f0462"
+    sha256                               sonoma:        "426c5f4b996dec03dffb8aa2d976ba4b70487761ae4a79da21fccf0513fd637f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "41927af5e909bb8d70eed0e7ddeaa937c60eb0f677446bafe9fe15b97f3091f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae0fa607f8920e689ce456d9639179f090dc245dcd0cf7d59088acea42bfc5d5"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "cairo"
   depends_on "glib"
   depends_on "pango"
@@ -36,7 +37,7 @@ class Genometools < Formula
   conflicts_with "libslax", because: "both install `bin/gt`"
 
   def python3
-    which("python3.13")
+    which("python3.14")
   end
 
   def install

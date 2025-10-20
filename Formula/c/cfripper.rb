@@ -22,6 +22,7 @@ class Cfripper < Formula
   depends_on "python@3.14"
 
   # `pluggy` is manually updated to support Python 3.14
+  # Issue ref: https://github.com/Skyscanner/cfripper/issues/340
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"

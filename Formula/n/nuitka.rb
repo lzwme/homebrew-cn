@@ -3,17 +3,17 @@ class Nuitka < Formula
 
   desc "Python compiler written in Python"
   homepage "https://nuitka.net"
-  url "https://files.pythonhosted.org/packages/94/c0/96857354765e9024825b7ac29b8c81b12e9dfe310f9ddc3786cd0f0d07b5/Nuitka-2.8.1.tar.gz"
-  sha256 "456fd55c25292252f2dfb26da2c1ee0c0dbeb00106669979b8a2a1f3ae653cb0"
+  url "https://files.pythonhosted.org/packages/7f/83/b2219d7d814dfac263028a79ae6873a5aab4191beece2ad36a4770209591/Nuitka-2.8.3.tar.gz"
+  sha256 "10dc85443c49e7d6e4e8d3413cdfaefe7ebf3d8f47d2bfb5324b5676c3d77b5f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed3af64b8118c6493cb2853f888c15526b1b5115ec5fd186b396a75117bbb195"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b713a9a0c40945d6ebefeaed645604e0da517b425bab2a5316784bd8e5e93a4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abf7acd731074e11d5b1115a151529fd58a436108288cd8a2f900b59f71421fa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "26c1a15a05c6d56fa9672b4a320b35d521b0a2c2ca54d14a914fd50697a0b04d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6f41b0af8780c13be0850d9aa6f13ad5b47491e19ce77083bbdf0ecb7f75e93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e11cd541a240ebb0bcc90608c82c304ebf0fb8bc8c6e56738c73f9543dd77e65"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18cd9b75c8dc2fc25f490315c0781efe41cd1aa95458944890e8b51a3665a257"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9819c8e6522a9ca7b5cfe32bf243ae0449276f40a1377b6ef1811edbffc4ad2f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f8b68223f06a239886ed6d0cae61382d477b2a57cdc61dde00c52e0e2f80e8b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "97832f0497ac6e092f5de8429b3e9f709f23160da8a15d18219b299657b04369"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "96aff6306fa575a7ef4e34fee9b19b8f309a0a17015026f2193ccb7ca9db4698"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f72091627699692931c689ccc25f2560ea0ee7394462ddbc684d997d64a32d7"
   end
 
   depends_on "ccache"

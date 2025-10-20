@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/3c/f9/6907e4f43215c6f9a4cd70062c6aabb07af7a22621d520d0437fa8299b32/schemathesis-4.3.4.tar.gz"
-  sha256 "aa75a67d92cfd1f82464d38ac6e1ce0e4480be8bd6abfcd066f5bb053ef14ad9"
+  url "https://files.pythonhosted.org/packages/9b/e1/87873e55dfdb593eedc4c38aa21ec9029ee0d3524f8f4c5e8f1853a531db/schemathesis-4.3.6.tar.gz"
+  sha256 "240ebe8ed5531cc97ba4f3eddba1873e536b6f76f0f1857e174d616f0670ddce"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d82e9299a36fe9468cd8dc1fd889697796e824a7eb17991a74249536cd8c5457"
-    sha256 cellar: :any,                 arm64_sequoia: "8ef1a8de03981b4b571db9a4740c10c40a063aa8a8afb37b6d89ccc5db5c5a03"
-    sha256 cellar: :any,                 arm64_sonoma:  "38e96b1392b9bc98da0b487e9febafde2173f14597715fd23583e657016ec45f"
-    sha256 cellar: :any,                 sonoma:        "545a21082969509d68b54f33fb2c03806e7f8365ee2716161f6adc1f31d06551"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "77d25e756897b704ce2d94b6ceba47b30771b153c4542756e6577a56b0cf9265"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d58b28b82e4d7b29d9efb38855aca8995c92d00d049771a59f70d1736ea299a4"
+    sha256 cellar: :any,                 arm64_tahoe:   "5f7959d8c6666b74e74f5d4186b872822b463cb5504a45454a53fcf1c10ed81c"
+    sha256 cellar: :any,                 arm64_sequoia: "63ad4811a11ee7afb9728305a178fab7174b3db64fcc7b8b5b65014f79e50d3c"
+    sha256 cellar: :any,                 arm64_sonoma:  "525f9cb0778779fe1af2742b55b744063382b7612c130021877a2fdad929bdbe"
+    sha256 cellar: :any,                 sonoma:        "5d8391d3a3df1cb32b2621606d60121ca6b4c7f297642a5d8cd1d1ea4a3efb01"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "39dcf8198a9d639eb59ec2662a27635ed4fc6730e4bb93810fa69053c216d614"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "522f124033469665cb71a96e675f36c23891efe42b24f3b836f9ef27bf7e5a48"
   end
 
   depends_on "certifi" => :no_linkage
@@ -29,8 +29,8 @@ class Schemathesis < Formula
   end
 
   resource "arrow" do
-    url "https://files.pythonhosted.org/packages/2e/00/0f6e8fcdb23ea632c866620cc872729ff43ed91d284c866b515c6342b173/arrow-1.3.0.tar.gz"
-    sha256 "d4540617648cb5f895730f1ad8c82a65f2dad0166f57b75f3ca54759c4d67a85"
+    url "https://files.pythonhosted.org/packages/b9/33/032cdc44182491aa708d06a68b62434140d8c50820a087fac7af37703357/arrow-1.4.0.tar.gz"
+    sha256 "ed0cc050e98001b8779e84d461b0098c4ac597e88704a655582b21d116e526d7"
   end
 
   resource "attrs" do
@@ -109,8 +109,8 @@ class Schemathesis < Formula
   end
 
   resource "iniconfig" do
-    url "https://files.pythonhosted.org/packages/f2/97/ebf4da567aa6827c909642694d71c9fcf53e5b504f2d96afea02718862f3/iniconfig-2.1.0.tar.gz"
-    sha256 "3abbd2e30b36733fee78f9c7f7308f2d0050e88f0087fd25c2645f63c773e1c7"
+    url "https://files.pythonhosted.org/packages/72/34/14ca021ce8e5dfedc35312d08ba8bf51fdd999c576889fc2c24cb97f4f10/iniconfig-2.3.0.tar.gz"
+    sha256 "c76315c77db068650d49c5b56314774a7804df16fee4402c1f19d6d15d8c4730"
   end
 
   resource "isoduration" do
@@ -248,14 +248,14 @@ class Schemathesis < Formula
     sha256 "64be704a875d2a59753d80ee8a533c3fe183e3f06807ff7dc2232938ccb01549"
   end
 
-  resource "types-python-dateutil" do
-    url "https://files.pythonhosted.org/packages/fc/83/24ed25dd0c6277a1a170c180ad9eef5879ecc9a4745b58d7905a4588c80d/types_python_dateutil-2.9.0.20251008.tar.gz"
-    sha256 "c3826289c170c93ebd8360c3485311187df740166dbab9dd3b792e69f2bc1f9c"
-  end
-
   resource "typing-extensions" do
     url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
     sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+  end
+
+  resource "tzdata" do
+    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
+    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
   end
 
   resource "uri-template" do

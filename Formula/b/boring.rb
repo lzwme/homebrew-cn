@@ -1,22 +1,20 @@
 class Boring < Formula
   desc "Simple command-line SSH tunnel manager that just works"
   homepage "https://github.com/alebeck/boring"
-  url "https://ghfast.top/https://github.com/alebeck/boring/archive/refs/tags/0.11.7.tar.gz"
-  sha256 "8a0a26e48e40dcc8b90c4e95621bd1ba68c5793a10d85d8bb50725a923a18f64"
+  url "https://ghfast.top/https://github.com/alebeck/boring/archive/refs/tags/v0.11.8.tar.gz"
+  sha256 "6b31a6046d595fc55496c0cc7654184d22c871729ec274709222e5f34678819a"
   license "MIT"
   head "https://github.com/alebeck/boring.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0fbaa7c34fb72dd27461d66b8f7aea30d78d81ea5c10efabdf3140df9d1f6f9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2dba12360e72ff80eab9e7c8a4f5028a9eb80aef0e0ac79c752e7eb0e365b7dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2dba12360e72ff80eab9e7c8a4f5028a9eb80aef0e0ac79c752e7eb0e365b7dd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2dba12360e72ff80eab9e7c8a4f5028a9eb80aef0e0ac79c752e7eb0e365b7dd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "25e1d2283e84f441035c414b4b0ee1e3a6dbaa7af011f470153c6e1aa0b92de8"
-    sha256 cellar: :any_skip_relocation, ventura:       "25e1d2283e84f441035c414b4b0ee1e3a6dbaa7af011f470153c6e1aa0b92de8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a117b5335ed00dd2388e34d5253f6b52f779a4735eb48b08029761891c3c80c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c3f68efe19a35b7f9c3e6e0ec25b1b48a843e47eaf46577345269dbaac836e4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4519a4d66c9e2d1bafeef19dfa358e2c56bfda4b2c1070ed251b0fcae9e7fde8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4519a4d66c9e2d1bafeef19dfa358e2c56bfda4b2c1070ed251b0fcae9e7fde8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4519a4d66c9e2d1bafeef19dfa358e2c56bfda4b2c1070ed251b0fcae9e7fde8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4618e05ee175780dca308980515da4f16efc7b62e329f03e1307c67cec99d094"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc712b056d95434baa12289884298df928e7c4394be8b8c156c196fdf5dd9f43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2611d4e6ac1ee88db608c4decf132871021d86a933814f54b7550169ca1eec19"
   end
 
   depends_on "go" => :build

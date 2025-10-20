@@ -27,7 +27,7 @@ class Movgrab < Formula
   # https://github.com/ColumPaget/libUseful/issues/1
   # https://github.com/ColumPaget/libUseful/pull/2
   patch do
-    url "https://github.com/Homebrew/formula-patches/raw/936597e74d22ab8cf421bcc9c3a936cdae0f0d96/movgrab/libUseful_xattr_backport.diff"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/movgrab/libUseful_xattr_backport.diff"
     sha256 "d77c6661386f1a6d361c32f375b05bfdb4ac42804076922a4c0748da891367c2"
   end
 

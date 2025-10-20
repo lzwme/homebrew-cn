@@ -10,14 +10,13 @@ class Shamrock < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "aa610358c555b050b5b2f8e63ff9ffa3490f097950e98c0fd2a4fdee6170e5d2"
-    sha256 arm64_sequoia: "6687c40ab0b0822a689878016759da749b74b509f6cc87e97bf439f593e9bc21"
-    sha256 arm64_sonoma:  "c306d2283e47c569a2e43eda7bada1a251e96e6d11192d4f38f7aed36559d5b5"
-    sha256 arm64_ventura: "e27c1fde9845da8763005ce9b3fa6cc579f23ca1c73eaee98abfbe63d1908107"
-    sha256 sonoma:        "7655ea9e18cf8cc48d4ee516b51b42596bd78e144e09287972352f03cc64f29c"
-    sha256 ventura:       "66121774886d48bb65f150e6f3ec146b602ca1841603a943581f807381bf6483"
-    sha256 arm64_linux:   "d922ccf350167168fc47e70a741bb6c3d53e100e4294af21b08dbb978cf5632e"
-    sha256 x86_64_linux:  "babc28ee1a72de1e6d5b2418304e42d63c0009b7d5bea791bdaa7258a9524c9e"
+    rebuild 1
+    sha256 arm64_tahoe:   "6323f8da9268aff5d7ced2543cf89ebde8dc4cbc3dc50756fbebb71fa7945c1b"
+    sha256 arm64_sequoia: "cf3a4a0ebb0bad131f091c5f8c458affe09b3643b7683aa67b705a97d34f83d7"
+    sha256 arm64_sonoma:  "f891dda301e1f6f23a83c3decabd61df6ce73faae6e63552e4d058d26a212ba7"
+    sha256 sonoma:        "0c497859d5a8ff3387f7b46fad164c270728e8d1a74d39592edb39edaeddb9db"
+    sha256 arm64_linux:   "cc61abd988c7308020dc2ee2b60519a565267c9e93887ab414de98594e586618"
+    sha256 x86_64_linux:  "0bcb52e22880d47fafddc933f6e279a2c016f0c907afe39d40b60b77d8cb9abb"
   end
 
   depends_on "cmake" => :build
@@ -27,14 +26,14 @@ class Shamrock < Formula
   depends_on "adaptivecpp"
   depends_on "boost"
   depends_on "open-mpi"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   on_macos do
     depends_on "libomp"
   end
 
   def python
-    which("python3.13")
+    which("python3.14")
   end
 
   def site_packages(python)
@@ -83,6 +82,6 @@ class Shamrock < Formula
       shamrock.sys.init('0:0')
       shamrock.sys.close()
     PY
-    system "python3.13", testpath/"test.py"
+    system python, testpath/"test.py"
   end
 end

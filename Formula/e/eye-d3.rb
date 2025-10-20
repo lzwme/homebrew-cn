@@ -9,8 +9,8 @@ class EyeD3 < Formula
   head "https://github.com/nicfit/eyeD3.git", branch: "0.9.x"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "b5e7af9000a35d628bc1c9410be411d08b693c5a72e000b7c60da35f9755e049"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "0824e1bb0ea2d8c4254435b14c48c6845b5a1b610bd0de4e5762e7ed68dc1154"
   end
 
   depends_on "python@3.14"
@@ -33,7 +33,10 @@ class EyeD3 < Formula
   def install
     # Fix to error: SystemError: buffer overflow
     # Issue ref: https://github.com/nicfit/eyeD3/issues/680
-    inreplace "eyed3/utils/console.py", "'\\0'", "b'\\\\0'"
+    inreplace "eyed3/utils/console.py" do |s|
+      s.gsub! "'\\0' * 4", "b'\\\\0' * 8"
+      s.gsub! 'hw = struct.unpack("hh", data)', 'hw = struct.unpack("hhhh", data)'
+    end
 
     virtualenv_install_with_resources
     doc.install Dir["docs/*"]

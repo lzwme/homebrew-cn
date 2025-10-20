@@ -28,6 +28,7 @@ class CharmTools < Formula
   end
 
   # `ruamel-yaml` is manually updated to support Python 3.14
+  # PR ref: https://github.com/juju/charm-tools/pull/685
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"

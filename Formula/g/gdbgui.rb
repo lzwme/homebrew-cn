@@ -8,19 +8,17 @@ class Gdbgui < Formula
   license "GPL-3.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5899285b19c09671e8324a2b4e6f0dd76658431aa02cfd2a96fc669130a20de1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c67e12ece8291f2f109719263e36b593859c8448f6510f95f6364e6971591818"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5832d02a08e75cf3d21488dcbe98ce1d7349dd8e95b9a5c88e60674093f685ba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "66a9d628b9d6ded9b1e2e1fe9c9a726f4180ea3ca161bebf24b30a6645f65c85"
-    sha256 cellar: :any_skip_relocation, sonoma:        "55cd8af0d0d7919f27dcb56708c029b06d4c47956455079d88abaa5cc0b607cf"
-    sha256 cellar: :any_skip_relocation, ventura:       "162298ba45e74b9beb055ad822bef2e6decbc68cf350857256e0d50d2e757d08"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "35cfc4af5c6f85e8c96a9f9bae239efac8cd115d8a30474214dba39b21222147"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a59d8311b899344a01c2b2fcf8b65d5fad3c38977da058fa08c85e740386caf6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "305daf07812dd5941548e611414a1dd7ea509a8230275b12c7981f04481abb90"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2a8f4508a00e9302ebaf63888d4505e027dde3710278601fc7229d4fe06521e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4ee59b13d9263ef333db195513bacde470ead12f92fb4a828ff6801f8624d3f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3a5a99218db05c8875e10ed5dae431912493f7296c8933763c163adbe0c7e7da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5cab7defea471b94a728c30bf2fcecb57f9b0ffcde63f704246cc02958e3a51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42ddd8b183bbf4134c83b15345f53480bc73d0f246ef71891de56179ee094cb0"
   end
 
   depends_on "gdb"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "bidict" do
     url "https://files.pythonhosted.org/packages/9a/6e/026678aa5a830e07cd9498a05d3e7e650a4f56a42f267a53d22bcda1bdc9/bidict-0.23.1.tar.gz"

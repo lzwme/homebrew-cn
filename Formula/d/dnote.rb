@@ -1,8 +1,8 @@
 class Dnote < Formula
   desc "Simple command-line notebook"
   homepage "https://www.getdnote.com"
-  url "https://ghfast.top/https://github.com/dnote/dnote/archive/refs/tags/cli-v0.15.3.tar.gz"
-  sha256 "e3fe1ba082fa3ecaca42a734149a00d4b1fd48b39a14245f26ec5f3fc5bd1bb9"
+  url "https://ghfast.top/https://github.com/dnote/dnote/archive/refs/tags/cli-v0.15.4.tar.gz"
+  sha256 "01851bdd304c05a2ed71ed0d21a6d1cd641aaa5ef6cb44ea95d6e8d035b0a76a"
   license "GPL-3.0-only"
   head "https://github.com/dnote/dnote.git", branch: "master"
 
@@ -12,18 +12,18 @@ class Dnote < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b829fec07d5ee3fbab45f2c8ddc25a54f0278dd1fb25953674d1959f493e31e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "702adaeeb766a1fe713bb262f409bf96b3afe162e5b7e24c3ded6db1bce1a32f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2b8c0527ab722f773a0217f6340c889f8a56ca9954a21e7dcb6f918fda0dc7b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8b571f4cd5e31c846c955c45bb246e251f4a073d05eaa37f2b1f4210d448924f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2271fa682e269d6411bba2f124ccccf3c40ee59c6d9ceef932ae04a03a733d1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7267c840340c83202c15198bb678efcec32c4d5a469ad62be8e7ad651e9c987a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7a27e016907ff0ac3bf002e36afc40a48ac24930de58c6759904eb1667b92ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dacadf075936b1cc9546ce79a38341102111afcdec359f733d34aafcb4b1003c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34ef973173f1d28d845e803947b9edf235193646bf6fcd7a76eb0d743907bc75"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a852c931ae46f02d02e39b86989d67bbe58011c77d30c7d82170558bcdb9de33"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6aaed89de5ae016de6e7c5ec2f9afa6ef1d7d2a5a3eb7534852618af9a535b9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68b82678228b037da6a663be740b21421419e6c287751ca97187e2f9be3603a5"
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "1"
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
     ldflags = "-s -w -X main.versionTag=#{version} -X main.apiEndpoint=http://localhost:3000/api"
     system "go", "build", *std_go_args(ldflags:, tags: "fts5"), "./pkg/cli"

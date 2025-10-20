@@ -4,9 +4,12 @@ class Libparserutils < Formula
   url "https://download.netsurf-browser.org/libs/releases/libparserutils-0.2.5-src.tar.gz"
   sha256 "317ed5c718f17927b5721974bae5de32c3fd6d055db131ad31b4312a032ed139"
   license "MIT"
-  head "https://git.netsurf-browser.org/libparserutils.git", branch: "master"
+  head "git://git.netsurf-browser.org/libparserutils.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    url :homepage
+    regex(/href=.*?libparserutils[._-]v?(\d+(?:\.\d+)+)[._-]src\.t/i)
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "f611219c6ad2fa78766ef8c18c4518dedb5f4c271266107cdac37b35100e8a48"

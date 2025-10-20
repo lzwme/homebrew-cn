@@ -7,12 +7,13 @@ class Ignite < Formula
   head "https://github.com/ignite/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3b5be4b4701f5055fc3f57b76449ed3133f39a8e1378a2b38efac3c4a0408a2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32533fb9070c6f34817b5fcb60842d61aec38504a7793f18436db164f74df06d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2243727f2d29b2a14cdd528fc59363d3921a06183cd15ec34e67715b0ab2b74"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bbbc88a7027886a8e50bbcc5894edaa1eabf2a8cbbde37439e38d22236bcbe15"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ad6b25431fc66d1429c004caac8f6ff9f290431a0fb64262918cfff8b0c8ce3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2ae6729b7a59a0786b5ca74297d56dfdcc55640c2bb3152cb812f1ad1b992ca"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "72751fd958825f28c4d2bba5bcc840924ec639f17df361e030fd79deebfd901c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6687f7e0ab0f33a839a8aeeb6a7e2b4fd1130c83e13bb8ee0243ce8dbe131e6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c68f2d8fb05aef5232916cdd7b4bd787c634eac3283dfb30dc990f6d31e243cc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "73c6262cffd76ad28581146870fe3c23c8ead7b5ed62621087ecbc9295201e0d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b98f9e3a20ea8f0a52819f66bc96adfb92d060729f562a252648b332a93cc40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8420c8c0bb06b71be99ee8c9b02fb78eaedeca876f6b2ed1cc30d7fc73165d86"
   end
 
   depends_on "go"
@@ -25,8 +26,8 @@ class Ignite < Formula
   test do
     ENV["DO_NOT_TRACK"] = "1"
     system bin/"ignite", "s", "chain", "mars"
-    sleep 2
-    sleep 5 if OS.mac? && Hardware::CPU.intel?
+    sleep 5
+    sleep 10 if OS.mac? && Hardware::CPU.intel?
     assert_path_exists testpath/"mars/go.mod"
   end
 end

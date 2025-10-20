@@ -1,8 +1,8 @@
 class Libplctag < Formula
   desc "Portable and simple API for accessing AB PLC data over Ethernet"
   homepage "https://github.com/libplctag/libplctag"
-  url "https://ghfast.top/https://github.com/libplctag/libplctag/archive/refs/tags/v2.6.11.tar.gz"
-  sha256 "2d1294c915bdba127c92890ae4bf9cd2122d5b24685aa487f8a25c391c8476f0"
+  url "https://ghfast.top/https://github.com/libplctag/libplctag/archive/refs/tags/v2.6.12.tar.gz"
+  sha256 "420c37c11832eb3f000baa66bff087e79b3ca25cb4af978eb6de23a597911a13"
   license any_of: ["LGPL-2.0-or-later", "MPL-2.0"]
 
   livecheck do
@@ -11,14 +11,12 @@ class Libplctag < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bee0d32f7c152b32538f7a16d912513d828441f37267cd688fd09aa9100fa83f"
-    sha256 cellar: :any,                 arm64_sequoia: "ff163346688f8798d3f2ea038ce9a77a92758185a55a726dcd4c387bab1e0d55"
-    sha256 cellar: :any,                 arm64_sonoma:  "b31170587c581648b6d0ff2c817b983a4969a7ba3d1ea0881b9580c7eba559c8"
-    sha256 cellar: :any,                 arm64_ventura: "92e4b68260fc1941ff15a4c201114afd84faf2ee777e3e3f7f5f9ce120c10f74"
-    sha256 cellar: :any,                 sonoma:        "0963597c29dfef1acb55b867961bc0606143f7dc83a2e61c6ed0a66075db6279"
-    sha256 cellar: :any,                 ventura:       "8c0a81efbd684f5ca6044213bc15161b568cdf8fdcd064f031f94196b4f011c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9694ce8f6c1846711ff06309eaf9c0f2273e10245eac3f0faf0eb836404c3abe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cdd65d06fdc0af99da9a94eb5c7d1c9f6f408a54d3806129eb9230d52cf1b28"
+    sha256 cellar: :any,                 arm64_tahoe:   "4ded324ef409f272762a7304c86a1608d235fe2a59b8ce696e108a7730283851"
+    sha256 cellar: :any,                 arm64_sequoia: "2bdf1111826c3d63ae9d0bf36fc71516578097e6c1db61613e2d69358a80643a"
+    sha256 cellar: :any,                 arm64_sonoma:  "dc5096bbf6e4aecfef2b4c82485693e042482c0d67e610022a874a8e5e0a7003"
+    sha256 cellar: :any,                 sonoma:        "5a0a6c872b0be0e836f08f0a5844878ed15c4dfc7715a8057345a3758ec0f26c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "795f174d6975cc2f0989c14ae2db0919b46eb5b50cb3b6a456d48eae24a4ccd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a06ed36a97d76ea55cce326b049041c6a516de643e4f432a4d58096550886d71"
   end
 
   depends_on "cmake" => :build

@@ -3,17 +3,17 @@ class Jupytext < Formula
 
   desc "Jupyter notebooks as Markdown documents, Julia, Python or R scripts"
   homepage "https://jupytext.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/8c/2b/c96034a203a41659d58c149da5a0d5e5f11f24e41c9e1fef337cef1868e2/jupytext-1.18.0.tar.gz"
-  sha256 "3661c14adce99ec4b5eb9b60ad71d323ce5eccdf69ca33c730a53c61e46a3258"
+  url "https://files.pythonhosted.org/packages/9b/5d/82a614a49493fa84b2019a3e03020a8b9927208ae177b81f7e0b30330c82/jupytext-1.18.1.tar.gz"
+  sha256 "5c0962ca8d222db45cbe1848b4805dbbe3ddb957603fc96651b6cd7fd403fafb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2c97025e7fc4abd3c928364e9b964bfa8d8307b6697850f3ef9a94494483a72d"
-    sha256 cellar: :any,                 arm64_sequoia: "049a9457be1ab53eaa50cbc655481acc7334fed1e11926aec50de8198b206b8a"
-    sha256 cellar: :any,                 arm64_sonoma:  "8aa998043b3951e170ceda24d2f4e971173c9755990e3bee3796aca32352b049"
-    sha256 cellar: :any,                 sonoma:        "20707c373b9e6bda79edb798618d5cfa18418079d48ac9603ecddda21efec1e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "57a7daa1b2ed7307ce0563b0c48f073753bdcfa63224176f2b230166de06add7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a0b12a5a8830c8b82e0afdc6f28fe75b82280f1a5eecf8a3ffafcacbca1a9a7"
+    sha256 cellar: :any,                 arm64_tahoe:   "4c6833091ff5ad58fd3d25d7f18b98d2932fe996ba5cc95f820558707bc3a548"
+    sha256 cellar: :any,                 arm64_sequoia: "99931dff1355591b9b586bdd8c61e469e3c5ceca85229a505dc0b22128ff0750"
+    sha256 cellar: :any,                 arm64_sonoma:  "6dab9840a9983cb25754359be5b197dd5180a1a1cc1f9b32dcec60302663da36"
+    sha256 cellar: :any,                 sonoma:        "61106b1ef603e8d67fa609024243b22750d46e5df21580101c960f66223bfe0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "263719ec57aa02bf3daba49ff3db6496bc9c8b55a71dede50634220b8469abe1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94758b2efff2c29b057e1cc512b9526dde7c8b2e61d79c5e21254523d007dc62"
   end
 
   depends_on "rust" => :build # for rpds-py

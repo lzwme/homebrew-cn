@@ -1,18 +1,18 @@
 class LtexLsPlus < Formula
   desc "LTeX+ Language Server: maintained fork of LTeX Language Server"
   homepage "https://ltex-plus.github.io/ltex-plus/"
-  url "https://ghfast.top/https://github.com/ltex-plus/ltex-ls-plus/archive/refs/tags/18.6.0.tar.gz"
-  sha256 "3efdd627a4ab26d01cb393f49902ee9f2136d84595587887432a9752f41981c6"
+  url "https://ghfast.top/https://github.com/ltex-plus/ltex-ls-plus/archive/refs/tags/18.6.1.tar.gz"
+  sha256 "16fa8c88cea5f579fba4a33c7c89b15a1ed45b9b14dd32a07aee740b3d5506c9"
   license "MPL-2.0"
   head "https://github.com/ltex-plus/ltex-ls-plus.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4dda7ef789728f2c0a4ed55d97012617394e459f1857cadb57407572432d6e8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0b2f6f5c5801de35d3027541626beaddf6126aad3ceeae2b49e1788268cb83a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5995f3c310109c28dfb51f7c81b132adbf97f4e24692dfc675bd31fbdcd079e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a4d12c2b0277e63178bb5bf37d15da73f0d3971a311dcfb9563a9dcf87c251ac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "13581fb600680de6b9151addcf4f15daabbb23bba8aca9d7b9e99a14fdb60de8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "320b6f491ee556201e8c31fdffb42077a0e657d41d63cc6283ce7ddcec1ec724"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "508714100a8d794567e14fff608194c917fb851f169c9f991614355d8bc4c1a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25070d0467ec59ff5727af4d5d7347c1af725db987f47a5f1a5932859d07be09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "239e53f81417a897cb4a0774345b6e5d61c085e10625e832e3d1c3110458fab3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "995edfc505a74faf0e1fe251a6ecb9676015782ea1583271685f0ddde97813db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1d7996682c4bacd509072aa90c701146c78bc233eb3dc38626012aab37b79f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8890571e3370fc5be4577e4a523a6a5a31314e755282f411f7f2f3247c2a50d0"
   end
 
   depends_on "maven" => :build

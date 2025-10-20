@@ -1,27 +1,18 @@
 class Dockerfmt < Formula
   desc "Dockerfile format and parser. a modern dockfmt"
   homepage "https://github.com/reteps/dockerfmt"
+  url "https://ghfast.top/https://github.com/reteps/dockerfmt/archive/refs/tags/v0.3.9.tar.gz"
+  sha256 "a156f43b62168531f999f4ee1fb39b6d0057e55e4f703c96181be32950b3c461"
   license "MIT"
   head "https://github.com/reteps/dockerfmt.git", branch: "main"
 
-  stable do
-    url "https://ghfast.top/https://github.com/reteps/dockerfmt/archive/refs/tags/v0.3.8.tar.gz"
-    sha256 "d1cf00967f80a4228c01fc113c10348d1b69c2e7c4e48704df058b3c95093e4b"
-
-    # version patch
-    patch do
-      url "https://github.com/reteps/dockerfmt/commit/5dfcd5f7afd2d04d75488963f8a15e954b97828a.patch?full_index=1"
-      sha256 "8bf1b7612cd0d845c8dd7ae10f43b815a5c13d1d0dfd120d76f8deab37e9f7bc"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b2931df2b05848a2fab07c0e3e6b01cf62c06f5401a776144b0b675c973ff8d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b2931df2b05848a2fab07c0e3e6b01cf62c06f5401a776144b0b675c973ff8d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b2931df2b05848a2fab07c0e3e6b01cf62c06f5401a776144b0b675c973ff8d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c5e5c4808cc9bc5dbc7167e02c8f55362209816c4bb83de409e878542ae972f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d481bb9e327635268567bb842c14440013834c7766f368fbea140d8e3d350a1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34f32da196d27fae08da34dc8882d1001012aa46140dae46cbd250d6d433074c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1b2c37874f97f7d25129b70ddb8c74d81bd838752bf52904f69acc25c11c480"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1b2c37874f97f7d25129b70ddb8c74d81bd838752bf52904f69acc25c11c480"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1b2c37874f97f7d25129b70ddb8c74d81bd838752bf52904f69acc25c11c480"
+    sha256 cellar: :any_skip_relocation, sonoma:        "553325e795e1f955251f53fcb2c91e4e24c64b12de9559039c018cf567e68f5d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "af8eb457f9132d90da407300218c8b4c641d39db3d0d67d1aabcd117935e993a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e1680a1b9edf2bb8a7656961ac6cc13a5ee126fdae287b7ce0f5157c6ee6916"
   end
 
   depends_on "go" => :build

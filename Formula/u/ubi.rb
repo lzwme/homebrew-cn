@@ -1,18 +1,18 @@
 class Ubi < Formula
   desc "Universal Binary Installer"
   homepage "https://github.com/houseabsolute/ubi"
-  url "https://ghfast.top/https://github.com/houseabsolute/ubi/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "804156727699460fc73ebc0b8b807c09ba5486a303dd6693cc5619a9df367e2b"
+  url "https://ghfast.top/https://github.com/houseabsolute/ubi/archive/refs/tags/v0.8.2.tar.gz"
+  sha256 "31e4b4e60dabc6320782a4c942428eb9ad7711e114121c25b065375c4a2e335c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/houseabsolute/ubi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1b9de2eb462d7aaa5dc08e1fed86b85c86a7a1996c23ec52ec42a1519bbf5c3e"
-    sha256 cellar: :any,                 arm64_sequoia: "e3ff53aa86b100aa2bd0d150a6714a0b4e5f8ffe43ab57f7da57b38c9fb67ca5"
-    sha256 cellar: :any,                 arm64_sonoma:  "abd58cd80ecd37db6da35ebe7d90339ff3dc48ab01e1897a785c8d6fd956dc9f"
-    sha256 cellar: :any,                 sonoma:        "19081eb6581c383ac4789c79dd5317ffe639afafda16367ca23d59fb04e1770a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ee8c6a956b66bcd1fbe5feb3dc0992244b70ec9912ff7544f3abbae1b8b6c15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0cc83d96bcaba2da4d3d57ee20969643b47654c7e1fcbdd5a5d6595688184bb"
+    sha256 cellar: :any,                 arm64_tahoe:   "c50764e1b68280dfebb0663931caac4528075f7fea1a16da1ebc45a9c73c3375"
+    sha256 cellar: :any,                 arm64_sequoia: "8155520f31ec693d3ae3b16bb50c0dc5670e3c453f0f805caef0324a453b483a"
+    sha256 cellar: :any,                 arm64_sonoma:  "9cc16d2cf3ae35c9b7e735ef6d9331b23e9ebc4535f85d604142d453cc458821"
+    sha256 cellar: :any,                 sonoma:        "c5f67f7e5a21f3a385a4ab20d7aee978d0b03f53550b867e3805e6d9de6ed06a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57e72cdca42bb4dbd0d402316a8327ad6e28a2b9e084cbde38df2697deadb0c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fd10cb0a5d14cf1e71df8763c2720eacccff4aa04133febee16a15bbbf0393a"
   end
 
   depends_on "pkgconf" => :build

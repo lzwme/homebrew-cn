@@ -8,22 +8,26 @@ class Gamdl < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ff7c2e2500398d14f6710465342bb785fb35d8232dba82d669020047a5ca0ece"
-    sha256 cellar: :any,                 arm64_sequoia: "09b84043feb464292f6e9031d87026d1a708c15fc2627654e57ecf856b934b46"
-    sha256 cellar: :any,                 arm64_sonoma:  "5ae985327bbc107a92b0f4358da09e1fac2549fdb29cd497d55c039daddbc18a"
-    sha256 cellar: :any,                 sonoma:        "3a842cc7bf049cc419ca8f666ba7f1982916bc4f262b5d633493aba227e2508b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "161996d8c1fdcac59d0a4111148288a43a2568a99a2666fe3696af8e18a08b43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5ed425ef52cb735aa7711e24305286d09ffbf70d48e8831749c13bcb7ed8783"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "d337904fe6ebc5d8cf65ee9c0ab4dae5c0be23a7929da91c29f0f5a2aa6f917d"
+    sha256 cellar: :any,                 arm64_sequoia: "39158714c849fb6d2dc024861b967972d32780187d52246e0ef892e8a9af9955"
+    sha256 cellar: :any,                 arm64_sonoma:  "f8a07802f7f2d9cddc80af51d4100d121d997c10aae24449670ab8ba014f501f"
+    sha256 cellar: :any,                 sonoma:        "a32f764411d11c26370c749ea9da028763f09b6425bc923d11442d0fce7a4da5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4bd480804a8aa7d2d28696999a7839318aee4dcbb3d80677a441457583d046fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "373e074101e98f2b7fae96bda0a8468be27c852dd585da871baf629cd0968db9"
   end
 
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "pillow"
-  depends_on "python@3.13"
+  depends_on "pillow" => :no_linkage
+  depends_on "python@3.14"
+
+  # `protobuf` is manually updated to support Python 3.14, gamdl > pywidevine > protobuf
+  # Issue ref: https://github.com/devine-dl/pywidevine/issues/55
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
@@ -42,8 +46,8 @@ class Gamdl < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "inquirerpy" do
@@ -72,8 +76,8 @@ class Gamdl < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/df/01/34c8d2b6354906d728703cb9d546a0e534de479e25f1b581e4094c4a85cc/protobuf-4.25.8.tar.gz"
-    sha256 "6135cf8affe1fc6f76cced2641e4ea8d3e59518d1f24ae41ba97bcad82d397cd"
+    url "https://files.pythonhosted.org/packages/fa/a4/cc17347aa2897568beece2e674674359f911d6fe21b0b8d6268cd42727ac/protobuf-6.32.1.tar.gz"
+    sha256 "ee2469e4a021474ab9baafea6cd070e5bf27c7d29433504ddea1a4ee5850f68d"
   end
 
   resource "pycryptodome" do
@@ -117,8 +121,8 @@ class Gamdl < Formula
   end
 
   resource "yt-dlp" do
-    url "https://files.pythonhosted.org/packages/58/8f/0daea0feec1ab85e7df85b98ec7cc8c85d706362e80efc5375c7007dc3dc/yt_dlp-2025.9.26.tar.gz"
-    sha256 "c148ae8233ac4ce6c5fbf6f70fcc390f13a00f59da3776d373cf88c5370bda86"
+    url "https://files.pythonhosted.org/packages/03/b7/dab729345e22891e79294273bc59c5213a1ec87331f49cb82ccea2b1bc9f/yt_dlp-2025.10.14.tar.gz"
+    sha256 "b18436aa9bb6f04354fd78d31ad9eeaae8c81b6a859f07072b25c18cd6c25844"
   end
 
   def install

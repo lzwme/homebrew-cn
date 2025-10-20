@@ -4,7 +4,7 @@ class Libhubbub < Formula
   url "https://download.netsurf-browser.org/libs/releases/libhubbub-0.3.8-src.tar.gz"
   sha256 "8ac1e6f5f3d48c05141d59391719534290c59cd029efc249eb4fdbac102cd5a5"
   license "MIT"
-  head "https://git.netsurf-browser.org/libhubbub.git", branch: "master"
+  head "git://git.netsurf-browser.org/libhubbub.git", branch: "master"
 
   livecheck do
     url :homepage

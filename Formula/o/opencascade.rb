@@ -1,9 +1,9 @@
 class Opencascade < Formula
   desc "3D modeling and numerical simulation software for CAD/CAM/CAE"
   homepage "https://dev.opencascade.org/"
-  url "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_9_1;sf=tgz"
-  version "7.9.1"
-  sha256 "e70b8c08c74f9693cbc91baa48610f1f5448ad167425fb8b957cf5a8f2cafed5"
+  url "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_9_2;sf=tgz"
+  version "7.9.2"
+  sha256 "e9f69bde521e718f10f1896e5bea070fbd5dfb205d8da422f5be2d521db666c5"
   license "LGPL-2.1-only"
 
   # The first-party download page (https://dev.opencascade.org/release)
@@ -22,13 +22,11 @@ class Opencascade < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ff6334ea407940bc1be56e709668c12b4ea79ff60d37a84c74e83a7fe8c50951"
-    sha256 cellar: :any,                 arm64_sequoia: "f9d87b8dde916c0a051b88b7766f8a0d69d5dd0383fc6dce29a08989f91268bf"
-    sha256 cellar: :any,                 arm64_sonoma:  "778cd31a4361eb9ab61e88d5a34138fbc6d4925d6f4193dc0c8749480e903ffd"
-    sha256 cellar: :any,                 arm64_ventura: "75ce5693d58108d89c9f033ce907429c046af9589c10298821e5179c54d6bec0"
-    sha256 cellar: :any,                 sonoma:        "d1ddb8f31e96a5ef9de9bb4e8a29bbe2d8961b3ea5bf2a312a755f8642621e3b"
-    sha256 cellar: :any,                 ventura:       "bc7eca82a63b2094211ade87f493062d5fb3e9dc84905504a73f66d713aafc4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "961d89f14088c689138fa3ba6b53ce5b7416576de3628e669dac533c971c5d2a"
+    sha256 cellar: :any,                 arm64_tahoe:   "4660451ad938efaa9866c11e26feaf6477e9ffc2ed465ec0e9c9ee3e883aa1c7"
+    sha256 cellar: :any,                 arm64_sequoia: "909aa33f35f20ba42068fcc35030389f878f6fa71dafa481148bcc40a1224922"
+    sha256 cellar: :any,                 arm64_sonoma:  "192f5b9934455b54a1e4d90b7bfa4b0f983aea39ceae5f75ff49e09d519ccb01"
+    sha256 cellar: :any,                 sonoma:        "94081fbc6d9504ef3fd83ca3d76cdd86ca3808d009b68c6e33a6920bb724c314"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3878643a038002cd189e57aff2dd2424159cc46b8126ae16b08c2d40df707926"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -46,6 +44,9 @@ class Opencascade < Formula
   end
 
   def install
+    # Fix incorrect version
+    inreplace "adm/cmake/version.cmake", "set (OCC_VERSION_MAINTENANCE 1 )", "set (OCC_VERSION_MAINTENANCE 2 )"
+
     tcltk = Formula["tcl-tk@8"]
     libtcl = tcltk.opt_lib/shared_library("libtcl#{tcltk.version.major_minor}")
     libtk = tcltk.opt_lib/shared_library("libtk#{tcltk.version.major_minor}")

@@ -1963,6 +1963,7 @@ Homebrew-homebrew-core/Formula/f/feishu2md.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/felinks.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/feluda.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fend.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fennel-ls.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fennel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ferium.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fern-api.rb, Homebrew/homebrew-core, 0
@@ -6912,6 +6913,7 @@ Homebrew-homebrew-core/Formula/t/taskopen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tasksh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/taskwarrior-tui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tass64.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/taze.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tbb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tbls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tbox.rb, Homebrew/homebrew-core, 1
@@ -7340,7 +7342,6 @@ Homebrew-homebrew-core/Formula/u/unxip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/unyaffs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/unzip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/up.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/u/upscaledb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uptimed.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uptoc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/upx.rb, Homebrew/homebrew-core, 1
@@ -7583,7 +7584,7 @@ Homebrew-homebrew-core/Formula/w/web-ext.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/webarchiver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/webdav.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/webdis.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/w/webfs.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/webfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/webhook.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/webify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/webkit2png.rb, Homebrew/homebrew-core, 1
@@ -7954,6 +7955,7 @@ Homebrew-homebrew-core/Formula/z/zsh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zshdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zssh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zstd.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/z/zsv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsxd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zsync.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zuban.rb, Homebrew/homebrew-core, 1
@@ -9068,6 +9070,7 @@ Homebrew-homebrew-cask/Casks/d/docker-desktop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/docker-toolbox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dockey.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dockfix.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/dockflow.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dockmate.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dockside.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dockstation.rb, Homebrew/homebrew-cask, 1

@@ -4,14 +4,12 @@ class Libnsgif < Formula
   url "https://download.netsurf-browser.org/libs/releases/libnsgif-1.0.0-src.tar.gz"
   sha256 "6014c842f61454d2f5a0f8243d7a8d7bde9b7da3ccfdca2d346c7c0b2c4c061b"
   license "MIT"
-  head "https://git.netsurf-browser.org/libnsgif.git", branch: "master"
+  head "git://git.netsurf-browser.org/libnsgif.git", branch: "master"
 
   livecheck do
     url :homepage
     regex(/href=.*?libnsgif[._-]v?(\d+(?:\.\d+)+)[._-]src\.t/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "24a59de1bad99d2d805e0054f54b09fdadd75c69f50aa3d105d34aaeee184d21"
