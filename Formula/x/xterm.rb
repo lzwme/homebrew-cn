@@ -1,9 +1,9 @@
 class Xterm < Formula
   desc "Terminal emulator for the X Window System"
   homepage "https://invisible-island.net/xterm/"
-  url "https://invisible-mirror.net/archives/xterm/xterm-402.tgz"
-  mirror "https://deb.debian.org/debian/pool/main/x/xterm/xterm_402.orig.tar.gz"
-  sha256 "5260c5793cd564c69e53ef6f528c00af066ae67b42d02137fb7ef8fafe70bb7a"
+  url "https://invisible-mirror.net/archives/xterm/xterm-403.tgz"
+  mirror "https://deb.debian.org/debian/pool/main/x/xterm/xterm_403.orig.tar.gz"
+  sha256 "1331b0df5919cb243ffe326dc6ff10a291e683a262f70cdf964a664be733ad83"
   license "X11"
 
   livecheck do
@@ -12,14 +12,12 @@ class Xterm < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e8261de5224e0131d36bfaca99b113e602086812fbf7294e1adac180c497bb22"
-    sha256 arm64_sequoia: "3566eeb824d0856b03504d74c25199a7020bcc36243d95de33a2fcf3ef8faca0"
-    sha256 arm64_sonoma:  "031248fb11d3a8e39364ab93b9a0b590fb5679d0ad0bd4de56612ee174281a9a"
-    sha256 arm64_ventura: "873d6fcab219ac431abff903a2f4926329f4c0912e40d9b760dded1d0171786d"
-    sha256 sonoma:        "ae7655aead6698731e283b6268deb916847cd0e61e02004db89b910acea51019"
-    sha256 ventura:       "b7e6053067f2370668eca621c5885a528b8921f8aa673dba32e1f29a42dee5bf"
-    sha256 arm64_linux:   "404630857d75fcb51a1f632273268961727c14244c0b5c62d64665b9fd85bcc2"
-    sha256 x86_64_linux:  "be5c7ac6ba9b6d2141216f7ddf17d1ce8302be233eb8d50852569e420ddeaba1"
+    sha256 arm64_tahoe:   "c778ddfc075942b963255d2bfbb9a30e373447f309a02ec1d8f3a9d4cd8f82c2"
+    sha256 arm64_sequoia: "07b85bd73ba37391d6769adcbb76945e3dfefac72a0598c104e87aaa788d1635"
+    sha256 arm64_sonoma:  "1a4b645c4f49f0b7425a254553a7fb80c8a159bb5e89a0b600808975c59931e7"
+    sha256 sonoma:        "7866feacb67ad0b6eedded4175b7253d413de008f98b4a57aa8135ffa356fdc3"
+    sha256 arm64_linux:   "139a96b853e7ca0f4923f0858bcecae0e4a2f28beb4cb842e6791d26c0d30d79"
+    sha256 x86_64_linux:  "0cdd5352028604b98337d54147a3e322a4c5ba58ba8fa3fbd342f48a0320b45a"
   end
 
   depends_on "pkgconf" => :build

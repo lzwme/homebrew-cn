@@ -1,18 +1,18 @@
 class Nmstatectl < Formula
   desc "Command-line tool that manages host networking settings in a declarative manner"
   homepage "https://nmstate.io/"
-  url "https://ghfast.top/https://github.com/nmstate/nmstate/releases/download/v2.2.52/nmstate-2.2.52.tar.gz"
-  sha256 "d53b314795fab42cfed37ab71f531229b6e863626270026b3d33d22c9d43bf14"
+  url "https://ghfast.top/https://github.com/nmstate/nmstate/releases/download/v2.2.54/nmstate-2.2.54.tar.gz"
+  sha256 "562517d29e9d6051282e74eb77ca224843268e94b6070dab4d50a957159050c9"
   license "Apache-2.0"
   head "https://github.com/nmstate/nmstate.git", branch: "base"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dffbe3475c5266abe44abb8074dea6997a959f90dfbf43976bac5826610281dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6544fca0494f7c67921748806a91233ac45fabb19041ebb878277024d531c965"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6ab35ffee79f02f909fa624c870734fef0062c8cb9db723cffba502a3d83be9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a7f43ae9a97fba05f9d3750e093a59147abe0e35ffccb8d50ee0dc6edd0da6e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "55428a0dd5145b2e125d360cf329183fc8d89111ebc55fd031960ba80b19de8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "522d32d3aec932f51d7214ebcf11b22e2b86f59605ab6fc4567a52664fd6bd7f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3bd77f2897108a26582b434deb8e12baa3acae9383d4786413c11699c5924944"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf50c518ea0663015ec5f2f1b2ffe6b0e84f0e816ad4f9b37ddb3c7be62ac1cc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5e6632399240139ee4b77aa37e0bc8a75048f2232aabdc549d5c7cd435352fd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dfcf4589a0cc908d60f9976fb3a884d586d256014a36f91d6c3277d1207c1da1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ccf4931eebe7a2db12177de68b91792a9fc1a19637656bd944bc50be32f0d208"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8637d5b378382f64e9d4dc6b2358409779b403c3a9418913b293a5617c13e8f"
   end
 
   depends_on "rust" => :build

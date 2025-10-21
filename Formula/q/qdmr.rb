@@ -1,32 +1,30 @@
 class Qdmr < Formula
   desc "Codeplug programming tool for DMR radios"
   homepage "https://dm3mat.darc.de/qdmr/"
-  url "https://ghfast.top/https://github.com/hmatuschek/qdmr/archive/refs/tags/v0.12.3.tar.gz"
-  sha256 "1ee2adc912120025190eff65c78b1f8a153d1cab14909cbd5291403fb7b04643"
+  url "https://ghfast.top/https://github.com/hmatuschek/qdmr/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "c3897831e86d3394f4d21a21548df8e758a64e03edad1484cf83202347f352cd"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "f2f9a66770f2acf18f6f727efe52943acdeab1506b667edf92b1430e8a449804"
-    sha256 arm64_sequoia: "beb390820470fa2c825dc25a14c2d40de8770f9d513ca639085335773571a730"
-    sha256 arm64_sonoma:  "58d13f717ae94f13d6cdcef192691b031ea352b85bffd2c0948aa75831a3e59f"
-    sha256 arm64_ventura: "5c19013fde907534ed1e008086dd0af7e58f52091820a503058e6d155690a290"
-    sha256 sonoma:        "d80d900ac2c58bdc5d66d31e8c843f24809ceb8934688da4d5f08f9f2da755f4"
-    sha256 ventura:       "d272e84ab9b72bbff9e33fbf75983668a1cd2196e81e848a439a8ec57eafc1d4"
-    sha256 arm64_linux:   "859941094bdbda1e989e0044a4eee8a7c5473251757b1273b433eab4bcf2b5a4"
-    sha256 x86_64_linux:  "88fecf14b35168081be6da6a39e1b8326aa94429c2de4d12cd555220f66b2d67"
+    sha256 cellar: :any,                 arm64_tahoe:   "26bdb78751a5e268ece4fc1e7e121797ef0105bf9c383f3bb368484a39ef6c6c"
+    sha256 cellar: :any,                 arm64_sequoia: "feb1203392626ee2ee1e562c5a4473e1fb4d47a7f4829d0193d9710111002c2c"
+    sha256 cellar: :any,                 arm64_sonoma:  "0136bc5ec62c1cba6554158331ac743af6a233ec958640b4d975787810f91953"
+    sha256 cellar: :any,                 sonoma:        "5e38fa8ca8ddf80562a1e6ebabbc6ec8cf911440433ffba4cfcb02023ca71a1c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8722555cad6b6a5bb5e96b0e25477cd67ace73b412a51e99a85fd204ee66bc9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0bf08d0e331658ab63999f9c3f809bcb737bd6b7ad3e6ee17cbd697e8c48333"
   end
 
   depends_on "cmake" => :build
+  depends_on "librsvg"
   depends_on "libusb"
-  depends_on "qt@5"
+  depends_on "qtbase"
+  depends_on "qtpositioning"
+  depends_on "qtserialport"
+  depends_on "qttools"
   depends_on "yaml-cpp"
 
   def install
-    args = %w[
-      -DINSTALL_UDEV_RULES=OFF
-    ]
-    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5" # Cmake 4 workaround
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DINSTALL_UDEV_RULES=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

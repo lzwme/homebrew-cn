@@ -15,12 +15,13 @@ class GtkDoc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea7c25941f3bfbb28ac2474f625ceb318ffa9b50034ff72df5c0ff569a9a7257"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e08781b4c4fd57b0ffc0ccc6a6a1b549f4b5cf8c8e79d8d44abafddeeb4aa296"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "573c2ca1b61be3fbf577a089c8c4aac63891ee788ae5128082015e9eac4a8b78"
-    sha256 cellar: :any_skip_relocation, sonoma:        "745fbbb1e01f680a73691abeee2fe4d9cfabd5b149f9b1f8aa0bb94af0a7f02f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d15c28ac7bbc1418aca61d0f10c53cf669b0f2b729e06d9411ed055a80139f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "209f72c9fb356cf94f65c9127f500c6a85b876743471f44ceb18b4cd9f2d1955"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a90c3d33110464699a6c11e6a01ba0cea2e780ab6cae064364ccaba924607ae6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c323f71e2b55623ccb7d8235bd79f04bd02b8e5b435aeefa35093cc0f2f1fbcc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ea95bfdc68fc15762a49339006d88e2292f5fdcc790c41aa1665dd7d785eaaf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d8058ae6f1c944ebc5c11e8154c0dabdc6b18fe200b9125f55416bc8ecb84473"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8290d097809af9fb72aeea7aaca594ecbc170ae542c677508e1a394956d575c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06bc0e0c42aadb3c4c90e6f4f68296e1da0c23a9311bfa3cf0ae6b1e25c8a7f9"
   end
 
   depends_on "meson" => :build
@@ -28,7 +29,7 @@ class GtkDoc < Formula
   depends_on "pkgconf" => :build
   depends_on "docbook"
   depends_on "docbook-xsl"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -47,7 +48,7 @@ class GtkDoc < Formula
     # To avoid recording pkg-config shims path
     ENV.prepend_path "PATH", Formula["pkgconf"].bin
 
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
     venv.pip_install resources
     ENV.prepend_path "PATH", libexec/"bin"
 

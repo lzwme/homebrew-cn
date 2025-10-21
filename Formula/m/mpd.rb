@@ -1,22 +1,18 @@
 class Mpd < Formula
   desc "Music Player Daemon"
   homepage "https://www.musicpd.org/"
-  url "https://ghfast.top/https://github.com/MusicPlayerDaemon/MPD/archive/refs/tags/v0.24.5.tar.gz"
-  sha256 "ab7f9a2315eff97cc47dff5da9b9c675b1764cd50f161dc295b8a0d1956a6244"
+  url "https://ghfast.top/https://github.com/MusicPlayerDaemon/MPD/archive/refs/tags/v0.24.6.tar.gz"
+  sha256 "2cb85b48303f1b6325dc37ee9aeb65ae5353820b4761d4ca53f61c680716ae90"
   license "GPL-2.0-or-later"
-  revision 2
   head "https://github.com/MusicPlayerDaemon/MPD.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "cbfe018650e11d3a81504d13d046da9e368842f3834a76e0646bd28cc8cd254a"
-    sha256 cellar: :any, arm64_sequoia: "c2ac996ca9c88223d47853c18508f295b52488b2d6b7d672f559701f200f8cf7"
-    sha256 cellar: :any, arm64_sonoma:  "c10d610f17f0409b4306b6550e504e317f7d4563f15c22e84df868096a20569d"
-    sha256 cellar: :any, arm64_ventura: "53d65b62f0b174eedb410986e7dc1dd1aafa82d220699f3d77339638b1f7b16b"
-    sha256 cellar: :any, sonoma:        "91f79003f71d6952e7c7fe30df4e8e2f1b2617274468fdb40718c03a3fe99c22"
-    sha256 cellar: :any, ventura:       "eb33cd55a20ebec97bfd2ad18e0f4275e3aa6f9e629423ac68d87c84eb2e8f4b"
-    sha256               arm64_linux:   "ffa0fe888741c5d0cfe8158001d4388a9d245d62d8d3eb8f8e86d57ef0a0d6fa"
-    sha256               x86_64_linux:  "0e0d3e46ebf13ee9fd08e79d227fda5353b77eea10fc3d345a54be12d1eba0dd"
+    sha256 cellar: :any, arm64_tahoe:   "a20f682baded244e6690d533be270149422d4d19450ad9e03da46ec7a833790d"
+    sha256 cellar: :any, arm64_sequoia: "86b265a48aba1858a1269603a5f3940d66acb344607a1af5e58be1627f3fce23"
+    sha256 cellar: :any, arm64_sonoma:  "ba7a8196f419513cb1dfab1f6ef2a9979507bc5133e395479a84e43194068ae5"
+    sha256 cellar: :any, sonoma:        "781d3976622e8dec2ef1f138e1f63abe7e94073d45b6de6604a8a7b574f011d9"
+    sha256               arm64_linux:   "e2e0482decf2edb831c3f2d5e03ba6b8e230a885176372f06267bf920183179c"
+    sha256               x86_64_linux:  "8f3b2289ffc73f481ce6d736cf05eebbe75f6ec91f195949dde63ac44fbe01c7"
   end
 
   depends_on "meson" => :build

@@ -8,17 +8,18 @@ class Nvchecker < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f03055f4101334c088c49083d4022c387c60483a26ed244441962959cf6947b7"
-    sha256 cellar: :any,                 arm64_sequoia: "8a21fada680024e9c6902bc0c05392587dbe75c8a894f927347bfd70a32193d7"
-    sha256 cellar: :any,                 arm64_sonoma:  "0332d79eb933b66ee4c255fe7a2ea8a3b0299a13e82a246ca2d5dbec13855842"
-    sha256 cellar: :any,                 sonoma:        "a905c15f9efd5db3fff6e0f55246df17624ecc458fb4e418820630cb9276e3df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff31099770e1304f2570622bbabcf0a9d7593d38f2e46e1c740651cd1140e5c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6916fca1971bfbd85dbaacc1d05590d25831b875cb58bd4caba77f1521c07bc1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "a8618b16390f9b5ec17e807a0919cd56640108fbbe761a1b3ae466112de3f66c"
+    sha256 cellar: :any,                 arm64_sequoia: "25d88546c21293037867d79d0c5dc2454be8e2e5e4b3e216f06eb84944347e4a"
+    sha256 cellar: :any,                 arm64_sonoma:  "e75f82e2d200d9cdd27a7e0b12f54cee48208d22ad563477915088b25643cfbb"
+    sha256 cellar: :any,                 sonoma:        "a28b5f6a568a2b676e083bc03da732a6d163c5f087a6d61dc0622843cf7c8c41"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e3a126a9e804fcec5dbbaa41b8d800a23a48a24f128eab56ebe78d1e2e9342e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51b1838ef2e3709866d15ba400318e89f92c88018c22d4643f74d0eee8bed68e"
   end
 
   depends_on "curl"
   depends_on "openssl@3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
@@ -26,13 +27,13 @@ class Nvchecker < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
-    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
+    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
+    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
   resource "pycurl" do
-    url "https://files.pythonhosted.org/packages/71/35/fe5088d914905391ef2995102cf5e1892cf32cab1fa6ef8130631c89ec01/pycurl-7.45.6.tar.gz"
-    sha256 "2b73e66b22719ea48ac08a93fc88e57ef36d46d03cb09d972063c9aa86bb74e6"
+    url "https://files.pythonhosted.org/packages/e3/3d/01255f1cde24401f54bb3727d0e5d3396b67fc04964f287d5d473155f176/pycurl-7.45.7.tar.gz"
+    sha256 "9d43013002eab2fd6d0dcc671cd1e9149e2fc1c56d5e796fad94d076d6cb69ef"
   end
 
   resource "structlog" do

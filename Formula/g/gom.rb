@@ -15,28 +15,27 @@ class Gom < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ac68b886f3936f558ee1a6f7023bf6789fa4479806011d55cbcde1f3f530dc24"
-    sha256 cellar: :any, arm64_sequoia: "286804e2a0f7f463371deb3b386ea5943a2546725f730d9023b1c8ef94b58229"
-    sha256 cellar: :any, arm64_sonoma:  "a1da7b8efd1e81f0e2042e6b6ab12ae7ee6d59078b618f9084646cfa813e8077"
-    sha256 cellar: :any, arm64_ventura: "8710fd832106faaf1887b3a6c13959cd42879f780fe2173c798d50a675f0cfc7"
-    sha256 cellar: :any, sonoma:        "4355ac5f7df2cecbf3c4f08ddbb993a8452f1919d1c06f2de625b4afac9bf658"
-    sha256 cellar: :any, ventura:       "f91f8be1c52a4af4c309591d915fe0a78909255466255e3d913d0dbe535f37d6"
-    sha256               arm64_linux:   "c0aae5f129a2a49b67386a4bce25ad16758c54e9db383da740a51c6b954f388e"
-    sha256               x86_64_linux:  "682a80579b541d47fd4e224e9c4d03d2bdd73d436fcba5c0877898bdaa38c185"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "72a2093c242c6de92ce26583e6add094f4ca79cc9d71e6232f8ee04a6024b2c7"
+    sha256 cellar: :any, arm64_sequoia: "73a0c35e97b516467216c1d954c15e54c13659846143c7b76bfa5f99a7fecdc0"
+    sha256 cellar: :any, arm64_sonoma:  "92d91eced46a0e8176cb2b99b064f908f283901373b2aedcfc64d94a782fc7e7"
+    sha256 cellar: :any, sonoma:        "68a3c7f359dbfae00c68786ae064a84a42fd306005bfcf527eadaa948fec9275"
+    sha256               arm64_linux:   "c633b0b89815e1c525338d1ca8a9be3fe5a53e7cb917b3e2c3886a5257eff5d7"
+    sha256               x86_64_linux:  "72438d9c9681d46a624474e9e6dddd5eb7d7aaf2a907b8a9b5e87d36c6eab43b"
   end
 
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "gdk-pixbuf"
   depends_on "gettext"
   depends_on "glib"
   depends_on "sqlite" # indirect dependency via glib
 
   def install
-    site_packages = prefix/Language::Python.site_packages("python3.13")
+    site_packages = prefix/Language::Python.site_packages("python3.14")
 
     system "meson", "setup", "build", "-Dpygobject-override-dir=#{site_packages}", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

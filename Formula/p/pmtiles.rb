@@ -1,8 +1,8 @@
 class Pmtiles < Formula
   desc "Single-file executable tool for creating, reading and uploading PMTiles archives"
   homepage "https://protomaps.com/docs/pmtiles"
-  url "https://ghfast.top/https://github.com/protomaps/go-pmtiles/archive/refs/tags/v1.28.1.tar.gz"
-  sha256 "feef16bf2aa01ea080e4b730925a6ba6433deb6d1159d836c92c28481cc3fbb1"
+  url "https://ghfast.top/https://github.com/protomaps/go-pmtiles/archive/refs/tags/v1.28.2.tar.gz"
+  sha256 "2085939dcaa616767fc7997d200693f40a62adc6e79f3db2a6d2a9eaa0ba0298"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Pmtiles < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "347a861c053678f27a508138bf4274ff5cd92b4c372b1333cf0b07c9f2f46f89"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "347a861c053678f27a508138bf4274ff5cd92b4c372b1333cf0b07c9f2f46f89"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "347a861c053678f27a508138bf4274ff5cd92b4c372b1333cf0b07c9f2f46f89"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a616a99898e8001a2293b744184741cecd76d5c431097efa687426a4c36a58e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dce128f5a1a40db662bb221e07b215ea39a144778cac58f870cc1de8cd78fc66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b1e9d42b29ed8c99ac042d63a940e1b14482f3416d5cd9912d1d84e12840759"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5853e76d1dae2d7dec69439fe6f3cc2a8fcd6b4c7c462e97d6eb9071e8a68326"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5853e76d1dae2d7dec69439fe6f3cc2a8fcd6b4c7c462e97d6eb9071e8a68326"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5853e76d1dae2d7dec69439fe6f3cc2a8fcd6b4c7c462e97d6eb9071e8a68326"
+    sha256 cellar: :any_skip_relocation, sonoma:        "416d46180f7726074a57789f797ca8b0493610129ca078dd648205c9e28f9ae0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "174d9a4e94c7feb05b63c16417a6157cfafa4f97dfb8c311810aa8f510bf70aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac37734d4973564f17b4de0576a5772a07b497dc69161024294dea90cf8c9098"
   end
 
   depends_on "go" => :build

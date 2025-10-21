@@ -1,8 +1,8 @@
 class Open62541 < Formula
   desc "Open source implementation of OPC UA"
   homepage "https://open62541.org/"
-  url "https://ghfast.top/https://github.com/open62541/open62541/archive/refs/tags/v1.4.13.tar.gz"
-  sha256 "491f8c526ecd6f2240f29cf3a00b0498587474b8f0ced1b074589f54533542aa"
+  url "https://ghfast.top/https://github.com/open62541/open62541/archive/refs/tags/v1.4.14.tar.gz"
+  sha256 "0a0a8830e4e5f720e901579f826c788fdbc3d49f44a9515ab15a06e877b59416"
   license "MPL-2.0"
 
   livecheck do
@@ -11,14 +11,12 @@ class Open62541 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c3ad446dbaa6cc2582ceb7165e6069e7765abe93bd3151b60e9ee12ae8a01435"
-    sha256 cellar: :any,                 arm64_sequoia: "2af9b81e50d603216505d07eaa8481ad9a6317ecc354c72093274d9723f968b0"
-    sha256 cellar: :any,                 arm64_sonoma:  "aada8c113540f978af6d5c4a763c116d765826c8a0059343d301da9b19448094"
-    sha256 cellar: :any,                 arm64_ventura: "ad70816a67523e5cab47075ccd220badcb8b65f31cfc55089cf9b60c8de0d8d8"
-    sha256 cellar: :any,                 sonoma:        "915b697e025a576dc8bc3475f1c70a6716ab8af9b477d0d64015741e1f97586e"
-    sha256 cellar: :any,                 ventura:       "fa7539473522ce02a705794967260ea4cca1ab84f20f1fe50f92c35d752c92f5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c1c40afb3f7619ff0525f3fc914bcd6e910ba23cbdd8b0dcb4c80454673ce2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f91ca72f7423a6c39ebf27f8f4b82e02a2af61e5f7865697a33ddb00bf1e841c"
+    sha256 cellar: :any,                 arm64_tahoe:   "b4e9c9187e98ed33128c29cbf85036df1794b6794b04ac8506d09513fbec4255"
+    sha256 cellar: :any,                 arm64_sequoia: "a59ebcc71453d2a17f6a1bb19df9848d7bc8852f8c261f6cf4a572e2236795e6"
+    sha256 cellar: :any,                 arm64_sonoma:  "683aee59dfd5fdda3a8ca2b26f0b6c22d1098ec4cff3517b0bfb7a44fdd04b30"
+    sha256 cellar: :any,                 sonoma:        "fcbdfc7557252cc2b0ef202e34e827ed7fcced7aec5bd7a4f12d94ac6ef74ccc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d4b7f585a53c3f9a55a943bbc8bfa71425997c0c5c1f4ffc34b8606855a7416"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66267f58eca111516b8c34a375c1510e78ece4173cddbfcb381da3b0feef056a"
   end
 
   depends_on "cmake" => :build

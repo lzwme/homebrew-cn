@@ -8,23 +8,25 @@ class Mapproxy < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "34b4ef1b2365dc18c40bdc4aab52aec7d86edce40398da39a565a48e71e0f9f8"
-    sha256 cellar: :any,                 arm64_sequoia: "a365482cae7fcaba7d32acb6fabed5de75a838bed3c2fd4ede0d60d0e02456f7"
-    sha256 cellar: :any,                 arm64_sonoma:  "4aca8861d8eb4ea70851061be2d7d47701e3e4e2f4f5fd14cf80105344b23a47"
-    sha256 cellar: :any,                 sonoma:        "b7f1bca3d9aedcfdc2f1d9323a37882c33f412df585eab9227505db093f1ba7c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e71728068699422f42bd706a364be43d9eb769090daa4442baace77ae115c42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c673b4996b47c646ca4ca5b84a6d1d40b255f1b8b07870dc5a3771463c80788"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "7b3aa6676ad2964167f4ee7fd6e287b25c2f0030d6e329b04bb2ab49e2d3623a"
+    sha256 cellar: :any,                 arm64_sequoia: "1c6c04210c9cc06f3beac70fc2bab52c35160dc699caf4680b390a24fe52a73e"
+    sha256 cellar: :any,                 arm64_sonoma:  "c641dea15ac5558e4b2c739d4a42b1585f92c67e6431ce679bd0e532e0da64aa"
+    sha256 cellar: :any,                 sonoma:        "5b4fb04c2c2ee523ec97f49c44bdae2ba492577e97348cc9ce724360c6de96ee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee81f0600c9580bc7c03a7234684348f207aac8c9212fdf4dac395976ce0f6a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "714bfe89806de48a9645a22dea46e5ffe04c56df5d3bd03b528a7e120a55d02b"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build # for rpds-py
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "geos" # for shapely
   depends_on "libyaml"
   depends_on "numpy" # for shapely
-  depends_on "pillow"
+  depends_on "pillow" => :no_linkage
   depends_on "proj"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -34,8 +36,8 @@ class Mapproxy < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
-    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
+    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
+    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
   end
 
   resource "future" do
@@ -74,13 +76,8 @@ class Mapproxy < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
-    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
+    url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
+    sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
   end
 
   resource "shapely" do
@@ -94,7 +91,7 @@ class Mapproxy < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

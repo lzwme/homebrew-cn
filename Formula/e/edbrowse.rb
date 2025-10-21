@@ -1,20 +1,18 @@
 class Edbrowse < Formula
   desc "Command-line editor and web browser"
   homepage "https://edbrowse.org"
-  url "https://ghfast.top/https://github.com/edbrowse/edbrowse/archive/refs/tags/v3.8.12.tar.gz"
-  sha256 "b5125c7d13c2ed4491dc0d5a31116b244db62ae1c417ba5d29910311d1194632"
+  url "https://ghfast.top/https://github.com/edbrowse/edbrowse/archive/refs/tags/v3.8.13.tar.gz"
+  sha256 "599fdbc0ee6f500cc63af91c88404d90e79cbfb175c62b774c8d4d458b663877"
   license "GPL-2.0-or-later"
   head "https://github.com/edbrowse/edbrowse.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "438daab884b6afa9f299f98991602fd241dd93df1f94c98cdb4cfaf082c71271"
-    sha256 cellar: :any,                 arm64_sequoia: "1059c249fdc4473bb94aecdb88165610ce77bb5ac7ef3b0f305de0547b9f95e2"
-    sha256 cellar: :any,                 arm64_sonoma:  "61776b8d57d723fa908d7adbd7e4809ddb74cf6d79dcb328bca7d968f53efdcc"
-    sha256 cellar: :any,                 arm64_ventura: "b2f567f1855a2f083486a0071ed7ee99c722262baa9da61490b5dc7d2a2f2343"
-    sha256 cellar: :any,                 sonoma:        "fa304945f90088cd4376c092d1c37757e50849b8d3c23f773311f0ae10dd31d3"
-    sha256 cellar: :any,                 ventura:       "65f9a2871c07b22ec5a62bd1b1ad344c3fe83758b5f54607cf9df0dd657ebd34"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "19e13259385a839bc97d2a8c915b071c7bcd52ccd197ad0f8612564db33ae57d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1b5862d17d78723f9685cf613663b788c0430e86ee8accb80f5182ed800fa16"
+    sha256 cellar: :any,                 arm64_tahoe:   "0dedb75ee8b54aa73a84fd5c77d54834ecdb8dfc7a4d500403e4bc8ff94d2215"
+    sha256 cellar: :any,                 arm64_sequoia: "dc8b4ff71bf2852f4d63965ea8c008d011a863372e444ba60a05d7b1e7b11ace"
+    sha256 cellar: :any,                 arm64_sonoma:  "b02674f2ad438baa433e9a5d52bd712aef3aead4ba2935da0874009cf86730b9"
+    sha256 cellar: :any,                 sonoma:        "4ef780e3da75330f0b99d487f16ec26396bacbf8687a29d3ef1f239e5ceed9a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "643ed22e352b0a7801507fd550abf2e5ae5d75ceb4393c76e13deae761a361a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "763e41666cf0852f0b0868fd43b5006b5bcb6bdad86edce8e90d3687d506444e"
   end
 
   depends_on "pkgconf" => :build

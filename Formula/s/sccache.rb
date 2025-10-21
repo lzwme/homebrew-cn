@@ -1,8 +1,8 @@
 class Sccache < Formula
   desc "Used as a compiler wrapper and avoids compilation when possible"
   homepage "https://github.com/mozilla/sccache"
-  url "https://ghfast.top/https://github.com/mozilla/sccache/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "eed7ba2b55f91511481df75e238307ac95885064fe734e0aab945654244ecec8"
+  url "https://ghfast.top/https://github.com/mozilla/sccache/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "309edaf43f44088e55e99ce14eb9cfdee8f85acad290171ebfd29eb9e368def3"
   license "Apache-2.0"
   head "https://github.com/mozilla/sccache.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Sccache < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3960ae92e6a32d5def85939442dd6a1270d7ca56d2d5f3955c2d7263f2dae000"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e91e90319cdc0225a6538a2599f758e1d0093e55a17b1bd3c7f9abb809997e61"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ac8fc0441bf7c0ed415f1c0a3c05518a96875fd56420401ef6e16af6355416d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "05c6b1aa74aefd4944f496e1d4697d726bb8518cef5771da8a5b32924375bd8d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "32a1067331f31871cf7bbeedab46e7b975a8861320b1677004330dbb92dca28f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31777d4b283b1a8e7723b9a8e499740fe0b2c6171924bc7d03b29531d01b24d4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c05828146c2b4d0b5e97851faf0528392ad38db1370678be4ee782d212a373d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a56fad33d0363b873422aa48afcd1d206b59d5888b96638fd3aa6fc9f3cf126"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04737c5e48e81a0e164aebd0aa7af6749b63bb8ef23fadf01fd2bc2462f3b877"
+    sha256 cellar: :any_skip_relocation, sonoma:        "42ab23741213e6031678d7622e72e623d5503d1d5c75ed02cce0761115b44a03"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0f8b613f29c5a27438dd40967f50992ad9d99b3a422bd50d6020ff12dc76812"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddb5ab9d593a391fab2ef0df44db64eafa22836c17cbc9a38c64aafeb6d679bc"
   end
 
   depends_on "pkgconf" => :build

@@ -11,21 +11,23 @@ class Mvt < Formula
   head "https://github.com/mvt-project/mvt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ff2966468302cee196720933556a547835b54c48bcf2a6612c88e0c5bc0f291f"
-    sha256 cellar: :any,                 arm64_sequoia: "70a53f49c074e202bf4f326d31efdb6efb20b6ded0004b22006634ed0fcc063f"
-    sha256 cellar: :any,                 arm64_sonoma:  "b8ff7ee0cf7fe86546703d6f8b88c8f69ff334148fcde15928ed0e5e70d9fcd7"
-    sha256 cellar: :any,                 arm64_ventura: "5912ce750d445d2eda02eab6543117afe5c4ca541727edde6ea0dda61b79ec2b"
-    sha256 cellar: :any,                 sonoma:        "3f6593c04c01a0ba9d4cd10da7bc6988c09d06f0cbfb8b9932bb2fca15836dbc"
-    sha256 cellar: :any,                 ventura:       "715eaa5446232033528a4aeb0de064353277dc36476e430b458c00e480968731"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c4fa983d3965a3eec11e7334be5a27debd89414be76cacde4b7bbc16001ee5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47818cd1ce919b00f0f18546c0a12923a62230cb8134571eac29aed59f1f3191"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "26f982cf46e578503a4e19914c345c4296a795e0f3e2fa377cee88f2e2b76007"
+    sha256 cellar: :any,                 arm64_sequoia: "0e240e22b4fc14201fc8125686e7ba15f95d8a4f517caed10524dbd96d62406f"
+    sha256 cellar: :any,                 arm64_sonoma:  "f804ee3d9ca58028b25cb3200cee4ac721b65dcff0717f66957508b8db5da2d9"
+    sha256 cellar: :any,                 sonoma:        "bf69f47e93e88327f50976d64de0a3f73dc7768dddbd1fda82bd047a6eab4939"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "67af90f707bfcdef25f4d19b3d7adfc808b07ac3e0e64fddfb86d4a3e334ed00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e50b00ac4873fe7f098c48c1b112fab8a5cc2a36f8565d1c80cfa0324d54e77d"
   end
 
   depends_on "rust" => :build # for pydantic_core
-  depends_on "certifi"
-  depends_on "cryptography"
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
+
+  # `pydantic` and `pydantic-core` are manually updated to support Python 3.14
+  # PR ref: https://github.com/mvt-project/mvt/pull/706
 
   resource "adb-shell" do
     url "https://files.pythonhosted.org/packages/8f/73/d246034db6f3e374dad9a35ee3f61345a6b239d4febd2a41ab69df9936fe/adb_shell-0.4.4.tar.gz"
@@ -48,8 +50,8 @@ class Mvt < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
@@ -78,8 +80,8 @@ class Mvt < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "iosbackup" do
@@ -103,8 +105,8 @@ class Mvt < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/69/7f/0652e6ed47ab288e3756ea9c0df8b14950781184d4bd7883f4d87dd41245/multidict-6.6.4.tar.gz"
-    sha256 "d2d4e4787672911b48350df02ed3fa3fffdc2f2e8ca06dd6afdf34189b76a9dd"
+    url "https://files.pythonhosted.org/packages/80/1e/5492c365f222f907de1039b91f922b93fa4f764c713ee858d235495d8f50/multidict-6.7.0.tar.gz"
+    sha256 "c6e99d9a65ca282e578dfea819cfa9c0a62b2499d8677392e09feaf305e9e6f5"
   end
 
   resource "nskeyedunarchiver" do
@@ -133,13 +135,13 @@ class Mvt < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f0/86/8ce9040065e8f924d642c58e4a344e33163a07f6b57f836d0d734e0ad3fb/pydantic-2.11.5.tar.gz"
-    sha256 "7f853db3d0ce78ce8bbb148c401c2cdd6431b3473c0cdff2755c7690952a7b7a"
+    url "https://files.pythonhosted.org/packages/8d/35/d319ed522433215526689bad428a94058b6dd12190ce7ddd78618ac14b28/pydantic-2.12.2.tar.gz"
+    sha256 "7b8fa15b831a4bbde9d5b84028641ac3080a4ca2cbd4a621a661687e741624fd"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/ad/88/5f2260bdfae97aabf98f1778d43f69574390ad787afb646292a638c923d4/pydantic_core-2.33.2.tar.gz"
-    sha256 "7cb8bc3605c29176e1b105350d2e6474142d7c1bd1d9327c4a9bdb46bf827acc"
+    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
+    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
   end
 
   resource "pydantic-settings" do
@@ -158,8 +160,8 @@ class Mvt < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "requests" do
@@ -198,8 +200,8 @@ class Mvt < Formula
   end
 
   resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/f8/b1/0c11f5058406b3af7609f121aaa6b609744687f1d158b3c3a5bf4cc94238/typing_inspection-0.4.1.tar.gz"
-    sha256 "6ae134cc0203c33377d43188d4064e9b357dba58cff3185f22924610e70a9d28"
+    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
+    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do

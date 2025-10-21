@@ -11,12 +11,13 @@ class Mapserver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5b7ca5bcfd2e30732546a2e506b64f36932ca2130b4a3b1d506f95edfe1954ee"
-    sha256 cellar: :any,                 arm64_sequoia: "fc2012d15b00099977a55ccd034ece8c5d0085845e74276e62a667e210ec152a"
-    sha256 cellar: :any,                 arm64_sonoma:  "bc2601c719893173a15793208975a9d52d33da45ea7c41a8a303514f12a356b6"
-    sha256 cellar: :any,                 sonoma:        "d35b2c710f7215962ba34e8340e389c5f2c15c5b1175402d3d80b9369b2b54b3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "493bfdd9957029b996e411c7f53281cb91344c051d262155fbe09e602064f25e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fbade0e1206e527b84189e162ca03d535268c413a423711eccc39c3b5d222bd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "8fa29b0b04b3f1e73d620196b7809b4eb1be39b3d26cf93a8e4608a3487a69bc"
+    sha256 cellar: :any,                 arm64_sequoia: "1f15ea0fb47a73193c942866c6af36c36dfaa061dfce746ac43b612bb8e1c568"
+    sha256 cellar: :any,                 arm64_sonoma:  "ed25b7ef4476a86dd618e22544a7f30468fbe919baafb5b607e5b4d4f0a0bb56"
+    sha256 cellar: :any,                 sonoma:        "f048b34ed7eb7714ee4d2ae711553e26178afa8da497f7495bee8903a2bacc36"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a917704855c18149fddfb8487c04aad3ef7b4406187a7addcc4f3a5a23df0192"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf90b704441e14c4a785fb9d9b1dfa223f2681f5512edd39c9d77babb028972b"
   end
 
   depends_on "cmake" => :build
@@ -35,12 +36,12 @@ class Mapserver < Formula
   depends_on "pcre2"
   depends_on "proj"
   depends_on "protobuf-c"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "curl"
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

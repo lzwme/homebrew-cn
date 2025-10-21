@@ -3,17 +3,17 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/0a/f9/5c5bcce82a7997cc0eb8c47b7800f862f6b56adc40486ed246e5010d443b/fastapi-0.119.0.tar.gz"
-  sha256 "451082403a2c1f0b99c6bd57c09110ed5463856804c8078d38e5a1f1035dbbb7"
+  url "https://files.pythonhosted.org/packages/a6/f4/152127681182e6413e7a89684c434e19e7414ed7ac0c632999c3c6980640/fastapi-0.119.1.tar.gz"
+  sha256 "a5e3426edce3fe221af4e1992c6d79011b247e3b03cc57999d697fe76cbf8ae0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "14d72e1ec5b372acc014adfbe9a41132aa75a159492f7bb78139f3b5bd4e6333"
-    sha256 cellar: :any,                 arm64_sequoia: "21ed19ad8584c316d36483d91da588bd7fb14d5e00a86e237841e7e4ffa10b89"
-    sha256 cellar: :any,                 arm64_sonoma:  "3d2d891f7d5b2520528f669071868d85071b6ac2a16416e1858b6c5c25c9f500"
-    sha256 cellar: :any,                 sonoma:        "44b93b8a93cadd83f3436250f8b32bbff884ff289c66970ad20daa1f76b719bc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa55f065e2ce5a4f518ed0f3b2a9d731632d1fa13e14f30dc6755f344b1abdb0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b4c1304387f6d60278e95eb6dbcdb1ade16decfb308075297ea368093ee6d0a"
+    sha256 cellar: :any,                 arm64_tahoe:   "8f7d30341750ce1489aa3620812f12a5682869ddcc8e6526d98c64ef2a8318fc"
+    sha256 cellar: :any,                 arm64_sequoia: "282dd5a2f0ce922d70ec431021dd2d71c3c91d57ab79f4e1c55749163fd50b5e"
+    sha256 cellar: :any,                 arm64_sonoma:  "3a6c635f7d17e9a2c82aa0dc4d90900afa101cfb40563cdb6dff01d836189838"
+    sha256 cellar: :any,                 sonoma:        "29c6d2c9ce35907ab98f3822a7b193781228fb6f14adcfd4407367621974ffe8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa4ac2a909319bf9ffb86321a97f8e219ee35065bf3d369c51e28159c660c373"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3215f1ced0a79dc3bad03bf850f23beffa9bd4bbffc0564cb45ce9f5ee40bc53"
   end
 
   depends_on "rust" => :build # for pydantic
@@ -81,8 +81,8 @@ class Fastapi < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "jinja2" do
@@ -106,13 +106,13 @@ class Fastapi < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/c3/da/b8a7ee04378a53f6fefefc0c5e05570a3ebfdfa0523a878bcd3b475683ee/pydantic-2.12.0.tar.gz"
-    sha256 "c1a077e6270dbfb37bfd8b498b3981e2bb18f68103720e51fa6c306a5a9af563"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/7d/14/12b4a0d2b0b10d8e1d9a24ad94e7bbb43335eaf29c0c4e57860e8a30734a/pydantic_core-2.41.1.tar.gz"
-    sha256 "1ad375859a6d8c356b7704ec0f547a58e82ee80bb41baa811ad710e124bc8f2f"
+    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
+    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
   end
 
   resource "pygments" do
@@ -146,13 +146,13 @@ class Fastapi < Formula
   end
 
   resource "rignore" do
-    url "https://files.pythonhosted.org/packages/ae/46/e5ef3423a3746f91d3a3d9a68c499fde983be7dbab7d874efa8d3bb139ba/rignore-0.7.0.tar.gz"
-    sha256 "cfe6a2cbec855b440d7550d53e670246fce43ca5847e46557b6d4577c9cdb540"
+    url "https://files.pythonhosted.org/packages/01/1a/4e407524cf97ed42a9c77d3cc31b12dd5fb2ce542f174ff7cf78ea0ca293/rignore-0.7.1.tar.gz"
+    sha256 "67bb99d57d0bab0c473261561f98f118f7c9838a06de222338ed8f2b95ed84b4"
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/68/47/aea50a61d85bc07a34e6e7145aad7bd96c5671a86a32618059bad0cbc73b/sentry_sdk-2.41.0.tar.gz"
-    sha256 "e7af3f4d7f8bac4c56fbaf95adb0d111f061cce58d5df91cfcd4e69782759b10"
+    url "https://files.pythonhosted.org/packages/31/04/ec8c1dd9250847303d98516e917978cb1c7083024770d86d657d2ccb5a70/sentry_sdk-2.42.1.tar.gz"
+    sha256 "8598cc6edcfe74cb8074ba6a7c15338cdee93d63d3eb9b9943b4b568354ad5b6"
   end
 
   resource "shellingham" do
@@ -191,18 +191,18 @@ class Fastapi < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/71/57/1616c8274c3442d802621abf5deb230771c7a0fec9414cb6763900eb3868/uvicorn-0.37.0.tar.gz"
-    sha256 "4115c8add6d3fd536c8ee77f0e14a7fd2ebba939fed9b02583a97f80648f9e13"
+    url "https://files.pythonhosted.org/packages/cb/ce/f06b84e2697fef4688ca63bdb2fdf113ca0a3be33f94488f2cadb690b0cf/uvicorn-0.38.0.tar.gz"
+    sha256 "fd97093bdd120a2609fc0d3afe931d4d4ad688b6e75f0f929fde1bc36fe0e91d"
   end
 
   resource "uvloop" do
-    url "https://files.pythonhosted.org/packages/af/c0/854216d09d33c543f12a44b393c402e89a920b1a0a7dc634c42de91b9cf6/uvloop-0.21.0.tar.gz"
-    sha256 "3bf12b0fda68447806a7ad847bfa591613177275d35b6724b1ee573faa3704e3"
+    url "https://files.pythonhosted.org/packages/06/f0/18d39dbd1971d6d62c4629cc7fa67f74821b0dc1f5a77af43719de7936a7/uvloop-0.22.1.tar.gz"
+    sha256 "6c84bae345b9147082b17371e3dd5d42775bddce91f885499017f4607fdaf39f"
   end
 
   resource "watchfiles" do
-    url "https://files.pythonhosted.org/packages/2a/9a/d451fcc97d029f5812e898fd30a53fd8c15c7bbd058fd75cfc6beb9bd761/watchfiles-1.1.0.tar.gz"
-    sha256 "693ed7ec72cbfcee399e92c895362b6e66d63dac6b91e2c11ae03d10d503e575"
+    url "https://files.pythonhosted.org/packages/c2/c9/8869df9b2a2d6c59d79220a4db37679e74f807c559ffe5265e08b227a210/watchfiles-1.1.1.tar.gz"
+    sha256 "a173cb5c16c4f40ab19cecf48a534c409f7ea983ab8fed0741304a1c0a31b3f2"
   end
 
   resource "websockets" do

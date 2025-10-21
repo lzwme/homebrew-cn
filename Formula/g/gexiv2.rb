@@ -8,12 +8,13 @@ class Gexiv2 < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "65daf3be90e7c24d84c131e5eb349d90c935f45ceeed7e043cd083617dfde41a"
-    sha256 cellar: :any, arm64_sequoia: "6566b30dffe1e55d2dd899cb609d06567ab05122b320a4135d00485aa5fd23a9"
-    sha256 cellar: :any, arm64_sonoma:  "df3ffe2eaf8be10632c018f21857988aed01f71e43d72362870f09306e28a3d5"
-    sha256 cellar: :any, sonoma:        "1295da3e261bc8240e05d696103954b4cbefb0b2e14d292d475c9195cd32f565"
-    sha256               arm64_linux:   "94cc5f0acb7cae5223e9bca62fcd96166065faa9c7300335fcb0b7ea0d9a5db7"
-    sha256               x86_64_linux:  "6fa18288dad24d85cabc1725bdd570a9452cd59497606e698c2730e543e0c960"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "24d603085d106cc7d08e199642d858d2b962ffa9e38c40ee4b23bf9953efeeee"
+    sha256 cellar: :any, arm64_sequoia: "0c2696669b2614cbd240188c86a6e45db6ec4e9d672382ae39723f1bb4afb59f"
+    sha256 cellar: :any, arm64_sonoma:  "26e318f39f877307501fc0f7106a8c5541d0e3d6f3bb4761ce3bab0cf76b5221"
+    sha256 cellar: :any, sonoma:        "0a21ff17505b6557231bad21b09a6aaf47e249aa18c1983018a3620fa73cb923"
+    sha256               arm64_linux:   "6f720afb3387da506741f5c2bd998feefc0b208b4c280e5181b0c2f2f768690f"
+    sha256               x86_64_linux:  "d1a0c6ea1f0c31654fa2aa67ec016dc93ae6b19cab16866c72452400111102f1"
   end
 
   depends_on "gobject-introspection" => :build
@@ -21,13 +22,13 @@ class Gexiv2 < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "pygobject3" => [:build, :test]
-  depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "vala" => :build
   depends_on "exiv2"
   depends_on "glib"
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install
