@@ -3,19 +3,18 @@ class Gptme < Formula
 
   desc "AI assistant in your terminal"
   homepage "https://gptme.org/docs/"
-  url "https://files.pythonhosted.org/packages/9c/ac/a6e6db289f591fb6da0468f3efe542cef8c89b1b9611830e33649bfc0a4f/gptme-0.28.3.tar.gz"
-  sha256 "a8779fb70b5c5291f85a66461bad8961ed670d9df8c5cca97658b1d7ca61c93f"
+  url "https://files.pythonhosted.org/packages/d0/a2/0dc222a2854c70bce25c00c9a1c3a86e66cdde077eebeda4eb9b5199387e/gptme-0.29.0.tar.gz"
+  sha256 "3cf7579f2eb5896f3c5c0b8ad6a3d27fc485b3a058da505c4183a83378f8fff0"
   license "MIT"
   head "https://github.com/ErikBjare/gptme.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "c161bd8de57dc63b5bec253408b88dea822d58005179de1b52fa0979a7398d0e"
-    sha256 cellar: :any,                 arm64_sequoia: "d897656e7e1d00dbaf7f2e962044495a0cdcf9e6efd3bced8c85bfc950c18be8"
-    sha256 cellar: :any,                 arm64_sonoma:  "5b8be2e59e8dba9cccc0952a5683f8e4a95b11b88d53c26db24212d79abb0422"
-    sha256 cellar: :any,                 sonoma:        "e13f390fb14afbf6ee5916dd9210058c5a241c576cb70b9a03fddb8521363740"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7961917b75f12dccc4a6dca837f1e6e48a5b04d8a4699537d8b0cc9fcb461129"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a14e31fe07019ee209bcdd8a578dc46c69ceff425d5bcbf8925bf97519a7fa59"
+    sha256 cellar: :any,                 arm64_tahoe:   "bbb18df94db123d3fce22bc14a96c76c0c648c537805eab4d12bcd53803df9a3"
+    sha256 cellar: :any,                 arm64_sequoia: "ea2aa554d0656e73d7d15a263b5c74ef5bade3b11e0634a694dbb453365b2f64"
+    sha256 cellar: :any,                 arm64_sonoma:  "4fb4f8c0060f2ab0d33e427ded0a016f9d58fd7920448ea1414eb5f54b66234a"
+    sha256 cellar: :any,                 sonoma:        "f2ebe5e0b29f7ab1ba6bd6f54432c224dad9702fc0f31a786201694d8234c367"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "355debfe05387a2419192c57dd5cfbe956e2fab1528bc5ce9d8d7559618bd21b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d811ae1d748090d13e145b959a5cd4dd78b9e0cd495ce2e6b316d8ea23f8969e"
   end
 
   depends_on "rust" => :build
@@ -252,6 +251,11 @@ class Gptme < Formula
     sha256 "8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13"
   end
 
+  resource "pyyaml" do
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
+  end
+
   resource "questionary" do
     url "https://files.pythonhosted.org/packages/f6/45/eafb0bba0f9988f6a2520f9ca2df2c82ddfa8d67c95d6625452e97b204a5/questionary-2.1.1.tar.gz"
     sha256 "3d7e980292bb0107abaa79c68dd3eee3c561b83a0f89ae482860b181c8bd412d"
@@ -263,8 +267,8 @@ class Gptme < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/49/d3/eaa0d28aba6ad1827ad1e716d9a93e1ba963ada61887498297d3da715133/regex-2025.9.18.tar.gz"
-    sha256 "c5ba23274c61c6fef447ba6a39333297d0c247f53059dba0bca415cac511edc4"
+    url "https://files.pythonhosted.org/packages/90/f2/97d95db85e11cc85f97581cfc8b4a0405c7fb6099003c23ffaaa0cb4f31d/regex-2025.10.22.tar.gz"
+    sha256 "cc50db098b9d678ace33176a3ab4099616726ae4680fee6ac292302e8950fc4c"
   end
 
   resource "requests" do

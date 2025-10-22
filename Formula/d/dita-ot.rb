@@ -1,8 +1,8 @@
 class DitaOt < Formula
   desc "DITA Open Toolkit is an implementation of the OASIS DITA specification"
   homepage "https://www.dita-ot.org/"
-  url "https://ghfast.top/https://github.com/dita-ot/dita-ot/releases/download/4.3.4/dita-ot-4.3.4.zip"
-  sha256 "011c65bbe55b917f572e8d8e81a5518504cff0706b436f1c8a6565a1d2d98f08"
+  url "https://ghfast.top/https://github.com/dita-ot/dita-ot/releases/download/4.3.5/dita-ot-4.3.5.zip"
+  sha256 "a2e5a6ce9841e35fffb6363a11c2e5dec23a2f64f3a397940221cbdfe159e21c"
   license "Apache-2.0"
 
   livecheck do
@@ -11,8 +11,7 @@ class DitaOt < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "58212d549d69642517b4b1abeaacb9da8d76105fd1a7bea9b6dade03f21ecb94"
+    sha256 cellar: :any_skip_relocation, all: "428c841f8b4044f0f1aad6c5301e7f1ff0c35990e65ee8f6d0d8ec2256226bbd"
   end
 
   depends_on "openjdk"

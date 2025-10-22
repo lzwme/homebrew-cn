@@ -1,8 +1,11 @@
 cask "servo" do
-  version "2025-10-20"
-  sha256 "2c7c723b68ba3d52fead45e5478443888723d359946b780a05e32ed3ba5bd8dc"
+  arch arm: "aarch64", intel: "x86_64"
 
-  url "https://ghfast.top/https://github.com/servo/servo-nightly-builds/releases/download/#{version}/servo-latest.dmg",
+  version "2025-10-21"
+  sha256 arm:   "9bba471452a27dbd843065fa9948b7e1e7eeda65fa0efd17449afd61e6340dbd",
+         intel: "4e05a5d11619fa096e2892cabf7b36abf708187584318a2a35e13e9425077fbb"
+
+  url "https://ghfast.top/https://github.com/servo/servo-nightly-builds/releases/download/#{version}/servo-#{arch}-apple-darwin.dmg",
       verified: "github.com/servo/servo-nightly-builds/"
   name "Servo"
   desc "Parallel browser engine"
@@ -21,8 +24,4 @@ cask "servo" do
   app "Servo.app"
 
   zap trash: "~/Library/Application Support/Servo"
-
-  caveats do
-    requires_rosetta
-  end
 end

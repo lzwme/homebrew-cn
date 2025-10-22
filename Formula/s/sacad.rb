@@ -3,22 +3,23 @@ class Sacad < Formula
 
   desc "Automatic cover art downloader"
   homepage "https://github.com/desbma/sacad"
-  url "https://files.pythonhosted.org/packages/bd/17/6f28bcad0fb836320a3574cb1e0259562a63c6658e8cd385f1dcf3b36dbb/sacad-2.8.1.tar.gz"
-  sha256 "587c5966b28f4ec4da2091b10fb654610373f6e6b4db8317a1f944546344f497"
+  url "https://files.pythonhosted.org/packages/b9/ca/2f466cfdbfaecca099e64ccae7930aaf0c2510f88b75af0d6aa5bedd8a1a/sacad-2.8.2.tar.gz"
+  sha256 "72b533f09c6cbdc7d9509ad2e1885f23e2ecc05f9e89d853e1c6fa78eb511ab8"
   license "MPL-2.0"
   head "https://github.com/desbma/sacad.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd31871c74d11004db2dc5bebf707355f01261aae2dece5410c6bddcbd24497a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc788af006699b8c4a552cf86b15e435a0cee1e7ee385ab8e7a9c56e5eb2795c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eda5b193bd17377894c0ed99e6129d6e327eaa6dd5e70e86f505c45b709a7036"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a9d31e57e960047b97c5b2954d2de6e018829d39f14fdfff964807ef05fa32be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d1d1b0eb1fcbf3e85d6501acd6f43e2b420fea8b9df8cd59ed6563081a6b470"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff6c67d68557c0fc0436b654c06f2af24cd37c23179916e601441e6b1d263ca1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ae11107e67c3f4c9fea7632b0b6b024f31750c4f9289b62911d42e22bd57b8d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a9aa2216202ab6a7af3f3423eae573b3e65aa6b0860657419be66379db450e4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5cac0e4e104383284fbb42b2b24cd529ca9ed3d96513870274676986e5e61bb6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4a2092e3c609f81ba60fd37e47bd9e63f38ab59bbda92316a1be06831bfb34a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "68ed002a2c8d70699ab62def9bbc9a1a0d21ea03f5fb8cdd02320d856255ed15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c4aee5d68cb1e27fead202d6ad60b86be234df3844e86ffc883d4c3ee5e0a10"
   end
 
-  depends_on "pillow"
-  depends_on "python@3.13"
+  depends_on "pillow" => :no_linkage
+  depends_on "python@3.14"
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
@@ -29,8 +30,8 @@ class Sacad < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/9b/e7/d92a237d8802ca88483906c388f7c201bbe96cd80a165ffd0ac2f6a8d59f/aiohttp-3.12.15.tar.gz"
-    sha256 "4fc61385e9c98d72fcdf47e6dd81833f47b2f77c114c29cd64a361be57a763a2"
+    url "https://files.pythonhosted.org/packages/ba/fa/3ae643cd525cf6844d3dc810481e5748107368eb49563c15a5fb9f680750/aiohttp-3.13.1.tar.gz"
+    sha256 "4b7ee9c355015813a6aa085170b96ec22315dabc3d866fd77d147927000e9464"
   end
 
   resource "aiosignal" do
@@ -44,13 +45,13 @@ class Sacad < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
-    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
+    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
+    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
   end
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/99/b6/282f5f0331b3877d4e79a8aa1cf63b5113a10f035a39bef1fa1dfe9e9e09/bitarray-3.7.1.tar.gz"
-    sha256 "795b1760418ab750826420ae24f06f392c08e21dc234f0a369a69cc00444f8ec"
+    url "https://files.pythonhosted.org/packages/e8/c1/644ea86b6f1a0864f656a3b3ee5bf8c29daa895cb3233942315fe065ea3a/bitarray-3.7.2.tar.gz"
+    sha256 "27a59bb7c64c0d094057a3536e15fdd693f8520771ee75d9344b82d0a5ade2d0"
   end
 
   resource "cssselect" do
@@ -59,23 +60,23 @@ class Sacad < Formula
   end
 
   resource "frozenlist" do
-    url "https://files.pythonhosted.org/packages/79/b1/b64018016eeb087db503b038296fd782586432b9c077fc5c7839e9cb6ef6/frozenlist-1.7.0.tar.gz"
-    sha256 "2e310d81923c2437ea8670467121cc3e9b0f76d3043cc1d2331d56c7fb7a3a8f"
+    url "https://files.pythonhosted.org/packages/2d/f5/c831fac6cc817d26fd54c7eaccd04ef7e0288806943f7cc5bbf69f3ac1f0/frozenlist-1.8.0.tar.gz"
+    sha256 "3ede829ed8d842f6cd48fc7081d7a41001a56f1f38603f9d49bf3020d59a31ad"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/8f/bd/f9d01fd4132d81c6f43ab01983caea69ec9614b913c290a26738431a015d/lxml-6.0.1.tar.gz"
-    sha256 "2b3a882ebf27dd026df3801a87cf49ff791336e0f94b0fad195db77e01240690"
+    url "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz"
+    sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/69/7f/0652e6ed47ab288e3756ea9c0df8b14950781184d4bd7883f4d87dd41245/multidict-6.6.4.tar.gz"
-    sha256 "d2d4e4787672911b48350df02ed3fa3fffdc2f2e8ca06dd6afdf34189b76a9dd"
+    url "https://files.pythonhosted.org/packages/80/1e/5492c365f222f907de1039b91f922b93fa4f764c713ee858d235495d8f50/multidict-6.7.0.tar.gz"
+    sha256 "c6e99d9a65ca282e578dfea819cfa9c0a62b2499d8677392e09feaf305e9e6f5"
   end
 
   resource "mutagen" do
@@ -84,8 +85,8 @@ class Sacad < Formula
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/a6/16/43264e4a779dd8588c21a70f0709665ee8f611211bdd2c87d952cfa7c776/propcache-0.3.2.tar.gz"
-    sha256 "20d7d62e4e7ef05f221e0db2856b979540686342e7dd9973b815599c7057e168"
+    url "https://files.pythonhosted.org/packages/9e/da/e9fc233cf63743258bff22b3dfa7ea5baef7b5bc324af47a0ad89b8ffc6f/propcache-0.4.1.tar.gz"
+    sha256 "f48107a8c637e80362555f37ecf49abe20370e557cc4ab374f04ec4423c97c3d"
   end
 
   resource "tqdm" do
@@ -104,8 +105,8 @@ class Sacad < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/3c/fb/efaa23fa4e45537b827620f04cf8f3cd658b76642205162e072703a5b963/yarl-1.20.1.tar.gz"
-    sha256 "d017a4997ee50c91fd5466cef416231bb82177b93b029906cefc542ce14c35ac"
+    url "https://files.pythonhosted.org/packages/57/63/0c6ebca57330cd313f6102b16dd57ffaf3ec4c83403dcb45dbd15c6f3ea1/yarl-1.22.0.tar.gz"
+    sha256 "bebf8557577d4401ba8bd9ff33906f1376c877aa78d1fe216ad01b4d6745af71"
   end
 
   def install

@@ -2,9 +2,9 @@ class Puzzles < Formula
   desc "Collection of one-player puzzle games"
   homepage "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/"
   # Extract https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles.tar.gz to get the version number
-  url "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles-20251011.d928126.tar.gz"
-  version "20251011"
-  sha256 "fc86b3779be8c8d468733ebca882efe4da32b597a12855f8d1adafafeed82aa1"
+  url "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles-20251021.790f585.tar.gz"
+  version "20251021"
+  sha256 "e0466016cc0fd28aa34b43996e4c931c2b3b74a9b63e050aa6c256b2c400bd0e"
   license "MIT"
   head "https://git.tartarus.org/simon/puzzles.git", branch: "main"
 
@@ -20,12 +20,12 @@ class Puzzles < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e295b19709bcb798f8ad8b3065c44bef14784ca2fb62b3f1c1bca1ff04b218e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84e9d7988daaba17b1587462d2d599ece6a07a116def8a0a05795d6a04fd73aa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d19c445cb2465bf88849aae241870d673ac9e204039fcb8cc74bf128e01b0c54"
-    sha256 cellar: :any_skip_relocation, sonoma:        "457cd68f95d87aa668248d7e1b79f11138eff26ee418fdd77ef644f1e58209ea"
-    sha256                               arm64_linux:   "2ee2ffa85c5233c222848087b0c8a1cc570895e2fc347c0266ea8cc4a3479bc7"
-    sha256                               x86_64_linux:  "4e584c96c65d251dfd8f2762613898f36bd04df9ac66ab55510b57d8d69c22de"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f9a14afd110449bd40e0e2a528405f4f7e254f2e2e32f2ca44eca743b1c01c18"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b45821caa7a9d19b66db48756ccad981800e5ff74f5a0432525eeb4c937dae3d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9785985ba28d9c26e0ca522e3c61cc0937ed177891fcbe0f683ee9a77681078e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "447cabf0403a6031857148de5fe7e45c30eabc61bc1ff58c1e50b337d415deeb"
+    sha256                               arm64_linux:   "592360f21ab723e3c84c67f58e8c5d527015e4495f953bdb0112afe5e16c937c"
+    sha256                               x86_64_linux:  "698d365a00234a6266fe3d1d719335a79412c8178b58a0c6e6e8fdc5c8fa01ba"
   end
 
   depends_on "cmake" => :build

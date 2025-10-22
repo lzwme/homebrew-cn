@@ -16,14 +16,13 @@ class Nwchem < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256                               arm64_tahoe:   "dc8414de3195b270a0682dff08d17d0f0a69385cca360825ea73f18f7447e5f7"
-    sha256                               arm64_sequoia: "9e7d38520a012a3b258b13b79d2e21fa1f65c69d6a80e442db8543c301ebf8c4"
-    sha256                               arm64_sonoma:  "cbd863d1ffb5625c8551e5bccae2ac62d2d09af075e9e10956033d4e3ddaa2b9"
-    sha256                               arm64_ventura: "7fce8b94f1233bcf022bfaa7456abf9587baeb3319ffc47b725dd83eb1d83b6c"
-    sha256 cellar: :any,                 sonoma:        "2e2473703a5f2d268135f72189557e4c150059774540e9c89c74b66774a6931f"
-    sha256 cellar: :any,                 ventura:       "dd0b5829832ca473260b2da63478f93cee2e4bdf388898f0fc546e1f2e2a52f9"
-    sha256                               arm64_linux:   "9f72b9c318ebea8a8f992aa16617e1c928d9402a487a5baf48887c6d65c68251"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0aa305807bdecc60ae25c0b3798ea4cc9fa9251be63dda2e7c460351106b393"
+    rebuild 1
+    sha256                               arm64_tahoe:   "7bdfe1b874aa6788676c26b8fe6632827486a1deb212b31b54376f6c825edc14"
+    sha256                               arm64_sequoia: "ca4f6ffb98e1bf637ede7d811ebba58292ec49c4153ae344ed67b1c470087648"
+    sha256                               arm64_sonoma:  "24520eae34ff9e5be75493d87487f5282c4005671b57ed26b6caccdaff292dc7"
+    sha256 cellar: :any,                 sonoma:        "37267e96f446bb2ac7f11f425ea952c886dd2b01d706279b38e3de8935bfdc3b"
+    sha256                               arm64_linux:   "4eb2f27fc6249621cd2e4ff810137f2d4faa268fa9530838a2625d7d98a20d37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35139d4173d4a7024e3bbe70d69df306fceecd0b09950cd57b2a4c4bc3cf46c7"
   end
 
   depends_on "gcc" # for gfortran
@@ -32,7 +31,7 @@ class Nwchem < Formula
   depends_on "open-mpi"
   depends_on "openblas"
   depends_on "pkgconf"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "scalapack"
 
   uses_from_macos "libxcrypt"
@@ -64,7 +63,7 @@ class Nwchem < Formula
       inreplace "util/util_nwchemrc.F", "/etc/nwchemrc", etc/"nwchemrc"
 
       # needed to use python 3.X to skip using default python2
-      ENV["PYTHONVERSION"] = Language::Python.major_minor_version "python3.13"
+      ENV["PYTHONVERSION"] = Language::Python.major_minor_version "python3.14"
       ENV["BLASOPT"] = "-L#{Formula["openblas"].opt_lib} -lopenblas"
       ENV["LAPACK_LIB"] = "-L#{Formula["openblas"].opt_lib} -lopenblas"
       ENV["BLAS_SIZE"] = "4"

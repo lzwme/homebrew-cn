@@ -2,8 +2,8 @@ class Seaweedfs < Formula
   desc "Fast distributed storage system"
   homepage "https://github.com/seaweedfs/seaweedfs"
   url "https://github.com/seaweedfs/seaweedfs.git",
-      tag:      "3.97",
-      revision: "76452ab593995ab52b75e681de5b221de1e3f006"
+      tag:      "3.98",
+      revision: "76520583c6669f3be56e41a601f550f86911d8fb"
   license "Apache-2.0"
   head "https://github.com/seaweedfs/seaweedfs.git", branch: "master"
 
@@ -13,14 +13,12 @@ class Seaweedfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21e03b0434df7b8ad74ec01046aeee095dd6446b8b7b2b8c2d49741f7e6e98b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e26f3238aa6e10b6ae35d9d7ff0231067ea09cdfd2e5f7c16c9f260579580cd8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72c50d1aed6ad5f59d4478be92b669c2a9856d5cb3821d43cda4f55479673c1b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "72144b35522e03afde6222858f949f04ac90d442849169f4405b333366dbdb13"
-    sha256 cellar: :any_skip_relocation, sonoma:        "274df166b330a924de264d47265aae9341c3bec344c716dd98574755461cd821"
-    sha256 cellar: :any_skip_relocation, ventura:       "502b5a966b4be1f84128d478981f06f0561def9d2eeb8b8ef3f17f1fdf5084b8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "68f393f953d608c05d0d2022cc6950f75fdcb1862530d881a308b377e86483cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1fa64fa862a40430cf8d82da238ed996b4982271f3028bb690206fee90ca1fa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4be1e2bc717ace5b0ff5bf921d804a2972173190eeb8b37312ea6f6cacecba7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f46a74b5459526ad27a3d187460ca54116038cd8c57bc4aa647cc3cbeda93816"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4896cb2b520e72f283c881cfe011593ee88733c15760668c9e1556fafc50503"
+    sha256 cellar: :any_skip_relocation, sonoma:        "09ca1546af2fbcd61a34c4534225704c28c5c5d8752e426ea78d668b2683c1bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a01171ab42fbedeaef861d2e73a6857b8379b3a22b81379eed43f1f923c00e34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80e93fe43959fd3a8d6bb02203d670125bb14d20f539e501b663f9250a221592"
   end
 
   depends_on "go" => :build

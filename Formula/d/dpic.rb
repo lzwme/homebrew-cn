@@ -5,7 +5,10 @@ class Dpic < Formula
   sha256 "0f38f5c1e91518826cb2c6e95624b390d1808efadc0402f83911512f0ce726c3"
   license "BSD-2-Clause"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    url :homepage
+    regex(/href=["']?dpic[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "069e4b119b56fd45367c629fe3805950cc3b6cfeadee73e3cb7026dcb3de5406"

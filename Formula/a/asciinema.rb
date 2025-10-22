@@ -7,18 +7,29 @@ class Asciinema < Formula
   head "https://github.com/asciinema/asciinema.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77ab4d19608140cac9798c128b0d544907fdeb7efdb309310c8b763867d6e0be"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "41c28efaeff36b255a7d1359399b858eec269bf4551251abc64829e38f818e1f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03e6f1aeea6cbdd5934390dd12a4d95c872fbcf7a3d5a560d6df63aa4f7d8c8a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b2e28038ec2be3e45d9f090564b13befc66a4f6830b919a6a30dd36247c976c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "61825d586e41805ccdfffa0490b7cb20e4386d4bd28796a6731bf559caf5c510"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8d7552a66f6d03cc0488ea1299ccdd2e7b75ac9217a1d88325c4f472dfa2b61"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "82fe6b5f0fa0495650b1d975ac49cce325a678f9a45156f1d8c61198495ad5e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d34c430b96b73a4234361b905406eb59f71dd147b852e6e7c3c6fee34766ecb1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5ecebf8821fbb1321ac786cf08eac4be6e78ce2dd95b47de8489d6d45ae57ef"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0e9e7b372d88285ed13f113c3ca980cd765e5b92d2da151ec11e8829cae14eb4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9f8c435dddd40061f375750212d855d93e1ead60097f3ae0ff6096b11077294"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c1ee8e73712f1c02305ffa594af94b58e5f1678ec30a36b960d4b847191ea6e"
   end
 
   depends_on "rust" => :build
 
   def install
+    ENV["ASCIINEMA_GEN_DIR"] = "."
+
     system "cargo", "install", *std_cargo_args
+
+    man1.install Dir["man/**/*.1"]
+
+    bash_completion.install "completion/asciinema.bash" => "asciinema"
+    fish_completion.install "completion/asciinema.fish"
+    zsh_completion.install "completion/_asciinema"
+    pwsh_completion.install "completion/_asciinema.ps1" => "asciinema"
+    (share/"elvish/lib").install "completion/asciinema.elv"
   end
 
   test do

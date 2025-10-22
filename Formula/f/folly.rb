@@ -1,18 +1,18 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
   homepage "https://github.com/facebook/folly"
-  url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2025.10.13.00.tar.gz"
-  sha256 "719423943d6076be646de388e825237c5c9352d6c0542860abdc1279104fd3ab"
+  url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2025.10.20.00.tar.gz"
+  sha256 "5c609f57f56e06316f38b05361a8244afa2a5b00e39ba170f96052ea33eda30b"
   license "Apache-2.0"
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a3b2b47bd753df2aa1c57508352afb1083767f2d797c7563981939b82ab42e9a"
-    sha256 cellar: :any,                 arm64_sequoia: "768d80c4bfe0f51cb611fc5c92c3e83de59789b8630bca79865a437a26d2d826"
-    sha256 cellar: :any,                 arm64_sonoma:  "a20da38f2006101c9136943387deb1e6432b2c482213ed526af56f397a0ec2c6"
-    sha256 cellar: :any,                 sonoma:        "63d5d4ee08b11f535c4a43dc54ac49e16d7f646d5869757f89ead0ab0905edca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1353fc8300e9e7570257b91fbef2cc1973bef579623a09014dbec78d41d0772"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "faf8207083bfb1e793cf397992f6dc8021022fe8355409810dcae2cfe381e5cd"
+    sha256 cellar: :any,                 arm64_tahoe:   "22eb979031f9a85f2653119f2cfe9980330103d9743884799d18c6c1fb592794"
+    sha256 cellar: :any,                 arm64_sequoia: "ef3fc986aca354662c360f51e566d3f755dd3ae7191ab3cc3941a1263426a56d"
+    sha256 cellar: :any,                 arm64_sonoma:  "44c7dde8106e7243a2ddba1c09ebaa4f8aa1a5f5c4a7b665a21651e1a95215bc"
+    sha256 cellar: :any,                 sonoma:        "4c67dc3fff2eb19990df474c79b0c852bf323bcd7e59a4bd9ebb5729299ee84b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "27045b9f8709c2576bd0737c98115725496fb6ed3e7273b666d8013a22418783"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f1fc97790083f18f816ec461f440878e84a96714e2c7cef341b13986d524ed2"
   end
 
   depends_on "cmake" => :build
@@ -106,17 +106,5 @@ index 0b96f0a10..800a3d90b 100644
      regex
 -    system
      thread
-   REQUIRED
- )
-diff --git a/CMake/folly-deps.cmake b/CMake/folly-deps.cmake
-index 7dafece7d..eaf8c2379 100644
---- a/CMake/folly-deps.cmake
-+++ b/CMake/folly-deps.cmake
-@@ -41,7 +41,6 @@ find_package(Boost 1.51.0 MODULE
-     filesystem
-     program_options
-     regex
-     thread
--    system
    REQUIRED
  )

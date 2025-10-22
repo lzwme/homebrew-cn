@@ -1,18 +1,18 @@
 class Keploy < Formula
   desc "Testing Toolkit creates test-cases and data mocks from API calls, DB queries"
   homepage "https://keploy.io"
-  url "https://ghfast.top/https://github.com/keploy/keploy/archive/refs/tags/v2.11.8.tar.gz"
-  sha256 "aedc76f2a6aa69018d7c8a742c5f48b6213093a1bfc04db5572dc8516a368109"
+  url "https://ghfast.top/https://github.com/keploy/keploy/archive/refs/tags/v2.11.9.tar.gz"
+  sha256 "252f92810f0472ea163f9ccc4fad2ead25468bb4a52af382ffa7c424096821ea"
   license "Apache-2.0"
   head "https://github.com/keploy/keploy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a365a0aed3168f9d507066996b080365cc3bb61dcbf5085fb0a4392951f3f9d9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a365a0aed3168f9d507066996b080365cc3bb61dcbf5085fb0a4392951f3f9d9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a365a0aed3168f9d507066996b080365cc3bb61dcbf5085fb0a4392951f3f9d9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4ef1378991c07873c09ae104c77fbadd133a989e76c26563b84f2228d044add0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e1f400804eee63b335f1622f28163cfed07c1ef001209126ec650de6b62d6bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9c93eecd610dde4cc0852d99f9ead8c4edb68d51b992d5d1cd204c7452e0f2c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eef636b48ea043c2f196b552c84ef66d516fb331912b106a53655f980cb632f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eef636b48ea043c2f196b552c84ef66d516fb331912b106a53655f980cb632f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eef636b48ea043c2f196b552c84ef66d516fb331912b106a53655f980cb632f0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "564c91f20e80141316f1cc0d1043e73d7a4defe92fed75022a0e8484703076a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dff29503efa92cb465e5b97122b76cd502f16f18e39d88da7a919677da17297"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7067f171f4aafe2914637223172399e72d5980c0079b9777f1b135dfd1a766e5"
   end
 
   depends_on "go" => :build

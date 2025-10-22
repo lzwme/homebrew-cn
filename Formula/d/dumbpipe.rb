@@ -1,17 +1,17 @@
 class Dumbpipe < Formula
   desc "Unix pipes between devices"
   homepage "https://dumbpipe.dev"
-  url "https://ghfast.top/https://github.com/n0-computer/dumbpipe/archive/refs/tags/v0.31.0.tar.gz"
-  sha256 "66393044299dc241db16e58f57d10d8919db10c65791c3b6088dd58396261441"
+  url "https://ghfast.top/https://github.com/n0-computer/dumbpipe/archive/refs/tags/v0.32.0.tar.gz"
+  sha256 "9ac9261fb618adc161a57b48a3fa42b73a856786604cb1778e11657d8125fbeb"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "98e95ea4cd6f1dc1ff9174a4cdbaaab6fa01db8b1e477f944cfb46e5ebd1f37b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22d2bb53e80c7aec2a1d2e5920c523dece1154ed8ae844d3b10d79516bb5593a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87b156f8a8a4a279fc38e404c06286a82019e3d04a13985abd9c0f1d001a9976"
-    sha256 cellar: :any_skip_relocation, sonoma:        "28e6a84490bc0956e61c29a09e61bd66c46c0bc427143098a65c1406f6de35e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f3e1839a284a4f5dfe1d71ba3a2bb7a9a4d2cd401523af90fe1927728219e68"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ff3e4592076aea7c01822bd8fccf676fc172a74240457b950340051aa71f085"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2256150c1188bc8537df3b2669f8229bbc6149595cf2ceb396700d8a6d5ed007"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5f373aa015dc531d5c6d150deffba6e0ef96b66fc66adc54a5bbfc2510ebc30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "467018d6d5458f55869f90c0291d12b1fe32c6811faf451f625b7f17089237f2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cdf400591d3b0e86fe51dc26882c95761db7035e5b2cd1cae1939b05acd11d3f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b4c6c3945a972467afdc89900a9902c9630ad265e6c27da22791e28d705516a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f617bb08e610f7fe1693ceb56edfb923eaa27ac3b31d025db6a7af04dda1ee61"
   end
 
   depends_on "rust" => :build

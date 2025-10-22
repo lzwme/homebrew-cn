@@ -1,18 +1,17 @@
 class Iccdev < Formula
   desc "Demonstration Implementation for iccMAX color profiles"
   homepage "https://github.com/InternationalColorConsortium/iccDEV"
-  url "https://ghfast.top/https://github.com/InternationalColorConsortium/iccDEV/archive/refs/tags/v2.2.50.tar.gz"
-  sha256 "3ef14e8d143705eced1b3120dcc16d6b8730dac7754fae7fef6861eb53836b56"
-  license "MIT"
+  url "https://ghfast.top/https://github.com/InternationalColorConsortium/iccDEV/archive/refs/tags/v2.3.1.tar.gz"
+  sha256 "8795b52a400f18a5192ac6ab3cdeebc11dd7c1809288cb60bb7339fec6e7c515"
+  license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "a24e4a3fbc61f165a94024e28565824080c26f24a5a3a69de8a50a65fb22ad63"
-    sha256 cellar: :any,                 arm64_sequoia: "175c33091f3aeed27ae062dc2aa90c292eb34ef9e0d28aee21150d298fc7cabf"
-    sha256 cellar: :any,                 arm64_sonoma:  "5112b2beaf6414f3d5d7de5d2d62d9c71898c6ec7a0aecb88bb85fe00b0d4972"
-    sha256 cellar: :any,                 sonoma:        "98df46395d9a21e05a228a3adb86fddf1833b5bb05336500bbb5309c5e57b9c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d8895eeb009d41b403cd567cd5f1b3a8779e38d54dd365b28ffc2712b667f30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fd54467f13174a21b8cb3b7cf2850a8c8bebc8339c5949a818abfa21951afd2"
+    sha256 cellar: :any,                 arm64_tahoe:   "a0fa7ef2c3fff4ae1471d847c7b2c66262a37e1b05cdb76dee43d8cbfd3b25a3"
+    sha256 cellar: :any,                 arm64_sequoia: "99f69a6b54cfcb704ef21587efe44807de2a9a59cdd246e810cab227eed13836"
+    sha256 cellar: :any,                 arm64_sonoma:  "9110e467dbfdfa76ac123ed2b55b705fc393e840ae43f3ea21a846b1fd1ecea8"
+    sha256 cellar: :any,                 sonoma:        "0f4e7e69eeaed19ada693b7faeab0ed1d6e46dffee791173f6faae92cdd3f8c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "42623e444cc3f58fa5d91460b5f9a927c5769df0eb3a65d0e298571d2033dc20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0797679df4466b5faad4f6a5669fec5a7d91241e24892bb9a864b574a08c3763"
   end
 
   depends_on "cmake" => :build

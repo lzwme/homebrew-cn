@@ -1,8 +1,8 @@
 class TwoMs < Formula
   desc "Detect secrets in files and communication platforms"
   homepage "https://github.com/Checkmarx/2ms"
-  url "https://ghfast.top/https://github.com/Checkmarx/2ms/archive/refs/tags/v4.5.0.tar.gz"
-  sha256 "5734a4163d332b7725adcec40cd419a10acc069306f11e48d8bac7507736b0fc"
+  url "https://ghfast.top/https://github.com/Checkmarx/2ms/archive/refs/tags/v4.5.1.tar.gz"
+  sha256 "f70c9448e42b2410a0dc294cd90e0849b67b579bb9ba481717957daa8811f30c"
   license "Apache-2.0"
   head "https://github.com/Checkmarx/2ms.git", branch: "master"
 
@@ -12,12 +12,12 @@ class TwoMs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8fce6374448482ed170a96fc0f94664c676c13acb356ca503d7154bd1842327a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "949d5f3ad89d36ca81e11e51b1abc1e7cf77aabf68e139f2da0d2559dbfffb67"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5b3f4038fc3c93885b1fc8cac02b34dcefcbba531506519de9d1db91845ff19"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cd17de243e0b8f1d92962464f3e072701342c7e2dc21045e96cabb8778ff81a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "146bf14f082d1a0e493299dc44557dffea4fce7cf68fb98222fe6ea7d10cce10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9327fa107c0dd5c7e3dc3a542116f000f49f95366907e07f517379e47c0a28f4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bdb6b3280f7c11ec9b09e11028344b079726573d9d272eeb4a35a06388b1651f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35b82b12653a5d67210a95fb215560f064da933941b8a4efa6f773cdea33c78d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ced39b3dac281dcf6e0f128c034b3ef3d7feb635a5f77403734c0b3912128862"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3966a1ec28e3a51ab65f3445772cd5c504b1a2236e8bc76fc42beef456bf471e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d0ddf34605300b45fe0713d4b3fa8cdfec92cc10b008898a40ed5c36eeeebdd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db8fd33c8f86e5c43badc57e50a16d30c8626a10bdb6b7c13c8d8bfbe38f1c4b"
   end
 
   depends_on "go" => :build

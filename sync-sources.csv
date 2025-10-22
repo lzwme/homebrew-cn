@@ -5812,6 +5812,7 @@ Homebrew-homebrew-core/Formula/p/pytr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyupgrade.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyvim.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pywhat.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/q/q.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qalculate-gtk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qalculate-qt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qbe.rb, Homebrew/homebrew-core, 0
@@ -8635,6 +8636,7 @@ Homebrew-homebrew-cask/Casks/c/charlessoft-timetracker.rb, Homebrew/homebrew-cas
 Homebrew-homebrew-cask/Casks/c/charmstone.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatall.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chatbox.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/chatgpt-atlas.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatgpt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatmate-for-whatsapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatology.rb, Homebrew/homebrew-cask, 0
@@ -12779,6 +12781,7 @@ Homebrew-homebrew-cask/Casks/l/latexdraw.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/latexit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/launchbar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/launchcontrol.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/launchie.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/launchos.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/launchpad-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/launchrocket.rb, Homebrew/homebrew-cask, 1
@@ -12859,6 +12862,7 @@ Homebrew-homebrew-cask/Casks/l/livebook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/livebook@nightly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/livetail.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/liviable.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/llamabarn.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/llamachat.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lm-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lmms.rb, Homebrew/homebrew-cask, 1

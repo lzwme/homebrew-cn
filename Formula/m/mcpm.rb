@@ -82,7 +82,7 @@ class Mcpm < Formula
     url "https://files.pythonhosted.org/packages/ad/ac/4906336669a643b634b7ecde539c79126dff9f47b1e9e4b312dd170c1715/fastmcp-2.10.2.tar.gz"
     sha256 "1ad519fda8bfde1de7f54a7ed4be0b6353eb66230cc1e35eef29b47666a0027b"
 
-    # Fix incompatability with pydantic 2.12+: https://github.com/sooperset/mcp-atlassian/issues/721
+    # Fix incompatibility with pydantic 2.12+: https://github.com/pathintegral-institute/mcpm.sh/issues/271
     patch do
       url "https://github.com/jlowin/fastmcp/commit/1ade5ddb0525e2bfd9ff3423887a0a2b28772681.patch?full_index=1"
       sha256 "095f0e47ee272effcc676b09b0d2dcadb801f49c5600b69204818af65b45d443"

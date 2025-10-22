@@ -1,19 +1,17 @@
 class Air < Formula
   desc "Fast and opinionated formatter for R code"
   homepage "https://github.com/posit-dev/air"
-  url "https://ghfast.top/https://github.com/posit-dev/air/archive/refs/tags/0.7.1.tar.gz"
-  sha256 "627e29874b9e911a87cfd9086aef60445443c0fa886b014544c6e295a7051576"
+  url "https://ghfast.top/https://github.com/posit-dev/air/archive/refs/tags/0.8.0.tar.gz"
+  sha256 "fbce4a9698c756dc4d65eb6cb845fcdd8bca952f25b988711037b6ff9b82a99c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "27587f6a0250d1ff69a895d06388da5afbf21613cca8fd007636ccc00a119d7e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d198da3991c6487fa90c0cf4ac1ee318e9b48268ef0fcd556cd270ad2c1e0cbd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c14b6d040bab11f6171cadcc128f09117570d6c39d0b6802ff31f5c618133449"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c144c214c1c68f722004e57ebe69f873881847cf898c15fe585a19776caddb58"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a7be5ee231bf11ab97506a7531aa27a1fda1a4bc9deb4e05a180a045355530a"
-    sha256 cellar: :any_skip_relocation, ventura:       "543712b3dfa6ad227d7767509721c80756afa6ba8dad39c789437fa4e8ce43b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "23219932179b2aac3c848337dc63d23325a4ea4437db91881458a8701a415a78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6462f722d407498fca56f4ea8f38e46fee0913e3939ac2b469de513a26f83cdf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22bfc11080f588ebe147ee1eff7e54c62f2c5fb0aa9334aa29041a1211ca2fea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6237dee64f4f22f034686e091ccdf7adca3452ff59118d6b9167eaef4ca06c62"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41aafa386238de558ba5c1050c5931ebaae5372548ed6632340ebecc9c0e5324"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4bfb9ac82a1d126386b1bb3dccb55cea3d4385d030f0c443eb7b578d30bef4dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28d2350eb72cf1f61922bf5a32340fcd821a88d32995d2052e1d3513ed9fbb96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5b74bd49dfb4b972e2624a666f97c20611634bfe0990d516b1621ee1fab84c3"
   end
 
   depends_on "rust" => :build

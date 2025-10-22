@@ -6,6 +6,13 @@ class Nelm < Formula
   license "Apache-2.0"
   head "https://github.com/werf/nelm.git", branch: "main"
 
+  # Not all releases are marked as "latest" but there is also "pre-release"
+  # on GitHub, so it's necessary to check releases.
+  livecheck do
+    url :stable
+    strategy :github_releases
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06f45382c6afa6b8bb2ca67e897cc71f46d1a79caf7cc4897d9fc9a13462cc00"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "997b7c992fa261cb6bc3e8c8d2feffd0ed8ef9ca5f4792b91094462e8ae202ee"

@@ -1,8 +1,8 @@
 class BalenaCli < Formula
   desc "Command-line tool for interacting with the balenaCloud and balena API"
   homepage "https://docs.balena.io/reference/balena-cli/latest/"
-  url "https://registry.npmjs.org/balena-cli/-/balena-cli-22.4.13.tgz"
-  sha256 "e7cbf9d6703f3d0bcb2765e505cab212a2fd0e4d969637f637d03f455dbc747c"
+  url "https://registry.npmjs.org/balena-cli/-/balena-cli-22.4.15.tgz"
+  sha256 "717af7c163d78816f8efbac3d352d0e9e33898fc049d445d592bf0a911422068"
   license "Apache-2.0"
 
   livecheck do
@@ -13,12 +13,12 @@ class BalenaCli < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "dc5894117b57e95c9150c74d709294dd1e58575c8fa4f392d3924b798dade2c4"
-    sha256                               arm64_sequoia: "5b2e0a8f8f6d9d331cc2cc54587b8c74496d9accc5c4d5bc1c174b4a719b0f04"
-    sha256                               arm64_sonoma:  "0c5040d5fee69bb7cd3d9672d116b5d2a6e1fa2ab7600725077e378a838c9fd9"
-    sha256                               sonoma:        "1f8dc71c66fb5aa7b506fc7ef74c8a1a5504cd8ae5fada367a0790c7454c771a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ca387393902cbf534c79eff8f99906f111b091f93b80becd5c170df0601e4d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9524cd404ca0326fe2787510cf75acd37ececd211712cf435c7ce96a6905ac39"
+    sha256                               arm64_tahoe:   "f035dce171e85d1af1e55322c1bce957767b6702864e4fe94b0cfcfbc517896e"
+    sha256                               arm64_sequoia: "761b9a02e62623bb519ee293bf97719a9c848d82e8db6851aff1b6a82bfdc8de"
+    sha256                               arm64_sonoma:  "da20894e606e0af24003c4294dea537dfc2d322b1d33909d09612116b1431ad4"
+    sha256                               sonoma:        "521333e678cf1ab391e1d8dac80a9b2c9b12bd8abaf34afd2b8fa9dd86c114e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f21bda0219a7379ea22d344a6536d1258a593e92498a02737308b667d2f87497"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c380a3d028325981690a4fcbc8bcef798136d2bfb6567641627822269311185"
   end
 
   # align with upstream, https://github.com/balena-io/balena-cli/blob/master/.github/actions/publish/action.yml#L21

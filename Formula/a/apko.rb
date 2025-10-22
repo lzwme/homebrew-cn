@@ -1,8 +1,8 @@
 class Apko < Formula
   desc "Build OCI images from APK packages directly without Dockerfile"
   homepage "https://github.com/chainguard-dev/apko"
-  url "https://ghfast.top/https://github.com/chainguard-dev/apko/archive/refs/tags/v0.30.16.tar.gz"
-  sha256 "42771c1f9b01b15c258d93ac49f1555095a4ce2cbb3a41bcaa2f073ed5a05ac8"
+  url "https://ghfast.top/https://github.com/chainguard-dev/apko/archive/refs/tags/v0.30.17.tar.gz"
+  sha256 "22010d4a2e35d8dfff8d88c52e4582a8d0c965bb0733d28deaef4666c483d4ed"
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/apko.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Apko < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d2c80edae4765042bd874b64284b4509e7e40ff74e310e7d09b28b2f68562466"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "709fa6c904a82543157de147b1204dc7519427c47c7f3b55ab8aac8d6c1fb5fa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d0b67e6af8fa43b91cfe8a830b3881b4d9e3c4483b98636c06a70d7ae9d1832"
-    sha256 cellar: :any_skip_relocation, sonoma:        "70612f49b9ab541d2b07d56ffdd3f072f3a8cdef275cd40baf0be039eaea65cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc4954f643e5f370dde9112bbc7c68b90f1535de6db620767f6a44567adcd4eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f8d09b9b7580eae608019fbb2cfa4b1d7f628651f35e84b0e1d37e0a5cbad6b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79abb41d8f81e1cbb56b486db6091ff7a63b814c8193d0de6bb379c9576f74cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "164d8fa031dd9dcf0bfb09d8dbf8704e7e00e7935de170e4d43b4f60f619f145"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05794557d8c1170dfb56f5ef6b38893fde2dd3e44d115a941c221decedcd6bb4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a409c0677d9ca56f897add4ce0a0dca7cf897dd57cb73c0a6bfca1fa3ae01f19"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2484ae8f7b5c822263e3931e44c47130676557f7cfe932b490c7f1de45b64506"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c70c6d6984f048e912fe21d8bd5d0c6592bf27f5d956b17fef36bf54e586ecff"
   end
 
   depends_on "go" => :build
@@ -44,7 +44,7 @@ class Apko < Formula
         repositories:
           - https://dl-cdn.alpinelinux.org/alpine/edge/main
         packages:
-          - alpine-base
+          - apk-tools
 
       entrypoint:
         command: /bin/sh -l

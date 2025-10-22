@@ -1,20 +1,18 @@
 class ApiLinter < Formula
   desc "Linter for APIs defined in protocol buffers"
   homepage "https://linter.aip.dev/"
-  url "https://ghfast.top/https://github.com/googleapis/api-linter/archive/refs/tags/v1.71.0.tar.gz"
-  sha256 "6010f354cc56f17a9f7750718baef40edb65255f879a821738c0d925acdba804"
+  url "https://ghfast.top/https://github.com/googleapis/api-linter/archive/refs/tags/v1.72.0.tar.gz"
+  sha256 "959e2cf0b1c8c78eef3a3293d9ab023b5c13ae1d1636a6c09aadd3408a431b5d"
   license "Apache-2.0"
   head "https://github.com/googleapis/api-linter.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a487c080b0fd9e904c4a111b1b947c25544d2dc0530e53d9c2b6ff5ade3e4b9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12bd1b466c3175983210bd818455918ac11502b0abadca934d66be631b66b48e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12bd1b466c3175983210bd818455918ac11502b0abadca934d66be631b66b48e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "12bd1b466c3175983210bd818455918ac11502b0abadca934d66be631b66b48e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e527afef6842be4adb9872ea73752cfeffb8a305d87d57891928ea145ac7e7cf"
-    sha256 cellar: :any_skip_relocation, ventura:       "e527afef6842be4adb9872ea73752cfeffb8a305d87d57891928ea145ac7e7cf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ea32adaf18cdd20b912fcd804238e24650105da414558e1cf7acc969d111a27"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b981041250fb8851c3befaab8b0eb08bfc24407ef7a3685ca812f296e06ee914"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c532109ad5cff38e82fb1c99436c48b373de67f98ab3fad583f4d9cd730233a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c532109ad5cff38e82fb1c99436c48b373de67f98ab3fad583f4d9cd730233a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c532109ad5cff38e82fb1c99436c48b373de67f98ab3fad583f4d9cd730233a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f2ef3124294dd1acbb6b76282717d9c0dfbe4bd83ba8c27b2b7a14ad39daaebd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c566020d250b6ada2b98db582eb50bf1d9f3ee4d829089ca4907ba4b61b94976"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70623acdbee90ba6da0022804b7111c41e4c7c5b55df1a45bd9ae1cd2e20631a"
   end
 
   depends_on "go" => :build
