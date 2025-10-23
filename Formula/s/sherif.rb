@@ -1,19 +1,17 @@
 class Sherif < Formula
   desc "Opinionated, zero-config linter for JavaScript monorepos"
   homepage "https://github.com/QuiiBz/sherif"
-  url "https://registry.npmjs.org/sherif/-/sherif-1.6.1.tgz"
-  sha256 "416172fbd1ec78120e8f90a8fb195a87030c2326a8ec3fd28d0af72aa51ecf68"
+  url "https://registry.npmjs.org/sherif/-/sherif-1.7.0.tgz"
+  sha256 "2ba365f0c39cbd5abcac61104c98dc224e8cf02fb7ae375119f16134b82ae2d9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db665b67ba428ecbe45b2e073b31f8f0eecff7fb3ff2ba228605dd5eda5b7929"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db665b67ba428ecbe45b2e073b31f8f0eecff7fb3ff2ba228605dd5eda5b7929"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db665b67ba428ecbe45b2e073b31f8f0eecff7fb3ff2ba228605dd5eda5b7929"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "db665b67ba428ecbe45b2e073b31f8f0eecff7fb3ff2ba228605dd5eda5b7929"
-    sha256 cellar: :any_skip_relocation, sonoma:        "92f725488d497b0431f3aa5421e48de0d76aed8aae3b177d728896c1fc5f82b6"
-    sha256 cellar: :any_skip_relocation, ventura:       "92f725488d497b0431f3aa5421e48de0d76aed8aae3b177d728896c1fc5f82b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "08781cd6ad44145185ecd7bf832faa60c21a8ff026069bbce5dee118e868e1ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "673f31fb70dddbd872763ca0bb3890b1cfdf4817ea6ced0183a8bb8011079fe9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fb04c325a0b0aa45a5e92beeffa29135c3f503dc7c7bce0303e8c66011ef4934"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb04c325a0b0aa45a5e92beeffa29135c3f503dc7c7bce0303e8c66011ef4934"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb04c325a0b0aa45a5e92beeffa29135c3f503dc7c7bce0303e8c66011ef4934"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6ea0ca7c359cfc4c65fd56dcf1628b437ae95820b3fcf7c04f75ef78d331fe0f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "610315f99ba555dab86f35d21e741d36e0c190df7e115be5aed99bd97b56ac56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f43aa0cff8d2361679abf900696cf4a029f59c585f4fbb820bf584392071881"
   end
 
   depends_on "node"

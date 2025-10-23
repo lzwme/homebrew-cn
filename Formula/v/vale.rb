@@ -1,24 +1,24 @@
 class Vale < Formula
   desc "Syntax-aware linter for prose"
   homepage "https://vale.sh/"
-  url "https://ghfast.top/https://github.com/errata-ai/vale/archive/refs/tags/v3.12.0.tar.gz"
-  sha256 "26b4c02024c441929e7fd2d79a9b1f94489f85d2e87cd25f9efa2057d10a65f3"
+  url "https://ghfast.top/https://github.com/errata-ai/vale/archive/refs/tags/v3.13.0.tar.gz"
+  sha256 "a6811e19c0ca8fc453da98238c2ffc7c5d5d1e77346d72d24fd47c09302fd7c0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "15b3e29987f407b9a9065b4b0ebf3ee1d651505b71667786b9c343680273ff13"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52c72c6d6dfb98c1cd8a120a3a0f229d5b19a0b79d8ba47cd2e27fa13d54ec0a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7c3a84dc7b4761fe9dd0416ac90e87d64b992c2353056febaccf1cf98376757"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "88f1e7d188560eaaa939ce5efaa03c4a60667235de1e8d4fb573e0cd746ae5a5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "690ad8b9bdda9aacf2cfa19a84a48770c4f2288450a25a978eefdd3e96d228f4"
-    sha256 cellar: :any_skip_relocation, ventura:       "e1425665f90b9d5d93282a817b2e9770faefb60812314c0b86acda344a1cd54c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0d2668245f7855ab35c8addcf09dbbe3a96875ee109fccfa60e1b3dfd468e8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b3a90d67c4001f2f580b60d74f94d19c3c2a942933d8a522bb0ccc9874171cc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8de7318150b31fa1b69c7a2177238b2c1aa6cabfb2a13494ee30b5c287cc263b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "63ae982fd3a5ded522999879e982ab8b0e0033c118e4eb261d0b09ebf90b0d5b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ff6d4482cd580a3db3c4f90959c3b88b227eedcaafe21ff96855abbef5e28b8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c5fd2c5ae3597780cd4e342cbbaef0aec26975ca0fe64a0e3bd50efa0e6a8b4c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae47355bd4765a8b9e8501b2c67b1deee1a33d6aabbe8d93b64fa8555e5f7e8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5aad10ecae4057bb92bc9dfd77c9a5fd90fa1ea914f28488482c02266e619f53"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = "-X main.version=#{version} -s -w"
     system "go", "build", *std_go_args, "-ldflags=#{ldflags}", "./cmd/vale"
   end

@@ -1,6 +1,6 @@
 cask "rstudio@daily" do
-  version "2025.11.0-daily-261"
-  sha256 "c7706885ffcbfe8d2160fdc58204d0e0ebc0517e2238810a7b29c985c92be18e"
+  version "2025.11.0-daily-268"
+  sha256 "eae6c1be920a17949349d68aaa972e6a74db3cd6e1ec40ec9d24ba36305e73c1"
 
   url "https://rstudio-ide-build.s3.amazonaws.com/electron/macos/RStudio-#{version}.dmg",
       verified: "rstudio-ide-build.s3.amazonaws.com/electron/macos/"

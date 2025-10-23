@@ -3,18 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/4c/bd/0d123817c0531c943726d94fccafb47fd1e59c60802719ff9873613e40c2/snakemake-9.13.3.tar.gz"
-  sha256 "6d9e7adb8e3e58cfdfebc89c1b6feb536d1e33615aa5dd987a3f45b20d7ba525"
+  url "https://files.pythonhosted.org/packages/3c/d1/4e9a69a0607131dc724b3666ed7724f329c8ed2e2395da42691e0c2c3a31/snakemake-9.13.4.tar.gz"
+  sha256 "5e88682f3e55670950483bc76cfb1bedff32e368177a0a02891efd00da9af923"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7569094e7ab9a229c6c2b3a35bc8ef4868687d0d5fad4f2ab4e71b048abf7766"
-    sha256 cellar: :any,                 arm64_sequoia: "321b435c78a290cfc4b028aa72ed84b8a230142dd1f1a1bb2be5c807aa79c6ef"
-    sha256 cellar: :any,                 arm64_sonoma:  "8039b8701f4d9ffa1522c6939d49c99457194e8304a8635870e8516db66fff4e"
-    sha256 cellar: :any,                 sonoma:        "75f16f864d6bda949e98ae99ff8bbfbf4e4bef57890b20b1075cffc0f2f483bc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22f0ac65f50886e8ce0656c5f100bee69215bad5c505e555a876c1ca9c5eedfd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50bbe8a781f7c849c544184972912323b91419f11a36f2171a5d2831d0416a55"
+    sha256 cellar: :any,                 arm64_tahoe:   "41bbbaa22fedfd3d0483db4440c606c125a0191f22b8b6a47e212c031db18701"
+    sha256 cellar: :any,                 arm64_sequoia: "3ecdf0990f6e6b9652e0df7efb56fe22ac2ffa57232be08006398cfd0aa7e82e"
+    sha256 cellar: :any,                 arm64_sonoma:  "bb46db43f6b16761e3d5da33325fddf2141c2ddacdacf1ff68b961bf85dde4bb"
+    sha256 cellar: :any,                 sonoma:        "acb19f1f31cd72853f32ae0a7423ffd856a609b6eed2833ba12c6d73b313360e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63ad488a2e45d59e4dcc247e09a9cff00698842a4ebfcc69405b4c495ebba9f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6138b43b39d7a62c9b8b51db84efeb7c4e3dfc2afccf4163c584f919ea9fdcc3"
   end
 
   depends_on "rust" => :build
@@ -139,8 +139,8 @@ class Snakemake < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/b3/31/4723d756b59344b643542936e37a31d1d3204bcdc42a7daa8ee9eb06fb50/psutil-7.1.0.tar.gz"
-    sha256 "655708b3c069387c8b77b072fc429a57d0e214221d01c0a772df7dfedcb3bcd2"
+    url "https://files.pythonhosted.org/packages/89/fc/889242351a932d6183eec5df1fc6539b6f36b6a88444f1e63f18668253aa/psutil-7.1.1.tar.gz"
+    sha256 "092b6350145007389c1cfe5716050f02030a05219d90057ea867d18fe8d372fc"
   end
 
   resource "pulp" do
@@ -174,8 +174,8 @@ class Snakemake < Formula
   end
 
   resource "smart-open" do
-    url "https://files.pythonhosted.org/packages/16/be/bf2d60280a9d7fac98ece2150a22538fa4332cda67d04d9618c8406f791e/smart_open-7.3.1.tar.gz"
-    sha256 "b33fee8dffd206f189d5e704106a8723afb4210d2ff47e0e1f7fbe436187a990"
+    url "https://files.pythonhosted.org/packages/ed/1a/8de851644371c2c88ee5ff006d58355979247a02370494d63d091ef0cd01/smart_open-7.4.1.tar.gz"
+    sha256 "5c20f09026875e6dec708e9610e0cd13d24d91f0a2c12e6511b9e478a566b4a0"
   end
 
   resource "smmap" do
@@ -204,8 +204,8 @@ class Snakemake < Formula
   end
 
   resource "snakemake-interface-scheduler-plugins" do
-    url "https://files.pythonhosted.org/packages/ae/bf/b431786d74071726c6aed5f3536a03a4834c4a0286f5381e7be44269671a/snakemake_interface_scheduler_plugins-2.0.1.tar.gz"
-    sha256 "c22deccc6df4c702e67d012650571fa858e8577b759d8cb4729d16b087852b43"
+    url "https://files.pythonhosted.org/packages/88/d9/d480807d2cfc2d132bc760d877d45ec8fbe620a24200ec4d2697c4a26031/snakemake_interface_scheduler_plugins-2.0.2.tar.gz"
+    sha256 "2797e8fa9019d983132c2b403f14d6fcd3c5ad4c8d8a66b984b4740a71cacc46"
   end
 
   resource "snakemake-interface-storage-plugins" do
@@ -234,8 +234,8 @@ class Snakemake < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/95/8f/aeb76c5b46e273670962298c23e7ddde79916cb74db802131d49a85e4b7d/wrapt-1.17.3.tar.gz"
-    sha256 "f66eb08feaa410fe4eebd17f2a2c8e2e46d3476e9f8c783daa8e09e0faa666d0"
+    url "https://files.pythonhosted.org/packages/49/19/5e5bcd855d808892fe02d49219f97a50f64cd6d8313d75df3494ee97b1a3/wrapt-2.0.0.tar.gz"
+    sha256 "35a542cc7a962331d0279735c30995b024e852cf40481e384fd63caaa391cbb9"
   end
 
   resource "yte" do

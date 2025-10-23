@@ -3,11 +3,10 @@ class Mysql < Formula
   # FIXME: Actual homepage fails audit due to Homebrew's user-agent
   # homepage "https://dev.mysql.com/doc/refman/9.3/en/"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-9.4/mysql-9.4.0.tar.gz"
-  mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_9.4.0.orig.tar.gz"
-  sha256 "6bb509c54e58b54abbefa49e296e7220f5e7cfe446914ba3615f594967cfa921"
+  url "https://cdn.mysql.com/Downloads/MySQL-9.5/mysql-9.5.0.tar.gz"
+  mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_9.5.0.orig.tar.gz"
+  sha256 "ef3343981375865a2519f72b600e55f9c646e60e204a2964d3b7e8e748a110a5"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 3
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src"
@@ -17,14 +16,12 @@ class Mysql < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "260f1e609a63da0b520c67bca081f09029dc8716c832dde2b4b0c7056fb54a36"
-    sha256 arm64_sequoia: "6e82a798b7e2c92925ec4050cb7156f9cbd71f84beb6eabf37e7d3bc3439ab96"
-    sha256 arm64_sonoma:  "6bc623e931afb78577d17893709d8f85349514304c2d41557d407ca3a93e496a"
-    sha256 arm64_ventura: "5bfd1df734e17a2c03cc2615f6422a68cb7b3aacc3d7c9df6196373c019112d0"
-    sha256 sonoma:        "736729ad68bd9a8d8545f9fbbe6e6ea1ad8a1cdeadff3afcd3c338a9ae212a9d"
-    sha256 ventura:       "9e3f3ef3c235272b311b3a30e3fcd0c7a1753f233706b77ed19b3e433ba79a41"
-    sha256 arm64_linux:   "ca126ffce3ec8c7ddaa226d1ffe2e5047b97710c06cfa7a977c6be991c12c477"
-    sha256 x86_64_linux:  "e908866223e6b257efcf569b0aff7e4e620b1a44ffeb4bb74eaf59c3600f94da"
+    sha256 arm64_tahoe:   "c71cbba6a8f99318fd563304c604ec51017df510f3441f79532f098099e519c1"
+    sha256 arm64_sequoia: "6987fb9020c3c933e8b9c0ea2f48ebabeb6786ead949d41bed4570b719a30217"
+    sha256 arm64_sonoma:  "c22338894618a8fdb5ac9521974689a40c44fd50baa451debfad34d3b5a3da75"
+    sha256 sonoma:        "c616920d65e9e0c657b1afd31b0ea002dbf1e4ec87ac5104743503dab93f9bb8"
+    sha256 arm64_linux:   "062c5e26035c3e0a884617a034709424d6e54412177518adfa54d6951f54a07f"
+    sha256 x86_64_linux:  "3d4dd9bf3e7f1265ba75f7cd716a2e66238c7cfebe3d2be07924109cd95408c9"
   end
 
   depends_on "bison" => :build

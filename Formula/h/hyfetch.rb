@@ -3,19 +3,18 @@ class Hyfetch < Formula
 
   desc "Fast, highly customisable system info script with LGBTQ+ pride flags"
   homepage "https://github.com/hykilpikonna/hyfetch"
-  url "https://files.pythonhosted.org/packages/35/f2/8b24d32c63110d3ba7e5e4c88827827cb05eb4e3d14c6652304c546b0e71/hyfetch-2.0.2.tar.gz"
-  sha256 "d11eed4b6082095a9e41272fb846e9ed029b172847c9d30e8646eabee9da2b12"
+  url "https://files.pythonhosted.org/packages/b7/ab/6445f1799bd410b9459dd19776646fd0f22559f7b7d07bf9f6835efa36c2/hyfetch-2.0.4.tar.gz"
+  sha256 "d2e08c60d013e3d06e4046e74d4a4cc7af40f71e7e6d5c5dff1a643d554de5b0"
   license "MIT"
   head "https://github.com/hykilpikonna/hyfetch.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f82f4e50eb3c62eb0ab5cc82fc1c8e58e63afc463008d98a3ae25b801fbd8d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "725e98544ce86f0c7a2d18029459ce0276bcdd40286cb212b5134c967f49f01a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92bc28f88c2baa32f43123fb421d2c29ed17c713cd6f7d9e594d65baabbfdcdc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2bdf0d04b0cafe2b8cdfa67cc46e53218644a93b9810fbaca8052f3000dadcbf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aba0789b2ddad86dd18bee99a78966358616a168a0501a915f644547efa9a16f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ec37150375367a6669ce33826ecde93af7e81180b46016a389057f3345aa87a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c64ad54d5791cc05f8da6a672a3ed3ac2c28319c09836040cbdba2f163e20f22"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6e4d5fcbae752925e13e85a80d167f39d8e58947e978523b3697ed9f3ff560a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e8bb41750391c36b68741c9025f5209eb24d92525320efbfb0c45821ead72c9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "841e27ab729fcb9794728b839a74e7b8ce0c96823974759925431265deecb7ee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8dd6b4fe170ee2fc76baf130abff1e0c02c2bc68bac6cde3ffa0eb2b7135809"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "501f1336fb68a6156f52f3052097ac1599238260ade2b18efdff844c8697517a"
   end
 
   depends_on "rust" => :build
@@ -27,6 +26,8 @@ class Hyfetch < Formula
     venv = virtualenv_install_with_resources
     # Install the rust executable where the Python package expects it.
     (venv.site_packages/"hyfetch/rust").install "bin/hyfetch"
+    # Install neowofetch wrapper scrip
+    bin.install venv.site_packages/"hyfetch/scripts/neowofetch"
   end
 
   test do

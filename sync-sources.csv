@@ -1378,7 +1378,7 @@ Homebrew-homebrew-core/Formula/d/dasm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/datafusion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/datalad.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/datamash.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/d/datasette.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/datasette.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/datatype99.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/datetime-fortran.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dateutils.rb, Homebrew/homebrew-core, 1
@@ -1819,6 +1819,7 @@ Homebrew-homebrew-core/Formula/e/eralchemy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erdtree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erigon.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/erlang-language-platform.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/erlang.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang@24.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang@25.rb, Homebrew/homebrew-core, 1

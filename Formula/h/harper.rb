@@ -1,8 +1,8 @@
 class Harper < Formula
   desc "Grammar Checker for Developers"
   homepage "https://github.com/Automattic/harper"
-  url "https://ghfast.top/https://github.com/Automattic/harper/archive/refs/tags/v0.68.0.tar.gz"
-  sha256 "0ea869450f516558a8ae905af9270505503621b3cb1071bba8d24c2b8056b1d7"
+  url "https://ghfast.top/https://github.com/Automattic/harper/archive/refs/tags/v0.69.0.tar.gz"
+  sha256 "f8f543437111a5c5c54c3e86bc58104ee92d31c2ed46d44cfd73da9b4590d4d5"
   license "Apache-2.0"
   head "https://github.com/Automattic/harper.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Harper < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05669f6babf737fb2ccfaa6925fd2787ff24a899691a98d69c41412adc08f4b8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab87f55ffeb2bc4fd9722973f7331faedb99316ce462f14fa71e5a6acabab48d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6be40089497fedbfb59436c391fe0ebffd04121e8309f7984bad837c1e43875f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4fbe9758b4c4f411c487460c1055022f8e439b9babc105c09451bf6d7d0a6a47"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8fcd19bf0237beda8a7a219c814673bef90dc0e213f4efd0e17b2e181b01d72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e81688ae62fce6a56b13633acc3f1d71779ec9ac85c66efe5773302406cba35f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "33d7c92b61bbbfb18a23dcb2cce4c3656408e1bc9cace4a384b17d362137f94f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb183c0a3836af98d609717d2a8c9358ce552a2da1904f45b2b5ca9e8725213a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d844a1396bf29c50ebd178812cb0ce79e5fe0d7eb3c94d0a70741f6672070d80"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a49240660408e6ae716d1333dce9b8dc5a3489d974bf19632e00266568539ec5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f14c202204a3b8c67523548aebdaec71004d783c00397f8a0bb3ff5800d03f87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b2baccf06649cbc68c625a238f8be4b2203e9c62bf3c0eeb2059761f330a648"
   end
 
   depends_on "rust" => :build

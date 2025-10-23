@@ -3,18 +3,17 @@ class RpdsPy < Formula
 
   desc "Python bindings to Rust's persistent data structures"
   homepage "https://rpds.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-  sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
+  url "https://files.pythonhosted.org/packages/48/dc/95f074d43452b3ef5d06276696ece4b3b5d696e7c9ad7173c54b1390cd70/rpds_py-0.28.0.tar.gz"
+  sha256 "abd4df20485a0983e2ca334a216249b6186d6e3c1627e106651943dbdb791aea"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2a561a4404244bc17c8c10758d0464a35df5e29df259a7b6b4809eb9ffed0462"
-    sha256 cellar: :any,                 arm64_sequoia: "3544fdb8e68f9fb28b3d0ddc0913e248c62d7d5cf93026c3857e080aee570e94"
-    sha256 cellar: :any,                 arm64_sonoma:  "508188c7999b6355d36cdf71a104a90bf593f71e053c78923b1b834f2b457a08"
-    sha256 cellar: :any,                 sonoma:        "dcb19b6c74267771944f9ec11b4cbc6c0050fa953792036c6fa8c7093eb635ff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b9f4b93a024beea12d675f260be1112e38557d12c84d53f92e36beb149dc355"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5b9f1973483e96f4386941de39727f84566fb0f9f10741b6906526190d8dc2c"
+    sha256 cellar: :any,                 arm64_tahoe:   "3ab4d5cce2974a42c5c8b30ef551a329b2f3da83193a1acf78e1f7a1888509fb"
+    sha256 cellar: :any,                 arm64_sequoia: "217e63e10f4e098b4879dd16653fb182b34e1e7968f0fd2d245f2c088eae2798"
+    sha256 cellar: :any,                 arm64_sonoma:  "4e6026531d9aa4d1e168bbf7c2f4be2f201282bc013922fbba6c467373ca5494"
+    sha256 cellar: :any,                 sonoma:        "ce8ec3940c3ae977a2f81c79b0341366aa03ea02be270c6b2b6c96b016cbb139"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4cca18b616a53b259104db0d5e06f07a1a27703d586767ed7a10bd23c6a7e34d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbcf1d6e432b3a771a1309a49550fe12230d2ae15821ddc5dbc27c4e765e5a89"
   end
 
   depends_on "maturin" => :build

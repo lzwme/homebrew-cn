@@ -1,8 +1,8 @@
 class Azurehound < Formula
   desc "Azure Data Exporter for BloodHound"
   homepage "https://github.com/SpecterOps/AzureHound"
-  url "https://ghfast.top/https://github.com/SpecterOps/AzureHound/archive/refs/tags/v2.7.1.tar.gz"
-  sha256 "8bb7661e1ef33c6aa128fa999a044bb4a4fdaffc808e3522c3722c3ad8881d9f"
+  url "https://ghfast.top/https://github.com/SpecterOps/AzureHound/archive/refs/tags/v2.8.0.tar.gz"
+  sha256 "1c5c7b9dea1da30416e740938ce720f140d2ed0e48be873d6869dd24db570fea"
   license "GPL-3.0-or-later"
   head "https://github.com/SpecterOps/AzureHound.git", branch: "main"
 
@@ -12,14 +12,12 @@ class Azurehound < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0563b9fe1c07f725615d41dd5a2cdfca45b94cb985af4890f7d8677b7688c6bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64d6761c3e56228bdf0e0e075362d759c49bab0929f0416fd2911d5520912656"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "64d6761c3e56228bdf0e0e075362d759c49bab0929f0416fd2911d5520912656"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "64d6761c3e56228bdf0e0e075362d759c49bab0929f0416fd2911d5520912656"
-    sha256 cellar: :any_skip_relocation, sonoma:        "caea53081e59a5406172f0fe5640f09b0304270ed0ed5013415eb376c1c8c7fb"
-    sha256 cellar: :any_skip_relocation, ventura:       "caea53081e59a5406172f0fe5640f09b0304270ed0ed5013415eb376c1c8c7fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8df9b9dc0c4687801696e16ea66b83cad728ded1dd38cfaa6b66aa502ea49b2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6aab27387ad1dc6345cb5c9d6e33b0857868b359f11cdc4aa3fc39dfe07dee7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7c3516fff0e6375170a72b20f0099c436b3b212105701c4e88b9e3e3caac2e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7c3516fff0e6375170a72b20f0099c436b3b212105701c4e88b9e3e3caac2e6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7c3516fff0e6375170a72b20f0099c436b3b212105701c4e88b9e3e3caac2e6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "47efc7e29b9b241b23ac6d7ea3e1c6f552530c70449d6b7e5d26c18bd99b921f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3e44cf3d3f3e697db1cad4e0dfe68aa242d05b6a6da8a1019b6cc5272745337"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0ba49efcb770b1b25235219d13cfd86e11cc0c3945df2cd379375663c82ebaf"
   end
 
   depends_on "go" => :build

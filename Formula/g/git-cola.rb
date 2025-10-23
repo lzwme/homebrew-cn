@@ -6,15 +6,16 @@ class GitCola < Formula
   url "https://files.pythonhosted.org/packages/3b/62/939a907ca03fe43ee6e6bf925b563848f43e5ac21cad33f4b5aaf4738a63/git_cola-4.15.1.tar.gz"
   sha256 "3448e85af905877f6c3f7a6f22a08cd3d74849a7a5ecbb3475074a60d7dab6d9"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/git-cola/git-cola.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fa1775eb87c7f601ada232fc418a7fae0c3e6c4911b61880c088a6a15e0d928b"
+    sha256 cellar: :any_skip_relocation, all: "8062f9e0049cc426c4ece669d4ce22d2d5ffaf8b09a1abefa6045861cb79db81"
   end
 
   depends_on "git-gui"
   depends_on "pyqt"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"

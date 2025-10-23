@@ -1,8 +1,8 @@
 class Pcre2 < Formula
   desc "Perl compatible regular expressions library with a new API"
   homepage "https://www.pcre.org/"
-  url "https://ghfast.top/https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.46/pcre2-10.46.tar.bz2"
-  sha256 "15fbc5aba6beee0b17aecb04602ae39432393aba1ebd8e39b7cabf7db883299f"
+  url "https://ghfast.top/https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.47/pcre2-10.47.tar.bz2"
+  sha256 "47fe8c99461250d42f89e6e8fdaeba9da057855d06eb7fc08d9ca03fd08d7bc7"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,15 +11,13 @@ class Pcre2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c11090dbc1b3d2adfc60b57f98e0d2ff7b2516e5660771a85d40f208aac254e3"
-    sha256 cellar: :any,                 arm64_sequoia: "6ddb89f2eef25f73e258a97bf4379539e24ea76e207fa3c0eb49222bdb656de2"
-    sha256 cellar: :any,                 arm64_sonoma:  "71828b19933d1cd002d61e6cca11f22f4810bc0f8c5d0c98e9094362a80dcbeb"
-    sha256 cellar: :any,                 arm64_ventura: "6b38069079a641040e1cf8c408afbf902384d70bcc8fdbd445a9acc31e1e70d1"
-    sha256 cellar: :any,                 tahoe:         "361022584a32a993bd36215b8dae43ec23caea95bb58881254bc31f943037ea4"
-    sha256 cellar: :any,                 sonoma:        "8de0e4e72fe26f37b904fbf124b7fb6672f8839b76c6bc6ee8b105ba647334a1"
-    sha256 cellar: :any,                 ventura:       "e71e438a81766aafffd719f90ba93cdaa158f91c08e19d96428fa841da15bd5a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca24c56a72883fcba1a51d2e0ccd7f0e8243026b63c9a7d9b72f33f289822ce0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ceb1547e7a0f58c840a449ae638b83d3eeb224d7780f027f4eb096f0752df70b"
+    sha256 cellar: :any,                 arm64_tahoe:   "10bd8c1cf3784ab8a736f01b7f85d091276d69c5a8d48bd022b01209fb4eb870"
+    sha256 cellar: :any,                 arm64_sequoia: "603fb4c2e2d04c59cb75525a47758abbab20027f3f2296cc170fba64f9fb4b9a"
+    sha256 cellar: :any,                 arm64_sonoma:  "fb34b096f84b0de1dd502b2b35cd5de9a4d1dea85ff8cb032765f8bda1278ca2"
+    sha256 cellar: :any,                 tahoe:         "a9a5f8749a644762cc6ca09e4986cdaeecedc050d43b0de19562587cb98ea655"
+    sha256 cellar: :any,                 sonoma:        "20d5064b4a9454114faac74629efdd7fbac4cff541488f6cf035ceaeae45c51d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f975aedeebe47c169447cbd9d4bb27ebd883c79a9fbc96154f373f0e07361409"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a80460c1a317becfa0cff0659100dfe6aacf0f7679043580c1bb6377b8fce77"
   end
 
   head do

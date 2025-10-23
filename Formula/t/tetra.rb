@@ -1,8 +1,8 @@
 class Tetra < Formula
   desc "Tetragon CLI to observe, manage and troubleshoot Tetragon instances"
   homepage "https://tetragon.io/"
-  url "https://ghfast.top/https://github.com/cilium/tetragon/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "d30263db6aa7b92282ebf7b8cfad4a3c1a8dd0d2a4480295ae3720b2ea8ffc92"
+  url "https://ghfast.top/https://github.com/cilium/tetragon/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "83469d661ca86ce74e75c10eb01628291088cedb73e2641029504b3bd7fb1f86"
   license "Apache-2.0"
 
   livecheck do
@@ -11,14 +11,12 @@ class Tetra < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "881f02e7be25b0ffe0f593d3bbf38995d764c35b6f456ecec08b435978658028"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed4dd69b9e35173548e777e7a543f34f142476786438e4ce654678f0ed2e956c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2af33537c5eda675a767bed836005c6cdaa3da2341eb6c16882db89538bdec7e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "430b8a8ad4b0efaafa7093f166301a7d0337157b8c5c024fe62ef3504f287afb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "49d789f1e189d0a5b60ed52fef7dce298a03ed209e71cfdfc0c70986fead942f"
-    sha256 cellar: :any_skip_relocation, ventura:       "cb363b0cad2c6aa530020115b7c692cd9868f7dd6cfd6d2ff6c1077be75cfe13"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "02e0d2c57148d4e5003f3371b0fe7add646693daca8e35c49aaaf47b5b71b4d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e76f8eb4ee34b69d7c0e802f15d9051d2a5bce72fc38e3f7d6a9c4f3247a2f26"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd5eeed671d70196a85650b5cbed6983a65736fd1dcb93467f67cd46b49c3d1d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2eed2fea2a2857a98f3fe6606a620afae50ae014211eb75e4c8a7080e4c2b65"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1909076e0a335f5e09b2aa738dd1ccf93baf2cedac0ef4e72f6b47542557052a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7d9f4f87022c5ff971733c04095877a0904e2549b4d4d7d090adcdb48d6d70d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce66eb92abce3d9e047ca52f8048a1b8a53693523b4ba173c3eceb392eade209"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fa4268ef3b24e2d63b989a6012df5bda72d48e0821ee287e0b4039a2396c817"
   end
 
   depends_on "go" => :build

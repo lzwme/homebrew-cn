@@ -3,19 +3,18 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/bf/f3/b7064799ae6c6815a8d8b997e4abbb8a19288784890d8a9836ab3119bc71/cycode-3.5.2.tar.gz"
-  sha256 "b2a8eb30eeee211526946bfe7d9bfbcff4a226875df514004974aa87745a4357"
+  url "https://files.pythonhosted.org/packages/07/fa/25cfa71d899cbdc25affcc2327c8a5deebb836e15f71736ac4724a615ff2/cycode-3.6.0.tar.gz"
+  sha256 "eda03190995542f3635088bf69ca41af45c8831006043810a9e9fedadd2feaef"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "2bc6ee405b3501c4f8f2e59732bd565dc30f83c46b46de43dba66a0460d8908f"
-    sha256 cellar: :any,                 arm64_sequoia: "976f77080273e56751a3d3e887807f619b8300a817ad3cbd1b831c9abf13f81f"
-    sha256 cellar: :any,                 arm64_sonoma:  "208fbcf574a4b691ffa80bc2f703b330f2fe6963db735bc93fab8fbb6619b367"
-    sha256 cellar: :any,                 sonoma:        "eaf1b8f1961348aac1088b14050ce6bfcd2c99f20724da898cbd2cee8e943840"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc188e25c183f0bc63d70a7ea5f9824ed10612847cfc212fc35a815b9b4aefaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36db129ab0808ac64e602056096b643ee897cefb967eb75f2c4a8cc71a929f56"
+    sha256 cellar: :any,                 arm64_tahoe:   "91f7bd7ef62923415cbefdf14f0d823355233f0e6a22419677ac63ccbc1a363a"
+    sha256 cellar: :any,                 arm64_sequoia: "b26edcc63fc7a41639c1de2f6c8db3880db8bf058e697f13d993015ee137d3f0"
+    sha256 cellar: :any,                 arm64_sonoma:  "1c9d96da61902c47f7d27988fde8f79d68dce1f6b5a3459b40190218ba1bc479"
+    sha256 cellar: :any,                 sonoma:        "6c9deecda1d80a37d395e04cd1c9e0895c08778b9ce5627b90a7316bb24ef846"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1305c1df1b390dae0d19fdc9fe2e0b8a3bd342e4af084b9c12dc4a57f03e74c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "972fb40422ecf93fd55ed57b8f68c74a9ca323dc760024052a88b99a51b6c2e5"
   end
 
   depends_on "pkgconf" => :build
@@ -56,8 +55,8 @@ class Cycode < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
@@ -126,8 +125,8 @@ class Cycode < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/5a/79/5724a540df19e192e8606c543cdcf162de8eb435077520cca150f7365ec0/mcp-1.17.0.tar.gz"
-    sha256 "1b57fabf3203240ccc48e39859faf3ae1ccb0b571ff798bbedae800c73c6df90"
+    url "https://files.pythonhosted.org/packages/1a/e0/fe34ce16ea2bacce489ab859abd1b47ae28b438c3ef60b9c5eee6c02592f/mcp-1.18.0.tar.gz"
+    sha256 "aa278c44b1efc0a297f53b68df865b988e52dd08182d702019edcf33a8e109f6"
   end
 
   resource "mdurl" do
@@ -151,13 +150,13 @@ class Cycode < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/3c/a7/d0d7b3c128948ece6676a6a21b9036e3ca53765d35052dbcc8c303886a44/pydantic-2.12.1.tar.gz"
-    sha256 "0af849d00e1879199babd468ec9db13b956f6608e9250500c1a9d69b6a62824e"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/00/e9/3916abb671bffb00845408c604ff03480dc8dc273310d8268547a37be0fb/pydantic_core-2.41.3.tar.gz"
-    sha256 "cdebb34b36ad05e8d77b4e797ad38a2a775c2a07a8fa386d4f6943b7778dcd39"
+    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
+    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
   end
 
   resource "pydantic-settings" do
@@ -211,8 +210,8 @@ class Cycode < Formula
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/68/47/aea50a61d85bc07a34e6e7145aad7bd96c5671a86a32618059bad0cbc73b/sentry_sdk-2.41.0.tar.gz"
-    sha256 "e7af3f4d7f8bac4c56fbaf95adb0d111f061cce58d5df91cfcd4e69782759b10"
+    url "https://files.pythonhosted.org/packages/31/04/ec8c1dd9250847303d98516e917978cb1c7083024770d86d657d2ccb5a70/sentry_sdk-2.42.1.tar.gz"
+    sha256 "8598cc6edcfe74cb8074ba6a7c15338cdee93d63d3eb9b9943b4b568354ad5b6"
   end
 
   resource "shellingham" do
@@ -276,12 +275,12 @@ class Cycode < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/71/57/1616c8274c3442d802621abf5deb230771c7a0fec9414cb6763900eb3868/uvicorn-0.37.0.tar.gz"
-    sha256 "4115c8add6d3fd536c8ee77f0e14a7fd2ebba939fed9b02583a97f80648f9e13"
+    url "https://files.pythonhosted.org/packages/cb/ce/f06b84e2697fef4688ca63bdb2fdf113ca0a3be33f94488f2cadb690b0cf/uvicorn-0.38.0.tar.gz"
+    sha256 "fd97093bdd120a2609fc0d3afe931d4d4ad688b6e75f0f929fde1bc36fe0e91d"
   end
 
   def install
-    # Unpin python for 3.14
+    # Unpin python for 3.14: https://github.com/cycodehq/cycode-cli/pull/354
     inreplace "pyproject.toml", 'python = ">=3.9,<3.14"', 'python = ">=3.9"'
 
     virtualenv_install_with_resources

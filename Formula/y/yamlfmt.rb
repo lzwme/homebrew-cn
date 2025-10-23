@@ -1,18 +1,18 @@
 class Yamlfmt < Formula
   desc "Extensible command-line tool to format YAML files"
   homepage "https://github.com/google/yamlfmt"
-  url "https://ghfast.top/https://github.com/google/yamlfmt/archive/refs/tags/v0.19.0.tar.gz"
-  sha256 "257dd1521895c6b22ab4c71c27fa27f2290d05cedd0734f819573b509039e9b2"
+  url "https://ghfast.top/https://github.com/google/yamlfmt/archive/refs/tags/v0.20.0.tar.gz"
+  sha256 "de6bc4373ba46c520d936dd4b60395868ec17aba338b9fd849594c1f41b6c057"
   license "Apache-2.0"
   head "https://github.com/google/yamlfmt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c59ed48d2534326566255ca209edd314aa0182db4132fe43c5ab4dc3fcebc20"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c59ed48d2534326566255ca209edd314aa0182db4132fe43c5ab4dc3fcebc20"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c59ed48d2534326566255ca209edd314aa0182db4132fe43c5ab4dc3fcebc20"
-    sha256 cellar: :any_skip_relocation, sonoma:        "423f2da3e7064f7eb996843d90b6692c692c0535af0429c88f74c774e379c17d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "26beaa3991b22b29d8ef67adf7af3b107c89b4ab7ed3171fcaee2df52d4b7323"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92f38abcf0be10615688c6547d59c2443207d62454a0ee575d36ffec5b7e599a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b14f51773eedb24ea8e469fb629ae71b1a48a7f8028a9c988281d9181ef80380"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b14f51773eedb24ea8e469fb629ae71b1a48a7f8028a9c988281d9181ef80380"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b14f51773eedb24ea8e469fb629ae71b1a48a7f8028a9c988281d9181ef80380"
+    sha256 cellar: :any_skip_relocation, sonoma:        "49184c42f7a6694749b9598719c4a00f71b7f5243c4745ef804cbad35b2be2c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "501eedb3398b4e7ea7214a70263e9ead25141ba7fe26d52ca3a9be7a7eb84a67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f07ba36a80227cbe3998f89efd76308bd3415873b491151f40d96483d9243f24"
   end
 
   depends_on "go" => :build

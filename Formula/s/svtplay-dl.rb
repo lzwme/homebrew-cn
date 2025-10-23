@@ -3,18 +3,17 @@ class SvtplayDl < Formula
 
   desc "Download videos from https://www.svtplay.se/"
   homepage "https://svtplay-dl.se/"
-  url "https://files.pythonhosted.org/packages/93/ac/f1c6b39f274dcfa3e01afeb2770a934cc51eb56ea6543dca6b00bb56b2b7/svtplay_dl-4.137.tar.gz"
-  sha256 "874a0fa5f1c42c10bf55815c41c1d3ee0ede21c64f8694b12b05a57fd9070a49"
+  url "https://files.pythonhosted.org/packages/81/70/a52d90b1d7ec2b9bf4e50c7e0d705ce1783beefad98e3b8202c5a68b9b06/svtplay_dl-4.149.tar.gz"
+  sha256 "3e3748be3b07e7e00366c71804167ae45be4d3de54ba2222350c8e2ace4f04af"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "1d4a72b6e11c1c9c28881d85f72a154b6f4ed38b7eed85a4e3ba658f892f3bc6"
-    sha256 cellar: :any,                 arm64_sequoia: "4443fc07f287c0caaddc51e6c805bacc8c6e83bbd9c3eaf047809f81e0c8df56"
-    sha256 cellar: :any,                 arm64_sonoma:  "23403d4f0f4ac8e36a88c3668533bedd811c8272626b04386766f22af60c1bed"
-    sha256 cellar: :any,                 sonoma:        "0cbf7a9cbbca07010bb7115dd12054768841b8b9b40be9dffdeed217aadabfed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c8ce734fcdc4fcbe7a7276953560a04385dcbd25a571ec9b16e163e60f07e00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f8063ce4eb019464918be2800d606c77d989f81d2bed129e2b7ac1814d618b0"
+    sha256 cellar: :any,                 arm64_tahoe:   "c0cb4bf65e3d62a663365f98f7746839658f823e6218351507ec5bb47d240226"
+    sha256 cellar: :any,                 arm64_sequoia: "aac7d50ec9d592d619ec674bd27d523080132204251e392abffd3e721ea6c48e"
+    sha256 cellar: :any,                 arm64_sonoma:  "0f84be6d3ee7bb6af169039a9e1ddf78900682f2f7cc9ecc235c521136fe6dda"
+    sha256 cellar: :any,                 sonoma:        "41720c871ffec413f7bb1e876c2c5df1c49b4f4a0e6d35ba299b8d92770d2735"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b866013cc624905e9305500194ddc697e0d0cf627cd9a742f6b7e7696a27fe2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "818fcbf99bbc13bdd7401bb7fdbe5b9bdfcfcbfbe025147afc9f2b44604dbc5f"
   end
 
   depends_on "certifi"
@@ -23,13 +22,13 @@ class SvtplayDl < Formula
   depends_on "python@3.14"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "pysocks" do

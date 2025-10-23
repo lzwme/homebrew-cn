@@ -4,18 +4,18 @@ class Pyqt < Formula
   url "https://files.pythonhosted.org/packages/32/1b/567f46eb43ca961efd38d7a0b73efb70d7342854f075fd919179fdb2a571/pyqt6-6.9.1.tar.gz"
   sha256 "50642be03fb40f1c2111a09a1f5a0f79813e039c15e78267e6faaf8a96c1c3a6"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "1820f847952129b6d924a9d51f2ed552dfb2895f25e5eb2cb5eeea30364822fa"
-    sha256 cellar: :any,                 arm64_sequoia: "9c54a293ab582b07c15bcdb7a482f234e9fc7749dae8a6f1e46a7e7a9c00c52b"
-    sha256 cellar: :any,                 arm64_sonoma:  "3bad50695e74ede00e3dd16eac7f6f401466baeeca4adf219eafdd33a4836d09"
-    sha256 cellar: :any,                 sonoma:        "71e78e3042e36ffdc3920b11b03a8480bb5fe77e58248853ec38fea32549e515"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1039aab0395e8bc82cbd6e5ece3fa6b9fc47c10f84a05a2a36ebe20a2d0aa3b7"
+    sha256 cellar: :any,                 arm64_tahoe:   "5713526fc5676369977ad488d6a2c38b1379a904089eb91ed207e78d167f5552"
+    sha256 cellar: :any,                 arm64_sequoia: "833063eb751c9f567fc44419b8b9dd684f549bfd17cf1eb712f34fe99793e788"
+    sha256 cellar: :any,                 arm64_sonoma:  "a3e3d4d23c601a5c934ea3716b279d08c087eb133db0fbcac08797cd3ba8bfa1"
+    sha256 cellar: :any,                 sonoma:        "26409133a114e2bdd390d46d417bbec3d3431278accb45d078109576e7f06d40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ecd65eba914578b6de62620a246926d98f2c51db9d1cc099ae89795b51043ab"
   end
 
   depends_on "pyqt-builder" => :build
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "qt3d"
   depends_on "qtbase"
   depends_on "qtcharts"
@@ -76,7 +76,7 @@ class Pyqt < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install
