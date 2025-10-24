@@ -1,9 +1,9 @@
 class Davmail < Formula
   desc "POP/IMAP/SMTP/Caldav/Carddav/LDAP exchange gateway"
   homepage "https://davmail.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/davmail/davmail/6.4.0/davmail-6.4.0-3755.zip"
-  version "6.4.0"
-  sha256 "71882d3503e7cd92698d5afcb176d7a446eb9f56e3b372e27b64e383e7467704"
+  url "https://downloads.sourceforge.net/project/davmail/davmail/6.5.0/davmail-6.5.0-3847.zip"
+  version "6.5.0"
+  sha256 "2f1741b67e38de2064eb30d204726330aa79be215a3e5597a9b6d169854ec097"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -14,7 +14,7 @@ class Davmail < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "80f2a1803e398621d17f32e6777c8daed428a604ec4d58e851309b5b88d3a7a9"
+    sha256 cellar: :any_skip_relocation, all: "18af79223af4c131d8731db35c8c06234839fdce2d2a6779e3437ce52425c680"
   end
 
   depends_on "openjdk"

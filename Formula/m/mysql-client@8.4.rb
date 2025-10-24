@@ -3,9 +3,8 @@ class MysqlClientAT84 < Formula
   # FIXME: Actual homepage fails audit due to Homebrew's user-agent
   # homepage "https://dev.mysql.com/doc/refman/8.4/en/"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-8.4/mysql-8.4.6.tar.gz"
-  mirror "https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/mysql-8.4/8.4.6-0ubuntu0.25.04.1/mysql-8.4_8.4.6.orig.tar.gz"
-  sha256 "a1e523dc8be96d18a5ade106998661285ca01b6f5b46c08b2654110e40df2fb7"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.4/mysql-8.4.7.tar.gz"
+  sha256 "c0bf33a94cdb908f149aea0797affb1b139262ccf0e0b9787a17246207542e69"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
@@ -15,14 +14,12 @@ class MysqlClientAT84 < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "c67e9f0aee957d683b6acc56d327744cc82d9b4d6df5139dfe6328c7ffc7a340"
-    sha256 arm64_sequoia: "3609f27603e56597c351bafb2ec87e78056d3c186bdd28d3de28bf302cc10c4d"
-    sha256 arm64_sonoma:  "345d4f8422c0c0561fafaed5f3132c4441ae4a2ddc8609ebf255c72fbe4f189d"
-    sha256 arm64_ventura: "d23e3b5c7933bbadb7121fe582ff41e72061cd82e4190fa73b60f00368112243"
-    sha256 sonoma:        "3b4aa44856ffde2273d737a3f4f94d0a8f223e7b3597a95859925775f98c536a"
-    sha256 ventura:       "021790fb2b3a1b6edd7fcafefed1f880648c16cd4aee11ebe5d4388944df63a2"
-    sha256 arm64_linux:   "db8a67e3891f055a77fd3d1ca24c2c0feb1a745335fd10a317eb71e9daffc3d9"
-    sha256 x86_64_linux:  "d8fc1af041673df854a2e07edd06603bd88be7a1cce38135a93b320b8e5de973"
+    sha256 arm64_tahoe:   "f1fce38da138e20340738cae889eedede5d13567b83fa2f33dc71244d976501a"
+    sha256 arm64_sequoia: "7bb69a79ff46691d2af3ac50b6facbe815b280fb55376fb5467d2dc261e7f5fb"
+    sha256 arm64_sonoma:  "2fe0ede4c906e97fa87fc931bb5a8c153664764d538848a8d49f98fb8ef77c9a"
+    sha256 sonoma:        "f0bc9e781b5befdcff2a0cc2ee205871c191718e466d4a7175dc2a58ab6ce019"
+    sha256 arm64_linux:   "9e95149876220da1200d660f02de6d4433ba3167e053ca6caef4f55abcaab299"
+    sha256 x86_64_linux:  "2310a36ed49b6a3bc9a52a3d6ee5eb0ad37f39db597c9551446d7a3fa9a9d9ea"
   end
 
   keg_only :versioned_formula

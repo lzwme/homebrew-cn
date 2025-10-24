@@ -6,16 +6,16 @@ class Pdfalyzer < Formula
   url "https://files.pythonhosted.org/packages/bc/8e/6e81fdae32572c8a30c6ea6b00ff24ffcc6f2d11e1d9813825ed572a3baf/pdfalyzer-1.17.6.tar.gz"
   sha256 "f3443a8874b64d9666185f1b070faebe126313264c331463d54d70512bfb1a13"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/michelcrypt4d4mus/pdfalyzer.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "69c602cfd33512f0108e25ff9be7a7568ef589beb95b2f4ce76b42d47076d94b"
-    sha256 cellar: :any,                 arm64_sequoia: "fbab62d46b3cef7cd668c03f51c52e8e2466e484f0888c616acf0f54cf1b464a"
-    sha256 cellar: :any,                 arm64_sonoma:  "852910fdeeafdb3b760031473a6572c3b3ab681ca97931f6ce4d3b056e501f29"
-    sha256 cellar: :any,                 sonoma:        "190b71ebbfad656a9dff47c4752e78734a86ecf4e078e7ec536959522e6392ae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a9d6a335afad6388c3753429985f97867d7be431ac9080840169f069d0d8089"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e01b6388a64591123356b8150a46dbcb9461239ffe47445eeca455edaa144c0c"
+    sha256 cellar: :any,                 arm64_tahoe:   "36027c9a6e5f4c337227c3fb879578919e5772ba28ceb2e1cf2c971eaeb9a861"
+    sha256 cellar: :any,                 arm64_sequoia: "f38b1bd2543295be75e4b0febfb5be020ecb829cab837aba464f2dd07d13c68a"
+    sha256 cellar: :any,                 arm64_sonoma:  "976e5991c68d69ba5ed6ea4efa3eddabeed402115e0f26da361b87101e91fd0e"
+    sha256 cellar: :any,                 sonoma:        "f95f7ee11605768569c829b8e13ba31dd54bd8f13c176dc5a54218d85c0a363e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f74b33f277f7f845d29a1f1548e152cff6ce6f0b997f2d414407b86ee2a018d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "beb73772fbc6d55c657fb252309f8c04958fbd8e6dbe2ad07271bb2fbc1d9051"
   end
 
   depends_on "openssl@3"
@@ -48,8 +48,8 @@ class Pdfalyzer < Formula
   end
 
   resource "pypdf" do
-    url "https://files.pythonhosted.org/packages/a6/85/4c0f12616db83c2e3ef580c3cfa98bd082e88fc8d02e136bad3bede1e3fa/pypdf-6.1.1.tar.gz"
-    sha256 "10f44d49bf2a82e54c3c5ba3cdcbb118f2a44fc57df8ce51d6fb9b1ed9bfbe8b"
+    url "https://files.pythonhosted.org/packages/13/3d/b6ead84ee437444f96862beb68f9796da8c199793bed08e9397b77579f23/pypdf-6.1.3.tar.gz"
+    sha256 "8d420d1e79dc1743f31a57707cabb6dcd5b17e8b9a302af64b30202c5700ab9d"
   end
 
   resource "python-dotenv" do

@@ -1,8 +1,8 @@
 class Lcm < Formula
   desc "Libraries and tools for message passing and data marshalling"
   homepage "https://lcm-proj.github.io/"
-  url "https://ghfast.top/https://github.com/lcm-proj/lcm/archive/refs/tags/v1.5.1.tar.gz"
-  sha256 "40ba0b7fb7c9ad06d05e06b4787d743cf11be30eb4f1a03abf4a92641c5b1203"
+  url "https://ghfast.top/https://github.com/lcm-proj/lcm/archive/refs/tags/v1.5.2.tar.gz"
+  sha256 "d443261619080f1c0693237b2019436988e1b2b2ba5fc09a49bf23769e1796de"
   license "LGPL-2.1-or-later"
   head "https://github.com/lcm-proj/lcm.git", branch: "master"
 
@@ -12,13 +12,12 @@ class Lcm < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "38eded00423ba9f45368e5634d3d8937e244805400a725d751726bf87c4d3a3b"
-    sha256 cellar: :any,                 arm64_sequoia: "4e80a12ec4fd01f0b46db53073248672de8d5afe6461061fc0a322be967bef6f"
-    sha256 cellar: :any,                 arm64_sonoma:  "4bb2ead4981d9372f79102cb2af715174ff2bf070e0aeb719d82ab187fea7048"
-    sha256 cellar: :any,                 sonoma:        "5184db7cf28d7980361b3a069d642daa1d19baab99e0af938a99c4c1717a649a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e79ec267e99c4f2d9a1049ff9bbb493838577d407ba8db500afcd6ab56c3210b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab6d175fb759a02def0954cc93c8124f67ce38e354311b1ec459f82b9144d6fe"
+    sha256 cellar: :any,                 arm64_tahoe:   "a0820b5805c1dc9787283af4bd977504bc3431fa6e7685a21e1778478b231bf8"
+    sha256 cellar: :any,                 arm64_sequoia: "350e2c304a9436ef574780ade663d065799462371d33fda7d130c364f1c65e90"
+    sha256 cellar: :any,                 arm64_sonoma:  "8189eb0848a56d7387dd4b722d068caa11b830495db510be29b559e481e58e2b"
+    sha256 cellar: :any,                 sonoma:        "6a23eae035e3467c83d90580e1dd30eb88272a504ef60016d49fe805340de6a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7cf043230b6efeca9f96c6bfc076905ccb20227408bd5a88490b7dc9ebf9eb23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f2d9a79b688298ec1f01703856bf0a70e2cbf74793aea29b754b546a698df6c"
   end
 
   depends_on "cmake" => :build

@@ -1,31 +1,27 @@
 class CutterCli < Formula
   desc "Unit Testing Framework for C and C++"
   homepage "https://github.com/clear-code/cutter"
-  url "https://osdn.mirror.constant.com/cutter/73761/cutter-1.2.8.tar.gz"
-  sha256 "bd5fcd6486855e48d51f893a1526e3363f9b2a03bac9fc23c157001447bc2a23"
+  url "https://ghfast.top/https://github.com/clear-code/cutter/archive/refs/tags/1.2.8.tar.gz"
+  sha256 "af29d3d61076fc03313fc1b8da76aa8b884edf683e684898be5d33ba8440df14"
   license "LGPL-3.0-or-later"
-  head "https://github.com/clear-code/cutter.git", branch: "master"
-
-  livecheck do
-    url "https://osdn.net/projects/cutter/releases/"
-    regex(%r{value=["'][^"']*?/rel/cutter/v?(\d+(?:\.\d+)+)["']}i)
-  end
-
-  no_autobump! because: :requires_manual_review
+  head "https://github.com/clear-code/cutter.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "5fa63f1c85779a4f91a45834ccadbdc6556835450629e0d27ef207a2ef241047"
-    sha256 arm64_sequoia: "97b85e3b955dc03407167d3278b8c2a1154847746b8be0966cd2651f32133db8"
-    sha256 arm64_sonoma:  "6c6164fe937606eeeaafa7a2a8cd8315f6b529d28e1b3da1d2995d9a4e8b7ec6"
-    sha256 arm64_ventura: "ee484be0a35af855d8f9b5c25e1b841ef8e1781f7d9d7bf8c248969ae0600ff1"
-    sha256 sonoma:        "16040692fc81643261f574bdde9b9a8b3f6ac949b63c1cf710077be08f7827c9"
-    sha256 ventura:       "0d964e970ffe413a8cb4b5a18b7c81f31a5bbaba243e7f9f8b39f7318445cc64"
-    sha256 arm64_linux:   "220949ddfc4298e40a2f41ee5dea07b8c6c1253ffb092acd5e834e010bb79b48"
-    sha256 x86_64_linux:  "7dabd19a5056216d962fb2164a401984cae70c0de41b5e1b859fa10785af4a2f"
+    rebuild 1
+    sha256 arm64_tahoe:   "50d803be696157000e10e3227f4ad22d3e1ed5917ce8f2d7eb51b3fbdaffcebf"
+    sha256 arm64_sequoia: "627cc5e5c31aec18475add356162f262601856eb5a050548091839520d66fd9c"
+    sha256 arm64_sonoma:  "ae94f44c2d807ce69bcaa8af9266ecdc5ae3c552ab1ea675dad959793ea60da8"
+    sha256 sonoma:        "d040c17775b47a4ead2759cbc45432337bafe6f02f9b51a21f23b62e31ac8848"
+    sha256 arm64_linux:   "b01b73b45d595f7fe956df3f1d65173968df35ea24a1852ed32f5b1792fcdfc4"
+    sha256 x86_64_linux:  "37fff430a510aa2de9602f8e8a0835f8b2ed01bab112154b30c3fac1c55d98ec"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "gettext" => :build
+  depends_on "gtk-doc" => :build
   depends_on "intltool" => :build
+  depends_on "libtool" => :build
   depends_on "pkgconf" => :build
   depends_on "glib"
 
@@ -42,6 +38,7 @@ class CutterCli < Formula
   def install
     ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5" unless OS.mac?
 
+    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--prefix=#{prefix}",
                           "--disable-glibtest",
                           "--disable-goffice",

@@ -29,15 +29,13 @@ class Ola < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "c31abf4e9de93dda1a5e5e27de6b75049e348a04cde77dd419b98098d5b33f1c"
-    sha256 arm64_sequoia: "e08cca281744a9ee02b1bfab2f43780807554161d697cfcbf7347b6cdea46f5a"
-    sha256 arm64_sonoma:  "e9f96d87630dc84650379d40e00f7901d6731697b25c6c39991596b5bcadad22"
-    sha256 arm64_ventura: "f8adebde6f2232138e3faf9c7579fba0686c110a75072045c2649f9a40c6e891"
-    sha256 sonoma:        "8ac5181277efbffddb99aa610ddf04631980b5ce7a8fc9bf7b306cfdc02d3422"
-    sha256 ventura:       "6acb4afec8d1583f4dcbb18594ad6178d998f1b5ff6d896b27279bc45a8dbffa"
-    sha256 arm64_linux:   "cc14cca06cfe7361c8b82d08ab9cfb09c42122e368c2f7f2a242dd51585acfd1"
-    sha256 x86_64_linux:  "c32035f4142cd45079be9e508e0afccc5ed2bf7669b29e403342ff090f968f69"
+    rebuild 3
+    sha256 arm64_tahoe:   "6ba62681374ac79077d185493e09aeefac7adc0746896ccb0485eb6668889015"
+    sha256 arm64_sequoia: "168690a27dd864abd1543df81298977f2a1cebe34c633a89c97afcccc010697d"
+    sha256 arm64_sonoma:  "b9d261def4d9d8c34fb73c52aa273480fdeda6c08d1cd62d7cbadf967a4d087d"
+    sha256 sonoma:        "f0cde66cdb2622d4f30d4c9980e61db42b71f9d8c819d3663b2fb61390297b17"
+    sha256 arm64_linux:   "a9d38c240b245f7e0e6bbd1ae81dd88e93861858b22acb2fd9938387d14bc7b8"
+    sha256 x86_64_linux:  "612776413721251613393b949c31da2493dd19527442b8efb23a9d1bf77abb80"
   end
 
   head do
@@ -63,7 +61,7 @@ class Ola < Formula
   depends_on "libusb"
   depends_on "numpy"
   depends_on "protobuf@29"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
@@ -95,7 +93,7 @@ class Ola < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def extra_python_path

@@ -1,6 +1,7 @@
 class OpenalSoft < Formula
   desc "Implementation of the OpenAL 3D audio API"
-  homepage "https://openal-soft.org/"
+  # cert expired report https://github.com/kcat/openal-soft/issues/1149
+  homepage "https://github.com/kcat/openal-soft"
   # TODO: Remove distfiles.gentoo.org URL when openal-soft.org SSL is fixed.
   # https://github.com/kcat/openal-soft/issues/1176
   url "https://distfiles.gentoo.org/distfiles/08/openal-soft-1.24.3.tar.bz2"

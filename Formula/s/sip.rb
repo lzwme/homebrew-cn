@@ -3,19 +3,18 @@ class Sip < Formula
 
   desc "Tool to create Python bindings for C and C++ libraries"
   homepage "https://python-sip.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/48/a0/c725bf92945a95e6aee2a07f26f7f33ee2720a06bdd06b2e5692075bd761/sip-6.13.1.tar.gz"
-  sha256 "d065b74eca996f29f1f0831ad321efaecf9906759b09466edc45349df7be6cd0"
+  url "https://files.pythonhosted.org/packages/a7/8a/869417bc2ea45a29bc6ed4ee82757e472f0c7490cf5b7ddb82b70806bce4/sip-6.14.0.tar.gz"
+  sha256 "20c086aba387707b34cf47fd96d1a978d01e2b95807e86f8aaa960081f163b28"
   license "BSD-2-Clause"
   head "https://github.com/Python-SIP/sip.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81d0c98f5ea41d1639847181abcaa834d9226f3322936944df0028cfc1a9e67a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81d0c98f5ea41d1639847181abcaa834d9226f3322936944df0028cfc1a9e67a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81d0c98f5ea41d1639847181abcaa834d9226f3322936944df0028cfc1a9e67a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6ad7638698802f279f90f11d21bbb329182db750f589b583b98f213d80cf67f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ad7638698802f279f90f11d21bbb329182db750f589b583b98f213d80cf67f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ad7638698802f279f90f11d21bbb329182db750f589b583b98f213d80cf67f3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6cf7a8de2a902dcb28039b9a9759bb255dc48a5b312d63aba075c7214e69d189"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6cf7a8de2a902dcb28039b9a9759bb255dc48a5b312d63aba075c7214e69d189"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6cf7a8de2a902dcb28039b9a9759bb255dc48a5b312d63aba075c7214e69d189"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c2b704a9f45b1daad2ed8c3a0cc2e7c87e05707916dd9f635643d6c99c005809"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2b704a9f45b1daad2ed8c3a0cc2e7c87e05707916dd9f635643d6c99c005809"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2b704a9f45b1daad2ed8c3a0cc2e7c87e05707916dd9f635643d6c99c005809"
   end
 
   depends_on "python@3.14"

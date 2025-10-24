@@ -1,20 +1,18 @@
 class Odbc2parquet < Formula
   desc "CLI to query an ODBC data source and write the result into a Parquet file"
   homepage "https://github.com/pacman82/odbc2parquet"
-  url "https://ghfast.top/https://github.com/pacman82/odbc2parquet/archive/refs/tags/v8.1.2.tar.gz"
-  sha256 "2c0fd64fe00926a605218bbfc448c759e32698e369c2e6daeea3d8bebe8367c5"
+  url "https://ghfast.top/https://github.com/pacman82/odbc2parquet/archive/refs/tags/v8.1.3.tar.gz"
+  sha256 "a0a08c8aaf9e68fc2e5803b20ac7bcbaabe797be1a69321ababb88971a324717"
   license "MIT"
   head "https://github.com/pacman82/odbc2parquet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d25527511260f24ad22d8fce5229f72decabce7c14895727fa06b57d4625ca2c"
-    sha256 cellar: :any,                 arm64_sequoia: "906f09f28fbcf31b19b26c61c5322f6f6a0ea4e62830f82428419b241937ae70"
-    sha256 cellar: :any,                 arm64_sonoma:  "73a73aa764534c128a912ed47d614f059e10ae506cc961e31c225dda049a92c9"
-    sha256 cellar: :any,                 arm64_ventura: "16b30a8b76ed6b476ce22ab6570c56512901fb2a1feaa6974f0987c591a51f0b"
-    sha256 cellar: :any,                 sonoma:        "51686c5dbabc6a703490a9947d1d89dcb73895e812e2dd1ef1d2c9db7d599e2d"
-    sha256 cellar: :any,                 ventura:       "a6bbaacaf9ebbc1ee5cd9f52f84e9cc4c6c9209ccc395e7d0d22f01711485bf7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "09ab24fc635ddb56fd148eef6a6b1f0fa7d9f39cf8b611d82b10bedf6a89deca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ad497008fff1b9dd4b750227c4188ecea2322e2853effbb24e96e71ac59fe37"
+    sha256 cellar: :any,                 arm64_tahoe:   "0775d8375374d2a52e5aa20ed8c7ee5bf5d62c49e7c7f751d67316fce8f8e273"
+    sha256 cellar: :any,                 arm64_sequoia: "6329cfd87e98aa1975c4300c1ad3412cbeed5445fbe6f24e146b1eba8d603acc"
+    sha256 cellar: :any,                 arm64_sonoma:  "e2376b9f3db1e74580457b40068e517eaeda1edc11702fae1e5f011b7575e26d"
+    sha256 cellar: :any,                 sonoma:        "140d6737a7cbcc6618194d5364709872324d310c2c147f371f0edcdc0a91b78d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "50c6881eb2b6a4673a29c192e02521947674a8b65f01cd333157bda48b9c8e42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b53a75f57603025cbc9e498c782f8ef8155c0ee34881563427d6841a65b958e"
   end
 
   depends_on "pkgconf" => :build

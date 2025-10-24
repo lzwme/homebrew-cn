@@ -1,8 +1,8 @@
 class Ripgrep < Formula
   desc "Search tool like grep and The Silver Searcher"
   homepage "https://github.com/BurntSushi/ripgrep"
-  url "https://ghfast.top/https://github.com/BurntSushi/ripgrep/archive/refs/tags/15.0.0.tar.gz"
-  sha256 "e6b2d35ff79c3327edc0c92a29dc4bb74e82d8ee4b8156fb98e767678716be7a"
+  url "https://ghfast.top/https://github.com/BurntSushi/ripgrep/archive/refs/tags/15.1.0.tar.gz"
+  sha256 "046fa01a216793b8bd2750f9d68d4ad43986eb9c0d6122600f993906012972e8"
   license "Unlicense"
   head "https://github.com/BurntSushi/ripgrep.git", branch: "master"
 
@@ -11,15 +11,13 @@ class Ripgrep < Formula
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "69fb4ba07c0c4376cd4a9b2ec5e5af9358c4399a67dbc5524153e62c6020ba99"
-    sha256 cellar: :any,                 arm64_sequoia: "650633027b96270925635a8430f603c5e229ad577cc4c4151de4757f29c153bb"
-    sha256 cellar: :any,                 arm64_sonoma:  "2465017e2af1236b0eb832646de7b989b71ba12b73f9ae66d9b41bf9385d7dfc"
-    sha256 cellar: :any,                 sonoma:        "c543e16804d9e0d41cce22310153c99ddd5e05837f969401c3981d2ca5b32380"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fea86c48e8651ec09be43df1bfa7a9b2700bbb12df12482e3fc628a2348fcb4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a99b0650a17f70a1426d68dda6311a50ab541d3e3eb446accd9cb53e6e72cc1e"
+    sha256 cellar: :any,                 arm64_tahoe:   "f4dc761b07edb8e6438b618d22f7e57252903e2f2b973e2c7aa0da518fc374b9"
+    sha256 cellar: :any,                 arm64_sequoia: "0153b06af62b4b8c6ed3f2756dcc4859f74a6128a286f976740468229265cfbe"
+    sha256 cellar: :any,                 arm64_sonoma:  "d9c83b35f30d48925b8c573afa83ec32b10aaca8f247bc938650a838d188c5df"
+    sha256 cellar: :any,                 sonoma:        "ab382b4ae86aba1b7e6acab3bc50eb64be7bb08cf33a37a32987edb8bc6affe4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbdef955d5752e53473be06b698c45ce31682cd47d75e7c706365450bd08ff44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "349bc55db5ad4b4e8935b889d44c745ae23605c1d57d6eb639dbd5c86d573a88"
   end
 
   depends_on "asciidoctor" => :build

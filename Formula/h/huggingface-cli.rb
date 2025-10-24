@@ -3,17 +3,16 @@ class HuggingfaceCli < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/10/7e/a0a97de7c73671863ca6b3f61fa12518caf35db37825e43d63a70956738c/huggingface_hub-0.35.3.tar.gz"
-  sha256 "350932eaa5cc6a4747efae85126ee220e4ef1b54e29d31c3b45c5612ddf0b32a"
+  url "https://files.pythonhosted.org/packages/98/63/4910c5fa9128fdadf6a9c5ac138e8b1b6cee4ca44bf7915bbfbce4e355ee/huggingface_hub-0.36.0.tar.gz"
+  sha256 "47b3f0e2539c39bf5cde015d63b72ec49baff67b6931c3d97f3f84532e2b8d25"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "53b9c0ab5a370cce603e0df6ec79a42bcb862fc63a79e1a35d853b2593e7d907"
-    sha256 cellar: :any,                 arm64_sequoia: "5b2aa61c28820e0100cc8f1d34ed4dfceeebdf2e5fd8f56e992c15fb9beb592b"
-    sha256 cellar: :any,                 arm64_sonoma:  "e77df3acd6937239c5e3365dcb19c449c2b1fbf3ec04f59e9e827ef3ef384010"
-    sha256 cellar: :any,                 sonoma:        "f15d156d8adaaa107092504c739c0c405a428897cb27c0bdb44ce12e9968210f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63eada1c99af0204188c4c36d4348a57b7e08fe7e945ac8075cae37ad6a683f2"
+    sha256 cellar: :any,                 arm64_tahoe:   "0741652210c26ee364735f173342b875fa4c29a3779c770efab89cd2b7e31840"
+    sha256 cellar: :any,                 arm64_sequoia: "8f37d8e1af5ca365ccde89f6f0fdb8f4a259917e79e0681f616749b012974912"
+    sha256 cellar: :any,                 arm64_sonoma:  "042240642227558c69bf607920eebe2816f4df99858f43ccafe66273f0737681"
+    sha256 cellar: :any,                 sonoma:        "fd773702a810829715763be07dd5e8ae54be1a4ee75b58dab63b25422aad686a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fba2586f04f59ec9e1998d8274101fdc1f7a25c9b13c19e553b7b07d1b81a05"
   end
 
   depends_on "pkgconf" => :build

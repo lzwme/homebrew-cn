@@ -1,18 +1,18 @@
 class Zsv < Formula
   desc "Tabular data swiss-army knife CLI"
   homepage "https://github.com/liquidaty/zsv"
-  url "https://ghfast.top/https://github.com/liquidaty/zsv/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "218d184dabf847f97f6920dfa3ed4626f6816420109e3d15739151d7bfeca2ec"
+  url "https://ghfast.top/https://github.com/liquidaty/zsv/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "63b4d8221a7e27b7ef7842afb3233e32cd2473d3e3389a0daa86833bfe56b50d"
   license "MIT"
   head "https://github.com/liquidaty/zsv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3729ee8c4eb1dce36b70fb206912248f357146485d0a39df840e376c712c576a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e649d91755a4572aaab24b5e17a6d1fe4853b7c86bad15f8ba572886e4d40a0d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ebea84879a8b0fbe6498ca58dbf7c66afe6660ded5dc708cbba30ed8c2107c43"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0ec7b16bd2e324745b9c437d1ab9147d01afcd6921e47fba190aa6008f494cbc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f836e2ad7cc362c58fc5785cb851d4f35940487aa45546f4c5e3ff90b761ec67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "967bcebc244bf695843cada533bbcaa4daf071ea484a47364ed78590a8fd758b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c82ecd50aad012264d4bd49ccbc74935cb8e2162259e783860edaf186e98c30b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dcb86fbd21ce9b4cefccbf90e7c2b29f4c559234e3641c224e1b4d9209737a8b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "760bd2a6d92d1548ea7c41d43aebd7cc91945ab08557487ad6458fa515f4b9ad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "76b143bb506116cb65017ce1f068084ff7a9268dc52797e63b18f9e7f3c6255c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5bd9c0416d51f73f1e17031dac061d228b23a362e89a5abe076c855643bb2650"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ebcee8626372b956ee5e917d18edeb2887921b6c1b1725f7f4e1ccf1d671a13"
   end
 
   depends_on "jq"

@@ -3,19 +3,18 @@ class Sacad < Formula
 
   desc "Automatic cover art downloader"
   homepage "https://github.com/desbma/sacad"
-  url "https://files.pythonhosted.org/packages/b9/ca/2f466cfdbfaecca099e64ccae7930aaf0c2510f88b75af0d6aa5bedd8a1a/sacad-2.8.2.tar.gz"
-  sha256 "72b533f09c6cbdc7d9509ad2e1885f23e2ecc05f9e89d853e1c6fa78eb511ab8"
+  url "https://files.pythonhosted.org/packages/df/39/3ec259100446937a0c36c14e1bc0794e990259100e90f5b83463b23c740d/sacad-2.8.3.tar.gz"
+  sha256 "e9b2b114e3f884f6d4e5dd49ff0ae8d4133f061f56fff433719e186df69aa986"
   license "MPL-2.0"
   head "https://github.com/desbma/sacad.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ae11107e67c3f4c9fea7632b0b6b024f31750c4f9289b62911d42e22bd57b8d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a9aa2216202ab6a7af3f3423eae573b3e65aa6b0860657419be66379db450e4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5cac0e4e104383284fbb42b2b24cd529ca9ed3d96513870274676986e5e61bb6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a2092e3c609f81ba60fd37e47bd9e63f38ab59bbda92316a1be06831bfb34a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "68ed002a2c8d70699ab62def9bbc9a1a0d21ea03f5fb8cdd02320d856255ed15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c4aee5d68cb1e27fead202d6ad60b86be234df3844e86ffc883d4c3ee5e0a10"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5edb627d7d02ad768c580fc15a801b91e916bd9697b7d7a4050a012fc04417c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac46be4b12402986b29f2c6e7a8e1caf45599e3f1a63b4bf5224e5ac064cac63"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0e27eea2724c254641ffa443834f16592eebae7010928d049aec0818dde527e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ce04631b97d2fef39a735cd749737d4a8c7774d1afe4885c1089518aea56112a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "38d4ac647b1f5596ca142185bb19e2b91d9acaab8b6608fcf11044cbd2f9e64f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac5b49fe187971a92bb0eae6f3234e8901e85a63f4d0b161ecc8366d29cd1c0a"
   end
 
   depends_on "pillow" => :no_linkage

@@ -1,8 +1,8 @@
 class Logstash < Formula
   desc "Tool for managing events and logs"
   homepage "https://www.elastic.co/products/logstash"
-  url "https://ghfast.top/https://github.com/elastic/logstash/archive/refs/tags/v9.1.5.tar.gz"
-  sha256 "f4b5c542ec6864a48594788a940429f70ad78662041496d9c4a7d72045b7ba5b"
+  url "https://ghfast.top/https://github.com/elastic/logstash/archive/refs/tags/v9.2.0.tar.gz"
+  sha256 "22e84c127dc9e969520f29b3c5577141b1abe8ad3b78c79d540f438de515c484"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/elastic/logstash.git", branch: "main"
@@ -13,12 +13,12 @@ class Logstash < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0184fea6e6a8240df98a4a086ca7411c7940a9931cb46b12e27b774a6321dd96"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94cfe145d08d49c91e75e2ab5596f60c2b85324f7dcf085e416a3894a65db1ce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca2f7006dfc09c4fbb22a8e62871e7e6108d6de7407df553726340219269a449"
-    sha256 cellar: :any,                 sonoma:        "817bbe2228f5315b5ae103cd55eee139e4fd883642475adc6cec5313c8676a49"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "efd20f20f8536e12e9267dd942bee8f7410e7332c60016075b63b546e14e8950"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f29a7af40ac8e6f41c8b276deab16c3f11c01dbc5b7dbe8d5ddff3afed86efb4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1be976a064da742dff255333e0e0b5ed10283d44b9f159f41f0ef661c073f849"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f60882d39f16765f87f9cdef4302865cc712c86fd69d6f1c9b2bb850de320e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a54c69ed8f1a47c4af60453d7ac4b2fdc718ca81be918deeec6ed4f9659f7eed"
+    sha256 cellar: :any,                 sonoma:        "fb928b30434a540e5a64ec2e1dc9353a31283aea4987fb2b46e853fd7fa0dbd3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f60393bfcc0a25414b7c9b13c5c27ee1c431a6b3dfc34f25d1f1a8fa52dbfed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3348584d5e763c37a66a92553e6ccbe14082c25e62e361c8d381cc33289a356d"
   end
 
   depends_on "openjdk@21"
@@ -28,6 +28,10 @@ class Logstash < Formula
   def install
     # remove non open source files
     rm_r("x-pack")
+    # remove x-pack reference from build.gradle
+    inreplace "build.gradle",
+              'apply from: "${projectDir}/x-pack/distributions/internal/observabilitySRE/build-ext.gradle"',
+              ""
     ENV["OSS"] = "true"
 
     # Build the package from source

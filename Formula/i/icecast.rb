@@ -7,12 +7,14 @@ class Icecast < Formula
   license "GPL-2.0-only"
   revision 2
 
+  # Upstream has used a 999 patch version to presumably indicate an unstable
+  # version. We've seen this in other projects that use a 90+ patch to indicate
+  # unstable versions, so we use a related pattern in the regex to avoid those
+  # potential versions as well.
   livecheck do
     url "https://ftp.osuosl.org/pub/xiph/releases/icecast/?C=M&O=D"
-    regex(%r{href=(?:["']?|.*?/)icecast[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{href=(?:["']?|.*?/)icecast[._-]v?(\d+\.\d+(?:\.(?:\d|[1-8]\d+)(?:\.\d+)*)?)\.t}i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "a6fe4e2efe623e044ed78cecee492ec3861773222a08168b1c3e835c4add5e58"

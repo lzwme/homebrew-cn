@@ -2,24 +2,26 @@ class Metricbeat < Formula
   desc "Collect metrics from your systems and services"
   homepage "https://www.elastic.co/beats/metricbeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v9.1.5",
-      revision: "49b225eb6f526f48c9a77f583b772ef97d90b387"
+      tag:      "v9.2.0",
+      revision: "09b547febe1cc9102a5d3f80ac8fbf68a5fd84f5"
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f4ddc724642a68346ddacd3de7d05569522d5d69506d80ab105f480be8272609"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07fcabc8e6e6d30975224115783e931d49f96992822f3c1f3d08c59677c39b2b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1280635ecc02e1a24baf88ff90d7a68dbc4735d9bcb26cbb4ea4fefb9cc799b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e120b5744cdc6886a17eaf7cd3a6de66d3ca57a8e8791455c2488c47c6c15b07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "61582a99d6ea9fca7819aab28cee2fae8138f6d3080d8ce9f346136617aa2e81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e00f34cb65d980fb26c90d77ddf631609dfe64da475247d433b1ed7ebeea329"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dbcbfec0b7ec2a5aec6dbb8a14f860bb1b2f468cd2b00c86c50588a895a6f3bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5934de52680cf95165a276d735392a8bdc94098502d695853ad2a373949576d9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bcaa192343fb966de6e502c67caa9553470964f85221a3790fbc87433445627d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4e39964ddae3daf2260c1700e54088b8b9681ccce6d830380f844621cafdc33c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ec79746912dc1c7a1ddb50e09e494b3c405c7eeceb2f872e53189f31f93b671"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "069c4e7ccbf27eaefaca7d80a2a2f7bda78de753f475a1a10c27ce6599ad30e2"
   end
 
   depends_on "go" => :build
   depends_on "mage" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     # remove non open source files
     rm_r("x-pack")
 

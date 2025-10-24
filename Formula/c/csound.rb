@@ -37,14 +37,13 @@ class Csound < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "8b081da8c1f342e5e09ece229d53527b24e7dfea78384ad758f8d5ed9cf0ce42"
-    sha256 arm64_sequoia: "8d4643c7facbb44a86760a6e4aed9c9d8d64693ed974cbab8df35ae34299b7c6"
-    sha256 arm64_sonoma:  "59e91a6e3ceb3e5ce1a2a846643b6e695ba7d45ee1683a4d90922cb0295b2d4d"
-    sha256 arm64_ventura: "924021067daaa589b49dc7d87697c0dcc0354c55ddbf849b5d99f7f8c6d2ff89"
-    sha256 sonoma:        "5bc33817212bf9e58d2110d263038ba087753d934cf1b229892aef0b48a0a903"
-    sha256 ventura:       "9a087479d355399ef4515d10406c0e2852059cb4bb21a6b3a7523cc93a480560"
-    sha256 arm64_linux:   "b8258413994957c8095201a023403318a253eb56bf01ca95afcdd19db88c8e55"
-    sha256 x86_64_linux:  "58d3320da2d409e1f462bf7544c585cd4b4ee3b922fc9b6fbdf8f3b6a8813b2b"
+    rebuild 1
+    sha256 arm64_tahoe:   "a8aebe90e991a45430d2eadb0932002e15dbdb9b01c4653b6b39844fc66b8568"
+    sha256 arm64_sequoia: "19ed28cda2e8ca7f3f8a4f4b4fc6cc20dd15740990beffe2f9fa7f908f7d7d18"
+    sha256 arm64_sonoma:  "a64a23abe5e2f809c23777aaa62e6eff3a7848f632f4a34fa225f4ced50085af"
+    sha256 sonoma:        "9951ff6fd1277d43ea3e0f3702671927c23fe934d6690f9f5b6a4649ce9401fd"
+    sha256 arm64_linux:   "04f341aa5454a4e08af8ec407965194b08975f03ee010f0a901254a64d8b1738"
+    sha256 x86_64_linux:  "33f09e66f709e4d770cdc4b2ab1f89bb9be4107f708d70acb86d790f19731fde"
   end
 
   depends_on "asio" => :build
@@ -68,7 +67,7 @@ class Csound < Formula
   depends_on "openssl@3"
   depends_on "portaudio"
   depends_on "portmidi"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "stk"
   depends_on "wiiuse"
 
@@ -106,7 +105,7 @@ class Csound < Formula
   end
 
   def python3
-    which("python3.13")
+    which("python3.14")
   end
 
   def install

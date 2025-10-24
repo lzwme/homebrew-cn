@@ -8,12 +8,13 @@ class Mycli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "43f24b9ddb351f9cd17c0828997bd58f6c7ca28a9927ea82f622332b2efb3447"
-    sha256 cellar: :any,                 arm64_sequoia: "3d5c72b5e3d8b6d41e72d79efe8d9d27d3d6398c6148076c288e2c7deb434bfd"
-    sha256 cellar: :any,                 arm64_sonoma:  "db6966841eeb6e35beb5949ee54185233625908d0fbd3a4e0848299ab13c5ddc"
-    sha256 cellar: :any,                 sonoma:        "1fca3a8e3d8b96b6f746f293d4d4da685fdde97546f89da4c22815ceab8b4741"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8aebecf69d98d98f1df04dc04a45be832a5d1b45fca3b0cf9726587177a47215"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4125f0acb83e444f847a076612be2361f0355983427d050224da7709b0b8d37f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "3ef404ef89d70159b4b59bf57d9e9a2c44c8b080dccea66ac8eced08dd7747c6"
+    sha256 cellar: :any,                 arm64_sequoia: "4cfae03f5ee4fd2137957752edc57710b5992f773a2217d9b637e53731588f0b"
+    sha256 cellar: :any,                 arm64_sonoma:  "bbd61769696657da21cd587da7b03902627e171aefc6a32aa19cd65b66c439d4"
+    sha256 cellar: :any,                 sonoma:        "808d331503d6c024d50c49958ce6c8cf17ff7565c0f592793fe708b5ae2ce81e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "86a05a9ee5eef17413549957d9c2545ed6fede45cbae97555f8aa146c028c0ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "212ce36895f5748843db3f5974f423cc99234e4bdd3aa335935b5df81680abcc"
   end
 
   depends_on "rust" => :build # for pydantic-core, sqlglotrs
@@ -85,8 +86,8 @@ class Mycli < Formula
   end
 
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/9d/c0/a3bb4cc13aced219dd18191ea66e874266bd8aa7b96744e495e1c733aa2d/jiter-0.11.0.tar.gz"
-    sha256 "1d9637eaf8c1d6a63d6562f2a6e5ab3af946c66037eb1b894e8fad75422266e4"
+    url "https://files.pythonhosted.org/packages/a3/68/0357982493a7b20925aece061f7fb7a2678e3b232f8d73a6edb7e5304443/jiter-0.11.1.tar.gz"
+    sha256 "849dcfc76481c0ea0099391235b7ca97d7279e0fa4c86005457ac7c88e8b76dc"
   end
 
   resource "llm" do
@@ -95,8 +96,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/de/90/8f26554d24d63ed4f94d33c24271559863223a67e624f4d2e65ba8e48dca/openai-2.3.0.tar.gz"
-    sha256 "8d213ee5aaf91737faea2d7fc1cd608657a5367a18966372a3756ceaabfbd812"
+    url "https://files.pythonhosted.org/packages/ee/c7/e42bcd89dfd47fec8a30b9e20f93e512efdbfbb3391b05bbb79a2fb295fa/openai-2.6.0.tar.gz"
+    sha256 "f119faf7fc07d7e558c1e7c32c873e241439b01bd7480418234291ee8c8f4b9d"
   end
 
   resource "pluggy" do
@@ -120,13 +121,13 @@ class Mycli < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/3c/a7/d0d7b3c128948ece6676a6a21b9036e3ca53765d35052dbcc8c303886a44/pydantic-2.12.1.tar.gz"
-    sha256 "0af849d00e1879199babd468ec9db13b956f6608e9250500c1a9d69b6a62824e"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/00/e9/3916abb671bffb00845408c604ff03480dc8dc273310d8268547a37be0fb/pydantic_core-2.41.3.tar.gz"
-    sha256 "cdebb34b36ad05e8d77b4e797ad38a2a775c2a07a8fa386d4f6943b7778dcd39"
+    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
+    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
   end
 
   resource "pyfzf" do
@@ -180,8 +181,8 @@ class Mycli < Formula
   end
 
   resource "sqlglot" do
-    url "https://files.pythonhosted.org/packages/eb/75/9c9a42415ff8b03b7307252f6edf70fb3555ad45dd69d5e03a9236e92bfa/sqlglot-27.27.0.tar.gz"
-    sha256 "c1ce8a3b7ce9b3c9d5a0fc26f202d7ed6a203b7398ae834c979e0c455a99d9ce"
+    url "https://files.pythonhosted.org/packages/b5/3d/bf8b4a96b934c26ec83f94048ec201d17cd95fb3c2e6930bbcfaaaad6813/sqlglot-27.28.1.tar.gz"
+    sha256 "01c03da1aa0c7773002cfb4a58bd4b0656196e0164aee1d83104b3d3cc1475f3"
   end
 
   resource "sqlglotrs" do

@@ -8,13 +8,13 @@ class Charmcraft < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "270bccbfabf7a976cb125a87bed4ef9572aec0cfdfdfa3d54ea4e992d0786373"
-    sha256 cellar: :any,                 arm64_sequoia: "4b062aa30b88854f652706d5794046dbc664cd636b8f0e926083b0749b7ce940"
-    sha256 cellar: :any,                 arm64_sonoma:  "491e4de1648a2e67e9b9ac7a2eaaedd1b7438ee27c7b12a0cd83a28ce7f46eee"
-    sha256 cellar: :any,                 sonoma:        "72ad6eb26c717d661edda61566f7cfe0099fa72dff231a100f13deb10e9b2269"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85306c03399c34b0ad42a7377977c1878c4a5d2222de30a9602e849958fed9e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e620af1b58d1fba0f6491b3cd27a4c139de013e271c0cc95fe4b7754ba509efc"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "49e58377836d852fbd5fab77ce0c5d9a41bdaf45172975dd7e0cb605af6aa7d1"
+    sha256 cellar: :any,                 arm64_sequoia: "55b46af7201b974d52298e3f01e7cf8d054fd79d8a268600d949a3a11dc4d0cf"
+    sha256 cellar: :any,                 arm64_sonoma:  "3a00b7d8284e8b2e8594e501d9453dac0b7e5685e3e550488648483d7983768d"
+    sha256 cellar: :any,                 sonoma:        "29ad6bd0ca2d767f18872f335bb3fe1029ec33971587dce6487d447dcf8eb9e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a4c1583605e8f55c07fa3083e3b8a0b6c396b8db69432d71962f758a89d41af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ee134bff7444da780f280941029b0ed54c81a2e1b6a1507fc6e76c05f0367b1"
   end
 
   depends_on "rust" => :build # for pydantic-core
@@ -50,8 +50,8 @@ class Charmcraft < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "craft-application" do
@@ -75,8 +75,8 @@ class Charmcraft < Formula
   end
 
   resource "craft-parts" do
-    url "https://files.pythonhosted.org/packages/8d/50/3b20ba0454a379097b0c45ea0810151ebf93dabd58e0808d33bd072ffc67/craft_parts-2.25.0.tar.gz"
-    sha256 "7b49f8d2c291df6d8080d3350a5b087ad26a37f52eeef9b57da6a4c5aa749aed"
+    url "https://files.pythonhosted.org/packages/ff/0e/32408579efd9061321c8df73754f47347e0eb26c04621b61bf173b9e2fc3/craft_parts-2.26.0.tar.gz"
+    sha256 "53d73015ec55ca5ad5dfc84113db26b06191928bc82ac1e18e8582381390b6d6"
   end
 
   resource "craft-platforms" do
@@ -125,8 +125,8 @@ class Charmcraft < Formula
   end
 
   resource "humanize" do
-    url "https://files.pythonhosted.org/packages/98/1d/3062fcc89ee05a715c0b9bfe6490c00c576314f27ffee3a704122c6fd259/humanize-4.13.0.tar.gz"
-    sha256 "78f79e68f76f0b04d711c4e55d32bebef5be387148862cb1ef83d2b58e7935a0"
+    url "https://files.pythonhosted.org/packages/b6/43/50033d25ad96a7f3845f40999b4778f753c3901a11808a584fed7c00d9f5/humanize-4.14.0.tar.gz"
+    sha256 "2fa092705ea640d605c435b1ca82b2866a1b601cdf96f076d70b79a855eba90d"
   end
 
   resource "idna" do
@@ -235,18 +235,18 @@ class Charmcraft < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/fa/a4/cc17347aa2897568beece2e674674359f911d6fe21b0b8d6268cd42727ac/protobuf-6.32.1.tar.gz"
-    sha256 "ee2469e4a021474ab9baafea6cd070e5bf27c7d29433504ddea1a4ee5850f68d"
+    url "https://files.pythonhosted.org/packages/19/ff/64a6c8f420818bb873713988ca5492cba3a7946be57e027ac63495157d97/protobuf-6.33.0.tar.gz"
+    sha256 "140303d5c8d2037730c548f8c7b93b20bb1dc301be280c378b82b8894589c954"
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/3c/a7/d0d7b3c128948ece6676a6a21b9036e3ca53765d35052dbcc8c303886a44/pydantic-2.12.1.tar.gz"
-    sha256 "0af849d00e1879199babd468ec9db13b956f6608e9250500c1a9d69b6a62824e"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/00/e9/3916abb671bffb00845408c604ff03480dc8dc273310d8268547a37be0fb/pydantic_core-2.41.3.tar.gz"
-    sha256 "cdebb34b36ad05e8d77b4e797ad38a2a775c2a07a8fa386d4f6943b7778dcd39"
+    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
+    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
   end
 
   resource "pylxd" do

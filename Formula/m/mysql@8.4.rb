@@ -3,11 +3,9 @@ class MysqlAT84 < Formula
   # FIXME: Actual homepage fails audit due to Homebrew's user-agent
   # homepage "https://dev.mysql.com/doc/refman/8.4/en/"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-8.4/mysql-8.4.6.tar.gz"
-  mirror "https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/mysql-8.4/8.4.6-0ubuntu0.25.04.1/mysql-8.4_8.4.6.orig.tar.gz"
-  sha256 "a1e523dc8be96d18a5ade106998661285ca01b6f5b46c08b2654110e40df2fb7"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.4/mysql-8.4.7.tar.gz"
+  sha256 "c0bf33a94cdb908f149aea0797affb1b139262ccf0e0b9787a17246207542e69"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 3
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/8.4.html?tpl=files&os=src&version=8.4"
@@ -17,14 +15,12 @@ class MysqlAT84 < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "296ac4cd0d3536ac2003bde5597f272490309ac4cddb8f5417e86c797d802e09"
-    sha256 arm64_sequoia: "92fff5ec339efebd67c46d123731cef0eabf5ef569d10bf6c0422768e707d022"
-    sha256 arm64_sonoma:  "8df8013e792d84259b10ad6a27f8254fdc9022f9328f1307f81031781b09c94c"
-    sha256 arm64_ventura: "acb0d1983d48207de9e8cfe0d356fecff1a1f644fe3c14ebff54782d0146a2a4"
-    sha256 sonoma:        "d3ed1eb4eaec7536f6e57629b05954c8844ae7bd0f58ecebe7f8f4b0d7d32345"
-    sha256 ventura:       "f1469aa84af4f93c962b852bdeebd26941573139ab2f10aeb44e7595342446bc"
-    sha256 arm64_linux:   "70dc3636ce3ceac5d1eed77558cd62e619c2d4cf972d2ef0ed5fa8ad848fbc62"
-    sha256 x86_64_linux:  "e15660b900bb0daaa6f339fdb1dbfb95dce125ed6f650e29ef661908b5654214"
+    sha256 arm64_tahoe:   "ea97978f58571a36a4caf8f767ade0a4469bf8b510366bebfa83251c45c01463"
+    sha256 arm64_sequoia: "141408f11530a0e589d2dfbe77a6fdf2fc66e52240d337d0c603a4794955f45b"
+    sha256 arm64_sonoma:  "762e5ce9b5559694a3578279c696c9c2b3ab6a8e6a04b358922adfc9e2f8f779"
+    sha256 sonoma:        "e046362b1160a490a5a70a2ba4ca8b292630c5f6868d7ab971a6821543034c32"
+    sha256 arm64_linux:   "acca87ade49bbac279982f0d995cf91da67fd716aba165c95b2d011598c0230c"
+    sha256 x86_64_linux:  "7a5f003018fdc84289621f03e6d26f97e26d92a665d6431f1b27bfcc74537b4b"
   end
 
   keg_only :versioned_formula

@@ -2,7 +2,7 @@ class Glm < Formula
   desc "C++ mathematics library for graphics software"
   homepage "https://glm.g-truc.net/"
   url "https://ghfast.top/https://github.com/g-truc/glm/archive/refs/tags/1.0.2.tar.gz"
-  sha256 "f972c5f02cd9fff4d76351268d5ea62518c8972e1e9de5d1dd4910261b50ef54"
+  sha256 "19edf2e860297efab1c74950e6076bf4dad9de483826bc95e2e0f2c758a43f65"
   # GLM is licensed under The Happy Bunny License or MIT License
   license "MIT"
   head "https://github.com/g-truc/glm.git", branch: "master"
@@ -13,12 +13,13 @@ class Glm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a61ac3fc67b2eace8fec925731ae8452e1619d1ea8023be5bc9c9a22454ee3a1"
-    sha256 cellar: :any,                 arm64_sequoia: "aea7cff938cf25ae861008d1e531f4fda9c970418e874c840f4581a37df40a8d"
-    sha256 cellar: :any,                 arm64_sonoma:  "31421ae41806edae930012fa99361718421ec080090e39e2e818d88233742785"
-    sha256 cellar: :any,                 sonoma:        "564c811efe5d541249603ad3f824f830f5aaa072e0417a436ada3e7439c7c354"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63dd3d0f5999c81fb3bb63a61e7478a22ddbd2d23cd04f265a72e27815176250"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a57d8255fd7690fd00ee76f77ce7c462951938cda2a9ea4884f22ebf2c99bcee"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "05a06dc75a170c9f3fee69590447f2f69bb84db32077103d118233dc7896e026"
+    sha256 cellar: :any,                 arm64_sequoia: "27ae6d2faa2182f30fab3fb0ed1f80f46bdd3c3503087679264e508d212496cf"
+    sha256 cellar: :any,                 arm64_sonoma:  "b75dba49b0edfef6d292617d47acde17a848a1472c30a27a0ed505e2c101781d"
+    sha256 cellar: :any,                 sonoma:        "a1b897cb22a4c0fcee80fddd1db7f909aa615bf67c8b3d9b337defb2cec56e07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65f2283d562242b9b2f39ff853a1b7811c130e12064889136405c454d0c1003b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01be3766386d6d4343e0744f61bf19bfd385687b0b79f98ae930c5c446eb01ec"
   end
 
   depends_on "cmake" => :build

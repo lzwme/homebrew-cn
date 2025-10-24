@@ -1,8 +1,8 @@
 class Soplex < Formula
   desc "Optimization package for solving linear programming problems (LPs)"
   homepage "https://soplex.zib.de/"
-  url "https://soplex.zib.de/download/release/soplex-7.1.5.0.tgz"
-  sha256 "318cb631a94407a539ced835d56c038a15ce095affaf33cff6f9310512c62bb8"
+  url "https://soplex.zib.de/download/release/soplex-7.1.6.0.tgz"
+  sha256 "4fbae2d1f06ed2204c9e37b5775f04dc05796f7ac900977e19bcbdbfeae9bf56"
   license "Apache-2.0"
 
   livecheck do
@@ -11,14 +11,12 @@ class Soplex < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "198fcc85981fe0b9a68cf62b102c525be5b270cbb4c51f5bb5ca1db3b9cafe8d"
-    sha256 cellar: :any,                 arm64_sequoia: "15c77602e5db1c983e11a1957d6e43efb00947507dddbec9b90154c72cc2a2ea"
-    sha256 cellar: :any,                 arm64_sonoma:  "edee40e0cda63129735bf2b3a024e550b3617e7fbbed903cf0d2e464b8371101"
-    sha256 cellar: :any,                 arm64_ventura: "2261b573255984583322cc6988df39fc295b93c3127a422f7524d86fcba3dab2"
-    sha256 cellar: :any,                 sonoma:        "8b2fc2fee625c90a061537d1ae43ac1c3610fb4ce7960523eca29ecc14277a34"
-    sha256 cellar: :any,                 ventura:       "b580c1f7f184ab963bb0d1f182e5b0244f21d933bf165fd5933eba881c1332e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "612d2bfe2cbf24c5f7e20982ab93fed65672c62c3d23f763ee77ef9d844996de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88fc19bc3d34b63529f6a8cc52f1697681b5ed0d818d9aba879ae3b9aedbccc9"
+    sha256 cellar: :any,                 arm64_tahoe:   "1550aa55004abebea063bef5299a9aa415f2a6e6b675f52ae0f3e8bc924fb3fc"
+    sha256 cellar: :any,                 arm64_sequoia: "66f9a48f8ab8c3148af4ab89df677159fa55b5e982bdb9485b09a97f37998096"
+    sha256 cellar: :any,                 arm64_sonoma:  "3818410f86d164251f21e54798e36a59bd65e0bb8ea6f6f409a4e9ea13df031d"
+    sha256 cellar: :any,                 sonoma:        "e2932f376cf82fa64f47e7062ee7d3de492c6621a61d99d7f6f110506a958a00"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e53bc419de2813f3badde9e245d01026c8f37570263fba9ea759a7514bb385e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6dd747f830bfd203330a6f440512213c4f5c866054c1c74bd457302f1f91fe09"
   end
 
   depends_on "cmake" => :build

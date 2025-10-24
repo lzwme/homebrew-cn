@@ -19,19 +19,19 @@ class Influxdb < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "76a35e5f711f46d0f205f5a4e392154cfa04dd3d3b68441e81d8a9ec6d790522"
-    sha256 cellar: :any,                 arm64_sequoia: "741206932e2e625db4bceabf409fde90106b35cab787fee113aa3d61cac25112"
-    sha256 cellar: :any,                 arm64_sonoma:  "00012928fc8096db1f566a444188fd2728f7c2e034d03acfdad36f4a6f196afe"
-    sha256 cellar: :any,                 sonoma:        "fc709d2eae34adb07ae878c4f94800ff28e4c1dc22f92b1f03cfb86e3545c894"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a699da6b82efe3bd8c83094fff0a3f63c5b7014e5e26dc4d8698327bad357286"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e51586615ec61fc1bd4af814f2462f7175762393964fd4b034b6fe438b2a4cf"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "0b56eb69673cec96b6e0abc6fdeb5807f26971b63d9c9e59f243de2e6e0c4433"
+    sha256 cellar: :any,                 arm64_sequoia: "814ba255caf27a6a28ba8501e5d3d1e2a8ae8bee4fe5d95e6de138986ed2c359"
+    sha256 cellar: :any,                 arm64_sonoma:  "4417f00dcf3f9b1e8eb646a28d486c56220abcbee07699cef4a3fb38e4f5800a"
+    sha256 cellar: :any,                 sonoma:        "ad174931eba64ae5aa550d28619ec1aaaa9b387cfe4496759f14e4ff89fca399"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb100914676a5753dda3192c49da245e2d598d0daa54f4231dbbeff201ed5469"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a90708ec7969b861c54b072b5c1b4f8e2e3fe5fe39e8719ed55afca095316e0"
   end
 
   depends_on "pkgconf" => :build
   depends_on "protobuf" => :build
   depends_on "rust" => :build
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "bzip2"
 
@@ -41,8 +41,15 @@ class Influxdb < Formula
     end
   end
 
+  # Fix to support Python 3.14
+  # PR ref: https://github.com/influxdata/influxdb/pull/26927
+  patch do
+    url "https://github.com/influxdata/influxdb/commit/b6fef2921d4ae1823e17d08c18eace1ae2cdeac1.patch?full_index=1"
+    sha256 "e568ef1151fb9f003d7e88f45427d43ac461f020ba79b19a0e6dc472a1eb71ad"
+  end
+
   def install
-    python3 = which("python3.13")
+    python3 = which("python3.14")
     ENV["PYO3_PYTHON"] = python3
     ENV["PYTHON_SYS_EXECUTABLE"] = python3
 

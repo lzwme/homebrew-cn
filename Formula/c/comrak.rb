@@ -1,18 +1,18 @@
 class Comrak < Formula
   desc "CommonMark + GFM compatible Markdown parser and renderer"
   homepage "https://github.com/kivikakk/comrak"
-  url "https://ghfast.top/https://github.com/kivikakk/comrak/archive/refs/tags/v0.44.0.tar.gz"
-  sha256 "8a33eae71f6296a6c8b3630a35bb04f5c42c8fc8467f52e3c52e1d1c92904604"
+  url "https://ghfast.top/https://github.com/kivikakk/comrak/archive/refs/tags/v0.45.0.tar.gz"
+  sha256 "0fe58e74bbc47705192a25352e131cdf1de1f868b614e56c9b28b714db010500"
   license "BSD-2-Clause"
   head "https://github.com/kivikakk/comrak.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "72e7fca8d52b144e86a1d1854923bc64a679332ad2730d60800e33f67eb0e05a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "415b1b089b1ba9df15786079017956aaa32af73a39074aa3c8221f93de538b90"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4ec4786f45632bf8c1c89ed06247f910ed815abd25579c9e4c6a15a890f7800"
-    sha256 cellar: :any_skip_relocation, sonoma:        "52de56fa8adc3d049341be0a1a2cab912eefd0aecada77e917d093ccd8202079"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7c4e853edf7603c8af376ad7cafc43b0960d8025dc015179cd26e1967d94fc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d17a581127e7e23976426ecc6f373cfc8fa127e113ecec1947d8d7f7c84ccbc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54b4157eb2a49e7a33816bc165c22b36fa0bbe7508b55187ad1b78f11b45ff79"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "563bf97c836cd5c58caab4c2f9ee5882bac26d1fe158820939dc9a9ad9da9218"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10a90690922bdd95789392541b54001c043ad17f9124b833b49a8dc0f816374c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "76d318f1cee40985c05db84d5d11fc25a88236cd5c0430c7d9e3bef3e4eb2e5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2ee0627bee61f34152238dd48e321739888c305e49187ad014a4333b7e4696d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6737d676f193f90ecd777c9e4afe62ec28497e67b93bafe1953c7878be1872de"
   end
 
   depends_on "rust" => :build

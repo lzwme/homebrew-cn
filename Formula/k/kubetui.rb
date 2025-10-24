@@ -1,8 +1,8 @@
 class Kubetui < Formula
   desc "TUI tool for monitoring and exploration of Kubernetes resources"
   homepage "https://github.com/sarub0b0/kubetui"
-  url "https://ghfast.top/https://github.com/sarub0b0/kubetui/archive/refs/tags/v1.9.1.tar.gz"
-  sha256 "d6ddf724a51766d6b83f8635c9fcaa233670c3748ca80bd84a733e20167f9cd9"
+  url "https://ghfast.top/https://github.com/sarub0b0/kubetui/archive/refs/tags/v1.10.0.tar.gz"
+  sha256 "00b9d176f74ab702a91943a7016c67507111aa9723184dbad582cc207f270bd8"
   license "MIT"
   head "https://github.com/sarub0b0/kubetui.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Kubetui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b6ae8cd58cc7377985b3181092d63dc406486f9846a044ed8bb0dcc0bca9e6eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "172b942a2cfd463e16a87ee2ec8d01d3c3833d906e3c7110f4b76b18cc9799e0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5ce0e7b3419bfce4aa9c2755468fc74f583b555335cd85e6ed2c570579976d0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "beb70b1484cd2f29c11f6193ddf3c0f9f6c6078584fdd18f24770ceb99c1dd7c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "08ee40ff45a2ea37d9703ff514ff88da0cc870a2f0be39c90dade533df71af2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2197ff9e8e7e87b4a487cbf469edf98814f6405f617ba00197ad842e4860c09f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6375e048e55054e1a79d320a0fef3801acc3a28f08b717d6db2704ccf922f00b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c126ae60f396ed0acc0c7c11819cce709673c4849783612928482478e60dc9a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54f0795b06df634ed40faca72ed24897cda90519c2f6bc0b7ed31e47b6dd71f6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3d1711f9a1869bee1891523e7655733824ec41dffe8e7f39f566982f6b4fbd6b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "791e60fe23aabe01e6cf5468b1a66cd9539cc04edb2dabcb640ce1d9e7b16aae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "427864d3152e3dd42d4d8aa5a8fe89bb8cc3656ed6ea0698f8a0a5df7e1d8b2b"
   end
 
   depends_on "rust" => :build

@@ -1,8 +1,8 @@
 class Cadence < Formula
   desc "Resource-oriented smart contract programming language"
   homepage "https://cadence-lang.org/"
-  url "https://ghfast.top/https://github.com/onflow/cadence/archive/refs/tags/v1.8.1.tar.gz"
-  sha256 "89b84b36b17c51be64644e0e3d4f3152eeb5a72ed06316168c1e4a59cde83d60"
+  url "https://ghfast.top/https://github.com/onflow/cadence/archive/refs/tags/v1.8.2.tar.gz"
+  sha256 "41d67530771a65bc4394160250f90b892c0889995011a54f76597064eaacf534"
   license "Apache-2.0"
   head "https://github.com/onflow/cadence.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Cadence < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f28726a604f1dd717beabe2956e8552d494a33022786ce52ef3a0aee71c1556"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f28726a604f1dd717beabe2956e8552d494a33022786ce52ef3a0aee71c1556"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f28726a604f1dd717beabe2956e8552d494a33022786ce52ef3a0aee71c1556"
-    sha256 cellar: :any_skip_relocation, sonoma:        "da832ff8770c1218f58553ed77e848a5b820e68775c59d1acc0e3ceae2c5ee05"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3a2c21cf247a92895348fdefbf0a37754f0fb512ff3567be22d7243f37c434e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbe8e3f448dcbdf67c27aba0e111f226ac6ab4580b9a26ea2f69ad3ff0b4040e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ce38256858402ee80e9654f1de367e76e9a9fea31141c7c68e57b7e817e32e7f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce38256858402ee80e9654f1de367e76e9a9fea31141c7c68e57b7e817e32e7f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce38256858402ee80e9654f1de367e76e9a9fea31141c7c68e57b7e817e32e7f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a18e10276cb5e99eb0c468dbb0bc64af449348618e58d6eee5f8dd6a3031d10b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6de8a58b80f170c176cc733e78ddd86d95624f04b7b86f15623f72c49dae1c17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cb183b8de44d1723b7c7da9077ac5345128d95d56d0df4ff9e8ad0a4debd288"
   end
 
   depends_on "go" => :build

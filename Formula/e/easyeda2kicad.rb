@@ -10,13 +10,13 @@ class Easyeda2kicad < Formula
   head "https://github.com/uPesy/easyeda2kicad.py.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "9b83dbf5701b8228675a060d8b9a870b1b8cc5e83fdc653d8a350f3af37c7cdd"
-    sha256 cellar: :any,                 arm64_sequoia: "8ebff805bcc3f7615345f1207e3360de164b0eec09dbd2ca44dcda299c24a591"
-    sha256 cellar: :any,                 arm64_sonoma:  "c586cc40d90ad06e69ddf46bb5f5da80115c78846126c67c39bc94e5f435707a"
-    sha256 cellar: :any,                 sonoma:        "7052b9941fe5f08a0f5632e863c31ed46283958911e9aa275b48a0a521b11ecb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dff931eda2b6d312200c66e2669b30fbff313e73b0cde9e26e70370ea0b0054"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b20fe03657abc811d960b9a6c961d24e8ae0f778a4434e96e1071f42e19d836"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "05b51b9b90b6e9df21cc4d50a2a54d9c69a5e25085088ad821df4b6ef12c76bf"
+    sha256 cellar: :any,                 arm64_sequoia: "682e2bc10f6286a65763322476ce3ca59a7d5f06e56f29b4a37397cef9a58962"
+    sha256 cellar: :any,                 arm64_sonoma:  "129a8336006cd5193dbd47bab453d753d87f8c827c2eceed5eb0a1e08884ad98"
+    sha256 cellar: :any,                 sonoma:        "08894a9b07d9fd9674cca066b444f5da23705f8ea8f4e3c781917ac0d11fc89f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "40fbda375b8dbe3cd44926ea6cd2d95cab3669fdd6ffe3a1c6d66d6b4bffa753"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a62b9475e1f4ea420ac06a4ac56377ed11285f00a6393eb29cdb93baf236acb1"
   end
 
   depends_on "rust" => :build
@@ -43,13 +43,13 @@ class Easyeda2kicad < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/3c/a7/d0d7b3c128948ece6676a6a21b9036e3ca53765d35052dbcc8c303886a44/pydantic-2.12.1.tar.gz"
-    sha256 "0af849d00e1879199babd468ec9db13b956f6608e9250500c1a9d69b6a62824e"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/00/e9/3916abb671bffb00845408c604ff03480dc8dc273310d8268547a37be0fb/pydantic_core-2.41.3.tar.gz"
-    sha256 "cdebb34b36ad05e8d77b4e797ad38a2a775c2a07a8fa386d4f6943b7778dcd39"
+    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
+    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
   end
 
   resource "requests" do

@@ -1,7 +1,6 @@
 class MecabUnidicExtended < Formula
   desc "Extended morphological analyzer for MeCab"
   homepage "https://clrd.ninjal.ac.jp/unidic/en/back_number_en.html"
-  # Canonical: https://osdn.net/dl/unidic/unidic-mecab_kana-accent-2.1.2_src.zip
   url "https://mirrors.dotsrc.org/osdn/unidic/58338/unidic-mecab_kana-accent-2.1.2_src.zip"
   mirror "https://clrd.ninjal.ac.jp/unidic_archive/cwj/2.1.2/unidic-mecab_kana-accent-2.1.2_src.zip"
   sha256 "6cce98269214ce7de6159f61a25ffc5b436375c098cc86d6aa98c0605cbf90d4"
@@ -15,8 +14,6 @@ class MecabUnidicExtended < Formula
     formula "mecab-unidic"
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "16217e32273610a5314c981b56a06476002a596ad3e17af6bd8ad48adf7f8f23"
@@ -27,10 +24,7 @@ class MecabUnidicExtended < Formula
   link_overwrite "lib/mecab/dic"
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--with-dicdir=#{lib}/mecab/dic/unidic-extended"
+    system "./configure", "--with-dicdir=#{lib}/mecab/dic/unidic-extended", *std_configure_args
     system "make", "install"
   end
 

@@ -9,13 +9,13 @@ class CoboCli < Formula
   head "https://github.com/CoboGlobal/cobo-cli.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "f7d129c6bf41755d03dc989285b5d39b4d11d307e754a01ab1f356f1a9624d89"
-    sha256 cellar: :any,                 arm64_sequoia: "a23e9fd6639880778836f67b7544b2579c78944cd2fc46f5ad38eef58d357eb7"
-    sha256 cellar: :any,                 arm64_sonoma:  "22845546fbe9d605738f8a028e4b1babfaf6f5ce5b20c6790dc3a5f95edfd25d"
-    sha256 cellar: :any,                 sonoma:        "4a8e7b5efbe818d40492b840af5713b992e3eea9aecd6c7d6770f5fb45ef9afa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "37052d7ac05420e480a2563119e240a97d9714f66881d73088da603818b544db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "803a9febdae45f12375e7f012aed2369f05063744208d90d5d0a0e8374c3781c"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "0d56bc92785a91801cb03059078dc0b4ab40e59f22e9f1bc0f633e96deaac425"
+    sha256 cellar: :any,                 arm64_sequoia: "7d985fc003e0c22d9dfbc529c603f6d68bb69a0179e511a05730dd3456f224f6"
+    sha256 cellar: :any,                 arm64_sonoma:  "a9fb7e2df8353a66fc79ff18496c40fbd7aaf86935bb814feddba61fb678fef2"
+    sha256 cellar: :any,                 sonoma:        "062b9086251d618e34d8e43bfa6824e8e89ec85c6e22b2625f76594ea2891e97"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ea3c29c1ce26423c7b6bfce1d06eaf077db4d938a3657efe72298b988c86121"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79740acafaad782a04b99d57f1654b069302e277e7f536b98e7d5641070a6fce"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -37,8 +37,8 @@ class CoboCli < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
@@ -97,13 +97,13 @@ class CoboCli < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/3c/a7/d0d7b3c128948ece6676a6a21b9036e3ca53765d35052dbcc8c303886a44/pydantic-2.12.1.tar.gz"
-    sha256 "0af849d00e1879199babd468ec9db13b956f6608e9250500c1a9d69b6a62824e"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/00/e9/3916abb671bffb00845408c604ff03480dc8dc273310d8268547a37be0fb/pydantic_core-2.41.3.tar.gz"
-    sha256 "cdebb34b36ad05e8d77b4e797ad38a2a775c2a07a8fa386d4f6943b7778dcd39"
+    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
+    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
   end
 
   resource "pydantic-settings" do
