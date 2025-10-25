@@ -3,20 +3,19 @@ class AllRepos < Formula
 
   desc "Clone all your repositories and apply sweeping changes"
   homepage "https://github.com/asottile/all-repos"
-  url "https://files.pythonhosted.org/packages/4a/bd/b23682af89619bf74844e3394de6d92f870b28e9d68747c7940f45fe079b/all_repos-1.30.0.tar.gz"
-  sha256 "4407ca18c5d63428ec3d1af21a36527e999f04dffcd36cbfbd8e8c1d6792ec1b"
+  url "https://files.pythonhosted.org/packages/81/6d/2e793a3884244034e2a4e587759ddda0a94f808571a01d6acb15cb3702c8/all_repos-1.31.0.tar.gz"
+  sha256 "b9083857addd96b76ae958b25ac19ad314f3e5c43e3212721b943fc7f14ea851"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "205249e8fb5e720169314b5922be721aea001596835ae8289a3e7b2639425086"
+    sha256 cellar: :any_skip_relocation, all: "d814d6697713609b2396d80fc04f27b0cadff970894c236b6c0fd73c6e8de8ca"
   end
 
   depends_on "python@3.14"
 
   resource "identify" do
-    url "https://files.pythonhosted.org/packages/a2/88/d193a27416618628a5eea64e3223acd800b40749a96ffb322a9b55a49ed1/identify-2.6.12.tar.gz"
-    sha256 "d8de45749f1efb108badef65ee8386f0f7bb19a7f26185f74de6367bffbaf0e6"
+    url "https://files.pythonhosted.org/packages/ff/e7/685de97986c916a6d93b3876139e00eef26ad5bbbd61925d670ae8013449/identify-2.6.15.tar.gz"
+    sha256 "e4f4864b96c6557ef2a1e1c951771838f4edc9df3a72ec7118b338801b11c7bf"
   end
 
   resource "packaging" do

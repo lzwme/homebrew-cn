@@ -8,18 +8,20 @@ class Tmt < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bb26b6dba11283ec32559124df0de1cadee709cf81ad57b0531bcfd6591204f4"
-    sha256 cellar: :any,                 arm64_sequoia: "0b440cb78233d953216b4ac64a5010435075f5b1995a091ca9fa96298afa0a67"
-    sha256 cellar: :any,                 arm64_sonoma:  "a616f40664bc8fff83f86cb7e05f7e4278aafec65e1d925c80a1553a0a354c48"
-    sha256 cellar: :any,                 sonoma:        "7ffd6a41a53fe579a6c75dce6f4b1112816f27c2349e6a55ba7c225736c4614e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aacd18cc387d9574d7f8fd70523b3647aa482fdfb6e5f4672eb4ef6f4241b0e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afb0e613980f7ca83701ad9bd072f419008163d75b5bcbc147e958e6d143bbc2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13caa2cf9c582acabb2ecf674ff3312f3d8a0e5e57162563918985e9308f9076"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acae4b9842f117c474e2177c264cc609464a8bb360dff12614b83291b09bb20e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ba15ddebf06041c1a8c9b009215dee14568a32ab937e4a298ffad48ff55c077"
+    sha256 cellar: :any_skip_relocation, sonoma:        "81181c724f4e68bd89668fb96f2508252c6408b77008497e717afefe95100bac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e03f8f3fe3c262957fca47cf804186160adc31c7162756af5067b21c4b9406ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b982c5e49dd7ecc2f4e497c7b0d91d0855d4c4024a185b83d90da7b00492ca0f"
   end
 
-  depends_on "rust" => :build # for rpds-py
   depends_on "beakerlib"
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -111,11 +113,6 @@ class Tmt < Formula
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
-  end
-
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
     sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
@@ -131,19 +128,9 @@ class Tmt < Formula
     sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/48/dc/95f074d43452b3ef5d06276696ece4b3b5d696e7c9ad7173c54b1390cd70/rpds_py-0.28.0.tar.gz"
-    sha256 "abd4df20485a0983e2ca334a216249b6186d6e3c1627e106651943dbdb791aea"
-  end
-
   resource "ruamel-yaml" do
     url "https://files.pythonhosted.org/packages/9f/c7/ee630b29e04a672ecfc9b63227c87fd7a37eb67c1bf30fe95376437f897c/ruamel.yaml-0.18.16.tar.gz"
     sha256 "a6e587512f3c998b2225d68aa1f35111c29fad14aed561a26e73fab729ec5e5a"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

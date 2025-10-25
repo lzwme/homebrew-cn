@@ -4,7 +4,7 @@ class Tokei < Formula
   url "https://ghfast.top/https://github.com/XAMPPRocky/tokei/archive/refs/tags/v12.1.2.tar.gz"
   sha256 "81ef14ab8eaa70a68249a299f26f26eba22f342fb8e22fca463b08080f436e50"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/XAMPPRocky/tokei.git"
+  head "https://github.com/XAMPPRocky/tokei.git", branch: "master"
 
   livecheck do
     url :stable

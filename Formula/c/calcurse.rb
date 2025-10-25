@@ -22,7 +22,7 @@ class Calcurse < Formula
   end
 
   head do
-    url "https://git.calcurse.org/calcurse.git"
+    url "https://git.calcurse.org/calcurse.git", branch: "master"
 
     depends_on "asciidoc" => :build
     depends_on "autoconf" => :build

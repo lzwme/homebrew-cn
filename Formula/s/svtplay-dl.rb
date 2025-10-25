@@ -3,17 +3,17 @@ class SvtplayDl < Formula
 
   desc "Download videos from https://www.svtplay.se/"
   homepage "https://svtplay-dl.se/"
-  url "https://files.pythonhosted.org/packages/81/70/a52d90b1d7ec2b9bf4e50c7e0d705ce1783beefad98e3b8202c5a68b9b06/svtplay_dl-4.149.tar.gz"
-  sha256 "3e3748be3b07e7e00366c71804167ae45be4d3de54ba2222350c8e2ace4f04af"
+  url "https://files.pythonhosted.org/packages/74/28/9d11ae0366a1cb1bf883b47f2267b14d6d012226094d91ed08f91b53d2e1/svtplay_dl-4.151.tar.gz"
+  sha256 "85633695e0139a754e87a8c567abbf4338ef4c3599ca872ce6f2beaa8ba88c46"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c0cb4bf65e3d62a663365f98f7746839658f823e6218351507ec5bb47d240226"
-    sha256 cellar: :any,                 arm64_sequoia: "aac7d50ec9d592d619ec674bd27d523080132204251e392abffd3e721ea6c48e"
-    sha256 cellar: :any,                 arm64_sonoma:  "0f84be6d3ee7bb6af169039a9e1ddf78900682f2f7cc9ecc235c521136fe6dda"
-    sha256 cellar: :any,                 sonoma:        "41720c871ffec413f7bb1e876c2c5df1c49b4f4a0e6d35ba299b8d92770d2735"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b866013cc624905e9305500194ddc697e0d0cf627cd9a742f6b7e7696a27fe2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "818fcbf99bbc13bdd7401bb7fdbe5b9bdfcfcbfbe025147afc9f2b44604dbc5f"
+    sha256 cellar: :any,                 arm64_tahoe:   "0393066b088dfccefd88fb6e454fe6538324aef8f0de5bbee814731f98cae995"
+    sha256 cellar: :any,                 arm64_sequoia: "1f4a3dd2dc28b13b5274c690d359c9eea363b4c01afba617d4c939d2dc5b263f"
+    sha256 cellar: :any,                 arm64_sonoma:  "9e0701a53e06253e5057823dc2e9db27a44a4824a6895df7d60037fc29d5b43b"
+    sha256 cellar: :any,                 sonoma:        "73933fc3ac0d18c764d184d3010f1a306d6ed6d2eafa946b296e8eb9a47f78b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eef42fe7068fd498c86b137f28c8e2350296113071a84bc17c1eb64527589a5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75f170f8ea59439999699c3bde069e79ab522dd92f9b91547f8b2429225b5429"
   end
 
   depends_on "certifi"

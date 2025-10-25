@@ -1121,7 +1121,7 @@ Homebrew-homebrew-core/Formula/c/code2prompt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codeberg-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/codebook-lsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codec2.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/codecov-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/codecov-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codelimit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/codequery.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coder.rb, Homebrew/homebrew-core, 1
@@ -5317,7 +5317,7 @@ Homebrew-homebrew-core/Formula/p/pass.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/passenger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/passt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/passwdqc.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/pastebinit.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pastebinit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pastel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/patat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/patch-package.rb, Homebrew/homebrew-core, 0
@@ -5375,6 +5375,7 @@ Homebrew-homebrew-core/Formula/p/pedump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/peg-markdown.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/peg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pegtl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pelican.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pelikan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/perbase.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/perceptualdiff.rb, Homebrew/homebrew-core, 1

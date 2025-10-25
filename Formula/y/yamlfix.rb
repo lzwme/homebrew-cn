@@ -8,15 +8,16 @@ class Yamlfix < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "eed0662dd28fe90d576ae3e9dc57d24f3e8ab6d63b25f25d0d10e284956efaa2"
-    sha256 cellar: :any,                 arm64_sequoia: "5c8de1332f7fd2d395ab11bb9d08765334701c23944f1ed9bbf4588ed9069161"
-    sha256 cellar: :any,                 arm64_sonoma:  "ef1c3f9924394b166451c4d39356e8f51f9b4be2750e8395f9eba2fd0fdd7a4c"
-    sha256 cellar: :any,                 sonoma:        "35b051c3d88dad959d91fc2e9db4dd12dbdcbac4cd6e6863e6e6ac8f8ac2f346"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f73796ab8d68b3fa5456ba40e4a40675d182b5429adf88119f39904d7d25a128"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8008d7f37865cb7a66593f744f02efac0bf69016e26f5618dfb01e3d578cea7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b8851fd9cd546d4cb2371c0e90771cd633a478d0505f3ca2f5253a21fbc539ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8851fd9cd546d4cb2371c0e90771cd633a478d0505f3ca2f5253a21fbc539ed"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8851fd9cd546d4cb2371c0e90771cd633a478d0505f3ca2f5253a21fbc539ed"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7ef664d82e27b7ddb6c8605eb21962c8836f57234d0927cf07e7b24ea165cc48"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ef664d82e27b7ddb6c8605eb21962c8836f57234d0927cf07e7b24ea165cc48"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ef664d82e27b7ddb6c8605eb21962c8836f57234d0927cf07e7b24ea165cc48"
   end
 
-  depends_on "rust" => :build # for pydantic_core
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
 
   resource "annotated-types" do
@@ -60,13 +61,8 @@ class Yamlfix < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/c3/da/b8a7ee04378a53f6fefefc0c5e05570a3ebfdfa0523a878bcd3b475683ee/pydantic-2.12.0.tar.gz"
-    sha256 "c1a077e6270dbfb37bfd8b498b3981e2bb18f68103720e51fa6c306a5a9af563"
-  end
-
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/7d/14/12b4a0d2b0b10d8e1d9a24ad94e7bbb43335eaf29c0c4e57860e8a30734a/pydantic_core-2.41.1.tar.gz"
-    sha256 "1ad375859a6d8c356b7704ec0f547a58e82ee80bb41baa811ad710e124bc8f2f"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pygments" do
@@ -95,13 +91,8 @@ class Yamlfix < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/21/ca/950278884e2ca20547ff3eb109478c6baf6b8cf219318e6bc4f666fad8e8/typer-0.19.2.tar.gz"
-    sha256 "9ad824308ded0ad06cc716434705f691d4ee0bfd0fb081839d2e426860e7fdca"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/8f/28/7c85c8032b91dbe79725b6f17d2fffc595dff06a35c7a30a37bef73a1ab4/typer-0.20.0.tar.gz"
+    sha256 "1aaf6494031793e4876fb0bacfa6a912b551cf43c1e63c800df8b1a866720c37"
   end
 
   resource "typing-inspection" do

@@ -3,18 +3,17 @@ class Gamdl < Formula
 
   desc "Python CLI app for downloading Apple Music songs, music videos and post videos"
   homepage "https://github.com/glomatico/gamdl"
-  url "https://files.pythonhosted.org/packages/e0/1f/82072cd7d18efe7e617127790ea94e17af2a57dc8f0dfc83e510ede1facc/gamdl-2.6.5.tar.gz"
-  sha256 "5e65e5b7a5a9777874d9ffc674bb96af844d6520c223746dc642910138ac90f5"
+  url "https://files.pythonhosted.org/packages/49/bc/ee04bb95aa0f039fb5cfdd385378cfe91928fc80162d9cad16eb1f478ec5/gamdl-2.7.tar.gz"
+  sha256 "2cb64793cf2d2e4895d33f9462ab4c1b5655b3297b06b4f22545f64aaa8f0c0d"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "d337904fe6ebc5d8cf65ee9c0ab4dae5c0be23a7929da91c29f0f5a2aa6f917d"
-    sha256 cellar: :any,                 arm64_sequoia: "39158714c849fb6d2dc024861b967972d32780187d52246e0ef892e8a9af9955"
-    sha256 cellar: :any,                 arm64_sonoma:  "f8a07802f7f2d9cddc80af51d4100d121d997c10aae24449670ab8ba014f501f"
-    sha256 cellar: :any,                 sonoma:        "a32f764411d11c26370c749ea9da028763f09b6425bc923d11442d0fce7a4da5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4bd480804a8aa7d2d28696999a7839318aee4dcbb3d80677a441457583d046fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "373e074101e98f2b7fae96bda0a8468be27c852dd585da871baf629cd0968db9"
+    sha256 cellar: :any,                 arm64_tahoe:   "18bb7559a3cbc37a47acbb30cb6ca2138ac6549ec5bc3f66ebdb1fcb1beaa830"
+    sha256 cellar: :any,                 arm64_sequoia: "4cf0d4c3dfc5be0976ad26c942b7a8b0c96a6b917fe4ec90d419a789b87501b0"
+    sha256 cellar: :any,                 arm64_sonoma:  "f3d09165249a0a24e64916b95b4f56a4201abbfa4b38c32df52896a8fc0abab5"
+    sha256 cellar: :any,                 sonoma:        "f21ad43eec513be3282c9811409fb02408262dac40149bb755d0d226d983fa03"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28cce589a949c11286767316d22fb82ad41dc7744c11d2a0daf15303ffcf3430"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa456e6701fe759a739773fdcadfb66aade248136b999009d6e6f201737ab5b4"
   end
 
   depends_on "certifi" => :no_linkage
@@ -24,6 +23,16 @@ class Gamdl < Formula
 
   # `protobuf` is manually updated to support Python 3.14, gamdl > pywidevine > protobuf
   # Issue ref: https://github.com/devine-dl/pywidevine/issues/55
+
+  resource "anyio" do
+    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
+    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+  end
+
+  resource "async-lru" do
+    url "https://files.pythonhosted.org/packages/b2/4d/71ec4d3939dc755264f680f6c2b4906423a304c3d18e96853f0a595dfe97/async_lru-2.0.5.tar.gz"
+    sha256 "481d52ccdd27275f42c43a928b4a50c3bfb2d67af4e78b170e3e0bb39c66e5bb"
+  end
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
@@ -35,14 +44,24 @@ class Gamdl < Formula
     sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
-  resource "colorama" do
-    url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
-    sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
-  end
-
   resource "construct" do
     url "https://files.pythonhosted.org/packages/b6/2c/66bab4fef920ef8caa3e180ea601475b2cbbe196255b18f1c58215940607/construct-2.8.8.tar.gz"
     sha256 "1b84b8147f6fd15bcf64b737c3e8ac5100811ad80c830cb4b2545140511c4157"
+  end
+
+  resource "h11" do
+    url "https://files.pythonhosted.org/packages/01/ee/02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963/h11-0.16.0.tar.gz"
+    sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
+  end
+
+  resource "httpcore" do
+    url "https://files.pythonhosted.org/packages/06/94/82699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cb/httpcore-1.0.9.tar.gz"
+    sha256 "6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"
+  end
+
+  resource "httpx" do
+    url "https://files.pythonhosted.org/packages/b1/df/48c586a5fe32a0f01324ee087459e112ebb7224f646c0b5023f5e79e9956/httpx-0.28.1.tar.gz"
+    sha256 "75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc"
   end
 
   resource "idna" do
@@ -105,6 +124,11 @@ class Gamdl < Formula
     sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
+  resource "sniffio" do
+    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
+    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
+  end
+
   resource "unidecode" do
     url "https://files.pythonhosted.org/packages/94/7d/a8a765761bbc0c836e397a2e48d498305a865b70a8600fd7a942e85dcf63/Unidecode-1.4.0.tar.gz"
     sha256 "ce35985008338b676573023acc382d62c264f307c8f7963733405add37ea2b23"
@@ -121,8 +145,8 @@ class Gamdl < Formula
   end
 
   resource "yt-dlp" do
-    url "https://files.pythonhosted.org/packages/03/b7/dab729345e22891e79294273bc59c5213a1ec87331f49cb82ccea2b1bc9f/yt_dlp-2025.10.14.tar.gz"
-    sha256 "b18436aa9bb6f04354fd78d31ad9eeaae8c81b6a859f07072b25c18cd6c25844"
+    url "https://files.pythonhosted.org/packages/08/70/cf4bd6c837ab0a709040888caa70d166aa2dfbb5018d1d5c983bf0b50254/yt_dlp-2025.10.22.tar.gz"
+    sha256 "db2d48133222b1d9508c6de757859c24b5cefb9568cf68ccad85dac20b07f77b"
   end
 
   def install
@@ -133,7 +157,7 @@ class Gamdl < Formula
     assert_match version.to_s, shell_output("#{bin}/gamdl --version")
 
     touch testpath/"cookies.txt"
-    assert_match "'cookies.txt' does not look like a Netscape format cookies file",
+    assert_match "'./cookies.txt' does not look like a Netscape format cookies file",
                  shell_output("#{bin}/gamdl fake_url 2>&1", 1)
   end
 end

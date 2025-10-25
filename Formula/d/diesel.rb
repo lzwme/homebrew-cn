@@ -1,18 +1,18 @@
 class Diesel < Formula
   desc "Command-line tool for Rust ORM Diesel"
   homepage "https://diesel.rs"
-  url "https://ghfast.top/https://github.com/diesel-rs/diesel/archive/refs/tags/v2.3.2.tar.gz"
-  sha256 "5fdbf6942dd3d52a7f3648ed5ea35556840dd17e768c9fa6897102a982b83088"
+  url "https://ghfast.top/https://github.com/diesel-rs/diesel/archive/refs/tags/v2.3.3.tar.gz"
+  sha256 "11941ce0131aede9cfc915eaa8696cab650d528634a9647fccc853d96889f2aa"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/diesel-rs/diesel.git", branch: "master"
+  head "https://github.com/diesel-rs/diesel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "033e3b37835736def3b6929f2f6ded6512b4c717a0758724c5b38a884c246b0a"
-    sha256 cellar: :any,                 arm64_sequoia: "a227481c023500d95b7b83dc222cafb79cff83349a73afd3608c172cad6928f6"
-    sha256 cellar: :any,                 arm64_sonoma:  "31d7adeb886860858f4f300acf77943b1c12dceba5872d37b1d2fed95a9c0507"
-    sha256 cellar: :any,                 sonoma:        "9347498e220f2e0c979e454208305ed35fd06b16ea897fc8804fb918dd63ed6b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3fce354eb98bae83dff577066507965c634c4fb0d8faadd1c5ba230fc7c32e79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b26c42c19727fca6d8c16c180273a6b7c3cf8292194cde94c49aaa92cf0a2a23"
+    sha256 cellar: :any,                 arm64_tahoe:   "48a9ec6b615681d84872079aa67fdfcf033fc1de66d916240da76fc088f9351d"
+    sha256 cellar: :any,                 arm64_sequoia: "201df54d961b36e0dfce8301bd248c3affcdb36f7a3ec8c7e567c04a64eaf236"
+    sha256 cellar: :any,                 arm64_sonoma:  "53cbb408e82e2c1ff179222710222aba3711bfcf728ba90bab584b71507e931a"
+    sha256 cellar: :any,                 sonoma:        "6a1242ccc1d91fddb0ba1270cbb0b05b916e9c31ecfb8ea7a39bd2e1cde371fb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "799c340f9c8ed9c1dcaf1843c8a001a0a3443ff0ce67ec70d396bafef97063ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c73eba3aaff0e3da78acd920be5dbeb16445d1001478d11313314b1f401c58a3"
   end
 
   depends_on "rust" => [:build, :test]

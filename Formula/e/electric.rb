@@ -1,17 +1,22 @@
 class Electric < Formula
   desc "Real-time sync for Postgres"
   homepage "https://electric-sql.com"
-  url "https://ghfast.top/https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.1.14.tar.gz"
-  sha256 "962e25ca23551ba773f1dd7138dbfdce0ba58aaedeb3eb24005483d39c031e8b"
+  url "https://ghfast.top/https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.2.0.tar.gz"
+  sha256 "1e4b7f9664c9f349420f4aa3dca4eb0795c0cc19dcc0e429d25183f6691c9f52"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    regex(%r{^@core/sync-service@(\d+(?:\.\d+)+)$}i)
+  end
+
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "198f04b9d844ded94540c553c4c37792aed4e42d1412399eaae9a11f99ecc925"
-    sha256 cellar: :any,                 arm64_sequoia: "3901f2f791f78bbb3299c6a9f603744105cf0cf38a9aca7cecb70352055a05b9"
-    sha256 cellar: :any,                 arm64_sonoma:  "fc6eccbc011b6daca1068882227282d453670c6ff8ea94cdfecfcb4bd82b097f"
-    sha256 cellar: :any,                 sonoma:        "3abc942a60b83c6c8090c5c7b1a19b7e36a644e9c8c37981b9b4a85810f07b81"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "712fe99cfbe60b49ee1493af2d54859cc8dfd5d8ccbed0250446dcf325e92682"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ecb5e0dd671f30693b42a664c1e4c26a7fdc56a0a0135bf04f73aa9c95f6a74"
+    sha256 cellar: :any,                 arm64_tahoe:   "dee0f092274f70060add0d41ab16a5ef50fb659a9b9796e2d614ef4b27d05908"
+    sha256 cellar: :any,                 arm64_sequoia: "38782f35410e86a3c1e5a38b0d6630e8d994574247ef4cd6ad2bcf05ea21cfdc"
+    sha256 cellar: :any,                 arm64_sonoma:  "efd5e022343c89fcd6b67eb718d5aeb8c271b9f0a85dcbf5730141a552bb6a3c"
+    sha256 cellar: :any,                 sonoma:        "807658746e000837f05e4698a75349222015dbcc9349c950372858f4fc76970b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9c1cf804df5bb212ec145cdf6c789739629f968dfd7a62d1287d30299fca5c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b28de78d1501c59aa73e3b1c09211a95bb1e6c5471a5abdcb29ccb1d9c8eb51f"
   end
 
   depends_on "elixir" => :build

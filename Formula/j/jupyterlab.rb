@@ -11,22 +11,23 @@ class Jupyterlab < Formula
   ]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2ca66b1c1192cca7b597879555f3d69d70ecf9579dae43c730806df0ef9fa217"
-    sha256 cellar: :any,                 arm64_sequoia: "35535aa7a6b0ac21def0720a997bd7a61177b258ed952387f49660134e973539"
-    sha256 cellar: :any,                 arm64_sonoma:  "e0bc055e782552a8dfc97307c658213c024229f8e9af68573ba6a8463b367d41"
-    sha256 cellar: :any,                 sonoma:        "32e278e00ad9f999b8db5389c258d9852f561603bb3d72382df3dfac772531c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "29a7b7e6d20e594ebe4c88b8a3f112f178826c307e0a371576eece9c761d6b2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c884b2733467def2c1ae80fc9e7d61f9fad8424cdfe41bb30b2356bb2e733c1e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "4c61fc368aa699fab25a65c75ccd7d4e6317d201c66df242fdf1f3a556ad103e"
+    sha256 cellar: :any,                 arm64_sequoia: "1ab424e0712064cc26cf6006455b6cf0445d5ef95290ede1e586b9e3eca650c6"
+    sha256 cellar: :any,                 arm64_sonoma:  "fbfe36e0447fad9416ccf9e596784da0160775eb54c3bf2ef68eee7eab5f8cca"
+    sha256 cellar: :any,                 sonoma:        "095e35dcc867890763268876e5384924dd35ef42dc30083f58f11ccfbf1960db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ad13351bbbe2ae6c9aa019b92acf8b2591b9f788674c03eec202a2b6ea6615a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1266e7c09b4321e56ffb3ba62518f58e070b00d3e102b1ac84f7f2e8881fc94"
   end
 
   depends_on "cmake" => :build # for ipykernel
   depends_on "ninja" => :build # for ipykernel
-  depends_on "rust" => :build # for rpds-py
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "node"
   depends_on "pandoc"
   depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
   depends_on "zeromq"
 
   uses_from_macos "libffi"
@@ -274,8 +275,8 @@ class Jupyterlab < Formula
   end
 
   resource "matplotlib-inline" do
-    url "https://files.pythonhosted.org/packages/99/5b/a36a337438a14116b16480db471ad061c36c3694df7c2084a0da7ba538b7/matplotlib_inline-0.1.7.tar.gz"
-    sha256 "8423b23ec666be3d16e16b60bdd8ac4e86e840ebd1dd11a30b9f117f2fa0ab90"
+    url "https://files.pythonhosted.org/packages/c7/74/97e72a36efd4ae2bccb3463284300f8953f199b5ffbc04cbbb0ec78f74b1/matplotlib_inline-0.2.1.tar.gz"
+    sha256 "e1ee949c340d771fc39e241ea75683deb94762c8fa5f2927ec57c83c4dffa9fe"
   end
 
   resource "mistune" do
@@ -426,11 +427,6 @@ class Jupyterlab < Formula
   resource "rfc3987-syntax" do
     url "https://files.pythonhosted.org/packages/2c/06/37c1a5557acf449e8e406a830a05bf885ac47d33270aec454ef78675008d/rfc3987_syntax-1.1.0.tar.gz"
     sha256 "717a62cbf33cffdd16dfa3a497d81ce48a660ea691b1ddd7be710c22f00b4a0d"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
   end
 
   resource "send2trash" do

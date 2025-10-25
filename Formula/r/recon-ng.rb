@@ -13,19 +13,19 @@ class ReconNg < Formula
   revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "2dd58030435d3fa51f513dba2b99ef04d6e18b5afcff0296735593ebfef53f84"
-    sha256 cellar: :any,                 arm64_sequoia: "293de18d1884a3c92bfdabdc444f6cb6b7f66eda092e5b8c8681be36830890f1"
-    sha256 cellar: :any,                 arm64_sonoma:  "145ca86fad6bd46ed0758953014f02a4153216aa317b580db6f2c3c7e3543b08"
-    sha256 cellar: :any,                 sonoma:        "4683426797fc3be45ebc85523c78cd16a9001e908d386e18f7f90ac67f32d004"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0036c173230cb986876c40da0ea05bc873fb4205b2ac9cad8997b53c9010080e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1bdb87532de101ce201da880d9cecc186e4e433fa8280918a3d2b8b360b0b4f"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "624c5eeb28aa689db420ded883a707a545c292eeeb54f17eac5e2d18a65c9514"
+    sha256 cellar: :any,                 arm64_sequoia: "617bda432f768eaf5168a93ec58b5c8eceddeca49b22980e21b3d6f4e4c6c741"
+    sha256 cellar: :any,                 arm64_sonoma:  "10b38a28d92ce036e3a69d96d04efec61e63a99c80b60cad42ba54a17cd55191"
+    sha256 cellar: :any,                 sonoma:        "7790200ba77568d8695235433a5b833dfe76b29484c4cd9f68d58f3970c7e229"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2bca243e4f8d7216b1c93808f5d7d611604951a8a4c932df82d3224b2779634"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8aaf3b13b3f6b68dfe5bac610c9cb849824e8cc2509b9be4ef27b6f9aea816f"
   end
 
-  depends_on "rust" => :build # for rpds-py
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -46,8 +46,8 @@ class ReconNg < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
@@ -163,23 +163,18 @@ class ReconNg < Formula
   end
 
   resource "redis" do
-    url "https://files.pythonhosted.org/packages/0d/d6/e8b92798a5bd67d659d51a18170e91c16ac3b59738d91894651ee255ed49/redis-6.4.0.tar.gz"
-    sha256 "b01bc7282b8444e28ec36b261df5375183bb47a07eb9c603f284e89cbc5ef010"
+    url "https://files.pythonhosted.org/packages/d2/0e/80de0c7d9b04360331906b6b713a967e6523d155a92090983eba2e99302e/redis-7.0.0.tar.gz"
+    sha256 "6546ada54354248a53a47342d36abe6172bb156f23d24f018fda2e3c06b9c97a"
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
-    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
+    url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
+    sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
   end
 
   resource "requests" do
     url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
     sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
   end
 
   resource "rq" do

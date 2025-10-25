@@ -30,7 +30,7 @@ class Nmh < Formula
   end
 
   head do
-    url "https://git.savannah.nongnu.org/git/nmh.git"
+    url "https://git.savannah.nongnu.org/git/nmh.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build

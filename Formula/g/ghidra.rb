@@ -6,16 +6,23 @@ class Ghidra < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd0ad065dd2b8d1ae14fbaab2611f90c038adcaaaba4fa61f806375e35f479d9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15224d115d878fa789746ec8143fa5023a2229a29ca3642c17830b3f2e575f13"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5018e1332048501fb33df633bea8d532837b98cdc8c592bc74245f22accc5016"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0e900d0d4853e7f1f7d99b7f6e5f7d94804d81ba45da5dc5c6a08b7989405506"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55b95f3d14b8b72ea2379ffc0b6bc047953933f6e852d3fbeb131976c2a7d0ca"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9518629ae054a4d76a34e696d093d2bdfd715326e416208161c08169c695944f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f948fe463407c536a6011306760d4f7295e48290c9c86b38400dc37ebfd40d06"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0888735d7973688766ff936b7ed13a1f711245bab7dd33cf5d011d4db95140b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b57d18d6ad0531fb2734c09701d6466b28bf832812b796efbc318a5af784f4f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "912331fe1497aeb0ec144da1db2a0565cbdee945d7eea5048afdacfc298c08a4"
   end
 
   depends_on "gradle" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "openjdk@21"
+
+  # Allow to build with Python 3.14, remove in next release
+  patch do
+    url "https://github.com/NationalSecurityAgency/ghidra/commit/5b157d2c26246188d51a7652ac83537efc12cde8.patch?full_index=1"
+    sha256 "bb60cb2b36810e4650b71c0a4a3dc7f4fda1aefa809a486ba1d8772f12caa9b9"
+  end
 
   def install
     inreplace "Ghidra/application.properties", "DEV", "PUBLIC" # Mark as a release

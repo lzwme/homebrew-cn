@@ -1,12 +1,12 @@
 class Asciidoctor < Formula
   desc "Text processor and publishing toolchain for AsciiDoc"
   homepage "https://asciidoctor.org/"
-  url "https://ghfast.top/https://github.com/asciidoctor/asciidoctor/archive/refs/tags/v2.0.25.tar.gz"
-  sha256 "41e2a086718cf719ae5ca89995e1feaf67f027ad6263c9fb242425ffb809bd8c"
+  url "https://ghfast.top/https://github.com/asciidoctor/asciidoctor/archive/refs/tags/v2.0.26.tar.gz"
+  sha256 "25c22b934bc0ae2448f2d73d4b2eba0c59e0521cf5e893fb0b0ad54a461bf066"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "39a3d69e1a5aa72f1b29d6afc26eba71a261639771a03daecf3b873817211059"
+    sha256 cellar: :any_skip_relocation, all: "83482da376e6cbc52582198a08c0a04cd652f0560df93c5c496bed02053cc818"
   end
 
   # Some gems require >= ruby 2.7

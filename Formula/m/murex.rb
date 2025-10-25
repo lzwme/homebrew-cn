@@ -1,8 +1,8 @@
 class Murex < Formula
   desc "Bash-like shell designed for greater command-line productivity and safer scripts"
   homepage "https://murex.rocks"
-  url "https://ghfast.top/https://github.com/lmorg/murex/archive/refs/tags/v7.0.2107.tar.gz"
-  sha256 "b1abdd6e28be3e4c62f0690c50658e6a823788dcf704707e0e652ba1d80cd4a7"
+  url "https://ghfast.top/https://github.com/lmorg/murex/archive/refs/tags/v7.1.4143.tar.gz"
+  sha256 "f3620e00dc431ce202216c935d8e509cf0fdf0dd1e363eee9ec6cb64b0b182f4"
   license "GPL-2.0-only"
   head "https://github.com/lmorg/murex.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Murex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "417c00058e5378121ae3404ca5b07712965c18ad089d788c0d3cead3e7b2467b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fb444e047917a8161518848784d9f5ae58462c6b2ddf8774d842c25b92670f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6fb444e047917a8161518848784d9f5ae58462c6b2ddf8774d842c25b92670f2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6fb444e047917a8161518848784d9f5ae58462c6b2ddf8774d842c25b92670f2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "589457c8c7503101910ae5b0ec181ed09d58e4e6d076d4dd66838d06ccdbee8e"
-    sha256 cellar: :any_skip_relocation, ventura:       "589457c8c7503101910ae5b0ec181ed09d58e4e6d076d4dd66838d06ccdbee8e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d26d93f9ed5986195da37c0399310cc08e89a484a94da38d4caa40f6851ee0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4b0ae3c7eea4d5da28c711a84cce0fe4401a368f0cd64157bb62211e5acf002"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d68368627c5e8024bd3d195ecd1ea5a3f97bf4935757689f77e30a0d9e6b00b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d68368627c5e8024bd3d195ecd1ea5a3f97bf4935757689f77e30a0d9e6b00b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d68368627c5e8024bd3d195ecd1ea5a3f97bf4935757689f77e30a0d9e6b00b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e724db9d29de42a8de6885b3f49e793d503a9c7b84d4db10d91350cc506e2a33"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "74a572973f6dc72ae7f4fbdf884bdbabe0b60f5c7f7cc6253868f204ab7f91b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8890203346db7bdf131d65f07a178a3c6996f9b33c67dcf7d36eee47119a598"
   end
 
   depends_on "go" => :build

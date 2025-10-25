@@ -1,17 +1,17 @@
 class WebExt < Formula
   desc "Command-line tool to help build, run, and test web extensions"
   homepage "https://github.com/mozilla/web-ext"
-  url "https://registry.npmjs.org/web-ext/-/web-ext-9.0.0.tgz"
-  sha256 "9cf3cfcce04470f2082765ced874ef0d00de415a65d6137924f2fa352c01bf54"
+  url "https://registry.npmjs.org/web-ext/-/web-ext-9.1.0.tgz"
+  sha256 "de34d5e83a75de907549b5e87d37cc81c36bce896f8183afdbbcaee687a08aa1"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc8e2cfba9abf8dca39f8421afe6cc91185721bb0bd323247c5d17b2f3e482df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc8e2cfba9abf8dca39f8421afe6cc91185721bb0bd323247c5d17b2f3e482df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc8e2cfba9abf8dca39f8421afe6cc91185721bb0bd323247c5d17b2f3e482df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cc8e2cfba9abf8dca39f8421afe6cc91185721bb0bd323247c5d17b2f3e482df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22c036990df5fa2e7c90c4e21e5dd31f7decc3651483663af6523c68acd65ff4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22c036990df5fa2e7c90c4e21e5dd31f7decc3651483663af6523c68acd65ff4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "653ac137aee1a766521f82256e332077c603866080d6f2a62c3150fcc7a52f03"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "653ac137aee1a766521f82256e332077c603866080d6f2a62c3150fcc7a52f03"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "653ac137aee1a766521f82256e332077c603866080d6f2a62c3150fcc7a52f03"
+    sha256 cellar: :any_skip_relocation, sonoma:        "653ac137aee1a766521f82256e332077c603866080d6f2a62c3150fcc7a52f03"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "70d2137d5ff6288bce7b3a03185b3a1a3c2077b561389f8f7d4d186e6686c791"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70d2137d5ff6288bce7b3a03185b3a1a3c2077b561389f8f7d4d186e6686c791"
   end
 
   depends_on "node"
@@ -50,8 +50,8 @@ class WebExt < Formula
       Validation Summary:
 
       errors          0
-      notices         1
-      warnings        0
+      notices         0
+      warnings        2
 
     EOF
 

@@ -9,23 +9,24 @@ class Sgr < Formula
   revision 15
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "b393e8a6c28937f19473075680bf3e6f630cedddfe91008e0261e522a07bcf35"
-    sha256 cellar: :any,                 arm64_sequoia: "0db1b901e739cd634bdd934014cea568da49e52be17d67b6cc34f13e6cb9f98a"
-    sha256 cellar: :any,                 arm64_sonoma:  "c88ae62f3a6c76bd9bf6db335b85a7cd2a85bd97d34d66bc2b055c5de2a17e2c"
-    sha256 cellar: :any,                 sonoma:        "21406207c16fb51ee894d52e851d915e01b57617931bcc4f707d3902516e1b05"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fcddf43bf927b0764116ada1e2df0e38daf8e1d2447c4661b7aa395ef5994724"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0bc4e1af5fb5a1fcbd4897e054659f82747cc41028740f8b592e9e7180cd813"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "6feb861ec91823ffd348ece37306331ce0e77d2e48693d09ccfa73bee0755690"
+    sha256 cellar: :any,                 arm64_sequoia: "a953b261de45aee3eb159e82e6f858a2ad51dd365ec0942e718a97cb3875968d"
+    sha256 cellar: :any,                 arm64_sonoma:  "7477c83eb0a2f9d16bf2a5a716db61ccfa64ba22aa48cfb05f233da450e1e3f9"
+    sha256 cellar: :any,                 sonoma:        "c17d376459bc63c361d343e4c3fac98f6f8088fa65f08a2a775344adf8adfb24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1354bd840ba92237d2d9cac8d027b0482998f6f313fcb68e6fb14ffc7426ec12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aaa9b1f0c9f2c3afe966f547ec7f72c452aa44572744999352d107106daa02f7"
   end
 
   deprecate! date: "2025-06-21", because: :unmaintained
 
-  depends_on "rust" => :build # for pydantic
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libpq" # for psycopg2-binary
   depends_on "openssl@3"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
 
   # Manually update `pglast` and `ruamel-yaml` to the latest version
 
@@ -60,8 +61,8 @@ class Sgr < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
@@ -80,8 +81,8 @@ class Sgr < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "inflection" do
@@ -135,28 +136,18 @@ class Sgr < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/c3/da/b8a7ee04378a53f6fefefc0c5e05570a3ebfdfa0523a878bcd3b475683ee/pydantic-2.12.0.tar.gz"
-    sha256 "c1a077e6270dbfb37bfd8b498b3981e2bb18f68103720e51fa6c306a5a9af563"
-  end
-
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/7d/14/12b4a0d2b0b10d8e1d9a24ad94e7bbb43335eaf29c0c4e57860e8a30734a/pydantic_core-2.41.1.tar.gz"
-    sha256 "1ad375859a6d8c356b7704ec0f547a58e82ee80bb41baa811ad710e124bc8f2f"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
-    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
+    url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
+    sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
   end
 
   resource "requests" do
     url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
     sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
   end
 
   resource "ruamel-yaml" do
@@ -192,11 +183,6 @@ class Sgr < Formula
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
     sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

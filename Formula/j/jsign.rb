@@ -1,13 +1,13 @@
 class Jsign < Formula
   desc "Tool for signing Windows executable files, installers and scripts"
   homepage "https://ebourg.github.io/jsign/"
-  url "https://ghfast.top/https://github.com/ebourg/jsign/archive/refs/tags/7.3.tar.gz"
-  sha256 "136364befdb5347767e33510c7cb7b85707e1f31b6cba7bbb76e586b5c8454da"
+  url "https://ghfast.top/https://github.com/ebourg/jsign/archive/refs/tags/7.4.tar.gz"
+  sha256 "d86deca9d919ce435aeacac49cf2571dfc2b1f7d94e00241e597834ad0fbf48f"
   license "Apache-2.0"
   head "https://github.com/ebourg/jsign.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0968c60585590853882940f32e09d44f3a94ffbab37bb54b77a1ae860a34a91b"
+    sha256 cellar: :any_skip_relocation, all: "e5df607c24b1098474afbe5125077cc62817ff16e0e3898e370977b93ca8d871"
   end
 
   depends_on "maven" => :build

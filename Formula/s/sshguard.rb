@@ -20,7 +20,7 @@ class Sshguard < Formula
   end
 
   head do
-    url "https://bitbucket.org/sshguard/sshguard.git"
+    url "https://bitbucket.org/sshguard/sshguard.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build

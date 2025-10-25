@@ -32,7 +32,7 @@ class Isl < Formula
   end
 
   head do
-    url "https://repo.or.cz/isl.git"
+    url "https://repo.or.cz/isl.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build

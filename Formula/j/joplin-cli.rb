@@ -15,8 +15,6 @@ class JoplinCli < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "python-setuptools" => :build # for node-gyp
-  depends_on "python@3.13" => :build
   depends_on "glib"
   depends_on "node"
   depends_on "sqlite"
@@ -28,6 +26,9 @@ class JoplinCli < Formula
   end
 
   on_linux do
+    # Workaround for old `node-gyp` that needs distutils.
+    # TODO: Remove when `node-gyp` is v10+
+    depends_on "python-setuptools" => :build
     depends_on "libsecret"
   end
 

@@ -9,19 +9,22 @@ class Gptme < Formula
   head "https://github.com/ErikBjare/gptme.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bbb18df94db123d3fce22bc14a96c76c0c648c537805eab4d12bcd53803df9a3"
-    sha256 cellar: :any,                 arm64_sequoia: "ea2aa554d0656e73d7d15a263b5c74ef5bade3b11e0634a694dbb453365b2f64"
-    sha256 cellar: :any,                 arm64_sonoma:  "4fb4f8c0060f2ab0d33e427ded0a016f9d58fd7920448ea1414eb5f54b66234a"
-    sha256 cellar: :any,                 sonoma:        "f2ebe5e0b29f7ab1ba6bd6f54432c224dad9702fc0f31a786201694d8234c367"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "355debfe05387a2419192c57dd5cfbe956e2fab1528bc5ce9d8d7559618bd21b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d811ae1d748090d13e145b959a5cd4dd78b9e0cd495ce2e6b316d8ea23f8969e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c9367ce6b112d62ff9aaaaa1ff3c12042e5d2d97a5d64dacc83ce94aa5e832d6"
+    sha256 cellar: :any,                 arm64_sequoia: "0fab434a9af46b7bcac4873287da1f58c37edfe36c1e1387b0360d5a4b89ac85"
+    sha256 cellar: :any,                 arm64_sonoma:  "df0f8d2046103e12e53a1cfe6c0326981a93c26c7067efd73b8eae68e27a6150"
+    sha256 cellar: :any,                 sonoma:        "66d70067594c30fe0327b64ed2c29c6aa00c420bca4a081a719410a5e28052c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9cc51197579698ef930c892806b3be1fed6a66b84fdd459b631d6f96517f23d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2b9834e9e21e1c25a05ed0b94ad5abd036262caed7a029677a2cc92f5952b14"
   end
 
-  depends_on "rust" => :build
-  depends_on "certifi"
+  depends_on "rust" => :build # for jitter
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "pillow"
+  depends_on "pillow" => :no_linkage
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -157,13 +160,13 @@ class Gptme < Formula
   end
 
   resource "matplotlib-inline" do
-    url "https://files.pythonhosted.org/packages/99/5b/a36a337438a14116b16480db471ad061c36c3694df7c2084a0da7ba538b7/matplotlib_inline-0.1.7.tar.gz"
-    sha256 "8423b23ec666be3d16e16b60bdd8ac4e86e840ebd1dd11a30b9f117f2fa0ab90"
+    url "https://files.pythonhosted.org/packages/c7/74/97e72a36efd4ae2bccb3463284300f8953f199b5ffbc04cbbb0ec78f74b1/matplotlib_inline-0.2.1.tar.gz"
+    sha256 "e1ee949c340d771fc39e241ea75683deb94762c8fa5f2927ec57c83c4dffa9fe"
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/1a/e0/fe34ce16ea2bacce489ab859abd1b47ae28b438c3ef60b9c5eee6c02592f/mcp-1.18.0.tar.gz"
-    sha256 "aa278c44b1efc0a297f53b68df865b988e52dd08182d702019edcf33a8e109f6"
+    url "https://files.pythonhosted.org/packages/69/2b/916852a5668f45d8787378461eaa1244876d77575ffef024483c94c0649c/mcp-1.19.0.tar.gz"
+    sha256 "213de0d3cd63f71bc08ffe9cc8d4409cc87acffd383f6195d2ce0457c021b5c1"
   end
 
   resource "mdurl" do
@@ -221,11 +224,6 @@ class Gptme < Formula
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
-  end
-
   resource "pydantic-settings" do
     url "https://files.pythonhosted.org/packages/20/c5/dbbc27b814c71676593d1c3f718e6cd7d4f00652cefa24b75f7aa3efb25e/pydantic_settings-2.11.0.tar.gz"
     sha256 "d0e87a1c7d33593beb7194adb8470fc426e95ba02af83a0f23474a04c9a08180"
@@ -267,8 +265,8 @@ class Gptme < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/90/f2/97d95db85e11cc85f97581cfc8b4a0405c7fb6099003c23ffaaa0cb4f31d/regex-2025.10.22.tar.gz"
-    sha256 "cc50db098b9d678ace33176a3ab4099616726ae4680fee6ac292302e8950fc4c"
+    url "https://files.pythonhosted.org/packages/f8/c8/1d2160d36b11fbe0a61acb7c3c81ab032d9ec8ad888ac9e0a61b85ab99dd/regex-2025.10.23.tar.gz"
+    sha256 "8cbaf8ceb88f96ae2356d01b9adf5e6306fa42fa6f7eab6b97794e37c959ac26"
   end
 
   resource "requests" do
@@ -279,11 +277,6 @@ class Gptme < Formula
   resource "rich" do
     url "https://files.pythonhosted.org/packages/ab/3a/0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bc/rich-13.9.4.tar.gz"
     sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
   end
 
   resource "six" do
@@ -334,11 +327,6 @@ class Gptme < Formula
   resource "traitlets" do
     url "https://files.pythonhosted.org/packages/eb/79/72064e6a701c2183016abbbfedaba506d81e30e232a68c9f0d6f6fcd1574/traitlets-5.14.3.tar.gz"
     sha256 "9ed0579d3502c94b4b3732ac120375cda96f923114522847de4b3bb98b96b6b7"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

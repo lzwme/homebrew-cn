@@ -3,20 +3,18 @@ class MagicWormhole < Formula
 
   desc "Securely transfers data between computers"
   homepage "https://github.com/magic-wormhole/magic-wormhole"
-  url "https://files.pythonhosted.org/packages/f4/f8/d758bd83184c31cf33e2b1c68f7edf2c1f0a2f83d8c9f475ef9d28466939/magic_wormhole-0.20.0.tar.gz"
-  sha256 "ed12b2b006a9a45200f6d785892e62864e8da865d4aa6aaf03c48dc5bc0fa11b"
+  url "https://files.pythonhosted.org/packages/6f/ec/902ec8a53312e014a1f22f0a321597fe2ddb094c6336d051a4c11d4fd5ee/magic_wormhole-0.21.0.tar.gz"
+  sha256 "3850dc4777ff47d6289c582e4281d411ff8003dfc68caea35e96310e3922a4fb"
   license "MIT"
-  revision 1
   head "https://github.com/magic-wormhole/magic-wormhole.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "b84dcf29114628c0bfba853274a5aa4973149fc7c32b6a96e7430b9bb1f299a1"
-    sha256 cellar: :any,                 arm64_sequoia: "c6b3fae8ebf1f3e2235dd71ad6e3a7124534dccc6d8dc3fee5ca4e416eb3084b"
-    sha256 cellar: :any,                 arm64_sonoma:  "e0949ed1662a78bfc05e8e290c14bab88d8db6ec302951214d039ac0ffcffe21"
-    sha256 cellar: :any,                 sonoma:        "ea4ed44d46a1658e82e2478bdc1a83e73d668ad51c63cff22899f2246318e383"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c71359de0a5e37dc3ebc1644d03c273e61a42457342356615dfdb94c9041c8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c385c0eb51a924fc1f048ae9407cf923d3371277577fa355ec656c53365e3fc2"
+    sha256 cellar: :any,                 arm64_tahoe:   "1304feb5ddb1afeaf19e5cfa34151875c26ae9f0de904d9e0b53020a5b369690"
+    sha256 cellar: :any,                 arm64_sequoia: "6ecae45e180b3b24a4623fc9afd25f667fe9ca8861d93e0302da46b3c51e8979"
+    sha256 cellar: :any,                 arm64_sonoma:  "6d8d6c48417fccab8e7c6d8a556ea8729d8dfa2fe33d7bb91f876d5cab45872b"
+    sha256 cellar: :any,                 sonoma:        "25f4feff7f37985686e19bd70f611afb825bf9397e26625b687baf882fe63138"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ea5224496a80b0fe21b530048d0a042b0aeb57000d0147043d893f3febb50a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e9b26ec2f136967534a96ab1077dcacca749d383c165b5e108daa4c2caf9708"
   end
 
   depends_on "cryptography" => :no_linkage
@@ -31,8 +29,8 @@ class MagicWormhole < Formula
   end
 
   resource "autobahn" do
-    url "https://files.pythonhosted.org/packages/38/f2/8dffb3b709383ba5b47628b0cc4e43e8d12d59eecbddb62cfccac2e7cf6a/autobahn-24.4.2.tar.gz"
-    sha256 "a2d71ef1b0cf780b6d11f8b205fd2c7749765e65795f2ea7d823796642ee92c9"
+    url "https://files.pythonhosted.org/packages/5c/5d/095541ec46347cdb6d94b1cde7b0236eee7dcdaadb2daad45232d74eeff1/autobahn-25.10.2.tar.gz"
+    sha256 "173d5d836789dffc4292473ea359dcb7f708456a0ff82dcb8ca938d6ccadb12f"
   end
 
   resource "automat" do
@@ -51,8 +49,8 @@ class MagicWormhole < Formula
   end
 
   resource "humanize" do
-    url "https://files.pythonhosted.org/packages/98/1d/3062fcc89ee05a715c0b9bfe6490c00c576314f27ffee3a704122c6fd259/humanize-4.13.0.tar.gz"
-    sha256 "78f79e68f76f0b04d711c4e55d32bebef5be387148862cb1ef83d2b58e7935a0"
+    url "https://files.pythonhosted.org/packages/b6/43/50033d25ad96a7f3845f40999b4778f753c3901a11808a584fed7c00d9f5/humanize-4.14.0.tar.gz"
+    sha256 "2fa092705ea640d605c435b1ca82b2866a1b601cdf96f076d70b79a855eba90d"
   end
 
   resource "hyperlink" do
@@ -61,8 +59,8 @@ class MagicWormhole < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "incremental" do

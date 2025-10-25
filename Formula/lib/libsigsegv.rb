@@ -18,7 +18,7 @@ class Libsigsegv < Formula
   end
 
   head do
-    url "https://git.savannah.gnu.org/git/libsigsegv.git"
+    url "https://git.savannah.gnu.org/git/libsigsegv.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build

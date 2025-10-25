@@ -8,17 +8,18 @@ class Jupytext < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4c6833091ff5ad58fd3d25d7f18b98d2932fe996ba5cc95f820558707bc3a548"
-    sha256 cellar: :any,                 arm64_sequoia: "99931dff1355591b9b586bdd8c61e469e3c5ceca85229a505dc0b22128ff0750"
-    sha256 cellar: :any,                 arm64_sonoma:  "6dab9840a9983cb25754359be5b197dd5180a1a1cc1f9b32dcec60302663da36"
-    sha256 cellar: :any,                 sonoma:        "61106b1ef603e8d67fa609024243b22750d46e5df21580101c960f66223bfe0b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "263719ec57aa02bf3daba49ff3db6496bc9c8b55a71dede50634220b8469abe1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94758b2efff2c29b057e1cc512b9526dde7c8b2e61d79c5e21254523d007dc62"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "bb9fd834932f365f6a4d830496323b3dcbe4cbebeb35509282ea1db8462b1ede"
+    sha256 cellar: :any,                 arm64_sequoia: "e7aaf23a662d7cc97815b7e66989265ca4f1ecf28a3fd1260f01fda4a93e4dcc"
+    sha256 cellar: :any,                 arm64_sonoma:  "a5ddfe33dd4dae8ae9cb59ea2f79e11ea4ae48e5cf7afa1b1e82be27e84ea429"
+    sha256 cellar: :any,                 sonoma:        "305470d3effc49840ebb410d3147c734980cf47c432ac0ff960099058ca71ff7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b15c968c58c46ebe3161f46463844b6cd3a45c24bc77691c07343e90afa215b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "715114fd24e9ed1258702d844b90b0ef99c181c980813404fd24bee427a440e6"
   end
 
-  depends_on "rust" => :build # for rpds-py
   depends_on "libyaml"
   depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
@@ -83,11 +84,6 @@ class Jupytext < Formula
   resource "referencing" do
     url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
     sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
   end
 
   resource "traitlets" do

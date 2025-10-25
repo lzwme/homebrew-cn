@@ -8,20 +8,21 @@ class AnsibleLint < Formula
   license all_of: ["MIT", "GPL-3.0-or-later"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f20be1e71dc856ad2b191e7e7536415950b265e0b75dd9de483e12444156fc5c"
-    sha256 cellar: :any,                 arm64_sequoia: "abbd743920486893c3eb0c96cfa24c7b795b7536fedb778b5cd4397b157171ef"
-    sha256 cellar: :any,                 arm64_sonoma:  "2cb689cea84797d15bc9c357328c12ceb9eacd91ae30b124c2124db23b3e895f"
-    sha256 cellar: :any,                 sonoma:        "5c06d82bf9326ecae4ac5acac95e6caecaaa826b13dded9645bfd823aebed5ad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "95af1bc86c12cb86800c1edf78b958c13fc4d25cfe14fa72e97cc7cac03f108c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7806b03e425f4c4f84ce76593e7a9e31537b02f7dd4dfb63bb7265b5b102016d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "abb8479a067cec20e8f972561249be85232333d3e5fa766ed86982159cdf4ff3"
+    sha256 cellar: :any,                 arm64_sequoia: "a86601d4eb1985865a15a225acb4bb14e4c454a643eb4a4ebd51a423c954a75c"
+    sha256 cellar: :any,                 arm64_sonoma:  "bfaa2670f555dc23197d43c1e414018602855832784a30a97b9be330aeb5ba77"
+    sha256 cellar: :any,                 sonoma:        "53ba660cf65b85d5f8aff9dc57b85e6ed34ccfb3c8128a6b971d9b491ae79ff1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26a28665c2dcf50cc932fc1b0d1f2395337b1d3dc6058516400badcc2aadc58c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21e73737123be56595ca277ca2f0c1d65e285f05cc4a9111209839e0c6bee76c"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "rust" => :build # for rpds-py
   depends_on "ansible" => :test
-  depends_on "cryptography"
+  depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "python@3.13"
+  depends_on "rpds-py" => :no_linkage
 
   resource "ansible-compat" do
     url "https://files.pythonhosted.org/packages/e3/06/5e66f1f0d482b21b0dc03c9b9e47cab58dd4efc770f41029bb244e86b608/ansible_compat-25.8.2.tar.gz"
@@ -126,11 +127,6 @@ class AnsibleLint < Formula
   resource "resolvelib" do
     url "https://files.pythonhosted.org/packages/05/57/c5c178e21968123cf2aa90501b5fc14a48e342612695863333f4b70510ad/resolvelib-1.2.0.tar.gz"
     sha256 "c27fbb5098acd7dfc01fb2be3724bd0881168edc2bd3b4dc876ca3f46b8e4a3d"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
   end
 
   resource "ruamel-yaml" do

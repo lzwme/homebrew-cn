@@ -8,12 +8,13 @@ class Dstack < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "45025e384913df03253fb1e9d1f45fb308d3e2c5e3dce53368e2ad633b65d286"
-    sha256 cellar: :any,                 arm64_sequoia: "5bfdabbe8b0264ffbf200ba953c6117db8f22652401cf022283f0b5f75c7187a"
-    sha256 cellar: :any,                 arm64_sonoma:  "9db83bfda82e61a192524b35988c3690ee646b4511cce90e1de66992bb2da571"
-    sha256 cellar: :any,                 sonoma:        "4c12833fc8ca81f28a9679897262072e6c13b5107d879e1730c97bc568335767"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0be0bfce72c971d8ce3e9abca15ec23d36ba892e8791894aa0bc5013ebb6fcfe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80c1640dea9c8a962cd45fb6ea9e3a86d671c4029a8a97add46a17106daa6f76"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "fca7b7e33fab682c2a3e551e41e0e61c11a9b1408996e85a6bde559edb80c12a"
+    sha256 cellar: :any,                 arm64_sequoia: "6a843eb5a641fa8cf4d2a9a83fac1fbea04c582d48a0bf70842ffa9d3dfb46aa"
+    sha256 cellar: :any,                 arm64_sonoma:  "f5d5a59176bad85970a089d1ef59d51bac5fb93cd77143529b6d4d6a033e8ab1"
+    sha256 cellar: :any,                 sonoma:        "3497405fed0deca8734da41f9efc5d8ec91ad1b8ec48d23b0767ebe37ce6b1ca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d7d8389191c3b08238e97e3e5d5d6fb177289a9bab27ca0975118055b35345c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6beccb632b352532b1dbd26a9e7d3ddbe11fe9c64e794839dbeb51135385a46b"
   end
 
   # `pkgconf` and `rust` are for bcrypt.
@@ -24,6 +25,7 @@ class Dstack < Formula
   depends_on "libsodium" # for pynacl
   depends_on "libyaml"
   depends_on "python@3.13" # Pydantic v1 is incompatible with Python 3.14, upstream issue, https://github.com/dstackai/dstack/issues/1844
+  depends_on "rpds-py" => :no_linkage
 
   resource "aiocache" do
     url "https://files.pythonhosted.org/packages/7a/64/b945b8025a9d1e6e2138845f4022165d3b337f55f50984fbc6a4c0a1e355/aiocache-0.12.3.tar.gz"
@@ -48,6 +50,11 @@ class Dstack < Formula
   resource "alembic-postgresql-enum" do
     url "https://files.pythonhosted.org/packages/58/04/e465cb5c051fb056b7fadda7667b3e1fb4d32d7f19533e3bbff071c73788/alembic_postgresql_enum-1.8.0.tar.gz"
     sha256 "132cd5fdc4a2a0b6498f3d89ea1c7b2a5ddc3281ddd84edae7259ec4c0a215a0"
+  end
+
+  resource "annotated-doc" do
+    url "https://files.pythonhosted.org/packages/d7/a6/dc46877b911e40c00d395771ea710d5e77b6de7bacd5fdcd78d70cc5a48f/annotated_doc-0.0.3.tar.gz"
+    sha256 "e18370014c70187422c33e945053ff4c286f453a984eba84d0dbfa0c935adeda"
   end
 
   resource "anyio" do
@@ -136,13 +143,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/b3/26/b0ed74e73b58f7e1e39cd6645e14e5c2a9a2bc121f67ebd8bde3d74a5bfe/boto3-1.40.57.tar.gz"
-    sha256 "717605170cb167e07462b7f033b26bc9c0fee34b78b5eac52edcd6149915e23f"
+    url "https://files.pythonhosted.org/packages/ae/f4/65f3a0a58a42abaa57cb42968535dc7c209232c2614d5ac1d8354b0bc0b7/boto3-1.40.59.tar.gz"
+    sha256 "b1a5a203511e594872b39a129365f02eb5846eea990629e8daf47a3c01e7fd49"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/09/cb/7ba66090c6c4b31551a1c42feafa77a0b686ab9d18ee17436fa413b0e854/botocore-1.40.57.tar.gz"
-    sha256 "39bb0570e10eb7a5d518974865aeebafe275498c8f132b23e3021b957babaf8a"
+    url "https://files.pythonhosted.org/packages/9f/0a/4abd361449e495bc6f0eb24dc14213c1468253a5be63cfcd3b6f9feca992/botocore-1.40.59.tar.gz"
+    sha256 "842a466d8735272a30fe5b7f97df559d9e211a18e412f62a17ed249fd62f85fe"
   end
 
   resource "cached-classproperty" do
@@ -176,8 +183,8 @@ class Dstack < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/a6/f4/152127681182e6413e7a89684c434e19e7414ed7ac0c632999c3c6980640/fastapi-0.119.1.tar.gz"
-    sha256 "a5e3426edce3fe221af4e1992c6d79011b247e3b03cc57999d697fe76cbf8ae0"
+    url "https://files.pythonhosted.org/packages/f7/0e/7f29e8f7219e4526747db182e1afb5a4b6abc3201768fb38d81fa2536241/fastapi-0.120.0.tar.gz"
+    sha256 "6ce2c1cfb7000ac14ffd8ddb2bc12e62d023a36c20ec3710d09d8e36fab177a0"
   end
 
   resource "filelock" do
@@ -411,8 +418,8 @@ class Dstack < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/be/4d/8df5f83256a809c22c4d6792ce8d43bb503be0fb7a8e4da9025754b09658/orjson-3.11.3.tar.gz"
-    sha256 "1c0603b1d2ffcd43a411d64797a19556ef76958aef1c182f22dc30860152a98a"
+    url "https://files.pythonhosted.org/packages/c6/fe/ed708782d6709cc60eb4c2d8a361a440661f74134675c72990f2c48c785f/orjson-3.11.4.tar.gz"
+    sha256 "39485f4ab4c9b30a3943cfe99e1a213c4776fb69e8abd68f66b83d5a0b0fdc6d"
   end
 
   resource "packaging" do
@@ -538,11 +545,6 @@ class Dstack < Formula
   resource "rich-argparse" do
     url "https://files.pythonhosted.org/packages/71/a6/34460d81e5534f6d2fc8e8d91ff99a5835fdca53578eac89e4f37b3a7c6d/rich_argparse-1.7.1.tar.gz"
     sha256 "d7a493cde94043e41ea68fb43a74405fa178de981bf7b800f7a3bd02ac5c27be"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/48/dc/95f074d43452b3ef5d06276696ece4b3b5d696e7c9ad7173c54b1390cd70/rpds_py-0.28.0.tar.gz"
-    sha256 "abd4df20485a0983e2ca334a216249b6186d6e3c1627e106651943dbdb791aea"
   end
 
   resource "rsa" do

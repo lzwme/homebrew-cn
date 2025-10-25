@@ -29,7 +29,8 @@ class Ttfautohint < Formula
   end
 
   head do
-    url "https://repo.or.cz/ttfautohint.git"
+    url "https://repo.or.cz/ttfautohint.git", branch: "master"
+
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "bison" => :build

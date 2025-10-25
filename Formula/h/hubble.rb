@@ -1,8 +1,8 @@
 class Hubble < Formula
   desc "Network, Service & Security Observability for Kubernetes using eBPF"
   homepage "https://github.com/cilium/hubble"
-  url "https://ghfast.top/https://github.com/cilium/hubble/archive/refs/tags/v1.18.0.tar.gz"
-  sha256 "29f4a452a360829a184d5e20b4d6c54fc96c982f91fe3569cd26b0fec35cf010"
+  url "https://ghfast.top/https://github.com/cilium/hubble/archive/refs/tags/v1.18.3.tar.gz"
+  sha256 "5c48a34a2e3ebd8b0b9e2c97991aea3765bc4c754a573ac5e77cf273c18d48a9"
   license "Apache-2.0"
   head "https://github.com/cilium/hubble.git", branch: "main"
 
@@ -15,15 +15,12 @@ class Hubble < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c8c6991264c6cad9b99bc49dadd897ffe71c6638605da62b3888ea2500d98c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f09f18708146f7e6a6c3b258332d73f8bc5b3e151160d989f97f11cee9dededd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "798337f3f2a8235c436074330de469dde784b93de77604f22b9123894bd7bfa5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d52c44bc0824c1fd267fcb222c6c34e379843424735a19793f3d9b3d18fec5aa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "77d3fc957c30108100785b703285c3314c644596a833152a03a5359649dea48b"
-    sha256 cellar: :any_skip_relocation, ventura:       "d167b1c9d6f9cde55d5051d551afa2110363d9ad0b788572fbd02ce407e0f19a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "97992e9931442f1137182f06ee8838502226a04153658be89efcf145fe98cf1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc8bfc1499cc383def0d2f53bacb547ad74bd5571910ce1477cd65572b0def61"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "58d4cb6cbdbb904ff69d121952ccbb455ba0a1ec8e6e4db3ffff6844e248a4a6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88efcf64cbc3a46826bc123b8477cee5ce8984ba74bfad3997f110f2d75b7db1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1563dd7c76ba9493be4e5af7799dc72becb2567a46b8920766f49922363f00ff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f571762aec13934cab39afd4283f4111284b1ae1d1aed13857a0448df2ca6ca4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "623c7b52005a50784c97d3796012afa82f122c2830b5c2bf2f5f5c65a41791bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e15fbbfb6c90d55d6c75dafdc311944b5d3aba47c8877f27bdebb38066e531aa"
   end
 
   depends_on "go" => :build

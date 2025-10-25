@@ -9,21 +9,23 @@ class CheckJsonschema < Formula
   head "https://github.com/python-jsonschema/check-jsonschema.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5b725a780e0118156becdd4da794658a2782e0bd6d44469268868e1d77bb6290"
-    sha256 cellar: :any,                 arm64_sequoia: "b0020f4c25ad0353b68c387dcda7a29b47381d3610e4bf8d9f32f25da547365f"
-    sha256 cellar: :any,                 arm64_sonoma:  "885b94825f5201087f3779ba57ca988665c935c0cdfa8d8a96b54fda31c56e3c"
-    sha256 cellar: :any,                 sonoma:        "0846afcb54661d312c783de420176720014778df254848c14f82928d392da3f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67446a81de6e51b85c235ce9ab8103ffdf4c25257927282844538aba94933c13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93185dd7dad3ea6e76fe089b6bcb7829bd0b5168b054504c2fc6952bebeb03ed"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e6d684c8b0b6f7e8ed7dc387ebbe20a3fd4510389f1ab8b1febd3d26964a5047"
+    sha256 cellar: :any,                 arm64_sequoia: "1a7d9a4b0dad774dfbb427f05c0a742e71069719e6f31669fa9a9b465eef4720"
+    sha256 cellar: :any,                 arm64_sonoma:  "711eaf7a5b78dde776221204e5f63e27b41e1ec6b0bdce562e4a4ba7dcca8711"
+    sha256 cellar: :any,                 sonoma:        "ed7004c5a86535508efb36d1c5a42f63cdf15fdb4606b278b110f46481f7af3a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1a7ca3afedc443404df79093223b013b267e54f611ff59f60baf431269ae865"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "964272ef42f5e5ed81ca6560d6999960ec69f8c6e191e821742331103b87928c"
   end
 
-  depends_on "rust" => :build
+  depends_on "rust" => :build # for regress
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
 
   resource "arrow" do
-    url "https://files.pythonhosted.org/packages/2e/00/0f6e8fcdb23ea632c866620cc872729ff43ed91d284c866b515c6342b173/arrow-1.3.0.tar.gz"
-    sha256 "d4540617648cb5f895730f1ad8c82a65f2dad0166f57b75f3ca54759c4d67a85"
+    url "https://files.pythonhosted.org/packages/b9/33/032cdc44182491aa708d06a68b62434140d8c50820a087fac7af37703357/arrow-1.4.0.tar.gz"
+    sha256 "ed0cc050e98001b8779e84d461b0098c4ac597e88704a655582b21d116e526d7"
   end
 
   resource "attrs" do
@@ -32,8 +34,8 @@ class CheckJsonschema < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
@@ -77,8 +79,8 @@ class CheckJsonschema < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
-    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
+    url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
+    sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
   end
 
   resource "regress" do
@@ -101,14 +103,9 @@ class CheckJsonschema < Formula
     sha256 "d3c4d257a560d544e9826b38bc81db676890c79ab9d7ac92b39c7a253d5ca733"
   end
 
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
-  end
-
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/3e/db/f3950f5e5031b618aae9f423a39bf81a55c148aecd15a34527898e752cf4/ruamel.yaml-0.18.15.tar.gz"
-    sha256 "dbfca74b018c4c3fba0b9cc9ee33e53c371194a9000e694995e620490fd40700"
+    url "https://files.pythonhosted.org/packages/9f/c7/ee630b29e04a672ecfc9b63227c87fd7a37eb67c1bf30fe95376437f897c/ruamel.yaml-0.18.16.tar.gz"
+    sha256 "a6e587512f3c998b2225d68aa1f35111c29fad14aed561a26e73fab729ec5e5a"
   end
 
   resource "six" do
@@ -116,9 +113,9 @@ class CheckJsonschema < Formula
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
-  resource "types-python-dateutil" do
-    url "https://files.pythonhosted.org/packages/fc/83/24ed25dd0c6277a1a170c180ad9eef5879ecc9a4745b58d7905a4588c80d/types_python_dateutil-2.9.0.20251008.tar.gz"
-    sha256 "c3826289c170c93ebd8360c3485311187df740166dbab9dd3b792e69f2bc1f9c"
+  resource "tzdata" do
+    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
+    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
   end
 
   resource "uri-template" do

@@ -5,7 +5,7 @@ class Mfoc < Formula
   sha256 "2dfd8ffa4a8b357807680d190a91c8cf3db54b4211a781edc1108af401dbaad7"
   license "GPL-2.0-only"
   revision 2
-  head "https://github.com/nfc-tools/mfoc.git"
+  head "https://github.com/nfc-tools/mfoc.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 

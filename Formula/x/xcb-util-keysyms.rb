@@ -24,7 +24,7 @@ class XcbUtilKeysyms < Formula
   end
 
   head do
-    url "https://gitlab.freedesktop.org/xorg/lib/libxcb-keysyms.git"
+    url "https://gitlab.freedesktop.org/xorg/lib/libxcb-keysyms.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build

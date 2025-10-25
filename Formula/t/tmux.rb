@@ -59,9 +59,7 @@ class Tmux < Formula
     # https://github.com/Homebrew/homebrew-core/issues/102748
     args << "--with-TERM=screen-256color" if OS.mac? && MacOS.version < :sonoma
 
-    ENV.append "LDFLAGS", "-lresolv"
     system "./configure", *args, *std_configure_args
-
     system "make", "install"
 
     pkgshare.install "example_tmux.conf"

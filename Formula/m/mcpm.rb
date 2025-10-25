@@ -8,20 +8,23 @@ class Mcpm < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "03d0789c43ecc4ac8c34fe51261cc2fc596d543d47c7acfb7671eb1b902c29f0"
-    sha256 cellar: :any,                 arm64_sequoia: "9e4c51b09548033b5b4aed6a9f2ec9f0dbdaa40e837c42178c4cde19351e338a"
-    sha256 cellar: :any,                 arm64_sonoma:  "6880f5831e9c9b423e54631de66aa08c910ee90e928946b8597dea688dd3d303"
-    sha256 cellar: :any,                 sonoma:        "4903feff5138f39c7bfe70fcd3470f0bafa3128592d909362bcc32f91e8a4a21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "316b8d3a99e02ab639f16df3d72bd154b0ba4a52e374fe6b3cc884987c3d5dfc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75790cde148feac0a358a4787bd2676285aeeb92934a55afc2873660ec00e31d"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "371032c6ec036fcb609fbaeea05662643869bb407bc33182c99fc2d3cd9f2481"
+    sha256 cellar: :any,                 arm64_sequoia: "71f5acf5578db3c8bc99337c91734bd962242a8d2a4a6d948b4f622d289c9988"
+    sha256 cellar: :any,                 arm64_sonoma:  "4f7177ebd7ad61286af53a964df2bf43c804f4400ee8698fc96fa0ebc3e8bac1"
+    sha256 cellar: :any,                 sonoma:        "3782d2eb7a01212d44b4b24e52bba87b84412cdc2ca9e2571e6b0855044303c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4cdaed7e1466caee63ded5efa0444d173da55d6e9ddbb49e1993a185c07fbe9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce65f4cebb3e4920d37c6ba6aac2f3055c37443ef86b4c5a426087b2e28581ec"
   end
 
   depends_on "cmake" => :build # for duckdb
-  depends_on "rust" => :build
-  depends_on "certifi"
-  depends_on "cryptography"
+  depends_on "rust" => :build # for watchfiles
+
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -145,8 +148,8 @@ class Mcpm < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/1a/e0/fe34ce16ea2bacce489ab859abd1b47ae28b438c3ef60b9c5eee6c02592f/mcp-1.18.0.tar.gz"
-    sha256 "aa278c44b1efc0a297f53b68df865b988e52dd08182d702019edcf33a8e109f6"
+    url "https://files.pythonhosted.org/packages/69/2b/916852a5668f45d8787378461eaa1244876d77575ffef024483c94c0649c/mcp-1.19.0.tar.gz"
+    sha256 "213de0d3cd63f71bc08ffe9cc8d4409cc87acffd383f6195d2ce0457c021b5c1"
   end
 
   resource "mdurl" do
@@ -187,11 +190,6 @@ class Mcpm < Formula
   resource "pydantic" do
     url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
-  end
-
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
   end
 
   resource "pydantic-settings" do
@@ -249,14 +247,9 @@ class Mcpm < Formula
     sha256 "b84366496027dbee28712c7fa9bf10c632e47deb32ac868032afbc794e12b400"
   end
 
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
-  end
-
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/3e/db/f3950f5e5031b618aae9f423a39bf81a55c148aecd15a34527898e752cf4/ruamel.yaml-0.18.15.tar.gz"
-    sha256 "dbfca74b018c4c3fba0b9cc9ee33e53c371194a9000e694995e620490fd40700"
+    url "https://files.pythonhosted.org/packages/9f/c7/ee630b29e04a672ecfc9b63227c87fd7a37eb67c1bf30fe95376437f897c/ruamel.yaml-0.18.16.tar.gz"
+    sha256 "a6e587512f3c998b2225d68aa1f35111c29fad14aed561a26e73fab729ec5e5a"
   end
 
   resource "shellingham" do
@@ -290,13 +283,8 @@ class Mcpm < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/21/ca/950278884e2ca20547ff3eb109478c6baf6b8cf219318e6bc4f666fad8e8/typer-0.19.2.tar.gz"
-    sha256 "9ad824308ded0ad06cc716434705f691d4ee0bfd0fb081839d2e426860e7fdca"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/8f/28/7c85c8032b91dbe79725b6f17d2fffc595dff06a35c7a30a37bef73a1ab4/typer-0.20.0.tar.gz"
+    sha256 "1aaf6494031793e4876fb0bacfa6a912b551cf43c1e63c800df8b1a866720c37"
   end
 
   resource "typing-inspection" do

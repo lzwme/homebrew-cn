@@ -17,7 +17,8 @@ class XcbUtilCursor < Formula
   end
 
   head do
-    url "https://gitlab.freedesktop.org/xorg/lib/libxcb-cursor.git"
+    url "https://gitlab.freedesktop.org/xorg/lib/libxcb-cursor.git", branch: "master"
+
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
