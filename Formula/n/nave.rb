@@ -4,7 +4,7 @@ class Nave < Formula
   url "https://ghfast.top/https://github.com/isaacs/nave/archive/refs/tags/v3.5.5.tar.gz"
   sha256 "102b1fced7aad7746cbe9c1871984cea2560747f0369fb777857c1992dc09a7a"
   license "ISC"
-  head "https://github.com/isaacs/nave.git", branch: "master"
+  head "https://github.com/isaacs/nave.git", branch: "main"
 
   bottle do
     rebuild 1

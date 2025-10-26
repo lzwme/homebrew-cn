@@ -4,7 +4,7 @@ class Unshield < Formula
   url "https://ghfast.top/https://github.com/twogood/unshield/archive/refs/tags/1.6.2.tar.gz"
   sha256 "a937ef596ad94d16e7ed2c8553ad7be305798dcdcfd65ae60210b1e54ab51a2f"
   license "MIT"
-  head "https://github.com/twogood/unshield.git", branch: "master"
+  head "https://github.com/twogood/unshield.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "ca7cacd291d91e1efd405c583a994117fff1fc42dc0fc464312f502607d8abb9"

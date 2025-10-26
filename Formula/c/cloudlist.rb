@@ -4,7 +4,7 @@ class Cloudlist < Formula
   url "https://ghfast.top/https://github.com/projectdiscovery/cloudlist/archive/refs/tags/v1.2.2.tar.gz"
   sha256 "53efb4bff46b533fab0bbb0003c3fddb5874e64cde8beda977856af3e8fdb064"
   license "MIT"
-  head "https://github.com/projectdiscovery/cloudlist.git", branch: "main"
+  head "https://github.com/projectdiscovery/cloudlist.git", branch: "dev"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05ee74dbd140cf4d1fe0390ee4e72107f3d0c2676396cc2960595bb1ab222a49"

@@ -254,7 +254,8 @@ class Vunnel < Formula
     # Issue ref: https://github.com/anchore/vunnel/issues/904
     inreplace "pyproject.toml", 'requires-python = "<3.14,>=3.11"', 'requires-python = ">=3.11"'
 
-    # The source doesn't have a valid SOURCE_DATE_EPOCH, so here we set default.
+    # hatch does not support a SOURCE_DATE_EPOCH before 1980.
+    # Remove after https://github.com/pypa/hatch/pull/1999 is released.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
     # Fix compilation of ijson native extensions, note:

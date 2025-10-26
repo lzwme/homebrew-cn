@@ -5,7 +5,7 @@ class Caf < Formula
   url "https://ghfast.top/https://github.com/actor-framework/actor-framework/archive/refs/tags/1.1.0.tar.gz"
   sha256 "9febd85d3a4f50dac760592043028a36bea62bba50c3ee2fc1eace954dd8ae27"
   license "BSD-3-Clause"
-  head "https://github.com/actor-framework/actor-framework.git", branch: "master"
+  head "https://github.com/actor-framework/actor-framework.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "faa09c3ddebe8332936b1cc01028494b75a7b80763b045256840983be78f3785"

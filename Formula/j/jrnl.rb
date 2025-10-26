@@ -112,7 +112,8 @@ class Jrnl < Formula
     # PR ref: https://github.com/jrnl-org/jrnl/pull/2015
     inreplace "pyproject.toml", 'python = ">=3.10.0, <3.14"', 'python = ">=3.10.0"'
 
-    # The source doesn't have a valid SOURCE_DATE_EPOCH, so here we set default.
+    # hatch does not support a SOURCE_DATE_EPOCH before 1980.
+    # Remove after https://github.com/pypa/hatch/pull/1999 is released.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
     virtualenv_install_with_resources

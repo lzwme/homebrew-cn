@@ -5,7 +5,7 @@ class Juju < Formula
   sha256 "c11bb17d5bde7823a63e6354c785274c42008cfaf0e6abeb203b7ec89c83f890"
   license "AGPL-3.0-only"
   version_scheme 1
-  head "https://github.com/juju/juju.git", branch: "develop"
+  head "https://github.com/juju/juju.git", branch: "main"
 
   # We check the Launchpad download page for Juju because the latest version
   # listed on the main project page isn't always a stable version.

@@ -4,7 +4,7 @@ class Mongrel2 < Formula
   url "https://ghfast.top/https://github.com/mongrel2/mongrel2/releases/download/v1.13.0/mongrel2-v1.13.0.tar.bz2"
   sha256 "b6f1f50c9f65b605342d8792b1cc8a1c151105339030313b9825b6a68d400c10"
   license "BSD-3-Clause"
-  head "https://github.com/mongrel2/mongrel2.git", branch: "develop"
+  head "https://github.com/mongrel2/mongrel2.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 sonoma:       "d36d8722ad689bc1c66e6a4f8844b2eb99b8b079f6cae331d2db9faa091f87c0"

@@ -4,7 +4,7 @@ class Ratify < Formula
   url "https://ghfast.top/https://github.com/notaryproject/ratify/archive/refs/tags/v1.4.0.tar.gz"
   sha256 "36b18d2070d76a6e85aa86bf94e4e68350c6c277985d6bc8e87a28c78ebb08b8"
   license "Apache-2.0"
-  head "https://github.com/notaryproject/ratify.git", branch: "dev"
+  head "https://github.com/notaryproject/ratify.git", branch: "main"
 
   bottle do
     rebuild 1

@@ -8,19 +8,20 @@ class McpAtlassian < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "30b1f6365ace0821c790e431e8f1ab18ddf9db894e81871e9e0c8850abacdda7"
-    sha256 cellar: :any,                 arm64_sequoia: "39dc286693c138864170bc5713aa9e6604c8630505cded2002d14606eaf94315"
-    sha256 cellar: :any,                 arm64_sonoma:  "cf0c05f6536bf631f56fecd07239c20d3d0b893f058fef5cee658ad1aeb97101"
-    sha256 cellar: :any,                 sonoma:        "3bcb69e5b83efbcd9a956bb0685c1eb7303d56e90c1d4f025b1c0874fb8239e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e5f39e55e1040134f4fd838106da60ec9449404f66a0843f30cda1b4dd97357"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cb0d5f32b1a53cc885ad3a105a40ed508a5a33e21ab7b0e75c53b76ccb7765a"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "e37dde66a2ce3db67252bad2b906d11d6d0b43d9679323e061bed5996f3e3460"
+    sha256 cellar: :any,                 arm64_sequoia: "b0c1ba6ab0e91da65a2399ef7a279912e4829bee2cb7eee9a05b67b9653a7c26"
+    sha256 cellar: :any,                 arm64_sonoma:  "cbadd1383c91bbe408e9bb4b275899bf3a7fdd8064fa8699cd47570c4f5c9f38"
+    sha256 cellar: :any,                 sonoma:        "f68eed83804aa5e75c92c8305c9a8ba04318ce5e32fe898a2b07d71b0bb0b41f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d576ded8f50ed3a361c1a18b346a291e2bc251015479e56df6482ea26f9fb06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06b92ea8479ca5f5bc0c8d9b2a8eb8514206eb4e4e842a2a8b54d4e47f4c52ec"
   end
 
-  depends_on "rust" => :build
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -175,8 +176,8 @@ class McpAtlassian < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/1a/e0/fe34ce16ea2bacce489ab859abd1b47ae28b438c3ef60b9c5eee6c02592f/mcp-1.18.0.tar.gz"
-    sha256 "aa278c44b1efc0a297f53b68df865b988e52dd08182d702019edcf33a8e109f6"
+    url "https://files.pythonhosted.org/packages/69/2b/916852a5668f45d8787378461eaa1244876d77575ffef024483c94c0649c/mcp-1.19.0.tar.gz"
+    sha256 "213de0d3cd63f71bc08ffe9cc8d4409cc87acffd383f6195d2ce0457c021b5c1"
   end
 
   resource "mdurl" do
@@ -207,11 +208,6 @@ class McpAtlassian < Formula
   resource "pydantic" do
     url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
-  end
-
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
   end
 
   resource "pydantic-settings" do
@@ -279,11 +275,6 @@ class McpAtlassian < Formula
     sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
-  end
-
   resource "shellingham" do
     url "https://files.pythonhosted.org/packages/58/15/8b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58e/shellingham-1.5.4.tar.gz"
     sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
@@ -335,8 +326,8 @@ class McpAtlassian < Formula
   end
 
   resource "types-cachetools" do
-    url "https://files.pythonhosted.org/packages/31/f2/e14f51330093fd640fd11663863dc7dd80e5894ef9d2eb39325cc61ba3cf/types_cachetools-6.2.0.20250827.tar.gz"
-    sha256 "f27febfd1b5e517e3cb1ca6daf38ad6ddb4eeb1e29bdbd81a082971ba30c0d8e"
+    url "https://files.pythonhosted.org/packages/3b/a8/f9bcc7f1be63af43ef0170a773e2d88817bcc7c9d8769f2228c802826efe/types_cachetools-6.2.0.20251022.tar.gz"
+    sha256 "f1d3c736f0f741e89ec10f0e1b0138625023e21eb33603a930c149e0318c0cef"
   end
 
   resource "types-html5lib" do
@@ -367,11 +358,6 @@ class McpAtlassian < Formula
   resource "types-requests" do
     url "https://files.pythonhosted.org/packages/36/27/489922f4505975b11de2b5ad07b4fe1dca0bca9be81a703f26c5f3acfce5/types_requests-2.32.4.20250913.tar.gz"
     sha256 "abd6d4f9ce3a9383f269775a9835a4c24e5cd6b9f647d64f88aa4613c33def5d"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

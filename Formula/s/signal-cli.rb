@@ -1,16 +1,16 @@
 class SignalCli < Formula
   desc "CLI and dbus interface for WhisperSystems/libsignal-service-java"
   homepage "https://github.com/AsamK/signal-cli"
-  url "https://ghfast.top/https://github.com/AsamK/signal-cli/archive/refs/tags/v0.13.20.tar.gz"
-  sha256 "7dd652c793f03b3231a01122b6438992b65656a640127f60eb48c0e908805448"
+  url "https://ghfast.top/https://github.com/AsamK/signal-cli/archive/refs/tags/v0.13.21.tar.gz"
+  sha256 "3b751f8989a48a0d39c87d349d311541ba3ec286f7fb8de752596c4d07788728"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "397d1c994eb18eb6f2477b0b23580e556f39c8f401e4e12034b77c48ea82fe63"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cc3f5bf319c5eda5c526dc3d4e34256274f0ee68d17907f99d4b5937a99d8bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "476f7ea293c97ed62dd4bdac2182594a6602322987311b214612f0f10e00cbae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "70a7064dd09651fc1c8db8aaab06abed7ed8e1537553bf047147a445a13285ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de796f5ba76ad56be55239d2872fb6916939b958dabaa512cf8b41551e13fa8a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb591048816fdfd36313952cfb10a9a02f40765fd87261faf75fbd68d7b3c070"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "57ffb2cba1df9792aa26133a3c7e2180f6b7ebd3f9076a405d7155c140480e7d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3eba953dea665181ed5576e95f58e2f9d81fd878f2610131f742020ccc849f83"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1cd331161e9d7ffe6f3c83a10261c075c28398ad75923eb7b8a76449626898ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4981149ba16679746d5ad9e28af664c9bd8994c1fdd92f630d3aeff2ec7c8f84"
   end
 
   depends_on "cmake" => :build # For `boring-sys` crate in `libsignal-client`
@@ -32,8 +32,8 @@ class SignalCli < Formula
   # url=https://ghfast.top/https://github.com/AsamK/signal-cli/releases/download/v$version/signal-cli-$version.tar.gz
   # curl -fsSL $url | tar -tz | grep libsignal-client
   resource "libsignal-client" do
-    url "https://ghfast.top/https://github.com/signalapp/libsignal/archive/refs/tags/v0.81.0.tar.gz"
-    sha256 "93c9efebd227d5b1cc12f7efcbdc81d8bd38b969e23de4db67521f818a8725b7"
+    url "https://ghfast.top/https://github.com/signalapp/libsignal/archive/refs/tags/v0.84.0.tar.gz"
+    sha256 "eb68997586ce8a0f3bfcb57a35b3bab9e45364e371dd37d0d55ab28f3a9671a2"
   end
 
   def install

@@ -1,10 +1,9 @@
 class F3d < Formula
   desc "Fast and minimalist 3D viewer"
-  homepage "https://f3d-app.github.io/f3d/"
-  url "https://ghfast.top/https://github.com/f3d-app/f3d/archive/refs/tags/v3.2.0.tar.gz"
-  sha256 "2a3cff123821be41d99489e080a7153812e58a86598fa9f4988099660bf6a947"
+  homepage "https://f3d.app"
+  url "https://ghfast.top/https://github.com/f3d-app/f3d/archive/refs/tags/v3.3.0.tar.gz"
+  sha256 "f3feeaed716022bc3440b891afbd5eba82a69af7215f66bb9aa72344d7591126"
   license "BSD-3-Clause"
-  revision 2
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -15,13 +14,11 @@ class F3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5a6c30f281997c53c8ac66a0c0577df3e0331264f8e39a76eda1705f2a8cf72c"
-    sha256 cellar: :any,                 arm64_sequoia: "3854159961a1a9e2d28004e0b1469c4de48d56b87565df55786f1c85bae06220"
-    sha256 cellar: :any,                 arm64_sonoma:  "e8cde110e73ff4b121306655cde089070450c72f336da36086a64e306833c489"
-    sha256 cellar: :any,                 arm64_ventura: "aad1d07372463a276187a1d69543455fc332226a73033d9120e4e526ec7894ee"
-    sha256 cellar: :any,                 sonoma:        "89dc06e6cf2205f7e0a1f96b7100b5085b545e1fa06cf9c4cb03768003b19c31"
-    sha256 cellar: :any,                 ventura:       "8dfdfd3d3e73724107614f5215b88e709eee237f0de276c5dbfe59585836bfa7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae4d13eb52f13a44859006028e2bf5106e6c7de169cdca40c5db45be99a076fc"
+    sha256 cellar: :any,                 arm64_tahoe:   "72fd6da56af7293967a0e092bd5e9c27bb9b2f9f8fa951c9d97ef032e2306244"
+    sha256 cellar: :any,                 arm64_sequoia: "7ed7f6ae1508a1b3c3de5cd001c882d7ceb762904a6928c9d9c1be447b26aacb"
+    sha256 cellar: :any,                 arm64_sonoma:  "d18cb3e7b808879ed186db3c3346bb42adc7e0b9cda70d5e7e79cf6f657cd8fb"
+    sha256 cellar: :any,                 sonoma:        "dcd9ee303a3fddb96248b90551e371d19f4a3afd879032963e4641e68b636540"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69067a2da0330f543a15d5000e8f7b6bde1167f3cd2f8f304d889cf18e3980aa"
   end
 
   depends_on "cmake" => :build
@@ -82,6 +79,6 @@ class F3d < Formula
 
     f3d_out = shell_output("#{bin}/f3d --verbose --no-render #{testpath}/test.obj 2>&1").strip
     assert_match(/Loading files:.+\n.+obj/, f3d_out)
-    assert_match "Camera focal point: 0.5,0.5,0", f3d_out
+    assert_match "Camera focal point: 0.5, 0.5, 0", f3d_out
   end
 end

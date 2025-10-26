@@ -4,7 +4,7 @@ class Zk < Formula
   url "https://ghfast.top/https://github.com/zk-org/zk/archive/refs/tags/v0.15.1.tar.gz"
   sha256 "1f30aae497476342203b3cecb63edd92faf4d837860a894fdee4b372184e9ec4"
   license "GPL-3.0-only"
-  head "https://github.com/zk-org/zk.git", branch: "main"
+  head "https://github.com/zk-org/zk.git", branch: "dev"
 
   livecheck do
     url :stable

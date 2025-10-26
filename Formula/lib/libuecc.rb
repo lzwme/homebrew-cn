@@ -4,7 +4,7 @@ class Libuecc < Formula
   url "https://git.universe-factory.net/fastd/libuecc/archive/v7.tar.gz"
   sha256 "80ef381fae912db88a33ebe1b4c7a722b98ed3b1939f75415068b025c5675818"
   license "BSD-2-Clause"
-  head "https://git.universe-factory.net/fastd/libuecc.git", branch: "master"
+  head "https://git.universe-factory.net/fastd/libuecc.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 

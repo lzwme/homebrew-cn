@@ -6,7 +6,7 @@ class Rethinkdb < Formula
   url "https://download.rethinkdb.com/repository/raw/dist/rethinkdb-2.4.4.tgz"
   sha256 "5091237602b62830db2cb3daaca6ab34632323741e6710c2f0de4d84f442711f"
   license "Apache-2.0"
-  head "https://github.com/rethinkdb/rethinkdb.git", branch: "next"
+  head "https://github.com/rethinkdb/rethinkdb.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "f4ea31512e65f35f70f6a33c617507bd806de6bd446c20bf7a32d5b69eff2aa0"

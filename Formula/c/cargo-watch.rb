@@ -4,7 +4,7 @@ class CargoWatch < Formula
   url "https://ghfast.top/https://github.com/watchexec/cargo-watch/archive/refs/tags/v8.5.3.tar.gz"
   sha256 "1884674d19492727d762da91b9aebc05d29bdb34cdb1903cde36d81edbcc6514"
   license "CC0-1.0"
-  head "https://github.com/watchexec/cargo-watch.git", branch: "main"
+  head "https://github.com/watchexec/cargo-watch.git", branch: "8.x"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2498b5772d684e6b6021a83c7e4f5c390b089fb0e206a8fc000d2bb670736b6c"

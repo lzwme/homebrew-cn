@@ -4,7 +4,7 @@ class Sdns < Formula
   url "https://ghfast.top/https://github.com/semihalev/sdns/archive/refs/tags/v1.6.0.tar.gz"
   sha256 "1df9b0f18d2cca65dc1997159d1c529c8a4a1b19762d4e07017f5bc7ae901811"
   license "MIT"
-  head "https://github.com/semihalev/sdns.git", branch: "master"
+  head "https://github.com/semihalev/sdns.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f6e8c50abf9f5ff1f31441b9ae70564e651637bc91ea441a297e539334f83c99"

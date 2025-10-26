@@ -5,7 +5,7 @@ class Talisman < Formula
   sha256 "40f9ab7d43fadf75abe7a4d71fac5ff083f71b63afada282146827725460d2d1"
   license "MIT"
   version_scheme 1
-  head "https://github.com/thoughtworks/talisman.git", branch: "master"
+  head "https://github.com/thoughtworks/talisman.git", branch: "main"
 
   livecheck do
     url :stable

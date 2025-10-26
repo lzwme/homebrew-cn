@@ -4,7 +4,7 @@ class Libmarpa < Formula
   url "https://ghfast.top/https://github.com/jeffreykegler/libmarpa/archive/refs/tags/v11.0.13.tar.gz"
   sha256 "cb3c7f47d9ee95de967838ea0ecc380ffacfdfd8ec2c3d7cc2a6acaa4cc9597b"
   license "MIT"
-  head "https://github.com/jeffreykegler/libmarpa.git", branch: "tested"
+  head "https://github.com/jeffreykegler/libmarpa.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 

@@ -4,7 +4,7 @@ class Jigdo < Formula
   url "https://www.einval.com/~steve/software/jigdo/download/jigdo-0.8.2.tar.xz"
   sha256 "36f286d93fa6b6bf7885f4899c997894d21da3a62176592ac162d9c6a8644f9e"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
-  head "https://git.einval.com/git/jigdo.git", branch: "upstream"
+  head "https://git.einval.com/git/jigdo.git", branch: "master"
 
   livecheck do
     url "https://www.einval.com/~steve/software/jigdo/download/"

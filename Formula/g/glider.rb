@@ -4,7 +4,7 @@ class Glider < Formula
   url "https://ghfast.top/https://github.com/nadoo/glider/archive/refs/tags/v0.16.4.tar.gz"
   sha256 "91aa9ad6d56b164b30abedc88a0d371b3af6ff96cfe92f18525fa8e110aaee1d"
   license "GPL-3.0-or-later"
-  head "https://github.com/nadoo/glider.git", branch: "master"
+  head "https://github.com/nadoo/glider.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "e40af9870b9ee99ab0c80b8dae8d4d751e8c19f6f8bb09dbc4349f69c3d7158d"

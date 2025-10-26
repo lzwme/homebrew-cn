@@ -4,7 +4,7 @@ class AwsRotateKey < Formula
   url "https://ghfast.top/https://github.com/stefansundin/aws-rotate-key/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "91568ad7aeb849454ac066c44303e2b97e158dc094a90af43c8c9b3dc5cc4ed7"
   license "MIT"
-  head "https://github.com/stefansundin/aws-rotate-key.git", branch: "master"
+  head "https://github.com/stefansundin/aws-rotate-key.git", branch: "main"
 
   bottle do
     rebuild 1

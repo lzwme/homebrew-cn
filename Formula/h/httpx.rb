@@ -4,7 +4,7 @@ class Httpx < Formula
   url "https://ghfast.top/https://github.com/projectdiscovery/httpx/archive/refs/tags/v1.7.1.tar.gz"
   sha256 "e47e7643cf736d86769961865ca21e7f0a3269af5b00c534d3816eb04a60f7b7"
   license "MIT"
-  head "https://github.com/projectdiscovery/httpx.git", branch: "master"
+  head "https://github.com/projectdiscovery/httpx.git", branch: "dev"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9711f3fb90d287dc2e0400e1517d74dc40d3f8f4e168766e602a56cf23656c82"

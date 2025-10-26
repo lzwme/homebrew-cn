@@ -24,14 +24,15 @@ class Cp2k < Formula
   depends_on "cmake" => :build
   depends_on "fypp" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => :build
-  depends_on "fftw"
 
+  depends_on "fftw"
   depends_on "gcc" # for gfortran
   depends_on "libxc"
   depends_on "open-mpi"
   depends_on "openblas"
   depends_on "scalapack"
+
+  uses_from_macos "python" => :build
 
   fails_with :clang do
     cause "needs OpenMP support for C/C++ and Fortran"

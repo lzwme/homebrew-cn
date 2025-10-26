@@ -1,20 +1,20 @@
 class Moor < Formula
   desc "Nice to use pager for humans"
   homepage "https://github.com/walles/moor"
-  url "https://ghfast.top/https://github.com/walles/moor/archive/refs/tags/v2.6.1.tar.gz"
-  sha256 "19067bcb17c65ae6da8f80c3525e0859a388155025174ac65bc55d247e3b1dd4"
+  url "https://ghfast.top/https://github.com/walles/moor/archive/refs/tags/v2.7.0.tar.gz"
+  sha256 "c80ef80f4300a9e0d60f76e61fd20b6dc6345ce800005805715d8b95dca4d330"
   license "BSD-2-Clause"
   head "https://github.com/walles/moor.git", branch: "master"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e84a59b6e8235b9a3933376c857aae8a38f80946a9a18e2e99f26e35c83fdf4d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e84a59b6e8235b9a3933376c857aae8a38f80946a9a18e2e99f26e35c83fdf4d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e84a59b6e8235b9a3933376c857aae8a38f80946a9a18e2e99f26e35c83fdf4d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d27a8e409f1e32cd0fc7288d4c2d50f38d7eb2406f75d3824b90f0fb54925f88"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a83ddf60d83b6a3633eed160c33f5e9d6976a317614409ba21320e86cf0f1a25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "590a78d21bd3551e83a62ed3debbb4de7bb72a4fb63f1f3741188b82a0b71978"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e173a308b7a7115a69120ec0b8a7a5bb3e1048cb20a42267cb534d4e6a02c614"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e173a308b7a7115a69120ec0b8a7a5bb3e1048cb20a42267cb534d4e6a02c614"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e173a308b7a7115a69120ec0b8a7a5bb3e1048cb20a42267cb534d4e6a02c614"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9a26960d9970bcba155f2aa974bf0506c7819ac1f9e0b6a5b3a062ada7602090"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6fa8145f2882ecc6c1b431259f33b8fc419fd8d1df6010aae189710f3c5cdc9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7d598dd49be2303f24d281afbeffcabb5330f900901061240d7a411400db883"
   end
 
   depends_on "go" => :build

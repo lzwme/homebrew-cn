@@ -11,14 +11,13 @@ class Lilv < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f94497de552491aeb79922de76f81154071d59c46875c1f00e17aaf35a033824"
-    sha256 cellar: :any, arm64_sequoia: "3d7ca1236fe7b85cce89cbe85925978028bf312d872e59be8adbba6db9d4b2e3"
-    sha256 cellar: :any, arm64_sonoma:  "9123841283fe4c867f2ba7f393c8b09668ce3cc4d2bffa1ba401c5c6f6f48e0b"
-    sha256 cellar: :any, arm64_ventura: "d431fdcb61334aa6cc1c87690d60fb8c7c797323ee1367a76f7dc21d90191897"
-    sha256 cellar: :any, sonoma:        "7b52532cfaf18e979cba4759c99b09613da4a5a26dac78961fe2f3f49ce3f240"
-    sha256 cellar: :any, ventura:       "60b045f4327237d0bc4913bfd0f5628efb2c19a86a26f939eb65100a0aa2da4c"
-    sha256               arm64_linux:   "7ba6affd762fbf6e51a685e9c1eb5e763a820ead40d96f1d3eb9e744378ebed2"
-    sha256               x86_64_linux:  "061f4cfac8ca9ea8567fd399f092805e3ec13a29403e36e46345d371d3103447"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "90ae823eb2f694a459acd9a82add438afeae7372bb5027fb96f7284535f38765"
+    sha256 cellar: :any, arm64_sequoia: "f67b63d7cdd471472d24b017eedf01c548f17b07c76ddfbe3ed75bf36099f90b"
+    sha256 cellar: :any, arm64_sonoma:  "6374dd43e1c57accd80314b283f9b79e8a37a7b633a949c95bbc49f94704e12d"
+    sha256 cellar: :any, sonoma:        "717aa04eb3a99b7bf3f911b4c0a82da954c8c6c200c24f6a011ec74f0d562f9e"
+    sha256               arm64_linux:   "5e940b3cdae1f87b18606b0337e5506f4fbe6812b248778f81e35df51c9fc063"
+    sha256               x86_64_linux:  "ec14d34d2171150d32a7a49a17ad6ff6acdbda7b9020d06a7077ce3542a16486"
   end
 
   depends_on "meson" => :build

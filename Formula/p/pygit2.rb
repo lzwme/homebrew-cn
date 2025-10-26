@@ -15,7 +15,6 @@ class Pygit2 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "119c10991289e7b902f9540d8624b2d04d5d79b97c130386848016461effc2fb"
   end
 
-  depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
   depends_on "cffi"

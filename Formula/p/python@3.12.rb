@@ -11,19 +11,16 @@ class PythonAT312 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a000fd4856f62bf895f00834763827b03270f1c9fdcb27326a32edac66b7fe05"
-    sha256 arm64_sequoia: "37ae53fa79a39a9918b800f0de9008318b243b1b6f8415f5b24b0344b106a260"
-    sha256 arm64_sonoma:  "ff9ad0e2b1201789a6aa20b0f0ac6a7d03cc65f2f46bff2f38df20913ce40691"
-    sha256 tahoe:         "d6894d85c2f62a457c6712aa72880992447d0df0ed5e3a34941aa1c52cf3ff63"
-    sha256 sequoia:       "2e3b6a481f9a045d891132156bf5aad07250c120e405eeabce3d9de1f8f5c78a"
-    sha256 sonoma:        "e0c7ced51385e5775e1026da4a75d79496e6a7837b9f443ecd4849744dc871d3"
-    sha256 arm64_linux:   "9d361e6dcd38088036b79a3d1f701eeef6a10071e5914bb2b8599b5a676105ef"
-    sha256 x86_64_linux:  "5b00594526236ecca6e83eef126f31f9c0bf0bdc1233313c44bc1613aba7e09f"
+    rebuild 1
+    sha256 arm64_tahoe:   "427efb2e74f4f1179ff13cb7f2149f2051d6c1abcfd5b73ab77f9ea986a23ea2"
+    sha256 arm64_sequoia: "f242c770cd7d0aac1d13832b5a72f8fce97add7b18c7c98092544374a9a2666d"
+    sha256 arm64_sonoma:  "764e9a5adf22b1d9545af241fc70dc3b7a9b0d0b5f223adb44e9f05b0d107b9e"
+    sha256 tahoe:         "78040610f0b342e0c0fc718ad9f0a685648ebffb69bf7a8746557ab2243a395b"
+    sha256 sequoia:       "37fad88a480dc48ea022111a316087cc18dbb4f03ab218386be0c67ad5e86136"
+    sha256 sonoma:        "14563ff18aaa32e5ff3c8d646dc03b54a05355db60ed9a5c47f3bec63c0dcbf4"
+    sha256 arm64_linux:   "6c0fab49a54e3e0724049356249aeb01b48c18f7e5b305c0bdba3af25fa2c4cf"
+    sha256 x86_64_linux:  "9730e6d94b34c1af2c99d5c924c4a9ec2270cda129c627cc60b31d255f29927f"
   end
-
-  # setuptools remembers the build flags python is built with and uses them to
-  # build packages later. Xcode-only systems need different flags.
-  pour_bottle? only_if: :clt_installed
 
   depends_on "pkgconf" => :build
   depends_on "mpdecimal"
@@ -55,13 +52,8 @@ class PythonAT312 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/20/16/650289cd3f43d5a2fadfd98c68bd1e1e7f2550a1a5326768cddfbcedb2c5/pip-25.2.tar.gz"
-    sha256 "578283f006390f85bb6282dffb876454593d637f5d1be494b5202ce4877e71f2"
-  end
-
-  resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
-    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
+    url "https://files.pythonhosted.org/packages/fe/6e/74a3f0179a4a73a53d66ce57fdb4de0080a8baa1de0063de206d6167acc2/pip-25.3.tar.gz"
+    sha256 "8d0538dbbd7babbd207f261ed969c65de439f6bc9e5dbd3b3b9a77f25d95f343"
   end
 
   resource "wheel" do
@@ -86,18 +78,14 @@ class PythonAT312 < Formula
     end
   end
 
-  def site_packages_cellar
-    lib_cellar/"site-packages"
-  end
+  def site_packages_cellar = lib_cellar/"site-packages"
 
   # The HOMEBREW_PREFIX location of site-packages.
-  def site_packages
-    HOMEBREW_PREFIX/"lib/python#{version.major_minor}/site-packages"
-  end
+  def site_packages = HOMEBREW_PREFIX/"lib/python#{version.major_minor}/site-packages"
 
-  def python3
-    bin/"python#{version.major_minor}"
-  end
+  def altinstall? = self != Formula["python3"]
+
+  def python3 = bin/"python#{version.major_minor}"
 
   def install
     # Unset these so that installing pip and setuptools puts them where we want
@@ -143,13 +131,6 @@ class PythonAT312 < Formula
     cppflags       = ["-I#{HOMEBREW_PREFIX}/include"]
 
     if OS.mac?
-      if MacOS.sdk_path_if_needed
-        # Help Python's build system (setuptools/pip) to build things on SDK-based systems
-        # The setup.py looks at "-isysroot" to get the sysroot (and not at --sysroot)
-        cflags  << "-isysroot #{MacOS.sdk_path}"
-        ldflags << "-isysroot #{MacOS.sdk_path}"
-      end
-
       # Enabling LTO on Linux makes libpython3.*.a unusable for anyone whose GCC
       # install does not match the one in CI _exactly_ (major and minor version).
       # https://github.com/orgs/Homebrew/discussions/3734
@@ -204,7 +185,8 @@ class PythonAT312 < Formula
       #   https://github.com/python/cpython#installing-multiple-versions
       #
       # Tell Python not to install into /Applications (default for framework builds)
-      system "make", "altinstall", "PYTHONAPPSDIR=#{prefix}"
+      target = "#{"alt" if altinstall?}install"
+      system "make", target, "PYTHONAPPSDIR=#{prefix}"
       system "make", "frameworkinstallextras", "PYTHONAPPSDIR=#{pkgshare}" if OS.mac?
     end
 
@@ -238,8 +220,8 @@ class PythonAT312 < Formula
                 %r{('LINKFORSHARED': .*?)'(Python.framework/Versions/3.\d+/Python)'}m,
                 "\\1'#{opt_prefix}/Frameworks/\\2'"
 
-      # Remove symlinks that conflict with the main Python formula.
-      rm %w[Headers Python Resources Versions/Current].map { |subdir| frameworks/"Python.framework"/subdir }
+      # For an altinstall, remove symlinks that conflict with the main Python formula.
+      rm frameworks.glob("Python.framework/{Headers,Python,Resources,Versions/Current}") if altinstall?
     else
       # Prevent third-party packages from building against fragile Cellar paths
       inreplace Dir[lib_cellar/"**/_sysconfigdata_*linux_x86_64-*.py",
@@ -252,8 +234,8 @@ class PythonAT312 < Formula
                 'prefix_real=$(installed_prefix "$0")',
                 "prefix_real=#{opt_prefix}"
 
-      # Remove symlinks that conflict with the main Python formula.
-      rm lib/"libpython3.so"
+      # For an altinstall, remove symlinks that conflict with the main Python formula.
+      rm lib/"libpython3.so" if altinstall?
     end
 
     # Remove the site-packages that Python created in its Cellar.
@@ -269,7 +251,7 @@ class PythonAT312 < Formula
     ]
     whl_build = buildpath/"whl_build"
     system python3, "-m", "venv", whl_build
-    %w[flit-core wheel setuptools].each do |r|
+    %w[flit-core wheel].each do |r|
       resource(r).stage do
         system whl_build/"bin/pip3", "install", *common_pip_args, "."
       end
@@ -293,17 +275,18 @@ class PythonAT312 < Formula
       s.gsub!(/_PIP_VERSION = .*/, "_PIP_VERSION = \"#{resource("pip").version}\"")
     end
 
-    # Install unversioned and major-versioned symlinks in libexec/bin.
+    # Install unversioned (and for an altinstall, major-versioned) symlinks in libexec/bin.
     {
-      "idle"           => "idle#{version.major_minor}",
+      "idle"          => "idle#{version.major_minor}",
+      "pydoc"         => "pydoc#{version.major_minor}",
+      "python"        => "python#{version.major_minor}",
+      "python-config" => "python#{version.major_minor}-config",
+    }.merge(altinstall? ? {
       "idle3"          => "idle#{version.major_minor}",
-      "pydoc"          => "pydoc#{version.major_minor}",
       "pydoc3"         => "pydoc#{version.major_minor}",
-      "python"         => "python#{version.major_minor}",
       "python3"        => "python#{version.major_minor}",
-      "python-config"  => "python#{version.major_minor}-config",
       "python3-config" => "python#{version.major_minor}-config",
-    }.each do |short_name, long_name|
+    } : {}).each do |short_name, long_name|
       (libexec/"bin").install_symlink (bin/long_name).realpath => short_name
     end
 
@@ -331,16 +314,19 @@ class PythonAT312 < Formula
     mv (root_site_packages/"bin").children, bin
     rmdir root_site_packages/"bin"
 
-    rm bin.glob("pip{,3}")
+    rm bin/"pip"
+    rm bin/"pip3" if altinstall?
     mv bin/"wheel", bin/"wheel#{version.major_minor}"
+    bin.install_symlink "wheel#{version.major_minor}" => "wheel3" unless altinstall?
 
-    # Install unversioned and major-versioned symlinks in libexec/bin.
+    # Install unversioned (and for an altinstall, major-versioned) symlinks in libexec/bin.
     {
-      "pip"    => "pip#{version.major_minor}",
+      "pip"   => "pip#{version.major_minor}",
+      "wheel" => "wheel#{version.major_minor}",
+    }.merge(altinstall? ? {
       "pip3"   => "pip#{version.major_minor}",
-      "wheel"  => "wheel#{version.major_minor}",
       "wheel3" => "wheel#{version.major_minor}",
-    }.each do |short_name, long_name|
+    } : {}).each do |short_name, long_name|
       (libexec/"bin").install_symlink (bin/long_name).realpath => short_name
     end
 
@@ -417,22 +403,22 @@ class PythonAT312 < Formula
           sys.path.extend(library_packages)
           # the Cellar site-packages is a symlink to the HOMEBREW_PREFIX
           # site_packages; prefer the shorter paths
-          long_prefix = re.compile(r'#{rack}/(?:[0-9\\._abrc]+/Frameworks/Python\\.framework/Versions/#{version.major_minor}/)?lib/python#{version.major_minor}/site-packages')
+          long_prefix = re.compile(r'#{rack}/[0-9\\._abrc]+/(?:Frameworks/Python\\.framework/Versions/#{version.major_minor}/)?lib/python#{version.major_minor}/site-packages')
           sys.path = [long_prefix.sub('#{site_packages}', p) for p in sys.path]
           # Set the sys.executable to use the opt_prefix. Only do this if PYTHONEXECUTABLE is not
           # explicitly set and we are not in a virtualenv:
           if 'PYTHONEXECUTABLE' not in os.environ and sys.prefix == sys.base_prefix:
               sys.executable = sys._base_executable = '#{opt_bin}/python#{version.major_minor}'
       if 'PYTHONHOME' not in os.environ:
-          cellar_prefix = re.compile(r'#{rack}/[0-9\\._abrc]+/')
+          cellar_prefix = re.compile(r'#{rack}/[0-9\\._abrc]+(?=/|$)')
           if os.path.realpath(sys.base_prefix).startswith('#{rack}'):
-              new_prefix = cellar_prefix.sub('#{opt_prefix}/', sys.base_prefix)
+              new_prefix = cellar_prefix.sub('#{opt_prefix}', sys.base_prefix)
               site.PREFIXES[:] = [new_prefix if x == sys.base_prefix else x for x in site.PREFIXES]
               if sys.prefix == sys.base_prefix:
                   sys.prefix = new_prefix
               sys.base_prefix = new_prefix
           if os.path.realpath(sys.base_exec_prefix).startswith('#{rack}'):
-              new_exec_prefix = cellar_prefix.sub('#{opt_prefix}/', sys.base_exec_prefix)
+              new_exec_prefix = cellar_prefix.sub('#{opt_prefix}', sys.base_exec_prefix)
               site.PREFIXES[:] = [new_exec_prefix if x == sys.base_exec_prefix else x for x in site.PREFIXES]
               if sys.exec_prefix == sys.base_exec_prefix:
                   sys.exec_prefix = new_exec_prefix
@@ -508,6 +494,17 @@ class PythonAT312 < Formula
     system python3, "dbm_test.py"
 
     system bin/"pip#{version.major_minor}", "list", "--format=columns"
+
+    # Check our sitecustomize.py
+    assert_match HOMEBREW_CELLAR.to_s, shell_output("#{python3} -Sc 'import sys; print(sys.base_prefix)'")
+    refute_match HOMEBREW_CELLAR.to_s, shell_output("#{python3} -c 'import sys; print(sys.base_prefix)'")
+    refute_match site_packages_cellar.to_s, shell_output("#{python3} -c 'import sys; print(sys.path)'")
+
+    # Verify our sysconfig patches
+    sysconfig_path = "import sysconfig; print(sysconfig.get_paths(\"osx_framework_library\")[\"data\"])"
+    assert_equal HOMEBREW_PREFIX.to_s, shell_output("#{python3} -c '#{sysconfig_path}'").strip
+    linkforshared_var = "import sysconfig; print(sysconfig.get_config_var(\"LINKFORSHARED\"))"
+    assert_match opt_prefix.to_s, shell_output("#{python3} -c '#{linkforshared_var}'") if OS.mac?
 
     # Check our externally managed marker
     assert_match "If you wish to install a Python library",

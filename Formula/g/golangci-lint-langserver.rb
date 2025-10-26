@@ -4,7 +4,7 @@ class GolangciLintLangserver < Formula
   url "https://ghfast.top/https://github.com/nametake/golangci-lint-langserver/archive/refs/tags/v0.0.11.tar.gz"
   sha256 "d9f1fc02861eeb9ce60c89e79be706d7ec636f653d5039a76857b18cb98875fb"
   license "MIT"
-  head "https://github.com/nametake/golangci-lint-langserver.git", branch: "master"
+  head "https://github.com/nametake/golangci-lint-langserver.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee344feade405e6d22efc52ad554507a75d4a8931ab65bcdae601d693f51a2f8"

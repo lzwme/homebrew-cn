@@ -4,7 +4,7 @@ class MagicWormholeRs < Formula
   url "https://ghfast.top/https://github.com/magic-wormhole/magic-wormhole.rs/archive/refs/tags/0.7.6.tar.gz"
   sha256 "1d76e80108291f0a31e1a0e2e1d6199decb55bec73bc725baacb93ea0ae06e5e"
   license "EUPL-1.2"
-  head "https://github.com/magic-wormhole/magic-wormhole.rs.git", branch: "master"
+  head "https://github.com/magic-wormhole/magic-wormhole.rs.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "39364a5af652c25322b8a54c683a2e79be6d37899841f8e233094bb3b529e874"

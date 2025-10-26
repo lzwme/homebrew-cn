@@ -2156,7 +2156,7 @@ Homebrew-homebrew-core/Formula/f/frps.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frugal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fruit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frum.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/fs-uae.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/fs-uae.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fselect.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fsevent_watch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fsevents-tools.rb, Homebrew/homebrew-core, 0
@@ -3353,6 +3353,7 @@ Homebrew-homebrew-core/Formula/k/keep-sorted.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/keepassc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/keeper-commander.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/keepkey-agent.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/kekkai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/keploy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/keptn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kepubify.rb, Homebrew/homebrew-core, 1
@@ -5170,7 +5171,6 @@ Homebrew-homebrew-core/Formula/o/openshift-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openslide.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openslp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssh.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/o/openssl@1.1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openssl@3.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssl@3.5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssl@3.rb, Homebrew/homebrew-core, 1
@@ -6434,6 +6434,7 @@ Homebrew-homebrew-core/Formula/s/shml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shmux.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shntool.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/shodan.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/shortest.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/showcert.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/showkey.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/shpotify.rb, Homebrew/homebrew-core, 1
@@ -7041,6 +7042,7 @@ Homebrew-homebrew-core/Formula/t/tfmcp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfmigrate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfmv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfocus.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tfplugingen-openapi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfprovidercheck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfproviderlint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfschema.rb, Homebrew/homebrew-core, 1
@@ -7442,6 +7444,7 @@ Homebrew-homebrew-core/Formula/v/vgmstream.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vgrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vgt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vhs.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vibe-log-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vice.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/victorialogs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/victoriametrics.rb, Homebrew/homebrew-core, 1
@@ -10138,6 +10141,7 @@ Homebrew-homebrew-cask/Casks/font/font-e/font-el-messiri.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask/Casks/font/font-e/font-eldur.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-electrolize.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-e/font-elice-digital-baeum.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-e/font-elms-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-e/font-elsie-swash-caps.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-e/font-elsie.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-e/font-elstobd.rb, Homebrew/homebrew-cask, 1
@@ -11712,6 +11716,7 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-scheherazade-new.rb, Homebrew/home
 Homebrew-homebrew-cask/Casks/font/font-s/font-scheherazade.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-schibsted-grotesk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-schoolbell.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-s/font-science-gothic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-scientifica.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-scope-one.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-seaweed-script.rb, Homebrew/homebrew-cask, 0
@@ -11832,6 +11837,7 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-sriracha.rb, Homebrew/homebrew-cas
 Homebrew-homebrew-cask/Casks/font/font-s/font-srisakdi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-staatliches.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-stack-sans-headline.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-s/font-stack-sans-notch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-stack-sans-text.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-stalemate.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-stalinist-one.rb, Homebrew/homebrew-cask, 0
@@ -13642,6 +13648,7 @@ Homebrew-homebrew-cask/Casks/o/orange.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/orangedrangon-android-messages.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/orbstack.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/orca.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/orcasheets.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/orcaslicer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/orcaslicer@nightly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/origami-studio.rb, Homebrew/homebrew-cask, 0

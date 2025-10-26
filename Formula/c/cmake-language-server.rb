@@ -36,7 +36,7 @@ class CmakeLanguageServer < Formula
   end
 
   def install
-    # Unpin python for 3.14
+    # Unpin python for 3.14: https://github.com/regen100/cmake-language-server/pull/104
     inreplace "pyproject.toml", 'requires-python = ">=3.8.0,<3.14"', 'requires-python = ">=3.8.0"'
     virtualenv_install_with_resources
   end

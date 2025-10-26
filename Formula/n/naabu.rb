@@ -4,7 +4,7 @@ class Naabu < Formula
   url "https://ghfast.top/https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.3.5.tar.gz"
   sha256 "6b754a7cb49e8cbc68b64ca7ed0130c2f6fe6436b4cf3d1acb8b62a5e83a56a3"
   license "MIT"
-  head "https://github.com/projectdiscovery/naabu.git", branch: "master"
+  head "https://github.com/projectdiscovery/naabu.git", branch: "dev"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a3b63cf7dfcfc82b4e7af46c87d02b4a5ff0fd1e6aaefdd9488c20be0bc65964"

@@ -4,6 +4,7 @@ class PythonAT313 < Formula
   url "https://www.python.org/ftp/python/3.13.9/Python-3.13.9.tgz"
   sha256 "c4c066af19c98fb7835d473bebd7e23be84f6e9874d47db9e39a68ee5d0ce35c"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -11,14 +12,14 @@ class PythonAT313 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "028dc9444f968043ba9fcce8dff210b280a5faef0673d57114629bd1c95019bc"
-    sha256 arm64_sequoia: "a8bcf3730577fc6c9f8a301df6e2832b6d827d32d87b728963c099d93c1239ea"
-    sha256 arm64_sonoma:  "78d50c16a7ef0e6dd3206eaf0b4c64239c4133931683334da309cd3d63f7edcf"
-    sha256 tahoe:         "39bf75108322d0d521254a7c98fe0079e545b5cffe8f8d182e8ff4c30c018eea"
-    sha256 sequoia:       "2c6e61b5d2bdb3d9c1f27ba43cfa1235588c9ca4bd423c4d262fb4c17c4a7133"
-    sha256 sonoma:        "8f5313efae525a354eb52a1cb0a0087ea5edd74a37ae105ed3106325c3900982"
-    sha256 arm64_linux:   "735e8b9fb19146b596bc0e8b36a5c1e7c229f02f97aa9910e340cb440841a11b"
-    sha256 x86_64_linux:  "278e65d38b2641a25018d7b9cc4ba37ca17cbd1da178ead056159d8ba0f2f74f"
+    sha256 arm64_tahoe:   "03eb2d172710c86df3dd45c640b0a3e404646deaff9dd36e9cc6584f73797043"
+    sha256 arm64_sequoia: "1e69017b62b04ec5ed8369bd6ea90d0f483187b9e111afdf1c853f22feba0b65"
+    sha256 arm64_sonoma:  "eb694b873eaca9e05e721f22da66b1a0484230e8c5c0c0b43fe0663bc8c303d4"
+    sha256 tahoe:         "77ec038bd37c453589fb715054f4652b53437d484abf94d7e88f7f56d9c5a6aa"
+    sha256 sequoia:       "6960c0f0121d539c9035dff825a97666f41c59f3ea7e4044a71cb3aa50182b12"
+    sha256 sonoma:        "4142735df04ef4c8a87339869b6e5687aa4a2285934cea5d226bfdc63d426c73"
+    sha256 arm64_linux:   "f05a221a15372591c82888863d9bf1a272d180dc5275273b3ed27c5be533481a"
+    sha256 x86_64_linux:  "eb3a1f2e5c3b653e6de402b701f20fb7a9f80ffc98afb9c235f36436cc59ac78"
   end
 
   depends_on "pkgconf" => :build
@@ -48,13 +49,8 @@ class PythonAT313 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/20/16/650289cd3f43d5a2fadfd98c68bd1e1e7f2550a1a5326768cddfbcedb2c5/pip-25.2.tar.gz"
-    sha256 "578283f006390f85bb6282dffb876454593d637f5d1be494b5202ce4877e71f2"
-  end
-
-  resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
-    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
+    url "https://files.pythonhosted.org/packages/fe/6e/74a3f0179a4a73a53d66ce57fdb4de0080a8baa1de0063de206d6167acc2/pip-25.3.tar.gz"
+    sha256 "8d0538dbbd7babbd207f261ed969c65de439f6bc9e5dbd3b3b9a77f25d95f343"
   end
 
   resource "wheel" do
@@ -242,7 +238,7 @@ class PythonAT313 < Formula
     ]
     whl_build = buildpath/"whl_build"
     system python3, "-m", "venv", whl_build
-    %w[flit-core wheel setuptools].each do |r|
+    %w[flit-core wheel].each do |r|
       resource(r).stage do
         system whl_build/"bin/pip3", "install", *common_pip_args, "."
       end

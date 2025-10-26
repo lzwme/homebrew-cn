@@ -4,7 +4,7 @@ class Nomino < Formula
   url "https://ghfast.top/https://github.com/yaa110/nomino/archive/refs/tags/1.6.4.tar.gz"
   sha256 "e83d9a62163f9faaff4c6650284de3dbe92e546ac09e3717c0bb9cde8352d005"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/yaa110/nomino.git", branch: "master"
+  head "https://github.com/yaa110/nomino.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f5f816f0bc309590106511a3913e3864719fecabb585ce02fa7628d32de348c"

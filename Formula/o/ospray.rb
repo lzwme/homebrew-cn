@@ -4,7 +4,7 @@ class Ospray < Formula
   url "https://ghfast.top/https://github.com/RenderKit/ospray/archive/refs/tags/v3.2.0.tar.gz"
   sha256 "2c8108df2950bc5d1bc2a62f74629233dbe4f36e3f6a8ea032907d4a3fdc6750"
   license "Apache-2.0"
-  head "https://github.com/RenderKit/ospray.git", branch: "master"
+  head "https://github.com/RenderKit/ospray.git", branch: "devel"
 
   livecheck do
     url :stable

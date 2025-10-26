@@ -1,8 +1,8 @@
 class Dwarfs < Formula
   desc "Fast high compression read-only file system for Linux, Windows, and macOS"
   homepage "https://github.com/mhx/dwarfs"
-  url "https://ghfast.top/https://github.com/mhx/dwarfs/releases/download/v0.14.0/dwarfs-0.14.0.tar.xz"
-  sha256 "514b851af356102abca9103dd12c92a31fad6d2f705c4cfaff4e815b5753250f"
+  url "https://ghfast.top/https://github.com/mhx/dwarfs/releases/download/v0.14.1/dwarfs-0.14.1.tar.xz"
+  sha256 "620cf27f2e142a5f8fc05552a70704c3bf4df23c3279c6026b3f37954d0529c5"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,12 +12,12 @@ class Dwarfs < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "741cb17f74eba766025adcaa1d65bc33a99b1feebfdb7949be625efc77b1111c"
-    sha256                               arm64_sequoia: "1515201cc3980a4cba442675f11e193eb5920644fc39c67173ce3750f242b0bc"
-    sha256                               arm64_sonoma:  "9c94c09ae94a1e796b1a277c6c4bae578428e4dcacccd7e04313bff12f256075"
-    sha256 cellar: :any,                 sonoma:        "1c28aaea2630571524c36c7740e613de0463a7a3b21d3ca5196776faef78908f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd30917e87b13a61294bd0e9f06b25bfd83846084bd5d22024a567b976b69dc3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6692d8573bce29cfb8c08646762679b611dd7c8f017eb12c2daf18107ef834c"
+    sha256                               arm64_tahoe:   "2e95529e6405e62ba1cc6209715ccd89174d28479a760e8f22ce206d996e3503"
+    sha256                               arm64_sequoia: "7ca8ffd1358e396b9f35e0e3385500f41e461524fac5894aeb15df648a6746f5"
+    sha256                               arm64_sonoma:  "37dff4020cc7a378096a9412632b4d33491f2faa0e13ba7c891c0327d058c434"
+    sha256 cellar: :any,                 sonoma:        "18eb87a48c2f45ff19b282ac136d8bcb0a6b115f23f3b0d33f1109687eff08a7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "19fd0716edf6671db896982e970b3b2afe89ca0053edb00ecbaf910fb083c414"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c91149fdbb8ef250d9e602425e531ec9aa5e92bdb8c4195e3273f2358495346c"
   end
 
   depends_on "cmake" => :build
@@ -149,14 +149,3 @@ __END__
      thread
    REQUIRED
  )
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -507,7 +507,7 @@ if(WITH_TESTS OR WITH_BENCHMARKS OR WITH_FUZZ)
-   if(WITH_BENCHMARKS)
-     target_sources(dwarfs_test_helpers PRIVATE test/test_strings.cpp)
-   endif()
--  target_link_libraries(dwarfs_test_helpers PUBLIC dwarfs_reader dwarfs_writer dwarfs_tool)
-+  target_link_libraries(dwarfs_test_helpers PUBLIC dwarfs_reader dwarfs_writer dwarfs_tool PkgConfig::XXHASH)
-   set_property(TARGET dwarfs_test_helpers PROPERTY CXX_STANDARD ${DWARFS_CXX_STANDARD})
-   target_compile_definitions(dwarfs_test_helpers
-        PUBLIC TEST_DATA_DIR=\"${CMAKE_SOURCE_DIR}/test\"

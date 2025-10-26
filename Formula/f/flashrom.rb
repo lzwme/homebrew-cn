@@ -4,7 +4,7 @@ class Flashrom < Formula
   url "https://download.flashrom.org/releases/flashrom-v1.6.0.tar.xz"
   sha256 "8b9db3987df9b5fc81e70189d017905dd5f6be1e1410347f22687ab6d4c94423"
   license "GPL-2.0-or-later"
-  head "https://review.coreboot.org/flashrom.git", branch: "master"
+  head "https://review.coreboot.org/flashrom.git", branch: "main"
 
   livecheck do
     url "https://download.flashrom.org/releases/"

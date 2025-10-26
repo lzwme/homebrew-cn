@@ -5,7 +5,7 @@ class Nu < Formula
   sha256 "1a6839c1f45aff10797dd4ce5498edaf2f04c415b3c28cd06a7e0697d6133342"
   license "Apache-2.0"
   revision 4
-  head "https://github.com/programming-nu/nu.git", branch: "master"
+  head "https://github.com/programming-nu/nu.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 

@@ -4,7 +4,7 @@ class Ddclient < Formula
   url "https://ghfast.top/https://github.com/ddclient/ddclient/archive/refs/tags/v4.0.0.tar.gz"
   sha256 "4b37c99ac0011102d7db62f1ece7ff899b06df3d4b172e312703931a3c593c93"
   license "GPL-2.0-or-later"
-  head "https://github.com/ddclient/ddclient.git", branch: "master"
+  head "https://github.com/ddclient/ddclient.git", branch: "main"
 
   livecheck do
     url :stable

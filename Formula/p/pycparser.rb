@@ -10,7 +10,6 @@ class Pycparser < Formula
     sha256 cellar: :any_skip_relocation, all: "9e1c78dae771f3b5f7e085ec7600b1317c259e5b493d81cb66334a919b1a81c6"
   end
 
-  depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
 

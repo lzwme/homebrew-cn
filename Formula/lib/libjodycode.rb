@@ -1,27 +1,21 @@
 class Libjodycode < Formula
   desc "Shared code used by several utilities written by Jody Bruchon"
   homepage "https://codeberg.org/jbruchon/libjodycode"
-  url "https://codeberg.org/jbruchon/libjodycode/archive/v4.1.tar.gz"
-  sha256 "24ab610b81fbd783874b4c6fbedeed52436b0d0aba293d91b9e678c431b092fe"
+  url "https://codeberg.org/jbruchon/libjodycode/archive/v4.1.1.tar.gz"
+  sha256 "dba58704f269d82bc226d361e40c2e0fc627dbdcc29786b74942c1afe5092132"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b11b0de131e2c2eb5ffec2a737c3faafd6cd9f00dfaef47e767f090227e21a76"
-    sha256 cellar: :any,                 arm64_sequoia: "4d1b3a972f34cd15aace9a2ef881748a339f01033c0dbec3f9f3d0c33f75e6ac"
-    sha256 cellar: :any,                 arm64_sonoma:  "e7e94ab9ec856e7828da50be61e9a053183dc01e2eb59d4bf6526ba254a5ce7d"
-    sha256 cellar: :any,                 sonoma:        "688654e33958307b8d7b47b5a04c49298c2b3180fac1a0cdb429a8bbeb48390a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe8daa0b56264af8afe8098b900dea01a6079e7d7f1d81fcb17362780d5738d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "335ed82fc8692d8823ef16dff38237a33a188702f390b600ddc85411dda00626"
+    sha256 cellar: :any,                 arm64_tahoe:   "9fb9785e42d54ca8785437d4e5e88bc174cb9cdec69e8cd91e08773475bd6d15"
+    sha256 cellar: :any,                 arm64_sequoia: "1de8fff8cb97dc6b75abb29d79e99be062ad71b4920b66102b4105eadff922cf"
+    sha256 cellar: :any,                 arm64_sonoma:  "997ccd481d19913e259e63d80ccb8ceb0f19b54dbeea27a40423af0915849c30"
+    sha256 cellar: :any,                 sonoma:        "7af2eb2f6abfd048a2c5a78e3733a4a599cd12472134b68617ba5efe4a0c7845"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "840eb3be0573968cfd6c664ef2ac0fe424b864405254b67bd640fe749bf44089"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1257a5f234e39badf6f52d8a1a2f444664e78879379ef97067c5fce59555c0d2"
   end
 
   # These files used to be distributed as part of the jdupes formula
   link_overwrite "include/libjodycode.h", "share/man/man7/libjodycode.7", "lib/libjodycode.a"
-
-  # Fix compile-time errors on Linux
-  patch do
-    url "https://codeberg.org/jbruchon/libjodycode/commit/07294bbfd6c3c4be42c40c9ed81eebb5cd3d83a0.patch?full_index=1"
-    sha256 "a9ed883dce6eeb90b20ea851247696b1b9a6f1cfbf8579cf9885ac0e3349e0d1"
-  end
 
   def install
     system "make"

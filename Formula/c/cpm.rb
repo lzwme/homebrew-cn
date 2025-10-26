@@ -4,7 +4,7 @@ class Cpm < Formula
   url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-0.997024.tar.gz"
   sha256 "df02d482d90332ed61dd2a7c80732395e941eb915374f00af546e1c079542805"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
-  head "https://github.com/skaji/cpm.git", branch: "master"
+  head "https://github.com/skaji/cpm.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dbead6c7e33c44e7ff776c9956e7cd967c6e32f90fe0024878af23eec6e2808a"

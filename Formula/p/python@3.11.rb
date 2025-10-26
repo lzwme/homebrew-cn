@@ -4,6 +4,7 @@ class PythonAT311 < Formula
   url "https://www.python.org/ftp/python/3.11.14/Python-3.11.14.tgz"
   sha256 "563d2a1b2a5ba5d5409b5ecd05a0e1bf9b028cf3e6a6f0c87a5dc8dc3f2d9182"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -11,12 +12,12 @@ class PythonAT311 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3148f628da0c77c4a2a6cd9cfbfddbfb619e98f73548dd0b5780d3bdd84707aa"
-    sha256 arm64_sequoia: "1f94f3eaf1dfb192c353896b83337cd93baf1354e9c97e7f7cb8d398a220ded9"
-    sha256 arm64_sonoma:  "83ca541aeeb63c1b9e54aca7b99abe21a9f7c39b4f0c6511219ed443ce925cd3"
-    sha256 sonoma:        "3878143591abef862c07487f2101806052a19ee6a41961d5111730fe4e084ad4"
-    sha256 arm64_linux:   "59ee7cc05ddca0f82bf3b6de2c63d6225bfd3eafbd99a0f7ece46b265beb3cf0"
-    sha256 x86_64_linux:  "0783c6f6cba4cb1e8913d83fb3fab7a7caf778b5e99239127d926f145315770c"
+    sha256 arm64_tahoe:   "9e609dc553e4f962751863590c8d4276ff88352aa70879ffe7c657bf4f7f1239"
+    sha256 arm64_sequoia: "1f45f5ef42e5cce4e37f001b7e9848c02805a920ca2a6413042eeb212d14dfb8"
+    sha256 arm64_sonoma:  "ecae0169191ecabda2b38bcf5c6e234feadd5e03eae3bb0fcb88617165379849"
+    sha256 sonoma:        "e2034328e1932ba64a5217ac76610ca7159c5df0eda00edde04a464a7d2c90da"
+    sha256 arm64_linux:   "9de68eb6c23d6cc4e5a9975a1e47e79ae7fc6675dd7061ea4b1c9f1a9bce113f"
+    sha256 x86_64_linux:  "425d7ca6959c161cdfdda95e6151e5e1f33e727aa8f1b301f95107598f51d289"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -51,8 +52,8 @@ class PythonAT311 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/20/16/650289cd3f43d5a2fadfd98c68bd1e1e7f2550a1a5326768cddfbcedb2c5/pip-25.2.tar.gz"
-    sha256 "578283f006390f85bb6282dffb876454593d637f5d1be494b5202ce4877e71f2"
+    url "https://files.pythonhosted.org/packages/fe/6e/74a3f0179a4a73a53d66ce57fdb4de0080a8baa1de0063de206d6167acc2/pip-25.3.tar.gz"
+    sha256 "8d0538dbbd7babbd207f261ed969c65de439f6bc9e5dbd3b3b9a77f25d95f343"
   end
 
   resource "setuptools" do

@@ -9,25 +9,28 @@ class Mentat < Formula
   revision 4
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "48482f9a835faeb70fb68c0b63e8daec247c80dec23e106bf2e59a99bf0b6531"
-    sha256 cellar: :any,                 arm64_sequoia: "0f6991b9968b030ca948f7a4a4734d5b88b3b17ea7f21567146e8d6803b70047"
-    sha256 cellar: :any,                 arm64_sonoma:  "3dc9f5211ae63c9e57901e748d454b962d258af61feca67f91b7abc1d960b564"
-    sha256 cellar: :any,                 sonoma:        "2d2f5441c08ce0baac7f52700f475a7eb835c0ccecb9c9ed527de4bea372f88d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed1e79e1c41e4b6050a8c0917d096a6292de850bab8b445795f44af1ecd7b355"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04c757fb27e2d5f00e7943565beb6fa75f65ea7d5bb404859f18c8c5a896854d"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "d38a4611394ab643c638bc0c116c22f152ced05c49751e30326950167063f5e5"
+    sha256 cellar: :any,                 arm64_sequoia: "a765e0fdac4d8b3595a24aaf770c00a8dd67f12a51c219455532b9dd789bf6ab"
+    sha256 cellar: :any,                 arm64_sonoma:  "c2977668fae924ded06accde2ee9b35f05eab736258dd3ec9d689408f2097e43"
+    sha256 cellar: :any,                 sonoma:        "f3e60fd8c8a59ae88716240c841496efaa087a7b430e45c626322b0b4e218ead"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "16b2d3424df2c18d8363f6417f8a874a79ae81358fa9b31e3a83321bd69eacb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0186ccf04b611ad608320b72993b27c50a2d05f4f7d4b21336c1a8fcd3f603b"
   end
 
   # https://github.com/AbanteAI/archive-old-cli-mentat/commit/901f0726418e9e9a66bec78facecf3a45541002d
   deprecate! date: "2025-01-10", because: :repo_archived
 
   depends_on "rust" => :build # for tiktoken
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "numpy"
   depends_on "pillow"
   depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libffi"
+
+  # formula not compatible with pydantic-core 2.41.4
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -182,11 +185,6 @@ class Mentat < Formula
   resource "requests" do
     url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
     sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
   end
 
   resource "selenium" do

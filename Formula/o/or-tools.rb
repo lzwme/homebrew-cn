@@ -2,7 +2,7 @@ class OrTools < Formula
   desc "Google's Operations Research tools"
   homepage "https://developers.google.com/optimization/"
   license "Apache-2.0"
-  revision 6
+  revision 7
   head "https://github.com/google/or-tools.git", branch: "stable"
 
   # Remove `stable` block when patch is no longer needed.
@@ -24,12 +24,12 @@ class OrTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7b87165abf1dcbbac4ff79565c0660ab271b6cebdcafd66187e10548f2d02c68"
-    sha256 cellar: :any, arm64_sequoia: "db82ee2ac31432ef6564b97b73cc5a15cf22eba4e7ae899a20d08064e4bc14c4"
-    sha256 cellar: :any, arm64_sonoma:  "b082ee5c7216b2d9bbf1b13c4e8378c4010e205ec6bd43ec4bec45a0d4d6d242"
-    sha256 cellar: :any, sonoma:        "37b98c6e632af38831e197de403cdd0a9a8d0cae6b53bc8d3a65b5194c174e88"
-    sha256               arm64_linux:   "836e96f1f7a8b0dd76bb039496b955e75a1f4b232e8033af05fb718122a8e087"
-    sha256               x86_64_linux:  "c94faa3b900a8c4104e0584e66bc785b8511b2e9ac7f81ee26bf565f705ee6a7"
+    sha256 cellar: :any, arm64_tahoe:   "d91980bd906d92627c31121042e9fdc5148a7d6c57bcbe6718618f0b89721726"
+    sha256 cellar: :any, arm64_sequoia: "bdcc22ad0243985bc8bb26c3eeea306ccf95239abbb8bc83652121c1990a0b22"
+    sha256 cellar: :any, arm64_sonoma:  "8cc43428f1a722efd90170503a19e21b0b6a86a778ef0a0a78acafcad2c5f259"
+    sha256 cellar: :any, sonoma:        "7a78140f62c844cc947ed8b2fc16fec028001b36fa667ede51d4ca5d9f7b904f"
+    sha256               arm64_linux:   "5971a4a0ff21a522cd02e3bc9072d7a3a4bb9c7ab1544db109ceb6cf0a31d979"
+    sha256               x86_64_linux:  "124de5a2dbbd4ed3eb8c8ad863d79b64935bbfcd18b498e941ebe70bf8a3e571"
   end
 
   depends_on "cmake" => [:build, :test]

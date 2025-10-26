@@ -1,20 +1,18 @@
 class Portmidi < Formula
   desc "Cross-platform library for real-time MIDI I/O"
   homepage "https://github.com/PortMidi/portmidi"
-  url "https://ghfast.top/https://github.com/PortMidi/portmidi/archive/refs/tags/v2.0.6.tar.gz"
-  sha256 "81d22b34051621cd56c8d5ef12908ef2a59764c9cdfba6dae47aabddb71ac914"
+  url "https://ghfast.top/https://github.com/PortMidi/portmidi/archive/refs/tags/v2.0.7.tar.gz"
+  sha256 "43fa65b4ed7ebaa68b0028a538ba8b2ca4dc9b86a7e22ec48842070e010f823f"
   license "MIT"
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "55c62b5b52574fef403bdc868acb38285abb5249cc9a9bdcdefd513fdc741e54"
-    sha256 cellar: :any,                 arm64_sequoia: "10ddde2d1f79d5af52f2efd790fa4a5bde8aa4d822c4bca874845abe3b7c0264"
-    sha256 cellar: :any,                 arm64_sonoma:  "34068c161cdd3b13603881e7567b929c832dbdb17957f1f49ff5e26b0af4a4df"
-    sha256 cellar: :any,                 arm64_ventura: "0aed6c8f284be50da5a5dcc5960871f503f7b275b02f3a855738dd67a23128e9"
-    sha256 cellar: :any,                 sonoma:        "a7fa48b88a0c8527e4cbe4d79de1204e97a2657660109c69822d94bf52f3156e"
-    sha256 cellar: :any,                 ventura:       "c3ede6d5e5911726971a35681b0852e26cdcd93799d7fbbda92b8ae73e9268d7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d00e36c34fb56e1333ade4cab1801852db7b5416c709354ad26ecc9bb44f2316"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49b66f426a03a2fd27eca584c079b01e25b2cd23bb73f06cbc5fc3f187ddae90"
+    sha256 cellar: :any,                 arm64_tahoe:   "78a7e46df8019297d38f47a4e0b1d1338a842473ce818348681b39379a0b8e03"
+    sha256 cellar: :any,                 arm64_sequoia: "47b659e50f8ab01b1c1606c81bd25e927f3757ae84bf0b3c77f9e93bcbd74f3f"
+    sha256 cellar: :any,                 arm64_sonoma:  "a8c3ea6a6efd6be8d4d9ddb63bea9415e606476bcae0ea9d1646078b972e831d"
+    sha256 cellar: :any,                 sonoma:        "1e1ce71bf25b00b29b4b0d6963f1fac0ecd95228f47a675ee04488342df3b398"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b276ff1f2f820e52e2b66165f2ac97889c9a71c9c5654f302e6a49ea717275c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c67a6ae4b4f17947cf80aa1de8b90590ca76647b946817dbf601e472212eaa83"
   end
 
   depends_on "cmake" => :build

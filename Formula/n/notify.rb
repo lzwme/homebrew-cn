@@ -4,7 +4,7 @@ class Notify < Formula
   url "https://ghfast.top/https://github.com/projectdiscovery/notify/archive/refs/tags/v1.0.7.tar.gz"
   sha256 "ec9f1e6c48f975b58d30162071d954db0cd771ea3f5dc7168f5ecdc73658c0ad"
   license "MIT"
-  head "https://github.com/projectdiscovery/notify.git", branch: "master"
+  head "https://github.com/projectdiscovery/notify.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22e0f75572048c8a133022ffcebec399529075ad0c8e7d0d1bd62b93802014b0"

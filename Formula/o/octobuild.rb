@@ -4,7 +4,7 @@ class Octobuild < Formula
   url "https://ghfast.top/https://github.com/octobuild/octobuild/archive/refs/tags/1.8.1.tar.gz"
   sha256 "5638c8759899bfc7a5658d44d8cfcf091f0afc001fdcaa5d305a03f6aa668475"
   license "MIT"
-  head "https://github.com/octobuild/octobuild.git", branch: "master"
+  head "https://github.com/octobuild/octobuild.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 

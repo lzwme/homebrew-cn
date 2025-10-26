@@ -4,7 +4,7 @@ class CmuPocketsphinx < Formula
   url "https://ghfast.top/https://github.com/cmusphinx/pocketsphinx/archive/refs/tags/v5.0.4.tar.gz"
   sha256 "9acd63cfdc76bbc85b7b6c6610b7a9cf30c79d5b36a31de7dc2f969e962653d7"
   license "BSD-2-Clause"
-  head "https://github.com/cmusphinx/pocketsphinx.git", branch: "master"
+  head "https://github.com/cmusphinx/pocketsphinx.git", branch: "main"
 
   livecheck do
     url :stable

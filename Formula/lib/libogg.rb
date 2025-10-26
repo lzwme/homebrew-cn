@@ -5,7 +5,7 @@ class Libogg < Formula
   mirror "https://ghfast.top/https://github.com/xiph/ogg/releases/download/v1.3.6/libogg-1.3.6.tar.gz"
   sha256 "83e6704730683d004d20e21b8f7f55dcb3383cdf84c0daedf30bde175f774638"
   license "BSD-3-Clause"
-  head "https://gitlab.xiph.org/xiph/ogg.git", branch: "master"
+  head "https://gitlab.xiph.org/xiph/ogg.git", branch: "main"
 
   livecheck do
     url "https://ftp.osuosl.org/pub/xiph/releases/ogg/?C=M&O=D"

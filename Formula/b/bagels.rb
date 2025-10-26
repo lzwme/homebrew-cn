@@ -9,18 +9,19 @@ class Bagels < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "58782e5ca783941d5b48ed7137ec5d630d1c41ec9c8e8258dc15ef00bbb5cbe2"
-    sha256 cellar: :any,                 arm64_sequoia: "a5cdc43bce9fb23ee27812a5592f29b37aa60f08b533fba1c4cf44c512a1070a"
-    sha256 cellar: :any,                 arm64_sonoma:  "d625a1f53febd13520b1a9e5ba61afd39678c46eb587a56190419dad190f7b3e"
-    sha256 cellar: :any,                 sonoma:        "da554a3a41a16a9e48c0ec02d2ac970791804f1f78177190a7119b03ea2326c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "321d723881599b7037882acce517857502a35cb3c80154d14c858dc856af5be0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "005a4dc1bb275d2af141c61cc628f865e42cc549f993320e01adb85d64978b8f"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "b455dd12c64b48e4eb573e89bd0181af97388a7d03fcdaa9f6464999d070cabf"
+    sha256 cellar: :any,                 arm64_sequoia: "d1c31a29395253037c6375e532d0d84e0157f8e44ee4ec6d45ccf812a45eff9a"
+    sha256 cellar: :any,                 arm64_sonoma:  "67ff66282087b0bea17c19039800ea3aaec73d938068ae8a49a201a8b634e920"
+    sha256 cellar: :any,                 sonoma:        "e644c157b42527a376054f40ef0a35f592d41bbbb5470344398ac0e9b9f8a7a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "835585d75ffad9a40f280ae72a4246972f13307b7190eb0a3550047f997a95e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "242efb4f1512a3b300fe9e643fa91ea09befa2a62702776e7bf95048756394ac"
   end
 
-  depends_on "rust" => :build # for pydantic_core
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "numpy"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
 
   resource "aiohappyeyeballs" do
@@ -29,8 +30,8 @@ class Bagels < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/62/f1/8515650ac3121a9e55c7b217c60e7fae3e0134b5acfe65691781b5356929/aiohttp-3.13.0.tar.gz"
-    sha256 "378dbc57dd8cf341ce243f13fa1fa5394d68e2e02c15cd5f28eae35a70ec7f67"
+    url "https://files.pythonhosted.org/packages/ba/fa/3ae643cd525cf6844d3dc810481e5748107368eb49563c15a5fb9f680750/aiohttp-3.13.1.tar.gz"
+    sha256 "4b7ee9c355015813a6aa085170b96ec22315dabc3d866fd77d147927000e9464"
   end
 
   resource "aiohttp-jinja2" do
@@ -56,11 +57,6 @@ class Bagels < Formula
   resource "blinker" do
     url "https://files.pythonhosted.org/packages/21/28/9b3f50ce0e048515135495f198351908d99540d69bfdc8c1d15b73dc55ce/blinker-1.9.0.tar.gz"
     sha256 "b4ce2265a7abece45e7cc896e98dbebe6cead56bcf805a3d23136d145f5445bf"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/4c/5b/b6ce21586237c77ce67d01dc5507039d444b630dd76611bbca2d8e5dcd91/certifi-2025.10.5.tar.gz"
-    sha256 "47c09d31ccf2acf0be3f701ea53595ee7e0b8fa08801c6624be771df09ae7b43"
   end
 
   resource "charset-normalizer" do
@@ -154,13 +150,8 @@ class Bagels < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/8d/35/d319ed522433215526689bad428a94058b6dd12190ce7ddd78618ac14b28/pydantic-2.12.2.tar.gz"
-    sha256 "7b8fa15b831a4bbde9d5b84028641ac3080a4ca2cbd4a621a661687e741624fd"
-  end
-
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pygments" do
@@ -206,11 +197,6 @@ class Bagels < Formula
   resource "tomli" do
     url "https://files.pythonhosted.org/packages/52/ed/3f73f72945444548f33eba9a87fc7a6e969915e7b1acc8260b30e1f76a2f/tomli-2.3.0.tar.gz"
     sha256 "64be704a875d2a59753d80ee8a533c3fe183e3f06807ff7dc2232938ccb01549"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

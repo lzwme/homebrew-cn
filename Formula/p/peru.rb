@@ -1,4 +1,5 @@
 class Peru < Formula
+  include Language::Python::Shebang
   include Language::Python::Virtualenv
 
   desc "Dependency retriever for version control and archives"
@@ -6,6 +7,7 @@ class Peru < Formula
   url "https://files.pythonhosted.org/packages/46/93/97b31e2052b4308cbc413d85b6b6b08a3beeeac81996b070723418a0c24e/peru-1.3.5.tar.gz"
   sha256 "2cc1a0d09c5d4fc28dda5c4bf87b4110ee2107e9ce7fb6a38f8d6f60a91af745"
   license "MIT"
+  head "https://github.com/buildinspace/peru.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "5a7e7669fb8cdf7e4bf5175f9d01be1d0a9d75aa693c6161c2b27145a8c62059"
@@ -25,12 +27,11 @@ class Peru < Formula
   end
 
   def install
-    # Fix plugins (executed like an executable) looking for Python outside the virtualenv
-    Dir["peru/resources/plugins/**/*.py"].each do |f|
-      inreplace f, "#! /usr/bin/env python3", "#!#{libexec}/bin/python3.14"
-    end
+    venv = virtualenv_install_with_resources
 
-    virtualenv_install_with_resources
+    # Fix executable plugins looking for Python outside the virtualenv
+    rw_info = python_shebang_rewrite_info(venv.root/"bin/python")
+    rewrite_shebang rw_info, *venv.site_packages.glob("peru/resources/plugins/**/*.py")
   end
 
   test do

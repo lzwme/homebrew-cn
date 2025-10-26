@@ -4,7 +4,7 @@ class Tendermint < Formula
   url "https://ghfast.top/https://github.com/tendermint/tendermint/archive/refs/tags/v0.35.9.tar.gz"
   sha256 "8385fb075e81d4d4875573fdbc5f2448372ea9eaebc1b18421d6fb497798774b"
   license "Apache-2.0"
-  head "https://github.com/tendermint/tendermint.git", branch: "master"
+  head "https://github.com/tendermint/tendermint.git", branch: "main"
 
   livecheck do
     url :stable

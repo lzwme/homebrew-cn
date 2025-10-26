@@ -1,8 +1,8 @@
 class Libcerf < Formula
   desc "Numeric library for complex error functions"
   homepage "https://jugit.fz-juelich.de/mlz/libcerf"
-  url "https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v3.2/libcerf-v3.2.tar.gz"
-  sha256 "ea8d110d73ec24a643042ca3940461ccbb1b6541e21310ecb70ab4e4dc144aef"
+  url "https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v3.3/libcerf-v3.3.tar.gz"
+  sha256 "ea2910085448e269b5f0f0fabe51ffd846ac68881904be99669d94dc0cc09765"
   license "MIT"
   version_scheme 1
   head "https://jugit.fz-juelich.de/mlz/libcerf.git", branch: "main"
@@ -13,14 +13,12 @@ class Libcerf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "720c3879f7cdb5616e52b59a0fe1c07ae7640fe1fbccd6991899764d0fd23c79"
-    sha256 cellar: :any,                 arm64_sequoia: "326da55ffe3d73821eb6e9529c6725a4e9d628fc225fa191e7a1a1c9bdfcba80"
-    sha256 cellar: :any,                 arm64_sonoma:  "702f64e9b53853bda6fb5e878fa2f024e71f8d8111df320214ae26e909d8240d"
-    sha256 cellar: :any,                 arm64_ventura: "bc4a6f8d1582ee0fa548405c4d0e1db16dfdcd9765d5249b2f208cd338d3b7c4"
-    sha256 cellar: :any,                 sonoma:        "6eceb833299516b1fbdf541e2bda038fcc8ec8e4008123df7e764e6a639b80ec"
-    sha256 cellar: :any,                 ventura:       "b717f5e843f27c34950c31f50c48f9a5b0a6990619b01ffebba379ab74a7e803"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "31b1cf8ec6e31f85bd855b68ea7ae07d297acbbd159a5f12f675153fa906f622"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3400787358dc650401ceb2549f726cdad058826ee305f1056b59d40ff38e2b08"
+    sha256 cellar: :any,                 arm64_tahoe:   "c3a49c2f598757609120ae99569565f67e2a1b817cd7a2a8648cbfcf79fb022c"
+    sha256 cellar: :any,                 arm64_sequoia: "a533115d2cc04cf3b55b2cfcea18d40bfb9e60c48bd84b4c7d15f520fbaf55df"
+    sha256 cellar: :any,                 arm64_sonoma:  "b0a676b18a17826dfc57958aa8b700c307d21fe3f8f510276b75b4d8b5f8d41d"
+    sha256 cellar: :any,                 sonoma:        "0954bcc977146151fed6268836c9ebb1ca199aa09d500d769546da54131c2c2f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f32ea4a843889204e68320fac5815758680c994ad607abeb735f7e2f44c944bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08a45c344ce19f291d6cb74c5c89eb461caa4f56c71f5d00637a8dde5945e0f4"
   end
 
   depends_on "cmake" => :build

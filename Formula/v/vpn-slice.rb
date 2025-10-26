@@ -39,7 +39,6 @@ class VpnSlice < Formula
   end
 
   def install
-    ENV["PIP_USE_PEP517"] = "1"
     virtualenv_install_with_resources
   end
 

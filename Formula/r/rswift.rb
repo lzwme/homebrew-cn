@@ -4,7 +4,7 @@ class Rswift < Formula
   url "https://ghfast.top/https://github.com/mac-cain13/R.swift/releases/download/7.8.0/rswift-7.8.0-source.tar.gz"
   sha256 "6288a8e12aa6de24d8689c3483400bb0cde85f932c130459405f0c3be4886794"
   license "MIT"
-  head "https://github.com/mac-cain13/R.swift.git", branch: "master"
+  head "https://github.com/mac-cain13/R.swift.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03c1c4c066560ead4096db89baa3667cb8c4c346f7ccdb590316b78402e7fa2a"

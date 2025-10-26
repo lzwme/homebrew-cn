@@ -8,15 +8,15 @@ class XcbProto < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "cf173904bebf1abd5722452d0869d51989d9621978008affbfc43e55d37f1451"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "1907041d187bef23a433c472482195a2cd8a4db3787f9da47db1ae5e5d47894a"
   end
 
   depends_on "pkgconf" => [:build, :test]
-  depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

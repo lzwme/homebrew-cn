@@ -4,7 +4,7 @@ class Define < Formula
   url "https://ghfast.top/https://github.com/Rican7/define/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "b8f0a83bbf345330d1081634e3b865527d4924be8e771501283abf17c4304514"
   license "MIT"
-  head "https://github.com/Rican7/define.git", branch: "master"
+  head "https://github.com/Rican7/define.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "b47971b7497fb628d7adea9bd2d657fc4b46ddd2215f8bc388287db13c845d0c"

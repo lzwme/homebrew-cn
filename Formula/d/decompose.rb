@@ -1,20 +1,18 @@
 class Decompose < Formula
   desc "Reverse-engineering tool for docker environments"
   homepage "https://github.com/s0rg/decompose"
-  url "https://ghfast.top/https://github.com/s0rg/decompose/archive/refs/tags/v1.11.3.tar.gz"
-  sha256 "802a1d155df0bea896483da4162ae555d7e1e1d5e293ec8201508914314eb36b"
+  url "https://ghfast.top/https://github.com/s0rg/decompose/archive/refs/tags/v1.11.4.tar.gz"
+  sha256 "280dbbcb7d3e8351bfe0eec883495a0888dfc76df6d4f26ef3d2c1a114fea979"
   license "MIT"
   head "https://github.com/s0rg/decompose.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a149607f689c68d214771226ba2af1e0fa0f366aba8cbcb0d19218d6457e4d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a6ac95d556532dcdb8ccb6bee22c93941e70d472d6fe2e2a04aee692e69fd12"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a6ac95d556532dcdb8ccb6bee22c93941e70d472d6fe2e2a04aee692e69fd12"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1a6ac95d556532dcdb8ccb6bee22c93941e70d472d6fe2e2a04aee692e69fd12"
-    sha256 cellar: :any_skip_relocation, sonoma:        "04959a2108da5a70a89780f02cc5691c39aa163d69921507743c56407b0353ac"
-    sha256 cellar: :any_skip_relocation, ventura:       "04959a2108da5a70a89780f02cc5691c39aa163d69921507743c56407b0353ac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa27ec55b119cb84366810752584caadd9a2fe6f6fd24237ef7090c85fa0a683"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1de0150f4dcf6163ee980363062881828b21085f5a44f38a1a14fad124a986d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f4359c628db93fed72689cb875da325f5ecbfcd56cb2b5b1e8256d12b67b123b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4359c628db93fed72689cb875da325f5ecbfcd56cb2b5b1e8256d12b67b123b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4359c628db93fed72689cb875da325f5ecbfcd56cb2b5b1e8256d12b67b123b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5c56f6667ed026a3cf3c798cd1c6271a1f8bb15a5072c9e3510ccc721ab918f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "06957b97a6a3f2c235b059f6b12a2efa32407f017950a2185d89e1ae59a023d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a89e5b51abf88fc79a76a24fc373497aa94d822b33cebce8e7ed0619ab85c449"
   end
 
   depends_on "go" => :build

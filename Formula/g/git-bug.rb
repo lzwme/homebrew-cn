@@ -4,7 +4,7 @@ class GitBug < Formula
   url "https://ghfast.top/https://github.com/git-bug/git-bug/archive/refs/tags/v0.10.1.tar.gz"
   sha256 "1b5cafa3d9918ce18c4674c93b83359e211def83e716d5841fa93c77b457e6c2"
   license "GPL-3.0-or-later"
-  head "https://github.com/git-bug/git-bug.git", branch: "master"
+  head "https://github.com/git-bug/git-bug.git", branch: "trunk"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cec89cbb8556d9825da3d5211cfd8e8091387081f365c52cf505e98f5e7ca70d"

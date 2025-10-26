@@ -8,20 +8,21 @@ class Molecule < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c435e676d529fea660defdfdf4ed7997312bfb015ab8b78f5ec6870258de47cc"
-    sha256 cellar: :any,                 arm64_sequoia: "5d0ddf0faa984fe8d7f28af20a16ce69d36fd8fb1339e9ad177999b85d2c6d6c"
-    sha256 cellar: :any,                 arm64_sonoma:  "c2e5ee687d74a3698dfcc19c97ef0995709f3e320921341fca234d4af1eb2e60"
-    sha256 cellar: :any,                 sonoma:        "8a7e82d975cb7185cc5761a04cbd11338f91263ad047e6827256156b76ba5c66"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "37d1370656f7970c17117c199f1ceec246e5e6c8ae388a1907cfee89c238425e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "135dce9731e7790266a823fd52995fe46bd71870e3785f1791017b101494ed09"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c6ad9fe5f51f8b9874850320792ca07bec6b9a7f2a2265457d2bc0fa6e061ca5"
+    sha256 cellar: :any,                 arm64_sequoia: "2671ca49c338bb99b1f780d6577f4ba6ac39fefee15c8c1b167f18bd4f907830"
+    sha256 cellar: :any,                 arm64_sonoma:  "a8ac56ad1d165b0dfe505990c5b1a446120c700b5ae2c0980852ad9c446218fd"
+    sha256 cellar: :any,                 sonoma:        "a2e0e7939f07856d834d0ade3fc5a535c4b05466a17969fcfbc34947b03fe13f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "69ab7bcb71335c7e55df5bcb2058da456fcf0adada738c3be8c3113631c40b6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "949b42de5441a59f34f62527c5e95236d874b92d976bb0f71dedae64fe3d4387"
   end
 
-  depends_on "rust" => :build
   depends_on "ansible"
-  depends_on "certifi"
-  depends_on "cryptography"
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "python@3.13"
+  depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libffi"
 
@@ -247,11 +248,6 @@ class Molecule < Formula
   resource "rich" do
     url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
     sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
   end
 
   resource "rsa" do

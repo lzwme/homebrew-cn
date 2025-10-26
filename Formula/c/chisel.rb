@@ -4,7 +4,7 @@ class Chisel < Formula
   url "https://ghfast.top/https://github.com/facebook/chisel/archive/refs/tags/2.0.1.tar.gz"
   sha256 "6f019d5e7ab5eb06542a9eccbbe29e7d26165d3676828a32e143575ff102d5f9"
   license "MIT"
-  head "https://github.com/facebook/chisel.git", branch: "master"
+  head "https://github.com/facebook/chisel.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 

@@ -5,8 +5,6 @@ class Inadyn < Formula
   sha256 "e64c4386b6f42bbace589b847f22823a755b59f14a277a5f556fef0d99069245"
   license all_of: ["GPL-2.0-or-later", "ISC", "MIT"]
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 arm64_tahoe:    "389fad27d170214311af8a7d2e495f2598d0b73a11f1d339b7f36da23998d81c"
     sha256 arm64_sequoia:  "e39b78913e57e26ef5a7f3d3acf1af40f58ac4025acc42e433eb790ea7454eb2"
@@ -24,10 +22,13 @@ class Inadyn < Formula
 
   head do
     url "https://github.com/troglobit/inadyn.git", branch: "master"
+
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool"  => :build
   end
+
+  deprecate! date: "2025-10-25", because: :repo_archived
 
   depends_on "pkgconf" => :build
 

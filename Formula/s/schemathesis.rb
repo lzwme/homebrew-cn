@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/58/73/13ffd950fed13ccde0feaa78927a0d06c0ec327b41737583258d80bc42dc/schemathesis-4.3.11.tar.gz"
-  sha256 "d5c45ba75a8acc0fe55ec775fb28cce0bd7ccf9c982634813ecf7e4c70189948"
+  url "https://files.pythonhosted.org/packages/41/af/75331c9fc497f83525cdddf9b647f6103ee911485fb6f3932f15c4578ee9/schemathesis-4.3.12.tar.gz"
+  sha256 "1e517703d077e60005f865e9f306eb84da842bbbed1cc15cdda88f45a09ec833"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b44d6026fd6c1fc9d8d516816fae20ae94aedf0c09733894366d366efd14da60"
-    sha256 cellar: :any,                 arm64_sequoia: "16b20091b4793aeca6bdd5241881d76191a87d915b5109bd4acf5d80250ad30e"
-    sha256 cellar: :any,                 arm64_sonoma:  "b4297c66d1f77d8751b00085a76601221f6a379229033ea22da81e29ded46d0e"
-    sha256 cellar: :any,                 sonoma:        "c5755d1ae3eed50734da4e32067e197d2c6202f98c13bb1be566370633459fc4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3634c9d814867f958046867a912f80af62e56d1893b9fcb174b653f0dba7cfae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a77e453fb9a302a484509936c5a0a9bbfa932c3f7c8e4cfb18df94fbfc86d58"
+    sha256 cellar: :any,                 arm64_tahoe:   "316b49cca7f855f942d0f9fe35b99da9cba9d119b3fbef2a6ca26311ae8f0a08"
+    sha256 cellar: :any,                 arm64_sequoia: "88d99d25124f47df5ea2731a051fbf00ff2766898d46e8a5115905410a6faae6"
+    sha256 cellar: :any,                 arm64_sonoma:  "9f6973acfee3f5c5af4ef94da768397581b1e126c947658e178b38b2e84a513c"
+    sha256 cellar: :any,                 sonoma:        "11e14fe67e808d40b12c303ec14b81bb7186f4c7fc30e886a6f1c26c96197362"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "501e382c77668627842e6130a91da99bb87777afa8c000898af98890d1f48023"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89685404f30a2777fd4e3510f7b246527f582b4b04a72bba08bced14b67502e8"
   end
 
   depends_on "certifi" => :no_linkage
@@ -89,8 +89,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/e8/c9/03b5177dcd0224338c9ef63890bc52c0b0fbc86fba7c2c8a8523c0f02833/hypothesis-6.142.3.tar.gz"
-    sha256 "f1aaf83f6cc0c50f1b61e167974a8a67377dce13e0ea628b67a83f574ef30b85"
+    url "https://files.pythonhosted.org/packages/47/0b/76a062d1d6cd68342b460c2f5627e1ad1102a3dd781acd5c096c75aca0d6/hypothesis-6.142.4.tar.gz"
+    sha256 "b3e71a84708994aa910ea47f1483ad892a7c390839959d689b2a2b07ebfd160e"
   end
 
   resource "hypothesis-graphql" do

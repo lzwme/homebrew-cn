@@ -4,7 +4,7 @@ class Ohcount < Formula
   url "https://ghfast.top/https://github.com/blackducksoftware/ohcount/archive/refs/tags/4.0.0.tar.gz"
   sha256 "d71f69fd025f5bae58040988108f0d8d84f7204edda1247013cae555bfdae1b9"
   license "GPL-2.0-only"
-  head "https://github.com/blackducksoftware/ohcount.git", branch: "master"
+  head "https://github.com/blackducksoftware/ohcount.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 

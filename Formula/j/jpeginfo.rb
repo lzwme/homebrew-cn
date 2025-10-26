@@ -4,7 +4,7 @@ class Jpeginfo < Formula
   url "https://www.kokkonen.net/tjko/src/jpeginfo-1.7.1.tar.gz"
   sha256 "274f6be23fd089bd9e8715b67643a66ca2f63a503028bdea3e571228d50b669e"
   license "GPL-3.0-or-later"
-  head "https://github.com/tjko/jpeginfo.git", branch: "master"
+  head "https://github.com/tjko/jpeginfo.git", branch: "main"
 
   livecheck do
     url :homepage

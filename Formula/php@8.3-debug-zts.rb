@@ -1,20 +1,19 @@
 class PhpAT83DebugZts < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://www.php.net/distributions/php-8.3.26.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.3.26.tar.xz"
-  sha256 "2f522eefa02c400c94610d07f25c4fd4c771f95e4a1f55102332ccb40663cbd2"
+  url "https://www.php.net/distributions/php-8.3.27.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.3.27.tar.xz"
+  sha256 "c15a09a9d199437144ecfef7d712ec4ca5c6820cf34acc24cc8489dd0cee41ba"
   license "PHP-3.01"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 1
-    sha256 arm64_tahoe:   "911f4104d7e86b8b4fa94af591b2b29346864f15e99360509777e95e39c621dd"
-    sha256 arm64_sequoia: "7041ccec7b54cc8c53f1edb5b44f3e3c0966b8220db81ffb57d1fc41d57874c3"
-    sha256 arm64_sonoma:  "64626ae84ef4a5899477ad7552ad6ce7d622a45278c1d5734c615eda7a5ac979"
-    sha256 sonoma:        "3f7061755003b67bf5346ef4283bf5c74a37b7202ed1e5813e981ef18c414936"
-    sha256 arm64_linux:   "3a75760d893584dfbbad2fb80ff355a0a42acd146a5aa7367b72a0f7d90cc9d8"
-    sha256 x86_64_linux:  "b299c42ba1ced45c1371f0d8fb9cf4167636cc97aab5c54e1da9f1c6ad9d3fde"
+    sha256 arm64_tahoe:   "74ca7dedefef2db88364c87b96d57c9ee1cff18c6a2fd1ce2667cc9428949719"
+    sha256 arm64_sequoia: "7f56a5a335710f3a31e4a8ac542ca4b9f94200359221a9e05f6eeed5d23c4a37"
+    sha256 arm64_sonoma:  "fb10df112bbf3684bb24908e3e9c76185f9eb9f5104419f16694959986cc42e8"
+    sha256 sonoma:        "a4a354f3062b18e090a9ae7dd498274755e6e4f24b97d59813683da3746f6f79"
+    sha256 arm64_linux:   "d1b795d36588673fe17e4331659109ffb1b029537b3a86f775441c8602a4a638"
+    sha256 x86_64_linux:  "d35d1dc8cb55fefd6fb63aa3841d0870cfc1952b6ed6c3003fbb16bd6064d5be"
   end
 
   keg_only :versioned_formula
@@ -482,115 +481,3 @@ index 36c6e5e3e2..71b1a16607 100644
  PHP_ARG_ENABLE([rpath],
    [whether to enable runpaths],
    [AS_HELP_STRING([--disable-rpath],
-diff --git a/ext/curl/interface.c b/ext/curl/interface.c
-index b3139422cff..6a52ebcb313 100644
---- a/ext/curl/interface.c
-+++ b/ext/curl/interface.c
-@@ -677,11 +677,11 @@ static int curl_fnmatch(void *ctx, const char *pattern, const char *string)
- /* }}} */
- 
- /* {{{ curl_progress */
--static size_t curl_progress(void *clientp, double dltotal, double dlnow, double ultotal, double ulnow)
-+static int curl_progress(void *clientp, double dltotal, double dlnow, double ultotal, double ulnow)
- {
- 	php_curl *ch = (php_curl *)clientp;
- 	php_curl_callback *t = ch->handlers.progress;
--	size_t	rval = 0;
-+	int rval = 0;
- 
- #if PHP_CURL_DEBUG
- 	fprintf(stderr, "curl_progress() called\n");
-@@ -726,11 +726,11 @@ static size_t curl_progress(void *clientp, double dltotal, double dlnow, double
- 
- #if LIBCURL_VERSION_NUM >= 0x072000
- /* {{{ curl_xferinfo */
--static size_t curl_xferinfo(void *clientp, curl_off_t dltotal, curl_off_t dlnow, curl_off_t ultotal, curl_off_t ulnow)
-+static int curl_xferinfo(void *clientp, curl_off_t dltotal, curl_off_t dlnow, curl_off_t ultotal, curl_off_t ulnow)
- {
- 	php_curl *ch = (php_curl *)clientp;
- 	php_curl_callback *t = ch->handlers.xferinfo;
--	size_t rval = 0;
-+	int rval = 0;
- 
- #if PHP_CURL_DEBUG
- 	fprintf(stderr, "curl_xferinfo() called\n");
-@@ -1154,8 +1154,8 @@ static void _php_curl_set_default_options(php_curl *ch)
- {
- 	char *cainfo;
- 
--	curl_easy_setopt(ch->cp, CURLOPT_NOPROGRESS,        1);
--	curl_easy_setopt(ch->cp, CURLOPT_VERBOSE,           0);
-+	curl_easy_setopt(ch->cp, CURLOPT_NOPROGRESS,        1L);
-+	curl_easy_setopt(ch->cp, CURLOPT_VERBOSE,           0L);
- 	curl_easy_setopt(ch->cp, CURLOPT_ERRORBUFFER,       ch->err.str);
- 	curl_easy_setopt(ch->cp, CURLOPT_WRITEFUNCTION,     curl_write);
- 	curl_easy_setopt(ch->cp, CURLOPT_FILE,              (void *) ch);
-@@ -1166,8 +1166,8 @@ static void _php_curl_set_default_options(php_curl *ch)
- #ifndef ZTS
- 	curl_easy_setopt(ch->cp, CURLOPT_DNS_USE_GLOBAL_CACHE, 1);
- #endif
--	curl_easy_setopt(ch->cp, CURLOPT_DNS_CACHE_TIMEOUT, 120);
--	curl_easy_setopt(ch->cp, CURLOPT_MAXREDIRS, 20); /* prevent infinite redirects */
-+	curl_easy_setopt(ch->cp, CURLOPT_DNS_CACHE_TIMEOUT, 120L);
-+	curl_easy_setopt(ch->cp, CURLOPT_MAXREDIRS, 20L); /* prevent infinite redirects */
- 
- 	cainfo = INI_STR("openssl.cafile");
- 	if (!(cainfo && cainfo[0] != '\0')) {
-@@ -1178,7 +1178,7 @@ static void _php_curl_set_default_options(php_curl *ch)
- 	}
- 
- #ifdef ZTS
--	curl_easy_setopt(ch->cp, CURLOPT_NOSIGNAL, 1);
-+	curl_easy_setopt(ch->cp, CURLOPT_NOSIGNAL, 1L);
- #endif
- }
- /* }}} */
-@@ -1689,7 +1689,7 @@ static zend_result _php_curl_setopt(php_curl *ch, zend_long option, zval *zvalue
- 			lval = zval_get_long(zvalue);
- 			if (lval == 1) {
- 				php_error_docref(NULL, E_NOTICE, "CURLOPT_SSL_VERIFYHOST no longer accepts the value 1, value 2 will be used instead");
--				error = curl_easy_setopt(ch->cp, option, 2);
-+				error = curl_easy_setopt(ch->cp, option, 2L);
- 				break;
- 			}
- 			ZEND_FALLTHROUGH;
-@@ -1885,7 +1885,7 @@ static zend_result _php_curl_setopt(php_curl *ch, zend_long option, zval *zvalue
- 				return FAILURE;
- 			}
- # endif
--			error = curl_easy_setopt(ch->cp, option, lval);
-+			error = curl_easy_setopt(ch->cp, option, (long) lval);
- 			break;
- 		case CURLOPT_SAFE_UPLOAD:
- 			if (!zend_is_true(zvalue)) {
-@@ -2278,7 +2278,7 @@ static zend_result _php_curl_setopt(php_curl *ch, zend_long option, zval *zvalue
- 					/* no need to build the mime structure for empty hashtables;
- 					   also works around https://github.com/curl/curl/issues/6455 */
- 					curl_easy_setopt(ch->cp, CURLOPT_POSTFIELDS, "");
--					error = curl_easy_setopt(ch->cp, CURLOPT_POSTFIELDSIZE, 0);
-+					error = curl_easy_setopt(ch->cp, CURLOPT_POSTFIELDSIZE, 0L);
- 				} else {
- 					return build_mime_structure_from_hash(ch, zvalue);
- 				}
-@@ -2371,7 +2371,7 @@ static zend_result _php_curl_setopt(php_curl *ch, zend_long option, zval *zvalue
- 
- 		case CURLOPT_POSTREDIR:
- 			lval = zval_get_long(zvalue);
--			error = curl_easy_setopt(ch->cp, CURLOPT_POSTREDIR, lval & CURL_REDIR_POST_ALL);
-+			error = curl_easy_setopt(ch->cp, CURLOPT_POSTREDIR, (long) (lval & CURL_REDIR_POST_ALL));
- 			break;
- 
- 		/* the following options deal with files, therefore the open_basedir check
-@@ -2406,11 +2406,11 @@ static zend_result _php_curl_setopt(php_curl *ch, zend_long option, zval *zvalue
- 			if (zend_is_true(zvalue)) {
- 				curl_easy_setopt(ch->cp, CURLOPT_DEBUGFUNCTION, curl_debug);
- 				curl_easy_setopt(ch->cp, CURLOPT_DEBUGDATA, (void *)ch);
--				curl_easy_setopt(ch->cp, CURLOPT_VERBOSE, 1);
-+				curl_easy_setopt(ch->cp, CURLOPT_VERBOSE, 1L);
- 			} else {
- 				curl_easy_setopt(ch->cp, CURLOPT_DEBUGFUNCTION, NULL);
- 				curl_easy_setopt(ch->cp, CURLOPT_DEBUGDATA, NULL);
--				curl_easy_setopt(ch->cp, CURLOPT_VERBOSE, 0);
-+				curl_easy_setopt(ch->cp, CURLOPT_VERBOSE, 0L);
- 			}
- 			break;

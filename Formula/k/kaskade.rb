@@ -201,7 +201,8 @@ class Kaskade < Formula
     # Issue ref: https://github.com/sauljabin/kaskade/issues/65
     inreplace "pyproject.toml", 'requires-python = ">=3.10,<3.14"', 'requires-python = ">=3.10"'
 
-    # The source doesn't have a valid SOURCE_DATE_EPOCH, so here we set default.
+    # hatch does not support a SOURCE_DATE_EPOCH before 1980.
+    # Remove after https://github.com/pypa/hatch/pull/1999 is released.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
     virtualenv_install_with_resources
   end
