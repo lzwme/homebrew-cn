@@ -1,21 +1,21 @@
 class PhpAT85 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/php/php-src/archive/67926db74952fb94381871965f736e0193dc3d9a.tar.gz?commit=67926db74952fb94381871965f736e0193dc3d9a"
+  url "https://ghfast.top/https://github.com/php/php-src/archive/6bcc4e2c09889a84dbfa3cbd85774e0d8cf6526c.tar.gz?commit=6bcc4e2c09889a84dbfa3cbd85774e0d8cf6526c"
   version "8.5.0"
-  sha256 "bd71a03bcd3fecba427a7bf0489355e2ba02b86b3e41ba554d49f79570aa01bf"
+  sha256 "749e5710b8bf0a2660fca3c3cd69ef422d4381268048b0ee4f1ed8c608901300"
   license "PHP-3.01"
   revision 4
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 17
-    sha256 arm64_tahoe:   "0332a9da7b46a7726f344b54e4459926d93003cb37ba7a376f185d5cc1705f50"
-    sha256 arm64_sequoia: "7769c085d4cc4eb4e7ff6121702762b83a0a7cb211008476d6d3f9f84b3b734a"
-    sha256 arm64_sonoma:  "f733f77e246722a764df935cadf8d3e0c868c6c48c4a3f1505a92894d53ba82c"
-    sha256 sonoma:        "1c5301a1e62bbb4c4a08cad475a6bb70e85e72f05d176e36344e65993b354f54"
-    sha256 arm64_linux:   "58e42eab7ff16b55a2da4f7081c3ffc2069cf6dd45adfc92f342bd81e59976c3"
-    sha256 x86_64_linux:  "192ca31e83ea7fd0700aeab1001ced083dfe397abc7813bc91d9f74531145121"
+    rebuild 19
+    sha256 arm64_tahoe:   "cc3be0d3a18e56af2e092ea857c05dab5073cf50910239e9045ee892033a9ba0"
+    sha256 arm64_sequoia: "9c79d9a3f8dcebac158ba3e4bfe4671ad3a79f2be663a3f94f1b1c52fed9468f"
+    sha256 arm64_sonoma:  "231dbab704af80483015643a664552d32991b2e898e7e0987490fe0a37c1798f"
+    sha256 sonoma:        "dde6134f5c4687847afe669d780204908e18cd909ec5296800cdbd61a1558b06"
+    sha256 arm64_linux:   "627498323a707500bdf0eeb5f967de0618a3fb13c8519645e1f10f76fb814e1e"
+    sha256 x86_64_linux:  "30c771f9fef06537c5550929d949642d238edf89d671efc792361f03cf784ae2"
   end
 
   keg_only :versioned_formula
@@ -27,7 +27,6 @@ class PhpAT85 < Formula
   depends_on "apr"
   depends_on "apr-util"
   depends_on "argon2"
-  depends_on "aspell"
   depends_on "autoconf"
   depends_on "capstone"
   depends_on "curl"
@@ -37,10 +36,10 @@ class PhpAT85 < Formula
   depends_on "gettext"
   depends_on "gmp"
   depends_on "icu4c@77"
-  depends_on "krb5"
   depends_on "libpq"
   depends_on "libsodium"
   depends_on "libzip"
+  depends_on "net-snmp"
   depends_on "oniguruma"
   depends_on "openldap"
   depends_on "openssl@3"
@@ -102,7 +101,6 @@ class PhpAT85 < Formula
     ENV["PHP_BUILD_PROVIDER"] = "Shivam Mathur"
 
     # system pkg-config missing
-    ENV["KERBEROS_CFLAGS"] = " "
     if OS.mac?
       ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path_if_needed}/usr/include/sasl"
       ENV["SASL_LIBS"] = "-lsasl2"
@@ -141,7 +139,6 @@ class PhpAT85 < Formula
       --enable-pcntl
       --enable-phpdbg
       --enable-phpdbg-readline
-      --enable-phpdbg-webhelper
       --enable-shmop
       --enable-soap
       --enable-sockets
@@ -160,7 +157,6 @@ class PhpAT85 < Formula
       --with-gettext=#{Formula["gettext"].opt_prefix}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-iconv#{headers_path}
-      --with-kerberos
       --with-layout=GNU
       --with-ldap=#{Formula["openldap"].opt_prefix}
       --with-libxml
@@ -178,7 +174,7 @@ class PhpAT85 < Formula
       --with-pdo-sqlite
       --with-pgsql=#{Formula["libpq"].opt_prefix}
       --with-pic
-      --with-pspell=#{Formula["aspell"].opt_prefix}
+      --with-snmp=#{Formula["net-snmp"].opt_prefix}
       --with-sodium
       --with-sqlite3
       --with-tidy=#{Formula["tidy-html5"].opt_prefix}
@@ -325,9 +321,6 @@ class PhpAT85 < Formula
     system "#{sbin}/php-fpm", "-t"
     system bin/"phpdbg", "-V"
     system bin/"php-cgi", "-m"
-    # Prevent SNMP extension to be added
-    refute_match(/^snmp$/, shell_output("#{bin}/php -m"),
-      "SNMP extension doesn't work reliably with Homebrew on High Sierra")
     begin
       port = free_port
       port_fpm = free_port
@@ -337,6 +330,8 @@ class PhpAT85 < Formula
         <?php
         echo 'Hello world!' . PHP_EOL;
         var_dump(ldap_connect());
+        $session = new SNMP(SNMP::VERSION_1, '127.0.0.1', 'public');
+        var_dump(@$session->get('sysDescr.0'));
       PHP
       main_config = <<~EOS
         Listen #{port}

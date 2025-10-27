@@ -17,6 +17,8 @@ class Json2hcl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2948c8a75a038d66472436983a09b1e32cab8b7dc9a5d3d3b8dfec86a75a2eaa"
   end
 
+  deprecate! date: "2025-10-26", because: :repo_archived
+
   depends_on "go" => :build
 
   def install

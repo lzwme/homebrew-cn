@@ -1,20 +1,20 @@
 class JwtHack < Formula
   desc "JSON Web Token Hack Toolkit"
   homepage "https://github.com/hahwul/jwt-hack"
-  url "https://ghfast.top/https://github.com/hahwul/jwt-hack/archive/refs/tags/v2.3.1.tar.gz"
-  sha256 "1b80213f0c8e8a2e8d50a8fe1f9175fd777cba1547a56f163ab6ccf9d29a1b20"
+  url "https://ghfast.top/https://github.com/hahwul/jwt-hack/archive/refs/tags/v2.4.0.tar.gz"
+  sha256 "c167f595e5552dfbf5bd3fd79e2f061b1ad9d99790ffd036351172997a6de678"
   license "MIT"
   head "https://github.com/hahwul/jwt-hack.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "58ac1d62e95f5bfddd19b7b1273e937b63bef9f6b2fab69194503520a2b31bdd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7fb99a1bfe03e19a8088f0f3f0e4aba346e664a9cf4276da966ac0d794c2d9e3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3ff8df05fb3ffd10e4c5c0dc79b47b3fad162cc86797004fd03b76f4434e65a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "02e8f0d957a03cc263bdd2d09d218b8b35dafc4447bd0efe492bc5af4e9c583c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8715a9760ee5da2cb9e0ec0aacbb9f017d1a79569e1c4c423dff3a9852286b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1769eb46caf2738517efbdaf4ea2eb94d1a9266c850f52f39a3a23cea7a6f83"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "72eecc220faac63e56979a32d8d3df3cfded9aac523544b7635883cbc78a6521"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac32fc1ebd660d5b804b4b3ae99f665b80b0ec8b875f59f9db79440e654b0d7b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07347f80da49f98a99b662cdbb1db730462c2a3ea52ac6bf7c0187a485711c75"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a6548493fef34eacab72613f6cb5a3b0ad457608c62fa6a3dbae05a3f6e48256"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e845b69463ad7556ffbf99293fcdc8c95f87966ff052a57566ee92562c01f9c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d66d4a020117bff143cb00a8cda7339a7a2e508b8c85dc0a503afa21108abda1"
   end
 
   depends_on "pkgconf" => :build

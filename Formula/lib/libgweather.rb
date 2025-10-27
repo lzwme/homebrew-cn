@@ -33,7 +33,7 @@ class Libgweather < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "pygobject3" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
 
   depends_on "geocode-glib"
   depends_on "glib"
@@ -47,11 +47,14 @@ class Libgweather < Formula
     depends_on "gettext"
   end
 
+  # Backport fix for "error: call to undeclared library function 'alloca'"
+  patch do
+    url "https://gitlab.gnome.org/GNOME/libgweather/-/commit/12080775978b6d5140c741562894ea5d21601e15.diff"
+    sha256 "64f638c4ffe0936016117f7355a1bbbbf2fec41b1e67bb64eac1bdca760eba23"
+  end
+
   def install
     ENV["DESTDIR"] = "/"
-
-    # Fix compile with newer Clang
-    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     system "meson", "setup", "build", "-Dgtk_doc=false", "-Dtests=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

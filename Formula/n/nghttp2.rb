@@ -1,19 +1,18 @@
 class Nghttp2 < Formula
   desc "HTTP/2 C Library"
   homepage "https://nghttp2.org/"
-  url "https://ghfast.top/https://github.com/nghttp2/nghttp2/releases/download/v1.67.1/nghttp2-1.67.1.tar.gz"
-  mirror "http://fresh-center.net/linux/www/nghttp2-1.67.1.tar.gz"
-  sha256 "da8d640f55036b1f5c9cd950083248ec956256959dc74584e12c43550d6ec0ef"
+  url "https://ghfast.top/https://github.com/nghttp2/nghttp2/releases/download/v1.68.0/nghttp2-1.68.0.tar.gz"
+  mirror "http://fresh-center.net/linux/www/nghttp2-1.68.0.tar.gz"
+  sha256 "2c16ffc588ad3f9e2613c3fad72db48ecb5ce15bc362fcc85b342e48daf51013"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "d3bdb94dd4692d8aa41f54e67191f3cf2e2cf03e53bad026031967b9b78900a5"
-    sha256 cellar: :any,                 arm64_sequoia: "35403d593507053fb6d2cf509e24f43897f7bf713f1b42f86e37867b54e9344c"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd512ded8ffa48afc21c8231032c0f14e83e58f1b989ae59a031d43e97101cc0"
-    sha256 cellar: :any,                 sonoma:        "61bf7a85a2d978ad2e26477ec9ebed54d78b7125eca7d542a410b0411b70ed2e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "353049568227077d092013686eb23bee9cbf5fef5350284ff11d5a4084e91e69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2de9fd14dd8545d06b1d0868427d78a1253ce90b02e2679103ec73ef2b074c2"
+    sha256 cellar: :any,                 arm64_tahoe:   "b7be3d515c9362428c703d65e45e0cc12394b2a2eca61f5feb398421ce1f2b72"
+    sha256 cellar: :any,                 arm64_sequoia: "c2c240b8ff5ed52921555bad20cfc5649332b254bfe98d62369f81bf7c6b64fe"
+    sha256 cellar: :any,                 arm64_sonoma:  "96d45f2d2de69efd37ccd92f4195f8dd1e5812704f47f27775b6d6e659528c8a"
+    sha256 cellar: :any,                 sonoma:        "a2127d1b956e99f06e395c1c11344a3d59e3bbfd31a3633d12d982b1a98c2a07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a21f417bcbeb033c594478b3de4c559997420a378b334a3278766897a3da7983"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fc15f87a76fe5088393c12dbfc1323696bbb5e43c5a86e2c66492777adc00fd"
   end
 
   head do

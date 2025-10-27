@@ -25,7 +25,7 @@ class Spidermonkey < Formula
 
   depends_on "cbindgen" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "rust" => :build
   depends_on "icu4c@77"
   depends_on "nspr"
@@ -58,6 +58,12 @@ class Spidermonkey < Formula
   patch do
     url "https://github.com/ptomato/mozjs/commit/9aa8b4b051dd539e0fbd5e08040870b3c712a846.patch?full_index=1"
     sha256 "5c2a8c804322ccacbc37f152a4a3d48a5fc2becffb1720a41e32c03899af0be6"
+  end
+
+  # Backport support for Python 3.14
+  patch do
+    url "https://github.com/mozilla-firefox/firefox/commit/d497aa4f770ca02f6083e93b94996a8fe32c2ff4.patch?full_index=1"
+    sha256 "026f91a56cd60907a87c62dd4143eac8300d6fc7433b94888229c632a43c34bf"
   end
 
   def install

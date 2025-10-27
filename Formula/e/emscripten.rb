@@ -16,17 +16,18 @@ class Emscripten < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0f9d9b79c3a6ebdfb76d979b7eab5314e80e955efee7ca71ffbd706288efed02"
-    sha256 cellar: :any,                 arm64_sequoia: "908c513f481e34182b9c86c31b1214526e6518c030f706a71d0f05af3d6314c5"
-    sha256 cellar: :any,                 arm64_sonoma:  "ee97e65164a8005372a66e8641d472e5de48b03d7d875ab57804d7e37d84b0d6"
-    sha256 cellar: :any,                 sonoma:        "3af16239711a677c26182af92601e4fcc90144151bb199ac44251af3f1b9b2c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "576d0474ecbee48cdcce8a6f8352b2af31b677fe38c4264e074781165a18ef18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d871afce94c540ad212b4eb670108f91ac9c716e817482c7e56edfa259fef87"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "87c00a51a8039152c52103886024c66f9bb22d472b44bc9ed46277cc90ef767f"
+    sha256 cellar: :any,                 arm64_sequoia: "9c3a2ece638d06b08c426cca9855acdbbe4b98bc4b6a87eba2a8140182771417"
+    sha256 cellar: :any,                 arm64_sonoma:  "86c3543b5cc65ef0c222d7239170180415add1114a147d799438af07cc054f92"
+    sha256 cellar: :any,                 sonoma:        "bdda9f1b18f4c4c1862cabf6b34b17205f792f9c905512eca9f8f631b7194fed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5ed10dae9b509ca3351e7b90ab8c2ff6ca3c0d486e8dd0225a207c8dd2f35f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56f220cb8448120798349df168646dbdfdc72d3e766a6f8dc59eeede4caf3971"
   end
 
   depends_on "cmake" => :build
   depends_on "node"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "yuicompressor"
 
   uses_from_macos "llvm" => :build
@@ -226,7 +227,7 @@ class Emscripten < Formula
 
     # Add JAVA_HOME to env_script on ARM64 macOS and Linux, so that google-closure-compiler
     # can find OpenJDK
-    emscript_env = { PYTHON: Formula["python@3.13"].opt_bin/"python3.13" }
+    emscript_env = { PYTHON: which("python3.14") }
     emscript_env.merge! Language::Java.overridable_java_home_env if OS.linux? || Hardware::CPU.arm?
 
     emscripts.each do |emscript|

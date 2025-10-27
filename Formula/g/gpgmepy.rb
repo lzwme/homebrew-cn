@@ -37,7 +37,7 @@ class Gpgmepy < Formula
     # https://dev.gnupg.org/T6784
     inreplace "Makefile.in",
               /^\s*\$\$PYTHON setup\.py\s*\\/,
-              "$$PYTHON -m pip install --use-pep517 #{std_pip_args.join(" ")} . && : \\"
+              "$$PYTHON -m pip install #{std_pip_args.join(" ")} . && : \\"
 
     system "./configure", *std_configure_args
     system "make", "COPY_FILES="

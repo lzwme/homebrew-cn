@@ -1,8 +1,8 @@
 class Openjdk < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.org/"
-  url "https://ghfast.top/https://github.com/openjdk/jdk25u/archive/refs/tags/jdk-25-ga.tar.gz"
-  sha256 "7b84e7c96086b4e75ee128921d301427012447bdfbe1741398725ab6218afe11"
+  url "https://ghfast.top/https://github.com/openjdk/jdk25u/archive/refs/tags/jdk-25.0.1-ga.tar.gz"
+  sha256 "99864b94b65a9d8e180ec55b8e53a9ab39b0eaebd3ba4438388bf7ea7d5e079a"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
 
   livecheck do
@@ -11,12 +11,12 @@ class Openjdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a1f5d5f0196e9c5c8924760367d38dcdf098ba849b81f0b98f9ae404783ce0a9"
-    sha256 cellar: :any, arm64_sequoia: "058d3573acd9f7c376235721cebcd8befbb9274e0050f380987407ebc111d8be"
-    sha256 cellar: :any, arm64_sonoma:  "d7ca286b55c0324a510812894245cc24b168866c99a0253e64a4b6bae5d4f33d"
-    sha256 cellar: :any, sonoma:        "6982aff0f999fdae85f7eac04567cd5bd7b71d732e6dc41672616c7c8ddf530d"
-    sha256               arm64_linux:   "876ac24e22a2a755cab337eea400f08a04b63dd84b86902a1c5a7d1e6b272458"
-    sha256               x86_64_linux:  "698e3196759d93ab7eef806ab4812ea85a16179159e4de55e7cc16a3a5b37281"
+    sha256 cellar: :any, arm64_tahoe:   "87540c366e47ad13fb917902c4533899107be1bc00cbf9cd8f8607d2584e0d1b"
+    sha256 cellar: :any, arm64_sequoia: "8703b312ccf7a1d45d41e27754c91a189ebbff6f6f203f6dd1b78503b68d63a3"
+    sha256 cellar: :any, arm64_sonoma:  "5ec03fccf5e2fa430f3effeeef62285b123d4e67b1e077f2edf19edfe9eb1437"
+    sha256 cellar: :any, sonoma:        "8ffb199940f468f214c74179ededd183350e64a3bfc281b2e83e71c2363bf281"
+    sha256               arm64_linux:   "60536fe1c9e78a42055182c29ed101e1b42caefeaf6a4dd816c6c2a05041ce98"
+    sha256               x86_64_linux:  "8ab4e9b554a9d6a5253c694d47359cc461d51863b258cfae5d2eb5bd3e5f807a"
   end
 
   keg_only :shadowed_by_macos

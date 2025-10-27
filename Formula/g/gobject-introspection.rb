@@ -9,12 +9,13 @@ class GobjectIntrospection < Formula
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "MIT"]
 
   bottle do
-    sha256 arm64_tahoe:   "75c79fd2fc2b734d6b0bd496a500334ff89c6c3e3346584b967877b85b1f10f4"
-    sha256 arm64_sequoia: "a58d4fe69c1471174926187b8af5633ed69e846bfe24e71133d414303dc3be2c"
-    sha256 arm64_sonoma:  "e325289b8a59145315d460d036914a8818ee552708af2b698a0528ad63ca6665"
-    sha256 sonoma:        "3f168fb737ae3e44bbd5f686f9c383e14366e92550c054563980dda3ac39fe4b"
-    sha256 arm64_linux:   "6e9103210e6c8c1ba2e250ed7cc97bbb1816b2df74faaad9c1dde2135617598f"
-    sha256 x86_64_linux:  "ce891783de8a7cf65dfc68a76a50ba1d9e04c810a9e245ad82f352313da74fdd"
+    rebuild 1
+    sha256 arm64_tahoe:   "e84d9ab63955e7da2a20bcd8d8ad72cfaa00ed17a076430c278ac6ae0a72c94c"
+    sha256 arm64_sequoia: "5832e82a10514f44c72d380eb1e72da0e28394c0eba5b213312f9b90264c7de2"
+    sha256 arm64_sonoma:  "7bef3926c3fe7638286a63496e85a30c7e7ca8a9b2db6cc396a92ecde44ca2d6"
+    sha256 sonoma:        "981538c4d1b3c77f14bb71f3d195b9956cb3eb7d1d97a5f701152d08ddcfaad0"
+    sha256 arm64_linux:   "628866b4608a6ed08ec3619ca7aafb4307717960537ecf5c3166731b35a9b56d"
+    sha256 x86_64_linux:  "bf0ddf795ddfc70040e50d67d17c22e5e052f02e29fdfbf36832c439c11fa469"
   end
 
   depends_on "bison" => :build
@@ -23,8 +24,8 @@ class GobjectIntrospection < Formula
   depends_on "cairo"
   depends_on "glib"
   depends_on "pkgconf"
-  # Ships a `_giscanner.cpython-312-darwin.so`, so needs a specific version.
-  depends_on "python@3.13"
+  # Ships a `_giscanner.cpython-314-darwin.so`, so needs a specific version.
+  depends_on "python@3.14"
 
   uses_from_macos "flex" => :build
   uses_from_macos "libffi"
@@ -55,7 +56,7 @@ class GobjectIntrospection < Formula
   patch :DATA
 
   def install
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
     venv.pip_install resources
     ENV.prepend_path "PATH", venv.root/"bin"
 

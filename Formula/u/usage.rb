@@ -1,24 +1,25 @@
 class Usage < Formula
   desc "Tool for working with usage-spec CLIs"
   homepage "https://usage.jdx.dev/"
-  url "https://ghfast.top/https://github.com/jdx/usage/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "57662c24177ff5eff676a9dc4b05ecd9b67fe22d5b185283ee7c1c5a10e9405a"
+  url "https://ghfast.top/https://github.com/jdx/usage/archive/refs/tags/v2.5.1.tar.gz"
+  sha256 "5bcc711ab2e6d3914888dfc7b07ae16bb796e83e7e0fc874804dd01f70f8e76d"
   license "MIT"
   head "https://github.com/jdx/usage.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e75fca3de40605f66ce80ad04b68dd8291fafaf58fbbcf6c7ca144486a1bd6f2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d0f3bf658931ad94eb18dbc3893132982b9ee7b89b64da43a3f5005ec933212"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a1a63a643ddd532f15e964701356fb54f4c8da44d202af3c0bb04c666edc0ef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1f81687e463a54b1fa29963748d6bb816db3a32495d10143ab0894ae696df1fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e271592ff1cb2ad974fa47569a022774c55507a497314c6d5254c61a86a763aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c619b33202bb3da75455329c7f316d13b1f6fd04249d48b9a8a5d2094c11813"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c7aed70d5e3e99ce958d355ed9b6b4800125e875e43fedc472519574e3956ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "603a8118b421ae32a8faafc60aac97d0f6af9bb4d0cc62a31c8e857cf7b52d22"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5bcbc763b3a91f60be417a647bd43a3646bbb02a1a4527f25c958fd60010d32"
+    sha256 cellar: :any_skip_relocation, sonoma:        "34a85f4297b0de61d9c904a2ae15837c087de50dd9d29d3448da0576c518f401"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e35dc4d85bca253738bd219616e96421aecc3b697e80137f6c9df634dd4154ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d73eba30c8418302d9ddb6400ba09c68827838aefa8f0001d4b604675889a129"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args(path: "cli")
+    generate_completions_from_executable(bin/"usage", "--completions")
   end
 
   test do

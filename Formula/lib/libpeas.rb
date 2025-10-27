@@ -7,12 +7,13 @@ class Libpeas < Formula
   revision 1
 
   bottle do
-    sha256 arm64_tahoe:   "14ff01878ee901ba5a2775bb0e144caeb831ef0b8b87d031685a763799cbfc18"
-    sha256 arm64_sequoia: "ca49f0fac62ebebbba6d8eefd5917514ba956e285d5210255ff218d4026ab771"
-    sha256 arm64_sonoma:  "c7eb04b907a90519d1728914e744f0733881ce7d363776510b5e3fa2ea604c34"
-    sha256 sonoma:        "ea6827fdc1357c8cd065520f8cad5c1716b6ed340b3dc139baf14ebc042ac929"
-    sha256 arm64_linux:   "48acbb4421f26c5f6e2a6c3bac9988d828a7695b26e2846c1b2838a9ca21e814"
-    sha256 x86_64_linux:  "c0162f07daa592c20f4bc01fee54874f482c9199d65c999dda484a97f851ca81"
+    rebuild 1
+    sha256 arm64_tahoe:   "234838eddd571c1d7efdd5868882c2d80e6764e59b03dae0debabf27f0a5932a"
+    sha256 arm64_sequoia: "570eabcca2b4189b555c5c0e62a07a45970dcf35be48dcff428821c675e4295c"
+    sha256 arm64_sonoma:  "adaf6171ede05a19dc1bdb5afbe47f87ed3e6c609fac76d75988d6bc4ab8e21e"
+    sha256 sonoma:        "39cf919406133f754692fe9d0a37442e670031f18d58096175c973dc566dcf0a"
+    sha256 arm64_linux:   "5ccbaf3a166e6eaef53c9eef508870be08f0fdc25522efc31edbb8c5d5ae15b2"
+    sha256 x86_64_linux:  "6afc2f21005f3683a823bdd29638e2f36d687dd48f78868150bc94e2728fe569"
   end
 
   depends_on "meson" => :build
@@ -24,7 +25,7 @@ class Libpeas < Formula
   depends_on "gobject-introspection"
   depends_on "gtk+3"
   depends_on "pygobject3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "spidermonkey"
 
   on_macos do
@@ -32,7 +33,7 @@ class Libpeas < Formula
   end
 
   def install
-    pyver = Language::Python.major_minor_version "python3.13"
+    pyver = Language::Python.major_minor_version "python3.14"
     # Help pkg-config find python as we only provide `python3-embed` for aliased python formula
     inreplace "meson.build", "'python3-embed'", "'python-#{pyver}-embed'"
 

@@ -2,8 +2,8 @@ class Apt < Formula
   desc "Advanced Package Tool"
   homepage "https://wiki.debian.org/Apt"
   # Using git tarball as Debian does not retain old versions at deb.debian.org
-  url "https://salsa.debian.org/apt-team/apt/-/archive/3.1.9/apt-3.1.9.tar.bz2"
-  sha256 "679d608e4b7ffe269bd59dcd4b6673e0fa808101cba2693aca187a1076882ca7"
+  url "https://salsa.debian.org/apt-team/apt/-/archive/3.1.11/apt-3.1.11.tar.bz2"
+  sha256 "bd4cca1f23e5618fdce907000ad5b6d4ea658cebfd986de8b2a5cce7b84cb7e2"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,8 +12,8 @@ class Apt < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "564ae886db1f8042a378c3681180dbf54ce1f1025668bf35667f69b6d247ffb4"
-    sha256 x86_64_linux: "ceb58bfc79bc288481b89eaf30e2b3ec72f4b00bc611de057840bc45683bc82d"
+    sha256 arm64_linux:  "a7b9f56eec93e22e62b39ecfb48a281440a173fd6d2de68006bfe5966c78a99e"
+    sha256 x86_64_linux: "56faa2a3dad5b958322b0a64700b54d2159cc9d502dae3d0d87f02b24471e30a"
   end
 
   keg_only "it conflicts with system apt"
@@ -46,6 +46,9 @@ class Apt < Formula
     sha256 "289a0966c02c2008cd263d3913a8e3c84c97b8ded3e08373d63a382c71d2199c"
   end
 
+  # Add missing <optional> header
+  patch :DATA
+
   def install
     # Find our docbook catalog
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
@@ -73,3 +76,17 @@ class Apt < Formula
                  shell_output("#{bin}/apt list 2>&1")
   end
 end
+
+__END__
+diff --git a/apt-private/private-cmndline.cc b/apt-private/private-cmndline.cc
+index 7ea1878..117644d 100644
+--- a/apt-private/private-cmndline.cc
++++ b/apt-private/private-cmndline.cc
+@@ -17,6 +17,7 @@
+ #include <cstdarg>
+ #include <cstdlib>
+ #include <cstring>
++#include <optional>
+ #include <unistd.h>
+ 
+ #include <algorithm>

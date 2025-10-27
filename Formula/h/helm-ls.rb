@@ -1,18 +1,18 @@
 class HelmLs < Formula
   desc "Language server for Helm"
   homepage "https://github.com/mrjosh/helm-ls"
-  url "https://ghfast.top/https://github.com/mrjosh/helm-ls/archive/refs/tags/v0.5.2.tar.gz"
-  sha256 "c3884704cbe556b7092929111a9791e290afe75fc3f6ecee7ff21f7794f85101"
+  url "https://ghfast.top/https://github.com/mrjosh/helm-ls/archive/refs/tags/v0.5.3.tar.gz"
+  sha256 "f3b537f579f29fa27fd2ad3bcf4746d062301151e5c599506551bfbbb0f030bb"
   license "MIT"
   head "https://github.com/mrjosh/helm-ls.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "abec07cb0e36b1fd6f4de583e7459d65368aaa7802750f4d0aeec0874382492f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f9d9b650486c7392ec69da65741fe137e936ac3049a3edd6796e185766f754e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "966b3146f57fd717e82dfa3b638f3e4696511074631bf7c8191ec87c82448b98"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0e93ade6b872412063bf6a7460b9b66f5e91b11767fdfce7d04d355ace41bb2b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca49d2720d2b007a8079687498f6e29f051738188a0db0e31ff0252156dd06ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bef97f8a048b57da16a38bec125a6919a4705fcc80d652b20b07fc3308111cf9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c13b254c0e9d243a5fb0c77cbd8b5afe0cca165a9e413f58b630f1b60a5d0245"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58113a989f3c339fcb09e78939ecf2ca3357c99416ebe90f4196e494da44f2f4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3066f5992195aed3281464314598b1f78a8475f71563dc028d1b5a06edf25b2f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ce2d743c04c5aa7c9962e9aad5007022b360fa8c83ee44c9d2f8a71336bf3c16"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ca2fbc20463ddceaa496135bdda8a128a576ff50cf303e5fb2b6ff41acd0520"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44df30fd0af57897671c16ce5a9d9624daf7598a701005a2bca32b5b8970b181"
   end
 
   depends_on "go" => :build

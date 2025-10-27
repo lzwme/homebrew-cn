@@ -1,8 +1,8 @@
 class Macpine < Formula
   desc "Lightweight Linux VMs on MacOS"
   homepage "https://beringresearch.github.io/macpine/"
-  url "https://ghfast.top/https://github.com/beringresearch/macpine/archive/refs/tags/v1.1.2.tar.gz"
-  sha256 "e1670be845cf863e68af1f2fbe4f677a38c57f818703d85179cc68154f7705e6"
+  url "https://ghfast.top/https://github.com/beringresearch/macpine/archive/refs/tags/v1.1.4.tar.gz"
+  sha256 "fd2d315a6bd42c9af2c6c395d46b95731484ea1d79d1902bc919e2f95f73fe69"
   license "Apache-2.0"
   head "https://github.com/beringresearch/macpine.git", branch: "main"
 
@@ -21,14 +21,12 @@ class Macpine < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8495d76e684a27114dca4f141d8dc401cac0e41a245bceed0031bc78520106d1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8689372d0346df460ef0e425ffcbe4c610319a26a824601d6fbbce513ce674bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e4832e309a88a2ffea2cad239fd67a437993c3f1df8bcdd5f43fac670f9da2b1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ca655058d4c7ac1134b31af7cf7f55c1ab3243bba8e4331686079d7537606e39"
-    sha256 cellar: :any_skip_relocation, sonoma:        "63ab14a337da3dc747fca028dc88a7a930e6ac4aa7bf5d4a71b24f3617e76a87"
-    sha256 cellar: :any_skip_relocation, ventura:       "c0a753a0718f5fd255dacba09ae810821863cd06d33c851e4b8b1fc7a382aacc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef586a541322f8fc606a9c1f774cb61bfa02b79de0d2e2bbcc0418616d575f0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4f3a0acb00ad76dce2be91cb1a699f62f43df42ef18519d127d27fa2b7cd79b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79536f41d322f793f6f611a644aa0b01992f915e4dd2e6abdffee9361c5c4879"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79536f41d322f793f6f611a644aa0b01992f915e4dd2e6abdffee9361c5c4879"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79536f41d322f793f6f611a644aa0b01992f915e4dd2e6abdffee9361c5c4879"
+    sha256 cellar: :any_skip_relocation, sonoma:        "32a5ca11c6360997ba400c17eccdfd3679e9e70c6cf5750b89a5e63629dfba62"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3b37fd124b125b345e77ae57005c5ae592cba756ad4420360d29f3eb16a0b3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d722c27ff45c34c10145917fac5249cacd0338081ea8b5b46b66b58c8b906b0d"
   end
 
   depends_on "go" => :build
@@ -37,8 +35,11 @@ class Macpine < Formula
   conflicts_with "alpine", because: "both install `alpine` binaries"
 
   def install
-    system "make", "install", "PREFIX=#{prefix}"
-    generate_completions_from_executable(bin/"alpine", "completion")
+    # bump to use go1.25, https://github.com/beringresearch/macpine/pull/223
+    inreplace "go.mod", "1.23", Formula["go"].version.to_s
+
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"alpine")
+    generate_completions_from_executable(bin/"alpine", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   service do

@@ -19,6 +19,9 @@ class Shyaml < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "94fa46b2c7b21233b659a07743538eca11873d6787515cf74b98b8632e014abf"
   end
 
+  # Last release in 2020, needs patch to build with modern setuptools
+  deprecate! date: "2025-10-26", because: :unmaintained, replacement_formula: "yq"
+
   depends_on "libyaml"
   depends_on "python@3.14"
 

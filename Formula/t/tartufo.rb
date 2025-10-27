@@ -49,7 +49,7 @@ class Tartufo < Formula
   end
 
   def install
-    # Unpin python for 3.14
+    # Unpin python for 3.14: https://github.com/godaddy/tartufo/pull/547
     inreplace "pyproject.toml", 'python = ">=3.8, <3.14"', 'python = ">=3.8"'
 
     virtualenv_install_with_resources

@@ -1,8 +1,8 @@
 class Ledger < Formula
   desc "Command-line, double-entry accounting tool"
   homepage "https://ledger-cli.org/"
-  url "https://ghfast.top/https://github.com/ledger/ledger/archive/refs/tags/v3.4.0.tar.gz"
-  sha256 "1d60b5c78631bbea49bf8201234c15ff9c7e9f2df18d97d27080c8922eae3e13"
+  url "https://ghfast.top/https://github.com/ledger/ledger/archive/refs/tags/v3.4.1.tar.gz"
+  sha256 "1cf012cdc8445cab0efc445064ef9b2d3f46ed0165dae803c40fe3d2b23fdaad"
   license "BSD-3-Clause"
   head "https://github.com/ledger/ledger.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Ledger < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1e96abc8492a071cd6441cdbeae1ad33cc0184c94de491a49c57b23148e22e25"
-    sha256 cellar: :any,                 arm64_sequoia: "40777f10d2110be733c2920ecba940a3f9d491544f948616fac0cf5814faf341"
-    sha256 cellar: :any,                 arm64_sonoma:  "8eab5c82b961be1dc8f910b29d1fc3ffc3e66262541875aac78c8fb0937abd5d"
-    sha256 cellar: :any,                 sonoma:        "1ac648ddcafe40bc89e8beda2b938012bbbd42607d411ef569658d207491a315"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6bd9b045083793d5198957c9f8427fca690d081a6775c1c6cc63bb5db4427193"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbe6bc51c5763fa6f04c378ef2e82b21a92592bda8fdd64a52a3e1aff0e07b0f"
+    sha256 cellar: :any,                 arm64_tahoe:   "cf820b2d7abb56f2c03dd6873ea9090e598d5dff4bf1cd1fd3247333175359eb"
+    sha256 cellar: :any,                 arm64_sequoia: "0efd7758b4eeef3951903338bcca57419317a5640506f3ae91f99bc80dc77318"
+    sha256 cellar: :any,                 arm64_sonoma:  "6231e75781b9f906afb6a5d48f58b210782ecfdba71cfa83e2c0a131d9c417d3"
+    sha256 cellar: :any,                 sonoma:        "425c3e9b8e0fc413bff5a3dbecbaf0756bf52a7edaa5c871c40b24b9829a6696"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cdd70af7b87fea7cc5d518b10b63936152cceaf2902cc824cbf184d050939fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e526e9ea8e9d85f674e6e351c789fe856f4592b1b1b9f7c5e4e5909066ad321d"
   end
 
   depends_on "cmake" => :build

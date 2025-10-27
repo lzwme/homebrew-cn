@@ -1,11 +1,10 @@
 class Nwchem < Formula
   desc "High-performance computational chemistry tools"
   homepage "https://nwchemgit.github.io"
-  url "https://ghfast.top/https://github.com/nwchemgit/nwchem/releases/download/v7.2.3-release/nwchem-7.2.3-release.revision-d690e065-src.2024-08-27.tar.xz"
-  version "7.2.3"
-  sha256 "7788e6af9be8681e6384b8df4df5ac57d010b2c7aa50842d735c562d92f94c25"
+  url "https://ghfast.top/https://github.com/nwchemgit/nwchem/releases/download/v7.3.0-release/nwchem-7.3.0-release.revision-e60d3d90-src.2025-10-24.tar.xz"
+  version "7.3.0"
+  sha256 "12f6d110c7549b246cc1261f73bc8aa63f2304407d13d44a8fb11960936ceedc"
   license "ECL-2.0"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,16 +12,15 @@ class Nwchem < Formula
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
-    rebuild 1
-    sha256                               arm64_tahoe:   "7bdfe1b874aa6788676c26b8fe6632827486a1deb212b31b54376f6c825edc14"
-    sha256                               arm64_sequoia: "ca4f6ffb98e1bf637ede7d811ebba58292ec49c4153ae344ed67b1c470087648"
-    sha256                               arm64_sonoma:  "24520eae34ff9e5be75493d87487f5282c4005671b57ed26b6caccdaff292dc7"
-    sha256 cellar: :any,                 sonoma:        "37267e96f446bb2ac7f11f425ea952c886dd2b01d706279b38e3de8935bfdc3b"
-    sha256                               arm64_linux:   "4eb2f27fc6249621cd2e4ff810137f2d4faa268fa9530838a2625d7d98a20d37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35139d4173d4a7024e3bbe70d69df306fceecd0b09950cd57b2a4c4bc3cf46c7"
+    sha256                               arm64_tahoe:   "4ed6bd4d09fcc140d8c37d6746911c0bbbdde7b6701daf6c162c8966604604e4"
+    sha256                               arm64_sequoia: "fbc7ab523a9d7bd91417af21e526723d9c69286c216aad69923beafb9348369b"
+    sha256                               arm64_sonoma:  "229bba2c53122f3890939ca77dcd2293a26372cc4a1368288f5e6227fdeedf4f"
+    sha256 cellar: :any,                 sonoma:        "6716a589699d8bc3d363b5c35c26f608da1c071f5ca23e68cb9bbc58b0270e7e"
+    sha256                               arm64_linux:   "7532621093cf89cf04cf1f257e312a9b65d458270b7949c00e693b5eb7da9517"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbc41324443a9a912494f65460663f41f353863d0081fb927ee3425b68c5b599"
   end
 
   depends_on "gcc" # for gfortran
@@ -35,12 +33,6 @@ class Nwchem < Formula
   depends_on "scalapack"
 
   uses_from_macos "libxcrypt"
-
-  # fix download url in build_dftd3a.sh, upstream pr ref, https://github.com/nwchemgit/nwchem/pull/1054
-  patch do
-    url "https://github.com/nwchemgit/nwchem/commit/65ce7726d9fa418f7c01665bebfc1e2181f15adf.patch?full_index=1"
-    sha256 "13410bdadc51ae60e0f6fb3a1ce4dece8a2c97a19c4e59ee027ea8443b6d3f2f"
-  end
 
   def install
     pkgshare.install "QA"

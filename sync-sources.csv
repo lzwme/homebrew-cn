@@ -3377,6 +3377,7 @@ Homebrew-homebrew-core/Formula/k/kics.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/killport.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/killswitch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kim-api.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/kimi-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kimwitu++.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kin.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kind.rb, Homebrew/homebrew-core, 1
@@ -3608,7 +3609,7 @@ Homebrew-homebrew-core/Formula/l/linux-headers@4.4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/linux-headers@5.15.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/linux-pam.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/liqoctl.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/l/liquibase.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/l/liquibase.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/liquid-dsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/liquidctl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/liquidprompt.rb, Homebrew/homebrew-core, 1
@@ -7441,6 +7442,7 @@ Homebrew-homebrew-core/Formula/v/vexctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vfkit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vfox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vgmstream.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/v/vgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vgrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vgt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vhs.rb, Homebrew/homebrew-core, 1
@@ -7517,6 +7519,7 @@ Homebrew-homebrew-core/Formula/v/vsh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vstr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vtable-dumper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vtclock.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vtcode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vte3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vtk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vttest.rb, Homebrew/homebrew-core, 0

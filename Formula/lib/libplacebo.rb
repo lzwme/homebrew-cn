@@ -48,7 +48,7 @@ class Libplacebo < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "vulkan-headers" => :build
 
   depends_on "little-cms2"
@@ -71,10 +71,14 @@ class Libplacebo < Formula
     # Use Homebrew `fast_float`.
     inreplace "src/meson.build", "../3rdparty/fast_float/include", Formula["fast_float"].opt_include
 
-    system "meson", "setup", "build",
-                    "-Dvulkan-registry=#{Formula["vulkan-headers"].share}/vulkan/registry/vk.xml",
-                    "-Dshaderc=enabled", "-Dvulkan=enabled", "-Dlcms=enabled",
-                    *std_meson_args
+    args = %W[
+      -Dlcms=enabled
+      -Dshaderc=enabled
+      -Dvulkan=enabled
+      -Dvulkan-registry=#{Formula["vulkan-headers"].share}/vulkan/registry/vk.xml
+    ]
+
+    system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end

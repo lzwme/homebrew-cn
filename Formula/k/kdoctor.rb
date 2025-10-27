@@ -6,8 +6,6 @@ class Kdoctor < Formula
   license "Apache-2.0"
   head "https://github.com/Kotlin/kdoctor.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "2920f1f61486ab85236383e1ea160b405a2132ec97b54d690bedc0737459fc54"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e41df6918eb2c57cc4b16ef1687fb7c1aac3907e93613c166921d00993432ffa"
@@ -19,17 +17,17 @@ class Kdoctor < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "e2ad6b016b9f6ca3904aa6a08c2b98f873836f7b55dfe22706b6657e2a480002"
   end
 
-  # Issue ref: https://youtrack.jetbrains.com/issue/KT-81085/kdoctor-build-with-gradle-v9
+  # Issue ref: https://youtrack.jetbrains.com/issue/KMT-1702/kdoctor-build-with-gradle-v9
   depends_on "gradle@8" => :build
-  depends_on "openjdk" => :build
+  depends_on "openjdk@21" => :build
   depends_on xcode: ["12.5", :build]
   depends_on :macos
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
+    ENV["JAVA_HOME"] = Formula["openjdk@21"].opt_prefix
     mac_suffix = Hardware::CPU.intel? ? "X64" : Hardware::CPU.arch.to_s.capitalize
     build_task = "linkReleaseExecutableMacos#{mac_suffix}"
-    system "gradle", "clean", build_task
+    system "gradle", "clean", build_task, "--no-daemon"
     bin.install "kdoctor/build/bin/macos#{mac_suffix}/releaseExecutable/kdoctor.kexe" => "kdoctor"
   end
 

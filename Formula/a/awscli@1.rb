@@ -15,18 +15,19 @@ class AwscliAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5f296f596784fe18e9a66c83f98db7570711671a56e6bc4607a24a9573393e1c"
-    sha256 cellar: :any,                 arm64_sequoia: "9954aa6cf33e5ca9b4c53563ca7afd8dfc9cb00fefd5019f9d7001dbcc6a759f"
-    sha256 cellar: :any,                 arm64_sonoma:  "b0dabaa44dabd9f6e22e216f56d05f6a403a40447367c7811bc2cf7140ed2bef"
-    sha256 cellar: :any,                 sonoma:        "d1c19c8f5f940111bdaf8776cf9602a34680eb1f96540fdd9b6055d86637819f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb6194b5b32a15a520d117d9d3e57671f71fb62bead41556f64e175f5d2689d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afc46ec3a63cdad1e91d6402e2bb0facde56cab251d350bf7656950c2b2914b5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "b38c24950cea605a56ed689e66f8dca1aced519b3ff1bf7b886d06aa84325a1d"
+    sha256 cellar: :any,                 arm64_sequoia: "4a95e4c3b2af5266c4f5f087f7c5fd1f6f24a8a0538938bfc9619d4ee8819994"
+    sha256 cellar: :any,                 arm64_sonoma:  "44bd7267af50a0c2fb26fd8b5f36d4d9f14ce726b9bee5d9d0ec0d565e28cab3"
+    sha256 cellar: :any,                 sonoma:        "495a4fdb4502e1d220256abf3455c9d96e0729c4cf8b7ba5c986f2c57ec57c00"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "06709f31a47ffaed78ec78f458f910d1d02306c5e4896df7b09fdc17c1302023"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e5765a1b7b9391da5a1782147f03ba641c1127d3a74577cfa70c167a5a5ac4a"
   end
 
   keg_only :versioned_formula
 
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "mandoc"
 
@@ -85,6 +86,10 @@ class AwscliAT1 < Formula
     sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
+  # Backport Python 3.14 support without CI changes. Remove next release (1.42.60)
+  # https://github.com/aws/aws-cli/commit/44e446748504ed5a17df7c41c77c190bcba9fc5a
+  patch :DATA
+
   def install
     virtualenv_install_with_resources
     pkgshare.install "awscli/examples"
@@ -113,3 +118,42 @@ class AwscliAT1 < Formula
     assert_match "topics", shell_output("#{bin}/aws help")
   end
 end
+
+__END__
+diff --git a/README.rst b/README.rst
+index 51cdb7b9969a7092a77aaaa9c5eb0426391f68b5..063798c14912406788d37dd01ebee65be2f79719 100644
+--- a/README.rst
++++ b/README.rst
+@@ -31,6 +31,7 @@ The aws-cli package works on Python versions:
+ -  3.11.x and greater
+ -  3.12.x and greater
+ -  3.13.x and greater
++-  3.14.x and greater
+ 
+ Notices
+ ~~~~~~~
+diff --git a/awscli/arguments.py b/awscli/arguments.py
+index 1c621b8657408273e75f6319aeb65811bde7f00e..686253ad0f6a5e9bf2c25ce926290755853408ca 100644
+--- a/awscli/arguments.py
++++ b/awscli/arguments.py
+@@ -449,7 +449,7 @@ def add_to_parser(self, parser):
+         cli_name = self.cli_name
+         parser.add_argument(
+             cli_name,
+-            help=self.documentation,
++            help=self.documentation.replace('%', '%%'),
+             type=self.cli_type,
+             required=self.required,
+         )
+diff --git a/setup.py b/setup.py
+index bccbddab5134d481d7dea38af990f526d41af9ad..1daa35629cf75646d5aa35e085da212a4e15f2c8 100644
+--- a/setup.py
++++ b/setup.py
+@@ -63,6 +63,7 @@ def find_version(*file_paths):
+         'Programming Language :: Python :: 3.11',
+         'Programming Language :: Python :: 3.12',
+         'Programming Language :: Python :: 3.13',
++        'Programming Language :: Python :: 3.14',
+     ],
+     project_urls={
+         'Source': 'https://github.com/aws/aws-cli',

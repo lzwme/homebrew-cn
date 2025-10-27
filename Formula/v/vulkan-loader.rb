@@ -24,7 +24,6 @@ class VulkanLoader < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => :build
   depends_on "vulkan-headers"
 
   on_linux do
@@ -38,9 +37,9 @@ class VulkanLoader < Formula
     system "cmake", "-S", ".", "-B", "build",
                     "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].prefix}",
                     "-DCMAKE_INSTALL_INCLUDEDIR=#{Formula["vulkan-headers"].include}",
-                    "-DFALLBACK_DATA_DIRS=#{HOMEBREW_PREFIX}/share:/usr/local/share:/usr/share",
                     "-DCMAKE_INSTALL_SYSCONFDIR=#{etc}",
                     "-DFALLBACK_CONFIG_DIRS=#{etc}/xdg:/etc/xdg",
+                    "-DFALLBACK_DATA_DIRS=#{HOMEBREW_PREFIX}/share:/usr/local/share:/usr/share",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

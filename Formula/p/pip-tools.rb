@@ -3,18 +3,20 @@ class PipTools < Formula
 
   desc "Locking and sync for Pip requirements files"
   homepage "https://pip-tools.readthedocs.io"
+  # TODO: remove `pip` resource after https://github.com/jazzband/pip-tools/issues/2252
   url "https://files.pythonhosted.org/packages/94/a1/54ac29bdb98660f2b9aeab8c2bf105595614edc7858d899fd4ec1bfaad20/pip_tools-7.5.1.tar.gz"
   sha256 "a051a94794ba52df9acad2d7c9b0b09ae001617db458a543f8287fea7b89c2cf"
   license "BSD-3-Clause"
+  revision 1
+  head "https://github.com/jazzband/pip-tools.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03cf8b94d1fa945f6f0bf6f60e187ee06c225d57ab422ebff7638251d9d35603"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03cf8b94d1fa945f6f0bf6f60e187ee06c225d57ab422ebff7638251d9d35603"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03cf8b94d1fa945f6f0bf6f60e187ee06c225d57ab422ebff7638251d9d35603"
-    sha256 cellar: :any_skip_relocation, sonoma:        "73b7e6c69dae72b91d5ad8e641ad81d43461319d903771d5e905b993386e0ea4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "73b7e6c69dae72b91d5ad8e641ad81d43461319d903771d5e905b993386e0ea4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73b7e6c69dae72b91d5ad8e641ad81d43461319d903771d5e905b993386e0ea4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b7e6ef29e087417d08ef65b5944c9ec1e4546c57453809dd47f9c805513f732"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b7e6ef29e087417d08ef65b5944c9ec1e4546c57453809dd47f9c805513f732"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b7e6ef29e087417d08ef65b5944c9ec1e4546c57453809dd47f9c805513f732"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3b59f26e1ef0666c2d7f3b93fc0037b44f6954ba5c8026e87dd61ae146a3812a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b59f26e1ef0666c2d7f3b93fc0037b44f6954ba5c8026e87dd61ae146a3812a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b59f26e1ef0666c2d7f3b93fc0037b44f6954ba5c8026e87dd61ae146a3812a"
   end
 
   depends_on "python@3.14"
@@ -34,6 +36,11 @@ class PipTools < Formula
     sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
+  resource "pip" do
+    url "https://files.pythonhosted.org/packages/20/16/650289cd3f43d5a2fadfd98c68bd1e1e7f2550a1a5326768cddfbcedb2c5/pip-25.2.tar.gz"
+    sha256 "578283f006390f85bb6282dffb876454593d637f5d1be494b5202ce4877e71f2"
+  end
+
   resource "pyproject-hooks" do
     url "https://files.pythonhosted.org/packages/e7/82/28175b2414effca1cdac8dc99f76d660e7a4fb0ceefa4b4ab8f5f6742925/pyproject_hooks-1.2.0.tar.gz"
     sha256 "1e859bd5c40fae9448642dd871adf459e5e2084186e8d2c2a79a824c970da1f8"
@@ -47,6 +54,12 @@ class PipTools < Formula
   resource "wheel" do
     url "https://files.pythonhosted.org/packages/8a/98/2d9906746cdc6a6ef809ae6338005b3f21bb568bea3165cfc6a243fdc25c/wheel-0.45.1.tar.gz"
     sha256 "661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729"
+  end
+
+  # Fix syntax warning on python 3.14: https://github.com/jazzband/pip-tools/pull/2249
+  patch do
+    url "https://github.com/jazzband/pip-tools/commit/c742e381cbe5a6953c2bd89d6fbc147c5003d921.patch?full_index=1"
+    sha256 "4869f1e7857a665659d582c3268dc28508bf6f8b331e053dac403218cb65d662"
   end
 
   def install
