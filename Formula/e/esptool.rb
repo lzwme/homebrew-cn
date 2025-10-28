@@ -21,6 +21,8 @@ class Esptool < Formula
   depends_on "libyaml"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "cryptography"
+
   resource "bitarray" do
     url "https://files.pythonhosted.org/packages/e8/c1/644ea86b6f1a0864f656a3b3ee5bf8c29daa895cb3233942315fe065ea3a/bitarray-3.7.2.tar.gz"
     sha256 "27a59bb7c64c0d094057a3536e15fdd693f8520771ee75d9344b82d0a5ade2d0"

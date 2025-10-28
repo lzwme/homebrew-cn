@@ -18,6 +18,8 @@ class Tartufo < Formula
 
   uses_from_macos "libffi"
 
+  pypi_packages exclude_packages: "pygit2"
+
   resource "cached-property" do
     url "https://files.pythonhosted.org/packages/61/2c/d21c1c23c2895c091fa7a91a54b6872098fea913526932d21902088a7c41/cached-property-1.5.2.tar.gz"
     sha256 "9fa5755838eecbb2d234c3aa390bd80fbd3ac6b6869109bfc1b499f7bd89a130"

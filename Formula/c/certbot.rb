@@ -26,6 +26,9 @@ class Certbot < Formula
 
   uses_from_macos "libffi"
 
+  pypi_packages exclude_packages: ["certifi", "cryptography"],
+                extra_packages:   ["certbot-apache", "certbot-nginx", "certbot-dns-cloudflare"]
+
   resource "acme" do
     url "https://files.pythonhosted.org/packages/07/f6/897be0abeb0e64f0e6136a8a6369a54d2a603a44cb7a411f6d77dbafb4ac/acme-5.1.0.tar.gz"
     sha256 "7b97820857d9baffed98bca50ab82bb6a636e447865d7a013a7bdd7972f03cda"

@@ -15,6 +15,8 @@ class Imgp < Formula
   depends_on "pillow"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "pillow"
+
   def install
     rewrite_shebang detected_python_shebang, "imgp"
     system "make", "install", "PREFIX=#{prefix}"

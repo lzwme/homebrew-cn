@@ -33,6 +33,8 @@ class Pwntools < Formula
   conflicts_with "jena", because: "both install `update` binaries"
   conflicts_with "scala", because: "both install `common` binaries"
 
+  pypi_packages exclude_packages: %w[capstone certifi cryptography]
+
   resource "bcrypt" do
     url "https://files.pythonhosted.org/packages/d4/36/3329e2518d70ad8e2e5817d5a4cac6bba05a47767ec416c7d020a965f408/bcrypt-5.0.0.tar.gz"
     sha256 "f748f7c2d6fd375cc93d3fba7ef4a9e3a092421b8dbf34d8d4dc06be9492dfdd"

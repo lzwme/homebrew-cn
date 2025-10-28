@@ -13,6 +13,7 @@ class TerraformLocal < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "18800188bee9dc2358e6216a1caae2ab4830ca148579485e6be7b1568a18a386"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d63ec41c396ee5ee40ed6d3c6b57b1af040aa8f0b5e1daafc44b7fbbb251582"
     sha256 cellar: :any_skip_relocation, sonoma:        "805d1ee675ff6223d939eb35bfa08deed14d71fff27cffcf05e3cabc71eb2e0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "911ea3b2dcd209aa620aff35b2d5744edf0c68eac7407b5b7f0acb31d446434f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b8631e5c95a7741c03479efbc1daf2fed887328e0971476e9795cb37be8dd5d"
   end
 

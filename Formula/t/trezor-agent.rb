@@ -35,6 +35,12 @@ class TrezorAgent < Formula
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
   end
 
+  pypi_packages exclude_packages: ["certifi", "cryptography", "pillow"],
+                extra_packages:   %w[
+                  dbus-fast ledger-agent pyobjc-core
+                  pyobjc-framework-CoreBluetooth pyobjc-framework-libdispatch
+                ]
+
   resource "backports-shutil-which" do
     url "https://files.pythonhosted.org/packages/a0/22/51b896a4539f1bff6a7ab8514eb031b9f43f12bff23f75a4c3f4e9a666e5/backports.shutil_which-3.5.2.tar.gz"
     sha256 "fe39f567cbe4fad89e8ac4dbeb23f87ef80f7fe8e829669d0221ecdb0437c133"

@@ -35,6 +35,9 @@ class AstrometryNet < Formula
   depends_on "python@3.14"
   depends_on "wcslib"
 
+  pypi_packages exclude_packages: "numpy",
+                extra_packages:   "fitsio"
+
   resource "fitsio" do
     url "https://ghfast.top/https://github.com/esheldon/fitsio/archive/refs/tags/1.2.7.tar.gz"
     sha256 "356a425ce1c5c64e42685e1196f1d5fb43ec8fefb7f800232f756360e1a2a38a"

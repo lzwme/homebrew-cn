@@ -29,6 +29,8 @@ class Liquidctl < Formula
     depends_on "i2c-tools"
   end
 
+  pypi_packages exclude_packages: "pillow"
+
   resource "colorlog" do
     url "https://files.pythonhosted.org/packages/d3/7a/359f4d5df2353f26172b3cc39ea32daa39af8de522205f512f458923e677/colorlog-6.9.0.tar.gz"
     sha256 "bfba54a1b93b94f54e1f4fe48395725a3d92fd2a4af702f6bd70946bdc0c6ac2"

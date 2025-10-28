@@ -18,6 +18,7 @@ class Tsung < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d847edc850acbfe70004c707b2ec18962c7b83877efb2bd576f23fc31119d82f"
     sha256 cellar: :any_skip_relocation, sonoma:        "8e611fcda350d09739af49168a0514ad347454c0d4d1722f18fe254f98334ee9"
     sha256 cellar: :any_skip_relocation, ventura:       "92304f38be35fef5b26c9469042c657220ee200d1c3fcd88ecb3b98b1a1063e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "78d662c5b4361d28dfc3b3bec656d9c85200bf4166d3258377acfeb1c4bd20b1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e15a598cd9b077c6cd445b23a56d8d799f7ea330c92cea542d244bdc3d82aa36"
   end
 

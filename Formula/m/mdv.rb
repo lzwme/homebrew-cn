@@ -20,6 +20,8 @@ class Mdv < Formula
   depends_on "libyaml"
   depends_on "python@3.14"
 
+  pypi_packages package_name: "mdv[yaml]"
+
   resource "markdown" do
     url "https://files.pythonhosted.org/packages/8d/37/02347f6d6d8279247a5837082ebc26fc0d5aaeaf75aa013fcbb433c777ab/markdown-3.9.tar.gz"
     sha256 "d2900fe1782bd33bdbbd56859defef70c2e78fc46668f8eb9df3128138f2cb6a"

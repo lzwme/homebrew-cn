@@ -17,6 +17,7 @@ class Qjackctl < Formula
     sha256 arm64_sequoia: "dfc335c469d0b4f65ae054343c453377b0db2e8e8171eec52b0fe244fc615ad9"
     sha256 arm64_sonoma:  "c3c3215ed601d2689849cdb23adc9a50d4b50203a0a6f336ca55bea90e6610b0"
     sha256 sonoma:        "8f8e32f847d7118c7c15fae9eeb551982a8ad74b7f5ea3d280944b72bbb51ad2"
+    sha256 arm64_linux:   "bf7cf0202b94f8c8324c2f73cfc39c29c38c15ddb8dad9038365e87c42ce8346"
     sha256 x86_64_linux:  "dc312c775a04b6226512ff0867dc3365e3a9db3d3b06fd88ae40170c73421aa9"
   end
 

@@ -31,6 +31,8 @@ class PythonMatplotlib < Formula
     depends_on "patchelf" => :build
   end
 
+  pypi_packages exclude_packages: %w[numpy pillow]
+
   resource "contourpy" do
     url "https://files.pythonhosted.org/packages/58/01/1253e6698a07380cd31a736d248a3f2a50a7c88779a1813da27503cadc2a/contourpy-1.3.3.tar.gz"
     sha256 "083e12155b210502d0bca491432bb04d56dc3432f95a979b429f2848c3dbe880"

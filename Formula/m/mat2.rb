@@ -21,6 +21,8 @@ class Mat2 < Formula
   depends_on "pygobject3" => :no_linkage
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "pygobject"
+
   resource "mutagen" do
     url "https://files.pythonhosted.org/packages/81/e6/64bc71b74eef4b68e61eb921dcf72dabd9e4ec4af1e11891bbd312ccbb77/mutagen-1.47.0.tar.gz"
     sha256 "719fadef0a978c31b4cf3c956261b3c58b6948b32023078a2117b1de09f0fc99"

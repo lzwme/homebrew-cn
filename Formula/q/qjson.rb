@@ -25,8 +25,11 @@ class Qjson < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b64e82e4791c3dc66f6304add6ac44a993b82a9d88d02704af280daa080f5d64"
   end
 
+  # Can undeprecate if new release with Qt 6 support is available.
+  deprecate! date: "2026-05-19", because: "needs end-of-life Qt 5"
+
   depends_on "cmake" => :build
-  depends_on "qt@5"
+  depends_on "qt@5" # Qt6 issue: https://github.com/flavio/qjson/issues/122
 
   def install
     # Workaround to build with CMake 4

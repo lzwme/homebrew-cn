@@ -24,6 +24,8 @@ class Img2pdf < Formula
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
+  pypi_packages exclude_packages: "pillow"
+
   resource "deprecated" do
     url "https://files.pythonhosted.org/packages/98/97/06afe62762c9a8a86af0cfb7bfdab22a43ad17138b07af5b1a58442690a2/deprecated-1.2.18.tar.gz"
     sha256 "422b6f6d859da6f2ef57857761bfb392480502a64c3028ca9bbe86085d72115d"

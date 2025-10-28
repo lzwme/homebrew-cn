@@ -17,29 +17,31 @@ class B2Tools < Formula
 
   conflicts_with "boost-build", because: "both install `b2` binaries"
 
+  pypi_packages exclude_packages: "certifi"
+
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
     sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
   end
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/16/0f/861e168fc813c56a78b35f3c30d91c6757d1fd185af1110f1aec784b35d0/argcomplete-3.6.2.tar.gz"
-    sha256 "d0519b1bc867f5f4f4713c41ad0aba73a4a5f007449716b16f385f2166dc6adf"
+    url "https://files.pythonhosted.org/packages/38/61/0b9ae6399dd4a58d8c1b1dc5a27d6f2808023d0b5dd3104bb99f45a33ff6/argcomplete-3.6.3.tar.gz"
+    sha256 "62e8ed4fd6a45864acc8235409461b72c9a28ee785a2011cc5eb78318786c89c"
   end
 
   resource "arrow" do
-    url "https://files.pythonhosted.org/packages/2e/00/0f6e8fcdb23ea632c866620cc872729ff43ed91d284c866b515c6342b173/arrow-1.3.0.tar.gz"
-    sha256 "d4540617648cb5f895730f1ad8c82a65f2dad0166f57b75f3ca54759c4d67a85"
+    url "https://files.pythonhosted.org/packages/b9/33/032cdc44182491aa708d06a68b62434140d8c50820a087fac7af37703357/arrow-1.4.0.tar.gz"
+    sha256 "ed0cc050e98001b8779e84d461b0098c4ac597e88704a655582b21d116e526d7"
   end
 
   resource "b2sdk" do
-    url "https://files.pythonhosted.org/packages/3b/ed/41cf8eb982f737b5f591a01446dd78db79269a24bc71142eb74fcf42c039/b2sdk-2.10.0.tar.gz"
-    sha256 "be41a07a49ed332129cf3d73262308774187b230862731e473485400a89f8dc3"
+    url "https://files.pythonhosted.org/packages/f2/d2/3418125c13b35960d0fa00cdb58bfe03c4b88fb74519c5930a47802c1b63/b2sdk-2.10.1.tar.gz"
+    sha256 "92c860a4a2e64d4a30d255d5a8d6d9049ff6d2bc64ff5751c0e05b1a2921fd1f"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "docutils" do
@@ -97,9 +99,9 @@ class B2Tools < Formula
     sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
   end
 
-  resource "types-python-dateutil" do
-    url "https://files.pythonhosted.org/packages/fc/83/24ed25dd0c6277a1a170c180ad9eef5879ecc9a4745b58d7905a4588c80d/types_python_dateutil-2.9.0.20251008.tar.gz"
-    sha256 "c3826289c170c93ebd8360c3485311187df740166dbab9dd3b792e69f2bc1f9c"
+  resource "tzdata" do
+    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
+    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
   end
 
   resource "urllib3" do

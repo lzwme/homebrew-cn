@@ -1,22 +1,18 @@
 class Brpc < Formula
   desc "Better RPC framework"
   homepage "https://brpc.apache.org/"
-  url "https://dlcdn.apache.org/brpc/1.14.1/apache-brpc-1.14.1-src.tar.gz"
-  sha256 "ed6e6703122cf294462ffae921c713910594b3b0a26dcfef5357a3dcefcc43d3"
+  url "https://dlcdn.apache.org/brpc/1.15.0/apache-brpc-1.15.0-src.tar.gz"
+  sha256 "0bc8c2aee810c96e6c77886f828fbfdf32ae353ce997eb46f2772c0088010c35"
   license "Apache-2.0"
-  revision 3
   head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "907180a60425188a23acc0a5d93784ba4047890dad76053ba69252951b78b0ae"
-    sha256 cellar: :any, arm64_sequoia: "b8307576b1d30d75adc93078ad401a0e5f3742122af08b35841a2b684db88034"
-    sha256 cellar: :any, arm64_sonoma:  "be4797e5ef97d0fbbb5e3f4fa8c27a9505eef89b02a6dd900a914d29eecbcda7"
-    sha256 cellar: :any, arm64_ventura: "eca6d54d5f87b57105abbf5ba1501cd419caeccb8b49795b878468a31f4499bc"
-    sha256 cellar: :any, sonoma:        "840e1df043630eff9372151308b2e8dc5664e17c636dab49fb3bc74672b3651e"
-    sha256 cellar: :any, ventura:       "772ee453731d366000562ca62206c4681fbbad5682f7e7142ed5fcf7674c20e2"
-    sha256               arm64_linux:   "ebccc42348d8674b3f3dd035f634e5e35a3af44564c4c523b36ac5523bf927c0"
-    sha256               x86_64_linux:  "ea97cc02bbc5ed0506323cb56be35b773d5adda0d91c5bad1dc11cd50de7aa1b"
+    sha256 cellar: :any, arm64_tahoe:   "3f567ec2d226b62ad9c71cb209d8c73732ea18e8060f0cc8b4ae28790e0036c3"
+    sha256 cellar: :any, arm64_sequoia: "c31c7b334897927ce901498c0ef0a8c9b0b309c2e24646d3c5cc0423d9b23d91"
+    sha256 cellar: :any, arm64_sonoma:  "89be1094ebbb941bafd4f564d9df2db447404fe2f3544d6483d85a334ab071d6"
+    sha256 cellar: :any, sonoma:        "f11417e6c3be3b7317e50ec3da35c2622a773b08f4461fb501e2b80135d31d1b"
+    sha256               arm64_linux:   "89a2ea7c0c1ac653a05a21526617c0e6e2ab9ccd9f7c2b186b36b843630b81ec"
+    sha256               x86_64_linux:  "771c698d51a79bd2e6dbb4555cb5be115b0f802e881a36c7e4d26867f1f96ce2"
   end
 
   depends_on "cmake" => :build

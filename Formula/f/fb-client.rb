@@ -32,6 +32,9 @@ class FbClient < Formula
 
   conflicts_with "spotbugs", because: "both install a `fb` binary"
 
+  pypi_packages package_name:   "",
+                extra_packages: ["pycurl", "pyxdg"]
+
   resource "pycurl" do
     url "https://files.pythonhosted.org/packages/e3/3d/01255f1cde24401f54bb3727d0e5d3396b67fc04964f287d5d473155f176/pycurl-7.45.7.tar.gz"
     sha256 "9d43013002eab2fd6d0dcc671cd1e9149e2fc1c56d5e796fad94d076d6cb69ef"

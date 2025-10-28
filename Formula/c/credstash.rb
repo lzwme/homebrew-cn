@@ -17,6 +17,8 @@ class Credstash < Formula
   depends_on "cryptography" => :no_linkage
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "cryptography"
+
   resource "boto3" do
     url "https://files.pythonhosted.org/packages/70/02/d3ee174681961dc2ebfe81f326e1b5e1ba338b7ff939e1e94eef76e7c65a/boto3-1.40.51.tar.gz"
     sha256 "ed1b7750df07b2f2ece0141ff2ed0489db2ec2b5311a956d00a496b05fd4fadb"

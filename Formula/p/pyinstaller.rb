@@ -22,6 +22,8 @@ class Pyinstaller < Formula
 
   uses_from_macos "zlib"
 
+  pypi_packages exclude_packages: "macholib"
+
   resource "altgraph" do
     url "https://files.pythonhosted.org/packages/de/a8/7145824cf0b9e3c28046520480f207df47e927df83aa9555fb47f8505922/altgraph-0.17.4.tar.gz"
     sha256 "1b5afbb98f6c4dcadb2e2ae6ab9fa994bbb8c1d75f4fa96d340f9437ae454406"

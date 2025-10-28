@@ -16,6 +16,8 @@ class Rbtools < Formula
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "certifi"
+
   resource "colorama" do
     url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
     sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
@@ -100,16 +102,16 @@ index ed91128..87edbc2 100755
 --- a/setup.py
 +++ b/setup.py
 @@ -8,7 +8,6 @@ import sys
- 
+
  from setuptools import setup, find_packages
- 
+
 -from pydiffx import get_package_version
- 
- 
+
+
  PACKAGE_NAME = 'pydiffx'
 @@ -36,7 +35,7 @@ with open('README.rst', 'r') as fp:
- 
- 
+
+
  setup(name=PACKAGE_NAME,
 -      version=get_package_version(),
 +      version='1.1',

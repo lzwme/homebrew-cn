@@ -25,6 +25,7 @@ class Svg2pdf < Formula
     sha256 cellar: :any,                 monterey:       "944236f1828f69922b87cd63b55f5cff0e20f3a565ceb977aaf0bad2f72374e6"
     sha256 cellar: :any,                 big_sur:        "b1275e6db5e5512c89394381f1e3e6649225e656df36412dc87e28cd3bd9130f"
     sha256 cellar: :any,                 catalina:       "806321a4363be84920038c530898354f98dd8e852ec14e963b7959b2a1ff28f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "57a062a1e6b804c18c3361878b078da84d86d78ea93d92e9b62f6a8c2aee8366"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "da8f29a9fa362e43d754a326cf274898b7ee24dda8591b4169cfb8e31b6a51a4"
   end
 

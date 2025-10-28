@@ -1,13 +1,13 @@
 class Fatal < Formula
   desc "Facebook Template Library"
   homepage "https://www.facebook.com/groups/libfatal/"
-  url "https://ghfast.top/https://github.com/facebook/fatal/releases/download/v2025.10.20.00/fatal-v2025.10.20.00.tar.gz"
-  sha256 "768861d00ce32c7ebd917f3d4c0d3fed0ae353ad86dbda615ca7dd2187e0364b"
+  url "https://ghfast.top/https://github.com/facebook/fatal/releases/download/v2025.10.27.00/fatal-v2025.10.27.00.tar.gz"
+  sha256 "8bbdca046f0d060787e485348ac750615ee6562ee486d486b6612c3a4552a4c1"
   license "BSD-3-Clause"
   head "https://github.com/facebook/fatal.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3802acdc8233e9a5950a37987edef8222851dbec0f3b276e989c6cfad2181b12"
+    sha256 cellar: :any_skip_relocation, all: "8d36deeb7059ceeae70b1190a2e2a5cc11f7d77904f865aa9f8ed546a9949f50"
   end
 
   def install

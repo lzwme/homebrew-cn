@@ -42,6 +42,12 @@ class DotnetAT8 < Formula
     depends_on "lttng-ust"
   end
 
+  on_intel do
+    # Building on Intel Sonoma or later results in stack overflow on restore.
+    # See https://github.com/Homebrew/homebrew-core/issues/197546
+    depends_on maximum_macos: [:ventura, :build]
+  end
+
   resource "release.json" do
     url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v8.0.121/release.json"
     sha256 "ba61d54adf402098d6772763dbc021bf60a82c28abeebefba94c74b50e1dbbc4"

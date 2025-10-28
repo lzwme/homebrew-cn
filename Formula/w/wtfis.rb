@@ -22,6 +22,8 @@ class Wtfis < Formula
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "certifi"
+
   # pydantic* packages are manually updated to support Python 3.14
 
   resource "annotated-types" do

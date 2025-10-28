@@ -22,12 +22,13 @@ class PerconaServer < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "8562d14a62cc51f9c10bac52ac7ad4d142e2097737d34ddbd2e61f9776e4cf2f"
-    sha256 arm64_sequoia: "6541d95b320ce2f9f29e1b161569d135d7734aacc55de07def4c39c9eb549825"
-    sha256 arm64_sonoma:  "28d7ebb5525a56fd63c0d5d02983d60883b5c58c783bad8c52e8614866523ebd"
-    sha256 sonoma:        "a0a636056a7b44d886593713aa0e061d02532dd38c72313093cb4b6b8909d4c8"
-    sha256 arm64_linux:   "263bb6e91ec8d55aefc737a3fc8d6a46b8811d88c037850dd633f18c05876445"
-    sha256 x86_64_linux:  "a821432cb5157c8f017c00f320f0e9c5a58a04f7c455cc4a7d42ba4dd85f1bbb"
+    rebuild 1
+    sha256 arm64_tahoe:   "ef95e2640f31975747187be77fbac9aadd1a02c075bb6869e3d0cbd1cfe5993d"
+    sha256 arm64_sequoia: "134daae6019796e5a18f9075d2724526205495e5c18535318d5474220417e478"
+    sha256 arm64_sonoma:  "fc5e0278bf9aa6688e568cdf9eb5c0a777be39f9a09c97b18053c4d29e45ac2e"
+    sha256 sonoma:        "28c8af915d0d7a838fc9667fd24c744600d7b1eafb53741a57b0d8656af56e39"
+    sha256 arm64_linux:   "a75f7a639ef7968a8cfdb4059e8e8cbc0c070ac7b42c814ac928cbdf4559c89b"
+    sha256 x86_64_linux:  "ed04bf6067b5769bf41ab4ae5c85e096cdc98a6dd6a002e4cc1907fe0c26e75a"
   end
 
   depends_on "bison" => :build
@@ -39,7 +40,7 @@ class PerconaServer < Formula
   depends_on "lz4"
   depends_on "openldap" # Needs `ldap_set_urllist_proc`, not provided by LDAP.framework
   depends_on "openssl@3"
-  depends_on "protobuf@29"
+  depends_on "protobuf"
   depends_on "zlib" # Zlib 1.2.13+
   depends_on "zstd"
 
@@ -61,40 +62,10 @@ class PerconaServer < Formula
     cause "Requires GCC 10 or newer"
   end
 
-  # FreeBSD patches to fix build with newer Clang
-  patch :p0 do
-    url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/86108d2ca4d7d22224b1a4161004c3bf292db0a2/databases/mysql84-server/files/patch-libs_mysql_serialization_serializer__default__impl.hpp"
-    sha256 "82706b5160fe3397ddfbeebeb24e2d1558cd54776b852b3277c94420e47c9ff4"
-  end
-
-  patch :p0 do
-    url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/86108d2ca4d7d22224b1a4161004c3bf292db0a2/databases/mysql84-server/files/patch-libs_mysql_serialization_serializer__impl.hpp"
-    sha256 "17c23e64fdb0481959812cc3aec0f5165372753d63266bd388a93d45c55902e0"
-  end
-
-  patch :p0 do
-    url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/86108d2ca4d7d22224b1a4161004c3bf292db0a2/databases/mysql84-server/files/patch-sql_binlog__ostream.cc"
-    sha256 "5bbb82ff9d9594ce1c19d34c83e22b088684057fca7c4357a0ba43dcb1ede0fc"
-  end
-
-  patch :p0 do
-    url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/86108d2ca4d7d22224b1a4161004c3bf292db0a2/databases/mysql84-server/files/patch-sql_mdl__context__backup.cc"
-    sha256 "557db2bb30ff8a985f8b4d016b1e2909b7127ea77fdcd2f7611fd66dcea58e4f"
-  end
-
-  patch :p0 do
-    url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/86108d2ca4d7d22224b1a4161004c3bf292db0a2/databases/mysql84-server/files/patch-sql_rpl__log__encryption.cc"
-    sha256 "f5e993a1b56ae86f3c63ea75799493c875d6a08c81f319fede707bbe16a2e59f"
-  end
-
-  patch :p0 do
-    url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/86108d2ca4d7d22224b1a4161004c3bf292db0a2/databases/mysql84-server/files/patch-sql_stream__cipher.cc"
-    sha256 "ac74c60f6051223993c88e7a11ddd9512c951ac1401d719a2c3377efe1bee3cf"
-  end
-
-  patch :p0 do
-    url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/86108d2ca4d7d22224b1a4161004c3bf292db0a2/databases/mysql84-server/files/patch-unittest_gunit_stream__cipher-t.cc"
-    sha256 "fe23c4098e1b8c5113486800e37bb74683be0b7dd61a9608603428f395588e96"
+  # Apply MySQL commit to support Protobuf >= 30
+  patch do
+    url "https://github.com/mysql/mysql-server/commit/4c1fdd1fb34a9a80a062357a54afe134a92f8abc.patch?full_index=1"
+    sha256 "8943cf092d31f2ed788f9a86b11b27973ec310d53718f15f6d2dac618696e1a3"
   end
 
   # Patch out check for Homebrew `boost`.

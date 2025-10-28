@@ -37,6 +37,9 @@ class Pypy39 < Formula
   uses_from_macos "unzip"
   uses_from_macos "zlib"
 
+  pypi_packages package_name:   "",
+                extra_packages: %w[pip setuptools]
+
   # setup.py got removed in pip 24.1b1 and above
   resource "pip" do
     url "https://files.pythonhosted.org/packages/94/59/6638090c25e9bc4ce0c42817b5a234e183872a1129735a9330c472cc2056/pip-24.0.tar.gz"

@@ -15,6 +15,8 @@ class EcsDeploy < Formula
   depends_on "certifi"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "certifi"
+
   resource "boto3" do
     url "https://files.pythonhosted.org/packages/ba/41/d4d73f55b367899ee377cd77c228748c18698ea3507c2a95b328f9152017/boto3-1.40.50.tar.gz"
     sha256 "ae34363e8f34a49ab130d10c507a611926c1101d5d14d70be5598ca308e13266"

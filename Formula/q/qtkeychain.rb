@@ -11,6 +11,7 @@ class Qtkeychain < Formula
     sha256 cellar: :any,                 arm64_sequoia: "fe4522c0672e68076e5a6caabade89eb43f0842af5d10a2f6b9bffbf1c60918e"
     sha256 cellar: :any,                 arm64_sonoma:  "8e25450053fa00c0c96a1a458b8a71eb6f01eb2dfff70ae9621106f863b2bbf5"
     sha256 cellar: :any,                 sonoma:        "94c0e9f2d3d3723769cc8084e3bef5e15f0990844782743a2f6fc501a7fc640c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1802b46a69c8458733001a41570a683c32bbccb682dc8dd9440af5ba774fc84f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c8606b46a5628d4ac64761e1bd0e5ae118c18267cbae6b9cbd8f2c0e95a26a8"
   end
 

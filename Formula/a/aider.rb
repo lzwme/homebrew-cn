@@ -12,13 +12,12 @@ class Aider < Formula
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "c0dd0ca8d1b26562c333a10852b2c3bc80198eb1640dbac92af9709be46a1831"
-    sha256 cellar: :any,                 arm64_sequoia: "ce1d65ba3012d94cfa115a620c260c7058c61f6c9f04e91360b25aa62a3028d0"
-    sha256 cellar: :any,                 arm64_sonoma:  "76b15844688efd7904f413f31ff752c446052f0d35af20f2778dfee60e4f2c42"
-    sha256 cellar: :any,                 sonoma:        "02d3ab5e53792d3ea787c1b277c5eed5d13254db2f3077926fbf2edf236ecc81"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b018ab64f55c9a28b93c3a024ea103dce9de03184a5ee28da570f821effa02c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad8d6ad7fe07e4b7bcb1838a23e67187a3e4eef6821f3ff0cc886a5fd0927e4f"
+    sha256 cellar: :any,                 arm64_tahoe:   "c9670f9c05f57b607dcc518fe3271e48eca372a7429351996b387e12e65e69ff"
+    sha256 cellar: :any,                 arm64_sequoia: "d2f45f468c19a7d29c7cb2b8882b551009ac43e3b50ae4b7bac294c8a3ff075c"
+    sha256 cellar: :any,                 arm64_sonoma:  "f6732c1c087ba8fa961ef493553f6d7e9bf793a07f943adba9de0533b02821de"
+    sha256 cellar: :any,                 sonoma:        "a925911560bece950ceff26cdf09e56976f4523b7b4c394fe91b34d5d84f9616"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7289c98bf2792551be208d379e38745486f731e76244927a95daaebe9094035"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "770986e10792d59817c160930708e1b300da50e62826f65ad7f6dde6e03ea5eb"
   end
 
   depends_on "ninja" => :build
@@ -31,7 +30,6 @@ class Aider < Formula
   depends_on "jpeg-turbo"
   depends_on "libyaml"
   depends_on "openblas"
-  depends_on "pillow"
   depends_on "python@3.12" # py3.13 support issue, https://github.com/Aider-AI/aider/issues/3037
 
   uses_from_macos "libffi"
@@ -40,6 +38,8 @@ class Aider < Formula
   on_linux do
     depends_on "patchelf" => :build
   end
+
+  pypi_packages exclude_packages: "certifi"
 
   # One way to update python resources:
   # 1. remove GitHub url resources
@@ -349,6 +349,11 @@ class Aider < Formula
   resource "pexpect" do
     url "https://files.pythonhosted.org/packages/42/92/cc564bf6381ff43ce1f4d06852fc19a2f11d180f23dc32d9588bee2f149d/pexpect-4.9.0.tar.gz"
     sha256 "ee7d41123f3c9911050ea2c2dac107568dc43b2d3b0c7557a33212c398ead30f"
+  end
+
+  resource "pillow" do
+    url "https://files.pythonhosted.org/packages/f3/0d/d0d6dea55cd152ce3d6767bb38a8fc10e33796ba4ba210cbab9354b6d238/pillow-11.3.0.tar.gz"
+    sha256 "3828ee7586cd0b2091b6209e5ad53e20d0649bbe87164a459d0676e035e8f523"
   end
 
   resource "posthog" do

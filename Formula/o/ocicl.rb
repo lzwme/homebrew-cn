@@ -4,14 +4,15 @@ class Ocicl < Formula
   url "https://ghfast.top/https://github.com/ocicl/ocicl/archive/refs/tags/v2.8.3.tar.gz"
   sha256 "fd14fc5eb9f426dc462961bc7a85dbde4004701ee14fdb34f109044d25e5f686"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34e0df2787f1c59f4ce17c9c1732ba2aca6535e53a98ab747345ad93778ae287"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "068c1e894bef33a492b19f94fc4d37ee123a1d4f4c5ccca2a2d5752c6683d8e9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26fabdcec6f447415119c38b4109547bcf2444003585fa3cde626f2f7323de0e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e443287661d263c86588a3a96cd150f2c5e0f1fe4d95b4f1e7c22c43f82774d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f011159a87ae06993c3f3958bb87a034d4cc316a91d7d1c3d76402813b62f0af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "173d1504594e8936ba58bf956fd4a107693dfda8ccd1fd68ca1e36baac73a96d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9504ec274a04b277b5a41b29aa0d2f2ed190f1bca3f46fd51c277507b89d2bb3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aeecf0dce04c52943ad30ffb997db34d4b394023309becd2b76b530a7edb5513"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0aec49c17358e1f541602a0ba2929737d9fe8967875c1579f4453a631a696559"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4d8f709aec96b092ec9006a872ee9e595291f1f96bbd4d1378ae9f23dbcae51a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9846e63349f808ae98bff7ca2a498d25aed5a6f6c201686e98d78807c4ed5e61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "314ec401c109a66d722fa14658fc213d97e14fc9e8298009680f8367778c2e31"
   end
 
   depends_on "sbcl"

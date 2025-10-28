@@ -23,6 +23,8 @@ class Cffi < Formula
 
   uses_from_macos "libffi"
 
+  pypi_packages exclude_packages: "pycparser"
+
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.start_with?("python@") }

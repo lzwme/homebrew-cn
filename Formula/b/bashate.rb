@@ -16,6 +16,8 @@ class Bashate < Formula
   depends_on "python-setuptools" => :build
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "setuptools"
+
   resource "pbr" do
     url "https://files.pythonhosted.org/packages/ad/8d/23253ab92d4731eb34383a69b39568ca63a1685bec1e9946e91a32fc87ad/pbr-7.0.1.tar.gz"
     sha256 "3ecbcb11d2b8551588ec816b3756b1eb4394186c3b689b17e04850dfc20f7e57"

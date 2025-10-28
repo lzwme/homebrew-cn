@@ -26,6 +26,9 @@ class Cassandra < Formula
 
   conflicts_with "emqx", because: "both install `nodetool` binaries"
 
+  pypi_packages package_name:   "",
+                extra_packages: ["cassandra-driver", "wcwidth"]
+
   resource "cassandra-driver" do
     url "https://files.pythonhosted.org/packages/b2/6f/d25121afaa2ea0741d05d2e9921a7ca9b4ce71634b16a8aaee21bd7af818/cassandra-driver-3.29.2.tar.gz"
     sha256 "c4310a7d0457f51a63fb019d8ef501588c491141362b53097fbc62fa06559b7c"

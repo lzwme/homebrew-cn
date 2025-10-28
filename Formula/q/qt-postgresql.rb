@@ -16,6 +16,7 @@ class QtPostgresql < Formula
     sha256 cellar: :any,                 arm64_sequoia: "b6fdcec3879066e1cc49c1ad127113fcbd4d9c1a92e5b3fa03417beb4fced52f"
     sha256 cellar: :any,                 arm64_sonoma:  "d5c958fcd10ccc5a9ee939c0acb41a3146ea9d84778a8f359799bd5e70585a4e"
     sha256 cellar: :any,                 sonoma:        "0d8111f52bcae4f7c652732e24b1a70c189d4e3599969eee8462390ff4cf0e70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "639e79e14909e6882777096b570d81fad50462c8969a988e9744d0ad6bae097c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1470a5add576b606c151e82fcaa04318a58245e46d9104f9a3bb9d0504543f8"
   end
 

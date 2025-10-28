@@ -30,6 +30,8 @@ class AwsGoogleAuth < Formula
     depends_on "cryptography"
   end
 
+  pypi_packages exclude_packages: ["certifi", "pillow"]
+
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/77/e9/df2358efd7659577435e2177bfa69cba6c33216681af51a707193dec162a/beautifulsoup4-4.14.2.tar.gz"
     sha256 "2a98ab9f944a11acee9cc848508ec28d9228abfd522ef0fad6a02a72e0ded69e"

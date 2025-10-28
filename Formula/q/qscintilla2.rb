@@ -26,9 +26,9 @@ class Qscintilla2 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "388eef42d4cde7ec7ebd053bea92d3fae910ba2aff0167644b0b14bc3428e28f"
   end
 
+  depends_on "pyqt" => [:build, :test]
   depends_on "pyqt-builder" => :build
-  depends_on "pyqt"
-  depends_on "python@3.14"
+  depends_on "python@3.14" => [:build, :test]
   depends_on "qtbase"
 
   def python3
@@ -85,7 +85,39 @@ class Qscintilla2 < Formula
     end
   end
 
+  def caveats
+    "You will need to `brew install pyqt` to use the Python bindings."
+  end
+
   test do
+    (testpath/"test.pro").write <<~QMAKE
+      CONFIG += qscintilla2 sdk_no_version_check
+      CONFIG -= app_bundle
+      SOURCES = test.cpp
+    QMAKE
+
+    (testpath/"test.cpp").write <<~CPP
+      #include <iostream>
+      #include <QApplication>
+      #include <Qsci/qsciscintilla.h>
+
+      int main(int argc, char *argv[]) {
+        QApplication app(argc, argv);
+        QsciScintilla test;
+        test.setText("homebrew");
+        std::cout << test.text().toStdString();
+        return 0;
+      }
+    CPP
+
+    ENV.delete "CPATH" if OS.mac?
+    ENV["LC_ALL"] = "en_US.UTF-8"
+    ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
+    system Formula["qtbase"].bin/"qmake"
+    system "make"
+    assert_equal "homebrew", shell_output("./test")
+
     pyqt = Formula["pyqt"]
     (testpath/"test.py").write <<~PYTHON
       import PyQt#{pyqt.version.major}.Qsci

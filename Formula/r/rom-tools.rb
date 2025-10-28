@@ -18,6 +18,7 @@ class RomTools < Formula
     sha256 cellar: :any,                 arm64_sequoia: "f3c5b8b103299d6c8a358a5cdbdaa18c99de7bc6573b1b0d2cb85d6c662585e3"
     sha256 cellar: :any,                 arm64_sonoma:  "bf22c9603432d01d1e270da378fa1f3fdd53306e57b4421e4731a1a99e3b5a8b"
     sha256 cellar: :any,                 sonoma:        "2902a22aa04ec377a51d26c223e7df8b277d16536a4cacfff89ebdddfc9e60e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "14d1a4b21259ba55ac243c7d4cde072f458a13e7c39e0fd2d46bac3f5f77ee42"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6797dec6cd7762f4fc4a2330b875d2194bc11ad5c95cd68b961bd94a0af4cd7b"
   end
 

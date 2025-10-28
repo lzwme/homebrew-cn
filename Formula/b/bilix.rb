@@ -24,6 +24,8 @@ class Bilix < Formula
   depends_on "lz4"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "certifi"
+
   resource "aiofiles" do
     url "https://files.pythonhosted.org/packages/41/c3/534eac40372d8ee36ef40df62ec129bee4fdb5ad9706e58a29be53b2c970/aiofiles-25.1.0.tar.gz"
     sha256 "a8d728f0a29de45dc521f18f07297428d56992a742f0cd2701ba86e44d23d5b2"

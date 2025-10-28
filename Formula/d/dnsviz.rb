@@ -27,6 +27,8 @@ class Dnsviz < Formula
   depends_on "openssl@3"
   depends_on "python@3.14"
 
+  pypi_packages extra_packages: ["dnspython", "pygraphviz"]
+
   resource "dnspython" do
     url "https://files.pythonhosted.org/packages/8c/8b/57666417c0f90f08bcafa776861060426765fdb422eb10212086fb811d26/dnspython-2.8.0.tar.gz"
     sha256 "181d3c6996452cb1189c4046c61599b84a5a86e099562ffde77d26984ff26d0f"

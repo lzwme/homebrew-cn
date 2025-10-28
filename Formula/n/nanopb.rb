@@ -28,6 +28,9 @@ class Nanopb < Formula
   depends_on "protobuf"
   depends_on "python@3.14"
 
+  pypi_packages package_name:   "nanopb",
+                extra_packages: "setuptools"
+
   resource "protobuf" do
     url "https://files.pythonhosted.org/packages/fa/a4/cc17347aa2897568beece2e674674359f911d6fe21b0b8d6268cd42727ac/protobuf-6.32.1.tar.gz"
     sha256 "ee2469e4a021474ab9baafea6cd070e5bf27c7d29433504ddea1a4ee5850f68d"

@@ -25,6 +25,8 @@ class Parsedmarc < Formula
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
+  pypi_packages exclude_packages: %w[certifi cryptography]
+
   resource "aiohappyeyeballs" do
     url "https://files.pythonhosted.org/packages/26/30/f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54/aiohappyeyeballs-2.6.1.tar.gz"
     sha256 "c3f9d0113123803ccadfdf3f0faa505bc78e6a72d1cc4806cbd719826e943558"

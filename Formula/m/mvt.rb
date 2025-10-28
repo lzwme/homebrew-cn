@@ -29,6 +29,8 @@ class Mvt < Formula
   # `pydantic` and `pydantic-core` are manually updated to support Python 3.14
   # PR ref: https://github.com/mvt-project/mvt/pull/706
 
+  pypi_packages exclude_packages: ["certifi", "cryptography"]
+
   resource "adb-shell" do
     url "https://files.pythonhosted.org/packages/8f/73/d246034db6f3e374dad9a35ee3f61345a6b239d4febd2a41ab69df9936fe/adb_shell-0.4.4.tar.gz"
     sha256 "04c305f30a2ca25d5c54b3cd6ce9bb64c36e5f07967b23b3fb6aaecc851b90b6"

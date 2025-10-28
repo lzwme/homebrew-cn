@@ -28,6 +28,8 @@ class Xml2rfc < Formula
     depends_on "libxslt"
   end
 
+  pypi_packages exclude_packages: "certifi"
+
   # Keep none-any.whl for `google-i18n-address`,
   # if not then there will be an ModuleNotFoundError: No module named 'i18naddress'
 

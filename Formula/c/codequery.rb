@@ -11,6 +11,7 @@ class Codequery < Formula
     sha256 cellar: :any,                 arm64_sequoia: "683318cd26452dda4e8b6f103fcf5c0bacb6d886da49b3492e87dc8bab7ef35e"
     sha256 cellar: :any,                 arm64_sonoma:  "1078139feee794760c6e6c42f33c49d308d4f308098e9913636d8054fe1da150"
     sha256 cellar: :any,                 sonoma:        "57c3b03bff1a8f7a3311aff6a89c0fb2c530f2f361857af15a9b158ced25476b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9ef3ff7ab094e9ed1e668874c8dd629a2bceee86fc78f7ad08a90ab72491170"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "18b9c0955396a9cd0b50d7b05d4e4b7edc97f8a7a32e693c64f5cfe7f16bbd1b"
   end
 

@@ -12,6 +12,7 @@ class Cpi < Formula
     sha256 cellar: :any,                 arm64_sequoia: "6bea475fa5b517cf42faebb459b104fc8d868dfe5e03cf097e37eb7fb0512a0d"
     sha256 cellar: :any,                 arm64_sonoma:  "391aa4186fc5c5c6f976bcf61bbd8ec7f311e352194b8595ad97da4db246a260"
     sha256 cellar: :any,                 sonoma:        "80aa4416afead86fe0621e8c53874dbfd951ff6fc40e8a7641c26cd1a382ab31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5748c1ce40a957f82c6e288901004c36c8b4aec5d8580828c561fd153e6388ca"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "be937b51660f2d5f2664a132c73b928706be340356100c74b7ebb507c7ec436b"
   end
 

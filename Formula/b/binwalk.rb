@@ -36,6 +36,9 @@ class Binwalk < Formula
     depends_on "freetype"
   end
 
+  pypi_packages exclude_packages: ["numpy", "pillow"],
+                extra_packages:   %w[capstone gnupg matplotlib pycryptodome]
+
   def install
     system "cargo", "install", *std_cargo_args
   end

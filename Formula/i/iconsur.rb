@@ -29,6 +29,9 @@ class Iconsur < Formula
     depends_on "python@3.14"
   end
 
+  pypi_packages package_name:   "",
+                extra_packages: ["pyobjc-core", "pyobjc-framework-cocoa"]
+
   resource "pyobjc-core" do
     url "https://files.pythonhosted.org/packages/e8/e9/0b85c81e2b441267bca707b5d89f56c2f02578ef8f3eafddf0e0c0b8848c/pyobjc_core-11.1.tar.gz"
     sha256 "b63d4d90c5df7e762f34739b39cc55bc63dbcf9fb2fb3f2671e528488c7a87fe"

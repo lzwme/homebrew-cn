@@ -27,7 +27,7 @@ class Onnxruntime < Formula
   depends_on "flatbuffers" => :build # NOTE: links to static library
   depends_on "howard-hinnant-date" => :build
   depends_on "nlohmann-json" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "safeint" => :build
   depends_on "abseil"
   depends_on "onnx"
@@ -75,7 +75,7 @@ class Onnxruntime < Formula
   patch :DATA
 
   def install
-    python3 = which("python3.13")
+    python3 = which("python3.14")
     ENV.runtime_cpu_detection
 
     resources.each do |r|

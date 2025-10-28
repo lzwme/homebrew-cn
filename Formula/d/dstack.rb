@@ -27,6 +27,9 @@ class Dstack < Formula
   depends_on "python@3.13" # Pydantic v1 is incompatible with Python 3.14, upstream issue, https://github.com/dstackai/dstack/issues/1844
   depends_on "rpds-py" => :no_linkage
 
+  pypi_packages package_name:     "dstack[aws,azure,gcp,lambda]",
+                exclude_packages: ["certifi", "cryptography", "rpds-py"]
+
   resource "aiocache" do
     url "https://files.pythonhosted.org/packages/7a/64/b945b8025a9d1e6e2138845f4022165d3b337f55f50984fbc6a4c0a1e355/aiocache-0.12.3.tar.gz"
     sha256 "f528b27bf4d436b497a1d0d1a8f59a542c153ab1e37c3621713cb376d44c4713"

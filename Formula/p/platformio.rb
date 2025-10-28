@@ -17,6 +17,8 @@ class Platformio < Formula
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "certifi"
+
   resource "ajsonrpc" do
     url "https://files.pythonhosted.org/packages/da/5c/95a9b83195d37620028421e00d69d598aafaa181d3e55caec485468838e1/ajsonrpc-1.2.0.tar.gz"
     sha256 "791bac18f0bf0dee109194644f151cf8b7ff529c4b8d6239ac48104a3251a19f"

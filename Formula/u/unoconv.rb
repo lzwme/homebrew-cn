@@ -23,6 +23,8 @@ class Unoconv < Formula
 
   depends_on "python@3.14"
 
+  pypi_packages extra_packages: "setuptools"
+
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
     sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"

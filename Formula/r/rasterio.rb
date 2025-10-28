@@ -33,6 +33,8 @@ class Rasterio < Formula
   conflicts_with "rio-terminal", because: "both install `rio` binaries"
   conflicts_with cask: "rio", because: "both install `rio` binaries"
 
+  pypi_packages exclude_packages: %w[certifi numpy]
+
   resource "affine" do
     url "https://files.pythonhosted.org/packages/69/98/d2f0bb06385069e799fc7d2870d9e078cfa0fa396dc8a2b81227d0da08b9/affine-2.4.0.tar.gz"
     sha256 "a24d818d6a836c131976d22f8c27b8d3ca32d0af64c1d8d29deb7bafa4da1eea"

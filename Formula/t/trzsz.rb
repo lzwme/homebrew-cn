@@ -22,6 +22,8 @@ class Trzsz < Formula
 
   conflicts_with "trzsz-go", because: "both install `trz`, `tsz` binaries"
 
+  pypi_packages extra_packages: "trzsz-iterm2"
+
   resource "iterm2" do
     url "https://files.pythonhosted.org/packages/57/6b/98ce521178651fad694c7ed704c882e4ef0b10fecc0a687b4e859ef623c3/iterm2-2.10.tar.gz"
     sha256 "8c0cf95ffca9f1bf7409883618deee66acd73c63929222e23435780dcc516869"

@@ -26,6 +26,7 @@ class GhcAT94 < Formula
   # No longer maintained. 9.4 was removed from current releases on 2024-05-10 with 9.10.1 release.
   # Ref: https://gitlab.haskell.org/ghc/homepage/-/commit/d0e63a2b3b5aace44248e0ad86d6da8ad74514fc
   deprecate! date: "2025-01-05", because: :unmaintained
+  disable! date: "2026-01-05", because: :unmaintained
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build

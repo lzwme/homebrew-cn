@@ -29,6 +29,7 @@ class Wxmaxima < Formula
     sha256 arm64_ventura: "d557599c3b3eefd79b147758ca60611e9b6d57e57c1e41c004140e418d2205d4"
     sha256 sonoma:        "24fa662cd77d0dd9f745942e8c1b74467b3711e03f13b9dae6f087687abaec69"
     sha256 ventura:       "b66e7b2778a0b7588bebac86db1f4b3aaa7726b40f5acb606fc36a5e096b2ffe"
+    sha256 arm64_linux:   "4bb515d654a2f26fc2b3ca0f8482970c48d475ab3329e262504ca6a24e2a51d0"
     sha256 x86_64_linux:  "e321b5e9522666e570bcdbec80ab1573bdc874933adbdcc4ce324393dae553ee"
   end
 

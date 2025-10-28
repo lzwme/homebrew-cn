@@ -24,6 +24,8 @@ class AnsibleLint < Formula
   depends_on "python@3.13"
   depends_on "rpds-py" => :no_linkage
 
+  pypi_packages exclude_packages: ["cryptography", "rpds-py"]
+
   resource "ansible-compat" do
     url "https://files.pythonhosted.org/packages/e3/06/5e66f1f0d482b21b0dc03c9b9e47cab58dd4efc770f41029bb244e86b608/ansible_compat-25.8.2.tar.gz"
     sha256 "c5ae1ff70938f1e009cfc7df66c9faad223a3ccd0ad6b57400de53b2459a6164"

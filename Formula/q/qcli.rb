@@ -12,6 +12,7 @@ class Qcli < Formula
     sha256 cellar: :any,                 arm64_tahoe:  "cf444e12eb4d646d9b80a325aec6df56361d9dd39ce2e80d90906f0916117dde"
     sha256 cellar: :any,                 arm64_sonoma: "fb63a2f6ab9e1bb330fc899b52228665b941e42a9201958f9d0594df19a384ad"
     sha256 cellar: :any,                 sonoma:       "dbac2e76a60e184f4fec01ff89c988bc5e6c6908ca3f675569749a6ba77d4ae5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "7d480d344f4e4241e95030eef80d7d38440d9079f68d3c35f6707b8dd4a29372"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "bb6419243bf6240de5d24047020a8ef6eebef3f43c8adc5c00fbecbf19f3bf2c"
   end
 

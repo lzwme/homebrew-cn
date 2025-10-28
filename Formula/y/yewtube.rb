@@ -19,6 +19,8 @@ class Yewtube < Formula
   depends_on "mplayer"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "certifi"
+
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/f1/b4/636b3b65173d3ce9a38ef5f0522789614e590dab6a8d505340a4efe4c567/anyio-4.10.0.tar.gz"
     sha256 "3f3fae35c96039744587aa5b8371e7e8e603c0702999535961dd336026973ba6"

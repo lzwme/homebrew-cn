@@ -23,6 +23,10 @@ class Datalad < Formula
   depends_on "p7zip"
   depends_on "python@3.14"
 
+  pypi_packages package_name:     "datalad[misc]",
+                exclude_packages: ["certifi", "cryptography"],
+                extra_packages:   ["jeepney", "secretstorage"]
+
   resource "annexremote" do
     url "https://files.pythonhosted.org/packages/5f/04/d7a39a2ab1de54fd7bfbb26feb4487baa71be4e10f9c677ee5ee6fade89b/annexremote-1.6.6.tar.gz"
     sha256 "5f78d0753c0763d95fc4c52050bd6212bb32457d32f6575dc66a83178e0283a7"

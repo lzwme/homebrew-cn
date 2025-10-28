@@ -11,6 +11,7 @@ class Minizinc < Formula
     sha256 arm64_sequoia: "8ef0ae597cdefb9565ef9bb4e0b52d9a238fccd09bb3652d0e35cb9bf56cd253"
     sha256 arm64_sonoma:  "8a9d3758932cf80762b85f562f8e433d171718102d0f55c5cb05821e21c89af1"
     sha256 sonoma:        "8d3cd83922ae6f7fe0e769f8e55f23ee0467b93c69da8ad14808381c4e0e7f51"
+    sha256 arm64_linux:   "70d1ace81bf773bc8a470c5acfa5f70b23370201d47939e4ef813de42a051c51"
     sha256 x86_64_linux:  "a0a1f4098b52483439c4e3e3ca0cd5b10a548f2b373684f062f7bbf48548096f"
   end
 

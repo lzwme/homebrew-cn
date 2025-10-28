@@ -22,13 +22,14 @@ class VulkanProfiles < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => :build
   depends_on "vulkan-tools" => :test
   depends_on "jsoncpp"
   depends_on "valijson"
   depends_on "vulkan-headers"
   depends_on "vulkan-loader"
   depends_on "vulkan-utility-libraries"
+
+  uses_from_macos "python" => :build
 
   on_macos do
     depends_on "molten-vk" => :test
@@ -47,12 +48,12 @@ class VulkanProfiles < Formula
     inreplace "profiles/test/CMakeLists.txt", "jsoncpp_static", "jsoncpp"
 
     system "cmake", "-S", ".", "-B", "build",
-                    "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].prefix}",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath(target: Formula["vulkan-loader"].opt_lib)}",
+                    "-DPython3_EXECUTABLE=#{which("python3")}",
+                    "-DVALIJSON_INSTALL_DIR=#{Formula["valijson"].prefix}",
                     "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].prefix}",
                     "-DVULKAN_LOADER_INSTALL_DIR=#{Formula["vulkan-loader"].prefix}",
                     "-DVULKAN_UTILITY_LIBRARIES_INSTALL_DIR=#{Formula["vulkan-utility-libraries"].prefix}",
-                    "-DVALIJSON_INSTALL_DIR=#{Formula["valijson"].prefix}",
-                    "-DCMAKE_INSTALL_RPATH=#{rpath(target: Formula["vulkan-loader"].opt_lib)}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

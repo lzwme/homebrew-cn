@@ -22,6 +22,8 @@ class Bpython < Formula
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "certifi"
+
   resource "blessed" do
     url "https://files.pythonhosted.org/packages/7c/51/a72df7730aa34a94bc43cebecb7b63ffa42f019868637dbeb45e0620d26e/blessed-1.22.0.tar.gz"
     sha256 "1818efb7c10015478286f21a412fcdd31a3d8b94a18f6d926e733827da7a844b"

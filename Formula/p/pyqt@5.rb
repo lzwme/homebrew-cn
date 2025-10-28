@@ -22,6 +22,12 @@ class PyqtAT5 < Formula
   depends_on "python@3.13"
   depends_on "qt@5"
 
+  pypi_packages exclude_packages: %w[pyqt5-qt5 pyqt3d-qt5 pyqtchart-qt5
+                                     pyqtdatavisualization-qt5 pyqtnetworkauth-qt5
+                                     pyqtpurchasing-qt5 pyqtwebengine-qt5],
+                extra_packages:   %w[pyqt3d pyqtchart pyqtdatavisualization
+                                     pyqtnetworkauth pyqtpurchasing pyqtwebengine]
+
   # extra components
   resource "pyqt3d" do
     url "https://files.pythonhosted.org/packages/ba/96/ab5686191cabca224dc0ecefedf8ff4c50c9e358ae3495f9a23a57068885/PyQt3D-5.15.7.tar.gz"

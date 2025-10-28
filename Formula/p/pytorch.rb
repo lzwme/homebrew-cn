@@ -42,6 +42,10 @@ class Pytorch < Formula
     depends_on "libomp"
   end
 
+  pypi_packages package_name:     "torch[opt-einsum]",
+                extra_packages:   "pyyaml",
+                exclude_packages: "numpy"
+
   resource "filelock" do
     url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
     sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"

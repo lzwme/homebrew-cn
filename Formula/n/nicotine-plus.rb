@@ -28,6 +28,8 @@ class NicotinePlus < Formula
 
   conflicts_with "httm", because: "both install `nicotine` binaries"
 
+  pypi_packages exclude_packages: %w[pycairo pygobject]
+
   def install
     virtualenv_install_with_resources
   end

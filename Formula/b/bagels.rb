@@ -24,6 +24,8 @@ class Bagels < Formula
   depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: ["certifi", "numpy", "pydantic-core"]
+
   resource "aiohappyeyeballs" do
     url "https://files.pythonhosted.org/packages/26/30/f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54/aiohappyeyeballs-2.6.1.tar.gz"
     sha256 "c3f9d0113123803ccadfdf3f0faa505bc78e6a72d1cc4806cbd719826e943558"

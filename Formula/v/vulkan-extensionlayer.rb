@@ -21,7 +21,6 @@ class VulkanExtensionlayer < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.13" => :build
   depends_on "vulkan-loader" => :test
   depends_on "vulkan-tools" => :test
   depends_on "glslang"
@@ -41,11 +40,11 @@ class VulkanExtensionlayer < Formula
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_TESTS=OFF",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath(target: Formula["vulkan-loader"].opt_lib)}",
                     "-DGLSLANG_INSTALL_DIR=#{Formula["glslang"].prefix}",
                     "-DSPIRV_HEADERS_INSTALL_DIR=#{Formula["spirv-headers"].prefix}",
                     "-DSPIRV_TOOLS_INSTALL_DIR=#{Formula["spirv-tools"].prefix}",
                     "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].prefix}",
-                    "-DCMAKE_INSTALL_RPATH=#{rpath(target: Formula["vulkan-loader"].opt_lib)}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

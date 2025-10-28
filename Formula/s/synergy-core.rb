@@ -22,6 +22,7 @@ class SynergyCore < Formula
     sha256 cellar: :any,                 arm64_sequoia: "08d10a75a4b369dd67bd04159a660d6d8ebed3a3934ecd062fae29d3afd42b51"
     sha256 cellar: :any,                 arm64_sonoma:  "76bc87f5bedbb52183aca4f452a49a184a217a53a4f713dc1279c48882a1073c"
     sha256 cellar: :any,                 sonoma:        "6ba729c50b1ce75370f5340183f96167daff313757d879983a4d718456717a7c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2de649fe317a78e508e01f46ecd37dd9c35b15d2706ee7f4efbb537603aa67fd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "aec5aca73d1ddde4e6b4c708d0a9038d2b189b078699aa946279f6a41cd1de94"
   end
 

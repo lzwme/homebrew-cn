@@ -30,6 +30,9 @@ class Molecule < Formula
     depends_on "gmp"
   end
 
+  pypi_packages exclude_packages: ["certifi", "cryptography", "rpds-py"],
+                extra_packages:   "molecule-plugins[azure,docker,ec2,gce,podman,vagrant,openstack]"
+
   resource "ansible-compat" do
     url "https://files.pythonhosted.org/packages/ea/96/d5bcbd652dbcbf8611b32457d67b10e41e5e596e34460c25511ccfa6fbf1/ansible_compat-25.8.1.tar.gz"
     sha256 "f29ab81264b3f04fb94ac2d7f68fe73efc2eb3cbe4ecf00f9b4742e77c41756f"

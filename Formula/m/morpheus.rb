@@ -23,6 +23,9 @@ class Morpheus < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d216e4cd5fcec17db0a326688795f2ee4e3517379b79b3f94ef0f53a0f56ee3"
   end
 
+  # Can undeprecate if new release with Qt 6 support is available.
+  deprecate! date: "2026-05-19", because: "needs end-of-life Qt 5"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "ninja" => :build

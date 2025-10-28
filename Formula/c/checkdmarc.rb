@@ -3,18 +3,20 @@ class Checkdmarc < Formula
 
   desc "Command-line parser for SPF and DMARC DNS records"
   homepage "https://domainaware.github.io/checkdmarc/"
-  url "https://files.pythonhosted.org/packages/20/3d/a871b5bb4669c31999097e0cf30492b557c1d6868f0b4ada4b6868b84a0e/checkdmarc-5.12.12.tar.gz"
-  sha256 "910fadddfe64780ce3abef76ecd21b17d9b95447d2a8acac8b02309786594a17"
+  url "https://files.pythonhosted.org/packages/f7/e3/6d9d7e5fc780f6417f647589df2c38aa8bd806b2cdc3b8191c3d8851a6d8/checkdmarc-5.12.18.tar.gz"
+  sha256 "07cc52ebd0dfe7ac10cc06e77146920e85e4dfc4fb3990e50dea91c9fe39944b"
   license "Apache-2.0"
   head "https://github.com/domainaware/checkdmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "869562773b764964c9e1b0b6be2a74351bab50ce0ee6d79f755cee671d73eb04"
+    sha256 cellar: :any_skip_relocation, all: "ddb40cdcda9da9807ea79aff26fc583cac3fcc8575891842b41cd788bae1a348"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "python@3.14"
+
+  pypi_packages exclude_packages: ["certifi", "cryptography"]
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
@@ -47,8 +49,8 @@ class Checkdmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/b3/c8/601d71081116007acf54df35f8a149f1ff876cc8f84e7656a185c45f6212/publicsuffixlist-1.0.2.20251018.tar.gz"
-    sha256 "40320065ad2c96a351703a09ee93ae148ce7b6509f6c87cdae3bcf992ce761d2"
+    url "https://files.pythonhosted.org/packages/63/6b/6d5eb62061d48c7256e8ad4339483945e658a56e928f2096de10e048d196/publicsuffixlist-1.0.2.20251027.tar.gz"
+    sha256 "6a76d87f87822bc40874b598631d4f1b8b089972b695631dd28025b289ef6f54"
   end
 
   resource "pyleri" do

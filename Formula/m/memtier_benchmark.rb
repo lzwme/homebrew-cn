@@ -9,14 +9,13 @@ class MemtierBenchmark < Formula
   ]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6f7250cd7ec6fad9a1812331d92c5dddec2ab54861c0278caa8ef910e03a87e2"
-    sha256 cellar: :any,                 arm64_sequoia: "9457a25002adc784f4b64e7f7450b78ebefab7cf1ee69845b1bb66add9ab1aa0"
-    sha256 cellar: :any,                 arm64_sonoma:  "ecf0c6bae7f090a41bc42bf22342c997a175b7bf89480ed2a56e11980c387932"
-    sha256 cellar: :any,                 arm64_ventura: "9c88ffef0cb40817b88783d0282e0136295ed37e5e402f417904399c5f197c5c"
-    sha256 cellar: :any,                 sonoma:        "92788f00ae115e84e974e13eb28eb7744195b431a64f383d47c04592475ee9af"
-    sha256 cellar: :any,                 ventura:       "0aff9e251e7b54fbd43686af42b1245dac431386c8c5e8af5fc0e0cb633ce718"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c0167e937cc0c9c062cdd6ae76ee1bd37fcf8fa2266d74c05ce533e033f6128"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fd1bf48057bccd856e93cb57effc0c22a2832dd45770fba82da1049a97b8edd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "fe41e5410fbd6119297a0cd33096ab7e7b557f8fd00ef8c415f579659170abd9"
+    sha256 cellar: :any,                 arm64_sequoia: "2a7a858f3a3adef5a4b970642b090536e1debb3766cd254acd8b627e4d18747b"
+    sha256 cellar: :any,                 arm64_sonoma:  "84eafcf539ad203a2eb7044bff2632301490e02951d8b019a41ae4186cacc0ef"
+    sha256 cellar: :any,                 sonoma:        "6544f4bc25c790be6f0f93249580a05aca7d3f92d7f457a5430dfa127fa59b61"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "291b2c1df8539b7e33f65c459a159113808c173bc767393531363d060a149821"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ff298123c9b8d1d0fd2620edb33f388262d0502e88c0565958f754af714336d"
   end
 
   depends_on "autoconf" => :build
@@ -25,9 +24,14 @@ class MemtierBenchmark < Formula
   depends_on "pkgconf" => :build
   depends_on "libevent"
   depends_on "openssl@3"
-  depends_on "pcre"
 
   uses_from_macos "zlib"
+
+  # Backport removal of pcre dependency
+  patch do
+    url "https://github.com/RedisLabs/memtier_benchmark/commit/f3545b0f59ae21ad8b702aec9d15aacbccdbc41b.patch?full_index=1"
+    sha256 "f78c13a299e7f4dbcd5926b0e111f06143e187d915d7811e4290f12125deab65"
+  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"

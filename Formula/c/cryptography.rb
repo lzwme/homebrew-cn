@@ -24,6 +24,8 @@ class Cryptography < Formula
   depends_on "cffi"
   depends_on "openssl@3"
 
+  pypi_packages exclude_packages: ["cffi", "pycparser"]
+
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.start_with?("python@") }

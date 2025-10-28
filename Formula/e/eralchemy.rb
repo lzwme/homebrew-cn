@@ -24,6 +24,8 @@ class Eralchemy < Formula
   depends_on "openssl@3"
   depends_on "python@3.14"
 
+  pypi_packages package_name: "eralchemy[pygraphviz]"
+
   resource "pygraphviz" do
     url "https://files.pythonhosted.org/packages/66/ca/823d5c74a73d6b8b08e1f5aea12468ef334f0732c65cbb18df2a7f285c87/pygraphviz-1.14.tar.gz"
     sha256 "c10df02377f4e39b00ae17c862f4ee7e5767317f1c6b2dfd04cea6acc7fc2bea"

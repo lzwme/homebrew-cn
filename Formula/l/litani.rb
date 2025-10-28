@@ -14,6 +14,7 @@ class Litani < Formula
     sha256 cellar: :any,                 arm64_sequoia: "e90d4268066cfc34e1324f2b65fbc83ebd8b2c13727a8e5bb9fe2720fd7335bc"
     sha256 cellar: :any,                 arm64_sonoma:  "d3e1a4ef297c94137c6ee223fa246f89c45b11a2dd92a3778415efb923f8ec08"
     sha256 cellar: :any,                 sonoma:        "aa07f4bd06cfef36b6c1aeb00f0399dde3a5f2757905891ca77ba4ffaca0127e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "626ef7ddbb0b86a50f8f7f6e3f846afe918bb3820a26a4861e03186e1be97e0f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0331320a1a3ab0d6b7564b35460c0b455824aaadc7f9d0f757c73aee894e71c2"
   end
 
@@ -25,6 +26,9 @@ class Litani < Formula
   depends_on "libyaml"
   depends_on "ninja"
   depends_on "python@3.14"
+
+  pypi_packages package_name:   "",
+                extra_packages: %w[jinja2 markupsafe pyyaml]
 
   resource "jinja2" do
     url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"

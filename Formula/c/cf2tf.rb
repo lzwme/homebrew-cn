@@ -24,6 +24,8 @@ class Cf2tf < Formula
   depends_on "libyaml"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "certifi"
+
   resource "cfn-flip" do
     url "https://files.pythonhosted.org/packages/ca/75/8eba0bb52a6c58e347bc4c839b249d9f42380de93ed12a14eba4355387b4/cfn_flip-1.3.0.tar.gz"
     sha256 "003e02a089c35e1230ffd0e1bcfbbc4b12cc7d2deb2fcc6c4228ac9819307362"

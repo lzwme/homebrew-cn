@@ -25,6 +25,7 @@ class Fceux < Formula
     sha256 cellar: :any,                 arm64_sequoia: "c0cdaad08a0323f11edb6db89c7f50c018b2e4f1021c5e1cad66ac18d3f5a305"
     sha256 cellar: :any,                 arm64_sonoma:  "c03762741adede92ee199469213b5a6ebf7ee634fbe294c4ee3f3370b4494988"
     sha256                               sonoma:        "e38989774281ec572e98c9e09f4ebfb4403665b6964a0c7845dfd9c7c824e2ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6b5e684062b836bfc484140572a58e3ff7f0b0b5b43337181a9f35a2f3c67b7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a8a531cd8a3c7be8f095419340bc7ecc76d387fa593757b3aa06515da3ce0a2"
   end
 

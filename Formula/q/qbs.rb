@@ -20,6 +20,7 @@ class Qbs < Formula
     sha256 cellar: :any,                 arm64_sequoia: "c5e5fb99b337335c18f46d8721b0e82ab97cd74351c4025feb075eab2727f09d"
     sha256 cellar: :any,                 arm64_sonoma:  "e2c235f11a830f1967151e7f32424f0c006d9c12e2ddf7259bf2669a5e565018"
     sha256 cellar: :any,                 sonoma:        "60d8ab7fac172ea142e1afc746d435735054893df4f61aab574c2fddd22a34bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "583128715207a3935a1884a5b90abd6d2ddbfc6935d938f8f31219779dafacec"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "36e8b8723bbd9f347e6f41afdfb41de3b3c658c8860e843ba41f9adbbf3f1b48"
   end
 

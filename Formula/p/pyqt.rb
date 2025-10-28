@@ -44,6 +44,12 @@ class Pyqt < Formula
     depends_on "qtwebengine"
   end
 
+  pypi_packages exclude_packages: %w[pyqt6-3d-qt6 pyqt6-charts-qt6
+                                     pyqt6-datavisualization-qt6 pyqt6-networkauth-qt6
+                                     pyqt6-webengine-qt6 pyqt6-qt6],
+                extra_packages:   %w[pyqt6-3d pyqt6-charts pyqt6-datavisualization
+                                     pyqt6-networkauth pyqt6-webengine]
+
   # extra components
   resource "pyqt6-3d" do
     url "https://files.pythonhosted.org/packages/b3/1a/89e4bbc1c604d3a450111a7600d256b371200bf616157efd48c13f5646d3/pyqt6_3d-6.9.0.tar.gz"

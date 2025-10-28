@@ -24,6 +24,8 @@ class Dolphie < Formula
   depends_on "cryptography" => :no_linkage
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: ["certifi", "cryptography"]
+
   # `tree-sitter-*` sdists are missing C headers and therefore we have to use GitHub sources
   # Resources can be updated the following way:
   # 1. remove all resources to GitHub sources

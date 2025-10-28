@@ -29,6 +29,9 @@ class DvrScan < Formula
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
   end
 
+  pypi_packages exclude_packages: "numpy",
+                extra_packages:   "pyobjc-framework-cocoa"
+
   resource "click" do
     url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
     sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"

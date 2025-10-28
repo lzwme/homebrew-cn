@@ -22,6 +22,9 @@ class Zim < Formula
   depends_on "pygobject3"
   depends_on "python@3.14"
 
+  pypi_packages package_name:   "",
+                extra_packages: "pyxdg"
+
   resource "pyxdg" do
     url "https://files.pythonhosted.org/packages/b0/25/7998cd2dec731acbd438fbf91bc619603fc5188de0a9a17699a781840452/pyxdg-0.28.tar.gz"
     sha256 "3267bb3074e934df202af2ee0868575484108581e6f3cb006af1da35395e88b4"

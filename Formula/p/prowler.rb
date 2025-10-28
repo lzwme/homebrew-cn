@@ -35,6 +35,8 @@ class Prowler < Formula
     depends_on "openblas"
   end
 
+  pypi_packages exclude_packages: "certifi"
+
   resource "about-time" do
     url "https://files.pythonhosted.org/packages/1c/3f/ccb16bdc53ebb81c1bf837c1ee4b5b0b69584fd2e4a802a2a79936691c0a/about-time-4.2.1.tar.gz"
     sha256 "6a538862d33ce67d997429d14998310e1dbfda6cb7d9bbfbf799c4709847fece"

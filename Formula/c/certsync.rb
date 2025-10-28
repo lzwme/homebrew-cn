@@ -24,6 +24,9 @@ class Certsync < Formula
 
   uses_from_macos "libffi"
 
+  pypi_packages exclude_packages: ["certifi", "cryptography"],
+                extra_packages:   "pycryptodomex"
+
   resource "asn1crypto" do
     url "https://files.pythonhosted.org/packages/de/cf/d547feed25b5244fcb9392e288ff9fdc3280b10260362fc45d37a798a6ee/asn1crypto-1.5.1.tar.gz"
     sha256 "13ae38502be632115abf8a24cbe5f4da52e3b5231990aff31123c805306ccb9c"

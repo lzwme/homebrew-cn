@@ -6,6 +6,11 @@ class SwiftSection < Formula
   license "MIT"
   head "https://github.com/MxIris-Reverse-Engineering/MachOSwiftSection.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "98fc25f87480b0c9cb1d92255eb6a4ecc53f4abde7259e6eb4d52463560f865d"

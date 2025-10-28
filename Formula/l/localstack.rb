@@ -24,6 +24,8 @@ class Localstack < Formula
   depends_on "libyaml"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: %w[certifi cryptography]
+
   resource "avro" do
     url "https://files.pythonhosted.org/packages/60/00/af1eec633637e12d0945a97f05a429eed83ac45865af60cb453db4689d95/avro-1.12.1.tar.gz"
     sha256 "c5b8dd2dd4c10816f0dc127cc29cfd43b5e405cf7e6840e89460a024bf3d098d"

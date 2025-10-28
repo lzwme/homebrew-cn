@@ -18,6 +18,8 @@ class Touca < Formula
   depends_on "certifi"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "certifi"
+
   resource "commonmark" do
     url "https://files.pythonhosted.org/packages/60/48/a60f593447e8f0894ebb7f6e6c1f25dafc5e89c5879fdc9360ae93ff83f0/commonmark-0.9.1.tar.gz"
     sha256 "452f9dc859be7f06631ddcb328b6919c67984aca654e5fefb3914d54691aed60"

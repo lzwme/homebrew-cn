@@ -23,6 +23,8 @@ class Mk < Formula
   depends_on "libyaml"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "certifi"
+
   resource "build" do
     url "https://files.pythonhosted.org/packages/25/1c/23e33405a7c9eac261dff640926b8b5adaed6a6eb3e1767d441ed611d0c0/build-1.3.0.tar.gz"
     sha256 "698edd0ea270bde950f53aed21f3a0135672206f3911e0176261a31e0e07b397"

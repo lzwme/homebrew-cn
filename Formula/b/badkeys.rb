@@ -24,6 +24,8 @@ class Badkeys < Formula
   depends_on "mpfr"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "cryptography"
+
   resource "gmpy2" do
     url "https://files.pythonhosted.org/packages/07/bd/c6c154ce734a3e6187871b323297d8e5f3bdf9feaafc5212381538bc19e4/gmpy2-2.2.1.tar.gz"
     sha256 "e83e07567441b78cb87544910cb3cc4fe94e7da987e93ef7622e76fb96650432"

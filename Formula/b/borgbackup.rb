@@ -29,6 +29,8 @@ class Borgbackup < Formula
     depends_on "acl"
   end
 
+  pypi_packages extra_packages: ["msgpack", "packaging"]
+
   # `msgpack` needs to be kept as v1.1.0
 
   resource "msgpack" do

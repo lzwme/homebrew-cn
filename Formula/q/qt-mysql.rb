@@ -16,6 +16,7 @@ class QtMysql < Formula
     sha256 cellar: :any,                 arm64_sequoia: "cb39625e7ecc3d831816a78ded763f008b17638f06a6b805ff073f1af0a7c25d"
     sha256 cellar: :any,                 arm64_sonoma:  "5e657faa6c8719a3ec947b74be625ab0aa69fa8cfa300ae9abeddd7fdfe27651"
     sha256 cellar: :any,                 sonoma:        "4eb26a9b9cc88ebb0a67577fb709b5a6695e545eca42f4031b9a04551e11bd5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1cba2d622571e3a5bf15d541102f60280ea2dd7d6d20b6588ddec79397b2f4ac"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d512ed74acd9d1509d6d0e9ee829ca01cdb0e4d2ce96904a1a0c196587e3ad3e"
   end
 

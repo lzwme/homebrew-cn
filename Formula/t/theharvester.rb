@@ -28,6 +28,9 @@ class Theharvester < Formula
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
+  pypi_packages exclude_packages: ["cffi", "certifi", "pydantic-core"],
+                extra_packages:   ["greenlet", "pyee"]
+
   # `uvloop` is manually updated to support Python 3.14, remove in next release
 
   # No sdist on PyPI, so we use the GitHub tarball

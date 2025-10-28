@@ -21,6 +21,9 @@ class Inspectrum < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebd0cb2283b88fad36bb8c481cab44ee8fa12be897a798697d3643646772cf4c"
   end
 
+  # Can undeprecate if new release with Qt 6 support is available.
+  deprecate! date: "2026-05-19", because: "needs end-of-life Qt 5"
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 

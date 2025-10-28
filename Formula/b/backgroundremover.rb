@@ -14,6 +14,7 @@ class Backgroundremover < Formula
     sha256 cellar: :any,                 arm64_sequoia: "e083a60c6869c60574e1968a635b7d8f1654cfb0dfae5a0da4a29c58066667ed"
     sha256 cellar: :any,                 arm64_sonoma:  "a8718a44aa6a253f9b9af1fca66e406eb1cb96bb28f8f1ff4de50579e1173558"
     sha256 cellar: :any,                 sonoma:        "c2981ba9aa8107bcd22fa3f542b50ef164a0d967c5f2bf723b7d658e4eba2326"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0f7510adcb19eff67fef89eda903390de96d266747fc21b8757fa1cef652fd5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "21cb19aaaf5b99436075ad9d0d9eb7d3aef96eb4357d6b20c25b6ac2c3b04294"
   end
 
@@ -31,6 +32,9 @@ class Backgroundremover < Formula
   on_linux do
     depends_on "patchelf" => :build
   end
+
+  pypi_packages exclude_packages: %w[certifi numpy torch torchvision pillow scipy scikit-image],
+                extra_packages:   "imageio"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"

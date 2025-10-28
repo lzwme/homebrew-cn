@@ -33,6 +33,8 @@ class Torchvision < Formula
   depends_on "pytorch"
   depends_on "webp"
 
+  pypi_packages exclude_packages: %w[certifi numpy pillow torch]
+
   def install
     # Avoid overlinking to `abseil`, `libomp` and `protobuf`
     args = OS.mac? ? ["-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs"] : []

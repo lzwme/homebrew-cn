@@ -16,7 +16,7 @@ class Libtensorflow < Formula
 
   depends_on "bazelisk" => :build
   depends_on "numpy" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.13" => :build # Python 3.14 support: https://github.com/tensorflow/tensorflow/issues/102890
 
   on_macos do
     depends_on "gnu-getopt" => :build

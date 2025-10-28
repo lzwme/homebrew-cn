@@ -14,6 +14,7 @@ class CharmTools < Formula
     sha256 cellar: :any,                 arm64_sequoia: "b9bf1be845d1f2954c4a718ee1b854222b8bc45dbe165fbd1a5f40cbb0185130"
     sha256 cellar: :any,                 arm64_sonoma:  "a3826f2a3b51fcd9677d48ee893a240a719a7f48e56083b5f5f21ec90e57c966"
     sha256 cellar: :any,                 sonoma:        "9f20b909364fe5d9d3bdef216eaa78b297e2884fce1354f4b215965df23f0c7f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "27e82e59687b12734a32041d42c8928d5cd8620c4835a46592ea0c040f62ef28"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7366a0245c76bc92f9b038df28c3f88182e4f7d07e0d2f47472416d2ae29981a"
   end
 
@@ -26,6 +27,9 @@ class CharmTools < Formula
   on_linux do
     depends_on "gmp"
   end
+
+  pypi_packages exclude_packages: ["cheetah3", "certifi", "cryptography"],
+                extra_packages:   "ct3"
 
   # `ruamel-yaml` is manually updated to support Python 3.14
   # PR ref: https://github.com/juju/charm-tools/pull/685

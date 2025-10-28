@@ -23,6 +23,9 @@ class Xdot < Formula
   depends_on "pygobject3"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: ["numpy", "pygobject"],
+                extra_packages:   "graphviz"
+
   resource "graphviz" do
     url "https://files.pythonhosted.org/packages/fa/83/5a40d19b8347f017e417710907f824915fba411a9befd092e52746b63e9f/graphviz-0.20.3.zip"
     sha256 "09d6bc81e6a9fa392e7ba52135a9d49f1ed62526f96499325930e87ca1b5925d"

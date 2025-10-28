@@ -3,17 +3,17 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/23/51/f493351621444b9950d27bc52ace4561d7a38d9c0ba19b0e7032933be8cd/kimi_cli-0.40.tar.gz"
-  sha256 "94cad9ccb63095eef4f64702545e36e01c415a8716a76604f2b222fb8403b1af"
+  url "https://files.pythonhosted.org/packages/17/73/87248c28ebfbf29103448beada56708e15b95437ec9ada06a74ec4aa32cb/kimi_cli-0.42.tar.gz"
+  sha256 "a4e6c353e0e12cbbb02bc9c453526b8c88a52ef372047888450f25799f249add"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "21229948eae88e10f97723dd4bb62d428f8afb96ffb249bd8504637ed227fe6e"
-    sha256 cellar: :any,                 arm64_sequoia: "90d8a75076fbe294f84ac0a2583afc53a0968cd51fcbc74139b0d0ee007b0534"
-    sha256 cellar: :any,                 arm64_sonoma:  "3d93b8eae4099ad363b2eadc63e6fc233f3d1ff5ba0f96cb29b6216e546edd78"
-    sha256 cellar: :any,                 sonoma:        "c36072e68edc31cd6ea9df710e8079f33ef4cd7afbb630a0a529f02f15d23e5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fa3422263c6a08376c640c567ad92f2f31ca473805eb9bfafcd1da7e80263a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "677ee3c46498dbe7ec9fb86eaffae3ff02b8fcf9189a0baf28b0b6b351530181"
+    sha256 cellar: :any,                 arm64_tahoe:   "227fc4bfcc72380a2d5a197944e06898e7e2a60946a8a16588154cd39baa5577"
+    sha256 cellar: :any,                 arm64_sequoia: "1d9c07d2d1fe9d2893f3bf838f0d845804a93ceee9d348ffce1562c6d5adeb46"
+    sha256 cellar: :any,                 arm64_sonoma:  "721f5669050b54d63da26634d457af91b4c659da94aeddbe73a3971662359dfb"
+    sha256 cellar: :any,                 sonoma:        "50cedea5742cbd150f4024b883bd7d492d32c45340cfa7f61971770f520f7294"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "90cd4088b8eaf87c62048ca03e8b9d1ff386e0f21aa190c7f0412c02904c07df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64c64cb598503fbf004f4b9243703b1d1af2a28dd8d34d9bf998446c9613c19f"
   end
 
   depends_on "pkgconf" => :build
@@ -80,8 +80,8 @@ class KimiCli < Formula
   end
 
   resource "beartype" do
-    url "https://files.pythonhosted.org/packages/86/51/97f0d11d613d3b9650bd75588ff5206a408afcdc337ab7108dafb4c8d1ec/beartype-0.22.3.tar.gz"
-    sha256 "391c457bd6463d6fb0ec5d7e28ad44c336ae02dbaaae0fc55c053b071554855b"
+    url "https://files.pythonhosted.org/packages/e8/77/af43bdf737723b28130f2cb595ec0f23e0e757d211fe068fd0ccdb77d786/beartype-0.22.4.tar.gz"
+    sha256 "68284c7803efd190b1b4639a0ab1a17677af9571b8a2ef5a169d10cb8955b01f"
   end
 
   resource "cachetools" do
@@ -155,8 +155,8 @@ class KimiCli < Formula
   end
 
   resource "fastmcp" do
-    url "https://files.pythonhosted.org/packages/bc/3b/c30af894db2c3ec439d0e4168ba7ce705474cabdd0a599033ad9a19ad977/fastmcp-2.13.0.tar.gz"
-    sha256 "57f7b7503363e1babc0d1a13af18252b80366a409e1de85f1256cce66a4bee35"
+    url "https://files.pythonhosted.org/packages/f2/bd/ad8a0cc9ea3e8bfe8fb63a00be985d4c887c3c0a454d26c712c160af489f/fastmcp-2.13.0.1.tar.gz"
+    sha256 "d6dbd52a6b06fc1797db9fe0b487db966b4a4d34d9c7dd87b9918d5ec775dcb7"
   end
 
   resource "frozenlist" do
@@ -395,8 +395,8 @@ class KimiCli < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
-    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
+    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
+    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
   end
 
   resource "python-multipart" do
@@ -556,6 +556,6 @@ class KimiCli < Formula
     assert_match version.to_s, shell_output("#{bin}/kimi --version")
 
     output = pipe_output("#{bin}/kimi 2>&1", "")
-    assert_match "LLM not set, send /setup to configure", output
+    assert_match "Model: not set, send /setup to configure", output
   end
 end

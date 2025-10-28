@@ -21,6 +21,8 @@ class Badread < Formula
   depends_on "python@3.14"
   depends_on "scipy" => :no_linkage
 
+  pypi_packages exclude_packages: ["numpy", "scipy"]
+
   resource "edlib" do
     url "https://files.pythonhosted.org/packages/0c/dd/caa71ef15b46375e01581812e52ec8e3f4da0686f370e8b9179eb5f748fb/edlib-1.3.9.post1.tar.gz"
     sha256 "b0fb6e85882cab02208ccd6daa46f80cb9ff1d05764e91bf22920a01d7a6fbfa"

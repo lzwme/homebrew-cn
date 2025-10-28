@@ -15,6 +15,7 @@ class Qmmp < Formula
     sha256 cellar: :any,                 arm64_sequoia: "7fa781c7162c07690e998ab6c9d598f24115ceedca718bd12528c15b96d243ed"
     sha256 cellar: :any,                 arm64_sonoma:  "3fc459eb502ada770aa7fbfcc3e0e311bdea4f39d6ff4d4b341453b01ba4a948"
     sha256 cellar: :any,                 sonoma:        "0a74c8a1511f9c9347723a0d6a478fb0d9a93604649804f5011310ea4a5b4a2b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fe28066049c5fc79e28a19dd8aced21f78deaa12fecfbfb017a827a7aba2e3e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a643156b0ee13bbeb993e38550a14fe2c367de12828fa8a18cf7db7e5e083531"
   end
 

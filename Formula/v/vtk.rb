@@ -16,6 +16,7 @@ class Vtk < Formula
   end
 
   depends_on "cmake" => [:build, :test]
+  depends_on "pyqt" => :test
   depends_on "boost"
   depends_on "cgns"
   depends_on "double-conversion"
@@ -34,7 +35,6 @@ class Vtk < Formula
   depends_on "nlohmann-json"
   depends_on "proj"
   depends_on "pugixml"
-  depends_on "pyqt"
   depends_on "python@3.14"
   depends_on "qtbase"
   depends_on "qtdeclarative"
@@ -153,5 +153,6 @@ class Vtk < Formula
     PYTHON
 
     system bin/"vtkpython", "Distance2BetweenPoints.py"
+    system bin/"vtkpython", "-c", "from vtkmodules.qt.QVTKRenderWindowInteractor import QVTKRenderWindowInteractor"
   end
 end

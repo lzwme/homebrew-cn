@@ -23,6 +23,8 @@ class Trailscraper < Formula
 
   depends_on "python@3.14"
 
+  pypi_packages extra_packages: "setuptools"
+
   resource "boto3" do
     url "https://files.pythonhosted.org/packages/32/f7/b870fb8d2ca96a996db97c9d30d1eb087b341cec1004722e99672a79800d/boto3-1.37.9.tar.gz"
     sha256 "51b76da93d7c2a3dff6155ee4aa25455940e7ade08292d22aeeed08b9e0dbf0b"

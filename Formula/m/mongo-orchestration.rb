@@ -21,6 +21,8 @@ class MongoOrchestration < Formula
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "certifi"
+
   resource "bottle" do
     url "https://files.pythonhosted.org/packages/7a/71/cca6167c06d00c81375fd668719df245864076d284f7cb46a694cbeb5454/bottle-0.13.4.tar.gz"
     sha256 "787e78327e12b227938de02248333d788cfe45987edca735f8f88e03472c3f47"

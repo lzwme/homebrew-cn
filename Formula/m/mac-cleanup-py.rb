@@ -21,6 +21,8 @@ class MacCleanupPy < Formula
   depends_on "cffi"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: ["cffi", "pycparser"]
+
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
     sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"

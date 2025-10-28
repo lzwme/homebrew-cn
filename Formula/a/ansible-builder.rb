@@ -3,23 +3,24 @@ class AnsibleBuilder < Formula
 
   desc "CLI tool for building Ansible Execution Environments (Containers)"
   homepage "https://ansible-builder.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/3c/d5/c94e86098107209a82de9401ec31413fabd4236af0be9427c57a5bdbf855/ansible_builder-3.1.0.tar.gz"
-  sha256 "d2dc573e26a7bd5095e98aeb37ee9b00bc9f5005abea7147d74229c0f3426fcb"
+  url "https://files.pythonhosted.org/packages/fe/6b/0525894e5dd510c3a67da0b8819209333ca939cfa94b7f0d3ef041a628ec/ansible_builder-3.1.1.tar.gz"
+  sha256 "9d88bc15acc7d31056d0c51914a6102dac8e5ad73f9f2d35ba98378c89714ed2"
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "c72abbb4a0c0331cbd9933ac2c83c23264c995a5fd0b7a0cae035b3ab0f21f36"
-    sha256 cellar: :any,                 arm64_sequoia: "ec921bbdc259d52d3504e33d8b4108866b2f9aef7a812361405f93d18b72db1a"
-    sha256 cellar: :any,                 arm64_sonoma:  "563a697596985997fc9aefd5a46506fd530c4dc6bdf39b172ce8ed954f6976f8"
-    sha256 cellar: :any,                 sonoma:        "1cc92ea51a30f59be651219380c6c95c81e933cf55d8152b017711a02368c1d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb39f4a98fe899a582a655adc10ae9c17c298abf194abd4dc06b1a259e7c8392"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "579af0012cfe5b4b00dc464b6be7bc4b7e5ccfa853a4af4b587ed8e7a1299ff9"
+    sha256 cellar: :any,                 arm64_tahoe:   "030e0175318b171c3d580e0e1300b1d387a947b1e6d1d6a1bd619dab0cc46ce6"
+    sha256 cellar: :any,                 arm64_sequoia: "33a173da8eba8ee2ae6fb00ca9266c62eccb47cf0e93f79b59da14c523d55499"
+    sha256 cellar: :any,                 arm64_sonoma:  "573391108eac3b6a9466ffda19876b44366b44e3be2f7d4d342e96ec230dc265"
+    sha256 cellar: :any,                 sonoma:        "a81de84cbf633d655d4089ae76c19c28ab55b30db050873d8abdc46d917f619a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "00f7fc506d516b318030fe07e59d2ef21435353014bf2d660d756a49940e8129"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "140f9e227e3758a28f256a5b213f54b73e8e130d7ebcf5784e5f8444b50021d0"
   end
 
   depends_on "libyaml"
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
+
+  pypi_packages exclude_packages: "rpds-py"
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
@@ -67,8 +68,8 @@ class AnsibleBuilder < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
-    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
+    url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
+    sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
   end
 
   resource "setuptools" do

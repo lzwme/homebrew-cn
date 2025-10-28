@@ -19,6 +19,7 @@ class Clazy < Formula
     sha256 cellar: :any,                 arm64_ventura: "f6af64aef4696d355d87c6def7d18b3cc7cd6d36a5a2932bccecc3d893371d99"
     sha256 cellar: :any,                 sonoma:        "cf75552ce773a8e7b822c4b2f7c6bbbaef2b1977ed6715c022de3769fb0ff906"
     sha256 cellar: :any,                 ventura:       "5152cbc2134bfcb219b9e0c95ec62500910cd775248a8168db30fe09057b8ddc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5864e4e777baf1d2c91a147981eded0fd897b199af58de11bfbfd7857afa31d8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ec42d9e2bb8e000491b657536396520554521bc03cf1d6f41638af98b007e20"
   end
 

@@ -10,6 +10,7 @@ class Qxmpp < Formula
     sha256 cellar: :any,                 arm64_sequoia: "6333f736c870a3281ab985f60d7bc9ebf6794e03ad06cd0b25c036a9fadffe1e"
     sha256 cellar: :any,                 arm64_sonoma:  "96ade5ffd3bd722939e8e8ae5400bf37b076b81d6bfb555c711ad56df6c6c510"
     sha256 cellar: :any,                 sonoma:        "7abb7b04f9bcf03446bb731223e89cbd2b823275089948281d473959dbd70b14"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2baaec7a642c6c283025f3707d0691955b92a1636be59fb739748302ac9f5faa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0cb30f679858afb6133e09e3de793b2dded1e1e7b5dc5fd5796df2ad70d191b"
   end
 

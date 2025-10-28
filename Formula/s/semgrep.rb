@@ -5,8 +5,8 @@ class Semgrep < Formula
   homepage "https://semgrep.dev"
   # pull from git tag to get submodules
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.140.0",
-      revision: "5a5d862f84b30d2237aa23a15d67f32d387c2ad8"
+      tag:      "v1.141.0",
+      revision: "9f972b3b65f64ec02b4a841d1ca8c300f528f4f0"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
@@ -16,12 +16,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9b5730e35987c49d3d7fa7349d66b5703743d0fbe78145837bcd55c8d7b16f1a"
-    sha256 cellar: :any, arm64_sequoia: "ada4bff3480c08262254954e373736bcd51a5c998927997f94cde04f23ceb863"
-    sha256 cellar: :any, arm64_sonoma:  "fb3ea65ef64d6ad2a459825047f86bad609ce007e4fe2c21b3fc75fe799e7ac1"
-    sha256 cellar: :any, sonoma:        "74225e9224a8f718a5b28015204fcf6daeac962bacd2ef48a16a69d8aefd7331"
-    sha256               arm64_linux:   "2ad559d4f0d1b2649dfcde590388fbf14cd7a57d6e80a209aa21493070263aec"
-    sha256               x86_64_linux:  "a62b90943fac47c5907663f8a935a95c1ff99e99a88ab11b90e00ba811edec9e"
+    sha256 cellar: :any, arm64_tahoe:   "5b526a47b44e29e5155d6495fa5e9268e0994e11ddce6e9955d27096585f3b7b"
+    sha256 cellar: :any, arm64_sequoia: "5beeeda7638d10fd473dd05c2b0b2d7f27e0ff3520077af3f1f534790bcc646b"
+    sha256 cellar: :any, arm64_sonoma:  "efa2924bfd8d93a0a32dee2f0f7df60ef8a6250436c35901063284df7d192f2a"
+    sha256 cellar: :any, sonoma:        "cbe97db9ad85352b7b8492ba35124f3465a54f89ad50b4b4f1b2e85628d81e3a"
+    sha256               arm64_linux:   "4558a11b371711ae75c2029ed35d246535787841f4dd71b2f75493abdba6e68e"
+    sha256               x86_64_linux:  "4cfa08b362de4163aa4d39df6cd512bd4043bb9dde221423641466e0f4194da0"
   end
 
   depends_on "autoconf" => :build
@@ -95,11 +95,6 @@ class Semgrep < Formula
   resource "colorama" do
     url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
     sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
-  end
-
-  resource "defusedxml" do
-    url "https://files.pythonhosted.org/packages/0f/d5/c66da9b79e5bdb124974bfe172b4daf3c984ebd9c2a06e2b8a4dc7331c72/defusedxml-0.7.1.tar.gz"
-    sha256 "1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69"
   end
 
   resource "exceptiongroup" do
@@ -258,8 +253,8 @@ class Semgrep < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
-    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
+    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
+    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
   end
 
   resource "python-multipart" do
@@ -283,13 +278,13 @@ class Semgrep < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/e9/dd/2c0cbe774744272b0ae725f44032c77bdcab6e8bcf544bffa3b6e70c8dba/rpds_py-0.27.1.tar.gz"
-    sha256 "26a1c73171d10b7acccbded82bf6a586ab8203601e565badc74bbbf8bc5a10f8"
+    url "https://files.pythonhosted.org/packages/48/dc/95f074d43452b3ef5d06276696ece4b3b5d696e7c9ad7173c54b1390cd70/rpds_py-0.28.0.tar.gz"
+    sha256 "abd4df20485a0983e2ca334a216249b6186d6e3c1627e106651943dbdb791aea"
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/3e/db/f3950f5e5031b618aae9f423a39bf81a55c148aecd15a34527898e752cf4/ruamel.yaml-0.18.15.tar.gz"
-    sha256 "dbfca74b018c4c3fba0b9cc9ee33e53c371194a9000e694995e620490fd40700"
+    url "https://files.pythonhosted.org/packages/9f/c7/ee630b29e04a672ecfc9b63227c87fd7a37eb67c1bf30fe95376437f897c/ruamel.yaml-0.18.16.tar.gz"
+    sha256 "a6e587512f3c998b2225d68aa1f35111c29fad14aed561a26e73fab729ec5e5a"
   end
 
   resource "ruamel-yaml-clib" do
@@ -350,13 +345,6 @@ class Semgrep < Formula
   resource "zipp" do
     url "https://files.pythonhosted.org/packages/e3/02/0f2892c661036d50ede074e376733dca2ae7c6eb617489437771209d4180/zipp-3.23.0.tar.gz"
     sha256 "a07157588a12518c9d4034df3fbbee09c814741a33ff63c05fa29d26a2404166"
-  end
-
-  # Avoid breaking change in cmdliner dep: https://github.com/semgrep/ocaml-tree-sitter-core/pull/101
-  patch do
-    url "https://github.com/semgrep/ocaml-tree-sitter-core/commit/d54d4801e1223df89e07c74dfa491a52114f4992.patch?full_index=1"
-    sha256 "1c94a8eec941f54fe410c9d4f523d8999cb35757e34ac758e1bd60282532fe7a"
-    directory "libs/ocaml-tree-sitter-core"
   end
 
   def install

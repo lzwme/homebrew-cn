@@ -20,6 +20,8 @@ class Pygit2 < Formula
   depends_on "cffi"
   depends_on "libgit2"
 
+  pypi_packages exclude_packages: %w[cffi pycparser]
+
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.start_with?("python@") }

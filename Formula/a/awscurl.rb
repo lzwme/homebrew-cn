@@ -20,6 +20,8 @@ class Awscurl < Formula
 
   uses_from_macos "libffi"
 
+  pypi_packages exclude_packages: ["certifi", "cryptography"]
+
   resource "botocore" do
     url "https://files.pythonhosted.org/packages/d1/c8/8c7509d7fa26de03d21673f18a1edc1ac98198ba261a2b943774ed4f1c44/botocore-1.40.54.tar.gz"
     sha256 "808232d9fcbf2c295b6e7cd1897119ee2fb97e756edfb313aa6d27ba0b281c66"

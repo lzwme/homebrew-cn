@@ -1,18 +1,18 @@
 class CloudProviderKind < Formula
   desc "Cloud provider for KIND clusters"
   homepage "https://github.com/kubernetes-sigs/cloud-provider-kind"
-  url "https://ghfast.top/https://github.com/kubernetes-sigs/cloud-provider-kind/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "f12d6650438776abd6745f5a1f061e15acb10a77476ac4c2387109d05233f617"
+  url "https://ghfast.top/https://github.com/kubernetes-sigs/cloud-provider-kind/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "bfeeabdeb12d742608492e56b3ac261d3208ded72f9335b3195695654a00909f"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cloud-provider-kind.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "304f7e97da9f0e268909730eafc70139b8dd99bba27be1b068ae27aa156d1134"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afc5e9de8ed89265fd41b2afb4424ee12203bb8bc0cfc1ff9e5a26eb07a7de1e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50844de15064d8e8c00f310a2116db9bd05e3936706d52e87d807a3fe6cfa75b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3ffd1fd7cef253a5e8564eae3e3b6e86519823d48dc4ba43f094843eae298a7e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "24bb13b81fc2313d284c32674569df96f1d11eed1e3c4c579b20341afd85cd1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c30aba4804b6833987b320dd2f295a56ef6d2ad7cccfc48903b941b04cfe53e9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd6809959e5c4db2f5d16a0a3377d298d23831a8aa0889b15d5e43c1cdefdeb3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "501076b26258448230a71be544bf5a3f11cb7c160f69d3c87123b0f46191112e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f662274498463cd4691da354b29effaf4c8f9650c7f767e6801bb362a42e0931"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0cc93b9511006780da356d6c60689522cf1b346f4a890f80cd22fd64eaa3b5a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "571409c17bfae88192e6422fefb598b2ccdb3ed7467c3506cfb6e850973a4ce5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32d44aaa54e496caea95f534a143997243d4e96acda85d7fb8f42b7aac59bf3e"
   end
 
   depends_on "go" => :build

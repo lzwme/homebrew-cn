@@ -24,6 +24,7 @@ class Carla < Formula
     sha256 cellar: :any,                 arm64_ventura: "ecbea509ddf5ef1074d5838e01669a49d48c24baf4ec10d816d894cb39830b7c"
     sha256 cellar: :any,                 sonoma:        "768c0fccfd67bafa8c1e23bbf0531ae88e3f756d4d074079fbad4c7c2b0fe202"
     sha256 cellar: :any,                 ventura:       "8e2274219eda8243736ed5e015cdb5ef62a2add1c1e59280e0ba84738c66abf3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7d4f3b3406c8b75150904c92a51b6e7257ca13154fd4a47c372244b4050039d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a63e9f2d8ecfb2fbee7417dc8b0cb21fd55d64f5d75ae9cdf8d09cd60621c0b"
   end
 

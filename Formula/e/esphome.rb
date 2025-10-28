@@ -22,6 +22,8 @@ class Esphome < Formula
   depends_on "pillow" => :no_linkage
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: ["certifi", "cryptography", "pillow"]
+
   resource "aioesphomeapi" do
     url "https://files.pythonhosted.org/packages/89/d3/1c0f83cb544756a8f5fa35578fcb15d29ca91b3fe54fb65f7f43603b816a/aioesphomeapi-41.16.1.tar.gz"
     sha256 "92d43dbb643e5c8882d183b57a8704e798a7c45f91ffbda68354d1ce5a95eb03"

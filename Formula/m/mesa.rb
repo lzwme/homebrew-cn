@@ -41,7 +41,7 @@ class Mesa < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "rust" => :build
   depends_on "xorgproto" => :build
 
@@ -86,6 +86,9 @@ class Mesa < Formula
     end
   end
 
+  pypi_packages package_name:   "",
+                extra_packages: %w[mako packaging ply pyyaml]
+
   resource "mako" do
     url "https://files.pythonhosted.org/packages/9e/38/bd5b78a920a64d708fe6bc8e0a2c075e1389d53bef8413725c63ba041535/mako-1.3.10.tar.gz"
     sha256 "99579a6f39583fa7e5630a28c3c1f440e4e97a414b80372649c0ce338da2ea28"
@@ -112,7 +115,7 @@ class Mesa < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

@@ -18,6 +18,7 @@ class Gpsbabel < Formula
     sha256 cellar: :any,                 arm64_sequoia: "66058dc38c5902bd1a59b7bdb11493579835ce31b6dc25aa44365577c399ec32"
     sha256 cellar: :any,                 arm64_sonoma:  "72aa587f29e407f608aa159d6a9aee1e243e03f8b27617d431a4a8ae8a9128e1"
     sha256 cellar: :any,                 sonoma:        "acb1258de4988f5b763c54576a278891c9e17b2a084d39b7cb4fa9b928d392c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a41e982d6c60f6e340f94958ca05d1a013e1de3a6a89d20de5da82296a79edc4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b51c2fb69789bbf16c93d0afc525c153855b67365a8a2088a62c07b5ef8f467"
   end
 

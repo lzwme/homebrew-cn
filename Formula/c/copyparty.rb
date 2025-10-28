@@ -29,6 +29,9 @@ class Copyparty < Formula
     depends_on "gettext"
   end
 
+  pypi_packages package_name:     "copyparty[thumbnails2,audiotags,ftpd,ftps,tftpd,pwhash,zeromq]",
+                exclude_packages: ["cffi", "cryptography", "pycparser"]
+
   resource "argon2-cffi" do
     url "https://files.pythonhosted.org/packages/0e/89/ce5af8a7d472a67cc819d5d998aa8c82c5d860608c4db9f46f1162d7dab9/argon2_cffi-25.1.0.tar.gz"
     sha256 "694ae5cc8a42f4c4e2bf2ca0e64e51e23a040c6a517a85074683d3959e1346c1"

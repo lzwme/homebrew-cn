@@ -25,6 +25,8 @@ class Archgw < Formula
   depends_on "pytorch"
   depends_on "rpds-py" => :no_linkage
 
+  pypi_packages exclude_packages: %w[certifi numpy pydantic-core rpds-py torch]
+
   resource "accelerate" do
     url "https://files.pythonhosted.org/packages/23/60/2757c4f03a8705dbf80b1268b03881927878dca5ed07d74f733fb6c219e0/accelerate-1.11.0.tar.gz"
     sha256 "bb1caf2597b4cd632b917b5000c591d10730bb024a79746f1ee205bba80bd229"

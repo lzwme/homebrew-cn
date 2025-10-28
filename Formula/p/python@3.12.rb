@@ -46,6 +46,9 @@ class PythonAT312 < Formula
   link_overwrite "lib/python3.12/site-packages/pip*"
   link_overwrite "lib/python3.12/site-packages/wheel*"
 
+  pypi_packages package_name:   "",
+                extra_packages: %w[flit-core pip wheel]
+
   resource "flit-core" do
     url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
     sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"

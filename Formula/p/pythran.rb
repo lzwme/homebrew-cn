@@ -24,6 +24,8 @@ class Pythran < Formula
   depends_on "openblas"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "numpy"
+
   resource "beniget" do
     url "https://files.pythonhosted.org/packages/2e/27/5bb01af8f2860d431b98d0721b96ff2cea979106cae3f2d093ec74f6400c/beniget-0.4.2.post1.tar.gz"
     sha256 "a0258537e65e7e14ec33a86802f865a667f949bb6c73646d55e42f7c45a052ae"

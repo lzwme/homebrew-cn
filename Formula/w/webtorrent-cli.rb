@@ -15,6 +15,8 @@ class WebtorrentCli < Formula
     sha256 x86_64_linux:  "9760ecc99259186588ceccdfa3e25a12296ba01b852c2c3411c2c7eeadc3e0ee"
   end
 
+  deprecate! date: "2025-10-28", because: "uses deprecated node@20"
+
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   # Using Node 20 due to issue with N-API 10 https://github.com/murat-dogan/node-datachannel/issues/333

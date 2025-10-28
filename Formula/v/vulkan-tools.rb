@@ -22,8 +22,7 @@ class VulkanTools < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => :build
-  depends_on "vulkan-volk" => :build
+  depends_on xcode: :build # for ibtool
   depends_on "glslang"
   depends_on "vulkan-headers"
   depends_on "vulkan-loader"
@@ -56,7 +55,6 @@ class VulkanTools < Formula
       "-DBUILD_ICD=ON",
       "-DBUILD_CUBE=ON",
       "-DBUILD_VULKANINFO=ON",
-      "-DTOOLS_CODEGEN=ON", # custom codegen
       "-DINSTALL_ICD=OFF", # we will manually place it in a nonconflicting location
       "-DGLSLANG_INSTALL_DIR=#{Formula["glslang"].opt_prefix}",
       "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].opt_prefix}",

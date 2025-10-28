@@ -21,6 +21,8 @@ class Raven < Formula
   depends_on "libyaml"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "certifi"
+
   # `pyyaml` is manually updated to support Python 3.14
 
   resource "charset-normalizer" do

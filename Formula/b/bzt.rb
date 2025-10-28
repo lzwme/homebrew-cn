@@ -29,6 +29,9 @@ class Bzt < Formula
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
+  pypi_packages exclude_packages: ["certifi", "numpy"],
+                extra_packages:   "setuptools"
+
   # setuptools resource must be manually bumped to a current version until it is no longer pinned upstream:
   # https://github.com/Blazemeter/taurus/blob/7e511f0869f3170779aad3ae54fa177493335abb/requirements.txt#L21-L23
   resource "aiodogstatsd" do

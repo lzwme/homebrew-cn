@@ -16,6 +16,7 @@ class QtPerconaServer < Formula
     sha256 cellar: :any,                 arm64_sequoia: "e893f07fe1dd3f2629860adcb6c586c7c374eb5ee0a49cbcefa3e7611cd450dc"
     sha256 cellar: :any,                 arm64_sonoma:  "0f47f8f4315aab469775a83936d5b1ad402b504f01cd49acb3b1943352545601"
     sha256 cellar: :any,                 sonoma:        "4cee6a48c6d924b15692d2671a935092794f436a578ee0c3658115eb708ad9db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "958597e0a036bd75841a2d7ea4ae0c5c02338dcb83d255f65f4c2f845b20dcf3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b75b67d199de55822c1cf2ec3c2302a6de15985a5b6f4c38c74bb90993c501d"
   end
 

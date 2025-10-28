@@ -12,6 +12,7 @@ class NeovimQt < Formula
     sha256 cellar: :any,                 arm64_sequoia: "9203f57a83ccf4453f2c721f78102afbbbc4a21bf54d127cb6c90ce562389728"
     sha256 cellar: :any,                 arm64_sonoma:  "b74cbaf47c8f1fb3d5f0f5560b14d9974915246b2723516c8eabd0d94ccb3a16"
     sha256 cellar: :any,                 sonoma:        "ce37d682b255a3c6fbee35f0146eaf6a5022b44ba5e318b460e361fc260ebfe4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c47a0daa850d84c38744b4cad5018643b473bb94258802672ba8abdcdffa9443"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0622186421cd33e3edb8e64d74c630a4632b31c613eb2e88949f440415be0f45"
   end
 

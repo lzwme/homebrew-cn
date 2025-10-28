@@ -12,6 +12,7 @@ class Pushpin < Formula
     sha256 cellar: :any,                 arm64_sequoia: "10d962ce0bcb230d74ed1749762f3979abedf90c08bc54bfa26962c29eb8e6db"
     sha256 cellar: :any,                 arm64_sonoma:  "343772a7d9955e016e3a7081bc1dabe70915a77702bf460f8f611f7452410294"
     sha256 cellar: :any,                 sonoma:        "0be6e6bb46c5d8b38368b3d2719bff619c3c68ceca932e79b3961c3825b635a5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fe7194d3f79941769c3b67d92ddae001ed7a5eb4bbcf50dd976729ab3c964fc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b598f60bcaf636f79032f8e3d91544a495109746f7d02c7fde223e5befc4768"
   end
 

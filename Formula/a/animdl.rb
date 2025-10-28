@@ -27,6 +27,8 @@ class Animdl < Formula
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
+  pypi_packages exclude_packages: "certifi"
+
   resource "anchor-kr" do
     url "https://files.pythonhosted.org/packages/dd/46/c96feb94c9101ca57b9d612b6510b06da31d31321e5c54fca6cb4a6a0adf/anchor-kr-0.1.3.tar.gz"
     sha256 "0fc055b6fd359bd20225dc4c39f721535af3245b068724db09c62a0f95ec4bbf"

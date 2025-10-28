@@ -44,6 +44,9 @@ class Fdroidserver < Formula
 
   # `ruamel-yaml` is manually updated to support Python 3.14
 
+  pypi_packages package_name:     "fdroidserver[optional]",
+                exclude_packages: %w[certifi cryptography frida numpy pillow puremagic]
+
   resource "alembic" do
     url "https://files.pythonhosted.org/packages/6b/45/6f4555f2039f364c3ce31399529dcf48dd60726ff3715ad67f547d87dfd2/alembic-1.17.0.tar.gz"
     sha256 "4652a0b3e19616b57d652b82bfa5e38bf5dbea0813eed971612671cb9e90c0fe"

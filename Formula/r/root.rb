@@ -21,14 +21,13 @@ class Root < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0804a5dc4974c09b3a6dffaabbb6c2bf15da6b7b344c523ce9de3cd0360435b8"
-    sha256 arm64_sequoia: "a0cdac95303bf5df2354e549ea219cae20542ab8bc4c36fb6f56d28f28a7f9a2"
-    sha256 arm64_sonoma:  "3ef3cd3c3b41a64f5eaf2976ed22c7a9cefb6800c2595c3b8cf444561117a711"
-    sha256 arm64_ventura: "7f989daa006a38c3a0dbb25b2260c7828e46403cc3977b13fc1d63ffa35f982f"
-    sha256 sonoma:        "86037a2ab2461a69cbe700a194a05e1fcdf7d118989f116c9ad27560dcd19a37"
-    sha256 ventura:       "7481ec8804fd905df59d6ec49b8877ca3c92d173fb7de113ecd132c3bcb9294d"
-    sha256 arm64_linux:   "b8f1f4c03d7befca00e19e73cb6c2bcf549034a8cd81e902ff32a85579589dbb"
-    sha256 x86_64_linux:  "2a3ecda1d6774591c09037137859dbc7b01b29d53058e617b24589ee0799156c"
+    rebuild 1
+    sha256 arm64_tahoe:   "ed9d4282ded3457e3139056751988bfd2d90271cdf6de66e2afdd4b8b6f44edb"
+    sha256 arm64_sequoia: "b68c5ff50c110d60676a6b626d560ced387556e5af886c1ec1dad171c83e812e"
+    sha256 arm64_sonoma:  "e04e980da5708dc1ae328f915c137342bad17a6077225bc7e004e18b2f67df78"
+    sha256 sonoma:        "5ad919d084f7f9169bbb8a43083cc9ef001b188b4e9b59683daf67cb55fda070"
+    sha256 arm64_linux:   "b284374086f6ba4dfe34e87328e406a37fd5d45533fc8e5fdd53c70d14a43c94"
+    sha256 x86_64_linux:  "59499409a173c58534a22361a91ed8baebc7bf07dc43c74128ecf4b06aaf5748"
   end
 
   depends_on "cmake" => :build
@@ -55,7 +54,7 @@ class Root < Formula
   depends_on "openblas"
   depends_on "openssl@3"
   depends_on "pcre2"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "sqlite"
   depends_on "tbb"
   depends_on "xrootd"
@@ -84,7 +83,7 @@ class Root < Formula
   skip_clean "bin"
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

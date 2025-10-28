@@ -23,6 +23,8 @@ class PiecesCli < Formula
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
+  pypi_packages exclude_packages: %w[certifi rpds-py]
+
   resource "aenum" do
     url "https://files.pythonhosted.org/packages/e3/52/6ad8f63ec8da1bf40f96996d25d5b650fdd38f5975f8c813732c47388f18/aenum-3.1.16-py3-none-any.whl"
     sha256 "9035092855a98e41b66e3d0998bd7b96280e85ceb3a04cc035636138a1943eaf"

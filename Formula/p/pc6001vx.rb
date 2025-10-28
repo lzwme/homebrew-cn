@@ -13,6 +13,7 @@ class Pc6001vx < Formula
     sha256 cellar: :any,                 arm64_sequoia: "8c21157b4335e3c97de381021b0a4e44002d04114b0214f4cef7429a0ed4e0ee"
     sha256 cellar: :any,                 arm64_sonoma:  "b5ff45c2bbd4247b053c2035769d4f9484937c581c069545b9f260ab6b14d201"
     sha256 cellar: :any,                 sonoma:        "155c94239fac16860061cdc20b9ee40b691254e25004ee12544fa9bf0af02154"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d67d8aaf2c7eeba5e349cab8d7d26696d4b56209302919bc7125082570ac386"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "87fd8a3b22acf6318d2b75ed308a1a0afb924a3f9255d74aa1b4a1f5491fc569"
   end
 

@@ -12,13 +12,13 @@ class Gdal < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "5315edce5aaa1fc92aa7dd26e9a55851d457f2c7a7368d081b8d427d9260629e"
-    sha256 arm64_sequoia: "612808fdb8e99ffbbf227bd1c94bf08ee6e1597024c126a73ea88db1bfc9452e"
-    sha256 arm64_sonoma:  "e4d9e9ff68089ea0f6c8bd0b28d61a268f10228fa312c2b674beec427f351e92"
-    sha256 sonoma:        "92359d7123145f41167ee158b0f72dd84261f00a6f14463e59c38cbe37be3ade"
-    sha256 arm64_linux:   "b957fea09d119321be5847df87031ce129f493bcc6cc52822bd96894f22027e6"
-    sha256 x86_64_linux:  "867bcaee45b0faff2032c06d5f771f3acdfae242619dbd13941a4b5165e53023"
+    rebuild 2
+    sha256 arm64_tahoe:   "41bf7c15474589d9db05046dc51ecec19d2dd326dede14616720ff87ec74f87d"
+    sha256 arm64_sequoia: "4a2183da1fa46fdecd206085365781b7a51fcfa877c08cd48b4dc29a94e7d496"
+    sha256 arm64_sonoma:  "21d552f3523150cdfcbc6c2606c82b8074c8c4863a54545791688b92113f1896"
+    sha256 sonoma:        "17670bd6852a260543c832ef6640212a7ed767044f9f22d7d076e6e52919d444"
+    sha256 arm64_linux:   "9241560d9b9dd12e8e311e2b6d141f87d89c868841ef160ad383d0df1264e9cf"
+    sha256 x86_64_linux:  "9afafa720ef4111df0ba30e7dfabb0489548449ea2d6217be58a0f0beffd69eb"
   end
 
   head do
@@ -64,7 +64,7 @@ class Gdal < Formula
   depends_on "pcre2"
   depends_on "poppler"
   depends_on "proj"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "qhull"
   depends_on "sfcgal"
   depends_on "sqlite"
@@ -98,7 +98,7 @@ class Gdal < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.

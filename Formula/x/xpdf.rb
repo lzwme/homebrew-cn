@@ -18,6 +18,7 @@ class Xpdf < Formula
     sha256 cellar: :any,                 arm64_sequoia: "a427e2fdfcf6d7941ee319dc9dc483104177a6460cc8d198d5905934a4b5c1c7"
     sha256 cellar: :any,                 arm64_sonoma:  "2fcac810f853552814f046a8c9121237cf1d6e2962e09977cc6e57e5b1bf26b8"
     sha256 cellar: :any,                 sonoma:        "c7c880aa82976bfd35833f8a2cb71cfab406a15f293b09b38119ec5a95f1769a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "192177145fa3698a7180404e21393799c506fdd206caf5ec3735732c9d0e94e5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "be1968ec32654250b756e84e6dce636b032d6c439cb05ec58903f6b48b265aea"
   end
 

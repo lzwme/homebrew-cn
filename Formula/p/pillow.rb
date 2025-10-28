@@ -16,7 +16,6 @@ class Pillow < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
   depends_on "freetype"

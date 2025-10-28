@@ -18,6 +18,7 @@ class Qca < Formula
     sha256 cellar: :any,                 arm64_sequoia: "a1ee6516de34fc765d7ca60cf598f8f716f5bad4634a8fd1b195948e128fec12"
     sha256 cellar: :any,                 arm64_sonoma:  "25e20fb1574789ed7b20656e4efadee81ba6ebe6e39b3d168eeb47bc60bfd32c"
     sha256 cellar: :any,                 sonoma:        "6a3c15800f653ccd8451603eccc71abdedc94b975ffb03351a2a16efd2c8299a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "23bcf97868e6ef038fce215771abad083bd92d95683685fd0657ee34e861fb9e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "39d29761f9f41df9c2687bab36309d5f1eb866da3b2f1b2561e06be725f51f2b"
   end
 

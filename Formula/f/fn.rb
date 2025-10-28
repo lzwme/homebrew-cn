@@ -1,20 +1,18 @@
 class Fn < Formula
   desc "Command-line tool for the fn project"
   homepage "https://fnproject.io"
-  url "https://ghfast.top/https://github.com/fnproject/cli/archive/refs/tags/0.6.43.tar.gz"
-  sha256 "49e2a099d9c8d22fde6eacd402f76532c642c832195810f0291e3b6fa45786a8"
+  url "https://ghfast.top/https://github.com/fnproject/cli/archive/refs/tags/0.6.44.tar.gz"
+  sha256 "c1221ec2db47d050d72184c9ae5fbf1673b963cb5d7dffacf922086faebcb99f"
   license "Apache-2.0"
   head "https://github.com/fnproject/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ec63b50ca03100dd5c9e2d1f59f14237fd304520e14c963070a61b32ed93b35"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e284eabf4799ad4175683065ccbd8856a01e7726950ffec1b3137080ead1edeb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e284eabf4799ad4175683065ccbd8856a01e7726950ffec1b3137080ead1edeb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e284eabf4799ad4175683065ccbd8856a01e7726950ffec1b3137080ead1edeb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "95800a2b61242016d9af1066ed1ce21e1dddca3fb37c7a897b847ce3620017c4"
-    sha256 cellar: :any_skip_relocation, ventura:       "95800a2b61242016d9af1066ed1ce21e1dddca3fb37c7a897b847ce3620017c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "13088fbb0ef72a9c40136f6f67e0a3b397f5018aceb66f1975f2cb26f1e974cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b9b603653b1e11e063c8657dde89cea7a0fc8fac2cea5014bc2c07a6aa05cd2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff15bb25a06de2786d7f3fbd20ad5dbf6ffa1bd8627879540d2dd37fc8855c5d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff15bb25a06de2786d7f3fbd20ad5dbf6ffa1bd8627879540d2dd37fc8855c5d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff15bb25a06de2786d7f3fbd20ad5dbf6ffa1bd8627879540d2dd37fc8855c5d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "64a155d89d901ffcc1e03e8cc1e2c438d2da7f13c7c6e66e03720be4f57552b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cebfa5f6d42372325d10aeefbd90ccd66448a945cf9068520df7bf6d4dfda2ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc45eb1291499cbd7eaa03ea4d9be9347a0625bc9ba23630ab38cc9024c2e521"
   end
 
   depends_on "go" => :build

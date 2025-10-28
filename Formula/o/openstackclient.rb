@@ -424,7 +424,7 @@ class Openstackclient < Formula
       "rating summary get", # python-cloudkittyclient
       "zone list", # python-designateclient
       "secret list", # python-barbicanclient
-      "share list", # python-manliaclient
+      "share list", # python-manilaclient
       "workflow list", # python-mistralclient
       "coe cluster list", # python-magnumclient
       "baremetal node list", # python-ironicclient

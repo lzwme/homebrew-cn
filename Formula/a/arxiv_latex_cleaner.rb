@@ -22,6 +22,8 @@ class ArxivLatexCleaner < Formula
   depends_on "pillow" => :no_linkage
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "pillow"
+
   resource "absl-py" do
     url "https://files.pythonhosted.org/packages/10/2a/c93173ffa1b39c1d0395b7e842bbdc62e556ca9d8d3b5572926f3e4ca752/absl_py-2.3.1.tar.gz"
     sha256 "a97820526f7fbfd2ec1bce83f3f25e3a14840dac0d8e02a0b71cd75db3f77fc9"

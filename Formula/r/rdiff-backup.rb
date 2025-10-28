@@ -22,6 +22,8 @@ class RdiffBackup < Formula
   depends_on "libyaml"
   depends_on "python@3.14"
 
+  pypi_packages extra_packages: "pyxattr"
+
   resource "pyxattr" do
     url "https://files.pythonhosted.org/packages/97/d1/7b85f2712168dfa26df6471082403013f3f815f3239aee3def17b6fd69ee/pyxattr-0.8.1.tar.gz"
     sha256 "48c578ecf8ea0bd4351b1752470e301a90a3761c7c21f00f953dcf6d6fa6ee5a"

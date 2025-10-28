@@ -18,6 +18,7 @@ class WireguardTools < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e638f445c242aede06a5384dc14d9aa78905068564938e79a62d5684df991ded"
     sha256 cellar: :any_skip_relocation, sonoma:        "4c929b929c9ad42228c7c63c091f96e2746150614c36c80003084831b836c996"
     sha256 cellar: :any_skip_relocation, ventura:       "8a326265f11c815949dcfd4405dd0521be943b65177f48d9e0ff59edd52ada6d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8acd137b889d5ff4a545cc4b1d5a8aec5f4fad7335ef5c399cf2cf9cbb9d852d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3fedbb5c19ec7126a3bc9e47c3f73e39fc790c38cda09d65dd4aca8d7632aea"
   end
 

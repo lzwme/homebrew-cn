@@ -20,6 +20,8 @@ class Pipenv < Formula
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "certifi"
+
   def python3
     "python3.14"
   end

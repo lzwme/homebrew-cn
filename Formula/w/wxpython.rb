@@ -29,6 +29,8 @@ class Wxpython < Formula
     depends_on "gtk+3"
   end
 
+  pypi_packages exclude_packages: %w[numpy pillow]
+
   def python
     "python3.14"
   end

@@ -11,6 +11,7 @@ class Quazip < Formula
     sha256 cellar: :any,                 arm64_sequoia: "185ebc43b7a1136a46c8af18b442f2f2f8b7196422072a1a6835bbd0a30875a2"
     sha256 cellar: :any,                 arm64_sonoma:  "535fb4aab113e08ae887ee225e49583f347cd727a918a46b91c84b04c5c2c465"
     sha256 cellar: :any,                 sonoma:        "ee6d72c263395d2bd8cb95341cca19f620b851196cbfdabfd0192f51d75748cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d457d617c5a876a3ad949e196936bbdf1d26cc9d34319418a53bfd9c0df1234"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ae3f76ea4c6aed76a42025c5475c4b1a030cccd04ea102a54b98efc7d1a3f57"
   end
 

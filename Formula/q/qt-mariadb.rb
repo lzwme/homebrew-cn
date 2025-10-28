@@ -16,6 +16,7 @@ class QtMariadb < Formula
     sha256 cellar: :any,                 arm64_sequoia: "8e9eca41a0b17b84d468b04f043259e9515ba0d0a4d1d851b1cf0f55af0956ea"
     sha256 cellar: :any,                 arm64_sonoma:  "5f255d8ed571f6bc636303d9d125e4e2c0ceeb739fdf5c2b8b2baf39d89c48d9"
     sha256 cellar: :any,                 sonoma:        "de0dc48006e82698892b108199782fecaf51fd3c2564cd7f24f195b91e14b428"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "59e21db9adbe41790b543341bcf70a73669eb3a886783b774e802839466afdbc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ea7baba2dbba72d8a457901a22a6750095a3edfd57a681815a4a3697ba6366b"
   end
 

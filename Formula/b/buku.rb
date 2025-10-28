@@ -25,6 +25,9 @@ class Buku < Formula
 
   uses_from_macos "libffi"
 
+  pypi_packages package_name:     "buku[server]",
+                exclude_packages: ["certifi", "cryptography"]
+
   resource "arrow" do
     url "https://files.pythonhosted.org/packages/2e/00/0f6e8fcdb23ea632c866620cc872729ff43ed91d284c866b515c6342b173/arrow-1.3.0.tar.gz"
     sha256 "d4540617648cb5f895730f1ad8c82a65f2dad0166f57b75f3ca54759c4d67a85"

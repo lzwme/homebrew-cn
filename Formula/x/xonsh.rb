@@ -20,6 +20,8 @@ class Xonsh < Formula
 
   depends_on "python@3.14"
 
+  pypi_packages package_name: "xonsh[ptk,pygments,proctitle]"
+
   resource "prompt-toolkit" do
     url "https://files.pythonhosted.org/packages/a1/96/06e01a7b38dce6fe1db213e061a4602dd6032a8a97ef6c1a862537732421/prompt_toolkit-3.0.52.tar.gz"
     sha256 "28cde192929c8e7321de85de1ddbe736f1375148b02f2e17edd840042b1be855"

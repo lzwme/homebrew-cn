@@ -32,7 +32,7 @@ class GhcAT98 < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "sphinx-doc" => :build
   depends_on "xz" => :build
 
@@ -112,7 +112,7 @@ class GhcAT98 < Formula
     ENV["CC"] = ENV["ac_cv_path_CC"] = OS.linux? ? "cc" : ENV.cc
     ENV["CXX"] = ENV["ac_cv_path_CXX"] = OS.linux? ? "c++" : ENV.cxx
     ENV["LD"] = "ld"
-    ENV["PYTHON"] = which("python3.13")
+    ENV["PYTHON"] = which("python3.14")
 
     # Workaround for https://gitlab.haskell.org/ghc/ghc/-/issues/26166
     if DevelopmentTools.ld64_version == "1221.4"

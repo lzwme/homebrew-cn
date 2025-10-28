@@ -16,6 +16,8 @@ class Arjun < Formula
   depends_on "certifi"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "certifi"
+
   def python3
     "python3.14"
   end

@@ -3,19 +3,18 @@ class Ford < Formula
 
   desc "Automatic documentation generator for modern Fortran programs"
   homepage "https://github.com/Fortran-FOSS-Programmers/ford"
-  url "https://files.pythonhosted.org/packages/96/fe/e06d62822f8eb66e068066c4a342f2dc79c4e6e9c3fef97fd4f80aa73353/ford-7.0.11.tar.gz"
-  sha256 "d682372592de3414e10db6baee3e8bf52867006cf0b198f42b82ea735015128b"
+  url "https://files.pythonhosted.org/packages/9c/59/4bbf96923f76e1330b6b539396ab858d13a8602c724623f1202bb07075fa/ford-7.0.12.tar.gz"
+  sha256 "96a3bec14f23c62db8a9c8072ebe1b6d6e043a315361923146e9cd459f913c59"
   license "GPL-3.0-or-later"
   head "https://github.com/Fortran-FOSS-Programmers/ford.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c37b49ba6d539378307818a9175c54bcf1c010a184db17a915f59d1105a6efdc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3838436f867dadec4408263d9c5d9338c46e06d583c218a5863444757ca0c86"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf83caa319a9d9c5ba81e591a0425695234ff2d0c67c4122fb2205864a11366d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b9b848744d3f4a77b20fe203fd2006bb90a6a380d812bd3db9cf513ba5335907"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b5576d93a52a2b00485d3a20ce637e08bd52cc181a8d1e05bd3764e5ce0d6e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "791245e279e799e00f4ab125ce074d6e7a8f34c1147c32afdb05d21701ee3bae"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "621235af37f2a122f3e900ea892415874159261eafbd0562bafad45f7c0b7821"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3dd7ba8cc5f58290eeeaf39516a3a7a70f84f8475a0f1799fd21c2eaa6e1831"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50fcc0b97ea04424a129a861e9c95e6cf3acdb8877fd7c9622f58057281f48b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "52d9728b39d89cfe9367957050bf345efc8b67154569a978008090e37bd88218"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b40fc5cb7fc265b675f5b9bb1bf62291b2ab10cebe1cb238587981de1ba3bd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49260e1339f0a5d8688f06a55170e38ce457f8d91b789ba76c599f5a01a46d86"
   end
 
   depends_on "graphviz"
@@ -102,10 +101,6 @@ class Ford < Formula
   end
 
   def install
-    # Explicitly use type(self) to avoid issues with Python 3.14
-    # Issue ref: https://github.com/Fortran-FOSS-Programmers/ford/issues/713
-    inreplace "ford/settings.py", "get_type_hints(self)", "get_type_hints(type(self))"
-
     virtualenv_install_with_resources
     doc.install "2008standard.pdf", "2003standard.pdf"
     pkgshare.install "example/example-project-file.md"

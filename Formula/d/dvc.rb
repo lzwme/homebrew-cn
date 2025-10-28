@@ -33,6 +33,9 @@ class Dvc < Formula
     depends_on "patchelf" => :build # for pyarrow
   end
 
+  pypi_packages package_name:     "dvc[all]",
+                exclude_packages: %w[certifi cryptography numpy pygit2]
+
   resource "adlfs" do
     url "https://files.pythonhosted.org/packages/6b/af/4d74c92254fdeabc19e54df4c9146855c2c1027bd4052477e3a27b05de54/adlfs-2025.8.0.tar.gz"
     sha256 "6fe5857866c18990f632598273e6a8b15edc6baf8614272ede25624057b83e64"

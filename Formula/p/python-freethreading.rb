@@ -45,6 +45,9 @@ class PythonFreethreading < Formula
     depends_on "libtirpc"
   end
 
+  pypi_packages package_name:   "",
+                extra_packages: %w[flit-core pip wheel]
+
   # Always update to latest release
   resource "flit-core" do
     url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"

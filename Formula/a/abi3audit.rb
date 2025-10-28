@@ -21,6 +21,8 @@ class Abi3audit < Formula
     depends_on "rust" => :build
   end
 
+  pypi_packages exclude_packages: "certifi"
+
   resource "abi3info" do
     url "https://files.pythonhosted.org/packages/da/48/ec0cb606d072dbefd7d83930030f8ee499927bd11df213e53c76655b0367/abi3info-2025.4.29.tar.gz"
     sha256 "00733a73532cbf6f41e78549dc959a2110fce6e33d207a31c1ec653fa4be3b20"

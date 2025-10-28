@@ -7,17 +7,18 @@ class Libgr < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "c419f470192d46b07acfdea62b272b63c7c558e304c2d5eec554a94a8d3a32c4"
-    sha256 arm64_sequoia: "e3d7abf46e0cd291f2eeea2b18e121f12b421b89bdb8e499676268344fc91464"
-    sha256 arm64_sonoma:  "ea87941cd1713773c4f5ef128fce8f25c6d6ba42a08b2b972b287a14f5ff61e7"
-    sha256 sonoma:        "4c89da88dd44c40f50933c68bbe381fc684b13b55832a9e3a02d5c527650b6ae"
-    sha256 x86_64_linux:  "0fbd45d4ee1913cd8041d17448ae2b72dcab0fb692604e46f4e02f3a80818128"
+    rebuild 2
+    sha256 arm64_tahoe:   "7bdc851e189cd0e32c3ebc1dd760629341245ee35b0047ccc25dc4ef0e749c11"
+    sha256 arm64_sequoia: "6e72a7cf25de633dd8b2bedd6093e3b30d46fc546d2e0a9bcab3779654f5801c"
+    sha256 arm64_sonoma:  "4ebac584fca59929884fe517b5adfa363e21d82d527b0f345d77f5fc6510471c"
+    sha256 sonoma:        "d471b8b3d4f3b1acba6f0d9f2f9ef80a71ba00fd645cb8371838895d8d25308a"
+    sha256 arm64_linux:   "de47454028332641b07160f75edb27e6ffdc2c14986e53744db8c03110877121"
+    sha256 x86_64_linux:  "ebec641dff0e1f8389ea8cc04a1b1585c50da5f2b4bdbce63efc6ea738ee9c91"
   end
 
   depends_on "cmake" => :build
   depends_on "cairo"
-  depends_on "ffmpeg@7" # FFmpeg 8 issue: https://github.com/sciapp/gr/issues/197
+  depends_on "ffmpeg"
   depends_on "freetype"
   depends_on "glfw"
   depends_on "jpeg-turbo"
@@ -34,6 +35,12 @@ class Libgr < Formula
     depends_on "libx11"
     depends_on "libxt"
     depends_on "mesa"
+  end
+
+  # Backport support for FFmpeg 8
+  patch do
+    url "https://github.com/sciapp/gr/commit/1720943f5ecf76b067dc2950fab2d381378aaf18.patch?full_index=1"
+    sha256 "b1b453e5a6aa878d0bea159f777e445dc4a73ba619d1672818341746b1b4e861"
   end
 
   def install
