@@ -1,8 +1,8 @@
 class Grails < Formula
   desc "Web application framework for the Groovy language"
-  homepage "https://grails.org"
-  url "https://ghfast.top/https://github.com/apache/grails-core/releases/download/v6.2.3/grails-6.2.3.zip"
-  sha256 "b41e95efad66e2b93b4e26664f746a409ea70d43548e6c011e9695874a710b09"
+  homepage "https://grails.apache.org/"
+  url "https://ghfast.top/https://github.com/apache/grails-core/releases/download/v7.0.0/apache-grails-7.0.0-bin.zip"
+  sha256 "aff1bb4e5b5ea92677795b833500657d20fead3e87c4ae33b011cf628274c583"
   license "Apache-2.0"
 
   livecheck do
@@ -12,40 +12,22 @@ class Grails < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "886fd3f292e6425dcc217aadb07ee135e47ea536ef199fcc3876dfe4bf6fe589"
+    sha256 cellar: :any_skip_relocation, all: "4ff8ae9321c8f2f276650bb823de5b413137c2e3323b93df7cc694ba1ba8fc18"
   end
 
-  depends_on "openjdk@17"
-
-  # TODO: grails-forge is merged into core at version 7
-  resource "cli" do
-    url "https://ghfast.top/https://github.com/apache/grails-forge/releases/download/v6.2.3/grails-cli-6.2.3.zip"
-    sha256 "ef78a48238629a89d64996367d0424bc872978caf6c23c3cdae92b106e2b1731"
-
-    livecheck do
-      formula :parent
-    end
-  end
+  depends_on "openjdk@21"
 
   def java_version
-    "17"
+    "21"
   end
 
   def install
-    odie "cli resource needs to be updated" if version != resource("cli").version
+    # Remove Windows files
+    rm Dir["bin/*.bat"]
 
-    rm_r("bin") # Use cli resource, should be removed at version 7
     libexec.install Dir["*"]
-
-    resource("cli").stage do
-      rm("bin/grails.bat")
-      (libexec/"lib").install Dir["lib/*.jar"]
-      bin.install "bin/grails"
-      bash_completion.install "bin/grails_completion" => "grails"
-    end
-
-    bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env(java_version)
+    bin.install Dir["#{libexec}/bin/*"]
+    bin.env_script_all_files libexec/"bin", Language::Java.java_home_env(java_version)
   end
 
   def caveats

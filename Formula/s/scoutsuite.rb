@@ -25,6 +25,8 @@ class Scoutsuite < Formula
   depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic-core]
+
   resource "aliyun-python-sdk-actiontrail" do
     url "https://files.pythonhosted.org/packages/69/ec/76d2733699ffb003dffa0da0f0b1cbc34ea48e535f7639deb079b73bd5ed/aliyun-python-sdk-actiontrail-2.2.0.tar.gz"
     sha256 "572e3049529fd6c21974fd2e4fc98b057d2c85ca1d90ca23425c22288d265a37"

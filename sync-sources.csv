@@ -2801,6 +2801,7 @@ Homebrew-homebrew-core/Formula/h/handbrake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hapi-fhir-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/haproxy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/haproxy@2.8.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/h/harbor-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/harbour.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/harfbuzz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/harlequin.rb, Homebrew/homebrew-core, 1
@@ -8311,7 +8312,6 @@ Homebrew-homebrew-cask/Casks/a/avast-security.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/avbeam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/avg-antivirus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aviatrix-vpn-client.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/a/avidcodecsle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/avidemux.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/avifquicklook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/avitools.rb, Homebrew/homebrew-cask, 0
@@ -13107,7 +13107,6 @@ Homebrew-homebrew-cask/Casks/m/mellel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mellow.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mellowplayer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/melodics.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/melonbooksviewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/melonds.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mem.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memo.rb, Homebrew/homebrew-cask, 0

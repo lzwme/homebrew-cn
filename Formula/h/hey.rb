@@ -17,6 +17,7 @@ class Hey < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "55e5e3fa15f75e97aae934d9e86319d54af49275eef765241b05415e608c2791"
     sha256 cellar: :any_skip_relocation, big_sur:        "4a743f02a2abfd8fa424bb9ddc8b65ba3633f6b3b7b216da6763a5fe95c10501"
     sha256 cellar: :any_skip_relocation, catalina:       "972cc3f6a520467db11ab9cef3aa5311c6813c203c23bb0173363a00a45cfc07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a0b6c6fd1de183a79e5f525ddda5723398a215b2658ea3be0c45d51101b8e1f3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5454552b0eb8d412645a0a5211b0566a41d13fc238149177bfddea36ace56e4"
   end
 

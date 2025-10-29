@@ -19,6 +19,13 @@ class Restish < Formula
   depends_on "go" => :build
 
   def install
+    # Workaround to avoid patchelf corruption when cgo is required (for crypto11)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
 
     generate_completions_from_executable(bin/"restish", "completion")

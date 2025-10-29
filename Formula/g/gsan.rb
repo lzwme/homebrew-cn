@@ -16,6 +16,8 @@ class Gsan < Formula
   depends_on "cryptography"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "cryptography"
+
   resource "click" do
     url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
     sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"

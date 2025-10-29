@@ -13,6 +13,7 @@ class HasuraCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f385b53709497e0cdcf9eb34e8322cfac34fc063bb406cc542a89b9d172c859c"
     sha256 cellar: :any_skip_relocation, sonoma:        "310114abbf68ed17ec45b968303c43862c53cab6350cfd638475f76ffe277d11"
     sha256 cellar: :any_skip_relocation, ventura:       "310114abbf68ed17ec45b968303c43862c53cab6350cfd638475f76ffe277d11"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8cb7042b1c3583acb648add58487577319a4f4a1aff3309dfe1aad50a3af6b0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "71c0b250d4b6e09f5d664f9b791792cf2bbb8f22881683b1566190bfcdcd3db6"
   end
 

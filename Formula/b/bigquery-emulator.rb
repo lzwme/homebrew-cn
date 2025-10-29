@@ -13,6 +13,7 @@ class BigqueryEmulator < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "099f43b95cae81557172f860bd1f0771193ade8a8e188a578991e6d8759137b5"
     sha256 cellar: :any_skip_relocation, sonoma:        "6d392929f5f202cb8cf49912926a283b424941c442071106c0a4bc57d5b7a953"
     sha256 cellar: :any_skip_relocation, ventura:       "4fea8c128986fd389f1441e02bd42aca1a31df8de1a3ce446c63007ce1bb7479"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1bb8c6a9605dd3ee04d8e944963aedc8cec753ace951e0bb9d243d4c7271aa9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b53e2bd32bf44be1c5ad737c1f4058d855faf4b82530aeebdecf5e9e690bdab2"
   end
 
@@ -24,6 +25,12 @@ class BigqueryEmulator < Formula
 
   def install
     ENV["CGO_ENABLED"] = "1"
+
+    # Workaround to avoid patchelf corruption when cgo is required (for go-zetasql)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
 
     ldflags = "-s -w -X main.version=#{version} -X main.revision=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/bigquery-emulator"

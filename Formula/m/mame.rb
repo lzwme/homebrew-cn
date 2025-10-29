@@ -26,6 +26,7 @@ class Mame < Formula
     sha256 cellar: :any,                 arm64_sequoia: "7dda2ab9730e054ea7c4578a38b461c23ef50d254579a8d9b437d2d90a17eab6"
     sha256 cellar: :any,                 arm64_sonoma:  "b4a279a89b14852ac0be785931d0d31188f47631ffba540725c2bf5fb22f8368"
     sha256 cellar: :any,                 sonoma:        "875f623d157efabdce421d476440b936f410f0484d5d2def4d7f8c6e3c150e9a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7261bbb0b12f6831d707c0c348f18f82bcc7b47af077f60e5b992ba515d23923"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a0710d15cddcc384fdb6ee17ad5eb83c26a1386fe054105d5da7f18a28e87d5"
   end
 

@@ -13,6 +13,7 @@ class Diagram < Formula
     sha256 arm64_ventura: "aea4fe2d174931f81ca241d51510b1d5dfbf4034e1cc77d9eb86646859450e05"
     sha256 sonoma:        "9fdea25d43a0954d98c691c9b34bde4a0ab10a18e5b5b6d5fdfc1d1286c29e8c"
     sha256 ventura:       "bfdfb5a4c9c981dceedc86608888e1e1a6100e0f98f2fe397d411485a3762ce4"
+    sha256 arm64_linux:   "8d40ae4f041e7e48859c91c4875605960d20ffa8de18b35953e9a783031d524f"
     sha256 x86_64_linux:  "8ba93efdc8407ebd4f76c6f3a78aaf392e8a177035d48d740d4c9e3412bc8746"
   end
 
@@ -30,6 +31,13 @@ class Diagram < Formula
   end
 
   def install
+    # Workaround to avoid patchelf corruption when cgo is required (for gioui.org/internal/vk)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.defaultFontFile=#{pkgshare}/gloriahallelujah.ttf")
 
     pkgshare.install ["sample.txt", "font/gloriahallelujah.ttf"]

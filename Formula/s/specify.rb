@@ -14,6 +14,8 @@ class Specify < Formula
   depends_on "certifi"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "certifi"
+
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
     sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"

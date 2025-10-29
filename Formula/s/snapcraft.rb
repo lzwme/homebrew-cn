@@ -45,6 +45,9 @@ class Snapcraft < Formula
     depends_on "cryptography"
   end
 
+  pypi_packages exclude_packages: %w[certifi cryptography pygit2],
+                extra_packages:   %w[catkin-pkg jeepney pylxd secretstorage]
+
   # We hit a build failure with requested 2.4.0ubuntu1 tarball so just using latest Debian
   resource "python-apt" do
     on_linux do

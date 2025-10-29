@@ -21,6 +21,8 @@ class Grip < Formula
   depends_on "certifi"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: "certifi"
+
   resource "blinker" do
     url "https://files.pythonhosted.org/packages/21/28/9b3f50ce0e048515135495f198351908d99540d69bfdc8c1d15b73dc55ce/blinker-1.9.0.tar.gz"
     sha256 "b4ce2265a7abece45e7cc896e98dbebe6cead56bcf805a3d23136d145f5445bf"

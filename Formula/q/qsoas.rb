@@ -2,6 +2,7 @@ class Qsoas < Formula
   desc "Versatile software for data analysis"
   homepage "https://bip.cnrs.fr/groups/bip06/software/"
   url "https://bip.cnrs.fr/wp-content/uploads/qsoas/qsoas-3.3.tar.gz"
+  mirror "https://web.archive.org/web/20250919084255/https://bip.cnrs.fr/wp-content/uploads/qsoas/qsoas-3.3.tar.gz"
   sha256 "c5a701dfed23c682892479b43b92aac79a7db5ceb9ed6b6cd0a41129d2690492"
   license "GPL-2.0-only"
   revision 1
@@ -26,6 +27,7 @@ class Qsoas < Formula
     sha256 cellar: :any,                 sonoma:         "8bd41179d0dcd078ac4731c5edc181352cdd6f639d49ee082b0cbab9a9c00f88"
     sha256 cellar: :any,                 ventura:        "6d3850245479bad8b493a9ffd52cca5e382dcc899fec0382dbcda96790e8f350"
     sha256 cellar: :any,                 monterey:       "751f9a7fda93b3193f2fb8c3118c79ec52bbaba6c95e0420b0ca981ac78cfdb6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f724e65ae8751e271e8e9c45737d33bc7fca1b9992e904fdf53dd83afb0bd87c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d99b2b0c412e82eb58102d3722c32b5629773334ac81996ee6d4e58f0dffef3"
   end
 

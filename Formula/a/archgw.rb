@@ -8,12 +8,13 @@ class Archgw < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "c10db98bb7361677d43a4502db9f2a23877a163e92697a526c18dc9a6b23833e"
-    sha256 cellar: :any,                 arm64_sequoia: "49ba8976c244113c500931442f9754c1e149d74f72121d7d13492f0770f66129"
-    sha256 cellar: :any,                 arm64_sonoma:  "245bde81d1dd6316fbe1b332c21e52de54d72504d45e3b7148abda2402694295"
-    sha256 cellar: :any,                 sonoma:        "d7ba09267c8c4291e3d06827101b06d5d2077b00c7d3c8dfa20c414c5a0daaa0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a642bfb67f3d57a357bd037915d1ace73e08d6fd748f2483d1c7ecedaaf3e419"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "e5c84edea9bf01e6b3940eb1dc7e35a023e408f0f97632ba405d415198f0182f"
+    sha256 cellar: :any,                 arm64_sequoia: "bc16076639115dd44dab5600acb31d5c215abe8d1d7a7bc110c8f8029d1b3275"
+    sha256 cellar: :any,                 arm64_sonoma:  "8cb76c7b2b50d8925888cb8ca4474910058609c48ef683cb9cd8b583bde77fd6"
+    sha256 cellar: :any,                 sonoma:        "11a828235b4a0a957d336820aec5964e56ba6d1a8537f4704a02b1eeb5134bb2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2e1739f657f400affcc71695b885b6a282efecf1227cfd96a6fd25cc844072a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2ebe5a0a8f32d3446f407506fad2b56cb1985b7dd1670992a91e545e76bb06d"
   end
 
   depends_on "rust" => :build # for hf-xet, jitter and safetensors
@@ -332,7 +333,17 @@ class Archgw < Formula
     # Remove after https://github.com/pypa/hatch/pull/1999 is released.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
-    venv = virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources(without: "hf-xet")
+
+    resource("hf-xet").stage do
+      if ENV.effective_arch == :armv8
+        # Disable sha2-asm which requires a minimum of -march=armv8-a+crypto
+        inreplace "data/Cargo.toml",
+                  'sha2 = { workspace = true, features = ["asm"] }',
+                  "sha2 = { workspace = true }"
+      end
+      venv.pip_install Pathname.pwd
+    end
 
     # NOTE: This is an exception to our usual policy as building `pytorch` is complicated
     site_packages = Language::Python.site_packages(venv.root/"bin/python3")

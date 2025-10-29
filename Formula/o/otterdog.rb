@@ -28,6 +28,8 @@ class Otterdog < Formula
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
+  pypi_packages exclude_packages: %w[certifi cryptography rpds-py]
+
   # No sdist on PyPI, so we use the GitHub tarball
   # Ref: https://github.com/microsoft/playwright-python/issues/2579
   resource "playwright" do

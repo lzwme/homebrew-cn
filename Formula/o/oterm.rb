@@ -29,6 +29,8 @@ class Oterm < Formula
 
   uses_from_macos "zlib"
 
+  pypi_packages exclude_packages: %w[certifi cffi cryptography pillow pycparser rpds-py]
+
   resource "aiosql" do
     url "https://files.pythonhosted.org/packages/98/3a/105cdf480d444ee059f3fbea65616fba006fba29d32e382fb1a4d947f4b7/aiosql-13.4.tar.gz"
     sha256 "da6ebb4d5e735753853007a7d574e60761338fc6ca8d95d6d95b5d85d7b1354d"

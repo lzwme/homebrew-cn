@@ -14,6 +14,7 @@ class Aerc < Formula
     sha256 arm64_ventura: "a993460fcf4acfdcef595f4ce9e4ae678358c11f79c9dff6bc7f09d5edb73d94"
     sha256 sonoma:        "8b46596c840dd14a947428e4669704bdee42c36d6ddaa617d8d69453137e5664"
     sha256 ventura:       "c04471c53a6b7db1b349937a7b81ecf5ea794f41aad35e9d9bc0e69e309453d0"
+    sha256 arm64_linux:   "6d9361c0ff2d2c7fb8bfb3d80ec789d012547fed90bab51941250c10a07c6024"
     sha256 x86_64_linux:  "5f8a0e69f2b07a3fbbc3615af3ed930151e4d601632f2c25a3e8928068106492"
   end
 
@@ -22,6 +23,13 @@ class Aerc < Formula
   depends_on "notmuch"
 
   def install
+    # Workaround to avoid patchelf corruption when cgo is required
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV["BUILD_OPTS"] = "-buildmode=pie -trimpath"
+    end
+
     system "make", "PREFIX=#{prefix}", "VERSION=#{version}"
     system "make", "install", "PREFIX=#{prefix}"
   end

@@ -46,7 +46,7 @@ class Qtwebengine < Formula
   depends_on "ninja" => :build
   depends_on "node" => :build
   depends_on "pkgconf" => [:build, :test]
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "qttools" => :build
   # Chromium needs Xcode 15.3+ and using LLVM Clang is not supported on macOS
   # See https://bugreports.qt.io/browse/QTBUG-130922
@@ -113,9 +113,20 @@ class Qtwebengine < Formula
     depends_on "webp"
   end
 
+  pypi_packages package_name:   "",
+                extra_packages: "html5lib"
+
   resource "html5lib" do
     url "https://files.pythonhosted.org/packages/ac/b6/b55c3f49042f1df3dcd422b7f224f939892ee94f22abcf503a9b7339eaf2/html5lib-1.1.tar.gz"
     sha256 "b2e5b40261e20f354d198eae92afc10d750afb487ed5e50f9c4eaf07c184146f"
+
+    # Apply Fedora's upstreamed patch to support Python 3.14+
+    # Ref: https://github.com/html5lib/html5lib-python/pull/583
+    # Ref: https://src.fedoraproject.org/rpms/python-html5lib/blob/rawhide/f/583.patch
+    patch do
+      url "https://github.com/html5lib/html5lib-python/commit/379f9476c2a5ee370cd7ec856ee9092cace88499.patch?full_index=1"
+      sha256 "97ae2474704eedf72dc5d5c46ad86e2144c10022ea950cb1c42a9ad894705014"
+    end
   end
 
   resource "six" do
@@ -129,7 +140,14 @@ class Qtwebengine < Formula
   end
 
   def install
-    python3 = "python3.13"
+    # Kill run early to avoid timing out and skipping dependent tests for Qt version bumps
+    # FIXME: Remove when we add a self-hosted runner and automatically handle via labels
+    github_arm64_linux = OS.linux? && Hardware::CPU.arm? &&
+                         ENV["HOMEBREW_GITHUB_ACTIONS"].present? &&
+                         ENV["GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED"].blank?
+    odie "Unable to build on GitHub-hosted arm64 Linux runner!" if github_arm64_linux
+
+    python3 = "python3.14"
     venv = virtualenv_create(buildpath/"venv", python3)
     venv.pip_install resources
     ENV.prepend_path "PYTHONPATH", venv.site_packages
@@ -146,6 +164,7 @@ class Qtwebengine < Formula
       -DCMAKE_STAGING_PREFIX=#{prefix}
       -DFEATURE_webengine_proprietary_codecs=ON
       -DFEATURE_webengine_kerberos=ON
+      -DNinja_EXECUTABLE=#{which("ninja")}
     ]
 
     # Chromium always uses bundled libraries on macOS

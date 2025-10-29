@@ -24,6 +24,8 @@ class Offlineimap < Formula
 
   uses_from_macos "krb5"
 
+  pypi_packages exclude_packages: "certifi"
+
   resource "decorator" do
     url "https://files.pythonhosted.org/packages/66/0c/8d907af351aa16b42caae42f9d6aa37b900c67308052d10fdce809f8d952/decorator-5.1.1.tar.gz"
     sha256 "637996211036b6385ef91435e4fae22989472f9d571faba8927ba8253acbc330"

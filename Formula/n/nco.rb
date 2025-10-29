@@ -1,17 +1,17 @@
 class Nco < Formula
   desc "Command-line operators for netCDF and HDF files"
   homepage "https://nco.sourceforge.net/"
-  url "https://ghfast.top/https://github.com/nco/nco/archive/refs/tags/5.3.5.tar.gz"
-  sha256 "f2373b68279ff48b5cacf431f6a9f459bae75dc58d76f74cbff0834938aa6224"
+  url "https://ghfast.top/https://github.com/nco/nco/archive/refs/tags/5.3.6.tar.gz"
+  sha256 "70d64f461a0d5262274495ee1a9d85735aa3115281fdf01df4f946a919f9f6ae"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f7a7027eb6b1f10336f625e842dcf6e67b3b44c70bd0ec1ab1100943a14f510d"
-    sha256 cellar: :any,                 arm64_sequoia: "990ced2127241ba5e013822466b3ac4ae555574eea95a162f545714ed5136d34"
-    sha256 cellar: :any,                 arm64_sonoma:  "4bd2f8b04c8a3bccd095051a7cb5562f28bf2c309cd2b03358e411e6bca1dab4"
-    sha256 cellar: :any,                 sonoma:        "fc75f6acafc3ab3b02aed373a276eeb1f6c490ea71aa145cffe2a415a080f6a4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "17c785b9fe80b0eb50c8b922099f99b8619b01af4123c90a41d618e64125fdca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afdd61af2f8aa553149fd3d0e14a41b78491881e52497fa7a21137ce0b48f64a"
+    sha256 cellar: :any,                 arm64_tahoe:   "d15e2ce209eb6281782c41ac706b63aafc4a3cc29cdbf22516b59799967a277b"
+    sha256 cellar: :any,                 arm64_sequoia: "352b8fd32b785da50571c2a9af7b338c2d8d6691957281cb5909d15ba04653e8"
+    sha256 cellar: :any,                 arm64_sonoma:  "88de1d76a3a9060b161d24c80bc0f561a0697414fe8bb1d075364cc7de2fd6b0"
+    sha256 cellar: :any,                 sonoma:        "2930c77c0a5e129368d949d13a9796f3a29e4136aa1c159ba3a2703b5b4a8cef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7275ad31456ed3930361f0340f7e06e5962e22ff405ce6393864662bd0194431"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f12cd6d5663148d7083697471a466796329af3a63ed32d678d712aa27bcfe33"
   end
 
   head do

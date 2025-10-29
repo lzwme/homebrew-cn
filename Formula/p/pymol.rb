@@ -15,6 +15,7 @@ class Pymol < Formula
     sha256 cellar: :any,                 arm64_sequoia: "262b8a1c6702c62c9e21d3593e0575e5496165b9d93d67841d9d2faa6ac94f67"
     sha256 cellar: :any,                 arm64_sonoma:  "77dfd4698b6e5b90f3e4a9117301c020e6b3b67b16e5c76e1886a0f17a1c5612"
     sha256 cellar: :any,                 sonoma:        "4958fb877f750f6d443c407c265a73839dfdc98a600845ca6f90af766d26925d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7896d871f2cac3ef8b508fa4e71d5e82706b3ea110f2fd614951f1124a786fcc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c162a6c917186bb44563bcf497476a0a5c7e4be2c2847a9337ac282d4831c396"
   end
 

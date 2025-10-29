@@ -17,6 +17,7 @@ class Kapacitor < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ecf28f57adf15825e969749d95ac1ffffa8a6d51d22033c659cf9ee190dc444"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c6154a7bff94a8b87fb32af60a488b1fe0f861e6eef4ea441a95cb12c7aa350c"
     sha256 cellar: :any_skip_relocation, sonoma:        "c6c8157a96f9ac9ee0a99c01c9c3f5b01b8472a24eec0f5253983ca7ee08a2d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "afa05cac22e52c82e90815c57c537850bf11ed6eaa4626b4326da6a2d887772e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec22e1f5f4c7cda335e36dbb619373ae06144da2971d56b4424aba3034f828ce"
   end
 
@@ -41,6 +42,13 @@ class Kapacitor < Formula
     ENV.append_to_rustflags "--allow dead_code --allow mismatched_lifetime_syntaxes"
     # `flux` Workaround for `error: private item shadows public glob re-export`
     ENV.append_to_rustflags "--allow hidden_glob_reexports"
+
+    # Workaround to avoid patchelf corruption when cgo is required (for flux)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
 
     resource("pkg-config-wrapper").stage do
       system "go", "build", *std_go_args, "-o", buildpath/"bootstrap/pkg-config"

@@ -25,6 +25,13 @@ class GrafanaAlloy < Formula
   conflicts_with "alloy-analyzer", because: "both install `alloy` binaries"
 
   def install
+    # Workaround to avoid patchelf corruption when cgo is required (for godror)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     ldflags = %W[
       -s -w
       -X github.com/grafana/alloy/internal/build.Branch=HEAD

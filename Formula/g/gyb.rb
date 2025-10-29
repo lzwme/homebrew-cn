@@ -4,7 +4,7 @@ class Gyb < Formula
 
   desc "CLI for backing up and restoring Gmail messages"
   homepage "https://github.com/GAM-team/got-your-back/"
-  # Check gyb.py imports for any changes. Update pypi_formula_mappings.json (if necessary)
+  # Check gyb.py imports for any changes. Update `pypi_packages` (if necessary)
   # and then run `brew update-python-resources gyb`.
   url "https://ghfast.top/https://github.com/GAM-team/got-your-back/archive/refs/tags/v1.95.tar.gz"
   sha256 "96d8ec7c63bb33e5484f5ad6ac28c5762e9f2a2296d55955e0f48527ebcde45c"
@@ -30,6 +30,11 @@ class Gyb < Formula
 
   depends_on "certifi"
   depends_on "python@3.14"
+
+  pypi_packages package_name:     "",
+                exclude_packages: "certifi",
+                extra_packages:   %w[google-api-python-client google-auth google-auth-httplib2
+                                     google-auth-oauthlib httplib2]
 
   resource "cachetools" do
     url "https://files.pythonhosted.org/packages/cc/7e/b975b5814bd36faf009faebe22c1072a1fa1168db34d285ef0ba071ad78c/cachetools-6.2.1.tar.gz"

@@ -23,6 +23,13 @@ class Openstackclient < Formula
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
+  pypi_packages extra_packages:   %w[keystoneauth-websso osc-placement python-barbicanclient
+                                     python-cloudkittyclient python-designateclient
+                                     python-glanceclient python-heatclient python-ironicclient
+                                     python-magnumclient python-manilaclient python-mistralclient
+                                     python-octaviaclient],
+                exclude_packages: %w[certifi cryptography gnureadline rpds-py]
+
   resource "pyinotify" do
     on_linux do
       url "https://files.pythonhosted.org/packages/e3/c0/fd5b18dde17c1249658521f69598f3252f11d9d7a980c5be8619970646e1/pyinotify-0.9.6.tar.gz"

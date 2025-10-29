@@ -12,6 +12,7 @@ class Gammaray < Formula
     sha256 cellar: :any,                 arm64_sequoia: "18b2f69234eb8bbbfa11473781744c70993d42bd7d190fdf5bc12eaab1c5c966"
     sha256 cellar: :any,                 arm64_sonoma:  "c480c1834c5797ebbb206e027df33b71a1270f41704a90227d0953323e80b104"
     sha256 cellar: :any,                 sonoma:        "e128937e5279792055d4f39c523aee1799da2f669574cc63ded19371cbb03ee4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "372c2f59fef6ce0f520487c7ed7b32a4ed6e01c15380b67e43269a92dfb71568"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ff0f1aa862a5fe5b8f418afd78d2e0d4631f84f3982ecb8951bd22750e7516e"
   end
 
@@ -31,7 +32,7 @@ class Gammaray < Formula
     depends_on "qtwebchannel"
   end
 
-  on_system :linux, macos: :sonoma_or_newer do
+  on_sonoma :or_newer do
     depends_on "qtwebengine"
   end
 
@@ -39,6 +40,11 @@ class Gammaray < Formula
     depends_on "elfutils"
     depends_on "qtwayland"
     depends_on "wayland"
+
+    # TODO: Add dependencies on all Linux when `qtwebengine` is bottled on arm64 Linux
+    on_intel do
+      depends_on "qtwebengine"
+    end
   end
 
   def install

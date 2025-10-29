@@ -21,6 +21,8 @@ class Gamdl < Formula
   depends_on "pillow" => :no_linkage
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: %w[certifi pillow]
+
   # `protobuf` is manually updated to support Python 3.14, gamdl > pywidevine > protobuf
   # Issue ref: https://github.com/devine-dl/pywidevine/issues/55
 

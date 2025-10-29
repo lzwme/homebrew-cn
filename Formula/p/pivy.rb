@@ -12,6 +12,7 @@ class Pivy < Formula
     sha256 cellar: :any,                 arm64_sequoia: "711d681b19f5b4b6277890b04c480ef1fbfd8c7f5529c6628004fc1d057553b9"
     sha256 cellar: :any,                 arm64_sonoma:  "90c2d18f4261f8f4c65405dc18f32c322b03f24504bdff55c03608e2e5c53762"
     sha256 cellar: :any,                 sonoma:        "f8b2a7c238524c232c368b45c0ac5761e56e794970b79fe7a84d31efdda7e4a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "735ebf4fddd4b49343e5baf4e60580f3e2134d13f7bbbc36b18011fbe549206a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "58037db476464761029fa53f2c5a2365dbe2e4fcb87ef993556cb3b2fa1400ac"
   end
 

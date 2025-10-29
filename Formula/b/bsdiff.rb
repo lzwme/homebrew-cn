@@ -26,14 +26,19 @@ class Bsdiff < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "e0cf74e5fb1ef71fd68a33595f0dcc6d777d72e90689f57976e5c1784b1496a0"
     sha256 cellar: :any_skip_relocation, big_sur:        "7f1f498a32a8804a238cf8dce1ba7cebbee070ae6bf0bb4015dcb133ab155574"
     sha256 cellar: :any_skip_relocation, catalina:       "648a52a8af8e8f17feb9e34168dd0f00abfc98e9f0f3aa7fd88fb1458a782098"
+    sha256                               arm64_linux:    "bb201ab0bfbc684057c632420b2a69c2b568ccf547a7c121096806bd6c836d8f"
+    sha256                               x86_64_linux:   "a48ec4c541d81798cb3ba5706f031a7e71a8da01154eef1df353a729d2614130"
   end
 
-  depends_on "bsdmake" => :build
+  depends_on "bmake" => :build
+
+  uses_from_macos "bzip2"
 
   patch :DATA
 
   def install
-    system "bsdmake"
+    ENV.append "LDLIBS", "-lbz2" unless OS.mac?
+    system "bmake"
     bin.install "bsdiff"
     man1.install "bsdiff.1"
   end

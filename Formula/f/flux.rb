@@ -19,6 +19,7 @@ class Flux < Formula
     sha256 cellar: :any,                 arm64_ventura: "67432a04ff13d684b925700dbba1f5e3331df639a55f000123c389a60e7c9ba4"
     sha256 cellar: :any,                 sonoma:        "c13f56e132992d8e6b753f8e2358d5fb769fbb8232d67bd7e6feb2b7073e50b1"
     sha256 cellar: :any,                 ventura:       "fe981ddd62d62e89f406d66771b095b82730c9186a5a38c1c9d64f395a228b49"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "770477273abee5de6a91029bbcdedc4f6b8e9e8183bb4d73266d613db80cb30f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6cb4a564936512e6de8730f584ec73b885fe156f144836ab13aa13be9b5feae"
   end
 
@@ -43,6 +44,13 @@ class Flux < Formula
   def install
     # `flux-core` Workaround for `error: hiding a lifetime that's elided elsewhere is confusing` with `rust` 1.89+
     ENV.append_to_rustflags "--allow dead_code --allow mismatched_lifetime_syntaxes"
+
+    # Workaround to avoid patchelf corruption when cgo is required
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
 
     # Set up the influxdata pkg-config wrapper to enable just-in-time compilation & linking
     # of the Rust components in the server.

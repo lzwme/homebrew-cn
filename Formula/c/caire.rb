@@ -13,6 +13,7 @@ class Caire < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5e03f494a7f6fa1411aa724859f27f555f3ba850d5b0a3f9dc76810e314e43a0"
     sha256 cellar: :any_skip_relocation, sonoma:        "70d79acf65528d8c7b30ef658380fac4d0c9cd6cf8ebdfe2a75d6e1e9ef2fb87"
     sha256 cellar: :any_skip_relocation, ventura:       "93d0172823e84beee86f213dfd1738de678668778bfd48d6ece7a73892cd8070"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3054ab90f891eee21ac084564e33c4b280c99870f66bae2beb1f198edd665f72"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d6d577c0674569e1ec5951618888fff00373551779eeacbfa2712b95fe936d2"
   end
 
@@ -30,6 +31,13 @@ class Caire < Formula
   end
 
   def install
+    # Workaround to avoid patchelf corruption when cgo is required (for gioui.org/internal/vk)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), "./cmd/caire"
   end
 

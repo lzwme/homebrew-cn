@@ -13,6 +13,7 @@ class Navidrome < Formula
     sha256 cellar: :any,                 arm64_ventura: "76fc726bd5b11b48b6243718d6a4792b5eaa074474e7d84c80319f0e14c654f3"
     sha256 cellar: :any,                 sonoma:        "28cd1daaeae6c760aa0275451a92921074b4127f7ccb53f48302f5389ba9d864"
     sha256 cellar: :any,                 ventura:       "d2c328e9b93ea8eceed27952c71436485a7e0c79c20b75f7730b0c0b4844a2bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "882c457fa3692a24c961fbb54a48c6c6f0eb07596d62dbef354be7a63bd16e4a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c2d5ce1fa76d2e9f5354f4e64dd8785e92a2c722c9a0f019a2bf75e01ca4599"
   end
 
@@ -23,6 +24,13 @@ class Navidrome < Formula
   depends_on "taglib"
 
   def install
+    # Workaround to avoid patchelf corruption when cgo is required
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     ldflags = %W[
       -s -w
       -X github.com/navidrome/navidrome/consts.gitTag=v#{version}

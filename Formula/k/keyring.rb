@@ -23,6 +23,10 @@ class Keyring < Formula
     depends_on "cryptography"
   end
 
+  pypi_packages package_name:     "keyring[completion]",
+                exclude_packages: "cryptography",
+                extra_packages:   %w[jeepney secretstorage]
+
   resource "jaraco-classes" do
     url "https://files.pythonhosted.org/packages/06/c0/ed4a27bc5571b99e3cff68f8a9fa5b56ff7df1c2251cc715a652ddd26402/jaraco.classes-3.4.0.tar.gz"
     sha256 "47a024b51d0239c0dd8c8540c6c7f484be3b8fcf0b2d85c13825780d3b3f3acd"

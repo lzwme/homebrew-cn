@@ -23,6 +23,8 @@ class Showcert < Formula
   depends_on "libmagic" => :no_linkage
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: %w[certifi cryptography]
+
   resource "pem" do
     url "https://files.pythonhosted.org/packages/05/86/16c0b6789816f8d53f2f208b5a090c9197da8a6dae4d490554bb1bedbb09/pem-23.1.0.tar.gz"
     sha256 "06503ff2441a111f853ce4e8b9eb9d5fedb488ebdbf560115d3dd53a1b4afc73"

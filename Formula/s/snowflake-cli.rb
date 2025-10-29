@@ -26,6 +26,9 @@ class SnowflakeCli < Formula
 
   conflicts_with "snow", because: "both install `snow` binaries"
 
+  pypi_packages exclude_packages: %w[certifi cryptography],
+                extra_packages:   "snowflake-core"
+
   # pydantic* packages are manually updated to support Python 3.14
 
   resource "annotated-types" do

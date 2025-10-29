@@ -27,6 +27,9 @@ class KeepkeyAgent < Formula
 
   uses_from_macos "libffi"
 
+  pypi_packages exclude_packages: "cryptography",
+                extra_packages:   "protobuf==3.20.3"
+
   resource "backports-shutil-which" do
     url "https://files.pythonhosted.org/packages/a0/22/51b896a4539f1bff6a7ab8514eb031b9f43f12bff23f75a4c3f4e9a666e5/backports.shutil_which-3.5.2.tar.gz"
     sha256 "fe39f567cbe4fad89e8ac4dbeb23f87ef80f7fe8e829669d0221ecdb0437c133"

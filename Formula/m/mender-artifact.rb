@@ -16,6 +16,7 @@ class MenderArtifact < Formula
     sha256 cellar: :any,                 arm64_sequoia: "f1ff305b7019e60a2da814e997f604b9e8d2c852a324e486dfc370ca532e4f79"
     sha256 cellar: :any,                 arm64_sonoma:  "e2596b83eb8c1ff193d4df5e57ff1b3eeabba5a270885a8e2e5c86e2295966b7"
     sha256 cellar: :any,                 sonoma:        "90a3ba363fd15ef0a110c87f8434d017eb1c092774119570535ca02f119bedc3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6883b8d3f4b8b6b571d5b8b1eb0df19594651b33af7777a2c63ad48521dd300d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bc04e3ccb4cd4838c1cbcf2f8e07906346c28fbb45d766f526ead3f66da51c0"
   end
 
@@ -27,6 +28,13 @@ class MenderArtifact < Formula
   depends_on "openssl@3"
 
   def install
+    # Workaround to avoid patchelf corruption when cgo is required (for github.com/mendersoftware/openssl)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     ldflags = "-s -w -X github.com/mendersoftware/mender-artifact/cli.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
 

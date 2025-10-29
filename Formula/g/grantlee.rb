@@ -12,6 +12,7 @@ class Grantlee < Formula
     sha256 arm64_sequoia: "ff5f356d9d99d20848a315efc7e30a9046ab6534cd55a12ae8db0ba3ff86a1b1"
     sha256 arm64_sonoma:  "2a8a17b9478212757c2f73b9dc46f0db605dc8716088f5bbe11ba4eaa60efb98"
     sha256 sonoma:        "236c5ab7ebfa19ffc87cdeaf8105236760ad4ba5360ac4262512db9c66278d32"
+    sha256 arm64_linux:   "059193ce399d602b74074c138f48b3853e633d7d105af82dadc986958c6cd811"
     sha256 x86_64_linux:  "74b014396908eb267076c314c1da3e6fc3780447b16a4b7d0bdabf0f5da7fc50"
   end
 

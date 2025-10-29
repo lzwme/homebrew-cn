@@ -30,11 +30,11 @@ class GimmeAwsCreds < Formula
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
   end
 
-  # Extra package resources are set for platform-specific dependencies in
-  # pypi_formula_mappings.json, since the output of `bump-formula-pr` and
-  # `update-python-resources` is impacted by whether command is run on macOS
-  # or Linux. Remove if Homebrew logic is enhanced to handle this. Also,
-  # occasionally check if any of these Python dependencies are no longer used.
+  # Extra package resources are set here for platform-specific dependencies
+  # since the output of `bump-formula-pr` and `update-python-resources` is
+  # impacted by whether command is run on macOS or Linux. Remove if Homebrew
+  # logic is enhanced to handle this. Also, occasionally check if any of these
+  # Python dependencies are no longer used.
   #
   # macOS: `pyobjc-framework-localauthentication`, ...
   # - gimme-aws-creds
@@ -42,6 +42,8 @@ class GimmeAwsCreds < Formula
   #       └── pyobjc-framework-localauthentication
   #           ├── pyobjc-core
   #           ├── ...
+  pypi_packages exclude_packages: %w[certifi cryptography],
+                extra_packages:   "pyobjc-framework-localauthentication"
 
   resource "aenum" do
     url "https://files.pythonhosted.org/packages/e3/52/6ad8f63ec8da1bf40f96996d25d5b650fdd38f5975f8c813732c47388f18/aenum-3.1.16-py3-none-any.whl"

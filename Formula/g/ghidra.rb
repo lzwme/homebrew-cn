@@ -5,6 +5,11 @@ class Ghidra < Formula
   sha256 "ac2af20b6d20bee37e5238df2566664d824a5a3205db4dacbebdcb62b1394d00"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    regex(/^Ghidra[._-]v?(\d+(?:\.\d+)+)(?:[._-]build)?$/i)
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9518629ae054a4d76a34e696d093d2bdfd715326e416208161c08169c695944f"

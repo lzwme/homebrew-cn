@@ -3,7 +3,7 @@ class Alot < Formula
 
   desc "Text mode MUA using notmuch mail"
   homepage "https://github.com/pazz/alot"
-  # TODO: check if we can remove `standard-mailcap` from pypi_formula_mappings.json
+  # TODO: check if we can remove `standard-mailcap` from `pypi_packages`
   # https://github.com/pazz/alot/issues/1632
   url "https://github.com/pazz/alot.git",
       tag:      "0.11",

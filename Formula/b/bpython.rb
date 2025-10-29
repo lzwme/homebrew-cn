@@ -3,20 +3,18 @@ class Bpython < Formula
 
   desc "Fancy interface to the Python interpreter"
   homepage "https://bpython-interpreter.org"
-  url "https://files.pythonhosted.org/packages/ba/dd/cc02bf66f342a4673867fdf6c1f9fce90ec1e91e651b21bc4af4890101da/bpython-0.25.tar.gz"
-  sha256 "c246fc909ef6dcc26e9d8cb4615b0e6b1613f3543d12269b19ffd0782166c65b"
+  url "https://files.pythonhosted.org/packages/44/29/cd80e9108a6fc6a925ffb915f8f69198a2bb2388e39167a41d743ac2a8f4/bpython-0.26.tar.gz"
+  sha256 "f79083e1e3723be9b49c9994ad1dd3a19ccb4d0d4f9a6f5b3a73bef8bc327433"
   license "MIT"
-  revision 2
   head "https://github.com/bpython/bpython.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ceccad1817ed126972c4a001fd3bd1db7f0c0c0a0d74b5ea7ebdacca60cde98"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac4843e66eac15757cf4c1fd6adb674305b20b58b09a3b84a1fdb3091b31c41b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "447831cbb5bd13e3e4a2c1768777cf057d404bda0d6dc439ce8592a1c9f19604"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5131881ae326e2748a17f4224ed5f1f1d15a9e789df9c8c5047d7a191f311b88"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1cb0bd1660f39e3968d82fdbea76846831eaee4561b305d31cd194f2e1f39690"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fd8c41d950de1a91a3272456b70e479b413b782ee67fd5fce4e0f587259b70e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "181612cdc4ded4b629ec21988193b9d9c84619960e712bf16d65ec9fcaaa03e3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c44a932adc1aac72681f63ee42579e5995079f37718ad6628269c84dc5d15a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3a453fc182732d50075da8206eee95e89259ba3e118ce4ea98eee9a7d23a13f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0adbfab2be6f4f051a6a1fc864337b0c4943ead108a70e35dfbea9c0388e7b28"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "00da95792875208088cddc67c3516b7437e08430e01f0d567de32a5be8868bd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22c5361ecf6858a26525ddc7538d4ab76bd8d083d0eda66ffe657223e02ec438"
   end
 
   depends_on "certifi" => :no_linkage
@@ -30,8 +28,8 @@ class Bpython < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "curtsies" do
@@ -77,17 +75,6 @@ class Bpython < Formula
   resource "wcwidth" do
     url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
     sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
-  end
-
-  # Fix to build with Python 3.14, remove in next release
-  # Issue ref: https://github.com/bpython/bpython/issues/1035
-  patch do
-    url "https://github.com/bpython/bpython/commit/064ae933ee909e87c3b698a5fdf5c3062c5a318b.patch?full_index=1"
-    sha256 "591cee829b44aa00967bb53cfdc9d21b96b5439d2b0b6a3b9bc9f12d242bc3c3"
-  end
-
-  def python3
-    which("python3.14")
   end
 
   def install

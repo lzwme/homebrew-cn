@@ -18,6 +18,8 @@ class Gimmecert < Formula
   depends_on "cryptography"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: %w[certifi cryptography]
+
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"

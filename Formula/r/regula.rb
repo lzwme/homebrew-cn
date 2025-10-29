@@ -18,6 +18,7 @@ class Regula < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "6ad82b75e4b823e3335d3c1d2174a95b57b747d17da1fc69fba2a091dae4e98e"
     sha256 cellar: :any_skip_relocation, monterey:       "308470d3a43ce5fe69448da81d00e51c09b9d42ed299c9bf5a08619eedc305aa"
     sha256 cellar: :any_skip_relocation, big_sur:        "29c286e8ac38c7f7b2bcc912a406b40ad480e778ee25f7d5422f35e11deacb77"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "93b155a16f91769d12e28f9fe3b0a7ccb6af00828a91fc7899e243d5f8f004db"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "abbb2a4a62e5c18d4a2ecfb9c34fa98ff7d93b5275d0b288482fa65379978cd7"
   end
 

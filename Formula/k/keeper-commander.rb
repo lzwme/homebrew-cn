@@ -3,18 +3,18 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/80/ca/4d186e28d3692c4d503172bd6cebaf216df9061891a56b62bd6315d477cb/keepercommander-17.1.13.tar.gz"
-  sha256 "a145b6fd4ad23cceeede854d7fc14a53d5bd6381ba170a9721aa88d7d54b260e"
+  url "https://files.pythonhosted.org/packages/ac/98/1c2c2d6dafb28ed3a9e29265df758a2ce3a0a34a796adee4ab88cc98dd00/keepercommander-17.1.14.tar.gz"
+  sha256 "451142edb7dba83382d5db6100cd0a78b4f2c0d46e5ab2c8f1a7813f7573916e"
   license "MIT"
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "036ecb4d8e69891a4f0c3e29bfe265a6be8f4d54fe34e79023e573cc7cf5fb52"
-    sha256 cellar: :any,                 arm64_sequoia: "17253693d0f48b5183f81dbbaef0fcab35c19a1fbc3d9bc2d6f525fdb08f47f0"
-    sha256 cellar: :any,                 arm64_sonoma:  "8c329ec2d2277580da50e5077f1ec0c8118949eb1a8620246fb20af238d56c92"
-    sha256 cellar: :any,                 sonoma:        "1efdfc0a677ff03765f94cbf8aff8d3b41b53321f6901fe2ee96811c56413a4d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4382131c039673cacb93520ac598ff0470d9180f5d7fb8fedadcef2a74fcc06c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc9c21ff7d5f358bd798edb3fbf08d30d654091c309b54aa8849e75cca86f3f7"
+    sha256 cellar: :any,                 arm64_tahoe:   "93d77f1e7f99dbb4b6458033fe5710535414b53ca36d05b7086a367f21e5d2ee"
+    sha256 cellar: :any,                 arm64_sequoia: "2aa7ba83a066badead79175ffb88b92eeff0ab92d6a016f74b350b116d064d69"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe98178dec00d4e2c24d2987f7d64daa70f0cbfb99b08fdba5a2fc810ddc6bae"
+    sha256 cellar: :any,                 sonoma:        "0cf23018b89dac09fd5bfc5263196d2fc38b95afa052e799c78444ebe5ecfd75"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "270a40f0b154b9e7099e89043d2c0b2af22045242845a074eaa08dae1f3aa8bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9753767077d94dd545edafa9dded3039d83b76aac340b1a9e91334c001624465"
   end
 
   depends_on "pkgconf" => :build
@@ -38,6 +38,8 @@ class KeeperCommander < Formula
     depends_on "libxcb"
     depends_on "openjpeg"
   end
+
+  pypi_packages exclude_packages: %w[certifi cryptography pillow]
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -130,8 +132,8 @@ class KeeperCommander < Formula
   end
 
   resource "keeper-pam-webrtc-rs" do
-    url "https://files.pythonhosted.org/packages/1c/cd/2ffa70c927e0d14b1f90695254fefabd4ce8ada4e40d11c98177f8a17f57/keeper_pam_webrtc_rs-1.0.6.tar.gz"
-    sha256 "fcf7a2cad3906b1fc60ba92b216485e5267046da723bb8b5812e4eb8091a50fa"
+    url "https://files.pythonhosted.org/packages/4a/cb/9e5851e7f991dd1a14d6db0502169c535ec55408bba42f682734ce9df442/keeper_pam_webrtc_rs-1.1.0.tar.gz"
+    sha256 "f8b79c5595585d2faf381f0e67600c0d8415b90905b01b573d192199a9a91fa0"
   end
 
   resource "keeper-secrets-manager-core" do
@@ -180,8 +182,8 @@ class KeeperCommander < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/b3/31/4723d756b59344b643542936e37a31d1d3204bcdc42a7daa8ee9eb06fb50/psutil-7.1.0.tar.gz"
-    sha256 "655708b3c069387c8b77b072fc429a57d0e214221d01c0a772df7dfedcb3bcd2"
+    url "https://files.pythonhosted.org/packages/cd/ec/7b8e6b9b1d22708138630ef34c53ab2b61032c04f16adfdbb96791c8c70c/psutil-7.1.2.tar.gz"
+    sha256 "aa225cdde1335ff9684708ee8c72650f6598d5ed2114b9a7c5802030b1785018"
   end
 
   resource "pycryptodomex" do
@@ -190,8 +192,8 @@ class KeeperCommander < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/8d/35/d319ed522433215526689bad428a94058b6dd12190ce7ddd78618ac14b28/pydantic-2.12.2.tar.gz"
-    sha256 "7b8fa15b831a4bbde9d5b84028641ac3080a4ca2cbd4a621a661687e741624fd"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pydantic-core" do
@@ -205,8 +207,8 @@ class KeeperCommander < Formula
   end
 
   resource "pyngrok" do
-    url "https://files.pythonhosted.org/packages/a3/40/f06cbabac68bf2ff33b499d32373dedc20ebec3da814c26f82281f3c9bec/pyngrok-7.4.0.tar.gz"
-    sha256 "1f786fed8d156b99bffd713096a7ec8c81181f949c8f5c920f6820e92d6b9876"
+    url "https://files.pythonhosted.org/packages/3f/64/5ab436dd78db3bcfdbae5965c48e21a6ee3fa6ec87859e44442e2fb361c3/pyngrok-7.4.1.tar.gz"
+    sha256 "ad8637738ced5bdb88c28b087fea39ca552860c2d30004ac01033c0f8eb4f36e"
   end
 
   resource "pyperclip" do
@@ -215,8 +217,8 @@ class KeeperCommander < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
-    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
+    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
+    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
   end
 
   resource "pyyaml" do

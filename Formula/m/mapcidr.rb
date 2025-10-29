@@ -1,18 +1,18 @@
 class Mapcidr < Formula
   desc "Subnet/CIDR operation utility"
   homepage "https://projectdiscovery.io"
-  url "https://ghfast.top/https://github.com/projectdiscovery/mapcidr/archive/refs/tags/v1.1.96.tar.gz"
-  sha256 "fdf2955f920f2197bcafd90009cae54b6766b890cb1481a673cf44fbf81d867c"
+  url "https://ghfast.top/https://github.com/projectdiscovery/mapcidr/archive/refs/tags/v1.1.97.tar.gz"
+  sha256 "d1253ab474de254cb77628d3274bf6fdcf087223f219dcf26186de83776bf717"
   license "MIT"
   head "https://github.com/projectdiscovery/mapcidr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e28c0009ed0514f019e0ffd41e14a4e7159a5914fead3015cc5d1f2185b82f1f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d78655c0b9ed6633a16c7cf12e99d21fe0cdc9debe1fd140ba6cacb8a7bf64c1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57aed1540f1169b088e245a8321bbfabb82f4afc5801653a9bcf08be52141792"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3cf92d7df7cd70b386e8dfd7da1b7f331a4a0f4abad34ec2e35e6b525348c024"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "029235059fe9261644d9ce250c0ee078525e3f3fa5c30a4b88a5cd0cb9381771"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7c96bb7fe839fd01b4af3d94703a5c9e3cb8f9fa69ed1fa9d09dfae6f5fc6d0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e2fbd51525ce47066752a4a499b95442d17370d7ff076e4a2ffeda7c2540b186"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd735d61f4137e30937837e4a2b02a00b0e8fe8d40934c2fdaae2d783402f94a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d2f113e0be78302f03fbf79977db346db3ad52b83fb3a13922a5cee9b4a8171"
+    sha256 cellar: :any_skip_relocation, sonoma:        "70368a9a5728d87dea84e7615219e8c87a79d7ea0ea6bf1f7bdeba953bb665f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e3f3ea9e816fa885ba16b0a0ee36b72f3847827499356a0b755b743bbb32737"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4dab6dfedff6afb92ac22bf46ea32ee7d791bd4010c84644a4a71f24df35ca4"
   end
 
   depends_on "go" => :build

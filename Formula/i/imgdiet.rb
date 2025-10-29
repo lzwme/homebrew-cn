@@ -13,6 +13,7 @@ class Imgdiet < Formula
     sha256 cellar: :any,                 arm64_ventura: "fc829c032e756ecb5b56c0998c24147db43f76ef1498961a2b59ebb04bb1b6d5"
     sha256 cellar: :any,                 sonoma:        "ae731c0d8dca0947f6015f1024ce4b41206c00c9e497a62f0f834965a4c67852"
     sha256 cellar: :any,                 ventura:       "947efce27e3c0ef5a9be6fba6fa4fe3c7f6d926ed27bb1e3f62d04cf4c2eb65d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "88213cd44379f758de4930796e8006a2354fa4f6347205526bd139e0399f3f85"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7c06e10203f59029e144945345f81e9efbbe4b758442441f35a9e6d85b603e7"
   end
 
@@ -27,6 +28,13 @@ class Imgdiet < Formula
   end
 
   def install
+    # Workaround to avoid patchelf corruption when cgo is required
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/imgdiet"
   end
 

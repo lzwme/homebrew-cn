@@ -25,6 +25,8 @@ class Sail < Formula
   depends_on "libyaml"
   depends_on "python@3.14"
 
+  pypi_packages exclude_packages: %w[certifi cryptography]
+
   # `pyyaml` package is manually updated to support Python 3.14
 
   resource "bcrypt" do

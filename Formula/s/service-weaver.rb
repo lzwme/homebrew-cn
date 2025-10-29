@@ -30,6 +30,7 @@ class ServiceWeaver < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d58a390f9b42bc7dcd1444399ed11b9a23a2b78c29e62caaf0a0a5963a45d858"
     sha256 cellar: :any_skip_relocation, sonoma:        "29cb9c8dca107487aaa3edd171d34dce80b9f0e71ac04dd060c2d7b82677e292"
     sha256 cellar: :any_skip_relocation, ventura:       "258db33d6cf2b2cf520150d3ece5dfffb0a77c325e5248bf0a1886f6627e0719"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1211e7bf0e83aa596d397fe4e152b7ecf289248ef27bb82b27b7f06c9bbd3f9b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "385c13a006f40c24d42c8b2f33d1035143f9625b0b08349284a92e71df6972d0"
   end
 
@@ -49,6 +50,13 @@ class ServiceWeaver < Formula
   conflicts_with "weaver", because: "both install a `weaver` binary"
 
   def install
+    # Workaround to avoid patchelf corruption when cgo is required (for go-sqlite3)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"weaver"), "./cmd/weaver"
     resource("weaver-gke").stage do
       ["weaver-gke", "weaver-gke-local"].each do |f|

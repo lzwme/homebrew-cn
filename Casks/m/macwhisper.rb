@@ -1,6 +1,6 @@
 cask "macwhisper" do
-  version "12.18.3,1293,B"
-  sha256 "e9d41224e6e379fc50202cb95919991f209ce0ea87aaa4d3d27e464efd5be165"
+  version "13.0.1,1315"
+  sha256 "12d01932b0ef7e829518fe572ab52513c37bb041dccb27ca0c8badcbd2992bad"
 
   url "https://cdn.macwhisper.com/macwhisper/MacWhisper-#{version.csv.second}#{"_#{version.csv.third}" if version.csv.third}.zip",
       verified: "cdn.macwhisper.com/"
@@ -16,7 +16,7 @@ cask "macwhisper" do
     strategy :sparkle do |items, regex|
       items.map do |item|
         version_suffix = item.url.match(regex)
-        next item.nice_version if version_suffix.blank?
+        next item.nice_version if version_suffix.nil? || version_suffix[1].blank?
 
         "#{item.nice_version},#{version_suffix[1]}"
       end
@@ -24,7 +24,7 @@ cask "macwhisper" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: ">= :sequoia"
 
   app "MacWhisper.app"
 

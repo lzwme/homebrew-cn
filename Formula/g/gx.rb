@@ -18,6 +18,7 @@ class Gx < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "800b33c5da09b5165c011858adf22f136390f84c3636a66c32f6114fd9294ea4"
     sha256 cellar: :any_skip_relocation, big_sur:        "5171470b8fe21652a1ae5fef81f0b463a3c10fdac821134f2e8d7635af1ccdda"
     sha256 cellar: :any_skip_relocation, catalina:       "f737f5829c0e1ce2ff58c56515e77f3797c30d614a53ebbf663985d5564c62db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "55d4271e8778ae0e3ddc5ea048bf985f4972fe928347b04cbc13aaee342c60ab"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "40fe8e9f82a981fbf440651d85215bdc246ef4da138b5378da7318b4f3f04645"
   end
 

@@ -20,6 +20,10 @@ class Osc < Formula
   uses_from_macos "curl"
   uses_from_macos "libffi"
 
+  pypi_packages package_name:     "",
+                extra_packages:   %w[ruamel-yaml urllib3],
+                exclude_packages: "cryptography"
+
   resource "ruamel-yaml" do
     url "https://files.pythonhosted.org/packages/3e/db/f3950f5e5031b618aae9f423a39bf81a55c148aecd15a34527898e752cf4/ruamel.yaml-0.18.15.tar.gz"
     sha256 "dbfca74b018c4c3fba0b9cc9ee33e53c371194a9000e694995e620490fd40700"

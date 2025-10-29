@@ -4,6 +4,7 @@ class Fastfetch < Formula
   url "https://ghfast.top/https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.54.0.tar.gz"
   sha256 "e6a0516364bc0a4991a588537ee2abb538b86db41f7d9dff795d49baec990529"
   license "MIT"
+  revision 1
   head "https://github.com/fastfetch-cli/fastfetch.git", branch: "dev"
 
   livecheck do
@@ -12,12 +13,12 @@ class Fastfetch < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "f1856032bf2be5bf320240d070292258ac5f38950535c6f0b884fc9c3410b164"
-    sha256               arm64_sequoia: "f1fb4bbaddad085c8ae4fd8b44c43dfd4760ee4b7364f4c3327569fd7ea0d900"
-    sha256               arm64_sonoma:  "90d85aba2898776f7cee3a9cfe23f68af23e3b469eae5962dd52ff7d52f129ab"
-    sha256 cellar: :any, sonoma:        "2570cb7b1d9b664615c0841d6c3d53c55e50da982e60f8ac0c0691baa151acad"
-    sha256               arm64_linux:   "79fd25366089ce10fede23d352b0b3aa871e5191ca0d13d8f1980b4b741f44b2"
-    sha256               x86_64_linux:  "1d09a46fdfbfa3c9563d6091026a0a872eb195f40b76b7312ca840e46ccfc1f5"
+    sha256                               arm64_tahoe:   "8cbc1adb83205a0031781834431fc899f29a31f0e18ccbe42749db59bc465576"
+    sha256                               arm64_sequoia: "2379ae1e1252976d930cbadb5e56df752b32b09aee4465c09844a6dfd28180d7"
+    sha256                               arm64_sonoma:  "dcba4bdd43d4f4f7d798548564dbfcb9c6a40abb08b03c9782f69ecdefcab71e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e475e59be954441c96ef923d0dfadaaaa29ecc20c19bf12a8c1b9eacb26ed0f2"
+    sha256                               arm64_linux:   "529decf8ba94bbb00a5249be392de151a41fa0b4a0c1b65f2015b5a6c8ab8535"
+    sha256                               x86_64_linux:  "ccdebf42c55db395916b667f6c7f0f3a1ac543db9ac786ad425cab7409078e8a"
   end
 
   depends_on "chafa" => :build
@@ -27,7 +28,6 @@ class Fastfetch < Formula
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => :build
   depends_on "vulkan-loader" => :build
-  depends_on "yyjson"
 
   uses_from_macos "sqlite" => :build
   uses_from_macos "zlib" => :build
@@ -51,7 +51,7 @@ class Fastfetch < Formula
     args = %W[
       -DCMAKE_INSTALL_SYSCONFDIR=#{etc}
       -DBUILD_FLASHFETCH=OFF
-      -DENABLE_SYSTEM_YYJSON=ON
+      -DENABLE_SYSTEM_YYJSON=OFF
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

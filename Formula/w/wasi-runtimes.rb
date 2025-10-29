@@ -11,12 +11,13 @@ class WasiRuntimes < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8a183ed01b6fe006ac586d9446541ef685d3e679b93b01de299843301e0db0f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c23fca24bbbc18e445dac20f3b54eb11c52ac80f8922a2a69d6bdd5b79f23040"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "465f7a947695009583c10bd8872f3dd242edb61d0743275b642f7abe03eeb168"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9107773b557041c8613a6d8fec37846f91864ddcf89e4b77e61761e96674da4d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d473bceb3ef50277a236ca1468d01595bb628691fa9898c4996497328610268a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b8422af505f105db8fa020fafe3809db71963a40464b2213da4b55e20eaf5be"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d31a025f56b9d695875a1e39b33c51cda863c4bfc51c76d0fd82605a72b965b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6cc62b31f0978d14aa2fe4eef4c82fcac0943af072479240c0db031437e382a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f9b738cd1572576217565a40b7a82eac9b6535b3db136e07f98ed6d456969e6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0fab5b51c72b7854c10d8554758ef44922b5a1615aa8c5718686330cd722446b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "abba8b4693897cd235ae690cefaeb079b76700af532d2d4bdb6ac53cf01ccf01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc412efe2b9593e920f226199cc42a64719f8ee2435f9a6e00a3b57122fcb5d3"
   end
 
   depends_on "cmake" => :build
@@ -80,6 +81,7 @@ class WasiRuntimes < Formula
       -DCOMPILER_RT_OS_DIR=wasi
     ]
     ENV.append_to_cflags "-fdebug-prefix-map=#{buildpath}=wasisdk://v#{wasi_libc.version}"
+    ENV.append_to_cflags "-mcpu=lime1"
     # Don't use `std_cmake_args`. It sets things like `CMAKE_OSX_SYSROOT`.
     system "cmake", "-S", "compiler-rt", "-B", "build-compiler-rt", *compiler_rt_args, *common_cmake_args
     system "cmake", "--build", "build-compiler-rt"
@@ -109,7 +111,6 @@ class WasiRuntimes < Formula
       # Configuration taken from:
       # https://github.com/WebAssembly/wasi-sdk/blob/5e04cd81eb749edb5642537d150ab1ab7aedabe9/cmake/wasi-sdk-sysroot.cmake#L227-L271
       configuration = target_configuration[target]
-      configuration[:threads] = target.end_with?("-threads") ? "ON" : "OFF"
       configuration[:pic] = target.end_with?("-threads") ? "OFF" : "ON"
       configuration[:flags] = target.end_with?("-threads") ? ["-pthread"] : []
 
@@ -135,8 +136,8 @@ class WasiRuntimes < Formula
         -DCMAKE_STAGING_PREFIX=#{share}/wasi-sysroot
         -DCMAKE_POSITION_INDEPENDENT_CODE=#{configuration.fetch(:pic)}
         -DCXX_SUPPORTS_CXX11=ON
-        -DLIBCXX_ENABLE_THREADS:BOOL=#{configuration.fetch(:threads)}
-        -DLIBCXX_HAS_PTHREAD_API:BOOL=#{configuration.fetch(:threads)}
+        -DLIBCXX_ENABLE_THREADS:BOOL=ON
+        -DLIBCXX_HAS_PTHREAD_API:BOOL=ON
         -DLIBCXX_HAS_EXTERNAL_THREAD_API:BOOL=OFF
         -DLIBCXX_BUILD_EXTERNAL_THREAD_LIBRARY:BOOL=OFF
         -DLIBCXX_HAS_WIN32_THREAD_API:BOOL=OFF
@@ -146,6 +147,8 @@ class WasiRuntimes < Formula
         -DLIBCXX_ENABLE_EXCEPTIONS:BOOL=OFF
         -DLIBCXX_ENABLE_FILESYSTEM:BOOL=ON
         -DLIBCXX_ENABLE_ABI_LINKER_SCRIPT:BOOL=OFF
+        -DLIBCXX_USE_COMPILER_RT:BOOL=ON
+        -DLIBCXXABI_USE_COMPILER_RT:BOOL=ON
         -DLIBCXX_CXX_ABI=libcxxabi
         -DLIBCXX_CXX_ABI_INCLUDE_PATHS=#{buildpath}/libcxxabi/include
         -DLIBCXX_HAS_MUSL_LIBC:BOOL=ON
@@ -153,8 +156,8 @@ class WasiRuntimes < Formula
         -DLIBCXXABI_ENABLE_EXCEPTIONS:BOOL=OFF
         -DLIBCXXABI_ENABLE_SHARED:BOOL=OFF
         -DLIBCXXABI_SILENT_TERMINATE:BOOL=ON
-        -DLIBCXXABI_ENABLE_THREADS:BOOL=#{configuration.fetch(:threads)}
-        -DLIBCXXABI_HAS_PTHREAD_API:BOOL=#{configuration.fetch(:threads)}
+        -DLIBCXXABI_ENABLE_THREADS:BOOL=ON
+        -DLIBCXXABI_HAS_PTHREAD_API:BOOL=ON
         -DLIBCXXABI_HAS_EXTERNAL_THREAD_API:BOOL=OFF
         -DLIBCXXABI_BUILD_EXTERNAL_THREAD_LIBRARY:BOOL=OFF
         -DLIBCXXABI_HAS_WIN32_THREAD_API:BOOL=OFF

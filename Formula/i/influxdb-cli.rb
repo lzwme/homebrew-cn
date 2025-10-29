@@ -20,6 +20,7 @@ class InfluxdbCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8a1f6db5dfcf2d285e33ec200fcf44c48ee87ca51c3cafda2eefd94588b4eef4"
     sha256 cellar: :any_skip_relocation, sonoma:        "af4529363356a536ee7099771130580d6bde0dd377398b2a3997d82c55b2b330"
     sha256 cellar: :any_skip_relocation, ventura:       "af4529363356a536ee7099771130580d6bde0dd377398b2a3997d82c55b2b330"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "38fe1c516a17a8d874e17e510ec59594d3acb60636c431c0b9b7411bc1e68ffa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "db4024e85728111abfae88af4088b98d75c2f15bb873b12e9f546b4ce2110dde"
   end
 

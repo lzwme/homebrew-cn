@@ -3,7 +3,7 @@ class Streamrip < Formula
 
   desc "Scriptable music downloader for Qobuz, Tidal, SoundCloud, and Deezer"
   homepage "https://github.com/nathom/streamrip"
-  # Test dependencies should be removed, so they are added to `pypi_formula_mappings`
+  # Test dependencies should be removed, so they are added to `pypi_packages`
   # `pygments` should be added manually, it is removed with test dependencies
   # PR ref: https://github.com/nathom/streamrip/pull/886
   url "https://files.pythonhosted.org/packages/b8/c9/6997772e0217f3081e4e692c7b8b104aaa564c008f2593341e81bbbd2396/streamrip-2.1.0.tar.gz"
@@ -27,6 +27,8 @@ class Streamrip < Formula
   depends_on "python@3.14"
 
   uses_from_macos "libffi"
+
+  pypi_packages exclude_packages: %w[certifi pillow pytest pytest-asyncio pytest-mock]
 
   resource "aiodns" do
     url "https://files.pythonhosted.org/packages/17/0a/163e5260cecc12de6abc259d158d9da3b8ec062ab863107dcdb1166cdcef/aiodns-3.5.0.tar.gz"

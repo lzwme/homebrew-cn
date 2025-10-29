@@ -20,6 +20,7 @@ class Legitify < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "4da2d4b8cfda747f0c5e4737b420ed649668c3e99e166d6bb09b5ac3ab6987fa"
     sha256 cellar: :any_skip_relocation, ventura:        "b84b18b0af6e823a7e1702a2ae93ddc159c4a663d3a2355736d0d496e1598e79"
     sha256 cellar: :any_skip_relocation, monterey:       "7cd2d8b32f4bf1ab2639d0b62d8400b1bbb7d338961ab5360bfd3e351ab61522"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "49ba57e55542c9245947a1fe6f7f8161f90fc11dcd49392870e6a557ce26a071"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a5928ac45988d42f507bda79350361ac1e2e157ba1957b94df70e1701c1bd9c"
   end
 

@@ -18,6 +18,7 @@ class InfluxdbAT1 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "105212cf7d4142a28a2741b5774a8440c4689b5aeac319c6243655f0d97e4d5a"
     sha256 cellar: :any_skip_relocation, sonoma:        "9d13ec4589a0ed0656ddccb0b945f69a40db80fa3818f1596aedbd6e86e788a6"
     sha256 cellar: :any_skip_relocation, ventura:       "560fa8fdec78ee706b0852d3560ae307229eb9a17ef68a195f57bfa5bbae9af2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "404e18314bed394a1d1f177330f91a064d5db5f939b911b2b0e616e9a04eb4c4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3256763c89cf2904fbd1981ba27702f26e2f6883ec5d7f595769a8c59ef3d22"
   end
 
@@ -38,6 +39,13 @@ class InfluxdbAT1 < Formula
   def install
     # Workaround for `error: hiding a lifetime that's elided elsewhere is confusing` with `rust` 1.89+
     ENV.append_to_rustflags "--allow dead_code --allow mismatched_lifetime_syntaxes"
+
+    # Workaround to avoid patchelf corruption when cgo is required (for flux)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
 
     # Set up the influxdata pkg-config wrapper
     resource("pkg-config-wrapper").stage do

@@ -25,6 +25,7 @@ class Pyside < Formula
     sha256                               arm64_sequoia: "fdf377a139efc333ed0db796cfc57ec3438dc90d39d154c13078be084b2d1e53"
     sha256                               arm64_sonoma:  "c231f54ac3566b9b5097b85f573c81b0b48e89d586bf6097967daa23eebd476d"
     sha256 cellar: :any,                 sonoma:        "9149138ebb5e98687c1b31d33880066a5c4eafbbfc7ae0bfee8ff838426d6e52"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f840ae550d2cb727219170cbc621584d8c66d6ebccde6e4380b08b9bdb2627b5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0157febc0649c4a7feac6ee8a174b43cebcd089fb4879eeb2bc26bfe5736ab85"
   end
 
@@ -68,13 +69,19 @@ class Pyside < Formula
     depends_on "qtshadertools"
   end
 
-  on_system :linux, macos: :sonoma_or_newer do
+  on_sonoma :or_newer do
     depends_on "qtwebengine"
     depends_on "qtwebview"
   end
 
   on_linux do
     depends_on "mesa"
+
+    # TODO: Add dependencies on all Linux when `qtwebengine` is bottled on arm64 Linux
+    on_intel do
+      depends_on "qtwebengine"
+      depends_on "qtwebview"
+    end
   end
 
   # Fix .../sources/pyside6/qtexampleicons/module.c:4:10: fatal error: 'Python.h' file not found
@@ -129,7 +136,7 @@ class Pyside < Formula
       Widgets
       Xml
     ]
-    modules << "WebEngineCore" if OS.linux? || MacOS.version > :ventura
+    modules << "WebEngineCore" if (OS.linux? && Hardware::CPU.intel?) || (OS.mac? && MacOS.version >= :sonoma)
     modules.each { |mod| system python3, "-c", "import PySide6.Qt#{mod}" }
 
     pyincludes = shell_output("#{python3}-config --includes").chomp.split

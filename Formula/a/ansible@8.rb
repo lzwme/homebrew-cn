@@ -35,6 +35,11 @@ class AnsibleAT8 < Formula
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
+  pypi_packages extra_packages: %w[apache-libcloud boto3 dnspython docker
+                                   junos-eznc jxmlease kerberos ntc-templates openshift
+                                   passlib pexpect proxmoxer pysphere3 python-consul
+                                   python-neutronclient pywinrm requests-credssp shade zabbix-api]
+
   resource "ansible-core" do
     url "https://files.pythonhosted.org/packages/a1/fc/e81a2e2a6e4247444fe632c8ffaff5c1bcc3adf85ae87d08158724f419fd/ansible_core-2.15.12.tar.gz"
     sha256 "5fde82cd3928d9857ad880782c644f27d3168b0f25321d5a8d6befa524aa1818"

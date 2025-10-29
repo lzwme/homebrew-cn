@@ -24,16 +24,13 @@ class Step < Formula
   end
 
   def install
-    ENV["VERSION"] = version.to_s
-    ENV["CGO_OVERRIDE"] = "CGO_ENABLED=1"
-    system "make", "build"
+    ENV["CGO_OVERRIDE"] = "CGO_ENABLED=1" if ENV["CGO_ENABLED"] != "0"
+    system "make", "build", "VERSION=#{version}"
     bin.install "bin/step" => "step"
     generate_completions_from_executable(bin/"step", "completion")
 
     resource("certificates").stage do |r|
-      ENV["VERSION"] = r.version.to_s
-      ENV["CGO_OVERRIDE"] = "CGO_ENABLED=1"
-      system "make", "build"
+      system "make", "build", "VERSION=#{r.version}"
       bin.install "bin/step-ca" => "step-ca"
     end
   end

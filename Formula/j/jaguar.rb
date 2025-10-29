@@ -1,8 +1,8 @@
 class Jaguar < Formula
   desc "Live reloading for your ESP32"
   homepage "https://toitlang.org/"
-  url "https://ghfast.top/https://github.com/toitlang/jaguar/archive/refs/tags/v1.55.0.tar.gz"
-  sha256 "e0496cb61210b525cc2be324872661f5132f3b16a350f066dff8a9ee23685443"
+  url "https://ghfast.top/https://github.com/toitlang/jaguar/archive/refs/tags/v1.56.0.tar.gz"
+  sha256 "4774ecdcc200b05253c0573fe1919c222789ac0e83cd463cf524f9e438c9f409"
   license "MIT"
   head "https://github.com/toitlang/jaguar.git", branch: "main"
 
@@ -12,14 +12,12 @@ class Jaguar < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca3b1852310dfb19127e989b0ae15a51bcf9b7673ddccdbef2ac926eb6a0e747"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5fa4b1ef31678f6af8c4e8dd8823bb4028c9331d62f5fabd10ba36520ca90e17"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5fa4b1ef31678f6af8c4e8dd8823bb4028c9331d62f5fabd10ba36520ca90e17"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5fa4b1ef31678f6af8c4e8dd8823bb4028c9331d62f5fabd10ba36520ca90e17"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b390115074a3f098dfc5f00ebc449fec8e362b5c715bcb48a7e323263e83441a"
-    sha256 cellar: :any_skip_relocation, ventura:       "b390115074a3f098dfc5f00ebc449fec8e362b5c715bcb48a7e323263e83441a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9406b423e5d3c25212c335dc119f48fa1d19246919ade8e12768adc0f685ad04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87c02b0da12e2f437abdd825ec3f06093959e5b22419bf216a2c070e33bc8df1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "19b4b0d70c80bcdf8e629f3a0a25c331a0d97b22a75ae7b76039f7904187acb3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "19b4b0d70c80bcdf8e629f3a0a25c331a0d97b22a75ae7b76039f7904187acb3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19b4b0d70c80bcdf8e629f3a0a25c331a0d97b22a75ae7b76039f7904187acb3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c896114a87f2d4d95b3e6b260a56a8b588b14c9b0f70b95566bc10a1e5a74a4d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d8fee26350067211d64f389a66bb0838f25bbbf566b803ea3987e30f53d0e4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "622a9544c007a0487180fd15a8fe71d6dcbbd8f064fff241eaeed1a4ec4bc4ef"
   end
 
   depends_on "go" => :build

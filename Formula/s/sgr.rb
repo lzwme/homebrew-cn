@@ -28,6 +28,8 @@ class Sgr < Formula
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic-core rpds-py]
+
   # Manually update `pglast` and `ruamel-yaml` to the latest version
 
   resource "annotated-types" do

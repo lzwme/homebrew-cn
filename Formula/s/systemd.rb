@@ -57,6 +57,9 @@ class Systemd < Formula
   depends_on "xz"
   depends_on "zstd"
 
+  pypi_packages package_name:   "",
+                extra_packages: %w[jinja2 lxml]
+
   resource "jinja2" do
     url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
     sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"

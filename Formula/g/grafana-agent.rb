@@ -10,6 +10,7 @@ class GrafanaAgent < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "fdceb11b537cf0ba0f9f25c13c2dd9807ef4e36e5bedf1cb5901cca082155c16"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c787b87e2bddf06935d599e13ec9883fbaaa96ef2a79d525e20139b005e866c"
     sha256 cellar: :any_skip_relocation, sonoma:        "45513ece0e70cc06796d9e6f7b13464f0638a0665d88d335d686e03b8c9ce8d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "294916865ca4acdf865f4e80f78e821e9defd5c69d2a38afd6433eb51c89f17b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "be67266b8d9a09438ab69a89cf9719038f9ad63dda94d9f7b0e84b23eb984626"
   end
 

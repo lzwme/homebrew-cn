@@ -34,14 +34,13 @@ class Ansible < Formula
   uses_from_macos "libxslt"
   uses_from_macos "openldap" # for python-ldap
 
-  pypi_packages exclude_packages: ["certifi", "cryptography", "gnureadline"],
-                extra_packages:   [
-                  "ansible-pylibssh", "apache-libcloud", "bcrypt<5", "boto3", "dnspython", "docker",
-                  "fqdn", "junos-eznc", "jxmlease", "kerberos", "ntc-templates", "openshift",
-                  "passlib", "pexpect", "proxmoxer", "pynetbox", "pysphere3", "python-consul",
-                  "python-ldap", "python-neutronclient", "pytz", "pywinrm", "requests-credssp",
-                  "shade", "zabbix-api"
-                ]
+  # passlib doesn't work with bcrypt v5+: https://github.com/ansible/ansible/issues/85919
+  pypi_packages exclude_packages: %w[certifi cryptography gnureadline],
+                extra_packages:   %w[ansible-pylibssh apache-libcloud bcrypt<5 boto3 dnspython docker
+                                     fqdn junos-eznc jxmlease kerberos ntc-templates openshift
+                                     passlib pexpect proxmoxer pynetbox pysphere3 python-consul
+                                     python-ldap python-neutronclient pytz pywinrm requests-credssp
+                                     shade zabbix-api]
 
   # pyinotify is only a dependency on Linux
   resource "pyinotify" do
@@ -77,7 +76,6 @@ class Ansible < Formula
     sha256 "826996d74c5aa9f4b6916195547312ac6384bac3810b8517063f293248257b72"
   end
 
-  # passlib doesn't work with bcrypt v5+: https://github.com/ansible/ansible/issues/85919
   resource "bcrypt" do
     url "https://files.pythonhosted.org/packages/bb/5d/6d7433e0f3cd46ce0b43cd65e1db465ea024dbb8216fb2404e919c2ad77b/bcrypt-4.3.0.tar.gz"
     sha256 "3a3fd2204178b6d2adcf09cb4f6426ffef54762577a7c9b54c159008cb288c18"

@@ -1,8 +1,8 @@
 class Mmctl < Formula
   desc "Remote CLI tool for Mattermost server"
   homepage "https://github.com/mattermost/mattermost"
-  url "https://ghfast.top/https://github.com/mattermost/mattermost/archive/refs/tags/v11.0.2.tar.gz"
-  sha256 "bcba98d4cadb880a678bab9f86455d318fa5b8815a9054f467f099bec9d4deb7"
+  url "https://ghfast.top/https://github.com/mattermost/mattermost/archive/refs/tags/v11.0.4.tar.gz"
+  sha256 "eb3b95fb02dbcf596fa90a4b045f10003b474d1446d8048b49ee1af61ae3c522"
   license all_of: ["AGPL-3.0-only", "Apache-2.0"]
   head "https://github.com/mattermost/mattermost.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Mmctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "65f01978a48ed92633aa93c511b8447dc061d6f281dd01150c4d780f3513805c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65f01978a48ed92633aa93c511b8447dc061d6f281dd01150c4d780f3513805c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "65f01978a48ed92633aa93c511b8447dc061d6f281dd01150c4d780f3513805c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "21aabeea9c8af22791a156fa40c58b62fb76352d48bab2cc5ca70e2dfd24a1b9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fcc2f4560af89d282257027bfd214a3e85d1a63c82a43a5d547445cb54517e59"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd92758bcd67a78ca78c2cf4a1259efb2049f9e7a189309ed77be95c3d7db628"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "271dfda338071dd6a293f2f0007c99f7b4effd3e0b8560ffaf3411136aa66c73"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "271dfda338071dd6a293f2f0007c99f7b4effd3e0b8560ffaf3411136aa66c73"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "271dfda338071dd6a293f2f0007c99f7b4effd3e0b8560ffaf3411136aa66c73"
+    sha256 cellar: :any_skip_relocation, sonoma:        "724870e7a94d4884ac843783f64a4fd6bb173ea6ecf70ae7eb7a1a6f6a77a57b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c2b281e91943dc185294bc2b4f86ac49e15646f3b215c51957846dd179dd70e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "829f2600949a037d986fb45926daa8e8e995395787081a45a9bb08658424151e"
   end
 
   depends_on "go" => :build

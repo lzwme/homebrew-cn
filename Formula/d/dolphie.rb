@@ -3,20 +3,19 @@ class Dolphie < Formula
 
   desc "Feature-rich top tool for monitoring MySQL"
   homepage "https://github.com/charles-001/dolphie"
-  url "https://files.pythonhosted.org/packages/e8/d4/d108e7f39caad0d20bfecaa394787e01c0cab75663cc54b8913e9cde1898/dolphie-6.10.2.tar.gz"
-  sha256 "0b80a8cad69e45866ca6246fa6b4271d91c194defb23d46a46cf45d89089d6b9"
+  url "https://files.pythonhosted.org/packages/e3/cc/b84ae062535c88af2723188eed6ae82a046131df717849a66363cf6274db/dolphie-6.10.5.tar.gz"
+  sha256 "64668b204cc32dcf09acb8c179bdeff1f3df658047848ac345f25cdedec2197c"
   license "GPL-3.0-or-later"
 
   no_autobump! because: "some resources have to be updated manually"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "f5b64965dc7adc19e90e44ee7da7cde600b6a94352736dda4a780883cc83b2d5"
-    sha256 cellar: :any,                 arm64_sequoia: "4b09e93a915b9be529ae4098e2a574edcf6d506cbab573ac996e940790360b60"
-    sha256 cellar: :any,                 arm64_sonoma:  "68329ecc0e25129c38993c8b875daaf548cf5dbeb4235791104c1d893521baad"
-    sha256 cellar: :any,                 sonoma:        "20c0cf2a1a7ef525aff28d1af2842af54a564c41207eead687ba3d84982ba92b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b108ebed2b7b7a273c1b2452dee6bceb29167ba2265f11849ef10ba087f1d756"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9adcda832df90d33ced9872133f9222cf4942f6f49c7d5cf189c0c52a1ba3978"
+    sha256 cellar: :any,                 arm64_tahoe:   "e8c4757b98dbd21909cc26c9d18f6d680740c8ed739072a38972d8048b29f1c5"
+    sha256 cellar: :any,                 arm64_sequoia: "df26fa16a390e432c1067d23423138a229f415c6cf5c63d6d1d503346171faac"
+    sha256 cellar: :any,                 arm64_sonoma:  "79b69c744016e0f634ca015efd8ed71c970797c482a03df334c9c5414786f527"
+    sha256 cellar: :any,                 sonoma:        "5fc9487b70318bf5c9a2a54cacc8911e0cf449077a4c8870833c54d4ac54fbbe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1491e3215ad48d01ab8434f2a3be701fa45c865fa1778f9d7bb9e1047485caf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83df552221cbf7d9794d4c95a8d731db25132c2d56174b179c4d5a4bd38100f6"
   end
 
   depends_on "rust" => :build # for orjson
@@ -33,8 +32,8 @@ class Dolphie < Formula
   # 3. replace `tree-sitter-*` resources with their versions from GitHub
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "idna" do
@@ -73,8 +72,8 @@ class Dolphie < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/be/4d/8df5f83256a809c22c4d6792ce8d43bb503be0fb7a8e4da9025754b09658/orjson-3.11.3.tar.gz"
-    sha256 "1c0603b1d2ffcd43a411d64797a19556ef76958aef1c182f22dc30860152a98a"
+    url "https://files.pythonhosted.org/packages/c6/fe/ed708782d6709cc60eb4c2d8a361a440661f74134675c72990f2c48c785f/orjson-3.11.4.tar.gz"
+    sha256 "39485f4ab4c9b30a3943cfe99e1a213c4776fb69e8abd68f66b83d5a0b0fdc6d"
   end
 
   resource "packaging" do
@@ -93,8 +92,8 @@ class Dolphie < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/b3/31/4723d756b59344b643542936e37a31d1d3204bcdc42a7daa8ee9eb06fb50/psutil-7.1.0.tar.gz"
-    sha256 "655708b3c069387c8b77b072fc429a57d0e214221d01c0a772df7dfedcb3bcd2"
+    url "https://files.pythonhosted.org/packages/cd/ec/7b8e6b9b1d22708138630ef34c53ab2b61032c04f16adfdbb96791c8c70c/psutil-7.1.2.tar.gz"
+    sha256 "aa225cdde1335ff9684708ee8c72650f6598d5ed2114b9a7c5802030b1785018"
   end
 
   resource "pygments" do

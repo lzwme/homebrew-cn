@@ -3,7 +3,7 @@ class Iconsur < Formula
 
   desc "macOS Big Sur Adaptive Icon Generator"
   homepage "https://github.com/rikumi/iconsur"
-  # Keep extra_packages in pypi_formula_mappings.json aligned with
+  # Keep extra `pypi_packages` aligned with
   # https://github.com/rikumi/iconsur/blob/#{version}/src/fileicon.sh#L230
   url "https://registry.npmjs.org/iconsur/-/iconsur-1.7.0.tgz"
   sha256 "d732df6bbcaf1418c6f46f9148002cbc1243814692c1c0e5c0cebfcff001c4a1"

@@ -14,6 +14,7 @@ class Tctl < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "081280cf31bbf2fc09c433ad8e5e3f8368c720b0fe51f303fa2bc04940333683"
     sha256 cellar: :any_skip_relocation, ventura:        "2086b0e1d687f32df0b3b72951f7e647e6d53dc87633f3b58bc7e7c8b1e3cd74"
     sha256 cellar: :any_skip_relocation, monterey:       "888e39c95e804081f11c4da9a0c62535a91e18cafbf661e3b1f7203082c1957c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5c4e8c844a0839abe2e32c2ac60826765819e9e79e1f63f5f27b6291acab48e3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6fe6c1efa47cbfe9750cb68e0c9e413a4e2005d382faf3554202585f71218500"
   end
 

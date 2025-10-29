@@ -17,6 +17,7 @@ class Driftwood < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "45bd8ae86b45b33f711d1408048742ba539a0e5246b1328b6bcc1797f81b2413"
     sha256 cellar: :any_skip_relocation, monterey:       "45bd8ae86b45b33f711d1408048742ba539a0e5246b1328b6bcc1797f81b2413"
     sha256 cellar: :any_skip_relocation, big_sur:        "45bd8ae86b45b33f711d1408048742ba539a0e5246b1328b6bcc1797f81b2413"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "74b258c583bc6daa74d7dbb42977373dce798c77908df054f0cd7d35d7f67a0e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f23e0f3345fb5ee170a3572e9c02243b531c471ff5691ca9e6121454f93594b2"
   end
 

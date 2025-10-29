@@ -1,18 +1,18 @@
 class Traefik < Formula
   desc "Modern reverse proxy"
   homepage "https://traefik.io/"
-  url "https://ghfast.top/https://github.com/traefik/traefik/releases/download/v3.5.3/traefik-v3.5.3.src.tar.gz"
-  sha256 "764a7a927148e71ed1a41597873c9bd0414515a4e73060ed2810b017fcf2e262"
+  url "https://ghfast.top/https://github.com/traefik/traefik/releases/download/v3.5.4/traefik-v3.5.4.src.tar.gz"
+  sha256 "27b7b9c475ca9d83385c4a135b278699e45027e02721e2b8453928d982914579"
   license "MIT"
   head "https://github.com/traefik/traefik.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b3fdddb19ff702ea34361f64cb83e6b735951adca94329b7c537d970276ffd5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed06eed3f716b5a5dd52e95ef636ff856a5e073ad7c41aa88e5e9ac5a10610dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48e6619cca12d17e6ce5b118dd044b97d572b1483a97afc5ae5d2a35dc830f62"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c47de62e2238bdaac5536c1c2a7b33cd790ff12e688f3761dd9c1d5896ed16cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "04cf986b746f1fd4b3584983b56147404bbe0c5234970f87bb5fe17560c92a8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "819d8a88736c519ef4fb7b20e2bfe5600e668b55c2546b89df4394eaba259349"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c217efd27bd55e2a972ea96d4d19684ff59fbd20aa1a877ec0ff59f540d7400a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1241ab0e721886c8db7d9f5f5537aebbd94965fad6b5c4f901b82ea2178c3ebc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a0631e884a6486d36d3685f497f3d5b12e3ee6fb494398e289885ebaed7e8f2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "178f20538af9d90aa07fa80e4a038ba44f10641dbdcf9cac4aa4c80dd4db381f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd16c147969f5c8d7d1bab3b499536d55045064ea0c7f51a8156ec4f4b3352b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b304cd0a52e9cdc461305416e9bbdde1e2b3396a81ff8da1c04c4800f7480b7a"
   end
 
   depends_on "go" => :build

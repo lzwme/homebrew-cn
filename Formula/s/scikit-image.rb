@@ -31,6 +31,8 @@ class ScikitImage < Formula
     depends_on "patchelf" => :build
   end
 
+  pypi_packages exclude_packages: %w[numpy pillow scipy]
+
   resource "imageio" do
     url "https://files.pythonhosted.org/packages/0c/47/57e897fb7094afb2d26e8b2e4af9a45c7cf1a405acdeeca001fdf2c98501/imageio-2.37.0.tar.gz"
     sha256 "71b57b3669666272c818497aebba2b4c5f20d5b37c81720e5e1a56d59c492996"

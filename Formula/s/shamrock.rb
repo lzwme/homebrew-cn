@@ -1,22 +1,18 @@
 class Shamrock < Formula
   desc "Astrophysical hydrodynamics using SYCL"
   homepage "https://github.com/Shamrock-code/Shamrock"
-  url "https://ghfast.top/https://github.com/Shamrock-code/Shamrock/releases/download/v2025.05.0/shamrock-2025.05.0.tar"
-  sha256 "59d5652467fd9453a65ae7b48e0c9b7d4162edc8df92e09d08dcc5275407a897"
+  url "https://ghfast.top/https://github.com/Shamrock-code/Shamrock/releases/download/v2025.10.0/shamrock-2025.10.0.tar"
+  sha256 "72683352d862d7b3d39568151a17ea78633bd4976a40eacb77098d3ef0ca3c55"
   license "CECILL-2.1"
-  revision 1
   head "https://github.com/Shamrock-code/Shamrock.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "6323f8da9268aff5d7ced2543cf89ebde8dc4cbc3dc50756fbebb71fa7945c1b"
-    sha256 arm64_sequoia: "cf3a4a0ebb0bad131f091c5f8c458affe09b3643b7683aa67b705a97d34f83d7"
-    sha256 arm64_sonoma:  "f891dda301e1f6f23a83c3decabd61df6ce73faae6e63552e4d058d26a212ba7"
-    sha256 sonoma:        "0c497859d5a8ff3387f7b46fad164c270728e8d1a74d39592edb39edaeddb9db"
-    sha256 arm64_linux:   "cc61abd988c7308020dc2ee2b60519a565267c9e93887ab414de98594e586618"
-    sha256 x86_64_linux:  "0bcb52e22880d47fafddc933f6e279a2c016f0c907afe39d40b60b77d8cb9abb"
+    sha256 arm64_tahoe:   "7c1186e99fc8c0f9a7a3d24ad1a567af9d51ea1d21ef1388061176c1835c3846"
+    sha256 arm64_sequoia: "7d9a8431163d090cb87f372c902668d6ad63c10b59007649c08bab964537927e"
+    sha256 arm64_sonoma:  "7cb215b578f001046d215348af3e62be75c4c54e934cb4e1f77d0297fe0384e7"
+    sha256 sonoma:        "aa62daa6853bf1198dc5798050c244f3e46fff90263191c6a7711f3b90d2f366"
+    sha256 arm64_linux:   "beac32843e9741cdb0b49c9eeff5596e839529bd72d41e15a9d2590120346437"
+    sha256 x86_64_linux:  "147df51883fc38480ad75d1c4ae774a6d65b4fcaf301c4cbae61ca2b65fc2af9"
   end
 
   depends_on "cmake" => :build

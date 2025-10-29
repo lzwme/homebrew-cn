@@ -21,6 +21,7 @@ class Flowpipe < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "de5f50ff8048be290b36092fcd890b85b672a4286183a2a1cb0771cf60c0412d"
     sha256 cellar: :any_skip_relocation, sonoma:        "ff20f9941e5e7b7effef9e3f0d122f060893429c9c933ec3721c145fe7342bae"
     sha256 cellar: :any_skip_relocation, ventura:       "cd4417405a3224f626a5ce80074bbed8735b31a8f2d56467692d7dc6bac3d4b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c75b403dc102e00429d8ac05a925d72253e373947ff608db5a8bd3e005a10f3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c9b2da386e4f32aa027f6f91451644838b1d69eb5cbd3e6d5424b2c9dba229f"
   end
 
@@ -35,6 +36,13 @@ class Flowpipe < Formula
     cd "ui/form" do
       system buildpath/"yarn", "install"
       system buildpath/"yarn", "build"
+    end
+
+    # Workaround to avoid patchelf corruption when cgo is required (for go-sqlite3)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
     end
 
     ldflags = %W[

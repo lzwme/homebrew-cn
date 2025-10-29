@@ -2,6 +2,7 @@ class Carla < Formula
   desc "Audio plugin host supporting LADSPA, LV2, VST2/3, SF2 and more"
   homepage "https://kx.studio/Applications:Carla"
   license "GPL-2.0-or-later"
+  revision 1
 
   stable do
     url "https://ghfast.top/https://github.com/falkTX/Carla/archive/refs/tags/v2.5.10.tar.gz"
@@ -18,14 +19,12 @@ class Carla < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "493fbcb8c43cedb7fbe4157bec19026f746b3d8ad7210a5de6641fc37dafb746"
-    sha256 cellar: :any,                 arm64_sequoia: "f7579dbd7722c9c891562025a5087c85a09925b3a02921df731412f6d340de14"
-    sha256 cellar: :any,                 arm64_sonoma:  "e68c44affb1640960ee3a5523a637b149d5426ca0e40cc8434c1c93c81fbed9b"
-    sha256 cellar: :any,                 arm64_ventura: "ecbea509ddf5ef1074d5838e01669a49d48c24baf4ec10d816d894cb39830b7c"
-    sha256 cellar: :any,                 sonoma:        "768c0fccfd67bafa8c1e23bbf0531ae88e3f756d4d074079fbad4c7c2b0fe202"
-    sha256 cellar: :any,                 ventura:       "8e2274219eda8243736ed5e015cdb5ef62a2add1c1e59280e0ba84738c66abf3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7d4f3b3406c8b75150904c92a51b6e7257ca13154fd4a47c372244b4050039d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a63e9f2d8ecfb2fbee7417dc8b0cb21fd55d64f5d75ae9cdf8d09cd60621c0b"
+    sha256 cellar: :any,                 arm64_tahoe:   "e262b34d4e21d5ca0d5abbd27a19ee022eb195a52c0622c814456e1cd95f1454"
+    sha256 cellar: :any,                 arm64_sequoia: "67daad4cbe5241d8c83ed16f26f4de4f4ca40c737895428da7c0924fb3bf6a6c"
+    sha256 cellar: :any,                 arm64_sonoma:  "3757c8d6ac0389d6181b9dfb7ab66d48dc426bfe310715756f4c6b2fd408f11a"
+    sha256 cellar: :any,                 sonoma:        "cd9c3cfbd45c97b0a82fc238c0dc96a4ba41f523459eddb07d8541319482c8b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b951b632b5eed8b2600195552a1dea945cc16cc79d8a6a1059fec105f1e0742e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ed922b11d7bb6755b0745ad5a51fb581909d653263830b41639299272ae3ff3"
   end
 
   head do
@@ -42,7 +41,7 @@ class Carla < Formula
   depends_on "liblo"
   depends_on "libmagic"
   depends_on "libsndfile"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   on_linux do
     depends_on "alsa-lib"
@@ -64,7 +63,7 @@ class Carla < Formula
     system "make", "install", "PREFIX=#{prefix}"
 
     inreplace bin/"carla", "PYTHON=$(which python3 2>/dev/null)",
-                           "PYTHON=#{which("python3.13")}"
+                           "PYTHON=#{which("python3.14")}"
   end
 
   test do

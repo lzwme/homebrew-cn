@@ -13,6 +13,7 @@ class PodmanCompose < Formula
     sha256 cellar: :any,                 arm64_sequoia: "64ec31c99c8f3eef79b7bff65d15f3aa9fee7c3d2cf10db798934655650b2eb7"
     sha256 cellar: :any,                 arm64_sonoma:  "b090788eeecfb9762576fc0579cca1e237dbe78fe81d1bf83ec5027ce654550c"
     sha256 cellar: :any,                 sonoma:        "0c3fef86a51ea1e01f3b292042a21721adbb26b2d3220be6a4cf3d4a64ee1b9a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fca19cda30ccd74d9837a3fadcc36b637d85a38fa42ba765f39ebaaabda87f79"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2225e553f4109c8f560ede2cb744456f8c53e625ad1f168cc66f9d4cad789835"
   end
 

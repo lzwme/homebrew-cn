@@ -6,7 +6,7 @@ class ReconNg < Formula
   homepage "https://github.com/lanmaster53/recon-ng"
   # See the REQUIREMENTS file in the archive for the top level of dependencies.
   # Please check for changes that may have been made since the last update.
-  # Update pypi_formula_mappings.json if necessary and run `brew update-python-resources recon-ng`.
+  # Update `pypi_packages` if necessary and run `brew update-python-resources recon-ng`.
   url "https://ghfast.top/https://github.com/lanmaster53/recon-ng/archive/refs/tags/v5.1.2.tar.gz"
   sha256 "18d05030b994c9b37f624628251d3376d590f3d1eec155f67aca88fa5f3490cc"
   license "GPL-3.0-only"

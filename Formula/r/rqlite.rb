@@ -11,12 +11,20 @@ class Rqlite < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa1754bab9a2831be80c4dc2bcbf1f417ab7b62f948fcf13c326556938a0af46"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2dd6aaf1f5a58e9ce42d6acc0c5822606008b0cf815e5f5d237e45cfea622b3"
     sha256 cellar: :any_skip_relocation, sonoma:        "bf82ffc5830d53fc50d0c4ed0768ef99ade247d7f342a78cb6bf5b61d909225e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "74b2aad7c9c2f0f4a1a11d1226d81a01f3bcc23b0a839b47480bf203d165814f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "59fc5a5a620b1369bfc938f741b4e4366bb84ca78a6de68e171a83e035c6ae33"
   end
 
   depends_on "go" => :build
 
   def install
+    # Workaround to avoid patchelf corruption when cgo is required (for go-sqlite3)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     version_ldflag_prefix = "-X github.com/rqlite/rqlite/v#{version.major}"
     ldflags = %W[
       -s -w

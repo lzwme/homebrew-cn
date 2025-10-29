@@ -3,19 +3,18 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/1f/cc/463ae73892e27fc5dd4dceb91707ac60ba91592f08232dae3359971adb55/vunnel-0.41.0.tar.gz"
-  sha256 "8078406232823b5a235414d8d3902f45904e8c2e451eac5799d829aa45a0f148"
+  url "https://files.pythonhosted.org/packages/6d/a9/0a55bc84983ed23bcda8b0d61c83a941b60f92faf1c275edc5acdf99fc5f/vunnel-0.43.0.tar.gz"
+  sha256 "8c434be0accbbc4a3cbcdc2fe899550bc1e36730917234cb632fbfd5108e0a6f"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "6b652a32f17d29c58b1a166b73549da8d614d97259a93c84147b380699f35c8e"
-    sha256 cellar: :any,                 arm64_sequoia: "1a09406da4ea1c124d2ffa96eb880286888d378734cf1b939afb5ff47c58a96c"
-    sha256 cellar: :any,                 arm64_sonoma:  "a9a86f8e4a12d0fadb2f926ccf31098a48de2b94002acde2a3109eb0f2df248c"
-    sha256 cellar: :any,                 sonoma:        "893bc612db0a246803a6ef6fdf77ad5197bfb0132b5e6ea4c950c1097943ce1c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "294435d2157dd4264743c3893427f8060f4b75815beb98343ce47f1572e7efb0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37684726908df1ca3ea817b166fe7214438a3e72aabc7854313797412698b964"
+    sha256 cellar: :any,                 arm64_tahoe:   "322689bd3c89e46ac7467a7197d52e79b38baeee8539d76642ac3fae20447c6d"
+    sha256 cellar: :any,                 arm64_sequoia: "b3a4c116bdccda937db5e5b3b4373dc8149e4684475a8783d876b58979af3f07"
+    sha256 cellar: :any,                 arm64_sonoma:  "a509005b08838f36893439198766cbc9699c0c6a1eb525cee3f5c60c382473ff"
+    sha256 cellar: :any,                 sonoma:        "d38aa7832e9d0200a050f4ea0d109589b55a4869df187bc587d1d888aa9f4aab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29519e29b234b31d27b14547cc0ff0052c3bac62633885c9dfbd033133cfa336"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "260e667eaa31cc8d86be52ada7322d436f015ca0978c2c6c8c3ba68bccfcea0e"
   end
 
   depends_on "rust" => :build
@@ -135,8 +134,8 @@ class Vunnel < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/be/4d/8df5f83256a809c22c4d6792ce8d43bb503be0fb7a8e4da9025754b09658/orjson-3.11.3.tar.gz"
-    sha256 "1c0603b1d2ffcd43a411d64797a19556ef76958aef1c182f22dc30860152a98a"
+    url "https://files.pythonhosted.org/packages/c6/fe/ed708782d6709cc60eb4c2d8a361a440661f74134675c72990f2c48c785f/orjson-3.11.4.tar.gz"
+    sha256 "39485f4ab4c9b30a3943cfe99e1a213c4776fb69e8abd68f66b83d5a0b0fdc6d"
   end
 
   resource "packageurl-python" do
@@ -252,10 +251,6 @@ class Vunnel < Formula
   end
 
   def install
-    # Unpin Python for 3.14
-    # Issue ref: https://github.com/anchore/vunnel/issues/904
-    inreplace "pyproject.toml", 'requires-python = "<3.14,>=3.11"', 'requires-python = ">=3.11"'
-
     # hatch does not support a SOURCE_DATE_EPOCH before 1980.
     # Remove after https://github.com/pypa/hatch/pull/1999 is released.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"

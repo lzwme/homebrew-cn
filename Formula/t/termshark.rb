@@ -17,6 +17,7 @@ class Termshark < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "b22556c8b7777479e5a36c5c8abb9fbcff1e2774feb96383533ece79da6a5a6d"
     sha256 cellar: :any_skip_relocation, big_sur:        "8b19aa1bd9d176bb52410f2751fd3877e22a8d4ba21ee7cccd93d08ef32c8653"
     sha256 cellar: :any_skip_relocation, catalina:       "ce2586a94ccbc846b9d825e48dfec76e3aec711315564b01db2d87d9643a03b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0c4b0b7dd2e10d91bcf7fb4a64b436f5e54ad0e00d7f68d02102a5ab0cbb1be7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "69ee110ad437376b219f4aaa960818850be8e28868c8a0dc3ceff715849c8b1f"
   end
 

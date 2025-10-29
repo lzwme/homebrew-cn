@@ -21,6 +21,7 @@ class Podman < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d5b75fcf79c6d2c93b9f85985e9f144df9ddd1b9aed25b89e7763a795f610d5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99d2985932f85ddbbe2a419444253b8276935413f2597e80b00b83c586692c18"
     sha256 cellar: :any_skip_relocation, sonoma:        "5c9493137126c703225e143e170096cf086af779bf2187a8500b52bc15fbe35b"
+    sha256                               arm64_linux:   "1ca052627f383875445a6a669a8af543d468e29794f606f191c1ec0197f0e241"
     sha256                               x86_64_linux:  "b88544bd104340950e24a9e2026e1bfe7add887ca734b968c3f6f8a222bc0573"
   end
 
@@ -47,6 +48,7 @@ class Podman < Formula
     depends_on "libseccomp"
     depends_on "passt"
     depends_on "slirp4netns"
+    depends_on "sqlite"
     depends_on "systemd"
   end
 
@@ -131,6 +133,13 @@ class Podman < Formula
       ENV["PREFIX"] = prefix
       ENV["HELPER_BINARIES_DIR"] = opt_libexec/"podman"
       ENV["BUILD_ORIGIN"] = "brew"
+
+      # Workaround to avoid patchelf corruption when cgo is required
+      if Hardware::CPU.arch == :arm64
+        ENV["CGO_ENABLED"] = "1"
+        ENV["GO_EXTLINK_ENABLED"] = "1"
+        ENV.append "GOFLAGS", "-buildmode=pie -trimpath"
+      end
 
       system "make"
       system "make", "install", "install.completions"

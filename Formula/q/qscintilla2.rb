@@ -23,6 +23,7 @@ class Qscintilla2 < Formula
     sha256 cellar: :any,                 arm64_sequoia: "27499e5e9430c801ac7265f06845ccc56d6669f1626fab44a16f1b7aec80d61b"
     sha256 cellar: :any,                 arm64_sonoma:  "02d7ea7c1097a24289133b376012cc1592b395c6dd6bae358491de18a2c89d0d"
     sha256 cellar: :any,                 sonoma:        "d31a27c30e7b08f0635bb310d7f585de74a99d41f31705cb3ab3bf6b9f921cdb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "72fdcaf8876a39d1d6f68eb1cc46377fb444d4850fdec6e86e7658a16579bff5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "388eef42d4cde7ec7ebd053bea92d3fae910ba2aff0167644b0b14bc3428e28f"
   end
 

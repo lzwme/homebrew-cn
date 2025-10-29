@@ -13,6 +13,7 @@ class Levant < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0c69cd2cf967901c3d86200eefb085070fcbee97867ab84ea8631ccf97d9aafe"
     sha256 cellar: :any_skip_relocation, sonoma:        "4237a1b7e9431f1da4b05740ff17ad96c0c0b3be6925ed006c5b6e7ebc3bc477"
     sha256 cellar: :any_skip_relocation, ventura:       "4237a1b7e9431f1da4b05740ff17ad96c0c0b3be6925ed006c5b6e7ebc3bc477"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "36c019ee7b60f8858c88b5823ad0e7ff4d37033027a2874870b46b1b721a084a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4739b4cea3ef654bf8ab6990fd0a5ff827a7248619fc095439e88311e416af3"
   end
 

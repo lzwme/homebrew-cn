@@ -36,6 +36,12 @@ class AnsibleAT9 < Formula
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
+  pypi_packages exclude_packages: %w[certifi gnureadline],
+                extra_packages:   %w[ansible-pylibssh apache-libcloud boto3 dnspython docker
+                                     junos-eznc jxmlease kerberos ntc-templates openshift
+                                     passlib pexpect proxmoxer pynetbox pysphere3 python-consul
+                                     python-neutronclient pytz pywinrm requests-credssp shade zabbix-api]
+
   # pyinotify is linux-only dependency
   resource "pyinotify" do
     on_linux do

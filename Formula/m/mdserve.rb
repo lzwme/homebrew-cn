@@ -1,18 +1,18 @@
 class Mdserve < Formula
   desc "Fast markdown preview server with live reload and theme support"
   homepage "https://github.com/jfernandez/mdserve"
-  url "https://ghfast.top/https://github.com/jfernandez/mdserve/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "a35c711df811ff29333c9a3a18d47a370dda1000d7bd2283529bccd355ee3cba"
+  url "https://ghfast.top/https://github.com/jfernandez/mdserve/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "2ed28cd3618179d500b20de83fef230562494995b63a6d36102a9a56f04dafd6"
   license "MIT"
   head "https://github.com/jfernandez/mdserve.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0aa98bb19f21e24a4d6e44f15ff81a34af20c8195663f110273f35b812843345"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21d020412cb1507cbc836be9da1f5f66c9c6224eadf62fa1b0ccf52bd8112ce4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d4ce5730edd4252ce48e6ecdabd462e2e03e78724d5b8d8cca05c1530fff504"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6a1ccf58002dfcdd62c12a51dee23fd74b932284a099f15e45a3f3db33d98a34"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c96916d01d3876bf00ac6ac19803c5857f250d8488f9af32ab229e616fcf514e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfafd8fd3d500ff69c93e2c64cf0304b247c66922d62b025676c96e5683630e1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a4a31050fbf8105505b95fda4e1abc572188a817362ffda788d1e95ddfa4ceb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2118b20f945546bd3640360116a974476d9e49eff2119d8f3b7aeb3f451328bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3fbae1902dd9fa910320c11b6e2add1fd167e2e096a9e1581c4a5ce92c962a05"
+    sha256 cellar: :any_skip_relocation, sonoma:        "db777786d3c41e43e13bd5e09e2e2ff45d60968ba93b50c39358498058fbc394"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98344963b674824941f58fb5aab7dd766eabf705c60a4cfffa62cf5206fa65b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43fb09aa8474058bc4960af12298c0ac7927056d58515b18724ef148e39273b8"
   end
 
   depends_on "rust" => :build
