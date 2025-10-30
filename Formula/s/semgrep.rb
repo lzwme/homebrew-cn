@@ -8,6 +8,7 @@ class Semgrep < Formula
       tag:      "v1.141.0",
       revision: "9f972b3b65f64ec02b4a841d1ca8c300f528f4f0"
   license "LGPL-2.1-only"
+  revision 1
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
   livecheck do
@@ -16,12 +17,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5b526a47b44e29e5155d6495fa5e9268e0994e11ddce6e9955d27096585f3b7b"
-    sha256 cellar: :any, arm64_sequoia: "5beeeda7638d10fd473dd05c2b0b2d7f27e0ff3520077af3f1f534790bcc646b"
-    sha256 cellar: :any, arm64_sonoma:  "efa2924bfd8d93a0a32dee2f0f7df60ef8a6250436c35901063284df7d192f2a"
-    sha256 cellar: :any, sonoma:        "cbe97db9ad85352b7b8492ba35124f3465a54f89ad50b4b4f1b2e85628d81e3a"
-    sha256               arm64_linux:   "4558a11b371711ae75c2029ed35d246535787841f4dd71b2f75493abdba6e68e"
-    sha256               x86_64_linux:  "4cfa08b362de4163aa4d39df6cd512bd4043bb9dde221423641466e0f4194da0"
+    sha256 cellar: :any, arm64_tahoe:   "e5f9b06f61ef9f7899a0d4ba557510b556072c1a22f5a00b94b46729884da8b4"
+    sha256 cellar: :any, arm64_sequoia: "718cbb5ad69bdfac15e8152ffce64b5fa7403fbefdb47ed7d353f6474a0b1881"
+    sha256 cellar: :any, arm64_sonoma:  "e11f50adf06bcaf28d91b90f78baa2e195d5dc2724d9892bcb83bcf8aabe0e01"
+    sha256 cellar: :any, sonoma:        "a7ac37e41f40dd0d9314994a46b66fbe3e4617713e6305c42376d995129d77b5"
+    sha256               arm64_linux:   "82e10f2d08fd7617cebac528f0527de7e1912b907495c15bcc3e59f0d73e3199"
+    sha256               x86_64_linux:  "3e4599ce6bf275547d3a23985bf4175dd37238c9061441b54bfb40ad2f4b7ed1"
   end
 
   depends_on "autoconf" => :build
@@ -306,8 +307,8 @@ class Semgrep < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/a7/a5/d6f429d43394057b67a6b5bbe6eae2f77a6bf7459d961fdb224bf206eee6/starlette-0.48.0.tar.gz"
-    sha256 "7e8cee469a8ab2352911528110ce9088fdc6a37d9876926e73da7ce4aa4c7a46"
+    url "https://files.pythonhosted.org/packages/1b/3f/507c21db33b66fb027a332f2cb3abbbe924cc3a79ced12f01ed8645955c9/starlette-0.49.1.tar.gz"
+    sha256 "481a43b71e24ed8c43b11ea02f5353d77840e01480881b8cb5a26b8cae64a8cb"
   end
 
   resource "tomli" do

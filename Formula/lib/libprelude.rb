@@ -16,6 +16,7 @@ class Libprelude < Formula
     sha256 sonoma:         "f3a949405b38d7738f8d94dae6fb90b1561702192e666db623f2c8228d52a320"
     sha256 ventura:        "3a2c08553d695bea452ef9fba367c05eb6eac05a9225083a45c3dd8126c942c8"
     sha256 monterey:       "9cf654ae4238290e9cd8c16e34b41a48dbbfd0d4e1cff034cb69361849f7848e"
+    sha256 arm64_linux:    "df3abdca560324d595a18bb32eca2a47509f18fbb876c8c99228adb1c4c59562"
     sha256 x86_64_linux:   "52bd631b4ad679cd32f6f8c46d6e3471d800af3e32d4672009bb05733935766d"
   end
 
@@ -36,6 +37,16 @@ class Libprelude < Formula
   patch do
     url "https://sources.debian.org/data/main/libp/libprelude/5.2.0-5/debian/patches/025-Fix-PyIOBase_Type.patch"
     sha256 "cd03b3dc208c2a4168a0a85465d451c7aa521bf0b8446ff4777f2c969be386ba"
+  end
+
+  # Apply Debian patch to fix segmentation fault on arm64 linux
+  patch do
+    on_linux do
+      on_arm do
+        url "https://sources.debian.org/data/main/libp/libprelude/5.2.0-5/debian/patches/005-fix_pthread_atfork.patch"
+        sha256 "5d3e2961b9901fe2109516c422956f20685da780dfd550d7741f61f5e43f7d0c"
+      end
+    end
   end
 
   def python3

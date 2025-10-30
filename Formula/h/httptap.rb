@@ -3,12 +3,12 @@ class Httptap < Formula
 
   desc "HTTP request visualizer with phase-by-phase timing breakdown"
   homepage "https://httptap.dev"
-  url "https://files.pythonhosted.org/packages/7a/6a/f0da6ea52f95d4a4550e681223100e4a9171394dbaaecaa2c1588be55280/httptap-0.1.1.tar.gz"
-  sha256 "c365dbd7de5ad50caadd2eb827ea3e205a2985f437f3c472fd9fbb324fa01a38"
+  url "https://files.pythonhosted.org/packages/30/2c/bb8ab02dcc3e37228db762d513851866ab28d8fc6787a8b7744340a7faea/httptap-0.2.0.tar.gz"
+  sha256 "50a029b1fe4d67cd42e39f92e955b87b2377c0149409390e44c891f716c99394"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bf1e2b486b91ff435070008b41acb5c688d7e1585ccfb9fb295f95624afb0c14"
+    sha256 cellar: :any_skip_relocation, all: "3b59416790dbc9e35d6f93828479d9203144578dcfe4f41d625cf29bf3ce1d1a"
   end
 
   depends_on "rust" => :build
@@ -87,6 +87,17 @@ class Httptap < Formula
   resource "sniffio" do
     url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
     sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
+  end
+
+  resource "socksio" do
+    url "https://files.pythonhosted.org/packages/f8/5c/48a7d9495be3d1c651198fd99dbb6ce190e2274d0f28b9051307bdec6b85/socksio-1.0.0.tar.gz"
+    sha256 "f88beb3da5b5c38b9890469de67d0cb0f9d494b78b106ca1845f96c10b91c4ac"
+
+    # Unpin flit-core<3 to support 3.14+
+    patch do
+      url "https://github.com/sethmlarson/socksio/commit/b326406915fd98a8185c1c160165c5b8963b30c1.patch?full_index=1"
+      sha256 "7aefa906b62e2c9a8df255ea742ca97e155ac2e1238e49ce11e3e56e37ee1f8b"
+    end
   end
 
   def install

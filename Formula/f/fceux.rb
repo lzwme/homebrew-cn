@@ -40,10 +40,11 @@ class Fceux < Formula
   depends_on "x264"
   depends_on "x265"
 
+  uses_from_macos "zlib"
+
   on_linux do
     depends_on "mesa"
     depends_on "mesa-glu"
-    depends_on "zlib"
   end
 
   def install

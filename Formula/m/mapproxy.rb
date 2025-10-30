@@ -3,17 +3,17 @@ class Mapproxy < Formula
 
   desc "Accelerating web map proxy"
   homepage "https://mapproxy.org/"
-  url "https://files.pythonhosted.org/packages/c0/01/3e5ee20ab194ba5a5a97bf24c46a077f27a1c5cfd81e98fa2afa08aa2e28/mapproxy-6.0.0.tar.gz"
-  sha256 "1c82480dec8ed61504bf669cea2253ccd0e7127fb287ec3b4f34569f696d25b4"
+  url "https://files.pythonhosted.org/packages/7d/5e/972a52a0b3f646a53dd3e8a552256a649548b8fb84b4fbb1b43b90de86ea/mapproxy-6.0.1.tar.gz"
+  sha256 "aada98e509b8b0b99eb3f9f97bebf5f284711bd1bfae46e8e6f2b296581bc677"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bb6f28cac8d3c4e40fb29681377caa49740d9a99a1cf3727934093c8921a9f04"
-    sha256 cellar: :any,                 arm64_sequoia: "755fda386852e471021f1fa2eb05bfa4f3af5abdccec8e4e6098f7338f4519f4"
-    sha256 cellar: :any,                 arm64_sonoma:  "72363021accda8c3880d4f00b7da5c3cbbbbc7d6aa8f4faa087866fd440f5c04"
-    sha256 cellar: :any,                 sonoma:        "287aa830539b53f7125eb3547738cff36df0ce55a35fbe909dcbb845658454be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7d132d7d9201a6e03f16f9286276024dfdf323f51180c1583c632ca76628d7d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fad2bb3366611d42fd101408c37fd76150f68a0aecc4a7bf3cecf35ee8dba15"
+    sha256 cellar: :any,                 arm64_tahoe:   "2fb226ed6decd64a1983a72a825aa3a9fbf008590ff257952de71a60d87b3cd2"
+    sha256 cellar: :any,                 arm64_sequoia: "9c5a9301ec6b1737fd95cd3de14a0ba941d5ffaba24b9e0cf616939bf8296c5a"
+    sha256 cellar: :any,                 arm64_sonoma:  "340462b4453092cec6412f36149a4b2053afbc00a2ed805d6f7af9dc6a53e28d"
+    sha256 cellar: :any,                 sonoma:        "2a0113f85cf2dc4b493730b4f21ac6f6222a5c2a832dc1f9eae4f3ed83c7c538"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4c40715fff3954b168dcd8d3bd5b12e94de96581effea3b689e2c44369ea16e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8539dede41074d3a5a8c22056c071140c524983b70436cc4a5e3bba31616252"
   end
 
   depends_on "pkgconf" => :build
@@ -82,6 +82,11 @@ class Mapproxy < Formula
     sha256 "39a0cf1ecc7e282d1d30f36594ebd55c9fae1fda8a2622cee5d100430628f88c"
   end
 
+  resource "python-dateutil" do
+    url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
+    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+  end
+
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
@@ -95,6 +100,11 @@ class Mapproxy < Formula
   resource "shapely" do
     url "https://files.pythonhosted.org/packages/4d/bc/0989043118a27cccb4e906a46b7565ce36ca7b57f5a18b78f4f1b0f72d9d/shapely-2.1.2.tar.gz"
     sha256 "2ed4ecb28320a433db18a5bf029986aa8afcfd740745e78847e330d5d94922a9"
+  end
+
+  resource "six" do
+    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "werkzeug" do

@@ -1,8 +1,8 @@
 class Bde < Formula
   desc "Basic Development Environment: foundational C++ libraries used at Bloomberg"
   homepage "https://github.com/bloomberg/bde"
-  url "https://ghfast.top/https://github.com/bloomberg/bde/archive/refs/tags/4.30.0.0.tar.gz"
-  sha256 "4d7aec410a35e58cd3ccd302aeccbfdaf8ae2a0b954b3efbb47c3cf6cd241015"
+  url "https://ghfast.top/https://github.com/bloomberg/bde/archive/refs/tags/4.31.0.0.tar.gz"
+  sha256 "07199eb1e99e13b47391111797f4fedbc830f6c2cd60f81dad75f0e677811bd5"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Bde < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "954db5129ad62c9720463e06000bb26ff2a24e85637544fbd37d9f7ea750f423"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6ddd0e431981855ee0e1551d35889c99f6a24cf9f395e4212403ad4bd4484d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83ba6dd416b42c4c7ad1db53b861d58963871e2cb8f5cd150e8d3f814b92faea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "95f4f7a753dd45cb1ec5c7bb21b535daaf413cee1011f52f7ffabc9ba950e588"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0369cc9bae5ed399ffcd2efb1e4474052cb88a28355a455a96c6e492e5a3e46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a2a344b2294ffcf3f5416a6a4f188dfdba8add2f9501a51a99be4629d578c94"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03d528a146e8a75b468263dd29c74ce4d7b336a50bfaa68025e322636b5087c4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27b46af97aab36048be806d14903f8e88842c64c3c1b6cf19ad6e8d70933e5f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d37dad0d0c0220f2da90dfe2589dbf843f55c2f0b883b226c4661135462a361c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c3a0df4f414c93644a510c37cc53a70ca7722b49121f0033d03e6d3324a78805"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20011fa4541d350fc033a1b341efa8e15430182de5aec3dbaf64c454eb7b53b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2538d734ece223495e94d99944d4457b9f9c831075473c60664e460becdff2ab"
   end
 
   depends_on "cmake" => :build

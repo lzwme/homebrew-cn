@@ -1,14 +1,14 @@
 class Apptainer < Formula
   desc "Application container and unprivileged sandbox platform for Linux"
   homepage "https://apptainer.org/"
-  url "https://ghfast.top/https://github.com/apptainer/apptainer/releases/download/v1.4.3/apptainer-1.4.3.tar.gz"
-  sha256 "dfb85b8ad48bd366245c7f6a1d0b56d2ce480cfdf18d7a64397098184b4ade90"
+  url "https://ghfast.top/https://github.com/apptainer/apptainer/releases/download/v1.4.4/apptainer-1.4.4.tar.gz"
+  sha256 "eb806e22dabfb6549c398b55e50c747e4c51b57f8879da9e29813de40af54b48"
   license "BSD-3-Clause"
   head "https://github.com/apptainer/apptainer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "b459320774a9b9ce0cc947310472658ff66c4b683afd7bd5bac3fa5099dc79a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ee640a020fcbe39a21ae57af7cf42f8b996c718e6ea2880d4756f84a7648d333"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "64b09a15fe0c2e9197bd9d44b303818a8917e4e26643f196d215abfb2a598e57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "39b57c560205f3f4e2b1834c1c9d7b74a545b50934a4ae592b47587f00bd221e"
   end
 
   # No relocation, the localstatedir to find configs etc is compiled into the program
@@ -21,6 +21,8 @@ class Apptainer < Formula
   depends_on "squashfs"
 
   def install
+    ENV["CGO_ENABLED"] = "1" if Hardware::CPU.arm?
+
     args = %W[
       --prefix=#{prefix}
       --sysconfdir=#{etc}

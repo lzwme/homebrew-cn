@@ -3,20 +3,18 @@ class ZabbixCli < Formula
 
   desc "CLI tool for interacting with Zabbix monitoring system"
   homepage "https://unioslo.github.io/zabbix-cli/"
-  url "https://files.pythonhosted.org/packages/d3/ca/edb71c4462cc5bef8e107bcbf38f48f29eb2154ebec08ab373eb9c439d79/zabbix_cli_uio-3.5.2.tar.gz"
-  sha256 "1a2eecfcb2e2164911f14aebfcbf40d73dda9f220e35072a44a7fd647e4d1508"
+  url "https://files.pythonhosted.org/packages/5e/91/01eedf8a88792429aaf18e9d35cf7b605bf1643bd9da3c88002d2d0dd4c1/zabbix_cli_uio-3.5.3.tar.gz"
+  sha256 "691812facae62901a267c8a3c1be6526a22ebe3ef4627fb4a4d0062ea3008158"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/unioslo/zabbix-cli.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "adaa38257e3e76e8b7306c2f355fe1b6e67d052597e17a504ebc2c6b95f34da8"
-    sha256 cellar: :any,                 arm64_sequoia: "a70accbe96873c95d1452d2a4f00b11c76b193f30aefd3d801135bc19ed92316"
-    sha256 cellar: :any,                 arm64_sonoma:  "efc1aa44918a2c33f5ea73ffd1a6a66feb8ce55fa779a896434fa468f19127d9"
-    sha256 cellar: :any,                 sonoma:        "3427b4af12256e935e95717cb258eed9a3b6f5883181eb4d477fde7215d7885b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7343db0757d14e04b4ecdffa47a8472c0fc5dfded7b5f882924a127e09c47957"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bff14ecac574c2079c05ece6865d2f4edb90e836cbee3ee8608584e92d6f95b0"
+    sha256 cellar: :any,                 arm64_tahoe:   "b2a1d0dd2c5ddc842546bf03d0be23e42af85d04cda4e9d959fed13a4a47aaa5"
+    sha256 cellar: :any,                 arm64_sequoia: "e2a3c6fd831cdba6d37c31a45e841aea482b0bad2956470315d0463487ec5bbd"
+    sha256 cellar: :any,                 arm64_sonoma:  "eb879a8a2a74e4950d08ff31b81642e973d990965bae168d85fd034e75538d68"
+    sha256 cellar: :any,                 sonoma:        "e5be06b1c9a54a89b8665af5522faa4584d19ef9b096bfafca483090a4c29f72"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be84f26984c84401530a987d1d8deb74281a4a5f1b03b2dcaaff95ea649577e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cb73c66316346321a929617bf4fa549ed7408415b8fe4323e7b03a199d1a676"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -57,8 +55,8 @@ class ZabbixCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "markdown-it-py" do
@@ -87,13 +85,13 @@ class ZabbixCli < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/c3/da/b8a7ee04378a53f6fefefc0c5e05570a3ebfdfa0523a878bcd3b475683ee/pydantic-2.12.0.tar.gz"
-    sha256 "c1a077e6270dbfb37bfd8b498b3981e2bb18f68103720e51fa6c306a5a9af563"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/7d/14/12b4a0d2b0b10d8e1d9a24ad94e7bbb43335eaf29c0c4e57860e8a30734a/pydantic_core-2.41.1.tar.gz"
-    sha256 "1ad375859a6d8c356b7704ec0f547a58e82ee80bb41baa811ad710e124bc8f2f"
+    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
+    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
   end
 
   resource "pygments" do
@@ -148,10 +146,9 @@ class ZabbixCli < Formula
     sha256 "2dd14fac5a47c27be9cd4c976af5a12d87fb1f0b4512f81d69cce3b35ae25021"
   end
 
-  # Fix the version, newer version makes an error: module 'typer' has no attribute 'rich_utils'
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/8b/6f/3991f0f1c7fcb2df31aef28e0594d8d54b05393a0e4e34c65e475c2a5d41/typer-0.15.2.tar.gz"
-    sha256 "ab2fab47533a813c49fe1f16b1a370fd5819099c00b119e0633df65f22144ba5"
+    url "https://files.pythonhosted.org/packages/8f/28/7c85c8032b91dbe79725b6f17d2fffc595dff06a35c7a30a37bef73a1ab4/typer-0.20.0.tar.gz"
+    sha256 "1aaf6494031793e4876fb0bacfa6a912b551cf43c1e63c800df8b1a866720c37"
   end
 
   resource "typing-extensions" do

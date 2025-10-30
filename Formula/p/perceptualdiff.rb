@@ -14,6 +14,7 @@ class Perceptualdiff < Formula
     sha256 cellar: :any,                 arm64_ventura: "0499b71de1b661a7c68f28c343c1fe1175dfb2cfe28b70d6fb6b27393a8613a6"
     sha256 cellar: :any,                 sonoma:        "35f5e8523401d29ed1728df2d4e23c477e441418023d52b7ab03023e81faeeb2"
     sha256 cellar: :any,                 ventura:       "1d88590df41a1619ce9c7f4b29a534179b0bd6d18d7aa296d50da6c4e0101e44"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a32ccce208ebcb91041bdf8d2508618a5e1b671ea9fccd5f16c9bc8b2015303"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d9a1e10f07e3467e60a855f18c75a07fee4c238d746dc0b91652c147733e9c8"
   end
 

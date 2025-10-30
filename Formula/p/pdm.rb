@@ -3,17 +3,21 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm-project.org"
-  url "https://files.pythonhosted.org/packages/83/ba/f370e582cdb2de816499aad5dbd47125662b9226e6dc826ae45208bdc9ad/pdm-2.26.0.tar.gz"
-  sha256 "70da10a2a8bb09858418eb7ffc5d0449c487aca1f73641611843f3adfd4ff2b4"
+  url "https://files.pythonhosted.org/packages/35/84/50e05b927fc9d23289b588affd6c2e2f50239f8a1afccba720c42751572a/pdm-2.26.1.tar.gz"
+  sha256 "60a568201424a7193b661f6fed6e446e39695b52edc5e0904ba0b07fcaf2e787"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "62fe473543052b1362925dc20767f4973183e6c78da778210c23117b15e09883"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "caa95adc4f2918a4b8fee22938bc205fd8679558a63f67f04fbfe0d421f735ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d734ef0c46ee89733a80cbd1797905f51c5193919c222885692c4b0d43b272f9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0bf712b50be5d322573d581de3554686a2fe142dbc8071447ee6789f26fcffde"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f48d583ed2b142d0bc0a9d3cb0dc1084e6479a92895633ae95c183ad7e448bc9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b7bc98b83a556cba341286f386d8302092c603fffa392463aa6e015dda41e97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7fd10f5c2ea5e6ce4fb87939c77fd48e8072b41e794a561b4fee22510cc23c0"
   end
 
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
   pypi_packages exclude_packages: "certifi"
@@ -23,14 +27,19 @@ class Pdm < Formula
     sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
   end
 
+  resource "anysqlite" do
+    url "https://files.pythonhosted.org/packages/0f/4b/cd5d66b9f87e773bc71344a368b9472987e33514e6627e28342b9c3e7c43/anysqlite-0.0.5.tar.gz"
+    sha256 "9dfcf87baf6b93426ad1d9118088c41dbf24ef01b445eea4a5d486bac2755cce"
+  end
+
   resource "blinker" do
     url "https://files.pythonhosted.org/packages/21/28/9b3f50ce0e048515135495f198351908d99540d69bfdc8c1d15b73dc55ce/blinker-1.9.0.tar.gz"
     sha256 "b4ce2265a7abece45e7cc896e98dbebe6cead56bcf805a3d23136d145f5445bf"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "dep-logic" do
@@ -59,8 +68,8 @@ class Pdm < Formula
   end
 
   resource "hishel" do
-    url "https://files.pythonhosted.org/packages/3e/b5/c063cd3eab8154ddd61deb07b50497cf24010727eaeec4d78ed1a6262986/hishel-0.1.3.tar.gz"
-    sha256 "db3e07429cb739dcda851ff9b35b0f3e7589e21b90ee167df54336ac608b6ec3"
+    url "https://files.pythonhosted.org/packages/e5/64/a104ccac48f123f853254483617b16e0efc1649bd7e35bcdc5a5a5ef0ae2/hishel-0.1.5.tar.gz"
+    sha256 "9d40c682cd94fd6e1394fb05713ae20a75ed8aeba6f5272380444039ce6257f2"
   end
 
   resource "httpcore" do
@@ -79,8 +88,8 @@ class Pdm < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "installer" do
@@ -98,14 +107,19 @@ class Pdm < Formula
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
+  resource "msgpack" do
+    url "https://files.pythonhosted.org/packages/4d/f2/bfb55a6236ed8725a96b0aa3acbd0ec17588e6a2c3b62a93eb513ed8783f/msgpack-1.1.2.tar.gz"
+    sha256 "3b60763c1373dd60f398488069bcdc703cd08a711477b5d480eecc9f9626f47e"
+  end
+
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
     sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "pbs-installer" do
-    url "https://files.pythonhosted.org/packages/9a/b5/4922c6818d15c22430d2e79c4ebce8b482007aed1baf419626e3e405c5ae/pbs_installer-2025.10.10.tar.gz"
-    sha256 "568999771793eb337c107b089272c2269a011b1770f0f16c7afb3dbbb4a72ae9"
+    url "https://files.pythonhosted.org/packages/c5/a8/7d0367a979c209482ac8d4ae84b0b0aa36950157399a1d0a00a4d2bb4045/pbs_installer-2025.10.28.tar.gz"
+    sha256 "399f1788b17c650e69c42729ba9e74d240909f36cfe187b5f9b60488314ba154"
   end
 
   resource "platformdirs" do
@@ -124,8 +138,8 @@ class Pdm < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
-    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
+    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
+    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
   end
 
   resource "requests" do
@@ -174,9 +188,14 @@ class Pdm < Formula
     sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
   end
 
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
+    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+  end
+
   resource "unearth" do
-    url "https://files.pythonhosted.org/packages/24/df/033117cc4636974ab79837b37bc79cecb18ff27bf172b5a2f7c4246bd0bc/unearth-0.17.5.tar.gz"
-    sha256 "a19e1c02e64b40518d088079c7416fc41b45a648b81a4128aac02597234ee6ba"
+    url "https://files.pythonhosted.org/packages/18/85/84b0d188eefc32b9e8825b43ce98c2018323ebb68d3b581e856061d1dacc/unearth-0.18.1.tar.gz"
+    sha256 "e8b132f73bf0dac7556a36419cb43125ced3bd172682bde1383cc5b193ccf73d"
   end
 
   resource "urllib3" do
@@ -185,8 +204,8 @@ class Pdm < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/a4/d5/b0ccd381d55c8f45d46f77df6ae59fbc23d19e901e2d523395598e5f4c93/virtualenv-20.35.3.tar.gz"
-    sha256 "4f1a845d131133bdff10590489610c98c168ff99dc75d6c96853801f7f67af44"
+    url "https://files.pythonhosted.org/packages/20/28/e6f1a6f655d620846bd9df527390ecc26b3805a0c5989048c210e22c5ca9/virtualenv-20.35.4.tar.gz"
+    sha256 "643d3914d73d3eeb0c552cbb12d7e82adf0e504dbf86a3182f8771a153a1971c"
   end
 
   def install

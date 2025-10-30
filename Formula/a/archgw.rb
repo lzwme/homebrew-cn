@@ -6,15 +6,15 @@ class Archgw < Formula
   url "https://files.pythonhosted.org/packages/99/97/24c0999cc5aa5e5cd9f1a50d7f7d86ba129a69c3e5258d536f0f5a34453f/archgw-0.3.17.tar.gz"
   sha256 "dee2439288f47981f6411127a2cc4ca0ad17e92d68c41fe95299c5399fa1ecbb"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "e5c84edea9bf01e6b3940eb1dc7e35a023e408f0f97632ba405d415198f0182f"
-    sha256 cellar: :any,                 arm64_sequoia: "bc16076639115dd44dab5600acb31d5c215abe8d1d7a7bc110c8f8029d1b3275"
-    sha256 cellar: :any,                 arm64_sonoma:  "8cb76c7b2b50d8925888cb8ca4474910058609c48ef683cb9cd8b583bde77fd6"
-    sha256 cellar: :any,                 sonoma:        "11a828235b4a0a957d336820aec5964e56ba6d1a8537f4704a02b1eeb5134bb2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2e1739f657f400affcc71695b885b6a282efecf1227cfd96a6fd25cc844072a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2ebe5a0a8f32d3446f407506fad2b56cb1985b7dd1670992a91e545e76bb06d"
+    sha256 cellar: :any,                 arm64_tahoe:   "7e26f99b1d0af187f843bf7b7ad8a742ccec41bcb3ea4ae199dff773f241eb22"
+    sha256 cellar: :any,                 arm64_sequoia: "ad6cc3ebc095532c7deb0756d063bfba56f76e40bdade5ce2df7310643e35de2"
+    sha256 cellar: :any,                 arm64_sonoma:  "395b43bf0cce0537fb5b836307db5cdcd5f2d777db10ce427e2f0b4a7c90ac67"
+    sha256 cellar: :any,                 sonoma:        "cb0362495fa14147b4cf36561ce3d48c2df5c8a3162a757ecee6567b8b0d34fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6009409acef8156df5ed2a5682ccae1a582e1a02b71c076373964722cfeb0320"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdc37119620b24af89df157d9cbd0d273a933cafbb978074932ef208565539b5"
   end
 
   depends_on "rust" => :build # for hf-xet, jitter and safetensors
@@ -22,7 +22,7 @@ class Archgw < Formula
   depends_on "libyaml"
   depends_on "numpy"
   depends_on "pydantic-core" => :no_linkage
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "pytorch"
   depends_on "rpds-py" => :no_linkage
 

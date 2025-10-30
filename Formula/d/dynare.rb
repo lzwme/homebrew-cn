@@ -17,6 +17,7 @@ class Dynare < Formula
     sha256 cellar: :any, arm64_sequoia: "724868c72baac7dc6e8323e3b8eefe14b945ea8478fd2f864db5794cae71fd8c"
     sha256 cellar: :any, arm64_sonoma:  "11942eab211bcd3928ba365a9c25e45ef14821f115503ac8e99364d4a13f444e"
     sha256 cellar: :any, sonoma:        "ad2b0713e5e08c49b09cb8d09e249eef360e9c88c99e4392fcd1846697faf4c7"
+    sha256               arm64_linux:   "d653b59d859f527baf0790c9d36f86fa63ad7e8eea74a5f632f7b62a22dbc855"
     sha256               x86_64_linux:  "4064e06f575bc0b6421e690a34be569884f27b9f10888b74842c8699eb5202f1"
   end
 

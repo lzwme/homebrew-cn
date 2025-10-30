@@ -19,6 +19,7 @@ class Itk < Formula
     sha256                               arm64_ventura: "b4c53c3414abe1b5b3c0eee1a3fa2a68638ec8ac3874e9a3332d25574c3ddeba"
     sha256                               sonoma:        "f9f41f0a46a40bab2c40eadd12fdcc5b6c75cb86f1fcdc9b65787285a3e2646d"
     sha256                               ventura:       "5d1e6fb10b8a8ef034300ea370741bd813358484718ab078b22c2403db602a6a"
+    sha256                               arm64_linux:   "63076e7b246cf1c6f0f54cef39549c0115691666e055f22341ea38ae07316986"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "049f0ade18dee815863ffdaff64774b0ce8358528a04e8f3cecfd039514f3581"
   end
 

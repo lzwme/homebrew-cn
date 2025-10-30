@@ -6,6 +6,7 @@ class Pytorch < Formula
   url "https://ghfast.top/https://github.com/pytorch/pytorch/releases/download/v2.9.0/pytorch-v2.9.0.tar.gz"
   sha256 "c6980af3c0ea311f49f90987982be715e4d702539fea41e52f55ad7f0b105dc3"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -15,17 +16,17 @@ class Pytorch < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7e058e9afa62a272e04e7fd848dd76579d677aa49d41a9b8117fa2610d8b37db"
-    sha256 cellar: :any, arm64_sequoia: "9f54190831f06186cce645472349edd64379c390ed603c5adb186be3d8a43322"
-    sha256 cellar: :any, arm64_sonoma:  "5d015c3abd6e77293ca963793b72feaabacc3f1762ccf97be8a9d33c4e7fdd01"
-    sha256 cellar: :any, sonoma:        "3b61917a41a63bc9fc66fe75938e88ba43b9dbfd89782d8657118ca330c12959"
-    sha256               arm64_linux:   "adb009a7d3de3fb96a0518bf0ca77483e0c4a9f521669e35e825ed520e47828e"
-    sha256               x86_64_linux:  "3c4581e40297185c27467e538e07c26c25bf9ef06d8151028367967c54a94f01"
+    sha256 cellar: :any, arm64_tahoe:   "580a5a2b22ed3dbf1ca9486ac54d1e43ac628543226008dc426168d61fff19a7"
+    sha256 cellar: :any, arm64_sequoia: "8bdc7bed1b02b6e5d60858753f457a17a1ccab17aa80d0013071ae138168af69"
+    sha256 cellar: :any, arm64_sonoma:  "0f37e0a2aabe74bb50775785054749a8f4b7beec4e66f2b905721df194881e34"
+    sha256 cellar: :any, sonoma:        "f40de3d44de7b223dc446f8872557f1ffd08e9884ea48dd04b6575e29ca77c52"
+    sha256               arm64_linux:   "4a3d153f17734a30a3527a374095895bfd5ea05d20e16ffe7434ec49c68a63ed"
+    sha256               x86_64_linux:  "d2fdb7433b5238280ce2003ef71c2148a172921dbd0509c5b324e4033a23cf62"
   end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on xcode: :build
   depends_on "abseil"
   depends_on "eigen"
@@ -102,7 +103,7 @@ class Pytorch < Formula
   end
 
   def install
-    python3 = "python3.13"
+    python3 = "python3.14"
 
     # Avoid building AVX512 code
     inreplace "cmake/Modules/FindAVX.cmake", /^CHECK_SSE\(CXX "AVX512"/, "#\\0"

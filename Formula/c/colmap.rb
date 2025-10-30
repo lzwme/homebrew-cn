@@ -11,6 +11,7 @@ class Colmap < Formula
     sha256 cellar: :any,                 arm64_sequoia: "aee8f246d50e04e7c3cc551627e890632f9038a9abd97fe421e71cec2217c38f"
     sha256 cellar: :any,                 arm64_sonoma:  "8799ef68c3de223d423ce3fc3dab7dfc2adf1d0b9afeff0f30ab37305e06b577"
     sha256 cellar: :any,                 sonoma:        "0eec12940518cd5aa0866ba3b875580d6ef6691eaadf7b3d93cf2a21fc40ffae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5c13c1c6f5217714b9b805c33155242824fb00bb38161ce2e06d720ce75fd90"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "04bed90470071ac42ca664ed2e86df2f58ddce598bff88bbde1619b5236ed96d"
   end
 

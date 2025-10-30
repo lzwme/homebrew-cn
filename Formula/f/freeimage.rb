@@ -22,6 +22,7 @@ class Freeimage < Formula
     sha256 cellar: :any,                 monterey:       "8118801a64a4b47e2572b45935da12209fffea56393586a53186594f05071f58"
     sha256 cellar: :any,                 big_sur:        "948feca0476789f7061b3a0502aaa7820366a309ebad1abd73ff6b7a0c242402"
     sha256 cellar: :any,                 catalina:       "fabc22f3effecdb629ea6585e005aa09b9d3c3cf73fa0e3021370550e6f8832e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c63703fb750ad104b942bb31929c633f44050220f084b579183e23a0e07161c6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6c63d08f4adf2395f983ad5f8a51f36ac1e749de9fe6428d056859b199ac6e6"
   end
 
@@ -55,7 +56,8 @@ class Freeimage < Formula
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     # Fix build error on Linux: ImathVec.h:771:37: error: ISO C++17 does not allow dynamic exception specifications
-    ENV["CXXFLAGS"] = "-std=c++98" if OS.linux?
+    ENV.append "CXX", "-std=c++98" if OS.linux?
+
     system "make", "-f", "Makefile.gnu"
     system "make", "-f", "Makefile.gnu", "install", "PREFIX=#{prefix}"
     system "make", "-f", "Makefile.fip"

@@ -6,14 +6,15 @@ class KimiCli < Formula
   url "https://files.pythonhosted.org/packages/17/73/87248c28ebfbf29103448beada56708e15b95437ec9ada06a74ec4aa32cb/kimi_cli-0.42.tar.gz"
   sha256 "a4e6c353e0e12cbbb02bc9c453526b8c88a52ef372047888450f25799f249add"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "227fc4bfcc72380a2d5a197944e06898e7e2a60946a8a16588154cd39baa5577"
-    sha256 cellar: :any,                 arm64_sequoia: "1d9c07d2d1fe9d2893f3bf838f0d845804a93ceee9d348ffce1562c6d5adeb46"
-    sha256 cellar: :any,                 arm64_sonoma:  "721f5669050b54d63da26634d457af91b4c659da94aeddbe73a3971662359dfb"
-    sha256 cellar: :any,                 sonoma:        "50cedea5742cbd150f4024b883bd7d492d32c45340cfa7f61971770f520f7294"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "90cd4088b8eaf87c62048ca03e8b9d1ff386e0f21aa190c7f0412c02904c07df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64c64cb598503fbf004f4b9243703b1d1af2a28dd8d34d9bf998446c9613c19f"
+    sha256 cellar: :any,                 arm64_tahoe:   "f1f1ac80a2d133ae34a7730a5f406403169276d2ca73743d0d28d65594716a56"
+    sha256 cellar: :any,                 arm64_sequoia: "7c87014c16ab652c74dfd1e59c8965db57572afe5e3bff14eb980c1eb0017948"
+    sha256 cellar: :any,                 arm64_sonoma:  "f1b1249780a18c95f221e0e6f81b021abb5bf4de61a6b43d948435110cfc1601"
+    sha256 cellar: :any,                 sonoma:        "5254ded4d29e36e2fe9604872b0f0d455095551a565627dc7414caa378e5a551"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "69b6855726f12fd23c76eb8b7cdd4779f42ee7abed68c5a918bee68b8b3561d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f6ed7891d21a1248fd4b3caa1412b01a6073c050161495e9a1543a18f416ce5"
   end
 
   depends_on "pkgconf" => :build
@@ -32,8 +33,8 @@ class KimiCli < Formula
   pypi_packages exclude_packages: %w[certifi cryptography pydantic-core rpds-py]
 
   resource "agent-client-protocol" do
-    url "https://files.pythonhosted.org/packages/ee/59/5c6c8571dd1ae7a808b4208c7fbccab8f365762ead30980d08c0d3340747/agent_client_protocol-0.6.2.tar.gz"
-    sha256 "2260025f4acc15884ec982b0f484aeb60c49beef6c16e544b854b4c99aecb996"
+    url "https://files.pythonhosted.org/packages/2c/13/6e81dff98af18ba728ef34697d14d9799ad52eaaaedbaebf932a647567ab/agent_client_protocol-0.4.9.tar.gz"
+    sha256 "326a65273b3097d543f2a4c24740913d716fe406781d5f8b749cfccea868a4ea"
   end
 
   resource "aiofiles" do
@@ -81,16 +82,6 @@ class KimiCli < Formula
     sha256 "0c54cffb19f690cdcc52a3b50bcbf71e07a808d1c80d549f2459b9d2cf0afb9d"
   end
 
-  resource "beartype" do
-    url "https://files.pythonhosted.org/packages/e8/77/af43bdf737723b28130f2cb595ec0f23e0e757d211fe068fd0ccdb77d786/beartype-0.22.4.tar.gz"
-    sha256 "68284c7803efd190b1b4639a0ab1a17677af9571b8a2ef5a169d10cb8955b01f"
-  end
-
-  resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/cc/7e/b975b5814bd36faf009faebe22c1072a1fa1168db34d285ef0ba071ad78c/cachetools-6.2.1.tar.gz"
-    sha256 "3f391e4bd8f8bf0931169baf7456cc822705f4e2a31f840d218f445b9a854201"
-  end
-
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
     sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
@@ -107,18 +98,13 @@ class KimiCli < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/9a/d1/2f2b99ec5ea54ac18baadfc4a011e2a1743c1eaae1e39838ca520dcf4811/cyclopts-4.0.0.tar.gz"
-    sha256 "0dae712085e91d32cc099ea3d78f305b0100a3998b1dec693be9feb0b1be101f"
+    url "https://files.pythonhosted.org/packages/89/98/ddc27d2f9b1784d872ba214e893b473aaf05f7cfed29482821591b1cf7ff/cyclopts-4.1.0.tar.gz"
+    sha256 "18d3e4647729c88fda3a3192d7fab905e6770769465476658f173f02c28ef1ec"
   end
 
   resource "dateparser" do
     url "https://files.pythonhosted.org/packages/a9/30/064144f0df1749e7bb5faaa7f52b007d7c2d08ec08fed8411aba87207f68/dateparser-1.2.2.tar.gz"
     sha256 "986316f17cb8cdc23ea8ce563027c5ef12fc725b6fb1d137c14ca08777c5ecf7"
-  end
-
-  resource "diskcache" do
-    url "https://files.pythonhosted.org/packages/3f/21/1c1ffc1a039ddcc459db43cc108658f32c57d271d7289a2794e401d0fdb6/diskcache-5.6.3.tar.gz"
-    sha256 "2c3a3fa2743d8535d832ec61c2054a1641f41775aa7c556758a109941e33e4fc"
   end
 
   resource "distro" do
@@ -157,8 +143,8 @@ class KimiCli < Formula
   end
 
   resource "fastmcp" do
-    url "https://files.pythonhosted.org/packages/f2/bd/ad8a0cc9ea3e8bfe8fb63a00be985d4c887c3c0a454d26c712c160af489f/fastmcp-2.13.0.1.tar.gz"
-    sha256 "d6dbd52a6b06fc1797db9fe0b487db966b4a4d34d9c7dd87b9918d5ec775dcb7"
+    url "https://files.pythonhosted.org/packages/00/a6/e3b46cd3e228635e0064c2648788b6f66a53bf0d0ddbf5fb44cca951f908/fastmcp-2.12.5.tar.gz"
+    sha256 "2dfd02e255705a4afe43d26caddbc864563036e233dbc6870f389ee523b39a6a"
   end
 
   resource "frozenlist" do
@@ -201,21 +187,6 @@ class KimiCli < Formula
     sha256 "4cd1aa0f43ca76f4a6c6c0292a85f40b35ec2e43e315b59f06e6d32171a953e6"
   end
 
-  resource "jaraco-classes" do
-    url "https://files.pythonhosted.org/packages/06/c0/ed4a27bc5571b99e3cff68f8a9fa5b56ff7df1c2251cc715a652ddd26402/jaraco.classes-3.4.0.tar.gz"
-    sha256 "47a024b51d0239c0dd8c8540c6c7f484be3b8fcf0b2d85c13825780d3b3f3acd"
-  end
-
-  resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/df/ad/f3777b81bf0b6e7bc7514a1656d3e637b2e8e15fab2ce3235730b3e7a4e6/jaraco_context-6.0.1.tar.gz"
-    sha256 "9bae4ea555cf0b14938dc0aee7c9f32ed303aa20a3b73e7dc80111628792d1b3"
-  end
-
-  resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
-    sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
-  end
-
   resource "jiter" do
     url "https://files.pythonhosted.org/packages/a3/68/0357982493a7b20925aece061f7fb7a2678e3b232f8d73a6edb7e5304443/jiter-0.11.1.tar.gz"
     sha256 "849dcfc76481c0ea0099391235b7ca97d7279e0fa4c86005457ac7c88e8b76dc"
@@ -239,11 +210,6 @@ class KimiCli < Formula
   resource "justext" do
     url "https://files.pythonhosted.org/packages/49/f3/45890c1b314f0d04e19c1c83d534e611513150939a7cf039664d9ab1e649/justext-3.0.2.tar.gz"
     sha256 "13496a450c44c4cd5b5a75a5efcd9996066d2a189794ea99a49949685a0beb05"
-  end
-
-  resource "keyring" do
-    url "https://files.pythonhosted.org/packages/70/09/d904a6e96f76ff214be59e7aa6ef7190008f52a0ab6689760a98de0bf37d/keyring-25.6.0.tar.gz"
-    sha256 "0b39998aa941431eb3d9b0d4b2460bc773b9df6fed7621c2dfb291a7e0187a66"
   end
 
   resource "kosong" do
@@ -282,8 +248,8 @@ class KimiCli < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/69/2b/916852a5668f45d8787378461eaa1244876d77575ffef024483c94c0649c/mcp-1.19.0.tar.gz"
-    sha256 "213de0d3cd63f71bc08ffe9cc8d4409cc87acffd383f6195d2ce0457c021b5c1"
+    url "https://files.pythonhosted.org/packages/3d/a1/b1f328da3b153683d2ec34f849b4b6eac2790fb240e3aef06ff2fab3df9d/mcp-1.16.0.tar.gz"
+    sha256 "39b8ca25460c578ee2cdad33feeea122694cfdf73eef58bee76c42f6ef0589df"
   end
 
   resource "mdurl" do
@@ -341,16 +307,6 @@ class KimiCli < Formula
     sha256 "6905a3cd17804edfac7875b5f6c9142a218c7caef78693c2dbbbfbac186d88b2"
   end
 
-  resource "pathvalidate" do
-    url "https://files.pythonhosted.org/packages/fa/2a/52a8da6fe965dea6192eb716b357558e103aea0a1e9a8352ad575a8406ca/pathvalidate-3.3.1.tar.gz"
-    sha256 "b18c07212bfead624345bb8e1d6141cdcf15a39736994ea0b94035ad2b1ba177"
-  end
-
-  resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
-  end
-
   resource "prompt-toolkit" do
     url "https://files.pythonhosted.org/packages/a1/96/06e01a7b38dce6fe1db213e061a4602dd6032a8a97ef6c1a862537732421/prompt_toolkit-3.0.52.tar.gz"
     sha256 "28cde192929c8e7321de85de1ddbe736f1375148b02f2e17edd840042b1be855"
@@ -359,16 +315,6 @@ class KimiCli < Formula
   resource "propcache" do
     url "https://files.pythonhosted.org/packages/9e/da/e9fc233cf63743258bff22b3dfa7ea5baef7b5bc324af47a0ad89b8ffc6f/propcache-0.4.1.tar.gz"
     sha256 "f48107a8c637e80362555f37ecf49abe20370e557cc4ab374f04ec4423c97c3d"
-  end
-
-  resource "py-key-value-aio" do
-    url "https://files.pythonhosted.org/packages/ca/35/65310a4818acec0f87a46e5565e341c5a96fc062a9a03495ad28828ff4d7/py_key_value_aio-0.2.8.tar.gz"
-    sha256 "c0cfbb0bd4e962a3fa1a9fa6db9ba9df812899bd9312fa6368aaea7b26008b36"
-  end
-
-  resource "py-key-value-shared" do
-    url "https://files.pythonhosted.org/packages/26/79/05a1f9280cfa0709479319cbfd2b1c5beb23d5034624f548c83fb65b0b61/py_key_value_shared-0.2.8.tar.gz"
-    sha256 "703b4d3c61af124f0d528ba85995c3c8d78f8bd3d2b217377bd3278598070cc1"
   end
 
   resource "pydantic" do
@@ -478,8 +424,8 @@ class KimiCli < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/a7/a5/d6f429d43394057b67a6b5bbe6eae2f77a6bf7459d961fdb224bf206eee6/starlette-0.48.0.tar.gz"
-    sha256 "7e8cee469a8ab2352911528110ce9088fdc6a37d9876926e73da7ce4aa4c7a46"
+    url "https://files.pythonhosted.org/packages/1b/3f/507c21db33b66fb027a332f2cb3abbbe924cc3a79ced12f01ed8645955c9/starlette-0.49.1.tar.gz"
+    sha256 "481a43b71e24ed8c43b11ea02f5353d77840e01480881b8cb5a26b8cae64a8cb"
   end
 
   resource "streamingjson" do
@@ -530,11 +476,6 @@ class KimiCli < Formula
   resource "wcwidth" do
     url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
     sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
-  end
-
-  resource "websockets" do
-    url "https://files.pythonhosted.org/packages/21/e6/26d09fab466b7ca9c7737474c52be4f76a40301b08362eb2dbc19dcc16c1/websockets-15.0.1.tar.gz"
-    sha256 "82544de02076bafba038ce055ee6412d68da13ab47f0c60cab827346de828dee"
   end
 
   resource "werkzeug" do

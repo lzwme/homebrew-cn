@@ -6,15 +6,16 @@ class Fastmcp < Formula
   url "https://files.pythonhosted.org/packages/1b/74/584a152bcd174c99ddf3cfdd7e86ec4a6c696fb190a907c2a2ec9056bda2/fastmcp-2.13.0.2.tar.gz"
   sha256 "d35386561b6f3cde195ba2b5892dc89b8919a721e6b39b98e7a16f9a7c0b8e8b"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ce0d985f5a983702ad12104df170feb280bc5275443084f2655cf87d3a6db662"
-    sha256 cellar: :any,                 arm64_sequoia: "433b9d8b7146255959a0feff9b99681d3fd24c9a5b06b5611a5f08bff7900112"
-    sha256 cellar: :any,                 arm64_sonoma:  "efa606b676d34351e46d6d43cae00348ff2ba602eda12d9a2d83cad754d6929d"
-    sha256 cellar: :any,                 sonoma:        "f304e6c29f29ce0d5138ecb127cec82b917a3187aa26a2630e4b625486f49f42"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8668fd3d8193ddfd0e210d12dc8869e613085317f9d571b35a799dba5d5719b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4eb9cbbf838f1c01578d891560b025422693c334809d0d604f82283f8cf71ea"
+    sha256 cellar: :any,                 arm64_tahoe:   "6957254430a2d3e339eeddb415821355d279b8577caa092d1927072c1f22982c"
+    sha256 cellar: :any,                 arm64_sequoia: "3a69f3678c5118789f00970ca288c4940269f620a862727c04ee21ac6b78309e"
+    sha256 cellar: :any,                 arm64_sonoma:  "1678fc3a638f9765682e1fea26aa5d7710cb43d57122bcc6a58c2e6467bca327"
+    sha256 cellar: :any,                 sonoma:        "cee359d3b7d0fc7c7288cdd7725e25b7f7812d779594c784bf97b36fefeda1bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee4edd07b05e74f7aa632cd30811f414f5adaf8ae5b2f1b6bd0059be29096d37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f9e61ddf6458d9d85d0695418331e22b0f2bfd6e9142771cf85af4d6123aab2"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -69,8 +70,8 @@ class Fastmcp < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/9a/d1/2f2b99ec5ea54ac18baadfc4a011e2a1743c1eaae1e39838ca520dcf4811/cyclopts-4.0.0.tar.gz"
-    sha256 "0dae712085e91d32cc099ea3d78f305b0100a3998b1dec693be9feb0b1be101f"
+    url "https://files.pythonhosted.org/packages/89/98/ddc27d2f9b1784d872ba214e893b473aaf05f7cfed29482821591b1cf7ff/cyclopts-4.1.0.tar.gz"
+    sha256 "18d3e4647729c88fda3a3192d7fab905e6770769465476658f173f02c28ef1ec"
   end
 
   resource "diskcache" do
@@ -141,11 +142,6 @@ class Fastmcp < Formula
   resource "jaraco-functools" do
     url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
     sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
-  end
-
-  resource "jeepney" do
-    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
-    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
   end
 
   resource "jsonschema" do
@@ -273,11 +269,6 @@ class Fastmcp < Formula
     sha256 "a1196fdddf1e364b02ec68a05e8ff8f6914fee10fbca2e6b6735f166bb0da8d4"
   end
 
-  resource "secretstorage" do
-    url "https://files.pythonhosted.org/packages/31/9f/11ef35cf1027c1339552ea7bfe6aaa74a8516d8b5caf6e7d338daf54fd80/secretstorage-3.4.0.tar.gz"
-    sha256 "c46e216d6815aff8a8a18706a2fbfd8d53fcbb0dce99301881687a1b0289ef7c"
-  end
-
   resource "sniffio" do
     url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
     sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
@@ -289,8 +280,8 @@ class Fastmcp < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/e1/36/70878596a60339cd9f78ee58b9ca8548f235a02d21be649ca73c35ccdd5a/starlette-0.49.0.tar.gz"
-    sha256 "cb75dfe3267b99caf9036db355601f8c6092c4d50d132b3724cb373766cb2ab1"
+    url "https://files.pythonhosted.org/packages/1b/3f/507c21db33b66fb027a332f2cb3abbbe924cc3a79ced12f01ed8645955c9/starlette-0.49.1.tar.gz"
+    sha256 "481a43b71e24ed8c43b11ea02f5353d77840e01480881b8cb5a26b8cae64a8cb"
   end
 
   resource "typing-inspection" do

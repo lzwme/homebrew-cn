@@ -11,6 +11,7 @@ class GrafanaAlloy < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6af4bbe3529d3b022cf71db558f24430dd785178ba5432b5294c0ac4e76cbcf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af3b9676ddc921271ac04555eafafeb434958d49fa9d8587ace4b4ab70ae0ec5"
     sha256 cellar: :any_skip_relocation, sonoma:        "1fedc50869c59a987793db1ef19bb695a0a03dfc7767c6a9eea43ea5090a3dd4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ee790615443ef88cf5d359e7eb5594b2b57a882766a99da250c234ac9b51c32"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcc900e5ac70d3ea48b2863a7a7cbd8be850f155508dbb1832dbf3f172be45e9"
   end
 

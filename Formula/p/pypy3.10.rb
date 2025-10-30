@@ -9,7 +9,7 @@ class Pypy310 < Formula
 
   livecheck do
     url "https://downloads.python.org/pypy/"
-    regex(/href=.*?pypy3(?:\.\d+)*[._-]v?(\d+(?:\.\d+)+)-src\.t/i)
+    regex(/href=.*?pypy3\.10[._-]v?(\d+(?:\.\d+)+)-src\.t/i)
   end
 
   bottle do

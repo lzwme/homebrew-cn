@@ -1,18 +1,17 @@
 class Tbb < Formula
   desc "Rich and complete approach to parallelism in C++"
   homepage "https://uxlfoundation.github.io/oneTBB/"
-  url "https://ghfast.top/https://github.com/uxlfoundation/oneTBB/archive/refs/tags/v2022.2.0.tar.gz"
-  sha256 "f0f78001c8c8edb4bddc3d4c5ee7428d56ae313254158ad1eec49eced57f6a5b"
+  url "https://ghfast.top/https://github.com/uxlfoundation/oneTBB/archive/refs/tags/v2022.3.0.tar.gz"
+  sha256 "01598a46c1162c27253a0de0236f520fd8ee8166e9ebb84a4243574f88e6e50a"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "562449162ee64e94b9bcfe57a1287e8f7948692b91c1c05feb84c171d3db1190"
-    sha256 cellar: :any,                 arm64_sequoia: "08bff4f7e78623c9b7e9b61c6810b00ed5b232f11f811d120bf88d5f2df56008"
-    sha256 cellar: :any,                 arm64_sonoma:  "6d7b9c81ae0e307a141bd1a574f14c0e1cc7f6edf561493c8e6ea2191acad6ac"
-    sha256 cellar: :any,                 sonoma:        "630005415bc765dfb56ac82e140455cf20d587ef3df4b9feb89a61665e4af9da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be3a77b27a5e4cd320c0c5300ae867ccddc4766a249a639a83945a37119a929a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e75bda17f7c53f25c2f885037344cf5986a5ebbb30abbd72bfe1ed31f813c05"
+    sha256 cellar: :any,                 arm64_tahoe:   "cc9fcdb5dd902f43174d0da933d9fd5cbefbc0a64782564b5b8193abc627ec0f"
+    sha256 cellar: :any,                 arm64_sequoia: "c15f3cd373ecc7ce5187734d1c93ff10dd22e83ba7b4e67010ec65052649bab6"
+    sha256 cellar: :any,                 arm64_sonoma:  "6c12a8bf6407d61c277c7f99638af11c5600ec21af20f43319f49c4bb2fb69b9"
+    sha256 cellar: :any,                 sonoma:        "8a759acc184a76c75165db15bd39903332e980221963da164b8a0356780acfcd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7cac87ad2e8f4fbf64aea23ea3ed64a54b8df675102b3013a09407ea0f43fb0b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8e86274bf47f0546c742ffbd718b78c83703e3d6f8a2cd33ca7bd93c34b9291"
   end
 
   depends_on "cmake" => :build

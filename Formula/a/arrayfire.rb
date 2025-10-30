@@ -7,11 +7,13 @@ class Arrayfire < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a22c9b3e94e2f0794d91dd076ae42c2718c4c10926c32cd9d46c23b966334815"
-    sha256 cellar: :any,                 arm64_sequoia: "310d3c58ba5498515ca4ee9042b0543fea5238fdf31a9d9076eb41efb3e98e73"
-    sha256 cellar: :any,                 arm64_sonoma:  "aef0fce6a9a64e7450b288a1ca5e315778b01d1fea3e680e7fcfa11d72a7a8fd"
-    sha256 cellar: :any,                 sonoma:        "75d117bf6fc4e58e981aef90e9e898570cef349f8b386d77ab1ad55ea6f22eb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db1225d603aba9790ffa6aafc010deb189c15690af87ae842c253cc9db72d56a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "79797fbff6b0a68fae6cbda4e13c224d596861b3df5b9889e78be7e4a54ee90f"
+    sha256 cellar: :any,                 arm64_sequoia: "8150e85b70b32027bc8c87a55b13b546b7dc6405458306112606a4c7965a45ae"
+    sha256 cellar: :any,                 arm64_sonoma:  "66dc68b838926eb3d689a0e9a9fcb7deeaf9b90f4f809f419ef0ba8a7f031a44"
+    sha256 cellar: :any,                 sonoma:        "7b0f4d0fde20847ba10c28ed6be785bd03ca904e0b916d27faf21a11e67e92c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "68cc847cd44e1e1b1243f7dfbef1e1993c1d680f5e991409b23d94d3ef2114a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2893d19f51840edf453d8f85da08c1864cc8cb539e00d12fb8e78f1808a83295"
   end
 
   depends_on "boost" => :build
@@ -20,7 +22,6 @@ class Arrayfire < Formula
   depends_on "clblast"
   depends_on "fftw"
   depends_on "fmt"
-  depends_on "freeimage"
   depends_on "openblas"
   depends_on "spdlog"
 
@@ -44,6 +45,10 @@ class Arrayfire < Formula
   patch :DATA
 
   def install
+    # FreeImage has multiple CVEs (https://github.com/arrayfire/arrayfire/issues/3547) and
+    # has been dropped by distros like Arch Linux (https://archlinux.org/todo/drop-freeimage/).
+    odie "FreeImage should not be a dependency!" if deps.map(&:name).include?("freeimage")
+
     # Fix for: `ArrayFire couldn't locate any backends.`
     rpaths = [
       rpath(source: lib, target: Formula["fftw"].opt_lib),

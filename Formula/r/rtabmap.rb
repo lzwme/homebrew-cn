@@ -22,6 +22,7 @@ class Rtabmap < Formula
     sha256                               arm64_sequoia: "13d8848d802e0ce6afc36dc7b55c7fd758d841fde7865dd740c402af42b36818"
     sha256                               arm64_sonoma:  "d8a8239c5d894d57f613789e70e27f9907dd05d0b2fe04d69407c714568cec78"
     sha256                               sonoma:        "f765722a4937ee9af13ce4f84bc6a0d5152059eb88a66062d2b89318ad2ef6ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc9a8078f57e7cb5ab7a44a23a1ab03a0aaa93eaf6d575ebda6168795ebed23f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8db1652a2e0c0d1c6006fee21f2d2ea89e10a57996957c86838f3ade9cb09e95"
   end
 

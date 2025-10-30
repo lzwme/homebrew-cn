@@ -12,6 +12,7 @@ class Vtk < Formula
     sha256 cellar: :any,                 arm64_sequoia: "c00bd8996fdeafbc88512f222086aa450f1f337a4032896b0578af4ce1e50d3f"
     sha256 cellar: :any,                 arm64_sonoma:  "2a1607f21b1e98cd23b1ea45bc776d66b1b05387ee7c59f89180f9b10b4fcac9"
     sha256 cellar: :any,                 sonoma:        "f7021fd6e91f4ce36d1b13e5deeda31de64b75781deb00e6486079f5c466c980"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad44c6d5d2195f8cfa98c4e73d8445e939a8e2e70e5534c38f2259f495da05a5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "73692fd4d3b2f8ac3ef7c57c904d2881f007c448f7407606215ebdd8f5da60cf"
   end
 

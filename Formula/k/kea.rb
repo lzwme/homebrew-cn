@@ -1,9 +1,9 @@
 class Kea < Formula
   desc "DHCP server"
   homepage "https://www.isc.org/kea/"
-  url "https://ftp.isc.org/isc/kea/3.0.1/kea-3.0.1.tar.xz"
-  mirror "https://dl.cloudsmith.io/public/isc/kea-3-0/raw/versions/3.0.1/kea-3.0.1.tar.xz"
-  sha256 "ec84fec4bb7f6b9d15a82e755a571e9348eb4d6fbc62bb3f6f1296cd7a24c566"
+  url "https://ftp.isc.org/isc/kea/3.0.2/kea-3.0.2.tar.xz"
+  mirror "https://dl.cloudsmith.io/public/isc/kea-3-0/raw/versions/3.0.2/kea-3.0.2.tar.xz"
+  sha256 "29f4e44fa48f62fe15158d17411e003496203250db7b3459c2c79c09f379a541"
   license "MPL-2.0"
   head "https://gitlab.isc.org/isc-projects/kea.git", branch: "master"
 
@@ -18,13 +18,12 @@ class Kea < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "323beca90e393ab4e91e0332d76bc8e0f0fd4a85a468db91568e5b539deaba68"
-    sha256 arm64_sequoia: "a15fca159a6fd13ce68587bfe1311eeebd7cfc3a17b0912d67b84274071d59b4"
-    sha256 arm64_sonoma:  "b0db3ea982ee59af69e2516fc272c50db8ddc0c8f3a116d049a4adf48fee8f7c"
-    sha256 sonoma:        "bcb189cc1a301a567c25fd5d65de726193e5473966634f29aff1816f34daced4"
-    sha256 arm64_linux:   "a841d1efe727ca9e8f4aef24f07d738c56abbfcfcf8cde0d5e4c34d19345e1ee"
-    sha256 x86_64_linux:  "61725eefe9578f25d98019a6ccba4fc09ab4e0a78f690477cee56db581cda2db"
+    sha256 arm64_tahoe:   "ea50b361b103099e1706a14a54167b404eb4b0d3dbb3d0fa50e54174ef98efe0"
+    sha256 arm64_sequoia: "e6ff6481bc98b840e2f35bc835d705aab1f74a99e5cf2afa238d59867558a641"
+    sha256 arm64_sonoma:  "38616d8745ecb5f676ad16829efe60ea4781ea57cd981ad221b3da0e570ad5a4"
+    sha256 sonoma:        "bf4458f5fe1881fb360424d4d4d506fcf9b43a55bab87382f97385b0e6531aad"
+    sha256 arm64_linux:   "8b05fc13b992c935779f01a0af7d8eae0157ec70b0d64ee60b9982f0fb599fc9"
+    sha256 x86_64_linux:  "7e150ede33a403e0b2c4678f19efb46551f165cfce0e2c5ef097bc1a3b847d91"
   end
 
   depends_on "bison" => :build

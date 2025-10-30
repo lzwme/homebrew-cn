@@ -6,14 +6,15 @@ class Oterm < Formula
   url "https://files.pythonhosted.org/packages/6f/a1/a3b7d3bc10370028087844181d85c2b4360a64f4e0844263244e27f22cfe/oterm-0.14.6.tar.gz"
   sha256 "5037b5691e3bc1d77e42c308bee5781c229fff9826c913230a22bf3a05d919b1"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f161953bbe336225d0432bdf06134febaf118aff5aeb9264a33303d2b65be0eb"
-    sha256 cellar: :any,                 arm64_sequoia: "f7009890749b9083f1a1f71183b1b37d1143fd14531e61e49296ffd6ecd7d2c0"
-    sha256 cellar: :any,                 arm64_sonoma:  "b8b1fb4af6f71719c077c25ef33e6074fcfd24059a29bbe4659b52c483eb0a8b"
-    sha256 cellar: :any,                 sonoma:        "8c44f33c37c06c172d1ae6b7e1d296b07eeaecfed42b4ca2e71e750e270e22e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b947e5200ac501d866e552de77bc3a2d721124bb7925071a54b1bad00767bfc8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf110d39a1d68f293f9c517d973274ae194376fc21282ca564c70c26ebbdab91"
+    sha256 cellar: :any,                 arm64_tahoe:   "4c8103ccd4fe3da631a0827993de4f1e934f88fb6d40e0c8e4a6e8585b75aa14"
+    sha256 cellar: :any,                 arm64_sequoia: "da0e9092313b3a82780fac981fb430f4efe3891edde1d6bde0f68248558ef8fa"
+    sha256 cellar: :any,                 arm64_sonoma:  "287751dd7bfedc4e6dda2bfeb8c015244c5c0833d970739c99e82fc484257e4c"
+    sha256 cellar: :any,                 sonoma:        "51974c30004670d5ca8e1e3ca3c1f57db8cc13de8568928a83e91c1fec0aa0a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f2e6df333d88af272f65a35dfb30de5cd4a9a66ce72cb28290502190b96dce3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a4470dc5f4efe59d5cbc33b68aa578b8c3893fb2b56aad492096baacedba83c"
   end
 
   depends_on "pkgconf" => :build
@@ -72,8 +73,8 @@ class Oterm < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/30/ca/7782da3b03242d5f0a16c20371dff99d4bd1fedafe26bc48ff82e42be8c9/cyclopts-3.24.0.tar.gz"
-    sha256 "de6964a041dfb3c57bf043b41e68c43548227a17de1bad246e3a0bfc5c4b7417"
+    url "https://files.pythonhosted.org/packages/89/98/ddc27d2f9b1784d872ba214e893b473aaf05f7cfed29482821591b1cf7ff/cyclopts-4.1.0.tar.gz"
+    sha256 "18d3e4647729c88fda3a3192d7fab905e6770769465476658f173f02c28ef1ec"
   end
 
   resource "dnspython" do
@@ -102,8 +103,8 @@ class Oterm < Formula
   end
 
   resource "fastmcp" do
-    url "https://files.pythonhosted.org/packages/a8/b2/57845353a9bc63002995a982e66f3d0be4ec761e7bcb89e7d0638518d42a/fastmcp-2.12.4.tar.gz"
-    sha256 "b55fe89537038f19d0f4476544f9ca5ac171033f61811cc8f12bdeadcbea5016"
+    url "https://files.pythonhosted.org/packages/00/a6/e3b46cd3e228635e0064c2648788b6f66a53bf0d0ddbf5fb44cca951f908/fastmcp-2.12.5.tar.gz"
+    sha256 "2dfd02e255705a4afe43d26caddbc864563036e233dbc6870f389ee523b39a6a"
   end
 
   resource "h11" do
@@ -172,8 +173,8 @@ class Oterm < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/5a/79/5724a540df19e192e8606c543cdcf162de8eb435077520cca150f7365ec0/mcp-1.17.0.tar.gz"
-    sha256 "1b57fabf3203240ccc48e39859faf3ae1ccb0b571ff798bbedae800c73c6df90"
+    url "https://files.pythonhosted.org/packages/3d/a1/b1f328da3b153683d2ec34f849b4b6eac2790fb240e3aef06ff2fab3df9d/mcp-1.16.0.tar.gz"
+    sha256 "39b8ca25460c578ee2cdad33feeea122694cfdf73eef58bee76c42f6ef0589df"
   end
 
   resource "mdit-py-plugins" do
@@ -237,8 +238,8 @@ class Oterm < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/8d/35/d319ed522433215526689bad428a94058b6dd12190ce7ddd78618ac14b28/pydantic-2.12.2.tar.gz"
-    sha256 "7b8fa15b831a4bbde9d5b84028641ac3080a4ca2cbd4a621a661687e741624fd"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pydantic-core" do
@@ -262,8 +263,8 @@ class Oterm < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
-    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
+    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
+    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
   end
 
   resource "python-multipart" do
@@ -322,13 +323,13 @@ class Oterm < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/a7/a5/d6f429d43394057b67a6b5bbe6eae2f77a6bf7459d961fdb224bf206eee6/starlette-0.48.0.tar.gz"
-    sha256 "7e8cee469a8ab2352911528110ce9088fdc6a37d9876926e73da7ce4aa4c7a46"
+    url "https://files.pythonhosted.org/packages/1b/3f/507c21db33b66fb027a332f2cb3abbbe924cc3a79ced12f01ed8645955c9/starlette-0.49.1.tar.gz"
+    sha256 "481a43b71e24ed8c43b11ea02f5353d77840e01480881b8cb5a26b8cae64a8cb"
   end
 
   resource "terminaltexteffects" do
-    url "https://files.pythonhosted.org/packages/bf/cb/fbca93d770c93ad0d54a487d34ad8e68804bef55f8ead2e5692b4699a87f/terminaltexteffects-0.12.1.tar.gz"
-    sha256 "d2b04b38f9bc03fc434ac932cabfd4344b35f58a7efd9370a62a2bb1a162fdb8"
+    url "https://files.pythonhosted.org/packages/9d/92/0eb3f0ad206bf449b7db75f061202dce27d8cb90e598ce3c7d32c0bd80b9/terminaltexteffects-0.12.2.tar.gz"
+    sha256 "4a5eef341d538743e7ac4341cd74d47afc9d0345acdad330ed03fd0a72e41f5f"
   end
 
   resource "textual" do
@@ -377,8 +378,8 @@ class Oterm < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/71/57/1616c8274c3442d802621abf5deb230771c7a0fec9414cb6763900eb3868/uvicorn-0.37.0.tar.gz"
-    sha256 "4115c8add6d3fd536c8ee77f0e14a7fd2ebba939fed9b02583a97f80648f9e13"
+    url "https://files.pythonhosted.org/packages/cb/ce/f06b84e2697fef4688ca63bdb2fdf113ca0a3be33f94488f2cadb690b0cf/uvicorn-0.38.0.tar.gz"
+    sha256 "fd97093bdd120a2609fc0d3afe931d4d4ad688b6e75f0f929fde1bc36fe0e91d"
   end
 
   resource "werkzeug" do

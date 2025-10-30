@@ -15,6 +15,7 @@ class DvrScan < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "04f98810241dd317c2cb88282a9365cb1154655b4f305ecffaffc28b3a77c59e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cfc11e4b50e9e33fcd0a662600a5e5e7dc74b30299b0223dd8f3fc6c7c09c840"
     sha256 cellar: :any_skip_relocation, sonoma:        "c98c651cc27bec9c513815e64d3778a2a0f50e59bdfd73f70aa0628bde41a8b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ec6338f1139b8ccda025f75825630660324af33254d466dce066ce2465a321d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6ad7f441999cc36e830493ec9f8b41d1384275df7de6881f1a6f949d27e1363"
   end
 

@@ -1,17 +1,17 @@
 class Caesiumclt < Formula
   desc "Fast and efficient lossy and/or lossless image compression tool"
   homepage "https://github.com/Lymphatus/caesium-clt"
-  url "https://ghfast.top/https://github.com/Lymphatus/caesium-clt/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "e612843b21a431ca2be68b3060f4c88be82c2219ec09041be9fbf17ed38c33ef"
+  url "https://ghfast.top/https://github.com/Lymphatus/caesium-clt/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "30e24c0f2c7f02f5bb0b3e1954ba0af90d9af8b7d06183564ce53cd91d1a67ec"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a29984f733d930a8b9839cc14664b0cb220adc3bb281819f3ea7168ee44b7935"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc1566d7c2f4c7c33f25f6ca74b88baff5fc83f131c17e775c196613a2f87054"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af2006c6a768eab8e1edb87df17d895e770c7e27c929e749823a35a30df4d5df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7f704fd864b1438ca7a865cca72814432deb879083cb93500187fc53a196e29e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "204bbf452a2c11051da3aa3409f397d41777e421416398f184bfe3b3d3000ab2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4463851340f9eedcfc2e0dbdef24f99983d0d4ab9d4b92084211372a64093fce"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "253f921ea234e0213f2149cdfee4b4c1f3f71ef3e52772a148c115074eee2d63"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "033f92315638a9d405a0371a2032e5adcb0be7c301b490f49df682159c0c196a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0db7edd4df9b6c308b244ec1a0cdc55444efc66580e1ab6eb243c39c78a112e6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4688a7e8a4c4da738f1c5cbdf84773941a8730e6779f17fab7cfc5741eb29ff4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ba8edf270d503c2b038eab8081523953a659f69b69ce9d63ab3098f9bf46f38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6fac19b42939ee7b7af11c42580e47bd6b0ef00b846f8c1b37f71bdc4c73987"
   end
 
   depends_on "rust" => :build

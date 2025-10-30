@@ -5,6 +5,11 @@ class Libptytty < Formula
   sha256 "8033ed3aadf28759660d4f11f2d7b030acf2a6890cb0f7926fb0cfa6739d31f7"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    url "https://dist.schmorp.de/libptytty/"
+    regex(/href=.*?libptytty[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "5a8043eb470230c18db586ab547552e89aa343c13f3d101df7a8ddfb8ef2cd2f"
     sha256 cellar: :any,                 arm64_sequoia: "e04e49991b1e9e2df45463c865a99ba056d15bb854b30342955741b4be83bfae"

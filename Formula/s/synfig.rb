@@ -22,6 +22,7 @@ class Synfig < Formula
     sha256                               arm64_ventura: "68483a37438ba702052fa92732b2728b9be185f2568a1e67a32a8a19f407f63f"
     sha256                               sonoma:        "c6fc59da6e3a82ea0b1ba17e8122d84b24ec9eab7fade3663925c557e40b6ac8"
     sha256                               ventura:       "92e95f7a48ffe21f00ca3df61e3bbe048e7687420f173c6e0e52b82f5aefe66b"
+    sha256                               arm64_linux:   "7f81f123950068165ecf54cede5508aa8c5489001bac5c8676556b0acd027d15"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0538580f2f6c5deb7a0b6cc1225db0403eb24df11182224ed8ab584a743263f"
   end
 

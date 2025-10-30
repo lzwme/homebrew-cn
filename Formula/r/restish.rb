@@ -13,6 +13,7 @@ class Restish < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b22e5d04d229446fd76949b5683c18185ee979aa8285db31e2de5693e8a9d8fb"
     sha256 cellar: :any_skip_relocation, sonoma:        "d34179ef97dd275569cac439f24bbfaedfbbf8e087b6cfc7e9d76caf7a3cf75b"
     sha256 cellar: :any_skip_relocation, ventura:       "1eadc3f54a712bdd3eaef9d6c3b709dcd6e3952e115a7014cef918fc15b192fb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "da1c6f1f5713e62b76b0c15cbeb0a694dd61be0a2a79c5d5a94d2ffe39fdf18c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "677209c2e2a6883004bfbb59a807e2206dd4bf5997715fbd7ae98decf24dcd72"
   end
 

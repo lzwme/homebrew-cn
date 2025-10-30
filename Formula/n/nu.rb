@@ -19,6 +19,10 @@ class Nu < Formula
     sha256               x86_64_linux:  "e574e9a1043c30df8da1995fb0d344271e4d2f3cd92815a57a3ddbf420a8f794"
   end
 
+  # Last release on 2019-07-29. Needs multiple workarounds/hacks and uses EOL `pcre`
+  deprecate! date: "2025-10-29", because: :unmaintained
+  disable! date: "2026-10-29", because: :unmaintained
+
   depends_on "pcre"
 
   uses_from_macos "llvm" => :build
@@ -27,6 +31,7 @@ class Nu < Formula
 
   on_linux do
     depends_on "gnustep-make" => :build
+    depends_on arch: :x86_64 # fails to build on arm64 linux
     depends_on "gnustep-base"
     depends_on "libobjc2"
     depends_on "readline"

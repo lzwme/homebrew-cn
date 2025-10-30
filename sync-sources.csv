@@ -5116,7 +5116,7 @@ Homebrew-homebrew-core/Formula/o/openapv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openbao.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openblas.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openblas64.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/o/opencascade.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/opencascade.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opencbm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opencc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opencl-clhpp-headers.rb, Homebrew/homebrew-core, 1
@@ -6666,7 +6666,7 @@ Homebrew-homebrew-core/Formula/s/spotifyd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spring-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spring-loaded.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/s/sprocket.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sprocket.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sproxy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spytrap-adb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sq.rb, Homebrew/homebrew-core, 1

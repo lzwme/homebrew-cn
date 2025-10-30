@@ -4,20 +4,18 @@ class Cassandra < Formula
 
   desc "Eventually consistent, distributed key-value store"
   homepage "https://cassandra.apache.org"
-  url "https://www.apache.org/dyn/closer.lua?path=cassandra/5.0.5/apache-cassandra-5.0.5-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/cassandra/5.0.5/apache-cassandra-5.0.5-bin.tar.gz"
-  sha256 "17097f52fe9627a45867efefd8eee42d5fa4c4cbab6e2a92474aa1d370ea0aca"
+  url "https://www.apache.org/dyn/closer.lua?path=cassandra/5.0.6/apache-cassandra-5.0.6-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/cassandra/5.0.6/apache-cassandra-5.0.6-bin.tar.gz"
+  sha256 "50033c31dc620c17fb0d8931c7a950ffe66e457cbf6eff1b7f94cba929344d4c"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "19d6a16164dcc94804ae0d5105730a2c4c578ff5fd1d37a17ef48a4bc6992213"
-    sha256 cellar: :any,                 arm64_sequoia: "eb036975c40eed782b928df11ef9c9ecd6d6693066268b638f01a1388b2b8369"
-    sha256 cellar: :any,                 arm64_sonoma:  "bc605977a7081e5c8aa9faf1e278a526967dfe73d7d866d7bf9146e9d40041c3"
-    sha256 cellar: :any,                 arm64_ventura: "5969c2671a3f611604a13a7046c39bd5e8965e71fc89b8c733eefb81a729ddf7"
-    sha256 cellar: :any,                 sonoma:        "8fc70f3b660464b617f46a8f88d123e2c936239d5528879391401ace1eb4c22a"
-    sha256 cellar: :any,                 ventura:       "96e93bb6f6f3d5b0273bc2cb17cfe79a90a96e21215d04c30ade747af2c12076"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0441fa80015c331c066fb500c6da856241b80e86b8fd4cfe8955fa970e5559f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a72513063f3d1f377fd41429a9ae8369eb31120fef4e50df39b1236b4f8f562"
+    sha256 cellar: :any,                 arm64_tahoe:   "0de4d2dcd50ab4a0b3aaa4dccf008d358d78226f7b21dfd3b2297ff667762c73"
+    sha256 cellar: :any,                 arm64_sequoia: "523dbf2e3fb561d07ea93d39fb220bc10eba243ff174fc89e8ceab85dea0e891"
+    sha256 cellar: :any,                 arm64_sonoma:  "cbd471c203a18c9c22079fd08c3e2d18d7cb935b6082adfc08cb8b1deef77128"
+    sha256 cellar: :any,                 sonoma:        "0efec8e3d2a3127251d8272d781b6aef07443702e56bf4a02089dd2428d54879"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3bd31534c91dfd6979bbb6d169871918fc3854ff7ede8624f15a03f4bdd8c181"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "707e81f60da7fd7e2cd1a68af2cc3523a1ef66d1278bc2e1bedb44c108baff0b"
   end
 
   depends_on "libev"
@@ -30,28 +28,23 @@ class Cassandra < Formula
                 extra_packages: ["cassandra-driver", "wcwidth"]
 
   resource "cassandra-driver" do
-    url "https://files.pythonhosted.org/packages/b2/6f/d25121afaa2ea0741d05d2e9921a7ca9b4ce71634b16a8aaee21bd7af818/cassandra-driver-3.29.2.tar.gz"
-    sha256 "c4310a7d0457f51a63fb019d8ef501588c491141362b53097fbc62fa06559b7c"
+    url "https://files.pythonhosted.org/packages/06/47/4e0fbdf02a7a418997f16f59feba26937d9973b979d3f23d79fbd8f6186f/cassandra_driver-3.29.3.tar.gz"
+    sha256 "ff6b82ee4533f6fd4474d833e693b44b984f58337173ee98ed76bce08721a636"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "geomet" do
-    url "https://files.pythonhosted.org/packages/cf/21/58251b3de99e0b5ba649ff511f7f9e8399c3059dd52a643774106e929afa/geomet-0.2.1.post1.tar.gz"
-    sha256 "91d754f7c298cbfcabd3befdb69c641c27fe75e808b27aa55028605761d17e95"
-  end
-
-  resource "six" do
-    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
-    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
+    url "https://files.pythonhosted.org/packages/2a/8c/dde022aa6747b114f6b14a7392871275dea8867e2bd26cddb80cc6d66620/geomet-1.1.0.tar.gz"
+    sha256 "51e92231a0ef6aaa63ac20c443377ba78a303fd2ecd179dc3567de79f3c11605"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz"
-    sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
+    url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
+    sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
   end
 
   def install

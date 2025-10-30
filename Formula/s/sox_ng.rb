@@ -6,6 +6,11 @@ class SoxNg < Formula
   license "GPL-2.0-only"
   head "https://codeberg.org/sox_ng/sox_ng.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^sox_ng[._-]v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "5437c62fed1f2d9b342a9cbb250fa0a8a3f99ebeafa211deb3a7802d0b26364d"
     sha256 cellar: :any,                 arm64_sequoia: "6ad2694a01ee6a95257f3c3cc507a49338e1623a3da61fd290799d836aa90c5d"

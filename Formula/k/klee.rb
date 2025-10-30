@@ -36,6 +36,13 @@ class Klee < Formula
     depends_on "minisat"
   end
 
+  on_linux do
+    # klee seems to stall when run on arm64. May not be supported yet:
+    # * https://github.com/klee/klee/issues/1670
+    # * https://github.com/klee/klee/issues/1767
+    depends_on arch: :x86_64
+  end
+
   # klee needs a version of libc++ compiled with wllvm
   resource "libcxx" do
     url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.6/llvm-project-16.0.6.src.tar.xz"

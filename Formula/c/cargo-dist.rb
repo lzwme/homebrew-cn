@@ -1,20 +1,18 @@
 class CargoDist < Formula
   desc "Tool for building final distributable artifacts and uploading them to an archive"
   homepage "https://opensource.axo.dev/cargo-dist/"
-  url "https://ghfast.top/https://github.com/axodotdev/cargo-dist/archive/refs/tags/v0.30.0.tar.gz"
-  sha256 "7104aa2c1eb94e9090b6f9bc915d8a3cd5c3ef05bddabd9063a6b508c24f3288"
+  url "https://ghfast.top/https://github.com/axodotdev/cargo-dist/archive/refs/tags/v0.30.1.tar.gz"
+  sha256 "de5de74a07627adadf445f9f4424acffa85b8518a01ddc4a7373f0cc17c94333"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/axodotdev/cargo-dist.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8793bcfbcb67492861794d2219ad9b0ef68bca8d8d745680cc478c8e2a9ceb5f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c971eb5fa6fa3f0f556b003eb9a4966ba4ecd828967816148a552f835836f22"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92666c0fb9d68e2544aa3b380a6380c5afc11b36b333adf34cf1f4da0fa2e235"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "60f829f71f65736ad92132ba9c2cb007294012dc577904f25c97bbd66d7aa4a5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "25f59a04511d17a90146d43e28f2c970e9399dc3ea916ddbbbec64a9eed5d1a4"
-    sha256 cellar: :any_skip_relocation, ventura:       "20621484140286fbcd75706666df98f66cc86e4a83d3238e0c2a2262eb198a08"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9945da0f56123aa317b3a83e70e531dfbb168ca0b22a660a055e0c060e60223b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9951fe35f80fb827cbe2b9a03599da4360f24e00b34aaf3771f8a7b780735702"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b8df98efa1a836ecf00f3edf427b95ae5276879c5637f293edef5e1cfc3c75b5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aeeefcbb3145349847907feb35f743ccad802b70c31f05804192d24a6937372d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "803b8d152bcf2d22815a69cefe7956654e31b1f3aee46a59e9f0e843e11017a3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1c3ae124ab5b82999d34c604dbe1ccf11ba67f38aa7f09bf21f3c163ef046560"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "517e1d0541883c763435c56730973355be1395d3a208c947cabd989b05188a42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6f5ce8540f6dea1907a27523af6750f0de508aa35c64c33ebdebfab7db3df9d"
   end
 
   depends_on "rust" => :build

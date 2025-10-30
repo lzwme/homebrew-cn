@@ -13,6 +13,7 @@ class Pcl < Formula
     sha256 cellar: :any,                 arm64_sequoia: "982b8332e9e6de238fbf34c31057dc15767166f63f7b2b9c3f57f55d682e9b01"
     sha256 cellar: :any,                 arm64_sonoma:  "122837c0587bd4e41ec76a36c5840d657e64e0d8465b53fa87f64637fbd66c1f"
     sha256 cellar: :any,                 sonoma:        "d65d4d87b0f7e60a4be06db963bdaff7dca9c2bfaf837a2a79998838c8e6fc10"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d545ba9d0477fb775588af1f44165524b90236acee0f715e8e3513fd1b42a7c6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0870d2eb742f352c2ca71955d0cd4711345bfec5beac6b8e903540a775d2cd64"
   end
 
@@ -77,6 +78,11 @@ class Pcl < Formula
 
     # The AppleClang versions shipped on current MacOS versions do not support the -march=native flag on arm
     args << "-DPCL_ENABLE_MARCHNATIVE:BOOL=OFF" if build.bottle?
+
+    # Work around ../../lib/libpcl_cc_tool_interface.a(mocs_compilation.cpp.o):
+    # relocation R_AARCH64_ADR_PREL_PG_HI21 against symbol `...' which may bind
+    # externally can not be used when making a shared object; recompile with -fPIC
+    args << "-DCMAKE_POSITION_INDEPENDENT_CODE=ON" if OS.linux? && Hardware::CPU.arm?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

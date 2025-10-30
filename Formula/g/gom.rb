@@ -1,8 +1,8 @@
 class Gom < Formula
   desc "GObject wrapper around SQLite"
   homepage "https://wiki.gnome.org/Projects/Gom"
-  url "https://download.gnome.org/sources/gom/0.5/gom-0.5.4.tar.xz"
-  sha256 "57ba806fe080a937d5664178d21bad7653b2c561ea128187a7b10bc1762b7f65"
+  url "https://download.gnome.org/sources/gom/0.5/gom-0.5.5.tar.xz"
+  sha256 "ad61f05af2317a7ab1771fcfa816989fbba3b18957d2e0b5dede9ef45f09b534"
   license "LGPL-2.1-or-later"
 
   # We use a common regex because gom doesn't use GNOME's "even-numbered
@@ -15,13 +15,12 @@ class Gom < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "72a2093c242c6de92ce26583e6add094f4ca79cc9d71e6232f8ee04a6024b2c7"
-    sha256 cellar: :any, arm64_sequoia: "73a0c35e97b516467216c1d954c15e54c13659846143c7b76bfa5f99a7fecdc0"
-    sha256 cellar: :any, arm64_sonoma:  "92d91eced46a0e8176cb2b99b064f908f283901373b2aedcfc64d94a782fc7e7"
-    sha256 cellar: :any, sonoma:        "68a3c7f359dbfae00c68786ae064a84a42fd306005bfcf527eadaa948fec9275"
-    sha256               arm64_linux:   "c633b0b89815e1c525338d1ca8a9be3fe5a53e7cb917b3e2c3886a5257eff5d7"
-    sha256               x86_64_linux:  "72438d9c9681d46a624474e9e6dddd5eb7d7aaf2a907b8a9b5e87d36c6eab43b"
+    sha256 cellar: :any, arm64_tahoe:   "52a58d24dad257ba7321f42acd30b67c6aac05a7efe5b9d3fb8b1b76657808e4"
+    sha256 cellar: :any, arm64_sequoia: "e9241ed6619c79c2cebe1b5508672aec223f464dbc7f1ab29e1e49151a1fe942"
+    sha256 cellar: :any, arm64_sonoma:  "772d157dfb130510e77b4499c4a6d31b77f3883e699b5c48576f53fc99019954"
+    sha256 cellar: :any, sonoma:        "d6c9b90b0ea895edc45d71215c52e078c01ec924843a9594d0252139bfe03ab9"
+    sha256               arm64_linux:   "2b147cf4c58a9dd1297191fa92a99b93e5245ba9102ea22c287d49f5ccf56b97"
+    sha256               x86_64_linux:  "469ff80ce89cc419eef6768b5672d25f8f3c557d269d02f0e2554f784da92a47"
   end
 
   depends_on "gobject-introspection" => :build

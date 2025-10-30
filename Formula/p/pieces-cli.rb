@@ -6,15 +6,16 @@ class PiecesCli < Formula
   url "https://files.pythonhosted.org/packages/f8/bb/48f95f63ca1c5b86564e6569f2e7bed542d351002dbc49702e1235bd7d1c/pieces_cli-1.19.0.tar.gz"
   sha256 "0bfea482de3eada8d3612f7c107f02ba38d5f54e056e86743cad41f6cb9576c9"
   license "MIT"
+  revision 1
   head "https://github.com/pieces-app/cli-agent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a70fe389513610c2f37968cd0828d9385f6ea894a05f0e0d46a16f91561a7313"
-    sha256 cellar: :any,                 arm64_sequoia: "a7150ab1cec9f0688b09b5be262520c642ddbfc6cf13d36112597efcff9581d8"
-    sha256 cellar: :any,                 arm64_sonoma:  "82eb8751a5600fa50bd52d48ad4eb0b99854df81555dee724cbefeb5b0220d91"
-    sha256 cellar: :any,                 sonoma:        "f432543a75c07f0dc75e8dc4fca5d62b171c13403d9bfe53f9fdd55457b3396b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4a9f8e3715bd6f4f3a0a2fbe2e97ceeae25e21b4e49046b726f8f9eb8d45b31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c14c1297f728d47f96cbd5740d1b5522cd9a16d3a2e902e22e648045ce6ef69"
+    sha256 cellar: :any,                 arm64_tahoe:   "1e4994f747f077732f4d1952808294a9b70ec35e34534a65f1d2037e68963f53"
+    sha256 cellar: :any,                 arm64_sequoia: "50eca67149507eed219cdc906e4333b288a46cb07fd073b4f6995de54a02b618"
+    sha256 cellar: :any,                 arm64_sonoma:  "c68c0df0b15928bfd2c67a018a015fe80bed0fc17aa3ae311d4e9f3b50e9112f"
+    sha256 cellar: :any,                 sonoma:        "0127b237f959dc5f139da0b7cdd92627f808c05adc34021d9c39546e69edc541"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8840e2deae0deeb9f359962d2f1c4c04beed83a54a15adeeebe37e76ab4c045"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5eaac9ab856b010bc1f95cd27fbedb782e9097e10b7d17a155593415f07c5c22"
   end
 
   depends_on "rust" => :build
@@ -141,8 +142,8 @@ class PiecesCli < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
-    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
+    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
+    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
   end
 
   resource "python-multipart" do
@@ -166,8 +167,8 @@ class PiecesCli < Formula
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/c9/b2/7481156cf42b7f66cffb371e504b7ace12b4f016b8872ffcf0873ae9534b/sentry_sdk-2.42.0.tar.gz"
-    sha256 "91c69c9372fb5fb4df0ac39456ccf7286f0428b3ee1cdd389f9dd36c04e0f5c9"
+    url "https://files.pythonhosted.org/packages/31/04/ec8c1dd9250847303d98516e917978cb1c7083024770d86d657d2ccb5a70/sentry_sdk-2.42.1.tar.gz"
+    sha256 "8598cc6edcfe74cb8074ba6a7c15338cdee93d63d3eb9b9943b4b568354ad5b6"
   end
 
   resource "six" do
@@ -186,8 +187,8 @@ class PiecesCli < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/a7/a5/d6f429d43394057b67a6b5bbe6eae2f77a6bf7459d961fdb224bf206eee6/starlette-0.48.0.tar.gz"
-    sha256 "7e8cee469a8ab2352911528110ce9088fdc6a37d9876926e73da7ce4aa4c7a46"
+    url "https://files.pythonhosted.org/packages/1b/3f/507c21db33b66fb027a332f2cb3abbbe924cc3a79ced12f01ed8645955c9/starlette-0.49.1.tar.gz"
+    sha256 "481a43b71e24ed8c43b11ea02f5353d77840e01480881b8cb5a26b8cae64a8cb"
   end
 
   resource "typing-extensions" do
@@ -206,8 +207,8 @@ class PiecesCli < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/71/57/1616c8274c3442d802621abf5deb230771c7a0fec9414cb6763900eb3868/uvicorn-0.37.0.tar.gz"
-    sha256 "4115c8add6d3fd536c8ee77f0e14a7fd2ebba939fed9b02583a97f80648f9e13"
+    url "https://files.pythonhosted.org/packages/cb/ce/f06b84e2697fef4688ca63bdb2fdf113ca0a3be33f94488f2cadb690b0cf/uvicorn-0.38.0.tar.gz"
+    sha256 "fd97093bdd120a2609fc0d3afe931d4d4ad688b6e75f0f929fde1bc36fe0e91d"
   end
 
   resource "wcwidth" do

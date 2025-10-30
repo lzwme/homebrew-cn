@@ -18,6 +18,7 @@ class F3d < Formula
     sha256 cellar: :any,                 arm64_sequoia: "7ed7f6ae1508a1b3c3de5cd001c882d7ceb762904a6928c9d9c1be447b26aacb"
     sha256 cellar: :any,                 arm64_sonoma:  "d18cb3e7b808879ed186db3c3346bb42adc7e0b9cda70d5e7e79cf6f657cd8fb"
     sha256 cellar: :any,                 sonoma:        "dcd9ee303a3fddb96248b90551e371d19f4a3afd879032963e4641e68b636540"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5b4cc5c27ef3a80504e320dea6cdde77eb7ab1fc92b752996316f54ffc57feb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "69067a2da0330f543a15d5000e8f7b6bde1167f3cd2f8f304d889cf18e3980aa"
   end
 

@@ -1,19 +1,17 @@
 class Wgo < Formula
   desc "Watch arbitrary files and respond with arbitrary commands"
   homepage "https://github.com/bokwoon95/wgo"
-  url "https://ghfast.top/https://github.com/bokwoon95/wgo/archive/refs/tags/v0.5.14.tar.gz"
-  sha256 "68adfbd4e2b4e3ec8c4f61015cddfa2983be0b3975e6feecc00ddd6984c45235"
+  url "https://ghfast.top/https://github.com/bokwoon95/wgo/archive/refs/tags/v0.6.2.tar.gz"
+  sha256 "7ed3ac185905dad49f7e042369070e9e4c98681334c940d15b5774125bf6a64a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6990624fe3f87d1eff2f87d58fe7154fc8446a7ecd35ba56e2b0b0997ac693b1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78157d813cf8873382ee72b9d2aa8d842e89746fd52921be2a6f6d0152deac13"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78157d813cf8873382ee72b9d2aa8d842e89746fd52921be2a6f6d0152deac13"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "78157d813cf8873382ee72b9d2aa8d842e89746fd52921be2a6f6d0152deac13"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2e5a3c3e58b374ffbf760343e3f06e3ffa0eef05d5cce3805972af1ba6572150"
-    sha256 cellar: :any_skip_relocation, ventura:       "2e5a3c3e58b374ffbf760343e3f06e3ffa0eef05d5cce3805972af1ba6572150"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d274c4983c5d924d0b11f3b260b3a08ab63e012cceab9968d79a0b7197ba55b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d47f8b6a742e5e07968ce8f37c85e0888806cc1071d3db786aa0e73e763cb2bb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6863cc6d3ff05e1803b438f841c4cf8be619571911f2c81939af1c4526ac5a09"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6863cc6d3ff05e1803b438f841c4cf8be619571911f2c81939af1c4526ac5a09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6863cc6d3ff05e1803b438f841c4cf8be619571911f2c81939af1c4526ac5a09"
+    sha256 cellar: :any_skip_relocation, sonoma:        "de09ebfaa1f43c99d398967abf460982b7ea9b9e437140e1d26cb40d4418de13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c22551f6173f90689f0069fbc5951e0f0b8d89312e5258c7de43b1dea83f9cbb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54476182719c2e80813478eba5dd13ab443a74f792b9922a730e5afeffb6b46e"
   end
 
   depends_on "go" => :build

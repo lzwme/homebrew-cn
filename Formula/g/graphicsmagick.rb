@@ -1,10 +1,9 @@
 class Graphicsmagick < Formula
   desc "Image processing tools collection"
   homepage "https://graphicsmagick.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.45/GraphicsMagick-1.3.45.tar.xz"
-  sha256 "dcea5167414f7c805557de2d7a47a9b3147bcbf617b91f5f0f4afe5e6543026b"
+  url "https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.46/GraphicsMagick-1.3.46.tar.xz"
+  sha256 "c7c706a505e9c6c3764156bb94a0c9644d79131785df15a89c9f8721d1abd061"
   license "MIT"
-  revision 1
   head "http://hg.code.sf.net/p/graphicsmagick/code", using: :hg
 
   livecheck do
@@ -12,15 +11,12 @@ class Graphicsmagick < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "2050cdc990005bc8d53b6782fcb9d7cee90f3e6bc3dd1437af538daf25be9c3d"
-    sha256 arm64_sequoia: "f950843cfad9376677acb179ad6553531249d9e79b37a830eba929591beaac46"
-    sha256 arm64_sonoma:  "8b521ea1cf171f8fdb14b43f3b3d06699280569791a25d64aa73684062e06ed0"
-    sha256 arm64_ventura: "e0c9b6972e74fcc2d74037d907671ad6a2073553816beb11b8aacb9b554ec689"
-    sha256 sonoma:        "15ad3752ebc129fe21f9da7b729c2d90cf8c40ce824dc42f6725d31c139d2896"
-    sha256 ventura:       "104380c258558a7469b1b7133222740d00af867fe8d8a1dc36a419e6294a58b7"
-    sha256 arm64_linux:   "f02609d87790a12f30af1c7ed66f719570109def8775379307962735bcb153f6"
-    sha256 x86_64_linux:  "b6e2fea1abc3ea05bc6c9a7837b1e5fb2257a35155fe0c539d1e3008d257879d"
+    sha256 arm64_tahoe:   "08abeb4f1f53226a4c315cdcd2693014875979dd19f43d13acd8f38945acebe5"
+    sha256 arm64_sequoia: "bef5349a1eefbc26068c38ba3e3f2a312942f28d6b3b1a3c8b71203cd725aae8"
+    sha256 arm64_sonoma:  "4b0fa911c77b374ce37b8b098d94251b322f7621e8788184e23b45a53c55fb8e"
+    sha256 sonoma:        "76d18d26ba1b8636a7b3317f5d626cbe3e0a67d970b4c57c030293f5720c7d39"
+    sha256 arm64_linux:   "e106299c99dde8a68452e7cb12951ce29c2ab46c91461e237ec64d9b8194bedb"
+    sha256 x86_64_linux:  "35de5ac2dba284652fb8066b9c5cbfde3241701ad99452577400801be0d48b5c"
   end
 
   depends_on "pkgconf" => :build

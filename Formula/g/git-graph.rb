@@ -23,10 +23,6 @@ class GitGraph < Formula
 
   uses_from_macos "zlib"
 
-  on_linux do
-    depends_on "zlib"
-  end
-
   def install
     system "cargo", "install", *std_cargo_args
   end

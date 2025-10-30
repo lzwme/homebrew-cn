@@ -18,6 +18,7 @@ class Visp < Formula
     sha256 cellar: :any,                 arm64_sequoia: "47def7ce212d709fda8fdc3f4b41c4c88161c8d56506d882f436649cf1fe2f11"
     sha256 cellar: :any,                 arm64_sonoma:  "9b1be885e5d4154c5fc0d20936385f19ff33018940d61fc5fd3d263a23bc5651"
     sha256 cellar: :any,                 sonoma:        "9c9807e08cf9160e0be9fe9fbf195a57d546aa52c90a1334993d60834a582179"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d663bcaa78d922f702cd0b6c005642b975e3fb3caf6e556ac3ba39f9d14a63b2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "505be427ad6e27b0ff85408fa2db304883c48c4a43f76757a20dd927e8e767d6"
   end
 

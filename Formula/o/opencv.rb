@@ -36,6 +36,7 @@ class Opencv < Formula
     sha256 arm64_sequoia: "be1a00992a5ecafb7cc0757a88501a7bc7c372e9f94719ff66418e71b67121ca"
     sha256 arm64_sonoma:  "43de3d8788aa3d328019bf148328fa7255016fd0ed2896b6bb2c9412bcb420f8"
     sha256 sonoma:        "fd55a0d753703064d3cfff30c35d0793e903fa080daba5e8c5ad504ea6979d8d"
+    sha256 arm64_linux:   "92608887fab48ee5dbe5e0ed2ea3064bef29fc27b72b2fd0b92bad5c107849b5"
     sha256 x86_64_linux:  "577df23fd07c1cec9a1582a2342c3e67d4f7d8a08a741b8790f1117ecbb388b9"
   end
 

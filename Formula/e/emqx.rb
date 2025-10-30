@@ -38,11 +38,8 @@ class Emqx < Formula
   uses_from_macos "zip"        => :build
   uses_from_macos "cyrus-sasl"
   uses_from_macos "krb5"
-
-  on_linux do
-    depends_on "ncurses"
-    depends_on "zlib"
-  end
+  uses_from_macos "ncurses"
+  uses_from_macos "zlib"
 
   conflicts_with "cassandra", because: "both install `nodetool` binaries"
 

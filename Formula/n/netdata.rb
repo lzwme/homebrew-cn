@@ -16,6 +16,7 @@ class Netdata < Formula
     sha256 arm64_sequoia: "ba3a3cba67772ef203bd1434bf8c309f3fd11fd2e37c5261087aa11d0cb800d2"
     sha256 arm64_sonoma:  "f4d6d293f19d2aa8a80227780ac4f9a7448962b3b229398bd994c5857f1dd750"
     sha256 sonoma:        "4e15e82971a44731a3bde9b42543b1f5017f72378070b5519316bd7f7f14b539"
+    sha256 arm64_linux:   "9e36528c61d33c7733374336d940c7c0d93aafa1d97df03fbeb6b8fa7278a896"
     sha256 x86_64_linux:  "8381c6b8bec45e18c7f7833bfc226dcfda50207fefaeec3a71db28d103a40f45"
   end
 
@@ -50,6 +51,12 @@ class Netdata < Formula
     depends_on "systemd"
     depends_on "util-linux"
     depends_on "zstd"
+  end
+
+  # Backport fix for arm64 linux
+  patch do
+    url "https://github.com/netdata/netdata/commit/e8d12d47bf6b9c3105363ccafaa53cdc80b2237b.patch?full_index=1"
+    sha256 "b4a541f1528083665e29a5aa4d89786008114ea400aec8ae94d43e34ea7e3944"
   end
 
   def install

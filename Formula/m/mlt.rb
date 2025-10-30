@@ -23,6 +23,7 @@ class Mlt < Formula
     sha256 arm64_sequoia: "a6e2b4608def05c0b65c582c3c91424db5fbcdc66cdfc234f7851aed43e2cfa5"
     sha256 arm64_sonoma:  "b147a6c2b447e5f492378f852825fd3ccc6daba38ff9e4ce9d45e1c7b253b8af"
     sha256 sonoma:        "b3978daa88aac4c0af94d25ad45df803671668c911c773388be602090ee23304"
+    sha256 arm64_linux:   "9263ef1a153c7fe204b435507624b5f862bc4a6b9d2cac10187089374be97d2e"
     sha256 x86_64_linux:  "06fad8eb1fdfc8ab37ad5624a3f19499a32beccae2f156e63c862b7c61b7cde4"
   end
 

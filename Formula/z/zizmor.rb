@@ -1,18 +1,18 @@
 class Zizmor < Formula
   desc "Find security issues in GitHub Actions setups"
   homepage "https://docs.zizmor.sh/"
-  url "https://ghfast.top/https://github.com/zizmorcore/zizmor/archive/refs/tags/v1.16.0.tar.gz"
-  sha256 "8c0f9ef81c6d5b12d2c85a5ede787c8588ed40100f8e1826251934f18f5e0755"
+  url "https://ghfast.top/https://github.com/zizmorcore/zizmor/archive/refs/tags/v1.16.1.tar.gz"
+  sha256 "14632d8cd7955aa075bf4198aa84c92e357174495a12ccbae27e362a5a2f3f1e"
   license "MIT"
   head "https://github.com/zizmorcore/zizmor.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae421d4c7b94579bbdcb8b02454be00786db7946d1a2961e7b8be0681e2a336a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2115130be7073df9418fbe22eac37c0d8e3a30b87d1581da06f23593c5ff9344"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "835d56a39b20426265668a34370ac9969d086b85c93543acaaeb3d788b106e76"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bc8d8bdddf3dd756a6a6a4ab4e76e305ec42acebd7631acdea70da41d011361b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d3641ee62c65412909e4ca9a47d06c1f0337978c6bad9bc7c257a12d9b7cfa5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcdf25d8941b98e96e5e6d533ef6a98295e87382a0b945f6039f8afc043f68e4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aab68d51d1b792173da733a5e0014c29403f6a8b6f66db104da278eac7181bbe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d34a5ab47e712ea4ceaadc6d703773943a5e19381d7f1dfdd79efb09b9ae73c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f88d35a6b07ba3425a592c11ad07c1ded2dd67ab38837916664dbc671b268227"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8eaec1f170aded1a1eab3fbb7c353253ee71c2538644d4b3f06f1d4e29f68a1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6aec18ce54159106548063fd12a4bf2670e5d504281f3abb5fb253693728f896"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6edb74c2dc3e446040759bd401945e0f1a48263a497f32f00ecd1471146746c"
   end
 
   depends_on "pkgconf" => :build
