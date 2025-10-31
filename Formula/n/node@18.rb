@@ -1,5 +1,5 @@
 class NodeAT18 < Formula
-  desc "Platform built on V8 to build network applications"
+  desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
   url "https://registry.npmmirror.com/-/binary/node/v18.20.8/node-v18.20.8.tar.xz"
   sha256 "36a7bf1a76d62ce4badd881ee5974a323c70e1d8d19165732684e145632460d9"

@@ -1,5 +1,5 @@
 class NodeAT20 < Formula
-  desc "Platform built on V8 to build network applications"
+  desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
   url "https://registry.npmmirror.com/-/binary/node/v20.19.5/node-v20.19.5.tar.xz"
   sha256 "230c899f4e2489c4b8d2232edd6cc02f384fb2397c2a246a22e415837ee5da51"

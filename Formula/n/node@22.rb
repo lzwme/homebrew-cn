@@ -1,5 +1,5 @@
 class NodeAT22 < Formula
-  desc "Platform built on V8 to build network applications"
+  desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
   url "https://registry.npmmirror.com/-/binary/node/v22.21.1/node-v22.21.1.tar.xz"
   sha256 "487d73fd4db00dc2420d659a8221b181a7937fbc5bc73f31c30b1680ad6ded6a"

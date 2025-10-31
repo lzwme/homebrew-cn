@@ -1,8 +1,8 @@
 class GoCritic < Formula
   desc "Opinionated Go source code linter"
   homepage "https://go-critic.com"
-  url "https://ghfast.top/https://github.com/go-critic/go-critic/archive/refs/tags/v0.14.0.tar.gz"
-  sha256 "766fda194d4c22313f4285f214804a1f1689bc4795fc3cc176395f171223c226"
+  url "https://ghfast.top/https://github.com/go-critic/go-critic/archive/refs/tags/v0.14.2.tar.gz"
+  sha256 "a4a3df4eeac4bfffe308c48426a7f41f1aebbec842204da7720e244b2b53ced9"
   license "MIT"
   head "https://github.com/go-critic/go-critic.git", branch: "master"
 
@@ -12,12 +12,12 @@ class GoCritic < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d96d411bb8443fd9e953830816853257d78fe6dafcaeefac8bea1af229ca896"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d96d411bb8443fd9e953830816853257d78fe6dafcaeefac8bea1af229ca896"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d96d411bb8443fd9e953830816853257d78fe6dafcaeefac8bea1af229ca896"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8320f485b3d0c146ebfd8d62ee6437e7aadd3df79a11413215f20423ac29a296"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "abf405e4cb927e20c1fa1e4bd2f0a23ef143dfda6e76445c3266e633c2b6b2e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae572be6466bfbf21f82790cba0ba2f49507af81589db9c8a72f35bc0cbc6b3f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8968aa102678253312373087660906b05d866524b8c23cab03c02f13c6ff98dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8968aa102678253312373087660906b05d866524b8c23cab03c02f13c6ff98dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8968aa102678253312373087660906b05d866524b8c23cab03c02f13c6ff98dc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9bd8f225ab72b4870e6265c3ec52a8f3ed0d7a6244c2af8251bd67563f6d6735"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "131adc554aa4e3c23f181a090d0af56cc012f7e7488cd2e268df08d4813818c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "681f56e299c9ab661e57fc8742f3ba3b1cdc37cb2a8f994bd6ec5f3a1d33e2c2"
   end
 
   depends_on "go"

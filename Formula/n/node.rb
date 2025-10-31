@@ -1,10 +1,9 @@
 class Node < Formula
-  desc "Platform built on V8 to build network applications"
+  desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v24.10.0/node-v24.10.0.tar.xz"
-  sha256 "f17e36cb2cc8c34a9215ba57b55ce791b102e293432ed47ad63cbaf15f78678f"
+  url "https://registry.npmmirror.com/-/binary/node/v25.1.0/node-v25.1.0.tar.xz"
+  sha256 "ee7741190e47402dfc621547ac23d3f58e6463a86878dc1879fb9e8de1ce3226"
   license "MIT"
-  revision 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
   livecheck do
@@ -13,16 +12,16 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "90b17497de9dff92fdd28e5a65890923d8592e2bd05342fec87eae15ca83a0fa"
-    sha256 arm64_sequoia: "b64df0dd3cc2ada5fd8130c7e612fc80eee4cfa1f21e11605ed7aa140f7c0b8f"
-    sha256 arm64_sonoma:  "31f0e811fc019b5aeb4bb34fc7b883fe4217f63d70832950fec207c908103b93"
-    sha256 sonoma:        "ebbcc69c603816877302c2309856513c8b89fa0f01dedeb8c5ea2f07e26e097d"
-    sha256 arm64_linux:   "26a64d1ca20070250999aeb08b02ab4ba1d9554cf4c4af95c2e840ee1eddf0c7"
-    sha256 x86_64_linux:  "b6b19417dcba81028762a9fd0a17f1cc03c5ce9f18dbbc4cf4e7213091075d35"
+    sha256 arm64_tahoe:   "49bd7d0b0b3193c2a74f5e68e76f3d82b31dea6f5adeadbe66e79b594a7c9630"
+    sha256 arm64_sequoia: "67ea6362b4e774b88b97c12798c0bff7b36cfc17636b0e15aec07ac8f97c681d"
+    sha256 arm64_sonoma:  "ab895d17a357bde29762f8b2b5acf0d14f3a8eab13a16760c3bda997b1e6d74c"
+    sha256 sonoma:        "94c92c6dc24110476193f49d4284989e89c062b33b9b472fcfc979d309e42bfb"
+    sha256 arm64_linux:   "f49f789fa567296b1c243a192145d0546ad88b3f9581cac61e55d7dc9562ef64"
+    sha256 x86_64_linux:  "39f73b2ae9f1b5dee828ad2ab2df75cf096ba5d26732575462866d4ac026af77"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "python@3.13" => :build
+  depends_on "python@3.14" => :build
   depends_on "brotli"
   depends_on "c-ares"
   depends_on "icu4c@77"
@@ -61,13 +60,13 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-11.6.0.tgz"
-    sha256 "ddf7e6e42ae5b9e28d84945d1c37188f9a741af492507b513b3e80af5aeba4f1"
+    url "https://registry.npmjs.org/npm/-/npm-11.6.2.tgz"
+    sha256 "585f95094ee5cb2788ee11d90f2a518a7c9ef6e083fa141d0b63ca3383675a20"
   end
 
   def install
     # make sure subprocesses spawned by make are using our Python 3
-    ENV["PYTHON"] = which("python3.13")
+    ENV["PYTHON"] = which("python3.14")
 
     # Ensure Homebrew deps are used
     %w[brotli icu-small nghttp2 ngtcp2 npm simdjson sqlite uvwasi zstd].each do |dep|

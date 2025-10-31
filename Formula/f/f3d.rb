@@ -14,12 +14,13 @@ class F3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "72fd6da56af7293967a0e092bd5e9c27bb9b2f9f8fa951c9d97ef032e2306244"
-    sha256 cellar: :any,                 arm64_sequoia: "7ed7f6ae1508a1b3c3de5cd001c882d7ceb762904a6928c9d9c1be447b26aacb"
-    sha256 cellar: :any,                 arm64_sonoma:  "d18cb3e7b808879ed186db3c3346bb42adc7e0b9cda70d5e7e79cf6f657cd8fb"
-    sha256 cellar: :any,                 sonoma:        "dcd9ee303a3fddb96248b90551e371d19f4a3afd879032963e4641e68b636540"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5b4cc5c27ef3a80504e320dea6cdde77eb7ab1fc92b752996316f54ffc57feb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69067a2da0330f543a15d5000e8f7b6bde1167f3cd2f8f304d889cf18e3980aa"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "8eb787108d303c3033c7a510258d563ecd9c4b642961efa2f3d88c88b111bbd3"
+    sha256 cellar: :any,                 arm64_sequoia: "4908e5598772ab394a6938a4d88e9de9ffee3e5f2823af7b4ab87ead2bda6603"
+    sha256 cellar: :any,                 arm64_sonoma:  "c122044a098c39371c89e084346a4130d4ebb2a4bbf45e0db89d210463ca151f"
+    sha256 cellar: :any,                 sonoma:        "a79c9ba5de27b819ee64817e0ca7c00a7faf6b32f043a42993260ccd659d1c15"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca5be6aeb941e0c2b32421dff594d0acd3509ad82c89308b8ca34c4918b78e51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1256bdcbd5bf67be81f0ffef8ac510a3ae41e15a34de960f2f40e69c648ad19"
   end
 
   depends_on "cmake" => :build
@@ -33,7 +34,6 @@ class F3d < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "freeimage"
     depends_on "freetype"
     depends_on "glew"
     depends_on "hdf5"

@@ -3,7 +3,7 @@ class Sfst < Formula
   homepage "https://www.cis.uni-muenchen.de/~schmid/tools/SFST/"
   url "https://www.cis.uni-muenchen.de/~schmid/tools/SFST/data/SFST-1.4.7g.zip"
   sha256 "5f3ab2d8190dc931813b5ba3cf94c72013cce7bf03e16d7fb2eda86bd99ce944"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url :homepage

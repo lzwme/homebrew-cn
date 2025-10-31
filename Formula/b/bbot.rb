@@ -8,30 +8,32 @@ class Bbot < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4c8677c2889ec86ecc7fa828394125d5509e5c8cf305f82cfb84d9addc12cb10"
-    sha256 cellar: :any,                 arm64_sequoia: "48ab1efa6623d5ab979ddac3a24018466fcb351e90e724d918ab7211a35945d0"
-    sha256 cellar: :any,                 arm64_sonoma:  "f2266aa238ab7072e0541fdefa3ba8bd6873f5c6f1b6c1b33bfd1483e539e099"
-    sha256 cellar: :any,                 sonoma:        "a9cdf6c8048bc4813478a6fbbd520aef2318155deef2bf5ee536c3fc9aa58e64"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75ac82c0a7e1137b78f419cbca5994df16964f663b3ff1c4c8d775eeeac80f96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe4c9d4703015ec7c0d3928d8c8e9f290133ec1de0f50441b85f82c742789279"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "53a9991b09f74bf7a54a5748ee9c96203f816f0165a70098aa57a8866e3c07c2"
+    sha256 cellar: :any,                 arm64_sequoia: "0f1a6a5c9defa6d2caeb8fc87f260027172783d23fda998b91744bff497baa15"
+    sha256 cellar: :any,                 arm64_sonoma:  "8aa0b93197ff9982e74cc34523c10bfd683e9c169c4246e27914baa12eabd260"
+    sha256 cellar: :any,                 sonoma:        "0d4104ec58498832faebc69a9279322ba8fb410f394022fecd88d439e64b7431"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56b808884995c422c8d1e6e60df18e5097e2e7e6f6e0138abfa8a50445a011c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "237b8987f00f5a5828324c3e3bf372549a5c01241e5086a3ec19842666914259"
   end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "openjdk" => :build
   depends_on "pkgconf" => :build
-  depends_on "rust" => :build
+  depends_on "rust" => :build # for orjson
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "openssl@3"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
   depends_on "zeromq"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
-  pypi_packages exclude_packages: ["certifi", "cryptography"]
+  pypi_packages exclude_packages: ["certifi", "cryptography", "pydantic-core"]
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -188,11 +190,6 @@ class Bbot < Formula
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
-  end
-
   resource "pyjwt" do
     url "https://files.pythonhosted.org/packages/e7/46/bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726/pyjwt-2.10.1.tar.gz"
     sha256 "3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"
@@ -272,11 +269,6 @@ class Bbot < Formula
   resource "tldextract" do
     url "https://files.pythonhosted.org/packages/97/78/182641ea38e3cfd56e9c7b3c0d48a53d432eea755003aa544af96403d4ac/tldextract-5.3.0.tar.gz"
     sha256 "b3d2b70a1594a0ecfa6967d57251527d58e00bb5a91a74387baa0d87a0678609"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

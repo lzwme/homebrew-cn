@@ -5,8 +5,8 @@ class Breezy < Formula
   # homepage "https://www.breezy-vcs.org/" # https://bugs.launchpad.net/brz/+bug/2102204
   homepage "https://github.com/breezy-team/breezy"
   # pypi sdist bug report, https://bugs.launchpad.net/brz/+bug/2111649
-  url "https://ghfast.top/https://github.com/breezy-team/breezy/archive/refs/tags/brz-3.3.15.tar.gz"
-  sha256 "0a6353b9e42eace08abb59c2cd29e5f705d24e417abe8e2b8fc984623595b5b4"
+  url "https://ghfast.top/https://github.com/breezy-team/breezy/archive/refs/tags/brz-3.3.17.tar.gz"
+  sha256 "87aa018059e94debf8a6bf27117f36570e89d412a467d2bc6a31fecb374110f5"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -15,12 +15,12 @@ class Breezy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d644bef18f857c66c3276871b2a0980c308b290bd312e9c875e6c3073e52b3aa"
-    sha256 cellar: :any,                 arm64_sequoia: "2cc6f4892d23e975a07fe3a3635063aa65af1da5911fa276ffaf26d8a45d9a78"
-    sha256 cellar: :any,                 arm64_sonoma:  "de01f3dfd6d97c8bfe19706ed4785c89447e2c2e78dc458d9e00dc72eab9084d"
-    sha256 cellar: :any,                 sonoma:        "493fd0c7cbb17032800f5f2465421d06e4f304580bcd4c555f4658a5f0bb66bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "99eeea3bd9ab6bb9adeab180a0972a75a4919d4e481408314e9e2e1717142732"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ec3f8422259f634b4609cb06ffd5f9f4e446366e1fb0cb5992c046273ff6fb4"
+    sha256 cellar: :any,                 arm64_tahoe:   "55c587df317149640d9bdc4fb0055793b08322f9779393e75c74c508d44d7cc7"
+    sha256 cellar: :any,                 arm64_sequoia: "33d15e966a3e7f6b5766d08bfd9fa0f2cbf9931043c02210e74392ff3eeafa4f"
+    sha256 cellar: :any,                 arm64_sonoma:  "5ea7ef502a4685ae9e6b85c107bbe929a43e44563faec707a65ac6b40f60ee2f"
+    sha256 cellar: :any,                 sonoma:        "d97ca1db2078044db1810ed31e71d1b79cfc09f11bc53163efd085b27e9b4e0f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "985a0a05022c9ad40764e748848f9044e031cc25624c09d9372693879e8269ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a521ae8f8a0fd779ad5160fd11e02071223c86ed1278e2e82cac172e21c69ee9"
   end
 
   depends_on "gettext" => :build
@@ -34,8 +34,8 @@ class Breezy < Formula
   end
 
   resource "dulwich" do
-    url "https://files.pythonhosted.org/packages/2b/f3/13a3425ddf04bd31f1caf3f4fa8de2352700c454cb0536ce3f4dbdc57a81/dulwich-0.24.1.tar.gz"
-    sha256 "e19fd864f10f02bb834bb86167d92dcca1c228451b04458761fc13dabd447758"
+    url "https://files.pythonhosted.org/packages/58/98/b6b8bf80e61d1aacf59aad4e45e6a1e7c39751c7bcaeb1136821bae82cd8/dulwich-0.24.8.tar.gz"
+    sha256 "c9f4748bbcca56fb57458c71c0d30e2351ac15e0583d428c739c09228be68f05"
   end
 
   resource "fastbencode" do

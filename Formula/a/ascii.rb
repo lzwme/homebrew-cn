@@ -5,9 +5,14 @@ class Ascii < Formula
   sha256 "ed2fdc973e1b87da2af83050e560e731b0f3bf5f6b4fd9babc9f60bb2b992443"
   license "BSD-2-Clause"
 
+  # The homepage links to the `stable` tarball but it can take longer than the
+  # ten second livecheck timeout, so we check the Git tags as a workaround.
   livecheck do
-    url :homepage
-    regex(/ascii[._-]v?(\d+(?:\.\d+)+)/i)
+    url :head
+    regex(/^v?(\d+(?:[.-]\d+)+)$/i)
+    strategy :git do |tags, regex|
+      tags.filter_map { |tag| tag[regex, 1]&.tr("-", ".") }
+    end
   end
 
   bottle do

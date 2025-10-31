@@ -8,20 +8,19 @@ class CondaLock < Formula
   license "MIT"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_tahoe:   "dff5a2cb3cfde87233d674588ff300b538825e4e045be259b0c83080296f863b"
-    sha256 cellar: :any,                 arm64_sequoia: "511eceb8f02abc0fe5d81a6d90c768b546a51cc9215a8881690a0e22a59d05e5"
-    sha256 cellar: :any,                 arm64_sonoma:  "d5bd3fdd78c6ff885399539f6ef567a916c010657ab7e15ffb900c034e55d029"
-    sha256 cellar: :any,                 sonoma:        "6924aebb8f7c58f9b2db406758cd01e746a82fd29fb89cf6e39ccac86b8c7271"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "463e62f50f32a4d888e1a0e56434f40b2f1e59ed85c6094d2dfeac24d6b5d2bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b5751d77985a483cf2b754a2b6b7cc23e528675043a727cb1d13d76c187ca4d"
+    rebuild 5
+    sha256 cellar: :any,                 arm64_tahoe:   "56dcf5bde0e9b506de76bfebd2285ae10bcb18f9e348f1796dc4ff0401a91102"
+    sha256 cellar: :any,                 arm64_sequoia: "3f1519335e50c7b727b35708e80c6d3daf64534ef40ff48360c1273145d19675"
+    sha256 cellar: :any,                 arm64_sonoma:  "9b69f09e352578597bf849cb3505424b9754d8411e62e9ffbc19c2038743a869"
+    sha256 cellar: :any,                 sonoma:        "00c61284ee743b702e5c0b2f668ee429bc50e4acaa5f7b60ff24a0523a4bef97"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d54a8a95a462fbd6ae148329a2a0f5bd037726145bab07d20a6dfb50a2b874ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31678978edfd662e8d390e030763762bc987daff858251cb8f5ca1ba24893073"
   end
 
-  depends_on "rust" => :build # for pydantic-core
   depends_on "micromamba" => :test
   depends_on "certifi" => :no_linkage
-  depends_on "cffi" => :no_linkage
   depends_on "libyaml"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
   depends_on "zstd"
 
@@ -29,7 +28,7 @@ class CondaLock < Formula
     depends_on "cryptography" # for secretstorage
   end
 
-  pypi_packages exclude_packages: ["certifi", "cffi", "cryptography"],
+  pypi_packages exclude_packages: ["certifi", "cryptography", "pydantic-core"],
                 extra_packages:   ["jeepney", "secretstorage", "xattr"]
 
   resource "annotated-types" do
@@ -192,11 +191,6 @@ class CondaLock < Formula
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
-  end
-
   resource "pyproject-hooks" do
     url "https://files.pythonhosted.org/packages/e7/82/28175b2414effca1cdac8dc99f76d660e7a4fb0ceefa4b4ab8f5f6742925/pyproject_hooks-1.2.0.tar.gz"
     sha256 "1e859bd5c40fae9448642dd871adf459e5e2084186e8d2c2a79a824c970da1f8"
@@ -257,11 +251,6 @@ class CondaLock < Formula
     sha256 "931ca9841a5e9c9408bc2ae67b50d28acf85bef56219b56860876dd1f2d024dd"
   end
 
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
-  end
-
   resource "typing-inspection" do
     url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
     sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
@@ -273,8 +262,8 @@ class CondaLock < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/a4/d5/b0ccd381d55c8f45d46f77df6ae59fbc23d19e901e2d523395598e5f4c93/virtualenv-20.35.3.tar.gz"
-    sha256 "4f1a845d131133bdff10590489610c98c168ff99dc75d6c96853801f7f67af44"
+    url "https://files.pythonhosted.org/packages/20/28/e6f1a6f655d620846bd9df527390ecc26b3805a0c5989048c210e22c5ca9/virtualenv-20.35.4.tar.gz"
+    sha256 "643d3914d73d3eeb0c552cbb12d7e82adf0e504dbf86a3182f8771a153a1971c"
   end
 
   resource "xattr" do
@@ -308,7 +297,7 @@ class CondaLock < Formula
       channels:
         - conda-forge
       dependencies:
-        - python=3.13
+        - python=3.14
     YAML
     system bin/"conda-lock", "-p", "osx-64", "-p", "osx-arm64",
                              "--conda", Formula["micromamba"].opt_bin/"mamba"

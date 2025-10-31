@@ -1,8 +1,8 @@
 class Z3 < Formula
   desc "High-performance theorem prover"
   homepage "https://github.com/Z3Prover/z3"
-  url "https://ghfast.top/https://github.com/Z3Prover/z3/archive/refs/tags/z3-4.15.3.tar.gz"
-  sha256 "8cfd4d6ab47cafe931446e2c03e10df651d40487730c819f1bf420987144824f"
+  url "https://ghfast.top/https://github.com/Z3Prover/z3/archive/refs/tags/z3-4.15.4.tar.gz"
+  sha256 "dae526252cb0585c8c863292ebec84cace4901a014b190a73f14087dd08d252b"
   license "MIT"
   head "https://github.com/Z3Prover/z3.git", branch: "master"
 
@@ -13,13 +13,12 @@ class Z3 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "b12ee473cae323d284ad873f698e5d3106b5b4ec889c0ff8e768c60607d27ad2"
-    sha256 cellar: :any,                 arm64_sequoia: "5a7c6a7e08ad16411cdfb035d9ab041b7a6e6cb7bbea3f5da76eeaa4e2262fb8"
-    sha256 cellar: :any,                 arm64_sonoma:  "f10289b165f59ae8ef6b36d96fa77f56845cdca0720980142f3325ecb1bbd0e2"
-    sha256 cellar: :any,                 sonoma:        "b4fc7383cb2109121269e77d3308c30ed7e9b3a4f688717a62f26251d2a7e56c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b2cabed7c95db0fcc44d0c0a1195b1d0433250ecf2d39aba20c18ac8fabeda6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6257625e9939d4b56b7870c4fcae0e8547029438f28c02162baaf662778c7b89"
+    sha256 cellar: :any,                 arm64_tahoe:   "9f57f90f63a0995a9b56b6f4c94a1c29bd8fd9a474e09f78cba7f64aaf25708c"
+    sha256 cellar: :any,                 arm64_sequoia: "df9a167ac9c51be88180cbe464e09c46315c6145e775ca8da76de4d4e261354c"
+    sha256 cellar: :any,                 arm64_sonoma:  "734ca95d3bcb87f5c62e27294ea3485698ac160a8bc0cb6eafa68ca73f792ce0"
+    sha256 cellar: :any,                 sonoma:        "daa3779a2ee08f218dd714c80ce78e9451b81340c65efee8a1f44f16dee8aa07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02148c88d3b6adc67f7cb43fc1eb3f8a1a7317838a567e7de95c60cffc4fd208"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aecd2a8e5cc6512f5ad5cc3ba78602236642ac02d4471fc9635383976012236d"
   end
 
   depends_on "cmake" => :build

@@ -13,12 +13,13 @@ class Swiftly < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c01353deda6280c28d9dd73318103b0be1510c82fc3e1a56096825a226d14f83"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84528bf9c71d90cc9184435c9e1332dd8f29ea4e57f6dd797a345eaf41abb3c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cfff8b834b89eea0088b290cf322c51f5d7bfe29c503086d950b432f1af7f704"
-    sha256 cellar: :any_skip_relocation, sonoma:        "11492e3a951b58cb5d0bef241e2c067c067b3f735aef31b7655991e32f3e8185"
-    sha256                               arm64_linux:   "bcbae6749404bc90aa941787724b0e692e771057d2187943ca6d6f59a35011de"
-    sha256                               x86_64_linux:  "b4de198182d9cc32621761b50aabe01f56666d7ba873b8b659567e28a79f12e7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "907ff24bc28075aa64a7a5394465b67e5530113c10afe74bb5497534e70ab39b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa31e4a6cf9d3e74d818de7d62f61b9bfe9a6e723302ac065d706a547532d33b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68e6aaf6c455da51ce5089fc449786ad979d3e68b2cb45167b04f2f6ca10b336"
+    sha256 cellar: :any_skip_relocation, sonoma:        "93180c8b870449e6c10fdd68d33e04330861c75c8c55791cd8ed9978a0673707"
+    sha256                               arm64_linux:   "7ccfaf3042ce39ebcedefe3768ec33b43d8c67369072e08450faa935d587e3d2"
+    sha256                               x86_64_linux:  "71736be307ef8421e3df0329e199dcca073a35904b4dbef774b4946a03015790"
   end
 
   uses_from_macos "swift" => :build, since: :sonoma # swift 5.10+
@@ -44,10 +45,11 @@ class Swiftly < Formula
         -Xswiftc -I#{HOMEBREW_PREFIX}/include
         -Xlinker -L#{HOMEBREW_PREFIX}/lib
       ]
+      ENV.prepend_path "LD_LIBRARY_PATH", Formula["libarchive"].opt_lib
     end
     system "swift", "build", *args
-
     bin.install ".build/release/swiftly"
+    generate_completions_from_executable(bin/"swiftly", "--generate-completion-script")
   end
 
   test do

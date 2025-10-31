@@ -4,27 +4,28 @@ class Libsail < Formula
   url "https://ghfast.top/https://github.com/HappySeaFox/sail/archive/refs/tags/v0.9.10.tar.gz"
   sha256 "dc0d6fa87cb4fa8b514f450a3fb13cee6e3e60f03250f683564fabbec0f722e3"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 arm64_tahoe:   "5f8c26637695566448fa06d5d0a50084a7b96faf043eacc0515e4d0615e8fa46"
-    sha256 arm64_sequoia: "c2242a57c2f70c09b7a3e5a09480918918b126ad846872fb16301c83a65b4c1a"
-    sha256 arm64_sonoma:  "9e295402ffb36ae6796aeaccc7961b9041b06db326cde6a5792bd711eb8554b0"
-    sha256 sonoma:        "9ec2e97cf986e38e03f87556bb5a2f3c387255e345055393d967fb1c39fba651"
-    sha256 arm64_linux:   "0545edbea8c330c3c0fbee704dfafd6087273605390c7f73980d1ee3c9cf3359"
-    sha256 x86_64_linux:  "a49701c77fa8b909f562cd097424bb2e608d7ddb629737a50ca64adf547b7349"
+    sha256 arm64_tahoe:   "c9a4dcaa46627b37f96ae961f8f95cf0d514c8b9f17995b8874d2f379599dbca"
+    sha256 arm64_sequoia: "57d6c75884cc6282503cfe65936fae18737629bb30075a7a221c396de11d2abb"
+    sha256 arm64_sonoma:  "6738e43c69a947c727210ea7bff0cb8062f19928c4e6df5c559b6f4764b7f3d3"
+    sha256 sonoma:        "324bd9bef7096e3b947135f7a32d28d6d704a1ee535ccadafbaa1e4e15ce8068"
+    sha256 arm64_linux:   "1799f08f82fa95ad2a952af049242709b02ce0a6a86a16955d8c09a6ef459090"
+    sha256 x86_64_linux:  "85531cc035d66de09aa924c0579e47c589fd971bda60af0b7113daf1d6362a3b"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => [:build, :test]
-  depends_on "brotli"
   depends_on "giflib"
-  depends_on "highway"
-  depends_on "jasper"
   depends_on "jpeg-turbo"
   depends_on "jpeg-xl"
   depends_on "libavif"
+  depends_on "libheif"
   depends_on "libpng"
   depends_on "libtiff"
+  depends_on "openexr"
+  depends_on "openjpeg"
   depends_on "resvg"
   depends_on "webp"
 

@@ -3,17 +3,17 @@ class Pelican < Formula
 
   desc "Static site generator that supports Markdown and reST syntax"
   homepage "https://getpelican.com/"
-  url "https://files.pythonhosted.org/packages/27/42/c06c1a7a3136729ece5a1f98544ede83edd593b3cd9110c9ad61bcc7f4dd/pelican-4.11.0.tar.gz"
-  sha256 "b90234487b818d391733acc1306b785934009749b1fc112b879df9bd89478bd8"
+  url "https://files.pythonhosted.org/packages/cf/ab/a5e863de66054c561e111687b4c1f7cb2ad5f2d4805d2bb12863f0f637cd/pelican-4.11.0.post0.tar.gz"
+  sha256 "0d5e9c0cc9c6713ab6c25b2c4b64844f34d9be8c8c8cc7f42c3a8aa6b3bbbe33"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1cee82fa255d1d0d39cf0abf5d2e49fb43911a54b0457f09d3799ffe5564c7d7"
-    sha256 cellar: :any,                 arm64_sequoia: "c5252bf5956fa547e9ca93fccd830cd33ee1ddc60f716c4813a21b64b52fb8df"
-    sha256 cellar: :any,                 arm64_sonoma:  "877968fe032256a758fa346bbc3cc4f92861a268f7359856718c852ae4bf4438"
-    sha256 cellar: :any,                 sonoma:        "a489ab07f7e2e2504b604bf72090ed867f2300c842698dbe0b41b6c95f097e6a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b223e259371a23b6ae3e8b83fefdfc508521d59a8f3b63af5df72bb22e7b72b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8138f91ffb3e24e108f0d3d1dc7804dd2657f04f7d7094c40f030f064586a23c"
+    sha256 cellar: :any,                 arm64_tahoe:   "3e277d1a8e8d1625d447c9ef37653d430857521bc09b9de7a1807312f4607b68"
+    sha256 cellar: :any,                 arm64_sequoia: "28e907ea9ee64065b5fdb510cbbe17b9c31b3c80208f5106d4acb208d99daeb9"
+    sha256 cellar: :any,                 arm64_sonoma:  "34810c7215386ec3cb9324b0e27048e2e4d730458b67031d117eb5ea108aeb86"
+    sha256 cellar: :any,                 sonoma:        "82afdff03fb2b0e88758d388eee5ff6ea171f5bc127550a9acfb734856fd9129"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab92e94e5f5c2d8790df1a5cf7d923ef13d763094c731ae34d7e26fcef83f662"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f7771d3e1183bb045c920f33d6531fe2020423a0d3c4e16ecbd0abb19501618"
   end
 
   depends_on "rust" => :build # for `watchfiles`

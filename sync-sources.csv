@@ -1234,6 +1234,7 @@ Homebrew-homebrew-core/Formula/c/cppp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cpprestsdk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cpptest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cpptoml.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cpptrace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cppunit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cpputest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cppzmq.rb, Homebrew/homebrew-core, 1
@@ -3374,6 +3375,7 @@ Homebrew-homebrew-core/Formula/k/khard.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/khiva.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/ki.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ki18n.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/kibi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kickstart.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kics.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/killport.rb, Homebrew/homebrew-core, 1
@@ -4928,6 +4930,7 @@ Homebrew-homebrew-core/Formula/n/node@16.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/node@18.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/node@20.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/node@22.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/node@24.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/node_exporter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nodebrew.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nodeenv.rb, Homebrew/homebrew-core, 0
@@ -5603,6 +5606,7 @@ Homebrew-homebrew-core/Formula/p/posh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/poster.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/postgis.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgraphile.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/postgres-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/postgresql-hll.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/postgresql@11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgresql@12.rb, Homebrew/homebrew-core, 0
@@ -5830,6 +5834,7 @@ Homebrew-homebrew-core/Formula/q/qbs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qca.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qcachegrind.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qcli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/q/qcoro6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qdbm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qdmr.rb, Homebrew/homebrew-core, 1
@@ -8075,6 +8080,7 @@ Homebrew-homebrew-cask/Casks/a/affinity-photo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/affinity-photo@1.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/affinity-publisher.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/affinity-publisher@1.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/affinity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/after-dark-classic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/agenda.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/agent-tars.rb, Homebrew/homebrew-cask, 1
@@ -8887,7 +8893,6 @@ Homebrew-homebrew-cask/Casks/c/crescendo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/criptext.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cro-mag-rally.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/crossover.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/c/crosspack-avr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/crosspaste.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/crunch-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/crushftp.rb, Homebrew/homebrew-cask, 0

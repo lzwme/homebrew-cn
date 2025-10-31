@@ -10,21 +10,22 @@ class Bilix < Formula
   head "https://github.com/HFrost0/bilix.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "624837b801a1cdcbed29c504f639ee2629240413ac4577b0c5bd8db4d603a10e"
-    sha256 cellar: :any,                 arm64_sequoia: "c3c1120055f3ace0b3b1b7f3c76f4a1443c329c492de4af1ad6ff603d274f401"
-    sha256 cellar: :any,                 arm64_sonoma:  "4f71fc94cf1657e3b3e79b864dab1c09233dc746b73a87a1014e07ae95ce3fb9"
-    sha256 cellar: :any,                 sonoma:        "3cfcbeb42919a7d62216fb766ad0722eee856c318f244a46ba42cbd1d5487368"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5ca0d43eb4d3551827f472433497ad64783f744b4c507ea8525f9bf93984a16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d85159f999fdfe70eba160cc4010b44a246e0fd5eee4f05770af718044631f97"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e0dcbe69c03dc1756a42ff79896d4221a6c4cb6fb64c672483a8648261fb5d9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4dc5dcbac0119c0e47edb344f16acf65942749e9c89405a021dd75f63c86a08"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a848a88d351cb41ead7f01475668c2d0dc5575916c89f14e2650d146f081131"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a5655f75f3f04c84000c0bfe3f88b152004fae24a26712d29e9c8b906cd821fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "725965d870f178d9e9f900e1be1f25656ddff0217b0c8f8f94cbfb01b824a71d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8433c9dd9f9b0f8f524a0f1e6e93f4db234d95830f58e5265e95fa1c2f28b98f"
   end
 
-  depends_on "rust" => :build # for pydantic_core
-  depends_on "certifi"
+  depends_on "cmake" => :build # for danmakuc
+  depends_on "certifi" => :no_linkage
   depends_on "lz4"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
 
-  pypi_packages exclude_packages: "certifi"
+  pypi_packages exclude_packages: ["certifi", "pydantic-core"]
 
   resource "aiofiles" do
     url "https://files.pythonhosted.org/packages/41/c3/534eac40372d8ee36ef40df62ec129bee4fdb5ad9706e58a29be53b2c970/aiofiles-25.1.0.tar.gz"
@@ -132,8 +133,8 @@ class Bilix < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/fa/a4/cc17347aa2897568beece2e674674359f911d6fe21b0b8d6268cd42727ac/protobuf-6.32.1.tar.gz"
-    sha256 "ee2469e4a021474ab9baafea6cd070e5bf27c7d29433504ddea1a4ee5850f68d"
+    url "https://files.pythonhosted.org/packages/19/ff/64a6c8f420818bb873713988ca5492cba3a7946be57e027ac63495157d97/protobuf-6.33.0.tar.gz"
+    sha256 "140303d5c8d2037730c548f8c7b93b20bb1dc301be280c378b82b8894589c954"
   end
 
   resource "pycryptodome" do
@@ -147,13 +148,8 @@ class Bilix < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/c3/da/b8a7ee04378a53f6fefefc0c5e05570a3ebfdfa0523a878bcd3b475683ee/pydantic-2.12.0.tar.gz"
-    sha256 "c1a077e6270dbfb37bfd8b498b3981e2bb18f68103720e51fa6c306a5a9af563"
-  end
-
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/7d/14/12b4a0d2b0b10d8e1d9a24ad94e7bbb43335eaf29c0c4e57860e8a30734a/pydantic_core-2.41.1.tar.gz"
-    sha256 "1ad375859a6d8c356b7704ec0f547a58e82ee80bb41baa811ad710e124bc8f2f"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pygments" do
@@ -179,11 +175,6 @@ class Bilix < Formula
   resource "soupsieve" do
     url "https://files.pythonhosted.org/packages/6d/e6/21ccce3262dd4889aa3332e5a119a3491a95e8f60939870a3a035aabac0d/soupsieve-2.8.tar.gz"
     sha256 "e2dd4a40a628cb5f28f6d4b0db8800b8f581b65bb380b97de22ba5ca8d72572f"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

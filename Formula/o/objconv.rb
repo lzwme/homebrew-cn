@@ -2,8 +2,8 @@ class Objconv < Formula
   desc "Object file converter"
   homepage "https://www.agner.org/optimize/#objconv"
   url "https://www.agner.org/optimize/objconv.zip"
-  version "2025-08-26"
-  sha256 "9d3139e90e187f556cbb52db55ffa86041030455ca2941923b78602500216b72"
+  version "2025-10-30"
+  sha256 "301149c271ffaf7b11a14d7aff637ecd580f8591bb8992b8e399af7ed4779bf9"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -20,14 +20,12 @@ class Objconv < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "951098c346387a5bf69bad728d32a55e841f1271fe24ed92cb5233be23ba1286"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3f2031dd481252fccd85513a7ccb457aed4ca0ed6451da911bbe383a80a3ba0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3dea48ff70c11046b0c6ab661a0efb191261514c486b30ae21bd91908b9c438"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1f7c973fc476b706d1be47e0e67f9219cf712fbf5cb99c4b4faf7aed158c6b85"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9a5cde2fb22722ed1ada6a917bd64201a384c5b27177c1c18e3f0125896d5738"
-    sha256 cellar: :any_skip_relocation, ventura:       "3a14af46a9cdaaed26f95746e7b85ec1dd955a2984e4eeee0302385e0023aa86"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a32703dbf10ec2be67f3fccc66f57a71bf4cea37f1b63a00a7c9468fad18f38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11bb71f14f12af7e7381acb20f8ddbb8913bc891015a1366e6fb58c6e9c0dc6a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5273156ed17314c65abfd7ca9a76776fada0abb44c07fc94a6b0702976085600"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53b630adc4d0dcc0034547ca31047d72a38fb519b9d4e21ac6a54733722280cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "791d4922ed48bd70ecf5b8e15e030f7ee2683d71135dedd1b107eb7319767c56"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f13137ee96946b13e9f5dca16bcf2b6bb51db34970908d6cdca9541cef9f2dc5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8754722ecaa55b9e9c7361bc7ee2927a11d5c2825a81f75b034201bc7b8fc87f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33faeb686f6b82f43adaf81920fac9fbae62239c531a6676c857f64050303046"
   end
 
   uses_from_macos "unzip" => :build

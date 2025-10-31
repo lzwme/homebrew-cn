@@ -1,8 +1,8 @@
 class Ejabberd < Formula
   desc "XMPP application server"
   homepage "https://www.ejabberd.im"
-  url "https://ghfast.top/https://github.com/processone/ejabberd/archive/refs/tags/25.08.tar.gz"
-  sha256 "edc95cff239d74bfb16e437f7cf84f0e86144e5fe764d7ee7dc248b2d59778f1"
+  url "https://ghfast.top/https://github.com/processone/ejabberd/archive/refs/tags/25.10.tar.gz"
+  sha256 "f676b71e7dbf143291728bc0247673afb256e75917da89520795c01df1154598"
   license "GPL-2.0-only"
   head "https://github.com/processone/ejabberd.git", branch: "master"
 
@@ -15,14 +15,12 @@ class Ejabberd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7d5e2a36b0f3d717927452da6f8066e73a4e523527b7fe09588fbb1f32221be2"
-    sha256 cellar: :any,                 arm64_sequoia: "04ef35f86b87b1e83c9ef82de30b418a7effe4745725cc33a04f2696c569cc1d"
-    sha256 cellar: :any,                 arm64_sonoma:  "3b51176e909eb1e14f27fbf51e836905b5768126464b7c23125e2c00bf54cdb4"
-    sha256 cellar: :any,                 arm64_ventura: "bc5a0c0a5e1022f9f57b7f179447c1111b352045886a19a04611e3b678658807"
-    sha256 cellar: :any,                 sonoma:        "3b52f941d9f4e9f71a9bb7456a0cbd4b81771a6326884d17da34ecdafe68e496"
-    sha256 cellar: :any,                 ventura:       "7af2770db7fed11d93a7a3dda7895cdbe1d8300608fcbd023af3ab7723e07532"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "71bb656be7d9b889df61d0d3771769a97371e867543891e6f9e1ae3b42aadf23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fb2592163e17b031217ecfddd0d91bdf4d1f990dbd59b518e131a2216226e58"
+    sha256 cellar: :any,                 arm64_tahoe:   "fb03cdd8427030f04552ab27c20ae4dd4e8622507e54357e22d1db117c0afcdb"
+    sha256 cellar: :any,                 arm64_sequoia: "6c2af70ef4c7beba90ad33237b2ff25b6d427e2e2cd282f5ef39a1f22d1e1a8a"
+    sha256 cellar: :any,                 arm64_sonoma:  "df253b058b0d822faf3f7633f0b2329b4c8d1c6c5171aa283676fe75ea6db0b8"
+    sha256 cellar: :any,                 sonoma:        "ce332373f5629441ec5d72d5e3af4442bcc5cdc0367c4fabbe003da0df89c4d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc673d4b32c832b4dd1d26d74ef115b0f8cefc4926260cae982502e1d2fe15cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "567bcd25ca021bd22afac704b2c7ad1e02fe64b7a55b065048a3d1aa8154e3c3"
   end
 
   depends_on "autoconf" => :build
@@ -96,6 +94,11 @@ class Ejabberd < Formula
   end
 
   test do
+    pid = spawn sbin/"ejabberdctl", "start"
+    sleep 1
     system sbin/"ejabberdctl", "ping"
+  ensure
+    Process.kill "TERM", pid
+    Process.wait pid
   end
 end

@@ -58,7 +58,6 @@ class MariadbAT1011 < Formula
 
   on_linux do
     depends_on "linux-pam"
-    depends_on "readline" # uses libedit on macOS
   end
 
   def install

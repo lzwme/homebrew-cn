@@ -5,9 +5,11 @@ class CvsFastExport < Formula
   sha256 "841c60d9af70ca260fec572f2ef08ed523314f6cacfda40bb44dacb9dbcda841"
   license "GPL-2.0-or-later"
 
+  # The homepage links to the `stable` tarball but it can take longer than the
+  # ten second livecheck timeout, so we check the Git tags as a workaround.
   livecheck do
-    url :homepage
-    regex(/href=.*?cvs-fast-export[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do

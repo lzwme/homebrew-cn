@@ -9,24 +9,24 @@ class CoboCli < Formula
   head "https://github.com/CoboGlobal/cobo-cli.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "0d56bc92785a91801cb03059078dc0b4ab40e59f22e9f1bc0f633e96deaac425"
-    sha256 cellar: :any,                 arm64_sequoia: "7d985fc003e0c22d9dfbc529c603f6d68bb69a0179e511a05730dd3456f224f6"
-    sha256 cellar: :any,                 arm64_sonoma:  "a9fb7e2df8353a66fc79ff18496c40fbd7aaf86935bb814feddba61fb678fef2"
-    sha256 cellar: :any,                 sonoma:        "062b9086251d618e34d8e43bfa6824e8e89ec85c6e22b2625f76594ea2891e97"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ea3c29c1ce26423c7b6bfce1d06eaf077db4d938a3657efe72298b988c86121"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79740acafaad782a04b99d57f1654b069302e277e7f536b98e7d5641070a6fce"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "6c1d6b8c7c0353444fcacd8548543080f290f061d6c60ee418f55fe1b56ac872"
+    sha256 cellar: :any,                 arm64_sequoia: "d67331b508f5f7e8a8b3c325f2a8178a7ceb093b4c338258e71b0d1384c4782a"
+    sha256 cellar: :any,                 arm64_sonoma:  "67928d85ded6afbfff4fe7773173df6ee44200a08d45c376aa49e59e13e81d39"
+    sha256 cellar: :any,                 sonoma:        "062b87a78b485728b1004739e882a9397d251a833a3978330c289200b885f39e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37e00296eaf626bcb32e2ced5c8b1559fd2e34a3279a4c8998cb6bde986c4a3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39afd6d11c8751b2c4ee5049f223a75a784aec8aed915f1d959254a91aeb0434"
   end
 
-  depends_on "rust" => :build # for pydantic_core
   depends_on "certifi" => :no_linkage
   depends_on "libsodium"
   depends_on "libyaml"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
 
   uses_from_macos "libffi"
 
-  pypi_packages exclude_packages: "certifi"
+  pypi_packages exclude_packages: ["certifi", "pydantic-core"]
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -103,11 +103,6 @@ class CoboCli < Formula
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
-  end
-
   resource "pydantic-settings" do
     url "https://files.pythonhosted.org/packages/20/c5/dbbc27b814c71676593d1c3f718e6cd7d4f00652cefa24b75f7aa3efb25e/pydantic_settings-2.11.0.tar.gz"
     sha256 "d0e87a1c7d33593beb7194adb8470fc426e95ba02af83a0f23474a04c9a08180"
@@ -119,8 +114,8 @@ class CoboCli < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
-    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
+    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
+    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
   end
 
   resource "pyyaml" do
@@ -146,11 +141,6 @@ class CoboCli < Formula
   resource "tomli-w" do
     url "https://files.pythonhosted.org/packages/19/75/241269d1da26b624c0d5e110e8149093c759b7a286138f4efd61a60e75fe/tomli_w-1.2.0.tar.gz"
     sha256 "2dd14fac5a47c27be9cd4c976af5a12d87fb1f0b4512f81d69cce3b35ae25021"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspect" do

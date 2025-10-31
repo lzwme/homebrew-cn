@@ -1,20 +1,18 @@
 class Doggo < Formula
   desc "Command-line DNS Client for Humans"
   homepage "https://doggo.mrkaran.dev/"
-  url "https://ghfast.top/https://github.com/mr-karan/doggo/archive/refs/tags/v1.0.5.tar.gz"
-  sha256 "92a34f5510a48ab657a980c39edf907c17e96e88a476187d5b57a8cef3becd5b"
+  url "https://ghfast.top/https://github.com/mr-karan/doggo/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "b24798851d6d639b25001ba6bd2e6337c55c4162f0f96ebec91ad0ec95cc153b"
   license "GPL-3.0-or-later"
   head "https://github.com/mr-karan/doggo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d471b8706aef800238df8e97420f6a444e524d11dc6f74e6180f6e0092be812e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "659e186849f180769977ef2af67b9880c454b72d32853222ab69f396e51094f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "659e186849f180769977ef2af67b9880c454b72d32853222ab69f396e51094f7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "659e186849f180769977ef2af67b9880c454b72d32853222ab69f396e51094f7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e2bf2f469a3d501455d0c5db6005dd1f78a5a3916e31253361db0effd0d4cedf"
-    sha256 cellar: :any_skip_relocation, ventura:       "e2bf2f469a3d501455d0c5db6005dd1f78a5a3916e31253361db0effd0d4cedf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "54a1e11c4521084f88c1b8127f45b5ad79b8dc05d5deabaf219df6e20de51ff0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6ef549e7c62a7cd3f1cf41dd03e7f99bf26e256f950ddc1b6c08d2a488debd5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78a266726e6f93f4646727ddcfbdb9c3e0c5ba51448c4a4a104f960fc22c248c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78a266726e6f93f4646727ddcfbdb9c3e0c5ba51448c4a4a104f960fc22c248c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78a266726e6f93f4646727ddcfbdb9c3e0c5ba51448c4a4a104f960fc22c248c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2d9d03a814577a28f5f75d277d5d6fdaf4fc335de14c2faa44985445dc19e8bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e57d986e9ff91e3849c23a37f18b82c64da4a7aeb476df15b2ce595b4585cc8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "181bd9737a7cb0dc7ca01ffb3145e170380fe225ab059db9f9168936fdf24e0b"
   end
 
   depends_on "go" => :build

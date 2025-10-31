@@ -3,13 +3,13 @@ class Checkdmarc < Formula
 
   desc "Command-line parser for SPF and DMARC DNS records"
   homepage "https://domainaware.github.io/checkdmarc/"
-  url "https://files.pythonhosted.org/packages/0e/93/c18cfdf2c448cb6673561a5aaf077eb1fec601fa2b1ee7fcb60fb65f988e/checkdmarc-5.12.23.tar.gz"
-  sha256 "7afc9646b84793fe97a3d11f5a6c40aa90dbe2c6773fde275a1f98c2d4732c33"
+  url "https://files.pythonhosted.org/packages/79/71/223433ae1ed258e57f58077bcd937dcf7bfee8e6208d349ac7cc33735a3c/checkdmarc-5.12.25.tar.gz"
+  sha256 "bad9bdcf838383598f915dcd6e20162f7c412e912163191074018defd3f11e8d"
   license "Apache-2.0"
   head "https://github.com/domainaware/checkdmarc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bafe7a019111ed1240cc75a2965ee6a72a0cab6a8b758d6e0f0ca158af6d9dff"
+    sha256 cellar: :any_skip_relocation, all: "d31afc978cd562bf8ce61abf8566cef6ad311e4728aed890b89c4f5dcdee0264"
   end
 
   depends_on "certifi" => :no_linkage
@@ -49,8 +49,8 @@ class Checkdmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/63/6b/6d5eb62061d48c7256e8ad4339483945e658a56e928f2096de10e048d196/publicsuffixlist-1.0.2.20251027.tar.gz"
-    sha256 "6a76d87f87822bc40874b598631d4f1b8b089972b695631dd28025b289ef6f54"
+    url "https://files.pythonhosted.org/packages/48/6a/48ca44608f4b1b975c5b7972bccf490511c126634dccc2bbc21fb8840ad5/publicsuffixlist-1.0.2.20251030.tar.gz"
+    sha256 "bc4429d7c6ebf35508050b5f556f1702c4778bd88c85388fb43290ab22615bdc"
   end
 
   resource "pyleri" do

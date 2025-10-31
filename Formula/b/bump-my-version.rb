@@ -9,17 +9,15 @@ class BumpMyVersion < Formula
   head "https://github.com/callowayproject/bump-my-version.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "15daba506c159b4c04b1e119741f4022c0ea2b981b5a5ac117e5944924a18a41"
-    sha256 cellar: :any,                 arm64_sequoia: "d0e11159da0e195756be213423dda39a305274a0f66d49ea7c85e3c0b5edce19"
-    sha256 cellar: :any,                 arm64_sonoma:  "7cd42b2176de99dec8d20c32825b26d52a625e34aff8bd098bc56b8edbc8dffc"
-    sha256 cellar: :any,                 sonoma:        "bc3e8dff3d95a7930d6979b3d3599089a65a22be7ba4a9ea5a28d041b80f5bcf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fba44b24dca1e6f6705cca21cb465abaa3b6cd0a6c67e4f3bad14b84671be7a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f9b275dbb1a5c9fa8c68cf8011663fb3af30110f47121d2479674e36b486dd5"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "72715c4b0dd6ec9361a68998582f0c6de8db428f51dba86444dde612f61fa432"
   end
 
-  depends_on "rust" => :build # for pydantic_core
+  depends_on "certifi" => :no_linkage
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
+
+  pypi_packages exclude_packages: ["certifi", "pydantic-core"]
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -34,11 +32,6 @@ class BumpMyVersion < Formula
   resource "bracex" do
     url "https://files.pythonhosted.org/packages/63/9a/fec38644694abfaaeca2798b58e276a8e61de49e2e37494ace423395febc/bracex-2.6.tar.gz"
     sha256 "98f1347cd77e22ee8d967a30ad4e310b233f7754dbf31ff3fceb76145ba47dc7"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/4c/5b/b6ce21586237c77ce67d01dc5507039d444b630dd76611bbca2d8e5dcd91/certifi-2025.10.5.tar.gz"
-    sha256 "47c09d31ccf2acf0be3f701ea53595ee7e0b8fa08801c6624be771df09ae7b43"
   end
 
   resource "click" do
@@ -82,13 +75,8 @@ class BumpMyVersion < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/c3/da/b8a7ee04378a53f6fefefc0c5e05570a3ebfdfa0523a878bcd3b475683ee/pydantic-2.12.0.tar.gz"
-    sha256 "c1a077e6270dbfb37bfd8b498b3981e2bb18f68103720e51fa6c306a5a9af563"
-  end
-
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/7d/14/12b4a0d2b0b10d8e1d9a24ad94e7bbb43335eaf29c0c4e57860e8a30734a/pydantic_core-2.41.1.tar.gz"
-    sha256 "1ad375859a6d8c356b7704ec0f547a58e82ee80bb41baa811ad710e124bc8f2f"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pydantic-settings" do
@@ -102,8 +90,8 @@ class BumpMyVersion < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
-    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
+    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
+    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
   end
 
   resource "questionary" do
@@ -117,8 +105,8 @@ class BumpMyVersion < Formula
   end
 
   resource "rich-click" do
-    url "https://files.pythonhosted.org/packages/9d/90/95cff624a176de6d00a4ddc4fb0238649bca09c19bd37d5b8d1962f8dcfc/rich_click-1.9.3.tar.gz"
-    sha256 "60839150a935604df1378b159da340d3fff91f912903e935da7cb615b5738c1b"
+    url "https://files.pythonhosted.org/packages/bf/d8/f2c1b7e9a645ba40f756d7a5b195fc104729bc6b19061ba3ab385f342931/rich_click-1.9.4.tar.gz"
+    sha256 "af73dc68e85f3bebb80ce302a642b9fe3b65f3df0ceb42eb9a27c467c1b678c8"
   end
 
   resource "sniffio" do
@@ -129,11 +117,6 @@ class BumpMyVersion < Formula
   resource "tomlkit" do
     url "https://files.pythonhosted.org/packages/cc/18/0bbf3884e9eaa38819ebe46a7bd25dcd56b67434402b66a58c4b8e552575/tomlkit-0.13.3.tar.gz"
     sha256 "430cf247ee57df2b94ee3fbe588e71d362a941ebb545dec29b53961d61add2a1"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

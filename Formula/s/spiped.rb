@@ -23,14 +23,8 @@ class Spiped < Formula
 
   depends_on "openssl@3"
 
-  on_macos do
-    depends_on "bsdmake" => :build
-  end
-
   def install
-    man1.mkpath
-    make = OS.mac? ? "bsdmake" : "make"
-    system make, "BINDIR_DEFAULT=#{bin}", "MAN1DIR=#{man1}", "install"
+    system "make", "BINDIR_DEFAULT=#{bin}", "MAN1DIR=#{man1}", "install"
   end
 
   test do

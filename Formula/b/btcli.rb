@@ -3,27 +3,27 @@ class Btcli < Formula
 
   desc "Bittensor command-line tool"
   homepage "https://docs.bittensor.com/btcli"
-  url "https://files.pythonhosted.org/packages/cb/22/373797c59604d01a4bd72d3410c4a2aa5a55e11be097e7ad18a473bf017e/bittensor_cli-9.14.2.tar.gz"
-  sha256 "68a7e6adae99e93daa5ff45fae96623f148cae8704e5925a46680c3cb8aac364"
+  url "https://files.pythonhosted.org/packages/72/ad/d996242b6093f5ea9bb9babc7927bb6817fd0c2fa585de1199bfa70eb506/bittensor_cli-9.14.3.tar.gz"
+  sha256 "bc8cb5e4e4aeabcfbee9cc1f2e1169079678464b60a7166510170772968a1511"
   license "MIT"
   head "https://github.com/opentensor/btcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1fedd11102ec09615b54904fd8664c0400d93470ac5867f444df6c8847961536"
-    sha256 cellar: :any,                 arm64_sequoia: "3931d7d069022623cfcaaee4d6d00ecad6fb27fc15e357295c73c0e37d4e34e0"
-    sha256 cellar: :any,                 arm64_sonoma:  "737db323786fafcb264a94af0664334e4dae06e4f414f031e6c145f96249c9e0"
-    sha256 cellar: :any,                 sonoma:        "1f8eb30a5249508f3493a91fcfee6d3626ebce73d6126e2478c68aaecd925a3e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "868a864abdf87b14894e2f2347fc2497aa3bf7cca341e65e93e4ff9b59a52a2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3337863207385a162d21b20908b96866e6c31e569b146c806d445d36940a8199"
+    sha256 cellar: :any,                 arm64_tahoe:   "5737f77e7d5291cf23b71079e0fa0d4e28ae723ed36f0f4adf197b99844a5569"
+    sha256 cellar: :any,                 arm64_sequoia: "21b5c603a0fe8747e846a02475400102615b168fd3814ad3e03911a59341d715"
+    sha256 cellar: :any,                 arm64_sonoma:  "d92475c956dac9507b958fca760f4653feb88452358171ba2df22f87ad4ce83c"
+    sha256 cellar: :any,                 sonoma:        "c4cf4a5c040aec76360b7612c32c1a69e99dd1b6b1d6eb15bc93c812f6b351ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e6be426989101ad0a96256a9b80402d7f46126d2f6c0cdb8a45821e858a6273"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f513cad81c1b6def0a3404e051d94dd0401d525f9fb5a441f09ac55c160d2ec9"
   end
 
-  depends_on "rust" => :build # for bittensor-wallet
+  depends_on "rust" => :build # for bittensor-wallet, plotly
 
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "numpy"
   depends_on "openssl@3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   conflicts_with "btpd", because: "both install `btcli` binaries"
 
@@ -35,8 +35,8 @@ class Btcli < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/ba/fa/3ae643cd525cf6844d3dc810481e5748107368eb49563c15a5fb9f680750/aiohttp-3.13.1.tar.gz"
-    sha256 "4b7ee9c355015813a6aa085170b96ec22315dabc3d866fd77d147927000e9464"
+    url "https://files.pythonhosted.org/packages/1c/ce/3b83ebba6b3207a7135e5fcaba49706f8a4b6008153b4e30540c982fae26/aiohttp-3.13.2.tar.gz"
+    sha256 "40176a52c186aefef6eb3cad2cdd30cd06e3afbe88fe8ab2af9c0b90f228daca"
   end
 
   resource "aiosignal" do
@@ -50,8 +50,8 @@ class Btcli < Formula
   end
 
   resource "async-substrate-interface" do
-    url "https://files.pythonhosted.org/packages/36/33/2eeec7423f44d047de00619fb96c48dc37bf83de319476fa68abe6c3e89d/async_substrate_interface-1.5.8.tar.gz"
-    sha256 "43e8c068571a6fbf16f749b32a8f63281a98ee49f95a9eb442cf9837c971d9fc"
+    url "https://files.pythonhosted.org/packages/2e/9f/ce4215ae20299c883dac0dc8912ad5edb32c89a732b33cb6df4ffc9b9e83/async_substrate_interface-1.5.9.tar.gz"
+    sha256 "e3bf21a60ad8bc019c51f568bad98b7ca97d9653ecb74abd1aae811e1dc328c1"
   end
 
   resource "attrs" do
@@ -70,13 +70,13 @@ class Btcli < Formula
   end
 
   resource "bittensor-wallet" do
-    url "https://files.pythonhosted.org/packages/02/94/d1473ad79490b16ccb3cd9f13c48f4db72907d0287636a40c038683f7afc/bittensor_wallet-4.0.0.tar.gz"
-    sha256 "9f990eac74b08897f9fc9a8af460d566b5cfb6e542f0313e4896a809449beb47"
+    url "https://files.pythonhosted.org/packages/74/69/8e5eb1131e3fb750ead1c1b1d2b628dede7b41edfad835cb78764dd88ceb/bittensor_wallet-4.0.1.tar.gz"
+    sha256 "edc2588d5e272835285e4171dd3daf862149f617015bf52e43d433d8e5c297c5"
   end
 
   resource "bt-decode" do
-    url "https://files.pythonhosted.org/packages/76/d4/cbbe3201561b1467e53bb5a111d968d3364d58633c58009343db9a5c2915/bt_decode-0.6.0.tar.gz"
-    sha256 "05e67b5ab018af7a31651bb9c0fb838c3a1733806823019d14c287922869f84e"
+    url "https://files.pythonhosted.org/packages/9d/d6/f30b65454ff3f78b698ec9e0b18fcd22299b43c5581f1e913f77657761db/bt_decode-0.8.0.tar.gz"
+    sha256 "deb6b798bea703c9b9e40267f6cddcfb45f7f4c884bbb3d2280143b18095eb09"
   end
 
   resource "charset-normalizer" do
@@ -210,8 +210,8 @@ class Btcli < Formula
   end
 
   resource "toml" do
-    url "https://files.pythonhosted.org/packages/b9/19/5cbd78eac8b1783671c40e34bb0fa83133a06d340a38b55c645076d40094/toml-0.10.0.tar.gz"
-    sha256 "229f81c57791a41d65e399fc06bf0848bab550a9dfd5ed66df18ce5f05e73d5c"
+    url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
+    sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
   end
 
   resource "typer" do

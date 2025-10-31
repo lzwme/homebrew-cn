@@ -22,13 +22,12 @@ class WaitOn < Formula
     sha256 cellar: :any_skip_relocation, catalina:       "befef0facd28d26c22ed14197e74c1bff41c9cd2f787ae4bee59027cfb89b2c7"
   end
 
-  depends_on "bsdmake" => :build
+  depends_on "bmake" => :build
   depends_on :macos # needs BSD kqueue
 
   def install
-    system "bsdmake"
-    bin.install "wait_on"
-    man1.install "wait_on.1.gz"
+    system "bmake"
+    system "bmake", "install", "MK_INSTALL_AS_USER=yes", "MANDIR=#{man}", "PREFIX=#{prefix}"
   end
 
   test do

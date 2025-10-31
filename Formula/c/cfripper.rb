@@ -8,20 +8,20 @@ class Cfripper < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "64a6fe3751f22bf3a11fb3caea332ba51cbe64070f7acf14896f757e79d8c2f8"
-    sha256 cellar: :any,                 arm64_sequoia: "2b2be528c74a94132650a8e9f3104c0e8a40b94165da780f48f5ac21caebacac"
-    sha256 cellar: :any,                 arm64_sonoma:  "4e7cf48f15e09125aa446425296b42317a60dde8367594a24c9c73d9311aa12f"
-    sha256 cellar: :any,                 sonoma:        "07c2a5ac64651683e0a8b86f1a2576aee6285c76c282f6971565fea1f5d3b85d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6215cc607ebfe3cb434d198eccce16641413e073a4d57fa0a7592e381ebd6fbf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41f6a7734a1bf8783a7ccbd5dc9692ad1a3ef2d6a4306a1185d1015e01dba614"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "62636a0a0ac83a974736836a0535180cd8413ca7fbf84160789d408cbec6e52f"
+    sha256 cellar: :any,                 arm64_sequoia: "34e8eacd27aa7b88abbd33fd0e2f7bb7bf6bbaff223ebe928f314e3a73c3a80b"
+    sha256 cellar: :any,                 arm64_sonoma:  "212a55a21762447152de7c968af4aeb4abfc8becac01bce610b3cd37faa9de1e"
+    sha256 cellar: :any,                 sonoma:        "2036096c932bf41a06147867efe9b2669a7aa6a5444207c938fdae0ece115709"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c98889daea3e017c7ae769e03a04bc121a4a3c69f9db51ef5ca32e610f42d2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9acbf3c2b5c63032d5865d6a7ed8326d9add6e75ed23630ecf64519a19fc4100"
   end
 
-  depends_on "rust" => :build # for pydantic_core
   depends_on "libyaml"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
 
-  # `pluggy` is manually updated to support Python 3.14
-  # Issue ref: https://github.com/Skyscanner/cfripper/issues/340
+  pypi_packages exclude_packages: "pydantic-core"
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -29,13 +29,13 @@ class Cfripper < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/50/d8/a279c054e0c9731172f05b3d118f3ffc9d74806657f84fc0c93c42d1bb5d/boto3-1.40.55.tar.gz"
-    sha256 "27e35b4fa9edd414ce06c1a748bf57cacd8203271847d93fc1053e4a4ec6e1a9"
+    url "https://files.pythonhosted.org/packages/b4/69/2612a06d584786500ba7ea068927e95e24719da3b6734bd23c50788f5982/boto3-1.40.62.tar.gz"
+    sha256 "3dbe7e1e7dc9127a4b1f2020a14f38ffe64fad84df00623e8ab6a5d49a82ea28"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/a4/92/dce4842b2e215d213d34b064fcdd13c6a782c43344e77336bcde586e9229/botocore-1.40.55.tar.gz"
-    sha256 "79b6472e2de92b3519d44fc1eec8c5feced7f99a0d10fdea6dc93133426057c1"
+    url "https://files.pythonhosted.org/packages/50/d6/dc11fecf450c60175fd568791e2324e059e81bc4adac85d83f272ab293f5/botocore-1.40.62.tar.gz"
+    sha256 "1e8e57c131597dc234d67428bda1323e8f0a687ea13ea570253159ab9256fa28"
   end
 
   resource "cfn-flip" do
@@ -68,11 +68,6 @@ class Cfripper < Formula
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
-  end
-
   resource "pydash" do
     url "https://files.pythonhosted.org/packages/2f/24/91c037f47e434172c2112d65c00c84d475a6715425e3315ba2cbb7a87e66/pydash-8.0.5.tar.gz"
     sha256 "7cc44ebfe5d362f4f5f06c74c8684143c5ac481376b059ff02570705523f9e2e"
@@ -96,11 +91,6 @@ class Cfripper < Formula
   resource "six" do
     url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

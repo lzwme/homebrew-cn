@@ -4,17 +4,18 @@ class Promptfoo < Formula
   url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.119.1.tgz"
   sha256 "98f704ac89357f942683226c7b02dae1ece35ce79f0fc0fc705263fb45c0352d"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "75b2ae623b096ebf5f2166d563010763e3d8d238c4e4a12189e90c0400a0162e"
-    sha256 cellar: :any,                 arm64_sequoia: "4249b813607bc90a540eedeb74540a26445234b53abfe74b8a74e14bf2058381"
-    sha256 cellar: :any,                 arm64_sonoma:  "404cfed9da499ce0424972c1309974d9132761ba987e328e5f0eeff942da886f"
-    sha256 cellar: :any,                 sonoma:        "deecbc4036dac7cced69c2b46eb1dc683689955ed87d99e1737366142fc3b0cc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "18f6401fd7a5b5ad5ce4b0a73fa87ac98c17527181781e172d277a9387c02247"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90541936fec61fe73e05372bbf3f9b73c65583e68516710fd49a88653a9b0172"
+    sha256 cellar: :any,                 arm64_tahoe:   "a05988533b1ad0143c764b430565766255984ee1c6a20d30381695ddfeda57ec"
+    sha256 cellar: :any,                 arm64_sequoia: "6382be8e86c7564dd0ed35eb3d4e17cd88e334b7f1e137b51343dd9f988946e5"
+    sha256 cellar: :any,                 arm64_sonoma:  "48028a09403f36ff7f73e5072e1854ca45dafdb2c693886891dc1d60eb937206"
+    sha256 cellar: :any,                 sonoma:        "acebd8706186a99169634db24edd0a07f3a5686ce40b7593ab626a538cd661e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5dace8f3b669d678ad812411a724f7654b9407e7c5ef9ab9be8e3ea400c00cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17b392f892b66ff34e1edb0c405201eed28769e2383768288f006a72f587c1d2"
   end
 
-  depends_on "node"
+  depends_on "node@24"
 
   def install
     system "npm", "install", *std_npm_args

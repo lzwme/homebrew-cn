@@ -8,9 +8,11 @@ class OpenAdventure < Formula
   license "BSD-2-Clause"
   head "https://gitlab.com/esr/open-adventure.git", branch: "master"
 
+  # The homepage links to the `stable` tarball but it can take longer than the
+  # ten second livecheck timeout, so we check the Git tags as a workaround.
   livecheck do
-    url :homepage
-    regex(/href=.*?advent[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do

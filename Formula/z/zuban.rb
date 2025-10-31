@@ -1,18 +1,18 @@
 class Zuban < Formula
   desc "Python language server and type checker, written in Rust"
   homepage "https://zubanls.com/"
-  url "https://ghfast.top/https://github.com/zubanls/zuban/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "4b3dea37a219933b27a20ce963c7a3d935bf53c720215b1acda2d4feb01c340c"
+  url "https://ghfast.top/https://github.com/zubanls/zuban/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "54e6161a230ab898a0845f6617cc162cf777306c06124d1454ba1415028a2f08"
   license "AGPL-3.0-only"
   head "https://github.com/zubanls/zuban.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "004be2411073f3f496c2c45c4108d03aa3e1027c313cf4261fad3c4f3da32273"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98f549f5f21bb3f5e0fa97063ecef1d86763c27ec3d07753ce9c141b3700846d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94d5f9e4f911a8e3310137f7b4c27275f835d828c2370dd84df13b7d9719cacd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b5b333d8bddd528aa7dc1be87759fe62b077f1d6e949844c15cc2f7b8deb6c7c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6e4f8153feb1afb092dcbead52d97a5603d669b85119653e56c0aea500c5769"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23f5d9db13a00f02e31cddfdedb19c50f8e6faad42658de81421eb41ff93b932"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a7378ced570613133c1bedd9c03e7fc92b2c5209ec1ff65ed69267965e884df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72cc747e326d800dd25591e59af0365f0be42e0d19aed02b632cd88e6aa5190f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f1562e6403256eea609ce01af61e0a94775d8c27bcc5098c165cea0f56aebf1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ffa6f7157f88b83eebf11e159910384ff8a52a685d368bb91ca4cabee4c9533d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "01c0f810739234fea3236a3bec66362b2cd9965cf0459621aadd20c5c61cf5cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c92e91e0a106c01373a44247eedb139f7e5a166907a16cfd7a9f54085d82280"
   end
 
   depends_on "mypy" => :build

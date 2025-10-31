@@ -3,18 +3,18 @@ class Datalad < Formula
 
   desc "Data distribution geared toward scientific datasets"
   homepage "https://www.datalad.org"
-  url "https://files.pythonhosted.org/packages/14/6b/6788f64f89d05cb58865c635162b8bb2ec991f026fb37921f6a420f49eeb/datalad-1.2.2.tar.gz"
-  sha256 "df98d91004c1189ca22b0883d26946bd581b76b7bd08bede27acb9a00e5b8a8c"
+  url "https://files.pythonhosted.org/packages/e9/36/0fa094173c8676a9f1187179941ba619a016afb6cfa46c92171c8edb2edf/datalad-1.2.3.tar.gz"
+  sha256 "48f19d3e4fc7b2725240e6c47d6710f3bc46ad6b42455ff76dd3f6e34226f39f"
   license "MIT"
   head "https://github.com/datalad/datalad.git", branch: "maint"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e78a82d94c754322c85798995c73ac51ecff2f64252fbd583b8aceb4a5202cec"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b254a79836cd93a5952bc35d9407f56e05a48895cede589ca7514505047c852a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a7cc9378ebe45c943a265af8d1ca4d427074fd1d701169d09c4839b266ea445a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "33f25d4efeb0dec64f602dae30a695056e709a3b2f306f322a8135b19b3730e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b68ce98e5c84d4999a3fc246402bef8cea54df79a865243b42d00897c2980b72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "861da2f04558516a9a16baf54023526ee8fb2d1a4237bee11122378f31a34b33"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e24d7e7dd58cecd80ab668ac21a21cafd594a140c3eb013cf82046b9137509a4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80666c4f9125ded64c4d1bc0f58424e7b94179165ff604d930c7e3a283f5397a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f97231caf8b645675d9173ccf891804633252f73c842532a37c7c8a37e3f617a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "82d23ff20db27e9f4ac0e5999354d241422271e369133c98601a7b72c8746c96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c2196c510131a36022352394570e26f69276544f4b4ed32fe35966698e8ba86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a3d2aca82edb1c6262821a00ed9b0d430a17cd5bfc1d2c6a1ba5a92eaee4ffb"
   end
 
   depends_on "certifi" => :no_linkage
@@ -33,18 +33,18 @@ class Datalad < Formula
   end
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/16/0f/861e168fc813c56a78b35f3c30d91c6757d1fd185af1110f1aec784b35d0/argcomplete-3.6.2.tar.gz"
-    sha256 "d0519b1bc867f5f4f4713c41ad0aba73a4a5f007449716b16f385f2166dc6adf"
+    url "https://files.pythonhosted.org/packages/38/61/0b9ae6399dd4a58d8c1b1dc5a27d6f2808023d0b5dd3104bb99f45a33ff6/argcomplete-3.6.3.tar.gz"
+    sha256 "62e8ed4fd6a45864acc8235409461b72c9a28ee785a2011cc5eb78318786c89c"
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/a0/5a/8ba08c979926326d961e2384d994d789a2eda3ed281bb6cb333b36e92310/boto3-1.40.52.tar.gz"
-    sha256 "96ee720b52be647d8ef5ba92fccfce6b65d6321769430fe6edd10d57ec43c25b"
+    url "https://files.pythonhosted.org/packages/b4/69/2612a06d584786500ba7ea068927e95e24719da3b6734bd23c50788f5982/boto3-1.40.62.tar.gz"
+    sha256 "3dbe7e1e7dc9127a4b1f2020a14f38ffe64fad84df00623e8ab6a5d49a82ea28"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/83/74/3449d77c002d82586786b91dff6dd2e6fd52c5cdc1793d1ac7ea690ea52c/botocore-1.40.52.tar.gz"
-    sha256 "b65d970ca4ccd869639332083da17c3a933bcf495120dcc4f5c7723cb3f6216c"
+    url "https://files.pythonhosted.org/packages/50/d6/dc11fecf450c60175fd568791e2324e059e81bc4adac85d83f272ab293f5/botocore-1.40.62.tar.gz"
+    sha256 "1e8e57c131597dc234d67428bda1323e8f0a687ea13ea570253159ab9256fa28"
   end
 
   resource "chardet" do
@@ -158,8 +158,8 @@ class Datalad < Formula
   end
 
   resource "python-gitlab" do
-    url "https://files.pythonhosted.org/packages/46/5c/0075364e3d7e64171dafc62fc09a940c136f82e4407d1625eae8c8bddf8f/python_gitlab-6.4.0.tar.gz"
-    sha256 "55ed94fb47932124b7f9df8e72b29352d3d0ee01ecf44f081dd070f4bad8700d"
+    url "https://files.pythonhosted.org/packages/5e/c4/0b613303b4f0fcda69b3d2e03d0a1fb1b6b079a7c7832e03a8d92461e9fe/python_gitlab-7.0.0.tar.gz"
+    sha256 "e4d934430f64efc09e6208b782c61cc0a3389527765e03ffbef17f4323dce441"
   end
 
   resource "requests" do

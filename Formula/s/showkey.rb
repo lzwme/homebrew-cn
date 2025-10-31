@@ -6,9 +6,14 @@ class Showkey < Formula
   license "MIT"
   head "https://gitlab.com/esr/showkey.git", branch: "master"
 
+  # The homepage links to the `stable` tarball but it can take longer than the
+  # ten second livecheck timeout, so we check the Git tags as a workaround.
   livecheck do
-    url :homepage
-    regex(/showkey[._-]v?(\d+(?:\.\d+)+)/i)
+    url :head
+    regex(/^v?(\d+(?:[.-]\d+)+)$/i)
+    strategy :git do |tags, regex|
+      tags.filter_map { |tag| tag[regex, 1]&.tr("-", ".") }
+    end
   end
 
   bottle do

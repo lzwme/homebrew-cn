@@ -1,19 +1,17 @@
 class Libgr < Formula
   desc "GR framework: a graphics library for visualisation applications"
   homepage "https://gr-framework.org/"
-  url "https://ghfast.top/https://github.com/sciapp/gr/archive/refs/tags/v0.73.17.tar.gz"
-  sha256 "dafd6ee72d36226d4664ca32d85d0b68224d5dba710abb8a4578c427259858e1"
+  url "https://ghfast.top/https://github.com/sciapp/gr/archive/refs/tags/v0.73.18.tar.gz"
+  sha256 "0821ce71be438b09fdf4a62c567197ce5b35a0ab1e9c925d2817f0ff1ff67294"
   license "MIT"
-  revision 1
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "7bdc851e189cd0e32c3ebc1dd760629341245ee35b0047ccc25dc4ef0e749c11"
-    sha256 arm64_sequoia: "6e72a7cf25de633dd8b2bedd6093e3b30d46fc546d2e0a9bcab3779654f5801c"
-    sha256 arm64_sonoma:  "4ebac584fca59929884fe517b5adfa363e21d82d527b0f345d77f5fc6510471c"
-    sha256 sonoma:        "d471b8b3d4f3b1acba6f0d9f2f9ef80a71ba00fd645cb8371838895d8d25308a"
-    sha256 arm64_linux:   "de47454028332641b07160f75edb27e6ffdc2c14986e53744db8c03110877121"
-    sha256 x86_64_linux:  "ebec641dff0e1f8389ea8cc04a1b1585c50da5f2b4bdbce63efc6ea738ee9c91"
+    sha256 arm64_tahoe:   "91a3bbb4f0d1daaf6f369ae6f589b602fa9ea5e9cc2c2922e3e0971cc2e23654"
+    sha256 arm64_sequoia: "2a71eacc11e748f7f7bf52d77618a8638a9c2d31a662de5d201ecbc637a49a25"
+    sha256 arm64_sonoma:  "34f575ce2384b823069fb21ee88c8f7fc169d66250db442c3f6f0ce790d646fa"
+    sha256 sonoma:        "3a705923ee7a261a6c1ef501a2457fcec55fc5c2257a85f6d3971232f7f16143"
+    sha256 arm64_linux:   "59a174b4ad51069bdfac5b9a43e8b43e2d7cde29209413091dcf82f37fcef1ea"
+    sha256 x86_64_linux:  "e6802acbecfdb37466ccc4f71fa5539a1b848b267871bed74ef3bd40bfdb538e"
   end
 
   depends_on "cmake" => :build
@@ -35,12 +33,6 @@ class Libgr < Formula
     depends_on "libx11"
     depends_on "libxt"
     depends_on "mesa"
-  end
-
-  # Backport support for FFmpeg 8
-  patch do
-    url "https://github.com/sciapp/gr/commit/1720943f5ecf76b067dc2950fab2d381378aaf18.patch?full_index=1"
-    sha256 "b1b453e5a6aa878d0bea159f777e445dc4a73ba619d1672818341746b1b4e861"
   end
 
   def install

@@ -8,20 +8,20 @@ class Charmcraft < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "49e58377836d852fbd5fab77ce0c5d9a41bdaf45172975dd7e0cb605af6aa7d1"
-    sha256 cellar: :any,                 arm64_sequoia: "55b46af7201b974d52298e3f01e7cf8d054fd79d8a268600d949a3a11dc4d0cf"
-    sha256 cellar: :any,                 arm64_sonoma:  "3a00b7d8284e8b2e8594e501d9453dac0b7e5685e3e550488648483d7983768d"
-    sha256 cellar: :any,                 sonoma:        "29ad6bd0ca2d767f18872f335bb3fe1029ec33971587dce6487d447dcf8eb9e4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a4c1583605e8f55c07fa3083e3b8a0b6c396b8db69432d71962f758a89d41af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ee134bff7444da780f280941029b0ed54c81a2e1b6a1507fc6e76c05f0367b1"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "e4d0d54b43ebc1bb85d00e527207a9a0f6d84407f4e6a9d104cb6d9535e16984"
+    sha256 cellar: :any,                 arm64_sequoia: "66ea0baa8ef6bb54af54e8def0a6e177d0fd3fa1e097b6da9e2d026c9e41f759"
+    sha256 cellar: :any,                 arm64_sonoma:  "e523509653cb7087f465eb69e98062842a971f12c2131cc77f21ef555443452f"
+    sha256 cellar: :any,                 sonoma:        "624af8baece62c63309d504d51fb1b2bad4190fc87f420de64dc7d49be12565d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7da6097d1caa5f1289be708123deab9ac6a718705be99b1775a8530bf6d61afa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "860de8c06e8c575a64bcbb1ae6c4933a23a6e2666e3b5a1ad70d2420aeb30fe5"
   end
 
-  depends_on "rust" => :build # for pydantic-core
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libsodium"
   depends_on "libyaml"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "pygit2" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
@@ -29,7 +29,7 @@ class Charmcraft < Formula
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
-  pypi_packages exclude_packages: %w[certifi cryptography pygit2 rpds-py],
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic-core pygit2 rpds-py],
                 extra_packages:   ["jeepney", "secretstorage"]
 
   resource "annotated-types" do
@@ -247,11 +247,6 @@ class Charmcraft < Formula
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
-  end
-
   resource "pylxd" do
     url "https://files.pythonhosted.org/packages/9b/8e/6a31a694560adaba20df521c3102bdecec06a0fea9c73ff1466834e2df30/pylxd-2.3.5.tar.gz"
     sha256 "d67973dd2dc1728e3e1b41cc973e11e6cbceae87878d193ac04cc2b65a7158ef"
@@ -355,11 +350,6 @@ class Charmcraft < Formula
   resource "tabulate" do
     url "https://files.pythonhosted.org/packages/ec/fe/802052aecb21e3797b8f7902564ab6ea0d60ff8ca23952079064155d1ae1/tabulate-0.9.0.tar.gz"
     sha256 "0095b12bf5966de529c0feb1fa08671671b3368eec77d7ef7ab114be2c068b3c"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

@@ -3,7 +3,7 @@ class Cadaver < Formula
   homepage "https://notroj.github.io/cadaver/"
   url "https://notroj.github.io/cadaver/cadaver-0.28.tar.gz"
   sha256 "33e3a54bd54b1eb325b48316a7cacc24047c533ef88e6ef98b88dfbb60e12734"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url :homepage

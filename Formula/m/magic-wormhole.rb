@@ -3,18 +3,18 @@ class MagicWormhole < Formula
 
   desc "Securely transfers data between computers"
   homepage "https://github.com/magic-wormhole/magic-wormhole"
-  url "https://files.pythonhosted.org/packages/6f/ec/902ec8a53312e014a1f22f0a321597fe2ddb094c6336d051a4c11d4fd5ee/magic_wormhole-0.21.0.tar.gz"
-  sha256 "3850dc4777ff47d6289c582e4281d411ff8003dfc68caea35e96310e3922a4fb"
+  url "https://files.pythonhosted.org/packages/d1/c6/0ed9e0dca81eb5d0bcfc72690613bf26a13b95a9edb95fc35cebbfff8fba/magic_wormhole-0.21.1.tar.gz"
+  sha256 "b6d35972a19b4baa44e022518317b4e0ad26709fa019196f67ca0d127672a367"
   license "MIT"
   head "https://github.com/magic-wormhole/magic-wormhole.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1304feb5ddb1afeaf19e5cfa34151875c26ae9f0de904d9e0b53020a5b369690"
-    sha256 cellar: :any,                 arm64_sequoia: "6ecae45e180b3b24a4623fc9afd25f667fe9ca8861d93e0302da46b3c51e8979"
-    sha256 cellar: :any,                 arm64_sonoma:  "6d8d6c48417fccab8e7c6d8a556ea8729d8dfa2fe33d7bb91f876d5cab45872b"
-    sha256 cellar: :any,                 sonoma:        "25f4feff7f37985686e19bd70f611afb825bf9397e26625b687baf882fe63138"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ea5224496a80b0fe21b530048d0a042b0aeb57000d0147043d893f3febb50a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e9b26ec2f136967534a96ab1077dcacca749d383c165b5e108daa4c2caf9708"
+    sha256 cellar: :any,                 arm64_tahoe:   "c879c1ae9106ab6a889c3dfdc4e7f3126cbbd480241c8ae41f842709670a2e26"
+    sha256 cellar: :any,                 arm64_sequoia: "af3bb7433c2a0d4397c58e689ab901ce85ddc50ca45f9dc334bd4852e87dcab8"
+    sha256 cellar: :any,                 arm64_sonoma:  "dfb8965171d794135d082d44ded0ddb6a37c984c51b01e685f1b8a17976a1f72"
+    sha256 cellar: :any,                 sonoma:        "48dd3b253a320347168b33a5012a8381777a8cd97531b40a320bf7a10bb6ca7c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37d0c091a5cc3cd58bb3b753f554c14fe0a9762118f2f6a7a629f180cce7a037"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a61206f798ca2b59525bcd9e6f8e6513a592d859be3160c00ca4744192250e8"
   end
 
   depends_on "cryptography" => :no_linkage
@@ -31,8 +31,8 @@ class MagicWormhole < Formula
   end
 
   resource "autobahn" do
-    url "https://files.pythonhosted.org/packages/5c/5d/095541ec46347cdb6d94b1cde7b0236eee7dcdaadb2daad45232d74eeff1/autobahn-25.10.2.tar.gz"
-    sha256 "173d5d836789dffc4292473ea359dcb7f708456a0ff82dcb8ca938d6ccadb12f"
+    url "https://files.pythonhosted.org/packages/38/f2/8dffb3b709383ba5b47628b0cc4e43e8d12d59eecbddb62cfccac2e7cf6a/autobahn-24.4.2.tar.gz"
+    sha256 "a2d71ef1b0cf780b6d11f8b205fd2c7749765e65795f2ea7d823796642ee92c9"
   end
 
   resource "automat" do
@@ -123,17 +123,6 @@ class MagicWormhole < Formula
   resource "twisted" do
     url "https://files.pythonhosted.org/packages/13/0f/82716ed849bf7ea4984c21385597c949944f0f9b428b5710f79d0afc084d/twisted-25.5.0.tar.gz"
     sha256 "1deb272358cb6be1e3e8fc6f9c8b36f78eb0fa7c2233d2dbe11ec6fee04ea316"
-
-    # Fix asyncio error with Python 3.14, remove in next release
-    # PR ref: https://github.com/twisted/twisted/pull/12508
-    patch do
-      url "https://github.com/twisted/twisted/commit/c8a4c700a71c283bd65faee69820f88ec97966cb.patch?full_index=1"
-      sha256 "04b849f18e6ef01e7ee2903dba13ffa8bcb04c6d9c182d25410605320d819bd2"
-    end
-    patch do
-      url "https://github.com/twisted/twisted/commit/69b81f9038eea5ef60c30a3460abb4cc26986f72.patch?full_index=1"
-      sha256 "f999fc976327e955fbe82348dfd8c336925bc1f87cfaf4bd4c95deeb0570116d"
-    end
   end
 
   resource "txaio" do

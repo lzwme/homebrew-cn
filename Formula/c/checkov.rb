@@ -17,13 +17,13 @@ class Checkov < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "99fde4e73e3fb2f56f3c3ec8cd31661c9cd4074f3c2f1a565f1f66c752d805b6"
-    sha256 cellar: :any,                 arm64_sequoia: "6f362a30721d759f965a5ba12b38cd739deecc262e3b9508c61f4d995a47bf87"
-    sha256 cellar: :any,                 arm64_sonoma:  "ed76bdc42a0e56495388458061ce649b73421fd07b5172d791ec1ca163685d43"
-    sha256 cellar: :any,                 sonoma:        "3d808d3e57a44868518cee9d0c721fd90de070dfa5c5baa7b54ab3b5f52b33ff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4505248ba099853e904871b6ffbd8e182cf51ed49e63c99169404c507d3f335"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3388e083a916fc22f5c8bd04b495fdf012c242807b466fca958d9d42cf511ed"
+    rebuild 4
+    sha256 cellar: :any,                 arm64_tahoe:   "1c5d26972a9f2555fd31f35be957e050e8b9fb5209d8349e27a3f9ce697ccfe5"
+    sha256 cellar: :any,                 arm64_sequoia: "97d1fa800d102836bf921875d1debc63d5601aaa234868849dd972ae4f2cebf5"
+    sha256 cellar: :any,                 arm64_sonoma:  "1c8c7f01b5215278ad57fe0c9c73660b632ab232c959534ad9387e5f51721eee"
+    sha256 cellar: :any,                 sonoma:        "0290be3fed94dd119a5bdf5e952100968d68c01c6f0c17d729c7a917a671a2e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c3e93f2adc776bd52bf5dbdb9d6091cf7bb233eed67bf213be9d36fbef668d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "175170b55014a96b089a19eaaaf448cfeeca19048ca980d865de5fc63d25ca7e"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -31,12 +31,13 @@ class Checkov < Formula
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "numpy"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libffi"
 
-  pypi_packages exclude_packages: ["certifi", "numpy", "rpds-py"]
+  pypi_packages exclude_packages: %w[certifi numpy pydantic-core rpds-py]
 
   resource "aiodns" do
     url "https://files.pythonhosted.org/packages/17/0a/163e5260cecc12de6abc259d158d9da3b8ec062ab863107dcdb1166cdcef/aiodns-3.5.0.tar.gz"
@@ -49,8 +50,8 @@ class Checkov < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/ba/fa/3ae643cd525cf6844d3dc810481e5748107368eb49563c15a5fb9f680750/aiohttp-3.13.1.tar.gz"
-    sha256 "4b7ee9c355015813a6aa085170b96ec22315dabc3d866fd77d147927000e9464"
+    url "https://files.pythonhosted.org/packages/1c/ce/3b83ebba6b3207a7135e5fcaba49706f8a4b6008153b4e30540c982fae26/aiohttp-3.13.2.tar.gz"
+    sha256 "40176a52c186aefef6eb3cad2cdd30cd06e3afbe88fe8ab2af9c0b90f228daca"
   end
 
   resource "aiomultiprocess" do
@@ -99,8 +100,8 @@ class Checkov < Formula
   end
 
   resource "beartype" do
-    url "https://files.pythonhosted.org/packages/04/96/43ed27f27127155f24f5cf85df0c27fd2ac2ab67d94cecc8f76933f91679/beartype-0.22.2.tar.gz"
-    sha256 "ff3a7df26af8d15fa87f97934f0f6d41bbdadca971c410819104998dd26013d2"
+    url "https://files.pythonhosted.org/packages/e8/77/af43bdf737723b28130f2cb595ec0f23e0e757d211fe068fd0ccdb77d786/beartype-0.22.4.tar.gz"
+    sha256 "68284c7803efd190b1b4639a0ab1a17677af9571b8a2ef5a169d10cb8955b01f"
   end
 
   resource "beautifulsoup4" do
@@ -254,8 +255,8 @@ class Checkov < Formula
   end
 
   resource "lark" do
-    url "https://files.pythonhosted.org/packages/1d/37/a13baf0135f348af608c667633cbe5d13aa2c5c15a56ae9ad3e6cba45ae3/lark-1.3.0.tar.gz"
-    sha256 "9a3839d0ca5e1faf7cfa3460e420e859b66bcbde05b634e73c369c8244c5fa48"
+    url "https://files.pythonhosted.org/packages/da/34/28fff3ab31ccff1fd4f6c7c7b0ceb2b6968d8ea4950663eadcb5720591a0/lark-1.3.1.tar.gz"
+    sha256 "b426a7a6d6d53189d318f2b6236ab5d6429eaf09259f1ca33eb716eed10d2905"
   end
 
   resource "license-expression" do
@@ -284,8 +285,8 @@ class Checkov < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/be/4d/8df5f83256a809c22c4d6792ce8d43bb503be0fb7a8e4da9025754b09658/orjson-3.11.3.tar.gz"
-    sha256 "1c0603b1d2ffcd43a411d64797a19556ef76958aef1c182f22dc30860152a98a"
+    url "https://files.pythonhosted.org/packages/c6/fe/ed708782d6709cc60eb4c2d8a361a440661f74134675c72990f2c48c785f/orjson-3.11.4.tar.gz"
+    sha256 "39485f4ab4c9b30a3943cfe99e1a213c4776fb69e8abd68f66b83d5a0b0fdc6d"
   end
 
   resource "packageurl-python" do
@@ -343,11 +344,6 @@ class Checkov < Formula
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
-  end
-
   resource "pyparsing" do
     url "https://files.pythonhosted.org/packages/f2/a5/181488fc2b9d093e3972d2a472855aae8a03f000592dbfce716a512b3359/pyparsing-3.2.5.tar.gz"
     sha256 "2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6"
@@ -364,8 +360,8 @@ class Checkov < Formula
   end
 
   resource "rdflib" do
-    url "https://files.pythonhosted.org/packages/8d/99/d2fec85e5f6bdfe4367dea143119cb4469bf48710487939df0abf7e22003/rdflib-7.2.1.tar.gz"
-    sha256 "cf9b7fa25234e8925da8b1fb09700f8349b5f0f100e785fb4260e737308292ac"
+    url "https://files.pythonhosted.org/packages/18/ea/30bd9eb0d4a25dd0ab929153ed23698c907c6124389aa72eea5b7b703ab8/rdflib-7.4.0.tar.gz"
+    sha256 "c8ee16c31848c19c174aed96185327ea139ca3d392fac7fa882ddf5687f8f533"
   end
 
   resource "referencing" do
@@ -441,11 +437,6 @@ class Checkov < Formula
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
     sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

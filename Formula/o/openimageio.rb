@@ -14,12 +14,13 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3a2ec3968e5fde528d08ee536d8bff65840e0375f4bf5be0bc6645d0cbcc6c12"
-    sha256 cellar: :any,                 arm64_sequoia: "d3fec18063cc0e9024718dc239fe72096952d0c80c824b21f9156ab9ba554b5e"
-    sha256 cellar: :any,                 arm64_sonoma:  "fb5b3e18db0332fe4add5ad2739fa648e11ee53154b52c662d59d53a55fe01e1"
-    sha256 cellar: :any,                 sonoma:        "a319d0ba0e5146718d0d2f9d3e9162976459639235365b8446e14ceafde2fd6e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6411860381b65615bf0f36a65f59005caf89f28aa7f9d276d101f9e1c64f2f95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56c7d99273142f9f31647764ed310413b56a37a40ab68101b979e6f9311fdf03"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ffd8e3cddfb8f1b272b04c5b95805d877d9e51867a8a2237fb5499c2961d7cba"
+    sha256 cellar: :any,                 arm64_sequoia: "613d20b99cf49631bb052e4ec4744ad9ecad66762aad88380fd52a15412c52ca"
+    sha256 cellar: :any,                 arm64_sonoma:  "69ec00589020d2119bfa4822dd5ecea966606fde870fd389084598c11b7bbf2e"
+    sha256 cellar: :any,                 sonoma:        "87d812b539f867f0bfaa3e0d1111b6082f9230bc1918c481dd8446ce8f379939"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b45cf41935ba570f572e6553434e970971b443306443ec3e64218503a0c597e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27b2f832f916e621ea1f665d355a8c6972e39cea164f0a4cf45326d0aaf294e7"
   end
 
   depends_on "cmake" => :build
@@ -42,8 +43,7 @@ class Openimageio < Formula
   depends_on "python@3.14"
   depends_on "tbb"
   depends_on "webp"
-
-  uses_from_macos "zlib"
+  depends_on "zlib"
 
   # https://github.com/AcademySoftwareFoundation/OpenImageIO/blob/main/INSTALL.md
   fails_with :gcc do
