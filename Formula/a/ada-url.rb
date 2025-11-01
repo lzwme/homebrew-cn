@@ -4,15 +4,16 @@ class AdaUrl < Formula
   url "https://ghfast.top/https://github.com/ada-url/ada/archive/refs/tags/v3.3.0.tar.gz"
   sha256 "75565e2d4cc8e3ce2dd7927f5c75cc5ebbd3b620468cb0226501dae68d8fe1cd"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   head "https://github.com/ada-url/ada.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cf88104b7960250750e0a3513130c8df22987a9b4a450cce0f39496e4f851f54"
-    sha256 cellar: :any,                 arm64_sequoia: "51eaccf2935bb46e41f2b081106330ba357b7786ceb75b9ff5e7fe4b69802157"
-    sha256 cellar: :any,                 arm64_sonoma:  "c52fc920dd88d761c8143b6f6ca9d638de23de98f04815525ba19f01b22f0877"
-    sha256 cellar: :any,                 sonoma:        "5114c8623eb5b23b4ff006aa921a0ced40ba302d9d72311fd4cd1790d97a5830"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "489c57453f13bf83d978157b407a4a7693fbf2fbe8adb434f641903845a2fbda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b4dda8cfc477ade4b666f3a5ccef1d9a33f838f991675057d6ac9017345829c"
+    sha256 cellar: :any,                 arm64_tahoe:   "50d62e0af3952214f33d8db467c5f0c4680786980d943ce244fafd0d4f7ede67"
+    sha256 cellar: :any,                 arm64_sequoia: "2801164edd3675e14fa2bebaa2e34c285153d7c96eb71ab52780689bd464c5f5"
+    sha256 cellar: :any,                 arm64_sonoma:  "8c32ecf2d524b6ebb3adf0ec91785c093b78452cc79c299ea7ba20b098a42d2e"
+    sha256 cellar: :any,                 sonoma:        "0b11b09bc97b8a30ecb3f0fa016c52ec604959381b6635b96f76e290cb1f9785"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "533d50e0ca2539bc06e6de76a2c1577de99a71b5858dc93a9fe6dc643d8af4c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "688ad78d321118be7aab51c1eccb86540044e4ee83a9eae780d53e9c19f8f26d"
   end
 
   depends_on "cmake" => :build

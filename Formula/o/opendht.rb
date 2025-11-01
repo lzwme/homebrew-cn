@@ -4,6 +4,7 @@ class Opendht < Formula
   url "https://ghfast.top/https://github.com/savoirfairelinux/opendht/archive/refs/tags/v3.5.4.tar.gz"
   sha256 "674249c4ac07c4392566d761c0189c7bb11dd7b17e9a331c69d6881f7d01e043"
   license "GPL-3.0-or-later"
+  revision 1
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -14,12 +15,12 @@ class Opendht < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ce4841328fea1b93a3c92f0f858269f83a382aae08fb196dd0483f3e5aca89f4"
-    sha256 cellar: :any,                 arm64_sequoia: "4bed40d3daa05a1e2976d116de40e8115deee46608bbad278a71eca318be2e4d"
-    sha256 cellar: :any,                 arm64_sonoma:  "1edc8f170c4eb5ef039e629830fcdeabe097845332612c706aa31a8445974754"
-    sha256 cellar: :any,                 sonoma:        "97b956a17aa9f6f4a148181dfd52229b80982934eaddd9a79e08dd36e91c6c32"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9645357d5f981b527bec8eab40e7e58f2f51f42a62c27b1d85227a9d772ecd67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b872f54f996e20e1007f2749495a16faea1424777fc8c30a71becdecb24d6b72"
+    sha256 cellar: :any,                 arm64_tahoe:   "f4d45049caf08fd1f826f1869952f62954692a6c68f212e5a969ff3f863a74a1"
+    sha256 cellar: :any,                 arm64_sequoia: "df77e683bd89ca2fa48b3999397edbde77ef84cae513656341117d3d3101e243"
+    sha256 cellar: :any,                 arm64_sonoma:  "43363010a5daf03f140e0b157ac35f940ac19b52ed2e258a6b03ae7140afd8b5"
+    sha256 cellar: :any,                 sonoma:        "62be175424effde9bda516c6f027d71c6ab220232ad1007dc8a1d7cbcb650285"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e746a7d89e61ce715a0e5bb243838c9ec8ac142829df34922919c9f3cdf5a67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d7aac90140280403abba3a269270f4c1f0fd63760ee9404fd173831e5824026"
   end
 
   depends_on "cmake" => :build

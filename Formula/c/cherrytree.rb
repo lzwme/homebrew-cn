@@ -4,7 +4,7 @@ class Cherrytree < Formula
   url "https://www.giuspen.com/software/cherrytree_1.6.2.tar.xz"
   sha256 "28c89a0b2512961e9d9393a5b8f7778f99331583c9bdbe682c4897b853727158"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/giuspen/cherrytree.git", branch: "master"
 
   livecheck do
@@ -13,12 +13,12 @@ class Cherrytree < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "8739077617ec8ea4a5012e45234e7648e4e2b57d19431951036c6908849410e6"
-    sha256 arm64_sequoia: "f351491b22e3f1fd71974ba6ea193013f5046f94bdd3bf9b716186eb10195c5a"
-    sha256 arm64_sonoma:  "7f326037a20b1f794d9529cd0551bb4982b0b652d26c0742f347d095244844a3"
-    sha256 sonoma:        "0de385e080ef3d36623e2618b2e7e68877d9dca872ec451ceb1da2f96352e56c"
-    sha256 arm64_linux:   "69c4a63af643efd208b91805253ece360aaf5d34018cfea3997ea1c5a7048d5f"
-    sha256 x86_64_linux:  "8ea597e54c1bddc8709d003f455de25da5ecc9f34cc9592114495d0b9846866a"
+    sha256 arm64_tahoe:   "4861f30a11171876c9d9d3dd87e287207e5051447e3a1abdb9c836ed60995bf0"
+    sha256 arm64_sequoia: "f32dda941721b0348f1e303072aa487f4adca0c3e57d7a03dc702d153e4d0702"
+    sha256 arm64_sonoma:  "2abbe4d50087250e8be3bdafdbc05dad5d866aca0139571380d6655eabf2efd6"
+    sha256 sonoma:        "a288aa9b4f8cd3642647ea1dc716176856065d8d80f6a04567125e58529cdd9b"
+    sha256 arm64_linux:   "efdfafaecde3a64938c2c09951818891a58b8b8b2386fa0c29944e1d5dd143e0"
+    sha256 x86_64_linux:  "e864d38a8b3d33940345256406294f96f713c28d018197700e373524ea8728f9"
   end
 
   depends_on "cmake" => :build

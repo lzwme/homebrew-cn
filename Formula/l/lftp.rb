@@ -32,16 +32,16 @@ class Lftp < Formula
     # https://github.com/lavv17/lftp/issues/611
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
 
-    system "./configure", *std_configure_args,
-                          "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
                           "--with-readline=#{Formula["readline"].opt_prefix}",
-                          "--with-libidn2=#{Formula["libidn2"].opt_prefix}"
+                          "--with-libidn2=#{Formula["libidn2"].opt_prefix}",
+                          *std_configure_args
 
     system "make", "install"
   end
 
   test do
-    system bin/"lftp", "-c", "open https://ftp.gnu.org/; ls"
+    system bin/"lftp", "-c", "open https://ftpmirror.gnu.org/; ls"
   end
 end

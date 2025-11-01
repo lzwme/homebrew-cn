@@ -9,20 +9,17 @@ class McpProxy < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ad7ec10f51ea1b9e44bdfafed3890eff62f8ca95804350116998a560e7835539"
-    sha256 cellar: :any,                 arm64_sequoia: "5a1cbd394e9b3d1e6c436b880aa44724ce1ccd0675670890ad5ea1d1234d0109"
-    sha256 cellar: :any,                 arm64_sonoma:  "6b93837e414c1cb7277ad5e8281fd3130b35c98f21beb8427575ba87caf15e5b"
-    sha256 cellar: :any,                 sonoma:        "dc5cc0202fd568c5b43a3c6a8f5eead3de41e4e220c81633c5fed3e302fc3b00"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5878b13e17be50961ed6463776aa238de5ccb0d3fe6342817c3f65a2bd8fbfda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1d04a1119d5f70bbf0ffc3ed69c9bba9fb1a70152d8ae1d0d4a642fbc5f7b45"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "3b0225508b0b2a6da1f445eabeb423d030124e701dbe8c82a4717de00f36c0cf"
   end
 
-  depends_on "pkgconf" => :build
-  depends_on "rust" => :build # for pydantic_core
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
 
-  pypi_packages exclude_packages: "certifi"
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic-core rpds-py]
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -80,8 +77,8 @@ class McpProxy < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/69/2b/916852a5668f45d8787378461eaa1244876d77575ffef024483c94c0649c/mcp-1.19.0.tar.gz"
-    sha256 "213de0d3cd63f71bc08ffe9cc8d4409cc87acffd383f6195d2ce0457c021b5c1"
+    url "https://files.pythonhosted.org/packages/f8/22/fae38092e6c2995c03232635028510d77e7decff31b4ae79dfa0ba99c635/mcp-1.20.0.tar.gz"
+    sha256 "9ccc09eaadbfbcbbdab1c9723cfe2e0d1d9e324d7d3ce7e332ef90b09ed35177"
   end
 
   resource "pydantic" do
@@ -89,14 +86,14 @@ class McpProxy < Formula
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
-  end
-
   resource "pydantic-settings" do
     url "https://files.pythonhosted.org/packages/20/c5/dbbc27b814c71676593d1c3f718e6cd7d4f00652cefa24b75f7aa3efb25e/pydantic_settings-2.11.0.tar.gz"
     sha256 "d0e87a1c7d33593beb7194adb8470fc426e95ba02af83a0f23474a04c9a08180"
+  end
+
+  resource "pyjwt" do
+    url "https://files.pythonhosted.org/packages/e7/46/bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726/pyjwt-2.10.1.tar.gz"
+    sha256 "3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"
   end
 
   resource "python-dotenv" do
@@ -114,29 +111,19 @@ class McpProxy < Formula
     sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
   end
 
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/48/dc/95f074d43452b3ef5d06276696ece4b3b5d696e7c9ad7173c54b1390cd70/rpds_py-0.28.0.tar.gz"
-    sha256 "abd4df20485a0983e2ca334a216249b6186d6e3c1627e106651943dbdb791aea"
-  end
-
   resource "sniffio" do
     url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
     sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/42/6f/22ed6e33f8a9e76ca0a412405f31abb844b779d52c5f96660766edcd737c/sse_starlette-3.0.2.tar.gz"
-    sha256 "ccd60b5765ebb3584d0de2d7a6e4f745672581de4f5005ab31c3a25d10b52b3a"
+    url "https://files.pythonhosted.org/packages/db/3c/fa6517610dc641262b77cc7bf994ecd17465812c1b0585fe33e11be758ab/sse_starlette-3.0.3.tar.gz"
+    sha256 "88cfb08747e16200ea990c8ca876b03910a23b547ab3bd764c0d8eb81019b971"
   end
 
   resource "starlette" do
     url "https://files.pythonhosted.org/packages/1b/3f/507c21db33b66fb027a332f2cb3abbbe924cc3a79ced12f01ed8645955c9/starlette-0.49.1.tar.gz"
     sha256 "481a43b71e24ed8c43b11ea02f5353d77840e01480881b8cb5a26b8cae64a8cb"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

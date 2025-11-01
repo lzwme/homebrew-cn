@@ -5,10 +5,9 @@ class Semgrep < Formula
   homepage "https://semgrep.dev"
   # pull from git tag to get submodules
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.141.0",
-      revision: "9f972b3b65f64ec02b4a841d1ca8c300f528f4f0"
+      tag:      "v1.142.0",
+      revision: "4111b9ccdef768302c97de7a6e8f9f6d36a4ecdf"
   license "LGPL-2.1-only"
-  revision 1
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
   livecheck do
@@ -17,12 +16,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e5f9b06f61ef9f7899a0d4ba557510b556072c1a22f5a00b94b46729884da8b4"
-    sha256 cellar: :any, arm64_sequoia: "718cbb5ad69bdfac15e8152ffce64b5fa7403fbefdb47ed7d353f6474a0b1881"
-    sha256 cellar: :any, arm64_sonoma:  "e11f50adf06bcaf28d91b90f78baa2e195d5dc2724d9892bcb83bcf8aabe0e01"
-    sha256 cellar: :any, sonoma:        "a7ac37e41f40dd0d9314994a46b66fbe3e4617713e6305c42376d995129d77b5"
-    sha256               arm64_linux:   "82e10f2d08fd7617cebac528f0527de7e1912b907495c15bcc3e59f0d73e3199"
-    sha256               x86_64_linux:  "3e4599ce6bf275547d3a23985bf4175dd37238c9061441b54bfb40ad2f4b7ed1"
+    sha256 cellar: :any, arm64_tahoe:   "344f292b50462a6831752a486748076d3d7e78bd5d2adf814c74208d03544cb7"
+    sha256 cellar: :any, arm64_sequoia: "65ca9d83f1b56226c6c636f96ac25ee256671a04fcadb1139f3b21fe5edd6714"
+    sha256 cellar: :any, arm64_sonoma:  "34e655c2d612981be19bff1dedac6330ebcc588f30ef6a0dd9534483b9f4c008"
+    sha256 cellar: :any, sonoma:        "1388c4e1085235761510f71e649667ebd05fda7a3f48bd9e2fa9134e9c74d9c0"
+    sha256               arm64_linux:   "eda644a70ce8430f4c689f8301cd21105097247b1536873b63acf90a977d8600"
+    sha256               x86_64_linux:  "bbc5359ab5a18d875812b02a51c7b67689e3b8998099ef76f94fa7b85859f19c"
   end
 
   depends_on "autoconf" => :build
@@ -302,8 +301,8 @@ class Semgrep < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/42/6f/22ed6e33f8a9e76ca0a412405f31abb844b779d52c5f96660766edcd737c/sse_starlette-3.0.2.tar.gz"
-    sha256 "ccd60b5765ebb3584d0de2d7a6e4f745672581de4f5005ab31c3a25d10b52b3a"
+    url "https://files.pythonhosted.org/packages/db/3c/fa6517610dc641262b77cc7bf994ecd17465812c1b0585fe33e11be758ab/sse_starlette-3.0.3.tar.gz"
+    sha256 "88cfb08747e16200ea990c8ca876b03910a23b547ab3bd764c0d8eb81019b971"
   end
 
   resource "starlette" do

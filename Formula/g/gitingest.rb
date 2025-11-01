@@ -9,20 +9,21 @@ class Gitingest < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "10ddf715a3a217726293629da7f2dece4eb88f8f098ca0cea41d678668f57231"
-    sha256 cellar: :any,                 arm64_sequoia: "c56974f5dd037914c002f1fa2a43c99d1c20703334b23e0b56ae01c8da35b7a3"
-    sha256 cellar: :any,                 arm64_sonoma:  "1defe0174ab756e32a484379995ce3266871fbfd3ca741d0c4f3e03b54f56c5d"
-    sha256 cellar: :any,                 sonoma:        "995ac9c84617bb554bd897f4565a1ec4bae909fdea9a97d617b843ad3f155e0c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "35d9c29ffd61a2289490435c8cfc7a8aea7944d64f22a38f18a73a09777f18d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3041149a69365bd7951e0fc14ae78a084b6edb6a31f28fcd7e2834b3e3004208"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "772e76e04a8c581ef791a3825b31cd2f31fecd24c8a3cb97c2e536d3fe362132"
+    sha256 cellar: :any,                 arm64_sequoia: "0318ef8ff7cfe18e489175592ad787b66c524dafbd45f7f266307f1c8c0d44fd"
+    sha256 cellar: :any,                 arm64_sonoma:  "5cae7b3fa23b87ea1af26961b5db1b349a8690fb6c9c28a267a93449b01d961d"
+    sha256 cellar: :any,                 sonoma:        "2157a67ce0a40f386dfabd9f0dde5592717de641e29395a4ca7b312720036122"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f773a0826669ecf79788008ea9883e82f7a4389f8cfb0468073f39ab1d417b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e52260e72f816530e1e8a95a3d1aac0bf580417f869d572ef67971b219619774"
   end
 
-  depends_on "rust" => :build
-
-  depends_on "certifi"
+  depends_on "rust" => :build # for tiktoken
+  depends_on "certifi" => :no_linkage
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
 
-  pypi_packages exclude_packages: "certifi"
+  pypi_packages exclude_packages: ["certifi", "pydantic-core"]
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -79,11 +80,6 @@ class Gitingest < Formula
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
-  end
-
   resource "python-dotenv" do
     url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
     sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
@@ -112,11 +108,6 @@ class Gitingest < Formula
   resource "tiktoken" do
     url "https://files.pythonhosted.org/packages/7d/ab/4d017d0f76ec3171d469d80fc03dfbb4e48a4bcaddaa831b31d526f05edc/tiktoken-0.12.0.tar.gz"
     sha256 "b18ba7ee2b093863978fcb14f74b3707cdc8d4d4d3836853ce7ec60772139931"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

@@ -19,10 +19,11 @@ class Icbirc < Formula
     sha256 cellar: :any_skip_relocation, ventura:       "8ac135755acfc32dcabbd12e8a0deb9fae1f8b02ca9835c1fbdf567121214de5"
   end
 
-  depends_on "bsdmake" => :build
+  depends_on "bmake" => :build
+  depends_on :macos # needs strlcpy and Linux headers aren't included
 
   def install
-    system "bsdmake"
+    system "bmake"
     bin.install "icbirc"
     man8.install "icbirc.8"
   end

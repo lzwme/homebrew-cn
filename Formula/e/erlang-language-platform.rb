@@ -6,7 +6,7 @@ class ErlangLanguagePlatform < Formula
       tag:      "2025-10-21",
       revision: "d6f2636f015069ed32137a42f99b9b2ecbaa35a9"
   license any_of: ["Apache-2.0", "MIT"]
-  head "github.com/WhatsApp/erlang-language-platform.git", branch: "main"
+  head "https://github.com/WhatsApp/erlang-language-platform.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "74b858f39da070d67f5606088a502bfe5eceefe97f75a179eb7d53005f615517"

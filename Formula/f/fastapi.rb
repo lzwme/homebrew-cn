@@ -3,17 +3,17 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/85/c6/f324c07f5ebe34237b56b6396a94568d2d4a705df8a2ff82fa45029e7252/fastapi-0.120.3.tar.gz"
-  sha256 "17db50718ee86c9e01e54f9d8600abf130f6f762711cd0d8f02eb392668271ba"
+  url "https://files.pythonhosted.org/packages/3f/3a/0bf90d5189d7f62dc2bd0523899629ca59b58ff4290d631cd3bb5c8889d4/fastapi-0.120.4.tar.gz"
+  sha256 "2d856bc847893ca4d77896d4504ffdec0fb04312b705065fca9104428eca3868"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1bf7e448064951cb6a34306bc45d5542d5095e1abbfa93bb1213ef65148f822a"
-    sha256 cellar: :any,                 arm64_sequoia: "3e32300268cb448bd3f75bc127163fc7b177d0fd4fc6079aed9b39ca730c3415"
-    sha256 cellar: :any,                 arm64_sonoma:  "eecdc2f7533ddd13574ce25b3682b9bf3bf21a44650409dd3568f550f38c3f72"
-    sha256 cellar: :any,                 sonoma:        "a9b348dfcd0a4f69a933014d2dcdbea950c197bfefdab23c8c5384719329c07e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e502bb3bb6cee9d8c12c83ac927fe8f2a950fdc592ee07e3219179ddf951d4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d79e90ca6710b903bd204191243ef30e73aacd9ec67aa0eed756233043cea45a"
+    sha256 cellar: :any,                 arm64_tahoe:   "81f056a3455ff5dc54e481da5de1351d88029be12e06194aae911952028e75f8"
+    sha256 cellar: :any,                 arm64_sequoia: "1af30f029b015f659201690464b245d6dee1fc8217da074a718450d57dae53da"
+    sha256 cellar: :any,                 arm64_sonoma:  "397b999513b0b4a8e2336863f34f8cae176d3ebed5d3f5b3f92d84e920a77789"
+    sha256 cellar: :any,                 sonoma:        "642196f870dca8417aa01b73c50019396d8ef85dc2e2b9e0f0f41b94de6358f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ccd584bfd734141ee3d4fa245a8a072f1c8dffb9f241acc2790f826a59d8886a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d28a894d6f0953b2ed1259f4e0b671fcab2a459058a3d9fd47ad1c641d86eb5d"
   end
 
   depends_on "rust" => :build # for annotated-doc

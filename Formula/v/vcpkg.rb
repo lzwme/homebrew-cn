@@ -5,6 +5,7 @@ class Vcpkg < Formula
   version "2025.10.16"
   sha256 "70c25e3c3653e917c8d776c90b35b55490152bec36b8be87ca88491697fde3ef"
   license "MIT"
+  revision 1
   head "https://github.com/microsoft/vcpkg-tool.git", branch: "main"
 
   # The source repository has pre-release tags with the same
@@ -23,18 +24,24 @@ class Vcpkg < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6abe5ceeb2c07c55b24eb69e37c5b9fc8ddb42e6a0bbd8e488dcde197f1abff5"
-    sha256 cellar: :any,                 arm64_sequoia: "78478a9c84e383b830e003fd4eb9b9c79c051ca49d4591c157c3acd052dcec21"
-    sha256 cellar: :any,                 arm64_sonoma:  "5960f9aa047c0b915559920dd85db452ea5033ea1bb90e8405bd2bd79971d9f9"
-    sha256 cellar: :any,                 sonoma:        "6dda75870ecf3da8469e036d0412f3b576a8a87e06937c49d60817fc1029d45c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed6320c230a3a2f3779c23ed4c854d40e312145a59286f72bc3ed30a58c21e91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32dad771a326241e768a5cd7c788d43e3c4566e5cceff3a5afd793880b7254af"
+    sha256 cellar: :any,                 arm64_tahoe:   "873c34e3f99a7997215192fde00f98988237e2c048d90218bbb45bfe08471c6a"
+    sha256 cellar: :any,                 arm64_sequoia: "68406e2d085c69d20c67f7e10f46c6255587b117cb776c0321a7be64e1b27944"
+    sha256 cellar: :any,                 arm64_sonoma:  "0adc67aca72dfe2221783f13ae5941876e39a35606c2bc7e0e0d6063a8e2e3b7"
+    sha256 cellar: :any,                 sonoma:        "8644221c17f6d1cc616fa4f7be900ab8ba8a78df5c1ec5f05f87d0f12206c8e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e04b09aa086260813feec548f6e2520ff166b5347412f3f832d06930fa13497"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b740efebb04f73e6100e84b9c9449d1a7f6e9cb76154fc2778d5855bdca2c46d"
   end
 
   depends_on "cmake" => :build
   depends_on "cmrc" => :build
   depends_on "fmt"
   depends_on "ninja" # This will install its own copy at runtime if one isn't found.
+
+  # upstream pr ref, https://github.com/microsoft/vcpkg-tool/pull/1826
+  patch do
+    url "https://github.com/microsoft/vcpkg-tool/commit/7e5f9b42018d19172e87236783bb0c713f176b7a.patch?full_index=1"
+    sha256 "2537ff975b66809c14790887090daacadcdd213123d6356a891667048c3b32fe"
+  end
 
   def install
     # Improve error message when user fails to set `VCPKG_ROOT`.

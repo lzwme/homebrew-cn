@@ -3,17 +3,17 @@ class Ramalama < Formula
 
   desc "Goal of RamaLama is to make working with AI boring"
   homepage "https://github.com/containers/ramalama"
-  url "https://files.pythonhosted.org/packages/c0/36/c246b8a9f08ee3aa7d3012733a17829c242f044b6bc6b2f81a5b196eb289/ramalama-0.13.0.tar.gz"
-  sha256 "1d69b179c19f33bac7c4910d70949796a059ce4977538448ddf33c4f7549ef93"
+  url "https://files.pythonhosted.org/packages/47/c5/606c7449202f8f949a75fd2d5cc76906f039a0d25b0bf9433da5e3137bad/ramalama-0.14.0.tar.gz"
+  sha256 "0564bada1cc6fac2d45143024fd9b29219b7a7508f1d591cbe14d8e6db363b2c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ec21aeaa21cc98a846b11cdae3c8416523cff2ea42a116fd35d8ea25651daa42"
-    sha256 cellar: :any,                 arm64_sequoia: "b128a873d94cd9973938c1e8ec734ba7cf1e8a0963beeac75fa36208740aaba0"
-    sha256 cellar: :any,                 arm64_sonoma:  "bfa991739185fbe2b92fb5313c6c02767b3d6224f51be1f0efd576df9b0a0834"
-    sha256 cellar: :any,                 sonoma:        "a880d4e6b34f80b516a431bbcb584571f121620c95e6d4e7a7b03611fd3f1920"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ba8d359520544d0a7bbf8ad16c8a88c58bbe255100bd9280500f4a014e0bbf4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dadf49edc782ad78eb9f6ccee80221521848aa92c9c69b80e6ebf0218b73bf81"
+    sha256 cellar: :any,                 arm64_tahoe:   "1f823f748dd95561f7bbf22472abe5c4e5c18d3afe85a4fa873791a32031209c"
+    sha256 cellar: :any,                 arm64_sequoia: "7f7ffdd26f9138a42109bd6e8f05fd458b416c88923830c5111a55ca222b9caa"
+    sha256 cellar: :any,                 arm64_sonoma:  "6fb38f1217da000ef4ac818e1d9de2c8a4bf021ef28e0361055a3f2191004f57"
+    sha256 cellar: :any,                 sonoma:        "805667170d9d898bc99dac2a70a02684da632a23a60be909312047e3afb9064b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad71b672cf750e91a5c5b192c93db4998b1fa5a18d3df640d2742100c96261a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c166d5c1c4746a4fcace908459d89f83d0ff65ffa94e629b0fa8aff26a9582e6"
   end
 
   depends_on "libyaml"
@@ -24,8 +24,8 @@ class Ramalama < Formula
   pypi_packages exclude_packages: "rpds-py"
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/16/0f/861e168fc813c56a78b35f3c30d91c6757d1fd185af1110f1aec784b35d0/argcomplete-3.6.2.tar.gz"
-    sha256 "d0519b1bc867f5f4f4713c41ad0aba73a4a5f007449716b16f385f2166dc6adf"
+    url "https://files.pythonhosted.org/packages/38/61/0b9ae6399dd4a58d8c1b1dc5a27d6f2808023d0b5dd3104bb99f45a33ff6/argcomplete-3.6.3.tar.gz"
+    sha256 "62e8ed4fd6a45864acc8235409461b72c9a28ee785a2011cc5eb78318786c89c"
   end
 
   resource "attrs" do

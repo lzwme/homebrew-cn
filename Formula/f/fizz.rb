@@ -4,15 +4,16 @@ class Fizz < Formula
   url "https://ghfast.top/https://github.com/facebookincubator/fizz/releases/download/v2025.10.27.00/fizz-v2025.10.27.00.tar.gz"
   sha256 "d03cf280def27b86a8898570d077ba1009275705bcf3840e128648adfafd19bb"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/facebookincubator/fizz.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "c7d70d66c4abe0c0bcda55949f86880ad91e6ec264a71d8d26a29f773d0d1750"
-    sha256                               arm64_sequoia: "d25a3d550cfd1d980f419180b55e1283e10cd8a0ed1b34de6569acdb60f7ab74"
-    sha256                               arm64_sonoma:  "cd8202431a72afd57309298b3cd2a6eb00419258f00020e217a229cd446045d7"
-    sha256 cellar: :any,                 sonoma:        "2b9a4f9eb54032a88ffcbf66e900021fe89319f6230dd0ca34d82d8e2def12d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5aa2cd49ca1d01fc241d65dd22e7a6903158bcc3328e59293dca61fad0e80ba8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd541f79747eac8565c013334a182ccbe3e9594bd6eec44a6c744d1449e991c2"
+    sha256                               arm64_tahoe:   "9eb8e9c7a619cc5907ff975ba762512e080071d5ac18371618585ae6678289c6"
+    sha256                               arm64_sequoia: "5e0abb81f4b8a3a31ee80db5706c09cf44c05c0ed5a09e2f381bcfce71e9cdbe"
+    sha256                               arm64_sonoma:  "801e77ad8063a301246111916c58c7aa37854ebf0ff1a5e488af27cc08ccf357"
+    sha256 cellar: :any,                 sonoma:        "2b38cf1486c726adbb88c96e283bf26217e7117fe023c12b2b9dc8c6a39c5a0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "778351906c0a78ad5bcca85ef72a8dbe01ee23bde3783e0d341c099d3bb53e60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d97f7fc5ee687e505a9e5ed2109959247f6fcc762c7580aa16855e2a6080485d"
   end
 
   depends_on "cmake" => [:build, :test]

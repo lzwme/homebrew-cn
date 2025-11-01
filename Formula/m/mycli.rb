@@ -8,24 +8,25 @@ class Mycli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "3ef404ef89d70159b4b59bf57d9e9a2c44c8b080dccea66ac8eced08dd7747c6"
-    sha256 cellar: :any,                 arm64_sequoia: "4cfae03f5ee4fd2137957752edc57710b5992f773a2217d9b637e53731588f0b"
-    sha256 cellar: :any,                 arm64_sonoma:  "bbd61769696657da21cd587da7b03902627e171aefc6a32aa19cd65b66c439d4"
-    sha256 cellar: :any,                 sonoma:        "808d331503d6c024d50c49958ce6c8cf17ff7565c0f592793fe708b5ae2ce81e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "86a05a9ee5eef17413549957d9c2545ed6fede45cbae97555f8aa146c028c0ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "212ce36895f5748843db3f5974f423cc99234e4bdd3aa335935b5df81680abcc"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "63a12bf0cd48d1210305a7358ee1eb8b154e08b0c9efe3868f2b4a7082162435"
+    sha256 cellar: :any,                 arm64_sequoia: "611823d54307cc9c8713a24e715671d7cc92c7f5ec2ac1db56614ef7de242962"
+    sha256 cellar: :any,                 arm64_sonoma:  "f358acb48fb7a4501ff6ad7c06aa33711cef7a91a0e5179ebbf888f2b3b7e96a"
+    sha256 cellar: :any,                 sonoma:        "79a61eb0b5620697901eca036af7ee390064ed4f29fbe6114e526851d9d90e10"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc3166b95830280f5cc68521b9c2dd48a605c19fbbe15cddbec5c13bfb8aa529"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35a390e59229c9842e056b23c59dd4945fce40e0a20b9a2e185cabae1595f0fd"
   end
 
-  depends_on "rust" => :build # for pydantic-core, sqlglotrs
+  depends_on "rust" => :build # for jiter, sqlglotrs
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
 
   uses_from_macos "libffi"
 
-  pypi_packages exclude_packages: ["certifi", "cryptography"]
+  pypi_packages exclude_packages: ["certifi", "cryptography", "pydantic-core"]
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -98,8 +99,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/ee/c7/e42bcd89dfd47fec8a30b9e20f93e512efdbfbb3391b05bbb79a2fb295fa/openai-2.6.0.tar.gz"
-    sha256 "f119faf7fc07d7e558c1e7c32c873e241439b01bd7480418234291ee8c8f4b9d"
+    url "https://files.pythonhosted.org/packages/c4/44/303deb97be7c1c9b53118b52825cbd1557aeeff510f3a52566b1fa66f6a2/openai-2.6.1.tar.gz"
+    sha256 "27ae704d190615fca0c0fc2b796a38f8b5879645a3a52c9c453b23f97141bb49"
   end
 
   resource "pluggy" do
@@ -125,11 +126,6 @@ class Mycli < Formula
   resource "pydantic" do
     url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
-  end
-
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
   end
 
   resource "pyfzf" do
@@ -183,8 +179,8 @@ class Mycli < Formula
   end
 
   resource "sqlglot" do
-    url "https://files.pythonhosted.org/packages/b5/3d/bf8b4a96b934c26ec83f94048ec201d17cd95fb3c2e6930bbcfaaaad6813/sqlglot-27.28.1.tar.gz"
-    sha256 "01c03da1aa0c7773002cfb4a58bd4b0656196e0164aee1d83104b3d3cc1475f3"
+    url "https://files.pythonhosted.org/packages/d1/50/766692a83468adb1bde9e09ea524a01719912f6bc4fdb47ec18368320f6e/sqlglot-27.29.0.tar.gz"
+    sha256 "2270899694663acef94fa93497971837e6fadd712f4a98b32aee1e980bc82722"
   end
 
   resource "sqlglotrs" do
@@ -220,11 +216,6 @@ class Mycli < Formula
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
     sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

@@ -2,7 +2,7 @@ class Wasmedge < Formula
   desc "Lightweight, high-performance, and extensible WebAssembly runtime"
   homepage "https://WasmEdge.org/"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/WasmEdge/WasmEdge.git", branch: "master"
 
   stable do
@@ -17,12 +17,12 @@ class Wasmedge < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "433127399a741c00d4f8e54b1d10646cb6332cf8e9eec52eb02de67d1be8207c"
-    sha256 cellar: :any,                 arm64_sequoia: "a2a69c4d5ad003d3622f26d562d967d05a455df55d9ec06d2b661089c017b4be"
-    sha256 cellar: :any,                 arm64_sonoma:  "37b31538a66c6e9b8b9f98ec7f8109d65433121bed55029b89d404cd8e481b5b"
-    sha256 cellar: :any,                 sonoma:        "0fb1f4f7c4c4b0ce26b3a2f6f1febfea3175c63ed688967d9c5d28354a3c1219"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a324a26369bdcaa3a5208ff1f7e5657c13ce040f9d3f5f8abe1baf51a8ad41b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a0b57c627294c3eb5085e8044c56ff1186aa60a224fc61be55dae0ff51dc32d"
+    sha256 cellar: :any,                 arm64_tahoe:   "7c6a8bc60386545e6a945f76fee81f095c33f57d1f2c75bca756a38158843a44"
+    sha256 cellar: :any,                 arm64_sequoia: "6f7b13da240b4605b6f33e0b969b6ac3b3ce26c9ee02b3bacc83a77ecd192c7b"
+    sha256 cellar: :any,                 arm64_sonoma:  "a20c30f91a0846db3de784348bcff62c807d56f74fdd492d2cda29bb53fc2412"
+    sha256 cellar: :any,                 sonoma:        "2b6c66b23637ef0815e63954ff032734e7b44cf35d682045e8e4207569e13ddc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "afd779ff4bd06efcca2d1b13a7321fb7f7148b580e7e5f8f201f39121c4926ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31b7e307f8938878a7db41931767ab52955739cc26315c3289de73eea692fcfc"
   end
 
   depends_on "cmake" => :build

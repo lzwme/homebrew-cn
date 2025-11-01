@@ -4,16 +4,16 @@ class Cabin < Formula
   url "https://ghfast.top/https://github.com/cabinpkg/cabin/archive/refs/tags/0.13.0.tar.gz"
   sha256 "f9115bb0566800beedb41106e00f44a7eaf1dea0fa6528281e31de5f80864177"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/cabinpkg/cabin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "663856f27130718ab2546ab4eecdca21d0fabaa3f5c08169657f4d133b7a2d5a"
-    sha256 cellar: :any,                 arm64_sequoia: "5cf95ebb404457edc95d68dc4c3bb5b20b8f17e8adce3798679ee497c5ea1ca1"
-    sha256 cellar: :any,                 arm64_sonoma:  "ca1d58b0198c1b4afbd3942b147c852483d8a4931f3531a4c5068c4778824328"
-    sha256 cellar: :any,                 sonoma:        "a71e816c3a97a91803ad64a6cbda528159f3a8bc4c7aa5793ada1603972bcf5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dced8bcac90d26d06ef4174d1414ef2489b23fe9533c546f529caa85a4a6a6d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa46ee698d680709a16f68238b437eef55ad01b75cc64aa53844da3f397f2323"
+    sha256 cellar: :any,                 arm64_tahoe:   "0e97d0864c66bf62ea7b014024bf7585c0069bd397ab840fc97725b4b4729f9e"
+    sha256 cellar: :any,                 arm64_sequoia: "c1dcf1c02d972158e65e66c8bc62c2d01509f5b42f45603d7394cff059fc5e1d"
+    sha256 cellar: :any,                 arm64_sonoma:  "e9dcb2901837d96250d350e5c230b7a88c1bef5abd332936386f98cced784991"
+    sha256 cellar: :any,                 sonoma:        "ef94594fcddda52162028ea8a91fcba55cf171219d3eb993464bd286363afebf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "233a2a68624ff57281778ea8496adc10d341fd0dd9e0b02ea72ec5b2da356c6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d80d56f13208f944f50bdec29141ca1133a857f78952f9c9eb43a0c36e2e1d7d"
   end
 
   depends_on "nlohmann-json" => :build
@@ -44,6 +44,12 @@ class Cabin < Formula
   fails_with :gcc do
     version "11"
     cause "Requires C++20"
+  end
+
+  # allow to build with fmt 12.1.0, upstream pr ref, https://github.com/cabinpkg/cabin/pull/1231
+  patch do
+    url "https://github.com/cabinpkg/cabin/commit/b506326b996cd4d5a6578ceb5bbbb7a903dbdf12.patch?full_index=1"
+    sha256 "baf74ab11f7a1f7e2a75916acdc7fed76114e24f02e09d057c261b2e469e5203"
   end
 
   def install

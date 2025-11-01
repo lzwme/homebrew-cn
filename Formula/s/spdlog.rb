@@ -4,15 +4,16 @@ class Spdlog < Formula
   url "https://ghfast.top/https://github.com/gabime/spdlog/archive/refs/tags/v1.16.0.tar.gz"
   sha256 "8741753e488a78dd0d0024c980e1fb5b5c85888447e309d9cb9d949bdb52aa3e"
   license "MIT"
+  revision 1
   head "https://github.com/gabime/spdlog.git", branch: "v1.x"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e551c179dac2be2cabfa187f2d44719f4759a812964fde8bedae14b1eb8ef6c9"
-    sha256 cellar: :any,                 arm64_sequoia: "de5daee568dd987d111c7bf013963e9d126a43d122c2a7394490c538de56604a"
-    sha256 cellar: :any,                 arm64_sonoma:  "fcb20fdb222418cd7e7bdc6aaa81774367f6fb2f701db93ad2e85c9517831f72"
-    sha256 cellar: :any,                 sonoma:        "a77eeef870d22f0dc2efff1f30500614b9a0d85ca60b235d74734ef26011f5d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aba3b9998c01e14c5ba0d4cb313feed4d28f41dc07b730b15123d38287ec9bc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4476b2b3ebe72b98a0b1386a0a5f8c44ca96facb5b5b257f3c17b3d5503f11d"
+    sha256 cellar: :any,                 arm64_tahoe:   "48f60f6f26b8fcbaeba93f5e7f6ce09f4e2caabe401493e8704178e7cf900dd6"
+    sha256 cellar: :any,                 arm64_sequoia: "4189a5a09f6df33310f087fc2f05b6efda61ce83bfa65d8f32c61b9eee3a27d7"
+    sha256 cellar: :any,                 arm64_sonoma:  "722a5865c0eb6229a053dac16b1b656d571153362217f31ae927360a379a3220"
+    sha256 cellar: :any,                 sonoma:        "bafe8b9c234a4c3794fd802f534e775ca5974315e7e0f0f65815300800d1ebe9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fd0c9e79d3a2a6d1209fb05980640198f755689fd03fea8fb05b4eb00ff1938"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bc677e2642c10f480a0a1506a8737a27c72dc23ae45e806d5408156192ad411"
   end
 
   depends_on "cmake" => :build

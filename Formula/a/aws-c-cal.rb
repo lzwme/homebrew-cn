@@ -1,17 +1,17 @@
 class AwsCCal < Formula
   desc "AWS Crypto Abstraction Layer"
   homepage "https://github.com/awslabs/aws-c-cal"
-  url "https://ghfast.top/https://github.com/awslabs/aws-c-cal/archive/refs/tags/v0.9.7.tar.gz"
-  sha256 "39d1b2967a109b3927ebc185a21aa8fdee64db6380799ddc51d21b96d2b90bdb"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-cal/archive/refs/tags/v0.9.8.tar.gz"
+  sha256 "4a2a0918c763639f18d971367df6b528a1f3a0660f1c66d5791e435e8e671db9"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cae0bc629a9da0f2abf80d893febab164b57470beed23cc7ed33424da0f1ea08"
-    sha256 cellar: :any,                 arm64_sequoia: "8d603ad4f967ce4d55e79f04e3dd4aaa90b7472dff3d5900c318bdd4778438a3"
-    sha256 cellar: :any,                 arm64_sonoma:  "6d274450caefc547b34c124afe1f0c8001af948dc01cea8d272d31740ceb046f"
-    sha256 cellar: :any,                 sonoma:        "b13ddb83ebedaf4b5690fb3f2513f6c5d59bb3f9cc5c07c222597b554f349807"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fed14bca4ae0bd8cae1ba784725b83e59422bcd7ae14881fa828bfe3025f29b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f37bf4936b737489488efac0350cd8102577c06460d8c7a4220f768e587c1ab8"
+    sha256 cellar: :any,                 arm64_tahoe:   "3bd291730b249d7c0079430ce15103bcd2ff50646423182308ab7d961d5f3384"
+    sha256 cellar: :any,                 arm64_sequoia: "5715489f8ba6a09337e6c98852f575811eb8add2a8ab108862a37352987118cb"
+    sha256 cellar: :any,                 arm64_sonoma:  "282fa5faf7d8df4473e875f9a70184b2702ead0dacc8d39f29f06f9d4e47622c"
+    sha256 cellar: :any,                 sonoma:        "3f361070564237848d31375f0ded30979bab9885ecac382c5518cddcf8fd0450"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "594a4e984ab8db651cd342ec5f4d9e8fb59c82dde839264b24a5b5f3451ed4cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf5739d97e912fd703eb829c931af794151db0614d1baa3bf05b3852c062c4c9"
   end
 
   depends_on "cmake" => :build

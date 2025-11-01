@@ -3,18 +3,18 @@ class Borgbackup < Formula
 
   desc "Deduplicating archiver with compression and authenticated encryption"
   homepage "https://www.borgbackup.org/"
-  url "https://files.pythonhosted.org/packages/d3/8b/f24d8ab37b8d8cd85a55fa6cfaf98754bb7b6c7534c03ffe087506080a53/borgbackup-1.4.1.tar.gz"
-  sha256 "b8fbf8f1c19d900b6b32a5a1dc131c5d8665a7c7eea409e9095209100b903839"
+  url "https://files.pythonhosted.org/packages/de/79/2031c715a35c1fc943cdac83337b0070737d29796270454bedf52d2ac457/borgbackup-1.4.2.tar.gz"
+  sha256 "8923f5e953205d81138d1d7276c8a1c864215e230994d620c397635568ed376f"
   license "BSD-3-Clause"
+  head "https://github.com/borgbackup/borg.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "fb7a0bf3c2cb3f40695c5c8b72e470780e462328185399941264fc2b9c6a53e7"
-    sha256 cellar: :any,                 arm64_sequoia: "368609362d951f06cf4043bf4f267b8202a786a6f71fbf0ebef048e961343194"
-    sha256 cellar: :any,                 arm64_sonoma:  "27ca1247a872be5b1d2f8d280f146a82ebbf992bd0d4c52d6f8633bdc7412f2b"
-    sha256 cellar: :any,                 sonoma:        "3ac99574af8e25b3eb74d9d83681ab0e5ef327ad3fe2f1d585c35f8e71ab77c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ee52bb976ea6682b45b96c554b6bacd7de8a32847a2bada6ae4472e63ec3a95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b333f70bf6b1bc9195017025fd5eeefde427be3ad0c819dfb59888247873b312"
+    sha256 cellar: :any,                 arm64_tahoe:   "2dcad2aa0003c6fe565a572ab227d39088b2e6d214ea67dc1cf8c86debe9aeb3"
+    sha256 cellar: :any,                 arm64_sequoia: "56f1467b3cdf858045d4286e5334db90f694b399d2deece026a1e0acb2c0596a"
+    sha256 cellar: :any,                 arm64_sonoma:  "4c96af8b2bd0ea5eaf4bb006d5af725bb4b4bd8073cb7f95e769666363b73f0f"
+    sha256 cellar: :any,                 sonoma:        "7e6d496de1ac2536d58c5282b681d91830b312318a54eb1eb6ad082285765c69"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28c86363324b95da0c1c1a19b88d388894c286587261a218909eb940c6003ad0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69525cf2f1f65c56f6f078a65252ef56473918e8246e62e07f09f95b2980b7d7"
   end
 
   depends_on "pkgconf" => :build
@@ -29,13 +29,9 @@ class Borgbackup < Formula
     depends_on "acl"
   end
 
-  pypi_packages extra_packages: ["msgpack", "packaging"]
-
-  # `msgpack` needs to be kept as v1.1.0
-
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/cb/d0/7555686ae7ff5731205df1012ede15dd9d927f6227ea151e901c7406af4f/msgpack-1.1.0.tar.gz"
-    sha256 "dd432ccc2c72b914e4cb77afce64aab761c1137cc698be3984eee260bcb2896e"
+    url "https://files.pythonhosted.org/packages/4d/f2/bfb55a6236ed8725a96b0aa3acbd0ec17588e6a2c3b62a93eb513ed8783f/msgpack-1.1.2.tar.gz"
+    sha256 "3b60763c1373dd60f398488069bcdc703cd08a711477b5d480eecc9f9626f47e"
   end
 
   resource "packaging" do
@@ -62,10 +58,8 @@ class Borgbackup < Formula
     # Create a repo and archive, then test extraction.
     cp test_fixtures("test.pdf"), testpath
 
-    Dir.chdir(testpath) do
-      system bin/"borg", "init", "-e", "none", "test-repo"
-      system bin/"borg", "create", "--compression", "zstd", "test-repo::test-archive", "test.pdf"
-    end
+    system bin/"borg", "init", "-e", "none", "test-repo"
+    system bin/"borg", "create", "--compression", "zstd", "test-repo::test-archive", "test.pdf"
     mkdir testpath/"restore" do
       system bin/"borg", "extract", testpath/"test-repo::test-archive"
     end

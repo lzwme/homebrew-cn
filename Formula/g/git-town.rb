@@ -1,18 +1,18 @@
 class GitTown < Formula
   desc "High-level command-line interface for Git"
   homepage "https://www.git-town.com/"
-  url "https://ghfast.top/https://github.com/git-town/git-town/archive/refs/tags/v22.1.0.tar.gz"
-  sha256 "b44b8f1f5a8c794e8796e308f593c580b414d739c3f5ab0f957d7047ced2604c"
+  url "https://ghfast.top/https://github.com/git-town/git-town/archive/refs/tags/v22.2.0.tar.gz"
+  sha256 "93d9b599d14817eda971703aef3c7df409b051611ceda014ce175fbe42bf1d69"
   license "MIT"
   head "https://github.com/git-town/git-town.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4cda4be538a72615d04a5dbb6618a0a68bf42af16690ba236d684ffe25c87b01"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4cda4be538a72615d04a5dbb6618a0a68bf42af16690ba236d684ffe25c87b01"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4cda4be538a72615d04a5dbb6618a0a68bf42af16690ba236d684ffe25c87b01"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7e1dae41c0b7bf5e07fa8f05ac23ec58d34363fbad95a847d2bee4ffa055d27a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "723a6448baf89a543ff1c3e88de5e2e4fadcc2c601091eb470cbe0e4cdb0d1f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c896d6b6da6ad9f4d2f8a38af9c48bfafd81e5b4eed5a1a934e2312e5f4ae3e1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a6f344c21e5c5331b4a384a29e02d4c658e96af8d81ed0cf9309f8511c11dea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a6f344c21e5c5331b4a384a29e02d4c658e96af8d81ed0cf9309f8511c11dea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a6f344c21e5c5331b4a384a29e02d4c658e96af8d81ed0cf9309f8511c11dea"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dc644c14a5fc084b09f6f45528715a246938a5770c929c4fe1519e3a1e261eed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "522853b31d148e4234c12d598ae52644ec078d328daf66a66f2878d5a71e80bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a46970dc6756e5e5b5fdcbe49e3125627abc107914278d51085dc3cbbd28fa5"
   end
 
   depends_on "go" => :build

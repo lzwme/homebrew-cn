@@ -1,21 +1,18 @@
 class Idris2 < Formula
   desc "Pure functional programming language with dependent types"
   homepage "https://www.idris-lang.org/"
-  url "https://ghfast.top/https://github.com/idris-lang/Idris2/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "7a8612a1cd9f1f737893247260c6942bf93f193375d4b3df0148f7abf74d6e14"
+  url "https://ghfast.top/https://github.com/idris-lang/Idris2/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "7b85226098c5dee96a0a77c892932d2e9fab8e5a5c2d08a0525520e1f4405551"
   license "BSD-3-Clause"
-  revision 5
   head "https://github.com/idris-lang/Idris2.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "048b3581cbaec1cc94fc16a9ccb1ba2da5f504f64022100bd372df91afe7ece6"
-    sha256 cellar: :any, arm64_sequoia: "f9041be4570a258556c3871fb7cc4a4bfe63524b472f543f603871fd01e706b2"
-    sha256 cellar: :any, arm64_sonoma:  "f4b65da7c0383f507bd5860fb2f51592e1219f9f6642ca46373948839f9799d7"
-    sha256 cellar: :any, sonoma:        "8138582f9113a8403a35d94380ea46c9cbf10364d17a6669fdb8e01db67b0cb2"
-    sha256               arm64_linux:   "d2768e9b6d672a1264c628546a56285e4bf18a64a75c9da8cdd6bf09a8328ca5"
-    sha256               x86_64_linux:  "93ea07956b6e25e5d28deb37b0fbed777fb77fcb41dcbcdda0e24bed56b2c868"
+    sha256 cellar: :any, arm64_tahoe:   "768acb8421fcfde56de83b7f36637ab31189a939bab606cb6084b04a2e63ec3e"
+    sha256 cellar: :any, arm64_sequoia: "05546943e537df2312e319a916b217a3e0683c353cb1dce499692c5250220201"
+    sha256 cellar: :any, arm64_sonoma:  "e31df26bcafb55dc49d8e547543981045a7f86d4bd9d8132bdf5eeb538147f52"
+    sha256 cellar: :any, sonoma:        "9239b97ee3e0176d9d016f4dc1e194f0e25251bf403aa37776bac289092dcda3"
+    sha256               arm64_linux:   "d26d06c4c596187bf494e48afe507e9d036db5d5ba7d7de91c159fb661619dc5"
+    sha256               x86_64_linux:  "69e8edc3851beb8bfbd130453a8cb49831e443d7f16702c063cfae3ef032ddc3"
   end
 
   depends_on "gmp" => :build

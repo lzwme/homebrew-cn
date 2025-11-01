@@ -3,19 +3,17 @@ class Dolphie < Formula
 
   desc "Feature-rich top tool for monitoring MySQL"
   homepage "https://github.com/charles-001/dolphie"
-  url "https://files.pythonhosted.org/packages/e3/cc/b84ae062535c88af2723188eed6ae82a046131df717849a66363cf6274db/dolphie-6.10.5.tar.gz"
-  sha256 "64668b204cc32dcf09acb8c179bdeff1f3df658047848ac345f25cdedec2197c"
+  url "https://files.pythonhosted.org/packages/7b/9f/a4f1388772174c3013c668ecfed626a4fbaddbae9546ff28258fc9506efe/dolphie-6.10.6.tar.gz"
+  sha256 "fbfd0a11bd7b570b653107d293999da38a6c69bb3b70199088c64978baa253f1"
   license "GPL-3.0-or-later"
 
-  no_autobump! because: "some resources have to be updated manually"
-
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e8c4757b98dbd21909cc26c9d18f6d680740c8ed739072a38972d8048b29f1c5"
-    sha256 cellar: :any,                 arm64_sequoia: "df26fa16a390e432c1067d23423138a229f415c6cf5c63d6d1d503346171faac"
-    sha256 cellar: :any,                 arm64_sonoma:  "79b69c744016e0f634ca015efd8ed71c970797c482a03df334c9c5414786f527"
-    sha256 cellar: :any,                 sonoma:        "5fc9487b70318bf5c9a2a54cacc8911e0cf449077a4c8870833c54d4ac54fbbe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1491e3215ad48d01ab8434f2a3be701fa45c865fa1778f9d7bb9e1047485caf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83df552221cbf7d9794d4c95a8d731db25132c2d56174b179c4d5a4bd38100f6"
+    sha256 cellar: :any,                 arm64_tahoe:   "2c4778bf8aca04b266c5d54ac5e4ecdb361809d6a5432e0145f7bc8c5e9aee34"
+    sha256 cellar: :any,                 arm64_sequoia: "bbf4754cf8260af915522889609e0a81072a1fa63668c0eece6de3068df0ea5b"
+    sha256 cellar: :any,                 arm64_sonoma:  "aa8487ba3a2b79216f7fbed7c6c98395b3f0bd7d681b0a2cc362a50e7a5ec302"
+    sha256 cellar: :any,                 sonoma:        "c36e3e1c9d9fa230082851031116c45b203011be94bc5462d4ccc0af72363760"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "78fc65452e8ae29eb39b7713a046e42d4d3014584a79d15534281191a62765a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ebaabe08c8279bc7e575e1dc24bbb4e8afdde9c93b3e4000f06664d637c6e7f"
   end
 
   depends_on "rust" => :build # for orjson
@@ -24,12 +22,6 @@ class Dolphie < Formula
   depends_on "python@3.14"
 
   pypi_packages exclude_packages: ["certifi", "cryptography"]
-
-  # `tree-sitter-*` sdists are missing C headers and therefore we have to use GitHub sources
-  # Resources can be updated the following way:
-  # 1. remove all resources to GitHub sources
-  # 2. run `brew update-python-resources dolphie`
-  # 3. replace `tree-sitter-*` resources with their versions from GitHub
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
@@ -122,88 +114,8 @@ class Dolphie < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/ba/ce/f0f938d33d9bebbf8629e0020be00c560ddfa90a23ebe727c2e5aa3f30cf/textual-5.3.0.tar.gz"
-    sha256 "1b6128b339adef2e298cc23ab4777180443240ece5c232f29b22960efd658d4d"
-  end
-
-  resource "tree-sitter" do
-    url "https://files.pythonhosted.org/packages/66/7c/0350cfc47faadc0d3cf7d8237a4e34032b3014ddf4a12ded9933e1648b55/tree-sitter-0.25.2.tar.gz"
-    sha256 "fe43c158555da46723b28b52e058ad444195afd1db3ca7720c59a254544e9c20"
-  end
-
-  resource "tree-sitter-bash" do
-    url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter-bash/archive/refs/tags/v0.25.0.tar.gz"
-    sha256 "9d6bad618e712b51ff060515b0ce6872e33727148f35becb8aa3ad80044c2348"
-  end
-
-  resource "tree-sitter-css" do
-    url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter-css/archive/refs/tags/v0.25.0.tar.gz"
-    sha256 "03965344d8c0435dc54fb45b281578420bb7db8b99df4d34e7e74105a274cb79"
-  end
-
-  resource "tree-sitter-go" do
-    url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter-go/archive/refs/tags/v0.25.0.tar.gz"
-    sha256 "2dc241b97872c53195e01b86542b411a3c1a6201d9c946c78d5c60c063bba1ef"
-  end
-
-  resource "tree-sitter-html" do
-    url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter-html/archive/refs/tags/v0.23.2.tar.gz"
-    sha256 "21fa4f2d4dcb890ef12d09f4979a0007814f67f1c7294a9b17b0108a09e45ef7"
-  end
-
-  resource "tree-sitter-java" do
-    url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter-java/archive/refs/tags/v0.23.5.tar.gz"
-    sha256 "cb199e0faae4b2c08425f88cbb51c1a9319612e7b96315a174a624db9bf3d9f0"
-  end
-
-  resource "tree-sitter-javascript" do
-    url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter-javascript/archive/refs/tags/v0.25.0.tar.gz"
-    sha256 "9712fc283d3dc01d996d20b6392143445d05867a7aad76fdd723824468428b86"
-  end
-
-  resource "tree-sitter-json" do
-    url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter-json/archive/refs/tags/v0.24.8.tar.gz"
-    sha256 "acf6e8362457e819ed8b613f2ad9a0e1b621a77556c296f3abea58f7880a9213"
-  end
-
-  resource "tree-sitter-markdown" do
-    url "https://ghfast.top/https://github.com/tree-sitter-grammars/tree-sitter-markdown/archive/refs/tags/v0.5.1.tar.gz"
-    sha256 "acaffe5a54b4890f1a082ad6b309b600b792e93fc6ee2903d022257d5b15e216"
-  end
-
-  resource "tree-sitter-python" do
-    url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter-python/archive/refs/tags/v0.25.0.tar.gz"
-    sha256 "4609a3665a620e117acf795ff01b9e965880f81745f287a16336f4ca86cf270c"
-  end
-
-  resource "tree-sitter-regex" do
-    url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter-regex/archive/refs/tags/v0.25.0.tar.gz"
-    sha256 "853200795c4cf856eba9de3f4f9abb370d22aef4fb32e8911e210bb7e4253087"
-  end
-
-  resource "tree-sitter-rust" do
-    url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter-rust/archive/refs/tags/v0.24.0.tar.gz"
-    sha256 "79c9eb05af4ebcce8c40760fc65405e0255e2d562702314b813a5dec1273b9a2"
-  end
-
-  resource "tree-sitter-sql" do
-    url "https://ghfast.top/https://github.com/DerekStride/tree-sitter-sql/releases/download/v0.3.11/tree-sitter-sql-v0.3.11.tar.gz"
-    sha256 "a97a324eae9c81ed68f6e162b9b33f8911fc6442caa2950e57c498e2460d1387"
-  end
-
-  resource "tree-sitter-toml" do
-    url "https://ghfast.top/https://github.com/tree-sitter-grammars/tree-sitter-toml/archive/refs/tags/v0.7.0.tar.gz"
-    sha256 "7d52a7d4884f307aabc872867c69084d94456d8afcdc63b0a73031a8b29036dc"
-  end
-
-  resource "tree-sitter-xml" do
-    url "https://ghfast.top/https://github.com/tree-sitter-grammars/tree-sitter-xml/archive/refs/tags/v0.7.0.tar.gz"
-    sha256 "4330a6b3685c2f66d108e1df0448eb40c468518c3a66f2c1607a924c262a3eb9"
-  end
-
-  resource "tree-sitter-yaml" do
-    url "https://ghfast.top/https://github.com/tree-sitter-grammars/tree-sitter-yaml/archive/refs/tags/v0.7.2.tar.gz"
-    sha256 "aeaff5731bb8b66c7054c8aed33cd5edea5f4cd2ac71654f3f6c2ba2073d8fac"
+    url "https://files.pythonhosted.org/packages/af/90/59757aa887ddcea61428820274f1a2d1f986feb7880374a5420ab5d37132/textual-6.5.0.tar.gz"
+    sha256 "e5f152cdd47db48a635d23b839721bae4d0e8b6d855e3fede7285218289294e3"
   end
 
   resource "typing-extensions" do
@@ -222,8 +134,8 @@ class Dolphie < Formula
   end
 
   resource "zstandard" do
-    url "https://files.pythonhosted.org/packages/ed/f6/2ac0287b442160a89d726b17a9184a4c615bb5237db763791a7fd16d9df1/zstandard-0.23.0.tar.gz"
-    sha256 "b2d8c62d08e7255f68f7a740bae85b3c9b8e5466baa9cbf7f57f1cde0ac6bc09"
+    url "https://files.pythonhosted.org/packages/fd/aa/3e0508d5a5dd96529cdc5a97011299056e14c6505b678fd58938792794b1/zstandard-0.25.0.tar.gz"
+    sha256 "7713e1179d162cf5c7906da876ec2ccb9c3a9dcbdffef0cc7f70c3667a205f0b"
   end
 
   def install

@@ -4,19 +4,18 @@ class VowpalWabbit < Formula
   url "https://ghfast.top/https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.10.0.tar.gz"
   sha256 "9f4ec5cddf67af2c7aa9b380b23fe22c4b11e2109f2cbaa1314bdf3570749a4d"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "8516aabb4941936660d56336990cb413df2035dff0b4151f4fde5bbcdf4faef4"
-    sha256 cellar: :any,                 arm64_sequoia: "0116181c4062c3f4e80f5a9b965a9472d10190583d39aa8e6a2a945c393166df"
-    sha256 cellar: :any,                 arm64_sonoma:  "3d4fe05b6883fe3ed161e8be03b9cccce768be141755ce8e8e5308b1ec200f88"
-    sha256 cellar: :any,                 sonoma:        "1d4db7420a6ee6db945a44a6335d260e4d0bbedd8ab02626861b17f58f74bf45"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f07011906721b518d6e2904d121558295a65ad8f558067f7d1600168e517adc5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ded75008541ac17ba973dfeb483eb88f96bc0ee0c8ff1fb9b1d0432195854a18"
+    sha256 cellar: :any,                 arm64_tahoe:   "cf06a7d71afc411b70a5180e3c7f17174800c21eb984ca552523d05e1d48dc8d"
+    sha256 cellar: :any,                 arm64_sequoia: "dcf23c662a2ae94c97abfe2756a3b7b545fee913148f471aa4706c0bdb97c27d"
+    sha256 cellar: :any,                 arm64_sonoma:  "315dbd71b2ae7c0a4a7d04e69616de5b9efadc6684dfa6450be6ad4a4ba8bb7d"
+    sha256 cellar: :any,                 sonoma:        "35f2af451771f6153f139aea0cea8e6afa495b4cb33f4c9b4d52f3de887e2c7b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92f674e4035f4e003784b4942809934d3b7e82801e33c4e98484eda70952ede3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83f19ae77085270dab292a53fa72203559c6b0782010cb55846a8c9e09c43283"
   end
 
   depends_on "boost" => :build
