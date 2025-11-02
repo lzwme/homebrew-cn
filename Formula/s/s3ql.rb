@@ -3,8 +3,8 @@ class S3ql < Formula
 
   desc "POSIX-compliant FUSE filesystem using object store as block storage"
   homepage "https://github.com/s3ql/s3ql"
-  url "https://ghfast.top/https://github.com/s3ql/s3ql/releases/download/s3ql-5.4.0/s3ql-5.4.0.tar.gz"
-  sha256 "65f2f8826642c63cc24d6b77eafcc50456e220b3ba9732d4c04266bd41853c20"
+  url "https://ghfast.top/https://github.com/s3ql/s3ql/releases/download/s3ql-5.4.1/s3ql-5.4.1.tar.gz"
+  sha256 "6d3bbce3796ae0c08d33d1d3366de059cc70ded38eef22860765d03f88a0ac6b"
   license "GPL-3.0-only"
 
   livecheck do
@@ -13,9 +13,8 @@ class S3ql < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "ef75476cfcf3b9cdec62337c80318afdce18c8f4a4db2f218c40990600306fb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ce74a40cbbe8f23d3f9fd99feadb3cc277623ff2d4c5e637ed3b1eb10a7d0bd4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "f9a99acf69a389b0e54fc0e3e295d511f30b554cc7cd53ea9c26dbd64be1c8f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8cf0775e59d9f605a0cc070107680fe59d81fdbc2d6b096794761b41ab7f1fb2"
   end
 
   depends_on "pkgconf" => :build

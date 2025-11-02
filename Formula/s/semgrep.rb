@@ -16,12 +16,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "344f292b50462a6831752a486748076d3d7e78bd5d2adf814c74208d03544cb7"
-    sha256 cellar: :any, arm64_sequoia: "65ca9d83f1b56226c6c636f96ac25ee256671a04fcadb1139f3b21fe5edd6714"
-    sha256 cellar: :any, arm64_sonoma:  "34e655c2d612981be19bff1dedac6330ebcc588f30ef6a0dd9534483b9f4c008"
-    sha256 cellar: :any, sonoma:        "1388c4e1085235761510f71e649667ebd05fda7a3f48bd9e2fa9134e9c74d9c0"
-    sha256               arm64_linux:   "eda644a70ce8430f4c689f8301cd21105097247b1536873b63acf90a977d8600"
-    sha256               x86_64_linux:  "bbc5359ab5a18d875812b02a51c7b67689e3b8998099ef76f94fa7b85859f19c"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "22a5095ddbf4f396387a3dbc8eadb75e65521bc14b34c806fcf4ac45942902a8"
+    sha256 cellar: :any, arm64_sequoia: "544ca80bffe56c8288e052ecd2aa608ae30aa53c73e1f9939c300f541fa1fed1"
+    sha256 cellar: :any, arm64_sonoma:  "5246a6044482bebae02affc941201bb7ea6ed138480513fe2182120ca4a024c4"
+    sha256 cellar: :any, sonoma:        "053e9cf52f466780a955b024a2c60d145ccf1b990a4bb3d6419827035155b4c7"
+    sha256               arm64_linux:   "cc146905dc2a069f036096f70dc7f1a54d351e8d112507bbd3202ac72cb63b7e"
+    sha256               x86_64_linux:  "6b1d0ddff0c2226e26585d2ec6516e09433bc772469b7cec0bb30f1c9fd947c7"
   end
 
   depends_on "autoconf" => :build
@@ -32,14 +33,15 @@ class Semgrep < Formula
   depends_on "opam" => :build
   depends_on "pipenv" => :build
   depends_on "pkgconf" => :build
-  depends_on "rust" => :build
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "dwarfutils"
   depends_on "gmp"
   depends_on "libev"
   depends_on "pcre"
   depends_on "pcre2"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
   depends_on "sqlite"
   depends_on "tree-sitter"
   depends_on "zstd"
@@ -53,7 +55,7 @@ class Semgrep < Formula
   end
 
   pypi_packages package_name:     "semgrep",
-                exclude_packages: "certifi"
+                exclude_packages: %w[certifi pydantic-core rpds-py]
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -240,11 +242,6 @@ class Semgrep < Formula
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
-  end
-
   resource "pydantic-settings" do
     url "https://files.pythonhosted.org/packages/20/c5/dbbc27b814c71676593d1c3f718e6cd7d4f00652cefa24b75f7aa3efb25e/pydantic_settings-2.11.0.tar.gz"
     sha256 "d0e87a1c7d33593beb7194adb8470fc426e95ba02af83a0f23474a04c9a08180"
@@ -280,11 +277,6 @@ class Semgrep < Formula
     sha256 "87b43e0543149efa1253f485cd845bb7ee54df16c9617b8a893650ab84b4acb6"
   end
 
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/48/dc/95f074d43452b3ef5d06276696ece4b3b5d696e7c9ad7173c54b1390cd70/rpds_py-0.28.0.tar.gz"
-    sha256 "abd4df20485a0983e2ca334a216249b6186d6e3c1627e106651943dbdb791aea"
-  end
-
   resource "ruamel-yaml" do
     url "https://files.pythonhosted.org/packages/9f/c7/ee630b29e04a672ecfc9b63227c87fd7a37eb67c1bf30fe95376437f897c/ruamel.yaml-0.18.16.tar.gz"
     sha256 "a6e587512f3c998b2225d68aa1f35111c29fad14aed561a26e73fab729ec5e5a"
@@ -306,18 +298,13 @@ class Semgrep < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/1b/3f/507c21db33b66fb027a332f2cb3abbbe924cc3a79ced12f01ed8645955c9/starlette-0.49.1.tar.gz"
-    sha256 "481a43b71e24ed8c43b11ea02f5353d77840e01480881b8cb5a26b8cae64a8cb"
+    url "https://files.pythonhosted.org/packages/dd/31/fd3576f6b0d7ee3b7968daf4473bb0bb4fa8c98777803b9e8fdb8b1817ca/starlette-0.49.2.tar.gz"
+    sha256 "24b6ab2d95311eedfd713a08b4cb82f6d9c69de9e2cac15866e72c36d90c0528"
   end
 
   resource "tomli" do
     url "https://files.pythonhosted.org/packages/35/b9/de2a5c0144d7d75a57ff355c0c24054f965b2dc3036456ae03a51ea6264b/tomli-2.0.2.tar.gz"
     sha256 "d46d457a85337051c36524bc5349dd91b1877838e2979ac5ced3e710ed8a60ed"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

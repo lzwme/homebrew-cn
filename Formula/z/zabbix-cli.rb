@@ -9,20 +9,16 @@ class ZabbixCli < Formula
   head "https://github.com/unioslo/zabbix-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b2a1d0dd2c5ddc842546bf03d0be23e42af85d04cda4e9d959fed13a4a47aaa5"
-    sha256 cellar: :any,                 arm64_sequoia: "e2a3c6fd831cdba6d37c31a45e841aea482b0bad2956470315d0463487ec5bbd"
-    sha256 cellar: :any,                 arm64_sonoma:  "eb879a8a2a74e4950d08ff31b81642e973d990965bae168d85fd034e75538d68"
-    sha256 cellar: :any,                 sonoma:        "e5be06b1c9a54a89b8665af5522faa4584d19ef9b096bfafca483090a4c29f72"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be84f26984c84401530a987d1d8deb74281a4a5f1b03b2dcaaff95ea649577e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cb73c66316346321a929617bf4fa549ed7408415b8fe4323e7b03a199d1a676"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "5a309b87d3e491786dcf346775e4835b6a34fd0cb56c4794d656bf01150e8dd2"
   end
 
-  depends_on "rust" => :build # for pydantic_core
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
 
   pypi_packages package_name:     "zabbix_cli_uio",
-                exclude_packages: "certifi"
+                exclude_packages: ["certifi", "pydantic-core"]
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -89,11 +85,6 @@ class ZabbixCli < Formula
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
-  end
-
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
     sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
@@ -136,11 +127,6 @@ class ZabbixCli < Formula
     end
   end
 
-  resource "tomli" do
-    url "https://files.pythonhosted.org/packages/52/ed/3f73f72945444548f33eba9a87fc7a6e969915e7b1acc8260b30e1f76a2f/tomli-2.3.0.tar.gz"
-    sha256 "64be704a875d2a59753d80ee8a533c3fe183e3f06807ff7dc2232938ccb01549"
-  end
-
   resource "tomli-w" do
     url "https://files.pythonhosted.org/packages/19/75/241269d1da26b624c0d5e110e8149093c759b7a286138f4efd61a60e75fe/tomli_w-1.2.0.tar.gz"
     sha256 "2dd14fac5a47c27be9cd4c976af5a12d87fb1f0b4512f81d69cce3b35ae25021"
@@ -149,11 +135,6 @@ class ZabbixCli < Formula
   resource "typer" do
     url "https://files.pythonhosted.org/packages/8f/28/7c85c8032b91dbe79725b6f17d2fffc595dff06a35c7a30a37bef73a1ab4/typer-0.20.0.tar.gz"
     sha256 "1aaf6494031793e4876fb0bacfa6a912b551cf43c1e63c800df8b1a866720c37"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "typing-inspection" do

@@ -5,6 +5,7 @@ class Libedit < Formula
   version "20251016-3.1"
   sha256 "21362b00653bbfc1c71f71a7578da66b5b5203559d43134d2dd7719e313ce041"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :homepage
@@ -12,12 +13,12 @@ class Libedit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b7908d3b0cb2d06c816ad380e8b968d9a733d8d2715d3efee37d30c84859b97f"
-    sha256 cellar: :any,                 arm64_sequoia: "130c26a65749e81d3dc981db8886115e7203062b0fc4c44d23916c318294c67e"
-    sha256 cellar: :any,                 arm64_sonoma:  "601a2ed57d0c8465f70e33c7b70f5955e836fe7f6beac6472fe74375b1a1c092"
-    sha256 cellar: :any,                 sonoma:        "a974fd48c78b24aff3b5e1dd4abc5edc7976dbb7e8f8ad155c5ab396f0603e4c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea2ad9305e5d9c9e0c78631c9673aa7f027afeee465e149ef988e9f750ede779"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72a509c156cd1752a7b4e5bfee1c1d63e491c166f8871879f93958df06ce3ae6"
+    sha256 cellar: :any,                 arm64_tahoe:   "2957d416dfdc8c58a1dd666669d3c7d1330ba15ededc2438a4de3059ca8ec20b"
+    sha256 cellar: :any,                 arm64_sequoia: "510068e4f21502b89b2c659b098f0f1a3adfa6e30e7cd77ec5389e78038026d9"
+    sha256 cellar: :any,                 arm64_sonoma:  "ff578f10a3f9bd4c183f97578b0e92893d27a1fdcdd3093ddb7bff44d4e61416"
+    sha256 cellar: :any,                 sonoma:        "a875f674adab029105a001dda7a43dbe44544887d73caad16a48cf7c51cacc4e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e61d1403b27ad966a5aafaafafd2db88aace8c717d57aa561df5f7b6d1f1fc69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0e22aa9e7d09e78d35b2a97e87747271a8651f7eabe4d0e424756939718dfe2"
   end
 
   keg_only :provided_by_macos
@@ -25,10 +26,17 @@ class Libedit < Formula
   uses_from_macos "ncurses"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
+
+    # Create readline compatibility symlinks for use by license incompatible
+    # software. We put these in libexec to avoid conflict with readline.
+    # Similar to https://packages.debian.org/sid/libeditreadline-dev
+    %w[history readline].each do |libname|
+      (libexec/"include/readline").install_symlink include/"editline/readline.h" => "#{libname}.h"
+      (libexec/"lib").install_symlink lib/shared_library("libedit") => shared_library("lib#{libname}")
+      (libexec/"lib").install_symlink lib/"libedit.a" => "lib#{libname}.a"
+    end
   end
 
   test do

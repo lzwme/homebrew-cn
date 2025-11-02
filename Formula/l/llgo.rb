@@ -12,25 +12,24 @@ class Llgo < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "60411f5804c4c72c4031bc496de021df488e4cb5c026fcf1bb11e14aa270bd7a"
-    sha256 cellar: :any, arm64_sequoia: "0947ad7513fea18ae89e066e0bbb4ed3c6dc0299ead7d69a4cb57b6f3941d36f"
-    sha256 cellar: :any, arm64_sonoma:  "7de761a6c845ba0a46d27164595fdf5c779cab4fea67cdcc927b696eab7b97d9"
-    sha256 cellar: :any, arm64_ventura: "cacaa00dc85e867d7c346af23319ecc37dd1518acadacb1329072f2764beb52a"
-    sha256 cellar: :any, sonoma:        "c1d46f74280d51ae465daa27d47c9e06e4da328d52f74a4b871551d4ccfffab5"
-    sha256 cellar: :any, ventura:       "a6022098d5a0ef86f343ce6aca0c983caa53b8c836ab620212da8b459359631b"
-    sha256               arm64_linux:   "710be299af98b936a098d9d59d6f23a73a30adf53fdd179f6c34bbaf316966f8"
-    sha256               x86_64_linux:  "2486bc3ddd7c27fe03c9ae10df73553c09b9f21b3d4dc94b55f99da632dbbf5f"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "149396741cedb0fb60fd5bf3d8423a8571bae92fed3f048a1e602f8cbeedecb6"
+    sha256 cellar: :any, arm64_sequoia: "de8b64199106055cb7e749469ef442ea7374d92178aa496aed0df11d705b8d16"
+    sha256 cellar: :any, arm64_sonoma:  "ecf2444adf9c01de2a302b6ed429ab4898777d022072fc0eef6ea547b02a4f9d"
+    sha256 cellar: :any, sonoma:        "0099ed69d28c0cc4d20032303dd9bb6dfb3d6be85da8d2faaa477ba84c05a7b9"
+    sha256               arm64_linux:   "6baf00949ce6a7cbbff5b25cb719701447be0959f47f6dae35208f018bd8b551"
+    sha256               x86_64_linux:  "aead0b7e4756d249c0af4971ed346b87738bdd6e1efb5d1f9881593fa36190ce"
   end
 
   depends_on "bdw-gc"
   depends_on "go@1.24"
-  depends_on "libffi"
   depends_on "libuv"
   depends_on "lld@19"
   depends_on "llvm@19"
   depends_on "openssl@3"
   depends_on "pkgconf"
+
+  uses_from_macos "libffi"
   uses_from_macos "zlib"
 
   on_linux do

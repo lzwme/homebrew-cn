@@ -1,8 +1,8 @@
 class Opensubdiv < Formula
   desc "Open-source subdivision surface library"
   homepage "https://graphics.pixar.com/opensubdiv/docs/intro.html"
-  url "https://ghfast.top/https://github.com/PixarAnimationStudios/OpenSubdiv/archive/refs/tags/v3_6_1.tar.gz"
-  sha256 "e9d99a480d80e999667643747c76eb0138d36c418fc154fd71b4bd65be103d52"
+  url "https://ghfast.top/https://github.com/PixarAnimationStudios/OpenSubdiv/archive/refs/tags/v3_7_0.tar.gz"
+  sha256 "f843eb49daf20264007d807cbc64516a1fed9cdb1149aaf84ff47691d97491f9"
   license "Apache-2.0"
 
   livecheck do
@@ -10,15 +10,15 @@ class Opensubdiv < Formula
     regex(/^v?(\d+(?:[._]\d+)+)$/i)
   end
 
+  no_autobump! because: :incompatible_version_format
+
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "90ed3d2c4cfcc6614c29c6da4d8bad6615917a5ad051e2a14723d3160d366832"
-    sha256 cellar: :any,                 arm64_sequoia: "76b7b335ea8d9524e18dbbd21691858ad74d7d09ff8b5969d31e9ab44bfb9676"
-    sha256 cellar: :any,                 arm64_sonoma:  "1223a31b57c67540fbad0f16064d5fda7706f3c3f57603e5eb02d4cc2c5573c6"
-    sha256 cellar: :any,                 arm64_ventura: "0da10fc1cbe96db3262a162f9f4fe0cd85243292e1a1a602163cf7928f3b625e"
-    sha256 cellar: :any,                 sonoma:        "579179a8c61cb33744c70242f32a94d782855a735dc4cbd9f8a1f892ff798f59"
-    sha256 cellar: :any,                 ventura:       "eccd1656b2948e437acdb40da817aa0da08a2051f05efac4f24ff2ec6533da0c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "315cd06874f5f2c2dc281e4e7d1c67913f308cca6e075fd93e1039c2eb6a7595"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "652cca3e70d8291e4f77fd43b1fdda740e492fe9f7d997c474557a21071e9933"
+    sha256 cellar: :any,                 arm64_tahoe:   "0008ddc2f7b700de6b4be9c40e34265cd286eb82e2c8f3dbd5644765c7ba7992"
+    sha256 cellar: :any,                 arm64_sequoia: "b4330e55e4bc62714863e6d69ad3865e466fa91dd0eff7fab13bddc683c3afae"
+    sha256 cellar: :any,                 arm64_sonoma:  "34a9b873da0935fc9cc0b68c4100c95bd1b23cc60b59672bb299ba2449b6f94f"
+    sha256 cellar: :any,                 sonoma:        "1d441722962464d68ef89db0062fca468ba4e61ecfbb11192054947202aaa268"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8a10d139e39100f49e3a599fa968a5e3914d93c9e6ac86ba365ea5fe2116ed1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "110adddf9314496f0f21654961e0a173e72bb02c3c18a50152ab7ceeef52b586"
   end
 
   depends_on "cmake" => :build

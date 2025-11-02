@@ -9,28 +9,31 @@ class KeeperCommander < Formula
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "93d77f1e7f99dbb4b6458033fe5710535414b53ca36d05b7086a367f21e5d2ee"
-    sha256 cellar: :any,                 arm64_sequoia: "2aa7ba83a066badead79175ffb88b92eeff0ab92d6a016f74b350b116d064d69"
-    sha256 cellar: :any,                 arm64_sonoma:  "fe98178dec00d4e2c24d2987f7d64daa70f0cbfb99b08fdba5a2fc810ddc6bae"
-    sha256 cellar: :any,                 sonoma:        "0cf23018b89dac09fd5bfc5263196d2fc38b95afa052e799c78444ebe5ecfd75"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "270a40f0b154b9e7099e89043d2c0b2af22045242845a074eaa08dae1f3aa8bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9753767077d94dd545edafa9dded3039d83b76aac340b1a9e91334c001624465"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "1bf1b8268997873f93461c0b1ec3f721fa744a1c668286be1998cd7edfe79e3c"
+    sha256 cellar: :any,                 arm64_sequoia: "836c307431a0257b8ddf7a31ca950d01c42688bf6c907130bd9f76e000c2c966"
+    sha256 cellar: :any,                 arm64_sonoma:  "dd2b8983f02e7f8a4aeed228a13705f2ae3452c6cf4cb5bdcfaece23a0dceb25"
+    sha256 cellar: :any,                 sonoma:        "8a4b572716b60ba7cb88cb6101adf8eb7a6dd02aa44f60833f9a147b000b9e3b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fde48e40e54a7d2c6b49585ee83f2e397693450c7bc682a67c1b512a8d5a7db3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d21ee015f32ed6e3e0cab1252d7036c53175600339c534cede15e46adff90ee"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "rust" => :build # bcrypt dependencies
+  depends_on "rust" => :build # for bcrypt, keeper-pam-webrtc-rs
 
-  depends_on "certifi"
-  depends_on "cryptography"
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "ffmpeg"
   depends_on "libvpx"
   depends_on "libyaml"
   depends_on "opus"
-  depends_on "pillow"
+  depends_on "pillow" => :no_linkage
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
   depends_on "srtp"
 
   on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
     depends_on "openssl@3"
   end
 
@@ -39,7 +42,8 @@ class KeeperCommander < Formula
     depends_on "openjpeg"
   end
 
-  pypi_packages exclude_packages: %w[certifi cryptography pillow]
+  pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic-core],
+                extra_packages:   %w[cbor2 pyobjc-framework-localauthentication]
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -59,6 +63,11 @@ class KeeperCommander < Formula
   resource "blinker" do
     url "https://files.pythonhosted.org/packages/21/28/9b3f50ce0e048515135495f198351908d99540d69bfdc8c1d15b73dc55ce/blinker-1.9.0.tar.gz"
     sha256 "b4ce2265a7abece45e7cc896e98dbebe6cead56bcf805a3d23136d145f5445bf"
+  end
+
+  resource "cbor2" do
+    url "https://files.pythonhosted.org/packages/a2/b8/c0f6a7d46f816cb18b1fda61a2fe648abe16039f1ff93ea720a6e9fb3cee/cbor2-5.7.1.tar.gz"
+    sha256 "7a405a1d7c8230ee9acf240aad48ae947ef584e8af05f169f3c1bde8f01f8b71"
   end
 
   resource "charset-normalizer" do
@@ -82,8 +91,8 @@ class KeeperCommander < Formula
   end
 
   resource "deprecated" do
-    url "https://files.pythonhosted.org/packages/98/97/06afe62762c9a8a86af0cfb7bfdab22a43ad17138b07af5b1a58442690a2/deprecated-1.2.18.tar.gz"
-    sha256 "422b6f6d859da6f2ef57857761bfb392480502a64c3028ca9bbe86085d72115d"
+    url "https://files.pythonhosted.org/packages/49/85/12f0a49a7c4ffb70572b6c2ef13c90c88fd190debda93b23f026b25f9634/deprecated-1.3.1.tar.gz"
+    sha256 "b1b50e0ff0c1fddaa5708a2c6b0a6588bb09b892825ab2b214ac9ea9d92a5223"
   end
 
   resource "fido2" do
@@ -107,8 +116,8 @@ class KeeperCommander < Formula
   end
 
   resource "fpdf2" do
-    url "https://files.pythonhosted.org/packages/87/ff/4a1dd414e5c5df5a11904118afdb544f3a446c9c512cc77e9741cf74fb30/fpdf2-2.8.4.tar.gz"
-    sha256 "12b1f1dd35d0c2f35284bcfe10b153d6ca4baf29377379843e73d3f971eab6b7"
+    url "https://files.pythonhosted.org/packages/e9/c0/784b130a28f4ed612e9aff26d1118e1f91005713dcd0a35e60b54d316b56/fpdf2-2.8.5.tar.gz"
+    sha256 "af4491ef2e0a5fe476f9d61362925658949c995f7e804438c0e81008f1550247"
   end
 
   resource "idna" do
@@ -132,8 +141,8 @@ class KeeperCommander < Formula
   end
 
   resource "keeper-pam-webrtc-rs" do
-    url "https://files.pythonhosted.org/packages/4a/cb/9e5851e7f991dd1a14d6db0502169c535ec55408bba42f682734ce9df442/keeper_pam_webrtc_rs-1.1.0.tar.gz"
-    sha256 "f8b79c5595585d2faf381f0e67600c0d8415b90905b01b573d192199a9a91fa0"
+    url "https://files.pythonhosted.org/packages/b6/0c/88474a9a15cf02704b924e65ec301f4a9ed0ac609d9b4d2f1c173c3e3fe7/keeper_pam_webrtc_rs-1.1.2.tar.gz"
+    sha256 "70e3625705bcd56a83e0c38d325436d9800da420ccb9e2cf73cf4fe8417c1f13"
   end
 
   resource "keeper-secrets-manager-core" do
@@ -196,11 +205,6 @@ class KeeperCommander < Formula
     sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
-    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
-  end
-
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
     sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
@@ -209,6 +213,26 @@ class KeeperCommander < Formula
   resource "pyngrok" do
     url "https://files.pythonhosted.org/packages/3f/64/5ab436dd78db3bcfdbae5965c48e21a6ee3fa6ec87859e44442e2fb361c3/pyngrok-7.4.1.tar.gz"
     sha256 "ad8637738ced5bdb88c28b087fea39ca552860c2d30004ac01033c0f8eb4f36e"
+  end
+
+  resource "pyobjc-core" do
+    url "https://files.pythonhosted.org/packages/ab/dc/6d63019133e39e2b299dfbab786e64997fff0f145c45a417e1dd51faaf3f/pyobjc_core-12.0.tar.gz"
+    sha256 "7e05c805a776149a937b61b892a0459895d32d9002bedc95ce2be31ef1e37a29"
+  end
+
+  resource "pyobjc-framework-cocoa" do
+    url "https://files.pythonhosted.org/packages/37/6f/89837da349fe7de6476c426f118096b147de923139556d98af1832c64b97/pyobjc_framework_cocoa-12.0.tar.gz"
+    sha256 "02d69305b698015a20fcc8e1296e1528e413d8cf9fdcd590478d359386d76e8a"
+  end
+
+  resource "pyobjc-framework-localauthentication" do
+    url "https://files.pythonhosted.org/packages/08/20/6744b25940d9462e0410cadd6da2e25ea3c01e6067a1234d8092ae0a40fa/pyobjc_framework_localauthentication-12.0.tar.gz"
+    sha256 "6287b671d4e418419d8d5b2244616d72f346f6b8a8bc18d9a6bccb93a291091c"
+  end
+
+  resource "pyobjc-framework-security" do
+    url "https://files.pythonhosted.org/packages/cb/d6/ab109af82a65d52ab829010013b5a24b829c9155bc9608ebc80a43b8797c/pyobjc_framework_security-12.0.tar.gz"
+    sha256 "d64d069da79fbf1dadbc091717604843b9d5be96670f7b40bc9a08df12b4045b"
   end
 
   resource "pyperclip" do
@@ -241,11 +265,6 @@ class KeeperCommander < Formula
     sha256 "0095b12bf5966de529c0feb1fa08671671b3368eec77d7ef7ab114be2c068b3c"
   end
 
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
-  end
-
   resource "typing-inspection" do
     url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
     sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
@@ -272,8 +291,8 @@ class KeeperCommander < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/95/8f/aeb76c5b46e273670962298c23e7ddde79916cb74db802131d49a85e4b7d/wrapt-1.17.3.tar.gz"
-    sha256 "f66eb08feaa410fe4eebd17f2a2c8e2e46d3476e9f8c783daa8e09e0faa666d0"
+    url "https://files.pythonhosted.org/packages/49/19/5e5bcd855d808892fe02d49219f97a50f64cd6d8313d75df3494ee97b1a3/wrapt-2.0.0.tar.gz"
+    sha256 "35a542cc7a962331d0279735c30995b024e852cf40481e384fd63caaa391cbb9"
   end
 
   resource "zipp" do
@@ -282,7 +301,19 @@ class KeeperCommander < Formula
   end
 
   def install
-    venv = virtualenv_install_with_resources without: "keeper-pam-webrtc-rs"
+    without = %w[keeper-pam-webrtc-rs]
+
+    if OS.mac?
+      # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
+      ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"
+      # pyobjc-core uses "-fdisable-block-signature-string" introduced in clang 17
+      ENV.llvm_clang if DevelopmentTools.clang_build_version <= 1699
+    else
+      # `pyobjc-*` dependencies are only needed on macOS
+      without += resources.filter_map { |r| r.name if r.name.start_with?("pyobjc") }
+    end
+
+    venv = virtualenv_install_with_resources(without:)
 
     # Workaround for `Caused by: Failed to read readme specified in pyproject.toml`
     resource("keeper-pam-webrtc-rs").stage do

@@ -1,18 +1,18 @@
 class Osm2pgrouting < Formula
   desc "Import OSM data into pgRouting database"
   homepage "https://pgrouting.org/docs/tools/osm2pgrouting.html"
-  url "https://ghfast.top/https://github.com/pgRouting/osm2pgrouting/archive/refs/tags/v2.3.9.tar.gz"
-  sha256 "54657e2e6769a48fb04dc5653f7956da17fc56b3ae245d1deb41014af9a8314c"
+  url "https://ghfast.top/https://github.com/pgRouting/osm2pgrouting/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "3d3042aa0dd30930d27801c9833ebfbe16eba0ab0e5d6277636ce17b157f2a0f"
   license "GPL-2.0-or-later"
   head "https://github.com/pgRouting/osm2pgrouting.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f902b81e1cf18e547a9539607705e277a8468747e04d17633bd195ff35b3063a"
-    sha256 cellar: :any,                 arm64_sequoia: "53448447f9c571b28ccc68e988c522b8670fe899d3ee00c50045b62a23fce394"
-    sha256 cellar: :any,                 arm64_sonoma:  "47450d40085d78241a6c8662971e6d7a506b54476b9f553eb9d03c02e06c2373"
-    sha256 cellar: :any,                 sonoma:        "ed9a14a625bead0a5149afd166e65b820c25336eb4b8c9530735c1e421e712fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b1951305634638e9148826dd21f73ec1c5c1749ee85662699623154a3444bc1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d363a7abbcb544e2a8852e16890692a5c57cbf6a7f3da186ee3ae2899cdc0c5"
+    sha256 cellar: :any,                 arm64_tahoe:   "a1e6d63741efd9433243a34fe6eeabac94c997be7bfee53cddc38bdef146ecfd"
+    sha256 cellar: :any,                 arm64_sequoia: "79c6fed661046213cde072cb868cf54d4b5957d3df71e06510f3e4510488956b"
+    sha256 cellar: :any,                 arm64_sonoma:  "343380fd98246518862587e7d1ee1c9ff2e9a5cf45dfd5f75f603cf6d3086073"
+    sha256 cellar: :any,                 sonoma:        "58cc66aa2903ebc7a582e0aee137d8451d265de54d4bce92a7e0176dac015ba7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd934d5d273ee9a827099f0d9fee6ab760319fc66f0fcd16500b442dcabbf5bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ceb7cff82516b6511dd821ffb18aeb0b4c4e58a32f4fbef41ebbc59e02c4b66"
   end
 
   depends_on "cmake" => :build

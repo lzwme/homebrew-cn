@@ -1,19 +1,19 @@
 class Ngrep < Formula
   desc "Network grep"
   homepage "https://github.com/jpr5/ngrep"
-  url "https://ghfast.top/https://github.com/jpr5/ngrep/archive/refs/tags/v1.48.0.tar.gz"
-  sha256 "49a20b83f6e3d9191c0b5533c0875fcde83df43347938c4c6fa43702bdbd06b4"
+  url "https://ghfast.top/https://github.com/jpr5/ngrep/archive/refs/tags/v1.48.1.tar.gz"
+  sha256 "ac06d783d76f274abd8ed039fab643731b752d0f8cf0c6488d00cf72d1087ddd"
   license :cannot_represent # Described as 'BSD with advertising' here: https://src.fedoraproject.org/rpms/ngrep/blob/rawhide/f/ngrep.spec#_8
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8e6eaba4477e7a4b71e82c79e79a75e332b1a487b9fac32b66d6d02716d13bca"
-    sha256 cellar: :any,                 arm64_sequoia: "c8112d09a7a11467016d8e24bc415a7d9e9e5a53e5fb140b248ac483bb0c1809"
-    sha256 cellar: :any,                 arm64_sonoma:  "fb46a7d9f3501bf1960204e524f2aacd6f8b43fb2c9700f7afeb3d0ba8910123"
-    sha256 cellar: :any,                 sonoma:        "78acc794ff77f9a5de5fcba6a74fdff5d548b94c4c3029644a9c31c195b518fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3999f9c875dde9ccc1f43f0c110fba879c7c2f140b51cab4e1765f3a4042e328"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25c3ae98eab72985d04c368437233fe8e12573a88c9248c73503f6984f3b4738"
+    sha256 cellar: :any,                 arm64_tahoe:   "1e81a2588d449893347f0e960d8b708b327ac39af76bd095be8130c7b8c31d9e"
+    sha256 cellar: :any,                 arm64_sequoia: "6cfcc81f373821110c17d05284816c91a7e734cc805872b3b25d28f38ed722e5"
+    sha256 cellar: :any,                 arm64_sonoma:  "5d107060ebfcbead5b51101b608c4e0b33e0c363a75551318fee665cfa6dde44"
+    sha256 cellar: :any,                 sonoma:        "87a73b0a34c3739ebc113f7bf6407f66a8f5c9b88445db64b48236b8d28f02d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e1b5500a4d7c40ffb21e5af7e613b2a72df6ac74dbe0c62c321c6a201293942"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97082961593596b60dd944968bee7a23c53bd2a67e0b6994dc2ca6fd744fe936"
   end
 
   depends_on "libpcap"

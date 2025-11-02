@@ -3,20 +3,18 @@ class Doitlive < Formula
 
   desc "Replay stored shell commands for live presentations"
   homepage "https://doitlive.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/32/75/c94e4d4e7fac8606e199fad35a00b33e4252d00078f25285f91e97e546c0/doitlive-5.1.0.tar.gz"
-  sha256 "b6bcd25f9f037b7e96e34d68549306adb3e8c83f6e92c51ec2b225abc05b25c5"
+  url "https://files.pythonhosted.org/packages/c4/bb/96c5bb76723fcfd7031482817717e5b55441ae66b7fd7dedfa0e1c7bfaf1/doitlive-5.2.0.tar.gz"
+  sha256 "041bbdf197c36b2a497c4d0a69dac53a777a77564b57ac02d4777d6058d170fa"
   license "MIT"
-  revision 3
   head "https://github.com/sloria/doitlive.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd010ee60ee386929902d4a84e49dcaef0252b8fd99f5cc3a9423c3c2577ecec"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9d3ac22c0a128fb6cd4a53a17c220eed94b443c6b902d6ee8bd0e68ed98adc0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7a7fd196cb81600a7161cc3eb47ca2c05249e23e93ba5832db769a6070a59b3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5a974646bdea613259542c41e6c171196d8ee4a4b4f0ea1ede12b0cdc11b0ba1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "81e48751a6148e9dfb71de1a4853b5db9b62fde4aca9cc3b6d18d93d13c7ff93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f9590f214b22bb78730e0e5927dd6869ed4e6dd842218260936bac237fb0c6e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "617b5c471d1a6e15b4be87778b0bab4c7811fb176fbaa6c637429b9cbe2b5b16"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6ce4414162588b46a35d4e767960f2fc1fc110c3494192922c2b3ca37a9c531"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4d485ce8cade1b9593b9d146453feb92f1c6a234361ab0fb5f3398da0e58f39"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9a750f68ab7bf0565b741d2cddfa33f70251f3cc3c72aa2678db154c2fd1c53e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c5a126d527f40d7c9ba71cb7d2c71efed0ab1b194ff178a2646251184c59c85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "356a45cdfbb119cbafff8827283722c93c341814ff458572cb564f8ddfe902c1"
   end
 
   depends_on "python@3.14"

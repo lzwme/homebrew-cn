@@ -13,27 +13,18 @@ class Aamath < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "e545971fc077cd2ef34f4a2d6c9ecbd3677eaad3c84695c27d7660f27c11e3f5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c62dab89088d46d52193768e3dd863939963ca8fbcf2eb67ecfd52c928117dfd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "38e8b1fcd51f2be7c3b27818ffddf2b4fbf3de14da75b884e57bdbc8b4a3819b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0fdc50f0e8165ff7de731e092ddfa57149185bd1c1e1cf463e819645364d25ee"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e823e4d89ae67660af61746c7472d80f0eb2ea70503471ac1190f9c0c691faf0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "eec6c9dd0ae3b32b3d2b22ac4cf926c6b3084a41623361762a4c0a297dc05286"
-    sha256 cellar: :any_skip_relocation, sonoma:         "35be127036f118e9d0842c7cf9cf93bb306a51b9ce06a87e586805b7fa2b714c"
-    sha256 cellar: :any_skip_relocation, ventura:        "1edd59508421089d629ab153c03d9db3c5e0e3cad0a75d3baea36b533a5b1d0a"
-    sha256 cellar: :any_skip_relocation, monterey:       "58065a231153b1971495d1d07c7d68740a1e7ca51ff95d8c8684ab511aaa4ab7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "588a5ccb517b6d41a4f323f7a376cd9a34e4d0d447baf15179c05fbbf2c0e588"
-    sha256 cellar: :any_skip_relocation, catalina:       "1ac1413ef0322b280ae5bd5663373ed959ee54d28dbdd3261fc4da6e57abf44c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "720220ff8348613058bb9d4ef1cf87bea850c513e721906a37a406136e6d2327"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f803d33b088e251eba9820706307616a771dea7d2994818a8fc36aca85af0541"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "587054f7e1107e61554956c8ba147c9560af1e7138547651ba82d32464c0862c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7fb04795cf214c974e4e45cb8c369dad3232624dd070641a4f408808fbd98d3b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04bc9d4ebf6c7eb4e4634f79fdd297aa57c87d570f0e3f6937c9bf104d0c0f2a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "56c65eaae7db0c86ca690b79cde6894c281877f00c18965975b4e4fd91b4fe71"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "912312e5d565a7255691d9cff437f1e66419054dc75365cda3af747ef5bf5c6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79b5ff4704b7f8393182ee3b68f5343a745e5e62ad4b2db90b3b4f28c186ae52"
   end
 
   uses_from_macos "bison" => :build # for yacc
   uses_from_macos "flex" => :build
-
-  on_linux do
-    depends_on "readline"
-  end
+  uses_from_macos "libedit" # readline's license is incompatible with GPL-2.0-only
 
   # Fix build on clang; patch by Homebrew team
   # https://github.com/Homebrew/homebrew/issues/23872
@@ -43,6 +34,13 @@ class Aamath < Formula
   end
 
   def install
+    unless OS.mac?
+      inreplace "Makefile" do |s|
+        s.change_make_var! "CFLAGS", "#{s.get_make_var("CFLAGS")} -I#{Formula["libedit"].opt_libexec}/include"
+        s.change_make_var! "LFLAGS", "#{s.get_make_var("LFLAGS")} -L#{Formula["libedit"].opt_libexec}/lib"
+      end
+    end
+
     ENV.deparallelize
     system "make"
 

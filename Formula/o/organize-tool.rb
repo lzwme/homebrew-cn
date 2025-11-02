@@ -9,29 +9,29 @@ class OrganizeTool < Formula
   head "https://github.com/tfeldmann/organize.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "00ecd02f231ccc41e8d6904bd3e515338ad5a611bbedf703d35e248c64462d5a"
-    sha256 cellar: :any,                 arm64_sequoia: "b89341f3fe80e692800f633167b7112504af0923e9ac1d441d58b3cd1ecc87a9"
-    sha256 cellar: :any,                 arm64_sonoma:  "60b4ae1616ef9e18fa1dcb893850f76dc3828cd6907b91d0a7a8e3416fbbb5f0"
-    sha256 cellar: :any,                 sonoma:        "92b79bde399d75dab3c41a5b4e51861cc0c72d4e728fbf8b568f46be84972f9b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8406576338ceba88cf0e641663283837165b60a339187ff5ef3006e0db1cd094"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a385f80de1ed412c49ceaa39e931212bc6c254a686e75da7128e34266e23e5ff"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "82f2d77b517f37e35f50676b15ec7c9e6f80d43b2c53dfab649c722912ba4f95"
+    sha256 cellar: :any,                 arm64_sequoia: "4e2acbe0d1b7d0dac77d8d6bc1cb3ea12bece402305b5d7b8e3081b180f6cdcd"
+    sha256 cellar: :any,                 arm64_sonoma:  "9ae3771db125f2270a6455d1ac603942eda74347ea433d9b8f0bcfc1263d7cc7"
+    sha256 cellar: :any,                 sonoma:        "8153a2c04f628593063397b7672519f00b4e526b2c5cf1ec10e4a4c521686d37"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f659544fc071c5bb66a2d0d1c385cfa6fb013275850e86ba1ebf56e00ab9cdb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3ab8fce87d692379b3d64d0cd2fb6a7ef15adbb17391ef32b2bb9b2f5e08cb3"
   end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build # for macos-tags
-  depends_on "rust" => :build
   depends_on "cryptography" => :no_linkage
   depends_on "freetype"
   depends_on "libyaml"
   depends_on "openjpeg"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.14"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
   end
 
-  pypi_packages exclude_packages: "cryptography",
+  pypi_packages exclude_packages: ["cryptography", "pydantic-core"],
                 extra_packages:   "pyobjc-framework-cocoa"
 
   resource "annotated-types" do
@@ -40,13 +40,13 @@ class OrganizeTool < Formula
   end
 
   resource "arrow" do
-    url "https://files.pythonhosted.org/packages/2e/00/0f6e8fcdb23ea632c866620cc872729ff43ed91d284c866b515c6342b173/arrow-1.3.0.tar.gz"
-    sha256 "d4540617648cb5f895730f1ad8c82a65f2dad0166f57b75f3ca54759c4d67a85"
+    url "https://files.pythonhosted.org/packages/b9/33/032cdc44182491aa708d06a68b62434140d8c50820a087fac7af37703357/arrow-1.4.0.tar.gz"
+    sha256 "ed0cc050e98001b8779e84d461b0098c4ac597e88704a655582b21d116e526d7"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "docopt-ng" do
@@ -110,13 +110,8 @@ class OrganizeTool < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/c3/da/b8a7ee04378a53f6fefefc0c5e05570a3ebfdfa0523a878bcd3b475683ee/pydantic-2.12.0.tar.gz"
-    sha256 "c1a077e6270dbfb37bfd8b498b3981e2bb18f68103720e51fa6c306a5a9af563"
-  end
-
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/7d/14/12b4a0d2b0b10d8e1d9a24ad94e7bbb43335eaf29c0c4e57860e8a30734a/pydantic_core-2.41.1.tar.gz"
-    sha256 "1ad375859a6d8c356b7704ec0f547a58e82ee80bb41baa811ad710e124bc8f2f"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pygments" do
@@ -125,13 +120,13 @@ class OrganizeTool < Formula
   end
 
   resource "pyobjc-core" do
-    url "https://files.pythonhosted.org/packages/e8/e9/0b85c81e2b441267bca707b5d89f56c2f02578ef8f3eafddf0e0c0b8848c/pyobjc_core-11.1.tar.gz"
-    sha256 "b63d4d90c5df7e762f34739b39cc55bc63dbcf9fb2fb3f2671e528488c7a87fe"
+    url "https://files.pythonhosted.org/packages/ab/dc/6d63019133e39e2b299dfbab786e64997fff0f145c45a417e1dd51faaf3f/pyobjc_core-12.0.tar.gz"
+    sha256 "7e05c805a776149a937b61b892a0459895d32d9002bedc95ce2be31ef1e37a29"
   end
 
   resource "pyobjc-framework-cocoa" do
-    url "https://files.pythonhosted.org/packages/4b/c5/7a866d24bc026f79239b74d05e2cf3088b03263da66d53d1b4cf5207f5ae/pyobjc_framework_cocoa-11.1.tar.gz"
-    sha256 "87df76b9b73e7ca699a828ff112564b59251bb9bbe72e610e670a4dc9940d038"
+    url "https://files.pythonhosted.org/packages/37/6f/89837da349fe7de6476c426f118096b147de923139556d98af1832c64b97/pyobjc_framework_cocoa-12.0.tar.gz"
+    sha256 "02d69305b698015a20fcc8e1296e1528e413d8cf9fdcd590478d359386d76e8a"
   end
 
   resource "python-dateutil" do
@@ -164,19 +159,14 @@ class OrganizeTool < Formula
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
-  resource "types-python-dateutil" do
-    url "https://files.pythonhosted.org/packages/fc/83/24ed25dd0c6277a1a170c180ad9eef5879ecc9a4745b58d7905a4588c80d/types_python_dateutil-2.9.0.20251008.tar.gz"
-    sha256 "c3826289c170c93ebd8360c3485311187df740166dbab9dd3b792e69f2bc1f9c"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
-  end
-
   resource "typing-inspection" do
     url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
     sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
+  end
+
+  resource "tzdata" do
+    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
+    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
   end
 
   resource "xattr" do

@@ -24,7 +24,7 @@ class Squid < Formula
   end
 
   head do
-    url "https://github.com/squid-cache/squid.git", branch: "v6"
+    url "https://github.com/squid-cache/squid.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
