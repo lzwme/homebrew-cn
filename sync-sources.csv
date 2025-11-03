@@ -1580,6 +1580,7 @@ Homebrew-homebrew-core/Formula/d/dockerize.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dockly.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dockutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dockviz.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/docmd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/doctest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/doctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docutils.rb, Homebrew/homebrew-core, 0
@@ -2578,6 +2579,7 @@ Homebrew-homebrew-core/Formula/g/gobo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gobuster.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gocheat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gocloc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/goclone.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gocr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gocryptfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goctl.rb, Homebrew/homebrew-core, 1
@@ -5409,6 +5411,7 @@ Homebrew-homebrew-core/Formula/p/perl-dbd-mysql.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/perl-xml-parser.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/perl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/perltidy.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/permify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/peru.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/petsc-complex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/petsc.rb, Homebrew/homebrew-core, 0
@@ -8256,6 +8259,7 @@ Homebrew-homebrew-cask/Casks/a/aquaterm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/araxis-merge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/arc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/archaeology.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/archi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/archipelago.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/archiver-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/archivewebpage.rb, Homebrew/homebrew-cask, 1
@@ -8289,6 +8293,7 @@ Homebrew-homebrew-cask/Casks/a/assinador-serpro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/astah-professional.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/astah-uml.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/astro-command-center.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/astro-editor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/astrofox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/astropad-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/astropad.rb, Homebrew/homebrew-cask, 0
@@ -9063,6 +9068,7 @@ Homebrew-homebrew-cask/Casks/d/dictunifier.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/difffork.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/diffmerge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/diffusionbee.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/d/digicheck-ng.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/digikam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/digital.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dingtalk.rb, Homebrew/homebrew-cask, 0
@@ -12808,6 +12814,7 @@ Homebrew-homebrew-cask/Casks/l/lantern.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lapce.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/laravel-kit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lark.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/laserpecker-design-space.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lasso-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/last-window-quits.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lastfm.rb, Homebrew/homebrew-cask, 0
@@ -13620,6 +13627,7 @@ Homebrew-homebrew-cask/Casks/o/openinterminal-lite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openinterminal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openkey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openlens.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/openlist-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openlp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openmsx-emulator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openmtp.rb, Homebrew/homebrew-cask, 1
@@ -15684,7 +15692,7 @@ nicerloop-homebrew-nicerloop/Formula/windows-esd-to-iso.rb, nicerloop/homebrew-n
 nicerloop-homebrew-nicerloop/Formula/wine-scripts.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/8bitdo-firmware-updater.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Casks/airdisplay-client.rb, nicerloop/homebrew-nicerloop, 0
-nicerloop-homebrew-nicerloop/Casks/archi.rb, nicerloop/homebrew-nicerloop, 0
+nicerloop-homebrew-nicerloop/Casks/archi.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/archivewebpage.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/audiobookbinder.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/cmis-workbench.rb, nicerloop/homebrew-nicerloop, 0

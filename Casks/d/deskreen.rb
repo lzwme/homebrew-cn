@@ -1,8 +1,11 @@
 cask "deskreen" do
-  version "2.0.4"
-  sha256 "43b9a49d0ff70211a88cfd23bf660dac9f3609063dde3ccf6d07f5307050e443"
+  arch arm: "arm64", intel: "x64"
 
-  url "https://ghfast.top/https://github.com/pavlobu/deskreen/releases/download/v#{version}/Deskreen-#{version}.dmg",
+  version "3.0.8"
+  sha256 arm:   "84d99f524cd98fa751231cd0295ea7e55b27c826ff049ff317d2203fa1abfe1d",
+         intel: "b7b8c804e90bcda8a508b23640ec2ae5e5e055675933777258530bca50b07c21"
+
+  url "https://ghfast.top/https://github.com/pavlobu/deskreen/releases/download/v#{version}/Deskreen-ce-#{version}-#{arch}.dmg",
       verified: "github.com/pavlobu/deskreen/"
   name "Deskreen"
   desc "Turns any device with a web browser into a secondary screen"
@@ -13,9 +16,9 @@ cask "deskreen" do
     strategy :github_latest
   end
 
-  disable! date: "2026-09-01", because: :fails_gatekeeper_check
+  depends_on macos: ">= :big_sur"
 
-  app "Deskreen.app"
+  app "Deskreen CE.app"
 
   zap trash: [
     "~/Library/Application Support/Deskreen",
@@ -23,8 +26,4 @@ cask "deskreen" do
     "~/Library/Preferences/com.pavlobu.Deskreen.plist",
     "~/Library/Saved Application State/com.pavlobu.Deskreen.savedState",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

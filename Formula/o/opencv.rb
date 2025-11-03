@@ -2,7 +2,7 @@ class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
   license "Apache-2.0"
-  revision 13
+  revision 14
 
   stable do
     url "https://ghfast.top/https://github.com/opencv/opencv/archive/refs/tags/4.12.0.tar.gz"
@@ -22,6 +22,12 @@ class Opencv < Formula
       url "https://github.com/opencv/opencv/commit/90c444abd387ffa70b2e72a34922903a2f0f4f5a.patch?full_index=1"
       sha256 "5b662eea7b5de1dac3e06895c711955c9d1515d1202191b68594f4f9cfa23242"
     end
+
+    # Backport support for eigen 5.0.0
+    patch do
+      url "https://github.com/opencv/opencv/commit/468de9b36740b3355f0d5cd8be2ce28b340df120.patch?full_index=1"
+      sha256 "b86ca3cf644a49ab7219348db2bc78497235df75ceef714d46fc80e9e80f2a06"
+    end
   end
 
   livecheck do
@@ -32,12 +38,12 @@ class Opencv < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "69878e1c23e30f06c6144ad65e7d069a96f958858bd23e9cd75db0c2a30e203e"
-    sha256 arm64_sequoia: "be1a00992a5ecafb7cc0757a88501a7bc7c372e9f94719ff66418e71b67121ca"
-    sha256 arm64_sonoma:  "43de3d8788aa3d328019bf148328fa7255016fd0ed2896b6bb2c9412bcb420f8"
-    sha256 sonoma:        "fd55a0d753703064d3cfff30c35d0793e903fa080daba5e8c5ad504ea6979d8d"
-    sha256 arm64_linux:   "92608887fab48ee5dbe5e0ed2ea3064bef29fc27b72b2fd0b92bad5c107849b5"
-    sha256 x86_64_linux:  "577df23fd07c1cec9a1582a2342c3e67d4f7d8a08a741b8790f1117ecbb388b9"
+    sha256 arm64_tahoe:   "4e73ba74aacb6c6904a67c4374fe3f321ab83c8850c69c1ec84c31625c782dff"
+    sha256 arm64_sequoia: "b4ca0e76f80388b82b6815f226a2478f1d6ebbaf004d0bc86f85f24c89234c26"
+    sha256 arm64_sonoma:  "1314a31b08110b7a02e8b045a4a3a7c3f63f4ba99091d7a2fbc9860fbe68b232"
+    sha256 sonoma:        "eef9799d1c8c66174010c4ae3fcfc5da425c242c766be3a8d3c41d618f239658"
+    sha256 arm64_linux:   "b6ff9c31554869d2f2599a2089826fb53ab47a3dec8b0bdd252aecd77dcc348e"
+    sha256 x86_64_linux:  "b8687c6d87099cb5e1c959ac0390365ac0ca082d793c3dc78c9320c80031f7c2"
   end
 
   head do

@@ -1,17 +1,17 @@
 class Cocogitto < Formula
   desc "Conventional Commits toolbox"
   homepage "https://docs.cocogitto.io/"
-  url "https://ghfast.top/https://github.com/cocogitto/cocogitto/archive/refs/tags/6.4.0.tar.gz"
-  sha256 "4e62b280e818d3b0c1320dd6e4b9d51d3ff1a65c79b9b2cd8d46b33e1ca6886b"
+  url "https://ghfast.top/https://github.com/cocogitto/cocogitto/archive/refs/tags/6.5.0.tar.gz"
+  sha256 "b807f6201dcbebbd97e0e8e34d8f2f14885b1b1c529b465463fe7a4dc8209ff5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "24d35cc8041b18d7f87fb3386da4e9e933fa1149284c03139834c5a499e4befc"
-    sha256 cellar: :any,                 arm64_sequoia: "053010fa520bedc3b06974d73d44f7ff4af5aa7ca0c68602f4c3c37ac3fd36e7"
-    sha256 cellar: :any,                 arm64_sonoma:  "b77bb2fd3ab132e0af8bf4eaeddeab3f2f6d65c775395b97385a7a0afd46b1b8"
-    sha256 cellar: :any,                 sonoma:        "06de79a32b602121bed4545f023d4c9e513811bc3ea3c4f68bf8f1515ab38fc0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "debb5de55ec6e4fa7d7c740f3e6f01eda8d00f1ac0d52d3889e1789e21fcf741"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed7c3c5f78279fedd2dc7f254b76fad62c05ed5e33e36d775870ebd0035bae26"
+    sha256 cellar: :any,                 arm64_tahoe:   "a704fbe771aa230e5f98656e922a01efe4312a6e33dbfb78bbb04ee87a06463c"
+    sha256 cellar: :any,                 arm64_sequoia: "36bbcd4bfb64967dca2190df496432a21ba77d3883b25200ca631ec94b3371a3"
+    sha256 cellar: :any,                 arm64_sonoma:  "c02747e437f09dfcb70359ad8e859c86e5fd4c01d41f1cd1ec0ae6ca6bdefd10"
+    sha256 cellar: :any,                 sonoma:        "b6563dc90f933912cabfcb22ea6260e97d6fe610c5ea679c0a0e98fed2d2fff4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c71d19c76a15b2cd48561419e940279ede41de5bf7236dcf99cf977db39a363e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "740669b61556b1b7213dd4037ad17e6e36bd5ea9f5b2130a6154ccc0f43066ce"
   end
 
   depends_on "pkgconf" => :build

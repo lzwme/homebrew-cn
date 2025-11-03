@@ -2,7 +2,7 @@ class OpenBabel < Formula
   desc "Chemical toolbox"
   homepage "https://github.com/openbabel/openbabel"
   license "GPL-2.0-only"
-  revision 2
+  revision 3
   head "https://github.com/openbabel/openbabel.git", branch: "master"
 
   stable do
@@ -19,13 +19,12 @@ class OpenBabel < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 5
-    sha256                               arm64_tahoe:   "8aa3929bd15d13c66d1b5443dbfd8fd98e02b9cce1d63032888c915b44485d46"
-    sha256                               arm64_sequoia: "65eafc217a10604751abd22e88287b1438b102ec350c5ad048d5bcdcfd2c7a7b"
-    sha256                               arm64_sonoma:  "714b33b9ca188ed6ccd80f1685bd3ec3cf1d2a3943de60e406e1f796ceb93407"
-    sha256                               sonoma:        "ed785e17d0df66435ca7f7e717e1c9b15bba10963fd6ba7b23d8c016e796c8d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2322af7a05a516be0a2249ab927ccdefe9017d68bd8792de30720067e9a832ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab9fd08d3145a9a52d22f61e352fcc4a32fd09ec94760c44202b5e5ffda86a15"
+    sha256                               arm64_tahoe:   "c47e9e8ea40a2696cec7bd243305ae343b0155fb83ea762de2fd19206d1d0fdd"
+    sha256                               arm64_sequoia: "b27a40c13f6483684ad331885588426d47769ae3e908eddfa85fc9b9fcb5d534"
+    sha256                               arm64_sonoma:  "aea63f9ac32d735934c888291feeaed2e0df311d9d9ca245c2a3badae11785bf"
+    sha256                               sonoma:        "17283bbbb30e3510464a2317b3de1103b5d7a40a362317cc5ec073ece0991a97"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "17fdce92285bb7c5701d4c10c24fff72e53a790537a3951ef78776c9a9e85b66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d46e406f2ac959683c827270395e4dea9f2601f00cd7c657e549cdfcd01844b2"
   end
 
   depends_on "cmake" => :build
@@ -64,6 +63,13 @@ class OpenBabel < Formula
     args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
     inreplace "CMakeLists.txt", "cmake_policy(SET CMP0042 OLD)",
                                 "cmake_policy(SET CMP0042 NEW)"
+
+    # Workaround to build with eigen 5.0.0
+    # Issue ref: https://github.com/openbabel/openbabel/issues/2839
+    args += %W[-DEIGEN3_FOUND=ON -DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}/eigen3]
+    inreplace "CMakeLists.txt", "set (CMAKE_CXX_STANDARD 11)", "set (CMAKE_CXX_STANDARD 14)"
+    rm "cmake/modules/FindEigen3.cmake"
+
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

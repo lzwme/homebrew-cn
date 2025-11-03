@@ -8,7 +8,7 @@ cask "cocoapods" do
   desc "Dependency manager for Cocoa projects"
   homepage "https://cocoapods.org/"
 
-  conflicts_with formula: "cocoapods"
+  # conflicts_with formula: "cocoapods"
 
   app "CocoaPods.app"
   binary "#{appdir}/CocoaPods.app/Contents/Helpers/pod"

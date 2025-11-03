@@ -1,20 +1,28 @@
 class Pcl < Formula
   desc "Library for 2D/3D image and point cloud processing"
   homepage "https://pointclouds.org/"
-  url "https://ghfast.top/https://github.com/PointCloudLibrary/pcl/archive/refs/tags/pcl-1.15.1.tar.gz"
-  sha256 "e1d862c7b6bd27a45884a825a2e509bfcbd4561307d5bfe17ce5c8a3d94a6c29"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/PointCloudLibrary/pcl.git", branch: "master"
 
+  stable do
+    url "https://ghfast.top/https://github.com/PointCloudLibrary/pcl/archive/refs/tags/pcl-1.15.1.tar.gz"
+    sha256 "e1d862c7b6bd27a45884a825a2e509bfcbd4561307d5bfe17ce5c8a3d94a6c29"
+
+    # Backport support for eigen 5.0.0
+    patch do
+      url "https://github.com/PointCloudLibrary/pcl/commit/2d6929bdcd98beaa28fa8ee3a105beb566f16347.patch?full_index=1"
+      sha256 "66e6b47a2373224f6a64a87124c94fbe79d3624b4cb0d71603c4805323343b62"
+    end
+  end
+
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "c06cc9485a67cba638ab78dbd215b4c8839f420e26fffed015bd0f95c7c07a70"
-    sha256 cellar: :any,                 arm64_sequoia: "982b8332e9e6de238fbf34c31057dc15767166f63f7b2b9c3f57f55d682e9b01"
-    sha256 cellar: :any,                 arm64_sonoma:  "122837c0587bd4e41ec76a36c5840d657e64e0d8465b53fa87f64637fbd66c1f"
-    sha256 cellar: :any,                 sonoma:        "d65d4d87b0f7e60a4be06db963bdaff7dca9c2bfaf837a2a79998838c8e6fc10"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d545ba9d0477fb775588af1f44165524b90236acee0f715e8e3513fd1b42a7c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0870d2eb742f352c2ca71955d0cd4711345bfec5beac6b8e903540a775d2cd64"
+    sha256 cellar: :any,                 arm64_tahoe:   "bffd9015641e8e0f41a330b289769f391526de7fce302c55b47a1810855c7714"
+    sha256 cellar: :any,                 arm64_sequoia: "05c3ab811e06258620ba9e48aed56ebd7554212475bf2edb28b02d733caf70d3"
+    sha256 cellar: :any,                 arm64_sonoma:  "ee46a4518eb4226857b485d46713fe174bc1ce94c50b00babb74e7490f88f838"
+    sha256 cellar: :any,                 sonoma:        "7c576693ae1468c7a962f072e67a453caf33f33fe9d8aabcd9cdf5606dbc2c49"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c88cb862a00392e09048310d551d33f367d691af7320c9c261960bb7a3f7a6a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5db03271116649a3db04c7895d4f37cc0c9b8297bd748418e10310570f2736e"
   end
 
   depends_on "cmake" => [:build, :test]

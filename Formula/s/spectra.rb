@@ -7,7 +7,8 @@ class Spectra < Formula
   head "https://github.com/yixuan/spectra.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "377f0b18a9ecae4ecf76abd9d031c9000f35176e4252331a6930927a2a7ea8ec"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "edd1c8fc5c4b6ea0ba64a9b48a0b86f986b0b24c4f6b624b45908b84ea3963f1"
   end
 
   depends_on "cmake" => :build
@@ -22,25 +23,25 @@ class Spectra < Formula
   end
 
   test do
-    system ENV.cxx, pkgshare/"test.cpp", "-std=c++11",
+    system ENV.cxx, pkgshare/"test.cpp", "-std=c++14",
            "-I#{Formula["eigen"].opt_include/"eigen3"}", "-I#{include}", "-o", "test"
 
     macos_expected = <<~EOS
       5 Eigenvalues found:
-      1000.01
-      999.017
-      997.962
-      996.978
-      996.017
+      999.971
+       999.04
+      997.993
+      997.009
+      996.023
     EOS
 
     linux_expected = <<~EOS
       5 Eigenvalues found:
-      999.969
-      998.965
-      997.995
-      996.999
-      995.962
+      999.996
+      998.952
+       997.96
+      996.972
+      995.967
     EOS
 
     if OS.mac?

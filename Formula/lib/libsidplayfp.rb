@@ -1,17 +1,17 @@
 class Libsidplayfp < Formula
   desc "Library to play Commodore 64 music"
   homepage "https://github.com/libsidplayfp/libsidplayfp"
-  url "https://ghfast.top/https://github.com/libsidplayfp/libsidplayfp/releases/download/v2.15.1/libsidplayfp-2.15.1.tar.gz"
-  sha256 "499201cc87bd6dacfd4480834c6ff0171264a22a436906d0a8bafc009db0b75c"
+  url "https://ghfast.top/https://github.com/libsidplayfp/libsidplayfp/releases/download/v2.15.2/libsidplayfp-2.15.2.tar.gz"
+  sha256 "7c6ab283fda53d34973fa266fc3809e16964dd8ccb7edcc11516ef5e3f66b3cd"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "56c69d8e4e79e2e4f85664750342cf941480436970429b0b6b6cf18a0e613d8f"
-    sha256 cellar: :any,                 arm64_sequoia: "5c4534171116b0248f38a5dde4478ae31d4949b9d508bedd8326d76c43092cba"
-    sha256 cellar: :any,                 arm64_sonoma:  "64c2a550065c4e5af1d3576420c0da58c15b0edb9c96a329c17498151f6b872c"
-    sha256 cellar: :any,                 sonoma:        "1a9873be2f87741577ee21c6e80ddc089dfbaa9d37a262e33782660839e2abba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "215e08dd5253a2796fbd3c02ca3ef905bc34f92246e3f97002b11baed06cb289"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb63c2c7be971880f59139c33a3b740e5bec9178a91e9d80b8d76aafa5a02315"
+    sha256 cellar: :any,                 arm64_tahoe:   "65e0d8914bf8d0c5e42f05ae401d25f65b5b116b2af79b04d17aa231c61be0a4"
+    sha256 cellar: :any,                 arm64_sequoia: "e8e9c176b128de56de5da423f4cd88ba61192aa9faf541191c3d7dbb8e1220c1"
+    sha256 cellar: :any,                 arm64_sonoma:  "b0960122ff1c866c737600c2579e8513149616b82b2feb2c2eb0fe80b757429a"
+    sha256 cellar: :any,                 sonoma:        "b9fe1ef83b3e5ef08dc02f8765df57aeea5a85cfd809fd76d9f2492899ef6cb4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "adfe9041ae013a9170e57a60d89be16970ee5015e9bb8a6818a8f24b7bcf6e52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69015567aad0ff9e497502895b5c26d0a85887c4ff3d5e162d53851e9b04501b"
   end
 
   head do

@@ -1,11 +1,20 @@
 class Pinocchio < Formula
   desc "Efficient and fast C++ library implementing Rigid Body Dynamics algorithms"
   homepage "https://stack-of-tasks.github.io/pinocchio"
-  url "https://ghfast.top/https://github.com/stack-of-tasks/pinocchio/releases/download/v3.8.0/pinocchio-3.8.0.tar.gz"
-  sha256 "aa4664d95a54af7197354a80f5ad324cb291b00593886b78dd868b1fd13636ca"
   license "BSD-2-Clause"
   revision 2
   head "https://github.com/stack-of-tasks/pinocchio.git", branch: "devel"
+
+  stable do
+    url "https://ghfast.top/https://github.com/stack-of-tasks/pinocchio/releases/download/v3.8.0/pinocchio-3.8.0.tar.gz"
+    sha256 "aa4664d95a54af7197354a80f5ad324cb291b00593886b78dd868b1fd13636ca"
+
+    # Backport support for Boost 1.89.0
+    patch do
+      url "https://github.com/stack-of-tasks/pinocchio/commit/fbc4ee6dcf3a082834472faef137aff680aed185.patch?full_index=1"
+      sha256 "3e06a335e5722d8bce41825d2e4cc7c24ecb901c59bf5b4e1a41e7534508c35c"
+    end
+  end
 
   livecheck do
     url :stable
@@ -13,12 +22,13 @@ class Pinocchio < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "ad59d8f8645c1fe910aef054a362dc911d445655a04c360acef7ee6d80ccacae"
-    sha256                               arm64_sequoia: "0a1ca75e54973052a1ca1c6dfee6e75adec52017c43a211472bac1436b56ad21"
-    sha256                               arm64_sonoma:  "380a922baf90a9c088bd60b55cf4dd6bbaa7b45e56f4a725767c1792181ef2e0"
-    sha256 cellar: :any,                 sonoma:        "32d270cd511a9e56c7a0c82fad9bb455d5374dd8124567a8a9f4d3d4ff2994a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "af875d4f6244dbd34a2bc777c15b85d86d4f1823190d749fb3f7da10d1f6139b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af9b95baee413bd3831563b83fc4e3be81d353244d8cfe8ab87ff69713f23a74"
+    rebuild 1
+    sha256                               arm64_tahoe:   "e19d2282d0794c232d922aa9e3a5af8f5ca23fbe4b25c28e9602450e6f39a61e"
+    sha256                               arm64_sequoia: "beed70e9a4fcd296b71206024dedf8881ec0fcf0b6dbf58dc8c6b3f43b59ba99"
+    sha256                               arm64_sonoma:  "44ad5aeba610332c165aec43354f5c93a44a46894626de76dc878c5bb3e4826f"
+    sha256 cellar: :any,                 sonoma:        "477f4b339d7469f71458bff271d3195f0d91e33efab32d967bd30edd8546095b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fad8d887a620862757488344c7652a2ba75edbcd1aa67f0cf7bc346a5a38d9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "442ad85615f7ef8f854c80ae37ac5607f50eeeca5d047092a763f832606ab4c3"
   end
 
   depends_on "cmake" => :build
@@ -38,9 +48,20 @@ class Pinocchio < Formula
     depends_on "octomap"
   end
 
-  # Workaround for Boost 1.89.0
-  # TODO: Report upstream
-  patch :DATA
+  # Apply open PR to fix build with eigen 5.0.0
+  # PR ref: https://github.com/stack-of-tasks/pinocchio/pull/2779
+  patch do
+    url "https://github.com/stack-of-tasks/pinocchio/commit/cd06f874671f44507777663fe36d643035d20300.patch?full_index=1"
+    sha256 "f3bde3a9c1a094aff88ea11d767651f11a245d24857f375f4fed20f0abf58cbf"
+  end
+  patch do
+    url "https://github.com/stack-of-tasks/pinocchio/commit/a25d222611a695a209375a27780cef5579c0e50a.patch?full_index=1"
+    sha256 "1c54ce6f2b0ce1eb4f804794ac3ce812866cdfa784c521beb555d463a332dca2"
+  end
+  patch do
+    url "https://github.com/stack-of-tasks/pinocchio/commit/2dd5857b4fb418de3b37c98d49b5f31fc59c5bb3.patch?full_index=1"
+    sha256 "8a6b1f107af678de080b64f95e4525044e50f31c95a91cf0d892fdd09bdaa2c3"
+  end
 
   def python3
     "python3.14"
@@ -70,18 +91,3 @@ class Pinocchio < Formula
     PYTHON
   end
 end
-
-__END__
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 67dd06db..5fbe52be 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -286,7 +286,7 @@ if(BUILD_WITH_EXTRA_SUPPORT)
-   message(STATUS "Found Qhull.")
- endif()
-
--set(BOOST_REQUIRED_COMPONENTS filesystem serialization system)
-+set(BOOST_REQUIRED_COMPONENTS filesystem serialization)
-
- set_boost_default_options()
- export_boost_default_options()

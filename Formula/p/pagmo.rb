@@ -4,17 +4,15 @@ class Pagmo < Formula
   url "https://ghfast.top/https://github.com/esa/pagmo2/archive/refs/tags/v2.19.1.tar.gz"
   sha256 "ecc180e669fa6bbece959429ac7d92439e89e1fd1c523aa72b11b6c82e414a1d"
   license any_of: ["LGPL-3.0-or-later", "GPL-3.0-or-later"]
-  revision 5
+  revision 6
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "970141f824a1df8a43acb58e2d7f833d07b6fc783805fbeb691dafc8611c2f4d"
-    sha256 cellar: :any,                 arm64_sequoia: "d990228017c8de47ef6a251f01d9d3f1256692df3516459b13bbe9b409e45400"
-    sha256 cellar: :any,                 arm64_sonoma:  "a6f6f191b85a838faf5d10addc32f9f8e6565c4317caf8867bc80ce17d2ead44"
-    sha256 cellar: :any,                 arm64_ventura: "436417c8ba3422bd8fe6f3a5e8c5a20cd3256baae1137f3a928343303891414d"
-    sha256 cellar: :any,                 sonoma:        "669f2fed9d5aac73db355fa9ca25c2f16f9dbf32eaa9aae56ab9b2dc707e089c"
-    sha256 cellar: :any,                 ventura:       "3327fd6748b1d7cb0fffe50f567e9baea9c088e6c9c2e069aa1073ecd16fb2f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "44c6934ddde022ea5fbdeb64b5a8dfa0f0b3ad01407b051023a3ad274552fbd2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee1febbdbb2ebf081daef299a4cfbaea9b3f3182bd3efa0583fd2dee8bf1322b"
+    sha256 cellar: :any,                 arm64_tahoe:   "967ca7afd0f94fe22053b2cf187c97a14c853e160668700db06e8a64f76a704e"
+    sha256 cellar: :any,                 arm64_sequoia: "9d5ab6ee707031ed11dd9291c579b778e03ed5357a159fa2fa5c9b572c8fe49f"
+    sha256 cellar: :any,                 arm64_sonoma:  "4ec05c1307d3e5375802ddf095106412287eea4024037c4179960564284104f4"
+    sha256 cellar: :any,                 sonoma:        "9c6488dd49f684f62e4035943dc9a370a08eed979d71a5139061700570135ff3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe0c1de3105984b315801418a3f104de528645485da9ca587777efe7b6da1820"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bf66c10d87861392ebe1158c0f58ed438190310415b2f2093f53571c00eeaa7"
   end
 
   depends_on "cmake" => :build
@@ -22,6 +20,16 @@ class Pagmo < Formula
   depends_on "eigen"
   depends_on "nlopt"
   depends_on "tbb"
+
+  # Backport support for eigen 5.0.0
+  patch do
+    url "https://github.com/esa/pagmo2/commit/bdd8559d7663536c3a5f56b013f07da11a35c9b8.patch?full_index=1"
+    sha256 "f8679d6ca0d4bd5d9b44382da35ddc6f80404d389813ce05f050d00f5ce3706c"
+  end
+  patch do
+    url "https://github.com/esa/pagmo2/commit/d0e70403179769c326f2694673473e1d3ef0bec7.patch?full_index=1"
+    sha256 "6dcf5ac2cbd8e9b0de20845a51ef5d8eeb0ffd0472f32bcc833ce3f314718f0b"
+  end
 
   def install
     args = %w[

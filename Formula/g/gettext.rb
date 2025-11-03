@@ -5,7 +5,10 @@ class Gettext < Formula
   mirror "https://ftp.gnu.org/gnu/gettext/gettext-0.26.tar.gz"
   mirror "http://ftp.gnu.org/gnu/gettext/gettext-0.26.tar.gz"
   sha256 "39acf4b0371e9b110b60005562aace5b3631fed9b1bb9ecccfc7f56e58bb1d7f"
-  license "GPL-3.0-or-later"
+  license all_of: [
+    "GPL-3.0-or-later",
+    "LGPL-2.1-or-later", # libintl, libasprintf
+  ]
 
   bottle do
     sha256 arm64_tahoe:   "f1a3876bef27aa262949baa369395e4b9312845f79b86860124773ec6eef8608"

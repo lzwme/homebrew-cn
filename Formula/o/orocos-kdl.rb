@@ -4,22 +4,25 @@ class OrocosKdl < Formula
   url "https://ghfast.top/https://github.com/orocos/orocos_kinematics_dynamics/archive/refs/tags/1.5.3.tar.gz"
   sha256 "3895eed1b51a6803c79e7ac4acd6a2243d621b887ac26a1a6b82a86a1131c3b6"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "63bd25562899d50286d71174337878609041305d72923eee5eee59110ed8a688"
-    sha256 cellar: :any,                 arm64_sequoia: "481e5428dee3a6c21cd778be800155f2769d068be19d320d725dcebff21de6b8"
-    sha256 cellar: :any,                 arm64_sonoma:  "a1eaebcc52b6ac3618084d0da355f989d3c11cd4d9bb9ff5dd4f09decd2536aa"
-    sha256 cellar: :any,                 sonoma:        "24a8d96dfaa3d6b7e2721b8d8fa5c5f2727e0a2c49d45fcf5ee22f6ba6a20b11"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6939db142728ba767a4fa239a9289740380386aa7ebe03cccfaa177e73a579a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09b0ae0640e6e94d36f6d1e87c612cf5a06a56b9f401b3756df6f1e7a3d40941"
+    sha256 cellar: :any,                 arm64_tahoe:   "f426120fbf55e9662b30801031021f06f97de8dceb6fa2b191767868e858f411"
+    sha256 cellar: :any,                 arm64_sequoia: "731dac44439182078ff405304de91785dd85c8c63ccdb9ace10b6c6892755b9a"
+    sha256 cellar: :any,                 arm64_sonoma:  "1e89c7a3075cb09bc42a48dac3e0615c3fb247610e47a1fed9b4ba16452523a7"
+    sha256 cellar: :any,                 tahoe:         "b3452bee349dfa41da18a7c9f3df3343561702441e13befe4f879bc4359c679e"
+    sha256 cellar: :any,                 sequoia:       "7c12c1c4509464c389d04d0a273e40d09e44da3df366ba5e889dc0051fa9823f"
+    sha256 cellar: :any,                 sonoma:        "c422791098d548a20a16a386b03514b3efddd1e4646804932559a98023ffd9f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0d188d3d5f65a19ecdd37d5a39d194177d341b70f755d7b8fb1459a59723fcd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b9fe98f805b5c9c3944a6288a5a3abdc262ee58755d259fbeb11f04571e30dc"
   end
 
   depends_on "cmake" => :build
   depends_on "eigen"
 
   def install
-    ENV.cxx11
     system "cmake", "-S", "orocos_kdl", "-B", "build",
+                    "-DCMAKE_CXX_STANDARD=14",
                     "-DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}/eigen3",
                     *std_cmake_args
     system "cmake", "--build", "build"
@@ -39,7 +42,7 @@ class OrocosKdl < Formula
       }
     CPP
 
-    system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}", "-lorocos-kdl",
+    system ENV.cxx, "test.cpp", "-std=c++14", "-I#{include}", "-L#{lib}", "-lorocos-kdl",
                     "-o", "test"
     system "./test"
   end

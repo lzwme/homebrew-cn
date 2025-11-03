@@ -1,22 +1,24 @@
 class Vtcode < Formula
   desc "CLI Semantic Coding Agent"
   homepage "https://github.com/vinhnx/vtcode"
-  url "https://static.crates.io/crates/vtcode/vtcode-0.37.1.crate"
-  sha256 "bddd5488eef052d41a3d03ef82623fa07f19c1686faccbb661d1315989ec7d9a"
+  url "https://static.crates.io/crates/vtcode/vtcode-0.39.2.crate"
+  sha256 "d1139e35a86263e6e021aab78514df4219d1dc991c3537cde565757f6208f690"
   license "MIT"
   head "https://github.com/vinhnx/vtcode.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9144a385b7945e2394a579adab8d957ddc0b172f1f0bacbbfa215c798124721c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d66c9b2a8ca2c1bdbfd60b193df823afea892ddea3b2125279bd9c10bf0264be"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b263ffda0b2a09cded85a5ff0fac9a8e9a6dc6340408b98bc948d858156e88b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59d8b05773cc594b2e986550f709db2cfeaa56f36c688e39d1619bcd23cd023b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "23732cb19a4b5023bf816d8d9f5bec9ad1580a20ab10a035916d285c82c8f2b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b483c8f657df3210b9cfdcf7ff78e8ba671e98d9a6a1c2afd72c73f289a30ec4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bdeb75bdfce2f82d19b65724a245235e2fe21a8a0e03fee3d5ce5090f0734f92"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7415b2501975b368467d28e97f588ca611fdfff81d5a4d552e521edc7f338a84"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c7b78ce592173ccba9c275de74dd0f3bf4b4d5879019ba2f2ffabf41eb4fcc6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "94ab595640090dc897cf813472e0a1a4de64d71494c209ec9da9f95ae9cf18b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "96c057f5f73f47eb1e082ee49a27322824eda0499067f585318dc4428c0af857"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03d2f8038fec91839fbadebdfea8c3d4e78187efd1b6c1155c45a7cecb21095e"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  uses_from_macos "zlib"
 
   on_linux do
     depends_on "openssl@3"

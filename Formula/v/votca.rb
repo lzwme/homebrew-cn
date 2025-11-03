@@ -4,15 +4,15 @@ class Votca < Formula
   url "https://ghfast.top/https://github.com/votca/votca/archive/refs/tags/v2025.1.tar.gz"
   sha256 "85b487d2b2a31f26869be422c98f816b95c88a4ab112ea4650cccd4c2706bdbf"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "72a7e979c09e507ffd4e176f4804b8edd351d7f3530747e0acf2b5c4fe3fd71f"
-    sha256 cellar: :any,                 arm64_sequoia: "b7d2c9c5455447bbe46b1f76c6d6aa0f45fec3fea090271eb4f9ca92679a9d6b"
-    sha256 cellar: :any,                 arm64_sonoma:  "8d05fa695814e71319f9078d4ad488e7f7e77768fc231be3c711104fec726313"
-    sha256 cellar: :any,                 sonoma:        "cf6fbd2feda356e3d7ff6e54759e23bd0316bd5dd1f01f4eabfe06cc9cb80154"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bfd361e34b774e8075310e994bbdac0c21baf1a8881df5bb1d071de9636ac84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08e9ae1f533a07865cc299655e7ea5442b7553f0d97dc9b8fab961fffa47cfe0"
+    sha256 cellar: :any,                 arm64_tahoe:   "fded17617f5140a20b04b5cfc9281e6429380d175d4e055a3d6b4dcc52a85b57"
+    sha256 cellar: :any,                 arm64_sequoia: "1cf98138786201b215734a1211d11cf41966ff3dce3d488b048628576236d4db"
+    sha256 cellar: :any,                 arm64_sonoma:  "4b16956c81ad38c7f4a48867d10f1e08e7b1c18018b47440d7b040a5fc48397b"
+    sha256 cellar: :any,                 sonoma:        "ae0f8523a835692c893098181ad612b727c3f0ada15d6d7d29f5cf0227f854c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6599a17075e452492e0f9266812795c28c724103e97c58563058d8d2b436217d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab37fef79c54edc8f175901834c1d6a6017029943f52c33d308e34fda97d67a3"
   end
 
   depends_on "cmake" => :build
@@ -33,6 +33,13 @@ class Votca < Formula
     depends_on "libomp"
   end
 
+  # Apply open PR to support eigen 5.0.0
+  # PR ref: https://github.com/votca/votca/pull/1189
+  patch do
+    url "https://github.com/votca/votca/commit/cc581d91196c3505c649e35ba69bcc8ec33fa14b.patch?full_index=1"
+    sha256 "08da2d4fd694eb1b3909fe4ef452b042a0b0733ca5d8b68e0e655b09842cb069"
+  end
+
   def install
     args = [
       "-DINSTALL_RC_FILES=OFF",
@@ -42,7 +49,7 @@ class Votca < Formula
       "-DENABLE_RPATH_INJECT=ON",
       "-DPYrdkit_FOUND=OFF",
     ]
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

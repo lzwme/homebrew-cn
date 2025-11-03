@@ -4,7 +4,7 @@ class Itk < Formula
   url "https://ghfast.top/https://github.com/InsightSoftwareConsortium/ITK/releases/download/v5.4.4/InsightToolkit-5.4.4.tar.gz"
   sha256 "d2092cd018a7b9d88e8c3dda04acb7f9345ab50619b79800688c7bc3afcca82a"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/InsightSoftwareConsortium/ITK.git", branch: "main"
 
   livecheck do
@@ -13,14 +13,12 @@ class Itk < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "2a5f4047de6894d22c9c0c01405747c0c91985f22efe65e48fc438d52cf29aa0"
-    sha256                               arm64_sequoia: "adf6a5810423f0cefef0524fe1ea63d58cd8e554b615f92de39a1c1c809c5185"
-    sha256                               arm64_sonoma:  "da3b07d924f8b330b6d11808742d136e23356e1e9e2d4da49f0c2a176cde599f"
-    sha256                               arm64_ventura: "b4c53c3414abe1b5b3c0eee1a3fa2a68638ec8ac3874e9a3332d25574c3ddeba"
-    sha256                               sonoma:        "f9f41f0a46a40bab2c40eadd12fdcc5b6c75cb86f1fcdc9b65787285a3e2646d"
-    sha256                               ventura:       "5d1e6fb10b8a8ef034300ea370741bd813358484718ab078b22c2403db602a6a"
-    sha256                               arm64_linux:   "63076e7b246cf1c6f0f54cef39549c0115691666e055f22341ea38ae07316986"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "049f0ade18dee815863ffdaff64774b0ce8358528a04e8f3cecfd039514f3581"
+    sha256 arm64_tahoe:   "dbb0076d9635881de1f21ab84575ed87783c0cb3811baa9538e1d62fa422d3c8"
+    sha256 arm64_sequoia: "2f3ed0100245f4cf7edf4ca7400a622ce6e1f6c0185e8a114ce19d4f10547757"
+    sha256 arm64_sonoma:  "cc495f7a74e0aff3b11c1de600e10ea6152a80eb63129e9973dfee737eefef25"
+    sha256 sonoma:        "167969ce3b6236e06dd27cb605bea6d1695e9a430fdb0115677d88ab17edff0f"
+    sha256 arm64_linux:   "b658d91623edeabf39c5f5d775fb91f721d0e9fedd59850692c9b80304c3d82f"
+    sha256 x86_64_linux:  "bba19cbbaf5d9c2ad245f247ffa84a572fd40f74bca5cb67e042e2f3f8379723"
   end
 
   depends_on "cmake" => :build
@@ -45,6 +43,13 @@ class Itk < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "unixodbc"
+  end
+
+  # Apply open PR to build with eigen 5.0.0
+  # PR ref: https://github.com/InsightSoftwareConsortium/ITK/pull/5590
+  patch do
+    url "https://github.com/InsightSoftwareConsortium/ITK/commit/ada8399edb0259ba9272c957ab4033978bdfdded.patch?full_index=1"
+    sha256 "ad229d4d0600ddbdb2abeade76d582f061f315b938126d68ff725d31a9453e8c"
   end
 
   # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.

@@ -1,9 +1,9 @@
 class Fatsort < Formula
   desc "Sorts FAT16 and FAT32 partitions"
   homepage "https://fatsort.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/fatsort/fatsort-1.6.6.660.tar.xz"
-  version "1.6.6"
-  sha256 "9b1fb35451e2b5cec4ca02f0693aa4e7bb1b52e305014719bdf4fa586a44e0e9"
+  url "https://downloads.sourceforge.net/project/fatsort/fatsort-1.7.679.tar.xz"
+  version "1.7"
+  sha256 "1012f551382639d69e194eabfbe99342ede7c856b1cd6788287f9dfd4bd8d122"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -14,12 +14,12 @@ class Fatsort < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee91ba0f011ade57860fec48d9b7a161b1713bf31ff6d681b16d30c9d758164c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3e1cfcb3c1fa725cda98283293a797c869d021a9d46796bc571060029aed10c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ebf4ac4a1e3b7d0ead6fac9733d7aae34ac675e5eda648a3fecc6fa566b76926"
-    sha256 cellar: :any_skip_relocation, sonoma:        "552cf897b24ae8fa803ecfb4859138f168c556fb58437c54144f2e2f71398459"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "48c9728d079d8606ebd4968c77ac44257d507ea7e48b1f502fc32b5a93cd8d27"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cf1ec9d7602857ac81f0ffce04e678c9079d3bb023570a0e525fc646aeac6f7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf6f852b979722c1ee0872145e63a023fa6158208171ba6b09d0b6a37592a484"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4f6537b80d60554df73f54ed1a54b5b6d83750c846df7268d59926e890bc9f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "080c536f78906bd19a2d01047f00f56a3595cb8549eae90eebaec620885cd510"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6de023bfeb092ada2d2c2383a42ce7b1e05a27726dbfe8da14768ceefdeb4479"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0847ede369e638a6ccdd1eeb2d4f9326eda6f5985797cca203fcbd13c8d9150"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c24a2626f64986a87fa2b9933bac0b029632c684e25ec20ee1fa5156bd4e8b6"
   end
 
   depends_on "help2man"

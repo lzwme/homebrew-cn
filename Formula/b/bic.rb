@@ -46,16 +46,13 @@ class Bic < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7c0da289a9629c8fb1d74ebfef9c8159ac00103096a72d39bff315f3f41a3c14"
-    sha256 cellar: :any,                 arm64_sequoia: "841382877c009debae638924434b00e76b275e7c77f43f1c11f1b55f9dec44f7"
-    sha256 cellar: :any,                 arm64_sonoma:  "901a803c50e0438b0132876f3ecc970087894ace6608113234848cec89a3d059"
-    sha256 cellar: :any,                 sonoma:        "4f122a009440f01cdaa97ac0fdf69e7aa8a0b31082e7fc8fb7d08b5c8ecf2307"
-    sha256 cellar: :any,                 ventura:       "b2949645cf730b7d5b1a9286c5134775190c8353a9e8dbc28af7414b97f63253"
-    sha256 cellar: :any,                 monterey:      "cfa83a9ccd1d192b77af48d3198acf0f082d9f929a6256bb978f293543210940"
-    sha256 cellar: :any,                 big_sur:       "36f71fa3f987da036e8bf8cefd3e640479868f2eb033f307848679b41d7ee393"
-    sha256 cellar: :any,                 catalina:      "41d1871d125642f8437b5bb7b74f205b0eee956be0ad46b7677680b76764c0cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1eed9e3fd17cead07b28471dc8cfd46754b81e0db2ff0ecf631223e1e08dfb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2744bafd1615ee75b148b2b4ef18a3acdb0cf7a33c71014b541cb3f820c1b38f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "95d273611ee6c62e77dbcf51696f2d1af33b20e76586a35d2e93975b92257cbe"
+    sha256 cellar: :any,                 arm64_sequoia: "4d9fe97eade0c6ce2c65f69f49950a1f523351b31fb8f5c7d759617cf1aa0e9e"
+    sha256 cellar: :any,                 arm64_sonoma:  "8394ce75075c03309cd99ebf48367e2bbc2f883a5e99be5256432547489802b5"
+    sha256 cellar: :any,                 sonoma:        "4a93afe6568b694f333695ec33727a9545af2f981c546eb560205099afee3c68"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d43b0b4a77554c2f5d43f0956994c5008368bd40d9246a364708457c8833932"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18e8e74a600a6fd58a87eb2592dbc38c079bf9fd08b2e672c0e9a73ea66c0cce"
   end
 
   head do
@@ -74,11 +71,14 @@ class Bic < Formula
 
   depends_on "gmp"
 
-  on_linux do
-    depends_on "readline"
-  end
+  uses_from_macos "libedit" # readline's license is incompatible with GPL-2.0-only
 
   def install
+    unless OS.mac?
+      ENV.append_to_cflags "-I#{Formula["libedit"].opt_libexec}/include"
+      ENV.append "LDFLAGS", "-L#{Formula["libedit"].opt_libexec}/lib"
+    end
+
     system "autoreconf", "--force", "--install", "--verbose" if build.head? || (OS.mac? && Hardware::CPU.arm?)
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"

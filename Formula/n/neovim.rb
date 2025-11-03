@@ -6,11 +6,11 @@ class Neovim < Formula
   head "https://github.com/neovim/neovim.git", branch: "master"
 
   stable do
-    url "https://ghfast.top/https://github.com/neovim/neovim/archive/refs/tags/v0.11.4.tar.gz"
-    sha256 "83cf9543bedab8bec8c11cd50ccd9a4bf1570420a914b9a28f83ad100ca6d524"
+    url "https://ghfast.top/https://github.com/neovim/neovim/archive/refs/tags/v0.11.5.tar.gz"
+    sha256 "c63450dfb42bb0115cd5e959f81c77989e1c8fd020d5e3f1e6d897154ce8b771"
 
     # Keep resources updated according to:
-    # https://github.com/neovim/neovim/blob/v#{version}/cmake.deps/CMakeLists.txt
+    # https://github.com/neovim/neovim/blob/v#{version}/cmake.deps/deps.txt
 
     # TODO: Consider shipping these as separate formulae instead. See discussion at
     #       https://github.com/orgs/Homebrew/discussions/3611
@@ -52,17 +52,13 @@ class Neovim < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 arm64_tahoe:   "185a130c175de49954d5bad5a92d83c3319e7e4deb2169128f210d9356505ac6"
-    sha256 arm64_sequoia: "4e5ea3101fc902dab81e7335dee14eb21468d29be14e0a601bcb9058fe71e8ac"
-    sha256 arm64_sonoma:  "a1ec1f0dd3b212a5d4383cd90b48494e69396d72854ffb5a55f9168a05e1bd56"
-    sha256 arm64_ventura: "d4c18bb0fb65edc37b3518522f56219d35bbc9eb4cea6d895644ce06c3d13809"
-    sha256 sonoma:        "38eb447a06347f69667a8dbb72b844c5f11e4c770eeb9cb7c6c4d9d848b424e9"
-    sha256 ventura:       "5b3e2ec1c83e7493b8a3f327a983937b07e246aa5cc66f9b6113e07817c5a98e"
-    sha256 arm64_linux:   "023a1ed0ad292e507c61ec56a59b3be9bbc5fbc70bbf6cecd7f4cf9f1b25f939"
-    sha256 x86_64_linux:  "56ace1e455497729002c6c78155d5af571585b830a391a67bb99b686f84e6232"
+    sha256 arm64_tahoe:   "41f09e8ed67664dab655bb181990c7f7fc9aca5a559390469138eb1956af00e9"
+    sha256 arm64_sequoia: "8cceee45e745aa161781b544977a8576d868e77ef506778c588d67cd47da2608"
+    sha256 arm64_sonoma:  "f0014976d5aa5cadd26434d5a4339a637f8b4fa37a1e6d1a736662528180a0e9"
+    sha256 sonoma:        "805931882993d986ebff0098f9c7a13088cbbeee6221a4498f45385951efad48"
+    sha256 arm64_linux:   "6d4a7736d5e033075b29f8b1e28432a04a2ee0e2437de98a15a32ed5f05f1ecd"
+    sha256 x86_64_linux:  "3b77d0557a0470516fa2fe1645e2671ac1d49472dbd4fa042b2c307b32cddc43"
   end
 
   depends_on "cmake" => :build

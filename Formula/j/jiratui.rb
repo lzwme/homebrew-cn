@@ -3,19 +3,19 @@ class Jiratui < Formula
 
   desc "Textual User Interface for interacting with Atlassian Jira from your shell"
   homepage "https://jiratui.sh/"
-  url "https://files.pythonhosted.org/packages/c4/18/0bf07c9c612db9bca489e94435ae59bf992561952140f4d276b138308c06/jiratui-1.4.0.tar.gz"
-  sha256 "2603d4457b2f0a6acb224a7b6b00eab6b53934afc87add0a3a56864503ca42d1"
+  url "https://files.pythonhosted.org/packages/cd/2f/0448b1786e2856f17cec35b9676805fae57b5d8f112f6d3aeddc1ee468e4/jiratui-1.5.0.tar.gz"
+  sha256 "22bd60aff242530c762c6fc2c65cef964a0607635bd6ca8eed7d5aa0c8360bb7"
   license "MIT"
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0c5e93bae7da7fe3231554f6bbf22943b61807b9b9fc25afcd129879c62006d5"
-    sha256 cellar: :any,                 arm64_sequoia: "7b514a982f4679df047dd514a9aec271db4df953ccdfd6bd32aa63cc5ed47d21"
-    sha256 cellar: :any,                 arm64_sonoma:  "0f48d0b91bf7a815efc2226724d51b14332fa96f7fb24677b064a55fe0eb6d5e"
-    sha256 cellar: :any,                 sonoma:        "60d5f03170412550f7c696aed654c6a41af86432312d0c9cb5ba6d9865e69dc6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "21b0a20e4851a9500828b2c66a530c8ac20a72d48a9fd74299897fae7bed0c8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6072c056edb385e129ba1e08518f76d91c9feadc0171c2123dc98b4fa9c0ec6f"
+    sha256 cellar: :any,                 arm64_tahoe:   "609bf6cb0a64414cb38213d9fcab2a4256f6e6a67b45389d4b0628866ea809be"
+    sha256 cellar: :any,                 arm64_sequoia: "fbde82a6c185fe6f4813f9df6cf7c4daed7c871af5f2b233713e67db15a80709"
+    sha256 cellar: :any,                 arm64_sonoma:  "d8194578e74865bb95d13d8fde64f670b723f97fb929af94741c3d9e191cf88c"
+    sha256 cellar: :any,                 sonoma:        "777ee8832255cb4c18f3251033a5a1b319904a81922f70e8329991415c8c3dca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b91770e6899890672484f834a30ab84eeea8fb0790f29c43c5a51efc39e44bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8c4619563e877e44292a4230b2cb0eb50e12ff7cd54aaa4bc331a1a3d797f33"
   end
 
   depends_on "rust" => :build
@@ -131,8 +131,8 @@ class Jiratui < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
-    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
+    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
+    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
   end
 
   resource "python-json-logger" do
@@ -171,8 +171,8 @@ class Jiratui < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/ff/51/51a0863339c4c3fa204f43044e52dfd688a7ee2ba2c987e021acc9583a42/textual-6.3.0.tar.gz"
-    sha256 "a89c557fa740611551dcf4f93643f33853eca488183ef5882200dde8e94315e8"
+    url "https://files.pythonhosted.org/packages/af/90/59757aa887ddcea61428820274f1a2d1f986feb7880374a5420ab5d37132/textual-6.5.0.tar.gz"
+    sha256 "e5f152cdd47db48a635d23b839721bae4d0e8b6d855e3fede7285218289294e3"
   end
 
   resource "textual-image" do

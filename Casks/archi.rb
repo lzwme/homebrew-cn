@@ -1,11 +1,12 @@
 cask "archi" do
   arch arm: "-Silicon", intel: ""
 
-  version "5.6.0"
-  sha256 arm:   "6bcd10c894fe9a2cd3e1bc6127fd6b5e74066ead19c709aa6fbe27d901f81f72",
-         intel: "35958c4332ec3dc27b719a18154c57c4b22eef20881c4e69c3df94aa3b46ec27"
+  version "5.7.0"
+  sha256 arm:   "dbfc38f9a29f8df4c62e38e5fe73a8b85b67bfbfe48e67dece4ae649ae1a6e57",
+         intel: "c0896127a5e684be6b31be73c07258c1a982c15d773cae77c22f6e1172206b92"
 
-  url "https://www.archimatetool.com/downloads/archi/#{version}/Archi-Mac#{arch}-#{version}.dmg"
+  url "https://ghfast.top/https://github.com/archimatetool/archi.io/releases/download/57/Archi-Mac#{arch}-#{version}.dmg",
+      verified: "github.com/archimatetool/archi.io/"
   name "Archi"
   desc "ArchiMate Modelling Tool"
   homepage "https://www.archimatetool.com/"

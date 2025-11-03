@@ -13,12 +13,13 @@ class Otterdog < Formula
   no_autobump! because: "'playwright' resource lacks PyPI sdist"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d61eef326e9a480c756c5b88765d359ff5c9e921640199b59b09016996102da4"
-    sha256 cellar: :any,                 arm64_sequoia: "0117b7f162a0825f16f64f03a67144f26f9f541cfa47d7bbd1485f2589e36b08"
-    sha256 cellar: :any,                 arm64_sonoma:  "3d3cfd2483d64e7ac99829078e7a765804b77c74ecca0481c89f9aa7fa78db64"
-    sha256 cellar: :any,                 sonoma:        "03cbe996382869410de116740323dd5ad4c8834ffc4bc2babc5bc50526067177"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7779baa5c53834ac8ba765a52bd4ac32e433066bc53595b8ec1bad69c49b5beb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3b1ffc1b3f9103231e45fda37b3cce4fc41c0e48b030977779e5bdcab3ba862"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ffbd3ab3898d3116487bcd2314c50e0b72452ef77f02a3839939fbee7b92f722"
+    sha256 cellar: :any,                 arm64_sequoia: "82f61ed0e6214212cb5d9e983173856ea394ac1c567eff10dea9b3aa73eed4c3"
+    sha256 cellar: :any,                 arm64_sonoma:  "58011e10291cc66fa270befd806a19f2838f3c29c2143ee77c9453fe85b4a220"
+    sha256 cellar: :any,                 sonoma:        "8601a0617d176cb598f34f8c1499c8432c84c2f13b95469a33c1d097e9f060d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "23bed5c77f54ec8bff54a3f450b632830e31abd2e06f9099ce6fe4825a8b4ca8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a865d08f4c470c45294b949971654dfedfbc1ecad62c6b483ff9d7d910267fc0"
   end
 
   depends_on "rust" => :build # for rjsonnet
@@ -265,6 +266,10 @@ class Otterdog < Formula
     virtualenv_install_with_resources
 
     generate_completions_from_executable(bin/"otterdog", shell_parameter_format: :click)
+
+    # Help find playwright when installed inside virtualenv
+    rm(bin/name)
+    (bin/name).write_env_script libexec/"bin"/name, PATH: "#{libexec}/bin:${PATH}"
   end
 
   test do
