@@ -3,18 +3,17 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/5b/e3/137490ecee242c79ac8b8f0f8215d85fe6e33ff7307d91bf0990b30f3303/dxpy-0.399.1.tar.gz"
-  sha256 "53511eca434affbb75d7ed9220ddabb09f39e302bf1f298f04bc56e578773c48"
+  url "https://files.pythonhosted.org/packages/89/f8/5658fdfc25706423eef3f6e1fcf1604e4a187e4349ee063d5604ec9f9f5d/dxpy-0.400.1.tar.gz"
+  sha256 "c91666c960675426e63e1815d53009f14fcee9c2b661a529e9e40c3d068f44ca"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ffad1b3a409acae0d81fdea0df2e701df80071b3ab719188b129d64376841d97"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f188a1929d5e0e567caa707894ed0a942af2d206dbe3ee6dd5cff3e5bab438e6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19aaeee55088b8b4ebba3c65a617f0e29f325e4318c2913175abab5ea6731b32"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5cb40fbd716904d4d60008b5066337225f2db2accf8a665bf076b13b146c5abc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9743608a3c0ee9520165f6090e4e309d636780629ad755babfb849f0e6983f41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83f81a61ae6908b2ea3ae10a0114ed0623178dd2c6a3246420379ce245df8f3c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54b95396e27ea9233ac0e7d0e7f14455d98d49f6000de24f34647580fbee41d2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad418433a4bb59d969354de84090b5a5eab13b5133110d74f1376176a8fb0e5b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8edb84b9598ab96111c70f4a29a1f7f177caff1a9405c54c224d679a5bca9ee1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2655b0bf2b535025f4c197508f30ea5bb26c9296d5cc11df760b9e3c2f5a3b66"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9296e0209a0dfa78c335c1fd586ab71d6e872c37df744428078289b6752d4ee4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb73d410c0043281050b9703ded3a34f9e48a74d3c07f6c0c44ce3e88e14f88b"
   end
 
   depends_on "certifi"
@@ -30,8 +29,8 @@ class Dxpy < Formula
   pypi_packages exclude_packages: ["cryptography", "certifi"]
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/16/0f/861e168fc813c56a78b35f3c30d91c6757d1fd185af1110f1aec784b35d0/argcomplete-3.6.2.tar.gz"
-    sha256 "d0519b1bc867f5f4f4713c41ad0aba73a4a5f007449716b16f385f2166dc6adf"
+    url "https://files.pythonhosted.org/packages/38/61/0b9ae6399dd4a58d8c1b1dc5a27d6f2808023d0b5dd3104bb99f45a33ff6/argcomplete-3.6.3.tar.gz"
+    sha256 "62e8ed4fd6a45864acc8235409461b72c9a28ee785a2011cc5eb78318786c89c"
   end
 
   resource "crc32c" do
@@ -40,8 +39,8 @@ class Dxpy < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/b3/31/4723d756b59344b643542936e37a31d1d3204bcdc42a7daa8ee9eb06fb50/psutil-7.1.0.tar.gz"
-    sha256 "655708b3c069387c8b77b072fc429a57d0e214221d01c0a772df7dfedcb3bcd2"
+    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
+    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
   end
 
   resource "python-dateutil" do

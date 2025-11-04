@@ -1,19 +1,17 @@
 class Pkl < Formula
   desc "CLI for the Pkl programming language"
   homepage "https://pkl-lang.org"
-  url "https://ghfast.top/https://github.com/apple/pkl/archive/refs/tags/0.29.1.tar.gz"
-  sha256 "cafda453d8cd0e7783bd48c7b7d6d1b43b527d163f87bd7a852c71233ec873c9"
+  url "https://ghfast.top/https://github.com/apple/pkl/archive/refs/tags/0.30.0.tar.gz"
+  sha256 "f3788e253ca26a5d74ac2f933c0646fa3012af130be084079cc9dee9e283cc40"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac5da605468b0bf3562c0d6f31cb1dfdf8f389e4f8cf73db293df0fc185066ed"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13d5821b098a5d299fc46879577ae6e9a34ebe05d45f76cb6c36571ed50d8379"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "329a933fca1bbe973f9e231f855e2895b09fc56d8038a3e8b7ac77b413090461"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c00368f1c7d4e8da6ec7270ad03335d3e280ab2f13a11b441d2d58ba6a4418ae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6b19578d3a1792200a5462555f301b7e919b94f242fb74e3cf6ed0548f96b471"
-    sha256 cellar: :any_skip_relocation, ventura:       "6148f54d2dbaa8854f000f1e32caf29bb62975c15629ee92ced4f72ac4301263"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "01682d4cab65dce2433a14a11129eeda515602a62ce3873a07c70a69f005b78b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "386b15f1ca707e6c4cf1f5c95cc09cfb0f064560f82f8526201ffe942db448c2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6bff17f1d02b703c683b8b70fa9ebb21bb1eafca6a9b9e98993fd36bc34caf50"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "766d3e34c1cd773a9f2852c2028b0956717f74cef458f49684ac31ace3b07499"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3284e574abbb612d359236718204f960835353b90f56e0927a130de6d6e5de8f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "37b70356b715c322ff5ff6d3cfb045d1cd4e6593129815af3307ce994dc30825"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b749810825d3b91cb521751a61085fe7d5151f02abda1453cbcd60568f8320df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "462e0a5edf8dc2e6f5b5d6c4a905c5da2dc5c3eafb56bef59ec9e51a768a1408"
   end
 
   depends_on "gradle@8" => :build

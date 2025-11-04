@@ -1,20 +1,18 @@
 class Copa < Formula
   desc "Tool to directly patch container images given the vulnerability scanning results"
   homepage "https://github.com/project-copacetic/copacetic"
-  url "https://ghfast.top/https://github.com/project-copacetic/copacetic/archive/refs/tags/v0.11.1.tar.gz"
-  sha256 "b88a1618a3586d2e61dfbd2049755671a41b43e30faa3c1210ed378fd9ee3fc9"
+  url "https://ghfast.top/https://github.com/project-copacetic/copacetic/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "886aa760e9bdff174686d3c601cfb2f53e824299796ace3eef94dae03cdf15e1"
   license "Apache-2.0"
   head "https://github.com/project-copacetic/copacetic.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76e9d153fcaff37c16fc7f75bdc6d0fc8d3bbd85b8a17153ffcaddfd785d09ff"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f67ee88a24c243b564d634123f90c013c7fb8db0ecb1bee2bb58f82c5f1d0694"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f67ee88a24c243b564d634123f90c013c7fb8db0ecb1bee2bb58f82c5f1d0694"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f67ee88a24c243b564d634123f90c013c7fb8db0ecb1bee2bb58f82c5f1d0694"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7d3f2d05df0abdde1b2d9b7eb8b616f03da6ba294fc16c1536bd771f142548ac"
-    sha256 cellar: :any_skip_relocation, ventura:       "7d3f2d05df0abdde1b2d9b7eb8b616f03da6ba294fc16c1536bd771f142548ac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d6e9de84c1053b9ab13dcd06b871d0c606cc1872f265ba8529ddf40cbb0a481"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bf9c73081753d183c29c5b065a4d362f39420c12e644fa6b0a421b796404f8c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "060791ddc07d2321fa05d42f8e63e304f8c221f4d15a7228983659ae97bed2b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "060791ddc07d2321fa05d42f8e63e304f8c221f4d15a7228983659ae97bed2b8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "060791ddc07d2321fa05d42f8e63e304f8c221f4d15a7228983659ae97bed2b8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c0a80b6a01b98ef9fdaee6b12cd169afba86feaa4a1c3b111ed660534ec9cf4e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "927754db957c23f31677bed21ae2e86beeeafe35574dfa56529e720d7cbbbd1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aacb7d00031baaa5fa2e28cf78bc9e5dafdd790b28a26f77dcbdcf72ccab5883"
   end
 
   depends_on "go" => :build
@@ -31,7 +29,6 @@ class Copa < Formula
   end
 
   test do
-    assert_match "Project Copacetic: container patching tool", shell_output("#{bin}/copa help")
     (testpath/"report.json").write <<~JSON
       {
         "SchemaVersion": 2,
@@ -41,7 +38,7 @@ class Copa < Formula
     JSON
     output = shell_output("#{bin}/copa patch --image=mcr.microsoft.com/oss/nginx/nginx:1.21.6  \
                           --report=report.json 2>&1", 1)
-    assert_match "Error: no scanning results for os-pkgs found", output
+    assert_match "Error: no patchable vulnerabilities found", output
 
     assert_match version.to_s, shell_output("#{bin}/copa --version")
   end

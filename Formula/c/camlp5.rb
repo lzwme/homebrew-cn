@@ -2,22 +2,23 @@ class Camlp5 < Formula
   desc "Preprocessor and pretty-printer for OCaml"
   homepage "https://camlp5.github.io/"
   url "https://ghfast.top/https://github.com/camlp5/camlp5/archive/refs/tags/8.04.00.tar.gz"
-  sha256 "b00579277a5f18209a33f4adc4df04a40b5ca09e1509e702b464aa68ca44fc34"
+  sha256 "eb8c5bc0f47ce4b9518d37bcbf8be05ee80243c38e7019f8c3808456be8f15a8"
   license "BSD-3-Clause"
   head "https://github.com/camlp5/camlp5.git", branch: "master"
 
   livecheck do
-    url :stable
-    regex(/^(?:rel[._-]?)?v?(\d+(?:\.\d+)+)$/i)
+    url "https://opam.ocaml.org/packages/camlp5/"
+    regex(%r{href=.*?/refs/tags/(?:rel[._-]?)?v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0edae94f33230fc6758473fc87a68015d80bd8ef27136b3894623f557c825fe6"
-    sha256 arm64_sequoia: "a5de18f1d313dc38822127e6bab527b8a087e43764f3d2f73e06d34e52171ddd"
-    sha256 arm64_sonoma:  "14164e78308f79fa2e5f773e123b4241358f06cb2df839df6a647c9c801c0faa"
-    sha256 sonoma:        "9ac42eb31885820bdc5b222d1edb4b6d92ec2cb9a9fc41e67da7b7edc7291e60"
-    sha256 arm64_linux:   "60cfb728e026cc22f80cced8efba24a63809efb2bbeaf32f0957905cf8e71df1"
-    sha256 x86_64_linux:  "69739a1e454b0cff5feed77e228536406f86e0dc24a571aa3a2bb8cfb1cdeaf9"
+    rebuild 1
+    sha256 arm64_tahoe:   "177918da0e18160f266ff72f36207ab0e2400064bd8af57e19d8e6f2201639f3"
+    sha256 arm64_sequoia: "a8d26e5584cfa10b9134b32810973d7609ed309df3096b2eaff633d89ccb526b"
+    sha256 arm64_sonoma:  "9b360c9971322cd2f08cad30e1aad3a5095cdd31ddd2b7367841b2abd4910a7e"
+    sha256 sonoma:        "1d2860a5ceb227d268ec5b2ea2138d72e5eedc4765620ab7268f12b86fe4947b"
+    sha256 arm64_linux:   "a502e19ab5426f0e9a7f9a2f2e1e6853d7826e8fe8f4cb94c0e34a591a71c0e2"
+    sha256 x86_64_linux:  "215a197c95d790cb24d50c6f55a82bbe84b2de7beaf9ac5039ad680bb04a83dc"
   end
 
   depends_on "ocaml-findlib" => :build

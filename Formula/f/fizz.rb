@@ -1,19 +1,18 @@
 class Fizz < Formula
   desc "C++14 implementation of the TLS-1.3 standard"
   homepage "https://github.com/facebookincubator/fizz"
-  url "https://ghfast.top/https://github.com/facebookincubator/fizz/releases/download/v2025.10.27.00/fizz-v2025.10.27.00.tar.gz"
-  sha256 "d03cf280def27b86a8898570d077ba1009275705bcf3840e128648adfafd19bb"
+  url "https://ghfast.top/https://github.com/facebookincubator/fizz/releases/download/v2025.11.03.00/fizz-v2025.11.03.00.tar.gz"
+  sha256 "ec8cec8cb32fcd7d42d492b4631192fe40e492ff98757ad0632cc488d9b12d0a"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/facebookincubator/fizz.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "9eb8e9c7a619cc5907ff975ba762512e080071d5ac18371618585ae6678289c6"
-    sha256                               arm64_sequoia: "5e0abb81f4b8a3a31ee80db5706c09cf44c05c0ed5a09e2f381bcfce71e9cdbe"
-    sha256                               arm64_sonoma:  "801e77ad8063a301246111916c58c7aa37854ebf0ff1a5e488af27cc08ccf357"
-    sha256 cellar: :any,                 sonoma:        "2b38cf1486c726adbb88c96e283bf26217e7117fe023c12b2b9dc8c6a39c5a0b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "778351906c0a78ad5bcca85ef72a8dbe01ee23bde3783e0d341c099d3bb53e60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d97f7fc5ee687e505a9e5ed2109959247f6fcc762c7580aa16855e2a6080485d"
+    sha256                               arm64_tahoe:   "55ce3c409d31c809b13e4a27ca82e12dce2e5953793fff6f0f7c2732d9741659"
+    sha256                               arm64_sequoia: "c036a1b9ecebd757eea5b67c731955c684c5bd24a399fe2b7a9768c1613f2c71"
+    sha256                               arm64_sonoma:  "a5df30e53668b4435d8c5eb192431c806ccccdda676acdf62ec83427d258a8de"
+    sha256 cellar: :any,                 sonoma:        "6274539ca2086eb9215932abc1addc0638937d32bca2a6e8162d2d73f5d7f011"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ddd5a82ef2b0f5b388cd73282117b91bd262d2e3bd1b57a29f8d55a65b2e7e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "775e9f0fd41c097bf0d8bc47d78e9120b7f36d09cab052d7bb09176ff5a3bdf6"
   end
 
   depends_on "cmake" => [:build, :test]

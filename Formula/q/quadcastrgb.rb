@@ -33,9 +33,9 @@ class Quadcastrgb < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/quadcastrgb --version")
-    assert_match "No mode specified (solid|blink|cycle|lightning|wave)", \
+    assert_match "No mode specified (solid|blink|cycle|lightning|wave)",
                  shell_output("#{bin}/quadcastrgb 2>&1", 1)
-    assert_match "Unknown option: bad_mode", \
+    assert_match "Unknown option: bad_mode",
                  shell_output("#{bin}/quadcastrgb bad_mode 2>&1", 1)
   end
 end

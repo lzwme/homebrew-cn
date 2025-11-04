@@ -30,7 +30,7 @@ class Eatmemory < Formula
 
     # test for expected output
     out = shell_output "#{bin}/eatmemory -t 0 10M"
-    assert_match( \
+    assert_match(
       /^|\nEating 10485760 bytes in chunks of 1024\.\.\.\nDone, sleeping for 0 seconds before exiting\.\.\.\n/, out
     )
 

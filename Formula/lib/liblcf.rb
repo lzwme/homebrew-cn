@@ -43,7 +43,7 @@ class Liblcf < Formula
         return 0;
       }
     CPP
-    system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-L#{lib}", "-llcf", \
+    system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-L#{lib}", "-llcf",
       "-o", "test"
     system "./test"
   end

@@ -40,13 +40,9 @@ class Help2man < Formula
     # see https://github.com/Homebrew/homebrew/issues/12609
     ENV.deparallelize
 
-    args = []
-    args << "--enable-nls" if Hardware::CPU.intel?
-
-    system "./configure", "--prefix=#{prefix}", *args
+    system "./configure", "--enable-nls", *std_configure_args
     system "make", "install"
-    (libexec/"bin").install bin/"help2man"
-    (bin/"help2man").write_env_script("#{libexec}/bin/help2man", PERL5LIB: ENV["PERL5LIB"])
+    bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
   end
 
   test do

@@ -17,9 +17,6 @@ class BandcampDl < Formula
   depends_on "certifi"
   depends_on "python@3.14"
 
-  uses_from_macos "libxml2", since: :ventura
-  uses_from_macos "libxslt"
-
   pypi_packages exclude_packages: "certifi"
 
   resource "beautifulsoup4" do

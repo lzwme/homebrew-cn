@@ -3,19 +3,18 @@ class SnowflakeCli < Formula
 
   desc "CLI for snowflake"
   homepage "https://docs.snowflake.com/developer-guide/snowflake-cli/index"
-  url "https://files.pythonhosted.org/packages/19/c0/da509cbceebcdfd31988288809157519eff94a034725867214ff85cc92c1/snowflake_cli-3.12.0.tar.gz"
-  sha256 "96dd0baf7a383b31ee4788c475ac85b1f47a9a4f374d90eece93e50c2db93b02"
+  url "https://files.pythonhosted.org/packages/a6/83/84a7372e08b8bd058b463646bad343313ec839828e9bf47e44d2fe5a4b1f/snowflake_cli-3.13.0.tar.gz"
+  sha256 "602be637aa34bcaa38bdce8c4676590c7ffba61f09f3e78c7c3e01d7c8e37a55"
   license "Apache-2.0"
   head "https://github.com/snowflakedb/snowflake-cli.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "cc54be2a03a5f48673210822daa3f3ca79e0c539e58799f436c527d679272cfa"
-    sha256 cellar: :any,                 arm64_sequoia: "3eab7e5cfbfdc59967ccefe0b19531dd5d8b04a669ffb37ee4c635246bde9bd8"
-    sha256 cellar: :any,                 arm64_sonoma:  "c2ffdf7ac50fb251a0dd4ef11e39913f7376b5fc250e60b5c208fd49ba1d33f2"
-    sha256 cellar: :any,                 sonoma:        "09272d749956740e3d0464839e2f93735282b42e4e660e0eacf777bd6f821a36"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd7d10518f3be0b7b3252e0e0e4552ca775dd98f0f748a4294c256c46895cc06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "383546ffb90ba1871ee1b4965d20148c3ffa79f951cb871e729d94df57ec5217"
+    sha256 cellar: :any,                 arm64_tahoe:   "727dbc165311e030d1d1f42a2e7fb116406ff0a6cca267a81a1e98b29a0b5884"
+    sha256 cellar: :any,                 arm64_sequoia: "c158c087df069c10904210f3a31b2587d10b3ec2cbc16521cc216bd20020d91b"
+    sha256 cellar: :any,                 arm64_sonoma:  "b703581557c6f00917a7845429df7e6f2e55ff1e33f77b9435fd43be3f278ead"
+    sha256 cellar: :any,                 sonoma:        "26fb0405f3bd160ec22ff8244cf356253e9f89755576daf14c937e3150a429aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5063bed4c0a07b93b4b711f7752030600d0e0395fa7eb99a4dc2f92c9ba842f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aac642a0681116eaaf284a72e663c8dc5165c686491e1347a43a9e3e6eba6319"
   end
 
   depends_on "certifi" => :no_linkage
@@ -233,8 +232,8 @@ class SnowflakeCli < Formula
   end
 
   resource "snowflake-connector-python" do
-    url "https://files.pythonhosted.org/packages/02/cc/375e43ee01d44fbeb375673a45e6c0ca20a17540d1618f20ca78977481fd/snowflake_connector_python-3.17.3.tar.gz"
-    sha256 "8d3847a3738702b58f7416a2adf4b43abaaef36403e4be619c5aabd900e03cf7"
+    url "https://files.pythonhosted.org/packages/25/df/41fe26b68801e3d59653a5dc7ce87a92e9d967dcad7b59b035b8c9804815/snowflake_connector_python-3.18.0.tar.gz"
+    sha256 "41a46eb9824574c5f8068e3ed5c02a2dc0a733ed08ee81fa1fb3dd0ebe921728"
   end
 
   resource "snowflake-core" do

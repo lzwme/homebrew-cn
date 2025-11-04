@@ -1,18 +1,18 @@
 class Fblog < Formula
   desc "Small command-line JSON log viewer"
   homepage "https://github.com/brocode/fblog"
-  url "https://ghfast.top/https://github.com/brocode/fblog/archive/refs/tags/v4.16.0.tar.gz"
-  sha256 "061288675d40ca9b70c8e3e0508f09ddee70b8a09f25c7b8ef2dbd6406d4e213"
+  url "https://ghfast.top/https://github.com/brocode/fblog/archive/refs/tags/v4.17.0.tar.gz"
+  sha256 "6582020850aa9205fbdc4e169401c20e8ecc9b5decdc25dfcceeb955c83e3bcf"
   license "WTFPL"
   head "https://github.com/brocode/fblog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e62c1df074a325ab3f71371381b5f5dd5f20c4ee53f05a837c83e63ac083ec2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "381480934871991b0a56987665a7ccbaa4d128ddebf621b1c8a8c7151816b67a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3c80c168615dfe64c1a16b0ba3f1d68b5c07b2c06447b36374f35264830ef182"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3b0de29e2041cdf11f3780ce191fc829c86589d4918a58c9bf9c708bae6fccc3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d29a71a71779a8b40b04567f42f778f564dc868723416a78a59bf779f094747"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c62f60bbbf46aed83a64559c5027ec240c30fc68d04420a8aea7748df176e09"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f9a98523e3dec196e33c224b59223184f9cfacf94e4a626ddaf526155b33ca3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62bffc30c95f2b03a14790489cd9a4799c0758b1c939d96f924183582f4bab16"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a125573b7faa539e156708a26273c6669a3084f892e9621253b8e2a99d8a120"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2d0941dc6a14bd0f2b2641df59b40d2b548148c2f256cea10882c4ffc61b9872"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd7f946ce78bb8e3cba835ebd1029ec3b67595eaa811801fe31a3d0fb21db51f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3e7219b5976de157a8fd8fc235438177075c1d7ff4b1348930d1ab10a7abb74"
   end
 
   depends_on "rust" => :build

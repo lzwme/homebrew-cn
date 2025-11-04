@@ -1,18 +1,18 @@
 class Dstask < Formula
   desc "Git-powered personal task tracker"
   homepage "https://github.com/naggie/dstask"
-  url "https://ghfast.top/https://github.com/naggie/dstask/archive/refs/tags/0.28.tar.gz"
-  sha256 "6e0ede0b2b1cf392c04a06fede4935436abb6b488496045da1bd2671c65b24a7"
+  url "https://ghfast.top/https://github.com/naggie/dstask/archive/refs/tags/1.0.tar.gz"
+  sha256 "faec7a671331435ddf5be644404a62eef3b6fc0f895811b1f7c6b840e0bec234"
   license "MIT"
   head "https://github.com/naggie/dstask.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "89954cb580c9471991eec2c889769b3366d307b5c7a6ad5c71fefaa073632f69"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89954cb580c9471991eec2c889769b3366d307b5c7a6ad5c71fefaa073632f69"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89954cb580c9471991eec2c889769b3366d307b5c7a6ad5c71fefaa073632f69"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a9a7eb7e0c5a7b9fa7180a841252a687513fbe9669e17e1356d2ab7fbb8c2bac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b17d1f243569771051b0178b27ffe50bde9d85e519ab301afe4a573d9060550d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fecd429a3bb86e32edbcf2eee4dc3fb1f0918016a2cef9b02289a7e97285b5b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d379782fdfe58917c3d3310212d98e545f755b8b683ba8e95b351bcabd8af2ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d379782fdfe58917c3d3310212d98e545f755b8b683ba8e95b351bcabd8af2ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d379782fdfe58917c3d3310212d98e545f755b8b683ba8e95b351bcabd8af2ae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "94159ed9d40ad3a46383decca4b4c8bba53e403cb66b714a01e852e69d722ffe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1b50f896d950aa96139cb7a0daf9bf8d84257fb49e40e457d5727910a7eefe3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e79b38c96912b93fb54858df0b845cd5c6fbbda269e7da398218492081eb1b6f"
   end
 
   depends_on "go" => :build

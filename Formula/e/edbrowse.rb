@@ -1,18 +1,18 @@
 class Edbrowse < Formula
   desc "Command-line editor and web browser"
   homepage "https://edbrowse.org"
-  url "https://ghfast.top/https://github.com/edbrowse/edbrowse/archive/refs/tags/v3.8.13.tar.gz"
-  sha256 "599fdbc0ee6f500cc63af91c88404d90e79cbfb175c62b774c8d4d458b663877"
+  url "https://ghfast.top/https://github.com/edbrowse/edbrowse/archive/refs/tags/v3.8.14.tar.gz"
+  sha256 "4463d4ad9d06f183ebca8dfee0eeb7f4240bc6becb83257e394fdeb84b120360"
   license "GPL-2.0-or-later"
   head "https://github.com/edbrowse/edbrowse.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0dedb75ee8b54aa73a84fd5c77d54834ecdb8dfc7a4d500403e4bc8ff94d2215"
-    sha256 cellar: :any,                 arm64_sequoia: "dc8b4ff71bf2852f4d63965ea8c008d011a863372e444ba60a05d7b1e7b11ace"
-    sha256 cellar: :any,                 arm64_sonoma:  "b02674f2ad438baa433e9a5d52bd712aef3aead4ba2935da0874009cf86730b9"
-    sha256 cellar: :any,                 sonoma:        "4ef780e3da75330f0b99d487f16ec26396bacbf8687a29d3ef1f239e5ceed9a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "643ed22e352b0a7801507fd550abf2e5ae5d75ceb4393c76e13deae761a361a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "763e41666cf0852f0b0868fd43b5006b5bcb6bdad86edce8e90d3687d506444e"
+    sha256 cellar: :any,                 arm64_tahoe:   "a56226c0657151035fda0cfbf5f7fed4d50f7755984c046729fe44a95c4d1192"
+    sha256 cellar: :any,                 arm64_sequoia: "cdc9419f5bc0ae97bf9f3956f84ad0b93012b3c0703ad229808589336222cd77"
+    sha256 cellar: :any,                 arm64_sonoma:  "23c7fad4fd603423b83462eda3094d50c0b7bf1bd2f068cae21c3448e765a39f"
+    sha256 cellar: :any,                 sonoma:        "2bd307611a82ddb6140ac6753d23faf19bd8f4c9a0104a03a2c34275ecba3a92"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3c97fdc88bc3ef48aa1f56baec88725b968db6d449583d6c5878f3182bfa848"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdb9a220aad742e35326a2605af428e34bda827ef83999b99c3435ffc879a134"
   end
 
   depends_on "pkgconf" => :build

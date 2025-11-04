@@ -1,8 +1,11 @@
 class SwiftProtobuf < Formula
   desc "Plugin and runtime library for using protobuf with Swift"
   homepage "https://github.com/apple/swift-protobuf"
-  url "https://ghfast.top/https://github.com/apple/swift-protobuf/archive/refs/tags/1.32.0.tar.gz"
-  sha256 "630887931bb51260f1602d2641e4a1dff3db260ed8ba62092cb9651007d7a115"
+  # We use a git checkout as swift needs to find submodule files specified
+  # in Package.swift even though they aren't built for `protoc-gen-swift`
+  url "https://github.com/apple/swift-protobuf.git",
+      tag:      "1.33.3",
+      revision: "c169a5744230951031770e27e475ff6eefe51f9d"
   license "Apache-2.0"
   head "https://github.com/apple/swift-protobuf.git", branch: "main"
 
@@ -12,12 +15,12 @@ class SwiftProtobuf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ebc235b0f54c194ed6734c85755cce7f8a219029008703bd32072947151a8b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "984280f0c66e09d2bcc2f73e81e53c9e1788124e3f11c3f33695140f69462e5a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e28d046fd59118fef7ae9d908d18f019fe36817b28737039b7c937d67065813e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d2eb97078edc5c5595b345847041c52d997db1370cd1d33bf83bc48a296105fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfa10e2020b2e510a5668b3223e94eddd625ea0d4dba3ae04d97863b546e5cef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e74ef81c52e1544fb7bbf486839cd17ded15bb1e414ea48afb62db597b71f9e0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "50654e9566975d95f0c552bee7d783cd9d4108e6e5be9ec57c3fdc466b89ec9e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d723caa8a22e380d5b2a5acb7ab6d7a620228ff0b69e40594eac4bc15f2cf38"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0408c6a1c87c54d9f7514a3f3bca78cb3aa5885f21bd9f4d753e14510c8f3730"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c37a3df3293459674743b9c37f0f081711298047ad55392db0831ce6ac3c2a3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a06efea4b040d5b2de90244dac011a69064c02ea00ac217d473a8671bf639701"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15fd838a3f33a216008d578bc6176d7ba9f263e38ab0ce79d615015459227d0c"
   end
 
   depends_on xcode: ["15.3", :build]
@@ -31,7 +34,7 @@ class SwiftProtobuf < Formula
     else
       ["--static-swift-stdlib"]
     end
-    system "swift", "build", *args, "-c", "release"
+    system "swift", "build", *args, "-c", "release", "--product", "protoc-gen-swift"
     bin.install ".build/release/protoc-gen-swift"
     doc.install "Documentation/PLUGIN.md"
   end

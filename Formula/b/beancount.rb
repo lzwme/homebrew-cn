@@ -25,8 +25,6 @@ class Beancount < Formula
   depends_on "python@3.14"
 
   uses_from_macos "flex" => :build
-  uses_from_macos "libxml2", since: :ventura
-  uses_from_macos "libxslt"
 
   on_linux do
     depends_on "patchelf" => :build

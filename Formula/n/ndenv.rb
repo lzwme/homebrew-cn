@@ -35,7 +35,7 @@ class Ndenv < Formula
     end
 
     if build.head?
-      inreplace "libexec/rbenv---version", /^(version=)"([^"]+)"/, \
+      inreplace "libexec/rbenv---version", /^(version=)"([^"]+)"/,
           %Q(\\1"\\2-g#{Utils.git_short_head}")
     end
 

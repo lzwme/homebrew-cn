@@ -1,20 +1,18 @@
 class Neocmakelsp < Formula
   desc "Another cmake lsp"
   homepage "https://neocmakelsp.github.io/"
-  url "https://ghfast.top/https://github.com/neocmakelsp/neocmakelsp/archive/refs/tags/v0.8.25.tar.gz"
-  sha256 "2e4e1b61ea4d426bbfa615cffb847ed866ee8b8477f114c648567fc7750c482e"
+  url "https://ghfast.top/https://github.com/neocmakelsp/neocmakelsp/archive/refs/tags/v0.8.26.tar.gz"
+  sha256 "a400e86420cc7d67008a2139c3d7d9853b2775ffb5b6c53964775ffb505e5a36"
   license "MIT"
   head "https://github.com/neocmakelsp/neocmakelsp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e5b968ff3fe5efbc8be972c45f1cfd23aac42c19667d2bf69b8da10c6bf5b9a9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54d661ec8eff034a6043e72420ec078a0a25bcdbfc0c969e5e481d82f9e85d85"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4772c693a6584bd9190b088f94d3be4781c57d23865a84ca54721fe7eb0fce05"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "86fd46e6ffb63335f977e0a9362dbb3e69c6941841e8a719df27953a45703c73"
-    sha256 cellar: :any_skip_relocation, sonoma:        "39c518b4743f2bababf152ef1dd8c998143ea9778b0f6792f0e7d976b96261c5"
-    sha256 cellar: :any_skip_relocation, ventura:       "2a982c98041d4af72e1c8d1cea1680525cf1613f9b9cfa0031bc129fee21fbef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "436d0a76a19bcc3926e694efd34d3eab983a24ca8249bb82885a851745c4d2dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a870835f37453236010288904df5d1a6c15a245da05d7e8782159dcf86c5f9a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "11c0b94120507fc287040e1e18f59eb253cb39a0af0c94a15fc70790aeb471f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d07e3ec172dfc1fca59ab2735859408cb2fb410906a89e886936def39b8af8e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2fc387dffea4717157f8b9400d20197b3d8dc7bca7d76781b3a3c4bb0f2d5d5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "01ff660c12bc18ed4efe31521cac0a2d9133809112d00559513574023d82d8cf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f49e44a25b7760d34e884e394e5fdfc68567f196f6ce6513eb6fd3d91a2659e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0846f311d460e825908bad1ed146201f22c23fea5f87b3c2daf925985e2d0754"
   end
 
   depends_on "rust" => :build

@@ -3,17 +3,17 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/3f/3a/0bf90d5189d7f62dc2bd0523899629ca59b58ff4290d631cd3bb5c8889d4/fastapi-0.120.4.tar.gz"
-  sha256 "2d856bc847893ca4d77896d4504ffdec0fb04312b705065fca9104428eca3868"
+  url "https://files.pythonhosted.org/packages/8c/e3/77a2df0946703973b9905fd0cde6172c15e0781984320123b4f5079e7113/fastapi-0.121.0.tar.gz"
+  sha256 "06663356a0b1ee93e875bbf05a31fb22314f5bed455afaaad2b2dad7f26e98fa"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "81f056a3455ff5dc54e481da5de1351d88029be12e06194aae911952028e75f8"
-    sha256 cellar: :any,                 arm64_sequoia: "1af30f029b015f659201690464b245d6dee1fc8217da074a718450d57dae53da"
-    sha256 cellar: :any,                 arm64_sonoma:  "397b999513b0b4a8e2336863f34f8cae176d3ebed5d3f5b3f92d84e920a77789"
-    sha256 cellar: :any,                 sonoma:        "642196f870dca8417aa01b73c50019396d8ef85dc2e2b9e0f0f41b94de6358f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ccd584bfd734141ee3d4fa245a8a072f1c8dffb9f241acc2790f826a59d8886a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d28a894d6f0953b2ed1259f4e0b671fcab2a459058a3d9fd47ad1c641d86eb5d"
+    sha256 cellar: :any,                 arm64_tahoe:   "521dfdabf8cdf93e27667f44b4f1fbf48c2281a1b68a4f03e8f3a77dae9bdccc"
+    sha256 cellar: :any,                 arm64_sequoia: "47181552477e5aabdeaf6501cd6c6b90f84fd6b5b72a98fedbef6fa5413c5939"
+    sha256 cellar: :any,                 arm64_sonoma:  "9ca76e49934ff5d9573caf9589e9b9e213d8012198e9964354c0eb01c18e5ff4"
+    sha256 cellar: :any,                 sonoma:        "f2e09ed65dfe86d441734a43c32619536eafe5d2ca59c8beb76b4dbd79970e87"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ffe72eecdabfea73ceccc40fdef0d0e8bde770e1a1a7acac52f9b1e70c05e340"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3100cdc335611b9c50f7e564e947fd8263bbff1686431886bbed10f205ecefba"
   end
 
   depends_on "rust" => :build # for annotated-doc
@@ -150,8 +150,8 @@ class Fastapi < Formula
   end
 
   resource "rignore" do
-    url "https://files.pythonhosted.org/packages/b1/b5/1fe06acc517315fba13db19039e77a2b9689451e0b5b02e03f26f05f24ec/rignore-0.7.2.tar.gz"
-    sha256 "b343749a59b53db30be1180ffab6995a914a244860e31a5cbea25bb647c38a61"
+    url "https://files.pythonhosted.org/packages/e9/04/ecf19d701a0c9ddacbe0a01024acc5642045ff68afedd6c6e5822255e0ae/rignore-0.7.4.tar.gz"
+    sha256 "84c1c6bdfae8b28ef2c5fa5cc7b08d7e9cf1df1f4079c16bc669da4937634907"
   end
 
   resource "sentry-sdk" do
@@ -170,8 +170,8 @@ class Fastapi < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/1b/3f/507c21db33b66fb027a332f2cb3abbbe924cc3a79ced12f01ed8645955c9/starlette-0.49.1.tar.gz"
-    sha256 "481a43b71e24ed8c43b11ea02f5353d77840e01480881b8cb5a26b8cae64a8cb"
+    url "https://files.pythonhosted.org/packages/de/1a/608df0b10b53b0beb96a37854ee05864d182ddd4b1156a22f1ad3860425a/starlette-0.49.3.tar.gz"
+    sha256 "1c14546f299b5901a1ea0e34410575bc33bbd741377a10484a54445588d00284"
   end
 
   resource "typer" do

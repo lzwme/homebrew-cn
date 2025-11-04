@@ -1,20 +1,18 @@
 class Envd < Formula
   desc "Reproducible development environment for AI/ML"
   homepage "https://envd.tensorchord.ai"
-  url "https://ghfast.top/https://github.com/tensorchord/envd/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "73d6436a8df10ca5bc00b66a56f3302c138098485808b70d39151d44f6fa10d2"
+  url "https://ghfast.top/https://github.com/tensorchord/envd/archive/refs/tags/v1.2.6.tar.gz"
+  sha256 "755cc5a14622f4094e3df944eeaeaf53251ecc59a9d74e386cb7bdbe496a9366"
   license "Apache-2.0"
   head "https://github.com/tensorchord/envd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f61121742240712c63852dd344593885346c6396a4b72a709958fc93b993f3bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93e372b202790cd34623e587848c48257170114e33293c3c5277b7e7cccb2644"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f1e4ca522ed6a99f4d53df01eeef5890ab22f1d360386c462aa096ca4d56e57"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5feda6607ecd5d84090dcbbaba5a954b4740c5ac8babe3ee3b287922d5e896b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "76f1266d539145c1097a8e14b909d332f68c912b1722e4fa339fbd50ebc035fd"
-    sha256 cellar: :any_skip_relocation, ventura:       "e7e108e8a58d98b96021fc0b22e1642a386d485d3a9b8c88de77eb078d9d7cc7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f29e31de1d57d37393cff6c9b1b03151352a424ac1dac1997ff04491ead5abef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bbac6f74c72d1a7c4d117f19efb362e8f99b97bf6bc1196fd69415bc26d9a75"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4177e7aaa1042c994ee52caad00736815599a9a1ad6acb47d3a48094d50da97b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8da1950ccc93011216a4b4f9f43a3d1ff5b91affd829cdb660642b508b0da2c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3ff71edee0e518f4c03205a36be9b87c91c1a542c6b6057577d9d749c56eb06"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b5a2e950350ed5062a323c9e2a15d1491edbc948c7da77afc1096dd635cd3849"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e5552b7f9a7df500c605453bf4ecffa4b41761b7667a9d7ca0363dd78c6eee9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76c3b235048c112ce9ceac168f6ca589d7fbc829b83bfa9487414725f923fe7e"
   end
 
   depends_on "go" => :build

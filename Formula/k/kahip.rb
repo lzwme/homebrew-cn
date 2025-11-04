@@ -1,21 +1,18 @@
 class Kahip < Formula
   desc "Karlsruhe High Quality Partitioning"
   homepage "https://algo2.iti.kit.edu/documents/kahip/index.html"
-  url "https://ghfast.top/https://github.com/KaHIP/KaHIP/archive/refs/tags/v3.19.tar.gz"
-  sha256 "ab128104d198061b4dcad76f760aca240b96de781c1b586235ee4f12fd6829c6"
+  url "https://ghfast.top/https://github.com/KaHIP/KaHIP/archive/refs/tags/v3.21.tar.gz"
+  sha256 "0c3d53e211a9c880a8466839235f218591f2ecefce62bbf04afc8adfdb9c1e65"
   license "MIT"
   head "https://github.com/KaHIP/KaHIP.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "120f2ef20755a12ae79f34563dd9268b1242646c77bab917767c5f8221673fa7"
-    sha256 cellar: :any,                 arm64_sequoia: "a603683f8c78a70bdb2211982cc1cf3d288b994703e6ef640cbd556d12e9f670"
-    sha256 cellar: :any,                 arm64_sonoma:  "7ccc9c3257e7796e87e8c6b7c7d7ed82a62a2838e328af5bd02ffdf2966dee45"
-    sha256 cellar: :any,                 arm64_ventura: "2d98c8b7c22d731f02b49513390e3fd660861b2f38549bf010790b05173c9ad7"
-    sha256 cellar: :any,                 sonoma:        "4ebe2ffacfa884b848c7e79e8859cb680b5d155cf791735471b346a9052831d5"
-    sha256 cellar: :any,                 ventura:       "55409fad4a79e0e3883a2b3ead8e50ec49d233d5a02791d1a53fce2c061943f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd117a91536bee09dd4e05a86ca6908a0eb3fa274c409ae192c544bfe177e02f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e35d6e4fa54607415e231985844a7d51404e72bc84fb3b48a51164e3faf16a18"
+    sha256 cellar: :any,                 arm64_tahoe:   "e8d91d27cbecf9391a768e7f836d2c52c1f41d27f1b803b2e14e26f2c5102250"
+    sha256 cellar: :any,                 arm64_sequoia: "14660827a5a061626290a48376a9e32e884d49b6942646e5f3826f004a6a33bc"
+    sha256 cellar: :any,                 arm64_sonoma:  "0965a1423b67faec11f00c5c526fb66bf9f4a99b8ef6bce1ed9f6ad8ad28923c"
+    sha256 cellar: :any,                 sonoma:        "06a5cd05f3813c4f32164df5c69b88144d9753a3f4e38a63e5a73d7ae4213764"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3e272d408c9e901bedb3a22f1e3f481c58ebd9c81643091b7322c1b0a1886d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32450888726055263d963389fd718468f4cc9fe445bf5488be288e16a6b4a96e"
   end
 
   depends_on "cmake" => :build

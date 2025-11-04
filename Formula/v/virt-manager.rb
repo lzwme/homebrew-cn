@@ -4,14 +4,37 @@ class VirtManager < Formula
 
   desc "App for managing virtual machines"
   homepage "https://virt-manager.org/"
-  url "https://releases.pagure.org/virt-manager/virt-manager-5.1.0.tar.xz"
-  sha256 "ccfc44b6c1c0be8398beb687c675d9ea4ca1c721dfb67bd639209a7b0dec11b1"
   license "GPL-2.0-or-later"
   revision 1
   head "https://github.com/virt-manager/virt-manager.git", branch: "main"
 
+  stable do
+    url "https://releases.pagure.org/virt-manager/virt-manager-5.1.0.tar.xz"
+    sha256 "ccfc44b6c1c0be8398beb687c675d9ea4ca1c721dfb67bd639209a7b0dec11b1"
+
+    # Backport support for etree rather than deprecated libxml2 python bindings
+    # Ref: https://github.com/virt-manager/virt-manager/pull/983
+    patch do
+      url "https://github.com/virt-manager/virt-manager/commit/d4988b02efb8bba91fd55614fbbff11b3a915d44.patch?full_index=1"
+      sha256 "fc1daaf8440b01600b0297384f5bdd1cda654aaee958ce3fcd27d79c6b2d9ffb"
+    end
+    patch do
+      url "https://github.com/virt-manager/virt-manager/commit/ff9fa95e52f890ccd8dce18567aa7cc30582ca4f.patch?full_index=1"
+      sha256 "5ae4ce21b65cf77fa9511bae70799bd3c1890ab15a31372491662a7dc186df4f"
+    end
+    patch do
+      url "https://github.com/virt-manager/virt-manager/commit/d0372e82c8b6fe6b5517d850a81847422c861446.patch?full_index=1"
+      sha256 "5084650b38527f8bac3f2ea803b81f1a49ecf51cb461c3ad7088ec9f90845dae"
+    end
+    patch do
+      url "https://github.com/virt-manager/virt-manager/commit/766bf2ecdc5ac6853b41a36412d09c1950c700bf.patch?full_index=1"
+      sha256 "24deb9287b86caaac7eaea7d5dff145c0686bbc32ccb6952a8a0d4b0c6d3adeb"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3b9bdedb68d8a4da5d7e476cc40cff2b16886f1c9ac987d67fd29b69abe1d7f0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "2d4c414f5d463facecd2891e7cd47eeba3d2a1ac28e0d6a8c6a8551cacd86fbd"
   end
 
   depends_on "docutils" => :build
@@ -27,7 +50,6 @@ class VirtManager < Formula
   depends_on "libosinfo"
   depends_on "libvirt-glib"
   depends_on "libvirt-python" => :no_linkage
-  depends_on "libxml2" # can't use from macos, since we need python3 bindings
   depends_on :macos
   depends_on "osinfo-db"
   depends_on "py3cairo" => :no_linkage

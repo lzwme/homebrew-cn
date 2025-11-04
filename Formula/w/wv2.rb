@@ -38,7 +38,6 @@ class Wv2 < Formula
   depends_on "glib"
   depends_on "libgsf"
 
-  uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
   # Temporary test resource for bottles built before testole.doc was added.
@@ -54,7 +53,9 @@ class Wv2 < Formula
   def install
     ENV.append "LDFLAGS", "-lgobject-2.0" # work around broken detection
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
+    # Help libgsf find its libxml2 dependency. It is not directly used by wv2
     ENV.append "CXXFLAGS", "-I#{Formula["libxml2"].include}/libxml2" unless OS.mac?
+
     # Workaround to build with CMake 4
     args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
