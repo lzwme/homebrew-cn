@@ -1,18 +1,18 @@
 class Dependabot < Formula
   desc "Tool for testing and debugging Dependabot update jobs"
   homepage "https://github.com/dependabot/cli"
-  url "https://ghfast.top/https://github.com/dependabot/cli/archive/refs/tags/v1.78.0.tar.gz"
-  sha256 "bb0b0c82ec8ff4b951983848c024cc7ea602177d95af7fc57a8da4ebc717b8af"
+  url "https://ghfast.top/https://github.com/dependabot/cli/archive/refs/tags/v1.78.1.tar.gz"
+  sha256 "2608917f382330e44b26b50f3b331bbe30be91703f7e7b33387a7b3f7f09c3e3"
   license "MIT"
   head "https://github.com/dependabot/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f6b30341a78b47c310bce433dc77361b47d788154ff83e257859fbb45f72f679"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6b30341a78b47c310bce433dc77361b47d788154ff83e257859fbb45f72f679"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6b30341a78b47c310bce433dc77361b47d788154ff83e257859fbb45f72f679"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9ea0b10613197b26a93c1ca74cb66592938d9e45f38f9c30406531a7b6849169"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fcdb7150022f6d84fe4b5668e371368aa3ac94ef3fa777f3db39a7b63351df2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f6fd2dd0b5fc321f3a86045349814432dbe347d94707c5614707f10a85c58c2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "56798ea99e6514a7cfd75e48415a37eadb640479eb66b8e372dacf0d190c3ad2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56798ea99e6514a7cfd75e48415a37eadb640479eb66b8e372dacf0d190c3ad2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "56798ea99e6514a7cfd75e48415a37eadb640479eb66b8e372dacf0d190c3ad2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4e88523e6efb0b947945c35ef41b7906ac161a5139f2e76ae32eb4bfeb2b1eed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8dd87078095cf7f12318b32dcc92316896d2dafefd1c658db85e862273611ae1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e00c1677db3ef0f60a8c97ad750bdb136b64acb7e3c281a500549f4a21d779da"
   end
 
   depends_on "go" => :build

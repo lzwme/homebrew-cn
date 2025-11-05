@@ -1,8 +1,8 @@
 class Librsvg < Formula
   desc "Library to render SVG files using Cairo"
   homepage "https://wiki.gnome.org/Projects/LibRsvg"
-  url "https://download.gnome.org/sources/librsvg/2.61/librsvg-2.61.2.tar.xz"
-  sha256 "4644d83623dd61cc4479c2b3c372e1da2b281552ebc90035c8d1ac502eb1dc00"
+  url "https://download.gnome.org/sources/librsvg/2.61/librsvg-2.61.3.tar.xz"
+  sha256 "a56d2c80d744ad2f2718f85df466fe71d24ff1f9bc3e5ef588bde4d7e87815f2"
   license "LGPL-2.1-or-later"
 
   # librsvg doesn't use GNOME's "even-numbered minor is stable" version scheme.
@@ -14,12 +14,12 @@ class Librsvg < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f0a2153cb1ae277951e07d4015c14708cde74b4aa2ab24d5b5f3a0f4600d1543"
-    sha256 cellar: :any, arm64_sequoia: "7ecd4e26728b3f98e6697457a29533d6e62bace7563ff242ccbc0316b93254f4"
-    sha256 cellar: :any, arm64_sonoma:  "eb4f60e7e39dc29c294cc670378d07927ed2762bb4802ec536f280efcccb8abf"
-    sha256 cellar: :any, sonoma:        "c82e92477ab17e4c359dcccf4bd85d3a6ca9f384c57a803414f15ea6d3237951"
-    sha256               arm64_linux:   "0348b259a115a0a974e419d59585da7ada63de83e43060cb45ab64c09b274531"
-    sha256               x86_64_linux:  "2931ae573a90d8c8e27b4cd2aeb80ea7c6376999571f7fdf2fbbf2ca98a17894"
+    sha256 cellar: :any, arm64_tahoe:   "856586e932ac602c2637d71bc21c56aa8fc0516e28f52b5f4a16a9976ed9f3ea"
+    sha256 cellar: :any, arm64_sequoia: "246445a80337f9dc27ce4a01dbc411cf7feff380700fe952f103cf06919154de"
+    sha256 cellar: :any, arm64_sonoma:  "571026bade8c88588e9ebaec6c198ce7f615a8dcdaa5778e69915941d8d93714"
+    sha256 cellar: :any, sonoma:        "691ed4674169827262f5c38aa90eb99459132165773f1619109d8d10c7e0235a"
+    sha256               arm64_linux:   "fed7065504a28ebcc99053054676b668630e0701696147125b8d33fcc5583a83"
+    sha256               x86_64_linux:  "05e392b75961623df5dd9f01664c8c9deefe31ea9849e86c237ac08721680692"
   end
 
   depends_on "cargo-c" => :build

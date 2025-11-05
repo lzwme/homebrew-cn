@@ -5,16 +5,15 @@ class Mailutils < Formula
   mirror "https://ftp.gnu.org/gnu/mailutils/mailutils-3.20.tar.gz"
   sha256 "d10ee65ba391d6463952d8a81551f8a6e667538ee8587b3c801137e657087d4c"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_tahoe:   "6226a3e8389ad9ce81ec1b43a07196b2ad6469e16b58402d106748a191b30754"
-    sha256 arm64_sequoia: "26c6cce1516f6ea2435473db754bc8f5d1df5cfa993dae465acb5926d53f2a0f"
-    sha256 arm64_sonoma:  "a7febc3f8b9ce9a2ec7ac88c9a4b0663c0706fd51154fd0aba8ea1c04a95818f"
-    sha256 arm64_ventura: "5ef7a611f4898010e32d274502f86702ee4d7415cb41bc8559c616ad0f31f9b8"
-    sha256 sonoma:        "33ca8ab67fe35819016e0f7c076772d7052568d1c877e50d4b0bba65303bad18"
-    sha256 ventura:       "5c677c2ff86e822d323ef6d29c48cfd77688cbab06ae587a1320dc72d8fec0ff"
-    sha256 arm64_linux:   "d915542a1a5b9461b4c6762c4c5177f32a5e23a2282818cbe5702ba5d1b97415"
-    sha256 x86_64_linux:  "f648b8567f2893c9ccc33e418da53ea7d93c50c8fe434f28d8694055019423a2"
+    sha256 arm64_tahoe:   "cdba3d1331e33e64f389b2795c7dc3c9b959d0595d9077950e35a61c867e0db2"
+    sha256 arm64_sequoia: "08b55cfd3926a5fd45693591c7ac4c0da39149fa8c28fbcfae097848eda659c2"
+    sha256 arm64_sonoma:  "f1c0211a199b18c353026162e6c3cfea238458f5fc4eac45f976f19e7a3f0f91"
+    sha256 sonoma:        "5b7387ebdf85f25c6acccd1cec3691a971c05755efb56eff8a98830475947e5d"
+    sha256 arm64_linux:   "86fb0ff32496469f2376f994228719e6ad518b4e2e01ad05903bd94dd2b880f2"
+    sha256 x86_64_linux:  "5e4b9084e16b4cd161693e803c657a9c19ea6f145b1d9a2f4cda323a5429b8ac"
   end
 
   depends_on "gdbm"

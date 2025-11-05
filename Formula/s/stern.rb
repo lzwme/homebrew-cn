@@ -1,20 +1,18 @@
 class Stern < Formula
   desc "Tail multiple Kubernetes pods & their containers"
   homepage "https://github.com/stern/stern"
-  url "https://ghfast.top/https://github.com/stern/stern/archive/refs/tags/v1.33.0.tar.gz"
-  sha256 "ab907adb5941ce1ffd1effaa63e5ec590203b6e8dee072e4143591fb2650fa95"
+  url "https://ghfast.top/https://github.com/stern/stern/archive/refs/tags/v1.33.1.tar.gz"
+  sha256 "24101b69a65e5fcfa459806c9628540c8085e8427fb44a28b6daf8c865215878"
   license "Apache-2.0"
   head "https://github.com/stern/stern.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa8db9c8b0e6f3fd29fb56c275b1a0a68a18a77b7396283d0233e5bdea58998d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9bc742a1e48ae6b069079ce795d6e4b50d534cc8f81aee2993e2091b81087ca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ccfd7eca55696103134e88fdddef68f2aabb3e56ec173a1227522bc57fe3b05"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "beaaed9f8ef9e9e85d61ef726daa961962d73563e83b4001e9d8fc70cfdb7c4c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6daddb02750debeb5b80b70ec08bcb31e8f2fe75766e29db978000164b6fd948"
-    sha256 cellar: :any_skip_relocation, ventura:       "85c510d6bc27b85281a7b35f8e2326cd9825af9ab3833ea822138d4631bc915c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7700cd36bee38b2b760caa1f896aa0bc40061a8932deb58fdd8db250e2b73a65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9869e55b20fef1e24b4389cf06433f0256fe550b7429daa3d01f0b2f3aeef822"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "af35aecefbd4c2b1be1e461142d3564e5b99560c4d219e3341298d2c7f0c33cf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b6dc5128e378f0c30fb217ca3942ac5a417500ab44f3afcb0d866b8312abf55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9400bab425c16eb532dfe42f78d7b031a83585a5b0e581266776a1f30593339"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e4f18fd2df16ec8934441ca211882cbb6a0786df1382f2bf19aa60ce7698d14f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "09a7ad11ceae2bd689efa18a06031b9256cc2cce00906f12d97d3aafc71fb3dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ae5e78ab281417f4028b95007dac56edcd8ad20b630a9086529de253ab81671"
   end
 
   depends_on "go" => :build

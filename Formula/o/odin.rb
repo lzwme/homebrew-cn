@@ -2,19 +2,19 @@ class Odin < Formula
   desc "Programming language with focus on simplicity, performance and modern systems"
   homepage "https://odin-lang.org/"
   url "https://github.com/odin-lang/Odin.git",
-      tag:      "dev-2025-10",
-      revision: "3ad7240d3d70cdcfb05557510919d8d566aa8c59"
-  version "2025-10"
-  license "BSD-3-Clause"
+      tag:      "dev-2025-11",
+      revision: "e5153a937b95f4583dfac2c22d010a764bf2f1a8"
+  version "2025-11"
+  license "Zlib"
   head "https://github.com/odin-lang/Odin.git", branch: "master"
 
   bottle do
-    sha256                               arm64_tahoe:   "bdbf56d6e83af1fe7ec3a3781150368ef833070d7695640168721457cd29c23f"
-    sha256                               arm64_sequoia: "ec03b290dda131f186fba8999d7c8e2c20c385456483ec022e9f356971bfd6d6"
-    sha256                               arm64_sonoma:  "57c6c745e01b6bb261bb8b37204c46d8efcbbaf916b1a7678bfbe99520a04ef8"
-    sha256 cellar: :any,                 sonoma:        "8609471bf83846c64c17e28e9c29d615e2ba6cf0f0eec285c151fca32dcc9f6f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bdd26d56b9539409e981e25945ca30dea31e747ff3bc1b0cb54536a336c79516"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9ff427d14447fa15a81beddb308dbf6efad644208c3ec7df86dbe63817edad9"
+    sha256                               arm64_tahoe:   "09d7b9a197802ba7b959a09b61e87304423cac60f6f6c09c3c8745dbc2ea689f"
+    sha256                               arm64_sequoia: "16b2589670a1bc5ffdb927e1ea8df298c292aff990a66e921ab5b686a4d27d70"
+    sha256                               arm64_sonoma:  "60bf63434c6b0ef6f9d0e418687c12fe7d5c155fcf2f567c7955bbf5f38fb88e"
+    sha256 cellar: :any,                 sonoma:        "fd7f7d0d189bcb69cd58149b4a07502b59557e48dafc9e7f3c3d8653dd4869f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f6e257b986b070aa04335215a4ab81d497f459ca564fba148422f76576e2022"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a87a15901c3adee32462cf6a30ee54176c5ffbd9fffc5a92aefaaac58cc79f1"
   end
 
   depends_on "glfw"

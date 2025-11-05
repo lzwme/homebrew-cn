@@ -28,11 +28,6 @@ class LastpassCli < Formula
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
 
-  # Avoid crashes on Mojave's version of libcurl (https://github.com/lastpass/lastpass-cli/issues/427)
-  on_mojave :or_newer do
-    depends_on "curl"
-  end
-
   # Workaround for CMake 4 compatibility
   # PR ref: https://github.com/lastpass/lastpass-cli/pull/716
   patch do

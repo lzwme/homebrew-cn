@@ -1,8 +1,8 @@
 class Libxcrypt < Formula
   desc "Extended crypt library for descrypt, md5crypt, bcrypt, and others"
   homepage "https://github.com/besser82/libxcrypt"
-  url "https://ghfast.top/https://github.com/besser82/libxcrypt/releases/download/v4.4.38/libxcrypt-4.4.38.tar.xz"
-  sha256 "80304b9c306ea799327f01d9a7549bdb28317789182631f1b54f4511b4206dd6"
+  url "https://ghfast.top/https://github.com/besser82/libxcrypt/releases/download/v4.5.0/libxcrypt-4.5.0.tar.xz"
+  sha256 "825e764e4ff2e6304adb814cda297074b222d54a04edbd8ebc7cf58fc3af857d"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class Libxcrypt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ca9e8988d4d2df060bbedb9cac316daee38716eeb25fe7dc143b405af8a5031f"
-    sha256 cellar: :any,                 arm64_sequoia: "a064d22be7cf3136359f8bc7ddfe69d3d1da83cecba23679e8be3d5c3a6715fa"
-    sha256 cellar: :any,                 arm64_sonoma:  "70ff0492ab9b04005ac3a10be7b840926e79c8e1005795a245e10a2845741897"
-    sha256 cellar: :any,                 arm64_ventura: "b44196ecde239115a28ed7470d21bd679cca173739c24a863ce393df04faffd2"
-    sha256 cellar: :any,                 sonoma:        "1eb38a921fe68f9bf101f6ead351a71335a143ff842d1c294a771e1eecfcae88"
-    sha256 cellar: :any,                 ventura:       "7876b0bfad028648259367023f14a2fb6c9b13db5e489bf6b002818fe36ec9f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc5e89a07cd3d52af14132f1323096d2b0e9519dd71b1b52e192697817547500"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1835a4d7d45333637814fbd4d0184d6ebdb81b2e7e4a09e2d803202a497cf8a"
+    sha256 cellar: :any,                 arm64_tahoe:   "cfa836c215867bd755934755677878aea34be10c20d83216dfe333410c3de51a"
+    sha256 cellar: :any,                 arm64_sequoia: "2985b83e686111c4c4987affa262a62568c4777e9490a7d32f96b7ef8312d727"
+    sha256 cellar: :any,                 arm64_sonoma:  "1cdbc6d81035a498aca3621d34c4119493aa1e7cda6f7290abc6a222986b517e"
+    sha256 cellar: :any,                 sonoma:        "7cd32b92ea29fcc10e25da846bb1d3daa7ea410c11fcb49f4b736c0203b17e45"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9199a3ea8f7fd9184bb813549038b7205869513b082ab91df117361d97ffe0ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74f1f5760e115329f13fb995ebcf83033eea62ce9cb93bf0906cea8dd512ee52"
   end
 
   keg_only :provided_by_macos

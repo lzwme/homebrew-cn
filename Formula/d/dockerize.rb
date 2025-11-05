@@ -1,20 +1,18 @@
 class Dockerize < Formula
   desc "Utility to simplify running applications in docker containers"
   homepage "https://github.com/jwilder/dockerize"
-  url "https://ghfast.top/https://github.com/jwilder/dockerize/archive/refs/tags/v0.9.6.tar.gz"
-  sha256 "34926f5c736544b0c754a1a6de05c2ac3338033f77e872a2a4bcef55667e7509"
+  url "https://ghfast.top/https://github.com/jwilder/dockerize/archive/refs/tags/v0.9.7.tar.gz"
+  sha256 "31643789f958e4d1f552d9e72efef64cc500b5b3408b2ad546d862ba048655a5"
   license "MIT"
   head "https://github.com/jwilder/dockerize.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "144fa8dbd95fa3b7679cff214defbc5ad5bd18e49a996250896698192d4f2dfd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bce2724a44498ef7a8f3af75fe83f9c9f0b655e808af100aeab35aba133d97dc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bce2724a44498ef7a8f3af75fe83f9c9f0b655e808af100aeab35aba133d97dc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bce2724a44498ef7a8f3af75fe83f9c9f0b655e808af100aeab35aba133d97dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f718902815c4f7fde3f6c6860c485dd62db8b8388cfa8898d52c2d9331293876"
-    sha256 cellar: :any_skip_relocation, ventura:       "f718902815c4f7fde3f6c6860c485dd62db8b8388cfa8898d52c2d9331293876"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1876517dd21b7cf29f4dd54782894032e6343b5b0775285f08bc1e30cfe351f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "550dcae60f0801cc80da4f86ae9b741c95a6b655f09bd7b33bf2dcdaf2d4deff"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95e2e0a3fbb7e5b3ca9b64192b5d37063c8cf43101c0c71b1d27ac8ebbeaeb33"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95e2e0a3fbb7e5b3ca9b64192b5d37063c8cf43101c0c71b1d27ac8ebbeaeb33"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95e2e0a3fbb7e5b3ca9b64192b5d37063c8cf43101c0c71b1d27ac8ebbeaeb33"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dfdeb6e012ea5b9fccf99bb3d73fe9f70e8633b84f2236e7bf9dc784f5234274"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc8255f45f2a5f660f0f648bf883b779fe90e9a322e7ae08b946d52b54a7c832"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d18394999cc53b141589dc5f6c1504d9b86d158a58a8315bebe6a3dda2cf1f3c"
   end
 
   depends_on "go" => :build

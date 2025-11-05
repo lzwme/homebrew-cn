@@ -1,19 +1,19 @@
 class PhraseCli < Formula
   desc "Tool to interact with the Phrase API"
   homepage "https://phrase.com/"
-  url "https://ghfast.top/https://github.com/phrase/phrase-cli/archive/refs/tags/2.50.0.tar.gz"
-  sha256 "21e5f55f6adab9b4d7ec6d9147253ce1edb64020af4f26d8b43de7cbd3920359"
+  url "https://ghfast.top/https://github.com/phrase/phrase-cli/archive/refs/tags/2.50.1.tar.gz"
+  sha256 "227f52bb4bd58d588df7ed0b49a8ed1b0e64dba390b5c6cfe80a370c507fe91e"
   license "MIT"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a7045010b73918bf9c5a7f4a4f6673c41c22255f64d7ea5c15c604d2e37da36"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a7045010b73918bf9c5a7f4a4f6673c41c22255f64d7ea5c15c604d2e37da36"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a7045010b73918bf9c5a7f4a4f6673c41c22255f64d7ea5c15c604d2e37da36"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ce1ea255d06529f4d4e9d57dc946298b96c217306a09843ea58a0f7f08e937a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9c0df26d6b64ac595bb9bf3beaab472bd3d9a89fd9d59cd3c6e3a1ecc59ebb6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9abca79a270b8d4726d42a3b4281c6ada0df9a16df7b93fd6d00293e8c34b69"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e522fde9ce3a0d35e24cb198122354e2b8d5062c341c0e8965ba61ddd1b9a853"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e522fde9ce3a0d35e24cb198122354e2b8d5062c341c0e8965ba61ddd1b9a853"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e522fde9ce3a0d35e24cb198122354e2b8d5062c341c0e8965ba61ddd1b9a853"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4cb7998846e2c15dc3b091a579c46bdf41cf90dfd5e9bf7e9a71c4612112aa9e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "553c943ae65d29ecbb612b452d45c58ad76d43cf8689a04973cf1ee77efa61d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "002d4ce28933d62381192bab02fdd9be06a6e1e564d41ecec1235bc77c16ba1d"
   end
 
   depends_on "go" => :build

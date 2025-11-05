@@ -5045,7 +5045,7 @@ Homebrew-homebrew-core/Formula/o/observerward.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ocaml-findlib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/ocaml-num.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ocaml-zarith.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/o/ocaml.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/ocaml.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/ocaml@4.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ocamlbuild.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oci-cli.rb, Homebrew/homebrew-core, 0
@@ -5957,6 +5957,7 @@ Homebrew-homebrew-core/Formula/r/radvd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rage.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ragel.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rails-completion.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rails-mcp-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/railway.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rain.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rainbarf.rb, Homebrew/homebrew-core, 1
@@ -9548,6 +9549,7 @@ Homebrew-homebrew-cask/Casks/f/freelens@nightly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freemind.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/freenettray.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freeorion.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/f/freepdf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freeplane.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/freeshow.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freesurfer.rb, Homebrew/homebrew-cask, 0

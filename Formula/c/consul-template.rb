@@ -1,18 +1,18 @@
 class ConsulTemplate < Formula
   desc "Generic template rendering and notifications with Consul"
   homepage "https://github.com/hashicorp/consul-template"
-  url "https://ghfast.top/https://github.com/hashicorp/consul-template/archive/refs/tags/v0.41.2.tar.gz"
-  sha256 "9a89232a6d7c1ff835cf2ff78ce03ce5cde5b45a6e45c01297ce8e22b2fba544"
+  url "https://ghfast.top/https://github.com/hashicorp/consul-template/archive/refs/tags/v0.41.3.tar.gz"
+  sha256 "d2a5d9dea3f34be634bc733be0ba1d8448cd341c93392efc187d36e97dd7c2f2"
   license "MPL-2.0"
   head "https://github.com/hashicorp/consul-template.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2fdd58c6f09812fabfc679fa175197e2e7c65bc25dd269607003d2e0f335259"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2fdd58c6f09812fabfc679fa175197e2e7c65bc25dd269607003d2e0f335259"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2fdd58c6f09812fabfc679fa175197e2e7c65bc25dd269607003d2e0f335259"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d759503f5c78aed481472b733b86c859aa95c84cf2d154a3c6bb64fcb53adf51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27bac52e248306d8a7336129e6b291a44307ddf8c7429258622dfac842e3ec19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbb6abd303067ca184a7543c872504943abc642003654f63f6a8a73a640b5030"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1889950f795aee8a149340d2dcf723352b3507e4d53fd3df648bd8e100122288"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1889950f795aee8a149340d2dcf723352b3507e4d53fd3df648bd8e100122288"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1889950f795aee8a149340d2dcf723352b3507e4d53fd3df648bd8e100122288"
+    sha256 cellar: :any_skip_relocation, sonoma:        "75156483736f9da5b276b57c049de6b4df3dea713cab494ec5a9f718555cd78d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "843d9021bdc182bd9c404ec0be971997fd911b3d2efc767ab84427b84e8ab8ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "138cdf61a6ec80fc904a2288e863cdf4bc226c9c055651fa29488d47f4404d33"
   end
 
   depends_on "go" => :build
