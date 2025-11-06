@@ -23,6 +23,8 @@ class Pnpm < Formula
 
   depends_on "node" => [:build, :test]
 
+  conflicts_with "corepack", because: "both install `pnpm` and `pnpx` binaries"
+
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")

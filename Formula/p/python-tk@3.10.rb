@@ -20,6 +20,10 @@ class PythonTkAT310 < Formula
 
   keg_only :versioned_formula
 
+  # https://devguide.python.org/versions/#versions
+  deprecate! date: "2026-10-15", because: :deprecated_upstream
+  disable! date: "2027-10-15", because: :deprecated_upstream
+
   depends_on "python@3.10"
   depends_on "tcl-tk@8"
 

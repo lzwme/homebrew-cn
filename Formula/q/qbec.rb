@@ -1,18 +1,18 @@
 class Qbec < Formula
   desc "Configure Kubernetes objects on multiple clusters using jsonnet"
   homepage "https://qbec.io"
-  url "https://ghfast.top/https://github.com/splunk/qbec/archive/refs/tags/v0.27.0.tar.gz"
-  sha256 "2789a49d0e3d421fed2db40d9cea0411dc76d759a7e80eec1e77fce201e089d4"
+  url "https://ghfast.top/https://github.com/splunk/qbec/archive/refs/tags/v0.30.0.tar.gz"
+  sha256 "26dc4f5e4749e82c6f446a31b9eb47ac512178a39e45de237c937dd0b1b96d90"
   license "Apache-2.0"
   head "https://github.com/splunk/qbec.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68c05bf8e3b78547e57e4c06c5c2dcfdf29a86e3ba1ba58ac5b0593c6ddb7718"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f9f156de37414e1c7d4e993c7c88f24de794e58d95dfde4de9b2b892e2d74d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8e1e3bf7294e8787969a00d7b5f7f4d685fc20b02e43046cb1417757ae89600"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ab57db399ddfb465dcbb99dec51dd3555c9556e27d5b2c9c9992a4afdc83475e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0c99147cb8bbe99c3ecb288feeba5ea36be2f161bbab1dc3c4f6ac1582abc37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eda8e0931ba248694966aff7ec3a0477e8551c80d7211f828b5acf93dc772e82"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9462e25ab6e0625df3e736d18b8c8185fe5ab3868c72007910bf93c2e06e1604"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8294a6942ed9967596d21d5a0b1d3716b73eb20b8b79268e8c54a5b7b95f42c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "922df35073317307b502e490cc9ba9d0ab8028a4b560c9adf95d8ae71f3aa078"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7c1f4f0add2624db4c34e31294df8b15e7bc5d588c3f0e4b1141795307641861"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1790ffe807e928176b6cd98746a40d7f4057b867ba15436e21bda292328c62cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96b2926505ccde48caaee06e933566ff6c35523af5875c38730baeb0fc771ced"
   end
 
   depends_on "go" => :build

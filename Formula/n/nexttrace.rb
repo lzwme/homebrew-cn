@@ -30,7 +30,7 @@ class Nexttrace < Formula
     ldflags = %W[
       -s -w
       -X github.com/nxtrace/NTrace-core/config.Version=#{version}
-      -X github.com/nxtrace/NTrace-core/config.CommitID=brew
+      -X github.com/nxtrace/NTrace-core/config.CommitID=#{tap.user}
       -X github.com/nxtrace/NTrace-core/config.BuildDate=#{time.iso8601}
       -checklinkname=0
     ]
@@ -50,6 +50,7 @@ class Nexttrace < Formula
     return_status = OS.mac? ? 0 : 1
     output = shell_output("#{bin}/nexttrace --language en 1.1.1.1 2>&1", return_status)
     assert_match "[NextTrace API]", output
+
     assert_match version.to_s, shell_output("#{bin}/nexttrace --version")
   end
 end

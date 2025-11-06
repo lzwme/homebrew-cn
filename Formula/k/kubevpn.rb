@@ -25,7 +25,7 @@ class Kubevpn < Formula
       -s -w
       -X #{project}/pkg/config.Image=ghcr.io/kubenetworks/kubevpn:v#{version}
       -X #{project}/pkg/config.Version=v#{version}
-      -X #{project}/pkg/config.GitCommit=brew
+      -X #{project}/pkg/config.GitCommit=#{tap.user}
       -X #{project}/cmd/kubevpn/cmds.BuildTime=#{time.iso8601}
       -X #{project}/cmd/kubevpn/cmds.Branch=master
       -X #{project}/cmd/kubevpn/cmds.OsArch=#{goos}/#{goarch}
@@ -36,7 +36,7 @@ class Kubevpn < Formula
   end
 
   test do
-    assert_match "Version: v#{version}", shell_output("#{bin}/kubevpn version")
+    assert_match version.to_s, shell_output("#{bin}/kubevpn version")
     assert_path_exists testpath/".kubevpn/config.yaml"
     assert_path_exists testpath/".kubevpn/daemon"
   end

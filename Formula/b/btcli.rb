@@ -3,18 +3,18 @@ class Btcli < Formula
 
   desc "Bittensor command-line tool"
   homepage "https://docs.bittensor.com/btcli"
-  url "https://files.pythonhosted.org/packages/72/ad/d996242b6093f5ea9bb9babc7927bb6817fd0c2fa585de1199bfa70eb506/bittensor_cli-9.14.3.tar.gz"
-  sha256 "bc8cb5e4e4aeabcfbee9cc1f2e1169079678464b60a7166510170772968a1511"
+  url "https://files.pythonhosted.org/packages/56/9e/e9ec0e151acc3d09e6c5101764cc75e74277b59370eb6d63df768c428c29/bittensor_cli-9.15.2.tar.gz"
+  sha256 "46d8f53cc6e0792f5174fe736fb123c4fc459cb56621f68dc2120a8a5b9de728"
   license "MIT"
   head "https://github.com/opentensor/btcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5737f77e7d5291cf23b71079e0fa0d4e28ae723ed36f0f4adf197b99844a5569"
-    sha256 cellar: :any,                 arm64_sequoia: "21b5c603a0fe8747e846a02475400102615b168fd3814ad3e03911a59341d715"
-    sha256 cellar: :any,                 arm64_sonoma:  "d92475c956dac9507b958fca760f4653feb88452358171ba2df22f87ad4ce83c"
-    sha256 cellar: :any,                 sonoma:        "c4cf4a5c040aec76360b7612c32c1a69e99dd1b6b1d6eb15bc93c812f6b351ba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e6be426989101ad0a96256a9b80402d7f46126d2f6c0cdb8a45821e858a6273"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f513cad81c1b6def0a3404e051d94dd0401d525f9fb5a441f09ac55c160d2ec9"
+    sha256 cellar: :any,                 arm64_tahoe:   "1b50d144544117219dcb86efcfc2b963b6eb56d4a082d500d21bd21ef4ff9a92"
+    sha256 cellar: :any,                 arm64_sequoia: "0bff097e2d0a19f11d73f3a2d13931eb61c8f421445df29d2b494d5e02302e2c"
+    sha256 cellar: :any,                 arm64_sonoma:  "ea7ab04fdea39d2a750d048f56754ee1a4ca419cbacc6df643d2089b12b74294"
+    sha256 cellar: :any,                 sonoma:        "ababc42a220d53c70cae2635ad2550ed8bea33b52d9af14ee5d11455b24e307b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "19054386fcb5420e4fb99c3ff15bff8b175e14c2479db6f74aaa1437ba056c7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e85679a2d38629f970422d9a48f0ac59fb1cd0e888eca39d1949192ebd272aed"
   end
 
   depends_on "rust" => :build # for bittensor-wallet, plotly
@@ -140,8 +140,8 @@ class Btcli < Formula
   end
 
   resource "narwhals" do
-    url "https://files.pythonhosted.org/packages/56/e5/ef07d31c2e07d99eecac8e14ace5c20aeb00ecba4ed5bb00343136380524/narwhals-2.10.0.tar.gz"
-    sha256 "1c05bbef2048a4045263de7d98c3d06140583eb13d796dd733b2157f05d24485"
+    url "https://files.pythonhosted.org/packages/c5/dc/8db74daf8c2690ec696c1d772a33cc01511559ee8a9e92d7ed85a18e3c22/narwhals-2.10.2.tar.gz"
+    sha256 "ff738a08bc993cbb792266bec15346c1d85cc68fdfe82a23283c3713f78bd354"
   end
 
   resource "netaddr" do
@@ -160,8 +160,8 @@ class Btcli < Formula
   end
 
   resource "plotly" do
-    url "https://files.pythonhosted.org/packages/0c/63/961d47c9ffd592a575495891cdcf7875dc0903ebb33ac238935714213789/plotly-6.3.1.tar.gz"
-    sha256 "dd896e3d940e653a7ce0470087e82c2bd903969a55e30d1b01bb389319461bb0"
+    url "https://files.pythonhosted.org/packages/06/e6/b768650072837505804bed4790c5449ba348a3b720e27ca7605414e998cd/plotly-6.4.0.tar.gz"
+    sha256 "68c6db2ed2180289ef978f087841148b7efda687552276da15a6e9b92107052a"
   end
 
   resource "propcache" do

@@ -1195,6 +1195,7 @@ Homebrew-homebrew-core/Formula/c/copyparty.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/core-lightning.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coredns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coreos-ct.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/corepack.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/coreutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/corkscrew.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cornelis.rb, Homebrew/homebrew-core, 1
@@ -1386,7 +1387,7 @@ Homebrew-homebrew-core/Formula/d/dasm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/datafusion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/datalad.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/datamash.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/d/datasette.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/datasette.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/datatype99.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/datetime-fortran.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dateutils.rb, Homebrew/homebrew-core, 1
@@ -1590,6 +1591,7 @@ Homebrew-homebrew-core/Formula/d/docuum.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docx2txt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/doge.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/doggo.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/doh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/doitlive.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dolphie.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dolt.rb, Homebrew/homebrew-core, 1
@@ -4779,6 +4781,7 @@ Homebrew-homebrew-core/Formula/m/mysql-client@8.0.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql-client@8.4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql-connector-c++.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql-search-replace.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mysql-to-sqlite3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql@8.0.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql@8.4.rb, Homebrew/homebrew-core, 0
@@ -5179,6 +5182,7 @@ Homebrew-homebrew-core/Formula/o/openliberty-microprofile4.rb, Homebrew/homebrew
 Homebrew-homebrew-core/Formula/o/openliberty-webprofile8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openliberty-webprofile9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openlibm.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/openlist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openmama.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openmotif.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openmsx.rb, Homebrew/homebrew-core, 1
@@ -6711,6 +6715,7 @@ Homebrew-homebrew-core/Formula/s/sqlite-analyzer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sqlite-rsync.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sqlite-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sqlite.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/sqlite3-to-mysql.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sqlitecpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqliteodbc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlmap.rb, Homebrew/homebrew-core, 1
@@ -12844,7 +12849,7 @@ Homebrew-homebrew-cask/Casks/l/league-of-legends.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/leanote.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/leapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lectrote.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/l/ledger-live.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/ledger-wallet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/leech.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/leela.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/legcord.rb, Homebrew/homebrew-cask, 1

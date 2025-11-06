@@ -1,18 +1,17 @@
 class Ocicl < Formula
   desc "OCI-based ASDF system distribution and management tool for Common Lisp"
   homepage "https://github.com/ocicl/ocicl"
-  url "https://ghfast.top/https://github.com/ocicl/ocicl/archive/refs/tags/v2.8.3.tar.gz"
-  sha256 "fd14fc5eb9f426dc462961bc7a85dbde4004701ee14fdb34f109044d25e5f686"
+  url "https://ghfast.top/https://github.com/ocicl/ocicl/archive/refs/tags/v2.8.4.tar.gz"
+  sha256 "06084148357900445227677014b0b0a3ca2ab08f360b7cfe180a183c903199be"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9504ec274a04b277b5a41b29aa0d2f2ed190f1bca3f46fd51c277507b89d2bb3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aeecf0dce04c52943ad30ffb997db34d4b394023309becd2b76b530a7edb5513"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0aec49c17358e1f541602a0ba2929737d9fe8967875c1579f4453a631a696559"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4d8f709aec96b092ec9006a872ee9e595291f1f96bbd4d1378ae9f23dbcae51a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9846e63349f808ae98bff7ca2a498d25aed5a6f6c201686e98d78807c4ed5e61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "314ec401c109a66d722fa14658fc213d97e14fc9e8298009680f8367778c2e31"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ccfc5e642ccbf20d3705f30fc8c08b49c189fcea87bcda0baab32a7681cabe07"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ed839616189acd684e5b2c20e98bb142b34b88f0a8d51f24538302d32f677eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88b58dc452e097fc683178939c8bbfd2bc10db0d6c71b3a82d27c57d2dd3bf1c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "95eb7b099bcc1f586a149b4276e79d2b53fdfe5ddaad417e61a15b3f653603d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4b0cea622fe4f70f303e2027cae466db71a9761a55be120e1154e33e1a0ce5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cbefe855c85daf9ba1213239e9d901b1c997e7c9d26f07fc6a800a5b3b06a88"
   end
 
   depends_on "sbcl"

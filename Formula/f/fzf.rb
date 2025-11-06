@@ -24,7 +24,7 @@ class Fzf < Formula
     ldflags = %W[
       -s -w
       -X main.version=#{version}
-      -X main.revision=brew
+      -X main.revision=#{tap.user}
     ]
 
     system "go", "build", *std_go_args(ldflags:)
@@ -52,6 +52,8 @@ class Fzf < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/fzf --version")
+
     (testpath/"list").write %w[hello world].join($INPUT_RECORD_SEPARATOR)
     assert_equal "world", pipe_output("#{bin}/fzf -f wld", (testpath/"list").read).chomp
   end

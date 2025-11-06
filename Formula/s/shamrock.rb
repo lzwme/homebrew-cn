@@ -4,15 +4,16 @@ class Shamrock < Formula
   url "https://ghfast.top/https://github.com/Shamrock-code/Shamrock/releases/download/v2025.10.0/shamrock-2025.10.0.tar"
   sha256 "72683352d862d7b3d39568151a17ea78633bd4976a40eacb77098d3ef0ca3c55"
   license "CECILL-2.1"
+  revision 1
   head "https://github.com/Shamrock-code/Shamrock.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "7c1186e99fc8c0f9a7a3d24ad1a567af9d51ea1d21ef1388061176c1835c3846"
-    sha256 arm64_sequoia: "7d9a8431163d090cb87f372c902668d6ad63c10b59007649c08bab964537927e"
-    sha256 arm64_sonoma:  "7cb215b578f001046d215348af3e62be75c4c54e934cb4e1f77d0297fe0384e7"
-    sha256 sonoma:        "aa62daa6853bf1198dc5798050c244f3e46fff90263191c6a7711f3b90d2f366"
-    sha256 arm64_linux:   "beac32843e9741cdb0b49c9eeff5596e839529bd72d41e15a9d2590120346437"
-    sha256 x86_64_linux:  "147df51883fc38480ad75d1c4ae774a6d65b4fcaf301c4cbae61ca2b65fc2af9"
+    sha256 arm64_tahoe:   "c47e9d92ac0748df6ae1b1a02ff190e4072323a79f0e5022ab970bf0a4c6f53a"
+    sha256 arm64_sequoia: "0d83267cf6f83a883dd2a84dbb2be953422b482819843022f7ebe5ac52e7d98a"
+    sha256 arm64_sonoma:  "013209e7ce2da835b1b16b345a521934e2075cda301a58a6e840c84a261575f6"
+    sha256 sonoma:        "14e05876ef09736b68bf2ce5fb39efb449f63b7b503d83cd2c0b584e28329fba"
+    sha256 arm64_linux:   "da7db3322a2330f9382b5a6bd28419b78fc2fd2c95f850ceed64a021452a124e"
+    sha256 x86_64_linux:  "070d9694a2e302b0c4fc882cb8ab2bd473cb380c49ce74b5805cb3dcb83cbc80"
   end
 
   depends_on "cmake" => :build

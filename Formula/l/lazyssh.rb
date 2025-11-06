@@ -18,8 +18,12 @@ class Lazyssh < Formula
   depends_on "go" => :build
 
   def install
-    # has to be `brew` for `gitCommit` due to length constraint
-    ldflags = "-s -w -X main.version=#{version} -X main.gitCommit=brew"
+    # The commit variable only displays 7 characters, so we can't use #{tap.user} or "Homebrew".
+    ldflags = %W[
+      -s -w
+      -X main.version=#{version}
+      -X main.gitCommit=brew
+    ]
     system "go", "build", *std_go_args(ldflags:), "./cmd"
   end
 

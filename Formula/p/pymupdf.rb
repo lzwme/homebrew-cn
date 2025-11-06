@@ -1,18 +1,17 @@
 class Pymupdf < Formula
   desc "Python bindings for the PDF toolkit and renderer MuPDF"
   homepage "https://pymupdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/8d/9a/e0a4e92a85fc17be7c54afdbb113f0ade2a8bca49856d510e28bd249e462/pymupdf-1.26.5.tar.gz"
-  sha256 "8ef335e07f648492df240f2247854d0e7c0467afb9c4dc2376ec30978ec158c3"
+  url "https://files.pythonhosted.org/packages/ec/d7/a6f0e03a117fa2ad79c4b898203bb212b17804f92558a6a339298faca7bb/pymupdf-1.26.6.tar.gz"
+  sha256 "a2b4531cd4ab36d6f1f794bb6d3c33b49bda22f36d58bb1f3e81cbc10183bd2b"
   license "AGPL-3.0-only"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "db033482073562d13e2b4bbbf6476779d2e150d17f2b9d9084e9b7110e6d1939"
-    sha256 cellar: :any,                 arm64_sequoia: "14aa7a312c2171f0d9ceff363aec5899e2842254d0843ab4195c2a916c7ba192"
-    sha256 cellar: :any,                 arm64_sonoma:  "21d10fe188a2031adca38586a0776b1dbab6417f9ee243b214e36e3670e97cc8"
-    sha256 cellar: :any,                 sonoma:        "d872257471aa20ed916e07355adb84123b91e5bd1c05d9d9f5b59aed5528d257"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2d899c88a0428e1b29f1e620fa08de7204261bc6c3d3261dc4e0f6f35d7d01d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9b681ae5897e145b2a231d0a783847e103a7d09a85bc17b843323d9c7731146"
+    sha256 cellar: :any,                 arm64_tahoe:   "d6e126cb114000b55fbef7b1845296d64ed28430e58fd351f87e66ceaccdadd8"
+    sha256 cellar: :any,                 arm64_sequoia: "bcfaade18c83698d16954f8412d061ec5aed59a9f75400c1c2163f0f65744c42"
+    sha256 cellar: :any,                 arm64_sonoma:  "fecf25db718c0661e8b404d78794b80fc562eb7653598a687078801df2096f15"
+    sha256 cellar: :any,                 sonoma:        "01a490886deccbbb8f5949b2dba9e658e87ee47c55c8f07eecb584f20334b86c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "925fd3bfd2453b71adb17c4688d3887df394741cded1b34edb392c0bd97bbb0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78db30f20919c37e7508d30d106ae521ce4f91cfa991c1c3e181ab4d95311fee"
   end
 
   depends_on "freetype" => :build

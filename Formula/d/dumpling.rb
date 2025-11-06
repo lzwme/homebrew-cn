@@ -30,7 +30,7 @@ class Dumpling < Formula
       -s -w
       -X #{project}/cli.ReleaseVersion=#{version}
       -X #{project}/cli.BuildTimestamp=#{time.iso8601}
-      -X #{project}/cli.GitHash=brew
+      -X #{project}/cli.GitHash=#{tap.user}
       -X #{project}/cli.GitBranch=#{version}
       -X #{project}/cli.GoVersion=go#{Formula["go"].version}
     ]
@@ -42,6 +42,6 @@ class Dumpling < Formula
     output = shell_output("#{bin}/dumpling --database db 2>&1", 1)
     assert_match "create dumper failed", output
 
-    assert_match "Release version: #{version}", shell_output("#{bin}/dumpling --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/dumpling --version 2>&1")
   end
 end

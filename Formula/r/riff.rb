@@ -1,19 +1,19 @@
 class Riff < Formula
   desc "Diff filter highlighting which line parts have changed"
   homepage "https://github.com/walles/riff"
-  url "https://ghfast.top/https://github.com/walles/riff/archive/refs/tags/3.5.1.tar.gz"
-  sha256 "0f7a023e3fc0fad8822aa94e52d0c70ece5f0bf1ed4b4fa56d5f12d739bd82d4"
+  url "https://ghfast.top/https://github.com/walles/riff/archive/refs/tags/3.6.0.tar.gz"
+  sha256 "2583fbf797033d87a9a2ee8b05c331070f9acb2e6a8a336f5eee14a31361a511"
   license "MIT"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a5951197a99fe39e9c4ff8630c9d1bf5d9261a8dd7565fa944e1e07c627e6349"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6dbd7b5e33208aa49fba8f138ff4a599e79608aff5b42fa71dc0cb274f699a4d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51f63a6fbee6d6e9173a08176c3823c7047400170d3bc59d82af97249bfca163"
-    sha256 cellar: :any_skip_relocation, sonoma:        "66fc24637d6af8b832d47b0b80cfac74be194e7b447efa2e77b247833eb476ac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d97dfe32c622a793cb8d2e4aa2fdc653d6300a5ecd907877caafae1763a84ee6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5e64e5b46495ca011e961a048acfa68f1f13c21de10f3d9d75456866ec976c0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "179163b020d8df8a89ce8966852617e5731876c81d4b3d011645d34f9e5db38e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a65b1633796f2a31de2af59ffba07d40a7da214b8fcdb3cde33a5d65a0762b6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d63382afdbe21a7fa790da6a6a1fa145653b6d8a74e4b7f59e3f1e6765caae2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c95877d9e8a39f5fe1e03655954d60c2a57430596bdc26f431e2da0b4d8c84e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "59e32c6c246b46471a1311e0f984f94423a949b9fa80f98b1cb6f48e2e7a026a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c34c5e9bcf4abec7ea05336c761ff1c05821d568cc55732f128ca704357c8a3e"
   end
 
   depends_on "rust" => :build

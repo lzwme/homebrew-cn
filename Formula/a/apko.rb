@@ -29,7 +29,7 @@ class Apko < Formula
     ldflags = %W[
       -s -w
       -X sigs.k8s.io/release-utils/version.gitVersion=#{version}
-      -X sigs.k8s.io/release-utils/version.gitCommit=brew
+      -X sigs.k8s.io/release-utils/version.gitCommit=#{tap.user}
       -X sigs.k8s.io/release-utils/version.gitTreeState=clean
       -X sigs.k8s.io/release-utils/version.buildDate=#{time.iso8601}
     ]
@@ -60,6 +60,6 @@ class Apko < Formula
     system bin/"apko", "build", testpath/"test.yml", "apko-alpine:test", "apko-alpine.tar"
     assert_path_exists testpath/"apko-alpine.tar"
 
-    assert_match version.to_s, shell_output("#{bin}/apko version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/apko version")
   end
 end

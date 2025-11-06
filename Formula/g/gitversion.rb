@@ -1,20 +1,18 @@
 class Gitversion < Formula
   desc "Easy semantic versioning for projects using Git"
   homepage "https://gitversion.net/docs/"
-  url "https://ghfast.top/https://github.com/GitTools/GitVersion/archive/refs/tags/6.4.0.tar.gz"
-  sha256 "d08e58a2b3910d02a3ce245624efd8803557c494e34d457943eb2fd92a651b2a"
+  url "https://ghfast.top/https://github.com/GitTools/GitVersion/archive/refs/tags/6.5.0.tar.gz"
+  sha256 "28a3ee76ae3a4f7cd035e6f3b4d458bbcc82ea757fe91d6563e969416f66027f"
   license "MIT"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9a6f1bbaf09eb8f883aea6f7aea8b01926de9daecfdbf18ce94aee8c514b3dfc"
-    sha256 cellar: :any,                 arm64_sequoia: "53454f2d9a42e602926a6800c0fd2ebe166b6cf3d7416277b999ac7b5cb35b81"
-    sha256 cellar: :any,                 arm64_sonoma:  "0b8caee11a1ac7587649a63185d08bd98857f4d77bfd803119ab729e1b601add"
-    sha256 cellar: :any,                 arm64_ventura: "ff3615d7c99b1a300d62936871465f4c097a1e588cd42b2180f3b1c02359b12d"
-    sha256 cellar: :any,                 ventura:       "98683b3e12ff6d7eb25f920b3b8cb9c1558b71058deca0b9b403801fcfa4cb0e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "784cc729d23fbba5e7c6ac5e20b9303e32efc8307bbbaf1f3f14ca08c1bd8e4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f449450749fd275078b502c97472a1b3a7531f1152bde3fc0ab10c95475f541"
+    sha256 cellar: :any,                 arm64_tahoe:   "f52db0fc4ce219eadce847fc615696550e18c3a7f891163a4318d2512043c326"
+    sha256 cellar: :any,                 arm64_sequoia: "9cf44b3860130862cdbc7eca12640169319f3d468f5063cad4f5100ee653ff32"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe3371a0819227415ac80423ae97edcd57ec8ef67f6bb52cc039a12a9c0a0da0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57f7c2dcd3f478941eb63c563366d0b00c8e5798a0542058b923e50340a0b575"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08a1e2b8d1da9dec483ba02748783f86f4e6fffcb97d69288aa313012b04d959"
   end
 
   depends_on "dotnet"

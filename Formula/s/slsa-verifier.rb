@@ -31,7 +31,7 @@ class SlsaVerifier < Formula
     ldflags = %W[
       -s -w
       -X sigs.k8s.io/release-utils/version.gitVersion=#{version}
-      -X sigs.k8s.io/release-utils/version.gitCommit=brew
+      -X sigs.k8s.io/release-utils/version.gitCommit=#{tap.user}
       -X sigs.k8s.io/release-utils/version.gitTreeState=clean
       -X sigs.k8s.io/release-utils/version.buildDate=#{time.iso8601}
     ]
@@ -47,6 +47,6 @@ class SlsaVerifier < Formula
     expected_output = "FAILED: SLSA verification failed: the image is mutable: 'docker://alpine'"
     assert_match expected_output, output
 
-    assert_match version.to_s, shell_output("#{bin}/slsa-verifier version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/slsa-verifier version")
   end
 end

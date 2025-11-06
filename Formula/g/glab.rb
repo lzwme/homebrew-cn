@@ -2,20 +2,20 @@ class Glab < Formula
   desc "Open-source GitLab command-line tool"
   homepage "https://gitlab.com/gitlab-org/cli"
   url "https://gitlab.com/gitlab-org/cli.git",
-    tag:      "v1.76.1",
-    revision: "a5c35285577ddb62d5e30b53196f39d39e759c64"
+    tag:      "v1.76.2",
+    revision: "d8e6f27832fe738abd20a2b434f90b37832800e2"
   license "MIT"
   head "https://gitlab.com/gitlab-org/cli.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92e9d2522a75178075ad7ec58559938f53bce0f07cefbf54445c821601f2704e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92e9d2522a75178075ad7ec58559938f53bce0f07cefbf54445c821601f2704e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92e9d2522a75178075ad7ec58559938f53bce0f07cefbf54445c821601f2704e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8bd1a7f33844f0506f15352a13c71a37507948b5239aac75abe5b4e92bb46507"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9a98fd6c3d09a7e9858f66cd1cf27793f3b10a1fe798277644433412328f7de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f73f352c1c41e9280d202b68f693a140e7f936e169075d88fef8a704c24e34be"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6972c63e3459eccf9603f25fba47f608f2c10e6ca53e4eeb7875a815cc72996a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6972c63e3459eccf9603f25fba47f608f2c10e6ca53e4eeb7875a815cc72996a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6972c63e3459eccf9603f25fba47f608f2c10e6ca53e4eeb7875a815cc72996a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a0c01d5555359e0a16d37b9f84eb0d1c07c3dd16c61a5fc34f83de75c2a5e39b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6076e46b8dc946cf87decd2f7f0a24dc4d52ab215b2acb70116cb30242f4d29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "159b20e1b1e04043a4660edeafc26101bfe2cdced05aa443b6ec754c5c11e448"
   end
 
   depends_on "go" => :build

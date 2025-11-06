@@ -3,20 +3,18 @@ class Datasette < Formula
 
   desc "Open source multi-tool for exploring and publishing data"
   homepage "https://docs.datasette.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/db/94/e6408997861e9de3ec61fb8107efe9eaf70f765ad2cd4e20b552dd340899/datasette-0.65.1.tar.gz"
-  sha256 "d8be37ae6dafbfd8e510d49c0dc0fc6696081614d048a507eed86dd2ae433223"
+  url "https://files.pythonhosted.org/packages/80/26/80b5480921d71891b8ff880fed6d44150b9164903d683efe2eb7405b61d8/datasette-0.65.2.tar.gz"
+  sha256 "be956fb2633b8380d7f818b5ddab40d5c7346d5e9d4d24e81c43b1fb60267432"
   license "Apache-2.0"
-  revision 3
   head "https://github.com/simonw/datasette.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "349932b16385c2189a3df1789afda893f3e59da5e98d2868bf7986e359e8da9b"
-    sha256 cellar: :any,                 arm64_sequoia: "3fce6466ed62ccbc392a11889c1542b56d8038b5047d08d8e66d092c307fca33"
-    sha256 cellar: :any,                 arm64_sonoma:  "b684528b70648d7c731ef6c1c77bcb46a0da7766a5d574da83861909ecb78b86"
-    sha256 cellar: :any,                 sonoma:        "4da3a5da516a61d8c822a96e5da938cb23df434b32e8e26321cd4ebdefd2fdf8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5ad89d6be6428a2657051951724985bfbb337fa343f406aeb00d11f6d153c99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a1f66a4b4decc0ff4cd005f18bfec0ee0cfcb90f209c0664fc0c15f679b4606"
+    sha256 cellar: :any,                 arm64_tahoe:   "8430c4f7f66108ef622d6ddca46b8bc2bbede07f69a6907032971f0629baaf04"
+    sha256 cellar: :any,                 arm64_sequoia: "028cbcb45d773f627404c813798b3c4b5a9a9e7c09effd9a0cfcc436ed101ad7"
+    sha256 cellar: :any,                 arm64_sonoma:  "e878e6325079ddb9946a46654299a38b40b85b8e0b94333eb2177e9dac53370f"
+    sha256 cellar: :any,                 sonoma:        "6862054f88c164cd17c011e210d955b2028db5c93111e2698e38fd80073ae959"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "537df001ba5bc8ed99b584f6010772432fe5c506b1fe45d1edb1f8aa8fc5f135"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3086e5c23f4e1095ba2ce529a33876334736d625a6b3e2715b70522a58fdbd85"
   end
 
   depends_on "certifi" => :no_linkage
@@ -153,15 +151,6 @@ class Datasette < Formula
   resource "uvicorn" do
     url "https://files.pythonhosted.org/packages/cb/ce/f06b84e2697fef4688ca63bdb2fdf113ca0a3be33f94488f2cadb690b0cf/uvicorn-0.38.0.tar.gz"
     sha256 "fd97093bdd120a2609fc0d3afe931d4d4ad688b6e75f0f929fde1bc36fe0e91d"
-  end
-
-  # Fix to replace deprecated asyncio methods and SyntaxWarning, remove in next release
-  # Commit ref
-  # - https://github.com/simonw/datasette/commit/852f5014853943fa27f43ddaa2d442545b3259fb
-  # - https://github.com/simonw/datasette/commit/909448fb7a0c940a822477d5a25a6525c2060b68
-  patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/Homebrew-core/f33ebd86/Patches/datasette/support-python3.14.patch"
-    sha256 "1e031573c391fd10baef7e8e8858939b5e9086bba798e9ad9acfe2e41bd25cad"
   end
 
   def install

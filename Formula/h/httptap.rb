@@ -3,20 +3,27 @@ class Httptap < Formula
 
   desc "HTTP request visualizer with phase-by-phase timing breakdown"
   homepage "https://httptap.dev"
-  url "https://files.pythonhosted.org/packages/a8/91/7e79822db213079ccff967531f98302d3faf7929abf265e16717f14d0f58/httptap-0.2.1.tar.gz"
-  sha256 "9cdbbeb6f98c5fa163fae948bfe8a007572767e276abbb6b1f961654da056fca"
+  url "https://files.pythonhosted.org/packages/2a/e7/04da55809e1e7f743c148d443dec3f0e882c7332f40d3572114981e5db14/httptap-0.3.0.tar.gz"
+  sha256 "d989b1e2f96032a05819d4d0c6d6d38dfc985ac6c229ea5ec3b81e78920baa48"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9c7b617a837c63a8bf89fc8638c65d2a214bd9e2297d169d1419f86afc1f9c03"
+    sha256 cellar: :any_skip_relocation, all: "c0e029fd8497f9daff61f559688618a04458899f47dabe1bb64ce55f344d4be6"
   end
 
   depends_on "rust" => :build
   depends_on "python@3.14"
 
+  pypi_packages package_name: "httptap[completion]"
+
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
     sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+  end
+
+  resource "argcomplete" do
+    url "https://files.pythonhosted.org/packages/38/61/0b9ae6399dd4a58d8c1b1dc5a27d6f2808023d0b5dd3104bb99f45a33ff6/argcomplete-3.6.3.tar.gz"
+    sha256 "62e8ed4fd6a45864acc8235409461b72c9a28ee785a2011cc5eb78318786c89c"
   end
 
   resource "certifi" do
@@ -105,7 +112,17 @@ class Httptap < Formula
     # Remove after https://github.com/pypa/hatch/pull/1999 is released.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources
+
+    generate_completions_from_executable(
+      libexec/"bin/register-python-argcomplete", "httptap",
+      base_name:              "httptap",
+      shell_parameter_format: :arg
+    )
+
+    # Build an `:all` bottle by replacing comments
+    file = venv.site_packages.glob("argcomplete-*.dist-info/METADATA")
+    inreplace file, "/opt/homebrew/bin/bash", "$HOMEBREW_PREFIX/bin/bash"
   end
 
   test do

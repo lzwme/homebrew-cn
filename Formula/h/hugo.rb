@@ -30,7 +30,7 @@ class Hugo < Formula
       -s -w
       -X github.com/gohugoio/hugo/common/hugo.commitHash=#{tap.user}
       -X github.com/gohugoio/hugo/common/hugo.buildDate=#{time.iso8601}
-      -X github.com/gohugoio/hugo/common/hugo.vendorInfo=brew
+      -X github.com/gohugoio/hugo/common/hugo.vendorInfo=#{tap.user}
     ]
     tags = %w[extended withdeploy]
     system "go", "build", *std_go_args(ldflags:, tags:)

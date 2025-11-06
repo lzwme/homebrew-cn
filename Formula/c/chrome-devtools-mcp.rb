@@ -1,12 +1,12 @@
 class ChromeDevtoolsMcp < Formula
   desc "Chrome DevTools for coding agents"
   homepage "https://github.com/chromedevtools/chrome-devtools-mcp"
-  url "https://registry.npmjs.org/chrome-devtools-mcp/-/chrome-devtools-mcp-0.9.0.tgz"
-  sha256 "0dcd3a564ff913416a5a256b139fb22a04b34bbf81330148eb9fc98313302df0"
+  url "https://registry.npmjs.org/chrome-devtools-mcp/-/chrome-devtools-mcp-0.10.0.tgz"
+  sha256 "ebc9c999649c5e4cf519599699ab2cb77e25ab552c394aeea450af5fb642d77f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "55982715db1dd4668a09c432ac5da68ed0a700eda4feeaf3250125e43ecca420"
+    sha256 cellar: :any_skip_relocation, all: "19d3ffe8bf100f40d6abc4de2bc9bfdf4eb71d9a186ac620e90bbfc898c6d625"
   end
 
   depends_on "node"
@@ -33,6 +33,6 @@ class ChromeDevtoolsMcp < Formula
     JSON
 
     output = pipe_output(bin/"chrome-devtools-mcp", json, 0)
-    assert_match "The CPU throttling rate representing the slowdown factor 1-20x", output
+    assert_match "Represents the CPU slowdown factor.", output
   end
 end

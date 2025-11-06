@@ -3,20 +3,18 @@ class Shub < Formula
 
   desc "Scrapinghub command-line client"
   homepage "https://shub.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/70/ad/b4fa99366cd3c8db8812438fb1e8b6f8a10b2935b0ee28ac238ade864a8f/shub-2.15.4.tar.gz"
-  sha256 "abd656f488449a6f88084cfc6f0e5bf1e015377f9777a02f35ae5dd44179434a"
+  url "https://files.pythonhosted.org/packages/11/a4/91a0d8c3dccf5dedb7e75a65ecd0bb2a1d789ef34e1630642864b62dea75/shub-2.16.0.tar.gz"
+  sha256 "776283a538b6cd1749f4bf6a94db9d39da208383e37558603b0cf2ed64acbd08"
   license "BSD-3-Clause"
-  revision 6
   head "https://github.com/scrapinghub/shub.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "4781bcf903876d3e70218937f589900ede7f534a4a893d67269763f3b06fda1a"
-    sha256 cellar: :any,                 arm64_sequoia: "35143c65a8df1962740d601e836e5c7fb048062d0da643033faa27c043f74471"
-    sha256 cellar: :any,                 arm64_sonoma:  "4a23c0592d955d8659b404cf6d1029d5c6757e77bad7e4dde9744b1579b50df6"
-    sha256 cellar: :any,                 sonoma:        "13a95f502590f8f3bdcb7139ae48d30225ef480be2b0bd8b30be80cc8fb49c24"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "041317ea0a08ec8982747b92db67afd59271c15de11b04c6f3841393fe87cb5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e394a7dd1d0efb9755239aeceb9c316e51e6bd83ca2701a00a7b542f03d99d71"
+    sha256 cellar: :any,                 arm64_tahoe:   "c01a5fc238f63a291593adb3687a4d264c8f29a495567a3a1cf2a0a46b4ddb0f"
+    sha256 cellar: :any,                 arm64_sequoia: "f69111b59be963a18dd5230c4c91964547ba5e4cb01e384e1cfe94de616e4745"
+    sha256 cellar: :any,                 arm64_sonoma:  "3e00a155dc47a15521dc43f9a88c19a77786a4fbf7e3e7d155a63b3cee7c9744"
+    sha256 cellar: :any,                 sonoma:        "ddeb08ec5e393d964635e819d424e42525b98dfd30a2e1351aaa03da79558559"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b10f95ecc31a6faa6e333f84a3a242cd4de16f3fb93016745655fe74af249226"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bee4c9ec044443b5a00932767a13c30129a1686abdf8d6b5ee6d1a6aa7b2e90b"
   end
 
   depends_on "certifi" => :no_linkage
@@ -26,8 +24,8 @@ class Shub < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
@@ -41,8 +39,8 @@ class Shub < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "packaging" do

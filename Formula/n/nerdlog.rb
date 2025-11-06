@@ -27,9 +27,9 @@ class Nerdlog < Formula
     ldflags = %W[
       -s -w
       -X github.com/dimonomid/nerdlog/version.version=#{version}
-      -X github.com/dimonomid/nerdlog/version.commit=Homebrew
+      -X github.com/dimonomid/nerdlog/version.commit=#{tap.user}
       -X github.com/dimonomid/nerdlog/version.date=#{time.iso8601}
-      -X github.com/dimonomid/nerdlog/version.builtBy=Homebrew
+      -X github.com/dimonomid/nerdlog/version.builtBy=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/nerdlog"
   end

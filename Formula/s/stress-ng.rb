@@ -1,8 +1,8 @@
 class StressNg < Formula
   desc "Stress test a computer system in various selectable ways"
   homepage "https://wiki.ubuntu.com/Kernel/Reference/stress-ng"
-  url "https://ghfast.top/https://github.com/ColinIanKing/stress-ng/archive/refs/tags/V0.19.05.tar.gz"
-  sha256 "9712c5505602c6db8017c15a2659a3185f5a4f81ddde745e9f45f9e10a9f86c4"
+  url "https://ghfast.top/https://github.com/ColinIanKing/stress-ng/archive/refs/tags/V0.19.06.tar.gz"
+  sha256 "054953145d7de36725a54636ea68975bb9ada06b4769878d25e556fab5804513"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class StressNg < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "51bff89fac751ad70783008d591fd943f43da41d45fc89159ad842e0820e9cf2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "545c7970c0fc5fe6deffdc534819141865f05c3795ff539b815ae537815e1f7f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68a80bd7083963d0aa4b3da32abcbb61909913294271be535e9f195a3efce5ce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "794f61287f06139d75167154e0cf27a1e12ad2dce33a26bddb15195399929ae2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b7394cba2eebf678c6494916cd69c6149c37e46cca698f3c134ed4a6d59a247"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90dd1bb48c3fe12248e4af56ab9f5b39066ebf809086fd5074862526ef6dd1f7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f94024f87fd6269aef25e9cd3c64935e7e772920910e979cf2f98024805e6012"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d57ad181a81a91b24da41ca8308704c6c8f496c5d55cf9e740c6406b57c4532a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a641c62233dafd1bacaec3be055ca0a294606ad5917ef574a8b99bc184860b68"
+    sha256 cellar: :any_skip_relocation, sonoma:        "669e628143b420d719532cdb5346367e0c45eec243ccf263f6ec244ce2d19f31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed5e7de5ef4d98576ff470b2aa8ce87e14fe86276b8fab78952c7efa7af9aec6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94b25af3cb2250556da874d8b4bf979c3a16bb0bf490caaca557898c5cddd8fd"
   end
 
   uses_from_macos "libxcrypt"

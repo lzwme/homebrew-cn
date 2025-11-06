@@ -1,8 +1,8 @@
 class Squashfs < Formula
   desc "Compressed read-only file system for Linux"
   homepage "https://github.com/plougher/squashfs-tools"
-  url "https://ghfast.top/https://github.com/plougher/squashfs-tools/archive/refs/tags/4.7.2.tar.gz"
-  sha256 "4672b5c47d9418d3a5ae5b243defc6d9eae8275b9771022247c6a6082c815914"
+  url "https://ghfast.top/https://github.com/plougher/squashfs-tools/archive/refs/tags/4.7.3.tar.gz"
+  sha256 "9b3b45bf57332c953c258d22d4fdacba1246cc204f108a0f72e15d3123c218ed"
   license "GPL-2.0-or-later"
   head "https://github.com/plougher/squashfs-tools.git", branch: "master"
 
@@ -13,14 +13,12 @@ class Squashfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5b084216ccb224844823d4f8547052f62e3e03a8550dc07509a84e98f7a4e406"
-    sha256 cellar: :any,                 arm64_sequoia: "e14ece392f8839650c3c27cfdc8b225d63f6fa84eef0783dc9a4c59ba06f7cc6"
-    sha256 cellar: :any,                 arm64_sonoma:  "dc48cced5cf0810b4fdc220a6b967296057dd02365453d2e2eface15938e962d"
-    sha256 cellar: :any,                 arm64_ventura: "77773e74b3052034873568c8c9e14541eac01fe4a5a3815919561a8cae72ed24"
-    sha256 cellar: :any,                 sonoma:        "a40660ed6e73724773716f7e823daa9feaf10f453a0ed4e4829bc6ae9519b173"
-    sha256 cellar: :any,                 ventura:       "33a23dafbf737cb4c48eb987ec92af8a029a2547c45a1b78f4e588a6ef9d61d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c06087b02d6708073d7a5cfa6de460c4bc31d0f6355cb178d92d7702cf8077f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a268a6b8f83b8f16ddfdffae4c9e30cfaf827ad4d36e84aaaf6311bedc37f914"
+    sha256 cellar: :any,                 arm64_tahoe:   "4525cd3cb5e214369d288f2212582a3d691c25868bc547cfa1d255a816def581"
+    sha256 cellar: :any,                 arm64_sequoia: "fd810d7aeedc54bed5cac980a83f437d9b12a0660fbaeb59dd95a33904d82f94"
+    sha256 cellar: :any,                 arm64_sonoma:  "46b2ba7908f7483a0e582ac2b3612342f14d6401b0225389b4163fb94dd282ff"
+    sha256 cellar: :any,                 sonoma:        "603ace1f8229982b2094dfc3479e652fbb44c538d13ea0a90ac7e7607d175e32"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b61ffb69663d59eb30c65bbb5a9198ddc66b354c0e133e7a3d606f8ef93773f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f34830e08561855d0dc753429902ef926d1726b3179e914306558bd513234f45"
   end
 
   depends_on "gnu-sed" => :build

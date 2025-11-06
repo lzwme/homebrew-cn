@@ -1,8 +1,8 @@
 class Ioctl < Formula
   desc "Command-line interface for interacting with the IoTeX blockchain"
   homepage "https://docs.iotex.io/"
-  url "https://ghfast.top/https://github.com/iotexproject/iotex-core/archive/refs/tags/v2.3.0.tar.gz"
-  sha256 "230e7485d61aa1cfa29f76702ebe1f1e017b32ad647f3bfc8aee4da3d0a68aa6"
+  url "https://ghfast.top/https://github.com/iotexproject/iotex-core/archive/refs/tags/v2.3.1.tar.gz"
+  sha256 "0aee71df6f579cdde37e2be66d7d9d0c7c413d4fca00076bce1b2ff0f9739cbb"
   license "Apache-2.0"
   head "https://github.com/iotexproject/iotex-core.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Ioctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e5583dbc974420dcf684ef369f2c12a140f84fcca36251a3c5b1b891abb122d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93274fa777ab6649562a910df7a487ee624b3686fa80caec8c1ff0520884b006"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40cd1011c58b5760f1a828c7ccefb30c80b07df3bbb7f16ade9d0772c24c9632"
-    sha256 cellar: :any_skip_relocation, sonoma:        "13835dd5f741334d456f03fdca5784e1eacf376c64da41e27371211a717b1ac6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5210ccb36d2640a97169e0f59df211ec256b9aff632f4b0839b98bbb706bbdf4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e26a461c2adbb4307aeced1bbf1390e9c5c5af9794aec07633089fb2a4cf2a7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86905277858d4276180550ed9c70867d14843963b87b45d55cb93edc5654928c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14d8873b95811e9cb55bd8cbe9286858b6fdadab9cb905d4649332f87b7bd702"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "255b9ccaa3f1f6d97b58254ef88f669763b38015f1bf77384219430d5f9b9ecc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "91a0151ddaf87af2eb01542d291ce05940e4189037d13695f6132cc904588754"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cc8f45adbdfe1be8fbae37404326d225af57de4a27abe6ddf559cc4923373fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8f07ae3f2ea3fea2000b411e829aed30a04f8b64e3a9236cb104e02f751256f"
   end
 
   depends_on "go" => :build

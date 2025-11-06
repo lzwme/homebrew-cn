@@ -20,7 +20,7 @@ class Ctrld < Formula
     ldflags = %W[
       -s -w
       -X github.com/Control-D-Inc/ctrld/cmd/cli.version=#{version}
-      -X github.com/Control-D-Inc/ctrld/cmd/cli.commit=homebrew
+      -X github.com/Control-D-Inc/ctrld/cmd/cli.commit=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/ctrld"
   end

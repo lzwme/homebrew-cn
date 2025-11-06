@@ -37,13 +37,14 @@ class Phoneinfoga < Formula
     ldflags = %W[
       -s -w
       -X github.com/sundowndev/phoneinfoga/v2/build.Version=v#{version}
-      -X github.com/sundowndev/phoneinfoga/v2/build.Commit=brew
+      -X github.com/sundowndev/phoneinfoga/v2/build.Commit=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    assert_match "PhoneInfoga v#{version}-brew", shell_output("#{bin}/phoneinfoga version")
+    assert_match version.to_s, shell_output("#{bin}/phoneinfoga version")
+
     system bin/"phoneinfoga", "scanners"
     assert_match "given phone number is not valid", shell_output("#{bin}/phoneinfoga scan -n foobar 2>&1", 1)
   end
