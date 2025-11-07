@@ -15,12 +15,13 @@ class Curl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "91512b38737db4690063e2326d54b5b24916e4171634ac4f6511e068be73c67e"
-    sha256 cellar: :any,                 arm64_sequoia: "bab88d913ea19636a8cec1a3e251c6f1c93711090a982d13c5680b87274eee49"
-    sha256 cellar: :any,                 arm64_sonoma:  "e92ed8f2d1724e038ad7b2f792a6a887b23fdbe809c9b8fe855d6a7cd0212f18"
-    sha256 cellar: :any,                 sonoma:        "222d7e99b7f95408310e93b16a1c38ff46a1052539bae0dd28c0c9fca9ed5f34"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a029c887c60350217e4bfbfbb18149648ac2cda7fd49d09b55601972e5413f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a74072d810a4e4c4280befca77003e35e0bd5026b36e17d28a342cd4c5ac08b4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "5574d39eae4f09f73d98c8b6cad48d1ab29824308e9f5e4e23da447518d3ccec"
+    sha256 cellar: :any,                 arm64_sequoia: "765d7ff96b1c76fd50fce97c8c9b92f275f2e87f5906f8630a497ab444a9e19a"
+    sha256 cellar: :any,                 arm64_sonoma:  "3c590f02d835727314c1f6609d20e9c130322d296ff734d514cf8bd91a3c1eb5"
+    sha256 cellar: :any,                 sonoma:        "c7aefbef958c34b8d798f04d9e40fe6e54240131f8c3936a7c0e48dbb19e580d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b205412aeb707cd25cd0e7b02b9d07d893650f6669b36b57ef3ae029bdbb0081"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8992fa6ca3983418673024a4c6488ece89dd1c0fe897ba528071c3840999abbb"
   end
 
   head do
@@ -79,10 +80,13 @@ class Curl < Formula
       --with-fish-functions-dir=#{fish_completion}
     ]
 
-    args << if OS.mac?
-      "--with-gssapi"
+    args += if OS.mac?
+      %w[
+        --with-apple-sectrust
+        --with-gssapi
+      ]
     else
-      "--with-gssapi=#{Formula["krb5"].opt_prefix}"
+      ["--with-gssapi=#{Formula["krb5"].opt_prefix}"]
     end
 
     args += if OS.mac? && MacOS.version >= :ventura

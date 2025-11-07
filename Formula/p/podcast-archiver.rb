@@ -8,26 +8,21 @@ class PodcastArchiver < Formula
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "50145c2ca3dc8c26e6edd170d9b12bca045699d307b3ea0de5a29310409cd9dc"
-    sha256 cellar: :any,                 arm64_sequoia: "fdbc8a8b4d11480e9c5e31c58663f2f9333835f7dc1c47bbef71e29ee909029f"
-    sha256 cellar: :any,                 arm64_sonoma:  "93bec0f4917c4355bb5e14393cee8d786a2f8d9b24542737c6273c27e942aa5b"
-    sha256 cellar: :any,                 sonoma:        "84f770398a986409d08014b23173f32be1fa4463a896b21ed10ac89a276ed410"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6bc8bf94b19ec9c0a74de24ae0d049b9b193722deda0af00f1a92a7bc321cdc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1703539685bd628621226495fa098b0738c732b29bca91354b16397a0bfed89"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "c170f6b4c37a30f261ea185de1b82ebe7397744094651d85fd545653191db0f9"
+    sha256 cellar: :any,                 arm64_sequoia: "f9cc2f7220579d80df8f8cd118578c31fed5bf461e7e5ff41462c1e215c3873e"
+    sha256 cellar: :any,                 arm64_sonoma:  "79323f1eff5aeb36433a213f2557cad96c418b779ef7ce9018f988973d8c8295"
+    sha256 cellar: :any,                 sonoma:        "3176388d1d8def5478573de5c4326193731fa745b01afc2a7939020004129c95"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c6171a8f2b1ef665f52882388aa43f72a52fa86351686a9039d6a04a937d3e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6b81ed2f030a974ba12043f0da11511ff044e8e69141887dc327e8eef19f0da"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
 
-  pypi_packages exclude_packages: ["certifi", "pydantic-core"]
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
+  pypi_packages exclude_packages: ["certifi", "pydantic"]
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
@@ -62,11 +57,6 @@ class PodcastArchiver < Formula
   resource "platformdirs" do
     url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
     sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
-  end
-
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pygments" do
@@ -112,11 +102,6 @@ class PodcastArchiver < Formula
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
     sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do

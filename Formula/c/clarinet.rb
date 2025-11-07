@@ -1,10 +1,10 @@
 class Clarinet < Formula
   desc "Command-line tool and runtime for the Clarity smart contract language"
-  homepage "https://www.hiro.so/clarinet"
-  url "https://ghfast.top/https://github.com/hirosystems/clarinet/archive/refs/tags/v3.9.1.tar.gz"
+  homepage "https://stackslabs.com/"
+  url "https://ghfast.top/https://github.com/stx-labs/clarinet/archive/refs/tags/v3.9.1.tar.gz"
   sha256 "935ad4c43d35c796fb6f546b54b1d85e35423ccdb687279445200959768996be"
   license "GPL-3.0-only"
-  head "https://github.com/hirosystems/clarinet.git", branch: "main"
+  head "https://github.com/stx-labs/clarinet.git", branch: "main"
 
   livecheck do
     url :stable

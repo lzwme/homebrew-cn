@@ -16,8 +16,7 @@ class LicenseEye < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9e1a93e105a6f7d6e651eaa3f3087e25b4f83460ec406ad6f0d6daf994c3a23"
   end
 
-  # Use "go" when https://github.com/apache/skywalking-eyes/pull/201 is released (in 0.7.1 release?):
-  depends_on "go@1.24" => :build
+  depends_on "go" => :build
 
   def install
     ldflags = "-s -w -X github.com/apache/skywalking-eyes/commands.version=#{version}"

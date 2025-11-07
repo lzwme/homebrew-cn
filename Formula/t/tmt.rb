@@ -8,26 +8,22 @@ class Tmt < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "693667cf376c29e97a80a186330623fdaa048059c12283ba951ebf8563779c57"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8814b868bc5414e1dff913e283139f2e951ee92a8d9fdda20906014d848032a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86d1b9ee4e2b5c196e8000efc45a7ee2e7468bab9b205be2157261ea32d858aa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2ad647c11b5f539ea6dc03049f40c491482e0d2be585766cfd406d7f81881b2d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0986f0f685f8172f48c3f96538cc51b8ef645137f26b28cdde32027ea1d8ef73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "894d428f7cbe5566947d5e8a823597841a84c1861a386d539a2d3a204b66fa37"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e8ddd35cf0e617f0d4cfa54869a6367929e202c87e9d32169f136f049f66bcf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bdc5c4d58a9eb04e1ff20a7d12e7e6dc1db73724337bd25e2a67e167e79f7d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13dcde709d6dcb4bb773fd54a32d85369bbae36ca161237249fa3061b01cbe0b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c4d3da5c02b325532be07129c1786d6e847cfb53ca517e3a7a56a0e0eb12df33"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb47fcb86e8deaa1130dfa4bf5d9c8b2d8811424b20a1c1038b39f73f91bea8f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0596cd4fe55a1ebfc8a466be94ffaf535328c0174c025eecdf89d237c5b6990f"
   end
 
   depends_on "beakerlib"
   depends_on "certifi" => :no_linkage
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
-  pypi_packages exclude_packages: ["certifi", "pydantic-core", "rpds-py"]
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
+  pypi_packages exclude_packages: ["certifi", "pydantic", "rpds-py"]
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
@@ -45,8 +41,8 @@ class Tmt < Formula
   end
 
   resource "docutils" do
-    url "https://files.pythonhosted.org/packages/4a/c0/89fe6215b443b919cb98a5002e107cb5026854ed1ccb6b5833e0768419d1/docutils-0.22.2.tar.gz"
-    sha256 "9fdb771707c8784c8f2728b67cb2c691305933d68137ef95a75db5f4dfbc213d"
+    url "https://files.pythonhosted.org/packages/d9/02/111134bfeb6e6c7ac4c74594e39a59f6c0195dc4846afbeac3cba60f1927/docutils-0.22.3.tar.gz"
+    sha256 "21486ae730e4ca9f622677b1412b879af1791efcfba517e4c6f60be543fc8cdd"
   end
 
   resource "filelock" do
@@ -109,11 +105,6 @@ class Tmt < Formula
     sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
-  end
-
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
     sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
@@ -132,11 +123,6 @@ class Tmt < Formula
   resource "ruamel-yaml" do
     url "https://files.pythonhosted.org/packages/9f/c7/ee630b29e04a672ecfc9b63227c87fd7a37eb67c1bf30fe95376437f897c/ruamel.yaml-0.18.16.tar.gz"
     sha256 "a6e587512f3c998b2225d68aa1f35111c29fad14aed561a26e73fab729ec5e5a"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do

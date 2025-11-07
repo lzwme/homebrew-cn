@@ -9,27 +9,23 @@ class Cycode < Formula
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "7d9a759b204c6aed8db99d472ff1a135d2a964f40d9d6754ade4bba5da2fd1d1"
-    sha256 cellar: :any,                 arm64_sequoia: "9fae99fa2f941f4fc63d8ec5b1571214649096f00ee4204b1efbdb1d302d233f"
-    sha256 cellar: :any,                 arm64_sonoma:  "9fbe9841281f133b3082bbc5fbb2ce317155958cabc9e1f8fb7bee7d92d24b25"
-    sha256 cellar: :any,                 sonoma:        "2714a6f9d0b10f36c24ed431ccbeb9079ec211cc09c59ccf300c8819b1a85d84"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "03e37f9bd69de7a4fafcd79fdb1cd27b9eebd11ef4ae973c1620de9f5999e27a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1ef3fead5473bee8d5b4f38935275378f0a079d64dac807643d8506d55803c3"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "1713332558dfb6210db54adaab6d81b9af189f13679c8cebcdcf72253025c4a3"
+    sha256 cellar: :any,                 arm64_sequoia: "0552d25c7ef7729df6536c8e010f604e5f24c106ed3dcd167c28409bebbbb512"
+    sha256 cellar: :any,                 arm64_sonoma:  "406d2cf097767af29a860882fa12229a8597c68b08c93fc74f881eb6bec5ab75"
+    sha256 cellar: :any,                 sonoma:        "626c8fcf570d46b9f83473fb5517e157067568b68a3d1fe4c135f2241a8c03fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fee584439a8fec32e554a28545e5ebbc7b4bbda9723f89f3cd3ca13fc67dc04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "823eadb2c753435a07836ea8aa1c97fb7ca73b1a4f158ff087980d7eb82966f4"
   end
 
   depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "pydantic-core" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "pydantic" => :no_linkage
+  depends_on "python@3.13"
   depends_on "rpds-py" => :no_linkage
 
-  pypi_packages exclude_packages: ["certifi", "pydantic-core", "rpds-py"]
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
@@ -127,8 +123,8 @@ class Cycode < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/69/2b/916852a5668f45d8787378461eaa1244876d77575ffef024483c94c0649c/mcp-1.19.0.tar.gz"
-    sha256 "213de0d3cd63f71bc08ffe9cc8d4409cc87acffd383f6195d2ce0457c021b5c1"
+    url "https://files.pythonhosted.org/packages/f8/22/fae38092e6c2995c03232635028510d77e7decff31b4ae79dfa0ba99c635/mcp-1.20.0.tar.gz"
+    sha256 "9ccc09eaadbfbcbbdab1c9723cfe2e0d1d9e324d7d3ce7e332ef90b09ed35177"
   end
 
   resource "mdurl" do
@@ -149,11 +145,6 @@ class Cycode < Formula
   resource "pathvalidate" do
     url "https://files.pythonhosted.org/packages/fa/2a/52a8da6fe965dea6192eb716b357558e103aea0a1e9a8352ad575a8406ca/pathvalidate-3.3.1.tar.gz"
     sha256 "b18c07212bfead624345bb8e1d6141cdcf15a39736994ea0b94035ad2b1ba177"
-  end
-
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pydantic-settings" do
@@ -232,13 +223,13 @@ class Cycode < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/42/6f/22ed6e33f8a9e76ca0a412405f31abb844b779d52c5f96660766edcd737c/sse_starlette-3.0.2.tar.gz"
-    sha256 "ccd60b5765ebb3584d0de2d7a6e4f745672581de4f5005ab31c3a25d10b52b3a"
+    url "https://files.pythonhosted.org/packages/db/3c/fa6517610dc641262b77cc7bf994ecd17465812c1b0585fe33e11be758ab/sse_starlette-3.0.3.tar.gz"
+    sha256 "88cfb08747e16200ea990c8ca876b03910a23b547ab3bd764c0d8eb81019b971"
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/1b/3f/507c21db33b66fb027a332f2cb3abbbe924cc3a79ced12f01ed8645955c9/starlette-0.49.1.tar.gz"
-    sha256 "481a43b71e24ed8c43b11ea02f5353d77840e01480881b8cb5a26b8cae64a8cb"
+    url "https://files.pythonhosted.org/packages/ba/b8/73a0e6a6e079a9d9cfa64113d771e421640b6f679a52eeb9b32f72d871a1/starlette-0.50.0.tar.gz"
+    sha256 "a2a17b22203254bcbc2e1f926d2d55f3f9497f769416b3190768befe598fa3ca"
   end
 
   resource "tenacity" do
@@ -254,11 +245,6 @@ class Cycode < Formula
   resource "types-python-dateutil" do
     url "https://files.pythonhosted.org/packages/fc/83/24ed25dd0c6277a1a170c180ad9eef5879ecc9a4745b58d7905a4588c80d/types_python_dateutil-2.9.0.20251008.tar.gz"
     sha256 "c3826289c170c93ebd8360c3485311187df740166dbab9dd3b792e69f2bc1f9c"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do

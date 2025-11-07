@@ -4,6 +4,7 @@ class Gtksourceview5 < Formula
   url "https://download.gnome.org/sources/gtksourceview/5.18/gtksourceview-5.18.0.tar.xz"
   sha256 "051a78fe38f793328047e5bcd6d855c6425c0b480c20d9432179e356742c6ac0"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,12 +12,12 @@ class Gtksourceview5 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "dc47606253425fa7daffd8d1dc0bd26e859ad9fe09a291ff5f422b3f69aec028"
-    sha256 arm64_sequoia: "31412b744f83cd14f5ea90decb0247c0e3030251c02508a235ac24dafbc34e2d"
-    sha256 arm64_sonoma:  "09f6fbd7eccac73644ac751a32ee33cb51ad5974e872b688c5e291ee60b2c26f"
-    sha256 sonoma:        "9fafff0c60954a22c83975374b66bc6288964921149ff699da39455cb73f70b0"
-    sha256 arm64_linux:   "0b95950dab5c13673929ff0171d4d2c874835535fa3b919fbd28003a98a19c8c"
-    sha256 x86_64_linux:  "a1745eaba8ab6ff78fab87c8e567bd8d626a16858b95bd7986df7cd5bdfd5ca4"
+    sha256 arm64_tahoe:   "1f9e3a56f8a065dad2316da088e50e1fa1b3e7e3dd2b7c1fe5df89e497c6e73c"
+    sha256 arm64_sequoia: "cb73673087b8c50129d6136bc05457d964d52b8d47d04c266af4d24fe266d1f1"
+    sha256 arm64_sonoma:  "ea85817f7a9377d4f478f61f96ec7c487681ac52ec4fb677bad934058adb5bb0"
+    sha256 sonoma:        "0c635d1fece526969c585845a3c745c3ea7135f6d5af572131a7e7bffc86c68b"
+    sha256 arm64_linux:   "21b402071c73160ba92de56bd03f1a88e2a43e4a535b6b5cc5a2b82c4bab0c43"
+    sha256 x86_64_linux:  "5a81d0babd17eab9868f12db42382bd15196762543bd91878575656685ee5c54"
   end
 
   depends_on "gobject-introspection" => :build

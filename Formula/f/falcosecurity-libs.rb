@@ -1,29 +1,26 @@
 class FalcosecurityLibs < Formula
   desc "Core libraries for Falco and Sysdig"
   homepage "https://falcosecurity.github.io/libs/"
-  url "https://ghfast.top/https://github.com/falcosecurity/libs/archive/refs/tags/0.20.0.tar.gz"
-  sha256 "4ae6ddb42a1012bacd88c63abdaa7bd27ca0143c4721338a22c45597e63bc99d"
+  url "https://ghfast.top/https://github.com/falcosecurity/libs/archive/refs/tags/0.22.2.tar.gz"
+  sha256 "53cfb7062cac80623dec7496394739aabdfee8a774942f94be0990d81e3b2fbc"
   license all_of: [
     "Apache-2.0",
     { any_of: ["GPL-2.0-only", "MIT"] }, # driver/
     { "GPL-2.0-only" => { with: "Linux-syscall-note" } }, # userspace/libscap/compat/
   ]
-  revision 11
 
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e583872589252fe95d0b8a9b835899ea06db00a0c35fe0dda142b1c8918f5024"
-    sha256 cellar: :any, arm64_sequoia: "af37c39084757cfaeb845aa8b3aa6ce58440ebc5f1e1ccb400347ab92ff029df"
-    sha256 cellar: :any, arm64_sonoma:  "20249a36e285e6a8b14b742f8609401ab864a27a1ef2c85b063e9c52cd84ba08"
-    sha256 cellar: :any, sonoma:        "a9cca6c44e9ac375714b3e6c4fbe7d78d474f909078b4a2215e5f4ab1f6ab013"
-    sha256               arm64_linux:   "6a84b47faae25ac25a2ede8b61b62f1c13ef08a484f1de61b614de6d2bdd2741"
-    sha256               x86_64_linux:  "b613cb7af5021e91e8c693e34f54da5479c3bc37ce31624eb5004ee874ea17fb"
+    sha256 cellar: :any,                 arm64_tahoe:   "acd724bb7f64d985b8d232e17417af090231c0c82ce7d0eb685193dac340062c"
+    sha256 cellar: :any,                 arm64_sequoia: "860f44f28f71a111c16b859d772a81db6eb03ef36c478ecc4b55bdb629b7a472"
+    sha256 cellar: :any,                 arm64_sonoma:  "e892518e61bc53ae1649eb5ee6cf463e3ac84fd6f4fb4ae44c937898f988c454"
+    sha256 cellar: :any,                 sonoma:        "3c1374bc7fd7b7ff338cd3d00aa1e85d08e6bcea4efea3b1950ec1ace8aff64d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0861cf4e0463d24c5799a8d9b8425d6b3ebd2c3ce67196a15083451fc85155b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a7d399f5223e726dfca95955ef5f86cdecd07a98da8e20a2866f05f9bd6ae30"
   end
 
   depends_on "cmake" => :build
@@ -56,9 +53,6 @@ class FalcosecurityLibs < Formula
       -DFALCOSECURITY_LIBS_VERSION=#{version}
       -DUSE_BUNDLED_DEPS=OFF
     ]
-    # TODO: remove on next release which has dropped option
-    # https://github.com/falcosecurity/libs/commit/d45d53a1e0e397658d23b216c3c1716a68481554
-    args << "-DMINIMAL_BUILD=ON" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
@@ -71,7 +65,7 @@ class FalcosecurityLibs < Formula
     system ENV.cxx, "-std=c++17", pkgshare/"scap_event.cpp", "-o", "test",
                     "-I#{include}/falcosecurity",
                     "-L#{Formula["googletest"].lib}", "-L#{lib}",
-                    "-lgtest", "-lgtest_main", "-lsinsp"
+                    "-lgtest", "-lgtest_main", "-lsinsp", "-lscap_event_schema"
     system "./test"
   end
 end

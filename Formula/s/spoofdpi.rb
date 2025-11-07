@@ -1,8 +1,8 @@
 class Spoofdpi < Formula
   desc "Simple and fast anti-censorship tool written in Go"
   homepage "https://github.com/xvzc/SpoofDPI"
-  url "https://ghfast.top/https://github.com/xvzc/SpoofDPI/archive/refs/tags/v0.12.2.tar.gz"
-  sha256 "6b963e5c52e129f1bcac3b5adc59322715f5d31e593eb317e363c18c77f53a5b"
+  url "https://ghfast.top/https://github.com/xvzc/SpoofDPI/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "d1f38e25bbd9c9481e8d45c4734e3b13249fa2e3898f1203c8049f08bd007ab1"
   license "Apache-2.0"
   head "https://github.com/xvzc/SpoofDPI.git", branch: "main"
 
@@ -15,17 +15,21 @@ class Spoofdpi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5537d060d91ee7bc56404f202ce34b903ea24ecad005d90bbe9020224b972927"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5537d060d91ee7bc56404f202ce34b903ea24ecad005d90bbe9020224b972927"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5537d060d91ee7bc56404f202ce34b903ea24ecad005d90bbe9020224b972927"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ab11ce8f3bb4f4e24cfb49d4c03e327721b0c975e85e6ae68dd318ada8c60f03"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e06d30ce79749f99c60eb7fcb6068facf98a13f8ae948d1f707411ef22835d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a19ee7d6a2a6a7ede6269571afd4d2c8f3ca6005bd58d9137556a4550fce813f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "235be81362797820291b8b9b08a4fe178cc66f1c2181fa94d91eda1b6ebffa97"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3db06ec5407ddeb6969a64ed311ef12d343e8a1e1927a14f378145e39d96c18c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "034aabb2f5304530479574461fc2520f47a355b33230fc5e910147945442f153"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ff9aaf5f8c7fcdd86f22e2f9ed42e0e7d385ef97268923d7bffb29930f079527"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f16aa3e56a8f835579601e6fcdf31423da409a7042267a398421116b4f8e19a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5975a9681fa939febb7850eb8f5478daa6a720d0291449ca9d5a796d23f4506"
   end
 
   depends_on "go" => :build
 
+  uses_from_macos "libpcap"
+
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/spoofdpi"
   end
 

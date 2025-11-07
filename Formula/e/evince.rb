@@ -4,16 +4,15 @@ class Evince < Formula
   url "https://download.gnome.org/sources/evince/48/evince-48.1.tar.xz"
   sha256 "7d8b9a6fa3a05d3f5b9048859027688c73a788ff6e923bc3945126884943fa10"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_tahoe:   "bc6af3370e6e8ee239eae47d9e706876a2586613a8b4d147e17749b89d9585e0"
-    sha256 arm64_sequoia: "3f164382922aa3874259207d4bf340c9fe91d7dfc08da4457a26147b2ffb91e4"
-    sha256 arm64_sonoma:  "37a63e9e26bd09f0a75942ce9f78915932623b1d753950712010952e710d67a7"
-    sha256 arm64_ventura: "29c4dc38497d86d2fe33251d10da3720ef8942bc2ddfd63350f4af3b89ff9ae8"
-    sha256 sonoma:        "d43f7a68f019e093c48d0fd99e2f8525b138d2faa9c1fe6c1d1e4d7194810d01"
-    sha256 ventura:       "3083111580824c36689acec0375bae69eeec938daad04d14b91c0a545313b02c"
-    sha256 arm64_linux:   "ddd42136c9a5045fd5269490000d15042f5aa632f935222d40fa67d788815528"
-    sha256 x86_64_linux:  "4c00e8ea528a4d7e471eca5d728ed33dccfb205575fc3079601bedc72f07d79f"
+    sha256 arm64_tahoe:   "7368c3bba0d45b928b0899a929bbe2fab0c7cdf6a34cd83ef6cca5f45b8bf998"
+    sha256 arm64_sequoia: "06518d30ac2a79a327ee013a5d966279b6749c6fa4bb41a85e0bb2cf9037563c"
+    sha256 arm64_sonoma:  "9fdc7ef485f94104cd7e4339273a1be61f178861550d30f837f0882da0eaa344"
+    sha256 sonoma:        "fba32bdcd8bc5948457dc8f3d493930baee6a8667eb03bc6eb81fb53943cc025"
+    sha256 arm64_linux:   "c3b7ff3ce4eaa1abc6c75b1bbdfbd580e5ff9a293c9c9f970e4213ad97ff3e45"
+    sha256 x86_64_linux:  "71fe8192226f74e9df97e95eca1292d0328729b530bff5ef1e61ec7cf66300d4"
   end
 
   depends_on "desktop-file-utils" => :build # for update-desktop-database

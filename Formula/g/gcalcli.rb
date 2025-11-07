@@ -10,25 +10,20 @@ class Gcalcli < Formula
   head "https://github.com/insanum/gcalcli.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8c0388cb6a9abd3eb54490095a3d7771b2a529749f7b291130e31cad0e6b99f8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1adf93763ec0c9b581740bc6c7c9a91f8e4680eda50c338071d79aed5980f83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "013fc3a880acbcb844974303436aaeb5ed7e160c33f3bd777952b60404b5aa6f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "242386bdf10b3465ddbae280c3c97af07776df33f6d0e4d571e9b5b9f106391c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1eb71141be84db8587a4238872c7e0cf80285deeb05a4492023287964b936f4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8ffde0f57edeb1b82ddd90b43dce357be4b74164eb486b71362ce62ec56758a"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e780555548930da9a65d0fcf1334f34e60c911bf1755ac9a687ee57d63e9182"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "63e9d722b6812d035c0fc4418a29b84eff15515d852a0f7c40cd57c7947745b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8550756b200a0b43cf555bb52960393b6c1afda7d774de58a8a84cc58fc63b1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3d1535dcfd9ea232b7c3407d9b59900a271c5a0776307719b472ab7d0471ad60"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "61f585e2539948a2a7e014773d6f212f8bfeec53fbc08b4fd9a8bc3ad21c8691"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e82766b2c1f5267f1f5c5ab80f5e9ab8e9d43869c136a8bc5cb45c3e44852d1e"
   end
 
   depends_on "certifi" => :no_linkage
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
 
-  pypi_packages exclude_packages: ["certifi", "pydantic-core"]
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
+  pypi_packages exclude_packages: ["certifi", "pydantic"]
 
   resource "argcomplete" do
     url "https://files.pythonhosted.org/packages/38/61/0b9ae6399dd4a58d8c1b1dc5a27d6f2808023d0b5dd3104bb99f45a33ff6/argcomplete-3.6.3.tar.gz"
@@ -56,8 +51,8 @@ class Gcalcli < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/47/cf/d167fec8be9e65768133be83a8d182350195840e14d1c203565383834614/google_api_python_client-2.186.0.tar.gz"
-    sha256 "01b8ff446adbc10f495188400a9f7c3e88e5e75741663a25822f41e788475333"
+    url "https://files.pythonhosted.org/packages/75/83/60cdacf139d768dd7f0fcbe8d95b418299810068093fdf8228c6af89bb70/google_api_python_client-2.187.0.tar.gz"
+    sha256 "e98e8e8f49e1b5048c2f8276473d6485febc76c9c47892a8b4d1afa2c9ec8278"
   end
 
   resource "google-auth" do
@@ -125,11 +120,6 @@ class Gcalcli < Formula
     sha256 "677091de870a80aae844b1ca6134f54652fa2c8c5a52aa396440ac3106e941e6"
   end
 
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
-  end
-
   resource "pyparsing" do
     url "https://files.pythonhosted.org/packages/f2/a5/181488fc2b9d093e3972d2a472855aae8a03f000592dbfce716a512b3359/pyparsing-3.2.5.tar.gz"
     sha256 "2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6"
@@ -163,11 +153,6 @@ class Gcalcli < Formula
   resource "truststore" do
     url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
     sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "uritemplate" do

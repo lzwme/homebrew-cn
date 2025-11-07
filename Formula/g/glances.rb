@@ -9,30 +9,26 @@ class Glances < Formula
   head "https://github.com/nicolargo/glances.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bfb73eeadb2ddab2f127d6bb2f4cf0bbc6eb1c13cc8a621e3e5ebd47cc3ba34d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6da73fa63a88f5120a587ce7df239f37a5c537e2d227322351d0a1af37a2d53"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63e3006ccfaa04a8e2e209e63eab5d5b0e291153cfa2d52d9acfd2bcd7a30f4e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "acc171dd25369c7c11b249098ea85c500084c7dfec7e9dbebb73bc43eee10b4d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ebac57da5e37cb79b14396ecbbbab0da37750920d48b36de56096c26cbbadfa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e923752e1d7f5acaf948dd5aed2c3f948efa9c9d7f89dca4a7ea043c133236d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "19f89543ec4047225680e53a8018babf7a16fc30f9a656742137e89da6d23008"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "577e3ce8b2701c1546510fba1baa15b24530d277ea25caadfcf6f0e2a6e35a41"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cbd3ecd1df1785a3dd11e7749db600a32995bd9e8bb08d65e565b442f81a9283"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fb239d6330ba3d73a63a42caf251e83cd0dcaaaac9ab19390eeb7cbb3f7be6c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e73cfe95b546545f93f7d6b295d0de24671b4a5b80e54d3e2fb02af7b66efd0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c5eb0bde53d4d2d1af2f290913664d46380300dc2e1ab978a8a92133472a5d6"
   end
 
   depends_on "rust" => :build # for annotated-docs
   depends_on "certifi" => :no_linkage
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
 
   pypi_packages package_name:     "glances[containers,web]",
-                exclude_packages: ["certifi", "pydantic-core"]
+                exclude_packages: ["certifi", "pydantic"]
 
   resource "annotated-doc" do
     url "https://files.pythonhosted.org/packages/d7/a6/dc46877b911e40c00d395771ea710d5e77b6de7bacd5fdcd78d70cc5a48f/annotated_doc-0.0.3.tar.gz"
     sha256 "e18370014c70187422c33e945053ff4c286f453a984eba84d0dbfa0c935adeda"
-  end
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
   end
 
   resource "anyio" do
@@ -100,11 +96,6 @@ class Glances < Formula
     sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
   end
 
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
-  end
-
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
     sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
@@ -133,11 +124,6 @@ class Glances < Formula
   resource "starlette" do
     url "https://files.pythonhosted.org/packages/de/1a/608df0b10b53b0beb96a37854ee05864d182ddd4b1156a22f1ad3860425a/starlette-0.49.3.tar.gz"
     sha256 "1c14546f299b5901a1ea0e34410575bc33bbd741377a10484a54445588d00284"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do

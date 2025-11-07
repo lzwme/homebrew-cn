@@ -8,13 +8,13 @@ class WeaviateCli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e13698b37e68ec1a41b4f7dc2172256fa644e5e144630862be2eedfcc798a16d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "829d696e5e013eb210964e65bc01f7bccad1d4b279baa7f6b2820a25ec30511f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e65b0ed2b54efe3479376959295422022e12e98b78c9af818dffd2e1ef0b0efe"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b578a157b23ad90551c98bcc87a4ca33a9e9acf58496aa7fc509265f1bdad8b0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe3ab07f8cc7c06adabfe87d1b1db55332680bc34fdfe206cf751488b5b1de86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31f8745e155e2ddff01f9e890a1fcf57a2522aae28c3a3dd0295b63b2b3c4cd0"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0cdf3c7b9357a1851920f831aeb11aa1436fa9f2ef3b739e1c1225d583c7d298"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e65a561b6acf364d0448656df92667a3559f811ae8a5aec4cd5d9783bbc9f805"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8402bf2f9ef6b8a66cc32196bfad0518a002174512629ffdacbf946ce81c509"
+    sha256 cellar: :any_skip_relocation, sonoma:        "83cefb605b4088e97f35d610acd92d0899cb459bf7c662c4049cf83332c2900c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "647fed9cc4a642e34108835b1187d2e56eae5f33cf570d68e8c045c37f286fdf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cae529312244b3cc0a29962c8bf09c5c92accee0d6bb513c18a9728e5f3baf6"
   end
 
   depends_on "ninja" => :build
@@ -23,7 +23,7 @@ class WeaviateCli < Formula
   depends_on "cryptography" => :no_linkage
   depends_on "numpy"
   depends_on "openssl@3"
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
 
   uses_from_macos "libffi"
@@ -32,12 +32,7 @@ class WeaviateCli < Formula
     depends_on "patchelf" => :build
   end
 
-  pypi_packages exclude_packages: %w[certifi cryptography numpy pydantic-core]
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
+  pypi_packages exclude_packages: %w[certifi cryptography numpy pydantic]
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
@@ -109,11 +104,6 @@ class WeaviateCli < Formula
     sha256 "140303d5c8d2037730c548f8c7b93b20bb1dc301be280c378b82b8894589c954"
   end
 
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
-  end
-
   resource "semver" do
     url "https://files.pythonhosted.org/packages/72/d1/d3159231aec234a59dd7d601e9dd9fe96f3afff15efd33c1070019b26132/semver-3.0.4.tar.gz"
     sha256 "afc7d8c584a5ed0a11033af086e8af226a9c0b206f313e0301f8dd7b6b589602"
@@ -122,11 +112,6 @@ class WeaviateCli < Formula
   resource "sniffio" do
     url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
     sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "tzdata" do

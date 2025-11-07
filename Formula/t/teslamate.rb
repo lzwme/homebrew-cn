@@ -1,19 +1,17 @@
 class Teslamate < Formula
   desc "Self-hosted data logger for your Tesla"
   homepage "https://docs.teslamate.org"
-  url "https://ghfast.top/https://github.com/teslamate-org/teslamate/archive/refs/tags/v2.1.1.tar.gz"
-  sha256 "25787bbf785fa623e8d54ecd39976af737c8bff9aaa9b581bf9d7254c9defcaa"
+  url "https://ghfast.top/https://github.com/teslamate-org/teslamate/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "9e2b9fca03186ecd2e303d01b4f3810c5e5518d6110ab6f786c60590d4ae1f91"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "87ff93fad948ad249b3e18922d4f8196177d1d9ac4b7744d8083459968e000d4"
-    sha256 cellar: :any,                 arm64_sequoia: "7c204f36cabb2d89dddf6f7d818b305b29598ec220d4343cb25d051fec4c4040"
-    sha256 cellar: :any,                 arm64_sonoma:  "376137b668590f52bd25dfafcbce56a83a9e677de2f20a223f1aca3e6f21f4a8"
-    sha256 cellar: :any,                 arm64_ventura: "4e7cbcb7595ee69a10af1da9231ed37bf8fe79174a88ae22851908fb1dc5e742"
-    sha256 cellar: :any,                 sonoma:        "b0c19c28d0094cbeb0dfd9ffdedf330513ea6a4a31a1cfcf4614db6963de4563"
-    sha256 cellar: :any,                 ventura:       "0aee63b55d7bfc4593fac0b52a17dd24741f2713d282267b5a48dd97f0c1cc57"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5be50a032e3597e5bd0b49b8f20adacd461b8703ac73af4dec6699290679b4ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbd202552ff94068a7f6ee70827060adefc9ab36ddcb542111d71b8fbbaa75bb"
+    sha256 cellar: :any,                 arm64_tahoe:   "0b01215e824d4a8866a07ea09c5308489e65842d792da53f59b87afcc98e5e1d"
+    sha256 cellar: :any,                 arm64_sequoia: "b94d509d6c488f4c044a2fbd5236537f55e9dc2581a5d3643fc07e5edce4314a"
+    sha256 cellar: :any,                 arm64_sonoma:  "3ffde8c26b73d64523ae3e901bf0eb93c8420cf25be593338e924700dbde55c8"
+    sha256 cellar: :any,                 sonoma:        "d0c89dbeb138c6c2ad08754f0eaa57b038c34421529454a229c1e0e915724933"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "78526f3d68585af73ca35ded354e6149530c3278ec580bdab83bdce36ba10d2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "119b4f77cb931120ebf507f578f75bcd5a3b529df3db7ca9c4cb88425804350d"
   end
 
   depends_on "node" => :build

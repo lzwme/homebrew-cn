@@ -8,27 +8,22 @@ class Llm < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "64b190b913f11de4c6624459d47a9a22cf572fbe7ee3c025f3d41189efce19e8"
-    sha256 cellar: :any,                 arm64_sequoia: "30ec4d15e1b2ec1e3612ae3c7b102f871b3562d836f4fbd59a3c09f15fdc1408"
-    sha256 cellar: :any,                 arm64_sonoma:  "ce30b6943aed62b410652916a7f334ff8280348abd3e04bd95c95c40a38ffa9c"
-    sha256 cellar: :any,                 sonoma:        "5efffe226fcaf29560ed0e3759f5f68c929ed3c5857e8cd2b42d68490fcb739c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9faa29e038623ef5b3438e5530cf746fe23479ccd17175f4f908752d78a2490f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6da3273f4d51d941a3bb12c92f51225c186d732cdc51fd7bbdac997f632aec33"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "74a12c5c01a314cfc551a7c1113d1a2252f71b96b0ffece91dc86c38fcc3c323"
+    sha256 cellar: :any,                 arm64_sequoia: "bfdec5e82e202538e7050fbc04b5ab50e0bfe3d49c3fd23cdebe4f0352e64117"
+    sha256 cellar: :any,                 arm64_sonoma:  "c127ab9aea790f6b27d2d9a355d363f64e2efff0e48e44cdc637f217f01472aa"
+    sha256 cellar: :any,                 sonoma:        "e075f453cade0b27f49655f158df54e05e602fcc2233c10d7228c47275af9190"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc058163c276b4d35e6f63b0809cd6b605aef3f2438f0a18b6232a0a9bcc9b71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1b3fa8677c4cafe7aa749d8f85a9e1cf401835a428c5f93d1497f37ead05102"
   end
 
   depends_on "rust" => :build # for jiter
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
 
-  pypi_packages exclude_packages: ["certifi", "pydantic-core"]
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
+  pypi_packages exclude_packages: ["certifi", "pydantic"]
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
@@ -81,8 +76,8 @@ class Llm < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/c4/44/303deb97be7c1c9b53118b52825cbd1557aeeff510f3a52566b1fa66f6a2/openai-2.6.1.tar.gz"
-    sha256 "27ae704d190615fca0c0fc2b796a38f8b5879645a3a52c9c453b23f97141bb49"
+    url "https://files.pythonhosted.org/packages/51/a2/f4023c1e0c868a6a5854955b3374f17153388aed95e835af114a17eac95b/openai-2.7.1.tar.gz"
+    sha256 "df4d4a3622b2df3475ead8eb0fbb3c27fd1c070fa2e55d778ca4f40e0186c726"
   end
 
   resource "pluggy" do
@@ -93,11 +88,6 @@ class Llm < Formula
   resource "puremagic" do
     url "https://files.pythonhosted.org/packages/dd/7f/9998706bc516bdd664ccf929a1da6c6e5ee06e48f723ce45aae7cf3ff36e/puremagic-1.30.tar.gz"
     sha256 "f9ff7ac157d54e9cf3bff1addfd97233548e75e685282d84ae11e7ffee1614c9"
-  end
-
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "python-dateutil" do
@@ -153,11 +143,6 @@ class Llm < Formula
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
     sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   def install

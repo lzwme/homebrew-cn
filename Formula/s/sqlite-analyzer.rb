@@ -1,9 +1,9 @@
 class SqliteAnalyzer < Formula
   desc "Analyze how space is allocated inside an SQLite file"
   homepage "https://www.sqlite.org/"
-  url "https://www.sqlite.org/2025/sqlite-src-3500400.zip"
-  version "3.50.4"
-  sha256 "b7b4dc060f36053902fb65b344bbbed592e64b2291a26ac06fe77eec097850e9"
+  url "https://sqlite.org/2025/sqlite-src-3510000.zip"
+  version "3.51.0"
+  sha256 "5330719b8b80bf563991ff7a373052943f5357aae76cd1f3367eab845d3a75b7"
   license "blessing"
 
   livecheck do
@@ -13,15 +13,12 @@ class SqliteAnalyzer < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "119aab9d8965e2bc6a42f0f688d18fc84f884256176a8ad6308096f36e07cadd"
-    sha256 cellar: :any,                 arm64_sequoia: "983c929529debfa69afd99dc23a7025dbe681a100fafa0f20c08ef3b144310cb"
-    sha256 cellar: :any,                 arm64_sonoma:  "8c6c0770b134f712086b1fc259c469428b2cb214a11737d1ed7b46acec77bbf7"
-    sha256 cellar: :any,                 arm64_ventura: "2a4457aa0b6bd51662221422b09993d9a9adf6d8d5d6a8ca8d066820b6734ae1"
-    sha256 cellar: :any,                 sonoma:        "9ea7789c685af83f51e33619c920b963605cb39dbbb8f872b135fad0b32122ec"
-    sha256 cellar: :any,                 ventura:       "b76902ea0ea66727d276c099b81003714783bf48fa4535cf12bd2200dcca0b5b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec05b4e264b7c5477bf2daa0f9b860d04548699383f231eef61816472cc937b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69276f619b21ed65f21da3db17842b02c0355b0e05a3db2bc8119001cb673122"
+    sha256 cellar: :any,                 arm64_tahoe:   "37216928d4458f70d823d7d9e5d73d146de42c57021d8db9c5f8da45fd648317"
+    sha256 cellar: :any,                 arm64_sequoia: "aaae0b43fb4fb9c6e32a5ef0c181640b276d7c2be9da8d4757fc31408b693747"
+    sha256 cellar: :any,                 arm64_sonoma:  "063e40b00794727904d3b98c66489568c8681b93413301447330eabf6d6d5e8d"
+    sha256 cellar: :any,                 sonoma:        "15f81a02dc4561553ca7dc4f81443137d6f72966fe759f9a443786f5825b00fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e985647c342b7bb5ef5487ae432b001556ca8cd75a25a3e2ba999a88c5eca585"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e8d1a04cdcb19bc1971d996bfb77048c5f7da7a4b60cbc350846433455d9643"
   end
 
   depends_on "tcl-tk"

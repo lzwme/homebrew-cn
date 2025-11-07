@@ -4,14 +4,15 @@ class Gtranslator < Formula
   url "https://download.gnome.org/sources/gtranslator/49/gtranslator-49.0.tar.xz"
   sha256 "eaa85620949d5c27c142219fc184281b229dc31eea3717b5b86eee70dcdcc1e6"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_tahoe:   "c3989a78b0ab3a2c895f893703396ab059c661745f79178ef2b0ff45a32cd18c"
-    sha256 arm64_sequoia: "9eff3bc6ccd0b6b83284c24ddc1e648c9a14d4dbcb9a287cf5111c6f5e6817cd"
-    sha256 arm64_sonoma:  "d1bc0305b18832a98916975872bd68f8d3bff4e087a7a51cb676ba6406204af9"
-    sha256 sonoma:        "0f59c2ffe4ba03104573371c17a007da03489a6b96a0116e987f2cf692ffdaed"
-    sha256 arm64_linux:   "4cbc02955f5ba3b50b6388022d1509497c734daee3cd8a2cf8d01f32391daa62"
-    sha256 x86_64_linux:  "71523330a550458d9b692d09d58484e544e5354943e41b31f167ba2383a0793c"
+    sha256 arm64_tahoe:   "8ef70f227a7d23e55dadd47d469b18f05d348e963138d51f9a95c7af26cdb875"
+    sha256 arm64_sequoia: "7b3d6ed55bebeaebdd437b0c01c2e0406244bb37017f6c67703391bd37002f46"
+    sha256 arm64_sonoma:  "92e535473667bcef27ab9bcddacc141e2d1e75ee84285b6eccd22aff45b42c79"
+    sha256 sonoma:        "79f86b1f246d68aeb8379ba44b516f7dc6d65a6468d8e24cffb23a8d512482f7"
+    sha256 arm64_linux:   "2934cc290f01a16a4460ddf9c3bffdad423e7f36434bf660de959ffc1f1c9782"
+    sha256 x86_64_linux:  "c07eb0e8f150bb544073e24691d46cfcff6cbe3fedba16ce194f5da20faf749e"
   end
 
   depends_on "desktop-file-utils" => :build # for update-desktop-database
@@ -20,7 +21,7 @@ class Gtranslator < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
 
-  depends_on "adwaita-icon-theme"
+  depends_on "adwaita-icon-theme" => :no_linkage
   depends_on "cairo"
   depends_on "gettext"
   depends_on "glib"
@@ -28,10 +29,10 @@ class Gtranslator < Formula
   depends_on "gtksourceview5"
   depends_on "json-glib"
   depends_on "libadwaita"
-  depends_on "libgda"
   depends_on "libsoup"
   depends_on "libspelling"
   depends_on "pango"
+  depends_on "sqlite"
 
   uses_from_macos "libxml2"
 

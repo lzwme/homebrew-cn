@@ -6,17 +6,16 @@ class Pymol < Formula
   url "https://ghfast.top/https://github.com/schrodinger/pymol-open-source/archive/refs/tags/v3.1.0.tar.gz"
   sha256 "54306d65060bd58ed8b3dab1a8af521aeb4fd417871f15f463ff05ccb4e121fe"
   license :cannot_represent
-  revision 1
+  revision 2
   head "https://github.com/schrodinger/pymol-open-source.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "05c7ebc310a6c2ec2e91da1a897470ef61750b97c18d31879c80e9562bb4c7a0"
-    sha256 cellar: :any,                 arm64_sequoia: "262b8a1c6702c62c9e21d3593e0575e5496165b9d93d67841d9d2faa6ac94f67"
-    sha256 cellar: :any,                 arm64_sonoma:  "77dfd4698b6e5b90f3e4a9117301c020e6b3b67b16e5c76e1886a0f17a1c5612"
-    sha256 cellar: :any,                 sonoma:        "4958fb877f750f6d443c407c265a73839dfdc98a600845ca6f90af766d26925d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7896d871f2cac3ef8b508fa4e71d5e82706b3ea110f2fd614951f1124a786fcc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c162a6c917186bb44563bcf497476a0a5c7e4be2c2847a9337ac282d4831c396"
+    sha256 cellar: :any,                 arm64_tahoe:   "8f76f4858674072e0992eb5a2d004e2c088556c460ee98cadd828dc3c0c9b453"
+    sha256 cellar: :any,                 arm64_sequoia: "df129b99341114fdc3cbbcfbd469bb563e10af06dcb8fbfaa417dfec84c6b973"
+    sha256 cellar: :any,                 arm64_sonoma:  "e7ec9b524c7b30829ca8ed8e4e4195db5e687a0b2de3a5ea92cc569a4c092ff5"
+    sha256 cellar: :any,                 sonoma:        "808c4b989cb6240b0e3172d5279f8fce333231e33bbcf5c6f51f55c840632582"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c06f9389168a9a133cbe6dfc12a150fdd36a90e3268af20f1120f1e00703958"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "291e786a0fd830c0a55b2db5fa0ff7d08b27140938a990549ea75fc1974e758b"
   end
 
   depends_on "cmake" => :build

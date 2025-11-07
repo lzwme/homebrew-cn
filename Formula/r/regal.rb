@@ -1,20 +1,18 @@
 class Regal < Formula
   desc "Linter and language server for Rego"
   homepage "https://www.openpolicyagent.org/projects/regal"
-  url "https://ghfast.top/https://github.com/open-policy-agent/regal/archive/refs/tags/v0.36.1.tar.gz"
-  sha256 "34bc0edcb3d23da88ed644a351112450b0016e110e6ef0349abfee103a2fda07"
+  url "https://ghfast.top/https://github.com/open-policy-agent/regal/archive/refs/tags/v0.37.0.tar.gz"
+  sha256 "0b5244f8cf7fa30ffbbc8c002c7b3999cb1d0e1edcf2de8fb1f244784c7eb86f"
   license "Apache-2.0"
   head "https://github.com/open-policy-agent/regal.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a989393a22fed5c425914d468543632356c789aec52a5e40cdeb9f9eac199a48"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9773d0e14bf3218a5cdf2de2c485e6eceeaf9368433947ec3ec825de836dc479"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3427efbe1f74c52823b2648888add58a7071eb33ad5d2eaf49ba7f4bacd72ac0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6c18b66cf3ca43dfb39d2fff174fcd021ec33743fd3d9afad9286d3927b3b479"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bc976f8bc62ffb78fe0c86225581dfbec797e8fb57437203216d29810df6843b"
-    sha256 cellar: :any_skip_relocation, ventura:       "857facb91526047c761196da0410ab7fffee6e43dab670542641b43b393d1ef5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "02006b7abb82dc21842b482b147f2988a03c64afc448eb75d20fec1e2383a069"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1534d32b616e3e0a99163402425b8f4bdb7ff33f40a40f1d2d9d7de39ed2fc16"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "29f4d579bee4cccde989b5d4ed7335ecd8499b24f23a0239496c9e0f89da4f49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "214f7a3c33ce11a61f00ab51f67addf9507fff01696d7640383fadf2c8391ef2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1decfd6ada0d3f6839d60c76f12eb91c3457b48d591738f8e74faeacd134e97"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7a9f535a91e3f234a5b4ab3223141f9910a4ed4c4265ba047f8dc02e78e33d14"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8deb844ee275e895f82c674a25e2c9da376a7ae9260106b41334dc6881e2f7c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e2f79f4de9b04b5df7d7ec39a5dea2a8bc2de3b2a840c1fe451b6f902fb5528"
   end
 
   depends_on "go" => :build

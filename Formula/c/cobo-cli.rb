@@ -3,34 +3,29 @@ class CoboCli < Formula
 
   desc "Build, test, and manage your integration with Cobo Wallet-as-a-Service"
   homepage "https://github.com/CoboGlobal/cobo-cli"
-  url "https://files.pythonhosted.org/packages/cf/b5/eab301fba17bd78fb28c6258f1d3ec7177976c93cbea8b9f5338ff024703/cobo_cli-0.0.8.tar.gz"
-  sha256 "dee36ca6c335c929f9155ccbd45d4f1bdb8cd5ea950e1c16e142b9f2e34b7bc1"
+  url "https://files.pythonhosted.org/packages/85/f5/b116ad0bc82961a47f7407611d6950f18078bdd3b193d2a34cf1e8b8065c/cobo_cli-0.0.9.tar.gz"
+  sha256 "70932b6e5b115e222bdc418e5ce7a17b3229ac530157534c3e374f832cd056cf"
   license "MIT"
   head "https://github.com/CoboGlobal/cobo-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2bf1fd386fb5bdd68e8f7c0957e753683977c609674e5c9f02ca87fb83e2fb65"
-    sha256 cellar: :any,                 arm64_sequoia: "51f2d418eb44633abe30d32ad8b536021ee33206ac1e61c4ecbfd82e006a38ed"
-    sha256 cellar: :any,                 arm64_sonoma:  "f58dedd85e67fd61c6a218f7f9c398e9c5314bc1edeee445a78ef034c14f065b"
-    sha256 cellar: :any,                 sonoma:        "03fd095746763bb8f41e373d8694a57dc39631ab8562456c70604fcd131bd3b9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e898156d1e4b31afcb2bffaedce41b4b91fac2a3ed750637e0f39b650ba199a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ca10ca19766a666585da08343e98428ca7b336f70e764c8803ff2e154c2226d"
+    sha256 cellar: :any,                 arm64_tahoe:   "d8eb16159d1a530a244f0a9394cc5d46a9138bf87318535d11781b92f82ec046"
+    sha256 cellar: :any,                 arm64_sequoia: "8a6f57d6f616e303b15634cb20359e8dd82356637446eefecedbc2b1bbfc4e87"
+    sha256 cellar: :any,                 arm64_sonoma:  "8e5b1859385d126c3acd7c7ee090435cff99d4798a86988e9c688bc8e03e4772"
+    sha256 cellar: :any,                 sonoma:        "7334464a39d8f7a02c39e51a9214998030ee293e0d6d2bf6b52fd529e2a2c22e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "99f2a7dcd55d4189fe1d2cebc76b4afe76d274041124187d7f088743d78869d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5847abb48038ed1e0274e8358bb2455c3fe285e9547e5573ddae848b74dc7836"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "libsodium"
   depends_on "libyaml"
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
 
   uses_from_macos "libffi"
 
-  pypi_packages exclude_packages: ["certifi", "pydantic-core"]
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
+  pypi_packages exclude_packages: ["certifi", "pydantic"]
 
   resource "cffi" do
     url "https://files.pythonhosted.org/packages/eb/56/b1ba7935a17738ae8453301356628e8147c79dbb825bcbc73dc7401f9846/cffi-2.0.0.tar.gz"
@@ -97,11 +92,6 @@ class CoboCli < Formula
     sha256 "78816d4f24add8f10a06d6f05b4d424ad9e96cfebf68a4ddc99c65c0720d00c2"
   end
 
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
-  end
-
   resource "pydantic-settings" do
     url "https://files.pythonhosted.org/packages/20/c5/dbbc27b814c71676593d1c3f718e6cd7d4f00652cefa24b75f7aa3efb25e/pydantic_settings-2.11.0.tar.gz"
     sha256 "d0e87a1c7d33593beb7194adb8470fc426e95ba02af83a0f23474a04c9a08180"
@@ -145,11 +135,6 @@ class CoboCli < Formula
   resource "typing-inspect" do
     url "https://files.pythonhosted.org/packages/dc/74/1789779d91f1961fa9438e9a8710cdae6bd138c80d7303996933d117264a/typing_inspect-0.9.0.tar.gz"
     sha256 "b23fc42ff6f6ef6954e4852c1fb512cdd18dbea03134f91f856a95ccc9461f78"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do

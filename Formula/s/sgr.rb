@@ -9,13 +9,13 @@ class Sgr < Formula
   revision 15
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "6feb861ec91823ffd348ece37306331ce0e77d2e48693d09ccfa73bee0755690"
-    sha256 cellar: :any,                 arm64_sequoia: "a953b261de45aee3eb159e82e6f858a2ad51dd365ec0942e718a97cb3875968d"
-    sha256 cellar: :any,                 arm64_sonoma:  "7477c83eb0a2f9d16bf2a5a716db61ccfa64ba22aa48cfb05f233da450e1e3f9"
-    sha256 cellar: :any,                 sonoma:        "c17d376459bc63c361d343e4c3fac98f6f8088fa65f08a2a775344adf8adfb24"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1354bd840ba92237d2d9cac8d027b0482998f6f313fcb68e6fb14ffc7426ec12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aaa9b1f0c9f2c3afe966f547ec7f72c452aa44572744999352d107106daa02f7"
+    rebuild 4
+    sha256 cellar: :any,                 arm64_tahoe:   "036e61b33905ed94d6d42f3bf0cd49e55972d4e53082e54f974d84e3d37d050a"
+    sha256 cellar: :any,                 arm64_sequoia: "7f04ebc68b5751fbc448763ae2d443eff87dc7fbf65e5f3cadd93aaf58bcbb1b"
+    sha256 cellar: :any,                 arm64_sonoma:  "23166a0b5d54c75edcc0ae098634464b422aa5a93212fb8206706025e9a21280"
+    sha256 cellar: :any,                 sonoma:        "1125ba2533381b0faf43c0749859ab39b0e650118b8f9cee0ca6fd3012cff74e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "04d689f2ceb5b4178b1da5ac37fb62ce03d5f2c8facc1f90fbb9429bc7fccfed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b867b12a506b59d62d17c3f614255a04581762104f7b8beda6e9e7f52b2ecce4"
   end
 
   deprecate! date: "2025-06-21", because: :unmaintained
@@ -24,18 +24,13 @@ class Sgr < Formula
   depends_on "cryptography" => :no_linkage
   depends_on "libpq" # for psycopg2-binary
   depends_on "openssl@3"
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
-  pypi_packages exclude_packages: %w[certifi cryptography pydantic-core rpds-py]
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
 
   # Manually update `pglast` and `ruamel-yaml` to the latest version
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
 
   resource "argon2-cffi" do
     url "https://files.pythonhosted.org/packages/0e/89/ce5af8a7d472a67cc819d5d998aa8c82c5d860608c4db9f46f1162d7dab9/argon2_cffi-25.1.0.tar.gz"
@@ -137,11 +132,6 @@ class Sgr < Formula
     sha256 "447700a657182d60338bab09fdb27518f8856aecd80ae4c6bdddb67ff5da44ef"
   end
 
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
-  end
-
   resource "referencing" do
     url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
     sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
@@ -185,11 +175,6 @@ class Sgr < Formula
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
     sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do

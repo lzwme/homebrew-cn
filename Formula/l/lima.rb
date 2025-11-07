@@ -1,19 +1,18 @@
 class Lima < Formula
   desc "Linux virtual machines"
   homepage "https://lima-vm.io/"
-  url "https://ghfast.top/https://github.com/lima-vm/lima/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "8d98889affd190068022b4596a34b0a749a9f41f340b9b55cefd7591cf30bbbb"
+  url "https://ghfast.top/https://github.com/lima-vm/lima/archive/refs/tags/v2.0.1.tar.gz"
+  sha256 "a3efa067676ca80e780671eade074a5ff8ea080b04563f3cfd07cfc9ca4cbf76"
   license "Apache-2.0"
   head "https://github.com/lima-vm/lima.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d9fe181a6dd1e019e24216aaaa15c88791598d7d23621f56a56345d425c5ad6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4214fdc16f886f7054c39ae85819ccde5080efba083006565503a4349f7c36e8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "091c535e72c639e3a5acc9d0cc6520a3eb9b2edbe883e54d3fdee4a37df4706e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2e103dad6cb82d59d9f7b6f3c2d8219863c0e48e650da5acd71460e4a2ce3242"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7594b0a496f9a1b0e994ffc414662c969d10cb6a6d565747ed3409644421ca75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "627b3697f9c72c9261cff35b9fc5e01f32b630c5b2872ca5f19862e529901118"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1128164f9a1edd7ecd87ae08ce8439a0b608453bacaef5d97d96a4d1042eac46"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf8c7bef54456b35e3b6d995a42b134767bcc6a8df92a1f31750d076f32a7a9b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd2b44abdaaa79819b72ea9b03a0784a107218732d30e388d727358c957253a1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "89d86649aee76af90e7e38ee4f35ce0473e2cf4dbfb10abb1bdeca6e553b8c63"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c73facd7fa86fe00cf316dcbfce1cbced61e5362c998b2ef269107030be66b9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34eaf6247943ad51173b07375e1bd16a0c76b8c0971cf6a323c0e31cc5be3e32"
   end
 
   depends_on "go" => :build

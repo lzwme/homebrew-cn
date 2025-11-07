@@ -3,19 +3,28 @@ class Standardebooks < Formula
 
   desc "Tools for producing ebook files"
   homepage "https://github.com/standardebooks/tools"
-  url "https://ghfast.top/https://github.com/standardebooks/tools/archive/refs/tags/2.10.0.tar.gz"
-  sha256 "817948c4d7c0d25db2c8a05c09449f9d6a39e75343ca31571430f2c3fba0a8e9"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/standardebooks/tools.git", branch: "master"
 
+  stable do
+    url "https://ghfast.top/https://github.com/standardebooks/tools/archive/refs/tags/2.10.0.tar.gz"
+    sha256 "817948c4d7c0d25db2c8a05c09449f9d6a39e75343ca31571430f2c3fba0a8e9"
+
+    # Backport fix for libxml2 >= 2.15
+    patch do
+      url "https://github.com/standardebooks/tools/commit/16387537a0ca44d251168eabb5fd239cb73c1c8c.patch?full_index=1"
+      sha256 "ef57b70a33cf2e90fd09deff2c385d6cd05174af2f447cd54b31a0797130cff3"
+    end
+  end
+
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a0c112f37e7c54184ad96ff914f5803783dd6647487bf0205b346f3704ecb0b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb177324157ca726312a2f6659a155dbe199611be83ac3f44edddd50c8e88a14"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3cc49fd60f698ed080b59df31d0a67fb92df79e33df8120d431b758b5e1a0c08"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a4074fad261ff6ee5fddd0803ad3006465f2e91b016987de2109ec627026fd52"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a7b35ede28bc61e1767b1606b61eef53a9d3ac29df5b70243dc2d7ec2ab7201"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84e237acbb1cfae83b5efeffba83ae3713c06f979aaa04fcb2b5325d8079a501"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8db597c1a1ad0858129ec883fabf0c3f93eed47f8b06bfd68807e5999d0c2363"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54afbfb5fb13337418eee1309ba1383f72098a10f38ae7497958ab4f5f0bf973"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51405c25effc19cbe4d707cd13c1f2cc4bb3a0b919e7d3137e18754e044829b8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3bcae9a32191f175a0be207ddfb1847f931f8035f2a447b1d530cb0e467e7214"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3dd0ad52715c2a7038a5dc1b369e97fdaf5e26035b814e6dff4253957dff7dc5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "667ee83fe7d886afdb4e816eeda2a1b05a1d4ea5a6edab0820afc226b58fa56c"
   end
 
   depends_on "rust" => :build # for selenium

@@ -6,17 +6,17 @@ class Gptline < Formula
   url "https://files.pythonhosted.org/packages/5b/28/d15a9a5b349c77a051a633e13141151314f352067ec7d516220bd6b20fcf/gptline-1.0.8.tar.gz"
   sha256 "4a0a0b5fa4f23e5f2ad7ac5bf44a9143e5de3757b0b8eefe5d78a7757d1d34bb"
   license "GPL-3.0-only"
-  revision 8
+  revision 9
   head "https://github.com/gnachman/gptline.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "a43749f26aaf3bdfebc5105dbec7d4b5bf119093c869839fb8428d83d35f5516"
-    sha256 cellar: :any,                 arm64_sequoia: "d2354c7e1e5a9e947900ab00b62d4fc73eb0e8b6d8e9eb48c26aa28e76380f7f"
-    sha256 cellar: :any,                 arm64_sonoma:  "88954feea8be274eedc24f4005dcd84d091e3abf360ac8010dbfcb42a0d1ad3a"
-    sha256 cellar: :any,                 sonoma:        "d1b8fe9d555505576c0995da08e67f2fedaa55caed6f3d0dfa597d7b7c009fc5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9d190fd9c8dda3f8186691b7911bad86ed5872613abd566fca2528552a44d8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2742dbcf10f0bf7dcca211baeda3e521cb0d39dbc1e6d5bd77c0668fdd60403"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c3d150a4e47873418f1e6e23904675152aea0a0e62d19b744294c7c5ecb9b52c"
+    sha256 cellar: :any,                 arm64_sequoia: "842279c4958015a96659e7de3860077964ecd05b2a0332f3759933073b5bb7f8"
+    sha256 cellar: :any,                 arm64_sonoma:  "334b4be2606efb956c02144a889aae579971e97bffa2695ab60a6aabed7541e6"
+    sha256 cellar: :any,                 sonoma:        "8c6d847dd498738dddc2b3090101d04c2bed105f717a3ff7215e58c27de5c0c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3cc190be396942c298185ede2c41c7e4cb174e1ea16af96e52dabd38c640294"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c97871f14c9167ab3552c7524533d1c81959cadc37ed9168922304727ef6a85"
   end
 
   depends_on "pkgconf" => :build
@@ -29,7 +29,7 @@ class Gptline < Formula
   depends_on "libyaml"
   depends_on "little-cms2"
   depends_on "pillow" => :no_linkage
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "webp"
 
@@ -37,13 +37,8 @@ class Gptline < Formula
   uses_from_macos "libxslt"
   uses_from_macos "zlib"
 
-  pypi_packages exclude_packages: %w[certifi pillow pydantic-core],
+  pypi_packages exclude_packages: %w[certifi pillow pydantic],
                 extra_packages:   "lxml-html-clean"
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
@@ -156,18 +151,13 @@ class Gptline < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/c4/44/303deb97be7c1c9b53118b52825cbd1557aeeff510f3a52566b1fa66f6a2/openai-2.6.1.tar.gz"
-    sha256 "27ae704d190615fca0c0fc2b796a38f8b5879645a3a52c9c453b23f97141bb49"
+    url "https://files.pythonhosted.org/packages/51/a2/f4023c1e0c868a6a5854955b3374f17153388aed95e835af114a17eac95b/openai-2.7.1.tar.gz"
+    sha256 "df4d4a3622b2df3475ead8eb0fbb3c27fd1c070fa2e55d778ca4f40e0186c726"
   end
 
   resource "prompt-toolkit" do
     url "https://files.pythonhosted.org/packages/a1/96/06e01a7b38dce6fe1db213e061a4602dd6032a8a97ef6c1a862537732421/prompt_toolkit-3.0.52.tar.gz"
     sha256 "28cde192929c8e7321de85de1ddbe736f1375148b02f2e17edd840042b1be855"
-  end
-
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pygments" do
@@ -186,8 +176,8 @@ class Gptline < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/f8/c8/1d2160d36b11fbe0a61acb7c3c81ab032d9ec8ad888ac9e0a61b85ab99dd/regex-2025.10.23.tar.gz"
-    sha256 "8cbaf8ceb88f96ae2356d01b9adf5e6306fa42fa6f7eab6b97794e37c959ac26"
+    url "https://files.pythonhosted.org/packages/cc/a9/546676f25e573a4cf00fe8e119b78a37b6a8fe2dc95cda877b30889c9c45/regex-2025.11.3.tar.gz"
+    sha256 "1fedc720f9bb2494ce31a58a1631f9c82df6a09b49c19517ea5cc280b4541e01"
   end
 
   resource "requests" do
@@ -243,11 +233,6 @@ class Gptline < Formula
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
     sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do

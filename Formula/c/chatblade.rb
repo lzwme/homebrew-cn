@@ -9,27 +9,22 @@ class Chatblade < Formula
   revision 3
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "1afc59e5fc46ba955998dd61ab88dafde251a504d0934e4a19c971c0614ea6a9"
-    sha256 cellar: :any,                 arm64_sequoia: "8b77b289ac5e7895308d2a5f6f61355a47dfc7b18eaf8ffaf008ae20733adb4e"
-    sha256 cellar: :any,                 arm64_sonoma:  "77bc45bb28c79bf0ab23bf0807e34b9ae7de980bd381eab523ec585598f87c69"
-    sha256 cellar: :any,                 sonoma:        "a3d0005e0ed04bdbe4b9d77d1d95afe01a42d09ab75c6d8772844bab32e68f2d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "36dae3baa8cb3c7d320400f2d860b7e6b98ff0ca8b2a0a3d6e168563d7c4ea06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d42a6723ec44d54885f0d9bca1e4be66a4d25d42ddeba4f3008e5c8f8fb943dd"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "165f6a5e26ea14d773c853d1e7a88b9fa723869aa3f8fa7608bbe0e2807e08c6"
+    sha256 cellar: :any,                 arm64_sequoia: "ea832d9bb69cf30ce8b59cec68b157a30342937dcbafc1f5cf31584daeb04dce"
+    sha256 cellar: :any,                 arm64_sonoma:  "67651fb0e8a5a650ad425499f4d411417f04150c67c76622a155d12866fa087c"
+    sha256 cellar: :any,                 sonoma:        "b2127d265c2a3660d689b836cf2d7da63f81c10428967499f4ee0223ba083319"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d29952f86965547bf2deabf88cfe86d4832c24260bd2217b73e4326d9a22ce6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f650f455f1fe60f6bca907d99fa6838a84b0b1fdf2f4df67581af6e3c9086ed"
   end
 
   depends_on "rust" => :build # for tiktoken
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.13" # Pydantic v1 is incompatible with Python 3.14, issue ref: https://github.com/npiv/chatblade/issues/103
 
-  pypi_packages exclude_packages: %w[certifi pydantic-core]
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
+  pypi_packages exclude_packages: %w[certifi pydantic]
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
@@ -86,11 +81,6 @@ class Chatblade < Formula
     sha256 "38b7b51f512eed9e84a22788b4bce1de17c0adb134d6becb09836e37d8654cd3"
   end
 
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
-  end
-
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
     sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
@@ -107,8 +97,8 @@ class Chatblade < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/f8/c8/1d2160d36b11fbe0a61acb7c3c81ab032d9ec8ad888ac9e0a61b85ab99dd/regex-2025.10.23.tar.gz"
-    sha256 "8cbaf8ceb88f96ae2356d01b9adf5e6306fa42fa6f7eab6b97794e37c959ac26"
+    url "https://files.pythonhosted.org/packages/cc/a9/546676f25e573a4cf00fe8e119b78a37b6a8fe2dc95cda877b30889c9c45/regex-2025.11.3.tar.gz"
+    sha256 "1fedc720f9bb2494ce31a58a1631f9c82df6a09b49c19517ea5cc280b4541e01"
   end
 
   resource "requests" do
@@ -134,11 +124,6 @@ class Chatblade < Formula
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
     sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do

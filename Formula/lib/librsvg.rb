@@ -4,6 +4,7 @@ class Librsvg < Formula
   url "https://download.gnome.org/sources/librsvg/2.61/librsvg-2.61.3.tar.xz"
   sha256 "a56d2c80d744ad2f2718f85df466fe71d24ff1f9bc3e5ef588bde4d7e87815f2"
   license "LGPL-2.1-or-later"
+  revision 1
 
   # librsvg doesn't use GNOME's "even-numbered minor is stable" version scheme.
   # This regex matches any version that doesn't have a 90+ patch version, as
@@ -14,12 +15,12 @@ class Librsvg < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "856586e932ac602c2637d71bc21c56aa8fc0516e28f52b5f4a16a9976ed9f3ea"
-    sha256 cellar: :any, arm64_sequoia: "246445a80337f9dc27ce4a01dbc411cf7feff380700fe952f103cf06919154de"
-    sha256 cellar: :any, arm64_sonoma:  "571026bade8c88588e9ebaec6c198ce7f615a8dcdaa5778e69915941d8d93714"
-    sha256 cellar: :any, sonoma:        "691ed4674169827262f5c38aa90eb99459132165773f1619109d8d10c7e0235a"
-    sha256               arm64_linux:   "fed7065504a28ebcc99053054676b668630e0701696147125b8d33fcc5583a83"
-    sha256               x86_64_linux:  "05e392b75961623df5dd9f01664c8c9deefe31ea9849e86c237ac08721680692"
+    sha256 cellar: :any, arm64_tahoe:   "946f07e0bf373fc0e3956ddc24eae52e879ede852ca99aef76be6b7042afcc6e"
+    sha256 cellar: :any, arm64_sequoia: "eb5c09756434b0eb037349ac33e32b48b6b056eca9d412880ad247fc9d4ee1d8"
+    sha256 cellar: :any, arm64_sonoma:  "8eab2c19b80b2e83d0c200dddaccd29c259894f06cfa76adc728554b9bc5a124"
+    sha256 cellar: :any, sonoma:        "ea2161952cc5f5bf963b87e22cc4ec363fb94395dc4aa270ad9d9d8c3d610868"
+    sha256               arm64_linux:   "0dd1d9a01ea9091653e8f6b030afcd0f17550166af30b440601d46f5cb20db50"
+    sha256               x86_64_linux:  "79f4d0deda0d8f633b05b971b82651f740cd3a6bf48d0eb115ab8af55c696c78"
   end
 
   depends_on "cargo-c" => :build
@@ -29,17 +30,17 @@ class Librsvg < Formula
   depends_on "pkgconf" => [:build, :test]
   depends_on "rust" => :build
   depends_on "cairo"
+  depends_on "fontconfig"
   depends_on "gdk-pixbuf"
   depends_on "glib"
+  depends_on "harfbuzz"
   depends_on "pango"
 
   uses_from_macos "libxml2"
 
   on_macos do
-    depends_on "fontconfig"
     depends_on "freetype"
     depends_on "gettext"
-    depends_on "harfbuzz"
     depends_on "libpng"
   end
 

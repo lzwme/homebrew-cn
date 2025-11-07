@@ -6,16 +6,15 @@ class Aqtinstall < Formula
   url "https://files.pythonhosted.org/packages/76/19/24a588de6c25d43169d172dab47e63a63cd0d8f90e98cf86487acbf00ac7/aqtinstall-3.3.0.tar.gz"
   sha256 "9c7d85fbe7258be2d7d23fda33f8aff2e8b7536817255eaeaaf4226da8546a31"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "abef19bf515e9576e934c3330e55d883b7f59b6028d6e6de33fa35ae4107426f"
-    sha256 cellar: :any,                 arm64_sequoia: "e4a15fbc60056432694b6a5772cfc94a48db856fdf3235c1f35a0a4646f9da0b"
-    sha256 cellar: :any,                 arm64_sonoma:  "30e9aed605e70786aaae67e5c3aed12f9f3d62e91f3eb4b8899a9f64f5b75f14"
-    sha256 cellar: :any,                 sonoma:        "50b754e47f0d447c9f22749f956f7a1eac2b81009ff44596f9ec4364db3cea86"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a138aaab502c7160722522b0d300b41f8c8a3065687120039abd465d3b459b8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c25d70cad63fd3a0a438cc81da9f4026a41a62161aedab9a3a903956c5c50a34"
+    sha256 cellar: :any,                 arm64_tahoe:   "30909cf4a345708b0bc6e06b9d528cd328d27e725f4c9e118147d6e45e9fe905"
+    sha256 cellar: :any,                 arm64_sequoia: "3fa8448f74e8b9fd2a55594ce42d74dfdec9e0c5dec33bf44916969118f8554d"
+    sha256 cellar: :any,                 arm64_sonoma:  "f5a9b0c80a6d0c172996883138d3993873cb825d5ec78878b78088af847ff0a8"
+    sha256 cellar: :any,                 sonoma:        "6b40325eacc9390dab88363256b95873f884620f9efc26837760708a083a56cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f44158ac6618d87baaf820f5a2a2ae799ab9b65c8385150530563ebc18eedff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36cb37d74b6e3016794765a1be454128e4ebb7a56ad96eb6ede3512f7344a862"
   end
 
   depends_on "certifi" => :no_linkage
@@ -30,8 +29,8 @@ class Aqtinstall < Formula
   end
 
   resource "brotli" do
-    url "https://files.pythonhosted.org/packages/2f/c2/f9e977608bdf958650638c3f1e28f85a1b075f075ebbe77db8555463787b/Brotli-1.1.0.tar.gz"
-    sha256 "81de08ac11bcb85841e440c13611c00b67d3bf82698314928d0b676362546724"
+    url "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
+    sha256 "e310f77e41941c13340a95976fe66a8a95b01e783d430eeaf7a2f87e0a57dd0a"
   end
 
   resource "bs4" do
@@ -75,8 +74,8 @@ class Aqtinstall < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/b3/31/4723d756b59344b643542936e37a31d1d3204bcdc42a7daa8ee9eb06fb50/psutil-7.1.0.tar.gz"
-    sha256 "655708b3c069387c8b77b072fc429a57d0e214221d01c0a772df7dfedcb3bcd2"
+    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
+    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
   end
 
   resource "py7zr" do

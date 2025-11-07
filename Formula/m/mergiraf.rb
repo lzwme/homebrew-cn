@@ -1,18 +1,18 @@
 class Mergiraf < Formula
   desc "Syntax-aware git merge driver"
   homepage "https://mergiraf.org"
-  url "https://codeberg.org/mergiraf/mergiraf/archive/v0.15.0.tar.gz"
-  sha256 "75f553935df38dd84679727fe3b3232d54ed4a9fe6ca214e3fd54ac714d0fae3"
+  url "https://codeberg.org/mergiraf/mergiraf/archive/v0.16.1.tar.gz"
+  sha256 "168711e3f7bc7fd1df0e5d7154004060c9aa682ffae9092725c09e119a6da7b2"
   license "GPL-3.0-only"
   head "https://codeberg.org/mergiraf/mergiraf.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e5c707523be55ef45945f624325043303cee8eb7450b7f3fd7284934c9d67423"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1db32935fdbc41b2c3b0cac96230588948f9931bf7fbce8e25d4a8a6131c9858"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0463ff64b10fbd79a9271a8dce8b75b126c33251151f87d964d8303566288b46"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82b85bb2476b9a117d493e78481f9ca1c6e9ed7eb0b1103175372bae490d6aaa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85c3214034957249a281375b050e42af0439d17701629804ada0642bc58e740d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b0b9ea5f2c8e6ad67b14807265a767e3f6478bea3454cf9111f5e51ac30fc35"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95b9580f9eb98b532de1a9e3bc0161b3993d432446a714c3e32cc398cd002ebe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af7466b5d87ae73412fc6dbca374b19a818e8377dc7f04726363434402c7011b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2101392411977e24f6343f660813baa8f7bcdf4a5f85fb661128b39937d34de7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f26ba8f3ca7bbba3868034ab568f6cde7d05258bab55425716da8a595b9018f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c8139ce7291806c3acacd8e177de1c7e7a7d3493ac5d8a8311881127fedcab7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cddcb6f2cfe718c2b5a83acf52cb9f61eed9b8d9354483949bb767f88c1a3f8"
   end
 
   depends_on "rust" => :build

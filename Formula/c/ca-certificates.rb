@@ -11,7 +11,8 @@ class CaCertificates < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2e6d7369c7b548139ade8b63e371423fc758ede192bb2a794fd04f8065bc4eb5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c414336ff5220d77124debb496c8d86ffa1bbc5946309ee2d9d26645db300b96"
   end
 
   def install
@@ -29,62 +30,66 @@ class CaCertificates < Formula
   def macos_post_install
     ohai "Regenerating CA certificate bundle from keychain, this may take a while..."
 
-    keychains = %w[
-      /Library/Keychains/System.keychain
-      /System/Library/Keychains/SystemRootCertificates.keychain
-    ]
+    keychains = {
+      "/Library/Keychains/System.keychain"                        => "ssl",
+      "/System/Library/Keychains/SystemRootCertificates.keychain" => "basic",
+    }
 
-    certificates_list = Utils.safe_popen_read("/usr/bin/security", "find-certificate", "-a", "-p", *keychains)
-    certificates = certificates_list.scan(
-      /-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----/m,
-    )
+    trusted_certificates = []
+    keychains.each do |keychain, purpose|
+      certificates =
+        Utils.safe_popen_read("/usr/bin/security", "find-certificate", "-a", "-p", keychain)
+             .scan(
+               /-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----/m,
+             )
 
-    # Check that the certificate has not expired
-    valid_certificates = certificates.select do |certificate|
-      begin
-        Utils.safe_popen_write("/usr/bin/openssl", "x509", "-inform", "pem",
-                                                           "-checkend", "0",
-                                                           "-noout") do |openssl_io|
+      # Check that the certificate has not expired
+      certificates.select! do |certificate|
+        begin
+          Utils.safe_popen_write("/usr/bin/openssl", "x509", "-inform", "pem",
+                                                            "-checkend", "0",
+                                                            "-noout") do |openssl_io|
+            openssl_io.write(certificate)
+          end
+        rescue ErrorDuringExecution
+          # Expired likely.
+          next
+        end
+
+        # Only include certificates that are designed to act as a SSL root.
+        purpose = Utils.safe_popen_write("/usr/bin/openssl", "x509", "-inform", "pem",
+                                                                    "-purpose",
+                                                                    "-noout") do |openssl_io|
           openssl_io.write(certificate)
         end
-      rescue ErrorDuringExecution
-        # Expired likely.
-        next
+        purpose.include?("SSL server CA : Yes")
       end
 
-      # Only include certificates that are designed to act as a SSL root.
-      purpose = Utils.safe_popen_write("/usr/bin/openssl", "x509", "-inform", "pem",
-                                                                   "-purpose",
-                                                                   "-noout") do |openssl_io|
-        openssl_io.write(certificate)
+      # Check that the certificate is trusted in keychain
+      trusted_certificates += begin
+        tmpfile = Tempfile.new
+
+        verify_args = %W[
+          -l -L
+          -c #{tmpfile.path}
+          -p #{purpose}
+          -R offline
+        ]
+
+        certificates.select do |certificate|
+          tmpfile.rewind
+          tmpfile.write certificate
+          tmpfile.truncate certificate.size
+          tmpfile.flush
+          Utils.safe_popen_read("/usr/bin/security", "verify-cert", *verify_args)
+          true
+        rescue ErrorDuringExecution
+          # Invalid.
+          false
+        end
+      ensure
+        tmpfile&.close!
       end
-      purpose.include?("SSL server CA : Yes")
-    end
-
-    # Check that the certificate is trusted in keychain
-    trusted_certificates = begin
-      tmpfile = Tempfile.new
-
-      verify_args = %W[
-        -l -L
-        -c #{tmpfile.path}
-        -p ssl
-        -R offline
-      ]
-
-      valid_certificates.select do |certificate|
-        tmpfile.rewind
-        tmpfile.write certificate
-        tmpfile.truncate certificate.size
-        tmpfile.flush
-        Utils.safe_popen_read("/usr/bin/security", "verify-cert", *verify_args)
-        true
-      rescue ErrorDuringExecution
-        # Invalid.
-        false
-      end
-    ensure
-      tmpfile&.close!
     end
 
     # Get SHA256 fingerprints for all trusted certificates

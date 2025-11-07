@@ -8,19 +8,19 @@ class CondaLock < Formula
   license "MIT"
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any,                 arm64_tahoe:   "56dcf5bde0e9b506de76bfebd2285ae10bcb18f9e348f1796dc4ff0401a91102"
-    sha256 cellar: :any,                 arm64_sequoia: "3f1519335e50c7b727b35708e80c6d3daf64534ef40ff48360c1273145d19675"
-    sha256 cellar: :any,                 arm64_sonoma:  "9b69f09e352578597bf849cb3505424b9754d8411e62e9ffbc19c2038743a869"
-    sha256 cellar: :any,                 sonoma:        "00c61284ee743b702e5c0b2f668ee429bc50e4acaa5f7b60ff24a0523a4bef97"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d54a8a95a462fbd6ae148329a2a0f5bd037726145bab07d20a6dfb50a2b874ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31678978edfd662e8d390e030763762bc987daff858251cb8f5ca1ba24893073"
+    rebuild 6
+    sha256 cellar: :any,                 arm64_tahoe:   "13c425e35a4679f48fca13f30b62b96c50733ab84235cc963287194ec337b63e"
+    sha256 cellar: :any,                 arm64_sequoia: "37b512bc92486dc3469ae6fcb470409ab63c87e4a46cb62ba8924397d4353a60"
+    sha256 cellar: :any,                 arm64_sonoma:  "7611e3615a091873aae10ba68ff98a1c35d64f3f11146f2ee4f68bf1103f9f6d"
+    sha256 cellar: :any,                 sonoma:        "fd65e6383cc2e92725e351738512a644e49ed02a7065c535872d5394c18d447e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7dcde2b827e6b99bff7e9a3ba48bc4ecd688223269e24415406e32834b07dba9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c98915cea6d67f7ae8994206641b3bf6b5cf38e75e94280ffbdccd875c5fea8"
   end
 
   depends_on "micromamba" => :test
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "zstd"
 
@@ -28,13 +28,8 @@ class CondaLock < Formula
     depends_on "cryptography" # for secretstorage
   end
 
-  pypi_packages exclude_packages: ["certifi", "cryptography", "pydantic-core"],
+  pypi_packages exclude_packages: ["certifi", "cryptography", "pydantic"],
                 extra_packages:   ["jeepney", "secretstorage", "xattr"]
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
@@ -186,11 +181,6 @@ class CondaLock < Formula
     sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
-  end
-
   resource "pyproject-hooks" do
     url "https://files.pythonhosted.org/packages/e7/82/28175b2414effca1cdac8dc99f76d660e7a4fb0ceefa4b4ab8f5f6742925/pyproject_hooks-1.2.0.tar.gz"
     sha256 "1e859bd5c40fae9448642dd871adf459e5e2084186e8d2c2a79a824c970da1f8"
@@ -249,11 +239,6 @@ class CondaLock < Formula
   resource "trove-classifiers" do
     url "https://files.pythonhosted.org/packages/ca/9a/778622bc06632529817c3c524c82749a112603ae2bbcf72ee3eb33a2c4f1/trove_classifiers-2025.9.11.17.tar.gz"
     sha256 "931ca9841a5e9c9408bc2ae67b50d28acf85bef56219b56860876dd1f2d024dd"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do

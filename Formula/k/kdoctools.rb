@@ -9,6 +9,7 @@ class Kdoctools < Formula
     "LGPL-2.1-or-later",
     any_of: ["LGPL-2.1-only", "LGPL-3.0-only"],
   ]
+  revision 1
   head "https://invent.kde.org/frameworks/kdoctools.git", branch: "master"
 
   livecheck do
@@ -17,12 +18,12 @@ class Kdoctools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cb2738361f629884adeaaa2c55658d92469fc5021245a8ec0174704d57165336"
-    sha256 cellar: :any,                 arm64_sequoia: "c815ecee89fd20260651e83d621d5212302c9d236a2010605a34770118ae7b2a"
-    sha256 cellar: :any,                 arm64_sonoma:  "3f2d2a7f32465e8f2064826f80a642a616011ec66d58f15b8aac50a5c8481e44"
-    sha256 cellar: :any,                 sonoma:        "955650846ace18fe943d387574cea0b99e7dce8af0b36eb4ae85c254e335e4bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "264fa00ca1a4b33d5aeea476191a8f8653fd911535ffb3710e6b4dc9547971a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3f98332eb1198a83bb99adf1c00d7421348478f4f3377aa23e3a9731b0c1a68"
+    sha256 cellar: :any,                 arm64_tahoe:   "39912db55f7f9162a6865c0772120b1a9f07db3dfc0df710ac9b1644e5afdae5"
+    sha256 cellar: :any,                 arm64_sequoia: "a1299df588e4bd17af820acab033d367942403c3c3a39c7a5ba1d77025887c1e"
+    sha256 cellar: :any,                 arm64_sonoma:  "286cc89cc83d61947291fa05eda9debe67a244f1064d8dbb596ed26db4bb7d17"
+    sha256 cellar: :any,                 sonoma:        "d71bc7fe5d898e60920b3fc71d46ba00edce860100b7150b53770e825b621edb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e220f966597089d4666857f079297e4df8b6b71840fb5abe293b3acdfb9552a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1130786dbf21acf596ffce3578e1b2da22acf04efcfcadaf7b5441d49111249"
   end
 
   depends_on "cmake" => [:build, :test]

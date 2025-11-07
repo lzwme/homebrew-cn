@@ -4,16 +4,16 @@ class Periphery < Formula
   url "https://ghfast.top/https://github.com/peripheryapp/periphery/archive/refs/tags/3.2.0.tar.gz"
   sha256 "84041cf27e1f7b1f9981651f0d7c78b317388040f1f31cf131dabb744a5f922c"
   license "MIT"
+  revision 1
   head "https://github.com/peripheryapp/periphery.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "499b5f157fb2ecfdc66cc3dcb58b185f6b16b1827dd8c1091864dacc00c5fe92"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2b0dea494e8bd21ff932fa10fac318cf2ee06c758e6797ecb23f99a6f8d2460"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "400cd8658c47b54ab5060f11df16ee035d1673aa3abd2c0244669121c744d570"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df2656985ae7b056868b3f3acf2de20abd266cbd52d9d5ae31eaae77ea447ea5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb205dd64182f1a1b904bd0187ecb81156bdeb1a38d74476afc9a1bae87654b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4c6039249d029db5538c4d1f96014905f6d01914ecae26a8d0a76af0009fe77"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aaef4e2bf75a0d13e848bc4ba24715201ee84ef9011e9336babfdf15469d93b1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24bef6d4f8a9d60c9869b28a4591dfb0934de4b7a9242976a03162612867d0af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b378ac137b7b38794fc86f3ecb774251fc75912c3a3c77b5da2d58eb3e85a818"
+    sha256 cellar: :any_skip_relocation, sonoma:        "276521211fb06f701b5f75892af380a558abc2448f319fc1ddacba8f7b117b55"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7555deab2f6238fd87867b28c8b823031c74eda9c1376c805aeee2c0c3c6928b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f158a2c187e10d04a853be4ad50c6ca0db0e89249d1b7b2fc6b9aa6855c1405"
   end
 
   depends_on xcode: ["16.0", :build]
@@ -26,7 +26,7 @@ class Periphery < Formula
     args = if OS.mac?
       ["--disable-sandbox"]
     else
-      ["--static-swift-stdlib"]
+      ["--static-swift-stdlib", "-Xswiftc", "-use-ld=ld"]
     end
     system "swift", "build", *args, "--configuration", "release", "--product", "periphery"
     bin.install ".build/release/periphery"

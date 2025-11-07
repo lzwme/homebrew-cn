@@ -11,34 +11,29 @@ class Mvt < Formula
   head "https://github.com/mvt-project/mvt.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "ed3dc82c043fe5a91744297eca0d896695aeb9c9bc353585617714311c762634"
-    sha256 cellar: :any,                 arm64_sequoia: "f9aa9b298066344bf3f8f34e16a01504147989c758a72071ebcb472bfe8eb47b"
-    sha256 cellar: :any,                 arm64_sonoma:  "56e479fe4fb38f8555cfc82613e5e06bcc5a7358b12e95b1b4e319767821e663"
-    sha256 cellar: :any,                 sonoma:        "c65d49d4379ca95c02412435d3fd96ee5628532c3dcfe24397dafca12a24bb11"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb4abf7f8098f04da313b81eddc907fe356f1875d0f107b62410cd18dfa4c923"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b6982459dab04cc62d8aed0a85ef7a8548624fe7dd2fdce7ec8845f2d92ae27"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "43abfa7046c64051ae5ea98c9d758fd97a7613c8ac8a21c979715276d6da674a"
+    sha256 cellar: :any,                 arm64_sequoia: "d2688b6613b42c78f19b6d47c3b023ed582341e1df1a5eb734657bcf92a30abb"
+    sha256 cellar: :any,                 arm64_sonoma:  "28d94a0c99b36f6de25005d9516dbab2a8f9a7a883868524758f7e298930e3bd"
+    sha256 cellar: :any,                 sonoma:        "6562eb0c3433b5c9840a02b2beb19be6f760c00cb4a8ae0ffa85d2b5f9b1b5aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "517f992964ff14961a2b61eb825819e56a32a30b19755022d9016286788ad26f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0a0a66ed5884b798470e964255d8555ff7715d055d8e6d2a51868f3d7229fc5"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
 
   # `pydantic` is manually updated to support Python 3.14
   # PR ref: https://github.com/mvt-project/mvt/pull/706
 
-  pypi_packages exclude_packages: ["certifi", "cryptography", "pydantic-core"]
+  pypi_packages exclude_packages: ["certifi", "cryptography", "pydantic"]
 
   resource "adb-shell" do
     url "https://files.pythonhosted.org/packages/8f/73/d246034db6f3e374dad9a35ee3f61345a6b239d4febd2a41ab69df9936fe/adb_shell-0.4.4.tar.gz"
     sha256 "04c305f30a2ca25d5c54b3cd6ce9bb64c36e5f07967b23b3fb6aaecc851b90b6"
-  end
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
   end
 
   resource "appdirs" do
@@ -136,11 +131,6 @@ class Mvt < Formula
     sha256 "447700a657182d60338bab09fdb27518f8856aecd80ae4c6bdddb67ff5da44ef"
   end
 
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/8d/35/d319ed522433215526689bad428a94058b6dd12190ce7ddd78618ac14b28/pydantic-2.12.2.tar.gz"
-    sha256 "7b8fa15b831a4bbde9d5b84028641ac3080a4ca2cbd4a621a661687e741624fd"
-  end
-
   resource "pydantic-settings" do
     url "https://files.pythonhosted.org/packages/67/1d/42628a2c33e93f8e9acbde0d5d735fa0850f3e6a2f8cb1eb6c40b9a732ac/pydantic_settings-2.9.1.tar.gz"
     sha256 "c509bf79d27563add44e8446233359004ed85066cd096d8b510f715e6ef5d268"
@@ -189,11 +179,6 @@ class Mvt < Formula
   resource "tld" do
     url "https://files.pythonhosted.org/packages/df/a1/5723b07a70c1841a80afc9ac572fdf53488306848d844cd70519391b0d26/tld-0.13.1.tar.gz"
     sha256 "75ec00936cbcf564f67361c41713363440b6c4ef0f0c1592b5b0fbe72c17a350"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do

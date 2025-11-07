@@ -1,8 +1,8 @@
 class Libmediainfo < Formula
   desc "Shared library for mediainfo"
   homepage "https://mediaarea.net/en/MediaInfo"
-  url "https://mediaarea.net/download/source/libmediainfo/25.09/libmediainfo_25.09.tar.xz"
-  sha256 "8562e8ea03e2af8bde27f66d79a0f573859b8f13193ec115abf10f735b313a12"
+  url "https://mediaarea.net/download/source/libmediainfo/25.10/libmediainfo_25.10.tar.xz"
+  sha256 "ad13d9797b046ce39d0c65a6f81d2aef2429734c21865a6a4c592c7c01f249dd"
   license "BSD-2-Clause"
   head "https://github.com/MediaArea/MediaInfoLib.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Libmediainfo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5016e22e28b23ced083da32bd55e5de19eb1626a0151f0d9bc89f32c251710ca"
-    sha256 cellar: :any,                 arm64_sequoia: "e592de313a0120696b0b6de72b110e026f0eb0cfeee83fccfcbb2cf414ab6522"
-    sha256 cellar: :any,                 arm64_sonoma:  "29e6dbd6ef9343931c7a76da6059dfb55ac7d0607fd4bff568cf7c19e5b57b33"
-    sha256 cellar: :any,                 sonoma:        "58876fe101b9625fdad9f362057b870b58452e367442fffc206e2d80dd42c014"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1f7827ac6ebab99a444a910d37d4f923e73e4ae069563b23c1f01cc75d587fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fbc4a615e4718684a70b30c9507b0465651110dea91c2f6bd3e31e5b2c9d652"
+    sha256 cellar: :any,                 arm64_tahoe:   "5f831afa12538128e0b0d83004b2c9be0cef6eab30d6837118274699ac479c6e"
+    sha256 cellar: :any,                 arm64_sequoia: "10c35dbc3ecb48c922991992da22f27e507493dc9b441680f9f11ac53231dec9"
+    sha256 cellar: :any,                 arm64_sonoma:  "5185766284ec663705a0b2fbde6768b03dc0bf62bc8262a8ca224d27eced2e04"
+    sha256 cellar: :any,                 sonoma:        "5a1dd8c19958b0c50ead4cbf7630c19d972ae03ecf9802f50311c8bee2e679e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "43f271a81f778f1269ef811b2bc9cdae10505fee5f3c327dee222e8b3da860ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b995875f63d2c24e13cb5acb06ea0390d056babe9846e56d6ee9bc4251dbab16"
   end
 
   depends_on "cmake" => :build

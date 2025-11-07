@@ -3,13 +3,12 @@ class Docutils < Formula
 
   desc "Text processing system for reStructuredText"
   homepage "https://docutils.sourceforge.io"
-  url "https://files.pythonhosted.org/packages/4a/c0/89fe6215b443b919cb98a5002e107cb5026854ed1ccb6b5833e0768419d1/docutils-0.22.2.tar.gz"
-  sha256 "9fdb771707c8784c8f2728b67cb2c691305933d68137ef95a75db5f4dfbc213d"
+  url "https://files.pythonhosted.org/packages/d9/02/111134bfeb6e6c7ac4c74594e39a59f6c0195dc4846afbeac3cba60f1927/docutils-0.22.3.tar.gz"
+  sha256 "21486ae730e4ca9f622677b1412b879af1791efcfba517e4c6f60be543fc8cdd"
   license all_of: [:public_domain, "BSD-2-Clause", "GPL-3.0-or-later", "Python-2.0"]
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "b2d908e4e43ec3f0f63dc6e9ff7572403cfbe27a3a068b356c71aae76b23c08c"
+    sha256 cellar: :any_skip_relocation, all: "869e85ddf635def088e1e93d9a335a94b69f0a946bcb38cf27a15aaf4f0c5243"
   end
 
   depends_on "python@3.14"

@@ -1,18 +1,18 @@
 class Pyscn < Formula
   desc "Intelligent Python Code Quality Analyzer"
   homepage "https://github.com/ludo-technologies/pyscn"
-  url "https://ghfast.top/https://github.com/ludo-technologies/pyscn/archive/refs/tags/v1.2.2.tar.gz"
-  sha256 "dbb5a4708eb9dcd850b979e73b311dda308e99ae110a5733e00776ccc4a5f3a6"
+  url "https://ghfast.top/https://github.com/ludo-technologies/pyscn/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "f91541bf07b9bee4167710dc3d68d682a7bb1b696de86d9d25fd1e4990b63a05"
   license "MIT"
   head "https://github.com/ludo-technologies/pyscn.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f0007d71c60215930f13fe918507c471155d12e2b90a99dc494ae17eb3d0e31"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f8bb3d3cf8a73ea3da386218afc79f19d14518003544117fdd80e339932d911"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "238d0f163d7544efe7bc78c4f62c28cc0f000057d9d66bd26f0c92df8add6743"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f3525b3dedb14ec77768a26065dfd4cf7bdd7d9633ab1f0f8ef977005aecd866"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a32adc3e343df8484849f2d6001985659621a28b4f889097777b768259feb351"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3d01837d3eb0fc03fd510fc4e84c7b479bdf31008b7a20cb8dc8fe3d3bccfec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2dbf4202e0e2991d2e52495fbe77c532827b25036f2d3347d7214b6df566c72f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ef88d3d6f5ce001d2fe5934bb6d05094cce6586993df16e45f05a4bbe36556e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abf27d884dff8e5a1f1b84b11d2ea9ceab51faa724c3e7e2168b40b3f8bc408b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a3e8c05a73c0ce3a65a0941e0bf93e6d2dd43ad994a5030813d94772b39c7f9e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce786f71b84aca5031ecde6de3fd9567646f06dd1a39ffdd86d2465f86bbd75f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56842bbff851c9946cfab4b9e5080d023399576217b117fc7452e3c9778cec5a"
   end
 
   depends_on "go" => :build
@@ -42,6 +42,6 @@ class Pyscn < Formula
     PY
 
     output = shell_output("#{bin}/pyscn analyze #{testpath}/test.py 2>&1")
-    assert_match "Health Score: 98/100 (Grade: A)", output
+    assert_match "Health Score: 97/100 (Grade: A)", output
   end
 end

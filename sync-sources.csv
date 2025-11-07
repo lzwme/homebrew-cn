@@ -4434,6 +4434,7 @@ Homebrew-homebrew-core/Formula/m/mbt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mbw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcabber.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcap.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcfly.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcp-atlassian.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-get.rb, Homebrew/homebrew-core, 0
@@ -5778,6 +5779,7 @@ Homebrew-homebrew-core/Formula/p/pybind11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pycodestyle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pycparser.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pydantic-core.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pydantic.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyenv-ccache.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyenv-pip-migrate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyenv-virtualenv.rb, Homebrew/homebrew-core, 1
@@ -7277,6 +7279,7 @@ Homebrew-homebrew-core/Formula/t/ttygif.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/ttyplot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/ttyrec.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tuc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tuios.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tuisky.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tun2proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tundra.rb, Homebrew/homebrew-core, 1
@@ -7806,7 +7809,7 @@ Homebrew-homebrew-core/Formula/x/xmlcatmgr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xmlformat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xmlrpc-c.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xmlsectool.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/x/xmlstarlet.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/x/xmlstarlet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xmlto.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xmltoman.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xmodmap.rb, Homebrew/homebrew-core, 0

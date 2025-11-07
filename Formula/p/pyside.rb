@@ -13,6 +13,7 @@ class Pyside < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
   ]
+  revision 1
 
   livecheck do
     url "https://download.qt.io/official_releases/QtForPython/pyside6/"
@@ -20,13 +21,12 @@ class Pyside < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_tahoe:   "cbd932a63ed44d0a86f061cd923eaba44933a6194fb3c82429cd56492ad6b2d3"
-    sha256                               arm64_sequoia: "fdf377a139efc333ed0db796cfc57ec3438dc90d39d154c13078be084b2d1e53"
-    sha256                               arm64_sonoma:  "c231f54ac3566b9b5097b85f573c81b0b48e89d586bf6097967daa23eebd476d"
-    sha256 cellar: :any,                 sonoma:        "9149138ebb5e98687c1b31d33880066a5c4eafbbfc7ae0bfee8ff838426d6e52"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f840ae550d2cb727219170cbc621584d8c66d6ebccde6e4380b08b9bdb2627b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0157febc0649c4a7feac6ee8a174b43cebcd089fb4879eeb2bc26bfe5736ab85"
+    sha256                               arm64_tahoe:   "5c2a5e8a649e37dfab0a2641368e572ac5b97363a5e12ab5d8a49431227deb53"
+    sha256                               arm64_sequoia: "4a48df6b8cc88ebb6fb258702ec55a0994e87d61feb178b246488f89b8813959"
+    sha256                               arm64_sonoma:  "b21cd20cbc695a1a63e8a538b46bf3c114f855d2c5e6ba0e432b55dddfaf8fa6"
+    sha256 cellar: :any,                 sonoma:        "c820e8348a2a56622a2d75df62ac14216194d4038cb7e6ea646659c0ed4eab99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "465cd5bc3c6a59e84bf83eb48f276f5ca4cf2ce17d7b2f28a6e51faf2536f689"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd2885c335c6f909626fbbba0e5904ecca66c1e9d83d6dd646aae4aa5765a827"
   end
 
   depends_on "cmake" => :build

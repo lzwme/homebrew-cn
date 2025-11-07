@@ -1,17 +1,17 @@
 class CargoUdeps < Formula
   desc "Find unused dependencies in Cargo.toml"
   homepage "https://github.com/est31/cargo-udeps"
-  url "https://ghfast.top/https://github.com/est31/cargo-udeps/archive/refs/tags/v0.1.59.tar.gz"
-  sha256 "255929d3c9d53c3e09e53b38302e68b206b167bc4e10dc69cf7984c0fe1f5814"
+  url "https://ghfast.top/https://github.com/est31/cargo-udeps/archive/refs/tags/v0.1.60.tar.gz"
+  sha256 "b1eab01d1fd525db7e8e8b9b843a6a2cc2ddb55450ffef97dcbddeae8d401b0a"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "105b0e164ea8f62a30ed017afa00cdbd73ac425150e0590b34733f2cc66ecfab"
-    sha256 cellar: :any,                 arm64_sequoia: "e593bd0889697613a7a36c113cd85abfcf7b842d46f5e67f0cdaabdd8c615fa6"
-    sha256 cellar: :any,                 arm64_sonoma:  "3c562d088f70891a780743d345b572bb445c02187d80352a5af1e9727bcd6577"
-    sha256 cellar: :any,                 sonoma:        "eece9d19ad7c6509777a655e9381b8a10c865ecb5fdd5b71c02ac1b305edebd1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ac41605a30d8a759503500ae902e4849e64d7010c9d37557e9e4ac2a3f52c55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1ff57ca7e9f1ae32c8b262afcc8ce13361a449240efe65e2b66004314a5bf0c"
+    sha256 cellar: :any,                 arm64_tahoe:   "de06a7df4d0ba93d12e5ddf1fba9775747ed832cb120e2c8fb6f0e9150fe2a9b"
+    sha256 cellar: :any,                 arm64_sequoia: "44aa26bf28330849b92a60c68841ad841a7895abf5ecae539fc486a6839b634d"
+    sha256 cellar: :any,                 arm64_sonoma:  "18ea53f3fb4cc6fcd92d0a069c01446919a02c0270d3819cdd6f7880db26cfa2"
+    sha256 cellar: :any,                 sonoma:        "21750d58f982ce3f5cdbdb57f943da3ddff3c6634d4770082eccea5d40e33a61"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ba6a379fdaec989fcd7960f99d444bbe2262ad0b5b8d4d0407a197405305947"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "702abdddc3ad718c5839a631f6ccda126289947ce7fe0785c33f644b6df28b20"
   end
 
   depends_on "pkgconf" => :build

@@ -17,12 +17,13 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c3214af866f84f98dc6f6c896df8ab2e92f6fa2bdf1971debf9afcf9f49ca672"
-    sha256 cellar: :any,                 arm64_sequoia: "b4e6e7526d05d80bfa897c8bd55c7a5e2d425fae7725fe1180e6b618bfabbb40"
-    sha256 cellar: :any,                 arm64_sonoma:  "4bd14f9c9346b927fc3fa67f7a2c2f872eb42d583367bdedcfc65088c3649d25"
-    sha256 cellar: :any,                 sonoma:        "b8b9cb0e94a9082aae4ebc1667dc5c9133b441d2aa00879ea983b47fd3adaf57"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8273ec1e21b42dd0920d36cbfe2bdb7ddc04698a445e8876d9f89f5e44a0592f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32279e479d1db3e14b46ea253810791265b20a04d1f114bec9977d2a9e9ccc9d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "b822217866300d915d100c6b310a0ada5772693b1f1125973b56a091866f2683"
+    sha256 cellar: :any,                 arm64_sequoia: "053b056dcd86628a0329fe40147873105d1bdb057c6e4501905d5fdfdb9b4fbc"
+    sha256 cellar: :any,                 arm64_sonoma:  "b2a4e25a281a8385d3e4799c70ccbea609181dc62d5c7871d9e6e66bb5b12cc0"
+    sha256 cellar: :any,                 sonoma:        "66385102a013b0e7695e6341d86cad87ee10f655069118b1f8fd8ef972b807f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b41fd35bac744afcbea001f11077b6a2c8f6e62fde00b4c762d66ca9cfe23519"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac91c991ab3d00eee1db1421708a3c09f19f9dcab89c86f3ad183e6ae933dd11"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -30,13 +31,13 @@ class Checkov < Formula
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "numpy"
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libffi"
 
-  pypi_packages exclude_packages: %w[certifi numpy pydantic-core rpds-py]
+  pypi_packages exclude_packages: %w[certifi numpy pydantic rpds-py]
 
   resource "aiodns" do
     url "https://files.pythonhosted.org/packages/17/0a/163e5260cecc12de6abc259d158d9da3b8ec062ab863107dcdb1166cdcef/aiodns-3.5.0.tar.gz"
@@ -61,11 +62,6 @@ class Checkov < Formula
   resource "aiosignal" do
     url "https://files.pythonhosted.org/packages/61/62/06741b579156360248d1ec624842ad0edf697050bbaf7c3e46394e106ad1/aiosignal-1.4.0.tar.gz"
     sha256 "f47eecd9468083c2029cc99945502cb7708b082c232f9aca65da147157b251c7"
-  end
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
   end
 
   resource "argcomplete" do
@@ -338,11 +334,6 @@ class Checkov < Formula
     sha256 "78816d4f24add8f10a06d6f05b4d424ad9e96cfebf68a4ddc99c65c0720d00c2"
   end
 
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
-  end
-
   resource "pyparsing" do
     url "https://files.pythonhosted.org/packages/f2/a5/181488fc2b9d093e3972d2a472855aae8a03f000592dbfce716a512b3359/pyparsing-3.2.5.tar.gz"
     sha256 "2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6"
@@ -436,11 +427,6 @@ class Checkov < Formula
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
     sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "unidiff" do

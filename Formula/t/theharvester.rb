@@ -6,29 +6,30 @@ class Theharvester < Formula
   url "https://ghfast.top/https://github.com/laramies/theHarvester/archive/refs/tags/4.8.2.tar.gz"
   sha256 "193611579f9a14507f2d7a0b2ecde778335b22fa0b6279898b5b5cd1f72439b1"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/laramies/theHarvester.git", branch: "master"
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "5a94e44dd2b39a1184cf83f4d033af7e88b683ed06427a13871733d739b22a5b"
-    sha256 cellar: :any,                 arm64_sequoia: "993ca4993464b2fccdda10492a4665530b7f0c05fa019688e8094eaf5ecaabb7"
-    sha256 cellar: :any,                 arm64_sonoma:  "2ae58d0bbb213d540eca82d9777f4131ee821bcc642cf7c9c269f32bd1782b0a"
-    sha256 cellar: :any,                 sonoma:        "54b608cfb3a7215f5b10dbc15739d2b10012d1234b58296ce55cfedde87d0983"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0036ca085a1637143a74449c675ae5801098465ba2bb807fb21a80ca3c3c9725"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68a2eba22a5c6d5f98e6c134804f670dec38dd19511e6798761f1937d774050d"
+    sha256 cellar: :any,                 arm64_tahoe:   "6a45f9087e976a3df51f578155a502d016e474d080ff5a74dc68dd8c1c11ef38"
+    sha256 cellar: :any,                 arm64_sequoia: "02e1c58933e03e15b2e0a394d6ff47343f00b26a86e7cccfd971bdf5f6a4c31c"
+    sha256 cellar: :any,                 arm64_sonoma:  "dc97b49734fd23312e53874a44be12660384b8bb98a9707fa1283804fe62ec8d"
+    sha256 cellar: :any,                 sonoma:        "d11951321fe63696b496396569c63328f7ede1d50c41271fa19fc6bebb408221"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "081da55f81cdfe632117894988efeaec404dc03a7a942c3a314135dacd3d7677"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0bda42aac9dde9410cb1460882ab409b6c79782ad127885d39ddf5cab1df7d5"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "cffi"
   depends_on "libyaml"
-  depends_on "pydantic-core"
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
 
   uses_from_macos "libffi"
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
-  pypi_packages exclude_packages: ["cffi", "certifi", "pydantic-core"],
+  pypi_packages exclude_packages: ["cffi", "certifi", "pydantic"],
                 extra_packages:   ["greenlet", "pyee"]
 
   # `uvloop` is manually updated to support Python 3.14, remove in next release
@@ -73,11 +74,6 @@ class Theharvester < Formula
   resource "aiosqlite" do
     url "https://files.pythonhosted.org/packages/13/7d/8bca2bf9a247c2c5dfeec1d7a5f40db6518f88d314b8bca9da29670d2671/aiosqlite-0.21.0.tar.gz"
     sha256 "131bb8056daa3bc875608c631c678cda73922a2d4ba8aec373b19f18c17e7aa3"
-  end
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
   end
 
   resource "anyio" do
@@ -131,8 +127,8 @@ class Theharvester < Formula
   end
 
   resource "deprecated" do
-    url "https://files.pythonhosted.org/packages/98/97/06afe62762c9a8a86af0cfb7bfdab22a43ad17138b07af5b1a58442690a2/deprecated-1.2.18.tar.gz"
-    sha256 "422b6f6d859da6f2ef57857761bfb392480502a64c3028ca9bbe86085d72115d"
+    url "https://files.pythonhosted.org/packages/49/85/12f0a49a7c4ffb70572b6c2ef13c90c88fd190debda93b23f026b25f9634/deprecated-1.3.1.tar.gz"
+    sha256 "b1b50e0ff0c1fddaa5708a2c6b0a6588bb09b892825ab2b214ac9ea9d92a5223"
   end
 
   resource "dnspython" do
@@ -215,11 +211,6 @@ class Theharvester < Formula
     sha256 "c863d9003ca0ce7df26429007859afd2a621d3276ed9fef154a9123db9252557"
   end
 
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
-  end
-
   resource "pyee" do
     url "https://files.pythonhosted.org/packages/95/03/1fd98d5841cd7964a27d729ccf2199602fe05eb7a405c1462eb7277945ed/pyee-13.0.0.tar.gz"
     sha256 "b391e3c5a434d1f5118a25615001dbc8f669cf410ab67d04c4d4e07c55481c37"
@@ -295,11 +286,6 @@ class Theharvester < Formula
     sha256 "b3d2b70a1594a0ecfa6967d57251527d58e00bb5a91a74387baa0d87a0678609"
   end
 
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
-  end
-
   resource "ujson" do
     url "https://files.pythonhosted.org/packages/f0/00/3110fd566786bfa542adb7932d62035e0c0ef662a8ff6544b6643b3d6fd7/ujson-5.10.0.tar.gz"
     sha256 "b3cd8f3c5d8c7738257f1018880444f7b7d9b66232c64649f562d7ba86ad4bc1"
@@ -321,8 +307,8 @@ class Theharvester < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/95/8f/aeb76c5b46e273670962298c23e7ddde79916cb74db802131d49a85e4b7d/wrapt-1.17.3.tar.gz"
-    sha256 "f66eb08feaa410fe4eebd17f2a2c8e2e46d3476e9f8c783daa8e09e0faa666d0"
+    url "https://files.pythonhosted.org/packages/49/19/5e5bcd855d808892fe02d49219f97a50f64cd6d8313d75df3494ee97b1a3/wrapt-2.0.0.tar.gz"
+    sha256 "35a542cc7a962331d0279735c30995b024e852cf40481e384fd63caaa391cbb9"
   end
 
   resource "xlsxwriter" do

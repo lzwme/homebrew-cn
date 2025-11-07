@@ -9,13 +9,13 @@ class Sigstore < Formula
   head "https://github.com/sigstore/sigstore-python.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "5f6a3144268a09f91e924deff1f260f4d7a8f3bf65dcce88ca86ab3af9898dd6"
-    sha256 cellar: :any,                 arm64_sequoia: "2da24f85f85d7bf802500d156d81cce3e133b0fb65070ce40025ca55b9de13a6"
-    sha256 cellar: :any,                 arm64_sonoma:  "ac787d45016a6e8d6187ee08c3a89199fd295adfae749366ac14f980d62c2324"
-    sha256 cellar: :any,                 sonoma:        "8305284019eb44ee024a4768085ba7538e33b1376c6bf3c6a402196b70809de4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2274224bb4a39cca47886cb2c14aa8eed37ee5f65e3a2286628ecc941aa6a5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3213e0f221d2152ebb28c80ef0fe012ed4be255767f85053765e4ec10477c53e"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "115a445c972a2e6ddc48c0199693841b63cff331e4cec6603ad35f0a9f2d25d2"
+    sha256 cellar: :any,                 arm64_sequoia: "15009ae939ad6831bea014a6ea7aaf07f8f32b7b9a286a9f00d2a26c71fa4ec1"
+    sha256 cellar: :any,                 arm64_sonoma:  "1a953d72ed5701f4122c5c3e2966d101ac889d1e1b17b8a6c8bf0f6ffceae82b"
+    sha256 cellar: :any,                 sonoma:        "28363b205b412b3d9dbe5906a2b862644d694fcc9e1cf17966b466801d7f9d50"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b5ec7cfe20982d08ecaee0c2da8656ea897722f9ae48b706082d50a0ef2624e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43186b918239b114ea87a03b10461d6152bdefe06050813e28cc8cd475ad8cec"
   end
 
   depends_on "pkgconf" => :build # for rfc3161-client
@@ -23,15 +23,10 @@ class Sigstore < Formula
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "openssl@3" # for rfc3161-client
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
 
-  pypi_packages exclude_packages: %w[certifi cryptography pydantic-core]
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic]
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
@@ -76,11 +71,6 @@ class Sigstore < Formula
   resource "pyasn1" do
     url "https://files.pythonhosted.org/packages/ba/e9/01f1a64245b89f039897cb0130016d79f77d52669aae6ee7b159a6c4c018/pyasn1-0.6.1.tar.gz"
     sha256 "6f580d2bdd84365380830acf45550f2511469f673cb4a5ae3857a3170128b034"
-  end
-
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pygments" do
@@ -136,11 +126,6 @@ class Sigstore < Formula
   resource "tuf" do
     url "https://files.pythonhosted.org/packages/25/b5/377a566dfa8286b2ca27ddbc792ab1645de0b6c65dd5bf03027b3bf8cc8f/tuf-6.0.0.tar.gz"
     sha256 "9eed0f7888c5fff45dc62164ff243a05d47fb8a3208035eb268974287e0aee8d"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do

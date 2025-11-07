@@ -9,32 +9,25 @@ class SnowflakeCli < Formula
   head "https://github.com/snowflakedb/snowflake-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "727dbc165311e030d1d1f42a2e7fb116406ff0a6cca267a81a1e98b29a0b5884"
-    sha256 cellar: :any,                 arm64_sequoia: "c158c087df069c10904210f3a31b2587d10b3ec2cbc16521cc216bd20020d91b"
-    sha256 cellar: :any,                 arm64_sonoma:  "b703581557c6f00917a7845429df7e6f2e55ff1e33f77b9435fd43be3f278ead"
-    sha256 cellar: :any,                 sonoma:        "26fb0405f3bd160ec22ff8244cf356253e9f89755576daf14c937e3150a429aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5063bed4c0a07b93b4b711f7752030600d0e0395fa7eb99a4dc2f92c9ba842f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aac642a0681116eaaf284a72e663c8dc5165c686491e1347a43a9e3e6eba6319"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "bcfb2f0b88eea1f491fbf8113d05f68bff28563a18c1bb41288d58f954276ede"
+    sha256 cellar: :any,                 arm64_sequoia: "6711b2ec1cdd56987d0d8b0e6343bcd4a81062e7a012de96a983e520f0eae449"
+    sha256 cellar: :any,                 arm64_sonoma:  "08ffeb1fc67048ac12bbc880866a17a61c579edac910600ca5aa33ed6feba681"
+    sha256 cellar: :any,                 sonoma:        "4e0d1d7c17c39d7ab89e363daf83e93d58e8484d4a1c28e872df1489533ce67d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "46943bd993991d509886617310c67012ef1900799c0544061b215029a43c9052"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e733eeefbd5718741a96f76f9bf960fcca3afb7e8cb172d4498d430035efdcf"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
 
   conflicts_with "snow", because: "both install `snow` binaries"
 
-  pypi_packages exclude_packages: %w[certifi cryptography pydantic-core],
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic],
                 extra_packages:   "snowflake-core"
-
-  # `pydantic` is manually updated to support Python 3.14
-  # Issue ref: https://github.com/snowflakedb/snowflake-cli/issues/2669
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
 
   resource "asn1crypto" do
     url "https://files.pythonhosted.org/packages/de/cf/d547feed25b5244fcb9392e288ff9fdc3280b10260362fc45d37a798a6ee/asn1crypto-1.5.1.tar.gz"
@@ -42,13 +35,13 @@ class SnowflakeCli < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/08/d2/e508e5f42dc1c8a7412f5170751e626a18ed32c6e95c5df30bde6c5addf1/boto3-1.40.64.tar.gz"
-    sha256 "b92d6961c352f2bb8710c9892557d4b0e11258b70967d4e740e1c97375bcd779"
+    url "https://files.pythonhosted.org/packages/df/3e/6c8ab966798f4e07651009ad08efc3ed4ffccf2662318790574695c740f7/boto3-1.40.68.tar.gz"
+    sha256 "c7994989e5bbba071b7c742adfba35773cf03e87f5d3f9f2b0a18c1664417b61"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/c1/15/109cb31c156a64bfaf4c809d2638fd95d8ba39b6deb7f1d0526c05257fd7/botocore-1.40.64.tar.gz"
-    sha256 "a13af4009f6912eafe32108f6fa584fb26e24375149836c2bcaaaaec9a7a9e58"
+    url "https://files.pythonhosted.org/packages/eb/df/b0300da4cc1fe3e37c8d7a44d835518004454c7d21b579fce9ef2cd691ce/botocore-1.40.68.tar.gz"
+    sha256 "28f41b463d9f012a711ee8b61d4e26cd14ee3b450b816d5dee849aa79155e856"
   end
 
   resource "charset-normalizer" do
@@ -156,11 +149,6 @@ class SnowflakeCli < Formula
     sha256 "931a162e3b27fc90c86f1b48bb1fb2c528c2761475e57c9c06de13311c7b54ed"
   end
 
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
-  end
-
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
     sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
@@ -254,11 +242,6 @@ class SnowflakeCli < Formula
   resource "typer" do
     url "https://files.pythonhosted.org/packages/dd/82/f4bfed3bc18c6ebd6f828320811bbe4098f92a31adf4040bee59c4ae02ea/typer-0.17.3.tar.gz"
     sha256 "0c600503d472bcf98d29914d4dcd67f80c24cc245395e2e00ba3603c9332e8ba"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do

@@ -9,13 +9,13 @@ class Oterm < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ed72730c035c918b920fe2a8e07b990b9aeeea934e1aa4ff4a89cd5513171a86"
-    sha256 cellar: :any,                 arm64_sequoia: "0038042b89a4d70766eac070b8791fa666bbb60f39205ead25ae00411e75ba7d"
-    sha256 cellar: :any,                 arm64_sonoma:  "40be393f7af8cd6f5c12d78633923e3b8d3c58ca8c960209af227c88c4110cc7"
-    sha256 cellar: :any,                 sonoma:        "08a021b7eade36b78f561b765125382b42bcda4f2ae004cb4b49585c0740a78f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc62a62602bd072c8e450cf09a8936337ce9b3cc83fb9e7590ec1dc892714f2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ec845e47def91168a2ee5790d3680de8ba6d37338b6db9d3a353e1a77defcaf"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "211710703592de804ac39f50c5abbbbbe3c3a8ae91cfba6828c95131754e3bda"
+    sha256 cellar: :any,                 arm64_sequoia: "4f38743ea9f0b6e68b3ea66afabea2efaaeea370bee6cf3c25cf22016c212dfc"
+    sha256 cellar: :any,                 arm64_sonoma:  "d2c6a4232ac21f68dd0ed719a643b1dfc70005f4df02bcc70670fcaa50beaf00"
+    sha256 cellar: :any,                 sonoma:        "d2fb79bb283e36885d8770a8d2f6082dadf8cf43f03ac977137cb935249db43f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9bf3de619bbeaffcaba30eb65744e31cbf32d26ade67f3245bd7b71e9a959571"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bdb700ee44d9e68e452e86afb35e627e5b55bf454e5bb4b9d15f62467a5da00"
   end
 
   depends_on "pkgconf" => :build
@@ -24,13 +24,13 @@ class Oterm < Formula
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pillow" => :no_linkage
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "zlib"
 
-  pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic-core rpds-py]
+  pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic rpds-py]
 
   resource "aiosql" do
     url "https://files.pythonhosted.org/packages/98/3a/105cdf480d444ee059f3fbea65616fba006fba29d32e382fb1a4d947f4b7/aiosql-13.4.tar.gz"
@@ -40,11 +40,6 @@ class Oterm < Formula
   resource "aiosqlite" do
     url "https://files.pythonhosted.org/packages/13/7d/8bca2bf9a247c2c5dfeec1d7a5f40db6518f88d314b8bca9da29670d2671/aiosqlite-0.21.0.tar.gz"
     sha256 "131bb8056daa3bc875608c631c678cda73922a2d4ba8aec373b19f18c17e7aa3"
-  end
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
   end
 
   resource "anyio" do
@@ -88,8 +83,8 @@ class Oterm < Formula
   end
 
   resource "docutils" do
-    url "https://files.pythonhosted.org/packages/4a/c0/89fe6215b443b919cb98a5002e107cb5026854ed1ccb6b5833e0768419d1/docutils-0.22.2.tar.gz"
-    sha256 "9fdb771707c8784c8f2728b67cb2c691305933d68137ef95a75db5f4dfbc213d"
+    url "https://files.pythonhosted.org/packages/d9/02/111134bfeb6e6c7ac4c74594e39a59f6c0195dc4846afbeac3cba60f1927/docutils-0.22.3.tar.gz"
+    sha256 "21486ae730e4ca9f622677b1412b879af1791efcfba517e4c6f60be543fc8cdd"
   end
 
   resource "email-validator" do
@@ -237,11 +232,6 @@ class Oterm < Formula
     sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
-  end
-
   resource "pydantic-settings" do
     url "https://files.pythonhosted.org/packages/20/c5/dbbc27b814c71676593d1c3f718e6cd7d4f00652cefa24b75f7aa3efb25e/pydantic_settings-2.11.0.tar.gz"
     sha256 "d0e87a1c7d33593beb7194adb8470fc426e95ba02af83a0f23474a04c9a08180"
@@ -318,8 +308,8 @@ class Oterm < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/1b/3f/507c21db33b66fb027a332f2cb3abbbe924cc3a79ced12f01ed8645955c9/starlette-0.49.1.tar.gz"
-    sha256 "481a43b71e24ed8c43b11ea02f5353d77840e01480881b8cb5a26b8cae64a8cb"
+    url "https://files.pythonhosted.org/packages/ba/b8/73a0e6a6e079a9d9cfa64113d771e421640b6f679a52eeb9b32f72d871a1/starlette-0.50.0.tar.gz"
+    sha256 "a2a17b22203254bcbc2e1f926d2d55f3f9497f769416b3190768befe598fa3ca"
   end
 
   resource "terminaltexteffects" do
@@ -350,11 +340,6 @@ class Oterm < Formula
   resource "typer" do
     url "https://files.pythonhosted.org/packages/1d/3e/30bff313f4868538330c6254bbbe178d6143e43c6f3e7a34788d381f701c/typer-0.17.5.tar.gz"
     sha256 "a6fe2d187feb1b4a10322b910267b6339e4cc98257fae34d22299a47eac704f1"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "uc-micro-py" do

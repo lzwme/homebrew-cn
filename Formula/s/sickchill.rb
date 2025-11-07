@@ -6,17 +6,16 @@ class Sickchill < Formula
   url "https://files.pythonhosted.org/packages/31/fc/337b2989dc67bbb505cea34a05c029cbba3056311177586835f704ddc13a/sickchill-2024.3.1.tar.gz"
   sha256 "e7079bb77b415eb6697a63d9018db1ad317d06ad285d0d77893747cbf000aa17"
   license "GPL-3.0-or-later"
-  revision 3
+  revision 4
   head "https://github.com/SickChill/SickChill.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b827a5bd276086d731ceb0389a40b264ebc405f88ff9a3a7f5c891c7093e929"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3af82a1bf3ea538252adc3f10a79801e1aca2d84dfb4bcc74391b67754afc765"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5c3d35af1b7bb28eb938451360999327b9c58dca8e2bc8741ca45a219716b2d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ad13fdce74d46cea035deb76e0897e670847ecd9fa853a12290dc4616f25f17c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "73063208845aa7f7937028f3848d08b45133a27925f1f3f15e699b036c0310ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b0e5c976dc0e5e731322237a48d909e9bb03717a5dbd6b9654d45ea9c01b459"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aba5fc00fd7b2a75439afa6f35e1890d028e2b6386dbc018171fae68154cdda6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c58c1a285accbcf497caaf0f1275b108eff1f2ee8b6304da48b8de5d71af17f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15ad242781c982f18c35b0d425e7e6c3ef4cf67482a2649caf366fef61474496"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a775d8f7948a2142c4c0092cd716bb462775ff6d52c4cc41fffd5ec0d2238653"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "517c859568c153b891bd68e7cb50a27ad7c96cad4ebe82a95aac1f9fa1dfeeba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "955834d16fdce9c874c563f30adc8afd9b961f175a0b7b5d205673f56a2baadc"
   end
 
   depends_on "certifi"

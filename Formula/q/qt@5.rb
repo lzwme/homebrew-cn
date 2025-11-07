@@ -6,28 +6,27 @@ class QtAT5 < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
   # NOTE: Use *.diff for GitLab/KDE patches to avoid their checksums changing.
-  url "https://download.qt.io/official_releases/qt/5.15/5.15.17/single/qt-everywhere-opensource-src-5.15.17.tar.xz"
+  url "https://download.qt.io/archive/qt/5.15/5.15.17/single/qt-everywhere-opensource-src-5.15.17.tar.xz"
   mirror "https://mirrors.dotsrc.org/qtproject/archive/qt/5.15/5.15.17/single/qt-everywhere-opensource-src-5.15.17.tar.xz"
   mirror "https://mirrors.ocf.berkeley.edu/qt/archive/qt/5.15/5.15.17/single/qt-everywhere-opensource-src-5.15.17.tar.xz"
   sha256 "85eb566333d6ba59be3a97c9445a6e52f2af1b52fc3c54b8a2e7f9ea040a7de4"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-2.1-only", "LGPL-3.0-only"]
+  revision 1
 
   livecheck do
-    url "https://download.qt.io/official_releases/qt/5.15/"
+    url "https://download.qt.io/archive/qt/5.15/"
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "114f6e5d992eb6e0ccc4228165021fd7dfa737b7546753159b8cb4f215c3c0d0"
-    sha256 cellar: :any,                 arm64_sequoia: "71e99646e19f6bbfb49bef4ce5fb144967158846b6c63819f24f3769dba01570"
-    sha256 cellar: :any,                 arm64_sonoma:  "37b737c30cd357390362d8b732b87a665f6f3d35b06d31951251e6e3616a37a9"
-    sha256 cellar: :any,                 arm64_ventura: "7149d97837f5cecc2a773f32e855f059e7d92b1fe2502a142c97f777acb4fe66"
-    sha256 cellar: :any,                 sonoma:        "18882946bb6b34ace4fae1fe0fd53bc94666823b1d8007c7add580d4128d8884"
-    sha256 cellar: :any,                 ventura:       "2b768884998655899253a3887c8d01011bd609bc754c5ef897323af5cb4b361d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9907eed9a4529f6dbc095e09244c2fb124fc60bebef4489301cb1ad16456a462"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "343311cd12f13c145f45fcb608b4803a4aebbb1d78914ca7fcd2982feb50303c"
+    sha256 cellar: :any,                 arm64_tahoe:   "ccffe1390fd587e2e6b094e278b2fd765746eccd30f9e59c8ff17abe5a3348da"
+    sha256 cellar: :any,                 arm64_sequoia: "2c95f726f4ec9546aab4355a0cab1e3a68afdbd43c4200d40f730214d97db754"
+    sha256 cellar: :any,                 arm64_sonoma:  "8ae245b551b5e82988ad8188961fe75dc942e7a192a32f5917eb39f295a974b9"
+    sha256 cellar: :any,                 sonoma:        "0a5f4640f5b93ebb10661262899af5cf226c821f489f8a06bdc9425932b1f1ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3ec83bcc8404ba35d4a38c3aed8bb1f3235a3d9062d2945b613295d9208fa61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02bcdc299c2b64c2a097cf52396e92310a2f99c48ebb01233b8d24b6a8cd567e"
   end
 
   keg_only :versioned_formula
@@ -139,8 +138,8 @@ class QtAT5 < Formula
 
     # Use Debian patches for ICU 75+, brew Ninja and Python 3.13
     patch do
-      url "https://deb.debian.org/debian/pool/main/q/qtwebengine-opensource-src/qtwebengine-opensource-src_5.15.19+dfsg-3.debian.tar.xz"
-      sha256 "38ef54e497ad0464950776b1055807d9e6b1a42aa0f8f76aa3b1323f7d59fa55"
+      url "https://deb.debian.org/debian/pool/main/q/qtwebengine-opensource-src/qtwebengine-opensource-src_5.15.19+dfsg2-1.debian.tar.xz"
+      sha256 "ef152684cfaf20640cf80466c3fec9a3c9595e5f1b09995847e6d231dc10d11e"
       apply "patches/build-with-c++17.patch",
             "patches/ninja-1.12.patch",
             "patches/python3.13-pipes.patch"
@@ -207,13 +206,13 @@ class QtAT5 < Formula
     end
   end
 
-  # Below are CVE patches from https://download.qt.io/official_releases/qt/5.15/
+  # Below are CVE patches from https://download.qt.io/archive/qt/5.15/
   # detailed at https://wiki.qt.io/List_of_known_vulnerabilities_in_Qt_products
 
   # CVE-2024-39936
   # Remove with Qt 5.15.18
   patch do
-    url "https://download.qt.io/official_releases/qt/5.15/CVE-2024-39936-qtbase-5.15.patch"
+    url "https://download.qt.io/archive/qt/5.15/CVE-2024-39936-qtbase-5.15.patch"
     sha256 "2cc23afba9d7e48f8faf8664b4c0324a9ac31a4191da3f18bd0accac5c7704de"
     directory "qtbase"
   end
@@ -221,7 +220,7 @@ class QtAT5 < Formula
   # CVE-2025-23050
   # Remove with Qt 5.15.19
   patch do
-    url "https://download.qt.io/official_releases/qt/5.15/CVE-2025-23050-qtconnectivity-5.15.diff"
+    url "https://download.qt.io/archive/qt/5.15/CVE-2025-23050-qtconnectivity-5.15.diff"
     sha256 "76e303b6465babb6d0d275792f7f3c41e3df87a6a17992e8b7b8e47272682ce7"
     directory "qtconnectivity"
   end
@@ -229,7 +228,7 @@ class QtAT5 < Formula
   # CVE-2025-30348
   # Remove with Qt 5.15.19
   patch do
-    url "https://download.qt.io/official_releases/qt/5.15/CVE-2025-30348-qtbase-5.15.diff"
+    url "https://download.qt.io/archive/qt/5.15/CVE-2025-30348-qtbase-5.15.diff"
     sha256 "fcd011754040d961fec1b48fe9828b2c8d501f2d9c30f0f475487a590de6d3c8"
     directory "qtbase"
   end
@@ -237,7 +236,7 @@ class QtAT5 < Formula
   # CVE-2025-4211
   # Remove with Qt 5.15.19
   patch do
-    url "https://download.qt.io/official_releases/qt/5.15/CVE-2025-4211-qtbase-5.15.diff"
+    url "https://download.qt.io/archive/qt/5.15/CVE-2025-4211-qtbase-5.15.diff"
     sha256 "7bc92fb0423f25195fcc59a851570a2f944cfeecbd843540f0e80f09b6b0e822"
     directory "qtbase"
   end
@@ -245,7 +244,7 @@ class QtAT5 < Formula
   # CVE-2025-5455
   # Remove with Qt 5.15.19
   patch do
-    url "https://download.qt.io/official_releases/qt/5.15/CVE-2025-5455-qtbase-5.15.patch"
+    url "https://download.qt.io/archive/qt/5.15/CVE-2025-5455-qtbase-5.15.patch"
     sha256 "967fe137ee358f60ac3338f658624ae2663ec77552c38bcbd94c6f2eff107506"
     directory "qtbase"
   end

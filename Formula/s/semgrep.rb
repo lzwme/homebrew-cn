@@ -16,13 +16,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "22a5095ddbf4f396387a3dbc8eadb75e65521bc14b34c806fcf4ac45942902a8"
-    sha256 cellar: :any, arm64_sequoia: "544ca80bffe56c8288e052ecd2aa608ae30aa53c73e1f9939c300f541fa1fed1"
-    sha256 cellar: :any, arm64_sonoma:  "5246a6044482bebae02affc941201bb7ea6ed138480513fe2182120ca4a024c4"
-    sha256 cellar: :any, sonoma:        "053e9cf52f466780a955b024a2c60d145ccf1b990a4bb3d6419827035155b4c7"
-    sha256               arm64_linux:   "cc146905dc2a069f036096f70dc7f1a54d351e8d112507bbd3202ac72cb63b7e"
-    sha256               x86_64_linux:  "6b1d0ddff0c2226e26585d2ec6516e09433bc772469b7cec0bb30f1c9fd947c7"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "900af5d56c7c85b7b8e38d361049f1e4bf63085e0cf2ca8c8c01c6a4d1a8577f"
+    sha256 cellar: :any, arm64_sequoia: "327a9b4ae1a1c774f2d55f7ec20eace11b57aa56939860df8f8db1e6b0e54368"
+    sha256 cellar: :any, arm64_sonoma:  "429cafe0601c349cad6df21830129b4366192ac7178de1f81752099fc4bd718d"
+    sha256 cellar: :any, sonoma:        "bb59a911ceedeebc9088e5711277c8c5ee3769db597ba470168395710b73b82c"
+    sha256               arm64_linux:   "b834f70180e28eb4a5ad1d123bef90615020e07338fde22a5c2200801f08834d"
+    sha256               x86_64_linux:  "c23b7138b95d56a90d2936b78cdd2dfc5b1363ae9c2b1552d0e17167e29d2b1e"
   end
 
   depends_on "autoconf" => :build
@@ -39,7 +39,7 @@ class Semgrep < Formula
   depends_on "libev"
   depends_on "pcre"
   depends_on "pcre2"
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
   depends_on "sqlite"
@@ -55,12 +55,7 @@ class Semgrep < Formula
   end
 
   pypi_packages package_name:     "semgrep",
-                exclude_packages: %w[certifi pydantic-core rpds-py]
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
+                exclude_packages: %w[certifi pydantic rpds-py]
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
@@ -118,8 +113,8 @@ class Semgrep < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/30/43/b25abe02db2911397819003029bef768f68a974f2ece483e6084d1a5f754/googleapis_common_protos-1.71.0.tar.gz"
-    sha256 "1aec01e574e29da63c80ba9f7bbf1ccfaacf1da877f23609fe236ca7c72a2e2e"
+    url "https://files.pythonhosted.org/packages/e5/7b/adfd75544c415c487b33061fe7ae526165241c1ea133f9a9125a56b39fd8/googleapis_common_protos-1.72.0.tar.gz"
+    sha256 "e55a601c1b32b52d7a3e65f43563e2aa61bcd737998ee672ac9b951cd49319f5"
   end
 
   resource "h11" do
@@ -228,18 +223,13 @@ class Semgrep < Formula
   end
 
   resource "peewee" do
-    url "https://files.pythonhosted.org/packages/04/89/76f6f1b744c8608e0d416b588b9d63c2a500ff800065ae610f7c80f532d6/peewee-3.18.2.tar.gz"
-    sha256 "77a54263eb61aff2ea72f63d2eeb91b140c25c1884148e28e4c0f7c4f64996a0"
+    url "https://files.pythonhosted.org/packages/6f/60/58e7a307a24044e0e982b99042fcd5a58d0cd928d9c01829574d7553ee8d/peewee-3.18.3.tar.gz"
+    sha256 "62c3d93315b1a909360c4b43c3a573b47557a1ec7a4583a71286df2a28d4b72e"
   end
 
   resource "protobuf" do
     url "https://files.pythonhosted.org/packages/19/ff/64a6c8f420818bb873713988ca5492cba3a7946be57e027ac63495157d97/protobuf-6.33.0.tar.gz"
     sha256 "140303d5c8d2037730c548f8c7b93b20bb1dc301be280c378b82b8894589c954"
-  end
-
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pydantic-settings" do
@@ -298,18 +288,13 @@ class Semgrep < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/dd/31/fd3576f6b0d7ee3b7968daf4473bb0bb4fa8c98777803b9e8fdb8b1817ca/starlette-0.49.2.tar.gz"
-    sha256 "24b6ab2d95311eedfd713a08b4cb82f6d9c69de9e2cac15866e72c36d90c0528"
+    url "https://files.pythonhosted.org/packages/ba/b8/73a0e6a6e079a9d9cfa64113d771e421640b6f679a52eeb9b32f72d871a1/starlette-0.50.0.tar.gz"
+    sha256 "a2a17b22203254bcbc2e1f926d2d55f3f9497f769416b3190768befe598fa3ca"
   end
 
   resource "tomli" do
     url "https://files.pythonhosted.org/packages/35/b9/de2a5c0144d7d75a57ff355c0c24054f965b2dc3036456ae03a51ea6264b/tomli-2.0.2.tar.gz"
     sha256 "d46d457a85337051c36524bc5349dd91b1877838e2979ac5ced3e710ed8a60ed"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do

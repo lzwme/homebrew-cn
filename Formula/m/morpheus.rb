@@ -4,7 +4,7 @@ class Morpheus < Formula
   url "https://gitlab.com/morpheus.lab/morpheus/-/archive/v2.3.9/morpheus-v2.3.9.tar.gz"
   sha256 "d27b7c2b5ecf503fd11777b3a75d4658a6926bfd9ae78ef97abf5e9540a6fb29"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -12,15 +12,12 @@ class Morpheus < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_tahoe:   "7e26be19e1ae33a04c2183277b10136d26261ea2bcf2af177d13fd32ec8bd0ea"
-    sha256                               arm64_sequoia: "4020aba25f72c7c1994268abd7a51d625b3c4d03bba900d58bad3fb7c41f18ff"
-    sha256                               arm64_sonoma:  "6d7ecede2635239fcc44cc2e6db21d8d819f1b4855898115548916fdbefc6010"
-    sha256                               arm64_ventura: "e30b659545e485356790d7938d5a4af5570584315b9272ca03b7aee3b4219160"
-    sha256 cellar: :any,                 sonoma:        "256731739687f46cf2509eb9a3e5f0c7139dea775ce5f8e450b855ef910ac703"
-    sha256 cellar: :any,                 ventura:       "00fdbd8f0594d9daca951726618c1275396758a60aac129dc85451af78a7657e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebe312239729e7e3b45e975d1fa6e6c9c69d2107e8e15104c2f735c90af1480f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d216e4cd5fcec17db0a326688795f2ee4e3517379b79b3f94ef0f53a0f56ee3"
+    sha256                               arm64_tahoe:   "121da65691eee624e3929e5a3f6550c0295b16996180d4a045cfaaacecfac2df"
+    sha256                               arm64_sequoia: "d4560f21a97fae5914b76b37f034ce3380cc1fe7a21220bb243bc00056926863"
+    sha256                               arm64_sonoma:  "5970ad56a9271c47f9600c29a15b07913f75b8e1c2cec68fbfbfdabfda6f1ada"
+    sha256 cellar: :any,                 sonoma:        "db8e0bfc85fd552320a35413ec5179c8a7525fcc58ffc127bfe232eceb8f2d29"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "730115a2edf27e7b25cb85715206a29d8f5a286d2d07d6e36b9e9f374757f31a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e11b0f061d009c76ad0d1d420a34c0479d37a18d8ef3211af9e1c15f7c4ab38"
   end
 
   # Can undeprecate if new release with Qt 6 support is available.

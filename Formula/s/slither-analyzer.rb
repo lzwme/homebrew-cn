@@ -10,20 +10,20 @@ class SlitherAnalyzer < Formula
   head "https://github.com/crytic/slither.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a604b0d55991c0a1c68d4077e7fa07b75abdf1b2d1adf37d88a8bdc6d79eed7d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93ea3ed0768bcbac5d7f6b011c95f2bc80a406a6c7305bdd797762033e8ffe51"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d86244f2ea64820da270ee5037de93d44704967af90259f3e53433f0480268c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c308c481788cdc828a5fcff6c6fa766b6941367607f7474a8d342926bb8da5a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "399528d89fe21138e19d4f88e937253bb21ef3d88f5daf23480d72f5470c5125"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb55a19322f47407859278cd7cfc89ca4d69bccab29e196c25b631381323dbaa"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "84f69262fceb9c906c3f9a7c3b1d919b50b2e4131d434f887a45e656f302dd8e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e001edca4c14a267a7416ff953e0ff353c5f92d1f1eb9b46e61dd60f9f5e5c8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40acdffd1f7bbd1996e03a8a7cc761d2b23e275f3e8e2661c31296d6908ed772"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8707e45e0d1e593b26fa857d39214f5168be3b4cfba51d963eb086593c264a24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9833a1ad980832d99b14f9ccd394e3ac1de732b70ba61cb91386ba7c572bdd42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "611c8673e49167d01cfd8f7e953518e68bf67e29314eacca98f7a2cec105b812"
   end
 
   depends_on "certifi" => :no_linkage
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
 
-  pypi_packages exclude_packages: ["certifi", "pydantic-core"]
+  pypi_packages exclude_packages: ["certifi", "pydantic"]
 
   resource "aiohappyeyeballs" do
     url "https://files.pythonhosted.org/packages/26/30/f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54/aiohappyeyeballs-2.6.1.tar.gz"
@@ -40,19 +40,14 @@ class SlitherAnalyzer < Formula
     sha256 "f47eecd9468083c2029cc99945502cb7708b082c232f9aca65da147157b251c7"
   end
 
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
-
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
     sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
   end
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/e8/c1/644ea86b6f1a0864f656a3b3ee5bf8c29daa895cb3233942315fe065ea3a/bitarray-3.7.2.tar.gz"
-    sha256 "27a59bb7c64c0d094057a3536e15fdd693f8520771ee75d9344b82d0a5ade2d0"
+    url "https://files.pythonhosted.org/packages/95/06/92fdc84448d324ab8434b78e65caf4fb4c6c90b4f8ad9bdd4c8021bfaf1e/bitarray-3.8.0.tar.gz"
+    sha256 "3eae38daffd77c9621ae80c16932eea3fb3a4af141fb7cc724d4ad93eff9210d"
   end
 
   resource "cbor2" do
@@ -165,19 +160,14 @@ class SlitherAnalyzer < Formula
     sha256 "447700a657182d60338bab09fdb27518f8856aecd80ae4c6bdddb67ff5da44ef"
   end
 
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
-  end
-
   resource "pyunormalize" do
     url "https://files.pythonhosted.org/packages/25/ab/b912c484cfb96ba4834efe050bbf10c9e157bd8189eb859aefba8712b136/pyunormalize-17.0.0.tar.gz"
     sha256 "0949a3e56817e287febcaf1b0cc4b5adf0bb107628d379335938040947eec792"
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/f8/c8/1d2160d36b11fbe0a61acb7c3c81ab032d9ec8ad888ac9e0a61b85ab99dd/regex-2025.10.23.tar.gz"
-    sha256 "8cbaf8ceb88f96ae2356d01b9adf5e6306fa42fa6f7eab6b97794e37c959ac26"
+    url "https://files.pythonhosted.org/packages/cc/a9/546676f25e573a4cf00fe8e119b78a37b6a8fe2dc95cda877b30889c9c45/regex-2025.11.3.tar.gz"
+    sha256 "1fedc720f9bb2494ce31a58a1631f9c82df6a09b49c19517ea5cc280b4541e01"
   end
 
   resource "requests" do
@@ -203,11 +193,6 @@ class SlitherAnalyzer < Formula
   resource "types-requests" do
     url "https://files.pythonhosted.org/packages/36/27/489922f4505975b11de2b5ad07b4fe1dca0bca9be81a703f26c5f3acfce5/types_requests-2.32.4.20250913.tar.gz"
     sha256 "abd6d4f9ce3a9383f269775a9835a4c24e5cd6b9f647d64f88aa4613c33def5d"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do

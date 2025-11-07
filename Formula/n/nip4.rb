@@ -4,15 +4,16 @@ class Nip4 < Formula
   url "https://ghfast.top/https://github.com/jcupitt/nip4/releases/download/v9.0.14/nip4-9.0.14.tar.xz"
   sha256 "a5bb0eabdbf5d6d6e1522e1a26ac158ed6a2b289cf47610b8d276fb876aa7b95"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/jcupitt/nip4.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4ce931ce676fbd6c75f9d335cb18217460f422014217c246da368614134444df"
-    sha256 cellar: :any, arm64_sequoia: "86e95ad4a634deec24f69306a212aaab2bf7de0864aeac67ccf92feb1d0f6c1d"
-    sha256 cellar: :any, arm64_sonoma:  "b7c02517497fddd282b49cd6289fdde48139b8ec0ee7a7468d28dd46b2119bc2"
-    sha256 cellar: :any, sonoma:        "b09530c9df764464bd0fcbeb5cd387e80a7f06a8ac7e8cc1239b4aa988ce9427"
-    sha256               arm64_linux:   "f92cb7ba6ffc7597c1a698b48e6248a554cebbe935ecff41723630e12b685b11"
-    sha256               x86_64_linux:  "58f553d06f4e3706a4b9d77a1cfc25119129c8955a55ac45067380ec4a90a289"
+    sha256 cellar: :any, arm64_tahoe:   "a9e00413fcbc1db51dfdb3880d06ada830c412328bc5e7c4dc5ebec0086b9bf0"
+    sha256 cellar: :any, arm64_sequoia: "7092befb5e9da4c443684a50774b80f27e03cef8f9ca41e8c885f5e32dcede8d"
+    sha256 cellar: :any, arm64_sonoma:  "42670e3fcc44b5f66fea3bfa702db4024cbb6df955521a5587cf416f564171eb"
+    sha256 cellar: :any, sonoma:        "4c6767b749362c234648e630b20c68cc9d55251d9a52908669a8811a643721e4"
+    sha256               arm64_linux:   "e07e90cf31ec1a0e84d765a2c96b93acb844cfd12d5457322036fdf6aa680456"
+    sha256               x86_64_linux:  "c0d7ac6813dc75bdce14df90f79d085c636aa8591d0d9ea807fa881350050c23"
   end
 
   depends_on "bison" => :build

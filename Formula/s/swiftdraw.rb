@@ -4,17 +4,18 @@ class Swiftdraw < Formula
   url "https://ghfast.top/https://github.com/swhitty/SwiftDraw/archive/refs/tags/0.25.1.tar.gz"
   sha256 "7016b9a8a035cd6a87d72bbfadba168948b5e1f069bb922ca1419b1122aff254"
   license "Zlib"
+  revision 1
   head "https://github.com/swhitty/SwiftDraw.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa1295db70d1e5b108046d1ac7cb801a15a6826742a970c7d190271d2e2b9e68"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4bdb212c2771659678ea1f8cd22339979a55f76561a4547c2fd5efc6e67d2f1a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4fd64178cf70a769b2fa0ccf6d634a806df91914a300721f638366b1ef6a444a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2183ae401419163d66ff0f130932055e75d2d5888deee422fe2a991afcccd497"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e2f257dddeaca7757183a77908aadee70fab1b3ab4472c7ffc762436a12f37a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efdb31d71154865519ab8c0b65c9eab8d54fc1df13d05c50b605d982528b4c98"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec3e3aebc3996bb571223a757e11f2fddacf662e93701cd2f3d9b85683943b2a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb040ba456d2a75ddb91b7da57b9519f979c4ce9e571c580ef6d83bdcff82cb0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "445c518fc6191a15fc2984ad9603c0d7fba1fc0a99ebdfe9db663890e4bcc2b0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f686245c63c61b376eac4919b3c61280d285161f09f0134b22726eee837df8e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "266ef70e02afe0f6cd66f0db1aeb961d5b6dd91b5909df5b51e7dfb5d6a56075"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21cb3dfc2ba88064d86aa40e128de025d0434e016554bab5ea28ad96e528cddc"
   end
 
   depends_on xcode: ["16.0", :build]
@@ -26,7 +27,7 @@ class Swiftdraw < Formula
     args = if OS.mac?
       ["--disable-sandbox"]
     else
-      ["--static-swift-stdlib"]
+      ["--static-swift-stdlib", "-Xswiftc", "-use-ld=ld"]
     end
     system "swift", "build", *args, "--configuration", "release"
     bin.install ".build/release/swiftdrawcli" => "swiftdraw"
