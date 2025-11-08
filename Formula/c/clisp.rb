@@ -38,11 +38,12 @@ class Clisp < Formula
   depends_on "libsigsegv"
   depends_on "readline"
   uses_from_macos "libxcrypt"
+  uses_from_macos "ncurses"
 
   def install
-    system "./configure", *std_configure_args,
-                          "--with-readline=yes",
-                          "--elispdir=#{elisp}"
+    system "./configure", "--with-readline=yes",
+                          "--elispdir=#{elisp}",
+                          *std_configure_args
 
     cd "src" do
       system "make"

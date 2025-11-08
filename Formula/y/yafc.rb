@@ -43,10 +43,10 @@ class Yafc < Formula
   end
 
   test do
+    ftp_url = "ftp://ftp.mirrorservice.org/sites/ftp.gnu.org/gnu/gcc/gcc-10.2.0/"
     download_file = testpath/"gcc-10.2.0.tar.xz.sig"
     expected_checksum = Checksum.new("8e271266e0e3312bb1c384c48b01374e9c97305df781599760944e0a093fad38")
-    output = pipe_output("#{bin}/yafc -W #{testpath} -a ftp://ftp.gnu.org/gnu/gcc/gcc-10.2.0/",
-                         "get #{download_file.basename}", 0)
+    output = pipe_output("#{bin}/yafc -W #{testpath} -a #{ftp_url}", "get #{download_file.basename}", 0)
     assert_match version.to_s, output
     download_file.verify_checksum expected_checksum
   end

@@ -6,6 +6,11 @@ class Nmstatectl < Formula
   license "Apache-2.0"
   head "https://github.com/nmstate/nmstate.git", branch: "base"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3bd77f2897108a26582b434deb8e12baa3acae9383d4786413c11699c5924944"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf50c518ea0663015ec5f2f1b2ffe6b0e84f0e816ad4f9b37ddb3c7be62ac1cc"

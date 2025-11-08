@@ -1,20 +1,20 @@
 class Kuzco < Formula
   desc "Reviews Terraform and OpenTofu resources and uses AI to suggest improvements"
   homepage "https://github.com/RoseSecurity/Kuzco"
-  url "https://ghfast.top/https://github.com/RoseSecurity/Kuzco/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "dcff9f78ba7f383899a8b368c1c2b777ea3de3634012193e80f9c0e528484e44"
+  url "https://ghfast.top/https://github.com/RoseSecurity/Kuzco/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "e3c26877b0fa5dae633e81674d88f30d148a0b77d627cd6777c7d2825cc8062f"
   license "Apache-2.0"
   head "https://github.com/RoseSecurity/Kuzco.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92ea2e24739100902ccbdd447c7f779c80d2206e4cc7c9109fa15b625bbb8d4b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92ea2e24739100902ccbdd447c7f779c80d2206e4cc7c9109fa15b625bbb8d4b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92ea2e24739100902ccbdd447c7f779c80d2206e4cc7c9109fa15b625bbb8d4b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bc0364b9f11c3dfcfee702960118e738295d22829df8fc8c6867e08c2100a2cf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "698b1f3600b860386d1f622762850e6795820e210da88c90da39e0ecf80447a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a14b76519f88eb799a979d2ee94e664640a435a06c5a9553d9a4e1d0a5a3236"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6b9aa3c556ffc4a734b8b27a37879ac6be4380bd570e6f76c3f1f8257b79103a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b9aa3c556ffc4a734b8b27a37879ac6be4380bd570e6f76c3f1f8257b79103a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b9aa3c556ffc4a734b8b27a37879ac6be4380bd570e6f76c3f1f8257b79103a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "171c5cbd75d672fd5a745ef528aa505d72aad75e855c67dbe61f41cdedcc8716"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d11be849bffbdb7885482db5b8bc3bd81cc9b419b24d5fccc67f4a196e0d0d5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24bb1c8a705ed714836451cb45e50f5f97647fd25eccb6a88d42a864fb44da7a"
   end
 
   depends_on "go" => :build

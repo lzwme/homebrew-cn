@@ -16,12 +16,13 @@ class Wireshark < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "e931dee6d9a745b4e52a27699f8a69a344165eabdafd1d3a2e6e297444ee65a0"
-    sha256                               arm64_sequoia: "01535c78d8b3785392c9e86b673cd06c584bc7758c4d8a230b5dd7ba71a2ba0e"
-    sha256                               arm64_sonoma:  "79c087744a3e31e3f4df32255de8e24e6eb2c480b32d2920a257262100678f79"
-    sha256                               sonoma:        "3f86c4c25c879f291e6204901b96501e634fc3b412e474683b53a608a482f3ea"
-    sha256                               arm64_linux:   "0b33d81caa3bb388c5a982d83743a447b70d90ddcd5e173834d08f3fdfe4c354"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfd57b90abfe26a0a90b65efeeb02cc606de388d0c2202350735ae0c5c9b9a95"
+    rebuild 1
+    sha256                               arm64_tahoe:   "7ad14f77f29a9e1d52d89200642eae9bbaab3a330858ef065b41de57f95cd018"
+    sha256                               arm64_sequoia: "6f039e5f2958e20c53ca46a4eb58813b4fd7c935428ec72aaa5aeaf589bfad2d"
+    sha256                               arm64_sonoma:  "7f15de48c4835aa3bc4b0ff03c3e0243189fbf2d017d61f6f0425722890b1cbc"
+    sha256                               sonoma:        "cf033aa8326c5863e87664032f5a94b03d83ca86a7f955c70bd304291241b807"
+    sha256                               arm64_linux:   "4080025152fbbcf1daed0a13b83f669cf1d2bda0fcc1211632d80d0706738284"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "072bcdacf366270439295af7cb9cf9b59ebcfcca84a5b660755bc80ec09ec479"
   end
 
   depends_on "cmake" => :build
@@ -35,8 +36,10 @@ class Wireshark < Formula
   depends_on "libsmi"
   depends_on "libssh"
   depends_on "lua"
+  depends_on "lz4"
   depends_on "pcre2"
   depends_on "speexdsp"
+  depends_on "zstd"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
@@ -53,7 +56,10 @@ class Wireshark < Formula
   conflicts_with cask: "wireshark-app"
 
   def install
+    plugindir = lib/"wireshark/plugins/#{version.major}-#{version.minor}"
     args = %W[
+      -DENABLE_BROTLI=OFF
+      -DENABLE_SNAPPY=OFF
       -DLUA_INCLUDE_DIR=#{Formula["lua"].opt_include}/lua
       -DLUA_LIBRARY=#{Formula["lua"].opt_lib/shared_library("liblua")}
       -DCARES_INCLUDE_DIR=#{Formula["c-ares"].opt_include}
@@ -63,7 +69,8 @@ class Wireshark < Formula
       -DBUILD_wireshark=OFF
       -DBUILD_logray=OFF
       -DENABLE_APPLICATION_BUNDLE=OFF
-      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: libexec/"wireshark/extcap")}
+      -DCMAKE_MODULE_LINKER_FLAGS=-Wl,-rpath,#{rpath(source: plugindir/"codecs")}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

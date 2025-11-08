@@ -28,6 +28,8 @@ class Base64 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f8f96bcf972f99b8ca838f542a44c9b1f7bf8da7e66eb3333d941093ecbc199"
   end
 
+  conflicts_with "aklomp-base64", because: "both install `base64` binaries"
+
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking"
     system "make"

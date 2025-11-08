@@ -99,17 +99,11 @@ class SynergyCore < Formula
   end
 
   def caveats
-    # Because we used `license :cannot_represent` above, tell the user how to
-    # read the license.
-    s = <<~EOS
-      Read the synergy-core license here:
-        #{opt_prefix}/LICENSE
-    EOS
     # The binaries built by brew are not signed by a trusted certificate, so the
     # user may need to revoke all permissions for 'Accessibility' and re-grant
     # them when upgrading synergy-core.
     on_macos do
-      s += "\n" + <<~EOS
+      s = <<~EOS
         Synergy requires the 'Accessibility' permission.
         You can grant this permission by navigating to:
           System Preferences -> Security & Privacy -> Privacy -> Accessibility
@@ -137,8 +131,8 @@ class SynergyCore < Formula
             (2) #{opt_bin}/synergy
         EOS
       end
+      s
     end
-    s
   end
 
   test do

@@ -1,21 +1,17 @@
 class FlipLink < Formula
   desc "Adds zero-cost stack overflow protection to your embedded programs"
   homepage "https://github.com/knurling-rs/flip-link"
-  url "https://ghfast.top/https://github.com/knurling-rs/flip-link/archive/refs/tags/v0.1.10.tar.gz"
-  sha256 "9389806ffda4ed5aa47f39fc71ac2a19be59cc28aab93bfb32bb514ed7165f75"
+  url "https://ghfast.top/https://github.com/knurling-rs/flip-link/archive/refs/tags/v0.1.11.tar.gz"
+  sha256 "d32d9c79ae93a46e721b809a103ffe8fc7d1e0a71f661a4221845dd63048e675"
   license any_of: ["Apache-2.0", "MIT"]
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "740bdc600861c9f0b5d343d6294c94965c854f26938d2e0d36979e6b1058f46b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f7946a65b6cc5748c00e69297f119478baf555d89d4d9ca36f7952e8763b463"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79535fccaccc327856b6a65d873732f073267f69b00d60f4fb564c8c30abf645"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2bef1a06d7567d3cac57a6ec36a0b07cb365b2ebcc0f82392a5e460edea593b0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "32d588c6efc346c55e8c5d8540697026a48f58a1a11a8200216bbc65ed61af91"
-    sha256 cellar: :any_skip_relocation, ventura:       "5707b9019b30ec7adeb93eb9b1ddd7991a93e3a0e3b3c64d3de8ca02ea4b28df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6239eeb59da161b234a30cdf6f9f9a8245f49711e7eb6f4a11b05d3d6e49c923"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb4e1c35ce40be6f2bd872953ebc6b807fe1698807011afaeab2025c021d76e3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a1d14b41d7a365ac7e142963da71c68ad9beb1edf982ff496958c995e509d984"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "621b648f75e43a4420e18172f793f7a463fd17baabec6e97ea99eebda1f4d0c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c2648567684cbe7355c7f236c3f450d0c42c9f666dd43e6fb5d915acf32ce5e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "247129566c8f6e753da4eb7f62e2647b0c39a5a62ebb6e4c3a60e1d2d951462b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "302b0798e23f79898a0cf97844bfc3da1c4dbcbdb8e82e502d7ba1d9b73836ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "703058fc74a4a733f2d07da1c60fb4bed988ca55bf8a92d2803a3c5470d642fb"
   end
 
   depends_on "rust" => :build

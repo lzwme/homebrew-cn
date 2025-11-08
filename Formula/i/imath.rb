@@ -27,7 +27,7 @@ class Imath < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~'EOS'
+    (testpath/"test.cpp").write <<~'CPP'
       #include <ImathRoots.h>
       #include <algorithm>
       #include <iostream>
@@ -42,7 +42,7 @@ class Imath < Formula
 
         std::cout << n << ", " << x[0] << ", " << x[1] << "\n";
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++11", "-I#{include}/Imath", "-o", testpath/"test", "test.cpp"
     assert_equal "2, -2, -1\n", shell_output("./test")
   end

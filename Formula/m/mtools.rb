@@ -17,6 +17,7 @@ class Mtools < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b35d3dda7886392a91cbfb237a7ab3c2f710ff6dc6875acedbbdec863d67c2b"
   end
 
+  conflicts_with "mcat", because: "both install `mcat` binaries"
   conflicts_with "multimarkdown", because: "both install `mmd` binaries"
 
   def install

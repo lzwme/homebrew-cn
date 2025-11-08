@@ -3,7 +3,27 @@ class Krb5 < Formula
   homepage "https://web.mit.edu/kerberos/"
   url "https://kerberos.org/dist/krb5/1.22/krb5-1.22.1.tar.gz"
   sha256 "1a8832b8cad923ebbf1394f67e2efcf41e3a49f460285a66e35adec8fa0053af"
-  license :cannot_represent
+  # From Fedora: https://src.fedoraproject.org/rpms/krb5/blob/rawhide/f/krb5.spec
+  license all_of: [
+    "BSD-2-Clause",
+    "BSD-2-Clause-first-lines",
+    "BSD-3-Clause",
+    "BSD-4-Clause",
+    "Brian-Gladman-2-Clause",
+    "CMU-Mach-nodoc",
+    "FSFULLRWD",
+    "HPND",
+    "HPND-export2-US",
+    "HPND-export-US",
+    "HPND-export-US-acknowledgement",
+    "HPND-export-US-modify",
+    "ISC",
+    "MIT",
+    "MIT-CMU",
+    "OLDAP-2.8",
+    "OpenVision",
+    any_of: ["BSD-2-Clause", "GPL-2.0-or-later"],
+  ]
 
   livecheck do
     url :homepage
@@ -30,11 +50,11 @@ class Krb5 < Formula
 
   def install
     cd "src" do
-      system "./configure", *std_configure_args,
-                            "--disable-nls",
+      system "./configure", "--disable-nls",
                             "--disable-silent-rules",
                             "--without-system-verto",
-                            "--without-keyutils"
+                            "--without-keyutils",
+                            *std_configure_args
       system "make"
       system "make", "install"
     end
@@ -42,7 +62,6 @@ class Krb5 < Formula
 
   test do
     system bin/"krb5-config", "--version"
-    assert_match include.to_s,
-      shell_output("#{bin}/krb5-config --cflags")
+    assert_match include.to_s, shell_output("#{bin}/krb5-config --cflags")
   end
 end

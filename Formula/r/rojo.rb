@@ -3,18 +3,18 @@ class Rojo < Formula
   homepage "https://rojo.space/"
   # pull from git tag to get submodules
   url "https://github.com/rojo-rbx/rojo.git",
-      tag:      "v7.6.0",
-      revision: "441c469966ded2c7b4a5f7b9aa18a4c8a27499b3"
+      tag:      "v7.6.1",
+      revision: "825726c8835d26e37290cb7343e7765741aefefd"
   license "MPL-2.0"
   head "https://github.com/rojo-rbx/rojo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "528d16663ddaa354fcf3d0c71f220196a2e5b5b0bb3c0f600dc30792b7486716"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a83beda14e57c30a2449b9b89451b9397c3853e5bc85123c25a02ccd99005982"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1831b8ddcf74822f78eb2c755904299e80c7d815d8dfc585ae2f93688733794"
-    sha256 cellar: :any_skip_relocation, sonoma:        "338553ac49050cb9a4478f14f8f47a26cae3c8b7f180e68e46f6c09cc15e7003"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aee4003490b49e7676b9142db3c9a52b29f77860c09e0f98f47a21167d8c3346"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "366d55c2b92a3dbbabb07dccca2fd051ea4c43e7be16e8b63dcd293d2c610993"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7342fb03360adf9da87f85e2f7e0a4d9165ed15fba501a5d570e417ea8131929"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf6599feb5a14753afc072b730d5f13f288b7e85820b172c8086aca04ec8e06a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b06bacf8121e829628f38ef50ebe51088cb8c84cadb6b2662dc57faeb8d77042"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1dd5086711d202388aefd2c5c0bfa918474440258ca4d5f7bca95ec74cb2c99d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b89b0bbd30ab66f4bf75373ca1fd2334a19805b89a027282014a46bb7e90cbe0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cff0fe4bb57f025548214ff6227c8973ac5308a2414fde120542a0bb5332e7b7"
   end
 
   depends_on "pkgconf" => :build

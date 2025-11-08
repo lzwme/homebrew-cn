@@ -17,19 +17,20 @@ class Snapcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "48a4f77a2aff8fdbe81b61dcef863018ad5fc696d44d51d10b846fded479410f"
-    sha256 cellar: :any,                 arm64_sequoia: "4009c1dd0ca28af22457aa2b791ee9b510f7f551a465ec7eec4649e45e03968d"
-    sha256 cellar: :any,                 arm64_sonoma:  "422783259ef19534086da92f592e56c74ef75df671ab78ba110f1f85bb872386"
-    sha256 cellar: :any,                 sonoma:        "9e5cdf549127f1bc46a37572b5dcd48c5a3a5e153b393515df2becd68995d594"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "136ddeb6f16b449495037387542053cfc77b8c5714377f480639d1a99a0291cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f337af8651da30f02acb62d9bb69cf3756f864e822844c46e149d0c3885f90e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "72f0f485d32a3109b5b3c85fb94a5bab83342cb11b9fbe4a2957d94302f9d04f"
+    sha256 cellar: :any,                 arm64_sequoia: "05a4a4c2c97670734bfb299a49bf900626262ad78405a4e4899415488acbf1df"
+    sha256 cellar: :any,                 arm64_sonoma:  "1431c00a290a9f972fa2190234ad06c91c7fef51d418c5b8804fbefd9d6b7b73"
+    sha256 cellar: :any,                 sonoma:        "118bb7ebce8c8d8181a88eb0f994aff1970df1751a661bcd6b7ee523205f8e90"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5742539b314ad5f0beb5e2f459db71ff78b6aaa91bf733cf31fc51933737d49a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c7597af39bb397715b49d131edfbf77e721f17799b35a521cd5716ff4457f51"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "libsodium"
   depends_on "libyaml"
   depends_on "lxc"
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "pygit2" => :no_linkage
   depends_on "python@3.14"
   depends_on "snap"
@@ -45,7 +46,7 @@ class Snapcraft < Formula
     depends_on "cryptography"
   end
 
-  pypi_packages exclude_packages: %w[certifi cryptography pydantic-core pygit2],
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic pygit2],
                 extra_packages:   %w[catkin-pkg jeepney pylxd secretstorage]
 
   # We hit a build failure with requested 2.4.0ubuntu1 tarball so just using latest Debian
@@ -54,11 +55,6 @@ class Snapcraft < Formula
       url "https://deb.debian.org/debian/pool/main/p/python-apt/python-apt_3.0.0.tar.xz"
       sha256 "1963720a75b6916bf59c71e75ac4577b9dd51666030f11990f2f56cb31af115f"
     end
-  end
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
   end
 
   resource "anyio" do
@@ -145,8 +141,8 @@ class Snapcraft < Formula
   end
 
   resource "docutils" do
-    url "https://files.pythonhosted.org/packages/4a/c0/89fe6215b443b919cb98a5002e107cb5026854ed1ccb6b5833e0768419d1/docutils-0.22.2.tar.gz"
-    sha256 "9fdb771707c8784c8f2728b67cb2c691305933d68137ef95a75db5f4dfbc213d"
+    url "https://files.pythonhosted.org/packages/d9/02/111134bfeb6e6c7ac4c74594e39a59f6c0195dc4846afbeac3cba60f1927/docutils-0.22.3.tar.gz"
+    sha256 "21486ae730e4ca9f622677b1412b879af1791efcfba517e4c6f60be543fc8cdd"
   end
 
   resource "gnupg" do
@@ -290,13 +286,8 @@ class Snapcraft < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/cd/ec/7b8e6b9b1d22708138630ef34c53ab2b61032c04f16adfdbb96791c8c70c/psutil-7.1.2.tar.gz"
-    sha256 "aa225cdde1335ff9684708ee8c72650f6598d5ed2114b9a7c5802030b1785018"
-  end
-
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
+    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
+    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
   end
 
   resource "pyelftools" do
@@ -422,11 +413,6 @@ class Snapcraft < Formula
   resource "toml" do
     url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
     sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do

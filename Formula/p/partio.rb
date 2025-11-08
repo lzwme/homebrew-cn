@@ -1,18 +1,17 @@
 class Partio < Formula
   desc "Particle library for 3D graphics"
   homepage "https://github.com/wdas/partio"
-  url "https://ghfast.top/https://github.com/wdas/partio/archive/refs/tags/v1.19.0.tar.gz"
-  sha256 "128913266a88a0939aaa4bc951ae4d4da1c380408bcc0ea9e7f526556afeaad0"
+  url "https://ghfast.top/https://github.com/wdas/partio/archive/refs/tags/v1.19.2.tar.gz"
+  sha256 "b59fbc8e64561368f0e2f94ae2f3f2083babfc32ff7ae97e833ab15df4588ade"
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05ebbd168cfa1a7478360070bef9bf428fcf2fc309570d036fe23748807169b7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94dc712e12895507397e6db831b4b7bcfb39e3d62cc575b0f5aceb231ee17796"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6bcd1744a265d8f5e77467a4bb70ff7c832962dc64c9baca36be891409c1d4b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a6551a6ba9cc3babbb51af05b90920dd47a0510ce2dde16adf2fb748b61f6dc2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "acd09d35e612f33f8b3eca6afeeba1d53bdef467250eaf0397a6a5cd7bd83752"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4dc119d3bc73b357384ab579d1f24f61a2423241ee49ce4c0e50f3a29a98813f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "771ec48251036ec659478ba8b03a2de0b54ead6cff8d36a6920da1f43e8f4ff2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5dcbd5bc580c7eb2e01783c5c1ea25133425064192e4769cd81708c4f34339f4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70e9c354c6cc6a88cb4cdf27ba401ef8b462f93c22db7e62eb8791bad8532fa3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eb25df793e344f0df541ed08703703ceb5cdcc0c5a2052eba0689a842a088ae3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f776a69509e4f29643c21de169385952823e7edb84241b4e4d99bcb27d544604"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58407db08bb0d50611a1621f82bf0a2dbde8f3415fe0e6f979f6eb492a72d205"
   end
 
   depends_on "cmake" => :build

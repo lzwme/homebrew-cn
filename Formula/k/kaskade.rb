@@ -3,20 +3,18 @@ class Kaskade < Formula
 
   desc "TUI for Kafka"
   homepage "https://github.com/sauljabin/kaskade"
-  url "https://files.pythonhosted.org/packages/b5/6a/4a51af28c5537eb45ab7199a3220e25385171767e86ffabfb908ced2635e/kaskade-4.0.5.tar.gz"
-  sha256 "7eedc2040f8c32a1870dcd1018ac0e20e4feab3b9a45a8152764dcc11a6e860e"
+  url "https://files.pythonhosted.org/packages/8e/e0/58bfb461d4cf41aaa673957308ed66a251e7f6aa78acde36360f800d84ae/kaskade-4.0.6.tar.gz"
+  sha256 "8f88866fdb275f14be05e6e137718b7bc9667aa52434e8f21e37267b8b8a7337"
   license "MIT"
-  revision 4
   head "https://github.com/sauljabin/kaskade.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "c7e20c5370e68c03530d9e60dad4120c1dc18036588c22380a9205db1c03461e"
-    sha256 cellar: :any,                 arm64_sequoia: "c5a2e5a440bee1ec5cc20bc6fc19e0654fca9025e48c7b33457ff9b5b6cbbad7"
-    sha256 cellar: :any,                 arm64_sonoma:  "cc6889e6cffb1f3c389d50ae104241260e4a1e46f45d381feb6f9e44d4cf477b"
-    sha256 cellar: :any,                 sonoma:        "43f144b7461f3ea9ec934f0f66f381b6bce10036cb5d609a230e8ac8e536600e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "375adf0aaf97f7aea94aaea504d44057bca1b6966845515d4dc7a989bb104388"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5c45c35ac1950e1a107621e264b0c831d869c30ff4e9dfd65fcd458f5dea5c7"
+    sha256 cellar: :any,                 arm64_tahoe:   "fb359bd2afb1197186ce634a8a775ed5ff63ce976e6de8e811ce8dd454fd27c1"
+    sha256 cellar: :any,                 arm64_sequoia: "774698a5aa2882e61c927b18654533315a1835a126c14d4d0cfa83b0be102068"
+    sha256 cellar: :any,                 arm64_sonoma:  "470dbad7d48540b0d08b7abd0ee2e96b6c06cd65c88c8fd4adf26bb1fe01ddb9"
+    sha256 cellar: :any,                 sonoma:        "f5b901e3bb29209730b2a05eeb8f1c58490ae518c7ff94d97d83d47111697bd3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3dde448f9ccdbdc3d50a39d4f6d4724f0a078476b2e1468ae00a5b8d4529428d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c090305ba623a7d1da4d6b38b9c11836c44d589906389fa4ea7053ce80f9d54"
   end
 
   depends_on "rust" => :build # for orjson
@@ -44,8 +42,8 @@ class Kaskade < Formula
   end
 
   resource "avro" do
-    url "https://files.pythonhosted.org/packages/e6/73/48668732bbc8ae1e79b237f84e761204c8dd266c5e16e7601000aba471d3/avro-1.12.0.tar.gz"
-    sha256 "cad9c53b23ceed699c7af6bddced42e2c572fd6b408c257a7d4fc4e8cf2e2d6b"
+    url "https://files.pythonhosted.org/packages/60/00/af1eec633637e12d0945a97f05a429eed83ac45865af60cb453db4689d95/avro-1.12.1.tar.gz"
+    sha256 "c5b8dd2dd4c10816f0dc127cc29cfd43b5e405cf7e6840e89460a024bf3d098d"
   end
 
   resource "cachetools" do
@@ -69,8 +67,8 @@ class Kaskade < Formula
   end
 
   resource "confluent-kafka" do
-    url "https://files.pythonhosted.org/packages/78/5e/ceed3dd7e69ecdb1197b625fd6248fa1bbb44782def202609421b8a273fa/confluent_kafka-2.12.0.tar.gz"
-    sha256 "2a8d8734c6eaf30a751dde2ad75fc78b35aad60d66a3a7aa837c7513f36c29b7"
+    url "https://files.pythonhosted.org/packages/d5/d6/10799cbc9ad757170eb466eaadfaf2abde1d832b6d67d7ff040179888272/confluent_kafka-2.12.1.tar.gz"
+    sha256 "cfc4ceeb3071a678f7c93cfe1e76216442e1621ee6192584cdf704db1d619894"
   end
 
   resource "fastavro" do
@@ -79,8 +77,8 @@ class Kaskade < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/39/24/33db22342cf4a2ea27c9955e6713140fedd51e8b141b5ce5260897020f1a/googleapis_common_protos-1.70.0.tar.gz"
-    sha256 "0e1b44e0ea153e6594f9f394fef15193a68aaaea2d843f83e2742717ca753257"
+    url "https://files.pythonhosted.org/packages/e5/7b/adfd75544c415c487b33061fe7ae526165241c1ea133f9a9125a56b39fd8/googleapis_common_protos-1.72.0.tar.gz"
+    sha256 "e55a601c1b32b52d7a3e65f43563e2aa61bcd737998ee672ac9b951cd49319f5"
   end
 
   resource "h11" do
@@ -134,8 +132,8 @@ class Kaskade < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/be/4d/8df5f83256a809c22c4d6792ce8d43bb503be0fb7a8e4da9025754b09658/orjson-3.11.3.tar.gz"
-    sha256 "1c0603b1d2ffcd43a411d64797a19556ef76958aef1c182f22dc30860152a98a"
+    url "https://files.pythonhosted.org/packages/c6/fe/ed708782d6709cc60eb4c2d8a361a440661f74134675c72990f2c48c785f/orjson-3.11.4.tar.gz"
+    sha256 "39485f4ab4c9b30a3943cfe99e1a213c4776fb69e8abd68f66b83d5a0b0fdc6d"
   end
 
   resource "platformdirs" do
@@ -144,8 +142,8 @@ class Kaskade < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/fa/a4/cc17347aa2897568beece2e674674359f911d6fe21b0b8d6268cd42727ac/protobuf-6.32.1.tar.gz"
-    sha256 "ee2469e4a021474ab9baafea6cd070e5bf27c7d29433504ddea1a4ee5850f68d"
+    url "https://files.pythonhosted.org/packages/19/ff/64a6c8f420818bb873713988ca5492cba3a7946be57e027ac63495157d97/protobuf-6.33.0.tar.gz"
+    sha256 "140303d5c8d2037730c548f8c7b93b20bb1dc301be280c378b82b8894589c954"
   end
 
   resource "pygments" do
@@ -179,8 +177,8 @@ class Kaskade < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/ff/51/51a0863339c4c3fa204f43044e52dfd688a7ee2ba2c987e021acc9583a42/textual-6.3.0.tar.gz"
-    sha256 "a89c557fa740611551dcf4f93643f33853eca488183ef5882200dde8e94315e8"
+    url "https://files.pythonhosted.org/packages/af/90/59757aa887ddcea61428820274f1a2d1f986feb7880374a5420ab5d37132/textual-6.5.0.tar.gz"
+    sha256 "e5f152cdd47db48a635d23b839721bae4d0e8b6d855e3fede7285218289294e3"
   end
 
   resource "typing-extensions" do
@@ -199,10 +197,6 @@ class Kaskade < Formula
   end
 
   def install
-    # Unpin python for 3.14
-    # Issue ref: https://github.com/sauljabin/kaskade/issues/65
-    inreplace "pyproject.toml", 'requires-python = ">=3.10,<3.14"', 'requires-python = ">=3.10"'
-
     # hatch does not support a SOURCE_DATE_EPOCH before 1980.
     # Remove after https://github.com/pypa/hatch/pull/1999 is released.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"

@@ -3,7 +3,11 @@ class B3sum < Formula
   homepage "https://github.com/BLAKE3-team/BLAKE3"
   url "https://ghfast.top/https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/1.8.2.tar.gz"
   sha256 "6b51aefe515969785da02e87befafc7fdc7a065cd3458cf1141f29267749e81f"
-  license any_of: ["CC0-1.0", "Apache-2.0"]
+  license any_of: [
+    "CC0-1.0",
+    "Apache-2.0",
+    "Apache-2.0" => { with: "LLVM-exception" },
+  ]
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e07d5d585f8a33c42965dc6da2b1d46898bda73e1b604a63c562b73603be1c3e"
@@ -21,15 +25,12 @@ class B3sum < Formula
   def install
     cd "b3sum" do
       system "cargo", "install", *std_cargo_args
+      buildpath.install "README.md"
     end
   end
 
   test do
-    (testpath/"test.txt").write <<~EOS
-      content
-    EOS
-
-    output = shell_output("#{bin}/b3sum test.txt")
-    assert_equal "df0c40684c6bda3958244ee330300fdcbc5a37fb7ae06fe886b786bc474be87e  test.txt", output.strip
+    output = pipe_output(bin/"b3sum", "content\n", 0)
+    assert_equal "df0c40684c6bda3958244ee330300fdcbc5a37fb7ae06fe886b786bc474be87e  -", output.strip
   end
 end

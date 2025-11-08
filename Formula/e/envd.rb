@@ -1,18 +1,18 @@
 class Envd < Formula
   desc "Reproducible development environment for AI/ML"
   homepage "https://envd.tensorchord.ai"
-  url "https://ghfast.top/https://github.com/tensorchord/envd/archive/refs/tags/v1.2.6.tar.gz"
-  sha256 "755cc5a14622f4094e3df944eeaeaf53251ecc59a9d74e386cb7bdbe496a9366"
+  url "https://ghfast.top/https://github.com/tensorchord/envd/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "39755a0a1c4affa4de07b608e49728e9dec5aa69217d1ec75f83983219e30fd4"
   license "Apache-2.0"
   head "https://github.com/tensorchord/envd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4177e7aaa1042c994ee52caad00736815599a9a1ad6acb47d3a48094d50da97b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8da1950ccc93011216a4b4f9f43a3d1ff5b91affd829cdb660642b508b0da2c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3ff71edee0e518f4c03205a36be9b87c91c1a542c6b6057577d9d749c56eb06"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b5a2e950350ed5062a323c9e2a15d1491edbc948c7da77afc1096dd635cd3849"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e5552b7f9a7df500c605453bf4ecffa4b41761b7667a9d7ca0363dd78c6eee9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76c3b235048c112ce9ceac168f6ca589d7fbc829b83bfa9487414725f923fe7e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aff5a32b2199fbd8d6f754310cb5dfa053334018274e9933407be72dd7f92f0a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7480cae73fffdc70e78811bca10f228603f038285ea400519f2b6fc806c35fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9986acefcce47fd3c0f6096e4b1a2086a6f23a28427caa38c4189f11c62e7eee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c8a6746bbdfbf9c885f32713f643cf36924155ec67c4e33fa90603f92b9d09a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a808572f4df945685b4af45ee7f6a80097e0f15cca3f84c8d22836541f054dee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17cb007c8a6b7015ac2df50fb15efc094279fa2d62faa0e2fedf6a7f737dee5a"
   end
 
   depends_on "go" => :build

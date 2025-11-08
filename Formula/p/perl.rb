@@ -7,7 +7,7 @@ class Perl < Formula
   head "https://github.com/perl/perl5.git", branch: "blead"
 
   livecheck do
-    url "https://www.cpan.org/src/"
+    url "https://www.cpan.org/src/#{version.major}.0/"
     regex(/href=.*?perl[._-]v?(\d+\.\d*[02468](?:\.\d+)*)\.t/i)
   end
 

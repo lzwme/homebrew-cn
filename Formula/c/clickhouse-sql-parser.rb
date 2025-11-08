@@ -1,18 +1,18 @@
 class ClickhouseSqlParser < Formula
   desc "Writing clickhouse sql parser in pure Go"
   homepage "https://github.com/AfterShip/clickhouse-sql-parser"
-  url "https://ghfast.top/https://github.com/AfterShip/clickhouse-sql-parser/archive/refs/tags/v0.4.15.tar.gz"
-  sha256 "b07b0d2cbbea62daefd4412778f7acd061f8298402c43036c9330b222b15d6e4"
+  url "https://ghfast.top/https://github.com/AfterShip/clickhouse-sql-parser/archive/refs/tags/v0.4.16.tar.gz"
+  sha256 "77c9207ccf7793a1682129dee09e58a209adfce550232193124e1c7472591e2f"
   license "MIT"
   head "https://github.com/AfterShip/clickhouse-sql-parser.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f1c26f976b3a1aeb151025394087b0623a5334585e813297fe4897bce78ce5b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f1c26f976b3a1aeb151025394087b0623a5334585e813297fe4897bce78ce5b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f1c26f976b3a1aeb151025394087b0623a5334585e813297fe4897bce78ce5b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "349af1263521d225df38c673230d8c92bc57834b0fa800394fad2d449f5f4bee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "65f5e7c7b77854ac1b71795ec594da3da8bc6676abb92f05eb2682da2dfa9d43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "291aca143b72d22d597f0442feb41149872a343a7c0f82d45a0cb19debc38c39"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8bf26598ac13423da3014298ae58384293ded3191e9197315c3d03cb347475a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8bf26598ac13423da3014298ae58384293ded3191e9197315c3d03cb347475a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8bf26598ac13423da3014298ae58384293ded3191e9197315c3d03cb347475a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0eb733f0efcc0cbff19f333aa7184ae51e93a93e71aa1a726048cf1f559152fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "990663143d2dcdace0fdf9bc5836296f4206ede1a99b97ac03c593fbecbae2c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e99977060bf01d74e769702b07900bfc5ad1fdd26e9998d826d48d5f946020df"
   end
 
   depends_on "go" => :build

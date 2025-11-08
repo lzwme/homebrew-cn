@@ -1,18 +1,17 @@
 class Colmap < Formula
   desc "Structure-from-Motion and Multi-View Stereo"
   homepage "https://colmap.github.io/"
-  url "https://ghfast.top/https://github.com/colmap/colmap/archive/refs/tags/3.12.6.tar.gz"
-  sha256 "f66d34be7a738fa753d1b71aec4fb7411d8c117beb58d1f2ba84ee2696c96410"
+  url "https://ghfast.top/https://github.com/colmap/colmap/archive/refs/tags/3.13.0.tar.gz"
+  sha256 "98a8f8cf6358774be223239a9b034cc9d55bf66c43f54fc6ddea9128a1ee197a"
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "636dda7a476847cd390b24ccfaa54588a068b4cc5a21b0ff55ef2f116272f27a"
-    sha256 cellar: :any,                 arm64_sequoia: "aee8f246d50e04e7c3cc551627e890632f9038a9abd97fe421e71cec2217c38f"
-    sha256 cellar: :any,                 arm64_sonoma:  "8799ef68c3de223d423ce3fc3dab7dfc2adf1d0b9afeff0f30ab37305e06b577"
-    sha256 cellar: :any,                 sonoma:        "0eec12940518cd5aa0866ba3b875580d6ef6691eaadf7b3d93cf2a21fc40ffae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5c13c1c6f5217714b9b805c33155242824fb00bb38161ce2e06d720ce75fd90"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04bed90470071ac42ca664ed2e86df2f58ddce598bff88bbde1619b5236ed96d"
+    sha256 cellar: :any,                 arm64_tahoe:   "2bb0d7ab5ba3fe96e0b6e1c0c81ef9f2f5ed137db4820c1925d6841c1e3737af"
+    sha256 cellar: :any,                 arm64_sequoia: "0f7fe9af2233e8bf143eeab4aef89ff69a2b234cc898c8f2e70c8387b72b59ec"
+    sha256 cellar: :any,                 arm64_sonoma:  "080acb7ada884629974b56d60b3887ba694af02126c4559581eed3fbace229f5"
+    sha256 cellar: :any,                 sonoma:        "539ee7c51dda5fc6a8b3156b6791ba26a7ffbeee53d1cef646b0788c4f995c38"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "93275bad43506351576c3408ab36c20ef18ffc37f63e7c99958ae21c8f211c73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be708787b8b54ba370f8d99f23b000842dea7cc76b286f2be65e93ee6c3b85c3"
   end
 
   depends_on "cmake" => :build

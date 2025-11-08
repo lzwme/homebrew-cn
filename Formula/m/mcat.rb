@@ -17,6 +17,8 @@ class Mcat < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "mtools", because: "both install `mcat` binaries"
+
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/core")
 

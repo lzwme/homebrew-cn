@@ -8,12 +8,13 @@ class Mailutils < Formula
   revision 1
 
   bottle do
-    sha256 arm64_tahoe:   "cdba3d1331e33e64f389b2795c7dc3c9b959d0595d9077950e35a61c867e0db2"
-    sha256 arm64_sequoia: "08b55cfd3926a5fd45693591c7ac4c0da39149fa8c28fbcfae097848eda659c2"
-    sha256 arm64_sonoma:  "f1c0211a199b18c353026162e6c3cfea238458f5fc4eac45f976f19e7a3f0f91"
-    sha256 sonoma:        "5b7387ebdf85f25c6acccd1cec3691a971c05755efb56eff8a98830475947e5d"
-    sha256 arm64_linux:   "86fb0ff32496469f2376f994228719e6ad518b4e2e01ad05903bd94dd2b880f2"
-    sha256 x86_64_linux:  "5e4b9084e16b4cd161693e803c657a9c19ea6f145b1d9a2f4cda323a5429b8ac"
+    rebuild 1
+    sha256 arm64_tahoe:   "3ae52cae191219da35d841df60f919cd66d7a5cdabcfed6e8de2f20555926038"
+    sha256 arm64_sequoia: "8d9b031ee3adcf94f41e0c4dda3f1877f334e357295ac65f80d61ca54ec8f220"
+    sha256 arm64_sonoma:  "ec1f00fa1a4169d4ad5a5eff18532916d7e6606edd13f2ab1515a3573c04d510"
+    sha256 sonoma:        "c8955a3e02a5ed11425f4ba397ab0ecdcb223c8097da184e3c6adffe2e43284a"
+    sha256 arm64_linux:   "28649f27d729c35f82b1aa948c8c3bf228396b81336147a992565eb62ee44ec3"
+    sha256 x86_64_linux:  "53a84459cde0d2bb37a9e97a0bef949666d2b4ab940eb8474467a185a83c8c43"
   end
 
   depends_on "gdbm"
@@ -24,7 +25,6 @@ class Mailutils < Formula
   depends_on "readline"
 
   uses_from_macos "libxcrypt"
-  uses_from_macos "python"
 
   on_macos do
     depends_on "gettext"
@@ -38,6 +38,7 @@ class Mailutils < Formula
     end
 
     system "./configure", "--disable-mh",
+                          "--disable-python",
                           "--disable-silent-rules",
                           "--without-fribidi",
                           "--without-guile",

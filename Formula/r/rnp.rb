@@ -4,7 +4,7 @@ class Rnp < Formula
   url "https://ghfast.top/https://github.com/rnpgp/rnp/releases/download/v0.18.0/rnp-v0.18.0.tar.gz"
   sha256 "a90e3ac5b185a149665147f9284c0201a78431e81924883899244522fd3f9240"
   license all_of: ["MIT", "BSD-2-Clause", "BSD-3-Clause"]
-  revision 1
+  revision 2
   head "https://github.com/rnpgp/rnp.git", branch: "main"
 
   livecheck do
@@ -13,14 +13,12 @@ class Rnp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5bc131fa488e241c842a559ef99f1af00a02860c0c50cf578aa6ae63a9e39c62"
-    sha256 cellar: :any,                 arm64_sequoia: "c0863e62cfd19c4ed109c9332159b17f7ae23217045b501d61d6ccf76f6992d0"
-    sha256 cellar: :any,                 arm64_sonoma:  "50710472292623c87a9b3be1ff88f51c2b95f466854461e3a6b297eb1bc1ce27"
-    sha256 cellar: :any,                 arm64_ventura: "d63ed87e2cd63d7bb147a563508a3e7538ef9bc9a0257a500b133d67deef2aea"
-    sha256 cellar: :any,                 sonoma:        "af41bf6b0e21af8d9c40258447518aa2f8aa1ab6c7cd338961441c2c605b6cb3"
-    sha256 cellar: :any,                 ventura:       "531575b35f6da98ff16ebf4482c3f5e6ebcedd7a81a1df7881db49c85da2e204"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e4c0c648c3e7a1c427fef882e2458f6615e19c64f796886d7dacd29194550be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7eac4eb4fd83b477a733f074a0e7b1ad605a67d0957e8d186e70fbb296d2bd3"
+    sha256 cellar: :any,                 arm64_tahoe:   "1bd7e9485c9b0ea2aa7c6d787eddae43b1fa99d11d8e5626f9199457eac31d49"
+    sha256 cellar: :any,                 arm64_sequoia: "747467a9855d3235028bac5b0ad50e5ad82526d33a3c51eec2d1c274da06e636"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac081ab0a5b46a25feab56660944e1a39467e620f74e7e66409b43a1777a6848"
+    sha256 cellar: :any,                 sonoma:        "959d0d675313ea0d9a67e0f0d0b7885e90b41494ecd4f87a0d261e1977f8091c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "83e9ca9151e174cd4efecebfdddf29215895a3af79ebfecb1acb9be2d43d94c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74cd62eb2b625bd930518c0bdc7b9b8fce3101dd7ac96580441408382ae1576e"
   end
   depends_on "cmake" => :build
   depends_on "botan"

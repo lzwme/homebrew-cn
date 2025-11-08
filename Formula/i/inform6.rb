@@ -8,7 +8,7 @@ class Inform6 < Formula
   head "https://gitlab.com/DavidGriffith/inform6unix.git", branch: "master"
 
   livecheck do
-    url "https://ifarchive.org/if-archive/infocom/compilers/inform6/source/"
+    url "https://ifarchive.org/indexes/if-archive/infocom/compilers/inform6/source/"
     regex(/href=.*?inform[._-]v?(\d+(?:[.-]\d+)+(?:[._-]r\d+)?)\.t/i)
   end
 
