@@ -4,6 +4,7 @@ class LibtorrentRakshasa < Formula
   url "https://ghfast.top/https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.16.2.tar.gz"
   sha256 "68391b28a55cb039eb385a20cc9333ade0646bea4d13c05e2b40c080d33c7505"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,12 +12,12 @@ class LibtorrentRakshasa < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ae0771129005a0bbf084187d05c469d147316b4718b8c101f03c0752abf39e1c"
-    sha256 cellar: :any,                 arm64_sequoia: "e91a14a3a1eddf59272e6dd3085942728d98eb39af80e4b5f0731b713597c4fe"
-    sha256 cellar: :any,                 arm64_sonoma:  "90d91b3d5165b623bee6bb1f56dd696b66a651be5b9619878698cb456336b595"
-    sha256 cellar: :any,                 sonoma:        "2aaf34648bf8c0b6352516c88c08a23b474a4ef0f7299b33430d57227ac29f7f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "324fb7f349055b2699b6f9880da2105c150883a00ff883e9acefe0de4af8850b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "203059f9361d69a2b31ddbfbb91f2421eacd8a21d465a943dbb433475ba4b278"
+    sha256 cellar: :any,                 arm64_tahoe:   "725f81dba44edbe035a6b4f2a1cf7914fba50bcfc5dc5859705185bd2cccc6fd"
+    sha256 cellar: :any,                 arm64_sequoia: "e8f5099c09b77536103376b306d20e9595c8c331fd2ac6c0a6541fbaeab4b7cb"
+    sha256 cellar: :any,                 arm64_sonoma:  "84443108841927551062ca7844210dec04feba32177152595eb95ace0ba133fa"
+    sha256 cellar: :any,                 sonoma:        "fca0654eb0eeda71f2a1898ec1ba6f6fef195434a975a80d8ed1b4dc2f52a7b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3196b28a608db5dcd3e3289fdc2cfb1601c14ed608bfad425843e71bf7de1b6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10f72d3df10c7d7dc807a469a906115f9968cd477d62f933ae8a255f354b8a01"
   end
 
   depends_on "autoconf" => :build
@@ -29,6 +30,12 @@ class LibtorrentRakshasa < Formula
   uses_from_macos "zlib"
 
   conflicts_with "libtorrent-rasterbar", because: "both use the same libname"
+
+  # Backport fix for arm64 page size
+  patch do
+    url "https://github.com/rakshasa/libtorrent/commit/b16ecf23fde95857a462dd4cb3545b4ea9408aca.patch?full_index=1"
+    sha256 "d40e3f46691e6ac0f6c238823a65d59cad102c905c3714505d3f710b55821dca"
+  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"

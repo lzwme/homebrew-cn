@@ -3,20 +3,19 @@ class Pytest < Formula
 
   desc "Simple powerful testing with Python"
   homepage "https://docs.pytest.org/en/latest/"
-  url "https://files.pythonhosted.org/packages/a3/5c/00a0e072241553e1a7496d638deababa67c5058571567b92a7eaa258397c/pytest-8.4.2.tar.gz"
-  sha256 "86c0d0b93306b961d58d62a4db4879f27fe25513d4b969df351abdddb3c30e01"
+  url "https://files.pythonhosted.org/packages/da/1d/eb34f286b164c5e431a810a38697409cca1112cee04b287bb56ac486730b/pytest-9.0.0.tar.gz"
+  sha256 "8f44522eafe4137b0f35c9ce3072931a788a21ee40a2ed279e817d3cc16ed21e"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "cb4c17ce52d0a40e77c384ce0c241eced92764e6d7601c95a1f6df61273b93d3"
+    sha256 cellar: :any_skip_relocation, all: "33d5a2f218a2009ca4f04b8348bc851aeaf81a940e8b2bd38428044d03aa889f"
   end
 
   depends_on "python@3.14"
 
   resource "iniconfig" do
-    url "https://files.pythonhosted.org/packages/f2/97/ebf4da567aa6827c909642694d71c9fcf53e5b504f2d96afea02718862f3/iniconfig-2.1.0.tar.gz"
-    sha256 "3abbd2e30b36733fee78f9c7f7308f2d0050e88f0087fd25c2645f63c773e1c7"
+    url "https://files.pythonhosted.org/packages/72/34/14ca021ce8e5dfedc35312d08ba8bf51fdd999c576889fc2c24cb97f4f10/iniconfig-2.3.0.tar.gz"
+    sha256 "c76315c77db068650d49c5b56314774a7804df16fee4402c1f19d6d15d8c4730"
   end
 
   resource "packaging" do

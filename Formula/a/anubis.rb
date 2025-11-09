@@ -1,8 +1,8 @@
 class Anubis < Formula
   desc "Protect resources from scraper bots"
   homepage "https://anubis.techaro.lol"
-  url "https://ghfast.top/https://github.com/TecharoHQ/anubis/archive/refs/tags/v1.22.0.tar.gz"
-  sha256 "81b45cf8d210927c6bdf81b4d925734b623e0c0c3f04f48c2034a85eea3bcd32"
+  url "https://ghfast.top/https://github.com/TecharoHQ/anubis/archive/refs/tags/v1.23.1.tar.gz"
+  sha256 "55bf6d6ee6a1372604816b2bac08e7d6850f747a0c86bcdf9eca1be281feffab"
   license "MIT"
   head "https://github.com/TecharoHQ/anubis.git", branch: "main"
 
@@ -12,16 +12,15 @@ class Anubis < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2211e6b6502c41dd5fc0c6a2676050c6f91f621c169effb80e81a26bf26f9965"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d65a937abb523e9b114d2ed65efba6c358657cd68016ff1861be37dcdf69bc1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8c927116bc136769bbbbec15ecc5ac0b53c3485949038d9be623a8d65bcb747"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "32fa71019c675cf01dffa9ff5fc619016fa3b9b8b2c1cabc737cf6fafbef7bbb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ed3379344e5ec7af017eb02062b21c3906f4c280fd1e6982ce7f632bcf08b7a3"
-    sha256 cellar: :any_skip_relocation, ventura:       "6a5e15acb5c16f7953658d62adc9ed630c544d7d1fe45f89e6d02c28cdc8d4de"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b09dae0f088230fce50061b765e14670918deac828d5ecb76e9e09644e56b0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef17f1e143a3f82ca4a9291e51b6490a1dc0564ad5972f9284261fc48c2be72d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81bc0dccfe364179a4d85eb88444a905558711719d37f6de65fc2c70836b247d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22cc45cc4abc41185037efb28b37f12eb1ed3da41f297acc6749e376ad3a5167"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a94c85651a045923e7d0e95bd4b77855ec2c04756b7574288cc413637921bdb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d660357ec790c0abe3629ce8a113dde57fb3a7cc9efe7735756a8049bc4365e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "48ec4f5756c54aa197f905bdca29904fff4b4ea90bbba731515dff065ee0992a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ddffe7933f8dd924b8f36bad677657d3e6af1b1d524f5dce886910c326f1338"
   end
 
+  depends_on "bash" => :build # error: shopt: globstar: invalid shell option name on macos
   depends_on "brotli" => :build
   depends_on "go" => :build
   depends_on "node" => :build

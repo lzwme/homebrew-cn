@@ -1,9 +1,9 @@
 class Dnote < Formula
   desc "Simple command-line notebook"
   homepage "https://www.getdnote.com"
-  url "https://ghfast.top/https://github.com/dnote/dnote/archive/refs/tags/cli-v0.15.5.tar.gz"
-  sha256 "923e959d32885f01e426e37e7240bf9a66addbdfd95620846fa535e4b7f7d2e4"
-  license "GPL-3.0-only"
+  url "https://ghfast.top/https://github.com/dnote/dnote/archive/refs/tags/cli-v0.16.0.tar.gz"
+  sha256 "fb63c6099ca441a2027a9e8ae2a3c38376e5c0950bef9e8028b96ca2b8b6427f"
+  license "Apache-2.0"
   head "https://github.com/dnote/dnote.git", branch: "master"
 
   livecheck do
@@ -12,12 +12,12 @@ class Dnote < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d1f9861be49752fdd4cc12e1f224a293b7cfafadbcb68fc83d56e05d3c31d0b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60fcee308d5b2b28360906f0fe521a9cfefc65ca1330e2609864196b7ebd2bcd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ce8f4168857e20b7d1420ce634f41c22a3c3920c2b79562a6292019e050ff6e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "35bcefd91e7cb410295ff6a2c7620e0e139dd6dc826d284e7bf7edeb36922890"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a8e4f4ff67602a4ff1af0178b99aef9bea54b38f6afbf89d10310ed4dfc3931"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a293df56230be458f2c7131841f37a352d0b234d62f4929f47a9085e76df8660"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f637f4ab476f78b3958461227122f698b0f11f7ea63b24db9e58c3c766b075e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "883b47fc6eb59dc29cf6bdda3fd5733da9268dd3b5bef0d8a3dd39b3a6fe2be2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46f67f0f6bed3576a601c8de799a14c46a239b43971ddac113fab02fc3f05b88"
+    sha256 cellar: :any_skip_relocation, sonoma:        "55ef785d358763e6266ad5d5d806cd7bd115b25841b5d161537881babc60f91b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f11ba266b712e74a4a06caccd74592e975eba3e8157e88ed64bd0e228ade1e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f51a5368322863db842812dde4cd9ddc1db22feecf5fc7c937012c40155c28dd"
   end
 
   depends_on "go" => :build
@@ -25,7 +25,7 @@ class Dnote < Formula
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
-    ldflags = "-s -w -X main.versionTag=#{version} -X main.apiEndpoint=http://localhost:3000/api"
+    ldflags = "-s -w -X main.versionTag=#{version} -X main.apiEndpoint=http://localhost:3001/api"
     system "go", "build", *std_go_args(ldflags:, tags: "fts5"), "./pkg/cli"
   end
 

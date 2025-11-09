@@ -1,8 +1,8 @@
 class Teleport < Formula
   desc "Modern SSH server for teams managing distributed infrastructure"
   homepage "https://goteleport.com/"
-  url "https://ghfast.top/https://github.com/gravitational/teleport/archive/refs/tags/v18.3.1.tar.gz"
-  sha256 "b3989e78ef18732f19c3cd93e450b9564b1d0e59362b7a75a72e5ad9a67d2682"
+  url "https://ghfast.top/https://github.com/gravitational/teleport/archive/refs/tags/v18.3.2.tar.gz"
+  sha256 "2037cc66c0a0466d68b9e04753f555eb92dcecdb281af46d86978e4fbbf61357"
   license all_of: ["AGPL-3.0-or-later", "Apache-2.0"]
   head "https://github.com/gravitational/teleport.git", branch: "master"
 
@@ -18,12 +18,12 @@ class Teleport < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "63db350fd67a818947b679ec112de0c1492fa2cebf82053e91300e1137107bb1"
-    sha256 cellar: :any,                 arm64_sequoia: "9feb0bac6a0fd0341f2cade26d396ffed10b1999a0dada9e2abddcc553ce691d"
-    sha256 cellar: :any,                 arm64_sonoma:  "3f343532bac304eda934c691864ecdb29abff31fb305c98a3a470bbc7228d7ec"
-    sha256 cellar: :any,                 sonoma:        "76f3ea64faacf6d7c50b99180a7b24c71f3e97f97cea9cdd361041aeca2f02f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0483bcc3b944d1364b2bc737d313eab83bdca3863763564815b31432ef711a14"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3ed6181f9000521b3a538a595ecbcc87519f22c3939cef2709a3103945fdd18"
+    sha256 cellar: :any,                 arm64_tahoe:   "9b7b635653586fce788a2df0d26c5138d3de6e0399c95d6af86874295618b04e"
+    sha256 cellar: :any,                 arm64_sequoia: "213136635de7fa56815eee9190569c818a782c3378ffa6ed9fc57f0e7657d1e7"
+    sha256 cellar: :any,                 arm64_sonoma:  "8a13cadbef651da6a621eef051436362df76fe2046432b66ef5137ebc7ff378f"
+    sha256 cellar: :any,                 sonoma:        "13cff5173839ad282323938700184714263b4462fe1001742d7e7b71528e83e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6eda317834d64d7c531b57766472846dcd2067d4d3ed43c55d5872ea599487eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f1af1fa3a76e3f9fe143a61ad036093c2c6cbb4d513d7225961b17ffc45ecff"
   end
 
   depends_on "go" => :build

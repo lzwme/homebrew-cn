@@ -3,13 +3,12 @@ class Instaloader < Formula
 
   desc "Download media from Instagram"
   homepage "https://instaloader.github.io/"
-  url "https://files.pythonhosted.org/packages/54/c3/55d75581c322a58adb3a9b10dd50a232b47cd7afb5feac86c47496d6e1d9/instaloader-4.14.2.tar.gz"
-  sha256 "e9205098e6ec494cdfe2aef6c56805084cef4008a06d4d78504301f42f8e4d33"
+  url "https://files.pythonhosted.org/packages/d1/38/f82de9f71d6b8403f5b752d8eab4e466ac99c237ec8c642548a544948f23/instaloader-4.15.tar.gz"
+  sha256 "baf1c29ba16f9d30f7c6e330a00bc1fca100522bb3a217d3c36ad620eb744685"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "e8e600f776971d0c2abcb27d1377ff520c946ea31242e967687ac10e02135969"
+    sha256 cellar: :any_skip_relocation, all: "e67efbe437dcf0774f7e8f8c15a713a11d25cada5bb3ac8bdead58c52155cbd6"
   end
 
   depends_on "certifi" => :no_linkage

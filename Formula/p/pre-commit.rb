@@ -3,19 +3,18 @@ class PreCommit < Formula
 
   desc "Framework for managing multi-language pre-commit hooks"
   homepage "https://pre-commit.com/"
-  url "https://files.pythonhosted.org/packages/ff/29/7cf5bbc236333876e4b41f56e06857a87937ce4bf91e117a6991a2dbb02a/pre_commit-4.3.0.tar.gz"
-  sha256 "499fe450cc9d42e9d58e606262795ecb64dd05438943c62b66f6a8673da30b16"
+  url "https://files.pythonhosted.org/packages/a6/49/7845c2d7bf6474efd8e27905b51b11e6ce411708c91e829b93f324de9929/pre_commit-4.4.0.tar.gz"
+  sha256 "f0233ebab440e9f17cabbb558706eb173d19ace965c68cdce2c081042b4fab15"
   license "MIT"
   head "https://github.com/pre-commit/pre-commit.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "68539bbf76255e4ad5fc5a17964ba30501238cb093a7dd7dfe43b2194e68f9eb"
-    sha256 cellar: :any,                 arm64_sequoia: "49391e8a3fced6ef0771634063b4d3fb3652cf34956571b13bcc7494fc086d05"
-    sha256 cellar: :any,                 arm64_sonoma:  "14203088fd2ff4ec749112ebb5d76ee45da5ef748e74d837b5a864d925e75bf8"
-    sha256 cellar: :any,                 sonoma:        "94bd944ac86f44ae5969ae93aa5ec1397afd330ab6826e34c0731bf540039e7a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67d35d7e19d9537bb070d6293a98dd9ec3c45ece7c0a02479384cc8e88058942"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0569196fdb4a85648ce0d89f369ed96033538aef91a81f6c6c1335a0350832e0"
+    sha256 cellar: :any,                 arm64_tahoe:   "84beef7286a41b6594cc63b37e5e8280608586a564b5b2a583e82c78da5f0fd7"
+    sha256 cellar: :any,                 arm64_sequoia: "b847fcfcb05c1814510fc92dbf1ed837f8a77de8352e2ae551a083229508c980"
+    sha256 cellar: :any,                 arm64_sonoma:  "f8657da3e7019d198498d05c8cae9dfe66461ae4aefed254098ed9a1286aa179"
+    sha256 cellar: :any,                 sonoma:        "7242caf968d1545eeab363d2354d648927e185342ec469dbcffbb8d035706a47"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bf7f69499faafd7860b470b81cb4f73ef3e7cf8b0b2f25b5d145b0b0b670c5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a866a151c256f853fcc3561ff2daeb72bb3c1175d03702823605b477926b8e8d"
   end
 
   depends_on "libyaml"
@@ -57,8 +56,8 @@ class PreCommit < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/a4/d5/b0ccd381d55c8f45d46f77df6ae59fbc23d19e901e2d523395598e5f4c93/virtualenv-20.35.3.tar.gz"
-    sha256 "4f1a845d131133bdff10590489610c98c168ff99dc75d6c96853801f7f67af44"
+    url "https://files.pythonhosted.org/packages/20/28/e6f1a6f655d620846bd9df527390ecc26b3805a0c5989048c210e22c5ca9/virtualenv-20.35.4.tar.gz"
+    sha256 "643d3914d73d3eeb0c552cbb12d7e82adf0e504dbf86a3182f8771a153a1971c"
   end
 
   def python3

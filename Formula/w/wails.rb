@@ -1,20 +1,18 @@
 class Wails < Formula
   desc "Create beautiful applications using Go"
   homepage "https://wails.io"
-  url "https://ghfast.top/https://github.com/wailsapp/wails/archive/refs/tags/v2.10.2.tar.gz"
-  sha256 "864b53f22ca98ed17e456b352ec4691cfc2105bdcb23e87df8f826035b08d8c0"
+  url "https://ghfast.top/https://github.com/wailsapp/wails/archive/refs/tags/v2.11.0.tar.gz"
+  sha256 "3dbdf683ce67968c1319436950e6da1f27e6d64802d477105fc4d7a60be19860"
   license "MIT"
   head "https://github.com/wailsapp/wails.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03848759d3b2c81aeb25b57dd4eb3cd16d4e51039628d8c7f95475c6b4166a5d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6f98b0a5d0c15753a4410eb2580d4b663b8c91862d873af5789ccc0c9296be9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6f98b0a5d0c15753a4410eb2580d4b663b8c91862d873af5789ccc0c9296be9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f6f98b0a5d0c15753a4410eb2580d4b663b8c91862d873af5789ccc0c9296be9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e0cca6feb3ce022ff0875c747eb3440925aa672dda5b791bf7515e161f6354fc"
-    sha256 cellar: :any_skip_relocation, ventura:       "e0cca6feb3ce022ff0875c747eb3440925aa672dda5b791bf7515e161f6354fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "887c9deaecbf4f4864a42d516644477c8b52ddbc84a570334d19aa893b094aba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "199bb21c9f41e82c78e3b5c50c9ebe71bec297615d91deb6c323bfc8c8e47510"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8ceeaba87cb335e3b3c8c555001bb253c327747a99f6a17d1ef1e0e8ce28142"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8ceeaba87cb335e3b3c8c555001bb253c327747a99f6a17d1ef1e0e8ce28142"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8ceeaba87cb335e3b3c8c555001bb253c327747a99f6a17d1ef1e0e8ce28142"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b0dd839322e7011cb16696a82d861492ce9628c74f538ff6a37735126030f7f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60be7b63e0872b04ebec623f9db82f5ac391c66742cceeb1024d242287ff4d33"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aac802637550ce63eccab812d74fac2eb534a298357391dbe739c12887bd4da7"
   end
 
   depends_on "go"

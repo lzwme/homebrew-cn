@@ -2,12 +2,11 @@ class Mkvtoolnix < Formula
   desc "Matroska media files manipulation tools"
   homepage "https://mkvtoolnix.download/"
   license "GPL-2.0-or-later"
-  revision 1
 
   stable do
-    url "https://mkvtoolnix.download/sources/mkvtoolnix-95.0.tar.xz"
-    mirror "https://fossies.org/linux/misc/mkvtoolnix-95.0.tar.xz"
-    sha256 "4e5481dee444f9995c176a42b6da2d2da1ba701cabec754b29dc79ea483a194f"
+    url "https://mkvtoolnix.download/sources/mkvtoolnix-96.0.tar.xz"
+    mirror "https://fossies.org/linux/misc/mkvtoolnix-96.0.tar.xz"
+    sha256 "509a1e3aca1f63fe5cc96b4c7272ba533dbcbb69c61d1c5114dccf610fd405cb"
 
     # Backport fix for older Xcode
     patch do
@@ -22,12 +21,12 @@ class Mkvtoolnix < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4ffa8a4e2e76010558a9fabf1308ddcd348455b31e0a6b6f25a4daf9980a65df"
-    sha256 cellar: :any, arm64_sequoia: "975e2de61a2c278d5578718a0b96485763027820512d73b4350bece7cd774dfa"
-    sha256 cellar: :any, arm64_sonoma:  "763aef0db9727ee7fa50ab72d058943ceef563c3a13ff12bf7545cf128dbb004"
-    sha256 cellar: :any, sonoma:        "75493de98df5ff91b5fb346a619e9254663669d5aafa9c21969c8755fca2462c"
-    sha256               arm64_linux:   "efc17195660483fe323cea2e59f5a6bc0532c6e14cbaedc6b8befc8c165bfe92"
-    sha256               x86_64_linux:  "8b8ebbf089c8f2c6e5ba892dcffc189dc7d90cf994ed0e2395ad1acb79246912"
+    sha256 cellar: :any, arm64_tahoe:   "776e3fc01a1f51a1a1f0e9c5844b285d4af16adcee0736dfcc05acfc7cb34042"
+    sha256 cellar: :any, arm64_sequoia: "0f64a3ada75c754fa79150e02a4836d53a41a4566b84fe59bc70aee522aba679"
+    sha256 cellar: :any, arm64_sonoma:  "7208159c5de6a55aaca8a393f9f7f4eaf4c786b09d991a24f425f5c5423a62ce"
+    sha256 cellar: :any, sonoma:        "eb0b55d8318e0ca6d0036b55412f4be018c7b1e4a6815d4fbde8af3433ab098b"
+    sha256               arm64_linux:   "69d64fb1753b2a506aca453be6d02b509decb17ce8d384a0136b6385c1095719"
+    sha256               x86_64_linux:  "0e64a7c6803260c78f6b987d86cda0f39b1e1bde9ecf14c7170e0d1a225f9919"
   end
 
   head do

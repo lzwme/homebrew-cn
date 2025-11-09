@@ -1,20 +1,22 @@
 class VibeLogCli < Formula
   desc "CLI tool for analyzing Claude Code sessions"
   homepage "https://vibe-log.dev/"
-  url "https://registry.npmjs.org/vibe-log-cli/-/vibe-log-cli-0.7.6.tgz"
-  sha256 "e53b35ca24b0ad207a969e3af3b02fa4d2ac98517e8a01a021f20a5c0478988b"
+  url "https://registry.npmjs.org/vibe-log-cli/-/vibe-log-cli-0.8.0.tgz"
+  sha256 "01308991ab3ad3544520a594fa992ebc46b9d01e2b64e9936e936dbd79e27080"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c0b14ba1dc371a6ecef295ca03c3f16cabc9f7ea0ee60691fb4dcab44f7f4844"
-    sha256 cellar: :any,                 arm64_sequoia: "d094b70575adf732345dc5614e7034ae15f0bdecf750ad3b34169561d1b8ae60"
-    sha256 cellar: :any,                 arm64_sonoma:  "d094b70575adf732345dc5614e7034ae15f0bdecf750ad3b34169561d1b8ae60"
-    sha256 cellar: :any,                 sonoma:        "c26b230c27c63d330f982667036cc4354311d274daa25f26b05460ba0bfeda89"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8dbcfb956b6014317514306513ff4ce1fbb8425bc3ba0bcd479a0d7bd721a5b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd48f8cace0b9fc94bf2e5ebe65acaf177c1313bb715d54e6960b2f255c2f3f7"
+    sha256 cellar: :any,                 arm64_tahoe:   "bc8f85f16c34022756ebedbe517e078efe8438d1ae17b9a512cf3feb4c1ee9b0"
+    sha256 cellar: :any,                 arm64_sequoia: "0aff332b1ac0c1d24fe08117fa8c9725c66f4cf568d99d54109ac9360c900c39"
+    sha256 cellar: :any,                 arm64_sonoma:  "3c0d5c190fe8181e0f0b053b1df8daa74707c209adfd9c7fbdd0abaf3e883b4b"
+    sha256 cellar: :any,                 sonoma:        "5f8eca6083af9a6d21d9da0a38743321dec170dbee4ec9649ca2926b6306545f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "66254fff47f4749edeca00df3b732fd5a3af35d4174992d112260930d783f455"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f38762695f9c780f1ed3d01ed72ef558d1c08ce8ef8dc794689a0371c73872a2"
   end
 
-  depends_on "node"
+  # `better-sqlite3` needs to be built with `c++17`, but `node` v25  compile with `c++20` by default
+  # Issue ref: https://github.com/WiseLibs/better-sqlite3/issues/1411
+  depends_on "node@24"
 
   on_linux do
     depends_on "xsel"

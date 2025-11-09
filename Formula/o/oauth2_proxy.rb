@@ -1,20 +1,18 @@
 class Oauth2Proxy < Formula
   desc "Reverse proxy for authenticating users via OAuth 2 providers"
   homepage "https://oauth2-proxy.github.io/oauth2-proxy/"
-  url "https://ghfast.top/https://github.com/oauth2-proxy/oauth2-proxy/archive/refs/tags/v7.12.0.tar.gz"
-  sha256 "72eddf28b2fd7dc4f841fac47a9376a3f660d3d467f1fc17e69badd14870c5f4"
+  url "https://ghfast.top/https://github.com/oauth2-proxy/oauth2-proxy/archive/refs/tags/v7.13.0.tar.gz"
+  sha256 "86d005585f753cda3495cf68f231bcb3be13d7c96d80c8890c0f9939e0bddcad"
   license "MIT"
   head "https://github.com/oauth2-proxy/oauth2-proxy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "09be6dda7b5946fe025ce5d8129733b9abd4981f7e3658d00a3e0e0c5308bbe7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ea4dcb47280288cc86c4c8a9db91c724044f65a8eefbaf966799bbc43d99691"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "56ea0e2993ee1c28aaf75b8f2c89963c28dc19f42e74bf059876d590e01f3dbf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7b7f25b4651eb613fdd72c7c2feb1d179f3bc0b3696d4e5f7898c874fe50f629"
-    sha256 cellar: :any_skip_relocation, sonoma:        "60cdd8f32912f026b1b4d79d65c6e26ab4d083cd6ac99dbd0972938d1785c122"
-    sha256 cellar: :any_skip_relocation, ventura:       "4a47b133a8e94537de109b52b32dd4b6d61addc31d402ab153959619d1005335"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "58808a890908b1bd646297fd3e50823279873083fc4a477acd832f44e399fa28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19a332ed0f0b04571737bf898e5201351f93bbf1a098e87c4aa28984462b1d9e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f86bf18a5897098ef96e16577d35121b6931b7b80153ce0805c7dd034f67432d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e92f0af0553a5607efb02eadd04e274ffaab348995e9ec40ed166a485b1f72d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e2c8ac95c58bad8a49fbc2fdbbb41407b0b59361ed726e7a1b2cf0a722d6991"
+    sha256 cellar: :any_skip_relocation, sonoma:        "38a1f93ba92f7b70f06b17311221464107f16dfc0300ac2811b22a2be4cb76e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5669bfc7396ac777fe122e986cf90f1391b53ee95ff5c0bbd200bd9828412c3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f39fb2b7c2b2e06cf7139c71c9cb79135f9a187b6e61b27da8c0b4ddd8bb8b53"
   end
 
   depends_on "go" => :build

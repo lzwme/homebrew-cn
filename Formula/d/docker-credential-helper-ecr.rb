@@ -1,8 +1,8 @@
 class DockerCredentialHelperEcr < Formula
   desc "Docker Credential Helper for Amazon ECR"
   homepage "https://github.com/awslabs/amazon-ecr-credential-helper"
-  url "https://ghfast.top/https://github.com/awslabs/amazon-ecr-credential-helper/archive/refs/tags/v0.10.1.tar.gz"
-  sha256 "872f612d8ff2ec294024c58b5ca452bebcd9eeceb29e105e159e5579ec6056b2"
+  url "https://ghfast.top/https://github.com/awslabs/amazon-ecr-credential-helper/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "d4b5e4e08d444530726ec59e09057fc1558876ba62d9aa8a2a44c04fd5dffb71"
   license "Apache-2.0"
   head "https://github.com/awslabs/amazon-ecr-credential-helper.git", branch: "main"
 
@@ -12,14 +12,12 @@ class DockerCredentialHelperEcr < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "484acd0acaafa346f4a3f6f7b544e813f996a00a18b9b9226c68bba64062528d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "310ebe1f0703c4029bc2d6ba98e6d687097027a27fdecaad0d5b499a73a720ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "310ebe1f0703c4029bc2d6ba98e6d687097027a27fdecaad0d5b499a73a720ba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "310ebe1f0703c4029bc2d6ba98e6d687097027a27fdecaad0d5b499a73a720ba"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e3779569bb4207c50dc2cdbdfa61636241e9bcf04186d99667b2301b6150f90c"
-    sha256 cellar: :any_skip_relocation, ventura:       "e3779569bb4207c50dc2cdbdfa61636241e9bcf04186d99667b2301b6150f90c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "af285a04fc0326dae93ad0fa43640e914b3fb360d148d0f5def253d272815bcd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76d8cac37394c8753de28ee0befb678fb8a3cd2e2cbbd4dfaac0d46b05b52e54"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73768a1d4d44a75a654cc72a354e35e0bc2b2421e5f2a4f06efe455aa2677516"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73768a1d4d44a75a654cc72a354e35e0bc2b2421e5f2a4f06efe455aa2677516"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73768a1d4d44a75a654cc72a354e35e0bc2b2421e5f2a4f06efe455aa2677516"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7e01e8ead98e3d9b572080917d570fb8613827ef933ab77be03b138135d147a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e7376b414398f0d44032ad150db33349889fdbb4a03d0d3ef47674a925bb90c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "749747935788e4b951f33d9df4088e431724abe1de6a37003e1e41ca3b026580"
   end
 
   depends_on "go" => :build

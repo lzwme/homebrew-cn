@@ -1,18 +1,18 @@
 class Broot < Formula
   desc "New way to see and navigate directory trees"
   homepage "https://dystroy.org/broot/"
-  url "https://ghfast.top/https://github.com/Canop/broot/archive/refs/tags/v1.52.0.tar.gz"
-  sha256 "2f0c9b52a97cf32f617e39084bfff8271d4a3d9b30f8ec2811b577cb433d7743"
+  url "https://ghfast.top/https://github.com/Canop/broot/archive/refs/tags/v1.53.0.tar.gz"
+  sha256 "cd675a81222ac82a238778325a51e3f14b971df32ceedf9bb892f3a1d012e10e"
   license "MIT"
   head "https://github.com/Canop/broot.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c55326883899ae579cf45a22d5543b96706fb3b09c83895c86affbf18781153"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42795f13ce351a096aa305fa19676cafb154f4e301850612d29d008974075653"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0179a500ad8a7e3fbc5b2a0db395d64dd0c6cc502c7b6315325534fa42794bae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "46269caaad596ddcf9867a08bd17f636f91c8d9c697fc25c3335801e019310aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4dabf704921c24874ed243d6f0e3458dd1277d95991501d492940f98ca722993"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "438e5b147341337335c99d4d8d06dbaf9b91e7dbf29f874b28176ee6a0a3de25"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0dde95dd419b8c751a42ef4e834353555416fb8f6344ee59fab239f4dff51ba4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a560003be16d6cbde80d9075d2f25cb1803cba3294e394a953aa50eeb9f3a34e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3c3b688c6c9583f4b2e565e482d9411c635515a5d22b48e0172057a7b1f056d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "01a91b60c918da6cbe61c0cc2a3ff7ee820d9a980977ee0ddb233457769378df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e6411f8ad43828776304c36ee97ae63da95b3b2f588944e084d5b9dbe5a7c3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aac1a0b8d68830c890fbe02168875038cd2721b39b44036c27a2458d205f2382"
   end
 
   depends_on "rust" => :build

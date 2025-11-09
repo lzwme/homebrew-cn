@@ -3,18 +3,17 @@ class Gersemi < Formula
 
   desc "Formatter to make your CMake code the real treasure"
   homepage "https://github.com/BlankSpruce/gersemi"
-  url "https://files.pythonhosted.org/packages/e7/de/baafb537f824e0585561b70d7cf896a876e7c699887dec945a9c527e02b6/gersemi-0.22.3.tar.gz"
-  sha256 "ae764e726ed2e9cefd696dc0f082fff77e2e51dd236c61739b18fee69fe406f4"
+  url "https://files.pythonhosted.org/packages/96/07/0b55f2e06b8f2eb6c01afd77e4b91cbea312ae05ead93f1526e7ef7cc3f3/gersemi-0.23.0.tar.gz"
+  sha256 "ef69219e1a8b97e6b920c601637f4ad6bf8d4fdceb8e9edc4203fa50115fab65"
   license "MPL-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "2103ed81a05f766725993411ed571328c4ecd6ee2999c5be92ff2d50445ca0d3"
-    sha256 cellar: :any,                 arm64_sequoia: "9b26db5689a43e2e27de764da8996248c0ae87e9c61d0fb31eb97b7c528acf71"
-    sha256 cellar: :any,                 arm64_sonoma:  "6971e7695d68cf2ba80e726e87ba422736e63ad454c5f5a6cb47d5030941c45e"
-    sha256 cellar: :any,                 sonoma:        "0734180a291b16240e7749040e504d36a45b2c55810bc776c2dbfb70d41bee7d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "233f3c1e8ead8e6c3c183552ad606d4bedc3e6f524daed4459ba1c0ce576f11f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3338770c35c0dbb5411cc24c3841974e85b7dc385913ad55d2377b31bda1a831"
+    sha256 cellar: :any,                 arm64_tahoe:   "0797519925b884a101dc09be11ae38fbf85394736fa379114fdef3e4a2c92e2e"
+    sha256 cellar: :any,                 arm64_sequoia: "97a171b2251ab115920c06008c92eea5f98d845cfd22990fc57996ba2fc9dc1e"
+    sha256 cellar: :any,                 arm64_sonoma:  "20512667d93a275b62b8406f47e98381e4bb9b5e3f3efc2faa51b09532d0079e"
+    sha256 cellar: :any,                 sonoma:        "ef2827b0ba0303c0a5f25a2644010d2c2248987bc78526de0615d6a6c5c43090"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "620e9b050d3fa0c18c4e9bdb42260fcdedc1cbfafee6a52aeb501b799a325c43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee9a4d46ca5ca0fef9f6a4ef77394971edc1af55bf3e356f0c22874d8c5df4a1"
   end
 
   depends_on "libyaml"
@@ -26,8 +25,8 @@ class Gersemi < Formula
   end
 
   resource "lark" do
-    url "https://files.pythonhosted.org/packages/1d/37/a13baf0135f348af608c667633cbe5d13aa2c5c15a56ae9ad3e6cba45ae3/lark-1.3.0.tar.gz"
-    sha256 "9a3839d0ca5e1faf7cfa3460e420e859b66bcbde05b634e73c369c8244c5fa48"
+    url "https://files.pythonhosted.org/packages/da/34/28fff3ab31ccff1fd4f6c7c7b0ceb2b6968d8ea4950663eadcb5720591a0/lark-1.3.1.tar.gz"
+    sha256 "b426a7a6d6d53189d318f2b6236ab5d6429eaf09259f1ca33eb716eed10d2905"
   end
 
   resource "pyyaml" do

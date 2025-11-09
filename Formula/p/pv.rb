@@ -1,8 +1,8 @@
 class Pv < Formula
   desc "Monitor data's progress through a pipe"
   homepage "https://www.ivarch.com/programs/pv.shtml"
-  url "https://www.ivarch.com/programs/sources/pv-1.9.44.tar.gz"
-  sha256 "e130c9e18b1e6e9e2ef95bec6117c72cb9be27a1b8ffe97fca787e4c8e014562"
+  url "https://www.ivarch.com/programs/sources/pv-1.10.0.tar.gz"
+  sha256 "998e717419c02ee735aea0b8d57f9cbe1112f40f4b947a39ba2611a415b64da0"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Pv < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "dc90c15c90bc946e83e2ac2c16d581369d838b646848a440704e79ad4c28895b"
-    sha256 arm64_sequoia: "5e44f96263daf881300a0f7ddc7fd24489f474d5fc78cd7fdb6e86c264647878"
-    sha256 arm64_sonoma:  "4e0d1c438092f0cb48377da1d63ba770b53bde593c8e56a3ebb512076ca2e2da"
-    sha256 sonoma:        "8a2ea04d6890bdd86abc07690abb2705930cd5c437a02d440ac876e08d52c936"
-    sha256 arm64_linux:   "e4d5588cc85f2e62e4614e7794368fc737a843faef483ee781ad96a734a3f7d0"
-    sha256 x86_64_linux:  "f3542aaa9f1c7109bd8bfed76d89e4fe80e5a278b19b5302013029d0e6c2fba1"
+    sha256 arm64_tahoe:   "c3aaeddf8f8934b09b08b2a359a4611865a0e6f83dc7d6c517703175a99ad19f"
+    sha256 arm64_sequoia: "87e75f64f8932d04be607d5a0462c5418ac621319662e3cd0f44b4f5ec669a7d"
+    sha256 arm64_sonoma:  "954f8987dce436e2cca880e4633946056e9e79aac8ba1c56447499e3b6030b17"
+    sha256 sonoma:        "a8fad2d9c503fe4e91907d91dd867c0bb6654fb1e47cd74d24ceb8ef6280859c"
+    sha256 arm64_linux:   "fc8b5d062ad2c5503baa7203b52e421bb9fdc940c8bdf88c4697a5abd28559b6"
+    sha256 x86_64_linux:  "6d634c0df3961d8cd48078a65df14792a5d1f440710efe112846e8aa905e448c"
   end
 
   uses_from_macos "ncurses"

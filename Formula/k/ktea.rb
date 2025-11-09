@@ -1,18 +1,18 @@
 class Ktea < Formula
   desc "Kafka TUI client"
   homepage "https://github.com/jonas-grgt/ktea"
-  url "https://ghfast.top/https://github.com/jonas-grgt/ktea/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "c8d6c83c62da685754d94fb3e6c5fc59c540eb30e865a0a22e02ecb44233d21e"
+  url "https://ghfast.top/https://github.com/jonas-grgt/ktea/archive/refs/tags/v0.6.2.tar.gz"
+  sha256 "7e864353a38e5e6500f1ce84e7f5f12cc1e3e53800d09ec22a87d4054ebcbca6"
   license "Apache-2.0"
   head "https://github.com/jonas-grgt/ktea.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "24de056c4b5c1b1af57f7f561779050aa2e73371c06f2e7a41cf21329b7b3e8c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24de056c4b5c1b1af57f7f561779050aa2e73371c06f2e7a41cf21329b7b3e8c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24de056c4b5c1b1af57f7f561779050aa2e73371c06f2e7a41cf21329b7b3e8c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8f656a604f3c0c4debdaca0c46b484d18cf3b97ec6cbe2ab8b7cdad60c19c7da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "96043c8040aacbc5ce6ffd98f88a2c47aa343dc0c8ab325690189a21b463a6b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7307d1d0165a560840ff63aeaa9d701267543e378982c769e27cc20f2e8e89b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bccdcb30a299defdc25ea3d45b93676503c19657a428499ab7b69058576e148b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bccdcb30a299defdc25ea3d45b93676503c19657a428499ab7b69058576e148b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bccdcb30a299defdc25ea3d45b93676503c19657a428499ab7b69058576e148b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "90bfa975b0f8a63884d3e9bce8ec3a4f2cc76ad3df58185bea0efdd0ab071ba5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "515e7f368a823cb6d9a397d18c712be1847409d7372e93922417cb9e4842dfb0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d28d20f839d9edf50ebf275cd4b106ce1e78c3085ae3693ed50bac08a3d609ec"
   end
 
   depends_on "go" => :build

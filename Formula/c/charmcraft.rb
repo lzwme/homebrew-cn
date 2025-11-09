@@ -3,19 +3,17 @@ class Charmcraft < Formula
 
   desc "Tool to build charms and publish them on Charmhub"
   homepage "https://charmhub.io"
-  url "https://files.pythonhosted.org/packages/48/e7/0528770d02d99ab1d840b69131fba020294e84da734e18fb8f41735fdc63/charmcraft-3.5.3.tar.gz"
-  sha256 "9e3e10af1cb707d3e054a79e328bffd42eb70721255b9e7715fcb66a8c87cf8f"
+  url "https://files.pythonhosted.org/packages/1f/87/affb45be165e3f5097aa3e2e7c4d7713ec2f83e639bd2250da828eed804f/charmcraft-4.0.1.tar.gz"
+  sha256 "6613c89edf7ea489d9db4093ba77668d47a804b9b31755a9930d5d31aab4a007"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "89a56802f735a513c1404ae12d2c06318bef34b25908a6fc3b650024e3fb609a"
-    sha256 cellar: :any,                 arm64_sequoia: "12b49c1b57f78be9f97bdd4c987fa0497e465b6b283daad6416bc19ffcee7c89"
-    sha256 cellar: :any,                 arm64_sonoma:  "65f634f3aa9a237260768e80240ea3b29ba1fa078c4a2a6ce65356c32494f21c"
-    sha256 cellar: :any,                 sonoma:        "d0beb2fa0005918e39268f4cfc12af1f5b409a156f41f6929d6b78dd11941973"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "135d6ac1023b7cddcac1e923dca89bd261d823c99efcf22edede9664fb956531"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a39fcfc4d24244bb2ce6964f60fed3750d2b7566c2915cc11b9aab7f60c257a"
+    sha256 cellar: :any,                 arm64_tahoe:   "a991683ce888403500dab88d255ddf86d1a3ddccb7d9915119cce5c0ff5341b3"
+    sha256 cellar: :any,                 arm64_sequoia: "24a9e00acda55e2d2537e559b46eb75654582fb2bfa73e834ff4bcc0726f93e7"
+    sha256 cellar: :any,                 arm64_sonoma:  "cb700c272f59b51bb4fd739d8f6771fc45db34fa42b032ca04b233f6f987c54d"
+    sha256 cellar: :any,                 sonoma:        "349b356f1c38fd7c03cea2bbc6e4236820686d3c5de4fbd4c1a4adc579fa9e83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65a09c83e426eec57af8d6e9a120fe4c4d92e013e4d5877e7f151093e79877c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2295b1d8d526a404cfb3822016b1363899531fef00d089b9fa862b0b9e91e12"
   end
 
   depends_on "certifi" => :no_linkage
@@ -24,7 +22,7 @@ class Charmcraft < Formula
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
   depends_on "pygit2" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.13" # craft-cli not yet compatible with py3.14, https://github.com/canonical/craft-cli/issues/360
   depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libxml2", since: :ventura
@@ -54,8 +52,8 @@ class Charmcraft < Formula
   end
 
   resource "craft-application" do
-    url "https://files.pythonhosted.org/packages/86/86/20bac2f1a4e45097c01040328ff8ffd5313533d03231db08435559c684c3/craft_application-4.10.0.tar.gz"
-    sha256 "7a9cda0e854877fb80464e03274e69b97540a618e0c53cbc500b6fce25b9b8c4"
+    url "https://files.pythonhosted.org/packages/36/6b/ad381b017a0715432791ddea24245cc6b3a5eba0c472890a794ac7918321/craft_application-5.11.0.tar.gz"
+    sha256 "4435f5db3e4313acd3c0d03f029f13ce73f4ae2eff0e2f94e0d4301742372479"
   end
 
   resource "craft-archives" do
@@ -96,6 +94,11 @@ class Charmcraft < Formula
   resource "distro" do
     url "https://files.pythonhosted.org/packages/fc/f8/98eea607f65de6527f8a2e8885fc8015d3e6f5775df186e443e0964a11c3/distro-1.9.0.tar.gz"
     sha256 "2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed"
+  end
+
+  resource "distro-support" do
+    url "https://files.pythonhosted.org/packages/90/c8/40cf2bdb5647c0ccad40a02edde6966d03a3258c550d92a2030427867029/distro_support-2025.8.13.tar.gz"
+    sha256 "12a73039db0a04e4b987789598f05c554adb3b2ec8e97bc28f40a125dc82d982"
   end
 
   resource "docker" do
@@ -368,6 +371,8 @@ class Charmcraft < Formula
   end
 
   test do
+    ENV["XDG_RUNTIME_DIR"] = testpath
+
     system bin/"charmcraft", "version"
     system bin/"charmcraft", "help"
     system bin/"charmcraft", "init", "--author", "Foo Bar", "-p", testpath/"charm"
