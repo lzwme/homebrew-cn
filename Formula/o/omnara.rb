@@ -3,20 +3,19 @@ class Omnara < Formula
 
   desc "Talk to Your AI Agents from Anywhere"
   homepage "https://omnara.com/"
-  url "https://files.pythonhosted.org/packages/1e/0b/bcc08499ffa4584899eff34805f5ecb9b444e96a177fc29c61af9e68e89f/omnara-1.6.21.tar.gz"
-  sha256 "21959b1b905fb64e43a42040127eddec89671097d132df8afe695376a773264f"
+  url "https://files.pythonhosted.org/packages/11/3d/4d46acda35a59e64aa9f0ce174e82ae5caf6e23363f4cdf754da59525f87/omnara-1.7.0.tar.gz"
+  sha256 "989710438f7d6aa68a26a2dbad35e92c177733550e5a2fe95a97d6fc5002152f"
   license "Apache-2.0"
 
   no_autobump! because: "contains non-PyPI resources"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_tahoe:   "60c4f47fb1c9178fbf32c4cf8278f031276c273839873a7cc3b33fda40a550f9"
-    sha256 cellar: :any,                 arm64_sequoia: "eb357e9eabe4fd8f43e61022191d12db0a2c761630c31fa654d2e6b66a9f3bbb"
-    sha256 cellar: :any,                 arm64_sonoma:  "72e3377a91a63dbb0d652c8bdf0ef34d6c25688c353d08af8adc935eb039e663"
-    sha256 cellar: :any,                 sonoma:        "419d98abdbf321484807e3d3ccd2c0ea8fabec3cf732e5b217b38d425bce394e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "82fe4fb4ea3f02e8de2ce653db7b8b4056981fee5b9ee313500b4fcf6d3c5e70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8578f5e199a39a9ad14cc778341b7731f2b71cc3fcd997ee6f24edff51c470e3"
+    sha256 cellar: :any,                 arm64_tahoe:   "cf2c478505b0244217f307ffe50ab1164114c9a52c55afb0fd56130c9f7d223e"
+    sha256 cellar: :any,                 arm64_sequoia: "63bd6f4aa4107b277bb726ce3bafcf213692a85b99e72fb067802a25cb2de808"
+    sha256 cellar: :any,                 arm64_sonoma:  "53505c0869efda6a53d24e15a695460ce9a4cdc1b0367a01169d0dd61f98f7d1"
+    sha256 cellar: :any,                 sonoma:        "0b76698f36d0019bbc71b0719da4b403ed1413afc7bd3e3468c2fa817202c1ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbd65c4684393e499d8962b2685bcf1d0cf49df2cdbedb8ec53264ff62f1b544"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7047d1fe11c45c202c33d3915c363197f92221f6760e46ff40d95d3d70c60f6"
   end
 
   depends_on "rust" => :build
@@ -94,11 +93,6 @@ class Omnara < Formula
     sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
-  resource "codex" do
-    url "https://ghfast.top/https://github.com/omnara-ai/codex/archive/refs/tags/rust-v0.2.1.tar.gz"
-    sha256 "ef66b4b2237024053c98bc86089fe30d240a3e368926566c7cc17e0c40edf5db"
-  end
-
   resource "cyclopts" do
     url "https://files.pythonhosted.org/packages/8a/51/a67b17fac2530d22216a335bd10f48631412dd824013ea559ec236668f76/cyclopts-4.2.1.tar.gz"
     sha256 "49bb4c35644e7a9658f706ade4cf1a9958834b2dca4425e2fafecf8a0537fac7"
@@ -135,8 +129,8 @@ class Omnara < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/8c/e3/77a2df0946703973b9905fd0cde6172c15e0781984320123b4f5079e7113/fastapi-0.121.0.tar.gz"
-    sha256 "06663356a0b1ee93e875bbf05a31fb22314f5bed455afaaad2b2dad7f26e98fa"
+    url "https://files.pythonhosted.org/packages/6b/a4/29e1b861fc9017488ed02ff1052feffa40940cb355ed632a8845df84ce84/fastapi-0.121.1.tar.gz"
+    sha256 "b6dba0538fd15dab6fe4d3e5493c3957d8a9e1e9257f56446b5859af66f32441"
   end
 
   resource "fastmcp" do
@@ -215,8 +209,8 @@ class Omnara < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/f8/22/fae38092e6c2995c03232635028510d77e7decff31b4ae79dfa0ba99c635/mcp-1.20.0.tar.gz"
-    sha256 "9ccc09eaadbfbcbbdab1c9723cfe2e0d1d9e324d7d3ce7e332ef90b09ed35177"
+    url "https://files.pythonhosted.org/packages/33/54/dd2330ef4611c27ae59124820863c34e1d3edb1133c58e6375e2d938c9c5/mcp-1.21.0.tar.gz"
+    sha256 "bab0a38e8f8c48080d787233343f8d301b0e1e95846ae7dead251b2421d99855"
   end
 
   resource "mdurl" do
@@ -362,6 +356,11 @@ class Omnara < Formula
   resource "yarl" do
     url "https://files.pythonhosted.org/packages/57/63/0c6ebca57330cd313f6102b16dd57ffaf3ec4c83403dcb45dbd15c6f3ea1/yarl-1.22.0.tar.gz"
     sha256 "bebf8557577d4401ba8bd9ff33906f1376c877aa78d1fe216ad01b4d6745af71"
+  end
+
+  resource "codex" do
+    url "https://ghfast.top/https://github.com/omnara-ai/codex/archive/refs/tags/rust-v0.2.1.tar.gz"
+    sha256 "ef66b4b2237024053c98bc86089fe30d240a3e368926566c7cc17e0c40edf5db"
   end
 
   def install

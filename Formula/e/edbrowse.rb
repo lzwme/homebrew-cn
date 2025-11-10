@@ -1,18 +1,18 @@
 class Edbrowse < Formula
   desc "Command-line editor and web browser"
   homepage "https://edbrowse.org"
-  url "https://ghfast.top/https://github.com/edbrowse/edbrowse/archive/refs/tags/v3.8.14.tar.gz"
-  sha256 "4463d4ad9d06f183ebca8dfee0eeb7f4240bc6becb83257e394fdeb84b120360"
+  url "https://ghfast.top/https://github.com/edbrowse/edbrowse/archive/refs/tags/v3.8.15.tar.gz"
+  sha256 "17c19179ec659a560ca4070103f2db37d29b71bc5d483c5f9d8a616abbfeb190"
   license "GPL-2.0-or-later"
   head "https://github.com/edbrowse/edbrowse.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a56226c0657151035fda0cfbf5f7fed4d50f7755984c046729fe44a95c4d1192"
-    sha256 cellar: :any,                 arm64_sequoia: "cdc9419f5bc0ae97bf9f3956f84ad0b93012b3c0703ad229808589336222cd77"
-    sha256 cellar: :any,                 arm64_sonoma:  "23c7fad4fd603423b83462eda3094d50c0b7bf1bd2f068cae21c3448e765a39f"
-    sha256 cellar: :any,                 sonoma:        "2bd307611a82ddb6140ac6753d23faf19bd8f4c9a0104a03a2c34275ecba3a92"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3c97fdc88bc3ef48aa1f56baec88725b968db6d449583d6c5878f3182bfa848"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdb9a220aad742e35326a2605af428e34bda827ef83999b99c3435ffc879a134"
+    sha256 cellar: :any,                 arm64_tahoe:   "1f283ccbdfc824f65026829fafcdea0489ba67d1bd814e1efa63188028469e62"
+    sha256 cellar: :any,                 arm64_sequoia: "3bab6f02f68660fbc7ef7d8d10bc5beab31c9037a8e4e93338794ffc4eb3e450"
+    sha256 cellar: :any,                 arm64_sonoma:  "f3d60bbe8c842555381664a2a4341a1b47a1f970e0b61fa2cc2932d99a2d3ba7"
+    sha256 cellar: :any,                 sonoma:        "66d4cbf1ebe89017c5e6d34f43e2ed762f44f9fa09ac37873027cd745bc401a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "93d8f4080bf66e3e9d517fde6abece60a888c39bd01c341b3da18c55ba171695"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e312149ee61414e925b221f95fdfab83758c6d6ddcedb404bf0713b5f1320fae"
   end
 
   depends_on "pkgconf" => :build
@@ -24,10 +24,13 @@ class Edbrowse < Formula
   depends_on "unixodbc"
 
   def install
+    ENV.append_to_cflags "-DQ_NG=0"
+
     cd "src" do
       make_args = [
         "QUICKJS_INCLUDE=#{Formula["quickjs"].opt_include}/quickjs",
         "QUICKJS_LIB=#{Formula["quickjs"].opt_lib}/quickjs",
+        "QUICKJS_LIB_NAME=quickjs",
       ]
 
       system "make", *make_args

@@ -3,17 +3,17 @@ class Gersemi < Formula
 
   desc "Formatter to make your CMake code the real treasure"
   homepage "https://github.com/BlankSpruce/gersemi"
-  url "https://files.pythonhosted.org/packages/96/07/0b55f2e06b8f2eb6c01afd77e4b91cbea312ae05ead93f1526e7ef7cc3f3/gersemi-0.23.0.tar.gz"
-  sha256 "ef69219e1a8b97e6b920c601637f4ad6bf8d4fdceb8e9edc4203fa50115fab65"
+  url "https://files.pythonhosted.org/packages/6a/01/2f8eecf33d9152926829ff405626ac10c9f5b7f7f8ab5bee80c21a0390e3/gersemi-0.23.1.tar.gz"
+  sha256 "75f56665ce156cb5a23c52b757ce20ddb579872e0dd78ce9855d6dc39a78053a"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0797519925b884a101dc09be11ae38fbf85394736fa379114fdef3e4a2c92e2e"
-    sha256 cellar: :any,                 arm64_sequoia: "97a171b2251ab115920c06008c92eea5f98d845cfd22990fc57996ba2fc9dc1e"
-    sha256 cellar: :any,                 arm64_sonoma:  "20512667d93a275b62b8406f47e98381e4bb9b5e3f3efc2faa51b09532d0079e"
-    sha256 cellar: :any,                 sonoma:        "ef2827b0ba0303c0a5f25a2644010d2c2248987bc78526de0615d6a6c5c43090"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "620e9b050d3fa0c18c4e9bdb42260fcdedc1cbfafee6a52aeb501b799a325c43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee9a4d46ca5ca0fef9f6a4ef77394971edc1af55bf3e356f0c22874d8c5df4a1"
+    sha256 cellar: :any,                 arm64_tahoe:   "9fdbd4a8db8ac847e7de50f25b9ae768fb4766752c978a936b96060c4099469e"
+    sha256 cellar: :any,                 arm64_sequoia: "279d3a68be81f88b0d1a6b8213562a66f6b8ab347a0dac5aafe7b0efc66b35a1"
+    sha256 cellar: :any,                 arm64_sonoma:  "373561b4da8d7be645e9f186131ba9c087cb6cca2ff964a414495ee796ce1afc"
+    sha256 cellar: :any,                 sonoma:        "78249707b3d26d70bb27b63f00eda9626a65a3abbef8185dd18f17d02bb5fbc5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e859460730d7b2afea1e52c2e182e1fb5a69d05643d89833440ef1ff08607277"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41bae9711b501aa8e1244f8c057c318dc2e144feda98fda4f4cef398287dcb85"
   end
 
   depends_on "libyaml"

@@ -3881,8 +3881,8 @@ Homebrew-homebrew-core/Formula/lib/libdv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libdvbcsa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libdvbpsi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libdvdcss.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/lib/libdvdnav.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libdvdread.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libdvdnav.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libdvdread.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libeatmydata.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libebml.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libebur128.rb, Homebrew/homebrew-core, 1
@@ -5634,7 +5634,6 @@ Homebrew-homebrew-core/Formula/p/postgis.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgraphile.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgres-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/postgresql-hll.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/postgresql@11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgresql@12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgresql@13.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgresql@14.rb, Homebrew/homebrew-core, 0
@@ -6236,6 +6235,7 @@ Homebrew-homebrew-core/Formula/r/rubyfmt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/ruff-lsp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/ruff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rulesync.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/rumdl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/run.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rune.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/runit.rb, Homebrew/homebrew-core, 0
@@ -9114,6 +9114,7 @@ Homebrew-homebrew-cask/Casks/d/ditto.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/divvy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dixa.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/djstudio.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/djstudio@next.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/djuced.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/djv.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/djview.rb, Homebrew/homebrew-cask, 0
@@ -15504,6 +15505,7 @@ Homebrew-homebrew-cask/Casks/w/wondershare-edrawmax.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/w/wondershare-filmora.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wondershare-uniconverter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wooshy.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/wootility.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wordpresscom-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wordpresscom.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wordservice.rb, Homebrew/homebrew-cask, 0

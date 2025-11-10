@@ -1,18 +1,18 @@
 class Conftest < Formula
   desc "Test your configuration files using Open Policy Agent"
   homepage "https://www.conftest.dev/"
-  url "https://ghfast.top/https://github.com/open-policy-agent/conftest/archive/refs/tags/v0.63.0.tar.gz"
-  sha256 "eb182a93a0d58533bbfc3d50e3c64bf825426c65511a45f3a8f8ef995cbff6ae"
+  url "https://ghfast.top/https://github.com/open-policy-agent/conftest/archive/refs/tags/v0.64.0.tar.gz"
+  sha256 "9fda76a9f7d151f3ac8ccddd713e059490f291efaff6351d1b806ab0f4a5dc10"
   license "Apache-2.0"
   head "https://github.com/open-policy-agent/conftest.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06b90408a016d5e90a11f97f59890f4ecec26d9fe71ac1c299b33c4c14671b9c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9775c12b8041da285ea8a497dba7b0d3373b74461b57bf14239f84a6e811c2b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b34f54d3055277e9bc8cdd15bbf81bf1b6426a1e0e3073d88c7175d58a4cea56"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c28970942ab7e31e1bb5d4d7205454749058a87c437e388b072130c16d5af82f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75f65e553044f0b35df573c059af0ff4fa8594de28171064a79b85ae8427afb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff739d08b8a7fa4a052bd3296ac37c48221a3ca7237d525528ca996a268c8862"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f44596df1e003203222ca1d7212be8055886460fc778f6c251cdcb5e8e58cc01"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b868665b2d32b034192a92c771a2158d642e80175d0bd76f682afa9bba568a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8ff0abc1ffa553dbb14c532c34bf6e8e436751503462753fa41d3b5233a9f89"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3f87e7dd6db323c8ed90d58c91cefc46d5348fc9329461947e1b120849dcface"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7779f1e5150ec2e2e251cc4a7af99539b44293967b56f38f426104f89a15178e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3635ae5a1bdeb354522877b2af27218f6a3e4a57fff77844b1aeb8e085ab6937"
   end
 
   depends_on "go" => :build

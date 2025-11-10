@@ -3,19 +3,17 @@ class McpGoogleSheets < Formula
 
   desc "MCP server integrates with your Google Drive and Google Sheets"
   homepage "https://github.com/xing5/mcp-google-sheets"
-  url "https://files.pythonhosted.org/packages/b2/cb/ba262f74fc2665442837cb88a9a9662ff360d6d8614600e525225edbdb2f/mcp_google_sheets-0.5.1.tar.gz"
-  sha256 "9ba9d779baf47c383eec5246d52c19af580f236999a7e99f4a02e8545e31cff7"
+  url "https://files.pythonhosted.org/packages/84/98/f074cb169453374e779997a2e9c4fc5f91679f31389cf28d3f15f6182e87/mcp_google_sheets-0.5.2.tar.gz"
+  sha256 "f64dec3a6a4a4907fabdf2fa20bf3351dda330d2a1d70142138738dacf92246c"
   license "MIT"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "691f792b7496cf8baa30f36d52b1ce52c472e9c93113db0e7c3ccb7fab8f41a4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fac76457476891e30b1daac55b268b92360900de540416b0c47876ded0e729d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4dd0d2fd112efb0ea6bf2bd83242f836773a22321f246116db064716d5a30a5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "644745008d3e4841801810391378d77f76f4abf5c036cbc4f05fc5eb17942c2f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "615d26dd674e3109e10383559cab1ecf05a20f46c7ec3a2fdf1ffa0191ecc0fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0cea0094fbfd5f9b88996f16898aca6309bf8956eaf596b36c521a9ff7df54f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9dcff1f811ebe505ede8bb8c4279ef1b4cd0e670d600d555a82509ec070996ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "512e37c01352913d896628e441edc8a0f23e76696936a2fb832599a2a8883d70"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a588832bbf62dd121596d5d0e9109d9a2ae03b374ac2a1e129d10ef84227b7cb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0fcf7338128dd6ee52d12b1c87d47aa9c4b4f943edd6a87fb34f3028b96962ca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f6c7d5eddf4bfcbacd53b0a46e66e879980a7e24016c34ede12cc4710afa910"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "315dc7b31c6811b7e64ff5381d6bdfdf5d8e4e52d2efb73d74c69051d971190f"
   end
 
   depends_on "certifi" => :no_linkage
@@ -77,8 +75,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/30/43/b25abe02db2911397819003029bef768f68a974f2ece483e6084d1a5f754/googleapis_common_protos-1.71.0.tar.gz"
-    sha256 "1aec01e574e29da63c80ba9f7bbf1ccfaacf1da877f23609fe236ca7c72a2e2e"
+    url "https://files.pythonhosted.org/packages/e5/7b/adfd75544c415c487b33061fe7ae526165241c1ea133f9a9125a56b39fd8/googleapis_common_protos-1.72.0.tar.gz"
+    sha256 "e55a601c1b32b52d7a3e65f43563e2aa61bcd737998ee672ac9b951cd49319f5"
   end
 
   resource "h11" do
@@ -122,8 +120,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/f8/22/fae38092e6c2995c03232635028510d77e7decff31b4ae79dfa0ba99c635/mcp-1.20.0.tar.gz"
-    sha256 "9ccc09eaadbfbcbbdab1c9723cfe2e0d1d9e324d7d3ce7e332ef90b09ed35177"
+    url "https://files.pythonhosted.org/packages/33/54/dd2330ef4611c27ae59124820863c34e1d3edb1133c58e6375e2d938c9c5/mcp-1.21.0.tar.gz"
+    sha256 "bab0a38e8f8c48080d787233343f8d301b0e1e95846ae7dead251b2421d99855"
   end
 
   resource "oauthlib" do

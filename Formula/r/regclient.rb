@@ -1,20 +1,18 @@
 class Regclient < Formula
   desc "Docker and OCI Registry Client in Go and tooling using those libraries"
   homepage "https://regclient.org/"
-  url "https://ghfast.top/https://github.com/regclient/regclient/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "ce53e082dd289c5f5b4cf0972bc8ff41d02b48114a010784f0f3261cc1c721ad"
+  url "https://ghfast.top/https://github.com/regclient/regclient/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "7c60fc5d63dd664b06486cd5156b636f53cd005ff003c1afb7114cd1fe3466ce"
   license "Apache-2.0"
   head "https://github.com/regclient/regclient.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d9c3b1d71e34f16abc8af12295d0c6d6f49b9c35d200a530bed69ef6854a8124"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ee086607d20229b30ebbf7cec5d8ea366138f4500acb5ac1885299d2e6bdf49"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ee086607d20229b30ebbf7cec5d8ea366138f4500acb5ac1885299d2e6bdf49"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1ee086607d20229b30ebbf7cec5d8ea366138f4500acb5ac1885299d2e6bdf49"
-    sha256 cellar: :any_skip_relocation, sonoma:        "715745cdec3c559a0beee810c5d25dec5d9d02077de5e5763dfa4f51b7a3563f"
-    sha256 cellar: :any_skip_relocation, ventura:       "715745cdec3c559a0beee810c5d25dec5d9d02077de5e5763dfa4f51b7a3563f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3d4b38afd6181cde707b721e688187459e89291af6707eac5e6c11e160c76f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d55e4b69373d1d3720c91b8d0ed0ebd30961ef5a90bebbd414e2d5cf40162e6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "47f8db4df329d70150e04e36831dd22ef5326ad4be299e8ae4f7c99f452c8b70"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47f8db4df329d70150e04e36831dd22ef5326ad4be299e8ae4f7c99f452c8b70"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "47f8db4df329d70150e04e36831dd22ef5326ad4be299e8ae4f7c99f452c8b70"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a2b28fb48bd73df4f2189bd9f23a061280771ce6a8a0502642e3243258100355"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de822912a10417876695eb453963b42888f80bb61b53a86183fe5d2a0f2bb02c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93ce74b7cdf8bf980dfd1c399eadcd7b490e658a1c4bde4b043ca5ab30eeaeb9"
   end
 
   depends_on "go" => :build

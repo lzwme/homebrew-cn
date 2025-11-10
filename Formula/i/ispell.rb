@@ -54,6 +54,6 @@ class Ispell < Formula
 
   test do
     assert_equal "BOTHER BOTHE/R BOTH/R",
-                 `echo BOTHER | #{bin}/ispell -c`.chomp
+                 pipe_output("#{bin}/ispell -c", "BOTHER", 0).chomp
   end
 end

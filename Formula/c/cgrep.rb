@@ -2,18 +2,18 @@ class Cgrep < Formula
   desc "Context-aware grep for source code"
   homepage "https://github.com/awgn/cgrep"
   # TODO: Check if `rawfilepath` workaround can be removed
-  url "https://ghfast.top/https://github.com/awgn/cgrep/archive/refs/tags/v8.2.0.tar.gz"
-  sha256 "e874b3b2ce4c8a4a01d5bbf52269d25da631b18c39bfe1b261052bcde1b62240"
+  url "https://ghfast.top/https://github.com/awgn/cgrep/archive/refs/tags/v9.0.0.tar.gz"
+  sha256 "6f7be7a24446289421fabe98393d00a46a1751ce1f605d84135e83d0ddf1d49e"
   license "GPL-2.0-or-later"
   head "https://github.com/awgn/cgrep.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "52f7d3bb9d8209371249400ffa5c6ab140f9f3e44fa14f84bdff378461ccf5bd"
-    sha256 cellar: :any,                 arm64_sequoia: "4fcba62459d97b4b3d889a52f070eea7728735e6a287bcb73b15ee028a613984"
-    sha256 cellar: :any,                 arm64_sonoma:  "3a47ba098507366b8413d0207215e2eab9710e1662a74197b321c80e6dda78ad"
-    sha256 cellar: :any,                 sonoma:        "b99c98fac686d596beb95f3e40a7c14d90b3ef434d70af621b4da5ad7b12602b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2559ee78b9e6004910f9f2c74eb8d877cc775a5441d39b49abab80edb3c3e87b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b86b9d5cc3c3f7a0caac9c10484d904532258db1b58d60ac4155b3160040513"
+    sha256 cellar: :any,                 arm64_tahoe:   "800117428a6815d9cd0a7c78f6760ea928783c2252aa1debb747d3c05b917d09"
+    sha256 cellar: :any,                 arm64_sequoia: "4f8914a4b4537767e2ea7d29e67bf433df1c0afb1d3779c6ad3351e9eba7f614"
+    sha256 cellar: :any,                 arm64_sonoma:  "d16db1ff70db55cbf3af82c4c54cda5caa71c44d722d8b6b7d130cec8bdcf2fb"
+    sha256 cellar: :any,                 sonoma:        "0bd0c453c86021bc28160966bb6793d99801aa8a7f9362bd6e377378d36fc394"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "86fae7709704b2f81203afc12ddce5059d4b888a6201f524d91e202815508ff5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64f7bcace354b59dbe60e17c95a966504fd1b02ca24a8f03576af627cfbc6ee1"
   end
 
   depends_on "cabal-install" => :build
@@ -33,10 +33,12 @@ class Cgrep < Formula
     end
   end
 
-  # Import missing `toShortByteString` function.
-  # The upstream fixed this https://github.com/awgn/cgrep/commit/42016a46e4aebe6db37a084016d2f49a9627face
-  # but the tarball is still missing it
-  patch :DATA
+  # Fix CPP directives alignment
+  # https://github.com/awgn/cgrep/pull/50
+  patch do
+    url "https://github.com/awgn/cgrep/commit/72748d85dbc2bb8059c4a4782be52347fc071eaa.patch?full_index=1"
+    sha256 "04ecc69ec482f0c07edcc07823c284e93e9822128f0398bf00918a81b08227ca"
+  end
 
   def install
     # Work around "error: call to undeclared function 'execvpe'" by imitating part of removed
@@ -49,6 +51,9 @@ class Cgrep < Formula
     end
     # Help resolver pick package versions compatible with newer GHC
     constraints = ["--constraint=async>=2"]
+
+    # `base <4.16.0.0` is not available in the most recent GHC
+    inreplace "cgrep.cabal", "base ^>=4.15.0.0", "base >=4.15.0.0"
 
     system "cabal", "v2-update"
     system "cabal", "v2-install", *constraints, *std_cabal_v2_args
@@ -66,16 +71,3 @@ class Cgrep < Formula
     assert_match ":2", shell_output("#{bin}/cgrep --count puts t.rb")
   end
 end
-__END__
-diff --git a/src/CGrep/Output.hs b/src/CGrep/Output.hs
-index 8312e39..a751fff 100644
---- a/src/CGrep/Output.hs
-+++ b/src/CGrep/Output.hs
-@@ -91,6 +91,7 @@ import Options (
-  )
- import Data.ByteString.Short (ShortByteString)
- import System.OsString.Data.ByteString.Short (fromShort)
-+import OsPath (toShortByteString)
- 
- data Output = Output
-     { outFilePath :: OsPath

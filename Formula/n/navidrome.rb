@@ -1,20 +1,18 @@
 class Navidrome < Formula
   desc "Modern Music Server and Streamer compatible with Subsonic/Airsonic"
   homepage "https://www.navidrome.org"
-  url "https://ghfast.top/https://github.com/navidrome/navidrome/archive/refs/tags/v0.58.0.tar.gz"
-  sha256 "54346203de134b084e0e15d100751ebe82a7c1aa97758191d70de8836b38f0fa"
+  url "https://ghfast.top/https://github.com/navidrome/navidrome/archive/refs/tags/v0.58.5.tar.gz"
+  sha256 "24feffb3565a6f62ce04bd51e789352a8e4a3fe830459da4a42ba726a439b559"
   license "GPL-3.0-only"
   head "https://github.com/navidrome/navidrome.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d005bdc43eead1e5446e04a01795d22633b81bf462d84476a570a17f3a4f293d"
-    sha256 cellar: :any,                 arm64_sequoia: "834a8da0be11db9f180a6c37088fe129410c17dc941d45fc4ed805772b73160a"
-    sha256 cellar: :any,                 arm64_sonoma:  "9e4047467521b55041fe7d0ec973022b9f1b6f99b0b9ef0f81ab657babdc2c9d"
-    sha256 cellar: :any,                 arm64_ventura: "76fc726bd5b11b48b6243718d6a4792b5eaa074474e7d84c80319f0e14c654f3"
-    sha256 cellar: :any,                 sonoma:        "28cd1daaeae6c760aa0275451a92921074b4127f7ccb53f48302f5389ba9d864"
-    sha256 cellar: :any,                 ventura:       "d2c328e9b93ea8eceed27952c71436485a7e0c79c20b75f7730b0c0b4844a2bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "882c457fa3692a24c961fbb54a48c6c6f0eb07596d62dbef354be7a63bd16e4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c2d5ce1fa76d2e9f5354f4e64dd8785e92a2c722c9a0f019a2bf75e01ca4599"
+    sha256 cellar: :any,                 arm64_tahoe:   "3e45a1f971f52e025dda9eb74d9d101ce480ad3d10510cf6db1c725a8461b10a"
+    sha256 cellar: :any,                 arm64_sequoia: "61fb90b15e074dad6036038124fda87eb103d5a6a6b6795da534dd63c26d9c33"
+    sha256 cellar: :any,                 arm64_sonoma:  "0af3782e018b4020507aab3faa1151667510a87766f795117c6d3d075597ddc2"
+    sha256 cellar: :any,                 sonoma:        "891250f528e322b981cab65dac52016eebedf4014306d1395e9ca2e99593213e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8d8b086608ecbd8d1d18acb0c5148b336be9e52097936b2b2bbd2495310b039"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a2e778b1f294c6817a1cd7db17a0d2ff34c979fd5135e84bbd908a29c106ef4"
   end
 
   depends_on "go" => :build

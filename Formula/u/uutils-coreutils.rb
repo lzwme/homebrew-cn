@@ -1,8 +1,8 @@
 class UutilsCoreutils < Formula
   desc "Cross-platform Rust rewrite of the GNU coreutils"
   homepage "https://uutils.github.io/coreutils/"
-  url "https://ghfast.top/https://github.com/uutils/coreutils/archive/refs/tags/0.3.0.tar.gz"
-  sha256 "422b4bab88d6a4da9eabcc947b4e8e0c7fbd123c88700f8750da45910bfb03b6"
+  url "https://ghfast.top/https://github.com/uutils/coreutils/archive/refs/tags/0.4.0.tar.gz"
+  sha256 "5f0c3f97b807e72edccc844c6a685ec9862199f16a665df07de5b1d20ec21233"
   license "MIT"
   head "https://github.com/uutils/coreutils.git", branch: "main"
 
@@ -12,12 +12,12 @@ class UutilsCoreutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "256eafde0ea718394802557077a7e53f3afd2a65f4bcac9055833776a0774b67"
-    sha256 cellar: :any,                 arm64_sequoia: "e2da51d0a24835f9bd9e5f65871500086ad3d6b69135493bb0b53a05bb114428"
-    sha256 cellar: :any,                 arm64_sonoma:  "e5f890883dbbd588167e72c246d4eb1649229dbd200e9f8bf694c406308d56c1"
-    sha256 cellar: :any,                 sonoma:        "57572c249715dd02efdcd964e72630de9638af87041031a8c80eb3bd74b7f6a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a4d174facae5c9e6d254c96c17caf28f098309e97fa67dc2df42cfbc57a8412"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14d4e9b255c29494fbcb0419817cee6e027a378e6acb2026361b062d5138a1a1"
+    sha256 cellar: :any,                 arm64_tahoe:   "2a267c305c63cfb23b41da28f42b7d61974f1a9e4e4a0193e280e02e3a2dc2c0"
+    sha256 cellar: :any,                 arm64_sequoia: "2a59ef6947a0b8a672103ff080af286aaa00fe952e96449ad5ad7150c1296b99"
+    sha256 cellar: :any,                 arm64_sonoma:  "e931c2a51f4dbf5e7ec88be22de457f6a8df37c6fece636f9e7b118e1302f46d"
+    sha256 cellar: :any,                 sonoma:        "c96c4aa0a2fd1d4d8cd1350529a2fff794ce70a88d2a40b55aeb3faf9f502eec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8de9bf8b860974105a72e75e944a7e7ff854066452c4dfdb0f43f19697c9dc0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca67406d62cfa778de25f0d0dc282849aa0ec8a5c2e76c87392f5102284ef391"
   end
 
   depends_on "make" => :build

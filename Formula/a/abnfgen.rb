@@ -28,9 +28,7 @@ class Abnfgen < Formula
   end
 
   def install
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 

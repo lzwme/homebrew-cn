@@ -3,8 +3,7 @@ class Jove < Formula
   homepage "https://directory.fsf.org/wiki/Jove"
   url "https://ghfast.top/https://github.com/jonmacs/jove/archive/refs/tags/4.17.5.5.tar.gz"
   sha256 "4261d7cab02816eb03f3f356a0a2869d7f6168fce53478ede8e5fdd06a9ecfb9"
-  # license ref, https://github.com/jonmacs/jove/blob/4_17/LICENSE
-  license :cannot_represent
+  license "jove"
 
   bottle do
     sha256 arm64_tahoe:   "ee1248e197df0c81afc0548004d8ae314d911b63470761a839421d4b3a4b4ba5"
