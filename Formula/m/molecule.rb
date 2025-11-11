@@ -3,18 +3,17 @@ class Molecule < Formula
 
   desc "Automated testing for Ansible roles"
   homepage "https://molecule.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/93/dc/96458f3a5ed721364a76e773f60d04ca35e9d068c907a5723e65d0897d97/molecule-25.9.0.tar.gz"
-  sha256 "1a56d283b1fb5488439eac945971dbd66b772ed43b2c66a776922cb93d39fbfd"
+  url "https://files.pythonhosted.org/packages/4d/93/b1df90b2216f991451ae8dd80c064d5e254bd29ea581d990833b41642278/molecule-25.11.0.tar.gz"
+  sha256 "f3e5b51db04a317b698bcbe681e1e7466c09edd3838d4d5087d621bd9e44b73f"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "c6ad9fe5f51f8b9874850320792ca07bec6b9a7f2a2265457d2bc0fa6e061ca5"
-    sha256 cellar: :any,                 arm64_sequoia: "2671ca49c338bb99b1f780d6577f4ba6ac39fefee15c8c1b167f18bd4f907830"
-    sha256 cellar: :any,                 arm64_sonoma:  "a8ac56ad1d165b0dfe505990c5b1a446120c700b5ae2c0980852ad9c446218fd"
-    sha256 cellar: :any,                 sonoma:        "a2e0e7939f07856d834d0ade3fc5a535c4b05466a17969fcfbc34947b03fe13f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "69ab7bcb71335c7e55df5bcb2058da456fcf0adada738c3be8c3113631c40b6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "949b42de5441a59f34f62527c5e95236d874b92d976bb0f71dedae64fe3d4387"
+    sha256 cellar: :any,                 arm64_tahoe:   "696240463635bc5b968243ebd2e71b42ee11c3f5aefb88d8426e4ea9e85342da"
+    sha256 cellar: :any,                 arm64_sequoia: "fc5de0e3ae7fef837b36df41c649cc13dbd00a0cb591e8041341a135451d3abd"
+    sha256 cellar: :any,                 arm64_sonoma:  "8a03d5017e0e1abd95b5ea4956eddc283f030d94f9af2cfdeba310d8ad3a18a4"
+    sha256 cellar: :any,                 sonoma:        "0b30eca96f81ee2514878393c1a350bff3007cc4294dd0cbd89e4e56a428d467"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c2886e049eee0c98993e3142ad9838e1da0c00bcebfd5ca86c1cca202ade2a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "990a120b934393943143c80d2d55a162fac37345ab3894163d026e0cf789f681"
   end
 
   depends_on "ansible"
@@ -34,18 +33,18 @@ class Molecule < Formula
                 extra_packages:   "molecule-plugins[azure,docker,ec2,gce,podman,vagrant,openstack]"
 
   resource "ansible-compat" do
-    url "https://files.pythonhosted.org/packages/ea/96/d5bcbd652dbcbf8611b32457d67b10e41e5e596e34460c25511ccfa6fbf1/ansible_compat-25.8.1.tar.gz"
-    sha256 "f29ab81264b3f04fb94ac2d7f68fe73efc2eb3cbe4ecf00f9b4742e77c41756f"
+    url "https://files.pythonhosted.org/packages/de/95/2f361bedf7513b2ab558599a4cc9d5dd84d9d85b49c1dd994d0f5603f952/ansible_compat-25.11.0.tar.gz"
+    sha256 "b9e6655d8f4942c427a39fa1df6697830d987fe5d311bc7be2b2f81c1edd48f5"
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/16/f1/1c21d3bff03fe9a5b51515307db7a76ec8b8972c70d5702cc3027c988a99/ansible_core-2.19.2.tar.gz"
-    sha256 "87fcbbc492ed16eb6adb0379bae0adbf69f3ce88a8440e7e88e0dcefa9f8a54c"
+    url "https://files.pythonhosted.org/packages/02/5b/8992daa4102cf92eca06f7e40d9c9cfdb2d6440719dff9944417c570fea6/ansible_core-2.20.0.tar.gz"
+    sha256 "cd73faf28a056c933bc1eee8f66ab597e7ec7309d42c8a6e5d6e4294c4a78b54"
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
-    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
+    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
+    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
   end
 
   resource "bracex" do
@@ -54,18 +53,18 @@ class Molecule < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/6c/81/3747dad6b14fa2cf53fcf10548cf5aea6913e96fab41a3c198676f8948a5/cachetools-5.5.2.tar.gz"
-    sha256 "1a661caa9175d26759571b2e19580f9d6393969e5dfca11fdb1f947a23e640d4"
+    url "https://files.pythonhosted.org/packages/cc/7e/b975b5814bd36faf009faebe22c1072a1fa1168db34d285ef0ba071ad78c/cachetools-6.2.1.tar.gz"
+    sha256 "3f391e4bd8f8bf0931169baf7456cc822705f4e2a31f840d218f445b9a854201"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "click-help-colors" do
@@ -89,8 +88,8 @@ class Molecule < Formula
   end
 
   resource "dogpile-cache" do
-    url "https://files.pythonhosted.org/packages/86/97/da72845c89c9aa70e3e74609b864eff5e5c2ec46366645e7bb61eaa29e9c/dogpile_cache-1.4.1.tar.gz"
-    sha256 "e25c60e677a5e28ff86124765fbf18c53257bcd7830749cd5ba350ace2a12989"
+    url "https://files.pythonhosted.org/packages/e7/c8/301ff89746e76745b937606df4753c032787c59ecb37dd4d4250bddc8929/dogpile_cache-1.5.0.tar.gz"
+    sha256 "849c5573c9a38f155cd4173103c702b637ede0361c12e864876877d0cd125eec"
   end
 
   resource "enrich" do
@@ -99,13 +98,13 @@ class Molecule < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/9e/9b/e92ef23b84fa10a64ce4831390b7a4c2e53c0132568d99d4ae61d04c8855/google_auth-2.40.3.tar.gz"
-    sha256 "500c3a29adedeb36ea9cf24b8d10858e152f2412e3ca37829b3fa18e33d63b77"
+    url "https://files.pythonhosted.org/packages/ff/ef/66d14cf0e01b08d2d51ffc3c20410c4e134a1548fc246a6081eae585a4fe/google_auth-2.43.0.tar.gz"
+    sha256 "88228eee5fc21b62a1b5fe773ca15e67778cb07dc8363adcb4a8827b52d81483"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "iso8601" do
@@ -154,8 +153,8 @@ class Molecule < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   resource "mdurl" do
@@ -174,8 +173,8 @@ class Molecule < Formula
   end
 
   resource "os-service-types" do
-    url "https://files.pythonhosted.org/packages/9d/e9/1725288a94496d7780cd1624d16b86b7ed596960595d5742f051c4b90df5/os_service_types-1.8.0.tar.gz"
-    sha256 "890ce74f132ca334c2b23f0025112b47c6926da6d28c2f75bcfc0a83dea3603e"
+    url "https://files.pythonhosted.org/packages/e7/da/66eaa235e053eb2451464ec131487dec01b5259105688e9f6771d07d45fe/os_service_types-1.8.1.tar.gz"
+    sha256 "c3d60134ee509cf55452c73ff8bd41891bcb6cf42421a159c0138824e126402b"
   end
 
   resource "packaging" do
@@ -184,13 +183,13 @@ class Molecule < Formula
   end
 
   resource "pbr" do
-    url "https://files.pythonhosted.org/packages/ad/8d/23253ab92d4731eb34383a69b39568ca63a1685bec1e9946e91a32fc87ad/pbr-7.0.1.tar.gz"
-    sha256 "3ecbcb11d2b8551588ec816b3756b1eb4394186c3b689b17e04850dfc20f7e57"
+    url "https://files.pythonhosted.org/packages/5e/ab/1de9a4f730edde1bdbbc2b8d19f8fa326f036b4f18b2f72cfbea7dc53c26/pbr-7.0.3.tar.gz"
+    sha256 "b46004ec30a5324672683ec848aed9e8fc500b0d261d40a3229c2d2bbfcedc29"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
-    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
+    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
+    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
   end
 
   resource "pluggy" do
@@ -199,8 +198,8 @@ class Molecule < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/2a/80/336820c1ad9286a4ded7e845b2eccfcb27851ab8ac6abece774a6ff4d3de/psutil-7.0.0.tar.gz"
-    sha256 "7be9c3eba38beccb6495ea33afd982a44074b78f28c434a1f51cc07fd315c456"
+    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
+    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
   end
 
   resource "pyasn1" do
@@ -224,13 +223,13 @@ class Molecule < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
-    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
+    url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
+    sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
   end
 
   resource "requests" do
@@ -244,13 +243,13 @@ class Molecule < Formula
   end
 
   resource "resolvelib" do
-    url "https://files.pythonhosted.org/packages/05/57/c5c178e21968123cf2aa90501b5fc14a48e342612695863333f4b70510ad/resolvelib-1.2.0.tar.gz"
-    sha256 "c27fbb5098acd7dfc01fb2be3724bd0881168edc2bd3b4dc876ca3f46b8e4a3d"
+    url "https://files.pythonhosted.org/packages/1d/14/4669927e06631070edb968c78fdb6ce8992e27c9ab2cde4b3993e22ac7af/resolvelib-1.2.1.tar.gz"
+    sha256 "7d08a2022f6e16ce405d60b68c390f054efcfd0477d4b9bd019cc941c28fad1c"
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
-    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "rsa" do

@@ -3,18 +3,18 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/47/2e/d67df2cd1c34ad249c0da99be08bfb486439558caf46f8e5dbb36292b050/kimi_cli-0.51.tar.gz"
-  sha256 "6012a1385be60144cb288f6228f148abc1fff95991bc3beb68b225e403a92b67"
+  url "https://files.pythonhosted.org/packages/a6/43/b826e0ecf026a64001f8a002c8bf300741b5ff65c9298595bcb45f882679/kimi_cli-0.52.tar.gz"
+  sha256 "9e0623483debe28667c4fe858beb05e3aca1fda3ef3e1ad70ddeaf1034d972c6"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c349eea3da1703589ce8941e6360e1f86a4ec921384da3c3233aa4cc8786123a"
-    sha256 cellar: :any,                 arm64_sequoia: "2303efb92d9e8435743e57d74f7b40abe414855172445f170490cde090a645f0"
-    sha256 cellar: :any,                 arm64_sonoma:  "79e7254955e727023b6121e8be414fd377a9a13465e4ff59277c9c67f7435c6c"
-    sha256 cellar: :any,                 sonoma:        "4cdb93bb19049098c9506505849a83ffa83ef64d9307883aea9a8f56cd38ae43"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe2ddf20517afb2d802b4331adccda800544f63146488277edd6d75835708946"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7f59f594ad3e937f5f07eb75474a858a35db79d255d6a3556c8e64987b924ee"
+    sha256 cellar: :any,                 arm64_tahoe:   "bd0b7df447b05dc3c03bcd69c7f6b680bbcc391dd188f9c1a5c6e264d699a201"
+    sha256 cellar: :any,                 arm64_sequoia: "aff0cb846e7ee93ca2b60e92fa193bcf4e5d6cfac63fd3785993c4f8d29c89a2"
+    sha256 cellar: :any,                 arm64_sonoma:  "519709e91bf1892cc1d97373df8b2a946b63a1190cb9a25afc03acce0df1743d"
+    sha256 cellar: :any,                 sonoma:        "eea4a4e30bfd7bff8a6f0eaab25135756da73158b6d121c45477b8463570a607"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "456e01f28f2fc50b3e2a10c6f399833fe94c46469dc447e0129cace5e099cadb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04eb589f7884151c57e3c976175ee3f36677878afdee7d55b8e8bd17e73b9dfe"
   end
 
   depends_on "pkgconf" => :build
@@ -99,8 +99,8 @@ class KimiCli < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/8a/51/a67b17fac2530d22216a335bd10f48631412dd824013ea559ec236668f76/cyclopts-4.2.1.tar.gz"
-    sha256 "49bb4c35644e7a9658f706ade4cf1a9958834b2dca4425e2fafecf8a0537fac7"
+    url "https://files.pythonhosted.org/packages/34/ab/67bd1b010aaa09c6b627a535cbb0c6453920c290df83cbdccb0b097227d9/cyclopts-4.2.2.tar.gz"
+    sha256 "d5eb7d5ab688f8e86bc6fc7b8ab85951b2fe34aebcf1a48c4c9a6b43c14cb78b"
   end
 
   resource "dateparser" do
@@ -126,11 +126,6 @@ class KimiCli < Formula
   resource "docutils" do
     url "https://files.pythonhosted.org/packages/d9/02/111134bfeb6e6c7ac4c74594e39a59f6c0195dc4846afbeac3cba60f1927/docutils-0.22.3.tar.gz"
     sha256 "21486ae730e4ca9f622677b1412b879af1791efcfba517e4c6f60be543fc8cdd"
-  end
-
-  resource "dotenv" do
-    url "https://files.pythonhosted.org/packages/b2/b7/545d2c10c1fc15e48653c91efde329a790f2eecfbbf2bd16003b5db2bab0/dotenv-0.9.9-py2.py3-none-any.whl"
-    sha256 "29cf74a087b31dafdb5a446b6d7e11cbce8ed2741540e2339c69fbef92c94ce9"
   end
 
   resource "email-validator" do
@@ -189,8 +184,8 @@ class KimiCli < Formula
   end
 
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/a3/68/0357982493a7b20925aece061f7fb7a2678e3b232f8d73a6edb7e5304443/jiter-0.11.1.tar.gz"
-    sha256 "849dcfc76481c0ea0099391235b7ca97d7279e0fa4c86005457ac7c88e8b76dc"
+    url "https://files.pythonhosted.org/packages/45/9d/e0660989c1370e25848bb4c52d061c71837239738ad937e83edca174c273/jiter-0.12.0.tar.gz"
+    sha256 "64dfcd7d5c168b38d3f9f8bba7fc639edb3418abcc74f22fdbe6b8938293f30b"
   end
 
   resource "jsonschema" do
@@ -214,8 +209,8 @@ class KimiCli < Formula
   end
 
   resource "kosong" do
-    url "https://files.pythonhosted.org/packages/46/16/26f5db6bca645af4b86fbbe4166e6cef6d916bf83294f63be4c06341098f/kosong-0.19.0.tar.gz"
-    sha256 "511438a3c19038da62ecf97155ed5fba242a16f0dbfd7a41e4f46ddd13528d5f"
+    url "https://files.pythonhosted.org/packages/d0/4e/83e6a6b6982747602dddfbb6be9a238ff8f0575d08ae7d35f0d3bb837e22/kosong-0.22.0.tar.gz"
+    sha256 "bc78334338e216379c8f7980ecbc87f68d8175b32a2b963ff367dfa0ecb274be"
   end
 
   resource "lazy-object-proxy" do
@@ -319,8 +314,8 @@ class KimiCli < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/20/c5/dbbc27b814c71676593d1c3f718e6cd7d4f00652cefa24b75f7aa3efb25e/pydantic_settings-2.11.0.tar.gz"
-    sha256 "d0e87a1c7d33593beb7194adb8470fc426e95ba02af83a0f23474a04c9a08180"
+    url "https://files.pythonhosted.org/packages/43/4b/ac7e0aae12027748076d72a8764ff1c9d82ca75a7a52622e67ed3f765c54/pydantic_settings-2.12.0.tar.gz"
+    sha256 "005538ef951e3c2a68e1c08b292b5f2e71490def8589d4221b95dab00dafcfd0"
   end
 
   resource "pygments" do
@@ -393,6 +388,11 @@ class KimiCli < Formula
     sha256 "4c43c61384f257660007acd271a5d8e4abe9be0b069c418d091f7299e080ca9d"
   end
 
+  resource "shellingham" do
+    url "https://files.pythonhosted.org/packages/58/15/8b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58e/shellingham-1.5.4.tar.gz"
+    sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
+  end
+
   resource "six" do
     url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
@@ -447,6 +447,11 @@ class KimiCli < Formula
   resource "trafilatura" do
     url "https://files.pythonhosted.org/packages/06/25/e3ebeefdebfdfae8c4a4396f5a6ea51fc6fa0831d63ce338e5090a8003dc/trafilatura-2.0.0.tar.gz"
     sha256 "ceb7094a6ecc97e72fea73c7dba36714c5c5b577b6470e4520dca893706d6247"
+  end
+
+  resource "typer" do
+    url "https://files.pythonhosted.org/packages/8f/28/7c85c8032b91dbe79725b6f17d2fffc595dff06a35c7a30a37bef73a1ab4/typer-0.20.0.tar.gz"
+    sha256 "1aaf6494031793e4876fb0bacfa6a912b551cf43c1e63c800df8b1a866720c37"
   end
 
   resource "tzlocal" do

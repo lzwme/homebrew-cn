@@ -1,18 +1,18 @@
 class Mdz < Formula
   desc "CLI for the mdz ledger Open Source"
   homepage "https://github.com/LerianStudio/midaz"
-  url "https://ghfast.top/https://github.com/LerianStudio/midaz/archive/refs/tags/v3.3.6.tar.gz"
-  sha256 "3b649c6d45986dfd6d098f07281040a0efb479265e365263cec80725feda5cda"
+  url "https://ghfast.top/https://github.com/LerianStudio/midaz/archive/refs/tags/v3.4.0.tar.gz"
+  sha256 "dd19ed3cadb6468ab1cdacc4ac710a393f5dc16d3e95e0aa2862936f9839b252"
   license "Apache-2.0"
   head "https://github.com/LerianStudio/midaz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6b502ce6aa976fb5596e57b3b1fc378bc7e6fcf68112b4c2fcff0db7ce2e61d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa9a3cfa02a6c8075e43692af6fce96ab34ae3de61ebd9d9a49872efd711dfa6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6127718590325e3c0b4a35b3dac4a392d89929e51a0d2271430197de4d1d750"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dbce075c6c026b9e5a155b31c550c5a71ad691b0490768e0af6d01337cba7640"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac85ba558fbae2893afbf579a9a4827dd9f017e16876aadc9220d6ec71e8825d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dab7e3db07de88789c5511c5dd6c804f779b9667b6f47c3bc379bb7c185e68fb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4c804d545671437d702b1a6f989c32c1229df1aaa6a0e84bcc103ebfd6d8617"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef6be8a35d7c4284886fc3488662a981e529ea4e0637feda950de065243c0c37"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "827d01c8d736491566a945d29581a85e7fba3907c9780530767c8175fb7340b1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9174d26e42ad46d9c4b2589a0e48c6ee3160307d1ae518d33fe34787ef54a84c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "88e586adced15dc5d62fc7cbac6a2977819213ca2295c97f2ecfe2a8dabee0e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f9ed7b904705e6d600879c5f87fe7e51bd8dcae12b74fee7fdd451312adbe51"
   end
 
   depends_on "go" => :build

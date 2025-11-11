@@ -1,17 +1,17 @@
 class FlipLink < Formula
   desc "Adds zero-cost stack overflow protection to your embedded programs"
   homepage "https://github.com/knurling-rs/flip-link"
-  url "https://ghfast.top/https://github.com/knurling-rs/flip-link/archive/refs/tags/v0.1.11.tar.gz"
-  sha256 "d32d9c79ae93a46e721b809a103ffe8fc7d1e0a71f661a4221845dd63048e675"
+  url "https://ghfast.top/https://github.com/knurling-rs/flip-link/archive/refs/tags/v0.1.12.tar.gz"
+  sha256 "3608b9adddd5415d1a897947abaaf0438a8a4459292054dc7eb1f809ecab1366"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a1d14b41d7a365ac7e142963da71c68ad9beb1edf982ff496958c995e509d984"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "621b648f75e43a4420e18172f793f7a463fd17baabec6e97ea99eebda1f4d0c2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c2648567684cbe7355c7f236c3f450d0c42c9f666dd43e6fb5d915acf32ce5e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "247129566c8f6e753da4eb7f62e2647b0c39a5a62ebb6e4c3a60e1d2d951462b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "302b0798e23f79898a0cf97844bfc3da1c4dbcbdb8e82e502d7ba1d9b73836ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "703058fc74a4a733f2d07da1c60fb4bed988ca55bf8a92d2803a3c5470d642fb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea90aef07c426e04b66ea2397ce1e2e22dabc52774f2d50d8015ec46978cfdb8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b05e6b93858ca017be251d2446d44ac72fda26bc824bedbd8e5ee31837f4e858"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de05d8304554048228f668c60e1d5f32a2420f00ed0105794e835f44b96c03a6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c4a0f0f6b8b85fd41b9bd566485650607d9a4e283300235917549e7194f187f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "94c40029460a66e8e343f1a073361a7bfe46b598d820000797dc6040c45f53ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52890212a0445ce719f608eab616fa430de53469eb3134c0ff4906eab2f5566c"
   end
 
   depends_on "rust" => :build

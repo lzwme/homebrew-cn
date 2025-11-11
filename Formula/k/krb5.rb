@@ -31,14 +31,13 @@ class Krb5 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7922c7d39301812f11f49cc564c79b7e24822a6650216fb102e6209c837cef15"
-    sha256 arm64_sequoia: "902884745603d3d55cdbe5e30ca2972a1d0829ae2512f6ef8e8731d92a607938"
-    sha256 arm64_sonoma:  "5dc445bcf366abc34e62ae564695d123ce24ee9c0d625de7c62f4d0785a110ba"
-    sha256 arm64_ventura: "ac9341e0db85afbf17f8d923d67527d5d6cac7c9dd0da09dbab36ffe5d9c2a02"
-    sha256 sonoma:        "b6af4b9221012af0d3e7d364713d1ce95cc10e490973b66766fe3113409f0acd"
-    sha256 ventura:       "3816d54634a8bee2ac51dda7c8cb5fd6dc3e9a25693c9242b9b80f4c9c262fd1"
-    sha256 arm64_linux:   "5d657c89c3796d2acc33c0af7e707df90866fc8b83d20c0b80df7178005d2595"
-    sha256 x86_64_linux:  "fe519bd1bd2742d34763055beac8767693c1a8a8c412259829f39b9d1a6c6a66"
+    rebuild 1
+    sha256 arm64_tahoe:   "ba7292c48faba4e1316a134b578075438a4a5fd68ce7a26a078c01299a5ad567"
+    sha256 arm64_sequoia: "f0f2b5564c2fd190fcd348e44fa173540229b6aeb0dbd0366c2dcd1c974b03bc"
+    sha256 arm64_sonoma:  "9ed1b2fce50ddeb0895f6fc8ab6f063ee52a1b0247375b163819895ba90f10aa"
+    sha256 sonoma:        "00825fbba0182d1fc4311fd0ab066f9171dbbfa5e054e8c3f9929711495cd649"
+    sha256 arm64_linux:   "cefd51a8be00bb1f11891da5d751d9789033549a4b15270ee1d455d2dbb79d2c"
+    sha256 x86_64_linux:  "f06847262502d82d12cc4db16ec946dffecbdd32c8835702c792b4ac38bc2b56"
   end
 
   keg_only :provided_by_macos
@@ -48,12 +47,15 @@ class Krb5 < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "libedit"
 
+  on_linux do
+    depends_on "keyutils"
+  end
+
   def install
     cd "src" do
       system "./configure", "--disable-nls",
                             "--disable-silent-rules",
                             "--without-system-verto",
-                            "--without-keyutils",
                             *std_configure_args
       system "make"
       system "make", "install"

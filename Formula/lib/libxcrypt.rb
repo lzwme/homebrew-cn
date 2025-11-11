@@ -1,8 +1,8 @@
 class Libxcrypt < Formula
   desc "Extended crypt library for descrypt, md5crypt, bcrypt, and others"
   homepage "https://github.com/besser82/libxcrypt"
-  url "https://ghfast.top/https://github.com/besser82/libxcrypt/releases/download/v4.5.1/libxcrypt-4.5.1.tar.xz"
-  sha256 "e9b46a62397c15372935f6a75dc3929c62161f2620be7b7f57f03d69102c1a86"
+  url "https://ghfast.top/https://github.com/besser82/libxcrypt/releases/download/v4.5.2/libxcrypt-4.5.2.tar.xz"
+  sha256 "71513a31c01a428bccd5367a32fd95f115d6dac50fb5b60c779d5c7942aec071"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Libxcrypt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3c0f2054f259335f5d11e663fa3691150e269c242d2dfd8e97413758b434179d"
-    sha256 cellar: :any,                 arm64_sequoia: "2232e650ddd88be1b9d70d4bebf0e2ab36001e6ae07014449fa82ba8ee8d4a32"
-    sha256 cellar: :any,                 arm64_sonoma:  "bf89d130e965823653402a8446cb947d70a9c7a3abf3d88a702f12fa2518c686"
-    sha256 cellar: :any,                 sonoma:        "63cfca65ae97ffcfd2df990e5e554763e35008039ea5b1bd4af464a32ae4264a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c09b64163b5f71d0618bced354d5814e599ee8eda03d62fcbc38be9a305773e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9617e096e96d3d0c684510d5c085f328a4bbb3783a41abd86da6543273f5ca9a"
+    sha256 cellar: :any,                 arm64_tahoe:   "45b16874ed374eda84779a795aa32640f86759dd480f470567949b7639a8e3ee"
+    sha256 cellar: :any,                 arm64_sequoia: "04b6d0459d587d4137b8fdc9d7a711bf5df1405afae64997d4d8f6016df50e20"
+    sha256 cellar: :any,                 arm64_sonoma:  "6f459775883ffb7e1cd95dfeef36d3f490f20e3dcaa79055d318c46991d31f5f"
+    sha256 cellar: :any,                 sonoma:        "909d2e42bae6c62c05e5c52f6f45aa3da6a4c668c6a88f90a0cc6ebb6794f212"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "591376dcb066e3abf120b46895aabe9409aadf8f9577bd2672e52524f05a1952"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9319e1e70e1e3e476e421956baaeebc0d7be9c3030897844a3c348fe4dd116a5"
   end
 
   keg_only :provided_by_macos

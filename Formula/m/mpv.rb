@@ -2,7 +2,7 @@ class Mpv < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
   license :cannot_represent
-  revision 4
+  revision 5
   head "https://github.com/mpv-player/mpv.git", branch: "master"
 
   stable do
@@ -23,15 +23,12 @@ class Mpv < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "106cc0184a6703e9c3e9a4b3662b3a65da4e64c8a2e43218d1fc19493cdecdb8"
-    sha256 arm64_sequoia: "2a72093cc0689a0c6341b7abc942ba0ec802490c807ff764ac20edb6f0ead270"
-    sha256 arm64_sonoma:  "8247120427ca93debacb0b079ba30dd9d233e8f8f0705e9a82899a4fee833157"
-    sha256 arm64_ventura: "20afc0a4fe70131481e5a8fcd91a803806965bb76e106a326eae6ee5864bce2f"
-    sha256 sonoma:        "eb40fe0c534999a9771f3666824c0d70488afd06f96c37a1d26821f5537e5fb9"
-    sha256 ventura:       "af91158356583eb46de5fb7dbc999eeee2d2606336fb4276eb5713daf9efa580"
-    sha256 arm64_linux:   "16e483fc11b83570cd434a3f9b44b69afccf90f5091adca702a6200b269a80fb"
-    sha256 x86_64_linux:  "ae8b059abf68381c7f62d9190dca745f36971ad1b0a1080c6d69a05bd3ac5b42"
+    sha256 arm64_tahoe:   "b0c96c2de5c40cc4aa8013f8f8bd99ac84ebb6712e4c72f7475fb14aac0cf9cf"
+    sha256 arm64_sequoia: "97797d9045ec1d1e6626679b21552633765269858c1e5ae4811d20e903e5b033"
+    sha256 arm64_sonoma:  "b61a1b36b99557752dfe28a51575d4d68939ac6b567c013b8e2d4675e3ac18d7"
+    sha256 sonoma:        "bd6d0e4f3b201d7a9dd6351958740055318e05a203241f543255f4de5d32459e"
+    sha256 arm64_linux:   "f6ff26eb086f3353cebe619108304d40b0feae70f83ecdfd904b716819c01575"
+    sha256 x86_64_linux:  "a713417cace2c823932de6097a8c46bce45e873dd601ad6e9e8d26c2b3f23732"
   end
 
   depends_on "docutils" => :build

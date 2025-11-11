@@ -1,13 +1,13 @@
 class Tomcat < Formula
   desc "Implementation of Java Servlet and JavaServer Pages"
   homepage "https://tomcat.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=tomcat/tomcat-11/v11.0.13/bin/apache-tomcat-11.0.13.tar.gz"
-  mirror "https://archive.apache.org/dist/tomcat/tomcat-11/v11.0.13/bin/apache-tomcat-11.0.13.tar.gz"
-  sha256 "f174c8aebb6d27864ba40823ceb059191d27cc0ee24a28b691ccd416839b8ecf"
+  url "https://www.apache.org/dyn/closer.lua?path=tomcat/tomcat-11/v11.0.14/bin/apache-tomcat-11.0.14.tar.gz"
+  mirror "https://archive.apache.org/dist/tomcat/tomcat-11/v11.0.14/bin/apache-tomcat-11.0.14.tar.gz"
+  sha256 "c1f8c2dec9c1f8250ec2936bf61fedb53a87d3d60827162d62bc1e4ac674368c"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b71906008f51b322bfb2239cc14ad673daf2d35cd3b06bcaf5893dde71c7f48c"
+    sha256 cellar: :any_skip_relocation, all: "8146beb3cbd096d0842c15cfbab6ce9aa54b3ad7d1a64845a1d912e64ec0627e"
   end
 
   depends_on "openjdk"

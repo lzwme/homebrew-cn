@@ -1,8 +1,8 @@
 class F2 < Formula
   desc "Command-line batch renaming tool"
   homepage "https://github.com/ayoisaiah/f2"
-  url "https://ghfast.top/https://github.com/ayoisaiah/f2/archive/refs/tags/v2.2.1.tar.gz"
-  sha256 "69e60baeb8e15644088713d7b2fb1e7d23131a92ef5fa61ed4c2c18160078ff1"
+  url "https://ghfast.top/https://github.com/ayoisaiah/f2/archive/refs/tags/v2.2.2.tar.gz"
+  sha256 "0785e40b1fd2adb55165f668dc2635d47559fd7534b0f1da33849f155c4e539b"
   license "MIT"
   head "https://github.com/ayoisaiah/f2.git", branch: "master"
 
@@ -14,12 +14,12 @@ class F2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "20b9ac62100ec247caee037f1bef031b4b9794cedf6776807c0cb603a41dc105"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20b9ac62100ec247caee037f1bef031b4b9794cedf6776807c0cb603a41dc105"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20b9ac62100ec247caee037f1bef031b4b9794cedf6776807c0cb603a41dc105"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4cf1ad63cbd2dbec21a018c24c1e1a911db504187ec70214214b55cf73c59f2f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7819d9f0260b029e2926bbe36bcd954153a6c4ffea6b7f1359452d6869cd43b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4784160f2ac8eeba3b140a355891b208463117ad21bf77ced6f3120c8c10c4df"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60199512555005b0c455a318294ce2461fca14fe73055d6a3d79c557f3e33a55"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60199512555005b0c455a318294ce2461fca14fe73055d6a3d79c557f3e33a55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60199512555005b0c455a318294ce2461fca14fe73055d6a3d79c557f3e33a55"
+    sha256 cellar: :any_skip_relocation, sonoma:        "91a8f2cbed065c6ad0e976f8c9a672cd7cd831a65b268423f6eb8348502703af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "68b82c40b03fc395853ffaacbe371320c9a7b23c240111c4c78199a1580f0a95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb89b5ee0b534374db45f86c91b162cdb2d524a4522ac92e5157343b79e0d3ea"
   end
 
   depends_on "go" => :build

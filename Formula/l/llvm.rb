@@ -106,7 +106,7 @@ class Llvm < Formula
     # Work around build failure (maybe from CMake 4 update) by using environment
     # variable for https://cmake.org/cmake/help/latest/variable/CMAKE_OSX_SYSROOT.html
     # TODO: Consider if this should be handled in superenv as impacts other formulae
-    ENV["SDKROOT"] = MacOS.sdk_for_formula(self).path if OS.mac? && MacOS.sdk_root_needed?
+    ENV["SDKROOT"] = MacOS.sdk_for_formula(self).path if OS.mac?
 
     # Apple's libstdc++ is too old to build LLVM
     ENV.libcxx if ENV.compiler == :clang
@@ -486,12 +486,10 @@ class Llvm < Formula
     arches = Set.new([:arm64, :x86_64, :aarch64])
     arches << arch
 
-    sysroot = if macos_version.blank? || (MacOS.version > macos_version && MacOS::CLT.separate_header_package?)
+    sysroot = if macos_version.blank? || MacOS.version > macos_version
       "#{MacOS::CLT::PKG_PATH}/SDKs/MacOSX.sdk"
-    elsif macos_version >= "10.14"
-      "#{MacOS::CLT::PKG_PATH}/SDKs/MacOSX#{macos_version}.sdk"
     else
-      "/"
+      "#{MacOS::CLT::PKG_PATH}/SDKs/MacOSX#{macos_version}.sdk"
     end
 
     {

@@ -50,7 +50,7 @@ class Itstool < Formula
     resource("libxml2").stage do
       # We need to insert our include dir first
       includes = [Formula["libxml2"].opt_include]
-      includes << (OS.mac? ? "#{MacOS.sdk_path_if_needed}/usr/include" : HOMEBREW_PREFIX/"include")
+      includes << (OS.mac? ? "#{MacOS.sdk_for_formula(self).path}/usr/include" : HOMEBREW_PREFIX/"include")
       inreplace "python/setup.py.in", "includes_dir = [",
                                       "includes_dir = [#{includes.map { |inc| "'#{inc}'," }.join(" ")}"
 

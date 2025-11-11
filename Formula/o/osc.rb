@@ -3,14 +3,13 @@ class Osc < Formula
 
   desc "Command-line interface to work with an Open Build Service"
   homepage "https://openbuildservice.org"
-  url "https://files.pythonhosted.org/packages/11/85/c7fc2a78daeb2ff8faba56a8955fdb06f9edf653799332828584953b4644/osc-1.21.0.tar.gz"
-  sha256 "47511ab565af21d4ce7ffb38bfb0cffda6ee453b142b76ca89b8c9240c26e14f"
+  url "https://files.pythonhosted.org/packages/0c/47/96d136f0e774e3d12f00d1a4b63e808d8b8c757bb0122db878c78b191ddd/osc-1.22.0.tar.gz"
+  sha256 "a88b3a4c87aca7c87bbfa4da9be5371f70c31222ae93eb6beae4c5598bb4db2a"
   license "GPL-2.0-or-later"
   head "https://github.com/openSUSE/osc.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "0340d2cce15f3468d8b5fc4562b532e298662a43699744bee6bb042688132cca"
+    sha256 cellar: :any_skip_relocation, all: "383f126d5b14ef272d8ac1d991da27debd2256039582a268f9faa01bb070d66d"
   end
 
   depends_on "cryptography" => :no_linkage
@@ -25,8 +24,8 @@ class Osc < Formula
                 exclude_packages: "cryptography"
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/3e/db/f3950f5e5031b618aae9f423a39bf81a55c148aecd15a34527898e752cf4/ruamel.yaml-0.18.15.tar.gz"
-    sha256 "dbfca74b018c4c3fba0b9cc9ee33e53c371194a9000e694995e620490fd40700"
+    url "https://files.pythonhosted.org/packages/9f/c7/ee630b29e04a672ecfc9b63227c87fd7a37eb67c1bf30fe95376437f897c/ruamel.yaml-0.18.16.tar.gz"
+    sha256 "a6e587512f3c998b2225d68aa1f35111c29fad14aed561a26e73fab729ec5e5a"
   end
 
   resource "urllib3" do

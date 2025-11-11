@@ -1,18 +1,17 @@
 class Dartsim < Formula
   desc "Dynamic Animation and Robotics Toolkit"
   homepage "https://dartsim.github.io/"
-  url "https://ghfast.top/https://github.com/dartsim/dart/archive/refs/tags/v6.15.0.tar.gz"
-  sha256 "bbf954e283f464f6d0a8a5ab43ce92fd49ced357ccdd986c7cb4c29152df8692"
+  url "https://ghfast.top/https://github.com/dartsim/dart/archive/refs/tags/v6.16.0.tar.gz"
+  sha256 "a036d943688fdd6fb34f140a1f3e8d44376361a265b734a3702da5dea9f75786"
   license "BSD-2-Clause"
-  revision 6
 
   bottle do
-    sha256                               arm64_tahoe:   "1920dc73653aeb057dcf27644f2ec2b57749ee6c9d2328733712cd0876d4df98"
-    sha256                               arm64_sequoia: "512ffe161072bb701ec6ed1e939a6a0d0491d935bf4ac052581244536e6dbafd"
-    sha256                               arm64_sonoma:  "0f4b0b2c0c2cee8f18a90256f92c5b0ab9fb3c6b892523ed81e3c010f4230681"
-    sha256                               sonoma:        "8350a51f816311c2176eba807319e59be607f54aa6ed8a9dd9bddc69e9893f58"
-    sha256                               arm64_linux:   "b40c3209d705b7b5c0ea8de6f0110603c4d58e3cecba626d552ffb60134c2894"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1eb956106ba43d5d4bf5428d9dd93d27a68a3006536e0efae5a7703dbf032c6"
+    sha256                               arm64_tahoe:   "77a996258f5559edd71815b952196b2fd36ae5d8bfe9855bf042abbc4d230cf9"
+    sha256                               arm64_sequoia: "866c6678d97ae16428d180aa140574db8515787d21110b9aa13e6480641ca92e"
+    sha256                               arm64_sonoma:  "a0ac42261d2f2f831e40e35f3b1f6eaa30793657899b0ec06dc9c87943ffa01c"
+    sha256                               sonoma:        "86098e2ddb840862068941c05d8946ac878217c101a4598c6a2f0f49d244a411"
+    sha256                               arm64_linux:   "282970d7aa27026e8c9a5a73fd9105fdb9da8b65e2f1b02e7c21a61a7e009511"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8454cbdabb85f9308ac6541139052a6853f36613ec34726c79dd3b1a4601892"
   end
 
   depends_on "cmake" => :build

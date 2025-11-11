@@ -6,18 +6,18 @@ class Aider < Formula
   url "https://files.pythonhosted.org/packages/87/60/42ee32c47d6711635d591c729eea6bc56fa244099a18e0b82da064951af9/aider_chat-0.86.1.tar.gz"
   sha256 "48e489d20a4dfdd90ac4acc781f0170f688aaa5c5f2017d035e2d947fb801bbb"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/Aider-AI/aider.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c9670f9c05f57b607dcc518fe3271e48eca372a7429351996b387e12e65e69ff"
-    sha256 cellar: :any,                 arm64_sequoia: "d2f45f468c19a7d29c7cb2b8882b551009ac43e3b50ae4b7bac294c8a3ff075c"
-    sha256 cellar: :any,                 arm64_sonoma:  "f6732c1c087ba8fa961ef493553f6d7e9bf793a07f943adba9de0533b02821de"
-    sha256 cellar: :any,                 sonoma:        "a925911560bece950ceff26cdf09e56976f4523b7b4c394fe91b34d5d84f9616"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7289c98bf2792551be208d379e38745486f731e76244927a95daaebe9094035"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "770986e10792d59817c160930708e1b300da50e62826f65ad7f6dde6e03ea5eb"
+    sha256 cellar: :any,                 arm64_tahoe:   "25c35133f612c7c475435e10af1242bb6e21074c75adadbd453853b0f35c4a12"
+    sha256 cellar: :any,                 arm64_sequoia: "3b7f7fa664feccc89836f638e225010108e248a33b95da8c27f3eebee0158d49"
+    sha256 cellar: :any,                 arm64_sonoma:  "df2f6a5cb42ce0289569880bd9ba4f47efbb2a7756f227f659a91b9f700a4c5e"
+    sha256 cellar: :any,                 sonoma:        "906d63ba02fed7fb5eb5d1a3856897721db2d663a0fbc6e36aef108118f8d1bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "454401bae92a01013eb4e6a03f798c49ff1695fb10af2386cbe502f9a7868081"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5ceb9187899d63fac82a7975cb6cb2f0b0f1ce69f4151bd853290db5d3c6c42"
   end
 
   depends_on "ninja" => :build
@@ -640,6 +640,8 @@ class Aider < Formula
                                              "--config-settings=setup-args=-Dlapack=openblas",
                                              *std_pip_args(prefix: false, build_isolation: true), "."
     end
+
+    generate_completions_from_executable(bin/"aider", "--shell-completions", shells: [:bash, :zsh])
   end
 
   test do

@@ -1,20 +1,23 @@
 class Librespot < Formula
   desc "Open Source Spotify client library"
   homepage "https://github.com/librespot-org/librespot"
-  url "https://ghfast.top/https://github.com/librespot-org/librespot/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "1d09cf7a9b05663bc74806dc729dba818f2f1108728b60ccaac42bb54bf46864"
+  url "https://ghfast.top/https://github.com/librespot-org/librespot/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "0e4922997e1c67d27b3f50dcc388ecb8a3c08eba23b764879071f6e9e8c07ec7"
   license "MIT"
   head "https://github.com/librespot-org/librespot.git", branch: "dev"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a5eff7a184388970a8d538f9018d9a2e2682b7d113f6886269bbc26c0b061c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95b5b73657b6c6319da0b199ae7e509e8fdd6835e41af52e06537635bb0bbf78"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5283db5fd6dd968215ed62f6385c2301a310fab98c20891f90dec0b53c35dff3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "af56224e37d14391051f7f5710e00c76170b099bb50f72a341f56415af650430"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b519d30ae4d8ce5efd85a20a0e2d9f427bc88c4e4d605e838d78b4c8a3f040b6"
-    sha256 cellar: :any_skip_relocation, ventura:       "bae91410433aa1022a7ed80b577992376437255fe1878270f6d69121a9adf238"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "354c4b78c33bb7af9980db598767ce8ef340beeaca9d31a275bc948aacad7e18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f33d462aade542a4e271125e9f4ec17f2137bcf303ab85acb90fdb8a9f205329"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f29922e551c58ca9314a8866308fbc55681b5917d2ec6e9a329a9b7efe79647"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5c09746c4526ff5846d9a0560ee3cc1d021573937f34e898376b5d724cc6b55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c138bad37d6e3807668aad515b08b3f4cc45f2c7a720df700c80bd5599bbf38"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a837315473b98774a6a1411853646c5c819d836f21153cf4d5eabd327ab3f6c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3333c791b5881eced0fb758e2a8d4e861d55aaa7c9c91e09df0183bc7aa68737"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fadc5ec56dc24bac05ceacc76486ab8326d4c3f6a5f4513a791bc80fa6bdbd0a"
   end
 
   depends_on "pkgconf" => :build

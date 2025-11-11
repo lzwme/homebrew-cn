@@ -30,6 +30,7 @@ class Unbound < Formula
   uses_from_macos "expat"
 
   def install
+    expat_prefix = OS.mac? ? "#{MacOS.sdk_for_formula(self).path}/usr" : Formula["expat"].opt_prefix
     args = %W[
       --prefix=#{prefix}
       --sysconfdir=#{etc}
@@ -37,12 +38,11 @@ class Unbound < Formula
       --enable-tfo-client
       --enable-tfo-server
       --with-libevent=#{Formula["libevent"].opt_prefix}
+      --with-libexpat=#{expat_prefix}
       --with-libnghttp2=#{Formula["libnghttp2"].opt_prefix}
       --with-ssl=#{Formula["openssl@3"].opt_prefix}
     ]
 
-    args << "--with-libexpat=#{MacOS.sdk_path}/usr" if OS.mac? && MacOS.sdk_path_if_needed
-    args << "--with-libexpat=#{Formula["expat"].opt_prefix}" if OS.linux?
     system "./configure", *args
 
     inreplace "doc/example.conf", 'username: "unbound"', 'username: "@@HOMEBREW-UNBOUND-USER@@"'

@@ -1,18 +1,18 @@
 class Autobrr < Formula
   desc "Modern, easy to use download automation for torrents and usenet"
   homepage "https://autobrr.com/"
-  url "https://ghfast.top/https://github.com/autobrr/autobrr/archive/refs/tags/v1.68.0.tar.gz"
-  sha256 "2a3346c628ee039c0cff4159215ace6f1ae7c4524f6331a99f4f91c2c1dfa754"
+  url "https://ghfast.top/https://github.com/autobrr/autobrr/archive/refs/tags/v1.69.0.tar.gz"
+  sha256 "3ff6814da9457355c63244fb72196934e2851a9c3df6f24081ca8a2b9bb93aa4"
   license "GPL-2.0-or-later"
   head "https://github.com/autobrr/autobrr.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fae0c3bf998074467d4a4dfb801ef310c6658692f2691bc669c43a1ab8c9481e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0aa2555e8976f72c7992fadea4b5453ce3eaba1b03fe9d479db0196a1ecce883"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ea434c97025e19d272b864104e06121664c75ecb0654a46bece5efb6e1d39e1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fa2c7dd4f0dca8f72f603549771fe5f5b31e531f373eabf370c5f304a0e6982d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "945592c7e141f9af74053160900059a399d299331c267f05eb2c1b2bcb128d37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "170679c1ba216a4528662dae201b4c0f23bec749fa80653f846df1dc3cf65884"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b6b740c77fd6e0ea0f1b32793160503113ae7e8f1048672dd517e75b5b6ba7a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b92a9da1d73c12febf9afe648ca96927a4c6f368bda8af94d947ef2df68975f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abb3cd6ad17847dabd3d213089946ec54b0a426ea1ae319a3e99b9303f235d49"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cc801092dfa38ce2de3a622d475637e1dd1f4f510b5570ea344c24fe51589157"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ce64ce3efe52d3b8e58feb431f568979b1cd8317a553c790d2d104392e1c97c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6904c337d63ade73e6af3962c34e1da2c3f9d3a994a48fc1cbb0d49a272798b1"
   end
 
   depends_on "go" => :build

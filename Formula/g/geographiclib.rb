@@ -24,7 +24,6 @@ class Geographiclib < Formula
 
   def install
     args = ["-DEXAMPLEDIR="]
-    args << "-DCMAKE_OSX_SYSROOT=#{MacOS.sdk_path}" if OS.mac?
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

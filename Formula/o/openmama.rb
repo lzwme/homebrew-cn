@@ -51,8 +51,8 @@ class Openmama < Formula
       -DWITH_TESTTOOLS=OFF
       -DOPENMAMA_VERSION=#{version}
     ]
+    args += %W[-DUUID_INCLUDE_DIRS=#{MacOS.sdk_for_formula(self).path}/usr/include -DUUID_LIBRARIES=c] if OS.mac?
 
-    args << "-DUUID_INCLUDE_DIRS=#{MacOS.sdk_path_if_needed}/usr/include" << "-DUUID_LIBRARIES=c" if OS.mac?
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

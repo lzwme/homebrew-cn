@@ -3,17 +3,17 @@ class CodecovCli < Formula
 
   desc "Codecov's command-line interface"
   homepage "https://cli.codecov.io/"
-  url "https://files.pythonhosted.org/packages/18/8a/7ffb9a25cef38d2313c5c407026f90e8f07f92f2b787a697b00a1058feb4/codecov_cli-11.2.4.tar.gz"
-  sha256 "07a2f080f32be52dc7948b10a289279c8758e0e3f235d48b513562e0ba68c2c0"
+  url "https://files.pythonhosted.org/packages/1d/e0/73e86182c7cde8c4342d85d24f451b8b9cbc38688df99cbae47e8db1b476/codecov_cli-11.2.5.tar.gz"
+  sha256 "e0568edd4372d863435ca8472283f90f46a6237977ded391c6b1e48c544914fb"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7c5642987e6af96a43db21f9f77f1f9e9884d99152850f2d4991be153db4053f"
-    sha256 cellar: :any,                 arm64_sequoia: "e8ffd249a86f49a57366907819b41a72251caa8ea1d9e2aa9f923e2fa2453904"
-    sha256 cellar: :any,                 arm64_sonoma:  "509090478deb7f4040d6869265702780a6c486c5c7bb9c8033c8fe18ef5f698d"
-    sha256 cellar: :any,                 sonoma:        "f2f7c99521314e8a9e4893330cabdcb485ac20f88a5702793863ec951bd5a172"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a21ceac6c63bcf9971637549f9cb872ee79377073cc8759349ce957eb295eb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af223ada0d675032642f8e77c53566697f4dd810549d6a787c899eae02a3c7a0"
+    sha256 cellar: :any,                 arm64_tahoe:   "3198609e86794e5f6f856313053f4e87da2cf972085f87cc49c7bec420f7178f"
+    sha256 cellar: :any,                 arm64_sequoia: "aeb88f9615ab4aa4a9907d29dc572b36a021a65614f4acb0c5158f8f9ddd3056"
+    sha256 cellar: :any,                 arm64_sonoma:  "6b08167a69dc6059453b5c10eb7d60fc1f88f0d7d2128dfbf4a366bc1bae2e40"
+    sha256 cellar: :any,                 sonoma:        "47f8750288d2111c72ec1101e6d51d72e24bc902500f3384b748cae556009a06"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "859327cbb118a7aa4c66ac4c4962865d56fe68daa1d77c318ec4207a7d54c231"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75405d4e48a1b815b46cd983c7deb299bf93f52d407c8e77a483492901f64a7a"
   end
 
   depends_on "rust" => :build
@@ -59,23 +59,13 @@ class CodecovCli < Formula
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/31/04/ec8c1dd9250847303d98516e917978cb1c7083024770d86d657d2ccb5a70/sentry_sdk-2.42.1.tar.gz"
-    sha256 "8598cc6edcfe74cb8074ba6a7c15338cdee93d63d3eb9b9943b4b568354ad5b6"
+    url "https://files.pythonhosted.org/packages/b3/18/09875b4323b03ca9025bae7e6539797b27e4fc032998a466b4b9c3d24653/sentry_sdk-2.43.0.tar.gz"
+    sha256 "52ed6e251c5d2c084224d73efee56b007ef5c2d408a4a071270e82131d336e20"
   end
 
   resource "test-results-parser" do
-    url "https://files.pythonhosted.org/packages/e9/25/c6459ae54e5b57944417a8f72662d186ab43b0eae956193d6de281619ce4/test_results_parser-0.5.4.tar.gz"
-    sha256 "2fbfd809a2c1f746360146809b6df30690c992463d7d43e7b1fed31c1a7c15b4"
-
-    # Bump `pyo3` to support Python 3.14
-    # Upstream version 0.5.4 is actually same as 0.5.1 and the next of 0.5.3 is not developing,
-    # so manually add the patch here.
-    # Issue ref: https://github.com/codecov/test-results-parser/issues/86
-    # Related PR ref: https://github.com/codecov/test-results-parser/pull/87
-    patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/Homebrew-core/0a81f140/Patches/codecov-cli/support-python3.14.patch"
-      sha256 "e6401a73c44388aa4ee4330436d91693f1a8d1ab8430d1d47a1730ec229a872f"
-    end
+    url "https://files.pythonhosted.org/packages/a5/8a/2695581eab1cffe8d3b5e25df3c04b396777135ad3a091f2d9b514a2ec77/test_results_parser-0.6.0.tar.gz"
+    sha256 "8580213273b4efb357361a1e2f5e7def360c6443373970513a60d73657557912"
   end
 
   resource "urllib3" do

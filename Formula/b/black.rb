@@ -3,19 +3,18 @@ class Black < Formula
 
   desc "Python code formatter"
   homepage "https://black.readthedocs.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/4b/43/20b5c90612d7bdb2bdbcceeb53d588acca3bb8f0e4c5d5c751a2c8fdd55a/black-25.9.0.tar.gz"
-  sha256 "0474bca9a0dd1b51791fcc507a4e02078a1c63f6d4e4ae5544b9848c7adfb619"
+  url "https://files.pythonhosted.org/packages/8c/ad/33adf4708633d047950ff2dfdea2e215d84ac50ef95aff14a614e4b6e9b2/black-25.11.0.tar.gz"
+  sha256 "9a323ac32f5dc75ce7470501b887250be5005a01602e931a15e45593f70f6e08"
   license "MIT"
   head "https://github.com/psf/black.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "384a3d06a57bdc246ca9a8ec140645e63c229142e9b82fb9dad9039dd092c3f6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3622c57a2a1ad5d636e0987fd0878adecd6d553d85c9660be9ae18351fc4733c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c6f041c8faa32859df0caf06d5ce9c7dd41f6410c64cc474c13c7bb6f71b2b33"
-    sha256 cellar: :any_skip_relocation, sonoma:        "277843871aec23c16d753a6e0ecb32c349b64b378c8f2a131e65985c81f7e573"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6656b8c84bb388ce8c7c2aac0a8ce64fd10fd12d7f1377a3cb3e394bf5e7c591"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc52daf4e29cb780e6478e8578e9653e8ae398c47d1478b59ecd0ac0b2500b86"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3cc76e49397145406c49a933fdd12dc5ca4ea9928793fad5298ed9d2718aa7c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b56e38576b43373a45eb6e92de86228ca646f78cae5ca7224924075c8a12f056"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73461e223748bf8288af5a3dba982c67bf2b4424115be355f39d14ba2434b26d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "04815e62f7de1ad2a46f9de1494babd82369a33ca4d6a74836a7f55c3d958c6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8862c133a6c15949f41cac36911997833d04f0dabf31ca02934e52857e104c40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf792f1a4d352815e3118094dc9c2a8dec11792214e9497f2996b248b4bc5550"
   end
 
   depends_on "python@3.14"
@@ -28,8 +27,8 @@ class Black < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/62/f1/8515650ac3121a9e55c7b217c60e7fae3e0134b5acfe65691781b5356929/aiohttp-3.13.0.tar.gz"
-    sha256 "378dbc57dd8cf341ce243f13fa1fa5394d68e2e02c15cd5f28eae35a70ec7f67"
+    url "https://files.pythonhosted.org/packages/1c/ce/3b83ebba6b3207a7135e5fcaba49706f8a4b6008153b4e30540c982fae26/aiohttp-3.13.2.tar.gz"
+    sha256 "40176a52c186aefef6eb3cad2cdd30cd06e3afbe88fe8ab2af9c0b90f228daca"
   end
 
   resource "aiosignal" do
@@ -53,8 +52,8 @@ class Black < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "multidict" do
@@ -88,8 +87,8 @@ class Black < Formula
   end
 
   resource "pytokens" do
-    url "https://files.pythonhosted.org/packages/30/5f/e959a442435e24f6fb5a01aec6c657079ceaca1b3baf18561c3728d681da/pytokens-0.1.10.tar.gz"
-    sha256 "c9a4bfa0be1d26aebce03e6884ba454e842f186a59ea43a6d3b25af58223c044"
+    url "https://files.pythonhosted.org/packages/4e/8d/a762be14dae1c3bf280202ba3172020b2b0b4c537f94427435f19c413b72/pytokens-0.3.0.tar.gz"
+    sha256 "2f932b14ed08de5fcf0b391ace2642f858f1394c0857202959000b68ed7a458a"
   end
 
   resource "yarl" do

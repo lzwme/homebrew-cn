@@ -1,5 +1,5 @@
 class Iccdev < Formula
-  desc "Demonstration Implementation for iccMAX color profiles"
+  desc "Developer tools for interacting with and manipulating ICC profiles"
   homepage "https://github.com/InternationalColorConsortium/iccDEV"
   url "https://ghfast.top/https://github.com/InternationalColorConsortium/iccDEV/archive/refs/tags/v2.3.1.tar.gz"
   sha256 "8795b52a400f18a5192ac6ab3cdeebc11dd7c1809288cb60bb7339fec6e7c515"
@@ -27,10 +27,6 @@ class Iccdev < Formula
   def install
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
-      -DENABLE_TOOLS=ON
-      -DENABLE_SHARED_LIBS=ON
-      -DENABLE_INSTALL_RIM=ON
-      -DENABLE_ICCXML=ON
     ]
 
     system "cmake", "-S", "Build/Cmake", "-B", "build", *args, *std_cmake_args

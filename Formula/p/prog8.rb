@@ -5,6 +5,11 @@ class Prog8 < Formula
   sha256 "a1d2dfd962d4919075472235f11fd06aa4b07f3b91ca0f9fb1ef5b8593907ab4"
   license "GPL-3.0-only"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68ce0b74ba490aef44454b33b8221ad0e335570395b29c0f428287e276a055f8"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f4a669c0fc9201cb272b01b57daac522ab9b92596f2a1d1ef454f1c82c7b018"
