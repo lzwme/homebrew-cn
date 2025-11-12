@@ -1,18 +1,17 @@
 class Py3cairo < Formula
   desc "Python 3 bindings for the Cairo graphics library"
   homepage "https://cairographics.org/pycairo/"
-  url "https://ghfast.top/https://github.com/pygobject/pycairo/releases/download/v1.28.0/pycairo-1.28.0.tar.gz"
-  sha256 "26ec5c6126781eb167089a123919f87baa2740da2cca9098be8b3a6b91cc5fbc"
+  url "https://ghfast.top/https://github.com/pygobject/pycairo/releases/download/v1.29.0/pycairo-1.29.0.tar.gz"
+  sha256 "f3f7fde97325cae80224c09f12564ef58d0d0f655da0e3b040f5807bd5bd3142"
   license any_of: ["LGPL-2.1-only", "MPL-1.1"]
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2c77e291f2095afb6e2d2904b2c64e43840de2d8d3b4819bddf52d136f1dadee"
-    sha256 cellar: :any, arm64_sequoia: "b77c713e6aa751c3506635993c0b64efcd61ef54eb73d25ec589293ae8ce4c4f"
-    sha256 cellar: :any, arm64_sonoma:  "10aa68f1f543afce5df0864afa7fed6e231afe0d3d39054e3e8bce0cddb3a59d"
-    sha256 cellar: :any, sonoma:        "f188206fc23ce8575ade7b42ff4590f42f3f7b04183cf5c8c1fbc140556ffb1a"
-    sha256               arm64_linux:   "83cfdf6e8e3a7a06d39961044cdc71e830fc218d5ac50dfc84354cc1184a861d"
-    sha256               x86_64_linux:  "f3ad42b50dc9862d076c5aeb4b660b52d85b8c8b62ae8ac219b20d5450ff47ce"
+    sha256 cellar: :any, arm64_tahoe:   "5262a6f83c776ac9a3325488dd92216a9865f271d6de30de4b465ec771ee8968"
+    sha256 cellar: :any, arm64_sequoia: "7cc2d0de913b912639584bfe94d5658cfb82cb7c898b8269ad69c09747a28709"
+    sha256 cellar: :any, arm64_sonoma:  "f614c1cf5e35eaf7726331446258f9d7662182843715149bb316e0cc3f440816"
+    sha256 cellar: :any, sonoma:        "f915d3efc320997a2e05c5948b3eea84f5c7640cc58542fb4d86fe936416a5db"
+    sha256               arm64_linux:   "81629e2f6185689b774840bc69f19b56571f1fa8644545aa645c31fe2e3c61bb"
+    sha256               x86_64_linux:  "5692a6792c7aaf933469acc5ff1c51a6b21e11d8f98439f3baf9e525bd2e18b5"
   end
 
   depends_on "meson" => :build

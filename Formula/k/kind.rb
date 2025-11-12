@@ -7,14 +7,13 @@ class Kind < Formula
   head "https://github.com/kubernetes-sigs/kind.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3171f2dc3f02429d63cc568592b0ebebea0713ae2055e2bdd7220f8209fc4d5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2646246c3fbc921a32e0bae1957db0d45e79de5dc5f106aa298a81798040db97"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2646246c3fbc921a32e0bae1957db0d45e79de5dc5f106aa298a81798040db97"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2646246c3fbc921a32e0bae1957db0d45e79de5dc5f106aa298a81798040db97"
-    sha256 cellar: :any_skip_relocation, sonoma:        "01fdd40a9036906eb448f7ee00dbcc91786f29ff3d833b6816cf02838360dfd2"
-    sha256 cellar: :any_skip_relocation, ventura:       "01fdd40a9036906eb448f7ee00dbcc91786f29ff3d833b6816cf02838360dfd2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "93ac0029a2397ed1e02095c34d0cfb76e991e0446c754d0669992574d38e1cbf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e13616c4fbe96395cf33157579f3eb1b473a146cfa4d43be73d8e862ca7b0ff0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "167388c6fd980b35106c005c175d0a57e14492fc82ed6f4b11c0feb324939139"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "167388c6fd980b35106c005c175d0a57e14492fc82ed6f4b11c0feb324939139"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "167388c6fd980b35106c005c175d0a57e14492fc82ed6f4b11c0feb324939139"
+    sha256 cellar: :any_skip_relocation, sonoma:        "799bf8bfeb9df6c9fdbe780dac405d3a7657e7a108391d303dd5516e50b456ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c86e8a9260b02f4064bce4d29a1653713e3beb22bb4f5ea7d037798a5d5fc08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b34d6b4b376257667a82e16befd9e264baf7c9b0248b9f1249609311c60ffb0f"
   end
 
   depends_on "go" => :build
@@ -31,6 +30,6 @@ class Kind < Formula
 
     # Should error out as creating a kind cluster requires root
     status_output = shell_output("#{bin}/kind get kubeconfig --name homebrew 2>&1", 1)
-    assert_match "Cannot connect to the Docker daemon", status_output
+    assert_match "failed to connect to the docker API", status_output
   end
 end

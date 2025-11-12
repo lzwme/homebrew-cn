@@ -1,8 +1,8 @@
 class Libjwt < Formula
   desc "JSON Web Token C library"
   homepage "https://libjwt.io/"
-  url "https://ghfast.top/https://github.com/benmcollins/libjwt/releases/download/v3.2.2/libjwt-3.2.2.tar.xz"
-  sha256 "a1813e1e0eebe4aad04f04137a4e80f2b17f79fd6c6211e36cf3a5854390cdfc"
+  url "https://ghfast.top/https://github.com/benmcollins/libjwt/releases/download/v3.2.3/libjwt-3.2.3.tar.xz"
+  sha256 "c6d8a4ead0321317937cc29d8ebc5be48d114d02e007711bb2d4cca5d2a6d713"
   license "MPL-2.0"
   head "https://github.com/benmcollins/libjwt.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Libjwt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9263b1b6a58dfba3cfe46b5552c9dcfc3a8018afba7152b114b651c269cd6376"
-    sha256 cellar: :any,                 arm64_sequoia: "f66e83373617bf28770d2137147a54a48fd7e041b069f9d1062205d95edc1541"
-    sha256 cellar: :any,                 arm64_sonoma:  "b6ec6f79fde651e82de34d13cb6a2dd773fa95409ebf96f6ca0f65c361aeb6dd"
-    sha256 cellar: :any,                 arm64_ventura: "fc77250ccb9e904554f0b3cf9f6ce471af4ce7ede31c3ebc61220aba8b521422"
-    sha256 cellar: :any,                 sonoma:        "3322bd76fc596750c2c8075cc65db4238645aef22f056afa26eb674a97632ba7"
-    sha256 cellar: :any,                 ventura:       "9fa3aa9e69a64bf5de2c0145ad0234ca314726df918a937ad79ad158790cb9b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f698c50509e5088d09c378256ac2d89ebd784bfe8e0444c73fca3c5c792e9faa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9546a23e145bb4648828167e74746314b0fb9ca0fe179c7e5ea37dbccc984ae"
+    sha256 cellar: :any,                 arm64_tahoe:   "e2e50cc16694fb18716b0d2c2252690684f34e9407448beddb77c3718940f026"
+    sha256 cellar: :any,                 arm64_sequoia: "4f884d59b53c182433bccdccae89453a3263ff2960adb684515bfa8cca6cac1f"
+    sha256 cellar: :any,                 arm64_sonoma:  "7be05fb863675b92132528d6ec3b56877f40ecacdd19bda09528efb3dec56446"
+    sha256 cellar: :any,                 sonoma:        "2d022ed797aa77a6249858492353805eb38f80b9d6b67c40e2c76a4d31af2eca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b766edf05dd96d12a0ae8bca1b05ecb9dd04d42219a61a4792344a48e6411a2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc17d3bf1028fa82a710ae0d68e2cdbecf9fb078dd880421886525735a0dfe73"
   end
 
   depends_on "cmake" => :build

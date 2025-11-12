@@ -1,10 +1,9 @@
 class Fastfetch < Formula
   desc "Like neofetch, but much faster because written mostly in C"
   homepage "https://github.com/fastfetch-cli/fastfetch"
-  url "https://ghfast.top/https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.54.0.tar.gz"
-  sha256 "e6a0516364bc0a4991a588537ee2abb538b86db41f7d9dff795d49baec990529"
+  url "https://ghfast.top/https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.55.0.tar.gz"
+  sha256 "d99ea4f5398ef05059771aa0b1aeda4bc1d01d951ae91d93c5b6dfb550649dbe"
   license "MIT"
-  revision 1
   head "https://github.com/fastfetch-cli/fastfetch.git", branch: "dev"
 
   livecheck do
@@ -13,12 +12,13 @@ class Fastfetch < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "8cbc1adb83205a0031781834431fc899f29a31f0e18ccbe42749db59bc465576"
-    sha256                               arm64_sequoia: "2379ae1e1252976d930cbadb5e56df752b32b09aee4465c09844a6dfd28180d7"
-    sha256                               arm64_sonoma:  "dcba4bdd43d4f4f7d798548564dbfcb9c6a40abb08b03c9782f69ecdefcab71e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e475e59be954441c96ef923d0dfadaaaa29ecc20c19bf12a8c1b9eacb26ed0f2"
-    sha256                               arm64_linux:   "529decf8ba94bbb00a5249be392de151a41fa0b4a0c1b65f2015b5a6c8ab8535"
-    sha256                               x86_64_linux:  "ccdebf42c55db395916b667f6c7f0f3a1ac543db9ac786ad425cab7409078e8a"
+    rebuild 1
+    sha256               arm64_tahoe:   "893ea6859cfbefc195d7e5e7732308597ee562cdf4753e5f1ad16e0f6577492e"
+    sha256               arm64_sequoia: "54a256d6b044c3b0f39ae0ecb381b6d686ea51f746a636584854684eff54b789"
+    sha256               arm64_sonoma:  "3162465d36004703b88c5b578b9d52466b9fcaa4844cba7967101d3e8ec56f65"
+    sha256 cellar: :any, sonoma:        "d10280764e388cdd8397f26f0a56f9dd305a59f3ae0a02a3a17bd0ca8f2ea1c2"
+    sha256               arm64_linux:   "11df2217778076632a137a314de20b349ed8f6ceb6cf2c91c565c529585fc5b6"
+    sha256               x86_64_linux:  "7bf0f1b8a9e099bd73cb997ba93f7c70dd09e4997063767d75d54908f9264c7b"
   end
 
   depends_on "chafa" => :build
@@ -28,6 +28,7 @@ class Fastfetch < Formula
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => :build
   depends_on "vulkan-loader" => :build
+  depends_on "yyjson"
 
   uses_from_macos "sqlite" => :build
   uses_from_macos "zlib" => :build
@@ -51,8 +52,12 @@ class Fastfetch < Formula
     args = %W[
       -DCMAKE_INSTALL_SYSCONFDIR=#{etc}
       -DBUILD_FLASHFETCH=OFF
-      -DENABLE_SYSTEM_YYJSON=OFF
+      -DENABLE_SYSTEM_YYJSON=ON
     ]
+    if HOMEBREW_PREFIX.to_s != HOMEBREW_DEFAULT_PREFIX
+      # CMake already adds default Homebrew prefixes to rpath.
+      args << "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath,#{HOMEBREW_PREFIX}/lib"
+    end
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

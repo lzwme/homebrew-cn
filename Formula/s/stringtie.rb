@@ -1,18 +1,18 @@
 class Stringtie < Formula
   desc "Transcript assembly and quantification for RNA-Seq"
   homepage "https://github.com/gpertea/stringtie"
-  url "https://ghfast.top/https://github.com/gpertea/stringtie/archive/refs/tags/v3.0.2.tar.gz"
-  sha256 "8fc429eb7437cb62cd95440a3e28529719cc72133592ce8e02f5cf249ce3142e"
+  url "https://ghfast.top/https://github.com/gpertea/stringtie/archive/refs/tags/v3.0.3.tar.gz"
+  sha256 "e96b43d1482b5d7fafa8513e8490e55accad14a82e7d9c40b8693748f6e4bb9e"
   license "MIT"
   head "https://github.com/gpertea/stringtie.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c14e68b1673b69143178f89c9f32c17466bf2b5af7a40e6a90c8f5bed61d27c5"
-    sha256 cellar: :any,                 arm64_sequoia: "1ac0cf98582d7ba1b1d00703941bf70209d9fc589c7b2b0fe87e638340543026"
-    sha256 cellar: :any,                 arm64_sonoma:  "2a5c3b277611d4b6506d841a870fa39b3a607fbb07e0c6e85c79a1319cb3a79b"
-    sha256 cellar: :any,                 sonoma:        "93ccbf7380a10bbb59bbef0ebd9a1d87d652009378912f6c107a913b37af7b67"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fc194a5e8f17f784e39435e940849cab87e43316c2121df72211484af6c18fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "997003f4c9ddf4bc5a6bc21e6102b890c248d5a8878e5c011aec37d5c3ed59a6"
+    sha256 cellar: :any,                 arm64_tahoe:   "8a04a687393f0a23bcac7e9f8e0a45542ae2e95eaf5d9c91ff3ebda1122ad380"
+    sha256 cellar: :any,                 arm64_sequoia: "3eea05d76ae06b8873c6152061cd93b36bf4fd90274cb81e74d82cb2fb8716eb"
+    sha256 cellar: :any,                 arm64_sonoma:  "2e2833f5dc86edfc9bd1897ad07673c0a03e18c2233e32bc884ee5b1b37f172e"
+    sha256 cellar: :any,                 sonoma:        "12b536ae977cdbcb08345151f66222a3b494aa99f43d2e6b4ef5482e393216d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "38a474188009a577779e293f2286fc943c2dc9430b4a5e38b21f10cedf3d4ffa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26fa7ac3ea5c68176b84c083da76ab9865b61603af6c00ac5efdb9e8581e9540"
   end
 
   depends_on "htslib"

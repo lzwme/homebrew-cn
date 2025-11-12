@@ -9151,6 +9151,7 @@ Homebrew-homebrew-cask/Casks/d/dotnet-runtime.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dotnet-runtime@preview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dotnet-sdk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dotnet-sdk@8.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/dotnet-sdk@9.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dotnet-sdk@preview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/doubao.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/double-commander.rb, Homebrew/homebrew-cask, 0
@@ -13132,7 +13133,6 @@ Homebrew-homebrew-cask/Casks/m/mcedit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mcloud.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mcreator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mdb-accdb-viewer.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/mdimagesizemdimporter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mdrp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mds.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mechvibes.rb, Homebrew/homebrew-cask, 1
@@ -14118,7 +14118,6 @@ Homebrew-homebrew-cask/Casks/q/qlcommonmark.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/qldds.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/qlfits.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/qlgradle.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/q/qlimagesize.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/qlmarkdown.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/qlmobi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/qlnetcdf.rb, Homebrew/homebrew-cask, 1
@@ -14502,6 +14501,7 @@ Homebrew-homebrew-cask/Casks/s/sharemouse.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sharepod.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/shattered-pixel-dungeon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/shearwater-cloud.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/shell360.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sherlock-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/shiba.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/shield.rb, Homebrew/homebrew-cask, 1

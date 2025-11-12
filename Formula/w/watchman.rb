@@ -9,12 +9,13 @@ class Watchman < Formula
   head "https://github.com/facebook/watchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "704cb72c432146daadb1e7d3603cd2b08b1d6c074a1b116d8f56cb90b25c5e9a"
-    sha256 cellar: :any,                 arm64_sequoia: "f93d6cd64c26aefc78a0b4e0203ec33b7c564316da0cc19d3d6bec81b0232aec"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ca41c86f33a49f5c2cf508f94b21de99714b7c65880d3b062e76c51c2c4a859"
-    sha256 cellar: :any,                 sonoma:        "ace9db8c26f57ae155b523802ef9bbcbcbf684d9acdb1148d8cea67d7da48362"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4efe98c45c1801cf33fd80fed2cb6883138e77fc0b21439d13950fe72e7bf15d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33932b33ccbe715d8ecd2dd8b5feeb20344439793e6cb6b187846f1070fcc73f"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "d1a32fd302da19e696868842e7957e011ceb985dd7c9dc10949a6f28f43b7ca9"
+    sha256 cellar: :any,                 arm64_sequoia: "6b8b7452fac915f02d5653de01b5ad1fd9c19a915c6be462162b0cd70b5af239"
+    sha256 cellar: :any,                 arm64_sonoma:  "c42c94f789130a286eeba06d16357132279b64918ddfd1157f8dd4f755ee875e"
+    sha256 cellar: :any,                 sonoma:        "dea8efd977f4ae03620c16716020c964938ed09bc0a26c23e5f111e66a2d6276"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5674efea8603c96b7fc453de55b919f1ca5c5f498cf8335b7eb590e9b850e16e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86f2d12f7736d67dae5ca2d1a0acfb1a01c6f93fba476f9dc7ce7a1b5aff883b"
   end
 
   depends_on "cmake" => :build
@@ -47,14 +48,12 @@ class Watchman < Formula
     #       RPATHs configured, so will need to be installed and relocated manually
     #       if they are built as shared libraries. They're not used by any other
     #       formulae, so let's link them statically instead. This is done by default.
-    #
-    # Use the upstream default for WATCHMAN_STATE_DIR by unsetting it.
     args = %W[
       -DENABLE_EDEN_SUPPORT=ON
       -DPython3_EXECUTABLE=#{which("python3.14")}
       -DWATCHMAN_VERSION_OVERRIDE=#{version}
       -DWATCHMAN_BUILDINFO_OVERRIDE=#{tap&.user || "Homebrew"}
-      -DWATCHMAN_STATE_DIR=
+      -DWATCHMAN_USE_XDG_STATE_HOME=ON
       -DCMAKE_CXX_STANDARD=20
     ]
     # Avoid overlinking with libsodium and mvfst

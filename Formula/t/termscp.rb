@@ -1,31 +1,29 @@
 class Termscp < Formula
   desc "Feature rich terminal file transfer and explorer"
   homepage "https://termscp.veeso.dev/"
-  url "https://ghfast.top/https://github.com/veeso/termscp/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "3791b4c4b63dd4ea31b6e4d7be754edf9441c5a84c9e7be878463411c4337588"
+  url "https://ghfast.top/https://github.com/veeso/termscp/archive/refs/tags/v0.19.0.tar.gz"
+  sha256 "0f5316b43335896012c18cba20fa40cbf4eb2e53961fbfa29d560318ae0eaf74"
   license "MIT"
   head "https://github.com/veeso/termscp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "54011ce5f08eecb7beb5f4195126cb828dabd3dacb138e2c63f8a4c4ea55db5d"
-    sha256 cellar: :any,                 arm64_sequoia: "9b0ebfc7d1e98d38f9a60557b4c17746b24c62634beb0117d7fa033549d20b67"
-    sha256 cellar: :any,                 arm64_sonoma:  "0134e8eb5be800b3dd71f9d1924df8c83500c6fb0b83e48e22644f91873b830a"
-    sha256 cellar: :any,                 arm64_ventura: "9fb082121f4c9fec8023e9d2b06238155dd0e504891bb2485b4110c3a7759e0b"
-    sha256 cellar: :any,                 sonoma:        "6cec211fe0514243a27ad595b7f7f11ad871a0b47d26534e09ecac5dff811f8b"
-    sha256 cellar: :any,                 ventura:       "8e51d0d0f3286718ab030dbc926b20cbf444b4bb286b7ecd38937308df549717"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed399ac73da3fd8546765a6d84ee1438101316f12996f2468414a8ae0b4d6a3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f36219c281e9b898a73a0f0fd79ba0bdbc0a36675a4503d30282a272d87e0a90"
+    sha256 cellar: :any,                 arm64_tahoe:   "f310d48b60ce47ce23c4e3660298995c2e77c7af57e422f0a6420738be09bf34"
+    sha256 cellar: :any,                 arm64_sequoia: "38d2398585233bd05037a99e307e16b1fb7984616ebf695c3fc04574ed1cec3e"
+    sha256 cellar: :any,                 arm64_sonoma:  "56e58ad9fea27cfbfef20cf64b4d44e69482e95e4195f2b45c1bad877c618198"
+    sha256 cellar: :any,                 sonoma:        "8a35830d83a5a6c7bcad7aa7bd386b2ca1463866910556ed45bd7b6cf41165f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1ceac3a482221ac92e79d70fb8c5ab31c75c856b75b128e3c04b8dafdd419dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e441b01060fc39404650fa18f3f3f4059cd50442ad72c129689595dbcca57f37"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
+  depends_on "samba"
 
   uses_from_macos "zlib"
 
   on_linux do
     depends_on "dbus"
-    depends_on "samba"
   end
 
   def install

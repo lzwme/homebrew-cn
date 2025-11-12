@@ -1,16 +1,16 @@
 class WhisperkitCli < Formula
   desc "Swift native on-device speech recognition with Whisper for Apple Silicon"
   homepage "https://github.com/argmaxinc/WhisperKit"
-  url "https://ghfast.top/https://github.com/argmaxinc/WhisperKit/archive/refs/tags/v0.14.1.tar.gz"
-  sha256 "7078b55be09ef4b4c1d6274fe5a533afc3327572553f5069ff08c55ef30146b7"
+  url "https://ghfast.top/https://github.com/argmaxinc/WhisperKit/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "4fa4b537b1b142913c9ae44a2bfde50b423b292dca5cc203d16dc84456f18b8e"
   license "MIT"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14e8eb98c98b0baf9f0359d813158894895832e9b0f8457cd53d5b95f3ceae98"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a2ad5e3f32ffff068ff94a906d52642dc2aeb360ca8472f1aaf312708b55aa4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f192a742700595743f7788d99389970f85c4127d57a90de7c5de3e778d4dbfc1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ed2738112beebb7313489f9e5c3ae46ed0af63b2fa7000ed369feb8cbe5673e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32165e285968ce46936ba2a07a0c1937baeab777cc2113d432cbf58f31ddb547"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dcf8735e85b99f26299711e0f8f27cb6d7fd1b2b8ae9c6ba5ac0473d5eb26cba"
   end
 
   depends_on xcode: ["15.0", :build]

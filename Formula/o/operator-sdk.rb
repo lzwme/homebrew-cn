@@ -2,8 +2,8 @@ class OperatorSdk < Formula
   desc "SDK for building Kubernetes applications"
   homepage "https://sdk.operatorframework.io/"
   url "https://github.com/operator-framework/operator-sdk.git",
-      tag:      "v1.41.1",
-      revision: "69ee6d4077ff769a8513571343a96f3cb8ca35ef"
+      tag:      "v1.42.0",
+      revision: "1b9cb8dc55a83d027e562d81dcb134ebc8700ba1"
   license "Apache-2.0"
   head "https://github.com/operator-framework/operator-sdk.git", branch: "master"
 
@@ -13,14 +13,12 @@ class OperatorSdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8cc575e20f4aaa085d89dcb12faa86a024deae55b89b69b2c65848733f864962"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7af87d45d23a38bdd577d79113fec7e13ed85659b08370840cc4330e9a1f522c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a56c33d80094de249513a5357106cfc05f171c4a9fcbd9d716958c025b3af00"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "71366694c1096f6f371093719fba04b8169c048c38255c1ef28aefba17de03d3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5f8c7d8a716e12d7cedc8da2b7803618f54b4178dd6bc3db1a5409f5084d996e"
-    sha256 cellar: :any_skip_relocation, ventura:       "17a5045f3c546d858044a904d97af2275f0a15f5069342430f71f4bcb9450dc0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7d5e4e0838f3ae5941a419343a3076d0ba2e37d8f579fc365cdb36aafc76529"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "570ebcf4795769e4865155dc8500b15c4862535e0249f51396bc2234051ab532"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3849b980fcbe3174aad5d5943de80a2ccd8f38563e9b612f9636050486ac10a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2191d393bd79a01af24821ed094747f48216b95acb2fc84bbf421ba426b559e1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8fb75fd97ba04adeeb63ab4158d1e4bfa69e51e7dd425040d0254edeb2c065be"
+    sha256 cellar: :any_skip_relocation, sonoma:        "96b1589c9586b887f9c63e90dc64474f3dc1fb8eda3bf7a44d207348c2cb08a7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ced779ec9e0b5b7cf0d8276109af98f03e37af69a99ab4cc7b5bf6ef86f1982"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02a7714ccd75b2bad79db9955e787aaa97da63103f527f5aa0acbd71b8ee8267"
   end
 
   depends_on "pkgconf" => :build

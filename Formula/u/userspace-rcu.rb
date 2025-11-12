@@ -1,8 +1,8 @@
 class UserspaceRcu < Formula
   desc "Library for userspace RCU (read-copy-update)"
   homepage "https://liburcu.org"
-  url "https://lttng.org/files/urcu/userspace-rcu-0.15.4.tar.bz2"
-  sha256 "11a14a7660ac9ba9c0bbd3b2d81718523d27dc6c8a9dfabd5e401b406673ee3a"
+  url "https://lttng.org/files/urcu/userspace-rcu-0.15.5.tar.bz2"
+  sha256 "b2f787a8a83512c32599e71cdabcc5131464947b82014896bd11413b2d782de1"
   license all_of: ["LGPL-2.1-or-later", "MIT"]
 
   livecheck do
@@ -11,12 +11,12 @@ class UserspaceRcu < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "73e24f9bd2c348544a56c7167b06afa25deeff1d06d7ccbf8fc8a4d05d92cd69"
-    sha256 cellar: :any,                 arm64_sequoia: "3d71fa066be65b7a15f75e8879ab4e00f1ce8d2e582737dde0517f51699a3a17"
-    sha256 cellar: :any,                 arm64_sonoma:  "d0b90ec6a2e738188e30835e931e1524ef0e6a931988fe8f0dfeb2cf3190302a"
-    sha256 cellar: :any,                 sonoma:        "db073e0a6b364ecbd2e2c45cc7c2c0910996179e60df480cb0f004d0842805da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2e3f1a5830fb928803e65a234d7ea600992786618cce7f7324ceabeb0757ab3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a827421a2bf2f55fe8c4c3c4e15209a1c7ed7dadbde7a4e47305731274129c8"
+    sha256 cellar: :any,                 arm64_tahoe:   "8db2d4886358e3b6d13a2ba3559e765a164e70544e3245040b0b5e59763a16e7"
+    sha256 cellar: :any,                 arm64_sequoia: "6a4555a5e2cb25997c1f624160e80940856f16fe7d57534a32dd1958f55cd5e1"
+    sha256 cellar: :any,                 arm64_sonoma:  "3c1b50e1358fc358d10d51d33dc71d52b083bbb0ebaf189d1d2406e3db38a5b6"
+    sha256 cellar: :any,                 sonoma:        "1629a8ef56adaa2d00facd77aa8dcb1de29e571f4f45c6ac205b5ee71e52f83c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c98e30094e5b04f4e067608e376d7526aa257022db3f416cb37d7bace09569cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2974edc53aab9507c51d3a32341d78d4600cc15509aa0a63b50698cac647aaac"
   end
 
   def install

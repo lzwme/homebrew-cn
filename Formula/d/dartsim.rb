@@ -14,7 +14,7 @@ class Dartsim < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8454cbdabb85f9308ac6541139052a6853f36613ec34726c79dd3b1a4601892"
   end
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => :build
 
   depends_on "assimp"
@@ -69,6 +69,12 @@ class Dartsim < Formula
         return 0;
       }
     CPP
+    (testpath/"CMakeLists.txt").write <<-CMAKE
+      cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
+      find_package(DART QUIET REQUIRED CONFIG)
+      add_executable(test_cmake test.cpp)
+      target_link_libraries(test_cmake dart)
+    CMAKE
     system ENV.cxx, "test.cpp", "-I#{Formula["eigen"].include}/eigen3",
                     "-I#{include}", "-L#{lib}", "-ldart",
                     "-L#{Formula["assimp"].opt_lib}", "-lassimp",
@@ -76,5 +82,11 @@ class Dartsim < Formula
                     "-L#{Formula["fcl"].opt_lib}", "-lfcl",
                     "-std=c++17", "-o", "test"
     system "./test"
+    # build with cmake
+    mkdir "build" do
+      system "cmake", ".."
+      system "make"
+      system "./test_cmake"
+    end
   end
 end

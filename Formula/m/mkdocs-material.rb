@@ -3,17 +3,17 @@ class MkdocsMaterial < Formula
 
   desc "Material Design theme for MkDocs"
   homepage "https://squidfunk.github.io/mkdocs-material/"
-  url "https://files.pythonhosted.org/packages/57/de/cc1d5139c2782b1a49e1ed1845b3298ed6076b9ba1c740ad7c952d8ffcf9/mkdocs_material-9.6.23.tar.gz"
-  sha256 "62ebc9cdbe90e1ae4f4e9b16a6aa5c69b93474c7b9e79ebc0b11b87f9f055e00"
+  url "https://files.pythonhosted.org/packages/9c/3b/111b84cd6ff28d9e955b5f799ef217a17bc1684ac346af333e6100e413cb/mkdocs_material-9.7.0.tar.gz"
+  sha256 "602b359844e906ee402b7ed9640340cf8a474420d02d8891451733b6b02314ec"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4dcc9cfa4ba2fb35e08b9f757cf9434da3c41a76e46842f703e1ce2c576e8c0d"
-    sha256 cellar: :any,                 arm64_sequoia: "6ed8b8f948d5a403aa8dcdf223e5b5f34ef8e25ca6ad32114a70749cf044a895"
-    sha256 cellar: :any,                 arm64_sonoma:  "22ef7163d85958e433bd779046d06cce4d1079c6f50be6bb5b4ef5184385375e"
-    sha256 cellar: :any,                 sonoma:        "ca12cec3615e899317a5d7767bdb97e41ba3d228f8a4bf9df7a26328ff8b43c3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3346402a22343a44c5ed9cc535f80c1c70ffd182b01d3502bba7b0843bb5e53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1c9f157a0d950b54172a8e6252305a8b13363cd0770f24ad829a45f7d8e6e33"
+    sha256 cellar: :any,                 arm64_tahoe:   "956163d883c535f92084f64da8915759d0a140d11147d0930a4bda81a5be6eb1"
+    sha256 cellar: :any,                 arm64_sequoia: "bf0f181acf0c3903ef703db318396800bf2605cd69e4495108f8f8dcb003fb66"
+    sha256 cellar: :any,                 arm64_sonoma:  "4178dd3833b83e82a4faa3bbcf7353502d122460050bf7d6aa80a7314166af57"
+    sha256 cellar: :any,                 sonoma:        "e90ab6379e7e543b63361f4598e0a985ae25664d2b993b811385784b1b04314c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2ccae56059c0bc2ac6a1a588c0cfe9c83884a08063695450842ca63d9a44073"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "973fafc9115622b6401a29ffde6f1b18760304bada6cc63a0cef2f60cf5011fb"
   end
 
   depends_on "libyaml"
@@ -27,8 +27,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "backrefs" do
-    url "https://files.pythonhosted.org/packages/eb/a7/312f673df6a79003279e1f55619abbe7daebbb87c17c976ddc0345c04c7b/backrefs-5.9.tar.gz"
-    sha256 "808548cb708d66b82ee231f962cb36faaf4f2baab032f2fbb783e9c2fdddaa59"
+    url "https://files.pythonhosted.org/packages/91/e6/5eac48095081c358926a0cd8821351d7a013168b05cad9530fa3bcae3071/backrefs-6.0.1.tar.gz"
+    sha256 "54f8453c9ae38417a83c06d23745c634138c8da622d87a12cb3eef9ba66dd466"
   end
 
   resource "certifi" do
@@ -67,8 +67,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "markdown" do
-    url "https://files.pythonhosted.org/packages/8d/37/02347f6d6d8279247a5837082ebc26fc0d5aaeaf75aa013fcbb433c777ab/markdown-3.9.tar.gz"
-    sha256 "d2900fe1782bd33bdbbd56859defef70c2e78fc46668f8eb9df3128138f2cb6a"
+    url "https://files.pythonhosted.org/packages/7d/ab/7dd27d9d863b3376fcf23a5a13cb5d024aed1db46f963f1b5735ae43b3be/markdown-3.10.tar.gz"
+    sha256 "37062d4f2aa4b2b6b32aefb80faa300f82cc790cb949a35b8caede34f2b68c0e"
   end
 
   resource "markupsafe" do

@@ -1,19 +1,18 @@
 class Coreutils < Formula
   desc "GNU File, Shell, and Text utilities"
   homepage "https://www.gnu.org/software/coreutils/"
-  url "https://ftpmirror.gnu.org/gnu/coreutils/coreutils-9.8.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/coreutils/coreutils-9.8.tar.xz"
-  sha256 "e6d4fd2d852c9141a1c2a18a13d146a0cd7e45195f72293a4e4c044ec6ccca15"
+  url "https://ftpmirror.gnu.org/gnu/coreutils/coreutils-9.9.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/coreutils/coreutils-9.9.tar.xz"
+  sha256 "19bcb6ca867183c57d77155eae946c5eced88183143b45ca51ad7d26c628ca75"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "a05deb3349451dbbe11abd0b339a835f97a989f08345afb8c3a45952a0df6ee3"
-    sha256 arm64_sequoia: "67c097eb1b01d8a5525c871e84260187d6308ae2965c013b0416bae62853c9dd"
-    sha256 arm64_sonoma:  "fce6e52bd1afd5e8e91446f0def571ff4339bac5d866a1c77d1d392a2ea07a18"
-    sha256 sonoma:        "69a6d4f328369ab2afc40032b6b44b68d765f308474cf6ad634fa1499ec38769"
-    sha256 arm64_linux:   "1f948fa0dbd69feab36f771aada788c3a651486d8a5e9734b01094df55e0c634"
-    sha256 x86_64_linux:  "d812e26edfa73bad913099488a6e6b86761c4275568592525d4e295142692af9"
+    sha256 arm64_tahoe:   "c1c98196cf47ba0693fcdfdc382baffe28f2898f566e93ef1b24b59ce30d1a8e"
+    sha256 arm64_sequoia: "8c9f197f43acda73bf08c352730f37e49b4059622cfa6a45e1d71a1e018a92fd"
+    sha256 arm64_sonoma:  "44051d68ba9de8afd8902900396d4726f447a08342f540c460f7472f18de1862"
+    sha256 sonoma:        "d23bd4e530c024f868213201dfac8d0135c3e20d561065e3e0a55886c8cbdbb9"
+    sha256 arm64_linux:   "8df4ae2018195ec710a08c196648f75a50728b9104acc6bdb00a5b81a2c1f93b"
+    sha256 x86_64_linux:  "7f625a7b2b2eac3151a8d762b2f0458f97669746f077bf758d68490d546b0dc4"
   end
 
   head do
@@ -52,12 +51,6 @@ class Coreutils < Formula
   def breaks_macos_users
     %w[dir dircolors vdir]
   end
-
-  # Coreutils 9.8 had a bug in `tail` that made it seek to the wrong place in
-  # files. Only update src/tail.c from the upstream commit otherwise `autoconf`
-  # will be invoked.
-  # https://github.com/coreutils/coreutils/commit/914972e80dbf82aac9ffe3ff1f67f1028e1a788b.patch?full_index=1
-  patch :DATA
 
   def install
     ENV.runtime_cpu_detection
@@ -133,19 +126,3 @@ class Coreutils < Formula
     system bin/"gln", "-f", "test", "test.sha1"
   end
 end
-
-__END__
-
-diff --git a/src/tail.c b/src/tail.c
-index b8bef1d91cdb6cde2b666b6c1575376e075eaeb8..c7779c77dfe4cf5a672a265b6e796c7153590170 100644
---- a/src/tail.c
-+++ b/src/tail.c
-@@ -596,7 +596,7 @@ file_lines (char const *prettyname, int fd, struct stat const *sb,
-           goto free_buffer;
-         }
-
--      pos = xlseek (fd, -bufsize, SEEK_CUR, prettyname);
-+      pos = xlseek (fd, -(bufsize + bytes_read), SEEK_CUR, prettyname);
-       bytes_read = read (fd, buffer, bufsize);
-       if (bytes_read < 0)
-         {

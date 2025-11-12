@@ -1,19 +1,17 @@
 class Rmpc < Formula
   desc "Terminal based Media Player Client with album art support"
   homepage "https://mierak.github.io/rmpc/"
-  url "https://ghfast.top/https://github.com/mierak/rmpc/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "c0dca5f4be1222591a69b82e77d6fe42df259e6130ea7ea7dd6372515b5f4357"
+  url "https://ghfast.top/https://github.com/mierak/rmpc/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "86e6b465707cdca82f53aed2a3bef600430edbf4e626124d194ac346ee989cbd"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dff50b373be90373b9e3b18d0ec63c0be8a58b0e813ad685b97e664d56115d1a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "628e740ddb130cc457f3aa22c222c6a86fb7bdcea61b54e5d1b93e50d03f0c4b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f309a228aa4affad8f4581942f7201b45000891db2a6411e67e8c5bab93f60fa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "44b890cbdb18fa990bd3ad3ec2eb2250f7600b9dcab0c1870c96023e77a25acf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b96a2bbf4cc69d44711769f593f98339e71115b406f31482724b24d8fb2c3c20"
-    sha256 cellar: :any_skip_relocation, ventura:       "3545dd59252302959d7f43ca65fdc00b059691172680f27914d99ede9c77d821"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f020ec622900283a52792838aa3429d6c3cc83c857b0a99e9da04e041873ac32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b0f1327ee81b5074ecb363855443f745260cccb09c1fb2e6b1dfa18d4c95f48"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ac81f0ee228e0acfef6aed122bce3a4023d8ace5f3ef66c3510e27b6daa4f93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65170c1de50cdf688114b04d71a52aae3a9eb3948695456d8655b601f4bbbce2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e74c3d9c24cacda3e5dbe004da099f7c8be18c6af91146e40e574b194694d3f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ba6f7ffc146738447a8625e925a2ad9e76af9e262b76e576336c78b4a657d30a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "31cca7cc0e3791389bc4a1867a8d357b42cbe1d8eac3c02e2f6036c66bf63514"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb1671395a83312a54e5c1ad1bdb5d0dd5f4e495eb0fdf536d91e6b8df2e4d49"
   end
 
   depends_on "rust" => :build

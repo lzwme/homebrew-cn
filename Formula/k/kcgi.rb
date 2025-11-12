@@ -1,8 +1,8 @@
 class Kcgi < Formula
   desc "Minimal CGI and FastCGI library for C/C++"
   homepage "https://kristaps.bsd.lv/kcgi/"
-  url "https://kristaps.bsd.lv/kcgi/snapshots/kcgi-0.13.4.tgz"
-  sha256 "cc5f75ea75e42ed4f67e9ef831c0387717cedbc65c2261a828bee7956e46a259"
+  url "https://kristaps.bsd.lv/kcgi/snapshots/kcgi-1.0.0.tgz"
+  sha256 "7b846c5012cc49639456bb99ddbc7b9525168697b891535f9195818e5483272e"
   license "ISC"
 
   livecheck do
@@ -11,14 +11,12 @@ class Kcgi < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b00ad194d21462d028e5b68405a53c20014a87bebad58a62220a714b79e7d540"
-    sha256 cellar: :any,                 arm64_sequoia: "1ede6da1f7d9ea340cc19bf6a539948dd87a0aa20bb179e4c669a7fa94a6bd99"
-    sha256 cellar: :any,                 arm64_sonoma:  "9da91cadc2de7c8b9736dd73a28f2e9f39f5d7fb25acae212efdb5d6e52a25ef"
-    sha256 cellar: :any,                 arm64_ventura: "0314195b4c86b877610fd9035b7906122316bddd3cfaa2982395797a4bb75912"
-    sha256 cellar: :any,                 sonoma:        "4bd93297c59a4102abb6ddb1ef0e1d53de162e7c71aeb53e8da29824d3a1dbbe"
-    sha256 cellar: :any,                 ventura:       "ea274424cd3b9f8b69bb7e7a78c89aeda17728716a4b4576b73bdfb8253f5ad1"
-    sha256                               arm64_linux:   "a4c08753b73661aee4fd7422ddc709a14bcdf9268a7e1243a20d70a8dafc2fdc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be1d317a28397ff207c48149f3b9d4241bbf44b88f6f712091dfcb5b1f6963a2"
+    sha256 cellar: :any, arm64_tahoe:   "05ab8d8a49a7628dc68a14efe5d8e590f0e7ef5d257b3a7958a9f6251bd6478b"
+    sha256 cellar: :any, arm64_sequoia: "29d34ade3802fbb30d12e08633c4cf9cda91f409dca93235d7b221e352d5dbea"
+    sha256 cellar: :any, arm64_sonoma:  "ef4517f73ea6d84b5d7a37ab3a1bb848dd0b16cc71584a81e72696280fc5ef60"
+    sha256 cellar: :any, sonoma:        "8eea66e181211b644fc74ac58222d36ae19628966fac1a1adfc7cee02bd6fc81"
+    sha256               arm64_linux:   "90cb10bc33f6f8e525d3cd9990034c257e444ff946ce0bf0e673a5fc7ddb9dc0"
+    sha256               x86_64_linux:  "da5edc496977395ea94fd28a771b0a1afd96ead802df01bbfdffb936fd7784c5"
   end
 
   depends_on "bmake" => :build

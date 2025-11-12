@@ -12,12 +12,13 @@ class Dagger < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b693ca08debc2598ec299a9d9df4c572e0a1c37fd76e23c63bd4eefbac2ce4d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b693ca08debc2598ec299a9d9df4c572e0a1c37fd76e23c63bd4eefbac2ce4d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b693ca08debc2598ec299a9d9df4c572e0a1c37fd76e23c63bd4eefbac2ce4d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ec528d364ecee0089ddcfeb15ca03030313f898f73c574e4dad715fea2dcd271"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "23bcf76573cbc4f565fbc6c58dd9012fd1565ffe9ac14cdcdd327c59c4de51d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4079886237d9fbd10a915c1964064d8fc5483a117f76af227f886683e572d3d9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2815c9875bb3e9ccbb1ba680d5c27aa00fd429b76e0536eb81259432d8c0b2f9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2815c9875bb3e9ccbb1ba680d5c27aa00fd429b76e0536eb81259432d8c0b2f9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2815c9875bb3e9ccbb1ba680d5c27aa00fd429b76e0536eb81259432d8c0b2f9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f44ebe9bc7ddad9da53998498daf110b7004ae72e9330f2bb734267a0a1661c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3446e7ae339519e6cdb8b68c82dd9218da8035990b41a656f27ff823554b1297"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d425527ab2259be1a25659613ea86c2947ef6ee9203016162ed16ea05c8b9439"
   end
 
   depends_on "go" => :build
@@ -41,6 +42,6 @@ class Dagger < Formula
     assert_match "dagger v#{version}", shell_output("#{bin}/dagger version")
 
     output = shell_output("#{bin}/dagger query brewtest 2>&1", 1)
-    assert_match "Cannot connect to the Docker daemon", output
+    assert_match "failed to connect to the docker API", output
   end
 end

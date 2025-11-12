@@ -1,18 +1,18 @@
 class Gollama < Formula
   desc "Go manage your Ollama models"
   homepage "https://smcleod.net"
-  url "https://ghfast.top/https://github.com/sammcj/gollama/archive/refs/tags/v1.37.3.tar.gz"
-  sha256 "563465fcdbbbd729c295950497b71fc3e9413bc5f454bd1f1a239774ccd9c4c2"
+  url "https://ghfast.top/https://github.com/sammcj/gollama/archive/refs/tags/v1.37.4.tar.gz"
+  sha256 "35f8fa684adf6bc973617e5323275dd8b2e0dcc433509694b9284557399b0404"
   license "MIT"
   head "https://github.com/sammcj/gollama.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a68a44ea48b321dd4cee5cd5e23730452c0d5098ac39a71c88b9e097fc57d6f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e633a3064717231a73953748639361c901d6c4f1a42d55190e88def49a47ab58"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c63041b6d9a2d4c1756269d151933d4a94f547d681256f3eac5ff90e54c8e9c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "30f6cb365b81aa718cdba94c5d76dd24978b4bef92fe5d0463c5e92f649d0597"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c993c4368a1a7ade20f9659fdbbf951043e98656f0f012d0b78c544175f7266"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36013c4b4cc45d95c45d5f4b97e8a2177d29e21ce6635802e9d5afb6d889a5b7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "66f302d903d2b066c6f3efdab5b1945935e70efe5df591555db026b96f8f48fa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9eaa367b432a792e3051e7401fc2825d879209162d4e9fd67acb1027c23519ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5df9f9a94ac0f42f844706c43a5bf37e0956ecb3c2173f8a1200812c6e951278"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b917f8ca5a1737222b681ea5eaabfc871d3e0ab6ccafe80821fab661a88c0f3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "860f591a3f5eb22ad7d5ed08bdf48b0cf3f53938c01aad07bde1ea66d46e4033"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b434c4994186232fa48df1d11563edc7773405319334a847fa140da98567ab0b"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class Podman < Formula
   desc "Tool for managing OCI containers and pods"
   homepage "https://podman.io/"
-  url "https://ghfast.top/https://github.com/containers/podman/archive/refs/tags/v5.6.2.tar.gz"
-  sha256 "c6de8f347ee93e4626d7c82e3adcb1b34e64175b5ca9959e790e52a0b4bbf2a1"
+  url "https://ghfast.top/https://github.com/containers/podman/archive/refs/tags/v5.7.0.tar.gz"
+  sha256 "86972a63aaa8a292fff7ee3f18b7445d2e937e83e0c3f3b3904d48065714f07f"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https://github.com/containers/podman.git", branch: "main"
 
@@ -17,12 +17,12 @@ class Podman < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e50e94b47564eadea1382de73d4b43d36da1bb42fad982f40f6c9afc5dc3e782"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d5b75fcf79c6d2c93b9f85985e9f144df9ddd1b9aed25b89e7763a795f610d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99d2985932f85ddbbe2a419444253b8276935413f2597e80b00b83c586692c18"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5c9493137126c703225e143e170096cf086af779bf2187a8500b52bc15fbe35b"
-    sha256                               arm64_linux:   "1ca052627f383875445a6a669a8af543d468e29794f606f191c1ec0197f0e241"
-    sha256                               x86_64_linux:  "b88544bd104340950e24a9e2026e1bfe7add887ca734b968c3f6f8a222bc0573"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac07683f2825357474b9c0232e7e366adf76692261c4842bae1c65514e5cc839"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2662fd5e6b6574443fc03b65aeb6ac4409b37f629750e9d9616947c4191858b6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8cfae73734e3a7c23b3df23f7c79bd7348912d9dda4860e41270b4aee3483c08"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5a6e349bea10cca4dc40b8474e5d09ec89b5a6082510fc35134a5e398884fe7a"
+    sha256                               arm64_linux:   "3716057943686fb7ff0007096063bc869bb9e218eda9081f5a65d21a75be99f7"
+    sha256                               x86_64_linux:  "3ab888dd740b9a0b14b468162381afd4411ff1c492e47445ac226c72f0c72d59"
   end
 
   depends_on "go" => :build

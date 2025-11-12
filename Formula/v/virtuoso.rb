@@ -1,17 +1,18 @@
 class Virtuoso < Formula
   desc "High-performance object-relational SQL database"
   homepage "https://virtuoso.openlinksw.com"
-  url "https://ghfast.top/https://github.com/openlink/virtuoso-opensource/releases/download/v7.2.16/virtuoso-opensource-7.2.16.tar.gz"
+  url "https://ghfast.top/https://github.com/openlink/virtuoso-opensource/releases/download/v7.2.16.1/virtuoso-opensource-7.2.16.tar.gz"
+  version "7.2.16.1"
   sha256 "0a70dc17f0e333d73307c9c46e8a7a82df70a410ddfe027a5bf7ba6c9204a928"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4e12002e4f941f27a576e940b39a2d70cb6ad040f65b3c2a8c012def31f9ab16"
-    sha256 cellar: :any,                 arm64_sequoia: "2f1513bc01588c8a278253aad7557f0b14cd297e051b1ae39576e16fc779b6f7"
-    sha256 cellar: :any,                 arm64_sonoma:  "d00998fbe031ce5df6cde22125bc017f20ef2763af9b2cc433d9eae3a95433c6"
-    sha256 cellar: :any,                 sonoma:        "03ba42739b024430e37704edac175f60dcae3f08af2e38876cefdc09c82d99b0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab5e8186e1d41064571c5a3471d87b261e7e5cd3eebd6994d848624b74703319"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea3b5e195f0f6ba1e23280505bc3dcd973a07676a939967c0f5c0744212f6865"
+    sha256 cellar: :any,                 arm64_tahoe:   "2b7ac32764f0040dd1056417f422fb02e15f76bbc2cd674fb5f7537a1877b1cf"
+    sha256 cellar: :any,                 arm64_sequoia: "2d605053b6e21ce0601876ac33732170b904c04e5f8cb8c197968b35034ac74c"
+    sha256 cellar: :any,                 arm64_sonoma:  "f00770df5eb0747dbc02fd9f388acba7f510f9039de36bc1dad6925b6a08e637"
+    sha256 cellar: :any,                 sonoma:        "f0ba234fa8b8dc07f98676a6afdd9c18cd3c123dafdbc5c2dc029b386675131e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "013851e403ba961433f12a29be5cbed55368cd4adb7a5bedc27daf4e114d6037"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4215aa1feb1db4985d004bd6e0fea39de4010dff0ed0fa4c20e1be2153003a2c"
   end
 
   head do
@@ -47,9 +48,9 @@ class Virtuoso < Formula
 
   def install
     system "./autogen.sh" if build.head?
-    system "./configure", *std_configure_args,
-                          "--disable-silent-rules",
-                          "--without-internal-zlib"
+    system "./configure", "--disable-silent-rules",
+                          "--without-internal-zlib",
+                          *std_configure_args
     system "make", "install"
   end
 
