@@ -1,17 +1,17 @@
 class Cljfmt < Formula
   desc "Formatting Clojure code"
   homepage "https://github.com/weavejester/cljfmt"
-  url "https://ghfast.top/https://github.com/weavejester/cljfmt/archive/refs/tags/0.15.3.tar.gz"
-  sha256 "b40ef8ccd0bb64fcda56b28c043d995c772b391ec0b605bc1e0bb7ef64df1f10"
+  url "https://ghfast.top/https://github.com/weavejester/cljfmt/archive/refs/tags/0.15.4.tar.gz"
+  sha256 "eac1cc6b7649c6b02f4ccb3c84c3f6bb174010cd40faef9fa5dd7e3e8515988c"
   license "EPL-1.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "424546f6441f0834947fa5568d85106db9878f7264f2bb5d8a6abd821fbae7d7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fc27186eb7a97f8504db70784b617237ce1759d36104418c2229ba5b08d226d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "065cae91b219fe64fc8e9ce4a44727e4499b1d57c7d95b5e9ba47661f81fd63d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "176c32a079c0641b79feb7d16b5d5880df3ad4c7c6c16a960759dd7a73a6f3e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2da9f2ff77a62b11fdc298538599f17f5210dfe72537b6f76392d6f7f8a21889"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90853940705e21ad035433f25c774c6123607aa8b9afc170655691575f8a0bed"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe877c1132b6a86b24a7963ac504a478c734610dd7c6998445cc4ac41b980387"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12c662bc7a110fb8ad3687a14cf07473fdb1e268855ae4da68433dc284fe2a13"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b604f9b9ced751abe2e5c7f1f6e7c9b14f70a34cbcad0b8258f5e51585c7fe5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "efcb4e0154280edff75b38beca55d293168ddac8c3141d8679a4b0068b730bf4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d346447e454c79cd0f30ee191aed314f673c03bdaf03b8e7fcae9852a431bc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d8b3af0391779a1375edfd3aca1391476496c1f37f07e3d6804cf76867b71f1"
   end
 
   depends_on "leiningen" => :build

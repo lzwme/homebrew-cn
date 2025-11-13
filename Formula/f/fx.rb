@@ -1,20 +1,18 @@
 class Fx < Formula
   desc "Terminal JSON viewer"
   homepage "https://fx.wtf"
-  url "https://ghfast.top/https://github.com/antonmedv/fx/archive/refs/tags/39.1.0.tar.gz"
-  sha256 "bfd6e3acdd5ef31ff214df1ba5b24a3cfc99227e3b149b79cafe5732f191a26f"
+  url "https://ghfast.top/https://github.com/antonmedv/fx/archive/refs/tags/39.2.0.tar.gz"
+  sha256 "cdb98177f956615c961bc615fab0b30e73167295152d4f2d4cb70b16cdf47d6e"
   license "MIT"
   head "https://github.com/antonmedv/fx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f1d48477373e40e38a38f931a13ca7627da1036179b954c379bcd6d1937642e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f1d48477373e40e38a38f931a13ca7627da1036179b954c379bcd6d1937642e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f1d48477373e40e38a38f931a13ca7627da1036179b954c379bcd6d1937642e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0f1d48477373e40e38a38f931a13ca7627da1036179b954c379bcd6d1937642e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c881516167b1e75c141ed5b44640a58b488b315cf615f70660c5be63d7d75e5a"
-    sha256 cellar: :any_skip_relocation, ventura:       "c881516167b1e75c141ed5b44640a58b488b315cf615f70660c5be63d7d75e5a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "74fbc5feb079166081f8555c43b085d336fbf84f5ebb1043f07a2dede75c0f31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf7bf9d4cc5dd78c301dc2ab96c6bbe1721169256282ef4910848151e5055684"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f79f0091b2439d09a282e4731414ca240b479b9ee1dce7017808b3b793b53fe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f79f0091b2439d09a282e4731414ca240b479b9ee1dce7017808b3b793b53fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f79f0091b2439d09a282e4731414ca240b479b9ee1dce7017808b3b793b53fe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3b489b6facee5fad90c296a0b9368296b41c592bea225f7da4806f077675954b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "beedcca6635c1c157d142ec0728a1b4cf0e9dd60d933e59ad003d69120532643"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "323e237254fe3e24924684401b371bd6ec9a6eab779e0a0b8dcc6c7ed43b0c02"
   end
 
   depends_on "go" => :build

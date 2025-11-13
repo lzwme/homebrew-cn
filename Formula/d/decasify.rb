@@ -1,19 +1,17 @@
 class Decasify < Formula
   desc "Utility for casting strings to title-case according to locale-aware style guides"
   homepage "https://github.com/alerque/decasify"
-  url "https://ghfast.top/https://github.com/alerque/decasify/releases/download/v0.10.1/decasify-0.10.1.tar.zst"
-  sha256 "5cf9781df864c211d191f73ae014da7de1e02cad6507850728fea5a0b9f946e7"
+  url "https://ghfast.top/https://github.com/alerque/decasify/releases/download/v0.10.2/decasify-0.10.2.tar.zst"
+  sha256 "8a9d3f8d4a1eb4824b8021b5d616ad6a69d45f481e6bd25b175386d71ab04229"
   license "LGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22067e4a0be17cd26d20e8b85a197563931e6d19303bd7598d8bf8e3027677ea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35c382d68af07363f18cc1384c4f532d7844423e80da9463e99e1e5f6f0ac799"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae81a1439bc5fd75fe76d00beac0d7ca2f3a353406cda1ea185d04a4669c3e62"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1d08eb9e9cf5109f3f98550bfd95e9034c708f892164f564aef14caef1b050dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9ba5797890e07052e2551b57eb6bbb658f8b5dc153acc3fee17c08a0dca66a6c"
-    sha256 cellar: :any_skip_relocation, ventura:       "b5c26c8f65ce573687bcfc1dde10b6533f7e459ac015da51aefdf881449a98e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc2aa4d7df5cb0248eaf037e5b9a1865439d15cab73d3ca02a26cb3efacca67e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd970ae1d4b0e1b67a015c65d80e633657761fbc357a0c9e60075ca991c83658"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e87106f58cbf7b858e8ab0a1727e20d7935b7596a67b0f741bd5a1ec5ba874c4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad54e75038e40143ee8e32afc8251ce179fae7abfa576e8b479d0139cf65edbd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5293fc1fed40589ab6f7ddd314dc0eed433701c15af60251100dea5c4a653c2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "47493cf2bd6e7b3648b59ae7ce5d59ae0876abc468158586ef333cf324bf3870"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ba0998b43f8866141072e77c681cd0b406123f60f0a847d64ac2e262e31a7ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37d1330999392eafc7f88b97997d7a54ba4fb5145329b171c43421cec06ae918"
   end
 
   head do

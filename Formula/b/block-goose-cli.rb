@@ -1,8 +1,8 @@
 class BlockGooseCli < Formula
   desc "Open source, extensible AI agent that goes beyond code suggestions"
   homepage "https://block.github.io/goose/"
-  url "https://ghfast.top/https://github.com/block/goose/archive/refs/tags/v1.13.2.tar.gz"
-  sha256 "02827beeaa9425f93f6198d51df4dd7d90a5d567162fd4633aa58e79cbf6b6cf"
+  url "https://ghfast.top/https://github.com/block/goose/archive/refs/tags/v1.14.0.tar.gz"
+  sha256 "c0bb782103e75ccb912035274b5b3cec8dbaa0a150f56ecde532dca04d7b82bf"
   license "Apache-2.0"
   head "https://github.com/block/goose.git", branch: "main"
 
@@ -12,12 +12,12 @@ class BlockGooseCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be4e292b031c38f95e0c87a14532e416570c5b106075b3c4f52b0921da1c9cd1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a99c36ce4a141d3265e3fbad378de194f4273e57bd5067be9b3166804b948bd0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63b7854acbc440266a3f1b3fcee2304f4b176213a1e892acb301066d367e24a3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f331396e902adb6e8ae81fb96a677632be67cd285a1aaf246f41f5e2e3b8b5fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc39c04c22f79e2b8ce0894060aa0f7a7600241ef8f850ee2d100ca20a9c1ea8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "337db6cfd0a42fd6118d05ae7486a68f85c37e29c1dcf5ecaaa1e18efa982372"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7cc414460653d0676ce3b757f44efa94a046dcb1389a5bdd0ee77050b34bad70"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f94dd4501002510bcd6f6eb44064371629a9ba6493d3150b9257986b0d7e966"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04a8cc97c746cb271f5838940aeebf405387abb794515fb9e83e4b1ce77a77e4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d6b16010e0b013c61495b99951e828a891fec401c8a3914a11ff13c212c13bc3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cdc44edd9c1305833a7ba3f2016808b79fcecba91a29a109c8b645aa4d50814"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18a537c968925556e928c966ffa963669958a2248c12e2426571110d7f5e14a6"
   end
 
   depends_on "pkgconf" => :build
@@ -39,6 +39,9 @@ class BlockGooseCli < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/goose --version")
-    assert_match "goose Locations", shell_output("#{bin}/goose info")
+    output = shell_output("#{bin}/goose info")
+    assert_match "Paths:", output
+    assert_match "Config dir:", output
+    assert_match "Sessions DB (sqlite):", output
   end
 end

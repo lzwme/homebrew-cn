@@ -1,11 +1,10 @@
 class Mavsdk < Formula
   desc "API and library for MAVLink compatible systems written in C++17"
-  homepage "https://mavsdk.mavlink.io"
+  homepage "https://mavsdk.mavlink.io/main/en/index.html"
   url "https://github.com/mavlink/MAVSDK.git",
-      tag:      "v3.10.2",
-      revision: "fb2b989b5b9849358bf9c2cb082f496d55edf173"
+      tag:      "v3.11.0",
+      revision: "554e28378fe79b83216a128de148c2af4fe6ec20"
   license "BSD-3-Clause"
-  revision 4
 
   livecheck do
     url :stable
@@ -13,12 +12,12 @@ class Mavsdk < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "f2acc2bd6fe4e0e9c3c3ca3fdce91c78a624f2294a3056c10a9a49573ca5df34"
-    sha256               arm64_sequoia: "8e04f76baf4c44b8acf712e2a781a00c78d84071e70907005a392428d285b23f"
-    sha256               arm64_sonoma:  "10e1e7e21746aae3e033d985cbd8852cb29ff3587cbc1916cb1a37ae3ae1dbb6"
-    sha256 cellar: :any, sonoma:        "9fcc670f709c1af1ab80c25c641c40b9f26fee5f4f149afecfefd71ad4ff25f3"
-    sha256               arm64_linux:   "2c7b3a2ba429dd5ec7127b3fd88203c68c997864a18e966ceed17c5eac0eb929"
-    sha256               x86_64_linux:  "e64ad405f9c40d0edf17a5ada9d399290485d669a966482faf1da474c993214d"
+    sha256               arm64_tahoe:   "76f7a35ef8b392b6f4f403bb5a18ff41e521d2d1717f97f2b115cbe592f0608c"
+    sha256               arm64_sequoia: "babb7d8b8a24d31bd61a123e528ff2afaf4bee7b75229e31d2b31f2a81d2ad59"
+    sha256               arm64_sonoma:  "37ddf946435150e4cea8a0c71b1e3e33d4b3f20071317123b5519e648e0d1f29"
+    sha256 cellar: :any, sonoma:        "ac0648499b22d7bd436affb666b37833ed41f8c25e216c4438d5f54fbcc4b0c3"
+    sha256               arm64_linux:   "f6899f37fc26b167880d4c803458f1ad940667db3346ba535b3d9713a59b8a83"
+    sha256               x86_64_linux:  "4af668b45967d2f66af60a6b43aeca5e7f75fd5c939799f49268cfc8631f756b"
   end
 
   depends_on "cmake" => :build
@@ -58,7 +57,7 @@ class Mavsdk < Formula
     # Regenerate files to support newer protobuf
     system "tools/generate_from_protos.sh"
 
-    %w[mavlink picosha2 libmavlike].each do |dep|
+    %w[mavlink picosha2 libevents libmavlike].each do |dep|
       system "cmake", "-S", "third_party/#{dep}", "-B", "build_#{dep}", *std_cmake_args(install_prefix: libexec)
       system "cmake", "--build", "build_#{dep}"
       system "cmake", "--install", "build_#{dep}"

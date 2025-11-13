@@ -1,17 +1,17 @@
 class Rumdl < Formula
   desc "Markdown Linter and Formatter written in Rust"
   homepage "https://github.com/rvben/rumdl"
-  url "https://ghfast.top/https://github.com/rvben/rumdl/archive/refs/tags/v0.0.174.tar.gz"
-  sha256 "08836cff504f10bba37bf556678b45986b917ae9da0298fc2428f15d120fabd2"
+  url "https://ghfast.top/https://github.com/rvben/rumdl/archive/refs/tags/v0.0.175.tar.gz"
+  sha256 "958e347101d7f28f11482deab5689006291e0c271b55e99902d652b8ba02d2e8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0c011b582d14274f29a5823a6d298a1202b6f36c57168b005ebd04bd260a196f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3dc462f7c32b1f6c69318279706cf68aefff9039bca3277cd84118da5b4a9b8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d23e2039f764db1031f9737c04f61d04723a913b1d8c13dbde41b3a9c0496288"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8f9e79ed821d11d5f3adb6adae242b0ef20692e88dbf8201ed15d31d37e3825a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d49768fb94aeb9179ba829dbaa69eb4a1547d615297846142c579bd4cd054b82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab64475b1c87fac39ecea3f282e927c684668a1374104a0d3a04aadfa99b30b0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e09b474377c27593e182a631c7bec4b541cd4e32bb4f1467489794f0eb89d117"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb3584df72cbe55965cc82cad46264fd9bb6f142e10dc31ffe0993855fcd3ed0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b85535d8018d378f3d9972eb80a73314b2ec19a0e9abb7583134ab3d1121dacb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4a99dffe21bb2df468da2aef57344e0eed08eb7ade949308f34c272cc4f0b78d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34a0c45b08cc22763872ced946d67db65c23acbd8bd2d4bf23d4fe4d781be36d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a712345ae652dfb7e0ecaa9e1cab3069d02781b97006737fc1e89bd12962eb2b"
   end
 
   depends_on "rust" => :build

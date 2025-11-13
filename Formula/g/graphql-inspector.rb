@@ -1,12 +1,12 @@
 class GraphqlInspector < Formula
   desc "Validate schema, get schema change notifications, validate operations, and more"
   homepage "https://the-guild.dev/graphql/inspector"
-  url "https://registry.npmjs.org/@graphql-inspector/cli/-/cli-5.0.11.tgz"
-  sha256 "9355d022eb7572a3c13cd9252eda9c368c4df6a7fafc7ecea54745f77e185c05"
+  url "https://registry.npmjs.org/@graphql-inspector/cli/-/cli-6.0.0.tgz"
+  sha256 "c7d42b5bd54741e6f8e6f33fddec097e9920842149603ec2b31a0ebe66ca7e47"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4c48a8efcedf9895d7ec028f05cb4c6c9027a074adfb3f78c14ebf58a09fb354"
+    sha256 cellar: :any_skip_relocation, all: "3ad8912511bdca6ff8c18097f58efe3240762b398aba29e36b3fbfdf2942c52f"
   end
 
   depends_on "node"

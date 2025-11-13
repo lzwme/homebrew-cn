@@ -1,8 +1,8 @@
 class Eigen < Formula
   desc "C++ template library for linear algebra"
   homepage "https://gitlab.com/libeigen/eigen"
-  url "https://gitlab.com/libeigen/eigen/-/archive/5.0.0/eigen-5.0.0.tar.gz"
-  sha256 "315c881e19e17542a7d428c5aa37d113c89b9500d350c433797b730cd449c056"
+  url "https://gitlab.com/libeigen/eigen/-/archive/5.0.1/eigen-5.0.1.tar.gz"
+  sha256 "e9c326dc8c05cd1e044c71f30f1b2e34a6161a3b6ecf445d56b53ff1669e3dec"
   license all_of: [
     "MPL-2.0",
     "Apache-2.0",   # BFloat16.h
@@ -20,7 +20,7 @@ class Eigen < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d0cef7ca9fbd856498d50ee5bd0de3cfb644fb2d49e303c5bd73bfc95cccf05d"
+    sha256 cellar: :any_skip_relocation, all: "563e391400dc4eab1a9cf164c14082db589cd39d0546b454a8b4f7ec56237be6"
   end
 
   depends_on "cmake" => :build

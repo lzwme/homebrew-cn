@@ -1,18 +1,18 @@
 class Chiko < Formula
   desc "Ultimate Beauty gRPC Client for your Terminal"
   homepage "https://github.com/felangga/chiko"
-  url "https://ghfast.top/https://github.com/felangga/chiko/archive/refs/tags/v0.1.2.tar.gz"
-  sha256 "3b345707bbe64ce32832de5633722128c566ae7538dc64b16bc71657d71af737"
+  url "https://ghfast.top/https://github.com/felangga/chiko/archive/refs/tags/v0.1.3.tar.gz"
+  sha256 "b43b03caf132c0a4455176ee913829fae81fb55d4826848512b391944a36192a"
   license "MIT"
   head "https://github.com/felangga/chiko.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "40bd4f8fe02009f8091081b96d71671733465e89cba12f91ea4c8143e83ce464"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40bd4f8fe02009f8091081b96d71671733465e89cba12f91ea4c8143e83ce464"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40bd4f8fe02009f8091081b96d71671733465e89cba12f91ea4c8143e83ce464"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d21b7229e25566e804edbb72c60baf9b35aae035a42ce44d6f80fdd258766340"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5142ae134d09ee4d591f0f7ccec829d5fd3f526bfb9d9803f975aa8ab861d002"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c6dc0a7efc00433416340ad06cd4e3b927c1937754c802b9570011e902bdd27"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6ec5af4743aea0cead12147f1a4ec3250f673665ec83ff41e248c44e65b5d9e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6ec5af4743aea0cead12147f1a4ec3250f673665ec83ff41e248c44e65b5d9e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6ec5af4743aea0cead12147f1a4ec3250f673665ec83ff41e248c44e65b5d9e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5bc264aa5d22ec43adc42bc5d4d8c67a3e3f6369e81d0029ebe0467e3805fc36"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f67b687559e8d246e9c1f33654ebc0e53b9d0d04bbf3c40c538c01c337fd1279"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b832793daa47297015be5e2b70a64c44c9affb91a168045896905f747bb0b1d"
   end
 
   depends_on "go" => :build

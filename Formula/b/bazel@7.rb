@@ -1,8 +1,8 @@
 class BazelAT7 < Formula
   desc "Google's own build tool"
   homepage "https://bazel.build/"
-  url "https://ghfast.top/https://github.com/bazelbuild/bazel/releases/download/7.7.0/bazel-7.7.0-dist.zip"
-  sha256 "277946818c77fff70be442864cecc41faac862b6f2d0d37033e2da0b1fee7e0f"
+  url "https://ghfast.top/https://github.com/bazelbuild/bazel/releases/download/7.7.1/bazel-7.7.1-dist.zip"
+  sha256 "6181b3570c2f657d989b1141fb0c1a08eb5f08106ca577dc7dc52e7d0238379a"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class BazelAT7 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5ba0c8ebc46aff52de4e7d75f89822f5a49e6cfb390146cd0852c4872be8a3b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b68187e8e26d7191c0916eb7565fb725390a4f147c9d7ceefca7cc3bffe447e9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "819913a02673746b9600a809bd0bbfef76dd6bfba5e57560ef481d7bac607dfc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e6d6d7c876080eb9b0b2008933b74f3b63043cb323a17092a66a2f6b9b47b9fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "11e6ed5d3acdaa4b2e3159c0d4ce6d9d97905aef6b5fe68bed0406b655c2b064"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab264b63ffceb8eb00fc967402fa6ac155c386a7f533e53b72fa3b28e6ce25b2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9951a2c2d7fb46a35db66a6a9adbc96b4ca75d184f0fa78545979b3e203b26cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9951a2c2d7fb46a35db66a6a9adbc96b4ca75d184f0fa78545979b3e203b26cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0f609c4a1e3092ab0a738f36ff02b0023f86fce0fabad542c375c6a9286bf3c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4e304d2c45194de90324fb87be2cafb3a2bc4a32449676f2045114354c96b6d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "53a676cca2f198259a54d153ccbca884b6ff31046fe6d39cad15a3df20cd1eac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "551daae69da44de6887ed21c29cfb5705c5dfd92be88fa47b9aeeb03adee474c"
   end
 
   keg_only :versioned_formula

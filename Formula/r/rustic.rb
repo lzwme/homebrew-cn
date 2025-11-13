@@ -1,18 +1,18 @@
 class Rustic < Formula
   desc "Fast, encrypted, and deduplicated backups powered by Rust"
   homepage "https://rustic.cli.rs"
-  url "https://ghfast.top/https://github.com/rustic-rs/rustic/archive/refs/tags/v0.10.1.tar.gz"
-  sha256 "efd310855d44758ed0e3cc4bb51ffc8bff59ff160c942f46988f03ef978764cf"
+  url "https://ghfast.top/https://github.com/rustic-rs/rustic/archive/refs/tags/v0.10.2.tar.gz"
+  sha256 "e8305efe543e68f75daec8ac5d7b7831a6ac5860f3dc37a8cfdf40ecf7d1e45f"
   license "Apache-2.0"
   head "https://github.com/rustic-rs/rustic.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae26fd8dd989ecfd1b4744b99ba12fcb688ba2bc6e1494e15688d32fa3df7068"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1d1cde7b016b59f21ba575d3083c6896ec91d15c03a359cea47d0ca6d85468c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d801e31ee5d345b0759ddabfb82a5b64996fce97c6d9baa5e5d537fc1ac612f8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "69fc3312f74d933cf0b184355c6464040e561da18a3915a55cdd5257a5879248"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "52ff58014c7588e4829f7a8e46a920c19389d086e70b5263c8d7ba303e10c03f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ada87234d02a89303edb10408a702e3e9d28922361c9d102bb7127e335b0567c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d5bbdd49649d561888d16a2a98ac3bb166047c1e72dc4c5d052c21ed03b8a40"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5035c0a02bfd0373730ae6411a1b5fee539bd84276e4ea530fe6797e31d15633"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83b88bd386a0192ee706c5d835dc6397a38d434237d94ed935d5873e110889a8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "620e3713af185e35e9182792903839b232bfe119f524b762e6ac1c3444a94f77"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6585de1c75d482af441145014458d4214f5a0424908bd686046d0a3b6805a2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d83e8544d9e0c8d6702dea6fe062ac253f28cd1923d5a1d7283a7adfef4e009"
   end
 
   depends_on "rust" => :build

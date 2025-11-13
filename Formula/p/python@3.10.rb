@@ -26,7 +26,7 @@ class PythonAT310 < Formula
 
   # https://devguide.python.org/versions/#versions
   deprecate! date: "2026-10-15", because: :deprecated_upstream
-  disable! date: "2027-10-15", because: :deprecated_upstream
+  # disable! date: "2027-10-15", because: :deprecated_upstream
 
   depends_on "pkgconf" => :build
   depends_on "gdbm"

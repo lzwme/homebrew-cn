@@ -5,8 +5,8 @@ class Semgrep < Formula
   homepage "https://semgrep.dev"
   # pull from git tag to get submodules
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.142.0",
-      revision: "4111b9ccdef768302c97de7a6e8f9f6d36a4ecdf"
+      tag:      "v1.143.0",
+      revision: "f1f9f320cbb275003abbaf3bb4ae466fee490ee4"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
@@ -16,13 +16,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "900af5d56c7c85b7b8e38d361049f1e4bf63085e0cf2ca8c8c01c6a4d1a8577f"
-    sha256 cellar: :any, arm64_sequoia: "327a9b4ae1a1c774f2d55f7ec20eace11b57aa56939860df8f8db1e6b0e54368"
-    sha256 cellar: :any, arm64_sonoma:  "429cafe0601c349cad6df21830129b4366192ac7178de1f81752099fc4bd718d"
-    sha256 cellar: :any, sonoma:        "bb59a911ceedeebc9088e5711277c8c5ee3769db597ba470168395710b73b82c"
-    sha256               arm64_linux:   "b834f70180e28eb4a5ad1d123bef90615020e07338fde22a5c2200801f08834d"
-    sha256               x86_64_linux:  "c23b7138b95d56a90d2936b78cdd2dfc5b1363ae9c2b1552d0e17167e29d2b1e"
+    sha256 cellar: :any, arm64_tahoe:   "5df5eaef20833279d0cee74187edf14a6b3c5feb28e8f8725b835554fbb64aad"
+    sha256 cellar: :any, arm64_sequoia: "73b301603ef857980207b955ba73887a4e39651b32e18558811fcfce9893517d"
+    sha256 cellar: :any, arm64_sonoma:  "30adee043f16673126c87044805bbb3f3063f37ff9721bc478c6062964762e49"
+    sha256 cellar: :any, sonoma:        "bd0b6fae07110a743aa6b8030b76f302aa5b315f7363183776cc837f2619573f"
+    sha256               arm64_linux:   "af9ec72d32da6385beb8056909ea55eb862a66dbdb4a9667bc71be2b28c0e862"
+    sha256               x86_64_linux:  "37507e807f335fe3d61c6c6951ad94ca9c214626c38f40c9327e84a4e823bda0"
   end
 
   depends_on "autoconf" => :build
@@ -233,8 +232,8 @@ class Semgrep < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/20/c5/dbbc27b814c71676593d1c3f718e6cd7d4f00652cefa24b75f7aa3efb25e/pydantic_settings-2.11.0.tar.gz"
-    sha256 "d0e87a1c7d33593beb7194adb8470fc426e95ba02af83a0f23474a04c9a08180"
+    url "https://files.pythonhosted.org/packages/43/4b/ac7e0aae12027748076d72a8764ff1c9d82ca75a7a52622e67ed3f765c54/pydantic_settings-2.12.0.tar.gz"
+    sha256 "005538ef951e3c2a68e1c08b292b5f2e71490def8589d4221b95dab00dafcfd0"
   end
 
   resource "pygments" do

@@ -14,6 +14,7 @@ class Gradle < Formula
     sha256 cellar: :any_skip_relocation, all: "41a3dfeca469b7c6f97f749f189d4aec7e9bba58a3c1cd8c1ca57c81cc8ce0c9"
   end
 
+  depends_on "gradle-completion"
   # https://github.com/gradle/gradle/blob/master/platforms/documentation/docs/src/docs/userguide/releases/compatibility.adoc
   depends_on "openjdk"
 

@@ -1,19 +1,18 @@
 class Binutils < Formula
   desc "GNU binary tools for native development"
   homepage "https://www.gnu.org/software/binutils/binutils.html"
-  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.45.tar.bz2"
-  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.45.tar.bz2"
-  sha256 "1393f90db70c2ebd785fb434d6127f8888c559d5eeb9c006c354b203bab3473e"
+  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.45.1.tar.bz2"
+  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.45.1.tar.bz2"
+  sha256 "860daddec9085cb4011279136fc8ad29eb533e9446d7524af7f517dd18f00224"
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later", "LGPL-2.0-or-later", "LGPL-3.0-only"]
 
   bottle do
-    rebuild 2
-    sha256                               arm64_tahoe:   "fd20ebf003bed2def99e4d1394999ed18bb18cffb2ebc3780d28d20001ec70b1"
-    sha256                               arm64_sequoia: "3fb936ff0d64e4bc3530ab07f83417f5dea8c098549ec506f19f1c6ae4962cb6"
-    sha256                               arm64_sonoma:  "1a6356d10575b843eafe84253ba51c147334239b37e02d99288d998466912471"
-    sha256                               sonoma:        "fb94a53dfab0618b68dcf429dfcd54d5854f74bff87225dc2f6465d9bb278f07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7d645ca74225ac60a602aff4c9d9e6f91e1aedb5023f46ed69978a42b5397c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41d647102f58f2500a2d0194da255742ef8e7da26b9886fbd99a6fd080c3b76e"
+    sha256                               arm64_tahoe:   "787eb646984cfe01e0febce0934328284bd625c857000f7e26dd2fe321594570"
+    sha256                               arm64_sequoia: "58b610e8445a31be5a7319a146b38b42201f8d38311923e7c08e968927f3e9b9"
+    sha256                               arm64_sonoma:  "e7ebe50b0baeb016f9d19574441b39d282999c4e987c0c957982ef859f399355"
+    sha256                               sonoma:        "71b7c0860d54ad4044545dfe71d64e9ca4edce86d3b538d1e8bbc8509e57d6c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4a3aeddde228c29e66dc501b2a313856f4fb5f3d56b529484964bd26896e0ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e7a7d7a7f35c5a04d04539d9454e62e59dc3a03849ad00c01d97b4289faef90"
   end
 
   keg_only "it shadows the host toolchain"

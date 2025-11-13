@@ -1,9 +1,9 @@
 class ArmLinuxGnueabihfBinutils < Formula
   desc "FSF/GNU binutils for cross-compiling to arm-linux"
   homepage "https://www.gnu.org/software/binutils/binutils.html"
-  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.45.tar.bz2"
-  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.45.tar.bz2"
-  sha256 "1393f90db70c2ebd785fb434d6127f8888c559d5eeb9c006c354b203bab3473e"
+  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.45.1.tar.bz2"
+  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.45.1.tar.bz2"
+  sha256 "860daddec9085cb4011279136fc8ad29eb533e9446d7524af7f517dd18f00224"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -13,14 +13,12 @@ class ArmLinuxGnueabihfBinutils < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "5d35ae39bdf28bc71b5043ca0ee5c224a00535e9bfc991d1a2e0cb81f7c11e81"
-    sha256 arm64_sequoia: "37eb2bbc064e560614b3bea589ccfc16323bf5b437befeb343869350f077b10c"
-    sha256 arm64_sonoma:  "eff2bd1e8b7d29e647aef8f13a928f869f2aef7130d09ffd069b948c0d7fd5ca"
-    sha256 arm64_ventura: "5ec2f35a507d2013b01cff81538308aa0feb514308f15639c01e0ae175fa19c0"
-    sha256 sonoma:        "f77281da449bf026e85bca7a473ec2e16b719c7668b57ed1c4b49d6d89df4013"
-    sha256 ventura:       "d0add9a330375953283e6185678a06bfb128eddb4e51a15c6a0a66bf0b8cc0ba"
-    sha256 arm64_linux:   "d3c1a3f7a1d5d6a47fbd9c71065c4ffda482f270a7edc20bab5f33ea58d2bba5"
-    sha256 x86_64_linux:  "c24dcc4e9b0df3bdcb68abfd9c620169ba0a30246f1c14a775f0b8fcdd9e3ab0"
+    sha256 arm64_tahoe:   "5759b6b7666b3a04467b9bf8c62393a3d9ead647b2073a4f17699d889a6b0702"
+    sha256 arm64_sequoia: "bfc25771adb53a9cf8a731d01ee1b07b955c6682f942c9a9b0e3c8e65688a3f0"
+    sha256 arm64_sonoma:  "731ce8146c4968ff23eacc25e88a4313b753e8d5e61dca54f4260ab085fa436a"
+    sha256 sonoma:        "793f5765cdc8552d31c25ca65ae6726aa4ad63ec1eaccddc75f77169b4aa1cae"
+    sha256 arm64_linux:   "6577631a8d78290dd346a28b760d3e9347d7e8dd9a0bbc075ecf82a7cb5c06aa"
+    sha256 x86_64_linux:  "eab2d6ae6e004d16aec1fc282483606895e193c5888ac0e988c1504e1610bb58"
   end
 
   depends_on "pkgconf" => :build

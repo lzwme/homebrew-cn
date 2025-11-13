@@ -4,8 +4,8 @@ class Rust < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   stable do
-    url "https://static.rust-lang.org/dist/rustc-1.91.0-src.tar.gz"
-    sha256 "327f528151753013f0a2b2c7f48955a033d718f269a4bc586314d675d0d43e8a"
+    url "https://static.rust-lang.org/dist/rustc-1.91.1-src.tar.gz"
+    sha256 "38dce205d39f61571261f0444237a1ce9efecb970e760d8ec4d957af5b445723"
 
     # From https://github.com/rust-lang/rust/tree/#{version}/src/tools
     resource "cargo" do
@@ -15,16 +15,16 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "35bf14822f43783a817094094471f9f17d771c50c5984fdf5d8b9ab5a8ed012e"
-    sha256 cellar: :any,                 arm64_sequoia: "4c12fb122054248194ede04d5ddf412725913a197c687caa07412c4aabf95f37"
-    sha256 cellar: :any,                 arm64_sonoma:  "c0804578a58425e72506d142cc7907843bf3faf8f78bb0c451a0f894f667a502"
-    sha256 cellar: :any,                 sonoma:        "6f91311336487aaca33f554708a5b39b6d5a300510006a544e8821e6478e8feb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d468b532d14a5d805668ca13f9fa32bdd0d3f9c974519dddecb779fa7893bc07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7139e70bbae795fb5e29f06b36bca01847013a113c2ecd7ca034af1acbd2b630"
+    sha256 cellar: :any,                 arm64_tahoe:   "a9390ec84ef13e7f45b75657555194ad0d2a216e80c0d7ac19b3a91a96e66aef"
+    sha256 cellar: :any,                 arm64_sequoia: "497d0168379b6f2f749db9cdb8b282bcf9c9d05b81041a31de36326b35a33dd3"
+    sha256 cellar: :any,                 arm64_sonoma:  "06255433df140a0cc8444d18a5203be073d6f421eb482ab0fcda0d4069c5b01e"
+    sha256 cellar: :any,                 sonoma:        "2d96be20582967b10b080ab9b0ba417e364d5e086d9e251014ec4e38c2e28565"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a00fbcb1e537c6ec4392c06f02e82bd60e7a013f5512617fc9a8856139d2824"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59edd36f0d4f17b6a5ab4bc02ee4b3c871d127683f1941dcf617bed4b19df193"
   end
 
   head do
-    url "https://github.com/rust-lang/rust.git", branch: "master"
+    url "https://github.com/rust-lang/rust.git", branch: "main"
 
     resource "cargo" do
       url "https://github.com/rust-lang/cargo.git", branch: "master"

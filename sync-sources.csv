@@ -8238,6 +8238,7 @@ Homebrew-homebrew-cask/Casks/a/anytype@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ao.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/apache-couchdb.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/apache-directory-studio.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/ape.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/apidog-europe.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/apidog.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/apifox.rb, Homebrew/homebrew-cask, 0
@@ -8277,7 +8278,7 @@ Homebrew-homebrew-cask/Casks/a/aquaterm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/araxis-merge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/arc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/archaeology.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/a/archi.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/archi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/archipelago.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/archiver-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/archivewebpage.rb, Homebrew/homebrew-cask, 1
@@ -13590,6 +13591,7 @@ Homebrew-homebrew-cask/Casks/o/ogdesign-eagle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/ok-json.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oka-unarchiver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/okta-advanced-server-access.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/okta-verify.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/old-school-runescape.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/olive.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/ollama-app.rb, Homebrew/homebrew-cask, 1

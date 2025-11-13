@@ -1,14 +1,13 @@
 class Yo < Formula
   desc "CLI tool for running Yeoman generators"
   homepage "https://yeoman.io"
-  url "https://registry.npmjs.org/yo/-/yo-5.1.0.tgz"
-  sha256 "b3b2abe646c47d8e60b93394ed219779dce26347c59d8ba337a62ea4226e1ec5"
+  url "https://registry.npmjs.org/yo/-/yo-6.0.0.tgz"
+  sha256 "db7b3bf350eb65def5b4dff427d5c164884937a713a72a018cec9271a3a53ebc"
   license "BSD-2-Clause"
   head "https://github.com/yeoman/yo.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "77fd73f75ed33e9578034e848c34266cabcc4db3fee4146d0901ab8977b64a2b"
+    sha256 cellar: :any_skip_relocation, all: "5d1fcc62b691e174aca6bf03f7c42e4e5ec5acae1f71ba026292c6f9ee1b2c99"
   end
 
   depends_on "node"
