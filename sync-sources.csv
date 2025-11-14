@@ -2113,6 +2113,7 @@ Homebrew-homebrew-core/Formula/f/forego.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/foreman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/foremost.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/forge.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/forgejo-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/forgejo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/forgit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fork-cleaner.rb, Homebrew/homebrew-core, 1
@@ -2869,6 +2870,7 @@ Homebrew-homebrew-core/Formula/h/hellwal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helm-docs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helm-ls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helm.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/h/helm@3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/helmfile.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helmify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helmsman.rb, Homebrew/homebrew-core, 1
@@ -3030,6 +3032,7 @@ Homebrew-homebrew-core/Formula/i/icu4c@74.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icu4c@75.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icu4c@76.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icu4c@77.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/icu4c@78.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/id3ed.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/id3lib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/id3tool.rb, Homebrew/homebrew-core, 0
@@ -15457,6 +15460,7 @@ Homebrew-homebrew-cask/Casks/w/whatsyoursign.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/whichspace.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/whimsical.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/whisky.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/w/whodb.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/whoozle-android-file-transfer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/whoozle-android-file-transfer@nightly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/widelands-app.rb, Homebrew/homebrew-cask, 1

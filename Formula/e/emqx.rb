@@ -59,23 +59,6 @@ class Emqx < Formula
     end
     chmod "+x", prefix/"releases/#{version}/no_dot_erlang.boot"
     bin.install_symlink prefix/"releases/#{version}/no_dot_erlang.boot"
-    return unless OS.mac?
-
-    # ensure load path for libcrypto is correct
-    crypto_vsn = Utils.safe_popen_read("erl", "-noshell", "-eval",
-                                       'io:format("~s", [crypto:version()]), halt().').strip
-    libcrypto = Formula["openssl@3"].opt_lib/shared_library("libcrypto", "3")
-    %w[crypto.so otp_test_engine.so].each do |f|
-      dynlib = lib/"crypto-#{crypto_vsn}/priv/lib"/f
-      old_libcrypto = dynlib.dynamically_linked_libraries(resolve_variable_references: false)
-                            .find { |d| d.end_with?(libcrypto.basename) }
-      next if old_libcrypto.nil?
-
-      dynlib.ensure_writable do
-        dynlib.change_install_name(old_libcrypto, libcrypto.to_s)
-        MachO.codesign!(dynlib) if Hardware::CPU.arm?
-      end
-    end
   end
 
   service do
@@ -83,9 +66,10 @@ class Emqx < Formula
   end
 
   test do
-    exec "ln", "-s", testpath, "data"
-    exec bin/"emqx", "start"
-    system bin/"emqx", "ctl", "status"
+    ENV["EMQX_LOG_DIR"] = ENV["EMQX_NODE__DATA_DIR"] = testpath
+    assert_match "started successfully!", shell_output("#{bin}/emqx start")
+    assert_match "is started", shell_output("#{bin}/emqx ctl status")
+  ensure
     system bin/"emqx", "stop"
   end
 end

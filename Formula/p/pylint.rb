@@ -3,19 +3,19 @@ class Pylint < Formula
 
   desc "It's not just a linter that annoys you!"
   homepage "https://github.com/pylint-dev/pylint"
-  url "https://files.pythonhosted.org/packages/b6/f8/2feda2bc72654811f2596e856c33c2a98225fba717df2b55c8d6a1f5cdad/pylint-4.0.2.tar.gz"
-  sha256 "9c22dfa52781d3b79ce86ab2463940f874921a3e5707bcfc98dd0c019945014e"
+  url "https://files.pythonhosted.org/packages/dd/9c/0500020a5446031220f487ca0c762713c6f3ddad7231b811aaf1d473f6aa/pylint-4.0.3.tar.gz"
+  sha256 "a427fe76e0e5355e9fb9b604fd106c419cafb395886ba7f3cebebb03f30e081d"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0bc3d1648496ab480ee45a45acb0fb8e84b5fa4c148f284670a698b2d25291f2"
+    sha256 cellar: :any_skip_relocation, all: "c322168907806af2fb6be67020b276271bdfc021594f11339c484dd9f9fa27e7"
   end
 
   depends_on "python@3.14"
 
   resource "astroid" do
-    url "https://files.pythonhosted.org/packages/a7/d1/6eee8726a863f28ff50d26c5eacb1a590f96ccbb273ce0a8c047ffb10f5a/astroid-4.0.1.tar.gz"
-    sha256 "0d778ec0def05b935e198412e62f9bcca8b3b5c39fdbe50b0ba074005e477aab"
+    url "https://files.pythonhosted.org/packages/b7/22/97df040e15d964e592d3a180598ace67e91b7c559d8298bdb3c949dc6e42/astroid-4.0.2.tar.gz"
+    sha256 "ac8fb7ca1c08eb9afec91ccc23edbd8ac73bb22cbdd7da1d488d9fb8d6579070"
   end
 
   resource "dill" do

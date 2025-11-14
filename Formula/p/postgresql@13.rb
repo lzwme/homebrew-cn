@@ -4,7 +4,7 @@ class PostgresqlAT13 < Formula
   url "https://ftp.postgresql.org/pub/source/v13.22/postgresql-13.22.tar.bz2"
   sha256 "d36d83dc89e625502cf6fb1d0529642ba1266bd614b4e4a41cefd1dddcf09080"
   license "PostgreSQL"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -12,12 +12,12 @@ class PostgresqlAT13 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "37f2f3be9dd8b8d5b24afec21172eabaf689c160ee93ac79da62faeabee0cf17"
-    sha256 arm64_sequoia: "d712e41d6bbc665a8af5f0244c63369ad156e95b13b1444cccda7e659a09dcd7"
-    sha256 arm64_sonoma:  "c59ff5834772fe3685fc53c04f822cf343a23ad0bad5e2fe9c194d93c392d5ec"
-    sha256 sonoma:        "7fe034a9635350d9921a1a87806885a8f92e31c9980b2193c963bbe6d99f3412"
-    sha256 arm64_linux:   "4cdabc4266a95e260d51b4d608f98217f3fea6b9f3666e112986bce357c4bece"
-    sha256 x86_64_linux:  "a8688c4a96c7c1af658ed6aeb70d3d5bce4a3ce881abb1d939b8d1808ce58363"
+    sha256 arm64_tahoe:   "2c454420afe5f7f053a6d8c449f769440c85466faec54a9859718305820c83cc"
+    sha256 arm64_sequoia: "d2e2ed9f5b47b1e83a17040a7c31f58cd1d37c6b3e178dd0c4b85a8498591e29"
+    sha256 arm64_sonoma:  "07c42b509cd10931fd5fdd416045e161f000ca6d5900f5b6db70483b73dd06ca"
+    sha256 sonoma:        "535575a3dcbb2317702da1226c64ba93c4db0f2f28e316faa48a8b1789839c51"
+    sha256 arm64_linux:   "8b169a5d335bfc1b13b7c691577ef5941c04187afeaa51b31fb2859fa451fb9e"
+    sha256 x86_64_linux:  "a2bd986b991a150c37016f4dd9ed7cc0de871b8f900c3da5e28ed55bfba54429"
   end
 
   keg_only :versioned_formula
@@ -26,7 +26,7 @@ class PostgresqlAT13 < Formula
   disable! date: "2026-03-01", because: :unsupported
 
   depends_on "pkgconf" => :build
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
 
   # GSSAPI provided by Kerberos.framework crashes when forked.
   # See https://github.com/Homebrew/homebrew-core/issues/47494.

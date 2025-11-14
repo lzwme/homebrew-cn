@@ -11,13 +11,13 @@ class LuaLanguageServer < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ab48d1402bc65a475f90da76e03eaa4a93396d40eaffb9566c24a43745f27888"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49d5a3c5ac7dd70da1cf14fbd44ff035cd7dadff077dfae65b9ce1fec7891635"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ffcb34b7af2bbe454c86eae301444826159e0d937e1d7590901b51467fd4465"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4c460a8f92c363e9aab64eba2edc5a3a87cebe8dd6ecac2b9f24ce62e0b07049"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b98fbe3eafe3fc1b4a61c467ddd600322314697252e31ba50f0890b65b285ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "968ecabb1580b66366d71a8af6b86cb7731d48ee3817fa60d112853b4b436530"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef7f4b3deddd4c769cc560e2d83b0f77a3cbb3a8962a0d59722d5a585e898ef0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f2db5d06db488201ce9e000eed86dc15860739aed1e472009e131f541c2bb04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8084051b1b309d0185e2470f861e9744c615f7eb0dffdccbdfaaa467bd889eb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4a2b24818fe3e60da52a1f6139457b2f976805d526f74857e658512e63ce57e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b02e69dcb139ed5472e7f897aa111328bee55968e541b51d2459a4ea2e5428e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91928c7baa9ab26fc967bf5967fa69918dc20038990762ddf9900032da51913d"
   end
 
   depends_on "ninja" => :build
@@ -48,13 +48,6 @@ class LuaLanguageServer < Formula
         --metapath="${XDG_CACHE_HOME:-${HOME}/.cache}/lua-language-server/meta" \
         "$@"
     BASH
-  end
-
-  # `lua-language-server` uses `changelog.md` in `libexec`
-  # directory to determine its version. Installing the changelog
-  # in `def install` does not work because it cleanups metafiles
-  # from non-root directory
-  def post_install
     libexec.install_symlink prefix/"changelog.md"
   end
 

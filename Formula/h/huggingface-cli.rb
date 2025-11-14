@@ -3,18 +3,18 @@ class HuggingfaceCli < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/b8/63/eeea214a6b456d8e91ac2ea73ebb83da3af9aa64716dfb6e28dd9b2e6223/huggingface_hub-1.1.2.tar.gz"
-  sha256 "7bdafc432dc12fa1f15211bdfa689a02531d2a47a3cc0d74935f5726cdbcab8e"
+  url "https://files.pythonhosted.org/packages/44/8a/3cba668d9cd1b4e3eb6c1c3ff7bf0f74a7809bdbb5c327bcdbdbac802d23/huggingface_hub-1.1.4.tar.gz"
+  sha256 "a7424a766fffa1a11e4c1ac2040a1557e2101f86050fdf06627e7b74cc9d2ad6"
   license "Apache-2.0"
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "45f590e36fe8c8aba748f59bfb38b27493679f1f9e01b993ab33cf9bef4f9bae"
-    sha256 cellar: :any,                 arm64_sequoia: "c45a72b03e1456599ff6f5fe3a892d60ea16ffdefec00bcc0006950e28333ad2"
-    sha256 cellar: :any,                 arm64_sonoma:  "f36aba70cf740a92e8e1fec67a12ca3570e806cc3c05fdb182f34174d50452aa"
-    sha256 cellar: :any,                 sonoma:        "7addbc1b52890ba5b053d42da1378ab71b396bc188b339b1bdcf56a5e717b3c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1acb6aebe09150b7a000716c8f7c81c873515c8af06b7deb444959540193058c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66c70dfd13f65aff780fcad647007a6de842d5af45bb2d42be7265a2d44ff29a"
+    sha256 cellar: :any,                 arm64_tahoe:   "9f51fdfc37f0f851ece10b64d96eb8b3019f2faea9f8b557ca2c25cdc08b127b"
+    sha256 cellar: :any,                 arm64_sequoia: "de3fc4bac81bd8893df6d8f949b519f73d643434c396aea45861906f064d40e6"
+    sha256 cellar: :any,                 arm64_sonoma:  "8749520882fa10d324423a9f6d3497b70457936bb8c86b4ceec596b0a3a2a033"
+    sha256 cellar: :any,                 sonoma:        "e7a4f62596cf9d9e3710431e0691900e06a815ffe3a5afe0dd80dd7136624e76"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d2ff2704f756a02330245dfed42580b83c65c62c320b44b165388b7454c8281"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "440f8067a0bffe36cca23eeabc4748352e71bf6c9119f5f64dc58d4e12c047a6"
   end
 
   depends_on "pkgconf" => :build

@@ -4,6 +4,7 @@ class Tarantool < Formula
   url "https://download.tarantool.org/tarantool/src/tarantool-3.5.0.tar.gz"
   sha256 "396780491b4f01c75f7098056e9a21562a687234085543bf52a5c5a6905f2dbc"
   license "BSD-2-Clause"
+  revision 1
   version_scheme 1
   head "https://github.com/tarantool/tarantool.git", branch: "master"
 
@@ -15,19 +16,17 @@ class Tarantool < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8dbca5e09bab4ef910aeb06b4daeac4e282309105c7f5859bec7bc17d88f8fe4"
-    sha256 cellar: :any,                 arm64_sequoia: "6c5828162564addff9cd3ed7b52022bceb0d0ed3ec5d94fa0615b1ca39577d64"
-    sha256 cellar: :any,                 arm64_sonoma:  "c219179af278c35dc4b4de390e52800546de9a545cf611a1df2b830916349281"
-    sha256 cellar: :any,                 arm64_ventura: "f2e041b8e088e58c76d93f05a8d27d4f9ae4e5845d9de8a41e8cae3c27dd299a"
-    sha256 cellar: :any,                 sonoma:        "314369f182f312fdcb1aebc4b8e91808e23abe386070b9bc6e535e3fce7f9ce1"
-    sha256 cellar: :any,                 ventura:       "e73a676ed760eabd5d4ca31d4aa1bd1007e485044fe02026287d9085cdec903b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "590263b5e1ecad50b34a3af8b03399cb455ee5095db304eb56de53dc8cfef5ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0501b2ce4c00e8631849fd5218e9d6770e32c0c815bbf22cd0943683a417eeab"
+    sha256 cellar: :any,                 arm64_tahoe:   "062bf5f72121d2b53e7e3e90b0e3c142db341ba486744f79187d4faa70c095c7"
+    sha256 cellar: :any,                 arm64_sequoia: "96d4bf9f6976d1cbbba9dae094a1bb88499d4b2ad263b2822ad121abb1cfc94c"
+    sha256 cellar: :any,                 arm64_sonoma:  "75cdeb82e43c5867d938a0cce097283d43b89017d430d2e9ec1964f2941c17fd"
+    sha256 cellar: :any,                 sonoma:        "4fa662142eb5f5be2b574feb3bcf8a9d759dcec63800119e6fde706a56670292"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d195d21bf525cff7624dd482e495474256c1b89a22b29a17a6121692ffcda9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f677b2ac62d9cb56b1d7f4339313a49217f6b404a264fbc2317746280cea9d4"
   end
 
   depends_on "cmake" => :build
   depends_on "curl" # curl 8.4.0+
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "libyaml"
   depends_on "openssl@3"
   depends_on "readline"

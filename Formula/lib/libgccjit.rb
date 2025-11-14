@@ -89,7 +89,14 @@ class Libgccjit < Formula
       # Avoid this semi-random failure:
       # "Error: Failed changing install name"
       # "Updated load commands do not fit in the header"
-      make_args = %w[BOOT_LDFLAGS=-Wl,-headerpad_max_install_names]
+      ldflags = %w[-Wl,-headerpad_max_install_names]
+
+      # Fix linkage with `libgcc_s.1.1`. See: https://github.com/orgs/Homebrew/discussions/5364
+      if Hardware::CPU.intel?
+        ldflags << "-Wl,-rpath,#{rpath(source: lib/"gcc/current", target: Formula["gcc"].opt_lib/"gcc/current")}"
+      end
+
+      make_args = %W[BOOT_LDFLAGS=#{ldflags.join(" ")}]
     else
       # Fix Linux error: gnu/stubs-32.h: No such file or directory.
       args << "--disable-multilib"
@@ -117,16 +124,6 @@ class Libgccjit < Formula
 
     # Provide a `lib/gcc/xy` directory to align with the versioned GCC formulae.
     (lib/"gcc"/version.major).install_symlink (lib/"gcc/current").children
-
-    return if OS.linux? || Hardware::CPU.arm?
-
-    lib.glob("gcc/current/#{shared_library("libgccjit", "*")}").each do |dylib|
-      next if dylib.symlink?
-
-      # Fix linkage with `libgcc_s.1.1`. See: Homebrew/discussions#5364
-      gcc_libdir = Formula["gcc"].opt_lib/"gcc/current"
-      MachO::Tools.add_rpath(dylib, rpath(source: lib/"gcc/current", target: gcc_libdir))
-    end
   end
 
   test do

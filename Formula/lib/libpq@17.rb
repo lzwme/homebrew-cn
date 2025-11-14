@@ -1,8 +1,8 @@
 class LibpqAT17 < Formula
   desc "Postgres C API library"
   homepage "https://www.postgresql.org/docs/17/libpq.html"
-  url "https://ftp.postgresql.org/pub/source/v17.6/postgresql-17.6.tar.bz2"
-  sha256 "e0630a3600aea27511715563259ec2111cd5f4353a4b040e0be827f94cd7a8b0"
+  url "https://ftp.postgresql.org/pub/source/v17.7/postgresql-17.7.tar.bz2"
+  sha256 "ef9e343302eccd33112f1b2f0247be493cb5768313adeb558b02de8797a2e9b5"
   license "PostgreSQL"
 
   livecheck do
@@ -11,12 +11,12 @@ class LibpqAT17 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "42f88922214766df09f1d6191397769f5ee99917dc64defeadf905ff504d3b6e"
-    sha256 arm64_sequoia: "2084aa0f177278ec5b6b2b1a7468f6819c11161e11e51ed76a082d7c01660289"
-    sha256 arm64_sonoma:  "b562f5f7b277bc1d3561e61aba701c00a1b0e401a6df3887a4d11e1da6fbb03d"
-    sha256 sonoma:        "915da447672fa0f24d2db973b79f67fef0a3372c9a15c29e389ba18b0b1aa378"
-    sha256 arm64_linux:   "a351c8aeafb972cc79af1d99e576343679c59f5ae186097553ff7710fc9f692f"
-    sha256 x86_64_linux:  "0bfc9b18ddb7d511134e70bd1fd6d7d9f3dc172f740f87b8801d9d8e0db68ae4"
+    sha256 arm64_tahoe:   "c9a49a427122a7c16c126e6d5eb8a2e1dc7846c5ff0d8fbc45320d0be4337cff"
+    sha256 arm64_sequoia: "f3d03792c5e89dde26a690226840142f683800d260623ab6030a881a08b75d45"
+    sha256 arm64_sonoma:  "00f546e45fdb837d7d0bef604bd0045e134fb34c771f5bca43d59a7dcc6ed049"
+    sha256 sonoma:        "8eb21cd59336616c2671dc31c672564ca5800ef03af6dbbd91e82b94e9bd3af3"
+    sha256 arm64_linux:   "2b2afcb4ec3a7c594972d71bd59c766aa73640bae8ad644e9dfea8ac3f908852"
+    sha256 x86_64_linux:  "40c91bf4e09970d9303f8442cf8f0edb236e2e224a6d773eb043702a4bebfd0e"
   end
 
   keg_only :versioned_formula
@@ -24,7 +24,7 @@ class LibpqAT17 < Formula
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
   depends_on "pkgconf" => :build
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   # GSSAPI provided by Kerberos.framework crashes when forked.
   # See https://github.com/Homebrew/homebrew-core/issues/47494.
   depends_on "krb5"

@@ -9,17 +9,18 @@ class Odin < Formula
   head "https://github.com/odin-lang/Odin.git", branch: "master"
 
   bottle do
-    sha256                               arm64_tahoe:   "09d7b9a197802ba7b959a09b61e87304423cac60f6f6c09c3c8745dbc2ea689f"
-    sha256                               arm64_sequoia: "16b2589670a1bc5ffdb927e1ea8df298c292aff990a66e921ab5b686a4d27d70"
-    sha256                               arm64_sonoma:  "60bf63434c6b0ef6f9d0e418687c12fe7d5c155fcf2f567c7955bbf5f38fb88e"
-    sha256 cellar: :any,                 sonoma:        "fd7f7d0d189bcb69cd58149b4a07502b59557e48dafc9e7f3c3d8653dd4869f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f6e257b986b070aa04335215a4ab81d497f459ca564fba148422f76576e2022"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a87a15901c3adee32462cf6a30ee54176c5ffbd9fffc5a92aefaaac58cc79f1"
+    rebuild 1
+    sha256                               arm64_tahoe:   "6bfac98579f9dedc3fd0f40c73d074d5028c0bb4859b6ed9d71dbdad9df46262"
+    sha256                               arm64_sequoia: "fc43e69b5e55b359f20b32815d896a1b8a2dec0c5a2a3bff08efe03c5c03c82e"
+    sha256                               arm64_sonoma:  "7b16efcc957e78d3203a1309393d74c618a79cdb616188559d0f6cad4ed1bc62"
+    sha256 cellar: :any,                 sonoma:        "39a6b3c08bf78c58b5fa899ca541c594bb7f40b4712bbd350deda14b1d6ee0aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0915ad33d2aa08cdd6f2e770cc68d99aa0ab154c944457e5028a1e8ad939474"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d283b98ba08ba659a3140e1f5145dfb7640ed9e1ef0f7d13b16c440fd1f5f04"
   end
 
-  depends_on "glfw"
-  depends_on "lld@20"
-  depends_on "llvm@20"
+  depends_on "glfw" => :no_linkage
+  depends_on "lld"
+  depends_on "llvm"
   depends_on "raylib"
 
   resource "raygui" do

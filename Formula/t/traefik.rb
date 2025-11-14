@@ -1,18 +1,18 @@
 class Traefik < Formula
   desc "Modern reverse proxy"
   homepage "https://traefik.io/"
-  url "https://ghfast.top/https://github.com/traefik/traefik/releases/download/v3.6.0/traefik-v3.6.0.src.tar.gz"
-  sha256 "a9c2c3a0668bcd44cab4141e95601d1f069fbbe1e8e167f97ff2cefb0da6c36c"
+  url "https://ghfast.top/https://github.com/traefik/traefik/releases/download/v3.6.1/traefik-v3.6.1.src.tar.gz"
+  sha256 "16a5cb2b4745b3ef3201f4e21a71258fc655c72f42ed09c4149f1071e21fb406"
   license "MIT"
   head "https://github.com/traefik/traefik.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78d9e61f8775db90afb0677dd3c2ff22c438ce5b5378c3ffeb927e403d967112"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2da99d7a9612b408dd587d6d6b9949e7e579c72c07fe0d4de6fd1a2e171d0b4f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a5cdb37f39f4905a84c87797e0c35b1774dfe6d4c3eeba0a3b77a9c97936f5b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a890a02c2d5bd2ac12cab4e47d606492285b70e8fdc74807a9f4b404e57d65f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b082e16c07347e80cbc9af2624f67a0d565f2d876392d409db67adc5431873a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed30cf9b0157409fced322e88de8c10f16cb9d03be3e83dd712aaa3ddeae5bec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "975bdbd4ebb9b928ff9238cd9195b09d4ce7cbbdeda79ea6212496ef86b2a445"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0986d0e296104359f63bdec8f61f3c250b2efd13555186c71f5d0e66adfdd081"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a428d623f227e7c3f3bbcf17046ff813513ed9c94b6a7e4019eb6a2e57831ab"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d9ec4b9be1faf3b27d35f0f1810d32475692e2a28d1e5e9c3b29347a8d3fb4ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26abf2f585cdcd3bd17293778c791c0d9ff05466efc7a3e3058bcb6bddbff276"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32b32e18ab2733da44eeaf346892f24fb711b89d13fb87e0c63e42530f023171"
   end
 
   depends_on "corepack" => :build

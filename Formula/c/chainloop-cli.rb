@@ -1,8 +1,8 @@
 class ChainloopCli < Formula
   desc "CLI for interacting with Chainloop"
   homepage "https://docs.chainloop.dev"
-  url "https://ghfast.top/https://github.com/chainloop-dev/chainloop/archive/refs/tags/v1.55.0.tar.gz"
-  sha256 "370e6eb0a8694d3948fd655175f472c033ee6b70bfd653e03318b4c8de11785b"
+  url "https://ghfast.top/https://github.com/chainloop-dev/chainloop/archive/refs/tags/v1.56.0.tar.gz"
+  sha256 "ee61899a2e8d3913ebcacd3580804818af40dbd017eeca8100f80087db696d86"
   license "Apache-2.0"
   head "https://github.com/chainloop-dev/chainloop.git", branch: "main"
 
@@ -12,12 +12,12 @@ class ChainloopCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fdcc7d25dd60a43d63c347b7de322af4e9e4259382b93538dd341bf086c2d7cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14ba0079f79c45ce661a51577aa2e4e40928923bb13da6394dd73acda84b2c8a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83c3b4bbf4e160372a03c65f0f4edacd2022bdd018bab2703a5a55f2a19529c7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cf3ec2bf197ca6049f79362bf4559ccb2c68ef7d96c1d86642c2d69180f58e88"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85438fe9558d4db438cb0512f92a8c5e474bcbdad93262360b4731be59d9e0a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7e9fd8b496eac954a0c16fa3ac143518ae18c726607471405792c9ac92c1127"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6f7d23c37aa0525f752f05579eec7e924e88dfeb76d22544561dd9545705d665"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90a7cc0389467d7f5bbd61394f7c25ad5c3eec4c6bc3bd1b3f7daf5281b91527"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58372eeb1d4bda6db9b9f6672d06a7df87425a38c1f2bd8f260c9593efebc20b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f97615bdbe12899fc6f351e72d17b99c96237e060a66039d1c57ff7743437fb7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba8da16ff0f682e40e339f5e3c864c93e7b92e3f744822950bb73502344d60c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "991bfc1428ae4a473abdb2db757da03e87ecedc154c4bed78727191614e90946"
   end
 
   depends_on "go" => :build

@@ -1,10 +1,9 @@
 class PostgresqlAT16 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v16.10/postgresql-16.10.tar.bz2"
-  sha256 "de8485f4ce9c32e3ddfeef0b7c261eed1cecb54c9bcd170e437ff454cb292b42"
+  url "https://ftp.postgresql.org/pub/source/v16.11/postgresql-16.11.tar.bz2"
+  sha256 "6deb08c23d03d77d8f8bd1c14049eeef64aef8968fd8891df2dfc0b42f178eac"
   license "PostgreSQL"
-  revision 1
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -12,12 +11,12 @@ class PostgresqlAT16 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "1ce37b2bd499229249930b991a6ba00f7bf0aa2a30d4720b110bcc880fa2e7f5"
-    sha256 arm64_sequoia: "7c18dfbf03f579a56a24191a28bac66698bab3533554be9dfbe7341184b349f8"
-    sha256 arm64_sonoma:  "bd8a6ee2ef92034c05076bb7c4cf5b034c2f0455f3b1a360c4508ad1b5167f53"
-    sha256 sonoma:        "448d7f78ed19a8235868652978b39bc7025c67a7ae99eadccffdfeae978e26c3"
-    sha256 arm64_linux:   "efad97f30aa2f673ad38630570c5258b1173ea951db41a864c336e89e17307dd"
-    sha256 x86_64_linux:  "a295172c4511401eff72bf2b43dda85f71d3059d1071e8cc3a5e057276d9dfec"
+    sha256 arm64_tahoe:   "45a77587d6a1b043135652f6e016c4f5acd47f2c1d43bc6668750048bb160542"
+    sha256 arm64_sequoia: "3a30b366f2a9c08df8b37addaebb20457320f74112e45f284f710f201261e000"
+    sha256 arm64_sonoma:  "208551c7ead5cf3f3fd083a9a03c7e9b640cc22f369cfd32deec92ca018c255f"
+    sha256 sonoma:        "959e4839458f26cf628846bc287552cab1d61163409ffa783511cc501902a20e"
+    sha256 arm64_linux:   "dbe27d036bc18547705755037cde2ce6e5a47a6cfeaf46dbddf230287e1f5806"
+    sha256 x86_64_linux:  "73f79b7c9ab845ee7714b8fd4efb9899afff4d5be88c3d46e97c3a410c06e6d4"
   end
 
   keg_only :versioned_formula
@@ -27,7 +26,7 @@ class PostgresqlAT16 < Formula
 
   depends_on "gettext" => :build
   depends_on "pkgconf" => :build
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
 
   # GSSAPI provided by Kerberos.framework crashes when forked.
   # See https://github.com/Homebrew/homebrew-core/issues/47494.

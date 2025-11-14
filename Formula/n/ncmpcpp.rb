@@ -5,18 +5,16 @@ class Ncmpcpp < Formula
   url "https://ghfast.top/https://github.com/ncmpcpp/ncmpcpp/archive/refs/tags/0.10.1.tar.gz"
   sha256 "ddc89da86595d272282ae8726cc7913867b9517eec6e765e66e6da860b58e2f9"
   license "GPL-2.0-or-later"
-  revision 5
+  revision 6
   head "https://github.com/ncmpcpp/ncmpcpp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f3b64ad56ef955187393786a72253bada2104c2ab0bfe8a1d87e83152168ab89"
-    sha256 cellar: :any,                 arm64_sequoia: "ab2cdb4e9ebbc534f357141478d9ee1ce90008b9b454b764f23aa65dd75e8306"
-    sha256 cellar: :any,                 arm64_sonoma:  "db5747c184ff0bd08ccae2625abbbb979fd6ca805a75a6f1334ca7cf17518f02"
-    sha256 cellar: :any,                 arm64_ventura: "c7abc5c178c61a8d14d44a4359b46920e22cd3754f00c43f61a219269bde2c7e"
-    sha256 cellar: :any,                 sonoma:        "bb881fd10d04a5246dc04bd049d3176e3d8358a5b9eb20d69ce9785a6be7506c"
-    sha256 cellar: :any,                 ventura:       "2713786388b5263f07891669f0e50d9e5b06fc07e68a8da0c6c61c9c09e3e5eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "50fb6bd68f50f189b94e50116d6eaa9abfb8519037e3635b7a7acb0e9d764e89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e3c0e5ede7bab231b8063f79d3326578b51ece94ab0c5c028694eba5e3bf05b"
+    sha256 cellar: :any,                 arm64_tahoe:   "70f05ba4a05170c09bfb85fea422e84de641760e75a93b065341c4f169c61e58"
+    sha256 cellar: :any,                 arm64_sequoia: "bcd9d9e4217c1f8436e4de984f3c178e18650016016050c1b7467cefd6ea8d30"
+    sha256 cellar: :any,                 arm64_sonoma:  "239511ecd7495ecd5d2ee6fb77881da7fc61e71566e3e8def37b2da735eab7f8"
+    sha256 cellar: :any,                 sonoma:        "4e76ad05153e67059365a51c9a665fa07dd4bc083e172f22553794c10f5aea95"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a85365b4dbb871e9e1fde6ca97e5bdcfc27e311d4d5ddfc539cf7b2dab117247"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c4640b8469447b4fff88888dd2e6ed186141aa73b915a48904ef0ce68318ede"
   end
 
   depends_on "autoconf" => :build
@@ -25,7 +23,7 @@ class Ncmpcpp < Formula
   depends_on "pkgconf" => :build
   depends_on "boost"
   depends_on "fftw"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "libmpdclient"
   depends_on "ncurses"
   depends_on "readline"

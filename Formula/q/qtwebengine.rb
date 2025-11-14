@@ -28,7 +28,7 @@ class Qtwebengine < Formula
     :public_domain,      # sigslot; SPL-SQRT-FLOOR
     { all_of: ["ISC", "OpenSSL"] }, # boringssl, TODO: remove in Chromium 134+
   ]
-  revision 1
+  revision 2
   head "https://code.qt.io/qt/qtwebengine.git", branch: "dev"
 
   livecheck do
@@ -36,11 +36,11 @@ class Qtwebengine < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b314760730d9e1619e58ab1ec6cf27eb634935f8fa6fbca48467b8b8eb2388eb"
-    sha256 cellar: :any,                 arm64_sequoia: "d388d1af0d0079412db79bcb058d9bea4a424274cf587412d1d05f4e55a730c0"
-    sha256 cellar: :any,                 arm64_sonoma:  "ce54350e4630c8e8a9c3608036e9457cb3ce63256f73b25d3a6dabbceb2e1fc4"
-    sha256 cellar: :any,                 sonoma:        "02741723702cf327449584032c7e39eb4f1779c07ceb6084b781be841fb35b48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2debf870edca998adef04f4cecfca0be03444f22018c8f0985c7bbfebb344a9"
+    sha256 cellar: :any,                 arm64_tahoe:   "a2b33693880d5f39fdf14d0ae2fe7ec5c6323abbfafd87811835346721bb92f7"
+    sha256 cellar: :any,                 arm64_sequoia: "c070fc963c104f269dfb20f455cbd794c9d417f01bf97cecfd5851d6245f9fdc"
+    sha256 cellar: :any,                 arm64_sonoma:  "59a1fb591eb38483ae28745d55c44487aacddb7f72e6d07e9b52eeb4be1ec92e"
+    sha256 cellar: :any,                 sonoma:        "4e60080db2a07566af88221d4c6b5c3b3a8865150799428e7d1de2098f278901"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "603b05035c86c3d10b0e94f724e76e2dfd3cd3b33e227f1bd0061b21dd602f7b"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -85,7 +85,7 @@ class Qtwebengine < Formula
     depends_on "fontconfig"
     depends_on "freetype"
     depends_on "harfbuzz"
-    depends_on "icu4c@77"
+    depends_on "icu4c@78"
     depends_on "jpeg-turbo"
     depends_on "libdrm"
     depends_on "libevent"

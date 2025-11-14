@@ -13,12 +13,13 @@ class Openssh < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e959e3ad5d40de117f2fe5bc125dc9e9e3284292132ee3ae83ef6217d2351ec7"
-    sha256 arm64_sequoia: "92e90f40583f0b4babe109254265cf9f83517a374e9ebe596aa7f6f082e16cde"
-    sha256 arm64_sonoma:  "a19ad93e76c623397e1b1fb6ecf522c479496eb5fa05c5581334f987f1002665"
-    sha256 sonoma:        "5391277d1143c40b94c8c08c6041d798cd9adfd368f6a6369caa7b2641e2ddbc"
-    sha256 arm64_linux:   "f45965c2fbb4bcd1b991ef2ec0431d08d350bebf962f802c272878738429b58e"
-    sha256 x86_64_linux:  "135b287fc422f4d90d44aef87490776c9b353f7223f4835961e1566e658b061d"
+    rebuild 1
+    sha256 arm64_tahoe:   "8923c4cd80df22606925d0a7931e8ba843eb5068f793409ef62953eb510a0d0e"
+    sha256 arm64_sequoia: "e449c08d28b2ee074f4957eb8bad98103b151e48985d5c409e829f6ad135ceaa"
+    sha256 arm64_sonoma:  "b7904cee97a78679397eba236d9f926b7b5827b5c5b865bd45a8c5e2faffc6f1"
+    sha256 sonoma:        "a6f92059c25c4a1e662b27777576fb9610314807e8f29c787e32b11431e76285"
+    sha256 arm64_linux:   "0744cf9b0786612ad2e619177e6555c82d863d9fd2f76b7c6655c0d5c77a5c9b"
+    sha256 x86_64_linux:  "01e105822a2288b23378fb4c1474d6506a9ecbb74706e64d10368799b28bfdf0"
   end
 
   # Please don't resubmit the keychain patch option. It will never be accepted.
@@ -43,6 +44,18 @@ class Openssh < Formula
   resource "com.openssh.sshd.sb" do
     url "https://ghfast.top/https://raw.githubusercontent.com/apple-oss-distributions/OpenSSH/OpenSSH-268.100.4/com.openssh.sshd.sb"
     sha256 "a273f86360ea5da3910cfa4c118be931d10904267605cdd4b2055ced3a829774"
+  end
+
+  # Fixes regression with PKCS#11 smart cards. Remove in the next release.
+  patch do
+    url "https://github.com/openssh/openssh-portable/commit/434ba7684054c0637ce8f2486aaacafe65d9b8aa.patch?full_index=1"
+    sha256 "18d311b5819538c235aa48b2e4da9b518e4a82cc4570bff6dae116af28396fb1"
+  end
+
+  # Fixes regression with PKCS#11 smart cards. Remove in the next release.
+  patch do
+    url "https://github.com/openssh/openssh-portable/commit/607f337637f2077b34a9f6f96fc24237255fe175.patch?full_index=1"
+    sha256 "b13d736aaabe2e427150ae20afb89008c4eb9e04482ab6725651013362fbc7fe"
   end
 
   def install

@@ -23,24 +23,18 @@ class Libsvm < Formula
   end
 
   def install
-    ENV.append_to_cflags "-fPIC" if OS.linux?
-    system "make", "CFLAGS=#{ENV.cflags}"
+    libsvm_soversion = nil
+    inreplace "Makefile" do |s|
+      s.gsub! "libsvm.so.$(SHVER)", "libsvm.$(SHVER).dylib" if OS.mac?
+      libsvm_soversion = s.get_make_var("SHVER")
+    end
+
+    system "make"
     system "make", "lib"
     bin.install "svm-scale", "svm-train", "svm-predict"
     include.install "svm.h"
-
-    libsvm_files = buildpath.glob("libsvm.so.*")
-    odie "Expected exactly one `libsvm`!" if libsvm_files.count != 1
-
-    libsvm = libsvm_files.first
-    libsvm_soversion = libsvm.to_s[/(?<=\.)\d+(?:\.\d+)*$/]
-    lib.install libsvm => shared_library("libsvm", libsvm_soversion)
+    lib.install shared_library("libsvm", libsvm_soversion)
     lib.install_symlink shared_library("libsvm", libsvm_soversion) => shared_library("libsvm")
-    return unless OS.mac?
-
-    libsvm = shared_library("libsvm", libsvm_soversion)
-    MachO::Tools.change_dylib_id lib/libsvm, (opt_lib/libsvm).to_s
-    MachO.codesign!(lib/libsvm)
   end
 
   test do

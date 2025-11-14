@@ -8,16 +8,17 @@ class Helmfile < Formula
   head "https://github.com/helmfile/helmfile.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9cfe0162b27ff49057f5b624416971dd1a4b80ba93bc406985de64f23dcfd0ce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f92bc339c2eb3f34f311ac690447b9f2356b34d1b654495846de0c2cfcec261b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "255e22dd251706f1ddf47f4bcdd23178633f763df7a41624e10519843d744087"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ce5ddc7406483814c53da549b57f36f2cdc743e18d60cb961a3ee75593c0b74b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c99967cf8ee5024e8de73bfc638289e7b5710eabb7917bfa753fe9e9ac0dca01"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f06e49dc953bac6d43a95b12a6f1a7ccb6fbf7faf17112b1c3f47273b82feb8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "665d415287037454daab62849735b3ba6c825b4a6319aaadbbe799ace252fc53"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e1ffc49663b0a4409f93b27968e070091c2e9e88163e1e0c07957c64ac9153a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e748a0998c39f1e1a8ef1c1849ed3f171e683683aad7fda6ea18e0f74f926aa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7eca2322de51892da6fc97d7f336fd94aa5c1eae857c268946cef1a3d13bc535"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bcc491ca50e36fd057a874e795b1d4f9d0f63c27b9fc586e90b63e0a1e865990"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5803318d4be20bd3c7db4f1328a07344802dc279cf49c776b6903990d3e65da5"
   end
 
   depends_on "go" => :build
-  depends_on "helm"
+  depends_on "helm@3"
 
   def install
     ldflags = %W[
@@ -34,6 +35,8 @@ class Helmfile < Formula
   end
 
   test do
+    ENV.prepend_path "PATH", Formula["helm@3"].opt_bin
+
     (testpath/"helmfile.yaml").write <<~YAML
       repositories:
       - name: stable
@@ -48,7 +51,7 @@ class Helmfile < Formula
         chart: stable/vault    # the chart being installed to create this release, referenced by `repository/chart` syntax
         version: ~1.24.1       # the semver of the chart. range constraint is supported
     YAML
-    system Formula["helm"].opt_bin/"helm", "create", "foo"
+    system "helm", "create", "foo"
     output = "Adding repo stable https://charts.helm.sh/stable"
     assert_match output, shell_output("#{bin}/helmfile -f helmfile.yaml repos 2>&1")
     assert_match version.to_s, shell_output("#{bin}/helmfile -v")

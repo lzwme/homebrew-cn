@@ -30,6 +30,10 @@ class Espeak < Formula
     sha256 x86_64_linux:   "cd49a93ccf04b77d8bf926c77cb322615c25ef27d2b01cd8c08e45945bd01183"
   end
 
+  # SourceForge page (https://sourceforge.net/projects/espeak/) says:
+  # "As of 2021-11-17, this project can be found here." and links to `espeak-ng`.
+  deprecate! date: "2025-11-13", because: :unmaintained, replacement_formula: "espeak-ng"
+
   depends_on "portaudio"
 
   conflicts_with "espeak-ng", because: "both install `espeak` binaries"

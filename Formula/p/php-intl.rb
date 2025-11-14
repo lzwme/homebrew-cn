@@ -5,6 +5,7 @@ class PhpIntl < Formula
   mirror "https://fossies.org/linux/www/php-8.4.14.tar.xz"
   sha256 "bac90ee7cf738e814c89b6b27d4d2c4b70e50942a420837e1a22f5fd5f9867a3"
   license "PHP-3.01"
+  revision 1
   head "https://github.com/php/php-src.git", branch: "master"
 
   livecheck do
@@ -12,16 +13,16 @@ class PhpIntl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "09f4c2e892fe872c144972625e7fefd09939214514eafec9edfda569f5f60846"
-    sha256 cellar: :any,                 arm64_sequoia: "cb523e23e9d373ee4b4a69aaef32b945cf5bb17f0c1a94ec19981e819d22c841"
-    sha256 cellar: :any,                 arm64_sonoma:  "8901b913e74a06569a7f841c20185e8f89f713ad3719ee960bc1d3917e165bd1"
-    sha256 cellar: :any,                 sonoma:        "3efa5c95b6ba9ab6ea62b6e05cf3e503e1a63f6960bfa45f658cea3099ecd9d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a3e31797fdfd258f11d9a3dd2202fa597ee418fdbe44c9d3e7ad835a7c39030"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc8243c435f6e71cd0450e4ecdab30093a436e99e04bf3ea8e741a746adb28af"
+    sha256 cellar: :any,                 arm64_tahoe:   "794170d5ef7525b62b2ce2f00fe72ca3d5985e250b1d34c7952b0894fb95d771"
+    sha256 cellar: :any,                 arm64_sequoia: "3f006580bd9206bb4bc4f10e80ad7902d47b2b4aaacde709c6db6b21c80267a0"
+    sha256 cellar: :any,                 arm64_sonoma:  "209ddbaf0a542ddc1a67d45decc6bda6981d746e5b39f3a22ee0ce19598334fa"
+    sha256 cellar: :any,                 sonoma:        "6b04b6c178370d801c9e23549c8df6e575c621a4605cfd6db0f73ec2e07199bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "110315ed6d2e9f99b04e0825ec1eafe93cf4314bfd77da16a24b5a19b64efb56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "290ac60b5cb760aa3c816796ca67d972b8f73c8a4a0e652cbd544b48625b6b33"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "php"
 
   def php

@@ -4,7 +4,7 @@ class PostgresqlAT14 < Formula
   url "https://ftp.postgresql.org/pub/source/v14.19/postgresql-14.19.tar.bz2"
   sha256 "727e9e334bc1a31940df808259f69fe47a59f6d42174b22ae62d67fe7a01ad80"
   license "PostgreSQL"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -12,12 +12,12 @@ class PostgresqlAT14 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "34cf50ea9b66e791c3b7f44594304be7a5c1d219097df3ffe9aa21c9fc9670db"
-    sha256 arm64_sequoia: "074f0fa4527abe8d524f172401e3b7d0a66ce9f5367d0419477aede3405f724a"
-    sha256 arm64_sonoma:  "58da84488545a28380feae4c66fb406ba66f2ce68d2b25f449b9c7aa7dd09d49"
-    sha256 sonoma:        "c16dca92665665000e9f989fa89e4e6c66d3cb7e2eb6dca13d02691bee38934f"
-    sha256 arm64_linux:   "e45bcd371ade65dfb1ba9c1a706826b9a95c7869f5ba3887cbba97e209a4fd82"
-    sha256 x86_64_linux:  "5f0940c291e1e88b47f564fd4d3ff6cfc25aa1b348a57df91f695a467165044a"
+    sha256 arm64_tahoe:   "95670805cd8b51e35ab5770786285f25bce7a074d8aee538364408cb4ccf97dd"
+    sha256 arm64_sequoia: "eda25ceb09f7a09c36e2285bc6417c41be75b3dc60f3095a0ac4168be3e13238"
+    sha256 arm64_sonoma:  "fff2459c9a2152e4b534e15509b39dd1ae117e177c2ee32a4b4fbb5428f1885e"
+    sha256 sonoma:        "632623dc6291f70aed64d5ab3b21961045c611d1dd8ef7e40ca2edbedb9df39a"
+    sha256 arm64_linux:   "5ddf73999020da746a6c63ffccac60182e812abd70547fa7fa86f552a79cec92"
+    sha256 x86_64_linux:  "9dc3bbcdaa9396d9b66b12bb59b6bf2c6319c3e392595dfc9e905c6242edc043"
   end
 
   # deprecating one year before the last release,
@@ -26,7 +26,7 @@ class PostgresqlAT14 < Formula
   disable! date: "2026-11-12", because: :unsupported
 
   depends_on "pkgconf" => :build
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
 
   # GSSAPI provided by Kerberos.framework crashes when forked.
   # See https://github.com/Homebrew/homebrew-core/issues/47494.

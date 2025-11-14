@@ -1,18 +1,18 @@
 class Cpm < Formula
   desc "Fast CPAN module installer"
   homepage "https://metacpan.org/pod/cpm"
-  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-0.998000.tar.gz"
-  sha256 "1c2a126ed5524c960c72fa00fc5330c5e631e2771416c6507d06d8ade7369602"
+  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-0.998001.tar.gz"
+  sha256 "f78f28a20e2792109a73228c83b53de5a7c6952af34476d72a2b7441d25a4508"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https://github.com/skaji/cpm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63d342e3033c48b0f13d5adcd5d2bd22fba51a8f2d0be23bc420a343035b732f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "63d342e3033c48b0f13d5adcd5d2bd22fba51a8f2d0be23bc420a343035b732f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63d342e3033c48b0f13d5adcd5d2bd22fba51a8f2d0be23bc420a343035b732f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dae18b2c5bcdcbf9166941ff281edf85d43255f9d4b697e8a5b36b287c50c968"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed75947898804fb912d6cd15e98194adee7dbff661a838e4b7e7b77929dc2fed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ea7b6603a9f14e0f4f704e81f9a48b2ca3b5fcbd5f233f398549b89c4379bb3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "11a97390ecc4cc95f48059b592146b4128257f9567cd87f6d7f0999a6bc57375"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11a97390ecc4cc95f48059b592146b4128257f9567cd87f6d7f0999a6bc57375"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11a97390ecc4cc95f48059b592146b4128257f9567cd87f6d7f0999a6bc57375"
+    sha256 cellar: :any_skip_relocation, sonoma:        "560d1b0fbeddda5c40dab45c55638fe2553d7c9943e489d709970a70e95c44d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3392b5750f986da3a2044c5a66d4d13e479fa4cae8d15344fb12f79754eca14c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8837c14b738387f0909ccd460b32ce8ed3da51d2b0d7c39b7087032f94176a82"
   end
 
   depends_on "perl"

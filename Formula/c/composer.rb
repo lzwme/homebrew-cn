@@ -1,8 +1,8 @@
 class Composer < Formula
   desc "Dependency Manager for PHP"
   homepage "https://getcomposer.org/"
-  url "https://getcomposer.org/download/2.8.12/composer.phar"
-  sha256 "f446ea719708bb85fcbf4ef18def5d0515f1f9b4d703f6d820c9c1656e10a2f2"
+  url "https://getcomposer.org/download/2.9.1/composer.phar"
+  sha256 "1f9c85291820f8496ca95cd49028002db328e7fa99b4f548e8afa7f6774540f7"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Composer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42978dd11168f2f7f1a564fe4a9a784d1c365f21be2d1f249b612af2f10562ac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42978dd11168f2f7f1a564fe4a9a784d1c365f21be2d1f249b612af2f10562ac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42978dd11168f2f7f1a564fe4a9a784d1c365f21be2d1f249b612af2f10562ac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4019389d975b1ed145a9f9ea3800fb9261f707beca864b20b3dffb12e23d8c7b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4019389d975b1ed145a9f9ea3800fb9261f707beca864b20b3dffb12e23d8c7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4019389d975b1ed145a9f9ea3800fb9261f707beca864b20b3dffb12e23d8c7b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9df8d80097e6388f80dd71b314ff607aca5e2fff52a7834b15fa5640c17c86c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9df8d80097e6388f80dd71b314ff607aca5e2fff52a7834b15fa5640c17c86c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9df8d80097e6388f80dd71b314ff607aca5e2fff52a7834b15fa5640c17c86c1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eb13ab352fa56ba227d2cd5fdc0a280072cd4846f351f768905166b4043ad4cf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb13ab352fa56ba227d2cd5fdc0a280072cd4846f351f768905166b4043ad4cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb13ab352fa56ba227d2cd5fdc0a280072cd4846f351f768905166b4043ad4cf"
   end
 
   depends_on "php"

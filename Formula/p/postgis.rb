@@ -4,7 +4,7 @@ class Postgis < Formula
   url "https://download.osgeo.org/postgis/source/postgis-3.6.0.tar.gz"
   sha256 "8caffef4b457ed70d5328bf4e5a21f9306b06c271662e03e1a65d30090e5f25f"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
 
   livecheck do
     url "https://download.osgeo.org/postgis/source/"
@@ -12,12 +12,12 @@ class Postgis < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cbf73cc66204dd2fa260a61d959945e6f2bc69b689d69239c956fa30fdd95853"
-    sha256 cellar: :any,                 arm64_sequoia: "c0690dbe2d213003651f0630375e1906ab23205e455e16235151d6166eb4b147"
-    sha256 cellar: :any,                 arm64_sonoma:  "4233563ee90576225b1cd790e509831c752f46b35b4a8320640226c9e37f98a0"
-    sha256 cellar: :any,                 sonoma:        "ec097e37c6f1bfbf910bf98d6b7f6916d56a4337f9a55944f57a12c697fa61fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d7d07a74a723b4b4ad8ae374f8a79641382ea6960c28cce44b2e66914bd50a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc5dd9cdc61a9702583749e4ade0a72926ed61a5da5061c5074a5ea80ac95638"
+    sha256 cellar: :any,                 arm64_tahoe:   "813f9080ccd6135c3fd530f01fb296439641c9abafd15a459db98fbb6d7b0850"
+    sha256 cellar: :any,                 arm64_sequoia: "f3152085e86c4df94b28275c40755121c7b858a8a8bd367a263c37e529498f04"
+    sha256 cellar: :any,                 arm64_sonoma:  "ea0f44a321fb5dee71b53969b98ca4d437ffa2ab40cbe92be766d0ff5c4ffc44"
+    sha256 cellar: :any,                 sonoma:        "0824eedae5540063e0dd7e39497ec6bbd51571590236ebde5f63d7d096daf601"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8611846255ccce1779050782f2cc6f87fa7d86f767bab69e29a8fa03d8bfaf46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca36736378ffb28bc3ca52b767ea53d863a8c7279a4702201e096e6ec1c4952d"
   end
 
   head do
@@ -34,7 +34,7 @@ class Postgis < Formula
 
   depends_on "gdal"
   depends_on "geos"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "json-c"
   depends_on "libpq"
   depends_on "libxml2"

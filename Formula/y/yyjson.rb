@@ -7,14 +7,13 @@ class Yyjson < Formula
   head "https://github.com/ibireme/yyjson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d416441b16b8711e09fc69b58bd20996d5e89c1d79bfeee6a38056b3fe860d84"
-    sha256 cellar: :any,                 arm64_sequoia: "10404c0fedca884468cb47b57e185ee54e21f0f9010a18047123f717970dc28a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "bc385fef24ac80239af24728461f03f80ce8107954a4e11149db0c5fbb64acf9"
+    sha256 cellar: :any,                 arm64_sequoia: "ac03b7af3eeaad37ff9421f18f09c04e8718e9124bb254442fb783f1e72523ca"
     sha256 cellar: :any,                 arm64_sonoma:  "0a16ceb0708e9ca44bb42c7d7dd5190984d5b83b7c7627148ecb607089e695e4"
-    sha256 cellar: :any,                 arm64_ventura: "cbd69152fd22ccd9b9de97251c1c2f7243283f7cef0174f51a26eec878f5e687"
     sha256 cellar: :any,                 sonoma:        "474db0266ef4054ad4cfe009ecc297a36085383f27b64099f7f98f3eca54b1be"
-    sha256 cellar: :any,                 ventura:       "27ed6f49a4b4ec723e016576595bc05b09023ea1a2d431ce99d96b0fcf8fa2a9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e8f897689182345192194e1ee03c735d41694c43183814123d7c25f6190d084"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "add1ef7d14987dd39a1a1404ed435db18a4d12e56fe9e09772e857623749f630"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b4971f272e8ca83e029e7d4ce912261c2e236fea1978732029c770b4454d8fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72d054b4ff70582269754e969cd1a5cf5b670eac46f1bee785855643a8ec7f8d"
   end
 
   depends_on "cmake" => :build

@@ -1,10 +1,9 @@
 class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v25.1.0/node-v25.1.0.tar.xz"
-  sha256 "ee7741190e47402dfc621547ac23d3f58e6463a86878dc1879fb9e8de1ce3226"
+  url "https://registry.npmmirror.com/-/binary/node/v25.2.0/node-v25.2.0.tar.xz"
+  sha256 "8bf7bafb5a89d3d20eefbcb159401e2abccea0cf85bef65e314b626730c525a1"
   license "MIT"
-  revision 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
   livecheck do
@@ -13,19 +12,19 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "fadaf30b9c5e512105a08b3542e213086aa8d25c2621b68207f0861e97100310"
-    sha256 arm64_sequoia: "1340fe4760ee3a744ff90f13f0f22ae6ddb5e3c90070c894198ac95719af6e10"
-    sha256 arm64_sonoma:  "1a330640f0b1dbeb5e60e9809acaa9a4a088fe040aef7682cea5c457099f35db"
-    sha256 sonoma:        "bc3d4077b6fa78885348c9f195cde4e539d423923582b820a9b36661e4e1fbdc"
-    sha256 arm64_linux:   "344672ae7d311362cb68d94e8d19f798fbcbf3c8585481caf2cf68a9ff2c720b"
-    sha256 x86_64_linux:  "7e5bdba8daa6c3ff70bdbbd03dd9f2cd3c8593b010216b80183a9403ee2eadaa"
+    sha256 arm64_tahoe:   "a9342a5586e8b0300b1e1c4fe76f75ac3ea13b4f2a8f95af49638b8bf107fb71"
+    sha256 arm64_sequoia: "f35709e4f27426e686f0ea8aef51d2668470832751ac01500f045c94ae20a3cd"
+    sha256 arm64_sonoma:  "d43b2f28a34d26df8841b853b2a5beb6092f8bce1ca3c29447ee5d68c5c592e2"
+    sha256 sonoma:        "0b4e4cab193707a15a7a62afcb69fc42cc98b1eb890d85e036e4529e3ff6bd9f"
+    sha256 arm64_linux:   "b02fd7a50339ae5012b4c78dbe915f0983195c8e2c09800cd221bd8045e7d887"
+    sha256 x86_64_linux:  "167835608f0636595b4dcfe10e0b1c993a30c31316b7ea496a88157430ab34f4"
   end
 
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => :build
   depends_on "brotli"
   depends_on "c-ares"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "libnghttp2"
   depends_on "libnghttp3"
   depends_on "libngtcp2"

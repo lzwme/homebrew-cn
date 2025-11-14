@@ -1,10 +1,9 @@
 class NodeAT24 < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v24.11.0/node-v24.11.0.tar.xz"
-  sha256 "cf9c906d46446471f955b1f2c6ace8a461501d82d27e1ae8595dcb3b0e2c312a"
+  url "https://registry.npmmirror.com/-/binary/node/v24.11.1/node-v24.11.1.tar.xz"
+  sha256 "ea4da35f1c9ca376ec6837e1e30cee30d491847fe152a3f0378dc1156d954bbd"
   license "MIT"
-  revision 1
 
   livecheck do
     url "https://registry.npmmirror.com/-/binary/node/"
@@ -12,12 +11,12 @@ class NodeAT24 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "041314daeef221105568200e5cb7f42b8b6a2f735eaae150f660127342ae5941"
-    sha256 arm64_sequoia: "d184edef1decd6d4856d48917f796acd19588efb919af702b443ab8134e06002"
-    sha256 arm64_sonoma:  "7167c67030a93f9c922ea238e3ec57c639093efb09279a0d6f7a302f419eddc7"
-    sha256 sonoma:        "8fd5a97245edf0dab889de9c3a34174da9a6c3ae195128428457c71071d27f31"
-    sha256 arm64_linux:   "2dd9fc94c4483315f5bc95cd72b2832a108bc45e84f086a49dae5bb9bb423054"
-    sha256 x86_64_linux:  "f578381665339bbc7c9ea6a2488430ad77b4c7daed7bcaca5b91c6b2337540a6"
+    sha256 arm64_tahoe:   "465a315595fdea5ea65d902f2b49f1070f9345e4df4d659beed53f372f02d35d"
+    sha256 arm64_sequoia: "8bf4c79c52935840824c4d6162e31b5d63fe054faa1587a8c79c6a29e324c807"
+    sha256 arm64_sonoma:  "e191898a445e6c62ab07b63fc61a1a7c3896f1ea088278977233a53bb65674a2"
+    sha256 sonoma:        "5555b0d1f2411cd9ab50c0dba6db82e2bbc8d83baf99dc9c75c397836a83fea7"
+    sha256 arm64_linux:   "5dafff5d5d767cdce16e1145e510a53b3f372ea876960d7a8a00a504ff6273d6"
+    sha256 x86_64_linux:  "b968001fa59ea38d9e456299ca87d0b7b1f6b5e4ce3e5be85602c6756146ad49"
   end
 
   keg_only :versioned_formula
@@ -30,7 +29,7 @@ class NodeAT24 < Formula
   depends_on "python@3.13" => :build
   depends_on "brotli"
   depends_on "c-ares"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "libnghttp2"
   depends_on "libnghttp3"
   depends_on "libngtcp2"

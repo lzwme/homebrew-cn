@@ -30,7 +30,7 @@ class Libfreehand < Formula
   end
 
   depends_on "boost" => :build
-  depends_on "icu4c@77" => :build
+  depends_on "icu4c@78" => :build
   depends_on "pkgconf" => :build
   depends_on "librevenge"
   depends_on "little-cms2"

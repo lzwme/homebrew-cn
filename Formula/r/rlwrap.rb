@@ -1,10 +1,9 @@
 class Rlwrap < Formula
   desc "Readline wrapper: adds readline support to tools that lack it"
   homepage "https://github.com/hanslub42/rlwrap"
-  url "https://ghfast.top/https://github.com/hanslub42/rlwrap/archive/refs/tags/v0.47.1.tar.gz"
-  sha256 "944bc0e4812e61b2b7c4cd17b1b37b41325deffa0b84192aff8c0eace1a5da4c"
+  url "https://ghfast.top/https://github.com/hanslub42/rlwrap/archive/refs/tags/v0.48.tar.gz"
+  sha256 "b2721b1c0147aaafc98e6a31d875316ba032ad336bec7f2a8bc538f9e3c6db60"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/hanslub42/rlwrap.git", branch: "master"
 
   livecheck do
@@ -13,12 +12,12 @@ class Rlwrap < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "eb09e4aefabca75272dab10c2c5bec2328143eaf0f64079a521a07f96e6e9d9d"
-    sha256 arm64_sequoia: "4531f405efca8347511d5202d49ceb050a84a746b79d5ca8eb7ea1812b7c247e"
-    sha256 arm64_sonoma:  "76f2e2a11cf4e3e808cceaa10de99b81080d8b01f73e3a138cefbe34d3bcfee3"
-    sha256 sonoma:        "07017b0f2997ee3366f699446870544d6cbb0e5480761ab0c5952f88ffd16c80"
-    sha256 arm64_linux:   "bbad3c2af39b1a2bef447a61dd934f3d1924f9bc361cebbac97ef866695b38b7"
-    sha256 x86_64_linux:  "eb12a645ba61447c3ab939a989805565007fcfbb2975e04818b3a59c373dbe0d"
+    sha256 arm64_tahoe:   "4caef889ab3bee246054ca4857517e098960d4be9ff556c5c545d3f7170b2b1d"
+    sha256 arm64_sequoia: "2cb021c30b2503d34599d69ff0c9d1950c73018ab7736b53e1d3c77c932e191f"
+    sha256 arm64_sonoma:  "ad9622f1007c86f74f61f0b3eec75e28e564aeec60d3f7b858d2cd26d2c3106d"
+    sha256 sonoma:        "7c3435731fd7e0a80089fa9d72d83715c19e953dc3e8cfa61d539a0393ff0700"
+    sha256 arm64_linux:   "305d08434011dd7bebeb463ac8bfc314b78d38a8c81371a33210b2bd12b74580"
+    sha256 x86_64_linux:  "6c5a1f7a230f7987b1b78f5cea9c34afc36ec4bdaa7bca0bdb30fd321359d6a9"
   end
 
   depends_on "autoconf" => :build

@@ -1,8 +1,8 @@
 class Cdi < Formula
   desc "C and Fortran Interface to access Climate and NWP model Data"
   homepage "https://code.mpimet.mpg.de/projects/cdi"
-  url "https://code.mpimet.mpg.de/attachments/download/30033/cdi-2.5.3.tar.gz"
-  sha256 "1ebf6098b195c0bb13614015b62a63efd2ef3d4ee94f4c69cadcf236854b2303"
+  url "https://code.mpimet.mpg.de/attachments/download/30127/cdi-2.5.4.tar.gz"
+  sha256 "d0256f4ece04ccf0693f77b144a6d6db83296815f6a3742b49ed9c6d185066f3"
   license "GPL-2.0-only"
 
   livecheck do
@@ -13,14 +13,12 @@ class Cdi < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "80dceb1f3e1acebdf751f86d7433164bff63a0f88deba2a916b5d70642c87267"
-    sha256 cellar: :any,                 arm64_sequoia: "cfc00e9f19ee18c4fd3db9f33e71a3312d28857a8a5911756d17bb36cf3047db"
-    sha256 cellar: :any,                 arm64_sonoma:  "be8fbcfc9050ffe9e353d9b0fc31df5fea966babd9625fe014a82724c46f26ab"
-    sha256 cellar: :any,                 arm64_ventura: "95ecbbe3065c0a09587de975457e992a2c881844acb54303c4de76e62da81ce4"
-    sha256 cellar: :any,                 sonoma:        "c39d215b041512c361686a609de5d5af7994a791bb0d9b163408f29e4dd3a352"
-    sha256 cellar: :any,                 ventura:       "1441d2209aa2d2d8f7a373fe47e6eda539fdeb0ba9b4899c911baefe9770ae06"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e5351f6875be7fe43b7dd1075999ea63de9c4728c7bb70acf55d50bf27e61af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac2b729c7c93b160f854c4b4d0966f0926b7a32c5685780f24aa080a526146cb"
+    sha256 cellar: :any,                 arm64_tahoe:   "aefe60909e3d842998c730e2e7dd44f5622033806c6bca45b4dd8b91df4a6f85"
+    sha256 cellar: :any,                 arm64_sequoia: "ca44978c7624176830178303c9155e59a1e5d85b985f6e7670451a33984239df"
+    sha256 cellar: :any,                 arm64_sonoma:  "0ba59fd7784215678d7b8a549ac9e155b8499252479fb104efb6fa29102d0702"
+    sha256 cellar: :any,                 sonoma:        "078f7264206cb23e77d4d9077088b90e036aa65abec71d8f8b767a69e877dc8a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b66da003d94aa389c5e9c0ed691b10fa0e2ffd356dc3feed46843d11f11249ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac635cedf5fee35646d1378910e67d97bb6465c28926a0c907512388d658072b"
   end
 
   depends_on "eccodes"

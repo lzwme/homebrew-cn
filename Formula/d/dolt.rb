@@ -1,8 +1,8 @@
 class Dolt < Formula
   desc "Git for Data"
   homepage "https://github.com/dolthub/dolt"
-  url "https://ghfast.top/https://github.com/dolthub/dolt/archive/refs/tags/v1.76.5.tar.gz"
-  sha256 "a6f0b38e97a20e7030ae39c18f02eace87bb21e9ea6bdbbe1cb8386eae16f0b2"
+  url "https://ghfast.top/https://github.com/dolthub/dolt/archive/refs/tags/v1.76.7.tar.gz"
+  sha256 "8f06b28fca32f991b449f90d402e016c96f9f42b8eb71663134f7a2ca69be46e"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/dolthub/dolt.git", branch: "main"
@@ -13,16 +13,16 @@ class Dolt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "08b03724c174688e8ba88cdc2c4cf85778ad740a2354ef64cce4870ca3545962"
-    sha256 cellar: :any,                 arm64_sequoia: "13fe366ecf3e700cf39b3563e3e58d87b7e66fb9c2657b9f190d0f330f742d56"
-    sha256 cellar: :any,                 arm64_sonoma:  "27d3fab894f4e0e586832978a645af5236c3a0e5731ba445255074e84a119e06"
-    sha256 cellar: :any,                 sonoma:        "623fae7929a0aa3b36a6878ea20d2680afab54807ac9fcb356a32353838ad29a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c9dcfdba638266eb15ca52236b0ab1bbed39a8ba19fcd3a67926242ccf565d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fae0a0d73700c29bbbeaf5ae40644d3196316f4f46c8b03335149c82dbe0a792"
+    sha256 cellar: :any,                 arm64_tahoe:   "1151939870192676efee5e7e65641d2c2a538aad2144f88b6c8fe492f8f13f79"
+    sha256 cellar: :any,                 arm64_sequoia: "f7934bc6c8a3e59aad26648ab7527d47fb07ac9c31b3889db975f88d4c7fb94c"
+    sha256 cellar: :any,                 arm64_sonoma:  "eb89ba67d95a93ef8cea4f21178a0acacd5a194416204447a85d388a168ef83c"
+    sha256 cellar: :any,                 sonoma:        "b4866be5a59a08a71a45daa8bfecc967c82339d4bf62e08b8bd19f32a13b1e7f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b5d91cdec8a3dc00e74047d21c567b6c762e92af212ad81f54f0e218edd6c966"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9640befdbd414704468d43abba02e53e9b3108cb7f39d39aeed25ddbae2c93fd"
   end
 
   depends_on "go" => :build
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
 
   def install
     ENV["CGO_ENABLED"] = "1"

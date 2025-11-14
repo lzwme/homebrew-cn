@@ -4,8 +4,8 @@ class Samba < Formula
   # option. The shared folder appears in the guest as "\\10.0.2.4\qemu".
   desc "SMB/CIFS file, print, and login server for UNIX"
   homepage "https://www.samba.org/"
-  url "https://download.samba.org/pub/samba/stable/samba-4.23.2.tar.gz"
-  sha256 "2de330647e1486683597e261285d04a9b7514ab5c7da27711736e22c7f2b9c2e"
+  url "https://download.samba.org/pub/samba/stable/samba-4.23.3.tar.gz"
+  sha256 "06cdbb27a6956978b045455fe0696d998ffbac8d24ba24de87a4ef8200813320"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -14,12 +14,12 @@ class Samba < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9ec67a969c788b8da3b104fe5ed4daf79f7894acad44316796edb62efce0dd59"
-    sha256 arm64_sequoia: "dffb40e4725ebcf64995eb1d907f16e9be77ab23db55a65e712014d33ec48aa0"
-    sha256 arm64_sonoma:  "d4abb4e5291673890d96487b2db82c09b42c463f09c06e5a5cb3b59a130e370e"
-    sha256 sonoma:        "2c0063330bb2bf78848e7a6c704a8feda62ac42ac9c91fdbd6baca7703b6812e"
-    sha256 arm64_linux:   "23ac8fca43f157daa55d076e3d7315ae618d887652814d49d14ec69275405786"
-    sha256 x86_64_linux:  "79cfebcbf209d4a647ed7dd579cba475bb9296647d7f558ea7cec113881ed0e0"
+    sha256 arm64_tahoe:   "f90690906321e036be0fa6aa5b384a8e2b0b2f3459ab6705d29ab9ef26e843ad"
+    sha256 arm64_sequoia: "d79512f5bde6f026b53a73ea6a6259f1ee1ae8ff3c6ac3d9f3bf3ea5607f2c46"
+    sha256 arm64_sonoma:  "87e9d10d181fb0c9d2ae729e3fb83f9744489bbb7f24daca26679cd230a93fde"
+    sha256 sonoma:        "9a0889c0691438278e36abcc8fd543a3707e01f2b38db80a01cdb50ba080e355"
+    sha256 arm64_linux:   "9690405109131c6b3c76ecc3f1d940544b0fe540239248394bc07fb5a6005b47"
+    sha256 x86_64_linux:  "3b2deef65bc456c32b690f9c856edfb79db9965ea1a61f7c7af6c54657d4e755"
   end
 
   depends_on "bison" => :build
@@ -28,7 +28,7 @@ class Samba < Formula
   depends_on "gnutls"
   # icu4c can get linked if detected by pkg-config and there isn't a way to force disable
   # without disabling spotlight support. So we just enable the feature for all systems.
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "krb5"
   depends_on "libtasn1"
   depends_on "libxcrypt"

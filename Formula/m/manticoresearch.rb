@@ -1,8 +1,8 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https://manticoresearch.com"
-  url "https://ghfast.top/https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/13.13.0.tar.gz"
-  sha256 "9c2e730ab86d5c9fc330c86703ef9210562247340e626f6d7ba6733a4d574f6b"
+  url "https://ghfast.top/https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/14.1.0.tar.gz"
+  sha256 "659c7b6f459c8e62df9f769b6651862508a4c48c9b61f756e6de6a911f9fe8e9"
   license all_of: [
     "GPL-3.0-or-later",
     "GPL-2.0-only", # wsrep
@@ -21,12 +21,12 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f802cb118e6c5275cfd6b71759bbf6ba5ee34ee0c0da4ac0a92080e28a9cd0be"
-    sha256 arm64_sequoia: "e218d5c2c441d65c7c5bac74cf12567ec99bf7f4e835909bed7d55b823066253"
-    sha256 arm64_sonoma:  "8dc33db06c70b92ea8978a9b4f91e60ce309826b4d3ddc22b7c610136d167740"
-    sha256 sonoma:        "568d68a59a154897018277a23d12142aa2286d8b70c5652520d8f6fff2ffcade"
-    sha256 arm64_linux:   "eeebef58e190a603ea55698f445c562533e8407033b478104fd97e840475ff9f"
-    sha256 x86_64_linux:  "0244b11e9c1ade2dd86ad76791d686e89c44ec29ee97ee38cfc7007e677d9748"
+    sha256 arm64_tahoe:   "d565a75fcc497daae1ae8c45b4042f85a9ffa0a2ae22363c6787aabd6e85e194"
+    sha256 arm64_sequoia: "845761f4d4de258dc0bfa673a432ea255f2d01077088f5be4f8624c518cf9da0"
+    sha256 arm64_sonoma:  "e7d337811240824f0f0d682a23b6dfe06f5db8d135caf97f24441fa7f3a01a28"
+    sha256 sonoma:        "6ddca839c4e349f1102d3afdae74c715bc3a87daae353ce6f1d0da1729908f16"
+    sha256 arm64_linux:   "9559f69a9cfda1d79a06821b77b36f75773ab3156d836d1519ced6c5f7f11a9c"
+    sha256 x86_64_linux:  "0dcc76c3649accf121c8ea20867bd0978182788b1d3812ed65380a6b516db44e"
   end
 
   depends_on "cmake" => :build
@@ -36,7 +36,7 @@ class Manticoresearch < Formula
   # NOTE: `libpq`, `mariadb-connector-c`, `unixodbc` and `zstd` are dynamically loaded rather than linked
   depends_on "boost"
   depends_on "cctz"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "libpq"
   depends_on "mariadb-connector-c"
   depends_on "openssl@3"
@@ -57,8 +57,6 @@ class Manticoresearch < Formula
   def install
     # Avoid statically linking to boost
     inreplace "src/CMakeLists.txt", "set ( Boost_USE_STATIC_LIBS ON )", "set ( Boost_USE_STATIC_LIBS OFF )"
-    # Fix to error: call to non-‘constexpr’ function
-    inreplace "src/sphinxquery/transform_commonkeywords.cpp", "constexpr uint64_t", "inline uint64_t"
 
     ENV["ICU_ROOT"] = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
                           .to_formula.opt_prefix.to_s

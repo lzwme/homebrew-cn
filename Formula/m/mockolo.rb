@@ -1,18 +1,17 @@
 class Mockolo < Formula
   desc "Efficient Mock Generator for Swift"
   homepage "https://github.com/uber/mockolo"
-  url "https://ghfast.top/https://github.com/uber/mockolo/archive/refs/tags/2.4.0.tar.gz"
-  sha256 "58174327732b53f9e6bb0c8c355270ae2df7be739f006680fd8eeb53599b6766"
+  url "https://ghfast.top/https://github.com/uber/mockolo/archive/refs/tags/2.5.0.tar.gz"
+  sha256 "af4f52f1c3146dea492997d6a5f99ab1c9bbc7687497a0149e63445a5c8d07d8"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8d94078e230af979e5010d890ec7c1497f1c7caa5e7cb62e0dc4b00ee3e8d93"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18f1b69b192e7aaf2cb57a752c4c9a96c2ea7ab24ce52dce3b138dac2b190599"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9da1cd6bc134cfd133dc72c56a3120429b8db32a4efab512f113c76f642f58de"
-    sha256 cellar: :any_skip_relocation, sonoma:        "293816ce556079215b9f76165f1d306b2ece74018b4616411cd6086ebc99e291"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "70236713bc4f9f9ede9f42093757fdf3df9b1852e228af98aa614bd463930745"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "476cee56c533c781c86fc767215cfc7ec7515596ef89f6ae473c3aff2927f1cd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2dbea87c99d506a39e39c6fdde0c470c569c0c9f5325ac134e0b9f3a4af03da4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fcc6979486acd7c105de4f5c2eaaa957d74633e78d25dccbff3d1062f0fb3174"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4614d2ea52e355d5d23288e3f18593632b67e49d1841527aeda36612cecbc9f1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61a649c2863b7dcfe60f0faf6cebc89317db67dda45c9af4c16469235a925724"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0817392cbfb4d36ae20a446647ccc0902dec06b8ea4096c4d25e325dcb9b23a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76f2c928075ed61841c83d25a40e01e6b68b4ad71529eeed447f7c4ce5ffc1a6"
   end
 
   depends_on xcode: ["15.3", :build]

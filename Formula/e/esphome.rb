@@ -3,24 +3,24 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/cf/5d/a4e013a0fab6bfcd539a619324540e000614ca3c54ecd9677719fd1b0600/esphome-2025.10.4.tar.gz"
-  sha256 "d9fca9779e6e43155caedee7d0b7476c7efa7f4e35234305df038b0c6291a638"
+  url "https://files.pythonhosted.org/packages/3f/e8/9c63db8646f24427d2843ca9ee6aa56d12ded5b6115c9854a60d61ba57c9/esphome-2025.10.5.tar.gz"
+  sha256 "9a48070179a498d92b885d5a5a3eb1c007e4b19ad46a522e71b6d499a200df3a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7b60607d3051d05fbf52b4ccca8aed3a2f1e6b3bd43cd3151b96d07dcf99d7ea"
-    sha256 cellar: :any,                 arm64_sequoia: "57e3fa6c425dc9eb42dd8976acb7d7c5049083412a3086887b5e64e9e3d2de07"
-    sha256 cellar: :any,                 arm64_sonoma:  "beceddc21710e11449f2f13c8b18223395b6e7884c997cf95e2b00346080ed7d"
-    sha256 cellar: :any,                 sonoma:        "7aa92157e4fcc0a716e3eda449b244dc60276f695c57a0c1ada798c70960731c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "50c89221d0f7e21f22cec7228439f0936d8e0d6a0417a196fd5c7c9c7e837372"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f7f1427543e1cafc6567d846004e68391eb2bbed9a1544a326a6d6d8ce38db2"
+    sha256 cellar: :any,                 arm64_tahoe:   "c6004f3843e7e7fc3e35c12c2861d3eb30f54f568ee6c57f0596c8c4338afbb9"
+    sha256 cellar: :any,                 arm64_sequoia: "deff399c0d9c06aea97cee90143aecae189c238d1a7b99751e8906eac9b074f6"
+    sha256 cellar: :any,                 arm64_sonoma:  "487b56670b80651f91ec264e53c3252e51372ef43d928bf3af285e4725046eb2"
+    sha256 cellar: :any,                 sonoma:        "88c92eb5686d7c9f7f58769de511b5418db1a425bfcb41cefcdaad0428ccc33c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b96fbf1d9193445d1208749761d39f2c9a8e1946d4d48b6cb9dc0d167b20b18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9699940b26538d4465ff79f1d8d7643d28f565560451d8fd701f75baa26d614f"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pillow" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.13" # <3.14 was added by upstream due to https://github.com/esphome/esphome/issues/11502
 
   pypi_packages exclude_packages: ["certifi", "cryptography", "pillow"]
 
@@ -210,8 +210,8 @@ class Esphome < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/19/ff/64a6c8f420818bb873713988ca5492cba3a7946be57e027ac63495157d97/protobuf-6.33.0.tar.gz"
-    sha256 "140303d5c8d2037730c548f8c7b93b20bb1dc301be280c378b82b8894589c954"
+    url "https://files.pythonhosted.org/packages/0a/03/a1440979a3f74f16cab3b75b0da1a1a7f922d56a8ddea96092391998edc0/protobuf-6.33.1.tar.gz"
+    sha256 "97f65757e8d09870de6fd973aeddb92f85435607235d20b2dfed93405d00c85b"
   end
 
   resource "puremagic" do
@@ -270,8 +270,8 @@ class Esphome < Formula
   end
 
   resource "ruamel-yaml-clib" do
-    url "https://files.pythonhosted.org/packages/d8/e9/39ec4d4b3f91188fad1842748f67d4e749c77c37e353c4e545052ee8e893/ruamel.yaml.clib-0.2.14.tar.gz"
-    sha256 "803f5044b13602d58ea378576dd75aa759f52116a0232608e8fdada4da33752e"
+    url "https://files.pythonhosted.org/packages/20/84/80203abff8ea4993a87d823a5f632e4d92831ef75d404c9fc78d0176d2b5/ruamel.yaml.clib-0.2.12.tar.gz"
+    sha256 "6c8fbb13ec503f99a91901ab46e0b07ae7941cd527393187039aec586fdfd36f"
   end
 
   resource "semantic-version" do
@@ -335,8 +335,8 @@ class Esphome < Formula
   end
 
   resource "wsproto" do
-    url "https://files.pythonhosted.org/packages/c9/4a/44d3c295350d776427904d73c189e10aeae66d7f555bb2feee16d1e4ba5a/wsproto-1.2.0.tar.gz"
-    sha256 "ad565f26ecb92588a3e43bc3d96164de84cd9902482b130d0ddbaa9664a85065"
+    url "https://files.pythonhosted.org/packages/91/8d/48e227460422d3f78f52618d8ef7d7a0474c6fcdaddf7f2d1aa25854ea75/wsproto-1.3.1.tar.gz"
+    sha256 "81529992325c28f0d9b86ca66fc973da96eb80ab53410249ce2e502749c7723c"
   end
 
   resource "zeroconf" do

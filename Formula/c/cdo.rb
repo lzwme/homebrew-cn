@@ -1,8 +1,8 @@
 class Cdo < Formula
   desc "Climate Data Operators"
   homepage "https://code.mpimet.mpg.de/projects/cdo"
-  url "https://code.mpimet.mpg.de/attachments/download/30045/cdo-2.5.3.tar.gz"
-  sha256 "470fee8f4d2b4eddf9ec82d0adccf1f6b4821ddf34b33bfe6b7069b6b6457b40"
+  url "https://code.mpimet.mpg.de/attachments/download/30128/cdo-2.5.4.tar.gz"
+  sha256 "c7fc17d3eda8c216edb2f5e36c8ab32bcaeeb6b6f16296246f065c576d4efad2"
   license "GPL-2.0-only"
 
   livecheck do
@@ -13,13 +13,12 @@ class Cdo < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "82e7955ead510a28bc78d5d6dd99a08f74dd84336ed802ed9f128df71f863b03"
-    sha256 cellar: :any,                 arm64_sequoia: "2ac35b8e2f62fa629e955a49f4ec8bcbfb07bdf44a84bfae5ae01a0459c417ef"
-    sha256 cellar: :any,                 arm64_sonoma:  "9079697b7d6700ac704ade7477db4b30e12b8289fb1a271dd81f097c6b208b17"
-    sha256 cellar: :any,                 sonoma:        "95b578a3fd686b5612651a6e8959c01a384a130488e63f738e83e8409da46858"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b76ea61927b7760207e8b7bfe1baf3ec7497ed0ada3d9d027952ce28f30df35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebde9c2c85fc32e9c52d2dcdaab37454ba8e711adaa76f2e66cffc07bae84fa2"
+    sha256 cellar: :any,                 arm64_tahoe:   "ac3a2d381e38e5568dbbe5d24abcf398785d43f73e3939ee6fc09409e7cd9a17"
+    sha256 cellar: :any,                 arm64_sequoia: "6c701ca30d73ec7122f35107cda470383e717e718b248e5b3c8ed50274ff9d21"
+    sha256 cellar: :any,                 arm64_sonoma:  "85771da9b3bbfb6121bc21ad92dea584a9bacfa920613b6f99e4e2ef4f147691"
+    sha256 cellar: :any,                 sonoma:        "8216fcbf340be848dbcfddf69445bc227981feeca4d743ff6770b16fa76a1b64"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2482072807a8e6a5bf6450b02322a82313826da4ad2aea9ea315e18fb8d3dd42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65c4d121e2090988c4ee5c941c42e9dcb0745fa63c708674bff958a6daeec73d"
   end
 
   depends_on "eccodes"

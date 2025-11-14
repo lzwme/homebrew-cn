@@ -4,15 +4,15 @@ class Vte3 < Formula
   url "https://download.gnome.org/sources/vte/0.82/vte-0.82.1.tar.xz"
   sha256 "79376d70402d271e2d38424418e1aea72357934d272e321e3906b71706a78e3a"
   license "LGPL-2.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 arm64_tahoe:   "2cf4efdd5e0ab05af005d315fd99f27b661f38e6c50e3d8a6d5e6fea85af7fb6"
-    sha256 arm64_sequoia: "b6c9498e25e03bb684afeab9cbd05f6833c643d242a118ea571afe379b109c62"
-    sha256 arm64_sonoma:  "161ae16255d4a3d53a375f7b237c62b9315680866342a3275ac39a361c1ba909"
-    sha256 sonoma:        "71e78b975afa1c28ea53b458b4736d29def5bd29d94775c71f033cd49c1d3aa0"
-    sha256 arm64_linux:   "24f3810564f8bb1da1c3b13c1bdcce39472c6dffef86b3053565707d688d13b8"
-    sha256 x86_64_linux:  "955ff19c2f4f6618f8afa72e564a45ff89f13c3cca7b989edf4562e42c716000"
+    sha256 arm64_tahoe:   "4c49cc2e94084e4e4d82a57d68eb4832ea12014c53f53741c57e7ac0558548d3"
+    sha256 arm64_sequoia: "c7113626c1d87333c8d1783c42d5e9df479c57fd7bfc6bf34cf51000595fbc07"
+    sha256 arm64_sonoma:  "bd55252c6bf32bb3cbc4fc5210f523d6115d2ec8442b69ee817335fcd59af830"
+    sha256 sonoma:        "d086efb07d6c638b334e0990c2c7bafe7c1d01755aa9a534d20dce969f48885c"
+    sha256 arm64_linux:   "c71182bfaf37c83b713296f5fedac08a1bfeccfebf589e14a1967782573b1785"
+    sha256 x86_64_linux:  "8d0365979ef1a7febd9d0a0c0c0fee5fcc2d82dff9525093fd6293d62b329348"
   end
 
   depends_on "fast_float" => :build
@@ -32,7 +32,7 @@ class Vte3 < Formula
   depends_on "graphene"
   depends_on "gtk+3"
   depends_on "gtk4"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "lz4"
   depends_on "pango"
   depends_on "pcre2"

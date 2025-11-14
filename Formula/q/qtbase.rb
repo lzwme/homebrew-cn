@@ -11,6 +11,7 @@ class Qtbase < Formula
     "BSD-3-Clause", # *.cmake
     "GFDL-1.3-no-invariants-only", # *.qdoc
   ]
+  revision 1
   head "https://code.qt.io/qt/qtbase.git", branch: "dev"
 
   # The first-party website doesn't make version information readily available,
@@ -21,13 +22,12 @@ class Qtbase < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "b71662b2a584d66df3cb7693453c0c685aeaac59bdbebf09c6525a95336c92d8"
-    sha256 cellar: :any,                 arm64_sequoia: "e01b6da67665aacb7251e9402f9ff61cdf15eefbe18d3bd162a4f031e24b0375"
-    sha256 cellar: :any,                 arm64_sonoma:  "e5e9230b6d4d803f2c82d317832ef225debd4218b0289ea58e1e2abffbb4f62a"
-    sha256 cellar: :any,                 sonoma:        "ea8dd5c6dd29e5d2c8477024026cb841d0982f01b3d698bd2751bff1875b3656"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0790ab124d71c60905dcc5d6a9023b9aebe0392c9e374422341eb3a2e068b95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d65327cb727685833b1706b1f431d61bc80e4172526fb8a61c27870979d1bbee"
+    sha256 cellar: :any,                 arm64_tahoe:   "b9f8ffd4f2abac1c54f89afb26adf2d3be187dce6caaa434211351b555273285"
+    sha256 cellar: :any,                 arm64_sequoia: "a28b7e5b848f4029964cf5492a64d0ef096b7923808cf1640b4537be91d5e4f0"
+    sha256 cellar: :any,                 arm64_sonoma:  "2f414757a9a2fc9e6c3e5da50b346b787d72b3b5079ffee44da55a48794b0b95"
+    sha256 cellar: :any,                 sonoma:        "b94062d2e51b6f217f7e53461ea5fc69ce72d1454a691268256a2cb4629a67d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "73c826688ec856f2ff8b5140bf5f81134e6b68dce81b34e337243dd45522fc6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "142951b9b26a6a0082d9c2f4b8f531b529fe7eb5c2e53447e776d994808a5d56"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -42,7 +42,7 @@ class Qtbase < Formula
   depends_on "freetype"
   depends_on "glib"
   depends_on "harfbuzz"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "jpeg-turbo"
   depends_on "libb2"
   depends_on "libpng"

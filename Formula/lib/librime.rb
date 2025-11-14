@@ -19,7 +19,7 @@ class Librime < Formula
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
-  depends_on "icu4c@77" => :build
+  depends_on "icu4c@78" => :build
   depends_on "pkgconf" => :build
 
   depends_on "capnp"

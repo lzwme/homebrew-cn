@@ -47,21 +47,12 @@ class MitScheme < Formula
       compiler/etc/disload.scm
       edwin/techinfo.scm
       edwin/unix.scm
+      microcode/configure
     ].each do |f|
       inreplace f, "/usr/local", prefix
     end
 
-    inreplace "microcode/configure" do |s|
-      s.gsub! "/usr/local", prefix
-
-      # Fixes "configure: error: No MacOSX SDK for version: 10.10"
-      # Reported 23rd Apr 2016: https://savannah.gnu.org/bugs/index.php?47769
-      s.gsub!(/SDK=MacOSX\$\{MACOS\}$/, "SDK=MacOSX#{MacOS.sdk.version}") if OS.mac?
-    end
-
-    inreplace "edwin/compile.sh" do |s|
-      s.gsub! "mit-scheme", bin/"mit-scheme"
-    end
+    inreplace "edwin/compile.sh", "mit-scheme", bin/"mit-scheme"
 
     ENV.prepend_path "PATH", buildpath/"staging/bin"
 

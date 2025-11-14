@@ -6,7 +6,7 @@ class PhpAT83 < Formula
   mirror "https://fossies.org/linux/www/php-8.3.27.tar.xz"
   sha256 "c15a09a9d199437144ecfef7d712ec4ca5c6820cf34acc24cc8489dd0cee41ba"
   license "PHP-3.01"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
@@ -14,12 +14,13 @@ class PhpAT83 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "065195a8c196291e1ab29927a175521921edaa99f49af0429370c11b381a49d2"
-    sha256 arm64_sequoia: "16aa542aff47957af84e6f82c6bdb157db66347fd030d4c4eb737037543274ab"
-    sha256 arm64_sonoma:  "63d42431b9e7ddd29b8e0c6925b16e62313b32884af823432af89d19b506354c"
-    sha256 sonoma:        "e0294bf02a7d81b68bc901b6e26a42d67f7fb1306caed8a845a22aea88ae2d38"
-    sha256 arm64_linux:   "cee5f209164dfe4564afedc59fad626bfbeafa146396dfa5518ab44aaad9b083"
-    sha256 x86_64_linux:  "00033d8e1071e508c0de907f13e86f56484f27c4fd4b9534210b17b35cb978b6"
+    rebuild 1
+    sha256 arm64_tahoe:   "cbdf7884d8aa175f208f09aa6334865443b486e5084081d7efa278d0ba228e52"
+    sha256 arm64_sequoia: "3a623bad47c90883a2eb6ecfbaca96ed23d2b81e68bb6b9e54d6127604966e1c"
+    sha256 arm64_sonoma:  "51d72a720d9a078579a56ae950191e9be39e4f1ab67fdd6a4cf5aaf89eb9a84d"
+    sha256 sonoma:        "d1d6e3babd44d9a5bc2740fa4efbbdf80aa43fafd90d35e929a7d0b55f119136"
+    sha256 arm64_linux:   "d55c21c0b8fa7d0dfd65afab0d5b941a665fb0cde8840e595db2ad527f09bccc"
+    sha256 x86_64_linux:  "c6a40bbea5b39f6304f83a38f3c57fd95de1d500f513a2c2bd2d0a1cbf0c15c7"
   end
 
   keg_only :versioned_formula
@@ -40,7 +41,7 @@ class PhpAT83 < Formula
   depends_on "gd"
   depends_on "gettext"
   depends_on "gmp"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "krb5"
   depends_on "libpq"
   depends_on "libsodium"
@@ -271,7 +272,7 @@ class PhpAT83 < Formula
     php_ext_dir = opt_prefix/"lib/php"/php_basename
 
     # fix pear config to install outside cellar
-    pear_path = HOMEBREW_PREFIX/"share/pear"
+    pear_path = HOMEBREW_PREFIX/"share/pear@#{version.major_minor}"
     cp_r pkgshare/"pear/.", pear_path
     {
       "php_ini"  => etc/"php/#{version.major_minor}/php.ini",

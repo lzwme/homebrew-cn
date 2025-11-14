@@ -3,8 +3,8 @@ class Systemd < Formula
 
   desc "System and service manager"
   homepage "https://systemd.io"
-  url "https://ghfast.top/https://github.com/systemd/systemd/archive/refs/tags/v258.1.tar.gz"
-  sha256 "8eb34eaf2f78330217280bd7a923578f37e28d3f3ac5168e336ebc9cad84a34d"
+  url "https://ghfast.top/https://github.com/systemd/systemd/archive/refs/tags/v258.2.tar.gz"
+  sha256 "05208e76bf1f9b369b1a8159e6631ef67c82f2d27c21e931962026a79bf4ba64"
   license all_of: [
     # Main license is LGPL-2.1-or-later while systemd-udevd is GPL-2.0-or-later
     "LGPL-2.1-or-later",
@@ -30,8 +30,8 @@ class Systemd < Formula
   head "https://github.com/systemd/systemd.git", branch: "main"
 
   bottle do
-    sha256 arm64_linux:  "43f236eed0eeb620d2bdba8ed145b529aee4d2271bc7e7fe653d6e827eb8b493"
-    sha256 x86_64_linux: "7b830aea1a0d6a5dc229ca1fbf0fa71b829fe75f37c0292a9249cb224c52b51f"
+    sha256 arm64_linux:  "8feb10fe5c75c6130a8c9de2fc80bf9d8c184e80948ffa1ccc789eb67fd9f95b"
+    sha256 x86_64_linux: "270d023f4236283db71d1175ea26b0e2c5712c2ff11ad5a98b508238a09b4755"
   end
 
   keg_only "it will shadow system systemd if linked"
@@ -40,7 +40,7 @@ class Systemd < Formula
   depends_on "docbook-xsl" => :build
   depends_on "gettext" => :build
   depends_on "gperf" => :build
-  depends_on "icu4c@77" => :build # FIXME: brew should add to PKG_CONFIG_PATH as dependency of libxml2
+  depends_on "icu4c@78" => :build # FIXME: brew should add to PKG_CONFIG_PATH as dependency of libxml2
   depends_on "libxml2" => :build
   depends_on "libxslt" => :build
   depends_on "meson" => :build

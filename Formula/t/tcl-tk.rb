@@ -1,9 +1,9 @@
 class TclTk < Formula
   desc "Tool Command Language"
   homepage "https://www.tcl-lang.org"
-  url "https://downloads.sourceforge.net/project/tcl/Tcl/9.0.2/tcl9.0.2-src.tar.gz"
-  mirror "https://fossies.org/linux/misc/tcl9.0.2-src.tar.gz"
-  sha256 "e074c6a8d9ba2cddf914ba97b6677a552d7a52a3ca102924389a05ccb249b520"
+  url "https://downloads.sourceforge.net/project/tcl/Tcl/9.0.3/tcl9.0.3-src.tar.gz"
+  mirror "https://fossies.org/linux/misc/tcl9.0.3-src.tar.gz"
+  sha256 "2537ba0c86112c8c953f7c09d33f134dd45c0fb3a71f2d7f7691fd301d2c33a6"
   license "TCL"
 
   livecheck do
@@ -12,15 +12,12 @@ class TclTk < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "b631e4d2682c782a22c063a0263ae099c3f8239e35a38ea492f7ee9da711f3a5"
-    sha256 arm64_sequoia: "e019a7b2e5d62f7533c9b23627c2da661ffccec2a2f9afa056e7d558f7128aeb"
-    sha256 arm64_sonoma:  "305a01bf826d8287810ec7cd74f8b28b991ee2efa1377afb7d79a241b77f458a"
-    sha256 arm64_ventura: "f7203825cf7ab0e9fb018eaad0cfa04f01d11a7b4eb06d4f878af09493bbae70"
-    sha256 sonoma:        "784bbcd50aaf5b38767db343a300dcba115682158ce58bc827458250070782fc"
-    sha256 ventura:       "f575bbed2a3761d5a937f61945c7b9ca809b9eba2d4d953c060b4e93dd7ee888"
-    sha256 arm64_linux:   "2fef2e484f5ad184e862e49d6d7ae7bb56ba13d9c7f05af28e4c44facfd4c5f0"
-    sha256 x86_64_linux:  "6881a0071cbf016fcfee42486e50779950ee5188070f13fe5190e1e252d4431e"
+    sha256 arm64_tahoe:   "2932f581d51e82b77a24d330c6943aaf8014026b10c64ece0382e742c2bcfd18"
+    sha256 arm64_sequoia: "02bcb6d65d5e7975771dcfed9fbc5b6a96c3885602e9d649242554cc040c319e"
+    sha256 arm64_sonoma:  "306b1721101fe8026b5db1c441235c4f781189e8589042151e3d00c3b318cc1c"
+    sha256 sonoma:        "7b9a8bb4ee8f4b0019dcfa7366b20180e2cfcce8a15a29e70b1fd16542108f78"
+    sha256 arm64_linux:   "91a52c6e39e7c6cf960a8ffdef66cf74a76a9b6027de1481702d701f72536a25"
+    sha256 x86_64_linux:  "dfd7b56503cf9a306f03b354d869995073218da58eb5a332eaf0104c57a01e60"
   end
 
   depends_on "libtommath"
@@ -63,9 +60,9 @@ class TclTk < Formula
   end
 
   resource "tk" do
-    url "https://downloads.sourceforge.net/project/tcl/Tcl/9.0.2/tk9.0.2-src.tar.gz"
-    mirror "https://fossies.org/linux/misc/tk9.0.2-src.tar.gz"
-    sha256 "76fb852b2f167592fe8b41aa6549ce4e486dbf3b259a269646600e3894517c76"
+    url "https://downloads.sourceforge.net/project/tcl/Tcl/9.0.3/tk9.0.3-src.tar.gz"
+    mirror "https://fossies.org/linux/misc/tk9.0.3-src.tar.gz"
+    sha256 "bf344efadb618babb7933f69275620f72454d1c8220130da93e3f7feb0efbf9b"
 
     livecheck do
       formula :parent

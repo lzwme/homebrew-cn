@@ -1,8 +1,8 @@
 class Libphonenumber < Formula
   desc "C++ Phone Number library by Google"
   homepage "https://github.com/google/libphonenumber"
-  url "https://ghfast.top/https://github.com/google/libphonenumber/archive/refs/tags/v9.0.17.tar.gz"
-  sha256 "977a3be64308bf8faeb0138dd5c6dd06f55a1de400106e2c5502a44315de0ba2"
+  url "https://ghfast.top/https://github.com/google/libphonenumber/archive/refs/tags/v9.0.18.tar.gz"
+  sha256 "fdcf2677367b93595d3c7ccbbd58e8e086bbdd5fd58bc01400b445786f9544f7"
   license "Apache-2.0"
 
   livecheck do
@@ -11,19 +11,19 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7f0709282b45e9d2c2ccc85bab5df0e5a03eb7f820a3d46d06d509722d223156"
-    sha256 cellar: :any,                 arm64_sequoia: "5efa7c1a2340cf2586454e59ba03ef6a2f72bf93724967eb7530eb0ea5f37b24"
-    sha256 cellar: :any,                 arm64_sonoma:  "6725235a068fbc3c1c430606a0efdc5a6ed8dc4a46b20cd9b15eecb6ea6a034f"
-    sha256 cellar: :any,                 sonoma:        "08a5ce24240aca79dd904dfb7416f5887b8d560502a331ab7c5e850681e2caf9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10684771f534e8558e5726f34fb4d6634f02485191e8bf7ca419c638c19b056e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bceb5606ae3cb65c564408d0e8cc752d95afffdc697ca3722d32e634b3cfe080"
+    sha256 cellar: :any,                 arm64_tahoe:   "70ec64eab25475af3c72d873ee2e7271c969d241ed16587d9ddd4b6e5142cea6"
+    sha256 cellar: :any,                 arm64_sequoia: "0fd4fc373398bc29b8670d858c07e7f2fc3fe30fe3e3c68ef27d08593e160934"
+    sha256 cellar: :any,                 arm64_sonoma:  "dbfbfc5d83fc1fd315b758f7eee83a77d127370a951d3e876b5e5bea473ba563"
+    sha256 cellar: :any,                 sonoma:        "30a1bd82060f45b8095dc5ac9d2e692a7bcb56ed7f2944d74e40012d767a13fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c03f135fe823c9daaf84a35051d48c63721bd81a96d4d52c7f9f78027d7b5c91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "058451ea58e9bf38b2f3bf70cff3809b2283cf93223c65324e85fe2d508fafb6"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "openjdk" => :build
   depends_on "abseil"
   depends_on "boost"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "protobuf"
 
   # Fix build with Boost 1.89.0, pr ref: https://github.com/google/libphonenumber/pull/3903

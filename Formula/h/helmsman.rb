@@ -7,18 +7,17 @@ class Helmsman < Formula
   head "https://github.com/mkubaczyk/helmsman.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a18bb7d96c0a38479728e45c9225a6e2d4dd602e580859f223cd253f9315e52"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b083ce72a651f9040fcd994a3c2472ea05689e460a1837d793ddd2fae40800ed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b083ce72a651f9040fcd994a3c2472ea05689e460a1837d793ddd2fae40800ed"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b083ce72a651f9040fcd994a3c2472ea05689e460a1837d793ddd2fae40800ed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a3446b60d03f301e50972b2a38239cc0ffe0a0052bef78ecac9cb892aeacb9f3"
-    sha256 cellar: :any_skip_relocation, ventura:       "a3446b60d03f301e50972b2a38239cc0ffe0a0052bef78ecac9cb892aeacb9f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "05736556cc0e2d3f8fd56a20977ae6ec77ad939ce854365f1ad91364d9970f05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d40bb6b1568328e315a28aa502c5cbf8b86cb95f493647ff4edd639878f7ba1d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8ecaafb1e57c171a70b8cfb7fc3fb092221fe15c3ba1c023edde5b1c34a075d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8ecaafb1e57c171a70b8cfb7fc3fb092221fe15c3ba1c023edde5b1c34a075d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8ecaafb1e57c171a70b8cfb7fc3fb092221fe15c3ba1c023edde5b1c34a075d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "df0dec77079f9f076bea666d21c926590e9ae249075855de3ded50cc9158201c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dd35a965fa692e7aed7ad3bd75fb1ba817707facf415fb4ab903e020a99fbbf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52ad3b1643c247c5cae4467ba1c7e8a8d950ba7cc9fdb746bd9ff4800c8e7ab6"
   end
 
   depends_on "go" => :build
-  depends_on "helm"
+  depends_on "helm@3"
   depends_on "kubernetes-cli"
 
   def install
@@ -27,6 +26,8 @@ class Helmsman < Formula
   end
 
   test do
+    ENV.prepend_path "PATH", Formula["helm@3"].opt_bin
+
     ENV["ORG_PATH"] = "brewtest"
     ENV["VALUE"] = "brewtest"
 

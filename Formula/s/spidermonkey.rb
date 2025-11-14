@@ -1,9 +1,9 @@
 class Spidermonkey < Formula
   desc "JavaScript-C Engine"
   homepage "https://spidermonkey.dev"
-  url "https://archive.mozilla.org/pub/firefox/releases/140.4.0esr/source/firefox-140.4.0esr.source.tar.xz"
-  version "140.4.0"
-  sha256 "49f20673171046bc7b64f4caa340c46e1e105b9107f0ef68b7a94f379bcea4f7"
+  url "https://archive.mozilla.org/pub/firefox/releases/140.5.0esr/source/firefox-140.5.0esr.source.tar.xz"
+  version "140.5.0"
+  sha256 "832b7ef3e5f7a2430e0ba0b9000dab6fdd8f65bccff8bcf7eeb9ed16e6d310e2"
   license "MPL-2.0"
   head "https://hg.mozilla.org/mozilla-central", using: :hg
 
@@ -15,19 +15,19 @@ class Spidermonkey < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3a28ebb02b5888065b10c8e4ba82b614752a673f3b434ed478269344dcc800f7"
-    sha256 cellar: :any, arm64_sequoia: "c71064580630d107b12f705f915fb529fc8e27fdd3a544ba4e6f76754a3d7db9"
-    sha256 cellar: :any, arm64_sonoma:  "959c4f7351049c19009c8b5cd9f51c123a081a048d14bf5770507e31fd7bccde"
-    sha256 cellar: :any, sonoma:        "d635c355122e1b8ceff75cb0e1701897bdf05a0b9f746a10645f7f4a150d277c"
-    sha256               arm64_linux:   "7eada99808c5eea9d60084c33e5afd74b46de7f883264904f2bb44709279daf2"
-    sha256               x86_64_linux:  "d812961c2752629cbb6803f83d3b0de4c646448c3636ee14f1e9469ff41f772b"
+    sha256 cellar: :any, arm64_tahoe:   "17e51ea8f95f8b53dee6726bc04b2a0e119afec5e5199d1289e773afbc774555"
+    sha256 cellar: :any, arm64_sequoia: "425ef161fc8e74574b2db72a4cb7b0cdf6dc40ce4ee9581d8a52d3b58c49de4d"
+    sha256 cellar: :any, arm64_sonoma:  "c1dd5349fc979db3afb98818e72d733c7e806cfea5d5e96399324fb50b07dc1e"
+    sha256 cellar: :any, sonoma:        "bc2080fd498d7be55ee7cef408810891636bb4ff7252758a1a7c0f05a77250e8"
+    sha256               arm64_linux:   "f5a17ed759310d39379395bc94a352b4dadb7cf9920104062383cdd229ccba5a"
+    sha256               x86_64_linux:  "8da85566d8823f2e9e84a1727a5f87ca4ebcd769daef9f8f00dd048f96c103e6"
   end
 
   depends_on "cbindgen" => :build
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => :build
   depends_on "rust" => :build
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "nspr"
   depends_on "readline"
 

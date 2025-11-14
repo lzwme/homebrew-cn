@@ -4,7 +4,7 @@ class Pazpar2 < Formula
   url "https://ftp.indexdata.com/pub/pazpar2/pazpar2-1.14.1.tar.gz"
   sha256 "9baf590adb52cd796eccf01144eeaaf7353db1fd05ae436bdb174fe24362db53"
   license "GPL-2.0-or-later"
-  revision 9
+  revision 10
 
   livecheck do
     url "https://ftp.indexdata.com/pub/pazpar2/"
@@ -14,12 +14,12 @@ class Pazpar2 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "231f0c8f4214d759fecc1870af5b230ae5f37f1f0ef58ce8f69f847ca69f512f"
-    sha256 cellar: :any,                 arm64_sequoia: "163b4b6d4768f37dbc6b33e8c07dec61fc4557d91448820ae57c52f31150ad1f"
-    sha256 cellar: :any,                 arm64_sonoma:  "5aec4b1dfb539ff39d55d09a607a9c752b9255b1f9a12a6531e410938ebcf5a3"
-    sha256 cellar: :any,                 sonoma:        "59fa9f4f1fc9aac20cfbcec82d9b0c3538931d95b52dbf40678e61ba5d8dda84"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b5fcb8c2c9e688fb68a7b3e31bc5e3835b13d80a99446b35e50f414b4aa89ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1786a9f89d196bc588dba5b9a5549fb4044852ae833e72e9eebccbd0e060f117"
+    sha256 cellar: :any,                 arm64_tahoe:   "4185debb82ea7516fdd544cf8a7f0509cf018fe83adc7c60434fbf7b31710dff"
+    sha256 cellar: :any,                 arm64_sequoia: "672d6de49b46f8aedaabb96210d47e490889528e3d75588bbd164ccbcb4eab89"
+    sha256 cellar: :any,                 arm64_sonoma:  "f87a262cb03fd2f25bcef92c949f94eb27bc1dec9e7cbcb4ed9a38e82192bdfc"
+    sha256 cellar: :any,                 sonoma:        "d6fad2c51dc9f9a91944ea537d6882bb8c8bfeacf207525decf241c0c8de5cf3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bfdde53eaffee03dda9094a5e2d53ad6a3804381b51c6aedf99135f83822fdcf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e7655016434cf9e1d7d6a4ca97cb3272a255c07f51bb087ca80e0f06eca1023"
   end
 
   head do
@@ -31,7 +31,7 @@ class Pazpar2 < Formula
 
   depends_on "pkgconf" => :build
 
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "yaz"
 
   uses_from_macos "libxml2"

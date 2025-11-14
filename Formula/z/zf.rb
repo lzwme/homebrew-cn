@@ -1,18 +1,18 @@
 class Zf < Formula
   desc "Command-line fuzzy finder that prioritizes matches on filenames"
   homepage "https://github.com/natecraddock/zf"
-  url "https://ghfast.top/https://github.com/natecraddock/zf/archive/refs/tags/0.10.3.tar.gz"
-  sha256 "ae8f088dd25a10406e8f7a27d9ddc555d28d746950fd653f4cfe42ab0b903f58"
+  url "https://ghfast.top/https://github.com/natecraddock/zf/archive/refs/tags/0.10.4.tar.gz"
+  sha256 "109995116dc1161619e73c12806f5d168441cf5cf96aa6bb780939d10ffce978"
   license "MIT"
   head "https://github.com/natecraddock/zf.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f605e11345ec11c1b7a06ddb36aed7d62aed6de226427816760b5852f2d432ff"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f697369a780a2b658a20061d85844fabedd36c4473a4b6898c7081399cc8339f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "33bb84c18c4c908e3e1940c6ec5206eda1e840dce602b18d1f6d01fe69ffa206"
-    sha256 cellar: :any_skip_relocation, sonoma:        "460904b2df3f8cebf62efe86e5d9092a10f398837e22a40083fc63d54fd8211a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a0c7534938199aea466bb7bc65e52a3504a01c76126d675daeb0ca1fb564be7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28fadb3d696d45a2c3f1656a5a7e45ecb60054f3a201a6188e33762e1c5a562e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cac2fe7a87e09b282b70acd1b187e5a85587d99710a20dc8a50d9ad2e38cc414"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4148ee65a03d4c7e47ab824ada9a74444e22d58829ab1a65ab18efdf1b9ecdaa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c32a3deabe78d371b935487e971edeba309f35bdd8cf2a3e1f0d4907f3527f92"
+    sha256 cellar: :any_skip_relocation, sonoma:        "22f56384c11eaceb0d1bd00a89716a657c5064f75517e81fa714813012831e39"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "826e630d1965ab55172691f92fa524dcb0969e0b0e2a1398754a5a41836800ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "035ab9aebe146b56a3c40e46c1fa39aba039a22db37d5c57e4e25f3737940fe1"
   end
 
   depends_on "zig" => :build

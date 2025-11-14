@@ -4,7 +4,7 @@ class Tinysparql < Formula
   url "https://download.gnome.org/sources/tinysparql/3.10/tinysparql-3.10.1.tar.xz"
   sha256 "5a7f3e789db6671a550ed6280ed4f60a60bea77368da92be68dc7d8d7e230265"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
-  revision 1
+  revision 2
   head "https://gitlab.gnome.org/GNOME/tinysparql.git", branch: "main"
 
   # TinySPARQL doesn't follow GNOME's "even-numbered minor is stable" version
@@ -16,12 +16,12 @@ class Tinysparql < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4d1431c8dd7050ce5db5de2a499c9445d88ed754ab3671a71d2a325510e3a58c"
-    sha256 arm64_sequoia: "f0b27de568d0309ae5319d37cd658dee48239d2a0ad7acd51c76c835371ac1c1"
-    sha256 arm64_sonoma:  "3e545339ac59bc11481625cad9d4d69ad45031feed114f0d3b072702e7fdf029"
-    sha256 sonoma:        "0eabc6df38fb663f87e97b89236f5152949b1276b7a46e17f9f2055460871c65"
-    sha256 arm64_linux:   "c0e555b37f1a2f3dd850c3f7cde887eb152bc15f726b7d414b07a695fe059384"
-    sha256 x86_64_linux:  "96e476df8358efe4e56ec2db9f60795c3ff579296f7b76a6420ad1748d72f107"
+    sha256 arm64_tahoe:   "845cd93f5a701ab4297653c6ef23b242f5a2f4a820f8d61a26c06f2f4e570d5f"
+    sha256 arm64_sequoia: "12534910709b1fc55e9b24854f918b6313da54fa04d9fdd64d4064f2d5e14301"
+    sha256 arm64_sonoma:  "1346694737ed77c3df31cdd8311667510289a56237f0d0aa2383fce61cf32bce"
+    sha256 sonoma:        "b9b30ec6e30f93fabd4b834821daed5ef87d0f4c20cc9ce7b660f7899eab4581"
+    sha256 arm64_linux:   "fd75e5b220b81b87cdd19bf356eab55984992e3327b0dd885a818a9af332d654"
+    sha256 x86_64_linux:  "af5e3d9e4f303698993dde336842e0dd37afc08f701ae88ca86c51693265cc25"
   end
 
   depends_on "gettext" => :build
@@ -33,7 +33,7 @@ class Tinysparql < Formula
 
   depends_on "dbus"
   depends_on "glib"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "json-glib"
   depends_on "libsoup"
   depends_on "sqlite"

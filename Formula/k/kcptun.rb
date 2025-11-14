@@ -1,8 +1,8 @@
 class Kcptun < Formula
   desc "Stable & Secure Tunnel based on KCP with N:M multiplexing and FEC"
   homepage "https://github.com/xtaci/kcptun"
-  url "https://ghfast.top/https://github.com/xtaci/kcptun/archive/refs/tags/v20250730.tar.gz"
-  sha256 "5d418e87ff41be3cc19cac4514dda8697af8de6b68089eb7e46817a0963619b7"
+  url "https://ghfast.top/https://github.com/xtaci/kcptun/archive/refs/tags/v20251113.tar.gz"
+  sha256 "7f9754186f1adfdc33c78f7a6cb3204b232837da9f21a4a272ee7e5598508de6"
   license "MIT"
   head "https://github.com/xtaci/kcptun.git", branch: "master"
 
@@ -16,14 +16,12 @@ class Kcptun < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2019b7ad1bb658ba9817df5f5e0080e28edb086d3f8fe9c8427b5fa93488cc6d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc7c784444bff8abe83d771a21dde16578a772ca63ce6109e00a8d7ada826d73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc7c784444bff8abe83d771a21dde16578a772ca63ce6109e00a8d7ada826d73"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fc7c784444bff8abe83d771a21dde16578a772ca63ce6109e00a8d7ada826d73"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cd3036565c3c658303b0cc8ff1088179ece5b1473501642ecb6e7702f3fdb39a"
-    sha256 cellar: :any_skip_relocation, ventura:       "cd3036565c3c658303b0cc8ff1088179ece5b1473501642ecb6e7702f3fdb39a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb2aa6247e5e9df07a8ee80e303028587e2fed172ef447fa215eba4002e1ed35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9208ce6607fbff620e403c5f143e4c67eede8b7ec75ed4a0e36961837e3b9f4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "021c2eb56f2487e4b14c4696cfeb275d78ec7f338f0d1a26487e0d702dc3e2d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "021c2eb56f2487e4b14c4696cfeb275d78ec7f338f0d1a26487e0d702dc3e2d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "021c2eb56f2487e4b14c4696cfeb275d78ec7f338f0d1a26487e0d702dc3e2d3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "108a819bd7c51bc65310b3c0d38da1a49dc5c0267b5b878261b40272e14c42b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "509f239352737a0b6123e34c099c62caba06e140d898000a06b5e05931df0094"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "feb9d4edd0b4a423c13197e1c75e43535bdbc950ccf8d14a7b7969c9e3e25484"
   end
 
   depends_on "go" => :build

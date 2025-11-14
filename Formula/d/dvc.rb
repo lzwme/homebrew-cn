@@ -3,18 +3,17 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/53/d5/88ba8456536e9550ab44bdd3d430351626c20cb08a0593840e319933d773/dvc-3.63.0.tar.gz"
-  sha256 "b845cf8825e1b07d427e8d04754a0e01f141708bcbb1dae91e18db9e640ae68e"
+  url "https://files.pythonhosted.org/packages/5b/17/c6b4587592c92a60a940805ce7458ab4008c57ab7fd097be5b772d811f1d/dvc-3.64.0.tar.gz"
+  sha256 "bfa330b253e5986fcfb4232cc62f399fddadd67311c262748d94131b1b61419b"
   license "Apache-2.0"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_tahoe:   "bbbdb3a79177791a2f3dbbdda044582c881643f529bc9c7aff12eda883526ff6"
-    sha256 cellar: :any,                 arm64_sequoia: "39504b25725702be3c49704d2711de290bfd7d171f6332c8b885626aa8202543"
-    sha256 cellar: :any,                 arm64_sonoma:  "8f80f4d48bd97a3ee057df2b3d83377109fa4cc81177f2ed206635ccdd69aae5"
-    sha256 cellar: :any,                 sonoma:        "a0fa983841271d7955ffe63b97f4f261d76d0b267c9b2e80282fbaee472fbfbb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb41af5a6c500deb88488de7d42ba78ae0dab1f0d1d295b9662baf9fc5b1ebed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b600e6204020071d6428479d5ac262ecdd0ed23eaaf461937c5676ea72878a2"
+    sha256 cellar: :any,                 arm64_tahoe:   "64fe7c2d5c010567f55a3ff5434c420340cb6653bed2c1f7d1d3f166026a5e23"
+    sha256 cellar: :any,                 arm64_sequoia: "ebc73526d4179c523f1770e6e3433dfebeb39c16f23308d6b80c7537624907f2"
+    sha256 cellar: :any,                 arm64_sonoma:  "2a0e21d4e62af854c9bff9e73bd17baa24e778f87d6435a1668013a04708c207"
+    sha256 cellar: :any,                 sonoma:        "ba62573da5d5c7642f2311ac77af85487b417c3fc06718e294dc0951fd865e16"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1474442d7805fb31110c0635eea5d0f3c7bf3379f1773b7d88c5e10b9ab994f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c43dfea8e292fa0b702c2eef2a9ef238eeb6a45e46357ef07aedefad581fe23"
   end
 
   depends_on "cmake" => :build # for pyarrow
@@ -43,8 +42,8 @@ class Dvc < Formula
   end
 
   resource "aiobotocore" do
-    url "https://files.pythonhosted.org/packages/62/94/2e4ec48cf1abb89971cb2612d86f979a6240520f0a659b53a43116d344dc/aiobotocore-2.25.1.tar.gz"
-    sha256 "ea9be739bfd7ece8864f072ec99bb9ed5c7e78ebb2b0b15f29781fbe02daedbc"
+    url "https://files.pythonhosted.org/packages/52/48/cf3c88c5e3fecdeed824f97a8a98a9fc0d7ef33e603f8f22c2fd32b9ef09/aiobotocore-2.25.2.tar.gz"
+    sha256 "ae0a512b34127097910b7af60752956254099ae54402a84c2021830768f92cda"
   end
 
   resource "aiohappyeyeballs" do
@@ -63,8 +62,8 @@ class Dvc < Formula
   end
 
   resource "aioitertools" do
-    url "https://files.pythonhosted.org/packages/06/de/38491a84ab323b47c7f86e94d2830e748780525f7a10c8600b67ead7e9ea/aioitertools-0.12.0.tar.gz"
-    sha256 "c2a9055b4fbb7705f561b9d86053e8af5d10cc845d22c32008c43490b2d8dd6b"
+    url "https://files.pythonhosted.org/packages/fd/3c/53c4a17a05fb9ea2313ee1777ff53f5e001aefd5cc85aa2f4c2d982e1e38/aioitertools-0.13.0.tar.gz"
+    sha256 "620bd241acc0bbb9ec819f1ab215866871b4bbd1f73836a55f799200ee86950c"
   end
 
   resource "aiooss2" do
@@ -158,13 +157,13 @@ class Dvc < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/ed/f9/6ef8feb52c3cce5ec3967a535a6114b57ac7949fd166b0f3090c2b06e4e5/boto3-1.40.61.tar.gz"
-    sha256 "d6c56277251adf6c2bdd25249feae625abe4966831676689ff23b4694dea5b12"
+    url "https://files.pythonhosted.org/packages/37/12/d5ac34e0536e1914dde28245f014a635056dde0427f6efa09f104d7999f4/boto3-1.40.70.tar.gz"
+    sha256 "191443707b391232ed15676bf6bba7e53caec1e71aafa12ccad2e825c5ee15cc"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/28/a3/81d3a47c2dbfd76f185d3b894f2ad01a75096c006a2dd91f237dca182188/botocore-1.40.61.tar.gz"
-    sha256 "a2487ad69b090f9cccd64cf07c7021cd80ee9c0655ad974f87045b02f3ef52cd"
+    url "https://files.pythonhosted.org/packages/35/c1/8c4c199ae1663feee579a15861e34f10b29da11ae6ea0ad7b6a847ef3823/botocore-1.40.70.tar.gz"
+    sha256 "61b1f2cecd54d1b28a081116fa113b97bf4e17da57c62ae2c2751fe4c528af1f"
   end
 
   resource "cachetools" do
@@ -243,8 +242,8 @@ class Dvc < Formula
   end
 
   resource "dulwich" do
-    url "https://files.pythonhosted.org/packages/58/98/b6b8bf80e61d1aacf59aad4e45e6a1e7c39751c7bcaeb1136821bae82cd8/dulwich-0.24.8.tar.gz"
-    sha256 "c9f4748bbcca56fb57458c71c0d30e2351ac15e0583d428c739c09228be68f05"
+    url "https://files.pythonhosted.org/packages/3e/7c/cb4a5fb0d3d0f6585894759730ae9052e8dd9d2e5172bff544d369b24243/dulwich-0.24.10.tar.gz"
+    sha256 "30e028979b6fa7220c913da9c786026611c10746c06496149742602b36a11f6b"
   end
 
   resource "dvc-azure" do
@@ -418,8 +417,8 @@ class Dvc < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/30/43/b25abe02db2911397819003029bef768f68a974f2ece483e6084d1a5f754/googleapis_common_protos-1.71.0.tar.gz"
-    sha256 "1aec01e574e29da63c80ba9f7bbf1ccfaacf1da877f23609fe236ca7c72a2e2e"
+    url "https://files.pythonhosted.org/packages/e5/7b/adfd75544c415c487b33061fe7ae526165241c1ea133f9a9125a56b39fd8/googleapis_common_protos-1.72.0.tar.gz"
+    sha256 "e55a601c1b32b52d7a3e65f43563e2aa61bcd737998ee672ac9b951cd49319f5"
   end
 
   resource "grandalf" do
@@ -608,8 +607,8 @@ class Dvc < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/20/c5/dbbc27b814c71676593d1c3f718e6cd7d4f00652cefa24b75f7aa3efb25e/pydantic_settings-2.11.0.tar.gz"
-    sha256 "d0e87a1c7d33593beb7194adb8470fc426e95ba02af83a0f23474a04c9a08180"
+    url "https://files.pythonhosted.org/packages/43/4b/ac7e0aae12027748076d72a8764ff1c9d82ca75a7a52622e67ed3f765c54/pydantic_settings-2.12.0.tar.gz"
+    sha256 "005538ef951e3c2a68e1c08b292b5f2e71490def8589d4221b95dab00dafcfd0"
   end
 
   resource "pydot" do
@@ -698,8 +697,8 @@ class Dvc < Formula
   end
 
   resource "scmrepo" do
-    url "https://files.pythonhosted.org/packages/bd/a7/d9e2dfad90dd9ce3429156a100684ef61e8444e98164726d52bd3ed77ce0/scmrepo-3.5.2.tar.gz"
-    sha256 "c951d98cd36aead02a69a75926455a163d435c6f996c76b92be5f0c717551f28"
+    url "https://files.pythonhosted.org/packages/8b/d0/7201b0a95a738ab684eabe7453d02d2cab82e713f4976c644c1975143ba9/scmrepo-3.5.3.tar.gz"
+    sha256 "0683a30826533e773ddbc7bfe4e540aa46f53ba09631d8683fa7a1cdc3d4242c"
   end
 
   resource "semver" do

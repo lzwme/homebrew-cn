@@ -10,6 +10,7 @@ class Qt5compat < Formula
     "BSD-2-Clause", # src/core5/codecs
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   head "https://code.qt.io/qt/qt5compat.git", branch: "dev"
 
   livecheck do
@@ -17,19 +18,19 @@ class Qt5compat < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e1b8ad9a71c5400e60b0a8b5da8853e299f37f508445e71fc2d1355871b8c728"
-    sha256 cellar: :any,                 arm64_sequoia: "a9cd817fce35c8a59ebd45d1a38bb1f9bee94eb56212274796ad628791ee752f"
-    sha256 cellar: :any,                 arm64_sonoma:  "b1ac9fcfca639fed98614eb6574a0316bc4977421fbe15f7ce3a6a2f9531ea72"
-    sha256 cellar: :any,                 sonoma:        "4647c4d81b9e3bd2b84093bd537348a32bd0bcdd3c0189fea7dda826251d7de3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f84073a583286b510c2d2159788f3691205c47b1b2ce3e0d686a0c537acc157c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91a0dd5f6f77909277a021c4bf80d56012aeb3d2e61aa01f645f7f89028aa82e"
+    sha256 cellar: :any,                 arm64_tahoe:   "ce93f386ed3c06ebb79bd28c95d54048906f7c612edadde62636f373e613e3ab"
+    sha256 cellar: :any,                 arm64_sequoia: "6da7197e5ff3c57dda2576e15e60696751cdc7919ca314623737fbd5203ae8d8"
+    sha256 cellar: :any,                 arm64_sonoma:  "5744ccf277387c8717b3c92ff9e4aea24f168bc96c0ceb39e9e5633868bebfbd"
+    sha256 cellar: :any,                 sonoma:        "23170df3660993e31acd206497d54cb3d84b219ab9bf23cb975f02dc1052bf63"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d2379c746dcafffc48d54113417cea1e6139b2d1ef1270377ce481900a5cc79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eae5705dbc6a3bd119c7b54b407364a248624cf020305233a345d2b9dfbbf701"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "ninja" => :build
   depends_on "pkgconf" => :test
 
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "qtbase"
   depends_on "qtdeclarative"
   depends_on "qtshadertools"

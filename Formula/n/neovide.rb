@@ -4,15 +4,16 @@ class Neovide < Formula
   url "https://ghfast.top/https://github.com/neovide/neovide/archive/refs/tags/0.15.2.tar.gz"
   sha256 "a8179c461d41277b41692edcae64af6d1c80454aafff608af0268c5abca95b5c"
   license "MIT"
+  revision 1
   head "https://github.com/neovide/neovide.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d2016431a76759e0b0ba9cb8f5e91a4451cb4f4a9c92dd16cfee7ef86b444892"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6694ac674ede4461e8cd8f4e585e0899352fb3285132cd9cd23f93f89229c338"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9fcf5b98310365061ef4af169630dc40a3bbdde3ce22f053a3ca57643b436461"
-    sha256 cellar: :any_skip_relocation, sonoma:        "46842ec618082169fbd210f861d75624343f91ec7082ab63e2e9b2b852569605"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5a85281c8403af2e6bddfe9f5b8eefc174cd455e87b8ca403f6f27d44bcc847"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0dfc1de21238aae3f54afdda3f9518050bcdcabf2bd1bcf8b84314b43d056498"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3cd1ae192871c857c1bc7cfdc86dd0ed8d37e2bf468399297dfd2848f4897acd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7431a80ee963a89341748415cb400ca9c3b12b4c075e1c132a1249baf3cabade"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9eb5a431e1f6433db53cf329ac0644741ee173328c47d6420f98771bb91c4215"
+    sha256 cellar: :any_skip_relocation, sonoma:        "97c3ca622612e86cd722364c4f1f369a46be1a0bf0ec37fc871e4e1a73488ba5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "51f55132c2a8e2bd4a8147297727c1e9c10ce293822616fad48282b826067ffe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0ca27a7dc416660e96bc0830c909bbf25d83fa3ec5cf14516ee3d39afe89ac4"
   end
 
   depends_on "ninja" => :build
@@ -31,7 +32,7 @@ class Neovide < Formula
     depends_on "fontconfig"
     depends_on "freetype"
     depends_on "harfbuzz"
-    depends_on "icu4c@77"
+    depends_on "icu4c@78"
     depends_on "jpeg-turbo"
     depends_on "libpng"
     # `libxcursor` is loaded when using X11 (DISPLAY) instead of Wayland (WAYLAND_DISPLAY).

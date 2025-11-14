@@ -1,17 +1,17 @@
 class Pgstream < Formula
   desc "PostgreSQL replication with DDL changes"
   homepage "https://github.com/xataio/pgstream"
-  url "https://ghfast.top/https://github.com/xataio/pgstream/archive/refs/tags/v0.8.9.tar.gz"
-  sha256 "9f04439b324f0c4eb2e889d20fdccc4dee6ea00558390c98d139eb96f417ce4e"
+  url "https://ghfast.top/https://github.com/xataio/pgstream/archive/refs/tags/v0.8.10.tar.gz"
+  sha256 "38634a9fb479c6dcd1bad9ee5f8910c1db5383c2482d5edc838d556ca6a807ec"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b6de29418be58d4f1d207a8d137631a9575d146b704e0f226916e84d289956f3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6de29418be58d4f1d207a8d137631a9575d146b704e0f226916e84d289956f3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6de29418be58d4f1d207a8d137631a9575d146b704e0f226916e84d289956f3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6b38e4b80951ba148bbfb765a2f17b96460377c36dd7c55a725f17baf0591b51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ef3475ed8bdc5ea4e8fa3ccc9449e62a8b8d1dc977bccada943a7d458e43835"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fd7b403d04e6c7c9f6d879d77d3f8f118c07fe0c846330097dd3feaa4f2b3ea"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd7a46d346294afded76a78aee13496390198f5e46e976db1ec79588cb63630b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd7a46d346294afded76a78aee13496390198f5e46e976db1ec79588cb63630b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd7a46d346294afded76a78aee13496390198f5e46e976db1ec79588cb63630b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cbf04aafc5f6ba58df25406e8f00bf503190d179663e41937907eda51166af31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "38cbc04eb6ed8dd4ed25bac09cd86245a904213d4bf4c78e19010d8c4243345d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5673168f45dd67249ad82257d43571884a61c82d1da8e05c173f82ad6c80dcd"
   end
 
   depends_on "go" => :build

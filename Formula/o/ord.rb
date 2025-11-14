@@ -1,18 +1,18 @@
 class Ord < Formula
   desc "Index, block explorer, and command-line wallet"
   homepage "https://ordinals.com/"
-  url "https://ghfast.top/https://github.com/ordinals/ord/archive/refs/tags/0.23.3.tar.gz"
-  sha256 "381f8c7a788f8a17e40cd5ce8e3663c0862bb23f8e2313eeaf742721b758f5b6"
+  url "https://ghfast.top/https://github.com/ordinals/ord/archive/refs/tags/0.24.0.tar.gz"
+  sha256 "484f034fde3c329be7bb09478a46854ef397d5ed70141e1376028e34343a0388"
   license "CC0-1.0"
   head "https://github.com/ordinals/ord.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "45451e4238552bebe9ef582f49900f396e76498abefd181ba1954829f3165321"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "811e865257723cc0fb3e4c9065deee1533b99aa0861afe549869842f80710d6f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6167b39410518447720663d3049575d7bd23b4d815c4cb622b85c4c5d5cb8823"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6b7bdd358900338e5526b944e208f5851577626acbbb706f66f65759c3b191a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "51bf08b0d7d0ec47ca4266c11702d76aef85fe389e982bab37340a9fb62fad21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98a45830338b5bd8c3d648f605ea6c2f741889e622d2cd2da1ee37d1ee8a08b0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "19b28f86d92c29bfd8e43b0276b7ccff4ba9cd938bb48b1d6899781ae04eab40"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67d235a9ea77b6b213de0d750aca35e745b4e88e56537c79af371370e556b9e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae131e98fc0c49c81c340204f66461fcea082a6d2c5b54551dfb2e4dcf1ff349"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cde4a116f3409f1aa11f61afb66e7c18cb47006eabe16101de98bc996f76e473"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9a7a66780ac3c2dd9e8a4c3f7535beb5f9b30bd08de6ddbd793a1b18d5eaf40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5718c7b49646d7c5beb0b706a5aee6f0916a716366ae8082c8916e51413cc21"
   end
 
   depends_on "pkgconf" => :build

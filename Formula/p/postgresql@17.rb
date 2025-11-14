@@ -1,10 +1,9 @@
 class PostgresqlAT17 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v17.6/postgresql-17.6.tar.bz2"
-  sha256 "e0630a3600aea27511715563259ec2111cd5f4353a4b040e0be827f94cd7a8b0"
+  url "https://ftp.postgresql.org/pub/source/v17.7/postgresql-17.7.tar.bz2"
+  sha256 "ef9e343302eccd33112f1b2f0247be493cb5768313adeb558b02de8797a2e9b5"
   license "PostgreSQL"
-  revision 1
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -12,12 +11,12 @@ class PostgresqlAT17 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0c005391090f88013eed28078f470c48d6c46ea30efb1c39c797876b5aca1744"
-    sha256 arm64_sequoia: "ae9d01adb178d50aa8feaefa7f5e0a60ce7af9842ed91f83f4d56d27bf111697"
-    sha256 arm64_sonoma:  "5fe57a8fdc8e0b59b8b8c4bf5c54ab04c0dd6cbbac6a243133ba14c6525e7b15"
-    sha256 sonoma:        "a8262b3e491a911e6d65fd41e17d403733fcbd8260d13f17ec451a0128c0181f"
-    sha256 arm64_linux:   "dc7bd0d18f8df0fcf8769fd2e657baabfd30748c8d595f835bb9b060adb2dff2"
-    sha256 x86_64_linux:  "9ff565c8776d3674dded1d19b0a53cbdd33e27c07a9ad3b990db08e326e4565f"
+    sha256 arm64_tahoe:   "fe0e1c07ec222d8462c9d3781df02c891ace6a30a972493213713ac4463d6b1f"
+    sha256 arm64_sequoia: "dc25244bf06569a8886bb2d0dd4d361f6ca6ffc4040208a4a2f67d29c1393447"
+    sha256 arm64_sonoma:  "64e75b4b51670974d1a4ca75f1f67ced14c4a8d65be998f95db93d40be40f51a"
+    sha256 sonoma:        "ecd08b49055c62ff3682d21e0f24f60873ec79f90d66a8658cb9f6264c35eafc"
+    sha256 arm64_linux:   "913ef72e2702e11d50a0ccf444f24eb2c81fbbc58855275230130908e6f767c3"
+    sha256 x86_64_linux:  "187bb9fbc2edb394d7de6ecc33c746fead3d1503368dedda4ad3c5571ee6b73e"
   end
 
   keg_only :versioned_formula
@@ -29,7 +28,7 @@ class PostgresqlAT17 < Formula
   depends_on "docbook-xsl" => :build
   depends_on "gettext" => :build
   depends_on "pkgconf" => :build
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   # GSSAPI provided by Kerberos.framework crashes when forked.
   # See https://github.com/Homebrew/homebrew-core/issues/47494.
   depends_on "krb5"

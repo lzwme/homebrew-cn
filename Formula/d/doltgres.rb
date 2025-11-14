@@ -1,8 +1,8 @@
 class Doltgres < Formula
   desc "Dolt for Postgres"
   homepage "https://github.com/dolthub/doltgresql"
-  url "https://ghfast.top/https://github.com/dolthub/doltgresql/archive/refs/tags/v0.52.4.tar.gz"
-  sha256 "869c18fc65289318034fc3e282802fe5262306230560d7a192401570cfb10854"
+  url "https://ghfast.top/https://github.com/dolthub/doltgresql/archive/refs/tags/v0.53.0.tar.gz"
+  sha256 "6b4b2240e276f931d15f33067221e538a25bfe495276ab82b57e240fd31c9b44"
   license "Apache-2.0"
   head "https://github.com/dolthub/doltgresql.git", branch: "main"
 
@@ -15,17 +15,17 @@ class Doltgres < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0942adebe5c1ba679c99136371cec3b3b1a7a48546ea857ba1e0fb9fcce900ed"
-    sha256 cellar: :any,                 arm64_sequoia: "68d9fae1a9dbffd4ec9a178040eeeffd08de5e0dfa48e71f9aad02ec11ad77bc"
-    sha256 cellar: :any,                 arm64_sonoma:  "b04984641dd3def1a82ae49f66c330d4c9089c4f81dfaf2f70b48514efbc200c"
-    sha256 cellar: :any,                 sonoma:        "3562c6dbc2b28f452a16d8ca97787b566f77d4b4edf286e49cc12eb33fe2937b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b1e04d6b897703b1827667307b30df1f4e13972baf05ab0abf93d04c00416b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "494fa5e5e7792d8468b86994426a791c4c77610b4f49ea4d1cf5e0a221f7f6f5"
+    sha256 cellar: :any,                 arm64_tahoe:   "cf904e66a7f1659ac9f6e2cf12300ebcb105d4e9d00e313a1a464e62f3be6261"
+    sha256 cellar: :any,                 arm64_sequoia: "81d0f342b91ed61ab9c93c66bf67ae061ff8da28f68fb189d1783d099e122a0f"
+    sha256 cellar: :any,                 arm64_sonoma:  "54e39b6cc35fdb58a4d4f1603701768b70e6120ba585d315277ee91e2720e632"
+    sha256 cellar: :any,                 sonoma:        "04ac851e64f056ac75c31b455c64bd50d4921ef8cdf797501977fa3d93f93c2b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e6ab5755eca5ccc2f3ecc991657422d24f5195900980ffb5c78643386567d2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "507ad4ccd4cdb321de1a20d50b11fd10a9ead8f4032db6ddc0c9c72cc87da77a"
   end
 
   depends_on "go" => :build
   depends_on "libpq" => :test
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
 
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?

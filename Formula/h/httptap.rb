@@ -3,12 +3,12 @@ class Httptap < Formula
 
   desc "HTTP request visualizer with phase-by-phase timing breakdown"
   homepage "https://httptap.dev"
-  url "https://files.pythonhosted.org/packages/2a/e7/04da55809e1e7f743c148d443dec3f0e882c7332f40d3572114981e5db14/httptap-0.3.0.tar.gz"
-  sha256 "d989b1e2f96032a05819d4d0c6d6d38dfc985ac6c229ea5ec3b81e78920baa48"
+  url "https://files.pythonhosted.org/packages/b2/0d/f4ec372273393748a534a4f9edabd6fb4e2da4fab2c7b5b95914ab71bf75/httptap-0.3.1.tar.gz"
+  sha256 "4ff6c0fce2722ba4d32d370db425a374f8c4de55b044948f46771976b67ec278"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c0e029fd8497f9daff61f559688618a04458899f47dabe1bb64ce55f344d4be6"
+    sha256 cellar: :any_skip_relocation, all: "e2a7f04fabcd32259df342ea99bdae4d22ace763cd5e1d326b89232481147c90"
   end
 
   depends_on "rust" => :build
@@ -27,8 +27,8 @@ class Httptap < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/4c/5b/b6ce21586237c77ce67d01dc5507039d444b630dd76611bbca2d8e5dcd91/certifi-2025.10.5.tar.gz"
-    sha256 "47c09d31ccf2acf0be3f701ea53595ee7e0b8fa08801c6624be771df09ae7b43"
+    url "https://files.pythonhosted.org/packages/a2/8c/58f469717fa48465e4a50c014a0400602d3c437d7c0c468e17ada824da3a/certifi-2025.11.12.tar.gz"
+    sha256 "d8ab5478f2ecd78af242878415affce761ca6bc54a22a27e026d7c25357c3316"
   end
 
   resource "dnspython" do

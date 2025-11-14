@@ -24,19 +24,17 @@ class Libgcrypt < Formula
   depends_on "libgpg-error"
 
   def install
-    system "./configure", *std_configure_args,
+    system "./configure", "--disable-asm",
                           "--disable-silent-rules",
                           "--enable-static",
-                          "--disable-asm",
-                          "--with-libgpg-error-prefix=#{Formula["libgpg-error"].opt_prefix}"
+                          "--with-libgpg-error-prefix=#{Formula["libgpg-error"].opt_prefix}",
+                          *std_configure_args
 
     # The jitter entropy collector must be built without optimisations
     ENV.O0 { system "make", "-C", "random", "rndjent.o", "rndjent.lo" }
 
     # Parallel builds work, but only when run as separate steps
     system "make"
-    MachO.codesign!("#{buildpath}/tests/.libs/random") if OS.mac? && Hardware::CPU.arm?
-
     system "make", "check"
     system "make", "install"
 
