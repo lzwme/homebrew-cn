@@ -3,26 +3,25 @@ class CryticCompile < Formula
 
   desc "Abstraction layer for smart contract build systems"
   homepage "https://github.com/crytic/crytic-compile"
-  url "https://files.pythonhosted.org/packages/78/9b/6834afa2cc6fb3d958027e4c9c24c09735f9c6caeef4e205c22838f772bf/crytic_compile-0.3.10.tar.gz"
-  sha256 "0d7e03b4109709dd175a4550345369548f99fc1c96183c34ccc4dd21a7c41601"
+  url "https://files.pythonhosted.org/packages/f4/cb/669ed02fbfe17091998f52a7e3326ac276409117ea10a2c36b2a852a22f9/crytic_compile-0.3.11.tar.gz"
+  sha256 "d4e2253d5d81ec3a75deb3ab9fc2c2d2db56e835001cf07f3703911d74b56716"
   license "AGPL-3.0-only"
   head "https://github.com/crytic/crytic-compile.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a352c8aee829e9c5cad5e597833e9cacc98ebc1e53039080f2e48a4741f2824"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e180c9e83e24af0987c15781f0336bdf3ad71576bd092ac7ce4e78bdfba7eb8d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "852c7196751e2ddeef00ef657db51f254a4538e2f155076706f5badb30b69ac5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d4914fbfdcedfb9db8e06479ada69122d01636ddea56564cfd9622fb906fc802"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "432cefc67997dfee5eedf62f8342bdf57e69c14830cee6fd081d061f74776317"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4572987a38327c4bf837c921838ee9af402983a33a1c1f13552b58399dbfa57c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4d3952e6f5972eb1b5f67f3248055e9f8884e3efa8c5ba88b5dd36e59fc8bf6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "713ff45ad3dfebf8f627d30befcdf33ac692b0df6523448416648f7739f5ed26"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13714d80a9d5d8660d63e1d26e928ef5688738c82de55d79c0aa66642d58c45d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "880d89f3308cf6b9feae58ab22ca51933baa7140050b59a10fd8ebdf789f3117"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6aaf44e7b59b506f366a490ecea7817dd5f70d1d13552302be02c2b20ac4a27c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f2fc01535d8120273549b841badf9526ea648b023f9f2a5b73f1626677f6feb"
   end
 
   depends_on "python@3.14"
 
   resource "cbor2" do
-    url "https://files.pythonhosted.org/packages/3a/89/01df16cdc9c60c07956756c90fe92c684021003079e358a78e213bce45a2/cbor2-5.7.0.tar.gz"
-    sha256 "3f6d843f4db4d0ec501c46453c22a4fbebb1abfb5b740e1bcab34c615cd7406b"
+    url "https://files.pythonhosted.org/packages/a2/b8/c0f6a7d46f816cb18b1fda61a2fe648abe16039f1ff93ea720a6e9fb3cee/cbor2-5.7.1.tar.gz"
+    sha256 "7a405a1d7c8230ee9acf240aad48ae947ef584e8af05f169f3c1bde8f01f8b71"
   end
 
   resource "packaging" do

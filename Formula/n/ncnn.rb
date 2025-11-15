@@ -4,16 +4,16 @@ class Ncnn < Formula
   url "https://ghfast.top/https://github.com/Tencent/ncnn/archive/refs/tags/20250916.tar.gz"
   sha256 "7d463f1e5061facd02b8af5e792e059088695cdcfcc152c8f4892f6ffe5eab1a"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https://github.com/Tencent/ncnn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9575e2e2deeb3785a991251efe534511113a9cb372053585101a6f84977510cc"
-    sha256 cellar: :any, arm64_sequoia: "e9eb6dd921a6fe37e559d98b95448a11fa93b637440d8ee6a17b793beb935e90"
-    sha256 cellar: :any, arm64_sonoma:  "64828fbeba8322b2d4a2b9477eecdeb8167bbde96e2aa8526f57c794f2b5678f"
-    sha256 cellar: :any, sonoma:        "b8d3624d50331b1138f3c6c9dac4f9b735d22f71c32b8c2eb4b19538aa74d13f"
-    sha256               arm64_linux:   "af2b2661461b344d3d65c38f1eae611b3bd2f97f37c36ce3d141fca43d573333"
-    sha256               x86_64_linux:  "416ca733aad1d13372e08fe2e397cee8f09a1a1b2fb12139377a48e125aee857"
+    sha256 cellar: :any, arm64_tahoe:   "c97a05902ca7dffbfd03fb1ee2000d19b9c8b6d381b712b9e7d0940367284e68"
+    sha256 cellar: :any, arm64_sequoia: "67e613b514a44b8ccc68eca7e567fc3c7927fdcaa9c58647812f5d44cb275e97"
+    sha256 cellar: :any, arm64_sonoma:  "7a9b469f1647be5ffc37185b3dc383a8394f1bfba2b21254f27ffc74b5ac2ebc"
+    sha256 cellar: :any, sonoma:        "10f0318b870aaf5e3a043cbbe51fe5e6b62397493cffabf920c7df3f53010337"
+    sha256               arm64_linux:   "cebe755b72b9eaf9883cfb91fa0cb4605469e1e1ff58c601feb74b109866b0b4"
+    sha256               x86_64_linux:  "65b0415c4137678debef920d6dc39bf0cb8fc7443238c6166cab279b37769417"
   end
 
   depends_on "cmake" => :build

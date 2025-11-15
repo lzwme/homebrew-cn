@@ -1,18 +1,18 @@
 class Gopass < Formula
   desc "Slightly more awesome Standard Unix Password Manager for Teams"
   homepage "https://www.gopass.pw/"
-  url "https://ghfast.top/https://github.com/gopasspw/gopass/releases/download/v1.15.18/gopass-1.15.18.tar.gz"
-  sha256 "e7773bf5e6a51075d84c656525fa53228dde401dd33e5636fdd5ec9b896fcdf6"
+  url "https://ghfast.top/https://github.com/gopasspw/gopass/releases/download/v1.16.0/gopass-1.16.0.tar.gz"
+  sha256 "c7eb08c2b6dc2168aca54b503ef36b9e213107b1a9b8c0d25b11ac315ce8cd23"
   license "MIT"
   head "https://github.com/gopasspw/gopass.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1956c5c00b9236ba5fc1181605d8a9ee99287666ab152f8771e5fde55aba0803"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68e9291f7bd9e370fdea3dc7fcfcbcd25402ec89e4657e1e7acbd90417ecc995"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df9a5607bdb7d082eb3d81a432b4baf269fd430bb77cab722d213b2be706f10a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "42335fb79e36bba939cb8de30f919a42986bb5ace1be936defb89fb8a4f98b8b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e801ce04563bb5df719d76b22d4afff87e3fca76a58aeb66ff89cb0de73a1c65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62517a73c4013200394deb38a2c80d727ebd808bb61d3683ecd6ee9fc9e94fb9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e3ea5a1fc68ca352c96b4d36ff301c0afe45e398f70a16aaefc88e159ae1afb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3aeca39cf89b4d13eb52dcb43972c728bd89f9a96aa5a445f741062aa9e261ca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "681adc625fed9e862bd4c376799a4a2e7506940427cfafb3e61b75e038f1e939"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ff5ad8ded3b2ba6c5dcc21927f832fd778c362f8444ba5f692094e5a8efaf8cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "604fc533da4e33e3ecf912def01550af78e7c8dedd37f4d259d47c5cc11b959f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e811b541fc239426f6992d738df25dbd1b1d4b3ed2052a28219b98025fea42b1"
   end
 
   depends_on "go" => :build

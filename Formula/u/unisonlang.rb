@@ -5,12 +5,12 @@ class Unisonlang < Formula
 
   stable do
     url "https://github.com/unisonweb/unison.git",
-        tag:      "release/0.5.50",
-        revision: "6e59c0a34ff0929dcdf2dc8e7ac5833b0f374455"
+        tag:      "release/1.0.0",
+        revision: "177d0635420f2dd9d0ba425d65eea5911253d5bb"
 
     resource "local-ui" do
-      url "https://ghfast.top/https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/0.5.50.tar.gz"
-      sha256 "b245364195eeeaf3cb7b28b9ccecfee61876989121890879f4c11bbb99c9b129"
+      url "https://ghfast.top/https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/1.0.0.tar.gz"
+      sha256 "8e7fbe261f84ae8d4ccbb144d5fe71bf7b48dbdf05219d9db10541f5b995e1cf"
 
       livecheck do
         formula :parent
@@ -24,12 +24,12 @@ class Unisonlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23ba58be95c0437d3a546a20d5ab1820f8bfe36ed421adf303438dec301a4141"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f75d71416f65eeaede9d844760cf38814543caaae8c4b88a5c9feac90f7eaf30"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b7edbc264005a5de880a91010a3f8c8eca69abfa8dc5d7e3207d2e65459e479"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b3045a711aaffd5fa4f47c12f79a3116404bf0bc1956e4a0456e50f0d6a1331e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "74db7f58ae1ecfa7aebf1003f43dfa1de378519a071e6471a38580f9d4f89543"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "127d8d99f35a7c99f5bb9b49cff9830e2b31758eb8f5aa99881173504937311b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a3bec3dee914213c4c1bf65db1b45763090eb973d5206511db9dbc824f5a7904"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fcbeb107ebc64e1e5dad4538c1caf97fccbb3d4ce0706ddd5a5d401394153c74"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2ea9a344257f401e24904fabcd44b09072b5f6c553ce1c8eb49488f0ad65a29"
+    sha256 cellar: :any_skip_relocation, sonoma:        "27c34820d33707ffe1c7b91a43d9503a63a15f0d33e00b906c652787f3da5feb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c6bb333689eb301534d9650a8adcfb8d93c9b8dc62c7ed275d6e5e388ca6d58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66137726856464aa0c5cff7e6a4c147312cba1950d832528ea8d315a86824a95"
   end
 
   head do
@@ -44,7 +44,9 @@ class Unisonlang < Formula
   depends_on "elm-format" => :build
   depends_on "ghc@9.6" => :build
   depends_on "haskell-stack" => :build
-  depends_on "node" => :build
+  # FIXME: `html-webpack-plugin` for `local-ui` fails to build on node 25+
+  # https://github.com/jantimon/html-webpack-plugin/pull/1880
+  depends_on "node@24" => :build
 
   uses_from_macos "python" => :build
   uses_from_macos "xz" => :build

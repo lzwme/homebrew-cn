@@ -12,8 +12,11 @@ class DotnetAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "87c0de05a539ec51f0b74209774ff81f99752380c4efa4ee264b75eb764197e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c234163bd2a61d6aaf487de700be2a958d950384e377ba93a1e227b6e15341f4"
+    sha256 cellar: :any,                 arm64_tahoe:   "66d0594313c7ba5fc1e3744bd085079c7fd69d12da9deb7404042fb0f5571f7c"
+    sha256 cellar: :any,                 arm64_sequoia: "d8c81912a95a54a3e3cd36cfff8adceb5d4c312baca2fd3a2fb6e222e0d21334"
+    sha256 cellar: :any,                 arm64_sonoma:  "09150ddba17caf0a48cee30be2e4828dfe529758e41d673204ec73dc83e49ad3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "87c0de05a539ec51f0b74209774ff81f99752380c4efa4ee264b75eb764197e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c234163bd2a61d6aaf487de700be2a958d950384e377ba93a1e227b6e15341f4"
   end
 
   keg_only :versioned_formula

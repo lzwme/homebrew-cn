@@ -4,16 +4,16 @@ class Bear < Formula
   url "https://ghfast.top/https://github.com/rizsotto/Bear/archive/refs/tags/3.1.6.tar.gz"
   sha256 "99cd891eec6e89b734d7cafe0e623dd8c2f27d8cbf3ee9bc4807e69e5c8fb55c"
   license "GPL-3.0-or-later"
-  revision 13
+  revision 14
   head "https://github.com/rizsotto/Bear.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "eed336692e1b142d99fa42eb02039276bfee17fae510ff8b3991ea909ca0c9a1"
-    sha256 arm64_sequoia: "1a0362dba17bddffaa1904592fee8e17d6da4a14d6abec690a177559195f6247"
-    sha256 arm64_sonoma:  "0d16aa42a9c6d3a972770c32d1bfd4e58be7b3d747033353e217befba257b6e1"
-    sha256 sonoma:        "0368697645ec4733cef9b62925a3dc170fa1c28986702a63a84ca4b9b054bb07"
-    sha256 arm64_linux:   "47a892cfcbd94dfb5b553e5acb4741fc20f4a5ad22582c152e4e05454db21a7c"
-    sha256 x86_64_linux:  "1084d51e793d662b799db8704d94161108bda1f60c82a9144b949529a43cd9cf"
+    sha256 arm64_tahoe:   "0d235eaebf9cc6e4719a86058b60f209f63771e786699c5734e8fba33e82ddb4"
+    sha256 arm64_sequoia: "1f6eb8990475c3bc4872984b7fd70e3a7f5d5e1c64ab96e45dc98ba0b3b573e2"
+    sha256 arm64_sonoma:  "16a9b941646031b42b41be0db65d9e593553e6b1d4b043236f4de2c2e713395d"
+    sha256 sonoma:        "1847db3aa97264ed862afd71e72b8229f8446a6ff7e6c2d2e78dc90957d7d196"
+    sha256 arm64_linux:   "2db2662e1f095c29d5815c97abd972bdba964a2f0b16bb9060c7f4b7c7b273ea"
+    sha256 x86_64_linux:  "28f6edd747b0b093f320afa3c8a5dc00aa6f2a9eba40bbda01a3efa87510585e"
   end
 
   depends_on "cmake" => :build

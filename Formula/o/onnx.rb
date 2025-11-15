@@ -4,17 +4,17 @@ class Onnx < Formula
   url "https://ghfast.top/https://github.com/onnx/onnx/archive/refs/tags/v1.17.0.tar.gz"
   sha256 "8d5e983c36037003615e5a02d36b18fc286541bf52de1a78f6cf9f32005a820e"
   license "Apache-2.0"
-  revision 9
+  revision 10
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2ff2d0d108b9e50c0e9633d386bf7bba5083f45e5ed5f883798c89ba5b0db0e3"
-    sha256 cellar: :any, arm64_sequoia: "33f7245ea5c307c6ca03766dc84206c6b6633071f58f1cac4560df977b8eaece"
-    sha256 cellar: :any, arm64_sonoma:  "ea3ebf6bae5701b979e782ff07c270b0e301f8f8da4c475c3f98afec9931a636"
-    sha256 cellar: :any, sonoma:        "be95884321c3cc3ef5e54e94f7f14d4b7be12eaf74df6523a7171e36a5f2192e"
-    sha256               arm64_linux:   "e7c71220fa40b171d9d2f1598ce03985e6412caff18cea0851424ff0e2369e29"
-    sha256               x86_64_linux:  "27a426fc293fda91b5e8d1ce3e34de5a179ea78dbd9e34f8b0d20a7dc57d73d3"
+    sha256 cellar: :any, arm64_tahoe:   "e337f975ab805aec26891978915d578377067eb42cff6628bb1982d829b2be3e"
+    sha256 cellar: :any, arm64_sequoia: "6c2fb47288ff8c48e45deb6e65a8052a270c9848fe0942a5888b2f22837cd2b5"
+    sha256 cellar: :any, arm64_sonoma:  "1f26d0ddccfe54db6fcb178b02b0fbcebe5f326db5b4a23ae4db92bedaaa918c"
+    sha256 cellar: :any, sonoma:        "106412e0003bcba6c802fc9470afdcdf803c960e3bd47b83a0062249b56f999a"
+    sha256               arm64_linux:   "f40be03d154f58f48a7b1487cf6e925132c9d557f1775cb4ae387309b161703d"
+    sha256               x86_64_linux:  "7d0fe121a68153a54751e75a51d76bebc00bb6f1d79f3f0193fc47bb9fba38d9"
   end
 
   depends_on "cmake" => [:build, :test]

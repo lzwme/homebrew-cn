@@ -1,20 +1,18 @@
 class Joker < Formula
   desc "Small Clojure interpreter, linter and formatter"
   homepage "https://joker-lang.org/"
-  url "https://ghfast.top/https://github.com/candid82/joker/archive/refs/tags/v1.5.6.tar.gz"
-  sha256 "09e45a6f5dfc86819c31b8c157068b0e76bd52036c881210d6645973bbbdf55b"
+  url "https://ghfast.top/https://github.com/candid82/joker/archive/refs/tags/v1.5.7.tar.gz"
+  sha256 "a68fe9d58f8dc9440eb888e53b97dd6b83e5258c4f5a8f5856b48e1b6d967356"
   license "EPL-1.0"
   head "https://github.com/candid82/joker.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "67af43f8a4277a88210ee6cd9758fc71f76e55ed3497d6253e666116527091da"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "679b9eae3720dc9778350d62f3817a0911eb5b221dbaa565324b5319a29da46a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "679b9eae3720dc9778350d62f3817a0911eb5b221dbaa565324b5319a29da46a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "679b9eae3720dc9778350d62f3817a0911eb5b221dbaa565324b5319a29da46a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cd5cbe3c6e92f785c502c6ad3a91ad89a296bdc5b0cd657143b98c914df41d34"
-    sha256 cellar: :any_skip_relocation, ventura:       "cd5cbe3c6e92f785c502c6ad3a91ad89a296bdc5b0cd657143b98c914df41d34"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1119c0ba78fef629856f5f64fec7fda7455a2c1bad832ce97bc6190fb706c4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ae5d2126bca255142c39421208a11fb6543a7e2e02cf89430d2bc92fa6d20be"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de92cfed1610807a798d13cfbc1291eeb2bb57dde2b6ffb66916e3d5664d6318"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de92cfed1610807a798d13cfbc1291eeb2bb57dde2b6ffb66916e3d5664d6318"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de92cfed1610807a798d13cfbc1291eeb2bb57dde2b6ffb66916e3d5664d6318"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8377f78f975c6d434ee5a7cb4c5faee32212c6b0b4c238e60a8a6b49a4b3fffb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3452f141cc899a11d1385b6a059101d60b29bdad0d53753c584818e5ea2bca55"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8314e19a8e25ad2370c8dc010c360f45d6273c8936439cc184d04c91858a6cfa"
   end
 
   depends_on "go" => :build

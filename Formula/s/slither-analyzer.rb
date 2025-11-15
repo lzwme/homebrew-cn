@@ -10,13 +10,13 @@ class SlitherAnalyzer < Formula
   head "https://github.com/crytic/slither.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "84f69262fceb9c906c3f9a7c3b1d919b50b2e4131d434f887a45e656f302dd8e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e001edca4c14a267a7416ff953e0ff353c5f92d1f1eb9b46e61dd60f9f5e5c8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40acdffd1f7bbd1996e03a8a7cc761d2b23e275f3e8e2661c31296d6908ed772"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8707e45e0d1e593b26fa857d39214f5168be3b4cfba51d963eb086593c264a24"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9833a1ad980832d99b14f9ccd394e3ac1de732b70ba61cb91386ba7c572bdd42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "611c8673e49167d01cfd8f7e953518e68bf67e29314eacca98f7a2cec105b812"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c42a2690a7bad77518ae0590741c17b556966af0f94bd9019f7bba5d919ed4e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97670d96df100357958fde9bac16291c6d19965fed64fa9cd22f3c9c5495c007"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "849a6647db56315fe077381f27568d536d55631a4507d7b44fd69505efdc7e27"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0ebfd9563d4e03989d7856d9078833a322d0916950611d522a07e49b6804969e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "442f206a175559f2181cb946a202f45b9026e70625faf0910f8ddec995995f6d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5dee43d0803041d4e31b9d3ea4ffb533045112363bc085f3c39462e0f6c2838"
   end
 
   depends_on "certifi" => :no_linkage
@@ -66,8 +66,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "crytic-compile" do
-    url "https://files.pythonhosted.org/packages/78/9b/6834afa2cc6fb3d958027e4c9c24c09735f9c6caeef4e205c22838f772bf/crytic_compile-0.3.10.tar.gz"
-    sha256 "0d7e03b4109709dd175a4550345369548f99fc1c96183c34ccc4dd21a7c41601"
+    url "https://files.pythonhosted.org/packages/f4/cb/669ed02fbfe17091998f52a7e3326ac276409117ea10a2c36b2a852a22f9/crytic_compile-0.3.11.tar.gz"
+    sha256 "d4e2253d5d81ec3a75deb3ab9fc2c2d2db56e835001cf07f3703911d74b56716"
   end
 
   resource "cytoolz" do

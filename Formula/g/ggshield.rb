@@ -3,18 +3,18 @@ class Ggshield < Formula
 
   desc "Scanner for secrets and sensitive data in code"
   homepage "https://www.gitguardian.com"
-  url "https://files.pythonhosted.org/packages/9c/38/9107cbbe219c42bbbbe2d9bda6297218b87660d05635f01adfacb9e0dab1/ggshield-1.44.1.tar.gz"
-  sha256 "5c9bb82919efa2996a95f7a30f26a5e1f42debf069516df07290556be88ecb18"
+  url "https://files.pythonhosted.org/packages/56/66/483db468f88c8eb9f75f285b9713d68edcf97fdbc0443ae451bb7bcf7493/ggshield-1.45.0.tar.gz"
+  sha256 "8c4a75920f50e7e1f7d43d0a58e6c2036c4a2bf0cf28e18fde97642d55c893e9"
   license "MIT"
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5bbfa21ac18e66c17796104a0095dd191a979e33efe576b8a8aca56cadc8a325"
-    sha256 cellar: :any,                 arm64_sequoia: "fc0159fdd75e98d1a7ca19232dce2891148c1e8262987fe0415cdda16bc3ee9e"
-    sha256 cellar: :any,                 arm64_sonoma:  "e957379b69c917a5f2e449e9960c6f79d67d95d287cb50e54d63dfa7f993c6e1"
-    sha256 cellar: :any,                 sonoma:        "4edcd74fd6795b3999916432aa3a8915bbb4cfa7aa9793a7787d0b76de137565"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cdcac2a1fdae066faa25f05b55d4309f8d0cbcd8d0a228845549fa437b6176ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "182bd0780cd1da0ec57a862fa986e5460a7b03ae34f12cc52d9fd7429bf87bfa"
+    sha256 cellar: :any,                 arm64_tahoe:   "e640341f43c619b7439449b6f2df8191084e24920abeecd9760a4e2d19b0fbf4"
+    sha256 cellar: :any,                 arm64_sequoia: "61d370e0886bb699cf6685126c2a0d6d8162f28c04fdc601e15df8c04394c536"
+    sha256 cellar: :any,                 arm64_sonoma:  "b8386bb2ade8fbfbd65bcb9c3018df431cb01ebc5d7bf35ec90fc552e7bf0c53"
+    sha256 cellar: :any,                 sonoma:        "37028f52b5f0ec26d66026f38072f22aab33d66c7243920420df2c9abf1e564b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e40ed042be9d446541dca3d43a9a496bc9e9ce5f150a3d3313f1e2399ebe338"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3fb3be3f8ebfb092a8d376eccf69861e148de4e746fe36d2df8daf24bc601f6"
   end
 
   depends_on "certifi"
@@ -75,8 +75,8 @@ class Ggshield < Formula
   end
 
   resource "pygitguardian" do
-    url "https://files.pythonhosted.org/packages/2e/1e/efbcbb0c6edd571dffdc62f63c2707931fb7670e105aa01dec422e130fb8/pygitguardian-1.26.0.tar.gz"
-    sha256 "a6d4aa7d117ce05a7e652f96699c0fbb9fe22011530c55e0162c718df803e91f"
+    url "https://files.pythonhosted.org/packages/d1/4d/b0adec91a5e76360f13a54595a35ea473e50c4a800ce65aab0d1804b6b11/pygitguardian-1.27.0.tar.gz"
+    sha256 "e8a75beefbd48ba96b307877d057176e260fbfaed125548f6cb2279efe671373"
   end
 
   resource "pygments" do

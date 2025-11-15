@@ -2,7 +2,7 @@ class Bloaty < Formula
   desc "Size profiler for binaries"
   homepage "https://github.com/google/bloaty"
   license "Apache-2.0"
-  revision 42
+  revision 43
   head "https://github.com/google/bloaty.git", branch: "main"
 
   stable do
@@ -20,12 +20,12 @@ class Bloaty < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "540b073368aa5403c4f3842c0159187e1775a8b5eef8dd564179d38277e6e9fb"
-    sha256 cellar: :any, arm64_sequoia: "048ca4fdf23adb247adbe883437ff6a9d29b0c46b6b84dd0eae7f84b39e0e040"
-    sha256 cellar: :any, arm64_sonoma:  "eab4853f79751d93764cb87491bbab3a401cc7155800382f82d6cc1ffa0e7446"
-    sha256 cellar: :any, sonoma:        "ae2d1ee8e7b9502d5b4a86e5d320b8184238ce3b300a7abe7b7677db8a9274c9"
-    sha256               arm64_linux:   "48924fbed0ebae06151e324b8085184084b8c788f4d1351737bfa72897eddfcb"
-    sha256               x86_64_linux:  "2efb5b644e72f9175cae764a3ab17d9dfe110e11f4c077430f16d9df69896d9b"
+    sha256 cellar: :any, arm64_tahoe:   "41a9df112be72d46c6f52f4ec5d146fb3ae14ca4315ed288f8ccf901796ec1a1"
+    sha256 cellar: :any, arm64_sequoia: "097a74fd6b9fbb8723c04b00e9b0408f3b8f38e2c010978a9ccb68aebca8a9db"
+    sha256 cellar: :any, arm64_sonoma:  "a6f8b6b048c77cad2975dfd03d3a20938233b2d59bdeeac39d5e8e74d9f4178d"
+    sha256 cellar: :any, sonoma:        "e1a3cba8dc751672420cc6baf732621796d7019fc5de85e741e7b59ef493c52f"
+    sha256               arm64_linux:   "381dfcef722c1d17d66d97e88d01d36b84097761c3d4af070a71bed83bfa74ae"
+    sha256               x86_64_linux:  "d94ceb81ca9937546fafb8f11195431c989fad5517978458321d1cc9bd58238c"
   end
 
   depends_on "cmake" => :build

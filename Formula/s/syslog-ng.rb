@@ -6,7 +6,7 @@ class SyslogNg < Formula
   url "https://ghfast.top/https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.10.1/syslog-ng-4.10.1.tar.gz"
   sha256 "dea90cf1dc4b8674ff191e0032f9dabc24b291abfd7f110fd092ae5f21cde5d7"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
-  revision 2
+  revision 3
   head "https://github.com/syslog-ng/syslog-ng.git", branch: "develop"
 
   livecheck do
@@ -15,12 +15,12 @@ class SyslogNg < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "db706c7197e01a1008d24b0cf828ddb44e351f3d98e74c05974c18aece99da07"
-    sha256 arm64_sequoia: "0cc1b38c887749ee26090ad773a58fd599ef0631908997d4230c5f78cb7c0496"
-    sha256 arm64_sonoma:  "a500f9e6e24c1dace649fed7550ce6780675e8339c90dd409f9dda4b518e78c1"
-    sha256 sonoma:        "36faa8f15e5ceb9cd215a0fe33ed4b5cf6b80c2733e7bc9163688872c1b65311"
-    sha256 arm64_linux:   "2027333b99008c25501bd9c2f0db376fcec3c690c6a12baa2269ce45fae5c860"
-    sha256 x86_64_linux:  "12d0ca4dea71fa43f57dfb12002d53fb97c63d6ae7c4470cbaaa31d7f5251e0d"
+    sha256 arm64_tahoe:   "de321c8629d5063aebf2bd17f7112ac08b7a7082cb6b329b4e645623dfdeb214"
+    sha256 arm64_sequoia: "cd73472808d144299ea6f756a606f8774b2db6c4075443db732e5066af1921a0"
+    sha256 arm64_sonoma:  "293fd9077af989210279585230ccfb74fe120cdae4e9af743d50883ce445bca6"
+    sha256 sonoma:        "e2ed2980c24562ebdd85ca9ff6b7a605351f544248e72dc26ba5ce33e6bdc566"
+    sha256 arm64_linux:   "626af44535225d386ef4de41a121d3cba7916568759aa17c86fc2a38558942b4"
+    sha256 x86_64_linux:  "74d538f25fbf55d0307f7366e16e8be235e99cebdd569b35ceefab53ae901c75"
   end
 
   depends_on "pkgconf" => :build

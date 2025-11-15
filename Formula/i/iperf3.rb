@@ -1,8 +1,8 @@
 class Iperf3 < Formula
   desc "Update of iperf: measures TCP, UDP, and SCTP bandwidth"
   homepage "https://github.com/esnet/iperf"
-  url "https://downloads.es.net/pub/iperf/iperf-3.19.1.tar.gz"
-  sha256 "dc63f89ec581ea99f8b558d8eb35109de06383010db5a1906c208a562ba0c270"
+  url "https://downloads.es.net/pub/iperf/iperf-3.20.tar.gz"
+  sha256 "3acc572d1ecca4e0b20359c7bf0132ddc80d982efeee20c86f6726a9a6094388"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,14 +11,12 @@ class Iperf3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1630fdd41b9e363e70fdfa0390dac4dd1c884375acf19ddf227abbf7bb7002ee"
-    sha256 cellar: :any,                 arm64_sequoia: "77ccdb114a4c79a0649bc2d0a660bf884d2b4f4372e8944021aeb10f5e9faf37"
-    sha256 cellar: :any,                 arm64_sonoma:  "6f73dfb6118ea93da67d23d2394d4cadca552e97a9ae3cbae39f4d6b0d7b350a"
-    sha256 cellar: :any,                 arm64_ventura: "f4bbf1679667d2cdd9cc15246b0df44b7b25c21e94d93b80e1a27b008cfb194c"
-    sha256 cellar: :any,                 sonoma:        "54df2f7e284458c0d81a9208ba39c5d30d7c8ecc0d5031ab6567c7521ec3aee5"
-    sha256 cellar: :any,                 ventura:       "0415f5939d7d427618b739cfcdf006cb936232756b4acf34e4bbca64c543b4d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1b01736e25f06ebd563d0c45611e37d6f0d41012daf37f23642e80900dcb30c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d08e72ccd5ffb3a3bab60e65fd54308eb6dc6ddf8703fadae1341b88b77faed"
+    sha256 cellar: :any,                 arm64_tahoe:   "21d104a64ab9a03149a6a68621fe7c34113107d7c241aae10b30f7f54fc63278"
+    sha256 cellar: :any,                 arm64_sequoia: "da658d9fe13ab8492eb7a6b73312990099c6a9da7a91c97653c977e183f1afce"
+    sha256 cellar: :any,                 arm64_sonoma:  "df35cee97da6db01620d52d7ca55c882fa7282add347822150412e23037877cd"
+    sha256 cellar: :any,                 sonoma:        "7b8079f6dc2f72de7a70d62aec60312220fe395646f9b6d1307d9e8fafd82ade"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0ae4a5324a6eae284b7863f6ca0d94fde6b0bc53dea043093533953a1c1bccb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b2515f7071e158cb4c44bdc26a5ca183e81cb00565b4e1f2fbb7393d5cc7183"
   end
 
   head do

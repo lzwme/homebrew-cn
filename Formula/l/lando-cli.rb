@@ -1,8 +1,8 @@
 class LandoCli < Formula
   desc "Cli part of Lando"
   homepage "https://docs.lando.dev/cli"
-  url "https://ghfast.top/https://github.com/lando/core/archive/refs/tags/v3.25.6.tar.gz"
-  sha256 "53218d29380ff2792a24313cd41141d144115e5ea76c510816da3bd03cc49f59"
+  url "https://ghfast.top/https://github.com/lando/core/archive/refs/tags/v3.26.0.tar.gz"
+  sha256 "b9b3cb2fc3e7a941f944f25dfeb7cdf8d02bb3fd164997acf22864dab8d4017b"
   license "MIT"
   head "https://github.com/lando/core.git", branch: "main"
 
@@ -12,12 +12,12 @@ class LandoCli < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "61048e58e98a2ae3779ea1c542ab3a55b0e0ba100a4c65c3b9de7cd295a4766b"
-    sha256                               arm64_sequoia: "5b8a7373b73c3255aff9980b233507de7e2a67b10eefc72274b7cdeaffaa6319"
-    sha256                               arm64_sonoma:  "61ff07d39da42fd7ce93d702d87cea64cff482e7bf08b690c15480d71cdadd01"
-    sha256                               sonoma:        "328dd2107340bcff7166b56d23e1b21cf0a3c2797044085670779a42d74d2d74"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3103b37484e639a55d939648ecf68881f4793f2ad487017eb2f2f7e8147234d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3103b37484e639a55d939648ecf68881f4793f2ad487017eb2f2f7e8147234d3"
+    sha256                               arm64_tahoe:   "5042548556cc4c290eb5bac07e300e3f26b01e3371c484e8ad21eb7ca6788181"
+    sha256                               arm64_sequoia: "b9a8e2afce5a1a7d3bd6fcbbfc7d0c5d55e65e0022cba468eb91ad835c88dc8b"
+    sha256                               arm64_sonoma:  "022a58faace19fa7e3f7d86d843be9ef428637f7901d0164defb371869c78cdd"
+    sha256                               sonoma:        "78b51db437725478d963d89911bf6b2c227296d682dd17ff26c7b0079140910b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e91b3e3ab9dc9cf9a16ec784a84dc469996adf887ffc771ed2c9dbc5878a81bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e91b3e3ab9dc9cf9a16ec784a84dc469996adf887ffc771ed2c9dbc5878a81bc"
   end
 
   depends_on "node"
