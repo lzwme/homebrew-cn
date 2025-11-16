@@ -6,14 +6,13 @@ class ActRunner < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a0cfa9e0ffbab45375a67c81cc5ce165fdfc99317724052adfaa8b11e20c531"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e525763dffbc8e994cb4d45a953a9831c2a55157c0f69594a756f8c430ce91d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e525763dffbc8e994cb4d45a953a9831c2a55157c0f69594a756f8c430ce91d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8e525763dffbc8e994cb4d45a953a9831c2a55157c0f69594a756f8c430ce91d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8180d78844d19ff451c313ecc30965cd7f0a7c5c8fdb5fcee54a95bfd2ed719f"
-    sha256 cellar: :any_skip_relocation, ventura:       "8180d78844d19ff451c313ecc30965cd7f0a7c5c8fdb5fcee54a95bfd2ed719f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0430e7fcdbaec8134f0952177678469a9da4fc497a33f879fd55d5b748ac0a5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "716c0ddb4c00ee04e35141a73c50b74aeecaaa17b9504a5537f1794927f11cce"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3283c0d05e2583594f90c1430b16e99451e172d385475f138efa139e764c195"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3283c0d05e2583594f90c1430b16e99451e172d385475f138efa139e764c195"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3283c0d05e2583594f90c1430b16e99451e172d385475f138efa139e764c195"
+    sha256 cellar: :any_skip_relocation, sonoma:        "16bdbacd7f86a3ada3040c12a1f5db4aec0abae7f5467d52e8e38f8d26ca8af8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c57b15b24a7b4719926061d95b3840e42b07202a27cbcf284607acadc0dc6c13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bb584490a65e01c487c833f9b3778c804b82599893c06e53e3335e9f854a861"
   end
 
   depends_on "go" => :build
@@ -26,19 +25,14 @@ class ActRunner < Formula
     system "go", "build", *std_go_args(ldflags:)
     generate_completions_from_executable(bin/"act_runner", "completion")
 
-    pkgetc.mkpath
-    (pkgetc/"config.yaml").write Utils.safe_popen_read(bin/"act_runner", "generate-config")
-  end
-
-  def post_install
+    (buildpath/"config.yaml").write Utils.safe_popen_read(bin/"act_runner", "generate-config")
+    pkgetc.install "config.yaml"
     # Create working dir for services
     (var/"lib/act_runner").mkpath
   end
 
   def caveats
-    <<~EOS
-      Config file: #{pkgetc}/config.yaml
-    EOS
+    "Config file: #{pkgetc}/config.yaml"
   end
 
   service do

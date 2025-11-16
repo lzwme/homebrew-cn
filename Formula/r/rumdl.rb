@@ -5,6 +5,11 @@ class Rumdl < Formula
   sha256 "3bfc48af21568315e22c2c5e524fc13b8c2c2d7ea139346b939c405c4aeaa73f"
   license "MIT"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "231b4b38d7d83944545b5313a954bdb3f085379c57c57797b4e4b84070f83a9b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c77047d1ce7c659dd4d71a4ff730d736184129219948bb4a77e0e91d6b27607"

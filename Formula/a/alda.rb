@@ -6,12 +6,13 @@ class Alda < Formula
   license "EPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55090f02a7885a371d14419e846509d9941a4a3974316789395807fe88ec5654"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe22e245ce2c766bde355e0648ef9f125fdc40eebf29060865b57904010588c8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "906227a181d5894cf6284428c961e000a0aff63f658cd466eda4baae7b047f63"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9ff69e4d0654de8ce140f362e34767575fdd19523d1fc09e9d0ab0991fa43f12"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c5345ef8760b3ad37cfe80b5157790134d1a8e00fdb6b29311f30d01df3e30f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e1e328907176bac96c3c086fe3514474880518d6d2716f079c9af51ca5da642"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4912e2d3e2170139b141265108123e4e0720e14fddb874cda07d5dcc3266f579"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8ba7e1c062cdc18395cfbd06c390420d0848b79181f1ea03857fdbad1007fb6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7910f43e3fe793ba0b3852420996d0afda849985c01c573f849e78478caf9fe2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "23fdeb527ed70db77f08e34e9c9d740b9de63a30923c29f33b8ee4cba35d1fa8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0169935fd947185c65f8285ff870accb9143ab6eef2a9c2cfd80a3c82145ce4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41a11630d37ed6d45b44d13a439ec58452c819994148c623d4c9049ab0e83993"
   end
 
   depends_on "go" => :build
@@ -30,6 +31,8 @@ class Alda < Formula
       libexec.install "build/libs/alda-player-fat.jar"
       bin.write_jar_script libexec/"alda-player-fat.jar", "alda-player"
     end
+
+    generate_completions_from_executable(bin/"alda", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

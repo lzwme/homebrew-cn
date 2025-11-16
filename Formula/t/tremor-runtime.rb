@@ -64,7 +64,7 @@ class TremorRuntime < Formula
 
     system "cargo", "install", *std_cargo_args(path: "tremor-cli")
 
-    generate_completions_from_executable(bin/"tremor", "completions", base_name: "tremor")
+    generate_completions_from_executable(bin/"tremor", "completions")
 
     # main binary
     bin.install "target/release/tremor"

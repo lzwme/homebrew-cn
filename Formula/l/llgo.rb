@@ -1,8 +1,8 @@
 class Llgo < Formula
   desc "Go compiler based on LLVM integrate with the C ecosystem and Python"
   homepage "https://github.com/goplus/llgo"
-  url "https://ghfast.top/https://github.com/goplus/llgo/archive/refs/tags/v0.11.5.tar.gz"
-  sha256 "e025993d12c1f5e49e5b8dcb31c0e8b349efe56970d1a23d6c089ebd10928c6b"
+  url "https://ghfast.top/https://github.com/goplus/llgo/archive/refs/tags/v0.11.6.tar.gz"
+  sha256 "94e3187d0b8d4be48afc0d609b01df1ba7bf36b6ab713318ad29363a1043297b"
   license "Apache-2.0"
   head "https://github.com/goplus/llgo.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Llgo < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "149396741cedb0fb60fd5bf3d8423a8571bae92fed3f048a1e602f8cbeedecb6"
-    sha256 cellar: :any, arm64_sequoia: "de8b64199106055cb7e749469ef442ea7374d92178aa496aed0df11d705b8d16"
-    sha256 cellar: :any, arm64_sonoma:  "ecf2444adf9c01de2a302b6ed429ab4898777d022072fc0eef6ea547b02a4f9d"
-    sha256 cellar: :any, sonoma:        "0099ed69d28c0cc4d20032303dd9bb6dfb3d6be85da8d2faaa477ba84c05a7b9"
-    sha256               arm64_linux:   "6baf00949ce6a7cbbff5b25cb719701447be0959f47f6dae35208f018bd8b551"
-    sha256               x86_64_linux:  "aead0b7e4756d249c0af4971ed346b87738bdd6e1efb5d1f9881593fa36190ce"
+    sha256 cellar: :any, arm64_tahoe:   "fb74c5fb2ba0ce01583d483029d077952dd55346dff06fdc2beb0949cf2c695b"
+    sha256 cellar: :any, arm64_sequoia: "0c4b4f45dcf683285fbd6db973db96d64446a247b5b215bfb52e22a8a4204f86"
+    sha256 cellar: :any, arm64_sonoma:  "6f45883b556962736d7e276f33d4fcc47cff59b370e0544532ef557afe1c1dac"
+    sha256 cellar: :any, sonoma:        "13178f544ddf3d73fd57f0e16dec53f979245fad3d6556cc92c5a199b4ff5f54"
+    sha256               arm64_linux:   "577b9fc95fb5845f93bb7321b26a3843532f84aceefa6dcf3a580b84c81ede91"
+    sha256               x86_64_linux:  "62747f37803a846885e3d706cfef3f39a5a3940f238dffac02cd10ed120fc7f8"
   end
 
   depends_on "bdw-gc"
@@ -79,7 +78,7 @@ class Llgo < Formula
     if OS.linux?
       libunwind = find_dep("libunwind")
       script_env[:CFLAGS] = "-I#{libunwind.opt_include} $CFLAGS"
-      script_env[:LDFLAGS] = "-L#{libunwind.opt_lib} -rpath #{libunwind.opt_lib} $LDFLAGS"
+      script_env[:LDFLAGS] = "-L#{libunwind.opt_lib} -Wl,-rpath,#{libunwind.opt_lib} $LDFLAGS"
     end
 
     (libexec/"bin").children.each do |f|

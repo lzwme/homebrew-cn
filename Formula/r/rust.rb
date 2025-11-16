@@ -15,12 +15,13 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a9390ec84ef13e7f45b75657555194ad0d2a216e80c0d7ac19b3a91a96e66aef"
-    sha256 cellar: :any,                 arm64_sequoia: "497d0168379b6f2f749db9cdb8b282bcf9c9d05b81041a31de36326b35a33dd3"
-    sha256 cellar: :any,                 arm64_sonoma:  "06255433df140a0cc8444d18a5203be073d6f421eb482ab0fcda0d4069c5b01e"
-    sha256 cellar: :any,                 sonoma:        "2d96be20582967b10b080ab9b0ba417e364d5e086d9e251014ec4e38c2e28565"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a00fbcb1e537c6ec4392c06f02e82bd60e7a013f5512617fc9a8856139d2824"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59edd36f0d4f17b6a5ab4bc02ee4b3c871d127683f1941dcf617bed4b19df193"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "36b63a5a652a2080f8fb351b4e510d1dc5377cb6dd1e09001ee2e96a1e277c17"
+    sha256 cellar: :any,                 arm64_sequoia: "395669770ae8c4e8794418bfc40826d9e962f48edb1720811b89c0ddf5c1dcbc"
+    sha256 cellar: :any,                 arm64_sonoma:  "c3e8a00ee3785812eef4a56264e220185778ed142a46993edfadc43cab805beb"
+    sha256 cellar: :any,                 sonoma:        "14701fe5acdf435382821957e3596be783aa29440cec2e9a1b2c7c79579bc752"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dfd7a618a789b6fdebd2249dcc684538929f86ba0be90a460db36c57d541a1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90f5836d4ace4769eef7ce3bc0a501388b2c70191438cad5710a80c69df2e768"
   end
 
   head do
@@ -40,6 +41,9 @@ class Rust < Formula
 
   uses_from_macos "python" => :build
   uses_from_macos "curl"
+
+  # Required by Rust, see https://github.com/rust-lang/rust/issues/39870
+  preserve_rpath
 
   link_overwrite "etc/bash_completion.d/cargo"
   # These used to belong in `rustfmt`.
@@ -200,23 +204,14 @@ class Rust < Formula
       lib/"rustlib/uninstall.sh",
       (lib/"rustlib").glob("manifest-*"),
     ])
-  end
-
-  def post_install
-    lib.glob("rustlib/**/*.dylib") do |dylib|
-      chmod 0664, dylib
-      MachO::Tools.change_dylib_id(dylib, "@rpath/#{File.basename(dylib)}")
-      MachO.codesign!(dylib) if Hardware::CPU.arm?
-      chmod 0444, dylib
-    end
     return unless OS.mac?
 
-    # Symlink our LLVM here to make sure the adjacent bin/rust-* tools can find it.
-    # Needs to be done in `postinstall` to avoid having `change_dylib_id` done on it.
-    lib.glob("rustlib/*/lib") do |dir|
-      # Use `ln_sf` instead of `install_symlink` to avoid resolving this into a Cellar path.
-      ln_sf llvm.opt_lib/shared_library("libLLVM"), dir
-    end
+    # Replace the renamed llvm-objcopy with a symlink to make sure it can find libLLVM
+    arch = Hardware::CPU.arm? ? :aarch64 : Hardware::CPU.arch
+    rust_objcopy = lib/"rustlib/#{arch}-apple-darwin/bin/rust-objcopy"
+    llvm_objcopy = llvm.opt_bin/"llvm-objcopy"
+    rm(rust_objcopy)
+    ln_sf llvm_objcopy.relative_path_from(rust_objcopy.dirname), rust_objcopy
   end
 
   def caveats

@@ -37,7 +37,7 @@ class ErlangLanguagePlatform < Formula
     build_args = ["build", "--release"]
     system "cargo", *build_args, *std_cargo_args.reject { |arg| arg["--root"] || arg["--path"] }
     bin.install "target/release/elp"
-    generate_completions_from_executable(bin/"elp", "generate-completions", shells: [:bash, :fish, :zsh])
+    generate_completions_from_executable(bin/"elp", "generate-completions")
   end
 
   test do

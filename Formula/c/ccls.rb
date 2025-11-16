@@ -6,18 +6,18 @@ class Ccls < Formula
   #       https://github.com/Homebrew/homebrew-core/pull/106939
   #       https://github.com/MaskRay/ccls/issues/786
   #       https://github.com/MaskRay/ccls/issues/895
-  url "https://ghfast.top/https://github.com/MaskRay/ccls/archive/refs/tags/0.20250815.tar.gz"
-  sha256 "179eff95569faca76a1cdbd0d8f773c2cbbafa90e0fcce3d67a8a680066dce7a"
+  url "https://ghfast.top/https://github.com/MaskRay/ccls/archive/refs/tags/0.20250815.1.tar.gz"
+  sha256 "b44d9f981e65dcf950525886f8211727da8a41d3070d323d558f950749bc493c"
   license "Apache-2.0"
   head "https://github.com/MaskRay/ccls.git", branch: "master"
 
   bottle do
-    sha256                               arm64_tahoe:   "cedfe8609cd57d53caafa870ced7749a053d17120f8217c674a348024584afa9"
-    sha256                               arm64_sequoia: "74dbcee249ebd76e4622ebb433e037d3cadb84c441ca1f4c8933de00faa43051"
-    sha256                               arm64_sonoma:  "b498e68e4856fd358cf8c9d3dffcb31f2ff419912e078c39924f284c4e951690"
-    sha256                               sonoma:        "85fc2afb1dc84dcffda8178a99831864564dd839cd03874d5d1613c84ff72634"
-    sha256                               arm64_linux:   "66532e0dd148b2300b52e6999b7907f59931938b8422703dbef2c52fcc86724f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "001beaf77e3e2f2b127a5755ec07f3076fc7cf89ab8d3f78cd689a2f05fef240"
+    sha256                               arm64_tahoe:   "d41a620c124d28b837a29cfec3e13876930ae1e009e418288fc88999e32b6e27"
+    sha256                               arm64_sequoia: "749dfea1d4613ad31cd9fb75a6453abcf2a4255583d34725875b628e28a5a2c4"
+    sha256                               arm64_sonoma:  "6efb922e55abc89e8692f01983fb0535aba8c98ff1f44d955b2a1f2c2009335f"
+    sha256                               sonoma:        "45f103aff2b44c753aea52f1029069d9e07411b71fe406646bb4a1b1d26ff45f"
+    sha256                               arm64_linux:   "fa9463f30db82918f4ac61bfd4874ad5edc7e64602fd914cb64a54b7474c838e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ec6d7f2aaecfb5a5489a51020a06b6898c82b2e7597b47baec619f88eca9a06"
   end
 
   depends_on "cmake" => :build

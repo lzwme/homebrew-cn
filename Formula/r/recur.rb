@@ -1,19 +1,17 @@
 class Recur < Formula
   desc "Retry a command with exponential backoff and jitter"
   homepage "https://github.com/dbohdan/recur"
-  url "https://ghfast.top/https://github.com/dbohdan/recur/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "cf776be19cf0e55c7e8a29b546d813e1dc562c05b220cba291cb4812917bd6a7"
+  url "https://ghfast.top/https://github.com/dbohdan/recur/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "e1237455a14cc2b5c6a36f93b42b7fe98f24a0aad22cda7d7c7f29d83fbb261f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "149117659c69734078b7f8fc1b04dbd5e2656460b033bff06669ca1f48e9bd94"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "149117659c69734078b7f8fc1b04dbd5e2656460b033bff06669ca1f48e9bd94"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "149117659c69734078b7f8fc1b04dbd5e2656460b033bff06669ca1f48e9bd94"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "149117659c69734078b7f8fc1b04dbd5e2656460b033bff06669ca1f48e9bd94"
-    sha256 cellar: :any_skip_relocation, sonoma:        "23ef406ebd94bc895b9af4c80947ebeecdcf8a5a559949c0fabc9df4cf00a161"
-    sha256 cellar: :any_skip_relocation, ventura:       "23ef406ebd94bc895b9af4c80947ebeecdcf8a5a559949c0fabc9df4cf00a161"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ea2a8a6fb31399baff2bbeb66117a8e7196b509bd88f5f5be7bcd1ff48c3adc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afadb0c61c3dffaa2203399824a6debcd7cc82ef28b1f50f18a226a25d2869ca"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a33e3ccef88d17965f1b1ddbd2cbb25cc439c7cc0aa65990f5d4ef7d39b83bf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a33e3ccef88d17965f1b1ddbd2cbb25cc439c7cc0aa65990f5d4ef7d39b83bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a33e3ccef88d17965f1b1ddbd2cbb25cc439c7cc0aa65990f5d4ef7d39b83bf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "79cfd6abdfc9fbf499665f5674f45355701c62caf76096bf5fa46f1b297c4a16"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4cb2a8e43655dcdd038353d9f9bcbccf7cec6117a4b543dfa68f58e7e36e1b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80fc99124b1d694bf3363983fc8dfd3502f15fc287b34328136945c0e947fb9a"
   end
 
   depends_on "go" => :build

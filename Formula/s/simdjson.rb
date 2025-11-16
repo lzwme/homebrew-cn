@@ -7,28 +7,28 @@ class Simdjson < Formula
   head "https://github.com/simdjson/simdjson.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "a9a82d181534cdef09236bf27ba4ba0221d08019cb489f7a58a567962f3f8e58"
-    sha256 cellar: :any,                 arm64_sequoia: "9496446a8b830d218c4d90a393f2193549080b746d5bc7e04d5b94b08bcf0008"
-    sha256 cellar: :any,                 arm64_sonoma:  "c4faa10ed9771a5356edd4303d671440f3f453945f51e3bebf6dad21064f68b5"
-    sha256 cellar: :any,                 sonoma:        "7743dc0f80a2473307c630f606547bd1939040a0ca4ae58930a2784762996100"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8c951c7a3e8964c8d5035758a43bdabc0a96dae98574265fb14eb9211409893"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53714d71210fff2df6223eeeb34464d680f49e155ede2030e8b51ed28af88245"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "f795bf538e72393be5dc71b287eb935fdeb96848d41a2f76e6e7eb52bde329e7"
+    sha256 cellar: :any,                 arm64_sequoia: "cc590dd3b5065fb3a50889f6c633072ec0749763c4d72da0ac30b72967ca8f78"
+    sha256 cellar: :any,                 arm64_sonoma:  "d9bab2feda60db9a941560188e6fc6c15b85d4fb875f1c3ebdeed66a2566de6d"
+    sha256 cellar: :any,                 sonoma:        "11d3b54655c2d5ba1a574c397d30092eb5e2dfc7399afed957c7518e7b2006db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc880cf20b6e26281366a767b6c4fbd4638016afd8426552e016b9b07bbd6ce8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "306ef11dba7b89c066190ba358ef392f154d98f8339ba7d6a1168d7f6c7deebe"
   end
 
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DBUILD_SHARED_LIBS=ON"
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DBUILD_SHARED_LIBS=ON",
+                    "-DSIMDJSON_BUILD_STATIC_LIB=ON",
+                    *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
-    system "cmake", "--build", "build"
-    lib.install "build/libsimdjson.a"
   end
 
   test do
-    (testpath/"test.json").write "{\"name\":\"Homebrew\",\"isNull\":null}"
+    (testpath/"test.json").write({ name: "Homebrew", isNull: nil }.to_json)
     (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <simdjson.h>

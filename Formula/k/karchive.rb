@@ -1,8 +1,8 @@
 class Karchive < Formula
   desc "Reading, creating, and manipulating file archives"
   homepage "https://api.kde.org/karchive-index.html"
-  url "https://download.kde.org/stable/frameworks/6.19/karchive-6.19.0.tar.xz"
-  sha256 "944332d802d0e128cebd087ffd50b726d100347973c2037c6051c72d54512a9e"
+  url "https://download.kde.org/stable/frameworks/6.20/karchive-6.20.0.tar.xz"
+  sha256 "f6a508d537d283e2a106e848a939e971cdf1a059779825e4482609aa981ffadd"
   license all_of: [
     "BSD-2-Clause",
     "LGPL-2.0-only",
@@ -17,12 +17,12 @@ class Karchive < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e82e955c89176c9ee1a7ec518f220abd098259fb8ae36c261f2e883e44df03a8"
-    sha256 cellar: :any,                 arm64_sequoia: "d52d5da9d590d81f0b2721cfe5eacadfec4fe7a7796868cdfde65c781dd9cbce"
-    sha256 cellar: :any,                 arm64_sonoma:  "59b41943fa00da8ccd4f943a7324f9d6a7b31714c037afdc3544752dc03c60f5"
-    sha256 cellar: :any,                 sonoma:        "b6e0030e3fc256cbfa655141eef55481e9bda6bd9d5e549204122a35a0d3c6db"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f42fe6995f88bb567c92be31d1c3db4eed0c7efaf7f3d618edd23457c358abbf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88cbe5429a25ee1d5598f60a911d53a36144ca33bbb7b88adac6bb798013ff7b"
+    sha256 cellar: :any,                 arm64_tahoe:   "a440e61dbf44ad247e66703cc7c8f5bb3f4133aee6b96402893664b5810406e9"
+    sha256 cellar: :any,                 arm64_sequoia: "03472146076df7741d7b61f32e4f8ee7551a866b6af47c595a0a946e5f23dc14"
+    sha256 cellar: :any,                 arm64_sonoma:  "5b0d63b31b1414f7992948ee5daad7b21ad7fb4bcafa40c8a7a6975813e93ad6"
+    sha256 cellar: :any,                 sonoma:        "26a9bfc85852a06c0140d1e54a3f941a8e07357effc771bc092b220b30d8962b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d53412b6073a25f06500082cd5f3dc829c225ddbf72f27cadc8e26524f82ca7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fb5096770563c0db1703fea66f2184fb23a0ec1b714b57945ea101daa0f4bd1"
   end
 
   depends_on "cmake" => [:build, :test]

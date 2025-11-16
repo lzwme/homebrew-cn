@@ -1,17 +1,17 @@
 class Observerward < Formula
   desc "Web application and service fingerprint identification tool"
   homepage "https://emo-crab.github.io/observer_ward/"
-  url "https://ghfast.top/https://github.com/emo-crab/observer_ward/archive/refs/tags/v2025.9.18.tar.gz"
-  sha256 "a2fcbb805c52ffb31b38a433de7aa66e015ef9d746a83223df9d60b792c1208c"
+  url "https://ghfast.top/https://github.com/emo-crab/observer_ward/archive/refs/tags/v2025.11.15.tar.gz"
+  sha256 "0b1b3b24316ff4a11007cf10fb58068fc76224d264354cf54fe71407c7837931"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a9c275ab9ba35cb0296b36442dc36c48186132e5dd076988daba5f3325feacf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2e316cec20279e56392db263268809bca8ca323fe4b292fdb94e7887315504f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab2b9c1bc85d375a2970563e3674158018488afaff2e28468c019aa8af7df4fc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dd8f343c6678135a07d38b6a63cb9cb020109a6a4cda860946915975a63518b8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb91ea7cad8a2a07cd3c8f6defabbba0ed3b3c007305c9a0ab0f3b3b54334a1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "703492aa176008c88997df123d6579e44d0e82b81a34496c44c32768e6ced25c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6eb4a70697e05d041c9dc75b552a8a56a7987586be6025961f70f8767937530c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4d34008753f7d16271ed2557419088df541ceb53227fee0580f2bf077f17e63"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6757b1ebe4fd2eaa3d118d420f168acffeb35bd8981942801365dbbfb3137855"
+    sha256 cellar: :any_skip_relocation, sonoma:        "469fe875cbccba5360f5a211bf6426dd2a7445ddd03045fd24cd4acd28a8ee3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc067449e1fdc5778d165163cff8a3c51e8753488d9cbd23d7f9c9d30777a30c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea5cdd0adbbca8feb92655f0c45e0e5c42531cb0e6f9fb64061a2b10e374f14b"
   end
 
   depends_on "rust" => :build

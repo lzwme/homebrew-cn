@@ -3,20 +3,18 @@ class Pythran < Formula
 
   desc "Ahead of Time compiler for numeric kernels"
   homepage "https://pythran.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/94/0a/95a72f09f25dae48f41e367959075ed4c7a0ff02dd3f54eec111501d648a/pythran-0.18.0.tar.gz"
-  sha256 "5c003e8cbedf6dbb68c2869c49fc110ce8b5e8982993078a4a819f1dadc4fc6a"
+  url "https://files.pythonhosted.org/packages/d4/84/17c4c44a24f5ec709991e603e601bf316d09c4fe915fbe348c689dede998/pythran-0.18.1.tar.gz"
+  sha256 "8803ed948bf841a11bbbb10472a8ff6ea24ebd70e67c3f77b77be3db900eccfe"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/serge-sans-paille/pythran.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ba138882ae0352d6e01ba04f7aaa06983cc3f1f77c1f6018def8db0420436f2a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba138882ae0352d6e01ba04f7aaa06983cc3f1f77c1f6018def8db0420436f2a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba138882ae0352d6e01ba04f7aaa06983cc3f1f77c1f6018def8db0420436f2a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eb21d693f082e1a34a0fc8049c1c36da9a88570683e1e58f6465fca470e19af9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "550ea45f043411e2b794b1359e80146f2c07cc3d97f4890a7cb5aabd75f77324"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "550ea45f043411e2b794b1359e80146f2c07cc3d97f4890a7cb5aabd75f77324"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05c32a94261a33f341d19cde94dc1ae3c35e4a931a76dab211a472add4ef5afd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05c32a94261a33f341d19cde94dc1ae3c35e4a931a76dab211a472add4ef5afd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05c32a94261a33f341d19cde94dc1ae3c35e4a931a76dab211a472add4ef5afd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d09f694cbdabacb3b4d7a64cb85f612fbd220dedb3f4a0ddc125625b02d97aa2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1dab5b1e82f862db06b45ac9d349aac482f4f2bf1f3324c9a2e8214aa4dfee8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1dab5b1e82f862db06b45ac9d349aac482f4f2bf1f3324c9a2e8214aa4dfee8c"
   end
 
   depends_on "gcc" # for OpenMP

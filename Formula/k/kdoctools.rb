@@ -1,15 +1,14 @@
 class Kdoctools < Formula
   desc "Create documentation from DocBook"
   homepage "https://l10n.kde.org/docs/doc-primer/"
-  url "https://download.kde.org/stable/frameworks/6.19/kdoctools-6.19.0.tar.xz"
-  sha256 "c2048b2979247540f9ba22fd7c6f372ce869699c3a3e81a97af2fa2f733c74bc"
+  url "https://download.kde.org/stable/frameworks/6.20/kdoctools-6.20.0.tar.xz"
+  sha256 "f56536255ca74554a9c02d395fd78c8b4a0d2a1c7d003ce621b324e889f85c0f"
   license all_of: [
     "BSD-3-Clause",
     "GPL-2.0-or-later",
     "LGPL-2.1-or-later",
     any_of: ["LGPL-2.1-only", "LGPL-3.0-only"],
   ]
-  revision 1
   head "https://invent.kde.org/frameworks/kdoctools.git", branch: "master"
 
   livecheck do
@@ -18,12 +17,12 @@ class Kdoctools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "39912db55f7f9162a6865c0772120b1a9f07db3dfc0df710ac9b1644e5afdae5"
-    sha256 cellar: :any,                 arm64_sequoia: "a1299df588e4bd17af820acab033d367942403c3c3a39c7a5ba1d77025887c1e"
-    sha256 cellar: :any,                 arm64_sonoma:  "286cc89cc83d61947291fa05eda9debe67a244f1064d8dbb596ed26db4bb7d17"
-    sha256 cellar: :any,                 sonoma:        "d71bc7fe5d898e60920b3fc71d46ba00edce860100b7150b53770e825b621edb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e220f966597089d4666857f079297e4df8b6b71840fb5abe293b3acdfb9552a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1130786dbf21acf596ffce3578e1b2da22acf04efcfcadaf7b5441d49111249"
+    sha256 cellar: :any,                 arm64_tahoe:   "8ab2a5a48295499338469764ce550531b7209d878e94fbc205f41cf5ca136685"
+    sha256 cellar: :any,                 arm64_sequoia: "90169c31346c273d853a0ab3803d7ee79382f4bb3f3a994f6d0a0958b7f9f350"
+    sha256 cellar: :any,                 arm64_sonoma:  "fbfa760964723e0cd9481c092050aeb339fd980a8570703f283c743625fc4fb7"
+    sha256 cellar: :any,                 sonoma:        "bbda8d09fc2191c8bc25684a5524f35b3519f545ad6511d7a1a4bff9137aa26b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc4bf9532fabd183337a5f1892e8ee5d1a5ddf8cc205de278fb8d0d9fe04ddff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36ddebffb73d33f086f51089be535b7fbf845a8e107fe6e55296955a4062fa12"
   end
 
   depends_on "cmake" => [:build, :test]

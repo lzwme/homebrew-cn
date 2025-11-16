@@ -1,17 +1,17 @@
 class Libjuice < Formula
   desc "UDP Interactive Connectivity Establishment (ICE) library"
   homepage "https://github.com/paullouisageneau/libjuice"
-  url "https://ghfast.top/https://github.com/paullouisageneau/libjuice/archive/refs/tags/v1.6.2.tar.gz"
-  sha256 "5078176d55042f3ccf3999c2556d84903f7edf80177ce4a7bf59507541e93938"
+  url "https://ghfast.top/https://github.com/paullouisageneau/libjuice/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "a510c7df90d82731d1d5e32e32205d3370ec2e62d6230ffe7b19b0f3c1acabf2"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8cccd369e20fbd7e6617824b2c1c6c13edb0b673d8f2226879815cf779c9ed3b"
-    sha256 cellar: :any,                 arm64_sequoia: "6c8bb25c5f68da436317f1b8232ca01ec2e52ef08d3dcd1bf0b0c15021fe4a01"
-    sha256 cellar: :any,                 arm64_sonoma:  "0750b5a64f7fc9ff2e636220749d8d531c352890bb8d9d27ec113ab2246bbd15"
-    sha256 cellar: :any,                 sonoma:        "50b9962df18835ea6e19ba827619c5dbedf5fdc97c6fa401c57c716e8a149a82"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a27428dfd81b02c3b3f673a7d15f308a6628c835aa1d1012fbc967582a40a07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5b1029cab3becc363fc941b753c74de42bdc4ac164c5d4eeff5edca42f089d2"
+    sha256 cellar: :any,                 arm64_tahoe:   "f162c7efec28783d18424f4296e36b45e7667b5c43e24e0d97c25e19a778be47"
+    sha256 cellar: :any,                 arm64_sequoia: "2d4865498294cda53d0067ddeb046f6b13633361bdf2d52a6e0e8905caf093ea"
+    sha256 cellar: :any,                 arm64_sonoma:  "a6fa24cb3a899d13b5c0afd778f5cc4c6ffc9fcb990fb0cdd517ac77326ede86"
+    sha256 cellar: :any,                 sonoma:        "06ea06b5c2ab9114d52e10a3337ec7bde5effd4e4c6474e959f99e8ec22e4d34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4684874fd3b1e6e7129fbd01e7182fb60f10fe04ed6f022027d7ce09578fed4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b22030b7b092dc674ef23d92693d528acd4595c93cdfad83828f935380cad72b"
   end
 
   depends_on "cmake" => :build

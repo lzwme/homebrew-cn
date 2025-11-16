@@ -116,7 +116,6 @@ class Httptap < Formula
 
     generate_completions_from_executable(
       libexec/"bin/register-python-argcomplete", "httptap",
-      base_name:              "httptap",
       shell_parameter_format: :arg
     )
 

@@ -6,12 +6,13 @@ class Anchor < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "efa83be67b8c4ef3119a6b2cd93ac097834419567ceb8fe9b24513cfe1a84a96"
-    sha256 cellar: :any,                 arm64_sequoia: "ee130c6aca80d10276703c3c66902d91d4bc5794e34b60f8c4a4dcf7b37d9ea7"
-    sha256 cellar: :any,                 arm64_sonoma:  "1617688b9e102a9ddffee0ce691f22d2ddc7b233569ee1c3d8bb11008e3d0045"
-    sha256 cellar: :any,                 sonoma:        "1dfc139234b277777e469c8b0dc3dc503b1897ffa41c19d03f1ef58e5b43e07b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e3973d262aa79319f11d4986b61cc0da7ea61068bf1a148cc6574de45609290"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f595b09c4947d0f474539715dc33586b9c4f6c4b57598756cd3a9a9fc36f674"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "5c42d288ffcb5ce0e5de2a3e623ace63a6401fefb6d9d0549ea27a6e89ec9f45"
+    sha256 cellar: :any,                 arm64_sequoia: "999f1fb89d761dd51989f1f97fd5a6508fdfc03f2e39aba8e61bee328635f016"
+    sha256 cellar: :any,                 arm64_sonoma:  "3805433758f3398f5490ff2f412063a66ca278c70bd5ee7d7632b32dd278a031"
+    sha256 cellar: :any,                 sonoma:        "f01ce12914e4c50c25a5584320ae4b10a7d5b7522268f81ac248543a5431722d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5caca9952baaa452ab5c21538cf1e388887df6af5f0272872d43b0745347ae5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0f0b6dfb3a31ade18458dc13ec92ec5c91a553a1c5785f4c8432e9e153491a5"
   end
 
   depends_on "pkgconf" => :build
@@ -29,6 +30,8 @@ class Anchor < Formula
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     system "cargo", "install", "--no-default-features", *std_cargo_args(path: "cli")
+
+    generate_completions_from_executable(bin/"anchor", "completions", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

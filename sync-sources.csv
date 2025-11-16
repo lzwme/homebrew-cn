@@ -2648,6 +2648,7 @@ Homebrew-homebrew-core/Formula/g/gotify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goto.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gotop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gotpm.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gotun.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gotz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gource.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/govc.rb, Homebrew/homebrew-core, 1
@@ -2943,7 +2944,7 @@ Homebrew-homebrew-core/Formula/h/hstr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/ht.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/html-xml-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/html2markdown.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/h/html2text.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/html2text.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/htmlcleaner.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/htmlcompressor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/htmlcxx.rb, Homebrew/homebrew-core, 1
@@ -3863,6 +3864,7 @@ Homebrew-homebrew-core/Formula/lib/libdbusmenu.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libdc1394.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libdca.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libde265.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libdecor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libdeflate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libdex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libdicom.rb, Homebrew/homebrew-core, 1
@@ -5523,6 +5525,7 @@ Homebrew-homebrew-core/Formula/p/pipemeter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pipenv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pipes-sh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pipet.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pipewire.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pipgrip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pipx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pistache.rb, Homebrew/homebrew-core, 1
@@ -8369,6 +8372,7 @@ Homebrew-homebrew-cask/Casks/a/avtouchbar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aw-edid-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/awa.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aware.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/awesun.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aws-vault-binary.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aws-vpn-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/axure-rp.rb, Homebrew/homebrew-cask, 0
@@ -11038,6 +11042,7 @@ Homebrew-homebrew-cask/Casks/font/font-m/font-museo.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/font/font-m/font-museomoderno.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-my-soul.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-myanmar-sans-pro.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-m/font-myna.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-mynaui-icons.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-mynerve.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-myrica.rb, Homebrew/homebrew-cask, 1
@@ -12769,6 +12774,7 @@ Homebrew-homebrew-cask/Casks/k/kid3.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kigb.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kiibohd-configurator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kilohearts-installer.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/k/kimi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kimis.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kindavim.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kindle-comic-converter.rb, Homebrew/homebrew-cask, 1
@@ -14811,7 +14817,6 @@ Homebrew-homebrew-cask/Casks/s/submariner.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/subsurface.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/subsync.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/subtools.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/sunloginclient.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sunlogincontrol.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sunsama.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sunvox.rb, Homebrew/homebrew-cask, 0
