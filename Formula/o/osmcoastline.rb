@@ -4,18 +4,15 @@ class Osmcoastline < Formula
   url "https://ghfast.top/https://github.com/osmcode/osmcoastline/archive/refs/tags/v2.4.1.tar.gz"
   sha256 "3a76ed8c8481e5499c8fedbba3b6af4f33f73bbbfc4e6154ea50fe48ae7054a9"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "3315f86d657d685cfaf5e1f38277f0542b330f1b7cd733ee39f040f72e0289f3"
-    sha256 cellar: :any,                 arm64_sequoia: "7461510ebcdfa1d486b69e15595105eb324bd15c9a4e6339b811c42b5a0e7ffe"
-    sha256 cellar: :any,                 arm64_sonoma:  "fe78194e9aa2964afbc350073fd162a2fdc75bd6495faf3fd70949e58cd494b7"
-    sha256 cellar: :any,                 arm64_ventura: "0865ee2f7d54ac95a1ed2981e1e0f4440757163881dcb1a56fff16267ea1b689"
-    sha256 cellar: :any,                 sonoma:        "1d94935f700e30bb7b65234701104deea79fdf34cd68be53b01b94e36f9a221c"
-    sha256 cellar: :any,                 ventura:       "ae0525b18cc02254813fc116b75df743a637485e32d34a047dfbbb3fa894566f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "214c62abaed4acdc317d89a83681fa13e7798f3e79b82b6da59ee4374d0b088a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4deb169fe2a9cc48ddd8963591cf758b0c5f895bfa3562416ac5d538963ccd42"
+    sha256 cellar: :any,                 arm64_tahoe:   "9316f8b18ae49b45f2e5af2561922516d160ad1b06d92588efb49fbd33371eaa"
+    sha256 cellar: :any,                 arm64_sequoia: "b76a693725d795739c43ba199281f5c8fc9447c5595c4e2096a7326b6b138327"
+    sha256 cellar: :any,                 arm64_sonoma:  "061f730fc1a9bfdfeb38918fb8d41da61aec6a9b93099284c52e864751703639"
+    sha256 cellar: :any,                 sonoma:        "b585b813845a34476b2fb889f43371528f7f7dfa30f092715376045f8251eb58"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea304eef56c7f286511b75eb636ebfffe112ab2c0f7f250c9d1906b392dc08e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e38194ee23ba42898fb7940536af52acfd5393bc79598402652af074a925c59a"
   end
 
   depends_on "cmake" => :build

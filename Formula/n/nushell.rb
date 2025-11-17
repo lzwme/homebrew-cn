@@ -13,12 +13,13 @@ class Nushell < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "26e0259f39ccfeadca54bc3ed50b108f610f47fe273f0729d2c3b45b21343041"
-    sha256 cellar: :any,                 arm64_sequoia: "7e5b1363bb204f855f295ea9ba8c93d3137cc4e61f61487385a7f8f359543fdf"
-    sha256 cellar: :any,                 arm64_sonoma:  "a8d58b9529805d0cb4f887656becc640c2ceb4110e73db269dfba67cc2ccbbe0"
-    sha256 cellar: :any,                 sonoma:        "42c98bc06e8ec7ceff9c7238e2b2deceaf194c87dabc7f1ac17a727a8742042b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b38759d54fea36a6ea03b9bd435f70a3804fdbdcba79bbc9d5cbefc7faeea118"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20a9886d3cfc00e5c7547a13bb342def2701fcf9c3e1949f2ebafed1491a55fb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e0957b13e909b83d8561dab7b96c53a311cd48b1a93fbf472d2229ca6867cf80"
+    sha256 cellar: :any,                 arm64_sequoia: "adb6f262df5a3f7a8e5ef6b0ae654ce1f0fecc264cb03d345a00b4c4660a1700"
+    sha256 cellar: :any,                 arm64_sonoma:  "74f04d4051bc32f7148db3252d9fab2e59f1c46999dae2402249a24887b8d5fb"
+    sha256 cellar: :any,                 sonoma:        "3eff4f5855ca571e33ae14d808f4555cbfb568a41032728c7d8a7e26d344fd43"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b381e2cdceeb123eced1cd230b0135ee2806604c59037466e39dec7721fc06a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1b108eaab5085b5e152fe3d89ec41b898bc76c29194c63f203b4ae1c6cfc6f4"
   end
 
   depends_on "pkgconf" => :build
@@ -35,6 +36,8 @@ class Nushell < Formula
   end
 
   def install
+    ENV["NU_VENDOR_AUTOLOAD_DIR"] = HOMEBREW_PREFIX/"share/nushell/vendor/autoload"
+
     system "cargo", "install", *std_cargo_args
 
     buildpath.glob("crates/nu_plugin_*").each do |plugindir|

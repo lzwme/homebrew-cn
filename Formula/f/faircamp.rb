@@ -1,19 +1,17 @@
 class Faircamp < Formula
   desc "Static site generator for audio producers"
   homepage "https://codeberg.org/simonrepp/faircamp"
-  url "https://codeberg.org/simonrepp/faircamp/archive/1.6.0.tar.gz"
-  sha256 "c8d43e2618928de3935646fba4f85fa8d0dd23a5d11ea10f081fa430aa79d5b9"
+  url "https://codeberg.org/simonrepp/faircamp/archive/1.7.0.tar.gz"
+  sha256 "199328a20ad82ffc45f6f96cbd472f72a55dfeee87b2be18559c19e9367d5408"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d6060e8bde8474a3f6088b9f795d4dddd341267828bef8c7925eda0ec7a65b5f"
-    sha256 cellar: :any,                 arm64_sequoia: "416b0bd05534a421cd9dfeed72ea03f06cbc856285dd4fd4b6429e2c995ebe42"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd353d91775c5b4841203160f9e5f4032a2838dcdf2a6264d2a5ceb0840ab99d"
-    sha256 cellar: :any,                 arm64_ventura: "5b4a63af1e44bb8d3b0e0a8c8601bc6cfb91858634712320523b38443302f62c"
-    sha256 cellar: :any,                 sonoma:        "bc77d9686ef45d9b50dfe0a37678d15491e03e93336b90aeea59bd4027126951"
-    sha256 cellar: :any,                 ventura:       "8c68f0948cd28f567cc110ff58cb500b3dc222ead293cba95048a903b34f0bfc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9bb7046dbaf08d5fab23c01b665ffd54fe600484d4eb8e0f4ee3e6166be3b0e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4026686ab3c905d1afce726db05f6c80b30804417c27d6daca209402d882601f"
+    sha256 cellar: :any,                 arm64_tahoe:   "4194ed50aea3d486e72f7a64b53b467c73dacc876ed2dc93d3ab7d9dbfd4995c"
+    sha256 cellar: :any,                 arm64_sequoia: "063c1f134affe188066c42ee2cc0718bbac6462125bc5cdfba4df8f67f45b025"
+    sha256 cellar: :any,                 arm64_sonoma:  "a0e2b180235aec66de1e6f5dae19b70351820705dcd82963e181431b3be07cc0"
+    sha256 cellar: :any,                 sonoma:        "3e37398d846b3710c540b6f177943b3486993265282b0342012fc105d633eeea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "90b5aaff9681e96c735a215837d73bf8c9f73b0916ae7af46ad0037229655743"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1ddaedfd2a098f6f8875c644d3ece063665cb50c73c8e511c8295a359e79915"
   end
 
   depends_on "pkgconf" => :build

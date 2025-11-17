@@ -6,16 +6,15 @@ class Rasterio < Formula
   url "https://files.pythonhosted.org/packages/de/19/ab4326e419b543da623ce4191f68e3f36a4d9adc64f3df5c78f044d8d9ca/rasterio-1.4.3.tar.gz"
   sha256 "201f05dbc7c4739dacb2c78a1cf4e09c0b7265b0a4d16ccbd1753ce4f2af350a"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "8fc3368b85302efa77eba17e15d3a9b0596a2b004f2cf49881ce5544fb5d27cd"
-    sha256 cellar: :any,                 arm64_sequoia: "c2be2b0d16e15a752288c5d2e6b4708f83710d224a612c1003b948b976d66942"
-    sha256 cellar: :any,                 arm64_sonoma:  "59dc1c5ca8d022755fdb04b4979b5aa6d8104df4c191fe4d707562e903bc64ab"
-    sha256 cellar: :any,                 sonoma:        "c506c25016070e0d44451544f9f107f3df67c2cdda9c6751bce3fd731671383f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "752a43ce7bf5eb39296c359fe2c89beceb9d98953777d11e3dce3d162017da35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7ae02002f7b8ff4b9caebf3935d87c2719828b0a8bae3006facdf973a467338"
+    sha256 cellar: :any,                 arm64_tahoe:   "7256545e4edd7ec2b315ffa23770dcd4d6543eab648254cdf2d71c35d295ec48"
+    sha256 cellar: :any,                 arm64_sequoia: "68a3d4ceb8720177bd9db946196b40674f0c7e66814e46df627dfd4241d14d7a"
+    sha256 cellar: :any,                 arm64_sonoma:  "bfabef220d5e60085c365c7ac8267a53093df3951e915efc6e4be0acd1ad326e"
+    sha256 cellar: :any,                 sonoma:        "6df99c439943bbb0da0411b2c7ee366625208d15f28216de582ea65d2f3f6642"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "97f82f6450c2068fe60f882e849c776332501558af236bdfd6c425a978be289d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ada8fe76269b5fdf1fd12d1912ca4cf98d1fc3d34cee0ecec1f962cb4363f6f5"
   end
 
   depends_on "cmake" => :build

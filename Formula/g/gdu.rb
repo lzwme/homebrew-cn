@@ -41,8 +41,8 @@ class Gdu < Formula
 
   test do
     mkdir_p testpath/"test_dir"
-    (testpath/"test_dir"/"file1").write "hello"
-    (testpath/"test_dir"/"file2").write "brew"
+    (testpath/"test_dir/file1").write "hello"
+    (testpath/"test_dir/file2").write "brew"
 
     assert_match version.to_s, shell_output("#{bin}/gdu-go -v")
     assert_match "colorized", shell_output("#{bin}/gdu-go --help 2>&1")

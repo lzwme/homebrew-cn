@@ -3,18 +3,17 @@ class Keyring < Formula
 
   desc "Easy way to access the system keyring service from python"
   homepage "https://github.com/jaraco/keyring"
-  url "https://files.pythonhosted.org/packages/70/09/d904a6e96f76ff214be59e7aa6ef7190008f52a0ab6689760a98de0bf37d/keyring-25.6.0.tar.gz"
-  sha256 "0b39998aa941431eb3d9b0d4b2460bc773b9df6fed7621c2dfb291a7e0187a66"
+  url "https://files.pythonhosted.org/packages/43/4b/674af6ef2f97d56f0ab5153bf0bfa28ccb6c3ed4d1babf4305449668807b/keyring-25.7.0.tar.gz"
+  sha256 "fe01bd85eb3f8fb3dd0405defdeac9a5b4f6f0439edbb3149577f244a2e8245b"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4dbce9af56ee9f7c68d4c3cde35b8cabf9d4a6e90576c778199ea444cb727019"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4dbce9af56ee9f7c68d4c3cde35b8cabf9d4a6e90576c778199ea444cb727019"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4dbce9af56ee9f7c68d4c3cde35b8cabf9d4a6e90576c778199ea444cb727019"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7d5c9a369e0fd7df5245c14574b345dc348e312de4fd3988add42f98400c0d7e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d5bcd8c6c0e4b0ff65c69858adb76d8668f434c09497425ec09118addb5271a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d5bcd8c6c0e4b0ff65c69858adb76d8668f434c09497425ec09118addb5271a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "abb97de4f89e2a7c81bddd8695a8a4ec626214554c1578f8d6839e923ae948c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "abb97de4f89e2a7c81bddd8695a8a4ec626214554c1578f8d6839e923ae948c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abb97de4f89e2a7c81bddd8695a8a4ec626214554c1578f8d6839e923ae948c3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1a6ba9b6306faa11ba267c8ba8a6d53fe78c7ee0e5be0afb71c2dc90b86c90f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4f8ef8b6c8b613770c1804e258f25f7d751c1a7ec414b59a0643cb8d52c9235"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4f8ef8b6c8b613770c1804e258f25f7d751c1a7ec414b59a0643cb8d52c9235"
   end
 
   depends_on "python@3.14"
@@ -53,8 +52,8 @@ class Keyring < Formula
   end
 
   resource "secretstorage" do
-    url "https://files.pythonhosted.org/packages/31/9f/11ef35cf1027c1339552ea7bfe6aaa74a8516d8b5caf6e7d338daf54fd80/secretstorage-3.4.0.tar.gz"
-    sha256 "c46e216d6815aff8a8a18706a2fbfd8d53fcbb0dce99301881687a1b0289ef7c"
+    url "https://files.pythonhosted.org/packages/32/8a/ed6747b1cc723c81f526d4c12c1b1d43d07190e1e8258dbf934392fc850e/secretstorage-3.4.1.tar.gz"
+    sha256 "a799acf5be9fb93db609ebaa4ab6e8f1f3ed5ae640e0fa732bfea59e9c3b50e8"
   end
 
   resource "shtab" do

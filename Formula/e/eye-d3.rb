@@ -3,14 +3,13 @@ class EyeD3 < Formula
 
   desc "Work with ID3 metadata in .mp3 files"
   homepage "https://eyed3.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/3f/db/cabe446d633d24b367445bca5f5a36ab7e1dcb4622095eae3b5c37b9888a/eyed3-0.9.8.tar.gz"
-  sha256 "a296ef47d8d5a5b5d7b518c113e650c7db6e47633b31a9ca81453cd48faf9803"
+  url "https://files.pythonhosted.org/packages/ee/aa/5873b98fa5f570724a65757987c155dea68d27f0acae17da1b1ffc8cd0d2/eyed3-0.9.9.tar.gz"
+  sha256 "a8affaae19384aca66f6efef3babd705042a76e546f08e886f5f28691ac62a3b"
   license "GPL-3.0-or-later"
   head "https://github.com/nicfit/eyeD3.git", branch: "0.9.x"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, all: "0824e1bb0ea2d8c4254435b14c48c6845b5a1b610bd0de4e5762e7ed68dc1154"
+    sha256 cellar: :any_skip_relocation, all: "c6bbc59b8cca30423c14cd273ec694b3025e2c3aa2b6425966301121fb791889"
   end
 
   depends_on "python@3.14"
@@ -31,13 +30,6 @@ class EyeD3 < Formula
   end
 
   def install
-    # Fix to error: SystemError: buffer overflow
-    # Issue ref: https://github.com/nicfit/eyeD3/issues/680
-    inreplace "eyed3/utils/console.py" do |s|
-      s.gsub! "'\\0' * 4", "b'\\\\0' * 8"
-      s.gsub! 'hw = struct.unpack("hh", data)', 'hw = struct.unpack("hhhh", data)'
-    end
-
     virtualenv_install_with_resources
     doc.install Dir["docs/*"]
   end

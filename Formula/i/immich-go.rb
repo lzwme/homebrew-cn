@@ -1,8 +1,8 @@
 class ImmichGo < Formula
   desc "Alternative to the official immich-CLI command written in Go"
   homepage "https://github.com/simulot/immich-go"
-  url "https://ghfast.top/https://github.com/simulot/immich-go/archive/refs/tags/v0.29.0.tar.gz"
-  sha256 "c9a5ba5dd0c104015cfaf08d00f25932ce77d2b7e684a6b9435d062f026562d6"
+  url "https://ghfast.top/https://github.com/simulot/immich-go/archive/refs/tags/v0.30.0.tar.gz"
+  sha256 "7d8762bef1514bd31a485b2420d2d4b766faa5c882a52a50414666eeb745938d"
   license "AGPL-3.0-only"
   head "https://github.com/simulot/immich-go.git", branch: "main"
 
@@ -12,12 +12,12 @@ class ImmichGo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c6ff8c873e635d4c34329746ea00568085b3a0e345f950a413369207e937ca5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c6ff8c873e635d4c34329746ea00568085b3a0e345f950a413369207e937ca5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c6ff8c873e635d4c34329746ea00568085b3a0e345f950a413369207e937ca5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "42af96644645ee474736c69e38677abab502610b9cc9d2ed4eb35b13ecec8c66"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ec343d5ad47670f590184847adc928fb5e20d5194895ae1594a1a3785004e96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dde4be512699ba04cd0a0136cfe6671ae7a08f5b95cf1160b01f0109fb6de2e6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f7127ddf36011b4e843e4b3c436fce002a1f638f1b025183c2480126bb63646"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f7127ddf36011b4e843e4b3c436fce002a1f638f1b025183c2480126bb63646"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f7127ddf36011b4e843e4b3c436fce002a1f638f1b025183c2480126bb63646"
+    sha256 cellar: :any_skip_relocation, sonoma:        "20bb1574f04dff9348f3ff59a46bba730771fbe8924e8270bcc385412edda427"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4ff596ae184fe578e53e9f9b5567b159812584d08d02600352aafa4297ee5bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77f7a5a4fe77d0df102100f9bc3df0248175bb82a06d50daade73782601f5ce6"
   end
 
   depends_on "go" => :build

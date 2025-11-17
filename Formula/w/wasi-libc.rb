@@ -9,8 +9,8 @@ class WasiLibc < Formula
   head "https://github.com/WebAssembly/wasi-libc.git", branch: "main"
 
   stable do
-    url "https://ghfast.top/https://github.com/WebAssembly/wasi-libc/archive/refs/tags/wasi-sdk-27.tar.gz"
-    sha256 "00850da0742670d5ad7fd556bf7bc5452512bac79f17ac76d5cfaa3b74526898"
+    url "https://ghfast.top/https://github.com/WebAssembly/wasi-libc/archive/refs/tags/wasi-sdk-28.tar.gz"
+    sha256 "6f0b2e533ba09617c1f65496e5537806e1a7b0a34d4939f7dbb659ff30857b38"
 
     resource "WASI" do
       # Check the commit hash of `tools/wasi-headers/WASI` from the commit of the tag above.
@@ -20,14 +20,8 @@ class WasiLibc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "258a8c5259156419c7f55f31d3eef5821cdffe5e1a210b613a65f05a5f8cfaf7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3f302ae2ace8f8c4ec65ae1945ac3bf3ac191dcbb9bd591750ad0c99f5e707b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3f302ae2ace8f8c4ec65ae1945ac3bf3ac191dcbb9bd591750ad0c99f5e707b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f3f302ae2ace8f8c4ec65ae1945ac3bf3ac191dcbb9bd591750ad0c99f5e707b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f3f302ae2ace8f8c4ec65ae1945ac3bf3ac191dcbb9bd591750ad0c99f5e707b"
-    sha256 cellar: :any_skip_relocation, ventura:       "f3f302ae2ace8f8c4ec65ae1945ac3bf3ac191dcbb9bd591750ad0c99f5e707b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb897cf5452150158acd426d3bd4ada857e4e751d503aeff9e877bd216e25a57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb897cf5452150158acd426d3bd4ada857e4e751d503aeff9e877bd216e25a57"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "a529c0735dbb8a0650b31e03540ce34aa2821efba92b1b032e15e47a662fe5d9"
   end
 
   depends_on "llvm" => [:build, :test]
@@ -44,12 +38,10 @@ class WasiLibc < Formula
     ENV.remove_cc_etc
     ENV.remove "PATH", Superenv.shims_path
 
-    # Flags taken from Arch:
-    # https://gitlab.archlinux.org/archlinux/packaging/packages/wasi-libc/-/blob/main/PKGBUILD
     make_args = [
-      "WASM_CC=#{Formula["llvm"].opt_bin}/clang",
-      "WASM_AR=#{Formula["llvm"].opt_bin}/llvm-ar",
-      "WASM_NM=#{Formula["llvm"].opt_bin}/llvm-nm",
+      "CC=#{Formula["llvm"].opt_bin}/clang",
+      "AR=#{Formula["llvm"].opt_bin}/llvm-ar --format=gnu",
+      "NM=#{Formula["llvm"].opt_bin}/llvm-nm",
       "INSTALL_DIR=#{share}/wasi-sysroot",
     ]
 
@@ -70,7 +62,7 @@ class WasiLibc < Formula
     target_flags["wasm32-wasip2"] << "WASI_SNAPSHOT=p2"
 
     targets.each do |target|
-      system "make", *make_args, "TARGET_TRIPLE=#{target}", "install", *target_flags[target]
+      system "make", *make_args, "TARGET_TRIPLE=#{target}", "CHECK_SYMBOLS=yes", "install", *target_flags[target]
     end
   end
 

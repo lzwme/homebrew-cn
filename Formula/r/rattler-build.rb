@@ -38,7 +38,7 @@ class RattlerBuild < Formula
   end
 
   test do
-    (testpath/"recipe"/"recipe.yaml").write <<~YAML
+    (testpath/"recipe/recipe.yaml").write <<~YAML
       package:
         name: test-package
         version: '0.1.0'

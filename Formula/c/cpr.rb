@@ -1,20 +1,18 @@
 class Cpr < Formula
   desc "C++ Requests, a spiritual port of Python Requests"
   homepage "https://docs.libcpr.org/"
-  url "https://ghfast.top/https://github.com/libcpr/cpr/archive/refs/tags/1.12.0.tar.gz"
-  sha256 "f64b501de66e163d6a278fbb6a95f395ee873b7a66c905dd785eae107266a709"
+  url "https://ghfast.top/https://github.com/libcpr/cpr/archive/refs/tags/1.13.0.tar.gz"
+  sha256 "c55d805300c224f099cad74ad9c68799f23d005d09ba2df76ead975a3e50e09d"
   license "MIT"
   head "https://github.com/libcpr/cpr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d52043cae85a04a494aced7d6776a03d523f59918f12d67e58386f66e24ce0c6"
-    sha256 cellar: :any,                 arm64_sequoia: "09b831bfeb3f9574473d0389d56c54a98d6114401fc2461a459b81fae35441b7"
-    sha256 cellar: :any,                 arm64_sonoma:  "62774379c35c472b5ce32cd7a1044201f746fde63b6caa1fa0ca1aa6f063ceba"
-    sha256 cellar: :any,                 arm64_ventura: "1daf2a4ac0df3bde82610f88f16d84dbb470e5bcd5466376500d43b43fc14997"
-    sha256 cellar: :any,                 sonoma:        "6c4d6d71ee53bbe0ba524f3c91c00c33dd3256ac7f36ce5f66735d07203b8fc9"
-    sha256 cellar: :any,                 ventura:       "444ed2abda55e8ddbed0ae3f2baf2dd1c90828a158e96f8dbcd7b40288a68fc7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce24deaf7cfd5c547c270bd903be2d12afb258dcd140938c1b27a98474bce2ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4986278145e9f1ba77fc0caff4fe08c91437e40cd7b18114cf4d44ba6dbe06e7"
+    sha256 cellar: :any,                 arm64_tahoe:   "30d36b034765bd5897024fe87ab08313712f96a3ee614adeb7808658c019cb82"
+    sha256 cellar: :any,                 arm64_sequoia: "a0d977e6bf0d2a2e35c506c31f8cbfa90387fe0765e946ac30d410ae366476c2"
+    sha256 cellar: :any,                 arm64_sonoma:  "d2fc529fbe5e39b2060cf13886d149c88ae29bc98b706350e00473a58de4423e"
+    sha256 cellar: :any,                 sonoma:        "0fd70be274ed66c4114b8eede879846420608e08b05b1662a9bad597190ada1e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "81474a9d4caa550e2217a5746bcf48e3fbc15dd9700147701a87a1eb6bd82f21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27722b9d1d98990fef20dc2063493b42f67d6aca2e265b8c67dbd82f157067c8"
   end
 
   depends_on "cmake" => :build

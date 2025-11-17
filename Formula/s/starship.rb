@@ -1,18 +1,18 @@
 class Starship < Formula
   desc "Cross-shell prompt for astronauts"
   homepage "https://starship.rs/"
-  url "https://ghfast.top/https://github.com/starship/starship/archive/refs/tags/v1.24.0.tar.gz"
-  sha256 "3d98e2c57dcfea36c6035e2ad812f91cfe33099e4b67f6ea7728e2294f02ca61"
+  url "https://ghfast.top/https://github.com/starship/starship/archive/refs/tags/v1.24.1.tar.gz"
+  sha256 "4f2ac4181c3dea66f84bf8c97a3cb39dd218c27c8e4ade4de149d3834a87c428"
   license "ISC"
   head "https://github.com/starship/starship.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "67470b986c8aacf4c51507a4e0569e798ecd65f4e388b156e19137fbad731984"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b22a3a0bf85b03ce4ea3d0dfb0b5092207030961de953c6ceb7c3c602bf4a6b9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ce39c6c77f8e0534ff10c3d9a9277c7f3baf1dbb30212ca28d6321c8fcce023"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d793b8be85ab1f7525c4be58ea6780f189fde43e7d01fa15d5cc64d0cef75b10"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f21f8d57cb70137646ef6b60ea8196fd65af633ce4627d735bd36b945016e44"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db3e2a5b9d2048c2abd360480af478b619a7e85a43200fd04572b2a58053418b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb9678a4b4263db0615c702a783515df4858f9f8c752ada86442e47d27ebb71f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "19495f6ff227f91835a33f0fb03793ef3d7b17448130dad2944edc5ff1df635c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7854f463031c39cc9e4c9f19276e5109b74e7de4507795fdc9821d9a1d15c16"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6f6d043e8b7aa529c887a750377940249f3a84e01e985dac4dc11b2d591dc609"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f3f1fdf700cb97b8472eb91b01afafc265132cbc91c0bc95f8ccd3ddf6c15dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b864879c3a5a2a8421f468a074df2c80976a20bc4ff7b47f064b0a6b8bd96be8"
   end
 
   depends_on "cmake" => :build

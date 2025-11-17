@@ -1,17 +1,17 @@
 class Lla < Formula
   desc "High-performance, extensible alternative to ls"
   homepage "https://github.com/chaqchase/lla"
-  url "https://ghfast.top/https://github.com/chaqchase/lla/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "a11ba912b4fdca16d5c9b0624c2a08c52de7de3048e2a225c4a6a9d2013e4fe5"
+  url "https://ghfast.top/https://github.com/chaqchase/lla/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "34afc823a0bfda6379966cdbcaeaabda4ffc2e9f122c2a85f3b8ba9a77e53c22"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2fe113981df0c4dcb3ab12c0026d9dc603f4d21a6c8347d321fa54ad806fc7db"
-    sha256 cellar: :any,                 arm64_sequoia: "cd17d35d100cb44319488b64d79cecf8c67118d46fa37454e3d6f673676c4f5d"
-    sha256 cellar: :any,                 arm64_sonoma:  "212d496f353f4505b799ae43b6f476fb375b74423566c5cfbb3a9f0ae63cdcff"
-    sha256 cellar: :any,                 sonoma:        "8751919ce8ba5b287eaa7301c8cf3ba0de8fbf7928250c38517260e54290fa31"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d89f703cf3ee497403ed25d93a0b6774c7670b25defed2bc072a8785496c71a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55019b657fc61b5cebbe8b1de770866a6201bd3cd44fab08a63d6e04bb3ffc01"
+    sha256 cellar: :any,                 arm64_tahoe:   "3f130bebb333bf11899d53b6f6a79aa9d07a02665f7cfcf36c5657cd8e25ef0f"
+    sha256 cellar: :any,                 arm64_sequoia: "1ec7b484b2a76c7f10ecc07b65936bc86c6cb692c4a8073f4be284f6b8b914ec"
+    sha256 cellar: :any,                 arm64_sonoma:  "79f8c5c5290b55fbb1b85d24c8fa5aa1fb1092c95321d78b94eb8fae2cb1a622"
+    sha256 cellar: :any,                 sonoma:        "7a4409ef9e8ecc8a918754277dad9a56a7e70fc1831dceacb2dec5d8ab18a12a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e22b8c64d52926fd3b302b054ca709b242fc0024a7f0136f10cf60f226fd29d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46166d55d1a24cfbf378b89fd9b1cab1387dfc45d92117cee20e6d66943f094f"
   end
 
   depends_on "protobuf" => :build
@@ -43,10 +43,10 @@ class Lla < Formula
   test do
     test_config = testpath/".config/lla/config.toml"
 
-    system bin/"lla", "init"
+    system bin/"lla", "init", "--default"
 
     output = shell_output("#{bin}/lla config")
-    assert_match "Current configuration at \"#{test_config}\"", output
+    assert_match "Config file: #{test_config}", output
 
     system bin/"lla"
 
