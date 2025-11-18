@@ -1,17 +1,17 @@
 class Bbtools < Formula
   desc "Brian Bushnell's tools for manipulating reads"
-  homepage "https://jgi.doe.gov/data-and-tools/software-tools/bbtools/"
-  url "https://downloads.sourceforge.net/bbmap/BBMap_39.48.tar.gz"
-  sha256 "8fcc01f15248739f2031ecfe1f82b8154f1c0f269a16fa2444f500d8cc7b61b6"
+  homepage "https://bbmap.org/"
+  url "https://downloads.sourceforge.net/bbmap/BBMap_39.49.tar.gz"
+  sha256 "ed39fc101639586a3c1183832d5d5a56275cecc58af65a1566801c02120903e3"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3b5b955000023c81f01e27c24d96a88477397afbd35eb2b928d9000be5cd6552"
-    sha256 cellar: :any,                 arm64_sequoia: "4d2be27f2be3df36b8e01c80c96810448420a6262ae1ae835856f050334e1792"
-    sha256 cellar: :any,                 arm64_sonoma:  "c7f00600be732e9518c6c8c6d049851b13cf3e851dffbdffaaa53d47a4d51b4c"
-    sha256 cellar: :any,                 sonoma:        "431e715eea67a0519cca0cedbcb706cf13b868cb7b301ba29f8de3adef515760"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d704a75836ff829d77e8acf6ecab7bfc2ba5db2ae65a2c5b44a3f859554cfa1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cceb341bed91fe4bb8d894a800e07cd8a2b6b39bd7be2210d9dd1d9e6476bd44"
+    sha256 cellar: :any,                 arm64_tahoe:   "ba4bdfed262265123c92886461e2c0888d9ad3174ba9c47a96a2ec122de529d4"
+    sha256 cellar: :any,                 arm64_sequoia: "f9901cbbd7feaa9bee86ee8ac41fe72c92098bb5c90ec75594fd26086f46b01f"
+    sha256 cellar: :any,                 arm64_sonoma:  "a42574d34710c459fd1a0cf43cb73b69126927cb61e2cc9fb609a28c222dfb22"
+    sha256 cellar: :any,                 sonoma:        "e95b65fa46843d39c4b61165a704031dc73031cdab6e723e56bafead4335881f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ba18ed60b51592e824dd2dfc5506ccbb547c177b222d22708ec8ca76b50a913"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a64bb9cca2b000dd4811b166e1a4aeef9199807fc22887d19b795a0cef0be48"
   end
 
   depends_on "openjdk"
