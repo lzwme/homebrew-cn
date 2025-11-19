@@ -1,23 +1,25 @@
 class Prek < Formula
   desc "Pre-commit re-implemented in Rust"
   homepage "https://github.com/j178/prek"
-  url "https://ghfast.top/https://github.com/j178/prek/archive/refs/tags/v0.2.15.tar.gz"
-  sha256 "1af34eb6bf3beb19b73b334f63f77c9225b1c6d57a5bdb53752ad06135843396"
+  url "https://ghfast.top/https://github.com/j178/prek/archive/refs/tags/v0.2.17.tar.gz"
+  sha256 "32ebc2c2dbdce9b7906b23550ed55a3eb50672a01bd52ede9fa50ca1f3c28484"
   license "MIT"
   head "https://github.com/j178/prek.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d3d15a80d269cdb93a30e65e06ffc20b25e3c7fa697d0f6b2eb88b57895bab0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "63638e6575648da6d76a8e5c5a5dfb91faba6baff9735fc53a26bbcb199421ca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8fd4e205963d6bdccac20546526692465d5f244c3656bac3c4d26f9b980bcc73"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9a153bdab12874b689edd4ee7ef8aae562c1aa9c3914f4c4c045e997991dc6e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d72178b9841317c1a9b19a3e145f83d4f977b8647a89a210e04543c3c789e50"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "129c045f7543216f3b0faeadf48f266e8b61b2ff969ebbd5f6073cccd90181e7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0291ef1a4ee61bafaa2b823049daec3a133274c22eaf565b9bb34ba1a30e56d6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "330b77c5a3f280b7ed7e63db6f594a22b4c14ee46b060bcb60927f7d33e76248"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21da88281f62cbddd143259f008ff9130f5a19dde3ba642d00a7ad3a0bc2b667"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0956270211e8aee7fba39815532a67e3cdead3c62abdc9538400bdcc98cccf34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "59a225c642a3094e910010ea1e014c11cd4ef605f1a39efdd09a14dbab96bda5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b9f9071a879b9d11d9d2365faf850135ea9ee25586cf7ce227e42c50b7ef6ce"
   end
 
   depends_on "rust" => :build
 
   def install
+    ENV["PREK_COMMIT_HASH"] = ENV["PREK_COMMIT_SHORT_HASH"] = tap.user
+    ENV["PREK_COMMIT_DATE"] = time.strftime("%F")
     system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"prek", shell_parameter_format: :clap)
   end

@@ -1,17 +1,17 @@
 class VibeLogCli < Formula
   desc "CLI tool for analyzing Claude Code sessions"
   homepage "https://vibe-log.dev/"
-  url "https://registry.npmjs.org/vibe-log-cli/-/vibe-log-cli-0.8.1.tgz"
-  sha256 "696d21e735879dfce011849720afffb8ca122681403a2c47f94e7931a76362e0"
+  url "https://registry.npmjs.org/vibe-log-cli/-/vibe-log-cli-0.8.2.tgz"
+  sha256 "94ccc5d0bb34476f3dcf7729970c7697a8921b28e0784617e6a2b15370d5f2de"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9d4e89f261794ab3695d6e3f2756beb34eaa251c54b00b0e7fa8a1a86821b8a3"
-    sha256 cellar: :any,                 arm64_sequoia: "3f05d4ea2ce185cc7ae126c9f10c0530e941fb7970d67c8186dcb74e261755c1"
-    sha256 cellar: :any,                 arm64_sonoma:  "3f05d4ea2ce185cc7ae126c9f10c0530e941fb7970d67c8186dcb74e261755c1"
-    sha256 cellar: :any,                 sonoma:        "b288069aa7a1afb08c847e5fd997465db640794ff1f419479baa737d77c28a0a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e318039395509789c364676933e7ffe956f3a7eb05329be25631269fe687da81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c930b5627d45c74871a6b126d88d45dd08c7456dc914ee68dbd5c07834a10d67"
+    sha256 cellar: :any,                 arm64_tahoe:   "63cac5c2d7a97bb19d6d0c7217a2e78a21fdbfc24cf4b20ec5b94ded53c798ce"
+    sha256 cellar: :any,                 arm64_sequoia: "73f71c883537760d0e82ebe5d587c9dba4c96e02dd5db474f4982db32b7c9a26"
+    sha256 cellar: :any,                 arm64_sonoma:  "ec6a7d26abfb6c233998c0b5551cde417f9842a0275ca84395a65a1d6b6daf0c"
+    sha256 cellar: :any,                 sonoma:        "68a108b2e5cfbabfab0e01c83b8cdb6955ac0a41f03352f3f932899c2297cd53"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4b58a1c6109a51d984747765208431296c1ecaf8e8cc80a66862bf32acd493d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f7ec478942dda6072c74a95e785b60854ccd5d97649649bb206e5805c5f1f4b"
   end
 
   # `better-sqlite3` needs to be built with `c++17`, but `node` v25  compile with `c++20` by default

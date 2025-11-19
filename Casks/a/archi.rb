@@ -17,6 +17,11 @@ cask "archi" do
     strategy :page_match
   end
 
+  # Upstream deletes any comments on their repo about downstream packaging
+  # Ref: https://github.com/Homebrew/homebrew-cask/issues/236819#issuecomment-3549051960
+  disable! date:    "2025-11-18",
+           because: "the developer intentionally makes distribution difficult for package managers"
+
   depends_on macos: ">= :big_sur"
 
   app "Archi.app"

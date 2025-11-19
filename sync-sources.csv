@@ -8244,6 +8244,7 @@ Homebrew-homebrew-cask/Casks/a/anki.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/another-redis-desktop-manager.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/ansible-dk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/antconc.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/antigravity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/antinote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/anybar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/anydesk.rb, Homebrew/homebrew-cask, 0
@@ -8991,6 +8992,7 @@ Homebrew-homebrew-cask/Casks/d/dante-controller.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dante-via.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/darkmodebuddy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/darktable.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/d/daruma.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/darwindumper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dash-dash.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dash.rb, Homebrew/homebrew-cask, 0
@@ -9451,6 +9453,7 @@ Homebrew-homebrew-cask/Casks/f/filemon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/filemonitor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/filen.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/filepane.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/filo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/final-cut-library-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/final-fantasy-xiv-online.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/finalshell.rb, Homebrew/homebrew-cask, 0
@@ -13177,6 +13180,7 @@ Homebrew-homebrew-cask/Casks/m/mega.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/megacmd-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/megasync.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/megazeux.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/meituxiuxiu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meld-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meld.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mellel.rb, Homebrew/homebrew-cask, 0
@@ -14931,6 +14935,7 @@ Homebrew-homebrew-cask/Casks/t/tal-drum.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tales-of-majeyal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/talon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tandem.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/taobao.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tap-forms.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tartelet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/taskade.rb, Homebrew/homebrew-cask, 0
@@ -15170,7 +15175,6 @@ Homebrew-homebrew-cask/Casks/t/truetree.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/truhu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/trunk-io.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tsh.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/t/tsh@13.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/ttscoff-mmd-quicklook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tuck.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tuist.rb, Homebrew/homebrew-cask, 1
@@ -15481,6 +15485,7 @@ Homebrew-homebrew-cask/Casks/w/whatsyoursign.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/whichspace.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/whimsical.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/whisky.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/w/white-rabbit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/whodb.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/whoozle-android-file-transfer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/whoozle-android-file-transfer@nightly.rb, Homebrew/homebrew-cask, 1

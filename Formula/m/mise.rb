@@ -1,8 +1,8 @@
 class Mise < Formula
   desc "Polyglot runtime manager (asdf rust clone)"
   homepage "https://mise.jdx.dev/"
-  url "https://ghfast.top/https://github.com/jdx/mise/archive/refs/tags/v2025.11.5.tar.gz"
-  sha256 "3afc9f12571a60d66423e7e58549d226f9fd3b8dbcee1b90b416645808c2a23d"
+  url "https://ghfast.top/https://github.com/jdx/mise/archive/refs/tags/v2025.11.6.tar.gz"
+  sha256 "33d997efa585fd477caa31815c0760528a892f3ef4ab5e855e8cefe281484a5b"
   license "MIT"
   head "https://github.com/jdx/mise.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Mise < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "af641bd2f08a609e952514bdf183722674fa1a39b88e244b46e76f4ede9384ef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "724e28197b0828ada993fd0aab90d414bfd2dbef7de9aae7bb871c3502c2ddff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d365add0097b0b95fe1fa9fbcde101ed948270b47dc8164ed5d8a3767510702"
-    sha256 cellar: :any_skip_relocation, sonoma:        "33e444efddcb0bf1206613548f7ff44f188bb8ada8bd12e5552cf4ebea880120"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "76ce26acd73133ada9ea2001a7679a7a18908b087c15f9915f555ee076570a6e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0e1182ac75728fc8c997a828f1b041cdfe321612b773825258ea2645b1335e1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e03400dec4e1e6e763695e9741da58e34a00a472d6965ec1c91634b4c3f4d6dd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0a54db96ac6c7945b8fd19a715c114606fed0e83871c4631355b05c14568e5a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b7778e7c0113eee65adf3717bf03cf0ec9fb4ade5c03aa892ac895f0a11e733"
+    sha256 cellar: :any_skip_relocation, sonoma:        "18e7296637e007d19c30661f8008409c5784cf5a8a4970b2ba21c8d54a5c0bba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "836bbf7a4bb566d5123394f37d2af35dbc8cf855f90c183a5ba09e39d7d46d37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1d6a7b126339d73eb41b93bc16f1d6e367b988aaa228c2283c0ad802bf6e730"
   end
 
   depends_on "cmake" => :build

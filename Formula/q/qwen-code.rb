@@ -6,15 +6,17 @@ class QwenCode < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256                               arm64_tahoe:   "64e1887456dfe8ff4513fda3edec0ccd2b4c6de47a53f0c3cb51adea6a9fd6c6"
-    sha256                               arm64_sequoia: "d19206917860df2729ad8038e8d146da6962f71b05a2d9a31870851bf754358f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abe809cb8691816e2470915976185e5787d876feaa06c25ee016fc6c45332de9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ffd433d5a2fa7e17b56dacb1007d89ab112fa585fd1133526424ea40e46170dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a763cd48b323bedcc4b578425b66199036504ed28f918caf6f9ba284e965f7a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb8fd9543e987e43dd49977b0faf3605b82d377646efb5a2248c92fb28fd1967"
+    rebuild 1
+    sha256                               arm64_tahoe:   "60b15d952e516f832aba3284261dfc74fb54a89e0a34ea4eb1466e7419e82dc3"
+    sha256                               arm64_sequoia: "3883e09999a486d976cc0ce2f35f4f83982302702b5df40a250c8d49757d9259"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72276d2e6e6001d68cf69faa88c2a47b4a18dfea5c7722257bfb654167ff3517"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8ea5dfc3c9d1b2e5bdbba948e07eab1a142d5cb2fa018b209394ba78b43df213"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f62fadb434fc8477f4d114b37afe01b4ed24e8bd39da41b469fc96d12eb6ba9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4510ab5d2b1d0f808aece5f3fc61639e2996b7b89e55cf79f3b379c1c105ecf1"
   end
 
   depends_on "node"
+  depends_on "ripgrep"
 
   def install
     system "npm", "install", *std_npm_args
