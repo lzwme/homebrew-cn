@@ -1,10 +1,9 @@
 class Netdata < Formula
   desc "Diagnose infrastructure problems with metrics, visualizations & alarms"
   homepage "https://www.netdata.cloud/"
-  url "https://ghfast.top/https://github.com/netdata/netdata/releases/download/v2.7.3/netdata-v2.7.3.tar.gz"
-  sha256 "f940fb0978c09f2353343cc4480dd3abfdba025f6690c90747fbc9a143e6bb9b"
+  url "https://ghfast.top/https://github.com/netdata/netdata/releases/download/v2.8.0/netdata-v2.8.0.tar.gz"
+  sha256 "f52b6ec82020ddb6cdd7b048adadb54136ac987ddfc94c2e46f25682a0f547d1"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,12 +12,12 @@ class Netdata < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f7aafb84eb59dda4af94e6afae11123b84cbf27d6db9abf49a1626dafeb8e401"
-    sha256 arm64_sequoia: "bb1adf2766ecec51972ca46cf90742d623711d0b3e0cc32b71edbf1e008d3543"
-    sha256 arm64_sonoma:  "442f58fac87fcc7551b7d1e6419562ad17e90226d428154b14e16ed6a9a3e07c"
-    sha256 sonoma:        "ce86d06fe6871d4874705c747428a1d90490a1150e35181017e397b9c52f7adf"
-    sha256 arm64_linux:   "90918befcf80aa8014d609806909c86bb7f78cba11ee5deeb3ad25c03abdd72b"
-    sha256 x86_64_linux:  "fee05e30d02b299637aa75988ce3a7271bd14b49860ef93959ef91261ae1c18b"
+    sha256 arm64_tahoe:   "3fef597caa2825aa2b72f717d46c91fece3762bc31ddf23f5e22060f0c979e25"
+    sha256 arm64_sequoia: "3b1efc74aeb3a29931ddbf998eed0afa0686c61bec1bb8a5540832df99371610"
+    sha256 arm64_sonoma:  "d0e5b7ffce18ce745562cf11006cf505459414f4efe02a3f072fa183c956da62"
+    sha256 sonoma:        "e0edb951f70d0b72c847b5671cc44225eed9fc4269c7e45b15164ae07392291f"
+    sha256 arm64_linux:   "d198b2af4374765d7ddb952eb57883d3d0377cadfb2ea55745d6be51950dde7d"
+    sha256 x86_64_linux:  "06ab99f60be73a4f27b23456d4262991523d09e461fc06415b7712578c37ab7c"
   end
 
   depends_on "cmake" => :build
@@ -52,12 +51,6 @@ class Netdata < Formula
     depends_on "systemd"
     depends_on "util-linux"
     depends_on "zstd"
-  end
-
-  # Backport fix for arm64 linux
-  patch do
-    url "https://github.com/netdata/netdata/commit/e8d12d47bf6b9c3105363ccafaa53cdc80b2237b.patch?full_index=1"
-    sha256 "b4a541f1528083665e29a5aa4d89786008114ea400aec8ae94d43e34ea7e3944"
   end
 
   def install

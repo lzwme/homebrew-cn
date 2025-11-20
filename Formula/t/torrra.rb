@@ -3,20 +3,26 @@ class Torrra < Formula
 
   desc "Find and download torrents without leaving your CLI"
   homepage "https://torrra.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/b1/fb/bc14696c2dfff706efa5ff1f0d46d0c6b844740c6dacefe4ed5a1501eb89/torrra-1.2.8.tar.gz"
-  sha256 "9b50c44c112f3c72ffe4f9b3bafcb06b50076604ebca99522e6b470a0f7bfbd9"
+  url "https://files.pythonhosted.org/packages/5c/f1/4a976ef7440eb8689fd0ce25c64478c8bd057f34b2363b9717606c0a61d3/torrra-1.3.5.tar.gz"
+  sha256 "57ff46c4af441ac0a8b600355856d020134859b82ecf3098f3a9eec38ed899da"
   license "MIT"
   head "https://github.com/stabldev/torrra.git", branch: "main"
 
+  # FIXME: Fails with "Could not find a version that satisfies the requirement libtorrent".
+  # This can be removed when libtorrent publishes a release with Python 3.14 wheels or an sdist.
+  # A temporary workaround to bump version is to resolve resources with Python 3.13.
+  no_autobump! because: "`update-python-resources` cannot determine dependencies"
+
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "340ffb9b0af67b970c4dfa6097df6673f85c8856e4361c314531b2a40601ecb0"
+    sha256 cellar: :any_skip_relocation, all: "ad60430c701f202f3116a5a61d642dd30a933e712789c5e110016c9097c4fb91"
   end
 
-  depends_on "certifi"
-  depends_on "libtorrent-rasterbar"
+  depends_on "rust" => :build # for uv-build backend
+  depends_on "certifi" => :no_linkage
+  depends_on "libtorrent-rasterbar" => :no_linkage
   depends_on "python@3.14"
 
-  pypi_packages exclude_packages: %w[certifi libtorrent]
+  pypi_packages exclude_packages: %w[certifi libtorrent libtorrent-windows-dll]
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
@@ -24,8 +30,8 @@ class Torrra < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "diskcache" do
@@ -94,8 +100,8 @@ class Torrra < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/af/90/59757aa887ddcea61428820274f1a2d1f986feb7880374a5420ab5d37132/textual-6.5.0.tar.gz"
-    sha256 "e5f152cdd47db48a635d23b839721bae4d0e8b6d855e3fede7285218289294e3"
+    url "https://files.pythonhosted.org/packages/f6/2f/f0b408f227edca21d1996c1cd0b65309f0cbff44264aa40aded3ff9ce2e1/textual-6.6.0.tar.gz"
+    sha256 "53345166d6b0f9fd028ed0217d73b8f47c3a26679a18ba3b67616dcacb470eec"
   end
 
   resource "tomli-w" do
@@ -114,6 +120,10 @@ class Torrra < Formula
   end
 
   def install
+    # hatch does not support a SOURCE_DATE_EPOCH before 1980.
+    # Remove after https://github.com/pypa/hatch/pull/1999 is released.
+    ENV["SOURCE_DATE_EPOCH"] = "1451574000"
+
     virtualenv_install_with_resources
   end
 

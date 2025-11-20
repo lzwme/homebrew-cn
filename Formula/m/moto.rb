@@ -8,19 +8,20 @@ class Moto < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3fca729465854a5a0ee7eec948d169d141f154f3fc0ebf7f01b334e6387a3d5c"
-    sha256 cellar: :any,                 arm64_sequoia: "32bfe6df444aaaf5fd3dae170b721bd409e38666744c987bb874bb525453efcc"
-    sha256 cellar: :any,                 arm64_sonoma:  "e9214c619f4e119cabafb2071a9cccfc39197dcd96b2bcece434b728f405e70b"
-    sha256 cellar: :any,                 sonoma:        "d32366eb473a02679f1aa4a9f8b66c3bb8a0e87ffebd86faa63c6a595c1827d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3952612feddcc7d71d0b09611e1302e581d2b7c32c632fde11f1e446fd0a3f6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1c155da4ff35761076efc100764a5c49ff106dc32a3480ccbf7a629b212819b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "38c84483a645d5748e9accdb80e05ab4a3e81c2d7fe3dcd6dccd1e562e936640"
+    sha256 cellar: :any,                 arm64_sequoia: "02345137fd460a70ed62ffc6f1a9f411adc4035a8e671a30ec15457b72e85c85"
+    sha256 cellar: :any,                 arm64_sonoma:  "7c985d134b999b028f9c2566fbcf626ece5d5d7e86a2fcb99a409eb29fc7d0fc"
+    sha256 cellar: :any,                 sonoma:        "aad3d67029f1ffb8c07d77f4aabd33ba380caff53dce2f8314300ec78d36df08"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d175df0f29ed134d741dfd3f25eeb19cb9e64cab336dfd1b5ab4b0e604dbf55b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3881630ae0ef92aa8fa50e97365104f60d56986f8640cd0ee9e56c228c143312"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.13" # Pydantic v1 is incompatible with Python 3.14, issue ref: https://github.com/aws/serverless-application-model/issues/3831
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages package_name:     "moto[all,server]",
@@ -282,7 +283,7 @@ class Moto < Formula
   end
 
   def python3
-    which("python3.14")
+    which("python3.13")
   end
 
   def install

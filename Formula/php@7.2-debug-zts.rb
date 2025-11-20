@@ -5,17 +5,16 @@ class PhpAT72DebugZts < Formula
   version "7.2.34"
   sha256 "3b48ab3d2f57cc29e793846446024f7e1219641647bf1d678a5effe460358d4d"
   license "PHP-3.01"
-  revision 4
+  revision 5
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 2
-    sha256 arm64_tahoe:   "4ddd020a0508239b6d886c8bf8a1fb951c9939ef77066ced7e209db09baab4c7"
-    sha256 arm64_sequoia: "1db66ba1ed27f93eb561c40be717080658ac53d8037e25f547dd38925b95bd65"
-    sha256 arm64_sonoma:  "d822bcccef899d8ff785c7959596aef3f8786929c0137bff2bd61ceb75b2d8ba"
-    sha256 sonoma:        "ebd6ce011130e2780348c5db5398ed8b7246e898654c22529cc59c1b77cfc313"
-    sha256 arm64_linux:   "7b737725b5bc1dc72949d1fed7a1c761bc33525d38ee257d4e0d4fb83735e78f"
-    sha256 x86_64_linux:  "9a576e1e5926759a337a171eee248180fe7cb090a6a28476e140d8246b6425b6"
+    sha256 arm64_tahoe:   "316b8a1128b764176d93db28b772bd2391b35baba4aff2cc225067f00ec9ce57"
+    sha256 arm64_sequoia: "71c2b87bbe0cb65f1f68412c48080914ccf6a75fbbaa215f2e8cc533428f3625"
+    sha256 arm64_sonoma:  "b0966c9d0423a6ce2c5cfd97c5051a7ce3682edcb8df3cc1d035d6643a42758b"
+    sha256 sonoma:        "50a0602e88e45feb0594ebb55aebf5a665c6000f8d306b96f81f393d842ce8bf"
+    sha256 arm64_linux:   "c98a5313a1b63a41d3150bcc6a5a8bafcc1f7fe75c6e320fe9ad5f38c2cac752"
+    sha256 x86_64_linux:  "ed0ec37f7ac1cf280ccbf273623f1026208e6a68afa7f43389acb99ac5f86ca7"
   end
 
   keg_only :versioned_formula
@@ -41,7 +40,7 @@ class PhpAT72DebugZts < Formula
   depends_on "gd"
   depends_on "gettext"
   depends_on "gmp"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "jpeg"
   depends_on "krb5"
   depends_on "libpng"
@@ -179,7 +178,7 @@ class PhpAT72DebugZts < Formula
       --with-gettext=#{Formula["gettext"].opt_prefix}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-iconv#{headers_path}
-      --with-icu-dir=#{Formula["icu4c@77"].opt_prefix}
+      --with-icu-dir=#{Formula["icu4c@78"].opt_prefix}
       --with-jpeg-dir=#{Formula["jpeg"].opt_prefix}
       --with-kerberos#{headers_path}
       --with-layout=GNU

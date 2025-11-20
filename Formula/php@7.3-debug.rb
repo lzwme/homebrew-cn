@@ -5,17 +5,16 @@ class PhpAT73Debug < Formula
   version "7.3.33"
   sha256 "c9bc90d6c3d7b2d3a9e17581d36382f4db3e20e3e43225db5437c52e2f2de7bf"
   license "PHP-3.01"
-  revision 12
+  revision 13
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 3
-    sha256 arm64_tahoe:   "97821e2b7e28dc3331e08ff2050942a524c764a8dbbdba0514ac4b633cc3de19"
-    sha256 arm64_sequoia: "43bd214944b6299627549e5aa56e1fc71a6d35e506397e426238b2848b6b2c04"
-    sha256 arm64_sonoma:  "a869bf6b33ba48530590fa788f64d19543d59055bda0dc37152af2078b6e84bb"
-    sha256 sonoma:        "f4da9a38c41ca02e9b03f9b2f412fe1e6f82a113571267ed045f73a45f39e435"
-    sha256 arm64_linux:   "67ab6e5e4d03162dc929ff6fb509dcf3b83c186258f60995c9c01fae1476557b"
-    sha256 x86_64_linux:  "2dea0ed5c8046180c979bbba9a19be0278e1c54b2acbe3fb0c74c902556a62a0"
+    sha256 arm64_tahoe:   "eda848c9f1f4459c27f517d3eb2badb0d30e24048e69bb7d4325805b26bab3f6"
+    sha256 arm64_sequoia: "96816eeacd79c2e1f78c5a97a0da09cc29cd105c6e822c7ed44fd7376d41b628"
+    sha256 arm64_sonoma:  "3c760f1f007a9a27770f625e83523095d37b4ad800cb4d03916018da061b10a6"
+    sha256 sonoma:        "53ac0e3c687ff07b7ef8447bd9d67947b557820abf4f67490b9e0fe91468c183"
+    sha256 arm64_linux:   "c1ce04cd093b1991bf2851208fcd6a4825b71cc271a8828d5893f815cf2a0994"
+    sha256 x86_64_linux:  "3cf78034bb7ed85081ba3e52ecaa4b365f84bc174bdb66805f3b51392349377c"
   end
 
   keg_only :versioned_formula
@@ -41,7 +40,7 @@ class PhpAT73Debug < Formula
   depends_on "gd"
   depends_on "gettext"
   depends_on "gmp"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "jpeg"
   depends_on "krb5"
   depends_on "libpng"
@@ -169,7 +168,7 @@ class PhpAT73Debug < Formula
       --with-gettext=#{Formula["gettext"].opt_prefix}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-iconv#{headers_path}
-      --with-icu-dir=#{Formula["icu4c@77"].opt_prefix}
+      --with-icu-dir=#{Formula["icu4c@78"].opt_prefix}
       --with-jpeg-dir=#{Formula["jpeg"].opt_prefix}
       --with-kerberos#{headers_path}
       --with-layout=GNU

@@ -16,12 +16,13 @@ class Tarantool < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "062bf5f72121d2b53e7e3e90b0e3c142db341ba486744f79187d4faa70c095c7"
-    sha256 cellar: :any,                 arm64_sequoia: "96d4bf9f6976d1cbbba9dae094a1bb88499d4b2ad263b2822ad121abb1cfc94c"
-    sha256 cellar: :any,                 arm64_sonoma:  "75cdeb82e43c5867d938a0cce097283d43b89017d430d2e9ec1964f2941c17fd"
-    sha256 cellar: :any,                 sonoma:        "4fa662142eb5f5be2b574feb3bcf8a9d759dcec63800119e6fde706a56670292"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d195d21bf525cff7624dd482e495474256c1b89a22b29a17a6121692ffcda9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f677b2ac62d9cb56b1d7f4339313a49217f6b404a264fbc2317746280cea9d4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "f51f501b3893c3bda04da069805c005b2689acd4b99f4dcb1e3ce52b15be818d"
+    sha256 cellar: :any,                 arm64_sequoia: "ba843e171a6ed888728c290851128df7643aa3286559f4b4cdd298aa8226f368"
+    sha256 cellar: :any,                 arm64_sonoma:  "1135c1ba7178f8041b9e40d27f41ebf12cb6f71f2c0f56ba52fb0c215e22125c"
+    sha256 cellar: :any,                 sonoma:        "af22c843f3f0e759fe6ef244c593de3ef139a840d02368173f8beeb5d65d4843"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f5b619cc81e0f22a1540c9234f33989287464ee3b70f1b0e348744875bdc754"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d9bfcd43ac016630fa6d37fc91977375bb9b44071dbc1cbbbe23c0f68f69d09"
   end
 
   depends_on "cmake" => :build
@@ -39,13 +40,6 @@ class Tarantool < Formula
   end
 
   def install
-    # Workaround for clang >= 16 until upstream fix is available[^1].
-    # Also, trying to apply LuaJIT commit[^2] worked on Xcode 16 but caused issue on Xcode 15.
-    #
-    # [^1]: https://github.com/tarantool/tarantool/issues/10566
-    # [^2]: https://github.com/LuaJIT/LuaJIT/commit/2240d84464cc3dcb22fd976f1db162b36b5b52d5
-    ENV.append "LDFLAGS", "-Wl,-no_deduplicate" if DevelopmentTools.clang_build_version >= 1600
-
     icu4c = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
                 .to_formula
     args = %W[
@@ -67,9 +61,7 @@ class Tarantool < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-  end
 
-  def post_install
     (var/"lib/tarantool").mkpath
     (var/"log/tarantool").mkpath
     (var/"run/tarantool").mkpath

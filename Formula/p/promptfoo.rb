@@ -1,17 +1,17 @@
 class Promptfoo < Formula
   desc "Test your LLM app locally"
   homepage "https://promptfoo.dev/"
-  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.119.7.tgz"
-  sha256 "df484562f7a4281a5fd8ce2673b259099a93ad76388a29786d23f3a4cba6288c"
+  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.119.8.tgz"
+  sha256 "7db72cfeebc7cb999dea4b064dbaaca1d79c8ec311c70f2e201737a8c230aaf5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f13fd47b5d889c9e74ff6baacdc81f8be14b0b82da6ff69f806b3a9a8c7a0698"
-    sha256 cellar: :any,                 arm64_sequoia: "8c62487766f2daefd5d298ce813f955f1cb847ce8b17aaa05d02415615b4983c"
-    sha256 cellar: :any,                 arm64_sonoma:  "48f2bc710a5f6d1fa89fcfc5171f023bedc88ae06bbbd82ce7e861cc450d8820"
-    sha256 cellar: :any,                 sonoma:        "e2870cab1afcb2cdd12d0304de8ae5855c6d27e73b78df25b8baf8be7b75cf15"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "552ec60bfa9cdbbbb4e4d748470f56ae0f605457f3ad879f7703f0e3aea88df3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b48ac5343f22f2296e7fb13aec4da064dd078821c0646d5dbd66f27f6b33dc8"
+    sha256 cellar: :any,                 arm64_tahoe:   "67de3ef2ceb95e3e642c468f96f5a2fa43222ea3b307868a356622dc90962936"
+    sha256 cellar: :any,                 arm64_sequoia: "61fa9242e9303d156f9265311ff4dcb25f063615bfd153ca3e74e0c6141a9cda"
+    sha256 cellar: :any,                 arm64_sonoma:  "b7e2c0e9880533e073e14889ed676dc265f45472735e44f62f1ad768d4018c2c"
+    sha256 cellar: :any,                 sonoma:        "9d586c0561ebd51af133a59f88b5f31b329c6af2caa29e1d7863adb38f737763"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "693c8315b28c47b824f51b40c8389f07b44a7ded29dd037ac6f9c683cfbe3d81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23bc9433af15a126006ac4c3a490ae8c5cdcf40d54a12304ce5746c0b3cda949"
   end
 
   depends_on "node@24"

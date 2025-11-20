@@ -8,12 +8,13 @@ class AwsSamCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "46fd44bf5ce85f3fb7165e6acbd205b4c82774d5378f95646c287390f3bf0e4e"
-    sha256 cellar: :any,                 arm64_sequoia: "9f0eb4c73b1e3f52d4399a6a66463b250f9625d7edbddbdaf126a78bbf03d4d4"
-    sha256 cellar: :any,                 arm64_sonoma:  "383e1317ddada4af0fbe6f6b14293bff5e1fe87a7a29a92eeffc26f415f8bfbb"
-    sha256 cellar: :any,                 sonoma:        "575c09a648b392e0252bab05b20ab2cd6e6f98bca69c59983edd5c93f98bdca0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "06d7ffef44adb1935120865db2fa9e00984cedba48945ca6d75a37510664a5ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d08bda3efb6a4ba445a129b8103cacd9a5bdca3bdaadb3c7ca931107757b2a1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c82495eaa9ee591ea788826048fdb9137b5d72816263240f6cd52b32ab23edd5"
+    sha256 cellar: :any,                 arm64_sequoia: "cfb938b28ea1dd4a024ac08d5c647da28c8eb3bfe2e50d538aa115567b78635f"
+    sha256 cellar: :any,                 arm64_sonoma:  "5c9330c16ba4fc8f590b789ab8e2158d2dd1c0ce0d77e4783a792e4b10878e17"
+    sha256 cellar: :any,                 sonoma:        "36bff61b94e45270ba83b14cc473067e1fda1e0ad81ba1b9c7f213db06d642cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d535984df909383724f89d1e98c89bcc1a44bc9b3f1cdd573ae1a3bd028c058d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bb6d8cc34a6ebf992e0f873aa6b86fb45cbf3994bee69e39675bacf3820da99"
   end
 
   depends_on "pkgconf" => :build
@@ -21,7 +22,7 @@ class AwsSamCli < Formula
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.13" # Pydantic v1 is incompatible with Python 3.14, issue ref: https://github.com/aws/serverless-application-model/issues/3831
   depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libffi"

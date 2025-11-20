@@ -5,17 +5,16 @@ class PhpAT70Zts < Formula
   version "7.0.33"
   sha256 "3371c5712eae64aa28eda7733a02d93ec298894d57eb0ce3fdac0904bbee4a16"
   license "PHP-3.01"
-  revision 5
+  revision 6
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 2
-    sha256 arm64_tahoe:   "611d3e39cacd6c5d2920e7f8baf3faea52a73b2065e96af33469f4bbf72beff3"
-    sha256 arm64_sequoia: "929c6520e167299e0b3e0010eda9a79fa7353fbdb7427346684fe0dd015bc25c"
-    sha256 arm64_sonoma:  "35563bfd349b6fed6f51969945e466666724994b50c013f23900f4c1874fa880"
-    sha256 sonoma:        "d9cfcc4881d06629862930123eed331da614af5f8034b6c0504d34499f8f32b2"
-    sha256 arm64_linux:   "57f7e20c1e9fc2e414a8974d9a42c8f21c42d85960aff55427ed389c36d7e14a"
-    sha256 x86_64_linux:  "f873b956bd7ca33c132e72d06220cd1c483e039be0088e4905d23e19266e40a8"
+    sha256 arm64_tahoe:   "a324de93314fdd6d98227e1fe92f9a2a6490103b5628cf677abc70a01bd115fb"
+    sha256 arm64_sequoia: "e0861b72a2ba6f52dac3de79c700ea55bba6689a714539c0b92d3b23dc21330f"
+    sha256 arm64_sonoma:  "15f396bfe67b09921d652282cbb5120f34d68214bdbf36511273616301b26536"
+    sha256 sonoma:        "7cca58c33eb03b9c931ad4677067107d3367b2d80cac516586e8a2772578f43a"
+    sha256 arm64_linux:   "6cabd7461c7c02762d4cc81c1063ff29145fff5fa42aaeb6a06dbfea2e8e4689"
+    sha256 x86_64_linux:  "59220c681eca06d9f99929f065c4e23da64c68e9fc8776fec5cfe090f4e4fb87"
   end
 
   keg_only :versioned_formula
@@ -40,7 +39,7 @@ class PhpAT70Zts < Formula
   depends_on "gd"
   depends_on "gettext"
   depends_on "gmp"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "jpeg"
   depends_on "krb5"
   depends_on "libpng"
@@ -177,7 +176,7 @@ class PhpAT70Zts < Formula
       --with-gettext=#{Formula["gettext"].opt_prefix}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-iconv#{headers_path}
-      --with-icu-dir=#{Formula["icu4c@77"].opt_prefix}
+      --with-icu-dir=#{Formula["icu4c@78"].opt_prefix}
       --with-jpeg-dir=#{Formula["jpeg"].opt_prefix}
       --with-kerberos#{headers_path}
       --with-layout=GNU

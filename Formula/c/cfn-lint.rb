@@ -8,17 +8,18 @@ class CfnLint < Formula
   license "MIT-0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e60e80e52a4326e7d5d26214c679bf17c5284a703a74c58e425c4a1339032a75"
-    sha256 cellar: :any,                 arm64_sequoia: "7f190bfb519d3cd684ba68f7bf0b865381dbee72e2672b7d33e162e8d3c3f903"
-    sha256 cellar: :any,                 arm64_sonoma:  "9f7645eb651453fa81f83e12ac5b23fa6ffb93bdfd54699fc74710196aa138df"
-    sha256 cellar: :any,                 sonoma:        "ae652f271b71041f5695a9099b190c5a719ae71ebc9a01f3f28e10877b828c4a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "882cb8a1737301b1a007fe6d38c160dbfa1121f634dbd514c7f6a030c02837cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "877231c424a47fb7fe170fce516c92f52a2d6fc520f1b3a5df7a16fc44e87cb6"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "a68a9da99e5267f215ce877db9a7ea08501f2b5df53f7c72ae9c207e95609cfa"
+    sha256 cellar: :any,                 arm64_sequoia: "0037b779ac780d30f0a8dc43708683e3c3f6876ac27e53012d667356088b6b0a"
+    sha256 cellar: :any,                 arm64_sonoma:  "d12867a40797c794c21b823a3fc0910273d812a8581a43985ab06efbbe2614e5"
+    sha256 cellar: :any,                 sonoma:        "e1e07a57f3ebd4c850cd9101ee60823e22a10747c10c6950bbda5f4af861e5fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "511e361712a67f5e3ac8913569c014d947326e75efac5b12dc1c89314c3317d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea4fc907574490734f82c9e78b199b98d29395a7782229e56b8694023d577610"
   end
 
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.13" # Pydantic v1 is incompatible with Python 3.14, issue ref: https://github.com/aws/serverless-application-model/issues/3831
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages exclude_packages: ["pydantic", "rpds-py"]

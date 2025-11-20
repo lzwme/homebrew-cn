@@ -5,16 +5,16 @@ class PhpAT81Debug < Formula
   mirror "https://fossies.org/linux/www/php-8.1.33.tar.xz"
   sha256 "9db83bf4590375562bc1a10b353cccbcf9fcfc56c58b7c8fb814e6865bb928d1"
   license "PHP-3.01"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_tahoe:   "547837e4a91a0fa53515eec0743a1b38c5cd6512dc252130ed13e03cb425c945"
-    sha256 arm64_sequoia: "9b6950c9d48b1c408d649bc5c380a9aa88a37cfb191d665368e10debffa42458"
-    sha256 arm64_sonoma:  "53052b429946aed449079de5ac6ac8917e4d042a156b1c2cec61db87286b8792"
-    sha256 sonoma:        "2a587de5acecc869a8ca3b3f209829afe504fc3d7e45a4a849f3b6b9cb48335c"
-    sha256 arm64_linux:   "3e6509e407910af83650512af91701f5edb0dd3a06c45fd8c621507cd8e28e90"
-    sha256 x86_64_linux:  "5697a6b029f14d55772fead67d00acd771939f6d95a392d06a9c3ddc24a1f751"
+    sha256 arm64_tahoe:   "07e4d49c811efd955c270bfa225e70e86bae03c7acf3caaa81db694c83e1493d"
+    sha256 arm64_sequoia: "e98b3ec9d00967b7b754126db92e81e006bd512d4405e61315ff2522a58ffaaf"
+    sha256 arm64_sonoma:  "13af210fdd5ca786d61a8f2ae46cd4ffad9bb841937e780e6feba2802c64dcd6"
+    sha256 sonoma:        "e1aa35d4e91f0f77e27aa4ed8ce3ef4430ae2c6510a49bbf617ebee57c1491da"
+    sha256 arm64_linux:   "c3748113262d44f6fb95e571b715f51b329937365dafc905fc26479e31dd3ea8"
+    sha256 x86_64_linux:  "dcd244f9595e5ec794c51be57eb976bae1eb452105056d4a879a3ea60de1cf2b"
   end
 
   keg_only :versioned_formula
@@ -35,7 +35,7 @@ class PhpAT81Debug < Formula
   depends_on "gd"
   depends_on "gettext"
   depends_on "gmp"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "krb5"
   depends_on "libpq"
   depends_on "libsodium"
