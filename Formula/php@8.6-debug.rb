@@ -1,19 +1,19 @@
 class PhpAT86Debug < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/php/php-src/archive/9762c446f01a657aec5f95dca81e21240e71bd84.tar.gz?commit=9762c446f01a657aec5f95dca81e21240e71bd84"
+  url "https://ghfast.top/https://github.com/php/php-src/archive/ca7f55600232fdcde8da1cc27167006dca1cf967.tar.gz?commit=ca7f55600232fdcde8da1cc27167006dca1cf967"
   version "8.6.0"
-  sha256 "c5421decc3c57b360c1ceffd751809c50da17f0c8c03f6c8b81a1d96b68616e1"
+  sha256 "bba161b5fe09b036e900069823373641403ae7a1a2c887fd933a3a8ebb09eb56"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 29
-    sha256 arm64_tahoe:   "fd6698d90d85116d7fb865eba986d5280cc71685877f3231c8af1b6abb81c4f1"
-    sha256 arm64_sequoia: "8fc9f3be5bbe4ec13de9ee4153f301cef402312efd930b997b76187ef48ce20f"
-    sha256 arm64_sonoma:  "21d0b35eedc59f91f7e1c8b923e394f486ee4a9d8c2fb3e63fd67fc998b3eb3b"
-    sha256 sonoma:        "1dd73120de3a103f6f9dde2cbc26d311563658c02024401b344d4fe65d512387"
-    sha256 arm64_linux:   "3aa69c2107e134e2f22c4f37c6da8652fd5073d86a2e7bd5d15b6af2a97c19e0"
-    sha256 x86_64_linux:  "e06f770980979c09ccefcb73fce554c549f372b5f24b75fb3926aff1dadfa0fe"
+    rebuild 31
+    sha256 arm64_tahoe:   "a384814d426415fddc32277916f97a1f2ba0385352fef368610c2eb687b45a59"
+    sha256 arm64_sequoia: "191fcce55e8174197ccb3257c475504be4c23495a7c956ac6772c498f5ab9800"
+    sha256 arm64_sonoma:  "20e5d57b24e34f4b429c42fc93262be79edcac092bcacb3bb9cf01fdd526e445"
+    sha256 sonoma:        "c989c1237c6dfff0e777928cf7ccc3c562d451704661045b4e12b630cde9e63a"
+    sha256 arm64_linux:   "5fe3ba842f81cd29afb66f531a2050908b6c032eb0d9898e76eb818beacc8d33"
+    sha256 x86_64_linux:  "75e78c247fde0c152d6ba1a3a6b45de7220d2dfd2a4a9b1a4679e36c66902bf4"
   end
 
   keg_only :versioned_formula
@@ -33,7 +33,7 @@ class PhpAT86Debug < Formula
   depends_on "gd"
   depends_on "gettext"
   depends_on "gmp"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "libpq"
   depends_on "libsodium"
   depends_on "libzip"

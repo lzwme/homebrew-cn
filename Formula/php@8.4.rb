@@ -1,41 +1,40 @@
-class PhpAT85 < Formula
+class PhpAT84 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/php/php-src/archive/cc1e300d4dbaaf8c6823af24aab5d1ce36468548.tar.gz?commit=cc1e300d4dbaaf8c6823af24aab5d1ce36468548"
-  version "8.5.0"
-  sha256 "7b76469fd6b2b77310320e17990ac9b10e874912041a1ddff97419b68c763a48"
+  url "https://www.php.net/distributions/php-8.4.15.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.4.15.tar.xz"
+  sha256 "a060684f614b8344f9b34c334b6ba8db1177555997edb5b1aceab0a4b807da7e"
   license "PHP-3.01"
-  revision 4
+
+  livecheck do
+    url "https://www.php.net/downloads?source=Y"
+    regex(/href=.*?php[._-]v?(#{Regexp.escape(version.major_minor)}(?:\.\d+)*)\.t/i)
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 29
-    sha256 arm64_tahoe:   "835370c6172f270e7a11fb63f2eb0951af5d7ee620825613fcecc39dcf08e56a"
-    sha256 arm64_sequoia: "8d9f1b5675c7170a204d7fdddee7c68275c3edc5861e8216a6097198ff372231"
-    sha256 arm64_sonoma:  "0069c158a1b67d45ea36efdedbebd48c9fb2fa61540f1a81aa5526db58295592"
-    sha256 sonoma:        "549c245f549d7abc8f53f70ee45db7fa796f589c7d0c4cb331a11c2f81fdf61b"
-    sha256 arm64_linux:   "5d818604c4fd53fc9240f45dda90effff7403c04a555f4ad4326ea7287308c30"
-    sha256 x86_64_linux:  "e2edfcc288c3a9547e538c1be33f8a401fe4b143ef5f5748ea75313daecc169c"
+    sha256 arm64_tahoe:   "94dc896d611a045be3fec639cf3ac0231727422a64889dfb54ca0d9fcc9492be"
+    sha256 arm64_sequoia: "90a8c0021f789e617ba7651c5ff6f552c8391342aa0963fe4bd264c383ffd7da"
+    sha256 arm64_sonoma:  "e1bbc9b3fcf7538163204792c07071038e5b9e067b8139085e5921a212d32fbd"
+    sha256 sonoma:        "602f6e4e4f6e62b8c9f6175056e634dce2628d5fe991fc429c6f0c01b693d17f"
+    sha256 arm64_linux:   "2d9d636958954fb23629e7c44c0f099cea9e22b5528a6e69f1eb753b3c55859c"
+    sha256 x86_64_linux:  "d5185d2f1a59d224d2a7ec42d3b39295fd2e7f284444cd99bf4fdb31ede797a6"
   end
 
   keg_only :versioned_formula
 
-  depends_on "bison" => :build
   depends_on "httpd" => [:build, :test]
   depends_on "pkgconf" => :build
-  depends_on "re2c" => :build
   depends_on "apr"
   depends_on "apr-util"
   depends_on "argon2"
   depends_on "autoconf"
   depends_on "capstone"
   depends_on "curl"
-  depends_on "cyrus-sasl"
   depends_on "freetds"
   depends_on "gd"
-  depends_on "gettext"
   depends_on "gmp"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "libpq"
   depends_on "libsodium"
   depends_on "libzip"
@@ -48,6 +47,7 @@ class PhpAT85 < Formula
   depends_on "tidy-html5"
   depends_on "unixodbc"
 
+  uses_from_macos "xz" => :build
   uses_from_macos "bzip2"
   uses_from_macos "libedit"
   uses_from_macos "libffi"
@@ -56,13 +56,18 @@ class PhpAT85 < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    # PHP build system incorrectly links system libraries
-    patch :DATA
+    depends_on "gcc" => :build # must never be a runtime dependency
+    depends_on "gettext"
+  end
+
+  # https://github.com/Homebrew/homebrew-core/issues/235820
+  # https://clang.llvm.org/docs/UsersManual.html#gcc-extensions-not-implemented-yet
+  fails_with :clang do
+    cause "Performs worse due to lack of general global register variables"
   end
 
   def install
-    # buildconf required due to system library linking bug patch
-    system "./buildconf", "--force"
+    system "./buildconf", "--force" if build.head?
 
     inreplace "configure" do |s|
       s.gsub! "$APXS_HTTPD -V 2>/dev/null | grep 'threaded:.*yes' >/dev/null 2>&1",
@@ -90,7 +95,7 @@ class PhpAT85 < Formula
 
     inreplace "sapi/fpm/php-fpm.conf.in", ";daemonize = yes", "daemonize = no"
 
-    config_path = etc/"php/#{php_version}"
+    config_path = etc/"php/#{version.major_minor}"
     # Prevent system pear config from inhibiting pear install
     (config_path/"pear.conf").delete if (config_path/"pear.conf").exist?
 
@@ -100,7 +105,6 @@ class PhpAT85 < Formula
     # Identify build provider in php -v output and phpinfo()
     ENV["PHP_BUILD_PROVIDER"] = "Shivam Mathur"
 
-    # system pkg-config missing
     if OS.mac?
       ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path_if_needed}/usr/include/sasl"
       ENV["SASL_LIBS"] = "-lsasl2"
@@ -125,6 +129,7 @@ class PhpAT85 < Formula
       --with-config-file-path=#{config_path}
       --with-config-file-scan-dir=#{config_path}/conf.d
       --with-pear=#{pkgshare}/pear
+      --disable-intl
       --enable-bcmath
       --enable-calendar
       --enable-dba
@@ -132,10 +137,10 @@ class PhpAT85 < Formula
       --enable-ftp
       --enable-fpm
       --enable-gd
-      --enable-intl
       --enable-mbregex
       --enable-mbstring
       --enable-mysqlnd
+      --enable-opcache
       --enable-pcntl
       --enable-phpdbg
       --enable-phpdbg-readline
@@ -147,7 +152,6 @@ class PhpAT85 < Formula
       --enable-sysvshm
       --with-apxs2=#{Formula["httpd"].opt_bin}/apxs
       --with-bz2#{headers_path}
-      --with-capstone
       --with-curl
       --with-external-gd
       --with-external-pcre
@@ -166,7 +170,7 @@ class PhpAT85 < Formula
       --with-mysqli=mysqlnd
       --with-ndbm#{headers_path}
       --with-openssl
-      --with-password-argon2
+      --with-password-argon2=#{Formula["argon2"].opt_prefix}
       --with-pdo-dblib=#{Formula["freetds"].opt_prefix}
       --with-pdo-mysql=mysqlnd
       --with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}
@@ -187,7 +191,6 @@ class PhpAT85 < Formula
     if OS.mac?
       args << "--enable-dtrace"
       args << "--with-ldap-sasl"
-      args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}"
     else
       args << "--disable-dtrace"
       args << "--without-ldap-sasl"
@@ -232,6 +235,19 @@ class PhpAT85 < Formula
       (var/"log").mkpath
       touch var/"log/php-fpm.log"
     end
+
+    cd "ext/intl" do
+      system bin/"phpize"
+      if OS.mac?
+        # rubocop:disable all
+        ENV["CC"] = "/usr/bin/clang"
+        ENV["CXX"] = "/usr/bin/clang++"
+        # rubocop:enable all
+      end
+      system "./configure", "--with-php-config=#{bin}/php-config"
+      system "make"
+      system "make", "install", "EXTENSION_DIR=#{lib}/php/#{orig_ext_dir}"
+    end
   end
 
   def post_install
@@ -259,12 +275,14 @@ class PhpAT85 < Formula
     ln_s pecl_path, prefix/"pecl" unless (prefix/"pecl").exist?
     extension_dir = Utils.safe_popen_read(bin/"php-config", "--extension-dir").chomp
     php_basename = File.basename(extension_dir)
+    php_ext_dir = opt_prefix/"lib/php"/php_basename
+    (pecl_path/php_basename).mkpath
 
     # fix pear config to install outside cellar
-    pear_path = HOMEBREW_PREFIX/"share/pear@#{php_version}"
+    pear_path = HOMEBREW_PREFIX/"share/pear@#{version.major_minor}"
     cp_r pkgshare/"pear/.", pear_path
     {
-      "php_ini"  => etc/"php/#{php_version}/php.ini",
+      "php_ini"  => etc/"php/#{version.major_minor}/php.ini",
       "php_dir"  => pear_path,
       "doc_dir"  => pear_path/"doc",
       "ext_dir"  => pecl_path/php_basename,
@@ -281,6 +299,23 @@ class PhpAT85 < Formula
     end
 
     system bin/"pear", "update-channels"
+
+    %w[
+      intl
+      opcache
+    ].each do |e|
+      ext_config_path = etc/"php/#{version.major_minor}/conf.d/ext-#{e}.ini"
+      extension_type = (e == "opcache") ? "zend_extension" : "extension"
+      if ext_config_path.exist?
+        inreplace ext_config_path,
+          /#{extension_type}=.*$/, "#{extension_type}=#{php_ext_dir}/#{e}.so"
+      else
+        ext_config_path.write <<~INI
+          [#{e}]
+          #{extension_type}="#{php_ext_dir}/#{e}.so"
+        INI
+      end
+    end
   end
 
   def caveats
@@ -296,12 +331,8 @@ class PhpAT85 < Formula
           DirectoryIndex index.php index.html
 
       The php.ini and php-fpm.ini file can be found in:
-          #{etc}/php/#{php_version}/
+          #{etc}/php/#{version.major_minor}/
     EOS
-  end
-
-  def php_version
-    version.to_s.split(".")[0..1].join(".")
   end
 
   service do
@@ -313,14 +344,29 @@ class PhpAT85 < Formula
   end
 
   test do
+    assert_match(/^Zend OPcache$/, shell_output("#{bin}/php -i"),
+      "Zend OPCache extension not loaded")
     # Test related to libxml2 and
     # https://github.com/Homebrew/homebrew-core/issues/28398
     assert_includes (bin/"php").dynamically_linked_libraries,
                     (Formula["libpq"].opt_lib/shared_library("libpq", 5)).to_s
 
+    (testpath/"test.php").write <<~PHP
+      <?php
+      $formatter = new NumberFormatter('en_US', NumberFormatter::DECIMAL);
+      echo $formatter->format(1234567), PHP_EOL;
+
+      $formatter = new MessageFormatter('de_DE', '{0,number,#,###.##} MB');
+      echo $formatter->format([12345.6789]);
+      ?>
+    PHP
+    assert_equal "1,234,567\n12.345,68 MB", shell_output("#{bin}/php test.php")
+    assert_match "intl", shell_output("#{bin}/php -m")
+
     system "#{sbin}/php-fpm", "-t"
     system bin/"phpdbg", "-V"
     system bin/"php-cgi", "-m"
+
     begin
       port = free_port
       port_fpm = free_port
@@ -400,59 +446,3 @@ class PhpAT85 < Formula
     end
   end
 end
-
-__END__
-diff --git a/scripts/php-config.in b/scripts/php-config.in
-index 87c20089bb..879299f9cf 100644
---- a/scripts/php-config.in
-+++ b/scripts/php-config.in
-@@ -11,7 +11,7 @@ lib_dir="@orig_libdir@"
- includes="-I$include_dir -I$include_dir/main -I$include_dir/TSRM -I$include_dir/Zend -I$include_dir/ext -I$include_dir/ext/date/lib"
- ldflags="@PHP_LDFLAGS@"
- libs="@EXTRA_LIBS@"
--extension_dir="@EXTENSION_DIR@"
-+extension_dir='@EXTENSION_DIR@'
- man_dir=`eval echo @mandir@`
- program_prefix="@program_prefix@"
- program_suffix="@program_suffix@"
-diff --git a/build/php.m4 b/build/php.m4
-index 176d4d4144..f71d642bb4 100644
---- a/build/php.m4
-+++ b/build/php.m4
-@@ -429,7 +429,7 @@ dnl
- dnl Adds a path to linkpath/runpath (LDFLAGS).
- dnl
- AC_DEFUN([PHP_ADD_LIBPATH],[
--  if test "$1" != "/usr/$PHP_LIBDIR" && test "$1" != "/usr/lib"; then
-+  if test "$1" != "$PHP_OS_SDKPATH/usr/$PHP_LIBDIR" && test "$1" != "/usr/lib"; then
-     PHP_EXPAND_PATH($1, ai_p)
-     ifelse([$2],,[
-       _PHP_ADD_LIBPATH_GLOBAL([$ai_p])
-@@ -476,7 +476,7 @@ dnl paths are prepended to the beginning of INCLUDES.
- dnl
- AC_DEFUN([PHP_ADD_INCLUDE], [
- for include_path in m4_normalize(m4_expand([$1])); do
--  AS_IF([test "$include_path" != "/usr/include"], [
-+  AS_IF([test "$include_path" != "$PHP_OS_SDKPATH/usr/include"], [
-     PHP_EXPAND_PATH([$include_path], [ai_p])
-     PHP_RUN_ONCE([INCLUDEPATH], [$ai_p], [m4_ifnblank([$2],
-       [INCLUDES="-I$ai_p $INCLUDES"],
-diff --git a/configure.ac b/configure.ac
-index 36c6e5e3e2..71b1a16607 100644
---- a/configure.ac
-+++ b/configure.ac
-@@ -190,6 +190,14 @@ PHP_ARG_WITH([libdir],
-   [lib],
-   [no])
-
-+dnl Support systems with system libraries/includes in e.g. /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk.
-+PHP_ARG_WITH([os-sdkpath],
-+  [for system SDK directory],
-+  [AS_HELP_STRING([--with-os-sdkpath=NAME],
-+    [Ignore system libraries and includes in NAME rather than /])],
-+  [],
-+  [no])
-+
- PHP_ARG_ENABLE([rpath],
-   [whether to enable runpaths],
-   [AS_HELP_STRING([--disable-rpath],

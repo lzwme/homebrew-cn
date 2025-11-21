@@ -12,12 +12,13 @@ class Openvpn < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "053cdf2ccd7a7b2bc9dbad6539191f36c24594fb0b7c355f648376eba8db19cf"
-    sha256 arm64_sequoia: "a0cad5f6c08d706489ac1c8e5a87910abe194d623198b9adcb409aed57cb1ee9"
-    sha256 arm64_sonoma:  "8bbbeb228e60eec1920cf93a7d6597517c18bf03f865f3f30777e39c828f4870"
-    sha256 sonoma:        "1aefd8df764154c0b97a486688d1f81b1c268afba456ec023c5d718618f6e752"
-    sha256 arm64_linux:   "7feecc81f68eb4fd21aa967537f60233d0e32f59eb9111718594d9b16267283c"
-    sha256 x86_64_linux:  "4a7827de5f933ae0ed133845cadb634479f9c785b9adaf249eb7bbc5008e2197"
+    rebuild 1
+    sha256 arm64_tahoe:   "fa7092eb008e7d36a0ff45de0539942ec851c99d1014b99d4422f7755a72825d"
+    sha256 arm64_sequoia: "bb2995355cd9e517d2fe31b2af5612787c461e4329a554aaa47feb15ff660d32"
+    sha256 arm64_sonoma:  "ed795cbd79ad267632f40c3c0279e901cbed53287540735e277e8028ac3f414f"
+    sha256 sonoma:        "cf58fc0655034777ef08bd8cce6abff0ab6bb7121de7649dca2922b32021953a"
+    sha256 arm64_linux:   "fd4d9f9a4448e5cd828a863ae3c8d0440c55e2cb6b248f3ee2cf8622417f3c73"
+    sha256 x86_64_linux:  "b3d818f3be09ec0ceca56a8562663e0bb3ee88a80b932b6d01d44df3f4bbcb80"
   end
 
   depends_on "pkgconf" => :build
@@ -56,9 +57,7 @@ class Openvpn < Formula
 
     # We don't use mbedtls, so this file is unnecessary & somewhat confusing.
     rm doc/"README.mbedtls"
-  end
 
-  def post_install
     (var/"run/openvpn").mkpath
   end
 

@@ -9,14 +9,15 @@ class Jupyterlab < Formula
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2a003628feb260b4b9cbadce0fc1fc87b02d8068942f9c88812a5905a41136d5"
-    sha256 cellar: :any,                 arm64_sequoia: "89a35c2f7f012072ca7738f5d265432c068254825e382f3ed1e71e23b3b31e9f"
-    sha256 cellar: :any,                 arm64_sonoma:  "8fdef9d67a0c9d08134ec367e0e4a2aa4a11b82cc93cfd2534eb632b8bb9bbfa"
-    sha256 cellar: :any,                 sonoma:        "d11894160977cd3b1f693b795694cf0af0c2e8ec88167912c82b18beaea0a5d7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c15564fcc7d448a5b0859551964e161fd3503dafb31cda044f941bb0e2d4ddd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fce7b1adcc7adc3b553e09964a7b41b7d707ea8114080af80888c9a6c424b8d"
+    sha256 cellar: :any,                 arm64_tahoe:   "3dc1c41e27c2a5da9c04d13b2f579c2a31af463322f44c0e0fff40db0f1511d4"
+    sha256 cellar: :any,                 arm64_sequoia: "6a041db60e4ece4e430f63c57c772386e083ec9bdfa023750ba96204a7c7afa8"
+    sha256 cellar: :any,                 arm64_sonoma:  "2ed65c58719b48f6601f204ae77441df2b5cae377fe7f152879cef573441c3f3"
+    sha256 cellar: :any,                 sonoma:        "6667529c6b617fbdaf2e3e35401e6a7f8823a460dbe3141f9963feb93f4b7873"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6edc83f3e2027b274c56b295352b88d6314da13bf2332dac5de1138e929c66b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bdc012599ac01bedfc85a96b624213de5ccc19acdcbbbead23351673d46e615"
   end
 
   depends_on "cmake" => :build # for ipykernel
@@ -305,8 +306,8 @@ class Jupyterlab < Formula
   end
 
   resource "notebook" do
-    url "https://files.pythonhosted.org/packages/7d/97/369dd928d0561e7a8ae673156d2470664a83935320b068fa35b54d19f0bd/notebook-7.0.7.tar.gz"
-    sha256 "3bcff00c17b3ac142ef5f436d50637d936b274cfa0b41f6ac0175363de9b4e09"
+    url "https://files.pythonhosted.org/packages/89/ac/a97041621250a4fc5af379fb377942841eea2ca146aab166b8fcdfba96c2/notebook-7.5.0.tar.gz"
+    sha256 "3b27eaf9913033c28dde92d02139414c608992e1df4b969c843219acf2ff95e4"
   end
 
   resource "notebook-shim" do

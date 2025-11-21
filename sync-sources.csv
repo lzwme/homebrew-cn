@@ -151,6 +151,7 @@ Homebrew-homebrew-core/Formula/a/ansible-language-server.rb, Homebrew/homebrew-c
 Homebrew-homebrew-core/Formula/a/ansible-lint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible@10.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/ansible@12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible@8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible@9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansifilter.rb, Homebrew/homebrew-core, 0
@@ -2266,7 +2267,6 @@ Homebrew-homebrew-core/Formula/g/gdl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gdown.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gdrive-downloader.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdrive.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/gdrive@2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdtoolkit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gdu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gearman.rb, Homebrew/homebrew-core, 1
@@ -4607,6 +4607,7 @@ Homebrew-homebrew-core/Formula/m/miruo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mise.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mist-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mit-scheme.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mitama-cpp-result.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mitie.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mjml.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mjpegtools.rb, Homebrew/homebrew-core, 1
@@ -5485,6 +5486,7 @@ Homebrew-homebrew-core/Formula/p/php.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/php@8.1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/php@8.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/php@8.3.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/php@8.4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/phpbrew.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/phpmd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/phpmyadmin.rb, Homebrew/homebrew-core, 0
@@ -6072,6 +6074,7 @@ Homebrew-homebrew-core/Formula/r/redir.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redis-leveldb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redis.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/redis@6.2.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/redis@8.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/redka.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redland.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redo.rb, Homebrew/homebrew-core, 1
@@ -8645,6 +8648,7 @@ Homebrew-homebrew-cask/Casks/c/cabal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cables.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cacher.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cad-assistant.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/cadreader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/caffeine.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cahier.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/caido.rb, Homebrew/homebrew-cask, 0
@@ -13556,6 +13560,7 @@ Homebrew-homebrew-cask/Casks/n/notable.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notch-simulator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notchnook.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/notebooks.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/notepadexe.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notes-better.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notesnook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notesollama.rb, Homebrew/homebrew-cask, 0
@@ -15528,6 +15533,7 @@ Homebrew-homebrew-cask/Casks/w/wiso-steuer-2022.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiso-steuer-2023.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiso-steuer-2024.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiso-steuer-2025.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/wiso-steuer-2026.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/witch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/witsy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wizcli.rb, Homebrew/homebrew-cask, 0
@@ -15870,10 +15876,10 @@ shivammathur-homebrew-php/Formula/php@8.3-debug-zts.rb, shivammathur/homebrew-ph
 shivammathur-homebrew-php/Formula/php@8.3-debug.rb, shivammathur/homebrew-php, 0
 shivammathur-homebrew-php/Formula/php@8.3-zts.rb, shivammathur/homebrew-php, 0
 shivammathur-homebrew-php/Formula/php@8.3.rb, shivammathur/homebrew-php, 0
-shivammathur-homebrew-php/Formula/php@8.5-debug-zts.rb, shivammathur/homebrew-php, 1
-shivammathur-homebrew-php/Formula/php@8.5-debug.rb, shivammathur/homebrew-php, 1
-shivammathur-homebrew-php/Formula/php@8.5-zts.rb, shivammathur/homebrew-php, 1
-shivammathur-homebrew-php/Formula/php@8.5.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.4-debug-zts.rb, shivammathur/homebrew-php, 0
+shivammathur-homebrew-php/Formula/php@8.4-debug.rb, shivammathur/homebrew-php, 0
+shivammathur-homebrew-php/Formula/php@8.4-zts.rb, shivammathur/homebrew-php, 0
+shivammathur-homebrew-php/Formula/php@8.4.rb, shivammathur/homebrew-php, 0
 shivammathur-homebrew-php/Formula/php@8.6-debug-zts.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.6-debug.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.6-zts.rb, shivammathur/homebrew-php, 1

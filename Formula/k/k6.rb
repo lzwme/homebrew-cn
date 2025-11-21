@@ -6,6 +6,11 @@ class K6 < Formula
   license "AGPL-3.0-or-later"
   head "https://github.com/grafana/k6.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83e6abf68d1af76fea511f61e81192d8261e52cbea84d65aa594e43eda2fc02a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "83e6abf68d1af76fea511f61e81192d8261e52cbea84d65aa594e43eda2fc02a"

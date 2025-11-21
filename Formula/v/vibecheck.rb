@@ -1,18 +1,18 @@
 class Vibecheck < Formula
   desc "AI-powered git commit assistant written in Go"
   homepage "https://github.com/rshdhere/vibecheck"
-  url "https://ghfast.top/https://github.com/rshdhere/vibecheck/archive/refs/tags/v1.4.3.tar.gz"
-  sha256 "1de99d1535f153288897e22ba65710057eac18057f10387a768122a82c6fe0da"
+  url "https://ghfast.top/https://github.com/rshdhere/vibecheck/archive/refs/tags/v1.4.4.tar.gz"
+  sha256 "de18718d0d2e9e8b7efbe2f2e51be7ec9e264dcb181747b44e491f0afcc2dbab"
   license "MIT"
   head "https://github.com/rshdhere/vibecheck.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7e140c57e1181a7838c68470584ed038fb98d9e7368df6eac0a5283afb88abb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7e140c57e1181a7838c68470584ed038fb98d9e7368df6eac0a5283afb88abb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7e140c57e1181a7838c68470584ed038fb98d9e7368df6eac0a5283afb88abb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b6b6639cdb9615a4daa0b591e0325d98ccac5d189dd7745693a9e98e9401c703"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7a05b28c5817d7aec8a94e37c18777a60c5a6f1e33d715e5ee167094a2f0549"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73a44a0e3f6cfdebae5c4b46d9472c47fdf54982c49a95657aa3a18b7116a0de"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb65f203d4f6122ebbd79cdd904180e716cbf6c2a26c885c0997d071616aa13b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb65f203d4f6122ebbd79cdd904180e716cbf6c2a26c885c0997d071616aa13b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb65f203d4f6122ebbd79cdd904180e716cbf6c2a26c885c0997d071616aa13b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bb04b4fdbd8d392b295606915ac87f2690066a0885990b5b976eba3c4cc4f1e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2c2eada0691a20c2f6987c2c5d82b257318f92c35764603819de5861365b3cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c504eac6b3cba106e542910d67f59cbeb86e6ea9165c514722b5cba669370c06"
   end
 
   depends_on "go" => :build

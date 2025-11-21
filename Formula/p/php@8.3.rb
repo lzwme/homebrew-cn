@@ -2,11 +2,10 @@ class PhpAT83 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.3.27.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.3.27.tar.xz"
-  sha256 "c15a09a9d199437144ecfef7d712ec4ca5c6820cf34acc24cc8489dd0cee41ba"
+  url "https://www.php.net/distributions/php-8.3.28.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.3.28.tar.xz"
+  sha256 "25e3860f30198a386242891c0bf9e2955931f7b666b96c3e3103d36a2a322326"
   license "PHP-3.01"
-  revision 2
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
@@ -14,13 +13,12 @@ class PhpAT83 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "cbdf7884d8aa175f208f09aa6334865443b486e5084081d7efa278d0ba228e52"
-    sha256 arm64_sequoia: "3a623bad47c90883a2eb6ecfbaca96ed23d2b81e68bb6b9e54d6127604966e1c"
-    sha256 arm64_sonoma:  "51d72a720d9a078579a56ae950191e9be39e4f1ab67fdd6a4cf5aaf89eb9a84d"
-    sha256 sonoma:        "d1d6e3babd44d9a5bc2740fa4efbbdf80aa43fafd90d35e929a7d0b55f119136"
-    sha256 arm64_linux:   "d55c21c0b8fa7d0dfd65afab0d5b941a665fb0cde8840e595db2ad527f09bccc"
-    sha256 x86_64_linux:  "c6a40bbea5b39f6304f83a38f3c57fd95de1d500f513a2c2bd2d0a1cbf0c15c7"
+    sha256 arm64_tahoe:   "3f5e8c7ed9ec451818faa7e0c821f8c72c435d37d0f65fae36d4dbd1a8970086"
+    sha256 arm64_sequoia: "f5da03dc49473e1568f79faf39504c4e1843616df6b55a6f2b4badf0b9f4f08d"
+    sha256 arm64_sonoma:  "cb7483a7e469d1aad7c7e894b68ea5f1bea4b543bd98d07bfa9547269ffb7f08"
+    sha256 sonoma:        "c960ba429337c3b6c6f6f486372d3405f478918ffca8b0a20abeab77d989824c"
+    sha256 arm64_linux:   "2a08069187c6a1db001a9be210bc0efc7ce13987c7ae749435a5bc7424208ae9"
+    sha256 x86_64_linux:  "5567c2dfa60f29464dac9ac560c4e2bfaa96e4d7d0b85501a165df001074702c"
   end
 
   keg_only :versioned_formula
@@ -39,7 +37,6 @@ class PhpAT83 < Formula
   depends_on "curl"
   depends_on "freetds"
   depends_on "gd"
-  depends_on "gettext"
   depends_on "gmp"
   depends_on "icu4c@78"
   depends_on "krb5"
@@ -63,6 +60,7 @@ class PhpAT83 < Formula
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "gettext"
     # PHP build system incorrectly links system libraries
     # see https://github.com/php/php-src/issues/10680
     patch :DATA
@@ -70,7 +68,7 @@ class PhpAT83 < Formula
 
   def install
     # buildconf required due to system library linking bug patch
-    system "./buildconf", "--force"
+    system "./buildconf", "--force" if OS.mac?
 
     inreplace "configure" do |s|
       s.gsub! "APACHE_THREADED_MPM=`$APXS_HTTPD -V 2>/dev/null | grep 'threaded:.*yes'`",
@@ -212,18 +210,17 @@ class PhpAT83 < Formula
     extension_dir = Utils.safe_popen_read(bin/"php-config", "--extension-dir").chomp
     orig_ext_dir = File.basename(extension_dir)
     inreplace bin/"php-config", lib/"php", prefix/"pecl"
-    %w[development production].each do |mode|
-      inreplace "php.ini-#{mode}", %r{; ?extension_dir = "\./"},
-        "extension_dir = \"#{HOMEBREW_PREFIX}/lib/php/pecl/#{orig_ext_dir}\""
-    end
 
-    # Use OpenSSL cert bundle
     openssl = Formula["openssl@3"]
     %w[development production].each do |mode|
-      inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
-        "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\""
-      inreplace "php.ini-#{mode}", /; ?openssl\.capath=/,
-        "openssl.capath = \"#{openssl.pkgetc}/certs\""
+      inreplace "php.ini-#{mode}" do |s|
+        # Allow pecl to install outside of Cellar
+        s.gsub! %r{; ?extension_dir = "\./"}, "extension_dir = \"#{HOMEBREW_PREFIX}/lib/php/pecl/#{orig_ext_dir}\""
+
+        # Use OpenSSL cert bundle
+        s.gsub!(/; ?openssl\.cafile=/, "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\"")
+        s.gsub!(/; ?openssl\.capath=/, "openssl.capath = \"#{openssl.pkgetc}/certs\"")
+      end
     end
 
     config_files = {
@@ -302,10 +299,10 @@ class PhpAT83 < Formula
         inreplace ext_config_path,
           /#{extension_type}=.*$/, "#{extension_type}=#{php_ext_dir}/#{e}.so"
       else
-        ext_config_path.write <<~EOS
+        ext_config_path.write <<~INI
           [#{e}]
           #{extension_type}="#{php_ext_dir}/#{e}.so"
-        EOS
+        INI
       end
     end
   end
@@ -336,91 +333,85 @@ class PhpAT83 < Formula
   end
 
   test do
-    assert_match(/^Zend OPcache$/, shell_output("#{bin}/php -i"),
-      "Zend OPCache extension not loaded")
-    # Test related to libxml2 and
-    # https://github.com/Homebrew/homebrew-core/issues/28398
-    assert_includes (bin/"php").dynamically_linked_libraries,
-                    (Formula["libpq"].opt_lib/shared_library("libpq", 5)).to_s
+    assert_match(/^Zend OPcache$/, shell_output("#{bin}/php -i"), "Zend OPCache extension not loaded")
 
-    system "#{sbin}/php-fpm", "-t"
+    # Test related to libxml2 and https://github.com/Homebrew/homebrew-core/issues/28398
+    require "utils/linkage"
+    libpq = Formula["libpq"].opt_lib/shared_library("libpq")
+    assert Utils.binary_linked_to_library?(bin/"php", libpq), "No linkage with Homebrew #{libpq.basename}!"
+
+    system sbin/"php-fpm", "-t"
     system bin/"phpdbg", "-V"
     system bin/"php-cgi", "-m"
     # Prevent SNMP extension to be added
     refute_match(/^snmp$/, shell_output("#{bin}/php -m"),
       "SNMP extension doesn't work reliably with Homebrew on High Sierra")
+
+    port = free_port
+    port_fpm = free_port
+    expected_output = /^Hello world!$/
+
+    (testpath/"index.php").write <<~PHP
+      <?php
+      echo 'Hello world!' . PHP_EOL;
+      var_dump(ldap_connect());
+    PHP
+
+    main_config = <<~EOS
+      Listen #{port}
+      ServerName localhost:#{port}
+      DocumentRoot "#{testpath}"
+      ErrorLog "#{testpath}/httpd-error.log"
+      ServerRoot "#{Formula["httpd"].opt_prefix}"
+      PidFile "#{testpath}/httpd.pid"
+      LoadModule authz_core_module lib/httpd/modules/mod_authz_core.so
+      LoadModule unixd_module lib/httpd/modules/mod_unixd.so
+      LoadModule dir_module lib/httpd/modules/mod_dir.so
+      DirectoryIndex index.php
+    EOS
+
+    (testpath/"httpd.conf").write <<~EOS
+      #{main_config}
+      LoadModule mpm_prefork_module lib/httpd/modules/mod_mpm_prefork.so
+      LoadModule php_module #{lib}/httpd/modules/libphp.so
+      <FilesMatch \\.(php|phar)$>
+        SetHandler application/x-httpd-php
+      </FilesMatch>
+    EOS
+
+    (testpath/"fpm.conf").write <<~INI
+      [global]
+      daemonize=no
+      [www]
+      listen = 127.0.0.1:#{port_fpm}
+      pm = dynamic
+      pm.max_children = 5
+      pm.start_servers = 2
+      pm.min_spare_servers = 1
+      pm.max_spare_servers = 3
+    INI
+
+    (testpath/"httpd-fpm.conf").write <<~EOS
+      #{main_config}
+      LoadModule mpm_event_module lib/httpd/modules/mod_mpm_event.so
+      LoadModule proxy_module lib/httpd/modules/mod_proxy.so
+      LoadModule proxy_fcgi_module lib/httpd/modules/mod_proxy_fcgi.so
+      <FilesMatch \\.(php|phar)$>
+        SetHandler "proxy:fcgi://127.0.0.1:#{port_fpm}"
+      </FilesMatch>
+    EOS
+
     begin
-      port = free_port
-      port_fpm = free_port
-
-      expected_output = /^Hello world!$/
-      (testpath/"index.php").write <<~PHP
-        <?php
-        echo 'Hello world!' . PHP_EOL;
-        var_dump(ldap_connect());
-      PHP
-      main_config = <<~EOS
-        Listen #{port}
-        ServerName localhost:#{port}
-        DocumentRoot "#{testpath}"
-        ErrorLog "#{testpath}/httpd-error.log"
-        ServerRoot "#{Formula["httpd"].opt_prefix}"
-        PidFile "#{testpath}/httpd.pid"
-        LoadModule authz_core_module lib/httpd/modules/mod_authz_core.so
-        LoadModule unixd_module lib/httpd/modules/mod_unixd.so
-        LoadModule dir_module lib/httpd/modules/mod_dir.so
-        DirectoryIndex index.php
-      EOS
-
-      (testpath/"httpd.conf").write <<~EOS
-        #{main_config}
-        LoadModule mpm_prefork_module lib/httpd/modules/mod_mpm_prefork.so
-        LoadModule php_module #{lib}/httpd/modules/libphp.so
-        <FilesMatch \\.(php|phar)$>
-          SetHandler application/x-httpd-php
-        </FilesMatch>
-      EOS
-
-      (testpath/"fpm.conf").write <<~EOS
-        [global]
-        daemonize=no
-        [www]
-        listen = 127.0.0.1:#{port_fpm}
-        pm = dynamic
-        pm.max_children = 5
-        pm.start_servers = 2
-        pm.min_spare_servers = 1
-        pm.max_spare_servers = 3
-      EOS
-
-      (testpath/"httpd-fpm.conf").write <<~EOS
-        #{main_config}
-        LoadModule mpm_event_module lib/httpd/modules/mod_mpm_event.so
-        LoadModule proxy_module lib/httpd/modules/mod_proxy.so
-        LoadModule proxy_fcgi_module lib/httpd/modules/mod_proxy_fcgi.so
-        <FilesMatch \\.(php|phar)$>
-          SetHandler "proxy:fcgi://127.0.0.1:#{port_fpm}"
-        </FilesMatch>
-      EOS
-
-      pid = fork do
-        exec Formula["httpd"].opt_bin/"httpd", "-X", "-f", "#{testpath}/httpd.conf"
-      end
+      pid = spawn Formula["httpd"].opt_bin/"httpd", "-X", "-f", "#{testpath}/httpd.conf"
       sleep 10
-
       assert_match expected_output, shell_output("curl -s 127.0.0.1:#{port}")
 
       Process.kill("TERM", pid)
       Process.wait(pid)
 
-      fpm_pid = fork do
-        exec sbin/"php-fpm", "-y", "fpm.conf"
-      end
-      pid = fork do
-        exec Formula["httpd"].opt_bin/"httpd", "-X", "-f", "#{testpath}/httpd-fpm.conf"
-      end
+      fpm_pid = spawn sbin/"php-fpm", "-y", "fpm.conf"
+      pid = spawn Formula["httpd"].opt_bin/"httpd", "-X", "-f", "#{testpath}/httpd-fpm.conf"
       sleep 10
-
       assert_match expected_output, shell_output("curl -s 127.0.0.1:#{port}")
     ensure
       if pid
