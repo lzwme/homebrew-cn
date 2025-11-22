@@ -1459,6 +1459,7 @@ Homebrew-homebrew-core/Formula/d/detach.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/detect-secrets.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/detekt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/detox.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/devcockpit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/devcontainer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/devdash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/device-mapper.rb, Homebrew/homebrew-core, 0
@@ -4412,7 +4413,6 @@ Homebrew-homebrew-core/Formula/m/mariadb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@10.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@10.5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@10.6.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mariadb@11.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@11.4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@11.8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/marisa.rb, Homebrew/homebrew-core, 1
@@ -4448,6 +4448,7 @@ Homebrew-homebrew-core/Formula/m/maxima.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/maxwell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mbedtls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mbedtls@2.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mbedtls@3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mbelib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mbpoll.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mbt.rb, Homebrew/homebrew-core, 1
@@ -5353,6 +5354,7 @@ Homebrew-homebrew-core/Formula/p/pari-seadata.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pari.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/parlay.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/parliament.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/parqeye.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/parquet-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/parrot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/parsedmarc.rb, Homebrew/homebrew-core, 0

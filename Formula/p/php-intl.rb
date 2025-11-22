@@ -1,9 +1,9 @@
 class PhpIntl < Formula
   desc "PHP internationalization extension"
   homepage "https://www.php.net/manual/en/book.intl.php"
-  url "https://www.php.net/distributions/php-8.4.15.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.4.15.tar.xz"
-  sha256 "a060684f614b8344f9b34c334b6ba8db1177555997edb5b1aceab0a4b807da7e"
+  url "https://www.php.net/distributions/php-8.5.0.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.5.0.tar.xz"
+  sha256 "39cb6e4acd679b574d3d3276f148213e935fc25f90403eb84fb1b836a806ef1e"
   license "PHP-3.01"
   head "https://github.com/php/php-src.git", branch: "master"
 
@@ -12,12 +12,12 @@ class PhpIntl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "26b8af2580ca7892c69d67898e660d61b63e13fefc48c44a11f6f1a056c3518e"
-    sha256 cellar: :any,                 arm64_sequoia: "2ec1502d5b14aa65a13ab4ed3823485c8f882c98d941fb6ec970a0b55da68e8a"
-    sha256 cellar: :any,                 arm64_sonoma:  "608c9e12fa12fadff0eee98580c696d4be9e46bb5fc29fed69386557d49bd80f"
-    sha256 cellar: :any,                 sonoma:        "55b24a673e7a460dde5432c31f655b0070f62b4ce8acee62bb887935ee25fef9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c20781f73530f2d366d1c39f36fd9442da7c8f9a9b77c55cb6c377cb01e1113f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0017171e8db0e012330b5efb895b2a6573983f12043c7a64776f73bfa31aaa18"
+    sha256 cellar: :any,                 arm64_tahoe:   "8e206867f5162b5ffc490ad8a57d4c143c74ab3cbd2a0631faaaa41efc129747"
+    sha256 cellar: :any,                 arm64_sequoia: "fb0ba265502cbd9cbd2f79d1e33c11c5ac300de65cdd0082e28bfe62654c5378"
+    sha256 cellar: :any,                 arm64_sonoma:  "37a8c4be99a6143c813c1de31314f64cec944562c8f4866b98dce45be1014293"
+    sha256 cellar: :any,                 sonoma:        "5b7c90aa8d1dedfa761dda0dcb49eea2ba837a3171d90d47095e8b807df9d9c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "77bc886ebcd05167960e812f45d1a35dd14925722f4d1258e9a17e65139d1ec8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36a45121a45dcf66d6c128ac900ecc012d13694fa3f91145cdb89c98dd27ec7f"
   end
 
   depends_on "pkgconf" => :build

@@ -1,10 +1,9 @@
 class Tarantool < Formula
   desc "In-memory database and Lua application server"
   homepage "https://tarantool.org/"
-  url "https://download.tarantool.org/tarantool/src/tarantool-3.5.0.tar.gz"
-  sha256 "396780491b4f01c75f7098056e9a21562a687234085543bf52a5c5a6905f2dbc"
+  url "https://download.tarantool.org/tarantool/src/tarantool-3.5.1.tar.gz"
+  sha256 "a48e5734a6714223ce6719cbef94832c5b92d784ea265dca305195aa05f799ab"
   license "BSD-2-Clause"
-  revision 1
   version_scheme 1
   head "https://github.com/tarantool/tarantool.git", branch: "master"
 
@@ -16,13 +15,12 @@ class Tarantool < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "f51f501b3893c3bda04da069805c005b2689acd4b99f4dcb1e3ce52b15be818d"
-    sha256 cellar: :any,                 arm64_sequoia: "ba843e171a6ed888728c290851128df7643aa3286559f4b4cdd298aa8226f368"
-    sha256 cellar: :any,                 arm64_sonoma:  "1135c1ba7178f8041b9e40d27f41ebf12cb6f71f2c0f56ba52fb0c215e22125c"
-    sha256 cellar: :any,                 sonoma:        "af22c843f3f0e759fe6ef244c593de3ef139a840d02368173f8beeb5d65d4843"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f5b619cc81e0f22a1540c9234f33989287464ee3b70f1b0e348744875bdc754"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d9bfcd43ac016630fa6d37fc91977375bb9b44071dbc1cbbbe23c0f68f69d09"
+    sha256 cellar: :any,                 arm64_tahoe:   "4b2e725a461b753f134a008389380a54f799016ea64922d934568ce7163b6597"
+    sha256 cellar: :any,                 arm64_sequoia: "7720805abfcc25e3b0ab85ee21c7348f5f442bc524c62bcde3c3f88825ef0734"
+    sha256 cellar: :any,                 arm64_sonoma:  "ad6d9ea2b6aa5c514676f76e35a34e336d03305236b07b4e9db9f99863bcb13f"
+    sha256 cellar: :any,                 sonoma:        "bb51bcaa26a6dd9aeec3a7260d35addfa9ec0ac4c88cf07a89980c5a613e8c34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1849546cd213cc0f10b266917d65275fd6bb9f21788190ee7727c0d01b75afe0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d6f59fd0dc93fb8656c7d254cbaaae03c63ff47125a0aaae8f14d52bbac300f"
   end
 
   depends_on "cmake" => :build
