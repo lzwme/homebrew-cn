@@ -1,15 +1,15 @@
 class Xcp < Formula
   desc "Fast & lightweight command-line tool for managing Xcode projects, built in Swift"
   homepage "https://github.com/wojciech-kulik/XcodeProjectCLI"
-  url "https://ghfast.top/https://github.com/wojciech-kulik/XcodeProjectCLI/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "399a1d4fab740ee7603d70c2df293611aafd71d7f00cdfd39588ba0a1566acd5"
+  url "https://ghfast.top/https://github.com/wojciech-kulik/XcodeProjectCLI/archive/refs/tags/v1.2.1.tar.gz"
+  sha256 "83595b93cec1466bc6aa4b8025d39c507ca50ffd05d3fd8cd575ac5c20bc862a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "677b834448c32d70bb785251dba0934f7271c4321eed71f7de8a628236257887"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "494ab7b92214786f5ce6617b14f2e7181eec079f47c377a1461386c98eba2aec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b6097428ce1bc7e3280a60f92e31f1f14d0ea4611d871b533e216d153d7d716"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2552a26db439c166b4f68497f8d1a65ec300ae2ee148a1ba78004e5c790bdb94"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "175da42078cdac05a63d480ad12b95c6094f0e9cd43579b8ff7f70473db78a80"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7dd0e22254bd2deb2c090be9a68b54c93eefdaa6404e9e003c8d2cc39c293d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8de30c2991a2cdcdf72c5ed8f09987e12ae0e228487f08d9669751af7b79cfb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "45a0e1d909070058a7004db2ee342b2f44434d4bee95ff8885bce823cd97692a"
   end
 
   depends_on xcode: ["15.0", :build]
