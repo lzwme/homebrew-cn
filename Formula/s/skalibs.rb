@@ -4,6 +4,7 @@ class Skalibs < Formula
   url "https://skarnet.org/software/skalibs/skalibs-2.14.4.0.tar.gz"
   sha256 "0e626261848cc920738f92fd50a24c14b21e30306dfed97b8435369f4bae00a5"
   license "ISC"
+  head "git://git.skarnet.org/skalibs.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 

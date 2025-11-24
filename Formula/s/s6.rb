@@ -4,11 +4,7 @@ class S6 < Formula
   url "https://skarnet.org/software/s6/s6-2.13.2.0.tar.gz"
   sha256 "c5114b8042716bb70691406931acb0e2796d83b41cbfb5c8068dce7a02f99a45"
   license "ISC"
-
-  livecheck do
-    url :homepage
-    regex(/href=.*?s6[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
+  head "git://git.skarnet.org/s6.git", branch: "main"
 
   bottle do
     rebuild 1

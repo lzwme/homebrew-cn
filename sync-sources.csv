@@ -395,6 +395,7 @@ Homebrew-homebrew-core/Formula/a/aws-rotate-key.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-sam-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aws-sdk-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-shell.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/aws-spiffe-workload-helper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-sso-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-sso-util.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aws-vault.rb, Homebrew/homebrew-core, 1
@@ -1946,6 +1947,7 @@ Homebrew-homebrew-core/Formula/f/fastnetmon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastq-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastqc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/fastrace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fasttext.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fatal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fatsort.rb, Homebrew/homebrew-core, 0
@@ -4372,6 +4374,7 @@ Homebrew-homebrew-core/Formula/m/magic_enum.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/magika.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mago.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mahout.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mail-deduplicate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mailcatcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mailcheck.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mailhog.rb, Homebrew/homebrew-core, 1
@@ -5914,7 +5917,7 @@ Homebrew-homebrew-core/Formula/q/qt-unixodbc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qt3d.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qt5compat.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/q/qt@5.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/q/qt@5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qtads.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qtbase.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qtcharts.rb, Homebrew/homebrew-core, 0
@@ -6877,7 +6880,7 @@ Homebrew-homebrew-core/Formula/s/supabase.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/superfile.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/superhtml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/superlu.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/supermodel.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/supermodel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/supertux.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/supervisor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/surelog.rb, Homebrew/homebrew-core, 1
@@ -7939,7 +7942,6 @@ Homebrew-homebrew-core/Formula/y/yorkie.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yosys.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/you-get.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/youplot.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/y/youtube-dl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/youtubedr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/youtubeuploader.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yozefu.rb, Homebrew/homebrew-core, 1
@@ -9562,6 +9564,7 @@ Homebrew-homebrew-cask/Casks/f/fontforge-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fontgoggles.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fontlab.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fontplop.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/f/fontra-pak.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fontsmoothingadjuster.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fontstand.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/foobar2000.rb, Homebrew/homebrew-cask, 0
@@ -12989,6 +12992,7 @@ Homebrew-homebrew-cask/Casks/l/localxpose.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/locationsimulator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lockdown.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lockrattler.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/l/locu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lofi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/logdna-agent.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/logdna-cli.rb, Homebrew/homebrew-cask, 1
@@ -13397,6 +13401,7 @@ Homebrew-homebrew-cask/Casks/m/mousepose.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/moves.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/movist-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mozilla-vpn.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/mozregression-gui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mp3gain-express.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mp3tag.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mp4tools.rb, Homebrew/homebrew-cask, 0
@@ -14892,7 +14897,6 @@ Homebrew-homebrew-cask/Casks/s/swift-publisher.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/swift-quit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/swift-shift.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/swiftbar.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/s/swiftcord.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/swiftdefaultappsprefpane.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/swiftformat-for-xcode.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/swiftplantumlapp.rb, Homebrew/homebrew-cask, 1

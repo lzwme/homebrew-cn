@@ -9,7 +9,7 @@ class Ssed < Formula
 
   livecheck do
     url :homepage
-    regex(/href=.*?sed[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(/href=.*?ssed[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
   end
 
   no_autobump! because: :requires_manual_review

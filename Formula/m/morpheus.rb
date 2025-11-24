@@ -4,7 +4,7 @@ class Morpheus < Formula
   url "https://gitlab.com/morpheus.lab/morpheus/-/archive/v2.3.9/morpheus-v2.3.9.tar.gz"
   sha256 "d27b7c2b5ecf503fd11777b3a75d4658a6926bfd9ae78ef97abf5e9540a6fb29"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -12,12 +12,12 @@ class Morpheus < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "121da65691eee624e3929e5a3f6550c0295b16996180d4a045cfaaacecfac2df"
-    sha256                               arm64_sequoia: "d4560f21a97fae5914b76b37f034ce3380cc1fe7a21220bb243bc00056926863"
-    sha256                               arm64_sonoma:  "5970ad56a9271c47f9600c29a15b07913f75b8e1c2cec68fbfbfdabfda6f1ada"
-    sha256 cellar: :any,                 sonoma:        "db8e0bfc85fd552320a35413ec5179c8a7525fcc58ffc127bfe232eceb8f2d29"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "730115a2edf27e7b25cb85715206a29d8f5a286d2d07d6e36b9e9f374757f31a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e11b0f061d009c76ad0d1d420a34c0479d37a18d8ef3211af9e1c15f7c4ab38"
+    sha256                               arm64_tahoe:   "52e6c2dc8cd3261d122cb100833b7639b74e826bb62c3e65ae83c7028ddd6033"
+    sha256                               arm64_sequoia: "86df5016fe99402f8a02f6a21a99519622c57ac3ae150645f2ea701f5e43dc03"
+    sha256                               arm64_sonoma:  "e3848e01955a771f9414faa7852bc0162bdb20b2144c21061d890c34b47a4bea"
+    sha256 cellar: :any,                 sonoma:        "d7be53ebc4fd1230ebd6b2e5facaf100ce47ef547b5b502728a38e52e3c2171e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aad6af47b8833dbb44fa5f69cce496236ce5eb70cd65b9efe73d55c2bfbf9b47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fc10f654b9f073a70c202d30192407ce4f1d10c12bdebe9314be6677971e644"
   end
 
   # Can undeprecate if new release with Qt 6 support is available.
@@ -32,6 +32,7 @@ class Morpheus < Formula
   depends_on "libtiff"
   depends_on "qt@5"
 
+  uses_from_macos "libxslt" => :build
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
   uses_from_macos "zlib"

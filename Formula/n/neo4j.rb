@@ -12,17 +12,15 @@ class Neo4j < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a11c9d414840b8cd9799addad0c6b79861a6667781fbddb7f5271b8f3ff994fe"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "a9b0ef41e2fe4e15895cdbc8d0640bf1762e92b1c8eb4d259e5265320fb0161f"
   end
 
   depends_on "cypher-shell"
   depends_on "openjdk@21"
 
   def install
-    env = {
-      JAVA_HOME:  Formula["openjdk@21"].opt_prefix,
-      NEO4J_HOME: libexec,
-    }
+    env = Language::Java.java_home_env("21").merge(NEO4J_HOME: libexec)
     # Remove windows files
     rm(Dir["bin/*.bat"])
 
@@ -43,9 +41,7 @@ class Neo4j < Formula
       server.directories.data=#{var}/neo4j/data
       server.directories.logs=#{var}/log/neo4j
     EOS
-  end
 
-  def post_install
     (var/"log/neo4j").mkpath
     (var/"neo4j").mkpath
   end

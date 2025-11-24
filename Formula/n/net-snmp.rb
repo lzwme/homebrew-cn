@@ -14,18 +14,13 @@ class NetSnmp < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:    "34b4f0cbacf3987de86686ef84d7de0ad8fe4934c2d7f9d352df3ac1933d2a33"
-    sha256 arm64_sequoia:  "fdeaf56a79dfe93f7ed48765a26f6b34f030f1a0d96950410c7c4a3100eb0e7f"
-    sha256 arm64_sonoma:   "9d0ea2f793065eab2cb7c858d5926bb9ec40dfd0460a31c4d9f09932ae1c2455"
-    sha256 arm64_ventura:  "8d1f5f1b9c27087c08b7fb17c97445d925c7c0afa77e4939979778ca9fc39fa4"
-    sha256 arm64_monterey: "0ee61805fb803dc4126a163c1f41438fbae869158cab3c5f9fb4db626ace6059"
-    sha256 arm64_big_sur:  "08d71e1fd013508a956360a8c1ee0806974b21334e06daa519c91fc58e5b1cf4"
-    sha256 sonoma:         "520f34569542954e98b71e04ec30a470994550f983969d476ba7a3e229e9795e"
-    sha256 ventura:        "72c6a3af4f5dc6649fdf8ace41e27c917d88bfb4f25b6a468cc072944ae42cc1"
-    sha256 monterey:       "25f84e57f018ce8d5c4f60ecdb28bf93a53f53fb7c3fe2d2ade1053013ba8993"
-    sha256 big_sur:        "6eb8407f90572a45ff98d040761b9857998638d9a739bd21c06e1420412009ee"
-    sha256 arm64_linux:    "acf8bb48c7f532c9b87aacd38766c0bf73686619aff0369a2755eb3ff814a9e9"
-    sha256 x86_64_linux:   "909269505e442c956639f60e3b0cd1dbdc1e7723eb96b291e9fdba7781d533f4"
+    rebuild 1
+    sha256 arm64_tahoe:   "70ede4b399566e2fd69c1398aa9a4eb138c83d525591191e1537e149a872ffa5"
+    sha256 arm64_sequoia: "286c0ab3464504fb8885d639f320322b6f3d0cdbf65e9d937faee59d6683ae9c"
+    sha256 arm64_sonoma:  "73f74299a8bd62a0581ac858fb2187e7116404a3fef0ce1073b836b41474cef0"
+    sha256 sonoma:        "5f3604e5b1f7c75a6d250cabb9f3d8593308d892171162caa6a69322b0d462c4"
+    sha256 arm64_linux:   "bb3a1b67ac43dac652a9fc430ce99658aa990944bf96856e6cc502b7ded32398"
+    sha256 x86_64_linux:  "980d129bddaf44e003db583f94210d8e1b01b4b236b8a4a2188671c66f033286"
   end
 
   keg_only :provided_by_macos
@@ -47,7 +42,6 @@ class NetSnmp < Formula
   def install
     args = [
       "--disable-debugging",
-      "--prefix=#{prefix}",
       "--enable-ipv6",
       "--with-defaults",
       "--with-persistent-directory=#{var}/db/net-snmp",
@@ -60,15 +54,13 @@ class NetSnmp < Formula
       "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
     ]
 
-    system "autoreconf", "-fvi" if Hardware::CPU.arm?
-    system "./configure", *args
+    system "autoreconf", "--force", "--install", "--verbose" if Hardware::CPU.arm?
+    system "./configure", *args, *std_configure_args
     system "make"
     # Work around snmptrapd.c:(.text+0x1e0): undefined reference to `dropauth'
     ENV.deparallelize if OS.linux?
     system "make", "install"
-  end
 
-  def post_install
     (var/"db/net-snmp").mkpath
     (var/"log").mkpath
   end

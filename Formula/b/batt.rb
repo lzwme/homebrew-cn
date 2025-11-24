@@ -13,9 +13,10 @@ class Batt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "964942b4c4a719104a7b0049c787ae3a293e81b7ff133bd50fe3767c5aa80db6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "423d7e5157cb979bd34bef1c92c29b90f75a22f89f598296ab8e188a2d2be4b3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43951742e51d16008d61d164513549951e72d696787bda3227644ff8a8d03d46"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4066a9df10d2e0fd560d486adfcef19669bd55950a0feb4eb5d494f775baad25"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5171ffc675f924be8107b6f99aa5887109d5919e6e28fafe9468d4df07b96e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba651ec290aaab976210d11b37406381af223b3b8dc56878f78a79bc977e81f9"
   end
 
   depends_on "go" => :build
@@ -38,6 +39,8 @@ class Batt < Formula
     system "make", "GOTAGS=brew", "VERSION=v#{version}"
     bin.install "bin/batt"
     prefix.install "hack/cc.chlc.batt.plist"
+
+    generate_completions_from_executable(bin/"batt", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   def caveats

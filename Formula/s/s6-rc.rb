@@ -4,8 +4,7 @@ class S6Rc < Formula
   url "https://skarnet.org/software/s6-rc/s6-rc-0.5.6.0.tar.gz"
   sha256 "81277f6805e8d999ad295bf9140a909943b687ffcfb5aa3c4efd84b1a574586e"
   license "ISC"
-
-  no_autobump! because: :requires_manual_review
+  head "git://git.skarnet.org/s6-rc.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "352840f345c351dc4bc9e2d29f18bd95dfe5b7669b71afe2f16cf1f85975ca0f"

@@ -5,6 +5,11 @@ class Mkcue < Formula
   sha256 "2aaf57da4d0f2e24329d5e952e90ec182d4aa82e4b2e025283e42370f9494867"
   license "LGPL-2.1-or-later"
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?mkcue[._-]v?(\d+(?:\.\d+)*)\.orig\.t/i)
+  end
+
   no_autobump! because: :requires_manual_review
 
   bottle do

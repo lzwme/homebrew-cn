@@ -11,20 +11,21 @@ class AwsConsole < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41108f285bd15406ea37a8a8fa8a2ad701d26ff6398861ac6dcacd2cb852005d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5031fcf4faff28bc4346d2bc96a9e9a86700fa97400cad285a223e245c94a468"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5031fcf4faff28bc4346d2bc96a9e9a86700fa97400cad285a223e245c94a468"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5031fcf4faff28bc4346d2bc96a9e9a86700fa97400cad285a223e245c94a468"
-    sha256 cellar: :any_skip_relocation, sonoma:        "04a3b06b6d14ed8c797ead0b5c54d88c272be22869fd7c1dd6186eae7d3853f2"
-    sha256 cellar: :any_skip_relocation, ventura:       "04a3b06b6d14ed8c797ead0b5c54d88c272be22869fd7c1dd6186eae7d3853f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "59984e965ed6fc885be49ff46239b60597f3e862582934d3cda503d42641f962"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75e873fb45886368b0cefb0ed08483b03148202a0a0ce934c7dc4754102e450e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8afac366635ad4085b0315480b5775e4bf26a9655576fd1411936ace323ff97"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8afac366635ad4085b0315480b5775e4bf26a9655576fd1411936ace323ff97"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8afac366635ad4085b0315480b5775e4bf26a9655576fd1411936ace323ff97"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e4f74d2d4771b90c0a0b4335eb33fa30798b4e4fb30325745ccfd6d3db362a8f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a701295419ac5e64f467cd1bfbcdcf6f89dc541d91b884a17e2d934fdd94692"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a8c6be7a39571c7631035226a6e74f536e45c6ee6d218a6514fe231cddec56e"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/aws-console"
+
+    generate_completions_from_executable(bin/"aws-console", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

@@ -13,14 +13,8 @@ class Nuxeo < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93f5adedf349c5ef098d6dde573b8bd1c45c0f31fac0a58d4b231496199a496b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bfb386e5a43d6172b64ad766dac4c3e0abd1974f773137636df9a27e4d9e0d40"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bfb386e5a43d6172b64ad766dac4c3e0abd1974f773137636df9a27e4d9e0d40"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bfb386e5a43d6172b64ad766dac4c3e0abd1974f773137636df9a27e4d9e0d40"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d2b82e5f576dbc1052cb08fa1c28da569dbabf3bed0c6b8988141e0f40b021ab"
-    sha256 cellar: :any_skip_relocation, ventura:       "d2b82e5f576dbc1052cb08fa1c28da569dbabf3bed0c6b8988141e0f40b021ab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bfb386e5a43d6172b64ad766dac4c3e0abd1974f773137636df9a27e4d9e0d40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfb386e5a43d6172b64ad766dac4c3e0abd1974f773137636df9a27e4d9e0d40"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "f770ff60d304faa14d16aa72548f2601afbdd6f622a5ae481aa1a460cfc19b9f"
   end
 
   depends_on "exiftool"
@@ -46,9 +40,7 @@ class Nuxeo < Formula
       s.gsub!(/#nuxeo\.pid\.dir.*/, "nuxeo.pid.dir=#{var}/run/nuxeo")
     end
     etc.install "#{libexec}/bin/nuxeo.conf"
-  end
 
-  def post_install
     (var/"log/nuxeo").mkpath
     (var/"lib/nuxeo/data").mkpath
     (var/"run/nuxeo").mkpath
@@ -66,8 +58,6 @@ class Nuxeo < Formula
   end
 
   test do
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
-
     # Copy configuration file to test path, due to some automatic writes on it.
     cp "#{etc}/nuxeo.conf", "#{testpath}/nuxeo.conf"
     inreplace "#{testpath}/nuxeo.conf" do |s|
@@ -75,6 +65,7 @@ class Nuxeo < Formula
       s.gsub!(/#nuxeo\.tmp\.dir.*/, "nuxeo.tmp.dir=#{testpath}/tmp")
     end
 
+    ENV["JAVA_HOME"] = Language::Java.java_home
     ENV["NUXEO_CONF"] = "#{testpath}/nuxeo.conf"
 
     assert_match %r{#{testpath}/nuxeo\.conf}, shell_output("#{libexec}/bin/nuxeoctl config --get nuxeo.conf")

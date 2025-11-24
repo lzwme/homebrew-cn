@@ -18,6 +18,13 @@ class Cjson < Formula
 
   depends_on "cmake" => :build
 
+  # CMake 4 build patch
+  # PR ref: https://github.com/DaveGamble/cJSON/pull/949
+  patch do
+    url "https://github.com/DaveGamble/cJSON/commit/887642c0a93bd8a6616bf90daacac0ea7d4b095e.patch?full_index=1"
+    sha256 "98c2d5ef6cf325ccd089bf4301b0d07e453d4c6276d38a36306c50f106baec82"
+  end
+
   def install
     args = %W[
       -DENABLE_CJSON_UTILS=ON
@@ -25,9 +32,6 @@ class Cjson < Formula
       -DBUILD_SHARED_AND_STATIC_LIBS=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
-    # Workaround to build with CMake 4
-    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
-
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

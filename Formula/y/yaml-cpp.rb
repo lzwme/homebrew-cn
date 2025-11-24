@@ -5,8 +5,6 @@ class YamlCpp < Formula
   sha256 "fbe74bbdcee21d656715688706da3c8becfd946d92cd44705cc6098bb23b3a16"
   license "MIT"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "2568a74c90066c521d45bfd6057d55e52a1cf170b87d24321ed39a91a8013c31"
     sha256 cellar: :any,                 arm64_sequoia:  "b453cb98bf2c4dc253c3523f587a0af606e5a682bcd7b7bd0f69013e95cfe418"
@@ -24,11 +22,26 @@ class YamlCpp < Formula
 
   depends_on "cmake" => :build
 
+  # CMake 4 build patch, remove in next release
+  # PR refs:
+  # - https://github.com/jbeder/yaml-cpp/pull/1171
+  # - https://github.com/jbeder/yaml-cpp/pull/1211
+  # - https://github.com/jbeder/yaml-cpp/pull/1351
+  patch do
+    url "https://github.com/jbeder/yaml-cpp/commit/f878043f12a9434a2ef72de3992ec92e6845c889.patch?full_index=1"
+    sha256 "4aa70d90cd971776b9082c08586384f53f290f58f1835a1d1a81df1e2c6754c7"
+  end
+  patch do
+    url "https://github.com/jbeder/yaml-cpp/commit/c2680200486572baf8221ba052ef50b58ecd816e.patch?full_index=1"
+    sha256 "61789d44d8d9395fa32d1c0ec10f67087450305f087a0403ab8ba78a5f792efa"
+  end
+  patch do
+    url "https://github.com/jbeder/yaml-cpp/commit/c9371de7836d113c0b14bfa15ca70f00ebb3ac6f.patch?full_index=1"
+    sha256 "43379ee0a8d9620524a6a7d34b098363e22e4152cc634e10d5ef2a175697ae72"
+  end
+
   def install
-    # Workaround to build with CMake 4
-    inreplace "CMakeLists.txt", "cmake_minimum_required(VERSION 3.4)",
-                                "cmake_minimum_required(VERSION 3.10)"
-    args = ["-DYAML_BUILD_SHARED_LIBS=ON", "-DYAML_CPP_BUILD_TESTS=OFF"]
+    args = %w[-DYAML_BUILD_SHARED_LIBS=ON -DYAML_CPP_BUILD_TESTS=OFF]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

@@ -2,19 +2,18 @@ class Pc6001vx < Formula
   desc "PC-6001 emulator"
   # http://eighttails.seesaa.net/ gives 405 error
   homepage "https://github.com/eighttails/PC6001VX"
-  url "https://eighttails.up.seesaa.net/bin/PC6001VX_4.2.14_src.tar.gz"
-  sha256 "8b572e0dfb105ad003d7ebdbfe0d081af1189052f362d4ae5455833efe0539c7"
+  url "https://eighttails.up.seesaa.net/bin/PC6001VX_4.3.0_src.tar.gz"
+  sha256 "a5536f7bd4931b2efcbdcd85707a9c6fa82a6b169773e6d13d74cea8107ee9cc"
   license "LGPL-2.1-or-later"
   head "https://github.com/eighttails/PC6001VX.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "c3640b78c52caae41034980b2280579c6bb2499a4a4bc6132342e4e4785fd13b"
-    sha256 cellar: :any,                 arm64_sequoia: "8c21157b4335e3c97de381021b0a4e44002d04114b0214f4cef7429a0ed4e0ee"
-    sha256 cellar: :any,                 arm64_sonoma:  "b5ff45c2bbd4247b053c2035769d4f9484937c581c069545b9f260ab6b14d201"
-    sha256 cellar: :any,                 sonoma:        "155c94239fac16860061cdc20b9ee40b691254e25004ee12544fa9bf0af02154"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d67d8aaf2c7eeba5e349cab8d7d26696d4b56209302919bc7125082570ac386"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87fd8a3b22acf6318d2b75ed308a1a0afb924a3f9255d74aa1b4a1f5491fc569"
+    sha256 cellar: :any,                 arm64_tahoe:   "dc583a60c9740a5d32eef957ab29607d195bb5b3df2bd48cb2bbf9ca5cb94c89"
+    sha256 cellar: :any,                 arm64_sequoia: "bb18666eaecfe0cac52f38cfd62e96ca86a628e99da2d9c310013ba57fb593dd"
+    sha256 cellar: :any,                 arm64_sonoma:  "648bd5ff43a2628c375ac8719174794ab82a4576df6c8e976f75a0647216e627"
+    sha256 cellar: :any,                 sonoma:        "f2f06bb81db5a8c5f8282aec9ffda9c902613b22e19379a338d6f4c5480f6369"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c07878d6f75097acff1e644c451829d8d46d9006362e5f781e17351a3bdd653d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d484870b507bf1ee5c321595fcee9fa79ab68542d1f80edd4d8ff0864ff8a03"
   end
 
   depends_on "pkgconf" => :build

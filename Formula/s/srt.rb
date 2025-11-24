@@ -1,10 +1,20 @@
 class Srt < Formula
   desc "Secure Reliable Transport"
   homepage "https://www.srtalliance.org/"
-  url "https://ghfast.top/https://github.com/Haivision/srt/archive/refs/tags/v1.5.4.tar.gz"
-  sha256 "d0a8b600fe1b4eaaf6277530e3cfc8f15b8ce4035f16af4a5eb5d4b123640cdd"
   license "MPL-2.0"
   head "https://github.com/Haivision/srt.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/Haivision/srt/archive/refs/tags/v1.5.4.tar.gz"
+    sha256 "d0a8b600fe1b4eaaf6277530e3cfc8f15b8ce4035f16af4a5eb5d4b123640cdd"
+
+    # Fix to cmake 4 compatibility
+    # PR ref: https://github.com/Haivision/srt/pull/3167
+    patch do
+      url "https://github.com/Haivision/srt/commit/7962936829e016295e5c570539eb2520b326da4c.patch?full_index=1"
+      sha256 "e4489630886bf8b26f63a23c8b1aec549f7280f07713ded07fce281e542725f7"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "023760d7f2e532bf14d215764aa8d64c2d4e52d6fd116d51f50252269813d5ba"
@@ -20,13 +30,6 @@ class Srt < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "openssl@3"
-
-  # Fix to cmake 4 compatibility
-  # PR ref: https://github.com/Haivision/srt/pull/3167
-  patch do
-    url "https://github.com/Haivision/srt/commit/7962936829e016295e5c570539eb2520b326da4c.patch?full_index=1"
-    sha256 "e4489630886bf8b26f63a23c8b1aec549f7280f07713ded07fce281e542725f7"
-  end
 
   def install
     openssl = Formula["openssl@3"]

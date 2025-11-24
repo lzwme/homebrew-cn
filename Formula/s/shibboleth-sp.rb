@@ -1,26 +1,22 @@
 class ShibbolethSp < Formula
   desc "Shibboleth 2 Service Provider daemon"
   homepage "https://wiki.shibboleth.net/confluence/display/SHIB2"
-  url "https://shibboleth.net/downloads/service-provider/3.5.0/shibboleth-sp-3.5.0.tar.bz2"
-  sha256 "f301604bd17ee4d94a66e6dd7ad1c3f0917949a4a12176d55614483d78fefe58"
+  url "https://shibboleth.net/downloads/service-provider/3.5.1/shibboleth-sp-3.5.1.tar.bz2"
+  sha256 "05da3a09d76c3ba1a5ddd7f919fd942be2d87025f214aba139c2b64b804f9a99"
   license "Apache-2.0"
-  revision 2
 
   livecheck do
     url "https://shibboleth.net/downloads/service-provider/latest/"
     regex(/href=.*?shibboleth-sp[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "105caae3db423a4ae2ef4d3deb4f25557e39a2b7469094129222bf6e26025cc1"
-    sha256 arm64_sequoia: "7be03c283bd03ff2963f41bb949c9a2434b56fab73ef26864e5ed54169b6a833"
-    sha256 arm64_sonoma:  "e37293eaab76478845e28a24c16e77ae9e4eb218c7e2d0aeeff93038a87182f1"
-    sha256 sonoma:        "2ccea3f29a012722cef174cbadda353cbea92967145d05a2b79e0c8ae90036c9"
-    sha256 arm64_linux:   "50f2e227a17c72075fbde051cc9c493d2de9761afdbe701cfaf59e1aed393648"
-    sha256 x86_64_linux:  "0a312b12f0b6a2dcc7955f7778f8afcab6ceef8fdaf14bb1f904fb2066e56dbc"
+    sha256 arm64_tahoe:   "033427d4bfe6a3bfc7fa2545f27e956ec4259af610e40777ff7c3bee4bbb6941"
+    sha256 arm64_sequoia: "fce3533547b871de8ad8bd019aec8eebbbc4a9a31bf7d35a703af226573a4c3c"
+    sha256 arm64_sonoma:  "657db4adad6253944963645bd95bb2af9a823492c840987ed958b38331df2155"
+    sha256 sonoma:        "412323e88bd1945e3ed7c968c1bc836afa142d6786cd796ded97812100a6a911"
+    sha256 arm64_linux:   "009e69f1c86182e95ef8dbefaf57a79636e48c877fe8f35cc73915020310fda3"
+    sha256 x86_64_linux:  "d7a51b5bc378342760b72691ea44b49cd474981fdf1c0909850dbe3fd701da1b"
   end
 
   depends_on "pkgconf" => :build

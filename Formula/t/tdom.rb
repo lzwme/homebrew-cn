@@ -1,21 +1,22 @@
 class Tdom < Formula
   desc "XML/DOM/XPath/XSLT/HTML/JSON implementation for Tcl"
   homepage "https://tdom.org/"
-  url "https://tdom.org/downloads/tdom-0.9.5-src.tgz"
-  sha256 "ce22e3f42da9f89718688bf413b82fbf079b40252ba4dd7f2a0e752232bb67e8"
+  url "https://tdom.org/downloads/tdom-0.9.6-src.tgz"
+  sha256 "6d24734aef46d1dc16f3476685414794d6a4e65f48079e1029374477104e8319"
   license "MPL-2.0"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    url :homepage
+    regex(/Version\s+(\d+(?:\.\d+)+)/i)
+  end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fbf84ebf5d244be2bc9ed3c6fe9a996c8bef2377f9a2b058d8b915f30ff75141"
-    sha256 cellar: :any,                 arm64_sequoia: "f98f56e8f8be62637a79a2a50e0e25c4560336a00d0aa3b33350f2b8021d9337"
-    sha256 cellar: :any,                 arm64_sonoma:  "05e1ab5a96379f4cf427299ef7fc13cc7295201d099ebd729b4caca07ea29147"
-    sha256 cellar: :any,                 arm64_ventura: "14999e9dad6567460b4947213240636d8d6a392b9e8dad78b015ec319ba8a228"
-    sha256 cellar: :any,                 sonoma:        "3195c542314a9f7264cfd1d74ab76b81d984a0d64662ee9c8ae78678939be048"
-    sha256 cellar: :any,                 ventura:       "306b99b603977df988833a0510efa21466efb0adb65172112ae93336d8a686f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc0da95e2734d23da915d3c5e7a1ca8a334a90142a3293307b5418b8533c07e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d70020be1396f84fdbfd00d80ba80ce290a0040b0e929ff7b8444d1f18c8882e"
+    sha256 cellar: :any,                 arm64_tahoe:   "7cfaef92f1e79bcce4c0e7ed3ba44b81b68d2a8b0f955d92fd6463f5c3e31cc0"
+    sha256 cellar: :any,                 arm64_sequoia: "132444e6d526fd8ab26c5cedbd60ea6eb070689e8551eed98eec3e3dbbb75790"
+    sha256 cellar: :any,                 arm64_sonoma:  "d553de086d764b486a032381561ff2b3618a902129e95450eff02b943dbba81d"
+    sha256 cellar: :any,                 sonoma:        "7d15afef159e03e1ce529b513d6b8420990c831549b1f9a934442d15cf186183"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "503ed2c27b2f2720616851d1c91bb4e2ba1321ca0d3fc9b4031059387f406e73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "788c41cb463f200f82fa69ec0219b4b0694b671b556c60e2709fea7585c11a7f"
   end
 
   depends_on "tcl-tk"

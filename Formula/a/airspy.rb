@@ -1,12 +1,30 @@
 class Airspy < Formula
   desc "Driver and tools for a software-defined radio"
   homepage "https://airspy.com/"
-  url "https://ghfast.top/https://github.com/airspy/airspyone_host/archive/refs/tags/v1.0.10.tar.gz"
-  sha256 "fcca23911c9a9da71cebeffeba708c59d1d6401eec6eb2dd73cae35b8ea3c613"
   license "GPL-2.0-or-later"
   head "https://github.com/airspy/airspyone_host.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
+  stable do
+    url "https://ghfast.top/https://github.com/airspy/airspyone_host/archive/refs/tags/v1.0.10.tar.gz"
+    sha256 "fcca23911c9a9da71cebeffeba708c59d1d6401eec6eb2dd73cae35b8ea3c613"
+
+    # CMake 4 build patch, remove in the next release
+    # PR refs:
+    # - https://github.com/airspy/airspyone_host/pull/80
+    # - https://github.com/airspy/airspyone_host/pull/103
+    patch do
+      url "https://github.com/airspy/airspyone_host/commit/7290309a663ced66e1e51dc65c1604e563752310.patch?full_index=1"
+      sha256 "982559d6b900aa9aa2de546197153aae4e0de7b852d0cf4404a92ec3c5f00d11"
+    end
+    patch do
+      url "https://github.com/airspy/airspyone_host/commit/3cf6f97976611c2ff6363f7927fe76c465995801.patch?full_index=1"
+      sha256 "0d78db431a2c11622200655cbd446cae3543c333eb6fa2fa1a0909b6d72d24e2"
+    end
+    patch do
+      url "https://github.com/airspy/airspyone_host/commit/f467acd587617640741ecbfade819d10ecd032c2.patch?full_index=1"
+      sha256 "5b7cc28179b55245caf379b002ed54eb52ee48b66cc8814b6740bc3d94dc48cf"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "43ab01541269d098b8b36f73e206cae61390ded5015dd8a795ee0d9917ba10bc"
@@ -29,9 +47,7 @@ class Airspy < Formula
   depends_on "libusb"
 
   def install
-    # Workaround to build with CMake 4
-    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

@@ -6,31 +6,39 @@ class VibeLogCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5154ebb5ed4e50fdbd1c11cae0d5f2e77ee18c814536529486dde708cc2144bc"
-    sha256 cellar: :any,                 arm64_sequoia: "496b5ce470ae6310729881627cdcdfe9df9a38a97c0bf1a109a8ef917842fcb1"
-    sha256 cellar: :any,                 arm64_sonoma:  "15d10514f6c11baa2e0f95cf5f2946053f8f477db484764a2b3f5385be0c70b8"
-    sha256 cellar: :any,                 sonoma:        "ab8c062c88611da55fd4ffb52a9931d60469e51039699287c83a73dd4a59b01b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5c15044cfffd1c59232ac4749ec573aa91775b6a7aede066e52f627195a3c84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a11a6e86878083cde7d658eb4672eb5c803bca5612d2b2ff9a144efe6b36a9b0"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "a407c8fd32af2faa009f1186e76ad9ee6172385ed63a692b2a5abd133a45b027"
+    sha256 cellar: :any,                 arm64_sequoia: "a4f88cc5b528a0d661d4b2e20efe8782c6710b26a396c0ab0ac5ed790a2697c7"
+    sha256 cellar: :any,                 arm64_sonoma:  "3239e1998b5c0c008d2ffca43553ea4176cb7a42099214a8d7ee381830e66925"
+    sha256 cellar: :any,                 sonoma:        "54d3b4cd39e6a2e373ee018c90e7ffb94efba235425052414061962f778da644"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "23043125891fed986515d2511a5c83e0702ab46c56b572792b151d4b0d94f5b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d9087b46b4eb82268dd2faf671ecd80a460a38a1a0396edef33ee57d35f2617"
   end
 
-  # `better-sqlite3` needs to be built with `c++17`, but `node` v25  compile with `c++20` by default
-  # Issue ref: https://github.com/WiseLibs/better-sqlite3/issues/1411
-  depends_on "node@24"
+  depends_on "node"
+
+  on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version < 1700
+  end
 
   on_linux do
     depends_on "xsel"
   end
 
   def install
+    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version < 1700)
+
+    # Allow newer better-sqlite: https://github.com/vibe-log/vibe-log-cli/pull/11
+    inreplace "package.json", '"better-sqlite3": "^11.0.0"', '"better-sqlite3": "^12.0.0"'
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     # Remove incompatible pre-built binaries
-    vendor_dir = libexec/"lib/node_modules/vibe-log-cli/node_modules/@anthropic-ai/claude-agent-sdk/vendor/ripgrep"
+    node_modules = libexec/"lib/node_modules/vibe-log-cli/node_modules"
+    vendor_dir = node_modules/"@anthropic-ai/claude-agent-sdk/vendor/ripgrep"
     rm_r(vendor_dir)
 
-    clipboardy_fallbacks_dir = libexec/"lib/node_modules/#{name}/node_modules/clipboardy/fallbacks"
+    clipboardy_fallbacks_dir = node_modules/"clipboardy/fallbacks"
     rm_r(clipboardy_fallbacks_dir) # remove pre-built binaries
     if OS.linux?
       linux_dir = clipboardy_fallbacks_dir/"linux"

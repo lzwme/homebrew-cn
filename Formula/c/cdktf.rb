@@ -7,20 +7,27 @@ class Cdktf < Formula
   revision 1
 
   bottle do
-    sha256                               arm64_tahoe:   "f578d63eb4a956b48e9c9c16aaab47f11f03fdd7116d0d725a6e952d280e7ccd"
-    sha256                               arm64_sequoia: "7d373a388353fd948c21d43f7bb49483bdacc5f43a8c7e0a00a7bc456bcabe07"
-    sha256                               arm64_sonoma:  "3af0f208b1aa7e65a16754356dac5b7ce395313a27bcf9c26e35908f025e529e"
-    sha256                               sonoma:        "4fe3dd2844bd6a15198b8796c15d6d7b6f4b74a56de6815eeba5d7ba82444459"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce0176ec3db721cdab92513cf302e9ba61985c010e79f5e0da270bd6fe32056e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d87963c5ad6b246c64cd56cbe1cd35868e4d4758aa7c6bbf560c12c50cfe0b1"
+    rebuild 1
+    sha256                               arm64_tahoe:   "0e40207364977f0eb648b11eae2b766f395a8b6dbaf680eecd2cb801b84ef05e"
+    sha256                               arm64_sequoia: "d2628c7283e20253e054eaeb7fafda0ccfdea6ccebe1f669ba298c856df85e7a"
+    sha256                               arm64_sonoma:  "949a4c44c8a74fc2a603272681a0c28e74215b7a7a231f7872b62155c5992bd2"
+    sha256                               sonoma:        "bfb78f5f4bc567f55479f27a3311345e03e6243e2d4e28b5e534d9835e1de15e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f49385492136b6ebfb77a1b6997404bdacfa0e51f19a88bd594728b7c98e556"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76169751063d6f5b6a692119e83dcc4038d92456e9870877947dd3981277d3f6"
   end
 
   depends_on "opentofu" => :test
-  depends_on "node@24"
+  depends_on "node"
+
+  on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version < 1700
+  end
 
   def install
+    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version < 1700)
+
     system "npm", "install", *std_npm_args
-    (bin/"cdktf").write_env_script libexec/"bin/cdktf", PATH: "#{Formula["node@24"].opt_bin}:${PATH}"
+    bin.install_symlink libexec.glob("bin/*")
 
     # remove non-native architecture pre-built binaries
     os = OS.kernel_name.downcase

@@ -7,7 +7,8 @@ class Yo < Formula
   head "https://github.com/yeoman/yo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5d1fcc62b691e174aca6bf03f7c42e4e5ec5acae1f71ba026292c6f9ee1b2c99"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "657a27fa3d4da5c5bf01fe31db6a110457d011571385c4f4947f62fa637e727f"
   end
 
   depends_on "node"

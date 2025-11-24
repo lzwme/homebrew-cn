@@ -1,12 +1,28 @@
 class Airspyhf < Formula
   desc "Driver and tools for a software-defined radio"
   homepage "https://airspy.com/"
-  url "https://ghfast.top/https://github.com/airspy/airspyhf/archive/refs/tags/1.6.8.tar.gz"
-  sha256 "cd1e5ae89e09b813b096ae4a328e352c9432a582e03fd7da86760ba60efa77ab"
   license "BSD-3-Clause"
   head "https://github.com/airspy/airspyhf.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
+  stable do
+    url "https://ghfast.top/https://github.com/airspy/airspyhf/archive/refs/tags/1.6.8.tar.gz"
+    sha256 "cd1e5ae89e09b813b096ae4a328e352c9432a582e03fd7da86760ba60efa77ab"
+
+    # CMake 4 build patch, remove in the next release
+    # PR ref: https://github.com/airspy/airspyhf/pull/54
+    patch do
+      url "https://github.com/airspy/airspyhf/commit/e9c483aaa6da6faebc648ba2a065608dc7f3ee08.patch?full_index=1"
+      sha256 "06d76fc39f1473c7a09bef1883b68c6bf965b56a1e02c870f5c4d7ea528a78f4"
+    end
+    patch do
+      url "https://github.com/airspy/airspyhf/commit/0aa25232542b2bccab3f94a1f7171d8720709d6d.patch?full_index=1"
+      sha256 "850e7e46cc154f12c4a86254e3f8be0d7b5704bef8bb4612819838c0cc99aa86"
+    end
+    patch do
+      url "https://github.com/airspy/airspyhf/commit/0dbb10cd22e2ef1546c8a79d418529bd577acd23.patch?full_index=1"
+      sha256 "8736a181e3e6d2cf377f09df2a086ce950c9323e23b9b02dd00685519c30edcc"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "1c1fd82f7cb86587bd29d675af8ea216722ed5e0aee0eca6a137afc0adda0ca2"
@@ -29,9 +45,7 @@ class Airspyhf < Formula
   depends_on "libusb"
 
   def install
-    # Workaround to build with CMake 4
-    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

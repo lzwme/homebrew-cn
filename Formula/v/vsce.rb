@@ -1,8 +1,8 @@
 class Vsce < Formula
   desc "Tool for packaging, publishing and managing VS Code extensions"
   homepage "https://code.visualstudio.com/api/working-with-extensions/publishing-extension#vsce"
-  url "https://registry.npmjs.org/@vscode/vsce/-/vsce-3.7.0.tgz"
-  sha256 "70352a3d0f73b0804e6957594da486dc7844a9c1f93b1a74bfd0872e8227bcb7"
+  url "https://registry.npmjs.org/@vscode/vsce/-/vsce-3.7.1.tgz"
+  sha256 "aebab0210edcc5ddc5d3c90f420ba283dd6552968448714640fb78c2a0c4ce35"
   license "MIT"
   head "https://github.com/microsoft/vscode-vsce.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Vsce < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "057536a86f5fe9cfb06abc6c8041132d92f3a19e669e31f2f30cd21b69ce090f"
-    sha256                               arm64_sequoia: "bc3727d3f6a805d607b6798ab46116f3119888934026a656c5e8e2cbe51eef7a"
-    sha256                               arm64_sonoma:  "b0ded65dfc9306b77bde6bf02f9aea5947c232a11d54d9471f507b5356898fcb"
-    sha256                               sonoma:        "aefff4eb6dad002a909b14e48912278f813e19fc7119509b6482d0a68aab038e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b72ca5ae431fb01bbc9af828510850a782d810ea3d1409ca85f2a75d7a6cb7b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d14fd2520994fcd6a62903948da307f4e229c4f4231eabc3b67b3ed408280f4"
+    sha256                               arm64_tahoe:   "3b1aa5fe7412b69b47c2ac683bd19d3d1a4536f8d5a2e1d0d453575be0114850"
+    sha256                               arm64_sequoia: "816304e05516bcbca943945cdc0cf0d6aafc60ce66d0957f8ac845d7602b08d0"
+    sha256                               arm64_sonoma:  "bc79af02a8a6790a9abcde0cb8444ebb3ad8949c331f5ab2f08f1ff8a4295ecf"
+    sha256                               sonoma:        "3773a67cb4b9175f7616e78b5ce9d3141e27954b1dfb4ba33bf64074d1357a04"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b7643a95eb08f987e4f5ab777a2175a47d4fb6a0f167f402eea8908f933bde7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd0c7492e84e88ffeeb940d2260c53d04bc5278f0e1b9125b8732fb5698b4d7b"
   end
 
   depends_on "pkgconf" => :build

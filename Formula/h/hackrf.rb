@@ -1,10 +1,25 @@
 class Hackrf < Formula
   desc "Low cost software radio platform"
   homepage "https://github.com/greatscottgadgets/hackrf"
-  url "https://ghfast.top/https://github.com/greatscottgadgets/hackrf/releases/download/v2024.02.1/hackrf-2024.02.1.tar.xz"
-  sha256 "d9ced67e6b801cd02c18d0c4654ed18a4bcb36c24a64330c347dfccbd859ad16"
   license "GPL-2.0-or-later"
-  head "https://github.com/greatscottgadgets/hackrf.git", branch: "master"
+  head "https://github.com/greatscottgadgets/hackrf.git", branch: "main"
+
+  stable do
+    url "https://ghfast.top/https://github.com/greatscottgadgets/hackrf/releases/download/v2024.02.1/hackrf-2024.02.1.tar.xz"
+    sha256 "d9ced67e6b801cd02c18d0c4654ed18a4bcb36c24a64330c347dfccbd859ad16"
+
+    # CMake 4 build patch, PR refs:
+    # - https://github.com/greatscottgadgets/hackrf/pull/1583
+    # - https://github.com/greatscottgadgets/hackrf/pull/1584
+    patch do
+      url "https://github.com/greatscottgadgets/hackrf/commit/5c394520403c40b656a7400681e4ae167943e43f.patch?full_index=1"
+      sha256 "4e87b0db22562dbc160932fc734da9897037e5532edd87e2b2675dfe3594596e"
+    end
+    patch do
+      url "https://github.com/greatscottgadgets/hackrf/commit/2d2b6231fbbdb122e3a8a25e7aaa80917c202c6d.patch?full_index=1"
+      sha256 "c1e154954c104b4538d5588c63daf7ce2061c3703be57808926593b5282e445b"
+    end
+  end
 
   livecheck do
     url :stable
@@ -39,9 +54,6 @@ class Hackrf < Formula
         -DUDEV_RULES_PATH=#{lib}/udev/rules.d
       ]
     end
-
-    # Workaround to build with CMake 4
-    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
 
     system "cmake", "-S", "host", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

@@ -1,17 +1,17 @@
 class Kibi < Formula
   desc "Text editor in ≤1024 lines of code, written in Rust"
   homepage "https://github.com/ilai-deutel/kibi"
-  url "https://ghfast.top/https://github.com/ilai-deutel/kibi/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "2905743c8fc065054d3776e9b16fe89903cc0547eaedd8d33b66d2e29ceb0191"
+  url "https://ghfast.top/https://github.com/ilai-deutel/kibi/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "150fde4664ebe47a4c588cf8ff2583392c76038339982a7180ee9282ce6c3cf2"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c51c006ffda9e70d5a6637b66027ef885a761c7cde1d4bfe9ba2bf2c0ce7659"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9f58c66aa6678216a7911055f04e8e24186159bbd3e79329fbedf64767f362a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d550292780df1fae5a1922de8effaf4511ebefa6d3da1ad7b5918192cea03289"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fed7cf19374206adaada66a435dfb1409de9e6009b4955b001783f696e3e1ce4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "14f5419bb8c1f24ada37aa1344b36c10dd3ed06c0e2ae66795f375cac45e771d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdef5d92ade0d33b2b8c4d24cff30b8535f94917b80a9909984910df17978d18"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cdb7d21b2b3f61e993b2a2a8f4659802c1eef433d21034371eaab8da6f438d88"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b4719f8ad7d488ad3e5b5aebd7f22307812648939905770e40b5f3959f9182c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93b40c96fc49471d9471cfc394445a7c6c13cb98050aaadf33f6c29d84b47cb5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "38d3c353a71abec7eab726eeff37fbffe95182ef5bd86bb4e7802a700a81fff4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "90ff945a7cbd57e54ec582d539b98760ffad2722a0541b5a9551685b66f2d6c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9215e2c6557bf575833051f3dbf83092089d82f5850421621a6dd19c7248ebc"
   end
 
   depends_on "rust" => :build

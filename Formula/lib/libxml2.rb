@@ -14,12 +14,13 @@ class Libxml2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e76405cf2d17023bd38266cc74f7ad310e29fd39828dcc2786752cb598e84d74"
-    sha256 cellar: :any,                 arm64_sequoia: "b5c41a7a40c8e68e45b551d0b520adc23a9ebd4a0f3a40662e08e45dfdea0b68"
-    sha256 cellar: :any,                 arm64_sonoma:  "4aa659b9756ace59200bd7ffa3f53fde9b7317ed276d5e1d63386fb12c133b4e"
-    sha256 cellar: :any,                 sonoma:        "cd4e6a57e38d34a95165af7124fce4a677afe534487174e62d8a721495047415"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0568bf7925c997532e450bc025663be693de3dda965b2f2a5aed1b067c6d18c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3d6e52d3b7b6343c519784cb4509b5082403e0d81e6e4648bcf99a47b0c75ff"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "9e3cde9378a4638dc046655cc428e2fbf4cd2ec2991337fae3e57a9f065ef0e6"
+    sha256 cellar: :any,                 arm64_sequoia: "d0656869714b8c590f9c980b08860c7245834a2679310ac7d411b1b9366593b1"
+    sha256 cellar: :any,                 arm64_sonoma:  "ce27f215780fe6f227d0e24571d84d781c6ad52d8537d2ad6a1b5d404753c09a"
+    sha256 cellar: :any,                 sonoma:        "833e98eaf14e628e1b3d3a7389be56eed7c476c807a60d43ff3fda3f972ebe18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "23f7f1f4c905b53efa09671d5a784742909ed0d108ccc8573ba32397cbec461b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3845c8e494648b4acecd10d54117f661a22fc637ac2b1c5e106d67caaa0939ba"
   end
 
   head do
@@ -33,38 +34,20 @@ class Libxml2 < Formula
   keg_only :provided_by_macos
 
   depends_on "pkgconf" => [:build, :test]
-  depends_on "icu4c@78"
   depends_on "readline"
 
   uses_from_macos "zlib"
-
-  def icu4c
-    deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
-        .to_formula
-  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system "./configure", "--disable-silent-rules",
                           "--sysconfdir=#{etc}",
                           "--with-history",
-                          "--with-http",
-                          "--with-icu",
                           "--with-legacy", # https://gitlab.gnome.org/GNOME/libxml2/-/issues/751#note_2157870
                           *std_configure_args
     system "make", "install"
 
-    inreplace [bin/"xml2-config", lib/"pkgconfig/libxml-2.0.pc"] do |s|
-      s.gsub! prefix, opt_prefix
-      s.gsub! icu4c.prefix.realpath, icu4c.opt_prefix, audit_result: false
-    end
-
-    # `icu4c` is keg-only on macOS and can be during migration on Linux,
-    # so we need to tell `pkg-config` where to find its modules.
-    icu_uc_pc = icu4c.opt_lib/"pkgconfig/icu-uc.pc"
-    inreplace lib/"pkgconfig/libxml-2.0.pc",
-              /^Requires\.private:(.*)\bicu-uc\b(.*)$/,
-              "Requires.private:\\1#{icu_uc_pc}\\2"
+    inreplace [bin/"xml2-config", lib/"pkgconfig/libxml-2.0.pc"], prefix, opt_prefix
   end
 
   test do

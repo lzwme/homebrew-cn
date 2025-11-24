@@ -6,19 +6,20 @@ class N8nMcp < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c032eccca5ce1245184a802412b6312b06a56ca627100abc6d04a87dee86bd1a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1b972c4ca8931063a246bf80f6e182914251fcf5587e8caff5a646790c4d1e0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0366bd2f8e4ee71d4631f2cd84a1fe70c5ac2bd855c37172600a0ccddd3afa5b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "40a157833def661df69b59bf223d8b778349524430cd69ca5f9ecc64357e7232"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "602f9c470932d87f7038cbd78648b693affe7698a4b93290e716afa937ab41ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "244a99537d0e8613c426be607144276efc51be72baee80ad5aa42b2231d2e12c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "82b58264ffa40825e41acd7e35a8de408ffa46c74ecc00c21b80e117e8d6cdac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6cd33fb795821ed3288b079a1ca17047463cb42642ca76ec49c5850f6fd8b90"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8b59d134702852403bf8f72eaed7595e13817434e7a5cec7dfaed1a45320f88"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e8b59d134702852403bf8f72eaed7595e13817434e7a5cec7dfaed1a45320f88"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "06699def093834864217466921835b09e6c12909401d95e690fbe44d4aca5d62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39d9509d3856f31a78652c87dc861fcbd396feb525dba74aad40eca0806e8cf5"
   end
 
-  depends_on "node@22"
+  depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do

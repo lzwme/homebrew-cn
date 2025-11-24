@@ -1,8 +1,8 @@
 class Clojurescript < Formula
   desc "Clojure to JS compiler"
   homepage "https://github.com/clojure/clojurescript"
-  url "https://ghfast.top/https://github.com/clojure/clojurescript/releases/download/r1.12.42/cljs.jar"
-  sha256 "41ab539bee3904cb0b3ccdf15422f0157701e5c4092f4f65d4b01f367772e4d5"
+  url "https://ghfast.top/https://github.com/clojure/clojurescript/releases/download/r1.12.110/cljs.jar"
+  sha256 "70b5f8aa1f224b9ed4bb66736abdcf45cc53c4174a6084e8c6cdc4c0369242b7"
   license "EPL-1.0"
   head "https://github.com/clojure/clojurescript.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Clojurescript < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d73ca669b51b1426ba1bb5e70fdc04bf2e07ff64b7261f8cc39d1762726ee08c"
+    sha256 cellar: :any_skip_relocation, all: "8616db1e52982fe64d5ef630e127e5c7038e55e3e11b8f00fa30f0d27f9bd58c"
   end
 
   depends_on "openjdk"

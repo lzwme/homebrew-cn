@@ -4,15 +4,15 @@ class Libgsf < Formula
   url "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.53.tar.xz"
   sha256 "0eb59a86e0c50f97ac9cfe4d8cc1969f623f2ae8c5296f2414571ff0a9e8bcba"
   license "LGPL-2.1-only"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 arm64_tahoe:   "c9198abd992dd04f3aae0030ac3e67af9e4a4096f906eb5a3f8681f33da18a7c"
-    sha256 arm64_sequoia: "31487301757276c2c88e9779b5bb16eb1226083f6fb9802a32a5b38d7ae6097c"
-    sha256 arm64_sonoma:  "d2f7817329833dcf7a03ece697c54e790c89e08e14d4d219a803f84afca8b233"
-    sha256 sonoma:        "4ecaea80f6ba17910c339baa96083b0b32daf7ad09cc8c52d83113c5b3925c2d"
-    sha256 arm64_linux:   "18e121cdc81bbf665f9b0a7dcbd40c9efe95d1620d6b75fe877772b733ba08e3"
-    sha256 x86_64_linux:  "98870890380476e5dad8a0e74852fb44d7b8bdd16c1d42aebe089dcde4b067d2"
+    sha256 arm64_tahoe:   "a2495ccfd26a1806327e17ac2664e775d16e32bc2ebcc5d5d5a0e7960ab0824a"
+    sha256 arm64_sequoia: "1f1b24a80654b5a1fc0258ab9ecd8075c93a7e32ccb891f0926f6ee0c776ae02"
+    sha256 arm64_sonoma:  "88c2032568c9187ccccb96523c5501d601f371bf9012437907eb9ee19528ce29"
+    sha256 sonoma:        "30e687653e82a9c80777fb7728b10f341dd6fd6ef7d99b7310b2e49d8393d742"
+    sha256 arm64_linux:   "4fb0e28455b2a455b4d03539ee2920c012f404bb557486f8ba868e8d4eb70312"
+    sha256 x86_64_linux:  "327455f5ca5ab1a869a9603f1ee32bacde9f27c92768ca37a065bbe5ee9b58ad"
   end
 
   head do

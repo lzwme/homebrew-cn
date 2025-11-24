@@ -9,12 +9,13 @@ class Mediamtx < Formula
   head "https://github.com/bluenviron/mediamtx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc1afa768a6489879f90196eedc0cc83e487b591d71e02ff3dbbedc9143512fd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc1afa768a6489879f90196eedc0cc83e487b591d71e02ff3dbbedc9143512fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc1afa768a6489879f90196eedc0cc83e487b591d71e02ff3dbbedc9143512fd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b23ccb93960434814d386a9d49c2268078e709eb2e8773a9871c2894da20a9f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b1e6820c785b87a3d243f1ccbd0800be0098fae1c9b2304d2870d7a3f8e5e16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "032ff9faa7843076e19eed05d4b93cc0b2d94e4466673b67056a6e9ef6559f6c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ef85884b54e9213cec79d019d34fb2333d54498f56c8837cc309a308fa3a5bf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ef85884b54e9213cec79d019d34fb2333d54498f56c8837cc309a308fa3a5bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ef85884b54e9213cec79d019d34fb2333d54498f56c8837cc309a308fa3a5bf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "baf630e3dbd8e26d57470c0632af002c0fc2421fd800f12c256904ca56c756e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ebce8f85bc15f10c97887ad06007dce5c0979e560cdcdbef62410199072e1d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcd8c39d456dc16b065c2d76d1c7656423726854139e4263d554be0f8d60b2b2"
   end
 
   depends_on "go" => :build
@@ -24,10 +25,8 @@ class Mediamtx < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
     # Install default config
-    (etc/"mediamtx").install "mediamtx.yml"
-  end
+    pkgetc.install "mediamtx.yml"
 
-  def post_install
     (var/"log/mediamtx").mkpath
   end
 
@@ -46,9 +45,7 @@ class Mediamtx < Formula
     assert_match version.to_s, shell_output("#{bin}/mediamtx --help")
 
     mediamtx_api = "127.0.0.1:#{port}"
-    pid = fork do
-      exec({ "MTX_API" => "yes", "MTX_APIADDRESS" => mediamtx_api }, bin/"mediamtx", etc/"mediamtx/mediamtx.yml")
-    end
+    pid = spawn({ "MTX_API" => "yes", "MTX_APIADDRESS" => mediamtx_api }, bin/"mediamtx", pkgetc/"mediamtx.yml")
     sleep 3
 
     # Check API output matches configuration

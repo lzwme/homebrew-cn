@@ -6,6 +6,11 @@ class Polyglot < Formula
   license "GPL-2.0-or-later"
   head "http://hgm.nubati.net/git/polyglot.git", branch: "learn"
 
+  livecheck do
+    url "http://hgm.nubati.net/releases"
+    regex(/href=.*?polyglot[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   no_autobump! because: :requires_manual_review
 
   bottle do

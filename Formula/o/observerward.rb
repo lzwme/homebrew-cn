@@ -1,17 +1,17 @@
 class Observerward < Formula
   desc "Web application and service fingerprint identification tool"
-  homepage "https://emo-crab.github.io/observer_ward/"
-  url "https://ghfast.top/https://github.com/emo-crab/observer_ward/archive/refs/tags/v2025.11.15.tar.gz"
-  sha256 "0b1b3b24316ff4a11007cf10fb58068fc76224d264354cf54fe71407c7837931"
+  homepage "https://blog.kali-team.cn/projects/observer_ward/"
+  url "https://ghfast.top/https://github.com/emo-crab/observer_ward/archive/refs/tags/v2025.11.23.tar.gz"
+  sha256 "d9db74bd0d07f6300063f5273123aefa7d45abfd3626a36e31e4798d1f51dc07"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6eb4a70697e05d041c9dc75b552a8a56a7987586be6025961f70f8767937530c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4d34008753f7d16271ed2557419088df541ceb53227fee0580f2bf077f17e63"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6757b1ebe4fd2eaa3d118d420f168acffeb35bd8981942801365dbbfb3137855"
-    sha256 cellar: :any_skip_relocation, sonoma:        "469fe875cbccba5360f5a211bf6426dd2a7445ddd03045fd24cd4acd28a8ee3c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc067449e1fdc5778d165163cff8a3c51e8753488d9cbd23d7f9c9d30777a30c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea5cdd0adbbca8feb92655f0c45e0e5c42531cb0e6f9fb64061a2b10e374f14b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e2d01dad1b741d09164bac91213e4886d681e0ac2cd725bce7869b7f0b00f22"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e390ea662ee74f580a6f42cc7eccc7dc41baff427ddb1437fa5cca26e9a2eebe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fad5339fcf2e0e254ff232fbd5856c67eee4448ed9049469292551b1dc525229"
+    sha256 cellar: :any_skip_relocation, sonoma:        "09d6f689de28ea7d56cf86f5c78173c8d3d60e5753eefca2700db625e4bedbac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbb2af51258bdd081203e6d21e03f0cbcc19270498f17b69c5ac9f757e7af180"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab31264b723fa112f4e64af6d7f0e84710edc0cc35caff6d92f1487e221baf21"
   end
 
   depends_on "rust" => :build
