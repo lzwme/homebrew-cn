@@ -1,20 +1,18 @@
 class Crane < Formula
   desc "Tool for interacting with remote images and registries"
   homepage "https://github.com/google/go-containerregistry"
-  url "https://ghfast.top/https://github.com/google/go-containerregistry/archive/refs/tags/v0.20.6.tar.gz"
-  sha256 "53f17964ade63f63b2c66231a6e1ea606345cfcc325e49a5267017bb475bdcb4"
+  url "https://ghfast.top/https://github.com/google/go-containerregistry/archive/refs/tags/v0.20.7.tar.gz"
+  sha256 "623a87ec77206bae301a9af64b42ba05e602b1608d0ee3574749b348ab4dd7ac"
   license "Apache-2.0"
   head "https://github.com/google/go-containerregistry.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "72a180ee36aec8354893bd572f691fecff83c1b23e93dd22462180c59b4bf0b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf1acaf4cde02176b9f0a3684e4d062b9cc8758977ee056dfbcab5cd2fae028f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf1acaf4cde02176b9f0a3684e4d062b9cc8758977ee056dfbcab5cd2fae028f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bf1acaf4cde02176b9f0a3684e4d062b9cc8758977ee056dfbcab5cd2fae028f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "693d1829b69430956cfcfc35a90e0f2b2099fbf2b50a8ec05389f45e2502d9b1"
-    sha256 cellar: :any_skip_relocation, ventura:       "693d1829b69430956cfcfc35a90e0f2b2099fbf2b50a8ec05389f45e2502d9b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "745a10f878a8c14f61b769ff7f09f9536a27f04c93ec4a47008d6b0ca4ddb895"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82c5b30322c819286dc77c9f3af7e04ba387a3a0358e6fabf23325fba2f43542"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "531595877872f345621dab9ab17731613e6e40a7a2cb01fa1b47c6ec41911f6b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "531595877872f345621dab9ab17731613e6e40a7a2cb01fa1b47c6ec41911f6b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "531595877872f345621dab9ab17731613e6e40a7a2cb01fa1b47c6ec41911f6b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "de6392fa513bd651a664a3ae74a69819c9ed3d3472c041884ee8c7674e41b85e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f96d8271a08b34ff99790f9ced31dc51953f8586db819ae620d5a4c481c3a46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "561680df7f182b8bf73710b65b85af983bc3c58aaec2a4ad852e8690ab06b370"
   end
 
   depends_on "go" => :build

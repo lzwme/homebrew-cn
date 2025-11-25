@@ -1,18 +1,18 @@
 class Gat < Formula
   desc "Cat alternative written in Go"
   homepage "https://github.com/koki-develop/gat"
-  url "https://ghfast.top/https://github.com/koki-develop/gat/archive/refs/tags/v0.25.6.tar.gz"
-  sha256 "04fb6973d67557b1f47a2b9c3c44c41ec16f281809172862e4706a1f59d5cf76"
+  url "https://ghfast.top/https://github.com/koki-develop/gat/archive/refs/tags/v0.25.7.tar.gz"
+  sha256 "536cd5219d75c20f9cf10fd5ab5ce1a7415513b240636e76726539b2d9c63de3"
   license "MIT"
   head "https://github.com/koki-develop/gat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d214c87158a68a8b482d2ef1ee53b34af557b9b1323bb28475aa6ae95ac0d4c9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d214c87158a68a8b482d2ef1ee53b34af557b9b1323bb28475aa6ae95ac0d4c9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d214c87158a68a8b482d2ef1ee53b34af557b9b1323bb28475aa6ae95ac0d4c9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b149f0b65cf26db3cdcd6e3dd232cd8321821b458491592f22d66d3947719826"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac923bda6e0afc23e602bc7451ae715c1571c2fe3c7a14f5261101e874dae93f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2238e8d8b010153039952e2f915b4b2594d51b7ff6cdc0dcbe55c7790b1f7d0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "088a70bb3a504a16638f378f5972619bc9315e824b434f6be458d5daecbb5bad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "088a70bb3a504a16638f378f5972619bc9315e824b434f6be458d5daecbb5bad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "088a70bb3a504a16638f378f5972619bc9315e824b434f6be458d5daecbb5bad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "de9a1cdadace9dfa46b6e8e2b16885d920fe4ededc1c29d50c83d13261b8d534"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c548795052c11d8013ba1d4a2cd8f2aba00e465cdc968c963e6b835175214b0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c02650f3ac67a71060f3f14a4f8e90ebe6313720b4bf6450228bfdeff96e8a4e"
   end
 
   depends_on "go" => :build

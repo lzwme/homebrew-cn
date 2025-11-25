@@ -1,17 +1,17 @@
 class Cnats < Formula
   desc "C client for the NATS messaging system"
   homepage "https://github.com/nats-io/nats.c"
-  url "https://ghfast.top/https://github.com/nats-io/nats.c/archive/refs/tags/v3.11.0.tar.gz"
-  sha256 "9ee45cd502a49dbd29bed491286a4926e5e53f14a8aacad413c0cf4a057abee0"
+  url "https://ghfast.top/https://github.com/nats-io/nats.c/archive/refs/tags/v3.12.0.tar.gz"
+  sha256 "06b64d7045fd618c98e5608001b384bdbfa6a17718dba64e732ba72a6f00649b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7cea1673189ed951c74e4220e22362fee2c6875f741312f6fab6ae90abfa9771"
-    sha256 cellar: :any,                 arm64_sequoia: "7866177a01aa325578321f2e60d64c485220dd462fdd266d07edcc4d2752f115"
-    sha256 cellar: :any,                 arm64_sonoma:  "041326a64ef5f7c2c22dc50d30e445fd54bd5b6d3cb529dafc81317a28270bc7"
-    sha256 cellar: :any,                 sonoma:        "025ea609d4ad1513a2ee6ab2130123fdeeb0e16006072c84b63735c8678f3e53"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c063627a562b5f5965a08c358ef8e21fe8dcdc5b049252165506eb98246ad47a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "092bae28e028eda4a513dfda93c4976b17e297ae036ee473a47732b37126cb3a"
+    sha256 cellar: :any,                 arm64_tahoe:   "d6b6a71f904ece5d05e820a00279676169c201dd29af015760f14ec90eedf6c3"
+    sha256 cellar: :any,                 arm64_sequoia: "4802784048ccef88363702e5db80b98657daa8dd7ebd90d545535329c516de18"
+    sha256 cellar: :any,                 arm64_sonoma:  "f693d5fc84ab27feef7ef4d67b8674a88f36f42a05039ced84312f5a065d6ef2"
+    sha256 cellar: :any,                 sonoma:        "da0021e25b526acac1a1e0d4f6fbed9aae416f2986f4b000b31b1b80b72741b9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f811f0043da5c8aa249aa337e7a983fa76c8e82eb1f5f99c88934551ebfb3882"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1891557d88308406f2cb6525cd9825777c4bc280becc0b68878d471a82f9c2b5"
   end
 
   depends_on "cmake" => :build

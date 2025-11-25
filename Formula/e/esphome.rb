@@ -3,17 +3,17 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/3b/fe/e560e28e376fe985e35271504a9d1255b9bd27c7c61204bbe23d098274c9/esphome-2025.11.0.tar.gz"
-  sha256 "872a9b66a70b7496c5d0b7df5017dd61b1ce9cd3d204c3dc37e18ca186ff6ebc"
+  url "https://files.pythonhosted.org/packages/42/a8/8a3cc8915459527f96720b882a0f85e4a21b95667b3ce04c131cfd40fb41/esphome-2025.11.1.tar.gz"
+  sha256 "fb69d26cd0474cc48eccc77a6121b752f732fef2e09912187f382c36eaad3720"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "71b16906b57888a49befd099c0e08e0094597cd79928c109055cb5376c03fa03"
-    sha256 cellar: :any,                 arm64_sequoia: "a94418000d66717e63afb4a78465edb615e4281c6780ad6af59f83a95581503c"
-    sha256 cellar: :any,                 arm64_sonoma:  "8bc14706f648601e9e89b689011f73dc6a8acd1b53c71070a44052e1547263c0"
-    sha256 cellar: :any,                 sonoma:        "7573faef2421961b0c01eb689d57172c31ffcd341e3b3047ffae25f73ae475ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3714629061b0d679ecd73f2c1732a44cd33938e0224ec3a520b1d6c4c7917185"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0be90926c730015496d3a4038f374428bbd86e32075aa735a2eead5d6e1d4254"
+    sha256 cellar: :any,                 arm64_tahoe:   "03b0142a950aed65ecfd71b4d9cc91ce65b59ddcf4b53cba4e82271912dd33b0"
+    sha256 cellar: :any,                 arm64_sequoia: "a537b8616842087e90f3d4883cd190433b33f1542fe4be3c04feb0f2fb13fea4"
+    sha256 cellar: :any,                 arm64_sonoma:  "24da6a302dd75b57daf4ce58f2a15461db9878ed8d0924eb709d1432abc11658"
+    sha256 cellar: :any,                 sonoma:        "64decce4917a08f8f6582d686020110be2ba83dea30bac4e6715f7de034cb8ed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "795f81ebf5cf8582175cef96fbbaf67d223b8fae26b2664f136637ff0b9e7202"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ff506727f9fbbc93ddfc2d64f8cd26843450491503f2602f520c371b1040103"
   end
 
   depends_on "certifi" => :no_linkage
@@ -295,8 +295,8 @@ class Esphome < Formula
   end
 
   resource "tinycss2" do
-    url "https://files.pythonhosted.org/packages/83/75/00f94ca4e8fe9e791b43cba1cf4ed5538bf8ec2318b1b64a1a30c252c53f/tinycss2-1.5.0.tar.gz"
-    sha256 "6a7be7a654f38a2a55b61d2d97b1f65a7eb40d1cb4057ac37145f675f16efdf9"
+    url "https://files.pythonhosted.org/packages/a3/ae/2ca4913e5c0f09781d75482874c3a95db9105462a92ddd303c7d285d3df2/tinycss2-1.5.1.tar.gz"
+    sha256 "d339d2b616ba90ccce58da8495a78f46e55d4d25f9fd71dfd526f07e7d53f957"
   end
 
   resource "tornado" do
@@ -335,8 +335,8 @@ class Esphome < Formula
   end
 
   resource "wsproto" do
-    url "https://files.pythonhosted.org/packages/91/8d/48e227460422d3f78f52618d8ef7d7a0474c6fcdaddf7f2d1aa25854ea75/wsproto-1.3.1.tar.gz"
-    sha256 "81529992325c28f0d9b86ca66fc973da96eb80ab53410249ce2e502749c7723c"
+    url "https://files.pythonhosted.org/packages/c7/79/12135bdf8b9c9367b8701c2c19a14c913c120b882d50b014ca0d38083c2c/wsproto-1.3.2.tar.gz"
+    sha256 "b86885dcf294e15204919950f666e06ffc6c7c114ca900b060d6e16293528294"
   end
 
   resource "zeroconf" do

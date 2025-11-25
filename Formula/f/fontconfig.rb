@@ -3,7 +3,13 @@ class Fontconfig < Formula
   homepage "https://wiki.freedesktop.org/www/Software/fontconfig/"
   url "https://gitlab.freedesktop.org/fontconfig/fontconfig/-/archive/2.17.1/fontconfig-2.17.1.tar.gz"
   sha256 "82e73b26adad651b236e5f5d4b3074daf8ff0910188808496326bd3449e5261d"
-  license "MIT"
+  license all_of: [
+    "HPND-sell-variant",
+    "Unicode-3.0",        # fc-case/CaseFolding.txt
+    "MIT-Modern-Variant", # src/fcatomic.h, src/fcmutex.h
+    "MIT",                # src/fcfoundry.h
+    :public_domain,       # src/fcmd5.h, src/ftglue.[ch]
+  ]
   head "https://gitlab.freedesktop.org/fontconfig/fontconfig.git", branch: "main"
 
   livecheck do

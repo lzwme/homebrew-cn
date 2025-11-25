@@ -20,8 +20,8 @@ class PariElldata < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "5bb7d32ce0c2deef2a58ffecd2781fa23f718a90aff73ceb6e94a3169c71d006"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "efddcd3fd04e286ddae07d4f77bfede80a52397c7a312d083859266c3b495233"
   end
 
   depends_on "pari"
@@ -34,7 +34,7 @@ class PariElldata < Formula
   test do
     expected_output = "[0, -1, 1, -10, -20, -4, -20, -79, -21, 496, 20008, -161051, -122023936/161051, " \
                       "Vecsmall([1]), [Vecsmall([128, -1])], [0, 0, 0, 0, 0, 0, 0, 0]]"
-    output = pipe_output(Formula["pari"].opt_bin/"gp -q", "ellinit(\"11a1\")").chomp
+    output = pipe_output("#{Formula["pari"].opt_bin}/gp -q", "ellinit(\"11a1\")").chomp
     assert_equal expected_output, output
   end
 end

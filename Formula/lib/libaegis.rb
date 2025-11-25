@@ -1,17 +1,17 @@
 class Libaegis < Formula
   desc "Portable C implementations of the AEGIS family of encryption algorithms"
   homepage "https://github.com/aegis-aead/libaegis"
-  url "https://ghfast.top/https://github.com/aegis-aead/libaegis/archive/refs/tags/0.4.5.tar.gz"
-  sha256 "ce855320369f5e46d4c3512bf28a0cb8b8260b6d079b6b9bfda61ccd452fe9ce"
+  url "https://ghfast.top/https://github.com/aegis-aead/libaegis/archive/refs/tags/0.9.0.tar.gz"
+  sha256 "8f439ec9ae9913280617e5e34a1d7e2087993e7d519b027e3ca3ef1f09323603"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c1b48f7d944a1efaf012835ebb0a4d0dba36a54adf00d83f85d8ed8718bb9d7a"
-    sha256 cellar: :any,                 arm64_sequoia: "6b79e84ea50fd699153450124e58979f68be5226595b2ebc432b3ca9db2cc83b"
-    sha256 cellar: :any,                 arm64_sonoma:  "ac6041073171b59762aa5f273fda40e93146f9d9f572046e4451c4e91c9bf3c1"
-    sha256 cellar: :any,                 sonoma:        "44df6bc158dc5bedc84b2f712c90c6f55fd7e58485d220e4df71f48d4ffd2385"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae17516ae33b9cc90eb29d8760d29662026cb2fac06b0e0dd4a5f27a8568146a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9074a6d5299fc0c95acd349c84a66791c5458ff3b49433b8318291c248d6b837"
+    sha256 cellar: :any,                 arm64_tahoe:   "14d1a287799cfb3eff4e723f28bbd2f4cd3cd08a130ff8c829f3a4edf66668ac"
+    sha256 cellar: :any,                 arm64_sequoia: "473c934c390c81d8385e5137f8f36e5e4b5311b6f29605f1215c6964113cc570"
+    sha256 cellar: :any,                 arm64_sonoma:  "c5a596190cea65c218afc12711c493179eea9ae8eaefef37d2abf7050d841f56"
+    sha256 cellar: :any,                 sonoma:        "b886a3be132a8515bde749ccf53a9fdf4bab45c20dc692abf486cc6a29a28fd9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8432a8a67410b11357ac579b4536deb6e65a823fefc4689fd495411777d17d17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23b83428cee584d7251d8e64308ed1b5f671e63893fd588ad1fed7e586400c38"
   end
 
   depends_on "cmake" => :build

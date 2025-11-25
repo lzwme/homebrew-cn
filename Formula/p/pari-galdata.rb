@@ -20,8 +20,8 @@ class PariGaldata < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "736af19f4079ffbca94f96cc0b4c7d8c325995ccc0c01cef244240d61758b02f"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "8c8a145c1efae156deecb6d907d59dcd9c1d8a1610306457592c0d265dd07133"
   end
 
   depends_on "pari"
@@ -32,7 +32,7 @@ class PariGaldata < Formula
 
   test do
     expected_output = "[16, -1, 8, \"2D_8(8)=[D(4)]2\"]"
-    output = pipe_output(Formula["pari"].opt_bin/"gp -q", "polgalois(x^8-2)").chomp
+    output = pipe_output("#{Formula["pari"].opt_bin}/gp -q", "polgalois(x^8-2)").chomp
     assert_equal expected_output, output
   end
 end

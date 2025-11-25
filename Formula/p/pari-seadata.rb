@@ -20,8 +20,8 @@ class PariSeadata < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "0f28d380244a13252dc4f568bd5dcd762144b24468617441feaa7cb687b7ff3f"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "3990030642949d8e67c3aebe1f86584df2fa7406cfe455f4b21ecdf5d5801b6a"
   end
 
   depends_on "pari"
@@ -33,7 +33,7 @@ class PariSeadata < Formula
 
   test do
     expected_output = "[x^4 + 36*x^3 + 270*x^2 + (-y + 756)*x + 729, 0]"
-    output = pipe_output(Formula["pari"].opt_bin/"gp -q", "ellmodulareqn(3)").chomp
+    output = pipe_output("#{Formula["pari"].opt_bin}/gp -q", "ellmodulareqn(3)").chomp
     assert_equal expected_output, output
   end
 end

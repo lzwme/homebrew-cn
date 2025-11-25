@@ -1,8 +1,8 @@
 class Pari < Formula
   desc "Computer algebra system designed for fast computations in number theory"
   homepage "https://pari.math.u-bordeaux.fr/"
-  url "https://pari.math.u-bordeaux.fr/pub/pari/unix/pari-2.17.2.tar.gz"
-  sha256 "7d30578f5cf97b137a281f4548d131aafc0cde86bcfd10cc1e1bd72a81e65061"
+  url "https://pari.math.u-bordeaux.fr/pub/pari/unix/pari-2.17.3.tar.gz"
+  sha256 "8d9c4fcd584c468d27e0f23c36836587284452094c4b1c404c20c4b810462dcb"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,14 +11,14 @@ class Pari < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "54e59de5b05e4490b9f15f0fdbe513045c65b75f7fdbc2350a0736c476360efc"
-    sha256               arm64_sequoia: "5dd598ddd07c409257bad75db3c20f0da0509c07b3be0e0a4248535457594a51"
-    sha256               arm64_sonoma:  "bf58c1bdf22c69cf679423fa396efc69996edb7567bd30811e65fccb20816558"
-    sha256               arm64_ventura: "0739c7e681b5776a48634fea706d860b950f28b3020ae9f7ce830121f6208e7f"
-    sha256 cellar: :any, sonoma:        "ddddbc46872cd877dc6d2bb383ec2c796a726c84b952a0a648220d98cfb00165"
-    sha256 cellar: :any, ventura:       "325077871981fd84776c2cb9119b402bf5fd4ba865615e99cfeb8814b10eec08"
-    sha256               arm64_linux:   "2bb804bf036de998864490817c533f1b5f1da685365c28a1bd66c4d92a17eb7a"
-    sha256               x86_64_linux:  "045451f669359b20630a47b6b9fb2da2d2ad7ee2442965ddefb8efc7e67f776d"
+    sha256 arm64_tahoe:   "687e5d1d2fa3ef5d2833933b52b3137c4894bdb3d56a1b4e04dcd045b271abc3"
+    sha256 arm64_sequoia: "8ced75493e3475237d74a086aa8816ca1801ed5d500894525c7d98cd18e8cd23"
+    sha256 arm64_sonoma:  "3d21c691097747448ab40e08dfa67f8fd36f5a182f15f0bce7e29fa3dc0433ed"
+    sha256 tahoe:         "edecfbb507dc4abb0779a15e664d3ab0a292e88bd847f49c18dd41133d17f951"
+    sha256 sequoia:       "a6491dc92759d74111fb8b25a20a01178c821f5dd3b336a670e04844810f97dd"
+    sha256 sonoma:        "0e06fd81183ff0471eb14c5d92acd38ec890b26237a913c9b1636d860d15651a"
+    sha256 arm64_linux:   "1be7e33bcdf15fdddc9e4344ecc2fa87526aa2028b99ff15a9383de2056af163"
+    sha256 x86_64_linux:  "91b8c8184e5bc18e90a54da5f87bc5ba678a40b7cbb6338a14558162f0bb5f31"
   end
 
   depends_on "gmp"

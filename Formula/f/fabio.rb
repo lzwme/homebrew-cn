@@ -1,18 +1,18 @@
 class Fabio < Formula
   desc "Zero-conf load balancing HTTP(S) router"
   homepage "https://github.com/fabiolb/fabio"
-  url "https://ghfast.top/https://github.com/fabiolb/fabio/archive/refs/tags/v1.6.9.tar.gz"
-  sha256 "506f1b9ffd5f1c19729ed6d0692858ed4d4dc77179bfa0591744df6750a559a0"
+  url "https://ghfast.top/https://github.com/fabiolb/fabio/archive/refs/tags/v1.6.10.tar.gz"
+  sha256 "ee945d7de14bf24dbf1ecb33633ff5d694595bfa896c3c436182efe9f361f927"
   license "MIT"
   head "https://github.com/fabiolb/fabio.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0eea0514cc5c201cc7183b4bb8e063007a2f4047d50c9de8d15a41a7a2ca0297"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e816ece1f66320b2e86c7ca111d1c2fe3c9c6f550290fe3b53dea590314dc841"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3b671dc857197058f49c491a7ec631c4b83169916c61bfa940e3d8ca8836b2b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7ab6d5d7d175adeda95fd6a97cbeb328336666efe459116d418dc2dfc26da7ad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2e01c05f6ef794f295f8fe848ae7735282155122aff08da5c2242ad339e5e92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf5245375efd9b7fba10dda34e08b1f5b472062c3c80c64e27cae4b6eaa83dc5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "043da49e66fa519ecd0504dd6c663f3f8e3c75fa237bf15a5b2299d568bb754b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d8a56e2a2c554327d406665d440d88cb6a0ce0188ed838e0158663cc75df397"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2beb147cd6cfe5b4e206050ef8ad68a9b2b2f164e5c360b4040018aca0a544f6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "09a1bc8645d8bb17fce2992cd8cd5e3da6f86975c4bd204293c9ad7e23e25012"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b5a4f45a29ed43310b0d4b90de3da4f3714ffb76a41c3b8cd76f91cc81c11d43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d92e707b19ab4ce931502495382a689ef158f4447e828bdfa574ae44461278ec"
   end
 
   depends_on "go" => :build

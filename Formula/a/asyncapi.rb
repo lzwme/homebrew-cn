@@ -4,14 +4,16 @@ class Asyncapi < Formula
   url "https://registry.npmjs.org/@asyncapi/cli/-/cli-4.1.1.tgz"
   sha256 "2f4d12597d6fc30615b6dd27fdac2c63222726005d50f62300d1f6a257f6cf61"
   license "Apache-2.0"
+  version_scheme 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3ebd61013a46b45e87e720f6a29a01b21f30284eb2cc189b64192b4ada07bf39"
-    sha256 cellar: :any,                 arm64_sequoia: "7aef6cc320594a4a347ed4cb8d2b233aa62fa6bf6d58e485eacf7f95a558cab2"
-    sha256 cellar: :any,                 arm64_sonoma:  "7aef6cc320594a4a347ed4cb8d2b233aa62fa6bf6d58e485eacf7f95a558cab2"
-    sha256 cellar: :any,                 sonoma:        "256cfaa02cb30e5633444226e24db3820b4008faf720552b28b162bff96f04d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7db0c88cd1cdec73bff3052af77a3ced1082ca4d5b8b76d77b038910bea805e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b598c9f62a1fc12200cb19235a92224b7cbb94eb3b890fc1d0f317449d97de7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e2727dfcfcf5cbf72a8d4042b91ff91d48141dc5129a78872361b1c3883caa2e"
+    sha256 cellar: :any,                 arm64_sequoia: "33c0d8ad34cce095409e61751a59f1752b3aa3eefb5f87e700b81aa353b84b64"
+    sha256 cellar: :any,                 arm64_sonoma:  "33c0d8ad34cce095409e61751a59f1752b3aa3eefb5f87e700b81aa353b84b64"
+    sha256 cellar: :any,                 sonoma:        "588f576b6911b914ab77aa9dffb16ca16094896159d0ac682f47f7602b706ed5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a498282a790afaf15d4f21b16738d0d9de4e3324641d798075dca97c1a72208"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cba57e348287507ec7aab8824ce25e79de1828ca504d22de3d80fd4ef1b1114"
   end
 
   depends_on "node"

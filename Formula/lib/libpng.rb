@@ -31,9 +31,7 @@ class Libpng < Formula
   uses_from_macos "zlib"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "test"
     system "make", "install"

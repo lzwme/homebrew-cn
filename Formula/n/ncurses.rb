@@ -6,7 +6,7 @@ class Ncurses < Formula
   mirror "ftp://ftp.invisible-island.net/ncurses/ncurses-6.5.tar.gz"
   mirror "https://ftp.gnu.org/gnu/ncurses/ncurses-6.5.tar.gz"
   sha256 "136d91bc269a9a5785e5f9e980bc76ab57428f604ce3e5a5a90cebc767971cc6"
-  license "MIT"
+  license "X11-distribute-modifications-variant"
 
   no_autobump! because: :requires_manual_review
 

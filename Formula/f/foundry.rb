@@ -1,8 +1,8 @@
 class Foundry < Formula
   desc "Blazing fast, portable and modular toolkit for Ethereum application development"
   homepage "https://github.com/foundry-rs/foundry"
-  url "https://ghfast.top/https://github.com/foundry-rs/foundry/archive/refs/tags/v1.4.4.tar.gz"
-  sha256 "83115cef588a709b0126c790dc3c4654226a038c9a33f83d0785ef36cde1af6f"
+  url "https://ghfast.top/https://github.com/foundry-rs/foundry/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "db81b0b43ddc8555b6043833d747e9aeba46bc287874b6182b6a90dcfb5678fa"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/foundry-rs/foundry.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Foundry < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2d5ae0008cde9baafc5701c02b4ab9020f22e3acf929d184614bb2731d9df58c"
-    sha256 cellar: :any,                 arm64_sequoia: "488d9566845cc67ac20e69dd60f24e611eaf2376c9f81460da19f3cc99cb25b7"
-    sha256 cellar: :any,                 arm64_sonoma:  "e5caa4dd17256c4c2f9ff3f7408328a083ec3449e4e3655745635900abfdc2f2"
-    sha256 cellar: :any,                 sonoma:        "99a418fb8749f5509d5693f59ba3313294b354c35e6822a7970e08626163b3ad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "86fed7af9f92b9737a56f73142535626b8c72363b6d07de93162af5715d429a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0947520194dd646519cbe18c0e755b0c084039f4a2aba710b81a90563f4cf6db"
+    sha256 cellar: :any,                 arm64_tahoe:   "4b13feaa2e415a8f0c18093899a10feaaa2dfe3f95213b8c818612754bf5b4c8"
+    sha256 cellar: :any,                 arm64_sequoia: "0b6de231d00d2e7ab3b019f8e6da53bc9a21e7eeaf90b6380e885aca7a59946f"
+    sha256 cellar: :any,                 arm64_sonoma:  "04c83017ddf3a36db8568052f433872da0b84817156584b81a533bdbdfd8feec"
+    sha256 cellar: :any,                 sonoma:        "b28a1bb38d7142e969437e010b9d36813343241b60fa65b1e74244efaf165011"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c15e5e36634e7b9371daf1e055bd0b941ea92a5d45b20e8b17d96f867290dd3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99e4c04ae9fff60df6c7b7eb415ff86883ebe29698662fceaf28cbedf970f953"
   end
 
   depends_on "help2man" => :build

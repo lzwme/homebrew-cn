@@ -3,18 +3,17 @@ class Molecule < Formula
 
   desc "Automated testing for Ansible roles"
   homepage "https://molecule.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/4d/93/b1df90b2216f991451ae8dd80c064d5e254bd29ea581d990833b41642278/molecule-25.11.0.tar.gz"
-  sha256 "f3e5b51db04a317b698bcbe681e1e7466c09edd3838d4d5087d621bd9e44b73f"
+  url "https://files.pythonhosted.org/packages/23/d0/1a846bd95067d1e97eb532bcc5dce4f716b2beab7869378289670be02ada/molecule-25.11.1.tar.gz"
+  sha256 "c65888e3283c2677048f945d197296064ffcee8aea5bb7e8fff39b1c199ce3ba"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "3496cb6d30037033158224f1f7cf92d484650dc0f9cc0e829f3abfd7c6e28856"
-    sha256 cellar: :any,                 arm64_sequoia: "844e30ba078a1a5b262fbd303d0842320c5df77f6255586acfe176f4d13fc96d"
-    sha256 cellar: :any,                 arm64_sonoma:  "1f67fa4e8ae2626bf6a56598a4ea44edb80d5f338dfe5c29efed52d7d248147c"
-    sha256 cellar: :any,                 sonoma:        "c11b6605a432abde1d674d278a84180bca6beccdf27424a1a75c358d91a58e51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d09508ef53bf9a23450241bd2a41353e03613d8bc38bc2d9fe6addfe1867942c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41cc0c6451573682ebf14062e6347883dadaf2fbd0523214a2be556da0a1f107"
+    sha256 cellar: :any,                 arm64_tahoe:   "fdada68688703af091faa665d81a09fa997db0dcd569430b14d6f12bb7095b1a"
+    sha256 cellar: :any,                 arm64_sequoia: "aa7ad3c033c59cb9adc7c7b8f9ba684e89aa04c03ca1d836cad19b5370c7721a"
+    sha256 cellar: :any,                 arm64_sonoma:  "9c73ec27f673415245c04889498865146314f6db6e2966d5ff61fe74b0fafa92"
+    sha256 cellar: :any,                 sonoma:        "c7bf62529d9186180b00e920d6ae6f4a0f690eb8c7011a3741f98708a19f78f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "67a84cad3431b1215f57f8f003f5b794dc9717f4e8744d0b5ea50736810f8d54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b49e1dd87924d090b7b1a744f9d25aa7c372f56f0623190e221eb6d82de3f8e4"
   end
 
   depends_on "ansible"
@@ -54,8 +53,8 @@ class Molecule < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/cc/7e/b975b5814bd36faf009faebe22c1072a1fa1168db34d285ef0ba071ad78c/cachetools-6.2.1.tar.gz"
-    sha256 "3f391e4bd8f8bf0931169baf7456cc822705f4e2a31f840d218f445b9a854201"
+    url "https://files.pythonhosted.org/packages/fb/44/ca1675be2a83aeee1886ab745b28cda92093066590233cc501890eb8417a/cachetools-6.2.2.tar.gz"
+    sha256 "8e6d266b25e539df852251cfd6f990b4bc3a141db73b939058d809ebd2590fc6"
   end
 
   resource "charset-normalizer" do
@@ -64,8 +63,8 @@ class Molecule < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "click-help-colors" do
@@ -76,6 +75,11 @@ class Molecule < Formula
   resource "decorator" do
     url "https://files.pythonhosted.org/packages/43/fa/6d96a0978d19e17b68d634497769987b16c8f4cd0a7a05048bec693caa6b/decorator-5.2.1.tar.gz"
     sha256 "65f266143752f734b0a7cc83c46f4618af75b8c5911b00ccb61d0ac9b6da0360"
+  end
+
+  resource "distro" do
+    url "https://files.pythonhosted.org/packages/fc/f8/98eea607f65de6527f8a2e8885fc8015d3e6f5775df186e443e0964a11c3/distro-1.9.0.tar.gz"
+    sha256 "2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed"
   end
 
   resource "docker" do
@@ -164,13 +168,13 @@ class Molecule < Formula
   end
 
   resource "openstacksdk" do
-    url "https://files.pythonhosted.org/packages/6c/e7/4921e513dc00e2b052b196e4a7055351b74192a680470ab287b2332b0c6a/openstacksdk-4.7.1.tar.gz"
-    sha256 "23348aa69c6cc6c1ed0e8f03fb42b156519ed8cfcd143e783ef5c1dd800ad9f1"
+    url "https://files.pythonhosted.org/packages/46/24/1167097740136e302c74043c1c6feecf8d757b052d7b457960e0dc60fa03/openstacksdk-4.8.0.tar.gz"
+    sha256 "4dc038e1c17d893005f3a0a8951456afd9d148f3f65d448f94adcceb278d7f31"
   end
 
   resource "os-service-types" do
-    url "https://files.pythonhosted.org/packages/e7/da/66eaa235e053eb2451464ec131487dec01b5259105688e9f6771d07d45fe/os_service_types-1.8.1.tar.gz"
-    sha256 "c3d60134ee509cf55452c73ff8bd41891bcb6cf42421a159c0138824e126402b"
+    url "https://files.pythonhosted.org/packages/51/62/31e39aa8f2ac5bff0b061ce053f0610c9fe659e12aeca20bfb26d1665024/os_service_types-1.8.2.tar.gz"
+    sha256 "ab7648d7232849943196e1bb00a30e2e25e600fa3b57bb241d15b7f521b5b575"
   end
 
   resource "packaging" do
@@ -253,14 +257,19 @@ class Molecule < Formula
     sha256 "e7bdbfdb5497da4c07dfd35530e1a902659db6ff241e39d9953cad06ebd0ae75"
   end
 
+  resource "selinux" do
+    url "https://files.pythonhosted.org/packages/25/07/51acd62e1e15e1172d46f7e32faf138725b147f8c08dbf2d512159d7a310/selinux-0.3.0.tar.gz"
+    sha256 "2a88b337ac46ad0f06f557b2806c3df62421972f766673dd8bf26732fb75a9ea"
+  end
+
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
     sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "stevedore" do
-    url "https://files.pythonhosted.org/packages/2a/5f/8418daad5c353300b7661dd8ce2574b0410a6316a8be650a189d5c68d938/stevedore-5.5.0.tar.gz"
-    sha256 "d31496a4f4df9825e1a1e4f1f74d19abb0154aff311c3b376fcc89dae8fccd73"
+    url "https://files.pythonhosted.org/packages/96/5b/496f8abebd10c3301129abba7ddafd46c71d799a70c44ab080323987c4c9/stevedore-5.6.0.tar.gz"
+    sha256 "f22d15c6ead40c5bbfa9ca54aa7e7b4a07d59b36ae03ed12ced1a54cf0b51945"
   end
 
   resource "subprocess-tee" do

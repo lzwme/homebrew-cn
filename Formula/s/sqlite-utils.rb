@@ -3,25 +3,24 @@ class SqliteUtils < Formula
 
   desc "CLI utility for manipulating SQLite databases"
   homepage "https://sqlite-utils.datasette.io/"
-  url "https://files.pythonhosted.org/packages/51/43/ce9183a21911e0b73248c8fb83f8b8038515cb80053912c2a009e9765564/sqlite_utils-3.38.tar.gz"
-  sha256 "1ae77b931384052205a15478d429464f6c67a3ac3b4eafd3c674ac900f623aab"
+  url "https://files.pythonhosted.org/packages/b3/e3/6b1106349e2576c18409b27bd3b16f193b1cf38220d98ad22aa454c5e075/sqlite_utils-3.39.tar.gz"
+  sha256 "bfa2eac29b3e3eb5c9647283797527febcf4efd4a9bbb31d979a14a11ef9dbcd"
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "143905b7ed6a8f14901a426dff00dc50c3595c292bd18308bf09341711749f84"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "143905b7ed6a8f14901a426dff00dc50c3595c292bd18308bf09341711749f84"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "143905b7ed6a8f14901a426dff00dc50c3595c292bd18308bf09341711749f84"
-    sha256 cellar: :any_skip_relocation, sonoma:        "19ab058d0e946b1c89d13dc42825879c7b711ff74f32acb332f27f8525248c5b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "19ab058d0e946b1c89d13dc42825879c7b711ff74f32acb332f27f8525248c5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19ab058d0e946b1c89d13dc42825879c7b711ff74f32acb332f27f8525248c5b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "101286c6739f5cc0bfd502ad4a2c68767f917adfae4410b5fa7324ca8502ded4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "101286c6739f5cc0bfd502ad4a2c68767f917adfae4410b5fa7324ca8502ded4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "101286c6739f5cc0bfd502ad4a2c68767f917adfae4410b5fa7324ca8502ded4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "90d9defe35dffeee6ef36ca08c0ce5b7f7de8042ffb0b14c9af6e0a8a1150e3a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "90d9defe35dffeee6ef36ca08c0ce5b7f7de8042ffb0b14c9af6e0a8a1150e3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90d9defe35dffeee6ef36ca08c0ce5b7f7de8042ffb0b14c9af6e0a8a1150e3a"
   end
 
   depends_on "python@3.14"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "click-default-group" do

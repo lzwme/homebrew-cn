@@ -3,25 +3,25 @@ class Gruyere < Formula
 
   desc "TUI program for viewing and killing processes listening on ports"
   homepage "https://github.com/savannahostrowski/gruyere"
-  url "https://files.pythonhosted.org/packages/b0/a3/0951f7043389bc2a32ce8613dbc6b5078d10a4a754bc136294e7c2661a77/gruyere-0.0.9.tar.gz"
-  sha256 "71bbc896188584744009b73363dc5631d3cf7a4855fdf0249be7bf09a84153fa"
+  url "https://files.pythonhosted.org/packages/16/0f/d951dda46ba3b3dcbdf14f55355130b016445f9aa6b021dd70a9a567026a/gruyere-0.1.0.tar.gz"
+  sha256 "3fe1ff4eef9a53ed46f17a7aa5efa2eb0212a2c6de618c2b36735bcc71d358be"
   license "MIT"
   head "https://github.com/savannahostrowski/gruyere.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90a81502df03e2e968bd3ff2a6c7e088bac089ca64fc69ccd4ea0426b0ee8cd9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6ef93dad80d59c173799067278348e055e3ef182b52cedb21add8c974d25c73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9519eaf15fefeae28488cd73b8191e0ee9e1d7b128b7c5383758f512d50f2bf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "07cfbc9e0b80b6daca02643be26b8c1e6dd8b90e12c9cf09c2864573168acc1c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "08cfb2bab077691a82880215594e9145ee5f5848c0e1cd63fde553b7eae5c076"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e579c37299f0453b06f74f5dc7781f18c0018e7c5bd346c14aadacabf80abeda"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6cfb78e8fc2213526fa085bbf43fcde1f8a3829ddf7996ef9ba996bd15273770"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f6d7e8d185cacbf4c4367214b01c46d955a551fb4855d9eff1ca57a0c651c3c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec8c4b90756ccaaadf1f445915ab4668da04656008fc05930a34e357e7658094"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bf6a3d7d4f567b0614f1b381b01842c422b7c4b8bbe21f15cc90035dab6c76ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f486b840829401e4794b7b2007a4dc0ad5775bcf5664deb6a1b283c9c963c323"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3de8c087c930f801ecfd3c55274107bbfddf54278c26fb9b74405d8c61043007"
   end
 
   depends_on "python@3.14"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "markdown-it-py" do

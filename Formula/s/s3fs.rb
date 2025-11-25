@@ -1,15 +1,14 @@
 class S3fs < Formula
   desc "FUSE-based file system backed by Amazon S3"
   homepage "https://github.com/s3fs-fuse/s3fs-fuse/wiki"
-  url "https://ghfast.top/https://github.com/s3fs-fuse/s3fs-fuse/archive/refs/tags/v1.95.tar.gz"
-  sha256 "0c97b8922f005500d36f72aee29a1345c94191f61d795e2a7b79fb7e3e6f5517"
+  url "https://ghfast.top/https://github.com/s3fs-fuse/s3fs-fuse/archive/refs/tags/v1.96.tar.gz"
+  sha256 "e11a051f23701445ca99ff0bfbc4e49d8b87c66cdd04a68a1802c2613ba9e3f1"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/s3fs-fuse/s3fs-fuse.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "00151c7e7b2a24b5b20c712cd15f8b2771d58aa938a7770f9c4b56b6159a22c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e9e579dcfd0eb03fbef71e9aba87673fe1ea4f4b84a5ea254df3af6a6fd19dfe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "498ca33627f03956baf1e59675c0dcb84f714d541cd8a06a68927eb3d0949592"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "570753427deb94c2b35cce9af745c36b87c6ab1faebf20d860c180ad94ab6116"
   end
 
   depends_on "autoconf" => :build
@@ -17,7 +16,7 @@ class S3fs < Formula
   depends_on "pkgconf" => :build
   depends_on "curl"
   depends_on "gnutls"
-  depends_on "libfuse@2" # FUSE 3 issue: https://github.com/s3fs-fuse/s3fs-fuse/issues/1159
+  depends_on "libfuse"
   depends_on "libgcrypt"
   depends_on "libxml2"
   depends_on :linux # on macOS, requires closed-source macFUSE

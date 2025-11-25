@@ -1,10 +1,9 @@
 class Itk < Formula
   desc "Insight Toolkit is a toolkit for performing registration and segmentation"
   homepage "https://itk.org"
-  url "https://ghfast.top/https://github.com/InsightSoftwareConsortium/ITK/releases/download/v5.4.4/InsightToolkit-5.4.4.tar.gz"
-  sha256 "d2092cd018a7b9d88e8c3dda04acb7f9345ab50619b79800688c7bc3afcca82a"
+  url "https://ghfast.top/https://github.com/InsightSoftwareConsortium/ITK/releases/download/v5.4.5/InsightToolkit-5.4.5.tar.gz"
+  sha256 "ecab9119664e2571b90740ba9ab3ca11cb46942dbd7bb87c0de5bb15309a36c9"
   license "Apache-2.0"
-  revision 3
   head "https://github.com/InsightSoftwareConsortium/ITK.git", branch: "main"
 
   livecheck do
@@ -13,12 +12,12 @@ class Itk < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "dbb0076d9635881de1f21ab84575ed87783c0cb3811baa9538e1d62fa422d3c8"
-    sha256 arm64_sequoia: "2f3ed0100245f4cf7edf4ca7400a622ce6e1f6c0185e8a114ce19d4f10547757"
-    sha256 arm64_sonoma:  "cc495f7a74e0aff3b11c1de600e10ea6152a80eb63129e9973dfee737eefef25"
-    sha256 sonoma:        "167969ce3b6236e06dd27cb605bea6d1695e9a430fdb0115677d88ab17edff0f"
-    sha256 arm64_linux:   "b658d91623edeabf39c5f5d775fb91f721d0e9fedd59850692c9b80304c3d82f"
-    sha256 x86_64_linux:  "bba19cbbaf5d9c2ad245f247ffa84a572fd40f74bca5cb67e042e2f3f8379723"
+    sha256 arm64_tahoe:   "ad0fea9594908679180652dc80101a525091c60bf162a5048728ea75c8b372fb"
+    sha256 arm64_sequoia: "eb59726ec0e2ebb1794f2d72d248a0ee389669b6298e813d0b92aa0b121f3e96"
+    sha256 arm64_sonoma:  "2a359438cb059e0da5f04aa43776cc19afd8384f60da4e9fc22f6f13455e2e55"
+    sha256 sonoma:        "0e3805bfaa77d3fc149171ed8ebc9a4b0549935e79bff2f9295ee8c1d952998e"
+    sha256 arm64_linux:   "569096193617b1f675b9a8d30b456817e93165a2b204747c769cf2b6d3d22e8f"
+    sha256 x86_64_linux:  "09230cc27bff9a6eab3598f8a6fe3f0126fc39ce3003d3c66f50b75af610cd2d"
   end
 
   depends_on "cmake" => :build
@@ -43,13 +42,6 @@ class Itk < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "unixodbc"
-  end
-
-  # Apply open PR to build with eigen 5.0.0
-  # PR ref: https://github.com/InsightSoftwareConsortium/ITK/pull/5590
-  patch do
-    url "https://github.com/InsightSoftwareConsortium/ITK/commit/ada8399edb0259ba9272c957ab4033978bdfdded.patch?full_index=1"
-    sha256 "ad229d4d0600ddbdb2abeade76d582f061f315b938126d68ff725d31a9453e8c"
   end
 
   # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.

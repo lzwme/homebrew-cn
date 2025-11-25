@@ -20,8 +20,8 @@ class PariSeadataBig < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "d2610054b7d6eb25f170e25a782db3f92ca8c0b252022b8486765b408b376a7c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "8496957de3bd265c052909b4be4b66ab8e2e37133ccc50219600549293f5b6a1"
   end
 
   depends_on "pari"
@@ -34,7 +34,7 @@ class PariSeadataBig < Formula
 
   test do
     term = "-812742150726123010437180630597083*y^19"
-    output = pipe_output(Formula["pari"].opt_bin/"gp -q", "ellmodulareqn(503)").chomp
+    output = pipe_output("#{Formula["pari"].opt_bin}/gp -q", "ellmodulareqn(503)").chomp
     assert_match term, output
   end
 end

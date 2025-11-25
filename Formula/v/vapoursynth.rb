@@ -1,10 +1,9 @@
 class Vapoursynth < Formula
   desc "Video processing framework with simplicity in mind"
   homepage "https://www.vapoursynth.com"
-  url "https://ghfast.top/https://github.com/vapoursynth/vapoursynth/archive/refs/tags/R72.tar.gz"
-  sha256 "650f77feebfd08842b521273f59e0c88f7ba9d7cb5f151d89b79b8dfdd4ce633"
+  url "https://ghfast.top/https://github.com/vapoursynth/vapoursynth/archive/refs/tags/R73.tar.gz"
+  sha256 "1bb8ffe31348eaf46d8f541b138f0136d10edaef0c130c1e5a13aa4a4b057280"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https://github.com/vapoursynth/vapoursynth.git", branch: "master"
 
   livecheck do
@@ -13,12 +12,12 @@ class Vapoursynth < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6e25798f5037641754cc810363dfb6c171ad60db37149c15d581de01bd85d975"
-    sha256 cellar: :any,                 arm64_sequoia: "1be3b17dd888bd35931e513d9501c1ae3d13ca8df129360400e9a37e28c19122"
-    sha256 cellar: :any,                 arm64_sonoma:  "b019ea2a813d43818d534d047a82ca353915ffa336517f822212fb7802c700b6"
-    sha256 cellar: :any,                 sonoma:        "363c3069fd1c227f6940de2bd5bece455ee1ddb9578ea2fc82cf3d2036aba8f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ee99112759f86db2f64bc4a6966731dd60a863450af3c3f71f0c26c6aef3348"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f6ecf50c9407e1740250ac54fa75bceaf6e936432c265140776703b585cd78f"
+    sha256 cellar: :any,                 arm64_tahoe:   "badc56f5fb9d2c6c5963df0f619b08c74b098d1835126f8cd9c1b15fcce33aee"
+    sha256 cellar: :any,                 arm64_sequoia: "3af090044e6962bdcc19c4e92dd724d1ec07cb6bc3e958721d2f63dcab766cf3"
+    sha256 cellar: :any,                 arm64_sonoma:  "bdab1c52e43ec390ca27d76f07b1f43967b0f091c09da17e756e81bb879cd350"
+    sha256 cellar: :any,                 sonoma:        "bd2188a75e9cd09589e746facd492c5ff8342fbffc71e7f6aebda2b74bb523a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca5e6a5ecdb6203b2979ab67a27bcc400fe4baffc42459346e5d83c2f187696a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a020d5253bc39fbe0f077128478632d24ab5d19e375e94a1d8ed08583558c0df"
   end
 
   depends_on "autoconf" => :build

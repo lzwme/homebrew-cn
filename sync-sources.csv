@@ -1724,6 +1724,7 @@ Homebrew-homebrew-core/Formula/d/dynet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dynomite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dysk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dzr.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/e1s.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/e2b.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/e2fsprogs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/e2tools.rb, Homebrew/homebrew-core, 1
@@ -7832,6 +7833,7 @@ Homebrew-homebrew-core/Formula/x/xk6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xkbcomp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xkcd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xkeyboard-config.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/x/xleak.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xlearn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xlispstat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xlsclients.rb, Homebrew/homebrew-core, 0
@@ -8150,6 +8152,7 @@ Homebrew-homebrew-cask/Casks/a/agenda.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/agent-tars.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/agentkube.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/agi.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/ai-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aide-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aifun.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aigcpanel.rb, Homebrew/homebrew-cask, 1
@@ -14258,7 +14261,6 @@ Homebrew-homebrew-cask/Casks/r/rancher.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/random-mouse-clicker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/ransomwhere.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rapidapi.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/r/rapidminer-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rapidweaver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/raspberry-pi-imager.rb, Homebrew/homebrew-cask, 1

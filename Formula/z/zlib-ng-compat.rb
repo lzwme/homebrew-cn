@@ -2,6 +2,8 @@ class ZlibNgCompat < Formula
   desc "Zlib replacement with optimizations for next generation systems"
   homepage "https://github.com/zlib-ng/zlib-ng"
   url "https://ghfast.top/https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.2.5.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/zlib-ng-2.2.5.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/legacy/zlib-ng-2.2.5.tar.gz"
   sha256 "5b3b022489f3ced82384f06db1e13ba148cbce38c7941e424d6cb414416acd18"
   license "Zlib"
   head "https://github.com/zlib-ng/zlib-ng.git", branch: "develop"
@@ -11,13 +13,13 @@ class ZlibNgCompat < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "da58c82380d51a5ac285132e8888610cc14476e95e6280445fd335ef4cbc572c"
-    sha256 cellar: :any,                 arm64_sequoia: "de2b7d5bc1e09399d31f45e1fe5bcec8a7ec2f3981061cd6c8a123925f38dcf7"
-    sha256 cellar: :any,                 arm64_sonoma:  "85aa982fe79a27defd05121af49c64166d89fb1e82ada3d9f2928e1d96121466"
-    sha256 cellar: :any,                 sonoma:        "8ced5ab346a3717bef52de72772277eaf7592906345035fa63aaffaeecfe7e44"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c3b8ff2996ea3df499d16c1438248eec572cc6da8ddd00b5aab359756fd1b94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f2a5ba2917c2e7e97ab4cb5e5a4f56139474ba441ca808ac30915bcfe7aea44"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "26b7b200c89a18067105f0dae14ffffe20283ef7a0f48032ec8bd7c0e28cdf89"
+    sha256 cellar: :any,                 arm64_sequoia: "a0527abe9725436d79275302cb33392d18667008582ae462cddb531622eda868"
+    sha256 cellar: :any,                 arm64_sonoma:  "e03cedd3457eb46c54ab51d971b9a3f4baef060dd4f7da60c65f2146fb464852"
+    sha256 cellar: :any,                 sonoma:        "42db7cf7e9a6e8fa9d6f38cf93f537a32663c932dd3063529466f5cb9a5278bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "769bb1465997f0586b5f0b2082e01a1e9fa817a3c09434d0367eb70b99f45422"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b6cc9b9d780d119cd7932104cd55df405e7cc09cd9fb2c9125f2156842f3bca"
   end
 
   keg_only :shadowed_by_macos, "macOS provides zlib"
@@ -37,6 +39,9 @@ class ZlibNgCompat < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    # Avoid rebuilds of dependents that hardcode this path.
+    inreplace lib/"pkgconfig/zlib.pc", prefix, opt_prefix
   end
 
   test do

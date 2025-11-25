@@ -1,8 +1,8 @@
 class Qsv < Formula
   desc "Ultra-fast CSV data-wrangling toolkit"
   homepage "https://qsv.dathere.com/"
-  url "https://ghfast.top/https://github.com/dathere/qsv/archive/refs/tags/9.1.0.tar.gz"
-  sha256 "86af23420dd97862524cb4c1a2c15b56aa2153ac4a7a0c6025a5d40cb4bfe873"
+  url "https://ghfast.top/https://github.com/dathere/qsv/archive/refs/tags/10.0.0.tar.gz"
+  sha256 "7c263a9ec84e97fa8879698f6087f76ab97a1ad4b5a7794afd61d9c31c684949"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/dathere/qsv.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Qsv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "124b9f703644340f3e8bac4b785fdef9dd20d3d8a84fab1f239ea5852f3e17ad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ae032c2ebcef35fc11a0641e20cf7e824cbd070dbccd4a05dd75afd4884675b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea2dcdb2d20ef0a6e5724c426bf338b9f6a96dad5d0bc0f302a2558845882466"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eb54ff79572e2763d2027406e974cd42a63df8989eee61f75bc4d0cf20af7e4e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2832eb5387e52571afc5d07a040dbd5be6a25b39fb1bd112636495f3115e589"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1235e00687b542834afdd8dddc16af55d5b34f2ea729216e0909754478faaa22"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b84d4dd1a28358f886b538ff0bfc085bb521797bb8abec5cd14a4c11151c98f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d119af71b3d57ea7575d76c8fa8942a2616c97d09ded444c56beaaa28d333365"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e486fc9ac9a9e0c83fd5d4293f6515e4ccc03de69887d552ca241de97ad15714"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1a448a18049a1b915d5935c6ad90b311f33f13460e1d6a7717e0873c441fae97"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "767c9ba44255cf8f216480f84e3dc3f99805fb304f2dc34042ab87ac03aa6a1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b19f14d97a7530d61df6a66b179df4508c4a32ed8db104a7d8f3e05dff9ad72"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys
