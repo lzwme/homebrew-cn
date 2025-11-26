@@ -1,13 +1,13 @@
 class Inxi < Formula
   desc "Full featured CLI system information tool"
   homepage "https://smxi.org/docs/inxi.htm"
-  url "https://codeberg.org/smxi/inxi/archive/3.3.39-1.tar.gz"
-  sha256 "c0441f21dc5ea365a6d63466070d00e6858aed3b3c42276a1bf18ab3c57c013c"
+  url "https://codeberg.org/smxi/inxi/archive/3.3.40-1.tar.gz"
+  sha256 "b3f307f06c3b969bd65151d39729b97a767af42fddd3d9bab971135c0e7cd873"
   license "GPL-3.0-or-later"
   head "https://codeberg.org/smxi/inxi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2d9b0d9030b98c4e9724c76ed1a65d5f56a67a9e585fdab3388dda856dc2164e"
+    sha256 cellar: :any_skip_relocation, all: "d5477e01b33fb03b8b0083054edb4594277f16c35210bffb81d2ebb5192d2129"
   end
 
   uses_from_macos "perl"

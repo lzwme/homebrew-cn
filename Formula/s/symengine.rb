@@ -4,17 +4,15 @@ class Symengine < Formula
   url "https://ghfast.top/https://github.com/symengine/symengine/archive/refs/tags/v0.14.0.tar.gz"
   sha256 "11c5f64e9eec998152437f288b8429ec001168277d55f3f5f1df78e3cf129707"
   license "MIT"
-  revision 4
+  revision 5
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f5f3a894c1f8ebf1564f60f7bea8e02011d7cf229fe2b686d2cb468246e885aa"
-    sha256 cellar: :any,                 arm64_sequoia: "a0cf67cc7e98d0210e0ad15eb15df2379d949bd235bc106e3035886e462f3c8a"
-    sha256 cellar: :any,                 arm64_sonoma:  "08378ea3146241f35d24c636a298662accb539fbf4dfc8d87354f34121dc1564"
-    sha256 cellar: :any,                 arm64_ventura: "d21da6676835e70716720ce60994aaa9da2572239190d2f81cc1a2d7cc998902"
-    sha256 cellar: :any,                 sonoma:        "74f49611791f1f42a6a89327abe809ec350292208998da0477079f5d0e677ce0"
-    sha256 cellar: :any,                 ventura:       "bb74c79619f0b9482f97e8c413706fb0453cd07cc4133d6fe6ee2cd9a6247b32"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6af631f2626d92e9c222e48cd4ef7ac1a1896ca66b881f333a5caaecb42adabf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5b4460a315a637f02f4c68f666ed15684418ceaef2c575e56c68a268987849f"
+    sha256 cellar: :any,                 arm64_tahoe:   "57800ea3d94e7eb3ec6443bd9ea982a88a40100f9ab923973a0fb8540205b8c2"
+    sha256 cellar: :any,                 arm64_sequoia: "2bc7ffab436a6ad12e275e20c4d385092ac053929cfa435e9b8ab06e829f89ef"
+    sha256 cellar: :any,                 arm64_sonoma:  "3c782fe53199f44bed129662e8617341ca1893226dc449a054335a166e179725"
+    sha256 cellar: :any,                 sonoma:        "aa8e7c7d6984e8967cf4da933553d3973ed6cca1e4246956ffc493d8b8e1d73d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "867abc9ebb5f009dd86def716593d5554d8b89776ca71dd9c64366fbf089e5e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e60e6610384dc8bb9d2f45738ccbf733220c7d033072d42198963c1023c53ecf"
   end
 
   depends_on "cereal" => :build

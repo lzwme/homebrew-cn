@@ -5,6 +5,7 @@ class Singular < Formula
   version "4.4.1p5"
   sha256 "bce5a40bd10b6e9fe991de97e6284f62cdb566c8aef4b2836b4d1307eb7d9edf"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://www.singular.uni-kl.de/ftp/pub/Math/Singular/SOURCES/"
@@ -36,12 +37,12 @@ class Singular < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "26f46e50ab4f92bfaae6e98142ba4b8e1d8b9c65ec257a0f990082c309bca6b8"
-    sha256 arm64_sequoia: "3e97872b8f482ee7201838400285359d04496b6724b2c0f3a130759b011280cd"
-    sha256 arm64_sonoma:  "d1014ee4662702a870761817d34b80c46f7456af722340ef7ca799515b07aee0"
-    sha256 sonoma:        "2e91e1783fed8bc25e21d97f98f2b8aa01e20ecf58136f76dffe263f2c170304"
-    sha256 arm64_linux:   "cfc1b2415e228e7ee752582370074a5795863a77d922e5f609a9f153b87415fa"
-    sha256 x86_64_linux:  "62244cd74db57bf7362329d3cd3b557e6c32cf8db830129400d5c5637b1e2a23"
+    sha256 arm64_tahoe:   "531f23bff6faf97c1138bf8cdab032b443ca29ff9da7fdb216edcf1725325c6b"
+    sha256 arm64_sequoia: "e635137a9da900f3aacf0c857b368e0aa518f19a1b75876c47388647d99a120f"
+    sha256 arm64_sonoma:  "2242a315a91da65df1732af79728adcb0c725a654ea26e09210570709b6bef76"
+    sha256 sonoma:        "b42e668e2d9fec7d3b177b4301d6cb4f8fd656a45873860355d8c7dce58e72b4"
+    sha256 arm64_linux:   "5073d73746fabf41d5c4a54c4a905476e2092b8eb178245e9170f3575d779422"
+    sha256 x86_64_linux:  "b5afffd6561c4d392f53700e22de548aa57d4e417891bb0bcee8a2e748cdf3a9"
   end
 
   head do

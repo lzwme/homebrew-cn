@@ -1,18 +1,18 @@
 class IntelliShell < Formula
   desc "Like IntelliSense, but for shells"
   homepage "https://lasantosr.github.io/intelli-shell/"
-  url "https://ghfast.top/https://github.com/lasantosr/intelli-shell/archive/refs/tags/v3.3.0.tar.gz"
-  sha256 "d39b9dfdcaa7537b51ad0af283a4c46e87f687a518657de725e68d316cbba0b9"
+  url "https://ghfast.top/https://github.com/lasantosr/intelli-shell/archive/refs/tags/v3.3.1.tar.gz"
+  sha256 "041dc22be0928626fb0562d7bc859490a4e0e6bb9c32ddbe1cdfad08f39623d8"
   license "Apache-2.0"
   head "https://github.com/lasantosr/intelli-shell.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d76ccec3bc031aaa14c7c67ed6eff2249fafb9182c65ec4c41bfda8ab9a8b712"
-    sha256 cellar: :any,                 arm64_sequoia: "84b8db57401d9f3da44a060ed9782d609a9c515334f271c51d5b48296797da34"
-    sha256 cellar: :any,                 arm64_sonoma:  "9f47e29fd3185f63a8ca8917939e313c33e2de4fa2ffcafffda140f10e9630b0"
-    sha256 cellar: :any,                 sonoma:        "e51e5e450847504203c054dc8b0a5aa815ce4eb7cbe8ace1f6432c445ebc753c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "26662996b05f84b80342e5271618fb2993dc542e8e7e504a07b7c8e1e33f18e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7506a29fa4a1d1dd381bfe6bc23f817ae57be8d8a6f30f48dbb89fd3d862578e"
+    sha256 cellar: :any,                 arm64_tahoe:   "40e6b5b79d074d6fc3d2af0db31ecd5a499835402439f3222659eab86422492d"
+    sha256 cellar: :any,                 arm64_sequoia: "c84ad3d3ef3ad543f4cf61b5feebbae780f105bab408ef1bbd814fda49927315"
+    sha256 cellar: :any,                 arm64_sonoma:  "1e6ec12a1e63c9e79757c09d9bde9e0094be059491b2df5b3750fd621e6ba31a"
+    sha256 cellar: :any,                 sonoma:        "1fab7b9946ed3d1473d86025a075903370e98af07803a1da89bbe8dbbfa03d65"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2eba1cae4caae6ac000a0e8bdec810058a228e84b47ece650686fe0fa97a7c09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8087a9fc93157572e14c27674b89c30b7fbb1695c4498fc2c0c967cbb8d13bee"
   end
 
   depends_on "pkgconf" => :build

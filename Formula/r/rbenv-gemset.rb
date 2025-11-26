@@ -1,5 +1,5 @@
 class RbenvGemset < Formula
-  desc "Adds basic gemset support to rbenv"
+  desc "KISS yet powerful gem / gemset management for rbenv"
   homepage "https://github.com/jf/rbenv-gemset"
   url "https://ghfast.top/https://github.com/jf/rbenv-gemset/archive/refs/tags/v0.5.100.tar.gz"
   sha256 "371fc84e35e40c7c25339cb67599a0a768bc7d3d4daafb05e02ab960bde64ce4"

@@ -11,12 +11,13 @@ class RakudoStar < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "6b45c84373201b93d98b1293856547eac8b2acd8de6730ed41b061314c0550fe"
-    sha256 arm64_sequoia: "836ebddb14f0d56994f85ccdda47fb52ca27750c8c0476ef238b6464b62835b8"
-    sha256 arm64_sonoma:  "7d93ca03092269655a1cc285122a259400c6a12d82a416fcdc28a4612488efdb"
-    sha256 sonoma:        "cafa9811cc48f3c27fd3c0695c0438285486fc1dba72102cd5d4066125a278c3"
-    sha256 arm64_linux:   "d7077964cb4b70d814a1c404c0273dd4fe1fb806df1c86564ec6573f95016e55"
-    sha256 x86_64_linux:  "dacfe42333c7e0e4c1a6174c08b8008eeb717cf7201822161eccd912a9ede8c0"
+    rebuild 1
+    sha256 arm64_tahoe:   "51305175e473f0cf6c94f22da5833c252b04a2a252da91afc5398707156eb873"
+    sha256 arm64_sequoia: "6050dffa40fb9cf5f02b3b455aa89eedd09390658d889445b696ff48086df363"
+    sha256 arm64_sonoma:  "35eda1764a976ae1edecfc045a045ff4e40dd5e456a8334ebbc73455313c646f"
+    sha256 sonoma:        "32ffe16f63d82a1facfbc98a47b6a34250157fcaf8c653bd02c269db0f40ab76"
+    sha256 arm64_linux:   "ba8bf557b672dd2ed2b3b0f93bc2f2279c7f6c092d1dc972400b06df10f3a83f"
+    sha256 x86_64_linux:  "dae805ddac85ce4b335457e5868ff7bd5ebbcf270b79653b5d39d78c0712b522"
   end
 
   depends_on "bash" => :build
@@ -40,6 +41,8 @@ class RakudoStar < Formula
   conflicts_with "moarvm", "nqp", because: "rakudo-star currently ships with moarvm and nqp included"
   conflicts_with "parrot"
   conflicts_with "rakudo"
+
+  skip_clean "share/perl6/vendor/short"
 
   # Allow adding arguments via inreplace to unbundle libraries in MoarVM
   patch :DATA
@@ -86,10 +89,6 @@ class RakudoStar < Formula
     #  Installed scripts are now in share/perl/{site|vendor}/bin, so we need to symlink it too.
     bin.install_symlink (share/"perl6/vendor/bin").children.select(&:executable?)
     bin.install_symlink (share/"perl6/site/bin").children.select(&:executable?)
-  end
-
-  def post_install
-    (share/"perl6/vendor/short").mkpath
   end
 
   test do

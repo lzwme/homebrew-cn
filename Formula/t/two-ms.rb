@@ -24,7 +24,7 @@ class TwoMs < Formula
 
   def install
     ldflags = "-s -w -X github.com/checkmarx/2ms/v#{version.major}/cmd.Version=v#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"2ms"), "main.go"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"2ms"), "main.go"
   end
 
   test do

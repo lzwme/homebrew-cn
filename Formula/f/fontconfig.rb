@@ -43,10 +43,6 @@ class Fontconfig < Formula
     depends_on "gettext"
   end
 
-  on_linux do
-    depends_on "util-linux"
-  end
-
   def install
     font_dirs = %w[
       /System/Library/Fonts

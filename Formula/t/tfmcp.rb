@@ -1,20 +1,18 @@
 class Tfmcp < Formula
   desc "Terraform Model Context Protocol (MCP) Tool"
   homepage "https://github.com/nwiizo/tfmcp"
-  url "https://ghfast.top/https://github.com/nwiizo/tfmcp/archive/refs/tags/v0.1.5.tar.gz"
-  sha256 "a89882037b1c0a85d900b9e5d34edbc3c4ca78c648e7e54f423663c286f769cd"
+  url "https://ghfast.top/https://github.com/nwiizo/tfmcp/archive/refs/tags/v0.1.6.tar.gz"
+  sha256 "e6ef00157370981ec2fc1447c83f6b47dd10884c4852332a1b090cdda78c9449"
   license "MIT"
   head "https://github.com/nwiizo/tfmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae9966198115c0313c9fe9c917c73cc7548bf066ef424baca1768a3842d4d277"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c1d37d1f0afc8606af8d61b58ce87562353684d98ed17d6e95d5056092a448d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec63fab7c65d3f7336871a3b73197638677766164670f553a6aa76f173f4f9b6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4bd00155426fbe42e66b0407d99cf051e92a748c18170fc42af5353dd4f9565b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "362715e0769e7a47ba53e588141435f145a3463aa68033276f7ed104588d8634"
-    sha256 cellar: :any_skip_relocation, ventura:       "231f29d10d19a1af5e6fa244d4867472a0e8e1d28eb32604ee1206e94642dad4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cb0be4c5bd966660398b8da91aab2c6bc6951904a56ba5bc3801f6dd0205e71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "575a05e0b7b7c95fee7fedde98338e4dc02701b9d12df6e644e928c1c336dd2b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d252aa93ec4e8e2d48aca0c0ffa390e2ab212f23d1c85328efcf3a3b5024239c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55d6a1003826c083220ea9eb6cbded664d5a0360010fc0c485ac1b4625fd8551"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ed1394be14b3c9e55b26133aa88bae0eab1e7790474f7451e531f1b46c79d20"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61d195c362ffe0046e7684bb21984917b3c94e4e656425ba50584708746919a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "091a1d8963330f550d5aade99ae3948118b20ab2b51cba8fb5244309766d5e1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7857a7bd7203bfee5318277d2450673158d29995914f682604700ae74c5b1e9"
   end
 
   depends_on "rust" => :build

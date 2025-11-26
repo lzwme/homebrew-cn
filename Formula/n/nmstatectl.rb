@@ -1,8 +1,8 @@
 class Nmstatectl < Formula
   desc "Command-line tool that manages host networking settings in a declarative manner"
   homepage "https://nmstate.io/"
-  url "https://ghfast.top/https://github.com/nmstate/nmstate/releases/download/v2.2.55/nmstate-2.2.55.tar.gz"
-  sha256 "3b1602825b760fc8f47a6056d5a7d865b1130e538987cb8124a2f12c3364afd0"
+  url "https://ghfast.top/https://github.com/nmstate/nmstate/releases/download/v2.2.56/nmstate-2.2.56.tar.gz"
+  sha256 "ba453914dceb9e3e4e33f1079f5449dfc5c46e87a4aed8de0687a42af9f942f8"
   license "Apache-2.0"
   head "https://github.com/nmstate/nmstate.git", branch: "base"
 
@@ -12,12 +12,12 @@ class Nmstatectl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "239d3bc46335f745406a8e948e066a2fdee133e130d94ea8e9cb71c348c6e8f4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4097a617014610c85e2f1d3a29b2e86f250c30ab631e118f02cbeb795883bc35"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "119bd18f3b961a9b7747832049778061a50bdc0e4c59774e2bf215283a656d88"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2e62302ff8e8bc44afbcc0a64c860854c2b997d563fb647be6b652ed183c44f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eaf9d28b6de3235cb6a9e83f592f893a7a30199c0ee5f38c2123df6ee98a2037"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8450c00d6dda068fcbad807af17da8b1f94658e643235dc70315c35448b9183"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "33367d68fea99f0cfcd4d03224620fc5e14249b0694c3a4f98ac3f0e6da39c32"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2df9b483bfb8d7fbe37b691f4da4bac1026bd61db9242ad91dace89493794994"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f54561cddc044651c2967336c3f2a8dc99d39c884c2cd6f666d5eff43f8b10e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "232a1d71669a1749b4625b94eb92c0a3ffc3160d8e1a7e15f339f22eea10ee21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d18f886ffccdd5fe31fc3f5895d3677abc1bdfef5ed8f1126a649ae71e0b827"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a431d59e4bda5f7fed5b723d4c4d4afd5943f2cf9649b3dc1545a00d32f8d1f6"
   end
 
   depends_on "rust" => :build

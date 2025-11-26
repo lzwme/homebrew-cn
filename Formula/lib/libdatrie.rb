@@ -1,18 +1,17 @@
 class Libdatrie < Formula
   desc "Double-Array Trie Library"
   homepage "https://github.com/tlwg/libdatrie"
-  url "https://ghfast.top/https://github.com/tlwg/libdatrie/releases/download/v0.2.13/libdatrie-0.2.13.tar.xz"
-  sha256 "12231bb2be2581a7f0fb9904092d24b0ed2a271a16835071ed97bed65267f4be"
+  url "https://ghfast.top/https://github.com/tlwg/libdatrie/releases/download/v0.2.14/libdatrie-0.2.14.tar.xz"
+  sha256 "f04095010518635b51c2313efa4f290b7db828d6273e39b2b8858f859dfe81d5"
   license "LGPL-2.1-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "95efc78786bed41afeb85e4481b7e418982b2a1c9ba2eca5f058b779dd204687"
-    sha256 cellar: :any,                 arm64_sequoia: "f864dccadb35cd53fcee3e84a369d0b7ca10c842b8771a1c465d44fb03b71a84"
-    sha256 cellar: :any,                 arm64_sonoma:  "66daae07645d7b488dfdd19120830ea7226934de6434370f3a174d6b49a6c16c"
-    sha256 cellar: :any,                 sonoma:        "cae5e0af929b08ab076d3669675a659a974ae1a860d6a57cce0f75728c22037d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "21930fcf438508398cf6795b7f5bbde1f4f2af2ceeadf315de7cc7029e30e9b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f97bc60dfd8e9c4490f98537b6a99f81e9ab32d78ca9e23ad9faa4a6cc9a194"
+    sha256 cellar: :any,                 arm64_tahoe:   "77f8ac3d31bc58f8e000a6b065fa1eeff3c0f832e1d4e3c5fa67b464307c4e87"
+    sha256 cellar: :any,                 arm64_sequoia: "59dcf66f922dd1edaa379fb0ef30034585a7a1760ad0887c95afc0ff00ea667c"
+    sha256 cellar: :any,                 arm64_sonoma:  "b8b5fb03ad235122f83f7154cd9cfc473748cc6fe49c0d940fe280aa44a8ae12"
+    sha256 cellar: :any,                 sonoma:        "d534412d18b23018afb960d969edcfd5f09d51ccf7107b99aff0091503ebc579"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1aa88b7f1e58078eb57f8cac2920603e61e79f52c9679805a1bf4afee238e2db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2296c37b6f7f5499b944e6e0d553e3ceac5a3666046ed133d495748045a4835f"
   end
 
   depends_on "pkgconf" => :build

@@ -24,12 +24,13 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7bcc2a04eb2366c990eae866f0b4465655fcf3303199b83e094e773baf70de92"
-    sha256 arm64_sequoia: "7b58bf5616e95f847b51a5f3b61d4be360b3a3f5abfee7353278e7ccd2486ab9"
-    sha256 arm64_sonoma:  "02d0829c7550efac098c55e88c5d8226acd73556d312e12ac790e16032edc4ac"
-    sha256 sonoma:        "451b6d2d7fe233035cbe51fd4c332bdbdce943794316d273f3c3e837f0ea8abc"
-    sha256 arm64_linux:   "960d6cfa21841b46b9621b11016bb3ed39bf295a279f153dc8d21a0aadb6ccd4"
-    sha256 x86_64_linux:  "f4d018e8e6e39b9e260cd013e501808a9d7b26a0a7db85dd913d7c66ee727123"
+    rebuild 1
+    sha256 arm64_tahoe:   "41af15a46a4fb4ed504ae1916a7bf7e621373dc92127fc74b60190be18304b35"
+    sha256 arm64_sequoia: "b4b4448116a404f586997fbd7ba9b44183501bfcef929dd5cac020f900b1a890"
+    sha256 arm64_sonoma:  "e0764a7424f70b36fb1854c0f9330a6b11847655bcb9f29282da25117e3116f7"
+    sha256 sonoma:        "5f7fc44f64b388ad55e651fec0411f465697709f98bc87cdddf85c0e5430453e"
+    sha256 arm64_linux:   "1575657d25cec78e2f88768273ddc2918e5145ecd9a32c0438ff7b6e844aa400"
+    sha256 x86_64_linux:  "8582b7883df0fc49ac187659adc52f84a94b365532ac59466bee82e24b1e52b6"
   end
 
   head do
@@ -74,7 +75,7 @@ class Gstreamer < Formula
   depends_on "libshout"
   depends_on "libsndfile"
   depends_on "libsodium"
-  depends_on "libsoup" # no linkage on Linux as dlopen'd
+  depends_on "libsoup" => :no_linkage # dlopen'd
   depends_on "libusrsctp"
   depends_on "libvorbis"
   depends_on "libvpx"
@@ -94,7 +95,7 @@ class Gstreamer < Formula
   depends_on "opus"
   depends_on "orc"
   depends_on "pango"
-  depends_on "pygobject3"
+  depends_on "pygobject3" => :no_linkage
   depends_on "python@3.14"
   depends_on "rtmpdump"
   depends_on "speex"
@@ -137,6 +138,8 @@ class Gstreamer < Formula
   def python3
     which("python3.14")
   end
+
+  skip_clean "lib/gstreamer-1.0/libgstnice.dylib", "lib/gstreamer-1.0/libgstnice.so"
 
   # These paths used to live in various `gst-*` formulae.
   link_overwrite "bin/gst-*", "lib/ligst*", "lib/libges*", "lib/girepository-1.0/Gst*-1.0.typelib"
@@ -222,11 +225,8 @@ class Gstreamer < Formula
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
-  end
 
-  def post_install
     # Support finding the `libnice` plugin, which is in a separate formula.
-    # Needs to be done in `post_install`, since bottling prunes this symlink.
     libnice_gst_plugin = Formula["libnice-gstreamer"].opt_libexec/"gstreamer-1.0"/shared_library("libgstnice")
     gst_plugin_dir = lib/"gstreamer-1.0"
     ln_sf libnice_gst_plugin.relative_path_from(gst_plugin_dir), gst_plugin_dir

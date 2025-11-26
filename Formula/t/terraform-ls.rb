@@ -27,7 +27,7 @@ class TerraformLs < Formula
       -s -w
       -X main.rawVersion=#{version}+#{tap.user}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags.join(" "))
+    system "go", "build", *std_go_args(ldflags:)
   end
 
   test do

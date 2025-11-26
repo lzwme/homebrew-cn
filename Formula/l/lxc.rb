@@ -1,20 +1,18 @@
 class Lxc < Formula
   desc "CLI client for interacting with LXD"
   homepage "https://ubuntu.com/lxd"
-  url "https://ghfast.top/https://github.com/canonical/lxd/releases/download/lxd-6.5/lxd-6.5.tar.gz"
-  sha256 "f5a0b8a4eb6cb259497bc5587c09d080193cc908a2696d54e071863d2a14c9cc"
+  url "https://ghfast.top/https://github.com/canonical/lxd/releases/download/lxd-6.6/lxd-6.6.tar.gz"
+  sha256 "2ddfa88441ef1f4f1f0b49cce11285620e34f3245e792f22034a688f3c07233a"
   license "AGPL-3.0-only"
   head "https://github.com/canonical/lxd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d06355b126dff68e2014a16762efcbd44d3f4a1b7d9492e8080add9c213179bf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "272ef1c3d13fdd217f3487a7b8a04c433d1c235b35368f2cd1bdaa6bb5c2b42c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "272ef1c3d13fdd217f3487a7b8a04c433d1c235b35368f2cd1bdaa6bb5c2b42c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "272ef1c3d13fdd217f3487a7b8a04c433d1c235b35368f2cd1bdaa6bb5c2b42c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "223e9da8e5bde2990f42339fab52339235c39827a272a94993de3cb231bfef7e"
-    sha256 cellar: :any_skip_relocation, ventura:       "223e9da8e5bde2990f42339fab52339235c39827a272a94993de3cb231bfef7e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "366e9ba3bb1ab504f23ea30c8e22bf44a6b4cb7d594ced19a92065f4fb4e8229"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0303be7c13e39c899429345dcde5dcef190ad7043d61ed9e993c46ee71775bec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de746f141acbdaa3ecb9858a7229e9dc4b4cbfe64962834f22db07b32a2f04ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de746f141acbdaa3ecb9858a7229e9dc4b4cbfe64962834f22db07b32a2f04ed"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de746f141acbdaa3ecb9858a7229e9dc4b4cbfe64962834f22db07b32a2f04ed"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e6900c1d192281f649915c603e0e79536ad21adc63acd621ce5cd19ef9505661"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fb87b9fb0628ad16eaa59dd2e167ded804f6df542afdb81d1fa5d261d7c2dc2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bded123100fc22d53330a903b406065464ab6e48063a0a80f4ad8bac50aa9b7f"
   end
 
   depends_on "go" => :build

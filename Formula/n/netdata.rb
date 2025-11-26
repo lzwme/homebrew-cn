@@ -12,12 +12,13 @@ class Netdata < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "05be59919a0beaaf04aa2d5a43595bec2625690e7cc851efc320871cf83fcb2d"
-    sha256 arm64_sequoia: "e22380494efab3c6001fb93bf12113234d9de68e2d94bc2c542662070b985b27"
-    sha256 arm64_sonoma:  "c3894cd1facd88cbc0f273b5a0358ba0777ea1727c6377a369e230c836fe967e"
-    sha256 sonoma:        "7e1678b04f4bd8657f722299aacbe09e91f285d887320cc12fa3fd8469c3ddbe"
-    sha256 arm64_linux:   "02b5ea13d984a0a204a73b81059687d5c58256a07daacb08d5ec9aa1be639c6c"
-    sha256 x86_64_linux:  "54a766ddb3571de5e22949e949bfc6e3330a2469e1ecbc6253d9d0b501162361"
+    rebuild 1
+    sha256 arm64_tahoe:   "7de0a5e9e107b1563caed2d4977781574a765a2a7512985927b07a66ef1994b3"
+    sha256 arm64_sequoia: "4821a2e63e02fbf9c5304a3de999efe4474891efaca30f732a6cde2e9a7472d9"
+    sha256 arm64_sonoma:  "7a7f4a433402f64f50b0d3766ca469417d0118d039b4802dfdc3b6d93269e249"
+    sha256 sonoma:        "d73b7ec98faddf76a39b4e76df10baff14961259964bf73959a5c22391da8560"
+    sha256 arm64_linux:   "1a0bc3cc94b98de16b800377873d184a0c8c54a6d9247f15e35f229a826beae2"
+    sha256 x86_64_linux:  "e6462aa534e7705bb27e56f3066e5e98877c73591004ca1338e011b2ec777d98"
   end
 
   depends_on "cmake" => :build
@@ -50,7 +51,6 @@ class Netdata < Formula
     depends_on "libmnl"
     depends_on "systemd"
     depends_on "util-linux"
-    depends_on "zstd"
   end
 
   def install
@@ -88,9 +88,7 @@ class Netdata < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-  end
 
-  def post_install
     (var/"cache/netdata/unittest-dbengine/dbengine").mkpath
     (var/"lib/netdata/registry").mkpath
     (var/"lib/netdata/lock").mkpath

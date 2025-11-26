@@ -1,6 +1,7 @@
 class Qtbase < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
+  # TODO: add `preserve_rpath` DSL in Qt 6.11.0 to Qt formulae
   url "https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtbase-everywhere-src-6.9.3.tar.xz"
   mirror "https://qt.mirror.constant.com/archive/qt/6.9/6.9.3/submodules/qtbase-everywhere-src-6.9.3.tar.xz"
   mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.9/6.9.3/submodules/qtbase-everywhere-src-6.9.3.tar.xz"
@@ -205,12 +206,21 @@ class Qtbase < Formula
   end
 
   def caveats
-    <<~CAVEATS
+    s = <<~CAVEATS
       You can add Homebrew's Qt to QtCreator's "Qt Versions" in:
         Preferences > Qt Versions > Link with Qt...
       pressing "Choose..." and selecting as the Qt installation path:
         #{HOMEBREW_PREFIX}
     CAVEATS
+    on_macos do
+      s += <<~CAVEATS
+
+        We plan to build Qt 6.11 with the `@rpath`-prefixed install names preserved,
+        which may require adding an RPATH into non-QMake-built binaries. Please see:
+          https://github.com/Homebrew/brew/issues/15354
+      CAVEATS
+    end
+    s
   end
 
   test do

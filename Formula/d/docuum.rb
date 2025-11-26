@@ -1,17 +1,17 @@
 class Docuum < Formula
   desc "Perform least recently used (LRU) eviction of Docker images"
   homepage "https://github.com/stepchowfun/docuum"
-  url "https://ghfast.top/https://github.com/stepchowfun/docuum/archive/refs/tags/v0.25.1.tar.gz"
-  sha256 "3566064ff3bbb5f42a35fde10b7541def2a3cef4b12a7c6eecf2b84972c7459f"
+  url "https://ghfast.top/https://github.com/stepchowfun/docuum/archive/refs/tags/v0.26.0.tar.gz"
+  sha256 "c273bd60c91e6d583be229eb79c6c23df8fbbb64afae0a66931f2bae94202f46"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0305a71d7420d8ca112be910c40294febc7b70177cc48185519f0a09665df533"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82ce6edc531f9c8e706098c4a140fc46988ea0ed2be7e7e6a2ff3b3dc6f943d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89c40c16cdc37eedfe19a6ee535e2e3421ea2b9ec7f1da2c36d76da078f7e6a9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d0cdd27109e1fb24ec21a43d574ca9edf0b03d9fbe49ef88fe8c6301a2fb442e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4039f604d0693b9120873ca99445be60916d30ae37b81d29f84275d0ea019632"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "013ea6c9394f78b005b7773d5814902245c20aff030da5c9687a152a0fbd1f99"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "568562d2b9cd779e7981fe36481e819e1e05786c2980ef05a763e4d5f04f243c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "409076155f2c65dfca6725f6fb001e2ea4725efa9a6cbda96ee42a9e703725d2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5515994f8ae74a2bb8d3240160ebf79edeb91ae91205618a40294c233a83dffe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cf6587be257dadd0609ddd8008ae60584e4ce5b498f1779e368852b58d93ad1d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fcd7391f6dc9184ebfcebf6e7e42089f72f3e01ccec03dafe33d9d9e96c6e78"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d6b91feea27e7444f96ac85140390578063689ebe58cc0d06a87fed57e70a3a"
   end
 
   depends_on "rust" => :build

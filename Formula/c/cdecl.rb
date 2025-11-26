@@ -1,8 +1,8 @@
 class Cdecl < Formula
   desc "Turn English phrases to C or C++ declarations"
   homepage "https://github.com/paul-j-lucas/cdecl"
-  url "https://ghfast.top/https://github.com/paul-j-lucas/cdecl/releases/download/cdecl-18.5/cdecl-18.5.tar.gz"
-  sha256 "e4e212db3f997a9afe629fa4868062e0a92d6dd79ff374eca07b331220936362"
+  url "https://ghfast.top/https://github.com/paul-j-lucas/cdecl/releases/download/cdecl-18.6/cdecl-18.6.tar.gz"
+  sha256 "c74fe8796aafcfda53d05e11f371d3dbde82d949e5bc92883a8448d00bb69d6a"
   license all_of: [
     "GPL-3.0-or-later",
     "LGPL-2.1-or-later", # gnulib
@@ -10,14 +10,12 @@ class Cdecl < Formula
   ]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "56aa55de1ab7ef2b67721aa53069a6d33eb434205f240542a46d5b96d809001e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b2f274ad2494839a778687184c6ca3e9198fd683a5fd2bfca3b46fbcf1df5f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7beca9265e60378772ef71fed480cf2167e132e50d13ffd3d8b92f9c569725ec"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "26117d6cd0032b763032c2c785378b6c2f9a3862ea20917093db3e4ccbb73b5c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b91d922ad48991f96f16944eccee5f54ae39ed8d320291a7b9f6931216e083d4"
-    sha256 cellar: :any_skip_relocation, ventura:       "985fcee26f14ad895451b660826f8fcb1e353af4388dad3c612ead2841f566cd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "886a5496e3d7a8567c4491f4f10f50c2c321388dbb71d37ce1a7430ca9e3ec5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b37cd9a2dd7818ea45acfe2295e085f2c92381f83b97339ec48760b1685d827e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd38e5bf4c8a8078da970660b7606ff75f23f83dd543d8326ddad49ee0d89b87"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac0f06d8d558fe59ada729d90ffbf7b45b4dd56f6faabeb407b86554fe32a4a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19109790fb3da8fe96c85b531c408c208b519a28b72babe03142fd5629779983"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8f7aa224f9141bb718a4b2162815eee639b6a76e99473f14e142fa36e01dc947"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "841e04df30320bdd17e141f604a03081b7bd839bcb63f55b9a7771538db13beb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14614c85d787397706896becc11d2148dd435f23163d90f03a199f3e7a2d8b63"
   end
 
   uses_from_macos "bison" => :build

@@ -6,6 +6,12 @@ class Hfsutils < Formula
   sha256 "bc9d22d6d252b920ec9cdf18e00b7655a6189b3f34f42e58d5bb152957289840"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    url "ftp://ftp.mars.org/pub/hfs/"
+    regex(/hfsutils[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    strategy :page_match
+  end
+
   no_autobump! because: :requires_manual_review
 
   bottle do

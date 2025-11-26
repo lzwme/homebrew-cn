@@ -12,25 +12,25 @@ class QtLibiodbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e58c533025f682ab28db1f89b4d387adde80ffd79c50cbec4e309d62519f216d"
-    sha256 cellar: :any,                 arm64_sequoia: "4ccdf342b8c7337adfee162e55019309d4881488d9ca82d8c09bfc8188e0a33c"
-    sha256 cellar: :any,                 arm64_sonoma:  "b82851f36abd77784695c2454222fd0acbe639e91175fa4d36c9400d9f8294a3"
-    sha256 cellar: :any,                 sonoma:        "48dc97a37314f751e4a622a4e61e01636951dcad7ea5a8acfab52395309477f5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "82e925c9dde82537e90048962eee0539c83b16ffe22f91aa1057c0b18635e18c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4486a9c6a15694766d15887f3e6f888932fccea893b7977d4615aff95316d4e7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "7000bf1c5b597c4ba88516da4a8bb95b54496664bc4865d8f5119c1e48aef94a"
+    sha256 cellar: :any,                 arm64_sequoia: "32a1400ba0ff1eba75ab219bd0459106244e64f21d73c520d37eef1de74ff76a"
+    sha256 cellar: :any,                 arm64_sonoma:  "92890cf3ad3f5e9a5ae1a8a18e3296334b3cbf41b5962f816c445ebae4a36e9c"
+    sha256 cellar: :any,                 sonoma:        "39e77d7fbc9acc578b8d6d2aa572be72636dc56ea88d586ed335742177540690"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "09f73161faaa1861c99a2763be3e62a88a52cb97cb369840e204f14c6d88f809"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3765b3766d3e70861435a3a09cf7265a46a615c7045910c42ed286c9efe31b9e"
   end
 
   depends_on "cmake" => [:build, :test]
+  depends_on "ninja" => :build
 
   depends_on "libiodbc"
   depends_on "qtbase"
 
-  conflicts_with "qt-unixodbc",
-    because: "qt-unixodbc and qt-libiodbc install the same binaries"
+  conflicts_with "qt-unixodbc", because: "both install the same binaries"
 
   def install
-    args = %W[
-      -DCMAKE_STAGING_PREFIX=#{prefix}
+    args = %w[
       -DFEATURE_sql_ibase=OFF
       -DFEATURE_sql_mysql=OFF
       -DFEATURE_sql_oci=OFF
@@ -41,22 +41,18 @@ class QtLibiodbc < Formula
     ]
     args << "-DQT_NO_APPLE_SDK_AND_XCODE_CHECK=ON" if OS.mac?
 
-    system "cmake", "-S", "src/plugins/sqldrivers", "-B", "build", *args, *std_cmake_args
+    system "cmake", "-S", "src/plugins/sqldrivers", "-B", "build", "-G", "Ninja", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
     (testpath/"CMakeLists.txt").write <<~CMAKE
-      cmake_minimum_required(VERSION #{Formula["cmake"].version})
+      cmake_minimum_required(VERSION 4.0)
       project(test VERSION 1.0.0 LANGUAGES CXX)
-      set(CMAKE_CXX_STANDARD 17)
-      set(CMAKE_CXX_STANDARD_REQUIRED ON)
-      set(CMAKE_AUTOMOC ON)
-      set(CMAKE_AUTORCC ON)
-      set(CMAKE_AUTOUIC ON)
       find_package(Qt6 COMPONENTS Core Sql REQUIRED)
-      add_executable(test main.cpp)
+      qt_standard_project_setup()
+      qt_add_executable(test main.cpp)
       target_link_libraries(test PRIVATE Qt6::Core Qt6::Sql)
     CMAKE
 
@@ -76,7 +72,6 @@ class QtLibiodbc < Formula
       #include <cassert>
       int main(int argc, char *argv[])
       {
-        QCoreApplication::addLibraryPath("#{share}/qt/plugins");
         QCoreApplication a(argc, argv);
         QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
         assert(db.isValid());
@@ -85,7 +80,7 @@ class QtLibiodbc < Formula
     CPP
 
     ENV["LC_ALL"] = "en_US.UTF-8"
-    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_BUILD_TYPE=Debug"
+    system "cmake", "-S", ".", "-B", "build"
     system "cmake", "--build", "build"
     system "./build/test"
 

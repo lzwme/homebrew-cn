@@ -1,10 +1,9 @@
 class Allegro < Formula
   desc "C/C++ multimedia library for cross-platform game development"
   homepage "https://liballeg.org/"
-  url "https://ghfast.top/https://github.com/liballeg/allegro5/releases/download/5.2.10.1/allegro-5.2.10.1.tar.gz"
-  sha256 "2ef9f77f0b19459ea2c7645cc4762fc35c74d3d297bfc38d8592307757166f05"
+  url "https://ghfast.top/https://github.com/liballeg/allegro5/releases/download/5.2.11.0/allegro-5.2.11.0.tar.gz"
+  sha256 "4d06a8c8bf7afc91b304f1b12a114afba9d8a7413357c2a3579528d45a8f3d6b"
   license "Zlib"
-  revision 2
   head "https://github.com/liballeg/allegro5.git", branch: "master"
 
   livecheck do
@@ -13,14 +12,12 @@ class Allegro < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "279a66b4096e22b8b252632d8daf3f83e1c378a7d470699ffebda7e779be9db8"
-    sha256 cellar: :any,                 arm64_sequoia: "b5a0bac3386f3bce78af4bf6e938a21bd329178d7055dd811f33ea8299a916d9"
-    sha256 cellar: :any,                 arm64_sonoma:  "c09db091d2391cd5cb51e00e4857ceabdf279ebcc111fd501b1331dd990ad091"
-    sha256 cellar: :any,                 arm64_ventura: "a72784c6d7f9dad5f653e8d16e20e12c9f4d718494003e2efe12bd9e4dc9377e"
-    sha256 cellar: :any,                 sonoma:        "04e6776435cf05f3dbedddb3eae6124ba1fe4eb0438b3e7b6816633e95890867"
-    sha256 cellar: :any,                 ventura:       "43ced1b768c9fb07f4cb012b0898c91d464d52aaac253dc5e337494b83d3ce1e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "421fc43dcbb28fc51af56b84ed76d0a3febaed1f931ea05c6a47873797c63118"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f4d4bd8e8e01b35aca70053f1fc651c35a9ed2c37bab958aeb2b833e6b02044"
+    sha256 cellar: :any,                 arm64_tahoe:   "a081a8c2d30674fa6237103ac52045707bd7d5c10d05952ae7985882947295e8"
+    sha256 cellar: :any,                 arm64_sequoia: "8dfe8952b79782a244428e769b8b5b0a7e3d7f8a23eeb92a300700ca83f8f0c0"
+    sha256 cellar: :any,                 arm64_sonoma:  "7ac94dfe962a1d545eea6f8fe0f63f0d54795037228766080ca7123ee40ba95f"
+    sha256 cellar: :any,                 sonoma:        "94ceb581d2cea861a940717d4f91248a4c0aab77987affc1a479d162da252ed3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3dc016b4d89b3cbbcc9eb1b2cacce8cfb9f8c5ccf501a7885d328e1ad8d5eef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8988d0214db349ecd93ed900db859e88d63f5de556ad58646f9af6beb2d61ceb"
   end
 
   depends_on "cmake" => :build

@@ -6,11 +6,6 @@ class Mikutter < Formula
   license "MIT"
   head "git://mikutter.hachune.net/mikutter.git", branch: "master"
 
-  livecheck do
-    url "https://mikutter.hachune.net/download"
-    regex(/href=.*?mikutter.?v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
   no_autobump! because: :requires_manual_review
 
   bottle do

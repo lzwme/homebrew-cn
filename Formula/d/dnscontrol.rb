@@ -31,7 +31,7 @@ class Dnscontrol < Formula
       -s -w
       -X github.com/StackExchange/dnscontrol/v4/pkg/version.version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"dnscontrol", "shell-completion", shells: [:bash, :zsh])
   end

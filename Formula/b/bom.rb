@@ -23,7 +23,7 @@ class Bom < Formula
       -X sigs.k8s.io/release-utils/version.gitVersion=v#{version}
       -X sigs.k8s.io/release-utils/version.gitTreeState=clean
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags.join(" ")), "./cmd/bom"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/bom"
 
     generate_completions_from_executable(bin/"bom", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end

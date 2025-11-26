@@ -26,7 +26,7 @@ class GhOst < Formula
 
   def install
     ldflags = "-s -w -X main.AppVersion=#{version} -X main.GitCommit=#{tap.user}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./go/cmd/gh-ost"
+    system "go", "build", *std_go_args(ldflags:), "./go/cmd/gh-ost"
   end
 
   test do

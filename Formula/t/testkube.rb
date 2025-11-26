@@ -1,8 +1,8 @@
 class Testkube < Formula
   desc "Kubernetes-native framework for test definition and execution"
   homepage "https://testkube.io"
-  url "https://ghfast.top/https://github.com/kubeshop/testkube/archive/refs/tags/2.4.2.tar.gz"
-  sha256 "2c6e8187e7201b99fbe74fae150e60d6e89e90d00e3fce0a9e9240865b3474be"
+  url "https://ghfast.top/https://github.com/kubeshop/testkube/archive/refs/tags/2.4.3.tar.gz"
+  sha256 "b77c20a614e36b6e651336cec8e6a5044029e09e6795469d1656a900e2af8a70"
   license "MIT"
   head "https://github.com/kubeshop/testkube.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Testkube < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2086e70f8d08fa8002f901a55e32e91c881cb71cefccc641845edaa8db9ed447"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32cec6cd76cdd8b607fd0766dd238c0eb62b3d3a93190302ba4f4b542e828e81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "299eb5da18756c92100551ea28364ea8042fa51e4c166f9b551da4778b75bad1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1291d5abed87695eeb1c19ef9f7bb06956b61cc9363ab17260fc0372967a2554"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec9ae230592832466626093a4d05ba1eecab0049e38ea7e72012ac0191dd4723"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9c005a95afebe92f1901af27d41b9dcd7c0b02420ea58737e646165ffdcd87f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "44dde573ffed2380f0cc381947b9672c5182bd14941ce23e5a944683140fcb2b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0d1ecf349e52af7e9821c61f2dec87f0864971c8a8f56fc6041a1704c2dc3d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f645895857f9d938a3f6334af1696c96e78f84a04b9257e9fe17b8b1d0abe93"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3f559ba747aa5de366f805f63662c5b82d19e834be154404e95efbcf437ecd92"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0c4658ff560752fea242400d1800cbbaf7a5f903bd40b3962afac9c0e01cbf0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a59c975ab6c96d0bd33b94597f05b7715fcb1d203cc2bbd72a138322ab77ea45"
   end
 
   depends_on "go" => :build

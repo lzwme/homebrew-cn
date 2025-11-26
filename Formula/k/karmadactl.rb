@@ -7,12 +7,13 @@ class Karmadactl < Formula
   head "https://github.com/karmada-io/karmada.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca0d0272b5c65ed53f490241ff892562d908b9a95ed17ec556e7c1a3fea044c5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f7062a23448f5da292642d5147d638f47b4556012e1d0eb603b9aaa134066f1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f7658e7f22320d90909aa04ed72837b218aaa39db6ddd0cb51a90a32203f0cf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "264ac0825c3aceec11b0960ba337ce559b59a916eda130a14f9097d291da527b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b88e7a884773fa6d7b184f28e8bcf61876242bd9d2231a82db0b57d263b7d3a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48d7e309ca9f82d221ca261fd2dfecda5f930736cdeb931759ccb0d5863fc159"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "782a8fb21cbae8839cdbf25e121c2abccd0641ba7383af6ff1f204662cdf24d0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11d696a478b05cf43fcc60c8e1b92fc32320f596fcbafdecec5d4d4cf7f07445"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bbb863c3c915135907b8517c2234a505d2716f9d7ac47dbd941d1c732ff3b5ca"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e47bcddaf1de527dec683363b68484cfb6e685444f0182c03e96d9d01e85d3b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ac971f14f032d928d3201f70833211f8fdb2cbd940f82c1f6518a92dc0ca701"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c02434af126f1f9885cafbb7ed0678ae22f1f516505cebb20e1ebb7896c84a9c"
   end
 
   depends_on "go" => :build
@@ -27,7 +28,7 @@ class Karmadactl < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/karmadactl"
 
-    generate_completions_from_executable(bin/"karmadactl", "completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin/"karmadactl", "completion")
   end
 
   test do

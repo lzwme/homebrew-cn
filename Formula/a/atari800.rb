@@ -1,9 +1,13 @@
 class Atari800 < Formula
   desc "Atari 8-bit machine emulator"
   homepage "https://atari800.github.io/"
-  url "https://ghfast.top/https://github.com/atari800/atari800/releases/download/ATARI800_5_2_0/atari800-5.2.0-src.tgz"
-  sha256 "3874d02b89d83c8089f75391a4c91ecb4e94001da2020c2617be088eba1f461f"
   license "GPL-2.0-or-later"
+
+  stable do
+    url "https://ghfast.top/https://github.com/atari800/atari800/releases/download/ATARI800_5_2_0/atari800-5.2.0-src.tgz"
+    sha256 "3874d02b89d83c8089f75391a4c91ecb4e94001da2020c2617be088eba1f461f"
+    depends_on "sdl12-compat"
+  end
 
   livecheck do
     url :stable
@@ -32,10 +36,10 @@ class Atari800 < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
+    depends_on "sdl2"
   end
 
   depends_on "libpng"
-  depends_on "sdl12-compat"
 
   uses_from_macos "zlib"
 

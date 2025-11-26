@@ -1,21 +1,21 @@
 class Nuspell < Formula
   desc "Fast and safe spellchecking C++ library"
   homepage "https://nuspell.github.io/"
-  url "https://ghfast.top/https://github.com/nuspell/nuspell/archive/refs/tags/v5.1.6.tar.gz"
-  sha256 "5d4baa1daf833a18dc06ae0af0571d9574cc849d47daff6b9ce11dac0a5ded6a"
+  url "https://ghfast.top/https://github.com/nuspell/nuspell/archive/refs/tags/v5.1.7.tar.gz"
+  sha256 "9aee944e86924ce44434741cb950fee8f9a6ff9c4f002803ab5f04698c8e4c68"
   license "LGPL-3.0-or-later"
-  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5c3a95852340bbb21b54820e886e41d1fc2b4b8967fd96fe25e020f73d883c0d"
-    sha256 cellar: :any,                 arm64_sequoia: "d7f6faea40e571722b97b290586074446559b554f7de96adc77158462197c84e"
-    sha256 cellar: :any,                 arm64_sonoma:  "ab72aef2742998bb2bd3a6bad299c5a19fb43801477f524d6c64131afa154540"
-    sha256 cellar: :any,                 sonoma:        "71f8a6c0ccef10c60ff7f12d7401e838957a7b6ce385df1e460fedcd4193bf2f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbf11b8876a083a9a4310c855211fc3bca1a4b4517d5368f47986c96fe236037"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f6fbc8698a0299c0801e29574333a1d7515365a901977f92e489f38b0f0f091"
+    sha256 cellar: :any,                 arm64_tahoe:   "6863e34c58596b85e558b7184ac455bf449ff65cd5b9ac2f3d3f4c509ca155a6"
+    sha256 cellar: :any,                 arm64_sequoia: "d28b1a84a1ec0cfd557fcf6febd53a6c0cf1fd10fb4363ddb7566518b5cd7ea6"
+    sha256 cellar: :any,                 arm64_sonoma:  "5462266d572558109b691dd064870f1bbeb1a7e6b7d455c8c6a7cd7cabf319e4"
+    sha256 cellar: :any,                 sonoma:        "38a0d023c75e8bb42cf442000fcf1e652517dbac3ad292d744a0f405e77e30ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d32911d3302e34fc0d672550c67d524070c0313b29f2f8177154644eff4402c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f038716f553adbecc58cf191544f5cca27c9bdcdc0e79f8c380e66a13f1a34e"
   end
 
   depends_on "cmake" => :build
+  depends_on "doxygen" => :build
   depends_on "pandoc" => :build
   depends_on "pkgconf" => :test
   depends_on "icu4c@78"

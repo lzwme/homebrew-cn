@@ -21,12 +21,13 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d565a75fcc497daae1ae8c45b4042f85a9ffa0a2ae22363c6787aabd6e85e194"
-    sha256 arm64_sequoia: "845761f4d4de258dc0bfa673a432ea255f2d01077088f5be4f8624c518cf9da0"
-    sha256 arm64_sonoma:  "e7d337811240824f0f0d682a23b6dfe06f5db8d135caf97f24441fa7f3a01a28"
-    sha256 sonoma:        "6ddca839c4e349f1102d3afdae74c715bc3a87daae353ce6f1d0da1729908f16"
-    sha256 arm64_linux:   "9559f69a9cfda1d79a06821b77b36f75773ab3156d836d1519ced6c5f7f11a9c"
-    sha256 x86_64_linux:  "0dcc76c3649accf121c8ea20867bd0978182788b1d3812ed65380a6b516db44e"
+    rebuild 1
+    sha256 arm64_tahoe:   "4147dadfe4f3919a224f9af83f3261c57fdb5067414ada9ac2c6ac31ee2d86d8"
+    sha256 arm64_sequoia: "6270a99c8f4c84741e99df5f6431c731aa7a33ae2b06e885c7cf03a992b73469"
+    sha256 arm64_sonoma:  "004253969b5269f32f316f2993f02ed67e9dda24f60ec16744b4af5b86695089"
+    sha256 sonoma:        "4d9c1c014f8fe5f014c0042fae8dd18c1355294fcad0154e770d0016353e4044"
+    sha256 arm64_linux:   "fb66142c8e0a02666aaa2ccee063fe773d8617b8d0878ec36d58215f54cc26b1"
+    sha256 x86_64_linux:  "5c1e6feeff94d3b5fe0f00bd96bb9f305d323ca0dd353b457b859934f4dae7de"
   end
 
   depends_on "cmake" => :build
@@ -83,15 +84,10 @@ class Manticoresearch < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-  end
 
-  def post_install
     (var/"run/manticore").mkpath
     (var/"log/manticore").mkpath
     (var/"manticore/data").mkpath
-
-    # Fix old config path (actually it was always wrong and never worked; however let's check)
-    mv etc/"manticore/manticore.conf", etc/"manticoresearch/manticore.conf" if (etc/"manticore/manticore.conf").exist?
   end
 
   service do

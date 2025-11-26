@@ -1,8 +1,8 @@
 class LibtorrentRakshasa < Formula
   desc "BitTorrent library with a focus on high performance"
   homepage "https://github.com/rakshasa/libtorrent"
-  url "https://ghfast.top/https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.16.3.tar.gz"
-  sha256 "e63f8cef2fef8dfe1e147f21d4148206d29639f63788c98fdb49f58318d71ada"
+  url "https://ghfast.top/https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.16.4.tar.gz"
+  sha256 "8575172389d668e0da76320850f186ab7a482fffe314444866a3de593ad85aaa"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class LibtorrentRakshasa < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "98264f5867242371dfb2dc18314db6df347f65b2ec2798ada584e078b04c650a"
-    sha256 cellar: :any,                 arm64_sequoia: "a591cf356914b542d2d969f4c5ef751503daa222efb83c76dc0816828c1f0c71"
-    sha256 cellar: :any,                 arm64_sonoma:  "edaa94710668dff8437f7211a8117de2592ab8bc03093510cc174adb4198413f"
-    sha256 cellar: :any,                 sonoma:        "ca6b51b289799bc49dd49863808b83f49983b8c6a38d9223c9521b8cb23d234a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e51f9a1aba1f3ba994cd24cce0907c729380616f9494298eb802e6b5b2f43b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c208f276ee0b03738fd1471ef3e2d6fae5191632d294a2c85ea7108192fd4534"
+    sha256 cellar: :any,                 arm64_tahoe:   "1331b535bafede26577e1da404ba2af8124f9f25c6c3cf21b3eb710a40dd3697"
+    sha256 cellar: :any,                 arm64_sequoia: "6579466580750b1f68dc6af5b0e08514aa4cd6ef846b204e05d86ae4cc7906a6"
+    sha256 cellar: :any,                 arm64_sonoma:  "d9672f1a8e4cb75306af072b0007b9655187260fd9a05ffecc30f4b945af0eea"
+    sha256 cellar: :any,                 sonoma:        "650689bebe1e0a8bb9d4cc736f8e544bd21a116a25db30ac35ad7a5a0f8d7def"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2616dcf8a1bf6e178ebce15aa168c8b3974a8e5c6f297a0ca94cfbe55cbc45c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0f106e8bc1c4eaa5b7b5ac9a7df48fa6af395c31525173e21c7f310902f6a36"
   end
 
   depends_on "autoconf" => :build

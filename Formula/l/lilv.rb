@@ -1,8 +1,8 @@
 class Lilv < Formula
   desc "C library to use LV2 plugins"
   homepage "https://drobilla.net/software/lilv.html"
-  url "https://download.drobilla.net/lilv-0.26.0.tar.xz"
-  sha256 "912f9d025a6b5d96244d8dc51e75dbfc6793e39876b53c196dba1662308db7f0"
+  url "https://download.drobilla.net/lilv-0.26.2.tar.xz"
+  sha256 "9c712f7c44ba8b1fdbf9bbaa793bbf76844be40b361c4322bdaa5c4ed36c6b89"
   license "ISC"
 
   livecheck do
@@ -11,12 +11,12 @@ class Lilv < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6b38ac68c566e0fe61886a255c91b588312d5abd3b4b1b1615240370f19f4918"
-    sha256 cellar: :any, arm64_sequoia: "c3028d575f05bc1641690901237ce93e5294a9743026b56d0f2525d3d895282f"
-    sha256 cellar: :any, arm64_sonoma:  "e2a9e1f5e98bfa25e6ea907e60530780ba86abdc1a3460d96c30d2ed95ee4866"
-    sha256 cellar: :any, sonoma:        "98438914958e60ea45827634f596361981d1b8fd5a7a061215cb1ab6477776af"
-    sha256               arm64_linux:   "30c4f6519618faf46bbd73da8c0ec2cd955a17ec3c99d7d954eb58368cacc1a6"
-    sha256               x86_64_linux:  "245c68a0872099dfcc642514b47bd3933596467d8e92124de6f36bdcd1ad80d8"
+    sha256 cellar: :any, arm64_tahoe:   "56363d8bf5ba5cfb4d461485d1ad4e7313306429674b10513f67d8c5e6df2436"
+    sha256 cellar: :any, arm64_sequoia: "036a5c15d5ec5aab5452303e260b0fd487ab84832c5ca1ff4ac3af8ec12eb07b"
+    sha256 cellar: :any, arm64_sonoma:  "41747dbb854c7846ffe4ad410a14276d27e5d5e73014a7062c0e9e0d37646999"
+    sha256 cellar: :any, sonoma:        "4acdf2cca9b174913ada149a86474e0c534a9341952133ead18bbab2de3e624c"
+    sha256               arm64_linux:   "6cc08d4864ab5c453a1d4e80cb8fb651f92884fa506b0891729847f5104d20b2"
+    sha256               x86_64_linux:  "7b75dabc839c8c57b91f4151e7269fde08fb4df3d869ca9a9a26c3b270b8fbb1"
   end
 
   depends_on "meson" => :build

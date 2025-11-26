@@ -8,15 +8,13 @@ class Lgeneral < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "3259351b8e0e10fde802360e3f99bb7123cbebdc65ef42405feb2244044e6085"
-    sha256 arm64_sequoia: "0b33e1f556a20a71c72b472bbfa2fdd9461253d584cb97e47a9eb8173c376ea5"
-    sha256 arm64_sonoma:  "0c3cbf2cd89161d1af99f75d4d33091f7732cc458861977f4a91eb96af230154"
-    sha256 arm64_ventura: "f256bf5c22611e15d3322bc501e1d877a4b2f8c1a471fe298399a255fc44490b"
-    sha256 sonoma:        "a5f8cf09603365a6a8187b3d296d7dcba9ee1fb44993f5ef81285c145ef36995"
-    sha256 ventura:       "7f2a5e68361f78343b88f04dae2b0ec5a0da7be4753f8c66bdcd54e02f8bd8ea"
-    sha256 arm64_linux:   "bb380cd4fea9e821acc6f40ea22fe206fae58caed0b0ca7c437e0a03fdc4b44e"
-    sha256 x86_64_linux:  "7839691573fb754a1c1b7e6befc77027256bcc1908b11268474e59de60de804d"
+    rebuild 3
+    sha256 arm64_tahoe:   "a65fba44b56f1ae92c209b5542e45371b8566fd465a8eb1c39913a4bdf334793"
+    sha256 arm64_sequoia: "ff23d123436ef67a86f2b93d07eac7fd03288ccd96745e32f571638cf0b69a22"
+    sha256 arm64_sonoma:  "fea145ba99b260a67c2435e7c2841df67cc8cd95ea292d97de29dae08b7fe5d4"
+    sha256 sonoma:        "1c8ea19f1051169fc4f4cc6cc8d8b64111fea88e7c149fce7de18178b1747670"
+    sha256 arm64_linux:   "b9b4ccb1fd4edcea2fcd56e5a167ec41a5f3ef8dd8ca175f46508493ae251d9f"
+    sha256 x86_64_linux:  "feadf3058a4c903237b6cf8d09b61f97ba5fb5656a6ff3819f96660dd0d4400b"
   end
 
   depends_on "gettext"
@@ -33,11 +31,9 @@ class Lgeneral < Formula
 
     system "./configure", *args, *std_configure_args
     system "make", "install"
-  end
 
-  def post_install
-    %w[nations scenarios units sounds maps gfx].each { |dir| (pkgshare/dir).mkpath }
-    %w[flags units terrain].each { |dir| (pkgshare/"gfx"/dir).mkpath }
+    # Preserve all empty directories which are needed at runtime
+    touch pkgshare.find.filter_map { |path| path/".keepme" if path.directory? && path.children.empty? }
   end
 
   def caveats

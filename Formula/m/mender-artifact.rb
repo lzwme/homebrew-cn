@@ -36,7 +36,7 @@ class MenderArtifact < Formula
     end
 
     ldflags = "-s -w -X github.com/mendersoftware/mender-artifact/cli.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
 
     # mender-artifact doesn't support autocomplete generation so we have to
     # install the individual files instead of using

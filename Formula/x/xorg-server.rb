@@ -1,17 +1,17 @@
 class XorgServer < Formula
   desc "X Window System display server"
   homepage "https://www.x.org"
-  url "https://www.x.org/releases/individual/xserver/xorg-server-21.1.20.tar.xz"
-  sha256 "7695bc61824b3a81b6bad2f78b05400ca015003de402d1b322117105b702e937"
+  url "https://www.x.org/releases/individual/xserver/xorg-server-21.1.21.tar.xz"
+  sha256 "c0cbe5545b3f645bae6024b830d1d1154a956350683a4e52b2fff5b0fa1ab519"
   license all_of: ["MIT", "APSL-2.0"]
 
   bottle do
-    sha256 arm64_tahoe:   "edcc8f7f93c9c7b94ce3b60df6a876a360b2b9a47c930a06a1c04333485f7920"
-    sha256 arm64_sequoia: "2ccb44fb003a0fb78d1cf76cedb487b257c02bef41e7e2971123b94263a3b35e"
-    sha256 arm64_sonoma:  "4564943dd94458bfaa7600510b739d05a317b716fb0b3fae36e1645d4596d719"
-    sha256 sonoma:        "dcd00cf2a3d45b9694155b31cab6b4546677e872ea2bdfa36b0dfd4647451e4b"
-    sha256 arm64_linux:   "fc2d46cd50faac24dcc2469f612e33f70f3811f903de31405e4f2389201484b3"
-    sha256 x86_64_linux:  "787b07cc6724a0f34855566d8fdb2b63dd77ec9520469536c818af9a98406fb2"
+    sha256 arm64_tahoe:   "f058e8d9ef4de941cd6666f08eccc1438ad6d270f5670d22a828047c8fe03326"
+    sha256 arm64_sequoia: "eee2c1c2c080f6453514590a41691aee01de049b8e9caa3284bf47a0d7aa7a65"
+    sha256 arm64_sonoma:  "3e8f16dbda81adb975791175b81187068bbba3b74b03f133307a214d12ee9e55"
+    sha256 sonoma:        "c5cd0e5ddc3485c4e871ac0a6713f9e33c62ad3bd26b9aba02f51ca3be24b4b9"
+    sha256 arm64_linux:   "5d8bc153d1aa91bf152d10f0a2adf6d044d08643a1534e34bd80e8c586341812"
+    sha256 x86_64_linux:  "71a264687ab492cb3e77004426f7c8bca0602232ec8867a3aa72b6eb17459d19"
   end
 
   depends_on "font-util"   => :build
@@ -57,13 +57,13 @@ class XorgServer < Formula
     depends_on "systemd"
 
     resource "xvfb-run" do
-      url "https://salsa.debian.org/xorg-team/xserver/xorg-server/-/raw/xorg-server-2_21.1.13-3/debian/local/xvfb-run"
-      sha256 "fd05e0f8e6207c3984b980a0f037381c9c4a6f22a6dd94fdcfa995318db2a0a4"
+      url "https://salsa.debian.org/xorg-team/xserver/xorg-server/-/raw/xorg-server-2_21.1.20-1/debian/local/xvfb-run"
+      sha256 "97e86a102eee7212bfa3bf87d452b27dd4f16ef6e68658eeae20bca63db2ceee"
     end
 
     resource "xvfb-run.1" do
-      url "https://salsa.debian.org/xorg-team/xserver/xorg-server/-/raw/xorg-server-2_21.1.13-3/debian/local/xvfb-run.1"
-      sha256 "08f14f55e14e52e5d98713c4d8f25ae68d67e2ee188dc0247770c6ada6e27c05"
+      url "https://salsa.debian.org/xorg-team/xserver/xorg-server/-/raw/xorg-server-2_21.1.20-1/debian/local/xvfb-run.1"
+      sha256 "7e8e39c98ae006b8ba583b59c8be0419885eaead062c3ae87592854de33e5a00"
     end
   end
 

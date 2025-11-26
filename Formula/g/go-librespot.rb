@@ -35,7 +35,7 @@ class GoLibrespot < Formula
     ]
     ldflags << "-X github.com/devgianlu/go-librespot.commit=#{Utils.git_short_head(length: 8)}" if build.head?
 
-    system "go", "build", *std_go_args(output: bin/"go-librespot", ldflags: ldflags), "./cmd/daemon"
+    system "go", "build", *std_go_args(output: bin/"go-librespot", ldflags:), "./cmd/daemon"
     (var/"log").mkpath
 
     # On macOS, create a minimal config that selects the correct backend.

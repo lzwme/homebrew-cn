@@ -1,19 +1,19 @@
 class Daq < Formula
   desc "Network intrusion prevention and detection system"
   homepage "https://www.snort.org/"
-  url "https://ghfast.top/https://github.com/snort3/libdaq/archive/refs/tags/v3.0.22.tar.gz"
-  mirror "https://fossies.org/linux/misc/libdaq-3.0.22.tar.gz"
-  sha256 "27357554c8fcf03b11309773e594e4d7e614752cfe1a00e663b704c5331c21de"
+  url "https://ghfast.top/https://github.com/snort3/libdaq/archive/refs/tags/v3.0.23.tar.gz"
+  mirror "https://fossies.org/linux/misc/libdaq-3.0.23.tar.gz"
+  sha256 "693e4709610432998c9c6ed5eb820525a5bad2fdbe610b10ef85e442376a3271"
   license "GPL-2.0-only"
   head "https://github.com/snort3/libdaq.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1b55bc1fa94a2393603ca943fb0d3ed2f04dcea82dbeaed01659684107559f0f"
-    sha256 cellar: :any,                 arm64_sequoia: "319746f4659fedc2ded4c649360db3332cf299054a3d8215eebbd0d191221681"
-    sha256 cellar: :any,                 arm64_sonoma:  "183401aa1bdea524c064d9fd0b834e4da748c49f4a4a5f3ea4a6b83cbe908022"
-    sha256 cellar: :any,                 sonoma:        "6ede97940581cf24c0ee0ec4c4ec9ce8748b3e8df8f01d9e0d228ec49f2d7c57"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6738b632f4f718aaf8b6338d91df5f781130689d4e529b207aead22e26715d40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e45fcf4ec339b7f2d6b617670d1fedd2e778c2836a75697580978641c34556e"
+    sha256 cellar: :any,                 arm64_tahoe:   "2b696a54388217c2b9103be923c891503fee81861ece74ecc247b5478f7e0994"
+    sha256 cellar: :any,                 arm64_sequoia: "9de00a55269c89325806f6161e26af2a6e00bef6ca4d3d4690ec90711a830a33"
+    sha256 cellar: :any,                 arm64_sonoma:  "2a0049a4ac183b580719c8f65a739f3646861cc5bee7709c62eaba5a5112b0e5"
+    sha256 cellar: :any,                 sonoma:        "68fdcf2348ac47005c0cd91b6ae6f3de4d5a2fd2661c46dda343b55462adcfb8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7822cfada66dd65220f53408c0adfe401fd94fcb44dadda6b8a7d41f627ae772"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e65d8282faf127579dae3dd398694a604250178b7e0c5fee0730fdfa6d93cc3"
   end
 
   depends_on "autoconf" => :build

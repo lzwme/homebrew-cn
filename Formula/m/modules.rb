@@ -1,8 +1,8 @@
 class Modules < Formula
   desc "Dynamic modification of a user's environment via modulefiles"
   homepage "https://modules.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/modules/Modules/modules-5.6.0/modules-5.6.0.tar.bz2"
-  sha256 "21c9041b7aac341c01b89e4fef0c5414e6928632ec839e86fc6dcb4c9503e6d4"
+  url "https://downloads.sourceforge.net/project/modules/Modules/modules-5.6.1/modules-5.6.1.tar.bz2"
+  sha256 "5d36fd90b83a06fd3ed0ff951ab1101f22eb310fde3492f9d0455a68569abe5b"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class Modules < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "62ac4cbc56519b920329ce5fb23d78c833645931c5b9afb576796ca6bec79778"
-    sha256 cellar: :any,                 arm64_sequoia: "b96474bcebc53d36afddc6c40d58bf86d37df3c82ae5fc04c07654abc0d1466b"
-    sha256 cellar: :any,                 arm64_sonoma:  "d0230d446fa7be1f6b5c78618182ffc5da2c0e3560421525fb97133f28f0b75b"
-    sha256 cellar: :any,                 arm64_ventura: "d9c87d45370d3f46537bb407c58bab470acec1634c1050de5fd3317645bb51ff"
-    sha256 cellar: :any,                 sonoma:        "5855253b417699a3f4b3c58bb32cef094f5e3de694ddb34c02a54c3fd7aea587"
-    sha256 cellar: :any,                 ventura:       "782be9a7bd7c67dc16bfca7653d32e90bfcbc8b87f03912e2a5421c747d8d9e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b9ae7b3d2fd96b3e08b8b597e801218f581c56a0c91f020cc07fe5696fbda76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa7ac949189ecb64f38abd9bae6049f03436c99db250f526fa86a7d382f99cbb"
+    sha256 cellar: :any,                 arm64_tahoe:   "9ad57749f2e5147af68bd14cb793daf5a1248a5066fabf5849bcc61eb81310b3"
+    sha256 cellar: :any,                 arm64_sequoia: "73c1507d3f613e2e8f362e0fa372879c7308ff0a4da5c8c29552de478bda1541"
+    sha256 cellar: :any,                 arm64_sonoma:  "4d6895e9c911eca582b3d8126621b990467b1c15949fd4047f5f06b3c77b2b3c"
+    sha256 cellar: :any,                 sonoma:        "850380e3da9b8041f097dad78915d0e707bc22e926e6213a37923f6fb2203b87"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a28e814c89976354ce48751ef27b4c3dc36ca7418e53490f78a8df71b49fd69a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a00c5618052a36dca03fef4a0e2ca0239b98615ea959b928621bef9da92fc2c0"
   end
 
   depends_on "tcl-tk"
