@@ -7,6 +7,11 @@ class Idutils < Formula
   license "GPL-3.0-or-later"
   revision 1
 
+  livecheck do
+    url :stable
+    regex(/href=.*?idutils[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   no_autobump! because: :requires_manual_review
 
   bottle do

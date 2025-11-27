@@ -10,7 +10,7 @@ class Bash < Formula
     mirror "https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz"
     mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-5.3.tar.gz"
     sha256 "0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba"
-    version "5.3.3"
+    version "5.3.8"
 
     # Add new patches using this format:
     #
@@ -24,6 +24,11 @@ class Bash < Formula
       001 1f608434364af86b9b45c8b0ea3fb3b165fb830d27697e6cdfc7ac17dee3287f
       002 e385548a00130765ec7938a56fbdca52447ab41fabc95a25f19ade527e282001
       003 f245d9c7dc3f5a20d84b53d249334747940936f09dc97e1dcb89fc3ab37d60ed
+      004 9591d245045529f32f0812f94180b9d9ce9023f5a765c039b852e5dfc99747d0
+      005 cca1ef52dbbf433bc98e33269b64b2c814028efe2538be1e2c9a377da90bc99d
+      006 29119addefed8eff91ae37fd51822c31780ee30d4a28376e96002706c995ff10
+      007 c0976bbfffa1453c7cfdd62058f206a318568ff2d690f5d4fa048793fa3eb299
+      008 097cd723cbfb8907674ac32214063a3fd85282657ec5b4e544d2c0f719653fb4
     ]
 
     patch_checksum_pairs.each_slice(2) do |p, checksum|
@@ -76,15 +81,12 @@ class Bash < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "c334ace988880c652a96a7be9e9c4ff03ba59db64ce66d3b0aefa8fb5e0780a8"
-    sha256 arm64_sequoia: "9b4b897e4fe4df3ffdfcd47265ca1c5c563265d9de490b6ef8deb75580ad4ee2"
-    sha256 arm64_sonoma:  "82f6c2822bd49dae8d15be45fc347ebc91100de1fdad421b1360d4caf5526df3"
-    sha256 arm64_ventura: "721bdf14667a59cb7a24d4d476e0228649483513a2d3c9e93908564380915032"
-    sha256 sonoma:        "94ef4a156e8cf4be1ae0a056aa988324d89cea55c2ec8f29ec9646a9df258441"
-    sha256 ventura:       "7d259d44cfcbc36bb9c7c21fa8a08138868b39ce36dd963f853f9d50d9202145"
-    sha256 arm64_linux:   "08e2e633ceb91d97c90205197d521607a3bcc3a491a18ae16d0fd3f1acf80d31"
-    sha256 x86_64_linux:  "5d178cd059067f0e76c91ad7515304576052dd8727d5a7c50fc7b9caa0b5bc32"
+    sha256 arm64_tahoe:   "7f10a3929a4a2ba51a2796f7503f4bcf9f97f811e622cb12f207065cdc6e1bc8"
+    sha256 arm64_sequoia: "6c5669dab58a2680a6039a3870b375dc0dfb4632301db5a45624eeb082296c51"
+    sha256 arm64_sonoma:  "9c9fd7089583e129a96289259bcc40128a764ad360b4f621742434ebdcea5f65"
+    sha256 sonoma:        "36eeef0bead95bf0742f556a977a6caf48a7c853adc520e7a09348fd5679e18f"
+    sha256 arm64_linux:   "8c7d1787c43a68b04f603edb7241d60f8866d65faa3ee0e0d7e002f86f0ed7c4"
+    sha256 x86_64_linux:  "1b0af3edc9d4b62557f6cc38bf4b7d5eace53dd72ff5ec0cf199e5613065f0dc"
   end
 
   # System ncurses lacks functionality

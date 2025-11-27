@@ -1,8 +1,8 @@
 class Marksman < Formula
   desc "Language Server Protocol for Markdown"
   homepage "https://github.com/artempyanykh/marksman"
-  url "https://ghfast.top/https://github.com/artempyanykh/marksman/archive/refs/tags/2024-12-18.tar.gz"
-  sha256 "7392822c196e6bef68fc1cef3a873aac79b27bf95478c2419ea4761651a6a957"
+  url "https://ghfast.top/https://github.com/artempyanykh/marksman/archive/refs/tags/2025-11-25.tar.gz"
+  sha256 "cd42792e963123a832fd802cd08ada4b7beb04c239d882c2f6d93ea172979a43"
   license "MIT"
   head "https://github.com/artempyanykh/marksman.git", branch: "main"
 
@@ -16,14 +16,14 @@ class Marksman < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "50abec82ec280c5c3c35c770fe08bceeafc3bb20ba8e474843b15a49272907ff"
   end
 
-  depends_on "dotnet@8"
+  depends_on "dotnet"
 
   uses_from_macos "zlib"
 
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "true"
 
-    dotnet = Formula["dotnet@8"]
+    dotnet = Formula["dotnet"]
     args = %W[
       --configuration Release
       --framework net#{dotnet.version.major_minor}

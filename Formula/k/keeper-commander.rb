@@ -3,19 +3,18 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/ac/98/1c2c2d6dafb28ed3a9e29265df758a2ce3a0a34a796adee4ab88cc98dd00/keepercommander-17.1.14.tar.gz"
-  sha256 "451142edb7dba83382d5db6100cd0a78b4f2c0d46e5ab2c8f1a7813f7573916e"
+  url "https://files.pythonhosted.org/packages/db/69/a201d5934a3b205191094d8deb7d6c4e69bc59d3762859b5bcf3654207c4/keepercommander-17.1.15.tar.gz"
+  sha256 "0611f89d43ed27240cac4251e0c3739300a24f178a0e366415e3a53b0c97ac9d"
   license "MIT"
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "4bfe4a8394c840defc6ff95c795140b953e7258f714290f76508b15ae9db73ca"
-    sha256 cellar: :any,                 arm64_sequoia: "da58a91857d20c22e7c26a7618097c84ef1d483b3b7fc7d514aa1fe69de20df6"
-    sha256 cellar: :any,                 arm64_sonoma:  "3744fc4031f8091f894db9784019f8c561af0f5a4a521c4fb450434acdaa2c46"
-    sha256 cellar: :any,                 sonoma:        "9199166bc266271c107c97c16e412c61b0f2a61fa94817b0147a45d8bc6954ed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1992d9462f917ebef334678fc7804138939d3a8eee80852bf4c59abf971b0a17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7513d48c872c9421b241bae9160121e8dc16a44b4213c579429072150b6e788a"
+    sha256 cellar: :any,                 arm64_tahoe:   "63887a29160b85793482c3db0cdbea18186710485d51a934d8bbaf887d74760f"
+    sha256 cellar: :any,                 arm64_sequoia: "b61968a32c9e05821ccb26252a44c36e63c145f81bf403973017d6904f4d8b82"
+    sha256 cellar: :any,                 arm64_sonoma:  "fa29a31d994c4697bbc37cc5c779df418652dd5c37fcaf3311086b52ef3e3679"
+    sha256 cellar: :any,                 sonoma:        "cd3522c11a3cc816fccd2d4524b7394249e18c420d370f25983d660d555cd7ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3af215acca4759675afb49f72620e28cbe22e66d496e832e0c94cc2b0770e613"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f79546ffaed77a3c7af7228a37c4e5eb5183598ecf4ebd479083979cfbd6f07"
   end
 
   depends_on "pkgconf" => :build
@@ -136,8 +135,8 @@ class KeeperCommander < Formula
   end
 
   resource "keeper-pam-webrtc-rs" do
-    url "https://files.pythonhosted.org/packages/17/cb/578235f3fe045da38623cb999d981270f9bc8f7c045fae3b6d1a5134644e/keeper_pam_webrtc_rs-1.1.6.tar.gz"
-    sha256 "30fb4a9389ff0060412bc7dfa153fc868f6d2eb3a31b151a0b65d9fa4673eaaf"
+    url "https://files.pythonhosted.org/packages/2a/ad/21dad8a8c14e17e5050f0ce15cf3d9cec06b9cc50c8436062e8b77a84f81/keeper_pam_webrtc_rs-1.1.7.tar.gz"
+    sha256 "e919ea219c7ea7b6bee03bf9e3d9f804154900dcc57c11a60e4d3bfc58beb2c5"
   end
 
   resource "keeper-secrets-manager-core" do

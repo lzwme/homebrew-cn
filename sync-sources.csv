@@ -2103,7 +2103,7 @@ Homebrew-homebrew-core/Formula/f/fnt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fobis.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/folderify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/folly.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/foma.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/foma.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fon-flash-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/font-util.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fontconfig.rb, Homebrew/homebrew-core, 0
@@ -2441,6 +2441,7 @@ Homebrew-homebrew-core/Formula/g/git-when-merged.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-who.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-workspace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-xargs.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/git-xet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gitbackup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitbatch.rb, Homebrew/homebrew-core, 1
@@ -5899,6 +5900,7 @@ Homebrew-homebrew-core/Formula/q/qp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qpdf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qpid-proton.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qprint.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/q/qqqa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qrcp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qrencode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qrkey.rb, Homebrew/homebrew-core, 1
@@ -8177,6 +8179,7 @@ Homebrew-homebrew-cask/Casks/a/airunlock.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/airy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ajour.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/akiflow.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/aks-desktop.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/akuity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alacritty.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aladin.rb, Homebrew/homebrew-cask, 0
@@ -14396,6 +14399,7 @@ Homebrew-homebrew-cask/Casks/r/rockboxutility.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rocket-chat.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rocket-typist.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rocket.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/r/rocketman-choices-packager.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rocks-n-diamonds.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rode-central.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rode-connect.rb, Homebrew/homebrew-cask, 0

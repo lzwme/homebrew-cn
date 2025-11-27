@@ -3,8 +3,8 @@ class Torrra < Formula
 
   desc "Find and download torrents without leaving your CLI"
   homepage "https://torrra.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/5c/f1/4a976ef7440eb8689fd0ce25c64478c8bd057f34b2363b9717606c0a61d3/torrra-1.3.5.tar.gz"
-  sha256 "57ff46c4af441ac0a8b600355856d020134859b82ecf3098f3a9eec38ed899da"
+  url "https://files.pythonhosted.org/packages/00/1f/f1fbcef0ea2ad05285b83cc693de09d7817a0c7901c0a8dfe0dda11b5ef8/torrra-2.0.0.tar.gz"
+  sha256 "bfce841ae1264aba1c1585fa437e9e7b73b7e22474d3e78746664728a3584f3b"
   license "MIT"
   head "https://github.com/stabldev/torrra.git", branch: "main"
 
@@ -14,7 +14,7 @@ class Torrra < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ad60430c701f202f3116a5a61d642dd30a933e712789c5e110016c9097c4fb91"
+    sha256 cellar: :any_skip_relocation, all: "9eadf92c0a36de71d122eaf19abfd1da17515083c32fc529b4c8ebb583339700"
   end
 
   depends_on "rust" => :build # for uv-build backend
@@ -131,6 +131,6 @@ class Torrra < Formula
     assert_match version.to_s, shell_output("#{bin}/torrra --version")
 
     output = shell_output("#{bin}/torrra config list")
-    assert_match "general.remember_last_path=true", output.downcase
+    assert_match "general.download_in_external_client=false", output.downcase
   end
 end

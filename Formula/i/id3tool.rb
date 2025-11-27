@@ -5,11 +5,6 @@ class Id3tool < Formula
   sha256 "7908d66c5aabe2a53ae8019e8234f4231485d80be4b2fe72c9d04013cff1caec"
   license "BSD-3-Clause"
 
-  livecheck do
-    url :homepage
-    regex(/href=.*?id3tool[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t/i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c0c5fde02924517f49e33c33f18430726f0b613bb013fa73d0eb035a6d34755f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e67faa6f3ae68053ff10e5e16e3dfad49dd3f67a578114109a143c6131c44391"

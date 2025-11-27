@@ -1,18 +1,18 @@
 class HelmLs < Formula
   desc "Language server for Helm"
   homepage "https://github.com/mrjosh/helm-ls"
-  url "https://ghfast.top/https://github.com/mrjosh/helm-ls/archive/refs/tags/v0.5.3.tar.gz"
-  sha256 "f3b537f579f29fa27fd2ad3bcf4746d062301151e5c599506551bfbbb0f030bb"
+  url "https://ghfast.top/https://github.com/mrjosh/helm-ls/archive/refs/tags/v0.5.4.tar.gz"
+  sha256 "a8a5490084839af3506c85efcf603fbd71bb9ee37222bbd7817da1da3f054ab3"
   license "MIT"
   head "https://github.com/mrjosh/helm-ls.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c13b254c0e9d243a5fb0c77cbd8b5afe0cca165a9e413f58b630f1b60a5d0245"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58113a989f3c339fcb09e78939ecf2ca3357c99416ebe90f4196e494da44f2f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3066f5992195aed3281464314598b1f78a8475f71563dc028d1b5a06edf25b2f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ce2d743c04c5aa7c9962e9aad5007022b360fa8c83ee44c9d2f8a71336bf3c16"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ca2fbc20463ddceaa496135bdda8a128a576ff50cf303e5fb2b6ff41acd0520"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44df30fd0af57897671c16ce5a9d9624daf7598a701005a2bca32b5b8970b181"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34112bdfac9d66eb2ccd00d691751b6a4272cfd35e13b27eaebac29b561da065"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa7ca4321da24ac8caf711deefccd3f1cd694a9a47854db8c68d62f8cbd423b9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48cff4a67ba23584fc0a5e36e5512d7cc7c1a04eee40bb72cb2f32369b2ccd64"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c73b83c2c8ef38ee905970b62ce99a9b5a24302449a077b43f14959437a88215"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1d964572fa17d745a855acaa728e4fcb73eed62ce1ff7a59940fffcce4b5d69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1b453332395c02d589b21d0c87a7146fdfb1826cbb5dd3cbfb95e8ec69e3df1"
   end
 
   depends_on "go" => :build

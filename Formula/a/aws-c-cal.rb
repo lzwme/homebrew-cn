@@ -1,17 +1,17 @@
 class AwsCCal < Formula
   desc "AWS Crypto Abstraction Layer"
   homepage "https://github.com/awslabs/aws-c-cal"
-  url "https://ghfast.top/https://github.com/awslabs/aws-c-cal/archive/refs/tags/v0.9.11.tar.gz"
-  sha256 "319720ca46f2d23c3b5e44f4b48a1d468c49983bd0970d09cf0ddee4f4450d39"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-cal/archive/refs/tags/v0.9.13.tar.gz"
+  sha256 "80b7c6087b0af461b4483e4c9483aea2e0dac5d9fb2289b057159ea6032409e1"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "149fc01ff4430a0a1324a2dd041081f099224f4fd7f0aedd2d14864fad990132"
-    sha256 cellar: :any,                 arm64_sequoia: "1432869128055b0d45cd6e69e492d874443f1a672c8ba3a836a35e6dde924f4b"
-    sha256 cellar: :any,                 arm64_sonoma:  "e78d9a5d17fbcb4c5e0b3d17862e273b175ba0bac3397a194c19f806f701b09c"
-    sha256 cellar: :any,                 sonoma:        "eb008f50f1a79bcbe0feada48b20dcaa484a6f6863bb17e599756dfdc02ceec3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7311ce1a0a3e6f7b725e6202158c339a62e4d2d8601e8eb5e4bf3d84ed04cb32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98b42d79d8f46e560207e7bce7ec77a34030a9d8d8f10a7d6de8b2f2991c2142"
+    sha256 cellar: :any,                 arm64_tahoe:   "b4a682ef0ffb80c87cd6cfa4023c66c7ab159deb3f7500d7601014cbe58fb8c0"
+    sha256 cellar: :any,                 arm64_sequoia: "4bce7425760b6ba9e4ab56d8c008a5a885b0d922d978196b16da692b624a8616"
+    sha256 cellar: :any,                 arm64_sonoma:  "e3a1ae1b314af560c06ad0d948c67259ebe7b79afe88a14af9caed5ce1ffaa61"
+    sha256 cellar: :any,                 sonoma:        "4ffd05da94b7ff7f0c8a3479b101a9a964955c111a7c4f4e59653e210de8b38c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1332c1328220c4357acdbef60ee792897c7c1e17d3f6ba7892d4406997aaa3ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e801e0e9a5800ce24c4a726e42be9c7a24cf75c8de42d1c70073346a9627a09"
   end
 
   depends_on "cmake" => :build

@@ -11,8 +11,8 @@ class GhcAT98 < Formula
   ]
 
   livecheck do
-    url "https://www.haskell.org/ghc/download.html"
-    regex(/href=.*?download[._-]ghc[._-][^"' >]+?\.html[^>]*?>\s*?v?(9\.8(?:\.\d+)+)\s*?</i)
+    url "https://gitlab.haskell.org/ghc/ghc/-/wikis/GHC%20Status#all-released-ghc-versions"
+    regex(/v?(9\.8(?:\.\d+)+)[._-]notes/i)
   end
 
   no_autobump! because: :requires_manual_review

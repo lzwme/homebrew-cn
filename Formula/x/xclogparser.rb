@@ -1,17 +1,17 @@
 class Xclogparser < Formula
   desc "Tool to parse the SLF serialization format used by Xcode"
   homepage "https://github.com/MobileNativeFoundation/XCLogParser"
-  url "https://ghfast.top/https://github.com/MobileNativeFoundation/XCLogParser/archive/refs/tags/v0.2.43.tar.gz"
-  sha256 "ad1aaa2a598dd6feb798bd6d9ecae3a9ca467257e84a537bba9596389a898d79"
+  url "https://ghfast.top/https://github.com/MobileNativeFoundation/XCLogParser/archive/refs/tags/v0.2.44.tar.gz"
+  sha256 "bfcf66b7e81ae24bd73a885b13391f544f95bdefa96c22fdb2d3961179d72884"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31679304cc5d537857383a374233f4a6709d03354e92a4ec1cf0a2aa46cef760"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "025f210f55aaaffc464f649e7b55469bff509fd08238f38feccce8c8b582996a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "718ead42556264178980c7350ed4de2c0c9d3cd1b7463b3a2d289d100c7414bb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e3d9e7779492ee923ddf2d08d865d1821ecd6a4d1d0cb979ad1bf31abb2f3546"
-    sha256                               arm64_linux:   "1d47d1fb0ae152ec48336344163725ecc17733b304f3ae06066a299aa115f0b5"
-    sha256                               x86_64_linux:  "5ec5b99ee8ce1868b91872d19545fb267958df521eb82b938f0f231236ca17fa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14213c5e0b97ed39000bad6a6de9e15fa33b1afe643ccbe1712c490599d09ee7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec35b1813a456d527dbbe91515f19bc3841dedc519124c44ac816ebd84e8bfca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53b488143c19e1b003b96773c29db9f99474f9af63b0acfbc067c7d72f5f0f19"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e34a400c0f27d0ebfc4062ea02f47502c2fd2e8bd0d5cd7a6a9b2ab3db299ad7"
+    sha256                               arm64_linux:   "0d855b250dd2ad1ac65a027944fae9a2865c6d5606fef595cbce8c4ff3575acf"
+    sha256                               x86_64_linux:  "d752745f0b3e7aad0d6e08dc7bf0d9afec5d4c5d4eb2357987f3b8b5e2845ce0"
   end
 
   depends_on xcode: "13.0"

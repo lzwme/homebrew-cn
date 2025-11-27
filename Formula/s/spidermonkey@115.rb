@@ -6,13 +6,6 @@ class SpidermonkeyAT115 < Formula
   sha256 "f57b6507ab1db52183df2aadb1fd81d9f0108b185226d1bac6205b7d7d3005b3"
   license "MPL-2.0"
 
-  # Spidermonkey versions use the same versions as Firefox, so we simply check
-  # Firefox ESR release versions.
-  livecheck do
-    url "https://www.mozilla.org/en-US/firefox/releases/"
-    regex(%r{href=.*?/v?(115(?:\.\d+)+)/releasenotes}i)
-  end
-
   bottle do
     sha256 cellar: :any, arm64_sequoia: "238c04ed2a99a38f7dde51657f76753a8a1d40758e3e5e524c42303864209cd8"
     sha256 cellar: :any, arm64_sonoma:  "581420592aa67ce63b02579d99f81130399d086db22b2fcfbee8e6a99c3e4c3a"

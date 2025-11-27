@@ -1,19 +1,18 @@
 class Ccache < Formula
   desc "Object-file caching compiler wrapper"
   homepage "https://ccache.dev/"
-  url "https://ghfast.top/https://github.com/ccache/ccache/releases/download/v4.12.1/ccache-4.12.1.tar.xz"
-  sha256 "42e6c4b260cffd92dfa755e26390f45f5842e8c1a5f64f2b2e68adfbe82d1542"
+  url "https://ghfast.top/https://github.com/ccache/ccache/releases/download/v4.12.2/ccache-4.12.2.tar.xz"
+  sha256 "96ad53c76ecdb9c7a78e28a9bfdf2c95d7eece28546510fde7e16e5a13e2f7f8"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/ccache/ccache.git", branch: "master"
 
   bottle do
-    sha256               arm64_tahoe:   "b1823027cc9ddf18617fc404ed6cf8f0584737ee06a40dbc25909c95bb82cbc4"
-    sha256               arm64_sequoia: "61b8061879a3a53cbc68a8c88530fe3dff9176fa14305e93335497175bc4c693"
-    sha256 cellar: :any, arm64_sonoma:  "ecd78770fd6144834a6c2cf31ee49ebe16af10633d2257b537ad48c341faf088"
-    sha256 cellar: :any, sonoma:        "a71e2cda87b7cdfef7122d7a34a57143788451019ad847f923cf1f7a2bea2c4b"
-    sha256               arm64_linux:   "bbff4bc77fd29faf79f008e91b25ec41c2b035d7d92fe19c7d59630f4bde4db2"
-    sha256               x86_64_linux:  "ee8b0c87d10df5ee4db44f43afbf534b9b5abd07c852ba640d325a65e60fa4e8"
+    sha256               arm64_tahoe:   "4a95f0628e060f7a0d4da82ce652b04ebdc54890b4d28faa34a930c727c2f5bb"
+    sha256               arm64_sequoia: "3ab59fc2188130ed99706c9222a00f98cdce3817697851ca7ee3b33a80509a97"
+    sha256 cellar: :any, arm64_sonoma:  "21bd4ee841d067315971f34091aee5de6de262b821405fe3af7f2dcb92a8e59d"
+    sha256 cellar: :any, sonoma:        "67c81b3dc7b26825ad28c68a842dfa32c75635936eb9e5493ed58f99c896e8b8"
+    sha256               arm64_linux:   "6be92cfe07e707ea8f707cc3aa2eee0cd1938bf21007f58eb2ea54ed8a240279"
+    sha256               x86_64_linux:  "346cef05266a077ddd33470f81a2226a8df370e53299c59910039b4aea46475c"
   end
 
   depends_on "asciidoctor" => :build

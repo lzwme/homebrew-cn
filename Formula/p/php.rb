@@ -2,6 +2,7 @@ class Php < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
+  # TODO: Remove TAILCALL VM workaround in next release
   url "https://www.php.net/distributions/php-8.5.0.tar.xz"
   mirror "https://fossies.org/linux/www/php-8.5.0.tar.xz"
   sha256 "39cb6e4acd679b574d3d3276f148213e935fc25f90403eb84fb1b836a806ef1e"
@@ -97,7 +98,7 @@ class Php < Formula
               "-z ''"
 
       # Workaround to enable TAILCALL VM, issue ref: https://github.com/php/php-src/issues/20546
-      s.gsub!(/("(?:call|bl)\s+)(fun\\n")/, "\\1_\\2") if OS.mac?
+      s.gsub!(/("(?:call|bl)\s+)(fun\\n")/, "\\1_\\2") if OS.mac? && build.stable?
 
       # NOTE: `versioned_formula?` conditionals are to make sure correct changes
       # are applied if copied from `php`. Remove dead code when creating `php@x.y`
@@ -135,13 +136,8 @@ class Php < Formula
 
       # Each extension needs a direct reference to the sdk path or it won't find the headers
       headers_path = "=#{sdk_path}/usr"
-
-      # PHP build system incorrectly links system libraries: https://github.com/php/php-src/issues/10680
-      # Homebrew's superenv can only discard these if using realpath of SDK
-      ENV["HOMEBREW_SDKROOT"] = sdk_path.realpath
+      gettext_path = "=#{Formula["gettext"].opt_prefix}"
     else
-      ENV["SQLITE_CFLAGS"] = "-I#{Formula["sqlite"].opt_include}"
-      ENV["SQLITE_LIBS"] = "-lsqlite3"
       ENV["BZIP_DIR"] = Formula["bzip2"].opt_prefix
     end
 
@@ -184,7 +180,7 @@ class Php < Formula
       --with-ffi
       --with-fpm-user=#{fpm_user}
       --with-fpm-group=#{fpm_group}
-      --with-gettext=#{Formula["gettext"].opt_prefix}
+      --with-gettext#{gettext_path}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-iconv#{headers_path}
       --with-layout=GNU

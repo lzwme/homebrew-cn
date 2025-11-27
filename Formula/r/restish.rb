@@ -6,6 +6,11 @@ class Restish < Formula
   license "MIT"
   head "https://github.com/rest-sh/restish.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "33614081c80256bdf3acb116d3f257c6489cd787e2ff9df3c74885894096c37b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8aa4ddbae64dffa735470d8981074ea73c0d12c1f2029fcfc9e734a9f348ea7"

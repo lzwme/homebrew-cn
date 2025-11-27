@@ -3,17 +3,17 @@ class Localstack < Formula
 
   desc "Fully functional local AWS cloud stack"
   homepage "https://localstack.cloud/"
-  url "https://files.pythonhosted.org/packages/90/19/65a26e147647440a4333433307acd9ce6f58e46c5941f816f705c2d152f3/localstack-4.10.0.tar.gz"
-  sha256 "b354f6114ce5852642fcfdcb8c3250eecf8416b50d555a57b9a60e0d7731f9ac"
+  url "https://files.pythonhosted.org/packages/b0/b5/074ad906885cdc5f8424247fec51efec81c11617e47363d48d05c258f1dc/localstack-4.11.1.tar.gz"
+  sha256 "7cf67eb5922dedad9235cd342543e66134b7b71a88096cda117c46cc58aef6ec"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6a1facc049797f2165bcec7281605e6fb8953f281ac0fac12776f0f44258c475"
-    sha256 cellar: :any,                 arm64_sequoia: "1a4adebc8525c5eec47ed73cc4015af047aa43c3fec239fe7ff07dbed67756db"
-    sha256 cellar: :any,                 arm64_sonoma:  "cdc528c91688f697742d13f03de610cdaf4f816f924e568a3a59eb79c8a1b1a7"
-    sha256 cellar: :any,                 sonoma:        "30a74d0b35a67dc9fdc036208b94ec8896bdbbeb3c9e02d711239a11d4f02860"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa562e5875271945d8a75c2af5566192d55edd2d6b54da27458c10e12d87eb92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f26f3c32e93229b2566e1901e6a5ea1b5d113fd4c3dba66f4ac4fff468f93014"
+    sha256 cellar: :any,                 arm64_tahoe:   "feb420e6e5ec014e170118f063ac4feb11304ab2461c1a73da3022d6cdd153f0"
+    sha256 cellar: :any,                 arm64_sequoia: "7448d17a8504b7330dcb90b75fb93e02954b2293300f9e4685e23318aa395b5b"
+    sha256 cellar: :any,                 arm64_sonoma:  "1dd802fe021ceb5dd4e0bf6deec729db5963a1434f25379cd16ac7bb58da4670"
+    sha256 cellar: :any,                 sonoma:        "9931ad47df305db237d6ff9b2ec85a4110582b773d4adafce876f084680c79f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a85344e5e98589126beee28a171e15cd82d860b42669e5f27e49969fa2d2d516"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90def2422ed6f720fd11e035050b2e9e007136ee4cedeac1963cadb9ead3f56f"
   end
 
   depends_on "rust" => :build # for orjson
@@ -25,14 +25,14 @@ class Localstack < Formula
 
   pypi_packages exclude_packages: %w[certifi cryptography]
 
-  resource "avro" do
-    url "https://files.pythonhosted.org/packages/60/00/af1eec633637e12d0945a97f05a429eed83ac45865af60cb453db4689d95/avro-1.12.1.tar.gz"
-    sha256 "c5b8dd2dd4c10816f0dc127cc29cfd43b5e405cf7e6840e89460a024bf3d098d"
+  resource "asn1crypto" do
+    url "https://files.pythonhosted.org/packages/de/cf/d547feed25b5244fcb9392e288ff9fdc3280b10260362fc45d37a798a6ee/asn1crypto-1.5.1.tar.gz"
+    sha256 "13ae38502be632115abf8a24cbe5f4da52e3b5231990aff31123c805306ccb9c"
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/cc/7e/b975b5814bd36faf009faebe22c1072a1fa1168db34d285ef0ba071ad78c/cachetools-6.2.1.tar.gz"
-    sha256 "3f391e4bd8f8bf0931169baf7456cc822705f4e2a31f840d218f445b9a854201"
+    url "https://files.pythonhosted.org/packages/fb/44/ca1675be2a83aeee1886ab745b28cda92093066590233cc501890eb8417a/cachetools-6.2.2.tar.gz"
+    sha256 "8e6d266b25e539df852251cfd6f990b4bc3a141db73b939058d809ebd2590fc6"
   end
 
   resource "charset-normalizer" do
@@ -41,8 +41,8 @@ class Localstack < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "dill" do
@@ -60,29 +60,19 @@ class Localstack < Formula
     sha256 "181d3c6996452cb1189c4046c61599b84a5a86e099562ffde77d26984ff26d0f"
   end
 
-  resource "fastavro" do
-    url "https://files.pythonhosted.org/packages/65/8b/fa2d3287fd2267be6261d0177c6809a7fa12c5600ddb33490c8dc29e77b2/fastavro-1.12.1.tar.gz"
-    sha256 "2f285be49e45bc047ab2f6bed040bb349da85db3f3c87880e4b92595ea093b2b"
-  end
-
   resource "idna" do
     url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
     sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "localstack-core" do
-    url "https://files.pythonhosted.org/packages/31/0b/0357417267182c77ac813226777a48ea3b35e6749bcf4bac5ce696dec504/localstack_core-4.10.0.tar.gz"
-    sha256 "467794036c9adcf4a5c868c7e69f10e07ea4217fbc337e196032905b9c9177f5"
+    url "https://files.pythonhosted.org/packages/aa/1c/c6b3c4ad109fab105414631f57399770220d74fb1e24b215c7962773eae5/localstack_core-4.11.1.tar.gz"
+    sha256 "4bb8512be2a0bac2d710cc21aa9add47f3d7bcc72c15c6fc1a94424ce4b77e1f"
   end
 
   resource "localstack-ext" do
-    url "https://files.pythonhosted.org/packages/bd/62/9fa8a7c5e340170f95c0d96dd8a2e897c97c9f8d1ae64f3cd0a8dac9cde4/localstack_ext-4.10.0.tar.gz"
-    sha256 "3f6b614596d959427d7c2b7d2bca72020bcd2e289aa682ba0c4f604d97ab1bff"
-  end
-
-  resource "localstack-py-avro-schema" do
-    url "https://files.pythonhosted.org/packages/4c/99/36dc63bb57a7c637a79d9bf220098fcefa8ab029c065fb4f68fceca61413/localstack_py_avro_schema-3.9.4.tar.gz"
-    sha256 "83609fb30993e702df656e7deeb377aa3a11c409c569d10cdd2e3fb26af8fce5"
+    url "https://files.pythonhosted.org/packages/56/b9/77b024acedba2c94376b8417d626e70f0b6b059753156fcc5c07d88d30ed/localstack_ext-4.11.1.tar.gz"
+    sha256 "12a8ff07f8ecff50df238eb651a6e79745b699374d3064311c96d3030b0a3cfa"
   end
 
   resource "markdown-it-py" do
@@ -93,21 +83,6 @@ class Localstack < Formula
   resource "mdurl" do
     url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
-  end
-
-  resource "memoization" do
-    url "https://files.pythonhosted.org/packages/af/53/e948a943e16423a87ced16e34ea7583c300e161a4c3e85d47d77d83830bf/memoization-0.4.0.tar.gz"
-    sha256 "fde5e7cd060ef45b135e0310cfec17b2029dc472ccb5bbbbb42a503d4538a135"
-  end
-
-  resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/ea/5d/38b681d3fce7a266dd9ab73c66959406d565b3e85f21d5e66e1181d93721/more_itertools-10.8.0.tar.gz"
-    sha256 "f638ddf8a1a0d134181275fb5d58b086ead7c6a72429ad725c67503f13ba30bd"
-  end
-
-  resource "orjson" do
-    url "https://files.pythonhosted.org/packages/c6/fe/ed708782d6709cc60eb4c2d8a361a440661f74134675c72990f2c48c785f/orjson-3.11.4.tar.gz"
-    sha256 "39485f4ab4c9b30a3943cfe99e1a213c4776fb69e8abd68f66b83d5a0b0fdc6d"
   end
 
   resource "packaging" do
@@ -121,8 +96,8 @@ class Localstack < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/cd/ec/7b8e6b9b1d22708138630ef34c53ab2b61032c04f16adfdbb96791c8c70c/psutil-7.1.2.tar.gz"
-    sha256 "aa225cdde1335ff9684708ee8c72650f6598d5ed2114b9a7c5802030b1785018"
+    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
+    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
   end
 
   resource "pygments" do
@@ -178,11 +153,6 @@ class Localstack < Formula
   resource "tabulate" do
     url "https://files.pythonhosted.org/packages/ec/fe/802052aecb21e3797b8f7902564ab6ea0d60ff8ca23952079064155d1ae1/tabulate-0.9.0.tar.gz"
     sha256 "0095b12bf5966de529c0feb1fa08671671b3368eec77d7ef7ab114be2c068b3c"
-  end
-
-  resource "typeguard" do
-    url "https://files.pythonhosted.org/packages/3a/38/c61bfcf62a7b572b5e9363a802ff92559cb427ee963048e1442e3aef7490/typeguard-2.13.3.tar.gz"
-    sha256 "00edaa8da3a133674796cf5ea87d9f4b4c367d77476e185e80251cc13dfbb8c4"
   end
 
   resource "urllib3" do

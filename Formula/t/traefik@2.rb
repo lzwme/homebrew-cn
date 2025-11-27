@@ -5,11 +5,6 @@ class TraefikAT2 < Formula
   sha256 "6f505d857ff5c0b06dc8fe7ec5d8f59afdc8b7157b3455d5899313e52542ca89"
   license "MIT"
 
-  livecheck do
-    url :stable
-    regex(/^v?(2\.\d+\.\d+)$/i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "73048dcf01645f2338386b52a32d1b1c2b89d5df2c38caf674a34d6f5ba3906a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cedafb4b6da68660a07ad28aedae8010f2e9cfe9ca375db31269c97790cb3b53"

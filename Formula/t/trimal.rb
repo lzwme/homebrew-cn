@@ -1,22 +1,18 @@
 class Trimal < Formula
   desc "Automated alignment trimming in large-scale phylogenetic analyses"
   homepage "https://trimal.readthedocs.io/"
-  url "https://ghfast.top/https://github.com/inab/trimal/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "3fba2e07bffb7290c34e713a052d0f0ff1ce0792861740a8cec46f40685c6d73"
+  url "https://ghfast.top/https://github.com/inab/trimal/archive/refs/tags/v1.5.1.tar.gz"
+  sha256 "58751054861b152e92214ff8c01a132071230614e8e777a7c9280d03648cde3b"
   license "GPL-3.0-only"
   head "https://github.com/inab/trimal.git", branch: "trimAl"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6b8f43f9bf10254985da1367d4016fa241b2dce9227d727475738c42f667978"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7601f4fa41f4b2c49221fcfd10680dae2d7ba2ecf7b118ada2626df50b3dfe56"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d9046969829e57b325ddb627977fccaf33ec9b3b9dd17fdd1acec4c45af0ed7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4a64b8c35e66ccd823b1778665bebc09a42c5d630897591c18fd8b50b68f9ec6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6b995bc17baddfea2602992cf14f32151e5e96967fe64d4fb75b11529b47f54c"
-    sha256 cellar: :any_skip_relocation, ventura:       "c08772fe873d74045bb407315005b425aff589897efa1e76bd505c7e78d6200e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7c0979024f0c970c93afe487233d6847fc182f23f00e8a89a88eca999a318ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbdf2569d36a67e7381636245466bc4747821e04db83d1c6883b9a632920054f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1fe61c76b43717d3473edb88ac31f0fe55bf01d25b0aa1dc707eb65eb2cd6cc4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d28a79bf9a963f31e2da9300c02cd2014c8faa575540bd6516818ec3b27ac5a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "559d64eafda467297422c13c3086d2d9fe25fb975bc6ab1ea9df513c905e4435"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2be9d1d1dccd3dcb6fb0993819c342136ffce1a8bc2c39cd665d669df5361f51"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a141a6f76311ad740ed1e6b83d62b031d9c8cc957b803bd8cfc82553d92a7a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c30eb8f10dbe34b3966809eed08575df37d44030305ef9ce5926b5aa00c838e5"
   end
 
   def install
