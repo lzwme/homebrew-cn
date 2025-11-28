@@ -1,17 +1,17 @@
 class Topiary < Formula
   desc "Uniform formatter for simple languages, as part of the Tree-sitter ecosystem"
   homepage "https://topiary.tweag.io/"
-  url "https://ghfast.top/https://github.com/tweag/topiary/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "3d7495caf3c0ae234bd6def6f33193e026564f7818d5909641be119de811f18e"
+  url "https://ghfast.top/https://github.com/tweag/topiary/archive/refs/tags/v0.7.2.tar.gz"
+  sha256 "d0b7b2a19797dc63cb43e8097c8a8967f4504b17f8d0f5b83d80961e85398fb2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "742d685c177c33f9e988af56f8020bb3a5211b32658b39b59967980d0ff31157"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bef83cd5146326b685d2861fdf2fd861cc3a2ecf24268a1719dd390cdc2f6244"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "631e969c4616794c2290b7e9e3101ea4758e8a05cbac5ae55353bb0b6e02b1ec"
-    sha256 cellar: :any_skip_relocation, sonoma:        "af3643373a6fb7345ebeb252b5069f5a003be648dadc3c28f6e3c9546500218e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7eff8fe68c8265471bf89472f256d1ae9188afd1bbaf8d40cd3c9b01b406446c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72ede2255612729fe5e97f1757a36ec715c305f214af4097bcdc5517caffed29"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4fec0b290fa5b1d5a86817bfc04fa7b9afb7525a5b01287bee5a634e4f711bc9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05ac93f7846471e762c3a7ffb7b24a638dd1331c1583d01e8a14bf6d30839486"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c36b649d035da43efea4512273a5427f5acfcf2bed19cb74dadabb072ca9c9b8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "659749c795fe3bf467371ae77c89ffac4696a30046d7b2cb6cd3baadfbbec8f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c7db82195b2926c7bdb86aba8d489a4f81d12860ff824875559732f553e5c57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e5095a59368748756e6868412c940f970335be99d4a00c04bbaca40af77ed5d"
   end
 
   depends_on "rust" => :build

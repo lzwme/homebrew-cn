@@ -8,15 +8,16 @@ class Direwolf < Formula
     "ISC", # external/misc/{strlcpy.c,strlcat.c} (Linux)
     :cannot_represent, # external/geotranz, see https://github.com/externpro/geotranz/blob/v2.4.2/readme.txt
   ]
+  revision 1
   head "https://github.com/wb2osz/direwolf.git", branch: "master"
 
   bottle do
-    sha256                               arm64_tahoe:   "9008dc9817a0f1347080c4be96835c8fb3027fa6debf6bb0d18fdbab946e281c"
-    sha256                               arm64_sequoia: "5b1d6e6e848c4efa27f876d85f3054a9f07b246ecfff29a63ee909807cc5e897"
-    sha256                               arm64_sonoma:  "713aa3d8ba23eee64dc23350d532ec49cc3dfecea2817fa9b5285259b95901e0"
-    sha256                               sonoma:        "d36dc36d74edb5638a744bd3eb83026c2a938272632b58f871aaaff2014fbaf5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1f3591c8db7d3a803abdce7d524174796929a8db3f3d8e1a9319138651d2d15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52d4e83a054f979e47a3eb26ccd9560187f926ba6328c9924bf220971fa33282"
+    sha256                               arm64_tahoe:   "63d881db26ffbc81c6e5cc7d3d6dfcf8c0ee22471315b629a87369e86a6a8ebc"
+    sha256                               arm64_sequoia: "3d153fb2f4257bba35a2bdfce4fbbff1f95bb0ae4acc07c9196e32e85e8f40b5"
+    sha256                               arm64_sonoma:  "369e5f8c733457ed38ec2efd545dcc3ebe205c3c847a70dd97cab2f827356eee"
+    sha256                               sonoma:        "7098d87113aedd2175eae8784c592553d190b4d01fd5c9fb056abad24a706ce3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29d05c5606f17ab0aa22d6819b187a7dccbb9c017d2438116b5fc3670e855ecc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de9468972aaafbd3f665c3ef710c1bb03a336bba0f6485ab652bf1154fbda2f8"
   end
 
   depends_on "cmake" => :build

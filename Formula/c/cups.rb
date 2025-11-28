@@ -3,8 +3,8 @@ class Cups < Formula
   homepage "https://github.com/OpenPrinting/cups"
   # This is the author's fork of CUPS. Debian have switched to this fork:
   # https://lists.debian.org/debian-printing/2020/12/msg00006.html
-  url "https://ghfast.top/https://github.com/OpenPrinting/cups/releases/download/v2.4.14/cups-2.4.14-source.tar.gz"
-  sha256 "660288020dd6f79caf799811c4c1a3207a48689899ac2093959d70a3bdcb7699"
+  url "https://ghfast.top/https://github.com/OpenPrinting/cups/releases/download/v2.4.15/cups-2.4.15-source.tar.gz"
+  sha256 "eff0bbd48ff1abcbb8e46e28e85aefaffa391a1d9c4d8dc92ab3822a13008d7f"
   license "Apache-2.0"
   head "https://github.com/OpenPrinting/cups.git", branch: "master"
 
@@ -14,14 +14,12 @@ class Cups < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "82a53180db14fe9e4d21d0a1786c75c5bb065dd60dc6393c7f69a64b024cddb7"
-    sha256 arm64_sequoia: "70ee985cb5ece4650a0ae16a9d692317f169432bf1d69d2bc136d4cc9a5ce8b0"
-    sha256 arm64_sonoma:  "911492a3ff757deb8a13cf83c58405407c814007d54e8d5713ff9332a7873dc7"
-    sha256 arm64_ventura: "e44a25e754a0773c56fa56016b7bee4ae69e09f9d5c14888311aaa89947d8de2"
-    sha256 sonoma:        "7ed7bab4ea5f5205214298ad2b2552b5b34ac633c319a08b6bb9a7a37bce066b"
-    sha256 ventura:       "b73cb43b4abe94d517d0015151eae6a43b86be634b754cdbb81b4e8b617caa85"
-    sha256 arm64_linux:   "42760db0b5250393a5e633f3c3056e30e5179b94217c656bcfe36cf1a1ea053a"
-    sha256 x86_64_linux:  "a648e8c6b2a9b0637ebb075a772614a7f242b7a7ae1cf77e64315000030a1948"
+    sha256 arm64_tahoe:   "6e9c17323bfa92ec1558504bb7866b2c699aacf205af47fe9dbc8021b832ca9c"
+    sha256 arm64_sequoia: "dc17802c832264cef94084c2435a6f8819884a578870aa59b1d864ce2b388817"
+    sha256 arm64_sonoma:  "da2bdc2434b2d4cabdaa7b600224a2023b627e40ec0b547ea39e024fc6e7694f"
+    sha256 sonoma:        "551111e8afdcfb1b9ad6167e28f2c0bd4503ed1cc80ea35542a0e1df62dcdea5"
+    sha256 arm64_linux:   "360f33a3b957dba77dce4ad086857f9b32b4e07cb5024a83c63824caecf90ee5"
+    sha256 x86_64_linux:  "cdab20781d2583c10105197ecdb1bada1a569f1045a4774c324c3e46b0af289c"
   end
 
   keg_only :provided_by_macos

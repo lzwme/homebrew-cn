@@ -1,8 +1,8 @@
 class PythonAT39 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.9.24/Python-3.9.24.tar.xz"
-  sha256 "668391afabd5083faafa4543753d190f82f33ce6ba22d6e9ac728b43644b278a"
+  url "https://www.python.org/ftp/python/3.9.25/Python-3.9.25.tar.xz"
+  sha256 "00e07d7c0f2f0cc002432d1ee84d2a40dae404a99303e3f97701c10966c91834"
   license "Python-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class PythonAT39 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c1740ccd90c69b9c8c767055f18c149c33430231d1b239b76cc295d13522919f"
-    sha256 arm64_sequoia: "f31c21e07521fbb34130f893b83885f2f60229fab8c584d52309f5fc5ab18b84"
-    sha256 arm64_sonoma:  "2fea1247267c392bf9a9a9d7ad7836209852383342b4fb5aefcdbddc2674d3c3"
-    sha256 sonoma:        "536846c88914b36d35009dffa5e8cb28f39d56a5eddc41051fedb406e4a2cb07"
-    sha256 arm64_linux:   "38c4acd925d5fbe917fa10386aadf6f3b6228e34331fa5d388d0610d214c63ea"
-    sha256 x86_64_linux:  "88fbeab5c8a0c9401d47b7150eca96f401f99b92f014756951ca22bd3602c21e"
+    sha256 arm64_tahoe:   "aa558024f07820222f9eb9536205a2f25728c1702cf76b1a16ee52db7536ec6a"
+    sha256 arm64_sequoia: "4c31fe761ed46dafc847808255c353ae4b730c49c8fc7a9bb1dc3803ee088f4f"
+    sha256 arm64_sonoma:  "09c1d93f195ca5a496bc7ee8a46d87d4b1dba4b886f602615060a399f7520bf4"
+    sha256 sonoma:        "8d1b85acfac14384c9ec6ed8bc128b2da8f9250436a611b65660b9e39dfa3bce"
+    sha256 arm64_linux:   "e03890e4d8ed3ecc6e293e81eb0f6321cdf28878ca3509c0b1ee49c4fd7a0f1d"
+    sha256 x86_64_linux:  "4a147ea5bf1c217c2090baee3d6f4ec02d0a9347a2c17526072b67c20eb87cb7"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -58,8 +58,8 @@ class PythonAT39 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/20/16/650289cd3f43d5a2fadfd98c68bd1e1e7f2550a1a5326768cddfbcedb2c5/pip-25.2.tar.gz"
-    sha256 "578283f006390f85bb6282dffb876454593d637f5d1be494b5202ce4877e71f2"
+    url "https://files.pythonhosted.org/packages/fe/6e/74a3f0179a4a73a53d66ce57fdb4de0080a8baa1de0063de206d6167acc2/pip-25.3.tar.gz"
+    sha256 "8d0538dbbd7babbd207f261ed969c65de439f6bc9e5dbd3b3b9a77f25d95f343"
   end
 
   resource "setuptools" do

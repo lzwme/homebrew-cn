@@ -29,9 +29,11 @@ class Csound < Formula
     end
   end
 
+  # Latest version is in beta, e.g. 7.0.0-beta.10
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases
   end
 
   no_autobump! because: :requires_manual_review

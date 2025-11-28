@@ -4,7 +4,7 @@ class Olsrd < Formula
   url "https://ghfast.top/https://github.com/OLSR/olsrd/archive/refs/tags/v0.9.8.tar.gz"
   sha256 "ee9e524224e5d5304dcf61f1dc5485c569da09d382934ff85b233be3e24821a3"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -14,14 +14,12 @@ class Olsrd < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a12891626977104dbb673e6a4f810b7c5d8a91279cbdd793c1e663d566feca02"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0aeb303759d085dad7b581e75104d268df5b320c64abe9030b55a10ab6cfbd6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b708682b004bbec11078438431bcfe45287081bfad38dc5642e3b66b8917d6b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5d0390ab383fd753be5a69c7cf979639928716aecbd30cf7125d226c9aec00cf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b455eae0e98b02d306ac032239b28c361031d79ba60d05739da0cad83c01a60e"
-    sha256 cellar: :any_skip_relocation, ventura:       "abaac5b8b0b1a3a783e76b8d2e68acb4d51c3c6a4086e5bd78d94f598ea28460"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b20249ebcbba2d3ca74f80ec36e6f412cf0bc7e14d80faff72f3e032b7e07f45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33113cc2b9ddad06caa174c9fc98e49b3aa4bbb01ede5b82945d7d9c597be727"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d1b1dd66b69be130d7b2114b401afac090a19e908169401ae0ec784c17690569"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3180890960307db6dc8d4cc7244f2da2772ec65bcba356698b3d6223feb6d6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a3aab48c75a5a1b850c781b5baac23b0b2a5b576b10da49b87734746051d3083"
+    sha256 cellar: :any_skip_relocation, sonoma:        "939cab603b98b8a89d3fc778b9c5dc7c4bebec64f731221a182442225ec6bf71"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "331929ce9da8857820aca9705abadb8681a883346e59031e2f43721d8dac0e70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2a2c0d6260662fcf37251ef13bb25010103ebf8c4fd57f2268ca2640f850313"
   end
 
   uses_from_macos "bison" => :build

@@ -1,8 +1,8 @@
 class Virtctl < Formula
   desc "Allows for using more advanced kubevirt features"
   homepage "https://kubevirt.io/"
-  url "https://ghfast.top/https://github.com/kubevirt/kubevirt/archive/refs/tags/v1.6.3.tar.gz"
-  sha256 "9d41ac421d7af1c25a2b5c370dc597b67e6fc2762ab03ddf4745f71cad5fb4e2"
+  url "https://ghfast.top/https://github.com/kubevirt/kubevirt/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "71bc21163ada3e39c55c19f88c057ad0194e97043441d471f2bfd51782550a2f"
   license "Apache-2.0"
   head "https://github.com/kubevirt/kubevirt.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Virtctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26287256ee3bfb9778a8ded72174001cf19ca7d140d882c8975bff79bae814be"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26287256ee3bfb9778a8ded72174001cf19ca7d140d882c8975bff79bae814be"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26287256ee3bfb9778a8ded72174001cf19ca7d140d882c8975bff79bae814be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "35acd68b3eddb83d1761df25c2a4176c892e5f1034f983f7129f628fe5ed642c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "47eab56252d67e6f252aacac057701f9cd549b13945af346723f38473bb7c35f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56da4cbaaece1dee175625066c9e01a62b655480ea04427a896178436fac121f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2142ce8cc310b1054fc16895251defd48bfc4a9b5ced1159a0163f8e489e7fc5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42573fe8fe2ea4be5276e00a188bd5b71473ddb157904adf13696bf16f7bd963"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6fc68c13ab187a9b86847a60e53d592f796d4f7c2ee340e0f18eca03ff64a5e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2257d8ac380af04a605d66f0c751590ff27bd2ed8de88ba669b76cfa08a2c10b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "45c7ec59a78af5497b158db2b12fc822a9a5e6afa14ff5c0cd282ce8ccd31078"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4a587dbc3ab8ae1678c880b31b71c7891643bc42061d99322bae7750b22cab2"
   end
 
   depends_on "go" => :build

@@ -3,18 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/31/0a/f7891925554c0387b0ae7ee628ee122aad26fc21982cb6e70e8771f2c86c/snakemake-9.13.7.tar.gz"
-  sha256 "c9e64fe5b8b57330680d4acc7ffd4e3d78c053379f940942dd3016281bc05383"
+  url "https://files.pythonhosted.org/packages/a6/1b/c5fa4f4f99f6905b567dce6f212a531fb9a486b45f30aa91022d6ede10ab/snakemake-9.14.0.tar.gz"
+  sha256 "d1126fe73cd182c6810a7981130c197ce8b707122ab3aa30b510eaa69f6dec06"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0d9b35d7907dd98177ef4c80b8ef30de07e74631880ff6f75ad1ca535f5f6f75"
-    sha256 cellar: :any,                 arm64_sequoia: "5e3c6d6dad7f26a70dc8d28f00ed7ba8607ed228ad63348a7744ab3bf3547493"
-    sha256 cellar: :any,                 arm64_sonoma:  "e0a31143227224c30453ad4389f9d7b4bca1c37a8b4697613a85be947cb140b5"
-    sha256 cellar: :any,                 sonoma:        "b6d309a2227d6999dfc9eb7eeb442104a787ab93d4dfa63df6a55e978b40e0da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da9af99ed17a6fd56afd928290e4e59711a8bc85ebda1e61ba533f855990d027"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9f527c41ba23b9b1301366222920130f5b089a999e5338c1d66d548edeb76eb"
+    sha256 cellar: :any,                 arm64_tahoe:   "b1bb2dfd3829a6af43b192d4ab838bfffd1cadb77f31085765da2e025c22b51a"
+    sha256 cellar: :any,                 arm64_sequoia: "65c9bef3c84b27cbad99387357df07cd3786cfbf421bac4384d6a4341c0fe2e2"
+    sha256 cellar: :any,                 arm64_sonoma:  "b174f29692efe85ce530afccb835ba808db6b4344d2eb5b485239c3e1c2e79c9"
+    sha256 cellar: :any,                 sonoma:        "a45753127dcab121904a7327ccbc3233423cf0c55062af8b1a092633a160fd15"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c937f399f535bb3d41546c32da431bfa57eb04f842cc81d5a2bb787a6b622ca0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7dd9204a2ab6f7c791c3f21969f35418c983abfe5f777ffa5f885a64a837f593"
   end
 
   depends_on "rust" => :build # for appdirs
@@ -172,8 +172,8 @@ class Snakemake < Formula
   end
 
   resource "smart-open" do
-    url "https://files.pythonhosted.org/packages/e3/f7/490afdfad6351586409a192da7e1aab90f8cc02e51080dc79f54d784a4e3/smart_open-7.4.4.tar.gz"
-    sha256 "2c264f43c55c2fcdea37b1752dcd06bb152afd514490a0aee5d21db0424b0669"
+    url "https://files.pythonhosted.org/packages/67/9a/0a7acb748b86e2922982366d780ca4b16c33f7246fa5860d26005c97e4f3/smart_open-7.5.0.tar.gz"
+    sha256 "f394b143851d8091011832ac8113ea4aba6b92e6c35f6e677ddaaccb169d7cb9"
   end
 
   resource "smmap" do
@@ -237,8 +237,8 @@ class Snakemake < Formula
   end
 
   resource "yte" do
-    url "https://files.pythonhosted.org/packages/d2/ac/eb7ef47a0d307737812f9d8734d288a429849d430049049370814ab814d9/yte-1.9.0.tar.gz"
-    sha256 "d259548aa46c5d5ff318f3ecb1732918d1ac3c6708798767ce3823192ce1ba21"
+    url "https://files.pythonhosted.org/packages/44/f5/7e44620e6e077bfe624b9a17c329b8e0d0159e176e1f1a93c2790428ab2c/yte-1.9.4.tar.gz"
+    sha256 "86a47e6d722cec9419a7ac88be57d0d6c4ce28f02860393b71a66f2c674069f6"
   end
 
   def install

@@ -1,8 +1,8 @@
 class TmuxinatorCompletion < Formula
   desc "Shell completion for Tmuxinator"
   homepage "https://github.com/tmuxinator/tmuxinator"
-  url "https://ghfast.top/https://github.com/tmuxinator/tmuxinator/archive/refs/tags/v3.3.5.tar.gz"
-  sha256 "56dc5ca39d11bad38f7fb602ce412a0f564dc0757765ad105a2cccbe84fcd2ca"
+  url "https://ghfast.top/https://github.com/tmuxinator/tmuxinator/archive/refs/tags/v3.3.6.tar.gz"
+  sha256 "ea1b9a18f45ed26fdb51fd6edd2aada341f338b2df34868746d73c7e7a7b7dff"
   license "MIT"
   head "https://github.com/tmuxinator/tmuxinator.git", branch: "master"
 
@@ -11,7 +11,7 @@ class TmuxinatorCompletion < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4aee484d9040bd3897506e285aa83a34c016815f4930337aa5294cdae2ac4271"
+    sha256 cellar: :any_skip_relocation, all: "c74caf72fd7d5e957a64f06c5dcc87957a41f74a45a74c1d34965e51c38ae0c9"
   end
 
   def install

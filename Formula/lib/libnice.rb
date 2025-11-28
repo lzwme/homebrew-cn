@@ -1,27 +1,18 @@
 class Libnice < Formula
   desc "GLib ICE implementation"
   homepage "https://wiki.freedesktop.org/nice/"
-  url "https://libnice.freedesktop.org/releases/libnice-0.1.22.tar.gz"
-  sha256 "a5f724cf09eae50c41a7517141d89da4a61ec9eaca32da4a0073faed5417ad7e"
+  url "https://libnice.freedesktop.org/releases/libnice-0.1.23.tar.gz"
+  sha256 "618fc4e8de393b719b1641c1d8eec01826d4d39d15ade92679d221c7f5e4e70d"
   license any_of: ["LGPL-2.1-only", "MPL-1.1"]
-
-  livecheck do
-    url "https://github.com/libnice/libnice.git"
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
-  no_autobump! because: :requires_manual_review
+  head "https://github.com/libnice/libnice.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "faca07a9296d6048723e5e3c1d71ed6ae5e8f9f3ff49a1ab8aa05b2135bf6820"
-    sha256 cellar: :any, arm64_sequoia: "e1f4f8532d745a6555e861c342f56ec7a0d0b827f13b4e80c4d6218857b3ae2f"
-    sha256 cellar: :any, arm64_sonoma:  "9582197a0a9f71c2e6751c739c24027e55294303a1ca878091a751513898417d"
-    sha256 cellar: :any, arm64_ventura: "14745e9ade6980ce27101f8be9ea209180aabd691628f908acac939e8249a3e2"
-    sha256 cellar: :any, sonoma:        "bfa1f6813b1bc1fe0be25937d85b2eeff7288b8f93b1c5e70c3a1e72562febfb"
-    sha256 cellar: :any, ventura:       "e50b4f94bf2ec4bf8248bf41a32ea1af1fdc512037b1d6d7919cbbf14048d00b"
-    sha256               arm64_linux:   "b7ea837e5b54eaf09849dd773a4af189817ec6ffda519323f300899151f05a77"
-    sha256               x86_64_linux:  "6805ee9bd44ec5f3573d1fc688d2beac5971904de5996c1239d406de74a37965"
+    sha256 cellar: :any, arm64_tahoe:   "aff56c13ea1c1b8a67106c35abd4b1e8cfb0c25a050b19a709e9b7dda05a21a6"
+    sha256 cellar: :any, arm64_sequoia: "2ce7f4b3513f8f0bc5a574657291093a61958176efa4347c096ddbfb6adae60f"
+    sha256 cellar: :any, arm64_sonoma:  "eb5403dd6e4c63f698edc26dbf454915f3b71c5a9e66e214c91aa3511dd28936"
+    sha256 cellar: :any, sonoma:        "125053ae9a07a8ab04b8bc523c97249ccd92e4ff2f48b244bb0d7a42ecd4d694"
+    sha256               arm64_linux:   "3c95ab94575eafa055c04796fc29518f6d57bc7f2db24a672c7a6a449698641b"
+    sha256               x86_64_linux:  "fa1c1187e54ab5e09063d9cb5e92575c30e8f7d8826d8c2c2ecf96357cd6ca7c"
   end
 
   depends_on "meson" => :build

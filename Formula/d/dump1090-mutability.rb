@@ -7,6 +7,11 @@ class Dump1090Mutability < Formula
   license "GPL-2.0-or-later"
   revision 3
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?dump1090-mutability[._-]v?(\d+(?:\.\d+)+(?:~\d{8})?(?:\.\h+)?(?:\+\w+)?)\.orig\.t/i)
+  end
+
   no_autobump! because: :requires_manual_review
 
   bottle do

@@ -1,8 +1,8 @@
 class Elixir < Formula
   desc "Functional metaprogramming aware language built on Erlang VM"
   homepage "https://elixir-lang.org/"
-  url "https://ghfast.top/https://github.com/elixir-lang/elixir/archive/refs/tags/v1.19.3.tar.gz"
-  sha256 "a76299ec8d14b43a84a03b3b700b9f912a64912f03ced8e024ae267b7e40c26d"
+  url "https://ghfast.top/https://github.com/elixir-lang/elixir/archive/refs/tags/v1.19.4.tar.gz"
+  sha256 "a2df9d5411fc53d97ec17c069765c8fb781f8dc36c4e06ec1cd4b189340d364b"
   license "Apache-2.0"
   head "https://github.com/elixir-lang/elixir.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Elixir < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3464b716cd37d4b36528dc86bdd94dd4e5e3eb1fc886e0fc8ea99b0d9ec86852"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6129c5133c329abc684bdcec9862a5b7c496cf5ff7b36d357602a11838488424"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9226c676af5753fae38d17b56573ffd997a78ba4e794fd0fbbf280b2a89f0e5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "639b97d2eb058d76fd9153363f3691174ccd3b48b6445974a22f9722db2aa953"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e123980d8b05b47333925dd25b93eb5e49b74ce0c09006fc68bea204abed851"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c57c7aba0e19db25c779de6df953fa91c195e4e806079e6694f89182c0ef0ea0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "080a1b66922ff7564dddb9bddd0a9d0832468aca7a6e9118ece4e85008ce9add"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c46a16fb5d97ccb4fe2255df8e69a57bc44087402c860fb12c3a3e4c7db3d0a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2aa3a3de98c03b61f63fa8cb6466a54d588e6a67637d90c6c1964d6ea393646"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6614f4794a58c92218754ecafdaaf122db27435d0c0c4e97e4768575cc435810"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbceaec07c6006c9b79d3bf66c4bb3d49adc840400c35a633c64af5700cf3ea9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e11e1d24b4b5c47af5e74115591923c75c2617b534b13f0be87ea809877ce33"
   end
 
   depends_on "erlang"

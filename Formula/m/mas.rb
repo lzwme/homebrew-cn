@@ -2,8 +2,8 @@ class Mas < Formula
   desc "Mac App Store command-line interface"
   homepage "https://github.com/mas-cli/mas"
   url "https://github.com/mas-cli/mas.git",
-      tag:      "v3.1.0",
-      revision: "d51db64fad628ce45599bede5d8319407f193d81"
+      tag:      "v4.0.0",
+      revision: "21205c013fa941e89463e1d8e553d6e4e3eb8b3f"
   license "MIT"
   head "https://github.com/mas-cli/mas.git", branch: "main"
 
@@ -15,10 +15,10 @@ class Mas < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dfcf5d0b9331ab6e44e67a3dde0311a51fccaf0027ac1c096e8a3a23e3890622"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa364d0a297d4320ff5e7bd502819bdddddc442023218a4f20529d9e60e21cbf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de5ec30964de418df057cfa4b49210531db5b0e44c3d687ce3491b7a5e090c37"
-    sha256 cellar: :any_skip_relocation, sonoma:        "778ddc524eee626da7efbf8fabfc0ae6836645b67059939a725765f2a8a1a434"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "acf4efa41ce9fc523c1abe24298b2194ce633b9790bc89210b5c81e7dfb11cc6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44b12eaa7725b628e9d14ef0d03df4a5580225d14da86c623159ff539a0d6cb1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aede8a124427ccbe1103b89de25c62c2409272e874eb6f9bb6def619c3bd37c8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b9005575e04c459782434b97e9183b090cbf0da2a494d5a5d2a6704b0c3493d1"
   end
 
   depends_on xcode: ["15.0", :build]
@@ -27,7 +27,9 @@ class Mas < Formula
   def install
     ENV["MAS_DIRTY_INDICATOR"] = ""
     system "Scripts/build", "homebrew/core/mas", "--disable-sandbox", "-c", "release"
-    bin.install ".build/release/mas"
+    (libexec/"bin").install "Scripts/mas"
+    (libexec/"bin").install ".build/release/mas" => "mas-bin"
+    bin.install_symlink "#{libexec}/bin/mas"
     system "swift", "package", "--disable-sandbox", "generate-manual"
     man1.install ".build/plugins/GenerateManual/outputs/mas/mas.1"
     bash_completion.install "contrib/completion/mas-completion.bash" => "mas"

@@ -334,6 +334,7 @@ Homebrew-homebrew-core/Formula/a/aurora.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/austin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/authoscope.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/authz0.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/auto-editor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/autobench.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/autobrr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/autocannon.rb, Homebrew/homebrew-core, 0
@@ -2462,6 +2463,7 @@ Homebrew-homebrew-core/Formula/g/gitlab-runner.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gitleaks.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitless.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gitlint.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gitlogue.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitmoji.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gitmux.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitnr.rb, Homebrew/homebrew-core, 1
@@ -7133,6 +7135,7 @@ Homebrew-homebrew-core/Formula/t/thefuck.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/theharvester.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/theora.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/thors-mongo.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/thorvg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/thrax.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/threadweaver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/threatcl.rb, Homebrew/homebrew-core, 1

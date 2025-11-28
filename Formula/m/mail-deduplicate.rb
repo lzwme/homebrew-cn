@@ -3,13 +3,13 @@ class MailDeduplicate < Formula
 
   desc "CLI to deduplicate mails from mail boxes"
   homepage "https://kdeldycke.github.io/mail-deduplicate/"
-  url "https://files.pythonhosted.org/packages/a1/e1/2e54daf7750bf86205cbb9ddde0e7ba33617949d256ecc44cac6e28e156f/mail_deduplicate-8.0.0.tar.gz"
-  sha256 "d58e019571be73a08015c4bf404b0a52fdc5fd85765726808343dba5963241d7"
+  url "https://files.pythonhosted.org/packages/8a/73/290d310242d7c36c4933308d3be6ab7dc8080ae9c4498a6f88032d5d4817/mail_deduplicate-8.1.0.tar.gz"
+  sha256 "8d9b42b066a929cc82203e69ad0f87dbdae4fb192d9aeed8b7f7fbf3cd01f21c"
   license "GPL-2.0-or-later"
   head "https://github.com/kdeldycke/mail-deduplicate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c9c3f476fca7d42f97da1b23ffa292b93dc779c6f97928b11bdf99479ede827d"
+    sha256 cellar: :any_skip_relocation, all: "740efded162e4b684baf9fc2ff461c999323bd5c9dedc1b1af55b9bed554e90a"
   end
 
   depends_on "certifi" => :no_linkage
@@ -44,8 +44,8 @@ class MailDeduplicate < Formula
   end
 
   resource "click-extra" do
-    url "https://files.pythonhosted.org/packages/58/ba/bc8d94417e8d8fa77376ab285d4a7273b3517bfbd2fb319ae0c17f097c03/click_extra-7.1.0.tar.gz"
-    sha256 "8ff1c921caed8c560f407b6fe6a5b0e002911e67434c8b4d5bc658123cd9a0c2"
+    url "https://files.pythonhosted.org/packages/f8/25/7a7960dbc39def433dd598208d024509eaea24f86cff6cf94fc5694a4eec/click_extra-7.2.0.tar.gz"
+    sha256 "4adcb50c8979eae90b404ae1a35881251135ff9960976a4363446750f94f8dbb"
   end
 
   resource "cloup" do

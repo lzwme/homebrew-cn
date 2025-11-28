@@ -11,8 +11,8 @@ class CaCertificates < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "c414336ff5220d77124debb496c8d86ffa1bbc5946309ee2d9d26645db300b96"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "5fbe3422f18518d9e539c97b73a241bb1588b553927507de29fc723db7c7cec5"
   end
 
   def install
@@ -147,8 +147,14 @@ class CaCertificates < Formula
     rm(pkgetc/"cert.pem", force: true)
     pkgetc.mkpath
 
-    system_ca_certificates = Pathname.new("/etc/ssl/certs/ca-certificates.crt")
-    return if !system_ca_certificates.exist? || !system_ca_certificates.readable?
+    ca_certificate_paths = [
+      "/etc/ssl/certs/ca-certificates.crt", # Debian/Ubuntu, Alpine Linux, Arch Linux
+      "/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem", # RHEL/CentOS/Fedora, Amazon Linux
+      "/etc/ssl/ca-bundle.pem", # SUSE/openSUSE
+    ]
+    system_ca_certificates = ca_certificate_paths.map { |p| Pathname.new(p) }
+                                                 .find { |pn| pn.file? && pn.readable? }
+    return unless system_ca_certificates
 
     # Integrate system certificates if OpenSSL is available
     unless which("openssl")
@@ -171,7 +177,7 @@ class CaCertificates < Formula
     load_certificates_from_file(pkgshare/"cacert.pem", trusted_certificates, fingerprints, "Mozilla")
 
     (pkgetc/"cert.pem").atomic_write(trusted_certificates.join("\n") << "\n")
-    ohai "CA certificates have been bootstrapped from the system CA store."
+    ohai "CA certificates have been bootstrapped from the system CA store at #{system_ca_certificates}"
   ensure
     # Ensure a PEM file always exists, even if the method exits early or fails
     cp pkgshare/"cacert.pem", pkgetc/"cert.pem" unless (pkgetc/"cert.pem").exist?
@@ -187,10 +193,12 @@ class CaCertificates < Formula
     on_linux do
       <<~EOS
         CA certificates have been bootstrapped from both the Mozilla CA store and the system CA store at
+        one of the following locations, depending on your distro:
 
-          /etc/ssl/certs/ca-certificates.crt
+          /etc/ssl/certs/ca-certificates.crt                 # Debian/Ubuntu, Alpine Linux, Arch Linux
+          /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem  # RHEL/CentOS/Fedora, Amazon Linux
+          /etc/ssl/ca-bundle.pem                             # SUSE/openSUSE
 
-        if this path exists and is readable.
       EOS
     end
   end

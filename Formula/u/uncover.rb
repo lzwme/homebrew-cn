@@ -1,25 +1,25 @@
 class Uncover < Formula
   desc "Tool to discover exposed hosts on the internet using multiple search engines"
   homepage "https://github.com/projectdiscovery/uncover"
-  url "https://ghfast.top/https://github.com/projectdiscovery/uncover/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "63858b248a5e5729d2887a080359335bbf435965bc8c75acb26b377ff5db98ce"
+  url "https://ghfast.top/https://github.com/projectdiscovery/uncover/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "367e569a7b1d1be00b5b6b36b9e9853287828bedb0673d255d314e9d54c24a00"
   license "MIT"
   head "https://github.com/projectdiscovery/uncover.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "43dc0f9c9e7d15bc4017bdff2aadb8a32306c0548e65916ac1a0f4ee3f9d4e6c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e53b9641ef3ca32670c2beef2889926f5dc3c1a24a2459b80c9bda3383a4f280"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a544836a98e20fecf8aa7668c32794faf19c83ad2470479458e18b2e48e2873"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e642d0ab1505914cf21378ae8c161c7469ffbf4532432661a8675e6765d0b4a0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dfcfae2e612eb6f1ff71ef0b884b733b8df6ede3e153966c53bc94cf68f075fc"
-    sha256 cellar: :any_skip_relocation, ventura:       "409b4f658ad90217918b7313aca3d9872695102447893881f155c06b7328543e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6290343a4862c09a796e82f599d44cca0adf7e0fc0f4a7f7aaab2c69daf6bcae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "066f5b2749c79734de3ec2d3f913f03230c331866ee199cae9557e26cbcab221"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea9ea0ffed86c7e1f3bd9a2215f31a999e1b616c54e78da163b0dba5f8a765a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e4e7345d608181e9a46be28d8bd1806b0b1bd2be76db6ecac24faad56b55c91"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50344b743a7fd9671ec288d67b57e255a10a2fa4f66ed7237891e85373c05526"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fbbda4fa9e7915c6d328108ae8b4aef5425edac92fa70fd625e462451216c65d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "75a201de1cc4cd972b6c514697b6af509e05d814754c1aedaea3a79a4a983cec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "096d2093ff8fd12661e40f4ed15b79330762f1864dcd170e2a0d1cf319ee0cbd"
   end
 
   depends_on "go" => :build
 
   def install
+    # upstream pr ref, https://github.com/projectdiscovery/uncover/pull/707
+    inreplace "runner/banners.go", "1.1.0", version.to_s if build.stable?
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/uncover"
   end
 

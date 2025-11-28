@@ -1,8 +1,8 @@
 class PythonTkAT39 < Formula
   desc "Python interface to Tcl/Tk"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.9.24/Python-3.9.24.tar.xz"
-  sha256 "668391afabd5083faafa4543753d190f82f33ce6ba22d6e9ac728b43644b278a"
+  url "https://www.python.org/ftp/python/3.9.25/Python-3.9.25.tar.xz"
+  sha256 "00e07d7c0f2f0cc002432d1ee84d2a40dae404a99303e3f97701c10966c91834"
   license "Python-2.0"
 
   livecheck do
@@ -12,12 +12,12 @@ class PythonTkAT39 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "787a3760917a3f6ac64e8294c42a5ffbc997a19b7b8ab78c2d798b5e4a8bcce9"
-    sha256 cellar: :any,                 arm64_sequoia: "6132ef0a8f4712fe8d4f1a5524d72d4a826e64df8a357c9976a544dcfd256dde"
-    sha256 cellar: :any,                 arm64_sonoma:  "9bc5ce6643d44c6a5cfbf00dbfc09e490e4061fdd0a2a27e87a21870e710cca5"
-    sha256 cellar: :any,                 sonoma:        "68a3ee0b1fb5bb1199b050231c7e5f4873d83854c9285f4ff02a01536d3a6595"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "584c2f7e4a9a4e6723ab14659c4fdfd40913e2394b8e744af2bbe180cb868e2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75d144c971b8266750f99b1afbe9cb486d45be5d141f9ab15c9ce5af35e0bb13"
+    sha256 cellar: :any,                 arm64_tahoe:   "605652d4b416da946391152dfff95e132051024b39f5bf92874d1c4e7df1bb16"
+    sha256 cellar: :any,                 arm64_sequoia: "15e8153bd95f1440bb888f1e7e944558edde77901a1b0057bdf4ab5645080b1d"
+    sha256 cellar: :any,                 arm64_sonoma:  "4675b5a8cf5c110f06ee19c2afa43df40930a1ce25f8785c7b003ba538ce7cce"
+    sha256 cellar: :any,                 sonoma:        "6a713e912309d33e7155769d2c9a5bf900182b6b9403696b11646fc49cbefb15"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "768e2164044eccdbbb7b436a3f94b9adee9f100311c0994827b6a7cc5afaffcc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4035a740833fc798719765d1124ceca0c5d5652091befb81f6de94d91d9b34d0"
   end
 
   # Follow up to python@3.9 deprecation

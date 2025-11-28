@@ -3,8 +3,8 @@ class Torrra < Formula
 
   desc "Find and download torrents without leaving your CLI"
   homepage "https://torrra.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/00/1f/f1fbcef0ea2ad05285b83cc693de09d7817a0c7901c0a8dfe0dda11b5ef8/torrra-2.0.0.tar.gz"
-  sha256 "bfce841ae1264aba1c1585fa437e9e7b73b7e22474d3e78746664728a3584f3b"
+  url "https://files.pythonhosted.org/packages/63/cb/f181e4913bb628f7b5f63e306b8c9cf88c382011a7c1666137acf87831b1/torrra-2.0.2.tar.gz"
+  sha256 "0c100e2ce7eba7deec6339e0ab47defdb27899cab086cc58d44febeff37e7e8e"
   license "MIT"
   head "https://github.com/stabldev/torrra.git", branch: "main"
 
@@ -14,7 +14,7 @@ class Torrra < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9eadf92c0a36de71d122eaf19abfd1da17515083c32fc529b4c8ebb583339700"
+    sha256 cellar: :any_skip_relocation, all: "4c144be92ebacbab4322c9a30ea2052239dd46d743a46910667b158b71792c31"
   end
 
   depends_on "rust" => :build # for uv-build backend

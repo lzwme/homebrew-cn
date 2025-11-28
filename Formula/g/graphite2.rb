@@ -9,13 +9,13 @@ class Graphite2 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "564c88f3eb3606791d553c4720230f2f67d82e62b9bd5628914eeaa00dc179f9"
-    sha256 cellar: :any,                 arm64_sequoia: "931ebffc79a1e2cd5b0f4a1493a4c40773306933bef6f192987435f2684c77e4"
-    sha256 cellar: :any,                 arm64_sonoma:  "88ef9a96fb0815b194c1cc19ea094665ec594d54733fca8ed99fd2ba11a403d5"
-    sha256 cellar: :any,                 sonoma:        "3871c6bd9b5511974b9e95269cbfe2f58fdd01c85f541707a1863234e983da01"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d886ee59d22f32728467a62b8e58532444025db855f4c34aec7a0ef246787ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2fbd85d102a20b10da386b5f00a533ba225726e4a8a53fcbd6664b6f535725b"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "a5645201ace59a1ee7c24d075adf37ae1965018b41221062e8088b191763334d"
+    sha256 cellar: :any,                 arm64_sequoia: "a805dafe03fc697a0d2157a92d110be687f7136d360a483ca43c8f81cdfe4852"
+    sha256 cellar: :any,                 arm64_sonoma:  "1a57783f066cfb70115517438457ded104ecbb2d908586c58ebe0d6cd6117995"
+    sha256 cellar: :any,                 sonoma:        "1c40aed095158f418a818939a8398afab628147ec2bad529868d3f6fd1990f23"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "acc9b3af3f19b1246163a990bf74bec6b88f44f5c511ac70f0d73d6103b012ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cdf99ed424bacc35f62e84ff807fef46263a543be38c479a7f4a6bd180ab705"
   end
 
   depends_on "cmake" => :build
@@ -44,6 +44,8 @@ class Graphite2 < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    inreplace lib/"pkgconfig/graphite2.pc", prefix.realpath, opt_prefix
   end
 
   test do

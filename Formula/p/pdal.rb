@@ -1,10 +1,9 @@
 class Pdal < Formula
   desc "Point data abstraction library"
-  homepage "https://www.pdal.io/"
-  url "https://ghfast.top/https://github.com/PDAL/PDAL/releases/download/2.9.2/PDAL-2.9.2-src.tar.bz2"
-  sha256 "a74bbc7f4e4f709ed589dbbb851926a63c391c974e3fc40a4c3ff34f7923021b"
+  homepage "https://pdal.org/"
+  url "https://ghfast.top/https://github.com/PDAL/PDAL/releases/download/2.9.3/PDAL-2.9.3-src.tar.bz2"
+  sha256 "22e90c8b9653e2bd0eb24efbe071b6c281e972145b47c0ccfdc329d73c188d9c"
   license "BSD-3-Clause"
-  revision 4
   head "https://github.com/PDAL/PDAL.git", branch: "master"
 
   livecheck do
@@ -13,12 +12,12 @@ class Pdal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "98585021c9f28998c8f4b02acd0afaa95333a511202f354f274926a2302877ad"
-    sha256 cellar: :any,                 arm64_sequoia: "0dbb4e6defdfa477c47ae908bc91c74a92d642099becec3ffffc1dcf39e79695"
-    sha256 cellar: :any,                 arm64_sonoma:  "af547fbe07505536962385a3cc3cd7ed6f70a076f955ce84623b6b9e4b57e68f"
-    sha256 cellar: :any,                 sonoma:        "a568c83c7018724799519460f5875d1f5e55514ba22bc9418cf32198f409d064"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1b5aa61874acac22d42f16cd83f52605fd79daab8a091cd96439e0640f71972"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9498a5989a17a565b0fe4c4f364434b47aaff4bd16e8d030ecacb623a456560e"
+    sha256 cellar: :any,                 arm64_tahoe:   "dd8edfaf04fd85708b5ddbeaed8f6be17d0c6f9bc2b6bbca926405774726a437"
+    sha256 cellar: :any,                 arm64_sequoia: "03b48179fe5a241f4eb6f7d4380809ab7c329e9532d8c4864ed45c7c754eef99"
+    sha256 cellar: :any,                 arm64_sonoma:  "abf1b0bbb6bb3ff74c39e993ba87172b5f41d4398e0eb3681402803c9f8b3aa1"
+    sha256 cellar: :any,                 sonoma:        "7123cbaa670ff74c93a7409e9f118c8b85bc2a4d054e6a1cb18725bf8018cca3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8c4761cfb2b0673c61d8c8b8b56474c8b4c8d9a2bd00bcc4d0813c80c2f033f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "897b979fa14e65d3aa71e417ddf8cc21211676e5aba4ac834738aa9cc8c037ac"
   end
 
   depends_on "cmake" => :build

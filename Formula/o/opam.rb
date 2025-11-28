@@ -1,10 +1,9 @@
 class Opam < Formula
   desc "OCaml package manager"
   homepage "https://opam.ocaml.org"
-  url "https://ghfast.top/https://github.com/ocaml/opam/releases/download/2.4.1/opam-full-2.4.1.tar.gz"
-  sha256 "c4d053029793c714e4e7340b1157428c0f90783585fb17f35158247a640467d9"
+  url "https://ghfast.top/https://github.com/ocaml/opam/releases/download/2.5.0/opam-full-2.5.0.tar.gz"
+  sha256 "25fb98f962c4227c1261e142afc68a416778e6e819600bd5ee3ec4a18ae1e238"
   license "LGPL-2.1-only"
-  revision 1
   head "https://github.com/ocaml/opam.git", branch: "master"
 
   # Upstream sometimes publishes tarballs with a version suffix (e.g. 2.2.0-2)
@@ -23,15 +22,12 @@ class Opam < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "363a8906100e191e775f1b199cfcbd455b233a5a8de4ab615621d65c97a516cf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df4e2cce2592afe76caa3c865e42dbebd2822c99c5260e35fe1b64b1656cb754"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "389c2cf95ce32cf161fa1f153be19b3cd39b9fbe8772ad0ef32c06e7c1cfaab7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a0ac573a729732ded9d5b5a639e0196492e85c0b9b3557a0a877dd8ed0e5d7e8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1d9e0142f44bd6417f011c05151188dc108f518f44f7ec232ea6de0a45dddd81"
-    sha256 cellar: :any_skip_relocation, ventura:       "78222428cbf1e079456bce1f45004de794ca637247b634a44562768005e8450e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbdad97c898c128202b6e69ae2fa891538fc251f25ac26936d8d64e08b311bec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c1137fc30211adcb4f32b57524619adf67c49b85bea082fe31930e83ac2176f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "49fa1631fb9dc7f680166f185f095d1eeedd84f30c34a363b9a57a86b286ab91"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a499ecffcda3cbd6264b6d110e54d632544fae0d80ef106d81e9328ca0bbc9be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13e3540dd831e33ecb61be42da177cd9a7cd815f2e2fe90cf3ddbd38dfaf2dfb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aebc9646975f09d68083d69eddf58221fa8e0bb221958b67fecbb6b9ce95e8fb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "71866a75c2a3f2c6f87927e7d74b059d8f49d792a03968364583df919adec39d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fc029045abb424f08f33f54b9bf6a48e6ffad9bce02f05c4e3e93a5093146b4"
   end
 
   depends_on "ocaml" => [:build, :test]
