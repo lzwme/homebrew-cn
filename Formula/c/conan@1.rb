@@ -8,11 +8,6 @@ class ConanAT1 < Formula
   license "MIT"
   revision 3
 
-  livecheck do
-    url "https://github.com/conan-io/conan.git"
-    regex(/^v?(1(?:\.\d+)+)$/i)
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "347415104db865374e09109080fa117d919130b502de713bc9062501e4ff8564"
     sha256 cellar: :any,                 arm64_sequoia: "7dcfb73f071f82c9a5a5a2c081b54030c8c7aa87f11293897d499400972a9b78"

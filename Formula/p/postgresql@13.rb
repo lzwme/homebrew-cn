@@ -1,23 +1,17 @@
 class PostgresqlAT13 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v13.22/postgresql-13.22.tar.bz2"
-  sha256 "d36d83dc89e625502cf6fb1d0529642ba1266bd614b4e4a41cefd1dddcf09080"
+  url "https://ftp.postgresql.org/pub/source/v13.23/postgresql-13.23.tar.bz2"
+  sha256 "6ec3c82726af92b7dec873fa1cdf881eca92a4219787dfad05acb6b10e041fd6"
   license "PostgreSQL"
-  revision 2
-
-  livecheck do
-    url "https://ftp.postgresql.org/pub/source/"
-    regex(%r{href=["']?v?(13(?:\.\d+)+)/?["' >]}i)
-  end
 
   bottle do
-    sha256 arm64_tahoe:   "2c454420afe5f7f053a6d8c449f769440c85466faec54a9859718305820c83cc"
-    sha256 arm64_sequoia: "d2e2ed9f5b47b1e83a17040a7c31f58cd1d37c6b3e178dd0c4b85a8498591e29"
-    sha256 arm64_sonoma:  "07c42b509cd10931fd5fdd416045e161f000ca6d5900f5b6db70483b73dd06ca"
-    sha256 sonoma:        "535575a3dcbb2317702da1226c64ba93c4db0f2f28e316faa48a8b1789839c51"
-    sha256 arm64_linux:   "8b169a5d335bfc1b13b7c691577ef5941c04187afeaa51b31fb2859fa451fb9e"
-    sha256 x86_64_linux:  "a2bd986b991a150c37016f4dd9ed7cc0de871b8f900c3da5e28ed55bfba54429"
+    sha256 arm64_tahoe:   "a164abe87a5feaf5499e942d14c8412f922b5887fa6a98e4d362e51d0d26a348"
+    sha256 arm64_sequoia: "728cf49c02c7764b2fb9e444c627806cae1dcbd155edef25645f03f455f36b32"
+    sha256 arm64_sonoma:  "1e5c8492c74ca97a02f88326e77913fce9a4801ff7c76d9e8569daca0353ea96"
+    sha256 sonoma:        "5d05cd9a57f5754507ed091634ae35aee997d977c32e9d6f78057277fd4c25c2"
+    sha256 arm64_linux:   "2656270dc4f6fb71addd4816ac396e09f6c7b3c66e5f93ec3da46972e1487066"
+    sha256 x86_64_linux:  "ae85182e2bd663d43d2637a9391d924c0d48c0e05742aecad4b2ebd1eac4f9ac"
   end
 
   keg_only :versioned_formula

@@ -5,11 +5,6 @@ class GradleAT7 < Formula
   sha256 "6ed4d467349e2d3f555a578829c4aeadd67d73e2ec5d213c2a62f8f2829d9fa9"
   license "Apache-2.0"
 
-  livecheck do
-    url "https://gradle.org/releases/"
-    regex(/href=.*?gradle[._-]v?(7(?:\.\d+)+)-all\.(?:zip|t)/i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, all: "d65eb2a55c0be7b144b661bea1d9f3df08d67eb0aa7a033c3088a58272b7b2db"
   end
@@ -19,6 +14,7 @@ class GradleAT7 < Formula
   # EOL with Gradle 9 release on 2025-07-31.
   # https://docs.gradle.org/current/userguide/feature_lifecycle.html#eol_support
   deprecate! date: "2025-07-31", because: :unmaintained
+  disable! date: "2026-07-31", because: :unmaintained
 
   # TODO: Check if support for running on Java 20 is backported to Gradle 7.x.
   depends_on "openjdk@17"

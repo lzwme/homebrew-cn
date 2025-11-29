@@ -7,11 +7,6 @@ class ErlangAT25 < Formula
   license "Apache-2.0"
   revision 1
 
-  livecheck do
-    url :stable
-    regex(/^OTP[._-]v?(25(?:\.\d+)+)$/i)
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "33f70df37d2196f26aeac6cfbb090d8d9aee8007ab809e72aad4d41755ce5474"
     sha256 cellar: :any,                 arm64_sonoma:  "586d85e4927c178beecf49b78dcd9f27ab1624a0d7220195df1c0eaba6ca84ee"

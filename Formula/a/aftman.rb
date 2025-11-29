@@ -6,11 +6,6 @@ class Aftman < Formula
   license "MIT"
   head "https://github.com/LPGhatguy/aftman.git", branch: "main"
 
-  livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "e2b825b23c892fdf2a0067b011ccbfd4157006d27a5d5c115499331c0345c7a9"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "57feb860410d508174e62f9f07d467da9ca62c88b35005ea5ebcbed2ed87a71f"
@@ -24,7 +19,9 @@ class Aftman < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e8943e04ce29ca295996d3acacb141d87504a59374aa2da2e7e15a453bbe5a9"
   end
 
-  deprecate! date: "2025-07-19", because: :repo_archived
+  # https://github.com/LPGhatguy/aftman?tab=readme-ov-file#%EF%B8%8F-aftman-is-no-longer-maintained-%EF%B8%8F
+  deprecate! date: "2025-07-19", because: :repo_archived, replacement_formula: "mise"
+  disable! date: "2026-07-19", because: :repo_archived, replacement_formula: "mise"
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build

@@ -5,10 +5,6 @@ class PythonTkAT39 < Formula
   sha256 "00e07d7c0f2f0cc002432d1ee84d2a40dae404a99303e3f97701c10966c91834"
   license "Python-2.0"
 
-  livecheck do
-    formula "python@3.9"
-  end
-
   no_autobump! because: :requires_manual_review
 
   bottle do

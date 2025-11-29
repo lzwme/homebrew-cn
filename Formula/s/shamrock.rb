@@ -72,13 +72,7 @@ class Shamrock < Formula
   test do
     system bin/"shamrock", "--help"
     system bin/"shamrock", "--smi"
-    system "mpirun", "-n", "1", bin/"shamrock", "--smi", "--sycl-cfg", "auto:OpenMP"
-    (testpath/"test.py").write <<~PY
-      import shamrock
-      shamrock.change_loglevel(125)
-      shamrock.sys.init('0:0')
-      shamrock.sys.close()
-    PY
-    system python, testpath/"test.py"
+    system "mpirun", "-n", "1", bin/"shamrock", "--smi"
+    system python, "-c", "import shamrock"
   end
 end

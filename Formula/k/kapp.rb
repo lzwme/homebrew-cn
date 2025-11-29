@@ -1,8 +1,8 @@
 class Kapp < Formula
   desc "CLI tool for Kubernetes users to group and manage bulk resources"
   homepage "https://carvel.dev/kapp/"
-  url "https://ghfast.top/https://github.com/carvel-dev/kapp/archive/refs/tags/v0.64.2.tar.gz"
-  sha256 "80e170ee87e68096a3349670f2f4d7c44047f4159711950f5759a0a71469736a"
+  url "https://ghfast.top/https://github.com/carvel-dev/kapp/archive/refs/tags/v0.65.0.tar.gz"
+  sha256 "cfe141f6e00816e9bddaa3d32216295176386b42d9202adbb76f48b78fd5e979"
   license "Apache-2.0"
   head "https://github.com/carvel-dev/kapp.git", branch: "develop"
 
@@ -12,14 +12,12 @@ class Kapp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "44be616b8126a7a26b822a26f5acacfd542f6df364a607df9e5dc52a8b8d6ad0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39315cc4aabafb1645c0f153e0614c9d04d93cd2849fe7f33a2f379e403e9067"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39315cc4aabafb1645c0f153e0614c9d04d93cd2849fe7f33a2f379e403e9067"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "39315cc4aabafb1645c0f153e0614c9d04d93cd2849fe7f33a2f379e403e9067"
-    sha256 cellar: :any_skip_relocation, sonoma:        "172deffd5a5522297778b6d98ddedeb93af490cb8e8bd95321cbdbee0116b922"
-    sha256 cellar: :any_skip_relocation, ventura:       "172deffd5a5522297778b6d98ddedeb93af490cb8e8bd95321cbdbee0116b922"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ca0ae4393cc654f35cd2ffc4991954e82fca26ef6d06e1de35a1ca96fe9cf5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aca74f296372166c00f43e97ac99f2610adb8d07ca6aefc119e310fb57843aa5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "27f42f58ffe5c116dc22bf6a08254d36cffd19a003cfc6c40724aa4a245be491"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27f42f58ffe5c116dc22bf6a08254d36cffd19a003cfc6c40724aa4a245be491"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27f42f58ffe5c116dc22bf6a08254d36cffd19a003cfc6c40724aa4a245be491"
+    sha256 cellar: :any_skip_relocation, sonoma:        "95c9c16785778061841bdf2f15a4b30a4fff0b297c1adcbc3f5ed3da406d2625"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4be0543df816b7a566b47f4c81e2dc9ee7a5994f1b532c4277b1615e001cf113"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "250eb6f8982c5d5aa57153ad63d656f0491453e880f2ad2eb71fe2b38f7f869c"
   end
 
   depends_on "go" => :build

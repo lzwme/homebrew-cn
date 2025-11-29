@@ -8,14 +8,6 @@ class AnsibleAT10 < Formula
   license "GPL-3.0-or-later"
   revision 6
 
-  livecheck do
-    url "https://pypi.org/rss/project/ansible/releases.xml"
-    regex(/^v?(10(?:\.\d+)+)$/i)
-    strategy :xml do |xml, regex|
-      xml.get_elements("//item/title").map { |item| item.text[regex, 1] }
-    end
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "f9d73aae386e968bb5bc720aabf62f83fcee6ee1e1b460fd2c95ef8b6c467190"
     sha256 cellar: :any,                 arm64_sequoia: "f8e04a12807cbf214cfe13cd8a8cb5654951a6936d4cfd6b7423b2dd79c240bc"

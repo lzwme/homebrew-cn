@@ -1,10 +1,10 @@
 class Tbox < Formula
   desc "Glib-like multi-platform C library"
   homepage "https://github.com/tboox/tbox"
-  url "https://ghfast.top/https://github.com/tboox/tbox/archive/refs/tags/v1.7.7.tar.gz"
-  sha256 "ae387dcf1952aca572516bdce4a47d04e9b411f5bf7add281247af7c874f3c3f"
+  url "https://ghfast.top/https://github.com/tboox/tbox/archive/refs/tags/v1.7.9.tar.gz"
+  sha256 "8d4bba88bb279c4ff71677d15f8bfc20dfbdc3b4eee27b540fb979fe5af65e56"
   license "Apache-2.0"
-  head "https://github.com/tboox/tbox.git", branch: "master"
+  head "https://github.com/tboox/tbox.git", branch: "dev"
 
   livecheck do
     url :stable
@@ -12,12 +12,12 @@ class Tbox < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0157e36f3c03a6cdaf4e17b60320650aed9d99398404ca6d894c714f0b44631"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e4af286a06c7866122031814f6a626582ab9547e98e475ab98eaf6ea86189f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71ed8833a338308bf58f3be6ee12841e046a381cae5850a54c5ea8b863f8c28d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9711d7ffe9e3d9aff25a4fe4fcd8c00561abafce8165dbd12a74278c3eafa82a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3efecca9ec4ddd248669af677d411d92f4492614f21c3369f6b34bf4ecb7b446"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9ac90346db19743ecd7dc455f60b18c8dda35bb4d3be669811112be1b515f31"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a0067831ab388cc5fc99ff9c152437a579a85297d25e70f93cded7fbe130af5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5dbbf045ecb2a8958efa18ab791198bd9065992986c65fd85cc5e91d6f47199c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30146fc27beaa177788147cde0e0e7ae67bf808c63caf87330f574336a826d00"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fa1be6dd50a08ee5e5975cd44ccbce1ffb73816def52325342c68a837ad179eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2a8f5671d17aa9e7a8ffbdce4f3838c2f97b7e3d8ced4aaf9349294024d55f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53f1e814d9e023789e45c61ab45224a26f15899c6059ea95f7ffbcc6a6f6c566"
   end
 
   depends_on "xmake" => :build

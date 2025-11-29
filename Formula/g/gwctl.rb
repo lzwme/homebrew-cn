@@ -1,18 +1,18 @@
 class Gwctl < Formula
   desc "CLI for managing and inspecting Gateway API resources in Kubernetes clusters"
   homepage "https://github.com/kubernetes-sigs/gwctl"
-  url "https://ghfast.top/https://github.com/kubernetes-sigs/gwctl/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "07e300a95a9c2e8e88f96c8507e5acdc1e051f8b79125ee9c8174a06676ef655"
+  url "https://ghfast.top/https://github.com/kubernetes-sigs/gwctl/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "ee3bf78df7645f518db0adc21aa156507847c4f0727eb949d7d49c8aa8cb9c73"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/gwctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e532ca99c3da95393e97b339892130b0e12aca45c85ed3654e5291f948bbd740"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3914314844c5e36493c6b5d20241622e42ec0ef52ac72cfbd5bcc102a328c9e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b388488f06cb1c253349fe72708d6e0ca8f12bad25253fd2df35fea04d2ed5c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4bf7cc7c350a7bb5e99b5eb36e2782d4159b3abb012daa771922fcf0831b4d01"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5c806bf7a5be421ce61a498c8cfc5d3baaa7e6806556046fc1a8bc4786979b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "031872ef641d1f928e6b0e1e70e34f01943783535564f8ccc17df5562d1549a7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "faa742bfec4360e204f5b31ba843338c797ed1202fcebbb8467b32d402d75d45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9be86c2468c1a3b0bba1428552377f20d67c8ad80b18f557209a2714151ad9f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a15101ce4a58c3922c4535ccc8979650adfb4b40978eb872841ae9b21735cfee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d6e3436fd5a6d0935f9ca6ae9583c162ae5a28ff316f9d1e6d344faab3b95224"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b5d9a5014676ca1949262775e1e71b8f67bbe8d7e60e77eb8bde5d92ed730ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c9020e87b2c86afcc05dbc8923d14f847bf1e807a8a3a3778bc015c559d216b"
   end
 
   depends_on "go" => :build

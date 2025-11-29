@@ -1,8 +1,8 @@
 class Urdfdom < Formula
   desc "Unified Robot Description Format (URDF) parser"
   homepage "https://wiki.ros.org/urdf/"
-  url "https://ghfast.top/https://github.com/ros/urdfdom/archive/refs/tags/5.0.2.tar.gz"
-  sha256 "f929a33ec6171a57d4ff7d4c0eff6fb79d4725c279189d4f4c8806c4aa4e71ac"
+  url "https://ghfast.top/https://github.com/ros/urdfdom/archive/refs/tags/5.0.3.tar.gz"
+  sha256 "c98412daaa7498ecea2f2c68ce1c27767113d137468eb26b7dcfa291cba615b4"
   license "BSD-3-Clause"
 
   # Upstream uses Git tags (e.g. `1.0.0`) to indicate a new version. They
@@ -14,14 +14,12 @@ class Urdfdom < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "36671ef4a695736b45da805c8d9de32bb5059b503f614e978ae7d01624c5b7f9"
-    sha256 cellar: :any,                 arm64_sequoia: "756fda4ead0dd187f6ed44bdbdf1d03142a4088d334e9d27bfe1ae1b6d0f2cfa"
-    sha256 cellar: :any,                 arm64_sonoma:  "08e6d3e29fb2072ade8ff174827d0c59ee5c28bcf288e8da09a56846ead4998d"
-    sha256 cellar: :any,                 arm64_ventura: "07a35187641e8a0a27266ead0227892a37e8f847ec580877c513382cca1b740c"
-    sha256 cellar: :any,                 sonoma:        "3d2f693b70cc2f54f6f9135577865cad22d5231197058020586bb98137e525e0"
-    sha256 cellar: :any,                 ventura:       "f1e57f3dd834b113e765beaa5f26e187647f5ecb34445e761fa5028614fb3d17"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c970633d691e7638e3d19fb153f405b76ed940371558199f682b71cca5043e5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df20fa90b221d69a837117f743067ba079e9d414d441aedf1edf1a3ec68169dc"
+    sha256 cellar: :any,                 arm64_tahoe:   "e3d48c0bd6a69521698d8803c2713ff6fd16ac79933a2559d7f09b3d97546fbe"
+    sha256 cellar: :any,                 arm64_sequoia: "f694b3bf7d00b6526e625d945b038e8652da2bd1f71db99527645fa6de8ad51d"
+    sha256 cellar: :any,                 arm64_sonoma:  "01601bc9a12d3dd8a6662e82b3f956e488fc1e469b9dbcd3701ea9d0ad3005c8"
+    sha256 cellar: :any,                 sonoma:        "f51cd12a5f7f8540e37bb4557c1949a542546763098deae85d93fb18fbd4466c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e6dfff77c72a4888e15b8daced023c1c747392ff74eeed56cc187e223581857"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "628d81cac3495c4dc1b6a5a0cc9c44e3ebd312ba7890c8eb6bd4645ad423414e"
   end
 
   depends_on "cmake" => :build

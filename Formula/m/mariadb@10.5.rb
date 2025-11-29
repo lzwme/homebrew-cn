@@ -6,18 +6,6 @@ class MariadbAT105 < Formula
   license "GPL-2.0-only"
   revision 1
 
-  livecheck do
-    url "https://downloads.mariadb.org/rest-api/mariadb/all-releases/?olderReleases=false"
-    strategy :json do |json|
-      json["releases"]&.map do |release|
-        next unless release["release_number"]&.start_with?(version.major_minor)
-        next if release["status"] != "stable"
-
-        release["release_number"]
-      end
-    end
-  end
-
   bottle do
     sha256 arm64_tahoe:   "bc104c240968345cb39f6f28716a9606704026b37e81f4d92a54d7f69b693f36"
     sha256 arm64_sequoia: "a8c6bb26de1fa94be3319d9e32b63205f9078434ec2145badb5cdc6451f58f27"
@@ -32,6 +20,7 @@ class MariadbAT105 < Formula
   # See: https://mariadb.com/kb/en/changes-improvements-in-mariadb-105/
   # End-of-life on 2025-06-24: https://mariadb.org/about/#maintenance-policy
   deprecate! date: "2025-06-24", because: :unsupported
+  disable! date: "2026-06-24", because: :unsupported
 
   depends_on "bison" => :build
   depends_on "cmake" => :build

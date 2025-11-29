@@ -3,22 +3,26 @@ class Mypy < Formula
 
   desc "Experimental optional static type checker for Python"
   homepage "https://www.mypy-lang.org/"
-  url "https://files.pythonhosted.org/packages/c0/77/8f0d0001ffad290cef2f7f216f96c814866248a0b92a722365ed54648e7e/mypy-1.18.2.tar.gz"
-  sha256 "06a398102a5f203d7477b2923dda3634c36727fa5c237d8f859ef90c42a9924b"
+  url "https://files.pythonhosted.org/packages/f9/b5/b58cdc25fadd424552804bf410855d52324183112aa004f0732c5f6324cf/mypy-1.19.0.tar.gz"
+  sha256 "f6b874ca77f733222641e5c46e4711648c4037ea13646fd0cdc814c2eaec2528"
   license "MIT"
   head "https://github.com/python/mypy.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd851df81e5ac386cdadb268cbef9d9e320943f28b555ef59510def41235b083"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3a4029c8a6b2f1020250f24366dec74c24c650c979bdc2878cd1cf3df28f582"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21b458b580c086529c7903c2af36fb80a4761db4853757728f9873791f4709fa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "87122cfe8a26ae4dbcb604170b8a7a4c1a1d7ca7e1aa002d43cf32526c810514"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "26fb86bc75abcb56ec8ba8d5e6a2837c32983ec75dae11122c2ec9d17bc90a7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89b7b0371b5487d0c7fed284a1dcfd5852c9cf33638c60146d97dea5a0ef8de8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b1db1b9addc619d9e00dfdf33d9d1797856f40d70e5bc675650c84c7f9d6457"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff732eeee1dc705104a6d1f7feccfe25178e110220cdf73d053fc3a3446281a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04d4cd9160fd37d171149cb6127c39cab31f617a78e19398a8d49d03d8dc9082"
+    sha256 cellar: :any_skip_relocation, sonoma:        "372667c102b355db956082db92284e4880e226ecc14b340a0bcfe50b762e850d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9f66deae374a96a8865f5d67e520159ee5561e01587e26c6271973ed776e8cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d32d569e87057c9496a4d73c53320106aa2350b49819082da211aeb05ebb4ab"
   end
 
   depends_on "python@3.14"
+
+  resource "librt" do
+    url "https://files.pythonhosted.org/packages/72/c3/86e94f888f65ba1731f97c33ef10016c7286e0fa70d4a309eab41937183a/librt-0.6.2.tar.gz"
+    sha256 "3898faf00cada0bf2a97106936e92fe107ee4fbdf4e5ebd922cfd5ee9f052884"
+  end
 
   resource "mypy-extensions" do
     url "https://files.pythonhosted.org/packages/a2/6e/371856a3fb9d31ca8dac321cda606860fa4548858c0cc45d9d1d4ca2628b/mypy_extensions-1.1.0.tar.gz"

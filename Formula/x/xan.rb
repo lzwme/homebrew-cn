@@ -1,18 +1,18 @@
 class Xan < Formula
   desc "CSV CLI magician written in Rust"
   homepage "https://github.com/medialab/xan"
-  url "https://ghfast.top/https://github.com/medialab/xan/archive/refs/tags/0.54.0.tar.gz"
-  sha256 "15b024631f72f789bfe22694a8a1a09a6411a6ce31bac0fc35f2e4db0d4d6362"
+  url "https://ghfast.top/https://github.com/medialab/xan/archive/refs/tags/0.54.1.tar.gz"
+  sha256 "e5fa8eef2d2eb016b1c1d39a0eb2c4ac7d451cd9f4172ade99e1eb2d52ebd381"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/medialab/xan.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "513daa6e7bf00e1e96fce1da9228c49a2bf1297842ea4339476d20710ed4cfad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d23048eb02828316e546014b6813f03e5a8081f3cc18886a15c02aaee8c2c7e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aeccbd0fd93c04931f86ef09096d1c718cd59c8aac6133d114929b67865bbdfa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "62382ac51ba047f92374f1ba38cb13421ce19788da6b24cfcee49c645a76734a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "744ce8485e11cf9f0023189770916743a8b268660c9e5b3df44e2385d34429f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39c477d0e65629a7d5fef233607ae7fc216c5272b1e686724f783052031cbdbe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1993efb2af79f2df1734e8eeb6640709e91a181fa924aa94f32fd2368a86fbca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03150bae4988f23aff800211b0398cc93f45c3a2a351467341fc50218ce9e9ec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "724672184ac7eb091a41150f7498e5edc02268eccd08b7f15ddaaf95a4c0feb5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dab64d4eadafb32783c8a61567b9fa0f088aeacb8092bb3e9efa4a54e54edaca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8755ed2089837012ee13359b08436eea62b25adf43ee4a3119b506f04a86e4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "301e76b17aa6f6858517c0145f5fe134ef90f15073638c9ea2ad97217295cd31"
   end
 
   depends_on "rust" => :build

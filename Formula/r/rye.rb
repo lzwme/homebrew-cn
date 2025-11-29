@@ -5,14 +5,6 @@ class Rye < Formula
   sha256 "6ef86ccba82b59edfc4f6deba39be6394e7866fe2250596b96124c20327f0581"
   license "MIT"
 
-  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
-  # labeled as "pre-release" on GitHub before the version is released, so it's
-  # necessary to use the `GithubLatest` strategy.
-  livecheck do
-    url :stable
-    strategy :github_latest
-  end
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a36d38e6a1aadb4256e49e51c210fd551bcfbb42654c40f0968441f6c588934f"
@@ -27,6 +19,7 @@ class Rye < Formula
 
   # https://github.com/astral-sh/rye/commit/62ec9edbe471958a05a70418b19f3acd54f0484d
   deprecate! date: "2025-08-18", because: :unmaintained, replacement_formula: "uv"
+  disable! date: "2026-08-18", because: :unmaintained, replacement_formula: "uv"
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
