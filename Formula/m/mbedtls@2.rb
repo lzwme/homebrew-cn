@@ -21,6 +21,7 @@ class MbedtlsAT2 < Formula
   # mbedtls-2.28 maintained until the end of 2024
   # Ref: https://github.com/Mbed-TLS/mbedtls/blob/development/BRANCHES.md#current-branches
   deprecate! date: "2025-03-31", because: :unsupported
+  disable! date: "2026-03-31", because: :unsupported
 
   depends_on "cmake" => :build
   depends_on "python@3.12" => :build

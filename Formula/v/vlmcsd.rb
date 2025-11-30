@@ -25,6 +25,7 @@ class Vlmcsd < Formula
   end
 
   deprecate! date: "2024-12-31", because: :repo_archived
+  disable! date: "2025-12-31", because: :repo_archived
 
   uses_from_macos "llvm" => :build
 

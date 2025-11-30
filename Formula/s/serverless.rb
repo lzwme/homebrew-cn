@@ -20,6 +20,7 @@ class Serverless < Formula
   # v3 will be maintained through 2024
   # Ref: https://www.serverless.com/framework/docs/guides/upgrading-v4#license-changes
   deprecate! date: "2024-12-31", because: "uses proprietary licensed software in v4"
+  disable! date: "2025-12-31", because: "uses proprietary licensed software in v4"
 
   depends_on "node"
 

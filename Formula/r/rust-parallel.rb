@@ -1,17 +1,17 @@
 class RustParallel < Formula
   desc "Run commands in parallel with Rust's Tokio framework"
   homepage "https://github.com/aaronriekenberg/rust-parallel"
-  url "https://ghfast.top/https://github.com/aaronriekenberg/rust-parallel/archive/refs/tags/v1.19.0.tar.gz"
-  sha256 "73c71fccd95d427339275b731ef697997cae963f9c2ad1c47535063720d781ba"
+  url "https://ghfast.top/https://github.com/aaronriekenberg/rust-parallel/archive/refs/tags/v1.20.0.tar.gz"
+  sha256 "b9acd592f6ad4e033452c339b2c8c437bda86235822105fd53c8d7f3070feed9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9db8a469396e23073950fa244b71708499dced4aff1344f1444aeee0ae9faa2d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b85636251db1aa2b7b736740a2c1e65600e697b5cae2582eadfb2465488491b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7c11482e2fe822999a1f5f57b358bc19a17bd27812f22659c7fd13ba52041fb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bcd347ee6a1eb1d736d6191148a61a53b49cdce6c918239eb147c8f0876ab30e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5771f8e6af978ac3bb4f1c6910190fca0f3415f5b4b334a7581838dfdf43f1e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96c2a35d1bbfea8d7eabc349666569e6375835c2b09450f75184ce6c2a3cd16f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0dea919d575ec4cc8a61327ab38e1c609855eccaef4b6c87b2d0313ec7830c16"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de6d0e7cf51ca3f61ae973d6a51ad3402df21fa6682989ddc7b2da350c3a2098"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dfa05d7ca901727019e240197bb3adaaec11c17db1660963abb05ed114fbc793"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4beb7981c9acff532587d91245f7ef899c24eef922718a1e56b499b3492b88bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "95f8ecb0c43d324f8739933a75d9b0077c0e67c2c19ff4476ae41e0be7bff0c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2713a869e80e9763fbe0d82970dec5c452e2112ae4a9384eb65aee2f6e81e4c1"
   end
 
   depends_on "rust" => :build

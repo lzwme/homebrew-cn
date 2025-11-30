@@ -1,8 +1,8 @@
 class GolangMigrate < Formula
   desc "Database migrations CLI tool"
   homepage "https://github.com/golang-migrate/migrate"
-  url "https://ghfast.top/https://github.com/golang-migrate/migrate/archive/refs/tags/v4.19.0.tar.gz"
-  sha256 "b659e7952d391b4e8adb4e84115faa8f1a15f74e6af81bd63cd8ed76e8f3f52d"
+  url "https://ghfast.top/https://github.com/golang-migrate/migrate/archive/refs/tags/v4.19.1.tar.gz"
+  sha256 "677bf03c19d684dc5bef47e981ec1b4564482cbf5f9b190cb48e110183fd6d25"
   license "MIT"
   head "https://github.com/golang-migrate/migrate.git", branch: "master"
 
@@ -15,14 +15,12 @@ class GolangMigrate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7749a3d5a106e967a8b7da0be6da7f182e4e6747c5a8da0dee0316a2bf4815d7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be176d438188ae1677c1c02150a2344742c22179f3542c790e20275f33ac9794"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d60d5347090865c882dfcefe7ffd27e8fb145d81f3b917e1a2d276c37afeb06c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "adbd4e5a206892db2d2625ecf95f0753fff1eb9c7724ad307611b422d10bf4b1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "45540ac892c06d148e2186a270e45b553c251a6a7297c61e0431e589af9bef63"
-    sha256 cellar: :any_skip_relocation, ventura:       "e250b1213930a80838c590f3992af52f96fb382c853d2f448285430eb6c270b9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "39f207ca6356797f62545380dc7e1093cae2407b55b62aac56b6400d9dc6a984"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c01ba5960f6fcc1de3c897500ec76f458b434c259a350727622b6f29207b1fd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "756f6f4046cb091c66fb0ec1e4db160d07a7fd3b552aeb1d75adbbc716401332"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d74478b5173dafc40af24aa1f175766cfc5278cbd81a04f5d83fd03600e27b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6b82e2fe5e03b8130f2363908a34d77b428ce3b7f68f629f9c93c1bd941fe94"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d22e7d26b80ff378d6d1dcac7ddf4e6f745ad60703d8b93068bb5e130fa84259"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6aeda2e9ddda567c4009f53efde24d8cd80610e55ee159c3c030a41dc80cece2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c67548a520ac1995c4e55700f0eb2ae492d386690c2103c493c903791909abda"
   end
 
   depends_on "go" => :build

@@ -1,9 +1,9 @@
 class Picat < Formula
   desc "Simple, and yet powerful, logic-based multi-paradigm programming language"
   homepage "https://picat-lang.org/"
-  url "https://picat-lang.org/download/picat39_src.tar.gz"
-  version "3.9"
-  sha256 "02e7ae7d7efa9e7fd58b5fb4c1218afb331710f0c6301e46ebc5f670af347331"
+  url "https://picat-lang.org/download/picat394_src.tar.gz"
+  version "3.9.4"
+  sha256 "740622576cc6d99d35a81b21b2a3912fda11d8dbcd9d16afbc648368e1097439"
   license "MPL-2.0"
 
   livecheck do
@@ -14,13 +14,12 @@ class Picat < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f2a9beaab92eecd166bd9d526e159d327d621f0fd6b6ff33b20918fb94feb571"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b504f1331d85fc37964a0562e0c54386993275d89a915c1f550baaf995b2c32a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8eebc88a6342e2b01ce5c896e175356780b44cbfa0f4ec27333cd7bbd9ddc9f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9532dcfa7a7a997a4e011d6a7ae3970884fe5a4bd9aab21f898c5cd0330a0905"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e69a8477a5c33a3aa90759f9ec851a9f5f1b45cc72be52e514b031d8b8c530ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "446bb07d6962c52b3249ef7fdfd0deaa69645b3f1c5d7e86618e19b68cfaa206"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f91317152f8e9606dd659aff7c47667047356dc0b9cf5a61013883a931eef4bf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4efe81777466562f470f56f4111f11852b187014d70f8b514a8462fcf0b91b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e41ef0585e81fa898a4e2779a74fee34b4dc4670bb702bae28f43378841e1c5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "13c07dbfcd81afa71492936367de432adbfca0fb8beeb79ba8c1f31cdde76110"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49145f401e18cb61f2325d327b9a96170f92a037f67aa66fa27cd941a38b4027"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "963666619b07ea68fe3f1bb0cce0c0eac5feeeed4b43a1446b1607f3a93bf158"
   end
 
   def install

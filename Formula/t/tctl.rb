@@ -19,6 +19,7 @@ class Tctl < Formula
   end
 
   deprecate! date: "2024-12-04", because: :unmaintained, replacement_formula: "temporal"
+  disable! date: "2025-12-04", because: :unmaintained, replacement_formula: "temporal"
 
   depends_on "go" => :build
 

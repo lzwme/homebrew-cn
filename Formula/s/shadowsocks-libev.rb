@@ -34,6 +34,7 @@ class ShadowsocksLibev < Formula
   # * MbedTLS 3: https://github.com/shadowsocks/shadowsocks-libev/pull/2999
   # * PCRE2:     https://github.com/shadowsocks/shadowsocks-libev/pull/1792
   deprecate! date: "2024-12-31", because: "uses deprecated `mbedtls@2`"
+  disable! date: "2025-12-31", because: "uses deprecated `mbedtls@2`"
 
   depends_on "asciidoc" => :build
   depends_on "xmlto" => :build

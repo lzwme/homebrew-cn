@@ -6,14 +6,16 @@ class Pydantic < Formula
   url "https://files.pythonhosted.org/packages/69/44/36f1a6e523abc58ae5f928898e4aca2e0ea509b5aa6f6f392a5d882be928/pydantic-2.12.5.tar.gz"
   sha256 "4d351024c75c0f085a9febbb665ce8c0c6ec5d30e903bdb6394b7ede26aebb49"
   license "MIT"
+  version_scheme 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a52a3b0086991e6e565fd431625d357b94752e282f70a23b2a9c19384c88d805"
-    sha256 cellar: :any,                 arm64_sequoia: "1f94c6f646381038a72fcf867be76a930294294730dbb13e032ee3a018860643"
-    sha256 cellar: :any,                 arm64_sonoma:  "87607ac739e4f028d7457dc7d4f9c2299e5faadbf898a26678b7cde36ba26f84"
-    sha256 cellar: :any,                 sonoma:        "7d74a08ba251ac4caa4b4785043495296ee0abdf90fabefafe433fdf7776b9b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f968bacc180d99752dc81b72509d801d6640d1e68e21c246ddac44690d75bce9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7b792bd9a57fd5624a31248a1d3983e57673ed66c88c7fc9686858d693ad82b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "f82763979e85555515c17cace1a3e82142da86aafbe470a913cff495da4082e5"
+    sha256 cellar: :any,                 arm64_sequoia: "1df91d297946b63d060e975586f5704049ff91cee099d6074536ab6d8b913400"
+    sha256 cellar: :any,                 arm64_sonoma:  "932a64cd7677c6e78af8d23436fd5c6445971132e36990d9f17da237f836301e"
+    sha256 cellar: :any,                 sonoma:        "6ca77c977ee829d61282d6fd0d894e9a23d0ff3654d4825f92e6ab672fc34e39"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b252c084afdb03e9871ca69e7969ad5a5120e49ac916414d5ebd0fc63f02c54d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6ec6ef0299e0e75a011da81902dc8e1da5b3798d010d56e51710537ecd248a8"
   end
 
   depends_on "maturin" => :build

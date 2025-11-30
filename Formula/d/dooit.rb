@@ -3,19 +3,18 @@ class Dooit < Formula
 
   desc "TUI todo manager"
   homepage "https://github.com/dooit-org/dooit"
-  url "https://files.pythonhosted.org/packages/e6/05/13192bae53c2e574dbdbb4aac3d4c7c7e62744256f99a89987dcf6a3831c/dooit-3.3.3.tar.gz"
-  sha256 "611f078ab3069d6a222e5651e71b72c4578cbfa0db8dda265dd44b4683f84478"
+  url "https://files.pythonhosted.org/packages/a1/dd/96bfcde11415f846d8e4bf2ec494432aae4e6938c6b3ef1e9db3a854b45e/dooit-3.3.4.tar.gz"
+  sha256 "ec9022168c4a4568693590840aba0b859cdbca27872f1bef84e39d64c044acd2"
   license "MIT"
   head "https://github.com/dooit-org/dooit.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "add56b163b357644012dbc01ba0fce04f2651f107b530337df4c9f75ea6e52fa"
-    sha256 cellar: :any,                 arm64_sequoia: "57575492929a2d8bc53697d7030b7c1fa952e237b041b6aefe7604b46809e188"
-    sha256 cellar: :any,                 arm64_sonoma:  "830bbbd0340eca2fec4492071b40dd2e4f5d0dddb119e924f720fb595594bdf1"
-    sha256 cellar: :any,                 sonoma:        "14be926450e912b12e65238d2f89c978a6239bf77a6c5f82817198e60f5b7ec5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd31bddf6ed12019e979a942ff4abbad0ab59cda60c4244f69524a11fe8c4820"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70fcd4f2bf114687483ac3ff123f5a80257d87c3624bf3fcfd263ae8641622f0"
+    sha256 cellar: :any,                 arm64_tahoe:   "34ab2502a69b06386734abe7ff6bea2a452a8b9ab234a92a4ecfc92bf525af43"
+    sha256 cellar: :any,                 arm64_sequoia: "1982b66414e6edce42ec14a4253f5dc7d8ece143ae3a67fa40a5c8050d23a163"
+    sha256 cellar: :any,                 arm64_sonoma:  "e6a8e2bd8527c6edc47628ccb8341d49a387748b18d7262d6fe8b6771caf98b7"
+    sha256 cellar: :any,                 sonoma:        "da600f1443645ed044793876f29a1b4acde078a1bc9de86e1cb09ac7fe1d9507"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "976d390a89a5614719cc9c1a692585f19d14438e27e3c78bef2324fa1c81abc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8d94e0cb31fa209a117a645ab97275e98bf66ee78f0a2bf84e4b6c6fbb1cb87"
   end
 
   depends_on "cmake" => :build
@@ -23,8 +22,13 @@ class Dooit < Formula
   depends_on "python@3.14"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+  end
+
+  resource "greenlet" do
+    url "https://files.pythonhosted.org/packages/03/b8/704d753a5a45507a7aab61f18db9509302ed3d0a27ac7e0359ec2905b1a6/greenlet-3.2.4.tar.gz"
+    sha256 "0dca0d95ff849f9a364385f36ab49f50065d76964944638be9691e1832e9f86d"
   end
 
   resource "linkify-it-py" do
@@ -88,8 +92,8 @@ class Dooit < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/ba/ce/f0f938d33d9bebbf8629e0020be00c560ddfa90a23ebe727c2e5aa3f30cf/textual-5.3.0.tar.gz"
-    sha256 "1b6128b339adef2e298cc23ab4777180443240ece5c232f29b22960efd658d4d"
+    url "https://files.pythonhosted.org/packages/f6/2f/f0b408f227edca21d1996c1cd0b65309f0cbff44264aa40aded3ff9ce2e1/textual-6.6.0.tar.gz"
+    sha256 "53345166d6b0f9fd028ed0217d73b8f47c3a26679a18ba3b67616dcacb470eec"
   end
 
   resource "typing-extensions" do

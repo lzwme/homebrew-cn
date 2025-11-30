@@ -1,18 +1,18 @@
 class Cpr < Formula
   desc "C++ Requests, a spiritual port of Python Requests"
   homepage "https://docs.libcpr.org/"
-  url "https://ghfast.top/https://github.com/libcpr/cpr/archive/refs/tags/1.13.0.tar.gz"
-  sha256 "c55d805300c224f099cad74ad9c68799f23d005d09ba2df76ead975a3e50e09d"
+  url "https://ghfast.top/https://github.com/libcpr/cpr/archive/refs/tags/1.14.1.tar.gz"
+  sha256 "213ccc7c98683d2ca6304d9760005effa12ec51d664bababf114566cb2b1e23c"
   license "MIT"
   head "https://github.com/libcpr/cpr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "30d36b034765bd5897024fe87ab08313712f96a3ee614adeb7808658c019cb82"
-    sha256 cellar: :any,                 arm64_sequoia: "a0d977e6bf0d2a2e35c506c31f8cbfa90387fe0765e946ac30d410ae366476c2"
-    sha256 cellar: :any,                 arm64_sonoma:  "d2fc529fbe5e39b2060cf13886d149c88ae29bc98b706350e00473a58de4423e"
-    sha256 cellar: :any,                 sonoma:        "0fd70be274ed66c4114b8eede879846420608e08b05b1662a9bad597190ada1e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "81474a9d4caa550e2217a5746bcf48e3fbc15dd9700147701a87a1eb6bd82f21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27722b9d1d98990fef20dc2063493b42f67d6aca2e265b8c67dbd82f157067c8"
+    sha256 cellar: :any,                 arm64_tahoe:   "2f6fedaaf9ada689d14bc1854d24ea140cb9c42bc4920bac7b7ab476705f621c"
+    sha256 cellar: :any,                 arm64_sequoia: "48d1fd8759a8834695b3faca744b46c9da6977b2b2c5fc912d261a78a483e348"
+    sha256 cellar: :any,                 arm64_sonoma:  "518ed4d3f72ee56e3c078e6d9233726c00248c26aad77c223ecbe21243ceaa12"
+    sha256 cellar: :any,                 sonoma:        "cab1af9d093f2029d4b1fc0af5d6c15184734d3290b31f99ee61254742cacea7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "516258c353c3a7524c61b540b98e9ad31863c3145cd212aeac87a6ea168bcdc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71bc13d254bcfe7b03a844b9d49a70b92806ce146d98a0e78bd41accf89debbc"
   end
 
   depends_on "cmake" => :build

@@ -7,12 +7,13 @@ class BoshCli < Formula
   head "https://github.com/cloudfoundry/bosh-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "724c8497816e17d1358fc2bc648bd26a5ed803ee406365f495f941017bcf5f1b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "724c8497816e17d1358fc2bc648bd26a5ed803ee406365f495f941017bcf5f1b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "724c8497816e17d1358fc2bc648bd26a5ed803ee406365f495f941017bcf5f1b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eb75ed0a7881f17ce0884740fae50858a67c0747c3fc8e8f3da4827bddb520d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "21fcfcf737722c0325e835451929f6f2d9b9a0e4efe73b8e80961b13d1eef838"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9685be22a022bd76524b780cc5dbe94d3653888e85bcfccb3f1416c6e92e6c72"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be5803388ba75e45333a7f295ae7baa1c39a24237fdbc1e131384e25c7beccf6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be5803388ba75e45333a7f295ae7baa1c39a24237fdbc1e131384e25c7beccf6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be5803388ba75e45333a7f295ae7baa1c39a24237fdbc1e131384e25c7beccf6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8c1876ac01591a828495af0bb1d11b3fbfa0d5410edf1358c9280735e57262e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee1b0681e06dbff4a57da12c11f38a64210185d069a6a7bb15b4ce564051016f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e80d9721469d68c62701588eb1dcfe5023a204ff7c3d46153523f447af129116"
   end
 
   depends_on "go" => :build
@@ -21,6 +22,8 @@ class BoshCli < Formula
     # https://github.com/cloudfoundry/bosh-cli/blob/master/ci/tasks/build.sh#L23-L24
     inreplace "cmd/version.go", "[DEV BUILD]", "#{version}-#{tap.user}-#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags: "-s -w")
+
+    generate_completions_from_executable(bin/"bosh-cli", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

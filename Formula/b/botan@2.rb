@@ -21,6 +21,7 @@ class BotanAT2 < Formula
   # Botan2 is currently scheduled to reach end of life at the end of 2024
   # Ref: https://botan.randombit.net/#releases
   deprecate! date: "2024-12-31", because: :unsupported
+  disable! date: "2025-12-31", because: :unsupported
 
   depends_on "pkgconf" => :build
   depends_on "python@3.14"

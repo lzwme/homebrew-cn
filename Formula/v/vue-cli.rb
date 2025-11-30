@@ -20,6 +20,7 @@ class VueCli < Formula
   end
 
   deprecate! date: "2024-12-22", because: :deprecated_upstream
+  disable! date: "2025-12-22", because: :deprecated_upstream
 
   depends_on "node"
 

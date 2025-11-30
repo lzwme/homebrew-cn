@@ -14,6 +14,7 @@ class Gel < Formula
 
   # https://github.com/gel-rb/gel/issues/134
   deprecate! date: "2024-12-25", because: :unmaintained
+  disable! date: "2025-12-25", because: :unmaintained
 
   depends_on "ronn" => :build
 

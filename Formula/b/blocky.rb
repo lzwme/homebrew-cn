@@ -7,12 +7,13 @@ class Blocky < Formula
   head "https://github.com/0xerr0r/blocky.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "836ba7fd58ba09685423a55e135597fab2af6410609d5ef0123de5c268e549a6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87c70bee57d855a00ebe0497f50a0d7cf1d2beafdf1262004b5b31ae328ba271"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e94654f230e6de7ca82fc6982753df957077f307363a737405d28395ba95a7e5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "11942120a988e69dff004bf9a955b8d1470a8b2313e81ba3c7cc06a8fcbb577b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff040f0109853a783da43aa18c8c371b3684566eb468165be22d4dda4021d216"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd076776a2a33658d4da27be7fdaab47d0bb0bc86823e7655b3a82a1678a5f8a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "309e2d8749d30325c0e508ddf3cbb00343e30aa4b2d5090efdbf3fd5b8d5b95d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca936cc535d201aba1636bf6cd788f02aba20cee10d703aa0fbc3227f3459c80"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5974a6e8caf3160f6f886baea38518b0961259772c65fdb0f4c04f535744dd87"
+    sha256 cellar: :any_skip_relocation, sonoma:        "66b729058448bce9feb3c424c71e9ef54bed67da2ca4a759936a81c6f928d4a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02956f488437ab657367f5856257ea8d5e63855a21816184871e3bbef8fcc5fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a27d7241a1a6b683b59feaa7593d9c8de5bd3d0d5767c6f9fd29c40f3cfe905"
   end
 
   depends_on "go" => :build
@@ -26,6 +27,8 @@ class Blocky < Formula
     system "go", "build", *std_go_args(ldflags:, output: sbin/"blocky")
 
     pkgetc.install "docs/config.yml"
+
+    generate_completions_from_executable(sbin/"blocky", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   service do

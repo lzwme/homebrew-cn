@@ -20,6 +20,11 @@ class MbedtlsAT3 < Formula
   end
 
   keg_only :versioned_formula
+
+  # mbedtls-3.6 maintained until March 2027
+  # Ref: https://github.com/Mbed-TLS/mbedtls/blob/development/BRANCHES.md#current-branches
+  deprecate! date: "2027-03-31", because: :unsupported
+
   depends_on "cmake" => :build
 
   uses_from_macos "python" => :build

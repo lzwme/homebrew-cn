@@ -3125,6 +3125,7 @@ Homebrew-homebrew-core/Formula/i/inotify-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/insect.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/inspectrum.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inspircd.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/install-nothing.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/install-peerdeps.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/instaloader.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/instalooter.rb, Homebrew/homebrew-core, 0
@@ -5806,6 +5807,7 @@ Homebrew-homebrew-core/Formula/p/pwsafe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/px.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/py-spy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/py3cairo.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/py7zr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pybind11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pycodestyle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pycparser.rb, Homebrew/homebrew-core, 0
@@ -7217,6 +7219,7 @@ Homebrew-homebrew-core/Formula/t/tofuenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/toilet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/toipe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tokei.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/toktop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tokyo-cabinet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tokyo-dystopia.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tombi.rb, Homebrew/homebrew-core, 1
@@ -7279,6 +7282,7 @@ Homebrew-homebrew-core/Formula/t/tree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/treecc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/treefmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/treefrog.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/treemd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tremor-runtime.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trezor-agent.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/trezor-bridge.rb, Homebrew/homebrew-core, 0
@@ -14840,6 +14844,7 @@ Homebrew-homebrew-cask/Casks/s/stella-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stellarium.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/steveschow-gfxcardstatus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stillcolor.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/stirling-pdf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stolendata-mpv.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/stoplight-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/storyboarder.rb, Homebrew/homebrew-cask, 1
@@ -14850,6 +14855,7 @@ Homebrew-homebrew-cask/Casks/s/strawberry.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/streamlabs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/streamlink-twitch-gui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stremio.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/stremio@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/stretchly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stringsfile.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/stringz.rb, Homebrew/homebrew-cask, 1

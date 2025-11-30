@@ -20,6 +20,7 @@ class GnomeThemesExtra < Formula
   end
 
   deprecate! date: "2024-12-10", because: :repo_archived
+  disable! date: "2025-12-10", because: :repo_archived
 
   depends_on "gettext" => :build
   depends_on "intltool" => :build

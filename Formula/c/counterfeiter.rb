@@ -1,8 +1,8 @@
 class Counterfeiter < Formula
   desc "Tool for generating self-contained, type-safe test doubles in go"
   homepage "https://github.com/maxbrunsfeld/counterfeiter"
-  url "https://ghfast.top/https://github.com/maxbrunsfeld/counterfeiter/archive/refs/tags/v6.12.0.tar.gz"
-  sha256 "243a7bf5bc1a9c5a6706a02167484095dea53117ddff85a95c3bbe6e6f747ad7"
+  url "https://ghfast.top/https://github.com/maxbrunsfeld/counterfeiter/archive/refs/tags/v6.12.1.tar.gz"
+  sha256 "b01c714fd789e389f9361a7f1f07acccb02614e702bd7af5d5157ddd4519fc48"
   license "MIT"
   head "https://github.com/maxbrunsfeld/counterfeiter.git", branch: "main"
 
@@ -12,14 +12,12 @@ class Counterfeiter < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "130d2eceffe514edcb9963172d3ba53e4f7f305c6bcba02a1b017f04bf6d66d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "130d2eceffe514edcb9963172d3ba53e4f7f305c6bcba02a1b017f04bf6d66d3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "130d2eceffe514edcb9963172d3ba53e4f7f305c6bcba02a1b017f04bf6d66d3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "130d2eceffe514edcb9963172d3ba53e4f7f305c6bcba02a1b017f04bf6d66d3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1885bde70e3079aae4cdab53b2f9dcdb26d8858216b032fa08c62aabb1707fd3"
-    sha256 cellar: :any_skip_relocation, ventura:       "1885bde70e3079aae4cdab53b2f9dcdb26d8858216b032fa08c62aabb1707fd3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d77971fadf28f655e931e5be98eef407164e43ddf83920f24e005e429d5b3d7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddf079abd97a86edf1595a3b43b5f04783f0fdd6ccd69f8a127e6d672c7a81cb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "154c4883d92894bcf466aca58f269205ed00a29fe03fc499b495269b48c3d183"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "154c4883d92894bcf466aca58f269205ed00a29fe03fc499b495269b48c3d183"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "154c4883d92894bcf466aca58f269205ed00a29fe03fc499b495269b48c3d183"
+    sha256 cellar: :any_skip_relocation, sonoma:        "23262c42e7a2e3cb68f64f4606fd917eb9b3dd9fb0ea1a21f45be281f298eb40"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56b0331607eff5c4d08812a642c174c73ae871bbf45578f3ebb7b7abb831e37a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5aae1b51283be191090ee819b7b03c927e2acf8f4bad6ecfea00ff7f8e126dd7"
   end
 
   depends_on "go"

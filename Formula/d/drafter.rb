@@ -22,6 +22,7 @@ class Drafter < Formula
   end
 
   deprecate! date: "2024-12-04", because: :repo_archived
+  disable! date: "2025-12-04", because: :repo_archived
 
   depends_on "cmake" => :build
 

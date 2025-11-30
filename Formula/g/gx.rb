@@ -26,6 +26,7 @@ class Gx < Formula
   # expected to use go modules to manage dependencies
   # also see upstream discussion on this, https://github.com/whyrusleeping/gx/issues/247
   deprecate! date: "2024-12-07", because: :unmaintained
+  disable! date: "2025-12-07", because: :unmaintained
 
   depends_on "go" => :build
 
