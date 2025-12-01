@@ -11,15 +11,15 @@ class PythonAT312 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "427efb2e74f4f1179ff13cb7f2149f2051d6c1abcfd5b73ab77f9ea986a23ea2"
-    sha256 arm64_sequoia: "f242c770cd7d0aac1d13832b5a72f8fce97add7b18c7c98092544374a9a2666d"
-    sha256 arm64_sonoma:  "764e9a5adf22b1d9545af241fc70dc3b7a9b0d0b5f223adb44e9f05b0d107b9e"
-    sha256 tahoe:         "78040610f0b342e0c0fc718ad9f0a685648ebffb69bf7a8746557ab2243a395b"
-    sha256 sequoia:       "37fad88a480dc48ea022111a316087cc18dbb4f03ab218386be0c67ad5e86136"
-    sha256 sonoma:        "14563ff18aaa32e5ff3c8d646dc03b54a05355db60ed9a5c47f3bec63c0dcbf4"
-    sha256 arm64_linux:   "6c0fab49a54e3e0724049356249aeb01b48c18f7e5b305c0bdba3af25fa2c4cf"
-    sha256 x86_64_linux:  "9730e6d94b34c1af2c99d5c924c4a9ec2270cda129c627cc60b31d255f29927f"
+    rebuild 2
+    sha256 arm64_tahoe:   "e2f5b656048d4c8f5804251b4614ef0ca2a774c263857b5fa0250dd5954a8856"
+    sha256 arm64_sequoia: "85e70217ddc0c35f8c230a648672bd6a8295cac435b30a57d8b5348d707b1553"
+    sha256 arm64_sonoma:  "a6b1f0abe258baa09ea5f5b6cb74e6cb0e0cdfadb8aa8d22f15c7fe6da1279f2"
+    sha256 tahoe:         "0e0a3a29115ad0a6dd449917ffac06199401204f57aff1f639f057b1cf781238"
+    sha256 sequoia:       "4537baa7df94de0c1968c7f570d951ca68d017696b8be4c5a31aaab33974874e"
+    sha256 sonoma:        "d762f28338f4b79f1660170a533d451484fcb60dd9a3d7ab2f5c09d4e5a9c729"
+    sha256 arm64_linux:   "c1d35f3ed7a8a22b9ecd081ca53353cc7b9ba671f8f899a62f630d1ff2e0c011"
+    sha256 x86_64_linux:  "e3ca53f890dec487c628a6df56d49d491c23767ebfee7aed2ef4b6a88970f2d3"
   end
 
   depends_on "pkgconf" => :build
@@ -277,6 +277,9 @@ class PythonAT312 < Formula
     inreplace lib_cellar/"ensurepip/__init__.py" do |s|
       s.gsub!(/_PIP_VERSION = .*/, "_PIP_VERSION = \"#{resource("pip").version}\"")
     end
+
+    # Ensure that our new pip wheel is globally readable.
+    chmod "ugo+r", lib_cellar.glob("ensurepip/_bundled/pip-*.whl")
 
     # Install unversioned (and for an altinstall, major-versioned) symlinks in libexec/bin.
     {

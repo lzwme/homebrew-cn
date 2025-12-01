@@ -12,14 +12,13 @@ class LlvmAT20 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d740b7603ad51bc7832469bd93b6d557d7dad9fde60ecfc8c1df99000255b7a1"
-    sha256 cellar: :any,                 arm64_sequoia: "a8bbf20183038cbf5c5955bcb7ad88f86b9c52b8f4fa2153300726275277769f"
-    sha256 cellar: :any,                 arm64_sonoma:  "01f6f4e8c815eaaeee09ac435b15a70cb907d8e7c767489579ec8523ffee2642"
-    sha256 cellar: :any,                 arm64_ventura: "720570a2547522ac18f2443993d8aefdb79a7b2bc23e7389608b0ede2c3f3bf2"
-    sha256 cellar: :any,                 sonoma:        "0e0576cbc16d2f109d68074797a4f7333abb6da2720e7569fb51517417bb4d90"
-    sha256 cellar: :any,                 ventura:       "e97507fafff68722e6bab02fde4ac97f13d12e95ba818325fa9184941eaa54e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "70d678f015599eb2a158b088a47c67e399b200d49e435277c9ce7b0a4efe62b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8202436b5da09d729ec58b40114662debf730c649b850cc217e0646941518b96"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "8fa8c1997152175f6a9acf246de927257de7732b6e0dc660241fad3553ef8eb9"
+    sha256 cellar: :any,                 arm64_sequoia: "e29da2ee12076cc82d1ecab3541b5c70b3d63e369487be4ea6a549e8fb801cbf"
+    sha256 cellar: :any,                 arm64_sonoma:  "4615ce2cb54d2c1b17e90f3cf3ec4726158013c0b855115500a6576bd3f9e524"
+    sha256 cellar: :any,                 sonoma:        "ae9479857a791340803a48d756b64cda33f8f0a1eb80ae73c4343958fa3794d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4aa530e390aec930a738bc54e1be97f68278310fb6061ec297f833a17bc21137"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85d4e657dccd5f95355a75266eda3fac4d755ceece78cf56b0cb33aee261195e"
   end
 
   keg_only :versioned_formula
@@ -27,7 +26,7 @@ class LlvmAT20 < Formula
   # https://llvm.org/docs/GettingStarted.html#requirement
   depends_on "cmake" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "swig" => :build
   depends_on "xz"
   depends_on "zstd"
@@ -51,7 +50,7 @@ class LlvmAT20 < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def clang_config_file_dir

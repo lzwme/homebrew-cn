@@ -1,20 +1,18 @@
 class Sslscan < Formula
   desc "Test SSL/TLS enabled services to discover supported cipher suites"
   homepage "https://github.com/rbsec/sslscan"
-  url "https://ghfast.top/https://github.com/rbsec/sslscan/archive/refs/tags/2.2.0.tar.gz"
-  sha256 "17c6fe4a7822e1949bc8975feea59fcf042c4a46d62d9f5acffe59afc466cc1c"
+  url "https://ghfast.top/https://github.com/rbsec/sslscan/archive/refs/tags/2.2.1.tar.gz"
+  sha256 "188b94d99072727e8abd1439359611c18ea6983c2c535eaef726bbc2144c933d"
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
   head "https://github.com/rbsec/sslscan.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ee523de1bd57419001afc07024c90df09d97a0bef98507502154235034b498c2"
-    sha256 cellar: :any,                 arm64_sequoia: "2c68b958da874522adc15b570cb2c86c48361cf1412aacb9284dcfae698514ef"
-    sha256 cellar: :any,                 arm64_sonoma:  "d82171a037a8b9cf84384979a08a06165e3c2955991095b57e7e53a904883467"
-    sha256 cellar: :any,                 arm64_ventura: "933d1d3963d0371010c608bb04e2da357b894f1761292d0f99b6433310f081b9"
-    sha256 cellar: :any,                 sonoma:        "fe6af6b83a3a9d59f3b0e2bf0d8048af1f17604bfe01a712618d0b0dac07cf89"
-    sha256 cellar: :any,                 ventura:       "27fabd4a39bc12b99ffdc9a29fae4ceb318c65f7219c9a503e090534bb49a92e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f28ac870735144a4ed0462f58b6cd9dd6701390493fb84500309448d87f47fee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f11cc61588af0da636c52e62a7e620d179e9e4f6779bc2f8da38fa1d0bec223"
+    sha256 cellar: :any,                 arm64_tahoe:   "59eaeaf7377f2090db9387111e883e16afdb594416bf57345871b43a6e0fdd8f"
+    sha256 cellar: :any,                 arm64_sequoia: "cad1744b76910e14241c1d7f4eee27069d316bbf57a62c763259e19f75bf759d"
+    sha256 cellar: :any,                 arm64_sonoma:  "4aaece55b9e93aba34f28a2d0a90d9990f6ae515008801b936529b220ad6e9ef"
+    sha256 cellar: :any,                 sonoma:        "4b8013ee4250f05a64bf02e63041debb13416b54c9be84de5559c05b981ce027"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "636df179d6fff1c849f0ce0262fece31e37d7afb038f4d1eae541da989bc2217"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbf48ad55a6b3186ad74f4c4506487f8e0ca48b91f218c4a36e36d1b4bee3275"
   end
 
   depends_on "openssl@3"

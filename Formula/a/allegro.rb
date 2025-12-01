@@ -1,8 +1,8 @@
 class Allegro < Formula
   desc "C/C++ multimedia library for cross-platform game development"
   homepage "https://liballeg.org/"
-  url "https://ghfast.top/https://github.com/liballeg/allegro5/releases/download/5.2.11.0/allegro-5.2.11.0.tar.gz"
-  sha256 "4d06a8c8bf7afc91b304f1b12a114afba9d8a7413357c2a3579528d45a8f3d6b"
+  url "https://ghfast.top/https://github.com/liballeg/allegro5/releases/download/5.2.11.1/allegro-5.2.11.1.tar.gz"
+  sha256 "ab9582b3a8040cf4c086f4f1073dfe38b96fc3343a89b43765b892560437c7e0"
   license "Zlib"
   head "https://github.com/liballeg/allegro5.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Allegro < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a081a8c2d30674fa6237103ac52045707bd7d5c10d05952ae7985882947295e8"
-    sha256 cellar: :any,                 arm64_sequoia: "8dfe8952b79782a244428e769b8b5b0a7e3d7f8a23eeb92a300700ca83f8f0c0"
-    sha256 cellar: :any,                 arm64_sonoma:  "7ac94dfe962a1d545eea6f8fe0f63f0d54795037228766080ca7123ee40ba95f"
-    sha256 cellar: :any,                 sonoma:        "94ceb581d2cea861a940717d4f91248a4c0aab77987affc1a479d162da252ed3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3dc016b4d89b3cbbcc9eb1b2cacce8cfb9f8c5ccf501a7885d328e1ad8d5eef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8988d0214db349ecd93ed900db859e88d63f5de556ad58646f9af6beb2d61ceb"
+    sha256 cellar: :any,                 arm64_tahoe:   "08adde00369ca07ff74a0ca1d284b1b1728007c52ff93fce0a9c662848ad8f91"
+    sha256 cellar: :any,                 arm64_sequoia: "014edc30f7d56fae5e705aa8a77139777c26c07c0d4ab67dfa8d6ba8e3e88425"
+    sha256 cellar: :any,                 arm64_sonoma:  "df631f3ad7dfb6773249d09ceac3b75b3fab91d2923de8ea1f11724871998669"
+    sha256 cellar: :any,                 sonoma:        "ead5ff1cf57077a034b4ae5f017fd63699e33ea4b6daa85262d0ab50cb289b0e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f16c55411a28dbeb52fd76ba4d94c60f073ab76adaa7de48051e9d1cf11b4cdc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44f09135d9cbba538ef3e819cb5883a13691bcc27fa1846a5246503397628f80"
   end
 
   depends_on "cmake" => :build

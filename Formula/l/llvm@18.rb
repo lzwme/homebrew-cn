@@ -14,14 +14,13 @@ class LlvmAT18 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "80b130424c17ca6e73e41288327ee94315c36ea4257d250e873cd26f61d13d15"
-    sha256 cellar: :any,                 arm64_sequoia: "c7bb3e7186411468c2b7af59fb5abd5108805078280f8144f8cf53b9c0b93cbf"
-    sha256 cellar: :any,                 arm64_sonoma:  "c9daaee40a1b1c85a35af2a64c3577257740554df1d8bbf629103a9994b288b4"
-    sha256 cellar: :any,                 arm64_ventura: "b4cb7eba8d8acc3602e08c10a79ac8b584bfa7cde3f7dad3e8ecd618245de840"
-    sha256 cellar: :any,                 sonoma:        "9066365b4f1e822123b399eaa4f53fea875e64f78243fa737d6a3cc28e67479b"
-    sha256 cellar: :any,                 ventura:       "84b0c6e7c40e9ee5ca0935e464fcf83fdc508fa1a45834a425c6a7ffbf3d0d23"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ec0521e2b13ac478b9d16ebf35a4d43064e9f7d4e44d35f817ce304546c84e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79b1083ab5c1f62b6b192b680618a50d06e72594a93d859835f7a30b8fb71271"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e9f1cec1208e004ddbe39ea96897e5a1f784eb0d98731d2b074bf9f9e916d3ab"
+    sha256 cellar: :any,                 arm64_sequoia: "d01dd6db427356e9c325e531d54e210b66520dce9690d6e653ef28eefb650493"
+    sha256 cellar: :any,                 arm64_sonoma:  "5d45dc3ff0759f88b9fb81d33650c009a82a8f572fb7973485d0066e1f1f7d5f"
+    sha256 cellar: :any,                 sonoma:        "cbc4b1dbc1b840b6d9bb02e60b5f3af5e0c6ed8e04d2cfc239eba270690cbb7f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44a08bf3f5cce809548e39f0e1cda1084a82e050a9ef8cf9beaa96123effa359"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "127546cbca116469f33c0976940d5ec6bc2385ac7caf18e6ca7b10fc66d3b32e"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
@@ -32,7 +31,7 @@ class LlvmAT18 < Formula
   # https://llvm.org/docs/GettingStarted.html#requirement
   depends_on "cmake" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.12" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "zstd"
 
   uses_from_macos "libedit"
@@ -47,7 +46,7 @@ class LlvmAT18 < Formula
   end
 
   def python3
-    "python3.12"
+    "python3.14"
   end
 
   def install

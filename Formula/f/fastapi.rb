@@ -3,17 +3,17 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/b2/de/3ee97a4f6ffef1fb70bf20561e4f88531633bb5045dc6cebc0f8471f764d/fastapi-0.122.0.tar.gz"
-  sha256 "cd9b5352031f93773228af8b4c443eedc2ac2aa74b27780387b853c3726fb94b"
+  url "https://files.pythonhosted.org/packages/76/c7/d3956d7c2da2b66188eacc8db0919635b28313a30334dd78cba4c366caf0/fastapi-0.123.0.tar.gz"
+  sha256 "1410678b3c44418245eec85088b15140d894074b86e66061017e2b492c09b138"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "37b64b1e1291d88a7e40ba9bfaf9c109dbf8879b3066e86674735c14c0ea9196"
-    sha256 cellar: :any,                 arm64_sequoia: "b4cb661db5fcb4b2e5cda690669c078583e7fcfc9fcf673e156934a33f6ca21d"
-    sha256 cellar: :any,                 arm64_sonoma:  "967f122d8bb8d9b9d876d4dada2208af3fe7fbfe1fce48d8db07bb640561a644"
-    sha256 cellar: :any,                 sonoma:        "c26f82f1cf8cdffcb2567b292d3d076172deff1fae781a27f9223626e5bfe7ba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "35fdca1890efe8178075bf7bc6dce89b8c3845e96d130d138abfaf143676e8e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "135cc27ea271dae90ad95a1cc054ce4c5e41490050f1e7f6ddfb67b6bab41df4"
+    sha256 cellar: :any,                 arm64_tahoe:   "906c9ed84f4b6f220f3136a3e4a92102802785d7414b5efbc3308cb358f003a5"
+    sha256 cellar: :any,                 arm64_sequoia: "ed0117a0e723e62756663ff381d96cde64080c0b36f8c51f2bc49b03f4f0f982"
+    sha256 cellar: :any,                 arm64_sonoma:  "5155b7c539b80d4a336c4c6c983bf0cdb14859aee57df99965283830af2b3649"
+    sha256 cellar: :any,                 sonoma:        "e82907ef1c595c889065de78ee38162a6d38a3eb7e8b2515de8dca393ec592b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab6407d1f72e4acbd06eafe33b1e1d2047a48ad499f0217531eda817658f7357"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eafd9f7a6b46fc66959e16feaec4cf83a5916e9eb4552bbfed531ea4823b632a"
   end
 
   depends_on "rust" => :build # for annotated-doc
@@ -31,8 +31,8 @@ class Fastapi < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "click" do
@@ -56,13 +56,13 @@ class Fastapi < Formula
   end
 
   resource "fastapi-cloud-cli" do
-    url "https://files.pythonhosted.org/packages/cd/8d/cb1ae52121190eb75178b146652bfdce9296d2fd19aa30410ebb1fab3a63/fastapi_cloud_cli-0.5.1.tar.gz"
-    sha256 "5ed9591fda9ef5ed846c7fb937a06c491a00eef6d5bb656c84d82f47e500804b"
+    url "https://files.pythonhosted.org/packages/27/6c/32527a1fd7eee91dd0c52bbe6b7c21e3272b24beb436b142b2c9c01f922d/fastapi_cloud_cli-0.5.2.tar.gz"
+    sha256 "34d04ffadb2562c3ebb39e6f5a599c47353750f75a2ef0a2d9c1442ed09f3308"
   end
 
   resource "fastar" do
-    url "https://files.pythonhosted.org/packages/d9/7e/0563141e374012f47eb0d219323378f4207d15d9939fa7aa0fa404d8613d/fastar-0.7.0.tar.gz"
-    sha256 "76739b48121cf8601ecc3ea9e87858362774b53cc1dd7e8332696b99c6ad2c27"
+    url "https://files.pythonhosted.org/packages/69/e7/f89d54fb04104114dd0552836dc2b47914f416cc0e200b409dd04a33de5e/fastar-0.8.0.tar.gz"
+    sha256 "f4d4d68dbf1c4c2808f0e730fac5843493fc849f70fe3ad3af60dfbaf68b9a12"
   end
 
   resource "h11" do
@@ -136,8 +136,8 @@ class Fastapi < Formula
   end
 
   resource "rich-toolkit" do
-    url "https://files.pythonhosted.org/packages/83/8e/ab512afd71d4e67bb611a57db92a0e967304c97ec61963e99103f5a88069/rich_toolkit-0.16.0.tar.gz"
-    sha256 "2f554b00b194776639f4d80f2706980756b659ceed9f345ebbd9de77d1bdd0f4"
+    url "https://files.pythonhosted.org/packages/ad/d0/8f8de36e1abf8339b497ce700dd7251ca465ffca4a1976969b0eaeb596fb/rich_toolkit-0.17.0.tar.gz"
+    sha256 "17ca7a32e613001aa0945ddea27a246f6de01dfc4c12403254c057a8ee542977"
   end
 
   resource "rignore" do
@@ -153,11 +153,6 @@ class Fastapi < Formula
   resource "shellingham" do
     url "https://files.pythonhosted.org/packages/58/15/8b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58e/shellingham-1.5.4.tar.gz"
     sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
-  end
-
-  resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
-    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
   end
 
   resource "starlette" do

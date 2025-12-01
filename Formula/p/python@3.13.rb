@@ -12,14 +12,15 @@ class PythonAT313 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "03eb2d172710c86df3dd45c640b0a3e404646deaff9dd36e9cc6584f73797043"
-    sha256 arm64_sequoia: "1e69017b62b04ec5ed8369bd6ea90d0f483187b9e111afdf1c853f22feba0b65"
-    sha256 arm64_sonoma:  "eb694b873eaca9e05e721f22da66b1a0484230e8c5c0c0b43fe0663bc8c303d4"
-    sha256 tahoe:         "77ec038bd37c453589fb715054f4652b53437d484abf94d7e88f7f56d9c5a6aa"
-    sha256 sequoia:       "6960c0f0121d539c9035dff825a97666f41c59f3ea7e4044a71cb3aa50182b12"
-    sha256 sonoma:        "4142735df04ef4c8a87339869b6e5687aa4a2285934cea5d226bfdc63d426c73"
-    sha256 arm64_linux:   "f05a221a15372591c82888863d9bf1a272d180dc5275273b3ed27c5be533481a"
-    sha256 x86_64_linux:  "eb3a1f2e5c3b653e6de402b701f20fb7a9f80ffc98afb9c235f36436cc59ac78"
+    rebuild 1
+    sha256 arm64_tahoe:   "2dda1c8b37f3658a38f1fbfc9edf381284e382f3e4fecb06658e1477dc7c42d8"
+    sha256 arm64_sequoia: "c8d38b145b0be7d1758b7edaa574ef4d5211e75f32854d54886af7b7c58cc547"
+    sha256 arm64_sonoma:  "66f3ce715ed6bd470a3cfb9fb7573471d188248430c430e5165343e8e7750f48"
+    sha256 tahoe:         "48c4bf63e2a36e6dba4289ff4a06b97fc8a9857e603b6b9b6b48802f4a91d861"
+    sha256 sequoia:       "a7bf11de5583332a2cdefceb7c282630932f05f042e52a7582e81112ebf71b4d"
+    sha256 sonoma:        "d1f565c40e672e8b435e798c72a735eebf2cd6ccb6e7d3585cf3c4bea214898c"
+    sha256 arm64_linux:   "f106972ed4be2b9ff09e7895ef7f143b3a178095accb46b52293d39c9121d2b0"
+    sha256 x86_64_linux:  "3fb485f3cd69a7b0ce5802031c2e8cffdf5399122d4bbc6df7cbc332695bc80f"
   end
 
   depends_on "pkgconf" => :build
@@ -264,6 +265,9 @@ class PythonAT313 < Formula
     inreplace lib_cellar/"ensurepip/__init__.py" do |s|
       s.gsub!(/_PIP_VERSION = .*/, "_PIP_VERSION = \"#{resource("pip").version}\"")
     end
+
+    # Ensure that our new pip wheel is globally readable.
+    chmod "ugo+r", lib_cellar.glob("ensurepip/_bundled/pip-*.whl")
 
     # Install unversioned (and for an altinstall, major-versioned) symlinks in libexec/bin.
     {

@@ -12,12 +12,13 @@ class PythonAT311 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9e609dc553e4f962751863590c8d4276ff88352aa70879ffe7c657bf4f7f1239"
-    sha256 arm64_sequoia: "1f45f5ef42e5cce4e37f001b7e9848c02805a920ca2a6413042eeb212d14dfb8"
-    sha256 arm64_sonoma:  "ecae0169191ecabda2b38bcf5c6e234feadd5e03eae3bb0fcb88617165379849"
-    sha256 sonoma:        "e2034328e1932ba64a5217ac76610ca7159c5df0eda00edde04a464a7d2c90da"
-    sha256 arm64_linux:   "9de68eb6c23d6cc4e5a9975a1e47e79ae7fc6675dd7061ea4b1c9f1a9bce113f"
-    sha256 x86_64_linux:  "425d7ca6959c161cdfdda95e6151e5e1f33e727aa8f1b301f95107598f51d289"
+    rebuild 1
+    sha256 arm64_tahoe:   "b79ec08f171be45de6720db5dc1c332bc11a33bd8ee15debc2ec01feee5d85e1"
+    sha256 arm64_sequoia: "e483746daf9f88fe10533ad5cec6d6798751cd7d214504bfc166c9d2ab7e9cfb"
+    sha256 arm64_sonoma:  "09c3d368240780d6612c207c204c13c0312e475e3e70a8b3353c0a5e28b2c7c5"
+    sha256 sonoma:        "a50d3c0cc53c6a806a8a97083e06680b39f0e174619ba7eb1a0dac03ee408856"
+    sha256 arm64_linux:   "7a8d069741df56f34546c4c8425570f96012fc1247da789087ac2e3df62ac61f"
+    sha256 x86_64_linux:  "c9c7259c4c23f3131e7e3d70696ee158ffc861e456bcf2304fbb6b2b90794d40"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -309,6 +310,9 @@ class PythonAT311 < Formula
       s.gsub!(/_SETUPTOOLS_VERSION = .*/, "_SETUPTOOLS_VERSION = \"#{resource("setuptools").version}\"")
       s.gsub!(/_PIP_VERSION = .*/, "_PIP_VERSION = \"#{resource("pip").version}\"")
     end
+
+    # Ensure that our new pip wheel is globally readable.
+    chmod "ugo+r", lib_cellar.glob("ensurepip/_bundled/pip-*.whl")
 
     # Write out sitecustomize.py
     (lib_cellar/"sitecustomize.py").atomic_write(sitecustomize)

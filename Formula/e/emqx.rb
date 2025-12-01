@@ -4,14 +4,6 @@ class Emqx < Formula
   url "https://ghfast.top/https://github.com/emqx/emqx/archive/refs/tags/v5.8.8.tar.gz"
   sha256 "5861d8d32c4934175ca3d01c691ea679ac1a7903a1faee72027f6484d3085c89"
   license "Apache-2.0"
-  head "https://github.com/emqx/emqx.git", branch: "master"
-
-  # Exclude beta and release canditate tags (`-rc` and `-beta` suffixes)
-  # and enterprise versions with BUSL license (their tag starts with `e`)
-  livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "2231cc764c1d69dc8f8b037ae721d9332aba3d74595b602f57e4ffd8de4785d2"
@@ -23,6 +15,11 @@ class Emqx < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "18b5fcdbacd07afb25f4ffbd1f9c777f19ba0f9fcd512ada41ea22e26b5edeb7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bd87adc80d3add3e0be9343e3a69ce70cfe53d4c656b5413e2a76af9cbacd5d"
   end
+
+  # https://www.emqx.com/en/news/emqx-adopts-business-source-license
+  # https://github.com/emqx/emqx/blob/master/README.md#License
+  deprecate! date: "2025-11-30", because: "changed its license to only BUSL in 5.9.0"
+  disable! date: "2026-11-30", because: "changed its license to only BUSL in 5.9.0"
 
   depends_on "autoconf"  => :build
   depends_on "automake"  => :build

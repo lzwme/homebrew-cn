@@ -1,20 +1,18 @@
 class Koji < Formula
   desc "Interactive CLI for creating conventional commits"
   homepage "https://github.com/cococonscious/koji"
-  url "https://ghfast.top/https://github.com/cococonscious/koji/archive/refs/tags/v3.2.0.tar.gz"
-  sha256 "648b9d47de121895a79e3d963f5fc6e781d82a1531eeec6b3aa91db5951e058a"
+  url "https://ghfast.top/https://github.com/cococonscious/koji/archive/refs/tags/v3.3.1.tar.gz"
+  sha256 "fe3a56bc7f0829d434b82d8bda51c6cae7dbc909a1ae7980b31c63338349af73"
   license "MIT"
   head "https://github.com/cococonscious/koji.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d7a11262a6be5a69c0b40ec6289478035643bd5821e5d212e4b9dc51822b4609"
-    sha256 cellar: :any,                 arm64_sequoia: "6ad589d2ccaf89bbc8e56b42cc1ea81757a914c29447f77f6862ef84f3a5a064"
-    sha256 cellar: :any,                 arm64_sonoma:  "5655e3a07a057391e84ed1fbfabc7887d6d37d511581c59e5b9c49b6bff3ec93"
-    sha256 cellar: :any,                 arm64_ventura: "9fd26b1e044fb57e2d8ef0d7bbe1ea57aa7ab8b124277bd89adbfc67f7cdd467"
-    sha256 cellar: :any,                 sonoma:        "b4b2066c3785fb96b1fc5f280a586a553ba3af079b6536020b4b7ba61073adaa"
-    sha256 cellar: :any,                 ventura:       "cdbc54030a73304779b4f7456a7d51bbcfa257cf818043eb63c09171f98f238b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e129ea2ee03bde87de5c0b3f167dd223feacd4815c20bcff21e5e240283b926"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3439dfc748254b2ca5f525304e3d329899829bd11a1cfe7593d2a45e38ac4ccd"
+    sha256 cellar: :any,                 arm64_tahoe:   "041e6a96f3dbf36efba528dd6380ddf39d8ec45221850a0224d7d0c600b9309f"
+    sha256 cellar: :any,                 arm64_sequoia: "e58c28eaab0ce31ae0d7bf7d994d061020a149825a61af7771f7acdb4bc602cd"
+    sha256 cellar: :any,                 arm64_sonoma:  "5445f0447d2c0505a49e4efe156f9030816fdf61341195434f7ad304b24ad92e"
+    sha256 cellar: :any,                 sonoma:        "2e2ad1bb4bf6c1436723a1535e6a581d24352efc62ac64b31d178f78f3f1bd15"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc21512132d4d6fade55d249fb114486e52da4e0f433edc948caea55bb5aaa4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fef9220c1c6293ed5c896fad2fe69740749a87e66255a2d778fb4053b34c5b27"
   end
 
   depends_on "pkgconf" => :build
