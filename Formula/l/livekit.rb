@@ -1,8 +1,8 @@
 class Livekit < Formula
   desc "Scalable, high-performance WebRTC server"
   homepage "https://livekit.io"
-  url "https://ghfast.top/https://github.com/livekit/livekit/archive/refs/tags/v1.9.4.tar.gz"
-  sha256 "a3aa2c18b638050d26a5feb5d8348835ba353ad733592a32e2cb81c355473056"
+  url "https://ghfast.top/https://github.com/livekit/livekit/archive/refs/tags/v1.9.6.tar.gz"
+  sha256 "94a60d28a55edf4b63e4cc78a35b7d096edeb94365c8e4728da3fabbc60640fc"
   license "Apache-2.0"
   head "https://github.com/livekit/livekit.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Livekit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dfd3ed7391bdc2de0038a18ea84389fba06135fa8561a193e2bac67314f94bf0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6feb38036593f60f84c57436f7923548a47b35a98bcb93388c8257071fb5982"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "581af401f18b9ac63f34a0ff3d83c950dfcc1a719ea84598b69fc905793f6291"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5d8450659ac3d8903d0988c1959b1af3a91a2b6c1590b72cd2397f9cf44f65f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0979f9c9ad3ea139c0c94b7610155bce51c76d10e573d791695bfcc957d73c94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aabdac1171e51e04839fd24a7f5564e1b3f678b2257d54c81b4d42dec78d8670"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73110a2bb0d5e20bcb590d47d135b2d1cadc2d6efbb7f82f704068b30f73a598"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6424779ae6ce96c627ce77d38642ddfdbded4bf21cc818db969d0420aff7a6d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f08e740a4700d8febd4146e5be5175f7c8d4e71074ac3cdc9a4335678abdfb31"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8537badc0674ca13848fd5f94d6434155fd300ef4366bfbbfccb0c4fe2ce4c22"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5999a51b19043451409b67ab9de3586c567dce4a5535b874ae14444dc646acd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "576171a3eb23938cfe1821c9510bf0255fbb264747d4e56afc6c6d6500c3c442"
   end
 
   depends_on "go" => :build

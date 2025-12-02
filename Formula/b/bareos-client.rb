@@ -1,8 +1,8 @@
 class BareosClient < Formula
   desc "Client for Bareos (Backup Archiving REcovery Open Sourced)"
   homepage "https://www.bareos.com/"
-  url "https://ghfast.top/https://github.com/bareos/bareos/archive/refs/tags/Release/24.0.7.tar.gz"
-  sha256 "ae60d17114f1b9081314d002186fd538c108972c332287f381cff0f63c1b22a1"
+  url "https://ghfast.top/https://github.com/bareos/bareos/archive/refs/tags/Release/25.0.0.tar.gz"
+  sha256 "99249903b3f96fdf139303032b86b7900efec3f3fbc286667430ef57d20a98b9"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -11,12 +11,12 @@ class BareosClient < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ca9e8fbf99e22526a8f24268580b3f30647a33c9ced707820e549d0db495c8e0"
-    sha256 arm64_sequoia: "5f9fda83af5d2473bd373ca531df308cf611d9283dccdce106a2893a8acd6389"
-    sha256 arm64_sonoma:  "c401f9deecf6c02ed83e9515d82798f61ce85f2107aa95d84312f76463d85579"
-    sha256 sonoma:        "00f574b386df4bbd673956a3eacdf9bd929bfedbfeddb815909c29f0c77d07dc"
-    sha256 arm64_linux:   "508990f99a02d75beb2d30e57f9426666b939b098357bbdec333f0a293977f65"
-    sha256 x86_64_linux:  "6c03646b46d8ad6fcfd0a131c6ba22b710a8291fddbe2863c9a5d70fd2b82a0c"
+    sha256 arm64_tahoe:   "a5db09fc2a5eafee4f8e2960a98ced6d78c01f07afae70285900157f7bcd4401"
+    sha256 arm64_sequoia: "dfe476b4bbfdc6feefb26ed54f716c78cdacf65bb9e069421d0da8e8831e82c8"
+    sha256 arm64_sonoma:  "f18f2deded9d99f5c4d060f02d2868f4d9a19088f24ba3f5903a1b13af029327"
+    sha256 sonoma:        "b43fc5893be64d8edbb21af3ee8bf8c65f772911904994d1903432eb6270e90c"
+    sha256 arm64_linux:   "200d643b4ee5f54416f286582e40277c6a25c7040c44b0fe43501d630330eabc"
+    sha256 x86_64_linux:  "7c4db369ec79781c5b0b4ec434c7ff6adbdf75ad1122000b2bb62ec1315ed5a1"
   end
 
   depends_on "cli11" => :build
@@ -53,14 +53,7 @@ class BareosClient < Formula
     end
 
     # Work around hardcoded paths forced static linkage on macOS
-    inreplace "core/cmake/BareosFindAllLibraries.cmake" do |s|
-      s.gsub! "set(OPENSSL_USE_STATIC_LIBS 1)", ""
-      s.gsub! "${HOMEBREW_PREFIX}/opt/lzo/lib/liblzo2.a", Formula["lzo"].opt_lib/shared_library("liblzo2")
-    end
-
-    inreplace "core/cmake/FindReadline.cmake",
-              "${HOMEBREW_PREFIX}/opt/readline/lib/libreadline.a",
-              Formula["readline"].opt_lib/shared_library("libreadline")
+    inreplace "core/cmake/BareosFindAllLibraries.cmake", "set(OPENSSL_USE_STATIC_LIBS 1)", ""
 
     inreplace "core/src/filed/CMakeLists.txt",
               "bareos-fd PROPERTIES INSTALL_RPATH \"@loader_path/../${libdir}\"",
@@ -89,10 +82,8 @@ class BareosClient < Formula
     # If no configuration files are present,
     # deploy them (copy them and replace variables).
     unless (etc/"bareos/bareos-fd.d").exist?
-      system lib/"bareos/scripts/bareos-config", "deploy_config",
-             lib/"bareos/defaultconfigs", etc/"bareos", "bareos-fd"
-      system lib/"bareos/scripts/bareos-config", "deploy_config",
-             lib/"bareos/defaultconfigs", etc/"bareos", "bconsole"
+      system lib/"bareos/scripts/bareos-config", "deploy_config", "bareos-fd"
+      system lib/"bareos/scripts/bareos-config", "deploy_config", "bconsole"
     end
   end
 

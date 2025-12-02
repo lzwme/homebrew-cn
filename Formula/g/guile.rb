@@ -1,22 +1,18 @@
 class Guile < Formula
   desc "GNU Ubiquitous Intelligent Language for Extensions"
   homepage "https://www.gnu.org/software/guile/"
-  url "https://ftpmirror.gnu.org/gnu/guile/guile-3.0.10.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/guile/guile-3.0.10.tar.xz"
-  sha256 "bd7168517fd526333446d4f7ab816527925634094fbd37322e17e2b8d8e76388"
+  url "https://ftpmirror.gnu.org/gnu/guile/guile-3.0.11.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/guile/guile-3.0.11.tar.xz"
+  sha256 "818c79d236657a7fa96fb364137cc7b41b3bdee0d65c6174ca03769559579460"
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:    "626e1acb5dfed10e5cf29de26498a1bea6f6b6ed08d33ca1498568980a1202c0"
-    sha256 arm64_sequoia:  "bacc4d4dca5374f7a713747ad70fb2111f8c3b443f2a5fb614f05b659be80949"
-    sha256 arm64_sonoma:   "e7f65709dffaf55c7ace2e1c8f6553aebc56a17674b7ab57421c1f22bbf7798a"
-    sha256 arm64_ventura:  "8e47adc1f7238e67c3af7712ff0e57c1d0b1b79a86950f0e0370944f1a69c960"
-    sha256 arm64_monterey: "d58266c28fa037d004ddcd50f5da744a7232303455139523f61a83a3d36ce5e6"
-    sha256 sonoma:         "4b8013bda989e3215cbe659f8e0786408f8e71a56777c1533a882246e986cdf8"
-    sha256 ventura:        "48cf5388ba5c114888987ae31a6620d640ed94c72e22076df491c33a88a35deb"
-    sha256 monterey:       "2716185a062154262f1b160358fa955bf31bbdae5d0b08f4d0c38e3bf6ff066c"
-    sha256 arm64_linux:    "d2c305fc8941ee39d4b7a4ea7ea5f3f6257d5ed67fd4fbae31bf5ad44a2f6411"
-    sha256 x86_64_linux:   "fd3f68416f1b61d67641e43ce42a3a4b88ad5a010533b572b42e69fa8e4ef434"
+    sha256 arm64_tahoe:   "badcd01f64dd30d067e31fa2658b3d12760c13b897616200c6e6154e946b3515"
+    sha256 arm64_sequoia: "2dec620b6eaf36a87eff83f35bf926145cc8ae8067b0d5469570c4f09bbe4ace"
+    sha256 arm64_sonoma:  "efd9a224d852b9378594099290cb21e973c92404bf4f24835e7167b51e3055ed"
+    sha256 sonoma:        "253c9d486cccc6e6a9447c484625f7498329cbf16a7c0f28c7beafdd66a24b5a"
+    sha256 arm64_linux:   "e9277ab2de50eec2a837d1d0d51456bff3a47737e787e7966df1220ba2b24b74"
+    sha256 x86_64_linux:  "be5c49d28eb86b89484e9a5dc33dc4097d9af484b67bde26aae77bf5841771b9"
   end
 
   head do

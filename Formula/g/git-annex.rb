@@ -13,19 +13,22 @@ class GitAnnex < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d2c1613aee9678c3e05f01a7120e71fb267d2727a9d2b90414b038e4c7f9b74c"
-    sha256 cellar: :any,                 arm64_sequoia: "14b840ff145bef962de4e67b5e8c1624ff7c4adaaf0eaf73dc9ac2f99e6e0a7e"
-    sha256 cellar: :any,                 arm64_sonoma:  "2eac7fda8cb3c02726e30ea4e298431af52212c520efd499be96152948b5dfbb"
-    sha256 cellar: :any,                 sonoma:        "05b2db23c49a5c908a9f25df9fdf47d4c9adc51dbe3f75c91bc707b67fcc0965"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7bd521e8374cb6168df7d312a6d55695022d35d72e4bc38c281077f49e58011e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d2000e80267280b08eed65c47d0b73afd2712df72d46b6cb4068f98563bb39d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "1238e8e583e91b930c069219dc7eaad1faa92d783e00ac4c9873be7477d70a02"
+    sha256 cellar: :any,                 arm64_sequoia: "e0c94e88452063d89435776e61839080ca193ee054a1a2a3622f3f9105be30f1"
+    sha256 cellar: :any,                 arm64_sonoma:  "02ff5d809d81577c08128c8eb73e158f0320addcd6c6f17133f69a4711c15f7f"
+    sha256 cellar: :any,                 sonoma:        "b8aa9623b11168160e8f63acea601ee51192fcfaed40a197c4e51b5acff1b5ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c12bec47c9fc5eab088de27adbe872a5066845b490868ead466f4262e5821840"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11b359fe9d22279efccbebbdbb28b6ab0104404d4bbcc0711ab022572f524486"
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.10" => :build
+  depends_on "ghc" => :build
   depends_on "pkgconf" => :build
+  depends_on "gmp"
   depends_on "libmagic"
 
+  uses_from_macos "libffi"
   uses_from_macos "zlib"
 
   def install

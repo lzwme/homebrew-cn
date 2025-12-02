@@ -1,10 +1,9 @@
 class Podofo < Formula
   desc "Library to work with the PDF file format"
   homepage "https://github.com/podofo/podofo"
-  url "https://ghfast.top/https://github.com/podofo/podofo/archive/refs/tags/1.0.2.tar.gz"
-  sha256 "4f46edac16e0b3badba2e972b3e3b7d8381845fad3eb39a02562cb7a04207d45"
+  url "https://ghfast.top/https://github.com/podofo/podofo/archive/refs/tags/1.0.3.tar.gz"
+  sha256 "02815b21a51632c2849d41b067597e9356bbc54bad0efcd84c902b555c203ce7"
   license all_of: ["LGPL-2.0-only", "GPL-2.0-only"]
-  revision 1
   head "https://github.com/podofo/podofo.git", branch: "master"
 
   livecheck do
@@ -13,12 +12,12 @@ class Podofo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b2ede0bb36c3b39bbd826f2dcc6839c51d670d4384a5fe29b7e0f01158a29122"
-    sha256 cellar: :any,                 arm64_sequoia: "366bba6682bf44d25287746fee42cbf2681d3f29e288814ee6fce5e83a046fb3"
-    sha256 cellar: :any,                 arm64_sonoma:  "0d8700373b6887e4907eda39021308a10744b838b9ecec6e5e2849b501900c4d"
-    sha256 cellar: :any,                 sonoma:        "b0ba3e2db8230e2d7906710b5c7647b72ecb4076eb5096383f473354bb5757e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "473e71fd94c3eece308f21527168da7e78d776c4cb164aea987d81d545544596"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "256c8a39e4debe49299776dac6661a0eca9b0fa679ab0ae8af8249890baaf16d"
+    sha256 cellar: :any,                 arm64_tahoe:   "7d392f6365b35254ed306291dec5492f0906dc4c649a9f25bed8c2a2896d46ba"
+    sha256 cellar: :any,                 arm64_sequoia: "17ae73de90ee1fa537cadfd91ca0b0eb1fdb47da0ac96af2dfb1502d9b35a94b"
+    sha256 cellar: :any,                 arm64_sonoma:  "1680689f073bb1763fd6fede40fb6fe6623fb7575135fba72d72e695cb588ee6"
+    sha256 cellar: :any,                 sonoma:        "e48947350364ddf6ff7f62edbfc576423e689323f5867e04247a10f3adfd279a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddcfa3be237be6e97c7569bb3e44624975296a4f7ebaf8d06afe40053f7d28c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21f85126552f9abdff2f83e543aa9c56a56cd7725328ac32417f8d45fcf1a0c4"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class Hck < Formula
   desc "Sharp cut(1) clone"
   homepage "https://github.com/sstadick/hck"
-  url "https://ghfast.top/https://github.com/sstadick/hck/archive/refs/tags/v0.11.4.tar.gz"
-  sha256 "f6c87edfeabf33c12b08c4c585d7fece3a618a56dbd87c695ca18629ca599457"
+  url "https://ghfast.top/https://github.com/sstadick/hck/archive/refs/tags/v0.11.5.tar.gz"
+  sha256 "5ce5fc816e9e009dafe8c42a0bd6b9e6c8b7ca5a839af6a797fba9accc569242"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/sstadick/hck.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Hck < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c111ab9ac2ae7d92cacbac9235d43631250eaeb92a9a47c6fe3bb7679db65fcb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80c37f8d57ec62a4a1cad9def4ada5e68d8b9f3cba9f92cb3dd1b9c8d0335503"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a26a272867f32a7165106dfbbbfa78be9eb2897903325641bf32650ad68f0340"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "56e22305a058ad39a97212158329f8a55f6a1c9365dc370ff6bdbdc6b75c04be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "945b035add2b676ad6e0eb2654e89088834c82a188960dd49aa861bab5e66c79"
-    sha256 cellar: :any_skip_relocation, ventura:       "ab31471f5828d042a4593047b0cc8fea9206dc456ff9c3c65fd930099269fbc5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cec9d7ffe968172f6e6312fe9a6519f6dcc13b84744cd120b58e8726a6d38964"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d588364e3b545a16083916df392dd0cca81eaa9cd1f84eb09533b7980840b0a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b701fbd9c9c3255cf08902aafec7534565d6b72be454aa8d65ca60b2a56fcd0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eebac3b042a4687b2299d79c7660c48cecfe8377da44250bf16887c7310d8079"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb5c2973e5cf849f5a67053cbf186cac6669dbb42399daebf932063a96118cac"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b3e7fb8cb36a5b462e1200194705dc74ea3a94b31521d0a1a56eac2d0729d1f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4eab96ce3ffb5740ea3c317e7b2b249b6d98c48bf784a9e3ab912cfefbbb36e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75760e081bfd9fac813e1288abae8a6671399ebee192bde6fc9d7e2e82fb63df"
   end
 
   depends_on "cmake" => :build

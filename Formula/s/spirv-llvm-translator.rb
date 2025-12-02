@@ -1,17 +1,17 @@
 class SpirvLlvmTranslator < Formula
   desc "Tool and a library for bi-directional translation between SPIR-V and LLVM IR"
   homepage "https://github.com/KhronosGroup/SPIRV-LLVM-Translator"
-  url "https://ghfast.top/https://github.com/KhronosGroup/SPIRV-LLVM-Translator/archive/refs/tags/v21.1.2.tar.gz"
-  sha256 "8c91542b579a3b27b7aeae1db12004eb412c9ed9bdff0a29ee862c3551cadfe3"
+  url "https://ghfast.top/https://github.com/KhronosGroup/SPIRV-LLVM-Translator/archive/refs/tags/v21.1.3.tar.gz"
+  sha256 "43080fd5122c71cd93a3d174d59b9fc95ff8aeb1847d50f394088112f6b2a217"
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b433cf150af8c0d5d3aefc23befeebdc8e6b14f3cf9040f68527abfdc28e5258"
-    sha256 cellar: :any,                 arm64_sequoia: "6dd67b03ad4d82575fc85d2f5b339a653078bcd22d0f22f2f957804471166792"
-    sha256 cellar: :any,                 arm64_sonoma:  "01bea0a098167e495b468347b7a6bddfa64f1aa7957b1a7edf04c7cebad9c294"
-    sha256 cellar: :any,                 sonoma:        "6f1da4ec580ca6db8e102caa88d5d4ea4c36542d82e091e6d2518920097904ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "93c2ce103fb4548da20d7a089641e3879dc10ad83dc12ad7da8c06098cc21a5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "957ad4f6b409706f8171f1b7a95bc58d8d13b0e40b0d15b053d2bb2e5ea6c958"
+    sha256 cellar: :any,                 arm64_tahoe:   "d7c3b4a41d4c90a16aee2e471cc9a72d9e10a03c3963e7323918fd8afe1086a2"
+    sha256 cellar: :any,                 arm64_sequoia: "5c18c6f2c26a6da6e55e6d281e78ff376f4976a1c6d87693206c28a2fab52f1b"
+    sha256 cellar: :any,                 arm64_sonoma:  "65cde494004ee82508d4952af82973af8c3471c81bc7b627a9896b4f95508d18"
+    sha256 cellar: :any,                 sonoma:        "3c309a355266d3aefc4297261883ee9aee3d056a290ef92c9010ea1d14e69011"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8580521f3cccbfeaf9583dd0c036920842c51988995c8dc2e917139dcbb0cf2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21d6ba7c7cd2a094834b1027efcd9c4715a31efc96c62e915b836cbbf43be293"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class Plakar < Formula
   desc "Create backups with compression, encryption and deduplication"
   homepage "https://plakar.io"
-  url "https://ghfast.top/https://github.com/PlakarKorp/plakar/archive/refs/tags/v1.0.5.tar.gz"
-  sha256 "403062192081f65aaab598ec1837a6c52a0cf3ca22d4c77c658d83be5edb66b0"
+  url "https://ghfast.top/https://github.com/PlakarKorp/plakar/archive/refs/tags/v1.0.6.tar.gz"
+  sha256 "5f9af49e9957b2fc659f0c9192db748785c95a1319290e69469df971fe3eeb9e"
   license "ISC"
 
   livecheck do
@@ -11,12 +11,12 @@ class Plakar < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "28ce10ed9474bcc0a78b73e05090999fe5d87fc5064540df2716510b42b456b2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cc727cd39a1196ef0ace1783fb7aea21419549b9e849a8d5978672f9ac16c25"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "849455f36a2031332508f9b260553ba9e44e180a7d0b9d521beccdccec2bc14e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "acc28eacd552939fb0e1dc68d036f3d152d32404c0ee33a844b77d649b856bc8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "86f6af7a42ef77eea9a6224a9070bde3113d224e7c8f1978fb5f82a5a938b3b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10229b28cf56bc0c4719a69723322183e9be5657728867f05ee521451dbc5854"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ac2ddfcbe2e5115613e19f9ce5a2d356bde679a58bd62326547270738d385ba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f2484b9522dcb6dddd7556d144543fe388b4c14ad1016011ac532ce81080eb6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5cb963f9a0ccfba98ce9962e0da149d412e362f7e3e13e136950bda9e68e093d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "774c10fedc3449a8e8ba3dc685cda56f8718c2153d0a10d808ee3100abed722b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b00e5e2583a6d7bc026cf53cd608c74fa1a38b444f0edcc74ae2d62028393570"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16b675f1981fe537ff5bd71ff616ce61abd72ee89c4f18c18a4bc7549056fab6"
   end
 
   depends_on "go" => :build

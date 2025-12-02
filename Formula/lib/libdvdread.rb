@@ -12,17 +12,18 @@ class Libdvdread < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "54d1f61fbf8b6c888f2c4149b2bcdfcbcef2c493c70db26495ab42498910e608"
-    sha256 cellar: :any,                 arm64_sequoia: "25f754da405f2c02ae5a9c14b5ad47ce236887761b4be028c0deae2a8093a454"
-    sha256 cellar: :any,                 arm64_sonoma:  "8abef1c1523b58c5e189822cac176350d646b2c1437aed944e5c45c24782d763"
-    sha256 cellar: :any,                 sonoma:        "75e27f2e60a264f7b9bc784c80232372f8fea26c1aa131d885b79a5b425b152b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a6f373273280da9caf7062165ac7c61f1cf7cf982dd84ee38262bda730e8558"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db15d6c2ddc18ffbc1ebfe27ea94320e452a43b9a3ea44709791077c5a237693"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "1af80a56982f63473b2f068b6580cdbadea4c6565743a3f12a21902cbaf0d3dc"
+    sha256 cellar: :any, arm64_sequoia: "9dfed914bad377bc19f96a1d1f03da797e81264391d4726b1893d3dee8e9c37c"
+    sha256 cellar: :any, arm64_sonoma:  "a728eb5b019155bba93815034450f9f92e3319c15928a3708bd0b019940b699c"
+    sha256 cellar: :any, sonoma:        "a56d7091a092d522823af1ade8f88bdd42c82f6104ba4252f4910c23638dbc3d"
+    sha256               arm64_linux:   "a3271813c01cd5ba6329facdb2dc46f08d36a4c5afc206ae2fa5148ab9bb4233"
+    sha256               x86_64_linux:  "3a828260d4443afa4c8a45b0a5ca3ce6bf003aee19909ec15d3684ed07b477dc"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkgconf" => :test
+  depends_on "pkgconf" => [:build, :test]
   depends_on "libdvdcss"
 
   def install

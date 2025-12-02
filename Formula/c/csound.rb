@@ -2,7 +2,7 @@ class Csound < Formula
   desc "Sound and music computing system"
   homepage "https://csound.com"
   license "LGPL-2.1-or-later"
-  revision 12
+  revision 13
   head "https://github.com/csound/csound.git", branch: "develop"
 
   # Remove `stable` block when patches are no longer needed
@@ -39,13 +39,12 @@ class Csound < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "a8aebe90e991a45430d2eadb0932002e15dbdb9b01c4653b6b39844fc66b8568"
-    sha256 arm64_sequoia: "19ed28cda2e8ca7f3f8a4f4b4fc6cc20dd15740990beffe2f9fa7f908f7d7d18"
-    sha256 arm64_sonoma:  "a64a23abe5e2f809c23777aaa62e6eff3a7848f632f4a34fa225f4ced50085af"
-    sha256 sonoma:        "9951ff6fd1277d43ea3e0f3702671927c23fe934d6690f9f5b6a4649ce9401fd"
-    sha256 arm64_linux:   "04f341aa5454a4e08af8ec407965194b08975f03ee010f0a901254a64d8b1738"
-    sha256 x86_64_linux:  "33f09e66f709e4d770cdc4b2ab1f89bb9be4107f708d70acb86d790f19731fde"
+    sha256 arm64_tahoe:   "1358e7d52d01425eb57d9315f6660ce5c753c4bd6406f1a82fe8b7f3c0645618"
+    sha256 arm64_sequoia: "cd3cceb2b0a1d0556f29d7d71e1aee94a289f61ba25790f9d3f50420502332e1"
+    sha256 arm64_sonoma:  "1c33262915a2133bd0f08611de8aa60326142b12ca81834bd926fa9af2820a77"
+    sha256 sonoma:        "52d703b25a4e5ccd9e83cbd68ee8ba290c7da2d4ba41371c07c287dcb2abdcf3"
+    sha256 arm64_linux:   "38cc39a0d24c0d44b6f0393b29a49409c728a3c3ecfcce8a7f0e2ec3640a06d8"
+    sha256 x86_64_linux:  "edd32b95ddd140f4395155849cd24344489991ee377526b80f8e7a9a3b117204"
   end
 
   depends_on "asio" => :build
@@ -99,6 +98,9 @@ class Csound < Formula
       url "https://github.com/csound/plugins/commit/13800c4dd58e3c214e5d7207180ad7115b4e2f27.patch?full_index=1"
       sha256 "e088cc300845408f3956f070fa34a900b700c7860678bc6d37f7506d615787a6"
     end
+
+    # Fix Eigen detection to work with Homebrew's Eigen formula
+    patch :DATA
   end
 
   resource "getfem" do
@@ -144,6 +146,7 @@ class Csound < Formula
       # https://github.com/csound/plugins/commit/0a95ad72b5eb0a81bc680c2ac04da9a7c220715b
       args = %W[
         -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+        -DCMAKE_CXX_STANDARD=17
         -DABLETON_LINK_HOME=#{buildpath}/ableton-link
         -DBUILD_ABLETON_LINK_OPCODES=ON
         -DBUILD_CHUA_OPCODES=ON
@@ -285,3 +288,39 @@ class Csound < Formula
                                           "-Djava.library.path=#{libexec}", "test"
   end
 end
+
+__END__
+diff --git a/cmake/Modules/FindEIGEN3.cmake b/cmake/Modules/FindEIGEN3.cmake
+index 9eec7b4..40c3af0 100644
+--- a/cmake/Modules/FindEIGEN3.cmake
++++ b/cmake/Modules/FindEIGEN3.cmake
+@@ -36,27 +36,8 @@ if(NOT Eigen3_FIND_VERSION)
+ endif(NOT Eigen3_FIND_VERSION)
+ 
+ macro(_eigen3_check_version)
+-  file(READ "${EIGEN3_INCLUDE_DIR}/Eigen/src/Core/util/Macros.h" _eigen3_version_header)
+-
+-  string(REGEX MATCH "define[ \t]+EIGEN_WORLD_VERSION[ \t]+([0-9]+)" _eigen3_world_version_match "${_eigen3_version_header}")
+-  set(EIGEN3_WORLD_VERSION "${CMAKE_MATCH_1}")
+-  string(REGEX MATCH "define[ \t]+EIGEN_MAJOR_VERSION[ \t]+([0-9]+)" _eigen3_major_version_match "${_eigen3_version_header}")
+-  set(EIGEN3_MAJOR_VERSION "${CMAKE_MATCH_1}")
+-  string(REGEX MATCH "define[ \t]+EIGEN_MINOR_VERSION[ \t]+([0-9]+)" _eigen3_minor_version_match "${_eigen3_version_header}")
+-  set(EIGEN3_MINOR_VERSION "${CMAKE_MATCH_1}")
+-
+-  set(EIGEN3_VERSION ${EIGEN3_WORLD_VERSION}.${EIGEN3_MAJOR_VERSION}.${EIGEN3_MINOR_VERSION})
+-  if(${EIGEN3_VERSION} VERSION_LESS ${Eigen3_FIND_VERSION})
+-    set(EIGEN3_VERSION_OK FALSE)
+-  else(${EIGEN3_VERSION} VERSION_LESS ${Eigen3_FIND_VERSION})
+-    set(EIGEN3_VERSION_OK TRUE)
+-  endif(${EIGEN3_VERSION} VERSION_LESS ${Eigen3_FIND_VERSION})
+-
+-  if(NOT EIGEN3_VERSION_OK)
+-
+-    message(STATUS "Eigen3 version ${EIGEN3_VERSION} found in ${EIGEN3_INCLUDE_DIR}, "
+-                   "but at least version ${Eigen3_FIND_VERSION} is required")
+-  endif(NOT EIGEN3_VERSION_OK)
++  set(EIGEN3_VERSION "5.0.1")
++  set(EIGEN3_VERSION_OK TRUE)
+ endmacro(_eigen3_check_version)
+ 
+ if (EIGEN3_INCLUDE_DIR)

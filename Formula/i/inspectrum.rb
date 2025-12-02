@@ -1,10 +1,21 @@
 class Inspectrum < Formula
   desc "Offline radio signal analyser"
   homepage "https://github.com/miek/inspectrum"
-  url "https://ghfast.top/https://github.com/miek/inspectrum/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "94e42333aceb06c15fb6fc10d186d61112975fdcf9539357a279e886e9edf35e"
   license "GPL-3.0-or-later"
-  head "https://github.com/miek/inspectrum.git", branch: "main"
+
+  stable do
+    # TODO: Update to use Qt 6 in next release and remove planned deprecation
+    url "https://ghfast.top/https://github.com/miek/inspectrum/archive/refs/tags/v0.3.1.tar.gz"
+    sha256 "94e42333aceb06c15fb6fc10d186d61112975fdcf9539357a279e886e9edf35e"
+
+    depends_on "qt@5"
+
+    # Backport fix for CMake 4
+    patch do
+      url "https://github.com/miek/inspectrum/commit/456ce147f3af4e1fb191b422954eeeaa9b807fdb.patch?full_index=1"
+      sha256 "98803885e8088a0ba468044f3d84e970d6a0bea121e1eebdcc9be553aff3765a"
+    end
+  end
 
   no_autobump! because: :requires_manual_review
 
@@ -21,6 +32,12 @@ class Inspectrum < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebd0cb2283b88fad36bb8c481cab44ee8fa12be897a798697d3643646772cf4c"
   end
 
+  head do
+    url "https://github.com/miek/inspectrum.git", branch: "main"
+
+    depends_on "qtbase"
+  end
+
   # Can undeprecate if new release with Qt 6 support is available.
   deprecate! date: "2026-05-19", because: "needs end-of-life Qt 5"
 
@@ -29,12 +46,9 @@ class Inspectrum < Formula
 
   depends_on "fftw"
   depends_on "liquid-dsp"
-  depends_on "qt@5" # Qt6 issue: https://github.com/miek/inspectrum/issues/240
 
   def install
-    # Workaround to build with CMake 4
-    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

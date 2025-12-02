@@ -1,10 +1,9 @@
 class S2geometry < Formula
   desc "Computational geometry and spatial indexing on the sphere"
   homepage "https://github.com/google/s2geometry"
-  url "https://ghfast.top/https://github.com/google/s2geometry/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "c09ec751c3043965a0d441e046a73c456c995e6063439a72290f661c1054d611"
+  url "https://ghfast.top/https://github.com/google/s2geometry/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "6091ca0138225f3effbd80b9c416b527c66eb30460f3f050f45345a3c0c1c79c"
   license "Apache-2.0"
-  revision 3
 
   livecheck do
     url :homepage
@@ -12,24 +11,18 @@ class S2geometry < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d3afb04ad4124a7211dcbb60f652c05df77890ee82843ba1c73912a911c5fdd5"
-    sha256 cellar: :any,                 arm64_sequoia: "bda10e17366dda59e3a246f452b055fa0c2d1bfd768bb416812c06444a0d2129"
-    sha256 cellar: :any,                 arm64_sonoma:  "c8cf0a0a38864127e72cac71adefa4ab9e7cc9cb1fa4a2b7513c75a23a6e0f56"
-    sha256 cellar: :any,                 arm64_ventura: "9f0ee847a51923a12b403b60f957a1abb06dfb3eeda55d72a56d0977f3bdb26e"
-    sha256 cellar: :any,                 sonoma:        "b75a7923b114c655686a613d5e130b9ad2f18255b2ee82530d611790d342937f"
-    sha256 cellar: :any,                 ventura:       "fedf506c32f5acd95dd44ade41722d5de8f8c6072f190d9c9a58501f6e2d8d96"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "55c4afb3fbd50cf72c3bbc09610de2777cc209f51961f8b6dd905310055c33b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b90df62d0206fa6c4e90df95b4e7e07549818de81a4fd8979ba441fd528d5a02"
+    sha256 cellar: :any,                 arm64_tahoe:   "c760d66536f71b86221f94c85770e3e2ef73a5812f9ac51974685cde0109b970"
+    sha256 cellar: :any,                 arm64_sequoia: "84e1406371ad04a37711e401303f3e12847cd4adcec9de73aff717bfcad267d6"
+    sha256 cellar: :any,                 arm64_sonoma:  "3ba232a6ec4e813384911dfb54180d31567c7f729f1914da10568c55d4bbf925"
+    sha256 cellar: :any,                 sonoma:        "266384bc2d9e1f05b1762f1688baab95ed7d818fa78be80e56ee34bd85c6fa52"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "588537d0f0fd8de216319aa5eb5b85c763ba75b566f6c7e7b0d05458bcfd5709"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "965e4d07c5f7cded3a3427e6cf78d7cd444d5315d1074c4575057065b3f43ef8"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "abseil"
   depends_on "glog"
   depends_on "openssl@3"
-
-  # Backport support for Abseil >= 20250814.0 from
-  # https://github.com/google/s2geometry/commit/9bdfdc0db978fb9d6753a880042a65ed5e83eabe
-  patch :DATA
 
   def install
     args = %W[
@@ -40,6 +33,10 @@ class S2geometry < Formula
       -DCMAKE_CXX_STANDARD=17
       -DCMAKE_CXX_STANDARD_REQUIRED=TRUE
     ]
+
+    # Fix missing include of unaligned.h
+    # Issue ref: https://github.com/google/s2geometry/issues/481
+    inreplace "CMakeLists.txt", "src/s2/util/gtl/requires.h", "\\0 src/s2/util/gtl/unaligned.h"
 
     system "cmake", "-S", ".", "-B", "build/shared", *args, *std_cmake_args
     system "cmake", "--build", "build/shared"
@@ -97,67 +94,3 @@ class S2geometry < Formula
     system "./test"
   end
 end
-
-__END__
-diff --git a/src/s2/s2density_tree.cc b/src/s2/s2density_tree.cc
-index b1892be380d15c55866630619405fd3b619a8ac5..c40964740cc49a72e613c1f0023c4a6400f66a8a 100644
---- a/src/s2/s2density_tree.cc
-+++ b/src/s2/s2density_tree.cc
-@@ -911,7 +911,7 @@ const S2DensityTree::Cell* S2DensityTree::DecodedPath::LoadCell(
-   return cell;
- }
- 
--S2DensityTree S2DensityTree::Normalize(absl::Nonnull<S2Error*> error) const {
-+S2DensityTree S2DensityTree::Normalize(S2Error* absl_nonnull error) const {
-   *error = S2Error::Ok();
- 
-   DecodedPath path(this);
-@@ -950,7 +950,7 @@ S2DensityTree S2DensityTree::Normalize(absl::Nonnull<S2Error*> error) const {
-   return tree;
- }
- 
--S2CellUnion S2DensityTree::Leaves(absl::Nonnull<S2Error*> error) const {
-+S2CellUnion S2DensityTree::Leaves(S2Error* absl_nonnull error) const {
-   std::vector<S2CellId> leaves;
- 
-   VisitCells(
-diff --git a/src/s2/s2density_tree.h b/src/s2/s2density_tree.h
-index a6b7a48d8a1b549d16e7d2597ccb207b2e1038bf..249438e00fc6edae01d103885cf8f0068cb03649 100644
---- a/src/s2/s2density_tree.h
-+++ b/src/s2/s2density_tree.h
-@@ -272,11 +273,11 @@ class S2DensityTree {
-   // weight is scaled by (its parent's weight / the sum of weights of the node
-   // and its siblings). This makes the weight of a parent equal to the sum of
-   // its children.
--  S2DensityTree Normalize(absl::Nonnull<S2Error*> error) const;
-+  S2DensityTree Normalize(S2Error* absl_nonnull error) const;
- 
-   // Returns an S2CellUnion containing the leaves of this tree.  The cell union
-   // is not necessarily normalized.
--  S2CellUnion Leaves(absl::Nonnull<S2Error*> error) const;
-+  S2CellUnion Leaves(S2Error* absl_nonnull error) const;
- 
-   // The decoded weight and offsets of encoded cells.
-   class Cell {
-diff --git a/src/s2/s2edge_tessellator.h b/src/s2/s2edge_tessellator.h
-index 513afbdc52eb621aa42d8d30b8383950da455dd4..b55d1028c1fff298816e4af94f68590eed2e4a46 100644
---- a/src/s2/s2edge_tessellator.h
-+++ b/src/s2/s2edge_tessellator.h
-@@ -44,7 +45,7 @@ class S2EdgeTessellator {
-   // ------------------|------------------------|-----------------------
-   // AppendProjected   | S2 geodesics           | Planar projected edges
-   // AppendUnprojected | Planar projected edges | S2 geodesics
--  S2EdgeTessellator(absl::Nonnull<const S2::Projection*> projection,
-+  S2EdgeTessellator(const S2::Projection* absl_nonnull projection,
-                     S1Angle tolerance);
- 
-   // Converts the spherical geodesic edge AB to a chain of planar edges in the
-@@ -95,7 +96,7 @@ class S2EdgeTessellator {
-                        const R2Point& pb, const S2Point& b,
-                        std::vector<R2Point>* vertices) const;
- 
--  absl::Nonnull<const S2::Projection*> proj_;
-+  const S2::Projection* absl_nonnull proj_;
- 
-   // The given tolerance scaled by a constant fraction so that it can be
-   // compared against the result returned by EstimateMaxError().

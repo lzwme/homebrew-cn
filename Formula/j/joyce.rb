@@ -1,5 +1,5 @@
 class Joyce < Formula
-  desc "Emulates the Amstrad PCW on Unix, Windows and Mac OS X"
+  desc "Emulates the Amstrad PCW on Unix, Windows and macOS"
   homepage "https://www.seasip.info/Unix/Joyce/index.html"
   url "https://www.seasip.info/Unix/Joyce/joyce-2.4.2.tar.gz"
   sha256 "85659a6ac9b94fdf78c28d5d8d65a4f69e7520e1c02a915b971c2754695ab82c"

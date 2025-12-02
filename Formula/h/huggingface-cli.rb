@@ -3,18 +3,18 @@ class HuggingfaceCli < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/4c/08/dc669fa8c7267752ce2d536683436f0c46661aca45e9450c635a365ca2df/huggingface_hub-1.1.6.tar.gz"
-  sha256 "e1beacb611d74a8189b4c5298e8675fb518256af73b38143171f6efa7d822cf6"
+  url "https://files.pythonhosted.org/packages/6f/fa/a1a94c55637f2b7cfeb05263ac3881aa87c82df92d8b4b31c909079f4419/huggingface_hub-1.1.7.tar.gz"
+  sha256 "3c84b6283caca928595f08fd42e9a572f17ec3501dec508c3f2939d94bfbd9d2"
   license "Apache-2.0"
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6ddd1e12b486750f35ce8fbf4cba7e370cdd8609153120f3da6d5e4b8f94197f"
-    sha256 cellar: :any,                 arm64_sequoia: "350818841f00e9be99d45af32f0152b37fbb97d91b9f819e52b67d0c4c719cbd"
-    sha256 cellar: :any,                 arm64_sonoma:  "16b1546e87c22c50562529db76b872360ec01c6ff446b2a7d35cc1e967e8a108"
-    sha256 cellar: :any,                 sonoma:        "569d8d76d1e3fd5a4b66db2eff7c220a80dbc619ee7639f0a972e2274ec7c059"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3bd1a586a557db4b449110e53020e6e36503a44ff0fb5393a5d7de57ea008a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f8715b52b3c1c50366a7bb6c8a3897b88265a780837f5f1950e122fd0c61d58"
+    sha256 cellar: :any,                 arm64_tahoe:   "a5609a9cb1dac2365238506425322761853f9d7834bf7f87b18043f4e85cb81c"
+    sha256 cellar: :any,                 arm64_sequoia: "5adb9c3bc34ecfca49de7a613012a9fa7bb12344fdca4bab3c4717798822a2f4"
+    sha256 cellar: :any,                 arm64_sonoma:  "76facd46889330ef5c50a122b1711d41d6fdd57253ac1d8bcd70762367a3c3ed"
+    sha256 cellar: :any,                 sonoma:        "a4df83956235d4f81d93677ea187aff400d03c045a2fa183334ae13cbcf75aca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4af9ce560347e0475de9a5b23a622a5d9b53d9fdc1d1e4cfda268f85617d6af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "504d74a646291f939f95c99f7dfc4a7eb8d40c15d1171dfed7ed3999f3542fbc"
   end
 
   depends_on "pkgconf" => :build
@@ -33,8 +33,8 @@ class HuggingfaceCli < Formula
                 exclude_packages: "certifi"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "click" do
@@ -90,11 +90,6 @@ class HuggingfaceCli < Formula
   resource "shellingham" do
     url "https://files.pythonhosted.org/packages/58/15/8b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58e/shellingham-1.5.4.tar.gz"
     sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
-  end
-
-  resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
-    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
   end
 
   resource "tqdm" do

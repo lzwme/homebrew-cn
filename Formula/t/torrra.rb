@@ -3,8 +3,8 @@ class Torrra < Formula
 
   desc "Find and download torrents without leaving your CLI"
   homepage "https://torrra.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/63/cb/f181e4913bb628f7b5f63e306b8c9cf88c382011a7c1666137acf87831b1/torrra-2.0.2.tar.gz"
-  sha256 "0c100e2ce7eba7deec6339e0ab47defdb27899cab086cc58d44febeff37e7e8e"
+  url "https://files.pythonhosted.org/packages/5d/2c/ec7970fa8b8e706adb38ecac5a86713fafd4acd5bb5a71ddbf9f7dc26b9c/torrra-2.0.3.tar.gz"
+  sha256 "1b4faff51d0f6d1141e3feab6275fe80c38b904f87f660e1f1e34a2237c34958"
   license "MIT"
   head "https://github.com/stabldev/torrra.git", branch: "main"
 
@@ -14,7 +14,7 @@ class Torrra < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4c144be92ebacbab4322c9a30ea2052239dd46d743a46910667b158b71792c31"
+    sha256 cellar: :any_skip_relocation, all: "26c9024e65bceb937bf2506f0ecafd50fcff400734bca447e31313b6861ff801"
   end
 
   depends_on "rust" => :build # for uv-build backend
@@ -25,8 +25,8 @@ class Torrra < Formula
   pypi_packages exclude_packages: %w[certifi libtorrent libtorrent-windows-dll]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "click" do
@@ -94,14 +94,9 @@ class Torrra < Formula
     sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
-  resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
-    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
-  end
-
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/f6/2f/f0b408f227edca21d1996c1cd0b65309f0cbff44264aa40aded3ff9ce2e1/textual-6.6.0.tar.gz"
-    sha256 "53345166d6b0f9fd028ed0217d73b8f47c3a26679a18ba3b67616dcacb470eec"
+    url "https://files.pythonhosted.org/packages/33/8d/c269da513f5c9edd4e82dd78ad02ab68150efaa40740cfd7b3086410fb75/textual-6.7.0.tar.gz"
+    sha256 "ef1fd587a3b5b29777d4b03037e0a8f10d174e63366e99a5d8518a74b5382e38"
   end
 
   resource "tomli-w" do

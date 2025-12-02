@@ -1,18 +1,18 @@
 class Gonzo < Formula
   desc "Log analysis TUI"
   homepage "https://gonzo.controltheory.com/"
-  url "https://ghfast.top/https://github.com/control-theory/gonzo/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "f343be039f589faf4745ea35fab01c89efde49556a2e01f7da9679d39c5552f0"
+  url "https://ghfast.top/https://github.com/control-theory/gonzo/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "f06376ec4574a44fe5609ba65faf28c54602768aaa77cefb4d7bcfe681b73719"
   license "MIT"
   head "https://github.com/control-theory/gonzo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ba129bf123c3fce049c8ba9a63fe78daa4030af349e939b57757c08fa2bf24e7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba129bf123c3fce049c8ba9a63fe78daa4030af349e939b57757c08fa2bf24e7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba129bf123c3fce049c8ba9a63fe78daa4030af349e939b57757c08fa2bf24e7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "489f8e540ec69593bd52ab22a4a2838c3e8697cf74f20532f3b88194f04c92ae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7099311ec8eacaa827796758458978e9350ff3d1421d0d729a05922856300d58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19e1275fc0eb5d94e4a88854a2389b2e655d75c70aa08b37b9a01c8b67cad30f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1afb94f08a77b0f7116ee8a191b51ff28611e9af3add31535e0b56e908a209e3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1afb94f08a77b0f7116ee8a191b51ff28611e9af3add31535e0b56e908a209e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1afb94f08a77b0f7116ee8a191b51ff28611e9af3add31535e0b56e908a209e3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "04e4935f80635c060c068a49f52c4b864bc836943c8a785b1f92ee3b72bb9155"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e43f64f1f4d624ee2439ea47f1c4c12de7de62b5a9783646fb7a5c8f3d3024a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ece50899c584432930d48ef376a6fb450bd9fad9df6ba46958d8b8f3ef8e4755"
   end
 
   depends_on "go" => :build

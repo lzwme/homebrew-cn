@@ -1,18 +1,18 @@
 class Pandoc < Formula
   desc "Swiss-army knife of markup format conversion"
   homepage "https://pandoc.org/"
-  url "https://ghfast.top/https://github.com/jgm/pandoc/archive/refs/tags/3.8.2.1.tar.gz"
-  sha256 "e3948e106026edbcef4e4d63f92554c814c779fa14696e635fb98e1279d4c175"
+  url "https://ghfast.top/https://github.com/jgm/pandoc/archive/refs/tags/3.8.3.tar.gz"
+  sha256 "064775f55802fea443c53b9ad61b6af5aab3fcda71c40e8ccb97f650dce78640"
   license "GPL-2.0-or-later"
   head "https://github.com/jgm/pandoc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "243bf261875489e301064243e5ff66b7ee2314b46ad6713140d28fa775642064"
-    sha256 cellar: :any,                 arm64_sequoia: "24eeaee65d0243cb8e2cc8af6b817cdfedf8e66dd62355a7e92d2222dee0bda5"
-    sha256 cellar: :any,                 arm64_sonoma:  "6482bedf0add4caac5261ed1b398f9a7070bd16ff554a83f7b7ff6c27e6b14e2"
-    sha256 cellar: :any,                 sonoma:        "3ef2c73fbabea2395ed9fd51c986774486e669fb611d520515b004e5c0c7ae3d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "402524fe0a947a6023b3088cd41c04f7265844d21d8e0caaef245da2189375ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ee2f465219c7d84eb055b7a582b7d0da88d9ce5869987e0c44a5f3c1457bbf3"
+    sha256 cellar: :any,                 arm64_tahoe:   "c701324c788c3d37d77fa3beba285aff7e91e9f931406082744f86fecf63aa6f"
+    sha256 cellar: :any,                 arm64_sequoia: "f3875a6c57702c9a02abc2f45f6e4313d650704bbf89bea80044746c7cdb0e31"
+    sha256 cellar: :any,                 arm64_sonoma:  "013ae292c9be6c9a592e8f585f429f88efd671cbc502281e68724b9069e3bf29"
+    sha256 cellar: :any,                 sonoma:        "56e28903135c09615455ad5b500b524d9d84f7a3ee90732a870e0f3f0c4be7b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9948957559ef8779b7e845b84f59f72a29d7da8fcfbde9578aeda8cd9598c25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c96acda21739e17f8016312bc3d65e4e58793c0cbf164eb01e2e5a1c459cfd2"
   end
 
   depends_on "cabal-install" => :build

@@ -1497,6 +1497,7 @@ Homebrew-homebrew-core/Formula/d/diction.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/diesel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/diff-pdf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/diff-so-fancy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/diffnav.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/diffoci.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/diffoscope.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/diffr.rb, Homebrew/homebrew-core, 1
@@ -2956,6 +2957,7 @@ Homebrew-homebrew-core/Formula/h/hspell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hss.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hstr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/ht.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/h/html-to-markdown.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/html-xml-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/html2markdown.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/html2text.rb, Homebrew/homebrew-core, 0
@@ -4445,6 +4447,7 @@ Homebrew-homebrew-core/Formula/m/massdns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/massdriver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/massren.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mat2.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/matcha.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/math-comp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/matlab2tikz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/matplotplusplus.rb, Homebrew/homebrew-core, 1
@@ -8715,6 +8718,7 @@ Homebrew-homebrew-cask/Casks/c/carbon-copy-cloner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/carbon-copy-cloner@5.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/carbon-copy-cloner@6.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cardhop.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/cardinal-search.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cardinal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cardo-update.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cardpresso.rb, Homebrew/homebrew-cask, 0
@@ -9215,7 +9219,6 @@ Homebrew-homebrew-cask/Casks/d/douyin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/downie.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/doxie.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/doxygen-app.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/d/dozer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/drata-agent.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/draw-things.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/drawbot.rb, Homebrew/homebrew-cask, 1
@@ -9883,6 +9886,9 @@ Homebrew-homebrew-cask/Casks/font/font-b/font-batangche.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask/Casks/font/font-b/font-battambang.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-baumans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-bayon.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-b/font-bbh-bartle.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-b/font-bbh-bogle.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-b/font-bbh-hegarty.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-be-vietnam-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-beau-rivage.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-bebas-neue.rb, Homebrew/homebrew-cask, 0
@@ -11419,12 +11425,12 @@ Homebrew-homebrew-cask/Casks/font/font-o/font-oleo-script-swash-caps.rb, Homebre
 Homebrew-homebrew-cask/Casks/font/font-o/font-oleo-script.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-o/font-onest.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-o/font-oooh-baby.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/font/font-o/font-open-dyslexic-nerd-font.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-o/font-open-dyslexic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-o/font-open-iconic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-o/font-open-sans-hebrew-condensed.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-o/font-open-sans-hebrew.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-o/font-open-sans.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-o/font-opendyslexic-nerd-font.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-o/font-opendyslexic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-o/font-oppo-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-o/font-optician-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-o/font-oranienbaum.rb, Homebrew/homebrew-cask, 0

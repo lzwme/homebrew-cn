@@ -1,17 +1,17 @@
 class Jsrepo < Formula
   desc "Build and distribute your code"
   homepage "https://jsrepo.dev/"
-  url "https://registry.npmjs.org/jsrepo/-/jsrepo-2.5.2.tgz"
-  sha256 "71fcac7345be192ec5ffdfffdd3087a95f4fd18352966c51cca6fc657cd26610"
+  url "https://registry.npmjs.org/jsrepo/-/jsrepo-3.0.5.tgz"
+  sha256 "bcd03ab69be20c64c30ba74029fd8c585543315b600badde9b9291ac5eee2d94"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "57b923ef957bdedbfcd2d27a3a8422a4dd85123d555258ca2d3c87fa76af1975"
-    sha256 cellar: :any,                 arm64_sequoia: "eea8d41a87d4ab89ee073e8eb58921f07167c75f9df71a433e9689fca99df279"
-    sha256 cellar: :any,                 arm64_sonoma:  "eea8d41a87d4ab89ee073e8eb58921f07167c75f9df71a433e9689fca99df279"
-    sha256 cellar: :any,                 sonoma:        "d87729e633df46930a05050e1a7cd2115d0a58f15a9e213bdb4a369c0c871080"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63eca7d6856de83ab087c28ce01ba37eb76e69bc4b147f887d552df793d611ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb56f08f35bf86242f78769a51abf34fbf7583c4979833e68be00cc6e6c15fbb"
+    sha256 cellar: :any,                 arm64_tahoe:   "9823357c8b3affcfd31286baa29010a1446966b7a2edcfb0a2929d278ca41420"
+    sha256 cellar: :any,                 arm64_sequoia: "f180790e8b767291efc084d4edf325f75a4c854a7aa27424e47c0c59a67a5217"
+    sha256 cellar: :any,                 arm64_sonoma:  "f180790e8b767291efc084d4edf325f75a4c854a7aa27424e47c0c59a67a5217"
+    sha256 cellar: :any,                 sonoma:        "394b8bf6a4663a3770ed9bb40df51e4b6f021ef07c9878d0531dbef959312fdf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f47b280c6aedf968a9d90df4707ea1729c8108192a1a1a406cf357b76ca016a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "797c2c56eb560352f0b34a3fdb5ab8561be69f8eded8c72f8f024260513368dc"
   end
 
   depends_on "node"
@@ -24,7 +24,12 @@ class Jsrepo < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/jsrepo --version")
 
-    system bin/"jsrepo", "build"
-    assert_match "\"categories\": []", (testpath/"jsrepo-manifest.json").read
+    (testpath/"package.json").write <<~JSON
+      {
+        "name": "test-package",
+        "version": "1.0.0"
+      }
+    JSON
+    system bin/"jsrepo", "init", "--yes"
   end
 end
