@@ -1,9 +1,9 @@
 class Go < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.25.4.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.25.4.src.tar.gz"
-  sha256 "160043b7f17b6d60b50369436917fda8d5034640ba39ae2431c6b95a889cc98c"
+  url "https://go.dev/dl/go1.25.5.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.25.5.src.tar.gz"
+  sha256 "22a5fd0a91efcd28a1b0537106b9959b2804b61f59c3758b51e8e5429c1a954f"
   license "BSD-3-Clause"
   head "https://go.googlesource.com/go.git", branch: "master"
 
@@ -21,12 +21,12 @@ class Go < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "44df21e7328ae7e73fa930d63808994fc172309e7b3bb24ce2f98201819902c4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44df21e7328ae7e73fa930d63808994fc172309e7b3bb24ce2f98201819902c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44df21e7328ae7e73fa930d63808994fc172309e7b3bb24ce2f98201819902c4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ed43607b0e11521ca83ce45ff30de166e607ff7d918e425f7ec60664aab999dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "268b1ecf7519460b062d55a9698fcdaad166178e6489391cf4f92de90eaf28ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdf081ccfc1970fc81e7d13f22476497a26694c3d41e44e9de70c3e37866657a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a08dc2f6914ccf3edf0a4e0401595216fb890ffd253ee1147a7241e4f5dc8c15"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a08dc2f6914ccf3edf0a4e0401595216fb890ffd253ee1147a7241e4f5dc8c15"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a08dc2f6914ccf3edf0a4e0401595216fb890ffd253ee1147a7241e4f5dc8c15"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b40bc5deb0d8f4a0ed30763b774c294e2033be3af9ae1febc428260bc9080739"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "986db3b38f0108765760294d979cbe758411f9668b099ab852ca1f463d9aa2ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c44f1e34c0b26a987008b483cf22f188a0c60533277ffcb9485bf66045c82094"
   end
 
   depends_on macos: :monterey
@@ -44,21 +44,21 @@ class Go < Formula
 
     on_arm do
       on_macos do
-        url "https://storage.googleapis.com/golang/go#{version}.darwin-arm64.tar.gz"
+        url "https://go.dev/dl/go#{version}.darwin-arm64.tar.gz"
         sha256 checksums["darwin-arm64"]
       end
       on_linux do
-        url "https://storage.googleapis.com/golang/go#{version}.linux-arm64.tar.gz"
+        url "https://go.dev/dl/go#{version}.linux-arm64.tar.gz"
         sha256 checksums["linux-arm64"]
       end
     end
     on_intel do
       on_macos do
-        url "https://storage.googleapis.com/golang/go#{version}.darwin-amd64.tar.gz"
+        url "https://go.dev/dl/go#{version}.darwin-amd64.tar.gz"
         sha256 checksums["darwin-amd64"]
       end
       on_linux do
-        url "https://storage.googleapis.com/golang/go#{version}.linux-amd64.tar.gz"
+        url "https://go.dev/dl/go#{version}.linux-amd64.tar.gz"
         sha256 checksums["linux-amd64"]
       end
     end

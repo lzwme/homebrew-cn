@@ -6,15 +6,15 @@ class Mapproxy < Formula
   url "https://files.pythonhosted.org/packages/7d/5e/972a52a0b3f646a53dd3e8a552256a649548b8fb84b4fbb1b43b90de86ea/mapproxy-6.0.1.tar.gz"
   sha256 "aada98e509b8b0b99eb3f9f97bebf5f284711bd1bfae46e8e6f2b296581bc677"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "627dc45ce4f2c9acd21993f6b09867f3ec0435015f4a3be37fe97bc7982ada9c"
-    sha256 cellar: :any,                 arm64_sequoia: "91cd19662fc9e9c02c0f1384f8578240c77f377cfbba3182df49355da3831c6e"
-    sha256 cellar: :any,                 arm64_sonoma:  "7cfcf1e5be4f47d421f76f084507342c1b58f29a25dd345f5dbd2f93c1020cd4"
-    sha256 cellar: :any,                 sonoma:        "97c9476b50053fdb4b34ad1c90a2d512d006b9d2bad8be2280eba7e884938006"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1b460cd1bab041aca2aa106ed19fe4db2ee473979a976ee4c2e061189bc4a78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "064a30044275d2aa1e4c6979719f99b8933126d8442bba9dd405a23dc02c6b93"
+    sha256 cellar: :any,                 arm64_tahoe:   "ca7d704d34e42aa9063ed0a09387eb4d2c72d0387930303e091efa48fe076c45"
+    sha256 cellar: :any,                 arm64_sequoia: "be989960e81323826b17086f814ec1112305358f710e2ce91d564913b335987c"
+    sha256 cellar: :any,                 arm64_sonoma:  "1b86ee6941dfc9ef09dfaec3cca068d0c8e690bd91d9fe1ae31b92576abf4aa9"
+    sha256 cellar: :any,                 sonoma:        "adead010807a92f384eb42497788a49c8aafe2ab41e600e2830669a1ade85151"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e692a79aaccd1b55188198e513ea9ca5aceab963cdce82fc6bfdc5668baeb4e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72b01756ff2c769baee189ba0e3855604d5c404b32d98c7fcf5971b2fdaa749c"
   end
 
   depends_on "pkgconf" => :build
@@ -109,8 +109,8 @@ class Mapproxy < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/9f/69/83029f1f6300c5fb2471d621ab06f6ec6b3324685a2ce0f9777fd4a8b71e/werkzeug-3.1.3.tar.gz"
-    sha256 "60723ce945c19328679790e3282cc758aa4a6040e4bb330f53d30fa546d44746"
+    url "https://files.pythonhosted.org/packages/45/ea/b0f8eeb287f8df9066e56e831c7824ac6bab645dd6c7a8f4b2d767944f9b/werkzeug-3.1.4.tar.gz"
+    sha256 "cd3cd98b1b92dc3b7b3995038826c68097dcb16f9baa63abe35f20eafeb9fe5e"
   end
 
   def python3

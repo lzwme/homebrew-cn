@@ -1,20 +1,18 @@
 class Porter < Formula
   desc "App artifacts, tools, configs, and logic packaged as distributable installer"
   homepage "https://porter.sh"
-  url "https://ghfast.top/https://github.com/getporter/porter/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "5b1fd2ab73c9d90f3d3d1aa5f8bb8de75abe2093905230f496085502202d7688"
+  url "https://ghfast.top/https://github.com/getporter/porter/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "0070fbdc0e7fc0c9e74f8e99330758cf4be5d2719db2b141aa687bdd9bd6ba5f"
   license "Apache-2.0"
   head "https://github.com/getporter/porter.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77ef2384be561f0c35b0eeb43b045ca750ac84deb91ac00f03fda4a2027decf2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8545005db3856f571c1fcbeb7ff824524a4fbf7223294bfde05953fe385fdcd1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a3ad5d0b344c9e57dd3676ce269f5aeca8112f429369416b060a3f514711a828"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0ede90d8affd7f13e50c9f43dec5e968e5dc81ce4aa68287ef7e03e904cdf898"
-    sha256 cellar: :any_skip_relocation, sonoma:        "85e03f0fbf0ff9ff72bf512a2a46c17b5b413576bbb39ca81655b61bce5d28da"
-    sha256 cellar: :any_skip_relocation, ventura:       "329ebe1db268ace4d7650608ff9659ca175c8d02c24490ddb41a97f74d2b1a43"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ed5ddbd8e7281a5722ee70190bcb2436cf16ba1e0ec28afad159546bf458b55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92ff44a87f882ae8cb5184f67804cbdcff4340d2feab37d3aa7f2fdcb2c6686a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16f81b2c1a8c1b72305b0b9d95a51746a06f2694b1980d306c16a79d33c44f9d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65f83a0af09ce081c1d616873b2c5c8896d73b29da3a3f4f2df39871cc5faaab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85768d3fda6e75d332df857edadb526ee69046c60166ecb45a6049441a35c0b1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "41cb89598cbeabcb903e2ba2cb5e44e21a804ddacda5993fe1d52c817470e482"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5aeb0a0286f2c6186612bcf95f98d3080ee0e385abf2535a257ff387cef7fd53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f90dc1177f820c95caf57001cc102d0481576cb30d986830e7c035a94fc85ab"
   end
 
   depends_on "go" => :build

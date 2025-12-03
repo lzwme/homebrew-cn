@@ -3,13 +3,13 @@ class MailDeduplicate < Formula
 
   desc "CLI to deduplicate mails from mail boxes"
   homepage "https://kdeldycke.github.io/mail-deduplicate/"
-  url "https://files.pythonhosted.org/packages/35/ef/f17e16d54bdab16be57d5f2819316f5df0ab48073306911ccce66a516382/mail_deduplicate-8.1.1.tar.gz"
-  sha256 "7773e1a6b141e52c11c43406c59a0d9dfa26c5a100b4326c29784986c5141dd1"
+  url "https://files.pythonhosted.org/packages/0c/0c/0e83bc1a549394b6c372caa8e6e5859020d23f470362d02276f1d2d56645/mail_deduplicate-8.1.2.tar.gz"
+  sha256 "30ed948490f35f47da27829f239c20068a936010d78e198da44b69f1d65c3d1e"
   license "GPL-2.0-or-later"
   head "https://github.com/kdeldycke/mail-deduplicate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "277835433a625f16dd2c5d31927e8af263f31efa2f4eba9af148f262d65f219c"
+    sha256 cellar: :any_skip_relocation, all: "d1f1969c961b594cc2faff97f3a8fe45a844c0f5e04d1cb7f68a70539335a17b"
   end
 
   depends_on "certifi" => :no_linkage

@@ -1,19 +1,18 @@
 class GrafanaAlloy < Formula
   desc "OpenTelemetry Collector distribution with programmable pipelines"
   homepage "https://grafana.com/oss/alloy-opentelemetry-collector/"
-  url "https://ghfast.top/https://github.com/grafana/alloy/archive/refs/tags/v1.11.3.tar.gz"
-  sha256 "7655e363041181d003216b59d8ab67bb09fd2fa1a7c72c4a40b93f16c53db068"
+  url "https://ghfast.top/https://github.com/grafana/alloy/archive/refs/tags/v1.12.0.tar.gz"
+  sha256 "ace8f5d443b34ad02fe0263755c60edd61fb5da60e0e32ebd6397237f5b33957"
   license "Apache-2.0"
   head "https://github.com/grafana/alloy.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "365c67540b74d47af157a1872fbd3dd32835a6d3129a1975f2baf27f893fa4ff"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "729b78699b54b47d4bf7da24a1dfef21c9e00149ab9bbbe7877d3e64d247385b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58dc3086cae2c6b44fd79fa18b453c83cead2058d8e9a29ab563e799a8aa6486"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a8d4bf8e6c7149f75dd4cd4514fb2697833741c43148f548223cfb83331698b8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2928eb8330d8d970c5344052db7a901e1b15e6a8d76441426deed2c9b1bc8896"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2c0edae45a006c469b14f3752b4055c61709b286f0eeee78cbba3972d8b5aee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23c588c85b34368337067f1e6bc251058a50ecbe15c674a632bf0e4be6d3504b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89509efcdf87f1218b7ba5c9f776cdccd4321cd44e27b0ea05415b9e21ea4493"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad428da17c408cdad226d7783f01a6f7a8e87c928e74443e37ff96e303fb87d0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "33e0a9021a33177c680b5ecabe06b5e0c169b7a9ec3460e1a2a482418c8df97e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7d69478a1a1cc664dffd75e5fd135dce69a125ca7cd871eb25977fb2fdbb8b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b666ce8811f600e0a0b4809e7de0ec500738b0a22958ebdcde078bfb0ca4e263"
   end
 
   depends_on "go" => :build

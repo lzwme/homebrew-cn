@@ -3,8 +3,8 @@ class AzureCli < Formula
 
   desc "Microsoft Azure CLI 2.0"
   homepage "https://docs.microsoft.com/cli/azure/overview"
-  url "https://ghfast.top/https://github.com/Azure/azure-cli/archive/refs/tags/azure-cli-2.80.0.tar.gz"
-  sha256 "6bd1234b77a9b8981fa3ec733569ea83e54bb0cdb3c81cec0dba9b2595e64eaa"
+  url "https://ghfast.top/https://github.com/Azure/azure-cli/archive/refs/tags/azure-cli-2.81.0.tar.gz"
+  sha256 "e316d3544962fc308e527a57cd373a62637950c346df91ff1a90c24850cf656b"
   license "MIT"
   head "https://github.com/Azure/azure-cli.git", branch: "dev"
 
@@ -17,12 +17,12 @@ class AzureCli < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "14192e77542e83a3fd6f74a9db50464e534496afe738a7cf343cd0d66ba50978"
-    sha256 cellar: :any,                 arm64_sequoia: "7367a5f35711d2e539296baa81763e2fc5e3ef269baebc044e748a6e4f03e827"
-    sha256 cellar: :any,                 arm64_sonoma:  "aedc4ec7795e852a318a6e1532ac4dc61beaceab52e222ef581817bb3ab21886"
-    sha256 cellar: :any,                 sonoma:        "ed0b870224c7230c37297da8772bbb4e83c81b7bd848a0a12600035773d0efe3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "19460f9744ae2acaf90aaadd8a5f49d5842ab2d14e697f3324ae6396a697a722"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52c304cf39938bab577556e939cdcb894dbffd1d0bf681d898db016d4dd0c021"
+    sha256 cellar: :any,                 arm64_tahoe:   "60930c30944e5fba86d13352245b4b5d95f81c3ed5b7abdebe2130eb25aaeb53"
+    sha256 cellar: :any,                 arm64_sequoia: "d240231c17445598269c510b7eb94386329649122745d1fb65c80be01758c9cc"
+    sha256 cellar: :any,                 arm64_sonoma:  "e7e4ed8e9e120eac78df613af12a8f684de5667965a79daa51f511d13517c6e4"
+    sha256 cellar: :any,                 sonoma:        "ac8ee24ed06137c1879ea710c1a4156e5d055360a58ea872cb2ea5df933a20c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a7c388b0a99a98a73f45ab73d09162f73532696d8011f1c6d4ef3f0c04e7f82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d043600660146a831c3551913da62eeebb4141b8e98860c96755f86f2bdef2b2"
   end
 
   # `pkgconf`, `rust`, and `openssl@3` are for cryptography.

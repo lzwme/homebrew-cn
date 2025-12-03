@@ -6,7 +6,7 @@ class GraphTool < Formula
   url "https://downloads.skewed.de/graph-tool/graph-tool-2.98.tar.bz2"
   sha256 "eef1948b937f5f043749eee75fe0c6d7e8f036551d945e9d55e37870b06cc527"
   license "LGPL-3.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://downloads.skewed.de/graph-tool/"
@@ -14,12 +14,12 @@ class GraphTool < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "53e3ff8939c2c6e81ff3534ad9162eb79a06110ac0d8e9d414b0bd70b147ce6b"
-    sha256                               arm64_sequoia: "970ff4a189f0de55193b0d17c1f3de5c0a58ed5aa314b5868725426a0a4143a9"
-    sha256                               arm64_sonoma:  "580b603d8c3fbac571da448125b2c4c60b9e2fef512859d6397c8be996777c71"
-    sha256                               sonoma:        "b1b4575913f9f79db4bed1eaebdfedbcf3ef0675312a4be7fb4da405a202074c"
-    sha256                               arm64_linux:   "5c2e4526fb519e4736e3acccd7c6051b59c0119570cd10bbb193ceebcf8db451"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fe5874085d4bf4f9e1537affe312066b846e0b2c1e4dd21534f99b4230470c5"
+    sha256                               arm64_tahoe:   "dbf2c1c4f10720944156a05e9dc138114441fb53f0f370ff0d07da60ddae33dd"
+    sha256                               arm64_sequoia: "63a7e8de02af9b99e264ba99c4e48fa4a580b3109a17c49161a28d29e0df9bae"
+    sha256                               arm64_sonoma:  "db72367747a0860a7d8aa21e6eee167b2ddd3c16f3f927767e9042204137b913"
+    sha256                               sonoma:        "3d7769d12a812a0c16580b44e4d0f6c899753d3c73acf11e89a288b39b1677f8"
+    sha256                               arm64_linux:   "e7d78decc8ac729db0e18859ad50447249390a0abf28fff8ffeebf3f41845e39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d84f92fc98f09fb48f37a785de5c4261963ce7b8df77a608cf4f69299dfc1e0f"
   end
 
   depends_on "google-sparsehash" => :build
@@ -69,8 +69,8 @@ class GraphTool < Formula
   end
 
   resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/4b/42/97a13e47a1e51a5a7142475bbcf5107fe3a68fc34aef331c897d5fb98ad0/fonttools-4.60.1.tar.gz"
-    sha256 "ef00af0439ebfee806b25f24c8f92109157ff3fac5731dc7867957812e87b8d9"
+    url "https://files.pythonhosted.org/packages/33/f9/0e84d593c0e12244150280a630999835a64f2852276161b62a0f98318de0/fonttools-4.61.0.tar.gz"
+    sha256 "ec520a1f0c7758d7a858a00f090c1745f6cde6a7c5e76fb70ea4044a15f712e7"
   end
 
   resource "kiwisolver" do

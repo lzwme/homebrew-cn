@@ -1,8 +1,8 @@
 class Juicefs < Formula
   desc "Cloud-based, distributed POSIX file system built on top of Redis and S3"
   homepage "https://juicefs.com"
-  url "https://ghfast.top/https://github.com/juicedata/juicefs/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "c2d098797bb9bc0bcb75ac1461cd1c06a8306dd3375a6d221f17c2eed091fee6"
+  url "https://ghfast.top/https://github.com/juicedata/juicefs/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "37404fb9693a39d1e2ba8ec6323c1e3e1502852fd7eb04e10657f6cffe9ef110"
   license "Apache-2.0"
   head "https://github.com/juicedata/juicefs.git", branch: "main"
 
@@ -12,20 +12,19 @@ class Juicefs < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "38575f6b8e1bc4a3d72976ad430504dc8a5f39787e22750e69d247d4874f8c90"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a85d6e3e393c2a94d1daea94c848764aae4251441cdcfdb8b119b70231fc8f5b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aec5445b9982dc0262b0db8dc2969827092711e47a8afa825767b693388cbff7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "006ccb5b34cbf4435ebe004d1cc7d862f86b29456f615a9b6b74c101115ea80d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f47708561eee3ff825e19eaf696d29c47a29b5bfe2288f09d3a4ed2f48a57281"
-    sha256 cellar: :any_skip_relocation, ventura:       "41f32f57eab115f43d3c4bd31b7f051e3b2574f9d9dd07d8a8338eeae6b34a7d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9752a4c492028c7b72fd115e6d8d9d710ce2ff44d85cd072b5f0de9197b85230"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43fc94fc1cb21d4382e90bddc14dedf71f80507dd767f5c9fe35f644be7128bb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5cd25c0034180ab9338373a5e278dfc5400fac7257cabf06b288899c602d960"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f83d44fd56ff4fd1b0cb4cc1696260ecc0906dab55b0f83f824fc6bb78da7cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2c137424d00035f136acbbdf7c391cd7cc6c498ac016190e5a3b403296aab8e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3196e0bf833ae3ddfebc56def67968b4a0fa0f8b0f84b09d84d703ba168961df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ae9b27e1c37cbb2d71cb49d30735728f6ef2a2d4cd3effc6a348d5eeb7ee7fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7b195c808d249265774b78dac00fa69cbd6fcac11e6ce4d40ab9d0c9e26d4e0"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     system "make"
     bin.install "juicefs"
   end

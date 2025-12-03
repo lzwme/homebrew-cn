@@ -1,17 +1,17 @@
 class Bbtools < Formula
   desc "Brian Bushnell's tools for manipulating reads"
   homepage "https://bbmap.org/"
-  url "https://downloads.sourceforge.net/bbmap/BBMap_39.51.tar.gz"
-  sha256 "2befe5be5cc8972e4d95e9b4b33c4bb1e00d734585201aeea85527a5acb5ca1a"
+  url "https://downloads.sourceforge.net/bbmap/BBMap_39.54.tar.gz"
+  sha256 "b869b7994a857d88bc28a588a5be5bb83945be85bc8b5ce14c72a9213b360ee0"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ca1fe1368c619d8f9185a6d2ae95f52b280ca701a4878013fa1a6bb04c928096"
-    sha256 cellar: :any,                 arm64_sequoia: "1e577af7f4b83208d3fdda17d6787816cdb92bab7205d3f7f0cc80318039a4c1"
-    sha256 cellar: :any,                 arm64_sonoma:  "623768a800fd9988fd966d16d9699785ac1c1cc80b68735ebde2fa0d1ee15d5e"
-    sha256 cellar: :any,                 sonoma:        "633659737613a1e01ff7dbf4df37c96af0820f44db6ca4803aebc3de5f44c3fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c43354aad3193a70c5a7a61b41fc3d2457002ad6b760d50530407f4cd27b12cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74ce413fe038ca11243ae90a00068fb5d32b4903fac00a4b5023cdd2e4e3cf99"
+    sha256 cellar: :any,                 arm64_tahoe:   "be96e3e2491a3406760c0d8285c8550dfcc6ba06823f5f00c6d378c9b1c97e16"
+    sha256 cellar: :any,                 arm64_sequoia: "a730908ef60611d72c4eb6fd34deb730ebbbc9aed6d3ec0089aacabfaab2a35d"
+    sha256 cellar: :any,                 arm64_sonoma:  "a627b63812af043cf9ba15cad1b3f6cd9078f028ee971efe82fa4ec2804f9e0a"
+    sha256 cellar: :any,                 sonoma:        "176c1345b67bb4e92b938551cecf568dd6edb58412bfec39701152a7f0dc6112"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82d193f7a2c9d7668306a2ee6d907f5b8906fb437a0d0cdae2ffd9e28cd2559a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a14de597a59a71a2ff7ffd4c6941fd7f1f0d44d8f6833a30d35bf8c0838804c0"
   end
 
   depends_on "openjdk"

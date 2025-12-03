@@ -1,17 +1,17 @@
 class Rtorrent < Formula
   desc "Ncurses BitTorrent client based on libtorrent-rakshasa"
   homepage "https://github.com/rakshasa/rtorrent"
-  url "https://ghfast.top/https://github.com/rakshasa/rtorrent/releases/download/v0.16.4/rtorrent-0.16.4.tar.gz"
-  sha256 "4fd458f025544c77eea63962a7866848bf06fb420a2b8cee12978b8e2d2add8f"
+  url "https://ghfast.top/https://github.com/rakshasa/rtorrent/releases/download/v0.16.5/rtorrent-0.16.5.tar.gz"
+  sha256 "62ebd7662d02bdff005bc29a4b3385238e703bbe2b0c845ea7ae1ffaf9cb66c8"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f0cc84d058b3651bc982c613ca18530c0ed8cd7a384591fd166219d056b4989f"
-    sha256 cellar: :any,                 arm64_sequoia: "4d20732782a4b7382d60bce94f80d56e83d934805acc9593eff684e30d1e32b2"
-    sha256 cellar: :any,                 arm64_sonoma:  "c984cf8958762085fc794b1aabca436c02b9f340df5ad8e5565aaba8cb7f4f53"
-    sha256 cellar: :any,                 sonoma:        "358580c01246364f84c9cebbdea75f5651044897a25dd8dcc0568012c75b7e7e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc95865fad018f81880d8f913299789273abe1ae4d3250756c6006429e590e0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e636a42137177c55aee3bf3c0cb800102385d42c66e156bd751c38300d6044a8"
+    sha256 cellar: :any,                 arm64_tahoe:   "c620ce59759468e04a8ecb258d7817f5f3d07f27e52772d74efeb2cf583dbdcc"
+    sha256 cellar: :any,                 arm64_sequoia: "3186b547a80776a25661958be4eabc9c424b2fd76fdb825545e8509dd7894bb9"
+    sha256 cellar: :any,                 arm64_sonoma:  "a5478bed754f2347255d46025fdcc0ced6c1722cbee56ec8ec2a7d9be4db21a3"
+    sha256 cellar: :any,                 sonoma:        "76dd96003bdeb828a82b741c62005eaaecfb2e379a519ef5a1ac2cac18eb4362"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd5a41e8b3998e975effa2761f1a660a08bcba5a3485c1b480f7ecaa76f5049d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19f638d8bbf9337de2c0326da00dd7d2fea4317d0e2f8a276902d73d7ff33311"
   end
 
   depends_on "autoconf" => :build

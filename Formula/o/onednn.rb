@@ -1,8 +1,8 @@
 class Onednn < Formula
   desc "Basic building blocks for deep learning applications"
   homepage "https://www.oneapi.io/open-source/"
-  url "https://ghfast.top/https://github.com/uxlfoundation/oneDNN/archive/refs/tags/v3.10.1.tar.gz"
-  sha256 "d89998bfae2f33c209e216e3d3a8d280ed6eb65a57971dfb4dcfa56beac9571b"
+  url "https://ghfast.top/https://github.com/uxlfoundation/oneDNN/archive/refs/tags/v3.10.2.tar.gz"
+  sha256 "58a7399c86789bf3756117072ed946d764ba59dd1480f0e42efd4f9b6b7b9a64"
   license "Apache-2.0"
   head "https://github.com/uxlfoundation/oneDNN.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Onednn < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d3814e423a07f42572e8afda7d227357a5307f6b3784f7b97f17f8345fc663cc"
-    sha256 cellar: :any,                 arm64_sequoia: "48bfe23d66cc4f6476b5823d69d638a68596abfe355a217c24301d89cef563ca"
-    sha256 cellar: :any,                 arm64_sonoma:  "8bc9b49360d48a2b1ad1d3926db6e162fd35341d0f55cd34a9b0bb4ac398c0c1"
-    sha256 cellar: :any,                 sonoma:        "31dd8a90fc43974f23be032ccb8474b6d789108b6e4b88aa407023e551d323a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4766deb3d6bed8d4ee3cf0aa520bd5885ab7b4ab595f86ce8d45f97248a17606"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c9f5930114e711d48b91d2adb06838442485a5d0e70dfe4ac48a4df23a1a8b1"
+    sha256 cellar: :any,                 arm64_tahoe:   "74fa4be741943b0ce9cd19363504a49ce6f94a0cbfa0361a5626c652c73616a9"
+    sha256 cellar: :any,                 arm64_sequoia: "7d384140598a1e535895855bb215fe80dd101b166d62866a7ca0134f357bc5e5"
+    sha256 cellar: :any,                 arm64_sonoma:  "446d1097493e85b6aae94b0c2822346283be371608d645692f5d6a101bac2902"
+    sha256 cellar: :any,                 sonoma:        "2df8790b095a27cc7ff4f4190555422c30e09fbaba5b532fb875c0f32ad61cdf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "878667f1666cc2899898a685c86c6091d34bd116256effdf1470a851aaa2d065"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cf1fe35963d65f62ec13fcdd78539a47d01dfd156d989e6bac25ea1251d2a9e"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class ZlibNg < Formula
   desc "Zlib replacement with optimizations for next generation systems"
   homepage "https://github.com/zlib-ng/zlib-ng"
-  url "https://ghfast.top/https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.3.1.tar.gz"
-  sha256 "94cfa0a53a8265c813c8369d3963bf09ac6a357824ad1f93aee13486176e152e"
+  url "https://ghfast.top/https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.3.2.tar.gz"
+  sha256 "6a0561b50b8f5f6434a6a9e667a67026f2b2064a1ffa959c6b2dae320161c2a8"
   license "Zlib"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,12 +14,12 @@ class ZlibNg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b8f8ee5a61e66480cc383ae43cdf4db3a2f94e800854e9d0375c81dbc835b93e"
-    sha256 cellar: :any,                 arm64_sequoia: "7444266862075d1b665b2f468e025bb272d818721ed1ac34c0ce188ce66ea40c"
-    sha256 cellar: :any,                 arm64_sonoma:  "4169895a8269c28b7e6b075fbaf15dab3ccd128011640a4e973f615a6b38a9eb"
-    sha256 cellar: :any,                 sonoma:        "5b3726d1a82db8b6b4790b9b96a41b64c10726f64b70cb30c12c4e815ae8839c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8d9c9a5ad6622b96084650bb93f2f3634a2604e32f1e6ca53f611448d84c405"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6212d46a60461488b19eb0a73a6b643f80c892cfaa9a23752e34d61fb08e045"
+    sha256 cellar: :any,                 arm64_tahoe:   "eda237ebfd034c7529c24b4de24e796d4b9d949eba2fb8eca20aa17507c28269"
+    sha256 cellar: :any,                 arm64_sequoia: "46cbd9f86d8450a612ab4c72b7695011cd94dafadf762f09640ab2ddc0b4ceb0"
+    sha256 cellar: :any,                 arm64_sonoma:  "3cf5eb2ff042b02d37c46c23c816dd1c888e48ea457658aef4cbfff04f3b7e5d"
+    sha256 cellar: :any,                 sonoma:        "5adf8f11e1b810cd11336fba239ae24b95f5d9e1924df268282226d1bc640661"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2517bb59eeac0cc8653758f229b68c584ea743777c5109baa9d59aca8a312ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6b881b00a10f68d4f0f735854135bd1a6b961f6f5f9e81079eb21cdf83df4d1"
   end
 
   depends_on "cmake" => :build

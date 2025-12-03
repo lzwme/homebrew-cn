@@ -1,18 +1,18 @@
 class Treemd < Formula
   desc "TUI and CLI dual pane markdown viewer"
   homepage "https://github.com/epistates/treemd"
-  url "https://ghfast.top/https://github.com/Epistates/treemd/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "3a1934043642dc2751e802dc66ecdc435d649a9eea22a0b674eaf43d14968849"
+  url "https://ghfast.top/https://github.com/Epistates/treemd/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "24ece52c14437dd9d4b694022326b69c511f107ee0ad168bd5e7d366d8f10aa7"
   license "MIT"
   head "https://github.com/epistates/treemd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "69ccb981eb5ea7bcf113893086d82e4567e74a67a6dc357b7dc3b177098acf64"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de874544ca412a384585762ff2025f2e9b622fe71993d0f99ad43c6c27d8ad34"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86c29e46b851ef6a5ee1b7f406807760102c23c7233fafd19ff358e32c0dfaf9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a9e282def9fa031063a6bb7708c5f50e827ef7b8979ea807cf4cc0c5421dd437"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ebe85f3617cccce7acc101683652e4837bb88fec1d078b281566f3490c60498"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24f6d3c5cb2a04023309e3e17c37fdec985c1ea88a175339cd2e5a034fb84522"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e05378b07a5a43a0ffe88cf440f4dbb6d97cf3a777550b686d788fd49788b14"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43295671d0ce17e9716f12eb3b07dc7a6865c965e3c910ab8f7b441199a00cdb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42b3382ba817f6c2bca67ad7697cc0f2b85a411019e5e7b743eb4ba9c19fd65d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "07f945183ad6cd9cbaea53e792796f80d11859731bc9cc297bf05c0144a81632"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6d5184ddd94d6786fa8c76be54631be1990ba2847576af4b406aec123e9aa1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e128d7b92b03fb4086cb8de05e8071013464bebcd10e1ed33a90d78536160c7"
   end
 
   depends_on "rust" => :build

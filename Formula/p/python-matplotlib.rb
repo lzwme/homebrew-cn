@@ -6,15 +6,15 @@ class PythonMatplotlib < Formula
   url "https://files.pythonhosted.org/packages/ae/e2/d2d5295be2f44c678ebaf3544ba32d20c1f9ef08c49fe47f496180e1db15/matplotlib-3.10.7.tar.gz"
   sha256 "a06ba7e2a2ef9131c79c49e63dad355d2d878413a0376c1727c8b9335ff731c7"
   license "PSF-2.0"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ef681c9b01992ddd9c51dacd5e0ac459bc33e6a28b05e5c66402891dfd89869b"
-    sha256 cellar: :any,                 arm64_sequoia: "9fbc1b0f4d473080a3b9459ecb016e5325689d348b11a0733f537ed864815c1e"
-    sha256 cellar: :any,                 arm64_sonoma:  "6f226ce14460cc7061fec37fbc7631a64da8ceeac5df9eb651ad44f6046c716e"
-    sha256 cellar: :any,                 sonoma:        "ba6f871691012ee1559a1c27a2b573f0e0bec4c9354f061e3b37eeccd061d756"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac62fe8d76734bdfce67c2a83c4fc88a40e9c3251143adb8ac400952bf9bcf84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93a4966b98ee3ea44019ef4ff132d0aebb8f8bca6aebe2a0f7c8dcb5836ec37f"
+    sha256 cellar: :any,                 arm64_tahoe:   "e89e16adc28112b7fe7d004cedb4c5c14e3ebfcbe979b8e226393e3708074941"
+    sha256 cellar: :any,                 arm64_sequoia: "bcd0d95965df06bd19959b890db5303f191719f5a3884ad227077b7cf2268c61"
+    sha256 cellar: :any,                 arm64_sonoma:  "0e505994baaac06c58b99410d3bb2950a14c2624ce4e8ca18258caa931c741ce"
+    sha256 cellar: :any,                 sonoma:        "b76bbdd40989e2fc7f2224c44a4adc5fe1a64b4d6e2017e74274109ff7eb7db2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "91e99a12aaa771c7ab5b035f984562b771b240c0ed37f2df275854f541caa359"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af1b5716592aba0dd0efb340ceaaf9eae7fbb89594257caacbe2f1b17958a307"
   end
 
   depends_on "cmake" => :build # for contourpy
@@ -44,8 +44,8 @@ class PythonMatplotlib < Formula
   end
 
   resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/4b/42/97a13e47a1e51a5a7142475bbcf5107fe3a68fc34aef331c897d5fb98ad0/fonttools-4.60.1.tar.gz"
-    sha256 "ef00af0439ebfee806b25f24c8f92109157ff3fac5731dc7867957812e87b8d9"
+    url "https://files.pythonhosted.org/packages/33/f9/0e84d593c0e12244150280a630999835a64f2852276161b62a0f98318de0/fonttools-4.61.0.tar.gz"
+    sha256 "ec520a1f0c7758d7a858a00f090c1745f6cde6a7c5e76fb70ea4044a15f712e7"
   end
 
   resource "kiwisolver" do

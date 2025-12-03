@@ -3,17 +3,17 @@ class Molecule < Formula
 
   desc "Automated testing for Ansible roles"
   homepage "https://molecule.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/23/d0/1a846bd95067d1e97eb532bcc5dce4f716b2beab7869378289670be02ada/molecule-25.11.1.tar.gz"
-  sha256 "c65888e3283c2677048f945d197296064ffcee8aea5bb7e8fff39b1c199ce3ba"
+  url "https://files.pythonhosted.org/packages/b8/b1/205ca8017593656836463cee1e4690b86d219ca19caebc704b8b00f7c6e8/molecule-25.12.0.tar.gz"
+  sha256 "b226bf1be67ce0fa30c726aab226063f9443e561d7e3d048f55dfb2ee51adbd6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fdada68688703af091faa665d81a09fa997db0dcd569430b14d6f12bb7095b1a"
-    sha256 cellar: :any,                 arm64_sequoia: "aa7ad3c033c59cb9adc7c7b8f9ba684e89aa04c03ca1d836cad19b5370c7721a"
-    sha256 cellar: :any,                 arm64_sonoma:  "9c73ec27f673415245c04889498865146314f6db6e2966d5ff61fe74b0fafa92"
-    sha256 cellar: :any,                 sonoma:        "c7bf62529d9186180b00e920d6ae6f4a0f690eb8c7011a3741f98708a19f78f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67a84cad3431b1215f57f8f003f5b794dc9717f4e8744d0b5ea50736810f8d54"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b49e1dd87924d090b7b1a744f9d25aa7c372f56f0623190e221eb6d82de3f8e4"
+    sha256 cellar: :any,                 arm64_tahoe:   "ee63ec577183493cf0b8df5680fb7073af54a9b58a9818922470e4d93f0d1e19"
+    sha256 cellar: :any,                 arm64_sequoia: "3ec6f9909ac99ead952a9917cfd9f7bd5865ef7596cadf3d6e10ae00381623cd"
+    sha256 cellar: :any,                 arm64_sonoma:  "8d2ef0a44dc37559ee07f2dc95e79a29c8bc003ef19acfabfced3c6586cf25ba"
+    sha256 cellar: :any,                 sonoma:        "09973a00dd66508d8eb25c2c1d50035432d85b0bfdaff9712086f4bbb2b71f30"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "51110952d4c1b5386588413ad77d81caca742c8d635e44055362d1c03d1cabf0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "641f4f33f0c0ce69d12ae55c993665ec0b858e8d39f41368088c0586863a967c"
   end
 
   depends_on "ansible"
@@ -33,8 +33,8 @@ class Molecule < Formula
                 extra_packages:   "molecule-plugins[azure,docker,ec2,gce,podman,vagrant,openstack]"
 
   resource "ansible-compat" do
-    url "https://files.pythonhosted.org/packages/de/95/2f361bedf7513b2ab558599a4cc9d5dd84d9d85b49c1dd994d0f5603f952/ansible_compat-25.11.0.tar.gz"
-    sha256 "b9e6655d8f4942c427a39fa1df6697830d987fe5d311bc7be2b2f81c1edd48f5"
+    url "https://files.pythonhosted.org/packages/75/62/fb3aee58827ba6eacee561183b02b4a49cf4819f405df2409e23bad69a00/ansible_compat-25.12.0.tar.gz"
+    sha256 "d38a149c5f95bb0d529c3b5e5fa3200b26f5e938ec7c31d8bb01d87c1f634410"
   end
 
   resource "ansible-core" do

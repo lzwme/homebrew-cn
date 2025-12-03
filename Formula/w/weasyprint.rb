@@ -3,18 +3,17 @@ class Weasyprint < Formula
 
   desc "Convert HTML to PDF"
   homepage "https://www.courtbouillon.org/weasyprint"
-  url "https://files.pythonhosted.org/packages/32/99/480b5430b7eb0916e7d5df1bee7d9508b28b48fee28da894d0a050e0e930/weasyprint-66.0.tar.gz"
-  sha256 "da71dc87dc129ac9cffdc65e5477e90365ab9dbae45c744014ec1d06303dde40"
+  url "https://files.pythonhosted.org/packages/fd/bc/79a65b3a406cb62a1982fec8b49134b25a3b31abb094ca493c9fddff5492/weasyprint-67.0.tar.gz"
+  sha256 "fdfbccf700e8086c8fd1607ec42e25d4b584512c29af2d9913587a4e448dead4"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "53f75bd61bef8b6f816efb2abef6991df20f9093436c158835c07a6653abe651"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "861042e56b90b8168c31e1630a8ff52f634c65058a66dce68db6d557fa39b928"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "108324bd1b51c685660c0ae434536d27792d0a4f46bcdf80f707e88f1656a17e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3a57bceba9d7cff9f6fea8ff4994d3dd3aca984a22e84c16278648738d06f180"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c11b843f4ba877f36571327177c5b4aac04c8682ea3b096f5113a67aa5032472"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8deddc0ecdbd3cbc6542c1ba6db677516b7ae7f755105c99db7007ec93bdf63"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a13e25782eb66bc61c9fdb2b6dd8214e892ec7f9ca65f7aa881b4ba50e26d23"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf6b50e830ca26ed2d95b4e7ea2cab5750607a5fa3b7f3d44b0a76ed77743d6b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55519279b9eb08818dc0856ca21eefa82191fca6050cbe0b8e142031b48f555b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "43acc2f3b33fd45e6b49bc706288a29e690bee7ce7b46b302a5b765d23100a8b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "927cc2f3e9ab183f0513bb20eda729ef9dbc8709e824fbe9751fe30de43896c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c286338dff7175a9c6ed5852e7acd1531db68ace9701f344defd221105a18314"
   end
 
   depends_on "pango"
@@ -41,8 +40,8 @@ class Weasyprint < Formula
   end
 
   resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/4b/42/97a13e47a1e51a5a7142475bbcf5107fe3a68fc34aef331c897d5fb98ad0/fonttools-4.60.1.tar.gz"
-    sha256 "ef00af0439ebfee806b25f24c8f92109157ff3fac5731dc7867957812e87b8d9"
+    url "https://files.pythonhosted.org/packages/33/f9/0e84d593c0e12244150280a630999835a64f2852276161b62a0f98318de0/fonttools-4.61.0.tar.gz"
+    sha256 "ec520a1f0c7758d7a858a00f090c1745f6cde6a7c5e76fb70ea4044a15f712e7"
   end
 
   resource "pycparser" do
@@ -51,8 +50,8 @@ class Weasyprint < Formula
   end
 
   resource "pydyf" do
-    url "https://files.pythonhosted.org/packages/2e/c2/97fc6ce4ce0045080dc99446def812081b57750ed8aa67bfdfafa4561fe5/pydyf-0.11.0.tar.gz"
-    sha256 "394dddf619cca9d0c55715e3c55ea121a9bf9cbc780cdc1201a2427917b86b64"
+    url "https://files.pythonhosted.org/packages/36/ee/fb410c5c854b6a081a49077912a9765aeffd8e07cbb0663cfda310b01fb4/pydyf-0.12.1.tar.gz"
+    sha256 "fbd7e759541ac725c29c506612003de393249b94310ea78ae44cb1d04b220095"
   end
 
   resource "pyphen" do
@@ -61,8 +60,8 @@ class Weasyprint < Formula
   end
 
   resource "tinycss2" do
-    url "https://files.pythonhosted.org/packages/7a/fd/7a5ee21fd08ff70d3d33a5781c255cbe779659bd03278feb98b19ee550f4/tinycss2-1.4.0.tar.gz"
-    sha256 "10c0972f6fc0fbee87c3edb76549357415e94548c1ae10ebccdea16fb404a9b7"
+    url "https://files.pythonhosted.org/packages/a3/ae/2ca4913e5c0f09781d75482874c3a95db9105462a92ddd303c7d285d3df2/tinycss2-1.5.1.tar.gz"
+    sha256 "d339d2b616ba90ccce58da8495a78f46e55d4d25f9fd71dfd526f07e7d53f957"
   end
 
   resource "tinyhtml5" do
@@ -76,8 +75,8 @@ class Weasyprint < Formula
   end
 
   resource "zopfli" do
-    url "https://files.pythonhosted.org/packages/5e/7c/a8f6696e694709e2abcbccd27d05ef761e9b6efae217e11d977471555b62/zopfli-0.2.3.post1.tar.gz"
-    sha256 "96484dc0f48be1c5d7ae9f38ed1ce41e3675fd506b27c11a6607f14b49101e99"
+    url "https://files.pythonhosted.org/packages/be/4c/efa0760686d4cc69e68a8f284d3c6c5884722c50f810af0e277fb7d61621/zopfli-0.4.0.tar.gz"
+    sha256 "a8ee992b2549e090cd3f0178bf606dd41a29e0613a04cdf5054224662c72dce6"
   end
 
   def install

@@ -6,10 +6,10 @@ class Pdfly < Formula
   url "https://files.pythonhosted.org/packages/48/ae/70f161c80b3f39d8fe4ff784c78045225820d10375c81c2097c0e85ac0fc/pdfly-0.5.1.tar.gz"
   sha256 "636e9736ca3296ed69ad7e14d997813ea5a662ba7a86c77d155e343494dcc3d7"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ced1eae761821bbe6a99a45b4d3ce78d319562a3009500cf800c36b2c10fbde1"
+    sha256 cellar: :any_skip_relocation, all: "72b09bd2d84da693d03328d5f63747c452186f75387e9b731b772da0c754119c"
   end
 
   depends_on "pkgconf" => :build
@@ -48,8 +48,8 @@ class Pdfly < Formula
   end
 
   resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/4b/42/97a13e47a1e51a5a7142475bbcf5107fe3a68fc34aef331c897d5fb98ad0/fonttools-4.60.1.tar.gz"
-    sha256 "ef00af0439ebfee806b25f24c8f92109157ff3fac5731dc7867957812e87b8d9"
+    url "https://files.pythonhosted.org/packages/33/f9/0e84d593c0e12244150280a630999835a64f2852276161b62a0f98318de0/fonttools-4.61.0.tar.gz"
+    sha256 "ec520a1f0c7758d7a858a00f090c1745f6cde6a7c5e76fb70ea4044a15f712e7"
   end
 
   resource "fpdf2" do

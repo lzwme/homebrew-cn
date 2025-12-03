@@ -6,15 +6,16 @@ class KeeperCommander < Formula
   url "https://files.pythonhosted.org/packages/db/69/a201d5934a3b205191094d8deb7d6c4e69bc59d3762859b5bcf3654207c4/keepercommander-17.1.15.tar.gz"
   sha256 "0611f89d43ed27240cac4251e0c3739300a24f178a0e366415e3a53b0c97ac9d"
   license "MIT"
+  revision 1
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "63887a29160b85793482c3db0cdbea18186710485d51a934d8bbaf887d74760f"
-    sha256 cellar: :any,                 arm64_sequoia: "b61968a32c9e05821ccb26252a44c36e63c145f81bf403973017d6904f4d8b82"
-    sha256 cellar: :any,                 arm64_sonoma:  "fa29a31d994c4697bbc37cc5c779df418652dd5c37fcaf3311086b52ef3e3679"
-    sha256 cellar: :any,                 sonoma:        "cd3522c11a3cc816fccd2d4524b7394249e18c420d370f25983d660d555cd7ae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3af215acca4759675afb49f72620e28cbe22e66d496e832e0c94cc2b0770e613"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f79546ffaed77a3c7af7228a37c4e5eb5183598ecf4ebd479083979cfbd6f07"
+    sha256 cellar: :any,                 arm64_tahoe:   "53e9206cbd07a73b79afe70c2d9aefbf2ce16e63c712ff9b97d60fc523af76c3"
+    sha256 cellar: :any,                 arm64_sequoia: "d9247300d2191aa325e5ca5d4faf899bddeb53add15afac05e656eb590275bd8"
+    sha256 cellar: :any,                 arm64_sonoma:  "e86f8e7efa8a85d68c0490de3366318c722e02796ae6d51f21c59e3fe6fa0fe1"
+    sha256 cellar: :any,                 sonoma:        "2ae37fc44cda310657adc01d1433438cce717abdaef187a9452b097843338422"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2dcc374075e02c0d083b8505f6f2fb442b3627e08aba630524569cdb0bb80a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96aec59fb3aea1385818c668c96bc9f1a1ee4d173f9d1561c7cdd5ddbec783c9"
   end
 
   depends_on "pkgconf" => :build
@@ -105,8 +106,8 @@ class KeeperCommander < Formula
   end
 
   resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/4b/42/97a13e47a1e51a5a7142475bbcf5107fe3a68fc34aef331c897d5fb98ad0/fonttools-4.60.1.tar.gz"
-    sha256 "ef00af0439ebfee806b25f24c8f92109157ff3fac5731dc7867957812e87b8d9"
+    url "https://files.pythonhosted.org/packages/33/f9/0e84d593c0e12244150280a630999835a64f2852276161b62a0f98318de0/fonttools-4.61.0.tar.gz"
+    sha256 "ec520a1f0c7758d7a858a00f090c1745f6cde6a7c5e76fb70ea4044a15f712e7"
   end
 
   resource "fpdf2" do
@@ -270,8 +271,8 @@ class KeeperCommander < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/9f/69/83029f1f6300c5fb2471d621ab06f6ec6b3324685a2ce0f9777fd4a8b71e/werkzeug-3.1.3.tar.gz"
-    sha256 "60723ce945c19328679790e3282cc758aa4a6040e4bb330f53d30fa546d44746"
+    url "https://files.pythonhosted.org/packages/45/ea/b0f8eeb287f8df9066e56e831c7824ac6bab645dd6c7a8f4b2d767944f9b/werkzeug-3.1.4.tar.gz"
+    sha256 "cd3cd98b1b92dc3b7b3995038826c68097dcb16f9baa63abe35f20eafeb9fe5e"
   end
 
   resource "wrapt" do

@@ -1,8 +1,8 @@
 class CaCertificates < Formula
   desc "Mozilla CA certificate store"
   homepage "https://curl.se/docs/caextract.html"
-  url "https://curl.se/ca/cacert-2025-11-04.pem"
-  sha256 "8ac40bdd3d3e151a6b4078d2b2029796e8f843e3f86fbf2adbc4dd9f05e79def"
+  url "https://curl.se/ca/cacert-2025-12-02.pem"
+  sha256 "f1407d974c5ed87d544bd931a278232e13925177e239fca370619aba63c757b4"
   license "MPL-2.0"
 
   livecheck do
@@ -11,8 +11,7 @@ class CaCertificates < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "5fbe3422f18518d9e539c97b73a241bb1588b553927507de29fc723db7c7cec5"
+    sha256 cellar: :any_skip_relocation, all: "dd8e78402d2feff017ecf5dd9b8a7f3edea2310631323f24b093ebc85727dd21"
   end
 
   def install
