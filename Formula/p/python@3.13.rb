@@ -1,10 +1,9 @@
 class PythonAT313 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.13.9/Python-3.13.9.tgz"
-  sha256 "c4c066af19c98fb7835d473bebd7e23be84f6e9874d47db9e39a68ee5d0ce35c"
+  url "https://www.python.org/ftp/python/3.13.10/Python-3.13.10.tgz"
+  sha256 "de5930852e95ba8c17b56548e04648470356ac47f7506014664f8f510d7bd61b"
   license "Python-2.0"
-  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,15 +11,14 @@ class PythonAT313 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "2dda1c8b37f3658a38f1fbfc9edf381284e382f3e4fecb06658e1477dc7c42d8"
-    sha256 arm64_sequoia: "c8d38b145b0be7d1758b7edaa574ef4d5211e75f32854d54886af7b7c58cc547"
-    sha256 arm64_sonoma:  "66f3ce715ed6bd470a3cfb9fb7573471d188248430c430e5165343e8e7750f48"
-    sha256 tahoe:         "48c4bf63e2a36e6dba4289ff4a06b97fc8a9857e603b6b9b6b48802f4a91d861"
-    sha256 sequoia:       "a7bf11de5583332a2cdefceb7c282630932f05f042e52a7582e81112ebf71b4d"
-    sha256 sonoma:        "d1f565c40e672e8b435e798c72a735eebf2cd6ccb6e7d3585cf3c4bea214898c"
-    sha256 arm64_linux:   "f106972ed4be2b9ff09e7895ef7f143b3a178095accb46b52293d39c9121d2b0"
-    sha256 x86_64_linux:  "3fb485f3cd69a7b0ce5802031c2e8cffdf5399122d4bbc6df7cbc332695bc80f"
+    sha256 arm64_tahoe:   "15e75b8930c18b248367a75cc5dab8e6bde8227c64416373087d2d87d2206065"
+    sha256 arm64_sequoia: "6d8122aa822e942ab688562f3f704128ef48042cb4d872dbce6bdd2606a34c0f"
+    sha256 arm64_sonoma:  "98d309d46090912216a0a0d001c7cc741fdc9ebc10f0199d5ecbc7874ff59259"
+    sha256 tahoe:         "f52bc7af2b9d11b5a5ee486193d1e222580341b2f8df6000c13bcbe7e6053824"
+    sha256 sequoia:       "e708289de6c9c6670d1048269a9ceacaabf928e0976f3a8e3dbfde78494d6e9f"
+    sha256 sonoma:        "f17997fd95a3a3f90d4881b74975ec8c47f2ef72acc0a8e948d97a4111f9574d"
+    sha256 arm64_linux:   "79c544fafa655726a3cc46336382d6554099047df26924308ad10b9685193214"
+    sha256 x86_64_linux:  "0477e7a83bf9f8fcab98cfb678242b316be9815c9023dd1d34474502394d39f0"
   end
 
   depends_on "pkgconf" => :build

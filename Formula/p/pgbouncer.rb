@@ -1,8 +1,8 @@
 class Pgbouncer < Formula
   desc "Lightweight connection pooler for PostgreSQL"
   homepage "https://www.pgbouncer.org/"
-  url "https://www.pgbouncer.org/downloads/files/1.25.0/pgbouncer-1.25.0.tar.gz"
-  sha256 "290bad449e4580f0174d3677c26c1076d4ce5dd7ca116ae1fca10272ef74d10e"
+  url "https://www.pgbouncer.org/downloads/files/1.25.1/pgbouncer-1.25.1.tar.gz"
+  sha256 "6e566ae92fe3ef7f6a1b9e26d6049f7d7ca39c40e29e7b38f6d5500ae15d8465"
   license "ISC"
 
   livecheck do
@@ -11,13 +11,12 @@ class Pgbouncer < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "f6989df36eaff7f94899191b401b7aa476302e48d2bc678b93a5c6fe4f072d96"
-    sha256 cellar: :any,                 arm64_sequoia: "f950e41b7d5be16bd933f19d3fda274bfd2575c6175162d3439a239c658e5a8c"
-    sha256 cellar: :any,                 arm64_sonoma:  "dbc57126f313169f5ce5e43afe231fbb44f51f2ee744d962a314563907bdc608"
-    sha256 cellar: :any,                 sonoma:        "2b9a87d20a4ae91a6b067bb5ab3334bda856824e203bc5d9b51a968d07e71c5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f89e7c92d42cadb80a7d6c75f007b01b375f075752de0acbf9733ca597ed16a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25535e79314642f393ce2c26787362263f0466e11df8b63f8a40713dde85a877"
+    sha256 cellar: :any,                 arm64_tahoe:   "f5a3fc3c60b6965b84c3726d7a2ba38abc650ccbe07a57c96de83d9b6fd330d1"
+    sha256 cellar: :any,                 arm64_sequoia: "6be837ec94647a38dd17d202a3694adf258ab90e78e5afdae17b345201dac64a"
+    sha256 cellar: :any,                 arm64_sonoma:  "b90669ff9c33f12172c202a805aad612aff2c0c29d3085165c5bb7b42750922f"
+    sha256 cellar: :any,                 sonoma:        "ca92fc4e84e84654b20e3696eedf19fc5ef394cae7ce74ffe111a43317eb90e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a4786998a1c81f0a7f5080626e4133800cc8f013431e9c3e350040c15db6f87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f8526ad5bf46f76b9b8821dd240a512452a1502020dee3ad3d0c1a7c5f99e11"
   end
 
   head do

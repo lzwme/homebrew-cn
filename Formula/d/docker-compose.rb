@@ -15,12 +15,13 @@ class DockerCompose < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3461b24308b00086a27784122de17f8459423bdbeb34061e0f18e8156538d66c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1eca1cf05a6a23cc1586657be72fce7fca9f655bd99e3fd8b99aa7a4f0b8d013"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39eb34ac0326bda8848a7f17ec554059442c0b99c4ec6c7ec7ca862b3166a037"
-    sha256 cellar: :any_skip_relocation, sonoma:        "831e6920d566f8fd9ea93c883f5fc1fee34faae396cc25a83bedca2aa257f38f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "773c09ea3933d51c4359d6a2953d42d655e28343a5faf3e6af492ef910778566"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5800e53d4a555fdcb86bc26c5d446a6938b60e89c73ff39613b01895b9c33aa5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "400aafadab847faf30e287194dda351313b109573d02fe56d0cdbe2078271375"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a75c7301ddf479d13cb4c9df0fc6867b6985ffa9c6fc7c9941e4975631ab660e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45bd444e96b25bc62cb7b46721c6feb578cd9e0a8fe0ee24bd273cfa566bbb1e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "78392813c8da161f21af93be917f9bb7fe1ae4b826a71f16990a7aa44760ecda"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e86d832c6af45571593ac30a4fb33b1d198f0422adaa36c6abbc29977c0b522f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df56d8cad29bb32dc871eb4a9b1cd1de1a02e0c4eed4bdefbccb3b4b1aa29a07"
   end
 
   depends_on "go" => :build
@@ -31,7 +32,7 @@ class DockerCompose < Formula
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     ldflags = %W[
       -s -w
-      -X github.com/docker/compose/v2/internal.Version=#{version}
+      -X github.com/docker/compose/v#{version.major}/internal.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd"
 
@@ -50,5 +51,6 @@ class DockerCompose < Formula
   test do
     output = shell_output("#{bin}/docker-compose up 2>&1", 1)
     assert_match "no configuration file provided", output
+    assert_match version.to_s, shell_output("#{bin}/docker-compose version")
   end
 end

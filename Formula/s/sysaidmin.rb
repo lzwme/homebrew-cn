@@ -6,16 +6,15 @@ class Sysaidmin < Formula
   url "https://files.pythonhosted.org/packages/01/d8/f2b32cc85a544d1487bbdda7ec48d214c0e551d2d0ae6bbbb49d707fe297/sysaidmin-0.2.5.tar.gz"
   sha256 "77c40710cead7bdcc6cb98b38d74dd05e1e1c24dbc450e3b983869a7c06da91f"
   license "AGPL-3.0-or-later"
-  revision 6
+  revision 7
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "2e4645661e3e05508c5cbe54099f3b742efb0ddfc4fb3bae0299bd791f59a152"
-    sha256 cellar: :any,                 arm64_sequoia: "3b4ae6f96d4e0a38d26a6799830e119983b21668e17d0dfd215bd09fe8cae07c"
-    sha256 cellar: :any,                 arm64_sonoma:  "538de64af452e1c7a21a3d420695cd7bf69975c0955c85a4f87d8afdefd59909"
-    sha256 cellar: :any,                 sonoma:        "9059c124afe4876e9dcb8f1a43413dd9dd66181112ace066f878e464bd7d4a6d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8e62119d1450a0cb28d9dd5df0cc6ac952d86e88e89b23c1642316211cf3be4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86fecda27f2ba7fd94ed11fe63167e6123c088cc0ab5346b9c2d5a3aa620176d"
+    sha256 cellar: :any,                 arm64_tahoe:   "ec6a33a88ecd74a3cd125e9f7599a6b95e17b789512f9c300e4cadb4694bee49"
+    sha256 cellar: :any,                 arm64_sequoia: "93d3cefee0c68e19b40658bb0f965da906d9302837ca82cfe1f0f8f314281aef"
+    sha256 cellar: :any,                 arm64_sonoma:  "767bf83bf18e7970052233466a0509cc1747488ca9cff293592a47052d40623a"
+    sha256 cellar: :any,                 sonoma:        "5c2085edb406b142778d520358fdf87d7c598318675d47da69c871986f11f06d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a28ed366faf51ec29fb70338f3c130c757b18d32420359fe78b7baa46eb8a103"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a821bd1685f04e776d292ce00e4e35898d5564ce3210729fbd00a217bf1124f"
   end
 
   depends_on "rust" => :build # for jiter
@@ -28,8 +27,8 @@ class Sysaidmin < Formula
   pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "attrs" do
@@ -43,8 +42,8 @@ class Sysaidmin < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "colorama" do
@@ -58,8 +57,8 @@ class Sysaidmin < Formula
   end
 
   resource "griffe" do
-    url "https://files.pythonhosted.org/packages/ec/d7/6c09dd7ce4c7837e4cdb11dce980cb45ae3cd87677298dc3b781b6bce7d3/griffe-1.14.0.tar.gz"
-    sha256 "9d2a15c1eca966d68e00517de5d69dd1bc5c9f2335ef6c1775362ba5b8651a13"
+    url "https://files.pythonhosted.org/packages/0d/0c/3a471b6e31951dce2360477420d0a8d1e00dea6cf33b70f3e8c3ab6e28e1/griffe-1.15.0.tar.gz"
+    sha256 "7726e3afd6f298fbc3696e67958803e7ac843c1cfe59734b6251a40cdbfb5eea"
   end
 
   resource "h11" do
@@ -88,8 +87,8 @@ class Sysaidmin < Formula
   end
 
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/a3/68/0357982493a7b20925aece061f7fb7a2678e3b232f8d73a6edb7e5304443/jiter-0.11.1.tar.gz"
-    sha256 "849dcfc76481c0ea0099391235b7ca97d7279e0fa4c86005457ac7c88e8b76dc"
+    url "https://files.pythonhosted.org/packages/45/9d/e0660989c1370e25848bb4c52d061c71837239738ad937e83edca174c273/jiter-0.12.0.tar.gz"
+    sha256 "64dfcd7d5c168b38d3f9f8bba7fc639edb3418abcc74f22fdbe6b8938293f30b"
   end
 
   resource "jsonschema" do
@@ -103,23 +102,23 @@ class Sysaidmin < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/f8/22/fae38092e6c2995c03232635028510d77e7decff31b4ae79dfa0ba99c635/mcp-1.20.0.tar.gz"
-    sha256 "9ccc09eaadbfbcbbdab1c9723cfe2e0d1d9e324d7d3ce7e332ef90b09ed35177"
+    url "https://files.pythonhosted.org/packages/12/42/10c0c09ca27aceacd8c428956cfabdd67e3d328fe55c4abc16589285d294/mcp-1.23.1.tar.gz"
+    sha256 "7403e053e8e2283b1e6ae631423cb54736933fea70b32422152e6064556cd298"
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/51/a2/f4023c1e0c868a6a5854955b3374f17153388aed95e835af114a17eac95b/openai-2.7.1.tar.gz"
-    sha256 "df4d4a3622b2df3475ead8eb0fbb3c27fd1c070fa2e55d778ca4f40e0186c726"
+    url "https://files.pythonhosted.org/packages/d5/e4/42591e356f1d53c568418dc7e30dcda7be31dd5a4d570bca22acb0525862/openai-2.8.1.tar.gz"
+    sha256 "cb1b79eef6e809f6da326a7ef6038719e35aa944c42d081807bfa1be8060f15f"
   end
 
   resource "openai-agents" do
-    url "https://files.pythonhosted.org/packages/00/b3/c25c3b3084c113ffbd161c37ed7c02e0cc1296eb2f2d582d85c461f60c7a/openai_agents-0.5.0.tar.gz"
-    sha256 "776dde4025442164e3e860ff5b239b5c0ebc30f9445b0d75295c385a8ca1f696"
+    url "https://files.pythonhosted.org/packages/88/dc/7323c8d96211f252a2ebb288782a8f40bef6b472878eeebb59b3097a5708/openai_agents-0.6.1.tar.gz"
+    sha256 "067d2b66669c390c840effeb02d80939b4ac4a4db53e9735b74895a6d916b840"
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/20/c5/dbbc27b814c71676593d1c3f718e6cd7d4f00652cefa24b75f7aa3efb25e/pydantic_settings-2.11.0.tar.gz"
-    sha256 "d0e87a1c7d33593beb7194adb8470fc426e95ba02af83a0f23474a04c9a08180"
+    url "https://files.pythonhosted.org/packages/43/4b/ac7e0aae12027748076d72a8764ff1c9d82ca75a7a52622e67ed3f765c54/pydantic_settings-2.12.0.tar.gz"
+    sha256 "005538ef951e3c2a68e1c08b292b5f2e71490def8589d4221b95dab00dafcfd0"
   end
 
   resource "pyjwt" do

@@ -1,13 +1,13 @@
 class Iguana < Formula
   desc "Universal serialization engine"
   homepage "https://github.com/qicosmos/iguana"
-  url "https://ghfast.top/https://github.com/qicosmos/iguana/archive/refs/tags/1.0.9.tar.gz"
-  sha256 "b6e3f11a0c37538e84e25397565f5f12b0e6810e582bce7f3ca046425b0b1edf"
+  url "https://ghfast.top/https://github.com/qicosmos/iguana/archive/refs/tags/1.1.0.tar.gz"
+  sha256 "86bf230b5ccea629ad806e4b007d6dcd2e9f0cba8a477c123c920ee0e3329abf"
   license "Apache-2.0"
   head "https://github.com/qicosmos/iguana.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f67499cf80e3b24af53d4a7cc8c8f0f61fcbd603ded5ee734589a7fa3002deb0"
+    sha256 cellar: :any_skip_relocation, all: "33af9d2bfa1971283aa8149a4fc8469a8da267345d23e8cba97536d8a06c4c41"
   end
 
   depends_on "frozen"

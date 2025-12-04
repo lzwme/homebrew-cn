@@ -3,13 +3,13 @@ class Checkdmarc < Formula
 
   desc "Command-line parser for SPF and DMARC DNS records"
   homepage "https://domainaware.github.io/checkdmarc/"
-  url "https://files.pythonhosted.org/packages/79/71/223433ae1ed258e57f58077bcd937dcf7bfee8e6208d349ac7cc33735a3c/checkdmarc-5.12.25.tar.gz"
-  sha256 "bad9bdcf838383598f915dcd6e20162f7c412e912163191074018defd3f11e8d"
+  url "https://files.pythonhosted.org/packages/fc/2f/31fbab218e14e29c0903405a4df229e88173102c376cce93782bfb78b4f4/checkdmarc-5.12.26.tar.gz"
+  sha256 "9eec78b1c2ba355c67a97986f42f6ee3775604baf6979c0fa0c77a59205ca32b"
   license "Apache-2.0"
   head "https://github.com/domainaware/checkdmarc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d31afc978cd562bf8ce61abf8566cef6ad311e4728aed890b89c4f5dcdee0264"
+    sha256 cellar: :any_skip_relocation, all: "518bfb8c63c990098477db9e05fd8159f8e49569d972c136997df33f39a8303a"
   end
 
   depends_on "certifi" => :no_linkage
@@ -49,13 +49,13 @@ class Checkdmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/48/6a/48ca44608f4b1b975c5b7972bccf490511c126634dccc2bbc21fb8840ad5/publicsuffixlist-1.0.2.20251030.tar.gz"
-    sha256 "bc4429d7c6ebf35508050b5f556f1702c4778bd88c85388fb43290ab22615bdc"
+    url "https://files.pythonhosted.org/packages/01/7d/b330c502ee50058e3a993ce6b2f68171ba3b7e4052c058b140074b5a9fa5/publicsuffixlist-1.0.2.20251128.tar.gz"
+    sha256 "2573b29c1fe3cdaf842d8d6ad971282dac1983212ddfad0617df06454327dc3a"
   end
 
   resource "pyleri" do
-    url "https://files.pythonhosted.org/packages/93/6a/4a2a8a05a4945b253d40654149056ae03b9d5747f3c1c423bb93f1e6d13f/pyleri-1.4.3.tar.gz"
-    sha256 "17ac2a2e934bf1d9432689d558e9787960738d64aa789bc3a6760c2823cb67d2"
+    url "https://files.pythonhosted.org/packages/3a/0e/0e384ad4a9a603895f28da0fa32260402e372d26f3333a9ccd09de2bdf96/pyleri-1.5.0.tar.gz"
+    sha256 "0715a433e5b97e3d2fd8f74b4e57871e365eb3a1c7a09fb70d2f78700fd25e4c"
   end
 
   resource "pyopenssl" do

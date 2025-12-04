@@ -3,18 +3,18 @@ class Borgbackup < Formula
 
   desc "Deduplicating archiver with compression and authenticated encryption"
   homepage "https://www.borgbackup.org/"
-  url "https://files.pythonhosted.org/packages/de/79/2031c715a35c1fc943cdac83337b0070737d29796270454bedf52d2ac457/borgbackup-1.4.2.tar.gz"
-  sha256 "8923f5e953205d81138d1d7276c8a1c864215e230994d620c397635568ed376f"
+  url "https://files.pythonhosted.org/packages/7a/5a/090ad33133d34d71aba70e40eff030aaa3a07776fa38cc8bd85eb856456b/borgbackup-1.4.3.tar.gz"
+  sha256 "79bbfa745d1901d685973584bd2d16a350686ddd176f6a2244490fb01996441f"
   license "BSD-3-Clause"
   head "https://github.com/borgbackup/borg.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2dcad2aa0003c6fe565a572ab227d39088b2e6d214ea67dc1cf8c86debe9aeb3"
-    sha256 cellar: :any,                 arm64_sequoia: "56f1467b3cdf858045d4286e5334db90f694b399d2deece026a1e0acb2c0596a"
-    sha256 cellar: :any,                 arm64_sonoma:  "4c96af8b2bd0ea5eaf4bb006d5af725bb4b4bd8073cb7f95e769666363b73f0f"
-    sha256 cellar: :any,                 sonoma:        "7e6d496de1ac2536d58c5282b681d91830b312318a54eb1eb6ad082285765c69"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "28c86363324b95da0c1c1a19b88d388894c286587261a218909eb940c6003ad0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69525cf2f1f65c56f6f078a65252ef56473918e8246e62e07f09f95b2980b7d7"
+    sha256 cellar: :any,                 arm64_tahoe:   "d07a33bc5d32d39b5186bcc5d0a8513296d73c937bb76c4e0996c89af36e7d64"
+    sha256 cellar: :any,                 arm64_sequoia: "42f429e008f9b77a1b0f3e53fbed0464936e587f1bcfec1e1b65c5ac9cab2ac5"
+    sha256 cellar: :any,                 arm64_sonoma:  "704d2dd23fc9fe452978726edf6d0b5274558519cdcecc864d43caf534d956d7"
+    sha256 cellar: :any,                 sonoma:        "02db69674ba7789ec901cffb9099e68e5e62e3c361d99193f51e17e054382f11"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9105767b33dcc8e4743a9f4b71e07f0af75935a0d40f43b33bc0e14f58257a89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d53150306ad352ba88a313abddf7b29a2147f57b4271a99c1e908402bcac1bf5"
   end
 
   depends_on "pkgconf" => :build

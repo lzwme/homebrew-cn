@@ -1,27 +1,25 @@
 class Step < Formula
   desc "Crypto and x509 Swiss-Army-Knife"
   homepage "https://smallstep.com"
-  url "https://ghfast.top/https://github.com/smallstep/cli/releases/download/v0.28.7/step_0.28.7.tar.gz"
-  sha256 "64996b54975707ef0f3a9d0b8e8c32db8e3c954b7ad0d2f4ca82b050a37eaa8f"
+  url "https://ghfast.top/https://github.com/smallstep/cli/releases/download/v0.29.0/step_0.29.0.tar.gz"
+  sha256 "231e857c0d008b8445b0d7026fc29459f2ef66fb3258760fb23a27de9562d4fc"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "123883b473b0c45b43ef68a24e23540729d87e3d763228ce83f3080c48d6435d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a77c13dd1082b59f25a69f5809c678ceef54472ca25873d3356dceea6c0c7cd8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89b19beedb94544d19a8f33af15063befe6860613edec4f2fde1c88ae21a59af"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "57b8ec705af6c68e25acd09f8a4720a0e628a64de20d74a37468a9ec7e0a0730"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bdc7a9abb89069d0ccaeca7874bce8cf4ca08af087f4706f45e453f8436ecb70"
-    sha256 cellar: :any_skip_relocation, ventura:       "070bede6372d8e470f06eb40258b4d99b1191baf46b81ac18a905c8cfeb24507"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "100eef27aab06162ed2745b3e6849ee1b3efc0f6fd071e2a401db550477df09a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d92b064d4aca479bc4241a00247c416e1e02faa4f8a0dd4b6c8d2523ab7f4170"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01da5647995127822d8dae5c5fecca39b2d8271b9c00a61bc6bd7a6af068b38e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bcbcc7fc607ac26a442b430fa4fca71849dd2afa32cb663a3d62a17e12575e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8b10ac7ee90825cbceb2364aaf3063a90c4a5c69a867239db2b9a37ab4afd9b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3b6e856f77b53c3aab8b60b105e19eccb30cd634035dc4c0fe8ae7bbf1924c99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab47cb83f0d77ad75196a4df9bc6bf49d56dc7e154596592c4ecd8ff01092ced"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0562a6d6d0f1da43ffad332117a3f67f207e41f4009fe57bd3b85244ae83339"
   end
 
   depends_on "go" => :build
 
   # certificates is not always in sync with step, see discussions in https://github.com/smallstep/certificates/issues/1925
   resource "certificates" do
-    url "https://ghfast.top/https://github.com/smallstep/certificates/releases/download/v0.28.2/step-ca_0.28.2.tar.gz"
-    sha256 "9627f89ac96da1254d3f260c857a4544921ab59c52affc62034391f496a23876"
+    url "https://ghfast.top/https://github.com/smallstep/certificates/releases/download/v0.29.0/step-ca_0.29.0.tar.gz"
+    sha256 "b26641db2e8a63432f764c176db845eb98104bfd206a76ec6f574735744bcbc1"
   end
 
   def install

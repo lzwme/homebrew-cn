@@ -1,8 +1,8 @@
 class Libwebsockets < Formula
   desc "C websockets server library"
   homepage "https://github.com/warmcat/libwebsockets"
-  url "https://ghfast.top/https://github.com/warmcat/libwebsockets/archive/refs/tags/v4.5.1.tar.gz"
-  sha256 "c4e622facafc918efb3ce65998e458f136c5fc72f8d13900c1e3a419c1669a44"
+  url "https://ghfast.top/https://github.com/warmcat/libwebsockets/archive/refs/tags/v4.5.2.tar.gz"
+  sha256 "04244efb7a6438c8c6bfc79b21214db5950f72c9cf57e980af57ca321aae87b2"
   license "MIT"
   head "https://github.com/warmcat/libwebsockets.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Libwebsockets < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "69ec136cf36706266ca71604343c9bcf080671f5cafd325b32c879a45e80aa79"
-    sha256 arm64_sequoia: "4c5c01a49a77e91da98cfeee85d316c0e65cff762b8eb8d2e77d2a45082c6e3a"
-    sha256 arm64_sonoma:  "2c3da95e9227e9c0705c0804b40729f0c53dbe2b2f61f9c2c1cb575b5723168b"
-    sha256 sonoma:        "11f4351343d0c2af6b8809404ef5fce64b1c652b73b11684bc320e5b569258b8"
-    sha256 arm64_linux:   "e0e277fc4fed7c19af29373e7924058ded9c4000831629f27aca189a8d5e418d"
-    sha256 x86_64_linux:  "13c90fc67fded87628bd010da1448503d86ac799bc1b6311820b10a7572e1ffd"
+    sha256 arm64_tahoe:   "cc2560edbfebc0dca5c9981e9b60b790d7393f9d67d64cca14a70c9b81020ff2"
+    sha256 arm64_sequoia: "293904c11a66fe605eeb07f52d4392a1a103003a29d3fc840ae2d4b31952b22e"
+    sha256 arm64_sonoma:  "d240c2004fdbfc02e5d57821d01bcaf943f0ae747540a0d8e502200cfa906411"
+    sha256 sonoma:        "5bfd9b7dcce167f85c69c21b76234a9ecdfa6646bf421693ebe80428127c8ec6"
+    sha256 arm64_linux:   "a7590730928baf546d2622432d3cc528bc51865423c05b7eb6ab363cfeba3e39"
+    sha256 x86_64_linux:  "305a4004dfe35c97a5feb707b50fdf2445efb7240fab48856c62aeac9d872fd5"
   end
 
   depends_on "cmake" => :build

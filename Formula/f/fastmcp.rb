@@ -6,15 +6,16 @@ class Fastmcp < Formula
   url "https://files.pythonhosted.org/packages/c8/7a/4c6375a56f7458a4a6af62f4c4838a2c957a665cf5edad26fe95395666f1/fastmcp-2.13.2.tar.gz"
   sha256 "2a206401a6579fea621974162674beba85b467ad72c70c1a3752a31951dff7f0"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f93eeeae92c2a7ea5722e121f0d7c2f2b5a8c63fa4af61da9b7374b5239a1142"
-    sha256 cellar: :any,                 arm64_sequoia: "292f24f8a6be3e8f2a3ea4cf46c6ef732570f984555e8efe87bcf9f805575ad7"
-    sha256 cellar: :any,                 arm64_sonoma:  "ba01189a44d9dc0ca24282a39d53c556641f0ef6d8f3593e3fdf444da94cf0ad"
-    sha256 cellar: :any,                 sonoma:        "036c48bcd773ad4dfa14aceaa6f6ab0758eec0335bb3d531e30db86f719e371a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbc4fade48968dfa1a4f6ebcff055932e8dbbe90a51d935d51e0730048b16481"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d74c66db8ce4eaeb4a4cd8a9a8844cceafbe32005516ac62e08e1bb8241c2384"
+    sha256 cellar: :any,                 arm64_tahoe:   "634a2cd2320bc7044af0813a7531b4e6db49f75c57946c310e041f9859dfc638"
+    sha256 cellar: :any,                 arm64_sequoia: "4f91f7603f87a4193bc78118de44d6de642d0a18dcc42a92477bb81052ec1e00"
+    sha256 cellar: :any,                 arm64_sonoma:  "ec258e1b56333fb1b6d2506ffcd05fbcd24ea24f575fc4cb8af01aec3362bca9"
+    sha256 cellar: :any,                 sonoma:        "8931752716febb166ec2981dd56ea0d70c48a5c135db3b76096127e3aa675c5a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "58aabe7a5b903b7ffe16c0b5f08ba6287da1deeb40848485c2c8cdd1824a6c59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f8524106fff60074268805032797dee3a87e865358fccf27bc917f94a72bd27"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -44,8 +45,8 @@ class Fastmcp < Formula
   end
 
   resource "beartype" do
-    url "https://files.pythonhosted.org/packages/2c/49/e28a77f8a3868b1c9ff6a030678e84de24c4783bae4c12cec9443cf8fb54/beartype-0.22.7.tar.gz"
-    sha256 "c7269855b71e32b7c9f0fc662baade752eb525107266e053338c2f6e8873826b"
+    url "https://files.pythonhosted.org/packages/8c/1d/794ae2acaa67c8b216d91d5919da2606c2bb14086849ffde7f5555f3a3a5/beartype-0.22.8.tar.gz"
+    sha256 "b19b21c9359722ee3f7cc433f063b3e13997b27ae8226551ea5062e621f61165"
   end
 
   resource "cachetools" do
@@ -144,8 +145,8 @@ class Fastmcp < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/a3/a2/c5ec0ab38b35ade2ae49a90fada718fbc76811dc5aa1760414c6aaa6b08a/mcp-1.22.0.tar.gz"
-    sha256 "769b9ac90ed42134375b19e777a2858ca300f95f2e800982b3e2be62dfc0ba01"
+    url "https://files.pythonhosted.org/packages/12/42/10c0c09ca27aceacd8c428956cfabdd67e3d328fe55c4abc16589285d294/mcp-1.23.1.tar.gz"
+    sha256 "7403e053e8e2283b1e6ae631423cb54736933fea70b32422152e6064556cd298"
   end
 
   resource "mdurl" do

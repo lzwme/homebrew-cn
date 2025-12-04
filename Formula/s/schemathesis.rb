@@ -3,18 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/56/10/0204321f99292baa0a7a9f5a5ef911e271cc6c4662e48ed638fe1abfcd7a/schemathesis-4.6.4.tar.gz"
-  sha256 "2702d3f65ec84fd624fddeea458581f0e9981deec29d908ea858f662a355bd20"
+  url "https://files.pythonhosted.org/packages/b4/ab/61677294c20568240973da258263eae51fbaaef5386bac802a946e7ca49b/schemathesis-4.6.6.tar.gz"
+  sha256 "b39112ab93c70cfb0f89da321e11c11ec9a85eb701a12b041a942c85bad6e156"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0b2790b4e5ea02fd218ae27bc0875f93810438570802728ff6dcf46b211ef8c1"
-    sha256 cellar: :any,                 arm64_sequoia: "f81e4d82e27508938131bb11e9712cb1293975d1a2af1f5947036826acde6134"
-    sha256 cellar: :any,                 arm64_sonoma:  "76a34f9e99123df08b77eb214bfa9791497e1734094cd7339a9791711226c469"
-    sha256 cellar: :any,                 sonoma:        "b150117f4acb27f4ab800e34874d5421e2ea0ebb6421c726f65804800046a075"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "388d0081671868f3e1931e0851303676cf3a4e294adf1ff2f20a1bd0bbf49256"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c7661f93b9e1212271c79997827e0e31d7bdbdf3e96cd5791ccbac088d051df"
+    sha256 cellar: :any,                 arm64_tahoe:   "9e19e29aada434917c6f86c1f981fa74b3464c92c425cc88e77a344d63c26c7b"
+    sha256 cellar: :any,                 arm64_sequoia: "1c57f8bc726d6ed6a0a486daa0e20ecad065f9870eadf26e0b8265b84e5a0514"
+    sha256 cellar: :any,                 arm64_sonoma:  "83329053f8fc37d9f722c7eb66abdaf3d636be21edb2dd4ab0442d193fac3156"
+    sha256 cellar: :any,                 sonoma:        "ceafda11d0a32dfcba54f64fa94800ba1f8c060f8bbb86ab8cbd674e08dc2206"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "807eb5a81e05896c0388d96b972fcc9d7aaf803693625e386ad471b2087dcdc2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7af44d0d9de09d8ce2f7342463df827aaefca3a9f9b88d83abcb74d41a8f2fe"
   end
 
   depends_on "certifi" => :no_linkage

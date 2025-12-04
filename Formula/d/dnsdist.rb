@@ -3,8 +3,8 @@ class Dnsdist < Formula
 
   desc "Highly DNS-, DoS- and abuse-aware loadbalancer"
   homepage "https://www.dnsdist.org/"
-  url "https://downloads.powerdns.com/releases/dnsdist-2.0.1.tar.xz"
-  sha256 "144e2356d07d6577a570782a6f79f426125344221dbdc4ddaaa7f9d468d51900"
+  url "https://downloads.powerdns.com/releases/dnsdist-2.0.2.tar.xz"
+  sha256 "3374eba65a5ca3cfb9fc59791c47e5035149fe521ccbbced5f834a17f45641bf"
   license "GPL-2.0-only"
 
   livecheck do
@@ -13,13 +13,12 @@ class Dnsdist < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "dfea90bdb98efc4b827ed4c32ea6efbb1417e57623120ea43ab97d4a3d1f22da"
-    sha256 arm64_sequoia: "fc32d06a35b1611c4bb3ed43712359fc095d0c68b7772b9e48355728ce6494da"
-    sha256 arm64_sonoma:  "8ed1785bf9262c314b75defbcf3fac20972d70f430fbfa1cb5765e416cdedd08"
-    sha256 sonoma:        "d593835bf6940fa880d91beb34e8aa02e0ce0986abd9bdec8f3149882a2cee6c"
-    sha256 arm64_linux:   "6b0d88620b7c47cc49ffa88da13b9ccf1eb7ab03c2511ad80fd67bde8a06a07b"
-    sha256 x86_64_linux:  "1d32e7c0ec893b6233949e76ca6b9af53eec64290f506d93dfd6ec4ad9a5e0c4"
+    sha256 arm64_tahoe:   "fbee023f28414231a54fe396bcc08d5bb4e5ffa2a06a6272d781fb148f43567d"
+    sha256 arm64_sequoia: "7222dea3cfe65f938d4832ee1f5eb6c296f1e966045db4b1487239c78c5d3339"
+    sha256 arm64_sonoma:  "ce89109032eafc18beb5aecbdf7c2813d70f3631ac46a83db209d5fad764faa8"
+    sha256 sonoma:        "14b4c030de8c8aaac5576edb7dd283fa56072fbe2e0c5f13312ac3c7ae9a6713"
+    sha256 arm64_linux:   "01adc30a863af92cffac4ada15498e4bae8fd6e05da8c2700482be4081cf197a"
+    sha256 x86_64_linux:  "cfad2f9f9f79aa4f09c4c5cb93bb76f00218183b540e52d8b0feab38a30c5d42"
   end
 
   depends_on "boost" => :build
@@ -42,6 +41,9 @@ class Dnsdist < Formula
   end
 
   def install
+    # Fix to error: use of undeclared identifier 'vinfolog'
+    inreplace "dnsdist-protobuf.cc", '#include "dnsdist-protobuf.hh"', "\\0\n#include \"dolog.hh\""
+
     venv = virtualenv_create(buildpath/"bootstrap", "python3")
     venv.pip_install resources
     ENV.prepend_path "PATH", venv.root/"bin"

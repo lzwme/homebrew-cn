@@ -1,9 +1,9 @@
 class Wireshark < Formula
   desc "Network analyzer and capture tool - without graphical user interface"
   homepage "https://www.wireshark.org"
-  url "https://www.wireshark.org/download/src/all-versions/wireshark-4.6.1.tar.xz"
-  mirror "https://1.eu.dl.wireshark.org/src/all-versions/wireshark-4.6.1.tar.xz"
-  sha256 "5f43055db213e16aed6a064a8b4fdb56092106f18c19e8890482c058b0a1dd85"
+  url "https://www.wireshark.org/download/src/all-versions/wireshark-4.6.2.tar.xz"
+  mirror "https://1.eu.dl.wireshark.org/src/all-versions/wireshark-4.6.2.tar.xz"
+  sha256 "e218e3b3899e5d6e35a5fe95eeeabead587ed084cbf5fc330ac827f9a3137de8"
   license "GPL-2.0-or-later"
   head "https://gitlab.com/wireshark/wireshark.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Wireshark < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "8f73f7028fa45c2d11ffa260eec1c615d7e2740e9cf3732f02275ca1e3c8dfcb"
-    sha256                               arm64_sequoia: "e5a0162813428f6880a17cdf2bd1f8680c30500e17ff1b0fbe0b25e293874d40"
-    sha256                               arm64_sonoma:  "2fb18c5bd5a67892e4b4dc0933caa92544d44e75f097fb38b2bcdb6a71b5f48a"
-    sha256                               sonoma:        "2cb08e7ad5d5edf834b2096397c8173d0fec606c8d7e0b5b594ffc466f568f0e"
-    sha256                               arm64_linux:   "6f14763f130455e27f22a279fda16345a176b7d54f26a17c47fface7894e9ea8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0eb3105c3d0d5b0b20a180e0cdfdc0267cb3cba95105a1a99880757f7e1bfdd"
+    sha256                               arm64_tahoe:   "f1c57cfcff8e28866bf2161773c39a0b622eb8fdda2edb8cf9badbcaf9a676c2"
+    sha256                               arm64_sequoia: "c07b8664fded4bab8eedc80ce6feadc88e043701d0f4adfe7a52037d436b407b"
+    sha256                               arm64_sonoma:  "e136afb70669f85f65a301733f24967679f28fb5e7c0a9ed6db0e6afef626874"
+    sha256                               sonoma:        "afc306a19328cef605903e076bff92fb72f9967fad010d1ba195881317723983"
+    sha256                               arm64_linux:   "fd9477bdf9dc7223e491f4623610bab76edd6282d5e148f45559cf0f3663ccd0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65efa7ce93b490166771cf392e9149189b37156149d4093b6b22b26458fa41ab"
   end
 
   depends_on "cmake" => :build

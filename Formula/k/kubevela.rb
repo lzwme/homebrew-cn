@@ -2,18 +2,18 @@ class Kubevela < Formula
   desc "Application Platform based on Kubernetes and Open Application Model"
   homepage "https://kubevela.io"
   url "https://github.com/kubevela/kubevela.git",
-      tag:      "v1.10.5",
-      revision: "f89622eec7907e55af3067f0691ca0c0f38ef8e2"
+      tag:      "v1.10.6",
+      revision: "bbbdd0d299d704b5a59bc09bf35858200ec06bd3"
   license "Apache-2.0"
   head "https://github.com/kubevela/kubevela.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "292feba37e326f494e9a482fe4bccfa6015b36bb7397c99609c2022d8f8627dd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "292feba37e326f494e9a482fe4bccfa6015b36bb7397c99609c2022d8f8627dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "292feba37e326f494e9a482fe4bccfa6015b36bb7397c99609c2022d8f8627dd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b36ed7529d87322a070d6baee8d2ad0c7c214b4c947faa5c55c354865d76b673"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa8d384d9e96d9e49c2252d3087029319f3e9c257ec552efafcb6ea33aaf0635"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "916b274166391db43b24c9d8fccf189b55095d39d7d6e23b3bef50d4cff0e6b6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3f16be94fbd7d3935ee01b5373fab094b937643c2021a3c3887cca67b7f087c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3f16be94fbd7d3935ee01b5373fab094b937643c2021a3c3887cca67b7f087c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3f16be94fbd7d3935ee01b5373fab094b937643c2021a3c3887cca67b7f087c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e1a7c7430ca250db33ca84a7034ed4c500563cdc330c26c493d318b4cfc0d84f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "561d339001f7440d3abecdcc55ed946b4746f0b7cdc83d5a4047832ce6fd9461"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfb3eb5f79a8539795987b3b755a405575365f77efebcad246fc0419ef2c4dad"
   end
 
   depends_on "go" => :build

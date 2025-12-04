@@ -707,6 +707,7 @@ Homebrew-homebrew-core/Formula/b/bulk_extractor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bullet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bulletty.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bump-my-version.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/bumpp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bumpversion.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bundler-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bundletool.rb, Homebrew/homebrew-core, 1
@@ -4456,7 +4457,7 @@ Homebrew-homebrew-core/Formula/m/maturin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/maven-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/maven-shell.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/maven.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mavsdk.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mavsdk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mawk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/maxima.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/maxwell.rb, Homebrew/homebrew-core, 1
@@ -13541,6 +13542,7 @@ Homebrew-homebrew-cask/Casks/n/neo4j-desktop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/neofinder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/neohtop.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/neovide-app.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/n/nessie-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nessus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nestopia.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/netbeans.rb, Homebrew/homebrew-cask, 1
@@ -13770,6 +13772,7 @@ Homebrew-homebrew-cask/Casks/o/operadriver.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opgg.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/optimage.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/optimus-player.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/oracle-data-modeler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oracle-jdk-javadoc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oracle-jdk-javadoc@21.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oracle-jdk-javadoc@25.rb, Homebrew/homebrew-cask, 0

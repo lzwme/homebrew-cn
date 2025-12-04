@@ -1,17 +1,17 @@
 class AwsCS3 < Formula
   desc "C99 library implementation for communicating with the S3 service"
   homepage "https://github.com/awslabs/aws-c-s3"
-  url "https://ghfast.top/https://github.com/awslabs/aws-c-s3/archive/refs/tags/v0.11.2.tar.gz"
-  sha256 "ef99f5f49ac65fe48f87d514ea751cb0c908126b0a6f45862b4525727bdb73dc"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-s3/archive/refs/tags/v0.11.3.tar.gz"
+  sha256 "b8350a10050015493345453167d619f1b407c4970fa3fe5aaaf2b42ab93b7b6b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "472742ebe74334f17c45088271199514a6ed5b94f7bdd0196c45b27b5c56d75f"
-    sha256 cellar: :any,                 arm64_sequoia: "43f1a5ff249d373bbba2b184163701da61808912f4778c602eb6482086f9f2bc"
-    sha256 cellar: :any,                 arm64_sonoma:  "042f8f7573adcd7558fa72068587573cd7d927c9a978144cabaca5f441f7a607"
-    sha256 cellar: :any,                 sonoma:        "6ee5743c08491169ed0c6e65a14df4246eb9892654415d472a839049527cac46"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6ea61d0a50d3a07e517aadfa161de54869bf8fb9f5a62910c488febd03c4a75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e124855c95f938412282c58c139271c7dcae83bb9cdb5800a566a3e39c871759"
+    sha256 cellar: :any,                 arm64_tahoe:   "6eb2ead01776998762fb99b8ca88cf87c7de53f909529fab912ec7fd33e7d09a"
+    sha256 cellar: :any,                 arm64_sequoia: "00d60715d3e31a061993a5ecce1313925b5dd2f3598903f32934496f867e53f3"
+    sha256 cellar: :any,                 arm64_sonoma:  "7e05ac450bedf92b690feb6bae0f4fff3854d6852263e65fdc2ab6b401b99790"
+    sha256 cellar: :any,                 sonoma:        "75fac702408b74a7dfb4eb663dbeb2093fbea0f143a7e6ef22ef336c05fb15df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65b46b16d74412f6e204969c1e558f2956cecf89bc01bf3ffadf07fae258f8cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fecdfb6987d276ee34a8513afa0e14a0fb37cff10832af53e507cedc58990515"
   end
 
   depends_on "cmake" => :build
