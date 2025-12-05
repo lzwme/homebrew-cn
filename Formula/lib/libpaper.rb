@@ -1,19 +1,17 @@
 class Libpaper < Formula
   desc "Library for handling paper characteristics"
   homepage "https://github.com/rrthomas/libpaper"
-  url "https://ghfast.top/https://github.com/rrthomas/libpaper/releases/download/v2.2.6/libpaper-2.2.6.tar.gz"
-  sha256 "500d39dc58768ee09688738c8b5bfe07640ba2fd6c25a6dc78810eb69c719e93"
+  url "https://ghfast.top/https://github.com/rrthomas/libpaper/releases/download/v2.2.7/libpaper-2.2.7.tar.gz"
+  sha256 "3925401edf1eda596277bc2485e050b704fd7f364f257c874b0c40ac5aa627c0"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "8653cd90f7f4e22c810baafa5d035f78fe8b5adc353d8644ab9ac122cc2ac075"
-    sha256 arm64_sequoia: "9a86b63104ebab4bdac595a130a961b183f31f1f69aa9b159dfd8166ee673059"
-    sha256 arm64_sonoma:  "9bbd54f9c2b9c5f17f14a2cf0fd528283947c63f8a8f372000c65fc94184303d"
-    sha256 arm64_ventura: "24bdbc1cd381cd73cc6626d7d07fa57e85008a8394b3b9118b903558fd581b17"
-    sha256 sonoma:        "52569069e169b133ce021d5c93d9e84df75b4fbb419e7dc25fa735dd99cf2551"
-    sha256 ventura:       "1312df7e0dde77300bb752fd56522edd6ee9d187660fe84cc6f52a6940764dfe"
-    sha256 arm64_linux:   "f8c1c59cb54eb45323aa63b5c85d35972b9f093c3548c5928ea57736cfea5660"
-    sha256 x86_64_linux:  "d5ac97feb19ebda571a7392c96a099e919d70b9dea6439153e9444dfe79fe252"
+    sha256               arm64_tahoe:   "9237f117ff7639ec37411bc1186b1c857d83460a4c4309ec4cbdce0286c829ff"
+    sha256               arm64_sequoia: "fbbf0d4966874406973fcacb2cd8265b7cc593ad4fb5f65b773f87cfe52dfd9d"
+    sha256               arm64_sonoma:  "55b133377debbd9934e790907be38c291863e9c645d4e50401d8231d471e1580"
+    sha256 cellar: :any, sonoma:        "32b59bfd2d5a0b5e036a90dc63ab5a2b8826d6f3ca863b2c92e999a7df4e53d9"
+    sha256               arm64_linux:   "ae03dd149881ec2ccb3790da8949ad2945b0cc96c02615c6764998ba1ed17342"
+    sha256               x86_64_linux:  "2e5c313c3f87f029c4dc2bd6e6c084ddfbed6ff40e322572b5e806e79a1efaa1"
   end
 
   depends_on "help2man" => :build

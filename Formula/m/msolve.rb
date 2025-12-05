@@ -1,19 +1,18 @@
 class Msolve < Formula
   desc "Library for Polynomial System Solving through Algebraic Methods"
   homepage "https://msolve.lip6.fr"
-  url "https://ghfast.top/https://github.com/algebraic-solving/msolve/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "9ba8b290fee048e49615015c43a7a1f2c05ac7e7fb277a964105d51c082f7d9f"
+  url "https://ghfast.top/https://github.com/algebraic-solving/msolve/archive/refs/tags/v0.9.3.tar.gz"
+  sha256 "2e46b88b38abbe4e4937ef5fc4a90a006d1ff933ffa7563287b5d756de3bcf6e"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/algebraic-solving/msolve.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "252518043e7f1859ea067c0881162a1fe4981a0e83a38dd85bb04dd642a5e57d"
-    sha256 cellar: :any,                 arm64_sequoia: "4858884355f5e2b67de7f1d048be9f516fc7f6a427b436121065ca0a527eede6"
-    sha256 cellar: :any,                 arm64_sonoma:  "b9ede5e32d42702ff01b890a0b0bae3e9a5f5277116325a4ffff49fda1ca4068"
-    sha256 cellar: :any,                 sonoma:        "c76be2f48d23e988f69f2a1ae663f54f5aa2579fc889a5613e11f04bcf5a5013"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c370e6b2107304d0815efb4f49f7a558aeb105acae44bd2c612fbc1a814a6b6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b40605c4a4b473a2c80cf0acc05904892a38bcec3873fb9daebb61ee59d23e5"
+    sha256 cellar: :any,                 arm64_tahoe:   "9b0aa70c0732ac0048cb3107ec3db4475f5929f57dcc3c49713f22a0480a6a2c"
+    sha256 cellar: :any,                 arm64_sequoia: "99ad2466d96c0b16c1c57713a1f4c85fc83966c36e0323c0225e1c1b281c2c2f"
+    sha256 cellar: :any,                 arm64_sonoma:  "7d4985f4b4c6c9d690ba3016573e2cb7069b4e98de92fbca61500ac9f323ff9a"
+    sha256 cellar: :any,                 sonoma:        "5f934578f9ba33d6f74997582ae5bab7dbc3c9a06ccd2881e4201a2d79d4068b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "00e46ca26c703121cd75c06b1f6eccd9aa5de02475409999d49870cf436a8823"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc9092239bc318e261fc41cbbc92d703f7c2a9fe36ba79f21a6550c42385017d"
   end
 
   depends_on "autoconf" => :build

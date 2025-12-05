@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/b9/21/3c4409bc737ba75cd2b9cb0115976f47594a820323669b74730db1a71da4/prowler-5.14.1.tar.gz"
-  sha256 "b22b6edad45be46c90d1904945c200bf9db4176d6d2ab5f67fe1bb2cc60ae1b8"
+  url "https://files.pythonhosted.org/packages/29/bf/cd18c5d4fa5849d804cb1e0eb3712c9f450a472bfd259989869639ba57bb/prowler-5.14.2.tar.gz"
+  sha256 "7501ab24cc5f8422ec55daae28753a82c48812918bbd7a741c7a8aae9810d36f"
   license "Apache-2.0"
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "29f9759bd0fa6c07a8f0766fb9684236260c9fcc174b83e0875838d0941a1e48"
-    sha256 cellar: :any,                 arm64_sequoia: "59151879401c75e8110a1d02946bb39d21a0b1324250d53b5e72543431b0341e"
-    sha256 cellar: :any,                 arm64_sonoma:  "600f334d3c94d1a7881014869d8d73d3220544290f769f0dee345da7f3715a82"
-    sha256 cellar: :any,                 sonoma:        "5c0ec76d530e554b2ebf631891ef82d60a98087316107b977f6832f4b22346c1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "24aa00c17f46511fb04e37a095bbd04c30fb41b2194b0ab1a20f5f924ae09f0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75e14300b14c0e1e52d762d7a4d678c37b99c14bc4587b7ba1dd06d68eff476f"
+    sha256 cellar: :any,                 arm64_tahoe:   "3cfbd8e9ee03ed606165ab376b52d9fd632b0a0d2480552e81a3745699ed2bc8"
+    sha256 cellar: :any,                 arm64_sequoia: "0f2dae550f9f3ea85a14479bf479425a06eb034ea32f6e2dc809864ebb24186f"
+    sha256 cellar: :any,                 arm64_sonoma:  "6faed320b18d3cd4c079e2129ae6fa2949751003ee23d36cfc87e10c43bccb15"
+    sha256 cellar: :any,                 sonoma:        "46d541ddb35ff2c11d1f37701d1d244a0ccb2db83e7208c092089d7737d512c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a59e0a0170a33388256f32f7c037b8e3e0d9e9e2fc72f00299b73b655721ab4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70e0b9757587d085fd8fbde76fb559941056b7557cd61830e24e14d2fffe4339"
   end
 
   depends_on "cmake" => :build
@@ -413,8 +413,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/fa/b9/44dabe283700b4a3b68c8001672348853b5f1bd1130ed5cc3599ec7cf2a8/iamdata-0.1.202512011.tar.gz"
-    sha256 "cc483124604f09db0997b38050f35e8c235a622ad092c0b822bd20f9a61911d8"
+    url "https://files.pythonhosted.org/packages/57/44/caf0ee5c87e62c7031506167584c189fe9033eb58e14ea2fe6e2bca0856e/iamdata-0.1.202512041.tar.gz"
+    sha256 "ae2106c7dcc389486f47dddaa8dac18517ddc7af24ac2c83f2fc36adea3ff545"
   end
 
   resource "idna" do
@@ -569,18 +569,18 @@ class Prowler < Formula
   end
 
   resource "opentelemetry-api" do
-    url "https://files.pythonhosted.org/packages/08/d8/0f354c375628e048bd0570645b310797299754730079853095bf000fba69/opentelemetry_api-1.38.0.tar.gz"
-    sha256 "f4c193b5e8acb0912b06ac5b16321908dd0843d75049c091487322284a3eea12"
+    url "https://files.pythonhosted.org/packages/c0/0b/e5428c009d4d9af0515b0a8371a8aaae695371af291f45e702f7969dce6b/opentelemetry_api-1.39.0.tar.gz"
+    sha256 "6130644268c5ac6bdffaf660ce878f10906b3e789f7e2daa5e169b047a2933b9"
   end
 
   resource "opentelemetry-sdk" do
-    url "https://files.pythonhosted.org/packages/85/cb/f0eee1445161faf4c9af3ba7b848cc22a50a3d3e2515051ad8628c35ff80/opentelemetry_sdk-1.38.0.tar.gz"
-    sha256 "93df5d4d871ed09cb4272305be4d996236eedb232253e3ab864c8620f051cebe"
+    url "https://files.pythonhosted.org/packages/51/e3/7cd989003e7cde72e0becfe830abff0df55c69d237ee7961a541e0167833/opentelemetry_sdk-1.39.0.tar.gz"
+    sha256 "c22204f12a0529e07aa4d985f1bca9d6b0e7b29fe7f03e923548ae52e0e15dde"
   end
 
   resource "opentelemetry-semantic-conventions" do
-    url "https://files.pythonhosted.org/packages/40/bc/8b9ad3802cd8ac6583a4eb7de7e5d7db004e89cb7efe7008f9c8a537ee75/opentelemetry_semantic_conventions-0.59b0.tar.gz"
-    sha256 "7a6db3f30d70202d5bf9fa4b69bc866ca6a30437287de6c510fb594878aed6b0"
+    url "https://files.pythonhosted.org/packages/71/0e/176a7844fe4e3cb5de604212094dffaed4e18b32f1c56b5258bcbcba85c2/opentelemetry_semantic_conventions-0.60b0.tar.gz"
+    sha256 "227d7aa73cbb8a2e418029d6b6465553aa01cf7e78ec9d0bc3255c7b3ac5bf8f"
   end
 
   resource "packaging" do

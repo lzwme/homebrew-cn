@@ -1,17 +1,17 @@
 class Fastrace < Formula
   desc "Dependency-free traceroute implementation in pure C"
   homepage "https://davidesantangelo.github.io/fastrace/"
-  url "https://ghfast.top/https://github.com/davidesantangelo/fastrace/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "b8c79571191266f0f3ef58033b24bb27c81182bfd4f99cd868e778e6876b08bd"
+  url "https://ghfast.top/https://github.com/davidesantangelo/fastrace/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "b40aadb9c3b5114972abe26241d847cbffec99c3d0f69ea77d94ba53825ac407"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cfae68652addb2f41a3fc7407753cab2bcdb2cd6090be188624e3335a3f9a646"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dfe9e27c6eb426ec19f41d1c26503bbf5789bcecf00fc4c08bf6b3c243f1cf8d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d94d34eb792cd5c4d26629106fb3829e1543caead8e9b54e04a6ac752c63c1ef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d9507c6ca27c69d979d54c460c5cf9847d20e243866834fe8be059e357f903da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f70756101d9fcba0b8e04dfbe0b7a664f9b9b805c6da4baddee560b6a01ef2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ff00a37ee60fd70ba5cbc31fb5457d3fb026788864c90bb7dfa134ac5fed710"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "56fc3735c58874001d7ae7b8b7343f01b2c09dd5ee31f12b19b2424ac22d640d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "faf373613873adfac25ce751dfc66b7b9d02d1846726dacaea717450392c0a29"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "224601ff11b7f419ea501ba141b40b0e586c2ba3fe932c8af1e3ee8054f5b0e2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "814098109ae2ef0d91d8cc7512ebd7641f956715a87d2d58b0f8b4834dde1545"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d8a34d3b360e4413c58aaf3e3b457c0671455a754b5b63b233a2fd243769c2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d710b232c6ebcdef308bdb75c6181e2807c206adb4a609abd94cc2424d9e8443"
   end
 
   def install

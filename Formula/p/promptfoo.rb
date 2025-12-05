@@ -1,17 +1,17 @@
 class Promptfoo < Formula
   desc "Test your LLM app locally"
   homepage "https://promptfoo.dev/"
-  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.119.11.tgz"
-  sha256 "43df9f47e4a9e9105e5ac2a25135384846df288ba954d6643909d6fda3969eea"
+  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.119.14.tgz"
+  sha256 "ac507d1902d59fae78f84a89b1db4ac8c9d4a110d6bf168278ed647fd5509433"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "172b0c00f87e51bb7316d3c4900c473c97dd585f2747341e2c0a4ddbd558ee87"
-    sha256 cellar: :any,                 arm64_sequoia: "7f5f46c5b47fbc83fc723146034efc0e1bf53cc4c06fbce246fa73e281e2d6e8"
-    sha256 cellar: :any,                 arm64_sonoma:  "d58eed871730e041deb155f93be5d9e3181a65d3f7c433e5734a435bfb713c93"
-    sha256 cellar: :any,                 sonoma:        "f49ef7b9e8bcae90b0115e946a22cc0c49fccd2868afeb303edbd16bb529a13f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b20976186568b186efc16670ffe6e73cf57ad46caab62b84e7e9ebd7eaccf7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c55d2d3a1fbf05c8ddc699e74a56aac9576967fc551176c7de28c851a3c006fb"
+    sha256 cellar: :any,                 arm64_tahoe:   "ea8452d90668576e46f11c574e2b5fcfbfdc3ceb62e34de197c18d38f868d114"
+    sha256 cellar: :any,                 arm64_sequoia: "69b4dfd01585794430789b0ede406061a0e1c49bb929ccca9b7033c91f723866"
+    sha256 cellar: :any,                 arm64_sonoma:  "a7952c77db88de723fb25fc8d85d60bd33d3e8a02e42977239b6b93587796bb7"
+    sha256 cellar: :any,                 sonoma:        "a0cd8ff5b38a4d4aff6ac608e0604b5da5a914e5054078cc6bf30c2336621ded"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "31b922f87c2ef70caf6ec7f2b862471ba41c2dec4107c2123ed1f77524e68a4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca795453812af80739bfea1acf9aee33d8277de613529a6768c0737fd68fb5b9"
   end
 
   depends_on "node"
@@ -23,13 +23,17 @@ class Promptfoo < Formula
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version < 1700)
 
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args(ignore_scripts: false)
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    os = OS.mac? ? "apple-darwin" : "unknown-linux-musl"
+    arch = Hardware::CPU.arm? ? "aarch64" : "x86_64"
 
     # Remove incompatible pre-built binaries
     node_modules = libexec/"lib/node_modules/promptfoo/node_modules"
-    ripgrep_vendor_dir = node_modules/"@anthropic-ai/claude-agent-sdk/vendor/ripgrep"
-    rm_r(ripgrep_vendor_dir)
+    rm_r(node_modules/"@anthropic-ai/claude-agent-sdk/vendor/ripgrep")
+    codex_vendor = node_modules/"@openai/codex-sdk/vendor"
+    codex_vendor.children.each { |dir| rm_r dir if dir.basename.to_s != "#{arch}-#{os}" }
   end
 
   test do

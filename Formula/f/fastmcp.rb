@@ -3,19 +3,18 @@ class Fastmcp < Formula
 
   desc "Fast, Pythonic way to build MCP servers and clients"
   homepage "https://gofastmcp.com/getting-started/welcome"
-  url "https://files.pythonhosted.org/packages/c8/7a/4c6375a56f7458a4a6af62f4c4838a2c957a665cf5edad26fe95395666f1/fastmcp-2.13.2.tar.gz"
-  sha256 "2a206401a6579fea621974162674beba85b467ad72c70c1a3752a31951dff7f0"
+  url "https://files.pythonhosted.org/packages/21/a1/a507bfb73f51983759cbbc3702b6f4780128cff68ebbc51db2f10170c950/fastmcp-2.13.3.tar.gz"
+  sha256 "ebca59e99412c596dd75ebdd5147800f6abc2490d025af76fa8ea4fc5f68781d"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "634a2cd2320bc7044af0813a7531b4e6db49f75c57946c310e041f9859dfc638"
-    sha256 cellar: :any,                 arm64_sequoia: "4f91f7603f87a4193bc78118de44d6de642d0a18dcc42a92477bb81052ec1e00"
-    sha256 cellar: :any,                 arm64_sonoma:  "ec258e1b56333fb1b6d2506ffcd05fbcd24ea24f575fc4cb8af01aec3362bca9"
-    sha256 cellar: :any,                 sonoma:        "8931752716febb166ec2981dd56ea0d70c48a5c135db3b76096127e3aa675c5a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "58aabe7a5b903b7ffe16c0b5f08ba6287da1deeb40848485c2c8cdd1824a6c59"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f8524106fff60074268805032797dee3a87e865358fccf27bc917f94a72bd27"
+    sha256 cellar: :any,                 arm64_tahoe:   "4e14572950f8239709cc649dbe5fd1255eb4898edce33d3cfb39ee3ca43e6c30"
+    sha256 cellar: :any,                 arm64_sequoia: "94ea4a4e7bb31cc23585473e7cc9b73c429320735f7de3fba0b8e8013faaef12"
+    sha256 cellar: :any,                 arm64_sonoma:  "8f02b3135e9d2abebe35c2298fd3912a872ce98027a9d7599663a0f42e4ef257"
+    sha256 cellar: :any,                 sonoma:        "25d8303a4d3bf6f4e5abd2a0b23de74ceadcab0b512fc8774072aace406569eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0242b528896baddb7f7c0aae79c4a0b667910b928c63bd0c3a1833d949edbeb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb4545d38dfcf3ca67b58caeb229f2fbefca7f1c224e462439c8d394bdce952e"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -145,8 +144,8 @@ class Fastmcp < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/12/42/10c0c09ca27aceacd8c428956cfabdd67e3d328fe55c4abc16589285d294/mcp-1.23.1.tar.gz"
-    sha256 "7403e053e8e2283b1e6ae631423cb54736933fea70b32422152e6064556cd298"
+    url "https://files.pythonhosted.org/packages/a3/a2/c5ec0ab38b35ade2ae49a90fada718fbc76811dc5aa1760414c6aaa6b08a/mcp-1.22.0.tar.gz"
+    sha256 "769b9ac90ed42134375b19e777a2858ca300f95f2e800982b3e2be62dfc0ba01"
   end
 
   resource "mdurl" do

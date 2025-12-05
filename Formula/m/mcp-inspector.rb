@@ -1,12 +1,12 @@
 class McpInspector < Formula
   desc "Visual testing tool for MCP servers"
   homepage "https://modelcontextprotocol.io/docs/tools/inspector"
-  url "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-0.17.2.tgz"
-  sha256 "236e00c6edd60762f464755e663dad6b5547983cdfbe24576e8d58a015c5b93a"
+  url "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-0.17.5.tgz"
+  sha256 "a65bbad37839902812f071b853292c7f8775f826f6fa4a515486ca269a98f621"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e250731fb8af0e642ccf809e0ce54c5821b02fd553630fb356f898a1fc0f8042"
+    sha256 cellar: :any_skip_relocation, all: "c5743d861c3d74911624e967b885e5d93265aae24107a04dde1461f984e27f64"
   end
 
   depends_on "node"

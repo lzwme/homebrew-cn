@@ -1,8 +1,8 @@
 class PythonTkAT314 < Formula
   desc "Python interface to Tcl/Tk"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.14.0/Python-3.14.0.tgz"
-  sha256 "88d2da4eed42fa9a5f42ff58a8bc8988881bd6c547e297e46682c2687638a851"
+  url "https://www.python.org/ftp/python/3.14.1/Python-3.14.1.tgz"
+  sha256 "8343f001dede23812c7e9c6064f776bade2ef5813f46f0ae4b5a4c10c9069e9a"
   license "Python-2.0"
 
   livecheck do
@@ -10,12 +10,12 @@ class PythonTkAT314 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "284cf632a3596aaacb14b1ef56be29610c5052e93d780c808f567ab8593bbd01"
-    sha256 cellar: :any, arm64_sequoia: "212ee18acee1f8510fceb7ec11a6b572d9764e0293aef1ebe66a0560e572a4d0"
-    sha256 cellar: :any, arm64_sonoma:  "8458bb7ec90e51b6b78fb718330826050112ae8d061c3c46b3bc96d227b35428"
-    sha256 cellar: :any, sonoma:        "d342b8b1a74c6902c1cff925b165780473076fed0aeb2b4e067ca228e434fddf"
-    sha256               arm64_linux:   "ed95e44bcb768cb3e1f4f6e2c86f59cd808e49fb07a443875d67e2388803b0c2"
-    sha256               x86_64_linux:  "42e07cd8bbd7f98ca193f92ed91b023cfa0d71fac91eb7ebec5dc0964cbbe6c5"
+    sha256 cellar: :any, arm64_tahoe:   "f6e0a56b4fa5227265faa5525c6868b67874480b9fa1ca580e5e17baa90c3b3f"
+    sha256 cellar: :any, arm64_sequoia: "f337a23a7a4d53223e876bc4a10872722cc2a2ffad91b6729fd9f7aa2dd74ed9"
+    sha256 cellar: :any, arm64_sonoma:  "9bd4194bbf52afd09ffd53d7da8995ce4d377fbb6a48932f27470dff183893c6"
+    sha256 cellar: :any, sonoma:        "1ce9e10040896beb28b819727b79a979e5aeeb8b3c03239e7ca9664feb0bab12"
+    sha256               arm64_linux:   "552f220ee2788ae7f167d25c1d15c54d103c9ed8326361808641ac89f1fb656b"
+    sha256               x86_64_linux:  "297c6f6136d901aa255f06d0fd84a8e88ea6b15fc7baefa92bb7454eca928669"
   end
 
   depends_on "python@3.14"
@@ -23,13 +23,6 @@ class PythonTkAT314 < Formula
 
   def python3
     "python3.14"
-  end
-
-  # Apply commit from open PR to fix TCL 9 threaded detection
-  # PR ref: https://github.com/python/cpython/pull/128103
-  patch do
-    url "https://github.com/python/cpython/commit/a2019e226e4650cef35ebfde7ecd7ce044a4a670.patch?full_index=1"
-    sha256 "03c4b6a293d4a51f534858657717bdc1465c42acb3b78e64c41f9011f966e449"
   end
 
   def install

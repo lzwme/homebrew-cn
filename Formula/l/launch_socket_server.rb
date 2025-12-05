@@ -9,13 +9,11 @@ class LaunchSocketServer < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "24960fd5bd4f03830d135a4cc6150ec49b516ce8c3bdaf16b240669310565536"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6974a57e3a6bd5f01dc3b62d4a4592afb791af68f230b7ea5e60a46cffc0d395"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92a59f265b9a67885cd73be07b4fa591b0ff76e382ac7c2db5099e02d2212bfe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7d09862a50bec1441d8d5cf4eabb2318942fab969ebddb67b9f3739e784e5a13"
-    sha256 cellar: :any_skip_relocation, sonoma:        "570f75f0fa24b34b03a278f1dc9f46f554c651b966204943fb3b5f25f412ee81"
-    sha256 cellar: :any_skip_relocation, ventura:       "38b8161c24c87504fe237154e1b287d1493f9a16f41bced1f942ebb5ce9b6d06"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd7f62d360a2d0e3ccbc0d127e6c93cf7b04341547a0cc47712e9cc30bfada44"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f9379e42b9f24b9f1d7c8e4f899901ad90999fe69c526c081c883e813cd36ea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b39407abb6a275dc2f8d7cee19b56126213e46ed61e6ef0d9e0eff631112c3e9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bffce7fd244160abb5333fed263f40e868bd09c2da174a51d7be6b255101992f"
   end
 
   depends_on "go" => :build
@@ -34,7 +32,7 @@ class LaunchSocketServer < Formula
     require_root true
     error_log_path var/"log/launch_socket_server.log"
     log_path var/"log/launch_socket_server.log"
-    sockets "tcp://127.0.0.1:80"
+    sockets Socket: "tcp://127.0.0.1:80"
   end
 
   test do

@@ -3,17 +3,17 @@ class Archgw < Formula
 
   desc "CLI for Arch Gateway"
   homepage "https://github.com/katanemo/archgw/tree/main/arch/tools"
-  url "https://files.pythonhosted.org/packages/16/01/dc2924342d8ce9896e1788cadd8c1e6849c1679d9cf0cffd151bf47f44c8/archgw-0.3.20.tar.gz"
-  sha256 "62a6b3dc740b86d1214da5c4271dd81621005f7b9b83535227203f5375923f53"
+  url "https://files.pythonhosted.org/packages/57/41/b5d306bd0e55840718507d5dc5ad95565f1ba96d8d10a71d01fc904ffbc2/archgw-0.3.21.tar.gz"
+  sha256 "b351ec7ef228d6cb673f26dd21b3ccb7792190b4f00a9749d85d1329dd7c9958"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ed84da337b1e9fc49780acd9f9a4cc0e2eeb0b9234252ae8be919ccc104fbaf3"
-    sha256 cellar: :any,                 arm64_sequoia: "ffb646219a7f7bc3311e6e7ec5de8c17f1bc312cb425e5f58f691270e14e7bef"
-    sha256 cellar: :any,                 arm64_sonoma:  "caea77f8d43e95556c1c523e6d5f157d335b831d79834ae0427fba4215a05442"
-    sha256 cellar: :any,                 sonoma:        "7f9432b16737f28d7e3e2aa3c5c98b35555e035f45765e7ee9183dcf69ffd9e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a04ca6811987f384bdf3b0d404f4c312eca00e1c3b225f32238664a796f4409"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b9fe6d07e102187e008bf7a1feb0244468493aa05dbb1460644bad184f5c4eb"
+    sha256 cellar: :any,                 arm64_tahoe:   "4c94b95a5b3cd1160ca8b4f4436d18ff53e020bb0141bec6590ceced711baf4a"
+    sha256 cellar: :any,                 arm64_sequoia: "479d27a3ed02575c299d98e0805273d30e07a300dead71ffd3849f7b58eb749b"
+    sha256 cellar: :any,                 arm64_sonoma:  "10dff3d75d6c848f36ed0e0ba71b875b9c18828318b9145a788e715b10484765"
+    sha256 cellar: :any,                 sonoma:        "f5cd22cfd2bb45c098f050f531551a2e82a1670978e993f9e4253a6178e1afdd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d273b52c576f23a26ca1269d7f19b91311f7b116a92d726e3db5673964eee0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15b3f8089b3bec185a489894f5bead12a552c23c8c81b0c3978e6da6c1176ebb"
   end
 
   depends_on "certifi" => :no_linkage

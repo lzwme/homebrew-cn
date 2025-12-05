@@ -1,20 +1,18 @@
 class ZlibRs < Formula
   desc "C API for zlib-rs"
   homepage "https://github.com/trifectatechfoundation/zlib-rs/tree/main/libz-rs-sys-cdylib#libz-rs-sys-cdylib"
-  url "https://ghfast.top/https://github.com/trifectatechfoundation/zlib-rs/archive/refs/tags/v0.5.2.tar.gz"
-  sha256 "38f6d0ebc0e00fe4df696af049d70de99cb79a781611167ff1f0fd2b78feb0c4"
+  url "https://ghfast.top/https://github.com/trifectatechfoundation/zlib-rs/archive/refs/tags/v0.5.3.tar.gz"
+  sha256 "c26eacb667c98dcb6df097b4755b3805bc26cd8a37dc8862e1c5cb1a295fe7ab"
   license "Zlib"
   head "https://github.com/trifectatechfoundation/zlib-rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "859ac57d9978301b445b61052eecf2109c7ade9e333a6765b5b5e3a8807b73d9"
-    sha256 cellar: :any,                 arm64_sequoia: "4a51ae18c3fc7fb801cbb64a391e28e5dc022383fc412f890f3385897a3cd512"
-    sha256 cellar: :any,                 arm64_sonoma:  "8829610f18363a0665da0b4c01a4ecc547846bdf2cc013b85490c93d37def924"
-    sha256 cellar: :any,                 arm64_ventura: "337ddb0376831e118ffbc5b95c206fdf848e0bf92b4e4031dd30540901aa34e2"
-    sha256 cellar: :any,                 sonoma:        "83ed86d834273ce4b8979995ac678020467166326f3cc1e4a5bb28a6c3f3625a"
-    sha256 cellar: :any,                 ventura:       "cec9dd6565a31440586ca06006c3c79077d7f45d578080434ea90897037cccda"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f33a4e39b5f3eaa80dd6062299cb83afe3620c78371b2c73322bfaf45723d326"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6f8c82d180bd8925166564577cc77347b984f160a147e9b59199ebbcb2aeb36"
+    sha256 cellar: :any,                 arm64_tahoe:   "fe1f191c84e3afd6473d38eec57b4c1b7613989c83e80f238e6de5e75e583532"
+    sha256 cellar: :any,                 arm64_sequoia: "aa93c0077e5236f9bcfff50a155b4dedaecf9dfcf8330adc4e74703b14e16b94"
+    sha256 cellar: :any,                 arm64_sonoma:  "9bd41095be95da8036a6835ee2c67ee8071307cbb062b04c735ba93e45bc0ab2"
+    sha256 cellar: :any,                 sonoma:        "36569c8c422da6af05d8218d7577447e63359114be15cc87f6c4f3825da63a7b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9aadc63bed073b000ba154abd326365bb9f6f3199eaffdde0614c956915349ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1d96e87280ffff8785c375552a21be6eb79062a40391d056c925f626facde4b"
   end
 
   depends_on "cargo-c" => :build

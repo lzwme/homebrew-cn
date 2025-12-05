@@ -1,18 +1,18 @@
 class Terramate < Formula
   desc "Managing Terraform stacks with change detections and code generations"
   homepage "https://terramate.io/docs/"
-  url "https://ghfast.top/https://github.com/terramate-io/terramate/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "97104f5559ff054dd47c6d00811c1c0f98d768a2ed563356a76ea45bbd4cf556"
+  url "https://ghfast.top/https://github.com/terramate-io/terramate/archive/refs/tags/v0.15.1.tar.gz"
+  sha256 "2637f951f6604c2ce43bc13754d399fa17f8f6cc35f602ee67cd88ab3ea7a6b4"
   license "MPL-2.0"
   head "https://github.com/terramate-io/terramate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1413c15cfeb837334acda7b1c31c32d26311e38b7160f51723e1747a317df6ce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1413c15cfeb837334acda7b1c31c32d26311e38b7160f51723e1747a317df6ce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1413c15cfeb837334acda7b1c31c32d26311e38b7160f51723e1747a317df6ce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c539fa1c9d9491de52e895a6e26ba3f699bee61529e88708692c7a0964c34fc9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f35cdbc69afc13fcc2b32fe0e5ebdd4d01fa238e6ce07583dbc8105aeb225be2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7700b0db3c51c344a70f48a080cf006ae842a750e0c1bd945f0c70bf0e5908dd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e5151f1234e2d54841dd88f477e81bca9bb18997f64615c42abe9dac2cb0745"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e5151f1234e2d54841dd88f477e81bca9bb18997f64615c42abe9dac2cb0745"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e5151f1234e2d54841dd88f477e81bca9bb18997f64615c42abe9dac2cb0745"
+    sha256 cellar: :any_skip_relocation, sonoma:        "765186e469adaea985eb0dfc86793bdcd425a990bde29b828afeb85ae50a4c87"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6fcd4665336360a711f3af213b67f7e080d57fd59a7ded7989ecb9dff312df6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "937ed62d168c24e5ae4e46e9642c3bf44d80cdfa2460d62aac989c090a9221cb"
   end
 
   depends_on "go" => :build

@@ -1,10 +1,9 @@
 class Mapserver < Formula
   desc "Publish spatial data and interactive mapping apps to the web"
   homepage "https://mapserver.org/"
-  url "https://download.osgeo.org/mapserver/mapserver-8.4.1.tar.gz"
-  sha256 "fe60bfdbab69437b5f97bb4ca41f2407e245c90edc2a727bf1d4428edb4a240f"
+  url "https://download.osgeo.org/mapserver/mapserver-8.6.0.tar.gz"
+  sha256 "af1f6d7b6b4361d7b0305b4ea1869e33fa49a721bbc0e28e13dd015952dfd902"
   license "MIT"
-  revision 2
 
   livecheck do
     url "https://mapserver.org/download.html"
@@ -12,12 +11,12 @@ class Mapserver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f37883024eee9db38c8861defb0c618e830400ee738527bf95a31183f7e6d6d9"
-    sha256 cellar: :any,                 arm64_sequoia: "427fc8bd638c9eb0fa81fba883f02b7c503f876ecc63b2e90d313112eb83f703"
-    sha256 cellar: :any,                 arm64_sonoma:  "4b31ed952e3fdd4418d1a180ac6f89a659bf75e99f242e8cf6b8b84ccdc23114"
-    sha256 cellar: :any,                 sonoma:        "c11c8bb01516e066a0715f0cd7ae39cebd9725adbfd7317df5987217b44fa320"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4723bfe1da2ead2b6f5c8ac89848eab194e01988e735ea94b809b6aff394c45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8153e6505b354c2b397607378e73d34ba94639ad0011cf6ae03bf2f5a01c9c96"
+    sha256 cellar: :any,                 arm64_tahoe:   "94ecba17f66585ac3d9a5cac703d98ca0c5435f8af59db9997a4246d5f008a3e"
+    sha256 cellar: :any,                 arm64_sequoia: "6ae86c5edfee8faa38e070a377ff23060e841cb46a96ed8c758f226f41316304"
+    sha256 cellar: :any,                 arm64_sonoma:  "5b9792d78cbf631b4f89164827b58991212ed20e34c382474d26ac5718733223"
+    sha256 cellar: :any,                 sonoma:        "202b52b6c244374015c13be666c38075caca638f8558989677c3afad8587a9f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29a2eec5cd1fc3416bf6442a6383d27b7598d0d52daa1f81926d1ae0b18b14f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5a1896297298ef4224cc7159d6d6aebd7e2fa65ed259daca897546f8a7872c7"
   end
 
   depends_on "cmake" => :build

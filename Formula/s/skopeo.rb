@@ -1,19 +1,17 @@
 class Skopeo < Formula
   desc "Work with remote images registries"
   homepage "https://github.com/containers/skopeo"
-  url "https://ghfast.top/https://github.com/containers/skopeo/archive/refs/tags/v1.20.0.tar.gz"
-  sha256 "0c19fe51b2cd8d1bd5e38c03b97421e318fc08153bdf5ef2f816a29889eacdef"
+  url "https://ghfast.top/https://github.com/containers/skopeo/archive/refs/tags/v1.21.0.tar.gz"
+  sha256 "f76eeddf697a3cc7a872e3077ab4d0fdbebe9f3c6171462e3e9feb84368b3fac"
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_tahoe:   "0d0b4def1c9647842f565b8b63a71f68a4f82d650764008bbcd48994d26f2cf7"
-    sha256 arm64_sequoia: "48fb54d9dfc643afa30a0b494a948c6a03333aa9364003db282d9135abb914a0"
-    sha256 arm64_sonoma:  "8d2640e13bfb86252023095c04acd31a4b1ec06a3b07d5e3a61046c5c0669bcf"
-    sha256 arm64_ventura: "aafd89323832b5b4f121a455f0c87e7e805e72ba85d1fa62edb3e7918ef883d1"
-    sha256 sonoma:        "9be5e84aaea3ebfa9231ab1b5d9d0ed6eacdcaec9260d8c989484a1ee75ea5de"
-    sha256 ventura:       "445eb2037a597f3d28d217d66509e5b4f5cd62b10de08226b0952b5c0296e5c6"
-    sha256 arm64_linux:   "7dd90c80fe4078016c0d0add52a9874fac2c22dfa62ab08219ae9268aed6e09e"
-    sha256 x86_64_linux:  "592cb52b502eb29da5ef94dce2afc60e804435129f2115a9b77301ca48622032"
+    sha256               arm64_tahoe:   "42a235a9010237e3b8c381c53338c0580ffebd66188409e39b7bd4ed4542f2b3"
+    sha256               arm64_sequoia: "92c13c46dc6641cc2a45df17427731b29c71aa3a9819c837b3a11914afe56902"
+    sha256               arm64_sonoma:  "63d438d8feac6d73502bdd1b93bc889c48a54e1ffe3b72920b2b2ea21287771e"
+    sha256 cellar: :any, sonoma:        "6ce78007250925ec83c468f6d0c04bbbf78e858d75a2c4d30b2d1c41813c3d03"
+    sha256               arm64_linux:   "c7b7b957b0fe14c9cac3a84e92265a7f6873673562f7859cc2d6583302188c18"
+    sha256               x86_64_linux:  "73e7baa86798f4ee9680f332df3eb665bee222531f02aaca8e3e17cf08c505df"
   end
 
   depends_on "go" => :build
@@ -36,7 +34,7 @@ class Skopeo < Formula
       Utils.safe_popen_read("hack/libsubid_tag.sh").chomp,
     ].uniq
 
-    ldflag_prefix = "github.com/containers/image/v5"
+    ldflag_prefix = "go.podman.io/image/v5"
     ldflags = %W[
       -X main.gitCommit=
       -X #{ldflag_prefix}/docker.systemRegistriesDirPath=#{etc}/containers/registries.d

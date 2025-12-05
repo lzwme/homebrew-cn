@@ -3,10 +3,9 @@ class Openvino < Formula
 
   desc "Open Visual Inference And Optimization toolkit for AI inference"
   homepage "https://docs.openvino.ai"
-  url "https://ghfast.top/https://github.com/openvinotoolkit/openvino/archive/refs/tags/2025.3.0.tar.gz"
-  sha256 "969a1b881ad0103dd522b5b09738434261d1158ebb23acb000eafef55268f7be"
+  url "https://ghfast.top/https://github.com/openvinotoolkit/openvino/archive/refs/tags/2025.4.0.tar.gz"
+  sha256 "f6f83e3ad8496a19713c45653c167a83774312abb547dc007fe30b62714a4030"
   license "Apache-2.0"
-  revision 4
   head "https://github.com/openvinotoolkit/openvino.git", branch: "master"
 
   livecheck do
@@ -15,12 +14,12 @@ class Openvino < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "667a01ea551e798670b78cd5083926dc8fd965cd3f727fdde5c807699748a1de"
-    sha256 cellar: :any, arm64_sequoia: "33eb3c022db2ca58dafcbf7a517cc2b009c7a1d3c01a6bc350a282c27bed2317"
-    sha256 cellar: :any, arm64_sonoma:  "912df86aad5a1f94c98fe160f18d5cd434d3d30e9e058a2202b06350050cbab1"
-    sha256 cellar: :any, sonoma:        "492da56e4e263ff214b1c29df9dc6f090df18581ab85330418938b6669d50e05"
-    sha256               arm64_linux:   "3d2a2f63c30773ff81df9f40438eca8598e0cc28b405ed4c66f3bb4517de6f1c"
-    sha256               x86_64_linux:  "55a13461a952884e84eb8fd3b541ce76b6485182eea664c67072cb8259130be5"
+    sha256 cellar: :any, arm64_tahoe:   "72065a3f205979a178246bc65ad1992997b4b4eec04d9f6808286bdb7a1a8837"
+    sha256 cellar: :any, arm64_sequoia: "8b5c72cc6a426ba95550cd3bf59ab12d9d5eb1507ea4077df2850c23f09391ca"
+    sha256 cellar: :any, arm64_sonoma:  "eb56f1feb439617bd8ad6c468fa07111247cfca819a3d09e4b4af52a6701a6bb"
+    sha256 cellar: :any, sonoma:        "26a4f7e45919f9928c4e49dece892037d761a14eb7315437cf23a36ca6886bed"
+    sha256               arm64_linux:   "5f82c30e835417ed0776bf9b231fcee76a4d91a7e97fd12b1018137be83f0cc5"
+    sha256               x86_64_linux:  "0c17b4c9ae6df17b31f0f6ce4c8167ab64da171234e9b5e32fac8fcdc445c472"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -46,8 +45,8 @@ class Openvino < Formula
     depends_on "opencl-icd-loader"
 
     resource "onednn_gpu" do
-      url "https://ghfast.top/https://github.com/uxlfoundation/oneDNN/archive/8edf6bb60fdaa2769f3cebf44bd2ee94da00744c.tar.gz"
-      sha256 "c943ab6e9cc6c382de48e76cb62ba075554a89b438876d945e5355e22588e06d"
+      url "https://ghfast.top/https://github.com/uxlfoundation/oneDNN/archive/29d64fe0ec0f1f20d7f80aa76630d58a6011a869.tar.gz"
+      sha256 "90139a1193b9773f94ff3310cd6118d3b6ccf1adb24461c84aa87890caa5ee77"
     end
   end
 
@@ -82,8 +81,8 @@ class Openvino < Formula
   end
 
   resource "onednn_cpu" do
-    url "https://ghfast.top/https://github.com/openvinotoolkit/oneDNN/archive/3d7a6f1d068d8ae08f189aa4baa93d177bc07507.tar.gz"
-    sha256 "354fa9c44a6feaea06230082e1b9f53ea853836a29e4030320ba8e480357614b"
+    url "https://ghfast.top/https://github.com/openvinotoolkit/oneDNN/archive/a4ed4a789b6e0869e4f651bbfeff6878e91d388e.tar.gz"
+    sha256 "6fe2fa4edd68b5f3448d80eaaf7d5d9d329d679d7d25f80d3800a4f199e86dae"
   end
 
   resource "openvino-telemetry" do
@@ -98,6 +97,13 @@ class Openvino < Formula
 
   def python3
     "python3.14"
+  end
+
+  # Fix to initialize HWCAP2_I8MM properly
+  # Remove patch when available in release.
+  patch do
+    url "https://github.com/openvinotoolkit/openvino/commit/168316c62b6022251dd11f4c5b9c0f85da3e425a.patch?full_index=1"
+    sha256 "d905df259b708851651f9544e2f43b9339ec1174c0dfa9879817279534fc702d"
   end
 
   def install
@@ -145,6 +151,7 @@ class Openvino < Formula
       -DENABLE_CLANG_FORMAT=OFF
       -DENABLE_NCC_STYLE=OFF
       -DENABLE_OV_JAX_FRONTEND=OFF
+      -DENABLE_PROFILING_ITT=OFF
       -DENABLE_JS=OFF
       -DENABLE_TEMPLATE=OFF
       -DENABLE_INTEL_NPU=OFF

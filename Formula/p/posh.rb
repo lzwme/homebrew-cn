@@ -1,8 +1,8 @@
 class Posh < Formula
   desc "Policy-compliant ordinary shell"
   homepage "https://salsa.debian.org/clint/posh"
-  url "https://salsa.debian.org/clint/posh/-/archive/debian/0.14.2/posh-debian-0.14.2.tar.bz2"
-  sha256 "e78cc733c13087398548acdebf1d805ee5520fc2d9e190d4a7e33ab63a4fde82"
+  url "https://salsa.debian.org/clint/posh/-/archive/debian/0.14.3/posh-debian-0.14.3.tar.bz2"
+  sha256 "6030fa51a03d0625794df0f52c74103d230390dbc0e22cdce946f5f5e6ff33ff"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class Posh < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3ca3975b323a5129749c73735cc8b7ec32c00201f9162eeceef9eabb8229b27"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5521ebcdfc7adeb500e695de86c246a35ea196081c7685a57df8d7843ff018e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd77d2ab476deb15961b1ada548f29239c0e1522a4215bf60f86599364e99974"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "395839fc84859a9d46173aa90f04ce21d71ebee46969d78ad478ba0daf55a559"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f2612844178de8cdf96374c59b161631d45ed1329a86f0cb3b89ec86ac9a25e4"
-    sha256 cellar: :any_skip_relocation, ventura:       "41cb17fbbf01fabd160bcb42a7a3d3eb8081b620c8c067c05e2317118e89e747"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15eaeb12495305a8341399582b4eeed3a7632bde7822960e94f22349acbaa32c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6255ff6feee66604318f82a9ed6ad93ce1aead32500374506321ccc0b2c3d4b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "180e38dcaededb7bf2f1ed55b02adcb756136ddca91ac11e8bbeba57a525afaa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ec6609559b42164f4d1a9e855eaa0754867562b40c23919b7cb0791e93409bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a12b2e8b08a4f7f04c6d3aa5e74f4754e70c007711367efc1971df614f2fbaa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9f665cf7536a4dd8f70f99b8d39af44c06980cc8e7e01905c7acc9f342a47f6b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "752c708a0cbe2e63ac77e1261e5a9c3773a4cd331de54b9b9f90282a90cb3940"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "359384c23a46977a8891636407294023a59917d078758f4deed7db1fae57a1ba"
   end
 
   depends_on "autoconf" => :build

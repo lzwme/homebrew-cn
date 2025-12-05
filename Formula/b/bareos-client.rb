@@ -1,8 +1,8 @@
 class BareosClient < Formula
   desc "Client for Bareos (Backup Archiving REcovery Open Sourced)"
   homepage "https://www.bareos.com/"
-  url "https://ghfast.top/https://github.com/bareos/bareos/archive/refs/tags/Release/25.0.0.tar.gz"
-  sha256 "99249903b3f96fdf139303032b86b7900efec3f3fbc286667430ef57d20a98b9"
+  url "https://ghfast.top/https://github.com/bareos/bareos/archive/refs/tags/Release/25.0.1.tar.gz"
+  sha256 "b44c481ddf1cfdf603e1b1fc1c4e4a120d5a0e9f34f781c90b1c487fc4716f27"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -11,12 +11,12 @@ class BareosClient < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a5db09fc2a5eafee4f8e2960a98ced6d78c01f07afae70285900157f7bcd4401"
-    sha256 arm64_sequoia: "dfe476b4bbfdc6feefb26ed54f716c78cdacf65bb9e069421d0da8e8831e82c8"
-    sha256 arm64_sonoma:  "f18f2deded9d99f5c4d060f02d2868f4d9a19088f24ba3f5903a1b13af029327"
-    sha256 sonoma:        "b43fc5893be64d8edbb21af3ee8bf8c65f772911904994d1903432eb6270e90c"
-    sha256 arm64_linux:   "200d643b4ee5f54416f286582e40277c6a25c7040c44b0fe43501d630330eabc"
-    sha256 x86_64_linux:  "7c4db369ec79781c5b0b4ec434c7ff6adbdf75ad1122000b2bb62ec1315ed5a1"
+    sha256 arm64_tahoe:   "c8712148ed1a04070756deaf5266fd990d2926366299ac8b1712dba76d66aab3"
+    sha256 arm64_sequoia: "ddab504b2ee507681e170cfdae645ea5e827923522ee3ded655562589e8dfea4"
+    sha256 arm64_sonoma:  "693f8cade447a111c1382f61c2eb3916c03911d579409340f7cc9063bc3e648d"
+    sha256 sonoma:        "f52ca53f1c94008645e21a5b33668433d33d28f7862892e0f769a22142a013e2"
+    sha256 arm64_linux:   "8def1e93084de5dbe8c0a16d5926d8ce4572ecb2ca97852bfcc6d927542ad847"
+    sha256 x86_64_linux:  "26d5070cafb1f7c0640991a6a610474da97a82c9a5c4b639e3b227a27642a568"
   end
 
   depends_on "cli11" => :build

@@ -3,17 +3,17 @@ class Tmt < Formula
 
   desc "Test Management Tool"
   homepage "https://tmt.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/d8/33/24042082f226dd18274e51997b2241b3dc2afbbe348ed0cafd5030a9be65/tmt-1.62.1.tar.gz"
-  sha256 "d588ed74e26e4379e7fb0ce8b163489ddf5af8de7b7d643bb77616af0b93146e"
+  url "https://files.pythonhosted.org/packages/48/1c/afd8cec15ef95491145b24274e58b58e9b4263356c40af4647d5599373e0/tmt-1.63.0.tar.gz"
+  sha256 "57a78da5e27b5770f41a3aa95cf89c7c528b7a0d2d302e225f5572619dc3218d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "69f84f850a8075726504632ffe5d26e9eb4b5db69cbf70c8a9cc345b8f4db16b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e0ee44305e3cd42274ea12bb3a587dc9f05c6f57c1c85e808360d4c486e2c07"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9498aec774e9ed9c498ade5f77c46d5d8cf2e3543628c5a95f9ca61a8de6697"
-    sha256 cellar: :any_skip_relocation, sonoma:        "86f5cd756fcfda1eb33c8fb4fe59536db8a8dc0f96483f817763c6aa9993aba4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "91f3046e4995d5aeb6ef42fc850882fad4c4a62e29640d1855533dd74b2c5713"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f586069b67f85dd6d82394fb31e713b43bca67a7487d4aa9db7db6ea88d963b3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1e2b51b1d3e980a9d1ce40bc327e56b2ded1734deb1e57f6c9ddd3a6de3d1f7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2147d95415aeefe5833b4f13e481c9d774188945b55d5b3332bfe64c7a948afd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "541fee690d9c57ac554e814fb6235f65d939c841cb1e14e0a962363f4dc88b30"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7989e87b93e29421c7e8d55925a753495d137fb542ea6a4764a369404f4151cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9fd13472c6728342e11353e15bad17d7f9a8dea4ad02626242725cdeeaf455a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4db1aff3bee36aef5752b0219f598fbe4fdbb2f90984a1f66f7ae5b78b87ca69"
   end
 
   depends_on "beakerlib"

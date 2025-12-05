@@ -21,7 +21,7 @@ class Mas < Formula
     sha256 cellar: :any_skip_relocation, sonoma:        "b9005575e04c459782434b97e9183b090cbf0da2a494d5a5d2a6704b0c3493d1"
   end
 
-  depends_on xcode: ["15.0", :build]
+  depends_on xcode: ["16.0", :build]
   depends_on :macos
 
   def install

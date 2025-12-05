@@ -1,20 +1,18 @@
 class A2ps < Formula
   desc "Any-to-PostScript filter"
   homepage "https://www.gnu.org/software/a2ps/"
-  url "https://ftpmirror.gnu.org/gnu/a2ps/a2ps-4.15.7.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/a2ps/a2ps-4.15.7.tar.gz"
-  sha256 "715f38670afd950b4ca71c01f468feefad265ca52d3f112934c63c0a8bfbb8af"
+  url "https://ftpmirror.gnu.org/gnu/a2ps/a2ps-4.15.8.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/a2ps/a2ps-4.15.8.tar.gz"
+  sha256 "8d13915a36ebbfa8e7b236b350cc81adc714acb217a18e8d8c60747c0ad353f9"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "a0e1ed8df721dc8c255fb987d04120fc02f76fae2396b111c744008b9f71950c"
-    sha256 arm64_sequoia: "09f88b61e36045188ddb1b1ba8e402b9f3debee1770cc4ca91355eeccb5f4a38"
-    sha256 arm64_sonoma:  "fa5fee22382064275c78eb9c2c34149f1079d8dd55cff9109db2b9515aff5976"
-    sha256 arm64_ventura: "1c84d09586d6a1dcd21cc0a5bc73879dbf075ea88f8e5d490e6bcef9add4d91d"
-    sha256 sonoma:        "8d6400425422f554d9e668c3625f706989cf0ae89f36fdb57283c826febb4643"
-    sha256 ventura:       "4fad7a2f054888fb432c24d9c78f86b17ebe40fc85ca6154f045195ccc2943fa"
-    sha256 arm64_linux:   "df084253ef723569fb05845b1660a50a4f37f5cdc7018e8439a7b77277093081"
-    sha256 x86_64_linux:  "7333d9a579dcf60c26f56c8505d8181e6d53494a659777586f067f38eb529119"
+    sha256 arm64_tahoe:   "f6895a00c5e039d81af9950d1e22c6012e50d6b8c19b5ad576953d06194ffc41"
+    sha256 arm64_sequoia: "2a959e7d521d6fd47fb598017109de310a72d25939dad660f24083b033155b13"
+    sha256 arm64_sonoma:  "a28d04c14c4444bd70fb99801cf541e167508e39720136ad8085b8cc33132f6a"
+    sha256 sonoma:        "1460a22fe6091322739e60676866cca20541f9c6789a1c698468e702f3e99789"
+    sha256 arm64_linux:   "72508d993a610ed1bf5a8f8c59e381265c6d2ef3327f68d68319c6dd536e4032"
+    sha256 x86_64_linux:  "f683fec596b5cfeb6d64503ca3a776969de98ee6b44b4a551a05db5e4ff4e230"
   end
 
   depends_on "pkgconf" => :build
