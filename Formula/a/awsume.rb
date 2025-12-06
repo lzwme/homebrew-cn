@@ -6,17 +6,16 @@ class Awsume < Formula
   url "https://files.pythonhosted.org/packages/d7/08/264d5c0b1a2618c95f3a391e038830c18bcccce5f202b293acdb14b7ac63/awsume-4.5.4.tar.gz"
   sha256 "4c1f6336e1f9e36b2144761345967f50f43128363892cc62325577201e133b1b"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/trek10inc/awsume.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "40942453249c7c43c2597f4023fa2d17c379fcb75d1af9aa376477818a687e8d"
-    sha256 cellar: :any,                 arm64_sequoia: "ff8a3931a4a9ba60b981e2dfec0ded6dfd29d50d77c6fa3f128254468a713652"
-    sha256 cellar: :any,                 arm64_sonoma:  "4bf687401e65c9e453a67428fb5b992163095cf786a743d3963cd8fa0dbf3d33"
-    sha256 cellar: :any,                 sonoma:        "36daa6865ef8efe090e30fa85724d87e705ce051d2499ef579d8b3cd629f12e4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c957c09a7e779f26179760e6cda0dea5579686c0d79aab5b2ec8821bcde439c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d027e70d6261b0877f370da9679d3bc1b69da2c442ae3327a2ffeb1bf06af1a"
+    sha256 cellar: :any,                 arm64_tahoe:   "341c096373e442dce6b7e55f08950f4129ddc2433c93cb4f42b3e9d1d16387fe"
+    sha256 cellar: :any,                 arm64_sequoia: "eac4f1c139fbc766854cb4cdf569bdf4250f1764a8ecf58dd61bd09bea2db3fa"
+    sha256 cellar: :any,                 arm64_sonoma:  "55497d8ef432ffd61ec0e216ebd016a03adc60af46008ce8fec32dfeebd7b3cd"
+    sha256 cellar: :any,                 sonoma:        "1a20f9d9eaf3deec2e6aa2fe7b935e34392f3996b37c4f9ab2b1584022970e7e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f778fd38daacb11a65745c4cdf11c8c2e186015ddbb8fa016dd23f015b3aafcb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3104c507142fdce875622f7fe85a4a3820d70304dba5d3770e3a09f83bee4bb"
   end
 
   depends_on "libyaml"
@@ -25,13 +24,13 @@ class Awsume < Formula
   uses_from_macos "sqlite"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/5c/89/36c09108d8d35e6f722cdc9ff169f003c7458657ecf04c3a375dca973ccb/boto3-1.40.54.tar.gz"
-    sha256 "5f7dbf8539d26e0ee973baea49d0db8c1ee57707a785c5a23307241fdba04327"
+    url "https://files.pythonhosted.org/packages/f3/31/246916eec4fc5ff7bebf7e75caf47ee4d72b37d4120b6943e3460956e618/boto3-1.42.4.tar.gz"
+    sha256 "65f0d98a3786ec729ba9b5f70448895b2d1d1f27949aa7af5cb4f39da341bbc4"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/d1/c8/8c7509d7fa26de03d21673f18a1edc1ac98198ba261a2b943774ed4f1c44/botocore-1.40.54.tar.gz"
-    sha256 "808232d9fcbf2c295b6e7cd1897119ee2fb97e756edfb313aa6d27ba0b281c66"
+    url "https://files.pythonhosted.org/packages/5c/b7/dec048c124619b2702b5236c5fc9d8e5b0a87013529e9245dc49aaaf31ff/botocore-1.42.4.tar.gz"
+    sha256 "d4816023492b987a804f693c2d76fb751fdc8755d49933106d69e2489c4c0f98"
   end
 
   resource "colorama" do
@@ -50,8 +49,8 @@ class Awsume < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/b3/31/4723d756b59344b643542936e37a31d1d3204bcdc42a7daa8ee9eb06fb50/psutil-7.1.0.tar.gz"
-    sha256 "655708b3c069387c8b77b072fc429a57d0e214221d01c0a772df7dfedcb3bcd2"
+    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
+    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
   end
 
   resource "python-dateutil" do
@@ -65,8 +64,8 @@ class Awsume < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/62/74/8d69dcb7a9efe8baa2046891735e5dfe433ad558ae23d9e3c14c633d1d58/s3transfer-0.14.0.tar.gz"
-    sha256 "eff12264e7c8b4985074ccce27a3b38a485bb7f7422cc8046fee9be4983e4125"
+    url "https://files.pythonhosted.org/packages/05/04/74127fc843314818edfa81b5540e26dd537353b123a4edc563109d8f17dd/s3transfer-0.16.0.tar.gz"
+    sha256 "8e990f13268025792229cd52fa10cb7163744bf56e719e0b9cb925ab79abf920"
   end
 
   resource "six" do
@@ -75,8 +74,8 @@ class Awsume < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

@@ -1,19 +1,17 @@
 class GitlabGem < Formula
   desc "Ruby client and CLI for GitLab API"
   homepage "https://narkoz.github.io/gitlab/"
-  url "https://ghfast.top/https://github.com/NARKOZ/gitlab/archive/refs/tags/v6.0.0.tar.gz"
-  sha256 "dfafb3b2ddaaaa94b78da5e2cb7515199160def567cb936606a5dae9e270a9b7"
+  url "https://ghfast.top/https://github.com/NARKOZ/gitlab/archive/refs/tags/v6.1.0.tar.gz"
+  sha256 "a1a0d2885994d15ef432818bdcaf1421c98a95c364d66284d46be432e115569d"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "87d2c74b681accd514f34cbc225b5033659d7016b7a90394bb87783dd60d57be"
-    sha256 cellar: :any,                 arm64_sequoia: "2db88a26ef2ad02dce9460fd0f0ec1d1a27df0f7da41f3bc1d8aee1e0f9f0bcd"
-    sha256 cellar: :any,                 arm64_sonoma:  "c87c1a72f1d4770fedf06887007f64436a6876439726394dad089cc35bdd4901"
-    sha256 cellar: :any,                 arm64_ventura: "955384293995236ffa6baef6c2b48a0c4d172bf35ea7276e52bdd20db9e54c99"
-    sha256 cellar: :any,                 sonoma:        "bca39b4ac6f7a6f39a1eb09518121bc830adcdcb11b044c2bb030e23811fef8b"
-    sha256 cellar: :any,                 ventura:       "5124a2de109b13f4e6f840fe8a0b5b659ee8b909aec301f39e0c376473e9fb9d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b40a309432dd207f09baf705b58872833d21552b1ca00216be8a9ebfe7d28e0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ed9be89b1924b80695a196bbb9b14e05521cff6fa576c1993cf5c74dcc9e453"
+    sha256 cellar: :any,                 arm64_tahoe:   "c0cc7c186322cbf0bf53a18dff9f351169c1d65753f1816e068763f2562cf7f3"
+    sha256 cellar: :any,                 arm64_sequoia: "9c87fb811cf87ef957b24aaa25fabb8ce5275977eb87e405835a910e087028b2"
+    sha256 cellar: :any,                 arm64_sonoma:  "fa19170f69f26d852f3223fdb8db731203c930eff9757040599d83e491fa252f"
+    sha256 cellar: :any,                 sonoma:        "ee5796c9eef2dd4d486d42f958e2ccd238d438cc456b6ee33f64c51b2ca827a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3248511c3ab3e1ee0dd368bdae9cb69ad28601186a1a635ea302a7f17b04d0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "140f4b4fc43ad933379f0eddf64df119c78c6c56c89a24fc57d7926305cfac15"
   end
 
   depends_on "ruby"
@@ -21,8 +19,8 @@ class GitlabGem < Formula
   # list with `gem install --explain httparty terminal-table`
 
   resource "bigdecimal" do
-    url "https://rubygems.org/gems/bigdecimal-3.1.8.gem"
-    sha256 "a89467ed5a44f8ae01824af49cbc575871fa078332e8f77ea425725c1ffe27be"
+    url "https://rubygems.org/gems/bigdecimal-3.3.1.gem"
+    sha256 "eaa01e228be54c4f9f53bf3cc34fe3d5e845c31963e7fcc5bedb05a4e7d52218"
   end
 
   resource "multi_xml" do
@@ -36,8 +34,8 @@ class GitlabGem < Formula
   end
 
   resource "csv" do
-    url "https://rubygems.org/gems/csv-3.3.2.gem"
-    sha256 "6ff0c135e65e485d1864dde6c1703b60d34cc9e19bed8452834a0b28a519bd4e"
+    url "https://rubygems.org/gems/csv-3.3.5.gem"
+    sha256 "6e5134ac3383ef728b7f02725d9872934f523cb40b961479f69cf3afa6c8e73f"
   end
 
   resource "httparty" do
@@ -46,13 +44,13 @@ class GitlabGem < Formula
   end
 
   resource "unicode-emoji" do
-    url "https://rubygems.org/gems/unicode-emoji-4.0.4.gem"
-    sha256 "2c2c4ef7f353e5809497126285a50b23056cc6e61b64433764a35eff6c36532a"
+    url "https://rubygems.org/gems/unicode-emoji-4.1.0.gem"
+    sha256 "4997d2d5df1ed4252f4830a9b6e86f932e2013fbff2182a9ce9ccabda4f325a5"
   end
 
   resource "unicode-display_width" do
-    url "https://rubygems.org/gems/unicode-display_width-3.1.4.gem"
-    sha256 "8caf2af1c0f2f07ec89ef9e18c7d88c2790e217c482bfc78aaa65eadd5415ac1"
+    url "https://rubygems.org/gems/unicode-display_width-3.2.0.gem"
+    sha256 "0cdd96b5681a5949cdbc2c55e7b420facae74c4aaf9a9815eee1087cb1853c42"
   end
 
   resource "terminal-table" do

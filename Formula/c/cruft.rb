@@ -6,17 +6,16 @@ class Cruft < Formula
   url "https://files.pythonhosted.org/packages/d1/7e/0e20012f2aa156e5d6a70483a8d90accb7ed4966dddb0c58987d9f6eba12/cruft-2.16.0.tar.gz"
   sha256 "184662853fbc1c16c0137fe0e9444e0cbe95e40362f5ebb2d9fae33d9223e73f"
   license "MIT"
-  revision 3
+  revision 4
   head "https://github.com/cruft/cruft.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "e6fe55691b83f44849da1d37bc8fdeb216c4214efb2103826aaeedbd99c5b73b"
-    sha256 cellar: :any,                 arm64_sequoia: "be54325a6602521f8866cad57ba97ca3361b24933077b5a4b414c0705bdd600b"
-    sha256 cellar: :any,                 arm64_sonoma:  "406f88495a175ea05d5bacca77776818564a1f402c1176a45bc37f2fab2a86b5"
-    sha256 cellar: :any,                 sonoma:        "e5520e760837d3bb2cf53ae4a34fc5a03de313518b2dbd34085d0cd5b2ec79b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1d699525978ae2526324305100d6967279803ef2bb51f1ab5c034b43f04f071"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0da3c1cde9269374c36719cfa14ae6c2465b9b09bda1f98d573a893872914b5b"
+    sha256 cellar: :any,                 arm64_tahoe:   "b49af02989f7e2ae6c3b6bca4fb0779c99ff64dbf1910e5ddced3098665872d6"
+    sha256 cellar: :any,                 arm64_sequoia: "cb6bf9de0b6ead2e838431e3963c08e1ba9bac35dd218ce06d9785c0a25579d8"
+    sha256 cellar: :any,                 arm64_sonoma:  "e652cf02f529e3e89b790083988209b0259e6950c30d2c68d13ab57d604af7ea"
+    sha256 cellar: :any,                 sonoma:        "7508962a7faf9ecc9bf41120aa9f60ccd6d66a163058d2b556dd74b907788ba5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "352a382d1963383ccb0fa57a5485de07c92116008d3375b2abdcf6cefa0ea8c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "698b759294dad340917a1e10ceba5ed80cd7e4fc51352bb0a6b13ab0b7785366"
   end
 
   depends_on "certifi" => :no_linkage
@@ -26,8 +25,8 @@ class Cruft < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "arrow" do
-    url "https://files.pythonhosted.org/packages/2e/00/0f6e8fcdb23ea632c866620cc872729ff43ed91d284c866b515c6342b173/arrow-1.3.0.tar.gz"
-    sha256 "d4540617648cb5f895730f1ad8c82a65f2dad0166f57b75f3ca54759c4d67a85"
+    url "https://files.pythonhosted.org/packages/b9/33/032cdc44182491aa708d06a68b62434140d8c50820a087fac7af37703357/arrow-1.4.0.tar.gz"
+    sha256 "ed0cc050e98001b8779e84d461b0098c4ac597e88704a655582b21d116e526d7"
   end
 
   resource "binaryornot" do
@@ -41,13 +40,13 @@ class Cruft < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "cookiecutter" do
@@ -141,13 +140,8 @@ class Cruft < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/21/ca/950278884e2ca20547ff3eb109478c6baf6b8cf219318e6bc4f666fad8e8/typer-0.19.2.tar.gz"
-    sha256 "9ad824308ded0ad06cc716434705f691d4ee0bfd0fb081839d2e426860e7fdca"
-  end
-
-  resource "types-python-dateutil" do
-    url "https://files.pythonhosted.org/packages/fc/83/24ed25dd0c6277a1a170c180ad9eef5879ecc9a4745b58d7905a4588c80d/types_python_dateutil-2.9.0.20251008.tar.gz"
-    sha256 "c3826289c170c93ebd8360c3485311187df740166dbab9dd3b792e69f2bc1f9c"
+    url "https://files.pythonhosted.org/packages/8f/28/7c85c8032b91dbe79725b6f17d2fffc595dff06a35c7a30a37bef73a1ab4/typer-0.20.0.tar.gz"
+    sha256 "1aaf6494031793e4876fb0bacfa6a912b551cf43c1e63c800df8b1a866720c37"
   end
 
   resource "typing-extensions" do
@@ -155,9 +149,14 @@ class Cruft < Formula
     sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
+  resource "tzdata" do
+    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
+    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
+  end
+
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

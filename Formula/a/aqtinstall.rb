@@ -6,15 +6,15 @@ class Aqtinstall < Formula
   url "https://files.pythonhosted.org/packages/76/19/24a588de6c25d43169d172dab47e63a63cd0d8f90e98cf86487acbf00ac7/aqtinstall-3.3.0.tar.gz"
   sha256 "9c7d85fbe7258be2d7d23fda33f8aff2e8b7536817255eaeaaf4226da8546a31"
   license "MIT"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "30909cf4a345708b0bc6e06b9d528cd328d27e725f4c9e118147d6e45e9fe905"
-    sha256 cellar: :any,                 arm64_sequoia: "3fa8448f74e8b9fd2a55594ce42d74dfdec9e0c5dec33bf44916969118f8554d"
-    sha256 cellar: :any,                 arm64_sonoma:  "f5a9b0c80a6d0c172996883138d3993873cb825d5ec78878b78088af847ff0a8"
-    sha256 cellar: :any,                 sonoma:        "6b40325eacc9390dab88363256b95873f884620f9efc26837760708a083a56cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f44158ac6618d87baaf820f5a2a2ae799ab9b65c8385150530563ebc18eedff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36cb37d74b6e3016794765a1be454128e4ebb7a56ad96eb6ede3512f7344a862"
+    sha256 cellar: :any,                 arm64_tahoe:   "19d6aa761b04609f77ca52e7df9d4443d4a90d06f28097b7b75bce38963893c1"
+    sha256 cellar: :any,                 arm64_sequoia: "8b856e6e4fc4a07e7fcd4358ed37c1357e7a36097ec0000f1f8891a8690cfc3d"
+    sha256 cellar: :any,                 arm64_sonoma:  "90bd7529d01a9f82e7ece0bfda87fb579dea5d1971f0764fb66e72fb835a0601"
+    sha256 cellar: :any,                 sonoma:        "d96a94efc0ee716d69c01488fa1239f66ee270811ab671a5f450275a9a5887e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3d1e4e5fb4153d617256364458f0b3594958507a973912f1c4f880e8b96b1eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "334749a6a081bc81bdfe2443709fa95e74d75403f08927eb7589085e79f5b601"
   end
 
   depends_on "certifi" => :no_linkage
@@ -24,8 +24,8 @@ class Aqtinstall < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/77/e9/df2358efd7659577435e2177bfa69cba6c33216681af51a707193dec162a/beautifulsoup4-4.14.2.tar.gz"
-    sha256 "2a98ab9f944a11acee9cc848508ec28d9228abfd522ef0fad6a02a72e0ded69e"
+    url "https://files.pythonhosted.org/packages/c3/b0/1c6a16426d389813b48d95e26898aff79abbde42ad353958ad95cc8c9b21/beautifulsoup4-4.14.3.tar.gz"
+    sha256 "6292b1c5186d356bba669ef9f7f051757099565ad9ada5dd630bd9de5fa7fb86"
   end
 
   resource "brotli" do
@@ -59,8 +59,8 @@ class Aqtinstall < Formula
   end
 
   resource "inflate64" do
-    url "https://files.pythonhosted.org/packages/dd/8c/3a7ac7e1931bd1bca5f8e3687f7611083f6a79aae02b9cd6b7ce1fb4a8d0/inflate64-1.0.1.tar.gz"
-    sha256 "3b1c83c22651b5942b35829df526e89602e494192bf021e0d7d0b600e76c429d"
+    url "https://files.pythonhosted.org/packages/3e/f3/41bb2901543abe7aad0b0b0284ae5854bb75f848cf406bf8a046bf525f67/inflate64-1.0.4.tar.gz"
+    sha256 "b398c686960c029777afc0ed281a86f66adb956cfc3fbf6667cc6453f7b407ce"
   end
 
   resource "multivolumefile" do
@@ -84,8 +84,8 @@ class Aqtinstall < Formula
   end
 
   resource "pybcj" do
-    url "https://files.pythonhosted.org/packages/ce/75/bbcf098abf68081fa27c09d642790daa99d9156132c8b0893e3fecd946ab/pybcj-1.0.6.tar.gz"
-    sha256 "70bbe2dc185993351955bfe8f61395038f96f5de92bb3a436acb01505781f8f2"
+    url "https://files.pythonhosted.org/packages/12/0c/2670b672655b18454841b8e88f024b9159d637a4c07f6ce6db85accf8467/pybcj-1.0.7.tar.gz"
+    sha256 "72d64574069ffb0a800020668376b7ebd7adea159adbf4d35f8effc62f0daa67"
   end
 
   resource "pycryptodomex" do
@@ -129,8 +129,8 @@ class Aqtinstall < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

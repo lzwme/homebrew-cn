@@ -6,15 +6,16 @@ class Conan < Formula
   url "https://files.pythonhosted.org/packages/e1/64/0bd44d12421ad8eca1903fc66e8f9661b28086e451ad075af37350b364db/conan-2.23.0.tar.gz"
   sha256 "1a7b34be6fcaa4a4c0342c54187fb87aa4b487a9b4cf2136f2207f8b3a127868"
   license "MIT"
+  revision 1
   head "https://github.com/conan-io/conan.git", branch: "develop2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7810fed5ea7105ea97b1569713cfb6f419ddb81c1691d526b687fb9d8078bfe0"
-    sha256 cellar: :any,                 arm64_sequoia: "93a018522e1dfdd7a47bd25d1f9f01a1ddc0575c63764e2c9d00101ca07cb177"
-    sha256 cellar: :any,                 arm64_sonoma:  "0b2d2021da66340732f78e440d32c4b4fde203a6c2ddb9299d6c7018b8042da7"
-    sha256 cellar: :any,                 sonoma:        "ce89d6e2f59172c1a26c68b6890d1753f149e58876c959ff6b4da2a9a1afa5bc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec6dc4f818aff71b5e0bafec5f9985291e6eb27e6e69053ad346590e55afccf6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b110144164db0d244cffc246fc6627752eb368f4978c12dcec1c1992a9bd18f2"
+    sha256 cellar: :any,                 arm64_tahoe:   "603e99bf218ccf0b878692056bb2a07e52a89a5b0e4b12ae0d80485fd69c968c"
+    sha256 cellar: :any,                 arm64_sequoia: "dee1e9c0b115a22717f036fce39baed02046713e81e523752b7431b94d0e32ab"
+    sha256 cellar: :any,                 arm64_sonoma:  "cac8dda39552dbcd771bd359236809034afb28b8c1483ce0dfcf249b6f08d641"
+    sha256 cellar: :any,                 sonoma:        "0fc7ca976447093b9d6c869938fb7d91320dbc348d2bc1dbddc7294c08c11226"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "765dd5dbec1c97c31045b51c1decd0cc357b61a388fcf926b93e88a8a0fddbbb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "975461698bfe66071db30e35150b3d7f6ac4e0aad423ba4d59af31d5625e9153"
   end
 
   depends_on "pkgconf" => :build
@@ -87,8 +88,8 @@ class Conan < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

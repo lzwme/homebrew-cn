@@ -3,17 +3,17 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/a7/12/33ac02495e8a7f76b41ac50bf3dc6c1525e456245d0b26f788c5ac5e4e58/esphome-2025.11.3.tar.gz"
-  sha256 "8683eb405325c3534b10de04caddd8b1bdcd9ea5089a459cbb2a6a4464b8cc3f"
+  url "https://files.pythonhosted.org/packages/6a/42/581c64ef757d3998c691fd7304700d2180115e174d320f0c9a84183480fe/esphome-2025.11.4.tar.gz"
+  sha256 "d4433daac71e8fc468d3ffc42dbbc06db8aafcd30152ab8249056a8ae62e4f17"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "38d91a9064dd9eb6136a90f31ac7147ca1d8be91a90dff695215a0bff31f635e"
-    sha256 cellar: :any,                 arm64_sequoia: "720ff619381402736dcddbf31b4eb9a057da5fc24ef50061c355b09d73ccc0f8"
-    sha256 cellar: :any,                 arm64_sonoma:  "93c91a69bb2e6575c73a991e8d2d7aa1b206e3a88ab0264fed1b9364967da881"
-    sha256 cellar: :any,                 sonoma:        "233cd10cb5f58be662b811cfad0835beedaf1ce844b4184fdde8ff1ac7f17592"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9703ee66bd1dae2ed73c686e2d710e1c761e15058aaf87f65cca7d1e65c973da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7fe50ca88d05b40306457a44e4e2aea0f79c2bb2fe48d6d3abdd1ea4fb71d08"
+    sha256 cellar: :any,                 arm64_tahoe:   "08f1a973f0f9427432b86f9525ba3e090302907dc199ededda6bd47e4f57fb3f"
+    sha256 cellar: :any,                 arm64_sequoia: "facd4223e66aa4d06ccee74ad0c5fedc42bb31e8607ecf0d65bd0f431668c03f"
+    sha256 cellar: :any,                 arm64_sonoma:  "40dca6199e9861aa97660565e248affb1f717f9156c4302ef97d4e3e14e32b28"
+    sha256 cellar: :any,                 sonoma:        "9a8eb5314ee7502853a86aeb0976d522efcf6470502820c806ea37fd0bce4eed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9abdac35ad17fb107a48e3d7c2019b881523cb3eeba90e7553bfb0214badc9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6f0421b21a95462405117dd61a443ebcd384a9471b38bbf1a04e2f2f2c494a7"
   end
 
   depends_on "certifi" => :no_linkage

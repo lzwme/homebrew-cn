@@ -12,12 +12,13 @@ class NodeAT22 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ebb6b895ce8252b5c63fe3105825eb2531eeda148d8642f4bbd2691f9af1c32b"
-    sha256 arm64_sequoia: "689be9ce6e5c302167df06ed91570ea203412db476d4b88d4add341f530ccd98"
-    sha256 arm64_sonoma:  "f2f649dacc39440167f36f809dfd5ae8d1621130a778a039094195115eda1b83"
-    sha256 sonoma:        "270d589d7dea2b95e8ae229e211d4496fe8536f223ac4a732fddfa8cbc82926d"
-    sha256 arm64_linux:   "ddd9022c83400f6d85d71d67d27a76f6536782bb3f996f1d03f812777e9e19cd"
-    sha256 x86_64_linux:  "efb446cf122e2d5242b3f50af48bc59ee4b94de0a61c9b202d396ee46e5945d3"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "4899b11cebf0179a7fa104f4bda08cd81b9c863b8b8fde46793f82053880c7bf"
+    sha256 cellar: :any,                 arm64_sequoia: "8c404ee263ac937917d845b5d85414051d96194a0eea5243873e1b5c72f124fa"
+    sha256 cellar: :any,                 arm64_sonoma:  "4f847511ef5fa3afb48e191879f2c6dbc2e6416096c109dd2dcc5606739d9794"
+    sha256 cellar: :any,                 sonoma:        "19073211c4304e11ff20104163b9921a79c91162356da9eac57bbe69f37bb042"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "958d0d88018dca4de8d28925046376797cad6fb20812157e045182bbbb241d14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ccd103940998340bfa07c2151d55b64d8168ca068ba381aac79b2a0baa204ab"
   end
 
   keg_only :versioned_formula
@@ -65,6 +66,7 @@ class NodeAT22 < Formula
     args = %W[
       --prefix=#{prefix}
       --with-intl=system-icu
+      --shared
       --shared-brotli
       --shared-cares
       --shared-libuv

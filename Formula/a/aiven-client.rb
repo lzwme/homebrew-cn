@@ -6,10 +6,11 @@ class AivenClient < Formula
   url "https://files.pythonhosted.org/packages/35/6b/6a7eccb8c7c9713972d32d6c7de3bf26b96685bda6b338260588e137f73b/aiven_client-4.11.0.tar.gz"
   sha256 "8edc77d6c44c7deb9d0c35a192c56482cdf0978407c9590ee907383b0f63cd16"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/aiven/aiven-client.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "82a9eda88a09d4957ee8c01eccd8b2ff3f1b3ceebf192f08ad907f359efda483"
+    sha256 cellar: :any_skip_relocation, all: "2d6b818d2add6506071ea7fee06f0e664f54fed43cf6e908700fbef32548ec34"
   end
 
   depends_on "certifi"
@@ -38,8 +39,8 @@ class AivenClient < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

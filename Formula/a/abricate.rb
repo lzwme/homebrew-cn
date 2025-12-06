@@ -1,23 +1,18 @@
 class Abricate < Formula
   desc "Find antimicrobial resistance and virulence genes in contigs"
   homepage "https://github.com/tseemann/abricate"
-  url "https://ghfast.top/https://github.com/tseemann/abricate/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "5edc6b45a0ff73dcb4f1489a64cb3385d065a6f29185406197379522226a5d20"
+  url "https://ghfast.top/https://github.com/tseemann/abricate/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "ac3ac3c62b445501b8d82942b0d0b20404ddd9cb9a0a8deb03cbc1f446f2c379"
   license "GPL-2.0-only"
-  revision 3
   head "https://github.com/tseemann/abricate.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fcb7a6a43e558cea2253ef0d00cdb5344d7569844f3d9bab441c7095ac45beba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e7f6393112a6a35dce42b72269577f9a625cb161185fc24075afc326e057ad7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35e1dff52eb0bf1df021f9fa7cfe0e1a09df089e6bfc4af6c87e07a0f52db655"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a1019399ae72e1e4b793e287b92c2b000b6680f44c60faa2aa63e61683fae70c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f72cb3d2b9f6d42fe8ff2ff6c72d9dab66d5e7a5f867ae384ae06f2477c8e53c"
-    sha256 cellar: :any_skip_relocation, ventura:       "e64a514eafd58745186e9302e4a5fa0d9da4eb9e686ff15ec3fa53c29b9b3a3b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6862ba41484e2752fbfa93c339fd12a691f164f5342a7864b8af2e786cbbe23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ccff5939400556b14677e73e48b33f8794781a62ed6df468bef9d240ecaffb4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e8c0b3837899f8050b4d268c35ba6b784ac1ef051b6d7b95db12517a106d9135"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "515a452de78cd20b5a0bdb08059a01264b260227689aa22afe68b11e2a20cea7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac44f570d4752c98c121f357c18042186348507267e12d9cc47c6ba3fe2fcd7d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c4054e10145b6129ad2c5eb85a454aea6d621fe2dc94ce0e807c072785cb844f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc2c8c3a22b655db4d480360501000f43f76137e3b4aa8ecbe2c4e2142ab9138"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b06655c093fec0fa230aa9876cdca639d15796e9a9d8eb50f415f0d784e483aa"
   end
 
   depends_on "bioperl"
@@ -39,8 +34,8 @@ class Abricate < Formula
   end
 
   resource "Path::Tiny" do
-    url "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Path-Tiny-0.144.tar.gz"
-    sha256 "f6ea094ece845c952a02c2789332579354de8d410a707f9b7045bd241206487d"
+    url "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Path-Tiny-0.150.tar.gz"
+    sha256 "ff20713d1a14d257af9c78209001f40dc177e4b9d1496115cbd8726d577946c7"
   end
 
   resource "List::MoreUtils::XS" do
@@ -59,8 +54,8 @@ class Abricate < Formula
   end
 
   resource "URI" do
-    url "https://cpan.metacpan.org/authors/id/S/SI/SIMBABQUE/URI-5.19.tar.gz"
-    sha256 "8fed5f819905c8a8e18f4447034322d042c3536b43c13ac1f09ba92e1a50a394"
+    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.34.tar.gz"
+    sha256 "de64c779a212ff1821896c5ca2bb69e74767d2674cee411e777deea7a22604a8"
   end
 
   resource "LWP::MediaTypes" do
@@ -79,8 +74,8 @@ class Abricate < Formula
   end
 
   resource "HTTP::Date" do
-    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Date-6.05.tar.gz"
-    sha256 "365d6294dfbd37ebc51def8b65b81eb79b3934ecbc95a2ec2d4d827efe6a922b"
+    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Date-6.06.tar.gz"
+    sha256 "7b685191c6acc3e773d1fc02c95ee1f9fae94f77783175f5e78c181cc92d2b52"
   end
 
   resource "IO::HTML" do
@@ -89,33 +84,33 @@ class Abricate < Formula
   end
 
   resource "HTTP::Request" do
-    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Message-6.44.tar.gz"
-    sha256 "398b647bf45aa972f432ec0111f6617742ba32fc773c6612d21f64ab4eacbca1"
+    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Message-7.01.tar.gz"
+    sha256 "82b79ce680251045c244ee059626fecbf98270bed1467f0175ff5ea91071437e"
   end
 
   resource "HTML::Tagset" do
-    url "https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/HTML-Tagset-3.20.tar.gz"
-    sha256 "adb17dac9e36cd011f5243881c9739417fd102fce760f8de4e9be4c7131108e2"
+    url "https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/HTML-Tagset-3.24.tar.gz"
+    sha256 "eb89e145a608ed1f8f141a57472ee5f69e67592a432dcd2e8b1dbb445f2b230b"
   end
 
   resource "HTML::HeadParser" do
-    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTML-Parser-3.81.tar.gz"
-    sha256 "c0910a5c8f92f8817edd06ccfd224ba1c2ebe8c10f551f032587a1fc83d62ff2"
+    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTML-Parser-3.83.tar.gz"
+    sha256 "7278ce9791256132b26a71a5719451844704bb9674b58302c3486df43584f8c0"
   end
 
   resource "Try::Tiny" do
-    url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.31.tar.gz"
-    sha256 "3300d31d8a4075b26d8f46ce864a1d913e0e8467ceeba6655d5d2b2e206c11be"
+    url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.32.tar.gz"
+    sha256 "ef2d6cab0bad18e3ab1c4e6125cc5f695c7e459899f512451c8fa3ef83fa7fc0"
   end
 
   resource "HTTP::Cookies" do
-    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Cookies-6.10.tar.gz"
-    sha256 "e36f36633c5ce6b5e4b876ffcf74787cc5efe0736dd7f487bdd73c14f0bd7007"
+    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Cookies-6.11.tar.gz"
+    sha256 "8c9a541a4a39f6c0c7e3d0b700b05dfdb830bd490a1b1942a7dedd1b50d9a8c8"
   end
 
   resource "File::Listing" do
-    url "https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/File-Listing-6.15.tar.gz"
-    sha256 "46c4fb9f9eb9635805e26b7ea55b54455e47302758a10ed2a0b92f392713770c"
+    url "https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/File-Listing-6.16.tar.gz"
+    sha256 "189b3a13fc0a1ba412b9d9ec5901e9e5e444cc746b9f0156d4399370d33655c6"
   end
 
   resource "WWW::RobotRules" do
@@ -129,18 +124,18 @@ class Abricate < Formula
   end
 
   resource "Net::HTTP" do
-    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/Net-HTTP-6.23.tar.gz"
-    sha256 "0d65c09dd6c8589b2ae1118174d3c1a61703b6ecfc14a3442a8c74af65e0c94e"
+    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/Net-HTTP-6.24.tar.gz"
+    sha256 "290ed9a97b05c7935b048e6d2a356035871fca98ad72c01c5961726adf85c83c"
   end
 
   resource "LWP::Simple" do
-    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/libwww-perl-6.71.tar.gz"
-    sha256 "9d852d92c1f087d838adcb4107c4ff69887e7e5bdb742f984639c4c18dddb6e7"
+    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/libwww-perl-6.81.tar.gz"
+    sha256 "ab30552f194e8b5ae3ac0885132fd1d4ea04c4c7fe6555765b98f01af70c1736"
   end
 
   resource "Clone" do
-    url "https://cpan.metacpan.org/authors/id/G/GA/GARU/Clone-0.46.tar.gz"
-    sha256 "aadeed5e4c8bd6bbdf68c0dd0066cb513e16ab9e5b4382dc4a0aafd55890697b"
+    url "https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/Clone-0.47.tar.gz"
+    sha256 "4c2c0cb9a483efbf970cb1a75b2ca75b0e18cb84bcb5c09624f86e26b09c211d"
   end
 
   def install

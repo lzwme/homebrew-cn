@@ -6,15 +6,16 @@ class Certbot < Formula
   url "https://files.pythonhosted.org/packages/ab/3b/58c18b4820a2135921a24f188b05ef9fa3fe3e64fa77f8be68230ccddc43/certbot-5.2.1.tar.gz"
   sha256 "5faed67634a3f8a62782655b5f739161804fc9999577b263ea7dd76eba62f406"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/certbot/certbot.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "75ede1ec620f55b7af98bd10e1b8c716efbfc079a147bdf75b1ff1ea66cae6b8"
-    sha256 cellar: :any,                 arm64_sequoia: "1ed1e948d39f1933266ccd1bbe10f732bd546a1532922e241d7b37e7b56fd9d7"
-    sha256 cellar: :any,                 arm64_sonoma:  "55f9429d2afd88ad3100e64001fd0ab7da0c03047bc05f9a70d76efa4ff8058d"
-    sha256 cellar: :any,                 sonoma:        "5ae86742e9c38dfb57c370535abb7e2ba8d6fe1ceb80424a44a542fc11c624d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "712ad8751a2e9023f4d6d0ad72095c78c690461ca847e591342d7efbd46b306d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "636bcfc660f7c1ac57745d18e791bca63291437dfa5543c76190f98d1fbf16c7"
+    sha256 cellar: :any,                 arm64_tahoe:   "f36cfa79fd51d883ea46824685a99e53b9abaf28a3b1c464a4f279c2e7ff9025"
+    sha256 cellar: :any,                 arm64_sequoia: "232d7c018064b05119e27b57886cf7001b37dc3aa76bb7e283d2e86fb5b0e06a"
+    sha256 cellar: :any,                 arm64_sonoma:  "53d264b15db42469a6ff6ca3fa43cf79bdb8c6c82ca52213a253328e5fad8a4d"
+    sha256 cellar: :any,                 sonoma:        "7dfe521727fe78af844034bc734fb69e1a9ad551bb5d494d9b2cd8377ac8a1a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0386b57d09ed6c512b52ee574daec82b74ddd85f3de0cd93210bb947d5b1bd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6fee4535adebe2cff33870d692a8c7e9f4f2339f7d717a1b41707241aafae22"
   end
 
   depends_on "augeas"
@@ -129,8 +130,8 @@ class Certbot < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

@@ -1,8 +1,8 @@
 class Envoy < Formula
   desc "Cloud-native high-performance edge/middle/service proxy"
   homepage "https://www.envoyproxy.io/index.html"
-  url "https://ghfast.top/https://github.com/envoyproxy/envoy/archive/refs/tags/v1.35.4.tar.gz"
-  sha256 "8713884f7b325bc7eb42daa6d5aca8802494cf60ddcd0b165d348edb06242867"
+  url "https://ghfast.top/https://github.com/envoyproxy/envoy/archive/refs/tags/v1.36.3.tar.gz"
+  sha256 "1deec2031b935b6520eb1b5941efd5065c0f38ffcaba5230c52db6e2f3c8b9eb"
   license "Apache-2.0"
   head "https://github.com/envoyproxy/envoy.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Envoy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e8760ee857cc7421cfbf21bcb354cb19b15ba35e3fab267c036c5e0dffef722f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ac99abdda6847ccc6a1bb6348d15abd87abea9d98686010315d67611108f00d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d09eb1cd4d169ed190aff21c661a6c1619a68d5f9c87e22d35c486e081f08fe8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e750a3e35606bbe850658e60d9258a8fd8c70082566e28d516d9d4d22a9e4aba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "db7af39e41b973398b41c413c97ef5eda547a93c9e8ae1136675163c2dc7b1fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba24dcf183d63a884a074927669981fa54c7b8c4e9636c9404cfc3405831a4e5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73e2686330b6c9e760309164a6fe225ead5560ab89ce6a1209d8c2746215c7b3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2230073e91d7c0e36a42466267b713f6a48196bd1177a06044d6999f912dea4e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8561123629ab04c7929f08366a8f5f0ce266bf26ef69592703c29cc87ca6e211"
+    sha256 cellar: :any_skip_relocation, sonoma:        "98e2619a48ba2f9c6866b0ccec31405329813078651556b136a47737e5f3ebac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "33ad2bd4b77df29536e770fb9b2486dccc444131be97fb6ab749cfae2e6feea6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9fc347b8dccf3befbb6356e44330a7ebf7232c7fbc04a5903a76394b4b1a6cd"
   end
 
   depends_on "automake" => :build
@@ -62,6 +62,10 @@ class Envoy < Formula
       # Workaround to build with Clang 20 until envoy uses newer dd-trace-cpp (with newer nlohmann-json)
       # https://github.com/DataDog/dd-trace-cpp/commit/a7d71b5e0599125d5957f7b8d3d56f0bcc6ae485
       args << "--copt=-Wno-deprecated-literal-operator"
+
+      # Workaround to build with Clang 21, upstream also ignores this warning
+      # https://github.com/google/cel-cpp/blob/439003a0016ed7ace068cffdf494357a3f75e3b2/common/values/value_variant.h#L735-L743
+      args << "--copt=-Wno-nontrivial-memcall"
     end
 
     # Workaround to build with Xcode 16.3 / Clang 19

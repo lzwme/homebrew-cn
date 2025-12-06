@@ -1,18 +1,18 @@
 class Appium < Formula
   desc "Automation for Apps"
   homepage "https://appium.io/"
-  url "https://registry.npmjs.org/appium/-/appium-3.1.1.tgz"
-  sha256 "dfdbfa84113a6617810b32e96e6136fe059d845f84cc4d1f1d9ae89d7ac9e1b0"
+  url "https://registry.npmjs.org/appium/-/appium-3.1.2.tgz"
+  sha256 "0e2a7525aa9c147bf511f0a21bd16bd4bda016a3b155cd86aac1ef419ea99f19"
   license "Apache-2.0"
   head "https://github.com/appium/appium.git", branch: "master"
 
   bottle do
-    sha256                               arm64_tahoe:   "0f14dd5b604d36df30426ca7a14eae9a7aff9ab9f6a5b766194f8e42a4043733"
-    sha256                               arm64_sequoia: "91fbf9d1b3251dac5bb3c20c5f5b9853ab1251f179cfda9ec56a868d57124bf8"
-    sha256                               arm64_sonoma:  "9cb71caa45503e2091abe3722d346870e12501e768049ca3ca768b8c3080b543"
-    sha256                               sonoma:        "0f774625519b44f2647fd5406c6f6f66240539ac99a1b9975c0ae9cf8c62c09b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b490ecf71855a6a4cd97b8c62072c9dd18f6bd2bdba3861639b360faac1ba4f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39b3bc40472e637d9d396bef264bcad296dbc0de19391d22a89e6d54c2c02780"
+    sha256                               arm64_tahoe:   "480bc838809caf811a24c3f03d25bf80131f880e96d3b3bf6a10836bfccd1089"
+    sha256                               arm64_sequoia: "12b957252303fd3fa84428211c3110e88bfdc4871aaa1ba0d213e39026cedb24"
+    sha256                               arm64_sonoma:  "42a67fbacbf24e789c89f090aa90a6be294c6a9a0f5f9868f0fdee29d4ed0265"
+    sha256                               sonoma:        "a220e7333847b488c39e61a02bb97215a1ed864ed1f1e3f37fb5b3cf50b2315d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "baf956741c6b61f623b6b6cc2597bd7b22e571dc5ee274e7ce1465db2a70cb22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb70a9e95e67eeb46420dbeb0873d9935d057ad61d26fb4525f4050afcfc5943"
   end
 
   depends_on "pkgconf" => :build
@@ -40,11 +40,7 @@ class Appium < Formula
     ENV["APPIUM_SKIP_CHROMEDRIVER_INSTALL"] = "1"
     ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
 
-    resources.each do |r|
-      system "npm", "install", *std_npm_args(prefix: false), r.cached_download
-    end
-
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args(ignore_scripts: false), *resources.map(&:cached_download)
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
     # Remove prebuilts which still get installed as optional dependencies

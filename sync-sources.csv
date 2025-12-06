@@ -2594,6 +2594,7 @@ Homebrew-homebrew-core/Formula/g/go@1.22.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go@1.23.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go@1.24.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/goaccess.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/goat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/goawk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gobackup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gobject-introspection.rb, Homebrew/homebrew-core, 0
@@ -7071,6 +7072,7 @@ Homebrew-homebrew-core/Formula/t/terminator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termrec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termscp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termshark.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/termshot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termsvg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tern.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/terracognita.rb, Homebrew/homebrew-core, 1

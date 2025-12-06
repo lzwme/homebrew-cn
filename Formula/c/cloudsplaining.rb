@@ -6,16 +6,16 @@ class Cloudsplaining < Formula
   url "https://files.pythonhosted.org/packages/d1/64/ba28b9b1854a40bcaae318da0e0fe147bd25999e496a8382a5a67c463db1/cloudsplaining-0.8.2.tar.gz"
   sha256 "733085a7648e45714a24e629d05d3dfd592d2925b21fe001c19f55a6d6c1581a"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/salesforce/cloudsplaining.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "b029c54550a9c69b7d18214faad6276c3a717c66e00aaa038288a86b4e6b3693"
-    sha256 cellar: :any,                 arm64_sequoia: "66f00293ed3edd39ad132ca5742c804ecd3a702ec77e716d962db936d117bdf3"
-    sha256 cellar: :any,                 arm64_sonoma:  "fb0b9ee33848dc1be4541ef3bce0de0449a899ae227e80fc8ead297ec62e9204"
-    sha256 cellar: :any,                 sonoma:        "4cdce525a9d48bf240fceb6c904654d8883e7a6165e9e377f1674105b9596430"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8aa4fe725c6e96f20396dd8f147cb5bb686e643bdc8cfcb6b2afbbc104cd82fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "153a121eb5c89605f357fda4fd5ded4a3454ee91cd6ae82d1ceb50aebc2a913c"
+    sha256 cellar: :any,                 arm64_tahoe:   "f54e182a3a0780702507e17a54cecaadb169b5a7c62db07ba802cdfa0e0ad762"
+    sha256 cellar: :any,                 arm64_sequoia: "db5f4123104544b148c4737fada2f9b3ae5b26b890e27ba5e26b4b37625b870a"
+    sha256 cellar: :any,                 arm64_sonoma:  "d3a94a8d37f2c737fc430c5d22ac883f0d5f2b99a3ae75b20286e3b25afb44de"
+    sha256 cellar: :any,                 sonoma:        "ca88e6ac80c69504e50f56f537a089312a6c3461720f7f591509d8b4ed647171"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a559ca266cf585b900467f44e1eacc9f3bc1d5b71e45db852ba53e73ca62376d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cb9933d28223be6d184c463477d3bbde516a1ad48d43dde0f1c78049b6e43b1"
   end
 
   depends_on "rust" => :build # for orjson
@@ -26,18 +26,18 @@ class Cloudsplaining < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/77/e9/df2358efd7659577435e2177bfa69cba6c33216681af51a707193dec162a/beautifulsoup4-4.14.2.tar.gz"
-    sha256 "2a98ab9f944a11acee9cc848508ec28d9228abfd522ef0fad6a02a72e0ded69e"
+    url "https://files.pythonhosted.org/packages/c3/b0/1c6a16426d389813b48d95e26898aff79abbde42ad353958ad95cc8c9b21/beautifulsoup4-4.14.3.tar.gz"
+    sha256 "6292b1c5186d356bba669ef9f7f051757099565ad9ada5dd630bd9de5fa7fb86"
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/70/02/d3ee174681961dc2ebfe81f326e1b5e1ba338b7ff939e1e94eef76e7c65a/boto3-1.40.51.tar.gz"
-    sha256 "ed1b7750df07b2f2ece0141ff2ed0489db2ec2b5311a956d00a496b05fd4fadb"
+    url "https://files.pythonhosted.org/packages/f3/31/246916eec4fc5ff7bebf7e75caf47ee4d72b37d4120b6943e3460956e618/boto3-1.42.4.tar.gz"
+    sha256 "65f0d98a3786ec729ba9b5f70448895b2d1d1f27949aa7af5cb4f39da341bbc4"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/ca/33/9e197d872adf1eadf8ecc259d0f451143326ff044d236b8971ff8bf980ee/botocore-1.40.51.tar.gz"
-    sha256 "a06de20408c3009e59e8f161a1146f1801d279d0923ab950349154900951bb20"
+    url "https://files.pythonhosted.org/packages/5c/b7/dec048c124619b2702b5236c5fc9d8e5b0a87013529e9245dc49aaaf31ff/botocore-1.42.4.tar.gz"
+    sha256 "d4816023492b987a804f693c2d76fb751fdc8755d49933106d69e2489c4c0f98"
   end
 
   resource "cached-property" do
@@ -46,13 +46,13 @@ class Cloudsplaining < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "click-option-group" do
@@ -76,8 +76,8 @@ class Cloudsplaining < Formula
   end
 
   resource "markdown" do
-    url "https://files.pythonhosted.org/packages/8d/37/02347f6d6d8279247a5837082ebc26fc0d5aaeaf75aa013fcbb433c777ab/markdown-3.9.tar.gz"
-    sha256 "d2900fe1782bd33bdbbd56859defef70c2e78fc46668f8eb9df3128138f2cb6a"
+    url "https://files.pythonhosted.org/packages/7d/ab/7dd27d9d863b3376fcf23a5a13cb5d024aed1db46f963f1b5735ae43b3be/markdown-3.10.tar.gz"
+    sha256 "37062d4f2aa4b2b6b32aefb80faa300f82cc790cb949a35b8caede34f2b68c0e"
   end
 
   resource "markupsafe" do
@@ -86,13 +86,13 @@ class Cloudsplaining < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/be/4d/8df5f83256a809c22c4d6792ce8d43bb503be0fb7a8e4da9025754b09658/orjson-3.11.3.tar.gz"
-    sha256 "1c0603b1d2ffcd43a411d64797a19556ef76958aef1c182f22dc30860152a98a"
+    url "https://files.pythonhosted.org/packages/c6/fe/ed708782d6709cc60eb4c2d8a361a440661f74134675c72990f2c48c785f/orjson-3.11.4.tar.gz"
+    sha256 "39485f4ab4c9b30a3943cfe99e1a213c4776fb69e8abd68f66b83d5a0b0fdc6d"
   end
 
   resource "policy-sentry" do
-    url "https://files.pythonhosted.org/packages/2c/62/5ef0720302fff4a3b194c99ee7c6570a7b8086589588f2d5aab352deee35/policy_sentry-0.14.1.tar.gz"
-    sha256 "dda37098a5e8038c5d8a0e6b4e644736cd3cfec167b53007604dd92f8a20ea97"
+    url "https://files.pythonhosted.org/packages/2f/88/2ae4e253775a6b20766e49d9f4552a73d559d0815cf4d8789f3144241c66/policy_sentry-0.14.2.tar.gz"
+    sha256 "a6c3d86a449cb4a40c149f2a0241fe0101da594e42f63a20a895f1322a07b708"
   end
 
   resource "python-dateutil" do
@@ -111,8 +111,8 @@ class Cloudsplaining < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/62/74/8d69dcb7a9efe8baa2046891735e5dfe433ad558ae23d9e3c14c633d1d58/s3transfer-0.14.0.tar.gz"
-    sha256 "eff12264e7c8b4985074ccce27a3b38a485bb7f7422cc8046fee9be4983e4125"
+    url "https://files.pythonhosted.org/packages/05/04/74127fc843314818edfa81b5540e26dd537353b123a4edc563109d8f17dd/s3transfer-0.16.0.tar.gz"
+    sha256 "8e990f13268025792229cd52fa10cb7163744bf56e719e0b9cb925ab79abf920"
   end
 
   resource "schema" do
@@ -136,8 +136,8 @@ class Cloudsplaining < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

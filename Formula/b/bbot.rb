@@ -6,16 +6,15 @@ class Bbot < Formula
   url "https://files.pythonhosted.org/packages/1a/09/df14cf3ff1043e0ffd8dfb64c8bf70b8c7ac59c19cf90be58ccd4c1f829c/bbot-2.7.2.tar.gz"
   sha256 "be929ecc6d67255c501384228dff1f79e4450f8863cbdf07ce75435cbf8c0641"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "809f15fe693725fe73f088dea1e4214373d230085a9a0c32fa813006767cbfdf"
-    sha256 cellar: :any,                 arm64_sequoia: "8731041f849bcaef58c80b57105af6a0d0e950dc566ddad1a725215ca6ba34dc"
-    sha256 cellar: :any,                 arm64_sonoma:  "334b994ba0db1f462be4fe4e5e72d4330d776c18e78fb9cd9f9b035c461b6bad"
-    sha256 cellar: :any,                 sonoma:        "42fb8b77383edf7c848944e0136e221a2281b216e7bb9f1328c3ec657c691ccf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6bcbe54f7c349266ca9d8abdce61ce2d291cae2adb600f6884e0273240edf2f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56d35ed832f28db445a26ed43fcf2596c1be1b33d7d4219f215d31ee525bde3c"
+    sha256 cellar: :any,                 arm64_tahoe:   "eb338975167c30b80eee995baaa14cdf4ca17ce9e9df62cea08ba70402e60012"
+    sha256 cellar: :any,                 arm64_sequoia: "c137936c3d53bb8304442c3f001f0afbe440fb60dbb29f0c50d365ded69ce8b1"
+    sha256 cellar: :any,                 arm64_sonoma:  "0878fe5d5a39aa95b7ae37fca6babcceeebde81cc999e970ebf10f38a50011bf"
+    sha256 cellar: :any,                 sonoma:        "5e393a7e7df64226d69b839a0765a370b4cca32c7a156259d931ff75c13d0bea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad522509e0cd8700f41bbe9bb62f335068365830bcf6afa7f3ab5a109acb018a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "167e39d20af3cc73bd88efc413abc3949217d632921ea7fd612a48b2450a832a"
   end
 
   depends_on "cmake" => :build
@@ -52,18 +51,18 @@ class Bbot < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/77/e9/df2358efd7659577435e2177bfa69cba6c33216681af51a707193dec162a/beautifulsoup4-4.14.2.tar.gz"
-    sha256 "2a98ab9f944a11acee9cc848508ec28d9228abfd522ef0fad6a02a72e0ded69e"
+    url "https://files.pythonhosted.org/packages/c3/b0/1c6a16426d389813b48d95e26898aff79abbde42ad353958ad95cc8c9b21/beautifulsoup4-4.14.3.tar.gz"
+    sha256 "6292b1c5186d356bba669ef9f7f051757099565ad9ada5dd630bd9de5fa7fb86"
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/cc/7e/b975b5814bd36faf009faebe22c1072a1fa1168db34d285ef0ba071ad78c/cachetools-6.2.1.tar.gz"
-    sha256 "3f391e4bd8f8bf0931169baf7456cc822705f4e2a31f840d218f445b9a854201"
+    url "https://files.pythonhosted.org/packages/fb/44/ca1675be2a83aeee1886ab745b28cda92093066590233cc501890eb8417a/cachetools-6.2.2.tar.gz"
+    sha256 "8e6d266b25e539df852251cfd6f990b4bc3a141db73b939058d809ebd2590fc6"
   end
 
   resource "charset-normalizer" do
@@ -231,11 +230,6 @@ class Bbot < Formula
     sha256 "bc2bc917691c1537d5b9bca1468437176809c7e11e5694ca79a9ca12345dcb9e"
   end
 
-  resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
-    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
-  end
-
   resource "socksio" do
     url "https://files.pythonhosted.org/packages/f8/5c/48a7d9495be3d1c651198fd99dbb6ce190e2274d0f28b9051307bdec6b85/socksio-1.0.0.tar.gz"
     sha256 "f88beb3da5b5c38b9890469de67d0cb0f9d494b78b106ca1845f96c10b91c4ac"
@@ -268,8 +262,8 @@ class Bbot < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "websockets" do

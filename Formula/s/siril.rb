@@ -1,10 +1,9 @@
 class Siril < Formula
   desc "Astronomical image processing tool"
   homepage "https://www.siril.org"
-  url "https://free-astro.org/download/siril-1.2.6.tar.bz2"
-  sha256 "312f82e78599f796d163a6d1c90589df1ed920b9ff2bb7ab5b808e43872817fa"
+  url "https://free-astro.org/download/siril-1.4.0.tar.bz2"
+  sha256 "439def7c40ad783afb82e87f3c656d85b449c701f67ab0a9b97ca372ea2d73c9"
   license "GPL-3.0-or-later"
-  revision 3
   head "https://gitlab.com/free-astro/siril.git", branch: "master"
 
   livecheck do
@@ -13,14 +12,12 @@ class Siril < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "08563c86ad8444f9f5bb08aa418380342448b6ff62dc37f62f2dae5ae2ca2d8f"
-    sha256 arm64_sequoia: "056cc668684cab712e919c26b6817f59069fc10c607f88ee7d76e0725e19604e"
-    sha256 arm64_sonoma:  "e56ba213d399b3e1ac714a78c9d710f0cd49ea9245dd3d25f667f88db5c0dad5"
-    sha256 arm64_ventura: "a71c1f6a8798b1bdaf26d88d0f9e8bde62603c933859e9e8f34d5c69e1b7a452"
-    sha256 sonoma:        "852c1a015a8472d91394191923c377832c02b5cfb30f3695d0979a3702b143b1"
-    sha256 ventura:       "10d755c99a9eec1368ce76aac5905305dadf1666634c5c66e20b5d3676fdab9b"
-    sha256 arm64_linux:   "9bcaacd18e1113c6ca812d872246ac81e398e1a6ce8c3e2490278b005feb7451"
-    sha256 x86_64_linux:  "d96875e709864a5af01a2af6605ecccb944c41e567d8a9c4b7e54cc7858399b0"
+    sha256 arm64_tahoe:   "a586c6d301c2872fe79ef4f0c93fa7dd2c0f83c471cc65131ddb5b6c117470a3"
+    sha256 arm64_sequoia: "58c649ed00f6bab3b3c2b5ca9c60ecfd77ad6ad8df821f27a2a3d660d32cad24"
+    sha256 arm64_sonoma:  "00bdd82a57abc899d296315e4cfcd6f812528d3cda7481408be53a7e2f0855d8"
+    sha256 sonoma:        "7da2c7b65b92601989716f10591cae1946d6533723ebbbe82edc5605fa45b1e4"
+    sha256 arm64_linux:   "8b4c6657321e6c9e174ceabcb7c40a0c960360d35dc587fbba0a463760788b19"
+    sha256 x86_64_linux:  "0e708367951e48233c1f79bbba574648a4bde8e3898d655ff496b6ad556437e0"
   end
 
   depends_on "cmake" => :build
@@ -28,7 +25,6 @@ class Siril < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
 
-  depends_on "adwaita-icon-theme"
   depends_on "cairo"
   depends_on "cfitsio"
   depends_on "exiv2"
@@ -40,29 +36,37 @@ class Siril < Formula
   depends_on "gnuplot"
   depends_on "gsl"
   depends_on "gtk+3"
+  depends_on "gtksourceview4"
+  depends_on "healpix"
   depends_on "jpeg-turbo"
+  depends_on "jpeg-xl"
   depends_on "json-glib"
+  depends_on "libgit2"
   depends_on "libheif"
   depends_on "libpng"
   depends_on "libraw"
   depends_on "librsvg"
   depends_on "libtiff"
+  depends_on "little-cms2"
   depends_on "netpbm"
   depends_on "opencv"
   depends_on "pango"
   depends_on "wcslib"
+  depends_on "yyjson"
 
   uses_from_macos "perl" => :build
+  uses_from_macos "curl"
 
   on_macos do
     depends_on "gettext"
-    depends_on "gtk-mac-integration"
     depends_on "libomp"
   end
 
   def install
     args = %w[
       --force-fallback-for=kplot
+      -DlibXISF=false
+      -Dcriterion=false
     ]
 
     system "meson", "setup", "_build", *args, *std_meson_args

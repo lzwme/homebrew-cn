@@ -6,15 +6,15 @@ class B4 < Formula
   url "https://files.pythonhosted.org/packages/70/99/2b34c8451ad6599090f7d9045adb9f19270c2ed8cef4d52c179b297f8e37/b4-0.14.3.tar.gz"
   sha256 "31a4927b8dfbb5c97edfc9569cda3b6737bbfd8430881e8cc48a0b088ced6147"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "5d861848f90bd4f1953944a09bfc7d37e0eaf1ae6dac84acdfaee2578ec97f57"
-    sha256 cellar: :any,                 arm64_sequoia: "638ed304654795652f41c9e72597cce6558d6f1eb6f30c29f6bc347621267cb0"
-    sha256 cellar: :any,                 arm64_sonoma:  "392952a0c0aff0de08ba6983baaff5cade7b9c21dd90a3b9bb235d999acecabd"
-    sha256 cellar: :any,                 sonoma:        "c1638b4b15315711fd1ed98dcce28c66d81e8de9fb56b75bd3950ac9a81e208b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "00cc2ec03823c39977cb962f06634b3305dae835ba96609d60bc0aac220cbc68"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f99ab2316852426903e49e93d05f6df992d1e5d786d4f340da5e49218003ba38"
+    sha256 cellar: :any,                 arm64_tahoe:   "7c810ce1526093844fa9a0af8996696801cc319107cf78e325b6bb1466db7431"
+    sha256 cellar: :any,                 arm64_sequoia: "8bf6c65b1fa408e8f3616f2a143f81830693a089babbbb4f0be6cfdafb98d5c1"
+    sha256 cellar: :any,                 arm64_sonoma:  "9c78e6b21f7c09f4894c52c3b5f636692af8e19daae9023cf770f9656929361b"
+    sha256 cellar: :any,                 sonoma:        "50d0fb0c91c428cc7614e929e2a5f78aeedbb7731b69645c47f709364386c15e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "075ecdb3b53423ea74bcd61457b0f1cbef80c97eb0ddbd397425920530ac8e9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fe6778158e30f2a36de4ad0e0ead5ff1374d30e7913d19138d1273ead7f8456"
   end
 
   depends_on "certifi" => :no_linkage
@@ -55,8 +55,8 @@ class B4 < Formula
   end
 
   resource "pynacl" do
-    url "https://files.pythonhosted.org/packages/06/c6/a3124dee667a423f2c637cfd262a54d67d8ccf3e160f3c50f622a85b7723/pynacl-1.6.0.tar.gz"
-    sha256 "cb36deafe6e2bce3b286e5d1f3e1c246e0ccdb8808ddb4550bb2792f2df298f2"
+    url "https://files.pythonhosted.org/packages/b2/46/aeca065d227e2265125aea590c9c47fbf5786128c9400ee0eb7c88931f06/pynacl-1.6.1.tar.gz"
+    sha256 "8d361dac0309f2b6ad33b349a56cd163c98430d409fa503b10b70b3ad66eaa1d"
   end
 
   resource "requests" do
@@ -65,8 +65,8 @@ class B4 < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

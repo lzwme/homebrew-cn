@@ -6,16 +6,16 @@ class Buku < Formula
   url "https://files.pythonhosted.org/packages/a0/74/a3ecd735d75fc452fa4c6a995141cda20937e21d30ae9810d70ed159f58d/buku-5.0.tar.gz"
   sha256 "895a86b099adfe420c1925f333ce6cb00b851a6f11bcc7e42fb125fa81cae8b2"
   license "GPL-3.0-or-later"
-  revision 3
+  revision 4
   head "https://github.com/jarun/buku.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "113b09a09c7da2e22deaaaeff852186a003ab6dcbe9d55ddbf279b211381cf3b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "41b88c62343692c549e803bc909314adef28ca52ad15be953883b8d738e2f228"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc02f8a4bd3ffa739b4759ccc7f774d021fe51ceea9c3ac277b527ec93d5f3f9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aafe4fa1012674dcc4646321fcc1267234737d60900387d84e76480b8a942b54"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da3e86931726758f9522216064976e9ec232c48706ad4da1d690e1b10d538f5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92419766c6a9c6d27492e6d2dd4efa3efb5f9575e6012fbefd0eca7a9cb81071"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "20289e36126b10e92f6841166f7149aeba62ed579477d880cef08adb97b24f36"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c81b8a4e7f8d1ea2090b1c26367fc8e5ba615efbc11c7749a1038da09252cd0e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e5c708feb1a8c791d6bc1779298d3cf965ceeec6951fae2aa3882b8e3dfec72"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ef5836a0c1b02094311cf409142916755afe73ce418a6200e4995e5f45e26b78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "21d6a85c5d3b2f7243e64501c7922f63ef1fa73fcb2a57a61494b5a38f552ff6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "160b2d59782802a8e1a8a3a1fd4c0a1990c01a12d965babfefec566f54d044bd"
   end
 
   depends_on "certifi" => :no_linkage
@@ -120,8 +120,8 @@ class Buku < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "webencodings" do

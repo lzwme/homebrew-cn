@@ -11,12 +11,13 @@ class NodeAT24 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "465a315595fdea5ea65d902f2b49f1070f9345e4df4d659beed53f372f02d35d"
-    sha256 arm64_sequoia: "8bf4c79c52935840824c4d6162e31b5d63fe054faa1587a8c79c6a29e324c807"
-    sha256 arm64_sonoma:  "e191898a445e6c62ab07b63fc61a1a7c3896f1ea088278977233a53bb65674a2"
-    sha256 sonoma:        "5555b0d1f2411cd9ab50c0dba6db82e2bbc8d83baf99dc9c75c397836a83fea7"
-    sha256 arm64_linux:   "5dafff5d5d767cdce16e1145e510a53b3f372ea876960d7a8a00a504ff6273d6"
-    sha256 x86_64_linux:  "b968001fa59ea38d9e456299ca87d0b7b1f6b5e4ce3e5be85602c6756146ad49"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "1de6db6089defc2be8a2bf78f18a912ddcd2dbc29aa462bb6ab2d8eae79196ed"
+    sha256 cellar: :any,                 arm64_sequoia: "26fbc261005760e2926470638b1f193c7d01e4cdc27d6f1be20b0579eeadb17f"
+    sha256 cellar: :any,                 arm64_sonoma:  "330ed07f6a653e68f0e28aea73e5058a797c0b1b5c7eaa6f7059e3876f0685eb"
+    sha256 cellar: :any,                 sonoma:        "83e2050820cee83cbf271a05e6e9ca897ff87766016c8583934070648d895053"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d053019f0e6c60ec70a747787f350fe4f28a247658a7f206196626e932d307f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ff88048e8c1d3f09025f0bd99a60e6cddbdcb59b664c52edcb891ad9886f652"
   end
 
   keg_only :versioned_formula
@@ -72,6 +73,7 @@ class NodeAT24 < Formula
     args = %W[
       --prefix=#{prefix}
       --with-intl=system-icu
+      --shared
       --shared-brotli
       --shared-cares
       --shared-libuv

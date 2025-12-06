@@ -6,10 +6,11 @@ class Borgmatic < Formula
   url "https://files.pythonhosted.org/packages/40/70/b26cc8f0847d53fc7ad8f6b72dee5159d55fa613f19c336bcb2dabd123c9/borgmatic-2.0.12.tar.gz"
   sha256 "cf62ce8fb356d52d42ea14ac69e04a5d89ebc12d17b2438af6277021f880f43a"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://projects.torsion.org/borgmatic-collective/borgmatic.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ec97fb8b8d36ea0c67c1a632ffde6b0e9248e0772eb4da254499ea2180551fb9"
+    sha256 cellar: :any_skip_relocation, all: "f901053f3963c6aef67dd1b6c1ed55dffb76f7d90ccfa3c9164d1da192eae6f1"
   end
 
   depends_on "certifi" => :no_linkage
@@ -64,8 +65,8 @@ class Borgmatic < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

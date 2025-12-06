@@ -8,14 +8,13 @@ class Ghq < Formula
   head "https://github.com/x-motemen/ghq.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee5dc3cbfb9dc4f6aeabc48cd24c409a4cffdf40214a1a1dadb5156cfa01d6dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61ed7547b8fabaf98f3bbe6ead97b55ed0a2deec76dd351f127991fed7bbc17d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57733c2392c8bc80d25c6abdb833acaa4533af364d4963873be10a9bfd015024"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b88234cbd7b21868771ba3fef32e5e4cc242f0b013058429b19b6c335647dabb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "89215db2a9bea5178e8d7bee42cad3b557059d140784abfdd3057c9a897fafff"
-    sha256 cellar: :any_skip_relocation, ventura:       "73dfd5ddd4e3b8737909f75b4f6bada8f6a6091f05f9439a7f67fad4d58c3218"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b353deded13d375f2371ed2502374b0d8988d6cc7fbfe27bca42739f835c260e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3dac75f68bbed3f26829ca76a00323cc966e23ac8b59680da64a09244d086563"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9450da5cf189567a538d0f1f4de3e6712956481673f5938ee8ffd68fab6bf9bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbede11861022d26b16bcd7fe1582ac105949823f816c80630ccc1cd89643257"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e09d181823233e866a586656a0712c9e353f212b90ca01c83d413efa49bddf9d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5950bbb06ad0a7ce292f048f96db4800e9cb6c6a1c9d3606d5456eed14e3f7e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "04b384e83c4c94b5242ef0df0e612ec2007527e3bd85dfa0fd2f2776e1888b06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a0103811f16487909de79160172cb13679632728a8b88078bdcfe52fd272726"
   end
 
   depends_on "go" => :build
@@ -25,6 +24,7 @@ class Ghq < Formula
     bin.install "ghq"
     bash_completion.install "misc/bash/_ghq" => "ghq"
     zsh_completion.install "misc/zsh/_ghq"
+    fish_completion.install "misc/fish/ghq.fish"
   end
 
   test do

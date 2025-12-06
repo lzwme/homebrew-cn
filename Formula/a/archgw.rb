@@ -6,14 +6,15 @@ class Archgw < Formula
   url "https://files.pythonhosted.org/packages/57/41/b5d306bd0e55840718507d5dc5ad95565f1ba96d8d10a71d01fc904ffbc2/archgw-0.3.21.tar.gz"
   sha256 "b351ec7ef228d6cb673f26dd21b3ccb7792190b4f00a9749d85d1329dd7c9958"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4c94b95a5b3cd1160ca8b4f4436d18ff53e020bb0141bec6590ceced711baf4a"
-    sha256 cellar: :any,                 arm64_sequoia: "479d27a3ed02575c299d98e0805273d30e07a300dead71ffd3849f7b58eb749b"
-    sha256 cellar: :any,                 arm64_sonoma:  "10dff3d75d6c848f36ed0e0ba71b875b9c18828318b9145a788e715b10484765"
-    sha256 cellar: :any,                 sonoma:        "f5cd22cfd2bb45c098f050f531551a2e82a1670978e993f9e4253a6178e1afdd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d273b52c576f23a26ca1269d7f19b91311f7b116a92d726e3db5673964eee0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15b3f8089b3bec185a489894f5bead12a552c23c8c81b0c3978e6da6c1176ebb"
+    sha256 cellar: :any,                 arm64_tahoe:   "6cf2e57e4066834a1c73eb10da9b9ae310a5aba20af98285d39c090d731aa777"
+    sha256 cellar: :any,                 arm64_sequoia: "0c9ba1b93b1d63347f1a205d9da6c68d03345764d8932cdbea103616f9453be9"
+    sha256 cellar: :any,                 arm64_sonoma:  "15fa93fbb395991aae9e602b151fc0658feadf91cac3ab6a8f61ed8c6c2b3a4e"
+    sha256 cellar: :any,                 sonoma:        "9acaade15f97040323f0997a587536feb26d5bab4cd49c9d09ec881a4ea7cc70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f2d3cbad7896825511b147bd1f775394246a7f41053f579c8286ddfe2998a67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85f0966ea6bd045a1cd9f86d1f7cb1a4c7b532f9eb5336b4e1e2ef1ef3fd5d4b"
   end
 
   depends_on "certifi" => :no_linkage
@@ -79,8 +80,8 @@ class Archgw < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

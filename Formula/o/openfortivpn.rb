@@ -1,20 +1,18 @@
 class Openfortivpn < Formula
   desc "Open Fortinet client for PPP+TLS VPN tunnel services"
   homepage "https://github.com/adrienverge/openfortivpn"
-  url "https://ghfast.top/https://github.com/adrienverge/openfortivpn/archive/refs/tags/v1.23.1.tar.gz"
-  sha256 "ecacfc7f18d87f4ff503198177e51a83316b59b4646f31caa8140fdbfaa40389"
+  url "https://ghfast.top/https://github.com/adrienverge/openfortivpn/archive/refs/tags/v1.24.0.tar.gz"
+  sha256 "d283cab457c326b7b841c707a67b8468be097b732d9a13ea7fe8ad8ef120a3cc"
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
   head "https://github.com/adrienverge/openfortivpn.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "683a43f9d6a35ecce0989ac17cb45c1d96fd1d227410fa3c1d99d9a99e210001"
-    sha256 arm64_sequoia: "1ae366135c78e77a61e53bc6c8c05b5517f715f64b580ee20c7f380e4772b483"
-    sha256 arm64_sonoma:  "28994d4959537dbfe5702aed1d16e7c09096e6957b5640f3b89da6669deecefe"
-    sha256 arm64_ventura: "39bd9a1bd6b7a26eb5a10a4bbd2a3ed9d50b72aa1b80d64fffe95430734a36d8"
-    sha256 sonoma:        "638d300356138d5dfb66500e01e71b2e07d7fdfbf6151cf4b3d389db04744c33"
-    sha256 ventura:       "b3c8630701ae6d1ee308c0e4e72885e296d59bd83fec77eb21d7046e3c6a50fe"
-    sha256 arm64_linux:   "9803841bf3a552d2220d7a213b6337cbae3cdb6759632105aa5c98bedaeeee51"
-    sha256 x86_64_linux:  "9182218ccc8af0571af8445f8458843d61056e6186407293707c2d27f2e88903"
+    sha256 arm64_tahoe:   "ce4bd2e78dc43a92294bad4397404c40cf70f9646e0a9c6f308323126a3b8c58"
+    sha256 arm64_sequoia: "c4dc07311411d56783da5b1fe2ef485dc503e1de5672e2dd85bbdc410b0a082d"
+    sha256 arm64_sonoma:  "e3f005ffd8380e273bcbbaf39bea90eee5a42e64183dc0bbb1011626efea23ff"
+    sha256 sonoma:        "ea8fa84204a9f171f3fd9e7f55717e50fd498ca6afa8d972785faddbd8b157ab"
+    sha256 arm64_linux:   "f9462bfdac99e49a55901959892ab797b8f000eded55c12002bfb18403e9182b"
+    sha256 x86_64_linux:  "02c02057b1eb8aad17f6729b999950af20a18e3217f5cc76071eedc680a4655e"
   end
 
   depends_on "autoconf" => :build

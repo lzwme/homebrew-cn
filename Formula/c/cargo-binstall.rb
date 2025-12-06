@@ -1,8 +1,8 @@
 class CargoBinstall < Formula
   desc "Binary installation for rust projects"
   homepage "https://github.com/cargo-bins/cargo-binstall"
-  url "https://ghfast.top/https://github.com/cargo-bins/cargo-binstall/archive/refs/tags/v1.16.2.tar.gz"
-  sha256 "56d16d7b033b851a7eb729f6ba8fc2e821581687db896fdc483b503a7909ffa1"
+  url "https://ghfast.top/https://github.com/cargo-bins/cargo-binstall/archive/refs/tags/v1.16.3.tar.gz"
+  sha256 "48fae7e8b02167913a46b4184034ce48a0772b0e08aefda11539e2ac83c719a3"
   license "GPL-3.0-only"
   head "https://github.com/cargo-bins/cargo-binstall.git", branch: "main"
 
@@ -15,12 +15,12 @@ class CargoBinstall < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fec801e1357199b5b78d32996a60a5491396b5fea7120ace79ca0b60f7a4d443"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "411f494cff251c6fa2901e72cd25fe652ed047d398052a02c3c20232c662af78"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29137adefef09c98ab592ac82d765a196404813eaed037ef5843d84b292c95eb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "36f764f05540bafb449a7ca8206bfa7e1562a1fcf1c128750afb608ecf7340ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b5d0cbb04252500264fd55034b006b28aebeb4b82dcab2ec116422b0d21ab2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ccf2febe5423175aa27c605a99e9283d8218a82b5db32b71196b9ac6778df2c4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6578c070163db168af7e95ab08eef1d71a31649724bbc2f6448fda9634fa733f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b365cd597999b5171ebf5364346476abf17438ef249705cbd3dc2d0f41e4412"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8fa015efbb1810f7071ec04023c60819dbd501e92c14e75432bbcf4e9b3aa72"
+    sha256 cellar: :any_skip_relocation, sonoma:        "da8b2f380f549ce645587e7fc0c8284a724662069113ad642c62d8975f56ce42"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c3566e7d2cecabd5f89ba7c2c97465c544b2250eace5241c4038e050b042fdc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69efe60776d1c93f35a78375499db8f3170e8b81353ceddb9f66fa098c3f0a14"
   end
 
   depends_on "rust" => :build

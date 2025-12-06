@@ -6,6 +6,7 @@ class Checkov < Formula
   url "https://files.pythonhosted.org/packages/fd/dc/9ccea7e63dfc18c5ef88038da842904f30c9492efb490c63056860087e19/checkov-3.2.490.tar.gz"
   sha256 "6ddc4ed1923a6f9ed6cd34fedc18cac095b1d5f3ac24b9c4c3a8abc3b0cae954"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://pypi.org/rss/project/checkov/releases.xml"
@@ -17,13 +18,12 @@ class Checkov < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "b822217866300d915d100c6b310a0ada5772693b1f1125973b56a091866f2683"
-    sha256 cellar: :any,                 arm64_sequoia: "053b056dcd86628a0329fe40147873105d1bdb057c6e4501905d5fdfdb9b4fbc"
-    sha256 cellar: :any,                 arm64_sonoma:  "b2a4e25a281a8385d3e4799c70ccbea609181dc62d5c7871d9e6e66bb5b12cc0"
-    sha256 cellar: :any,                 sonoma:        "66385102a013b0e7695e6341d86cad87ee10f655069118b1f8fd8ef972b807f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b41fd35bac744afcbea001f11077b6a2c8f6e62fde00b4c762d66ca9cfe23519"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac91c991ab3d00eee1db1421708a3c09f19f9dcab89c86f3ad183e6ae933dd11"
+    sha256 cellar: :any,                 arm64_tahoe:   "b37763d3433b36081acea941b73b51883e44e13acbc57bcf33dc54336c3d0f56"
+    sha256 cellar: :any,                 arm64_sequoia: "a777e752827ed011db0f5332276694b2a44768058b1f812fd6b1163e0c1e7501"
+    sha256 cellar: :any,                 arm64_sonoma:  "e474caece58f88490ba67b95742cc8d7f92813ee9e4e4c6fa0e581dfa29d30fa"
+    sha256 cellar: :any,                 sonoma:        "6bc939045bb3bd05a7454637b7ec9045b220dff8ccb39990997b8b8f4c1fa101"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "740b3090a063533d93e3442494b174f6b38cc272b6fef22429487897de706ff3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d22806b76857e90a8d48b06ed4dcbb740a0af2b49260c27bf1f723ea7e3771d1"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -40,8 +40,8 @@ class Checkov < Formula
   pypi_packages exclude_packages: %w[certifi numpy pydantic rpds-py]
 
   resource "aiodns" do
-    url "https://files.pythonhosted.org/packages/17/0a/163e5260cecc12de6abc259d158d9da3b8ec062ab863107dcdb1166cdcef/aiodns-3.5.0.tar.gz"
-    sha256 "11264edbab51896ecf546c18eb0dd56dff0428c6aa6d2cd87e643e07300eb310"
+    url "https://files.pythonhosted.org/packages/e6/11/238e97cbf5c1c0f725d590a092e0618dcdc50f44dbd1e2a926fae27e6f06/aiodns-3.6.0.tar.gz"
+    sha256 "9b0ef54339e6687cdbd39a7d73d7de2467cb5c115281da28f2598f058633dac8"
   end
 
   resource "aiohappyeyeballs" do
@@ -95,13 +95,13 @@ class Checkov < Formula
   end
 
   resource "beartype" do
-    url "https://files.pythonhosted.org/packages/a6/09/9003e5662691056e0e8b2e6f57c799e71875fac0be0e785d8cb11557cd2a/beartype-0.22.5.tar.gz"
-    sha256 "516a9096cc77103c96153474fa35c3ebcd9d36bd2ec8d0e3a43307ced0fa6341"
+    url "https://files.pythonhosted.org/packages/8c/1d/794ae2acaa67c8b216d91d5919da2606c2bb14086849ffde7f5555f3a3a5/beartype-0.22.8.tar.gz"
+    sha256 "b19b21c9359722ee3f7cc433f063b3e13997b27ae8226551ea5062e621f61165"
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/77/e9/df2358efd7659577435e2177bfa69cba6c33216681af51a707193dec162a/beautifulsoup4-4.14.2.tar.gz"
-    sha256 "2a98ab9f944a11acee9cc848508ec28d9228abfd522ef0fad6a02a72e0ded69e"
+    url "https://files.pythonhosted.org/packages/c3/b0/1c6a16426d389813b48d95e26898aff79abbde42ad353958ad95cc8c9b21/beautifulsoup4-4.14.3.tar.gz"
+    sha256 "6292b1c5186d356bba669ef9f7f051757099565ad9ada5dd630bd9de5fa7fb86"
   end
 
   resource "boolean-py" do
@@ -140,8 +140,8 @@ class Checkov < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "click-option-group" do
@@ -305,8 +305,8 @@ class Checkov < Formula
   end
 
   resource "prettytable" do
-    url "https://files.pythonhosted.org/packages/99/b1/85e18ac92afd08c533603e3393977b6bc1443043115a47bb094f3b98f94f/prettytable-3.16.0.tar.gz"
-    sha256 "3c64b31719d961bf69c9a7e03d0c1e477320906a98da63952bc6698d6164ff57"
+    url "https://files.pythonhosted.org/packages/79/45/b0847d88d6cfeb4413566738c8bbf1e1995fad3d42515327ff32cc1eb578/prettytable-3.17.0.tar.gz"
+    sha256 "59f2590776527f3c9e8cf9fe7b66dd215837cca96a9c39567414cbc632e8ddb0"
   end
 
   resource "propcache" do
@@ -350,8 +350,8 @@ class Checkov < Formula
   end
 
   resource "rdflib" do
-    url "https://files.pythonhosted.org/packages/18/ea/30bd9eb0d4a25dd0ab929153ed23698c907c6124389aa72eea5b7b703ab8/rdflib-7.4.0.tar.gz"
-    sha256 "c8ee16c31848c19c174aed96185327ea139ca3d392fac7fa882ddf5687f8f533"
+    url "https://files.pythonhosted.org/packages/ec/1b/4cd9a29841951371304828d13282e27a5f25993702c7c87dcb7e0604bd25/rdflib-7.5.0.tar.gz"
+    sha256 "663083443908b1830e567350d72e74d9948b310f827966358d76eebdc92bf592"
   end
 
   resource "referencing" do
@@ -440,8 +440,8 @@ class Checkov < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "wcwidth" do

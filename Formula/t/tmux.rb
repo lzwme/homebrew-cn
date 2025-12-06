@@ -1,8 +1,8 @@
 class Tmux < Formula
   desc "Terminal multiplexer"
   homepage "https://tmux.github.io/"
-  url "https://ghfast.top/https://github.com/tmux/tmux/releases/download/3.6/tmux-3.6.tar.gz"
-  sha256 "136db80cfbfba617a103401f52874e7c64927986b65b1b700350b6058ad69607"
+  url "https://ghfast.top/https://github.com/tmux/tmux/releases/download/3.6a/tmux-3.6a.tar.gz"
+  sha256 "b6d8d9c76585db8ef5fa00d4931902fa4b8cbe8166f528f44fc403961a3f3759"
   license "ISC"
 
   livecheck do
@@ -12,12 +12,12 @@ class Tmux < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "838ab4b9a210d21f675f305973182190e114923d0152654fad1ab14d41576383"
-    sha256 cellar: :any,                 arm64_sequoia: "85a363182b7f5399e5f1a95d77275c77d6621977d5bc9aaf00164f8110894ac0"
-    sha256 cellar: :any,                 arm64_sonoma:  "3ffa71900ea340a251822f2bd8ad079a12ea73aed913bebb1962ef7d65df75a7"
-    sha256 cellar: :any,                 sonoma:        "45816702ec8f9cd79af5f4208bb710c5649aaa4df413b831e2cb817c40f33b24"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2dcdc8b9aebe530d3de56e1853ac550a3895781e10e527681dbb746ce4bd3f41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "141896e0f6f8f80631065d41f07acce86593d42c931e5671f8788723d7f290b8"
+    sha256 cellar: :any,                 arm64_tahoe:   "36b24a92e268147bca7ef3e5df3a88affa06512d573e75f1cd1da28e724f4afd"
+    sha256 cellar: :any,                 arm64_sequoia: "9897a0d7b7e0159c1d09818d76e0ab88cc3fcdba8abd2bbbf349f84827ac87df"
+    sha256 cellar: :any,                 arm64_sonoma:  "089dc1f0f166cf72315528890052d4b9bc17cccce023a0449962a11098484300"
+    sha256 cellar: :any,                 sonoma:        "b0ca1f90384e487d2316bdcaef59ba4fdf63cb04fa561d424605f86935599563"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4d439bc36e2d3814323f14242249fb16b17bef657878ab2d407b3769822f55e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6b495ea4851f445eb947c60eb0fadaf87f872a0959b49b34303297d654bf81c"
   end
 
   head do

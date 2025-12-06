@@ -6,15 +6,15 @@ class Apprise < Formula
   url "https://files.pythonhosted.org/packages/60/16/e39338b8310af9466fab6f4482b542e24cb1fcbb7e36bf00c089c4e015e7/apprise-1.9.5.tar.gz"
   sha256 "8f3be318bb429c2017470e33928a2e313cbf7600fc74b8184782a37060db366a"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "b09464f2cd97606cd7ade6149ff5ee12c02d6813467bbe348c33ffff26e795ec"
-    sha256 cellar: :any,                 arm64_sequoia: "f2b365edd57773f103e68674a0b00c50f0778c0b5533124b5726f366b44554d2"
-    sha256 cellar: :any,                 arm64_sonoma:  "731ba916cf99f464ba07cd758c3e04ed7379294a1c4d8cc72720866024fc846b"
-    sha256 cellar: :any,                 sonoma:        "4a17373dab8009ff5df9533a22cbff84c7fd8cfea0fb2555889b4d8c9561cdb2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb69778718cf93a4451a7645b6b233360e49c20e82bedc1b6a54fc184644af0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53a79d91023be849d3cd9b00f17acc30eded33d92edb1af03dc2adc2c42acc65"
+    sha256 cellar: :any,                 arm64_tahoe:   "67406c9391ffc54b653f68d679c22c03b82fd6c68a0a52d7a4f64bea62de5a00"
+    sha256 cellar: :any,                 arm64_sequoia: "e1a43e4773019b53e36f462548e17543f9ebb518b12b5872f69026995ea3996a"
+    sha256 cellar: :any,                 arm64_sonoma:  "ba5a6b1492e2370f833aee287bd77d2dd47599a556935e6f1b77b8bf2014059c"
+    sha256 cellar: :any,                 sonoma:        "02290cbc3b5cc234d8e6dc07c5c3466724ddbadb109b3d05ae1dae7b4393298e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d78cf90de95d04b89bf4e6def4f6009c3b54054d28fb8764857d46e58af8ad0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25609f88ca9c4646f2408524a3d4504e8f44e387e2c68be3d3214a394e8131af"
   end
 
   depends_on "certifi"
@@ -24,23 +24,23 @@ class Apprise < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "markdown" do
-    url "https://files.pythonhosted.org/packages/8d/37/02347f6d6d8279247a5837082ebc26fc0d5aaeaf75aa013fcbb433c777ab/markdown-3.9.tar.gz"
-    sha256 "d2900fe1782bd33bdbbd56859defef70c2e78fc46668f8eb9df3128138f2cb6a"
+    url "https://files.pythonhosted.org/packages/7d/ab/7dd27d9d863b3376fcf23a5a13cb5d024aed1db46f963f1b5735ae43b3be/markdown-3.10.tar.gz"
+    sha256 "37062d4f2aa4b2b6b32aefb80faa300f82cc790cb949a35b8caede34f2b68c0e"
   end
 
   resource "oauthlib" do
@@ -64,8 +64,8 @@ class Apprise < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

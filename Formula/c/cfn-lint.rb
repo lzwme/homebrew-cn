@@ -6,14 +6,15 @@ class CfnLint < Formula
   url "https://files.pythonhosted.org/packages/c9/fb/8b244211d1af184b0d2d653a7552b1538187e3a9e5ff7222e70f4035d6de/cfn_lint-1.42.0.tar.gz"
   sha256 "0bd373d34451e396c14a95be03fe4bcba8d2c00b2a4c61697a04deaa79ab67ed"
   license "MIT-0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cde6f29960afdc7781e96768649cadcc72df27de6134e6fa898654c514ab8ece"
-    sha256 cellar: :any,                 arm64_sequoia: "5eedadc84c93763e4724cfe54a4e3205968489c7f6b375178c18dbbfa02da2c2"
-    sha256 cellar: :any,                 arm64_sonoma:  "a9bcb04e475d7328cce53e132a49ee68f9145dd3556d19806931d942d6d06311"
-    sha256 cellar: :any,                 sonoma:        "96bcbeb5b5d2b9e2c47c1a1bbe34acfafac7983ba9a3fd00537912fe42badef2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c662726adcbbc7a3b3893233a735c4fdfd044f17564c2765511ae549dd55a3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b07f947d9836eca00ad19e4cf8d2873e5fd04f3d2caccba908d88423f715e05d"
+    sha256 cellar: :any,                 arm64_tahoe:   "2d1d957a2e4f76b807f0e64953459fb752a0211a73ddfb3738c32a4d8d929017"
+    sha256 cellar: :any,                 arm64_sequoia: "86c23d443647f52d29247e898cec01b11028142f6dea82fdfcb49ee617fd4092"
+    sha256 cellar: :any,                 arm64_sonoma:  "1af0f9f69b623db3ab8e704be7c4b70da8815cb11976d31f53c09cc245fd6415"
+    sha256 cellar: :any,                 sonoma:        "b4994e1f692dce4fbe1abaf458eec320dbc48c736550905dfe3e1ea7cd1df321"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a0104b48f1417c17e92bf25c35c5d97fe2835b54e4a0f3a7156b001dc74d678"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb1eed48178d537c21d4e73dbf5efabf8177ec77ffd75b061346a1fcdbe2232a"
   end
 
   depends_on "libyaml"
@@ -29,18 +30,18 @@ class CfnLint < Formula
   end
 
   resource "aws-sam-translator" do
-    url "https://files.pythonhosted.org/packages/19/ef/f1a5a0cf0ad21bc40d4a6e7ee47f73cf683343cb2e536527475aaf575970/aws_sam_translator-1.104.0.tar.gz"
-    sha256 "907c50e812f88514fa8f41b8adcb37ba0ee28e1b8c0144b011c4985471b1201d"
+    url "https://files.pythonhosted.org/packages/84/7e/f6bcee1f5ae7032ac66a4f1bd42bef7810504484c36004d22e81484adb0f/aws_sam_translator-1.105.0.tar.gz"
+    sha256 "472829abf114e7c47112d88f9b3c27585e9c9b44f9d090d1ab9bc4d235bc12b7"
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/f0/9b/eef5346ce3148bf4856318fe629e0fd7f6dd73ffd55ea08e316c967f8af0/boto3-1.42.0.tar.gz"
-    sha256 "9c67729a6112b7dced521ea70b0369fba138e89852b029a7876041cd1460c084"
+    url "https://files.pythonhosted.org/packages/f3/31/246916eec4fc5ff7bebf7e75caf47ee4d72b37d4120b6943e3460956e618/boto3-1.42.4.tar.gz"
+    sha256 "65f0d98a3786ec729ba9b5f70448895b2d1d1f27949aa7af5cb4f39da341bbc4"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/03/04/8e8ca38631eeb499a1099dcc2a081faaea399f9d46080720540ff54ec609/botocore-1.41.6.tar.gz"
-    sha256 "08fe47e9b306f4436f5eaf6a02cb6d55c7745d13d2d093ce5d917d3ef3d3df75"
+    url "https://files.pythonhosted.org/packages/5c/b7/dec048c124619b2702b5236c5fc9d8e5b0a87013529e9245dc49aaaf31ff/botocore-1.42.4.tar.gz"
+    sha256 "d4816023492b987a804f693c2d76fb751fdc8755d49933106d69e2489c4c0f98"
   end
 
   resource "jmespath" do
@@ -114,8 +115,8 @@ class CfnLint < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

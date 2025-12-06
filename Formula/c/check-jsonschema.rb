@@ -6,15 +6,16 @@ class CheckJsonschema < Formula
   url "https://files.pythonhosted.org/packages/e4/ab/6dd807d9e6fd6bdd92801a7116de974563dff5f17fadfcba8f5ebc4919a3/check_jsonschema-0.35.0.tar.gz"
   sha256 "e1078b6e42c5e05c1a807252ac5b26b8fa2c826bad57fe9f5dd15ea27d40e16e"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/python-jsonschema/check-jsonschema.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0a0b03d5d0647bcde3ca696faedba8b980c0c1810da3441217dcb52777cd341c"
-    sha256 cellar: :any,                 arm64_sequoia: "2853f4f69cebeb25e74fcc73e5ba50e54aeb0a376369a133bae10dd8ba10606e"
-    sha256 cellar: :any,                 arm64_sonoma:  "dc22d2d8db422d6931366897c1440f3f46cc759a06b876a27257e51bf0145b36"
-    sha256 cellar: :any,                 sonoma:        "2764d31ddf7eb22703341acfa52038d715087f497e8f8e55d696c03242050cc0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dcc255f159f00f1e35ddb2d3f641de0d1e69a72daf7a5e2ec63ef073af992d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c02f7aa9fca018a2b2a333b0a2a5ab521ade2f4e6ae32819b71855db85dd606"
+    sha256 cellar: :any,                 arm64_tahoe:   "2c12de5ee538cd565b1eb0b30d8881a7b3652ac75721fc3ddfd3f34762cbdd01"
+    sha256 cellar: :any,                 arm64_sequoia: "05d485b351279a47c641cbfc5228495657cff28ab2eb180f632b10e7529eb619"
+    sha256 cellar: :any,                 arm64_sonoma:  "12ba8e344b6196fc3c98707acdcf3f95cd34d44c66513ea5c690874d8ecb0ea1"
+    sha256 cellar: :any,                 sonoma:        "0555a97b6782646ba9637cdacb98a8cb6eb269a7add7e1b93f0a823809663645"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8ac98efe2742b6907631bc610d552ff072b8517e2e59dbf3c594b7bf3e0000d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5c8ae76a53d0aa6b8e40f46c9ee73c38707f6af2bef2357d77d3f70054ad2a7"
   end
 
   depends_on "rust" => :build # for regress
@@ -42,8 +43,8 @@ class CheckJsonschema < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "fqdn" do
@@ -127,8 +128,8 @@ class CheckJsonschema < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "webcolors" do

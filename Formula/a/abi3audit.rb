@@ -6,9 +6,10 @@ class Abi3audit < Formula
   url "https://files.pythonhosted.org/packages/3a/e1/cf4215a7777f01fd69d92fe330eff30d45293f0adf1d6f26ef385dd098a7/abi3audit-0.0.24.tar.gz"
   sha256 "ce1469313511e1ba6895c44320f8f74faa592ef22cfe11b3e9e14e4aed3a3b62"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "aafd71612846bbb1b138c7d8c4149bf5a8a3c606122d58c1d376536b71def5ee"
+    sha256 cellar: :any_skip_relocation, all: "9964c74297ec7cc7cbba42749be2a7ddb9ac9d7454e61d33260ef80e74aba569"
   end
 
   depends_on "cmake" => :build
@@ -23,8 +24,8 @@ class Abi3audit < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "abi3info" do
-    url "https://files.pythonhosted.org/packages/da/48/ec0cb606d072dbefd7d83930030f8ee499927bd11df213e53c76655b0367/abi3info-2025.4.29.tar.gz"
-    sha256 "00733a73532cbf6f41e78549dc959a2110fce6e33d207a31c1ec653fa4be3b20"
+    url "https://files.pythonhosted.org/packages/4e/62/62ba2670d5edf6d658b22ff1dc788bf146c22a73f12627d485f6c290cd6c/abi3info-2025.11.29.tar.gz"
+    sha256 "dd96754872211f96ed6955d47e725bdc579e581dd1705d581923270f825d1318"
   end
 
   resource "attrs" do
@@ -73,8 +74,8 @@ class Abi3audit < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "pyelftools" do
@@ -113,8 +114,8 @@ class Abi3audit < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

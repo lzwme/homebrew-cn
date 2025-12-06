@@ -1,18 +1,18 @@
 class Kubevpn < Formula
   desc "Offers a Cloud-Native Dev Environment that connects to your K8s cluster network"
   homepage "https://www.kubevpn.dev"
-  url "https://ghfast.top/https://github.com/kubenetworks/kubevpn/archive/refs/tags/v2.9.10.tar.gz"
-  sha256 "ad67f67fc8611ccbf217d836f06aa90d36ccb4d0cb9d2b05b4033607cf9069ef"
+  url "https://ghfast.top/https://github.com/kubenetworks/kubevpn/archive/refs/tags/v2.9.11.tar.gz"
+  sha256 "3de09bf70dba2ed7a63ff58deb3df5219fd715a8177f1d9c9ed06df40f894e9a"
   license "MIT"
   head "https://github.com/kubenetworks/kubevpn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1994b5fb35a180c419b61b2b23aa20304130a23124630ff49a57181de293f46f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "700c847cb7e019a8d8155907b76337ce98c517c732bebdfe70ba4a9c6dcaf6e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "810731db180e6f19a5d94afafd62f57f86ac2613e54d55395c351546e7ca7bac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "890734bf0c142a978da058c990500a226534edb8866c3de7ecfd1e4530511d64"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f48eeaef1426dd1fcad16d8be13295458ae390ade34c224eb664effef860fa5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e5a1b163225410468af6078a3da8bc387d8f7b0d37c5a168bf5c3ccbfb96e83"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc629e2b7f293577ecbc3ae388af363f67b2dcff8a3b6df006bebf326f82a5dd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad9742e6f5d5d4dbf751174f8d74272b766ccdbe992cac89b943e79b6e3f73aa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c927e1f918f62f9d46edb370ccdaa24b805d2166dcd95261873392bb61b9dec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4c9f62d22dad91338067803b9e3e087684ed87e05d25cc3b07b38412cbed40e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b2259d89728bd83b93c2a90532b8dd3bde22649439067f9a8be841a8e1bd17e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "833a1b77a5e178346f4169514da84529904ad69302c2b902ffe4615d17229fd0"
   end
 
   depends_on "go" => :build

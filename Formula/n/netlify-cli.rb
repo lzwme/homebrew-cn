@@ -1,17 +1,17 @@
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
   homepage "https://www.netlify.com/docs/cli"
-  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-23.11.1.tgz"
-  sha256 "f4756c4f03e562f795b033954bd258105e9e71acfd82855ede10cc984dd67575"
+  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-23.12.3.tgz"
+  sha256 "d78d8a239d24dc9f2cb9e3065824bec9e5e7e4e01e53bd373f9a3a572fe33afb"
   license "MIT"
 
   bottle do
-    sha256                               arm64_tahoe:   "4314298c92b70edcc47cb2163ac70f130ecf3bcda0ef6d15696e91009ebd89ea"
-    sha256                               arm64_sequoia: "f2118e95d95220f89d07f6308c36619416bb6ae418d06668c0e9dd8bb9120b5b"
-    sha256                               arm64_sonoma:  "10adb737aa31b9dc2c74124fd8354082c630dc681d08700238f2a327bf4d5365"
-    sha256                               sonoma:        "6ad2c4cb00a7fc927ff8879fc365e15bf41b533380af29f4400fcd3c0dfe3ad6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4172fe0e69ec7d981d3057b6db2a614385189dec522977ed42354c03ac9d1d5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "581a0123df1dab22ad7160d0425a5519472bafe6e77bb44a94e05f4a7d1af633"
+    sha256                               arm64_tahoe:   "f4df9fdf0c85e010015df7751fba5d8586462a0a3a753f1a96d315400737abdb"
+    sha256                               arm64_sequoia: "b98f212f0113e124b5248f460932fd23279bcf2f54e1110b669f4a8e125aabcc"
+    sha256                               arm64_sonoma:  "3127db2e6c98b0c72925ad00ec93bccbc0cb5e6a885f92d692d9381cfadf009c"
+    sha256                               sonoma:        "db3eafa28a8695f56a953f87b599d6c56a15bfecf19eae0eaf8f9458d7e8f494"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "25ca4c623fc456e94a54db02dbb81cd0aec54462e051ad55facd00a0e16e8462"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5070f192663dfb2fe3ae2e7fd44c7288b394435ad480f7c2db857de7aedcecd5"
   end
 
   depends_on "pkgconf" => :build
@@ -37,7 +37,7 @@ class NetlifyCli < Formula
 
   def install
     ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
-    system "npm", "install", *std_npm_args, *resources.map(&:cached_download)
+    system "npm", "install", *std_npm_args(ignore_scripts: false), *resources.map(&:cached_download)
     bin.install_symlink libexec.glob("bin/*")
 
     # Remove incompatible and unneeded pre-built binaries

@@ -6,6 +6,7 @@ class C7n < Formula
   url "https://ghfast.top/https://github.com/cloud-custodian/cloud-custodian/archive/refs/tags/0.9.48.0.tar.gz"
   sha256 "44c5ca2da22ef9f1ce0550729acd2d4d55e1c96ced95c3978fc75ebfcf6c6775"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,12 +14,12 @@ class C7n < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d980723ca4dfc1d495b22ecf1cc8657b6dc2a2c7be7ec7c0e3a60dbdf7377d41"
-    sha256 cellar: :any,                 arm64_sequoia: "d4075d91fb34876a3dd8ad628d5793d8026ff9a7b44ea421af9d2fbbb3dbeed2"
-    sha256 cellar: :any,                 arm64_sonoma:  "8de4010906c5af030ddac4c0b0985ef809b1ce660e4014b9d188b940dd2adb75"
-    sha256 cellar: :any,                 sonoma:        "55a81eff4cd89c66fd8d8803f8d8b99afc631e73b47f717263ec0b908646eef0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "91c27127b222d2b86855ce6051adb9ba798897deedda78c8c5778ba6b3437f8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65e8e675505551c5c1d7b9da16c873aa3472793f78a5c9afadb01a916978a5be"
+    sha256 cellar: :any,                 arm64_tahoe:   "1583cde0e32902a5b509315879f32ce67e7a7862b6df3066fcfc30991ce31a8f"
+    sha256 cellar: :any,                 arm64_sequoia: "2202d9e5a4321c9266ac24ebb01fa2807c32e98b476e4ddae8e45e60f4908f57"
+    sha256 cellar: :any,                 arm64_sonoma:  "6e021c83bcafff381df531f5a15bd3788bf523133168854ba1ee14f44eec6bb9"
+    sha256 cellar: :any,                 sonoma:        "d0382085fb900e4b11a8d2b3594bb1606fb2884757c8741671e62168321c35b3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b3db42fda265e17bde7f4e004d8df930633e0c5ee2c3af3f0ca90ce085e6333"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdb1966adcdfacf76aba5609aff7aa55d9635642e164250419bb6f14c7779247"
   end
 
   depends_on "cryptography" => :no_linkage
@@ -39,13 +40,13 @@ class C7n < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/f0/9b/eef5346ce3148bf4856318fe629e0fd7f6dd73ffd55ea08e316c967f8af0/boto3-1.42.0.tar.gz"
-    sha256 "9c67729a6112b7dced521ea70b0369fba138e89852b029a7876041cd1460c084"
+    url "https://files.pythonhosted.org/packages/f3/31/246916eec4fc5ff7bebf7e75caf47ee4d72b37d4120b6943e3460956e618/boto3-1.42.4.tar.gz"
+    sha256 "65f0d98a3786ec729ba9b5f70448895b2d1d1f27949aa7af5cb4f39da341bbc4"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/03/04/8e8ca38631eeb499a1099dcc2a081faaea399f9d46080720540ff54ec609/botocore-1.41.6.tar.gz"
-    sha256 "08fe47e9b306f4436f5eaf6a02cb6d55c7745d13d2d093ce5d917d3ef3d3df75"
+    url "https://files.pythonhosted.org/packages/5c/b7/dec048c124619b2702b5236c5fc9d8e5b0a87013529e9245dc49aaaf31ff/botocore-1.42.4.tar.gz"
+    sha256 "d4816023492b987a804f693c2d76fb751fdc8755d49933106d69e2489c4c0f98"
   end
 
   resource "jmespath" do
@@ -94,8 +95,8 @@ class C7n < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

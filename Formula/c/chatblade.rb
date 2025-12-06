@@ -6,16 +6,15 @@ class Chatblade < Formula
   url "https://files.pythonhosted.org/packages/ff/02/e7dfd50d98139472851d03d793c39aebe1364a960648312d252137b0ec25/chatblade-0.7.0.tar.gz"
   sha256 "bfa5f96aa02b869df76e6f0910b0c2528c44de7b2f95ae08de7d192cb30c7892"
   license "GPL-3.0-only"
-  revision 3
+  revision 4
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "165f6a5e26ea14d773c853d1e7a88b9fa723869aa3f8fa7608bbe0e2807e08c6"
-    sha256 cellar: :any,                 arm64_sequoia: "ea832d9bb69cf30ce8b59cec68b157a30342937dcbafc1f5cf31584daeb04dce"
-    sha256 cellar: :any,                 arm64_sonoma:  "67651fb0e8a5a650ad425499f4d411417f04150c67c76622a155d12866fa087c"
-    sha256 cellar: :any,                 sonoma:        "b2127d265c2a3660d689b836cf2d7da63f81c10428967499f4ee0223ba083319"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d29952f86965547bf2deabf88cfe86d4832c24260bd2217b73e4326d9a22ce6e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f650f455f1fe60f6bca907d99fa6838a84b0b1fdf2f4df67581af6e3c9086ed"
+    sha256 cellar: :any,                 arm64_tahoe:   "4878feeca6e320252583159625ab48b0f7e6bf8f93a3f9fc2cdc7b6e97a6ec20"
+    sha256 cellar: :any,                 arm64_sequoia: "bbd5765dba6a3732e3392728cea98f4b1ec311f90731f0cf3e5b0dbd8cddc15b"
+    sha256 cellar: :any,                 arm64_sonoma:  "4b03694f12c8bff49eb2df0e3616a734c76e9b86b85fdbc47e2d236523ebfa36"
+    sha256 cellar: :any,                 sonoma:        "5bb3fa01c5807cf98d0ce26e5739068d3815fb205b5d3b75d7d7209487dac0f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0b39764cb3f930e870b70e7955dd7687f38b1a713a2830429b045c65af73441"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eac2ab2f38cafd22a05d3928947e2b849ef47fb048f10a82b4f4198da56f2dbf"
   end
 
   depends_on "rust" => :build # for tiktoken
@@ -27,8 +26,8 @@ class Chatblade < Formula
   pypi_packages exclude_packages: %w[certifi pydantic]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "charset-normalizer" do
@@ -127,8 +126,8 @@ class Chatblade < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

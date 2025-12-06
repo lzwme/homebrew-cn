@@ -1,13 +1,13 @@
 class Nuxi < Formula
   desc "Nuxt CLI (nuxi) for creating and managing Nuxt projects"
   homepage "https://github.com/nuxt/cli"
-  url "https://registry.npmjs.org/nuxi/-/nuxi-3.31.0.tgz"
-  sha256 "a24380a43f0613a5033889ca9c1d828d75fb8e002c58aa72e0bf88167289ffc5"
+  url "https://registry.npmjs.org/nuxi/-/nuxi-3.31.1.tgz"
+  sha256 "e15cf23ab7e05dc6024cff57235c39cd159af88eb3341e88784a759a6d929037"
   license "MIT"
   head "https://github.com/nuxt/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7812d990e9f7bc86d88fbc9f5227c4146e75d6092c98d800748d8568fdf6534e"
+    sha256 cellar: :any_skip_relocation, all: "e0b58c38b68edcdfec1ed471b19b06449b3700d150d7d5e5299287491fbee91a"
   end
 
   depends_on "node"

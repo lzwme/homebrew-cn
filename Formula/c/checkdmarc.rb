@@ -6,10 +6,11 @@ class Checkdmarc < Formula
   url "https://files.pythonhosted.org/packages/fc/2f/31fbab218e14e29c0903405a4df229e88173102c376cce93782bfb78b4f4/checkdmarc-5.12.26.tar.gz"
   sha256 "9eec78b1c2ba355c67a97986f42f6ee3775604baf6979c0fa0c77a59205ca32b"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/domainaware/checkdmarc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "518bfb8c63c990098477db9e05fd8159f8e49569d972c136997df33f39a8303a"
+    sha256 cellar: :any_skip_relocation, all: "59b3afb73b8601064e8c1cf91c5bdf2e140157c89c84276b17348b5a851009a6"
   end
 
   depends_on "certifi" => :no_linkage
@@ -49,8 +50,8 @@ class Checkdmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/01/7d/b330c502ee50058e3a993ce6b2f68171ba3b7e4052c058b140074b5a9fa5/publicsuffixlist-1.0.2.20251128.tar.gz"
-    sha256 "2573b29c1fe3cdaf842d8d6ad971282dac1983212ddfad0617df06454327dc3a"
+    url "https://files.pythonhosted.org/packages/95/35/1f51ea2b86e656fd766410fab262c045623e10c0f5461d4f1e6c5db759de/publicsuffixlist-1.0.2.20251205.tar.gz"
+    sha256 "458bcbb5d69057e5d76c8b8b61d5caa1c998104ef5788b95d8a265561696fa76"
   end
 
   resource "pyleri" do
@@ -74,8 +75,8 @@ class Checkdmarc < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "xmltodict" do
