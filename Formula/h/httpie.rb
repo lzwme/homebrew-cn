@@ -6,17 +6,16 @@ class Httpie < Formula
   url "https://ghfast.top/https://github.com/httpie/cli/archive/refs/tags/3.2.4.tar.gz"
   sha256 "b185cd8d81325f97c773582e50f1c5e047c2d8575b53d676469c9daf2a52f341"
   license "BSD-3-Clause"
-  revision 4
+  revision 5
   head "https://github.com/httpie/cli.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6cd5ebdfa42149066fc8219cbae95d2dee2df77a4bade748eba2a7e4ff478a31"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07270cb3f4679b81cbfba09a61437dd34557a523061d9129afecf313a24a0d4e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "97589007a68dfabd0d487e4a354ee0cd730e6a10fe1f1f90469be098a71ef13e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "33a6c1e2a0c06ae537f67d9883edc235c1c4578c6c3cc31ebac3f4ac2fc78451"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a04159d83a728bf43ebef3dd87e90957f603df1ff57975feeaa9a96debccac9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1ece0e8a0fd64a456934e5bb15a58470db7c3cd6f4886db2aa0205be7701f79"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "58513b35abb65419333ce3b9c7bfd2996852a383391615fd71173e6afea810ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4dfe12304cc2b0f8410740e74b0d647240e2bbf50b920626e6974696a459191a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "744d71143e8653e8bc4b94f2cb9329a8960cb034ff144767f635af3a5ddbf788"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1cb392be4773e0bf7330a4df574929b97f083dec2a26ef9086f931e138e049ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ffabfdf5d4b4f2e56b21b769f68bc5a1e22d4c335a47949aaa2c43162567e2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c89d5a732fc4cb29a695d1b43f49618a6305c6788332130e0110c782b4b6cfa5"
   end
 
   depends_on "certifi"
@@ -25,8 +24,8 @@ class Httpie < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "defusedxml" do
@@ -85,8 +84,8 @@ class Httpie < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

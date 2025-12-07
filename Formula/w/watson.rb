@@ -6,17 +6,16 @@ class Watson < Formula
   url "https://files.pythonhosted.org/packages/a9/61/868892a19ad9f7e74f9821c259702c3630138ece45bab271e876b24bb381/td-watson-2.1.0.tar.gz"
   sha256 "204384dc04653e0dbe8f833243bb833beda3d79b387fe173bfd33faecdd087c8"
   license "MIT"
-  revision 8
+  revision 9
   head "https://github.com/jazzband/Watson.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "44162a7872ef5789f0f711844258b2702be9bf674b417fb136210e484a73fc2d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10ec2d4c0992ba0824884972227dd85f4de93e0f920a62679f6ad77586becedf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "535ebf26a193fcf6b47fe3a032fef2ee15aad34a10d5477f4700a322c2a7e1c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "daaabc1f550cab442b1549cded493eea071a74f15052e2273888196a6e139eeb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "754c43cca43a0d38167bf11f450a3506f79c3d37c7d9015e807dbc39030751df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74a856fc91c7183ef637d9303f7241e40f6da5a0ba288f7903bcc8af69d09e98"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "430bf13f00ead9895de85d54e16373836a8f2995715e36b6c513b852987ed18a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b151fae3be25596746fc029ed894c4cbd6e9f5ef16241affba9390fe711bef5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ae80fb578ab81ec018cffad0a046d0159207e7a9096181eef6871a692ba3a9a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6cca64e26f8642ecb317eb8bc9bf18073dadca346c4581a569f1fde315d443f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "51e8e4025f6e2616578ebec917b7603dae0f78eb53a8a7e468205ebd7d27f577"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8cbd748c7719cdbb03ee428e1eefaa03732eda28c2bda893874799d65ed879b"
   end
 
   depends_on "certifi" => :no_linkage
@@ -25,8 +24,8 @@ class Watson < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "arrow" do
-    url "https://files.pythonhosted.org/packages/2e/00/0f6e8fcdb23ea632c866620cc872729ff43ed91d284c866b515c6342b173/arrow-1.3.0.tar.gz"
-    sha256 "d4540617648cb5f895730f1ad8c82a65f2dad0166f57b75f3ca54759c4d67a85"
+    url "https://files.pythonhosted.org/packages/b9/33/032cdc44182491aa708d06a68b62434140d8c50820a087fac7af37703357/arrow-1.4.0.tar.gz"
+    sha256 "ed0cc050e98001b8779e84d461b0098c4ac597e88704a655582b21d116e526d7"
   end
 
   resource "charset-normalizer" do
@@ -35,8 +34,8 @@ class Watson < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "click-didyoumean" do
@@ -64,14 +63,14 @@ class Watson < Formula
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
-  resource "types-python-dateutil" do
-    url "https://files.pythonhosted.org/packages/fc/83/24ed25dd0c6277a1a170c180ad9eef5879ecc9a4745b58d7905a4588c80d/types_python_dateutil-2.9.0.20251008.tar.gz"
-    sha256 "c3826289c170c93ebd8360c3485311187df740166dbab9dd3b792e69f2bc1f9c"
+  resource "tzdata" do
+    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
+    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

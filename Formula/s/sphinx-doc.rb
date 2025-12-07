@@ -6,14 +6,15 @@ class SphinxDoc < Formula
   url "https://files.pythonhosted.org/packages/42/50/a8c6ccc36d5eacdfd7913ddccd15a9cee03ecafc5ee2bc40e1f168d85022/sphinx-9.0.4.tar.gz"
   sha256 "594ef59d042972abbc581d8baa577404abe4e6c3b04ef61bd7fc2acbd51f3fa3"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "deb18d7f31472c65948989ddb73bcea396b201f792c658de4d759b7c547f6a87"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef636938ce508e8b986d11f28db9affae7f6636f784c5fc3f3c0598ee84c0791"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b07cedd530607f4f0c4f79fe8ec1fb1d805c27c1aec6f8e2eeceb916dd97664"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c907939bb5d6955786efa1e53e8069d113b99a0a4e7f00ba14c2b5c495876cc2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9d376d528c705d8e67bde2e7278e8c57d03c4a0afc042b3542d9bbad5926c16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c75108fb7ef425c348da690a184f7468c819db749b2dbcb8159c79fdd70c2345"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d9410b6ecc454ddaee91602e86a5a8e340e90b0ca38830ce76b6414065a9fb28"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fffe5188d30ce3d3c07e3711b04f51951916c5bba17acd9df2ffcf33f4fd1f42"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "794e49527973898c2ad00454dd57d527b11da70c21693b2ef7e1b2eba94025b9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aaeffb85d441d9a563135865fc216245d019014e68f1e802750a616dfb7c32e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "266c7081100b172351d3baf0ac441d68ab90e3d1ee15924bca0b8afd8e196870"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b83208d90115a22ec19013070451d3ade6c7a695c8f0c7c9dc559b09a71eddc9"
   end
 
   depends_on "certifi"
@@ -123,8 +124,8 @@ class SphinxDoc < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

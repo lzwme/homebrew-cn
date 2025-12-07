@@ -6,17 +6,16 @@ class PiecesCli < Formula
   url "https://files.pythonhosted.org/packages/f8/bb/48f95f63ca1c5b86564e6569f2e7bed542d351002dbc49702e1235bd7d1c/pieces_cli-1.19.0.tar.gz"
   sha256 "0bfea482de3eada8d3612f7c107f02ba38d5f54e056e86743cad41f6cb9576c9"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/pieces-app/cli-agent.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "569d6c18a7eddac688b45181d601fdf67fd373cf593877c2aca84ba43eb2a7d5"
-    sha256 cellar: :any,                 arm64_sequoia: "fb37237268b2692a36387d8389d337decd51a64d7675954038216b94926c1c1a"
-    sha256 cellar: :any,                 arm64_sonoma:  "2bb94a1a9a07634e2a075c641688d284566ff738bc605cbf4ec38d1c8dac6258"
-    sha256 cellar: :any,                 sonoma:        "02d8e298c6a510dcf57759cf25af3bacdd2327c11bb37c90a256c3bde62aa7f9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "20b115e0f948102d4a6ed3b5fad49af635d21632323fbbeabe6ad05f0b9d590d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fa4bc1dc96a70d2bdde705c31ec9eda4a488f031df856e4342d6199dc28060f"
+    sha256 cellar: :any,                 arm64_tahoe:   "a56a910be0569b2649c7c0544d22ab53f7840c89b369f69316c317017d665986"
+    sha256 cellar: :any,                 arm64_sequoia: "a421d98e35bf4bf2227c955dbf64a9cbbe2585530fa83ea708503ab4cff9f5a8"
+    sha256 cellar: :any,                 arm64_sonoma:  "3e095d81c688d04d38f6a55d5a8cc91192424c8c68dd403acf3761edac51f73f"
+    sha256 cellar: :any,                 sonoma:        "5a5e159f752e667e35daeba78fb71036848010fb5cc3c00b182408a20be49fb3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ddef558ef03251c69e47f6d10cff4ad98d1ba5c85c9ecf531009111a2fb20ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "836478e495f04644df3aac055cc7491861d263d69b549ccd2d90962415a2099d"
   end
 
   depends_on "rust" => :build # for pydantic-core
@@ -38,8 +37,8 @@ class PiecesCli < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "attrs" do
@@ -48,8 +47,8 @@ class PiecesCli < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "h11" do
@@ -103,8 +102,8 @@ class PiecesCli < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "prompt-toolkit" do
@@ -123,8 +122,8 @@ class PiecesCli < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/20/c5/dbbc27b814c71676593d1c3f718e6cd7d4f00652cefa24b75f7aa3efb25e/pydantic_settings-2.11.0.tar.gz"
-    sha256 "d0e87a1c7d33593beb7194adb8470fc426e95ba02af83a0f23474a04c9a08180"
+    url "https://files.pythonhosted.org/packages/43/4b/ac7e0aae12027748076d72a8764ff1c9d82ca75a7a52622e67ed3f765c54/pydantic_settings-2.12.0.tar.gz"
+    sha256 "005538ef951e3c2a68e1c08b292b5f2e71490def8589d4221b95dab00dafcfd0"
   end
 
   resource "pygments" do
@@ -168,18 +167,13 @@ class PiecesCli < Formula
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/b3/18/09875b4323b03ca9025bae7e6539797b27e4fc032998a466b4b9c3d24653/sentry_sdk-2.43.0.tar.gz"
-    sha256 "52ed6e251c5d2c084224d73efee56b007ef5c2d408a4a071270e82131d336e20"
+    url "https://files.pythonhosted.org/packages/4a/2a/d225cbf87b6c8ecce5664db7bcecb82c317e448e3b24a2dcdaacb18ca9a7/sentry_sdk-2.47.0.tar.gz"
+    sha256 "8218891d5e41b4ea8d61d2aed62ed10c80e39d9f2959d6f939efbf056857e050"
   end
 
   resource "six" do
     url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
-  end
-
-  resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
-    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
   end
 
   resource "sse-starlette" do
@@ -203,8 +197,8 @@ class PiecesCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "uvicorn" do

@@ -6,16 +6,16 @@ class Sigstore < Formula
   url "https://files.pythonhosted.org/packages/64/1e/8c115a155b67254b52780730bc86edf90d108d172377e526ce91e42ba9de/sigstore-4.1.0.tar.gz"
   sha256 "312f7f73fe27127784245f523b86b6334978c555fe4ba7831be5602c089807c1"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/sigstore/sigstore-python.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "115a445c972a2e6ddc48c0199693841b63cff331e4cec6603ad35f0a9f2d25d2"
-    sha256 cellar: :any,                 arm64_sequoia: "15009ae939ad6831bea014a6ea7aaf07f8f32b7b9a286a9f00d2a26c71fa4ec1"
-    sha256 cellar: :any,                 arm64_sonoma:  "1a953d72ed5701f4122c5c3e2966d101ac889d1e1b17b8a6c8bf0f6ffceae82b"
-    sha256 cellar: :any,                 sonoma:        "28363b205b412b3d9dbe5906a2b862644d694fcc9e1cf17966b466801d7f9d50"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b5ec7cfe20982d08ecaee0c2da8656ea897722f9ae48b706082d50a0ef2624e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43186b918239b114ea87a03b10461d6152bdefe06050813e28cc8cd475ad8cec"
+    sha256 cellar: :any,                 arm64_tahoe:   "847127adda6ac45828422d2d72c3c44ffb84ac6ab32ea900751126ea225e63a4"
+    sha256 cellar: :any,                 arm64_sequoia: "0a5dbd475019cdb1c08a1517df4886a3a6972554d9773e205693557527a13b46"
+    sha256 cellar: :any,                 arm64_sonoma:  "89dc4713d2b7d059bfdad40a11fda5418a8e69fa825c2157d4d61c216a68b1f2"
+    sha256 cellar: :any,                 sonoma:        "8ab9530c68f8b7e9c414be56a82a56419769968ce5d6f1ad837cd28f7181363e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de6f92b46eb516f522ee3aca586cf0287337b877f927f1750396a8dfe0f2cd21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d4e28a18dc569dfbc8fcf1a5ff310748212766031f9b7eee78b8da09ab97e81"
   end
 
   depends_on "pkgconf" => :build # for rfc3161-client
@@ -64,8 +64,8 @@ class Sigstore < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "pyasn1" do
@@ -129,8 +129,8 @@ class Sigstore < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

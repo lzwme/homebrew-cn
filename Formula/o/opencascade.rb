@@ -1,8 +1,8 @@
 class Opencascade < Formula
   desc "3D modeling and numerical simulation software for CAD/CAM/CAE"
   homepage "https://dev.opencascade.org/"
-  url "https://ghfast.top/https://github.com/Open-Cascade-SAS/OCCT/archive/refs/tags/V7_9_2.tar.gz"
-  sha256 "3cd080d3fc33ba0c6c157e110afe3e015859524c4694dbb09812ec9d61595639"
+  url "https://ghfast.top/https://github.com/Open-Cascade-SAS/OCCT/archive/refs/tags/V7_9_3.tar.gz"
+  sha256 "5ecf094ec6b12d5413dfb851d8c3590c354058aee556e32e408bdfbf8c357d57"
   license "LGPL-2.1-only"
 
   # The first-party download page (https://dev.opencascade.org/release)
@@ -21,13 +21,12 @@ class Opencascade < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "05c90efe2139c4c46c4f53536e554d356765281b824301ca21f62d5264fa1473"
-    sha256 cellar: :any,                 arm64_sequoia: "450ba8e8785c1348a3a7254d20847de69a237b39c1dc6bdb50218e1c3e306380"
-    sha256 cellar: :any,                 arm64_sonoma:  "39160ae92917d9be76d9c79056a8bfdc41b3d129eada5474be5538d98c9db912"
-    sha256 cellar: :any,                 sonoma:        "90aab756f98430cf0d80a62e9ef3725117900a4784080039c821166d2f621e0f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6855b87069a1f30230b0c2b359b19518e155f2bdfc35be94b7aecb63dac97a11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0a579da97350eb4843ed2a1d77c106ea74329a2b8d4e9e74bbbd150896d2e32"
+    sha256 cellar: :any,                 arm64_tahoe:   "ee074a5e0dac9f36e41231af3741dddc93501417b014443eadf212f680e9e91c"
+    sha256 cellar: :any,                 arm64_sequoia: "6ef97324bd4b35bdb86edf6e95ea25fb227fa932f7052995f3c7a98b7eabc209"
+    sha256 cellar: :any,                 arm64_sonoma:  "d2cec039010d0a23e41375ff1e745d0041f3cf3e3a36826d9af9a8fc2e938512"
+    sha256 cellar: :any,                 sonoma:        "a47410e2c2a5aa1460c8953001969edff4204bb16244d4c5551d9c2f167c748d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3a3c89ab9ca41058d5afe03c5327501a2a0835b78b7bcf13348d4b7478ce836"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0cc020558ef5d2441e2d157fe7c98d039f876a815a17835f0b5fd14f610f24c"
   end
 
   depends_on "cmake" => [:build, :test]

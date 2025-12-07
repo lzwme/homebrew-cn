@@ -6,16 +6,15 @@ class Sail < Formula
   url "https://files.pythonhosted.org/packages/1c/64/2af3a1a9dfa005dc91a22535a29071e9255efeacf7e61dbefee920d01571/sailed_io-0.10.9.tar.gz"
   sha256 "cae38b97fada34a7681872661342c82b317d877eab882830c59610734eb53bdf"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "3ce4a9f241e10ccf52e2d1efffa1d7795d043ce22f1f84f283444fe2a220dd6a"
-    sha256 cellar: :any,                 arm64_sequoia: "5a0508d9c5bcf27a98e49231ed97a6d61989872c778773c074c11a2eb196fab1"
-    sha256 cellar: :any,                 arm64_sonoma:  "8c7be99b7e7d1d1ad98ec570cf6022c951447c4c133e81f8b7b8b86464fa8dfa"
-    sha256 cellar: :any,                 sonoma:        "692b3f1dff9d29816a262b8b84afe165e566f28ba2b0c01b9ac77820b9a7b5c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e1f9c2b44e8dbae252c14b7e7c5dc09600674295c08066a231a811a89e1f352"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76183cba24d5b6143d5aef4a19154211f19429fada46db3f0ce77e23b8768d21"
+    sha256 cellar: :any,                 arm64_tahoe:   "2383f54fd4b8de14976127547fefe0c7d975e69c95ef2a9b2ecd05467af2a58c"
+    sha256 cellar: :any,                 arm64_sequoia: "e6a1087021cac0648bb885adf3ae9198578ff75a1836cfd1d2df6fe801323ec3"
+    sha256 cellar: :any,                 arm64_sonoma:  "ee75bc60cc2c423f8fd62886dc9b996947b04b69cb53ec49e94849bc86333ff3"
+    sha256 cellar: :any,                 sonoma:        "6e94b89478f2ce9b73a5916d921bfe5e026b84dfcc22b310da9fcd9bf7b984b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f667f9c3882a0b31f02298a71d658ddbab4334436bba68822c868c0b0c71c4c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0949b302bcdcc51a96ec2f2882cd0bd2ce63634414dc9cf3f77e3369e37346f5"
   end
 
   depends_on "rust" => :build
@@ -27,16 +26,14 @@ class Sail < Formula
 
   pypi_packages exclude_packages: %w[certifi cryptography]
 
-  # `pyyaml` package is manually updated to support Python 3.14
-
   resource "bcrypt" do
     url "https://files.pythonhosted.org/packages/d4/36/3329e2518d70ad8e2e5817d5a4cac6bba05a47767ec416c7d020a965f408/bcrypt-5.0.0.tar.gz"
     sha256 "f748f7c2d6fd375cc93d3fba7ef4a9e3a092421b8dbf34d8d4dc06be9492dfdd"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
@@ -50,8 +47,8 @@ class Sail < Formula
   end
 
   resource "deprecated" do
-    url "https://files.pythonhosted.org/packages/98/97/06afe62762c9a8a86af0cfb7bfdab22a43ad17138b07af5b1a58442690a2/deprecated-1.2.18.tar.gz"
-    sha256 "422b6f6d859da6f2ef57857761bfb392480502a64c3028ca9bbe86085d72115d"
+    url "https://files.pythonhosted.org/packages/49/85/12f0a49a7c4ffb70572b6c2ef13c90c88fd190debda93b23f026b25f9634/deprecated-1.3.1.tar.gz"
+    sha256 "b1b50e0ff0c1fddaa5708a2c6b0a6588bb09b892825ab2b214ac9ea9d92a5223"
   end
 
   resource "fabric" do
@@ -65,8 +62,8 @@ class Sail < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "invoke" do
@@ -100,8 +97,8 @@ class Sail < Formula
   end
 
   resource "pynacl" do
-    url "https://files.pythonhosted.org/packages/06/c6/a3124dee667a423f2c637cfd262a54d67d8ccf3e160f3c50f622a85b7723/pynacl-1.6.0.tar.gz"
-    sha256 "cb36deafe6e2bce3b286e5d1f3e1c246e0ccdb8808ddb4550bb2792f2df298f2"
+    url "https://files.pythonhosted.org/packages/b2/46/aeca065d227e2265125aea590c9c47fbf5786128c9400ee0eb7c88931f06/pynacl-1.6.1.tar.gz"
+    sha256 "8d361dac0309f2b6ad33b349a56cd163c98430d409fa503b10b70b3ad66eaa1d"
   end
 
   resource "python-digitalocean" do
@@ -109,6 +106,7 @@ class Sail < Formula
     sha256 "107854fde1aafa21774e8053cf253b04173613c94531f75d5a039ad770562b24"
   end
 
+  # `pyyaml` package is manually updated to support Python 3.14
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
@@ -120,8 +118,8 @@ class Sail < Formula
   end
 
   resource "requests-file" do
-    url "https://files.pythonhosted.org/packages/72/97/bf44e6c6bd8ddbb99943baf7ba8b1a8485bcd2fe0e55e5708d7fee4ff1ae/requests_file-2.1.0.tar.gz"
-    sha256 "0f549a3f3b0699415ac04d167e9cb39bccfb730cb832b4d20be3d9867356e658"
+    url "https://files.pythonhosted.org/packages/3c/f8/5dc70102e4d337063452c82e1f0d95e39abfe67aa222ed8a5ddeb9df8de8/requests_file-3.0.1.tar.gz"
+    sha256 "f14243d7796c588f3521bd423c5dea2ee4cc730e54a3cac9574d78aca1272576"
   end
 
   resource "tldextract" do
@@ -130,13 +128,13 @@ class Sail < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/95/8f/aeb76c5b46e273670962298c23e7ddde79916cb74db802131d49a85e4b7d/wrapt-1.17.3.tar.gz"
-    sha256 "f66eb08feaa410fe4eebd17f2a2c8e2e46d3476e9f8c783daa8e09e0faa666d0"
+    url "https://files.pythonhosted.org/packages/49/2a/6de8a50cb435b7f42c46126cf1a54b2aab81784e74c8595c8e025e8f36d3/wrapt-2.0.1.tar.gz"
+    sha256 "9c9c635e78497cacb81e84f8b11b23e0aacac7a136e73b8e5b2109a1d9fc468f"
   end
 
   def install

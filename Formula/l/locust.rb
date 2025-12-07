@@ -6,14 +6,15 @@ class Locust < Formula
   url "https://files.pythonhosted.org/packages/d9/19/dd816835679c80eba9c339a4bfcb6380fa8b059a5da45894ac80d73bc504/locust-2.42.6.tar.gz"
   sha256 "fa603f4ac1c48b9ac56f4c34355944ebfd92590f4197b6d126ea216bd81cc036"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "37a5258de61d6d4a625f78ab6f1f2ece6ea928ae9a846402dbc93739c212d45f"
-    sha256 cellar: :any,                 arm64_sequoia: "dd939f2eba7b334fc0910bacbe40927ad85923a6b8f3328200e84269efd767c8"
-    sha256 cellar: :any,                 arm64_sonoma:  "2d3e8502be9e21b64628e1335b74f83d8e50f594fa5a038d4bb6d8911584cf5d"
-    sha256 cellar: :any,                 sonoma:        "a08e0189330974bd413c37fe7010b51bf521c39c77c5318c0424c2860484ef9b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "52403f025603525b8d28f2d8bcdba3f18520858ec35f7a65cd272c35adc5db4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1098d852f011a1a8d05e0839c8d58121a866dba94d1fb89e6491fa298a9d1f73"
+    sha256 cellar: :any,                 arm64_tahoe:   "654ea515762f5590fbb372007e46517d8423ad4143acc6776c90462f71000a6f"
+    sha256 cellar: :any,                 arm64_sequoia: "4689981b5e45336e426c96bf8f0fe665ecb096f630beb22e85123adfb1f3b051"
+    sha256 cellar: :any,                 arm64_sonoma:  "5fc0f07244da2406f88aea16f1b159339225f24d2de7db319f3ea0dcd069f4f4"
+    sha256 cellar: :any,                 sonoma:        "668056a398fdf666709d8b24d40ed0474f3c96a14153e5bff355a312e915e33e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44b9c39304ca5287f3c37e313ef1ceb4d8ad298277bef72d43d4b5a401541a81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e4463827e357cf10a1942badadfaed35166722d880004363e187414ae37cf2f"
   end
 
   depends_on "cmake" => :build # for pyzmq
@@ -80,8 +81,8 @@ class Locust < Formula
   end
 
   resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/03/b8/704d753a5a45507a7aab61f18db9509302ed3d0a27ac7e0359ec2905b1a6/greenlet-3.2.4.tar.gz"
-    sha256 "0dca0d95ff849f9a364385f36ab49f50065d76964944638be9691e1832e9f86d"
+    url "https://files.pythonhosted.org/packages/c7/e5/40dbda2736893e3e53d25838e0f19a2b417dfc122b9989c91918db30b5d3/greenlet-3.3.0.tar.gz"
+    sha256 "a82bb225a4e9e4d653dd2fb7b8b2d36e4fb25bc0165422a11e48b88e9e6f78fb"
   end
 
   resource "h11" do
@@ -110,8 +111,8 @@ class Locust < Formula
   end
 
   resource "locust-cloud" do
-    url "https://files.pythonhosted.org/packages/91/d7/6a0bada5499ccba78cc23a79ce21c3d14e4259d3811d2cce6f6e3dc9122c/locust_cloud-1.29.4.tar.gz"
-    sha256 "2caafc12450a147b5861be92cc35e53fb98423cc104cf2d649e9144c65b930f6"
+    url "https://files.pythonhosted.org/packages/56/15/b51aa0907558bec5b4a1895f766999455bd7af4ca93bb664d81d923f66f8/locust_cloud-1.29.5.tar.gz"
+    sha256 "65e313348344d64906e7a4bf13b880352cf750ea144eb0ddc42981e58a8a6e0a"
   end
 
   resource "markupsafe" do
@@ -130,8 +131,8 @@ class Locust < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "pluggy" do
@@ -180,8 +181,8 @@ class Locust < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "websocket-client" do

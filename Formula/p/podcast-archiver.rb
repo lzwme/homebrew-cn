@@ -6,15 +6,15 @@ class PodcastArchiver < Formula
   url "https://files.pythonhosted.org/packages/96/05/8f08025cbfb32ad8a0589d90e69c9da04d4ecf201b48815569a114ffed2e/podcast_archiver-2.3.5.tar.gz"
   sha256 "1c157df1202d1ce05e2303d7d729e4e1e87ba202cba6f51c6024b38a2236b937"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "c170f6b4c37a30f261ea185de1b82ebe7397744094651d85fd545653191db0f9"
-    sha256 cellar: :any,                 arm64_sequoia: "f9cc2f7220579d80df8f8cd118578c31fed5bf461e7e5ff41462c1e215c3873e"
-    sha256 cellar: :any,                 arm64_sonoma:  "79323f1eff5aeb36433a213f2557cad96c418b779ef7ce9018f988973d8c8295"
-    sha256 cellar: :any,                 sonoma:        "3176388d1d8def5478573de5c4326193731fa745b01afc2a7939020004129c95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c6171a8f2b1ef665f52882388aa43f72a52fa86351686a9039d6a04a937d3e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6b81ed2f030a974ba12043f0da11511ff044e8e69141887dc327e8eef19f0da"
+    sha256 cellar: :any,                 arm64_tahoe:   "8215bc60a556361fc1d5cd2657c7eb3b58124abeec13948de23d7ba54830fced"
+    sha256 cellar: :any,                 arm64_sequoia: "74c15614b6657e81b41ba6498924160fef93f76a1e09ffba12bc9682a940ec81"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac12a5e707d58a55ce2bff5c2321e52433029508704f653039d800bf72232a90"
+    sha256 cellar: :any,                 sonoma:        "6627fd4372ca21b1770b3b063a9eebcbf03eebf14bef91724f6777d4f11ff41b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d823477c668dc17c9e04adcfadc31e4c1187a5b8f49b9c9e2be61c829f8fddf9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d466186ad04e7acd2640f5cf1438b8cba0dd315b223444ac42f9bfa28061ca19"
   end
 
   depends_on "certifi" => :no_linkage
@@ -30,8 +30,8 @@ class PodcastArchiver < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "feedparser" do
@@ -55,8 +55,8 @@ class PodcastArchiver < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "pygments" do
@@ -105,8 +105,8 @@ class PodcastArchiver < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

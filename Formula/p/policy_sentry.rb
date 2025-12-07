@@ -6,15 +6,16 @@ class PolicySentry < Formula
   url "https://files.pythonhosted.org/packages/2d/84/fc0594aead9d0bae80251f1415c0c76b053d7abeb2fd9a69a3993d88f6ec/policy_sentry-0.15.1.tar.gz"
   sha256 "5ab684b1a26970e33e7e8cb028eec93f1483616fb483c1c09568858a42983a30"
   license "MIT"
+  revision 1
   head "https://github.com/salesforce/policy_sentry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5291c7fa9e967cc84082e84e6ebc22c576c2255f04dc1c3a40e828bb2359455f"
-    sha256 cellar: :any,                 arm64_sequoia: "fb47e15c1022d42759ed028cd183ce838ad12608c2b11aa121ebd472644c6189"
-    sha256 cellar: :any,                 arm64_sonoma:  "9a50aaf910f8d0f5d768effe8cbdb690248d7371a267eecaf36ef29868b7e200"
-    sha256 cellar: :any,                 sonoma:        "5731e2ec490c6907abc37e95a626743eda5e2c145496485206710126f25ab82f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f7aaa005724d4892b0e22015adab5edb065c9667c2f008b99e867c60183d194"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d7db693eb3761949223be21b9b70fb4fd09104a0c5fb72f66605272d23dbaf4"
+    sha256 cellar: :any,                 arm64_tahoe:   "526785fe1e35be9d254a5d797caa2089e67460f4636c1456d1522e355760d555"
+    sha256 cellar: :any,                 arm64_sequoia: "001baac2fdea5e5db96469a5b809a6493b8adfbbd46dbc64945c663448bf80aa"
+    sha256 cellar: :any,                 arm64_sonoma:  "9f591c4f58bd24b78133d6cd4b00b062c0b12ffa1a6d4ca20a5ede158388aeb0"
+    sha256 cellar: :any,                 sonoma:        "4bc59826d36d4a9d8b9455a21fc8324163e12b0a11c804357f7084fb43e7c051"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3466acb291b03aa3a8cbabb3b421ee2139acedf11c0aeb1133fb9de287059917"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6af049b7e8a8dae29436b4e34716af07b160bd9254107ef40471b98a1d54f881"
   end
 
   depends_on "rust" => :build # for orjson
@@ -75,8 +76,8 @@ class PolicySentry < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

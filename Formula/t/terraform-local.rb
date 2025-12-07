@@ -6,27 +6,28 @@ class TerraformLocal < Formula
   url "https://files.pythonhosted.org/packages/48/30/3ca48aa0615960bc891c976512df7cca1ecf72535446f4bbe9b1ac110ebf/terraform_local-0.25.0.tar.gz"
   sha256 "8730cfc92dcdbfcb10293420cafb22566d56a2af58139e8a976828b10e07c7e2"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e4fb5fe6d4c96bf4393a009f5a2c3f79a7681ef6f1c1db48c8c5014dd08fcde"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42e4b1fa38cdf7ddb26d107fd85e7421e4456142b611efa755e35233c67660e9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32b13c73c04ed8e39d532f48d5a602c735cad99d05541809c487aaeb13fbde0d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "43b1bd9685fe2757e1aecbf01ac75270d1fba8b3d672fe69cc60b033572bbfcd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b96060f2ac3e682a833b73f56b2a564e8c08987c3b23e905cdaeea0c510cff21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06dd9a6a188550eaa14c07fc521fac4d8daf5786a8b8a546402f5be879814333"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dcca12ab1ce928dfcf3d4a855fa36848a49a9853485876a8c8a796b66ebb0c1d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2015b904ee6a3b2661d144174a723aadb38b32c0a1a614dd0af00e11473e9ca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9df6e8bf35581311014f1060e4d2cb298db76ce4076424949050a0280069d68d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "db8f42469f5ad9bc726679e7ee03e849682bb7bb01883531c6ff5e5d0309fffe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "39d102b5d13a565c8acec434e3fef625a79d27ad38400a42db3cddb39777ae26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61f78d6d783a389be3334d3ec4f450aa5e8b1e2aa9c5e315aebbc7c454d659d6"
   end
 
   depends_on "localstack"
   depends_on "python@3.14"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/f0/9b/eef5346ce3148bf4856318fe629e0fd7f6dd73ffd55ea08e316c967f8af0/boto3-1.42.0.tar.gz"
-    sha256 "9c67729a6112b7dced521ea70b0369fba138e89852b029a7876041cd1460c084"
+    url "https://files.pythonhosted.org/packages/f3/31/246916eec4fc5ff7bebf7e75caf47ee4d72b37d4120b6943e3460956e618/boto3-1.42.4.tar.gz"
+    sha256 "65f0d98a3786ec729ba9b5f70448895b2d1d1f27949aa7af5cb4f39da341bbc4"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/03/04/8e8ca38631eeb499a1099dcc2a081faaea399f9d46080720540ff54ec609/botocore-1.41.6.tar.gz"
-    sha256 "08fe47e9b306f4436f5eaf6a02cb6d55c7745d13d2d093ce5d917d3ef3d3df75"
+    url "https://files.pythonhosted.org/packages/5c/b7/dec048c124619b2702b5236c5fc9d8e5b0a87013529e9245dc49aaaf31ff/botocore-1.42.4.tar.gz"
+    sha256 "d4816023492b987a804f693c2d76fb751fdc8755d49933106d69e2489c4c0f98"
   end
 
   resource "jmespath" do
@@ -75,8 +76,8 @@ class TerraformLocal < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

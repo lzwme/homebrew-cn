@@ -7,14 +7,13 @@ class CargoSpellcheck < Formula
   head "https://github.com/drahnr/cargo-spellcheck.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd89e47b7c68ffcb850bdb181127c956b8a3697e2a186fa534d471d6c420e64f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e4c34eabd5c01a01e81429472363789f826a4107fb087feb88f6350cc459e7c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "429f9b37061d3e2f7d69e85f8e2457642d32b621966ebd25b20717af067be0ed"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7be9cb9bf49c88cd65a94b13c136ec844ab8f7d00b57b7404d944199f12cde65"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7476f53530cadc1d65a76aab700faa7c547fae7b4230c7df8e4d6b90e99183ad"
-    sha256 cellar: :any_skip_relocation, ventura:       "43e0cd41ac0873292789d23e3b913ff9b0dab96db3fd25d2df8c1ed8ea335735"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bc18490d34f7837b8498c833e5fa539fab2e0fec341eeb8e14d3d11fe15b8f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bf9c80c76e0eadf342f2dd4dde6e6c6f07c1a713fe2feb7e9c096a3877310d7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "326e88bcdb1597ccb4a04b1da254081c5af47c65f3fdb0c506e35adf3dc56e24"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fab5b1581a397e0776c84e933b94097d8a96fd61f548e376321c892abfa2aa8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7be9eabcfbb07a45dced0dd3356d26ef6b7b31a422ee2356222cf23327604228"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5ef273e407c69f213ca9637e6e04b5c89d55715d27bbe71c361e541caeea8b2d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "428cf7e2f5215ad664810553cc83adfc474beceb7a03d08ae671f8ab7a88fe52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "666cde4c0816a27802d38b2700ab4d815811645737b82d3769a2b13b2ac9f9d6"
   end
 
   depends_on "llvm" => :build
@@ -26,6 +25,9 @@ class CargoSpellcheck < Formula
   def install
     ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib
     system "cargo", "install", *std_cargo_args
+
+    generate_completions_from_executable(bin/"cargo-spellcheck", shell_parameter_format: :clap,
+                                                                 shells:                 [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

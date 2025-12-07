@@ -1,8 +1,8 @@
 class PythonGdbmAT313 < Formula
   desc "Python interface to gdbm"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.13.10/Python-3.13.10.tgz"
-  sha256 "de5930852e95ba8c17b56548e04648470356ac47f7506014664f8f510d7bd61b"
+  url "https://www.python.org/ftp/python/3.13.11/Python-3.13.11.tgz"
+  sha256 "03cfedbe06ce21bc44ce09245e091a77f2fee9ec9be5c52069048a181300b202"
   license "Python-2.0"
 
   livecheck do
@@ -10,12 +10,12 @@ class PythonGdbmAT313 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e196b74a0699e8123e0d6761716b9ab52e1d07a403b4479082950aca9c31cf08"
-    sha256 cellar: :any, arm64_sequoia: "62f7785f7fa440cafb1038f9081ba341baa2c842b385827bd1460444562c1f56"
-    sha256 cellar: :any, arm64_sonoma:  "589adf768ed3a113dbd29f75fd475ce62dab01590a22fe02f4f66c108fbd65af"
-    sha256 cellar: :any, sonoma:        "58f2007374a89be05c2a7d705bef3ba9eb4970819638290879eaf9cb92a0929a"
-    sha256               arm64_linux:   "adf1770c8e9524ff00f91778b628394472088b92453c322b12fb56b9f10e2317"
-    sha256               x86_64_linux:  "854162ecef001b9a15784d2045abf692e72703300a06ce4774978ae8cfad554a"
+    sha256 cellar: :any, arm64_tahoe:   "36b715e29d738e2491c856aaad8ea27811d7bd577a1728568c1451933754be5d"
+    sha256 cellar: :any, arm64_sequoia: "0e3ec3b6299023acd71ee84a77468b2f8dca2256da140ca89349b96a7892e865"
+    sha256 cellar: :any, arm64_sonoma:  "90d79fc32525f212e6f034177b7c7ba517e36d7c175bc44473772587525fc7e2"
+    sha256 cellar: :any, sonoma:        "f8fa8d57f4e437fe9e5c088ee9a331c7133b193242d986094a3945e2c07db875"
+    sha256               arm64_linux:   "faea631e15a85c7d872fb4c0552c2bf36b81f81ea4a7eae8ae9a6f1aa08fbd6a"
+    sha256               x86_64_linux:  "ca4e4c18edc57e21ec4513f8bc3507e243f2ed15c0c6f448ba2f94c90a4c4378"
   end
 
   depends_on "gdbm"

@@ -6,16 +6,16 @@ class Mk < Formula
   url "https://files.pythonhosted.org/packages/75/9e/dcc7813d9f7133f8d384eca24a4d4bb0cb056abcc53f1f170b8353084feb/mk-3.0.0.tar.gz"
   sha256 "0a041a3620057165f155b8372469d8ab55ae94dd91d6e27723ab9a7de1aa2086"
   license "MIT"
+  revision 1
   head "https://github.com/pycontribs/mk.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "bdda23328de46f32ae5d18b56fd2ea9129f83e7eacdadb98ae76f537112214b2"
-    sha256 cellar: :any,                 arm64_sequoia: "391e5062ba0116dcf405430903cf2e31a509d439f5904ea7ad68d6ee9d1abd84"
-    sha256 cellar: :any,                 arm64_sonoma:  "246360ddc742f1e13c4907b0da9884937b92f78490fd54dceb39e3e5c654bdd0"
-    sha256 cellar: :any,                 sonoma:        "43adea6b94a6058c67161e41d9840ba5cd180a45fde9c2d4cd6bbae1c5098e87"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "84578b7c56a6944eff5a20c2a4bf67298a51299850735a67f16fdc1dcabdd46b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "234204de2c7ed2516d7120e0753b2843fcdcf0516f79b4b1c97b2dc70662baa8"
+    sha256 cellar: :any,                 arm64_tahoe:   "2a135bab56bc33f44c30733efeed5550ea0623df14795c8668328aca4874979b"
+    sha256 cellar: :any,                 arm64_sequoia: "9e9cb249b4922f0ab0a2fceeb9dbfed28cc32cc08302604f18e3bacb98d13b38"
+    sha256 cellar: :any,                 arm64_sonoma:  "8124434f42c01bac59d84b145834eb27aecf37c35e6ff6ec9f5819701f1e0de6"
+    sha256 cellar: :any,                 sonoma:        "2cf5db6248d955667c17ecf6adf007f010103bcd315d2aa5c59d7442751a6c91"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f23c1f2cabcb081c37f7c4dbe6c7614d1abce8d6d493a47d2f82e6af3020054"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc404c07d9bbb60538a500e6d3b77156fb5843758e8b83800a3d800edc0f88ee"
   end
 
   depends_on "rust" => :build
@@ -31,13 +31,13 @@ class Mk < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "diskcache" do
@@ -46,8 +46,8 @@ class Mk < Formula
   end
 
   resource "docutils" do
-    url "https://files.pythonhosted.org/packages/4a/c0/89fe6215b443b919cb98a5002e107cb5026854ed1ccb6b5833e0768419d1/docutils-0.22.2.tar.gz"
-    sha256 "9fdb771707c8784c8f2728b67cb2c691305933d68137ef95a75db5f4dfbc213d"
+    url "https://files.pythonhosted.org/packages/d9/02/111134bfeb6e6c7ac4c74594e39a59f6c0195dc4846afbeac3cba60f1927/docutils-0.22.3.tar.gz"
+    sha256 "21486ae730e4ca9f622677b1412b879af1791efcfba517e4c6f60be543fc8cdd"
   end
 
   resource "gitdb" do
@@ -66,8 +66,8 @@ class Mk < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "jaraco-classes" do
@@ -86,8 +86,8 @@ class Mk < Formula
   end
 
   resource "keyring" do
-    url "https://files.pythonhosted.org/packages/70/09/d904a6e96f76ff214be59e7aa6ef7190008f52a0ab6689760a98de0bf37d/keyring-25.6.0.tar.gz"
-    sha256 "0b39998aa941431eb3d9b0d4b2460bc773b9df6fed7621c2dfb291a7e0187a66"
+    url "https://files.pythonhosted.org/packages/43/4b/674af6ef2f97d56f0ab5153bf0bfa28ccb6c3ed4d1babf4305449668807b/keyring-25.7.0.tar.gz"
+    sha256 "fe01bd85eb3f8fb3dd0405defdeac9a5b4f6f0439edbb3149577f244a2e8245b"
   end
 
   resource "markdown-it-py" do
@@ -106,8 +106,8 @@ class Mk < Formula
   end
 
   resource "nh3" do
-    url "https://files.pythonhosted.org/packages/cf/a6/c6e942fc8dcadab08645f57a6d01d63e97114a30ded5f269dc58e05d4741/nh3-0.3.1.tar.gz"
-    sha256 "6a854480058683d60bdc7f0456105092dae17bef1f300642856d74bd4201da93"
+    url "https://files.pythonhosted.org/packages/ca/a5/34c26015d3a434409f4d2a1cd8821a06c05238703f49283ffeb937bef093/nh3-0.3.2.tar.gz"
+    sha256 "f394759a06df8b685a4ebfb1874fb67a9cbfd58c64fc5ed587a663c0e63ec376"
   end
 
   resource "packaging" do
@@ -186,13 +186,13 @@ class Mk < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/21/ca/950278884e2ca20547ff3eb109478c6baf6b8cf219318e6bc4f666fad8e8/typer-0.19.2.tar.gz"
-    sha256 "9ad824308ded0ad06cc716434705f691d4ee0bfd0fb081839d2e426860e7fdca"
+    url "https://files.pythonhosted.org/packages/8f/28/7c85c8032b91dbe79725b6f17d2fffc595dff06a35c7a30a37bef73a1ab4/typer-0.20.0.tar.gz"
+    sha256 "1aaf6494031793e4876fb0bacfa6a912b551cf43c1e63c800df8b1a866720c37"
   end
 
   resource "typer-config" do
-    url "https://files.pythonhosted.org/packages/2e/af/78f802bc49eaa5855082cca10e9c9d7d03469c957c149aa159561dc3d744/typer_config-1.4.2.tar.gz"
-    sha256 "69dffc0e06095b57754bfe9fb3e4caf28ab9c2c430dade6433b0ca128510f600"
+    url "https://files.pythonhosted.org/packages/19/77/b8a2c0cdbd3d264ee545daa4e232d2257a9ee590923fb953e6e676a12d0f/typer_config-1.4.3.tar.gz"
+    sha256 "597412a73486ca10966e8673e592bf073bc61c47f482c91c3b4256df547f27fb"
   end
 
   resource "typing-extensions" do
@@ -201,8 +201,8 @@ class Mk < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

@@ -6,10 +6,11 @@ class Osc < Formula
   url "https://files.pythonhosted.org/packages/0c/47/96d136f0e774e3d12f00d1a4b63e808d8b8c757bb0122db878c78b191ddd/osc-1.22.0.tar.gz"
   sha256 "a88b3a4c87aca7c87bbfa4da9be5371f70c31222ae93eb6beae4c5598bb4db2a"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/openSUSE/osc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "383f126d5b14ef272d8ac1d991da27debd2256039582a268f9faa01bb070d66d"
+    sha256 cellar: :any_skip_relocation, all: "7d651a23456a599a5f030baab606f19f487799cea82ad0ffff448e14821eb2f0"
   end
 
   depends_on "cryptography" => :no_linkage
@@ -29,8 +30,8 @@ class Osc < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

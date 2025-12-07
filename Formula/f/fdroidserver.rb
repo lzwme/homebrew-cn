@@ -6,14 +6,15 @@ class Fdroidserver < Formula
   url "https://files.pythonhosted.org/packages/dd/1e/4f8b300092cef6f90f46041743c653156347063c15e81cdc60728c70dd28/fdroidserver-2.4.3.tar.gz"
   sha256 "bb0da11f4ff087061af900a1c12404e7c26392aee8a214e1f842fa129a33a0db"
   license "AGPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "64f214b2171e35299f1bd18f73bab4f64831bd4c710c24644d79093f74e6020e"
-    sha256 cellar: :any,                 arm64_sequoia: "1eb794fca872ae8800c1f4f4626f0f68f12d72118c86181c3e700271f94d63ec"
-    sha256 cellar: :any,                 arm64_sonoma:  "df076b4d7f43c89d71113accba8bdaa0aa0c36ee9647932f07caed34f566c078"
-    sha256 cellar: :any,                 sonoma:        "ba4b11d8661515650cce3850700a7e41fbfe32e9c78360695e89cc27a0826da3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3644e752f9d28e0a1a6dd6a4a2cb5fb15e949f87bcf1ddad92520e9403071af8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72e3a5604b8f469edf6853ed0bb1cacac96bcb0a691f7b8a7056426483e24eec"
+    sha256 cellar: :any,                 arm64_tahoe:   "bd0cffd10be973e8583a097c18733bceb457321067832cb9e007fa8774248df2"
+    sha256 cellar: :any,                 arm64_sequoia: "9aebbea9ab56a078b9b66c3bea9688da02085a469c7648e7f7f0c8563008f6bc"
+    sha256 cellar: :any,                 arm64_sonoma:  "2015e0ea2ee3b67d7604d4e719dab7dc38fda96dc3fd6c1a94b39d5beebe4930"
+    sha256 cellar: :any,                 sonoma:        "62cf313c8305492591ad9da46e6843cf50bf0f079446a03e7dc6150be0c863c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e8c21891d3ca7ceb7e90681cedcdfc3075c49370bcab6e3a574703e0e08ceb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef744ace5aec6b69ab9a1c6646a7fdc431b7cb084700e2f9c603373186c435b5"
   end
 
   depends_on "ninja" => :build
@@ -172,11 +173,6 @@ class Fdroidserver < Formula
     sha256 "85b0ee964ceddf211c41b9f27a49086010a190fd8132a24e21f362a4b36a791c"
   end
 
-  resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/03/b8/704d753a5a45507a7aab61f18db9509302ed3d0a27ac7e0359ec2905b1a6/greenlet-3.2.4.tar.gz"
-    sha256 "0dca0d95ff849f9a364385f36ab49f50065d76964944638be9691e1832e9f86d"
-  end
-
   resource "idna" do
     url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
     sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
@@ -283,8 +279,8 @@ class Fdroidserver < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "prompt-toolkit" do
@@ -398,8 +394,8 @@ class Fdroidserver < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "wcwidth" do

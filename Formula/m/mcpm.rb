@@ -6,14 +6,15 @@ class Mcpm < Formula
   url "https://files.pythonhosted.org/packages/83/5b/a4dcc3baedea5f5cec6c79728a9be9007986a4b62da5f9596be08a1ea555/mcpm-2.10.0.tar.gz"
   sha256 "51c2089ce666a6818aa92ec449aaf20e226e3923c8c1f0ba29a44beff87755ed"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f686a158fd43d570a3a08d4e454ba22e809da888dddcc10bb9ee8a3ed3cad43c"
-    sha256 cellar: :any,                 arm64_sequoia: "d4fde398fae017a88d386fb2353197e055b92eb4b9e781f685f8cc79f9de729b"
-    sha256 cellar: :any,                 arm64_sonoma:  "0d08a7fe097882ecf6c73a7f9eef54d87aee6fab72cadbd323c549203c9a64f3"
-    sha256 cellar: :any,                 sonoma:        "8d6aac51c07a1233ca1bb5b661810499da4a300bb31ba5f9002115038c8a0bcf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4deac712555a2c10e0b0198020b61ed1c029603f04f29e0fb195ee129ccfd19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c94dac05ee857d9aba5072651f3261ddd7dd628a3410b07178eb20fd4f6d40ba"
+    sha256 cellar: :any,                 arm64_tahoe:   "3c91f53ec61491750009848491c2943e4aa42e29df387b21dba908e5e51afaff"
+    sha256 cellar: :any,                 arm64_sequoia: "7310ab9a00c902d89248a425a37ddef3d9078eed9cbdb4ffe1815bfa25e9ac62"
+    sha256 cellar: :any,                 arm64_sonoma:  "482eb5ead8dbcc3b599243192ed55d7d0816e2931b101d1817f6e26e88b4abd6"
+    sha256 cellar: :any,                 sonoma:        "9c4265f29bd7b13d51d1cafe5248d8447ac4f2d778c37211f5d27b6c0d8c315a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd672dc853b3e161e915a53f906cbd5000e9dae4b4dc3e3f17a56657ab466a1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b773aba12afe309060df2a77e2986859d01e43463064dc845e843728a5d71b83"
   end
 
   depends_on "cmake" => :build # for duckdb
@@ -279,8 +280,8 @@ class Mcpm < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "uvicorn" do

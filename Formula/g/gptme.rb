@@ -6,16 +6,16 @@ class Gptme < Formula
   url "https://files.pythonhosted.org/packages/cf/48/95c9aa7ab0c6144de90fb56394720c570af139a453d1c5e2729c61df8780/gptme-0.30.0.tar.gz"
   sha256 "02406e255091fc116b1bad4b8c5ec1d79f306045a354d9cb3d5a15797097b161"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/ErikBjare/gptme.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1cee60f1da1a5a3d5550aacd3b061f92dedbb242d64b64859aef299f76459428"
-    sha256 cellar: :any,                 arm64_sequoia: "7f3a0ecb3454e1d536786cb0b157420576d88d9c42cfe5e1a7aad031f2ea0b71"
-    sha256 cellar: :any,                 arm64_sonoma:  "01fed8addc3057a4bc362bd8c1d2b4918226b5fbf1e68bc89e199da790288bb7"
-    sha256 cellar: :any,                 sonoma:        "e78ddd27df8a700444986a56fb052f002d7483cc2355527bc63c8b1f39cb7668"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "627e11f7588621f9de5c9cceb2d6c0905a275d2051828575117652779581a1d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d53ccd1be13761db42cf30bf6e2de1614a9e6e8e19bc7435e989a30bf8f1796e"
+    sha256 cellar: :any,                 arm64_tahoe:   "f633e471c8f17d6447f6e210b53ea64c09cbeaefc97a226b9b8a23985ab19812"
+    sha256 cellar: :any,                 arm64_sequoia: "238eafc2c6f217c047d7d9aca0517a5c338dc6e79bf655792181abc9cd285a48"
+    sha256 cellar: :any,                 arm64_sonoma:  "546007286bb8210f8f99f3638fd1e985f1013381f06c8b661fc491518cf96747"
+    sha256 cellar: :any,                 sonoma:        "24e11f52044ff5aad9fa4ba5df924ddf20887ca26f6e13fa9138ec91f35ec887"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2763608b30edf24b653f0c2ef6c596cfe599c403acdd79a6a937152714064024"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26dc8c03f4c59047c26f33c38bcad806fd8fcd20d43fc55dfaea4388923113b4"
   end
 
   depends_on "rust" => :build # for jitter
@@ -198,8 +198,8 @@ class Gptme < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "prompt-toolkit" do
@@ -328,8 +328,8 @@ class Gptme < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "uvicorn" do

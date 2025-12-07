@@ -9,12 +9,17 @@ class GitCola < Formula
   head "https://github.com/git-cola/git-cola.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5698d5131f01f052703da181ca11986b25dbf19846dfb6a71b42b06f79ed5d4e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "4ddf9297d3761462640203f03f2e0e54b2690386f4da74fcd1c54066b523d2e2"
   end
 
   depends_on "git-gui"
   depends_on "pyqt"
   depends_on "python@3.14"
+
+  on_linux do
+    depends_on "qtwayland" => :no_linkage
+  end
 
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"

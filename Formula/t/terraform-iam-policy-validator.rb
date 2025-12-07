@@ -6,29 +6,28 @@ class TerraformIamPolicyValidator < Formula
   url "https://files.pythonhosted.org/packages/89/6b/bdb90f2fcb4a0033f138d52d5b24af9a2f8a84703ef94cbc31d51f0afaed/tf_policy_validator-0.0.9.tar.gz"
   sha256 "ec8496bb8d45642a61f36dba95c867ac8ca5438bfc5bebafe8e3eec03a50d181"
   license "MIT-0"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "0dd0550290c327df46e97ec879a63d04c632107e4ce2a87f7aa2b549b8f8d8c5"
-    sha256 cellar: :any,                 arm64_sequoia: "8c34011a2385b9d46775b722071f2f070fdae6f0508967f501e31d7ca03a3d3d"
-    sha256 cellar: :any,                 arm64_sonoma:  "83bd301802bce5b64783a8175386dbb639c799fd73326f6eae79051d5033cd42"
-    sha256 cellar: :any,                 sonoma:        "58c49adba68848ecf839f79d312ee8e7534c57b9f4f38c2748633add9be29ae2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a65691acb8eef199f0caba0e76f1914bdd2cff6d8a47269d1a0add317903c3c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fe92d2f99352427a9957b1734dbe103fa9c3eb43cf2d33294aaba7cba5ddef5"
+    sha256 cellar: :any,                 arm64_tahoe:   "437c5ff4f25dc62b5c1a5bde0d9266e21e81f337e3f0745cee8efb38fc74e883"
+    sha256 cellar: :any,                 arm64_sequoia: "59abe7788c086800af67f08681515e41f71b050b5ef64425126a9579e803baad"
+    sha256 cellar: :any,                 arm64_sonoma:  "6fd3ebeaa9d5e0aee127b7b078a1e6149f7e3d4c1948f9ba06401d93429e7fb2"
+    sha256 cellar: :any,                 sonoma:        "963031588714f6c02217f44eb9b96cde1ee440404ada7aeec8772c51be794285"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3baaa856c2cd7c6ba3022cb2370ba3e2e795b3d05841f2dec4bc94596b3b316"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e69109b409174b41b398ac204327b93afa497ce79d9d541fbe076d1f949fc54e"
   end
 
   depends_on "libyaml"
   depends_on "python@3.14"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/ba/41/d4d73f55b367899ee377cd77c228748c18698ea3507c2a95b328f9152017/boto3-1.40.50.tar.gz"
-    sha256 "ae34363e8f34a49ab130d10c507a611926c1101d5d14d70be5598ca308e13266"
+    url "https://files.pythonhosted.org/packages/f3/31/246916eec4fc5ff7bebf7e75caf47ee4d72b37d4120b6943e3460956e618/boto3-1.42.4.tar.gz"
+    sha256 "65f0d98a3786ec729ba9b5f70448895b2d1d1f27949aa7af5cb4f39da341bbc4"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/5b/66/21d9ac0d37e5c4e55171466351cfc77404d8d664ccc17d4add6dba1dee99/botocore-1.40.50.tar.gz"
-    sha256 "1d3d5b5759c9cb30202cd5ad231ec8afb1abe5be0c088a1707195c2cbae0e742"
+    url "https://files.pythonhosted.org/packages/5c/b7/dec048c124619b2702b5236c5fc9d8e5b0a87013529e9245dc49aaaf31ff/botocore-1.42.4.tar.gz"
+    sha256 "d4816023492b987a804f693c2d76fb751fdc8755d49933106d69e2489c4c0f98"
   end
 
   resource "jmespath" do
@@ -47,8 +46,8 @@ class TerraformIamPolicyValidator < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/62/74/8d69dcb7a9efe8baa2046891735e5dfe433ad558ae23d9e3c14c633d1d58/s3transfer-0.14.0.tar.gz"
-    sha256 "eff12264e7c8b4985074ccce27a3b38a485bb7f7422cc8046fee9be4983e4125"
+    url "https://files.pythonhosted.org/packages/05/04/74127fc843314818edfa81b5540e26dd537353b123a4edc563109d8f17dd/s3transfer-0.16.0.tar.gz"
+    sha256 "8e990f13268025792229cd52fa10cb7163744bf56e719e0b9cb925ab79abf920"
   end
 
   resource "six" do
@@ -57,8 +56,8 @@ class TerraformIamPolicyValidator < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

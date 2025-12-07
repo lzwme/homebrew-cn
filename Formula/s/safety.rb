@@ -6,15 +6,16 @@ class Safety < Formula
   url "https://files.pythonhosted.org/packages/6f/e8/1cfffa0d8836de8aa31f4fa7fdeb892c7cfa97cd555039ad5df71ce0e968/safety-3.7.0.tar.gz"
   sha256 "daec15a393cafc32b846b7ef93f9c952a1708863e242341ab5bde2e4beabb54e"
   license "MIT"
+  revision 1
   head "https://github.com/pyupio/safety.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "38dc3419e08fd916438d6f4ba667bc394f1665ba79e53121c6defcb999d19d8e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bbc0734477f73cbb476ee44a1c34a7aece3cad66f237d708e96382e1c575df8c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08ba9498e6f78f2bf9f34f1a3335ca6fc45660269ea46de0684d7cb1b81b80c5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "af3815795ca2f9e970b06d8a964210ae0c8af5bdaef63b2a3ad43a30751c7b21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fe874612ce4b0fcdece9b810060c100ca32b0f7fc5d4de098dc1a2597d8cff7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41f551c705407abcfbedaa897f46818bf1b0bf7dfde548a60d9d25d402db2f4a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "847c3db1d89901af309c49f4baa9db762e5a27f4ef413f4ee72b6e1b4a7829cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c48ee3994d6327935c774c72113429c429dc9d94dae56bbf4dc32de5560a43ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3cc4a5e1cd12a6612497bb2035601f76ae44193913af309d9643437316406fee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3c289e8a4c61803b6d9f161b048e9268482fe738179c1baa18591194c03d6988"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b5a32f09bee9a44939f1a5f5635076def66dbed1d2800efddae2045a701f8f31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a573430b4de3bc417fbecfa1a546ec667f1bc15cfdf98be46990ab1e486b0c57"
   end
 
   depends_on "certifi" => :no_linkage
@@ -25,8 +26,8 @@ class Safety < Formula
   pypi_packages exclude_packages: %w[certifi cryptography pydantic]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "authlib" do
@@ -40,8 +41,8 @@ class Safety < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "dparse" do
@@ -95,8 +96,8 @@ class Safety < Formula
   end
 
   resource "marshmallow" do
-    url "https://files.pythonhosted.org/packages/a7/2c/e40834adb0bb6f21d7372ad90e616eda82116d4f090d93c29ceb2366cdaf/marshmallow-4.1.0.tar.gz"
-    sha256 "daa9862f74e2f7864980d25c29b4ea72944cde48aa17537e3bd5797a4ae62d71"
+    url "https://files.pythonhosted.org/packages/4f/81/edb105b3296712a282680bc1ae02b8c1bb45d8f1edad3ff9fab1d41e9507/marshmallow-4.1.1.tar.gz"
+    sha256 "550aa14b619072f0a8d8184911b3f1021c5c32587fb27318ddf81ce0d0029c9d"
   end
 
   resource "mdurl" do
@@ -149,11 +150,6 @@ class Safety < Formula
     sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
   end
 
-  resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
-    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
-  end
-
   resource "tenacity" do
     url "https://files.pythonhosted.org/packages/0a/d4/2b0cd0fe285e14b36db076e78c93766ff1d529d70408bd1d2a5a84f1d929/tenacity-9.1.2.tar.gz"
     sha256 "1169d376c297e7de388d18b4481760d478b0e99a777cad3a9c86e556f4b697cb"
@@ -175,8 +171,8 @@ class Safety < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

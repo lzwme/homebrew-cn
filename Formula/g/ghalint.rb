@@ -1,20 +1,18 @@
 class Ghalint < Formula
   desc "GitHub Actions linter"
   homepage "https://github.com/suzuki-shunsuke/ghalint"
-  url "https://ghfast.top/https://github.com/suzuki-shunsuke/ghalint/archive/refs/tags/v1.5.3.tar.gz"
-  sha256 "d6b8846a9770cb2cf41d3bc94ebc08cfd11db0f5d5c3f8c66fea933461bd4053"
+  url "https://ghfast.top/https://github.com/suzuki-shunsuke/ghalint/archive/refs/tags/v1.5.4.tar.gz"
+  sha256 "bd3c22fc58ba5f4a1546aceb373aaa1c609b902a874d75688be700bc2fd9c09d"
   license "MIT"
   head "https://github.com/suzuki-shunsuke/ghalint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "45b204924b2a85500f881e06bb3196484c381d965e3cd72357b44618230a6bb7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed279b0a5822563dd39b43662ac04497b50fed43b3e137d2d65cde5fb968596c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed279b0a5822563dd39b43662ac04497b50fed43b3e137d2d65cde5fb968596c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ed279b0a5822563dd39b43662ac04497b50fed43b3e137d2d65cde5fb968596c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "48e974049a4e67d70875206faec08ee32983da211af681f1008f23a38babe33a"
-    sha256 cellar: :any_skip_relocation, ventura:       "48e974049a4e67d70875206faec08ee32983da211af681f1008f23a38babe33a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "877bfb07a484a7c272388915fea67f151cefef8de6be1d17ace20aba9c74627e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de425404f1ad3945363738fa2ec547f0b9a1e8fd5501e7e29b3f595edd015eb3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e3e179f2fcf0e0831f3f13f7fa4fa2683bbbfb47faf1e685dae331d0eda175b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e3e179f2fcf0e0831f3f13f7fa4fa2683bbbfb47faf1e685dae331d0eda175b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e3e179f2fcf0e0831f3f13f7fa4fa2683bbbfb47faf1e685dae331d0eda175b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "01479ab393749b664a5e5a3e349726ca9447d41a3f596a0133262b6752cf36c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad7e75a4beff5fa95e0d60cb1349329b4a19e01f8ef66108186594a35ee7f030"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c6aaeab36b13a7dabc95f4ba7700219fd8ccba540eacd178bbd3f7ba32f7399"
   end
 
   depends_on "go" => :build

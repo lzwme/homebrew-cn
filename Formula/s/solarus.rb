@@ -2,8 +2,8 @@ class Solarus < Formula
   desc "Action-RPG game engine"
   homepage "https://www.solarus-games.org/"
   url "https://gitlab.com/solarus-games/solarus.git",
-      tag:      "v2.0.0",
-      revision: "1c69f3d7ec133eaff28c22d756170eba69a520b0"
+      tag:      "v2.0.2",
+      revision: "0874ea9df1bb73aa7d9c43763916805100dfc524"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,14 +12,12 @@ class Solarus < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "83cae14ca7357689da1572d95b375c5f1bb1dea3c8fa65b8ebdf105e3e354ca5"
-    sha256                               arm64_sequoia: "85a7c6dfc13c8c421fa74d19b342a233cd44033cbf77cbb68ad09eaedc718dad"
-    sha256                               arm64_sonoma:  "05499edb58e7a13a8967b7a6fbf809f51794cc5f53ce1495ee6bfe048a1bd2c1"
-    sha256                               arm64_ventura: "010d2aa833ddfaa4bed2f231858589d37cf667b75e85bae1dbfed9e00cba7209"
-    sha256                               sonoma:        "ef4bed02bcff7a4c5ef11bf7c2b8975a96e125b937f5326e3c45f52132563cb8"
-    sha256                               ventura:       "83234601f53be7a2a3137671d73e94000b47316e77547332f066e70770469e20"
-    sha256                               arm64_linux:   "c4bc34e892827477f7dc3c599df51d44e2b9f714bfda46c54e238e0d46e22923"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04d4e184b09908722468e977d425e4a1e441eb8dfe576d662445de67b659f73a"
+    sha256                               arm64_tahoe:   "aabe080c5a9ec9abfd98401587bf08fa7735a80688a0be8b29f1c90f21b42eea"
+    sha256                               arm64_sequoia: "70399e45d5a8ee62c9ea4bb80b5d0ae52f052255dc89e7f65f1c7a5aca98fa63"
+    sha256                               arm64_sonoma:  "1121cf72c5321a12d5bfe33633b98e0b2b50054004a84bc3132477aabb644f4a"
+    sha256                               sonoma:        "7a8bb414a2c115728548f742f56960731f82665c267c26cedf6c8b7699c31809"
+    sha256                               arm64_linux:   "90f5ed0ea3e76d79c39173d41656362a5af72f270a91a172de0961aed6dcc478"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e10498da498c99b1f5d2870de0e6b9f5381b6894ef3e943ad4c7fab1b7edd27"
   end
 
   depends_on "cmake" => :build

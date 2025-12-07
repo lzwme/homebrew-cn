@@ -6,16 +6,15 @@ class Gitingest < Formula
   url "https://files.pythonhosted.org/packages/d6/fe/a915f0c32a3d7920206a677f73c185b3eadf4ec151fb05aedd52e64713f7/gitingest-0.3.1.tar.gz"
   sha256 "4587cab873d4e08bdb16d612bb153c23e0ce59771a1d57a438239c5e39f05ebf"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "41f63f137996e6a18f099b602c00deb40799eca912153dce7da1c3733c190e5c"
-    sha256 cellar: :any,                 arm64_sequoia: "dbcb35560324ed58ac008c906d3dda23761e3627c6c18b0801478ee3abff310b"
-    sha256 cellar: :any,                 arm64_sonoma:  "260fbf629247881a1e01a0ca6ad7018c7742b79f1b0e83a1c7ce37d5e63bd91a"
-    sha256 cellar: :any,                 sonoma:        "5f62340960c1599296370c310e6d4e64e3d5a8ca3e191997d595d120f521be53"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e501ee85930350c99840f4aceda4fb523698f8363fd32245d228c4660ceb1cd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85b1ae5da29cb0de08117ab8325c3b67c3c3cbe51ae8119d8a6ea043d14b7ecd"
+    sha256 cellar: :any,                 arm64_tahoe:   "a946cfd9a17bd51693986b6dfb1f43e78cb0f60e43f4b2a43ae5b45e0bc1f611"
+    sha256 cellar: :any,                 arm64_sequoia: "64f7f346c95abab3ba69b57042538af681abd53cd7f7cb5dfaae4b730a112bd6"
+    sha256 cellar: :any,                 arm64_sonoma:  "a3a8403ea5493aaf48e91d1477e6b07c55466e680b8ca74ed5fb2ed22cdb3b3a"
+    sha256 cellar: :any,                 sonoma:        "5f723c1cbc15578880b3c6b3a0ba05516df9d52b877edd5122cc672951b54ceb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b042dccd8a1596c40ddc8c9636c187c8722638f5e42b941ac8f020117532eafd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a9bc16dde2368bf63c3dbff6941ceba2c108a234cdab8bbc63f79845df8fa70"
   end
 
   depends_on "rust" => :build # for tiktoken
@@ -26,8 +25,8 @@ class Gitingest < Formula
   pypi_packages exclude_packages: ["certifi", "pydantic"]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "charset-normalizer" do
@@ -36,8 +35,8 @@ class Gitingest < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "h11" do
@@ -85,11 +84,6 @@ class Gitingest < Formula
     sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
-  resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
-    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
-  end
-
   resource "starlette" do
     url "https://files.pythonhosted.org/packages/ba/b8/73a0e6a6e079a9d9cfa64113d771e421640b6f679a52eeb9b32f72d871a1/starlette-0.50.0.tar.gz"
     sha256 "a2a17b22203254bcbc2e1f926d2d55f3f9497f769416b3190768befe598fa3ca"
@@ -101,8 +95,8 @@ class Gitingest < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

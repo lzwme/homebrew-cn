@@ -9,15 +9,15 @@ class Jupyterlab < Formula
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3dc1c41e27c2a5da9c04d13b2f579c2a31af463322f44c0e0fff40db0f1511d4"
-    sha256 cellar: :any,                 arm64_sequoia: "6a041db60e4ece4e430f63c57c772386e083ec9bdfa023750ba96204a7c7afa8"
-    sha256 cellar: :any,                 arm64_sonoma:  "2ed65c58719b48f6601f204ae77441df2b5cae377fe7f152879cef573441c3f3"
-    sha256 cellar: :any,                 sonoma:        "6667529c6b617fbdaf2e3e35401e6a7f8823a460dbe3141f9963feb93f4b7873"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6edc83f3e2027b274c56b295352b88d6314da13bf2332dac5de1138e929c66b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bdc012599ac01bedfc85a96b624213de5ccc19acdcbbbead23351673d46e615"
+    sha256 cellar: :any,                 arm64_tahoe:   "d2d74f5b4aa68f158c3ada33e10ea89d13ebc58f81057b4b993d73a2a005124d"
+    sha256 cellar: :any,                 arm64_sequoia: "ad2ac17f6f881b4db6769bfa52e6012044aed777cb40ab8f132cbaed392a1c7c"
+    sha256 cellar: :any,                 arm64_sonoma:  "06d926b7c24d38827fdf22e4c866ac52f34f76376d7829a37158b46c3da50c8f"
+    sha256 cellar: :any,                 sonoma:        "46b8f7fe10ad7db2cf03c2d64f6e3fa06c43ea405766afa75d7707f259129847"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98428512a1520a237c6ad631dc38add30ec95dbdc42132a290e30ed78366d66e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fd6064f73bed54b0ffab24e51b13923f312294a88db47c41d87836d0eabc8a6"
   end
 
   depends_on "cmake" => :build # for ipykernel
@@ -36,8 +36,8 @@ class Jupyterlab < Formula
                 exclude_packages: %w[certifi rpds-py]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "appnope" do
@@ -81,8 +81,8 @@ class Jupyterlab < Formula
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/77/e9/df2358efd7659577435e2177bfa69cba6c33216681af51a707193dec162a/beautifulsoup4-4.14.2.tar.gz"
-    sha256 "2a98ab9f944a11acee9cc848508ec28d9228abfd522ef0fad6a02a72e0ded69e"
+    url "https://files.pythonhosted.org/packages/c3/b0/1c6a16426d389813b48d95e26898aff79abbde42ad353958ad95cc8c9b21/beautifulsoup4-4.14.3.tar.gz"
+    sha256 "6292b1c5186d356bba669ef9f7f051757099565ad9ada5dd630bd9de5fa7fb86"
   end
 
   resource "bleach" do
@@ -151,8 +151,8 @@ class Jupyterlab < Formula
   end
 
   resource "hatchling" do
-    url "https://files.pythonhosted.org/packages/8f/8a/cc1debe3514da292094f1c3a700e4ca25442489731ef7c0814358816bb03/hatchling-1.27.0.tar.gz"
-    sha256 "971c296d9819abb3811112fc52c7a9751c8d381898f36533bb16f9791e941fd6"
+    url "https://files.pythonhosted.org/packages/0b/8e/e480359492affde4119a131da729dd26da742c2c9b604dff74836e47eef9/hatchling-1.28.0.tar.gz"
+    sha256 "4d50b02aece6892b8cd0b3ce6c82cb218594d3ec5836dbde75bf41a21ab004c8"
   end
 
   resource "httpcore" do
@@ -176,8 +176,8 @@ class Jupyterlab < Formula
   end
 
   resource "ipython" do
-    url "https://files.pythonhosted.org/packages/29/e6/48c74d54039241a456add616464ea28c6ebf782e4110d419411b83dae06f/ipython-9.7.0.tar.gz"
-    sha256 "5f6de88c905a566c6a9d6c400a8fed54a638e1f7543d17aae2551133216b1e4e"
+    url "https://files.pythonhosted.org/packages/12/51/a703c030f4928646d390b4971af4938a1b10c9dfce694f0d99a0bb073cb2/ipython-9.8.0.tar.gz"
+    sha256 "8e4ce129a627eb9dd221c41b1d2cdaed4ef7c9da8c17c63f6f578fe231141f83"
   end
 
   resource "ipython-pygments-lexers" do
@@ -341,8 +341,8 @@ class Jupyterlab < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "pluggy" do
@@ -445,11 +445,6 @@ class Jupyterlab < Formula
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
-  resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
-    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
-  end
-
   resource "soupsieve" do
     url "https://files.pythonhosted.org/packages/6d/e6/21ccce3262dd4889aa3332e5a119a3491a95e8f60939870a3a035aabac0d/soupsieve-2.8.tar.gz"
     sha256 "e2dd4a40a628cb5f28f6d4b0db8800b8f581b65bb380b97de22ba5ca8d72572f"
@@ -481,8 +476,8 @@ class Jupyterlab < Formula
   end
 
   resource "trove-classifiers" do
-    url "https://files.pythonhosted.org/packages/bf/a9/880cccf76af9e7b322112f52e4e2dbb3534cbe671197b8f443a42189dfc7/trove_classifiers-2025.11.14.15.tar.gz"
-    sha256 "6b60f49d40bbd895bc61d8dc414fc2f2286d70eb72ed23548db8cf94f62804ca"
+    url "https://files.pythonhosted.org/packages/80/e1/000add3b3e0725ce7ee0ea6ea4543f1e1d9519742f3b2320de41eeefa7c7/trove_classifiers-2025.12.1.14.tar.gz"
+    sha256 "a74f0400524fc83620a9be74a07074b5cbe7594fd4d97fd4c2bfde625fdc1633"
   end
 
   resource "typing-extensions" do
@@ -501,8 +496,8 @@ class Jupyterlab < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "wcwidth" do

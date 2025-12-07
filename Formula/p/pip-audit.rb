@@ -6,15 +6,16 @@ class PipAudit < Formula
   url "https://files.pythonhosted.org/packages/bd/89/0e999b413facab81c33d118f3ac3739fd02c0622ccf7c4e82e37cebd8447/pip_audit-2.10.0.tar.gz"
   sha256 "427ea5bf61d1d06b98b1ae29b7feacc00288a2eced52c9c58ceed5253ef6c2a4"
   license "Apache-2.0"
+  revision 1
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10aaa291d6377cbfeb2788944a83ebcb32f4916c128cc5b3f83fa517750cd587"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32d0ea49cb19392e4ae344920b453d091cfe8838bb87a893c5eeaf8d8a602a70"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e26727e8040a51f13c235c440ee244ec8dbbd24376d4d8040455d4e9b902b7f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dbbd958bfc0241c1f4459431bc040d68d9b4cf0269461fa6cb30f28972f85920"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d015806b045c52157e96792831f7d6ecfbc9ce477e258057dca73735842f67a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d37de6aea2b35fd83f897e07d71f3fd2f9f4626aac6705a2f2ec9e17421d623"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b3c9d86120f2db496bf24e129497d0f37796f8606d232b0ff06c1db88e2a3e22"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0813393ffe250fb4eb3defccf941b1e123f7f9d879171ed9aad455b5db87c38c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8eb119813c531715631dc466c9f058b6d0de6d9ce49ed599ca4bac8fff7424e1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6325dbd5a797efe967232994a5eb5ce8917edd585f22a0035b727c29e2a09bb6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d1274c356db6197e02b10a02d8e62590c271970502fea0cda9f6d32f0e52d75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92582e1f0293e55904bcb86930b6b070fdabac94358440946bf30831b3595c24"
   end
 
   depends_on "rust" => :build
@@ -39,8 +40,8 @@ class PipAudit < Formula
   end
 
   resource "cyclonedx-python-lib" do
-    url "https://files.pythonhosted.org/packages/56/65/1127e801f8d0c2928b73c5b0a9fba45654ea3dc8738a45cf0b92490ab380/cyclonedx_python_lib-11.5.0.tar.gz"
-    sha256 "175819663ae5a3c9930462ebcbddd6abb3ad5f237e12a503dbd0af320a9c5b96"
+    url "https://files.pythonhosted.org/packages/89/ed/54ecfa25fc145c58bf4f98090f7b6ffe5188d0759248c57dde44427ea239/cyclonedx_python_lib-11.6.0.tar.gz"
+    sha256 "7fb85a4371fa3a203e5be577ac22b7e9a7157f8b0058b7448731474d6dea7bf0"
   end
 
   resource "defusedxml" do
@@ -99,8 +100,8 @@ class PipAudit < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "py-serializable" do
@@ -144,8 +145,8 @@ class PipAudit < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

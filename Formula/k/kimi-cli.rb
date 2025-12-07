@@ -6,15 +6,16 @@ class KimiCli < Formula
   url "https://files.pythonhosted.org/packages/7f/67/37a1660f447d5e1592ce3b39eded22653d84cd6cc9b8fc9568059f8c2617/kimi_cli-0.61.tar.gz"
   sha256 "42a4321cf2caccdf736a36d480ede7c2f051fbe0b3033af8d3ff31224df7556f"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "42c1974390d3b76c5b020d221b6eebeb35f709875390ee6a3dbf7fc39fa452e6"
-    sha256 cellar: :any,                 arm64_sequoia: "4ce783720dda9702aef6bbfc6dddef87ba8824b6a558b0df537335bd2dc35c98"
-    sha256 cellar: :any,                 arm64_sonoma:  "b395e959ac9b5ac251d81b27028c823fbdf770870985cc4f1051c8f506bb07ed"
-    sha256 cellar: :any,                 sonoma:        "71c87c39150017878e69ebfe3bc045a49ae9b0831b47d9839e5fa7170256f8c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fdf7471960201b74cd4b2f2fae6b716fb8ccd9b051232b2a419d98bf706fc815"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6dee43aee62d174c5b098ffc707d88a84974d1eb8050afd8ebd0a00ac002d7e6"
+    sha256 cellar: :any,                 arm64_tahoe:   "5fa9c424844180f940420fcad78eaaa1c6f12870196c410ac2860acb67815520"
+    sha256 cellar: :any,                 arm64_sequoia: "7956d51c649bea5f6f1a32149d8375581d476c0d37a819ebfe9fa5ce5ddc325d"
+    sha256 cellar: :any,                 arm64_sonoma:  "5cdfeebb5dc28e6ce8fad8f6ae13de6f9a9b073d2913810057c6cec9b4f71411"
+    sha256 cellar: :any,                 sonoma:        "c8bcfba8dc3a00cb21b01b04d99d1f5795c778e88295068ee444a153098fa362"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10d3159e804fa5b4ec39211289e4a0c4e8f432df3d1e1728f686132a917dffd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d750690b0dbe6eb562eea50e2cda10c53e87a9409cd36b10171ca4873de403b8"
   end
 
   depends_on "pkgconf" => :build
@@ -490,8 +491,8 @@ class KimiCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "uvicorn" do

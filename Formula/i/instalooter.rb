@@ -6,16 +6,15 @@ class Instalooter < Formula
   url "https://files.pythonhosted.org/packages/30/13/907e6aaba6280e1001080ab47e750068ffc5fb7174203985b3c9d678e3f2/instalooter-2.4.4.tar.gz"
   sha256 "fb9b4a948702361a161cc42e58857e3a6c9dafd9e22568b07bc0d0b09c3c34a9"
   license "GPL-3.0-or-later"
-  revision 13
+  revision 14
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d445c1163d785b9320400d42d28c9056cd32d12d2aa0346dda30ecdf7ade1d7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d445c1163d785b9320400d42d28c9056cd32d12d2aa0346dda30ecdf7ade1d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d445c1163d785b9320400d42d28c9056cd32d12d2aa0346dda30ecdf7ade1d7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "181ac15b7d74d251f2101e3d5c1fb57d196f470bbe37653a86b60dbd2251d5ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "181ac15b7d74d251f2101e3d5c1fb57d196f470bbe37653a86b60dbd2251d5ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "181ac15b7d74d251f2101e3d5c1fb57d196f470bbe37653a86b60dbd2251d5ec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "50d75e25afec7336088d8b88f1b5cec4a397451e8d61da048de4f0bdc694d68c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50d75e25afec7336088d8b88f1b5cec4a397451e8d61da048de4f0bdc694d68c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50d75e25afec7336088d8b88f1b5cec4a397451e8d61da048de4f0bdc694d68c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "af3d2b5811fb8eaec6504318825fd346d07d207efa2e17984e52a6c5e39ecc9b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "af3d2b5811fb8eaec6504318825fd346d07d207efa2e17984e52a6c5e39ecc9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af3d2b5811fb8eaec6504318825fd346d07d207efa2e17984e52a6c5e39ecc9b"
   end
 
   depends_on "certifi" => :no_linkage
@@ -89,8 +88,8 @@ class Instalooter < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "verboselogs" do

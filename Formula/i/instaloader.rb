@@ -6,9 +6,10 @@ class Instaloader < Formula
   url "https://files.pythonhosted.org/packages/d1/38/f82de9f71d6b8403f5b752d8eab4e466ac99c237ec8c642548a544948f23/instaloader-4.15.tar.gz"
   sha256 "baf1c29ba16f9d30f7c6e330a00bc1fca100522bb3a217d3c36ad620eb744685"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e67efbe437dcf0774f7e8f8c15a713a11d25cada5bb3ac8bdead58c52155cbd6"
+    sha256 cellar: :any_skip_relocation, all: "f5a2eb4878c900d1c125fa4a37a83e559c5d54184a8b10004295cdca85861f0b"
   end
 
   depends_on "certifi" => :no_linkage
@@ -32,8 +33,8 @@ class Instaloader < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

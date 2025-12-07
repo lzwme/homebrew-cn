@@ -4,7 +4,7 @@ class Standardebooks < Formula
   desc "Tools for producing ebook files"
   homepage "https://github.com/standardebooks/tools"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/standardebooks/tools.git", branch: "master"
 
   stable do
@@ -19,12 +19,12 @@ class Standardebooks < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8db597c1a1ad0858129ec883fabf0c3f93eed47f8b06bfd68807e5999d0c2363"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54afbfb5fb13337418eee1309ba1383f72098a10f38ae7497958ab4f5f0bf973"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51405c25effc19cbe4d707cd13c1f2cc4bb3a0b919e7d3137e18754e044829b8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3bcae9a32191f175a0be207ddfb1847f931f8035f2a447b1d530cb0e467e7214"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3dd0ad52715c2a7038a5dc1b369e97fdaf5e26035b814e6dff4253957dff7dc5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "667ee83fe7d886afdb4e816eeda2a1b05a1d4ea5a6edab0820afc226b58fa56c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4297502a8238adaf771965ee41c5fe2a5b6cfefafeb7d4d7b7e13fcac30783bf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90ea2a0fc7068670c2c85da8a5bb67a892555ae29ae56593fddb1843572f2a40"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d798b6528f5751e6d99c2610d19f89bbde9c99d0b0b89096ce8c371c6b6fbbbe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "04597674831dacd1fe6f5834f2f255a761733722596c19ba52ebc71ea84f5743"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "88dbd8cafb5c73d761413e48bde1dfaf89aed947ff11351faf04c95e8b8d338d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e68ec275e3b7745fba47e922c7ebaddaa6ddd47effa5e80ceaa27bf8adafe3a"
   end
 
   depends_on "rust" => :build # for selenium
@@ -63,8 +63,8 @@ class Standardebooks < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "cssselect" do
@@ -108,8 +108,8 @@ class Standardebooks < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "importlib-resources" do
@@ -233,8 +233,8 @@ class Standardebooks < Formula
   end
 
   resource "trio" do
-    url "https://files.pythonhosted.org/packages/76/8f/c6e36dd11201e2a565977d8b13f0b027ba4593c1a80bed5185489178e257/trio-0.31.0.tar.gz"
-    sha256 "f71d551ccaa79d0cb73017a33ef3264fde8335728eb4c6391451fe5d253a9d5b"
+    url "https://files.pythonhosted.org/packages/d8/ce/0041ddd9160aac0031bcf5ab786c7640d795c797e67c438e15cfedf815c8/trio-0.32.0.tar.gz"
+    sha256 "150f29ec923bcd51231e1d4c71c7006e65247d68759dd1c19af4ea815a25806b"
   end
 
   resource "trio-websocket" do
@@ -253,8 +253,8 @@ class Standardebooks < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "wcwidth" do
@@ -273,8 +273,8 @@ class Standardebooks < Formula
   end
 
   resource "wsproto" do
-    url "https://files.pythonhosted.org/packages/c9/4a/44d3c295350d776427904d73c189e10aeae66d7f555bb2feee16d1e4ba5a/wsproto-1.2.0.tar.gz"
-    sha256 "ad565f26ecb92588a3e43bc3d96164de84cd9902482b130d0ddbaa9664a85065"
+    url "https://files.pythonhosted.org/packages/c7/79/12135bdf8b9c9367b8701c2c19a14c913c120b882d50b014ca0d38083c2c/wsproto-1.3.2.tar.gz"
+    sha256 "b86885dcf294e15204919950f666e06ffc6c7c114ca900b060d6e16293528294"
   end
 
   def install

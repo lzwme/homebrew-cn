@@ -2510,7 +2510,6 @@ Homebrew-homebrew-core/Formula/g/glkterm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/glktermw.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/glm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/global.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/g/globe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/globjects.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/globstar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/glog.rb, Homebrew/homebrew-core, 1
@@ -10058,6 +10057,7 @@ Homebrew-homebrew-cask/Casks/font/font-c/font-castoro-titling.rb, Homebrew/homeb
 Homebrew-homebrew-cask/Casks/font/font-c/font-castoro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-catamaran.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-caudex.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-c/font-cause.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-caveat-brush.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-caveat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-cedarville-cursive.rb, Homebrew/homebrew-cask, 0
@@ -15704,6 +15704,7 @@ Homebrew-homebrew-cask/Casks/y/yinxiangbiji.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yippy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yo-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yoda.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/y/yoink.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yojimbo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/youdaodict.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/youdaonote.rb, Homebrew/homebrew-cask, 0

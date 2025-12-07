@@ -1,13 +1,13 @@
 class Tmuxinator < Formula
   desc "Manage complex tmux sessions easily"
   homepage "https://github.com/tmuxinator/tmuxinator"
-  url "https://ghfast.top/https://github.com/tmuxinator/tmuxinator/archive/refs/tags/v3.3.6.tar.gz"
-  sha256 "ea1b9a18f45ed26fdb51fd6edd2aada341f338b2df34868746d73c7e7a7b7dff"
+  url "https://ghfast.top/https://github.com/tmuxinator/tmuxinator/archive/refs/tags/v3.3.7.tar.gz"
+  sha256 "556756c17b8740af0d0bb3af58f3205ff25d00d515dbe6fc378653a28d14c4d8"
   license "MIT"
   head "https://github.com/tmuxinator/tmuxinator.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1c45ae4bfb41c07a583d68ddc77781abc085169a332a356bb645a226f1bcc1d9"
+    sha256 cellar: :any_skip_relocation, all: "a9ff335a312a7cc07ec67c66da6d1295300d9ce304d66773664a1a24790c687b"
   end
 
   depends_on "ruby"

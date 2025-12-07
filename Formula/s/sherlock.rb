@@ -6,16 +6,16 @@ class Sherlock < Formula
   url "https://files.pythonhosted.org/packages/76/17/d29f35df6ec6424ec15f273a31ad54ad314d1f9056321fb824bed4eda128/sherlock_project-0.16.0.tar.gz"
   sha256 "fcc8f05fb6f55de30938cce5727249f70917b226918a71f6ed3f50d8a6467610"
   license "MIT"
+  revision 1
   head "https://github.com/sherlock-project/sherlock.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "546ab96e57d0eef4dc2b99ec4a9126ba08b9faca69e55e015de53e14efc17337"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46b8b01169dd4a487fb00b7ca808ff49ef819af7220f3e3893895c6c33c4e9fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1fdae1e28ea3628384765aa80a1867d311042d0205d0bb8b1ba4720f4cb9cfad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b497b27e94d81c4bb959d3fa45dbf78626f97a59706f0e7929668262f2a2eaab"
-    sha256                               arm64_linux:   "f8f5d3eaed92e75faa70746e9331ed24d8c026f8969965be78e2447786b5dc1b"
-    sha256                               x86_64_linux:  "a8d16c92f125af39e85fed332bcc0749f144c8962be49e312b18939f081fd7f2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7527b420a5cd5c35d70be6ef667d7bbbf9bd95b647742ba7e1357e3290d5186"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c98aa61882c4f8d0116d14a623e5221e39733715d9162ad98ed7e598ed88f6c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c51e827a232454f8760bc8002b61d5d0573f029d7d79e4a37cbc0e0fec2754b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "703316d84b8da29aa04f7493666a8c4fd85ee7518b7f6ed29c238a6123b6827d"
+    sha256                               arm64_linux:   "cc71375550b13fca3787dfaa0ff0a78a065218f9b49938ccd1b80cd1bb47480d"
+    sha256                               x86_64_linux:  "74dc3d9671272f1db44ea5b81a5424ff9cc9123de72e73795330ac71e25f7286"
   end
 
   depends_on "cmake" => :build
@@ -30,8 +30,8 @@ class Sherlock < Formula
   pypi_packages exclude_packages: %w[certifi numpy]
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "colorama" do
@@ -45,8 +45,8 @@ class Sherlock < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "openpyxl" do
@@ -100,8 +100,8 @@ class Sherlock < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

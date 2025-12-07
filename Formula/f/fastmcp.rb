@@ -6,15 +6,16 @@ class Fastmcp < Formula
   url "https://files.pythonhosted.org/packages/21/a1/a507bfb73f51983759cbbc3702b6f4780128cff68ebbc51db2f10170c950/fastmcp-2.13.3.tar.gz"
   sha256 "ebca59e99412c596dd75ebdd5147800f6abc2490d025af76fa8ea4fc5f68781d"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4e14572950f8239709cc649dbe5fd1255eb4898edce33d3cfb39ee3ca43e6c30"
-    sha256 cellar: :any,                 arm64_sequoia: "94ea4a4e7bb31cc23585473e7cc9b73c429320735f7de3fba0b8e8013faaef12"
-    sha256 cellar: :any,                 arm64_sonoma:  "8f02b3135e9d2abebe35c2298fd3912a872ce98027a9d7599663a0f42e4ef257"
-    sha256 cellar: :any,                 sonoma:        "25d8303a4d3bf6f4e5abd2a0b23de74ceadcab0b512fc8774072aace406569eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0242b528896baddb7f7c0aae79c4a0b667910b928c63bd0c3a1833d949edbeb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb4545d38dfcf3ca67b58caeb229f2fbefca7f1c224e462439c8d394bdce952e"
+    sha256 cellar: :any,                 arm64_tahoe:   "682a2bacfc9054e12ca583623c4fc7a40949f97b1be378d3a00dc068b4e2ceec"
+    sha256 cellar: :any,                 arm64_sequoia: "6770bf136f5ba9205b435a18add67cb911d3a52f49be24a546fc3d0459986885"
+    sha256 cellar: :any,                 arm64_sonoma:  "88c4b8f3c41adbeac1e0d7e0651a078db8e41a4b5737c65a2b01f33a0f0eee00"
+    sha256 cellar: :any,                 sonoma:        "66b5b5fe27baa6a9baa80037b0644095f6499813005b6089a428400f029b7146"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2529d05597b36aeb808ef36ff49c49df2e16af1a3654b84bbe2e4fc89d87a721"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d40420017c15eef14a4864c1f89583207eb7b4f32c5203a0bcf85f3272b105e6"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -169,8 +170,8 @@ class Fastmcp < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "py-key-value-aio" do
@@ -249,8 +250,8 @@ class Fastmcp < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "uvicorn" do

@@ -6,16 +6,15 @@ class Oterm < Formula
   url "https://files.pythonhosted.org/packages/6f/a1/a3b7d3bc10370028087844181d85c2b4360a64f4e0844263244e27f22cfe/oterm-0.14.6.tar.gz"
   sha256 "5037b5691e3bc1d77e42c308bee5781c229fff9826c913230a22bf3a05d919b1"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "211710703592de804ac39f50c5abbbbbe3c3a8ae91cfba6828c95131754e3bda"
-    sha256 cellar: :any,                 arm64_sequoia: "4f38743ea9f0b6e68b3ea66afabea2efaaeea370bee6cf3c25cf22016c212dfc"
-    sha256 cellar: :any,                 arm64_sonoma:  "d2c6a4232ac21f68dd0ed719a643b1dfc70005f4df02bcc70670fcaa50beaf00"
-    sha256 cellar: :any,                 sonoma:        "d2fb79bb283e36885d8770a8d2f6082dadf8cf43f03ac977137cb935249db43f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9bf3de619bbeaffcaba30eb65744e31cbf32d26ade67f3245bd7b71e9a959571"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bdb700ee44d9e68e452e86afb35e627e5b55bf454e5bb4b9d15f62467a5da00"
+    sha256 cellar: :any,                 arm64_tahoe:   "7c2441dc1ab4605633f6031e9c4127d94e78cbc73195c1359b4fe9dbeb7c06e5"
+    sha256 cellar: :any,                 arm64_sequoia: "95599ff4d536ccf782f05743abed6ee6bd9f95c02496a9e1347c6347ddc2b4e4"
+    sha256 cellar: :any,                 arm64_sonoma:  "ba09875b2e775b88c29858b1acfd3b3c837fa0dd27a40030962f054330a1635a"
+    sha256 cellar: :any,                 sonoma:        "3bc48218d4d2a5f4fc9d3e82dc8342aeb679afacb1c10f20f490fac265c65ca3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b48a2f39287c2b63ced8eb2caf4aba60115ae2b64fa05899bc462ea61d8a8a69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "981a81adc4fb90f339d3998e70c14d9f4bfc5a71a62f23539a06413d3aee5d8f"
   end
 
   depends_on "pkgconf" => :build
@@ -43,8 +42,8 @@ class Oterm < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "attrs" do
@@ -68,8 +67,8 @@ class Oterm < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/8a/51/a67b17fac2530d22216a335bd10f48631412dd824013ea559ec236668f76/cyclopts-4.2.1.tar.gz"
-    sha256 "49bb4c35644e7a9658f706ade4cf1a9958834b2dca4425e2fafecf8a0537fac7"
+    url "https://files.pythonhosted.org/packages/1b/0f/fe026df2ab8301e30a2b0bd425ff1462ad858fd4f991c1ac0389c2059c24/cyclopts-4.3.0.tar.gz"
+    sha256 "e95179cd0a959ce250ecfb2f0262a5996a92c1f9467bccad2f3d829e6833cef5"
   end
 
   resource "dnspython" do
@@ -93,8 +92,8 @@ class Oterm < Formula
   end
 
   resource "exceptiongroup" do
-    url "https://files.pythonhosted.org/packages/0b/9f/a65090624ecf468cdca03533906e7c69ed7588582240cfe7cc9e770b50eb/exceptiongroup-1.3.0.tar.gz"
-    sha256 "b241f5885f560bc56a59ee63ca4c6a8bfa46ae4ad651af316d4e81817bb9fd88"
+    url "https://files.pythonhosted.org/packages/50/79/66800aadf48771f6b62f7eb014e352e5d06856655206165d775e675a02c9/exceptiongroup-1.3.1.tar.gz"
+    sha256 "8b412432c6055b0b7d14c310000ae93352ed6754f70fa8f7c34141f91c4e3219"
   end
 
   resource "fastmcp" do
@@ -228,13 +227,13 @@ class Oterm < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/20/c5/dbbc27b814c71676593d1c3f718e6cd7d4f00652cefa24b75f7aa3efb25e/pydantic_settings-2.11.0.tar.gz"
-    sha256 "d0e87a1c7d33593beb7194adb8470fc426e95ba02af83a0f23474a04c9a08180"
+    url "https://files.pythonhosted.org/packages/43/4b/ac7e0aae12027748076d72a8764ff1c9d82ca75a7a52622e67ed3f765c54/pydantic_settings-2.12.0.tar.gz"
+    sha256 "005538ef951e3c2a68e1c08b292b5f2e71490def8589d4221b95dab00dafcfd0"
   end
 
   resource "pygments" do
@@ -297,11 +296,6 @@ class Oterm < Formula
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
-  resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
-    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
-  end
-
   resource "sse-starlette" do
     url "https://files.pythonhosted.org/packages/db/3c/fa6517610dc641262b77cc7bf994ecd17465812c1b0585fe33e11be758ab/sse_starlette-3.0.3.tar.gz"
     sha256 "88cfb08747e16200ea990c8ca876b03910a23b547ab3bd764c0d8eb81019b971"
@@ -313,8 +307,8 @@ class Oterm < Formula
   end
 
   resource "terminaltexteffects" do
-    url "https://files.pythonhosted.org/packages/9d/92/0eb3f0ad206bf449b7db75f061202dce27d8cb90e598ce3c7d32c0bd80b9/terminaltexteffects-0.12.2.tar.gz"
-    sha256 "4a5eef341d538743e7ac4341cd74d47afc9d0345acdad330ed03fd0a72e41f5f"
+    url "https://files.pythonhosted.org/packages/16/d2/9293a967c80172bc56b342e51cf5354bfdf0bf2b4b9df0b25f91c9c7c439/terminaltexteffects-0.14.2.tar.gz"
+    sha256 "213c899ce4b8f7643d2d0568af144e1274e11e4493db9f5b04387bd17c217714"
   end
 
   resource "textual" do
@@ -328,8 +322,8 @@ class Oterm < Formula
   end
 
   resource "textual-speedups" do
-    url "https://files.pythonhosted.org/packages/ad/fa/979584993986defcf788e25ef46e2fe19a510ffe4aaabc5e706759e080c4/textual_speedups-0.2.0.tar.gz"
-    sha256 "e9e045e94b7daff79917f4fc699c6d99db6005559298929141d68a1293c3cc6d"
+    url "https://files.pythonhosted.org/packages/d4/73/bba3e9feae9ca730c32122306ddac61278a8bc47633346eddad9d52a435d/textual_speedups-0.2.1.tar.gz"
+    sha256 "72cf0f7bdeede015367b59b70bcf724ba2c3080a8641ebc5eb94b36ad1536824"
   end
 
   resource "textualeffects" do
@@ -348,8 +342,8 @@ class Oterm < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "uvicorn" do

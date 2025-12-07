@@ -1,20 +1,18 @@
 class Smartdns < Formula
   desc "Rule-based DNS server for fast IP resolution, DoT/DoQ/DoH/DoH3 supported"
   homepage "https://github.com/mokeyish/smartdns-rs"
-  url "https://ghfast.top/https://github.com/mokeyish/smartdns-rs/archive/refs/tags/v0.12.2.tar.gz"
-  sha256 "79f1692d5ee588fb3bfdb7d4af51e4fa3a65f115d1102493e9aa788b3225ca97"
+  url "https://ghfast.top/https://github.com/mokeyish/smartdns-rs/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "4ffd4021d751dcdd572df9dffd2f2b554c12192baa9cdb93a604bace53644bb4"
   license "GPL-3.0-only"
   head "https://github.com/mokeyish/smartdns-rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26ec9fe654358fb04809a4a11b8912b9b4f6b9e791391abee1496737ca3b00d1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45d7493797a71e04c7e08ea549f9727cb61830e4dda87545e24d25f049127bbc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32da3a1bc6da7621d1e63da5f3cb4c62d6da0e85d25dbec8f51f9155717c3d66"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4793307c69ff0a43d277c2f952c536699ce1bba6479b9bdecfb49a4ed4814943"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6f1fb508390347136f31bcf86698f41d3f17ace1c8de346961638ed2e3908e03"
-    sha256 cellar: :any_skip_relocation, ventura:       "a553a10ab6698defdf5d8dce0c9817f381cae11ced8c95dff2bc7b9422e7f944"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7672b026043c6876eab7addd25a323139e15b007421286618482e48501138f49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80392e5f5fc08199e1ec8fc51ba619ed0f62ceb4d9f764851af6c4e868a5dc29"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cca8fd83bf07a8acdc6376bc063ba43a1f8fcbc9307555cbf101d37bd941deb5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "762c01c1b00e40bbd3ed4a841fdc7ad8ba9a0d2dc098172e25be6ba1ead9f5cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4bac5030e4ae39efea04295fd4debab619990d48595d9dea45fcc6a62c7a27f6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bb6c57ce62cbc27fc4692c82e5a7e664ec3a900620792f844fc77881f6db1693"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0a5fab40ff8bd77da35573c3139ef68d955af05e7fb8926b362fa61e601e858"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c7b6a4d74488b51e08444c54a09a6cd24dcc14e3335f1aac18b19af8ee9e379"
   end
 
   depends_on "rust" => :build

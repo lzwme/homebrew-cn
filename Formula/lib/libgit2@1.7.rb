@@ -1,6 +1,6 @@
 class Libgit2AT17 < Formula
   desc "C library of Git core methods that is re-entrant and linkable"
-  homepage "https://libgit2.github.com/"
+  homepage "https://libgit2.org/"
   url "https://ghfast.top/https://github.com/libgit2/libgit2/archive/refs/tags/v1.7.2.tar.gz"
   sha256 "de384e29d7efc9330c6cdb126ebf88342b5025d920dcb7c645defad85195ea7f"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }

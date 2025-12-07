@@ -6,15 +6,16 @@ class Maigret < Formula
   url "https://files.pythonhosted.org/packages/3d/29/ef75d365917075a72ad88b7b1027bc6f93d6e45f27aec1ee6410607eb5f6/maigret-0.5.0.tar.gz"
   sha256 "d85c7f799cce51b6edf7179dda36019d0081bba528ce77284925499b07a49be7"
   license "MIT"
+  revision 1
   head "https://github.com/soxoj/maigret.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b835db51a008e8e3d255e41e63f25ee8152d7b9790ec2dbebc83b0afcdb29df5"
-    sha256 cellar: :any,                 arm64_sequoia: "87a060dc92b2f4c8834ff6cd9b3a0eb7bcc888b01173312bb46dd4426c558024"
-    sha256 cellar: :any,                 arm64_sonoma:  "5dd1cbdbe92251b89a808715c599ed9aaf07a9c0d056075117ab4ea8172e4244"
-    sha256 cellar: :any,                 sonoma:        "aefcbb97c99baf2084d5341891f25e6efb8129e9ecd0eb6106191a3c4d328b15"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9694fda50b0ca70cdf46c1702953ff00f5ad91676b23d604221b5088c0068459"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e67bb5304ac619bad459ba185503bf88446737e9d7135d710d9e01e453dc8726"
+    sha256 cellar: :any,                 arm64_tahoe:   "a046d559a48953f2b0cc086bd4573f35f087e8ee0d88f842854c60858f88d3d9"
+    sha256 cellar: :any,                 arm64_sequoia: "3ab86fbbbaf30b983ff4a11ed532a1caddd1e081f90162ff52031735d2b51846"
+    sha256 cellar: :any,                 arm64_sonoma:  "6de8caf51bb49d7dd078c3f7073e132213c0a4e4746756609ec7a8dc3097cbc6"
+    sha256 cellar: :any,                 sonoma:        "a2e0acde4a089487c1661494c1e56dcc3ae4e24675ca9b631b434da20673cfaf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab3458decff957795093c8a35a4e53a431c28d7ba1e0872aa8b7d0c9e5aee04e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "245441ff64102806be633d14272d688cd05e7e39b5f935b9930bfba396db285c"
   end
 
   depends_on "rust" => :build
@@ -36,8 +37,8 @@ class Maigret < Formula
   end
 
   resource "aiodns" do
-    url "https://files.pythonhosted.org/packages/17/0a/163e5260cecc12de6abc259d158d9da3b8ec062ab863107dcdb1166cdcef/aiodns-3.5.0.tar.gz"
-    sha256 "11264edbab51896ecf546c18eb0dd56dff0428c6aa6d2cd87e643e07300eb310"
+    url "https://files.pythonhosted.org/packages/e6/11/238e97cbf5c1c0f725d590a092e0618dcdc50f44dbd1e2a926fae27e6f06/aiodns-3.6.0.tar.gz"
+    sha256 "9b0ef54339e6687cdbd39a7d73d7de2467cb5c115281da28f2598f058633dac8"
   end
 
   resource "aiohappyeyeballs" do
@@ -188,8 +189,8 @@ class Maigret < Formula
   end
 
   resource "ipython" do
-    url "https://files.pythonhosted.org/packages/29/e6/48c74d54039241a456add616464ea28c6ebf782e4110d419411b83dae06f/ipython-9.7.0.tar.gz"
-    sha256 "5f6de88c905a566c6a9d6c400a8fed54a638e1f7543d17aae2551133216b1e4e"
+    url "https://files.pythonhosted.org/packages/12/51/a703c030f4928646d390b4971af4938a1b10c9dfce694f0d99a0bb073cb2/ipython-9.8.0.tar.gz"
+    sha256 "8e4ce129a627eb9dd221c41b1d2cdaed4ef7c9da8c17c63f6f578fe231141f83"
   end
 
   resource "ipython-pygments-lexers" do
@@ -263,8 +264,8 @@ class Maigret < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "prompt-toolkit" do
@@ -443,8 +444,8 @@ class Maigret < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "wcwidth" do

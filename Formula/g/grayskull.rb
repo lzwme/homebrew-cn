@@ -6,15 +6,16 @@ class Grayskull < Formula
   url "https://files.pythonhosted.org/packages/c7/20/c8557733b2b52ea1714c018a24b735e33cb69f9b44dbcef9cf4dd562f849/grayskull-2.9.2.tar.gz"
   sha256 "874890191b1999bfde97b09ac6d37dae4636aa87a9dd2ee1bf10e748ffba20ef"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/conda/grayskull.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd56ad1475836eb1fe2018bfb1c290ec8fb48c099de31d3ba5cb8546c25abc5f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b74fbc3b6764a32ca8196e5728a94ed9ffade8fc39c1ccd6f2c6ca9b17cf71e8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ebcf7b8e686ea80a0f325e9d90d7ddc1ec6849278dddf8eadb957dfbd6f72214"
-    sha256 cellar: :any_skip_relocation, sonoma:        "42a8dd29819f80e322a24158d94cb6aa0a20278028e7db7194a5f6ea7b8158fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8745474556631f99abce5353a96c46692ec7fe9231df66e543aae3beb8f50703"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b807d7bf4c5a6f7c0a9385b584d687137ef5837341de5597125570ad54c02ba"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cca5ff1749568de87f70b7e3d3165e991462470fa5257914f4dc7e2836baba1e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e7cde90046385542075bee545ec479a465e4193debc0cd451d34cfe98c862e24"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "880ff5598fb087efc626edfa8b97703cb3e51d286bd5c2f5089274874f2a9e58"
+    sha256 cellar: :any_skip_relocation, sonoma:        "38913e8cde62db2a058b0cb9fda7dcffb8995a41006090fd69010e186ddc4a5e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ebd033bcc238faea5fa6327cce5b82f4ad61817fb10e8b750688451a9295582"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e4f3bcd4221930e0df8c0c4a26f76c416ec52f3e2a1c3d06b96a8fdb27c4f34"
   end
 
   depends_on "cmake" => :build
@@ -25,8 +26,8 @@ class Grayskull < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/77/e9/df2358efd7659577435e2177bfa69cba6c33216681af51a707193dec162a/beautifulsoup4-4.14.2.tar.gz"
-    sha256 "2a98ab9f944a11acee9cc848508ec28d9228abfd522ef0fad6a02a72e0ded69e"
+    url "https://files.pythonhosted.org/packages/c3/b0/1c6a16426d389813b48d95e26898aff79abbde42ad353958ad95cc8c9b21/beautifulsoup4-4.14.3.tar.gz"
+    sha256 "6292b1c5186d356bba669ef9f7f051757099565ad9ada5dd630bd9de5fa7fb86"
   end
 
   resource "charset-normalizer" do
@@ -115,8 +116,8 @@ class Grayskull < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

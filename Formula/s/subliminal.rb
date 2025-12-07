@@ -6,16 +6,16 @@ class Subliminal < Formula
   url "https://files.pythonhosted.org/packages/f9/d1/f55d55bf7d585f6d749b60479b4f405de0d8805324d83c598ee3d540df79/subliminal-2.4.0.tar.gz"
   sha256 "73df6d1940166ef0e2cdeb4f8d655a4afe1082d481ec090ad2a9e66b1a1621fc"
   license "MIT"
+  revision 1
   head "https://github.com/Diaoul/subliminal.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ba6fc8a608c7da11cbcd3e4905b24be8bfb0fd4b2a842ba3562b176e3ba3a0a5"
-    sha256 cellar: :any,                 arm64_sequoia: "a1e8f36bb6bbe701952772e06ac8170204abb062510b5f529a429ac69601a33f"
-    sha256 cellar: :any,                 arm64_sonoma:  "7be5bf0de7e000f9a9e0d0f4d3c6e4d3b836a18c9322b5526ca769116014fb2c"
-    sha256 cellar: :any,                 sonoma:        "eb8030de4f1de8dcf493b31ca1816d6769cc8d5d823da98e4a8e2ce34803ff74"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "94a26521f0eb3c6b5a4c0b262c6e009f82ad2257775760403650475807a8acfc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "604e9531849d1cd9f4818ce8f09b1f6f01e326c3e02e2686e44a5e86bf050841"
+    sha256 cellar: :any,                 arm64_tahoe:   "90c61f54c03091ea9a85afac85a933d8e9b8de7cca6520b8a10906dc0079af7a"
+    sha256 cellar: :any,                 arm64_sequoia: "93b3c677752535559065538b4056388ac25ce689848fe9f27a6dd26d9b8e2848"
+    sha256 cellar: :any,                 arm64_sonoma:  "d466956de7767ecfe90c2c52d6156c09f859e806f594455e4c265a90c368d36d"
+    sha256 cellar: :any,                 sonoma:        "4025d3ad7df0bfdeb0ee8ec0a5f274e28f8246d9709dfe17a8dc75fdc101e36f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddadf3e60de8c3a842f7dcc46cd33bc9f6e0f039096453c87504cb92b6714cb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85940f1255bb4fcdd49901104e93e1335827eb2db6ae4e5182abe781c1b36b72"
   end
 
   depends_on "certifi" => :no_linkage
@@ -30,8 +30,8 @@ class Subliminal < Formula
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/77/e9/df2358efd7659577435e2177bfa69cba6c33216681af51a707193dec162a/beautifulsoup4-4.14.2.tar.gz"
-    sha256 "2a98ab9f944a11acee9cc848508ec28d9228abfd522ef0fad6a02a72e0ded69e"
+    url "https://files.pythonhosted.org/packages/c3/b0/1c6a16426d389813b48d95e26898aff79abbde42ad353958ad95cc8c9b21/beautifulsoup4-4.14.3.tar.gz"
+    sha256 "6292b1c5186d356bba669ef9f7f051757099565ad9ada5dd630bd9de5fa7fb86"
   end
 
   resource "chardet" do
@@ -40,13 +40,13 @@ class Subliminal < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "click-option-group" do
@@ -80,8 +80,8 @@ class Subliminal < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "knowit" do
@@ -90,8 +90,8 @@ class Subliminal < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "pymediainfo" do
@@ -140,8 +140,8 @@ class Subliminal < Formula
   end
 
   resource "stevedore" do
-    url "https://files.pythonhosted.org/packages/2a/5f/8418daad5c353300b7661dd8ce2574b0410a6316a8be650a189d5c68d938/stevedore-5.5.0.tar.gz"
-    sha256 "d31496a4f4df9825e1a1e4f1f74d19abb0154aff311c3b376fcc89dae8fccd73"
+    url "https://files.pythonhosted.org/packages/96/5b/496f8abebd10c3301129abba7ddafd46c71d799a70c44ab080323987c4c9/stevedore-5.6.0.tar.gz"
+    sha256 "f22d15c6ead40c5bbfa9ca54aa7e7b4a07d59b36ae03ed12ced1a54cf0b51945"
   end
 
   resource "tomlkit" do
@@ -160,8 +160,8 @@ class Subliminal < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

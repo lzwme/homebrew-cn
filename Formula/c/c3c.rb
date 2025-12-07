@@ -1,8 +1,8 @@
 class C3c < Formula
   desc "Compiler for the C3 language"
   homepage "https://github.com/c3lang/c3c"
-  url "https://ghfast.top/https://github.com/c3lang/c3c/archive/refs/tags/v0.7.7.tar.gz"
-  sha256 "d0a9ff906803a92a135959a5aa1b90d551385c09ea747af271163a28d3c45bf8"
+  url "https://ghfast.top/https://github.com/c3lang/c3c/archive/refs/tags/v0.7.8.tar.gz"
+  sha256 "f895f5b3b3f88dda14303b0436b151b417bfa027710d67f526eae9115046614a"
   license "LGPL-3.0-only"
   head "https://github.com/c3lang/c3c.git", branch: "master"
 
@@ -15,12 +15,12 @@ class C3c < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e80fc151b7cb161970ec93f61f59dcf238a3233c726393a00543833a2f0a0c66"
-    sha256 cellar: :any,                 arm64_sequoia: "a5aba57516b663f6d6610eeac02714866f03b345cf4cccece6c6a043abdee26f"
-    sha256 cellar: :any,                 arm64_sonoma:  "4efb6408e857804fa91fb09ab0325f5996c96a61991ffc9a73e6724f3b96b1a7"
-    sha256 cellar: :any,                 sonoma:        "0ea035b50440fe62bdb821edb03190146b03d45df7588adc4bf32c9d670ab6c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "828ec0bb029d2ba0f3e40ca07e2c57bd2ed85e446900974dcf14773bd526e2c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fc895816e6aac8acc7ba55331f0f68a9582328e77436b3ca6916fb78e861949"
+    sha256 cellar: :any,                 arm64_tahoe:   "8a53fc84ee0672666ca463283beb43618007d0f7fbc639553a0f42e0a7836ab1"
+    sha256 cellar: :any,                 arm64_sequoia: "67ecf90ea6051b518d6a033484ac270a6ef753284c467badc47eccdc856b799a"
+    sha256 cellar: :any,                 arm64_sonoma:  "0f8f3a925f05656bfb85ab53300c65496adce8a6da661ede690f49341c8f0d5b"
+    sha256 cellar: :any,                 sonoma:        "2cfae0a88d1f29e481e52b59a7800ceb21a8d315f7630180fc7a95c82a5e92e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "af92452adbc14680bec956d5a2921d99bf9dceccb8087d34b7b2de512ee57719"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07e9cba603b25ad1f22eabab8a140102a6fd41de683aa3078bb91e77abf50880"
   end
 
   depends_on "cmake" => :build

@@ -6,15 +6,15 @@ class Enex2notion < Formula
   url "https://files.pythonhosted.org/packages/de/5c/c0ce22d810226345411b03177f9b43c35b82c3a671d5d73f56fc43b0858e/enex2notion-0.3.1.tar.gz"
   sha256 "f11d8a7b6c135b4d08c63e1256279d56b3798cdd48ad3b6e39c0770dc3bd82e6"
   license "MIT"
-  revision 15
+  revision 16
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "391ca59032d0847b93128ae16fc178be883bb038935957f48b12f9449cd6225e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4aa3df6a4bebd75cf0c51a8b50da9949db67a0523de0e743d84c836b97bd5396"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44f1a30d4250732bb0e780a78d9a0126a1ba5b440ef01601980caa9e4dd3073c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cb81783c6587372ecb88fd22aa21e2878a548a88aa96a52e753889b8b7287a7e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e53f6eb4066fe232a7c4ba938c00a0219829a6cae7269d4f8d7a26582a7f099"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7aff65c96d74c564ff9ed7e67532ac4a51ffd8b8113c710118a2d4fc426cf43"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26e3388289e5ba0e0de91efb6b8e00aa88813401a872b9ada86cb8267842361b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97afc1112eacd3f7942cbd69e3e00b0876c37c1fa8df91890a0df2e9700c65a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4d001ffbe10590a2514818fd533ec4ef8dd3901f7c7f7175926de5a7f9307a1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9fa88935b1304f9f5934fa3889dab761b6f00f4f746afb222d112f1ae89be565"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "80c5e8b3f7c4eeac4e7962531d8a73c33c839a8eb0ae195606f577b9e4694a71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6dc04846d2519d44575914987ad854ebc5625a0cec9e773c02022535e1b29ddf"
   end
 
   depends_on "certifi" => :no_linkage
@@ -30,8 +30,8 @@ class Enex2notion < Formula
   pypi_packages exclude_packages: ["certifi", "pymupdf"]
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/77/e9/df2358efd7659577435e2177bfa69cba6c33216681af51a707193dec162a/beautifulsoup4-4.14.2.tar.gz"
-    sha256 "2a98ab9f944a11acee9cc848508ec28d9228abfd522ef0fad6a02a72e0ded69e"
+    url "https://files.pythonhosted.org/packages/c3/b0/1c6a16426d389813b48d95e26898aff79abbde42ad353958ad95cc8c9b21/beautifulsoup4-4.14.3.tar.gz"
+    sha256 "6292b1c5186d356bba669ef9f7f051757099565ad9ada5dd630bd9de5fa7fb86"
   end
 
   resource "bs4" do
@@ -120,8 +120,8 @@ class Enex2notion < Formula
   end
 
   resource "tinycss2" do
-    url "https://files.pythonhosted.org/packages/7a/fd/7a5ee21fd08ff70d3d33a5781c255cbe779659bd03278feb98b19ee550f4/tinycss2-1.4.0.tar.gz"
-    sha256 "10c0972f6fc0fbee87c3edb76549357415e94548c1ae10ebccdea16fb404a9b7"
+    url "https://files.pythonhosted.org/packages/a3/ae/2ca4913e5c0f09781d75482874c3a95db9105462a92ddd303c7d285d3df2/tinycss2-1.5.1.tar.gz"
+    sha256 "d339d2b616ba90ccce58da8495a78f46e55d4d25f9fd71dfd526f07e7d53f957"
   end
 
   resource "tqdm" do
@@ -145,8 +145,8 @@ class Enex2notion < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "w3lib" do

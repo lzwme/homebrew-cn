@@ -6,15 +6,15 @@ class Woob < Formula
   url "https://files.pythonhosted.org/packages/85/f3/a2dc1bb679de004aa1e48c8b77b5d5b9bca3007b2f25e0c39f850a009186/woob-3.7.tar.gz"
   sha256 "b1d7113ba87a9b947c13a1e3b4bb4fa616ba3037092b54912fc3fee2647d1b2f"
   license "LGPL-3.0-or-later"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a96971610ed4df1a71f5e8caafe14b8d3d0a8cf6e3cf54d7cc5ac6b4ce5a6cf1"
-    sha256 cellar: :any,                 arm64_sequoia: "0ce5ff479919856747b2a2bff3c76909dcd6568615383a72451a17954b35cfb5"
-    sha256 cellar: :any,                 arm64_sonoma:  "33928216107b61322f48c1051a2ab7d212895052f92803196283f0dce16e38c7"
-    sha256 cellar: :any,                 sonoma:        "d7d946b358704484e50ee5c9856b51833c78c67d6b81640ae632e7ec59af0644"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85bfc9746e0ab06cdef435e546ee37404593cf23e34fe9d17bd1669333f5a494"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36c9af5cf458d0277bbac082a3d09772d0d9fac1110b69667bca9ef3d6338949"
+    sha256 cellar: :any,                 arm64_tahoe:   "e3ee13471050269f7f981267f178ac3e0461c5f93d96910186b76ce7946e1061"
+    sha256 cellar: :any,                 arm64_sequoia: "cfa1ea712be24e7334a1edbe9d874252348c5a1b76304fcb4d157a31c2c25246"
+    sha256 cellar: :any,                 arm64_sonoma:  "249e3dc0ec32edb6547f76315d9f393537ea05caa0831745cb21db3c4d783a9f"
+    sha256 cellar: :any,                 sonoma:        "99eb9a8bb361688248cfb97f48848d2ea25d10b8d19b50f2b05d34ce80c2052e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8110eb4ce96cab1df6aac9ad05eef7c43311f966900719b1baa8de83497a31ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f502b4acf315fbdc019378c701987698a6bb9c68e2bec32db195bd3856a2b9c8"
   end
 
   depends_on "certifi"
@@ -34,8 +34,8 @@ class Woob < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "html2text" do
@@ -44,8 +44,8 @@ class Woob < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "lxml" do
@@ -104,8 +104,8 @@ class Woob < Formula
   end
 
   resource "termcolor" do
-    url "https://files.pythonhosted.org/packages/ca/6c/3d75c196ac07ac8749600b60b03f4f6094d54e132c4d94ebac6ee0e0add0/termcolor-3.1.0.tar.gz"
-    sha256 "6a6dd7fbee581909eeec6a756cff1d7f7c376063b14e4a298dc4980309e55970"
+    url "https://files.pythonhosted.org/packages/87/56/ab275c2b56a5e2342568838f0d5e3e66a32354adcc159b495e374cda43f5/termcolor-3.2.0.tar.gz"
+    sha256 "610e6456feec42c4bcd28934a8c87a06c3fa28b01561d46aa09a9881b8622c58"
   end
 
   resource "unidecode" do
@@ -114,8 +114,8 @@ class Woob < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

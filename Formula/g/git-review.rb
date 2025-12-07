@@ -6,12 +6,11 @@ class GitReview < Formula
   url "https://files.pythonhosted.org/packages/da/92/ddc922d34061791a4d0fd483ee4ffc5e026e93783b70fe5a29a129d0cf63/git_review-2.5.0.tar.gz"
   sha256 "1bcffaef02848a5a3b066e8268c7d700a77cbd8b2e56b128d30f60cd431cf0a8"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://opendev.org/opendev/git-review.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "d3f92f14eb70c2b9bf94596922fab1503462dadad3f12333b1684b6b553b8646"
+    sha256 cellar: :any_skip_relocation, all: "8802fb7650f6955e326d90b6629b4d2935a54f0f0e85d2bfb6d8bcd6a88bf953"
   end
 
   depends_on "certifi"
@@ -37,8 +36,8 @@ class GitReview < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

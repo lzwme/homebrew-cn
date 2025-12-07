@@ -3,18 +3,18 @@ class PythonLspServer < Formula
 
   desc "Python Language Server for the Language Server Protocol"
   homepage "https://github.com/python-lsp/python-lsp-server"
-  url "https://files.pythonhosted.org/packages/4b/99/3b06b8792585933d0b51307379e0337088e7f7049831c15c70f36381884d/python_lsp_server-1.13.2.tar.gz"
-  sha256 "d507fc6be69861740827f4e4dffa1c9b1dec97c0ead859cfef86aa342a4c7904"
+  url "https://files.pythonhosted.org/packages/b4/b5/b989d41c63390dfc2bf63275ab543b82fed076723d912055e77ccbae1422/python_lsp_server-1.14.0.tar.gz"
+  sha256 "509c445fc667f41ffd3191cb7512a497bf7dd76c14ceb1ee2f6c13ebe71f9a6b"
   license "MIT"
   head "https://github.com/python-lsp/python-lsp-server.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "110cffea4ac59f9594c0fc84c7bb77b378a79e280310786097f005039257fd65"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d3df9fa652196cd7fe54aaaa0d34648109cd09e495a4cebaf07c3556acbfa18"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d381e297203c471e37a7b15c1680a82da6795c301e6b0d70439b2a8d93065330"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1611ba9f37815ca22d55b93010a4300ca683069ff25dd6f9bfffdbb53710e3e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "54709670926f445aa3283977e8941d92b91860ea844a4ab47321ea93912e5a81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "258904bbfd86366e8ae0ff76afbe5020e54b6c706a8c5f8715c2829c0be8ecb8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5213350eaab550b1f401cf6da503956ee89382f2b77990f11ca74b857cd93f70"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d224c9ee1db4e853a5e650dca9fec786b034269c7ecea10966b824ea40abc25b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6307022b817fef1cd99e9faf18dd46ca59623dcd738d1976aec6af2cdfec2d00"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2643ead4d855f5b3e72521d6b62a8533f41d4b54aa853931bb67e7e380b92d66"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba967b3b0ecb553a9ebf283eebeb4ce1cf58fc892136887c5e14abcf544c2de9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2086ceabd14f2f66c21e213da25e91f5a875a019608b260a84f2c35807a6c2f6"
   end
 
   depends_on "rust" => :build
@@ -58,14 +58,19 @@ class PythonLspServer < Formula
     sha256 "4770dc3de41bde3966b02eb84fbcf557fb33cce26ad23da12c742fb50ecb11f0"
   end
 
+  resource "librt" do
+    url "https://files.pythonhosted.org/packages/a4/1a/38eea84b96d964bf9756d16f20534c4442103345719f600b1b267233b7bb/librt-0.7.2.tar.gz"
+    sha256 "48aa0f311bdf90ec9a63e3669b6aff04967f24f2f67fe9372c570a21dc9ae873"
+  end
+
   resource "lsprotocol" do
     url "https://files.pythonhosted.org/packages/e9/26/67b84e6ec1402f0e6764ef3d2a0aaf9a79522cc1d37738f4e5bb0b21521a/lsprotocol-2025.0.0.tar.gz"
     sha256 "e879da2b9301e82cfc3e60d805630487ac2f7ab17492f4f5ba5aaba94fe56c29"
   end
 
   resource "mypy" do
-    url "https://files.pythonhosted.org/packages/c0/77/8f0d0001ffad290cef2f7f216f96c814866248a0b92a722365ed54648e7e/mypy-1.18.2.tar.gz"
-    sha256 "06a398102a5f203d7477b2923dda3634c36727fa5c237d8f859ef90c42a9924b"
+    url "https://files.pythonhosted.org/packages/f9/b5/b58cdc25fadd424552804bf410855d52324183112aa004f0732c5f6324cf/mypy-1.19.0.tar.gz"
+    sha256 "f6b874ca77f733222641e5c46e4711648c4037ea13646fd0cdc814c2eaec2528"
   end
 
   resource "mypy-extensions" do
@@ -89,8 +94,8 @@ class PythonLspServer < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "pluggy" do
@@ -139,8 +144,8 @@ class PythonLspServer < Formula
   end
 
   resource "ruff" do
-    url "https://files.pythonhosted.org/packages/82/fa/fbb67a5780ae0f704876cb8ac92d6d76da41da4dc72b7ed3565ab18f2f52/ruff-0.14.5.tar.gz"
-    sha256 "8d3b48d7d8aad423d3137af7ab6c8b1e38e4de104800f0d596990f6ada1a9fc1"
+    url "https://files.pythonhosted.org/packages/ed/d9/f7a0c4b3a2bf2556cd5d99b05372c29980249ef71e8e32669ba77428c82c/ruff-0.14.8.tar.gz"
+    sha256 "774ed0dd87d6ce925e3b8496feb3a00ac564bea52b9feb551ecd17e0a23d1eed"
   end
 
   resource "typing-extensions" do

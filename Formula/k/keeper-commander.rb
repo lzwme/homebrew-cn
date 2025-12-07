@@ -6,15 +6,16 @@ class KeeperCommander < Formula
   url "https://files.pythonhosted.org/packages/50/ee/6043e0900d68bacc13fd9f41ec30660d48592be4509c47a1bb3108189cc9/keepercommander-17.1.18.tar.gz"
   sha256 "dfd57d4468dccf4d0b6f726b9431110ec76f99a12e873d66b7a275365d6abd50"
   license "MIT"
+  revision 1
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d900911ad05a1e095faca89744fc50675a219988c817a1810fd665b20d04825b"
-    sha256 cellar: :any,                 arm64_sequoia: "15296a3e20eb25cfacbc8fffaa41b862c2bce0aac5e0c066585b5ec49cf83c67"
-    sha256 cellar: :any,                 arm64_sonoma:  "24dc445e558b6ebbaf6968b2ce78fd6a017e06c5e415513bfc02142f61c20480"
-    sha256 cellar: :any,                 sonoma:        "ae76a8449297d735bf1d037e8e62f2459e0b198da728d04ac8c307f4502d367c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "449c28c0e4ce5306d0d8e2d37620525f7af0e6e2f5be2b76a830012a386e8ecc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ce4861629ef64d184381ee3437a920b5ffba71a0d8de7c4e1ddc439d79c01a9"
+    sha256 cellar: :any,                 arm64_tahoe:   "78f52046b8e9b19cfcb1f6c38b597be51327d3ba312347604e113852743e3fbf"
+    sha256 cellar: :any,                 arm64_sequoia: "fcee27fede91d0b564cd3307970bd1f88f08ae50a59c7a973410cb67d48f8ebe"
+    sha256 cellar: :any,                 arm64_sonoma:  "0e9c36ce7dfadb5e80c5910046494e106cf6cb2cd72769ddcf8d1e3f2e4b5f27"
+    sha256 cellar: :any,                 sonoma:        "089082e0dce011cda027a9e0e0e293b25c34889e9f03c3c2edf7ef320cda14cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "759aaafce2cb367f89565036cfa139758e996f81de63e60bc24560be16299e1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2bac137c45cb4aed14b250a4e379e20e38aa8cd0a548d4167c43d8edc67c24f"
   end
 
   depends_on "pkgconf" => :build
@@ -135,8 +136,8 @@ class KeeperCommander < Formula
   end
 
   resource "keeper-pam-webrtc-rs" do
-    url "https://files.pythonhosted.org/packages/2a/ad/21dad8a8c14e17e5050f0ce15cf3d9cec06b9cc50c8436062e8b77a84f81/keeper_pam_webrtc_rs-1.1.7.tar.gz"
-    sha256 "e919ea219c7ea7b6bee03bf9e3d9f804154900dcc57c11a60e4d3bfc58beb2c5"
+    url "https://files.pythonhosted.org/packages/62/88/3527218f3b2013279ee340fa824cfd6f99241edbb49e4c288a97f917c1e9/keeper_pam_webrtc_rs-1.1.9.tar.gz"
+    sha256 "d4fdedbea7f414a27e9fdfb71017a636d5c34b3d61d17a9a7cbd25369fa3bbe2"
   end
 
   resource "keeper-secrets-manager-core" do
@@ -170,8 +171,8 @@ class KeeperCommander < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/0a/03/a1440979a3f74f16cab3b75b0da1a1a7f922d56a8ddea96092391998edc0/protobuf-6.33.1.tar.gz"
-    sha256 "97f65757e8d09870de6fd973aeddb92f85435607235d20b2dfed93405d00c85b"
+    url "https://files.pythonhosted.org/packages/34/44/e49ecff446afeec9d1a66d6bbf9adc21e3c7cea7803a920ca3773379d4f6/protobuf-6.33.2.tar.gz"
+    sha256 "56dc370c91fbb8ac85bc13582c9e373569668a290aa2e66a590c2a0d35ddb9e4"
   end
 
   resource "psutil" do
@@ -235,8 +236,8 @@ class KeeperCommander < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "wcwidth" do

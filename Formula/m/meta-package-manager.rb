@@ -7,16 +7,16 @@ class MetaPackageManager < Formula
   url "https://files.pythonhosted.org/packages/5b/49/d4e663f67c2376f4e26864fa10ec78a6047f765d580daa6a510766ef2d2b/meta_package_manager-5.21.0.tar.gz"
   sha256 "9d438f4cf34b2bebbd46525759f6d5305d98e9ff02975be4e1b18befc4fffffa"
   license "GPL-2.0-or-later"
-  revision 3
+  revision 4
   head "https://github.com/kdeldycke/meta-package-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d2ae42fd3f95ac6cc71972cad5f9ab9e8a316c47e2f50786e5fa58dd0aa505a1"
-    sha256 cellar: :any,                 arm64_sequoia: "af368f72b2811e0683bef4004579670bfcf9a144ca3e8aeeea3739563c98bb50"
-    sha256 cellar: :any,                 arm64_sonoma:  "a6d647df24759d953a4c224d11ab17976bd4a08f51e9ef14186358462773feba"
-    sha256 cellar: :any,                 sonoma:        "e7bf553fdde24f07ff1773795025210ea06d38f44d87b90dba65468def153c91"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a84535826735c0310c159fd21ec808fb2e8af449a0fa628416965cb4d1cf8c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75a87e1c75ebd98011ce2a7577a9e141cedc8c66d56e8ba5ae254879a43987e7"
+    sha256 cellar: :any,                 arm64_tahoe:   "66d0755baf7351c7efce4a5b7e8b2f1de21e2602a039a584a6ab42781c6a6766"
+    sha256 cellar: :any,                 arm64_sequoia: "f1026bcf1832ac45c1cfb09c287a80bf6e4d2430b47f5d11e73fa80a377fa446"
+    sha256 cellar: :any,                 arm64_sonoma:  "bac44307de43e3f69cdde0b9df113e60abf10d27079b1a2da7d9b97396aa18be"
+    sha256 cellar: :any,                 sonoma:        "38a9a606c48842b4d70eb2507a50cc40d838e0a7df2c98748e61537b405441df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c292dd18b3665a20ad241db84cfbc99672ee6395bdcb9d5acaf0df5d8d4a1621"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b50eb99633bd1ee35fcd9c5503cec887d8523c083582be3c40e1be7920a1f25b"
   end
 
   depends_on "certifi" => :no_linkage
@@ -40,8 +40,8 @@ class MetaPackageManager < Formula
   end
 
   resource "beartype" do
-    url "https://files.pythonhosted.org/packages/04/96/43ed27f27127155f24f5cf85df0c27fd2ac2ab67d94cecc8f76933f91679/beartype-0.22.2.tar.gz"
-    sha256 "ff3a7df26af8d15fa87f97934f0f6d41bbdadca971c410819104998dd26013d2"
+    url "https://files.pythonhosted.org/packages/8c/1d/794ae2acaa67c8b216d91d5919da2606c2bb14086849ffde7f5555f3a3a5/beartype-0.22.8.tar.gz"
+    sha256 "b19b21c9359722ee3f7cc433f063b3e13997b27ae8226551ea5062e621f61165"
   end
 
   resource "boltons" do
@@ -190,8 +190,8 @@ class MetaPackageManager < Formula
   end
 
   resource "pytest" do
-    url "https://files.pythonhosted.org/packages/a3/5c/00a0e072241553e1a7496d638deababa67c5058571567b92a7eaa258397c/pytest-8.4.2.tar.gz"
-    sha256 "86c0d0b93306b961d58d62a4db4879f27fe25513d4b969df351abdddb3c30e01"
+    url "https://files.pythonhosted.org/packages/07/56/f013048ac4bc4c1d9be45afd4ab209ea62822fb1598f40687e6bf45dcea4/pytest-9.0.1.tar.gz"
+    sha256 "3e9c069ea73583e255c3b21cf46b8d3c56f6e3a1a8f6da94ccb0fcf57b9d73c8"
   end
 
   resource "python-dateutil" do
@@ -205,8 +205,8 @@ class MetaPackageManager < Formula
   end
 
   resource "rdflib" do
-    url "https://files.pythonhosted.org/packages/8d/99/d2fec85e5f6bdfe4367dea143119cb4469bf48710487939df0abf7e22003/rdflib-7.2.1.tar.gz"
-    sha256 "cf9b7fa25234e8925da8b1fb09700f8349b5f0f100e785fb4260e737308292ac"
+    url "https://files.pythonhosted.org/packages/ec/1b/4cd9a29841951371304828d13282e27a5f25993702c7c87dcb7e0604bd25/rdflib-7.5.0.tar.gz"
+    sha256 "663083443908b1830e567350d72e74d9948b310f827966358d76eebdc92bf592"
   end
 
   resource "referencing" do
@@ -275,8 +275,8 @@ class MetaPackageManager < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "wcmatch" do
@@ -290,8 +290,8 @@ class MetaPackageManager < Formula
   end
 
   resource "webcolors" do
-    url "https://files.pythonhosted.org/packages/7b/29/061ec845fb58521848f3739e466efd8250b4b7b98c1b6c5bf4d40b419b7e/webcolors-24.11.1.tar.gz"
-    sha256 "ecb3d768f32202af770477b8b65f318fa4f566c22948673a977b00d589dd80f6"
+    url "https://files.pythonhosted.org/packages/1d/7a/eb316761ec35664ea5174709a68bbd3389de60d4a1ebab8808bfc264ed67/webcolors-25.10.0.tar.gz"
+    sha256 "62abae86504f66d0f6364c2a8520de4a0c47b80c03fc3a5f1815fedbef7c19bf"
   end
 
   resource "xmltodict" do

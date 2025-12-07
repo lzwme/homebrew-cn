@@ -6,14 +6,15 @@ class SvtplayDl < Formula
   url "https://files.pythonhosted.org/packages/6b/52/879fac8cd8686b016eaf2771a0ab93795f0f13eafafd8c853bdb87db9f57/svtplay_dl-4.163.tar.gz"
   sha256 "5db04ca95629c8280f6698a259053c8ba528a08175f638c04e3ed8bb447b6f56"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c8eeaad78576772cbdae0015864f004ea8bf85f4d68ea17ad19d0fc76ed8efb1"
-    sha256 cellar: :any,                 arm64_sequoia: "1c0c8ee8b0aa9dd666565d084215c9e5a58ac4a39fdc51f34cc0581dd0429b59"
-    sha256 cellar: :any,                 arm64_sonoma:  "a5d607495ec83d9c282793b51ab925a4c9b8444300352be0cd75f2a5a13901d0"
-    sha256 cellar: :any,                 sonoma:        "e9887f3a9c93469b0e1bf5baf4efe72e2a40d56be6fae0c529f6c528fc9c7dd4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "86eba78ab1a551d4449506cfcc557a5d0c64f7f64b0eb826ea75c4a4830ec2d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1218aa050e8c24617be5c257755986ec728f7272f00de25cb94314e8a5883cb2"
+    sha256 cellar: :any,                 arm64_tahoe:   "40dda66e90bc7d5398bce8b0c8ae378ad65f52b781385a8a961a052ea62ed744"
+    sha256 cellar: :any,                 arm64_sequoia: "f53d09095778a454080d95f24f521098b80e8300ec549561782dca7ba1f0c037"
+    sha256 cellar: :any,                 arm64_sonoma:  "5c6e1198541060419a6adbe9b947815e7e5168ad8448e70c056f02abef33e63e"
+    sha256 cellar: :any,                 sonoma:        "c62f9a97a2d4de6a9c7c3f694efe5d75e7cbd5140d310735af0f9af787f08c3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d3a9f93ab4e7274cf9916bdf8ae581decdd9ab0b1a2a94a9848287fe9ec4b59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb3a741232227cf2d823090aeacf587128a680bca105ff9ba7483451a34e1ab8"
   end
 
   depends_on "certifi"
@@ -49,8 +50,8 @@ class SvtplayDl < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install

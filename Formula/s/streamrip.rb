@@ -9,16 +9,15 @@ class Streamrip < Formula
   url "https://files.pythonhosted.org/packages/b8/c9/6997772e0217f3081e4e692c7b8b104aaa564c008f2593341e81bbbd2396/streamrip-2.1.0.tar.gz"
   sha256 "e59b4b406f9ac77eb59c927a1a082644e0902152ffeb6212b6b24af7fbef5540"
   license "GPL-3.0-only"
-  revision 4
+  revision 5
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3cb99ccc280138a02c60a02338de7102ecabd0b9c0d5e2338a7de73f656a518d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2efb45173f8115b662ced341861854541a61cb62d73b9e4b42515f397726506"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2fc5455027b00f71e2bbe7b1964a7ddfee81db1240a0b62bb60af0d36494164"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9fb4432584e2f381914ca14447e952272f745b747017c325317338fe9e437796"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab867ddb7331039afc3ee0b32bd9bd4690f75c20fc7c9309571ec12c8496fe17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ad94cdbab906a7c82d12b4280b36e9e595a188f8c21f705b47cf27efd7c15e8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d812d36f8ae97ca6768c62f534df7d87b2f8dbaab0d7a792a1a091616b0154c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4246c1398af8242f6559aca9d873354769ee84e6f2e73c4532a0c927ed07367"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e7c84c812ab394a3472db374c6c3f394545d48fa769cb9d4967abd66d7e2a62"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6470b712aa2bd5945d6e5dade235f178c4f80af9672f18120acd4fe7520054e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb10a0f5c82f33c52b877ad69ad64a753358e69964964e3f47f01cd9b4665c3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ccfcda537beda0c3648c267c1655a07e76429ef5c0582fd126f95add3cea28f"
   end
 
   depends_on "certifi" => :no_linkage
@@ -28,11 +27,11 @@ class Streamrip < Formula
 
   uses_from_macos "libffi"
 
-  pypi_packages exclude_packages: %w[certifi pillow pytest pytest-asyncio pytest-mock]
+  pypi_packages exclude_packages: %w[certifi pillow pytest-asyncio pytest-mock]
 
   resource "aiodns" do
-    url "https://files.pythonhosted.org/packages/17/0a/163e5260cecc12de6abc259d158d9da3b8ec062ab863107dcdb1166cdcef/aiodns-3.5.0.tar.gz"
-    sha256 "11264edbab51896ecf546c18eb0dd56dff0428c6aa6d2cd87e643e07300eb310"
+    url "https://files.pythonhosted.org/packages/e6/11/238e97cbf5c1c0f725d590a092e0618dcdc50f44dbd1e2a926fae27e6f06/aiodns-3.6.0.tar.gz"
+    sha256 "9b0ef54339e6687cdbd39a7d73d7de2467cb5c115281da28f2598f058633dac8"
   end
 
   resource "aiofiles" do
@@ -46,8 +45,8 @@ class Streamrip < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/62/f1/8515650ac3121a9e55c7b217c60e7fae3e0134b5acfe65691781b5356929/aiohttp-3.13.0.tar.gz"
-    sha256 "378dbc57dd8cf341ce243f13fa1fa5394d68e2e02c15cd5f28eae35a70ec7f67"
+    url "https://files.pythonhosted.org/packages/1c/ce/3b83ebba6b3207a7135e5fcaba49706f8a4b6008153b4e30540c982fae26/aiohttp-3.13.2.tar.gz"
+    sha256 "40176a52c186aefef6eb3cad2cdd30cd06e3afbe88fe8ab2af9c0b90f228daca"
   end
 
   resource "aiolimiter" do
@@ -76,13 +75,13 @@ class Streamrip < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "click-help-colors" do
@@ -101,8 +100,8 @@ class Streamrip < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "iso8601" do
@@ -186,8 +185,8 @@ class Streamrip < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   resource "yarl" do

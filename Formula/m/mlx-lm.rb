@@ -6,13 +6,13 @@ class MlxLm < Formula
   url "https://ghfast.top/https://github.com/ml-explore/mlx-lm/archive/refs/tags/v0.28.4.tar.gz"
   sha256 "0183f62ac7caa0abd3da2a8e57694d1e2b87d61da056850695c6cde3ef61d301"
   license "MIT"
+  revision 1
   head "https://github.com/ml-explore/mlx-lm.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "7a36e27a8350113180be35f99194240bf58bf845d050e09792ed572bad431e59"
-    sha256 cellar: :any, arm64_sequoia: "5a029f3083a8bf6675c2b7ed0f60845ff67459398353c748efda798aab064fcf"
-    sha256 cellar: :any, arm64_sonoma:  "76c124083ab2d8c933f1ff347b161d9ef7cdbe10ac7f2c43d90ea2d544e570cc"
+    sha256 cellar: :any, arm64_tahoe:   "9239ca45572c057f785c5e23729ee7f65817abe81b66c72694ca15cc2fe4b7c9"
+    sha256 cellar: :any, arm64_sequoia: "42352af9b7354119dc593fa08247e5f3b22251bfd5cb484a090ac2fdcf297f14"
+    sha256 cellar: :any, arm64_sonoma:  "069909a8832f3b3337325f616955c3c6928bd73e81beef3014f20615e99e99a6"
   end
 
   depends_on "pkgconf" => :build
@@ -75,8 +75,8 @@ class MlxLm < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/0a/03/a1440979a3f74f16cab3b75b0da1a1a7f922d56a8ddea96092391998edc0/protobuf-6.33.1.tar.gz"
-    sha256 "97f65757e8d09870de6fd973aeddb92f85435607235d20b2dfed93405d00c85b"
+    url "https://files.pythonhosted.org/packages/34/44/e49ecff446afeec9d1a66d6bbf9adc21e3c7cea7803a920ca3773379d4f6/protobuf-6.33.2.tar.gz"
+    sha256 "56dc370c91fbb8ac85bc13582c9e373569668a290aa2e66a590c2a0d35ddb9e4"
   end
 
   resource "pyyaml" do
@@ -125,8 +125,8 @@ class MlxLm < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
+    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
   end
 
   def install
