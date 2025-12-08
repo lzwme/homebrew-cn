@@ -1,8 +1,8 @@
 class Just < Formula
   desc "Handy way to save and run project-specific commands"
   homepage "https://github.com/casey/just"
-  url "https://ghfast.top/https://github.com/casey/just/archive/refs/tags/1.43.1.tar.gz"
-  sha256 "741b5c6743501dc4dbd23050dd798f571d873d042b67bcea113d622b0c37d180"
+  url "https://ghfast.top/https://github.com/casey/just/archive/refs/tags/1.44.0.tar.gz"
+  sha256 "450ab569b76053ec34c2ae0616cdf50114a4dce0c2e8dfba2d79bdfb60081a04"
   license "CC0-1.0"
   head "https://github.com/casey/just.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Just < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c3194408637cdcfad22a2dd89bb56cd35fbcc363559e7ca8d9c86be52ecd8c4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0f383ef0cc4660504ad1210fa6482193bacb235eecc202d32f486b6ebe91c7c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8ae6b45aa7da5cb060b02e7c260fb165052008ecceb079943bed0c185adf1eb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8dbb471509020b01840e33b804962948fd35abedbc3506bc8d2116309640d7ba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd7266f1191971c81a61d8c532bfa9f970577a8a76e92c4b71330ee406726b6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d241cbb9d54014f87912fe9bf2defc1514334616830b3a7db567c3df0353b41"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fa9134215e42416dcd344c4f659675f05367dc9ea1ae79db2abb06c2437f1421"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "574b11271fec6fb4e6342aa88926cfea65799d033fb592232c7de6018f6ea8ec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2c879bcf0164cf160f7b67bfd6250364d09030b6e230193364531ccb32bde9a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8291965413ec005d38b67938a7db045ca4bee174a48ccc9157ca9e6516df3cc8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4093ba474dd131264133308dc24b42d29850690d36d98784868cd1babfe5b6a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ef63b2f347c2d2fd57aa641cc7b874d63780fbcd51615a4bccf29962f242aee"
   end
 
   depends_on "rust" => :build

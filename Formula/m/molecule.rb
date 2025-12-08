@@ -9,12 +9,13 @@ class Molecule < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3d6695b184915caa45ddc4c6e70ea93929bb32621bb6e2285c0ace12ad967afa"
-    sha256 cellar: :any,                 arm64_sequoia: "4ad26a0e95c388fc91bda83dd3b5057d2a3d0ecdcf20678a08942700a029a6dc"
-    sha256 cellar: :any,                 arm64_sonoma:  "56000b110aba2b3c6922ef27b0b185c59215af52f6015ddd4e36c1957cb9bc70"
-    sha256 cellar: :any,                 sonoma:        "ce99947d7cf4ba8d4b73fc64862cd05d783a9671175a47700dac927014646db2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7c20b3a06adab1d95cfeaa8bf6cf55ba2073c3deecc0084dbdd83a91546ba93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a86980380698be2583daeee335b51ce427b05ecb344f4e77b7d9be546b8761d4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "d70d595fb22117a72f217b3525972be8ac771462edfaf07dfc4d69c018b37105"
+    sha256 cellar: :any,                 arm64_sequoia: "17a95ec6ac804d215c7b54220bb5f1a27ecaaed8599845c1e4f6e7293515b07e"
+    sha256 cellar: :any,                 arm64_sonoma:  "bde423d315ac192a633cc506f3f9efe8ea10aabeda7169cafad1c2caaea07404"
+    sha256 cellar: :any,                 sonoma:        "9909d29e0241cac6baa77b4ecdf026a8444d696b34687f74aff9d85469627b8e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "851052855840c83eb1e64309a33d72de95949c31d93a026c400b7fc4f79ebf9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83eda9273b12c750c90d3288d206a1e8ed05aa99edd0059519cc9506c547280a"
   end
 
   depends_on "ansible"
@@ -30,8 +31,8 @@ class Molecule < Formula
     depends_on "gmp"
   end
 
-  pypi_packages exclude_packages: ["certifi", "cryptography", "rpds-py"],
-                extra_packages:   "molecule-plugins[azure,docker,ec2,gce,podman,vagrant,openstack]"
+  pypi_packages exclude_packages: %w[certifi cryptography rpds-py],
+                extra_packages:   %w[distro molecule-plugins[azure,docker,ec2,gce,podman,vagrant,openstack] selinux]
 
   resource "ansible-compat" do
     url "https://files.pythonhosted.org/packages/75/62/fb3aee58827ba6eacee561183b02b4a49cf4819f405df2409e23bad69a00/ansible_compat-25.12.0.tar.gz"
@@ -76,6 +77,11 @@ class Molecule < Formula
   resource "decorator" do
     url "https://files.pythonhosted.org/packages/43/fa/6d96a0978d19e17b68d634497769987b16c8f4cd0a7a05048bec693caa6b/decorator-5.2.1.tar.gz"
     sha256 "65f266143752f734b0a7cc83c46f4618af75b8c5911b00ccb61d0ac9b6da0360"
+  end
+
+  resource "distro" do
+    url "https://files.pythonhosted.org/packages/fc/f8/98eea607f65de6527f8a2e8885fc8015d3e6f5775df186e443e0964a11c3/distro-1.9.0.tar.gz"
+    sha256 "2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed"
   end
 
   resource "docker" do
@@ -253,6 +259,11 @@ class Molecule < Formula
     sha256 "e7bdbfdb5497da4c07dfd35530e1a902659db6ff241e39d9953cad06ebd0ae75"
   end
 
+  resource "selinux" do
+    url "https://files.pythonhosted.org/packages/25/07/51acd62e1e15e1172d46f7e32faf138725b147f8c08dbf2d512159d7a310/selinux-0.3.0.tar.gz"
+    sha256 "2a88b337ac46ad0f06f557b2806c3df62421972f766673dd8bf26732fb75a9ea"
+  end
+
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
     sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
@@ -288,7 +299,8 @@ class Molecule < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    without = ["distro", "selinux"] unless OS.linux?
+    virtualenv_install_with_resources(without:)
 
     generate_completions_from_executable(bin/"molecule", shell_parameter_format: :click)
   end

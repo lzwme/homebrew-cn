@@ -1,18 +1,18 @@
 class Hercules < Formula
   desc "System/370, ESA/390 and z/Architecture Emulator"
   homepage "https://sdl-hercules-390.github.io/html/"
-  url "https://ghfast.top/https://github.com/SDL-Hercules-390/hyperion/archive/refs/tags/Release_4.9.tar.gz"
-  sha256 "a4ace85ee03c222d8885e7f54d767c2c7d9dc491c2bb0eb47c7b948c9c58fdd6"
+  url "https://ghfast.top/https://github.com/SDL-Hercules-390/hyperion/archive/refs/tags/Release_4.9.1.tar.gz"
+  sha256 "22768fee6a949c31fed075886dffc7d81ac89ffc3d2f5cb2fc971e71be1c22a7"
   license "QPL-1.0"
   head "https://github.com/SDL-Hercules-390/hyperion.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "ad5888268b551257777c5d2c56c432599c05bee7e8c4a66f2f5081e9d1514de7"
-    sha256 arm64_sequoia: "0e281826448d5def0056f65d546b5f59fec18f05ec229043497d0fe78b7b9c57"
-    sha256 arm64_sonoma:  "561b7b6c87204d6206ac9d00c5803da3f851060db460bd0cd36c22bddea664f4"
-    sha256 sonoma:        "acdb71437a635d2d279ac7d5536e763cfff952b85ff9d742c1163f8c5c2f00fb"
-    sha256 arm64_linux:   "4199092ee89b5a565149f4f1b13aa4d1eceaf62c1afc77b8244bd0415abf566b"
-    sha256 x86_64_linux:  "7deb319117d5197e431ab89d7266f750fbe5b40f9c7319d1138a77f957707149"
+    sha256 arm64_tahoe:   "501fd29e1b21f48b93838f3e63050829f5c05976dd25a5ede8ef9495a4fd7a35"
+    sha256 arm64_sequoia: "9be7692f938e9a54f509ae277db0504801f4e881979f2dff5ba1a77f0b397a9b"
+    sha256 arm64_sonoma:  "964f888366459493699661eaa85e2f15996801887cd0fdadef62b1db55c4687a"
+    sha256 sonoma:        "c900b53e6d225029fc0391424ac0cc54d3426c38b69bd38f773f3731b2c81f04"
+    sha256 arm64_linux:   "6556187776bdcaf42a61b6039ab89ed35d4565de2e2e9e46164b6aa95767b99b"
+    sha256 x86_64_linux:  "43e30392e41b40878e28ee3a9dfdabc946486189d201c2eee063164185166a2b"
   end
 
   depends_on "autoconf" => :build

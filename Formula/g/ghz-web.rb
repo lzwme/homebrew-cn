@@ -1,8 +1,8 @@
 class GhzWeb < Formula
   desc "Web interface for ghz"
   homepage "https://ghz.sh"
-  url "https://ghfast.top/https://github.com/bojand/ghz/archive/refs/tags/v0.120.0.tar.gz"
-  sha256 "e058b1dc3aa09ca7594a79f92bad3b481c4193a0db31b2ac310b54ad802b2580"
+  url "https://ghfast.top/https://github.com/bojand/ghz/archive/refs/tags/v0.121.0.tar.gz"
+  sha256 "d92ed00a2cd1be3b14fe680e1615e9dace4fd4cf6d679811173ae7f2611ad762"
   license "Apache-2.0"
   head "https://github.com/bojand/ghz.git", branch: "master"
 
@@ -11,21 +11,19 @@ class GhzWeb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "85e63d579de011ba7228496524c9f59ee04757da8b7af3b2908f02aa0e412627"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "41a6553616554277541ebff12075da8d72be1d17bb21f9608785f09de3c00710"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4aaf95d9bb2d035676ce06f3b6650eacfdd5c149e771dbf4e26f3881aed47c6c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88cdd543eb268e47d62dcc27a67a620071b3842b53bdcdeb975aa5357550523c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dcaa8c8a1f4648b9eb480a316275d3499e6ae93aca2167ea98a8a6a82a206d4a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5fdce463dddf22e4cf8e452f32f60a5e9eff0d53f05a5886434d80cb4a4f1e4a"
-    sha256 cellar: :any_skip_relocation, ventura:        "f33d047cb7a064c954fe807f2bd6c47ccb366264d7a2f98ac497e889b7b5c7ba"
-    sha256 cellar: :any_skip_relocation, monterey:       "aa8bc7a1d646ea1bac570b39a534cb2f71195e7acc60c85d42895cb1d64e7b81"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "9f8acbd9fae34cb9532113a0b32890ea8967f6636dd1003605018695d38939bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26e58f6d58a9c1549952092b2a5518409b2c7aac05540446f7ea42f589f3492b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68707a457b2cca1410b4e9543396b8ff3fe23d1361de95cea0fe78f6b3ed3021"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fe4560e10081935d50b7c00f137a11acac1572e42f4810992f49e09e53445cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc5b9ecc777fc22afc966e552d046bbb2c0c8688665f5d60a25fce1893603b15"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d806371d45c367541083b4a468fb71751dd19c4983e27d738f45a81d095c4d93"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a45d2d2e7fd08237e97f1c531acce46fe6fef742254184e23fcfa246530c250e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c17961aad429eae9fd0ccb439d3ac704df70e8fd6c1adf8fbcf96f516a57d7ca"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/ghz-web"
   end

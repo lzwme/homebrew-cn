@@ -826,6 +826,7 @@ Homebrew-homebrew-core/Formula/c/cargo-update.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-watch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-zigbuild.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cariddi.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/carl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/carla.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/carrot2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/carthage.rb, Homebrew/homebrew-core, 0
@@ -5496,6 +5497,7 @@ Homebrew-homebrew-core/Formula/p/pgtune.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pgvector.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgweb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgxnclient.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/phantom.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/phive.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/phodav.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/phoneinfoga.rb, Homebrew/homebrew-core, 1
@@ -6107,6 +6109,7 @@ Homebrew-homebrew-core/Formula/r/redpen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redress.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redshift.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redstore.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/redu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redwax-tool.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/reflex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/reg.rb, Homebrew/homebrew-core, 1
@@ -6195,6 +6198,7 @@ Homebrew-homebrew-core/Formula/r/rmate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rmcast.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rmlint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rmpc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rmrfrs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rmtrash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rmw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rna-star.rb, Homebrew/homebrew-core, 1
@@ -6594,6 +6598,7 @@ Homebrew-homebrew-core/Formula/s/sleepwatcher.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/slepc-complex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/slepc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sleuthkit.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/slicot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slides.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slimerjs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slirp4netns.rb, Homebrew/homebrew-core, 1
@@ -8629,7 +8634,6 @@ Homebrew-homebrew-cask/Casks/b/brackets.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/brainfm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/brave-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/brave-browser@beta.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/b/brave-browser@dev.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/brave-browser@nightly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/breaktimer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/breitbandmessung.rb, Homebrew/homebrew-cask, 0
@@ -9190,6 +9194,7 @@ Homebrew-homebrew-cask/Casks/d/djview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dmenu-mac.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dmg-canvas.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dmidiplayer.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/dnclient.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dnsmonitor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/do-not-disturb.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dockdoor.rb, Homebrew/homebrew-cask, 1

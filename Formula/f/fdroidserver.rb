@@ -9,12 +9,13 @@ class Fdroidserver < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bd0cffd10be973e8583a097c18733bceb457321067832cb9e007fa8774248df2"
-    sha256 cellar: :any,                 arm64_sequoia: "9aebbea9ab56a078b9b66c3bea9688da02085a469c7648e7f7f0c8563008f6bc"
-    sha256 cellar: :any,                 arm64_sonoma:  "2015e0ea2ee3b67d7604d4e719dab7dc38fda96dc3fd6c1a94b39d5beebe4930"
-    sha256 cellar: :any,                 sonoma:        "62cf313c8305492591ad9da46e6843cf50bf0f079446a03e7dc6150be0c863c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e8c21891d3ca7ceb7e90681cedcdfc3075c49370bcab6e3a574703e0e08ceb2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef744ace5aec6b69ab9a1c6646a7fdc431b7cb084700e2f9c603373186c435b5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "cdc513cdeaa2ea88f2e7dff549e46486e6aa8a7bb6e4a76f998e65433dc7d7c1"
+    sha256 cellar: :any,                 arm64_sequoia: "31fdf56194d16fef169ac148119b72cec7abc6b82a2e26a410e7cbca692a9b09"
+    sha256 cellar: :any,                 arm64_sonoma:  "573b69ba382b5f1d0231dc1c376fb11e0106a80cbe46f8c1ddccbe36a4e3686c"
+    sha256 cellar: :any,                 sonoma:        "5584dc766914b59ead7bf7366e20432f41d4838e3a16474189c729e40b8bdc78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c84b7a99ae2655f6d5f2d7a3988c0d9a9c32e962af97632f931fb5ff34f49bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21d1aa868a60e60828fe4f5ef5b9ff3c32855b26c04e27277a7304742872150b"
   end
 
   depends_on "ninja" => :build
@@ -45,7 +46,8 @@ class Fdroidserver < Formula
   # `ruamel-yaml` is manually updated to support Python 3.14
 
   pypi_packages package_name:     "fdroidserver[optional]",
-                exclude_packages: %w[certifi cryptography frida numpy pillow puremagic]
+                exclude_packages: %w[certifi cryptography frida numpy pillow puremagic],
+                extra_packages:   "greenlet"
 
   resource "alembic" do
     url "https://files.pythonhosted.org/packages/02/a6/74c8cadc2882977d80ad756a13857857dbcf9bd405bc80b662eb10651282/alembic-1.17.2.tar.gz"
@@ -171,6 +173,11 @@ class Fdroidserver < Formula
   resource "gitpython" do
     url "https://files.pythonhosted.org/packages/9a/c8/dd58967d119baab745caec2f9d853297cec1989ec1d63f677d3880632b88/gitpython-3.1.45.tar.gz"
     sha256 "85b0ee964ceddf211c41b9f27a49086010a190fd8132a24e21f362a4b36a791c"
+  end
+
+  resource "greenlet" do
+    url "https://files.pythonhosted.org/packages/c7/e5/40dbda2736893e3e53d25838e0f19a2b417dfc122b9989c91918db30b5d3/greenlet-3.3.0.tar.gz"
+    sha256 "a82bb225a4e9e4d653dd2fb7b8b2d36e4fb25bc0165422a11e48b88e9e6f78fb"
   end
 
   resource "idna" do
@@ -409,7 +416,9 @@ class Fdroidserver < Formula
   end
 
   def install
-    venv = virtualenv_install_with_resources without: "matplotlib"
+    without = ["matplotlib"]
+    without << "greenlet" unless OS.linux?
+    venv = virtualenv_install_with_resources(without:)
 
     # `matplotlib` needs extra inputs to use system libraries.
     # Ref: https://github.com/matplotlib/matplotlib/blob/v3.9.2/doc/install/dependencies.rst#use-system-libraries

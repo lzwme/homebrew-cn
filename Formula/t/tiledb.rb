@@ -1,8 +1,8 @@
 class Tiledb < Formula
   desc "Universal storage engine"
   homepage "https://tiledb.com/"
-  url "https://ghfast.top/https://github.com/TileDB-Inc/TileDB/archive/refs/tags/2.29.2.tar.gz"
-  sha256 "44fd4c6c25938a123edc711f082a1c3e632a9f8365e64fe745bbf1e782d671d4"
+  url "https://ghfast.top/https://github.com/TileDB-Inc/TileDB/archive/refs/tags/2.30.0.tar.gz"
+  sha256 "c5f94da6de0e0f93925f7ad107bd80fef0615f9b3d111a5bae245f75b1fcc173"
   license "MIT"
 
   livecheck do
@@ -11,15 +11,17 @@ class Tiledb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "02f86f511b5d85848742a4af105f26a21598d8e0f172b81e0ac936fd6f682f75"
-    sha256 cellar: :any,                 arm64_sequoia: "245896cb1dca1f07cf62d6f4432e85acc075aaa901f1861267f84ea018ebf319"
-    sha256 cellar: :any,                 arm64_sonoma:  "1222c3681558e5dc5a009dc745df62ac8f7ce8d65f7d72b169f27b1e9503ded9"
-    sha256 cellar: :any,                 sonoma:        "7840d3e2c1e9cf82553cb7f9e499da5f8e2fb230ec999592c65a22ca8560e851"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb08b1a1bac4d9970eb1641c13e5a72046421932b8ef1391426cc42a5f2c249a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34ab078fe1250242ff17222bef7b2b494f8fd20a52a336c1d14c5b7af7e8563b"
+    sha256 cellar: :any,                 arm64_tahoe:   "d24643620924306af3314b92336a425196ee12ac582b5cf454aeb95918c82e34"
+    sha256 cellar: :any,                 arm64_sequoia: "447fb3b5eb102ae3ed47d77b6aa1f978c9b3d3e1b7a23090d3ef2886b685320f"
+    sha256 cellar: :any,                 arm64_sonoma:  "92da40d1dd7e7dfe082f95eeadceb9a8190d6db64d454a14820d1d4b68e7771e"
+    sha256 cellar: :any,                 sonoma:        "f38a90aa06777eaa085e4f92fb496dadb443db1de3c7ebf1f2d43b15def77776"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b521539ed19cbb3f04687298c61c2ebe9fd0cb6fb2cb845dc2915f543ecbbba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e78c42be0f23e86e08deb5490473fbaee901d311aa8950fdd07b620ccb96066"
   end
 
+  depends_on "c-blosc2" => :build
   depends_on "cmake" => :build
+  depends_on "nlohmann-json" => :build
 
   depends_on "fmt"
   depends_on "lz4"

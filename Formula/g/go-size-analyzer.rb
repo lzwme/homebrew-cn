@@ -1,18 +1,18 @@
 class GoSizeAnalyzer < Formula
   desc "Analyzing the dependencies in compiled Golang binaries"
   homepage "https://github.com/Zxilly/go-size-analyzer"
-  url "https://ghfast.top/https://github.com/Zxilly/go-size-analyzer/archive/refs/tags/v1.10.0.tar.gz"
-  sha256 "ca1b8d4c18233f257e99454538ea08c496427dfbfeae8632f9c1ea02765274fc"
+  url "https://ghfast.top/https://github.com/Zxilly/go-size-analyzer/archive/refs/tags/v1.10.1.tar.gz"
+  sha256 "b0f9bfd3acdab0ce68c3c44cae8f20b9b0831f0ac80ae67cda9c7dbcba3e1898"
   license "AGPL-3.0-only"
   head "https://github.com/Zxilly/go-size-analyzer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78db84054a2f5547cd9447c34ef3ec776c1cfc3b7eaa2dab8b269acb3674daa0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf9eef846aabe2789dbf476d5d46d1f8a5422cb60de60b0fefe26c7f505a7975"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41e516c0c288cfedc077106ca7a09002441e495796d797d527937f24bcf087b8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "537c9ada536b51c3e4ade7c1064e90f6ec9e396670586212a1532096e84ff4eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "886d8a1375f375696a74a8c1f30731ae6fb55a5671cd6f6d79cf163639e36e8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "453467e5fc2a0c10d0d96127fc1dc10821ea25649e1196ecd28ddf8083c86bdc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "40d87b49245512c5ca9d7ea0036920c811537d7ff31f4748f66f134b9e16f23a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7bb6bfa39c2506e4a819b395b7f3d1a1c45c743fde3603414ab24810356531f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78dcda75af7afcee3cc7ca5d1db80b5bc430048599e87bbed6ae7a318f729a90"
+    sha256 cellar: :any_skip_relocation, sonoma:        "50f82f1a24355ad8d011c2b9ca302c2cdf700bc94ce1740bda3dfab68f050108"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2634401e2279bd7ff30f9ab408176b40b6337321981ff560c2bc9a3df7417e84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60f54b3342e5214a3328192eb7e2dad53fa81c0093a22aac9dc0d019eaf46341"
   end
 
   depends_on "go" => [:build, :test]

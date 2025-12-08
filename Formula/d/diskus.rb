@@ -1,19 +1,17 @@
 class Diskus < Formula
   desc "Minimal, fast alternative to 'du -sh'"
   homepage "https://github.com/sharkdp/diskus"
-  url "https://ghfast.top/https://github.com/sharkdp/diskus/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "9733570d64a1eafcf96fe233fd978ec3855c77705005037ad253c49a188fdf51"
+  url "https://ghfast.top/https://github.com/sharkdp/diskus/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "c4c9e4cd3cda25f55172130e3d6a58b389f0113fcefa96c73e4c80565547d1bf"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "426cee588a23b6700cd92acc6b6623b4c8c578d2f83513b934f8fb1ac2f22823"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed63f0adae5d3673f2c54da07bc9ae94395479b8700e4ec563a4a8c636ba910a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7aafd128970ea77dc23c09a7dfacad1834b01defd745369f7d11549d2ca0055"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "591fad4f9045788a5980abc136b8b04b689468789406e19c2339a1934526fc6b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1f53f2f55b9c2afb08399342293ac242f89dcec9a7a3225bfb1d46a8e85eb799"
-    sha256 cellar: :any_skip_relocation, ventura:       "f7635f25cb2e68fb7ffa652c3d4bd87343e9190ff0aba65ff92eee63fd427e09"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "924d72a0c120a1eec0849fbfc5344ec71d0cbe6c167e0c5299269762e26f2df9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e19dac5a9475d48331eedf63009da2d88c04a66a1bfd6118f60eb1cb149fc97"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f407f4c6b4be9baf0de69a585e02509c03e1f62530300fd8e1a22da11f3fc623"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f8667d3f87a006feba4bace59e7b7fc7ae44c8bb1d310857048ef94e2f3dba9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7142d0bb05004da604eb907d14e0c5ec9b7e08f50f00346bc2f5151c79f7f17e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ea18a5c0ccbd21a8dd0032f07b85236e27c96a040952a0dd75bb869c2a023eb5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "23a66710ff84cb7d778d7941fb80f24433644fb143474f3fc6eb8cb0bcbfcbe7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "826a59a9dbbe4d4c24e3627df7a82b654321768c0b9faa0bba5ca480ad010dfa"
   end
 
   depends_on "rust" => :build

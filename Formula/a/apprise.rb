@@ -3,18 +3,17 @@ class Apprise < Formula
 
   desc "Send notifications from the command-line to popular notification services"
   homepage "https://pypi.org/project/apprise/"
-  url "https://files.pythonhosted.org/packages/60/16/e39338b8310af9466fab6f4482b542e24cb1fcbb7e36bf00c089c4e015e7/apprise-1.9.5.tar.gz"
-  sha256 "8f3be318bb429c2017470e33928a2e313cbf7600fc74b8184782a37060db366a"
+  url "https://files.pythonhosted.org/packages/a9/a7/bb182d81f35c3fe405505f0976da4b74f942cfdd53c7193b0fe50412aa27/apprise-1.9.6.tar.gz"
+  sha256 "4206be9cb5694a3d08dd8e0393bbb9b36212ac3a7769c2633620055e75c6caef"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "67406c9391ffc54b653f68d679c22c03b82fd6c68a0a52d7a4f64bea62de5a00"
-    sha256 cellar: :any,                 arm64_sequoia: "e1a43e4773019b53e36f462548e17543f9ebb518b12b5872f69026995ea3996a"
-    sha256 cellar: :any,                 arm64_sonoma:  "ba5a6b1492e2370f833aee287bd77d2dd47599a556935e6f1b77b8bf2014059c"
-    sha256 cellar: :any,                 sonoma:        "02290cbc3b5cc234d8e6dc07c5c3466724ddbadb109b3d05ae1dae7b4393298e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d78cf90de95d04b89bf4e6def4f6009c3b54054d28fb8764857d46e58af8ad0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25609f88ca9c4646f2408524a3d4504e8f44e387e2c68be3d3214a394e8131af"
+    sha256 cellar: :any,                 arm64_tahoe:   "2b7822ce3d4c7a41a432ca017ccb79493eaa20bab1a96fe455f5eb27548edb07"
+    sha256 cellar: :any,                 arm64_sequoia: "d77372a1c0136ed5ac1a4b0a9e3fbca5f6be475b4c7a5c5d17571fdbe0512fcf"
+    sha256 cellar: :any,                 arm64_sonoma:  "987f686ceab41c1d6a21fbd5e1df7d4a5c8718f283a46c2eafdb261250c32d57"
+    sha256 cellar: :any,                 sonoma:        "e24032e0633c8d5b329d18cf51e556548d36406ae559d970d4eb75e5f3afc6a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f99c17f1e9f4cb0cb80a716d128eff87328b7ebd7383bbb44c4747c17df37628"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22a7c52db3d8268efdffd2fbc6f1b4e756c14671eaed049016ab9a38216c68f1"
   end
 
   depends_on "certifi"

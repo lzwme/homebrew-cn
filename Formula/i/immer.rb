@@ -5,7 +5,10 @@ class Immer < Formula
   sha256 "de8411c84830864604bb685dc8f2e3c0dbdc40b95b2f6726092f7dcc85e75209"
   license "BSL-1.0"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     rebuild 1

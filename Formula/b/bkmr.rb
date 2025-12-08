@@ -1,8 +1,8 @@
 class Bkmr < Formula
   desc "Unified CLI Tool for Bookmark, Snippet, and Knowledge Management"
   homepage "https://github.com/sysid/bkmr"
-  url "https://ghfast.top/https://github.com/sysid/bkmr/archive/refs/tags/v6.3.1.tar.gz"
-  sha256 "1a158f346c3308bad51d8ab731122f6d2e716499fe004a695d195a93b7924f43"
+  url "https://ghfast.top/https://github.com/sysid/bkmr/archive/refs/tags/v6.4.1.tar.gz"
+  sha256 "074bc7e4ce20c0e1fcfec41eb5f1ac0687cee762ff952b3ed524a17fc92b0174"
   license "BSD-3-Clause"
   head "https://github.com/sysid/bkmr.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Bkmr < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a46e2f3171e258f7d79f5cd8a43bb0f2df0fae4b37a898996c68f95407020ca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79a8264d15ea0041568f7f0366f70a2aec6a061ccd59442d6974fed6045e6f12"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2042d459082422fcea6eb00f8c8f7b64be50fb1e94c42bbd496649df65ffb1f9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0c47f48870344c7e4c8d91d6cc865f0c607fdc7a3a6f585e0661a4dde0d6dca9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d97879e99f8a9f9330f168ab7886b6b6dab471c706ac0d810ae42b2aef3433db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fb9fedac7bbb991f87c2a3c5c89fc71457dbd39f08b811224d50fdfd3092e06"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5839233c8bf049bed7c316b0d8102274bd0731179a36608f7d71aaee83b1e128"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9a65832f70d1a5fc007d13b0ec8e08e41676e023a16ae93cfffdc58cea5cb00"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1565be26645a68f285ea8e649ce484e01eda17baef9fe58aaff1b67bf496c1be"
+    sha256 cellar: :any_skip_relocation, sonoma:        "830f535f9fc7f2372ebe907bc662b4d0dae498c472e99b0b98db35c686e90f6e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "abdb8e51604cb4176af23bf3dbd6a440a027255ad696a9ea6e9f86c3547fa919"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "861a84d444b5c355b2129d65d8ea25f7c195685d6e4f5569fd277130938877f3"
   end
 
   depends_on "rust" => :build

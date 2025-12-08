@@ -7,16 +7,19 @@ class Cjdns < Formula
   head "https://github.com/cjdelisle/cjdns.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "877bea445c42cb296fcbb50ec773c305993f194232206c340d3a91408adf5100"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "370596b427565d4cb09d8685330416d92a060d8ebc5b611ddef08903788d720d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e7fdd6e878c5bd2dd0e9d562d42b7845a9393b699352ea84d8c03046f82e31e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a5c55ab847e703e36f6d1f57d8134c0196d10f5e74bf52c1e16bf2f51cb4126"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9a2b35ab061add2516b666c58a4c285c59fce20d28a3168d82cef1982866354"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7ee9be19ea5c8b824923215442e2df11c89291182dbfd696026f82c41486f61"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "f0ac066b9536df86560d40dd7b3a33062e5ca59977ad0662c6a3d565342e0f0f"
+    sha256 cellar: :any,                 arm64_sequoia: "5aa5deacb035f54287065e9b60f93944875786253a2f3837ff665913e53c582b"
+    sha256 cellar: :any,                 arm64_sonoma:  "05e3abe1b0c11b96eeb52c6df42df9ee41276a3051929cfc01c45af0c80cfa93"
+    sha256 cellar: :any,                 sonoma:        "9897c94e1c9f31c12a7a4fa2ffade4733c6c4f57e0d241e13fce0d7d9f662eb7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db6357a57817251bfaa64e902f5b3842d78d5b4100ebd07b6a4ebcaf82b28dda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "182b34beab6c2ea705ea668cc02c382509fc8b4af46818fb99ac49456c8d04f1"
   end
 
   depends_on "node" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "libsodium"
 
   # remove inode check, upstream pr ref, https://github.com/cjdelisle/cjdns/pull/1272
   patch do
@@ -24,7 +27,14 @@ class Cjdns < Formula
     sha256 "4eb2abe4d52270018d8a1d1d938ee1323d9b1675f35e36f5c6bf2f0ba50a47e8"
   end
 
+  # patch to use system libsodium, upstream pr ref,https://github.com/cjdelisle/cjdns/pull/1273
+  patch do
+    url "https://github.com/cjdelisle/cjdns/commit/5ac5ce94028d507041ab4f24d30184b2a8b49c8a.patch?full_index=1"
+    sha256 "837f023cd073578282d2cdb217f8c8beece090abad329b1410de6976f56ca734"
+  end
+
   def install
+    ENV["SODIUM_USE_PKG_CONFIG"] = "1"
     ENV["NO_TEST"] = "1"
 
     system "./do"

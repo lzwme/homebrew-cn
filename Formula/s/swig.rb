@@ -1,8 +1,8 @@
 class Swig < Formula
   desc "Generate scripting interfaces to C/C++ code"
   homepage "https://www.swig.org/"
-  url "https://downloads.sourceforge.net/project/swig/swig/swig-4.4.0/swig-4.4.0.tar.gz"
-  sha256 "c3f8e5dcd68c18aa19847b33b0a1bb92f07e904c53ae9cf5ae4ff8727a72927e"
+  url "https://downloads.sourceforge.net/project/swig/swig/swig-4.4.1/swig-4.4.1.tar.gz"
+  sha256 "40162a706c56f7592d08fd52ef5511cb7ac191f3593cf07306a0a554c6281fcf"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Swig < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3f455d50205a0b5635a06ff3efc5af23e69250260f59bee84f1b891b6935d5ce"
-    sha256 arm64_sequoia: "bb8a6f319d6bbcda131cae2335f5be0a5e0f10c6ebaf9ca50155ef331ceee4f8"
-    sha256 arm64_sonoma:  "9000a532c302d784094b10a99c2e46d1ed6d573c2a9c2a5d2abcdc8019ed045b"
-    sha256 tahoe:         "c3d6f99bc61441b2d874b3bc4d974a0a90676db312aa25df98d901a7f766a021"
-    sha256 sonoma:        "18e951b0694676531ff6bee4dd94069b895243294a07c92f12385ed1cf7debd8"
-    sha256 arm64_linux:   "be5f1d7766e4d162ca4be8a554b900731bc5c3a563bbfa53f8592fcf00339c96"
-    sha256 x86_64_linux:  "4e629b02c9e53aebe297c8ff7d8353dfe2ad4649e54a1488d0ead353854e2c4b"
+    sha256 arm64_tahoe:   "f81744448d2febe7a570d66b5b7369d35cccef3d096edef61701b01926a46680"
+    sha256 arm64_sequoia: "dcc28b964c457a9cdf7821589be61ad6634273320bb55ce4649e0baa23593bef"
+    sha256 arm64_sonoma:  "343fe4b5de85267a1bdcbb0a9ebab3ba8f8693949368ca2811262ff1f93eb200"
+    sha256 tahoe:         "8b6a5fd4c930e215c199e4d839d24dbeeccc9d9c9186df30b1f5f8c828b64110"
+    sha256 sonoma:        "198565cf5ba843a3e16194a834eb08e45634138ec387704eec46184ac4a01bc3"
+    sha256 arm64_linux:   "32d185b5d3c8cf39d2079d8865b1ee54526cd40b0f41ef815e14c6386522016f"
+    sha256 x86_64_linux:  "0fe3e8eccfbd0ad2fa8cbf0cdbe06646fb3fc14946dd6cdc5b7a3a33451f3242"
   end
 
   head do

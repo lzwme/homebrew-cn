@@ -3,30 +3,30 @@ class Gersemi < Formula
 
   desc "Formatter to make your CMake code the real treasure"
   homepage "https://github.com/BlankSpruce/gersemi"
-  url "https://files.pythonhosted.org/packages/1b/fe/b6ab9391da6f00466b821bc8731fce23304fc80560664d6b06c0f41e0507/gersemi-0.23.2.tar.gz"
-  sha256 "20ff59fc9af53ef63557ab8fdad4b2429a6a8d84cf0c0d4e3960c29912b87b46"
+  url "https://files.pythonhosted.org/packages/f8/04/043649d0a633aec2efd0b572591cc55a30fb193c2f222e36b9c5240e3791/gersemi-0.24.0.tar.gz"
+  sha256 "2b39554605cefb39438b2d1b84d488d35bfdff6a71f985dba85151104f0846af"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ff6c6c0ca1c369e654c013fc41595fae7042ea72e2c12cd14310673def2bcadc"
-    sha256 cellar: :any,                 arm64_sequoia: "c8abe78589c6324abf44ecdf7cd2667cd3ef0fe540cac5227d534ffd8c74a0bf"
-    sha256 cellar: :any,                 arm64_sonoma:  "6a0cca3c74c578876ac80c7f3aa342ad41d0cc52f3e63ef7dc4ecad14ac2f95b"
-    sha256 cellar: :any,                 sonoma:        "6d6632aa2a257a4a051401e2d1106c4c0445e34d4e2869215a06ee57ac6351f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9115881cf7a1173092b462744a7fbeb25ccf8949858396c671234b826fd4f09b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11b6a3779b804091acca60fa67138c40017884b49de067be376478c9d46f0d63"
+    sha256 cellar: :any,                 arm64_tahoe:   "6f98f42c3ba8af19df31279bf7d490589fe0124087946956948cc92293a90aef"
+    sha256 cellar: :any,                 arm64_sequoia: "cf3932f1aa97ba0b048ff2db85a33aaad47f9112b7aaae14f305acf0c644bb45"
+    sha256 cellar: :any,                 arm64_sonoma:  "5172d48d61fbc622365bf846dd1a14296d26cddf4c8afff28cd274e59eb7f7aa"
+    sha256 cellar: :any,                 sonoma:        "6c0493068a327473b97668205a56798c9c21a491597dc21c40de5bb06c9ca526"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2463ed7861195badb5c11438d4b06c02a7a28e26d51acc2a8be7e95ace67257"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2c881558531fda60425a7e2ebff40338f4fca5444851fbc76105e659b873a4f"
   end
 
   depends_on "libyaml"
   depends_on "python@3.14"
 
-  resource "appdirs" do
-    url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
-    sha256 "7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"
-  end
-
   resource "lark" do
     url "https://files.pythonhosted.org/packages/da/34/28fff3ab31ccff1fd4f6c7c7b0ceb2b6968d8ea4950663eadcb5720591a0/lark-1.3.1.tar.gz"
     sha256 "b426a7a6d6d53189d318f2b6236ab5d6429eaf09259f1ca33eb716eed10d2905"
+  end
+
+  resource "platformdirs" do
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "pyyaml" do
