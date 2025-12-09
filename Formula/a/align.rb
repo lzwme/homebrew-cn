@@ -13,8 +13,8 @@ class Align < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "59752d9b714819dca9ca9a6bd4cf70a9a78645aad65a2b5d031812ee84b52c5c"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "8322889bf3e340cda1b21c32ff73ad718bde32ead186bf7b4b69f0f88f280066"
   end
 
   conflicts_with "speech-tools", because: "both install `align` binaries"

@@ -2,7 +2,7 @@ class CeresSolver < Formula
   desc "C++ library for large-scale optimization"
   homepage "http://ceres-solver.org/"
   license "BSD-3-Clause"
-  revision 4
+  revision 5
   head "https://ceres-solver.googlesource.com/ceres-solver.git", branch: "master"
 
   stable do
@@ -25,12 +25,12 @@ class CeresSolver < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "865a1864fc098a0ebf7fa9196fcaadc128958f99e8384a561c2bf891e3e79825"
-    sha256 cellar: :any,                 arm64_sequoia: "fd2298b88c7a2768659c3eae0d2bde1564cbcde86c891da755423348ef8b7a37"
-    sha256 cellar: :any,                 arm64_sonoma:  "8dba3dce89dc51b75c7d66288b55013f15879ecfe7f3c35979a01bba70d4141c"
-    sha256 cellar: :any,                 sonoma:        "786cd672cdea0e48a4c3a5d283ce5b2b43ce3a51ec1d81277240ba6a7844f5ef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9bcf0becf19aac938338ac4e5b8f1bda65d000649cb6f81f97586fc6561ceca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a3e7b00bd5b5ea04d0e9418d42ba4b42c1be212dfc91f3d574db90c44aa6922"
+    sha256 cellar: :any,                 arm64_tahoe:   "53db40f44352513457201e3b1f39f75bdf6370efd63d296d6fb41c000a91ae6f"
+    sha256 cellar: :any,                 arm64_sequoia: "1887108ba7e5c6d4fa7ba55a6831f13a0a1ab84dd9250867645510c2ef30b2aa"
+    sha256 cellar: :any,                 arm64_sonoma:  "357c59a8eb32e9655e7cf42be0efdb4d69452b315d9d822c9033e80d8c278a0b"
+    sha256 cellar: :any,                 sonoma:        "99a382dc87fc7364c7b329d261110f2816ba31a19f9d9ff84c5221aa400eb6c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1dc12f8c9a8fe43f8621fa6c8c8959746fb8b9eea1be58383ff59c3fa3d1decd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66a1a131463a22f2ed31bbb5b4d698a73c23719ba5c07c9ebb69efb1863e779b"
   end
 
   depends_on "cmake" => [:build, :test]

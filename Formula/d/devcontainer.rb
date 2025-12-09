@@ -1,12 +1,12 @@
 class Devcontainer < Formula
   desc "Reference implementation for the Development Containers specification"
   homepage "https://containers.dev"
-  url "https://registry.npmjs.org/@devcontainers/cli/-/cli-0.80.2.tgz"
-  sha256 "de4f666cedddd1ea29e4c0972c49248ed897ffe7946e95d219ecbc061432179a"
+  url "https://registry.npmjs.org/@devcontainers/cli/-/cli-0.80.3.tgz"
+  sha256 "376b47d0033d2152dcc4c6f13904a1063949941088ec7f5fa51bdf51e5fe2138"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c03b8bb0f87ad35c7bb65096f12d4b80bac196ecc6a2fcb62d1bf501510bd812"
+    sha256 cellar: :any_skip_relocation, all: "ac9b6c565fb9a1cea644ba5ef043a1ac024de1b801fa13d1e4301d035f557176"
   end
 
   depends_on "node"

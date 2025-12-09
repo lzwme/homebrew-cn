@@ -8,8 +8,8 @@ class Benerator < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "a73bf659d5c7c62f8048aae669bd74c7da97f750ce0ecb1d8009f94ba32e77fd"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "f36cf8f7f24ff1551582eb0e052ea5365709c807b642c8fc38c8ef551e974e67"
   end
 
   depends_on "openjdk@11"

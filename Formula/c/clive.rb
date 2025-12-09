@@ -7,12 +7,13 @@ class Clive < Formula
   head "https://github.com/koki-develop/clive.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0b29fcc772520bf0afdd5c8871fe478da12107dffadb12888f0920d05a39102"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0b29fcc772520bf0afdd5c8871fe478da12107dffadb12888f0920d05a39102"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0b29fcc772520bf0afdd5c8871fe478da12107dffadb12888f0920d05a39102"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9ad2fb20130d345ff5d94fc71aff3c0ca1488e1712e3e1745cc2efe556ab78d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "431680fbf21cf45970d0c94ee94dfcc6c7c9f51bdcd6f2bf91810d70e8d540df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1150756b0727718455d75577d5c874f2428f49c2269f95395536e697adb128f6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be627ba710546e0407e1774fa1797a4fd0a33a092a44172531491974d8eae57c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be627ba710546e0407e1774fa1797a4fd0a33a092a44172531491974d8eae57c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be627ba710546e0407e1774fa1797a4fd0a33a092a44172531491974d8eae57c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0e6f1c9a2268c7c7be97b7abe8bc87a93a7dfd11f7fbf5fe5ad54c6c0316c017"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2045675e3d8b5535d1da74e9d9406c9ab7263aa39cb54cbcb45c66020b590d08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8a9ddf715e85b87e4518a2286794499e279f282eeb4ce87d05407a81497b3e5"
   end
 
   depends_on "go" => :build
@@ -20,6 +21,7 @@ class Clive < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/koki-develop/clive/cmd.version=v#{version}")
+    generate_completions_from_executable(bin/"clive", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

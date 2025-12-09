@@ -4,15 +4,16 @@ class Rocksdb < Formula
   url "https://ghfast.top/https://github.com/facebook/rocksdb/archive/refs/tags/v10.7.5.tar.gz"
   sha256 "a9948bf5f00dd1e656fc40c4b0bf39001c3773ad22c56959bdb1c940d10e3d8d"
   license any_of: ["GPL-2.0-only", "Apache-2.0"]
+  revision 1
   head "https://github.com/facebook/rocksdb.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7b22eda881c19c8eaa3e229835d51c30be442bdf403f7cb146b33ecd5c3ca53f"
-    sha256 cellar: :any,                 arm64_sequoia: "ae9b516676748f4b768cd4a7f09f9748de871865695916de9c5af8b46a0d705f"
-    sha256 cellar: :any,                 arm64_sonoma:  "142b675212b5d44025de16af223bc7a79cd0a1ac11b0ca0c66788945acdab7e6"
-    sha256 cellar: :any,                 sonoma:        "1b31b2a0387fab54e10646110b41c9a199fef18ba7cff970c1e02aa0eb7a6632"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5bce6eab3b2493e18a825212ba64afaee1109da8a0639b303d89bb931cead046"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04c1758a0c5dbac41877099de5eeb85164e338f74687b935cff3f8078d4423dc"
+    sha256 cellar: :any,                 arm64_tahoe:   "91f1e32cc2accef334886facbb0a87db6c5d64927e0c33a8a6d901d76775e8ca"
+    sha256 cellar: :any,                 arm64_sequoia: "eac0fd5b81ce8bf4a25449cae9ddf7915860cd47bd6bfbf1faac9a3ac2e073b2"
+    sha256 cellar: :any,                 arm64_sonoma:  "de2bb132a7d973e535390268a455be39ef3925b97b16c2ba86a96ea2d4e908c6"
+    sha256 cellar: :any,                 sonoma:        "5e17d55dc11662f24138fa44b7d1c8e3ee6824abb6689457e189845b9a1a90df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "66de4009ed5fb8249d79bd3305aca4391f03da4b3e1c82d9826e9958d8842cdd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93f9289c81a27fa1291fa9f3fff08cf3d7fa8a4d212062e02bedd9beae4bb25f"
   end
 
   depends_on "cmake" => :build

@@ -13,8 +13,8 @@ class Apgdiff < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "22236801bcf19f2b8beb312287dc2b3a8d9ebdef2ee0fa56779ed0abc3e44fc4"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "0ec6832a82b7a0fa10bc3e009c8a85f07439dcc0f94fe9e8e05509c52abe3719"
   end
 
   head do

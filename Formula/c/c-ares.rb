@@ -1,8 +1,8 @@
 class CAres < Formula
   desc "Asynchronous DNS library"
   homepage "https://c-ares.org/"
-  url "https://ghfast.top/https://github.com/c-ares/c-ares/releases/download/v1.34.5/c-ares-1.34.5.tar.gz"
-  sha256 "7d935790e9af081c25c495fd13c2cfcda4792983418e96358ef6e7320ee06346"
+  url "https://ghfast.top/https://github.com/c-ares/c-ares/releases/download/v1.34.6/c-ares-1.34.6.tar.gz"
+  sha256 "912dd7cc3b3e8a79c52fd7fb9c0f4ecf0aaa73e45efda880266a2d6e26b84ef5"
   license "MIT"
   head "https://github.com/c-ares/c-ares.git", branch: "main"
 
@@ -12,15 +12,12 @@ class CAres < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "f1ea4e3a48f43370fac2a1d2c285e87fadc48ab3dbda63b39d8eb04b025925d7"
-    sha256 cellar: :any,                 arm64_sequoia: "76858a7f6dd6df68f7e9d13aca30a299d5947b5b6d6ce979ee660dd4ecca2bb6"
-    sha256 cellar: :any,                 arm64_sonoma:  "5bc958432063e6dc18633d06f1ef2a6939c60bfc60d3d9162183c71556e21198"
-    sha256 cellar: :any,                 arm64_ventura: "60dcb45f4148187db1aa35a2ea1fd195126448b0c013fb04ec2412788c09156a"
-    sha256 cellar: :any,                 sonoma:        "c152939c8cbf3784c07d1c335fa4d8a279926613ef8a63fd8b86ce0c9fc2c1ce"
-    sha256 cellar: :any,                 ventura:       "ec24a40eb0839a531fefd518d459d9096594c8d5f99073cb14dd90818aac1443"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7edb30f8604f12af709a3edd142cd1e4e0fa6d6ac9592ccd81687dac5344400a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "222c77a232de91b511238cf81f3290b5e5f7d788f7011a447ad92ae38089fa72"
+    sha256 cellar: :any,                 arm64_tahoe:   "d161e49ada18225649329b60940692d87a4c9c34a3b4a32332457aaae8a176dc"
+    sha256 cellar: :any,                 arm64_sequoia: "bb20019b663c40dc3662a036f7f951a8f5152b381473417fcc9a9810b5a97ddb"
+    sha256 cellar: :any,                 arm64_sonoma:  "17f44048d8003b88231d69bac0408cf22be2f712ef8588d4933ff0811b92342c"
+    sha256 cellar: :any,                 sonoma:        "841fe91739703803abef71c641ba40486291de060811779e6f6c6bbc79b0e83c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ca10fb4f9f5160b28c1e2f8edce10eab5bda2ba18ba2ca083d915e65ad9c0ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acd24a61ed9ba623494903e02ebf144d4c87b05e7658013ba3590b8c1cbe234e"
   end
 
   depends_on "cmake" => :build

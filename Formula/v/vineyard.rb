@@ -4,15 +4,15 @@ class Vineyard < Formula
   url "https://ghfast.top/https://github.com/v6d-io/v6d/releases/download/v0.24.4/v6d-0.24.4.tar.gz"
   sha256 "055bab09ca67542ccb13229de8c176b7875b4ba8c8a818e942218dccc32a6bae"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   bottle do
-    sha256                               arm64_tahoe:   "292e0e764ac9cf8c41a8f981593d203c0617e6dd1b26f96690792d36b10f0258"
-    sha256                               arm64_sequoia: "03495aa217e4224723d0a47b5370595b6d086a2315f1d9f66f90ce54f4497cf2"
-    sha256                               arm64_sonoma:  "5a510addb297fb52f1eaffa5c6d5ad4c62c1c103e067ee7d6da931a79a74891d"
-    sha256                               sonoma:        "434aeacc8b553a9d49644ae2498a77557f2a14c5c074f7998affdafd24e735ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ec940f0b0d2905faadf0370499b2088f997d938d62ebf4a1e81e6ab566fb760"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a403f9985962d521b08c3527ca71d5ca7472e6f47ef8c13e4d21c124573e1b2"
+    sha256                               arm64_tahoe:   "958196ddc3602a43f684b164d0b16c8eb600dfd4564902c84c200cb038469d46"
+    sha256                               arm64_sequoia: "7d28a6ff0e615971935eb7178d371a50ea098de53a28b6a94d52910615aa7838"
+    sha256                               arm64_sonoma:  "704e400ac3c658be7b80d4e7424025419acdbd7a0bf2e1b609534715ded96c33"
+    sha256                               sonoma:        "dffc6f5ad24a5ade2a2ee3b70fee427a3da6fa0468ee813c2e0af0dfc6ea0d18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "22e03fd66d9d2df6bbc9101171d3cb14a8d22adf6529924d2b76034aebe91043"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d31f535aa73f4268bcb0e1e72307e3b698a4c80ad68b16d3940be7eab0444524"
   end
 
   depends_on "cmake" => [:build, :test]

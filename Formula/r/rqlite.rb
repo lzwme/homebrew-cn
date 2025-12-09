@@ -1,18 +1,18 @@
 class Rqlite < Formula
   desc "Lightweight, distributed relational database built on SQLite"
   homepage "https://www.rqlite.io/"
-  url "https://ghfast.top/https://github.com/rqlite/rqlite/archive/refs/tags/v9.3.4.tar.gz"
-  sha256 "24bbb51923786f840872bf39644ee7954f5993dfba2779c8ca6f530ed785f84d"
+  url "https://ghfast.top/https://github.com/rqlite/rqlite/archive/refs/tags/v9.3.5.tar.gz"
+  sha256 "1459de455470be70d98e3165a8d194dc66ebcdd1dd8066c4abfbe1d00f5f170c"
   license "MIT"
   head "https://github.com/rqlite/rqlite.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0f1fda8bdc6d86f3aed5e83d7406f52b4c335c3718d402e46e8010d6041731a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ee5daa3d24e94af846ba7bffb31d5616d3510411088e950367931174a816072"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d769beac2ea0708f717fedef7683c99f70c491d18829498706d3e3044c6da88f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "20392309e902601ec70c1a6fde6855e03e938d0f6b385cb0a43a4796e080ebff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca0e310015cc2f3d0e02bd30729a20325853d8312d78f92d62ab1999126aa0f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eeb66b25abb8bdea22503dc1da5aad4d0ada0198ccffdccb925c8a8423e7267b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c28ea04a3f60b680d0e8695614813392ff8d3e946e19d43adec812de985dcd97"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2672884287affae1f874b35e82cc49c7361705ca4c3710be81e90ece25319dc0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2574caaa4d2d0c7be47b011e75b7d18c181ccfc3aa3993fed0327ed9e01d269"
+    sha256 cellar: :any_skip_relocation, sonoma:        "29d20fae267c2ba904869527c98ac7fad6166170837f18295b768b59cdad91a7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d787921011c874bb4b9e6567b40cfe4084967bef302ac5f198c4d194c812ee26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3d077f51af108f0c5dede3e3a68eade2ddeb912c1d43509ada51a10f6c3ebc2"
   end
 
   depends_on "go" => :build

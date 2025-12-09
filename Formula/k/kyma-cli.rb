@@ -1,8 +1,8 @@
 class KymaCli < Formula
   desc "Kyma command-line interface"
   homepage "https://kyma-project.io"
-  url "https://ghfast.top/https://github.com/kyma-project/cli/archive/refs/tags/3.2.0.tar.gz"
-  sha256 "9f58ca3c898e450aee12211cc47ee9bc1223e3fc1591dc9b467e1406b28dc639"
+  url "https://ghfast.top/https://github.com/kyma-project/cli/archive/refs/tags/3.3.0.tar.gz"
+  sha256 "10ba1e5fe4ad6b9f37ec2b7366f55fa8c7a54718584d9a98ad047926f45f2976"
   license "Apache-2.0"
   head "https://github.com/kyma-project/cli.git", branch: "main"
 
@@ -15,12 +15,12 @@ class KymaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f209e2271622adf9239a1fc7648d2ef0562f03e4c278bf602422860801bb16c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5714006d511f9702519770c3a34c1f981983dc352cba5eb777d38c528205a730"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7cae4cee86f16af89e8b4f5d7b4f35bfc94f58da7e4a29839cd399649bb2fb09"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dead6a1dcae6de0d7e730afbca1d3dfd45c9e3567d6902d495ce04498dad1adc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "291fb973bca696f80ebedb1325499d8255125dea3872b8da0cbcdb7c92c4aa2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac83d0fc00d3e3477eb8c977ae06edbd3e9e1cbae36e2478b409de5fa53ffd06"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90885b359fc1679109e8574f36a3eee1b39d4c17407e9c4348cce4f16096a988"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46b4902048332aaf8c6555a18b1ac50cad1946c3484c08d2bd834272f861bfa3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4fffbe9f964a40f75154846e399c73d518241d148db95cbe41ec45836a469093"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f7120f2f35988b58ea01b74e815eeaca6c8ecff7de8f4260374294646f5c5f8d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d23ca5ad1fc63b812d9e38a0faf611f23a6aab9edc19a93da55c6960140588d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8102974bac2185561ca666f0a7cfcb4d8e6143dfc7e7db27d5dd057f04be9ee1"
   end
 
   depends_on "go" => :build

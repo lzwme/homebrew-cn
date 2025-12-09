@@ -4,18 +4,17 @@ class LibgrapeLite < Formula
   url "https://ghfast.top/https://github.com/alibaba/libgrape-lite/archive/refs/tags/v0.3.5.tar.gz"
   sha256 "77b7f08ad10b26ec7e6f60bf90ab8281208758702a9e8d9dd00b1cd6f5560f39"
   license "Apache-2.0"
+  revision 1
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "21f21e45a638e2ea14cc1f9fc4914fec4bf1526dc6d1a12b4c966c16cc4b2d2f"
-    sha256 cellar: :any,                 arm64_sequoia: "a0f27854c66b84ff7b9457c056464ed04cd44f6bbcbbe2c194589a10906a9ff5"
-    sha256 cellar: :any,                 arm64_sonoma:  "4ed7d1abaeff94d789b82eb98be06f932fe14fd2a226c1b9b9070fb9e859bf3a"
-    sha256 cellar: :any,                 arm64_ventura: "3cb22292371844f5c1be714382a0fdb9b6053933864dafc60302dddfc6dd0c12"
-    sha256 cellar: :any,                 sonoma:        "04f1753ca0ee70b8b79015d789b0d926587ebffb00f24d0e3778339975ebcf1d"
-    sha256 cellar: :any,                 ventura:       "8f069e6f8225035353609b883fe9094b257976fdc7f50f89a10655ac63f2231f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6204269477e655d73a80f39817e5532f96784bd803db190f9c1c346cee67b19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cba36dc3c38c447be22ad24fbcca0b1da56cfa6c409d14247244f95e30c6684"
+    sha256 cellar: :any,                 arm64_tahoe:   "79620dba15f36c38dd544c62bd645012660bb95528b9a45f6f579f7e34f6428b"
+    sha256 cellar: :any,                 arm64_sequoia: "ebf7104e35af1ba8f82578d2706be2da6e277423818d5f0b313cd36d38a464bb"
+    sha256 cellar: :any,                 arm64_sonoma:  "cd15174a51539d335e79290b4cee01c725cd66b092870f0930c524ce3e3d6dca"
+    sha256 cellar: :any,                 sonoma:        "329913ab9e2384df61b0bd4a4c4e67967cfc844fc738b8553fc6adbd8607cef2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "365b7d9bc18ce658df4d10ff69d18543b3b0a18f8100b304afeb71874c657025"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fe5448439c287b66ca142385aa71dc91bbc24f6efdde70be5c2b8e3084178c0"
   end
 
   depends_on "cmake" => :build

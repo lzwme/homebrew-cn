@@ -1,8 +1,8 @@
 class Ghidra < Formula
   desc "Multi-platform software reverse engineering framework"
   homepage "https://github.com/NationalSecurityAgency/ghidra"
-  url "https://ghfast.top/https://github.com/NationalSecurityAgency/ghidra/archive/refs/tags/Ghidra_11.4.3_build.tar.gz"
-  sha256 "2143a4d2adde06dc7ab9487225aca7164cad1a04d3d5f361c4d216cfbf4a4809"
+  url "https://ghfast.top/https://github.com/NationalSecurityAgency/ghidra/archive/refs/tags/Ghidra_12.0_build.tar.gz"
+  sha256 "32742f938c9225137ae0a22cc00307f81a396bcbd661626ac3177a3628920648"
   license "Apache-2.0"
 
   livecheck do
@@ -11,23 +11,17 @@ class Ghidra < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e15a0d179effdd3bc08f7e9a243a274462e6813f7e6235a9d309a330e3506ab"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7fab41d3e463fa6336bcfef515b286f364f09c5a4b42ef0a4ad5998dbc7f4f16"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "309f6201bbc64e0407dda713c78f3ab18fbcdbf1ceafedf120f283cac6d3c774"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fd0a27751b756a6eb357aa25eb9eeded7514dac04d5568d81f6d194b02679665"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4789527492eef12a3c7c37d1a9153eeb345a9b9fba2d431eefc59eb43e5ebc9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3dd5e917194912c98f4d7760260f16cba12dbb868c47ee83e8093dac54a2686"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8562e1774f14e0fe5e41923e1dfbbf6197d5c988fd10613624f19c23f06b6640"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "823b171952b93c620590746c24477bdc76d0a18c4c48fb9451f331b63adbc59e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "667336e292a50a3463850528b3c4b715c12500a1ef9534e9ee1c14cbecd5ae6a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ace046c36ec3fccafc21f1e1094ea8aaae876a1242f0b17bcf6dfb54db67e4ca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49e452de5257510b723ef96d8e6795e9bec7a5c5459b5b6a72e3eb568ce9f458"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ebfd537c4854eba1d2ccacefaeacc041232d3c2b971bbf1b7e05a56ed324efb"
   end
 
   depends_on "gradle" => :build
   depends_on "python@3.14" => :build
   depends_on "openjdk@21"
-
-  # Allow to build with Python 3.14, remove in next release
-  patch do
-    url "https://github.com/NationalSecurityAgency/ghidra/commit/5b157d2c26246188d51a7652ac83537efc12cde8.patch?full_index=1"
-    sha256 "bb60cb2b36810e4650b71c0a4a3dc7f4fda1aefa809a486ba1d8772f12caa9b9"
-  end
 
   def install
     inreplace "Ghidra/application.properties", "DEV", "PUBLIC" # Mark as a release

@@ -3,18 +3,18 @@ class Black < Formula
 
   desc "Python code formatter"
   homepage "https://black.readthedocs.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/8c/ad/33adf4708633d047950ff2dfdea2e215d84ac50ef95aff14a614e4b6e9b2/black-25.11.0.tar.gz"
-  sha256 "9a323ac32f5dc75ce7470501b887250be5005a01602e931a15e45593f70f6e08"
+  url "https://files.pythonhosted.org/packages/c4/d9/07b458a3f1c525ac392b5edc6b191ff140b596f9d77092429417a54e249d/black-25.12.0.tar.gz"
+  sha256 "8d3dd9cea14bff7ddc0eb243c811cdb1a011ebb4800a5f0335a01a68654796a7"
   license "MIT"
   head "https://github.com/psf/black.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3cc76e49397145406c49a933fdd12dc5ca4ea9928793fad5298ed9d2718aa7c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b56e38576b43373a45eb6e92de86228ca646f78cae5ca7224924075c8a12f056"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73461e223748bf8288af5a3dba982c67bf2b4424115be355f39d14ba2434b26d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "04815e62f7de1ad2a46f9de1494babd82369a33ca4d6a74836a7f55c3d958c6a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8862c133a6c15949f41cac36911997833d04f0dabf31ca02934e52857e104c40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf792f1a4d352815e3118094dc9c2a8dec11792214e9497f2996b248b4bc5550"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d1577acf6369be0377e0eaa5b487e5375fbc1523ac28f5942d62cd78c8ea281"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11f14ceb1eaf6de73cf480c24a9993373d7430dc73ec7076546ee5b35da2a02e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d13b4221dda9078d6d11dd48c0c21374447c236bdefdfd7e2116df5492513f6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "92cc4d51e309382592505e4f8f52ad94d702d1ab7c20376a373101494dcd3475"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34e4f929dc6c3dd647a4ca682d385c64f55c7ffb933b522c2c4f56de1367abb0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1165d91c7925e398265d92bec581e2abca646cf0b33030469aad167bb0c1f9ea"
   end
 
   depends_on "python@3.14"
@@ -42,8 +42,8 @@ class Black < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "frozenlist" do
@@ -77,8 +77,8 @@ class Black < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "propcache" do

@@ -1,20 +1,18 @@
 class Xplr < Formula
   desc "Hackable, minimal, fast TUI file explorer"
   homepage "https://github.com/sayanarijit/xplr"
-  url "https://ghfast.top/https://github.com/sayanarijit/xplr/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "6d766bc52c49782e3ca8ba7130f1cab95c69e42ff3c15eec2b0ac823ab7a36b3"
+  url "https://ghfast.top/https://github.com/sayanarijit/xplr/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "7948683c546fdf374f6bec7855726cf4e3f1bc4abf1c2a292cbdfa6ff16f6143"
   license "MIT"
   head "https://github.com/sayanarijit/xplr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4158e4d58b4114360c13aec3f9f2b2f89679dcfc9af1def273c1611404367479"
-    sha256 cellar: :any,                 arm64_sequoia: "8e2af53ed70887dd5ff966adf2612259865c6db17c485ee9233dedf2f184df1b"
-    sha256 cellar: :any,                 arm64_sonoma:  "c628e2c6d435b8765c2880dfe98dfbdd4a54705e04668d5aeac389bab23d6471"
-    sha256 cellar: :any,                 arm64_ventura: "b1942b6c9b832b987ef777bf1454a805df69b3a5ef2a3be7771c3344a3fe5ba6"
-    sha256 cellar: :any,                 sonoma:        "3792494258c3c05d1724666298be0ff8d9fa5f81fe3213b3a89419353f2cf920"
-    sha256 cellar: :any,                 ventura:       "3cdb674789239cc18e01fd5d1863a3e4fd8f9510608706cc90d08402fca7080a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "940a502af128cb6dadf797a2cf6d4a6acc002bc4c9bbd3f4588a17a80069d0e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c025d45df5cdf7e0a3a292d914745099b8a9854a4a61b8316aab72c32e7df22"
+    sha256 cellar: :any,                 arm64_tahoe:   "81fd46b952f4e77c21f80a2ed0846d6eab2f427448b6c419968e035134cebc45"
+    sha256 cellar: :any,                 arm64_sequoia: "d45b3241a18aa1600ac9f7a28e91aeddd802c0276c5e60c684a83e5df7d84248"
+    sha256 cellar: :any,                 arm64_sonoma:  "3ebef346bbdf33d58fee01f749fbc82cf3da11815573df193baaef401d8071ce"
+    sha256 cellar: :any,                 sonoma:        "3d3e87f43f39d456b01d425f102d4cdc6e775c131b515a7d8e2571a00be46d75"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb602d89f46080d0da072cdc9496fb9e150c86aa15bc8defe3aff9cab9ef887f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "580c25a69c5e025bc2ca4c26a6c9ceb0344ddbef285d87589d3df58d7a221b4c"
   end
 
   depends_on "pkgconf" => :build

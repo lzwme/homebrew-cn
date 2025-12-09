@@ -6,8 +6,8 @@ class ApmBashCompletion < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "f86348dd9abdb4b7a8c6353f29374d7432375920a0281e806f14d50b8673bc1f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "b4060df6591f97ca99b076b034721b3f0a9636127d6dfd3dc234fcdca68c06c9"
   end
 
   deprecate! date: "2025-04-27", because: :repo_archived

@@ -1,8 +1,8 @@
 class Apko < Formula
   desc "Build OCI images from APK packages directly without Dockerfile"
   homepage "https://github.com/chainguard-dev/apko"
-  url "https://ghfast.top/https://github.com/chainguard-dev/apko/archive/refs/tags/v0.30.28.tar.gz"
-  sha256 "fd9f0ca382115b478744954049d46fa68ca7b9f47fbf47e72a0f04838ffc8fa1"
+  url "https://ghfast.top/https://github.com/chainguard-dev/apko/archive/refs/tags/v0.30.29.tar.gz"
+  sha256 "d065fd020036541f69b853cf115ff62c2b7fbfc50b103bd5a634596e29bb21aa"
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/apko.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Apko < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b01800de3323c9ff91188cf892b02a47fb3461816861af2f0b938a169bb571ea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67764aa5c3c89abc1fb2faf80d2b745611c4f5bcc963e0fa0b6f249966af9e52"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50872b8c5ded47391b2ff5c38b755357e06940933c05329460b5be6e0b846bf8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "64f46af401790664570febacd4b55b2435a8b706927132be11bd78ae24086543"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1510466d7d38939b413dd1dce26b0a4595a3b7a3fd39e9299761388d8fb57fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58d126613962a298ea96ae346b18380a6f2ebb910c9a68a8178dff4180582fab"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0bebe3f296a0857fd8be566c2b127ada6891ed0fe698b6c4136cf81dcdd57248"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "983b8f04ce9ddee123031dd49f65c1d639921eecf689c57280fc75aea3e93687"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aba4ad83532b39aa5b2539712baeebb047a3dacb16842cb32c21b4fd5dc4992a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aee62f1c76eed0802bc76371c76a1a8593d2f89c0ebf36af29971c973bd78091"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e69dace3ca3c8d4fe49e5bf4471b54f4dbdb662a2cf31e948e28a130e3be441"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3168f4e9b46abd1c2ffe1027feab3882005e55f952a027e84d477d8f9192216"
   end
 
   depends_on "go" => :build

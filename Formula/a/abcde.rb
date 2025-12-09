@@ -12,8 +12,6 @@ class Abcde < Formula
     regex(/href=.*?abcde[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "580cb0f7c45b342dbdfac94e4fe3a2dc6db572409e212d963b22fba20a002423"
     sha256 cellar: :any,                 arm64_sequoia:  "48c8a99c5cf28e44096fe46c62f5dc826a90282769b895fb50807cca0f5383b0"
@@ -29,6 +27,11 @@ class Abcde < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:    "16b246ffcc1d24acb0aba75e1ba6995535470fc90b0992746bd38e3f2aa10243"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "93e3d734fe73f1ca3edeab8e4f25794a28acbdde6df9f3ffd7d01b2e16ce31a2"
   end
+
+  # use deprecated glyr,
+  # no new commits over the last four years and no new commits over the past six years
+  deprecate! date: "2025-12-08", because: :unmaintained
+  disable! date: "2026-12-08", because: :unmaintained
 
   depends_on "pkgconf" => :build
 

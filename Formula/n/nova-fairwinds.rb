@@ -1,18 +1,18 @@
 class NovaFairwinds < Formula
   desc "Find outdated or deprecated Helm charts running in your cluster"
   homepage "https://github.com/FairwindsOps/nova"
-  url "https://ghfast.top/https://github.com/FairwindsOps/nova/archive/refs/tags/v3.11.9.tar.gz"
-  sha256 "37610ae7bfa86e14a95e94de55f9833a3a269ac1d4f7a94bfc1fdbafa5277c29"
+  url "https://ghfast.top/https://github.com/FairwindsOps/nova/archive/refs/tags/v3.11.10.tar.gz"
+  sha256 "a32f1b00ba808d906648e806f9d1e1102d4e7118230dbbd3ece5c7511b3ae84f"
   license "Apache-2.0"
   head "https://github.com/FairwindsOps/nova.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a50f817b266b08f8ef0a0fe6664efa6f1ec1b1a460f4034650322ab9902519ca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a50f817b266b08f8ef0a0fe6664efa6f1ec1b1a460f4034650322ab9902519ca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a50f817b266b08f8ef0a0fe6664efa6f1ec1b1a460f4034650322ab9902519ca"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0b5bbe3cc2dd24ef49426adcbb5345d4b40a88e5e2174f54fffca6260757648a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "323cf8bf20c935d0effe3f5c23d090ce42ceffa132cea563984a08f4b5352e8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "315e2a607efe32f6ad5bbc9ab227a84f8e1d4fa5dc6f3fea24e6adf7194b2dfd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b56ea2cff008a496f6d00b5a6c341781b58629e40b483f0e959f22bbb3b28964"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b56ea2cff008a496f6d00b5a6c341781b58629e40b483f0e959f22bbb3b28964"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b56ea2cff008a496f6d00b5a6c341781b58629e40b483f0e959f22bbb3b28964"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2222a870301afe85a2f9630b42aab9b6e8a54d7d6b833a10731001270628e9da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c43d72312a2cdbed0f8502855f1e4a4813bfec542e85fe7bab1cd2a1368fa29a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9c425b47c796e35e45621c9883c2512a9abfcbf9b77336a91a866addf400ec3"
   end
 
   depends_on "go" => :build

@@ -13,8 +13,8 @@ class Bar < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "fa55cacca64ca91bdb24888d6ad36cff103aac0a461a8d2f32ae5b6e69d47980"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "0bfd47d83744c345b9d102b66f8f7f580757d90ec821789a76364ad8b1cb13eb"
   end
 
   def install

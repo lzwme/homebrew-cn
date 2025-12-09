@@ -4,15 +4,16 @@ class Wangle < Formula
   url "https://ghfast.top/https://github.com/facebook/wangle/archive/refs/tags/v2025.11.10.00.tar.gz"
   sha256 "7cc9bd32619fcb14cc9ac4ced71401f85130514c812c5d6b3b904dc720c4e9a1"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/facebook/wangle.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d8efd75dd8c1867d35f1b3fd354dc3cb0d62814fd8e6ea7322f5a076d0f5dc3f"
-    sha256 cellar: :any,                 arm64_sequoia: "9a50c964111c1e2f3da6b69f33b16424a5ee7c3bee36f9931d16c2e1bdd19d99"
-    sha256 cellar: :any,                 arm64_sonoma:  "199b6b409337386d01ae07f9889fd3bb3ec72c3bed5b216bcc629dac23f9b1d1"
-    sha256 cellar: :any,                 sonoma:        "9b925268754978972d7a6398ea2687eeb719613bc534e9f2f04081d6b9b99547"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "78b9422c4e964834a0b216bf981db7123382344a15613df86d4f9389fcd72c38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f1da306f04754f1193a236976532c8ac4ed8ff19210c2a87546d5b243d28479"
+    sha256 cellar: :any,                 arm64_tahoe:   "49f03144cedb4416cfa426d781d1672f14128a3d78492b15df9e6e417b256e1c"
+    sha256 cellar: :any,                 arm64_sequoia: "291c1d814418e58a4f2f1abe1492aa166721d87aa72b78a0440ca0c2bf04b055"
+    sha256 cellar: :any,                 arm64_sonoma:  "50fc62c3bd043c909dc33b70a042ae37ed32a6f27d6ef0aa41f46894d9a93cd7"
+    sha256 cellar: :any,                 sonoma:        "ac06d2b0f1a27b8c2449cf640c605c45a13239c92c4202e95e87e9d4fcf676e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "55cd44cbbaf472a5d7f655f6a324d8ed372a86f90dfb1797b92f3f7ed52fb541"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a7ffaf24a1067e34cbcd29649031180f3bfee67ee4e3402b50a9679fd62ec2a"
   end
 
   depends_on "cmake" => [:build, :test]

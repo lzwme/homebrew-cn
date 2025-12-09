@@ -18,14 +18,13 @@ class GhcAT98 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3e87df3e2191a0bc9b59349222a521ef3d5839f2d329eda02077d47190f670f1"
-    sha256 cellar: :any,                 arm64_sequoia: "77cf644f73bd7942775f30101b61c4425c9c3d45d8ba5c3af80e6b3c5e689f4a"
-    sha256 cellar: :any,                 arm64_sonoma:  "1a10ae542525f70b3c308122da20a293f26a80ddb9e60df6d4ce3dc7aa1fa0f7"
-    sha256 cellar: :any,                 arm64_ventura: "2a294afb0daafc46a01f07b28ce8b12c99e7cf012636db9e1ec2cad571cb7159"
-    sha256 cellar: :any,                 sonoma:        "1ef721a935beec2ae8dee98c5114688006fba633e326b8fb539c0c579aea6692"
-    sha256 cellar: :any,                 ventura:       "cb6edb4b9148cd65d58e0eb460717156a508e30746a9041913fa9d723b7e4021"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee9cead55676496b271a1471cc969c331f7d890fa17c5719ff919dd1c8f51c0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "062b63708890292cd293ab0e7b836807cf7b37751e6f5717490921b777acb517"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "9480b6b54cbcaf29cd4ad8cae23cdb03bad48485186926d66685c40c90771fcf"
+    sha256 cellar: :any,                 arm64_sequoia: "489d55cbc7c039f9f97aaeb74ac050735ab3218739ed41805ef1b7a714d06e1a"
+    sha256 cellar: :any,                 arm64_sonoma:  "9ad0baffde0368e14afb9c9f01373c05842e5a30f4094064e4deb9e8e67192f1"
+    sha256 cellar: :any,                 sonoma:        "d7b1b0476f646594510a6eb2c13df4bec60427de75d00bd4c222cc4b05004b44"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "044c5e69056a613de86e94aa02eba4fd454408062504097c8c258765cf6afc31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76848d321a01d2edfbf175ce1df14d8b9764b9f416bc8596951c8f4e6c105805"
   end
 
   keg_only :versioned_formula
@@ -115,7 +114,7 @@ class GhcAT98 < Formula
     ENV["PYTHON"] = which("python3.14")
 
     # Workaround for https://gitlab.haskell.org/ghc/ghc/-/issues/26166
-    if DevelopmentTools.ld64_version == "1221.4"
+    if DevelopmentTools.ld64_version >= "1221.4"
       inreplace "rts/rts.cabal.in", /("-Wl,-undefined,dynamic_lookup)"/, "\\1,-ld_classic\""
     end
 
@@ -151,6 +150,8 @@ class GhcAT98 < Formula
       -j#{ENV.make_jobs}
       --prefix=#{prefix}
       --flavour=release
+      --docs=no-haddocks
+      --docs=no-sphinx-html
       --docs=no-sphinx-pdfs
     ]
     # Work around linkage error due to RPATH in ghc-iserv-dyn-ghc

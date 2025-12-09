@@ -9,8 +9,8 @@ class BoomCompletion < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "05b587e612fdff3439b6618c062c1f7b5f13332e3b8e7645d80cf5d5f023d276"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "3804dd1b6ac824126d7b5a3456482ccfa6a84afb568b3528cd9fc9be939b157d"
   end
 
   def install

@@ -4759,6 +4759,7 @@ Homebrew-homebrew-core/Formula/m/mpremote.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mprocs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mpssh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mpv.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mqttui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mrbayes.rb, Homebrew/homebrew-core, 1
@@ -4789,6 +4790,7 @@ Homebrew-homebrew-core/Formula/m/mtr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mu-repo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mubeng.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mufetch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/muffet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mujs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/multi-git-status.rb, Homebrew/homebrew-core, 1
@@ -4928,6 +4930,7 @@ Homebrew-homebrew-core/Formula/n/netmask.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netpbm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/netris.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/netscanner.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/netshow.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/netsurf-buildsystem.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nettle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nettoe.rb, Homebrew/homebrew-core, 0
@@ -4973,6 +4976,7 @@ Homebrew-homebrew-core/Formula/n/nip4.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nixfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nixpacks.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nkf.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/nkt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nload.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nlohmann-json.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nlopt.rb, Homebrew/homebrew-core, 1
@@ -8935,6 +8939,7 @@ Homebrew-homebrew-cask/Casks/c/companion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/companion@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/composercat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/compositor.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/conar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/concept2-utility.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/conductor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/confectionery.rb, Homebrew/homebrew-cask, 0
@@ -13870,6 +13875,7 @@ Homebrew-homebrew-cask/Casks/p/panoply.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/panwriter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/paparazzi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/paper.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/papercut-mobility-print-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/paperpile.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/papers.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/paperspace.rb, Homebrew/homebrew-cask, 0
@@ -15488,6 +15494,7 @@ Homebrew-homebrew-cask/Casks/v/vysor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wacom-inkspace.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wacom-tablet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wail.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/w/wailbrew.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wakatime.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wallpaper-wizard.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/waltr-heic-converter.rb, Homebrew/homebrew-cask, 0

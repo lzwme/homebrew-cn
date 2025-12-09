@@ -4,15 +4,16 @@ class Fb303 < Formula
   url "https://ghfast.top/https://github.com/facebook/fb303/archive/refs/tags/v2025.11.10.00.tar.gz"
   sha256 "4edb02ef25543fa94741f3478666fb08f18fc3e22892c6c406fd041df8315f94"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/facebook/fb303.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "50b065e8075225e06708ecb7d66533fb5e75bd5f770e7a2d05bdb6b60dd12279"
-    sha256                               arm64_sequoia: "3c99120ae367bdd20d482e506892df273a4224e96030576025d1bc3ea242409e"
-    sha256                               arm64_sonoma:  "74e7924e62c02ee572ec437cf9f6587619b6077b71913eb2fc4b4e4ac1027ccc"
-    sha256 cellar: :any,                 sonoma:        "707abfb7f903fb341cebf42efbbaae44dec5c1075f6199b5df49512516cb672e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc48348057d9b8f4657d7ba42c87e00c34b66f82ca4530fee0fe81a6235a0e3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc3b43bb1d89fb5c7c1e278e42535f2fde10728971cd97ca0a21c1a040e90525"
+    sha256                               arm64_tahoe:   "6b27c5f40a25a21587008e9595e1991ab1f1b4ad64082d29d14f0187a2ff2613"
+    sha256                               arm64_sequoia: "923f0a4933b15aa2bb3aafe5b4d0ae9f80a36b6d8aeb0579bd191e3866bd7eeb"
+    sha256                               arm64_sonoma:  "aaa09a9c35e7b61af01bc92428502048c55a24a4fcd0d7c5943c0a7bc33ac72d"
+    sha256 cellar: :any,                 sonoma:        "9d641b32d8ae0866f95b10c2bee90b117adbe136f1a155a580ac1f1a7ac30c5a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "718e0796483eabf8bf3b7b857b664feb14ac0e87852b7f981c8bb139728363c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3d8ac0498f70bce33a86702531685cceb14c6e9dcd7cbe18c3158ec9321f1fc"
   end
 
   depends_on "cmake" => :build

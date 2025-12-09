@@ -9,8 +9,8 @@ class Betty < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "6d9822a13119b0500eb79e9c4cafaa064053c0870393092f1f0c6386592138d7"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "6e05c82883d813ce98372d8ed15bf2e4b9cd11cd91f36483a07e37ccec8204ee"
   end
 
   uses_from_macos "ruby"

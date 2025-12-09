@@ -1,19 +1,17 @@
 class Dvisvgm < Formula
   desc "Fast DVI to SVG converter"
   homepage "https://dvisvgm.de"
-  url "https://ghfast.top/https://github.com/mgieseki/dvisvgm/releases/download/3.5/dvisvgm-3.5.tar.gz"
-  sha256 "41ea2e10fe6bdc4ce7672519cfc2998e5c30c8b29fbcd8901915c7dac7fa494c"
+  url "https://ghfast.top/https://github.com/mgieseki/dvisvgm/releases/download/3.6/dvisvgm-3.6.tar.gz"
+  sha256 "19dac117e5a307db5f56bde03a711a96b8c6afa0a7d38a698b313fc8d42e1468"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "844adad2e4ce15cc7cdc8053fc7641b39153817e48cb5fa54a86e1c4d846d8c9"
-    sha256 cellar: :any,                 arm64_sequoia: "49dfadfd667f69439a9c75f2baae68145c7c9b3a40d3c9b93e89bea725a45126"
-    sha256 cellar: :any,                 arm64_sonoma:  "b7e44c20d83be91e3a1637c6f5ed71799974d4c8aa90d0aead5b26181b7cec47"
-    sha256 cellar: :any,                 arm64_ventura: "15665722543df62fb0e593000e78a16c63c2c26f0bc0256f7e31e2b29857e65c"
-    sha256 cellar: :any,                 sonoma:        "f59943aa1aed3a13091ba46e2d6de274e591326c5f5e2f70e0dfef05a278de7f"
-    sha256 cellar: :any,                 ventura:       "e0891fceaacc7fe276d342d700bab6286a1fe1e42298a81bb7c6598402317a3f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b07268ed1e2105fce670746a418acb7604832f963b123acad04f7faae5ffc181"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc45ab10466cf813d4034db865df7d2dcdcb4ec079edcc5b19f21dd478390d69"
+    sha256 cellar: :any,                 arm64_tahoe:   "a7ea70646b8eeb5253487029ad239849cd47d86d979b17f00b8f45decee66806"
+    sha256 cellar: :any,                 arm64_sequoia: "180f615716ae2f5a25c72409bbc841d6f01b78ec0b010c8c74e2b202ed49758c"
+    sha256 cellar: :any,                 arm64_sonoma:  "9045969a6b7b7a85f8c38c18ea0cfafce4a8d36f91d871aecf0bc6b86c87776b"
+    sha256 cellar: :any,                 sonoma:        "39b703778b45567d7e01864138cd84fea3abc3a9451cf6d0ec4d227597cd5364"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b99ba83475efb2a7de3f77d7344fba3d7bcc591851b8d525f1965bfeb1c53753"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f883fa99fb3fe5fd73ecf87690fcfd15a05c523559cf8aa11aee9fc63b29f344"
   end
 
   depends_on "autoconf" => :build

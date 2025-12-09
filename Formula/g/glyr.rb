@@ -6,8 +6,6 @@ class Glyr < Formula
   license "LGPL-3.0-or-later"
   revision 3
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "b4f97cce0791e26fdb4ada285bc982bb96548886442bde705a9c5d9656bbc8e5"
     sha256 cellar: :any,                 arm64_sequoia: "9ff02541efeba578a7e20d6d3ba1cd80c71d4f80e37306a35cb9b13e1e9ef4e8"
@@ -18,6 +16,10 @@ class Glyr < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "92a13d57476ddb835effaba42d9c57f0070e4378b8b258711e9748cbfe603e4a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "299191466994be32c6b0fd7ffe958623ddbffb940428b95c25eba2fa6b5bff21"
   end
+
+  # Various lyrics providers broken, https://github.com/sahib/glyr/issues/102
+  deprecate! date: "2025-12-08", because: :unmaintained
+  disable! date: "2026-12-08", because: :unmaintained
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build

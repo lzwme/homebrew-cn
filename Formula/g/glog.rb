@@ -4,24 +4,18 @@ class Glog < Formula
   url "https://ghfast.top/https://github.com/google/glog/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "8a83bf982f37bb70825df71a9709fa90ea9f4447fb3c099e1d720a439d88bad6"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/google/glog.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "22e30e147c631d409947ade4fa0b3c4cbb3d24d2c319fafa726d521aef9276c6"
-    sha256 cellar: :any,                 arm64_sequoia:  "ec3e50551d26e47f5171580fdc065b895db01fd90a4283e472a1d8ff01d53c54"
-    sha256 cellar: :any,                 arm64_sonoma:   "c6eb9b8ce678f03a87a9864ea498434b44a206cd331322ed771824a71320a97a"
-    sha256 cellar: :any,                 arm64_ventura:  "7f027456418cf100e83da0cab5dd2f01b03650d25727fc129ae8bfc80031469f"
-    sha256 cellar: :any,                 arm64_monterey: "875364220b0fae1b16b63ff9811aa675d1fc55e47fd5ea64ecfb15ce063965b2"
-    sha256 cellar: :any,                 arm64_big_sur:  "8a33b84bd59fa19c00401e5540a41207f2364867783b85289a2153cc4da2b861"
-    sha256 cellar: :any,                 sonoma:         "e227a7700929d4f5a91d8338a487d0b52db132a1613d51a965bede4428e804b0"
-    sha256 cellar: :any,                 ventura:        "1bf4cd6c05c5b63c05bf91c854902bec0a3f2c0058d26d7277df53c4791d7aef"
-    sha256 cellar: :any,                 monterey:       "04b418eda3d8089e64ab902d265dd935245c815b19933173f670a28d8abbca81"
-    sha256 cellar: :any,                 big_sur:        "54cac16cc76e3594f3b61afa071ebb7890a1cc22122cab767ae540ced1f1a24b"
-    sha256 cellar: :any,                 catalina:       "53e6963a265a0af5d6982b91e423f432f0a130995cc7e2e2021a04edbbc8a88d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "5c87819c88c53af943a61838cc75e01fbecda198cf1152dc1c78579d460582fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04695a6df86ea26cadda86975bc9ad9c1ec112e8325e2bbc5f25939b42698463"
+    sha256 cellar: :any,                 arm64_tahoe:   "db7706b1f7d29240796ce138101d3d18f02d9d2e2be542f38c5ca157e91dd84c"
+    sha256 cellar: :any,                 arm64_sequoia: "0815d02daeafc23dbe271d1094bd07ab4c736f09d6f2f4db49246d1f2473955c"
+    sha256 cellar: :any,                 arm64_sonoma:  "98570364c65f024c6c288284a250f9a93420b6acb45d9ed0abc5790e17d8bb85"
+    sha256 cellar: :any,                 sonoma:        "1b3afc19df4514dd0bbd4368940e25df58802dde175d5b07552b8ff66d3927f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "148610f0d05d41387d7dd402fec0b7cafbe2603a7a5745734ecd6db50f279425"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0624b3d83129dd0efe76d79ae8c8f5a406e98b0b6a49b7ad5d6915ed669f4e4c"
   end
 
   deprecate! date: "2025-12-10", because: :repo_archived, replacement_formula: "abseil"

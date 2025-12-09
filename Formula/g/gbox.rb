@@ -6,12 +6,13 @@ class Gbox < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "939674773bc37b41d44008a107df9ff169a3a79752ff150adb07db3db6e15fc7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6964bb89469ea64e4057cfdadd7cec7f82f2c3b391272d7a4432c6c4e8d8c61f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e00b45ac530f569ee2b22598e81c0101e3386e85491f3b19b51939f555af6415"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cf504b38774260c028533277882122c114723419aa9da2133adf03a46cd32011"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8774c8778fa4eb075f1505ae87690a107d50aeb7e364eeecf520a07deeb72eca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c622a304df0b1beb7de3131380e87c05cca82cb3e51cb74930dbf39fae5576e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f399daa6aae8a063190ac9a538d27602155807be54656de90f2fbb86925fc660"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "479ed25fd38584e2210bb465ca4ca05e84a5b3d48929afd4d3894524d00d66a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf2ff6e59adeef83fda1b5eddd0c81913b2a59dfff192f5c86715b895ee02ba2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "07359e14d74e1b687703087601323dc9d353d41f48db17c1e104b43342658887"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "df3fe03b62172d08ad7f3f26b6e4269af312077348633302b3ce4402c494545b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3293249ed91dd941e505dacb1aabfdf8ce90be3d9fea86790ccdc3b24c65970"
   end
 
   depends_on "go" => :build
@@ -19,7 +20,7 @@ class Gbox < Formula
   depends_on "frpc"
   depends_on "yq"
 
-  uses_from_macos "jq"
+  uses_from_macos "jq", since: :sequoia
 
   def install
     system "make", "install", "prefix=#{prefix}", "VERSION=#{version}", "COMMIT_ID=#{File.read("COMMIT")}", "BUILD_TIME=#{time.iso8601}"

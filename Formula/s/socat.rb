@@ -1,8 +1,8 @@
 class Socat < Formula
   desc "SOcket CAT: netcat on steroids"
   homepage "http://www.dest-unreach.org/socat/"
-  url "http://www.dest-unreach.org/socat/download/socat-1.8.0.3.tar.gz"
-  sha256 "a9f9eb6cfb9aa6b1b4b8fe260edbac3f2c743f294db1e362b932eb3feca37ba4"
+  url "http://www.dest-unreach.org/socat/download/socat-1.8.1.0.tar.gz"
+  sha256 "9a884880b1b00dfb2ffc6959197b1554b200af731018174cd048115dc28ef239"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,13 +11,12 @@ class Socat < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "f7e7d5260c272cbd1e7fa756d05a754fc4622d0e7186b10cd9f1844752c098e0"
-    sha256 cellar: :any,                 arm64_sequoia: "4d18220d65718e33cfb0df17d6355363e631a92743de11b62e8f35c031229a45"
-    sha256 cellar: :any,                 arm64_sonoma:  "590558b903c048f2b1470448332db9e614dfb957bc88792a2d6997cd6b25bbe3"
-    sha256 cellar: :any,                 sonoma:        "9a11d44ff176f147b77ad3cdbc61288572f59439b522424d498a7f189cf90fbd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b1267cd58832bc2baf9411126edd297f26ce63d87e6190e431e7908e7f6c08d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e5509b742cabf4d42fdb8af7777a32eb6ec2771e1af5b7087a34e7b5937c7f5"
+    sha256 cellar: :any,                 arm64_tahoe:   "91543aa167477e8c387300658044d1bbe468f0be8e7163d4a5fa67c5f09e71a6"
+    sha256 cellar: :any,                 arm64_sequoia: "970538b7e516f15ebd996bb334fe6055a128274ad02670d73a39900f7dba4b7b"
+    sha256 cellar: :any,                 arm64_sonoma:  "4941aaa2611794ba979e67afa19627255574616331323073a153ccd0423e88a2"
+    sha256 cellar: :any,                 sonoma:        "89308a55b06e28349010a85de1d0951d31f2b3053c19d90af8d0811b43238609"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6fd2104b6d8ceb9c5434de09a4d9ce4e1f3431439f5d8ac4c8429c6356c10a49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5b6e1c2042c826eb23d6c9c705db3d48325723e184bc20e233f384e52d0b5cd"
   end
 
   depends_on "openssl@3"

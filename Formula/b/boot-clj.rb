@@ -9,8 +9,8 @@ class BootClj < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "fa2f333dd444cb3c41bd9252450e72fcb6c5182017df0012b67da09acc52d619"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "5d6682e08bc0900b365f7f704190ed3358ff39d7d53cde67e813d79e69f28f2b"
   end
 
   depends_on "openjdk"

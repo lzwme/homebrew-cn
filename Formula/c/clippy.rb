@@ -6,10 +6,11 @@ class Clippy < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d56315c8b5715ce38f80305fee1a5419ceeff3b377ebf4af44baca9442c8ceb3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6baf95c9b46564042bc070913757346e2412ae936e89abe732afd696539cdb70"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ffa61a2bb334c1c15f2f9acbc48728e0489b6f17108fbab93cb07d43c28b00e1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3d29c8e5773677d027e66ddf636619055b6e97531e4861081795514b0c1a365a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "865ebed0bc69e288fa2dec211e60120777a75483329e9fb37de871006078deec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "820ed683f5e886e7d0bd42d5804a91fe41f63c4aa43cc3434296848f75d0a017"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f8ba1da9ac65dd93c622374d8d3b65d0b79cf0a0aca525d0fd7b55eb4ef5b0d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "54b2c4bda70a783366babd179d92f44d1630b8cde24c565dd601b1d17d1e122b"
   end
 
   depends_on "go" => :build
@@ -24,6 +25,8 @@ class Clippy < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/clippy"
     system "go", "build", *std_go_args(ldflags:, output: bin/"pasty"), "./cmd/pasty"
+
+    generate_completions_from_executable(bin/"clippy", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

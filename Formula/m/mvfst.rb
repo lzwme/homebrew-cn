@@ -4,15 +4,16 @@ class Mvfst < Formula
   url "https://ghfast.top/https://github.com/facebook/mvfst/archive/refs/tags/v2025.11.10.00.tar.gz"
   sha256 "c970a893f4bcfe5658c217e91ffe81ca1283d91340d699cc5496da9f4e96bd75"
   license "MIT"
+  revision 1
   head "https://github.com/facebook/mvfst.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "95e6cd527f4d1bf258bacd3bbae934c3ed4c224d6f429117a759f39446fb6d9e"
-    sha256                               arm64_sequoia: "1848f1435b16ea8ddb6db56cb7499939f01a0d8fed6a8db521b31f54079136fb"
-    sha256                               arm64_sonoma:  "2d48145b65f396497c6d22285c099d6606997ed0e2b37d77b14c7cbe0c4a5f23"
-    sha256 cellar: :any,                 sonoma:        "f2168ea08b883e30cb06ef6dbc32363a49851618301e6221dbec884b539ace36"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc1e2bdee06e4e1db8d83bf0842df4a193d084e7d3ed91e77809bba1f3499039"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6afb96ad9b9522488eb1704d7cef00dfaf2cd134a2539f579246835292a82352"
+    sha256                               arm64_tahoe:   "81c21d8fef217352bbea8299b50c1919da18fa7668c4fb59d8f7bf9a94def797"
+    sha256                               arm64_sequoia: "e3e43d35b5cf00df0a634e8c56cf02f349963aaaade2a4343dc5708465313886"
+    sha256                               arm64_sonoma:  "20925cd34d91e197fd4c76745f0b71003ea368a683cf4ad8d7a4c6b4ac1fed73"
+    sha256 cellar: :any,                 sonoma:        "118cd1093341b2308bbb9928a749d44959e676867b9e5b27b7d69f8fe395615c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "edd41c8e8f10a0f25b68c730edecb7933c287dea3e183ef5cbeedccddf3fe8b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e5cb09b762b4a827946a196b9c446e37c0c2bdd733dcb5cc3d8fe488b4b74c1"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -19,12 +19,13 @@ class GhcAT910 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "621760fc88433b9cf482d926a5cea4072a2d0d26a1435be93e7d85c7bde4f249"
-    sha256 cellar: :any,                 arm64_sequoia: "4ab20c497dd1c26e87b27787b5f392652619f72f34c1e313b60045cf8490fb86"
-    sha256 cellar: :any,                 arm64_sonoma:  "8595c17b3500b2bcee8be823f5d4a0d3755f42a5637f09ba524402c2d1cd9dc5"
-    sha256 cellar: :any,                 sonoma:        "752ae798ad44cd76405249c4896bc310e5a112538f310fc9cb6ac6f46d020651"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd31b6bba8fb817cc6e5e0db93d34fb293d9430c6e0f65101faa233f8b586437"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a28f1ff09c3587557c479a14e015ae4e8a7a1f9154cdc64691e1c0d4f9a77e1e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "030bfb684494c0b7f5d13dcf23ad531a529e8ec3ee27ed638a876f41f33fa485"
+    sha256 cellar: :any,                 arm64_sequoia: "772bc175945ab38b79bf88cb7d9d2ba028ae7c6cde1391671540f926f9008ff8"
+    sha256 cellar: :any,                 arm64_sonoma:  "1f2e1c66ef293b3deb66e3a244d9a4b9690dea30b905fa7609528877830fd072"
+    sha256 cellar: :any,                 sonoma:        "84afe9e1dab2daab8a716e161aa580a09b26d62ac7ebbdd4bde7e13ae480c1ca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe1cd3d4f0d246f2c6d8e311a6cde3d6d5a4d99926baecc60565db68520188bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af406c8bff2ccb59d78ea00dcdf56250359f2e0a20c2a02f2634c6fc36de3075"
   end
 
   keg_only :versioned_formula
@@ -108,7 +109,7 @@ class GhcAT910 < Formula
     ENV["PYTHON"] = which("python3.14")
 
     # Workaround for https://gitlab.haskell.org/ghc/ghc/-/issues/26166
-    if DevelopmentTools.ld64_version == "1221.4"
+    if DevelopmentTools.ld64_version >= "1221.4"
       inreplace "rts/rts.cabal", /("-Wl,-undefined,dynamic_lookup)"/, "\\1,-ld_classic\""
     end
 
@@ -144,6 +145,8 @@ class GhcAT910 < Formula
       -j#{ENV.make_jobs}
       --prefix=#{prefix}
       --flavour=release
+      --docs=no-haddocks
+      --docs=no-sphinx-html
       --docs=no-sphinx-pdfs
     ]
     # Let hadrian handle its own parallelization

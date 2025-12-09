@@ -9,8 +9,8 @@ class Burst < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "aba413390562e5c52f5ebfc88bc53280094805ae1440081e2d3bcf54267c4586"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "f9f985b7be3eee4cd5a80bb0a32064f454e66345085f46b302f3312f767260a1"
   end
 
   depends_on "cmake" => [:build, :test]

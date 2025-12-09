@@ -8,8 +8,8 @@ class Briss < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "3aa9a79afde1e2530551aa220ea217676898bc939ac9341574079e126f4eaa83"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "7e198b253f493cc8b14159aa43e522d82a8ce999959f36a66ae0a1d86a173496"
   end
 
   depends_on "openjdk"
