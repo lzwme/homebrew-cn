@@ -6,6 +6,10 @@ class Solid < Formula
   sha256 "e3a23751ebbad5e35f50e685061f1ab9e1bd3777317efc6912567f55259d0f15"
   license any_of: ["GPL-2.0-only", "QPL-1.0"]
 
+  livecheck do
+    skip "No longer developed or maintained"
+  end
+
   no_autobump! because: :requires_manual_review
 
   bottle do

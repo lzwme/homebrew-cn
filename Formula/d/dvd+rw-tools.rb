@@ -7,6 +7,10 @@ class DvdxrwTools < Formula
   sha256 "f8d60f822e914128bcbc5f64fbe3ed131cbff9045dca7e12c5b77b26edde72ca"
   license "GPL-2.0-only"
 
+  livecheck do
+    skip "No longer developed or maintained"
+  end
+
   no_autobump! because: :requires_manual_review
 
   bottle do

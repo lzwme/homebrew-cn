@@ -1,8 +1,8 @@
 class Kubescape < Formula
   desc "Kubernetes testing according to Hardening Guidance by NSA and CISA"
   homepage "https://kubescape.io"
-  url "https://ghfast.top/https://github.com/kubescape/kubescape/archive/refs/tags/v3.0.46.tar.gz"
-  sha256 "751576f0044d22f8561f26bd76a2aed6f68eb3152d6f81fb1e5c1a303b238a5b"
+  url "https://ghfast.top/https://github.com/kubescape/kubescape/archive/refs/tags/v3.0.47.tar.gz"
+  sha256 "3782a959a87ea9b0f3409f335e87edda54b0f1d7285c1113e5ec220ff998aef3"
   license "Apache-2.0"
   head "https://github.com/kubescape/kubescape.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Kubescape < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52337d70d335a4af5461e00b0ca774a77e76ee9216f4c85b62c97b3568505ee9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48eb2764d27457404f6ea37fb3ac97fd83b519e1ca7941ab5832afd271dfd981"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "483b2c42134e810988250c1884a88184af8da567125fb03b8d53da54b791e840"
-    sha256 cellar: :any_skip_relocation, sonoma:        "41ff30e82458dac4dc4d1928ca6a0fe32d3ef0e6e7b8a0f5d628c01f11b8d802"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c6500d0faf90721d2540ab148f44b8fa66b5c521daf4de96c4f34fee501212f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5474bb0717c50501654f2a2e06743ea751acd8c4edaebdbe323f6efb2a233dea"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c8efae31ff5c90c30b7450069c1c04d14ca8aac7d380fafe66167eb3308fcfb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "080cf638391911824d14c0741282d423ca99067e97abcd09a4e06fc4d05c8d0d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9fef080c009c116480db5a37fd644cc85c44896af7413372fc8ce53a35cce719"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f320caa10f69f0ae7a4d5f13f3442840e5711faf7858256694603cb908ea20c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e756ec986db859d0504543c2ccc5d7ff5cb8d778741587f71ca5b2d5290f971"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6366b595cbd0b546d89a0d4dfdbbe12fb1827a5811deed8a2a0bd548adfdd28"
   end
 
   depends_on "go" => :build

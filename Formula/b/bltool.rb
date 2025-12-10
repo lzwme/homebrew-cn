@@ -8,8 +8,8 @@ class Bltool < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "9b12a8b49ad485d5a67f12b7f8e228d2ebaa06344c653638d362804b6e416410"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "38e264bd60bf4b148e995892e1b4e9d24d5285123affa688ee364a1bcb16a6b2"
   end
 
   head do

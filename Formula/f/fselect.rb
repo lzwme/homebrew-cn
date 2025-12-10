@@ -1,17 +1,17 @@
 class Fselect < Formula
   desc "Find files with SQL-like queries"
   homepage "https://github.com/jhspetersson/fselect"
-  url "https://ghfast.top/https://github.com/jhspetersson/fselect/archive/refs/tags/0.9.1.tar.gz"
-  sha256 "6d635ed6e5b1b1be57ac6b047ce23cf9efd0cd488f615da54f70b5e34b466b31"
+  url "https://ghfast.top/https://github.com/jhspetersson/fselect/archive/refs/tags/0.9.2.tar.gz"
+  sha256 "5263963ef5f02c74e968206221095722557a764ff92b7f343a92a37d718d87a6"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f216a296954150cf4476a1fe8b90ccba4f3f7f90a3b640f6d79f6a0eb6831632"
-    sha256 cellar: :any,                 arm64_sequoia: "567234643873fa39e7c53465e39de5f6b5551a96c596f5f35ca7923ffabce28a"
-    sha256 cellar: :any,                 arm64_sonoma:  "8ac5a831fc6a6cfafe49a2a5fce70eabcffec0fd713df5814fbdf14db22bb390"
-    sha256 cellar: :any,                 sonoma:        "67dc77309da421955ceb2b6a7159d975fad12973f15c077c7008e79ebacb314c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbf5dd08b9c37212e09b01295fa636764badb1d390ca3104e4697034c86ce64e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b6d048f2156005b00c1edb36427d151a5e82b183735ce7639e84e8da97e7c55"
+    sha256 cellar: :any,                 arm64_tahoe:   "5ad66c09932e4ed74ba415089f1c00066df73019686489f731ee711892e12739"
+    sha256 cellar: :any,                 arm64_sequoia: "b263d2b0eeb1dbb4aa54b0774c6299f893a3b5766ca6cf54147d81b013a28022"
+    sha256 cellar: :any,                 arm64_sonoma:  "480a4062148f0195d3a1b7ffb02f6b66ec52a0213a3358545285144ff38ef3c1"
+    sha256 cellar: :any,                 sonoma:        "402dfebf0395bd8f7f198ba863d423c12d10a9bca6fcf0a4b5491eff4db46e32"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc96e86e615efe87b7d69298f1b3cc0015ce9fe520c1b0a6e1dbc5fa19bf6ade"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00aa3fe78cd421137a1afa88e26914968ca03526cb6db9da04845f266b772208"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys

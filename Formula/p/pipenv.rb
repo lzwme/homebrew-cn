@@ -3,17 +3,17 @@ class Pipenv < Formula
 
   desc "Python dependency management tool"
   homepage "https://github.com/pypa/pipenv"
-  url "https://files.pythonhosted.org/packages/c4/63/c7ccbac3aabe294c5cab8cb25956e0cbbda5aeef447985090df7897c1215/pipenv-2025.1.1.tar.gz"
-  sha256 "c309b5fba6535aca22fd66d3dfcf2d3ca1dd0cae12de52cabecbdddfbfe48938"
+  url "https://files.pythonhosted.org/packages/64/34/c4d75d6077e22d658ca02e20dd565643d4b4cf3d66daa31aa9682681cef2/pipenv-2025.1.3.tar.gz"
+  sha256 "b746bc56685ff92598b52c97788e3f5187eef1eacea370cef59450ec0565f9b7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a60f6a406a0019a845fcb045775c1c3249e47b682018be4fe0d6c10654636c9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a60f6a406a0019a845fcb045775c1c3249e47b682018be4fe0d6c10654636c9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a60f6a406a0019a845fcb045775c1c3249e47b682018be4fe0d6c10654636c9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6ad491cd2c143d7f03f247b2ee329354a1d207cb4a3c7e637999394b7ce68eaa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ad491cd2c143d7f03f247b2ee329354a1d207cb4a3c7e637999394b7ce68eaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ad491cd2c143d7f03f247b2ee329354a1d207cb4a3c7e637999394b7ce68eaa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "19050aa9fee84ca852e301c34ff98f8932936c4ed8cefd6160ddb2fb1c20db70"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "19050aa9fee84ca852e301c34ff98f8932936c4ed8cefd6160ddb2fb1c20db70"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19050aa9fee84ca852e301c34ff98f8932936c4ed8cefd6160ddb2fb1c20db70"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cf5f3f8e6a98edad9624102ef83acf4a5b64854ee3ad2135335bfce3fc54eddb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf5f3f8e6a98edad9624102ef83acf4a5b64854ee3ad2135335bfce3fc54eddb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf5f3f8e6a98edad9624102ef83acf4a5b64854ee3ad2135335bfce3fc54eddb"
   end
 
   depends_on "certifi" => :no_linkage

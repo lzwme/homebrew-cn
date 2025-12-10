@@ -1,8 +1,8 @@
 class Duck < Formula
   desc "Command-line interface for Cyberduck (a multi-protocol file transfer tool)"
   homepage "https://duck.sh/"
-  url "https://dist.duck.sh/duck-src-9.3.0.44071.tar.gz"
-  sha256 "e2e31a700bd5383d6ebcaa105227a97afa05736ec539d12588b7f52899c007b5"
+  url "https://dist.duck.sh/duck-src-9.3.1.44136.tar.gz"
+  sha256 "2e66b897600ddc36f8fef601ecd63896aaad8d054ca329cf22c0771f964a5063"
   license "GPL-3.0-only"
   head "https://github.com/iterate-ch/cyberduck.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Duck < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ca9311f199232738a6c575218368e848aa1e14dcb0e67a495450945e232c0504"
-    sha256 cellar: :any,                 arm64_sequoia: "1e0bfc653480e5f12215f3144beca9c5d7be487e537c4d3ebab3fa0a2f7397eb"
-    sha256 cellar: :any,                 arm64_sonoma:  "39ed5dd04e79fc97e077266baee050282ada2eb493c72c5e860821e137f14837"
-    sha256 cellar: :any,                 sonoma:        "fda85cd56651c2e6e30b070b3bd0e34e8225d3a0d9d68636ff8c47d2707889ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "804be388f46188e533cb481344ead84d4c3feac1cf3984b6135455d2d0cdde29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d174283ca847939eac84ad10018fec2488bbb929f7c63cfe4a10fc60211d8341"
+    sha256 cellar: :any,                 arm64_tahoe:   "8ba9f59303d71b4f2f393bd823c23d2529fd369a3fa6cc9edb5d0bc371a1bbab"
+    sha256 cellar: :any,                 arm64_sequoia: "0decd70b857a4baad1fcf31f4a46e94fec07b52dd5797bf2ba47c53d61f647ac"
+    sha256 cellar: :any,                 arm64_sonoma:  "63c4af95815912b489edfe6d0dac484fddd84790af54ac844a05d42ae716bb91"
+    sha256 cellar: :any,                 sonoma:        "62e7f5e719118279273ec662b45cb2f956881fd27ff7c3d6a4724b366bc80b2f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fb00fbdc18166b43d419a076969e2b5b33e723e14400716f957fb709b44b7f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73f3aee32182acaceb5fef838838a883b0c1f814d6836b35a478b03fcb344ba1"
   end
 
   depends_on "ant" => :build

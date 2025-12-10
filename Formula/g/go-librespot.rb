@@ -1,18 +1,18 @@
 class GoLibrespot < Formula
   desc "Spotify client"
   homepage "https://github.com/devgianlu/go-librespot"
-  url "https://ghfast.top/https://github.com/devgianlu/go-librespot/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "7ee958d96a5bee118563f633ea8ed60ec86e4458b6038caa59e6d4ce0d99c8c4"
+  url "https://ghfast.top/https://github.com/devgianlu/go-librespot/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "f73114e735314dde782d565e1ee392a643e51447ef0c9242003e9c381c1afbfa"
   license "GPL-3.0-only"
   head "https://github.com/devgianlu/go-librespot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4b67f1d1298d5963e8746276e61a8917651aedd80bb65826e57dd089fccdebdd"
-    sha256 cellar: :any,                 arm64_sequoia: "e2a511d3555309f46780576b5cfcbbf590b2ceb719eac3125caea6440ed664a7"
-    sha256 cellar: :any,                 arm64_sonoma:  "31d709e9ef2ca3143eff33d79dba205dd2227b9994cdb3d1e5547500ae742caa"
-    sha256 cellar: :any,                 sonoma:        "9363a683684701296d04f9d680654947819cc02b41138de08728f433fe16751a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7299f1147e82dc9f5872a6523bf899d59a7d317d77e62bcb793e0c53062122e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e1f4ecdf19f6f5883bef7c824b227fab4660f90dbd403a32ebcedb4829b21d7"
+    sha256 cellar: :any,                 arm64_tahoe:   "cfa96aeae1aa2fe0e4aa74411d6498b624cfcac4e4d725aaa9023108834a37a0"
+    sha256 cellar: :any,                 arm64_sequoia: "7594f11c033ddc630b7987dd5434bb78e1eb9effc7f5181b9cdeb812500375fb"
+    sha256 cellar: :any,                 arm64_sonoma:  "06cda5824a2b074cf29799d9a51038ee45d1831d68ae671aec4337e4c3445444"
+    sha256 cellar: :any,                 sonoma:        "e6e8215c677bfd4aaf535f5e4ad18e139ca194506659dffd5ee02b2a48ec176e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e979ba5ed4bed1ac4f0febf308b3e4861b40ab6762116f3162f63ebce210de48"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "287f86eda95f06f77b67f301b0b1f16fc26248fce35ab0e9cdce99180d48bfb5"
   end
 
   depends_on "go" => :build

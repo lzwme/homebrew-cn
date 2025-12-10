@@ -11,17 +11,17 @@ class Libsolv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "16b54630884fdaea477f8e8284f50ffd38f323bd213741b6fe369117a7447dc3"
-    sha256 cellar: :any,                 arm64_sequoia: "9c7625f5743db89c31814320395d5f7f6b2e9edf75d62b22f78370f524024ddf"
-    sha256 cellar: :any,                 arm64_sonoma:  "b67c4fe1fc284f1521babdaa64b30928ca2382d2f933e41cf20a284f20a4c8a3"
-    sha256 cellar: :any,                 arm64_ventura: "65f85cff59024135a62a98eef81ae68b7bc2c4318d0540925b5704875e7e22ec"
-    sha256 cellar: :any,                 sonoma:        "cae4d5f9a4d6dc8ba94b2b41869aa7a2b69d881252b8c0ea061d62050713c322"
-    sha256 cellar: :any,                 ventura:       "79bd16f6009b2a41f9ba5dbe3e1c7bfd5968efdad36aa747b2999da360aa4b68"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "600392ccca44e48deacb311dd4e9f3d40e140570fb3432f42bd4ef25c810f4af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "443ab1cdcf1ab640afeb091caca6bb24f3912aa7dc95f64c7d7c12dd09bbac1a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "b1d4aadeb9b8572bf351d0c07806f964666efa0cd12c3573ff6c96e8540a4ba1"
+    sha256 cellar: :any,                 arm64_sequoia: "ae33d25d26ff710352a06a38a421fd0216c30eb55827e0ce5681912aa91459a0"
+    sha256 cellar: :any,                 arm64_sonoma:  "3a55a375e654f3ddfb7e6f4f5cfa981a69de84fc08ab44a3e0baf5f39e4580bc"
+    sha256 cellar: :any,                 sonoma:        "fdb5677bef312a9dd7a2209dfed282cf68cbdaa3274ec023a2f5c28aecf02000"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbb660601132e01fb609156195711da39e07a7a825aaec07b0e5791c8a9163b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1561ca87a5a76167c49b46f6682c99cf46ea90bfd20262ad7aa78067790636aa"
   end
 
   depends_on "cmake" => :build
+  depends_on "rpm"
   depends_on "xz"
   depends_on "zstd"
 
@@ -46,6 +46,9 @@ class Libsolv < Formula
       -DENABLE_BZIP2_COMPRESSION=ON
       -DENABLE_ZSTD_COMPRESSION=ON
       -DENABLE_ZCHUNK_COMPRESSION=ON
+      -DENABLE_RPMDB=ON
+      -DENABLE_RPMMD=ON
+      -DENABLE_RPMPKG=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
 

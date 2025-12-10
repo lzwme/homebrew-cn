@@ -18,7 +18,7 @@ class Glog < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0624b3d83129dd0efe76d79ae8c8f5a406e98b0b6a49b7ad5d6915ed669f4e4c"
   end
 
-  deprecate! date: "2025-12-10", because: :repo_archived, replacement_formula: "abseil"
+  # deprecate! date: "2025-12-10", because: :repo_archived, replacement_formula: "abseil"
 
   depends_on "cmake" => :build
   depends_on "gflags"

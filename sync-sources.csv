@@ -2417,6 +2417,8 @@ Homebrew-homebrew-core/Formula/g/git-now.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-number.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-octopus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-open.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/git-pages-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/git-pages.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/git-plus.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/git-quick-stats.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-recent.rb, Homebrew/homebrew-core, 1

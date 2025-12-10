@@ -6,6 +6,10 @@ class MecabJumandic < Formula
   sha256 "eaf216758edee9a159bc3d02507007318686b9537943268c4565cc1f9ef07f15"
   license "BSD-3-Clause"
 
+  livecheck do
+    skip "No longer developed or maintained"
+  end
+
   no_autobump! because: :requires_manual_review
 
   bottle do

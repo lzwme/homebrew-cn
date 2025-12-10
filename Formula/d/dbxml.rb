@@ -6,6 +6,10 @@ class Dbxml < Formula
   license "AGPL-3.0-only"
   revision 4
 
+  livecheck do
+    skip "No longer developed or maintained"
+  end
+
   no_autobump! because: :requires_manual_review
 
   bottle do

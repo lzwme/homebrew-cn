@@ -6,6 +6,10 @@ class Malbolge < Formula
   sha256 "ca3b4f321bc3273195eb29eee7ee2002031b057c2bf0c8d7a4f7b6e5b3f648c0"
   license :public_domain
 
+  livecheck do
+    skip "No longer developed or maintained"
+  end
+
   no_autobump! because: :requires_manual_review
 
   bottle do

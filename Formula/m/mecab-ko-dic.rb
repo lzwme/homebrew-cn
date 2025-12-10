@@ -6,8 +6,7 @@ class MecabKoDic < Formula
   license "Apache-2.0"
 
   livecheck do
-    url :stable
-    regex(/href=.*?mecab-ko-dic[._-]v?(\d+(?:\.\d+)+-\d+)\.t/i)
+    skip "No longer developed or maintained"
   end
 
   no_autobump! because: :requires_manual_review

@@ -3,16 +3,15 @@ class Xdot < Formula
 
   desc "Interactive viewer for graphs written in Graphviz's dot language"
   homepage "https://github.com/jrfonseca/xdot.py"
-  url "https://files.pythonhosted.org/packages/38/76/0503dddc3100e25135d1380f89cfa5d729b7d113a851804aa98dc4f19888/xdot-1.4.tar.gz"
-  sha256 "fb029dab92b3c188ad5479108014edccb6c7df54f689ce7f1bd1c699010b7781"
+  url "https://files.pythonhosted.org/packages/32/68/13f80d47bffda03eaf05bd076d1b2ef9a1cf39b461b37e32f303bcf048de/xdot-1.6.tar.gz"
+  sha256 "ebddefc3e3aa9fd8b2e2ed884ed844043f843428b79dccda831803add55cc51d"
   license "LGPL-3.0-or-later"
   head "https://github.com/jrfonseca/xdot.py.git", branch: "main"
 
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "31da3f49cb2d321330f9caf9ead425cc46dfb18b4bb9b85b572a4b985131dfa9"
+    sha256 cellar: :any_skip_relocation, all: "193dbb59ae557ef88dccf429fe0e1f8fd4fd82a0180b3bcf021dc84c5a891b9b"
   end
 
   depends_on "adwaita-icon-theme"
@@ -27,8 +26,8 @@ class Xdot < Formula
                 extra_packages:   "graphviz"
 
   resource "graphviz" do
-    url "https://files.pythonhosted.org/packages/fa/83/5a40d19b8347f017e417710907f824915fba411a9befd092e52746b63e9f/graphviz-0.20.3.zip"
-    sha256 "09d6bc81e6a9fa392e7ba52135a9d49f1ed62526f96499325930e87ca1b5925d"
+    url "https://files.pythonhosted.org/packages/f8/b3/3ac91e9be6b761a4b30d66ff165e54439dcd48b83f4e20d644867215f6ca/graphviz-0.21.tar.gz"
+    sha256 "20743e7183be82aaaa8ad6c93f8893c923bd6658a04c32ee115edb3c8a835f78"
   end
 
   resource "packaging" do

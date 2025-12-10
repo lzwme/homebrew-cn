@@ -3,12 +3,12 @@ class Httptap < Formula
 
   desc "HTTP request visualizer with phase-by-phase timing breakdown"
   homepage "https://httptap.dev"
-  url "https://files.pythonhosted.org/packages/b8/fe/0a2a039d9a45f721d8e5845cd47ddcf7bcd268a21dbc5e3533c332cb62ed/httptap-0.4.0.tar.gz"
-  sha256 "35458bc97d3cb526908686aa5c7d588c23444ba054959ee2c261faee001d406e"
+  url "https://files.pythonhosted.org/packages/e9/9f/1fc7044233dde6df750f43f934e9de80085d7a82c599b302667775d6b12d/httptap-0.4.1.tar.gz"
+  sha256 "fe61e3e4c97c98cf3213bce4b35417367e02345cd726977369f3fcd0da9fcbcc"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f1bf688a39f438cb73b09f27a994a9daed22043e97772215753921d9b5e26c51"
+    sha256 cellar: :any_skip_relocation, all: "45f85b53889589b427538b65b46089db060f43e8f2e4f143f19b23cdcd41eae4"
   end
 
   depends_on "rust" => :build
@@ -17,8 +17,8 @@ class Httptap < Formula
   pypi_packages package_name: "httptap[completion]"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "argcomplete" do
@@ -89,11 +89,6 @@ class Httptap < Formula
   resource "rich" do
     url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
     sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
-  end
-
-  resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
-    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
   end
 
   resource "socksio" do

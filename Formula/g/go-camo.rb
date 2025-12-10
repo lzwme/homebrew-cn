@@ -1,24 +1,25 @@
 class GoCamo < Formula
   desc "Secure image proxy server"
   homepage "https://github.com/cactus/go-camo"
-  url "https://ghfast.top/https://github.com/cactus/go-camo/archive/refs/tags/v2.7.1.tar.gz"
-  sha256 "95b2d8ee6fadb601276e9889243d2357fa63164f8bd856fef0f0ef3f42bed26a"
+  url "https://ghfast.top/https://github.com/cactus/go-camo/archive/refs/tags/v2.7.2.tar.gz"
+  sha256 "3e4bb9e58e5f9f8fb2e6d4c484a67ad2a98fe0fd355db48e6014d6e993eb0dd2"
   license "MIT"
   head "https://github.com/cactus/go-camo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70f7ebfdda2b1b2953725caffef70e8c1ace644daf88c492b1180e4168bbe03c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70f7ebfdda2b1b2953725caffef70e8c1ace644daf88c492b1180e4168bbe03c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70f7ebfdda2b1b2953725caffef70e8c1ace644daf88c492b1180e4168bbe03c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9caadc2c279ccf118523789b1632d3898ba616fab7032b3c9b993ffeecdd9d7a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8e0da46f3e85a8d9d11ff4c668d69918f7ec930dbff4f8114a45711d3ed3039"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69309c8a4a4a0626ba3992121f48d716ecb0c2bf15ad288cc8d9797490d76e1e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5691e88c434caed6dca8cc4b75c3b8c2943416b82408ea0d73699c0a1247422e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5691e88c434caed6dca8cc4b75c3b8c2943416b82408ea0d73699c0a1247422e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5691e88c434caed6dca8cc4b75c3b8c2943416b82408ea0d73699c0a1247422e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "86818fa04a43692d9ac5308f6d19fe5de6a1d1ac48754019f326f47f98cb7caa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "67544498556661ecc88a6d75104df54dcb34388811fd51a1773660651404c26a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "712e23d1163c434839238f1c7e8709a01345dc9f02b34e9e7428f1e3a30323e4"
   end
 
   depends_on "go" => :build
+  depends_on "just" => :build
 
   def install
-    system "make", "build", "APP_VER=#{version}"
+    system "just", "build"
     bin.install Dir["build/bin/*"]
   end
 

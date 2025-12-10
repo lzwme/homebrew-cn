@@ -7,8 +7,7 @@ class MecabKo < Formula
   license any_of: ["GPL-2.0-only", "LGPL-2.1-only", "BSD-3-Clause"]
 
   livecheck do
-    url :stable
-    regex(/href=.*?mecab[._-]v?(\d+(?:\.\d+)+-ko-\d+(?:\.\d+)+)\.t/i)
+    skip "No longer developed or maintained"
   end
 
   no_autobump! because: :requires_manual_review

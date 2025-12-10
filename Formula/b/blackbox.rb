@@ -14,9 +14,13 @@ class Blackbox < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "55abf9c858ccaf04d8ab764718fa5810f09adb66c150ae3a9f263622a1cae753"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "878400e4eed8cba1adc57d86a4b2672e1e4c95bd0928b4f121b0afb849073374"
   end
+
+  # https://github.com/StackExchange/blackbox/commit/41e42341080742f6a1a1e0a91495f9849e669070
+  deprecate! date: "2025-12-09", because: :repo_archived
+  disable! date: "2026-12-09", because: :repo_archived
 
   depends_on "gnupg"
 

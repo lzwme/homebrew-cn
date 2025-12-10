@@ -12,8 +12,8 @@ class Druid < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "27e8894f048cfcecdb884e9122a67720085959296bf9ed69b1bb9db325613a43"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "96b977508479c830f56c421e6504e4f1cb079fb910e5b89ccd2f994229936492"
   end
 
   depends_on "zookeeper" => :test
@@ -69,6 +69,20 @@ class Druid < Formula
       druid/task
     ].each do |dir|
       (var/dir).mkpath
+    end
+
+    # Reduce bottle and install size by hardlinking duplicate JARs
+    # TODO: Move logic to brew DSL
+    libexec.glob("**/*.jar").each_with_object({}) do |jar, jars_hash|
+      next if !jar.file? || jar.symlink?
+
+      found_jar = jars_hash[jar.basename.to_s]
+      if found_jar.nil?
+        jars_hash[jar.basename.to_s] = jar
+      elsif found_jar.stat.ino != jar.stat.ino && compare_file(found_jar, jar)
+        rm(jar)
+        jar.make_link(found_jar)
+      end
     end
   end
 

@@ -1,17 +1,17 @@
 class RedoclyCli < Formula
   desc "Your all-in-one OpenAPI utility"
   homepage "https://redocly.com/docs/cli"
-  url "https://registry.npmjs.org/@redocly/cli/-/cli-2.12.4.tgz"
-  sha256 "1806b6710155769231391ddece85f5822350aa344bf9412ac46bb4d1205d503a"
+  url "https://registry.npmjs.org/@redocly/cli/-/cli-2.12.5.tgz"
+  sha256 "ecd5e76df51843cb708e68b960e70ab41c20600474415f378ac30915509426cf"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "349444d9279b58568b10e9229bcfe5ef29285d0972948ea40accd6ed347f7555"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "715c6c9de02c993b40847ca3bf71dc5be2f2da29ce9239bc806aa79bbfaaf879"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "715c6c9de02c993b40847ca3bf71dc5be2f2da29ce9239bc806aa79bbfaaf879"
-    sha256 cellar: :any_skip_relocation, sonoma:        "389fc06cb1802ad1e9475cb97742aa5464a6b16c022764562314702a7a5208b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "38717757142b3361f5e3e7917c82113b5b5a1f098b8e2a13aec421a1253c64a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38717757142b3361f5e3e7917c82113b5b5a1f098b8e2a13aec421a1253c64a7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3889a38c2fce6dcd77e6cf974af1b54c30fbed36af68ca58ed999fd201e1291"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d808bef7ea2d26266e3d48d559f4350d5543f9e22b81c14b162dbef8f81d57ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d808bef7ea2d26266e3d48d559f4350d5543f9e22b81c14b162dbef8f81d57ae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6a329e7eaa17ea77239e1fe7f6348eb79464eebbb61a4295b282cc183b6dcf62"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2b82036e3f4bd5e52c0a6e9f533af36d82fa3a0c34b697a2f154cdea9f28997"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2b82036e3f4bd5e52c0a6e9f533af36d82fa3a0c34b697a2f154cdea9f28997"
   end
 
   depends_on "node"

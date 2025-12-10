@@ -2,24 +2,24 @@ class ThorsMongo < Formula
   desc "Mongo API and Serialization library"
   homepage "https://github.com/Loki-Astari/ThorsMongo"
   url "https://github.com/Loki-Astari/ThorsMongo.git",
-      tag:      "6.0.06",
-      revision: "9ff64c7f7d52415a9f09d764078a9d2b29b06f16"
+      tag:      "7.0.07",
+      revision: "2fbd6b84e2b154b36e03b5d8ab1aae97a62ff5da"
   license "GPL-3.0-only"
-  revision 1
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "eb4b075302bd83e81f8035e2c7a581bc4bf48f0593364f68b1d703170b53d9f6"
-    sha256 cellar: :any,                 arm64_sequoia: "df22574c3d8d42c2acd7545936aac68e10fb01a62d468e8a37737fdf29d0d61e"
-    sha256 cellar: :any,                 arm64_sonoma:  "ba80135aa78d5bbd0bd423da47424b2f2ecf57321971e20574c91e92ea9bc299"
-    sha256 cellar: :any,                 arm64_ventura: "45f3b9efe0946ceb9b65e733276324e0627dee6935c6de01a754db430fc74ef7"
-    sha256 cellar: :any,                 sonoma:        "685f7324a917a8a8c535483572c45fdb40324be940c5ac3347792df6f43898c9"
-    sha256 cellar: :any,                 ventura:       "5f2ef80e0b25ca4b261d310ce1f4e3d555024c9681e445dc6881575f55de48e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fdff2c40dd5efb489fad7025d5e026a9dc69163bfbb5fb0ff938a7ad1410b40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e075ff4433d7bfe5d4a31dc004ca0a3243e8de78d7046866174d493d90d57118"
+    sha256 cellar: :any,                 arm64_tahoe:   "71cba43a8c7214aab34451153140ec9b1001bce77bbdb633ca5219c83c353c32"
+    sha256 cellar: :any,                 arm64_sequoia: "50dac827b9b016b461d1ef06280dc5fd223ff2af154adb3c4f2e8f91a4b24a8c"
+    sha256 cellar: :any,                 arm64_sonoma:  "261628d5717413b17109187cf52197a43944379cafe307c23b858845370d3b12"
+    sha256 cellar: :any,                 sonoma:        "48dc65704a45d73e652e3903657f40352ca9f8d7575b748664b2823e4f886b43"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d21d5941b333706b86cad6999ecfe1b4896243da575b443af394d6e7cb127a4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "290218a8eb76ae0654e43b25f8df877f985197a8584a5150369d7cf2703f8788"
   end
 
+  depends_on "cmake" => :build
+  depends_on "boost"
+  depends_on "libevent"
   depends_on "libyaml"
   depends_on "magic_enum"
   depends_on "openssl@3"
@@ -38,7 +38,9 @@ class ThorsMongo < Formula
                           "--disable-test-with-integration",
                           "--disable-test-with-mongo-query",
                           "--disable-Mongo-Service",
+                          "--disable-slacktest",
                           *std_configure_args
+    ENV.deparallelize
     system "make"
     system "make", "install"
   end

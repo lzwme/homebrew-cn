@@ -13,12 +13,13 @@ class Blast < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4700bd0ebfdf363a0e307f8656826bc8f4643400738f0fb3c3ddaf4fcc912a17"
-    sha256 arm64_sequoia: "b4aff3c97ccd466c20d2aabc43ec9fd315b10b8f99d02ea81baa2b145524740d"
-    sha256 arm64_sonoma:  "f03bb62ca8ede3be78fc946c28fba03acea414632dae14de29ba4bc400cdd217"
-    sha256 sonoma:        "8688084ae1bdb3c7beaeb415c2da42703e208265964bf9efb5bf03627792d8fe"
-    sha256 arm64_linux:   "3af4336ac05e7fce279f047283bcc876a712f7139c7e1d0279c635a2adaa535b"
-    sha256 x86_64_linux:  "0443138a85b9cd22f0006a6819ef26ba5633b389d857751b3d58c35111bba0e7"
+    rebuild 1
+    sha256 arm64_tahoe:   "2256a8f9c1ad1d1d30b130f3fac419318960808a6f8eeb5006dacaa02c244f45"
+    sha256 arm64_sequoia: "d50a891f6c0ae6fe37df0f6481f5a78f812763aa4fd6f39197f3084891c895a5"
+    sha256 arm64_sonoma:  "9f648acc80960502a9e501814236ec24b8954d926449273a9d393bf8c59c5975"
+    sha256 sonoma:        "5c735e79ad0138e48d87459f2cb52be1f54684a3f03bb4b225a6ffc9c4e4beec"
+    sha256 arm64_linux:   "6f913987e18636b0fe5bd74e964eeb50c113f07c89df72681d449f2a8449adf1"
+    sha256 x86_64_linux:  "7bbf1d59756daaf6a6dc1c07d01a2238b73760fad9cadcd4181f292a69b1c940"
   end
 
   depends_on "lmdb"
@@ -50,17 +51,16 @@ class Blast < Formula
       if Hardware::CPU.arm? && OS.linux?
         rm_r("include/util/compress/zlib_cloudflare")
         rm_r("src/util/compress/zlib_cloudflare")
-        inreplace "src/build-system/Makefile.mk.in" do |s|
-          cmprs_lib = s.get_make_var("CMPRS_LIB").split
-          cmprs_lib.delete("zcf")
-          s.change_make_var! "CMPRS_LIB", cmprs_lib.join(" ")
-        end
+
+        zcf_files = ["src/build-system/Makefile.mk.in", "src/util/compress/api/Makefile.compress.lib"]
+        inreplace zcf_files, /(=.*) zcf(\s)/, "\\1\\2"
       end
 
       # Boost is only used for unit tests.
       args = %W[
         --prefix=#{prefix}
         --with-bin-release
+        --with-dll
         --with-mbedtls=#{Formula["mbedtls@3"].opt_prefix}
         --with-mt
         --with-pcre2=#{Formula["pcre2"].opt_prefix}
