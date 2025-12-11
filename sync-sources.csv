@@ -702,7 +702,7 @@ Homebrew-homebrew-core/Formula/b/buildifier.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/buildkit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/buildozer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/buildpulse-test-reporter.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/b/buku.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/buku.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bulk_extractor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bullet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bulletty.rb, Homebrew/homebrew-core, 1
@@ -4486,6 +4486,7 @@ Homebrew-homebrew-core/Formula/m/mcp-grafana.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcp-inspector.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-proxy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-publisher.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mcp-scan.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-server-chart.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-server-kubernetes.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-toolbox.rb, Homebrew/homebrew-core, 1
@@ -4629,6 +4630,7 @@ Homebrew-homebrew-core/Formula/m/minuit2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/miruo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mise.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mist-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mistral-vibe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mit-scheme.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mitama-cpp-result.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mitie.rb, Homebrew/homebrew-core, 1
@@ -7304,6 +7306,7 @@ Homebrew-homebrew-core/Formula/t/tre.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trec_eval.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tree-sitter-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tree-sitter.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tree-sitter@0.25.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/treecc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/treefmt.rb, Homebrew/homebrew-core, 1

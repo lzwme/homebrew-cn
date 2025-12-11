@@ -3,18 +3,17 @@ class PythonMatplotlib < Formula
 
   desc "Python library for creating static, animated, and interactive visualizations"
   homepage "https://matplotlib.org/"
-  url "https://files.pythonhosted.org/packages/ae/e2/d2d5295be2f44c678ebaf3544ba32d20c1f9ef08c49fe47f496180e1db15/matplotlib-3.10.7.tar.gz"
-  sha256 "a06ba7e2a2ef9131c79c49e63dad355d2d878413a0376c1727c8b9335ff731c7"
+  url "https://files.pythonhosted.org/packages/8a/76/d3c6e3a13fe484ebe7718d14e269c9569c4eb0020a968a327acb3b9a8fe6/matplotlib-3.10.8.tar.gz"
+  sha256 "2299372c19d56bcd35cf05a2738308758d32b9eaed2371898d8f5bd33f084aa3"
   license "PSF-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e89e16adc28112b7fe7d004cedb4c5c14e3ebfcbe979b8e226393e3708074941"
-    sha256 cellar: :any,                 arm64_sequoia: "bcd0d95965df06bd19959b890db5303f191719f5a3884ad227077b7cf2268c61"
-    sha256 cellar: :any,                 arm64_sonoma:  "0e505994baaac06c58b99410d3bb2950a14c2624ce4e8ca18258caa931c741ce"
-    sha256 cellar: :any,                 sonoma:        "b76bbdd40989e2fc7f2224c44a4adc5fe1a64b4d6e2017e74274109ff7eb7db2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "91e99a12aaa771c7ab5b035f984562b771b240c0ed37f2df275854f541caa359"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af1b5716592aba0dd0efb340ceaaf9eae7fbb89594257caacbe2f1b17958a307"
+    sha256 cellar: :any,                 arm64_tahoe:   "3fcf17aae7bce1bc0f60593d06da0262bdbe8d47ab9e052fc89d9d8529272e4b"
+    sha256 cellar: :any,                 arm64_sequoia: "df47a4b2cefd9c8cd550f6b5628a8b909cba21109f0697fe81057bc2d65477ec"
+    sha256 cellar: :any,                 arm64_sonoma:  "ad93838423e4ca044002d160d5f2003c2901e213736ac3a66e85f37b1078d405"
+    sha256 cellar: :any,                 sonoma:        "6f2a62c931e3a70c3234a2dab29b6cb72fe834cfd1c72338a30cd7d8c5c0d4f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc423cb522c0dc6746a2a4aab561d56893cbde080a78e28a6333b1957d090997"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26b228caf6e0ddc4f67b283a9598982c6bbae482c6026e7012c9b579ae0e3135"
   end
 
   depends_on "cmake" => :build # for contourpy

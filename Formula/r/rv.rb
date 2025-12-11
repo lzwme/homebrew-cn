@@ -1,8 +1,8 @@
 class Rv < Formula
   desc "Ruby version manager"
   homepage "https://github.com/spinel-coop/rv"
-  url "https://ghfast.top/https://github.com/spinel-coop/rv/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "828048689c60ed0d5e4d9a27fcd643821f5f2acf4b782f447f5b0b17904adee1"
+  url "https://ghfast.top/https://github.com/spinel-coop/rv/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "3fe6617b49cba218ae6133f1bdf64008bac88ddbf94c13d24014716ea65012fc"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/spinel-coop/rv.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Rv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b332d8602c328d36bfc6a691ef3b40cc9b3649dc0ecc416c8a4a5be72a62a78a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6de91c9d133f4987d6bb33ac3bf67303bc84ddca8fecb380fa68ada810469e5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "97d1d1b3b61d6806e25ab3ae3fa4bbd76a69e43a1d2525522a082fc0d2e88bd2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f9a7d72c62483279230c8cdd8fdc78b5f0f36740bb4f482388f4b3686401c4a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9a4349ecdbcd10f47260655d02bb2f7a2aa1aa47bc3f138f2ef4dfde6b99334"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f30dba4bbe6ec7b4dd8f0058b3f42b572e4298b8e6019dc5fd30cfff82c115ce"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14394352ae5c65a041f36ee617235e394033805a33000e7260d794f101f87523"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbee92e6a0834f12e6286ca2f35b35aa3a4681dafd22c284147061cf94d78da3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "773ac5241967d429db677c1cb36bf7346603ef1620e6f3e65a60c678bcff629b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "729a2a3b54be62f3f17428872c4fdb508822aea80374a179c5e4816731c92007"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b969f0f49262ad22a506f104486d6438222ce1e5b534d586359b21348e91a3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08441d39160ee98939516df3cc6840f65b89746d00b1c33e35528d7f0ac963e9"
   end
 
   depends_on "pkgconf" => :build

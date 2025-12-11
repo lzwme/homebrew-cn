@@ -25,10 +25,11 @@ class Macvim < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "080aafdee7b089bdb764625f0ac7a19c69c17263b15c579298ed349425069952"
-    sha256 cellar: :any, arm64_sequoia: "7411602e3e72396de784580bd449c590df25137ec2071c412eb03dc29a85cfe2"
-    sha256 cellar: :any, arm64_sonoma:  "c7550a62ad426be5c7fbb149d848dd139227ea0b3cb51174bbe7219cddb6736f"
-    sha256 cellar: :any, sonoma:        "c8adcf1e753a966f80166c98c684a45518c10e7315e95195b6da26b544f46542"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "eae0d53565e43eeeb5995fd9dcd15dba9dd7b7126abfeca9223d5d527c73a552"
+    sha256 cellar: :any, arm64_sequoia: "88149d3fd08c35a282e1e402bcf7f04b4937ed0b9aba409695381ab1dd9d7185"
+    sha256 cellar: :any, arm64_sonoma:  "13baf6a9fcfae5fc9bece16bbc64088c27c83cd0f5dc97c1a65b2f9f28e59304"
+    sha256 cellar: :any, sonoma:        "6298c5dcc4a8d214897c44d192d1f802f88bb3fc05d7d85ebf0bd9fb83a457d1"
   end
 
   depends_on "gettext" => :build
@@ -75,6 +76,9 @@ class Macvim < Formula
                           "--disable-sparkle",
                           "--with-macarchs=#{Hardware::CPU.arch}"
     system "make"
+
+    # Sign with the correct runtime entitlements
+    system "make", "-C", "src", "macvim-signed-adhoc"
 
     prefix.install "src/MacVim/build/Release/MacVim.app"
     %w[gvimtutor mvim vimtutor xxd].each { |e| bin.install_symlink prefix/"MacVim.app/Contents/bin/#{e}" }

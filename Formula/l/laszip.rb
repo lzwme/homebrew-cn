@@ -1,25 +1,27 @@
 class Laszip < Formula
   desc "Lossless LiDAR compression"
   homepage "https://laszip.org/"
-  url "https://ghfast.top/https://github.com/LASzip/LASzip/archive/refs/tags/3.4.4.tar.gz"
-  sha256 "6d034bf3a400f81317a5dbad59d1b7ce82d971e887ca22d15813b914f0a5c281"
+  url "https://ghfast.top/https://github.com/LASzip/LASzip/archive/refs/tags/3.5.0.tar.gz"
+  sha256 "6e9baac8689dfd2e1502ceafabb20c62b6cd572744d240fb755503fd57c2a6af"
   license "Apache-2.0"
   head "https://github.com/LASzip/LASzip.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "298cfa48c70ddde871ee4c4ce69dac03a87033fc6984211de80f8ffbab60b8a6"
-    sha256 cellar: :any,                 arm64_sequoia:  "f32216b11c820816beb5bda485e46f0ea163222543e705be3d1e41c13758b9c6"
-    sha256 cellar: :any,                 arm64_sonoma:   "d24b59e358170d493bd3d48a8ed99a0253195542510c155f5fd7e9bf329bd733"
-    sha256 cellar: :any,                 arm64_ventura:  "0a0374c802376297013a20f8af6c2d0f5fc82ff0b7818fea82da2fcc22d02155"
-    sha256 cellar: :any,                 arm64_monterey: "402a088a63bc2da1186342b6a88d71b6a86c744b18ee7b35de3ac95fa8b881a8"
-    sha256 cellar: :any,                 sonoma:         "1eeb4c8027b05035f4fb2bb3b0fdbb3acd4b6c9844f879dc4395ab5ca0020860"
-    sha256 cellar: :any,                 ventura:        "48dca372c53c8af440ff82b56fd5d71b5ab290bddfda5741764a8ba53eac016b"
-    sha256 cellar: :any,                 monterey:       "e92cdbac9a9e25e57e27387fda8a8c97da3a7b1c23b725bb3beeaad383fc559a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "30274fa432851f4ca9c57197037455092c5cf26808f763d8ee0d256a090cab1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3fc1dd011f2793d3971409a52eeba03e7353141112a441a60fa317c70175856"
+    sha256 cellar: :any,                 arm64_tahoe:   "004ad026fd5502a6cc495b0dc8e82e288e4aaa90c02476f960a2154a9b492c99"
+    sha256 cellar: :any,                 arm64_sequoia: "92eb7a021b71cb63ed0d1516b4d5c5a04d4ae7e817a053ff8f6a71c4cd19ab58"
+    sha256 cellar: :any,                 arm64_sonoma:  "12e26b05aaf259c99dced2f37e8c2fef3bc3d294a9a9f4d1a6cbd78098eb2eb9"
+    sha256 cellar: :any,                 sonoma:        "716ccb155ad20714c434c4c30001134bc112b21daec0589e5846a4bdfb1fe859"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4da05f65c3a2b04d89bdd483d154c97a4fd89a95830d60900061e8376b3b67e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af201f8e8d02b21611bf7a35d0ca1ccc1cdfbdb86bfff9840cce5fb890894f5e"
   end
 
   depends_on "cmake" => :build
+
+  # build patch to scope C++ standard flag, upstream pr ref, https://github.com/LASzip/LASzip/pull/122
+  patch do
+    url "https://github.com/LASzip/LASzip/commit/a2060ce7bbdde90774e067579fbfd1f53837a015.patch?full_index=1"
+    sha256 "131816847a2e44df85e34c945e5e60f5112d94e6f9781c25316293832f08510c"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

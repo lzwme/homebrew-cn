@@ -1,17 +1,17 @@
 class Weaviate < Formula
   desc "Open-source vector database that stores both objects and vectors"
   homepage "https://weaviate.io/developers/weaviate/"
-  url "https://ghfast.top/https://github.com/weaviate/weaviate/archive/refs/tags/v1.34.4.tar.gz"
-  sha256 "58096f1108a3844117c30390bcf98c068bf0776095aa8790abf643cbc0f97225"
+  url "https://ghfast.top/https://github.com/weaviate/weaviate/archive/refs/tags/v1.34.5.tar.gz"
+  sha256 "7c565ef119876002947aab4832b7786d182880ac30a121e3703a6e943905723e"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d980a8de59fa1dd581d5a801e4c743c2290206a99953c9464e50e8177415ab9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d980a8de59fa1dd581d5a801e4c743c2290206a99953c9464e50e8177415ab9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d980a8de59fa1dd581d5a801e4c743c2290206a99953c9464e50e8177415ab9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dd855b97cee3855c49655b0f811714158c6a00a8299f7dff83e6eff576dd1e94"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "70a8b57779f606035f3e0b619418cb9c109d826087182045baa6cf2925641f98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5cb6e849677acca577d19905ab4953e7edd35dd556f8941aabfdd67595834f4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea0dbd0e70a200e796eefd40d5f47c8b4452931a1bd5f64410e800d0b67eee61"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea0dbd0e70a200e796eefd40d5f47c8b4452931a1bd5f64410e800d0b67eee61"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea0dbd0e70a200e796eefd40d5f47c8b4452931a1bd5f64410e800d0b67eee61"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3ba0c955b5d9b55caa2c61bc1e95fafcf1f5ea49dd968b09b9338c680286979e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10d1054c718e0f9758b1bc57064944cbab51200900d03f5d77a6d242248aef6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a9cbca60d8a90737e954822d662d016ebd9b7106d8bcde95ed42a9c26d0d58e"
   end
 
   depends_on "go" => :build

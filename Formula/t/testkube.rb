@@ -1,8 +1,8 @@
 class Testkube < Formula
   desc "Kubernetes-native framework for test definition and execution"
   homepage "https://testkube.io"
-  url "https://ghfast.top/https://github.com/kubeshop/testkube/archive/refs/tags/2.4.4.tar.gz"
-  sha256 "c7cf62a46210dd5f14259d8af9c98f9e9f14150f3b7ea11a21056c5711368ef2"
+  url "https://ghfast.top/https://github.com/kubeshop/testkube/archive/refs/tags/2.5.0.tar.gz"
+  sha256 "3ba01a1b47bbf501aceafecb0e71aa5d5fb27f5456e4bd072d811246ef5e1601"
   license "MIT"
   head "https://github.com/kubeshop/testkube.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Testkube < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "94e823525af798415e5f56b6c442f50337ac4580826fc0602a68c183e733b605"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8524fff20a6d78b5a21071c75f241ae873b7afd5c493a73665a2ab3a0fccc9f1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad0497c15fa8dbb12d719a5f23a7e96179082ed5364a57e1bc25e73dad7eb7ad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "68482aa2c9990a50d0863d94d8dbfe72f9fbf3c329cd82731f83f363c6043158"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1b27718b4d5a057bfc7bf249a172574d83c68fadf95bf5c305b9b1bdc42711f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7143c7119f1df18ccfdefd4e590aa5eff8f9ed551c6a23095fd83f0a6b151d10"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb51085e0fdcee30d4e5ea3d2b054b82550c1c9b27199650527d4ad1dad6ed88"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91f92eb404b6110999e358ad7c1416fe5cc3164d33d7d99c4d8a73fc986d05a8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3afe4557eded1a4c53d21bcaeeb3ca6648a3fd9ab4de1d3c83b21c1bbbbeda02"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7e2776d501f2c89f8f937444c4976f4acc0bcad5b4c417457e622d6557480451"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ba095c96b21f00de441f34e432cc604f656a2dc5959176a4f88b63b852d2b24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72dc6955511a126fb868fd0eab5384a32f585aa82471d6f8cbb3dcba37927514"
   end
 
   depends_on "go" => :build
@@ -34,7 +34,7 @@ class Testkube < Formula
   end
 
   test do
-    output = shell_output("#{bin}/kubectl-testkube get tests 2>&1", 1)
+    output = shell_output("#{bin}/kubectl-testkube get testworkflow 2>&1", 1)
     assert_match("no configuration has been provided", output)
 
     output = shell_output("#{bin}/kubectl-testkube help")

@@ -1,18 +1,18 @@
 class Lf < Formula
   desc "Terminal file manager"
   homepage "https://godoc.org/github.com/gokcehan/lf"
-  url "https://ghfast.top/https://github.com/gokcehan/lf/archive/refs/tags/r39.tar.gz"
-  sha256 "1393f86a2387534dd5321754846e0fe39df55a7345ef2b19f349eb6ae96aaaf7"
+  url "https://ghfast.top/https://github.com/gokcehan/lf/archive/refs/tags/r40.tar.gz"
+  sha256 "43a78f66728dbbbd6848a074dd3d70e8ce7ef22e428de81a89bf2da174226a26"
   license "MIT"
   head "https://github.com/gokcehan/lf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26b70c4fcbd458b20288eda4a5fb712d75815e37898e764fbfad87759fc381fa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26b70c4fcbd458b20288eda4a5fb712d75815e37898e764fbfad87759fc381fa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26b70c4fcbd458b20288eda4a5fb712d75815e37898e764fbfad87759fc381fa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "958324781000f3b0421533e65ec8e12fb3ea02c9c274379cce7a0dfb7cc6d87f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae7d98e56a200c0cb91d2e4d06fc0f3eae04b03335a45321928e56029991b6dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89a85624e5e97bff76eb87938c3e3a8590874f73f95a64eb97851b03196c2431"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eec19e90a76c79977f50905c2c58a99848885aee644e6454067e3e817e7a56e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eec19e90a76c79977f50905c2c58a99848885aee644e6454067e3e817e7a56e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eec19e90a76c79977f50905c2c58a99848885aee644e6454067e3e817e7a56e9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aed00ba1475bd30e78b7b1f1f9d7b0111d874f0b5fbf322ffaed3411601b9908"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f923182b622f416b96e37b6636ce9f4ea99115bbab720994729988e95dcdda2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1baf53105bdea7841406f30352c360e6dc46a05dd06f90b45d0a27a2d518766f"
   end
 
   depends_on "go" => :build

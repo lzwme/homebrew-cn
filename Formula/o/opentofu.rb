@@ -1,18 +1,18 @@
 class Opentofu < Formula
   desc "Drop-in replacement for Terraform. Infrastructure as Code Tool"
   homepage "https://opentofu.org/"
-  url "https://ghfast.top/https://github.com/opentofu/opentofu/archive/refs/tags/v1.11.0.tar.gz"
-  sha256 "8fc4016a3764f266f5ae258263710d46590ce1beaabf50ddfffed399f42d0ebd"
+  url "https://ghfast.top/https://github.com/opentofu/opentofu/archive/refs/tags/v1.11.1.tar.gz"
+  sha256 "fa4927bd08be41775ad6a104414f3fc72ea297a04b80f5601d47479aabd32d3c"
   license "MPL-2.0"
   head "https://github.com/opentofu/opentofu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8d6f0043d9802f1f55d7c3f9222441a14961f918b8e8acc66ee3fb40d540362"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d338157d0cf3e8987dd69623de59f8dd7eddcd8eef43fcabd65e35e6012f88a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a73a152639c2d28c6f89b311e9f36b0f54d6d3218086e4610cef7548fe33f06"
-    sha256 cellar: :any_skip_relocation, sonoma:        "61e86df5b714b66e5e15bfc66f37a73a2662cbfc40d58f7741398e2e26bd69e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4598e493f9106a7195fd597dfca547811bc9f551530033d0a4a890c857590a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3073dda9a8544d1e0cb32481c9e1d9212356584548e8cd77d3963a81bb35e661"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c55ee0d21333abece6ec201e923feb673e2677eb8eff08a859a7cfec8498726"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "437b1cb2a8992ec3440d1e902b12dfcfb857389bf856bd16d0ee51b143a4c8fc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24731c600d2a27cf7ab350477f40eb567db58b3336e1f937eb28162f8194d860"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ef74bdedd5aea4634d53ae9b4a2595faac0a8ef29ab5fd966b61138e584b403d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c6df5ce2ae9cb2f351d51b0c58531643caa8d2d7e99ccc5d73b647c667af92d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d821bae7e6a059f723210b80e86f4ec1c799a4e42f5a7dfcee90f22bce3c7f12"
   end
 
   depends_on "go" => :build

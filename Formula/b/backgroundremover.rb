@@ -3,23 +3,24 @@ class Backgroundremover < Formula
 
   desc "Remove background from images and video using AI"
   homepage "https://github.com/nadermx/backgroundremover"
-  url "https://files.pythonhosted.org/packages/81/c9/5c7d668bea7bb5ae6e069afe33c19e55ae95975a87a7e3a5bbd3d6199f74/backgroundremover-0.3.4.tar.gz"
-  sha256 "c4ce35da0194138c115017dba9f5dae38b7e2bfcf15a413ef04d8ce01e66e214"
+  url "https://files.pythonhosted.org/packages/dc/27/17f2999cb4b53fd8b36bf04c4ed71a7728390bb7defd05eaf0db2e4eea21/backgroundremover-0.3.7.tar.gz"
+  sha256 "5a42cc2628658154528d42d401b6d9ec05d22171d0ba85420198ef1379e53fb7"
   license "MIT"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "47670e19d3401ac962ad008a87e145636fc0700592fbe82e216577aa859de77d"
-    sha256 cellar: :any,                 arm64_sequoia: "48877e3f30160439254633c0333b86890b571fa8cc9d70594f5bcdb5873d0f91"
-    sha256 cellar: :any,                 arm64_sonoma:  "ad99ed4e1052a9967395eac4bcc83b98a05c2222d8a2148f8bd33f150c696e60"
-    sha256 cellar: :any,                 sonoma:        "5257f4d79d258ec2474e6f40f3e576450adb2a4b37144b8a9479c7c5063d07ef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "93db10c23a7ce007d554c0b8e2ee57246f53e9cb8fc76fde6ed2ff5e5a08d8f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdf05188369165206939c0b9b271b36b0afd1a05e91ef64ad7fa437d9e12b660"
+    sha256 cellar: :any,                 arm64_tahoe:   "94be17025e285d461b1d84a4986e6e429e5ea49a4457f1a1a99c5bcd8681ed00"
+    sha256 cellar: :any,                 arm64_sequoia: "34663a60519d7cb4fcbdc63ec83570eca7ca86f8ec73683b4cc828711bb270ee"
+    sha256 cellar: :any,                 arm64_sonoma:  "e1ce48fba91656a7b386c533c32c65e25bbcf8fc0bb295584f56763cb182aa89"
+    sha256 cellar: :any,                 sonoma:        "f5d9c788e88f0f7a3a25c81266231abe020ad59aa6fa13ecacbad587aaaa3e6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f95619ebc010163c0ce8dbd893e1ea6e7b8b02688689dc2f85e38a8a95723bd1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32238368f4b7750407d5b1e4bb523302ea90cf78cbde95aad474535a01060b2b"
   end
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :build
   depends_on "certifi"
   depends_on "ffmpeg"
+  depends_on "libheif"
   depends_on "llvm@20"
   depends_on "numpy"
   depends_on "pillow"
@@ -35,9 +36,19 @@ class Backgroundremover < Formula
   pypi_packages exclude_packages: %w[certifi numpy torch torchvision pillow scipy scikit-image],
                 extra_packages:   "imageio"
 
+  resource "blinker" do
+    url "https://files.pythonhosted.org/packages/21/28/9b3f50ce0e048515135495f198351908d99540d69bfdc8c1d15b73dc55ce/blinker-1.9.0.tar.gz"
+    sha256 "b4ce2265a7abece45e7cc896e98dbebe6cead56bcf805a3d23136d145f5445bf"
+  end
+
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
     sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+  end
+
+  resource "click" do
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "commandlines" do
@@ -60,6 +71,11 @@ class Backgroundremover < Formula
     sha256 "66b56cd6474bf41d8c54660347d37afcc3f7d1970648de365c102ef77548aadb"
   end
 
+  resource "flask" do
+    url "https://files.pythonhosted.org/packages/dc/6d/cfe3c0fcc5e477df242b98bfe186a4c34357b4847e87ecaef04507332dab/flask-3.1.2.tar.gz"
+    sha256 "bf656c15c80190ed628ad08cdfd3aaa35beb087855e2f494910aa3774cc4fd87"
+  end
+
   resource "future" do
     url "https://files.pythonhosted.org/packages/a7/b2/4140c69c6a66432916b26158687e821ba631a4c9273c474343badf84d3ba/future-1.0.0.tar.gz"
     sha256 "bd2968309307861edae1458a4f8a4f3598c03be43b97521076aebf5d94c07b05"
@@ -80,9 +96,14 @@ class Backgroundremover < Formula
     sha256 "e2556bed8e005564a9f925bb7afa4002d82770d6b08825078b7697ab88ba1755"
   end
 
+  resource "itsdangerous" do
+    url "https://files.pythonhosted.org/packages/9c/cb/8ac0172223afbccb63986cc25049b154ecfb5e85932587206f42317be31d/itsdangerous-2.2.0.tar.gz"
+    sha256 "e0050c0b7da1eea53ffaf149c0cfbb5c6e2e2b69c4bef22c81fa6eb73e5f6173"
+  end
+
   resource "llvmlite" do
-    url "https://files.pythonhosted.org/packages/c1/39/be3a8255c8c40fcab6d54d147ae5bda00104e861b108c541f2b2ecb30c44/llvmlite-0.46.0b1.tar.gz"
-    sha256 "ea7208f342cc157e600093862ff87ab5d296680d7dfff0a01dc13668ecbc60d0"
+    url "https://files.pythonhosted.org/packages/74/cd/08ae687ba099c7e3d21fe2ea536500563ef1943c5105bf6ab4ee3829f68e/llvmlite-0.46.0.tar.gz"
+    sha256 "227c9fd6d09dce2783c18b754b7cd9d9b3b3515210c46acc2d3c5badd9870ceb"
   end
 
   resource "more-itertools" do
@@ -96,8 +117,13 @@ class Backgroundremover < Formula
   end
 
   resource "numba" do
-    url "https://files.pythonhosted.org/packages/8b/ce/efb2667849b0abac22d1499bc855f67b97c3d23bb4f43c1d854ec2a0c716/numba-0.63.0b1.tar.gz"
-    sha256 "66b7a0052e2cfe8befa273e5af3eae75e102ac9c3da7d2ca361b7b72cf5051c8"
+    url "https://files.pythonhosted.org/packages/dc/60/0145d479b2209bd8fdae5f44201eceb8ce5a23e0ed54c71f57db24618665/numba-0.63.1.tar.gz"
+    sha256 "b320aa675d0e3b17b40364935ea52a7b1c670c9037c39cf92c49502a75902f4b"
+  end
+
+  resource "pillow-heif" do
+    url "https://files.pythonhosted.org/packages/64/65/77284daf2a8a2849b9040889bd8e1b845e693ed97973a28ba2122b8922ad/pillow_heif-1.1.1.tar.gz"
+    sha256 "f60e8c8a8928556104cec4fff39d43caa1da105625bdb53b11ce3c89d09b6bde"
   end
 
   resource "proglog" do
@@ -136,13 +162,18 @@ class Backgroundremover < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
+    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
   end
 
   resource "waitress" do
     url "https://files.pythonhosted.org/packages/bf/cb/04ddb054f45faa306a230769e868c28b8065ea196891f09004ebace5b184/waitress-3.0.2.tar.gz"
     sha256 "682aaaf2af0c44ada4abfb70ded36393f0e307f4ab9456a215ce0020baefc31f"
+  end
+
+  resource "werkzeug" do
+    url "https://files.pythonhosted.org/packages/45/ea/b0f8eeb287f8df9066e56e831c7824ac6bab645dd6c7a8f4b2d767944f9b/werkzeug-3.1.4.tar.gz"
+    sha256 "cd3cd98b1b92dc3b7b3995038826c68097dcb16f9baa63abe35f20eafeb9fe5e"
   end
 
   def install

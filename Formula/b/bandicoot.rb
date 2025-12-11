@@ -1,17 +1,17 @@
 class Bandicoot < Formula
   desc "C++ library for GPU accelerated linear algebra"
   homepage "https://coot.sourceforge.io/"
-  url "https://gitlab.com/bandicoot-lib/bandicoot-code/-/archive/3.0.1/bandicoot-code-3.0.1.tar.bz2"
-  sha256 "c3a1977d162d7f678df79c8305344e7c1768fdf5b5441f33f6b4a02d90b64300"
+  url "https://gitlab.com/bandicoot-lib/bandicoot-code/-/archive/3.1.0/bandicoot-code-3.1.0.tar.bz2"
+  sha256 "27c8c6d36e6bbc64f4de0cfde89221f6d80a7d59de08c47666afeeacc806d1a5"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c394ea05212c1ea41029110aa67a4a4318071abad3cee50e334a5d1d8252a06a"
-    sha256 cellar: :any,                 arm64_sequoia: "920375ad5ecdfa143d76a3cd35377d5c218b82fc8bdb963f20a635a618164070"
-    sha256 cellar: :any,                 arm64_sonoma:  "8fe8e9a54aedef6401ed1032f39af4fb825d8caee3e1168aec12b0684e97f523"
-    sha256 cellar: :any,                 sonoma:        "122f673684a564480a6710a2d8a3156f4bb61a0d1f966d12334dfd6f87b97746"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6328ae4e2f7fbc9094c0261851e61b520e75e60896df25c855c7e0bb028dd7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f45369341b609c7405a0a1a3bea3783e502a4fa666db26a07a7e7f1b407cde0"
+    sha256 cellar: :any,                 arm64_tahoe:   "5d67e6aed2699f62ee9f37b3bd2228349b82b826c6ccce2cff52ab5be84c3b2b"
+    sha256 cellar: :any,                 arm64_sequoia: "98187deca3fd6cbed9bd4ad68fc48e05198e3c78aa5cd7166e14b0b538aee923"
+    sha256 cellar: :any,                 arm64_sonoma:  "d6f10f687b2d75a0b5a832e2cd8b5b507aa8d5d75c3e2fe5e3d99945b656e86f"
+    sha256 cellar: :any,                 sonoma:        "74c3eb05ae46f65f349e278a1ba74f39a301f66ddcc8d61e94efef7f91e220ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbbe98b28fa63bc236bd1cf7ccfb644e2f047a9863d41d2cc1070af4b0e152cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e30826e78801be597bb8e6c8a7da8c0f468ee427c7942ac373e4596ab0372ff"
   end
 
   depends_on "cmake" => :build

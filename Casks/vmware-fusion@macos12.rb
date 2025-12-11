@@ -14,7 +14,6 @@ cask "vmware-fusion@macos12" do
 
   auto_updates true
   conflicts_with cask: "vmware-fusion@preview"
-  depends_on macos: ">= :monterey"
   container nested: "com.vmware.fusion.zip"
 
   app "#{staged_path}/payload/VMware Fusion.app"

@@ -1,5 +1,5 @@
 class GnupgAT22 < Formula
-  desc "GNU Pretty Good Privacy (PGP) package"
+  desc "GNU Privacy Guard (OpenPGP)"
   homepage "https://gnupg.org/"
   url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.2.45.tar.bz2"
   sha256 "d1abecd2b6c052749fd5748ba9de7021567e06b573dc6becac8df25cb87500e8"

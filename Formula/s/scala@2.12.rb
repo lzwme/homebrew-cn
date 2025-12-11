@@ -8,8 +8,8 @@ class ScalaAT212 < Formula
   license "Apache-2.0"
 
   livecheck do
-    url "https://www.scala-lang.org/files/archive/"
-    regex(/href=.*?scala[._-]v?(2\.12(?:\.\d+)+)(?:[._-]final)?\.t/i)
+    url "https://www.scala-lang.org/download/"
+    regex(%r{href=.*?download/v?(2\.12(?:\.\d+)+)\.html}i)
   end
 
   bottle do

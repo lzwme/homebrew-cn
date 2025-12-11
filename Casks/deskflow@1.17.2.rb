@@ -15,7 +15,6 @@ cask "deskflow@1.17.2" do
   end
 
   conflicts_with cask: "deskflow-dev"
-  depends_on macos: ">= :monterey"
 
   app "Deskflow.app"
 

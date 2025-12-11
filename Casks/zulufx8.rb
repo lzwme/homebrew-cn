@@ -21,7 +21,6 @@ cask "zulufx8" do
   end
 
   conflicts_with cask: "zulu8"
-  depends_on macos: ">= :mojave"
 
   pkg "Double-Click to Install Azul Zulu JDK #{version.major}.pkg"
 

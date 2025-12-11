@@ -6,17 +6,34 @@ class GitlabGem < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c0cc7c186322cbf0bf53a18dff9f351169c1d65753f1816e068763f2562cf7f3"
-    sha256 cellar: :any,                 arm64_sequoia: "9c87fb811cf87ef957b24aaa25fabb8ce5275977eb87e405835a910e087028b2"
-    sha256 cellar: :any,                 arm64_sonoma:  "fa19170f69f26d852f3223fdb8db731203c930eff9757040599d83e491fa252f"
-    sha256 cellar: :any,                 sonoma:        "ee5796c9eef2dd4d486d42f958e2ccd238d438cc456b6ee33f64c51b2ca827a4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3248511c3ab3e1ee0dd368bdae9cb69ad28601186a1a635ea302a7f17b04d0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "140f4b4fc43ad933379f0eddf64df119c78c6c56c89a24fc57d7926305cfac15"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "311de0d30552a9114f6823d763ad79f5f263f1e18853bfe5fbf8e9355081c5e1"
+    sha256 cellar: :any,                 arm64_sequoia: "b5d41723a39b667b68494a620b97654ee06a34baab1847f81a52e9c16441e719"
+    sha256 cellar: :any,                 arm64_sonoma:  "f827af5f1663733d29ec3d42a5273b8ebba8bf7463a2f27fd55e765431db0bad"
+    sha256 cellar: :any,                 sonoma:        "d9daa9338ed4e30c26a9b16c782ec15c51df391d101954057a8bc132f255355d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea53d78b54c759c90804ecb9f8bc47d85003933038a1fd912a8ebb81d7e7a1e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b569e5477ca4d10a8bd8b82a3b5215f5b4adbf29ff995f31309303a86918033c"
   end
 
   depends_on "ruby"
 
-  # list with `gem install --explain httparty terminal-table`
+  # List with `gem install --explain gitlab -v #{version}`
+  # https://rubygems.org/gems/gitlab/versions/#{version}/dependencies
+
+  resource "unicode-emoji" do
+    url "https://rubygems.org/gems/unicode-emoji-4.1.0.gem"
+    sha256 "4997d2d5df1ed4252f4830a9b6e86f932e2013fbff2182a9ce9ccabda4f325a5"
+  end
+
+  resource "unicode-display_width" do
+    url "https://rubygems.org/gems/unicode-display_width-3.2.0.gem"
+    sha256 "0cdd96b5681a5949cdbc2c55e7b420facae74c4aaf9a9815eee1087cb1853c42"
+  end
+
+  resource "terminal-table" do
+    url "https://rubygems.org/gems/terminal-table-4.0.0.gem"
+    sha256 "f504793203f8251b2ea7c7068333053f0beeea26093ec9962e62ea79f94301d2"
+  end
 
   resource "bigdecimal" do
     url "https://rubygems.org/gems/bigdecimal-3.3.1.gem"
@@ -34,28 +51,18 @@ class GitlabGem < Formula
   end
 
   resource "csv" do
-    url "https://rubygems.org/gems/csv-3.3.5.gem"
-    sha256 "6e5134ac3383ef728b7f02725d9872934f523cb40b961479f69cf3afa6c8e73f"
+    url "https://rubygems.org/gems/csv-3.3.2.gem"
+    sha256 "6ff0c135e65e485d1864dde6c1703b60d34cc9e19bed8452834a0b28a519bd4e"
   end
 
   resource "httparty" do
-    url "https://rubygems.org/gems/httparty-0.23.1.gem"
-    sha256 "3ac1dd62f2010f6ece551716f5ceec2b2012011d89f1751917ab7f724e966b55"
+    url "https://rubygems.org/gems/httparty-0.23.2.gem"
+    sha256 "72d52830ab5862115a3c9a4b16738dd67d9a691ffd796cf86bad8abaa8f1febb"
   end
 
-  resource "unicode-emoji" do
-    url "https://rubygems.org/gems/unicode-emoji-4.1.0.gem"
-    sha256 "4997d2d5df1ed4252f4830a9b6e86f932e2013fbff2182a9ce9ccabda4f325a5"
-  end
-
-  resource "unicode-display_width" do
-    url "https://rubygems.org/gems/unicode-display_width-3.2.0.gem"
-    sha256 "0cdd96b5681a5949cdbc2c55e7b420facae74c4aaf9a9815eee1087cb1853c42"
-  end
-
-  resource "terminal-table" do
-    url "https://rubygems.org/gems/terminal-table-4.0.0.gem"
-    sha256 "f504793203f8251b2ea7c7068333053f0beeea26093ec9962e62ea79f94301d2"
+  resource "base64" do
+    url "https://rubygems.org/gems/base64-0.3.0.gem"
+    sha256 "27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b"
   end
 
   def install

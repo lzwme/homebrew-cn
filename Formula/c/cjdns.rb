@@ -1,19 +1,18 @@
 class Cjdns < Formula
   desc "Advanced mesh routing system with cryptographic addressing"
   homepage "https://github.com/cjdelisle/cjdns/"
-  url "https://ghfast.top/https://github.com/cjdelisle/cjdns/archive/refs/tags/cjdns-v22.2.tar.gz"
-  sha256 "ac4fb3325a5f55c0f63f5c510e8cfef455b796a627ca19d44b0cc186ccce5b3f"
+  url "https://ghfast.top/https://github.com/cjdelisle/cjdns/archive/refs/tags/cjdns-v22.3.tar.gz"
+  sha256 "99e20274d581949b9a5998564485f567732e7888ac786c2edb43493048e4d0ef"
   license all_of: ["GPL-3.0-or-later", "GPL-2.0-or-later", "BSD-3-Clause", "MIT"]
   head "https://github.com/cjdelisle/cjdns.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "f0ac066b9536df86560d40dd7b3a33062e5ca59977ad0662c6a3d565342e0f0f"
-    sha256 cellar: :any,                 arm64_sequoia: "5aa5deacb035f54287065e9b60f93944875786253a2f3837ff665913e53c582b"
-    sha256 cellar: :any,                 arm64_sonoma:  "05e3abe1b0c11b96eeb52c6df42df9ee41276a3051929cfc01c45af0c80cfa93"
-    sha256 cellar: :any,                 sonoma:        "9897c94e1c9f31c12a7a4fa2ffade4733c6c4f57e0d241e13fce0d7d9f662eb7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "db6357a57817251bfaa64e902f5b3842d78d5b4100ebd07b6a4ebcaf82b28dda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "182b34beab6c2ea705ea668cc02c382509fc8b4af46818fb99ac49456c8d04f1"
+    sha256 cellar: :any,                 arm64_tahoe:   "3e80901cd150c0a4985cc8ec0c94b1241716a80d4765f87d4298bcef556a3a0c"
+    sha256 cellar: :any,                 arm64_sequoia: "59d19ffb7e8297bb316e1ad8b1bcbe0d26c8f3be65c8cdec2b7ac3a11b2e5008"
+    sha256 cellar: :any,                 arm64_sonoma:  "f9dba69b82d805f37555fc9059f9963cdcc8cd79a5272df7ddc8b882ad03a5b6"
+    sha256 cellar: :any,                 sonoma:        "faca4c08e507600ff631b2f06387de220a74cf3b74ce53759e4ba86171509a87"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "859d70d081723d20c26072e75c5040c23848e7555ec84ae1df094a150522167a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c843f89da788dd4cf98f419584f680e76ee0b81b1b819fd474569c9389e43360"
   end
 
   depends_on "node" => :build

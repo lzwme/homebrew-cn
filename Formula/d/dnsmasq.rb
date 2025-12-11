@@ -11,13 +11,13 @@ class Dnsmasq < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "cb56fd74e35d80af1e89152f461cfa9f77a4ec33a6dac3b33f06a00feeef77c7"
-    sha256 arm64_sequoia: "33f6b71563014d09360d028e613be61c7ed75e74360396efc4d3b9ce8899965e"
-    sha256 arm64_sonoma:  "b13b42d80e6be073357328442e047f4f7bad2646b03f799dca4b848a5a3d150b"
-    sha256 sonoma:        "4b2d8e61a8bb3601df2439914950fad6407edeae7db487dcfe6fd83987988cc9"
-    sha256 arm64_linux:   "6eb516dbfd16d9dd493604334be39927e6165c0f06fe631115aa3b40cd4185a5"
-    sha256 x86_64_linux:  "720d6acd1910592e9c17928a15433e0f2eabea814cf6e3e653f04be5d35d8d8b"
+    rebuild 2
+    sha256 arm64_tahoe:   "1fc3abe9a474251aeb4979e50a9b70cf87948af082fa3e5f0254f713b0e95fdc"
+    sha256 arm64_sequoia: "b785296bd80d891b648da7927ace6803f604f43ea4612e74ef2fafd8a4dc31f6"
+    sha256 arm64_sonoma:  "ac9befb6d7fdf93f73600545580edd512d3f945698f9d4b335c602028f68e91c"
+    sha256 sonoma:        "bfefd73ce943255a2e67834d26f2e07ac02023ef9bfa3747969d035b9914a065"
+    sha256 arm64_linux:   "9dc2c044fc89c0163cd967ab4dc09ec9a756297cacd4c9a9eb3de8317a9aafc4"
+    sha256 x86_64_linux:  "34e0fc6ec9cdff68e1e5711f56f7e2a484c1cece80b1222e71e248c9c2509e83"
   end
 
   depends_on "pkgconf" => :build
@@ -55,6 +55,13 @@ class Dnsmasq < Formula
     (etc/"dnsmasq.d/dhcpc").mkpath
     touch etc/"dnsmasq.d/ppp/.keepme"
     touch etc/"dnsmasq.d/dhcpc/.keepme"
+  end
+
+  def caveats
+    <<~EOS
+      On current macOS releases, `/etc/resolver/<domain>` resolver overrides do not work if the nameserver is `127.0.0.1` and dnsmasq is running on a non-53 port.
+      To use scoped resolver zones reliably, bind dnsmasq to a non-localhost IP (e.g., a loopback alias like 10.0.0.1) on port 53.
+    EOS
   end
 
   service do

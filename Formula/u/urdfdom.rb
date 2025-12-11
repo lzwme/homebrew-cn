@@ -1,8 +1,8 @@
 class Urdfdom < Formula
   desc "Unified Robot Description Format (URDF) parser"
   homepage "https://wiki.ros.org/urdf/"
-  url "https://ghfast.top/https://github.com/ros/urdfdom/archive/refs/tags/5.0.3.tar.gz"
-  sha256 "c98412daaa7498ecea2f2c68ce1c27767113d137468eb26b7dcfa291cba615b4"
+  url "https://ghfast.top/https://github.com/ros/urdfdom/archive/refs/tags/5.0.4.tar.gz"
+  sha256 "f47165c5f4d321216dbcd50d79bfccc459993b113400f507d8d72196388f9c7b"
   license "BSD-3-Clause"
 
   # Upstream uses Git tags (e.g. `1.0.0`) to indicate a new version. They
@@ -14,12 +14,12 @@ class Urdfdom < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e3d48c0bd6a69521698d8803c2713ff6fd16ac79933a2559d7f09b3d97546fbe"
-    sha256 cellar: :any,                 arm64_sequoia: "f694b3bf7d00b6526e625d945b038e8652da2bd1f71db99527645fa6de8ad51d"
-    sha256 cellar: :any,                 arm64_sonoma:  "01601bc9a12d3dd8a6662e82b3f956e488fc1e469b9dbcd3701ea9d0ad3005c8"
-    sha256 cellar: :any,                 sonoma:        "f51cd12a5f7f8540e37bb4557c1949a542546763098deae85d93fb18fbd4466c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e6dfff77c72a4888e15b8daced023c1c747392ff74eeed56cc187e223581857"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "628d81cac3495c4dc1b6a5a0cc9c44e3ebd312ba7890c8eb6bd4645ad423414e"
+    sha256 cellar: :any,                 arm64_tahoe:   "1d36ea5f98184c2abe737732b5fd45c86156d76211b10d941e6452e98eb850e6"
+    sha256 cellar: :any,                 arm64_sequoia: "497147d39cc81847e63317774576c8429c05b1d2f7c71c78749304a098175e51"
+    sha256 cellar: :any,                 arm64_sonoma:  "96cf46078f711cdb2c7f21766e5bec1136122d661dbaeac4e7b97977c7bcf7f0"
+    sha256 cellar: :any,                 sonoma:        "a7d8229bc308b1dd6764b756b71ed0062857c0eb169b9c18149f7db2404bc662"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e4fbd3b9778b5fea0b19c2264097df4e8106a02eebd2ea57105bfa5b9fa5740"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12c46486ac0bfbfe77c603c2525d3c328a62a673992c260dabeccf817d93b01e"
   end
 
   depends_on "cmake" => :build

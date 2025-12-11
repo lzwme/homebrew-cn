@@ -14,8 +14,6 @@ cask "xntfs-pro" do
     url "https://api.7littlemen.com/download/ntfsretail/appcast.xml"
   end
 
-  depends_on macos: ">= :high_sierra"
-
   pkg "NTFS Pro by Omi Installer.signed.#{version.csv.first}.pkg"
 
   uninstall     quit:    "com.omni.mac.utility.website.ntfs",

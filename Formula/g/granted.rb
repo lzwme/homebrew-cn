@@ -7,19 +7,24 @@ class Granted < Formula
   head "https://github.com/fwdcloudsec/granted.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2ae7e586190f7c5092da72f5e510a4c280b55c114975e39a9b5ca500ef5f601"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc90ac61d24f078333207f04e4750cbb0be674734ad42ee2f1c3d449069f7d95"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f72bc786bb6f5e3bd0d23150d07c1f9a889d06b42a728589114ebb418b3bd505"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ad6688f253dd0a2440dd3e3a4201bdfd729e77ef33b62e33668961c63bbe7386"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eaf45439a1a8f236a254b8db441fada6c8813b314ed479aa65f201be47b031dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "534d96a5ee4e3075598d6be97a10c2df041a4fcf6f95f3498299fd9a777a0130"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6fc38f0017948caf2a7173ea9d35e43ec724d3a154dddadc424e2709eee535aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d88b56bc977811d0dd27e64e299c4aed3a0d1b3d2cba61ce732b4670821667ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ea39d3afc9b5f1b8afea1949836ebf5a2c5239468877e65a3d10355129698ac"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1e8823f116408d8e9bc3c09f168b8548adc91f08136ab071adf0d621b54d5382"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "992cad69e747ccb37bdb958e0ca36a4b877abe5fdf1c6f2c696be8ab7391ed10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8750823e00d087482eed923faa51bf73ac955269229d1222bd86d0ccbf60d27a"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/common-fate/granted/internal/build.Version=#{version}"
+    ldflags = %W[
+      -s -w
+      -X github.com/common-fate/granted/internal/build.Version=#{version}
+      -X github.com/common-fate/granted/internal/build.ConfigFolderName=.granted
+    ]
+
     system "go", "build", *std_go_args(ldflags:), "./cmd/granted"
     bin.install_symlink "granted" => "assumego"
     # these must be in bin, and not sourced automatically

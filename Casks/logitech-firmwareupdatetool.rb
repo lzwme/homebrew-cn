@@ -12,7 +12,5 @@ cask "logitech-firmwareupdatetool" do
     regex(%r{/FirmwareUpdateTool[._-]?(\d+(?:\.\d+)+)\.zip}i)
   end
 
-  depends_on macos: ">= :high_sierra"
-
   app "FirmwareUpdateTool.app"
 end

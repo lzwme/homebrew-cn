@@ -19,7 +19,7 @@ class AnsibleAT8 < Formula
 
   keg_only :versioned_formula
 
-  # https://docs.ansible.com/ansible/latest/reference_appendices/release_and_maintenance.html#ansible-community-package-release-cycle
+  # https://docs.ansible.com/projects/ansible/latest/reference_appendices/release_and_maintenance.html#ansible-community-package-release-cycle
   disable! date: "2024-12-14", because: :unmaintained
 
   # `pkgconf` and `rust` are for bcrypt

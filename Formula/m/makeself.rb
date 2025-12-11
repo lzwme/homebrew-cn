@@ -1,13 +1,13 @@
 class Makeself < Formula
   desc "Generates a self-extracting compressed tar archive"
   homepage "https://makeself.io/"
-  url "https://ghfast.top/https://github.com/megastep/makeself/archive/refs/tags/release-2.6.0.tar.gz"
-  sha256 "3af5218dfb80d20a156d3c50fa0d510c7b244d9676813659f8d220bc95405f07"
+  url "https://ghfast.top/https://github.com/megastep/makeself/archive/refs/tags/release-2.7.1.tar.gz"
+  sha256 "96843e5db70da71dcb3cb594a6899886043f115e9205c6b5ca2f26000389514e"
   license "GPL-2.0-or-later"
   head "https://github.com/megastep/makeself.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "da1702d89713395dd58527ae74a8489f278527c9bfc5eb04d30e6e74dc306032"
+    sha256 cellar: :any_skip_relocation, all: "abccb8a90adc143ed2a09ff2b57057c3a09ef57fcb1c365d70caf260fb3c0020"
   end
 
   def install

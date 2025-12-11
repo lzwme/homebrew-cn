@@ -1,19 +1,20 @@
 class Emacs < Formula
   desc "GNU Emacs text editor"
   homepage "https://www.gnu.org/software/emacs/"
+  # TODO: Bump to use tree-sitter 0.26+ when new Emacs release supports it
   url "https://ftpmirror.gnu.org/gnu/emacs/emacs-30.2.tar.xz"
   mirror "https://ftp.gnu.org/gnu/emacs/emacs-30.2.tar.xz"
   sha256 "b3f36f18a6dd2715713370166257de2fae01f9d38cfe878ced9b1e6ded5befd9"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 arm64_tahoe:   "03f5efc7f8ff8fa0b71b053e6fa55e88d44e0bf0c6724dc3879199868b3f3e70"
-    sha256 arm64_sequoia: "990ed4802368bd1544e97e5f49dd7030eea973710413aa5d5d1bfd6dff13b366"
-    sha256 arm64_sonoma:  "9f12f322c48ac1f8c4a9ff1add047e3a24773d3de15bc66f69174e9824f893d2"
-    sha256 sonoma:        "c27f7734c94b3481f639187966911d77c68592339939f78c602dae5dadc324f5"
-    sha256 arm64_linux:   "7278c6181bdce9e673f5cabf7f0fc872939d8e425daba127968c7addceff1747"
-    sha256 x86_64_linux:  "9f1ae5ddfefba5f689ffed4928c04509afcdd454c8abde62e5050b0d854a0023"
+    sha256 arm64_tahoe:   "1e9d72a5821b09957ad3cfc98b91239bd68b905d74edc129537ae97819a49c04"
+    sha256 arm64_sequoia: "d9b7aaf2b753d0e741549390f1996e3283edd8ffea377ee9450ad324b66a239e"
+    sha256 arm64_sonoma:  "d9d52a9f142dbfc902e9b9edbc36d0175f999d0ccfdf8c4c55596b6f43cb2183"
+    sha256 sonoma:        "c0c85e628128ff1d50d811d486a57d67aa28148730304bdbbd3a91f685935104"
+    sha256 arm64_linux:   "a9091dc165ed17e69952976e3990b9027122ab1bde2d54b6aac42d1bacd3717f"
+    sha256 x86_64_linux:  "558b2a64792d33ea76537a2dca64927d15b91ebd0f13e07e776b01ac8acb8495"
   end
 
   head do
@@ -27,7 +28,7 @@ class Emacs < Formula
   depends_on "texinfo" => :build
   depends_on "gmp"
   depends_on "gnutls"
-  depends_on "tree-sitter"
+  depends_on "tree-sitter@0.25"
 
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"

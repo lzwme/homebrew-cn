@@ -1,5 +1,5 @@
 class GnupgAT14 < Formula
-  desc "GNU Pretty Good Privacy (PGP) package"
+  desc "GNU Privacy Guard (OpenPGP)"
   homepage "https://www.gnupg.org/"
   url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-1.4.23.tar.bz2"
   mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2"

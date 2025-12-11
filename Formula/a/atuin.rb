@@ -4,6 +4,7 @@ class Atuin < Formula
   url "https://ghfast.top/https://github.com/atuinsh/atuin/archive/refs/tags/v18.10.0.tar.gz"
   sha256 "02228929976142f63b4464a35b8b29b29155e1814cf03e99c95381954c5d9e37"
   license "MIT"
+  head "https://github.com/atuinsh/atuin.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "235d017cc3111495c86fbc1d312474ac34bef3b437f87d06f863e0c9958be678"

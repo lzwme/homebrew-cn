@@ -3,24 +3,25 @@ class Parsedmarc < Formula
 
   desc "DMARC report analyzer and visualizer"
   homepage "https://domainaware.github.io/parsedmarc/"
-  url "https://files.pythonhosted.org/packages/8f/6b/73336dabb33331988b9a473e14d2c36ddf83b41b2dfd5a0d34bdcab6bb1d/parsedmarc-8.18.9.tar.gz"
-  sha256 "1643dd037e269d0704de6b7b23f72a94e0131025448ff6dc71019c2740b5c595"
+  url "https://files.pythonhosted.org/packages/f3/ba/3d17e2ef8f570cd6c83aa4a2ddd917ad45b5e403df42e9feb77c0e2b334f/parsedmarc-9.0.5.tar.gz"
+  sha256 "07d10b7c09cdb9b7c07330b624d80e78674127ccc90292e7d80fd791ba4a2cac"
   license "Apache-2.0"
-  head "https://github.com/domainaware/parsedmarc.git", branch: "main"
+  head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4cd0d869be977abcf999622bfb097016092c2e88a6c6951f05d3bc505c9705f2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59ef408382bfdcebfdd42600a666366e174bf84f310e552e3a59d96bde1df693"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f22dde735f702fe0f2087d29f3d74a9ff054fd5cc1ffa17f107b9b479d24be9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5086a276d3555e780e8a6261824c5b10f3cc6d124eaf230db9bd7f3f75c48258"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9469ef499c70a17e03374d4777870e17b5a0b1f78115c82c881cc8b8d2081bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02cfbfe75e4d25d1fc6392be54b972076a2b319a972448d7abfed905443457f7"
+    sha256 cellar: :any,                 arm64_tahoe:   "b5c7edd05b5be7b908ec4e06b9ea3eac24f59a4cf689a865fe9c124ed1dc280c"
+    sha256 cellar: :any,                 arm64_sequoia: "03d26ff775130904f2bf3053d3c68a0d679a0678d67c38bf407b23878f5edfe1"
+    sha256 cellar: :any,                 arm64_sonoma:  "b4fb0dc2b61db89ca660f1ababa99c69df89edb5b0c9755bde4307c80d81be56"
+    sha256 cellar: :any,                 sonoma:        "82a73065fb744ad84c1ad190721283ddb13ad2437ff8786ee534f7ad9be4e8ed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "799d3ff4a1de01ae0695557e2c05c49025121001c34cf5d5242ba8a18c01561f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "791c78be58b619ac5a7de31e8c6c597c2748e311a7f05331f3a7d39f6a3eabec"
   end
 
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "cryptography"
-  depends_on "python@3.14"
+  depends_on "libyaml"
+  depends_on "python@3.13" # `mailsuite` refuses to build on 3.14, https://github.com/seanthegeek/mailsuite/issues/15
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -63,13 +64,13 @@ class Parsedmarc < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/19/9d/a8d41de19d81c87dd9d7528e8ad2f4f0c0282d0899a70a3d963472064063/boto3-1.41.1.tar.gz"
-    sha256 "fdee48cff828cfe0fb66295ae4d5f47736ee35f11e1de6be6c6dcd910f0810a4"
+    url "https://files.pythonhosted.org/packages/06/a8/e7a408127d61569df097d6c128775ffa3e609a023d4461686fd85fe5eef4/boto3-1.42.6.tar.gz"
+    sha256 "11dab889a24f378af6c93afd4aa06d7cace3866cbf02e78c7a77e9a7fb41967a"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/eb/f3/d14135ce1c0fe175254e969a2cf7394062a7e52bf1a3d699b30982c0622a/botocore-1.41.1.tar.gz"
-    sha256 "e98095492ef8f18d0d6a02ba87d9135c663d4627322e049228143b3a4ef4c2a3"
+    url "https://files.pythonhosted.org/packages/a6/28/e1ad336dd409e3cde0644cbba644056248e873b77129502f81581f5a222f/botocore-1.42.6.tar.gz"
+    sha256 "ab389c6874dfbdc4c18de9b4a02d300cb6c7f6f2d4622c73e5965aeef80e570d"
   end
 
   resource "cachetools" do
@@ -198,8 +199,8 @@ class Parsedmarc < Formula
   end
 
   resource "mailsuite" do
-    url "https://files.pythonhosted.org/packages/33/09/b3a97df229007b80187e2571932692911a83c500159e20cf5229c4ae4db0/mailsuite-1.10.0.tar.gz"
-    sha256 "c58338fcebbdd56b58c22a1b13d8a19581aef1588d4d56d22c51a2f18f723dce"
+    url "https://files.pythonhosted.org/packages/54/f0/e9b2c074d7ca5c7aa0241fde2fb38db8b215e3bb162afe1004c44ab70b2a/mailsuite-1.10.1.tar.gz"
+    sha256 "f903c64904196948c39931a1659a324c67a0295f4306aae09f1750a4482cceb2"
   end
 
   resource "maxminddb" do
@@ -248,8 +249,8 @@ class Parsedmarc < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/0a/03/a1440979a3f74f16cab3b75b0da1a1a7f922d56a8ddea96092391998edc0/protobuf-6.33.1.tar.gz"
-    sha256 "97f65757e8d09870de6fd973aeddb92f85435607235d20b2dfed93405d00c85b"
+    url "https://files.pythonhosted.org/packages/34/44/e49ecff446afeec9d1a66d6bbf9adc21e3c7cea7803a920ca3773379d4f6/protobuf-6.33.2.tar.gz"
+    sha256 "56dc370c91fbb8ac85bc13582c9e373569668a290aa2e66a590c2a0d35ddb9e4"
   end
 
   resource "publicsuffix2" do
@@ -258,8 +259,8 @@ class Parsedmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/eb/ae/b7fa7897c3929df869276d5ded2dcdd02879e4902c394d7077cb535996b0/publicsuffixlist-1.0.2.20251119.tar.gz"
-    sha256 "a035428f3f28224e8f7ad7d02d2975d2bd6e096f0ef7de68af96e61dd30acbf4"
+    url "https://files.pythonhosted.org/packages/df/48/44649ec6d76abb98eae98b71b05921d2873a0a1b1172904064ddc3cfe523/publicsuffixlist-1.0.2.20251209.tar.gz"
+    sha256 "dfb863d00dfb9bc071340596229468ae89a75d62546eabce38ebbd8b0d350ca9"
   end
 
   resource "pyasn1" do
@@ -297,6 +298,11 @@ class Parsedmarc < Formula
     sha256 "360b9e3dbb49a209c21ad61809c7fb453643e048b38924c765813546746e81c3"
   end
 
+  resource "pyyaml" do
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
+  end
+
   resource "regex" do
     url "https://files.pythonhosted.org/packages/cc/a9/546676f25e573a4cf00fe8e119b78a37b6a8fe2dc95cda877b30889c9c45/regex-2025.11.3.tar.gz"
     sha256 "1fedc720f9bb2494ce31a58a1631f9c82df6a09b49c19517ea5cc280b4541e01"
@@ -318,8 +324,8 @@ class Parsedmarc < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/ca/bb/940d6af975948c1cc18f44545ffb219d3c35d78ec972b42ae229e8e37e08/s3transfer-0.15.0.tar.gz"
-    sha256 "d36fac8d0e3603eff9b5bfa4282c7ce6feb0301a633566153cbd0b93d11d8379"
+    url "https://files.pythonhosted.org/packages/05/04/74127fc843314818edfa81b5540e26dd537353b123a4edc563109d8f17dd/s3transfer-0.16.0.tar.gz"
+    sha256 "8e990f13268025792229cd52fa10cb7163744bf56e719e0b9cb925ab79abf920"
   end
 
   resource "six" do

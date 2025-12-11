@@ -3,28 +3,18 @@ class Standardebooks < Formula
 
   desc "Tools for producing ebook files"
   homepage "https://github.com/standardebooks/tools"
+  url "https://ghfast.top/https://github.com/standardebooks/tools/archive/refs/tags/2.10.2.tar.gz"
+  sha256 "9fedd680f600802b259dd50ef0bee5a6d7a54f2ad0290ab14e8731c61e8f0203"
   license "GPL-3.0-or-later"
-  revision 2
   head "https://github.com/standardebooks/tools.git", branch: "master"
 
-  stable do
-    url "https://ghfast.top/https://github.com/standardebooks/tools/archive/refs/tags/2.10.0.tar.gz"
-    sha256 "817948c4d7c0d25db2c8a05c09449f9d6a39e75343ca31571430f2c3fba0a8e9"
-
-    # Backport fix for libxml2 >= 2.15
-    patch do
-      url "https://github.com/standardebooks/tools/commit/16387537a0ca44d251168eabb5fd239cb73c1c8c.patch?full_index=1"
-      sha256 "ef57b70a33cf2e90fd09deff2c385d6cd05174af2f447cd54b31a0797130cff3"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4297502a8238adaf771965ee41c5fe2a5b6cfefafeb7d4d7b7e13fcac30783bf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90ea2a0fc7068670c2c85da8a5bb67a892555ae29ae56593fddb1843572f2a40"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d798b6528f5751e6d99c2610d19f89bbde9c99d0b0b89096ce8c371c6b6fbbbe"
-    sha256 cellar: :any_skip_relocation, sonoma:        "04597674831dacd1fe6f5834f2f255a761733722596c19ba52ebc71ea84f5743"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "88dbd8cafb5c73d761413e48bde1dfaf89aed947ff11351faf04c95e8b8d338d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e68ec275e3b7745fba47e922c7ebaddaa6ddd47effa5e80ceaa27bf8adafe3a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b5bf7901206c97e49feb0f79e2f1db2c2b8dbe7d17d6c401585cebce9260b76"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d31955137f990847b94608c1704cc3c10c2e8e4ba649bc47f0d0fd88418811f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c1eed6c518efe88ff1a40b139d34d0daf7ae78d0d189fc61f51e1dcccbf7e31"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e96a53c9edf4f8824e3ad4db85ce76075218018179d03827da37f8775336e69d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "90c77f42b41b252bf143c79e1e5fd2ce89710454c6e5cd8a96907d87efa4bd09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6be8fe8d17ff88b2beeba61122b4b1bdc35e336668c6ebbc027e4b866bfbdd02"
   end
 
   depends_on "rust" => :build # for selenium
@@ -53,8 +43,8 @@ class Standardebooks < Formula
   end
 
   resource "cairosvg" do
-    url "https://files.pythonhosted.org/packages/d5/e6/ec5900b724e3c44af7f6f51f719919137284e5da4aabe96508baec8a1b40/CairoSVG-2.7.1.tar.gz"
-    sha256 "432531d72347291b9a9ebfb6777026b607563fd8719c46ee742db0aef7271ba0"
+    url "https://files.pythonhosted.org/packages/ab/b9/5106168bd43d7cd8b7cc2a2ee465b385f14b63f4c092bb89eee2d48c8e67/cairosvg-2.8.2.tar.gz"
+    sha256 "07cbf4e86317b27a92318a4cac2a4bb37a5e9c1b8a27355d06874b22f85bef9f"
   end
 
   resource "chardet" do
@@ -98,8 +88,8 @@ class Standardebooks < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/c0/89/37df0b71473153574a5cdef8f242de422a0f5d26d7a9e231e6f169b4ad14/gitpython-3.1.44.tar.gz"
-    sha256 "c87e30b26253bf5418b01b0660f818967f3c503193838337fe5e573331249269"
+    url "https://files.pythonhosted.org/packages/9a/c8/dd58967d119baab745caec2f9d853297cec1989ec1d63f677d3880632b88/gitpython-3.1.45.tar.gz"
+    sha256 "85b0ee964ceddf211c41b9f27a49086010a190fd8132a24e21f362a4b36a791c"
   end
 
   resource "h11" do
@@ -118,8 +108,8 @@ class Standardebooks < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/80/61/d3dc048cd6c7be6fe45b80cedcbdd4326ba4d550375f266d9f4246d0f4bc/lxml-5.3.2.tar.gz"
-    sha256 "773947d0ed809ddad824b7b14467e1a481b8976e87278ac4a730c2f7c7fcddc1"
+    url "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz"
+    sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
   end
 
   resource "markdown-it-py" do
@@ -148,8 +138,8 @@ class Standardebooks < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/2a/80/336820c1ad9286a4ded7e845b2eccfcb27851ab8ac6abece774a6ff4d3de/psutil-7.0.0.tar.gz"
-    sha256 "7be9c3eba38beccb6495ea33afd982a44074b78f28c434a1f51cc07fd315c456"
+    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
+    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
   end
 
   resource "pygments" do
@@ -168,23 +158,23 @@ class Standardebooks < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/8e/5f/bd69653fbfb76cf8604468d3b4ec4c403197144c7bfe0e6a5fc9e02a07cb/regex-2024.11.6.tar.gz"
-    sha256 "7ab159b063c52a0333c884e4679f8d7a85112ee3078fe3d9004b2dd875585519"
+    url "https://files.pythonhosted.org/packages/cc/a9/546676f25e573a4cf00fe8e119b78a37b6a8fe2dc95cda877b30889c9c45/regex-2025.11.3.tar.gz"
+    sha256 "1fedc720f9bb2494ce31a58a1631f9c82df6a09b49c19517ea5cc280b4541e01"
   end
 
   resource "repro-zipfile" do
-    url "https://files.pythonhosted.org/packages/ed/86/a680b85796b667a060bc673294e8adc3201a28381b23a61702ac0f51f732/repro_zipfile-0.4.0.tar.gz"
-    sha256 "fde4cf1300e740f2fd1745708ba8f1366a70853a39af6266e1e04ae81c1231c1"
+    url "https://files.pythonhosted.org/packages/68/d4/514da0758e1ba5723ad45ff9981c8e3b30f5114516f9ba3968ccae3c0043/repro_zipfile-0.4.1.tar.gz"
+    sha256 "0d5995b4311ed4871cbf6b3210e6a340b0f35f6e4ce2ba27676470bf6987c1db"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
-    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/a1/53/830aa4c3066a8ab0ae9a9955976fb770fe9c6102117c8ec4ab3ea62d89e8/rich-14.0.0.tar.gz"
-    sha256 "82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "roman" do
@@ -193,13 +183,13 @@ class Standardebooks < Formula
   end
 
   resource "selenium" do
-    url "https://files.pythonhosted.org/packages/e0/bf/642cce8b5a9edad8e4880fdefbeb24f69bec2086b1121c63f883c412b797/selenium-4.31.0.tar.gz"
-    sha256 "441cffc436a2e6659fe3cfb012692435652efd38b0d368d16f661a5db47825f5"
+    url "https://files.pythonhosted.org/packages/af/19/27c1bf9eb1f7025632d35a956b50746efb4b10aa87f961b263fa7081f4c5/selenium-4.39.0.tar.gz"
+    sha256 "12f3325f02d43b6c24030fc9602b34a3c6865abbb1db9406641d13d108aa1889"
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/81/9c/42314ee079a3e9c24b27515f9fbc7a3c1d29992c33451779011c74488375/setuptools-78.1.1.tar.gz"
-    sha256 "fcc17fd9cd898242f6b4adfaca46137a9edef687f43e6f78469692a5e70d851d"
+    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "smartypants" do
@@ -223,8 +213,8 @@ class Standardebooks < Formula
   end
 
   resource "tinycss2" do
-    url "https://files.pythonhosted.org/packages/7a/fd/7a5ee21fd08ff70d3d33a5781c255cbe779659bd03278feb98b19ee550f4/tinycss2-1.4.0.tar.gz"
-    sha256 "10c0972f6fc0fbee87c3edb76549357415e94548c1ae10ebccdea16fb404a9b7"
+    url "https://files.pythonhosted.org/packages/a3/ae/2ca4913e5c0f09781d75482874c3a95db9105462a92ddd303c7d285d3df2/tinycss2-1.5.1.tar.gz"
+    sha256 "d339d2b616ba90ccce58da8495a78f46e55d4d25f9fd71dfd526f07e7d53f957"
   end
 
   resource "titlecase" do
@@ -248,13 +238,13 @@ class Standardebooks < Formula
   end
 
   resource "unidecode" do
-    url "https://files.pythonhosted.org/packages/f7/89/19151076a006b9ac0dd37b1354e031f5297891ee507eb624755e58e10d3e/Unidecode-1.3.8.tar.gz"
-    sha256 "cfdb349d46ed3873ece4586b96aa75258726e2fa8ec21d6f00a591d98806c2f4"
+    url "https://files.pythonhosted.org/packages/94/7d/a8a765761bbc0c836e397a2e48d498305a865b70a8600fd7a942e85dcf63/Unidecode-1.4.0.tar.gz"
+    sha256 "ce35985008338b676573023acc382d62c264f307c8f7963733405add37ea2b23"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
+    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
   end
 
   resource "wcwidth" do

@@ -1,8 +1,8 @@
 class Atlantis < Formula
   desc "Terraform Pull Request Automation tool"
   homepage "https://www.runatlantis.io/"
-  url "https://ghfast.top/https://github.com/runatlantis/atlantis/archive/refs/tags/v0.37.1.tar.gz"
-  sha256 "b6120ac5b3d92c6e8619877a95c1fb20e473f8f9d3a982fa6a840969dfe0f149"
+  url "https://ghfast.top/https://github.com/runatlantis/atlantis/archive/refs/tags/v0.38.0.tar.gz"
+  sha256 "ebb47be23b30141365e18870d1633a67f66988f774112ca7a62d818fcaf7f12b"
   license "Apache-2.0"
   head "https://github.com/runatlantis/atlantis.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Atlantis < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77be434530a8aac10a1978a717592387098e4600bc496e1dfefff3d0e0ea428c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77be434530a8aac10a1978a717592387098e4600bc496e1dfefff3d0e0ea428c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77be434530a8aac10a1978a717592387098e4600bc496e1dfefff3d0e0ea428c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "207d9283db36f7d4a119ad67ff3ca9c7dd6096d6f115a8a96b5c1f86ae565acd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3a5f1a5c8051138beb0bf4c6958a00f62676ef6f5de276c01ae9cff87301312"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f3319b3cc7ca45fb2c2c82641394d0ed8814ff6870a0bb25d1b3cb49a90d27a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "274a7eb592499722c8bd87892d5db93b8e22fed8aacb1c7ea58a6c2431e49d45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "274a7eb592499722c8bd87892d5db93b8e22fed8aacb1c7ea58a6c2431e49d45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "274a7eb592499722c8bd87892d5db93b8e22fed8aacb1c7ea58a6c2431e49d45"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9889130047744d5d806a3c082ec1bf37437c97c3b6e1949844d5341ee9cbfd15"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28783d6f1ab6552783d5145a57e51f3c6de8487e8562a63468f41c34ec8f8b2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d395c5d9beb267f194ce2acb8305039f416ca216774caa0f11b2e1c55b16b94"
   end
 
   depends_on "go" => :build

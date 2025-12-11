@@ -19,7 +19,7 @@ class AnsibleAT9 < Formula
 
   keg_only :versioned_formula
 
-  # https://docs.ansible.com/ansible/latest/reference_appendices/release_and_maintenance.html#ansible-community-package-release-cycle
+  # https://docs.ansible.com/projects/ansible/latest/reference_appendices/release_and_maintenance.html#ansible-community-package-release-cycle
   deprecate! date: "2024-11-30", because: :unmaintained
   disable! date: "2025-11-30", because: :unmaintained
 

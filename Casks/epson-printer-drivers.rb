@@ -8,8 +8,6 @@ cask "epson-printer-drivers" do
   desc "Drivers for Epson printers"
   homepage "https://epson.com/"
 
-  depends_on macos: ">= :el_capitan"
-
   pkg "EPSON Printer.pkg"
 
   uninstall pkgutil: [

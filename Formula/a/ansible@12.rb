@@ -16,15 +16,21 @@ class AnsibleAT12 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5c5177c09facde45fc16f8b79ceade7c4b8b7f16af9d69e15606b5bf52ab9d41"
-    sha256 cellar: :any,                 arm64_sequoia: "10b6402e9b6f795a4466cc1c7ffd757f2f65af0af3860080a0af7b29bd6bb29e"
-    sha256 cellar: :any,                 arm64_sonoma:  "a4f9aa7b248fd9024576bb21fac5143ef94cbe0d82d0651e438dce1bbad644ac"
-    sha256 cellar: :any,                 sonoma:        "b3d729815b587f7dd625d931acb2fa10037e233f2a36d461e29cf36992467a18"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6595836ab272ab8c204dbdc74264657b128158a316a54e4515fc5da3c7d5cb9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9059d5c7c98a4ea816d5841a156e72bf06a2f4a3c27081309d4ebfbca50b12a8"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "3622d487811b8fc6984b94cdf9a1c6f5363e0f6e0733ec6b3a43050cec595fc5"
+    sha256 cellar: :any,                 arm64_sequoia: "26e3b904cd8896182a471c61df519b42f0af422446f9dedaa7076934b2f8c104"
+    sha256 cellar: :any,                 arm64_sonoma:  "4de67a97b508a48eb166f6e6a22cfdfadc547d76aa629b854cd20a567de63d0c"
+    sha256 cellar: :any,                 sonoma:        "811cd8329c0734736a3e2521ebd33d6af0966dc093449e846b0f152c6b061777"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dcbb3d93307ecffcfc91cebf781c60ce2dd31761a626a9ba49558d14ddadf029"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73577ec86fb0577dfb2e8d04b3db81ba4771f42f56ac349b91b38794a4938a1f"
   end
 
   keg_only :versioned_formula
+
+  # https://docs.ansible.com/projects/ansible/latest/reference_appendices/release_and_maintenance.html#ansible-community-package-release-cycle
+  # https://forum.ansible.com/t/release-announcement-ansible-community-package-12-3-0/44980
+  deprecate! date: "2025-12-09", because: :unmaintained
+  disable! date: "2026-12-09", because: :unmaintained
 
   # `pkgconf` and `rust` are for bcrypt
   depends_on "pkgconf" => :build
