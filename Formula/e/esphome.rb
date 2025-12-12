@@ -3,18 +3,17 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/6a/42/581c64ef757d3998c691fd7304700d2180115e174d320f0c9a84183480fe/esphome-2025.11.4.tar.gz"
-  sha256 "d4433daac71e8fc468d3ffc42dbbc06db8aafcd30152ab8249056a8ae62e4f17"
+  url "https://files.pythonhosted.org/packages/c0/bc/6bcec19615710a4e878d0c975d0a74fbe8b7f5af0d98a394c08597c0f0c0/esphome-2025.11.5.tar.gz"
+  sha256 "9f47f158b6db4d0035f2f3827f11a4393f56ce6d0529e857e37c045f28e523de"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e671f39c1daf00504c7bfe5cff1d26d823550494dfb47f4c3f3d14548fe1d238"
-    sha256 cellar: :any,                 arm64_sequoia: "2eb3894b131287582948436de55592716da662b1ac3c27bbb6c69d95930dad1d"
-    sha256 cellar: :any,                 arm64_sonoma:  "9528a1db2ab39bdfee947353e8b07a6158c9543f6adfd1b5b959c10fdfd63766"
-    sha256 cellar: :any,                 sonoma:        "2c69e7554db52881c262dd59f21080ab618e62d801f5c5b1b90b28433b24978f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e05b08bf4d1be6c30a9dfe7f8ea515383fb270c1375eb22e3edb4fe5c0abadaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3822358772eb89528bacc4c0ee0285f17d491bd78774ad0ee7a38625da83a1c8"
+    sha256 cellar: :any,                 arm64_tahoe:   "58c8239b424ad63c7fa486b634f4e7a120d982b8311466c864e5355832eb7e71"
+    sha256 cellar: :any,                 arm64_sequoia: "ae9db2badd6f94c14750611cb17f2b4f827518d1a2497515f62154b46827dc54"
+    sha256 cellar: :any,                 arm64_sonoma:  "08a38e05bc5a50bbf5e32344db93e70ed08c75a7b27896498e9ba70eeeaa1ce1"
+    sha256 cellar: :any,                 sonoma:        "864e25ec6b2d76e4136e34d88141a155f632e03f4309ee9722c4c158c8730536"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1ae232ba8f17b5bab836e7e109b000f170b1d46cecd0c6393e4d74e1517b02b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67c12e45c9f2fc2414fea05e4fefdd0fc12a765e80db5026d7dbd3a835e06d04"
   end
 
   depends_on "certifi" => :no_linkage
@@ -341,8 +340,8 @@ class Esphome < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
+    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
   end
 
   resource "uvicorn" do

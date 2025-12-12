@@ -1,18 +1,18 @@
 class Azion < Formula
   desc "CLI for the Azion service"
   homepage "https://github.com/aziontech/azion"
-  url "https://ghfast.top/https://github.com/aziontech/azion/archive/refs/tags/4.12.2.tar.gz"
-  sha256 "0d2c8a24105eaf550fae4746b65f1134bac45ce6054cd94f9f4b5cd4f1596b56"
+  url "https://ghfast.top/https://github.com/aziontech/azion/archive/refs/tags/4.12.3.tar.gz"
+  sha256 "7b9b7ba821151f9cc07f15330c6d91a6716e6b9d751f8a01f1c85d41d39a8219"
   license "MIT"
   head "https://github.com/aziontech/azion.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "520de875373c3cfeec6dc6141fbcd2459a765c7bdae3ef43d8a5f521f42cfe32"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "520de875373c3cfeec6dc6141fbcd2459a765c7bdae3ef43d8a5f521f42cfe32"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "520de875373c3cfeec6dc6141fbcd2459a765c7bdae3ef43d8a5f521f42cfe32"
-    sha256 cellar: :any_skip_relocation, sonoma:        "03f4c4012047e053b34074d3cb077fe2484245eff6b8f0590c91db1d59b6e7d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27e16f4e4a67e024626b4495a307e11311168dcf384dbc37f89bf49975ea6eae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7971830afff0afdf794ce13d1ca21394a7dea2a5e18639061a5fc9351f3c58e6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "097c2f59db4c05628f8c3c3a3807566e672b1830ab9252b6b338fb73f124c422"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "097c2f59db4c05628f8c3c3a3807566e672b1830ab9252b6b338fb73f124c422"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "097c2f59db4c05628f8c3c3a3807566e672b1830ab9252b6b338fb73f124c422"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a5dcd6e5fbfb750689ef43b9fbeada9a84155721a41e0daf4e723c03b5837a66"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f3bea9f3c81ff41afca79d965a9f2c133f8b7389f79361225d50b8ba76ff1c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b84016c2220674f2502745ea79ee101389dee684b727b46f9d04996bbf19bead"
   end
 
   depends_on "go" => :build

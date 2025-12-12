@@ -16,8 +16,6 @@ class Tmate < Formula
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "e05c861a81f5b44cf1c246ef007a24de34c6499c7c6b1fdf97ccfb9f9d43f3d4"
     sha256 cellar: :any,                 arm64_sequoia:  "b27b6f267188c6bd851cf061dc7fabf97a127c7930a57070cb46caf0333ef71f"
@@ -33,6 +31,9 @@ class Tmate < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:    "d32cec664457d6e17deecc2f05a9b8fae500e5621473679789e413a453f0032c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b3b3d87ea67d6ee52e3775578b7f37d46cca673aae9f412484439d10e9de620"
   end
+
+  deprecate! date: "2025-12-11", because: :unmaintained
+  disable! date: "2026-12-11", because: :unmaintained
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build

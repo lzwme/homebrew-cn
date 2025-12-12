@@ -1,8 +1,8 @@
 class Unitycatalog < Formula
   desc "Open, Multi-modal Catalog for Data & AI"
   homepage "https://unitycatalog.io/"
-  url "https://ghfast.top/https://github.com/unitycatalog/unitycatalog/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "fae708a22f1e38e19f754aca22925d66016a7efeaab680ce87c27496c75078d1"
+  url "https://ghfast.top/https://github.com/unitycatalog/unitycatalog/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "108bde8b38c5596a7cab2cb616d7d18a41b4d542380c30e33932d8b105bc3bd9"
   license "Apache-2.0"
 
   livecheck do
@@ -11,8 +11,7 @@ class Unitycatalog < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "8d0ef55f20e1d003a29001a2e018e6b0fb839a6c0bab924c25815a92ec7ed421"
+    sha256 cellar: :any_skip_relocation, all: "d51b4ca73c34959c4fddc6f8f5c52b833d950a4b6ab29e4d1b249ebedf91f04a"
   end
 
   depends_on "sbt" => :build

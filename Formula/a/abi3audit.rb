@@ -3,13 +3,12 @@ class Abi3audit < Formula
 
   desc "Scans Python packages for abi3 violations and inconsistencies"
   homepage "https://github.com/pypa/abi3audit"
-  url "https://files.pythonhosted.org/packages/3a/e1/cf4215a7777f01fd69d92fe330eff30d45293f0adf1d6f26ef385dd098a7/abi3audit-0.0.24.tar.gz"
-  sha256 "ce1469313511e1ba6895c44320f8f74faa592ef22cfe11b3e9e14e4aed3a3b62"
+  url "https://files.pythonhosted.org/packages/7c/ac/8caab3d2e50ef1b9f03a42e33854d9c3e12842f79702b2051cf6f5d76b7e/abi3audit-0.0.25.tar.gz"
+  sha256 "d18f0ccd482084d002ba3135003e11ad87a7f5a5de4ae0d1485df06ece417236"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9964c74297ec7cc7cbba42749be2a7ddb9ac9d7454e61d33260ef80e74aba569"
+    sha256 cellar: :any_skip_relocation, all: "fa4eefe4d47d9e84e4bf5bdae2096c2ddb867c25ffe41e8feea9e61a1b8798c5"
   end
 
   depends_on "cmake" => :build
@@ -114,8 +113,8 @@ class Abi3audit < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
+    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
   end
 
   def install

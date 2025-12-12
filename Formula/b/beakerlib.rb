@@ -1,17 +1,17 @@
 class Beakerlib < Formula
   desc "Shell-level integration testing library"
   homepage "https://github.com/beakerlib/beakerlib"
-  url "https://ghfast.top/https://github.com/beakerlib/beakerlib/archive/refs/tags/1.31.6.tar.gz"
-  sha256 "0f10799eb01625e45bbd84c0bc4fe1dda58c7dc33d207e91898cc56627fffd30"
+  url "https://ghfast.top/https://github.com/beakerlib/beakerlib/archive/refs/tags/1.32.tar.gz"
+  sha256 "f0464a18cea43f851aff9097d978acfadfdce1d06c6a71711e0321f5673f8562"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "67c41cdb44b346377b71971b913532f6c71c9f5f5bfc3fd6b45f5fc958391880"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b0aa3088b422da626306b144531c0c4a3d27dfa6007d626528396c26c2c6cc0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae58c4f636b46fbb6180e2adf0320421a2cee7b164ca7212fd98edc1aa7f44ad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9a35040b3c16fca97747cdc815bf33e5d207e8269bb8a1c7acb9cca010e61735"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c97853218480ad9b6d3432b8310f079ce55a9afc0c0a8e126a139cce9f096d23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8d572cdd457970cbeaba48af1bb069d027691913e9a69789ab10d5083aa3f08"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dfb14dd13f3fbe949947d2cde00f3648b2089944ebda5a6ea38724a6fc3e7ffe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7930f77928bcc354722a6bbbf7a911997673ea598e1a7b5ce677a193ff4c8b3f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e2acba25dbea55066d57c8324d71146c8538c5db5b580ec22d0d37f2b085281"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2674f1fe609fac3380ea5edd2055263bfc074221fd8a83bc1bcf8f2cbd69b0f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ad66784a53ce0c9dc5904a8e78e450b79fa68a6ef6347434a736ad64bb119f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d64495520630e4c1711c3dbf639aed9412c3a2cba6ef188fb1cc5b1ce6e7c352"
   end
 
   on_macos do

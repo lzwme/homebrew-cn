@@ -1,8 +1,8 @@
 class Ptex < Formula
   desc "Texture mapping system"
   homepage "https://ptex.us/"
-  url "https://ghfast.top/https://github.com/wdas/ptex/archive/refs/tags/v2.4.3.tar.gz"
-  sha256 "435aa2ee1781ff24859bd282b7616bfaeb86ca10604b13d085ada8aa7602ad27"
+  url "https://ghfast.top/https://github.com/wdas/ptex/archive/refs/tags/v2.5.0.tar.gz"
+  sha256 "d3c2116f5cd650b22217fcdfad9586b6389173fd1d0b694413622743e52083ee"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,25 +11,22 @@ class Ptex < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "cfd9eb48a412ed267f3572f66012239a020db57b980e104a30a3fe6b6e2cda06"
-    sha256 cellar: :any,                 arm64_sequoia:  "c51c675b7d8fcc6a5e220fae0ea0e631b186401e4979216e19e9d637f34e68a1"
-    sha256 cellar: :any,                 arm64_sonoma:   "834009b39e2e8421eacc189691afe5fdfc87d1dcba237739fc88879d60c87338"
-    sha256 cellar: :any,                 arm64_ventura:  "3c9c6e31882c6401c1cd08d446cec4a6ba90d1f8199230559bac04627263b8ce"
-    sha256 cellar: :any,                 arm64_monterey: "8ad7824e9c1423c89c1106c9e4d5b1867c7b0bb0682ed8205520d1d5fc615d6b"
-    sha256 cellar: :any,                 sonoma:         "0a99144782115f4b8d93e31f64b2002a1f40968b559514eaad1fc0667471964f"
-    sha256 cellar: :any,                 ventura:        "ed39908c137c16838470243879af1d6ae1ef3441e79d30b16bf11dbb6e366dd3"
-    sha256 cellar: :any,                 monterey:       "7103ad329a193ad7354dc88ca5c2292190b380c2ab133a4bb49cbbbdae29943d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "9134e1db0e0fe299cc1bfe7292d8cbdad6bee6cd54513dc88d85b431850a8929"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9088f4aef6f14b8a9b0ff49f5d36d18e725463e48e918ef3d7eee20b2a14618d"
+    sha256 cellar: :any,                 arm64_tahoe:   "5e87dcb5a5f47a151aabe8b86e33125a61f77437aadbfe4fe794bf612fd7ca91"
+    sha256 cellar: :any,                 arm64_sequoia: "6959719863c4ef46046b550acd60ef2f98671f5156017b9d6b904b463d619b03"
+    sha256 cellar: :any,                 arm64_sonoma:  "e7eab4d9558a5b7bd09be12826dd9f6a595b865164209a2ea6070f825669d5d4"
+    sha256 cellar: :any,                 sonoma:        "82123f7d97b11e4ae637b663b2c64b1f1b49d656a83233023126c18949256c7e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc692869082c2c57bdb2f94f731458fc2773b38155f1c8ad78e7fca60ba51e7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dfc6d70bcfd1b9c0b9329563032d08e01e75cede3221d023fe9ce35852f9f2f"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
+  depends_on "libdeflate"
 
   uses_from_macos "zlib"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_CXX_STANDARD=17", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

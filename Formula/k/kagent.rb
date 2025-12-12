@@ -1,18 +1,18 @@
 class Kagent < Formula
   desc "Kubernetes native framework for building AI agents"
   homepage "https://kagent.dev"
-  url "https://ghfast.top/https://github.com/kagent-dev/kagent/archive/refs/tags/v0.7.6.tar.gz"
-  sha256 "c6d1edb05e85c6d353d9ba099f4324b11d7430c4f9789260593a7061bdfa9e00"
+  url "https://ghfast.top/https://github.com/kagent-dev/kagent/archive/refs/tags/v0.7.7.tar.gz"
+  sha256 "ddb8d0284aa8417352d2b2eb0f22804f86e4419c91dd3d5de2033b28f97dc2b0"
   license "Apache-2.0"
   head "https://github.com/kagent-dev/kagent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff6e9341a631a1990f82b496171a966bfd0ba54beb25131eff7f11754861c1f1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff6e9341a631a1990f82b496171a966bfd0ba54beb25131eff7f11754861c1f1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff6e9341a631a1990f82b496171a966bfd0ba54beb25131eff7f11754861c1f1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "346ee8e16c477ea001cf233d45289afd5aa3cb493d1acf07324560ee0fe950ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9679e68390dbf8ff508b6d9b2ebf1f7f2574ecc2f6bc2cbd8f5e2efde5f46a79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54edd855db56e62ad7786ead17d8761ec1fc0d46957070d96195fe88093dc228"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e504de36872b2532f0d7d1a1eaeb127b788055c24aa88b62a7bfcaa2e6de03e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e504de36872b2532f0d7d1a1eaeb127b788055c24aa88b62a7bfcaa2e6de03e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e504de36872b2532f0d7d1a1eaeb127b788055c24aa88b62a7bfcaa2e6de03e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7a317a79f38b0cc611367c64bb062da4f9212d0baae54cfc44d4f1e8aa3af470"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "935d4fe715fe78355c830f23dca91f176c27a7ba54111f948ffa23a67a94e6e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3faec155874c54b6663ad91d7c6c44845e1ce9ddf4e65b19a1a787ffd687db7d"
   end
 
   depends_on "go" => :build

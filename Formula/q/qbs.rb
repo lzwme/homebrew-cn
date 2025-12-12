@@ -1,8 +1,8 @@
 class Qbs < Formula
   desc "Build tool for developing projects across multiple platforms"
   homepage "https://wiki.qt.io/Qbs"
-  url "https://download.qt.io/official_releases/qbs/3.1.1/qbs-src-3.1.1.tar.gz"
-  sha256 "95e8de11cd66710975d4225d35ee01fd43691e4b65609399de367cb8a1df3af9"
+  url "https://download.qt.io/official_releases/qbs/3.1.2/qbs-src-3.1.2.tar.gz"
+  sha256 "cb0a70eb33bee5a0122df3e6856b1b98d9b00c6f175f55cbb3442bbc9cc2cd6f"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only"] },
     { any_of: ["LGPL-3.0-only", "LGPL-2.1-only" => { with: "Qt-LGPL-exception-1.1" }] },
@@ -16,12 +16,12 @@ class Qbs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "db039c21061aab9b2a21c2a7fb7521650536e8a9e4fea80641bb566d4a6a86b3"
-    sha256 cellar: :any,                 arm64_sequoia: "6c82107e93d73b2a72cd125968806484ac831ad77c5600886a8e2854a3ce9783"
-    sha256 cellar: :any,                 arm64_sonoma:  "cdb657dd6003bd6730e8584b3d6d611d759f8b06d3012d9e9c35cfcef59cc02e"
-    sha256 cellar: :any,                 sonoma:        "91b852713a5a31e674c3657dd3ef06e274c937f18a4feae1aaa9dca9991feabd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc1031a9aa3769989ecf2648f0050f66957093d04e21a71b1c5c1dc38d6717be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac7ac0414e853295957695db4ffbd90816513cbda3099aadb6708e2aad1310f3"
+    sha256 cellar: :any,                 arm64_tahoe:   "4d1a72bd117603ce416b493189fbcd3e52b4192d781d57dc4034c95e2c8f6725"
+    sha256 cellar: :any,                 arm64_sequoia: "dc5d07540a9e8f7f8d67f595f9239caceebe7de679dc9b4cd026cce4ba7dbabe"
+    sha256 cellar: :any,                 arm64_sonoma:  "761ffdd3713a9edffa055eff52065931ab3fd24f416a2ed962f3f13629322b67"
+    sha256 cellar: :any,                 sonoma:        "c807a83befa12ef13afbc83bca67d643f95f3b374ec38b324f99fd0d31d6675e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b55f674fc0f3cc17d3b6972974d9a796857e2983e5128ab4d4e161add8774158"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4b061b7637c7ed483ae5211520f5befefe973dbf7079d05ddc3542e7a3018f4"
   end
 
   depends_on "cmake" => :build

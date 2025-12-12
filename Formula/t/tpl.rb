@@ -6,8 +6,6 @@ class Tpl < Formula
   license "BSD-1-Clause"
   head "https://github.com/troydhanson/tpl.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "c308e47d85f79d24b666e56b5c980f7593ca25816e5e73b614964a224bf82466"
     sha256 cellar: :any,                 arm64_sequoia:  "563eee39c340a994167ebeaa62bba135164a2873031485754b3bd237e235a313"
@@ -23,6 +21,9 @@ class Tpl < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:    "649efbc4c4e6c8e57d4f7207bc2ede36facb438e7fd272162722f9707db999bf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "49c4f470d6782300dd24da0af8a3886cc977a9c24a0de37c606181b3db09e44d"
   end
+
+  deprecate! date: "2025-12-11", because: :repo_archived
+  disable! date: "2026-12-11", because: :repo_archived
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build

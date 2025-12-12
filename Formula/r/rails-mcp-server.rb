@@ -1,17 +1,17 @@
 class RailsMcpServer < Formula
   desc "MCP server for Rails applications"
   homepage "https://github.com/maquina-app/rails-mcp-server"
-  url "https://ghfast.top/https://github.com/maquina-app/rails-mcp-server/archive/refs/tags/v1.2.3.tar.gz"
-  sha256 "679f894c2fce87eb56f29cef9332edde9aafe87fb4aa0587a3f65cd96c112395"
+  url "https://ghfast.top/https://github.com/maquina-app/rails-mcp-server/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "aef71b34cb41b4dbcd93d97f8e750d4f2fd15e74fb03c363dbceba22d6d5fa52"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7a035b879c8340fe514b53020e87d5c56badc0818025349f0d2d5f78806daf61"
-    sha256 cellar: :any,                 arm64_sequoia: "d5e9d141cb526b10b92bc650e8612807e1a197535f9404af8989ebeffd2f94df"
-    sha256 cellar: :any,                 arm64_sonoma:  "da4dc96f326399108a10cefb7b892fe5dddbced6c4986ebce80416b048fc1701"
-    sha256 cellar: :any,                 sonoma:        "c20ed88da80953c89f1e851365ff6ba8bfa375047b633ade123b32e8e7d8ac1c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "42603401417642b6f5079f519c6ed4a20e3ea67a47aa0f8007caacca14e934b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3a64bb245bd7fa8ebcfda6117c55a03001bd27c67bc054d62c0f9d0be3c5afe"
+    sha256 cellar: :any,                 arm64_tahoe:   "d6463d51cc5b0db9b326569342cee4d6aea9c9268cd0b353a0cd2b06ac2d254a"
+    sha256 cellar: :any,                 arm64_sequoia: "40c7b7c44b4ac3af2d3159665d8af7a2efbbd143f6a93e3ced278f327f9d62c5"
+    sha256 cellar: :any,                 arm64_sonoma:  "e009e8da2ba9ac9318e45df214d0049cbaf856635ee5acce9a4a612c25437c4b"
+    sha256 cellar: :any,                 sonoma:        "6a5277bd9f7b6e45317a06c0489bcdc6d9c332558d21dcff22a924280e580a40"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "254e5dcbf6f694d3ef29c4f3a3bc2b9bf6256d25a379b9f8fefdeb70bbf2616e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7a5ae6520989d1d4638742a51a3c04e97d1637853b9915b9bb6a24eab9dad84"
   end
 
   depends_on "openssl@3"

@@ -1,8 +1,8 @@
 class VespaCli < Formula
   desc "Command-line tool for Vespa.ai"
   homepage "https://vespa.ai"
-  url "https://ghfast.top/https://github.com/vespa-engine/vespa/archive/refs/tags/v8.618.24.tar.gz"
-  sha256 "4c83dd7523b14b7ff4d114c7d0bba1c528c79a3b162cc020923af320df8a6b8e"
+  url "https://ghfast.top/https://github.com/vespa-engine/vespa/archive/refs/tags/v8.620.35.tar.gz"
+  sha256 "303cb826483c4f228e44b088d2ae265f13ff4c1604689d585611a4a36250cffa"
   license "Apache-2.0"
 
   livecheck do
@@ -12,12 +12,12 @@ class VespaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8eb51e2440a0625d60491b74bcca5b7897d8632af93fcc3f0b70eb904ed958d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08bde659d565b59d84a8839fd0f589c70f350afa35cc5eef67ff01c258b5dc15"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ea5397ef188086057c85d0f7356414d32956b3692561816277ad8d86f510c6d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6a9ea1b1db912f9022fcc14b6069f37d6f4b6b60789f1ee4d1459c057a499848"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5db30df3ed06a855fff4b163c35902500dd0e58c22af28c0ea86ae4134faceb2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bf073647767d0fdb1a6efed16b71e89d047f67682b2633e7f5931b17de3a662"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c9d0c07373ed88adeb81a6a650988668c902ec558cb588fc66c92e60a145ac8b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0d3107dcadf06603bbb65c11d796c2e23eadd79ed94fb35d1c2ab551cc1fb34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6853278c3a0a53545a0bcb817f24f6526ae6c65edfd17c385bb8280c3606ec83"
+    sha256 cellar: :any_skip_relocation, sonoma:        "95e67bd83133505075a3519d2dffb30e9d002d2d390526abb8f4d0bba8cef773"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "867b6eb8777f79342f5b1553ea28d3b72e2b8cd92a43a58a43daf8731c9cabc8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16a26559e302fcf41c2e7be6455e4942e77245b5b0117bb396d6dda223c633c0"
   end
 
   depends_on "go" => :build

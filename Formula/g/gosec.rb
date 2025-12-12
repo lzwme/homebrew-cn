@@ -1,18 +1,18 @@
 class Gosec < Formula
   desc "Golang security checker"
   homepage "https://securego.io/"
-  url "https://ghfast.top/https://github.com/securego/gosec/archive/refs/tags/v2.22.10.tar.gz"
-  sha256 "43f285d6bf40b1df9d72fc3e24658910ddd01cfe8bf03286980a129009e93af1"
+  url "https://ghfast.top/https://github.com/securego/gosec/archive/refs/tags/v2.22.11.tar.gz"
+  sha256 "849420b5e2017a6fc1520c4034c740e24d03dede1724f2d3c78648e04732a35f"
   license "Apache-2.0"
   head "https://github.com/securego/gosec.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52362f5d5a3ab833a26a002f1b84d2c356545ee9f299f3b6f5492c508e4db06c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52362f5d5a3ab833a26a002f1b84d2c356545ee9f299f3b6f5492c508e4db06c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52362f5d5a3ab833a26a002f1b84d2c356545ee9f299f3b6f5492c508e4db06c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d9a9b6cfe98c207938f2ebba69bcac7bb8af3bae9f5905ca403d0339dcb3d8f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba5f25c5893bcd4d140a98e5733e30677aa90cdc71fc5f368aec130551d56df1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef71d94640abaa605c83e978a0b4e282bc2fcaa3b4ff47957efb59a0496c6b44"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "326b23495de19abbb74f43ee60f8103ee0406f2aa59a409a3a9caf3f2772612e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "326b23495de19abbb74f43ee60f8103ee0406f2aa59a409a3a9caf3f2772612e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "326b23495de19abbb74f43ee60f8103ee0406f2aa59a409a3a9caf3f2772612e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "98ad4fdb09c84b32deef0aac0eb4964f9868b86129ea91b60cf0ce3a68e8a8e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a3f1a7f543aef518a1c2d5ca0216357e970abb9f2a6ccaef16c26b848106fb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5791bbdae377cc07e9dbb916db567fa4030d9a54e1367c59b8258381176e8686"
   end
 
   depends_on "go"

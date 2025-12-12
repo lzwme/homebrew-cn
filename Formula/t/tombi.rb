@@ -1,8 +1,8 @@
 class Tombi < Formula
   desc "TOML formatter, linter and language server"
   homepage "https://github.com/tombi-toml/tombi"
-  url "https://ghfast.top/https://github.com/tombi-toml/tombi/archive/refs/tags/v0.7.4.tar.gz"
-  sha256 "05207f7216dffd3bc395244d36739f559dbeb4d5fdd3699aa08f300af4c9aa1f"
+  url "https://ghfast.top/https://github.com/tombi-toml/tombi/archive/refs/tags/v0.7.5.tar.gz"
+  sha256 "223bbdbd3c086862315195fbfafe10f6a00afd2c4b19ded0cff7a5a1fecb3e6e"
   license "MIT"
   head "https://github.com/tombi-toml/tombi.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Tombi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd21e14367552d1fb125e06cf8474998560dc6896d09e9d23881b24cf307fc7f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4da8b76afd74aab43c7a1964062f3b4b85c02bf1ec0c1b9652f21a467f99d12"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5bbd09cce0f991ae2c2d495847048b23a3a1added79ed45287ef38694e5ab4f2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0aa006fefe4cc73595fd2a13429b8c498a5432e0f401937301f30e5a4cd93dbe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d7f8c34f9d9d0422dcb4ea4809c3d8b3eeff5977e7fee86ada60b7b42a84c89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0ee2ac4ac5c45366f401affdd98d97f9dc15213203c9d7201163e6a8774337f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ec3d3c82fda20fb07c80f0aac6ea8b2c520ef3a21bf090af428d27f079aa0cd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0b84597eccf849229038605ed371dbb583ffad81afa3ee92facc7c8fa9a8387"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0a1d2883d0ef9975de8c976910735a02862e98ba5d689ae9fe8635e93be8919"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9fc391b8ceae1bb96113ae523b33a308dac69b6c8f0b1e95359d2c218d3c1c8d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c93570c6605daf5c7c917a11586cc3e9c7578b5912eb80ca5742dd24c666bbb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5173ce979ff4563c14edf094155685694c678d43e3444a981084f4ae471235bc"
   end
 
   depends_on "rust" => :build

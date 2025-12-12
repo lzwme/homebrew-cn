@@ -1,11 +1,11 @@
 cask "microsoft-edge@canary" do
-  version "145.0.3729.0,b873c2b6-f96c-43b3-96d7-ca8321f0c39c"
-  sha256 "4a964208ddb860b4b963dc30935e105bfaa5192bf26171b0eea2ef1384224bad"
+  version "145.0.3731.0,fb21701b-a40b-4fbd-845e-f36a8072c8a0"
+  sha256 "95168f626acb126e63d76765e81337767825b46c03112fa7adb0e4e3828e071c"
 
   url "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/#{version.csv.second}/MicrosoftEdgeCanary-#{version.csv.first}.dmg"
   name "Microsoft Edge Canary"
   desc "Multi-platform web browser"
-  homepage "https://www.microsoft.com/en-us/edge/download/insider?form="
+  homepage "https://www.microsoft.com/en-us/edge/download/insider"
 
   livecheck do
     url "https://go.microsoft.com/fwlink/?linkid=2124603"

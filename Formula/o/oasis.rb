@@ -1,18 +1,18 @@
 class Oasis < Formula
   desc "CLI for interacting with the Oasis Protocol network"
   homepage "https://github.com/oasisprotocol/cli"
-  url "https://ghfast.top/https://github.com/oasisprotocol/cli/archive/refs/tags/v0.17.1.tar.gz"
-  sha256 "e585ad87b74eb8cf58981f143b31eeeb0a371eefda0729c3f7698a4406f7fbfb"
+  url "https://ghfast.top/https://github.com/oasisprotocol/cli/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "d06509b746e314f5dd6969ad46b7f8985afc66c37a6d4fa3055c282ca441b013"
   license "Apache-2.0"
   head "https://github.com/oasisprotocol/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "acff5ad6a870426535aec7b5af3b33650c4a04fa27114289c762a1dce8781229"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4963f9c737aaf5b2ed1d2c7819b99953fff775b18978a54f6af219bab63799bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95680efeb39895150f1bc590b3d56ee8e117ad7f8b23552326e905076bce16cd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1c66269cbaead7fb6f36445a91c2528122f6d5615bb645294d572feb68871490"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc1ec748a391a1fef747468ac0830c25f7f0d0cbdcb879e53bda0465ff8da692"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c781b3866a6de91a28a1197629c5fa653fa6ebc9c38d199314282766e5fa32fe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d925132a3f55900d41cd0706627d657bb32eea9bebfb7835838884e1bbc151a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93bc76b56da179893b78657daf9e6246dcdff3cced9908385635a79e869a6fca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc7c5d29532d1e7dfdf4da3af65d2c5915ecced098c3ecba9d35c2bd481da0e0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ec130a9a3eaeaebee0011a72f8a46a1fde10fd9625a4506e4e238e452922b72d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6568ab446b8c05c117759a2f758231b797b75113f6d71a782400ea7ead2abe49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af849e33e8dacde8b442ee2565b250e5e2893195a3f42d316213be57668283d3"
   end
 
   depends_on "go" => :build

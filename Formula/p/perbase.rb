@@ -5,8 +5,8 @@ class Perbase < Formula
   head "https://github.com/sstadick/perbase.git", branch: "master"
 
   stable do
-    url "https://ghfast.top/https://github.com/sstadick/perbase/archive/refs/tags/v1.1.0.tar.gz"
-    sha256 "6b9e030ce0692631482ef074a7d6c37519d6400be21d2f7533ba44a0ec5dc237"
+    url "https://ghfast.top/https://github.com/sstadick/perbase/archive/refs/tags/v1.2.0.tar.gz"
+    sha256 "35b35573e48e5af17d953e66d345c5e8b2ea69bb072e5bbaff87adbfc02cb472"
 
     uses_from_macos "xz" => :build
     uses_from_macos "curl"
@@ -15,8 +15,8 @@ class Perbase < Formula
     # Resource to avoid building bundled curl, xz and zlib-ng
     # Issue ref: https://github.com/rust-bio/hts-sys/issues/23
     resource "hts-sys" do
-      url "https://static.crates.io/crates/hts-sys/hts-sys-2.1.1.crate"
-      sha256 "deebfb779c734d542e7f14c298597914b9b5425e4089aef482eacb5cab941915"
+      url "https://static.crates.io/crates/hts-sys/hts-sys-2.2.0.crate"
+      sha256 "e38d7f1c121cd22aa214cb4dadd4277dc5447391eac518b899b29ba6356fbbb2"
 
       livecheck do
         url "https://ghfast.top/https://raw.githubusercontent.com/sstadick/perbase/refs/tags/v#{LATEST_VERSION}/Cargo.lock"
@@ -26,13 +26,12 @@ class Perbase < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eafb09895b546f68c784f9db1d04eccae19498a7dccf1a038e61f3383a32a34e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6381d9e4d8d9c0bf641a3c0584c8a6bce0915afe9eaf27a373a835222fbc0174"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80c024e6e5ef7a68dc49aff72115ed37123c19d145ec9b629b84fda0a3dd64b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aca50eabad6b23d04cc9cf0cfb499dd80ceba95407039e389ec5c2bbca9c70c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "48658dda19de513ad974dc716dc990aede00119881703453d584692f29d31c34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "070c89be5fd7eab9c163694a9f705fa7891dbe59168bd1f33327627c94e2f52f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0636431f82c8954c63cde109db5836e5e6e15eb184d8bd27a7903e309cce9c60"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb08705eac22818c85049618ac85b7c2f9d426791b6f4335cb2f3f9f072ecf08"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a111ce2213e482f9a6c1455868a16f1468f131447c4b1faa47b8b27995480b7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b8a6a7e3ffaef9e99a7031f89bd2a2fefe1f70b066f95114f2233d024f7b96bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0adff209fb65737baa373c804ad1d5fd1b3fef82fd666b12e814070fd7fd1f3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ce57814f35a422bd640d24d830c988e273b21c141411c7f5f9939f54becf812"
   end
 
   depends_on "cmake" => :build
@@ -41,12 +40,15 @@ class Perbase < Formula
   depends_on "bamtools" => :test
 
   uses_from_macos "bzip2"
+  uses_from_macos "llvm" # for `libclang`
 
   on_linux do
     depends_on "openssl@3" # need to build `openssl-sys`
   end
 
   def install
+    ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib if OS.linux?
+
     if build.stable?
       # TODO: remove this check when bump-formula-pr can automatically update resources
       hts_sys_version = File.read("Cargo.lock")[/name = "hts-sys"\nversion = "(\d+(?:\.\d+)+)"/i, 1]

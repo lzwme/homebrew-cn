@@ -1,17 +1,17 @@
 class Miniflux < Formula
   desc "Minimalist and opinionated feed reader"
   homepage "https://miniflux.app"
-  url "https://ghfast.top/https://github.com/miniflux/v2/archive/refs/tags/2.2.14.tar.gz"
-  sha256 "8cc9beadb74ac592dbb2d325500429c4ec95b21857773c16f8685ef7b9b807c1"
+  url "https://ghfast.top/https://github.com/miniflux/v2/archive/refs/tags/2.2.15.tar.gz"
+  sha256 "28cd9f7280d4807f53855de27ec1bad4cad68e29a469d7f38a2c5c4ad7404c56"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b82221cc40e1c68c94c4b6f265f8425fa7c69709f90f221766df19e1defcb1a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7703987c502c0c8f022a708c4be247e24a710f8a6fa4daea3a915d189d3d46fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90598590982077cfd2aa32f22eace850884b60cc409aa8e02801f6ce196cf35b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ea27907aa4d23ddd0c648103a6512cc805833ead6033f63f2496e56a7be99725"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0bde792defd1183f1593f7785e12008364190c6f2a4aa2a5c1afd48d5cf16edb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b89bd7d296056fc6796ef7863ed59f1a00d09b3792fa097c79827b89372f226f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "62193155be881f7c41cbddf679184a702fab1f2b4d8f57ce4faa161d50cdd013"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "682208711e9d3ac749305c3820e4b37aa4a607ece0261b1af377ad76a65353dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2510eae4b278b3a27eac89a0841fb557bf49bd8b5519f224968603d9f3b2f18a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "23d31d0f9c269b0a1eb1e4cd2416f15b9138b9faa4fcd90b8d6de36c78f276f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26f228c406c1e2d944af5dedb20acc7a4d54699d4812a807acbd7eb2d421a899"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9ba29dc16917c010cc48091b1d34bd6e43fe20b0877103f2f56877cd1c53751"
   end
 
   depends_on "go" => :build

@@ -11,14 +11,15 @@ class PythonAT314 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4e7ee268e8f53127b99b0eaad544d25e1b2d8ce382996989c2fb1fcd49cac2a3"
-    sha256 arm64_sequoia: "4dce49c7fe46c415d2fd4daac0fe655ef8601ede59b9ab54b9d8cd43e90bb8a1"
-    sha256 arm64_sonoma:  "de13acb09424fd86894e72b1358f6fc04a6920a7c656a9b8c0833a9bc54227e8"
-    sha256 tahoe:         "4c54876bfd8fee699a74786ebd714104c835bee1332e34a2f86a23c37cbf5123"
-    sha256 sequoia:       "fdcd5b7701c8528cc72958e9c9f6a95f45e7704cd9be56efd473b59d722424a4"
-    sha256 sonoma:        "d5b0d55774003aa95fac167df9b140cb8ec88d9d35c20c63d6f98d26148d6bc5"
-    sha256 arm64_linux:   "89421722bbdc251eac8d39eba34d28430be765e09de4c2db2146a80c04fae60e"
-    sha256 x86_64_linux:  "d9648925b1a96afb3a0e70f50d174cc9486b79f59fce879c91267ec8923a0a87"
+    rebuild 1
+    sha256 arm64_tahoe:   "dd33d75c8933865d6e139ba2f356336d451ce2a059091ffedea203673ee6be32"
+    sha256 arm64_sequoia: "ab3c31672d8783cf59ace7dcd40727c6a51a445a7a5a10b01ec51d505f1274b3"
+    sha256 arm64_sonoma:  "7edaf92eefd507ee8e8a8bc34c97e1bbc3a1ff7af39429ce80b39a86abb7bfef"
+    sha256 tahoe:         "960914ebc70473c211faffdf279cf885b58ee72802b2b1f5ca59a10722f32570"
+    sha256 sequoia:       "07cf53b5761512ceb559761f16e57ba0d2defdba3e1dd32b14c04a493a29197d"
+    sha256 sonoma:        "1d0c8dd6dcd3835244ae016654c5257bbb8943df766c801755ee3f911f88333e"
+    sha256 arm64_linux:   "4484f23889804026d999ed92e58db34bb76fa2821926b754b9a02da604f1cecc"
+    sha256 x86_64_linux:  "0553ae247aa4909c616a27e587546bcd24b1e540f4ff9ccfcbec8d2806fbf770"
   end
 
   depends_on "pkgconf" => :build
@@ -97,7 +98,7 @@ class PythonAT314 < Formula
   # The HOMEBREW_PREFIX location of site-packages.
   def site_packages = HOMEBREW_PREFIX/"lib/python#{version.major_minor}/site-packages"
 
-  def altinstall? = self != Formula["python3"]
+  def altinstall? = name != Formula["python3"].name
 
   def python3 = bin/"python#{version.major_minor}"
 

@@ -3,19 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/29/bf/cd18c5d4fa5849d804cb1e0eb3712c9f450a472bfd259989869639ba57bb/prowler-5.14.2.tar.gz"
-  sha256 "7501ab24cc5f8422ec55daae28753a82c48812918bbd7a741c7a8aae9810d36f"
+  url "https://files.pythonhosted.org/packages/57/6b/6fdc9546629055903394636e92f1ac25793e6cc2c26d18895011b974d00b/prowler-5.15.0.tar.gz"
+  sha256 "96d907421efbc54f9ab660054fc2326c60de98d4da7463dcb263de1c6d9cfcc8"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bb41bddcdac69fa4eed016c8c35f98ee0ff6c03fdff4af6ffa698a5c1e8ebebd"
-    sha256 cellar: :any,                 arm64_sequoia: "c2df3eea336553045639bc9fadbd811ec18c888f502a3f6672656e9514b110ac"
-    sha256 cellar: :any,                 arm64_sonoma:  "55020c6d2c7d5a077233959c906cf2c83728624cca7f77760b72ed3d52fd9671"
-    sha256 cellar: :any,                 sonoma:        "129bdf5e162830f325cb60e3709e6a6b9f9e68bbfc99d1182d4d2aa23c4a0437"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "12f886305ccbd670712210f05e7822f20dfec8a98b124cbb3f936ef2767e10d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "402bb2c8ba1e3be5dc43eaa93ecca86e9cebdccf6a3ffa6f180483c7049eb420"
+    sha256 cellar: :any,                 arm64_tahoe:   "e7c12165323ce9cfe82593cdb4a265c405bd5e7a93a7a0eae6cbcb163546b517"
+    sha256 cellar: :any,                 arm64_sequoia: "2bc0f45e19702fb3dcb5bb6a61bb7a8aed925772ba2cd063c916378c1b723a8d"
+    sha256 cellar: :any,                 arm64_sonoma:  "2028c9798724a778e4072b351be03e87d9eb1142a6b9b0f422d13e6d414534f3"
+    sha256 cellar: :any,                 sonoma:        "5073ad52a4e70878373edcfba8f22faad821f690e0add0e0bbbdcf5d76e8d041"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "96d8c6b92ad26f6b3108a8d887922b77895eb5c840fdc322b5c2445cc88b8783"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae70ab23e186b0178409f57dfe498c963974855cfef65a0ce2fb459b7d4e2b47"
   end
 
   depends_on "cmake" => :build
@@ -43,6 +42,11 @@ class Prowler < Formula
     sha256 "6a538862d33ce67d997429d14998310e1dbfda6cb7d9bbfbf799c4709847fece"
   end
 
+  resource "aiofiles" do
+    url "https://files.pythonhosted.org/packages/0b/03/a88171e277e8caa88a4c77808c20ebb04ba74cc4681bf1e9416c862de237/aiofiles-24.1.0.tar.gz"
+    sha256 "22a075c9e5a3810f0c2e48f3008c94d68c65d763b9b03857924c99e57355166c"
+  end
+
   resource "aiohappyeyeballs" do
     url "https://files.pythonhosted.org/packages/26/30/f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54/aiohappyeyeballs-2.6.1.tar.gz"
     sha256 "c3f9d0113123803ccadfdf3f0faa505bc78e6a72d1cc4806cbd719826e943558"
@@ -58,9 +62,164 @@ class Prowler < Formula
     sha256 "f47eecd9468083c2029cc99945502cb7708b082c232f9aca65da147157b251c7"
   end
 
+  resource "alibabacloud-actiontrail20200706" do
+    url "https://files.pythonhosted.org/packages/dd/97/ce0fb7ee2507fa9e6d41c8bc5bbc224d15af6c3c47047af6c1254b17b969/alibabacloud_actiontrail20200706-2.4.1.tar.gz"
+    sha256 "b65c6b37a96443fbe625dd5a4dd1be52a7476006a411db75206908b11588ffa8"
+  end
+
+  resource "alibabacloud-credentials" do
+    url "https://files.pythonhosted.org/packages/df/82/45ec98bd19387507cf058ce47f62d6fea288bf0511c5a101b832e13d3edd/alibabacloud-credentials-1.0.3.tar.gz"
+    sha256 "9d8707e96afc6f348e23f5677ed15a21c2dfce7cfe6669776548ee4c80e1dfaf"
+  end
+
+  resource "alibabacloud-credentials-api" do
+    url "https://files.pythonhosted.org/packages/a0/87/1d7019d23891897cb076b2f7e3c81ab3c2ba91de3bb067196f675d60d34c/alibabacloud-credentials-api-1.0.0.tar.gz"
+    sha256 "8c340038d904f0218d7214a8f4088c31912bfcf279af2cbc7d9be4897a97dd2f"
+  end
+
+  resource "alibabacloud-cs20151215" do
+    url "https://files.pythonhosted.org/packages/05/51/6a6aa2c0c1e392e137fbde77c1d5f6bf16e665b3d5e6e3ab747664e67cdf/alibabacloud_cs20151215-6.1.0.tar.gz"
+    sha256 "5b3d99306701bf499ddd57cd9f2905b7721cb1bb4bb38ffe4d051f7b4e80e355"
+  end
+
+  resource "alibabacloud-darabonba-array" do
+    url "https://files.pythonhosted.org/packages/50/be/1813d7553e11e20a1422ffaaead392cfa7239a855c7e67c6a6b5776cfa64/alibabacloud_darabonba_array-0.1.0.tar.gz"
+    sha256 "7f9a7c632518ff4f0cebb0d4e825a48c12e7cf0b9016ea25054dd73732e155aa"
+  end
+
+  resource "alibabacloud-darabonba-encode-util" do
+    url "https://files.pythonhosted.org/packages/b6/d8/22543b2ade9aa68fef028a9f0c4154bfdb970926f918f63d7b85bae527a9/alibabacloud_darabonba_encode_util-0.0.2.tar.gz"
+    sha256 "f1c484f276d60450fa49b4b2987194e741fcb2f7faae7f287c0ae65abc85fd4d"
+  end
+
+  resource "alibabacloud-darabonba-map" do
+    url "https://files.pythonhosted.org/packages/d5/bc/f11d56adffffade9a0d33ccca155ce82ca950b97cdce27a75228715c4639/alibabacloud_darabonba_map-0.0.1.tar.gz"
+    sha256 "adb17384658a1a8f72418f1838d4b6a5fd2566bfd392a3ef06d9dbb0a595a23f"
+  end
+
+  resource "alibabacloud-darabonba-signature-util" do
+    url "https://files.pythonhosted.org/packages/13/09/2118a2df631eaa06a291013ea61f31e449ba7a3cc3d6061477a43420e93a/alibabacloud_darabonba_signature_util-0.0.4.tar.gz"
+    sha256 "71d79b2ae65957bcfbf699ced894fda782b32f9635f1616635533e5a90d5feb0"
+  end
+
+  resource "alibabacloud-darabonba-string" do
+    url "https://files.pythonhosted.org/packages/f9/d4/3d22bd2ff88985f970a10f8cedf2ea326d11d4d95e244f7665dc83d26465/alibabacloud-darabonba-string-0.0.4.tar.gz"
+    sha256 "ec6614c0448dadcbc5e466485838a1f8cfdd911135bea739e20b14511270c6f7"
+  end
+
+  resource "alibabacloud-darabonba-time" do
+    url "https://files.pythonhosted.org/packages/44/df/33a239384353130eef51af14cec1fa99058b2c5f4c7f3d0b283e5f17b874/alibabacloud_darabonba_time-0.0.1.tar.gz"
+    sha256 "0ad9c7b0696570d1a3f40106cc7777f755fd92baa0d1dcab5b7df78dde5b922d"
+  end
+
+  resource "alibabacloud-ecs20140526" do
+    url "https://files.pythonhosted.org/packages/c8/f1/721627d499eb8ed5f8ad3ba0dbf57a0da10ff01deaf64f3536f70edbab8c/alibabacloud_ecs20140526-7.2.5.tar.gz"
+    sha256 "2abbe630ce42d69061821f38950b938c5982cc31902ccd7132d05be328765a55"
+  end
+
+  resource "alibabacloud-endpoint-util" do
+    url "https://files.pythonhosted.org/packages/92/7d/8cc92a95c920e344835b005af6ea45a0db98763ad6ad19299d26892e6c8d/alibabacloud_endpoint_util-0.0.4.tar.gz"
+    sha256 "a593eb8ddd8168d5dc2216cd33111b144f9189fcd6e9ca20e48f358a739bbf90"
+  end
+
+  resource "alibabacloud-gateway-oss" do
+    url "https://files.pythonhosted.org/packages/da/c3/4172567b96d885117d93b5ac7b849dda7f0421af7410e074f3ccf3469357/alibabacloud_gateway_oss-0.0.17.tar.gz"
+    sha256 "8c4b66c8c7dd285fc210ee232ab3f062b5573258752804d19382000746531e29"
+  end
+
+  resource "alibabacloud-gateway-oss-util" do
+    url "https://files.pythonhosted.org/packages/e2/1e/caf81e07d285dbef4dc62e63763448cc84a9b483a69b1a1a576efbbe8795/alibabacloud_gateway_oss_util-0.0.3.tar.gz"
+    sha256 "5eb7fa450dc7350d5c71577974b9d7f489479e5c5ec7efc1c5376385e8c1c0a5"
+  end
+
+  resource "alibabacloud-gateway-sls" do
+    url "https://files.pythonhosted.org/packages/bb/ca/38effb3f7e81f1abc78f0c283ba2d1a19cb9fbdc3a0ad7b8f6300a0a413c/alibabacloud_gateway_sls-0.4.0.tar.gz"
+    sha256 "9d2aceb377c9b3ed0558149fda16fe39fa114cc0a22e22a88dc76efdda34633b"
+  end
+
+  resource "alibabacloud-gateway-sls-util" do
+    url "https://files.pythonhosted.org/packages/c9/ef/590fee606b0ce16e28a0ece8c81338718b87c47d6bb1553f383ec493fafa/alibabacloud_gateway_sls_util-0.4.0.tar.gz"
+    sha256 "f8b683a36a2ae3fe9a8225d3d97773ea769bdf9cdf4f4d033eab2eb6062ddd1f"
+  end
+
+  resource "alibabacloud-gateway-spi" do
+    url "https://files.pythonhosted.org/packages/ab/98/d7111245f17935bf72ee9bea60bbbeff2bc42cdfe24d2544db52bc517e1a/alibabacloud_gateway_spi-0.0.3.tar.gz"
+    sha256 "10d1c53a3fc5f87915fbd6b4985b98338a776e9b44a0263f56643c5048223b8b"
+  end
+
+  resource "alibabacloud-openapi-util" do
+    url "https://files.pythonhosted.org/packages/f6/50/5f41ab550d7874c623f6e992758429802c4b52a6804db437017e5387de33/alibabacloud_openapi_util-0.2.2.tar.gz"
+    sha256 "ebbc3906f554cb4bf8f513e43e8a33e8b6a3d4a0ef13617a0e14c3dda8ef52a8"
+  end
+
+  resource "alibabacloud-oss-util" do
+    url "https://files.pythonhosted.org/packages/02/7c/d7e812b9968247a302573daebcfef95d0f9a718f7b4bfcca8d3d83e266be/alibabacloud_oss_util-0.0.6.tar.gz"
+    sha256 "d3ecec36632434bd509a113e8cf327dc23e830ac8d9dd6949926f4e334c8b5d6"
+  end
+
+  resource "alibabacloud-oss20190517" do
+    url "https://files.pythonhosted.org/packages/9c/d7/2f9ad0b13bd196b0f45bdb4a0d1ecc14d1723ad1685e37d975cfbb566919/alibabacloud_oss20190517-1.0.6.tar.gz"
+    sha256 "7cd0fb16af613ceb38d2e0e529aa1f58038c7cf59eb67c8c8775ae44ea717852"
+  end
+
+  resource "alibabacloud-ram20150501" do
+    url "https://files.pythonhosted.org/packages/b3/fd/5b18adb76bbe55fc6da2913f22f4862f296eea8ed84c605f106aaff50daa/alibabacloud_ram20150501-1.2.0.tar.gz"
+    sha256 "6253513c8880769f4fd5b36fedddb362a9ca628ad9ae9c05c0eeacf5fbc95b42"
+  end
+
+  resource "alibabacloud-rds20140815" do
+    url "https://files.pythonhosted.org/packages/78/6d/167b4e285f74f2426ea137388220f484e41263bbc21f42c8280cfa95cb0d/alibabacloud_rds20140815-12.0.0.tar.gz"
+    sha256 "e7421d94f18a914c0a06b0e7fad0daff557713f1c97d415d463a78c1270e9b98"
+  end
+
+  resource "alibabacloud-sas20181203" do
+    url "https://files.pythonhosted.org/packages/81/c4/7cdd75a2f7afceecc6652ca3c35c6ec3a4a095cd84d02b07749c52317814/alibabacloud_sas20181203-6.1.0.tar.gz"
+    sha256 "e49ffd53e630274a8bf5a8299ca753023ad118510c80f6d9c6fb018b7479bf37"
+  end
+
+  resource "alibabacloud-sls20201230" do
+    url "https://files.pythonhosted.org/packages/53/09/49043ef5074e1127b81d133ab606f581f206135541e734b6dccb99b0d66f/alibabacloud_sls20201230-5.9.0.tar.gz"
+    sha256 "bea830b64fbc7ed1719ba386ceeefb120f08d705f03eb0e02409dc6f12a291da"
+  end
+
+  resource "alibabacloud-sts20150401" do
+    url "https://files.pythonhosted.org/packages/62/94/3b360c5051d4e4c3f2f410b7631e4a8bf7e508a498acc15be6ec7bf58594/alibabacloud_sts20150401-1.1.6.tar.gz"
+    sha256 "c2529b41e0e4531e21cb393e4df346e19fd6d54cc6337d1138dbcd2191438d4c"
+  end
+
+  resource "alibabacloud-tea" do
+    url "https://files.pythonhosted.org/packages/9a/7d/b22cb9a0d4f396ee0f3f9d7f26b76b9ed93d4101add7867a2c87ed2534f5/alibabacloud-tea-0.4.3.tar.gz"
+    sha256 "ec8053d0aa8d43ebe1deb632d5c5404339b39ec9a18a0707d57765838418504a"
+  end
+
+  resource "alibabacloud-tea-openapi" do
+    url "https://files.pythonhosted.org/packages/97/fc/70941e03c618c41fb434cc3842e334c11e75d9fdf1f1f6355b6209eccc35/alibabacloud_tea_openapi-0.4.1.tar.gz"
+    sha256 "2384b090870fdb089c3c40f3fb8cf0145b8c7d6c14abbac521f86a01abb5edaf"
+  end
+
+  resource "alibabacloud-tea-util" do
+    url "https://files.pythonhosted.org/packages/e9/ee/ea90be94ad781a5055db29556744681fc71190ef444ae53adba45e1be5f3/alibabacloud_tea_util-0.3.14.tar.gz"
+    sha256 "708e7c9f64641a3c9e0e566365d2f23675f8d7c2a3e2971d9402ceede0408cdb"
+  end
+
+  resource "alibabacloud-tea-xml" do
+    url "https://files.pythonhosted.org/packages/32/eb/5e82e419c3061823f3feae9b5681588762929dc4da0176667297c2784c1a/alibabacloud_tea_xml-0.0.3.tar.gz"
+    sha256 "979cb51fadf43de77f41c69fc69c12529728919f849723eb0cd24eb7b048a90c"
+  end
+
+  resource "alibabacloud-vpc20160428" do
+    url "https://files.pythonhosted.org/packages/f1/27/1d8dcfd832d5a21390347002cc69999adfb5c7e0a832345209c56e9f504c/alibabacloud_vpc20160428-6.13.0.tar.gz"
+    sha256 "daf00679a83d422799f9fcf263739fe1f360641675843cbfbe623833fc8b1681"
+  end
+
   resource "alive-progress" do
     url "https://files.pythonhosted.org/packages/9a/26/d43128764a6f8fe1668c4f87aba6b1fe52bea81d05a35c84a70d3c70b6f7/alive-progress-3.3.0.tar.gz"
     sha256 "457dd2428b48dacd49854022a46448d236a48f1b7277874071c39395307e830c"
+  end
+
+  resource "aliyun-log-fastpb" do
+    url "https://files.pythonhosted.org/packages/b2/ce/be2bc51121ab88ba9fd9d1f743a5bc2402036a0c4fe88d658d70bf03618e/aliyun_log_fastpb-0.2.0.tar.gz"
+    sha256 "91c714e76fb941c9a0db6b1aa1f4c56cb1626254ff5444c1179860f5e5b63d93"
   end
 
   resource "annotated-types" do
@@ -71,6 +230,11 @@ class Prowler < Formula
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
     sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
+  end
+
+  resource "apscheduler" do
+    url "https://files.pythonhosted.org/packages/d0/81/192db4f8471de5bc1f0d098783decffb1e6e69c4f8b4bc6711094691950b/apscheduler-3.11.1.tar.gz"
+    sha256 "0db77af6400c84d1747fe98a04b8b58f0080c77d11d338c4f507a9752880f221"
   end
 
   resource "attrs" do
@@ -293,6 +457,11 @@ class Prowler < Formula
     sha256 "f51f5705ab27898afda1aaa430f34ad90dc117421057782022edf0600bec5f14"
   end
 
+  resource "darabonba-core" do
+    url "https://files.pythonhosted.org/packages/ed/eb/ba06fedf78dedfec715d58b86deb3dd3a46a6844578b100306ea46eed21a/darabonba_core-1.0.4.tar.gz"
+    sha256 "6ede4e9bfd458148bab19ab2331716ae9b5c226ba5f6d221de6f88ee65704137"
+  end
+
   resource "dash" do
     url "https://files.pythonhosted.org/packages/db/7c/8569c50a4c07fabee6b2428a1515c0c92247e2127367b438a9f99d69723c/dash-3.1.1.tar.gz"
     sha256 "916b31cec46da0a3339da0e9df9f446126aa7f293c0544e07adf9fe4ba060b18"
@@ -414,8 +583,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/8b/e3/bea0c0cffe2a793e0b935734e9da97cf531f1b1a9cf1f543e67ab836abe0/iamdata-0.1.202512061.tar.gz"
-    sha256 "5cc82fa7b1304c85dcb18828c873c118dcf437f6d440fb7d4a547298e2ed34f6"
+    url "https://files.pythonhosted.org/packages/c1/c9/84074583c5bf1312cd2114a2548700cd687184f4027e0e1fcebcf6c1c661/iamdata-0.1.202512111.tar.gz"
+    sha256 "d618a34a6d68abc550bf7bef1acfb34e2cbded8cb573e060f5d5d400752f0d09"
   end
 
   resource "idna" do
@@ -461,6 +630,11 @@ class Prowler < Formula
   resource "kubernetes" do
     url "https://files.pythonhosted.org/packages/b7/e8/0598f0e8b4af37cd9b10d8b87386cf3173cb8045d834ab5f6ec347a758b3/kubernetes-32.0.1.tar.gz"
     sha256 "42f43d49abd437ada79a79a16bd48a604d3471a117a8347e87db693f2ba0ba28"
+  end
+
+  resource "lz4" do
+    url "https://files.pythonhosted.org/packages/57/51/f1b86d93029f418033dddf9b9f79c8d2641e7454080478ee2aab5123173e/lz4-4.4.5.tar.gz"
+    sha256 "5f0b9e53c1e82e88c10d7c180069363980136b9d7a8306c4dca4f760d60c39f0"
   end
 
   resource "markdown" do
@@ -570,18 +744,18 @@ class Prowler < Formula
   end
 
   resource "opentelemetry-api" do
-    url "https://files.pythonhosted.org/packages/c0/0b/e5428c009d4d9af0515b0a8371a8aaae695371af291f45e702f7969dce6b/opentelemetry_api-1.39.0.tar.gz"
-    sha256 "6130644268c5ac6bdffaf660ce878f10906b3e789f7e2daa5e169b047a2933b9"
+    url "https://files.pythonhosted.org/packages/97/b9/3161be15bb8e3ad01be8be5a968a9237c3027c5be504362ff800fca3e442/opentelemetry_api-1.39.1.tar.gz"
+    sha256 "fbde8c80e1b937a2c61f20347e91c0c18a1940cecf012d62e65a7caf08967c9c"
   end
 
   resource "opentelemetry-sdk" do
-    url "https://files.pythonhosted.org/packages/51/e3/7cd989003e7cde72e0becfe830abff0df55c69d237ee7961a541e0167833/opentelemetry_sdk-1.39.0.tar.gz"
-    sha256 "c22204f12a0529e07aa4d985f1bca9d6b0e7b29fe7f03e923548ae52e0e15dde"
+    url "https://files.pythonhosted.org/packages/eb/fb/c76080c9ba07e1e8235d24cdcc4d125ef7aa3edf23eb4e497c2e50889adc/opentelemetry_sdk-1.39.1.tar.gz"
+    sha256 "cf4d4563caf7bff906c9f7967e2be22d0d6b349b908be0d90fb21c8e9c995cc6"
   end
 
   resource "opentelemetry-semantic-conventions" do
-    url "https://files.pythonhosted.org/packages/71/0e/176a7844fe4e3cb5de604212094dffaed4e18b32f1c56b5258bcbcba85c2/opentelemetry_semantic_conventions-0.60b0.tar.gz"
-    sha256 "227d7aa73cbb8a2e418029d6b6465553aa01cf7e78ec9d0bc3255c7b3ac5bf8f"
+    url "https://files.pythonhosted.org/packages/91/df/553f93ed38bf22f4b999d9be9c185adb558982214f33eae539d3b5cd0858/opentelemetry_semantic_conventions-0.60b1.tar.gz"
+    sha256 "87c228b5a0669b748c76d76df6c364c369c28f1c465e50f661e39737e84bc953"
   end
 
   resource "packaging" do
@@ -795,8 +969,8 @@ class Prowler < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "websocket-client" do
@@ -827,6 +1001,11 @@ class Prowler < Formula
   resource "zipp" do
     url "https://files.pythonhosted.org/packages/e3/02/0f2892c661036d50ede074e376733dca2ae7c6eb617489437771209d4180/zipp-3.23.0.tar.gz"
     sha256 "a07157588a12518c9d4034df3fbbee09c814741a33ff63c05fa29d26a2404166"
+  end
+
+  resource "zstd" do
+    url "https://files.pythonhosted.org/packages/0f/78/9a476e09c825304df47b98be80d1ffe223733b03550af71325415028f615/zstd-1.5.7.2.tar.gz"
+    sha256 "6d8684c69009be49e1b18ec251a5eb0d7e24f93624990a8a124a1da66a92fc8a"
   end
 
   def install

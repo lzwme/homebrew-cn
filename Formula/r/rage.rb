@@ -6,6 +6,11 @@ class Rage < Formula
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/str4d/rage.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25f8887b6d990b955f190d9ed8dcbdea5b812b984c69b7adc1b5604233f607ab"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e67f141f38b2b412b46128c485063801adcbcf959b07534a8f551a52c4a60ecc"
