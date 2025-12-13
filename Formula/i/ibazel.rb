@@ -4,15 +4,16 @@ class Ibazel < Formula
   url "https://ghfast.top/https://github.com/bazelbuild/bazel-watcher/archive/refs/tags/v0.28.0.tar.gz"
   sha256 "57997600ef4a6d54464d93a1ce8a35ad9b52e94bab823f97d4769d90c80022f4"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/bazelbuild/bazel-watcher.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5133ada44cde1383f18a2b65c923935a0a5ae2bed500d714bcb87a1ae6ccb85d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89dc5599e59ac37b33de8e861be298ca29a16c1fdc441831cf21305f409f896c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41abae75b82bf37f4008b9abd27c0301f6f4dca8b54776499b3a0ab999f95c0e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "de9000c010b86767c99a35e040d21fc5b3700ae69ceb3805c6d77478560a3f16"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "640c4ca04a95805c4076763d302225f931a39a516120d7f3831c9d7aef5fa319"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e90f1e52b2bd0e953dcaa495dcf29620fd9d7006ee593fe0a644bdaf3a720efa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4544f655f82224223c0b83cf38cde6c11afe1c588ac996b9104e4d0750720622"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3992a039deafc18af94a83fdc4d5e68536cef5027719916d8819661a102fc076"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62968ad5c4144b866a2052c9f1ae85cb988a77030f97133094a9756eb1c99ffd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "72737fc0b5b26fb966417463d5a3954160dcb2f3d761de0d8b7efab5a17cbbac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "431a6c484ce8541ecddd56d01e0d61f1bad7abcd265618fa7e4dc10c0a9f0f8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "046a24ced93a89d3e0ac04d60f976f421993e61c528d434a56cea6041efdb6ad"
   end
 
   depends_on "go" => [:build, :test]
@@ -28,7 +29,7 @@ class Ibazel < Formula
 
     # Write MODULE.bazel with Bazel module dependencies
     (testpath/"MODULE.bazel").write <<~STARLARK
-      bazel_dep(name = "rules_go", version = "0.57.0")
+      bazel_dep(name = "rules_go", version = "0.59.0")
 
       # Register brewed go
       go_sdk = use_extension("@rules_go//go:extensions.bzl", "go_sdk")

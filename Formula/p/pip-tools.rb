@@ -9,15 +9,13 @@ class PipTools < Formula
   head "https://github.com/jazzband/pip-tools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf47e62934bd709f38814d509ec47f5cf8f2ac1503eb259f6bf9ab8195e8130a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf47e62934bd709f38814d509ec47f5cf8f2ac1503eb259f6bf9ab8195e8130a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf47e62934bd709f38814d509ec47f5cf8f2ac1503eb259f6bf9ab8195e8130a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ad4fd6304e08711ed565dcbf575161b614f1e127999d8011fb731d369ea9ab60"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad4fd6304e08711ed565dcbf575161b614f1e127999d8011fb731d369ea9ab60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad4fd6304e08711ed565dcbf575161b614f1e127999d8011fb731d369ea9ab60"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "1fb7503a2db9c8e8870c8a219a4dd669984a6c2b4718efb96697217f4c6e91b7"
   end
 
   depends_on "python@3.14"
+
+  pypi_packages extra_packages: "platformdirs"
 
   resource "build" do
     url "https://files.pythonhosted.org/packages/25/1c/23e33405a7c9eac261dff640926b8b5adaed6a6eb3e1767d441ed611d0c0/build-1.3.0.tar.gz"
@@ -25,13 +23,18 @@ class PipTools < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
     sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+  end
+
+  resource "platformdirs" do
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "pyproject-hooks" do
@@ -50,7 +53,11 @@ class PipTools < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources
+
+    # Replace vendored platformdirs with latest version for easier relocation
+    # https://github.com/pypa/setuptools/pull/5076
+    venv.site_packages.glob("setuptools/_vendor/platformdirs*").map(&:rmtree)
 
     %w[pip-compile pip-sync].each do |script|
       generate_completions_from_executable(bin/script, shell_parameter_format: :click)

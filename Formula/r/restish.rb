@@ -1,8 +1,8 @@
 class Restish < Formula
   desc "CLI tool for interacting with REST-ish HTTP APIs"
   homepage "https://rest.sh/"
-  url "https://ghfast.top/https://github.com/rest-sh/restish/archive/refs/tags/v0.21.1.tar.gz"
-  sha256 "ca8033595641c96d94c1c787550181ddb6f1a8333d7af5c24123a93ff75d0ff7"
+  url "https://ghfast.top/https://github.com/rest-sh/restish/archive/refs/tags/v0.21.2.tar.gz"
+  sha256 "3686e652193c976a04c96f83ee1a78571509e22169b83f7212a7380b374d24b1"
   license "MIT"
   head "https://github.com/rest-sh/restish.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Restish < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "439dbb2c95722a2972905edc6db48bb3d06171a71903d12711df7f5c8b7ea4c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55e407444ad787069330bcc243643a92dcd8ad226fa48b6796b505a7cea4baed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e119336bc5a2da2193c8708cc21319e7d9bc7711fb75d322bf99534d405700b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "28034b5c1d654eb2669dc83f82a2ea9cd50d9624a04eeed550be9bb670db046b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3b3c62e044c3dc4fa342fdd7e893638f4eaa731b4559a5bb30714929b49cf60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "642bde791f7be3abe797b829754f5380ead9a3ba8458ae59845b19ea7a753ddd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6246d26482830c8cd5f803e924e809d4435c0f392d463d386b07175f69e9d84"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2014864c672e3f861362294aa77e7f0dcacbff569a2347c550fa9f55677d15e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "376b8c14238c5cf3f095346d7f7a4b8378aad09288c2fbfe12bb1bbc42919550"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4bbe15cbc23ce58c292823b9e4cd42a06673bdeb3aebe1c78534fac6c53df8a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "05f937623a0dfd7ec494f2f25dfa037c9899dfc9b3b341a394a3fcffed810d7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12437fb2bf6d6c03963aab7f2a10dd861ec4f1d7ddd9258876b2e53d13612f93"
   end
 
   depends_on "go" => :build

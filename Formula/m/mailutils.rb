@@ -1,20 +1,18 @@
 class Mailutils < Formula
   desc "Swiss Army knife of email handling"
   homepage "https://mailutils.org/"
-  url "https://ftpmirror.gnu.org/gnu/mailutils/mailutils-3.20.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/mailutils/mailutils-3.20.tar.gz"
-  sha256 "d10ee65ba391d6463952d8a81551f8a6e667538ee8587b3c801137e657087d4c"
+  url "https://ftpmirror.gnu.org/gnu/mailutils/mailutils-3.21.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/mailutils/mailutils-3.21.tar.gz"
+  sha256 "5e305de7fcf2f744c8b210f1cfe904d49842bfc6d13a913031ec4dbf0c669c54"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "3ae52cae191219da35d841df60f919cd66d7a5cdabcfed6e8de2f20555926038"
-    sha256 arm64_sequoia: "8d9b031ee3adcf94f41e0c4dda3f1877f334e357295ac65f80d61ca54ec8f220"
-    sha256 arm64_sonoma:  "ec1f00fa1a4169d4ad5a5eff18532916d7e6606edd13f2ab1515a3573c04d510"
-    sha256 sonoma:        "c8955a3e02a5ed11425f4ba397ab0ecdcb223c8097da184e3c6adffe2e43284a"
-    sha256 arm64_linux:   "28649f27d729c35f82b1aa948c8c3bf228396b81336147a992565eb62ee44ec3"
-    sha256 x86_64_linux:  "53a84459cde0d2bb37a9e97a0bef949666d2b4ab940eb8474467a185a83c8c43"
+    sha256 arm64_tahoe:   "3bbe34b5065fd6cdf2585b829869afb913e27310f5d9fc17e8ae0c9f55785ce5"
+    sha256 arm64_sequoia: "31c47eda8f72d7d33763a5707b2d8f184471c6c7940ee426c490e6ab72738e7a"
+    sha256 arm64_sonoma:  "0a24ba5ab2eac9531076315acc05549a3b921dbf334ed2624ac2e8dbc51d11af"
+    sha256 sonoma:        "50f0023f1b027e9f6f6f8892f2d907421b210a8a2d0371d3f34c6bbc5ffb10af"
+    sha256 arm64_linux:   "0489c463756a0cf78b6e696339ddb02f695e7ef75a7f002b5e761c7458711299"
+    sha256 x86_64_linux:  "dca5b4e67b558d3641d13075ffb6f7af243d5599227702e2f3440b3e8409acb2"
   end
 
   depends_on "gdbm"

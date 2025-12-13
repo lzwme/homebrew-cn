@@ -3,18 +3,17 @@ class Charmcraft < Formula
 
   desc "Tool to build charms and publish them on Charmhub"
   homepage "https://charmhub.io"
-  url "https://files.pythonhosted.org/packages/1f/87/affb45be165e3f5097aa3e2e7c4d7713ec2f83e639bd2250da828eed804f/charmcraft-4.0.1.tar.gz"
-  sha256 "6613c89edf7ea489d9db4093ba77668d47a804b9b31755a9930d5d31aab4a007"
+  url "https://files.pythonhosted.org/packages/08/66/48bba084a9e894571107eacdac3eae04ece27e83ceae4e71b5f8ed59077b/charmcraft-4.1.0.tar.gz"
+  sha256 "b8b81cd6fcf58997fb9d28b3d0124b178d92a9eed4f77cc6350d778629f21653"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8d5e978205d4740daab83d3b120b976a34804ebe1a20484c9ec22bf4b7974988"
-    sha256 cellar: :any,                 arm64_sequoia: "223e20ea06fd2714a281d4d9ca036b02880d8777f5ecb97726d807c4315bb3ae"
-    sha256 cellar: :any,                 arm64_sonoma:  "fcb8515b3523566f19c0bf5846442ee24523f3cf9637f901260add769fdb02f2"
-    sha256 cellar: :any,                 sonoma:        "e7edf5ab10616010a907017dd160fc2e8363f5c8be4dc12475c39969443d09a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "810259a794077f873e42927fd757c20031bf6aebbccdfeec8b13bb58945f5a98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fafc0e7d084dea5101e11cb358a42a5a782859e636109936f16456ba829ede7f"
+    sha256 cellar: :any,                 arm64_tahoe:   "56e5530a412dd30f5dbab534c99c6aefd951b664909278a4944e08b6bbc1df9e"
+    sha256 cellar: :any,                 arm64_sequoia: "1ff385112c3f1a3b40feb5dd2d95ceb9cbd381caa8c84c431eb5003a76e01fd9"
+    sha256 cellar: :any,                 arm64_sonoma:  "53dca8613dd82bb5175160bcd8c7e10da49a4c8e577bb277deac1425bf8cdafb"
+    sha256 cellar: :any,                 sonoma:        "7960faed3326b70d46370868ab254a4b4e95e8bd9bed35dcd39ac06b1d65b83a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bde4887603c2859322151ebc9848ce90a37730de2b93c9cd07d87099ae5c94bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85d31ea05e4f02d7167dcf3a70d8bb54d330d2a8a1ce63a590fe1f01bb460efa"
   end
 
   depends_on "certifi" => :no_linkage
@@ -53,8 +52,8 @@ class Charmcraft < Formula
   end
 
   resource "craft-application" do
-    url "https://files.pythonhosted.org/packages/36/6b/ad381b017a0715432791ddea24245cc6b3a5eba0c472890a794ac7918321/craft_application-5.11.0.tar.gz"
-    sha256 "4435f5db3e4313acd3c0d03f029f13ce73f4ae2eff0e2f94e0d4301742372479"
+    url "https://files.pythonhosted.org/packages/f6/f8/53b68f2b70385d31b5d6f8e147d70bedeece67076d7b06bc91d908669ac0/craft_application-6.0.1.tar.gz"
+    sha256 "291249a0f24e811c37175bbc9a23c7f4a37b3dba9db01a5dcd35d21253ce8db9"
   end
 
   resource "craft-archives" do
@@ -238,8 +237,8 @@ class Charmcraft < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/0a/03/a1440979a3f74f16cab3b75b0da1a1a7f922d56a8ddea96092391998edc0/protobuf-6.33.1.tar.gz"
-    sha256 "97f65757e8d09870de6fd973aeddb92f85435607235d20b2dfed93405d00c85b"
+    url "https://files.pythonhosted.org/packages/34/44/e49ecff446afeec9d1a66d6bbf9adc21e3c7cea7803a920ca3773379d4f6/protobuf-6.33.2.tar.gz"
+    sha256 "56dc370c91fbb8ac85bc13582c9e373569668a290aa2e66a590c2a0d35ddb9e4"
   end
 
   resource "pylxd" do
@@ -343,8 +342,8 @@ class Charmcraft < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "wadllib" do

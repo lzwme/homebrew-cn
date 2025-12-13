@@ -1,8 +1,8 @@
 class Mintoolkit < Formula
   desc "Minify and secure Docker images"
   homepage "https://slimtoolkit.org/"
-  url "https://ghfast.top/https://github.com/mintoolkit/mint/archive/refs/tags/1.41.7.tar.gz"
-  sha256 "a5375339dda7752b8c7a1d29d25cc7e7e52c60b2badb6a3f6d816f7743fde91a"
+  url "https://ghfast.top/https://github.com/mintoolkit/mint/archive/refs/tags/1.41.8.tar.gz"
+  sha256 "c48a44d34622d1baa3a8245f19b5659d7d8fa4435cc51c5e2f492916b8e8ea25"
   license "Apache-2.0"
   head "https://github.com/mintoolkit/mint.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Mintoolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2269c059b101b0cc18a0308f127d4fe78c5ad00b697f3142fd6844fe23d3ee85"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3191425ab42a27ac181105eb522ba926cb52c2a6a7034b9cf697e34a41506627"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "33e215a31ad61ca3f81951ca6863d406fd06a376ec10fd2e81f3ae058d6449e5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "485651b0b4be33e48ef7907f6239b83585e3028902c266fbab797b4c39bdd46a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c9c396b50f98b248eb69cafd4c800f6ad8ae8b25ed136fbcbeff4ec0ec9bc93c"
-    sha256 cellar: :any_skip_relocation, ventura:       "fa2b6fcf6dc740377b6400639d8d1fb00af713fd86f1c7b4027bbe2285f9dcbc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc6136219b75f2793bbeeafe5192fb43dda87b68eee59e87c448a7c30fce64ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc9d72e0904771231b5c75d6444d6cbdc8d7185abeaa1cafb18257a731e98f8d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "46b2ab6b6a9737f6cdd6d71144c5761c0d81800a31dd71c97d3be9833a089940"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29e5e2ea92bf195a054bdb7a00b94a6200a68633883588327ef58d52198f57c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fab60cb96ec058012b9b5731408373dcbd897ec6ba173b90551e92e39289d1df"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fa22f8c22cf3b4dcfe49dca2ed42b3c5c9b2c11276f1e37a5eebee5aed27ef63"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad6e2ebb12043106ffd49dc4b23a5ca82e5517cd34acb67227a654438ceafa76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb4218cf724bbe79c844c3dc8922ae4ff957aa74cdffd7232ff4d79c6ef5f3a0"
   end
 
   depends_on "go" => :build

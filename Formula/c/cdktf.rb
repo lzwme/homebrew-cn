@@ -16,6 +16,12 @@ class Cdktf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "76169751063d6f5b6a692119e83dcc4038d92456e9870877947dd3981277d3f6"
   end
 
+  # Upstream sunset notice: CDKTF is deprecated and the repo was archived on 2025-12-10.
+  # See: https://github.com/hashicorp/terraform-cdk#sunset-notice
+  #      https://developer.hashicorp.com/terraform/cdktf
+  deprecate! date: "2025-12-10", because: :unmaintained
+  disable!   date: "2026-12-10", because: :unmaintained
+
   depends_on "opentofu" => :test
   depends_on "node"
 

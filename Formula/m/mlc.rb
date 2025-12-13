@@ -1,21 +1,18 @@
 class Mlc < Formula
   desc "Check for broken links in markup files"
   homepage "https://github.com/becheran/mlc"
-  url "https://ghfast.top/https://github.com/becheran/mlc/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "1558d504da177e263d9fe61457745e1c0cacfbd58deaf862dad668be7b204300"
+  url "https://ghfast.top/https://github.com/becheran/mlc/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "50d722891b9590e53b979e2d041eaf10f69525ffe1a0f40e12596fa4f0caaad5"
   license "MIT"
   head "https://github.com/becheran/mlc.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "641c31dccc26badf1955c0a7e57d5d0c84d79adcae555c117850331837f294df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea81fd5f0ffa185c59a156541d0944a122cad6b41595d38132017e285536d4c5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d64d29e139f6f4a6733d2f2d10b29ed50d0c1cd662ecc68b38a95bd7014e09c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "88c26288c044ab2288bbb15c7ff1a5be83708c711830eb796379cf128d052007"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9f5d049d72d92fd2dea0444951d1677fea8340db347a543a7678bad9252a6cfc"
-    sha256 cellar: :any_skip_relocation, ventura:       "658c60504eee6d7976de2ce9acbcc4651cd2993a016ce2f1d1891897a14b5589"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a24f57f05ef9c5369f627d9c904238971567e6d909cfb70fae488382659903b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab3b528ac2aecd470572b9de2d7f2a3e8a8fc44d2463f98a4db637c81d2c9bbe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "532bdbd56e26cf5cfe0c02c4de8900748254a73c22734766917076a8bcfcb918"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b62de83cde12fbb0495dad8e166f3c72e2ec3ede4fea76567122a4b166c0d246"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5c6bc01d6066198657e957fa60115d38a8474cb78337cb3f612b96180485ffc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "50f46f27eb98d2d61bc86296faeb652ca1964e4d0fcd4278c7e1269338b617d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e904b5577469d998054529e6554166ead14e41631d65d7a31d6fbdb9b72b598"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e251f6749041878e9d62dc8063b155bdc5e423501a62fbcd37b8afd940bec8f"
   end
 
   depends_on "pkgconf" => :build

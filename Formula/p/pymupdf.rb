@@ -1,17 +1,17 @@
 class Pymupdf < Formula
   desc "Python bindings for the PDF toolkit and renderer MuPDF"
   homepage "https://pymupdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/ec/d7/a6f0e03a117fa2ad79c4b898203bb212b17804f92558a6a339298faca7bb/pymupdf-1.26.6.tar.gz"
-  sha256 "a2b4531cd4ab36d6f1f794bb6d3c33b49bda22f36d58bb1f3e81cbc10183bd2b"
+  url "https://files.pythonhosted.org/packages/48/d6/09b28f027b510838559f7748807192149c419b30cb90e6d5f0cf916dc9dc/pymupdf-1.26.7.tar.gz"
+  sha256 "71add8bdc8eb1aaa207c69a13400693f06ad9b927bea976f5d5ab9df0bb489c3"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d6e126cb114000b55fbef7b1845296d64ed28430e58fd351f87e66ceaccdadd8"
-    sha256 cellar: :any,                 arm64_sequoia: "bcfaade18c83698d16954f8412d061ec5aed59a9f75400c1c2163f0f65744c42"
-    sha256 cellar: :any,                 arm64_sonoma:  "fecf25db718c0661e8b404d78794b80fc562eb7653598a687078801df2096f15"
-    sha256 cellar: :any,                 sonoma:        "01a490886deccbbb8f5949b2dba9e658e87ee47c55c8f07eecb584f20334b86c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "925fd3bfd2453b71adb17c4688d3887df394741cded1b34edb392c0bd97bbb0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78db30f20919c37e7508d30d106ae521ce4f91cfa991c1c3e181ab4d95311fee"
+    sha256 cellar: :any,                 arm64_tahoe:   "0111cd0136789c1d0dc81f8c0c955213299fd080dfccf60872215117073909b8"
+    sha256 cellar: :any,                 arm64_sequoia: "5fe46d87df57b9ae1aa0816514de07a904c32820e16f1164128508fc75a8d689"
+    sha256 cellar: :any,                 arm64_sonoma:  "b2be496d683ee29c0f56c3be754e05080424ff0bac33a508ab8a7eb25f1c11ae"
+    sha256 cellar: :any,                 sonoma:        "699c7a839e15f6af61f3b05cb5a61c54e2b6f3e154ff99e07c522f6b2626cbbd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "76b5f7510652546e6616ce3fd2c4bdda19b33e20a74157bc40c51df8523a3e4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa8850f29fab7568822eee03aff9983a56c025131365d552633dad75a13a480e"
   end
 
   depends_on "freetype" => :build

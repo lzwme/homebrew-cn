@@ -4,6 +4,7 @@ class Git < Formula
   url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.52.0.tar.xz"
   sha256 "3cd8fee86f69a949cb610fee8cd9264e6873d07fa58411f6060b3d62729ed7c5"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/git/git.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class Git < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "8c43e1c8916f146d294922af82de59ec9ecc897d2ad518c51049104708a61c5a"
-    sha256 arm64_sequoia: "237d6093833bb6b4d13e9ce601aed25257da006e091895c2b069b1101ce87444"
-    sha256 arm64_sonoma:  "40042fdb9e8223f35f6808e04d3471735357462784ca77e3cb4c5ce97f13c6d8"
-    sha256 sonoma:        "3423ab7630438cf26cc38759856cae3a3d80b9328b7f9e72a981d199d427b602"
-    sha256 arm64_linux:   "2e58298564bb960362eb4c75f101b7d878d66471a948f83b5767304b0488f865"
-    sha256 x86_64_linux:  "0bfd0b1eae2f70cacf14971bdfef206f6aea78a1c4c4c19f486705766f743954"
+    sha256 arm64_tahoe:   "1a8fcc1cf3af527b4d9a842581a0c5a1b83c80fed1b7add49fd02523f3f800cb"
+    sha256 arm64_sequoia: "a0f9e207b5b486c9d81cc8f68090dc1fa600352051a7fc83abb726d0c15572a0"
+    sha256 arm64_sonoma:  "d8acda640ff797231bda7bdc2a5e0a093687d7f4a8efc3be9a337b62dca259ff"
+    sha256 sonoma:        "f9951859fa82346656c7c0b81569d23fa96154beb0ab3edcfc3d47000528c24a"
+    sha256 arm64_linux:   "4939b22f67bca09b597871a9876a39d3fec3f822f7957c8dab3f91937370f4d5"
+    sha256 x86_64_linux:  "ee458c0360f93189e6d004433e24a441f15ea5902e70900304de8eb4fa43300f"
   end
 
   depends_on "gettext"
@@ -29,6 +30,11 @@ class Git < Formula
 
   on_linux do
     depends_on "openssl@3" # Uses CommonCrypto on macOS
+  end
+
+  resource "Authen::SASL" do
+    url "https://cpan.metacpan.org/authors/id/E/EH/EHUELS/Authen-SASL-2.1900.tar.gz"
+    sha256 "be3533a6891b2e677150b479c1a0d4bf11c8bbeebed3e7b8eba34053e93923b0"
   end
 
   resource "html" do
@@ -157,9 +163,13 @@ class Git < Formula
     chmod 0644, Dir["#{share}/doc/git-doc/**/*.{html,txt}"]
     chmod 0755, Dir["#{share}/doc/git-doc/{RelNotes,howto,technical}"]
 
-    # git-send-email needs Net::SMTP::SSL or Net::SMTP >= 2.34
+    # git-send-email needs Net::SMTP::SSL or Net::SMTP >= 2.34 and Authen::SASL
     resource("Net::SMTP::SSL").stage do
       (share/"perl5").install "lib/Net"
+    end
+
+    resource("Authen::SASL").stage do
+      (share/"perl5").install "lib/Authen"
     end
 
     # This is only created when building against system Perl, but it isn't

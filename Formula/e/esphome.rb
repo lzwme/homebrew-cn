@@ -7,6 +7,9 @@ class Esphome < Formula
   sha256 "9f47f158b6db4d0035f2f3827f11a4393f56ce6d0529e857e37c045f28e523de"
   license "MIT"
 
+  # Issue ref: https://github.com/Homebrew/homebrew-core/issues/257992
+  no_autobump! because: "macOS resources cannot be updated on linux CI"
+
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "58c8239b424ad63c7fa486b634f4e7a120d982b8311466c864e5355832eb7e71"
     sha256 cellar: :any,                 arm64_sequoia: "ae9db2badd6f94c14750611cb17f2b4f827518d1a2497515f62154b46827dc54"

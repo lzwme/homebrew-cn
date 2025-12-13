@@ -9,18 +9,15 @@ class OscCli < Formula
   revision 10
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3d7fc382263e778ec0f091a55cadb587e502331027d39e56049becc95f12584f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d7fc382263e778ec0f091a55cadb587e502331027d39e56049becc95f12584f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d7fc382263e778ec0f091a55cadb587e502331027d39e56049becc95f12584f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "04c875f69ca219e288927e93d3f66c658dcebd030e850924c102d8c8ef839545"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "04c875f69ca219e288927e93d3f66c658dcebd030e850924c102d8c8ef839545"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04c875f69ca219e288927e93d3f66c658dcebd030e850924c102d8c8ef839545"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "67d966bcb73fd3f74296d867eb8f5713e10657ddbba737b963dfdab13757d51a"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
-  pypi_packages exclude_packages: "certifi"
+  pypi_packages exclude_packages: "certifi",
+                extra_packages:   "platformdirs"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
@@ -40,6 +37,11 @@ class OscCli < Formula
   resource "idna" do
     url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
     sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+  end
+
+  resource "platformdirs" do
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "requests" do
@@ -63,8 +65,8 @@ class OscCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "xmltodict" do
@@ -73,7 +75,11 @@ class OscCli < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources
+
+    # Replace vendored platformdirs with latest version for easier relocation
+    # https://github.com/pypa/setuptools/pull/5076
+    venv.site_packages.glob("setuptools/_vendor/platformdirs*").map(&:rmtree)
   end
 
   test do

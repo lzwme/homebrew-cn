@@ -1,8 +1,8 @@
 class VulkanValidationlayers < Formula
   desc "Vulkan layers that enable developers to verify correct use of the Vulkan API"
   homepage "https://github.com/KhronosGroup/Vulkan-ValidationLayers"
-  url "https://ghfast.top/https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/refs/tags/vulkan-sdk-1.4.328.1.tar.gz"
-  sha256 "91d9be1347a270288bcc50206bda8ccf6aad33bab8318c0643dd36bef97478f9"
+  url "https://ghfast.top/https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/refs/tags/vulkan-sdk-1.4.335.0.tar.gz"
+  sha256 "464f754abdebef13c342e18861eab87be0ecc36cb1c257f6b2ddfa10afb8401a"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-ValidationLayers.git", branch: "main"
 
@@ -12,12 +12,12 @@ class VulkanValidationlayers < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4cadbbe3c6c4eb854d5918df5fbfdf68acf56980e6145169474f5f19c7835e8b"
-    sha256 cellar: :any,                 arm64_sequoia: "04776b0c10645c93630cb549cafa8baa7d10bfb54e9ae20a092256f43ac1d9a0"
-    sha256 cellar: :any,                 arm64_sonoma:  "0891798fc2906b4c4f20e20a3c284452c7353c6b38dabfa6bf1c7878f644c91f"
-    sha256 cellar: :any,                 sonoma:        "f59c2b9f61e6ef5354c82ac2e9ef51014b9b5b884878474c846344446f7593a2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "887726bda3fceca312ed20356e3414b7f405c42d55cc9f5918c0bc138fa4ed66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fa355cedf002ed9cb336d7f2991ee29109590dc58ee6ed334669094e646dce4"
+    sha256 cellar: :any,                 arm64_tahoe:   "fb9ce3ae7b5e089d360a2a91d1d05a11d7e75a9ad63759a6d4264c16ed5f1de7"
+    sha256 cellar: :any,                 arm64_sequoia: "afd13e57c11111618f85da2f9e5572e9bf2ae6eff11e53098ccfae82389cb81c"
+    sha256 cellar: :any,                 arm64_sonoma:  "f5306273bf21b001c1ca1a8da749f115126a9964e29873c27f03d8bccb6b5815"
+    sha256 cellar: :any,                 sonoma:        "2e5f6f5496dc317c8764beb7de02361fbc6ee940e1c7c2f82b3fa1d17ee704a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10270bea4413590a1732eee963db7575800c9cce1f88650d0986120c8d6b6ec9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c231bb4f18bb0dde1e512f50e4bc91d5dc981a5d881299906955c03ae2106e8e"
   end
 
   depends_on "cmake" => :build
@@ -28,6 +28,8 @@ class VulkanValidationlayers < Formula
   depends_on "vulkan-headers"
   depends_on "vulkan-loader"
   depends_on "vulkan-utility-libraries"
+
+  uses_from_macos "python" => :build
 
   on_linux do
     depends_on "libx11" => :build

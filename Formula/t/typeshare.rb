@@ -1,8 +1,8 @@
 class Typeshare < Formula
   desc "Synchronize type definitions between Rust and other languages for seamless FFI"
   homepage "https://github.com/1Password/typeshare"
-  url "https://ghfast.top/https://github.com/1Password/typeshare/archive/refs/tags/v1.13.3.tar.gz"
-  sha256 "3aa054a8ef566263873a4056be248e6a6790b0815259073ee4a9549229618a09"
+  url "https://ghfast.top/https://github.com/1Password/typeshare/archive/refs/tags/v1.13.4.tar.gz"
+  sha256 "7a929012e1f2a4e07616dd769e049adbb5aebae9faf0776f6268a0673281dd78"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/1Password/typeshare.git", branch: "main"
 
@@ -12,14 +12,12 @@ class Typeshare < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31776deda2ddab4f93bd1b3b7c52f91c1fa00f002396a35269f778559d1c3416"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a815a340d00c9d99b90f83421907b1c07dab78947d6c8d7c5d6a7f3a6c459aca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fcbddc02d23fcf0d89e4acec4ee07417ad9636ad522dcd8c2bd1a5f8c88a3618"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8033f7eaa3404fbfeef3759e82b6d683e82a87f1f1bbec306ef8d3d2a6cc8929"
-    sha256 cellar: :any_skip_relocation, sonoma:        "afc917dd47c64d42b99fdcbba61b63fb75699a2daaa1f58026fd08631e24a00c"
-    sha256 cellar: :any_skip_relocation, ventura:       "048e626aed9871628b7ba678979bbe2408f571d26ab66446c36593054e43d3ed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a319a9bd392fc23241734a3b6f1cc7c40bbc50b39fad724c20e9fe427c805c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cff89a63dc6bcdc331facca557f0f641dec53235b0dba99f8d65abdaf35b311"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d8a99434dafc99d2d1bf95260f67e6f081794cf4617108ce5548909ab93879d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "617e96248ce3c4093b2b1822f52ef349253c967737d40e6338f914c7f12b30b4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c6c4c8d75a8f765f81494cb3d7b9835801d8ce3de1bfb6fca5d9be617241fea"
+    sha256 cellar: :any_skip_relocation, sonoma:        "333a99ff0ce9d2c86037777214605a9de1b95ca6a4b70e3a68d8dad1470cbc97"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b19487d84e9a5273fa77f0c637c5e27ea8f29ff1c903b743ceae37404956789a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06d19e281d8d0fae7f7c11dff97efaacb3865a6f98a59c4d7f7ba057b011ff9d"
   end
 
   depends_on "rust" => :build

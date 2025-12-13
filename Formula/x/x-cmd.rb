@@ -1,8 +1,8 @@
 class XCmd < Formula
   desc "Bootstrap 1000+ command-line tools in seconds"
   homepage "https://x-cmd.com"
-  url "https://ghfast.top/https://github.com/x-cmd/x-cmd/archive/refs/tags/v0.7.4.tar.gz"
-  sha256 "3ad7638b4970d697797074429122deb953596c1c7e127144eda30c95b8c5af1c"
+  url "https://ghfast.top/https://github.com/x-cmd/x-cmd/archive/refs/tags/v0.7.5.tar.gz"
+  sha256 "363624f95ea504bdc3600fb6ec233baaa78b8c9b744180c112d8200338eab223"
   license all_of: ["AGPL-3.0-only", "MIT", "BSD-3-Clause"]
 
   head "https://github.com/x-cmd/x-cmd.git", branch: "X"
@@ -13,12 +13,12 @@ class XCmd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "142aa2c66a0b9cf1c48e13965a727b777d2a9441d572bb0ac539c847956dbc82"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "142aa2c66a0b9cf1c48e13965a727b777d2a9441d572bb0ac539c847956dbc82"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "142aa2c66a0b9cf1c48e13965a727b777d2a9441d572bb0ac539c847956dbc82"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dc92846cb07473d545542b0bb716a73137d20b2366ca729e9c8e193237a874cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "118d9b998585d0cba45641ab7a331d3114ea4f05bbde44dac4adaf189da10192"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "118d9b998585d0cba45641ab7a331d3114ea4f05bbde44dac4adaf189da10192"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf246c936a9302fb69632ab380070c9d17c561c49358384f725a685b880e2ad1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf246c936a9302fb69632ab380070c9d17c561c49358384f725a685b880e2ad1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf246c936a9302fb69632ab380070c9d17c561c49358384f725a685b880e2ad1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d2b0deaa8f8c98f13542f9321fd8ab99a3d3f14d96c0e33d8bf48f46b73ca2e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "695b7915ab16305e5d96d0c49e7af2fc1ec1651cee1390c179bcb50fa3bafaf8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "695b7915ab16305e5d96d0c49e7af2fc1ec1651cee1390c179bcb50fa3bafaf8"
   end
 
   def install

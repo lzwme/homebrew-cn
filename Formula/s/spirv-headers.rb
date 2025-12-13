@@ -1,8 +1,8 @@
 class SpirvHeaders < Formula
   desc "Headers for SPIR-V"
   homepage "https://github.com/KhronosGroup/SPIRV-Headers"
-  url "https://ghfast.top/https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/vulkan-sdk-1.4.328.1.tar.gz"
-  sha256 "602364ab7bf404a7f352df7da5c645f1c4558a9c92616f8ee33422b04d5e35b7"
+  url "https://ghfast.top/https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/vulkan-sdk-1.4.335.0.tar.gz"
+  sha256 "1c47ca6342ebe86f57b46b8dbeb266fa655a1ca8e10d07e45370ff2d9c36312e"
   license "MIT"
   head "https://github.com/KhronosGroup/SPIRV-Headers.git", branch: "main"
 
@@ -12,7 +12,7 @@ class SpirvHeaders < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "531c9e9d17a3e4dcaf870a9de694d68ba3098c7c6643ba5ba6f56c57b8868e0d"
+    sha256 cellar: :any_skip_relocation, all: "a278df87c5a4df81066639715993f505749ff0da7b1b6455a865137bf33dc9b2"
   end
 
   depends_on "cmake" => [:build, :test]

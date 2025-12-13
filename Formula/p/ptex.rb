@@ -1,8 +1,8 @@
 class Ptex < Formula
   desc "Texture mapping system"
   homepage "https://ptex.us/"
-  url "https://ghfast.top/https://github.com/wdas/ptex/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "d3c2116f5cd650b22217fcdfad9586b6389173fd1d0b694413622743e52083ee"
+  url "https://ghfast.top/https://github.com/wdas/ptex/archive/refs/tags/v2.5.1.tar.gz"
+  sha256 "6b4b55f562a0f9492655fcb7686ecc335a2a4dacc1de9f9a057a32f3867a9d9e"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Ptex < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5e87dcb5a5f47a151aabe8b86e33125a61f77437aadbfe4fe794bf612fd7ca91"
-    sha256 cellar: :any,                 arm64_sequoia: "6959719863c4ef46046b550acd60ef2f98671f5156017b9d6b904b463d619b03"
-    sha256 cellar: :any,                 arm64_sonoma:  "e7eab4d9558a5b7bd09be12826dd9f6a595b865164209a2ea6070f825669d5d4"
-    sha256 cellar: :any,                 sonoma:        "82123f7d97b11e4ae637b663b2c64b1f1b49d656a83233023126c18949256c7e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc692869082c2c57bdb2f94f731458fc2773b38155f1c8ad78e7fca60ba51e7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dfc6d70bcfd1b9c0b9329563032d08e01e75cede3221d023fe9ce35852f9f2f"
+    sha256 cellar: :any,                 arm64_tahoe:   "b9ad545c0561cf637d82a5dff6e0c783c707bca219cf361a96390d0ff7484780"
+    sha256 cellar: :any,                 arm64_sequoia: "25ef8e59f1281d492ed40390e8408f9f1104f1378bf0ee1e67daaff4ade4abab"
+    sha256 cellar: :any,                 arm64_sonoma:  "c30eae1e67e46837fd7b8b42e6cd1559747c725d9bfc79520f1962566c5645e2"
+    sha256 cellar: :any,                 sonoma:        "b377aec3cfbafdb380aaf0b8efe83f305e178681836192476669322c31afc523"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6678a7e585381373ea5f21bf5d1833417a8d47dc30a0e0d2b48e6dd99434a8b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fdf8e1c4e191abd2553ffdc6dd9c57eee384d41a0edec03fca0c0958501954d"
   end
 
   depends_on "cmake" => :build

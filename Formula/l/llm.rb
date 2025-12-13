@@ -3,18 +3,17 @@ class Llm < Formula
 
   desc "Access large language models from the command-line"
   homepage "https://llm.datasette.io/"
-  url "https://files.pythonhosted.org/packages/05/7f/f2fe103b8fa6c5a96ba117fef46af15c766d4c28640893c2c7feb79c0df3/llm-0.27.1.tar.gz"
-  sha256 "02b0b393e31cf0e0ee1f2a6006c451c74ec18c7ec3973218de56e76fd72baa80"
+  url "https://files.pythonhosted.org/packages/cb/91/5071c6e0e7eabbf3a95870a4b2ec0fc585e0d4d57532d305d08d6595f8a3/llm-0.28.tar.gz"
+  sha256 "e3d8bcc0f016fae8aeca1d702491a1891523702983459cb66afec99d74cabfc1"
   license "Apache-2.0"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "74a12c5c01a314cfc551a7c1113d1a2252f71b96b0ffece91dc86c38fcc3c323"
-    sha256 cellar: :any,                 arm64_sequoia: "bfdec5e82e202538e7050fbc04b5ab50e0bfe3d49c3fd23cdebe4f0352e64117"
-    sha256 cellar: :any,                 arm64_sonoma:  "c127ab9aea790f6b27d2d9a355d363f64e2efff0e48e44cdc637f217f01472aa"
-    sha256 cellar: :any,                 sonoma:        "e075f453cade0b27f49655f158df54e05e602fcc2233c10d7228c47275af9190"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc058163c276b4d35e6f63b0809cd6b605aef3f2438f0a18b6232a0a9bcc9b71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1b3fa8677c4cafe7aa749d8f85a9e1cf401835a428c5f93d1497f37ead05102"
+    sha256 cellar: :any,                 arm64_tahoe:   "88604275590d4b078111b44240a4f997f27b368a32e37108ddfe7c15ec1f89a8"
+    sha256 cellar: :any,                 arm64_sequoia: "60aa6e52dcb8556ea98050d296909a60eb284c5920fdba14bc9a964d8dcee0b2"
+    sha256 cellar: :any,                 arm64_sonoma:  "4127cf526cd4a47942f1a1726a643e847f29ad59daa564e81ef406d3d5bad088"
+    sha256 cellar: :any,                 sonoma:        "f553258112f3e0137a509baca1713cfea8b41e51bca456f778c988232f178285"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d80213899786814153d4ff205e0341d1163119e3ac307d7bd63dc0652fdbc6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9571adbecd435481f94c9ae094518115f5a31927eb4b22b6d5982e77df16b9b"
   end
 
   depends_on "rust" => :build # for jiter
@@ -26,13 +25,13 @@ class Llm < Formula
   pypi_packages exclude_packages: ["certifi", "pydantic"]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "click-default-group" do
@@ -71,13 +70,13 @@ class Llm < Formula
   end
 
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/a3/68/0357982493a7b20925aece061f7fb7a2678e3b232f8d73a6edb7e5304443/jiter-0.11.1.tar.gz"
-    sha256 "849dcfc76481c0ea0099391235b7ca97d7279e0fa4c86005457ac7c88e8b76dc"
+    url "https://files.pythonhosted.org/packages/45/9d/e0660989c1370e25848bb4c52d061c71837239738ad937e83edca174c273/jiter-0.12.0.tar.gz"
+    sha256 "64dfcd7d5c168b38d3f9f8bba7fc639edb3418abcc74f22fdbe6b8938293f30b"
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/51/a2/f4023c1e0c868a6a5854955b3374f17153388aed95e835af114a17eac95b/openai-2.7.1.tar.gz"
-    sha256 "df4d4a3622b2df3475ead8eb0fbb3c27fd1c070fa2e55d778ca4f40e0186c726"
+    url "https://files.pythonhosted.org/packages/f4/8c/aa6aea6072f985ace9d6515046b9088ff00c157f9654da0c7b1e129d9506/openai-2.11.0.tar.gz"
+    sha256 "b3da01d92eda31524930b6ec9d7167c535e843918d7ba8a76b1c38f1104f321e"
   end
 
   resource "pluggy" do
@@ -131,8 +130,8 @@ class Llm < Formula
   end
 
   resource "sqlite-utils" do
-    url "https://files.pythonhosted.org/packages/51/43/ce9183a21911e0b73248c8fb83f8b8038515cb80053912c2a009e9765564/sqlite_utils-3.38.tar.gz"
-    sha256 "1ae77b931384052205a15478d429464f6c67a3ac3b4eafd3c674ac900f623aab"
+    url "https://files.pythonhosted.org/packages/b3/e3/6b1106349e2576c18409b27bd3b16f193b1cf38220d98ad22aa454c5e075/sqlite_utils-3.39.tar.gz"
+    sha256 "bfa2eac29b3e3eb5c9647283797527febcf4efd4a9bbb31d979a14a11ef9dbcd"
   end
 
   resource "tabulate" do

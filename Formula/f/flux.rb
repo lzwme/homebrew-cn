@@ -2,8 +2,8 @@ class Flux < Formula
   desc "Lightweight scripting language for querying databases"
   homepage "https://www.influxdata.com/products/flux/"
   url "https://github.com/influxdata/flux.git",
-      tag:      "v0.198.0",
-      revision: "432969ffee5365e35d7519884e0b4d8e56cce01b"
+      tag:      "v0.199.0",
+      revision: "4d5be8002de15b192ec7781b3f3b0815235ec316"
   license "MIT"
   head "https://github.com/influxdata/flux.git", branch: "master"
 
@@ -13,14 +13,12 @@ class Flux < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b23050bb6cd3010245a47de797444de6492c4ccc2b7784c97c5e2c7a338ef148"
-    sha256 cellar: :any,                 arm64_sequoia: "01aa831d3f045e062caad63ab72a76e34d049d5010f6059f05e879b4de94496d"
-    sha256 cellar: :any,                 arm64_sonoma:  "e7b66b97749796bec83b2faa9e26e42db923df9522c5d637ebc6a1f3209a85d9"
-    sha256 cellar: :any,                 arm64_ventura: "67432a04ff13d684b925700dbba1f5e3331df639a55f000123c389a60e7c9ba4"
-    sha256 cellar: :any,                 sonoma:        "c13f56e132992d8e6b753f8e2358d5fb769fbb8232d67bd7e6feb2b7073e50b1"
-    sha256 cellar: :any,                 ventura:       "fe981ddd62d62e89f406d66771b095b82730c9186a5a38c1c9d64f395a228b49"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "770477273abee5de6a91029bbcdedc4f6b8e9e8183bb4d73266d613db80cb30f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6cb4a564936512e6de8730f584ec73b885fe156f144836ab13aa13be9b5feae"
+    sha256 cellar: :any,                 arm64_tahoe:   "92439376ca69ff4f1cc6fbf9e2919df9922b9400808767cc5a4701e5a14f32d3"
+    sha256 cellar: :any,                 arm64_sequoia: "1c70e2977faecab1dbe544923c40a2f481379b5d30a81cabda8fbd1f99e92c78"
+    sha256 cellar: :any,                 arm64_sonoma:  "5be0260655c59d573c2ed3d7c902e37991626e64106c1634fb3cb35ebe7210e5"
+    sha256 cellar: :any,                 sonoma:        "25b8f043f3f68a1e15ee41a42c1ac267d760c183b1affc0c9b902383774dac6b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9897e2edab7c9c303704b04de67807b82e062b7256d6d13249c1908ff07b6c86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19eca4bdb796d7924eefdebf3a06f60f10aa8a1e8a5e59a87794b5aaed239f6e"
   end
 
   depends_on "go" => :build

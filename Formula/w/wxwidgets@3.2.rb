@@ -1,8 +1,8 @@
 class WxwidgetsAT32 < Formula
   desc "Cross-platform C++ GUI toolkit"
   homepage "https://www.wxwidgets.org"
-  url "https://ghfast.top/https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.8.1/wxWidgets-3.2.8.1.tar.bz2"
-  sha256 "ad0cf6c18815dcf1a6a89ad3c3d21a306cd7b5d99a602f77372ef1d92cb7d756"
+  url "https://ghfast.top/https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.9/wxWidgets-3.2.9.tar.bz2"
+  sha256 "fb90f9538bffd6a02edbf80037a0c14c2baf9f509feac8f76ab2a5e4321f112b"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
 
   livecheck do
@@ -11,15 +11,12 @@ class WxwidgetsAT32 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "cd33f7af0dcb20beb90aacf4f7d9945e7739c689b31821a69e9eef088ef3bc3b"
-    sha256 cellar: :any,                 arm64_sequoia: "c11bad8fce2b1b905e6b9e9dd67738f4576931725e5b15a35efea59f6134cd82"
-    sha256 cellar: :any,                 arm64_sonoma:  "df003b80251db48b7a37f47c36fae426ebdbdaf167709eea66cf77b497a14739"
-    sha256 cellar: :any,                 arm64_ventura: "bef52303b87c67ce3dc08b5f4493f31e0b00137df6f9bacf8bbd952d37ee6915"
-    sha256 cellar: :any,                 sonoma:        "8fc6ebee377f04e35bf3f31b1c03fe7560d5044ad600e85a1250a3c293c5b67a"
-    sha256 cellar: :any,                 ventura:       "e9c85776e9917d705f8cd0d6eae928baca1afcf9c603b9b8ab5ce1dd049952c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "010072339b9063e6a92be9001c330606dfe520e9671a7c9f4dba0582532241b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be9ecb99906f780193393b15622fb1fe5d13b941dbbfe4676d0a8a7750d9957a"
+    sha256 cellar: :any,                 arm64_tahoe:   "a3233bdeaa30398c7482d2e14e3a2531ff6395fb4934064ac5f805e16337059c"
+    sha256 cellar: :any,                 arm64_sequoia: "ab5cea380351b431a86f56b102e68016c4db214520fe89fddbfc52938d40e5f9"
+    sha256 cellar: :any,                 arm64_sonoma:  "7e0292d903f5846f7bf5c1d93aab4c72ed4a937a73947908f1d071d6fd57691e"
+    sha256 cellar: :any,                 sonoma:        "fe0dfdb6b51003c0da529837466f9618ad2cffa3031bdba7074320a8ab94c5db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b2e1c63b7cbf906afd606c8d4808f2a15bf34f186e68c7c855ec66df480c567"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9003d26f9a6c11d1aadcb99bd8c35acff4e63bbb034d6a5039d1f737760eaf9"
   end
 
   depends_on "pkgconf" => :build
@@ -52,9 +49,6 @@ class WxwidgetsAT32 < Formula
     # Remove all bundled libraries excluding `nanosvg` which isn't available as formula
     %w[catch pcre].each { |l| rm_r(buildpath/"3rdparty"/l) }
     %w[expat jpeg png tiff zlib].each { |l| rm_r(buildpath/"src"/l) }
-
-    # Work around removal of AGL in Tahoe
-    inreplace "configure", "-framework AGL", ""
 
     args = [
       "--enable-clipboard",

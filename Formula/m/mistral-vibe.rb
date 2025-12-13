@@ -3,18 +3,18 @@ class MistralVibe < Formula
 
   desc "Minimal CLI coding agent"
   homepage "https://github.com/mistralai/mistral-vibe"
-  url "https://files.pythonhosted.org/packages/8a/c8/177ba0241ddaa36ce62bc6adae443f525ab0f7b13945d7a7163a5d37322e/mistral_vibe-1.1.2.tar.gz"
-  sha256 "b0313bba7fe2f0622de75f46affc8684e1d0c6ccefa2c2bbdd9a72545a74feda"
+  url "https://files.pythonhosted.org/packages/f7/51/629d73f9d455d12955d358c892385f67bc7c9674cae19c3cf8965aff7a7c/mistral_vibe-1.1.3.tar.gz"
+  sha256 "cf3e79e0b32ee788fd3ced6ce3ff446125c0478c29760eb15e61d9a0a5d0ffdf"
   license "Apache-2.0"
   head "https://github.com/mistralai/mistral-vibe.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1d4f819cce88ff1b1b4544da6d74919df803e34fcc6d6177a4c3595460818488"
-    sha256 cellar: :any,                 arm64_sequoia: "cda0c69a44abd9c283f663ff9e9354071805274517eb74da9b475a7afe6ac64f"
-    sha256 cellar: :any,                 arm64_sonoma:  "1b1396755778a7dc8b052ee7c9ef4c5d05fa167dbd720f6bf1ef79be4d8b0b46"
-    sha256 cellar: :any,                 sonoma:        "6a3bbe00ee84f0f25ec8e091bb6de3d0b1e66ac053fde2ad49628f983ccf9624"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a0819033a901e75ce8205dec3cfc0fb15135d4a287bce057ab18c25bfd68502"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9eebdfe6087864993832252a7bc237d4ec5a30212a6c653a64106f0cf8988a3d"
+    sha256 cellar: :any,                 arm64_tahoe:   "b1bb27a28ecdb18d9f184f8ea0fa3394ad71a1b5366dfdde2f621f7b126ecb26"
+    sha256 cellar: :any,                 arm64_sequoia: "27d260803f640284329d8deb7e70e1af2a2fd3289c4bcaed998c63926ad0ce30"
+    sha256 cellar: :any,                 arm64_sonoma:  "962432be59a18b877ef06daf9c2e774a201e8013c3d83449c8df97109922ec06"
+    sha256 cellar: :any,                 sonoma:        "6098d7f1717ea218c12a6ea6e3e0fa51f7d00d5216643c21a6b31ef7c5e6b83d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e24de8f62d1a73cb4e54f9e6f6d297291b3af65ec4a3625340234a32b883976"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01addddfe7f24ac1b8e08d7c7869711f9e104f7f1e3ef73571706abe7c57baf3"
   end
 
   depends_on "rust" => :build
@@ -108,8 +108,8 @@ class MistralVibe < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/a7/a4/d06a303f45997e266f2c228081abe299bbcba216cb806128e2e49095d25f/mcp-1.23.3.tar.gz"
-    sha256 "b3b0da2cc949950ce1259c7bfc1b081905a51916fcd7c8182125b85e70825201"
+    url "https://files.pythonhosted.org/packages/d6/2c/db9ae5ab1fcdd9cd2bcc7ca3b7361b712e30590b64d5151a31563af8f82d/mcp-1.24.0.tar.gz"
+    sha256 "aeaad134664ce56f2721d1abf300666a1e8348563f4d3baff361c3b652448efc"
   end
 
   resource "mdit-py-plugins" do

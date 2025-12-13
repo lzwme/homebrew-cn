@@ -1,17 +1,17 @@
 class Vsearch < Formula
   desc "Versatile open-source tool for microbiome analysis"
   homepage "https://github.com/torognes/vsearch"
-  url "https://ghfast.top/https://github.com/torognes/vsearch/archive/refs/tags/v2.30.1.tar.gz"
-  sha256 "f65f03538a77cd1212bd04a52bb722114765329e64bd35e10ee2aefcd81137fe"
+  url "https://ghfast.top/https://github.com/torognes/vsearch/archive/refs/tags/v2.30.2.tar.gz"
+  sha256 "f4c244d2b48637e9a42325901b832ca5b6522cec8e2006b0da2aa9b9a0b5e699"
   license any_of: ["BSD-2-Clause", "GPL-3.0-or-later"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "682936d6b9438e348ef258c1bf8f07655adc069ade788e4020c95f12daac9856"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe13b0567e0c4989c5173b8f66713d4ce6fc601537c60f8c39e591ce344f7eac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e106dba1bba6f22d5f1e605ec0165c9a04dbaa90a4c643ef5a33d6451f02c68c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "450c6c560f6489c74b918f2f8bd1f7ee07c2ec976221edf9612bf5bccfb6a11c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a22293bacfa967390daebf320e8a092430f3865aec1f829aecd1021bfe80636b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ed4b1ae0fab3422a3af92e277066246b517a2a920f86038e4eac25c3fa3ec6d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f754a1aca15f1131e3d6198f39e8e41bc468f14b9135536e49978649f7de042"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c212154910c3e44cf2628457b93531bae8c3c90860c9e18cbe6457319ec39a38"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3bfa85db5787be86264db54cdcc32437585d4cf22630a084adae941de5fbea2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3ab1f1cf3a9035939fcf5c8b8da0c97e4712b6c7f2c486fb7965618cb03530a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "896edbeaf740c11a4316f602d3d175105ba1476e557b4929bf0f9ad928e01dad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e79843c6873beb28d859d73bd64884c63f60488a7803dc38c422da7f6663cfa"
   end
 
   depends_on "autoconf" => :build

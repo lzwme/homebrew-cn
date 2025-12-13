@@ -1,21 +1,19 @@
 class TerraformDocs < Formula
   desc "Tool to generate documentation from Terraform modules"
   homepage "https://terraform-docs.io/"
-  url "https://ghfast.top/https://github.com/terraform-docs/terraform-docs/archive/refs/tags/v0.20.0.tar.gz"
-  sha256 "793ad60be207292b9f27664d5c73bd75512e7a5e458b0fe2daa872b5ad46d6a9"
+  url "https://ghfast.top/https://github.com/terraform-docs/terraform-docs/archive/refs/tags/v0.21.0.tar.gz"
+  sha256 "e8180d74662707b2643930aee7ba012a29ad767ef55fd3321d6a9f3ce7fa79b8"
   license "MIT"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7fe8d99487a213818abfba231555ba8fb1e8fb91349e681b497e81907bb9a3f6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61839fb6a203ccc38e8c8f6d17eac0180ca754dfee8acb2c22caf36462445270"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "077a2f758437da21b2261542136cce7ef0e3a25a49bc9302881656c80710000c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b9846110ee3a9ab3686bd96e381e651ed83816224c476540218c289a72c2f2ba"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b5dcc69027cbb34191b24b89b2364c79f41bfdc710a9ed97313305df0b840ea8"
-    sha256 cellar: :any_skip_relocation, ventura:       "d81ad6cb5d8ecd1c47f261ccfe5e997944e5d79bbf65b4b2967a0181e3e8b1e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "195ef180318ab81e1e834597c845df5c9a71f792bb2d6037f77f766cdb6b9100"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ed822006985f68806fc9ad31c591f314252ab941d939568a40096989fcecb36"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e325aa06f0cf53aace520e3818c0b29c6f310d1d21db704a50f59e8a92ae23b1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1412944dfbc952119ae641341114703c5f8fa6941a295f2ffad5d77169ff3918"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "effe5309b77c590d818d05b80ad62963f0b8106992cf886525670649e0d02b8d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "626c6775931d952219907d7ef27ae221d998d5c6a89c7ea05a29bd6a1f98dff4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "54108f65756d822d1ae1b9d95f2d66a3ac2b0ce9fd8c0b6e795cd1433f52af04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78249117db0046aed56949592d27224f7e6b2c5b8b998fabf3e240489cd66274"
   end
 
   depends_on "go" => :build

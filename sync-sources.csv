@@ -2067,6 +2067,7 @@ Homebrew-homebrew-core/Formula/f/flatcc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flavours.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flawfinder.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/flawz.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/flecs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fleet-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flexget.rb, Homebrew/homebrew-core, 0
@@ -2303,7 +2304,6 @@ Homebrew-homebrew-core/Formula/g/gensio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/geocode-glib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/geogram.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/geographiclib.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/geoip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/geoip2fast.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/geoipupdate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/geometry.rb, Homebrew/homebrew-core, 1
@@ -8968,6 +8968,7 @@ Homebrew-homebrew-cask/Casks/c/cookie.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cool-retro-term.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/coolterm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/copilot-cli.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/copilot-cli@prerelease.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/copilot-for-xcode.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/copilot-money.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/copyclip.rb, Homebrew/homebrew-cask, 0
