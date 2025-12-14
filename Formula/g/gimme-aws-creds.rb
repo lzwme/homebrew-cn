@@ -10,13 +10,13 @@ class GimmeAwsCreds < Formula
   head "https://github.com/Nike-Inc/gimme-aws-creds.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "309b2b1d8fab8ff79aab405c159ab2c76dc702f1dfd32a7500353542723b1fb6"
-    sha256 cellar: :any,                 arm64_sequoia: "b3baf7b3285d562d8e969e4539cbdfc06d0ca82f0cb61c310a53f49a6ba7e7ac"
-    sha256 cellar: :any,                 arm64_sonoma:  "22cb5ec970cd13cc469892cdc60a0ce357fff4b5dc43d31c7f8353d54f48ac64"
-    sha256 cellar: :any,                 sonoma:        "36613272c201c105a5b1f29ebd793045e49c19dde7966f0809204b35f9b90795"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "92ba09476be848721e4fadbe2d487bd245a25d3fdc5364558b04a4aa94d63364"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54dbf64248890f9c30cba91d17774931752178eb05573414d04b5ab73e240c7f"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "6dcd6833ff8f8af21c333fa0becc75c89371e2df3071a36bf5e2e5b501b08e03"
+    sha256 cellar: :any,                 arm64_sequoia: "22268f59c3b71df45c5385773a1086c1bcec4067a282ed4dc32f983a89430cf9"
+    sha256 cellar: :any,                 arm64_sonoma:  "72f0b352dc736aac05c3f00573ce8ac8b558a820d6adb627eb21058d60a6e58f"
+    sha256 cellar: :any,                 sonoma:        "c2e0e5f418cc9f664a094c92f36c16d7ad4eade3270a70eeb2e57f781e637b04"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3aba4171d3172a422f3f66b32fa85831778af5113e4576fad88c96b165b50ec1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "debd178cc8114f64624385a013a6fe1b6e54541d4e91e78fc82b49c4ef5aa470"
   end
 
   depends_on "certifi"
@@ -43,7 +43,7 @@ class GimmeAwsCreds < Formula
   #           ├── pyobjc-core
   #           ├── ...
   pypi_packages exclude_packages: %w[certifi cryptography],
-                extra_packages:   "pyobjc-framework-localauthentication"
+                extra_packages:   %w[jeepney pyobjc-framework-localauthentication secretstorage]
 
   resource "aenum" do
     url "https://files.pythonhosted.org/packages/e3/52/6ad8f63ec8da1bf40f96996d25d5b650fdd38f5975f8c813732c47388f18/aenum-3.1.16-py3-none-any.whl"
@@ -56,8 +56,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/ba/fa/3ae643cd525cf6844d3dc810481e5748107368eb49563c15a5fb9f680750/aiohttp-3.13.1.tar.gz"
-    sha256 "4b7ee9c355015813a6aa085170b96ec22315dabc3d866fd77d147927000e9464"
+    url "https://files.pythonhosted.org/packages/1c/ce/3b83ebba6b3207a7135e5fcaba49706f8a4b6008153b4e30540c982fae26/aiohttp-3.13.2.tar.gz"
+    sha256 "40176a52c186aefef6eb3cad2cdd30cd06e3afbe88fe8ab2af9c0b90f228daca"
   end
 
   resource "aiosignal" do
@@ -71,18 +71,18 @@ class GimmeAwsCreds < Formula
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/77/e9/df2358efd7659577435e2177bfa69cba6c33216681af51a707193dec162a/beautifulsoup4-4.14.2.tar.gz"
-    sha256 "2a98ab9f944a11acee9cc848508ec28d9228abfd522ef0fad6a02a72e0ded69e"
+    url "https://files.pythonhosted.org/packages/c3/b0/1c6a16426d389813b48d95e26898aff79abbde42ad353958ad95cc8c9b21/beautifulsoup4-4.14.3.tar.gz"
+    sha256 "6292b1c5186d356bba669ef9f7f051757099565ad9ada5dd630bd9de5fa7fb86"
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/50/d8/a279c054e0c9731172f05b3d118f3ffc9d74806657f84fc0c93c42d1bb5d/boto3-1.40.55.tar.gz"
-    sha256 "27e35b4fa9edd414ce06c1a748bf57cacd8203271847d93fc1053e4a4ec6e1a9"
+    url "https://files.pythonhosted.org/packages/8c/07/dfa651dbd57bfc34d952a101280928bab08ed6186f009c660a36c211ccff/boto3-1.42.9.tar.gz"
+    sha256 "cdd4cc3e5bb08ed8a0c5cc77eca78f98f0239521de0991f14e44b788b0c639b2"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/a4/92/dce4842b2e215d213d34b064fcdd13c6a782c43344e77336bcde586e9229/botocore-1.40.55.tar.gz"
-    sha256 "79b6472e2de92b3519d44fc1eec8c5feced7f99a0d10fdea6dc93133426057c1"
+    url "https://files.pythonhosted.org/packages/fd/f3/2d2cfb500e2dc00b0e33e3c8743306e6330f3cf219d19e9260dab2f3d6c2/botocore-1.42.9.tar.gz"
+    sha256 "74f69bfd116cc7c8215481284957eecdb48580e071dd50cb8c64356a866abd8c"
   end
 
   resource "charset-normalizer" do
@@ -147,6 +147,11 @@ class GimmeAwsCreds < Formula
     sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
   end
 
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
+    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
+  end
+
   resource "jmespath" do
     url "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
     sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
@@ -158,8 +163,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "keyring" do
-    url "https://files.pythonhosted.org/packages/70/09/d904a6e96f76ff214be59e7aa6ef7190008f52a0ab6689760a98de0bf37d/keyring-25.6.0.tar.gz"
-    sha256 "0b39998aa941431eb3d9b0d4b2460bc773b9df6fed7621c2dfb291a7e0187a66"
+    url "https://files.pythonhosted.org/packages/43/4b/674af6ef2f97d56f0ab5153bf0bfa28ccb6c3ed4d1babf4305449668807b/keyring-25.7.0.tar.gz"
+    sha256 "fe01bd85eb3f8fb3dd0405defdeac9a5b4f6f0439edbb3149577f244a2e8245b"
   end
 
   resource "more-itertools" do
@@ -178,8 +183,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "orderedmultidict" do
-    url "https://files.pythonhosted.org/packages/53/4e/3823a27d764bb8388711f4cb6f24e58453e92d6928f4163fdb01e3a3789f/orderedmultidict-1.0.1.tar.gz"
-    sha256 "04070bbb5e87291cc9bfa51df413677faf2141c73c61d2a5f7b26bea3cd882ad"
+    url "https://files.pythonhosted.org/packages/5c/62/61ad51f6c19d495970230a7747147ce7ed3c3a63c2af4ebfdb1f6d738703/orderedmultidict-1.0.2.tar.gz"
+    sha256 "16a7ae8432e02cc987d2d6d5af2df5938258f87c870675c73ee77a0920e6f4a6"
   end
 
   resource "propcache" do
@@ -203,23 +208,23 @@ class GimmeAwsCreds < Formula
   end
 
   resource "pyobjc-core" do
-    url "https://files.pythonhosted.org/packages/e8/e9/0b85c81e2b441267bca707b5d89f56c2f02578ef8f3eafddf0e0c0b8848c/pyobjc_core-11.1.tar.gz"
-    sha256 "b63d4d90c5df7e762f34739b39cc55bc63dbcf9fb2fb3f2671e528488c7a87fe"
+    url "https://files.pythonhosted.org/packages/b8/b6/d5612eb40be4fd5ef88c259339e6313f46ba67577a95d86c3470b951fce0/pyobjc_core-12.1.tar.gz"
+    sha256 "2bb3903f5387f72422145e1466b3ac3f7f0ef2e9960afa9bcd8961c5cbf8bd21"
   end
 
   resource "pyobjc-framework-cocoa" do
-    url "https://files.pythonhosted.org/packages/4b/c5/7a866d24bc026f79239b74d05e2cf3088b03263da66d53d1b4cf5207f5ae/pyobjc_framework_cocoa-11.1.tar.gz"
-    sha256 "87df76b9b73e7ca699a828ff112564b59251bb9bbe72e610e670a4dc9940d038"
+    url "https://files.pythonhosted.org/packages/02/a3/16ca9a15e77c061a9250afbae2eae26f2e1579eb8ca9462ae2d2c71e1169/pyobjc_framework_cocoa-12.1.tar.gz"
+    sha256 "5556c87db95711b985d5efdaaf01c917ddd41d148b1e52a0c66b1a2e2c5c1640"
   end
 
   resource "pyobjc-framework-localauthentication" do
-    url "https://files.pythonhosted.org/packages/e5/27/9e3195f3561574140e9b9071a36f7e0ebd18f50ade9261d23b5b9df8fccd/pyobjc_framework_localauthentication-11.1.tar.gz"
-    sha256 "3cd48907c794bd414ac68b8ac595d83c7e1453b63fc2cfc2d2035b690d31eaa1"
+    url "https://files.pythonhosted.org/packages/8d/0e/7e5d9a58bb3d5b79a75d925557ef68084171526191b1c0929a887a553d4f/pyobjc_framework_localauthentication-12.1.tar.gz"
+    sha256 "2284f587d8e1206166e4495b33f420c1de486c36c28c4921d09eec858a699d05"
   end
 
   resource "pyobjc-framework-security" do
-    url "https://files.pythonhosted.org/packages/ee/6f/ba50ed2d9c1192c67590a7cfefa44fc5f85c776d1e25beb224dec32081f6/pyobjc_framework_security-11.1.tar.gz"
-    sha256 "dabcee6987c6bae575e2d1ef0fcbe437678c4f49f1c25a4b131a5e960f31a2da"
+    url "https://files.pythonhosted.org/packages/80/aa/796e09a3e3d5cee32ebeebb7dcf421b48ea86e28c387924608a05e3f668b/pyobjc_framework_security-12.1.tar.gz"
+    sha256 "7fecb982bd2f7c4354513faf90ba4c53c190b7e88167984c2d0da99741de6da9"
   end
 
   resource "python-dateutil" do
@@ -238,8 +243,13 @@ class GimmeAwsCreds < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/62/74/8d69dcb7a9efe8baa2046891735e5dfe433ad558ae23d9e3c14c633d1d58/s3transfer-0.14.0.tar.gz"
-    sha256 "eff12264e7c8b4985074ccce27a3b38a485bb7f7422cc8046fee9be4983e4125"
+    url "https://files.pythonhosted.org/packages/05/04/74127fc843314818edfa81b5540e26dd537353b123a4edc563109d8f17dd/s3transfer-0.16.0.tar.gz"
+    sha256 "8e990f13268025792229cd52fa10cb7163744bf56e719e0b9cb925ab79abf920"
+  end
+
+  resource "secretstorage" do
+    url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
+    sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
   end
 
   resource "six" do
@@ -283,6 +293,7 @@ class GimmeAwsCreds < Formula
       ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"
       # pyobjc-core uses "-fdisable-block-signature-string" introduced in clang 17
       ENV.llvm_clang if DevelopmentTools.clang_build_version <= 1699
+      without = %w[jeepney secretstorage]
     else
       without = resources.filter_map { |r| r.name if r.name.start_with?("pyobjc") }
     end

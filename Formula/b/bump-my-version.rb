@@ -3,14 +3,13 @@ class BumpMyVersion < Formula
 
   desc "Version bump your Python project"
   homepage "https://callowayproject.github.io/bump-my-version/"
-  url "https://files.pythonhosted.org/packages/a0/fa/3ade689370780989831e574e82024d301ffa5ef75b3d169a7074c9419ce4/bump_my_version-1.2.4.tar.gz"
-  sha256 "998abb4f3774cf96137a77034a5a12a722b109b26a3afa044ec14622a0180fa3"
+  url "https://files.pythonhosted.org/packages/c5/01/2bff065f653fed342a1a7118566ce6bebc44445ec70c1dce60fc9eeac184/bump_my_version-1.2.5.tar.gz"
+  sha256 "827af6c7b13111c62b45340f25defd105f566fe0cdbbb70e2c4b2f005b667e1f"
   license "MIT"
   head "https://github.com/callowayproject/bump-my-version.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, all: "96ddafce818198afcc5483f6b39cabc8916f8afd79f1643075ec8bc0599bcf5a"
+    sha256 cellar: :any_skip_relocation, all: "e5380f6e944fde514b3da3655c227d29dc5f7aee83179400c9278a206760a129"
   end
 
   depends_on "certifi" => :no_linkage
@@ -20,8 +19,8 @@ class BumpMyVersion < Formula
   pypi_packages exclude_packages: ["certifi", "pydantic"]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "bracex" do
@@ -70,8 +69,8 @@ class BumpMyVersion < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/20/c5/dbbc27b814c71676593d1c3f718e6cd7d4f00652cefa24b75f7aa3efb25e/pydantic_settings-2.11.0.tar.gz"
-    sha256 "d0e87a1c7d33593beb7194adb8470fc426e95ba02af83a0f23474a04c9a08180"
+    url "https://files.pythonhosted.org/packages/43/4b/ac7e0aae12027748076d72a8764ff1c9d82ca75a7a52622e67ed3f765c54/pydantic_settings-2.12.0.tar.gz"
+    sha256 "005538ef951e3c2a68e1c08b292b5f2e71490def8589d4221b95dab00dafcfd0"
   end
 
   resource "pygments" do
@@ -97,11 +96,6 @@ class BumpMyVersion < Formula
   resource "rich-click" do
     url "https://files.pythonhosted.org/packages/bf/d8/f2c1b7e9a645ba40f756d7a5b195fc104729bc6b19061ba3ab385f342931/rich_click-1.9.4.tar.gz"
     sha256 "af73dc68e85f3bebb80ce302a642b9fe3b65f3df0ceb42eb9a27c467c1b678c8"
-  end
-
-  resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
-    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
   end
 
   resource "tomlkit" do

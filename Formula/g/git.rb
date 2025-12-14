@@ -13,12 +13,13 @@ class Git < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "1a8fcc1cf3af527b4d9a842581a0c5a1b83c80fed1b7add49fd02523f3f800cb"
-    sha256 arm64_sequoia: "a0f9e207b5b486c9d81cc8f68090dc1fa600352051a7fc83abb726d0c15572a0"
-    sha256 arm64_sonoma:  "d8acda640ff797231bda7bdc2a5e0a093687d7f4a8efc3be9a337b62dca259ff"
-    sha256 sonoma:        "f9951859fa82346656c7c0b81569d23fa96154beb0ab3edcfc3d47000528c24a"
-    sha256 arm64_linux:   "4939b22f67bca09b597871a9876a39d3fec3f822f7957c8dab3f91937370f4d5"
-    sha256 x86_64_linux:  "ee458c0360f93189e6d004433e24a441f15ea5902e70900304de8eb4fa43300f"
+    rebuild 1
+    sha256 arm64_tahoe:   "b38e9da78154b13b32f1445f8547ac399f2b2e7141ad75b6629d24469e27c7ed"
+    sha256 arm64_sequoia: "c19806bab8c8059b2a01275670829864d4c4243042b6ed771e0cff2cfdc20e2d"
+    sha256 arm64_sonoma:  "44293f455b4c39f3e3466715be74aecd3995ed765163a5def0407dc6b6cdad17"
+    sha256 sonoma:        "4712f38cb96b889883b28adb93cfb06f489676f5e5ae9e7583098a93b9cdd862"
+    sha256 arm64_linux:   "567e3a8b79357b48b95a1d4c59f4c1e8f1e9e8fcd921104598f608960a15acab"
+    sha256 x86_64_linux:  "6fdac40b74282d1b5aa610a2ad05a7688c146acdec7bdb5004ee42ca25a705fe"
   end
 
   depends_on "gettext"
@@ -27,6 +28,10 @@ class Git < Formula
   uses_from_macos "curl"
   uses_from_macos "expat"
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "libiconv"
+  end
 
   on_linux do
     depends_on "openssl@3" # Uses CommonCrypto on macOS
@@ -77,6 +82,7 @@ class Git < Formula
     perl_version = Utils.safe_popen_read("perl", "--version")[/v(\d+\.\d+)(?:\.\d+)?/, 1]
 
     if OS.mac?
+      ENV["ICONVDIR"] = Formula["libiconv"].opt_prefix
       ENV["PERLLIB_EXTRA"] = %W[
         #{MacOS.active_developer_dir}
         /Library/Developer/CommandLineTools

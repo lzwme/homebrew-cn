@@ -18,7 +18,7 @@ class BitwardenCli < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", *std_npm_args(prefix: false), "--ignore-scripts"
+    system "npm", "install", *std_npm_args(prefix: false)
     cd buildpath/"apps/cli" do
       # The `oss` build of Bitwarden is a GPL backed build
       system "npm", "run", "build:oss:prod", "--ignore-scripts"

@@ -4,7 +4,7 @@ class Visp < Formula
   url "https://visp-doc.inria.fr/download/releases/visp-3.6.0.tar.gz"
   sha256 "eec93f56b89fd7c0d472b019e01c3fe03a09eda47f3903c38dc53a27cbfae532"
   license "GPL-2.0-or-later"
-  revision 19
+  revision 20
 
   livecheck do
     url "https://visp.inria.fr/download/"
@@ -14,12 +14,12 @@ class Visp < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7efeb3c73ba6c90938f8df5cc15ad7e996cdaace2c7694056989536607b89e65"
-    sha256 cellar: :any,                 arm64_sequoia: "def3fe5709f81618936e77b2323f0accb57724ce33346dfefff79356ca663973"
-    sha256 cellar: :any,                 arm64_sonoma:  "a428e82264b87d1065860037c8e0d3a91b60c0d023314e8f3518bef3f2f39a27"
-    sha256 cellar: :any,                 sonoma:        "5b28a9211a9171ae48bb9e4ed235ca0e84e046ead0b5519fa9c64b34b4192ed7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b00e634ae5fa2b84cc6300c3bc89d6602e2dfa8cddcd7fc79158d4d86402ab36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "227d11044d1fd82fddc407d2c63c8f4a121c33cbe81609442ab50ab2f6b2c7ae"
+    sha256 cellar: :any,                 arm64_tahoe:   "a132ffe96d698f47cb5aa8de0377cbd5b5e4870b3e65e76b26631a902198c182"
+    sha256 cellar: :any,                 arm64_sequoia: "67bcf94acedaef607b8aea3024808060bc2ac8e24682579c5a40cdc44f42af21"
+    sha256 cellar: :any,                 arm64_sonoma:  "c52f0ec639616ca039c7507fcd8ed0c80f0d673ffd133f1608f8a6fcb2e25383"
+    sha256 cellar: :any,                 sonoma:        "29e2766d7393aaa8ea01ab3e6a10079f55fa437f68d1973bec10b3f22a8090a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "89b5a2ff304ddd8d1db22c71760b64b3c3228900cd3ecaa0ec0f5ef361bd30cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14177b940e138f035ae6c292b52c83914d484c69edc9611eb6196a67fde8024f"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -133,6 +133,7 @@ class Visp < Formula
                          "-DZBAR_INCLUDE_DIRS=#{Formula["zbar"].opt_include}",
                          "-DZBAR_LIBRARIES=#{Formula["zbar"].opt_lib/shared_library("libzbar")}",
                          "-DUSE_ZLIB=ON",
+                         "-DUSE_MAVSDK=OFF",
                          *std_cmake_args
 
     # Replace generated references to OpenCV's Cellar path

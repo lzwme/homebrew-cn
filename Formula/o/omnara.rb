@@ -10,12 +10,13 @@ class Omnara < Formula
   no_autobump! because: "contains non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cf2c478505b0244217f307ffe50ab1164114c9a52c55afb0fd56130c9f7d223e"
-    sha256 cellar: :any,                 arm64_sequoia: "63bd6f4aa4107b277bb726ce3bafcf213692a85b99e72fb067802a25cb2de808"
-    sha256 cellar: :any,                 arm64_sonoma:  "53505c0869efda6a53d24e15a695460ce9a4cdc1b0367a01169d0dd61f98f7d1"
-    sha256 cellar: :any,                 sonoma:        "0b76698f36d0019bbc71b0719da4b403ed1413afc7bd3e3468c2fa817202c1ac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbd65c4684393e499d8962b2685bcf1d0cf49df2cdbedb8ec53264ff62f1b544"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7047d1fe11c45c202c33d3915c363197f92221f6760e46ff40d95d3d70c60f6"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "66c178aebb9467cbb059d6de2a65b0ab247619342b3488d382b5ad669fd5d013"
+    sha256 cellar: :any,                 arm64_sequoia: "fd7f8ace7a470b3d6f7c2ebd1188030fe6136c80146b40afeed5762b76ee481b"
+    sha256 cellar: :any,                 arm64_sonoma:  "91b496e396474ef5e2e7ddd8d4318b535453934406141067dfbb5a647e57278a"
+    sha256 cellar: :any,                 sonoma:        "0a2c09ae7bd421ae2435af610854d32d8f90100fa69d9bbf0320df1c81e5b9ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc37bf12876ce36dd1fef53c642975fdef1606199808ce61208b26b021645e0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdf9f2cc5ba393c05624b31e083c21a327e59b9b65a8341e156476b31a898e7d"
   end
 
   depends_on "rust" => :build
@@ -31,7 +32,8 @@ class Omnara < Formula
     depends_on "openssl@3"
   end
 
-  pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py],
+                extra_packages:   %w[jeepney secretstorage]
 
   resource "aiohappyeyeballs" do
     url "https://files.pythonhosted.org/packages/26/30/f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54/aiohappyeyeballs-2.6.1.tar.gz"
@@ -49,13 +51,13 @@ class Omnara < Formula
   end
 
   resource "annotated-doc" do
-    url "https://files.pythonhosted.org/packages/d7/a6/dc46877b911e40c00d395771ea710d5e77b6de7bacd5fdcd78d70cc5a48f/annotated_doc-0.0.3.tar.gz"
-    sha256 "e18370014c70187422c33e945053ff4c286f453a984eba84d0dbfa0c935adeda"
+    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
+    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "attrs" do
@@ -64,18 +66,18 @@ class Omnara < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/cd/3f/1d3bbd0bf23bdd99276d4def22f29c27a914067b4cf66f753ff9b8bbd0f3/authlib-1.6.5.tar.gz"
-    sha256 "6aaf9c79b7cc96c900f0b284061691c5d4e61221640a948fe690b556a6d6d10b"
+    url "https://files.pythonhosted.org/packages/bb/9b/b1661026ff24bc641b76b78c5222d614776b0c085bcfdac9bd15a1cb4b35/authlib-1.6.6.tar.gz"
+    sha256 "45770e8e056d0f283451d9996fbb59b70d45722b45d854d58f32878d0a40c38e"
   end
 
   resource "beartype" do
-    url "https://files.pythonhosted.org/packages/a6/09/9003e5662691056e0e8b2e6f57c799e71875fac0be0e785d8cb11557cd2a/beartype-0.22.5.tar.gz"
-    sha256 "516a9096cc77103c96153474fa35c3ebcd9d36bd2ec8d0e3a43307ced0fa6341"
+    url "https://files.pythonhosted.org/packages/c7/94/1009e248bbfbab11397abca7193bea6626806be9a327d399810d523a07cb/beartype-0.22.9.tar.gz"
+    sha256 "8f82b54aa723a2848a56008d18875f91c1db02c32ef6a62319a002e3e25a975f"
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/cc/7e/b975b5814bd36faf009faebe22c1072a1fa1168db34d285ef0ba071ad78c/cachetools-6.2.1.tar.gz"
-    sha256 "3f391e4bd8f8bf0931169baf7456cc822705f4e2a31f840d218f445b9a854201"
+    url "https://files.pythonhosted.org/packages/b5/44/5dc354b9f2df614673c2a542a630ef95d578b4a8673a1046d1137a7e2453/cachetools-6.2.3.tar.gz"
+    sha256 "64e0a4ddf275041dd01f5b873efa87c91ea49022b844b8c5d1ad3407c0f42f1f"
   end
 
   resource "charset-normalizer" do
@@ -89,13 +91,18 @@ class Omnara < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+  end
+
+  resource "cloudpickle" do
+    url "https://files.pythonhosted.org/packages/27/fb/576f067976d320f5f0114a8d9fa1215425441bb35627b1993e5afd8111e5/cloudpickle-3.1.2.tar.gz"
+    sha256 "7fda9eb655c9c230dab534f1983763de5835249750e85fbcef43aaa30a9a2414"
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/8a/51/a67b17fac2530d22216a335bd10f48631412dd824013ea559ec236668f76/cyclopts-4.2.1.tar.gz"
-    sha256 "49bb4c35644e7a9658f706ade4cf1a9958834b2dca4425e2fafecf8a0537fac7"
+    url "https://files.pythonhosted.org/packages/1b/0f/fe026df2ab8301e30a2b0bd425ff1462ad858fd4f991c1ac0389c2059c24/cyclopts-4.3.0.tar.gz"
+    sha256 "e95179cd0a959ce250ecfb2f0262a5996a92c1f9467bccad2f3d829e6833cef5"
   end
 
   resource "diskcache" do
@@ -124,18 +131,23 @@ class Omnara < Formula
   end
 
   resource "exceptiongroup" do
-    url "https://files.pythonhosted.org/packages/0b/9f/a65090624ecf468cdca03533906e7c69ed7588582240cfe7cc9e770b50eb/exceptiongroup-1.3.0.tar.gz"
-    sha256 "b241f5885f560bc56a59ee63ca4c6a8bfa46ae4ad651af316d4e81817bb9fd88"
+    url "https://files.pythonhosted.org/packages/50/79/66800aadf48771f6b62f7eb014e352e5d06856655206165d775e675a02c9/exceptiongroup-1.3.1.tar.gz"
+    sha256 "8b412432c6055b0b7d14c310000ae93352ed6754f70fa8f7c34141f91c4e3219"
+  end
+
+  resource "fakeredis" do
+    url "https://files.pythonhosted.org/packages/56/14/b47b8471303af7deed7080290c14cff27a831fa47b38f45643e6bf889cee/fakeredis-2.32.1.tar.gz"
+    sha256 "dd8246db159f0b66a1ced7800c9d5ef07769e3d2fde44b389a57f2ce2834e444"
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/6b/a4/29e1b861fc9017488ed02ff1052feffa40940cb355ed632a8845df84ce84/fastapi-0.121.1.tar.gz"
-    sha256 "b6dba0538fd15dab6fe4d3e5493c3957d8a9e1e9257f56446b5859af66f32441"
+    url "https://files.pythonhosted.org/packages/cd/21/ade3ff6745a82ea8ad88552b4139d27941549e4f19125879f848ac8f3c3d/fastapi-0.124.4.tar.gz"
+    sha256 "0e9422e8d6b797515f33f500309f6e1c98ee4e85563ba0f2debb282df6343763"
   end
 
   resource "fastmcp" do
-    url "https://files.pythonhosted.org/packages/1b/74/584a152bcd174c99ddf3cfdd7e86ec4a6c696fb190a907c2a2ec9056bda2/fastmcp-2.13.0.2.tar.gz"
-    sha256 "d35386561b6f3cde195ba2b5892dc89b8919a721e6b39b98e7a16f9a7c0b8e8b"
+    url "https://files.pythonhosted.org/packages/35/50/9bb042a2d290ccadb35db3580ac507f192e1a39c489eb8faa167cd5e3b57/fastmcp-2.14.0.tar.gz"
+    sha256 "c1f487b36a3e4b043dbf3330e588830047df2e06f8ef0920d62dfb34d0905727"
   end
 
   resource "frozenlist" do
@@ -168,6 +180,11 @@ class Omnara < Formula
     sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
+  resource "importlib-metadata" do
+    url "https://files.pythonhosted.org/packages/76/66/650a33bd90f786193e4de4b3ad86ea60b53c89b669a5c7be931fac31cdb0/importlib_metadata-8.7.0.tar.gz"
+    sha256 "d13b81ad223b890aa16c5471f2ac3056cf76c5f10f82d6f9292f0b415f389000"
+  end
+
   resource "jaraco-classes" do
     url "https://files.pythonhosted.org/packages/06/c0/ed4a27bc5571b99e3cff68f8a9fa5b56ff7df1c2251cc715a652ddd26402/jaraco.classes-3.4.0.tar.gz"
     sha256 "47a024b51d0239c0dd8c8540c6c7f484be3b8fcf0b2d85c13825780d3b3f3acd"
@@ -181,6 +198,11 @@ class Omnara < Formula
   resource "jaraco-functools" do
     url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
     sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
+  end
+
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
+    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
   end
 
   resource "jsonschema" do
@@ -199,8 +221,13 @@ class Omnara < Formula
   end
 
   resource "keyring" do
-    url "https://files.pythonhosted.org/packages/70/09/d904a6e96f76ff214be59e7aa6ef7190008f52a0ab6689760a98de0bf37d/keyring-25.6.0.tar.gz"
-    sha256 "0b39998aa941431eb3d9b0d4b2460bc773b9df6fed7621c2dfb291a7e0187a66"
+    url "https://files.pythonhosted.org/packages/43/4b/674af6ef2f97d56f0ab5153bf0bfa28ccb6c3ed4d1babf4305449668807b/keyring-25.7.0.tar.gz"
+    sha256 "fe01bd85eb3f8fb3dd0405defdeac9a5b4f6f0439edbb3149577f244a2e8245b"
+  end
+
+  resource "lupa" do
+    url "https://files.pythonhosted.org/packages/b8/1c/191c3e6ec6502e3dbe25a53e27f69a5daeac3e56de1f73c0138224171ead/lupa-2.6.tar.gz"
+    sha256 "9a770a6e89576be3447668d7ced312cd6fd41d3c13c2462c9dc2c2ab570e45d9"
   end
 
   resource "markdown-it-py" do
@@ -209,8 +236,8 @@ class Omnara < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/33/54/dd2330ef4611c27ae59124820863c34e1d3edb1133c58e6375e2d938c9c5/mcp-1.21.0.tar.gz"
-    sha256 "bab0a38e8f8c48080d787233343f8d301b0e1e95846ae7dead251b2421d99855"
+    url "https://files.pythonhosted.org/packages/d6/2c/db9ae5ab1fcdd9cd2bcc7ca3b7361b712e30590b64d5151a31563af8f82d/mcp-1.24.0.tar.gz"
+    sha256 "aeaad134664ce56f2721d1abf300666a1e8348563f4d3baff361c3b652448efc"
   end
 
   resource "mdurl" do
@@ -233,6 +260,36 @@ class Omnara < Formula
     sha256 "ff6835af6bde7a459fb93eb93bb92b8749b754fc6e51b2f1590a19dc3005ee0d"
   end
 
+  resource "opentelemetry-api" do
+    url "https://files.pythonhosted.org/packages/97/b9/3161be15bb8e3ad01be8be5a968a9237c3027c5be504362ff800fca3e442/opentelemetry_api-1.39.1.tar.gz"
+    sha256 "fbde8c80e1b937a2c61f20347e91c0c18a1940cecf012d62e65a7caf08967c9c"
+  end
+
+  resource "opentelemetry-exporter-prometheus" do
+    url "https://files.pythonhosted.org/packages/14/39/7dafa6fff210737267bed35a8855b6ac7399b9e582b8cf1f25f842517012/opentelemetry_exporter_prometheus-0.60b1.tar.gz"
+    sha256 "a4011b46906323f71724649d301b4dc188aaa068852e814f4df38cc76eac616b"
+  end
+
+  resource "opentelemetry-instrumentation" do
+    url "https://files.pythonhosted.org/packages/41/0f/7e6b713ac117c1f5e4e3300748af699b9902a2e5e34c9cf443dde25a01fa/opentelemetry_instrumentation-0.60b1.tar.gz"
+    sha256 "57ddc7974c6eb35865af0426d1a17132b88b2ed8586897fee187fd5b8944bd6a"
+  end
+
+  resource "opentelemetry-sdk" do
+    url "https://files.pythonhosted.org/packages/eb/fb/c76080c9ba07e1e8235d24cdcc4d125ef7aa3edf23eb4e497c2e50889adc/opentelemetry_sdk-1.39.1.tar.gz"
+    sha256 "cf4d4563caf7bff906c9f7967e2be22d0d6b349b908be0d90fb21c8e9c995cc6"
+  end
+
+  resource "opentelemetry-semantic-conventions" do
+    url "https://files.pythonhosted.org/packages/91/df/553f93ed38bf22f4b999d9be9c185adb558982214f33eae539d3b5cd0858/opentelemetry_semantic_conventions-0.60b1.tar.gz"
+    sha256 "87c228b5a0669b748c76d76df6c364c369c28f1c465e50f661e39737e84bc953"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+  end
+
   resource "pathable" do
     url "https://files.pythonhosted.org/packages/67/93/8f2c2075b180c12c1e9f6a09d1a985bc2036906b13dff1d8917e395f2048/pathable-0.4.4.tar.gz"
     sha256 "6905a3cd17804edfac7875b5f6c9142a218c7caef78693c2dbbbfbac186d88b2"
@@ -244,8 +301,13 @@ class Omnara < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
+  end
+
+  resource "prometheus-client" do
+    url "https://files.pythonhosted.org/packages/23/53/3edb5d68ecf6b38fcbcc1ad28391117d2a322d9a1a3eff04bfdb184d8c3b/prometheus_client-0.23.1.tar.gz"
+    sha256 "6ae8f9081eaaaf153a2e959d2e6c4f4fb57b12ef76c8c7980202f1e57b48b2ce"
   end
 
   resource "propcache" do
@@ -254,18 +316,23 @@ class Omnara < Formula
   end
 
   resource "py-key-value-aio" do
-    url "https://files.pythonhosted.org/packages/ca/35/65310a4818acec0f87a46e5565e341c5a96fc062a9a03495ad28828ff4d7/py_key_value_aio-0.2.8.tar.gz"
-    sha256 "c0cfbb0bd4e962a3fa1a9fa6db9ba9df812899bd9312fa6368aaea7b26008b36"
+    url "https://files.pythonhosted.org/packages/93/ce/3136b771dddf5ac905cc193b461eb67967cf3979688c6696e1f2cdcde7ea/py_key_value_aio-0.3.0.tar.gz"
+    sha256 "858e852fcf6d696d231266da66042d3355a7f9871650415feef9fca7a6cd4155"
   end
 
   resource "py-key-value-shared" do
-    url "https://files.pythonhosted.org/packages/26/79/05a1f9280cfa0709479319cbfd2b1c5beb23d5034624f548c83fb65b0b61/py_key_value_shared-0.2.8.tar.gz"
-    sha256 "703b4d3c61af124f0d528ba85995c3c8d78f8bd3d2b217377bd3278598070cc1"
+    url "https://files.pythonhosted.org/packages/7b/e4/1971dfc4620a3a15b4579fe99e024f5edd6e0967a71154771a059daff4db/py_key_value_shared-0.3.0.tar.gz"
+    sha256 "8fdd786cf96c3e900102945f92aa1473138ebe960ef49da1c833790160c28a4b"
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/20/c5/dbbc27b814c71676593d1c3f718e6cd7d4f00652cefa24b75f7aa3efb25e/pydantic_settings-2.11.0.tar.gz"
-    sha256 "d0e87a1c7d33593beb7194adb8470fc426e95ba02af83a0f23474a04c9a08180"
+    url "https://files.pythonhosted.org/packages/43/4b/ac7e0aae12027748076d72a8764ff1c9d82ca75a7a52622e67ed3f765c54/pydantic_settings-2.12.0.tar.gz"
+    sha256 "005538ef951e3c2a68e1c08b292b5f2e71490def8589d4221b95dab00dafcfd0"
+  end
+
+  resource "pydocket" do
+    url "https://files.pythonhosted.org/packages/86/77/842e41be3cf3592b971cf42b24cae76e282294f474dc2dbf7cd6808d1b09/pydocket-0.15.5.tar.gz"
+    sha256 "b3af47702a293dd1da2e5e0f8f73f27fd3b3c95e36de72a2f71026d16908d5ba"
   end
 
   resource "pygments" do
@@ -288,6 +355,11 @@ class Omnara < Formula
     sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
   end
 
+  resource "python-json-logger" do
+    url "https://files.pythonhosted.org/packages/29/bf/eca6a3d43db1dae7070f70e160ab20b807627ba953663ba07928cdd3dc58/python_json_logger-4.0.0.tar.gz"
+    sha256 "f58e68eb46e1faed27e0f574a55a0455eecd7b8a5b88b85a784519ba3cff047f"
+  end
+
   resource "python-multipart" do
     url "https://files.pythonhosted.org/packages/f3/87/f44d7c9f274c7ee665a29b885ec97089ec5dc034c7f3fafa03da9e39a09e/python_multipart-0.0.20.tar.gz"
     sha256 "8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13"
@@ -296,6 +368,11 @@ class Omnara < Formula
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
+  end
+
+  resource "redis" do
+    url "https://files.pythonhosted.org/packages/43/c8/983d5c6579a411d8a99bc5823cc5712768859b5ce2c8afe1a65b37832c81/redis-7.1.0.tar.gz"
+    sha256 "b1cc3cfa5a2cb9c2ab3ba700864fb0ad75617b41f01352ce5779dabf6d5f9c3c"
   end
 
   resource "referencing" do
@@ -318,9 +395,19 @@ class Omnara < Formula
     sha256 "a1196fdddf1e364b02ec68a05e8ff8f6914fee10fbca2e6b6735f166bb0da8d4"
   end
 
-  resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
-    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
+  resource "secretstorage" do
+    url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
+    sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
+  end
+
+  resource "shellingham" do
+    url "https://files.pythonhosted.org/packages/58/15/8b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58e/shellingham-1.5.4.tar.gz"
+    sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
+  end
+
+  resource "sortedcontainers" do
+    url "https://files.pythonhosted.org/packages/e8/c4/ba2f8066cceb6f23394729afe52f3bf7adec04bf9ed2c820b39e19299111/sortedcontainers-2.4.0.tar.gz"
+    sha256 "25caa5a06cc30b6b83d11423433f65d1f9d76c4c6a0c90e3379eaa43b9bfdb88"
   end
 
   resource "sse-starlette" do
@@ -329,13 +416,18 @@ class Omnara < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/de/1a/608df0b10b53b0beb96a37854ee05864d182ddd4b1156a22f1ad3860425a/starlette-0.49.3.tar.gz"
-    sha256 "1c14546f299b5901a1ea0e34410575bc33bbd741377a10484a54445588d00284"
+    url "https://files.pythonhosted.org/packages/ba/b8/73a0e6a6e079a9d9cfa64113d771e421640b6f679a52eeb9b32f72d871a1/starlette-0.50.0.tar.gz"
+    sha256 "a2a17b22203254bcbc2e1f926d2d55f3f9497f769416b3190768befe598fa3ca"
+  end
+
+  resource "typer" do
+    url "https://files.pythonhosted.org/packages/8f/28/7c85c8032b91dbe79725b6f17d2fffc595dff06a35c7a30a37bef73a1ab4/typer-0.20.0.tar.gz"
+    sha256 "1aaf6494031793e4876fb0bacfa6a912b551cf43c1e63c800df8b1a866720c37"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "uvicorn" do
@@ -353,9 +445,19 @@ class Omnara < Formula
     sha256 "82544de02076bafba038ce055ee6412d68da13ab47f0c60cab827346de828dee"
   end
 
+  resource "wrapt" do
+    url "https://files.pythonhosted.org/packages/95/8f/aeb76c5b46e273670962298c23e7ddde79916cb74db802131d49a85e4b7d/wrapt-1.17.3.tar.gz"
+    sha256 "f66eb08feaa410fe4eebd17f2a2c8e2e46d3476e9f8c783daa8e09e0faa666d0"
+  end
+
   resource "yarl" do
     url "https://files.pythonhosted.org/packages/57/63/0c6ebca57330cd313f6102b16dd57ffaf3ec4c83403dcb45dbd15c6f3ea1/yarl-1.22.0.tar.gz"
     sha256 "bebf8557577d4401ba8bd9ff33906f1376c877aa78d1fe216ad01b4d6745af71"
+  end
+
+  resource "zipp" do
+    url "https://files.pythonhosted.org/packages/e3/02/0f2892c661036d50ede074e376733dca2ae7c6eb617489437771209d4180/zipp-3.23.0.tar.gz"
+    sha256 "a07157588a12518c9d4034df3fbbee09c814741a33ff63c05fa29d26a2404166"
   end
 
   resource "codex" do
@@ -364,6 +466,10 @@ class Omnara < Formula
   end
 
   def install
+    without = ["codex"]
+    without += %w[jeepney secretstorage] unless OS.linux?
+    virtualenv_install_with_resources(without:)
+
     if OS.linux?
       ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
       ENV["OPENSSL_NO_VENDOR"] = "1"
@@ -371,7 +477,6 @@ class Omnara < Formula
     resource("codex").stage do
       system "cargo", "install", *std_cargo_args(path: "codex-rs/cli", root: libexec)
     end
-    virtualenv_install_with_resources without: "codex"
     bin.env_script_all_files libexec, OMNARA_CODEX_PATH: libexec/"bin/codex"
   end
 

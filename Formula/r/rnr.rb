@@ -1,19 +1,17 @@
 class Rnr < Formula
   desc "Command-line tool to batch rename files and directories"
   homepage "https://github.com/ismaelgv/rnr"
-  url "https://ghfast.top/https://github.com/ismaelgv/rnr/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "b8edab04e1129b8caeb0c8634dd3bbc9986528c5ec479f7e7f072dbe7bf9ba20"
+  url "https://ghfast.top/https://github.com/ismaelgv/rnr/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "af35b5d5afab08b01cab345686d7e7d2d37a33d268fa8827a8001c3164ef4722"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e7f49c4f4a728a511cbd504a7aab0740aa80ce9f28572d402788659ad37dbc2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fb09c89cda8bafe101e6c2de4d9afd0efd149b21bd37ce9b00653a7fbef1d21"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fdfb6fee01547e1e695afbcac85ec3cd59655d270615aae6269e84bab4697b71"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d7170e9081556544c8b27af2d92e01ad44cbf4efb5e3cf03f9577a50a7e96a92"
-    sha256 cellar: :any_skip_relocation, sonoma:        "353575eefa7409b139607ee46d2d10149759a221687295c6fde7cd13e3c29c91"
-    sha256 cellar: :any_skip_relocation, ventura:       "aeea1bdde84bb59dffaedfc516b70ed439cb66b8ee280c3fe4f269bdc4505577"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1da83c3ac01b10ffd1b878c65157b6a7aa34f4a63c5a08d945d695c98a9eac27"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c855c741dbb39266333bb2ceac02eaf1cfab99be891bfa88cebe0bbed52c6df"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ead696a12421df3d41baad88405def5ace489769f59ca597146b27bf5a3b9f07"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ffd7d93cb60c90658d09a1c81981b1e37d4e196e432bf771b349de3c1edbbe3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de6e20a87a8b0319cf786bf22beb5b85b2462a54d1047ee08414700402a8de8c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3dc55b0e9239aada148995c0ddb203e1fa8d1e2688e621893bb6b3cd67216dcd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9908bcc18e433a4ac843f67803728012f0b7aee2ea270c8551122fe63ce73074"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbfe77cc0171480691cfda7170ece2125a3ea477f766e9aa7a0dd82d69745390"
   end
 
   depends_on "rust" => :build

@@ -9,18 +9,18 @@ class Ykman < Formula
   head "https://github.com/Yubico/yubikey-manager.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbe7882af1ba4b5a251c58e775f405382e4d19e7ac86d6d1abdd39023f0948fc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14991f7289929523e9cceeaed383a0047cf94f728730a5e0b29313c72c5d990f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "002ba3444d9cc43ca195f51eb9f44ea4a9073923355887cbf3e1850e60e8d98a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "194c3b50e319727301c199ebc1652b6ad1085649c2e6abb26fa6d24fc922ed5f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a7fc0d787f903feac1306c4eb0de99f5e04a90360c445654cfd5299c70604d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5665d529fb05f130d4aae2e888e37dd23fa500579875c81c9de6d83fe91b9e0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d93f6407c3dae82d92052a1e0760697c2b38d10fa0b73c09bffecf50f829abcb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4222550be02dc68325842f0e17c2c966cb1b8eb461c688059c8017bc5b728539"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20b13eca2812f39cd08bb1e1bce2db68b075cb61a3daadba2ddf74025ff27859"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f33032bc682ff08e443e9b0d40ee8969f6e6568c3de9a627e8f69082cbe56c25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "11aa2264ec26273507721ada76824e0457d036151dfe551e289a4932e92632e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3af26ac4ca2a0ce6535d0d5ef6b93d35544af3ac3072073b7141bd8331c25f3b"
   end
 
   depends_on "cmake" => :build # for more-itertools
   depends_on "swig" => :build
-  depends_on "cryptography"
+  depends_on "cryptography" => :no_linkage
   depends_on "python@3.14"
 
   uses_from_macos "pcsc-lite"
@@ -29,8 +29,8 @@ class Ykman < Formula
                 extra_packages:   %w[jeepney secretstorage]
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "fido2" do
@@ -59,8 +59,8 @@ class Ykman < Formula
   end
 
   resource "keyring" do
-    url "https://files.pythonhosted.org/packages/70/09/d904a6e96f76ff214be59e7aa6ef7190008f52a0ab6689760a98de0bf37d/keyring-25.6.0.tar.gz"
-    sha256 "0b39998aa941431eb3d9b0d4b2460bc773b9df6fed7621c2dfb291a7e0187a66"
+    url "https://files.pythonhosted.org/packages/43/4b/674af6ef2f97d56f0ab5153bf0bfa28ccb6c3ed4d1babf4305449668807b/keyring-25.7.0.tar.gz"
+    sha256 "fe01bd85eb3f8fb3dd0405defdeac9a5b4f6f0439edbb3149577f244a2e8245b"
   end
 
   resource "more-itertools" do
@@ -69,20 +69,23 @@ class Ykman < Formula
   end
 
   resource "pyscard" do
-    url "https://files.pythonhosted.org/packages/c1/d9/02085a08c61a8d7330a77d25884b0fb39b1057f14e5f1d660ea5368f0b80/pyscard-2.3.0.tar.gz"
-    sha256 "621928e217e3b1d3c791086bf0c9f307fc4ae004a9b1a430536acc1a6eb50003"
+    url "https://files.pythonhosted.org/packages/93/c9/65c68738a94b44b67b3c5e68a815890bbd225f2ae11ef1ace9b61fa9d5f3/pyscard-2.3.1.tar.gz"
+    sha256 "a24356f57a0a950740b6e54f51f819edd5296ee8892a6625b0da04724e9e6c13"
   end
 
   resource "secretstorage" do
-    url "https://files.pythonhosted.org/packages/31/9f/11ef35cf1027c1339552ea7bfe6aaa74a8516d8b5caf6e7d338daf54fd80/secretstorage-3.4.0.tar.gz"
-    sha256 "c46e216d6815aff8a8a18706a2fbfd8d53fcbb0dce99301881687a1b0289ef7c"
+    url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
+    sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
   end
 
   def install
     # Fixes: smartcard/scard/helpers.c:28:22: fatal error: winscard.h: No such file or directory
     ENV.append "CFLAGS", "-I#{Formula["pcsc-lite"].opt_include}/PCSC" if OS.linux?
 
-    venv = virtualenv_install_with_resources without: "pyscard"
+    without = ["pyscard"]
+    without += %w[jeepney secretstorage] unless OS.linux?
+    venv = virtualenv_install_with_resources(without:)
+
     # Use brewed swig
     # https://github.com/Homebrew/homebrew-core/pull/176069#issuecomment-2200583084
     # https://github.com/LudovicRousseau/pyscard/issues/169#issuecomment-2200632337

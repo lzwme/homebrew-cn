@@ -8,12 +8,13 @@ class McpAtlassian < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9c13b73d5a1dadd18b8d9ea2f3437fff05e371a77ee0c2b2be4da6771c44a9e5"
-    sha256 cellar: :any,                 arm64_sequoia: "b9c5a5f58183018710e7d7be5ce96721d37719584599b31134fe877ee4108f31"
-    sha256 cellar: :any,                 arm64_sonoma:  "3b5e68166f7c6ae6417e62290445777120301d1aa02a4b335c01e44ea403de4e"
-    sha256 cellar: :any,                 sonoma:        "de5b0cf36e23764a51d0962f4690238e9661e00e80042a16d61181551a6a0f90"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b94cad7203af5bc0dd2d7a94c036586bc3b0481aa921a71f926d08b3f229c05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0c61b9cd1ce4b98d15a00203a0719c5cc7148d6b2fdd19febdd94ba5e452279"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "a56e81e977f8310dd7aef2d3a87a884088e59a636b8320d993d5b9f7885f3b8b"
+    sha256 cellar: :any,                 arm64_sequoia: "a2d4135224c545fdf54285abea34ac775ae5b38c62fd96dd8c28d7062522f244"
+    sha256 cellar: :any,                 arm64_sonoma:  "1257e46e9659d6c8a1ecc3b4f71e22d3cbd00492ad5bb923bddef44170c8360a"
+    sha256 cellar: :any,                 sonoma:        "613f7b7e5fe9c99c660ed542adedc5549cd3c40e5252bdaa59cd4b588e31f6c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba15a3a11879f3547776523e8cd98f8be3fa080423fdcd5a525861edff845e74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0051fd17da33890b7d2622d605968786f5d986f1fce9b5ebc5e59eaaff85de1f"
   end
 
   depends_on "certifi" => :no_linkage
@@ -26,11 +27,12 @@ class McpAtlassian < Formula
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
-  pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py],
+                extra_packages:   %w[jeepney secretstorage]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "atlassian-python-api" do
@@ -44,13 +46,13 @@ class McpAtlassian < Formula
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/77/e9/df2358efd7659577435e2177bfa69cba6c33216681af51a707193dec162a/beautifulsoup4-4.14.2.tar.gz"
-    sha256 "2a98ab9f944a11acee9cc848508ec28d9228abfd522ef0fad6a02a72e0ded69e"
+    url "https://files.pythonhosted.org/packages/c3/b0/1c6a16426d389813b48d95e26898aff79abbde42ad353958ad95cc8c9b21/beautifulsoup4-4.14.3.tar.gz"
+    sha256 "6292b1c5186d356bba669ef9f7f051757099565ad9ada5dd630bd9de5fa7fb86"
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/fb/44/ca1675be2a83aeee1886ab745b28cda92093066590233cc501890eb8417a/cachetools-6.2.2.tar.gz"
-    sha256 "8e6d266b25e539df852251cfd6f990b4bc3a141db73b939058d809ebd2590fc6"
+    url "https://files.pythonhosted.org/packages/b5/44/5dc354b9f2df614673c2a542a630ef95d578b4a8673a1046d1137a7e2453/cachetools-6.2.3.tar.gz"
+    sha256 "64e0a4ddf275041dd01f5b873efa87c91ea49022b844b8c5d1ad3407c0f42f1f"
   end
 
   resource "charset-normalizer" do
@@ -127,6 +129,11 @@ class McpAtlassian < Formula
     sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
   end
 
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
+    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
+  end
+
   resource "jmespath" do
     url "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
     sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
@@ -173,8 +180,8 @@ class McpAtlassian < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/a3/a2/c5ec0ab38b35ade2ae49a90fada718fbc76811dc5aa1760414c6aaa6b08a/mcp-1.22.0.tar.gz"
-    sha256 "769b9ac90ed42134375b19e777a2858ca300f95f2e800982b3e2be62dfc0ba01"
+    url "https://files.pythonhosted.org/packages/d6/2c/db9ae5ab1fcdd9cd2bcc7ca3b7361b712e30590b64d5151a31563af8f82d/mcp-1.24.0.tar.gz"
+    sha256 "aeaad134664ce56f2721d1abf300666a1e8348563f4d3baff361c3b652448efc"
   end
 
   resource "mdurl" do
@@ -218,8 +225,8 @@ class McpAtlassian < Formula
   end
 
   resource "pymdown-extensions" do
-    url "https://files.pythonhosted.org/packages/25/6d/af5378dbdb379fddd9a277f8b9888c027db480cde70028669ebd009d642a/pymdown_extensions-10.17.2.tar.gz"
-    sha256 "26bb3d7688e651606260c90fb46409fbda70bf9fdc3623c7868643a1aeee4713"
+    url "https://files.pythonhosted.org/packages/1f/4e/e73e88f4f2d0b26cbd2e100074107470984f0a6055869805fc181b847ac7/pymdown_extensions-10.19.tar.gz"
+    sha256 "01bb917ea231f9ce14456fa9092cdb95ac3e5bd32202a3ee61dbd5ad2dd9ef9b"
   end
 
   resource "pysocks" do
@@ -270,6 +277,11 @@ class McpAtlassian < Formula
   resource "rich" do
     url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
     sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
+  end
+
+  resource "secretstorage" do
+    url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
+    sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
   end
 
   resource "shellingham" do
@@ -363,8 +375,8 @@ class McpAtlassian < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "uvicorn" do
@@ -383,7 +395,8 @@ class McpAtlassian < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    without = %w[jeepney secretstorage] unless OS.linux?
+    virtualenv_install_with_resources(without:)
   end
 
   test do

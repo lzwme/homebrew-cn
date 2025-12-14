@@ -21,7 +21,7 @@ class Pandemics < Formula
     ENV["PANDEMICS_DEPS"]="0"
     # npm ignores config and ENV when in global mode so:
     # - install without running the package install script
-    system "npm", "install", "--ignore-scripts", *std_npm_args
+    system "npm", "install", *std_npm_args
     # - call install script manually to ensure ENV is respected
     system "npm", "run", "--prefix", libexec/"lib/node_modules/pandemics", "install"
     bin.install_symlink Dir["#{libexec}/bin/*"]

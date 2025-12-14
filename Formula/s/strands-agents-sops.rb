@@ -3,12 +3,12 @@ class StrandsAgentsSops < Formula
 
   desc "Standard Operating Procedures for AI agents using natural language"
   homepage "https://github.com/strands-agents/agent-sop"
-  url "https://files.pythonhosted.org/packages/ad/2e/7c897c67a338eb5d4a8d952a570dfc71abafcc6233f931cbd8211028a32b/strands_agents_sops-1.0.3.tar.gz"
-  sha256 "bd3ae44bc07734a16fe187151e55e13ebbdeca8523b6ab9b66501ababdd389a8"
+  url "https://files.pythonhosted.org/packages/9a/b7/1b40165c948fe6a3b5f8fc17e02be1ba4199175f0a65a00a462243129a91/strands_agents_sops-1.0.5.tar.gz"
+  sha256 "b9cc2c0e6eab9c59463c4dfcb8a5d3a9ae502b7f017662043303b06e5b891e95"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e9c5e322180468005ab1b39e20c0d33ea025d5a8a6b436418203fd65afb4a98a"
+    sha256 cellar: :any_skip_relocation, all: "b04bfd6728e2106c3bfe140d37a19c45b5c5295afea6268c26cd4af966d19253"
   end
 
   depends_on "certifi" => :no_linkage
@@ -70,8 +70,8 @@ class StrandsAgentsSops < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/12/42/10c0c09ca27aceacd8c428956cfabdd67e3d328fe55c4abc16589285d294/mcp-1.23.1.tar.gz"
-    sha256 "7403e053e8e2283b1e6ae631423cb54736933fea70b32422152e6064556cd298"
+    url "https://files.pythonhosted.org/packages/d6/2c/db9ae5ab1fcdd9cd2bcc7ca3b7361b712e30590b64d5151a31563af8f82d/mcp-1.24.0.tar.gz"
+    sha256 "aeaad134664ce56f2721d1abf300666a1e8348563f4d3baff361c3b652448efc"
   end
 
   resource "pydantic-settings" do
@@ -115,6 +115,11 @@ class StrandsAgentsSops < Formula
   end
 
   def install
+    # Add `cursor.py` to build target
+    # PR ref: https://github.com/strands-agents/agent-sop/pull/34
+    inreplace "pyproject.toml", "\"strands_agents_sops/mcp.py\",",
+                                "\"strands_agents_sops/cursor.py\",\n    \\0"
+
     virtualenv_install_with_resources
   end
 

@@ -1,18 +1,18 @@
 class GopassJsonapi < Formula
   desc "Gopass Browser Bindings"
   homepage "https://github.com/gopasspw/gopass-jsonapi"
-  url "https://ghfast.top/https://github.com/gopasspw/gopass-jsonapi/archive/refs/tags/v1.16.0.tar.gz"
-  sha256 "a81c64a44278b30026e42b6289678c1a4765dea8a97753cc33c09f0b7dd24aca"
+  url "https://ghfast.top/https://github.com/gopasspw/gopass-jsonapi/archive/refs/tags/v1.16.1.tar.gz"
+  sha256 "73449a7c359836a995946e54d91e32afe5a54e1519b5a01f78c9923c13c0894f"
   license "MIT"
   head "https://github.com/gopasspw/gopass-jsonapi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b3ca745f06dc1ca9b53257a15caa80a3db3b7aa8aa784fedeb7da8b1aa90d1dd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c89d0e9f390c1c91d1dbff0e868e868d24c77ec60883094434f5de298be7666b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78f982f4fd548f616546a2dfe445e018e4f4437f85fed435d2c4b97189a0d10d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "da5b16e0648b8a5563df056220c5c1e249f927b0a563cd0f0d700688fbc3c186"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "376a7aedfbc6724dc731a12de32f2405a55a22e1e7707fde8da98c773aa2bc24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f57f35e7988d9018de88230e1a8b88e96f392f5fae7e3e4861147e3c1e431aa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63e40f2563f43b12908bdb89509d8b568ac3e797fe43d1c0bee05f56bcd4aa2a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6cfbfce7315db8f388249ef66abdc19f71d996d69ab699e1bd0a48ac66dc050"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8c19bd6e4f571996fedd915472e0ce7c37d859c856610620f41af8676bc4351"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ff59e9b4d90e3bf9d5fe694477827b7b6676f21ba75fc1ca00d63fa4c56a904c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4da1e2900218d466f4e58fa97948b8d19e0dc20078d503b06bf0406415cb176f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "497f201696c8c1e7d5098e55e064f5537c4ace06a40eac22a6ea6f552dfb94c8"
   end
 
   depends_on "go" => :build

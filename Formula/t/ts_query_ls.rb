@@ -1,17 +1,17 @@
 class TsQueryLs < Formula
   desc "LSP implementation for Tree-sitter's query files"
   homepage "https://github.com/ribru17/ts_query_ls"
-  url "https://ghfast.top/https://github.com/ribru17/ts_query_ls/archive/refs/tags/v3.13.0.tar.gz"
-  sha256 "69d4d72335aeb981ab5e776a1d19799d8e0c6fa833d8fd898ad823af3a12235e"
+  url "https://ghfast.top/https://github.com/ribru17/ts_query_ls/archive/refs/tags/v3.14.0.tar.gz"
+  sha256 "cfe3bd81bd9fcd153e3813e8b6b7084eab40fc967d1eae4a4418637e37635b9d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "991ae654c2abb5fccbd1e48bef0820cc96e58df818676ce3873d7255cac9d08b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b77ae3dfb8487d09a26fa7fb982c3d619bc4702aa7ab27e224f126851a2f79bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5af5a5ba7316df9f838326c4b0d286cdec752906ca1118ed24e199a4515f0b08"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1ab3444f100a329b808850c290c0f518b636a95d450f72930d931d111b3a68f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ccb75964169de2fb63287725a0ea3c9ac9b9572629b6fc44e4653790f474b89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26e3794504281aa7607f28c35c5c56397239dffb26104bc801bea70e004238d1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb26613f8bb99d8ce15dd820297efc5fb7ba65a664cf5502c384f2b7d4f09361"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3109adce793b2f0eb7d07cbdea85e62d5b1cc00ce7d93fb1b3f1ce0d50de9ca3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7fbc2340e74d90a00bc6d9e806c3ee9d34284c57d6d0328d0f47a2dd7db508dd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f10f1bb30ef7b205065c425efadce29cf9059581310439f95128366babe89409"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2b3690a5d19bbac3887dc1cbd5a1bf38deb42b9295f6c1ac613f21eb30d1723"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe3bb5ec2d2f1f7a1f5477a767d07dacce8aceebf3486a54da67e9e68cc9ff38"
   end
 
   depends_on "cmake" => :build

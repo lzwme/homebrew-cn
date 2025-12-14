@@ -63,13 +63,8 @@ class Pwsafe < Formula
     test_account_name = "testing"
     test_account_pass = "sg1rIWHL?WTOV=d#q~DmxiQq%_j-$f__U7EU"
 
-    resource("test-pwsafe-db").stage do
-      Utils.popen(
-        "#{bin}/pwsafe -f test.dat -p #{test_account_name}", "r+"
-      ) do |pipe|
-        pipe.puts test_db_passphrase
-        assert_match(/^#{Regexp.escape(test_account_pass)}$/, pipe.read)
-      end
-    end
+    resource("test-pwsafe-db").stage(testpath)
+    output = pipe_output("#{bin}/pwsafe -f test.dat -p #{test_account_name}", test_db_passphrase, 0)
+    assert_match(/^#{Regexp.escape(test_account_pass)}$/, output)
   end
 end

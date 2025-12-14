@@ -5,21 +5,17 @@ class Duplicity < Formula
   homepage "https://gitlab.com/duplicity/duplicity"
   # TODO: Restore `depends_on "cryptography"` once pydrive2 replaces oauth2client
   # Issue ref: https://github.com/iterative/PyDrive2/issues/361
-  url "https://files.pythonhosted.org/packages/97/44/d1aa0f5484a8c685bda04fdbaef9d107f43894c0b843ad4b9c8abc23a324/duplicity-3.0.6.2.tar.gz"
-  sha256 "d22ee49173a19bbca23afa6d2984437da74fdbefac50049291c8d0f1a2994606"
+  url "https://files.pythonhosted.org/packages/7c/5b/ca25e39ace138a15afb0631c6dc1681c3d70b3ebe4edf72e04f5ad768b27/duplicity-3.0.6.3.tar.gz"
+  sha256 "56472b3fccadec4ee436df50cf1cd283b77d86227393924c9ebf9d0b55d190f4"
   license "GPL-2.0-or-later"
-  revision 1
-
-  # TODO: need to allow autobump to install libxml2/libxslt to resolve lxml
-  no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e6be069d2fd844e190343441c6ff8ab3dcab28d9c08e0114c713ae3709f6d5af"
-    sha256 cellar: :any,                 arm64_sequoia: "399d240a7d710a8a443863dee4356a5d204f70a54af3993c05369ad5f0909d4e"
-    sha256 cellar: :any,                 arm64_sonoma:  "e4b154b133993794ec557ef0a670796e142dbbd76bd00015cd2143c742c36a39"
-    sha256 cellar: :any,                 sonoma:        "94ae914f37ec6ef79ae281e909fc19889b8fea91de3c66983685bf541e11e40d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0284f79a83007bbc2b2a044728901315dc84c60bbe6ac8a556b6a45f0b2cb89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f3d2265c77428d7a3c0486a4d1a1a614fd1f261f327e91ab66aaab4b7b6f2e0"
+    sha256 cellar: :any,                 arm64_tahoe:   "ccad6150fd773bfd38b9c57b1a8f0d692b1bdaa99f4ec95df223763883ecc271"
+    sha256 cellar: :any,                 arm64_sequoia: "298f942ad00f0fd0c3d6151755cd8e3f0d01f7c14385dad8856cecbba4cbe9bb"
+    sha256 cellar: :any,                 arm64_sonoma:  "c0bd155337b98e409a0426a96b6256c39b1157650efd9ac7f5c02395ec4b6395"
+    sha256 cellar: :any,                 sonoma:        "0f2e9cc704d12a775dc8fa61988c29ae3bc49eed904e61b5022312ceb4d66ab1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f647124c2d06ed044b556639ed0251b60fd942b7b04e35d61552c1998920722"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de83529803c5b496a001a2dbc8d25466a2ee4e3048ee2cd48b39a9e627e7bd1a"
   end
 
   depends_on "gettext" => :build # for msgfmt
@@ -38,7 +34,7 @@ class Duplicity < Formula
   uses_from_macos "libxslt"
 
   pypi_packages exclude_packages: "certifi",
-                extra_packages:   ["python-novaclient>18", "stone==3.2.1"]
+                extra_packages:   %w[jeepney python-novaclient>18 secretstorage stone==3.2.1]
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -51,8 +47,8 @@ class Duplicity < Formula
   end
 
   resource "azure-core" do
-    url "https://files.pythonhosted.org/packages/0a/c4/d4ff3bc3ddf155156460bff340bbe9533f99fac54ddea165f35a8619f162/azure_core-1.36.0.tar.gz"
-    sha256 "22e5605e6d0bf1d229726af56d9e92bc37b6e726b141a18be0b4d424131741b7"
+    url "https://files.pythonhosted.org/packages/ef/83/41c9371c8298999c67b007e308a0a3c4d6a59c6908fa9c62101f031f886f/azure_core-1.37.0.tar.gz"
+    sha256 "7064f2c11e4b97f340e8e8c6d923b822978be3016e46b7bc4aa4b337cfb48aee"
   end
 
   resource "azure-storage-blob" do
@@ -71,23 +67,23 @@ class Duplicity < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/f3/31/246916eec4fc5ff7bebf7e75caf47ee4d72b37d4120b6943e3460956e618/boto3-1.42.4.tar.gz"
-    sha256 "65f0d98a3786ec729ba9b5f70448895b2d1d1f27949aa7af5cb4f39da341bbc4"
+    url "https://files.pythonhosted.org/packages/8c/07/dfa651dbd57bfc34d952a101280928bab08ed6186f009c660a36c211ccff/boto3-1.42.9.tar.gz"
+    sha256 "cdd4cc3e5bb08ed8a0c5cc77eca78f98f0239521de0991f14e44b788b0c639b2"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/5c/b7/dec048c124619b2702b5236c5fc9d8e5b0a87013529e9245dc49aaaf31ff/botocore-1.42.4.tar.gz"
-    sha256 "d4816023492b987a804f693c2d76fb751fdc8755d49933106d69e2489c4c0f98"
+    url "https://files.pythonhosted.org/packages/fd/f3/2d2cfb500e2dc00b0e33e3c8743306e6330f3cf219d19e9260dab2f3d6c2/botocore-1.42.9.tar.gz"
+    sha256 "74f69bfd116cc7c8215481284957eecdb48580e071dd50cb8c64356a866abd8c"
   end
 
   resource "boxsdk" do
-    url "https://files.pythonhosted.org/packages/44/a6/b7afb8ee4745b61470322ada33c0463b26d221367bc23c8e8c7d4b7b6cbe/boxsdk-10.1.0.tar.gz"
-    sha256 "fb409b682d173eeb9a72c03ca0dddf2e66dbd79199235815a2ad61bf39c4f231"
+    url "https://files.pythonhosted.org/packages/15/7f/72688f50bd112188ca344cbee8d0c733a7dabaf1f6556b2eda55341a6193/boxsdk-10.2.0.tar.gz"
+    sha256 "824dd1d10ac50d5a536f7b9efc46391ab0a9b1e158c80c4af62162e7bed173fd"
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/fb/44/ca1675be2a83aeee1886ab745b28cda92093066590233cc501890eb8417a/cachetools-6.2.2.tar.gz"
-    sha256 "8e6d266b25e539df852251cfd6f990b4bc3a141db73b939058d809ebd2590fc6"
+    url "https://files.pythonhosted.org/packages/b5/44/5dc354b9f2df614673c2a542a630ef95d578b4a8673a1046d1137a7e2453/cachetools-6.2.3.tar.gz"
+    sha256 "64e0a4ddf275041dd01f5b873efa87c91ea49022b844b8c5d1ad3407c0f42f1f"
   end
 
   resource "cffi" do
@@ -218,6 +214,11 @@ class Duplicity < Formula
   resource "jaraco-functools" do
     url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
     sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
+  end
+
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
+    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
   end
 
   resource "jmespath" do
@@ -361,8 +362,8 @@ class Duplicity < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/0a/03/a1440979a3f74f16cab3b75b0da1a1a7f922d56a8ddea96092391998edc0/protobuf-6.33.1.tar.gz"
-    sha256 "97f65757e8d09870de6fd973aeddb92f85435607235d20b2dfed93405d00c85b"
+    url "https://files.pythonhosted.org/packages/34/44/e49ecff446afeec9d1a66d6bbf9adc21e3c7cea7803a920ca3773379d4f6/protobuf-6.33.2.tar.gz"
+    sha256 "56dc370c91fbb8ac85bc13582c9e373569668a290aa2e66a590c2a0d35ddb9e4"
   end
 
   resource "psutil" do
@@ -495,6 +496,11 @@ class Duplicity < Formula
     sha256 "8e990f13268025792229cd52fa10cb7163744bf56e719e0b9cb925ab79abf920"
   end
 
+  resource "secretstorage" do
+    url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
+    sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
+  end
+
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
     sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
@@ -536,8 +542,8 @@ class Duplicity < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "wcwidth" do
@@ -550,22 +556,9 @@ class Duplicity < Formula
     sha256 "9c9c635e78497cacb81e84f8b11b23e0aacac7a136e73b8e5b2109a1d9fc468f"
   end
 
-  resource "jeepney" do
-    on_linux do
-      url "https://files.pythonhosted.org/packages/d6/f4/154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdf/jeepney-0.8.0.tar.gz"
-      sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
-    end
-  end
-
-  resource "secretstorage" do
-    on_linux do
-      url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
-      sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
-    end
-  end
-
   def install
-    virtualenv_install_with_resources
+    without = %w[jeepney secretstorage] unless OS.linux?
+    virtualenv_install_with_resources(without:)
   end
 
   test do

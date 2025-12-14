@@ -8,12 +8,13 @@ class Charmcraft < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "56e5530a412dd30f5dbab534c99c6aefd951b664909278a4944e08b6bbc1df9e"
-    sha256 cellar: :any,                 arm64_sequoia: "1ff385112c3f1a3b40feb5dd2d95ceb9cbd381caa8c84c431eb5003a76e01fd9"
-    sha256 cellar: :any,                 arm64_sonoma:  "53dca8613dd82bb5175160bcd8c7e10da49a4c8e577bb277deac1425bf8cdafb"
-    sha256 cellar: :any,                 sonoma:        "7960faed3326b70d46370868ab254a4b4e95e8bd9bed35dcd39ac06b1d65b83a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bde4887603c2859322151ebc9848ce90a37730de2b93c9cd07d87099ae5c94bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85d31ea05e4f02d7167dcf3a70d8bb54d330d2a8a1ce63a590fe1f01bb460efa"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "611f2da4fcaa3de7445632ac1eef6d10d2bd357c17b5018ded1f58356c9667c9"
+    sha256 cellar: :any,                 arm64_sequoia: "9f73c890c100192f8ce3420fb362bc3f9193de91e1341776771324178fdcacb2"
+    sha256 cellar: :any,                 arm64_sonoma:  "cd4d68854103a8cb11fcdf8f5c9cf2f5cd1a29c5bec8fb544389e3b39549f434"
+    sha256 cellar: :any,                 sonoma:        "6d09ab50b54b1516817915c0854d1b7384fe5e7fde691dc2111565f03c9e25ee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6fe5e95d5c5219a27e56d2e053497ff4b2f066d90775a3cc9a68677f09404ff3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71d69afe69f769eba08be9222cc63cd9be0e292dac2b06469b9a880733940a2f"
   end
 
   depends_on "certifi" => :no_linkage
@@ -29,7 +30,7 @@ class Charmcraft < Formula
   uses_from_macos "libxslt"
 
   pypi_packages exclude_packages: %w[certifi cryptography pydantic pygit2 rpds-py],
-                extra_packages:   ["jeepney", "secretstorage"]
+                extra_packages:   %w[jeepney secretstorage]
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
@@ -362,7 +363,9 @@ class Charmcraft < Formula
 
     ENV["SODIUM_INSTALL"] = "system"
     ENV["SETUPTOOLS_SCM_PRETEND_VERSION_FOR_CHARMCRAFT"] = version
-    virtualenv_install_with_resources
+
+    without = %w[jeepney secretstorage] unless OS.linux?
+    virtualenv_install_with_resources(without:)
   end
 
   test do

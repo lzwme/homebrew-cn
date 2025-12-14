@@ -10,26 +10,28 @@ class AwsGoogleAuth < Formula
   head "https://github.com/cevoaustralia/aws-google-auth.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f03f0f61de28afb1a8b357b111837910777169720a1be19b0d2d66376ce4469c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72c7b8d8fcdccc6433d2aac2da83517dbe1aa489dae05e61598d8ed06d86bd09"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d1e07608de97853985b5807e0c2097c448ff6aee2ce459b730b52499a7e0dd6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1364e10889255fbaf5bb55b0dfaa484549196d28ef92a069acace808b6ed8ae1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "94a6b8e3e95ce45719591284512d3b28e1671da9c1a9392b865def121cf174f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2d92b3d61c6ede7d2b92f4897183096eea6f00ad98ef89733d21103ab0d6922"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1860daf67fcfe161cd9b4be96f89a8751721ec705327f986ef3498afafad482"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1331a2c3d4e70297696f532802e0b76eac7d37e3da949e5edd56119645ef3ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff3809afdcd216b6c65fc6cd8be4ebcc30c2bee7f8baf7cb199a452b41c55615"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bcb17f849b64ef72ec7229821cfbbae8283774ff6ffae77bf5e3676d3c939951"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2482fec07f4b801aa798301f7cbdcd5604a68bbbdfe4bf9e0924a401e3224d00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18bc16f02489a8f8cefb8d78f87acbdadafb13413b104c84518f530e978daea1"
   end
 
-  depends_on "certifi"
-  depends_on "pillow"
+  depends_on "certifi" => :no_linkage
+  depends_on "pillow" => :no_linkage
   depends_on "python@3.14"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
   on_linux do
-    depends_on "cryptography"
+    depends_on "cryptography" => :no_linkage
   end
 
-  pypi_packages exclude_packages: ["certifi", "pillow"]
+  pypi_packages exclude_packages: %w[certifi cryptography pillow],
+                extra_packages:   %w[jeepney secretstorage]
 
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/c3/b0/1c6a16426d389813b48d95e26898aff79abbde42ad353958ad95cc8c9b21/beautifulsoup4-4.14.3.tar.gz"
@@ -37,13 +39,13 @@ class AwsGoogleAuth < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/f3/31/246916eec4fc5ff7bebf7e75caf47ee4d72b37d4120b6943e3460956e618/boto3-1.42.4.tar.gz"
-    sha256 "65f0d98a3786ec729ba9b5f70448895b2d1d1f27949aa7af5cb4f39da341bbc4"
+    url "https://files.pythonhosted.org/packages/8c/07/dfa651dbd57bfc34d952a101280928bab08ed6186f009c660a36c211ccff/boto3-1.42.9.tar.gz"
+    sha256 "cdd4cc3e5bb08ed8a0c5cc77eca78f98f0239521de0991f14e44b788b0c639b2"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/5c/b7/dec048c124619b2702b5236c5fc9d8e5b0a87013529e9245dc49aaaf31ff/botocore-1.42.4.tar.gz"
-    sha256 "d4816023492b987a804f693c2d76fb751fdc8755d49933106d69e2489c4c0f98"
+    url "https://files.pythonhosted.org/packages/fd/f3/2d2cfb500e2dc00b0e33e3c8743306e6330f3cf219d19e9260dab2f3d6c2/botocore-1.42.9.tar.gz"
+    sha256 "74f69bfd116cc7c8215481284957eecdb48580e071dd50cb8c64356a866abd8c"
   end
 
   resource "charset-normalizer" do
@@ -79,6 +81,11 @@ class AwsGoogleAuth < Formula
   resource "jaraco-functools" do
     url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
     sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
+  end
+
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
+    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
   end
 
   resource "jmespath" do
@@ -121,6 +128,11 @@ class AwsGoogleAuth < Formula
     sha256 "8e990f13268025792229cd52fa10cb7163744bf56e719e0b9cb925ab79abf920"
   end
 
+  resource "secretstorage" do
+    url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
+    sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
+  end
+
   resource "six" do
     url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
@@ -147,22 +159,8 @@ class AwsGoogleAuth < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
-  end
-
-  resource "jeepney" do
-    on_linux do
-      url "https://files.pythonhosted.org/packages/d6/f4/154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdf/jeepney-0.8.0.tar.gz"
-      sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
-    end
-  end
-
-  resource "secretstorage" do
-    on_linux do
-      url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
-      sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
-    end
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   # Drop distutils for 3.13: https://github.com/cevoaustralia/aws-google-auth/pull/277
@@ -172,7 +170,8 @@ class AwsGoogleAuth < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    without = %w[jeepney secretstorage] unless OS.linux?
+    virtualenv_install_with_resources(without:)
   end
 
   test do

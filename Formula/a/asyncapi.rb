@@ -19,7 +19,7 @@ class Asyncapi < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", "--ignore-scripts", *std_npm_args
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
     # Cleanup .pnpm folder

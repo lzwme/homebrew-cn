@@ -24,7 +24,7 @@ class Cookcli < Formula
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
 
     # Install npm dependencies and build CSS
-    system "npm", "install", *std_npm_args(prefix: false), "--ignore-scripts"
+    system "npm", "install", *std_npm_args(prefix: false)
     system "npm", "run", "build-css"
 
     # Build and install the binary

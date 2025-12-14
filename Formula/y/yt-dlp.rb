@@ -3,18 +3,17 @@ class YtDlp < Formula
 
   desc "Feature-rich command-line audio/video downloader"
   homepage "https://github.com/yt-dlp/yt-dlp"
-  url "https://files.pythonhosted.org/packages/cf/41/53ad8c6e74d6627bd598dfbb8ad7c19d5405e438210ad0bbaf1b288387e7/yt_dlp-2025.11.12.tar.gz"
-  sha256 "5f0795a6b8fc57a5c23332d67d6c6acf819a0b46b91a6324bae29414fa97f052"
+  url "https://files.pythonhosted.org/packages/14/77/db924ebbd99d0b2b571c184cb08ed232cf4906c6f9b76eed763cd2c84170/yt_dlp-2025.12.8.tar.gz"
+  sha256 "b773c81bb6b71cb2c111cfb859f453c7a71cf2ef44eff234ff155877184c3e4f"
   license "Unlicense"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e27f792f30f3809794a601b9544b7517a25b69ae01fb80ecd76de3cf058440db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d99e59ae8865c720f1edb8fe1fac42200e3ef06422c8acdebaf17cd60ba02822"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e3fb028b7e272aec11ee59756ebea84d8ff61d02bce5dc35eabcc0121790351"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1fed8cfcc154a53b8c6d16431ae3f729469e939fdd1426e1ade66162eb5bf593"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "887a387c0fc309f7438af2ad9300c3949c612b14dea0c0aa472cd95045a30c6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e25e2f14171cbc2880b74bee9e0c31d28a404258738deff4b997ab4bf8e47dc3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03a036177843fd8540c380fcd3b16131517ed2eb45711d6ee5e63aa65eb42b79"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9dbbb7d92b2e8b2ec62ac898aa21d01bc7688d1376f8fcf1ce044656df11215b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "456f98e57d91f1f369f41c2b8a57ff31e29abec5aceeebc165c84c8ff929e22a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f217a88ef89c2c6f41f1b32c85f535eb032eaaf1029ee2ffdbd9015795874ed3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0103510413e10b32764dc6efc61c740ef9133e6241385131098a90fd8e1becb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd89266b4a21bc374f7231ede96b5b972227724a019037ab3557082c8b0d93e3"
   end
 
   head do
@@ -27,6 +26,7 @@ class YtDlp < Formula
     end
   end
 
+  depends_on "node" => :build # https://github.com/yt-dlp/ejs/issues/37
   depends_on "certifi"
   depends_on "deno"
   depends_on "python@3.14"
@@ -75,8 +75,8 @@ class YtDlp < Formula
   end
 
   resource "yt-dlp-ejs" do
-    url "https://files.pythonhosted.org/packages/fe/02/58b16dee54ad7f9f8c4b5b490960478dbbd31a27da4be2c876d8c09ac8e3/yt_dlp_ejs-0.3.1.tar.gz"
-    sha256 "7f2119eb02864800f651fa33825ddfe13d152a1f730fa103d9864f091df24227"
+    url "https://files.pythonhosted.org/packages/de/72/57d02cf78eb45126bd171298d6a58a5bd48ce1a398b6b7ff00fc904f1f0c/yt_dlp_ejs-0.3.2.tar.gz"
+    sha256 "31a41292799992bdc913e03c9fac2a8c90c82a5cbbc792b2e3373b01da841e3e"
   end
 
   def install

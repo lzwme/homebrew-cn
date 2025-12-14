@@ -1,18 +1,18 @@
 class Mlc < Formula
   desc "Check for broken links in markup files"
   homepage "https://github.com/becheran/mlc"
-  url "https://ghfast.top/https://github.com/becheran/mlc/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "50d722891b9590e53b979e2d041eaf10f69525ffe1a0f40e12596fa4f0caaad5"
+  url "https://ghfast.top/https://github.com/becheran/mlc/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "635c05b2dacc3769089f3a8854bebac2b06605280648d07d0136996b1d1de596"
   license "MIT"
   head "https://github.com/becheran/mlc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "532bdbd56e26cf5cfe0c02c4de8900748254a73c22734766917076a8bcfcb918"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b62de83cde12fbb0495dad8e166f3c72e2ec3ede4fea76567122a4b166c0d246"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5c6bc01d6066198657e957fa60115d38a8474cb78337cb3f612b96180485ffc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "50f46f27eb98d2d61bc86296faeb652ca1964e4d0fcd4278c7e1269338b617d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e904b5577469d998054529e6554166ead14e41631d65d7a31d6fbdb9b72b598"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e251f6749041878e9d62dc8063b155bdc5e423501a62fbcd37b8afd940bec8f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "53f3cbfaf325342b02159254ef76d9662dd1e43ca0306c077d48383e426bbd49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2bcbbb02edc73eb77b65b210492ee793565303c99f3705a2df88e5b48585289e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35d38d67b828a4acebdc9cedc31425c865bf87d314aa7c03a1a7182d27cd8652"
+    sha256 cellar: :any_skip_relocation, sonoma:        "735ecd15c43aaef25d4bbf33937057d868011c586652e4525b5ec2d2425fe277"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec8e9ee4cb303a6f3bb5cd58000e817f6147e40b892920b0e326e2cf11e2f5ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28cd68a8dc923a784360d646cf81244900f0ec03bfd4885063fe395765cc3620"
   end
 
   depends_on "pkgconf" => :build

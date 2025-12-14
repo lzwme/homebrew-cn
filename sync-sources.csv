@@ -1217,7 +1217,6 @@ Homebrew-homebrew-core/Formula/c/cotila.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cotp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coturn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/couchbase-shell.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/couchdb-lucene.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/couchdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/countdown.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/counterfeiter.rb, Homebrew/homebrew-core, 1
@@ -6012,6 +6011,7 @@ Homebrew-homebrew-core/Formula/r/r3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ra-multiplex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rabbitmq-c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rabbitmq.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rad.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/radamsa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/radare2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/radvd.rb, Homebrew/homebrew-core, 1
@@ -6220,6 +6220,7 @@ Homebrew-homebrew-core/Formula/r/roblox-ts.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/robodoc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/robot-framework.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/robotfindskitten.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/rockcraft.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rocksdb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rocq-elpi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rocq.rb, Homebrew/homebrew-core, 1
@@ -6368,7 +6369,7 @@ Homebrew-homebrew-core/Formula/s/sby.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sc-im.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sc68.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/scala.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/scala@2.12.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/scala@2.12.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scala@2.13.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scala@3.3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scalaenv.rb, Homebrew/homebrew-core, 1
@@ -7136,6 +7137,7 @@ Homebrew-homebrew-core/Formula/t/texttest.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tf-profile.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tf-summarize.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfautomv.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tfclean.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfcmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfenv.rb, Homebrew/homebrew-core, 1
@@ -7377,6 +7379,7 @@ Homebrew-homebrew-core/Formula/t/twty.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/txr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/txt2man.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/txt2tags.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/ty.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tygo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/typedb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typescript-language-server.rb, Homebrew/homebrew-core, 0
@@ -7797,6 +7800,7 @@ Homebrew-homebrew-core/Formula/w/wtf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wtfis.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wtfutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wthrr.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/wuchale.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wumpus.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wuppiefuzz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wush.rb, Homebrew/homebrew-core, 1
@@ -14713,6 +14717,7 @@ Homebrew-homebrew-cask/Casks/s/sloth.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smart-converter-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smartgit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smartreporter-free.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/smartsheet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smartsvn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smartsynchronize.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smcfancontrol.rb, Homebrew/homebrew-cask, 1

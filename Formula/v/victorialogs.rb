@@ -1,8 +1,8 @@
 class Victorialogs < Formula
   desc "Open source user-friendly database for logs from VictoriaMetrics"
   homepage "https://docs.victoriametrics.com/victorialogs/"
-  url "https://ghfast.top/https://github.com/VictoriaMetrics/VictoriaLogs/archive/refs/tags/v1.40.0.tar.gz"
-  sha256 "71c25d47205849240ca835ba0327e3ab8ce287a1937a370c470f697c8acda4a5"
+  url "https://ghfast.top/https://github.com/VictoriaMetrics/VictoriaLogs/archive/refs/tags/v1.41.0.tar.gz"
+  sha256 "f97824da4d042406ad73f66b7c403f11e49152eebc300196e77b9c2a662aabc3"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Victorialogs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c914009a8b1d4f8b222cc12509cc585b4eebc4bf05fe771ec984b864be219ce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d01233abe7f96d75b3b26e9d6605b68053c8818e952ecf97e22bd9aa7befcf29"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16d41a8baa65431c09390cc23838d6647ba734d4c20513a22bba2719b346523e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "88caf78882e8c1caf0119c1a50955be4e1ecfad6a5c7a091c17373065faea6bc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3a7fbd93c3c45f6018cfb9c297a1e3d7e9ef9aa94724c82928d299628694985"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d9280f65770ca90d68d5e1d4730623f477f6d8ae7023e11f3a3c55454b0fb4c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a567c4ccdb9f123fe4422d20617885f8faac6efd868170e3e5cb3d58ae50e8b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbe436f215d76ce5ad36637aeb079697f40c2f5e52fc5bf9be28e99cdfcddb34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef417cafdf9fd6db2dbd2ffced3b5581e28b248bbdce5dff5d8d38af26d55201"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9a96eb3ce9a96919b960242d078deb73b3224786494a1959a695a45f1aca7411"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b067bfb1ead299bb4d028959bda9c062e3f7703966bcc9c2cfb199167a52545c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cb9fa2c48b02404a579d3d85fa65220537ef35dfb2a8424ec5faaad515b4c0f"
   end
 
   depends_on "go" => :build

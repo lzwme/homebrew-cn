@@ -1,19 +1,18 @@
 class Periphery < Formula
   desc "Identify unused code in Swift projects"
   homepage "https://github.com/peripheryapp/periphery"
-  url "https://ghfast.top/https://github.com/peripheryapp/periphery/archive/refs/tags/3.2.0.tar.gz"
-  sha256 "84041cf27e1f7b1f9981651f0d7c78b317388040f1f31cf131dabb744a5f922c"
+  url "https://ghfast.top/https://github.com/peripheryapp/periphery/archive/refs/tags/3.3.0.tar.gz"
+  sha256 "2829c8041b9050154bda16fde19631c2643fb57a295abbf35032e921b1f41299"
   license "MIT"
-  revision 1
   head "https://github.com/peripheryapp/periphery.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aaef4e2bf75a0d13e848bc4ba24715201ee84ef9011e9336babfdf15469d93b1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24bef6d4f8a9d60c9869b28a4591dfb0934de4b7a9242976a03162612867d0af"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b378ac137b7b38794fc86f3ecb774251fc75912c3a3c77b5da2d58eb3e85a818"
-    sha256 cellar: :any_skip_relocation, sonoma:        "276521211fb06f701b5f75892af380a558abc2448f319fc1ddacba8f7b117b55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7555deab2f6238fd87867b28c8b823031c74eda9c1376c805aeee2c0c3c6928b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f158a2c187e10d04a853be4ad50c6ca0db0e89249d1b7b2fc6b9aa6855c1405"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ada30b903fbaeb550d36c4c72239d91102280308a79ef1328a881cb4359289e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79ef503524ebb841e878c36c38c6ab2f1cf6fc860e8d6e6e88b96435f70efe82"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a405daf170bcfd04d26a99139b1842df5c02b3652e1fc6da1bacf7ae1ac26673"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2d48a8238c7d0d75b1e55d25b98995dc64a8d2c78044fd691878ca490214e35f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d81ca160c43cfa6d3fa750cce53982c2a40a921aa7b043d0684e959f5ed42c2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9d6af0730d6edb3cac5abf3c56123dc67eba7f05dc30ee4e5de172235c8e7a1"
   end
 
   depends_on xcode: ["16.0", :build]

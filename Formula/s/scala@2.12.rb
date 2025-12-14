@@ -1,10 +1,9 @@
 class ScalaAT212 < Formula
   desc "JVM-based programming language"
   homepage "https://www.scala-lang.org/"
-  url "https://downloads.lightbend.com/scala/2.12.20/scala-2.12.20.tgz"
-  mirror "https://www.scala-lang.org/files/archive/scala-2.12.20.tgz"
-  mirror "https://downloads.typesafe.com/scala/2.12.20/scala-2.12.20.tgz"
-  sha256 "cc29d91ad390dc8e9a68d1e2ec6892711b64116f549fecd67a928361d33a39c0"
+  url "https://ghfast.top/https://github.com/scala/scala/releases/download/v2.12.21/scala-2.12.21.tgz"
+  mirror "https://www.scala-lang.org/files/archive/scala-2.12.21.tgz"
+  sha256 "13bad6399f433ae244e98834aa79f393cb43b46b94ec34662d50d678cb4009ea"
   license "Apache-2.0"
 
   livecheck do
@@ -13,7 +12,7 @@ class ScalaAT212 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c21bd2462426fdcdea41f7f960376c275dc101b2b32e7534647a2c3141081125"
+    sha256 cellar: :any_skip_relocation, all: "48f14673e7538c7586c25225e850c0a74da39d21a34d8aa15e5a1331565c9ae3"
   end
 
   keg_only :versioned_formula
@@ -21,13 +20,11 @@ class ScalaAT212 < Formula
   depends_on "openjdk"
 
   def install
-    inreplace Dir["man/man1/scala{,c}.1"], "/usr/local", HOMEBREW_PREFIX
-
     rm(Dir["bin/*.bat"])
     doc.install Dir["doc/*"]
     share.install "man"
-    libexec.install "bin", "lib"
-    bin.install Dir["#{libexec}/bin/*"]
+    libexec.install "lib"
+    prefix.install "bin"
     bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env
 
     # Set up an IntelliJ compatible symlink farm in 'idea'

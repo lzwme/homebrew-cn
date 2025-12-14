@@ -10,12 +10,13 @@ class Datalad < Formula
   head "https://github.com/datalad/datalad.git", branch: "maint"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c38bf6ed8c7d1b6295c4e16fde907490f4a0687dc1d227469ea6907996b414e5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ff8fcaebfbe29277a1bf30eb1b87c2a92fe1e8ce50340805ce61cf02fab2613"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6406850ca4235fdc69b794342fa925f8ce5e2c01ebf251f80d0129810bca967"
-    sha256 cellar: :any_skip_relocation, sonoma:        "86f43c0797ebabf6952356da608ab28162872da547b80fd8bc77ba8166f8483e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "98b8e748c1b72c865be7a5aa68f06a4a8c73e7aa0d4faaff5e69d8053690ef08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1952f9665eca3274a588c580f96004b57bc437006d54c697f36220dd49167e0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c3bd03d12d3d9ebc6fb95fa48cc0e4f392e28c32ff82e701b5c79a6183998b5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6b83a34b0ec6d0f7002e550e6ea80c273bdd0aecffee4a7ab16212fd7fcd71d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a4f39520f7f68d2bb1c48e00557c5dcf67e6de4d12afd0981eae6bc916bda1c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2d49c0c6d2382aa24c8e90cd20c042284beff55b846bb6205db774efb7f26da5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7515c6713dc1096f0ee5a1ff91bf67b8d19bd46533736b3bf35fcb98276f9654"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ec0c5467c3ab27f312215467bf712924f4c808a75391b26c3448dac1f90ed7e"
   end
 
   depends_on "certifi" => :no_linkage
@@ -199,7 +200,8 @@ class Datalad < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    without = %w[jeepney secretstorage] unless OS.linux?
+    virtualenv_install_with_resources(without:)
     generate_completions_from_executable(libexec/"bin/register-python-argcomplete", "datalad", "--shell")
   end
 

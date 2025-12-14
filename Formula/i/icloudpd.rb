@@ -11,23 +11,28 @@ class Icloudpd < Formula
   head "https://github.com/icloud-photos-downloader/icloud_photos_downloader.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c368fbae766deb3031218b05660f01f0e318dfcd0d888da7bd5a71cd91f2509f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56a9406983dcf97f5e9400bdeaf892f8d8924d44ec6b6b08cda48c5a3575de37"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "353b95e009e316343029fa9947649f3294c575058f3879eb8e9f17be6ee94c07"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2d5490c12179dcb6b164710a6b2da1c27451b147723f0557fa0e8356f460af95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c73b5f8064713bbe595509c5d1a6ea6286e7c876b7ffea20ecf3173c04dc442"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d07535015b7507986865a538b5b7d9c0278cbb97575ba97e2dc720d45e1cb52b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b27f3e721044bb6a01e7fe0d9d3d381f11abe082bc73f95743b84c21eef222ea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0e981683b84a00b7804cd50141cba2e7a77901ee818adeb14314830c2f0b62c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70554f8a4c24c34eadc3a86c4adaa311ce8b0d85fd1f157ae1de61457d90ba53"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2b3bf0438be993bc7fca2433930f2e39ab6fdb607352db1a51d8f7e4d91031b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "14ce26b4d8d9fcb4e0412baf9b0ba7b70c1d76be127185723730ddd86db80341"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa3fbac50cf6116afae3249ec0e6f91cb286b4c1a960f4291b45576ed82491d6"
   end
 
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
   on_macos do
     depends_on "gnu-sed" => :build
   end
 
-  pypi_packages exclude_packages: "certifi"
+  on_linux do
+    depends_on "cryptography" => :no_linkage
+  end
+
+  pypi_packages exclude_packages: %w[certifi cryptography],
+                extra_packages:   %w[jeepney secretstorage]
 
   resource "blinker" do
     url "https://files.pythonhosted.org/packages/21/28/9b3f50ce0e048515135495f198351908d99540d69bfdc8c1d15b73dc55ce/blinker-1.9.0.tar.gz"
@@ -35,13 +40,13 @@ class Icloudpd < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "flask" do
@@ -50,8 +55,8 @@ class Icloudpd < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "itsdangerous" do
@@ -74,6 +79,11 @@ class Icloudpd < Formula
     sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
   end
 
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
+    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
+  end
+
   resource "jinja2" do
     url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
     sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
@@ -90,13 +100,13 @@ class Icloudpd < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
-    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/ce/a0/834b0cebabbfc7e311f30b46c8188790a37f89fc8d756660346fe5abfd09/more_itertools-10.7.0.tar.gz"
-    sha256 "9fddd5403be01a94b204faadcff459ec3568cf110265d3c54323e1e866ad29d3"
+    url "https://files.pythonhosted.org/packages/ea/5d/38b681d3fce7a266dd9ab73c66959406d565b3e85f21d5e66e1181d93721/more_itertools-10.8.0.tar.gz"
+    sha256 "f638ddf8a1a0d134181275fb5d58b086ead7c6a72429ad725c67503f13ba30bd"
   end
 
   resource "piexif" do
@@ -117,6 +127,11 @@ class Icloudpd < Formula
   resource "schema" do
     url "https://files.pythonhosted.org/packages/d4/01/0ea2e66bad2f13271e93b729c653747614784d3ebde219679e41ccdceecd/schema-0.7.7.tar.gz"
     sha256 "7da553abd2958a19dc2547c388cde53398b39196175a9be59ea1caf5ab0a1807"
+  end
+
+  resource "secretstorage" do
+    url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
+    sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
   end
 
   resource "six" do
@@ -155,8 +170,8 @@ class Icloudpd < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/9f/69/83029f1f6300c5fb2471d621ab06f6ec6b3324685a2ce0f9777fd4a8b71e/werkzeug-3.1.3.tar.gz"
-    sha256 "60723ce945c19328679790e3282cc758aa4a6040e4bb330f53d30fa546d44746"
+    url "https://files.pythonhosted.org/packages/45/ea/b0f8eeb287f8df9066e56e831c7824ac6bab645dd6c7a8f4b2d767944f9b/werkzeug-3.1.4.tar.gz"
+    sha256 "cd3cd98b1b92dc3b7b3995038826c68097dcb16f9baa63abe35f20eafeb9fe5e"
   end
 
   def install
@@ -166,7 +181,8 @@ class Icloudpd < Formula
 
     # Unpin python for 3.14
     inreplace "pyproject.toml", 'requires-python = ">=3.10,<3.14"', 'requires-python = ">=3.10"'
-    virtualenv_install_with_resources
+    without = %w[jeepney secretstorage] unless OS.linux?
+    virtualenv_install_with_resources(without:)
   end
 
   test do

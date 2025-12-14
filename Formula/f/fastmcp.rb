@@ -9,12 +9,13 @@ class Fastmcp < Formula
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ac8942ee845290a2b2cfaf203e8ec7d858db1d3ea81f2bf8475da74ac94288d3"
-    sha256 cellar: :any,                 arm64_sequoia: "0be14c0fb2b8e74bd98214ef9fb134ab2b18ef23ae03b50ff509e19a6d011db7"
-    sha256 cellar: :any,                 arm64_sonoma:  "e3105b469e6dfc2f8ee8a965c8acc6024497577f6883a0cde9d4599cdd2a7bf3"
-    sha256 cellar: :any,                 sonoma:        "4e6b69faeb6174af8360d8efa255ea6fc3169a50a6dcedc59fbaf529474c20a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "922d7577ebcf644ec75c10df9a0ccd00aa7709bc5c7aa836f6a1515a627f4cd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a15d3b573535b5a27b103e6da98d967ea9a28f41bf8744e6181d10940bad3d91"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "3c93872c2022e16504878e9a9620afab835a797bd7fa9737b2582219a74fdc38"
+    sha256 cellar: :any,                 arm64_sequoia: "08db990b87d1a4ccf7cd9dd930db6822abf19032f8560eaeaefc9a7d23128636"
+    sha256 cellar: :any,                 arm64_sonoma:  "9c1fc0aa9b790615a0bd0d4c2169a5c875a5182f0b57d41874c620ec22621e08"
+    sha256 cellar: :any,                 sonoma:        "c35af371018604deb706854729384330b22254903fb295dba1854aa1ebb1fc96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "016ff21ccb8b0d8b6266a1bbe04e6667987397e30ba7b2806f1c6ae68ddc22f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d65dc12b7d6f482908490999beca5b4679fc5625a393746e0355a2633358086f"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -26,7 +27,8 @@ class Fastmcp < Formula
   depends_on "rpds-py" => :no_linkage
   depends_on "uv"
 
-  pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py],
+                extra_packages:   %w[jeepney secretstorage]
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
@@ -39,18 +41,18 @@ class Fastmcp < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/cd/3f/1d3bbd0bf23bdd99276d4def22f29c27a914067b4cf66f753ff9b8bbd0f3/authlib-1.6.5.tar.gz"
-    sha256 "6aaf9c79b7cc96c900f0b284061691c5d4e61221640a948fe690b556a6d6d10b"
+    url "https://files.pythonhosted.org/packages/bb/9b/b1661026ff24bc641b76b78c5222d614776b0c085bcfdac9bd15a1cb4b35/authlib-1.6.6.tar.gz"
+    sha256 "45770e8e056d0f283451d9996fbb59b70d45722b45d854d58f32878d0a40c38e"
   end
 
   resource "beartype" do
-    url "https://files.pythonhosted.org/packages/8c/1d/794ae2acaa67c8b216d91d5919da2606c2bb14086849ffde7f5555f3a3a5/beartype-0.22.8.tar.gz"
-    sha256 "b19b21c9359722ee3f7cc433f063b3e13997b27ae8226551ea5062e621f61165"
+    url "https://files.pythonhosted.org/packages/c7/94/1009e248bbfbab11397abca7193bea6626806be9a327d399810d523a07cb/beartype-0.22.9.tar.gz"
+    sha256 "8f82b54aa723a2848a56008d18875f91c1db02c32ef6a62319a002e3e25a975f"
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/fb/44/ca1675be2a83aeee1886ab745b28cda92093066590233cc501890eb8417a/cachetools-6.2.2.tar.gz"
-    sha256 "8e6d266b25e539df852251cfd6f990b4bc3a141db73b939058d809ebd2590fc6"
+    url "https://files.pythonhosted.org/packages/b5/44/5dc354b9f2df614673c2a542a630ef95d578b4a8673a1046d1137a7e2453/cachetools-6.2.3.tar.gz"
+    sha256 "64e0a4ddf275041dd01f5b873efa87c91ea49022b844b8c5d1ad3407c0f42f1f"
   end
 
   resource "charset-normalizer" do
@@ -189,8 +191,8 @@ class Fastmcp < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/a7/a4/d06a303f45997e266f2c228081abe299bbcba216cb806128e2e49095d25f/mcp-1.23.3.tar.gz"
-    sha256 "b3b0da2cc949950ce1259c7bfc1b081905a51916fcd7c8182125b85e70825201"
+    url "https://files.pythonhosted.org/packages/d6/2c/db9ae5ab1fcdd9cd2bcc7ca3b7361b712e30590b64d5151a31563af8f82d/mcp-1.24.0.tar.gz"
+    sha256 "aeaad134664ce56f2721d1abf300666a1e8348563f4d3baff361c3b652448efc"
   end
 
   resource "mdurl" do
@@ -218,6 +220,11 @@ class Fastmcp < Formula
     sha256 "a4011b46906323f71724649d301b4dc188aaa068852e814f4df38cc76eac616b"
   end
 
+  resource "opentelemetry-instrumentation" do
+    url "https://files.pythonhosted.org/packages/41/0f/7e6b713ac117c1f5e4e3300748af699b9902a2e5e34c9cf443dde25a01fa/opentelemetry_instrumentation-0.60b1.tar.gz"
+    sha256 "57ddc7974c6eb35865af0426d1a17132b88b2ed8586897fee187fd5b8944bd6a"
+  end
+
   resource "opentelemetry-sdk" do
     url "https://files.pythonhosted.org/packages/eb/fb/c76080c9ba07e1e8235d24cdcc4d125ef7aa3edf23eb4e497c2e50889adc/opentelemetry_sdk-1.39.1.tar.gz"
     sha256 "cf4d4563caf7bff906c9f7967e2be22d0d6b349b908be0d90fb21c8e9c995cc6"
@@ -226,6 +233,11 @@ class Fastmcp < Formula
   resource "opentelemetry-semantic-conventions" do
     url "https://files.pythonhosted.org/packages/91/df/553f93ed38bf22f4b999d9be9c185adb558982214f33eae539d3b5cd0858/opentelemetry_semantic_conventions-0.60b1.tar.gz"
     sha256 "87c228b5a0669b748c76d76df6c364c369c28f1c465e50f661e39737e84bc953"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "pathable" do
@@ -264,8 +276,8 @@ class Fastmcp < Formula
   end
 
   resource "pydocket" do
-    url "https://files.pythonhosted.org/packages/d7/66/783edc60cd27ac8c951c266380411e9948929a345425cd833acdb22adeee/pydocket-0.15.4.tar.gz"
-    sha256 "31c79bca5eb11dfac8635d3e5b81ec7d7c8949c8c8cfc536ae76753949c147c8"
+    url "https://files.pythonhosted.org/packages/86/77/842e41be3cf3592b971cf42b24cae76e282294f474dc2dbf7cd6808d1b09/pydocket-0.15.5.tar.gz"
+    sha256 "b3af47702a293dd1da2e5e0f8f73f27fd3b3c95e36de72a2f71026d16908d5ba"
   end
 
   resource "pygments" do
@@ -373,13 +385,19 @@ class Fastmcp < Formula
     sha256 "82544de02076bafba038ce055ee6412d68da13ab47f0c60cab827346de828dee"
   end
 
+  resource "wrapt" do
+    url "https://files.pythonhosted.org/packages/95/8f/aeb76c5b46e273670962298c23e7ddde79916cb74db802131d49a85e4b7d/wrapt-1.17.3.tar.gz"
+    sha256 "f66eb08feaa410fe4eebd17f2a2c8e2e46d3476e9f8c783daa8e09e0faa666d0"
+  end
+
   resource "zipp" do
     url "https://files.pythonhosted.org/packages/e3/02/0f2892c661036d50ede074e376733dca2ae7c6eb617489437771209d4180/zipp-3.23.0.tar.gz"
     sha256 "a07157588a12518c9d4034df3fbbee09c814741a33ff63c05fa29d26a2404166"
   end
 
   def install
-    virtualenv_install_with_resources
+    without = %w[jeepney secretstorage] unless OS.linux?
+    virtualenv_install_with_resources(without:)
   end
 
   test do

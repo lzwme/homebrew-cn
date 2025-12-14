@@ -7,7 +7,7 @@ class Mysql < Formula
   mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_9.5.0.orig.tar.gz"
   sha256 "ef3343981375865a2519f72b600e55f9c646e60e204a2964d3b7e8e748a110a5"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 2
+  revision 3
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src"
@@ -17,12 +17,12 @@ class Mysql < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "ae901d075edcd8f857a50916cbcf502f67faf4d8c97beee5482c06c4e4eb4ffc"
-    sha256 arm64_sequoia: "39cb419abcedaf51d6aa224812800ef35f1c93ff669a407728aa231e869954bd"
-    sha256 arm64_sonoma:  "195316dfa0f29dff00d600ad2e04f84ff7a80c98905b5b722b4797ef7d539224"
-    sha256 sonoma:        "e616ab53df78acfa432e4bb39e4ba4d209c16caeb92133eb35d88f24a45d94fc"
-    sha256 arm64_linux:   "f43f6dcdebbd0c582a3aceb90a05560b05b7849de6908e19f8f584f8fa5c84fb"
-    sha256 x86_64_linux:  "f666b5b780009e06d0d5a2e1ac4e9ce40246bb3a99826a713a76467f8f654ed0"
+    sha256 arm64_tahoe:   "1272ff2e7050857dd050b3f28bb2f1008307c5d9fc80f84d5dfceba214f8e6b9"
+    sha256 arm64_sequoia: "3e78a3eb79235d112e7819327c7a4ea1eea22f05ca6700581412a125955abb4e"
+    sha256 arm64_sonoma:  "a34a801f3e3ce8cf510f0309bcd72cb41685da680bedb1ac082c2e80bba4bf85"
+    sha256 sonoma:        "c9d48e7fc935e24e452b139509c0c884cc672509b39f4708075383ae69d96c17"
+    sha256 arm64_linux:   "9ef8cb5b982c6db86731a98e18e5a017dcbea792cee077b919f885d98bba3bb3"
+    sha256 x86_64_linux:  "cd3e93e9348e740267e385e7ba7929980adc63de3a31e1d67f85f74eff1e433d"
   end
 
   depends_on "bison" => :build

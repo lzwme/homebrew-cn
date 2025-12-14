@@ -10,19 +10,25 @@ class Twine < Formula
   head "https://github.com/pypa/twine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2cef4f1880064b5860664c8eee422d1853151f11d8b4f1cbda96e1a3440d8f21"
-    sha256 cellar: :any,                 arm64_sequoia: "0dc89cc264b2cfab0439e224204cc6b8507314f0719074e3a96335589462c8e6"
-    sha256 cellar: :any,                 arm64_sonoma:  "6f87c297543d14aeb5effdc9a43107d2e1dd6f1279cd837e6ef1e27d35d43f11"
-    sha256 cellar: :any,                 sonoma:        "d05898f9a182a091237ff33749b537834860e002423230639e242e13a67c4c8b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "79bc377273efe42b1710e0c890b65640ad87c667b61731ead26919a087223792"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce49095fdad043612c9fc0ad811fb5c0a2e4de3c0376047adbf845e1ab80449f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "afb37dbae1ef6a09db033dce809d4a73e24ddb3ad1c4fcd4ecb874959eb34166"
+    sha256 cellar: :any,                 arm64_sequoia: "081ca7e775e457b370476a48ebc445918b9bdf7a11d7d056f3a8d0841fb76efd"
+    sha256 cellar: :any,                 arm64_sonoma:  "758a57de272a51105c66ca8ff6bcc5a8ec7e34e607f3053416103adf3b37c67a"
+    sha256 cellar: :any,                 sonoma:        "f13b33df10b8a31bfbf2138c434ec613c682b4c900aa212eaa066ca5b3a45809"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d31608f220cf8cd5f9aaa52a7f4a16031f4f1bb92e6f1d8a6081bf5066255b5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63fe014e11c516e47b3f0f17b57d51f62350b728a221766f1437b4387eb9333d"
   end
 
   depends_on "rust" => :build
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
-  pypi_packages exclude_packages: "certifi"
+  on_linux do
+    depends_on "cryptography" => :no_linkage
+  end
+
+  pypi_packages exclude_packages: %w[certifi cryptography],
+                extra_packages:   %w[jeepney secretstorage]
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
@@ -57,6 +63,11 @@ class Twine < Formula
   resource "jaraco-functools" do
     url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
     sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
+  end
+
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
+    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
   end
 
   resource "keyring" do
@@ -119,13 +130,19 @@ class Twine < Formula
     sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
+  resource "secretstorage" do
+    url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
+    sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
+  end
+
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install
-    virtualenv_install_with_resources
+    without = %w[jeepney secretstorage] unless OS.linux?
+    virtualenv_install_with_resources(without:)
 
     pkgshare.install "tests/fixtures/twine-1.5.0-py2.py3-none-any.whl"
   end

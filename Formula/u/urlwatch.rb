@@ -9,12 +9,13 @@ class Urlwatch < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9d014ebf3eb1235d38b4964a05461120de1426452261b583de571d030654a9e4"
-    sha256 cellar: :any,                 arm64_sequoia: "f5e8858dbc7a50101ace8adf03c34b79861db7b9a99b109c654b3f6788749bbc"
-    sha256 cellar: :any,                 arm64_sonoma:  "3c5bc6ba9da011a056826cfdc27af93f3f5b1e8c4b1ab38d0aaaa93a791402bd"
-    sha256 cellar: :any,                 sonoma:        "fa451b194dc078446d66cd375930f8f277858881b7267f97f5a5b830997c8e35"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f72e211102fbbb59d059b2c8a7d5c60f4ca348e327a67f1ff464203b9783d2c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e1018faef2e034dcf202db3cb38a3fda919aada2426a980df34fac11c8a3c76"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "26879ec1a7124688eb6e8317621fe96c0bf09e6ca9041157669e2212b53ff50d"
+    sha256 cellar: :any,                 arm64_sequoia: "968ae0c7dd731c66064bfa751183dd8a4ae0cfedc1e4ccf2ac14ec8b2d6fc860"
+    sha256 cellar: :any,                 arm64_sonoma:  "8fd660dd096d0e25921df61d6d1d4720fea1718a5fbc8d30d619edd2b6724fa4"
+    sha256 cellar: :any,                 sonoma:        "7f961beeded2c2a8bbdd28c98c347b03a7e8ad42f56a652b38029df1fbd16477"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0698875e83ff28f553da9e0facf776b2d1a8b403c8a22e92cde3eec24bf22a46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2cfa6b321efcfd1a446ceb1bbddf248ecdc2734a6db1add54348e64025b4e2e"
   end
 
   depends_on "certifi"
@@ -24,7 +25,12 @@ class Urlwatch < Formula
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
-  pypi_packages exclude_packages: "certifi"
+  on_linux do
+    depends_on "cryptography" => :no_linkage
+  end
+
+  pypi_packages exclude_packages: %w[certifi cryptography],
+                extra_packages:   %w[jeepney secretstorage]
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
@@ -54,6 +60,11 @@ class Urlwatch < Formula
   resource "jaraco-functools" do
     url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
     sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
+  end
+
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
+    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
   end
 
   resource "keyring" do
@@ -91,13 +102,19 @@ class Urlwatch < Formula
     sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
+  resource "secretstorage" do
+    url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
+    sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
+  end
+
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install
-    virtualenv_install_with_resources
+    without = %w[jeepney secretstorage] unless OS.linux?
+    virtualenv_install_with_resources(without:)
   end
 
   test do

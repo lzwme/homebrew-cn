@@ -1,8 +1,8 @@
 class Greenmask < Formula
   desc "PostgreSQL dump and obfuscation tool"
   homepage "https://www.greenmask.io/"
-  url "https://ghfast.top/https://github.com/GreenmaskIO/greenmask/archive/refs/tags/v0.2.14.tar.gz"
-  sha256 "093e677914f3191de33bca479debd5305fff68420055873b3e331f829748f2c5"
+  url "https://ghfast.top/https://github.com/GreenmaskIO/greenmask/archive/refs/tags/v0.2.15.tar.gz"
+  sha256 "d9cc46c66caf3610abe35feda46cb3e341faaf8b7b3503dfc964357da9def21c"
   license "Apache-2.0"
   head "https://github.com/GreenmaskIO/greenmask.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Greenmask < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "40f7addd4b7753351668fc425edc44d851de3b552625d8384938b3f699c7206a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40f7addd4b7753351668fc425edc44d851de3b552625d8384938b3f699c7206a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40f7addd4b7753351668fc425edc44d851de3b552625d8384938b3f699c7206a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eab90a00c7deaac2172b89e011d7e9fe36e0661b8f65d6f16066217ae27edb6c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c1e3fe7445896196e5d14731a4fedafad292b0cbd3bbff3889dc417766e4210"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf3a3d87ffa8bc41a5720ec6a7e8e82cbdaf5e7f0771b9b4ec9be94ae8ce3fdc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eae56c1c6f824f69e79b2320b970f6a406498be1623734636e03f89723f96987"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eae56c1c6f824f69e79b2320b970f6a406498be1623734636e03f89723f96987"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eae56c1c6f824f69e79b2320b970f6a406498be1623734636e03f89723f96987"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9a7d04d6f332279d5827f720cc486861d7f5562f435675fd35d2f4d5e65dc54f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98c27d2cb3401b86fdbc23de1200e7b8999b77acd4b42853c34e8c211669786b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09ee4b113e89694c2007581b625b3866303183be826ef9021174e8d9a806cc08"
   end
 
   depends_on "go" => :build

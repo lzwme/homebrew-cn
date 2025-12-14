@@ -9,20 +9,21 @@ class Pferd < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cccc4044b038218b198a7f0abdfef9ee253c1597cb69782959b12fe8be38c443"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1be2005073b985441e6704395f62ecc83609e14dc90ec122ec9bd6421c3b7b94"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca4a33d7c2f29bb90b17da8986581fdd84ace4e94548f1bfb196741ea1e96e55"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9d23db850c5d20373c34b81608c80c6790457d6fd88afb2621f89ff9c496b322"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f0ef070378339423e3145c1befd05283fa29ff1b8e9a4028132260706bdad33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6b0f888cf46686fa95f6e0409f9fdf2a8ba2989685db1843d4c07fcc9d894b6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "69fc04375a2c41af9fa191af0b32e8f35bced045559da84e6a78396d253ecbf5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a96daa4603b03f560ea0e1aa0b004cba69cc2f4c844f76da490bade610cb53c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd64780ce8366429687de8859ba998186c98c4075a5cdc16efa7ae3da6fe5321"
+    sha256 cellar: :any_skip_relocation, sonoma:        "167fa6d08a29638edade7dc675c841790b630254eb9d09b55a2d3277cf30d66a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7619ef8ef390396661f02e22ab19eed0ca537c285cf57a8235810ff6809fa464"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86dc9af94296040ec53fde0e1d51d9abe3467842b8281ebae6bc40f4f6547a0d"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "python@3.14"
 
-  pypi_packages exclude_packages: %w[certifi cryptography]
+  pypi_packages exclude_packages: %w[certifi cryptography],
+                extra_packages:   %w[jeepney secretstorage]
 
   resource "aiohappyeyeballs" do
     url "https://files.pythonhosted.org/packages/26/30/f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54/aiohappyeyeballs-2.6.1.tar.gz"
@@ -30,8 +31,8 @@ class Pferd < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/62/f1/8515650ac3121a9e55c7b217c60e7fae3e0134b5acfe65691781b5356929/aiohttp-3.13.0.tar.gz"
-    sha256 "378dbc57dd8cf341ce243f13fa1fa5394d68e2e02c15cd5f28eae35a70ec7f67"
+    url "https://files.pythonhosted.org/packages/1c/ce/3b83ebba6b3207a7135e5fcaba49706f8a4b6008153b4e30540c982fae26/aiohttp-3.13.2.tar.gz"
+    sha256 "40176a52c186aefef6eb3cad2cdd30cd06e3afbe88fe8ab2af9c0b90f228daca"
   end
 
   resource "aiosignal" do
@@ -45,8 +46,8 @@ class Pferd < Formula
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/77/e9/df2358efd7659577435e2177bfa69cba6c33216681af51a707193dec162a/beautifulsoup4-4.14.2.tar.gz"
-    sha256 "2a98ab9f944a11acee9cc848508ec28d9228abfd522ef0fad6a02a72e0ded69e"
+    url "https://files.pythonhosted.org/packages/c3/b0/1c6a16426d389813b48d95e26898aff79abbde42ad353958ad95cc8c9b21/beautifulsoup4-4.14.3.tar.gz"
+    sha256 "6292b1c5186d356bba669ef9f7f051757099565ad9ada5dd630bd9de5fa7fb86"
   end
 
   resource "frozenlist" do
@@ -74,9 +75,14 @@ class Pferd < Formula
     sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
   end
 
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
+    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
+  end
+
   resource "keyring" do
-    url "https://files.pythonhosted.org/packages/70/09/d904a6e96f76ff214be59e7aa6ef7190008f52a0ab6689760a98de0bf37d/keyring-25.6.0.tar.gz"
-    sha256 "0b39998aa941431eb3d9b0d4b2460bc773b9df6fed7621c2dfb291a7e0187a66"
+    url "https://files.pythonhosted.org/packages/43/4b/674af6ef2f97d56f0ab5153bf0bfa28ccb6c3ed4d1babf4305449668807b/keyring-25.7.0.tar.gz"
+    sha256 "fe01bd85eb3f8fb3dd0405defdeac9a5b4f6f0439edbb3149577f244a2e8245b"
   end
 
   resource "markdown-it-py" do
@@ -114,6 +120,11 @@ class Pferd < Formula
     sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
+  resource "secretstorage" do
+    url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
+    sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
+  end
+
   resource "soupsieve" do
     url "https://files.pythonhosted.org/packages/6d/e6/21ccce3262dd4889aa3332e5a119a3491a95e8f60939870a3a035aabac0d/soupsieve-2.8.tar.gz"
     sha256 "e2dd4a40a628cb5f28f6d4b0db8800b8f581b65bb380b97de22ba5ca8d72572f"
@@ -130,7 +141,8 @@ class Pferd < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    without = %w[jeepney secretstorage] unless OS.linux?
+    virtualenv_install_with_resources(without:)
   end
 
   test do
