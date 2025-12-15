@@ -4,19 +4,17 @@ class Mapcrafter < Formula
   url "https://ghfast.top/https://github.com/mapcrafter/mapcrafter/archive/refs/tags/v.2.4.tar.gz"
   sha256 "f3b698d34c02c2da0c4d2b7f4e251bcba058d0d1e4479c0418eeba264d1c8dae"
   license "GPL-3.0-or-later"
-  revision 15
+  revision 16
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cfc65e2f4b77a2c1d329e8f19a5895c91f0ff876b232c2397a4e736f41423eb1"
-    sha256 cellar: :any,                 arm64_sequoia: "1efb0a38f77cdfd4eb0e609e505104b1939b9c5142f4478235c27b656725e02d"
-    sha256 cellar: :any,                 arm64_sonoma:  "43f21cc8321851928f1ee79a9f6141adbfb246ef0e6c5e4e752edc56a4aaed08"
-    sha256 cellar: :any,                 arm64_ventura: "d4ca79a0c71b13a2390a7c3f550de43406977ca7c4bd58667992d0acb0f412e8"
-    sha256 cellar: :any,                 sonoma:        "73a30f66f41866bb65c4db45bbafe3d1707adb93836a3befe086101f7f264272"
-    sha256 cellar: :any,                 ventura:       "bc4c01693cc22677a5725dab9cfaefec74e5d8e22a16458df7bc0a5f4c02dbe2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9c0a7231c00c737cc8a547e202c8d88709f7d93772970be328f14379590afbd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a57a59be26e5837e11cc30385530b9455c09a682d50754508e79e01fec03105"
+    sha256 cellar: :any,                 arm64_tahoe:   "44a442066454eea4959b0e1f8f25e2c1623760b204daa6a7a8e544a371012148"
+    sha256 cellar: :any,                 arm64_sequoia: "f4e6c89d02bfc0ec7aae345aab5c4810228c7a1b133ac954ba453bf539dd34c0"
+    sha256 cellar: :any,                 arm64_sonoma:  "3f78e525d85fab8817bc08c020b352476448db63e3394c2c1dc12e5326ecc1cf"
+    sha256 cellar: :any,                 sonoma:        "90993b42b43e2ae3468bf0f7958cce1eb30f6fc6af25c7703f2a2b1d8736aeb8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e1ce922fd20957bb2b790df53252375b32746b79f92eae4fb173500e3bd144b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e038bf639acca928a12529990bbe8f6fe8eca1b96f98cea7728645f1ae7c222"
   end
 
   depends_on "cmake" => :build

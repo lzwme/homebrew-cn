@@ -4,16 +4,16 @@ class Folly < Formula
   url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2025.11.10.00.tar.gz"
   sha256 "62fde99e074f7402938c29cf6faff7fcceac2524956ab339f13946efa3c334b0"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "de38dcb26d6796e22e11446f52426ba1c02bb9f7de231d8d8f29237d5452fdb7"
-    sha256 cellar: :any,                 arm64_sequoia: "c90ba6f15c5616dcf90dc91fe3f0268e76336e6bc1020b3d0ac8890897173c5d"
-    sha256 cellar: :any,                 arm64_sonoma:  "463902f2dafd8cedd7b1323896d8683f59ca2cb98c1ab25441116cee7dec0a97"
-    sha256 cellar: :any,                 sonoma:        "b05134875ac89fa872f705c22dd103979ee197c113534aa7a32c4c992751d372"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "402c5c34cde748dc2c0fa0176f11538602265fc580d862fa4ba0ab1f0c693099"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9e1dcf95fb4a161c495c68599116f60223da933489bdf0ffcb6471f067f0ab6"
+    sha256 cellar: :any,                 arm64_tahoe:   "b3811b0582135c444ea1d6b2dcc455a037df76f5389f0a28b04292eb61aff855"
+    sha256 cellar: :any,                 arm64_sequoia: "b7797d6e2365e5630bf6f29cd5e6540bc473a6687cb69976f2ce8bb33572b016"
+    sha256 cellar: :any,                 arm64_sonoma:  "3c533707f862c035f8912982e00602d3d08fb4dde8f563b9b586357fb6ae1765"
+    sha256 cellar: :any,                 sonoma:        "aa18466bfe1a4b65dcd2d9e2903e9bc946c31f6b93778d7f9cafa5f83b0691e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5007bfda72a1c6d7e139e7c607752cb28508685d613f994a5f0443980038244"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04b1a696b406082a2a1cbff2270ad50ae8ba26848b6c812c7fd5e43f77246218"
   end
 
   depends_on "cmake" => :build

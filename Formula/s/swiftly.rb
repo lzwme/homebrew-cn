@@ -2,8 +2,8 @@ class Swiftly < Formula
   desc "Swift toolchain installer and manager"
   homepage "https://github.com/swiftlang/swiftly"
   url "https://github.com/swiftlang/swiftly.git",
-      tag:      "1.1.0",
-      revision: "30684f171da505160d20f7114c2b3def37a84b85"
+      tag:      "1.1.1",
+      revision: "714cc4e057e214132ee892b5a1bc66c3de590a97"
   license "Apache-2.0"
   head "https://github.com/swiftlang/swiftly.git", branch: "main"
 
@@ -13,13 +13,12 @@ class Swiftly < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "907ff24bc28075aa64a7a5394465b67e5530113c10afe74bb5497534e70ab39b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa31e4a6cf9d3e74d818de7d62f61b9bfe9a6e723302ac065d706a547532d33b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68e6aaf6c455da51ce5089fc449786ad979d3e68b2cb45167b04f2f6ca10b336"
-    sha256 cellar: :any_skip_relocation, sonoma:        "93180c8b870449e6c10fdd68d33e04330861c75c8c55791cd8ed9978a0673707"
-    sha256                               arm64_linux:   "7ccfaf3042ce39ebcedefe3768ec33b43d8c67369072e08450faa935d587e3d2"
-    sha256                               x86_64_linux:  "71736be307ef8421e3df0329e199dcca073a35904b4dbef774b4946a03015790"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6b4b8592cccdcdc87ccc6444423569d5cc56e54932f42ce373d28f3367b1d6d1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd932983c67c6f54e31365ca89abf6193e10a8e9e8bf07605ada99f13ce773e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d1658a4fafacc477489dd87ca87d4ea1abac2e64b1cd5fbe0d3b72613346b84"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f4933dd9007c8635d3ba99f82c6bb8c2164284d5728189f3318b13888e5672d7"
+    sha256                               arm64_linux:   "ef0ec9dcb6bfc565518d6c29be534005e02dde2c035245979a46388371e22ae9"
+    sha256                               x86_64_linux:  "2f3168ca8e72139b9b3a8d38384621b0140f4ae932b263d8e291497d1a051ed3"
   end
 
   uses_from_macos "swift" => :build, since: :sonoma # swift 5.10+

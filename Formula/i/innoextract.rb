@@ -2,7 +2,7 @@ class Innoextract < Formula
   desc "Tool to unpack installers created by Inno Setup"
   homepage "https://constexpr.org/innoextract/"
   license "Zlib"
-  revision 12
+  revision 13
   head "https://github.com/dscharrer/innoextract.git", branch: "master"
 
   stable do
@@ -24,14 +24,12 @@ class Innoextract < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "df1001d2198270418a0af98f0280a10be338dc2dcbfc7b0c8adcc96d2d813309"
-    sha256 cellar: :any,                 arm64_sequoia: "f058c122e886a8f35997bc3603c10f791ad3a7eb9d0cd084aa081babf7833743"
-    sha256 cellar: :any,                 arm64_sonoma:  "e65c6340749c752ab228536d9ed8323e77a18132a6578eaa7d86950d07628f0a"
-    sha256 cellar: :any,                 arm64_ventura: "aa58225a507ab5162d5744d0ad7845ad4a444ef8e6680d75ed52a19b8b019876"
-    sha256 cellar: :any,                 sonoma:        "90ee4acae6795def50a0a74c8330aeff551818734c8351463f10a6b584a565e2"
-    sha256 cellar: :any,                 ventura:       "48c724ab7793c79e6fed6777c86cc0c971c1b4ac1613e0a39ef471196f7bcacc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5ccafaae9f5a27b4a20a388c818e8de1a65e29ddc5c6ab3f5f7fd8664dee0d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "823a6cad250181cac9e656165b82633b0c7e9d0e7f5baecd73f9630eae2fd5b1"
+    sha256 cellar: :any,                 arm64_tahoe:   "1150222eb02fdb776418d3253e62ba75592481225b162026bf45ad687784d730"
+    sha256 cellar: :any,                 arm64_sequoia: "9231e79c53ec988162f3173dad48d1e9a3d104af8b21e10f6837c922d4d12d99"
+    sha256 cellar: :any,                 arm64_sonoma:  "6ce904e75b4a103173837ba1c26d8b595d66123fbf5550a53ec83ff6b9bedc66"
+    sha256 cellar: :any,                 sonoma:        "eccddde976f66e9cddc35f6f72cac7c2377312343bb8cdfb954797c3173ead17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "54d89c53d511089ab43432dc90c8cf8acc3ea5c3bb5ddf0f01f1954bcd9ec4ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fcfb3e634def1947791fab8be9c9b2ede7a6c453de29d92491a35638090afee"
   end
 
   depends_on "cmake" => :build

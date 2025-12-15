@@ -3,19 +3,20 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/50/ee/6043e0900d68bacc13fd9f41ec30660d48592be4509c47a1bb3108189cc9/keepercommander-17.1.18.tar.gz"
-  sha256 "dfd57d4468dccf4d0b6f726b9431110ec76f99a12e873d66b7a275365d6abd50"
+  url "https://files.pythonhosted.org/packages/91/0e/e4109925cbe1bda23d0beeb6ad0833915c328e7956b3fe600591b8095c8a/keepercommander-17.2.0.tar.gz"
+  sha256 "54a9d36d25ed03448a66e759ed0eb46f26a75fdfc08cd3ea59697066d520b130"
   license "MIT"
-  revision 1
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
+  no_autobump! because: "macOS resources cannot be updated on linux CI"
+
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "78f52046b8e9b19cfcb1f6c38b597be51327d3ba312347604e113852743e3fbf"
-    sha256 cellar: :any,                 arm64_sequoia: "fcee27fede91d0b564cd3307970bd1f88f08ae50a59c7a973410cb67d48f8ebe"
-    sha256 cellar: :any,                 arm64_sonoma:  "0e9c36ce7dfadb5e80c5910046494e106cf6cb2cd72769ddcf8d1e3f2e4b5f27"
-    sha256 cellar: :any,                 sonoma:        "089082e0dce011cda027a9e0e0e293b25c34889e9f03c3c2edf7ef320cda14cd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "759aaafce2cb367f89565036cfa139758e996f81de63e60bc24560be16299e1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2bac137c45cb4aed14b250a4e379e20e38aa8cd0a548d4167c43d8edc67c24f"
+    sha256 cellar: :any,                 arm64_tahoe:   "753c69d27deac9413ab15d92ac4efde84f964215b424ea3db74f3b8fd4c82f2b"
+    sha256 cellar: :any,                 arm64_sequoia: "8549670618d509c729c3ba84f842021a219fb55782500680094629fdf19f14f8"
+    sha256 cellar: :any,                 arm64_sonoma:  "26983eea0d4b517c5168423f7eb7af6deb35d68a836b452b63c4bc55084b812e"
+    sha256 cellar: :any,                 sonoma:        "790f7844401805a7a1876a19709e853b93bd8cf574aba7eefa5435a0709e2691"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e59e021bcce61bd0c645eb75ee3983c6558bc5a541619d2409f383ef0eaa6bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bf1d2ef61a3e034be85884afc299429dbba01e26004cfb204bab4d803c5b40f"
   end
 
   depends_on "pkgconf" => :build
@@ -101,13 +102,13 @@ class KeeperCommander < Formula
   end
 
   resource "flask-limiter" do
-    url "https://files.pythonhosted.org/packages/d1/bf/7dd8a2bafd35e3256dd834f8128ee77164fbdb5769036fe9dc88b71e5a08/flask_limiter-4.1.0.tar.gz"
-    sha256 "7be4a8a3fd226f6bce1e633bdac4af16b0d231b6e186f1a6783aa319eb8730ae"
+    url "https://files.pythonhosted.org/packages/4e/98/71780be5d1afb941219c4b48d241d4e246e3062b017caa4e79c4dc71314c/flask_limiter-4.1.1.tar.gz"
+    sha256 "ca11608fc7eec43dcea606964ca07c3bd4ec1ae89043a0f67f717899a4f48106"
   end
 
   resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/33/f9/0e84d593c0e12244150280a630999835a64f2852276161b62a0f98318de0/fonttools-4.61.0.tar.gz"
-    sha256 "ec520a1f0c7758d7a858a00f090c1745f6cde6a7c5e76fb70ea4044a15f712e7"
+    url "https://files.pythonhosted.org/packages/ec/ca/cf17b88a8df95691275a3d77dc0a5ad9907f328ae53acbe6795da1b2f5ed/fonttools-4.61.1.tar.gz"
+    sha256 "6675329885c44657f826ef01d9e4fb33b9158e9d93c537d84ad8399539bc6f69"
   end
 
   resource "fpdf2" do
@@ -136,8 +137,8 @@ class KeeperCommander < Formula
   end
 
   resource "keeper-pam-webrtc-rs" do
-    url "https://files.pythonhosted.org/packages/62/88/3527218f3b2013279ee340fa824cfd6f99241edbb49e4c288a97f917c1e9/keeper_pam_webrtc_rs-1.1.9.tar.gz"
-    sha256 "d4fdedbea7f414a27e9fdfb71017a636d5c34b3d61d17a9a7cbd25369fa3bbe2"
+    url "https://files.pythonhosted.org/packages/a6/1d/44e01ed1783bd22c0e2ad6f2f42114a22446b636f09d92cb463ad2dea50a/keeper_pam_webrtc_rs-1.2.0.tar.gz"
+    sha256 "b8dfd781902388870d8326279c0d571d0665ed9a877fa6543a95812ba2aa2628"
   end
 
   resource "keeper-secrets-manager-core" do
@@ -236,8 +237,8 @@ class KeeperCommander < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "wcwidth" do

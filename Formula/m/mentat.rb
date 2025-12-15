@@ -9,13 +9,13 @@ class Mentat < Formula
   revision 4
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "d38a4611394ab643c638bc0c116c22f152ced05c49751e30326950167063f5e5"
-    sha256 cellar: :any,                 arm64_sequoia: "a765e0fdac4d8b3595a24aaf770c00a8dd67f12a51c219455532b9dd789bf6ab"
-    sha256 cellar: :any,                 arm64_sonoma:  "c2977668fae924ded06accde2ee9b35f05eab736258dd3ec9d689408f2097e43"
-    sha256 cellar: :any,                 sonoma:        "f3e60fd8c8a59ae88716240c841496efaa087a7b430e45c626322b0b4e218ead"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "16b2d3424df2c18d8363f6417f8a874a79ae81358fa9b31e3a83321bd69eacb9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0186ccf04b611ad608320b72993b27c50a2d05f4f7d4b21336c1a8fcd3f603b"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "29e8e9e61b56996a38f093018e5571698d718e5e7fe72e9c0d7500b6ca005e8a"
+    sha256 cellar: :any,                 arm64_sequoia: "1d07fc287f43c6e3b0dad334a32b02674f4aab925c3612fd3d8cc31a7d9d294c"
+    sha256 cellar: :any,                 arm64_sonoma:  "5674640e99703ff7f27b7be8c8dce0ddd092baaf192006de4a0b28977a38de09"
+    sha256 cellar: :any,                 sonoma:        "872238c62553be977c9fb2b72c1275950ee3db493a38a6411acdec4e84c795b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8ede5317c2156d01f4007b478ec22a3c5c94121a15e40402a9382ad3b42ccc8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0b9a78f971cc54d63f628e9b408ac2ac16fe9272b81d23cfe7c4f7701f89d83"
   end
 
   # https://github.com/AbanteAI/archive-old-cli-mentat/commit/901f0726418e9e9a66bec78facecf3a45541002d
@@ -181,8 +181,8 @@ class Mentat < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/f8/c8/1d2160d36b11fbe0a61acb7c3c81ab032d9ec8ad888ac9e0a61b85ab99dd/regex-2025.10.23.tar.gz"
-    sha256 "8cbaf8ceb88f96ae2356d01b9adf5e6306fa42fa6f7eab6b97794e37c959ac26"
+    url "https://files.pythonhosted.org/packages/cc/a9/546676f25e573a4cf00fe8e119b78a37b6a8fe2dc95cda877b30889c9c45/regex-2025.11.3.tar.gz"
+    sha256 "1fedc720f9bb2494ce31a58a1631f9c82df6a09b49c19517ea5cc280b4541e01"
   end
 
   resource "requests" do
@@ -266,8 +266,8 @@ class Mentat < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "wcwidth" do
@@ -281,8 +281,8 @@ class Mentat < Formula
   end
 
   resource "wsproto" do
-    url "https://files.pythonhosted.org/packages/c9/4a/44d3c295350d776427904d73c189e10aeae66d7f555bb2feee16d1e4ba5a/wsproto-1.2.0.tar.gz"
-    sha256 "ad565f26ecb92588a3e43bc3d96164de84cd9902482b130d0ddbaa9664a85065"
+    url "https://files.pythonhosted.org/packages/c7/79/12135bdf8b9c9367b8701c2c19a14c913c120b882d50b014ca0d38083c2c/wsproto-1.3.2.tar.gz"
+    sha256 "b86885dcf294e15204919950f666e06ffc6c7c114ca900b060d6e16293528294"
   end
 
   def install

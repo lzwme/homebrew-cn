@@ -4,20 +4,18 @@ class Pcb2gcode < Formula
   url "https://ghfast.top/https://github.com/pcb2gcode/pcb2gcode/archive/refs/tags/v2.5.0.tar.gz"
   sha256 "96f1b1b4fd58e86f152b691202a15593815949dc9250fab9ab02f2346f5c2c52"
   license "GPL-3.0-or-later"
-  revision 10
+  revision 11
   head "https://github.com/pcb2gcode/pcb2gcode.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1c7bb5342f773b41b6b485728e03aac465b7af391595656ca98a534092417cca"
-    sha256 cellar: :any,                 arm64_sequoia: "ff258b7d916b2586d2c1275f340e583352c050ce6e11f5fe88769fa1afa9eb18"
-    sha256 cellar: :any,                 arm64_sonoma:  "f34119207d88d392cd9bc22d9e2f8a60b75dac989cfd4eacd3f65c54b6796752"
-    sha256 cellar: :any,                 arm64_ventura: "b01464e9d453255290840876db3899984cceff1a5c6c5046bd6bdae5d79d563e"
-    sha256 cellar: :any,                 sonoma:        "0cd3f0c8556a36e6bfb7238ecb698108c85c97396e4a6b1966752868c6d3cbe0"
-    sha256 cellar: :any,                 ventura:       "1bee47236c3414536c8c77badab1057fb363eb35cb76cde433aea647a0bf53f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "06977900652f188f45575688519d4fb379b8d1c01d778e7f5676d79afbac604b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f0101b39171e4e96a6f5db51c8316b78251cd5c78867819d376c8845c5e0ada"
+    sha256 cellar: :any,                 arm64_tahoe:   "d61829e13e6a6a9b43e1e6c50792af67569b848002bcdff37010ee0d30919b6f"
+    sha256 cellar: :any,                 arm64_sequoia: "62c9eac391af2f8d19f488ccb9ae7f4e54c64e2800800e5f41c076f50dc82083"
+    sha256 cellar: :any,                 arm64_sonoma:  "9762896bae8cc1c9e702de028e845babb22ef2bf42c1fa9fe1dd58cd253cbbdb"
+    sha256 cellar: :any,                 sonoma:        "def45c121938993698c91f804c91c41cafa3403346ffe533f29eb60dc9f9be02"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c43f17e52e97ca5ad9e4b616a5a3c79dc321df6452a25d5e756fd5d02729ecd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb2dee5690b95bf05bb41b11d875cd546a68902aa1d36f39ee516b9f5e218e81"
   end
 
   depends_on "autoconf" => :build

@@ -6,19 +6,17 @@ class LeelaZero < Formula
       tag:      "v0.17",
       revision: "3f297889563bcbec671982c655996ccff63fa253"
   license "GPL-3.0-or-later"
-  revision 11
+  revision 12
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3089b9d144a84df5920e65998326238e54cb4132f0c8d1dd8274e80584d5d885"
-    sha256 cellar: :any,                 arm64_sequoia: "8690dd5ea173e1d7bd6b91e07476f54242f598505e838e2d38fa64c90fd3058e"
-    sha256 cellar: :any,                 arm64_sonoma:  "47aff2a14496f8e1f08fdad8f9318a1e1b6b4a56e57f8cd117740df41340d8cc"
-    sha256 cellar: :any,                 arm64_ventura: "1647c60bb30f22c26e0ab0f3ec99d296a1a7e8bd48c4c676bfd7f469dc9c4df2"
-    sha256 cellar: :any,                 sonoma:        "f6e5f5636798be24caa619d0c84d38d23c3f905e6edbb8baec7cf34dbd45dc69"
-    sha256 cellar: :any,                 ventura:       "74df4fbf6d10992225a619107f28b3c583f5ba00a0f773e9609294d522c78e37"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2d2119742e144d26f3408deaa148a07fe926dcb7e3c735f08b6a9c7c9b1023a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb7e114a1e812141f2c633f914403e1694a962a14188d98e66757a7e48f126d2"
+    sha256 cellar: :any,                 arm64_tahoe:   "f9734b50a25c17fcf027c69260fe4d315a6c85040b12e81f03acf821ffb2b876"
+    sha256 cellar: :any,                 arm64_sequoia: "03d82cf9fb5a0a711725ea9e342298549ae0dcb70422957647c8a30d0e5a981b"
+    sha256 cellar: :any,                 arm64_sonoma:  "ff21baba4abe3d860b5c74f18e9b19cf6296e4188bc72d693bd73c4462c481b6"
+    sha256 cellar: :any,                 sonoma:        "114462e902891cc9e0817769c9ad3cbd29d865b370e2108fc9e6c8dc7d46c07b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a4d47a8070af91baa2a1e5196822a0a649697d9608769219ee56efecd9d332f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5427fd85859eb63f54b45cb31f00185eb32c7c1d7ca296dd4be832004927a07e"
   end
 
   depends_on "cmake" => :build

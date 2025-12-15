@@ -4,18 +4,16 @@ class Maeparser < Formula
   url "https://ghfast.top/https://github.com/schrodinger/maeparser/archive/refs/tags/v1.3.3.tar.gz"
   sha256 "78e7571a779ea4952e752ecef57c62fb26463947e29ef7f4b31b11988d88ca07"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/schrodinger/maeparser.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "54c5bcd42d569b26d7e0ce27848d97bf61aac32238fd0e49f240374c74cbc854"
-    sha256 cellar: :any,                 arm64_sequoia: "c0d9db6f10daed3fc6b771924f2e479468fb01e0e9052aa126fe0a3a2ec45688"
-    sha256 cellar: :any,                 arm64_sonoma:  "cc29caec6af9758916014f44a462d949b05b451709e5c77574187415c03daba5"
-    sha256 cellar: :any,                 arm64_ventura: "465ec71b1618c4c650aaf44b30de39acda2f156652deac0e8961fd02efe64fb7"
-    sha256 cellar: :any,                 sonoma:        "8e78db80f19badb63e39b407437e2ffe56b37a29f27257b359e67862a34f803b"
-    sha256 cellar: :any,                 ventura:       "c98342065d18d6e1c4040975a8ca4bb911fb0a34b58f67c70f641e271a06d5e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9a5c6cfa985befb79739131b65496d5f6bfdead69ed569903168a6a0950a5bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c50f7c93b5fb8354aee48e6952bc1df0170a3a8a1a6911a0582ad9c8091d097a"
+    sha256 cellar: :any,                 arm64_tahoe:   "4ab72f0ad5c5537a43ca12641ea09bb11aaadbe4ac1e4a165dc1c4c9f083550f"
+    sha256 cellar: :any,                 arm64_sequoia: "a91901b461024886fc5a21c50a04ec1feb18632037747775d21bf2a6f2d078e5"
+    sha256 cellar: :any,                 arm64_sonoma:  "0395ee6964880665d0ed6ea81c3c74fbc865f7f0d1cada62c5fc710c89ea9033"
+    sha256 cellar: :any,                 sonoma:        "dd48a5685b50947fdc18cc1d553911a988ac672094741c5f959d41d43e367bee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "adad547947d2aef9ae2c1824bdafd8b1be4e65149b9a8729823ff68cb6725640"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74f789cea08e79f32d0b2f8dfe2c5f718bd8e5797e4c8960b94cbdb08a153bf5"
   end
 
   depends_on "cmake" => :build

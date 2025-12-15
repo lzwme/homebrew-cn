@@ -1,9 +1,9 @@
 class Libopenmpt < Formula
   desc "Software library to decode tracked music files"
   homepage "https://lib.openmpt.org/libopenmpt/"
-  url "https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.8.3+release.autotools.tar.gz"
-  version "0.8.3"
-  sha256 "25d486a4da9728819274ed0959fd79a1c6358954710d54c14047c6457c8ca8ac"
+  url "https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.8.4+release.autotools.tar.gz"
+  version "0.8.4"
+  sha256 "627f9bf11aacae615a1f2c982c7e88cb21f11b2d6f0267946f7c82c5eae4943b"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,14 +12,12 @@ class Libopenmpt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "56d1ef741550b0b891c8ce18f888c459779b29d6774290f6f6deaddb4eb1a887"
-    sha256 cellar: :any,                 arm64_sequoia: "12494e094046cb3920fa10ce9f7643592db0e945f96ada9b793bb2b7b77a9a38"
-    sha256 cellar: :any,                 arm64_sonoma:  "5a92b1ef7e83211e0e7b52b87a6000f46fcfe75a75643d3060559f882f1fb7d4"
-    sha256 cellar: :any,                 arm64_ventura: "3f9488905999cf2fa08279abcb663a1808f6917867b5d023928f5d74ed982f89"
-    sha256 cellar: :any,                 sonoma:        "f6fa5f179d2d7f379188797e5f951ebdea4bcee9d02cbd6cd4afdadba456b89e"
-    sha256 cellar: :any,                 ventura:       "4be3b67cc4cc13648514653011a68579658bfdcee5bd658d892cdc5173fb56d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "31e7af6b5d5cf7ccb90b47594f8ee837d2ff7ee418b1790106cd60d00eb72489"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51dc91600020dcf292f5cfda15dc87caa27cfd1a872c8ed8410bfea310fb85f1"
+    sha256 cellar: :any,                 arm64_tahoe:   "4be673aceb001642e12d2f7992946bf85305a42561227daba2b0389d4442f46d"
+    sha256 cellar: :any,                 arm64_sequoia: "684c17f93ecbc379409f75d3f275c7998cbd95fff7b7aa4c59700f03014b9be7"
+    sha256 cellar: :any,                 arm64_sonoma:  "291cc2513e0a63db6f3d11f186701c08f291b23fe1839b1c1afe5afe819e27c4"
+    sha256 cellar: :any,                 sonoma:        "486cf7ec136a7cc464593c7eb5e887cbc9852ba402c0d6258287f43801c3d663"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "690df6cd7e7e7af1ff89eb1160180f0c54fdaa0457b9e43409efe52556fb4f6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4febab73735e3851d7e10a3f88815915856ea329a8a4427d625dc82c28e2f39"
   end
 
   depends_on "pkgconf" => :build

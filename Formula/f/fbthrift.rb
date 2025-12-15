@@ -4,16 +4,16 @@ class Fbthrift < Formula
   url "https://ghfast.top/https://github.com/facebook/fbthrift/archive/refs/tags/v2025.11.10.00.tar.gz"
   sha256 "a6ad8db838dc92aea4f08fc11dcd1629e052d063498ea07daf48a4409f545eeb"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/facebook/fbthrift.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9791a9f332ff0e3b31a2c9f9515a9fb21a8c7791afab957bc60a9b8af374f488"
-    sha256 cellar: :any,                 arm64_sequoia: "db9638bf4dbd389d2d2ccc66e80ae489b02de3ade9ed99db3f6a44c565d3bb91"
-    sha256 cellar: :any,                 arm64_sonoma:  "1bd66177d36555f84dd002e787193c3aa5ed1c82927e409c8a98aca843f17bf6"
-    sha256 cellar: :any,                 sonoma:        "3c321de7a1d3f11373540e4f2de19f7cb39ca99d18bcf56ef1ec06fd0f661112"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1754c307abaf5c9da35ea04fa086b60dceb9bc99a5252b97d06c406b3510103c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "036f83ea2b40afc174cffb30f6c859048725e30d5549ce41bac9c3ed2294937c"
+    sha256 cellar: :any,                 arm64_tahoe:   "76718507d9af6a0cc596feb6426a5c3d532b5da073e8d724166a198d615357cc"
+    sha256 cellar: :any,                 arm64_sequoia: "ced01e16fdafb923387efab2718a4cd8da667948d169b8a39f971d05ce326a3a"
+    sha256 cellar: :any,                 arm64_sonoma:  "2c1ff540a2b793141ba1f038198327ab8ce4117e86b5094db25876db98226346"
+    sha256 cellar: :any,                 sonoma:        "f6bbe7a48315075d4f87088d732b22ceace91045a0eace17cffd2e04da451ee7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4ece4924529f46b1e372bc563ebee7a1d64085b24a86c8c408dcfa75d86920c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d3403c4b8559030cac11e0874231708e71ff6e6b627c24d8aa6de7af3f7ddcf"
   end
 
   depends_on "bison" => :build # Needs Bison 3.1+

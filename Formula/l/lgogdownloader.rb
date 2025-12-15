@@ -4,6 +4,7 @@ class Lgogdownloader < Formula
   url "https://ghfast.top/https://github.com/Sude-/lgogdownloader/releases/download/v3.18/lgogdownloader-3.18.tar.gz"
   sha256 "1974f09cb0e0cdfed536937335488548addd92e5c654f4229ac22594a22f8ae0"
   license "WTFPL"
+  revision 1
   head "https://github.com/Sude-/lgogdownloader.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class Lgogdownloader < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fb0b1c7a7a76080eca48c7aa24f4d9971a925aacfd012cb9e3d390513b65a7c4"
-    sha256 cellar: :any,                 arm64_sequoia: "1a60b8d1b110ba497430d2320e08e948adbf2a52d64cc9cb0f33de5c8982dfb0"
-    sha256 cellar: :any,                 arm64_sonoma:  "f86c404b09bf482d3ec780a596cf437c41aa0722432750ff3b3643273514de34"
-    sha256 cellar: :any,                 sonoma:        "404e09a2d0eefa7393020d77951b39f1f3de16dd6d2c1fe5b521561e86246455"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "569a54124468f64bfde71cc9a116f04fd61713e875327b057515fae8f01c7bd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4e0dcd0e8a28a933c756d0e3863f7ee598485d2b9b2904217de754d0688aa76"
+    sha256 cellar: :any,                 arm64_tahoe:   "42e874eee147a72ce96a7326b5d3dae82cec90156e5c10d7f204c69f1a2842a3"
+    sha256 cellar: :any,                 arm64_sequoia: "b4b305ec16cafc2a94813472c8e8f63c0e2a199787f809bc0179bd29e98aba54"
+    sha256 cellar: :any,                 arm64_sonoma:  "f951ba8180d50c679a0ba14c0674d873e90a7d30208ffc348b97b9a30ed9f8c1"
+    sha256 cellar: :any,                 sonoma:        "4242df1de313063ff369a3da546a6d8f9933d152a1e6a26c2d2a80c6fd343313"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b3caac3f84d42ebe9c273bfab66f15d8899f405f9d273b7be318f96e430d5b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbe52df8fafbe4ded3f94210ac2014de0cb41197a98d2da988ed1638b724be24"
   end
 
   depends_on "cmake" => :build

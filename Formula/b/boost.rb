@@ -1,10 +1,9 @@
 class Boost < Formula
   desc "Collection of portable C++ source libraries"
   homepage "https://www.boost.org/"
-  url "https://ghfast.top/https://github.com/boostorg/boost/releases/download/boost-1.89.0/boost-1.89.0-b2-nodocs.tar.xz"
-  sha256 "875cc413afa6b86922b6df3b2ad23dec4511c8a741753e57c1129e7fa753d700"
+  url "https://ghfast.top/https://github.com/boostorg/boost/releases/download/boost-1.90.0/boost-1.90.0-b2-nodocs.tar.xz"
+  sha256 "9e6bee9ab529fb2b0733049692d57d10a72202af085e553539a05b4204211a6f"
   license "BSL-1.0"
-  revision 1
   head "https://github.com/boostorg/boost.git", branch: "master"
 
   livecheck do
@@ -15,15 +14,13 @@ class Boost < Formula
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256                               arm64_tahoe:   "17d67451900bfa6c77b9acf33509e50fd716118a61bc61060957287db9f63959"
-    sha256                               arm64_sequoia: "3619145b1589dca6292290005772953c1f9950121d8d5e97ac99e1b0a9c31e57"
-    sha256                               arm64_sonoma:  "2a5716b3b010d3b70a1df34f5e407cec6321e2bcaa653cc6aad684ee1bbfb35c"
-    sha256 cellar: :any,                 sonoma:        "d48c415a7fccdc7f526ca90de198b01dad494017fc931b5ecffcd45143abaf75"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a60f735d755c1a1836f784ccb34c46bc9c0d26870fba374da532088d9ac13d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55b460f7f6465e6d4b3313a52819e8690db5fd01796d8a87f7c867504c9199ac"
+    sha256                               arm64_tahoe:   "495170d683a37749c1d436ee63ee5790a11a8f85695997dada79eb7bfc5c3341"
+    sha256                               arm64_sequoia: "5ea7814760c6eb4bc62db04685931f17f974fc2a82dc385ff75706860cbbf313"
+    sha256                               arm64_sonoma:  "3a3f2620213f97cccb650f05fa66b042c29621076d7b786d0a7136ca623d0b64"
+    sha256 cellar: :any,                 sonoma:        "c0a827c85fe689dc9db03b31b152ce78868928f020757ef7b0b85b3f81489d67"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d154efec46278e4d3dc8f3aa9aa73205f4b10f821725cc6217b525f104d0c4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1e65c2f173ce34d451025547d72db68956d69123c94b636c48901a36a83a0c6"
   end
 
   depends_on "icu4c@78"
@@ -139,7 +136,7 @@ class Boost < Formula
         return 0;
       }
     CPP
-    system ENV.cxx, "test.cpp", "-std=c++14", "-o", "test", "-L#{lib}", "-lboost_iostreams",
+    system ENV.cxx, "test.cpp", "-std=c++17", "-o", "test", "-L#{lib}", "-lboost_iostreams",
                     "-L#{Formula["zstd"].opt_lib}", "-lzstd"
     system "./test"
   end

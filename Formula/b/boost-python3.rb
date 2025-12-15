@@ -1,25 +1,22 @@
 class BoostPython3 < Formula
   desc "C++ library for C++/Python3 interoperability"
   homepage "https://www.boost.org/"
-  url "https://ghfast.top/https://github.com/boostorg/boost/releases/download/boost-1.89.0/boost-1.89.0-b2-nodocs.tar.xz"
-  sha256 "875cc413afa6b86922b6df3b2ad23dec4511c8a741753e57c1129e7fa753d700"
+  url "https://ghfast.top/https://github.com/boostorg/boost/releases/download/boost-1.90.0/boost-1.90.0-b2-nodocs.tar.xz"
+  sha256 "9e6bee9ab529fb2b0733049692d57d10a72202af085e553539a05b4204211a6f"
   license "BSL-1.0"
-  revision 1
   head "https://github.com/boostorg/boost.git", branch: "master"
 
   livecheck do
     formula "boost"
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2fd4e2d3a8336e69231b449595d8106c8063ee1338b34e70e63bfca2143a3e2f"
-    sha256 cellar: :any,                 arm64_sequoia: "0ab536d70fa86ca34cfc414ab7039dd021bf84b02aece6d428d0d7283e5c7524"
-    sha256 cellar: :any,                 arm64_sonoma:  "5182495303b64350e28ddb198f62663e40197eb1f2eca0188457d61c3ee1f212"
-    sha256 cellar: :any,                 sonoma:        "8a03cbb7539ccc15ca16d6a271de8a9314a46d2b4ba8089216445fdebb1ca004"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d50c7bba1a1d00830067a11704e231feb60733c42ff78fc00d332c49c2e21bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "566977624d477de6a4e590776cba1e0cdeb7b22ff3b03ded5a1afb8ca2c4355b"
+    sha256 cellar: :any,                 arm64_tahoe:   "77000c87c322c35f47f19ba70d2ee7e96454858afcd319e40a3779752bf358a5"
+    sha256 cellar: :any,                 arm64_sequoia: "e38c32230702a701b9925647b7e60d1bdb4898f4f28edc385616677d12ae4248"
+    sha256 cellar: :any,                 arm64_sonoma:  "73034591865ce9f6f06788722f803643e3bb46c3f476efb9bca0a53326bde841"
+    sha256 cellar: :any,                 sonoma:        "4a0b132affb3cd982ee303ca1935260a3bd2f9cba79b08e50cb3c3ece1d47a80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc66b1167e63982f9b637a72b9f3aec2dfedd97796ee6cce51e8de491963f878"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68d63c94b12444cb43b121226bd0e0c8d02e2a89f91ca18040601a2a83ea2292"
   end
 
   depends_on "numpy" => :build

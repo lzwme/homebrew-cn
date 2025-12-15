@@ -8,8 +8,11 @@ class DjlServing < Formula
   # `djl-serving` versions aren't considered released until a corresponding
   # release is created in the main `deepjavalibrary/djl` repository.
   livecheck do
-    url "https://github.com/deepjavalibrary/djl"
-    strategy :github_latest
+    url "https://docs.djl.ai/versions.json"
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :json do |json, regex|
+      json.map { |item| item["version"]&.[](regex, 1) }
+    end
   end
 
   bottle do

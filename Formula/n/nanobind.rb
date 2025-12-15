@@ -14,22 +14,9 @@ class Nanobind < Formula
   depends_on "python@3.14" => [:build, :test]
   depends_on "robin-map" => :no_linkage
 
-  on_linux do
-    on_arm do
-      depends_on "gcc" => :build if DevelopmentTools.gcc_version("gcc") < 13
-
-      fails_with :gcc do
-        version "12"
-        cause <<~CAUSE
-          Fails to compile because of undefined `_Float16` type
-          https://godbolt.org/z/nKbrjPTvG
-        CAUSE
-      end
-    end
-  end
-
   def install
     system "cmake", "-S", ".", "-B", "build",
+                    "-DNB_TEST=OFF",
                     "-DNB_USE_SUBMODULE_DEPS=OFF",
                     "-DNB_CREATE_INSTALL_RULES=ON",
                     "-DNB_INSTALL_DATADIR=#{pkgshare}",

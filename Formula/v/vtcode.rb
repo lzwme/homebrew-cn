@@ -1,18 +1,18 @@
 class Vtcode < Formula
   desc "CLI Semantic Coding Agent"
   homepage "https://github.com/vinhnx/vtcode"
-  url "https://static.crates.io/crates/vtcode/vtcode-0.49.1.crate"
-  sha256 "4e1bd2365b8fb60871b10cf4df72a6de26c9ef276d6212601d5ad550189cdc1e"
+  url "https://static.crates.io/crates/vtcode/vtcode-0.49.7.crate"
+  sha256 "017fcc799762a82fedd05b109132ced9deb8eac69a199d42f739919b98342427"
   license "MIT"
   head "https://github.com/vinhnx/vtcode.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f1214fd967bf87c51ae9f50dcd4d7f38eb66660f907264477bce870938739434"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a4d4c71025a0ca40448ef442e43a865c17024314bcfd56e441cef3d0a2891be"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b4caacd95f8c2a1db60eef64dd391060bef91cc6cdf60fe21ec4c3b9a1b54654"
-    sha256 cellar: :any_skip_relocation, sonoma:        "80f9a60576e4a23d7d58b9ad0aa1e49e55c318c3862a10aafba0b8992dd6b30c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bbc0a67b7bdec01f2949175b5db47653bb1f5d1f6f48fe2cc225bb866a5ae6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95a9251939f4fd8d7d8a0fa3a7fdfbdf09f4fa52eca87eba14a9615923fe03a2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf07dc22e1842cb65fab32a20c22c9c7d3cee38e3c6bbd695af2b4c4175ac674"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afb7c225c3acdb330e3606a09350c5bf9ab065bc6cb8d082a823ebbc020fe130"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e1d8865c2a1b949f31ca5599f499b129381f36c9dbec57236f7ad85782fe219"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3c3b1b5134713c61636b076874f3eef92023b3283e12c4e02628f50b05971c97"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4d282063abd27b19b3ee2e08aac3d512f7ba33fb89b6d7bd83ef4e77f0982bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8509acf3f85718dc33f716a29c4cf65da5525050ca76c70834fdca3536226c8d"
   end
 
   depends_on "pkgconf" => :build

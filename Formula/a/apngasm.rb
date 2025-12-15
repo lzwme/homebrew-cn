@@ -4,18 +4,18 @@ class Apngasm < Formula
   url "https://ghfast.top/https://github.com/apngasm/apngasm/archive/refs/tags/3.1.10.tar.gz"
   sha256 "8171e2c1d37ab231a2061320cb1e5d15cee37642e3ce78e8ab0b8dfc45b80f6c"
   license "Zlib"
-  revision 19
+  revision 20
   head "https://github.com/apngasm/apngasm.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256                               arm64_tahoe:   "23d3e8adfa479edcb2b2f37b4609afa91e898d2120cf810913139a9aa5da9a6a"
-    sha256                               arm64_sequoia: "7410b645d60a0841b47dce654750b6d900f85f21684be57dba2140f5ab071e7a"
-    sha256                               arm64_sonoma:  "0cfd5e3130eb003fbd93c80f6e95c0ce320f9587b60c7b6432058d8fe0a33fe5"
-    sha256                               sonoma:        "110930120d597424baf52e2b15f7a82b76c8b792d96dca9f6acc818eaaf97079"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7abee4b8b78412bab13d747b14e38aec267c41fec55b9648b64bf2ae0386fc09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f19066f5c13ade30bb33a6876f11b5f88294ef0672e19b3f1c6cd9b162cac2b"
+    sha256                               arm64_tahoe:   "06ad2cd58116c3c62a72870f7f1ef0a1b4116285eab42c085648dfac4926ffd4"
+    sha256                               arm64_sequoia: "7b80dcefcd186511ed93a327f44a794b779acb9ec5b7da9fe8100658dec1c2e3"
+    sha256                               arm64_sonoma:  "7d1cf69a6e05eedccc87ef7f878bce2d8d4f531607efa9565fc8fe27412d549a"
+    sha256                               sonoma:        "d0901f24ae3b9ea5d17ca77a012c05b2d2aa2ef546a63eb5fe6d42e5985ea596"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "19251d12f2388fde4d495dbfcbe72b3883ee24fabbf38dc0f077981636897ad1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11ae3807509bd5b7522d7fa850b52eff4b00b60ada10940fe16c5ab995d3ecec"
   end
 
   depends_on "cmake" => :build

@@ -4,16 +4,16 @@ class Proxygen < Formula
   url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2025.11.10.00/proxygen-v2025.11.10.00.tar.gz"
   sha256 "f0c43c542d0db9ec83523394309b06ec9f054fbc886408fce473ba9c8d1ea819"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "99e6b8f1bd6ccb4b7ea93557a52ca1227ab3191001336ba32b4e982b2dcab237"
-    sha256                               arm64_sequoia: "e3436e6b09314651fb4c177a8b59db11dd45e0026090b778d26f8f3509d60f76"
-    sha256                               arm64_sonoma:  "8da390ad7812a328dc68845e4a5fe9bde8157d22eb0d18916548a128f76b7a95"
-    sha256 cellar: :any,                 sonoma:        "a54f9822d9855419f78c1b6796ac0e4bc1cc4cd56d67bcc81f13d4c0cff3d2b9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f369c238e7e3246c622e52c012e35b2e3b01289c64c10c62344e965f44799e08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76fc5d9b1cfc9a76b8f160395e2eae0ad8037835c27d07eac6066a67d79557a8"
+    sha256                               arm64_tahoe:   "e946cb704d33dea138bca8e658c63b5643251eabcfad34e3f22d24dd747d8b17"
+    sha256                               arm64_sequoia: "729c370a53f4619aa2657c3c8cece87af600a990bf8b54c5473b480469931d69"
+    sha256                               arm64_sonoma:  "ab12e89dbf7d9dcf6667e5c95525b4f7f0cc06fbd63863b74e2eca4ffd0e0b8c"
+    sha256 cellar: :any,                 sonoma:        "4b25bcd2e3976bf0c92f07d4032ef7eafa96a176935f86a380d02a356f2f2ab1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37e62f229a85e1e23ac07eca76f5809284a98aa2684d641e283153298f2a64d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bec71ea9cf735621c8847784a14d6a9cfbfa8c2238b6b19197a258a30c53e276"
   end
 
   depends_on "cmake" => :build

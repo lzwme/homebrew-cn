@@ -4,17 +4,17 @@ class Freeling < Formula
   url "https://ghfast.top/https://github.com/TALP-UPC/FreeLing/releases/download/4.2/FreeLing-src-4.2.1.tar.gz"
   sha256 "c672a6379142ac2e872741e7662f17eccd8230bffc680564d2843d87480f1600"
   license "AGPL-3.0-only"
-  revision 12
+  revision 13
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f52d5f615f623c4b8370bd5f03ea156da7a4a5f5e1eaf6d63fa6073a9b741f82"
-    sha256 cellar: :any,                 arm64_sequoia: "f6851b8266fbb47b155f46e8ef1bb86d4be27c31795314b30922bbd554eb223a"
-    sha256 cellar: :any,                 arm64_sonoma:  "21b03d396a4e4d55031d4e5f0ff72ed7162af9ea1f88ccb73931465664ed9ccd"
-    sha256 cellar: :any,                 sonoma:        "c82c10eb1d8d237f771cb39f7cbbabe930e04c128f7433100cb1b2e77313c56b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cef326658f4d61c5a757a4571d62a02cc78cdf4049463594321e83b70d2c51e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8901505faeac339eb4a73a7bdb9c71329423e73afb5523473cfdef72e93ddb94"
+    sha256 cellar: :any,                 arm64_tahoe:   "e156b45ac74b87aa415932e5577173796a7b77207708b9b599200b7438bc86ac"
+    sha256 cellar: :any,                 arm64_sequoia: "7260ffdbaeef2635424243bef7a16d75f32361d81b4f1946691a6a8ad0f10662"
+    sha256 cellar: :any,                 arm64_sonoma:  "b24bc3defe2c34f3b8eaaf8d68fedfc86a48a9b771db05a2270af3cdebc02a0d"
+    sha256 cellar: :any,                 sonoma:        "05668767c7bb58eb8df2200c2da8da1c8f941a23e06eddbd1675e5d53aeeb309"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10357fffdd9dcc0bce6b4e234caae1d60e2c996a6260d97cdf3ba6380219e754"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8314e02d61508254e04ef46a8a6a0bebc8817ef9ba265536da3065b92915b6cc"
   end
 
   depends_on "cmake" => :build

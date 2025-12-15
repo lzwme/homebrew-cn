@@ -4,15 +4,15 @@ class Audiowaveform < Formula
   url "https://codeberg.org/chrisn/audiowaveform/archive/1.10.3.tar.gz"
   sha256 "f33680a4c74a718648ee0567511537ad80e015fb3bf5c8440a8176414afb415a"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "40d9bf787e5f7813ed51079d59716a7f88c6cd2c0076dc04b5838bf0d769536d"
-    sha256 cellar: :any,                 arm64_sequoia: "0847aa9b5ae424d084e9ca3b8d00e703d1935237fe107ac87495ddf3301e360c"
-    sha256 cellar: :any,                 arm64_sonoma:  "0edef92eb11576b39b7b4684c5c853a6e3e42b3784870d1e57406256c8baa110"
-    sha256 cellar: :any,                 sonoma:        "93f324ec4b218cda6afb1459b53efe02d5a1887a1494831b89bcb753749ed752"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5832d40c71610ac220ad80dc716d252108916ad7f2b421f147d185c94ff7e7e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5be140b85eb627cbb179bfc6252d6af35f80dd9972b67426687af659e88a8996"
+    sha256 cellar: :any,                 arm64_tahoe:   "2d47b4665522e77242a8b50ef9238082d917b7135b60f80814c90bc24be1d0b5"
+    sha256 cellar: :any,                 arm64_sequoia: "56eb4e9b6ac8aa315123a2f8cf7ada427229bacfbf098044975ca7170b5720b5"
+    sha256 cellar: :any,                 arm64_sonoma:  "20f1a999349a1a54b17c435e965ef19a119f32c5d86b29b6a529afc6d328a890"
+    sha256 cellar: :any,                 sonoma:        "837f5ddc5f63c261819c051b6c38714523e006b920de1d12111fe4b3b8ff8d4b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed28a95f657ebfeee656fde98cfbdcb958011fea091dd33facfac5227625cbc3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00dfad3adb0a26aeaed8c77278877ce9d74d7ef522038b1105126d12ebace9dc"
   end
 
   depends_on "cmake" => :build

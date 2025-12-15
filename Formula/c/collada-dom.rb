@@ -4,18 +4,18 @@ class ColladaDom < Formula
   url "https://ghfast.top/https://github.com/rdiankov/collada-dom/archive/refs/tags/v2.5.0.tar.gz"
   sha256 "3be672407a7aef60b64ce4b39704b32816b0b28f61ebffd4fbd02c8012901e0d"
   license "MIT"
-  revision 14
+  revision 15
   head "https://github.com/rdiankov/collada-dom.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "262ff6d093cd5cf4c93d6771dc5652189d1d0545c1ed5fb9ed7a0924d2394e6c"
-    sha256 cellar: :any,                 arm64_sequoia: "13413012e59dd5274b56bcbedff590d2940e6f2929fe75e210d59e1ce79b1e4d"
-    sha256 cellar: :any,                 arm64_sonoma:  "2e667eedc409a0c7d7fc905667fee3e9b99d3784993096cf9f8295b9a5a31c8b"
-    sha256 cellar: :any,                 sonoma:        "1594a0565e3052099419571b88bd2cbceb229163ac33bf6d2a2c6025c3eab57d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a41950947d7ce752b2d9fb00fc3a0d035a57efdca87ce2ca471e2092797fdc9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "199d63bc915ff1606d3a61710ed010a564f6ed5235be4e2928651d9b610c1ac9"
+    sha256 cellar: :any,                 arm64_tahoe:   "571dd57bc1c55e2136dcca7348eb4ff31aee95a3d20178ea87a36061fe655a6a"
+    sha256 cellar: :any,                 arm64_sequoia: "506e14ad369e4dbb9014a15b29f50ffe2b1d453877939de55a8112b3cb279d0d"
+    sha256 cellar: :any,                 arm64_sonoma:  "591b6312ae7ade63b30c32eb21741b05e04f4cc8092a2c19e4c83f0946cfcf03"
+    sha256 cellar: :any,                 sonoma:        "acac703a5648f3a6211283aeb24e3bdf2185671ecee70d2b00e139efce2925c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63dfeb474fccc391c52805334719c4dee901a1e9ed27194176a5d134315ab780"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1e7a11c3863a2ed8f2b6a266299ddba1f536ae1dd3b7d97c75c2fd2de5a8084"
   end
 
   depends_on "cmake" => :build

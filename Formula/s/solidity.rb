@@ -4,6 +4,7 @@ class Solidity < Formula
   url "https://ghfast.top/https://github.com/argotorg/solidity/releases/download/v0.8.31/solidity_0.8.31.tar.gz"
   sha256 "1efcf5af92e39499ce64d9cb33ba1cc1aa43d0aba107472915d732bf4a31c837"
   license all_of: ["GPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0", "CC0-1.0"]
+  revision 1
 
   livecheck do
     url :stable
@@ -13,12 +14,12 @@ class Solidity < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1a20867ac3db8f7c225b457e22a40c3e6d760c813dcb32f91bbc769454e79251"
-    sha256 cellar: :any,                 arm64_sequoia: "33f5d3ee79761ea972a9d78e68173d889392ebf8face77d2378c91a914372ea2"
-    sha256 cellar: :any,                 arm64_sonoma:  "48e4852290432359850f67bdca49e0b57cef605e5f30608b3a471b418fad35c1"
-    sha256 cellar: :any,                 sonoma:        "20a127dc1a3dbbc4dd15772415ddc0059e554241d30e528dabdd24bf1ff6e6e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "604223dca6a686c1f0a66f3d5866b3efef091dcc37c419e79ff089fc37c6bd2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61188abccdc6c3ff34cbf1b19f0e12e0f60f7eadd2bb2d761f0adb67fc8e7853"
+    sha256 cellar: :any,                 arm64_tahoe:   "e1afb90753edef255f78a921de1268e70dc333725e72701775329c0e6b012e69"
+    sha256 cellar: :any,                 arm64_sequoia: "b8523721b303160577d4f968ead04ce7dbee638e61b8c126dd557581f59e2f16"
+    sha256 cellar: :any,                 arm64_sonoma:  "caf311ba3d956af223f4b74377a48a16d077feedbbf09e36f24068820c3a9f11"
+    sha256 cellar: :any,                 sonoma:        "6d138907b4657d9dc29963ef55710bf71ff8c793fb8a7f559b2fbc6d1376a31d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "96041ff2eb826145514555fa1314f8b31e8b1a36dc56e7f79a6ff94997510027"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44dfde584a0d12ce6c928694a058019daeabcec1dfb485ddd1e13159ac1057eb"
   end
 
   depends_on "cmake" => :build

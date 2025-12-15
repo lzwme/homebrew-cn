@@ -4,16 +4,15 @@ class Gearman < Formula
   url "https://ghfast.top/https://github.com/gearman/gearmand/releases/download/1.1.22/gearmand-1.1.22.tar.gz"
   sha256 "c5d18f6a13625ebdd7e514596aed39e31203358eee688dfedcedd989a2f02d7a"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d0984eb4b3479e4384b4e490f9241bb4a1ca271039287dea1bb356a16eb977d1"
-    sha256 cellar: :any,                 arm64_sequoia: "8c955584d99f3e859ea660c00bf2bcfe0cf2f402f193a3eb221345799200c835"
-    sha256 cellar: :any,                 arm64_sonoma:  "103e4d6a50dbc070bca6776516b3843b80bdbdb655d2cd64a1bba916c62fbfd6"
-    sha256 cellar: :any,                 arm64_ventura: "a6e2b34f1b2cf3900fb2127ca36592b87c717d7cc53ee7ac88a47b0c5bf0970e"
-    sha256 cellar: :any,                 sonoma:        "a7397e17e36abfcabb7456690e9afb6b972ccfb24f764de51de6649a63711ec7"
-    sha256 cellar: :any,                 ventura:       "6d8bf0e70335d64283ed5123e6b881b08674ac97a12905a2b10751292daa85c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7362e35e325a83661ab189ca487908cb25f37b7dcd267775663fa997e09f740"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a97c37df4ed3036bfdf1fb1318fbeb99a34bcb3f6a3353ea55853c4aa008cee"
+    sha256 cellar: :any,                 arm64_tahoe:   "5d3c72680496377b84301a11829ce50486c4303b36e6fced1fded664a3e9e884"
+    sha256 cellar: :any,                 arm64_sequoia: "9e6adef3fb88b33c1dafc83b2836780d15ec5dbca6e85426252910d74fb1328d"
+    sha256 cellar: :any,                 arm64_sonoma:  "20e8012a0a1163aec0122be7ede14c1b67d8a9f2029c48fe4b0fd31bf6a7033f"
+    sha256 cellar: :any,                 sonoma:        "34281099e7a338e50184e5297726d0fde308c108f8324cd4c8a807c2079b8525"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c334d173303374e69d753ac458fbb7499c3bf5b7730bf9a98c9b77f061569531"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3248cb1b494fc13da4014574ae3be3a88f592862de39ef275ed6a7824a996baf"
   end
 
   depends_on "pkgconf" => :build

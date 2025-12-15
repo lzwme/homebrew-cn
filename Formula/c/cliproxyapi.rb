@@ -1,17 +1,17 @@
 class Cliproxyapi < Formula
   desc "Wrap Gemini CLI, Codex, Claude Code, Qwen Code as an API service"
   homepage "https://github.com/router-for-me/CLIProxyAPI"
-  url "https://ghfast.top/https://github.com/router-for-me/CLIProxyAPI/archive/refs/tags/v6.6.9.tar.gz"
-  sha256 "cc47045b881ca1da223eed0f5b54a1caa3a7e6aea5bb3f2ad70685acf898b277"
+  url "https://ghfast.top/https://github.com/router-for-me/CLIProxyAPI/archive/refs/tags/v6.6.12.tar.gz"
+  sha256 "2cc738cb58a61bb9453b935107c7087584645fad24484acaed775f4ac36c3af3"
   license "MIT"
 
   bottle do
-    sha256                               arm64_tahoe:   "ea34499bea1b20076655660e12b19690485a3ed0985f2e0e6b06864efa756e1e"
-    sha256                               arm64_sequoia: "ea34499bea1b20076655660e12b19690485a3ed0985f2e0e6b06864efa756e1e"
-    sha256                               arm64_sonoma:  "ea34499bea1b20076655660e12b19690485a3ed0985f2e0e6b06864efa756e1e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "52ac3984c621c25545207e7a48888bac7d1427bfe2c68665f937eb9bc8e45934"
-    sha256                               arm64_linux:   "12464161839173528518d192276a83445b54d79354ebd37a521700c535ce9616"
-    sha256                               x86_64_linux:  "ed8ba9075049968ac73760ffc02dda728eeffbbe6a049666057f23cbb3673706"
+    sha256                               arm64_tahoe:   "d8189bbf55410591fc5a2b19397da7808293466f60c0430b5229a0ed6a565ca2"
+    sha256                               arm64_sequoia: "d8189bbf55410591fc5a2b19397da7808293466f60c0430b5229a0ed6a565ca2"
+    sha256                               arm64_sonoma:  "d8189bbf55410591fc5a2b19397da7808293466f60c0430b5229a0ed6a565ca2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c33e47370032de353b34cb03b1e575e5138f87dccd96e8a6f3f0c71e17bb10b9"
+    sha256                               arm64_linux:   "1de6fcf55a9c0bdabdca73a31af71bc62e937b825d89fe868cd817aaef68d6bd"
+    sha256                               x86_64_linux:  "84785be6cf65716acc2c631a3db881fc66131592cfece3e5cc2222499aa7108a"
   end
 
   depends_on "go" => :build

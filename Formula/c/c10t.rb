@@ -4,19 +4,17 @@ class C10t < Formula
   url "https://ghfast.top/https://github.com/udoprog/c10t/archive/refs/tags/1.7.tar.gz"
   sha256 "0e5779d517105bfdd14944c849a395e1a8670bedba5bdab281a0165c3eb077dc"
   license "BSD-3-Clause"
-  revision 12
+  revision 13
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fa2cc5158958a49d439e6306581adb0a4284d84d02fcd4fbb2c1520751800dcf"
-    sha256 cellar: :any,                 arm64_sequoia: "ca8927a16ee21b13da4ccf12f9cc600c01c4a692b35f09bb061c81f9dabe1650"
-    sha256 cellar: :any,                 arm64_sonoma:  "d785224c143b4df6cdf3ffc6e2a6cb5b8cb0cdfaf06ff6221a1d39b3ba71ad19"
-    sha256 cellar: :any,                 arm64_ventura: "c2056939dd01e763b8687f77646edba021fac9653ce866afa94144868934a04f"
-    sha256 cellar: :any,                 sonoma:        "e51497da78d4b2948f1d71a6ccf360d98bc6135465f059820f593f0091e2987e"
-    sha256 cellar: :any,                 ventura:       "aa46dea07945ea582d8046585db329c555ccca9136fe5ebf604f15e57746fd23"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b91294ec460d53d9509da20a9ca2df6675fc4a5f478d64a6762f9570911ff4f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd4e37bdf7a3cf012fb736e1b84539877c80ba65ccd2c812e26ee5df81ac95ba"
+    sha256 cellar: :any,                 arm64_tahoe:   "c5ded8a98f510882bd5598fd1e80b8e050c11c4bf36b6608f61798be75df53b4"
+    sha256 cellar: :any,                 arm64_sequoia: "5df2c310306afc25be4b8584dcfc35868fb2ef37ae3a93b078efb49f68dcca57"
+    sha256 cellar: :any,                 arm64_sonoma:  "02d85ddbb40aeebcf8c58a979c5100f7eef443c8e177a4b72fbfddf8965d945b"
+    sha256 cellar: :any,                 sonoma:        "8361fddb35351308959d4757449020dab407dc2a574c78c09963f20e7ea3699b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e769aace8ba7e7f1a100a666a80340bdd81bed6102c3120f901bebaaf8c55d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f883cfced0814e9f18b734fc1800042754e7022a395dd3e87342452e52e59cc0"
   end
 
   depends_on "cmake" => :build

@@ -5,7 +5,7 @@ class Redex < Formula
   desc "Bytecode optimizer for Android apps"
   homepage "https://fbredex.com/"
   license "MIT"
-  revision 20
+  revision 21
   head "https://github.com/facebook/redex.git", branch: "main"
 
   stable do
@@ -41,13 +41,12 @@ class Redex < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ccd598d35c980d9c5220de5fa1a9bdcf3ff6c9cdd74e20f20143f7dc3dee5694"
-    sha256 cellar: :any,                 arm64_sequoia: "acd97e017326b3c2a1cff2eef31078a79ea1f5a0129531c31c1b2566e70648d4"
-    sha256 cellar: :any,                 arm64_sonoma:  "cd443c5e4f40643b584184041c3c6d4809bc6c7127bb64a67c169d89269029d2"
-    sha256 cellar: :any,                 sonoma:        "b499a2a789dd133952eb96a2c0a3c591daa178248a352db5bf1c62cc687f492e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2bfe2a1cdb1329411574b37c837686859e283dbcf22175a1a5bd9486b35b082e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f1ccda8d1eb737e03a2a3e01b34b171bde12f49a896b48224e63e95af76c12f"
+    sha256 cellar: :any,                 arm64_tahoe:   "4290ded870843ef5a0f59274fe9242982c77542a1cbb367408151473849b21a1"
+    sha256 cellar: :any,                 arm64_sequoia: "c894e5072ff2ebbdd21b9bcecf12d5468f6e2c1e51fe27d2d5a2ee83480b5301"
+    sha256 cellar: :any,                 arm64_sonoma:  "8b739a35ed027e227bcc48ea375d6c0d7a8c7a20888a8319f828993b34a68107"
+    sha256 cellar: :any,                 sonoma:        "c2eca79d391a44a6645c4d0cd17982c07316a49f20a4f3ff0b3bf5190936014b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "576c939a85047bae7e36eb7821407eb2046eb746069b4b8e5a13635837338799"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40a31fbf584c6f289032c1d257dc26cefb218e744ff934e0d5a99c3c48c229ff"
   end
 
   depends_on "autoconf" => :build

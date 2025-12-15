@@ -4,15 +4,16 @@ class Osm2pgrouting < Formula
   url "https://ghfast.top/https://github.com/pgRouting/osm2pgrouting/archive/refs/tags/v3.0.0.tar.gz"
   sha256 "3d3042aa0dd30930d27801c9833ebfbe16eba0ab0e5d6277636ce17b157f2a0f"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/pgRouting/osm2pgrouting.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a1e6d63741efd9433243a34fe6eeabac94c997be7bfee53cddc38bdef146ecfd"
-    sha256 cellar: :any,                 arm64_sequoia: "79c6fed661046213cde072cb868cf54d4b5957d3df71e06510f3e4510488956b"
-    sha256 cellar: :any,                 arm64_sonoma:  "343380fd98246518862587e7d1ee1c9ff2e9a5cf45dfd5f75f603cf6d3086073"
-    sha256 cellar: :any,                 sonoma:        "58cc66aa2903ebc7a582e0aee137d8451d265de54d4bce92a7e0176dac015ba7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd934d5d273ee9a827099f0d9fee6ab760319fc66f0fcd16500b442dcabbf5bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ceb7cff82516b6511dd821ffb18aeb0b4c4e58a32f4fbef41ebbc59e02c4b66"
+    sha256 cellar: :any,                 arm64_tahoe:   "a91a2713349eee362e0573e68b3ec50eb81b9f9cfcb2eef36b9e487df9311da5"
+    sha256 cellar: :any,                 arm64_sequoia: "aea29e697c550c06589149f97088db0dca3cf7ebd577f62bd3901eb7ea042c49"
+    sha256 cellar: :any,                 arm64_sonoma:  "1eb36bc2d0a5fd533413f64d56b4a076636c42a6e56cc08833aae60a9eabc8d0"
+    sha256 cellar: :any,                 sonoma:        "dabb062d43c2eb3c333325fc23e21c0c8ef4f10cf1cc25702fea5ef6971a3479"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ca30d07f2c57c79fe534fe378a27df5be505ee58f30abb0295e5985650dbb6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4f6bed7ff0a1a0bfffc5c4a25a5e5874cb5fbad7c151ec861916bd8bf63d70c"
   end
 
   depends_on "cmake" => :build

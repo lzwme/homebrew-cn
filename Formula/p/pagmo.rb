@@ -4,15 +4,15 @@ class Pagmo < Formula
   url "https://ghfast.top/https://github.com/esa/pagmo2/archive/refs/tags/v2.19.1.tar.gz"
   sha256 "ecc180e669fa6bbece959429ac7d92439e89e1fd1c523aa72b11b6c82e414a1d"
   license any_of: ["LGPL-3.0-or-later", "GPL-3.0-or-later"]
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "967ca7afd0f94fe22053b2cf187c97a14c853e160668700db06e8a64f76a704e"
-    sha256 cellar: :any,                 arm64_sequoia: "9d5ab6ee707031ed11dd9291c579b778e03ed5357a159fa2fa5c9b572c8fe49f"
-    sha256 cellar: :any,                 arm64_sonoma:  "4ec05c1307d3e5375802ddf095106412287eea4024037c4179960564284104f4"
-    sha256 cellar: :any,                 sonoma:        "9c6488dd49f684f62e4035943dc9a370a08eed979d71a5139061700570135ff3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe0c1de3105984b315801418a3f104de528645485da9ca587777efe7b6da1820"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bf66c10d87861392ebe1158c0f58ed438190310415b2f2093f53571c00eeaa7"
+    sha256 cellar: :any,                 arm64_tahoe:   "d5474b826c3a4d2e4e0a557f8cae80452cf73a24e9ba1b6f375c1d9e78f18f77"
+    sha256 cellar: :any,                 arm64_sequoia: "c3b9817551e40a0827cecef5f15ab2484e5805e0d43db105139a8f2cbaa1adc8"
+    sha256 cellar: :any,                 arm64_sonoma:  "fc7994d99b3d470899d7e6c6a2af827885f4d4fefa4a69d20003cc0199d99454"
+    sha256 cellar: :any,                 sonoma:        "41e957d1c2b853bfeebdfbd0b0b5631a34488f5b978223dad6826dd88f77e7af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c931f2ce4aaa87aa3e902e43a50f3ff5bc00d3edf452b8f06eca47aaa2fdf53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fd3e376bb093f8d4cbd0af34edfbbab0f2d2a637233cce82e9559f5dd92334c"
   end
 
   depends_on "cmake" => :build

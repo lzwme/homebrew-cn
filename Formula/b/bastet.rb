@@ -4,19 +4,17 @@ class Bastet < Formula
   url "https://ghfast.top/https://github.com/fph/bastet/archive/refs/tags/0.43.2.tar.gz"
   sha256 "f219510afc1d83e4651fbffd5921b1e0b926d5311da4f8fa7df103dc7f2c403f"
   license "GPL-3.0-or-later"
-  revision 12
+  revision 13
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256               arm64_tahoe:   "bd1d97bd3983d3531e2e3bde824f690e527db5cce1d884602631a8cd387053cf"
-    sha256               arm64_sequoia: "4610cfc2730928d36fc2c129de55b26257ceb5e13821142529ff948660073bf6"
-    sha256               arm64_sonoma:  "246ad961cdfb6d5c55993faabe240444589c870cbc5eb2567130f53ec94bc6f0"
-    sha256               arm64_ventura: "a0862ef06147f76cf326257d45eea42597330c5c45f631317b1c8c39ccd5136f"
-    sha256 cellar: :any, sonoma:        "98a67787b19ac466bcca7bdb637815e7baf9c3dcaefd03a69a4f240c6600c60b"
-    sha256 cellar: :any, ventura:       "ad8b5e6d2c65c9d503d57401856729551a993e34d6201f396a52c8e811f349b4"
-    sha256               arm64_linux:   "e2e97c4de86dffae54d79bcf9afd9283e1014968dc67b426e57a963c69232e9a"
-    sha256               x86_64_linux:  "fac2d3e5ddb3dde86764be8ae0072842f3c985c7393ca3fc75fba495f72ad2d1"
+    sha256               arm64_tahoe:   "4a36aae44f8d7241586755bf287e97d22d9c25a7063a829a4c27acf0f334e6ab"
+    sha256               arm64_sequoia: "f1ccdafb2925637af27c5823319c1e35b328d1376e78f10352b51c7dc14c80b8"
+    sha256               arm64_sonoma:  "c5f9832aa81c9273df5cd6e9ed889e232ba4b2b404959159b83d65d70b8749d7"
+    sha256 cellar: :any, sonoma:        "a3b4dd087d6c1a9ebc3bd49d738bba4934e67120aae88c9ca48a78b92145e9f9"
+    sha256               arm64_linux:   "78ece6016f523525d749e367e4bbef4de709ac426add7c8ff7fb6db45480aedb"
+    sha256               x86_64_linux:  "27a2d5d98345001280889ceaf575f39c65519dacd8a6f45b197c0d24714ac1fc"
   end
 
   depends_on "boost"

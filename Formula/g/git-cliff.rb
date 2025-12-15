@@ -1,17 +1,17 @@
 class GitCliff < Formula
   desc "Highly customizable changelog generator"
   homepage "https://git-cliff.org/"
-  url "https://ghfast.top/https://github.com/orhun/git-cliff/archive/refs/tags/v2.10.1.tar.gz"
-  sha256 "172888704ad429e238e61472e31704d4fdf5ff9c2c04479bb9452fb70d7a9278"
+  url "https://ghfast.top/https://github.com/orhun/git-cliff/archive/refs/tags/v2.11.0.tar.gz"
+  sha256 "e298a7ff6c12ee26c814a4aad4829dc4078f1b767710acf0158ab40b0d0e9fe9"
   license all_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0a978b84549832e62979abce0b5377b3a64b2441e2ccae3facfea04133257c02"
-    sha256 cellar: :any,                 arm64_sequoia: "27fed8903d353b11137224ecee446ad9079cbc961b5af6985cd3dc3aa8f8d5cc"
-    sha256 cellar: :any,                 arm64_sonoma:  "f1f0402edae6f7dd97b0e4cc52e2c0cef8faaf6580a7264d45550017ed5ebc47"
-    sha256 cellar: :any,                 sonoma:        "456cd8d3c1b270b0212d5c8135d0166fa5659a6487865a3263b027a40b7d26c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "047289bef8f7f6eb7f7758abdbc637734a13f4ab3e804a6f87f24cadcd924343"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cffef67f47048fced6244c5c51525ada1b3a3634b7d40c082effccbb0dbf92d8"
+    sha256 cellar: :any,                 arm64_tahoe:   "857c2529bb79fac2e45a26caad213b8b3e229943bc67e4178f990b78d1d4ea74"
+    sha256 cellar: :any,                 arm64_sequoia: "9dd8d60870d3de54c08078ae2af8b01aa0f97084d0bfb4aba32894bb96bb86ae"
+    sha256 cellar: :any,                 arm64_sonoma:  "984e836284f666d7e96bf1a2bdfb32c7c6c146967db79466152b18f7dd637eb2"
+    sha256 cellar: :any,                 sonoma:        "a21ae3d285aa0082ae83d1321583fd6f99d6a66c642786ff8efe56e01a14ecff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "93ff5958694b142bd03258fb9660f51acc4b65eb02bb135e1f131180cc4ec847"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ca339fc01e512b632771d392aadce14e7e130d8663c062fd804608bd7a6d128"
   end
 
   depends_on "pkgconf" => :build

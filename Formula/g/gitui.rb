@@ -1,31 +1,20 @@
 class Gitui < Formula
   desc "Blazing fast terminal-ui for git written in rust"
   homepage "https://github.com/gitui-org/gitui"
+  url "https://ghfast.top/https://github.com/gitui-org/gitui/archive/refs/tags/v0.28.0.tar.gz"
+  sha256 "3d7d1deef84b8cb3f59882b57b9a70d39ddd6491bd4539504d69b2b3924c044f"
   license "MIT"
   head "https://github.com/gitui-org/gitui.git", branch: "master"
 
-  stable do
-    url "https://ghfast.top/https://github.com/gitui-org/gitui/archive/refs/tags/v0.27.0.tar.gz"
-    sha256 "55a85f4a3ce97712b618575aa80f3c15ea4004d554e8899669910d7fb4ff6e4b"
-
-    # Backport fix for newer Rust
-    patch do
-      url "https://github.com/gitui-org/gitui/commit/950e703cab1dd37e3d02e7316ec99cc0dc70513c.patch?full_index=1"
-      sha256 "4e473d73b112a35dd95ba4f379b56cc2bae7e5d142bd5013798ef36f32b65dd0"
-    end
-  end
-
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dc550a583861402d6a679bacbe09d1da462689495584a8b0f8972e74809d131e"
-    sha256 cellar: :any,                 arm64_sequoia: "2b153db2c3519ec2f197cd128b34732ec2e2b90355d7f05e46629853060e5a9d"
-    sha256 cellar: :any,                 arm64_sonoma:  "f5eae626dfbdd29bf9a00bb67f070a08d85b95f1affdae32adc0ba8f9851019a"
-    sha256 cellar: :any,                 arm64_ventura: "911bfd33ff0f35e6f39dd2ae4b472fb2bc42cc51aa378c2b0d4a4280f6cf103a"
-    sha256 cellar: :any,                 sonoma:        "c734edd0329e21b2d5f08cc847f9780eed6eb51e27e029d807270f140ef4e22e"
-    sha256 cellar: :any,                 ventura:       "031988daf2b09dee6f249501354de183538753578d99fc61432da8ba77df4384"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb2397cc161b3efcd5b6b7957d607ca1102ad158117f0c3f8358b4134c6e6b6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92f54255b0500c4831f812986017344dcfd8c7a971a994de024e945df3f4c886"
+    sha256 cellar: :any,                 arm64_tahoe:   "d8bc1cc8b7f6e1be0d218a19325f24ff4a15335c962fb93d37961b357a830ac8"
+    sha256 cellar: :any,                 arm64_sequoia: "273adf03fc2aa1ee541d35b69c298767b510443e2812ce4b3d9c13a3b8cabdbc"
+    sha256 cellar: :any,                 arm64_sonoma:  "4c5d3a04099ab24147b5124576dc41c7457e2bb37b4836e2563a9c1a6cde9981"
+    sha256 cellar: :any,                 sonoma:        "ff77e89525eb25480940d3ea1aa6e09b52e28078ec7c3790ba138a82da63debd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc3daaff36fa113c13e951f4355534ca1fa28018177c337062fe53dec32c9cde"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53b88c6afc765f0870e184e93921a0a52019d876b579111c97fd6f4d5e3f5a67"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys

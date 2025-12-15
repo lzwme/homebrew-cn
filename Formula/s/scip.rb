@@ -20,21 +20,25 @@ class Scip < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "boost" => :no_linkage
+  depends_on "papilo" => :build # for static libraries
+  depends_on "soplex" => :build # for static libraries
   depends_on "cppad" => :no_linkage
+  depends_on "gcc" # for gfortran
   depends_on "gmp"
   depends_on "ipopt"
-  depends_on "mpfr" => :no_linkage
+  depends_on "mpfr"
   depends_on "openblas"
-  depends_on "papilo"
   depends_on "readline"
-  depends_on "soplex"
   depends_on "tbb"
 
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "gcc"
+    depends_on "boost"
+  end
+
+  on_linux do
+    depends_on "boost" => :no_linkage
   end
 
   def install

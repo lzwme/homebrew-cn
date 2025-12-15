@@ -2,13 +2,19 @@ class Supertux < Formula
   desc "Classic 2D jump'n run sidescroller game"
   homepage "https://www.supertux.org/"
   license "GPL-3.0-or-later"
-  revision 12
+  revision 13
 
   stable do
     url "https://ghfast.top/https://github.com/SuperTux/supertux/releases/download/v0.6.3/SuperTux-v0.6.3-Source.tar.gz"
     sha256 "f7940e6009c40226eb34ebab8ffb0e3a894892d891a07b35d0e5762dd41c79f6"
 
     depends_on "boost"
+
+    # Backport fix for newer GCC
+    patch do
+      url "https://github.com/SuperTux/supertux/commit/81809dd5e6f611b1d64d952f6d96310bcc9c5fca.patch?full_index=1"
+      sha256 "cd251ef6831c482c32e5aa2c56422cad2898747493797b4018f02131ea19dc88"
+    end
 
     # Workaround to build with Boost 1.89.0 until new release that drops Boost dependency
     # https://github.com/SuperTux/supertux/commit/5333cebf629eb20621b284fc96b494257f3314bb
@@ -23,14 +29,12 @@ class Supertux < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b3aa57f4eee7ae7c84e67e89229a9daeaeede9e93886e1611c98e9bdc5ac935d"
-    sha256 cellar: :any,                 arm64_sequoia: "9babc91234fa8859afc033a96ef11d755f4b889b7d70ca36c5e915d905b2bb97"
-    sha256 cellar: :any,                 arm64_sonoma:  "c79a88e221ba8b3c4adedcb9d4b1e2122049794c86b4c7810d416c768b1722ee"
-    sha256 cellar: :any,                 arm64_ventura: "ef691781ca584343e444017931593b6088600bb907f573410273be0fcc0ae897"
-    sha256 cellar: :any,                 sonoma:        "3329f1bbbe360dc57de237ad59332fca8b9ed90fb3f58ea92b56d605b6a928f7"
-    sha256 cellar: :any,                 ventura:       "90f03927a7a7060b24dade4c6e78f5e44851338637d605e7f2eb57218c02ea6a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb8c3e3818fde3d9770c19b648959aaba3883ce22bc7178a863db8e7de43da51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23828dd1619319db46d09505c8a368100f4614ff397c666e45b74b623498375d"
+    sha256 cellar: :any,                 arm64_tahoe:   "f132591d005cf115d8a46b7474a06888280a77ae5602a8e496fad8f9a13ff188"
+    sha256 cellar: :any,                 arm64_sequoia: "7f561ffc7bb5bfd61a6696e3777a43af3d5ae0fd8faccb1410a48d29834b7d92"
+    sha256 cellar: :any,                 arm64_sonoma:  "d24c312dc243c36992f03122beda7ef9624fc78854d6c0a86a587fae8280009e"
+    sha256 cellar: :any,                 sonoma:        "00c834e53792059bf1288836b729386935644adc2a826d0ee0efa48414341e96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f710ee2be2cf307918e3b1e7f294c6e2ab05ce755ad3e1b554dfbd0ba1ab34a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86d04ac1cb2ab4046c28cc9da72577dd540cdf17bdbbf82cd2f954c57abdfc34"
   end
 
   head do

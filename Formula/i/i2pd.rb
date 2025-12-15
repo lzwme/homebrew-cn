@@ -4,16 +4,15 @@ class I2pd < Formula
   url "https://ghfast.top/https://github.com/PurpleI2P/i2pd/archive/refs/tags/2.58.0.tar.gz"
   sha256 "5ff650c6da8fda3522c10ec22889a7fd1c6b5d1af42c24531d84c36f6cc49019"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b1e46138ec28478b5afcd12826198db06a06a3c4870f161faac1a3cb84555842"
-    sha256 cellar: :any,                 arm64_sequoia: "cd47aa2172c982f58e69d49e68ca0ea2b7c84513cb1ee39346332e20f3f860ca"
-    sha256 cellar: :any,                 arm64_sonoma:  "ea7d40766fe66d17d5ccb5d4fcbfae5784197e5f30b79f82bfd380c3a234a508"
-    sha256 cellar: :any,                 arm64_ventura: "6a8ed761563b9d3addc5d27d6eb3bc89ca35e880f274d5ae8fb6efafb32df50b"
-    sha256 cellar: :any,                 sonoma:        "ee7e9c640981eb3865fedbfdf5b8df35e8886788b6dbd109286e695dc11a39a1"
-    sha256 cellar: :any,                 ventura:       "92996a855a0f00acde3d0d0375d135d55c64bd82e34dd878b680a741a9eea72c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1258801853ad395c0c6d76aa0ee86ee5cfdf47bc49751a04f3383187d1d96c38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a91374226f2045b40b669e1ddf532eb363f73c21345a8da3c04a7ac4c40e09fe"
+    sha256 cellar: :any,                 arm64_tahoe:   "48c3ff51d49eff5f8a561137dfbe5f7e0cd2c1862d145c2aeb703b25aa3404e2"
+    sha256 cellar: :any,                 arm64_sequoia: "73849c19b4aa220d455e260502a3dc31c9089332fe3118d17b426142831526e5"
+    sha256 cellar: :any,                 arm64_sonoma:  "69ada8d3a422c1a750a76ba315a5314a43c8cb7b16f66eb3c016c599c63d00bf"
+    sha256 cellar: :any,                 sonoma:        "84a526c1afa6cecfe786af3c4bd60043851a103d5d87cf7df4f77d39c4122642"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60220f3a2b8d7005ab5301cc5c9cf97659f2a6d8cf49f0018b36dc0730df46dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e542ba83f222a34d9edb58b30e932b39483d2a3f0e35c21f96f5d2ef54367aa3"
   end
 
   depends_on "boost"

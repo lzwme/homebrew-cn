@@ -39,18 +39,24 @@ class OrTools < Formula
   depends_on "pkgconf" => [:build, :test]
   depends_on "abseil"
   depends_on "cbc"
-  depends_on "cgl"
   depends_on "clp"
   depends_on "coinutils"
-  depends_on "eigen"
+  depends_on "eigen" => :no_linkage
   depends_on "highs"
-  depends_on "openblas"
-  depends_on "osi"
   depends_on "protobuf"
   depends_on "re2"
   depends_on "scip"
+
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "cgl"
+    depends_on "gmp"
+    depends_on "mpfr"
+    depends_on "openblas"
+    depends_on "osi"
+  end
 
   # Workaround until upstream updates Abseil. Likely will be handled by sync with internal copy
   patch do
@@ -120,7 +126,7 @@ class OrTools < Formula
     system "./simple_sat_program"
 
     # Highs backend
-    (testpath/"highs_test.cc").write <<~EOS
+    (testpath/"highs_test.cc").write <<~CPP
       #include "ortools/linear_solver/linear_solver.h"
       using operations_research::MPSolver;
       int main() {
@@ -133,7 +139,7 @@ class OrTools < Formula
         if (solver.Solve() != MPSolver::OPTIMAL) return 2;
         return x->solution_value() > 0.99 ? 0 : 3;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++17", "highs_test.cc",
                     "-I#{include}", "-L#{lib}", "-lortools",
                     "-DOR_PROTO_DLL=", "-DPROTOBUF_USE_DLLS",

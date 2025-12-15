@@ -1,18 +1,18 @@
 class Ffmpegthumbnailer < Formula
   desc "Create thumbnails for your video files"
   homepage "https://github.com/dirkvdb/ffmpegthumbnailer"
-  url "https://ghfast.top/https://github.com/dirkvdb/ffmpegthumbnailer/archive/refs/tags/v2.2.4.tar.gz"
-  sha256 "2d5a667ab13e0312127e188388d61afc54735f6cb9da146b09eb65c6fdad7d45"
+  url "https://ghfast.top/https://github.com/dirkvdb/ffmpegthumbnailer/archive/refs/tags/v2.3.0.tar.gz"
+  sha256 "ddf561e294385f07d0bd5a28d0aab9de79b8dbaed29b576f206d58f3df79b508"
   license "GPL-2.0-or-later"
   head "https://github.com/dirkvdb/ffmpegthumbnailer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4208ef24df2ecc1b6d087538538b7f9108a419b13d0c455f6de0a45811fcd117"
-    sha256 cellar: :any,                 arm64_sequoia: "1af8dc000712c1dbd62db76ec32232584b05a95da58aa411d82465b508c0ffea"
-    sha256 cellar: :any,                 arm64_sonoma:  "2b3f63ab1683fcaa0fe365db6ad6b3b9e4fda9519769dc720ef57b5af896ed3d"
-    sha256 cellar: :any,                 sonoma:        "b3c4321991578937216445d3f67766b4d45218699934d3478f2a2812d2facda0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5129fe48bf51641f7483742f522542c1c576f67b72865efe3a86225d0b0e69eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ef496d6078142b1d8f4bb9aa5cb4d1446227feeabb877e4c6c9464a27229b58"
+    sha256 cellar: :any,                 arm64_tahoe:   "08e319540e8ddc4a09246ef099e1103dc4e8dccb95752448704cabc96d10a886"
+    sha256 cellar: :any,                 arm64_sequoia: "e60072f9d2a5d3a697135153f25d75c77da03073bb0125454c9c06deab863165"
+    sha256 cellar: :any,                 arm64_sonoma:  "824bbba3645c7d772878b50f0f1c13be27cfb76efbdd208756df8b940e816554"
+    sha256 cellar: :any,                 sonoma:        "f1fb9f35f2f829e86f25324b42c4a609433429cc64dfe43d2fcee4ebb099d78e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "71eccfa399cddb86492a70bb48cb2c85b7263fa39d640d01a77976a0b8ca8529"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2326808fbabc3ae36f25299da82e352d7bae86b629b72de6ca22c4fcbf03d15a"
   end
 
   depends_on "cmake" => :build

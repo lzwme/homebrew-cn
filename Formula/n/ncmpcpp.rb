@@ -5,16 +5,16 @@ class Ncmpcpp < Formula
   url "https://ghfast.top/https://github.com/ncmpcpp/ncmpcpp/archive/refs/tags/0.10.1.tar.gz"
   sha256 "ddc89da86595d272282ae8726cc7913867b9517eec6e765e66e6da860b58e2f9"
   license "GPL-2.0-or-later"
-  revision 6
+  revision 7
   head "https://github.com/ncmpcpp/ncmpcpp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "70f05ba4a05170c09bfb85fea422e84de641760e75a93b065341c4f169c61e58"
-    sha256 cellar: :any,                 arm64_sequoia: "bcd9d9e4217c1f8436e4de984f3c178e18650016016050c1b7467cefd6ea8d30"
-    sha256 cellar: :any,                 arm64_sonoma:  "239511ecd7495ecd5d2ee6fb77881da7fc61e71566e3e8def37b2da735eab7f8"
-    sha256 cellar: :any,                 sonoma:        "4e76ad05153e67059365a51c9a665fa07dd4bc083e172f22553794c10f5aea95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a85365b4dbb871e9e1fde6ca97e5bdcfc27e311d4d5ddfc539cf7b2dab117247"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c4640b8469447b4fff88888dd2e6ed186141aa73b915a48904ef0ce68318ede"
+    sha256 cellar: :any,                 arm64_tahoe:   "670759732597402da6dd7e0dc4ed92675e15277f7db85c62e56e771b8ac59dd7"
+    sha256 cellar: :any,                 arm64_sequoia: "6df0785476637cc036dbe07ffd3327a6e86aa03318785d66d416a370ed04df6d"
+    sha256 cellar: :any,                 arm64_sonoma:  "061d5aa9b7f89797caaf12ec7effea0c97411be4ac3facb585c8fab1be8db540"
+    sha256 cellar: :any,                 sonoma:        "fda14cd49fe94f6396050895bceed1de192828a2650423a0037ff175bb9c4f86"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "554b3da3b1e4925251ff8af6703013f911f8c76f915fce30ee478995848b76a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40b52492754a82d66f7a3a4e094a22f34326d14884d8c443319a9e184a833533"
   end
 
   depends_on "autoconf" => :build

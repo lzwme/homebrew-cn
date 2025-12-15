@@ -4,6 +4,7 @@ class Monero < Formula
   url "https://downloads.getmonero.org/cli/monero-source-v0.18.4.4.tar.bz2"
   sha256 "84570eee26238d8f686605b5e31d59569488a3406f32e7045852de91f35508a2"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url "https://downloads.getmonero.org/cli/source"
@@ -11,12 +12,12 @@ class Monero < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7366ef831969cdfdd20ee245dfff54b7ff513f88cac9a19dccf47ffd2ae3fb16"
-    sha256 cellar: :any,                 arm64_sequoia: "336771bc78c17793cb33ba8ce22d5202defd85277761bc6b92dab0ff128eeaee"
-    sha256 cellar: :any,                 arm64_sonoma:  "3382822035f7d5135ab8ccbe2e8ce16a39da2acf2863a5cbda980992f4d60ea0"
-    sha256 cellar: :any,                 sonoma:        "171d4705917e1c3bbdf270da3e3b2cf5b9308c81b69ece3262c8dbd81ea5a571"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8a642fe9c1d0713002b4e56d3b2bf0b2667e8454f1d1dbbbad2c5b5fb99982e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37e63fa14697b11a5454c16691bf9e24e91a91140cbb0db9a5664e75cfee6edb"
+    sha256 cellar: :any,                 arm64_tahoe:   "b22361941573abc4e3a30433f7109e71d038d8d9263fa1ceda7853cd61141b51"
+    sha256 cellar: :any,                 arm64_sequoia: "54b1e670e042a54085388ded9f3d97994a9db03d70e5bade2c253cd38b0765e5"
+    sha256 cellar: :any,                 arm64_sonoma:  "6b794e9de314e69f227f646754c3d27916e2177421daff7280ebcbedd2484ca2"
+    sha256 cellar: :any,                 sonoma:        "d3cbb64e0e18c9ebd7f1fb731e4c5cd5802e478717e925dfcde8f19e5f36efbc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2544739d80f5817010f0b51f7dfdae86ef8605a9293d176e685b09f61d39e5f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba8ef29e9ea3215b2abddaab46061606522d200e23ca567cd4cf8f8aae694c25"
   end
 
   head do

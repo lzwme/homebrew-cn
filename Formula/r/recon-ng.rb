@@ -13,12 +13,13 @@ class ReconNg < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1d7c0b7d8ed398bdb0e03ed7683368ce7e1d4cf26d72e11f27459e26c3ac6782"
-    sha256 cellar: :any,                 arm64_sequoia: "3e4994923ab77db46253b6cbe914dcc546398a44660ea726444c39e0fa189087"
-    sha256 cellar: :any,                 arm64_sonoma:  "19d787a0c379c5170e21a571ac3360caf2e6f2757717de03117ad64ebeb01c41"
-    sha256 cellar: :any,                 sonoma:        "4741320236a49497ccc4f293a697f0c45b56ca7d089e845638f6520ed9c42cfc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "953e0ca13ebd0e4bc07afe4cd07858bdcb29115720d0c9dacb8866ab981e76dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7f61384233f3bfe6ae5564b22f890d99bc64bf6a8470b84b586530c6dab7501"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "5d0d878d5f6edba6536e509b5bec44ec2e5fd85ec6e0a3785439f98b1f454b90"
+    sha256 cellar: :any,                 arm64_sequoia: "3d53b980bcba6db9c0fb47fae0ee918218257ba5540f7f1aaaffe6427ca62623"
+    sha256 cellar: :any,                 arm64_sonoma:  "8f66b2989cd5af0973dad3cc2b99eb1bb932cac0d721c42a9cb857d1e236cc11"
+    sha256 cellar: :any,                 sonoma:        "5a578602afee724341f20d120c2d114d4313245c7c3d51ee809b0af1b4ab8ed2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9df889447d25ba8cf1935285f191656ba419b82cdccdf321aa1e745878d14eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebaadd6d0d0f37a068d6c22c938ec40d55433344cc20cef7aaddd5454e3a2f4e"
   end
 
   depends_on "certifi" => :no_linkage
@@ -56,8 +57,8 @@ class ReconNg < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "croniter" do
@@ -168,8 +169,8 @@ class ReconNg < Formula
   end
 
   resource "redis" do
-    url "https://files.pythonhosted.org/packages/d2/0e/80de0c7d9b04360331906b6b713a967e6523d155a92090983eba2e99302e/redis-7.0.0.tar.gz"
-    sha256 "6546ada54354248a53a47342d36abe6172bb156f23d24f018fda2e3c06b9c97a"
+    url "https://files.pythonhosted.org/packages/43/c8/983d5c6579a411d8a99bc5823cc5712768859b5ce2c8afe1a65b37832c81/redis-7.1.0.tar.gz"
+    sha256 "b1cc3cfa5a2cb9c2ab3ba700864fb0ad75617b41f01352ce5779dabf6d5f9c3c"
   end
 
   resource "referencing" do
@@ -183,8 +184,8 @@ class ReconNg < Formula
   end
 
   resource "rq" do
-    url "https://files.pythonhosted.org/packages/8e/f5/46e39abc46ff6ff4f3151ee4fd2c1bf7601a8d26bd30fd951c5496b1e6c6/rq-2.6.0.tar.gz"
-    sha256 "92ad55676cda14512c4eea5782f398a102dc3af108bea197c868c4c50c5d3e81"
+    url "https://files.pythonhosted.org/packages/86/6f/a2848f5ba0ca7f1f879c7ad44a2e7b06b98197a7da39be39eda775807f33/rq-2.6.1.tar.gz"
+    sha256 "db5c0d125ac9dbd4438f9a5225ea3e64050542b416fd791d424e2ab5b2853289"
   end
 
   resource "six" do
@@ -198,8 +199,8 @@ class ReconNg < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "webencodings" do
@@ -208,8 +209,8 @@ class ReconNg < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/9f/69/83029f1f6300c5fb2471d621ab06f6ec6b3324685a2ce0f9777fd4a8b71e/werkzeug-3.1.3.tar.gz"
-    sha256 "60723ce945c19328679790e3282cc758aa4a6040e4bb330f53d30fa546d44746"
+    url "https://files.pythonhosted.org/packages/45/ea/b0f8eeb287f8df9066e56e831c7824ac6bab645dd6c7a8f4b2d767944f9b/werkzeug-3.1.4.tar.gz"
+    sha256 "cd3cd98b1b92dc3b7b3995038826c68097dcb16f9baa63abe35f20eafeb9fe5e"
   end
 
   resource "xlsxwriter" do

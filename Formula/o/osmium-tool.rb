@@ -4,18 +4,15 @@ class OsmiumTool < Formula
   url "https://ghfast.top/https://github.com/osmcode/osmium-tool/archive/refs/tags/v1.18.0.tar.gz"
   sha256 "5438f57043c9df05137ca4bd1b1e4a5fb1c9c8c49cb4bec43a5f1ef30ed68fb5"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "39ab8848b7d3cd170e244d6b41e8c7f367331f25f6cf3fa32f68d64679f9a001"
-    sha256 cellar: :any,                 arm64_sequoia: "b886fcf15d6f433f85d93af8b7b5e50d28ab7d65ebf0db6fa25988fad440c248"
-    sha256 cellar: :any,                 arm64_sonoma:  "5b609383ae13cdd88a464a02f49edd29eccc95dd1fa7cdb3f1f3eb217e80c259"
-    sha256 cellar: :any,                 arm64_ventura: "e91c59db15ddbd9abd1a82d3245e8673e405ee9bb4294a94802bd93785e13dd1"
-    sha256 cellar: :any,                 sonoma:        "834c9965363b4920ae4d7ff2b53dafd9a9707cd489a56e5fe0b9212c8407ec24"
-    sha256 cellar: :any,                 ventura:       "af40e84b8362633d1e8b37e74b89c61bddac06254ee548fed4d53d535f989043"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1d278d2df1034fbdb2e72a6fefa9e6cb7c2fe6e885040782d5179302f167b84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9866803a6ed76ff8ea79186e180b44fe9c81d3c8fbc904bbbffe5e32a90cab20"
+    sha256 cellar: :any,                 arm64_tahoe:   "9628b5bb2ded899a0b418e46dd80aa57e49b03ed8a0731efc9a3d2ceae6625c5"
+    sha256 cellar: :any,                 arm64_sequoia: "e74f0554ad833680a84c2c282449310987319ba52c636a8fa708fc6e12f8775b"
+    sha256 cellar: :any,                 arm64_sonoma:  "af46c190895a353b1976d8baf3152c5caaea90e3773c0bb6a205aaa8a9c820dc"
+    sha256 cellar: :any,                 sonoma:        "cd2766f4778e03b4047d3daa8b1fc38adb1517ac6f0ca65352accc236f7a2127"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8fabe88144b92310d9b99e689e39a722a8a45a5eb4835376d1713391a5c7f69f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdf9503490509be6381708d39b012b6a6f4142f84aa724f86190c6c0d1d2c4df"
   end
 
   depends_on "cmake" => :build

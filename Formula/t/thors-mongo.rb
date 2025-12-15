@@ -5,16 +5,17 @@ class ThorsMongo < Formula
       tag:      "7.0.07",
       revision: "2fbd6b84e2b154b36e03b5d8ab1aae97a62ff5da"
   license "GPL-3.0-only"
+  revision 1
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "71cba43a8c7214aab34451153140ec9b1001bce77bbdb633ca5219c83c353c32"
-    sha256 cellar: :any,                 arm64_sequoia: "50dac827b9b016b461d1ef06280dc5fd223ff2af154adb3c4f2e8f91a4b24a8c"
-    sha256 cellar: :any,                 arm64_sonoma:  "261628d5717413b17109187cf52197a43944379cafe307c23b858845370d3b12"
-    sha256 cellar: :any,                 sonoma:        "48dc65704a45d73e652e3903657f40352ca9f8d7575b748664b2823e4f886b43"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d21d5941b333706b86cad6999ecfe1b4896243da575b443af394d6e7cb127a4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "290218a8eb76ae0654e43b25f8df877f985197a8584a5150369d7cf2703f8788"
+    sha256 cellar: :any,                 arm64_tahoe:   "ca3983dbd95526122f10a78064e756f3f90d829604cb168a765e0a9e75344360"
+    sha256 cellar: :any,                 arm64_sequoia: "89d6d42df7cfc52a30d7884070849f229d2cdc425d56a138a5a6bc68ad44416a"
+    sha256 cellar: :any,                 arm64_sonoma:  "5994fb06d923da3c7c68b1ea870607df52d9b82b997d407ca1aff584ad36ef0e"
+    sha256 cellar: :any,                 sonoma:        "4021e799de76d216246d7ac2b9363eea560358dac80991d1ff84981635bd8884"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6bb7f9b21748fa1496244acb38998fea16dd4a26183bd2fe9088b293f29155a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "531126a413e351f90156162f7ca9265ebe38e72965ea3e846d7847dbe6ecee21"
   end
 
   depends_on "cmake" => :build

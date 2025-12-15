@@ -4,15 +4,16 @@ class Openvdb < Formula
   url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/openvdb/archive/refs/tags/v13.0.0.tar.gz"
   sha256 "4d6a91df5f347017496fe8d22c3dbb7c4b5d7289499d4eb4d53dd2c75bb454e1"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/AcademySoftwareFoundation/openvdb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "445ead0c4325371ced66df0d99da1f8424dfb49c4347709f14fae008f1dd5f0e"
-    sha256 cellar: :any,                 arm64_sequoia: "420be15429bb1e5466dd1ed118089d2bda393112bb0e6cb185cf7718e26447bd"
-    sha256 cellar: :any,                 arm64_sonoma:  "9cc0cd25b0f828f31b22fdf35678f1103d236afb1e0b3085567a40d5b9412582"
-    sha256 cellar: :any,                 sonoma:        "7dce3911efbd25d010ea5d421456aeea2e434ab02680a6058aae9e3d843a1f31"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbfa41538b6984822cd664d9b806a6a080fc0fa73d2446086365d556c182b06e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "777fc2c5878dac4d41c5a862a5df09605afa41bf733685b2ccdccd7d77ac7817"
+    sha256 cellar: :any,                 arm64_tahoe:   "9034c0d9bc8ecbcd7afe7fa279dcdec883e9f52a24f292483bf6a11114c5516c"
+    sha256 cellar: :any,                 arm64_sequoia: "1fd0ec25afe4eda5e17f9e514f4e6d6044ee8b99b61018c7f8e0172cb682b20c"
+    sha256 cellar: :any,                 arm64_sonoma:  "bc65aebe2ed2107366d94834c39b7225c34f17f0d04b645b77078e339e56c534"
+    sha256 cellar: :any,                 sonoma:        "e5f8963ee61f47880c836435595711ff1b8c6c4c0883dd3abb2ab11e2dfbd2b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "41f66073e71b96789679ad2fb43f8fd4300d61590714489a3160fe3dc4735e1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39e3fc98d0da60fd9fe88a84be8f36f31f97c54f9ac638c6b9d8c024f97def8b"
   end
 
   depends_on "cmake" => :build

@@ -10,17 +10,17 @@ class Theharvester < Formula
   head "https://github.com/laramies/theHarvester.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "6a45f9087e976a3df51f578155a502d016e474d080ff5a74dc68dd8c1c11ef38"
-    sha256 cellar: :any,                 arm64_sequoia: "02e1c58933e03e15b2e0a394d6ff47343f00b26a86e7cccfd971bdf5f6a4c31c"
-    sha256 cellar: :any,                 arm64_sonoma:  "dc97b49734fd23312e53874a44be12660384b8bb98a9707fa1283804fe62ec8d"
-    sha256 cellar: :any,                 sonoma:        "d11951321fe63696b496396569c63328f7ede1d50c41271fa19fc6bebb408221"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "081da55f81cdfe632117894988efeaec404dc03a7a942c3a314135dacd3d7677"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0bda42aac9dde9410cb1460882ab409b6c79782ad127885d39ddf5cab1df7d5"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "47c88c30fcaa7c375eae5e5a15d51e87db79995fe59d2d7097a858d8c9c4e0b1"
+    sha256 cellar: :any,                 arm64_sequoia: "94d57f5bfee5baabaa895760121c30e32a507c8108de5351c1c753778955f1e2"
+    sha256 cellar: :any,                 arm64_sonoma:  "163efdf3e7c507048b2f429ecc4e90f55a1772718e72eda73fe2f11892df2a8d"
+    sha256 cellar: :any,                 sonoma:        "3bb587f7d68d1f6c6aa221670d86261bf7b0ee27e66a877e3613b9c699d27a48"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "13c1d8a27bb09f8a61a5035396ba3cee7a297f43121dcbdc4228a05ac4bb93a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d454027ade1a900bbe3b1332d64458a46a01d2ada95dc2724c7eb8242487a0a"
   end
 
   depends_on "certifi" => :no_linkage
-  depends_on "cffi"
+  depends_on "cffi" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
@@ -29,8 +29,8 @@ class Theharvester < Formula
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
-  pypi_packages exclude_packages: ["cffi", "certifi", "pydantic"],
-                extra_packages:   ["greenlet", "pyee"]
+  pypi_packages exclude_packages: %w[cffi certifi pydantic],
+                extra_packages:   %w[greenlet pyee]
 
   # `uvloop` is manually updated to support Python 3.14, remove in next release
 
@@ -77,8 +77,8 @@ class Theharvester < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "argcomplete" do
@@ -112,8 +112,8 @@ class Theharvester < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "click-plugins" do
@@ -266,11 +266,6 @@ class Theharvester < Formula
     sha256 "639192d0f1ca01b1c6d95bf6c71d794c3a9ee189855337b4821f7f457dddad77"
   end
 
-  resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
-    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
-  end
-
   resource "soupsieve" do
     url "https://files.pythonhosted.org/packages/6d/e6/21ccce3262dd4889aa3332e5a119a3491a95e8f60939870a3a035aabac0d/soupsieve-2.8.tar.gz"
     sha256 "e2dd4a40a628cb5f28f6d4b0db8800b8f581b65bb380b97de22ba5ca8d72572f"
@@ -292,8 +287,8 @@ class Theharvester < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "uvicorn" do
@@ -307,8 +302,8 @@ class Theharvester < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/49/19/5e5bcd855d808892fe02d49219f97a50f64cd6d8313d75df3494ee97b1a3/wrapt-2.0.0.tar.gz"
-    sha256 "35a542cc7a962331d0279735c30995b024e852cf40481e384fd63caaa391cbb9"
+    url "https://files.pythonhosted.org/packages/49/2a/6de8a50cb435b7f42c46126cf1a54b2aab81784e74c8595c8e025e8f36d3/wrapt-2.0.1.tar.gz"
+    sha256 "9c9c635e78497cacb81e84f8b11b23e0aacac7a136e73b8e5b2109a1d9fc468f"
   end
 
   resource "xlsxwriter" do

@@ -11,13 +11,13 @@ class Tern < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    rebuild 6
-    sha256 cellar: :any,                 arm64_tahoe:   "c2368960d81379b79e48e0df91ecc463fd25fd8f595a7b1a6867d956e2c93ac0"
-    sha256 cellar: :any,                 arm64_sequoia: "23a415ed6ef4ee3ae695c1c1c51ef8f6f31815083517b20343fb8070e4019f6a"
-    sha256 cellar: :any,                 arm64_sonoma:  "76e87f5103ee3445130482b61c9e7f97368f06153681c199d9615d342cca0f26"
-    sha256 cellar: :any,                 sonoma:        "cff0113720890d17c290f91528e1ebeeb4aea2581f9742894ea394c996126466"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "96820b7459cdc1803158765a4b10c56725f859bd9066761b5c5e9141318353d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "835d90b9f1cd8d3af14850620412b055c765bdbee93ef95ba6446aaa2d5ed99a"
+    rebuild 7
+    sha256 cellar: :any,                 arm64_tahoe:   "e46ade560dae11e2b9648e11376b4c52deea6dbd1bfe81be681d99dd62eeb4a5"
+    sha256 cellar: :any,                 arm64_sequoia: "6e712c642363091318a957abf67d61d74d889a0e212e4524341f47feaac722ce"
+    sha256 cellar: :any,                 arm64_sonoma:  "473fb5430e09556facd8d2addcca1a69f266485f5e73ff23f9b3eb15201ff7f9"
+    sha256 cellar: :any,                 sonoma:        "d46ed204d49b0670c2de94063662bda2fd7d9e20e07bd24625053bbdcc3f8dd5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9428d38d4d3b50c4f3ee0e9fc5799235f3a9215e5eec66b2c32716c1cfb5c0a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89d5aaf7868a4a9149f232f8bb253252dad574563fb983b98343527ac4fd9762"
   end
 
   depends_on "certifi"
@@ -134,8 +134,8 @@ class Tern < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "wcwidth" do

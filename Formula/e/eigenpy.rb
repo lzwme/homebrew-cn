@@ -2,7 +2,7 @@ class Eigenpy < Formula
   desc "Python bindings of Eigen library with Numpy support"
   homepage "https://github.com/stack-of-tasks/eigenpy"
   license "BSD-2-Clause"
-  revision 3
+  revision 4
   head "https://github.com/stack-of-tasks/eigenpy.git", branch: "devel"
 
   stable do
@@ -25,12 +25,12 @@ class Eigenpy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4bc4249358018e11dbf082882d5a8d280ff61a6aaaf9dcb02c9731873eb282e2"
-    sha256 cellar: :any,                 arm64_sequoia: "d85e4f6055f6991659dc3f1c891b050d462d194a4e2d31736e347e22634bb640"
-    sha256 cellar: :any,                 arm64_sonoma:  "bac224417799d9a62f1f9593e8104c4c4604ebc28864dbce0575d190d18a9eb9"
-    sha256 cellar: :any,                 sonoma:        "7259543d2fa81a1a80c7f5224e8d08fcbcec8eca95239a0346a679be8158e6ed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "24dc41bef5374918602dfd3d6cf81a335c9ece6b9dfca174d27d2ea026f4e396"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9738e55c4291e8105bca2f748b3626600219481daea1c31ab3e2744c92f5ec84"
+    sha256 cellar: :any,                 arm64_tahoe:   "dbf30d75e91d68fe9d424aeef98f1f0a2cf77369b3ee1402c9ea3e3f0be96cc7"
+    sha256 cellar: :any,                 arm64_sequoia: "6d6fbed231bf5729899ca1938712f80be53b82ed6db109601602347586cf7348"
+    sha256 cellar: :any,                 arm64_sonoma:  "3141e4e2f7be8a9dd99aea1662e22fe7c7f441b859c9de8b6953c816822bafb0"
+    sha256 cellar: :any,                 sonoma:        "b7146ccacf5e01b1317fef259dbff644e622ef5b855b9f9012234fb755dec420"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "548952eaae7925a876664c039586a4f915cb05daadc958ea959ee9f1043fce58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c539fb28ab1b1a98001186451376435b43cd5b2f101b1d72ddc32cc2ecab08a0"
   end
 
   depends_on "boost" => :build

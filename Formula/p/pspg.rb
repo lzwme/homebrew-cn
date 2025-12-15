@@ -1,22 +1,21 @@
 class Pspg < Formula
   desc "Unix pager optimized for psql"
   homepage "https://github.com/okbob/pspg"
-  url "https://ghfast.top/https://github.com/okbob/pspg/archive/refs/tags/5.8.12.tar.gz"
-  sha256 "9f74c236944bea79586a3a12ab9d36735bfa62a92a8d7953e8c1ff5c108277af"
+  url "https://ghfast.top/https://github.com/okbob/pspg/archive/refs/tags/5.8.13.tar.gz"
+  sha256 "b6f198a98c0e8ec0f1ea0893deb23f20be7196a4f075c879722f91bef65a12f8"
   license "BSD-2-Clause"
   head "https://github.com/okbob/pspg.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7fe2a3cbd810de303eedd8f00a1924cebc6a355091ad2db3f3388bbe496a35e3"
-    sha256 cellar: :any,                 arm64_sequoia: "fbe4f496a3be5e9693ed3fb8f532c4be80249f5a1d027a4596cb99b068260251"
-    sha256 cellar: :any,                 arm64_sonoma:  "4f040dd530d13e63abd48b42ba1fcfce456521b6e614d29b6459affc5dfb3ef2"
-    sha256 cellar: :any,                 arm64_ventura: "74f4d329d3a79d1eff8c630da561f88c38c9b4a9063cded46984e8fb708e8ab0"
-    sha256 cellar: :any,                 sonoma:        "868c9354fdb876a4ae62698a16ccf3a78cc3ac1436e3c696cc97cff2371f564f"
-    sha256 cellar: :any,                 ventura:       "584924c89855547aa825967a064f74069fdf4362ba763751506d2be715745d43"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "74d4498d4936a5f20fc9a3d0633fb5d16c51d7f2f32d3cedbb1f44f6a6784af0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9119d05dae43df503adc6629c39fe856604f469c7f4b1ecb300b12c6ffe815b"
+    sha256 cellar: :any,                 arm64_tahoe:   "b4180db59b45def097f43d22fd83e449b068fc7a3a76ef69fc87f0aa918653c3"
+    sha256 cellar: :any,                 arm64_sequoia: "3436cd3583592d1c2c960591799bd7b20042bcc734960ca3891b3f0d868e891f"
+    sha256 cellar: :any,                 arm64_sonoma:  "82ca9ba3574553c336758be061f9ab6e9d43c99ec9826e830fea66ffa278f820"
+    sha256 cellar: :any,                 sonoma:        "14b272a2466c38475f6627ede732299aabdbf4fa58ee593a525e28a264fcbccb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc726276416c6bd323a421e4e94222926a8f9277f57f5fbb8a9f4ead1e639ef4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34d0fcba5e33b6a5c1040c5c623d61985f61d5439b893c6a532ec6b43ddce0b5"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "libpq"
   depends_on "ncurses"
   depends_on "readline"

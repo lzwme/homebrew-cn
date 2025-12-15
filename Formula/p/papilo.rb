@@ -4,15 +4,16 @@ class Papilo < Formula
   url "https://ghfast.top/https://github.com/scipopt/papilo/archive/refs/tags/v3.0.0.tar.gz"
   sha256 "04e2437c41404782fa31cd74a881b475d75a6e692e4c88a24bf48cf5d263a93d"
   license "Apache-2.0"
+  revision 1
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fb291966dc8cb4ce2532bf93abd2e79fd454edbc5bbd64bdf2daa0a98d4aa49c"
-    sha256 cellar: :any,                 arm64_sequoia: "b02c95f0b3c2d0c6f8c1df1ca0bfff9357e80ef314dcc7ab0c083c66ef37f059"
-    sha256 cellar: :any,                 arm64_sonoma:  "8ec5ffce9ee2ac4cd987d1a99ecb02bb21d073a1cefd4f64bbb1e71f5fbcb14d"
-    sha256 cellar: :any,                 sonoma:        "7d6abd8183c60285028003f8e434aca0e25011f111d5d2b75650ee47652c5c39"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e963fdfa7aeaf2d76acea49963bf4ace93dada9f985d4a3cad4d3b1509ec617f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a866a3f11b67dde89f3e06c822aca21bce295790d22c854755c50c09166f5cf"
+    sha256 cellar: :any,                 arm64_tahoe:   "a1320db9618673e5c386ff01e51a8d1149ea4256af5a0ebd29e40d583a1fa1fc"
+    sha256 cellar: :any,                 arm64_sequoia: "60279a34e0bdab3bfd3674e68de9f31f5e04e98a63bf63e39eaa24f202aa9358"
+    sha256 cellar: :any,                 arm64_sonoma:  "a638a90a98930cfcd500412536f5053fa20673338a689c51f97dc1734a73ab1f"
+    sha256 cellar: :any,                 sonoma:        "ff305549fa0ed755929a6a1e867c17f701edad2a3c1b28237fd00ad135b95208"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "822a814fb78d09c5a3754d8e4bf93f03c545c334ecead90c6c1ad84fb4df1c4c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2eded04a5c86ade186af3e87771793527b9cb31375d536ccdab75825be04207b"
   end
 
   depends_on "cmake" => :build

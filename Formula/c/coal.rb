@@ -4,7 +4,7 @@ class Coal < Formula
   url "https://ghfast.top/https://github.com/coal-library/coal/releases/download/v3.0.2/coal-3.0.2.tar.gz"
   sha256 "899eb343ee7d86ae6312401bc969d1d2cb8103a5a67af5e1f06061a9c5fb0743"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
   head "https://github.com/coal-library/coal.git", branch: "devel"
 
   livecheck do
@@ -13,12 +13,12 @@ class Coal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ea2e9ddb3b82550873fc31804dc8c22238d53d2142e73fb64d66b61dc603a614"
-    sha256 cellar: :any,                 arm64_sequoia: "6f120192065eff865e85cbe4b60e0c5a8ac444aa00af0a3e3d3cc85b4445b9c5"
-    sha256 cellar: :any,                 arm64_sonoma:  "5f2d9e5e74b679dc2d6ace787f9db7592b13d41dbcf49efc04c6c942b2be00a7"
-    sha256 cellar: :any,                 sonoma:        "8ac75a9345115b33e7f40877e21679db8092653df4af3a0c60ee36d7b6e5fd09"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cdb978552dd20e4a493c30b00c8eff2ce83ea54d848d631e33c9f8b9ec29e6a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bbc8e8cfb74069c0b95ecccbfe8b4e731c4265eb483b1f7d3013925c769d984"
+    sha256 cellar: :any,                 arm64_tahoe:   "fd213abe328948a7c9911a43373ed8046d0710fb8a0a9889d2d6ff11bbf4b73f"
+    sha256 cellar: :any,                 arm64_sequoia: "320c09dd888c1d2c9d670ca2e2277fb25fcb0692ab4f83ad6cc6350d77f2f46d"
+    sha256 cellar: :any,                 arm64_sonoma:  "27de2e1a650fd1690c675c756b04e72175c40a818fd874467f1d3a157f7364d2"
+    sha256 cellar: :any,                 sonoma:        "087d9dabc09adca03410b614932ad56798a671c6ee52aad74ddafd63ffdc4192"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9567a4db7fe0a8cfc17a0ba7d5a5f9d2d1d58002cf07675480d5c1746ce50e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d396d1e1014d58558ab9f2a9e560845ee86dbfa429d2511a95776780894372a"
   end
 
   depends_on "cmake" => :build

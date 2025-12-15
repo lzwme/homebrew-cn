@@ -2,7 +2,7 @@ class Povray < Formula
   desc "Persistence Of Vision RAYtracer (POVRAY)"
   homepage "https://www.povray.org/"
   license "AGPL-3.0-or-later"
-  revision 14
+  revision 15
 
   stable do
     url "https://ghfast.top/https://github.com/POV-Ray/povray/archive/refs/tags/v3.7.0.10.tar.gz"
@@ -31,13 +31,12 @@ class Povray < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "17590093744d2c86dda3f3d87a39db0db202a5947e3c8d73ba3b9a5a9703578a"
-    sha256 arm64_sequoia: "ad0601b4708711e74b3e8b5b3a749a1868b645742d14302f6bfad7ef0d5d93fa"
-    sha256 arm64_sonoma:  "11f41dfc4f8920a4f13eb9cdd5f3b3b6f700b68ae721b9ab106052f2c64efe08"
-    sha256 sonoma:        "1132092cc0b5439e291b32c098276dba1deb33a44c09794a6be847259e14ad33"
-    sha256 arm64_linux:   "7c8f60ac259482b77f07ff435848294c41242d4d88180aa087003f1abe939642"
-    sha256 x86_64_linux:  "bad283a82fc7128d95e1cda1efc7010dbf97b9a1c82ab30c8635a2d3e963b19e"
+    sha256 arm64_tahoe:   "7eddc8686330dcd024455c669830b426dc2fc273447f77bfb161fa8866be47eb"
+    sha256 arm64_sequoia: "6fc88cf463b3fad428b00da5a83b9e6bff75c21ef6d9da48249255fd83e5d6b8"
+    sha256 arm64_sonoma:  "17c6a1dbf5e46607dc547a16eb1a9c57f10cdb1a9a1866327910717aaddcf9b4"
+    sha256 sonoma:        "3562715f0aa05c1788ea9ab7e0b819b86d77ce55849713c7e8cd78e32f3ebaa3"
+    sha256 arm64_linux:   "fada88d5446c7e3916d4435de35bfb1bd762abeab719681766ee0454879a5a2c"
+    sha256 x86_64_linux:  "4d8db3b9ef255514ddcc7d28cb11276a4c30a248a9e3f2479ebc69310bedde8a"
   end
 
   head do

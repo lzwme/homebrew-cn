@@ -5,7 +5,7 @@ class Rdkit < Formula
   url "https://ghfast.top/https://github.com/rdkit/rdkit/archive/refs/tags/Release_2025_09_1.tar.gz"
   sha256 "7fb3510b69af358009e2d0763c1d9665ac34f4c2cd3314cf5210ee3d5a33d501"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
   livecheck do
@@ -17,12 +17,12 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "196b3bd7410b0dc65624d6d525cc51ca48c69f961f48c4b5d07c2d4b39729a87"
-    sha256                               arm64_sequoia: "fd165ec6200aaa8f8f9989942188fc9f296c3f462e8bdfd47fa002413c17e6a8"
-    sha256                               arm64_sonoma:  "709b6b9976a723b632f865c3d8b9798b977de85ab6e311f9b72b237d137fde2b"
-    sha256 cellar: :any,                 sonoma:        "cf228316aef4978ed51a650420ace449ddddf11b9606924ab5b47b4492f1582d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "442e8e1ab3ca1fbc1b0bd206db18309dbc53f6143ce86ccb11d753dbb2fb9626"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4da31b2d2ad9545c3021cbf4803ed237b9e23ccbf07cd081df32429b34941fa9"
+    sha256                               arm64_tahoe:   "4cc1e1aa5a8ca900685a73d18a3acd594bde744ace6da9c4ceb769d2ceb798b2"
+    sha256                               arm64_sequoia: "9474376a2348d49158d03e76f32f11912a37d0deee81cbf6d71cee9838eb1d18"
+    sha256                               arm64_sonoma:  "679606b0b339f28940740398efd75fff66fd6e5c59f347635a3513e9358e3c24"
+    sha256 cellar: :any,                 sonoma:        "92f8c50de3c6d01ea1ad844200c6f91b2420064da0297befeddde0cc1312d4ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "36451659d8047cf5e199fd478682e68f1087202d119c95cd7fc4f9e6bb0dfebb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d76aa692f8661a70052d14d206b37c752438fb310bdb79413f7fd9e929ab9080"
   end
 
   depends_on "catch2" => :build

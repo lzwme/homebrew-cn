@@ -9,6 +9,7 @@ class Manticoresearch < Formula
     { "GPL-2.0-only" => { with: "x11vnc-openssl-exception" } }, # galera
     { any_of: ["Unlicense", "MIT"] }, # uni-algo (our formula is too new)
   ]
+  revision 1
   version_scheme 1
   head "https://github.com/manticoresoftware/manticoresearch.git", branch: "master"
 
@@ -21,12 +22,12 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a86d708b90c02f18be689eff549cc9ef8c57b3fdf9b09357488132268a2bb4d6"
-    sha256 arm64_sequoia: "8db127eae9aa2298f53ec0b0934fe81232a07af256f98a7451a313ec7f3d24e2"
-    sha256 arm64_sonoma:  "f816b9149990b082ca1cfcc8b5809d85d379e34b565075116f1f45a5a0040f68"
-    sha256 sonoma:        "5e6c4b874883e74fe21748d9f48799a53a3cf19c0ad0eb81b8ca0c9f437d3f29"
-    sha256 arm64_linux:   "b74217a6303e123b78d43c3b84cc3220d2e597ff9d61c21e34d5658b793b1e58"
-    sha256 x86_64_linux:  "61af80962104ae8702fbcd337d2718a9377721bce9530582f9b6ef7eba424e0a"
+    sha256 arm64_tahoe:   "21dc5c9692aab9f60a81b5dd65d68bbda1f1660c992c2367783d3875fff4b78d"
+    sha256 arm64_sequoia: "880b1636f705bf35547eb042e33017db4acd5693718343a1b3b3b730cc7b78a1"
+    sha256 arm64_sonoma:  "9606e7f9557cc3c8d79bcd62a91a82d59563ba38be25420bb55f61144279416f"
+    sha256 sonoma:        "2d9bf9d56e44d262030e911c962391d386c090fc0d804cf2c100f951fd440a18"
+    sha256 arm64_linux:   "73d89c31b7c7ae62be926b46b6134c6166fed9cde4652924b04a01b4e08fe4d0"
+    sha256 x86_64_linux:  "9d3b2dee5f420ecfbafe599c8303c195823ce402e9ac3a586967c422ca257b87"
   end
 
   depends_on "cmake" => :build

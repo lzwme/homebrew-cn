@@ -12,12 +12,13 @@ class Otterdog < Formula
   no_autobump! because: "'playwright' resource lacks PyPI sdist"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4aba3e28b39d7fde99a57176a8c28d986d3a6a64ecc6776646fbaec1b3104c72"
-    sha256 cellar: :any,                 arm64_sequoia: "825b6d19e70d50b5862018eb2c6631a8f180ca8771d5c73eac525d0a3da5a8c3"
-    sha256 cellar: :any,                 arm64_sonoma:  "745ed226445bc4b20f2b399fded7797dc8b7d9e859a6e4a2635dd5f31a126d62"
-    sha256 cellar: :any,                 sonoma:        "c187e9f343b418e1e5514998ed2c81813f02975bc6bcd369af420019126b7e5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a52553a00e76e52fc6370be02a26a6a2ebf6b2e63828cc510c8f68605fff8c68"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a80307e3d2d57f090480b5ca339f0ac0575181a05823d375443511abb88e4045"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e557f6cf31d0513842bae81b638a119ca4bef0be6ffdb9ea97f63d58302afa8a"
+    sha256 cellar: :any,                 arm64_sequoia: "7abc06ac414aa4e05d8013688d9c920b9e5e91c3007d8d1cff5799b34b7580c0"
+    sha256 cellar: :any,                 arm64_sonoma:  "5bed4bc2288897861656598e71ae5e44810f5fff07b0260a3e613601ab00f007"
+    sha256 cellar: :any,                 sonoma:        "8bac6563f95e661313e6adc4e7f1e359146011609f14c6efdd888b7c1ed1494f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7474ec511675178e91d589a2dc90529d425a50b914ce6066f07eedb581202e93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22d05b4dab34bc6317e09a69092ad9ab6c786b51253839a2fdca06eec2ac976f"
   end
 
   depends_on "rust" => :build # for rjsonnet
@@ -72,18 +73,18 @@ class Otterdog < Formula
   end
 
   resource "aiosqlite" do
-    url "https://files.pythonhosted.org/packages/13/7d/8bca2bf9a247c2c5dfeec1d7a5f40db6518f88d314b8bca9da29670d2671/aiosqlite-0.21.0.tar.gz"
-    sha256 "131bb8056daa3bc875608c631c678cda73922a2d4ba8aec373b19f18c17e7aa3"
+    url "https://files.pythonhosted.org/packages/3a/0d/449c024bdabd0678ae07d804e60ed3b9786facd3add66f51eee67a0fccea/aiosqlite-0.22.0.tar.gz"
+    sha256 "7e9e52d72b319fcdeac727668975056c49720c995176dc57370935e5ba162bb9"
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "asyncer" do
-    url "https://files.pythonhosted.org/packages/6b/41/71af52c036f3e38f3d90f50efd0bc5175b2283d32b2e8a3da11b4b0db84a/asyncer-0.0.10.tar.gz"
-    sha256 "8ae3e569d4c0af2882be0822f848adf59712cc52aa5da6ead53473869c90d98e"
+    url "https://files.pythonhosted.org/packages/76/91/0ee25acf9faa42bbe08e1ed79261dc7734b7dc9d4b8a9c32a932e0983a46/asyncer-0.0.11.tar.gz"
+    sha256 "c66c3f0700d12d89551b56f4bc867b4bd61601fd650e474b550ac874110062f1"
   end
 
   resource "attrs" do
@@ -247,8 +248,8 @@ class Otterdog < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "yarl" do

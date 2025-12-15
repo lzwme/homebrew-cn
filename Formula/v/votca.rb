@@ -4,15 +4,15 @@ class Votca < Formula
   url "https://ghfast.top/https://github.com/votca/votca/archive/refs/tags/v2025.1.tar.gz"
   sha256 "85b487d2b2a31f26869be422c98f816b95c88a4ab112ea4650cccd4c2706bdbf"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fded17617f5140a20b04b5cfc9281e6429380d175d4e055a3d6b4dcc52a85b57"
-    sha256 cellar: :any,                 arm64_sequoia: "1cf98138786201b215734a1211d11cf41966ff3dce3d488b048628576236d4db"
-    sha256 cellar: :any,                 arm64_sonoma:  "4b16956c81ad38c7f4a48867d10f1e08e7b1c18018b47440d7b040a5fc48397b"
-    sha256 cellar: :any,                 sonoma:        "ae0f8523a835692c893098181ad612b727c3f0ada15d6d7d29f5cf0227f854c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6599a17075e452492e0f9266812795c28c724103e97c58563058d8d2b436217d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab37fef79c54edc8f175901834c1d6a6017029943f52c33d308e34fda97d67a3"
+    sha256 cellar: :any,                 arm64_tahoe:   "9083467e1a30e21f131314a426f6654540d04db6687629018552ebcf1de529b2"
+    sha256 cellar: :any,                 arm64_sequoia: "82ca8b75d12568511c38bba54efd2bf120489431187a9704791d14f429ef2ba1"
+    sha256 cellar: :any,                 arm64_sonoma:  "8ded162b5fbf26c6f586a6f973d1661317d238fba21fc7fbad0d3e1de4179341"
+    sha256 cellar: :any,                 sonoma:        "49c3aef63077a07399971c5cda155542ec2cc6799231f74152e283022da9522a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "27cc5ddb6f732c334b6d6536fdc76dfbf1198a5405187b126b073721ac4a618f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfecc869d913c683b8c37710fa4d5342e6e595873542fa0553c5d743304169db"
   end
 
   depends_on "cmake" => :build

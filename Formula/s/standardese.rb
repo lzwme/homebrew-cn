@@ -3,7 +3,7 @@ class Standardese < Formula
   homepage "https://standardese.github.io"
   # TODO: use resource blocks for vendored deps
   license "MIT"
-  revision 22
+  revision 23
   head "https://github.com/standardese/standardese.git", branch: "master"
 
   # Remove stable block when patch is no longer needed.
@@ -30,14 +30,12 @@ class Standardese < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256                               arm64_tahoe:   "af802f66466bcebe181168d4f4bc9f6fac04dc1a71092b81234875a47236b304"
-    sha256                               arm64_sequoia: "7aac10f0c51eba02e38e87122b0adf550cd56e7092b7f226188b914c3e687967"
-    sha256                               arm64_sonoma:  "10cf6e4ea596448dac927b90a4fe4011d1541417c6d30f9720f74e1c8c706772"
-    sha256                               arm64_ventura: "1a3a96186e91ca2bf4111324abebf42fcce98b306301f98f4e5a21386def1569"
-    sha256                               sonoma:        "931b39b7b6e03abeae83852591f05d85ef475037c72e5c76491eb1a2f8590319"
-    sha256                               ventura:       "3821d85d58e252bf2b9dd27bb4263b7d690eeed8756aa276f8ed7f715517daf2"
-    sha256                               arm64_linux:   "4dbe69e5a22029c55c323b40d44fd50056136b8ed5bcf2060b7d969a0f3089c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "740d8cecff73da5d7c6d482eaa669a30c55726ff9c7439b10de8c45363de9236"
+    sha256                               arm64_tahoe:   "842c08d83d331c26b95f718e07b43df23a1f9c5ef4f6df0c9920c3099773353f"
+    sha256                               arm64_sequoia: "a9662431f2198cfd684c82f08671fd792a5038f79d63ddc5aea0e612a0740d92"
+    sha256                               arm64_sonoma:  "190e0fa5e3adda972a28e6c2d18e9634f4890320b1f9b4928da67de1cb8392a7"
+    sha256                               sonoma:        "f28825f01b0cbbe6f6ec257a3b81cd4e0f8c2883550fb12de3ffb9bbb3220e05"
+    sha256                               arm64_linux:   "9152354c175bc7115c52d5e876332dd323d6f590b953b33fe0993894b5ba79a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31405149c51d6b9ae4e25e1b10ecd5b822d7f1a6b38a748920a310719bcf7e8d"
   end
 
   depends_on "cmake" => :build

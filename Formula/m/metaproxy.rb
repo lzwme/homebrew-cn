@@ -4,7 +4,7 @@ class Metaproxy < Formula
   url "https://ftp.indexdata.com/pub/metaproxy/metaproxy-1.22.1.tar.gz"
   sha256 "d67a9f7fc9d36ccea8c4770c96c4ae2bc4250f484f941cbeec2a11695ec8d7b8"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
 
   # The homepage doesn't link to the latest source file, so we have to check
   # the directory listing page directly.
@@ -14,12 +14,12 @@ class Metaproxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f4956b09ae4b75d8cce231866f3d798e3878996906d6712ccdae7609b80965bd"
-    sha256 cellar: :any,                 arm64_sequoia: "66f5507257723416ff71f532e0f1804919c40b692ff0faab53711708c773c900"
-    sha256 cellar: :any,                 arm64_sonoma:  "a73f629780d3c6039abf65e7ccb84ab73e2601c768c1a150fdc0aecbaf60af36"
-    sha256 cellar: :any,                 sonoma:        "bb1658d390545e44b15a185701954ee6e848cfad38b27a1472f0f2cb3e8b7c51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a241d61c986556b58b5a3713bcd5d6d05582e6dbe78ee7518c5de09efc8347cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae9d50c8de8c6250bb1ca5f28de2be040a2b929f9172be1fffb56e7743358279"
+    sha256 cellar: :any,                 arm64_tahoe:   "f14fa4d6ea346f7e3e2b90c71d8679a598956497304f7c5ae4eb130d383d2205"
+    sha256 cellar: :any,                 arm64_sequoia: "ca8dbb7a8d52e82d5df2d6c64fdaf9ed908db26d8eb4259c023fb28958e90754"
+    sha256 cellar: :any,                 arm64_sonoma:  "2c7303f53ffdaa10fcb15af1a95eee8e99df4a517d2a3d861ac27d4481452a79"
+    sha256 cellar: :any,                 sonoma:        "5d84218f0e6984fa70ed4166d863043623083ca97a9b11bca3e64764587431e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ef38bcc069a2e3dbd538259e582a3f45d17cee08cecd8a0997d4ff4f665c633"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d07a86c33e951d08458bf41cdbba595b8e8f210d23e1132507114dcdbaea4e39"
   end
 
   depends_on "pkgconf" => :build

@@ -1,8 +1,8 @@
 class LibgpgError < Formula
   desc "Common error values for all GnuPG components"
   homepage "https://www.gnupg.org/related_software/libgpg-error/"
-  url "https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.57.tar.bz2"
-  sha256 "ab807c81fbd2b8e1d6e3377383be802147c08818f87a82e87f85e5939c939def"
+  url "https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.58.tar.bz2"
+  sha256 "f943aea9a830a8bd938e5124b579efaece24a3225ff4c3d27611a80ce1260c27"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class LibgpgError < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "cfc442a456cfeee3f6ab78d77886d5cb1ed1ceb4745803ae34a577ff88ce73b5"
-    sha256 arm64_sequoia: "48a54d998598a2ba0438ad5137a0865dc3aa7c2ad92a3632fef1ededd10f78b9"
-    sha256 arm64_sonoma:  "935ca33a83b8bac590a5fdebaf40ad8deaec9c695477fcdf4b312404e439d5d7"
-    sha256 sonoma:        "feb3618a54debc5fe2daabbc3c687dcd232ad5d31db06bd5e3001c45fad98426"
-    sha256 arm64_linux:   "18dafe85f05a79d6e462f878edf6be9dadfab2cf494e94116ba0ab67332a817d"
-    sha256 x86_64_linux:  "955668c906d66b7404c1adbd0e5b0e6aaf3db83fa9d21062891603f817f0a089"
+    sha256 arm64_tahoe:   "9ffe4c585c9f48a1afeb503d849b26d2a8595b8e2144febed9af1b4d35c31424"
+    sha256 arm64_sequoia: "93e000a1b097f8ea2c814b2c201c44f1cf31ec6cc3498b6c79f5924f4c086fef"
+    sha256 arm64_sonoma:  "413f3b28173f2f2da647226e5d0931be1f5628cf80271f7a73a8ea694a3b770c"
+    sha256 sonoma:        "a9c5a3e98d959137a959c255a08fff83d406139f91c605cb24591a8d6aa46c73"
+    sha256 arm64_linux:   "c54d011e043bb2b96d434b868c1b27da9ddc8af74fe3c75efd298b5eb0edf2cb"
+    sha256 x86_64_linux:  "5548d77d1d4de09b0b94a163ccc7188c8faa787bbd145859e06bc6cf261c24c5"
   end
 
   on_macos do

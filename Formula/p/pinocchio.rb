@@ -2,7 +2,7 @@ class Pinocchio < Formula
   desc "Efficient and fast C++ library implementing Rigid Body Dynamics algorithms"
   homepage "https://stack-of-tasks.github.io/pinocchio"
   license "BSD-2-Clause"
-  revision 2
+  revision 3
   head "https://github.com/stack-of-tasks/pinocchio.git", branch: "devel"
 
   stable do
@@ -22,13 +22,12 @@ class Pinocchio < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_tahoe:   "e19d2282d0794c232d922aa9e3a5af8f5ca23fbe4b25c28e9602450e6f39a61e"
-    sha256                               arm64_sequoia: "beed70e9a4fcd296b71206024dedf8881ec0fcf0b6dbf58dc8c6b3f43b59ba99"
-    sha256                               arm64_sonoma:  "44ad5aeba610332c165aec43354f5c93a44a46894626de76dc878c5bb3e4826f"
-    sha256 cellar: :any,                 sonoma:        "477f4b339d7469f71458bff271d3195f0d91e33efab32d967bd30edd8546095b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fad8d887a620862757488344c7652a2ba75edbcd1aa67f0cf7bc346a5a38d9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "442ad85615f7ef8f854c80ae37ac5607f50eeeca5d047092a763f832606ab4c3"
+    sha256                               arm64_tahoe:   "1db3f86a8f42d7b593cbb819366d2502b91f10ae80a1c39ca3ceba299bf17401"
+    sha256                               arm64_sequoia: "502d5ff708dc561180574eee1a5cf45dc771baf87cbfbeb0fe6a46d4e84dde3b"
+    sha256                               arm64_sonoma:  "2df32f2c2ede2e099b67b337c1ffc132a430724524699e63bb91ef003b8009ab"
+    sha256 cellar: :any,                 sonoma:        "ce16df0dde9d584c1708d326b3718810078a335c43b9ea148604cc22656a8d84"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b23e8e7acba74264a2465b6451e029bab5c1888b4bb1da7eb6885daedb5d1985"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d76a3cbe6e3d7ec69ffc3ffe16a88aa85b51a2f7c310be133f379ec9704845b"
   end
 
   depends_on "cmake" => :build
