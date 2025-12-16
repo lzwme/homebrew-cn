@@ -3,17 +3,17 @@ class Copyparty < Formula
 
   desc "Portable file server"
   homepage "https://github.com/9001/copyparty"
-  url "https://files.pythonhosted.org/packages/0e/f8/29e5d6181b60e0be3d9fb6e73a96c27dfabef1f3eb188ba2eb1a9c989404/copyparty-1.19.21.tar.gz"
-  sha256 "b86f6ce8af6318cfc1e67fb76f98b528d64d7da2ee4780e792d62d7ae26a254b"
+  url "https://files.pythonhosted.org/packages/63/55/a2d3996685658edce0a1a10b6db06b0c841029a9388734696cf1e74c3527/copyparty-1.19.22.tar.gz"
+  sha256 "9ed353716b7643075948e3183fba023e9bab0226cbd1ce395163d910e793ee49"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6a64d28b767d71537abfd24e8f599232747394126b279031c3cc648180e5799c"
-    sha256 cellar: :any,                 arm64_sequoia: "971f343bb3daf27d8ccca7bb6fc960ad84d611e170526fd8f1c4c9e485540159"
-    sha256 cellar: :any,                 arm64_sonoma:  "ade54d72daadae6d210c060c1f42610916cd4908db87a623ebf771aefc05a0af"
-    sha256 cellar: :any,                 sonoma:        "aed23fc8919190d729c01415be61328eb2e76214d16b57686fa0c8d4f626b4e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "00ec3dff2d0b4a8ed24a79f8babec1abddd174c1be678e61d7aebf38325cd95b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1238e2b7cbadaba2ed504c37ac625d6b56591ae41cea7de6748b74f23d6a3cd"
+    sha256 cellar: :any,                 arm64_tahoe:   "368d27e1c93b40b3423b18d63ac45367a7be5f182cf04a7476dd1f6994aff95c"
+    sha256 cellar: :any,                 arm64_sequoia: "96f8504baebb783986d0364c5e3166d610dc68e002eae232450bb9b6177fc77e"
+    sha256 cellar: :any,                 arm64_sonoma:  "02b6cd251805bfc04fdd2e2b3ae65201f53a1ba2893949603c82b5393cb88dbb"
+    sha256 cellar: :any,                 sonoma:        "d0d1d19ae223904779e089978265476cb5aad0b19b8949bc1dad0cbe7660e4db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60e93095e4326f6535bcb635474766e24f1d296ecd26dec95f353ba69b147747"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61144cacb025018f3eb1bb074c925da175283a34f0e0198b34176a715fd21146"
   end
 
   depends_on "cmake" => :build
@@ -83,8 +83,8 @@ class Copyparty < Formula
   end
 
   resource "pyvips" do
-    url "https://files.pythonhosted.org/packages/4c/a2/d8ecd2f7ffa084870ba071a584aac44800a89f3c77b305999be7dc8b7bb3/pyvips-3.0.0.tar.gz"
-    sha256 "79459975e4a16089b0eaafed26eb1400ae66ebc16d3ff3a7d2241abcf19dc9e8"
+    url "https://files.pythonhosted.org/packages/2d/6a/282936de9faac6addf6bc8792c18e006489d0023ffd8856b8643f54d0558/pyvips-3.1.1.tar.gz"
+    sha256 "84fe744d023b1084ac2516bb17064cacd41c7f8aabf8e524dd383534941b9301"
   end
 
   resource "pyzmq" do

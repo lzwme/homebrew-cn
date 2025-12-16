@@ -8,9 +8,11 @@ class GitOctopus < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "7ab7be1a2f2ae60aeaf6a8887b4d7c444e282a9d55d82ce974932279b2569c25"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "85596e8a14e47ed9ca1982b4ae0fb3c3afd7bc991722d8e19045a406055d13e0"
   end
+
+  deprecate! date: "2025-12-14", because: :repo_archived
 
   def install
     system "make", "build"

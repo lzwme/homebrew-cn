@@ -1,26 +1,17 @@
 class Libemf2svg < Formula
   desc "Microsoft (MS) EMF to SVG conversion library"
   homepage "https://github.com/kakwa/libemf2svg"
-  url "https://ghfast.top/https://github.com/kakwa/libemf2svg/archive/refs/tags/1.1.0.tar.gz"
-  sha256 "ad48d2de9d1f4172aca475d9220bbd152b7280f98642db561ee6688faf50cd1e"
+  url "https://ghfast.top/https://github.com/kakwa/libemf2svg/archive/refs/tags/1.8.0.tar.gz"
+  sha256 "090f84711968608b3a2324e06d1314c5b581248ee834edc0e7dfbc015f0619e2"
   license "GPL-2.0-only"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "adf093b34e21931b3ef18d375f067f7b725684ee2c1c2326f47136e0ff7d8838"
-    sha256 cellar: :any,                 arm64_sequoia:  "c769ed043dc565d050ee360ed38753a5f09db7fb39987c295c3d08b3eba16834"
-    sha256 cellar: :any,                 arm64_sonoma:   "46974d67b425299521f648acc2561051646afbb51e47d45ff954277df5b32334"
-    sha256 cellar: :any,                 arm64_ventura:  "1fc992a4391b5890a2163b4019c36331fb462f79a0fc77bfeb4c06e5a4641d73"
-    sha256 cellar: :any,                 arm64_monterey: "5c433d7a620912bb39e0a09a8f9d793028bf6c671a716d8e6f7f63cdf797aaa9"
-    sha256 cellar: :any,                 arm64_big_sur:  "063dce921f40a941dccf3d79c1e886dc9944bda2166b9a840f5a6a80d37ffb6d"
-    sha256 cellar: :any,                 sonoma:         "bb3ba1207ae1a563746eda8b4cae2fa6eede0a19077cd562cadb31d56f747f78"
-    sha256 cellar: :any,                 ventura:        "e70b11b9736140938aac03fe053af3312cb992cc7aeb3a5a48573c2fd1b4eb69"
-    sha256 cellar: :any,                 monterey:       "282508d66b3fd198648a798040205d7f3e42720cc9fc64572ac397767b369851"
-    sha256 cellar: :any,                 big_sur:        "2da6c337708d8666ddfd4295b77f81b72c099f31c564f4efd79bed5f620a0d7a"
-    sha256 cellar: :any,                 catalina:       "22a0d2002ff89d8583fa86c103d465b23fe7809a527aae4c6dad29b39db020f5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "06d60d5e8329cb81fa95b4ffc2253df5e29c98106b08e07248adaf811df48605"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "271caea2750597c1a8f0b30b80f4cdd901c439db73ca0d179420a0e3cb12c4bc"
+    sha256 cellar: :any,                 arm64_tahoe:   "1ca9eb3c1b5575ca3b415f7b2c2b8dbf5d94ed8ef17bc76679801d3c68b9eafc"
+    sha256 cellar: :any,                 arm64_sequoia: "be1d2b4b7e587cea6f7e2ba6a2522660225243469e2e15c79d2e8fa49d374e57"
+    sha256 cellar: :any,                 arm64_sonoma:  "61e85f92f97aa75d063c67a11901313fc17ce8782f0026ded9e0444afa796be9"
+    sha256 cellar: :any,                 sonoma:        "22114b481d38b92a99787f4f2ac1408f4ab4d9f631df7ee20465515d610d4640"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f544fe01c724d02c928ac39e0fd784adbb62bc56ebd04d8df985fda33e2b44f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e0df182fe862359cde0951486c681258d8ec0db5fe7208a18e97ec8f3e2fdfb"
   end
 
   depends_on "cmake" => :build
@@ -28,14 +19,19 @@ class Libemf2svg < Formula
   depends_on "freetype"
   depends_on "libpng"
 
+  uses_from_macos "libxml2"
+
   on_macos do
     depends_on "argp-standalone" => :build
   end
 
   def install
+    # Bypass to check brew setup
+    # https://github.com/kakwa/libemf2svg/issues/50
+    inreplace "CMakeLists.txt", "Darwin", "PASS" if OS.mac?
+
     args = %W[-DCMAKE_INSTALL_RPATH=#{rpath}]
-    # Workaround for CMake 4 compatibility
-    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    args << "-DEXTERNAL_ICONV=iconv" if OS.mac?
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

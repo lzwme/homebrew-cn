@@ -1,17 +1,17 @@
 class Recur < Formula
   desc "Retry a command with exponential backoff and jitter"
   homepage "https://github.com/dbohdan/recur"
-  url "https://ghfast.top/https://github.com/dbohdan/recur/archive/refs/tags/v3.0.0.tar.gz"
-  sha256 "e1237455a14cc2b5c6a36f93b42b7fe98f24a0aad22cda7d7c7f29d83fbb261f"
+  url "https://ghfast.top/https://github.com/dbohdan/recur/archive/refs/tags/v3.1.0.tar.gz"
+  sha256 "b61f4d0679492d007d326c041065ca31d2a15e08ccf55540747564631d94f43b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a33e3ccef88d17965f1b1ddbd2cbb25cc439c7cc0aa65990f5d4ef7d39b83bf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a33e3ccef88d17965f1b1ddbd2cbb25cc439c7cc0aa65990f5d4ef7d39b83bf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a33e3ccef88d17965f1b1ddbd2cbb25cc439c7cc0aa65990f5d4ef7d39b83bf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "79cfd6abdfc9fbf499665f5674f45355701c62caf76096bf5fa46f1b297c4a16"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4cb2a8e43655dcdd038353d9f9bcbccf7cec6117a4b543dfa68f58e7e36e1b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80fc99124b1d694bf3363983fc8dfd3502f15fc287b34328136945c0e947fb9a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5392d17cf9cb538670069b7839997a2b93fc5c6837a02f02635c4158e02cbd8e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5392d17cf9cb538670069b7839997a2b93fc5c6837a02f02635c4158e02cbd8e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5392d17cf9cb538670069b7839997a2b93fc5c6837a02f02635c4158e02cbd8e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f06404f8cf2721a04dc830aa34e57e6423240e338f9e9bb206b414102cbc91db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10fbf68bf8534b8da77219022f293a2d9a645177c5b0103c9720eec11f409d68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "449631dac11467bbf63e592474b0ed5424b4cf2ce974aaf669a263325e6764ed"
   end
 
   depends_on "go" => :build

@@ -3,21 +3,19 @@ class Streamrip < Formula
 
   desc "Scriptable music downloader for Qobuz, Tidal, SoundCloud, and Deezer"
   homepage "https://github.com/nathom/streamrip"
-  # Test dependencies should be removed, so they are added to `pypi_packages`
-  # `pygments` should be added manually, it is removed with test dependencies
-  # PR ref: https://github.com/nathom/streamrip/pull/886
   url "https://files.pythonhosted.org/packages/b8/c9/6997772e0217f3081e4e692c7b8b104aaa564c008f2593341e81bbbd2396/streamrip-2.1.0.tar.gz"
   sha256 "e59b4b406f9ac77eb59c927a1a082644e0902152ffeb6212b6b24af7fbef5540"
   license "GPL-3.0-only"
   revision 5
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d812d36f8ae97ca6768c62f534df7d87b2f8dbaab0d7a792a1a091616b0154c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4246c1398af8242f6559aca9d873354769ee84e6f2e73c4532a0c927ed07367"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e7c84c812ab394a3472db374c6c3f394545d48fa769cb9d4967abd66d7e2a62"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6470b712aa2bd5945d6e5dade235f178c4f80af9672f18120acd4fe7520054e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb10a0f5c82f33c52b877ad69ad64a753358e69964964e3f47f01cd9b4665c3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ccfcda537beda0c3648c267c1655a07e76429ef5c0582fd126f95add3cea28f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4eec5537e78e232af0c6772c59d06b809738e5f4cbd136b295580953f26ac946"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2048c11c04d444c5e8a6a42272b73ae923b877fc44cbd6dd49bb4e1e9900d6e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3674c2a5c5a7b9e048994e67849d217250206a74b4fb2b17afff6ee03416d91a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "48f0bafb8a1ac375715c7d15a103ce799222aa67d1ea2e459c089d0284aa8b21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a187735af8fbfba205d8442180244bf44f8ffaecf56d478ce7a743bd3379f56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "049e85461676abfcd6a2662b17da7e6878a43247a3c01862e55402bf5b156c24"
   end
 
   depends_on "certifi" => :no_linkage
@@ -27,11 +25,12 @@ class Streamrip < Formula
 
   uses_from_macos "libffi"
 
-  pypi_packages exclude_packages: %w[certifi pillow pytest-asyncio pytest-mock]
+  pypi_packages exclude_packages: %w[certifi pillow pytest-asyncio pytest-mock],
+                extra_packages:   "pygments"
 
   resource "aiodns" do
-    url "https://files.pythonhosted.org/packages/e6/11/238e97cbf5c1c0f725d590a092e0618dcdc50f44dbd1e2a926fae27e6f06/aiodns-3.6.0.tar.gz"
-    sha256 "9b0ef54339e6687cdbd39a7d73d7de2467cb5c115281da28f2598f058633dac8"
+    url "https://files.pythonhosted.org/packages/85/2f/9d1ee4f937addda60220f47925dac6c6b3782f6851fd578987284a8d2491/aiodns-3.6.1.tar.gz"
+    sha256 "b0e9ce98718a5b8f7ca8cd16fc393163374bc2412236b91f6c851d066e3324b6"
   end
 
   resource "aiofiles" do
@@ -185,8 +184,8 @@ class Streamrip < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "yarl" do
@@ -203,6 +202,8 @@ class Streamrip < Formula
   end
 
   test do
-    system bin/"rip", "url", "https://soundcloud.com/radiarc/radiarc-irrelevance-fading"
+    assert_match version.to_s, shell_output("#{bin}/rip --version")
+
+    system bin/"rip", "database", "browse", "Downloads"
   end
 end

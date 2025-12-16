@@ -3,26 +3,24 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/6d/a9/0a55bc84983ed23bcda8b0d61c83a941b60f92faf1c275edc5acdf99fc5f/vunnel-0.43.0.tar.gz"
-  sha256 "8c434be0accbbc4a3cbcdc2fe899550bc1e36730917234cb632fbfd5108e0a6f"
+  url "https://files.pythonhosted.org/packages/08/67/95a9a2da687bb890926677645b33b43bc79bc1bfa59cc75721663227c574/vunnel-0.45.2.tar.gz"
+  sha256 "e28f2af815c8d25c7a9aa24e8b683171b6613b5ba83a4e7e024081fbc0290e93"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "a886250ccef954493109af2d4e7ec14bb4c7ad06f8ae7cdd36c09fa9b222d85d"
-    sha256 cellar: :any,                 arm64_sequoia: "e4c11a6af1ffec2e1b77f81e4d4f77c36b1503f00206c004261152df71c15a9b"
-    sha256 cellar: :any,                 arm64_sonoma:  "ec7c7579a16872b99fd5afc9a162d72b8e920cb39fcfe65a59ef9fb12e09746f"
-    sha256 cellar: :any,                 sonoma:        "a84ca1ed7ae0583c6826585d2800b845f0e038ad010db766f8e67afa52c4a02e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d77e7ac52cff9f1644df9cf4d678652c9838c3561a19e3f06bcf2f59e8bf6bce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef1751cd3ecb4305b058e31acb9d5dd1dd690f37d1385303f249075c86b77b97"
+    sha256 cellar: :any,                 arm64_tahoe:   "9193db6f20b4961e9c9f1f8e842a6cc2367f02abaf9e5a7a3092fe6cee2a5320"
+    sha256 cellar: :any,                 arm64_sequoia: "673218e8c85454036612f910431274021f7fb8ac92c17ef0918951d19b646554"
+    sha256 cellar: :any,                 arm64_sonoma:  "06618a7f1d95f11c6f182b33b7404050644f704b250a181459bbcd8d77383a02"
+    sha256 cellar: :any,                 sonoma:        "ede976617041044da00641eabd3cdd7bad750b7fef026b3597f39f35874fdd75"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "476f4ceab3648006df44dbd79df8145a38b5787a811128679ce6e29038be16ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b302ffcb9fb6cf41cae1e3dec1e1bc56668c0c07acbe57897d2039bc0f69a081"
   end
 
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.13" # requires-python = "<3.14,>=3.13", https://github.com/anchore/vunnel/issues/952
   depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libxml2", since: :ventura

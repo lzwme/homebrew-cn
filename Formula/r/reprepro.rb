@@ -1,27 +1,22 @@
 class Reprepro < Formula
   desc "Debian package repository manager"
   homepage "https://salsa.debian.org/debian/reprepro"
-  url "https://deb.debian.org/debian/pool/main/r/reprepro/reprepro_5.3.1.orig.tar.xz"
-  sha256 "5a6d48bf1f60cfd3c32eae05b535b334972c1e9d4e62ed886dd54e040e9c1cda"
+  url "https://deb.debian.org/debian/pool/main/r/reprepro/reprepro_5.4.7.orig.tar.xz"
+  sha256 "df87e4168a580366cdeb3fdc31c5fa99b7d73140e7a7ca5d85ce64bb25370d6f"
   license "GPL-2.0-only"
-  revision 1
 
   livecheck do
     url "https://deb.debian.org/debian/pool/main/r/reprepro/"
     regex(/href=.*?reprepro[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1b5855ee25ccd87bcbc2a4625fa0277603efd7009c52c318f3f8ca12a29470da"
-    sha256 cellar: :any,                 arm64_sequoia: "8eaef64ed0c0e9f094a22ac31fe47363d49231963ee63dc9f0378f78e4090da6"
-    sha256 cellar: :any,                 arm64_sonoma:  "80efe269819b4ec7ff59218ea83c67374ad62869cd523fd3bcbc23a68a382195"
-    sha256 cellar: :any,                 arm64_ventura: "679cf41e7adc1e217f128f1b327afe9c36ff157b5f3bcfbb311f5303a0884b88"
-    sha256 cellar: :any,                 sonoma:        "fbb7034959d348763e3eb3c08e64075d36c9fafd5ce59bdfb8d97649935f6b5f"
-    sha256 cellar: :any,                 ventura:       "d4ebe5c1ab2c0bccf82f799081b90d85f11ef1691c74118722865bafbbad7f51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "564f8477e018c4640f5d62bd266440d63d13d0d9a3972000e3094d0f85f0749a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47d8665481d35d31fec110327e4c2d9c23629d3e18debee80d91c907a371dacf"
+    sha256 cellar: :any,                 arm64_tahoe:   "2844e0a31431948d7695c42943a5eca453e15ecf54d4bd31cbc7cb0863670443"
+    sha256 cellar: :any,                 arm64_sequoia: "5146c355e2be811b41d026ae77f5c0d51fcc91d19cbb15a5e0fc4e6b78808834"
+    sha256 cellar: :any,                 arm64_sonoma:  "e912a43c8faef1de37effce75d6b5665d5d8039c86e73c1cebf71e9845255b29"
+    sha256 cellar: :any,                 sonoma:        "d0894c2657bddb755593ef65724ad0da78d742d26c9092433f6886bad46db64b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d952be54d3928a47d9191c3e9b5218e19fb27c4b38a13c2c1e7a1da5e8383edc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b1f03fb797c16bdea4c00888be000b40ea8c6ef9b8d6f3cc189601093f70d6b"
   end
 
   depends_on "autoconf" => :build

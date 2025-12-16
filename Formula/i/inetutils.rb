@@ -1,20 +1,18 @@
 class Inetutils < Formula
   desc "GNU utilities for networking"
   homepage "https://www.gnu.org/software/inetutils/"
-  url "https://ftpmirror.gnu.org/gnu/inetutils/inetutils-2.6.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/inetutils/inetutils-2.6.tar.xz"
-  sha256 "68bedbfeaf73f7d86be2a7d99bcfbd4093d829f52770893919ae174c0b2357ca"
+  url "https://ftpmirror.gnu.org/gnu/inetutils/inetutils-2.7.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/inetutils/inetutils-2.7.tar.gz"
+  sha256 "a156be1cde3c5c0ffefc262180d9369a60484087907aa554c62787d2f40ec086"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "8de72231a19193dc6b8bbc2ca68869494572f7847870529fe4917e8ef980ed0a"
-    sha256 arm64_sequoia: "d6effc6962c93d36abc4c5912fad2235fb8a22660e0564134e04d4bab636b6b3"
-    sha256 arm64_sonoma:  "c597d9559731d11246683d104edfe3a0cefc5051cf2c522e865540a19e39b225"
-    sha256 arm64_ventura: "2fcf900ec14e1c171d02ca16dc8f39123de7a3efd2a9881770fe6ed095bab2b4"
-    sha256 sonoma:        "67ec5c370542a4a6e30bb446748481336eebc34d5b7e26c83f2209990cf76272"
-    sha256 ventura:       "01116c7159a47d9ad41d61ef5d7e6c671e06f80a0473d0e6459e1d51e2a48aa2"
-    sha256 arm64_linux:   "7016cbea9291ebb752d5cb881caf5537fd816027e09b8b89869ce2d09f0a7a82"
-    sha256 x86_64_linux:  "d14270a7f2d5b24df4526319374f9038b2ebc430e5e2432262eff1d78195232a"
+    sha256 arm64_tahoe:   "679c93f5939a40a29d8405d0494cf42900d039adde87f2c6c80cb0ac78bea4d5"
+    sha256 arm64_sequoia: "945627896b2789911b27c99c415ec4392c4950e2857d3ccd63810c695c00b4ac"
+    sha256 arm64_sonoma:  "8d4c9f02566b20dde1c997e6902230d9bee5100eb659627dfeebc9469c366926"
+    sha256 sonoma:        "bb1efe4e985bba255854ed3cb1b3b1a5e94a2be65b390a6f384746e1be4f3009"
+    sha256 arm64_linux:   "2f583154f1494f33345fe3d74baba8805fb95be9cb152ffe1f7b3b4a4fa84d45"
+    sha256 x86_64_linux:  "252b3d566a72404df73d6a4c5e4094a4bf84ed98a594ae6fb5c5174ea8ad85ae"
   end
 
   depends_on "help2man" => :build
@@ -46,10 +44,10 @@ class Inetutils < Formula
   end
 
   def install
-    system "./configure", *std_configure_args,
-                          "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--with-idn",
-                          "--program-prefix=g"
+                          "--program-prefix=g",
+                          *std_configure_args
     system "make", "SUIDMODE=", "install"
 
     no_conflict = OS.mac? ? noshadow : []
@@ -58,7 +56,7 @@ class Inetutils < Formula
     # (ftpd, inetd, rexecd, rlogind, rshd, syslogd, talkd, telnetd, tftpd, uucpd)
     if OS.linux?
       libexec.find.each do |path|
-        next if !File.executable?(path) || File.directory?(path)
+        next if !path.executable? || path.directory?
 
         cmd = path.basename.to_s.sub(/^g/, "")
         sbin.install_symlink libexec/"g#{cmd}" => cmd
@@ -69,7 +67,7 @@ class Inetutils < Formula
     # Symlink commands without 'g' prefix into libexec/gnubin and
     # man pages into libexec/gnuman
     bin.find.each do |path|
-      next if !File.executable?(path) || File.directory?(path)
+      next if !path.executable? || path.directory?
 
       cmd = path.basename.to_s.sub(/^g/, "")
       no_conflict << cmd unless OS.mac?

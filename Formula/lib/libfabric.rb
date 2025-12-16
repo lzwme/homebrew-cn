@@ -1,8 +1,8 @@
 class Libfabric < Formula
   desc "OpenFabrics libfabric"
   homepage "https://ofiwg.github.io/libfabric/"
-  url "https://ghfast.top/https://github.com/ofiwg/libfabric/releases/download/v2.3.1/libfabric-2.3.1.tar.bz2"
-  sha256 "2e939f17ce4d30a999d0445f741d3055b19dfd894eff70450e23470fe774f35a"
+  url "https://ghfast.top/https://github.com/ofiwg/libfabric/releases/download/v2.4.0/libfabric-2.4.0.tar.bz2"
+  sha256 "13f508e1d770c44f872c4117d9bcbfc102dc9d7532d3292455e0e0e5ef7b3bba"
   license any_of: ["BSD-2-Clause", "GPL-2.0-only"]
   head "https://github.com/ofiwg/libfabric.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Libfabric < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "95a4c33f931e82bd48e2e1fcd9add3d24f9bbe61c1f7bcacbacd1c254dddf27d"
-    sha256 cellar: :any,                 arm64_sequoia: "ec97df5c70a6884cf6c88a0e7d2cf408b1e1e00511ad2c1ac5524aaac91ae960"
-    sha256 cellar: :any,                 arm64_sonoma:  "5f385c500a9e869ee6bdb6b7017f4860fef1b95a4d04dbd271d440c23384711a"
-    sha256 cellar: :any,                 sonoma:        "c47dced678c368ac7940ba1dc2d6f3928227c40edae066ad0327460f407b4552"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "186dcab2dc39bcb277855baca363bed33c5bd1e16af661b61def39bef37e56cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88d2c0dd7434c09a8297ac5a6310d2a2a25991ae835e23fdd3fb844b8df288aa"
+    sha256 cellar: :any,                 arm64_tahoe:   "4dd3b1dce713f5db21167eac9632e6a42c70ccce828f7249b11fdef8474e3eb1"
+    sha256 cellar: :any,                 arm64_sequoia: "20636cb6c553f8344681b7da625fc6f1f5af447d73adc9223e60edc22a8e900e"
+    sha256 cellar: :any,                 arm64_sonoma:  "bcbd780a01b02da314362c6f0884df0a5225700a42107167f5cda1f9cba8c90c"
+    sha256 cellar: :any,                 sonoma:        "927414d499184088c24ef2833691ea0d26b1386f51f2c4fda28d9c8b52835bac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3832559b56f2b8d6e194790a11e3e80fc464cb2980f94ce39f1f099736fab38a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "751b31b5c57276c8ea427511b08540fec3171463e319c68b2523758ab0057064"
   end
 
   depends_on "autoconf" => :build

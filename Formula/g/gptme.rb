@@ -3,19 +3,18 @@ class Gptme < Formula
 
   desc "AI assistant in your terminal"
   homepage "https://gptme.org/docs/"
-  url "https://files.pythonhosted.org/packages/cf/48/95c9aa7ab0c6144de90fb56394720c570af139a453d1c5e2729c61df8780/gptme-0.30.0.tar.gz"
-  sha256 "02406e255091fc116b1bad4b8c5ec1d79f306045a354d9cb3d5a15797097b161"
+  url "https://files.pythonhosted.org/packages/1a/20/57d7b444abc582b5aa09b98aa6821fefa728eb056a1c4371d475d19514dd/gptme-0.31.0.tar.gz"
+  sha256 "96e17e9dd82c409743b1b81dad08c6c024ace108d829f80c557be8eb2c429ffb"
   license "MIT"
-  revision 2
   head "https://github.com/ErikBjare/gptme.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f633e471c8f17d6447f6e210b53ea64c09cbeaefc97a226b9b8a23985ab19812"
-    sha256 cellar: :any,                 arm64_sequoia: "238eafc2c6f217c047d7d9aca0517a5c338dc6e79bf655792181abc9cd285a48"
-    sha256 cellar: :any,                 arm64_sonoma:  "546007286bb8210f8f99f3638fd1e985f1013381f06c8b661fc491518cf96747"
-    sha256 cellar: :any,                 sonoma:        "24e11f52044ff5aad9fa4ba5df924ddf20887ca26f6e13fa9138ec91f35ec887"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2763608b30edf24b653f0c2ef6c596cfe599c403acdd79a6a937152714064024"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26dc8c03f4c59047c26f33c38bcad806fd8fcd20d43fc55dfaea4388923113b4"
+    sha256 cellar: :any,                 arm64_tahoe:   "7960fc8bbc94f63e6c0d541ff02970301c0ac759da59966fd6914f413a6b311f"
+    sha256 cellar: :any,                 arm64_sequoia: "393d5860a2cbb4bdac834658e732edef84ddc12c7cfb99375689a1b40c41d1c7"
+    sha256 cellar: :any,                 arm64_sonoma:  "3373c2be26335dffd084e80906fe2ea6401de8d375c59d8cdb1a0cf89437d88e"
+    sha256 cellar: :any,                 sonoma:        "01332743655daa680d341956c446bfa36717ac009da7f93b50518675593860bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28dafd029f94aae44aa8c7fe365152f4353cf60282cfb60a353f49a4101be3a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5e21cd249346f8bddcb05859ea827cfb0c55dfd497b8f4ecefcc151810fdcd9"
   end
 
   depends_on "rust" => :build # for jitter
@@ -163,8 +162,8 @@ class Gptme < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/12/42/10c0c09ca27aceacd8c428956cfabdd67e3d328fe55c4abc16589285d294/mcp-1.23.1.tar.gz"
-    sha256 "7403e053e8e2283b1e6ae631423cb54736933fea70b32422152e6064556cd298"
+    url "https://files.pythonhosted.org/packages/d6/2c/db9ae5ab1fcdd9cd2bcc7ca3b7361b712e30590b64d5151a31563af8f82d/mcp-1.24.0.tar.gz"
+    sha256 "aeaad134664ce56f2721d1abf300666a1e8348563f4d3baff361c3b652448efc"
   end
 
   resource "mdurl" do
@@ -288,8 +287,8 @@ class Gptme < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/db/3c/fa6517610dc641262b77cc7bf994ecd17465812c1b0585fe33e11be758ab/sse_starlette-3.0.3.tar.gz"
-    sha256 "88cfb08747e16200ea990c8ca876b03910a23b547ab3bd764c0d8eb81019b971"
+    url "https://files.pythonhosted.org/packages/17/8b/54651ad49bce99a50fd61a7f19c2b6a79fbb072e693101fbb1194c362054/sse_starlette-3.0.4.tar.gz"
+    sha256 "5e34286862e96ead0eb70f5ddd0bd21ab1f6473a8f44419dd267f431611383dd"
   end
 
   resource "stack-data" do
@@ -328,8 +327,8 @@ class Gptme < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "uvicorn" do

@@ -3,18 +3,17 @@ class Archgw < Formula
 
   desc "CLI for Arch Gateway"
   homepage "https://github.com/katanemo/archgw/tree/main/arch/tools"
-  url "https://files.pythonhosted.org/packages/57/41/b5d306bd0e55840718507d5dc5ad95565f1ba96d8d10a71d01fc904ffbc2/archgw-0.3.21.tar.gz"
-  sha256 "b351ec7ef228d6cb673f26dd21b3ccb7792190b4f00a9749d85d1329dd7c9958"
+  url "https://files.pythonhosted.org/packages/a4/76/79f9d1fab003cf58703ac6db13f8f84f75fd9135c57e4937ae363aaf37fb/archgw-0.3.22.tar.gz"
+  sha256 "809a97dfe33e797616b4e039d21c2a9bee8fc3af8e45e98724155e6702d32cdb"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6cf2e57e4066834a1c73eb10da9b9ae310a5aba20af98285d39c090d731aa777"
-    sha256 cellar: :any,                 arm64_sequoia: "0c9ba1b93b1d63347f1a205d9da6c68d03345764d8932cdbea103616f9453be9"
-    sha256 cellar: :any,                 arm64_sonoma:  "15fa93fbb395991aae9e602b151fc0658feadf91cac3ab6a8f61ed8c6c2b3a4e"
-    sha256 cellar: :any,                 sonoma:        "9acaade15f97040323f0997a587536feb26d5bab4cd49c9d09ec881a4ea7cc70"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f2d3cbad7896825511b147bd1f775394246a7f41053f579c8286ddfe2998a67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85f0966ea6bd045a1cd9f86d1f7cb1a4c7b532f9eb5336b4e1e2ef1ef3fd5d4b"
+    sha256 cellar: :any,                 arm64_tahoe:   "e49548c68750b5a9a3d9d92fe272a514d3a907834879ba83d382fec663dc854d"
+    sha256 cellar: :any,                 arm64_sequoia: "69984f96db8a9fe0b0fb649a2bdd05f44487a5a9a2e1747c58d80f4a69c3ad1e"
+    sha256 cellar: :any,                 arm64_sonoma:  "cc19290b2fddd6af78431323999fcbefd6f8cddb13115a8e7f0eb4482bd8bffb"
+    sha256 cellar: :any,                 sonoma:        "9795a5f99a6ed48a4453249556331874e5539ce6628785d60a48bb09fea0effa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a980e25fc9ea2dd774b9ea8b8311188832b906de2a66705792460268245bb3f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "006e3b6b66e9f928eca17c6b8262f6665da84d370373991c25062988953dec8c"
   end
 
   depends_on "certifi" => :no_linkage
@@ -80,8 +79,8 @@ class Archgw < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install

@@ -1,8 +1,8 @@
 class SbomTool < Formula
   desc "Scalable and enterprise ready tool to create SBOMs for any variety of artifacts"
   homepage "https://github.com/microsoft/sbom-tool"
-  url "https://ghfast.top/https://github.com/microsoft/sbom-tool/archive/refs/tags/v4.1.4.tar.gz"
-  sha256 "99ccdcba143eacff433c7c0a47d5a5bee1ab7e050b8ee600b3e02656f55cc93f"
+  url "https://ghfast.top/https://github.com/microsoft/sbom-tool/archive/refs/tags/v4.1.5.tar.gz"
+  sha256 "512d884ce8689026f45b54a1c2a242e66f7d570e7d9a1a590d88733cc3e1a108"
   license "MIT"
   head "https://github.com/microsoft/sbom-tool.git", branch: "main"
 
@@ -15,11 +15,11 @@ class SbomTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ee5dac96bebd91fe1253a2b6c267773677890118096a9d291cdc24f31174372"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0acf99320e915ccee1511b294dfba95639d79826fefc02b57ea0adcb4c34d82"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4fcf92e1f1c0ead9cc6867b9fc64e1bb089d6fad2aa4628c44732e6c350ab5bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb12da6615eea0eebc4c9fa282c8f3f54c5537d93ab54ef03c66f3ff57c63ff0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09b6a8d4d149d1dec313a8b9fba5f096f67d7ade1e7f7f363ee580db7a795be9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c31aad15124b2f83da7a0ed010a2716e9aedf4bc851d59693111bb23b2393bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d1227a118a8789126adca3b5cf9c8b13e44d7024853929570161d26cd019929"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "976cfb7dd806d4171e91e5940ea94c3f5210e756bb327858446550fcffc4bade"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c682d73f2274bc7f6d54c81d7e47ad00ac384a54d166d5a297a8b209aa6ae2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a1d920bb9f3bdcbc323879069b0e2027ac898c4ccdb2c336ac1f97e99afa1e4"
   end
 
   depends_on "dotnet@8"

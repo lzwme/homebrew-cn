@@ -1,6 +1,6 @@
 cask "butterkit" do
-  version "1.4.05"
-  sha256 "73c4356c206fc429ac8d31fe10b72714cfd82ddb893768daa8a73964be21fdd3"
+  version "1.4.12"
+  sha256 "7c3ec94610c11f503d36ccc6a7bc87d5b41818c11dab6c377efcb816675d23db"
 
   url "https://butterkit.app/updates/ButterKit-Direct-#{version}-macOS.zip"
   name "ButterKit"

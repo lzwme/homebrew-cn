@@ -27,6 +27,8 @@ class Dotnet < Formula
     regex(/^v?(\d+\.\d+\.\d{1,2})$/i)
   end
 
+  no_autobump! because: :incompatible_version_format
+
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "343566caa1011741a13303014ceee74a91d807de9cd77f0438324939f9ff65bb"
     sha256 cellar: :any,                 arm64_sequoia: "0f23879804542b8e66c8521b87af973069165fc9379749083a25537aae9f94b1"

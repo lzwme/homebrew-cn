@@ -1,17 +1,17 @@
 class Espflash < Formula
   desc "Serial flasher utility for Espressif SoCs and modules based on esptool.py"
   homepage "https://github.com/esp-rs/espflash"
-  url "https://ghfast.top/https://github.com/esp-rs/espflash/archive/refs/tags/v4.2.0.tar.gz"
-  sha256 "6591daeb4a633799faff0fd1233e0723d7482372faea871cae46b4c6b0139b41"
+  url "https://ghfast.top/https://github.com/esp-rs/espflash/archive/refs/tags/v4.3.0.tar.gz"
+  sha256 "ea038015c548421c4aba4a3ed7391ab831d7003d09944f1ac247c77dfe090341"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0773290548d100ce65b60faaefa6179628c995935a1f32aaf60bee00b76ebed"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fc2edd56b32c499af537067b90b49db07f24bc14133cd8fde6ddf3a75b64561"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a936dfc5046337540970ab652511b328119e911360cd775551e53e426905e82"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d91360749c92af335f5b24364bde4584e10d32f72679f305675b0f37f25f929c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d6ad56860d7dcda4df9b2e37cd7953ba598777936001ce2491c6b72a518fdbf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e4eff95e1a51771e5c46987fa49b73342d0edb21122c924fa4f84da031a3b82"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b1e30cbba1b4711890fbe1f435352ba3b06da0054710ba519a1f91e33a4cd14e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26b303b44d33cac494f540f795cc17fec581827f3b3f835b0d36385469ecbfad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e9eba0a5f7280288a9b6e1a1b666af5220492bec7995ee2c25e7b2148b791a7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4d5e2121b6dd229722b0bca9868113a369e898b09524207dd2fbe17377a7a7bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae3c812a3e2c2a0a2ee029fb71317e8c4f46a242258a2e370dcbd9edfe7f552f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38f2c7d557115250dcedb4fb1599883298479d8843b47d49ec8598618f0c11ad"
   end
 
   depends_on "pkgconf" => :build

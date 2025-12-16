@@ -3,18 +3,17 @@ class LueReader < Formula
 
   desc "Terminal eBook reader with text-to-speech and multi-format support"
   homepage "https://github.com/superstarryeyes/lue"
-  url "https://files.pythonhosted.org/packages/35/23/09469ec526a11c8cd5582fa5a5cced11175a2418bf741d56a52fe3cf5fb2/lue_reader-0.3.1.tar.gz"
-  sha256 "d02ebef59873075bc877008368d3036bb7685f687b630b378f0e1849d14c50a2"
+  url "https://files.pythonhosted.org/packages/a0/02/492383eb53224831f2f5ccbbc3f7aca9ba051b89e7df03233d3c41856ec3/lue_reader-0.4.0.tar.gz"
+  sha256 "eb44619754938f8a1c2c2bde0f5deed9909e0f8b089f61514c7f751e1edd6ae9"
   license "GPL-3.0-only"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3192b0e489ec2d78109c80e8d7094a79f4a6754129c2ecaf7da62d5e96452a66"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36031184b946da5464eb7e8d5584f20d9e618b35ce969bc194521c524adb0a93"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "611657cdc69f5ea469e3506ce0cb98ec70a31b7edff9f35f7b1e444890faa11b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "84732a84724a20c27a7b1fe3a3dc22828d1a49c9384f959907747f01788eb8bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f681cc67feed61769e1a7ff2bc1ff603fbb521f238258b93961482529fa5564"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e20bc721988dcde59dc432b9ef101ac86414a228b41dbe227afa1d2f7629779"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54ea5aa717e23b32acd6d79697487d7de5c0cc9ed2cf889560c88622155af9cf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13446a5207d044e3cd82400095aa42b841f6c472e4f7cb1e271a8efd98b04f80"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37965e5eaa4195b2fc3eba9aba9b1c3346a5f4572229280163ef38da8d779544"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1f631e23c2c9bf29bded38bb28957a54daf41f147dd314e3180955d97957465e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8c00618105d4ebd9e29b05b2840f0caf24fea2b6d27422ee7a3632e58d72d57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efd0a28dfa94a48fbfa4ed5afb3486dbd37dc8cd22bd362b443611bc36d9f417"
   end
 
   depends_on "certifi" => :no_linkage
@@ -33,8 +32,8 @@ class LueReader < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/ba/fa/3ae643cd525cf6844d3dc810481e5748107368eb49563c15a5fb9f680750/aiohttp-3.13.1.tar.gz"
-    sha256 "4b7ee9c355015813a6aa085170b96ec22315dabc3d866fd77d147927000e9464"
+    url "https://files.pythonhosted.org/packages/1c/ce/3b83ebba6b3207a7135e5fcaba49706f8a4b6008153b4e30540c982fae26/aiohttp-3.13.2.tar.gz"
+    sha256 "40176a52c186aefef6eb3cad2cdd30cd06e3afbe88fe8ab2af9c0b90f228daca"
   end
 
   resource "aiosignal" do
@@ -48,8 +47,8 @@ class LueReader < Formula
   end
 
   resource "edge-tts" do
-    url "https://files.pythonhosted.org/packages/e8/d0/db9a841ac29f119ca8e3d2a22325849997c571a4f31f728042c5fdbdff33/edge_tts-7.2.3.tar.gz"
-    sha256 "b85e271181cd52656934069237bfc3853335a17f7e51a4f7116e2936d32e62d2"
+    url "https://files.pythonhosted.org/packages/16/d2/1ce38f6e4fe7275207f4033b0971db489a0b594340ae6bac2320127e71ee/edge_tts-7.2.7.tar.gz"
+    sha256 "0127fba57a742bc48ff0a2a3b24b8324f7859260185274c335b4e54735aff325"
   end
 
   resource "frozenlist" do
@@ -68,8 +67,8 @@ class LueReader < Formula
   end
 
   resource "markdown" do
-    url "https://files.pythonhosted.org/packages/8d/37/02347f6d6d8279247a5837082ebc26fc0d5aaeaf75aa013fcbb433c777ab/markdown-3.9.tar.gz"
-    sha256 "d2900fe1782bd33bdbbd56859defef70c2e78fc46668f8eb9df3128138f2cb6a"
+    url "https://files.pythonhosted.org/packages/7d/ab/7dd27d9d863b3376fcf23a5a13cb5d024aed1db46f963f1b5735ae43b3be/markdown-3.10.tar.gz"
+    sha256 "37062d4f2aa4b2b6b32aefb80faa300f82cc790cb949a35b8caede34f2b68c0e"
   end
 
   resource "markdown-it-py" do
@@ -88,8 +87,8 @@ class LueReader < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "propcache" do

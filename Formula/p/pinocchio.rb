@@ -22,12 +22,13 @@ class Pinocchio < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "1db3f86a8f42d7b593cbb819366d2502b91f10ae80a1c39ca3ceba299bf17401"
-    sha256                               arm64_sequoia: "502d5ff708dc561180574eee1a5cf45dc771baf87cbfbeb0fe6a46d4e84dde3b"
-    sha256                               arm64_sonoma:  "2df32f2c2ede2e099b67b337c1ffc132a430724524699e63bb91ef003b8009ab"
-    sha256 cellar: :any,                 sonoma:        "ce16df0dde9d584c1708d326b3718810078a335c43b9ea148604cc22656a8d84"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b23e8e7acba74264a2465b6451e029bab5c1888b4bb1da7eb6885daedb5d1985"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d76a3cbe6e3d7ec69ffc3ffe16a88aa85b51a2f7c310be133f379ec9704845b"
+    rebuild 1
+    sha256                               arm64_tahoe:   "765252361b069130a17ed7e5479e49ab941dfdc73bea52c236c0bbfe44edc972"
+    sha256                               arm64_sequoia: "01649bbddd2c7eddc9d58c1e654733ce1b525579066ee55720ef05bbde7fd3ab"
+    sha256                               arm64_sonoma:  "510a870a1b145f9c5723fd165673ca659a61bc17b1e15413ff55b72a8400977c"
+    sha256 cellar: :any,                 sonoma:        "f253712cbe290a0e0f390db5767d37307b2b7c4d7d421bbc2491023e958f314b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a107f39b9e3a5f436605519bc1fb2ebf85cba19d0bd32369b51874d29738f5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65a9b4dffd6b821dcf8d078b95b3e16e4e2582dd1d0e6a7cdddb8bac9d41dea6"
   end
 
   depends_on "cmake" => :build
@@ -72,11 +73,14 @@ class Pinocchio < Formula
       system "git", "pull", "--unshallow", "--tags"
     end
 
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DPYTHON_EXECUTABLE=#{which(python3)}",
-                    "-DBUILD_UNIT_TESTS=OFF",
-                    "-DBUILD_WITH_COLLISION_SUPPORT=ON",
-                    *std_cmake_args
+    args = %W[
+      -DPYTHON_EXECUTABLE=#{which(python3)}
+      -DBUILD_UNIT_TESTS=OFF
+      -DBUILD_WITH_COLLISION_SUPPORT=ON
+    ]
+    args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-rpath,#{rpath}" if OS.mac?
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

@@ -3,19 +3,18 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://conan.io"
-  url "https://files.pythonhosted.org/packages/e1/64/0bd44d12421ad8eca1903fc66e8f9661b28086e451ad075af37350b364db/conan-2.23.0.tar.gz"
-  sha256 "1a7b34be6fcaa4a4c0342c54187fb87aa4b487a9b4cf2136f2207f8b3a127868"
+  url "https://files.pythonhosted.org/packages/5c/b8/2a926814018061d84fbadffb2286927f3986f42599598ac5af1b108e86fd/conan-2.24.0.tar.gz"
+  sha256 "3467b5b9a1099a16fe2d2c425d7eb02c84291bfd09417df16b028cbcae9060e2"
   license "MIT"
-  revision 1
   head "https://github.com/conan-io/conan.git", branch: "develop2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "603e99bf218ccf0b878692056bb2a07e52a89a5b0e4b12ae0d80485fd69c968c"
-    sha256 cellar: :any,                 arm64_sequoia: "dee1e9c0b115a22717f036fce39baed02046713e81e523752b7431b94d0e32ab"
-    sha256 cellar: :any,                 arm64_sonoma:  "cac8dda39552dbcd771bd359236809034afb28b8c1483ce0dfcf249b6f08d641"
-    sha256 cellar: :any,                 sonoma:        "0fc7ca976447093b9d6c869938fb7d91320dbc348d2bc1dbddc7294c08c11226"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "765dd5dbec1c97c31045b51c1decd0cc357b61a388fcf926b93e88a8a0fddbbb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "975461698bfe66071db30e35150b3d7f6ac4e0aad423ba4d59af31d5625e9153"
+    sha256 cellar: :any,                 arm64_tahoe:   "a1526d9e8dcebd71f0c5c86676ab682245c7cda07c10afaec094e5ecb7509018"
+    sha256 cellar: :any,                 arm64_sequoia: "c3d44596704cfc8164146d2e014c3e9ddc793f40868686e939739fec6bcd3b16"
+    sha256 cellar: :any,                 arm64_sonoma:  "052ccbf65e782bb5e0f773bc96a51978cbf7b77ce26e4b2ea82a909441b89786"
+    sha256 cellar: :any,                 sonoma:        "4b1744d73d89a2aaf0659f0d72cc5f9eaa1292bfe0f5fc03195b693d4d246142"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e00906b926b593a6ebb6c2fdff31557e15fa9f70d80f65b7042007191c29887"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42953d06f270215951c4d1ff60e742dea40ae0f38bc0227cc5c0ec023514fe30"
   end
 
   depends_on "pkgconf" => :build
@@ -88,8 +87,8 @@ class Conan < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install

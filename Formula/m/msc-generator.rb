@@ -1,10 +1,9 @@
 class MscGenerator < Formula
   desc "Draws signalling charts from textual description"
   homepage "https://gitlab.com/msc-generator/msc-generator"
-  url "https://gitlab.com/api/v4/projects/31167732/packages/generic/msc-generator/8.6.3/msc-generator-8.6.3.tar.gz"
-  sha256 "476115a4f4dc3f71fae43071c388db6323bf2298f9d3b6f5214557a570ceacf2"
+  url "https://gitlab.com/api/v4/projects/31167732/packages/generic/msc-generator/8.6.4/msc-generator-8.6.4.tar.gz"
+  sha256 "4f9b44f5439c512f95b686755526fd8772aa9df8c52e7e13bd60276a2d558557"
   license "AGPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url "https://gitlab.com/api/v4/projects/31167732/packages"
@@ -17,15 +16,13 @@ class MscGenerator < Formula
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 arm64_tahoe:   "f59601f0cbde128e5bf006d6e209896fece79956672e1b68530d7fd32a9fa7fd"
-    sha256 arm64_sequoia: "85bcc5cfd7b8b439e17e4d1b438f99dd79efabef69a5d7c919bd4d5bc3892636"
-    sha256 arm64_sonoma:  "1cdf8e111c43a0104afa5ef43307adad58eb9f67eab664e751b316d789115617"
-    sha256 sonoma:        "72a0c8f7c7f666b4ba4bb963be292959be2a8d7c77d58aee15d58c4d6a51c932"
-    sha256 arm64_linux:   "02f3c6b42be051258a634306df0100e10dabcfc8dd4113978f4629488d1b4340"
-    sha256 x86_64_linux:  "dbb32f6692261fcf51d8a8b07e4c45d93189ad0565251ae4f3783a9ae3d5aaaa"
+    sha256 arm64_tahoe:   "77320a8ba2d8b05c1bb4accb40bb8d8c2863326056916faebd02ec5d6baf7f1e"
+    sha256 arm64_sequoia: "d9edc1a402e83f259f311d7b9820ae2d2f25a15aaf2a71fbcab55ad826054823"
+    sha256 arm64_sonoma:  "443bfcb59db4bf1b282fd5a3805c16e60026ffd6d2ebeb40fbd67250dfce8d4b"
+    sha256 sonoma:        "aaf99db5b0360a364b215c53df1b5976a86afde615ccd62f4453fa779d2fb964"
+    sha256 arm64_linux:   "bcf697f0dad4b80dbac6bf30f4de6d20723f0fdacb502eb7d7c3ee61c175df9e"
+    sha256 x86_64_linux:  "c4cd3b10cf1a761607bce952b2ce0a67bf003dfee4027feba19ff2c20bb3bb62"
   end
 
   depends_on "autoconf" => :build
