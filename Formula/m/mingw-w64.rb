@@ -3,7 +3,14 @@ class MingwW64 < Formula
   homepage "https://sourceforge.net/projects/mingw-w64/"
   url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v13.0.0.tar.bz2"
   sha256 "5afe822af5c4edbf67daaf45eec61d538f49eef6b19524de64897c6b95828caf"
-  license "ZPL-2.1"
+  license all_of: [
+    # mingw-w64
+    "ZPL-2.1",
+    # binutils
+    { all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later", "LGPL-2.0-or-later", "LGPL-3.0-only"] },
+    # gcc
+    "GPL-3.0-or-later" => { with: "GCC-exception-3.1" },
+  ]
   revision 2
 
   livecheck do

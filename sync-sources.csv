@@ -1082,7 +1082,6 @@ Homebrew-homebrew-core/Formula/c/cloudsplaining.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/clozure-cl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clpbar.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/c/clucene.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clusterawsadm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/clusterctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clzip.rb, Homebrew/homebrew-core, 0
@@ -1318,6 +1317,7 @@ Homebrew-homebrew-core/Formula/c/ctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/ctlptl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/ctop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/ctpv.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/ctre.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/ctrld.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cuba.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cubeb.rb, Homebrew/homebrew-core, 1
@@ -1741,7 +1741,7 @@ Homebrew-homebrew-core/Formula/e/ebook-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/ebook2cw.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/ecasound.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/eccodes.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/e/ecflow-ui.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/ecflow-ui.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/echidna.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/ecl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/ecm.rb, Homebrew/homebrew-core, 0
@@ -9359,6 +9359,7 @@ Homebrew-homebrew-cask/Casks/e/elgato-capture-device-utility.rb, Homebrew/homebr
 Homebrew-homebrew-cask/Casks/e/elgato-control-center.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elgato-game-capture-hd.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elgato-stream-deck.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/e/elgato-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elgato-video-capture.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elgato-wave-link.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elk.rb, Homebrew/homebrew-cask, 1
@@ -13112,6 +13113,7 @@ Homebrew-homebrew-cask/Casks/m/macdive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macdown.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macdroid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macdropany.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/mace.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macforge.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macfuse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macfuse@dev.rb, Homebrew/homebrew-cask, 1
@@ -13735,6 +13737,7 @@ Homebrew-homebrew-cask/Casks/o/openboardview.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openchrom.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opencloud.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/opencode-desktop.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openconnect-gui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencore-configurator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opencore-patcher.rb, Homebrew/homebrew-cask, 1

@@ -1,10 +1,9 @@
 class PerconaServerAT80 < Formula
   desc "Drop-in MySQL replacement"
   homepage "https://www.percona.com"
-  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.43-34/source/tarball/percona-server-8.0.43-34.tar.gz"
-  sha256 "4469b5e3873559f366eb632c7c231e01aa700c1b9c13cce869085dbe1ec9203e"
+  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.44-35/source/tarball/percona-server-8.0.44-35.tar.gz"
+  sha256 "e1e88d2b35f37394c086c748290bf2850927b0e89549291b6570c563ea889d81"
   license "BSD-3-Clause"
-  revision 4
 
   livecheck do
     url "https://www.percona.com/products-api.php", post_form: {
@@ -20,15 +19,13 @@ class PerconaServerAT80 < Formula
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 arm64_tahoe:   "f214188888a777e35c5e54491c44dff369af81a2e3197e1b97fb434b07f86006"
-    sha256 arm64_sequoia: "cebab5a1b931a02794d7fb530b666398870378c6ac3f7190e7e6f771bb4a13a6"
-    sha256 arm64_sonoma:  "e0c7b43f069176cf9d7116881ff65dac2753a004ad10314e3e95bc0396ef4cc9"
-    sha256 sonoma:        "9b432edecb0829d4cc84089ed2092742b5c646b2b27292e913cf3b32f17db5fe"
-    sha256 arm64_linux:   "998ece6682a6065b6c455ca2fc2e57ee7744af7b0b9237611cbdb30a38247391"
-    sha256 x86_64_linux:  "9979ae21540d8de8d4ac3bf99503ec787dd8e6cc4bf5099086c7fbdba0d4e884"
+    sha256 arm64_tahoe:   "1b593f330e052cbe3378781c8343d55ad00cc3642342c84a00d0e54552ad14dd"
+    sha256 arm64_sequoia: "d92a648b10b1ab4596fe96f71cb25e8ac919f3eab58c46ca4bbf1ff14a2c849a"
+    sha256 arm64_sonoma:  "115668a1f7b7fabfcaa12f021bf1682c460450f7c6ea775694c0ff4686ecb9d1"
+    sha256 sonoma:        "627858962683ad8510b2623932b9f357611e3d77fda58ad1c0863680e9f6281f"
+    sha256 arm64_linux:   "c5599014dcf12eb2490e3d52c7682f745fd3bbf8ddfa91c3f9ae2429e1a5143d"
+    sha256 x86_64_linux:  "84f9d51c5358bfc3b1f799394dec508dc106712f2118ea047f169386a44e2e5b"
   end
 
   keg_only :versioned_formula
@@ -75,12 +72,6 @@ class PerconaServerAT80 < Formula
     sha256 "d4afcdfb0dd8dcb7c0f7e380a88605b515874628107295ab5b892e8f1e019604"
   end
 
-  # Apply MySQL commit to support Protobuf >= 30
-  patch do
-    url "https://github.com/mysql/mysql-server/commit/4c1fdd1fb34a9a80a062357a54afe134a92f8abc.patch?full_index=1"
-    sha256 "8943cf092d31f2ed788f9a86b11b27973ec310d53718f15f6d2dac618696e1a3"
-  end
-
   # Patch out check for Homebrew `boost`.
   # This should not be necessary when building inside `brew`.
   # https://github.com/Homebrew/homebrew-test-bot/pull/820
@@ -102,11 +93,6 @@ class PerconaServerAT80 < Formula
 
     # Find Homebrew OpenLDAP instead of the macOS framework
     inreplace "cmake/ldap.cmake", "NAMES ldap_r ldap", "NAMES ldap"
-
-    # Fix mysqlrouter_passwd RPATH to link to metadata_cache.so
-    inreplace "router/src/http/src/CMakeLists.txt",
-              "ADD_INSTALL_RPATH(mysqlrouter_passwd \"${ROUTER_INSTALL_RPATH}\")",
-              "\\0\nADD_INSTALL_RPATH(mysqlrouter_passwd \"${RPATH_ORIGIN}/../${ROUTER_INSTALL_PLUGINDIR}\")"
 
     # Disable ABI checking
     inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0" if OS.linux?

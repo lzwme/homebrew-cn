@@ -1,18 +1,18 @@
 class Jsvc < Formula
   desc "Wrapper to launch Java applications as daemons"
   homepage "https://commons.apache.org/daemon/jsvc.html"
-  url "https://www.apache.org/dyn/closer.lua?path=commons/daemon/source/commons-daemon-1.5.0-src.tar.gz"
-  mirror "https://archive.apache.org/dist/commons/daemon/source/commons-daemon-1.5.0-src.tar.gz"
-  sha256 "ada59936c74523a2f0f3e29d5bbe08de955d09efd6abd85128f3c42eadffca6c"
+  url "https://www.apache.org/dyn/closer.lua?path=commons/daemon/source/commons-daemon-1.5.1-src.tar.gz"
+  mirror "https://archive.apache.org/dist/commons/daemon/source/commons-daemon-1.5.1-src.tar.gz"
+  sha256 "48f9c4e63af0d73032eef2331ab8e9d3e0784b008ba2e7cb79fdd751c5202ba6"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad664c12aa7e57fb0bb4eb290de077faa281b3a0bcd6b9503375d8182bdf5a2d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "437f1ad5a3997a3634b3774ffd4cfdaeae9584ff89674c217268ef4ec1b55b27"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b218d55e0cc96e32b98bbd39b4bd178997c3ab3605df9e1fe133b1354f35b3e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "835040ba9dbd2decc5ed469a2bf9c9c98f3180d9e901ba3696343c925b4ffa81"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "16d3980087485bb1be713bfaa9688eb06e317f41d2c03699e4f0fc0fe7232763"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0daef3d24d32b9034b2323392abc0e031500263079ddd7263cde2938687a9419"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f249e20ad4469f4ead87053e4b77bf2dd32a0712bb0e6f0b8885a4a8c89ad522"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1c9d7698febe85919a990afbeb5b5c83ef68ae746bfc2dd1e82ba3a20d2d02a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e4383b343f7eabf185019e7482033ca39569844de405155330d39b032f69043"
+    sha256 cellar: :any_skip_relocation, sonoma:        "25f297011a334d4f40bd35135383f3063b2c4fc8fb73083e3a36c88c3d77ab1e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4086828985d6a77620eebdfc4008bfdac0d9eb6224e128f6db5a3f7eac252d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f72edc6d6177e9f50e67fdb4b3a5ba38fd324137c5c904a5a95f4f14ec3ca232"
   end
 
   depends_on "openjdk@21"

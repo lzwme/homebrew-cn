@@ -8,7 +8,6 @@ class Otterdog < Formula
   license "EPL-2.0"
   head "https://github.com/eclipse-csi/otterdog.git", branch: "main"
 
-  # https://github.com/microsoft/playwright-python/issues/2579
   no_autobump! because: "'playwright' resource lacks PyPI sdist"
 
   bottle do
@@ -28,7 +27,8 @@ class Otterdog < Formula
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
-  pypi_packages exclude_packages: %w[certifi cryptography rpds-py]
+  pypi_packages exclude_packages: %w[certifi cryptography playwright rpds-py],
+                extra_packages:   %w[greenlet pyee typing-extensions]
 
   # No sdist on PyPI, so we use the GitHub tarball
   # Ref: https://github.com/microsoft/playwright-python/issues/2579

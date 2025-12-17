@@ -1,19 +1,18 @@
 class Ty < Formula
   desc "Extremely fast Python type checker, written in Rust"
   homepage "https://docs.astral.sh/ty/"
-  url "https://files.pythonhosted.org/packages/f5/f9/f467d2fbf02a37af5d779eb21c59c7d5c9ce8c48f620d590d361f5220208/ty-0.0.1a34.tar.gz"
-  sha256 "659e409cc3b5c9fb99a453d256402a4e3bd95b1dbcc477b55c039697c807ab79"
+  url "https://files.pythonhosted.org/packages/47/e5/15b6aceefcd64b53997fe2002b6fa055f0b1afd23ff6fc3f55f3da944530/ty-0.0.2.tar.gz"
+  sha256 "e02dc50b65dc58d6cb8e8b0d563833f81bf03ed8a7d0b15c6396d486489a7e1d"
   license "MIT"
   head "https://github.com/astral-sh/ty.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fef68b492b3a43afd1f17320a34655541a269d6ba9cba76afe12307a67a61839"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc8f8a1e9aa2cb7256f743fd9a8eae846a333867cfd6940f6d5424ea9be27843"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5e3c415c4f797a0a1b22bfc0b97fe695e8d17425c524c312910cf3d4ec7f186"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3451fd9d8f3d9c360e48e33fea6ca2224ba3798050e49b795f36e7f825bdff6d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "900d81d3c0e773cdab81da97edddb0a91c5fd6f1c190b84858ad5166685ff9c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "518caedea0852c2a77a61d9904fcda0a79234b1795143748b7afefa947e2b60a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ccf887ecf4e724148f81b82f23c1dfc95d0bc3c01d7a89b710c7aec4acacf9d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c15de02a942269eae6c505721383d2fad09b41726a1c56379ecaf64f00568860"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58cd3fdeff168a67da4847b5036f6262646499100b1ff8b640a1387716491f8e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "49c8da4aa09ae5c51e8dbaaba171bf4b7a28b2c076e57c8a8fbda977559366f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbe1864fbb1a9268cf51472a6d6a0d3ea924bdb3d853774bf0ae04b68ab94439"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9db8b1444d7f5538e89abc16c18b638d144e9490fb385ec4db1198440ab8ca09"
   end
 
   depends_on "rust" => :build

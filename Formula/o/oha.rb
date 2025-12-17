@@ -1,18 +1,18 @@
 class Oha < Formula
   desc "HTTP load generator, inspired by rakyll/hey with tui animation"
   homepage "https://github.com/hatoo/oha/"
-  url "https://ghfast.top/https://github.com/hatoo/oha/archive/refs/tags/v1.12.0.tar.gz"
-  sha256 "52a6441eefe90a3739901a2758a7b0566e6f61d60ae0c5c1808fe77daab863f6"
+  url "https://ghfast.top/https://github.com/hatoo/oha/archive/refs/tags/v1.12.1.tar.gz"
+  sha256 "d97cd744f17eaad77e4fc51ebc0dd3f29530cbbb293b348088e2eca81f49570d"
   license "MIT"
   head "https://github.com/hatoo/oha.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23ee616ca656294fcf8da729aaa2f5d5907ab583b2a5b323744d7b371a34369c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79f68e0f8b0c0360f01c680fc8c0512143824a1f0cc2dbd9eceb83f2f2e8bc8a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "652f6177be359da476699a62c13c18884a21471e60919aa40b1e4af8c7c26fdf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f4517e6f3d94a8479f2b914f3584dac89b465d4ab26f3a6f86b9fa6786f410ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c42d3ca0fe02072c60f121f4285f957504574bcaa4ad46037cb2d860567ad276"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0689bdc72c7500f9678a8980e27c321c66ef471abf9fda27cf321d88a3916e1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4bbd97e38f8217554095d3deae77094c65d62f0695186ab188f58de07f289d4b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0619cf1b39254a0a224557ea823f566e32f71527f60708c809264e87579a1524"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a45857150776f32f3f5c491cf8e61b89b25df7e9008914de315ac8cca7fc7ba"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5d1d45fe1bee10f967edd21c41da33b54b1590d3524c594e92693a95de0b0bd1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "508035da10ff2c334e689808b082e3882eecc690f5a3c3995a4206ddf9f37409"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edd56ac77168c70386f7722ea87a85412430a63e55592eba89e066af79d810c4"
   end
 
   depends_on "cmake" => :build # for aws-lc-sys

@@ -1,20 +1,18 @@
 class Dasel < Formula
   desc "JSON, YAML, TOML, XML, and CSV query and modification tool"
   homepage "https://github.com/TomWright/dasel"
-  url "https://ghfast.top/https://github.com/TomWright/dasel/archive/refs/tags/v3.0.0.tar.gz"
-  sha256 "08eb0a602233e9a400aeca7c19e122a58da2315370fc8a14d61692931c7c210f"
+  url "https://ghfast.top/https://github.com/TomWright/dasel/archive/refs/tags/v3.1.1.tar.gz"
+  sha256 "ee4d8073f040a1cf182eb05ced0f0540b6a70ffd49187be3ed80c8f1290c37a3"
   license "MIT"
   head "https://github.com/TomWright/dasel.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1cabd6f40da7d2b4207224112e732f913f3d5968e3e975360f8d163b787f389c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cabd6f40da7d2b4207224112e732f913f3d5968e3e975360f8d163b787f389c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1cabd6f40da7d2b4207224112e732f913f3d5968e3e975360f8d163b787f389c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1e8c24cad82c5cbfecff11a26fcf76edb0beba5e195fbded2ab00b325bae1988"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "373c8cc51278150ce3c0f23cfef5c99c37385d8192b2f0cf4a13fda8b354b2fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2898c5a8e305c7dbc8a0069d41737dff0b1d2e0fd56edc30994cdcfc666edf3e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7dbd1241bce0f8c801c7d22fbf15847b5ffd57032cf781d25385d2fc3ece647"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7dbd1241bce0f8c801c7d22fbf15847b5ffd57032cf781d25385d2fc3ece647"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7dbd1241bce0f8c801c7d22fbf15847b5ffd57032cf781d25385d2fc3ece647"
+    sha256 cellar: :any_skip_relocation, sonoma:        "feec6b693ca372d211b7ce8cbeab8c95081d75277230adc148df006256eb9ed2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f95a03a2a8f39b9ec7c3b317f82d5666d980acf4e707ee16fb7658079ed94ff9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f35e4b40207bffdd6f93a7a38eb05c46d16a247e23c6cd944c6f2e237a6543aa"
   end
 
   depends_on "go" => :build

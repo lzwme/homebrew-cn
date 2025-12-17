@@ -1,8 +1,8 @@
 class Angband < Formula
   desc "Dungeon exploration game"
   homepage "https://rephial.org/"
-  url "https://ghfast.top/https://github.com/angband/angband/releases/download/4.2.5/Angband-4.2.5.tar.gz"
-  sha256 "c4cacbdf28f726fcb1a0b30b8763100fb06f88dbb570e955232e41d83e0718a6"
+  url "https://ghfast.top/https://github.com/angband/angband/releases/download/4.2.6/Angband-4.2.6.tar.gz"
+  sha256 "8c0ffa2b85d74bd0cc273752f61c0440dba93323cd790be460f90c8dced7cbf4"
   license "GPL-2.0-only"
 
   livecheck do
@@ -10,16 +10,13 @@ class Angband < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "0df230a1880838e0d760e4ab52b810d4e14be0d1a56f72e1cfd3844bda5b63bd"
-    sha256 arm64_sequoia: "4254054eebe14f564aaacfd35f1213ec0dc2e487a090c8e0bd8d9f0db7d6233a"
-    sha256 arm64_sonoma:  "e26f6a013fe24f7ae2f3809fc4b694ac9670a71a04c8cd562da2e077f3d63db5"
-    sha256 sonoma:        "61a26d4ff8e1da2020f0f50f094b8119fb6b1edd3ab329ed8a316a5974d976d9"
-    sha256 arm64_linux:   "ee5dfc8cb392c6432a078fb87b9758af0160f5a726174dcd804702b38ae20473"
-    sha256 x86_64_linux:  "91bee3bb1ebbaaae4618343307faf157d08c8876753023d86d7a29eea187ce59"
+    sha256 arm64_tahoe:   "d4aef25f1be9724500e460e68ca2da76fd2294d56e4467bb4f85b156e5193934"
+    sha256 arm64_sequoia: "be8f704be3323d08b76ab1fa16b997450dd9b0aed4d7895d56c2ca591c64756a"
+    sha256 arm64_sonoma:  "28a7168d8525d3c7ac48111b79be016734228d1ea60e7e96105094c44caf99f0"
+    sha256 sonoma:        "d6eab62f0ab0ed7f927fbec829699d7d345bc40b21dbdefb86ef2719e3a1a587"
+    sha256 arm64_linux:   "c3ed6d0c2f79f256df6f136700eeea2f123ff8cd5e4785184062802682f262c7"
+    sha256 x86_64_linux:  "b2f09d71bee68e3c1b051d87ead34426cf2ce64af363afa7b24f9f72bdd0bbf9"
   end
 
   head do

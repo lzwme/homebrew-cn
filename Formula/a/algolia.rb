@@ -1,20 +1,18 @@
 class Algolia < Formula
   desc "CLI for Algolia"
   homepage "https://www.algolia.com/doc/tools/cli/get-started"
-  url "https://ghfast.top/https://github.com/algolia/cli/archive/refs/tags/v1.7.1.tar.gz"
-  sha256 "3757d76ed2a9c341fb5f1a4cb8e2e7465ac17753eb489bb5fae2f4df10c6302b"
+  url "https://ghfast.top/https://github.com/algolia/cli/archive/refs/tags/v1.7.2.tar.gz"
+  sha256 "0b7477c554c006de12fa936c9256c76361b3edd2a402b9be912efa61c4a1d400"
   license "MIT"
   head "https://github.com/algolia/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed3fe3b5b7f0a90081443986fbe756dfd14fc828fa3b50944dd6a2d3e64139ee"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed3fe3b5b7f0a90081443986fbe756dfd14fc828fa3b50944dd6a2d3e64139ee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed3fe3b5b7f0a90081443986fbe756dfd14fc828fa3b50944dd6a2d3e64139ee"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ed3fe3b5b7f0a90081443986fbe756dfd14fc828fa3b50944dd6a2d3e64139ee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b67032c92b32eeb4bd79836b6d2c09d6a8e0cc05ff0fa02bbf7cb1b6889d7501"
-    sha256 cellar: :any_skip_relocation, ventura:       "b67032c92b32eeb4bd79836b6d2c09d6a8e0cc05ff0fa02bbf7cb1b6889d7501"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "048383a03e88f4a83dbf333ad4daf895100cfabcf35adf6f5a9fea9dd452c738"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a448e8b052d4ed8cb044cfcb74bb3b33be7e7a9c92853babff6b476224a81355"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0f3a3ee93da672db9f429d351d7b381fb2c98bb74295b5864d1643dc0ff8d96"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0f3a3ee93da672db9f429d351d7b381fb2c98bb74295b5864d1643dc0ff8d96"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0f3a3ee93da672db9f429d351d7b381fb2c98bb74295b5864d1643dc0ff8d96"
+    sha256 cellar: :any_skip_relocation, sonoma:        "33bc87b6f7e7dfde2836eb978aed59c75a39435c08c3e856fd9cf20d3c98e452"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad2a24e5c775fb35f0daca856acdd25f71ba63c1dccbb20a82e8f53592a594cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5afdc37907f966a114f326de3ccd49a29f1a7d1c0344fc889e695ede5f20411e"
   end
 
   depends_on "go" => :build

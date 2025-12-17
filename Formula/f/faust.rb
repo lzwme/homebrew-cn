@@ -1,8 +1,8 @@
 class Faust < Formula
   desc "Functional programming language for real time signal processing"
   homepage "https://faust.grame.fr"
-  url "https://ghfast.top/https://github.com/grame-cncm/faust/releases/download/2.81.10/faust-2.81.10.tar.gz"
-  sha256 "c69977380d07aaabb939362c6c306401d55fd9ccd9336c49cabf9adb8f7d4756"
+  url "https://ghfast.top/https://github.com/grame-cncm/faust/releases/download/2.83.1/faust-2.83.1.tar.gz"
+  sha256 "6ca3d749296191c41e9fd24ce7e5b37f58022d4320acb1c7343fec2df82d5551"
   license "GPL-2.0-or-later"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,12 +14,12 @@ class Faust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6a353e7f551174445ed07a4bc0805d45589fb83514f39c5eae3cfa2d0b81c50d"
-    sha256 cellar: :any,                 arm64_sequoia: "8909642b7721bf43b82bedb13629ba6f91fc854a7e4966f2207581456e06686f"
-    sha256 cellar: :any,                 arm64_sonoma:  "a2c4e8ee05b22eea93c9848ffe2f8e6957423c4a92482bc2c96e2421b7e617e2"
-    sha256                               sonoma:        "507d61e03410597c2e013bab22d0c7a34dc114cc2e567e05d8a30b5431011e2c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2897244cb1b353185a64cc3b4ecad2bdbd1315f434bfeb83f7b9e9a3e6aecc14"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f25b19eb6f8ef3e7b079124fec93acca9fabc8bc1f0190a42a23f887791d39be"
+    sha256 cellar: :any,                 arm64_tahoe:   "d2a55eacd796dbfb88cb6255a8620e092e77e333fa8404eeb1cd438ed440ecd1"
+    sha256 cellar: :any,                 arm64_sequoia: "219a3d5ec634c88c84ddd71d547ef00408626906165694abf3a82209f6879cd1"
+    sha256 cellar: :any,                 arm64_sonoma:  "44aca203784d43d61fd808f6bd388f7f557846a613aa7d1fcf3354d09e292fdc"
+    sha256                               sonoma:        "12c0f1f3d9cbab7c0ff14adc151b17b10ef4487f225eedd475fa545e98188e15"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e73f78c0325a8b989539959a6a57ab825789b613d701a52c536a2ee2c128fdf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e50c6f304965d4b01d466322b1cd907d88038bd961683ecbb04ee7facb0cff23"
   end
 
   depends_on "cmake" => :build

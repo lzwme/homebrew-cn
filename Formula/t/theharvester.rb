@@ -9,6 +9,8 @@ class Theharvester < Formula
   revision 1
   head "https://github.com/laramies/theHarvester.git", branch: "master"
 
+  no_autobump! because: "'playwright' resource lacks PyPI sdist"
+
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_tahoe:   "47c88c30fcaa7c375eae5e5a15d51e87db79995fe59d2d7097a858d8c9c4e0b1"
@@ -19,6 +21,7 @@ class Theharvester < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d454027ade1a900bbe3b1332d64458a46a01d2ada95dc2724c7eb8242487a0a"
   end
 
+  depends_on "cmake" => :build
   depends_on "certifi" => :no_linkage
   depends_on "cffi" => :no_linkage
   depends_on "libyaml"
@@ -29,7 +32,7 @@ class Theharvester < Formula
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
-  pypi_packages exclude_packages: %w[cffi certifi pydantic],
+  pypi_packages exclude_packages: %w[cffi certifi playwright pydantic],
                 extra_packages:   %w[greenlet pyee]
 
   # `uvloop` is manually updated to support Python 3.14, remove in next release

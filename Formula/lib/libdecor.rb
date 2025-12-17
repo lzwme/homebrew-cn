@@ -1,8 +1,8 @@
 class Libdecor < Formula
   desc "Client-side decorations library for Wayland client"
   homepage "https://gitlab.freedesktop.org/libdecor/libdecor"
-  url "https://gitlab.freedesktop.org/libdecor/libdecor/-/releases/0.2.4/downloads/libdecor-0.2.4.tar.xz"
-  sha256 "b17cf420e8dcb526bf82da5d36f8443a91fad0777083fa4ec5c1df8ee877416f"
+  url "https://gitlab.freedesktop.org/libdecor/libdecor/-/releases/0.2.5/downloads/libdecor-0.2.5.tar.xz"
+  sha256 "7fd50f780a4fee90a03f7b2c09055033e488654cbaff4a0c4bbae616bac9cd1c"
   license "MIT"
 
   livecheck do
@@ -14,8 +14,8 @@ class Libdecor < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "0ce1db47f5f6e33e2eb9e56441bfd76e0743d3d73fe36ec03fc70706546e1c0b"
-    sha256 x86_64_linux: "01ed6ba19998c4ec2aa7093b943d75a8c491616c0a3638779c7297e4da276ea1"
+    sha256 arm64_linux:  "a33126a6a50cb479b6e6cf78afb9c78993e0d4c32fcaf9a7b0809b74691185e2"
+    sha256 x86_64_linux: "615d9589a6c9b46664d33c1f955b29659c09b7503ef0e1ccd7444a400cbcec90"
   end
 
   depends_on "meson" => :build

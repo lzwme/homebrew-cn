@@ -1,18 +1,18 @@
 class Prqlc < Formula
   desc "Simple, powerful, pipelined SQL replacement"
   homepage "https://prql-lang.org"
-  url "https://ghfast.top/https://github.com/PRQL/prql/archive/refs/tags/0.13.8.tar.gz"
-  sha256 "68fb0ee26239de7b63da3af60a63f01dee290b433e52a2805d28735700ad6b3d"
+  url "https://ghfast.top/https://github.com/PRQL/prql/archive/refs/tags/0.13.10.tar.gz"
+  sha256 "ca618ce52bbec3de60b5bf8193c4c0f208b7681374575b809e4f1604867dba47"
   license "Apache-2.0"
   head "https://github.com/prql/prql.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "debc7f8f2e488c863ab42789a9c4f499cca780d5bf9a365834466cd67be0c95a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a592a4fdcb087510b2c3be655c2b966f34300631efa901e7870a1b0a32f8329"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c032d84720a635c3ba4827fe5ca9dc5ff92161140c1ef6eadcece6d12a2526ef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3b135b2fa5517a6d9fbfe2c73c2e1bc062aa917aec112055284f97bdaa2c3e91"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27475181dec7a05006b11cf98e53b1c9ae9fe616a220028225420e645608d91b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56d0d5c872453489388e6376cc6189ce419b7cf09ec7f9fb6f224b6613daf021"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dcb91072733b283682b4c9d3dca802ecec5ad33935f54092184d2c496e3ba3c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a342aa3ae3364743dd5ca259dfe7e59a89a94e6e92a79bf0a32e7d7504a3821c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d3b5b71aabc6d888bd4b46ed35cb40a3e798a002b24c24d6394750b99f8d002"
+    sha256 cellar: :any_skip_relocation, sonoma:        "17c8d48e115b06614e4e417a4d2b8635f08fde0544ad663703c7faeeb881a7db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "25e37b1562abe783c7c255f61eed8530f74f0d75fb8a5710110ccd3f6494eaba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cf210eb5b1b31dcad620de55f4247bd6b149a5c79b84507b88d55eb9cb0371c"
   end
 
   depends_on "rust" => :build

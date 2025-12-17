@@ -8,13 +8,16 @@ class Httptap < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "45f85b53889589b427538b65b46089db060f43e8f2e4f143f19b23cdcd41eae4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "4846d1cf9b0b752fd3cc272df18e1f8e132e2ea457338ec73362d0350ecdfa6e"
   end
 
   depends_on "rust" => :build
+  depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
-  pypi_packages package_name: "httptap[completion]"
+  pypi_packages package_name:     "httptap[completion]",
+                exclude_packages: "certifi"
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
@@ -24,11 +27,6 @@ class Httptap < Formula
   resource "argcomplete" do
     url "https://files.pythonhosted.org/packages/38/61/0b9ae6399dd4a58d8c1b1dc5a27d6f2808023d0b5dd3104bb99f45a33ff6/argcomplete-3.6.3.tar.gz"
     sha256 "62e8ed4fd6a45864acc8235409461b72c9a28ee785a2011cc5eb78318786c89c"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/a2/8c/58f469717fa48465e4a50c014a0400602d3c437d7c0c468e17ada824da3a/certifi-2025.11.12.tar.gz"
-    sha256 "d8ab5478f2ecd78af242878415affce761ca6bc54a22a27e026d7c25357c3316"
   end
 
   resource "dnspython" do

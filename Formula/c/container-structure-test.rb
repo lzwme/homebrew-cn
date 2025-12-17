@@ -1,18 +1,18 @@
 class ContainerStructureTest < Formula
   desc "Validate the structure of your container images"
   homepage "https://github.com/GoogleContainerTools/container-structure-test"
-  url "https://ghfast.top/https://github.com/GoogleContainerTools/container-structure-test/archive/refs/tags/v1.22.0.tar.gz"
-  sha256 "94f6ae60ddb13ba1774a226e3f2650f736871bad61a18982e0b825bde2ad568a"
+  url "https://ghfast.top/https://github.com/GoogleContainerTools/container-structure-test/archive/refs/tags/v1.22.1.tar.gz"
+  sha256 "186bb1493ebb3c597e53b2a7abd5460c683c63d404e44a64223d26bb3315841d"
   license "Apache-2.0"
   head "https://github.com/GoogleContainerTools/container-structure-test.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "985a9d8cdb2a082e042602c9e185ee354abfcfdbe51824dad8752679f66aa244"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "985a9d8cdb2a082e042602c9e185ee354abfcfdbe51824dad8752679f66aa244"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "985a9d8cdb2a082e042602c9e185ee354abfcfdbe51824dad8752679f66aa244"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b6c0bcd37369f2f03e8eaa6d0962f5e1a4e058f16a0430f304907d03fefd0886"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3a65c251fb9281c834acf28d00ea86ff2e43ffd47fd9830f98a06762d1dd874"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1438c34759acb2d059ac82ca330d233f1ed50e2d2a1aa47b8e7a5b8e8879b7a8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ffadb4b8e066a730a44df161a8994706c19299d4b2016e1f6446c4b87f4300d7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ffadb4b8e066a730a44df161a8994706c19299d4b2016e1f6446c4b87f4300d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ffadb4b8e066a730a44df161a8994706c19299d4b2016e1f6446c4b87f4300d7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9e1bbe8f1cf6043c62b4108fca2107d9e967138b2bc064bb39a23a4f4762f607"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dcac556f58434bb4a0886090be35ee58c844b20507704c679a30043680c36cce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a5370012785c55e9fec1d69ccc950b88e84a36d4f6de86f322ba9a3919c3099"
   end
 
   depends_on "go" => :build

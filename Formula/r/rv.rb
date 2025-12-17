@@ -12,21 +12,17 @@ class Rv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14394352ae5c65a041f36ee617235e394033805a33000e7260d794f101f87523"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbee92e6a0834f12e6286ca2f35b35aa3a4681dafd22c284147061cf94d78da3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "773ac5241967d429db677c1cb36bf7346603ef1620e6f3e65a60c678bcff629b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "729a2a3b54be62f3f17428872c4fdb508822aea80374a179c5e4816731c92007"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b969f0f49262ad22a506f104486d6438222ce1e5b534d586359b21348e91a3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08441d39160ee98939516df3cc6840f65b89746d00b1c33e35528d7f0ac963e9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1de251348620d1e1a4e9e877d605c1a5813603b6a809651e8a9554d2e2643975"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bab519e6552ced20a13260c72f72546b8d45eb36956b0e99d7fcea3f512d915b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "338efd70193bd6f0c891820313840f81d522fcc5110a654e1e35339c4a5a8856"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c373505e884ea846fa3af2b77bf936a467e82e253632ecf0e0f927b1668ab55d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "30de8f767c4aca0b5708bf0c7ef2e48f24a0176a539f752f8cc717d1fd2b4fe6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbf2f9af69ab6c4a0bfb7364310acad673d80a2e556166b97ee0ca3165ae246b"
   end
 
-  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on macos: :sonoma
-
-  on_linux do
-    depends_on "openssl@3"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/rv")
@@ -35,10 +31,7 @@ class Rv < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/rv --version")
-
     assert_match "No Ruby installations found.", shell_output("#{bin}/rv ruby list --installed-only 2>&1")
-
-    system bin/"rv", "ruby", "install", "3.4.5"
     assert_match "Homebrew", shell_output("#{bin}/rv ruby run 3.4.5 -- -e 'puts \"Homebrew\"'")
   end
 end

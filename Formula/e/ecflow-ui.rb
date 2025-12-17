@@ -1,8 +1,8 @@
 class EcflowUi < Formula
   desc "User interface for client/server workflow package"
   homepage "https://confluence.ecmwf.int/display/ECFLOW"
-  url "https://confluence.ecmwf.int/download/attachments/8650755/ecFlow-5.15.1-Source.tar.gz"
-  sha256 "e46293c32545c0182a1989ba5dbe667d32042f592d5bb20d0117c37f08ae2403"
+  url "https://confluence.ecmwf.int/download/attachments/8650755/ecFlow-5.15.2-Source.tar.gz"
+  sha256 "6e4738167a17b7a8787e4084183b30bd7170a0d150e85eebedb0cfe46e87d856"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class EcflowUi < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0c667833267b1b54372d7c0e5f8a2e35051ef943d9758adccdfce74c0ab78a4d"
-    sha256 arm64_sequoia: "e3f29f83faa4eb7c787d58e3418bfd9c39bed8f736d191e8e19deb36861343ab"
-    sha256 arm64_sonoma:  "b3c30e1018158297381c5c9e87b28b60161bde0927a407887a3ec1244f7e8d73"
-    sha256 sonoma:        "872ebdd0b116632682f2b2b16d8f9cb85ca0d56984c000a6ff8a847184e24221"
-    sha256 arm64_linux:   "63da6cd05bba56dae90331c10f5b75f2a6fae18994359b64a9f13f7305c745ec"
-    sha256 x86_64_linux:  "d707e69a3f202787d69239a44af7e0ad355325501e20a706de06748f02b59c21"
+    sha256 arm64_tahoe:   "3a2d6944d14d35d8697c41b1896b47d1c92200d78635af09645bd08b9169c852"
+    sha256 arm64_sequoia: "c9e2e95dbac66a092105dc3a09e375b93878ac3fac6c63fb55dc2a18a9d94eec"
+    sha256 arm64_sonoma:  "299ff590bc226d95352ef2163348f8b79b0c6bdb96ac84fdff87d845f5dbfbf2"
+    sha256 sonoma:        "126a9c10588756a2eb999a2a7c52783076357132bcf96ebed3dca7ae7429c84f"
+    sha256 arm64_linux:   "65e8ff9d3e04469d9a42b54e0af1a8c6a94b527c307914d28da3ea11eec3cdba"
+    sha256 x86_64_linux:  "fd752424e0e1ba3c63117decd5bed7dceb3cf5f109f2efb71a4e6ba236aa34ce"
   end
 
   depends_on "boost" => :build
@@ -29,12 +29,6 @@ class EcflowUi < Formula
 
   uses_from_macos "libxcrypt"
   uses_from_macos "zlib"
-
-  # Replace boost::asio::deadline_timer since it was removed in Boost 1.89.0
-  patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/ecmwf/ecflow/57ef9c0a48d6651a9cf5ceedf4e73b555eed23bf/releng/brew/patches/5.15.0.patch"
-    sha256 "87c53a3cc96a36a00589ff0ea3bc44b62e56dd4539fda81155d72b5cf84db2a3"
-  end
 
   def install
     args = %w[
