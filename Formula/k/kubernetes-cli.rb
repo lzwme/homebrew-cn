@@ -2,8 +2,8 @@ class KubernetesCli < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/docs/reference/kubectl/"
   url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.34.3",
-      revision: "df11db1c0f08fab3c0baee1e5ce6efbf816af7f1"
+      tag:      "v1.35.0",
+      revision: "66452049f3d692768c39c797b21b793dce80314e"
   license "Apache-2.0"
   head "https://github.com/kubernetes/kubernetes.git", branch: "master"
 
@@ -13,12 +13,12 @@ class KubernetesCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92304e1a5ab255a6abaa726ce4d7951000d082f45886b2ac61a9fc79ed61a806"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5eedf3d8b983652827f7d877df7c4274307d8c1936ca06b08f6ef20b310030b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c612e2875a5eec527513b14bf4c31f1cb820e27b3141a92b1b79444c66965048"
-    sha256 cellar: :any_skip_relocation, sonoma:        "203b58e04e049b7cbebcf6fcf632b44f45ff410cf657254f0c35e739aaad06d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6147312dd455504754d106f0ed93c59af5ae9c58ae40838c9e6b7ca1db95c40a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a2d007a06ae08e58533d28043a6c5b8dfafca2bd1b66ff0e68ed8ed9bc0f1b4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "94d25794c27019df7a3602fbbf6a6f4549392fd2771d59d479f8378d07f3df02"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0bbb19355da98430e2a926afc42c928cfcb90ef40cfdac6d105fc300310df96"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36b539ed5abce3653bdd50aab69acf5dc60043ce17243fd890089e590a77f8b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "60320f39390aceb60d870c474e5167b86c445cb645c2797080657ab28e41a3c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee4b6d39cf8ab5ff6a8df95c43ab1d5411e980b7223a55889b95debdfbb6ea4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f539db32926f96cb3f2e4fd422f15106aba6b640fcc45d0ba78aa3d92683d2bc"
   end
 
   depends_on "bash" => :build

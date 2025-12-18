@@ -3,54 +3,43 @@ class Urh < Formula
 
   desc "Universal Radio Hacker"
   homepage "https://github.com/jopohl/urh"
-  url "https://files.pythonhosted.org/packages/7b/af/be36ae7e9184410c2c6d406a1551d7096f394e238cc5f63cb4ddcfc5f2e5/urh-2.9.8.tar.gz"
-  sha256 "864130b19553833827931f48f874045a39a6cee219a310a910bcd2ef02cf96b4"
+  url "https://files.pythonhosted.org/packages/dd/75/e3ce1cd756dc47ab42166d1ecfb9a9f5e34e2fcf78aeed0b9392313dc057/urh-2.10.0.tar.gz"
+  sha256 "c9e2932bc0c7b155cfd9483c058b78d08b51c49cd041ab75a0f4a70fc6cce757"
   license "GPL-3.0-only"
-  revision 1
   head "https://github.com/jopohl/urh.git", branch: "master"
 
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ac9e1a2e9eb4ef1d2a51dd85e54252794f1082f3de02ae077b86bcf7c9c6cc24"
-    sha256 cellar: :any,                 arm64_sequoia: "62ea259eba408187297df3dada6609c7e3c132dac3005165d0e641e52220caa0"
-    sha256 cellar: :any,                 arm64_sonoma:  "44fca98d4457a4a5798ccc36bc43d3d5bb163f5206d371d7348b20babc8c8aed"
-    sha256 cellar: :any,                 sonoma:        "859acfa8aa4edfa004eabc14350f08ab187986d9fb20f1ebb724daf421fcdc83"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d39c8f2f760344dff758d9ab2dff7334046172ff77d8687327dc949dd9e60898"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcb7995e05db0dfd4a416f43bc7cc57b6d31638b2b908e3f5d12ab849062a613"
+    sha256 cellar: :any,                 arm64_tahoe:   "d045c9c12bfa3c15c40058b62984619e91fc1e7883b39ff2693e140e806f71fc"
+    sha256 cellar: :any,                 arm64_sequoia: "21043800855ce2da2456d600a7710040f1af40e620f6e7269890cd9ce16e0b0f"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac8bf70afb6a48022aa28d9cdc411b6be8d1d7b1bc6e632b25ade589f495f568"
+    sha256 cellar: :any,                 sonoma:        "cb5dc00b8b7b0a563fc01e313b2a42aab04446fb17a02577d115a725ed336e12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "519ef56378fa53f474781233ceb35cd6fc46b21c9be649aed61089846c3b1ee1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07c1c8a80f51c56feeed46ceeb671839ef925ddafffefc669ce3a67fc0c5947f"
   end
 
-  depends_on "cmake" => :build # for numpy
-  depends_on "meson" => :build # for numpy
-  depends_on "ninja" => :build # for numpy
   depends_on "pkgconf" => :build
   depends_on "hackrf"
-  depends_on "pyqt@5"
+  depends_on "numpy"
+  depends_on "pyqt"
   depends_on "python@3.14"
 
-  on_linux do
-    depends_on "patchelf" => :build # for numpy
-  end
+  pypi_packages exclude_packages: "numpy"
 
   resource "cython" do
-    url "https://files.pythonhosted.org/packages/84/4d/b720d6000f4ca77f030bd70f12550820f0766b568e43f11af7f7ad9061aa/cython-3.0.11.tar.gz"
-    sha256 "7146dd2af8682b4ca61331851e6aebce9fe5158e75300343f80c07ca80b1faff"
-  end
-
-  # upstream issue: https://github.com/jopohl/urh/issues/1149
-  resource "numpy" do
-    url "https://files.pythonhosted.org/packages/65/6e/09db70a523a96d25e115e71cc56a6f9031e7b8cd166c1ac8438307c14058/numpy-1.26.4.tar.gz"
-    sha256 "2a02aba9ed12e4ac4eb3ea9421c420301a0c6460d9830d74a9df87efa4912010"
+    url "https://files.pythonhosted.org/packages/39/e1/c0d92b1258722e1bc62a12e630c33f1f842fdab53fd8cd5de2f75c6449a9/cython-3.2.3.tar.gz"
+    sha256 "f13832412d633376ffc08d751cc18ed0d7d00a398a4065e2871db505258748a6"
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/1f/5a/07871137bb752428aa4b659f910b399ba6f291156bdea939be3e96cae7cb/psutil-6.1.1.tar.gz"
-    sha256 "cf8496728c18f2d0b45198f06895be52f36611711746b7f30c464b422b50e2f5"
+    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
+    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/92/ec/089608b791d210aec4e7f97488e67ab0d33add3efccb83a056cbafe3a2a6/setuptools-75.8.0.tar.gz"
-    sha256 "c5afc8f407c626b8313a86e10311dd3f661c6cd9c09d4bf8c15c0e11f9f2b0e6"
+    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   def install

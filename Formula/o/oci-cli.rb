@@ -3,18 +3,18 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm"
-  url "https://files.pythonhosted.org/packages/6e/93/0b0240413164db3a1e952f2eb0e9fc01a4b49f99c5754c787a470fb534bd/oci_cli-3.71.2.tar.gz"
-  sha256 "65019be745c546bf39ddb003780496c24ea0677f637353889299cbc0198c64b5"
+  url "https://files.pythonhosted.org/packages/97/cb/80fdca293f4bbdbdddf15f508233258da1ad4a5df6b9056774554dbbd8cd/oci_cli-3.71.4.tar.gz"
+  sha256 "6906a69509a7959751814a313a4619b7477be959e4f581795da7069239987167"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "989f0f11089cbe77a32d1252d47f527b700fb33106ade0843fdd5ca594cbf8c6"
-    sha256 cellar: :any,                 arm64_sequoia: "a269cc5330137291798f7edfb74f9f47afe3cafad266cc939cfff94fa428b947"
-    sha256 cellar: :any,                 arm64_sonoma:  "4576b44b9086e896cd292e3f4f52dfd51b00daae14bb11fa3fa917ca7832880f"
-    sha256 cellar: :any,                 sonoma:        "0866dad89d699812523eba60739b3389b7ca5fe2f342a06ff0f48ea1a8319bb6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "26cc7fb8ae367faec4166a64963ca485218afbd04677dc2890dff9a880e3e5c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c57b4d1e6b42e04d42f3ecb26ddc37c6aa67dd8173c7ddb03fb46e0dfd6dfcc3"
+    sha256 cellar: :any,                 arm64_tahoe:   "8957edb099d16b950d50631b220b5f14e0689fd48dc49b028941af1767b6d68b"
+    sha256 cellar: :any,                 arm64_sequoia: "ca78e383f3c86d677d0c1efd4c03cca31f9c5f3f83325e38eceda72880d41633"
+    sha256 cellar: :any,                 arm64_sonoma:  "3c03271c6376fb45c66de241dfad8b25a10886941b66388cdece55e87c81e88b"
+    sha256 cellar: :any,                 sonoma:        "e6d798aef98af5698bc37cca94fec9e32a6cc09574f485ce3d1234e4cb1c881d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e8f5e813337e79bcdb5f9b88048bfa2562c730f0f0ef82324e87b2482c08ba1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e3dd1a752ea45d235d229a4c3277d4f09c345f7cd2bc186942d3f1955dcb6a7"
   end
 
   depends_on "certifi"

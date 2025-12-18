@@ -12,12 +12,13 @@ class Rover < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "28b0836a3579d1597ebecb8d7dbb7ea5987862a028a69f11a464b2be6e2ada62"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16d02424a802cb8c67f51dc5d59b55178dc253f8e3e22cd94c574a887da06341"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b68e4100d933f55d0216e2258c0fea74e9d0aef1e5d942636b546ede65c8aa9d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8c9756dd069a51bdc4af7a96db00a804a3b6d4b176c3ebc2601dd65cd423ca87"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "66633fa484c0a5824e7bba91412ba419577fdf2f96f24637c03631b081da0282"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3a21bf2293f0c2ce14073f1e0ddc0295cf7e1a2c9223b22d05d041b15f1c0fc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee9bfb422a573e2509146afa4aea201e12dbb1d976524d58a0d4d42d333956b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aac8d57e4efb3ef8b9d88163b93bdf01e5d3270aba2de3bf37ddf2bfe61605ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85da6a2b7b877157794c49e98809d2dde001e16e9a49dad7bcba2cb9e230ec99"
+    sha256 cellar: :any_skip_relocation, sonoma:        "abd0cebeb7deb28679009706a8e580335dda6e9ec922ad304ca65b0f0fee5079"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "16f0899da327664c614f1f2557a4d4f7e02f57baa06350773b52ae7230a12952"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0b7e41ad8edc910d257abfb16e7872ebd246c9799aed0c9029fe46aa6198a31"
   end
 
   depends_on "rust" => :build
@@ -31,6 +32,8 @@ class Rover < Formula
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     system "cargo", "install", *std_cargo_args
+
+    generate_completions_from_executable(bin/"rover", "completion", shells: [:bash, :zsh])
   end
 
   test do

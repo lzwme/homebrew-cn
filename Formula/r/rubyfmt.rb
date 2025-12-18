@@ -37,7 +37,10 @@ class Rubyfmt < Formula
   # error: '__declspec' attributes are not enabled;
   # use '-fdeclspec' or '-fms-extensions' to enable support for __declspec attributes
   depends_on macos: :monterey
+
+  uses_from_macos "libxcrypt"
   uses_from_macos "ruby"
+  uses_from_macos "zlib"
 
   def install
     # Work around build failure with recent Rust

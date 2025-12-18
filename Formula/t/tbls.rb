@@ -1,18 +1,18 @@
 class Tbls < Formula
   desc "CI-Friendly tool to document a database"
   homepage "https://github.com/k1LoW/tbls"
-  url "https://ghfast.top/https://github.com/k1LoW/tbls/archive/refs/tags/v1.92.0.tar.gz"
-  sha256 "f442a6c9e711b8bf53ecda3b54b1a2a6b9983dbc427ab513ed7c5e909f67c964"
+  url "https://ghfast.top/https://github.com/k1LoW/tbls/archive/refs/tags/v1.92.1.tar.gz"
+  sha256 "1ce3c19cad9d0d96ed6884828fa15af7d88ed0fa6d01bc462239d5e0e232a27d"
   license "MIT"
   head "https://github.com/k1LoW/tbls.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b754428556dc77b193ea05b992ef5fc79f388bc84dc01a691d29235f7319c308"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "989d6c2ce1443cc87b0b7fdda93ef3e5bb721848867991d70c861182a483ccb4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37e5754be80e981e0bea82468bd92df2e9923e7749c159fd10cec790ed2ca08c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c8216d63d7191dfb0093e9b2befdba2a2bc9b817d5219bf1424a2043e36079e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "913e951ba162dbdaee252bfcc081029e80577d19281c33c84d68982fd70b6cdc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03877420a6afcaf2e20db4fe4d5e5bd3f922c8e2e9bf5cc38f80d067d2879bd1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03fa77c8d038e867c1ab86ac5918998ffa52354153082a23f31b720a6f98098a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9acb31e432c6a690aed5ccb9d0b04c6e9eb784c40b142d9115e0c75b9bd3d2bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d0480cff7474dc0a8331d67d5f504afb4bf68fd753341ff9171eb5bbef52d3a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "62fb0d9dc913becb43c28efd6486f927d07f6550a5dbe4ac4e7a7536bbfd226c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f2c4324e57a6a7c215b51128400bf7c4f006fa62f4b64a35b724ad095be71db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b3eb254929428f12a7cea7999cbaa0f68eb6f9832b5dea7d548242f742d5670"
   end
 
   depends_on "go" => :build

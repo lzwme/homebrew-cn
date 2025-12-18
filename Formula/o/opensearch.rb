@@ -1,17 +1,17 @@
 class Opensearch < Formula
   desc "Open source distributed and RESTful search engine"
   homepage "https://github.com/opensearch-project/OpenSearch"
-  url "https://ghfast.top/https://github.com/opensearch-project/OpenSearch/archive/refs/tags/3.3.2.tar.gz"
-  sha256 "d1506c8d56abc6af535bb242f5285e1e342486ce236e932205bcd291a1f21de3"
+  url "https://ghfast.top/https://github.com/opensearch-project/OpenSearch/archive/refs/tags/3.4.0.tar.gz"
+  sha256 "04f51a656a19c5831759abec75306d7fd501d9fb5a990bd71fdd1a95a236a3ea"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "20ef25ccefb28402b6dff6bf7870b0bdae01fac39cbc15de393f24ef9526afe2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61851a2c8a50f8c11cad32ff6c6cceb4b65493b6d76652b23fc75c1535432f5f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f246e77962c9f20b746b7d3663a9669af9a7719d1869cb0ce37a1fe7bf08aa54"
-    sha256 cellar: :any_skip_relocation, sonoma:        "813fca3a3ef8a3bd196e353b75ed370313039e9f4b2c6d62e4776441fca8ba3e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d6047c9ceeafa561e17d2ad9a9d39db0b5ffec48f0122ece38cb7df307a8153"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed7e7901f72f5821603109a45f4a5a8973b4354969cad5f4519fe050860db517"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "756554f32172472f177f4247ccf4cbd3f97fe867f4a4abc7c1c5a1b86b2713f1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "377e322396929af6a1baf814ccab6a1fc9fea4873ecefb1db5deeeab7ae9dc9e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c26f89b151abdaea46ecb84c289ee9902164e8c10738af02cd4f9d001f052b17"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ec5100c664980a09408981362ccc128e2e9c44cc1045bc016cc22cef194d2fd3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e01e673705f84ebdd6a9b73cf255fe1a3d7c08dfee81321f8140001f1774fdfe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2744b64a839465006ee91c8b871bc466b1b6c553220c96c2196a485039c7ee22"
   end
 
   depends_on "gradle@8" => :build

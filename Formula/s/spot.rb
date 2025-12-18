@@ -1,8 +1,8 @@
 class Spot < Formula
   desc "Platform for LTL and ω-automata manipulation"
   homepage "https://spot.lre.epita.fr"
-  url "https://www.lrde.epita.fr/dload/spot/spot-2.14.3.tar.gz"
-  sha256 "a0cc89fa716c35a3d7f3272fdbb028841560e671b9958c053870292daf88dd21"
+  url "https://www.lrde.epita.fr/dload/spot/spot-2.14.4.tar.gz"
+  sha256 "c8f168b32668a397656a47affb1ef2aebc1de891c30b6e0d04327e9106204666"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,12 @@ class Spot < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "5ebf9188289b7edc8558dd316e429a07723a4fa592872c1c5f3b4fb0c79e2c4a"
-    sha256 cellar: :any,                 arm64_sequoia: "89d678e29946e21be3799d22cb1a4b20b02a1d02d8be3f257b7d0ec4766a236f"
-    sha256 cellar: :any,                 arm64_sonoma:  "376c92cbec2cd6fedf96112acceb8c75b62d1b6a56438c5c7be10158c0dd408b"
-    sha256 cellar: :any,                 sonoma:        "ff17fef6f1a6f44da93594979fc2562b01fe8ce3aa8619b4b459931643b17f45"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dcd58f0db3d6df6688c4151e193f82d1df6833053bde2754c1e33647d682957"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "515225f54b9e59ed573016bf29650ce5cda88d0dfcc83be0a978e08b32edd374"
+    sha256 cellar: :any,                 arm64_tahoe:   "01480a5ad630ce83dc1abc70848ea5a5f4e56cbcdc24bb1ca89208764a0095e3"
+    sha256 cellar: :any,                 arm64_sequoia: "626e120c317771bfb7da95f884a8e63e1e80c758ed0218a00ba47c027506e4fb"
+    sha256 cellar: :any,                 arm64_sonoma:  "aebf70e6c367d163828d3aea04c398f5383958e0cbb4f89482c66f6114d841aa"
+    sha256 cellar: :any,                 sonoma:        "f968bcd1f8ebedd716c03cd261fcc72564136643778021f78052514b43e6db51"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9efe389fcf9f67a2113e93628f0f4dce6657d8c292249023cb089e538231e9b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e817081f8e51828e3cfb447722ec1de29756b7d2d727282c6638d9f86ff236b"
   end
 
   depends_on "python@3.14" => :build

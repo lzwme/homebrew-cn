@@ -3,20 +3,20 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/c0/bc/6bcec19615710a4e878d0c975d0a74fbe8b7f5af0d98a394c08597c0f0c0/esphome-2025.11.5.tar.gz"
-  sha256 "9f47f158b6db4d0035f2f3827f11a4393f56ce6d0529e857e37c045f28e523de"
+  url "https://files.pythonhosted.org/packages/56/06/7fe360fdb3a1550233e758846892c523e49c7b72c8ede43e7c3b5d56503f/esphome-2025.12.0.tar.gz"
+  sha256 "9911c8dd44c7f86174ff0820b1f6f8ddc1424d0bfa3887486b8c0f680351abad"
   license "MIT"
 
   # Issue ref: https://github.com/Homebrew/homebrew-core/issues/257992
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "58c8239b424ad63c7fa486b634f4e7a120d982b8311466c864e5355832eb7e71"
-    sha256 cellar: :any,                 arm64_sequoia: "ae9db2badd6f94c14750611cb17f2b4f827518d1a2497515f62154b46827dc54"
-    sha256 cellar: :any,                 arm64_sonoma:  "08a38e05bc5a50bbf5e32344db93e70ed08c75a7b27896498e9ba70eeeaa1ce1"
-    sha256 cellar: :any,                 sonoma:        "864e25ec6b2d76e4136e34d88141a155f632e03f4309ee9722c4c158c8730536"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1ae232ba8f17b5bab836e7e109b000f170b1d46cecd0c6393e4d74e1517b02b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67c12e45c9f2fc2414fea05e4fefdd0fc12a765e80db5026d7dbd3a835e06d04"
+    sha256 cellar: :any,                 arm64_tahoe:   "bd46480e501a96e5e1ee8c918b1c6b893ea7812d5db7374749e9182b00e0c1ca"
+    sha256 cellar: :any,                 arm64_sequoia: "9a1b1f5cde42d61d943a14ac75266b358befa29d141b0f512c155c1d12bd7eee"
+    sha256 cellar: :any,                 arm64_sonoma:  "1fd5fe92383adf80a184403d3f3c644f083654bd95eeb8cf9b93ee9beb648120"
+    sha256 cellar: :any,                 sonoma:        "b6300bd687a3694af008e8bf32175feb10a3ccbd97453d5c61f83d464e86ea93"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2514174d9bae6f7a791dbef2df9aa88792afb6e41c51b0800131884200687104"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f68a24a3b5517bff262d557c0a4ee8b7cf600c2ad892755be1e4485061b8f08"
   end
 
   depends_on "certifi" => :no_linkage
@@ -33,8 +33,8 @@ class Esphome < Formula
                 extra_packages:   %w[chardet dbus-fast pyobjc-framework-corebluetooth pyobjc-framework-libdispatch]
 
   resource "aioesphomeapi" do
-    url "https://files.pythonhosted.org/packages/c9/4a/8e8a9a2ad6f8bc55d5df9aac84fc058eb6df4ebc29b0942ea7757d9eb4f0/aioesphomeapi-42.7.0.tar.gz"
-    sha256 "d00518ea9ebb4e7302fb780eab37412c86ab99ef4717112288541ad90de441ce"
+    url "https://files.pythonhosted.org/packages/12/b6/cf4c0334fd51a4f87b8b49393e7918c9ec5480793af02022be610fcd969e/aioesphomeapi-43.2.1.tar.gz"
+    sha256 "68dd71451a7befb07d99b33bafa0d35cebe38e3197ea3b1e81212adcde6ff4b2"
   end
 
   resource "aiohappyeyeballs" do
@@ -73,8 +73,8 @@ class Esphome < Formula
   end
 
   resource "bleak" do
-    url "https://files.pythonhosted.org/packages/10/88/6bb2bcb94ef7a2f37c5bd5ec99a4ae9208c4caa3fa6d203f9b601e047e64/bleak-1.1.1.tar.gz"
-    sha256 "eeef18053eb3bd569a25bff62cd4eb9ee56be4d84f5321023a7c4920943e6ccb"
+    url "https://files.pythonhosted.org/packages/ce/cb/20f3dd0498a820278c7078dce786676d18342721a3723591d5853323b363/bleak-2.0.0.tar.gz"
+    sha256 "a8043fc0f3af1a00a84963824195463ca39789ae4f6804d3d7b1423e6083254a"
   end
 
   resource "bottle" do
@@ -303,8 +303,8 @@ class Esphome < Formula
   end
 
   resource "ruamel-yaml-clib" do
-    url "https://files.pythonhosted.org/packages/d8/e9/39ec4d4b3f91188fad1842748f67d4e749c77c37e353c4e545052ee8e893/ruamel.yaml.clib-0.2.14.tar.gz"
-    sha256 "803f5044b13602d58ea378576dd75aa759f52116a0232608e8fdada4da33752e"
+    url "https://files.pythonhosted.org/packages/ea/97/60fda20e2fb54b83a61ae14648b0817c8f5d84a3821e40bfbdae1437026a/ruamel_yaml_clib-0.2.15.tar.gz"
+    sha256 "46e4cc8c43ef6a94885f72512094e482114a8a706d3c555a34ed4b0d20200600"
   end
 
   resource "semantic-version" do
@@ -333,8 +333,8 @@ class Esphome < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
-    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
+    url "https://files.pythonhosted.org/packages/5e/a7/c202b344c5ca7daf398f3b8a477eeb205cf3b6f32e7ec3a6bac0629ca975/tzdata-2025.3.tar.gz"
+    sha256 "de39c2ca5dc7b0344f2eba86f49d614019d29f060fc4ebc8a417896a620b56a7"
   end
 
   resource "tzlocal" do
@@ -343,8 +343,8 @@ class Esphome < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
-    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "uvicorn" do

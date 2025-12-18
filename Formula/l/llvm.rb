@@ -6,8 +6,8 @@ class Llvm < Formula
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
-    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.7/llvm-project-21.1.7.src.tar.xz"
-    sha256 "e5b65fd79c95c343bb584127114cb2d252306c1ada1e057899b6aacdd445899e"
+    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.8/llvm-project-21.1.8.src.tar.xz"
+    sha256 "4633a23617fa31a3ea51242586ea7fb1da7140e426bd62fc164261fe036aa142"
 
     # Fix triple config loading for clang-cl
     # https://github.com/llvm/llvm-project/pull/111397
@@ -23,12 +23,12 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "de4ee735b055cf97c15bf187519044eb828e6004fad0db50695290e213fb98cf"
-    sha256 cellar: :any,                 arm64_sequoia: "e1ebdbe81c63665229fd7f93ffea08ed77df9a868a6c3f466024a76246661fc9"
-    sha256 cellar: :any,                 arm64_sonoma:  "dc30429b078ea5d0a249af6a677c09990efa6e24080d4af64a8e573c6eb3a15a"
-    sha256 cellar: :any,                 sonoma:        "19eead2e9b2cd7e251827e2c5e212ef7002b14900e620963c45331b23349d2a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dae43d1c93754cd0d4151fbb99e24ea8045e52fa933f63f1236158853c5ce7da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c44f960c247cfb7a475182ac01f49fedf9024be892e425ddf98d3fbcab3d767"
+    sha256 cellar: :any,                 arm64_tahoe:   "707a4d37838e79a9d9d05b2ef9d771a6a43b0262d0d5911e07bc15f0cc88957b"
+    sha256 cellar: :any,                 arm64_sequoia: "017e01db92e2988967559d3b1710e8eab47cbe925c46e4068cd6a4eeacce53b5"
+    sha256 cellar: :any,                 arm64_sonoma:  "b9410f89d30355a67717c1fb0ccc95a42e73ed42293722431ecaeea741501978"
+    sha256 cellar: :any,                 sonoma:        "f6eb5b6b113795aae1229896eed6990550524dd72536d6ed23f4d995930731e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a1922e11ff5c74e415f411e35d6c9ea9b3bc92397985d5c0b20ef2a6e864ff0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82c54ea9f37e0c15488b52050b030d66c723ed4c133b6b07b739be6abaab3312"
   end
 
   keg_only :provided_by_macos

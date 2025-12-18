@@ -1,8 +1,8 @@
 class CodeCli < Formula
   desc "Command-line interface built-in Visual Studio Code"
   homepage "https://github.com/microsoft/vscode"
-  url "https://ghfast.top/https://github.com/microsoft/vscode/archive/refs/tags/1.107.0.tar.gz"
-  sha256 "6233b61cb7b5f62eca82de2d2c6c960eaec4bccbdc27ed00076eb34dd27939e4"
+  url "https://ghfast.top/https://github.com/microsoft/vscode/archive/refs/tags/1.107.1.tar.gz"
+  sha256 "695707e9a46ce79fc03faece47db443ff940df0e59c5094562a0b9e0610caea2"
   license "MIT"
   head "https://github.com/microsoft/vscode.git", branch: "main"
 
@@ -12,12 +12,12 @@ class CodeCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d8e2f7f9b7948c1e3b3bb0ac92c4d95b8204c50db0c01cb66bae550735ab2ca6"
-    sha256 cellar: :any,                 arm64_sequoia: "7a0426200426ab314429a591b7c180b9a48d39756151c6f9cab4c6dc488944f7"
-    sha256 cellar: :any,                 arm64_sonoma:  "67410501cf635ee2645336861e7c420f7e76d57a270b557ee2c10d9b89e18a7c"
-    sha256 cellar: :any,                 sonoma:        "7ef048c134200ac13787552e570310c33942aaa42ae087da4f3dcbd11e7362d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac3ba8e076eadb45c2b58777c6698eb4d70d68b71ae63de5e5d408ee1e277feb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fde3e586663309c71cd9540be0f2ddd93a0311f1e69f43c90f985c86e9168778"
+    sha256 cellar: :any,                 arm64_tahoe:   "f82d1150524244e70ed69039b20dd91d012092dcd33003e9bc0018d5c52f1c37"
+    sha256 cellar: :any,                 arm64_sequoia: "bbd000e3b9ccaa7f964a7c08b04d0395f9e2f2e2ee4b225c8439529bbad9de37"
+    sha256 cellar: :any,                 arm64_sonoma:  "5a4079e45fad1350180c6ea6ed091f30a3c04bafe03cb5dbac745904aa4ad435"
+    sha256 cellar: :any,                 sonoma:        "3ba11d52e5010e3ca9daaa46716355ac1b1159055931871c87ef36ab8296ecf0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "66e07843828e633e9ee82f9a76ddb58fcbd08b8e1e1fd39a22a6ef38ebd79427"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea039df5125d16a7640615ed3a80be00724050efef72ead4866dc5e0ac5b1b1d"
   end
 
   depends_on "pkgconf" => :build

@@ -5,10 +5,9 @@ class Semgrep < Formula
   homepage "https://semgrep.dev"
   # pull from git tag to get submodules
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.145.0",
-      revision: "c93a066ea94157c10207f2946ebd7f5807a11cf2"
+      tag:      "v1.146.0",
+      revision: "079e05d08b86ec1b07509d2e755c631156d3705b"
   license "LGPL-2.1-only"
-  revision 1
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
   livecheck do
@@ -17,12 +16,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0ee4cac2846fb3f67c0789f5cd1657d686d3d21d7e119f1985a18b886bd58ce2"
-    sha256 cellar: :any, arm64_sequoia: "b422fb8a0fe7004edb63703962c09e0bd76edc4eb6f5349d9c735d11d2748b9f"
-    sha256 cellar: :any, arm64_sonoma:  "11de540433bcecd57b43ba637d0f8d8431062f575d952962c1845bda9ae18ca0"
-    sha256 cellar: :any, sonoma:        "1af6511fddd238b87b3df2d52db5a681357f38433ac2200625ce64186bf226bc"
-    sha256               arm64_linux:   "3a7199a5280495ef934b1dac9c07e84c38ad0f7d36c62b8f906477333c1f53b4"
-    sha256               x86_64_linux:  "6807139b2385d51b1d4e9c2cc022c504d00a26918e4716cae342e44cf447bf6f"
+    sha256 cellar: :any, arm64_tahoe:   "ba43e5d1da82aa094a7223ad60bd9249a6bbe790a9a907e01555b750cfa10c99"
+    sha256 cellar: :any, arm64_sequoia: "ddcbd10124f31e662314a04b99798ae0dc846d705611b8ffb99e1abbdfd928f6"
+    sha256 cellar: :any, arm64_sonoma:  "f0d998580b17dae19368971d62e2756ae4a139824bf9d5c7370bce947c854ebf"
+    sha256 cellar: :any, sonoma:        "e89f75e12c7d7f9ee24b219d2b2bf5d91295703e9c6d59c4d86c0856d6abadf6"
+    sha256               arm64_linux:   "837051bfc3ed1f545502d662b5ab0a8003839b6f9900652b24c1913d3e22c693"
+    sha256               x86_64_linux:  "751688ad72d8db25e6deffa2f52afb16bc35f4594c54302c24a0cd3061a094b0"
   end
 
   depends_on "autoconf" => :build
@@ -34,6 +33,7 @@ class Semgrep < Formula
   depends_on "pipenv" => :build
   depends_on "pkgconf" => :build
   depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "dwarfutils"
   depends_on "gmp"
   depends_on "libev"
@@ -55,7 +55,7 @@ class Semgrep < Formula
   end
 
   pypi_packages package_name:     "semgrep",
-                exclude_packages: %w[certifi pydantic rpds-py]
+                exclude_packages: %w[certifi cryptography pydantic rpds-py]
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
@@ -163,8 +163,8 @@ class Semgrep < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/3d/a1/b1f328da3b153683d2ec34f849b4b6eac2790fb240e3aef06ff2fab3df9d/mcp-1.16.0.tar.gz"
-    sha256 "39b8ca25460c578ee2cdad33feeea122694cfdf73eef58bee76c42f6ef0589df"
+    url "https://files.pythonhosted.org/packages/a7/a4/d06a303f45997e266f2c228081abe299bbcba216cb806128e2e49095d25f/mcp-1.23.3.tar.gz"
+    sha256 "b3b0da2cc949950ce1259c7bfc1b081905a51916fcd7c8182125b85e70825201"
   end
 
   resource "mdurl" do
@@ -228,8 +228,8 @@ class Semgrep < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/0a/03/a1440979a3f74f16cab3b75b0da1a1a7f922d56a8ddea96092391998edc0/protobuf-6.33.1.tar.gz"
-    sha256 "97f65757e8d09870de6fd973aeddb92f85435607235d20b2dfed93405d00c85b"
+    url "https://files.pythonhosted.org/packages/34/44/e49ecff446afeec9d1a66d6bbf9adc21e3c7cea7803a920ca3773379d4f6/protobuf-6.33.2.tar.gz"
+    sha256 "56dc370c91fbb8ac85bc13582c9e373569668a290aa2e66a590c2a0d35ddb9e4"
   end
 
   resource "pydantic-settings" do
@@ -242,14 +242,19 @@ class Semgrep < Formula
     sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
+  resource "pyjwt" do
+    url "https://files.pythonhosted.org/packages/e7/46/bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726/pyjwt-2.10.1.tar.gz"
+    sha256 "3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"
+  end
+
   resource "python-dotenv" do
     url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
     sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/f3/87/f44d7c9f274c7ee665a29b885ec97089ec5dc034c7f3fafa03da9e39a09e/python_multipart-0.0.20.tar.gz"
-    sha256 "8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13"
+    url "https://files.pythonhosted.org/packages/78/96/804520d0850c7db98e5ccb70282e29208723f0964e88ffd9d0da2f52ea09/python_multipart-0.0.21.tar.gz"
+    sha256 "7137ebd4d3bbf70ea1622998f902b97a29434a9e8dc40eb203bbcf7c2a2cba92"
   end
 
   resource "referencing" do
@@ -278,8 +283,8 @@ class Semgrep < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/db/3c/fa6517610dc641262b77cc7bf994ecd17465812c1b0585fe33e11be758ab/sse_starlette-3.0.3.tar.gz"
-    sha256 "88cfb08747e16200ea990c8ca876b03910a23b547ab3bd764c0d8eb81019b971"
+    url "https://files.pythonhosted.org/packages/17/8b/54651ad49bce99a50fd61a7f19c2b6a79fbb072e693101fbb1194c362054/sse_starlette-3.0.4.tar.gz"
+    sha256 "5e34286862e96ead0eb70f5ddd0bd21ab1f6473a8f44419dd267f431611383dd"
   end
 
   resource "starlette" do
@@ -293,8 +298,8 @@ class Semgrep < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "uvicorn" do

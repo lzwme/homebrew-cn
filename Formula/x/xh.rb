@@ -1,18 +1,18 @@
 class Xh < Formula
   desc "Friendly and fast tool for sending HTTP requests"
   homepage "https://github.com/ducaale/xh"
-  url "https://ghfast.top/https://github.com/ducaale/xh/archive/refs/tags/v0.25.0.tar.gz"
-  sha256 "6145f48cbefbb2bd1aa97ebcc8528d15ada1303e6e80fdd6a4637014f0f1df1c"
+  url "https://ghfast.top/https://github.com/ducaale/xh/archive/refs/tags/v0.25.3.tar.gz"
+  sha256 "ba331c33dc5d222f43cc6ad9f602002817772fd52ae28541976db49f34935ae3"
   license "MIT"
   head "https://github.com/ducaale/xh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a09bdf3126de1a518733e1469e53a377efb81845544b1d5f0d08e62f4d938b94"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b7f289a04a724821774f6530ac83519177605025c484584ebda45962bcc76d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7569e9f2fe3e014f148ea72b33e58e496e017e79f490497110d26c4b5018e18b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d9cfede6039da74ace5b5753f5387128b9444644f7f0dac3126960f7958e9fa6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c381b9c1a70f9140d746e9fb7b655c84066e0dec1184d1b619e54ece3827ee18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8690ff2328408ffe9a1a6fc5b0d91ec951d0b9ab4b47a3239aaf53bd93f8ce2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4a8f271b52fc229048df16f0e422010c50d10484d8d6eb1b5fa2a9724b5d3ab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22dacb461b1174a85e381e512a06f88329b905f0d66a2f129362dc06c34d8696"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ecb25ebe2e75782784f1049ab84eaa78f327527bc835cd4c10d1bf31625f4bb9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d44547a1508f6ebf8de1943b226971b02ca2958f7a5b57e2b6812470f8b6cb92"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "143b423684816dafd6748cce6f394499d1150f677eed136758ceae3dde7c3d8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "997b2b36f8648efe2c3ea81e77edcbd3111470c5b13346f850d7f4f03ff4ea3e"
   end
 
   depends_on "rust" => :build
@@ -28,7 +28,7 @@ class Xh < Formula
   end
 
   test do
-    hash = JSON.parse(shell_output("#{bin}/xh -I -f POST https://httpbin.org/post foo=bar"))
-    assert_equal hash["form"]["foo"], "bar"
+    assert_match version.to_s, shell_output("#{bin}/xh --version")
+    assert_match "Accept-Encoding: gzip, deflate, br, zstd", shell_output("#{bin}/xh --offline https://httpbin.org/get")
   end
 end

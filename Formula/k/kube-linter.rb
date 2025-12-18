@@ -1,18 +1,18 @@
 class KubeLinter < Formula
   desc "Static analysis tool for Kubernetes YAML files and Helm charts"
   homepage "https://github.com/stackrox/kube-linter"
-  url "https://ghfast.top/https://github.com/stackrox/kube-linter/archive/refs/tags/v0.7.6.tar.gz"
-  sha256 "f85eaae3b622725ef95ee01be4fc9236c09656775935a6b26a21d2dc3daf6af1"
+  url "https://ghfast.top/https://github.com/stackrox/kube-linter/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "0d67ce0bf15203abdf6193590b21924a988ed406ea6221bd83a08d67405ffb04"
   license "Apache-2.0"
   head "https://github.com/stackrox/kube-linter.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7380829a0f6ae2880c44efe2bf18395b7e1e620b2f2b23fc70516b7063aa7964"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7380829a0f6ae2880c44efe2bf18395b7e1e620b2f2b23fc70516b7063aa7964"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7380829a0f6ae2880c44efe2bf18395b7e1e620b2f2b23fc70516b7063aa7964"
-    sha256 cellar: :any_skip_relocation, sonoma:        "25bbb4d6dd5cce47ca9ad4be319ac607113f2f91bd84841eac7e3fe8420349b8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5176ac8d4e627fc465845981de9fd56ee5d8bc11532b472fc2321005b1b81f7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "790d26121ae92f80f68e5b62ea689276dfc003d6bf7a52c97cf1995020eccb29"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7830759e1688fa7b45842ede9fef8d2861c6b0d8a87873ef85d4a450cb215234"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7830759e1688fa7b45842ede9fef8d2861c6b0d8a87873ef85d4a450cb215234"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7830759e1688fa7b45842ede9fef8d2861c6b0d8a87873ef85d4a450cb215234"
+    sha256 cellar: :any_skip_relocation, sonoma:        "329de0f096b6bbb58674ff7466371fd34c845fd26650cd4589459dc7e992229a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7676a74b2886c13490d233d01ffaa3562206d69b0d0cdf7e13b101fe21f10a88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d1ac7d564028714d17f0c6eec4b0b9c7b4f89d522689de1a9114b64e81d1c18"
   end
 
   depends_on "go" => :build

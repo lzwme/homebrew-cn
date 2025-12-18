@@ -4,6 +4,7 @@ class Fastlane < Formula
   url "https://ghfast.top/https://github.com/fastlane/fastlane/archive/refs/tags/2.229.1.tar.gz"
   sha256 "3e9c945e804cf99f20e0d29fa91c2fbd7cf303c171cf7b36c7b125b49a776e45"
   license "MIT"
+  revision 1
   head "https://github.com/fastlane/fastlane.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class Fastlane < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0c70a893ee9bda5fe70704a86c83a3fe077fb15cf3d5d2e90288d55a3565d457"
-    sha256 cellar: :any,                 arm64_sequoia: "dad9fd2c520ef5c6aef07d4cc72f6b7e96200b2d1399c1635f9064144ab270b5"
-    sha256 cellar: :any,                 arm64_sonoma:  "6f43ca74792b08b7fdb5aaa38d47ee1638ecace8e2068c91e06cfc8df243113e"
-    sha256 cellar: :any,                 sonoma:        "0505ac896e42a2b22c49c87ea7f9b41d78f3992c25db53abc72f5a911a31f458"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b8b7a3e5ce981682b4309b8a3d77a40ff7f2d1ed259bb1a817e59026d12359b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57e24bbe564f09cc51f39e43432601597685b442ff8f4dbc3c32bc0050d9d393"
+    sha256 cellar: :any,                 arm64_tahoe:   "24c5b266f7e958bb92a80f7fc051c077286ae4fca39df9d7614e3599df803af6"
+    sha256 cellar: :any,                 arm64_sequoia: "6d2fe272ffea1f5a1f32315dc35878bf82e0ad8fbe363a65b385f2a8b16404cb"
+    sha256 cellar: :any,                 arm64_sonoma:  "e0fa319ec1b0196a7d38098d34776acf579555f262e88c48a21e922a9fa95f6e"
+    sha256 cellar: :any,                 sonoma:        "e684737d1c1237ceb833a4e41d08b71c7ac97a9ff3721fdc70bd2514198b8288"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0ebe1508dde6c09f9ec02f4eea681884dc9c5feb68f5b6f75e6e8ab780b1a12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42815d472814a9df0ab2faeac4086533d73d5eb4a2845823a2d837b39debe57b"
   end
 
   depends_on "ruby"

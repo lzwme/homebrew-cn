@@ -6,14 +6,15 @@ class Solargraph < Formula
       tag:      "v0.57.0",
       revision: "9c707a291291ef6b86a030bca80b92b4cc3de7d0"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "da52af7a6bfc1dbead71eca2fde7908c2faa2b388151aec229d40ac1a6a091bd"
-    sha256 cellar: :any,                 arm64_sequoia: "b5206d19e035110287f74c4cef7e113c70b23bf0d12087c0d74eea355d61364e"
-    sha256 cellar: :any,                 arm64_sonoma:  "7a05aa840993a08073ba901e7977f285aae32d90162a3e10bf80612475c5cb18"
-    sha256 cellar: :any,                 sonoma:        "50fc5d9a0676cbca78cab5c86b8028c6200adf9c92e950c00472d810b9a8fa8b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d806c1ebe2389b5067f09558153aed3453abfc6fd45233f7d81b191c2a8a1149"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8c9f63702530f99129b29adcb133824d55f02d491315fe04c68ae0240a08fdd"
+    sha256 cellar: :any,                 arm64_tahoe:   "63101bffec08eb9253262eed21549333a101961ed2a626b4645f3370685973e0"
+    sha256 cellar: :any,                 arm64_sequoia: "be219604f3d28f79d26c23473ee99dc6fbee5e2faebbd4188df9ec5917b50f45"
+    sha256 cellar: :any,                 arm64_sonoma:  "d629b4cc849afa5caea8be1cf3d16e40efd47da01321beefc5b253df417a6256"
+    sha256 cellar: :any,                 sonoma:        "60f0678928771655ba5f06b09efbe7e84bfd997b5317113eec6dcc2aeba70959"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d57da0e76d452bddbcc8a73b0d1d2fa331429011ccd29286d4b029bf2c1764e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0c185e820b08014e35583e5f74c5ffb2cdbb56208f34d5c2da2aca75198f587"
   end
 
   depends_on "ruby" # Requires >= Ruby 2.7

@@ -1,18 +1,18 @@
 class Mdfried < Formula
   desc "Terminal markdown viewer"
   homepage "https://github.com/benjajaja/mdfried"
-  url "https://ghfast.top/https://github.com/benjajaja/mdfried/archive/refs/tags/v0.14.6.tar.gz"
-  sha256 "cfabc77bff69b440cbc8909771f724c6c240e9b0f9787cb7c948d2d333fd8cf1"
+  url "https://ghfast.top/https://github.com/benjajaja/mdfried/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "e5ab52ee8abafc18f66d332ad23f144f3a5f4abce76793c2ad9f69aa70cad1b3"
   license "GPL-3.0-or-later"
   head "https://github.com/benjajaja/mdfried.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2bac36d78f44fda65666e9e8d3286be3677c48bc277a996bad4a06a4a1ee46ea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "850f4ef4f8b058644e2da2e8a2a71b32618e089aceffe368b6563e3dc3dbfdb2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c061cdd90833f334a1fe732154199ed6d2465d57dd48a0dc2b7c97831e6251e4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e64b5ed143cee813c8b7f31a52283437d0939855973c3a6f03a075960113b34b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5b182a97bed382add9048d092abcda09af62f38f52b00af9776a314e4b4b71a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba4328a89e4a82e7f1fcda56dbb8039ccb56b5c834f02aba0d31ba7e164a8121"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da244c21fb093f10b1222be2887db590100c059bdb10d4de8d99999fc7e00ed9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd92127b7d739728820c7ec8cd5bc3c4143a44f0db182cebefcfb73d5e5c151f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73bd75e2862b754df570beac579d3bab3db6ce6f841c7dc0e4f303b53a44039c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2dbf7b7786b446efd7713a14c28703946e19db79e0b286056328d1b14c377656"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ea1418c70ba4fc24ccea040c110e7491653a9de44840806ce54c5fa0ed42332"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d1b416858ee03e2301f97a1e4e08fb7de6b84e781184846be65a21909937fab"
   end
 
   depends_on "rust" => :build
@@ -31,7 +31,7 @@ class Mdfried < Formula
       # Hello World
     MARKDOWN
 
-    output = shell_output("#{bin}/mdfried #{testpath}/test.md")
-    assert_match "system fonts detected", output
+    output = shell_output("#{bin}/mdfried #{testpath}/test.md 2>&1")
+    assert_match "cursor position could not be read", output
   end
 end

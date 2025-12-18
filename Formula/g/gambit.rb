@@ -1,8 +1,8 @@
 class Gambit < Formula
   desc "Software tools for game theory"
   homepage "https://www.gambit-project.org/"
-  url "https://ghfast.top/https://github.com/gambitproject/gambit/archive/refs/tags/v16.4.0.tar.gz"
-  sha256 "e8e3b07c45b51c94e089e2ea4a349de692f897b0720db7a212afc3961517a77d"
+  url "https://ghfast.top/https://github.com/gambitproject/gambit/archive/refs/tags/v16.4.1.tar.gz"
+  sha256 "73718a47201b7a602c33d351faa4dd161247217a68c450eec9f2d7b0d1ef69f7"
   license all_of: ["GPL-2.0-or-later", "Zlib"]
 
   livecheck do
@@ -11,13 +11,12 @@ class Gambit < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "fda19472e7338d469ab502354f841d7274da2ad58fbdcebca31cbe7cd2691373"
-    sha256 cellar: :any,                 arm64_sequoia: "a756abfae652920468ccc33ed14b6d2d35ca0514b3edd557c474b75f16aedc28"
-    sha256 cellar: :any,                 arm64_sonoma:  "b3b2b719786a00453e0b2c00b0e31d9a78330774a366ca4152bd620eaefb5f24"
-    sha256 cellar: :any,                 sonoma:        "10f1e8d813afaa98c88966f56bae72de8849ef801f338e74e989620e0d42fc6c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7c7bce83a2e06e9dbf842b15ddababe48c266dd58bbc7889a6d9ecd8675c80b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22ed7b5b6f8a265a7f6e92c2477d6d0ff7d2bb0598b33fbc3d789f3f8f6c3d87"
+    sha256 cellar: :any,                 arm64_tahoe:   "b551b800de18e4a91c5b6489a25a9a14e3606ac0395ea478843d0e2bd7314d51"
+    sha256 cellar: :any,                 arm64_sequoia: "7eda66fb3af412ec412e2196d530ed511f17401d0d349d23ab14653b61f78681"
+    sha256 cellar: :any,                 arm64_sonoma:  "dea3a273a571884e6122365ad5bfbfaacc1e033b0df9e56d2c81ba72172eb17f"
+    sha256 cellar: :any,                 sonoma:        "46d4484efc0bf3dbdbac3c8073e3dd262f4fa47699173177a008c33eb17d97e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5800ddb4160b18eff0e0b7027d8c8a78aa120447968caf85e17b46320177863f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a945d477244c5a983dbb6caa5395bdce7a81fafd48b0965fb7035efaf4e2237"
   end
 
   depends_on "autoconf" => :build

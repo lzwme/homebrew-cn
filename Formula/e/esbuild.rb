@@ -1,18 +1,18 @@
 class Esbuild < Formula
   desc "Extremely fast JavaScript bundler and minifier"
   homepage "https://esbuild.github.io/"
-  url "https://ghfast.top/https://github.com/evanw/esbuild/archive/refs/tags/v0.27.1.tar.gz"
-  sha256 "bcc3abdc911961ef04340714dc69ddc34af6d2e2c60a1c4036d1c7f1a3fc4a23"
+  url "https://ghfast.top/https://github.com/evanw/esbuild/archive/refs/tags/v0.27.2.tar.gz"
+  sha256 "d16527a0b29c747d80afaa1cd362d7eee5814c0569af6cc2080e7343482b28d2"
   license "MIT"
   head "https://github.com/evanw/esbuild.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "11d13b1e699e464906638a3cd03e64ca869d1b4638f0fadbdadbfb01dae739bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11d13b1e699e464906638a3cd03e64ca869d1b4638f0fadbdadbfb01dae739bd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11d13b1e699e464906638a3cd03e64ca869d1b4638f0fadbdadbfb01dae739bd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c3d77af2de3e7d731f3e1d0254af7bc27ace0b6fb63b8de53c6ba93d9efc9a49"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2217245628968ed89b489562617d9ccf2433654276c6bf5565298f11c0eb095"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ff4dec8ff9f88b0d90dd07118ecb056ae9a8b73250e89e399eadd9a21b6001d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef2a77489c1e3208b4d60c0acd23b1ce015365848f1dc74e8fef27d921324334"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef2a77489c1e3208b4d60c0acd23b1ce015365848f1dc74e8fef27d921324334"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef2a77489c1e3208b4d60c0acd23b1ce015365848f1dc74e8fef27d921324334"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d05eda7608e16a581221fb75b43405b9ad23774034ce9fc85606b63b7bb45ebf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a50194e6516e1bc09b436702de8b7aff071dec8ae8a1b59f3e783dbff4c683b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "813d735b86219759c1bd5d44a723e55b9418977b0d25e521ccee3f0473846459"
   end
 
   depends_on "go" => :build

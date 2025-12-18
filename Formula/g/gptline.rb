@@ -6,16 +6,16 @@ class Gptline < Formula
   url "https://files.pythonhosted.org/packages/5b/28/d15a9a5b349c77a051a633e13141151314f352067ec7d516220bd6b20fcf/gptline-1.0.8.tar.gz"
   sha256 "4a0a0b5fa4f23e5f2ad7ac5bf44a9143e5de3757b0b8eefe5d78a7757d1d34bb"
   license "GPL-3.0-only"
-  revision 10
+  revision 11
   head "https://github.com/gnachman/gptline.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "eabfb3096d73981aaf0adbded49ecbf9b2aa948b2fc03ef5a554780eb83505b3"
-    sha256 cellar: :any,                 arm64_sequoia: "8b89a483adefa52682a57dbed75d103a102c08a73155d7213426bb5fd7687dbb"
-    sha256 cellar: :any,                 arm64_sonoma:  "81a8169e257ff6755e01ce7db47034663bb2d4673baf61999d483974ad66cb9a"
-    sha256 cellar: :any,                 sonoma:        "9d96104cbb3c39d82886ea7edd95815196723e6e9274daee1daae1813a8808eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "34578be1a85447ecd8637c8bd85bc55191966e5c409bed18998c4ac4ce8ffeb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19a3dc13a05e5b18fd9d0fceb18685c9739d669ae0d81723276846c6991209c6"
+    sha256 cellar: :any,                 arm64_tahoe:   "db20f984e0520a1958664dec859b5567fd505edc883780797ad0a30011421838"
+    sha256 cellar: :any,                 arm64_sequoia: "ea2191927d41c6b72b151547e05aaa0f23fa48cd50917347ed92a45d148b3d94"
+    sha256 cellar: :any,                 arm64_sonoma:  "f1aad6333495ed28e582b5bb9c002bc9aa0e9336517b67bb9eb05f5592c26897"
+    sha256 cellar: :any,                 sonoma:        "582eb7340f77a7bacf154eed928b60f3a54d1e7818dabe29fab1b87317e3e063"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c7c926647feeddbf0dcade3117a3b18ad996f72356b3b7ee93665174a233913"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74f4f577f7fededd188f2864e1cf67646fd15bb0cf35941181ccb29f34bb5c20"
   end
 
   depends_on "pkgconf" => :build
@@ -85,8 +85,8 @@ class Gptline < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
-    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
+    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
+    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
   end
 
   resource "h11" do
@@ -125,8 +125,8 @@ class Gptline < Formula
   end
 
   resource "joblib" do
-    url "https://files.pythonhosted.org/packages/e8/5d/447af5ea094b9e4c4054f82e223ada074c552335b9b4b2d14bd9b35a67c4/joblib-1.5.2.tar.gz"
-    sha256 "3faa5c39054b2f03ca547da9b2f52fde67c06240c31853f306aea97f13647b55"
+    url "https://files.pythonhosted.org/packages/41/f2/d34e8b3a08a9cc79a50b2208a93dce981fe615b64d5a4d4abee421d898df/joblib-1.5.3.tar.gz"
+    sha256 "8561a3269e6801106863fd0d6d84bb737be9e7631e33aaed3fb9ce5953688da3"
   end
 
   resource "lxml" do
@@ -150,8 +150,8 @@ class Gptline < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/09/48/516290f38745cc1e72856f50e8afed4a7f9ac396a5a18f39e892ab89dfc2/openai-2.9.0.tar.gz"
-    sha256 "b52ec65727fc8f1eed2fbc86c8eac0998900c7ef63aa2eb5c24b69717c56fa5f"
+    url "https://files.pythonhosted.org/packages/0f/39/8e347e9fda125324d253084bb1b82407e5e3c7777a03dc398f79b2d95626/openai-2.13.0.tar.gz"
+    sha256 "9ff633b07a19469ec476b1e2b5b26c5ef700886524a7a72f65e6f0b5203142d5"
   end
 
   resource "prompt-toolkit" do
@@ -235,8 +235,8 @@ class Gptline < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "wcwidth" do

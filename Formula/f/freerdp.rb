@@ -1,17 +1,17 @@
 class Freerdp < Formula
   desc "X11 implementation of the Remote Desktop Protocol (RDP)"
   homepage "https://www.freerdp.com/"
-  url "https://ghfast.top/https://github.com/FreeRDP/FreeRDP/releases/download/3.19.1/freerdp-3.19.1.tar.gz"
-  sha256 "0886818968884464d72f8c363b633e97561bd438d84fce7331cb0df07b088919"
+  url "https://ghfast.top/https://github.com/FreeRDP/FreeRDP/releases/download/3.20.0/freerdp-3.20.0.tar.gz"
+  sha256 "96631873b00c8a872c9fe4e668957c3e4e0808f81ccb71f6ac028096a2682806"
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_tahoe:   "7a654d4f19bc2e025aa61a0d6ee2eb84c8885e434cf736b97433e22e1d1381a0"
-    sha256 arm64_sequoia: "8d823d684b7cbb010910a49ec5f55f554364d7e784450e3cea07b105b6202933"
-    sha256 arm64_sonoma:  "257007cad6d75862f4569da6851ed7c9d338c4863b0c7352cae0fffda70f3697"
-    sha256 sonoma:        "8ed4f1129fc2a580fee1a8bb568bdab9f7e528b5a650c72053fcfb7395bef44f"
-    sha256 arm64_linux:   "9287fc36cbe7c2450d1c24abec56fafc241b152fc9fb477c9b85a0772a4d7aed"
-    sha256 x86_64_linux:  "c2daee13bdb6659a5035639fb4675686fc576e5043f1b63c32f01c09590976d2"
+    sha256 arm64_tahoe:   "f85ec9dae598d3ee40875f82cb3892ca200aa2636062f680eb3967de3513275d"
+    sha256 arm64_sequoia: "4e5a3226d25d8f5ce5fb75365ca5bf072d811b71cf3011f927eedd4f5e481971"
+    sha256 arm64_sonoma:  "534cebac60d04a8be786b6a724a4a196e269e47b6a381708e5ea61c09b0b9046"
+    sha256 sonoma:        "bf69732c48b791434b95b3d0af3d08dfb421c18e22743963d7463194715107b6"
+    sha256 arm64_linux:   "ca894e4afd8e81a2e023e1bc485af5ac304259cac836dd5b524f37ab19b3e14f"
+    sha256 x86_64_linux:  "bae5393b729238390464741a2feb631fa7913cc918203ec3542f41ae40c64867"
   end
 
   head do

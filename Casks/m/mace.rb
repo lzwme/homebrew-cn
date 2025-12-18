@@ -1,6 +1,6 @@
 cask "mace" do
-  version "0.0.3-alpha"
-  sha256 "6812b15def6e245623f8023a007afa9c15487d76d66580c9a762b514dfed417f"
+  version "0.0.5-alpha"
+  sha256 "ccc494be7001aef462a77bb1c8ccdaf14b36ce9d9fb12c003a8382c41c341e7a"
 
   url "https://ghfast.top/https://github.com/MACE-App/MACE/releases/download/v#{version}/M.A.C.E.V#{version}.dmg"
   name "MACE"

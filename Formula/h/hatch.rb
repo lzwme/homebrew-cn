@@ -6,15 +6,15 @@ class Hatch < Formula
   url "https://files.pythonhosted.org/packages/b9/c1/8598996a6f264d430c530799dc65fb13942fb29092e35505039a5f2fb5dc/hatch-1.16.2.tar.gz"
   sha256 "f288938da85b4b90e47d94788e19e9976dcd6fd53b48343ea251a2a37256a980"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3aab8141cafc89c9f6f944c6c2dba7a3db55582f439dce9fab58431190d35ea2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3aab8141cafc89c9f6f944c6c2dba7a3db55582f439dce9fab58431190d35ea2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3aab8141cafc89c9f6f944c6c2dba7a3db55582f439dce9fab58431190d35ea2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "50095c527c7348697c90aad04c011d9f6c5fcc4f42d519293242c20e3780820e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d251b4d19309da8209e768c7b80ba80506195475e238c2ba1543af02f7818d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d251b4d19309da8209e768c7b80ba80506195475e238c2ba1543af02f7818d0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "004b262a741aea0794276c785cbf671e93562798fa1e6443f8d26997af1a8b69"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "004b262a741aea0794276c785cbf671e93562798fa1e6443f8d26997af1a8b69"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "004b262a741aea0794276c785cbf671e93562798fa1e6443f8d26997af1a8b69"
+    sha256 cellar: :any_skip_relocation, sonoma:        "42a47fd571ca1bfd689919a7404e2d66816978e63e87136ed624b8f1b92b5862"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b72216eff8dfe6d920f6cef9bf71611bea9d32c6b4068cee438753afa268a6f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b72216eff8dfe6d920f6cef9bf71611bea9d32c6b4068cee438753afa268a6f6"
   end
 
   depends_on "certifi" => :no_linkage
@@ -46,8 +46,8 @@ class Hatch < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
-    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
+    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
+    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
   end
 
   resource "h11" do

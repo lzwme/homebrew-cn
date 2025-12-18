@@ -3,8 +3,8 @@ class Systemd < Formula
 
   desc "System and service manager"
   homepage "https://systemd.io"
-  url "https://ghfast.top/https://github.com/systemd/systemd/archive/refs/tags/v258.3.tar.gz"
-  sha256 "a800facc2effb509bff67700ce1224da96a36fb658e29e03c843fb74fa1edbdc"
+  url "https://ghfast.top/https://github.com/systemd/systemd/archive/refs/tags/v259.tar.gz"
+  sha256 "a84123692d1add7f9c48fd11cdf5f901393008c2d2ade667c18f25a20bf1290d"
   license all_of: [
     # Main license is LGPL-2.1-or-later while systemd-udevd is GPL-2.0-or-later
     "LGPL-2.1-or-later",
@@ -30,8 +30,8 @@ class Systemd < Formula
   head "https://github.com/systemd/systemd.git", branch: "main"
 
   bottle do
-    sha256 arm64_linux:  "7a7bb1c3eaeaff654d891982a50290c96a75ff6d59e8a147b3ef6fbc08c0fa27"
-    sha256 x86_64_linux: "291a37a5cd7e6d00f9d636d174ec4fe9f8acbb65139e9c691ce25211ce3a9ab8"
+    sha256 arm64_linux:  "ebc77647b5fc3b48eab9fe8d73e06cccc12cdee044225460da75e6dde341005a"
+    sha256 x86_64_linux: "e28c7985c095c7dfa598098528870418631c375e68346782ab6730c1049d8d6f"
   end
 
   keg_only "it will shadow system systemd if linked"
