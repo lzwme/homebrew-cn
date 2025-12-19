@@ -6,9 +6,10 @@ class Nox < Formula
   url "https://files.pythonhosted.org/packages/b4/a8/e169497599266d176832e2232c08557ffba97eef87bf8a18f9f918e0c6aa/nox-2025.11.12.tar.gz"
   sha256 "3d317f9e61f49d6bde39cf2f59695bb4e1722960457eee3ae19dacfe03c07259"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "eb51bcd680c1e9d1ebf6a1699da147bc94ccdaed30602ecd1920a822977e952a"
+    sha256 cellar: :any_skip_relocation, all: "c74018c4d5b9a150f1e1e7036cb8d1e51fdf7b914cad16ed03a0ec38fe929318"
   end
 
   depends_on "certifi" => :no_linkage
@@ -42,8 +43,8 @@ class Nox < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
-    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
+    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
+    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
   end
 
   resource "humanize" do
@@ -57,8 +58,8 @@ class Nox < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "virtualenv" do

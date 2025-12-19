@@ -3,17 +3,17 @@ class Ramalama < Formula
 
   desc "Goal of RamaLama is to make working with AI boring"
   homepage "https://github.com/containers/ramalama"
-  url "https://files.pythonhosted.org/packages/da/7c/40ba3d9cdacf20ad4b3ccc6f5652aec8c25ac855f93a3570114f84caaa17/ramalama-0.15.0.tar.gz"
-  sha256 "a4843b6741c6d759bb8cbf14735db8be3ff5e4f25ab8d7af324e94af570d6119"
+  url "https://files.pythonhosted.org/packages/8d/46/f315941789325bb0c825e85b2ed5269539367bf0c2ed96b321a9143af9e5/ramalama-0.16.0.tar.gz"
+  sha256 "24e21c49934ec6f19664f270a78232f4bcc972a7e3fc8619381be4cf096fba01"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "09ad2fd665931f9e6ea2807543d265c099c6c0d208a3af22a1cf943813ed3933"
-    sha256 cellar: :any,                 arm64_sequoia: "eb0e6322aa26a20a8e7c46a728924b25a147b3db66d70c1ca5661f81900d2ffd"
-    sha256 cellar: :any,                 arm64_sonoma:  "707d2748308f4bef1abf419c28c79d1c9459260ddc179e34ab7ae187bf68f662"
-    sha256 cellar: :any,                 sonoma:        "e342c12bd54305ca824ffe9237cafd64459242f4fb2669aa3f37cdc4c57bea56"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fff9dcb4b80ca4cd2439cbfd89930692adf74c2d1fd49c5ecad0242acc9dbcec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14da24f88dcbe9c9d2df00b8e3578277a7a82a74c8f30a49c54b59f9a857a018"
+    sha256 cellar: :any,                 arm64_tahoe:   "05af9e331b867c398fb80429b3a80482b24a855e5f00d571412b1e8bec1ccdb2"
+    sha256 cellar: :any,                 arm64_sequoia: "7fd752132afe253ec4bafa7bbfe49ec81cbe4bd8593672ba1ed6d2c3363fb9a7"
+    sha256 cellar: :any,                 arm64_sonoma:  "42d57bcbd577f54d785173786fc69b49e37e4d127857d50024a473db2cd7fe4e"
+    sha256 cellar: :any,                 sonoma:        "53534d2432ce095bd179163fcaf77b8de83805cf4cf22cf6ca93cf73ea2308e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3be6f806a088036b0a081a526b1afaf450e336cf57ee0384bdac8a943b0b8023"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "abb0a9699e40667bf12bdc6c338973c06203666d66240770b3051c5a2c69a28c"
   end
 
   depends_on "libyaml"

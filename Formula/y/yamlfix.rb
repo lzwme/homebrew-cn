@@ -3,13 +3,12 @@ class Yamlfix < Formula
 
   desc "Simple and configurable YAML formatter that keeps comments"
   homepage "https://lyz-code.github.io/yamlfix/"
-  url "https://files.pythonhosted.org/packages/e8/5f/cea9f9a9027f3f7ac6b5345e654255518013e94d5c3146746a139be5c865/yamlfix-1.19.0.tar.gz"
-  sha256 "22f95ed2a5b88f46f06cf7922c616b6706d3596f23a0553138796ab909e5fa96"
+  url "https://files.pythonhosted.org/packages/93/1d/b60d4411ff495de9b7598cc041e29c661e8e2f9d476a8a09bad1f54c1bce/yamlfix-1.19.1.tar.gz"
+  sha256 "05f6add13959637564f278e9237f6e201ff75e061a0a4cb9fc06fa95c3001a22"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, all: "d99d4194e51c984cf46df23efb97630b8b7fb4fad3f037fb81304ae25c21683b"
+    sha256 cellar: :any_skip_relocation, all: "bac9036a8904008e8514eb3a39c262b37d7fea82812b2b31e3d0875b29e31c9b"
   end
 
   depends_on "pydantic" => :no_linkage

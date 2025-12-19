@@ -1,20 +1,18 @@
 class Parlay < Formula
   desc "Enrich SBOMs with data from third party services"
   homepage "https://github.com/snyk/parlay"
-  url "https://ghfast.top/https://github.com/snyk/parlay/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "b06ae57019144bdec330747dc2593bf07976acab06990682731205a8ce819a72"
+  url "https://ghfast.top/https://github.com/snyk/parlay/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "a903162d52c8e040affd3bf9790e1b5362e75b6f277dcb49ecfc628b84e6f658"
   license "Apache-2.0"
   head "https://github.com/snyk/parlay.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "96dbbf77cb5449ad774bcbcc89b834ba15e49298af96ff0634fa6624b3a2a0dd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9068e1250bb228d85ba7aded90418b57b27dab63a8d68cedf760d281b2f4c31d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9068e1250bb228d85ba7aded90418b57b27dab63a8d68cedf760d281b2f4c31d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9068e1250bb228d85ba7aded90418b57b27dab63a8d68cedf760d281b2f4c31d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ae13e29edb7eb752c6588b2fec0a0fb3881d56e1f44b2d711d71923d44641cf3"
-    sha256 cellar: :any_skip_relocation, ventura:       "ae13e29edb7eb752c6588b2fec0a0fb3881d56e1f44b2d711d71923d44641cf3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a61328e36579dbc0e2128d755821cf20f0a36f28e7ec065d969c4794c4430cbf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0bd178923029b114ce65a76c9880b2c7c137fb8e2a125f103f61f9a8b280d45"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25f9163845ce736478f8380e32daa714c856965cf5e7641fb41c9f3d9b24ebff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25f9163845ce736478f8380e32daa714c856965cf5e7641fb41c9f3d9b24ebff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25f9163845ce736478f8380e32daa714c856965cf5e7641fb41c9f3d9b24ebff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1445b085620fd14eb860108e8cab624d6347f9a590194fad409d29a471c59601"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "584682d6b1bb31f97fafedb479b6999f8a2de0c9b42160f4c8a005b8859ea94b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72ea01111692233718e79a59d60fbe5b5cf9b06abe1b41751209818073dad060"
   end
 
   depends_on "go" => :build

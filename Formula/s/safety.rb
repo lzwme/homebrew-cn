@@ -6,16 +6,16 @@ class Safety < Formula
   url "https://files.pythonhosted.org/packages/6f/e8/1cfffa0d8836de8aa31f4fa7fdeb892c7cfa97cd555039ad5df71ce0e968/safety-3.7.0.tar.gz"
   sha256 "daec15a393cafc32b846b7ef93f9c952a1708863e242341ab5bde2e4beabb54e"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/pyupio/safety.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "847c3db1d89901af309c49f4baa9db762e5a27f4ef413f4ee72b6e1b4a7829cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c48ee3994d6327935c774c72113429c429dc9d94dae56bbf4dc32de5560a43ff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3cc4a5e1cd12a6612497bb2035601f76ae44193913af309d9643437316406fee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3c289e8a4c61803b6d9f161b048e9268482fe738179c1baa18591194c03d6988"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b5a32f09bee9a44939f1a5f5635076def66dbed1d2800efddae2045a701f8f31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a573430b4de3bc417fbecfa1a546ec667f1bc15cfdf98be46990ab1e486b0c57"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3822a3e4e85b21fe931017ac16e44ff4353f5305067072789a4161f89acfa919"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ed31f50fdaa58a14ad166269f66b5536ea6c38705b29ab5093c8d74b6d9bea8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3583e91e8b509b667bb97a7e972fe0670f542d5f7a31eb01d757e0e9071513d0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "92af9a0a090d0dbc712bfdec557f78e3c7dad040f91b2935d2ce388ddfff1da2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d3c68fc67336b274d66d563cc67a2e694de9d154833d5bf9d3a89b18d79a719"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3441c84ab935b7cf55fabe23c6528ea983a5ecae49e1cb5314e721678894bea"
   end
 
   depends_on "certifi" => :no_linkage
@@ -31,8 +31,8 @@ class Safety < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/cd/3f/1d3bbd0bf23bdd99276d4def22f29c27a914067b4cf66f753ff9b8bbd0f3/authlib-1.6.5.tar.gz"
-    sha256 "6aaf9c79b7cc96c900f0b284061691c5d4e61221640a948fe690b556a6d6d10b"
+    url "https://files.pythonhosted.org/packages/bb/9b/b1661026ff24bc641b76b78c5222d614776b0c085bcfdac9bd15a1cb4b35/authlib-1.6.6.tar.gz"
+    sha256 "45770e8e056d0f283451d9996fbb59b70d45722b45d854d58f32878d0a40c38e"
   end
 
   resource "charset-normalizer" do
@@ -51,8 +51,8 @@ class Safety < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
-    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
+    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
+    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
   end
 
   resource "h11" do
@@ -81,8 +81,8 @@ class Safety < Formula
   end
 
   resource "joblib" do
-    url "https://files.pythonhosted.org/packages/e8/5d/447af5ea094b9e4c4054f82e223ada074c552335b9b4b2d14bd9b35a67c4/joblib-1.5.2.tar.gz"
-    sha256 "3faa5c39054b2f03ca547da9b2f52fde67c06240c31853f306aea97f13647b55"
+    url "https://files.pythonhosted.org/packages/41/f2/d34e8b3a08a9cc79a50b2208a93dce981fe615b64d5a4d4abee421d898df/joblib-1.5.3.tar.gz"
+    sha256 "8561a3269e6801106863fd0d6d84bb737be9e7631e33aaed3fb9ce5953688da3"
   end
 
   resource "markdown-it-py" do
@@ -136,8 +136,13 @@ class Safety < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/9f/c7/ee630b29e04a672ecfc9b63227c87fd7a37eb67c1bf30fe95376437f897c/ruamel.yaml-0.18.16.tar.gz"
-    sha256 "a6e587512f3c998b2225d68aa1f35111c29fad14aed561a26e73fab729ec5e5a"
+    url "https://files.pythonhosted.org/packages/3a/2b/7a1f1ebcd6b3f14febdc003e658778d81e76b40df2267904ee6b13f0c5c6/ruamel_yaml-0.18.17.tar.gz"
+    sha256 "9091cd6e2d93a3a4b157ddb8fabf348c3de7f1fb1381346d985b6b247dcd8d3c"
+  end
+
+  resource "ruamel-yaml-clib" do
+    url "https://files.pythonhosted.org/packages/ea/97/60fda20e2fb54b83a61ae14648b0817c8f5d84a3821e40bfbdae1437026a/ruamel_yaml_clib-0.2.15.tar.gz"
+    sha256 "46e4cc8c43ef6a94885f72512094e482114a8a706d3c555a34ed4b0d20200600"
   end
 
   resource "safety-schemas" do
@@ -171,8 +176,8 @@ class Safety < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install

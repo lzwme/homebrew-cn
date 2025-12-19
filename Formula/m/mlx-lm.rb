@@ -3,15 +3,15 @@ class MlxLm < Formula
 
   desc "Run LLMs with MLX"
   homepage "https://github.com/ml-explore/mlx-lm"
-  url "https://ghfast.top/https://github.com/ml-explore/mlx-lm/archive/refs/tags/v0.29.0.tar.gz"
-  sha256 "1d849d5fc666509afe8b884b5cdcf489a2cd26311f90ac56fb6e93b0dcc3802e"
+  url "https://ghfast.top/https://github.com/ml-explore/mlx-lm/archive/refs/tags/v0.30.0.tar.gz"
+  sha256 "743898d1a5cb99523dd671d8ccd9e26127a5a971ae21cf858f68eb3d37de258e"
   license "MIT"
   head "https://github.com/ml-explore/mlx-lm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7917c987263c7f5999f04bd0f95f06c4612857519bbb4bf8dbae2f612b486c45"
-    sha256 cellar: :any, arm64_sequoia: "3f280969b29b5f62331c52fd2ba8e7c1e16fe939aa70775cef5c5aa71a0c1d84"
-    sha256 cellar: :any, arm64_sonoma:  "4fa548636dc94f2ca676d9e6b2829da85572bdfc6cd0751e755f88ee505d1e65"
+    sha256 cellar: :any, arm64_tahoe:   "1bdeb8a07f2849aec1ca9ee16f1b6180209863948bf97c372828b97caa8628bf"
+    sha256 cellar: :any, arm64_sequoia: "8d6355bd789776f398c8ebd836da4d4c36234c80dbe8ec0c2c411b3c1e4cd2b6"
+    sha256 cellar: :any, arm64_sonoma:  "9a0b0286bdfa9b295b3a543c3c5fa59a3740de17e84c2e5af282b777c6e91942"
   end
 
   depends_on "pkgconf" => :build
@@ -28,9 +28,19 @@ class MlxLm < Formula
 
   pypi_packages exclude_packages: %w[certifi mlx numpy]
 
+  resource "anyio" do
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
+  end
+
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
     sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+  end
+
+  resource "click" do
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "filelock" do
@@ -43,14 +53,29 @@ class MlxLm < Formula
     sha256 "c505de011584597b1060ff778bb664c1bc022e87921b0e4f10cc9c44f9635973"
   end
 
+  resource "h11" do
+    url "https://files.pythonhosted.org/packages/01/ee/02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963/h11-0.16.0.tar.gz"
+    sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
+  end
+
   resource "hf-xet" do
     url "https://files.pythonhosted.org/packages/5e/6e/0f11bacf08a67f7fb5ee09740f2ca54163863b07b70d579356e9222ce5d8/hf_xet-1.2.0.tar.gz"
     sha256 "a8c27070ca547293b6890c4bf389f713f80e8c478631432962bb7f4bc0bd7d7f"
   end
 
+  resource "httpcore" do
+    url "https://files.pythonhosted.org/packages/06/94/82699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cb/httpcore-1.0.9.tar.gz"
+    sha256 "6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"
+  end
+
+  resource "httpx" do
+    url "https://files.pythonhosted.org/packages/b1/df/48c586a5fe32a0f01324ee087459e112ebb7224f646c0b5023f5e79e9956/httpx-0.28.1.tar.gz"
+    sha256 "75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc"
+  end
+
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/98/63/4910c5fa9128fdadf6a9c5ac138e8b1b6cee4ca44bf7915bbfbce4e355ee/huggingface_hub-0.36.0.tar.gz"
-    sha256 "47b3f0e2539c39bf5cde015d63b72ec49baff67b6931c3d97f3f84532e2b8d25"
+    url "https://files.pythonhosted.org/packages/a7/c8/9cd2fcb670ba0e708bfdf95a1177b34ca62de2d3821df0773bc30559af80/huggingface_hub-1.2.3.tar.gz"
+    sha256 "4ba57f17004fd27bb176a6b7107df579865d4cde015112db59184c51f5602ba7"
   end
 
   resource "idna" do
@@ -103,6 +128,11 @@ class MlxLm < Formula
     sha256 "8138cec27c2f2282f4a34d9a016e3374cd40e5c6e9cb335063db66a0a3b71fad"
   end
 
+  resource "shellingham" do
+    url "https://files.pythonhosted.org/packages/58/15/8b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58e/shellingham-1.5.4.tar.gz"
+    sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
+  end
+
   resource "tokenizers" do
     url "https://files.pythonhosted.org/packages/1c/46/fb6854cec3278fbfa4a75b50232c77622bc517ac886156e6afbfa4d8fc6e/tokenizers-0.22.1.tar.gz"
     sha256 "61de6522785310a309b3407bac22d99c4db5dba349935e99e4d15ea2226af2d9"
@@ -114,8 +144,13 @@ class MlxLm < Formula
   end
 
   resource "transformers" do
-    url "https://files.pythonhosted.org/packages/dd/70/d42a739e8dfde3d92bb2fff5819cbf331fe9657323221e79415cd5eb65ee/transformers-4.57.3.tar.gz"
-    sha256 "df4945029aaddd7c09eec5cad851f30662f8bd1746721b34cc031d70c65afebc"
+    url "https://files.pythonhosted.org/packages/2f/33/c4d7a86f5a60fda56e72f90911ce859044ecdac1dcea4cf904c1eb20ecf2/transformers-5.0.0rc1.tar.gz"
+    sha256 "1fdde557b96ef8ea277c45b8e0d558f1e167fe28a98593f4c4aec0277e335821"
+  end
+
+  resource "typer-slim" do
+    url "https://files.pythonhosted.org/packages/8e/45/81b94a52caed434b94da65729c03ad0fb7665fab0f7db9ee54c94e541403/typer_slim-0.20.0.tar.gz"
+    sha256 "9fc6607b3c6c20f5c33ea9590cbeb17848667c51feee27d9e314a579ab07d1a3"
   end
 
   resource "typing-extensions" do

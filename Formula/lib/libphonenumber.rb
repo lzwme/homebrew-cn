@@ -1,10 +1,9 @@
 class Libphonenumber < Formula
   desc "C++ Phone Number library by Google"
   homepage "https://github.com/google/libphonenumber"
-  url "https://ghfast.top/https://github.com/google/libphonenumber/archive/refs/tags/v9.0.20.tar.gz"
-  sha256 "5de298e4a8c72564ac9cdae415f6cc9ea2952e9f1f9e71dd6d1c70755c92bf2f"
+  url "https://ghfast.top/https://github.com/google/libphonenumber/archive/refs/tags/v9.0.21.tar.gz"
+  sha256 "4261a7c38744b3b4859a424a193714ef55b53cd9f3d3d463f9ac589a2c778102"
   license "Apache-2.0"
-  revision 2
 
   livecheck do
     url :stable
@@ -12,12 +11,12 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1c381c1a0836240e8f8f47dab023aa2d759802cd2cee61305bfe17393bf1a9c8"
-    sha256 cellar: :any,                 arm64_sequoia: "dbb81601dba44eb44a3ecf37daff56b97308a70260957fadf5eacb756c794014"
-    sha256 cellar: :any,                 arm64_sonoma:  "3e30f55bcba9284d6d812196da543b39ef3345ef584a8e472b23005b5181e93d"
-    sha256 cellar: :any,                 sonoma:        "9a933d6a57f20f712e6d076e982fd91d4f7ee172a1b84974e929b3e6c7565cc9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee29f9a991084a43b0f7bc0c9e9d8e56f4dbfb70f5d50dd15dbb966a10b162f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0dd8db3da7e45745e4bdc527e4e825e9ee844e5df83616588e16db7dfc2080cf"
+    sha256 cellar: :any,                 arm64_tahoe:   "2221ec25b1678cd53cad48058a6529e8ed9f625b7f7d55e5c09b3c624331af7e"
+    sha256 cellar: :any,                 arm64_sequoia: "82a0b5fc2ed016694d2272c67bc67203db4025252befdefebfd8f721d893df08"
+    sha256 cellar: :any,                 arm64_sonoma:  "f265ff0661abf36720755a7cf790ca13be2ba2e13e8f75ccbc9dfc8fc192254b"
+    sha256 cellar: :any,                 sonoma:        "32299e931dcab521e2347b10a562b7d87c056fcf1dcc187a588215a0f87288f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1afb6b80e02630d70b578451ed7635c3d88042afc41b7bd829ffd20569ab40cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1048b7c09fdffde8af4cd6aaf5f7c486583bd57aa9e7ae4cf59f84486559b9b3"
   end
 
   depends_on "cmake" => [:build, :test]

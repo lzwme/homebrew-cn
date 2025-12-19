@@ -3,9 +3,9 @@ class Php < Formula
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
   # TODO: Remove TAILCALL VM workaround in next release
-  url "https://www.php.net/distributions/php-8.5.0.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.5.0.tar.xz"
-  sha256 "39cb6e4acd679b574d3d3276f148213e935fc25f90403eb84fb1b836a806ef1e"
+  url "https://www.php.net/distributions/php-8.5.1.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.5.1.tar.xz"
+  sha256 "3f5bf99ce81201f526d25e288eddb2cfa111d068950d1e9a869530054ff98815"
   license all_of: [
     "PHP-3.01",
 
@@ -37,12 +37,12 @@ class Php < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "03b97964f87cb37c098baf62b9f169d2eba6d884f4081c66aff692f56bec9812"
-    sha256 arm64_sequoia: "451d75733fba64fb6e84a28333bb2b02ec83dd14137bc83c8473a26b83344829"
-    sha256 arm64_sonoma:  "4fe86395bd69087c9813c861d569f40bea798f2d5eb889f231013f31ee471c2c"
-    sha256 sonoma:        "802c83d269609153296be37dbcb14373d3d9589c1d158aeaa67218dcf9c3e3e3"
-    sha256 arm64_linux:   "f22af7b3c6b3dc169f8b44a7d21e53b0c677785cb5d0ae22dbffa30f08353cf9"
-    sha256 x86_64_linux:  "d5d380cdeefea8b7d1a264f9bff9d0cf867aae9effcf0491913de1cf4a12b99f"
+    sha256 arm64_tahoe:   "d2e06a41c5a19804cadf0d50e7edffc1ffa60bf2ce0f88194caf3b0fd62dcce7"
+    sha256 arm64_sequoia: "d33137b1dcc6238b83c2ba97f8227d5c22dd3fc070504516876375d64bfe33b6"
+    sha256 arm64_sonoma:  "e2711f6ceabb87858c0a53518d29fe258c1ffb288058a2891bd6a95bb6036df7"
+    sha256 sonoma:        "08edcf3f1653437f0a30751b318294ccd0c8a328479a48a5444859d70fb2459a"
+    sha256 arm64_linux:   "d363487094d863ca71e5a921441bda683866cc2a8cc3a5e07314c71f2ec00a57"
+    sha256 x86_64_linux:  "de53027127ef20f575d3692a8ebcd682bb55eb3c9de119c3c227a4ee5691c5d5"
   end
 
   head do

@@ -2,9 +2,9 @@ class PhpDebug < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.5.0.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.5.0.tar.xz"
-  sha256 "39cb6e4acd679b574d3d3276f148213e935fc25f90403eb84fb1b836a806ef1e"
+  url "https://www.php.net/distributions/php-8.5.1.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.5.1.tar.xz"
+  sha256 "3f5bf99ce81201f526d25e288eddb2cfa111d068950d1e9a869530054ff98815"
   license "PHP-3.01"
 
   livecheck do
@@ -14,12 +14,12 @@ class PhpDebug < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_tahoe:   "5a6b05e8c647a17a0385b76d34154b7b44a3a506d6e3cfaf593a8b7575c6767e"
-    sha256 arm64_sequoia: "589744f76a09207d38fda829ab512613a6982c113dc14c5606e08737de85c06d"
-    sha256 arm64_sonoma:  "a86c01133f62f7b9614d12d16166249f81923d3a362797bf48d12078154118d2"
-    sha256 sonoma:        "161b0adca437e3bbe089554edc8488b9200bb24d14154c29e6fca05d3f0e0f50"
-    sha256 arm64_linux:   "5c89fb79409d47d29110f5b08f236d3aa14b8b9bfe48fcd6db3ff6fd7e397a53"
-    sha256 x86_64_linux:  "347756e52e23bce26ea4582a7e54c08a959a5b48cf5258cc9f64d80ed5bb29d3"
+    sha256 arm64_tahoe:   "091559ac9b49fc83e79cd696f8d43b1f9d38f8b50762b97dd10046dd21d9b7ec"
+    sha256 arm64_sequoia: "b86860df499d8b86101c80d546b7454de5791041123777c55db33792e05d76ac"
+    sha256 arm64_sonoma:  "b9da974e423f88d85cc51b92780aab477fcd4f3d566160abfc3aa8327fe87e2a"
+    sha256 sonoma:        "116ce01847d887a7ed7c1649e93b8ab0155774385a65b77471384e8cbcee42e5"
+    sha256 arm64_linux:   "14a085ff979171987f0277504ad045c2a4ce6f416c0446c6d3860fae2de82de2"
+    sha256 x86_64_linux:  "78bc47fee5facbc68f87637e9717a2b61413fa549bbde840d63c510b9aafc6df"
   end
 
   depends_on "bison" => :build
@@ -457,54 +457,3 @@ index 36c6e5e3e2..71b1a16607 100644
  PHP_ARG_ENABLE([rpath],
    [whether to enable runpaths],
    [AS_HELP_STRING([--disable-rpath],
-diff --git a/ext/mysqlnd/mysqlnd_connection.c b/ext/mysqlnd/mysqlnd_connection.c
-index d8e7304e9665f..140e15589682f 100644
---- a/ext/mysqlnd/mysqlnd_connection.c
-+++ b/ext/mysqlnd/mysqlnd_connection.c
-@@ -557,10 +557,11 @@ MYSQLND_METHOD(mysqlnd_conn_data, get_scheme)(MYSQLND_CONN_DATA * conn, MYSQLND_
- 		if (hostname.s[0] != '[' && mysqlnd_fast_is_ipv6_address(hostname.s)) {
- 			transport.l = mnd_sprintf(&transport.s, 0, "tcp://[%s]:%u", hostname.s, port);
- 		} else {
--			/* Not ipv6, but could already contain a port number, in which case we should not add an extra port.
-+			/* Could already contain a port number, in which case we should not add an extra port.
- 			 * See GH-8978. In a port doubling scenario, the first port would be used so we do the same to keep BC. */
--			if (strchr(hostname.s, ':')) {
-+			if (strchr(hostname.s, ':') && !mysqlnd_fast_is_ipv6_address(hostname.s)) {
- 				/* TODO: Ideally we should be able to get rid of this workaround in the future. */
-+				/* TODO: IPv6 address enclosed in square brackets is not handled, ex [::1]:3306 */
- 				transport.l = mnd_sprintf(&transport.s, 0, "tcp://%s", hostname.s);
- 			} else {
- 				transport.l = mnd_sprintf(&transport.s, 0, "tcp://%s:%u", hostname.s, port);
-diff --git a/ext/mysqlnd/mysqlnd_connection.c b/ext/mysqlnd/mysqlnd_connection.c
-index 140e15589682f..8268034e8b798 100644
---- a/ext/mysqlnd/mysqlnd_connection.c
-+++ b/ext/mysqlnd/mysqlnd_connection.c
-@@ -553,15 +553,25 @@ MYSQLND_METHOD(mysqlnd_conn_data, get_scheme)(MYSQLND_CONN_DATA * conn, MYSQLND_
- 			port = 3306;
- 		}
- 
--		/* ipv6 addresses are in the format [address]:port */
- 		if (hostname.s[0] != '[' && mysqlnd_fast_is_ipv6_address(hostname.s)) {
-+			/* IPv6 without square brackets so without port */
- 			transport.l = mnd_sprintf(&transport.s, 0, "tcp://[%s]:%u", hostname.s, port);
- 		} else {
-+			char *p;
-+
-+			/* IPv6 addresses are in the format [address]:port */
-+			if (hostname.s[0] == '[') { /* IPv6 */
-+				p = strchr(hostname.s, ']');
-+				if (p && p[1] != ':') {
-+					p = NULL;
-+				}
-+			} else { /* IPv4 or name */
-+				p = strchr(hostname.s, ':');
-+			}
- 			/* Could already contain a port number, in which case we should not add an extra port.
- 			 * See GH-8978. In a port doubling scenario, the first port would be used so we do the same to keep BC. */
--			if (strchr(hostname.s, ':') && !mysqlnd_fast_is_ipv6_address(hostname.s)) {
-+			if (p) {
- 				/* TODO: Ideally we should be able to get rid of this workaround in the future. */
--				/* TODO: IPv6 address enclosed in square brackets is not handled, ex [::1]:3306 */
- 				transport.l = mnd_sprintf(&transport.s, 0, "tcp://%s", hostname.s);
- 			} else {
- 				transport.l = mnd_sprintf(&transport.s, 0, "tcp://%s:%u", hostname.s, port);

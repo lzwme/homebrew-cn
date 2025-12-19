@@ -6,16 +6,17 @@ class Tox < Formula
   url "https://files.pythonhosted.org/packages/59/bf/0e4dbd42724cbae25959f0e34c95d0c730df03ab03f54d52accd9abfc614/tox-4.32.0.tar.gz"
   sha256 "1ad476b5f4d3679455b89a992849ffc3367560bbc7e9495ee8a3963542e7c8ff"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a80d5e7e1e14a51252720aea7849cffa531365a6a8ae015aabcda19ed7aa73ca"
+    sha256 cellar: :any_skip_relocation, all: "0073521f3d546e6be6c6889c419ecf28578a4ce2c181f6ca3d5a111f6b70cf52"
   end
 
   depends_on "python@3.14"
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/cc/7e/b975b5814bd36faf009faebe22c1072a1fa1168db34d285ef0ba071ad78c/cachetools-6.2.1.tar.gz"
-    sha256 "3f391e4bd8f8bf0931169baf7456cc822705f4e2a31f840d218f445b9a854201"
+    url "https://files.pythonhosted.org/packages/bc/1d/ede8680603f6016887c062a2cf4fc8fdba905866a3ab8831aa8aa651320c/cachetools-6.2.4.tar.gz"
+    sha256 "82c5c05585e70b6ba2d3ae09ea60b79548872185d2f24ae1f2709d37299fd607"
   end
 
   resource "chardet" do
@@ -34,8 +35,8 @@ class Tox < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
-    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
+    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
+    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
   end
 
   resource "packaging" do
@@ -44,8 +45,8 @@ class Tox < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "pluggy" do
@@ -59,8 +60,8 @@ class Tox < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/a4/d5/b0ccd381d55c8f45d46f77df6ae59fbc23d19e901e2d523395598e5f4c93/virtualenv-20.35.3.tar.gz"
-    sha256 "4f1a845d131133bdff10590489610c98c168ff99dc75d6c96853801f7f67af44"
+    url "https://files.pythonhosted.org/packages/20/28/e6f1a6f655d620846bd9df527390ecc26b3805a0c5989048c210e22c5ca9/virtualenv-20.35.4.tar.gz"
+    sha256 "643d3914d73d3eeb0c552cbb12d7e82adf0e504dbf86a3182f8771a153a1971c"
   end
 
   def install

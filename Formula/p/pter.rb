@@ -3,13 +3,12 @@ class Pter < Formula
 
   desc "Your console and graphical UI to manage your todo.txt file(s)"
   homepage "https://vonshednob.cc/pter/"
-  url "https://files.pythonhosted.org/packages/1d/b5/4f0a60f67d9549e679aff1715aeb9c2ccedfe23ec25de544714f94de0b9b/pter-3.21.0.tar.gz"
-  sha256 "98fa3dbc35eeea48b3c37f893988e0cdba2ff407d2988a0696683995baf58f5d"
+  url "https://files.pythonhosted.org/packages/6f/07/aa21cf811a7feab654c6feab16c4bfc9c053064520eed45ca08317d7288a/pter-3.22.0.tar.gz"
+  sha256 "8ab2171944db8836ad4f2f1b6d7194177b6f81f65ce4096eac1e98b315e7ae84"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "e7dece803dab0fc1f6594c876070ee3abe27bfc2f99e80004cb6e6d395e6ee06"
+    sha256 cellar: :any_skip_relocation, all: "f03161b643d08bc5b0e4c9f002d5f740212c7fd9ed41fa667f2bb653349b1068"
   end
 
   depends_on "python@3.14"
@@ -20,8 +19,8 @@ class Pter < Formula
   end
 
   resource "pytodotxt" do
-    url "https://files.pythonhosted.org/packages/ac/72/8948cd01bd2c9c5a1c5a83cb42856b9db8118cd2ffc51cc934a8b53b421c/pytodotxt-3.0.0.tar.gz"
-    sha256 "6d24d9d66120e525b30c9239f26f09fdbb0ebf4654a3b4453a656d25387a8bff"
+    url "https://files.pythonhosted.org/packages/d8/59/5449ac80f2a85c1156d6226b841497577563585fdeae8115f17e9abdea65/pytodotxt-3.1.0.tar.gz"
+    sha256 "00ed7e6ca22a8d7dc0f8f0c3424765209d20808a76c06963a1c43d917506e5fe"
   end
 
   def install

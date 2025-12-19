@@ -6,16 +6,16 @@ class PipAudit < Formula
   url "https://files.pythonhosted.org/packages/bd/89/0e999b413facab81c33d118f3ac3739fd02c0622ccf7c4e82e37cebd8447/pip_audit-2.10.0.tar.gz"
   sha256 "427ea5bf61d1d06b98b1ae29b7feacc00288a2eced52c9c58ceed5253ef6c2a4"
   license "Apache-2.0"
-  revision 1
+  revision 2
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b3c9d86120f2db496bf24e129497d0f37796f8606d232b0ff06c1db88e2a3e22"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0813393ffe250fb4eb3defccf941b1e123f7f9d879171ed9aad455b5db87c38c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8eb119813c531715631dc466c9f058b6d0de6d9ce49ed599ca4bac8fff7424e1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6325dbd5a797efe967232994a5eb5ce8917edd585f22a0035b727c29e2a09bb6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d1274c356db6197e02b10a02d8e62590c271970502fea0cda9f6d32f0e52d75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92582e1f0293e55904bcb86930b6b070fdabac94358440946bf30831b3595c24"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d5343e07fbeff7578cd91b964ebcae58c69e5da1f4a962315076ab09ce391e4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5044708d3e2432d7c63bb388cd7207d61a996b8ff021a0be6ba8562b8ffcca7b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0cc3a6651e6d607ac73a3f42f584844c6e5b3c4365b9484bcf356d124d12c52e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "07c42a13474db77c1049227b020ca807e32db6f3fd6597476acde15c3cbd5313"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce0167f2eac461e32b66ad0200ea7093fb82d02f2caa0e07baac8d5e3800dc92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83f59d8874ebe9720876dba63c18ff402163f1fee40d179618762055b219dfb0"
   end
 
   depends_on "rust" => :build
@@ -50,8 +50,8 @@ class PipAudit < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
-    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
+    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
+    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
   end
 
   resource "idna" do
@@ -145,8 +145,8 @@ class PipAudit < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install

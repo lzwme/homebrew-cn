@@ -4,16 +4,16 @@ class Surelog < Formula
   url "https://ghfast.top/https://github.com/chipsalliance/Surelog/archive/refs/tags/v1.86.tar.gz"
   sha256 "5bffc61334f38b16b5dd57e5209d38bc1e07b0e0bda452e4580678aa3e9daf53"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/chipsalliance/Surelog.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "66093d81ba27bdec93164720b4ad7a74dff68180740febc45e38d69fdc71d9c1"
-    sha256 cellar: :any,                 arm64_sequoia: "2370a598c0bd3f175e076cc279f4e1288b97d10d37ebb9e88997e43e6930aa70"
-    sha256 cellar: :any,                 arm64_sonoma:  "d6f0e16d64bd3d7bd5288c4e67acac3f1c6532547383ba57fe9f79b911bfe5d1"
-    sha256 cellar: :any,                 sonoma:        "414a3876730209a6dc97e206e8f364bd37a345c12483277b30ea8a7778ac0ac8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d759aa138eb2002443d6881c6cf3bec1e6c7f1d78089417ddc079afaf75a198"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "429877c5d363d0e611a33e01c5d77f88e2ac1c6253806b1c978581fa5e33cf21"
+    sha256 cellar: :any,                 arm64_tahoe:   "0978fd1dbcfe7d7bb43219ad2be34f104c1ab1a2ed0f04e1a31821bfdc7c8d12"
+    sha256 cellar: :any,                 arm64_sequoia: "12181b6b8eb393a178a5c156814b71cb16b6bbacf405b66e0f69c4940505647b"
+    sha256 cellar: :any,                 arm64_sonoma:  "ee77a01b7424f9b02d68f0dfa0d9c3f0b600276edc193e643fdaefddb2c9977c"
+    sha256 cellar: :any,                 sonoma:        "81f5930c01af25a0952ea3edbcc6638814fa2a3ea8c7d67343278470e7f541ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "baf400ac5af969702fcdc432fed2afdf7722cc2c5f8b6b1ba49f44dc5964d4dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cd2cd9d2f89d3771e7a7e1416756a9ae50f613bb189a2051c3187de09e8e8c8"
   end
 
   depends_on "antlr" => :build

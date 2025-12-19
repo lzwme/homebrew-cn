@@ -1,8 +1,8 @@
 class Gitea < Formula
   desc "Painless self-hosted all-in-one software development service"
   homepage "https://about.gitea.com/"
-  url "https://dl.gitea.com/gitea/1.25.2/gitea-src-1.25.2.tar.gz"
-  sha256 "b8006b388ced46627eaa53fbe05e04289ec6441a89d0f0b1f8ee33b4eec7235e"
+  url "https://dl.gitea.com/gitea/1.25.3/gitea-src-1.25.3.tar.gz"
+  sha256 "594f37000ac09016ed01f6dadb64f745ae3a16887cc0c97873cedd081f10ce34"
   license "MIT"
   head "https://github.com/go-gitea/gitea.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Gitea < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d92b1096f9181a5b5e033e4e83fc381b00229b4fc2f2be9aa2c6b9e7e906de8b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d0904afe3ee653be0b77013f981fdabea875f9eb3594fbcfec565cd4d3edecf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d14907739e5fc8bbd9de219fc48129f96e9146c62ae180e9c0f26b911f5041e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c6903eb65bebff1c6c09b5e01b528489b50a10f5f65bba58602d2c4fb627729f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd58d0f9c53bd28ca918c30421deffe7c84a2f6840f633d0fa0138fe70ef170e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcece6c11fabf7a0f81ff3fb181ed1f1511b1496edff9459dbb7a0f81bc2cf2a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2be433ecbb19092991807566c5db0b771abb7d53c5717053ca86c6b00e4e14e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd3e67c05e3b869a29566502cd56355b0f87eef59dd66166cade2cc1b13fad33"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab754d51c1286e69308c7e165ae3f4226a17f37206ad673c35853100c87d67b0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4113394445ddcb411c22b887ca409f374b023cc7016195c629178d7a62dcfa8b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "203c2227638ffbbd238f1e241d34eac2084fba836856fa745214eef2a8a2c881"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23772c4ee28e82c7cd2f864feeb84c0d463f51b7303cbedea64b4c28bbdd4fb5"
   end
 
   depends_on "go" => :build

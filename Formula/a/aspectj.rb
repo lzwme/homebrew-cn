@@ -1,8 +1,8 @@
 class Aspectj < Formula
   desc "Aspect-oriented programming for Java"
   homepage "https://eclipse.dev/aspectj/"
-  url "https://ghfast.top/https://github.com/eclipse-aspectj/aspectj/releases/download/V1_9_25/aspectj-1.9.25.jar"
-  sha256 "0190878539658cdaa654b422f56cf294183c2e5570ecd16cfc3aa2ddd5226fed"
+  url "https://ghfast.top/https://github.com/eclipse-aspectj/aspectj/releases/download/V1_9_25_1/aspectj-1.9.25.1.jar"
+  sha256 "c1209b5b0f561422b2a906e5af765954231b8530ee0c5d91c6267cc34f6f9034"
   license "EPL-2.0"
 
   livecheck do
@@ -19,12 +19,12 @@ class Aspectj < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c1fd9555e4ca8396b8a5770363bb8bc48b18c1d846fa790b9ce0c6fea5561d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "886591ea57644b9d9ef1f1b7712878e11eca18cf86745ece3c5b73a41649d63d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d2ddf5ffe417f503602d12f07c8af6aaf813243c4082958188a03692d93a5b2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fb25223230d39ca2bef3bb0b84ee209236abe38d5180a5e194564cb9dd2afb7c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2bbfd48bf13bc58c0f623ad703f8ef8f517a9d2b6e30c095d252c2ab2170a335"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18df22d9d90b37312e0c3af0692dd4559f725c9a71442eebf420a5d69815eee7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c09914feef8da7857dfb8c9be43e7f50c46ca782d7bdb590a1126e95243b91c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23cd98455d550e53b70e559b2ca3e43bed5d7bff0d9567155e56576d148ef549"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d62738ef87457eec9bc3476fefa11e7960cf19bf58d6708cda9cfcc5d293a12"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c929a1ab5004dd2627c2735a2074a263be0e6f85b28b2484ff210faee7429e19"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "839fa3722ae5f6fce7105e0920dc3438b491a18bdf61759e4d2ec6e508727f2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94eac9e44a68ca55a717ba53ac02745d962d4d5c9d88cca780988bbefb55610d"
   end
 
   depends_on "openjdk"

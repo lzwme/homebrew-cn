@@ -8,6 +8,7 @@ class Bitcoin < Formula
     "BSD-3-Clause", # src/crc32c, src/leveldb
     "BSL-1.0", # src/tinyformat.h
   ]
+  revision 1
   head "https://github.com/bitcoin/bitcoin.git", branch: "master"
 
   livecheck do
@@ -16,12 +17,12 @@ class Bitcoin < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b41df41b0bdf46fe7877a738e33eaaf0eabc97361eb3b759e2712e1ec93a23a7"
-    sha256 cellar: :any,                 arm64_sequoia: "7174a1ba2ff1ed54708af13bb36f27424c37cae053c8dfda0ac19d0ac1d2671b"
-    sha256 cellar: :any,                 arm64_sonoma:  "672a522db69b84fa3c9d1111e3cbbfe4b780ab915c449b8a67f6f142503eff8b"
-    sha256 cellar: :any,                 sonoma:        "353356a2b200c3ef5e1c3727a11cd8ac86058673c157758e9aa3fee027146fca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad4203d3296dae07be3e8d6ffe961e77faf4b1e76a59de729b7929c87c51c428"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae10c54ebb004117d6b3ab91f62fb6b6dc6e3ed9c6953686a79a20a3de340b60"
+    sha256 cellar: :any,                 arm64_tahoe:   "1cbbb663003fe06195bcfbd38fc39b4871d25a6860f8dce9862d1f6999f615e4"
+    sha256 cellar: :any,                 arm64_sequoia: "1129e1fb0f2987790d5918f091511d6b9f8cf10a9c2176883224bb74980f0aad"
+    sha256 cellar: :any,                 arm64_sonoma:  "a4686325aad304bf3ff7f4ff15a3247f41a94ad08e69d297f9b9cfa5c6e8cddf"
+    sha256 cellar: :any,                 sonoma:        "63b063364472fa378c8eb99c5fc6626540a0c0ccc52c63108abcccd1862d6d74"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5999e3be7485159f9de4c3acdb136474d25d61767e327efdc70a088fdd4bc557"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96b2a420c36860cef86f8629053d06dd3aac750cc4ced5acfcd7b1615df79e84"
   end
 
   depends_on "boost" => :build

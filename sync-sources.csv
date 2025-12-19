@@ -771,7 +771,7 @@ Homebrew-homebrew-core/Formula/c/camlp-streams.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/camlp5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/camlpdf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/canfigger.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/capnp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/capnp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/capstone.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/caracal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/carapace.rb, Homebrew/homebrew-core, 1
@@ -4886,6 +4886,7 @@ Homebrew-homebrew-core/Formula/n/negfix8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/neko.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nelm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nemu.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/neo4j-mcp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/neo4j.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/neocmakelsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/neofetch.rb, Homebrew/homebrew-core, 1
@@ -8898,7 +8899,7 @@ Homebrew-homebrew-cask/Casks/c/companion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/companion@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/composercat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/compositor.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/c/conar.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/conar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/concept2-utility.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/conductor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/confectionery.rb, Homebrew/homebrew-cask, 0
@@ -9009,6 +9010,7 @@ Homebrew-homebrew-cask/Casks/d/data-integration.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/data-rescue.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/data-science-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/datadog-agent.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/datadog-security-cli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dataflare.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/datagraph.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/datagrip.rb, Homebrew/homebrew-cask, 0

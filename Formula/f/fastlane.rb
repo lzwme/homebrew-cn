@@ -1,10 +1,9 @@
 class Fastlane < Formula
   desc "Easiest way to build and release mobile apps"
   homepage "https://fastlane.tools"
-  url "https://ghfast.top/https://github.com/fastlane/fastlane/archive/refs/tags/2.229.1.tar.gz"
-  sha256 "3e9c945e804cf99f20e0d29fa91c2fbd7cf303c171cf7b36c7b125b49a776e45"
+  url "https://ghfast.top/https://github.com/fastlane/fastlane/archive/refs/tags/2.230.0.tar.gz"
+  sha256 "e496600b49a3eda2463964eedcfdb4d0c25751cf2a1fa59de9f09719d249ed06"
   license "MIT"
-  revision 1
   head "https://github.com/fastlane/fastlane.git", branch: "master"
 
   livecheck do
@@ -13,12 +12,12 @@ class Fastlane < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "24c5b266f7e958bb92a80f7fc051c077286ae4fca39df9d7614e3599df803af6"
-    sha256 cellar: :any,                 arm64_sequoia: "6d2fe272ffea1f5a1f32315dc35878bf82e0ad8fbe363a65b385f2a8b16404cb"
-    sha256 cellar: :any,                 arm64_sonoma:  "e0fa319ec1b0196a7d38098d34776acf579555f262e88c48a21e922a9fa95f6e"
-    sha256 cellar: :any,                 sonoma:        "e684737d1c1237ceb833a4e41d08b71c7ac97a9ff3721fdc70bd2514198b8288"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0ebe1508dde6c09f9ec02f4eea681884dc9c5feb68f5b6f75e6e8ab780b1a12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42815d472814a9df0ab2faeac4086533d73d5eb4a2845823a2d837b39debe57b"
+    sha256 cellar: :any,                 arm64_tahoe:   "74d28fc218e13f03f00d728dfd8fb7b82f2c6115743207de235e899c321036db"
+    sha256 cellar: :any,                 arm64_sequoia: "2218d60acb4b703c820ca4b42908dcf4121c98b76e713bb4c12abc2958f1ecde"
+    sha256 cellar: :any,                 arm64_sonoma:  "a1f3980efa4aa6680e69fa8698401da77342e98efcae255312808cc25801ae9e"
+    sha256 cellar: :any,                 sonoma:        "6e0626dba445258861c3cda068ba97a16f4cbbf6c18856fd02df35511c16033d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9dd36c8d985f535c78035012c8bf25c398598640d7d4e99f3f528a3892b41d6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b89366f8237c761258ee4296c4e0a968b01296c498ed3102512f5c5a483b86b"
   end
 
   depends_on "ruby"

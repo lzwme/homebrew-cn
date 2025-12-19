@@ -6,11 +6,11 @@ class Shodan < Formula
   url "https://files.pythonhosted.org/packages/c5/06/c6dcc975a1e7d89bc764fd271da8138b318e18080b48e7f1acd2ab63df28/shodan-1.31.0.tar.gz"
   sha256 "c73275386ea02390e196c35c660706a28dd4d537c5a21eb387ab6236fac251f6"
   license "MIT"
-  revision 6
+  revision 7
   head "https://github.com/achillean/shodan-python.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6ad51a1432080eb76be311f3d18002f67bceca969cd252715c68894932b9c70a"
+    sha256 cellar: :any_skip_relocation, all: "2fd7868bd4aedb9bd0ed79706827bfbb0282e89e86b5815b09d738db715d5f5f"
   end
 
   depends_on "certifi" => :no_linkage
@@ -39,8 +39,8 @@ class Shodan < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
-    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
+    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
+    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
   end
 
   resource "idna" do
@@ -64,8 +64,8 @@ class Shodan < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "xlsxwriter" do

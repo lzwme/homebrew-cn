@@ -1,10 +1,10 @@
 class Capnp < Formula
   desc "Data interchange format and capability-based RPC system"
   homepage "https://capnproto.org/"
-  url "https://capnproto.org/capnproto-c++-1.2.0.tar.gz"
-  sha256 "ed00e44ecbbda5186bc78a41ba64a8dc4a861b5f8d4e822959b0144ae6fd42ef"
+  url "https://ghfast.top/https://github.com/capnproto/capnproto/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "01ab2ba7f52fcc3c51a10e22935aae56f3bc5e99b726b7e507fe6700cb12147d"
   license "MIT"
-  head "https://github.com/capnproto/capnproto.git", branch: "master"
+  head "https://github.com/capnproto/capnproto.git", branch: "v2"
 
   livecheck do
     url "https://capnproto.org/install.html"
@@ -12,14 +12,12 @@ class Capnp < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5ffb6b5fe19040d81b1f2915fce9b22d2d1da019263c6d44585bc82cb4b10001"
-    sha256 arm64_sequoia: "32850d9930ecb4a82632d22ba68f5dc3ee221d9b4b00e7bbcfd57fc093b0e6b9"
-    sha256 arm64_sonoma:  "5627bf9b2d201d61d69cd4fefcbea4170bfc6c37bcdacd11f541a170191836a6"
-    sha256 arm64_ventura: "628e24ec584599abf82afa1f517fa92a6064a9511175f646d26fc0eded6a28f9"
-    sha256 sonoma:        "fa74eafe82cb0fb8753552e68548a15106b9e2543263b837d6221c5962ee3a6f"
-    sha256 ventura:       "32dcff1c319cd23a163fc233426cd57e7f7170209f9344ecc485122dad3d7631"
-    sha256 arm64_linux:   "22fbab45d8401d46c54dd930009a3d527beced94406743a17c280466b0622e81"
-    sha256 x86_64_linux:  "0b35a0dde079a841e258c6d364e32e6f4cd543d00e94f240ae67e0c461192576"
+    sha256 arm64_tahoe:   "f56d8d6a7908f45ad6b9304ebeec5c20f8ffb049911d129aed81b60b377fa4dd"
+    sha256 arm64_sequoia: "f41fee1317b745f8bcd6855dd1ec95deb5181b876c34731904cd0d91c4ae31df"
+    sha256 arm64_sonoma:  "9e4290ac485126048dba7b742b13b54329ea7bc17d7cb2bc11f624daf92d1af1"
+    sha256 sonoma:        "0871e73f16c2707186a4ec8ebddc9976f8a576ec44db531db8743306929f2c87"
+    sha256 arm64_linux:   "4416f977ef5a1497696be71a27547eee795a5a43677de79c06a083e4c56b5b04"
+    sha256 x86_64_linux:  "28d742cf52dcff528d8a55ea3c0ef6a1e6a18f1537536b01f78c9c1cbefce63a"
   end
 
   depends_on "cmake" => :build

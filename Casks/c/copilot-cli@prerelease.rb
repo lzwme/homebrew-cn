@@ -2,11 +2,11 @@ cask "copilot-cli@prerelease" do
   arch arm: "arm64", intel: "x64"
   os macos: "darwin", linux: "linux"
 
-  version "0.0.370-6"
-  sha256 arm:          "2a860e01b66429e305d25ec09e7ed1844c396d178e3a41e3e9abaf6622193316",
-         intel:        "f278d703d5cd3829deaaf973532c5495457dac110be5e167447aeba54349d19e",
-         arm64_linux:  "f8e3659f44ce5b0f19fca53a0b45db3d8f0d47f3fe33752a99f84069941c01af",
-         x86_64_linux: "479bd8a9bebc4c6797003da11f2774fecca20307e4fe791a446922ff099c0f60"
+  version "0.0.371"
+  sha256 arm:          "aa6ec9d2006df75adb1a85722994a38a5ebfd2f9b1280d5ac041dda97555264e",
+         intel:        "367e962a0d8df78b8c6cadf06a231a8d7727f544c58a64968b24e40869532a77",
+         arm64_linux:  "9e41e2301bb4bbc62fc171965cc591e0db9b008a6e0823608afd6611e459cb6e",
+         x86_64_linux: "482839f82531c30ded1f612f5e26209948ac8103fe65d68f7d12677b1318ee91"
 
   url "https://ghfast.top/https://github.com/github/copilot-cli/releases/download/v#{version}/copilot-#{os}-#{arch}.tar.gz"
   name "GitHub Copilot CLI"

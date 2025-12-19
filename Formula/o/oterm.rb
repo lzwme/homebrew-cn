@@ -6,15 +6,15 @@ class Oterm < Formula
   url "https://files.pythonhosted.org/packages/6f/a1/a3b7d3bc10370028087844181d85c2b4360a64f4e0844263244e27f22cfe/oterm-0.14.6.tar.gz"
   sha256 "5037b5691e3bc1d77e42c308bee5781c229fff9826c913230a22bf3a05d919b1"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7c2441dc1ab4605633f6031e9c4127d94e78cbc73195c1359b4fe9dbeb7c06e5"
-    sha256 cellar: :any,                 arm64_sequoia: "95599ff4d536ccf782f05743abed6ee6bd9f95c02496a9e1347c6347ddc2b4e4"
-    sha256 cellar: :any,                 arm64_sonoma:  "ba09875b2e775b88c29858b1acfd3b3c837fa0dd27a40030962f054330a1635a"
-    sha256 cellar: :any,                 sonoma:        "3bc48218d4d2a5f4fc9d3e82dc8342aeb679afacb1c10f20f490fac265c65ca3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b48a2f39287c2b63ced8eb2caf4aba60115ae2b64fa05899bc462ea61d8a8a69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "981a81adc4fb90f339d3998e70c14d9f4bfc5a71a62f23539a06413d3aee5d8f"
+    sha256 cellar: :any,                 arm64_tahoe:   "a4464dc3b62b1ff8739a6a41b0bc3e6ea1417eea40b90ba49c273282d7b4da9b"
+    sha256 cellar: :any,                 arm64_sequoia: "069f55f36c7c9b0c8871436693de51b636b2c0eec2fb77ba0a297d7bec81095d"
+    sha256 cellar: :any,                 arm64_sonoma:  "65b927cdff2f44c43e23370bfb05b12690d4da2219776ec4b1db7698d73fb9e2"
+    sha256 cellar: :any,                 sonoma:        "86076d8f438a26f4898ab32f095bd78a17bdec2c8f25248ac4a811774ca3182e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "11f80d9a7a7d341908f5fbca17b1b42c7e61ddd3e94a8418f10705c587ee9bbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a37a24832f504d0ea9ec5c99ef3868afaee8d017e3da05968ae81f1579378cca"
   end
 
   depends_on "pkgconf" => :build
@@ -52,8 +52,8 @@ class Oterm < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/cd/3f/1d3bbd0bf23bdd99276d4def22f29c27a914067b4cf66f753ff9b8bbd0f3/authlib-1.6.5.tar.gz"
-    sha256 "6aaf9c79b7cc96c900f0b284061691c5d4e61221640a948fe690b556a6d6d10b"
+    url "https://files.pythonhosted.org/packages/bb/9b/b1661026ff24bc641b76b78c5222d614776b0c085bcfdac9bd15a1cb4b35/authlib-1.6.6.tar.gz"
+    sha256 "45770e8e056d0f283451d9996fbb59b70d45722b45d854d58f32878d0a40c38e"
   end
 
   resource "charset-normalizer" do
@@ -67,8 +67,8 @@ class Oterm < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/1b/0f/fe026df2ab8301e30a2b0bd425ff1462ad858fd4f991c1ac0389c2059c24/cyclopts-4.3.0.tar.gz"
-    sha256 "e95179cd0a959ce250ecfb2f0262a5996a92c1f9467bccad2f3d829e6833cef5"
+    url "https://files.pythonhosted.org/packages/da/3a/fd746469c7000ccaa75787e8ebd60dc77e4541576ca4ed241cd8b9e7e9ad/cyclopts-4.4.0.tar.gz"
+    sha256 "16764f5a807696b61da7d19626f34d261cdffe33345e87a194cf3286db2bd9cc"
   end
 
   resource "dnspython" do
@@ -192,8 +192,8 @@ class Oterm < Formula
   end
 
   resource "openapi-core" do
-    url "https://files.pythonhosted.org/packages/b1/35/1acaa5f2fcc6e54eded34a2ec74b479439c4e469fc4e8d0e803fda0234db/openapi_core-0.19.5.tar.gz"
-    sha256 "421e753da56c391704454e66afe4803a290108590ac8fa6f4a4487f4ec11f2d3"
+    url "https://files.pythonhosted.org/packages/84/f7/fe803810dbf6fd9064b35957ef26a711480cbb40e2fa5289bac6ad93dc1d/openapi_core-0.21.0.tar.gz"
+    sha256 "a9e378fafbf3708a2ca827608388bb3d46d7ba07f9758b78244ffee6503a772e"
   end
 
   resource "openapi-pydantic" do
@@ -214,11 +214,6 @@ class Oterm < Formula
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
     sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
-  end
-
-  resource "parse" do
-    url "https://files.pythonhosted.org/packages/4f/78/d9b09ba24bb36ef8b83b71be547e118d46214735b6dfb39e4bfde0e9b9dd/parse-1.20.2.tar.gz"
-    sha256 "b41d604d16503c79d81af5165155c0b20f6c8d6c559efa66b4b695c3e5a0a0ce"
   end
 
   resource "pathable" do
@@ -252,8 +247,8 @@ class Oterm < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/f3/87/f44d7c9f274c7ee665a29b885ec97089ec5dc034c7f3fafa03da9e39a09e/python_multipart-0.0.20.tar.gz"
-    sha256 "8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13"
+    url "https://files.pythonhosted.org/packages/78/96/804520d0850c7db98e5ccb70282e29208723f0964e88ffd9d0da2f52ea09/python_multipart-0.0.21.tar.gz"
+    sha256 "7137ebd4d3bbf70ea1622998f902b97a29434a9e8dc40eb203bbcf7c2a2cba92"
   end
 
   resource "pyyaml" do
@@ -297,8 +292,8 @@ class Oterm < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/db/3c/fa6517610dc641262b77cc7bf994ecd17465812c1b0585fe33e11be758ab/sse_starlette-3.0.3.tar.gz"
-    sha256 "88cfb08747e16200ea990c8ca876b03910a23b547ab3bd764c0d8eb81019b971"
+    url "https://files.pythonhosted.org/packages/17/8b/54651ad49bce99a50fd61a7f19c2b6a79fbb072e693101fbb1194c362054/sse_starlette-3.0.4.tar.gz"
+    sha256 "5e34286862e96ead0eb70f5ddd0bd21ab1f6473a8f44419dd267f431611383dd"
   end
 
   resource "starlette" do
@@ -342,8 +337,8 @@ class Oterm < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "uvicorn" do
@@ -352,8 +347,8 @@ class Oterm < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/32/af/d4502dc713b4ccea7175d764718d5183caf8d0867a4f0190d5d4a45cea49/werkzeug-3.1.1.tar.gz"
-    sha256 "8cd39dfbdfc1e051965f156163e2974e52c210f130810e9ad36858f0fd3edad4"
+    url "https://files.pythonhosted.org/packages/45/ea/b0f8eeb287f8df9066e56e831c7824ac6bab645dd6c7a8f4b2d767944f9b/werkzeug-3.1.4.tar.gz"
+    sha256 "cd3cd98b1b92dc3b7b3995038826c68097dcb16f9baa63abe35f20eafeb9fe5e"
   end
 
   def install
