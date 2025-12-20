@@ -26,7 +26,7 @@ class Energy < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/energy cli -v")
+    assert_match version.to_s, shell_output("#{bin}/energy cli")
 
     assert_match "https://energy.yanghy.cn", shell_output("#{bin}/energy env")
   end

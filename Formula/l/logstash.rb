@@ -1,8 +1,8 @@
 class Logstash < Formula
   desc "Tool for managing events and logs"
   homepage "https://www.elastic.co/products/logstash"
-  url "https://ghfast.top/https://github.com/elastic/logstash/archive/refs/tags/v9.2.2.tar.gz"
-  sha256 "5bc57cf38ea007c1becb72c36ff4c48da7422e4d23793c368be55022f2e7a635"
+  url "https://ghfast.top/https://github.com/elastic/logstash/archive/refs/tags/v9.2.3.tar.gz"
+  sha256 "6f95b9bc96bb2bb8ccf2c1436c4ae0ec2867efb97cab49ab3a10e378643b1ae6"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/elastic/logstash.git", branch: "main"
@@ -13,12 +13,12 @@ class Logstash < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "24fa4dbc28de38f5f18f1fddd068beb4343a67c8a5a0f8327941c5328127f755"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4de122beb61fa00eef647b4acb6df24e8b9258f2ea6f9b10691fd75cb519b47"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e17593f06d5237d75a1e741e721d553c8b894986ff6a7ef85f9a3095d7e8eb3f"
-    sha256 cellar: :any,                 sonoma:        "e9b755f42426d3d66c0ee93f3969b16a474e26fda429eea751565b5f4d8a642d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "762a024525572e47abb5390b3a2be32d771ae209d80242d3d5cedbd140fce83b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "200f89da33a1117d94ad14ac6b409064058dd88d17a84765bce1dc340a8c81d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e25e875d4b30d83e5c80b9cac627fea1e054be013cb1a1fab6bf784cc8f700ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1966e91954367a5bd47c36cda17a62170b4671ec3b9a979314505aac74bb613"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d7ad15324f67880edba5c90b3ec49147fda932ceedef09becc4b7bf3713e44f"
+    sha256 cellar: :any,                 sonoma:        "909d948787c1d22a6c8f426b93847f4a22149dc0cecc20e45dee680a20f2eefe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4bbfc62eb411eab726b44d461f7a1d70f6d781ee8556cda06d9552063ad8f8a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d4f611b51a2dd07472032f28851142d0e49a21fb70ea7ea02ed8bc4a3c38c9e"
   end
 
   depends_on "openjdk@21"

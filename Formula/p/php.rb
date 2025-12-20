@@ -30,6 +30,7 @@ class Php < Formula
     "TCL",                   # 7
     "Zlib",                  # 8
   ]
+  revision 1
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
@@ -37,12 +38,12 @@ class Php < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d2e06a41c5a19804cadf0d50e7edffc1ffa60bf2ce0f88194caf3b0fd62dcce7"
-    sha256 arm64_sequoia: "d33137b1dcc6238b83c2ba97f8227d5c22dd3fc070504516876375d64bfe33b6"
-    sha256 arm64_sonoma:  "e2711f6ceabb87858c0a53518d29fe258c1ffb288058a2891bd6a95bb6036df7"
-    sha256 sonoma:        "08edcf3f1653437f0a30751b318294ccd0c8a328479a48a5444859d70fb2459a"
-    sha256 arm64_linux:   "d363487094d863ca71e5a921441bda683866cc2a8cc3a5e07314c71f2ec00a57"
-    sha256 x86_64_linux:  "de53027127ef20f575d3692a8ebcd682bb55eb3c9de119c3c227a4ee5691c5d5"
+    sha256 arm64_tahoe:   "ce6557759b0b3586dab47a222efdfd97ca398899ca13661952fdcd293071e670"
+    sha256 arm64_sequoia: "41d2a8a321f1dfc1f2fdc2cc226510b86c243e997c4d307817066b88e4f7fad8"
+    sha256 arm64_sonoma:  "f3e1b990a4c5bfc5b305d3b0202d71c514c385970815fc83fe7d3c822baa492f"
+    sha256 sonoma:        "232ec525d431fd277521d413c438a85a1fe381a855eb17075c3de4a1142e760e"
+    sha256 arm64_linux:   "ff91edff93230864d87c4d6d275433fc5cff81bd3e45b137a153f0d7c20d141f"
+    sha256 x86_64_linux:  "41d487d7910e3e592f0f2b974f8987c851d568a1a5bd4148b2512a7941cc8a87"
   end
 
   head do
@@ -62,6 +63,7 @@ class Php < Formula
   depends_on "freetds"
   depends_on "gd"
   depends_on "gmp"
+  depends_on "icu4c@78"
   depends_on "libpq"
   depends_on "libsodium"
   depends_on "libzip"
@@ -152,7 +154,6 @@ class Php < Formula
       --with-config-file-path=#{config_path}
       --with-config-file-scan-dir=#{config_path}/conf.d
       --with-pear=#{pkgshare}/pear
-      --disable-intl
       --enable-bcmath
       --enable-calendar
       --enable-dba
@@ -160,6 +161,7 @@ class Php < Formula
       --enable-ftp
       --enable-fpm
       --enable-gd
+      --enable-intl
       --enable-mbregex
       --enable-mbstring
       --enable-mysqlnd
@@ -307,8 +309,6 @@ class Php < Formula
 
   def caveats
     <<~EOS
-      The PHP Internationalization extension is now in the `php-intl` formula.
-
       To enable PHP in Apache add the following to httpd.conf and restart Apache:
           LoadModule php_module #{opt_lib}/httpd/modules/libphp.so
 

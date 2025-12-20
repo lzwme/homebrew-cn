@@ -1,11 +1,10 @@
 class PhpAT81 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://www.php.net/distributions/php-8.1.33.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.1.33.tar.xz"
-  sha256 "9db83bf4590375562bc1a10b353cccbcf9fcfc56c58b7c8fb814e6865bb928d1"
+  url "https://www.php.net/distributions/php-8.1.34.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.1.34.tar.xz"
+  sha256 "ffa9e0982e82eeaea848f57687b425ed173aa278fe563001310ae2638db5c251"
   license "PHP-3.01"
-  revision 3
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
@@ -14,12 +13,12 @@ class PhpAT81 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_tahoe:   "e390f3f25ed750b6c985be542886e00ff794b79ccc8ed44285d835b4c8646768"
-    sha256 arm64_sequoia: "9bc87f381b420708ffb77d5adf0dc9e85e1d3c62dffb2c5ccb72844b52176ceb"
-    sha256 arm64_sonoma:  "8e2fc541993c4f00ad1ea35a80881d16e190e1e11819f33dda7b5985c66ee3b8"
-    sha256 sonoma:        "6b0e8c8457dde5929caa5842da55f8eea35c6544a93aa5687bfe876dc992ca89"
-    sha256 arm64_linux:   "4f25b397e2f83f43455e9838b65328c5c08ca3f80703a49cc742ac6a45164dd6"
-    sha256 x86_64_linux:  "bab85de4726fd8ae3e6d2cabd6a6b70d737bb068f7ac575697320982157e6e42"
+    sha256 arm64_tahoe:   "cfdfc31dbc1a917c31cd00d4c4cc7f5d79b53202b0c0b9ce51c675ed80cb65e3"
+    sha256 arm64_sequoia: "e1275358b83ccd3c5fc1de3962b8e356fa844600c8e9909ba33742065e5747ee"
+    sha256 arm64_sonoma:  "dab6a43a27c993628498535c4663a78f79736507b5bdef2ff6cc369ae9a4f7ff"
+    sha256 sonoma:        "ccd540b65ff44c3ccc35c3acdc5dbc154678fe90fdf25245d0f1eab0c6a495bd"
+    sha256 arm64_linux:   "d06fe308aa4f2de297ed6884906d5026f2b1b7aaf0f1eba1782a1cc09f6b2818"
+    sha256 x86_64_linux:  "e94eca7db5c79a17e7068e6f02a505bcdef41a1351defa74c2357488f663b455"
   end
 
   keg_only :versioned_formula
@@ -71,8 +70,6 @@ class PhpAT81 < Formula
     cause "Performs worse due to lack of general global register variables"
   end
 
-  # Backport fixes for curl on macOS.
-  # Remove after the next patch release.
   patch :DATA
 
   def install
@@ -500,110 +497,3 @@ index 1e31934f..49d430c4 100644
  		setitimer(ITIMER_REAL, &no_timeout, NULL);
  # else
  		setitimer(ITIMER_PROF, &no_timeout, NULL);
-diff --git a/ext/curl/interface.c b/ext/curl/interface.c
-index 807b27cb78c..5decc3420e9 100644
---- a/ext/curl/interface.c
-+++ b/ext/curl/interface.c
-@@ -1453,11 +1453,11 @@ static int curl_fnmatch(void *ctx, const char *pattern, const char *string)
- /* }}} */
- 
- /* {{{ curl_progress */
--static size_t curl_progress(void *clientp, double dltotal, double dlnow, double ultotal, double ulnow)
-+static int curl_progress(void *clientp, double dltotal, double dlnow, double ultotal, double ulnow)
- {
- 	php_curl *ch = (php_curl *)clientp;
- 	php_curl_callback *t = ch->handlers.progress;
--	size_t	rval = 0;
-+	int rval = 0;
- 
- #if PHP_CURL_DEBUG
- 	fprintf(stderr, "curl_progress() called\n");
-@@ -1818,8 +1818,8 @@ static void _php_curl_set_default_options(php_curl *ch)
- {
- 	char *cainfo;
- 
--	curl_easy_setopt(ch->cp, CURLOPT_NOPROGRESS,        1);
--	curl_easy_setopt(ch->cp, CURLOPT_VERBOSE,           0);
-+	curl_easy_setopt(ch->cp, CURLOPT_NOPROGRESS,        1L);
-+	curl_easy_setopt(ch->cp, CURLOPT_VERBOSE,           0L);
- 	curl_easy_setopt(ch->cp, CURLOPT_ERRORBUFFER,       ch->err.str);
- 	curl_easy_setopt(ch->cp, CURLOPT_WRITEFUNCTION,     curl_write);
- 	curl_easy_setopt(ch->cp, CURLOPT_FILE,              (void *) ch);
-@@ -1830,8 +1830,8 @@ static void _php_curl_set_default_options(php_curl *ch)
- #ifndef ZTS
- 	curl_easy_setopt(ch->cp, CURLOPT_DNS_USE_GLOBAL_CACHE, 1);
- #endif
--	curl_easy_setopt(ch->cp, CURLOPT_DNS_CACHE_TIMEOUT, 120);
--	curl_easy_setopt(ch->cp, CURLOPT_MAXREDIRS, 20); /* prevent infinite redirects */
-+	curl_easy_setopt(ch->cp, CURLOPT_DNS_CACHE_TIMEOUT, 120L);
-+	curl_easy_setopt(ch->cp, CURLOPT_MAXREDIRS, 20L); /* prevent infinite redirects */
- 
- 	cainfo = INI_STR("openssl.cafile");
- 	if (!(cainfo && cainfo[0] != '\0')) {
-@@ -1842,7 +1842,7 @@ static void _php_curl_set_default_options(php_curl *ch)
- 	}
- 
- #ifdef ZTS
--	curl_easy_setopt(ch->cp, CURLOPT_NOSIGNAL, 1);
-+	curl_easy_setopt(ch->cp, CURLOPT_NOSIGNAL, 1L);
- #endif
- }
- /* }}} */
-@@ -2289,7 +2289,7 @@ static int _php_curl_setopt(php_curl *ch, zend_long option, zval *zvalue, bool i
- 			lval = zval_get_long(zvalue);
- 			if (lval == 1) {
- 				php_error_docref(NULL, E_NOTICE, "CURLOPT_SSL_VERIFYHOST no longer accepts the value 1, value 2 will be used instead");
--				error = curl_easy_setopt(ch->cp, option, 2);
-+				error = curl_easy_setopt(ch->cp, option, 2L);
- 				break;
- 			}
- 			ZEND_FALLTHROUGH;
-@@ -2451,7 +2451,7 @@ static int _php_curl_setopt(php_curl *ch, zend_long option, zval *zvalue, bool i
- 				return 1;
- 			}
- # endif
--			error = curl_easy_setopt(ch->cp, option, lval);
-+			error = curl_easy_setopt(ch->cp, option, (long) lval);
- 			break;
- 		case CURLOPT_SAFE_UPLOAD:
- 			if (!zend_is_true(zvalue)) {
-@@ -2789,7 +2789,7 @@ static int _php_curl_setopt(php_curl *ch, zend_long option, zval *zvalue, bool i
- 
- 		case CURLOPT_FOLLOWLOCATION:
- 			lval = zend_is_true(zvalue);
--			error = curl_easy_setopt(ch->cp, option, lval);
-+			error = curl_easy_setopt(ch->cp, option, (long) lval);
- 			break;
- 
- 		case CURLOPT_HEADERFUNCTION:
-@@ -2807,7 +2807,7 @@ static int _php_curl_setopt(php_curl *ch, zend_long option, zval *zvalue, bool i
- 					/* no need to build the mime structure for empty hashtables;
- 					   also works around https://github.com/curl/curl/issues/6455 */
- 					curl_easy_setopt(ch->cp, CURLOPT_POSTFIELDS, "");
--					error = curl_easy_setopt(ch->cp, CURLOPT_POSTFIELDSIZE, 0);
-+					error = curl_easy_setopt(ch->cp, CURLOPT_POSTFIELDSIZE, 0L);
- 				} else {
- 					return build_mime_structure_from_hash(ch, zvalue);
- 				}
-@@ -2871,7 +2871,7 @@ static int _php_curl_setopt(php_curl *ch, zend_long option, zval *zvalue, bool i
- 
- 		case CURLOPT_POSTREDIR:
- 			lval = zval_get_long(zvalue);
--			error = curl_easy_setopt(ch->cp, CURLOPT_POSTREDIR, lval & CURL_REDIR_POST_ALL);
-+			error = curl_easy_setopt(ch->cp, CURLOPT_POSTREDIR, (long) (lval & CURL_REDIR_POST_ALL));
- 			break;
- 
- 		/* the following options deal with files, therefore the open_basedir check
-@@ -2906,11 +2906,11 @@ static int _php_curl_setopt(php_curl *ch, zend_long option, zval *zvalue, bool i
- 			if (zend_is_true(zvalue)) {
- 				curl_easy_setopt(ch->cp, CURLOPT_DEBUGFUNCTION, curl_debug);
- 				curl_easy_setopt(ch->cp, CURLOPT_DEBUGDATA, (void *)ch);
--				curl_easy_setopt(ch->cp, CURLOPT_VERBOSE, 1);
-+				curl_easy_setopt(ch->cp, CURLOPT_VERBOSE, 1L);
- 			} else {
- 				curl_easy_setopt(ch->cp, CURLOPT_DEBUGFUNCTION, NULL);
- 				curl_easy_setopt(ch->cp, CURLOPT_DEBUGDATA, NULL);
--				curl_easy_setopt(ch->cp, CURLOPT_VERBOSE, 0);
-+				curl_easy_setopt(ch->cp, CURLOPT_VERBOSE, 0L);
- 			}
- 			break;

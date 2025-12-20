@@ -1,20 +1,18 @@
 class KamalProxy < Formula
   desc "Lightweight proxy server for Kamal"
   homepage "https://kamal-deploy.org/"
-  url "https://ghfast.top/https://github.com/basecamp/kamal-proxy/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "12d8a7ac96c71cbcb46b51b7d004f268a86cb45a44da010a1e524fb6ccd924a7"
+  url "https://ghfast.top/https://github.com/basecamp/kamal-proxy/archive/refs/tags/v0.9.2.tar.gz"
+  sha256 "8c020dc914051b941653d35251746cd8c3b48526d72d3c042e1839944e5d50b1"
   license "MIT"
   head "https://github.com/basecamp/kamal-proxy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "065b113b52d298d68c63fa2131575cea767060169046f75747e2b55d03c03ca8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4ef131344c9f0f105992aec587df576bbf7c2413f0ac17993785b3efe1a0e8c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e17166f0d9e23a46713cb7282fc3fb7b8b9ba77abf563760666bf89b8a30e10f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "060e0f6992d77247bb4daf6dcbaaeb0bc53768469c0d1fc1e67dc46b57f01cda"
-    sha256 cellar: :any_skip_relocation, sonoma:        "14815fff3c55b5a86faf522f9f3d060ea30d059908f1ed0fb8c448866fa451ec"
-    sha256 cellar: :any_skip_relocation, ventura:       "7dbb7ea2b7ed3dc7a06fedb1a563ecdb89d18f992d691a14a013398f343f4b83"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "454e1da3b3fc882b1007faed2033dd3dc70e3aed4e5354891cb9ffc3c4bbb9bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf8e6876771e9d510a93a42ce58dfed4f1b017ca0895c0ae11016a34168a9feb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "478c74971a4fa286300ae1880211ffe67d9f11b03967de22b126da6e7b5e7018"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0978c00a32b8646ada7c683f15017ad06e6e5deeff9ae951819ac6f034c165e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb7443d081fea5fec0f4d28da1c91af52e6bda2fb5c5f311f33b40c8aa7edc17"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bf864dd9aea86ee2f33e469fa39c48ba1124170e37b030f8a35b577b6ed53478"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "72c88174507d978e9ffa83473089ec872a2aeb535258f84b00b39d73c42a2b86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6eb60afa749bd752d782ccd3557b4306f1bce197e195bac901b0fe17887a6684"
   end
 
   depends_on "go" => :build

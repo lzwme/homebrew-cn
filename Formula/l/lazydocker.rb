@@ -1,18 +1,18 @@
 class Lazydocker < Formula
   desc "Lazier way to manage everything docker"
   homepage "https://github.com/jesseduffield/lazydocker"
-  url "https://ghfast.top/https://github.com/jesseduffield/lazydocker/archive/refs/tags/v0.24.2.tar.gz"
-  sha256 "2a8421f7c72b0a08b50f95af0994cef8c21cc16173fef23011849e50831ae33c"
+  url "https://ghfast.top/https://github.com/jesseduffield/lazydocker/archive/refs/tags/v0.24.3.tar.gz"
+  sha256 "d6676b678105517a183d878180b041f186cd45a5591a2a7f25f30d5c0ee17670"
   license "MIT"
   head "https://github.com/jesseduffield/lazydocker.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3fb7058b0353436d3208ae20b176bf30fb17478c2efb93ea01c1f75c8ea639e1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3fb7058b0353436d3208ae20b176bf30fb17478c2efb93ea01c1f75c8ea639e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3fb7058b0353436d3208ae20b176bf30fb17478c2efb93ea01c1f75c8ea639e1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ce69575884084a6668f2ab9b6f6c090f4e1488fd4a5ec0f05739d7baf3840032"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc09b539890ad3d4c4dccbfddb8657640d4b05184b0979d73c38006a5ba28e2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65119199788b7a1de96ce259ffc1f9ee3256f7317fe20ecec7642e640f2149c4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f08ff43b5b54ae4e15ccfe3dc5dbe003f3b2b05b0ba8f648ea672a7485295bae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f08ff43b5b54ae4e15ccfe3dc5dbe003f3b2b05b0ba8f648ea672a7485295bae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f08ff43b5b54ae4e15ccfe3dc5dbe003f3b2b05b0ba8f648ea672a7485295bae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4358fd692caa32ac34dfdaf2162d5a63083064537ead64ba6084bba8ff435874"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "637990e75e234a1873b974e67fa00032c0278202e3fbeb2608d75bf9ecb98b92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08db4039c4df13fc5fb5ac4d048f1ef3703b48a7bb81b6337af91398e7fedc5f"
   end
 
   depends_on "go" => :build

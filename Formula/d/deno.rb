@@ -1,24 +1,18 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.com/"
+  url "https://ghfast.top/https://github.com/denoland/deno/releases/download/v2.6.2/deno_src.tar.gz"
+  sha256 "6f96a76ac4944b95aab812a0759e4f66eacc2e85ac725f3d53ce38bb370cccf7"
   license "MIT"
   head "https://github.com/denoland/deno.git", branch: "main"
 
-  stable do
-    url "https://ghfast.top/https://github.com/denoland/deno/releases/download/v2.6.1/deno_src.tar.gz"
-    sha256 "d7d04f94210e809a10081006f7c18fad7fe6a8ca1d3d07fe2cb9e1269638e936"
-
-    # Patch to build against rust 1.92
-    patch :DATA
-  end
-
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a12b903386cfb67c342f1782bb353da875f7c04351585978b854dad8906b20a7"
-    sha256 cellar: :any,                 arm64_sequoia: "abaaf945001ee7e0fb22fedc1e97ba3451a7d36b0a0dbf292b0ffddf2834ca3c"
-    sha256 cellar: :any,                 arm64_sonoma:  "c63fe6f04513b02b98cfb86893bec990a5c7931b17c0a312f7c96f9c40274aa8"
-    sha256 cellar: :any,                 sonoma:        "4bd457b7bee29d4dbbb51d14b6d332165e82e2d291412098ec4915fae87611ff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd9328ebb7aee198ac9aab61985737859283921b788f6237bbf55c67efc4ff2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fc66bce698910b2d38f69422f117b68959d43ad722c560619ea08a597859a3f"
+    sha256 cellar: :any,                 arm64_tahoe:   "23f789108cc08096bcc2eaa14ec1e557d880d573c1decad16f8e6c8ae82f4bb5"
+    sha256 cellar: :any,                 arm64_sequoia: "c7786442a7f77d1873608c97400ad8aec6284cc5ef4abb28eb757538d20beec8"
+    sha256 cellar: :any,                 arm64_sonoma:  "26d7581ee85c6bc2e48f3a74b7b915eeeb7aa0bd36722996b683d3a9c3d0207c"
+    sha256 cellar: :any,                 sonoma:        "80edd4c0ad9d8545eee58d2c4675b1cf35642c241cc3a603e6edbd72f6bb7c41"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0de7236ebafa40990b761decdd4aa57a35af92eed337ccdd8e76634ea9ce202"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7a21f588bb7cb715811516a5675de7196847b62ab808654a0fd509991865dc5"
   end
 
   depends_on "cmake" => :build
@@ -104,166 +98,3 @@ class Deno < Formula
     end
   end
 end
-
-__END__
-diff --git a/cli/cache/cache_db.rs b/cli/cache/cache_db.rs
-index a1d4acf6..8e722123 100644
---- a/cli/cache/cache_db.rs
-+++ b/cli/cache/cache_db.rs
-@@ -605,7 +605,7 @@ mod tests {
-     assert_same_serialize_deserialize(CacheDBHash::new(u64::MAX));
-     assert_same_serialize_deserialize(CacheDBHash::new(u64::MAX - 1));
-     assert_same_serialize_deserialize(CacheDBHash::new(u64::MIN));
--    assert_same_serialize_deserialize(CacheDBHash::new(u64::MIN + 1));
-+    assert_same_serialize_deserialize(CacheDBHash::new(1));
-   }
- 
-   fn assert_same_serialize_deserialize(original_hash: CacheDBHash) {
-diff --git a/cli/lsp/tsc.rs b/cli/lsp/tsc.rs
-index e509c40f..ef643c03 100644
---- a/cli/lsp/tsc.rs
-+++ b/cli/lsp/tsc.rs
-@@ -52,7 +52,6 @@ use deno_runtime::tokio_util::create_basic_runtime;
- use indexmap::IndexMap;
- use indexmap::IndexSet;
- use lazy_regex::lazy_regex;
--use log::error;
- use lsp_types::Uri;
- use node_resolver::NodeResolutionKind;
- use node_resolver::ResolutionMode;
-diff --git a/cli/tools/coverage/util.rs b/cli/tools/coverage/util.rs
-index e61830b7..c4333513 100644
---- a/cli/tools/coverage/util.rs
-+++ b/cli/tools/coverage/util.rs
-@@ -54,7 +54,7 @@ mod tests {
- 
-   #[test]
-   fn test_find_root() {
--    let urls = vec![
-+    let urls = [
-       Url::parse("file:///a/b/c/d/e.ts").unwrap(),
-       Url::parse("file:///a/b/c/d/f.ts").unwrap(),
-       Url::parse("file:///a/b/c/d/g.ts").unwrap(),
-@@ -71,7 +71,7 @@ mod tests {
- 
-   #[test]
-   fn test_find_root_with_similar_filenames() {
--    let urls = vec![
-+    let urls = [
-       Url::parse("file:///a/b/c/d/foo0.ts").unwrap(),
-       Url::parse("file:///a/b/c/d/foo1.ts").unwrap(),
-       Url::parse("file:///a/b/c/d/foo2.ts").unwrap(),
-@@ -82,7 +82,7 @@ mod tests {
- 
-   #[test]
-   fn test_find_root_with_similar_dirnames() {
--    let urls = vec![
-+    let urls = [
-       Url::parse("file:///a/b/c/foo0/mod.ts").unwrap(),
-       Url::parse("file:///a/b/c/foo1/mod.ts").unwrap(),
-       Url::parse("file:///a/b/c/foo2/mod.ts").unwrap(),
-diff --git a/cli/tools/pm/audit.rs b/cli/tools/pm/audit.rs
-index d3da714b..735d1557 100644
---- a/cli/tools/pm/audit.rs
-+++ b/cli/tools/pm/audit.rs
-@@ -504,9 +504,9 @@ mod npm {
-             action.action,
-             action.module,
-             if let Some(target) = &action.target {
--              &format!("@{}", target)
-+              format!("@{}", target)
-             } else {
--              ""
-+              "".to_string()
-             },
-             if action.is_major {
-               " (major upgrade)"
-diff --git a/libs/npm_cache/remote.rs b/libs/npm_cache/remote.rs
-index 56156a80..9131d36e 100644
---- a/libs/npm_cache/remote.rs
-+++ b/libs/npm_cache/remote.rs
-@@ -36,16 +36,18 @@ pub fn maybe_auth_header_value_for_npm_registry(
-     return Err(AuthHeaderForNpmRegistryError::Both);
-   }
- 
--  if username.is_some() && password.is_some() {
-+  if let Some(username) = username
-+    && let Some(password) = password
-+  {
-     // The npm client does some double encoding when generating the
-     // bearer token value, see
-     // https://github.com/npm/cli/blob/780afc50e3a345feb1871a28e33fa48235bc3bd5/workspaces/config/lib/index.js#L846-L851
-     let pw_base64 = BASE64_STANDARD
--      .decode(password.unwrap())
-+      .decode(password)
-       .map_err(AuthHeaderForNpmRegistryError::Base64)?;
-     let bearer = BASE64_STANDARD.encode(format!(
-       "{}:{}",
--      username.unwrap(),
-+      username,
-       String::from_utf8_lossy(&pw_base64)
-     ));
- 
-diff --git a/runtime/web_worker.rs b/runtime/web_worker.rs
-index 84db2cff..e7d52432 100644
---- a/runtime/web_worker.rs
-+++ b/runtime/web_worker.rs
-@@ -600,10 +600,12 @@ impl WebWorker {
-     ];
- 
-     #[cfg(feature = "hmr")]
--    assert!(
--      cfg!(not(feature = "only_snapshotted_js_sources")),
--      "'hmr' is incompatible with 'only_snapshotted_js_sources'."
--    );
-+    const {
-+      assert!(
-+        cfg!(not(feature = "only_snapshotted_js_sources")),
-+        "'hmr' is incompatible with 'only_snapshotted_js_sources'."
-+      );
-+    }
- 
-     for extension in &mut extensions {
-       if options.startup_snapshot.is_some() {
-diff --git a/runtime/worker.rs b/runtime/worker.rs
-index 89297b0c..ae976b8e 100644
---- a/runtime/worker.rs
-+++ b/runtime/worker.rs
-@@ -444,10 +444,12 @@ impl MainWorker {
-     }
- 
-     #[cfg(feature = "hmr")]
--    assert!(
--      cfg!(not(feature = "only_snapshotted_js_sources")),
--      "'hmr' is incompatible with 'only_snapshotted_js_sources'."
--    );
-+    const {
-+      assert!(
-+        cfg!(not(feature = "only_snapshotted_js_sources")),
-+        "'hmr' is incompatible with 'only_snapshotted_js_sources'."
-+      );
-+    }
- 
-     #[cfg(feature = "only_snapshotted_js_sources")]
-     options.startup_snapshot.as_ref().expect("A user snapshot was not provided, even though 'only_snapshotted_js_sources' is used.");
-diff --git a/rust-toolchain.toml b/rust-toolchain.toml
-index 43e5784a..1a216558 100644
---- a/rust-toolchain.toml
-+++ b/rust-toolchain.toml
-@@ -1,3 +1,3 @@
- [toolchain]
--channel = "1.90.0"
-+channel = "1.92.0"
- components = ["rustfmt", "clippy"]
-diff --git a/tests/specs/test/recursive_permissions_pledge/err.out b/tests/specs/test/recursive_permissions_pledge/err.out
-index a3f151ee..912a3e63 100644
---- a/tests/specs/test/recursive_permissions_pledge/err.out
-+++ b/tests/specs/test/recursive_permissions_pledge/err.out
-@@ -10,6 +10,6 @@ Platform: [WILDLINE]
- Version: [WILDLINE]
- Args: [[WILDLINE], "test", "main.js"]
- [WILDCARD]
--thread 'tokio-runtime-worker' panicked at [WILDLINE]
-+thread 'tokio-runtime-worker' ([WILDCARD]) panicked at [WILDLINE]
- pledge test permissions called before restoring previous pledge
- note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

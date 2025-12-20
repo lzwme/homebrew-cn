@@ -2,16 +2,17 @@ class Sonobuoy < Formula
   desc "Kubernetes component that generates reports on cluster conformance"
   homepage "https://sonobuoy.io/"
   url "https://ghfast.top/https://github.com/vmware-tanzu/sonobuoy/archive/refs/tags/v0.57.4.tar.gz"
-  sha256 "6665ad9ed741ac721d2c62352dfe555da16569daece8cc1d2c1ae5a2d18dad15"
+  sha256 "5e84f5e4723879b613688ce70522fc0423e5fbe2ada5c341484a60f295715af9"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "588cc92c6ea528b1701c96e1b5bb7d68c424add0b2353011186dd094772c00e8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "588cc92c6ea528b1701c96e1b5bb7d68c424add0b2353011186dd094772c00e8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "588cc92c6ea528b1701c96e1b5bb7d68c424add0b2353011186dd094772c00e8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4711a1afe5ca0f37274374a17fcacb88cc6274c88d5cb82083bbf3bf0aed1b69"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ed11988d2d86a58f92d4b15ca336ca107c5b6d60f106b130f61be933b3245f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a328c9d18793027bdd1b12dd3c43b7b6bf84adb8e91fda9da519bfaee495d90"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "003327422470ffa3b67b2037c837b14ee7f338c319c731d6b4dd4c61fae358fa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "003327422470ffa3b67b2037c837b14ee7f338c319c731d6b4dd4c61fae358fa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "003327422470ffa3b67b2037c837b14ee7f338c319c731d6b4dd4c61fae358fa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "df024bc4c5420929c972a7ede1febcf4882206caf4202d6ce0af2263174ba880"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b375641d906a9521fbe629e45bc3db4e93060176a99ae4bc2da6d6ef338f3b1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d4eeb97904dc0fa9ef87308feaf8c3c185c662be0602f6870b3305d17406493"
   end
 
   depends_on "go" => :build

@@ -2,18 +2,18 @@ class Surfer < Formula
   desc "Waveform viewer, supporting VCD, FST, or GHW format"
   homepage "https://surfer-project.org/"
   url "https://gitlab.com/surfer-project/surfer.git",
-      tag:      "v0.4.0",
-      revision: "9198cc497aec2249ff7459df03fed628c9996578"
+      tag:      "v0.5.0",
+      revision: "0be6f8ad869060791ad0864d77f2f842cd27ee65"
   license "EUPL-1.2"
   head "https://gitlab.com/surfer-project/surfer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b543129fdd6f45a43b42a5597a086affe544550dec1ca3167cde03c686973c59"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30e3981f15646136c67b7c2ec24b6e1e2a0480bd3410ea13973ad6b270531930"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "080b09915a5e2dc6c5d3ccfec24a34f399c384abbe817d1b17b4fb57d10c634b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "536b3f9ea18ac279959209e320155220e9b7d31042802f51db3a44ca4dc28efc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "91f223881e9a266cd4383e1f870cdd669b73df418b3573c2ab3e6cd44e92d145"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "748e1352790bd92384ab4e01570a4a47b7a98ff8f19079ff60702612c0479354"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "58ef6005442327e9354c768266ee9a25f98127ef88c997d6c994b8c753963e88"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2553f22564be9f09f2d049f5a35ced3d79cf42c6a8c2d2af97fc090a99d05f58"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ec775361fd33daa3e96e2665efd71c0541a93e1651f44511ea1b3227c38c8c9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "69b984912902e8059dff123a457d9fa4e22c8168ab179dd3386e243d16b6e374"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65d487759bf87cfa37b18dc486ffa928296813d2e0aea8336e20c09d105be602"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8910a07bc5ef5d513e7582dff60e41094c869565b3f4ea6014b42e0395b8c80c"
   end
 
   depends_on "pkgconf" => :build

@@ -1,19 +1,19 @@
 class Monocle < Formula
   desc "See through all BGP data with a monocle"
   homepage "https://github.com/bgpkit/monocle"
-  url "https://ghfast.top/https://github.com/bgpkit/monocle/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "1adbd53056a193ac00b7d1b688c7adf9e37919376c978b41d7bb92ff25f4508a"
+  url "https://ghfast.top/https://github.com/bgpkit/monocle/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "e827a2de78b90b9c91eafc5973e4eb20b87ef9d294892b78c73926951cd5af1f"
   license "MIT"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "abf37d764e5d7994d4fd886a9f58bab154c7f0828b2a3444ec31999178c51106"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4925654319c3faa096a4438a0f939a40ed0a134aeb2e8f251485fe9c812f1d81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7b12858a6eda79681a8844f40e8ce9ecca72b5fe905e9b524b05f7c5706241e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "474a539abc372819c17a4f9bf836a87b0b5f19eefd1e5f9eea9145d8f126d9d7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd0f8d9a1a86076f87ab950344f487734ded90c0bc12447e9152c1c3b6416e03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cd0d3499addfde3ef1a8a8fedd2ae9f118f3ac334039c250812cd4c423c1c03"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63e58c4157712d0b296b034e0289318e99b31691ecbab5e46f052de1d18f863f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04a61ddafea4e0c23b576c69af0876f1e435e8b49924a434b778707d2f27d951"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3801c2a6a6df3665f71c0a115b38555c7732f1bc1267c6698fbdf9891cce2ef1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f1f9ec02dc3b36272e1b653a992b84dda0ee0bdc0a08be735e00544b076850a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7dd563f1351120db9c81d90e546ce8bb54a4dfb30dadbe114f680dfce0d0a5b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68dab29920495954fc1769b523a4be4eadefa0b53e0fee77ecbf93b9b23433cc"
   end
 
   depends_on "rust" => :build

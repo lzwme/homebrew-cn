@@ -1,20 +1,18 @@
 class Pueue < Formula
   desc "Command-line tool for managing long-running shell commands"
   homepage "https://github.com/Nukesor/pueue"
-  url "https://ghfast.top/https://github.com/Nukesor/pueue/archive/refs/tags/v4.0.1.tar.gz"
-  sha256 "7bbe552700041b2e9cd360b69c328d6932ad57d0e0a480a8992fab3a2737cdf8"
+  url "https://ghfast.top/https://github.com/Nukesor/pueue/archive/refs/tags/v4.0.2.tar.gz"
+  sha256 "059ee9688cb8b1ce46284f5ad58de21911b6af50098d29598085d2b9dbd432ab"
   license "MIT"
   head "https://github.com/Nukesor/pueue.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "47f7a90e264ff587c6aea3a2b9d22ab299f01ffff21ab57555a1e2dc3f1d7381"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7401d5fd541b7434ad9e32192bb87aca9005264e74221425af579029a03d273a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7bc6759a32036c73c595b374d27a5bfbe9a90c8686510ae1d214547a2e02d894"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "111eacd663ec1d99e4e38a853cfd827f357c73d41052f245afad6d00cb174f5a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "da6ac299cb09ad63c0ad7a47a5ebb4e2522975f7df67d5ab54e619205102934b"
-    sha256 cellar: :any_skip_relocation, ventura:       "49f5765541590b87a5cd4ae3333e6c6259b3b9dada68e31b3adc9b196b83d97f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7f16f36d9aa5b2a6935d725fa83bfddd77be23e4a37812b93f6c725afdfdb7d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87cd64ee72fd805188640798966bfb0cf81d8891d35ab81c14ad839013245cbc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bcd3cc2c551e3ada35ce6f835138fe512f64271640fb0c6147e0cd88a734f192"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a35916296584183f4825f3e406b1c100b439b8ba1c9ef640c9b28b6d5a895146"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52cdf7b5563f7aeff4ce6c755dde08edf718a9f152ff328deb5bf553dee9bd8e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "109ba87c2e2e91321198f9e99915e947013158a2af8098d240973a247c5b66c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e4a478c998e4a6f3d6664adc7c6e1631e9205c0f24b14c5f074d079a5d91418"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c9c2feea36abd35a6453c8f98741c318f4cac57810ae13746da76fbf5fdfc5a"
   end
 
   depends_on "rust" => :build

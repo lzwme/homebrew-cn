@@ -4,7 +4,7 @@ class Glooctl < Formula
   # NOTE: Please wait until the newest stable release is finished building and
   # no longer marked as "Pre-release" before creating a PR for a new version.
   url "https://github.com/solo-io/gloo.git",
-      tag:      "v1.20.4",
+      tag:      "v1.20.5",
       revision: "2958882043c371a422c8fe964c4cef8dece7461a"
   license "Apache-2.0"
   head "https://github.com/solo-io/gloo.git", branch: "main"
@@ -15,12 +15,12 @@ class Glooctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc1ab30345c27e86c17e9b73f438c5066afd059d57956da9cba46c50e4914239"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc540db4b4b49d507bc5bf42665cda1af4ba9e7a7cc3baca6517620553ce3b09"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b070aaa40dc220a0842c4a225f4a8cc40518676cf756e9a7180e2e8f0d979b56"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9d8c89d40c34915aca62d95936a105056c08fd7c24bd04c752761cb25b0d6c14"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9195d0059339b5c8594ce0d7a923011a3f72d1c3403d7936cb707557d5406152"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdd77c122c91e6218a5db0f3f1657c5894c6d471a9307fa9bb1fb1d89902280d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7467d0e5a6f9ea55db4bbd5356f88e9861be49cddfbe551c3cceb37fbda75cc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89e210dc793018f7764108cde2a92e8795087f0eefe7c78308ab1844ba54c290"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cab0449d8d570f078be16e7ff9f464d4b90ee5d5198d3f53a63dbff67003ded5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e4a1d2e9ef48c0c3311ae05690228be4d9b6d2e5328b6834aa27426f9ae70dc7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "35d90de7e5965a1f6330dc94e814ca7ec3a09df05458f938de3c63116b524479"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f5b3faa13a00da5d97b8815fb46943c7c679beea60b8045adf64e1800b9416e"
   end
 
   depends_on "go" => :build

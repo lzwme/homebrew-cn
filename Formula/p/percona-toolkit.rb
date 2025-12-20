@@ -1,8 +1,8 @@
 class PerconaToolkit < Formula
   desc "Command-line tools for MySQL, MariaDB and system tasks"
   homepage "https://www.percona.com/software/percona-toolkit/"
-  url "https://downloads.percona.com/downloads/percona-toolkit/3.7.0-2/source/tarball/percona-toolkit-3.7.0.tar.gz"
-  sha256 "192c899dcfa26eca1b9e8692b7b687d143154902b6089afb03c14ea1b93e432d"
+  url "https://downloads.percona.com/downloads/percona-toolkit/3.7.1/source/tarball/percona-toolkit-3.7.1.tar.gz"
+  sha256 "d5abd944905e75800e29176aff7fdeb7062da212511e82c265be50ac03b4c19b"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
   head "https://github.com/percona/percona-toolkit.git", branch: "3.x"
 
@@ -14,15 +14,12 @@ class PerconaToolkit < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "098ce6dae0da3d02a7ca65217ca96cd604afcd089ac11fa64dc25135d7ef01e2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35bbdc1161bee62d4bf0304704413393c330468eb8ce88c9bd70692b1f588c75"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35bbdc1161bee62d4bf0304704413393c330468eb8ce88c9bd70692b1f588c75"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "15a499710d1aacc752986af8f2cc842a7652564a4938a5bc6b48e602cd8e4d59"
-    sha256 cellar: :any_skip_relocation, sonoma:        "32586dd3bdacb64ecb568d550750a7f140542f4715c5dfb5c84898f719420040"
-    sha256 cellar: :any_skip_relocation, ventura:       "5ee9f37aca9455631f1d4301bf141574ad8bf99601a6b5b52198fcfe31f5cb7f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6afb3a5188e3d60f607bdfe3ce49161b600d856ed0f3f6f4406f3776bf4da1fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b43428c0da2027f1a735030216ad956da2ea4395fc7d5039b6cb90b3b443463a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1127bedad067c639c8fd94ec410db7124a4b0c2b1d8c97fb572c59df0d44e672"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1127bedad067c639c8fd94ec410db7124a4b0c2b1d8c97fb572c59df0d44e672"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1127bedad067c639c8fd94ec410db7124a4b0c2b1d8c97fb572c59df0d44e672"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1127bedad067c639c8fd94ec410db7124a4b0c2b1d8c97fb572c59df0d44e672"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "175073257e991966b0f6ce20973b197c033f7000a3feec84b2980e7ac0ddb167"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "175073257e991966b0f6ce20973b197c033f7000a3feec84b2980e7ac0ddb167"
   end
 
   depends_on "go" => :build

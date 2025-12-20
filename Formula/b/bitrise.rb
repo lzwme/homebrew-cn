@@ -1,8 +1,8 @@
 class Bitrise < Formula
   desc "Command-line automation tool"
   homepage "https://github.com/bitrise-io/bitrise"
-  url "https://ghfast.top/https://github.com/bitrise-io/bitrise/archive/refs/tags/v2.35.3.tar.gz"
-  sha256 "9af5bf6bfa9444e859385278b423d5b990adeef0fbd304bfd7e0ec2119d6e237"
+  url "https://ghfast.top/https://github.com/bitrise-io/bitrise/archive/refs/tags/v2.36.0.tar.gz"
+  sha256 "1283be7378da684f60d188e95aff54096f539a2c7e25b75efe2a778019971d6f"
   license "MIT"
   head "https://github.com/bitrise-io/bitrise.git", branch: "master"
 
@@ -12,15 +12,15 @@ class Bitrise < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "619a028026e2c0e1a7988e2a16a5af0b3f5d394534c045dc11d42cd9ea18a5df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "619a028026e2c0e1a7988e2a16a5af0b3f5d394534c045dc11d42cd9ea18a5df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "619a028026e2c0e1a7988e2a16a5af0b3f5d394534c045dc11d42cd9ea18a5df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e9af948435369e6dbacf57a653cc744d462462894fab4b63acc2eb887648b18b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1f8f5b179d78782f7f239f1e9abb43e4dce6cad785a6ebea1432487f7314dbf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2039a92015026aa0cb0b7901e85a6c0fbef6e03f2eb559d36573898657b4403"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "19db0c0a2729ac4b74e09af93b6fd52b36b396055516e0bfd3574681ede00ada"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "19db0c0a2729ac4b74e09af93b6fd52b36b396055516e0bfd3574681ede00ada"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19db0c0a2729ac4b74e09af93b6fd52b36b396055516e0bfd3574681ede00ada"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dc2f3e8ae7424c3c1a2dbe6483e74dfe1c178e6404ee54d06dfd004a04a51ff3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b0220d32d7dd3fd8fa8603f8817b58244c0cdcfc9dc5d35bd1abdf1c5bf34be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6967fa62f4c36430383cdf494047a5e90557efc4ce54d5d3f2b2af78daa5a0c1"
   end
 
-  depends_on "go" => :build
+  depends_on "go" => [:build, :test]
 
   uses_from_macos "rsync"
 

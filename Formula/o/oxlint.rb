@@ -1,17 +1,17 @@
 class Oxlint < Formula
   desc "Suite of high-performance tools for JavaScript and TypeScript written in Rust"
   homepage "https://oxc.rs/"
-  url "https://registry.npmjs.org/oxlint/-/oxlint-1.33.0.tgz"
-  sha256 "4fe2de8d7909a993b42de6d2f428f89561f5f65c6733a9640372b467a07defa1"
+  url "https://registry.npmjs.org/oxlint/-/oxlint-1.34.0.tgz"
+  sha256 "3b5dc380c1ca531fdcfd67f3a1b1daa87ab7ad65974bc123e7cb89269e26b3ee"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d34e90b31363d093559d463705852d5fbc0e808fb957f985c07c0a8ec8de4a33"
-    sha256 cellar: :any,                 arm64_sequoia: "4aab854b5831f4d55d28f23f8b0bbcd76bd4494570cac06d5cbc5f508a2ded1f"
-    sha256 cellar: :any,                 arm64_sonoma:  "4aab854b5831f4d55d28f23f8b0bbcd76bd4494570cac06d5cbc5f508a2ded1f"
-    sha256 cellar: :any,                 sonoma:        "2dfc397577b956beced29a75e888d3ebb8e934d60ff85495f63f60f190904219"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba7b57bbc27a5c98a4acb2ff19fa583d3b236ef09127afa17f86c719c9a1ac3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cee72dd8fc7b9dca7b953d6fb300a89bfcc7ff867ff00a4aedbccbd97b11494a"
+    sha256 cellar: :any,                 arm64_tahoe:   "5cced1f3729426e39b83add683659430ec271102c45626b4d6e57719e99f407d"
+    sha256 cellar: :any,                 arm64_sequoia: "d926f8f33adae7a60db495b96d5ac700a05e7dea85a36dd90bab7d1285a5aa75"
+    sha256 cellar: :any,                 arm64_sonoma:  "d926f8f33adae7a60db495b96d5ac700a05e7dea85a36dd90bab7d1285a5aa75"
+    sha256 cellar: :any,                 sonoma:        "5f49325376554a34beb4790d40062df79653d729197538fb65ac3b9e73b70c28"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc7e3b13fa156a4c38e13724604a726776ca3a44e8b71ea2858a96d9e258c1be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb9d991a7f65a2d42e391b45726f95e50bef472a3ee657908946879678911350"
   end
 
   depends_on "node"

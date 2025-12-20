@@ -1,17 +1,17 @@
 class TRec < Formula
   desc "Blazingly fast terminal recorder that generates animated gif images for the web"
   homepage "https://github.com/sassman/t-rec-rs"
-  url "https://ghfast.top/https://github.com/sassman/t-rec-rs/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "3b008a13d773807d3ce92ff296106c779bea7f57b9bd6d6a5530f7159980cb7c"
+  url "https://ghfast.top/https://github.com/sassman/t-rec-rs/archive/refs/tags/v0.8.2.tar.gz"
+  sha256 "79ea7cbfe88e45ab913fa9963d74b9b7530cb73e39b686b0d8a692b7a9f331b8"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6770bc2d31a55cb9965b215d6ec092dfe874cfe6f19f65f105e1a76cce66124"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "badc62f87e9a3f0ba51a4ddf2ffaedd3cc1181e002a00b4b19b00f0cfd40c429"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07ae2a1d587f45a4d349d973dc314b513029df01ac7233219ec62bb88654a5d1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b8b245ce74ecf57b1d93ecbcf2656387bc5e5e06782aed7014c3ca2de06b3507"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc683a51a96e0273efbc4b9c558634bd36ae04eee47072bdf8d180c88f15a5cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6b7b2dfd91f0eac21c26bcde05a8af483354f3ea9cd5f1d89a39795753e37fd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "157385e3762d2e024b351cffb777869ce4e7ad9113047b8cae70abfd6e572254"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df45c6c6354b2fb570c29e252d892b714fc3cef78b01ee9b2a77d099cacf3dc0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11e3c4fe21f9571c79fd41638781a4d27b274df574a2b8330bbc98b1d3904c8c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5276859a6a2b1beb31ecb92edc804f73f3241e7caa71fc175415b15362a02d65"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e88a77bda09c3124d85389a9c1942a1af5cdf4886304dbefb770514fc30c172"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "626548f7c83623216cf151c1238264e074a2d7e6cae14256f50a59147f357db9"
   end
 
   depends_on "rust" => :build

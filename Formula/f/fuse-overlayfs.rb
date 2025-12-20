@@ -4,10 +4,11 @@ class FuseOverlayfs < Formula
   url "https://ghfast.top/https://github.com/containers/fuse-overlayfs/archive/refs/tags/v1.16.tar.gz"
   sha256 "45968517603389ead067222d234bc8d8ed33e4b4f8ba16216bdd3e6aedcccea9"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "f56b8eaeddb077f80c3742194033850eeb11f2c9eb266cd317ba02879a49dc90"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a3163181e6457cc906550f2f5f71473820eaec8bc4f658dd3475caa39ed033c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "7649727cba94e4394ec42a29c8dbb1c9bad932f1125b0ad27f8e3b65e014d5fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b6506681f06a7d624118e4570f465e79cccf1ee7374b3a2d7e088adf46e72252"
   end
 
   depends_on "autoconf" => :build
@@ -32,7 +33,7 @@ class FuseOverlayfs < Formula
     mkdir "merged"
     test_cmd = "fuse-overlayfs -o lowerdir=lowerdir/a:lowerdir/b,upperdir=up,workdir=workdir merged 2>&1"
     output = shell_output(test_cmd, 1)
-    assert_match "fuse: device not found, try 'modprobe fuse' first", output
+    assert_match "fuse: device /dev/fuse not found. Kernel module not loaded?", output
     assert_match "fuse-overlayfs: cannot mount: No such file or directory", output
   end
 end

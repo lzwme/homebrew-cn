@@ -37,15 +37,13 @@ class Crystal < Formula
   end
 
   depends_on "bdw-gc"
-  depends_on "gmp" # std uses it but it's not linked
-  depends_on "libevent"
+  depends_on "gmp" => :no_linkage # std uses it but it's not linked
+  depends_on "libffi" # for the interpreter
   depends_on "libyaml"
   depends_on "llvm"
   depends_on "openssl@3" # std uses it but it's not linked
   depends_on "pcre2"
   depends_on "pkgconf" # @[Link] will use pkg-config if available
-
-  uses_from_macos "libffi" # for the interpreter
 
   # It used to be the case that every new crystal release was built from a
   # previous release, except patches. Crystal is updating its policy to

@@ -1,8 +1,8 @@
 class Kitex < Formula
   desc "Golang RPC framework for microservices"
   homepage "https://github.com/cloudwego/kitex"
-  url "https://ghfast.top/https://github.com/cloudwego/kitex/archive/refs/tags/v0.15.2.tar.gz"
-  sha256 "7080a1f8eab0f2c2053e634de08a1adb391bcb52eaa7203a647328592d546e4c"
+  url "https://ghfast.top/https://github.com/cloudwego/kitex/archive/refs/tags/v0.15.3.tar.gz"
+  sha256 "976f196913ac18c06749249cc3eaf1710f9696a08b215f1d42e42aac81599a4e"
   license "Apache-2.0"
   head "https://github.com/cloudwego/kitex.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Kitex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7311d391e48469dad71f05433aa74841f4ed487b8d5504cd7e7d1529a2d15a8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7311d391e48469dad71f05433aa74841f4ed487b8d5504cd7e7d1529a2d15a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7311d391e48469dad71f05433aa74841f4ed487b8d5504cd7e7d1529a2d15a8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e9651d398bbcd16fe2b6ad1d1e67a3c5103e1333db879bd37db54d39ade5d3a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "52e52beb23172c50ff0362988ca203b3415bf31eb7706ddf782b5c0f32a7b7c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e07cec3ad344f14b61590f400a1df98820b19697da1344780729747bb0534704"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "daac15d69d3cdd1c40b50ececfa1a6be8558c09518c1dc404415c6cbcbdb14bf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "daac15d69d3cdd1c40b50ececfa1a6be8558c09518c1dc404415c6cbcbdb14bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "daac15d69d3cdd1c40b50ececfa1a6be8558c09518c1dc404415c6cbcbdb14bf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c5f14a83647f37da7b727e66512c2f7fc26770b1d33e2c1a4d271824aafa4a67"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aee0657fd1daf1427aa1a05814f5a97e009e82b339e7763354c6768d24f0b633"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "147ed865ff94cf797c1ce2dd4277458fb216d2383357d6e7bb6a2be32ba3873b"
   end
 
   depends_on "go" => [:build, :test]

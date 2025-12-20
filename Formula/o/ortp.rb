@@ -1,40 +1,33 @@
 class Ortp < Formula
   desc "Real-time transport protocol (RTP, RFC3550) library"
   homepage "https://linphone.org/"
+  # TODO: Switch to monorepo in 5.5.x
+  url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.4.69/ortp-5.4.69.tar.bz2"
+  sha256 "f00808e19d8d9d91e8535254c5fc5159d0d4973bccfc2a3e5498eb23b2be6147"
   license all_of: ["AGPL-3.0-or-later", "GPL-3.0-or-later"]
   head "https://gitlab.linphone.org/BC/public/linphone-sdk.git", branch: "master"
 
-  stable do
-    # TODO: Switch to monorepo in 5.5.x
-    url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.4.67/ortp-5.4.67.tar.bz2"
-    sha256 "1cf5e5baa1fb8f469b19025429e7cf248b9e15516dabbd95c9e009d9ede46f4f"
-
-    # bctoolbox appears to follow ortp's version. This can be verified at the GitHub mirror:
-    # https://github.com/BelledonneCommunications/bctoolbox
-    resource "bctoolbox" do
-      url "https://gitlab.linphone.org/BC/public/bctoolbox/-/archive/5.4.67/bctoolbox-5.4.67.tar.bz2"
-      sha256 "51ae4f9400d6553ba735c27e10e5fc78c19c699f533e0d6a0aaa75c2fe4327e7"
-
-      livecheck do
-        formula :parent
-      end
-    end
-  end
-
-  no_autobump! because: "resources cannot be updated automatically"
-
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a982a18b02b6fa6d99b62843f70fadf6e1c87b67fb45068fdd96f5ef056b0f71"
-    sha256 cellar: :any,                 arm64_sequoia: "a81935b5a6add381677d0c203d327f4c1d6b268fbb82890b8486c5d563d097ce"
-    sha256 cellar: :any,                 arm64_sonoma:  "e55b2d61ae73f6a7f22bab9176b409e734b99c98371e8171a65a1126513c41ae"
-    sha256 cellar: :any,                 sonoma:        "c5ca156a476ae045ffea84d8ad8f2f6a30f6f0194723ab77ffbfc08aef3be086"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "788e9b7f8760c3fdcd2f36ef730a15bbe5c0011e1ecd48a552ed16d281b0db77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbc73c8b05e6f7eb38a6af3fc945e36fa80de42115dacf769326be7f7bd91c19"
+    sha256 cellar: :any,                 arm64_tahoe:   "082177100a87047627417d37b56ae75c5d5d66e472945b09e0674bcd476496c6"
+    sha256 cellar: :any,                 arm64_sequoia: "ba8098828babe1fcfb63d25bac3c50feab403c145aceb456205510c8c39925ee"
+    sha256 cellar: :any,                 arm64_sonoma:  "9906c2574e1de3ad0b9e252dd8b03196765dc2b46c8317745d06bf18c2f78d2c"
+    sha256 cellar: :any,                 sonoma:        "14c704cb0e11004b1eb864abeb07faa703d314c7356e4319d30b8e8cb77aef81"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2706d780df1770bf91fecf82d34038ddcba47c2a63b033e1bfc912c855d11af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25db5423b2c2586fefc24063f9ce9a1305c9e2929383513f7ec9acbd667e202b"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "openssl@3"
+
+  resource "bctoolbox" do
+    url "https://gitlab.linphone.org/BC/public/bctoolbox/-/archive/5.4.69/bctoolbox-5.4.69.tar.bz2"
+    sha256 "23059194f633581c268cf79cb5a6b338273e89889c5e3be9c94aa8c90550294f"
+
+    livecheck do
+      formula :parent
+    end
+  end
 
   def install
     if build.stable?

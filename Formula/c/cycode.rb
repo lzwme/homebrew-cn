@@ -3,18 +3,18 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/2c/a3/a79eec77d26ce5946e67d2bce46fc497e6bdc4e093e4560f6f7cfb6b0a73/cycode-3.8.0.tar.gz"
-  sha256 "e995e2b9272a31f1990a5d08f622a03a5d49ff374a09ba8e1be4d990fc8ba018"
+  url "https://files.pythonhosted.org/packages/34/72/d8611f321cca18c31edcbc2eb0abd8133c645fed21db0f690fd5c69e315f/cycode-3.8.1.tar.gz"
+  sha256 "7d9d2ab5c853542e2db1dd75ae452ee354d10d8d86c319660ebac8f887df7448"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8aaa58a93a9e1b1004cbae6b5a370a1bd8ce42f22fec806c3fc24b2f98cb636b"
-    sha256 cellar: :any,                 arm64_sequoia: "9fc99b7bfa8dd57d8591b44d7d68504a95f80c307293b6dcace8e95062062bb0"
-    sha256 cellar: :any,                 arm64_sonoma:  "d75325ccc45081c77b803507cad1f808f46f1ac79ef231f8c201ebc4bf1da824"
-    sha256 cellar: :any,                 sonoma:        "75d5d000448d70940ba4675da1bb09f5b02a07b765470d3d5d917095879b3ca0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "98808b5cc2f4d256b4a75ef8b3acc0da11094b7334158d87460313a31b23abd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f1298ac0bf609862698a3a5627d006b83c468e49ace917c341b834049b507e4"
+    sha256 cellar: :any,                 arm64_tahoe:   "493be95bdeba08949530bb11d0b80222be75c66c1b39b5845fd4ec59d51d0bf5"
+    sha256 cellar: :any,                 arm64_sequoia: "4372978b89fd9661cf9b4338da5601aab6cabb5b189b237c06281dd964d7d7ab"
+    sha256 cellar: :any,                 arm64_sonoma:  "149a7e180bf506e2e5dcc5637858f11cad901b21ce7489087b37e3ab73c035eb"
+    sha256 cellar: :any,                 sonoma:        "bd3c56227a67236898321b26ba819e4b5eb4a4b348866eb9d28eb5cdd0c9632c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02138e5e59dbba496f3bc32b1f21f70bfd998f8d6e99b1f362563eb20d705b8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38de75e23a7900b069042b846b2ebb16ffa7a5fcf1f46921081d0fc7f9d346bd"
   end
 
   depends_on "certifi" => :no_linkage
@@ -122,8 +122,8 @@ class Cycode < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/25/1a/9c8a5362e3448d585081d6c7aa95898a64e0ac59d3e26169ae6c3ca5feaf/mcp-1.23.0.tar.gz"
-    sha256 "84e0c29316d0a8cf0affd196fd000487ac512aa3f771b63b2ea864e22961772b"
+    url "https://files.pythonhosted.org/packages/d5/2d/649d80a0ecf6a1f82632ca44bec21c0461a9d9fc8934d38cb5b319f2db5e/mcp-1.25.0.tar.gz"
+    sha256 "56310361ebf0364e2d438e5b45f7668cbb124e158bb358333cd06e49e83a6802"
   end
 
   resource "mdurl" do
@@ -172,8 +172,8 @@ class Cycode < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/f3/87/f44d7c9f274c7ee665a29b885ec97089ec5dc034c7f3fafa03da9e39a09e/python_multipart-0.0.20.tar.gz"
-    sha256 "8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13"
+    url "https://files.pythonhosted.org/packages/78/96/804520d0850c7db98e5ccb70282e29208723f0964e88ffd9d0da2f52ea09/python_multipart-0.0.21.tar.gz"
+    sha256 "7137ebd4d3bbf70ea1622998f902b97a29434a9e8dc40eb203bbcf7c2a2cba92"
   end
 
   resource "pyyaml" do
@@ -197,8 +197,8 @@ class Cycode < Formula
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/7c/d7/c140a5837649e2bf2ec758494fde1d9a016c76777eab64e75ef38d685bbb/sentry_sdk-2.46.0.tar.gz"
-    sha256 "91821a23460725734b7741523021601593f35731808afc0bb2ba46c27b8acd91"
+    url "https://files.pythonhosted.org/packages/40/f0/0e9dc590513d5e742d7799e2038df3a05167cba084c6ca4f3cdd75b55164/sentry_sdk-2.48.0.tar.gz"
+    sha256 "5213190977ff7fdff8a58b722fb807f8d5524a80488626ebeda1b5676c0c1473"
   end
 
   resource "shellingham" do
@@ -217,8 +217,8 @@ class Cycode < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/db/3c/fa6517610dc641262b77cc7bf994ecd17465812c1b0585fe33e11be758ab/sse_starlette-3.0.3.tar.gz"
-    sha256 "88cfb08747e16200ea990c8ca876b03910a23b547ab3bd764c0d8eb81019b971"
+    url "https://files.pythonhosted.org/packages/17/8b/54651ad49bce99a50fd61a7f19c2b6a79fbb072e693101fbb1194c362054/sse_starlette-3.0.4.tar.gz"
+    sha256 "5e34286862e96ead0eb70f5ddd0bd21ab1f6473a8f44419dd267f431611383dd"
   end
 
   resource "starlette" do

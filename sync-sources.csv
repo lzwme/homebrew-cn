@@ -766,6 +766,7 @@ Homebrew-homebrew-core/Formula/c/calc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/calceph.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/calcurse.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/calicoctl.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/calm-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/camellia.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/camlp-streams.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/camlp5.rb, Homebrew/homebrew-core, 1
@@ -5503,7 +5504,6 @@ Homebrew-homebrew-core/Formula/p/phoon.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/phoronix-test-suite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/php-code-sniffer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/php-cs-fixer.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/php-intl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/php.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/php@8.1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/php@8.2.rb, Homebrew/homebrew-core, 0
@@ -12985,6 +12985,7 @@ Homebrew-homebrew-cask/Casks/l/lyrics-master.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lyricsfinder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lyricsx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lyx.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/m32-edit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/m3unify.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/maa.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mac-monitor.rb, Homebrew/homebrew-cask, 1
@@ -14559,6 +14560,7 @@ Homebrew-homebrew-cask/Casks/s/sms-plus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smultron.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/snagit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/snapmaker-luban.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/snapmaker-orca.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/snapmotion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/snapndrag.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/snes9x.rb, Homebrew/homebrew-cask, 1
@@ -15262,6 +15264,7 @@ Homebrew-homebrew-cask/Casks/v/visual-studio-code@insiders.rb, Homebrew/homebrew
 Homebrew-homebrew-cask/Casks/v/visual-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/visual.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/visualboyadvance-m.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/v/visualdiffer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/visualvm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vitals.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vitalsource-bookshelf.rb, Homebrew/homebrew-cask, 0

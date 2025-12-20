@@ -14,6 +14,7 @@ class Pulsarctl < Formula
   # `GithubReleases` strategy while this is the case.
   livecheck do
     url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
     strategy :github_releases
   end
 

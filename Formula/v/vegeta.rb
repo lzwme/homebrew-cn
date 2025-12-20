@@ -2,16 +2,17 @@ class Vegeta < Formula
   desc "HTTP load testing tool and library"
   homepage "https://github.com/tsenart/vegeta"
   url "https://ghfast.top/https://github.com/tsenart/vegeta/archive/refs/tags/v12.13.0.tar.gz"
-  sha256 "0a3d46beefbe2df2b9c448f383fd574117bcc56f2b2d0965abb9e2b49979567f"
+  sha256 "4a360c815f5a8bdcae6db184860788696bb1c63d6999cc676e47690fc8b659e5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "118cdcdb82aff12be53c7cd2272d36ca31288e61849ae091bfe82c688da332a6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "118cdcdb82aff12be53c7cd2272d36ca31288e61849ae091bfe82c688da332a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "118cdcdb82aff12be53c7cd2272d36ca31288e61849ae091bfe82c688da332a6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "51ba41ac0959aabf05e224a8b84ab980c21317fc628831017c1af852cdffa744"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf74bd9cd8c59b3727adc2fffe59ca2cc1fe74ebf227d5d686fc582b9c277985"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24296d1e26a30ef08357173a325629f85901c8ef49a69aa71ae1a8fb84ebe8c6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9e4af909ecd68850af6c7bb8718c06f9e4dc48fbf2a7021cec0ef576d97ed1d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e4af909ecd68850af6c7bb8718c06f9e4dc48fbf2a7021cec0ef576d97ed1d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e4af909ecd68850af6c7bb8718c06f9e4dc48fbf2a7021cec0ef576d97ed1d5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "56a755a49808c3f74dd663f44a2351bcacfc4d3b136018a919306ab2220814f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10970097c0ed9c5510b90456da34ab992b56ae7a5ce92cd1bf253d872e25461e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cfe4f159486a5ad26348f9c70b190d33252d91ae315e2a98e486c60aae8602d"
   end
 
   depends_on "go" => :build
