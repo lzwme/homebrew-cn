@@ -4,8 +4,8 @@ class Dpkg < Formula
   # Please use a mirror as the primary URL as the
   # dpkg site removes tarballs regularly which means we get issues
   # unnecessarily and older versions of the formula are broken.
-  url "https://deb.debian.org/debian/pool/main/d/dpkg/dpkg_1.23.2.tar.xz"
-  sha256 "c076d02672e33592d84ba130350db6f6ec08d0ffe0901645040e7bd309f76020"
+  url "https://deb.debian.org/debian/pool/main/d/dpkg/dpkg_1.23.3.tar.xz"
+  sha256 "57f759b573dfe25602be8f4f0df24d5264367bbd6489741dd767c30dde65ae36"
   license "GPL-2.0-only"
 
   livecheck do
@@ -14,12 +14,12 @@ class Dpkg < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f82209d5bafd09f2ace85b16db2c191e04e07b8c205fe9002c59d10e9ab776dd"
-    sha256 arm64_sequoia: "3892a5df473c1d15a866d75562dfa618fa36d573d3462d961c2024c549559e96"
-    sha256 arm64_sonoma:  "562cd3c1b50423f02fabb23f30458e5b22d7350d9b08bb736851781afd791bf0"
-    sha256 sonoma:        "4700d5705cf461a93058137c1341a2d28bd8920d786ad97c672487a6a861e31b"
-    sha256 arm64_linux:   "bd6eeef3f6383c4727036c859feb6de41119d7e1ad6c9da82b7f327cb842f32d"
-    sha256 x86_64_linux:  "e869a840c3768dea28c0fb8d9d3ef8ea6be431fbd19d42ec39a738023cd37268"
+    sha256 arm64_tahoe:   "271926be9e7c176ae21e3de9d05009c09fccb4c11ddf7bc414a60d2b2ee41f0e"
+    sha256 arm64_sequoia: "9d00860deafec1c3c6cbeb3e566ca8c1bccffdadc82cc312c624be06777988d6"
+    sha256 arm64_sonoma:  "45a56ec816764c318934c6baff0ac2f4efbb42ffe8c7f88cdf28842de231a147"
+    sha256 sonoma:        "5288b2b57d0012dfc2da74927b1faf3b2b90d8cf39069292c69a3a192d0c5f58"
+    sha256 arm64_linux:   "de83449b02fdd572d133f61f4e701dec62d11d7a4402834c66b3ad9d95970755"
+    sha256 x86_64_linux:  "8f6f71f6c82b2dd57a91fc075cc312507360842248bffa0a81b8001f08a8f71f"
   end
 
   depends_on "pkgconf" => :build

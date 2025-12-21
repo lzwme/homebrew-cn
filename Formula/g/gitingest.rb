@@ -9,12 +9,13 @@ class Gitingest < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a946cfd9a17bd51693986b6dfb1f43e78cb0f60e43f4b2a43ae5b45e0bc1f611"
-    sha256 cellar: :any,                 arm64_sequoia: "64f7f346c95abab3ba69b57042538af681abd53cd7f7cb5dfaae4b730a112bd6"
-    sha256 cellar: :any,                 arm64_sonoma:  "a3a8403ea5493aaf48e91d1477e6b07c55466e680b8ca74ed5fb2ed22cdb3b3a"
-    sha256 cellar: :any,                 sonoma:        "5f723c1cbc15578880b3c6b3a0ba05516df9d52b877edd5122cc672951b54ceb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b042dccd8a1596c40ddc8c9636c187c8722638f5e42b941ac8f020117532eafd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a9bc16dde2368bf63c3dbff6941ceba2c108a234cdab8bbc63f79845df8fa70"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "7f52978c3b37489c3a95c7f50fad5257a1770c26af581b20a5f650c68ba348e1"
+    sha256 cellar: :any,                 arm64_sequoia: "66efc4439daaaae90bdb59e4dcb6a2cf82b0ee82ef34fb507639f04e830cf064"
+    sha256 cellar: :any,                 arm64_sonoma:  "fa25a9ae5c4b8f97243de275bb837caca579faf9bf8204773a003e856a02e3a4"
+    sha256 cellar: :any,                 sonoma:        "038fc3194d4a00986e318863315db13e68fa33235a2391566f9ae55f5bf39076"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c11fc5ecddd82542cefba042bdd9a85c3863febfbf5f82a651fabb3f86839c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b51c63a078bc3653a776dba89f31a16e517ff193a55d5f98c16a3658eefb04d"
   end
 
   depends_on "rust" => :build # for tiktoken
@@ -95,12 +96,14 @@ class Gitingest < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"gitingest", shell_parameter_format: :click)
   end
 
   test do

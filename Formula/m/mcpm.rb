@@ -8,12 +8,13 @@ class Mcpm < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b1f46b645c42b76112555496f78fa37a475d2ed209b3ace16e64f490425e27e1"
-    sha256 cellar: :any,                 arm64_sequoia: "e49fa1caf9e207a44aaea27b713e3cbf9d484f65edea861f1de101137606dab9"
-    sha256 cellar: :any,                 arm64_sonoma:  "fdb9172205c18fabba19b1cd62e2862896bb263ddc2b1f2fbd3ef336d7a046a9"
-    sha256 cellar: :any,                 sonoma:        "a1fef2c6b2189a43e6cd4caabd740a20f1ceafa920b4eb90f909e7701caaac0d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "34e67896e42c8da567f3d525983345df8f70d023c5d2162987c0babd1b123f07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b475d4ad5345874d049f72e29a0af03ad129572582a08c021cd79abe425b9c90"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "6e4199eda5f6b30408c10566b88df2568d4435282662a41c90f5e5ab20fb68fc"
+    sha256 cellar: :any,                 arm64_sequoia: "a39ecfca9fb27571925b76f3dc56f6c2fc3ee748edaea1eb7b093b8f7aac42c1"
+    sha256 cellar: :any,                 arm64_sonoma:  "f3bd1f3aa63f86cc25e3301ed444e09b4894e356eb6bdce143fd638846ee04a4"
+    sha256 cellar: :any,                 sonoma:        "131ae011cd545ed5a26239d347f314a4f1d3ccb55c753fb56eb51ef9b2db6ca7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c463d1bd4542a8e3b66b1215627f3e28bed1ae55cff8bf272b7d1cfe1d00a9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17be6b511472770881b966dde3e3aa05c15640f2cc2138b18df373471a8c28c1"
   end
 
   depends_on "cmake" => :build # for duckdb
@@ -38,8 +39,8 @@ class Mcpm < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/cd/3f/1d3bbd0bf23bdd99276d4def22f29c27a914067b4cf66f753ff9b8bbd0f3/authlib-1.6.5.tar.gz"
-    sha256 "6aaf9c79b7cc96c900f0b284061691c5d4e61221640a948fe690b556a6d6d10b"
+    url "https://files.pythonhosted.org/packages/bb/9b/b1661026ff24bc641b76b78c5222d614776b0c085bcfdac9bd15a1cb4b35/authlib-1.6.6.tar.gz"
+    sha256 "45770e8e056d0f283451d9996fbb59b70d45722b45d854d58f32878d0a40c38e"
   end
 
   resource "charset-normalizer" do
@@ -144,8 +145,8 @@ class Mcpm < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/a7/a4/d06a303f45997e266f2c228081abe299bbcba216cb806128e2e49095d25f/mcp-1.23.3.tar.gz"
-    sha256 "b3b0da2cc949950ce1259c7bfc1b081905a51916fcd7c8182125b85e70825201"
+    url "https://files.pythonhosted.org/packages/d5/2d/649d80a0ecf6a1f82632ca44bec21c0461a9d9fc8934d38cb5b319f2db5e/mcp-1.25.0.tar.gz"
+    sha256 "56310361ebf0364e2d438e5b45f7668cbb124e158bb358333cd06e49e83a6802"
   end
 
   resource "mdurl" do
@@ -209,8 +210,8 @@ class Mcpm < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/f3/87/f44d7c9f274c7ee665a29b885ec97089ec5dc034c7f3fafa03da9e39a09e/python_multipart-0.0.20.tar.gz"
-    sha256 "8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13"
+    url "https://files.pythonhosted.org/packages/78/96/804520d0850c7db98e5ccb70282e29208723f0964e88ffd9d0da2f52ea09/python_multipart-0.0.21.tar.gz"
+    sha256 "7137ebd4d3bbf70ea1622998f902b97a29434a9e8dc40eb203bbcf7c2a2cba92"
   end
 
   resource "referencing" do
@@ -244,8 +245,13 @@ class Mcpm < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/9f/c7/ee630b29e04a672ecfc9b63227c87fd7a37eb67c1bf30fe95376437f897c/ruamel.yaml-0.18.16.tar.gz"
-    sha256 "a6e587512f3c998b2225d68aa1f35111c29fad14aed561a26e73fab729ec5e5a"
+    url "https://files.pythonhosted.org/packages/3a/2b/7a1f1ebcd6b3f14febdc003e658778d81e76b40df2267904ee6b13f0c5c6/ruamel_yaml-0.18.17.tar.gz"
+    sha256 "9091cd6e2d93a3a4b157ddb8fabf348c3de7f1fb1381346d985b6b247dcd8d3c"
+  end
+
+  resource "ruamel-yaml-clib" do
+    url "https://files.pythonhosted.org/packages/ea/97/60fda20e2fb54b83a61ae14648b0817c8f5d84a3821e40bfbdae1437026a/ruamel_yaml_clib-0.2.15.tar.gz"
+    sha256 "46e4cc8c43ef6a94885f72512094e482114a8a706d3c555a34ed4b0d20200600"
   end
 
   resource "shellingham" do
@@ -254,8 +260,8 @@ class Mcpm < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/db/3c/fa6517610dc641262b77cc7bf994ecd17465812c1b0585fe33e11be758ab/sse_starlette-3.0.3.tar.gz"
-    sha256 "88cfb08747e16200ea990c8ca876b03910a23b547ab3bd764c0d8eb81019b971"
+    url "https://files.pythonhosted.org/packages/17/8b/54651ad49bce99a50fd61a7f19c2b6a79fbb072e693101fbb1194c362054/sse_starlette-3.0.4.tar.gz"
+    sha256 "5e34286862e96ead0eb70f5ddd0bd21ab1f6473a8f44419dd267f431611383dd"
   end
 
   resource "starlette" do
@@ -274,13 +280,13 @@ class Mcpm < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/8f/28/7c85c8032b91dbe79725b6f17d2fffc595dff06a35c7a30a37bef73a1ab4/typer-0.20.0.tar.gz"
-    sha256 "1aaf6494031793e4876fb0bacfa6a912b551cf43c1e63c800df8b1a866720c37"
+    url "https://files.pythonhosted.org/packages/6d/c1/933d30fd7a123ed981e2a1eedafceab63cb379db0402e438a13bc51bbb15/typer-0.20.1.tar.gz"
+    sha256 "68585eb1b01203689c4199bc440d6be616f0851e9f0eb41e4a778845c5a0fd5b"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
-    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "uvicorn" do
@@ -305,6 +311,8 @@ class Mcpm < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"mcpm", shell_parameter_format: :click)
   end
 
   test do

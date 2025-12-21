@@ -8,12 +8,13 @@ class Oterm < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5a0e31dab287ac039b309126c05f701bdecafc23fde3da16cc3b5985b6c20932"
-    sha256 cellar: :any,                 arm64_sequoia: "b7d419b0efecda8c59fda7715d5666aadac2fdf4e9bfbdb3958eb08725624b46"
-    sha256 cellar: :any,                 arm64_sonoma:  "9e664dc833cb7a968d1b9a973facc4cb6fb715f2cab82f77c6b6717ff8906eec"
-    sha256 cellar: :any,                 sonoma:        "562125f7ac34245e32c38ed23044ce18d9bbee0de74dc145efdaf9bfa600e086"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "21688183d547382661701bf570fc03a6794f76e14299758e73215d3f77cf180e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d0c002a037914e398ac36beff2396d9a1b4e335cb2e47d9b79f1c3a17dc4c1b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "a0356a52615603edabdb46ec51288bfb9495bd0f3485cab2b3f5d07ec7fc170c"
+    sha256 cellar: :any,                 arm64_sequoia: "9bf8e6f003d8fa799dc4e2b843d59436fe84a01fe61c9fa122ca8f32dd0d5279"
+    sha256 cellar: :any,                 arm64_sonoma:  "9d6ba58e91b43907ddc5ca354f1bcb519d4df2cb67ce5df48a9bf4d67b21ae95"
+    sha256 cellar: :any,                 sonoma:        "adfde489cc12937edee032d52473ba9a4cfb0cae4fb755681abe5dc80c0cbe67"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "43da1a0559cabf0c3b09362850e48c5e9ec7dec46d424c5ace53e05ba386ce39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4427e9d5229b5acd19b502d5210bd966b7d433ae3c4229cbc1d95fbcca3ddb46"
   end
 
   depends_on "pkgconf" => :build
@@ -28,7 +29,8 @@ class Oterm < Formula
 
   uses_from_macos "zlib"
 
-  pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic rpds-py]
+  pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic rpds-py],
+                extra_packages:   %w[jeepney secretstorage]
 
   resource "aiosql" do
     url "https://files.pythonhosted.org/packages/f3/cd/ecd308258210ffa71a17ef770ae98a4eeeb7cba29f0d5f98f7ecbce43898/aiosql-14.1.tar.gz"
@@ -456,12 +458,14 @@ class Oterm < Formula
   end
 
   def install
+    without = %w[jeepney secretstorage] unless OS.linux?
+    virtualenv_install_with_resources(without:)
+
     # `shellingham` auto-detection doesn't work in Homebrew CI build environment so
     # defer installation to allow `typer` to use argument as shell for completions
     # Ref: https://typer.tiangolo.com/features/#user-friendly-cli-apps
-    venv = virtualenv_install_with_resources without: "shellingham"
-    generate_completions_from_executable(bin/"oterm", "--show-completion")
-    venv.pip_install resource("shellingham")
+    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
+    generate_completions_from_executable(bin/"oterm", "--show-completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

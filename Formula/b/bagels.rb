@@ -9,12 +9,13 @@ class Bagels < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1ebb32b309920cb764da62b033d5bccbfa09dfa11c5581cc8597ac89986f7244"
-    sha256 cellar: :any,                 arm64_sequoia: "9a8b026ca9cac5a530c2b4e551656ac9610a7e919ea41282ed377f5b6ff66805"
-    sha256 cellar: :any,                 arm64_sonoma:  "f71c2e720a443ff29d0bc7a419e3b32a3dba2502033b4be10ade3f4ff1f68465"
-    sha256 cellar: :any,                 sonoma:        "e5d88f4c44909050077f58b307a054f4aca77e8b390886a52ee6c583b46e1cf0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ef7eee832173106939e6508b115b52fe3b7221ba24b30c8d1210dd71ade85a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "924afaa7c9c818cbfd8aa36ad09b22b5edbffeadf4a76062695b163a113c6a25"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "6e165dc0cab9d0bb224a903b8a6798a8a27c37a7899018c5c8ad482ea7357b26"
+    sha256 cellar: :any,                 arm64_sequoia: "c052cd04198e401a101f2619607b231fdd133def04ff2aa9fc0f41f382c41482"
+    sha256 cellar: :any,                 arm64_sonoma:  "ee1bf7617c4a412bf3791ccab76cfa246c45089f7b4c0cb6a6878b4e61531060"
+    sha256 cellar: :any,                 sonoma:        "a64d5050c09a34e8321e53c121a42bd43379869c43c9606ed285d0168a354b61"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b262011ce2d7bc8125587c18debf7a910520691b732f9abe640daaa5e85fcc1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1112c10a54227230a086302c0ce2e6363aee8dba80f2234744e5bedc38664d74"
   end
 
   depends_on "certifi" => :no_linkage
@@ -176,8 +177,8 @@ class Bagels < Formula
   end
 
   resource "sqlalchemy" do
-    url "https://files.pythonhosted.org/packages/f0/f2/840d7b9496825333f532d2e3976b8eadbf52034178aac53630d09fe6e1ef/sqlalchemy-2.0.44.tar.gz"
-    sha256 "0ae7454e1ab1d780aee69fd2aae7d6b8670a581d8847f2d1e0f7ddfbf47e5a22"
+    url "https://files.pythonhosted.org/packages/be/f9/5e4491e5ccf42f5d9cfc663741d261b3e6e1683ae7812114e7636409fcc6/sqlalchemy-2.0.45.tar.gz"
+    sha256 "1632a4bda8d2d25703fdad6363058d882541bdaaee0e5e3ddfa0cd3229efce88"
   end
 
   resource "textual" do
@@ -196,8 +197,8 @@ class Bagels < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "werkzeug" do
@@ -217,6 +218,8 @@ class Bagels < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"bagels", shell_parameter_format: :click)
   end
 
   test do

@@ -8,13 +8,13 @@ class Beanquery < Formula
   license "GPL-2.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7bb8cb26caaf57d39d5de56dbb43c338af325b866018ad3f5b7f58fee470839"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f37c3deaee2b019a12ca31efacb072b4338c9772fcaf0da585b361d37be81d22"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ff682ffc3b90f6397ef978057db4a63d4629cf1e4e01200ad848a6eccf32695"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7e612ab070eb3db9a1a363c39d7a836e3ea7a465270738ac31ddceae70d92517"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd9d89c48614beec712adb1d8e77983fb9cc5e962beb4e0a0424b2833c94b614"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4b4f40ee6c97f10bf46b1d9b2d6da0ca2bf0566986144cda7f47e4cbac177a9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b0ea637446c2d7eb8930e746b3be679eeae47b1076caf5058db7663c8a58af38"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ca536f7312cd6167419431e34d58244102d1cdc5baa9423932b3d32bc54b60f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45ef625aee5f37785cebbaa263bfe2dd164bdea24048c0b18692f4dedc3e8fc4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "40dd1c6d699b8e9ec7ffe963810b8dfe632d6ec400ff2a194f6f2e757af73ce5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "39e9789b913f6c9cab4d48316faa39cf02c2f4ac679516039dde84136c7d66e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed19884643dbf00f34a7ed9765324a7d04d84adf58432bce9281b27629e57290"
   end
 
   depends_on "bison" => :build # for beancount
@@ -29,13 +29,13 @@ class Beanquery < Formula
   end
 
   resource "beancount" do
-    url "https://files.pythonhosted.org/packages/93/a6/973010277d08f95ba3c6f4685010fe00c6858a136ed357c7e797a0ccbc04/beancount-3.1.0.tar.gz"
-    sha256 "1e70aba21fae648bc069452999d62c94c91edd7567f41697395c951be791ee0b"
+    url "https://files.pythonhosted.org/packages/57/e3/951015ad2e72917611e1a45c5fe9a33b4e2e202923d91455a9727aff441b/beancount-3.2.0.tar.gz"
+    sha256 "9f374bdcbae63328d8a0cf6d539490f81caa647f2d1cc92c9fa6117a9eb092ca"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "python-dateutil" do
@@ -44,8 +44,8 @@ class Beanquery < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/8e/5f/bd69653fbfb76cf8604468d3b4ec4c403197144c7bfe0e6a5fc9e02a07cb/regex-2024.11.6.tar.gz"
-    sha256 "7ab159b063c52a0333c884e4679f8d7a85112ee3078fe3d9004b2dd875585519"
+    url "https://files.pythonhosted.org/packages/cc/a9/546676f25e573a4cf00fe8e119b78a37b6a8fe2dc95cda877b30889c9c45/regex-2025.11.3.tar.gz"
+    sha256 "1fedc720f9bb2494ce31a58a1631f9c82df6a09b49c19517ea5cc280b4541e01"
   end
 
   resource "six" do
@@ -54,12 +54,14 @@ class Beanquery < Formula
   end
 
   resource "tatsu-lts" do
-    url "https://files.pythonhosted.org/packages/4a/40/4bbdba35865ebaf33a192cea87bfafb4f4ca6b4bf45c18b89c6eed086b98/tatsu_lts-5.13.1.tar.gz"
-    sha256 "b9f0d38bf820d92077b5722bad26f68020c8e4ee663f7e35d4a0d95e4ebc5623"
+    url "https://files.pythonhosted.org/packages/62/55/8123c70881c58d0f01f48d869378717a101149491dd8e13cd908eb06a5a4/tatsu_lts-5.13.2.tar.gz"
+    sha256 "7204dbc3075fabecedd1ec1cbe04c5f20b159d7344f63280e580a21f3c14bf9f"
   end
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"bean-query", shell_parameter_format: :click)
   end
 
   test do

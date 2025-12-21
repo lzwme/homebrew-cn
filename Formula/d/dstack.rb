@@ -8,12 +8,13 @@ class Dstack < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9dcf7348652e0f7fb64253637a3cce535367f5aaaec9637c3f37c55b5e7ce642"
-    sha256 cellar: :any,                 arm64_sequoia: "84c3df648f28b8be1514406e324c273ffdd5a81887615345f2775c1924f30c41"
-    sha256 cellar: :any,                 arm64_sonoma:  "aac806eb655ac77ec18161c35c7cb7dd2b2989518fe0c768ec7e1f133d54d2b3"
-    sha256 cellar: :any,                 sonoma:        "dd3de881198f8831efd6230f3e59a9ec8b130ff04f14317ea58f8f9a33d45c74"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "57cf23a7ae57a7a3b833a455be4a9bc1f223e83f81de50895b5eb9c65dcaecb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18c12f665160170afd165871c2a6cd77878bc112aab4679c49d88bc13ec8daf5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ba915e7d57920b1ce23f6a195ad84207e0a5ed7441c140977d7bdc7ef144cbe7"
+    sha256 cellar: :any,                 arm64_sequoia: "cf7ce0eb32317b91ed936a4415c59c6595d5ecbb60d3173fa5312739ae85a7a9"
+    sha256 cellar: :any,                 arm64_sonoma:  "14ff10dbe135ec8b9cdd9a9ef2a6e28e1c734d0ce9b8e5f00681fc27f6bd1943"
+    sha256 cellar: :any,                 sonoma:        "19045aa0b0d09b81f6bb6b228cd68718b23d3f6a6382d7d63ad4b68fa0787504"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44afb0581386cbf7cc0d864569f81108f8ff7c0810a45bca893ab044f567bb1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f69882d513ff12245fde6c294a1348e13c7d286261b5c708f2f76496d1947143"
   end
 
   # `pkgconf` and `rust` are for bcrypt.
@@ -145,13 +146,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/7a/4b/4ba41473e749f2379b403cf78b5ff9c5e1f291b33cc930d851dd89e0f939/boto3-1.42.11.tar.gz"
-    sha256 "2537d9462b70f4432385202709d1c8aa2291f802cfd8588d33334112116c554a"
+    url "https://files.pythonhosted.org/packages/09/72/e236ca627bc0461710685f5b7438f759ef3b4106e0e08dda08513a6539ab/boto3-1.42.14.tar.gz"
+    sha256 "a5d005667b480c844ed3f814a59f199ce249d0f5669532a17d06200c0a93119c"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/62/0f/33d611ac88b189ef952a9a4f733317c239acb2eee23ed749861cd1b1973e/botocore-1.42.11.tar.gz"
-    sha256 "4c5278b9e0f6217f428aade811d409e321782bd14f0a202ff95a298d841be1f7"
+    url "https://files.pythonhosted.org/packages/35/3f/50c56f093c2c6ce6de1f579726598db1cf9a9cccd3bf8693f73b1cf5e319/botocore-1.42.14.tar.gz"
+    sha256 "cf5bebb580803c6cfd9886902ca24834b42ecaa808da14fb8cd35ad523c9f621"
   end
 
   resource "cached-classproperty" do
@@ -185,8 +186,8 @@ class Dstack < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/cd/21/ade3ff6745a82ea8ad88552b4139d27941549e4f19125879f848ac8f3c3d/fastapi-0.124.4.tar.gz"
-    sha256 "0e9422e8d6b797515f33f500309f6e1c98ee4e85563ba0f2debb282df6343763"
+    url "https://files.pythonhosted.org/packages/17/71/2df15009fb4bdd522a069d2fbca6007c6c5487fce5cb965be00fc335f1d1/fastapi-0.125.0.tar.gz"
+    sha256 "16b532691a33e2c5dee1dac32feb31dc6eb41a3dd4ff29a95f9487cb21c054c0"
   end
 
   resource "filelock" do
@@ -465,8 +466,8 @@ class Dstack < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/ae/8d/7b346ed940c3e0f9eee7db9be37915a6dac0d9535d736e2ca47a81a066f3/pydantic-1.10.24.tar.gz"
-    sha256 "7e6d1af1bd3d2312079f28c9baf2aafb4a452a06b50717526e5ac562e37baa53"
+    url "https://files.pythonhosted.org/packages/7b/da/fd89f987a376c807cd81ea0eff4589aade783bbb702637b4734ef2c743a2/pydantic-1.10.26.tar.gz"
+    sha256 "8c6aa39b494c5af092e690127c283d84f363ac36017106a9e66cb33a22ac412e"
   end
 
   resource "pydantic-duality" do
@@ -656,6 +657,8 @@ class Dstack < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"dstack", "completion", shells: [:bash, :zsh])
   end
 
   test do

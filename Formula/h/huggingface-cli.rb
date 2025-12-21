@@ -10,12 +10,13 @@ class HuggingfaceCli < Formula
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "57d0eedf3d094e4c86d91f4caee4670084c427ded20343e0c60b74caa1f99eae"
-    sha256 cellar: :any,                 arm64_sequoia: "173501d521aa9373f762cbd637286be8aa8fefa480175c24dbca03b63883b691"
-    sha256 cellar: :any,                 arm64_sonoma:  "03af4d07a7ffdd115cb8164151285feb2494c1acade71b0a9c058a9e113d1f4d"
-    sha256 cellar: :any,                 sonoma:        "271a614bc06300e26f2076c06c71581a8ab6524d45074b27d69a905dbc496625"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de8ca4ddc1fe6aed4bf3cdb0d91d78de675802c4e1a7a14385e2d3f9249aa848"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdc9841fc3b684df01816b4e54e2b7417e907ddb39fcb322c7373dc725d1411b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "650a0aa5b259511035733775317a13393ec010c5e46dc5447598f5a97850279f"
+    sha256 cellar: :any,                 arm64_sequoia: "f1701db9d098df5b87aeffa1d7ef16c8c547327777e52dfbf17b3bc723eef18d"
+    sha256 cellar: :any,                 arm64_sonoma:  "ed7028c5d989dc74963004e93ee697572b513853d6d819c241ba84df9e25f3a0"
+    sha256 cellar: :any,                 sonoma:        "747b800f1bd2c598d4d8d3ec358998e8a7711f0458dbdd2337e12e5de9759609"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6af92d4bafadc32e1003c03c6c1790db2cc3062fd9a3a58c75dbcc71a0d3462e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64b56e0bd92ca96e7c7773306fbf83fe3079d3e1e18a00f602432705ead56e52"
   end
 
   depends_on "pkgconf" => :build
@@ -99,8 +100,8 @@ class HuggingfaceCli < Formula
   end
 
   resource "typer-slim" do
-    url "https://files.pythonhosted.org/packages/8e/45/81b94a52caed434b94da65729c03ad0fb7665fab0f7db9ee54c94e541403/typer_slim-0.20.0.tar.gz"
-    sha256 "9fc6607b3c6c20f5c33ea9590cbeb17848667c51feee27d9e314a579ab07d1a3"
+    url "https://files.pythonhosted.org/packages/3f/3d/6a4ec47010e8de34dade20c8e7bce90502b173f62a6b41619523a3fcf562/typer_slim-0.20.1.tar.gz"
+    sha256 "bb9e4f7e6dc31551c8a201383df322b81b0ce37239a5ead302598a2ebb6f7c9c"
   end
 
   resource "typing-extensions" do
@@ -120,6 +121,9 @@ class HuggingfaceCli < Formula
       end
       venv.pip_install Pathname.pwd
     end
+
+    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
+    generate_completions_from_executable(bin/"hf", "--show-completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

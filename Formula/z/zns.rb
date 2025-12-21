@@ -29,6 +29,6 @@ class Zns < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/zns --version")
-    assert_match "a.iana-servers.net.", shell_output("#{bin}/zns example.com -q NS --server 1.1.1.1")
+    assert_match "hera.ns.cloudflare.com.", shell_output("#{bin}/zns example.com -q NS --server 1.1.1.1")
   end
 end

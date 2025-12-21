@@ -1,18 +1,18 @@
 class Subfinder < Formula
   desc "Subdomain discovery tool"
   homepage "https://github.com/projectdiscovery/subfinder"
-  url "https://ghfast.top/https://github.com/projectdiscovery/subfinder/archive/refs/tags/v2.10.1.tar.gz"
-  sha256 "fab71430b869ee26d4a44cd2b0685b80bd61326a9cd42925247f6a8eb6d4c4f7"
+  url "https://ghfast.top/https://github.com/projectdiscovery/subfinder/archive/refs/tags/v2.11.0.tar.gz"
+  sha256 "2d053b6ed20ebedbff4adc0f4efcd80e4da3e6efc5289c065271f08755344120"
   license "MIT"
   head "https://github.com/projectdiscovery/subfinder.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5b41590312152c2dad9ed7baaa2752537e695aec33f1c099d9c27385a35ea92"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "02042ec11eea6d0ba3bb70e806f71a9e97b78cbd8833146a42b913b34042537c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ddb9f0907045ff85cd22dd71af17190d84d781c9f704fd07c92fcbb6d8606ffb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "806acaafd3c45ce83efa3332bdca94a69963b33fba09474992de35143f7a5c44"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a4fb13fae46b37cbda757524625f68dc75dce118ba3dfa556f9cf76ae260419"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "845c84755125795326f37910025a286d8726e4cd006157361b9a5853b7dde464"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42eb254129769fb86c1d4ba979a5412896991b8549e2bb226f075472e80dd428"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f371c5f20d8999d8865198d5d497629bc09a6a42b6d979a6e750deacc90c74d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "698030463ebced9450fdb709892579a9d6c3f5faf352a4f12f3e779f1793992a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fbe3ec41e7e4fc26b60c7d84fa4d091659f6d857a7f46337efdccb0457ac519f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "275d36473a53974844e9728d6884caf6e71cd766933b16c46fc829dc944c4007"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33d837503105a14399d22b78e7fc2b04e2cac9c5c265a4cade79b1cc45315d65"
   end
 
   depends_on "go" => :build

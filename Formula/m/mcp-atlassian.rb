@@ -8,13 +8,13 @@ class McpAtlassian < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "a56e81e977f8310dd7aef2d3a87a884088e59a636b8320d993d5b9f7885f3b8b"
-    sha256 cellar: :any,                 arm64_sequoia: "a2d4135224c545fdf54285abea34ac775ae5b38c62fd96dd8c28d7062522f244"
-    sha256 cellar: :any,                 arm64_sonoma:  "1257e46e9659d6c8a1ecc3b4f71e22d3cbd00492ad5bb923bddef44170c8360a"
-    sha256 cellar: :any,                 sonoma:        "613f7b7e5fe9c99c660ed542adedc5549cd3c40e5252bdaa59cd4b588e31f6c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba15a3a11879f3547776523e8cd98f8be3fa080423fdcd5a525861edff845e74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0051fd17da33890b7d2622d605968786f5d986f1fce9b5ebc5e59eaaff85de1f"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "512e0985f2ed3f80a9953300a6ae525ba53c790034279abfb92cbe5981a3abfd"
+    sha256 cellar: :any,                 arm64_sequoia: "992cd0b81a1cc4e303485d658b28f93b6e30953e5d7df67254b2d07f3f2f4c64"
+    sha256 cellar: :any,                 arm64_sonoma:  "6f2e7677c2ea98ed5b61b639a2bd158ebb8345f58983d99a603bd8605607c24d"
+    sha256 cellar: :any,                 sonoma:        "780d6e5780805c620d444df7c8f6380d30c7a5de6a38b744769f469873494a62"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "957821062e4b40eb4dcf614325eeeed10a6e0448b40036b90186c49483b4667d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2119532b612b5c6b4fe5173d8e82dd9fdea4b4777ed830bc8586a831f0a0c6c"
   end
 
   depends_on "certifi" => :no_linkage
@@ -51,8 +51,8 @@ class McpAtlassian < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/b5/44/5dc354b9f2df614673c2a542a630ef95d578b4a8673a1046d1137a7e2453/cachetools-6.2.3.tar.gz"
-    sha256 "64e0a4ddf275041dd01f5b873efa87c91ea49022b844b8c5d1ad3407c0f42f1f"
+    url "https://files.pythonhosted.org/packages/bc/1d/ede8680603f6016887c062a2cf4fc8fdba905866a3ab8831aa8aa651320c/cachetools-6.2.4.tar.gz"
+    sha256 "82c5c05585e70b6ba2d3ae09ea60b79548872185d2f24ae1f2709d37299fd607"
   end
 
   resource "charset-normalizer" do
@@ -180,8 +180,8 @@ class McpAtlassian < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/d6/2c/db9ae5ab1fcdd9cd2bcc7ca3b7361b712e30590b64d5151a31563af8f82d/mcp-1.24.0.tar.gz"
-    sha256 "aeaad134664ce56f2721d1abf300666a1e8348563f4d3baff361c3b652448efc"
+    url "https://files.pythonhosted.org/packages/d5/2d/649d80a0ecf6a1f82632ca44bec21c0461a9d9fc8934d38cb5b319f2db5e/mcp-1.25.0.tar.gz"
+    sha256 "56310361ebf0364e2d438e5b45f7668cbb124e158bb358333cd06e49e83a6802"
   end
 
   resource "mdurl" do
@@ -225,8 +225,8 @@ class McpAtlassian < Formula
   end
 
   resource "pymdown-extensions" do
-    url "https://files.pythonhosted.org/packages/1f/4e/e73e88f4f2d0b26cbd2e100074107470984f0a6055869805fc181b847ac7/pymdown_extensions-10.19.tar.gz"
-    sha256 "01bb917ea231f9ce14456fa9092cdb95ac3e5bd32202a3ee61dbd5ad2dd9ef9b"
+    url "https://files.pythonhosted.org/packages/72/2d/9f30cee56d4d6d222430d401e85b0a6a1ae229819362f5786943d1a8c03b/pymdown_extensions-10.19.1.tar.gz"
+    sha256 "4969c691009a389fb1f9712dd8e7bd70dcc418d15a0faf70acb5117d022f7de8"
   end
 
   resource "pysocks" do
@@ -245,8 +245,8 @@ class McpAtlassian < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/f3/87/f44d7c9f274c7ee665a29b885ec97089ec5dc034c7f3fafa03da9e39a09e/python_multipart-0.0.20.tar.gz"
-    sha256 "8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13"
+    url "https://files.pythonhosted.org/packages/78/96/804520d0850c7db98e5ccb70282e29208723f0964e88ffd9d0da2f52ea09/python_multipart-0.0.21.tar.gz"
+    sha256 "7137ebd4d3bbf70ea1622998f902b97a29434a9e8dc40eb203bbcf7c2a2cba92"
   end
 
   resource "pyyaml" do
@@ -305,13 +305,13 @@ class McpAtlassian < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/6d/e6/21ccce3262dd4889aa3332e5a119a3491a95e8f60939870a3a035aabac0d/soupsieve-2.8.tar.gz"
-    sha256 "e2dd4a40a628cb5f28f6d4b0db8800b8f581b65bb380b97de22ba5ca8d72572f"
+    url "https://files.pythonhosted.org/packages/89/23/adf3796d740536d63a6fbda113d07e60c734b6ed5d3058d1e47fc0495e47/soupsieve-2.8.1.tar.gz"
+    sha256 "4cf733bc50fa805f5df4b8ef4740fc0e0fa6218cf3006269afd3f9d6d80fd350"
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/db/3c/fa6517610dc641262b77cc7bf994ecd17465812c1b0585fe33e11be758ab/sse_starlette-3.0.3.tar.gz"
-    sha256 "88cfb08747e16200ea990c8ca876b03910a23b547ab3bd764c0d8eb81019b971"
+    url "https://files.pythonhosted.org/packages/17/8b/54651ad49bce99a50fd61a7f19c2b6a79fbb072e693101fbb1194c362054/sse_starlette-3.0.4.tar.gz"
+    sha256 "5e34286862e96ead0eb70f5ddd0bd21ab1f6473a8f44419dd267f431611383dd"
   end
 
   resource "starlette" do
@@ -330,8 +330,8 @@ class McpAtlassian < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/8f/28/7c85c8032b91dbe79725b6f17d2fffc595dff06a35c7a30a37bef73a1ab4/typer-0.20.0.tar.gz"
-    sha256 "1aaf6494031793e4876fb0bacfa6a912b551cf43c1e63c800df8b1a866720c37"
+    url "https://files.pythonhosted.org/packages/6d/c1/933d30fd7a123ed981e2a1eedafceab63cb379db0402e438a13bc51bbb15/typer-0.20.1.tar.gz"
+    sha256 "68585eb1b01203689c4199bc440d6be616f0851e9f0eb41e4a778845c5a0fd5b"
   end
 
   resource "types-cachetools" do
@@ -397,6 +397,8 @@ class McpAtlassian < Formula
   def install
     without = %w[jeepney secretstorage] unless OS.linux?
     virtualenv_install_with_resources(without:)
+
+    generate_completions_from_executable(bin/"mcp-atlassian", shell_parameter_format: :click)
   end
 
   test do

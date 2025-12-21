@@ -31,6 +31,10 @@ class Libotr < Formula
 
   depends_on "libgcrypt"
 
+  on_macos do
+    depends_on "libgpg-error"
+  end
+
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
     url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-pre-0.4.2.418-big_sur.diff"

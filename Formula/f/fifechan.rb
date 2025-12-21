@@ -13,20 +13,13 @@ class Fifechan < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:    "934e7bd5f0e22e02e2349161bb9a45c8114ade89b3920188c16d35caa16895a0"
-    sha256 cellar: :any,                 arm64_sequoia:  "71f641735c72610a5de0482f15c41098d817fed78afcebc8c4c41a686505cb7b"
-    sha256 cellar: :any,                 arm64_sonoma:   "277fbd536c176f738c60124aea4321ec581e32491ee82fc13dceec867574705b"
-    sha256 cellar: :any,                 arm64_ventura:  "a8deaa164106ac1b37cc156fc4707b8517b07194cf87adc348094600dfbd40b6"
-    sha256 cellar: :any,                 arm64_monterey: "462d21b6d9e655b260847f1aace8c011f07145d335aaaf1984c09fbfc2712699"
-    sha256 cellar: :any,                 arm64_big_sur:  "73f4cff07f6b17373b6c3c94734aa26de09a5cf6c9ec25e92b35d66c605ba728"
-    sha256 cellar: :any,                 sonoma:         "bbe357a25dcc2699f8b5475ce9355efa7ed125edc030dccda7830fce8d337bd7"
-    sha256 cellar: :any,                 ventura:        "f10339a3a2211ec705b3d57306dcd884b13a921d96806c2b47fed05cb68efe41"
-    sha256 cellar: :any,                 monterey:       "d1bbc100bb520395b6298b89ac2b71b48cdfc7df30e526177340b0fec4b58500"
-    sha256 cellar: :any,                 big_sur:        "9803b9f51bc0c0d368baaf0dfcf1bd1694426b1ed0fee2e247835b49fa62f3ec"
-    sha256 cellar: :any,                 catalina:       "c0594d877411b0a33f2a37d0d3e2ca38a3d3dfd47797bf89aef9579bd2095dda"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "7150b47d24b6dbfa2fb82f3c0be8c976f029e98980d03d6826134ae22fe41d0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74a7a968d5242dfdcf05c0c35bd360770f87afe32adc6dbacb2850ff117f6d5a"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "1a4e6bb77b1d87e8b0d27ebd76e5c649d6ae8a9cf3b2701e8ccac99586c69540"
+    sha256 cellar: :any,                 arm64_sequoia: "95096b9ae6dc3ecfddd7213be81e5fa0c52d10f8f2534611de6e6f8efbf0ef47"
+    sha256 cellar: :any,                 arm64_sonoma:  "ab1d7c0aa1c9f1576dc1c9debb66969e450914ed00f69d4a83d55afea3fcacd0"
+    sha256 cellar: :any,                 sonoma:        "626e48ecf21a329ccdfbf0a0aa86e2b10d9500df48a0ad2353410b11394057c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34fb16feb5a2d79ca14f47b7f1c685b53b260252a2ab61ad8d1a0dadc21a9700"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6536748d6cdcc530a53baa0a3fb57ee9cab21225b52026f1c16fd41203585630"
   end
 
   depends_on "cmake" => :build
@@ -44,6 +37,7 @@ class Fifechan < Formula
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
                     "-DENABLE_SDL_CONTRIB=ON",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

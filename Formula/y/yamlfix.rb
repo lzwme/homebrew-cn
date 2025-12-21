@@ -8,7 +8,8 @@ class Yamlfix < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bac9036a8904008e8514eb3a39c262b37d7fea82812b2b31e3d0875b29e31c9b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "21f1565a958b7183f6b308236158b321ddc558e5cef2b4c2055f0020f98d9606"
   end
 
   depends_on "pydantic" => :no_linkage
@@ -78,8 +79,8 @@ class Yamlfix < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/8f/28/7c85c8032b91dbe79725b6f17d2fffc595dff06a35c7a30a37bef73a1ab4/typer-0.20.0.tar.gz"
-    sha256 "1aaf6494031793e4876fb0bacfa6a912b551cf43c1e63c800df8b1a866720c37"
+    url "https://files.pythonhosted.org/packages/6d/c1/933d30fd7a123ed981e2a1eedafceab63cb379db0402e438a13bc51bbb15/typer-0.20.1.tar.gz"
+    sha256 "68585eb1b01203689c4199bc440d6be616f0851e9f0eb41e4a778845c5a0fd5b"
   end
 
   def install
@@ -88,6 +89,8 @@ class Yamlfix < Formula
     # Replace vendored platformdirs with latest version for easier relocation
     # https://github.com/pypa/setuptools/pull/5076
     venv.site_packages.glob("setuptools/_vendor/platformdirs*").map(&:rmtree)
+
+    generate_completions_from_executable(bin/"yamlfix", shell_parameter_format: :click)
   end
 
   test do

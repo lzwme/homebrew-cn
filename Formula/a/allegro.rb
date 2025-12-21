@@ -23,8 +23,10 @@ class Allegro < Formula
   depends_on "cmake" => :build
   depends_on "flac"
   depends_on "freetype"
+  depends_on "jpeg-turbo"
   depends_on "libogg"
   depends_on "libopenmpt"
+  depends_on "libpng"
   depends_on "libvorbis"
   depends_on "opusfile"
   depends_on "physfs"
@@ -36,8 +38,6 @@ class Allegro < Formula
   end
 
   on_linux do
-    depends_on "jpeg-turbo"
-    depends_on "libpng"
     depends_on "libx11"
     depends_on "libxcursor"
     depends_on "libxi"

@@ -1,9 +1,9 @@
 class Aarch64ElfGdb < Formula
   desc "GNU debugger for aarch64-elf cross development"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftpmirror.gnu.org/gnu/gdb/gdb-16.3.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/gdb/gdb-16.3.tar.xz"
-  sha256 "bcfcd095528a987917acf9fff3f1672181694926cc18d609c99d0042c00224c5"
+  url "https://ftpmirror.gnu.org/gnu/gdb/gdb-17.1.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/gdb/gdb-17.1.tar.xz"
+  sha256 "14996f5f74c9f68f5a543fdc45bca7800207f91f92aeea6c2e791822c7c6d876"
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
@@ -14,13 +14,12 @@ class Aarch64ElfGdb < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "908f6d0471ea78fcc62b6808afb9f64838af2eb387bd5f354c73fae4a1e0cc86"
-    sha256 arm64_sequoia: "7e30fff7745a0e820e446526efff7ef2a9e1f61d5e5c53221ced69f3e3dbf7f9"
-    sha256 arm64_sonoma:  "401182ec5660cbab09c6a55ea69d07f20df46eb0dbae3317345e28e31951c894"
-    sha256 sonoma:        "b13a43c6056721b21bd7c071d05920d96d7494ff596d0d6b9ba5657569d8d533"
-    sha256 arm64_linux:   "e6133be397ab031bd4bcafe5cd2f843455a25d7ec852e78cd3983f820c0157ee"
-    sha256 x86_64_linux:  "5e3431d1fef809c31595bdc6cfefcb0fc5d24ca12aa9c8661151ee546a9a1e6d"
+    sha256 arm64_tahoe:   "7277102a859902d27b6c43adf23f08afafe5cd6473b2f7a1b53538230a26bc4b"
+    sha256 arm64_sequoia: "4ddf4e0b4d60bbc83eeefa5460b8d59fa16142582a1f06ef4f0cac5543d61222"
+    sha256 arm64_sonoma:  "cf35b56cf134cbb4a3bab33f4e31854ee64461796a24a1c8271b803ad54c356d"
+    sha256 sonoma:        "65ef026f6af7bd93cc167af449d228915143f69491bf5f17ca190ae64f3a632a"
+    sha256 arm64_linux:   "4ffe533d0c431b4e7ea4bd799ebba8674ec086e9c70ae72b3eab9ded6b1b53fc"
+    sha256 x86_64_linux:  "d697f4981f3a93c3f7efdcac7ad9fae0a8225badbe38727a73ca3d31f9c0cd39"
   end
 
   depends_on "pkgconf" => :build

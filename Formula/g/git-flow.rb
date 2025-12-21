@@ -41,6 +41,8 @@ class GitFlow < Formula
     end
   end
 
+  deprecate! date: "2025-12-19", because: :repo_archived
+
   def install
     (buildpath/"shFlags").install resource("shFlags")
 

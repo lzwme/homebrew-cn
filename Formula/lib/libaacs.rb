@@ -42,6 +42,10 @@ class Libaacs < Formula
 
   uses_from_macos "flex" => :build
 
+  on_macos do
+    depends_on "libgpg-error"
+  end
+
   # Fix missing include.
   patch :DATA
 

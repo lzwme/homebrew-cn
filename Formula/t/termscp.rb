@@ -1,18 +1,18 @@
 class Termscp < Formula
   desc "Feature rich terminal file transfer and explorer"
   homepage "https://termscp.veeso.dev/"
-  url "https://ghfast.top/https://github.com/veeso/termscp/archive/refs/tags/v0.19.0.tar.gz"
-  sha256 "0f5316b43335896012c18cba20fa40cbf4eb2e53961fbfa29d560318ae0eaf74"
+  url "https://ghfast.top/https://github.com/veeso/termscp/archive/refs/tags/v0.19.1.tar.gz"
+  sha256 "04248fc89e71a050463ad1824eccab4c04d34bff3126a8f9e26a77c75fe55b0f"
   license "MIT"
   head "https://github.com/veeso/termscp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f310d48b60ce47ce23c4e3660298995c2e77c7af57e422f0a6420738be09bf34"
-    sha256 cellar: :any,                 arm64_sequoia: "38d2398585233bd05037a99e307e16b1fb7984616ebf695c3fc04574ed1cec3e"
-    sha256 cellar: :any,                 arm64_sonoma:  "56e58ad9fea27cfbfef20cf64b4d44e69482e95e4195f2b45c1bad877c618198"
-    sha256 cellar: :any,                 sonoma:        "8a35830d83a5a6c7bcad7aa7bd386b2ca1463866910556ed45bd7b6cf41165f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1ceac3a482221ac92e79d70fb8c5ab31c75c856b75b128e3c04b8dafdd419dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e441b01060fc39404650fa18f3f3f4059cd50442ad72c129689595dbcca57f37"
+    sha256 cellar: :any,                 arm64_tahoe:   "d6b5cf7389ef5eee4d8d95379a8d988959f41b76843eecb53af9cdc744fd3f17"
+    sha256 cellar: :any,                 arm64_sequoia: "85c7d904187fdbc4a264c7f147c35314ed952db4c31e00095e53b5611852a25c"
+    sha256 cellar: :any,                 arm64_sonoma:  "e4001104a7299738e85635833c79f6189fe4bab9d2184275b6a998bfb51a2528"
+    sha256 cellar: :any,                 sonoma:        "f926eafbd17cab0bd7c289d28ef60a167811d89ebfc92ab4d38ee5475c1e2db9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb4cae56b048e15d8da7c00fd5035df24a836efb96f18dfc82ee98371c231a36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa5531d08369e20346ad30474907f6e2a8653df87a72af042a54e5c5ec75a7e3"
   end
 
   depends_on "pkgconf" => :build

@@ -9,12 +9,13 @@ class Twarc < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02d3e93c8d41be751b50675d139d5cf17773bdb8c4d94e5544356b47f472089a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ccb4350e926d0ef0a8e25088b55f1785b46441c5d92efd635663965fd8977e00"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b1928e9f96a3d7e2df82bbe016a23fb4582c0b922a4279944d44214fd27b21bf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cdabb7b41c7a0f66ffe5ceda06356facc62fb4ca17d364d93261edde926de2cb"
-    sha256                               arm64_linux:   "fa6a3a7b685740863d09616984c75ccf6c01e3699d9b6a97997b304a9b6bb15e"
-    sha256                               x86_64_linux:  "838e0a3b393ae6000ce041d092a6d310d309cd85286c11bcf3ef1b9f8cb89334"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8eb0504f36f0fe60258156527ff6e41bbde1d210d9364dfb4f418deb252573c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba00e29a8477469255d98b031dffa6ef58db1c864e87fc30853815a80f8d5c39"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87cc3f1aa9ac22f477a8b16377526dbfcfbe14b7dfbbdeadbc3df41fd2b3ba4a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4a44433d6df97c382fcfe65457bd81e0718ef99be1b62d196f3ea24438b9e554"
+    sha256                               arm64_linux:   "3bd61c27be902d005aca0c40c9e005e6dfe02db9f36f5577d496343edbb2ce6f"
+    sha256                               x86_64_linux:  "103c2c355bc9000205381bc608229f9166c5d1e405c73ddf39ba6b7054f9d2ff"
   end
 
   depends_on "cmake" => :build
@@ -117,13 +118,13 @@ class Twarc < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
-    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
+    url "https://files.pythonhosted.org/packages/5e/a7/c202b344c5ca7daf398f3b8a477eeb205cf3b6f32e7ec3a6bac0629ca975/tzdata-2025.3.tar.gz"
+    sha256 "de39c2ca5dc7b0344f2eba86f49d614019d29f060fc4ebc8a417896a620b56a7"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install
@@ -132,10 +133,15 @@ class Twarc < Formula
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"twarc2", shell_parameter_format: :click)
   end
 
   test do
-    assert_equal "usage: twarc [-h] [--log LOG] [--consumer_key CONSUMER_KEY]",
-                 shell_output("#{bin}/twarc -h").chomp.split("\n").first
+    (testpath/"config").write <<~EOS
+      bearer_token = 'test'
+    EOS
+    assert_match version.to_s, shell_output("#{bin}/twarc2 --config config version")
+    assert_match "Unauthorized", shell_output("#{bin}/twarc2 --config #{testpath}/config tweet 123 2>&1")
   end
 end

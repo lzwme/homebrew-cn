@@ -3,20 +3,20 @@ class Harlequin < Formula
 
   desc "Easy, fast, and beautiful database client for the terminal"
   homepage "https://harlequin.sh"
-  url "https://files.pythonhosted.org/packages/68/f9/4385c313706b54a7b122d721948cdd1367df55215c82b590ca88de61004c/harlequin-2.5.0.tar.gz"
-  sha256 "9797160f2d5cd0ceed884e1cacbd0a1bf72bed183c08aa3fb4b26de18dc86af5"
+  url "https://files.pythonhosted.org/packages/f6/33/3e7ce0ce003a940932219028706d950f2098e35018e10b00097aa90c3ae5/harlequin-2.5.1.tar.gz"
+  sha256 "8e9dc29df55a7cb546fdbc9999b3df365f825cba537d98160644225a7b1d0d57"
   license "MIT"
   head "https://github.com/tconbeer/harlequin.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4646b7874b0e7f1409a0c91be39b399859891e3a2128a690fcffc1f73ba6aa28"
-    sha256 cellar: :any, arm64_sequoia: "c3efbbb2d3dfe740c8dee48325043613df6570767377ce38a66b9108c31b4cca"
-    sha256 cellar: :any, arm64_sonoma:  "a9a4b0dc02d23362b3bf9245d649872ee1da28bb217385c609c97c49e4c4ada4"
-    sha256 cellar: :any, sonoma:        "26efafa6f22cb772bc3271b973b91231e0afbe7f0e552321620d6205a97c2d04"
-    sha256               arm64_linux:   "6b91db619979fd8daecb5c69adcc197fb339c69a962716ef6e6c5622f4089475"
-    sha256               x86_64_linux:  "93dc2161fec5e6a86e46bd1a543bf6c6bcec50479dc3a5c683327cc59124e899"
+    sha256 cellar: :any, arm64_tahoe:   "4b560f9fdaebd5ed3373b46d212d7bb127ce3cb91a3de878e925b8be2d764131"
+    sha256 cellar: :any, arm64_sequoia: "feed181660130131763f5e81c63cec3baaf70de5064673c99a4a18caeac52edd"
+    sha256 cellar: :any, arm64_sonoma:  "0b52bb5d6b38c35532fabb1c48c76202695ab8de33a915b0f2e3f84619fd7eb2"
+    sha256 cellar: :any, sonoma:        "90ad4ef193540625c36b30f3b9aeb889c1eb33e6216c4390e1e1b2289fa4a82e"
+    sha256               arm64_linux:   "cb325c84bd05eeb59335ed6a58104aeb4530292f105f5e3c9af2882a29aa8fe1"
+    sha256               x86_64_linux:  "c112849b94cee67ddaa7a621cdd3f97c9bc0095059abfba467f58f8d44f4d7fe"
   end
 
   depends_on "cmake" => :build

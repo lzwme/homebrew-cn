@@ -10,12 +10,13 @@ class Kaskade < Formula
   head "https://github.com/sauljabin/kaskade.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d5638f92c81ddd1c2716066e05f6816a38589d53d68462925b70fe169cefa5f2"
-    sha256 cellar: :any,                 arm64_sequoia: "4d6469b4fb0cb32f11b1544dcb84c4d378da1f18139d1d5ca024a1fc744bf6c3"
-    sha256 cellar: :any,                 arm64_sonoma:  "eaffa7e7bb1c1c3ba3951b77a97aac37d10a91929802537b09321268a2b52d48"
-    sha256 cellar: :any,                 sonoma:        "d7e0c8623178540fb2114b355fc78bdd66867d8a0955fb39c4f9a39f17ac9efe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7233373f884d6276d02bb99e4b73c5525d22d8fe822e26684aa8ecbe5b80d78b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "273388d4c43692333bdc99ec62edebad43abd9b31b32d617df62c593ad7be2a7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "6f3d0cb157ec042fa9fd8dc88384e14135682184aa2c1be9c5427cd6ee1a5a55"
+    sha256 cellar: :any,                 arm64_sequoia: "a9e54992c5b3a342d2142756f6aebed61a8a8d664d328ea27f083e6c2b4f8734"
+    sha256 cellar: :any,                 arm64_sonoma:  "d660d661b3e7a8c5f91393ed0b1ce7fe8c6c352c18c91ed3a901ce5c7cac9424"
+    sha256 cellar: :any,                 sonoma:        "c4891d11ba1909e6f3a34f43d2e10b78cdacd1835e9a7c50b33c596ac9ce1755"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbe843574ae4270cfc83f7ea268aadd82f5d953df3575188465cfb7f17288599"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1881490e78c6be02cb0c1bb4baba408178db76db146be4e7b3a4ee49e577df7a"
   end
 
   depends_on "rust" => :build # for orjson
@@ -38,8 +39,8 @@ class Kaskade < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/cd/3f/1d3bbd0bf23bdd99276d4def22f29c27a914067b4cf66f753ff9b8bbd0f3/authlib-1.6.5.tar.gz"
-    sha256 "6aaf9c79b7cc96c900f0b284061691c5d4e61221640a948fe690b556a6d6d10b"
+    url "https://files.pythonhosted.org/packages/bb/9b/b1661026ff24bc641b76b78c5222d614776b0c085bcfdac9bd15a1cb4b35/authlib-1.6.6.tar.gz"
+    sha256 "45770e8e056d0f283451d9996fbb59b70d45722b45d854d58f32878d0a40c38e"
   end
 
   resource "avro" do
@@ -48,8 +49,8 @@ class Kaskade < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/fb/44/ca1675be2a83aeee1886ab745b28cda92093066590233cc501890eb8417a/cachetools-6.2.2.tar.gz"
-    sha256 "8e6d266b25e539df852251cfd6f990b4bc3a141db73b939058d809ebd2590fc6"
+    url "https://files.pythonhosted.org/packages/bc/1d/ede8680603f6016887c062a2cf4fc8fdba905866a3ab8831aa8aa651320c/cachetools-6.2.4.tar.gz"
+    sha256 "82c5c05585e70b6ba2d3ae09ea60b79548872185d2f24ae1f2709d37299fd607"
   end
 
   resource "charset-normalizer" do
@@ -133,8 +134,8 @@ class Kaskade < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/c6/fe/ed708782d6709cc60eb4c2d8a361a440661f74134675c72990f2c48c785f/orjson-3.11.4.tar.gz"
-    sha256 "39485f4ab4c9b30a3943cfe99e1a213c4776fb69e8abd68f66b83d5a0b0fdc6d"
+    url "https://files.pythonhosted.org/packages/04/b8/333fdb27840f3bf04022d21b654a35f58e15407183aeb16f3b41aa053446/orjson-3.11.5.tar.gz"
+    sha256 "82393ab47b4fe44ffd0a7659fa9cfaacc717eb617c93cde83795f14af5c2e9d5"
   end
 
   resource "platformdirs" do
@@ -173,8 +174,8 @@ class Kaskade < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/ab/00/9520327698acb6d8ae120b311ef1901840d55a6c41580e377f36261daf7a/textual-6.7.1.tar.gz"
-    sha256 "2a5acb0ab316a7ba9e74b0a291fab8933d681d7cf6f4e1eeb45c39a731b094cf"
+    url "https://files.pythonhosted.org/packages/55/06/906f86bbc59ec7cd3fb424250e19ce670406d1f28e49e86c2221e9fd7ed2/textual-6.11.0.tar.gz"
+    sha256 "08237ebda0cfbbfd1a4e2fd3039882b35894a73994f6f0fcc12c5b0d78acf3cc"
   end
 
   resource "typing-extensions" do
@@ -188,8 +189,8 @@ class Kaskade < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install
@@ -197,6 +198,8 @@ class Kaskade < Formula
     # Remove after https://github.com/pypa/hatch/pull/1999 is released.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"kaskade", shell_parameter_format: :click)
   end
 
   test do

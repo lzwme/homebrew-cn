@@ -1,9 +1,9 @@
 class Riscv64ElfGdb < Formula
   desc "GNU debugger for riscv64-elf cross development"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftpmirror.gnu.org/gnu/gdb/gdb-16.3.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/gdb/gdb-16.3.tar.xz"
-  sha256 "bcfcd095528a987917acf9fff3f1672181694926cc18d609c99d0042c00224c5"
+  url "https://ftpmirror.gnu.org/gnu/gdb/gdb-17.1.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/gdb/gdb-17.1.tar.xz"
+  sha256 "14996f5f74c9f68f5a543fdc45bca7800207f91f92aeea6c2e791822c7c6d876"
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
@@ -14,13 +14,12 @@ class Riscv64ElfGdb < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "c788ada41cb0e6213ac907a95756fe63436130131ab6554fc2d8fddbf026eda8"
-    sha256 arm64_sequoia: "0e878207779037ca4b615e8d64d637da0f9efed821cb6dd4d946223cf174b570"
-    sha256 arm64_sonoma:  "60f459e55f4aa9651af064d412e83a93f7e0b3fdad25e9577b2136c0bb58973b"
-    sha256 sonoma:        "468da07210653b4c513bee8fff02cc3a3cf87a7feee2490b6fcbd122cdefcae7"
-    sha256 arm64_linux:   "d567f5e4606d581636c0cbca53e611dccde46f57928a184dd539c661defafd0d"
-    sha256 x86_64_linux:  "65c1cd2803244e087d76ae9204568565e0539c11c4938c00be02a7e891416049"
+    sha256 arm64_tahoe:   "0446cdd101a498b6cf90e72db95fad3dfc1a181412713bb66e3a0cea4f27b161"
+    sha256 arm64_sequoia: "589392414dfd9b40b94efea017e33e482807301ee75d27a6c166d9ea926b8622"
+    sha256 arm64_sonoma:  "8437dcb3edd4f7add81c38bbb8b71240963a69767b63b9949ee6a257fef9283d"
+    sha256 sonoma:        "1b9fa48addd7aee65bb49c2b3f7cbd6a102e20de6a9f0c8229b628b13979a0c6"
+    sha256 arm64_linux:   "0a112d74462e9bc93736643770351dee1a00fa9a3d0a7b168c05d44f616260e3"
+    sha256 x86_64_linux:  "c5938bb683dea6e19984572bf8fd2f2e04408e880b96823ef69c668e0adc9c41"
   end
 
   depends_on "pkgconf" => :build

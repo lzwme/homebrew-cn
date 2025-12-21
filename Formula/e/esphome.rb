@@ -3,20 +3,20 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/56/06/7fe360fdb3a1550233e758846892c523e49c7b72c8ede43e7c3b5d56503f/esphome-2025.12.0.tar.gz"
-  sha256 "9911c8dd44c7f86174ff0820b1f6f8ddc1424d0bfa3887486b8c0f680351abad"
+  url "https://files.pythonhosted.org/packages/11/84/d1a1c726076d1beb61d623feec1b5ea30ef6c13ee8f3fe2f6b7048dad44d/esphome-2025.12.1.tar.gz"
+  sha256 "e5ad2e4d58fbbff7b060d2512c51ebed6868fbd172115dce557cbe78d6928c1a"
   license "MIT"
 
   # Issue ref: https://github.com/Homebrew/homebrew-core/issues/257992
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bd46480e501a96e5e1ee8c918b1c6b893ea7812d5db7374749e9182b00e0c1ca"
-    sha256 cellar: :any,                 arm64_sequoia: "9a1b1f5cde42d61d943a14ac75266b358befa29d141b0f512c155c1d12bd7eee"
-    sha256 cellar: :any,                 arm64_sonoma:  "1fd5fe92383adf80a184403d3f3c644f083654bd95eeb8cf9b93ee9beb648120"
-    sha256 cellar: :any,                 sonoma:        "b6300bd687a3694af008e8bf32175feb10a3ccbd97453d5c61f83d464e86ea93"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2514174d9bae6f7a791dbef2df9aa88792afb6e41c51b0800131884200687104"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f68a24a3b5517bff262d557c0a4ee8b7cf600c2ad892755be1e4485061b8f08"
+    sha256 cellar: :any,                 arm64_tahoe:   "d55814dc2efda8be929b89ec0647c2c0989f6cd50f4d1570565cf0781c6e9065"
+    sha256 cellar: :any,                 arm64_sequoia: "5be6c268fecc63e94f7e51f677c70e1e0344a5a8c9d90fa65e00d89a4203b0d2"
+    sha256 cellar: :any,                 arm64_sonoma:  "4f1cba596d5712278d3c60e6ba667b466baaee81421a2d5da8e3d6ba16d11451"
+    sha256 cellar: :any,                 sonoma:        "df1d906b61826a91555bdc03bdf1dfad4cff0307c7732009885e1f0b52070633"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5956b1f6dd2bdaee17dd77830b79335d26a9ebd0c6d2f20533780f85db73e2f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f44d38e06d94bf234d83157d2e03f4c3f985ad406df323d1d5cd1564c505654"
   end
 
   depends_on "certifi" => :no_linkage

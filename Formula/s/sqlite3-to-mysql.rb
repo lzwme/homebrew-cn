@@ -9,12 +9,13 @@ class Sqlite3ToMysql < Formula
   head "https://github.com/techouse/sqlite3-to-mysql.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a80a65c33f0547f1cf2cb4304e038068b2c9df3f5d812b6052de2f0882817f3c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b9f5b5e322e20404b73139c11b5b5f5602df16efd7df92b9ace2de152b7ac40"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f4ffe7eaecd4693a79605294951697b756dbe72164f6ba2500c24687b79c1d0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0197289254d099a817481e153cc9cd51793a2ea1682f6c52a46ee14c92d0ba1e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a06aefbec9089d1a72696e888252e18404f1e4507ce821fca2f743888b994f04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d3e9b5646c2c5c0e59355aeacedff10c05e35b99c50c45559697dcbe069df31"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7ad06ba9100a13a97b061f981ad180864da3dc7a3b9293fd5f9aa876a3bdb7a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d4be43dfe556c713e04522cec9e358f9b85b9715a5ff97c87e54e51d788e933"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39c43b81d0231eb1dcf3af6542f1f79e36e5a6a3dc723079514fcde00a77e8a0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9cd5462f97e0d4014d712e4975de4a7e9f6e48180a5ad2efecacbdfd28d8c218"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0599cd54ac8844467bbf7fedfa5726c02fa11cdca8fd24fb3342bb91e17bf930"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be072b0d8a1e7e989693b13e4fdb3e7bf6be6e1f91a6f43e89c88fbfaff75ff3"
   end
 
   depends_on "python@3.14"
@@ -57,8 +58,8 @@ class Sqlite3ToMysql < Formula
   end
 
   resource "sqlglot" do
-    url "https://files.pythonhosted.org/packages/d1/50/766692a83468adb1bde9e09ea524a01719912f6bc4fdb47ec18368320f6e/sqlglot-27.29.0.tar.gz"
-    sha256 "2270899694663acef94fa93497971837e6fadd712f4a98b32aee1e980bc82722"
+    url "https://files.pythonhosted.org/packages/bf/8c/a4d24b6103305467506c1dea9c3ca8dc92773a91bae246c2517c256a0cf9/sqlglot-28.5.0.tar.gz"
+    sha256 "b3213b3e867dcc306074f1c90480aeee89a0e635cf0dfe70eb4a3af7b61972e6"
   end
 
   resource "tabulate" do
@@ -78,6 +79,8 @@ class Sqlite3ToMysql < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"sqlite3mysql", shell_parameter_format: :click)
   end
 
   test do

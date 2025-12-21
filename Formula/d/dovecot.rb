@@ -6,11 +6,22 @@ class Dovecot < Formula
   license all_of: ["BSD-3-Clause", "LGPL-2.1-or-later", "MIT", "Unicode-DFS-2016", :public_domain]
 
   livecheck do
-    url "https://repo.dovecot.org/"
-    regex(/href=.*?ce[._-]v?(\d+(?:\.\d+)+)/i)
-  end
+    url "https://dovecot.org/releases/"
+    regex(/v?(\d+(?:[._-]\d+)+)/i)
+    strategy :page_match do |page, regex|
+      major_minor = page.scan(regex)&.flatten&.last
+      next if major_minor.blank?
 
-  no_autobump! because: :requires_manual_review
+      # Check the page for the newest major/minor version, which links to the
+      # latest tarball (containing the full version in the file name)
+      version_page = Homebrew::Livecheck::Strategy.page_content(
+        URI.join("https://dovecot.org/releases/", major_minor).to_s,
+      )
+      next if version_page[:content].blank?
+
+      version_page[:content].scan(regex)&.flatten&.last
+    end
+  end
 
   bottle do
     rebuild 1

@@ -6,8 +6,6 @@ class Dsvpn < Formula
   license "MIT"
   head "https://github.com/jedisct1/dsvpn.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06ad6babce8270f21d7b98ea3e7aaac1b2bcfa4815b39b75561de68193149a9b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "78343612a40f3a9ba3c70ad6339c69e04c18262d54da9cc22c550fbc63dbe949"

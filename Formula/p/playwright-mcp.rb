@@ -1,17 +1,17 @@
 class PlaywrightMcp < Formula
   desc "MCP server for Playwright"
   homepage "https://github.com/microsoft/playwright-mcp"
-  url "https://registry.npmjs.org/@playwright/mcp/-/mcp-0.0.52.tgz"
-  sha256 "64cd4cf4357322ddb107f364330b5f121b4f4eecbf09e0da9fb76665ef6fa3ed"
+  url "https://registry.npmjs.org/@playwright/mcp/-/mcp-0.0.53.tgz"
+  sha256 "592adf3a0609745d1825fffbb3d627ee8500fa344ac3dc6e998c2f0e80f8bf7f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "efd4f5809673f3458e46e2c1ceab2984d137f2f5f50395a2055fe6d28bcdc7fd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d64cd7b20bcb5908cb7a30e31f7430aaf9467e9b9934b2533199cb186d282d98"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d64cd7b20bcb5908cb7a30e31f7430aaf9467e9b9934b2533199cb186d282d98"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dce8b6869cc61badd3677f64aaae6bcaa48e35b295cd1794937702dc8e38dc25"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b055396c39597efcb56c665a8067807247841a3304a1d419dd155fe4f49755b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b055396c39597efcb56c665a8067807247841a3304a1d419dd155fe4f49755b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef207b3ae964ff4e3dc7359e4e69d0f107d6e08681753548975b332fdb5755f4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e244b39131aa6b08aeef5013562dd134db10905b13a6165b34cbb83b51ec61fa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e244b39131aa6b08aeef5013562dd134db10905b13a6165b34cbb83b51ec61fa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a7172767dc26e457e83bbcb5466d95b5da7c856890c32b52cc3344676e76b9d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d7811ad480ed82b9e79c75aee980cc4542712fbb832135ffb1efc13c8a94f3f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d7811ad480ed82b9e79c75aee980cc4542712fbb832135ffb1efc13c8a94f3f"
   end
 
   depends_on "node"

@@ -8,12 +8,13 @@ class Archgw < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e49548c68750b5a9a3d9d92fe272a514d3a907834879ba83d382fec663dc854d"
-    sha256 cellar: :any,                 arm64_sequoia: "69984f96db8a9fe0b0fb649a2bdd05f44487a5a9a2e1747c58d80f4a69c3ad1e"
-    sha256 cellar: :any,                 arm64_sonoma:  "cc19290b2fddd6af78431323999fcbefd6f8cddb13115a8e7f0eb4482bd8bffb"
-    sha256 cellar: :any,                 sonoma:        "9795a5f99a6ed48a4453249556331874e5539ce6628785d60a48bb09fea0effa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a980e25fc9ea2dd774b9ea8b8311188832b906de2a66705792460268245bb3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "006e3b6b66e9f928eca17c6b8262f6665da84d370373991c25062988953dec8c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ee0d080dd833d2afa4b648288f29b3459ddc5aa3f56030d14755f63d61c55808"
+    sha256 cellar: :any,                 arm64_sequoia: "4ac5f5f9720c043b4fb221bd41765d26c896b01760ea2d6b4ddd730d2c8d3719"
+    sha256 cellar: :any,                 arm64_sonoma:  "2a70517f7540bd8834d11c597cc164e098da8e00ff607e1e5899a13699ffda02"
+    sha256 cellar: :any,                 sonoma:        "ba759c6af3c10a79c36914247be6655cd3e30d2415e11e731a46d06ca2ef57d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "07568c307013f80665ec96f5ebb5ab4be4b83aaae7575e18a1640b9b66b8bc52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfc5e136786b0fbc0796689ed318e14f8ed087fc7c2fce6dedd8080390a9d15d"
   end
 
   depends_on "certifi" => :no_linkage
@@ -89,6 +90,8 @@ class Archgw < Formula
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"archgw", shell_parameter_format: :click)
   end
 
   test do

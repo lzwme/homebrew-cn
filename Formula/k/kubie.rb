@@ -1,8 +1,9 @@
 class Kubie < Formula
   desc "Much more powerful alternative to kubectx and kubens"
-  homepage "https://blog.sbstp.ca/introducing-kubie/"
-  url "https://ghfast.top/https://github.com/sbstp/kubie/archive/refs/tags/v0.26.0.tar.gz"
-  sha256 "b4f9d92f69714a700deb79eb20c657a0d6fe1fb7bc6f205e9affe739c73e4961"
+  # Original homepage `https://blog.sbstp.ca/introducing-kubie` is down.
+  homepage "https://sbstp.ca"
+  url "https://ghfast.top/https://github.com/sbstp/kubie/archive/refs/tags/v0.26.1.tar.gz"
+  sha256 "60e5677c8c7efdba94cfeebff9cec3df68bd54e3c0e927ab811fa08f4d519300"
   license "Zlib"
   head "https://github.com/sbstp/kubie.git", branch: "master"
 
@@ -12,14 +13,13 @@ class Kubie < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd9aa6225ef208417c4d9867ed38d81cd189d0e739da20c5305a0cf7787cedce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c872c974d46d16a8d6a41802d894c88be5fe4f59c52ffa9a1a95373df1d7339f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4db467a89497d12da33a611257c5749458d0398c743b28f2f3809ae6bd036105"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6a1a68756304aff50f2f666b166134fa618013af6f0a6470a859c27a265d8aca"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ae57011a7c49d1d16c32c03c61c60048d8f2fd58792372cf80eb4e56041909ea"
-    sha256 cellar: :any_skip_relocation, ventura:       "741846d73f310b1d908fd3d6e680e9239edc85127f0817ed3f6f7492804714a5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d347a095cf1ec3032cccef7ab2cf569313de304251baabde718149574da50413"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98f446724e88c2c943db3a97c9e3b3886a3e86a4cbf35344bb9744451d13a90f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2cec37696426c7c26d87657e9cc983d027a976306801e7e1e5158e98ae2b2e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "072f3833414e64edc0b0a1e9d49df0a9d9c9172ee66ac417823b5f0f46577f5a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9277355bbf25f470e57bde946c89f266159da93ed7f686aabc783944b76ba5ac"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7d821cb910123136095f94994d9ccf8baff163542e18f01f960830bf51a33e43"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b3eaa3da4dcf756b29f51b0a17d640cf894c09ab4a6da59166e6ec1e91f2b9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f22560c73cb18b0b7a19c6af3e1eb69220d33cf259994107d5a3e7651bc8c07"
   end
 
   depends_on "rust" => :build
@@ -27,8 +27,8 @@ class Kubie < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    bash_completion.install "./completion/kubie.bash" => "kubie"
-    fish_completion.install "./completion/kubie.fish"
+
+    generate_completions_from_executable(bin/"kubie", "generate-completion")
   end
 
   test do

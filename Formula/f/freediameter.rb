@@ -12,13 +12,13 @@ class Freediameter < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_tahoe:   "79b0aab464344c4db67cf04e06843db87e219a7b05d852b927d6fcd24cf3f7af"
-    sha256                               arm64_sequoia: "b8c2fe00ccc13df0321b77ba8b9b8287c6de4639864b37fa1f4fc21fb4fe383b"
-    sha256                               arm64_sonoma:  "97fc7352a5df11e743dd713984e3c40d80a0fec9f0a1ac6f77932be2f4edb129"
-    sha256                               sonoma:        "339a7c3048eb764262f7cc21c6124b343073c1da9b8a17de666d538297679530"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dcd802cca540beb227ba97fe1f24e3e7bd2487613d2069090933c85da5b28b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3514c432b5aa213070d850934ff359f3caca1e1e04862e3ab215f676356f139"
+    rebuild 2
+    sha256                               arm64_tahoe:   "6101f02874dba7633196889ea14e9d5d397d8ec51d1c47f603d15413cb2ef6eb"
+    sha256                               arm64_sequoia: "dd54ac49636ecf8491ed2219ea3e8bc10fc1f0b29ac5f7125e5dfea54e2ac020"
+    sha256                               arm64_sonoma:  "0315d7812c32d103ddd734fcc28e80ad6b0ae947b6d672af24d4cf16990e3f2e"
+    sha256                               sonoma:        "1a07c7755a97e4d8e35bf575330316ab84b260d265205c963deb719d828a7dc7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8e8a5d5d8e5e831dbd4fd69a673c44828e663a96edbbf1c8da9178cf2c0ea62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "217a7b1ac6a2719401fc8978f58b46e68f4daabe4e0d6dd4f21f950903581e9b"
   end
 
   depends_on "cmake" => :build
@@ -30,9 +30,14 @@ class Freediameter < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
 
+  # cmake rpath patch, upstream pr ref, https://github.com/freeDiameter/freeDiameter/pull/84
+  patch do
+    url "https://github.com/freeDiameter/freeDiameter/commit/3037ee7735b969d106b197818c1a5bcdb4586d77.patch?full_index=1"
+    sha256 "146a8e6586b1a1146f06771129609583d43a792bbd94eea7a3c0348f02eb26b2"
+  end
+
   def install
     args = %W[
-      -DCMAKE_INSTALL_RPATH=#{rpath}
       -DDEFAULT_CONF_PATH=#{etc}
       -DDISABLE_SCTP=ON
     ]

@@ -12,12 +12,13 @@ class Imagemagick < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "840d28dd78ff13f673d6095d2ed35ebf2f300b389733c6cba506d761993f48a5"
-    sha256 arm64_sequoia: "44d52aa3ae0dd97ee4898af3f2afc4e879292bfa562e3108a562293a105ef720"
-    sha256 arm64_sonoma:  "1d35ec6983973559ef432d6b1c03ca95b1c6a6bbe2a39409253207adcf223f05"
-    sha256 sonoma:        "e9ca6c83912309c1fe6ac777f9ae64b1fc8c2a87978d1ec64e8127a29d5e03a4"
-    sha256 arm64_linux:   "9d286b6a081794dc5938af6c643c1db42701cdb8724092118415e0adbbc4116a"
-    sha256 x86_64_linux:  "a03d26c1ae545867be02511f3f2dacd89bce83eb9793893a547842356d23d12d"
+    rebuild 1
+    sha256 arm64_tahoe:   "ed595b9a6b7f23a72ac2079ce935aa57d41e14ed8ae93f4901c39632faa7d499"
+    sha256 arm64_sequoia: "12b4b48a96121aa8b3a4fcaf2d31e829b7aa438f29393d87536a402ac79a7500"
+    sha256 arm64_sonoma:  "18b748d421af42e32d2f42057825778c1065456b32ae606926bbc6cbc402f4be"
+    sha256 sonoma:        "9ecf86ba28487bb3b86016e35659e870a6ea749fb6fafa9206c109265f1b7f5e"
+    sha256 arm64_linux:   "c98d4b9c894b4109345873b37b83ca90f8a27bd1a7aee2c98b956c99a3f142bd"
+    sha256 x86_64_linux:  "6e083d9965b9f22795ea0d9f2e65d1b16e61d7958e0809fe1aa3588e352c693c"
   end
 
   depends_on "pkgconf" => :build
@@ -29,6 +30,7 @@ class Imagemagick < Formula
   depends_on "liblqr"
   depends_on "libpng"
   depends_on "libraw"
+  depends_on "librsvg"
   depends_on "libtiff"
   depends_on "libtool"
   depends_on "libultrahdr"
@@ -70,6 +72,7 @@ class Imagemagick < Formula
       "--enable-shared",
       "--enable-static",
       "--with-freetype=yes",
+      "--with-rsvg=yes",
       "--with-gvc=no",
       "--with-modules",
       "--with-openjp2",
@@ -114,7 +117,7 @@ class Imagemagick < Formula
 
     # Check support for recommended features and delegates.
     features = shell_output("#{bin}/magick -version")
-    %w[Modules freetype heic jpeg png raw tiff].each do |feature|
+    %w[Modules freetype heic jpeg png raw rsvg tiff].each do |feature|
       assert_match feature, features
     end
 

@@ -8,12 +8,13 @@ class Gamdl < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6f410d64f8cb2fc7897f585294d16141998296245a58ab2d143946a0120a71fa"
-    sha256 cellar: :any,                 arm64_sequoia: "abb279eb9fa246f55b72e149702b2bfd0151ce5b9b579bfbf7d32846ec0a132d"
-    sha256 cellar: :any,                 arm64_sonoma:  "6e96836c5019f69ff654b95d1f70472ec427503853e5c2454e524ff2f5103f2e"
-    sha256 cellar: :any,                 sonoma:        "65e4a36a7cb46cb3682d15b52bdc09d7fb0f35b240656239aaf6124d85359ed8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "37160e541df58340527df049b39626bf1f896e99ec681d0e20810a358add65c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be20be8a15bae8d317978522ccb45bcb734dd7af405f06c4fa7a1b449eeda85a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "edd7d9fc5cd3eb876b9098fdde419e8d9ae02c6c8f9fe43eb3130d4a4c1a60f5"
+    sha256 cellar: :any,                 arm64_sequoia: "232914cbb8a2a633510cfb78e9ba9c859eb272a7b5e265aebb4b3a5358106ef2"
+    sha256 cellar: :any,                 arm64_sonoma:  "ffcb2497cd260372b434766b1d32e4a13f8e0a0c364f9155b960aaf01339fa0d"
+    sha256 cellar: :any,                 sonoma:        "efd2e93d6e2986246c6d125a003d4d1058a7baa953147713cba67b77fac2b494"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "188bba0df07fa01853b0ab90f723badbe5c8dc760c5d08022b1c3c9a78d29fef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e81e3e4ece562bc9a828520c14176d85ac98dff0f3859f728697222acf6424d6"
   end
 
   depends_on "certifi" => :no_linkage
@@ -22,9 +23,6 @@ class Gamdl < Formula
   depends_on "python@3.14"
 
   pypi_packages exclude_packages: %w[certifi pillow]
-
-  # `protobuf` is manually updated to support Python 3.14, gamdl > pywidevine > protobuf
-  # Issue ref: https://github.com/devine-dl/pywidevine/issues/55
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
@@ -132,8 +130,8 @@ class Gamdl < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
-    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "wcwidth" do
@@ -148,6 +146,8 @@ class Gamdl < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"gamdl", shell_parameter_format: :click)
   end
 
   test do

@@ -3,18 +3,17 @@ class Cppman < Formula
 
   desc "C++ 98/11/14/17/20 manual pages from cplusplus.com and cppreference.com"
   homepage "https://github.com/aitjcize/cppman"
-  url "https://files.pythonhosted.org/packages/f7/ec/3965a47a4bfb8426037061ab429320cc306c229827db1c213eda52fe4a4d/cppman-0.5.9.tar.gz"
-  sha256 "15a4e40ab025b4dcec5a73a50df26b7ddaef7c148fcb197940fff2484f9e9903"
+  url "https://files.pythonhosted.org/packages/bd/f7/3fe2da627877a1b091d9f00fa494bc62a2eea1cad27a4fd64c23bd29a4fd/cppman-0.6.0.tar.gz"
+  sha256 "4426d6128356eb28ed3371066d17fa02d250fa5b1f666b09d2ee8f0c8900a790"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "50314626915da53a6878e6a05c01067c3c4d64b941c592ecabbbd95c789cf03a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c386f4f384c296b6a6e195616140c666621aacfe96c2068b73eb3cd193484c1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1301d0c64dd255e0aeac8403427e5e5d74ef14f01abf5fb5df053eb7827ec69"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2b96b5fce1d42442cc9e5b4be0619b20ae9058208fea0f127005889027ef1830"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc5c51475e9fe77e973501eccfc000278e5c5bdabbd0c2540cfbdaf4a3cf6706"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fab5024b43e4396249eded3c316f9655a4542dfea971fdb26da6810f361618fd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7184fa151468a442a6e2e41fbab77436eb6d4adafd69ac9e662e656b88435511"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5cbefe1fe7f0cef6367e67d82d1193679406d434311b28fbe6413019fc635ab1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6633febcb546831c2ef87b5e6af922417c7a4e3bf92f3fc568fdb0c1cdf20a19"
+    sha256 cellar: :any_skip_relocation, sonoma:        "809ee26af759160cc6d3c6d6b320932f8dc766c1d66327b025d67ab53a89f501"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d2d75cb9e77490ce03d20740f93d743530d7aed815b2518e28c82660fc32a03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03473c5d1e5e996ce55e6d193924ea46be2732078206e7a09c92e33c6d6f4873"
   end
 
   depends_on "python@3.14"
@@ -80,6 +79,6 @@ class Cppman < Formula
   end
 
   test do
-    assert_match "std::extent", shell_output("#{bin}/cppman -f :extent")
+    assert_match "std::extent", shell_output("#{bin}/cppman -n 1 -f :extent")
   end
 end

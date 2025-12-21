@@ -3,7 +3,7 @@ class OperatorSdk < Formula
   homepage "https://sdk.operatorframework.io/"
   url "https://github.com/operator-framework/operator-sdk.git",
       tag:      "v1.42.0",
-      revision: "1b9cb8dc55a83d027e562d81dcb134ebc8700ba1"
+      revision: "ab5563df5499cafa4ea9d40d4b36b51899a4718e"
   license "Apache-2.0"
   head "https://github.com/operator-framework/operator-sdk.git", branch: "master"
 

@@ -39,6 +39,10 @@ class Libbdplus < Formula
 
   depends_on "libgcrypt"
 
+  on_macos do
+    depends_on "libgpg-error"
+  end
+
   def install
     system "./bootstrap" if build.head?
     system "./configure", "--disable-dependency-tracking",

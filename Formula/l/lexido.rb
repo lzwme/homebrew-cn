@@ -19,6 +19,9 @@ class Lexido < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "89a7971e9b13dc59d9539c08bef80de9abb3873743315c34a5a95c640a4f5a5a"
   end
 
+  deprecate! date: "2025-12-21", because: :repo_archived
+  disable! date: "2026-12-21", because: :repo_archived
+
   depends_on "go" => :build
 
   def install

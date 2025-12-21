@@ -203,8 +203,7 @@ class Sile < Formula
     <<~EOS
       By default SILE uses the font Gentium Plus to render all documents that do not specifically call for something else. If this font is not available on your system you may encounter errors. Of lower priority depending on your use case, the math typesetting package defaults to using Libertinus Math and the default monospace font is Hack.
 
-      Homebrew does not supply any of these font dependencies in default casks, but they can be added by tapping cask-fonts:
-        brew tap homebrew/cask-fonts
+      These fonts can be installed via Homebrew:
         brew install --cask font-gentium-plus
         brew install --cask font-libertinus
         brew install --cask font-hack
