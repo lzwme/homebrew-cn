@@ -1,9 +1,9 @@
 class MariadbConnectorOdbc < Formula
   desc "Database driver using the industry standard ODBC API"
   homepage "https://mariadb.org/download/?tab=connector&prod=connector-odbc"
-  url "https://archive.mariadb.org/connector-odbc-3.2.7/mariadb-connector-odbc-3.2.7-src.tar.gz"
-  mirror "https://fossies.org/linux/misc/mariadb-connector-odbc-3.2.7-src.tar.gz/"
-  sha256 "11ce94737004695eedaf66a72eeafcb43fb68ccac7dbb5baa16054dac539fdb3"
+  url "https://archive.mariadb.org/connector-odbc-3.2.8/mariadb-connector-odbc-3.2.8-src.tar.gz"
+  mirror "https://fossies.org/linux/misc/mariadb-connector-odbc-3.2.8-src.tar.gz/"
+  sha256 "9968979aae46a1750452eb934558af81c6eda957eaee00f7ec72b24ee8ead547"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -18,12 +18,12 @@ class MariadbConnectorOdbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f1b29c1a0dc8071a331fa1369a039b0d96886ff79bb36136f0f1a9eac9f63c8d"
-    sha256 cellar: :any,                 arm64_sequoia: "eece3cd9be87900f014ce2de36febebb8380b85e8f537945166e9c947a4b0adc"
-    sha256 cellar: :any,                 arm64_sonoma:  "57e869ba04df6eacce2bdc1215f313b2d63c77f90335dbc05b1b874172b23834"
-    sha256 cellar: :any,                 sonoma:        "7f5fce54d902b89f9fd938141cd2660c46996dc8a3c47fa865fc43c1962dcf52"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8fc9d0e3edfd19c4a344d640fc7f14397928353f5a7d46174d673c82be028653"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3b1be91aad52a4b13d528745770baf59ba410b3207b87084c55caa06c702457"
+    sha256 cellar: :any,                 arm64_tahoe:   "6503f5e12ba9a93fe77b5e3c3531da76a86250f87fb4213334e16cdfca4c9198"
+    sha256 cellar: :any,                 arm64_sequoia: "e60dd366ab6cad4d935fe9ed114ad12ff3747a53404bc77fab2b45d6633430d4"
+    sha256 cellar: :any,                 arm64_sonoma:  "80f260c40418203e6e9c5cdeb8e2b317f71d47c2dab4ab7206ae77f4c0e63f7f"
+    sha256 cellar: :any,                 sonoma:        "e34194f7649b50234942d6b531a73720d2a1d4b61895dc5856f9bf6f70c27313"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c4da9595f5dd992339dd64d9edc7c017dbb59e880cf315385fc6d4471ee2468"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a136c005bebcf4467b18b05958444557bb152c016a3d74fd4e2d60b00cc331f"
   end
 
   depends_on "cmake" => :build

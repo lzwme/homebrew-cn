@@ -12,12 +12,13 @@ class Cloudquery < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ddee4a60c7fc7066894e00e371e11e18727f3d746f75a252730e74e543e94c4d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ddee4a60c7fc7066894e00e371e11e18727f3d746f75a252730e74e543e94c4d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ddee4a60c7fc7066894e00e371e11e18727f3d746f75a252730e74e543e94c4d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dce13a51693f8a5c795c3ee14d1ee8927e6804e12ea0fd9944bc455f12d6b252"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d9aae84c5808449edcd31abafea02a4fa6bdbb32fedefc7c81078f7b20bd81c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b202cab62a694b4e174de6afec027e0babaf825beebaa35eed43292437dc7a36"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1da5f393a989dd3a07b0d67ebc15011b1c8e30d1427a17a3b9007076874f0b43"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1da5f393a989dd3a07b0d67ebc15011b1c8e30d1427a17a3b9007076874f0b43"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1da5f393a989dd3a07b0d67ebc15011b1c8e30d1427a17a3b9007076874f0b43"
+    sha256 cellar: :any_skip_relocation, sonoma:        "225726ffae250516acc02c2801e8ffc26b17f121b5b4a8c5815a0ea36d2d38d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0037785b245c7816da0537a3adb84d2ef7c9a5c9cd3335b933da8739f6e320c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ecc77657f1544176b8c055d809b501b60d002d2ee91a7b8f301dab122fd4f161"
   end
 
   depends_on "go" => :build
@@ -27,6 +28,7 @@ class Cloudquery < Formula
       ldflags = "-s -w -X github.com/cloudquery/cloudquery/cli/v6/cmd.Version=#{version}"
       system "go", "build", *std_go_args(ldflags:)
     end
+    generate_completions_from_executable(bin/"cloudquery", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

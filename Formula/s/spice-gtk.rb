@@ -64,6 +64,7 @@ class SpiceGtk < Formula
   end
 
   on_linux do
+    depends_on "cyrus-sasl"
     depends_on "libva"
     depends_on "wayland"
   end

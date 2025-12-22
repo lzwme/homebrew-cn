@@ -9,8 +9,9 @@ class Ratarmount < Formula
   head "https://github.com/mxmlnkn/ratarmount.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "a15624a458e6f7ceac2e37a87c97af346da5464730878bb1275fbd1f892dea22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7593eec7a1178860126729643e997704a66bf03fd0e58b1aeea4e7afd0e4ecc4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "857092d729eac8eb5425c04c5a270b432fb9c68cbfdb0aa50fee2e5900e92cb7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3ce17abfa283e62f91bfe6ab768954a0e5f330b29b878b0f3cc354eb42f316a8"
   end
 
   depends_on "libffi"
@@ -19,7 +20,6 @@ class Ratarmount < Formula
   depends_on :linux
   depends_on "python@3.14"
   depends_on "zlib"
-  depends_on "zstd"
 
   resource "brotli" do
     url "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
@@ -32,8 +32,8 @@ class Ratarmount < Formula
   end
 
   resource "indexed-gzip" do
-    url "https://files.pythonhosted.org/packages/d4/22/e9e94407bae83444adf598535b684d28cfbbcbe19f58eeba46f4db7bc0f3/indexed_gzip-1.10.1.tar.gz"
-    sha256 "3993fd72570b254045d2361d937a984350719f2205066f4e4c16435a1df361e3"
+    url "https://files.pythonhosted.org/packages/e8/f9/a127e4f1f806b18d43272b6d0bb56f74ca1a16628d60ebc674a62ebf37eb/indexed_gzip-1.10.3.tar.gz"
+    sha256 "1347f3b6c5522c5c50db5d9e2801257cea86639e87b46c6635f22005ee3ded25"
   end
 
   resource "indexed-zstd" do
@@ -42,8 +42,8 @@ class Ratarmount < Formula
   end
 
   resource "inflate64" do
-    url "https://files.pythonhosted.org/packages/dd/8c/3a7ac7e1931bd1bca5f8e3687f7611083f6a79aae02b9cd6b7ce1fb4a8d0/inflate64-1.0.1.tar.gz"
-    sha256 "3b1c83c22651b5942b35829df526e89602e494192bf021e0d7d0b600e76c429d"
+    url "https://files.pythonhosted.org/packages/3e/f3/41bb2901543abe7aad0b0b0284ae5854bb75f848cf406bf8a046bf525f67/inflate64-1.0.4.tar.gz"
+    sha256 "b398c686960c029777afc0ed281a86f66adb956cfc3fbf6667cc6453f7b407ce"
   end
 
   resource "libarchive-c" do
@@ -67,13 +67,13 @@ class Ratarmount < Formula
   end
 
   resource "py7zr" do
-    url "https://files.pythonhosted.org/packages/97/62/d6f18967875aa60182198a0dd287d3a50d8aea1d844239ea00c016f7be88/py7zr-1.0.0.tar.gz"
-    sha256 "f6bfee81637c9032f6a9f0eb045a4bfc7a7ff4138becfc42d7cb89b54ffbfef1"
+    url "https://files.pythonhosted.org/packages/0c/e6/01fb15361ca75ee5d01df6361825a49816a836c99980c5481da0e40c6877/py7zr-1.1.0.tar.gz"
+    sha256 "087b1a94861ad9eb4d21604f6aaa0a8986a7e00580abd79fedd6f82fecf0592c"
   end
 
   resource "pybcj" do
-    url "https://files.pythonhosted.org/packages/ce/75/bbcf098abf68081fa27c09d642790daa99d9156132c8b0893e3fecd946ab/pybcj-1.0.6.tar.gz"
-    sha256 "70bbe2dc185993351955bfe8f61395038f96f5de92bb3a436acb01505781f8f2"
+    url "https://files.pythonhosted.org/packages/12/0c/2670b672655b18454841b8e88f024b9159d637a4c07f6ce6db85accf8467/pybcj-1.0.7.tar.gz"
+    sha256 "72d64574069ffb0a800020668376b7ebd7adea159adbf4d35f8effc62f0daa67"
   end
 
   resource "pycryptodomex" do
@@ -82,18 +82,13 @@ class Ratarmount < Formula
   end
 
   resource "pyppmd" do
-    url "https://files.pythonhosted.org/packages/f6/d7/b3084ff1ac6451ef7dd93d4f7627eeb121a3bed4f8a573a81978a43ddb06/pyppmd-1.2.0.tar.gz"
-    sha256 "cc04af92f1d26831ec96963439dfb27c96467b5452b94436a6af696649a121fd"
+    url "https://files.pythonhosted.org/packages/81/d7/803232913cab9163a1a97ecf2236cd7135903c46ac8d49613448d88e8759/pyppmd-1.3.1.tar.gz"
+    sha256 "ced527f08ade4408c1bfc5264e9f97ffac8d221c9d13eca4f35ec1ec0c7b6b2e"
   end
 
   resource "python-xz" do
     url "https://files.pythonhosted.org/packages/fe/2f/7ed0c25005eba0efb1cea3cdf4a325852d63167cc77f96b0a0534d19e712/python-xz-0.4.0.tar.gz"
     sha256 "398746593b706fa9fac59b8c988eab8603e1fe2ba9195111c0b45227a3a77db3"
-  end
-
-  resource "pyzstd" do
-    url "https://files.pythonhosted.org/packages/47/82/7bcafbf06ee83a66990ce5badbb8f4dc32184346bab20de7e468b1a2f6ec/pyzstd-0.18.0.tar.gz"
-    sha256 "81b6851ab1ca2e5f2c709e896a1362e3065a64f271f43db77fb7d5e4a78e9861"
   end
 
   resource "rapidgzip" do
@@ -117,13 +112,7 @@ class Ratarmount < Formula
   end
 
   def install
-    venv = virtualenv_install_with_resources without: "pyzstd"
-    # We need to build separately to link to our `zstd`.
-    resource("pyzstd").stage do
-      system_zstd = "--config-settings=--build-option=--dynamic-link-zstd"
-      system venv.root/"bin/python", "-m", "pip", "install", system_zstd,
-                                     *std_pip_args(prefix: false, build_isolation: true), "."
-    end
+    virtualenv_install_with_resources
   end
 
   test do

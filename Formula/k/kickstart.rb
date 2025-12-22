@@ -1,19 +1,17 @@
 class Kickstart < Formula
   desc "Scaffolding tool to get new projects up and running quickly"
   homepage "https://github.com/Keats/kickstart"
-  url "https://ghfast.top/https://github.com/Keats/kickstart/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "2a1a335c70b81757abf4240a52ebce231501f731f3d73decbed4133d18ad1386"
+  url "https://ghfast.top/https://github.com/Keats/kickstart/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "0888ca59bc11e2c9531957047973b3f4d28e4270c03d1272f29d8b73f12bb142"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d95c2d3cf27851fc880368186b1dbc21311e66ae0b40bcc92be7ceead5f003a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43978e06cd88f0b1422d79ce521cf807884df6f31f05b196865ec1a1662a463c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "403b3eb69425af095c2a5fa75fd1590cfba5190627ce95b8394f18aa89983d01"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "471f9a6ff9f0fe541dd13da8727d4cddca404cdea11698ebff5ca34abe6ddb1b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a33b98800a5c86dd562706faaa5c4f1b9b4d4be00f1b073d2f79f88c70c683a1"
-    sha256 cellar: :any_skip_relocation, ventura:       "2192bb7a80449ad9c47bab27f5347b3a07a634b2e0a06c342bf5d83e9411c805"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b17daab4bf60200fa04cc9af345b9f9c3788911a925137a69e63fa4f1bf40c4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0e8ed4eb9366108b3e1da2a2792bae23572462b90ab47756e0b0e4e3c93a9eb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4da704a13fe097f488ef7ffff14c2449e08ce87f0863c4d3b0ec1fb4d84d817f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98d5fc2c7dd19846e28d7d3ac0aded2ba9d05a7027a2cd9b7d5d544aa643ae50"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63ac54acda7d230418bb0b0fd3d43a6920eda599e6aebd8e6ad654ff94f5207c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ada53abf074cf433bcc799226148790a68578c86ecde501f4c55f79f7969ade6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5be6b2132ab93b209560ebe642576a39d6e7606ff5bd90215bac6415d2d0c32a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd13f0e62244332963acd82c481bd12d3f917c4adce0a7b62bfb4ee6a059d73b"
   end
 
   depends_on "rust" => :build

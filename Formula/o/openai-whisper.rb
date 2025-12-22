@@ -12,12 +12,13 @@ class OpenaiWhisper < Formula
   no_autobump! because: "`update-python-resources` cannot update resource blocks"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f19821ab4fa585b941fa4ec46f82b99a7dbff8a51c99b7fc603a1acccb0bd17d"
-    sha256 cellar: :any,                 arm64_sequoia: "966b2e05957225b9ef816b42232b1424330026278d549043d1f9b7af36f480f3"
-    sha256 cellar: :any,                 arm64_sonoma:  "f1ab142f391af14060da500aada3f80850eb3a726b5c385a28c3ceaed88f2910"
-    sha256 cellar: :any,                 sonoma:        "ba8fd943ef0179dde3ac68fbab1ce28be7492fadbd1c87fedfe9e75986fcfbfc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "db1e24eaa82f062c000196172417d8027028cbae7dfa205f742aac75f4b4652b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74169f9fe5cb20a9119cf89339ccefe31d9be690c4d3ce6d9bc7d72c5612de7a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "2e8496e95e3a76469cab7ab114301527256247593fa99db848b9101fc89c88ec"
+    sha256 cellar: :any,                 arm64_sequoia: "3c85d0d9391e62c28a5592b4f71a5a8808f7a1d244a6983b3a165993f77e61ae"
+    sha256 cellar: :any,                 arm64_sonoma:  "d2163f4b9b350ad016b6d53946b3d756f46b1feefbab0cf08bec5693bb5a1370"
+    sha256 cellar: :any,                 sonoma:        "a422b5d23e147844ae6686b7c48d683d43ccb755771b3b0513f5962615ff9373"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "32dc246c859813d5cce3b561947dbdc244e25c89d24d1bfb7f62564fb9042649"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9e854bdf4580a59eec80cc952a22c1f2a5a3edbe282edf595e33dac5a907cab"
   end
 
   depends_on "cmake" => :build
@@ -26,11 +27,15 @@ class OpenaiWhisper < Formula
   depends_on "certifi"
   depends_on "ffmpeg"
   depends_on "llvm@20"
-  depends_on "numpy"
   depends_on "python@3.14"
   depends_on "pytorch"
 
-  pypi_packages exclude_packages: %w[certifi numpy torch]
+  on_linux do
+    depends_on "patchelf" => :build
+  end
+
+  # numba 0.63.1 does not support numpy 2.4.x, see https://github.com/numba/numba/issues/10263
+  pypi_packages exclude_packages: %w[certifi torch]
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
@@ -53,8 +58,13 @@ class OpenaiWhisper < Formula
   end
 
   resource "numba" do
-    url "https://files.pythonhosted.org/packages/c5/00/c45e314a72382c5e32e642de45a4fd33f7d519b3d9b49bc33171ded3f55b/numba-0.63.0.tar.gz"
-    sha256 "27e525ce6f9f727c4f61e89b9d453d4a7d0aabbbf110278988334f43cbd70fdc"
+    url "https://files.pythonhosted.org/packages/dc/60/0145d479b2209bd8fdae5f44201eceb8ce5a23e0ed54c71f57db24618665/numba-0.63.1.tar.gz"
+    sha256 "b320aa675d0e3b17b40364935ea52a7b1c670c9037c39cf92c49502a75902f4b"
+  end
+
+  resource "numpy" do
+    url "https://files.pythonhosted.org/packages/76/65/21b3bc86aac7b8f2862db1e808f1ea22b028e30a225a34a5ede9bf8678f2/numpy-2.3.5.tar.gz"
+    sha256 "784db1dcdab56bf0517743e746dfb0f885fc68d948aba86eeec2cba234bdf1c0"
   end
 
   resource "regex" do
@@ -78,8 +88,8 @@ class OpenaiWhisper < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
-    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install

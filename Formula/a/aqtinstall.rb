@@ -7,19 +7,20 @@ class Aqtinstall < Formula
   sha256 "9c7d85fbe7258be2d7d23fda33f8aff2e8b7536817255eaeaaf4226da8546a31"
   license "MIT"
   revision 4
+  head "https://github.com/miurahr/aqtinstall.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "19d6aa761b04609f77ca52e7df9d4443d4a90d06f28097b7b75bce38963893c1"
-    sha256 cellar: :any,                 arm64_sequoia: "8b856e6e4fc4a07e7fcd4358ed37c1357e7a36097ec0000f1f8891a8690cfc3d"
-    sha256 cellar: :any,                 arm64_sonoma:  "90bd7529d01a9f82e7ece0bfda87fb579dea5d1971f0764fb66e72fb835a0601"
-    sha256 cellar: :any,                 sonoma:        "d96a94efc0ee716d69c01488fa1239f66ee270811ab671a5f450275a9a5887e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3d1e4e5fb4153d617256364458f0b3594958507a973912f1c4f880e8b96b1eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "334749a6a081bc81bdfe2443709fa95e74d75403f08927eb7589085e79f5b601"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d9f36f60878779a7a770a6eddf5abc6237ef634483c55907c6a8cc1f1f59f60"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6025cedc5e8de2dbd2061ccf9c8771628fccb7f9f158a2d63020594d24c29a75"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cdc5899720a3f4533dbf3c0cb6a345a28a0cb1ce39ef60c539c49e7efd63f66f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4edc842f962c1003fdbaeda4c6cbb4702df1823b2d0f0a394e26cdf0fbf56421"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "45263f2eda3a4ca184cfb37337eebcf930c076e791abe7adb0158b1edddde2c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d050ddf94f6a78d0174f4cb53f854060c80a028af1cff05d5bdb32560356c80"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
-  depends_on "zstd"
 
   pypi_packages exclude_packages: "certifi"
 
@@ -49,8 +50,8 @@ class Aqtinstall < Formula
   end
 
   resource "humanize" do
-    url "https://files.pythonhosted.org/packages/b6/43/50033d25ad96a7f3845f40999b4778f753c3901a11808a584fed7c00d9f5/humanize-4.14.0.tar.gz"
-    sha256 "2fa092705ea640d605c435b1ca82b2866a1b601cdf96f076d70b79a855eba90d"
+    url "https://files.pythonhosted.org/packages/ba/66/a3921783d54be8a6870ac4ccffcd15c4dc0dd7fcce51c6d63b8c63935276/humanize-4.15.0.tar.gz"
+    sha256 "1dd098483eb1c7ee8e32eb2e99ad1910baefa4b75c3aff3a82f4d78688993b10"
   end
 
   resource "idna" do
@@ -79,8 +80,8 @@ class Aqtinstall < Formula
   end
 
   resource "py7zr" do
-    url "https://files.pythonhosted.org/packages/97/62/d6f18967875aa60182198a0dd287d3a50d8aea1d844239ea00c016f7be88/py7zr-1.0.0.tar.gz"
-    sha256 "f6bfee81637c9032f6a9f0eb045a4bfc7a7ff4138becfc42d7cb89b54ffbfef1"
+    url "https://files.pythonhosted.org/packages/0c/e6/01fb15361ca75ee5d01df6361825a49816a836c99980c5481da0e40c6877/py7zr-1.1.0.tar.gz"
+    sha256 "087b1a94861ad9eb4d21604f6aaa0a8986a7e00580abd79fedd6f82fecf0592c"
   end
 
   resource "pybcj" do
@@ -94,13 +95,8 @@ class Aqtinstall < Formula
   end
 
   resource "pyppmd" do
-    url "https://files.pythonhosted.org/packages/f6/d7/b3084ff1ac6451ef7dd93d4f7627eeb121a3bed4f8a573a81978a43ddb06/pyppmd-1.2.0.tar.gz"
-    sha256 "cc04af92f1d26831ec96963439dfb27c96467b5452b94436a6af696649a121fd"
-  end
-
-  resource "pyzstd" do
-    url "https://files.pythonhosted.org/packages/47/82/7bcafbf06ee83a66990ce5badbb8f4dc32184346bab20de7e468b1a2f6ec/pyzstd-0.18.0.tar.gz"
-    sha256 "81b6851ab1ca2e5f2c709e896a1362e3065a64f271f43db77fb7d5e4a78e9861"
+    url "https://files.pythonhosted.org/packages/81/d7/803232913cab9163a1a97ecf2236cd7135903c46ac8d49613448d88e8759/pyppmd-1.3.1.tar.gz"
+    sha256 "ced527f08ade4408c1bfc5264e9f97ffac8d221c9d13eca4f35ec1ec0c7b6b2e"
   end
 
   resource "requests" do
@@ -114,8 +110,8 @@ class Aqtinstall < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/6d/e6/21ccce3262dd4889aa3332e5a119a3491a95e8f60939870a3a035aabac0d/soupsieve-2.8.tar.gz"
-    sha256 "e2dd4a40a628cb5f28f6d4b0db8800b8f581b65bb380b97de22ba5ca8d72572f"
+    url "https://files.pythonhosted.org/packages/89/23/adf3796d740536d63a6fbda113d07e60c734b6ed5d3058d1e47fc0495e47/soupsieve-2.8.1.tar.gz"
+    sha256 "4cf733bc50fa805f5df4b8ef4740fc0e0fa6218cf3006269afd3f9d6d80fd350"
   end
 
   resource "texttable" do
@@ -129,18 +125,12 @@ class Aqtinstall < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install
-    venv = virtualenv_install_with_resources without: "pyzstd"
-    # We need to build separately to link to our `zstd`.
-    resource("pyzstd").stage do
-      system_zstd = "--config-settings=--build-option=--dynamic-link-zstd"
-      system venv.root/"bin/python", "-m", "pip", "install", system_zstd,
-                                     *std_pip_args(prefix: false, build_isolation: true), "."
-    end
+    virtualenv_install_with_resources
   end
 
   test do

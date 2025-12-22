@@ -7,12 +7,13 @@ class Garage < Formula
   head "https://git.deuxfleurs.fr/Deuxfleurs/garage.git", branch: "main-v2"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3fe9cdfc6135cb389c27b86d862f83cb68543264af27b7ac5e68930c26d3c333"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ea2e5f244b5e882010eca9c928302deec305b3104692008da40e499e0633769"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0edd0db35051b652318dd4c7336a162de522634c0453bf5259462a3b4ddf7b58"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dae8779b0b79b263ec567c6502ecfe137724fd015f266181392947a4fd44379f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5a35bfcd3dc76012dcfa987d2f8b5b4540d79933c6d7ef5d3feca2c366223dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15bfa2bf012459491ccc1db5c6136581ed9c6322c1be2f6ee1c3febb4baa2a43"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e40dbc789fce249bcd4f06dc8881402e2cbb1c8d399260f1a4c5cf31cda2436b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d2ad3548011c104c4046c2fa8cc481a2113cb43b8905d831595407de8f6d640"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a722cb57f6c41b9cffb42aa5d64651ec355729ab1879197741aa6ad43a3b9804"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ecc9478bd28f71a21dea8e761ff9b3d451f00d644aca3837060a747e2062e5fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "40cea06dceefd06e4f42938015d28f18b23c0ab02d3356ff04424899284471f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86fb767d900a02b13c7e9f88fe3bd1137e0a067352e97c3cb6ae2d620b3bfc4f"
   end
 
   depends_on "rust" => :build
@@ -22,7 +23,7 @@ class Garage < Formula
   end
 
   service do
-    run [opt_bin/"garage", "server", "--config", etc/"garage/config.toml"]
+    run [opt_bin/"garage", "--config", etc/"garage/config.toml", "server"]
     keep_alive true
     working_dir HOMEBREW_PREFIX
     log_path var/"log/garage.log"

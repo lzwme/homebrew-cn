@@ -1,8 +1,8 @@
 class PgpoolIi < Formula
   desc "PostgreSQL connection pool server"
   homepage "https://www.pgpool.net/mediawiki/index.php/Main_Page"
-  url "https://www.pgpool.net/mediawiki/images/pgpool-II-4.6.4.tar.gz"
-  sha256 "ef0d2e91a9a11d737c6476247219e679f718bec53550646189594ef9aefd298d"
+  url "https://www.pgpool.net/mediawiki/images/pgpool-II-4.6.5.tar.gz"
+  sha256 "43dcb860e7099d3e322418378e856935f76bb4f3f09b9024c9b7d65af55e4036"
   license all_of: ["HPND", "ISC"] # ISC is only for src/utils/strlcpy.c
 
   livecheck do
@@ -11,12 +11,12 @@ class PgpoolIi < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "ef795af0913af3ecef71990761666306ca8f102cfc7051033491fba416516a8a"
-    sha256               arm64_sequoia: "764becc67fdd664db20865f57017a2af5340f8d58b79381c3d2ab190f839ae1a"
-    sha256               arm64_sonoma:  "b17cee9294bf4c8975d0c19eb5eaf6f6f28c4152e1ade6e56ad5cd137a75e239"
-    sha256 cellar: :any, sonoma:        "33cf9a6031105594cbf1e8edc11be411e0b8e17cd9ec33abf10d87ceaf5b31af"
-    sha256               arm64_linux:   "5c32eb3ec88752f3b85ccb342f2dedf34b45f858164176db3afe7ced79a08647"
-    sha256               x86_64_linux:  "43b17e18cf2e5f1d6f5cb3b6feeed822663dec54d23c405d2e9c0d1c7764b12a"
+    sha256               arm64_tahoe:   "60b6b09cd0a727350fae10befbea86dff9aeef373b9ad56f3f0e8dbaa26db6ce"
+    sha256               arm64_sequoia: "88fc5ff2c28b7031cfa956c59499aee7df0a382efd5696d0d662e903aa7f616f"
+    sha256               arm64_sonoma:  "e8275ac860c072cc9404c06297181dbdbb605ae1d5e090548ec8b040f47b9175"
+    sha256 cellar: :any, sonoma:        "1f4c5ea2eaf8bd4eaaa50b7833307a257ca8db3e03500f6bae7ad91866a6a7d2"
+    sha256               arm64_linux:   "ef6baf222cd6756295c555275c114e5699c8d7e34dc037c06db26238c5e82212"
+    sha256               x86_64_linux:  "2a2a091914ef4396bbaf7f33b98cc2af74a399eb0f588475bc64f90e3da81230"
   end
 
   depends_on "libmemcached"
@@ -31,6 +31,11 @@ class PgpoolIi < Formula
   end
 
   def install
+    # Workaround for use of `strchrnul`, which is not available on macOS
+    inreplace "src/utils/pool_process_reporting.c",
+              "*(strchrnul(status[i].value, '\\n')) = '\\0';",
+              "char *p = strchr(status[i].value, '\\n');\nif (p) *p = '\\\\0';"
+
     system "./configure", "--sysconfdir=#{etc}",
                           "--with-memcached=#{Formula["libmemcached"].opt_include}",
                           *std_configure_args

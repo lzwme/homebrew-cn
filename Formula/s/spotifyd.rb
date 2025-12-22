@@ -25,6 +25,10 @@ class Spotifyd < Formula
   depends_on "dbus"
   depends_on "portaudio"
 
+  on_linux do
+    depends_on "openssl@3"
+  end
+
   def install
     ENV["COREAUDIO_SDK_PATH"] = MacOS.sdk_path_if_needed if OS.mac?
 

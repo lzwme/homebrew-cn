@@ -3,18 +3,17 @@ class Gamdl < Formula
 
   desc "Python CLI app for downloading Apple Music songs, music videos and post videos"
   homepage "https://github.com/glomatico/gamdl"
-  url "https://files.pythonhosted.org/packages/e5/e1/d5712c3fbc84c495f3d86d061379f6202818d6072fb71cc6029cc1e3a172/gamdl-2.8.1.tar.gz"
-  sha256 "53d448a3025ac1a6d1ceec3a33448865112cc3ea8936af691cda78a34d6b3609"
+  url "https://files.pythonhosted.org/packages/f7/b7/58e7aa740451b5ac81a12b6c0f71a6f23f00edfadc395c59f422ac6a2180/gamdl-2.8.2.tar.gz"
+  sha256 "8658b6c86e312367390ee8bbf3e52cb024efd153342273ed0db64ccb413242d6"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "edd7d9fc5cd3eb876b9098fdde419e8d9ae02c6c8f9fe43eb3130d4a4c1a60f5"
-    sha256 cellar: :any,                 arm64_sequoia: "232914cbb8a2a633510cfb78e9ba9c859eb272a7b5e265aebb4b3a5358106ef2"
-    sha256 cellar: :any,                 arm64_sonoma:  "ffcb2497cd260372b434766b1d32e4a13f8e0a0c364f9155b960aaf01339fa0d"
-    sha256 cellar: :any,                 sonoma:        "efd2e93d6e2986246c6d125a003d4d1058a7baa953147713cba67b77fac2b494"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "188bba0df07fa01853b0ab90f723badbe5c8dc760c5d08022b1c3c9a78d29fef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e81e3e4ece562bc9a828520c14176d85ac98dff0f3859f728697222acf6424d6"
+    sha256 cellar: :any,                 arm64_tahoe:   "d68859c64e22628588e2540a5a440a23c23739df78f87f72fc4f5899d63aeb0f"
+    sha256 cellar: :any,                 arm64_sequoia: "8b5cf0c192de7d0cbbe0c13fc943bdfe95f698efa7c7c7ac6cb1cd95ecd63dda"
+    sha256 cellar: :any,                 arm64_sonoma:  "a5ceda5f07045ac91adb07f6465dc7c376fb4e4d61b41fbae04274e0643b3f9d"
+    sha256 cellar: :any,                 sonoma:        "62896125cee4ca8f8892ec121a67f94a3d643dc1bfde4bd1614be8d134eb7190"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d24c5f629dc5e781a8856a5e350195b180d0048c4786e52249f03e1b49a6bcb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "967ef9cffca725042c54a98a2ba708ca67afbb0400dab7e6569b80ce4dc903a4"
   end
 
   depends_on "certifi" => :no_linkage
@@ -42,6 +41,11 @@ class Gamdl < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
     sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+  end
+
+  resource "colorama" do
+    url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
+    sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
   end
 
   resource "construct" do

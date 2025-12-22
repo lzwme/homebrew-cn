@@ -1556,6 +1556,7 @@ Homebrew-homebrew-core/Formula/d/dnsgen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dnsmap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dnsmasq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dnsperf.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dnspyre.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dnsrobocert.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dnstop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dnstracer.rb, Homebrew/homebrew-core, 0
@@ -3411,7 +3412,6 @@ Homebrew-homebrew-core/Formula/k/keeper-commander.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/keepkey-agent.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kekkai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/keploy.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/k/keptn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kepubify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kerl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kertish-dos.rb, Homebrew/homebrew-core, 1
@@ -6911,6 +6911,7 @@ Homebrew-homebrew-core/Formula/s/superfile.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/superhtml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/superlu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/supermodel.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/superseedr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/supertux.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/supervisor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/surelog.rb, Homebrew/homebrew-core, 1
@@ -8240,6 +8241,7 @@ Homebrew-homebrew-cask/Casks/a/aliworkbench.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/all-in-one-messenger.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/allen-and-heath-midi-control.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alloy.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/alma.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/almighty.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aloha-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alpha.rb, Homebrew/homebrew-cask, 0
@@ -8378,7 +8380,6 @@ Homebrew-homebrew-cask/Casks/a/athas.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/athens.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/atlauncher.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/atok.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/a/atom.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/atomic-wallet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/attachecase.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/atuin-desktop.rb, Homebrew/homebrew-cask, 1

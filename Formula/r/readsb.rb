@@ -1,17 +1,17 @@
 class Readsb < Formula
   desc "ADS-B decoder swiss knife"
   homepage "https://github.com/wiedehopf/readsb"
-  url "https://ghfast.top/https://github.com/wiedehopf/readsb/archive/refs/tags/v3.16.7.tar.gz"
-  sha256 "a61d3b486f729ae0652102e06df1fd3af38093691b69b0778499fc939a64dae2"
+  url "https://ghfast.top/https://github.com/wiedehopf/readsb/archive/refs/tags/v3.16.8.tar.gz"
+  sha256 "71c92150fb44a451fa63498a552cc2fb1872ba21157374363065de4bb5dc57e0"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ec861cd48afe626ab57735906788dd6584ff1bae466128803877363e8e162566"
-    sha256 cellar: :any,                 arm64_sequoia: "8c8ce7425d0193ea3f934c3ef54325c62c20756ab869d4fe7e5a8e82e1611f9f"
-    sha256 cellar: :any,                 arm64_sonoma:  "7724f3f1ffa2995633d00431f97177e1304a97104f3f644f411c65863f6caada"
-    sha256 cellar: :any,                 sonoma:        "bbcd1901eb410530e49bf98c5762ed470b0a938f304ac923238a990efeec5d7b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "508486d3b70c8ea1e732ac489f92c8f3d7ea4951bfc38d378d2665eb5743990b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b419183a80cdf2b91620be47947c29b5b40b9b9f5d08f52a8789925f209fb71c"
+    sha256 cellar: :any,                 arm64_tahoe:   "d27eceafabd543f6de66f399f8468f4f51ea4b10a14ef05b70f342a3d053a96a"
+    sha256 cellar: :any,                 arm64_sequoia: "96a7146c6949cc984fe265aaba7f4a7ef959fe3564431f0f661fa3999647d149"
+    sha256 cellar: :any,                 arm64_sonoma:  "731a31088040c901fb3abd6802f9e0b4c8f9038ca9d03048e1cda4e6d2b5066c"
+    sha256 cellar: :any,                 sonoma:        "295af8379bbcaddb2a7ec4b315ec7c9f3520691791a3021c9745640db0768d9d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b73131bc5a7e6e4c83c3b6c9a8211ba530a7c07a24e31a6242516e2d3b25f7a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86738b4885705e77ca75fb88043ac2955f62792b1c1edfcbb39935a3759c3e28"
   end
 
   depends_on "pkgconf" => :build

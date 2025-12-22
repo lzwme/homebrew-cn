@@ -1,8 +1,8 @@
 class Vips < Formula
   desc "Image processing library"
   homepage "https://github.com/libvips/libvips"
-  url "https://ghfast.top/https://github.com/libvips/libvips/releases/download/v8.17.3/vips-8.17.3.tar.xz"
-  sha256 "41e9a1439cd57dcc6d4435a085e2cfe181d9da1962fa84a484f09e8b536e4b77"
+  url "https://ghfast.top/https://github.com/libvips/libvips/releases/download/v8.18.0/vips-8.18.0.tar.xz"
+  sha256 "b85ab92280c30d22f5c8fe2f68b809cddb7eaac437d8c33474475dac84ddc574"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Vips < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4f44cc392df532999605e02234097ac91042184f8d5f3a6c8a414225e7260845"
-    sha256 arm64_sequoia: "456f9d782dd6b2af4d8311b8d040988abf8af69fd89400c1ebc085b4c29f9733"
-    sha256 arm64_sonoma:  "67e7abf054152ee0163f3761f8f6308d7250b148dd863c3700aed2fb6e4d3217"
-    sha256 sonoma:        "42bef575db06850228f3c4cb09895c43c4c02164aca9c83fa32f9584c7ab792f"
-    sha256 arm64_linux:   "5c412ee24f00dfca055cfb8df678d728ba5a0ece5a98d785f8997674368a23bd"
-    sha256 x86_64_linux:  "9bdc27bcffe24ac1397fd84fb6a9b40a65656e7ee3776a40abdf8a556749ec00"
+    sha256 arm64_tahoe:   "a5ba1e801e786a2cfd425b397c4e5804bd3424afb32832e6eeb4e57c1110a9bd"
+    sha256 arm64_sequoia: "30ce3ba8deabf2bacba955e1846f94c460e7a099610ca40aa3b7b45f5df4a5fb"
+    sha256 arm64_sonoma:  "38336caf8862aeace9d6e009a2fc33ca846bf0f34d3831e95c44215a5c97a97b"
+    sha256 sonoma:        "4ae56aefa5fef8357599dcff46c9a83ac81b901b1bb91adb25065ba434471192"
+    sha256 arm64_linux:   "c7f88dbf0b3f7d88c33895eff651d7a9243a9664bbaf50f313d46ad45fc332ca"
+    sha256 x86_64_linux:  "40b5f444f7bf4438489379c67e039d7601931dfb152c94086a6ae40df8a559a7"
   end
 
   depends_on "gobject-introspection" => :build
@@ -38,9 +38,11 @@ class Vips < Formula
   depends_on "libheif"
   depends_on "libimagequant"
   depends_on "libmatio"
+  depends_on "libpng"
+  depends_on "libraw"
   depends_on "librsvg"
-  depends_on "libspng"
   depends_on "libtiff"
+  depends_on "libultrahdr"
   depends_on "little-cms2"
   depends_on "mozjpeg"
   depends_on "openexr"

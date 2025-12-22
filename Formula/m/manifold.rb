@@ -4,14 +4,15 @@ class Manifold < Formula
   url "https://ghfast.top/https://github.com/elalish/manifold/releases/download/v3.3.2/manifold-3.3.2.tar.gz"
   sha256 "efdae7cd75aabab20fa2673603a9ac263d5b48912559664dde37f5d9e85eced8"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a575c8cb9f02762ee83d3afe0bb1ec335e7118695c8b70a89ad18f7610fef32d"
-    sha256 cellar: :any,                 arm64_sequoia: "28ef9eda05c7ffb5b45d66b10d2c1919fc7249d56e8e4535bb87356513643ec0"
-    sha256 cellar: :any,                 arm64_sonoma:  "0ec5d04b9284d8ba6913a917cd7d61f2bf2c5fdc3cff657f6c695a3a79016fe0"
-    sha256 cellar: :any,                 sonoma:        "909aef2c677b05bbb050a7abdf2074c4dfd2464f9b02219ddaa83fc48ab9437b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4daef8aac61d00544783eb6f4b19a9358ff1cafb04250e89afb34d6d33fd2a9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3646c3ba29bb5f9417c33a2d3e10d19d88bbebfdf05c9e3a5db85f605cc52263"
+    sha256 cellar: :any,                 arm64_tahoe:   "d8ff8859d3a76f9572d4acf0f547d7f4f419f6902c7ec58fc4facfbfc4bfc4c8"
+    sha256 cellar: :any,                 arm64_sequoia: "2887f0c2479448e4e9c90e5b29112551cef7c581907e6dc99d01e86db61f9b16"
+    sha256 cellar: :any,                 arm64_sonoma:  "75167f1b674ea31b6714daf717284a120ae25009458793a9a8a4feeb3716b0c8"
+    sha256 cellar: :any,                 sonoma:        "0739ab828ac6f351014c0e4cbb9a989e9a88dc9568d92eb753779b38de194669"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fccff6f612d40d4f26cc582b7872835c1ef7924726bb33dd0279d3d9f12c2a27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3392442fb8a153d7ae73ac4c712ecb19a3494962f6b9293fe90443df0526aeb2"
   end
 
   depends_on "cmake" => :build

@@ -1,18 +1,18 @@
 class Mdfried < Formula
   desc "Terminal markdown viewer"
   homepage "https://github.com/benjajaja/mdfried"
-  url "https://ghfast.top/https://github.com/benjajaja/mdfried/archive/refs/tags/v0.16.2.tar.gz"
-  sha256 "e0e4001940e4cb2d6339963338bd1326772542c697f910fe330622b8b9990994"
+  url "https://ghfast.top/https://github.com/benjajaja/mdfried/archive/refs/tags/v0.17.1.tar.gz"
+  sha256 "df952d107084445e6b6eb1f0b5247ca521f771e3663fc02def812b91a5bdac1e"
   license "GPL-3.0-or-later"
   head "https://github.com/benjajaja/mdfried.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a415c313c749e8b8e4d56c555164d78aa033abbc078981e75ce56aa28ba5ac64"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9fe30c751df414e82a98f947ca8870bfe0172ff93ab0048eab0cbeb2dab31a4d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10f2f8103d3934b3955a1876dd42a4f78f3e3f301234e5cc27a262284b1d56ac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "751fda53f9ce2e9b89611b941591e64a48453e7e6f3498bba69288753af1aa47"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8396681f72df38eec8d8d1c2c138258a98e52161651c6926dd862f1d2be6b97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02c7f41f20322450fd6b2af36ee9fd7845fda4b047be1527ca34fe5f1813b117"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "211c81d901d04a86791c4ae2f96e6ccf32205b7cd6e5c3f4cb71a08ab7116906"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e311a7a035061229f080ab415234d227f24f47bafd97372b03141a1e94af1721"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "138b5f131dcfce5a9f9eea464f9ef23a7f69d3a7eff178bf67219d4451cfd7fd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5739f5a706bdd2617ff5d01ccb1afc35cd2509568fccf9a0842c4412ee31c76a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "225c181705509ec9a3162c71e3aa484245c5cd420d30fef816eaae7cdacc3346"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83d531b1d097be17b60d7adf9b844e443920c39fbe271e8bc1b8bb1fc3510928"
   end
 
   depends_on "rust" => :build

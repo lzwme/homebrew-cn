@@ -1,19 +1,19 @@
 class Supermodel < Formula
   desc "Sega Model 3 arcade emulator"
   homepage "https://github.com/trzy/Supermodel"
-  url "https://ghfast.top/https://github.com/trzy/Supermodel/archive/refs/tags/v0.3a-20251213-git-9ef1f87.tar.gz"
-  version "0.3a-20251213-git-9ef1f87"
-  sha256 "2f4950c2d6543a28181c9761612ec280e7e68f14c76f56eafc2f3899ebf427f4"
+  url "https://ghfast.top/https://github.com/trzy/Supermodel/archive/refs/tags/v0.3a-20251221-git-b6673bf.tar.gz"
+  version "0.3a-20251221-git-b6673bf"
+  sha256 "eb83902db2fd00ece5623028471981fb35daa0e062de2690f22212d277af989f"
   license "GPL-3.0-or-later"
   head "https://github.com/trzy/Supermodel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bc404ca6f80146112835e98a26937755291b8e9fc3b07ad6b5faa7d9f4d86244"
-    sha256 cellar: :any,                 arm64_sequoia: "80d0bb0fca9f15c80da0e0e2838211136d13a7a3c32fc57443b328404f8b7c38"
-    sha256 cellar: :any,                 arm64_sonoma:  "fbb292627c68b493c711a70c06139333827f1c8b5b51aafd964f645e583e7d6f"
-    sha256 cellar: :any,                 sonoma:        "a4bc195df88b4b0a9b4075f8886559c0ed846b0b19c85593a9306ed26f152e75"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d27e2f6ed65bf7873f5002cdbc9de0172621a3b898b129eef0a46688fb9a21e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e24156db66f9c0eb15f1412f73587bd23417f8dcac27ac76684d3dcd24022773"
+    sha256 cellar: :any,                 arm64_tahoe:   "3ece260dcd0009ff9e511301d0e4497cd741cffc5a947c726116a61a3f577d05"
+    sha256 cellar: :any,                 arm64_sequoia: "6fa8746392c64a515cf1541fac4f9b16894067cb94e5b294f61fb49984030621"
+    sha256 cellar: :any,                 arm64_sonoma:  "a5a43d00b2c292ebe9d1fe06779d2b047613e6980d3eb1363bb2b43ae4c3a22b"
+    sha256 cellar: :any,                 sonoma:        "1beaab56bf3c506b4f2cc7732c0c29625d5956cac15059434ab89922533356ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "78ed1d1d7201dcb66fdaf83d947540da4647809396ea7f3a9b20af6a761654d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc652318a5071f049f85b30160516809f71aa040186ccd4906712534366202ef"
   end
 
   depends_on "sdl2"

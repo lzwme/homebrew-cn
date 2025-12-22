@@ -5,12 +5,12 @@ class Unisonlang < Formula
 
   stable do
     url "https://github.com/unisonweb/unison.git",
-        tag:      "release/1.0.0",
-        revision: "177d0635420f2dd9d0ba425d65eea5911253d5bb"
+        tag:      "release/1.0.1",
+        revision: "ee18126d68ef22a33559b6c74e508b977cbb4e2e"
 
     resource "local-ui" do
-      url "https://ghfast.top/https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/1.0.0.tar.gz"
-      sha256 "8e7fbe261f84ae8d4ccbb144d5fe71bf7b48dbdf05219d9db10541f5b995e1cf"
+      url "https://ghfast.top/https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/1.0.1.tar.gz"
+      sha256 "09f2106ee58d4d92ad7283372d7218f99cba331ab51aaeff7f215852897f8e30"
 
       livecheck do
         formula :parent
@@ -24,13 +24,12 @@ class Unisonlang < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9179cd2c0ba7095f663eff4a84b25fbf5de4b666f1cb1e9883e3855f912ed12e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2feef1cba04dc14215329a4ad00b6740d80b844b0e95dc9de5ee15b3f855d44"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8342d34324f23fc5aa7efdebdbd290477556bdf53b8519b84db4e1a16b8a1081"
-    sha256 cellar: :any_skip_relocation, sonoma:        "17316555c3db96877ba22227bbd297a71236f3cd055994396cf28a61dc6fc9e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dc4717d95f34f414bcdb0014986d9b8c783686c71c6f79b4bda1318adb68a13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9198636b6feec6c5c5c668bd715304672989d8354b48fea3e38a91ccde0eda0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5771008dbed2fe7d874ca2cdadf3471b4b94ecc38dc7c7fa1ae1c859d6a8b27d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2240a032b23f6bc48fc469b8625143eec03454c4e773fd5faf239f4b7cfed90"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09c9b12820f1170849b667e0b78e0bfa96a2c18e3f4999263b442fd729c9a116"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c3da7a8e781541fc90737c525e4fe6113b15157271e9efb68bd224ae101e6ec4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20abc0ea7a4604f5be4d615aa6ca6d651cae6f4a890b5bbce013c0b7ab737446"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "904e33dbbb6632899d028e19062989a60a2383b557fa56cdb939edfd906663cc"
   end
 
   head do
