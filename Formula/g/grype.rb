@@ -1,18 +1,18 @@
 class Grype < Formula
   desc "Vulnerability scanner for container images and filesystems"
   homepage "https://github.com/anchore/grype"
-  url "https://ghfast.top/https://github.com/anchore/grype/archive/refs/tags/v0.104.2.tar.gz"
-  sha256 "da7da41b46fe4c42dad97294ed742490cd268db682dd0b1eb803f5d00ca0fe8f"
+  url "https://ghfast.top/https://github.com/anchore/grype/archive/refs/tags/v0.104.3.tar.gz"
+  sha256 "15443105d7c41e1733c847754510e71c6eb28723dc9f1ffdc62218681b879bc6"
   license "Apache-2.0"
   head "https://github.com/anchore/grype.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d072ed3b218298ac92c8ef7ff38c816f6ca48660eea3f40adf69ad5ae580770"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8854b2b2f16a66a8870871bc3ff55967759defa931d84525757ff90ea3e0d1cd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6eba04a965f1eae4308c1e2d86e813634abbc1a4727dcae959c290fad2379fae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eeda3d9b6968e67ea4c84e92d15330b2cb3b684a7aa5ef9154f4897f0b69266f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d304c0c315d2063e2b4954d6e4e5e61b55058ea3bb2684e3fe225bdfedf24f06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af69adc6b2b2061536b7cb3886cb20283b3c97f33ea652cf094c1c1bce143a96"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eaac0410db2a1ba1a1911ba002b82983233972d8c2fc23a7e33379f13f3ee4e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6421492126637765acab5fd494c6632c8c2e1ce6a6ac1b0c198be78cbffb897"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "375bd6b14067647e8e838826a4688d09f1d5e0625d082b75b5bebb2804256612"
+    sha256 cellar: :any_skip_relocation, sonoma:        "99bfdfcfc05523a185f312bf52048d3b0b4e0f275132030f6d54f8e8494cdd34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9dfb6b03b4175f4a5c0186ed5498039e1ad955f9f154c289e3c972f61cbca0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5b5737dc5ba79e56da9ca28cfaafedde15adbaad251f9d36f806d33d6222278"
   end
 
   depends_on "go" => :build

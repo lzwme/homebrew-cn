@@ -4,7 +4,29 @@ class PhpAT82DebugZts < Formula
   url "https://www.php.net/distributions/php-8.2.30.tar.xz"
   mirror "https://fossies.org/linux/www/php-8.2.30.tar.xz"
   sha256 "bc90523e17af4db46157e75d0c9ef0b9d0030b0514e62c26ba7b513b8c4eb015"
-  license "PHP-3.01"
+  license all_of: [
+    "PHP-3.01",
+
+    # Extra licenses not documented in README.REDIST.BINS
+    "Zend-2.0", # Zend/LICENSE
+    "BSL-1.0",  # Zend/asm/LICENSE
+    "MIT",      # ext/date/lib/LICENSE.rst
+
+    # Extra licenses documented in README.REDIST.BINS ignoring unbundled pcre2lib (3) and gd (13)
+    # ref: https://github.com/php/php-src/blob/PHP-8.2/README.REDIST.BINS
+    "Apache-1.0",            # 10
+    "bcrypt-Solar-Designer", # 5
+    "BSD-2-Clause-Darwin",   # 1
+    "BSD-2-Clause",          # 14, 18, 19; also TSRM/LICENSE
+    "BSD-3-Clause",          # 4, 6, 11, 12, 15
+    "BSD-4-Clause-UC",       # 9
+    "ISC",                   # 10
+    "LGPL-2.1-only",         # 2
+    "LGPL-2.1-or-later",     # 16
+    "OLDAP-2.8",             # 17
+    "TCL",                   # 7
+    "Zlib",                  # 8
+  ]
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
@@ -39,7 +61,6 @@ class PhpAT82DebugZts < Formula
   depends_on "curl"
   depends_on "freetds"
   depends_on "gd"
-  depends_on "gettext"
   depends_on "gmp"
   depends_on "icu4c@78"
   depends_on "krb5"
@@ -63,6 +84,7 @@ class PhpAT82DebugZts < Formula
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "gettext"
     # PHP build system incorrectly links system libraries
     patch :DATA
   end
@@ -110,17 +132,16 @@ class PhpAT82DebugZts < Formula
     # system pkg-config missing
     ENV["KERBEROS_CFLAGS"] = " "
     if OS.mac?
-      ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path_if_needed}/usr/include/sasl"
+      sdk_path = MacOS.sdk_for_formula(self).path
+      ENV["SASL_CFLAGS"] = "-I#{sdk_path}/usr/include/sasl"
       ENV["SASL_LIBS"] = "-lsasl2"
+
+      # Each extension needs a direct reference to the sdk path or it won't find the headers
+      headers_path = "=#{sdk_path}/usr"
+      gettext_path = "=#{Formula["gettext"].opt_prefix}"
     else
-      ENV["SQLITE_CFLAGS"] = "-I#{Formula["sqlite"].opt_include}"
-      ENV["SQLITE_LIBS"] = "-lsqlite3"
       ENV["BZIP_DIR"] = Formula["bzip2"].opt_prefix
     end
-
-    # Each extension that is built on Mojave needs a direct reference to the
-    # sdk path or it won't find the headers
-    headers_path = "=#{MacOS.sdk_path_if_needed}/usr" if OS.mac?
 
     # `_www` only exists on macOS.
     fpm_user = OS.mac? ? "_www" : "www-data"
@@ -161,7 +182,7 @@ class PhpAT82DebugZts < Formula
       --with-external-gd
       --with-external-pcre
       --with-ffi
-      --with-gettext=#{Formula["gettext"].opt_prefix}
+      --with-gettext#{gettext_path}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-iconv#{headers_path}
       --with-kerberos
@@ -237,17 +258,13 @@ class PhpAT82DebugZts < Formula
     extension_dir = Utils.safe_popen_read(bin/"php-config", "--extension-dir").chomp
     orig_ext_dir = File.basename(extension_dir)
     inreplace bin/"php-config", lib/"php", prefix/"pecl"
+    inreplace ["php.ini-development", "php.ini-production"] do |s|
+      s.gsub! %r{; ?extension_dir = "\./"}, "extension_dir = \"#{HOMEBREW_PREFIX}/lib/php/pecl/#{orig_ext_dir}\""
 
-    openssl = Formula["openssl@3"]
-    %w[development production].each do |mode|
-      inreplace "php.ini-#{mode}" do |s|
-        # Allow pecl to install outside of Cellar
-        s.gsub! %r{; ?extension_dir = "\./"}, "extension_dir = \"#{HOMEBREW_PREFIX}/lib/php/pecl/#{orig_ext_dir}\""
-
-        # Use OpenSSL cert bundle
-        s.gsub!(/; ?openssl\.cafile=/, "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\"")
-        s.gsub!(/; ?openssl\.capath=/, "openssl.capath = \"#{openssl.pkgetc}/certs\"")
-      end
+      # Use OpenSSL cert bundle
+      openssl = Formula["openssl@3"]
+      s.gsub!(/; ?openssl\.cafile=/, "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\"")
+      s.gsub!(/; ?openssl\.capath=/, "openssl.capath = \"#{openssl.pkgetc}/certs\"")
     end
 
     config_files = {
@@ -297,7 +314,8 @@ class PhpAT82DebugZts < Formula
     (pecl_path/php_basename).mkpath
 
     # fix pear config to install outside cellar
-    pear_path = HOMEBREW_PREFIX/"share/pear@#{php_version}"
+    pear_dir = versioned_formula? ? "pear@#{php_version}" : "pear"
+    pear_path = HOMEBREW_PREFIX/"share"/pear_dir
     cp_r pkgshare/"pear/.", pear_path
     {
       "php_ini"  => etc/"php/#{php_version}/php.ini",

@@ -1,8 +1,8 @@
 class OpenapiGenerator < Formula
   desc "Generate clients, server & docs from an OpenAPI spec (v2, v3)"
   homepage "https://openapi-generator.tech/"
-  url "https://search.maven.org/remotecontent?filepath=org/openapitools/openapi-generator-cli/7.17.0/openapi-generator-cli-7.17.0.jar"
-  sha256 "25d6bd8273dd2be99979d544b62ea43f0ce1975f1aa582678b5093d1e7fcfce8"
+  url "https://search.maven.org/remotecontent?filepath=org/openapitools/openapi-generator-cli/7.18.0/openapi-generator-cli-7.18.0.jar"
+  sha256 "35fdd19079f5fb37cf8074f48db825bdedc02c1b8264261bf283d9394d98a285"
   license "Apache-2.0"
 
   livecheck do
@@ -13,7 +13,7 @@ class OpenapiGenerator < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "537abe185b2907ab050a65a9810d3b300b339a0b8b3fc315568858f2c00adbb3"
+    sha256 cellar: :any_skip_relocation, all: "da2e25c6faa4675f9892ab2645ec39874c85daea8b9944d454fd58e05789f658"
   end
 
   head do

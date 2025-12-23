@@ -1396,7 +1396,6 @@ Homebrew-homebrew-core/Formula/d/datasette.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/datatype99.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/datetime-fortran.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dateutils.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/datree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dav1d.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/davix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/davmail.rb, Homebrew/homebrew-core, 0
@@ -2867,6 +2866,7 @@ Homebrew-homebrew-core/Formula/h/havener.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/havn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hawkeye.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/haxe.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/h/hayagriva.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hayai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hbase.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hblock.rb, Homebrew/homebrew-core, 1
@@ -3447,6 +3447,7 @@ Homebrew-homebrew-core/Formula/k/kitchen-sync.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kitex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/klavaro.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/klee.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/klog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kmod.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kn.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/knock.rb, Homebrew/homebrew-core, 1
@@ -5577,6 +5578,7 @@ Homebrew-homebrew-core/Formula/p/pixi-pack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pixi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pixie.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pixiewps.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pixlet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pixman.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pixz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pjproject.rb, Homebrew/homebrew-core, 1
@@ -6998,6 +7000,7 @@ Homebrew-homebrew-core/Formula/t/tal.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/talhelper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/talisman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/talloc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/talm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/talosctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tanka.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/taplo.rb, Homebrew/homebrew-core, 1
@@ -7321,6 +7324,7 @@ Homebrew-homebrew-core/Formula/t/trippy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/triton.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/trivy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trojan-go.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tronbyt-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/truecrack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/truffle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/trufflehog.rb, Homebrew/homebrew-core, 1
@@ -8430,7 +8434,6 @@ Homebrew-homebrew-cask/Casks/a/axure-rp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ayugram.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/azookey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/azure-data-studio.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/a/azure-data-studio@insiders.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/ba-connected.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/babeledit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/backblaze-downloader.rb, Homebrew/homebrew-cask, 0
@@ -15393,7 +15396,6 @@ Homebrew-homebrew-cask/Casks/w/whispering.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/white-rabbit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/whodb.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/whoozle-android-file-transfer.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/w/whoozle-android-file-transfer@nightly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/widelands-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/widgettoggler.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wifi-explorer-pro.rb, Homebrew/homebrew-cask, 0

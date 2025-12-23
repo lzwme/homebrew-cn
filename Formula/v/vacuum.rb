@@ -1,18 +1,18 @@
 class Vacuum < Formula
   desc "World's fastest OpenAPI & Swagger linter"
   homepage "https://quobix.com/vacuum/"
-  url "https://ghfast.top/https://github.com/daveshanley/vacuum/archive/refs/tags/v0.21.6.tar.gz"
-  sha256 "99b96080b373af0feaa8179121ac3f2862beadbb9537476255bc186469ae666a"
+  url "https://ghfast.top/https://github.com/daveshanley/vacuum/archive/refs/tags/v0.21.7.tar.gz"
+  sha256 "a2714499ca30585847614842fd1987bf036a4277d25269f8820048e99c306018"
   license "MIT"
   head "https://github.com/daveshanley/vacuum.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cafeb8844b9c5c0fa0a609ef6b3a7bef8d718daa45dc5bc00801a98a6ecda1bc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "059081b16a0ccdaac3d808887240320a30ec7257eb760e3e297ae5cd2f6a1e65"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03e763cc20291effe4993d22ee14b0d5e5f1bd8f6244e935f95f223d076f3138"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a52fc5961fcd5b4db2fa60569c1a49027eeeea8bb2f59f0b70131d107d1143e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c2e28d63b6a47826f4a66eee9c05b498daa729ed7323cde53bb7411906e5a34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58faea7b1cbed75ec8aba43b397bc410b076f3597f7798e6de22df19e3dbbe91"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee0e767fdbc2991501153f218c4cf5328b62dc23d8dcdc075fba682cd926fe8e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6bef6e8d27f3af48939be51025570b9a5be802e5488c992b277f30d3d919547"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b455a579946d35b0ee540503fe103656907733bd8f1c27826dbc38d80efed05"
+    sha256 cellar: :any_skip_relocation, sonoma:        "85d34d8ea216bfa34d9bd19a92f30c256669561631e92a75216c739c6aa1cb91"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6fe8307ddd27fef59382e8210808f33f7faecdbb3dd439fe221d518a69f52901"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d6782661bca75ed55423820f8907102fa4d27c9072e26c13cfc1c8ba6b63ff8"
   end
 
   depends_on "go" => :build

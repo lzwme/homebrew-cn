@@ -37,7 +37,6 @@ class PhpAT56Debug < Formula
   depends_on "freetds"
   depends_on "freetype"
   depends_on "gd"
-  depends_on "gettext"
   depends_on "gmp"
   depends_on "icu4c@78"
   depends_on "jpeg"
@@ -62,6 +61,7 @@ class PhpAT56Debug < Formula
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "gettext"
     # PHP build system incorrectly links system libraries
     patch :DATA
   end
@@ -98,6 +98,7 @@ class PhpAT56Debug < Formula
               "APXS_LIBEXECDIR='$(INSTALL_ROOT)#{lib}/httpd/modules'"
       s.gsub! "-z `$APXS -q SYSCONFDIR`",
               "-z ''"
+
       # apxs will interpolate the @ in the versioned prefix: https://bz.apache.org/bugzilla/show_bug.cgi?id=61944
       s.gsub! "LIBEXECDIR='$APXS_LIBEXECDIR'",
               "LIBEXECDIR='" + "#{lib}/httpd/modules".gsub("\\", "\\\\").gsub("@", "\\@") + "'"
@@ -126,9 +127,11 @@ class PhpAT56Debug < Formula
     # Prevent homebrew from hardcoding path to sed shim in phpize script
     ENV["lt_cv_path_SED"] = "sed"
 
-    # Each extension that is built on Mojave needs a direct reference to the
-    # sdk path or it won't find the headers
-    headers_path = "=#{MacOS.sdk_path_if_needed}/usr" if OS.mac?
+    if OS.mac?
+      # Each extension needs a direct reference to the sdk path or it won't find the headers
+      headers_path = "=#{MacOS.sdk_for_formula(self).path}/usr"
+      gettext_path = "=#{Formula["gettext"].opt_prefix}"
+    end
 
     # `_www` only exists on macOS.
     fpm_user = OS.mac? ? "_www" : "www-data"
@@ -169,7 +172,7 @@ class PhpAT56Debug < Formula
       --with-fpm-group=#{fpm_group}
       --with-freetype-dir=#{Formula["freetype"].opt_prefix}
       --with-gd=#{Formula["gd"].opt_prefix}
-      --with-gettext=#{Formula["gettext"].opt_prefix}
+      --with-gettext#{gettext_path}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-iconv#{headers_path}
       --with-icu-dir=#{Formula["icu4c@78"].opt_prefix}
@@ -226,17 +229,13 @@ class PhpAT56Debug < Formula
     extension_dir = Utils.safe_popen_read(bin/"php-config", "--extension-dir").chomp
     orig_ext_dir = File.basename(extension_dir)
     inreplace bin/"php-config", lib/"php", prefix/"pecl"
+    inreplace ["php.ini-development", "php.ini-production"] do |s|
+      s.gsub! %r{; ?extension_dir = "\./"}, "extension_dir = \"#{HOMEBREW_PREFIX}/lib/php/pecl/#{orig_ext_dir}\""
 
-    openssl = Formula["openssl@3"]
-    %w[development production].each do |mode|
-      inreplace "php.ini-#{mode}" do |s|
-        # Allow pecl to install outside of Cellar
-        s.gsub! %r{; ?extension_dir = "\./"}, "extension_dir = \"#{HOMEBREW_PREFIX}/lib/php/pecl/#{orig_ext_dir}\""
-
-        # Use OpenSSL cert bundle
-        s.gsub!(/; ?openssl\.cafile=/, "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\"")
-        s.gsub!(/; ?openssl\.capath=/, "openssl.capath = \"#{openssl.pkgetc}/certs\"")
-      end
+      # Use OpenSSL cert bundle
+      openssl = Formula["openssl@3"]
+      s.gsub!(/; ?openssl\.cafile=/, "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\"")
+      s.gsub!(/; ?openssl\.capath=/, "openssl.capath = \"#{openssl.pkgetc}/certs\"")
     end
 
     config_files = {
@@ -285,7 +284,8 @@ class PhpAT56Debug < Formula
     (pecl_path/php_basename).mkpath
 
     # fix pear config to install outside cellar
-    pear_path = HOMEBREW_PREFIX/"share/pear@#{php_version}"
+    pear_dir = versioned_formula? ? "pear@#{php_version}" : "pear"
+    pear_path = HOMEBREW_PREFIX/"share"/pear_dir
     cp_r pkgshare/"pear/.", pear_path
     {
       "php_ini"  => etc/"php/#{php_version}/php.ini",

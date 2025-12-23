@@ -1,20 +1,18 @@
 class Rip2 < Formula
   desc "Safe and ergonomic alternative to rm"
   homepage "https://github.com/MilesCranmer/rip2"
-  url "https://ghfast.top/https://github.com/MilesCranmer/rip2/archive/refs/tags/v0.9.5.tar.gz"
-  sha256 "491bcf55246b0da4f03e1848c6532d85eaf680640db7f014454cb2092411c980"
+  url "https://ghfast.top/https://github.com/MilesCranmer/rip2/archive/refs/tags/v0.9.6.tar.gz"
+  sha256 "657ded2ee364e0d548697c0de28ae4e8d9564c0b5c63fd16b6718edba9a33554"
   license "GPL-3.0-or-later"
   head "https://github.com/MilesCranmer/rip2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "32cbd95f32c0d1df71b9c325f47597e77f55d7e0bdd8298f678e3429122d3365"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9a788f7f8cdc9e5810214fc8caa8890ee1802e14fe9bef40914022acb1daaa2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af09c957a7fb215c1ac9f49c61d411649750f81cf1acaf7692013799ccf6f503"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a5ea06a6d273713bad688f3437d469881c60f0fff0548a04e08816cf8088e6ad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5623f6d35f35b801aca200e251fdbb8ed15737bce63d9e8522b58c1f04186c11"
-    sha256 cellar: :any_skip_relocation, ventura:       "e5cf15ac04a340648e7279126aaec65535acaeafa7b29e24219ed4e4e27fbfb1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7033f640b903b2e46f988f9f7fd968c11e18c7f6f34a9ffbab629a1d639e0436"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9611cdaa697a6f46cda987142a90d485bb7d2feb266c08ed38503c84d6c5205"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a0e49f9192ce8230a4ed85ed3db21c92aa67a83528eed0cc7f84bf60972c6aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eff959874609fee82ce0b0f3cf597cf5940ff57c293cad89d24889e8a17088f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bbb60b76782a258804c09b7367108f11de0f388bf9780c4278c9192bc383fdb6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4604458cdf5d35b317fc845448ff700c39151f070f7503794a38969f54bc41b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ab9740bddaace23b393153f08988f7afccd60b67c3f81c5319b88acc55b4d24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a582694b6bcd21a59f5393e5d56b648b3c553d5be2e1b31b49106a099d970a2"
   end
 
   depends_on "rust" => :build

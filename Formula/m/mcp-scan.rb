@@ -3,19 +3,18 @@ class McpScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/invariantlabs-ai/mcp-scan"
-  url "https://files.pythonhosted.org/packages/20/e1/3960052b74390894ca513f805168376d377c124d7610ab155b9b079d1cf1/mcp_scan-0.3.34.tar.gz"
-  sha256 "28d5cb709e58c4871d98d3e7823c036ce394783aaa42b25cb722e27e90dabc2d"
+  url "https://files.pythonhosted.org/packages/e7/52/b1165560e3b06e0fd34e60cf16e81069da3c0c9683c57924948d69711bbd/mcp_scan-0.3.36.tar.gz"
+  sha256 "618550fc145f7982bd6fc7be8c2c1b04438bb652a91daf5f99bcd85f0173936d"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/invariantlabs-ai/mcp-scan.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c54f21fda998ccde7b9ead772bcca47c7772f1db6dbbc6118d4fb517597895c6"
-    sha256 cellar: :any,                 arm64_sequoia: "e9447bd4f646c23886bed234f896081c487eccce98a42df318d18b9856068b69"
-    sha256 cellar: :any,                 arm64_sonoma:  "308e108a614169d55e9dbf8ea3a13033a68fbcfc0da7e463bbc4124ce7250c12"
-    sha256 cellar: :any,                 sonoma:        "f71ca01b5f1b9375769d3527ed9ccfb93c8f311b82ef2995e3745281f654bb3b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7bbce6426833011c77e54f32595c13f9ce93bdabfd73ad2cec62eb6a95ccbf8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70baed0886cf3620773c5af8e99d648f9510ec71e844c78d0dcbc65c5e0868c5"
+    sha256 cellar: :any,                 arm64_tahoe:   "c237600fa1a3bb7007a3191673453ab9697b93456e6df4e82b2f3f467810e613"
+    sha256 cellar: :any,                 arm64_sequoia: "e6bbf790a7cd170db1f8099b3503363edd53346fcd753274143d0fce732ac7ed"
+    sha256 cellar: :any,                 arm64_sonoma:  "6d360003e88f244d2a0ecc4fab1dec46c209899a0acc807bb128175f3c066fcf"
+    sha256 cellar: :any,                 sonoma:        "5a8b5a23fde974a1ba715b9d20da27ec2d7aceb8484c4dc72e83dfa9125cd986"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0fe5d4dace2d91f8d7e8635f52c9b4eac9eac633833c8584cc9d06476aa8990"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a85d381d752b0309cc516089918aac0053f14996711f4ca188e217c388c50ab"
   end
 
   depends_on "certifi" => :no_linkage
@@ -67,8 +66,8 @@ class McpScan < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/17/71/2df15009fb4bdd522a069d2fbca6007c6c5487fce5cb965be00fc335f1d1/fastapi-0.125.0.tar.gz"
-    sha256 "16b532691a33e2c5dee1dac32feb31dc6eb41a3dd4ff29a95f9487cb21c054c0"
+    url "https://files.pythonhosted.org/packages/0c/02/2cbbecf6551e0c1a06f9b9765eb8f7ae126362fbba43babbb11b0e3b7db3/fastapi-0.127.0.tar.gz"
+    sha256 "5a9246e03dcd1fdb19f1396db30894867c1d630f5107dc167dcbc5ed1ea7d259"
   end
 
   resource "filelock" do
@@ -222,8 +221,8 @@ class McpScan < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/8f/28/7c85c8032b91dbe79725b6f17d2fffc595dff06a35c7a30a37bef73a1ab4/typer-0.20.0.tar.gz"
-    sha256 "1aaf6494031793e4876fb0bacfa6a912b551cf43c1e63c800df8b1a866720c37"
+    url "https://files.pythonhosted.org/packages/6d/c1/933d30fd7a123ed981e2a1eedafceab63cb379db0402e438a13bc51bbb15/typer-0.20.1.tar.gz"
+    sha256 "68585eb1b01203689c4199bc440d6be616f0851e9f0eb41e4a778845c5a0fd5b"
   end
 
   resource "types-aiofiles" do
@@ -232,8 +231,8 @@ class McpScan < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/cb/ce/f06b84e2697fef4688ca63bdb2fdf113ca0a3be33f94488f2cadb690b0cf/uvicorn-0.38.0.tar.gz"
-    sha256 "fd97093bdd120a2609fc0d3afe931d4d4ad688b6e75f0f929fde1bc36fe0e91d"
+    url "https://files.pythonhosted.org/packages/c3/d1/8f3c683c9561a4e6689dd3b1d345c815f10f86acd044ee1fb9a4dcd0b8c5/uvicorn-0.40.0.tar.gz"
+    sha256 "839676675e87e73694518b5574fd0f24c9d97b46bea16df7b8c05ea1a51071ea"
   end
 
   resource "yarl" do

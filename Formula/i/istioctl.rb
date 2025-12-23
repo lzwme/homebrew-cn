@@ -1,8 +1,8 @@
 class Istioctl < Formula
   desc "Istio configuration command-line utility"
   homepage "https://istio.io/"
-  url "https://ghfast.top/https://github.com/istio/istio/archive/refs/tags/1.28.1.tar.gz"
-  sha256 "4bcf34078d5a24991027b692d2490582648605efdfb34b6c6c0603ee1f0c7735"
+  url "https://ghfast.top/https://github.com/istio/istio/archive/refs/tags/1.28.2.tar.gz"
+  sha256 "ee4b5d1ce045c98e09e97bce2e48c2d1ae262ae02db8829b5b1f4b3e546b0874"
   license "Apache-2.0"
   head "https://github.com/istio/istio.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Istioctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c4e9beb8344724f59e4d700d62aa0a8f2ec1b225fab4c6966a3dbb60e9383f2c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9f5467c7b17656ddb43f9565a92a3d7256ff53de7100bc9ac0ee60af1e5dadb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e618a7243d5c2d88dbdebf72a2f6cdb06fd208a050e1aa50d7461a353f68ad3b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a41edd31143d6aa016bbdfc433c1379482d0ed769c1ab01717873b39aeec8ba6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5df4da4233cac0ca17de76fcb65944314841f2d71f9f3f67afcb22c51bd7d447"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ed6d8cfc89cf428c8b44ed449c2540c421a94eeaf6ab63ab9404d296e8b595f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef42a0632b6af75db64ff065bc21a33cbb46483bbd177450df76432fb9bfff8d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea7b6c79e478e57cb6741c9e1bcbe71d8a62c9ae157b9f112aa52bfc9918c111"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "296132b574a4aec02d870e4895f6ddc7cd35f1ed5c8359d92c60080bd530d741"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d7e28e6311b409168f45a2d1813daba3f6cd6128fef08c44eb910b797bcbd58e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6a18efdd894b67a681621f6d2eed2626621c090f319a9cebc74b4a1bda62a65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f88ca2fa254e557a138658e6facd6cf626f26d54166117aba5e9ccc55930069"
   end
 
   depends_on "go" => :build

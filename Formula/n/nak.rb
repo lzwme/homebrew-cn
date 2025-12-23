@@ -1,18 +1,18 @@
 class Nak < Formula
   desc "CLI for doing all things nostr"
   homepage "https://github.com/fiatjaf/nak"
-  url "https://ghfast.top/https://github.com/fiatjaf/nak/archive/refs/tags/v0.17.2.tar.gz"
-  sha256 "098ebfc88f8b67eed705cf4bf6f8b86fbd78c9f884eb7147e2568cebe6fe6548"
+  url "https://ghfast.top/https://github.com/fiatjaf/nak/archive/refs/tags/v0.17.3.tar.gz"
+  sha256 "4b9341965ebaa763559c5ea79bde81f97ea780a0062ea3b651fca955793f9c11"
   license "Unlicense"
   head "https://github.com/fiatjaf/nak.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc44c03268610698f7c5309e9dcb092d3321ed3d9623a29118b6089b9530aa57"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc44c03268610698f7c5309e9dcb092d3321ed3d9623a29118b6089b9530aa57"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc44c03268610698f7c5309e9dcb092d3321ed3d9623a29118b6089b9530aa57"
-    sha256 cellar: :any_skip_relocation, sonoma:        "efd8919fd75ae2108a225640dd5c32d4484e8268591c7074d53ab4517f35f021"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "53768d89c3cc21ff1da56d4df107b8e7f72658b22baa354b1baf0d47249f1eba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0c4e97ce1f95ce9b6a3a5a5709b9ce4b8b703723e2d973424ff3f4c6cdc9880"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb03eb6443b8a7a8754820fb1dc46e7c8038ddae5861e481c6172235285dcdab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb03eb6443b8a7a8754820fb1dc46e7c8038ddae5861e481c6172235285dcdab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb03eb6443b8a7a8754820fb1dc46e7c8038ddae5861e481c6172235285dcdab"
+    sha256 cellar: :any_skip_relocation, sonoma:        "28f24eedbf97ec570668673873df42b033bfeeffd91cd1fc362dc8262d7329b3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "73380036365253eec72c512cd8eeada67718f4ca333892d16bc57826cabea7e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9476459257b4b9499b98275aa7ff1e003516fdc470b114b97507ec8ff1be65d7"
   end
 
   depends_on "go" => :build

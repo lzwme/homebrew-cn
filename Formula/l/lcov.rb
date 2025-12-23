@@ -1,20 +1,18 @@
 class Lcov < Formula
   desc "Graphical front-end for GCC's coverage testing tool (gcov)"
   homepage "https://github.com/linux-test-project/lcov"
-  url "https://ghfast.top/https://github.com/linux-test-project/lcov/releases/download/v2.3.2/lcov-2.3.2.tar.gz"
-  sha256 "6fed6cf48757d5083202be3356dfa6d64afa12d96d691745fad7e4c9ebe90bfa"
+  url "https://ghfast.top/https://github.com/linux-test-project/lcov/releases/download/v2.4/lcov-2.4.tar.gz"
+  sha256 "3457825c6b2fe4ef77c782b82a23875c84a3c955243823f05d8f2dec0d455820"
   license "GPL-2.0-or-later"
   head "https://github.com/linux-test-project/lcov.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8564ea598af485b1cbf28b7ddeed641f6eefe838e4bdae0a266d6595070b8241"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4498b08e44efa8648daf15f0cf0b19790243ca95b2958c319e1d5d5cea472b9a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2830097b2e32ed6836147688e10d9655905ce720145b8b3bc36708cd0d7eefcb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a1434db23ab5fd0a229137fdef631311f201470ca04b42c546590ec572221117"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2aefa08cb92d2a5b0435e63613c2bb5974aee5c66c5c13226705369cccb98afb"
-    sha256 cellar: :any_skip_relocation, ventura:       "d8efeaa69d83f287c1576f2dced7a0ef9064676f967026c43fba97ea7376a18b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fda628e98a0f0b0ae575073a9c1c4320dd6bf3c77574c0fed002c7e831d18574"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bb1f24ba2f1590f3ac1335fed49ec403fc23212dee7a513738c63e6efba95c3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7210caf0b04cda530db6c93fd52dbed8333ecdeb17e61c84a00a3441c1ba5c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "957f7ed44824c8d7280a5ee0b48a29bab7fa563b5a9e7c19a0357f1b02916a53"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df933707ae40a2f12ca5b7a0880ca740307e287c78af80939199937c0868808e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c7fd14bcfc0a695e8a28bdca9b403ef5221152c652d64c46f9a6cc4994812a18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b85756eccae76fddab7df7070a9ab168d631a28756fb70350d7631aaa636115"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e299faf4cf042e1397c728f2ab91ab8b38a436aac185dbc03753fa37053cffe1"
   end
 
   uses_from_macos "perl"
@@ -22,13 +20,13 @@ class Lcov < Formula
 
   on_linux do
     resource "Capture::Tiny" do
-      url "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.48.tar.gz"
-      sha256 "6c23113e87bad393308c90a207013e505f659274736638d8c79bac9c67cc3e19"
+      url "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.50.tar.gz"
+      sha256 "ca6e8d7ce7471c2be54e1009f64c367d7ee233a2894cacf52ebe6f53b04e81e5"
     end
 
     resource "Specio::Exporter" do
-      url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Specio-0.48.tar.gz"
-      sha256 "0c85793580f1274ef08173079131d101f77b22accea7afa8255202f0811682b2"
+      url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Specio-0.53.tar.gz"
+      sha256 "0d0eecfb9e89bd0f5f710fac42e1200a882d513a862f98497eaef5927ac6c183"
     end
 
     resource "File::ShareDir::Install" do
@@ -37,23 +35,23 @@ class Lcov < Formula
     end
 
     resource "DateTime" do
-      url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-1.65.tar.gz"
-      sha256 "0bfda7ff0253fb3d88cf4bdb5a14afb8cea24d147975d5bdf3c88b40e7ab140e"
+      url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-1.66.tar.gz"
+      sha256 "afabd686fb83d3ebf49ee453974f9122f3eec9b25ff8d2ddf4f12de92af1e5e2"
     end
 
     resource "DateTime::Locale" do
-      url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-1.42.tar.gz"
-      sha256 "7d8a138fa32faf24af30a1dbdee4dd11988ddb6a129138004d220b6cc4053cb0"
+      url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-1.45.tar.gz"
+      sha256 "1bc56dc2ff4b3152612e1d474ca65071ae2c00912e3fa4bc6f5a99e5e7a1da68"
     end
 
     resource "DateTime::TimeZone" do
-      url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-TimeZone-2.62.tar.gz"
-      sha256 "6214f9c9c8dfa2000bae912ef2b8ebc5b163a83a0b5b2a82705162dad63466fa"
+      url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-TimeZone-2.66.tar.gz"
+      sha256 "6fbd61b2d5d7563a8e738341c3790e0d4302dffd4a879b9c268812fe44b54dc1"
     end
 
     resource "namespace::autoclean" do
-      url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/namespace-autoclean-0.29.tar.gz"
-      sha256 "45ebd8e64a54a86f88d8e01ae55212967c8aa8fed57e814085def7608ac65804"
+      url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/namespace-autoclean-0.31.tar.gz"
+      sha256 "d3b32c82e1d2caa9d58b8c8075965240e6cab66ab9350bd6f6bea4ca07e938d6"
     end
 
     resource "namespace::clean" do
@@ -72,13 +70,13 @@ class Lcov < Formula
     end
 
     resource "Module::Runtime" do
-      url "https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM/Module-Runtime-0.016.tar.gz"
-      sha256 "68302ec646833547d410be28e09676db75006f4aa58a11f3bdb44ffe99f0f024"
+      url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Module-Runtime-0.018.tar.gz"
+      sha256 "0bf77ef68e53721914ff554eada20973596310b4e2cf1401fc958601807de577"
     end
 
     resource "Try::Tiny" do
-      url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.31.tar.gz"
-      sha256 "3300d31d8a4075b26d8f46ce864a1d913e0e8467ceeba6655d5d2b2e206c11be"
+      url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.32.tar.gz"
+      sha256 "ef2d6cab0bad18e3ab1c4e6125cc5f695c7e459899f512451c8fa3ef83fa7fc0"
     end
 
     resource "Variable::Magic" do
@@ -147,8 +145,8 @@ class Lcov < Formula
     end
 
     resource "Class::Data::Inheritable" do
-      url "https://cpan.metacpan.org/authors/id/R/RS/RSHERER/Class-Data-Inheritable-0.09.tar.gz"
-      sha256 "44088d6e90712e187b8a5b050ca5b1c70efe2baa32ae123e9bd8f59f29f06e4d"
+      url "https://cpan.metacpan.org/authors/id/R/RS/RSHERER/Class-Data-Inheritable-0.10.tar.gz"
+      sha256 "aa1ae68a611357b7bfd9a2f64907cc196ddd6d047cae64ef9d0ad099d98ae54a"
     end
 
     resource "File::ShareDir" do
@@ -159,6 +157,16 @@ class Lcov < Formula
     resource "Class::Inspector" do
       url "https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Class-Inspector-1.36.tar.gz"
       sha256 "cc295d23a472687c24489d58226ead23b9fdc2588e522f0b5f0747741700694e"
+    end
+
+    resource "Clone" do
+      url "https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/Clone-0.47.tar.gz"
+      sha256 "4c2c0cb9a483efbf970cb1a75b2ca75b0e18cb84bcb5c09624f86e26b09c211d"
+    end
+
+    resource "Clone::PP" do
+      url "https://cpan.metacpan.org/authors/id/N/NE/NEILB/Clone-PP-1.08.tar.gz"
+      sha256 "57203094a5d8574b6a00951e8f2399b666f4e74f9511d9c9fb5b453d5d11f578"
     end
   end
 
@@ -204,7 +212,14 @@ class Lcov < Formula
 
     system ENV.cc, "-g", "-O2", "--coverage", "-o", "hello", "hello.c"
     system "./hello"
-    system bin/"lcov", "--gcov-tool", "gcov", "--directory", ".", "--capture", "--output-file", "all_coverage.info"
+
+    # gcov must match the c compiler version, which is gcc-12 on linux
+    gcov = if OS.linux?
+      ENV.cc.sub("gcc", "gcov")
+    else
+      "gcov"
+    end
+    system bin/"lcov", "--gcov-tool", gcov, "--directory", ".", "--capture", "--output-file", "all_coverage.info"
 
     assert_path_exists testpath/"all_coverage.info"
     assert_includes (testpath/"all_coverage.info").read, testpath/"hello.c"

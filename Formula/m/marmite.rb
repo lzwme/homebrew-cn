@@ -1,20 +1,18 @@
 class Marmite < Formula
   desc "Static Site Generator for Blogs using Markdown"
   homepage "https://rochacbruno.github.io/marmite/"
-  url "https://ghfast.top/https://github.com/rochacbruno/marmite/archive/refs/tags/0.2.6.tar.gz"
-  sha256 "9fee0c1e8ec717690690fe05c4c9cf25c38d7bc6ad090d8a7abb5a6f1b947a00"
+  url "https://ghfast.top/https://github.com/rochacbruno/marmite/archive/refs/tags/0.2.7.tar.gz"
+  sha256 "49328d4df08c964562d4b4cb61e42a5d00f88fa4f19f2967241eb32e96b623d9"
   license "AGPL-3.0-or-later"
   head "https://github.com/rochacbruno/marmite.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "721fa238cfe290857bec69a9c3a346e8a12c87eeb972f923a051c5418a0a69ed"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b930471e773b30aec68a5712ea885e1a77c8c663e8782f5a02ac6aafb531fb1b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf78397f20834b0fc3092af64703eacdab9eaee8e802b15218e2891438541f34"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4a2504921ef8914c3391fd751bae8b6044f2aa9050ee55ad8d7593aa9c275bde"
-    sha256 cellar: :any_skip_relocation, sonoma:        "60c31e3c74626518a357788fa33c8be042e6b14235aff87bf7466ee21a482030"
-    sha256 cellar: :any_skip_relocation, ventura:       "19b08685bda878b7d460e33a8e059760c2b8949fcd68668807264cf0ff30acf8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4f5a3dcf61847992a7a3fddce171a176d60c87a7f3d48191dac454df02d73ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ce1b9d9cac6c7f80ae332838a8e2a62b8929c1a882ddb77a7e6c868bef4258f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "514f120a07a927221e1d7b32d4bf88cd6803ccf89b0fb161f2df2c7bf0fde157"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7925bb005ab5ef0a0e4308df1372504e777bd72b48c916b755a155557f750824"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1fc98400aaf655a96b5f32f94386cef05384cc9f0062d533a40e5eb29f59a226"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8c66b8196d07d5505d8bca9f22418b86456e6a1a575f159c97ec278e28816e68"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ca66295223c38697f46a5d5298c42f024e6aed96b3ac10f427474657cf9069c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60bfff999533244337df417baf2a6ceea6cd0de1540a2624350e552641590f8e"
   end
 
   depends_on "rust" => :build

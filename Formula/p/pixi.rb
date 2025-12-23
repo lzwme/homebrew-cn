@@ -1,8 +1,8 @@
 class Pixi < Formula
   desc "Package management made easy"
   homepage "https://pixi.sh"
-  url "https://ghfast.top/https://github.com/prefix-dev/pixi/archive/refs/tags/v0.62.1.tar.gz"
-  sha256 "09c670ba96c0d05a67eb5823ee2398971351e75a61cc225b83e71b3066483820"
+  url "https://ghfast.top/https://github.com/prefix-dev/pixi/archive/refs/tags/v0.62.2.tar.gz"
+  sha256 "dba8db9c836a3bf3c6054588f4334150fe3bb7b4960c778e76f4001a18fa8e2f"
   license "BSD-3-Clause"
   head "https://github.com/prefix-dev/pixi.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Pixi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8aed7d58cd77529abb6ca19d290d7bfe039c580bf077e83d4c931829d2835f92"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a0beab00a872b2e343be8e305ad538f9a44e9f9e72c7fc65a416ea01297ced4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13d44998b6548d26a0511588092b5f7b9fe1d89dbde1c2314cdeca638aada94c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6c946346de252f84ebd8ade49fe739d540826dc22bda1b53fd7b759325e57127"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "82a9b1717cf741b1631a7db324bcb6baa77ad2134de7cf32a4e3d1c463b0b305"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c160ebcaf73bc4c2d9db3edb8e0ad8deea2e6bb924d971c2cc757ae0fbc0a985"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f939f1bf2ae4990ae21b70b54306f2665225b24ab002394ee0652c3869d88e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f363bbb1d752c03ebaa8ea3d87eedcce5febd91b0185a0fdd4ddac9911001dd5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90c59ad2f79d625f34a0aa5835dc3bdff084e481bc0af36dc4369d9e93825194"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fac9ebf3373dc57d2caea2fe88f4ae12e3d9904bda4aa1cde088764b1e2b15d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d400c933e342ac78c4cef47a7bb88ae9bc792e71fa5f6f135971e8ca99e38dcc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "303cf2aa1b705fb3a50dbda79e624a4c9afc70cdf0722c82e7070ff5220fa7a9"
   end
 
   depends_on "cmake" => :build

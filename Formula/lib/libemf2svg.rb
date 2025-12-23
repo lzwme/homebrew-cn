@@ -1,17 +1,17 @@
 class Libemf2svg < Formula
   desc "Microsoft (MS) EMF to SVG conversion library"
   homepage "https://github.com/kakwa/libemf2svg"
-  url "https://ghfast.top/https://github.com/kakwa/libemf2svg/archive/refs/tags/1.8.0.tar.gz"
-  sha256 "090f84711968608b3a2324e06d1314c5b581248ee834edc0e7dfbc015f0619e2"
+  url "https://ghfast.top/https://github.com/kakwa/libemf2svg/archive/refs/tags/1.8.1.tar.gz"
+  sha256 "5a4b0051a2e8a7f999ecc1bb3451032833dc4c4f1e4bc6d938e4d5b4bec19c10"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1ca9eb3c1b5575ca3b415f7b2c2b8dbf5d94ed8ef17bc76679801d3c68b9eafc"
-    sha256 cellar: :any,                 arm64_sequoia: "be1d2b4b7e587cea6f7e2ba6a2522660225243469e2e15c79d2e8fa49d374e57"
-    sha256 cellar: :any,                 arm64_sonoma:  "61e85f92f97aa75d063c67a11901313fc17ce8782f0026ded9e0444afa796be9"
-    sha256 cellar: :any,                 sonoma:        "22114b481d38b92a99787f4f2ac1408f4ab4d9f631df7ee20465515d610d4640"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f544fe01c724d02c928ac39e0fd784adbb62bc56ebd04d8df985fda33e2b44f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e0df182fe862359cde0951486c681258d8ec0db5fe7208a18e97ec8f3e2fdfb"
+    sha256 cellar: :any,                 arm64_tahoe:   "b097e6912f5088e54da1fd430b2dc6c990267cf5adeaef50027b6731d8850849"
+    sha256 cellar: :any,                 arm64_sequoia: "0e6713d4805a1b5de0ddbfc4bf67168cf81d8ed6ab93292e74f33cb39eeec34f"
+    sha256 cellar: :any,                 arm64_sonoma:  "3b929447d8efd14e896683ef6efaa7e9a90fbcc105353f2adb6e2f0c5b2ff0aa"
+    sha256 cellar: :any,                 sonoma:        "43ca789862051ce4d6f4efad49c7ad5a376c71db49c1af363d64848dd5ab652d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5e0714ac651f7c10cf98b5d40c08996a731eb3c127d9f18738ce6096378f35d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63881c05d28fbb48bb25d3aa7272d12524357cb69b4657862b24a17b36c13835"
   end
 
   depends_on "cmake" => :build

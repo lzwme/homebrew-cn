@@ -3,18 +3,18 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/ac/da/9f2533e1a6e95f60f1cdfc975a917fb9ed0290aa40075f1144a1e176e06d/kimi_cli-0.66.tar.gz"
-  sha256 "6659131254238a03bd6fe398a567f82b08e3e7912afcddeb6436b6d41cb12624"
+  url "https://files.pythonhosted.org/packages/5b/c6/aab5f5423bc2963556f2f3d712553fba671d74d86d657bd6c9ebe7983377/kimi_cli-0.67.tar.gz"
+  sha256 "42a2fb97248040a9141e327937c1dc26fefd1920c40f4fe131a8f2a87d5489f3"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4c9c793337d07e5f5dc0daa1bff6323a621d498abebc5d41e709bef1f386cf76"
-    sha256 cellar: :any,                 arm64_sequoia: "9e5f1524c3c4df241ef8c684f172a0576c0f2dd9bfdd6886d3742915dc4d0c59"
-    sha256 cellar: :any,                 arm64_sonoma:  "191a544b9086c9a669fd5874a76c6026556ef0b182241376606d7ba500fd505a"
-    sha256 cellar: :any,                 sonoma:        "a928e20951d5cb6ed1ff9d35c94f03f50f22c7638a9e1bfd06e0c81ddc49f6e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "96cfd718cadf00360082265e11c2f1790fb1ac094de0be2cfd0fe87933ecae9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "509d9cde4b60ed7db6cbcec19095733e102ad8b1c818c00333e4b6bbced1cda8"
+    sha256 cellar: :any,                 arm64_tahoe:   "679aecc7e7847a3efd6fd6f11bf10d9ab169356773435c64e010a80982c3505a"
+    sha256 cellar: :any,                 arm64_sequoia: "a95aa0e9b8eacc4372c7c3aa3a2b20d79ed63ea917b70ffeb3941818d21ba9a8"
+    sha256 cellar: :any,                 arm64_sonoma:  "73fa2b56cfc822d34210103bbb6fa2f16210d21354646759184681070b043aec"
+    sha256 cellar: :any,                 sonoma:        "8e17e196b154dbe9cff156b979298328b1271c4129aba926042d5156dfa95eb7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "746c57ac4019426ef48ac71ac6edae76724c3dce8198fc13fb71b2049400bcda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a2d84d513413fbe0e8f933ff0dfec0c1b2083ac3e265c31b60ae8201cec2c46"
   end
 
   depends_on "pkgconf" => :build
@@ -109,8 +109,8 @@ class KimiCli < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/da/3a/fd746469c7000ccaa75787e8ebd60dc77e4541576ca4ed241cd8b9e7e9ad/cyclopts-4.4.0.tar.gz"
-    sha256 "16764f5a807696b61da7d19626f34d261cdffe33345e87a194cf3286db2bd9cc"
+    url "https://files.pythonhosted.org/packages/40/99/e1b75193ee23bd10a05a3b90c065d419b1c8c18f61cae6b8218c7158f792/cyclopts-4.4.1.tar.gz"
+    sha256 "368a404926b46a49dc328a33ccd7e55ba879296a28e64a42afe2f6667704cecf"
   end
 
   resource "dateparser" do
@@ -229,8 +229,8 @@ class KimiCli < Formula
   end
 
   resource "kosong" do
-    url "https://files.pythonhosted.org/packages/f9/7a/439c51c197508be629af136432e6d0ecbb39505726d43f175276929b486f/kosong-0.34.0.tar.gz"
-    sha256 "2a27305229908be69b0a9e0214d1ce3b3134c1f2def7c0ada1f5ed54bf2386ee"
+    url "https://files.pythonhosted.org/packages/4a/5c/5bd0630569bd3ff41a06b74e3a6caa6518e1fff1a69ac286239800828502/kosong-0.34.1.tar.gz"
+    sha256 "20672d1c6a35a989ff00c714b830657bd5553cf2491830fd840f98b385d855b1"
   end
 
   resource "lazy-object-proxy" do
@@ -485,8 +485,8 @@ class KimiCli < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/8f/28/7c85c8032b91dbe79725b6f17d2fffc595dff06a35c7a30a37bef73a1ab4/typer-0.20.0.tar.gz"
-    sha256 "1aaf6494031793e4876fb0bacfa6a912b551cf43c1e63c800df8b1a866720c37"
+    url "https://files.pythonhosted.org/packages/6d/c1/933d30fd7a123ed981e2a1eedafceab63cb379db0402e438a13bc51bbb15/typer-0.20.1.tar.gz"
+    sha256 "68585eb1b01203689c4199bc440d6be616f0851e9f0eb41e4a778845c5a0fd5b"
   end
 
   resource "tzlocal" do
@@ -500,8 +500,8 @@ class KimiCli < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/cb/ce/f06b84e2697fef4688ca63bdb2fdf113ca0a3be33f94488f2cadb690b0cf/uvicorn-0.38.0.tar.gz"
-    sha256 "fd97093bdd120a2609fc0d3afe931d4d4ad688b6e75f0f929fde1bc36fe0e91d"
+    url "https://files.pythonhosted.org/packages/c3/d1/8f3c683c9561a4e6689dd3b1d345c815f10f86acd044ee1fb9a4dcd0b8c5/uvicorn-0.40.0.tar.gz"
+    sha256 "839676675e87e73694518b5574fd0f24c9d97b46bea16df7b8c05ea1a51071ea"
   end
 
   resource "wcwidth" do

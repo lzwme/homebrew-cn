@@ -3,17 +3,17 @@ class AnsibleLint < Formula
 
   desc "Checks ansible playbooks for practices and behaviour"
   homepage "https://ansible-lint.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/8b/34/2ea3c5d67c0fad03b24c0d2fc67767698c5862d30141525233f00225e57d/ansible_lint-25.12.1.tar.gz"
-  sha256 "b6e9abfb4b3223c8dd081fe3c986f123d83b07e7011d40a684972431efb4c7de"
+  url "https://files.pythonhosted.org/packages/0a/b1/cbbe86f424d76bb621461d131506e5778556ddf6f5eba0cf7c41db829208/ansible_lint-25.12.2.tar.gz"
+  sha256 "d4dbf2905c868d6f7b330941efc586f19a5e2b3b6826fd6a2edf0d5080329e46"
   license all_of: ["MIT", "GPL-3.0-or-later"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "705897d50fdf693845508e9de4532b94373887b7a3b0a32213f8270529d42353"
-    sha256 cellar: :any,                 arm64_sequoia: "51e5e4a1fda2eb56757a7c7533504c3086f870e4ab9e63f6462c769f3d05c2e2"
-    sha256 cellar: :any,                 arm64_sonoma:  "4dfc0845339cc94e2c27e6e044c2ae77ef8bad029956fa1cf35566b1012896bf"
-    sha256 cellar: :any,                 sonoma:        "49a5c1fac4fb0313ac118762a4d51adb4232dea450af55f11c72cc4ed62388f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ca47b7f3e8e07c74e88e992ad20c3febf32c581fef0ef12681c3e96183dcbbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6d7b415cb837484ce47a73ddaa14c17c18028ec8f17bec53fd0d4a6fc9dfc58"
+    sha256 cellar: :any,                 arm64_tahoe:   "f51c9e43e89d9f7a94db066e57c2bcb99f2661506bf95fa7e1692ac1b94f1878"
+    sha256 cellar: :any,                 arm64_sequoia: "66c721f3018a1473dc38162c70e3e7ae55ed385375a5fe71a785fad6da123872"
+    sha256 cellar: :any,                 arm64_sonoma:  "353f42f1c8eb7415969112ea15bad711d1c0573c7e72a29f0beaad143be0159e"
+    sha256 cellar: :any,                 sonoma:        "c6c511193b68e04e3a310c86c4dfe16a7e998eff15ca93df7993b8e478e05f52"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8a6e5047e56f1c2f0b9152e37b4105152ef9958434e07a3d6d1ff2899d1e4cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba83bd7f4129d3599233c1fe074b4289eb9ad410f8df363be82d0a73e46ec2f3"
   end
 
   depends_on "pkgconf" => :build
@@ -61,8 +61,8 @@ class AnsibleLint < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
-    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
+    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
+    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
   end
 
   resource "jinja2" do
@@ -126,8 +126,13 @@ class AnsibleLint < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/9f/c7/ee630b29e04a672ecfc9b63227c87fd7a37eb67c1bf30fe95376437f897c/ruamel.yaml-0.18.16.tar.gz"
-    sha256 "a6e587512f3c998b2225d68aa1f35111c29fad14aed561a26e73fab729ec5e5a"
+    url "https://files.pythonhosted.org/packages/3a/2b/7a1f1ebcd6b3f14febdc003e658778d81e76b40df2267904ee6b13f0c5c6/ruamel_yaml-0.18.17.tar.gz"
+    sha256 "9091cd6e2d93a3a4b157ddb8fabf348c3de7f1fb1381346d985b6b247dcd8d3c"
+  end
+
+  resource "ruamel-yaml-clib" do
+    url "https://files.pythonhosted.org/packages/ea/97/60fda20e2fb54b83a61ae14648b0817c8f5d84a3821e40bfbdae1437026a/ruamel_yaml_clib-0.2.15.tar.gz"
+    sha256 "46e4cc8c43ef6a94885f72512094e482114a8a706d3c555a34ed4b0d20200600"
   end
 
   resource "subprocess-tee" do
