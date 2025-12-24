@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/07/91/fc687834dcc5acaed577eac4d4adfcd429cfcbdec1e66737e4632da19a9f/prowler-5.16.0.tar.gz"
-  sha256 "eae55eacb95974d816b15b50091a7ba3ffe77486e36e6d63f96c97901e006af3"
+  url "https://files.pythonhosted.org/packages/c6/5c/4526e8a5c9d055991d50556d124129c96f1567b7899e9e0088fa527f8982/prowler-5.16.1.tar.gz"
+  sha256 "bb485798e6769a4746413553800f2def79d62c039c888fb5b6ff95c33a144f2d"
   license "Apache-2.0"
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c956aa05b37eea234b34156e6e8694cf975f175fcbbc141e97c7501c33602843"
-    sha256 cellar: :any,                 arm64_sequoia: "05f1284257dc53622d718fca2958abd8bf92295973f9d8ef404c07b1338cd41f"
-    sha256 cellar: :any,                 arm64_sonoma:  "8ce3c765068281f0fe01d19ece89da12c7c430a179c37b92a6ea2374d2dc4fde"
-    sha256 cellar: :any,                 sonoma:        "01a1b42ec3b8ec2daf8998ba722b8394d70a273c4d92543a2807076a9f2ac34d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "73697f0f95b5a49509044efd89636d0de63ff4cf959d9a3f25d19e1246e0e79d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05cd6cfac12baa369f564bd927e0fa6c0dec3c397bf9083e75f011cb0f0d687c"
+    sha256 cellar: :any,                 arm64_tahoe:   "15610c73da973187185d0e0c4d16b372cfcee7a95bab0d76d1fe5865e34aa5db"
+    sha256 cellar: :any,                 arm64_sequoia: "35f67c61e9a1526e5a048b43cb6d0842b91981753495ccee27ec4f32fd321007"
+    sha256 cellar: :any,                 arm64_sonoma:  "84364a7a5c7f2d7353779a9c170105acc29fb4f215b48682d0061a2d6c599789"
+    sha256 cellar: :any,                 sonoma:        "6fcb8f7356790db8d23a82f7f8152e245a94215a52a10a47bc22711532e63264"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10305f6155fc9702dd973450f4acbf1c1638d1f49946d0e866b8a6a0dc7c3efc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46167bbf558827a62b182567648b87b742c3c9868b33d929b2569927d66d43d6"
   end
 
   depends_on "cmake" => :build
@@ -233,8 +233,8 @@ class Prowler < Formula
   end
 
   resource "apscheduler" do
-    url "https://files.pythonhosted.org/packages/d0/81/192db4f8471de5bc1f0d098783decffb1e6e69c4f8b4bc6711094691950b/apscheduler-3.11.1.tar.gz"
-    sha256 "0db77af6400c84d1747fe98a04b8b58f0080c77d11d338c4f507a9752880f221"
+    url "https://files.pythonhosted.org/packages/07/12/3e4389e5920b4c1763390c6d371162f3784f86f85cd6d6c1bfe68eef14e2/apscheduler-3.11.2.tar.gz"
+    sha256 "2a9966b052ec805f020c8c4c3ae6e6a06e24b1bf19f2e11d91d8cca0473eef41"
   end
 
   resource "attrs" do
@@ -583,8 +583,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/fb/77/7ffdc8b2c0c340fa2e3da702ca54f65bd1dff53dbbf8febd4f9fb7449760/iamdata-0.1.202512181.tar.gz"
-    sha256 "36f425ca8a47273b134c389b322beae3cd86b06264e1246e1a5a559f3a5a445e"
+    url "https://files.pythonhosted.org/packages/40/db/cb2b181ed7417133958ef9b1722997af0fac5238026fdac2aa75a5dd5cf6/iamdata-0.1.202512231.tar.gz"
+    sha256 "27926274b1bd24a7e809b8ddd067d6f0d61ee2a0491b96bb6585ab4f29b8c616"
   end
 
   resource "idna" do
@@ -593,8 +593,8 @@ class Prowler < Formula
   end
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/76/66/650a33bd90f786193e4de4b3ad86ea60b53c89b669a5c7be931fac31cdb0/importlib_metadata-8.7.0.tar.gz"
-    sha256 "d13b81ad223b890aa16c5471f2ac3056cf76c5f10f82d6f9292f0b415f389000"
+    url "https://files.pythonhosted.org/packages/f3/49/3b30cad09e7771a4982d9975a8cbf64f00d4a1ececb53297f1d9a7be1b10/importlib_metadata-8.7.1.tar.gz"
+    sha256 "49fef1ae6440c182052f407c8d34a68f72efc36db9ca90dc0113398f2fdde8bb"
   end
 
   resource "isodate" do
@@ -844,8 +844,8 @@ class Prowler < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/f2/a5/181488fc2b9d093e3972d2a472855aae8a03f000592dbfce716a512b3359/pyparsing-3.2.5.tar.gz"
-    sha256 "2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6"
+    url "https://files.pythonhosted.org/packages/33/c1/1d9de9aeaa1b89b0186e5fe23294ff6517fce1bc69149185577cd31016b2/pyparsing-3.3.1.tar.gz"
+    sha256 "47fad0f17ac1e2cad3de3b458570fbc9b03560aa029ed5e16ee5554da9a2251c"
   end
 
   resource "python-dateutil" do

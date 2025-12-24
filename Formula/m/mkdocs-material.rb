@@ -16,7 +16,7 @@ class MkdocsMaterial < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffc83b7ef04857ba696f9c4e498819e6e584422e827c42bfa6500e06a6aad162"
   end
 
-  depends_on "certifi" => :no_linakge
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "python@3.14"
 

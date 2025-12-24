@@ -2,7 +2,7 @@ class Blastem < Formula
   desc "Fast and accurate Genesis emulator"
   homepage "https://www.retrodev.com/blastem/"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
   head "https://www.retrodev.com/repos/blastem", using: :hg
 
   stable do
@@ -42,10 +42,8 @@ class Blastem < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 sonoma:       "6686aacd3cbb57870b7d0da4f17d3c325a846c7037366033d618457700f905da"
-    sha256 cellar: :any,                 ventura:      "ed520887413f414355cd6ff7b7e7b000373f26446aa1ad9de623e081d8b1f116"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5eab5dbc561f5f5d8db17092c140fab888ab1c52b8437bb122e8204e60304c4e"
+    sha256 cellar: :any,                 sonoma:       "fc574700400c587f8803417bd6b3ea8a2ca08478f5636e0349052cc80b42e4a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "934490a06247764fc9626087a1f4cae9eab85df11a3554f4bca1ef379f2dd970"
   end
 
   depends_on "imagemagick" => :build

@@ -1,9 +1,9 @@
 class Basex < Formula
   desc "Light-weight XML database and XPath/XQuery processor"
   homepage "https://basex.org"
-  url "https://files.basex.org/releases/12.0/BaseX120.zip"
-  version "12.0"
-  sha256 "ffd4de680a768dc906efb17cf89dda4a99285d6c93157bd7c67c578299f9f197"
+  url "https://files.basex.org/releases/12.1/BaseX121.zip"
+  version "12.1"
+  sha256 "bf19dd7a3f3e5a19c2d46e3ddcc59dc5757831405761348f0bcb1c732774edaa"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,10 +11,10 @@ class Basex < Formula
     regex(%r{href=.*?/v?(\d+(?:\.\d+)+)/BaseX[._-]?v?(\d+(?:\.\d+)*)\.zip}i)
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "05607e52e85895c35964198defc61f665b99d0174f74c28dc9d00b25a6ad4de7"
+    sha256 cellar: :any_skip_relocation, all: "83e58918742e40f4d4fbfdc1f0854668048438b9ad02ff503f96371ccb26338b"
   end
 
   depends_on "openjdk"

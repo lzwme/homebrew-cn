@@ -28,16 +28,15 @@ class Klog < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/klog version --no-check")
+    assert_match version.to_s, shell_output("#{bin}/klog version --no-check --quiet")
 
-    (testpath/"test.klog").write <<~EOS
+    (testpath/"test.klg").write <<~EOS
       2018-03-24
       First day at my new job
           8:30 - 17:00
           -45m Lunch break
     EOS
 
-    assert_match "Total: \e[0m\e[38;5;120m7h45m\e[0m\n(In 1 record)\n",
-      shell_output("#{bin}/klog total #{testpath}/test.klog")
+    assert_match "Total: 7h45m", shell_output("#{bin}/klog total --no-style #{testpath}/test.klg")
   end
 end

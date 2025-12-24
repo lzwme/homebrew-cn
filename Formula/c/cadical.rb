@@ -1,8 +1,8 @@
 class Cadical < Formula
   desc "Clean and efficient state-of-the-art SAT solver"
   homepage "https://fmv.jku.at/cadical/"
-  url "https://ghfast.top/https://github.com/arminbiere/cadical/archive/refs/tags/rel-2.2.0.tar.gz"
-  sha256 "46694892c2d2ebc7a77cd33edb35c71c8bf92a5aae600f04fbb977b1c7824083"
+  url "https://ghfast.top/https://github.com/arminbiere/cadical/archive/refs/tags/rel-3.0.0.tar.gz"
+  sha256 "282b1c9422fde8631cb721b86450ae94df4e8de0545c17a69a301aaa4bf92fcf"
   license "MIT"
 
   livecheck do
@@ -11,18 +11,19 @@ class Cadical < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34e909425f8e322ccc5641c1ed4883e1254ef777cb3362ade5061c27e5b1624d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86f5bf2db885bd6ee1a06b486b5f2b964f645135a89adf6385b7785d427ddc14"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c923082672f958a4836b36bed59ef3c6a826dd4c09ef2f503ec5717a9c054349"
-    sha256 cellar: :any_skip_relocation, sonoma:        "17552d341daf99a12db7c05c56e3791e984daf72dfe77c0ea0824f3381e5ca32"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e1ebec3d75bfea835010d91acb424a62b40c537eac3d976ba56b9d07a112614"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "396845e37e35efafe3320509a57f309d03b4702fe7068c62ec536020b35d30fe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2967cc0540cdaf175371d3a4f566ada6998c14f565af4f3a0e844c38655e25d0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34eb631b3ca9f327844f593b90c8caf146e677c34221dece4e06d6e70309bf14"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "117549d37410d5cb9466328e14940c6d97aa1e7349536f146abac6df7e8dfb64"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c79fc253f0b70e9271afec97af7ccfa616c27399ae98469493bf269cd0329e27"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b1269bb97bdc24a8a221815916362376d69f3a9f200adf44eb7052a6cb37161"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d52a60004435c341e172b804ab0aa96e12170ab4b94e6f2919707a61f59b9e6"
   end
 
   def install
     args = []
     args << "-fPIC" if OS.linux?
 
+    # No options in `std_configure_args` are supported
     system "./configure", *args
     chdir "build" do
       system "make"
@@ -50,11 +51,12 @@ class Cadical < Formula
       #include <cassert>
       int main() {
         CaDiCaL::Solver solver;
-        solver.add(1);
+        int var = solver.declare_one_more_variable();
+        solver.add(var);
         solver.add(0);
         int res = solver.solve();
         assert(res == 10);
-        res = solver.val(1);
+        res = solver.val(var);
         assert(res > 0);
         return 0;
       }

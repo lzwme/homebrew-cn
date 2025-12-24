@@ -4,15 +4,15 @@ class Gource < Formula
   url "https://ghfast.top/https://github.com/acaudwell/Gource/releases/download/gource-0.55/gource-0.55.tar.gz"
   sha256 "c8239212d28b07508d9e477619976802681628fc25eb3e04f6671177013c0142"
   license "GPL-3.0-or-later"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 arm64_tahoe:   "65c6b3a4d7ae1e2f905a73cc1f868322956177ff6d0672f4911fffe7156cf2e6"
-    sha256 arm64_sequoia: "7bee142929711a8199e18662e9101b84e53d814c74de2b7955b7e801aaf5ee48"
-    sha256 arm64_sonoma:  "7cb084a3f972345a7d793ffc795b32e4eb9885f20110af986315643f6afec401"
-    sha256 sonoma:        "88d15ac29e1945bc5815b578c19bc1228700d02f2143f525570ed743e5d2d0a6"
-    sha256 arm64_linux:   "80c0bd6c8f96c32598413e0ae0059cb37239804c7e0412274da79236cf75dedf"
-    sha256 x86_64_linux:  "a2d2ef5e20fa488e26a5931dd60d23d9f427fc0cce4b240d843c064b0cd51dec"
+    sha256 arm64_tahoe:   "a0e923c616b9d7e20dae30ee0a12e270361c1bcad4ffa33acc95cc9106c2b2cd"
+    sha256 arm64_sequoia: "4bd23512c8029667e507045a7b7a1bb9998a33486110e8ebb9bdeab9c7004b0a"
+    sha256 arm64_sonoma:  "b8fb77266e58a126748b63cc5a0406c381721a6c19383b0ee47c79a09c613f6a"
+    sha256 sonoma:        "5fb2eb48d4194146105a1fec6af0240966841729c6602842d805e3e6443065e6"
+    sha256 arm64_linux:   "94ed2c013aed6f73eaa73ddebcf43ce498b3648906b63d83d7310adadd45d19a"
+    sha256 x86_64_linux:  "e8a846b6c4a2f212ac315a701b28c2507741b8f3a6ffec6e89f4660fcac858f3"
   end
 
   head do

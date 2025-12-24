@@ -9,7 +9,8 @@ class Pdfly < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3e7eb4d370639db333cd96ee1eddfad5f8a5f67566e1d0754110b3629a351160"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "08a91fa8c0e26a67c6f4c929c716de09332a21ae4760ccaa70bb493fd0f8c5a2"
   end
 
   depends_on "pkgconf" => :build
@@ -108,7 +109,12 @@ class Pdfly < Formula
   end
 
   def install
+    # Turn on shell completions option
+    inreplace "pdfly/cli.py", "add_completion=False", "add_completion=True"
+
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"pdfly", shell_parameter_format: :typer)
   end
 
   test do

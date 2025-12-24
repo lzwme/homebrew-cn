@@ -16,12 +16,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ba43e5d1da82aa094a7223ad60bd9249a6bbe790a9a907e01555b750cfa10c99"
-    sha256 cellar: :any, arm64_sequoia: "ddcbd10124f31e662314a04b99798ae0dc846d705611b8ffb99e1abbdfd928f6"
-    sha256 cellar: :any, arm64_sonoma:  "f0d998580b17dae19368971d62e2756ae4a139824bf9d5c7370bce947c854ebf"
-    sha256 cellar: :any, sonoma:        "e89f75e12c7d7f9ee24b219d2b2bf5d91295703e9c6d59c4d86c0856d6abadf6"
-    sha256               arm64_linux:   "837051bfc3ed1f545502d662b5ab0a8003839b6f9900652b24c1913d3e22c693"
-    sha256               x86_64_linux:  "751688ad72d8db25e6deffa2f52afb16bc35f4594c54302c24a0cd3061a094b0"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "9790556705e8dea05b24ba0975231c6223708fca2d504a5fd27226772ed4ce17"
+    sha256 cellar: :any, arm64_sequoia: "223e36200d6572ccf7044d889b9c8d57aecb7860664047c4e805e0a9abc50cf7"
+    sha256 cellar: :any, arm64_sonoma:  "926e8a98f200e950d630694e6ace27a13029f64f0d438c144cd69fbaf31dfb2b"
+    sha256 cellar: :any, sonoma:        "d031ac18a6f570daed6c6303ecd7d8fc19adedb2fef495df775d8144a40eefa2"
+    sha256               arm64_linux:   "9403590e96e219565ddee01ba1e40fbc68d0a66e50a2bd80f1618b6b28f4bf43"
+    sha256               x86_64_linux:  "4c1375b37410d45bf622007d83b63b9345d78a3373d22855c4d0541cf00942a8"
   end
 
   depends_on "autoconf" => :build
@@ -395,8 +396,6 @@ class Semgrep < Formula
     end
 
     venv.pip_install_and_link buildpath/"cli"
-
-    generate_completions_from_executable(bin/"semgrep", "--legacy", shell_parameter_format: :click)
   end
 
   test do

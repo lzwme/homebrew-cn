@@ -2,7 +2,7 @@ class Supertux < Formula
   desc "Classic 2D jump'n run sidescroller game"
   homepage "https://www.supertux.org/"
   license "GPL-3.0-or-later"
-  revision 13
+  revision 14
 
   stable do
     url "https://ghfast.top/https://github.com/SuperTux/supertux/releases/download/v0.6.3/SuperTux-v0.6.3-Source.tar.gz"
@@ -29,12 +29,12 @@ class Supertux < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f132591d005cf115d8a46b7474a06888280a77ae5602a8e496fad8f9a13ff188"
-    sha256 cellar: :any,                 arm64_sequoia: "7f561ffc7bb5bfd61a6696e3777a43af3d5ae0fd8faccb1410a48d29834b7d92"
-    sha256 cellar: :any,                 arm64_sonoma:  "d24c312dc243c36992f03122beda7ef9624fc78854d6c0a86a587fae8280009e"
-    sha256 cellar: :any,                 sonoma:        "00c834e53792059bf1288836b729386935644adc2a826d0ee0efa48414341e96"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f710ee2be2cf307918e3b1e7f294c6e2ab05ce755ad3e1b554dfbd0ba1ab34a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86d04ac1cb2ab4046c28cc9da72577dd540cdf17bdbbf82cd2f954c57abdfc34"
+    sha256 cellar: :any,                 arm64_tahoe:   "1c4701340b11843553f6922c167116e304e72d2434ee160e9ec896204951588e"
+    sha256 cellar: :any,                 arm64_sequoia: "0a12ac4b7ef4b2f7799067faeb3f6c3e4647750352475bf5ebc3be74222d04c5"
+    sha256 cellar: :any,                 arm64_sonoma:  "ec45a9f9e6f37817f2ba510d879e79b15983fad78faad793ae16334b726243ed"
+    sha256 cellar: :any,                 sonoma:        "c671a25824640dfe14b1a933e892ae05fde85fa3489aba663fe531726148eba8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee5760b28a84c5527e010fe27b90b79de271f5543c8658313145be9973d6c7f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3160e4e4d8ffd6fa679a9e79ca127e01e783d9863dba4ca6a8c2785bb6764209"
   end
 
   head do

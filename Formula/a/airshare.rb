@@ -20,7 +20,7 @@ class Airshare < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d643e22bcce769e287a63f8d6a8609f72838e489174de1a693d79351057c7c9"
   end
 
-  depends_on "certifi" => :no_linakge
+  depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
   pypi_packages exclude_packages: "certifi"

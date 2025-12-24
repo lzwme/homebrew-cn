@@ -5,6 +5,11 @@ class SagittariusScheme < Formula
   sha256 "8cf812190c43738a9d6021e677c928a80c05cad1a03047c1868c865ccfd65773"
   license "BSD-2-Clause"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "f2233759c744b4306a29c889f1353eb79d3ef63eb28ca67b04b5236adb4b108b"
     sha256 cellar: :any,                 arm64_sequoia: "1a2a574e1ab887938910ae732c2361f97dd66a8781c0844f1272b48ad5c75ded"

@@ -44,11 +44,11 @@ class Mpv < Formula
 
   on_linux do
     depends_on "alsa-lib"
-    depends_on "libdrm"
     depends_on "libva"
     depends_on "libvdpau"
     depends_on "libx11"
     depends_on "libxext"
+    depends_on "libxfixes"
     depends_on "libxkbcommon"
     depends_on "libxpresent"
     depends_on "libxrandr"
@@ -57,7 +57,7 @@ class Mpv < Formula
     depends_on "mesa"
     depends_on "pulseaudio"
     depends_on "wayland"
-    depends_on "wayland-protocols" # needed by mpv.pc
+    depends_on "wayland-protocols" => :no_linkage # needed by mpv.pc
   end
 
   conflicts_with cask: "stolendata-mpv", because: "both install `mpv` binaries"

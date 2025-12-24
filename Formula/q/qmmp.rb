@@ -1,8 +1,8 @@
 class Qmmp < Formula
   desc "Qt-based Multimedia Player"
   homepage "https://qmmp.ylsoftware.com/"
-  url "https://qmmp.ylsoftware.com/files/qmmp/2.3/qmmp-2.3.0.tar.bz2"
-  sha256 "01c3e30367c885178cd115594d20f694a47a352fd7e65fcf5722e12ac8333063"
+  url "https://qmmp.ylsoftware.com/files/qmmp/2.3/qmmp-2.3.1.tar.bz2"
+  sha256 "a61d1c1faa9c411c75292a5710999182b918831b8f0f200c87149e3ff353bea9"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Qmmp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e6da5eb38b48ffe1d8f40676be1444e840c833c3311f7a631ca9762694e81aad"
-    sha256 cellar: :any,                 arm64_sequoia: "7fa781c7162c07690e998ab6c9d598f24115ceedca718bd12528c15b96d243ed"
-    sha256 cellar: :any,                 arm64_sonoma:  "3fc459eb502ada770aa7fbfcc3e0e311bdea4f39d6ff4d4b341453b01ba4a948"
-    sha256 cellar: :any,                 sonoma:        "0a74c8a1511f9c9347723a0d6a478fb0d9a93604649804f5011310ea4a5b4a2b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fe28066049c5fc79e28a19dd8aced21f78deaa12fecfbfb017a827a7aba2e3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a643156b0ee13bbeb993e38550a14fe2c367de12828fa8a18cf7db7e5e083531"
+    sha256 cellar: :any,                 arm64_tahoe:   "bdffcfbaf408012ed8f63840e63fa0c8afbe5f51f6f1a56ce05990acb90ebac4"
+    sha256 cellar: :any,                 arm64_sequoia: "f041db0eb34aa15533930f73bfa271288471d6d9dc531bc71ab4e193774720c4"
+    sha256 cellar: :any,                 arm64_sonoma:  "9e402aaef842c83fcb657526e51af5d74d47fb2ac9ccef6943ef7e83ef7b818a"
+    sha256 cellar: :any,                 sonoma:        "22d10425a1e756966dd5ac9a05aed2d48b98b9baeb1831c1b0c5cbf9c6e1fea5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "329a836c91ab33d1a552cee2cd2b19e80bfd96246a935ba6aca4afc96bcd31d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60990541ab13026ec96dfe7882ef4ab6e5b61043a70ce0e9e7094c8dd902fab7"
   end
 
   depends_on "cmake" => :build

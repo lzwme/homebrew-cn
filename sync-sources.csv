@@ -997,6 +997,7 @@ Homebrew-homebrew-core/Formula/c/cifer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cig.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cilium-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cimg.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/cinecli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/circleci.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/circumflex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/citus.rb, Homebrew/homebrew-core, 1
@@ -5656,6 +5657,7 @@ Homebrew-homebrew-core/Formula/p/polyml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/polynote.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/polypolish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pomsky.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pony-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/ponyc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/ponysay.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pop.rb, Homebrew/homebrew-core, 1
@@ -6649,6 +6651,7 @@ Homebrew-homebrew-core/Formula/s/sngrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sniffer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sniffglue.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sniffnet.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/snitch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/snobol4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snooze.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/snort.rb, Homebrew/homebrew-core, 1
@@ -14916,7 +14919,7 @@ Homebrew-homebrew-cask/Casks/t/texmaker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/texshop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/texstudio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/textadept.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/t/textbar.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/textbar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/textbuddy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/textexpander.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/textgrabber2.rb, Homebrew/homebrew-cask, 1

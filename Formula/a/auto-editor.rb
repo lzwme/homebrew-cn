@@ -1,18 +1,18 @@
 class AutoEditor < Formula
   desc "Efficient media analysis and rendering"
   homepage "https://auto-editor.com"
-  url "https://ghfast.top/https://github.com/WyattBlue/auto-editor/archive/refs/tags/29.4.0.tar.gz"
-  sha256 "f40a636c46d29b185704808ab5a730ce272856ad176438bb7782595992009acd"
+  url "https://ghfast.top/https://github.com/WyattBlue/auto-editor/archive/refs/tags/29.5.0.tar.gz"
+  sha256 "f4298cd4759de8da0e1123c058aa9785bee32f25f12e7b6f0616b2ccc95c841c"
   license "Unlicense"
   head "https://github.com/WyattBlue/auto-editor.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "84a011edd0b1460647bdbe93de5f4d06ed189f2dcc77517ef10c49ca720390da"
-    sha256 cellar: :any,                 arm64_sequoia: "a66ba6a84b0f7940154d31b90a29f818bec2ef7384448d1db84be34a7c54d7c5"
-    sha256 cellar: :any,                 arm64_sonoma:  "97bd8fcb8ba4ca47c443fa31f0325d18394a9cc1ab31f33d99ec0317e1df1671"
-    sha256 cellar: :any,                 sonoma:        "eca852b311472ef9c375c1dd754c174718da22ec4341d0e4a80125d3b31d0a23"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f025e205852a143c18b4029db7cabddbf6f0e444f78d1d64daf90e86eba0e1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79eac5f0d297aaca2e13af274fd54e37ff9998bc6066aaf26cfab0f46187abc2"
+    sha256 cellar: :any,                 arm64_tahoe:   "88e512d1b4ecae3e816cda074ad211126f6466f50ba8be187044ca2480cab3a6"
+    sha256 cellar: :any,                 arm64_sequoia: "024ff554b046c699776c26fddfd6ad4d8377e208ff714891c9c02019c4c5e963"
+    sha256 cellar: :any,                 arm64_sonoma:  "7408bb07452d7ec7a56991d0025909f233d65090ca76be4ca6067dffbb8da94c"
+    sha256 cellar: :any,                 sonoma:        "74f4eaab1a2feee8b8219851659a8152dad5d997f041090ddf5b7a2a4d89b57a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4cfb31c8c548e3743af323fd85d3838f69d15718a48ffa76c7a075c050d56950"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1ce758b579948e962ee2eb4f053961c3d8a42ef3723fce97a0b79e1835cdaec"
   end
 
   depends_on "nim" => :build
@@ -21,8 +21,10 @@ class AutoEditor < Formula
   depends_on "ffmpeg"
   depends_on "lame"
   depends_on "libvpx"
+  depends_on "llama.cpp"
   depends_on "opus"
   depends_on "svt-av1"
+  depends_on "whisper-cpp"
   depends_on "x264"
   depends_on "x265"
 

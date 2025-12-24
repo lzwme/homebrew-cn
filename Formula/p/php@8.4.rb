@@ -29,6 +29,7 @@ class PhpAT84 < Formula
     "TCL",                   # 7
     "Zlib",                  # 8
   ]
+  revision 1
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
@@ -36,12 +37,12 @@ class PhpAT84 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c91858ef028f9b716226bde172cd43c6a4530789c4a6aef0dde6b98c89cd8798"
-    sha256 arm64_sequoia: "a1bfa422206be3278001bfc2c2c30c49532c941b98461bb190689c5e1c47b985"
-    sha256 arm64_sonoma:  "d96933e34bcd8c0ef17eb701f44105b6d4eae224b404d6932c4fdaa372c0abd3"
-    sha256 sonoma:        "804ef6492b46c1385dfe7e08d309597a5e3fd577ed0c0b3849af4d240df37ee0"
-    sha256 arm64_linux:   "40352a90790783b938595b8cbf99ad2b27881aeff51f4f983ca8a5c19dd03247"
-    sha256 x86_64_linux:  "a994e96c9e531b87ae09f318c2cdc313fabb2e8abfe3c0ab4eb0e7b54fc09ff2"
+    sha256 arm64_tahoe:   "f108ffdada9ca05239407126aabc1ec23e732a58f695ddd047e5b599af1076aa"
+    sha256 arm64_sequoia: "5dd81ca01cc44121d2f83e5ecd9bc2f680df25a3de1e3258e9e99c1d7d6ce5bd"
+    sha256 arm64_sonoma:  "3088899ea89f3c51f0b03cf24de632335f0d47b390cc03237594464ace7fa071"
+    sha256 sonoma:        "f524314a180bfbf935a43e15bb388698a275e293f8af0ad39f356ae37a092e4b"
+    sha256 arm64_linux:   "72f8c32354de8d463679966131f063c440454d58eac806368ed67122e791e8c6"
+    sha256 x86_64_linux:  "ed43578fa58a3516a4ebf488d955e25d9497cb4d3f85cffdcaf0fd47ad614db0"
   end
 
   keg_only :versioned_formula

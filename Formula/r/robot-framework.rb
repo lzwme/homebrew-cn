@@ -3,18 +3,18 @@ class RobotFramework < Formula
 
   desc "Open source test framework for acceptance testing"
   homepage "https://robotframework.org/"
-  url "https://files.pythonhosted.org/packages/8e/e4/3b945f1dce19258d03a124fc68f9310453b6dad0c6d6231bf9d1ed50c309/robotframework-7.4.tar.gz"
-  sha256 "d559c8152cb39df8e62e6224d0c2c9146826ac74c0aa6fd51c82b843f05f0071"
+  url "https://files.pythonhosted.org/packages/93/0e/08078c015d564d6a587e10e0b285620781c1a91b27230ec5b582994e421b/robotframework-7.4.1.tar.gz"
+  sha256 "d645487248a86db1e1a865ce792502792edf5342873f4e4f35d333219cd246c5"
   license "Apache-2.0"
   head "https://github.com/robotframework/robotframework.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d2d6bd6990682ab98adf38f252853b240a5e2261a088e02084e3bd9b73565088"
-    sha256 cellar: :any,                 arm64_sequoia: "e5c77d6ccc2f3b20f0ae86a6e41c10e8fd3c75d54bf83c3de9f7d9cc1fb691b3"
-    sha256 cellar: :any,                 arm64_sonoma:  "3d86df8bb2c0f4870f14e46ce7e4815e7f2a499e2ed031f7fd8d66fdc3cba624"
-    sha256 cellar: :any,                 sonoma:        "4bec838a070798b68d10da18841c693daae731fe0be9644ebdc8d4f9e4d5a45b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "87dd749435bc333ea256e2ea687f294357db210281f9c42d420735a4ef3883c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b62dca5b49f0a099744970a4f5941b9c11473e9554fc9646eb1a1f4ce21fb8f8"
+    sha256 cellar: :any,                 arm64_tahoe:   "41013753d0d9d1b21bf3840d1ade5576bf2ed4a0110d02f0fb75a60ce492450c"
+    sha256 cellar: :any,                 arm64_sequoia: "c2d408db151e4ebbce078be5a1825dec943f3fb61a2acd12b86f67ee9ac5c7a1"
+    sha256 cellar: :any,                 arm64_sonoma:  "8473aa24fa0ed12f0ac280072a0b0de053ebde280cafec8432cd47c1cb5ba874"
+    sha256 cellar: :any,                 sonoma:        "fd9308b626b3d36c323663d81ab48d28a2e52e4ad8ebec0575e01f211fc2877b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "90da96fa8c9febed2be0ceded5ca86964997cbf5f9484881d213a104ee9e1b6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d566c5d935acc7971e43dd9e561e31767a54c87254c94cb34101c7bc12ed12c"
   end
 
   depends_on "rust" => :build # for bcrypt

@@ -10,13 +10,13 @@ class Mk < Formula
   head "https://github.com/pycontribs/mk.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "e80eb0332b966a86cab9f12a53233376e7043c9200dde05fb3727d41c4f7ce4a"
-    sha256 cellar: :any,                 arm64_sequoia: "cd5af3e364bdfe357b6fe4663373d93570e6f14c9c89f7058d555d65f73a2b35"
-    sha256 cellar: :any,                 arm64_sonoma:  "b37683c02d0b392eb2d95ace627069b685cd5279edf8e0ebc9954cbbec2abf2c"
-    sha256 cellar: :any,                 sonoma:        "4aace3f0b74342a8f7d4b0a868f2516e995ef4366ecf9c8c0c854b882c99c27a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6ea097b88997d7fea6020167f6b75c866dcefa883404f09e21d94460dd0c640"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "871b466fbd2c01056f5e816c81595203ad1fd41c6b6b9d66b4cf7c2289652e5d"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "9913b1cbabedd1e04234f7b0fafc8ec1ca0407a64b157971c9edb68019f97b4b"
+    sha256 cellar: :any,                 arm64_sequoia: "d634f4600f5770ba33f51f90cfc344762f4b66e723a3adfeaa36a5c8c5063737"
+    sha256 cellar: :any,                 arm64_sonoma:  "579238db5a0a322ce59e33756a3acc6ffb0761508d19a9d59de278d9d0abdbaa"
+    sha256 cellar: :any,                 sonoma:        "ca2d9716bc26b04e562ccea66cf4b045b70c5ec3b6a8f0046dd6dcdb88a4b87e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "77952353b914bfc4aaa671acda01fe506e59560a271e5179154ac128a9f713b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39df8180e8100a4d70256ccdbd829416a71d2fe839cf7939ca3c9fe84a2916d3"
   end
 
   depends_on "rust" => :build
@@ -225,8 +225,7 @@ class Mk < Formula
     without = %w[jeepney secretstorage] unless OS.linux?
     virtualenv_install_with_resources(without:)
 
-    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
-    generate_completions_from_executable(bin/"mk", "--show-completion")
+    generate_completions_from_executable(bin/"mk", shell_parameter_format: :typer)
   end
 
   test do

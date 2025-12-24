@@ -3,18 +3,17 @@ class Cfripper < Formula
 
   desc "Library and CLI tool to analyse CloudFormation templates for security issues"
   homepage "https://cfripper.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/15/05/17d7f4ed22ad71c79c4d0c708101c3e72f643beb85ab70cb6a15e22aba17/cfripper-1.19.0.tar.gz"
-  sha256 "9b973e29ad884dd21408e652d5972b9860c8b3b490d0214b84989b641459073d"
+  url "https://files.pythonhosted.org/packages/7d/98/6caba75675f70f42ecc226b6d5c160a98b6631f1009b407c282a787592fa/cfripper-1.19.1.tar.gz"
+  sha256 "89578fdb7c83ea5d6bf328b1b014352f8a57059e7f36730fbc94a17a78379bfa"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4900bd825f3ed6482cef1be7a7a12c30fe476b1ce7a4198e8c5a8a0902c31077"
-    sha256 cellar: :any,                 arm64_sequoia: "55b50eee5de9519ca193248eeed05523957c8c97470b4383e004eb49b30d2636"
-    sha256 cellar: :any,                 arm64_sonoma:  "05978d688f45347ba59d278828da29da7aa0fab0baad4206c262587503f98e5e"
-    sha256 cellar: :any,                 sonoma:        "e40a63b24418596ebd8f5cacb4accc5f3eee2797995b8c4a82a32637cf34a9a4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f75eafe4369d3c51f6d9cdb5e5cebfa10594982043a46a9a9ecdacf8b5f582f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ab3d203626506fbac3d43832a3bb24fb8ec2e5ec39a4611d02d878ef5093c40"
+    sha256 cellar: :any,                 arm64_tahoe:   "ebf401524e9da9307f2b168eeba1934531eb1771b7a6af639809cc0643dbafe3"
+    sha256 cellar: :any,                 arm64_sequoia: "fad654926119779dc98f19efd5ce3ec197ea63d38eb3d6abc1c654d1e6b93c55"
+    sha256 cellar: :any,                 arm64_sonoma:  "5cf38b852743e5fd9d2938f061a28d046eb56a5c63e366ad983a3fc9f25b9ce8"
+    sha256 cellar: :any,                 sonoma:        "fc3032fbbc7a725e9df80d0e6aed6cf7d987d961258de71bdbde40418156152a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f69ab2d657ff36b1fb560a56cf78a3e17dc0a3fabbaa9af94f76e66a78e502fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdb9851611e9cec913a4fff11ae50e55bb88b9b50071fbc8d6d9d35b89d5a15a"
   end
 
   depends_on "libyaml"
@@ -24,13 +23,13 @@ class Cfripper < Formula
   pypi_packages exclude_packages: "pydantic"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/f3/31/246916eec4fc5ff7bebf7e75caf47ee4d72b37d4120b6943e3460956e618/boto3-1.42.4.tar.gz"
-    sha256 "65f0d98a3786ec729ba9b5f70448895b2d1d1f27949aa7af5cb4f39da341bbc4"
+    url "https://files.pythonhosted.org/packages/a0/82/66f1cd7ce283ab717c96700899e9d128927abda236bd96019747f45ad53d/boto3-1.42.15.tar.gz"
+    sha256 "d673c9b6bb9e293e028e354de6701351f1881e3fbeb25d739dd33c4940a30929"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/5c/b7/dec048c124619b2702b5236c5fc9d8e5b0a87013529e9245dc49aaaf31ff/botocore-1.42.4.tar.gz"
-    sha256 "d4816023492b987a804f693c2d76fb751fdc8755d49933106d69e2489c4c0f98"
+    url "https://files.pythonhosted.org/packages/be/ae/80c8689a846066156117ad76cdfca52003fb9d3f1f5de38535f4aba9bf6c/botocore-1.42.15.tar.gz"
+    sha256 "504c548aa333728c99a692908d3e6acb718983585ad7a836d2fab9604518a636"
   end
 
   resource "cfn-flip" do
@@ -54,8 +53,8 @@ class Cfripper < Formula
   end
 
   resource "pycfmodel" do
-    url "https://files.pythonhosted.org/packages/7b/a4/82753381cef5f9b0153a730b426fc5adfa272ff612d6d4fd150a037231f8/pycfmodel-1.1.3.tar.gz"
-    sha256 "f42a2a05ab23dd3e204176037d359de6ec84a493a36d640a5beb86b4947e8880"
+    url "https://files.pythonhosted.org/packages/37/12/32eb36667d1af57fb07cd25233c94f83760a5e1ff9e162107687bac666a1/pycfmodel-1.2.0.tar.gz"
+    sha256 "42373cdaeaa1f55e0b82b23af724ce3cc5bc1fb5ff91700d94713d80386d5afe"
   end
 
   resource "pydash" do
@@ -84,8 +83,8 @@ class Cfripper < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install

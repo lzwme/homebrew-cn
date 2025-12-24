@@ -9,7 +9,8 @@ class ZabbixCli < Formula
   head "https://github.com/unioslo/zabbix-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d8695c7f95a8d568cf6f75514d696fc439de802e23f80628016221af7c0a088a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "0154280af9d845a9885cb18dffc1b8cc91c47bbfc1bec37194cf43d01e7def73"
   end
 
   depends_on "certifi" => :no_linkage
@@ -127,12 +128,9 @@ class ZabbixCli < Formula
   end
 
   def install
-    # `shellingham` auto-detection doesn't work in Homebrew CI build environment so
-    # defer installation to allow `typer` to use argument as shell for completions
-    # Ref: https://typer.tiangolo.com/features/#user-friendly-cli-apps
-    venv = virtualenv_install_with_resources without: "shellingham"
-    generate_completions_from_executable(bin/"zabbix-cli", "--show-completion")
-    venv.pip_install resource("shellingham")
+    virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"zabbix-cli", shell_parameter_format: :typer)
   end
 
   test do

@@ -10,12 +10,13 @@ class Cruft < Formula
   head "https://github.com/cruft/cruft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b49af02989f7e2ae6c3b6bca4fb0779c99ff64dbf1910e5ddced3098665872d6"
-    sha256 cellar: :any,                 arm64_sequoia: "cb6bf9de0b6ead2e838431e3963c08e1ba9bac35dd218ce06d9785c0a25579d8"
-    sha256 cellar: :any,                 arm64_sonoma:  "e652cf02f529e3e89b790083988209b0259e6950c30d2c68d13ab57d604af7ea"
-    sha256 cellar: :any,                 sonoma:        "7508962a7faf9ecc9bf41120aa9f60ccd6d66a163058d2b556dd74b907788ba5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "352a382d1963383ccb0fa57a5485de07c92116008d3375b2abdcf6cefa0ea8c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "698b759294dad340917a1e10ceba5ed80cd7e4fc51352bb0a6b13ab0b7785366"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "1b7f2d47480c23c5fb612ed7817c697ff14d3946202dedfd7564fc8dc9bde272"
+    sha256 cellar: :any,                 arm64_sequoia: "6323e15842a1acc199565d77aae72af11e4c31b9004a53d9ddd085dccf9a7a64"
+    sha256 cellar: :any,                 arm64_sonoma:  "3ca5c88537c213fbbf6ed914289cbfbc9f4377a98e4b1024df280f755bac829c"
+    sha256 cellar: :any,                 sonoma:        "68ff237522c764e0987d88474a11da7bb3401fd150e426d4d76cf089af5741ee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e19e9fb8f0dbe490d61829bf161383b3327e1a3f9e6eb80d3d7d3c372ae7a05"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0ee330f75f0c6ea4ec58b76fda3c39eda8dc88a993fcdf4c69164495700c792"
   end
 
   depends_on "certifi" => :no_linkage
@@ -160,7 +161,12 @@ class Cruft < Formula
   end
 
   def install
+    # Turn on shell completions option
+    inreplace "cruft/_cli.py", "add_completion=False", "add_completion=True"
+
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"cruft", shell_parameter_format: :typer)
   end
 
   test do

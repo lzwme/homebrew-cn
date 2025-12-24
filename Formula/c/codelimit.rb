@@ -9,12 +9,13 @@ class Codelimit < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "096c2d70a51675e90fd82278d4b393800854486cfa3988abd7091108ed67a182"
-    sha256 cellar: :any,                 arm64_sequoia: "70ade5c7c1b153c4d7c18ffd9b0d0c1fcf6b275a697cf8ea2b6708cb5adf007d"
-    sha256 cellar: :any,                 arm64_sonoma:  "d0467a35811e67d3e6dcd78ea14b8a18f1cbe4e38b89fd1d0b2d57e02ddd26db"
-    sha256 cellar: :any,                 sonoma:        "7f5e55096f30c9e052b820d9cc868724ff3413e411bc4641f434f8d0e7b00ca3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "023d6e33ea3e19c91460c4c994cd3d19af7ef499307d0ff34653c385604414d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e06a67d78f91bc60808f4a89e91d649ae9b734f23b86cce64f0e15e00fa1345c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "209cef4386e76feb3496501d2a3b13773f84132f118360979411d9ef1beaebec"
+    sha256 cellar: :any,                 arm64_sequoia: "a7c7eff42f9a6296d05364fb6fbdf71961e5528797291f6035e235711e857686"
+    sha256 cellar: :any,                 arm64_sonoma:  "e081ee5de367b2a527f3926099dc23bbaf4ae1ea224567ce2431021974a19084"
+    sha256 cellar: :any,                 sonoma:        "86b5789ba41fba02a68f2da92b56a7a4e57fb364c6fb408c4d5100abe7102726"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "edbda13a60ba462c0983a9c17ed1a4e6a68b7415eacff39790ce09c6273e2ee4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d52746c34459b0780054addc93980ba5465c022b33b4ebbba3d38c65f8cb4fc"
   end
 
   depends_on "certifi" => :no_linkage
@@ -148,7 +149,12 @@ class Codelimit < Formula
     # Remove after https://github.com/pypa/hatch/pull/1999 is released.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
+    # Turn on shell completions option
+    inreplace "codelimit/__main__.py", "add_completion=False", "add_completion=True"
+
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"codelimit", shell_parameter_format: :typer)
   end
 
   test do

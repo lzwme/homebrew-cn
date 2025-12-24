@@ -2,7 +2,7 @@ class Pcl < Formula
   desc "Library for 2D/3D image and point cloud processing"
   homepage "https://pointclouds.org/"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
   head "https://github.com/PointCloudLibrary/pcl.git", branch: "master"
 
   stable do
@@ -17,12 +17,12 @@ class Pcl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f46b04ca74b3f6a48bbeb99a1b6fe6420bd8d9b83730a14082770b96c05e6d40"
-    sha256 cellar: :any,                 arm64_sequoia: "2b9dbca807d8ae3cf737b7804dec2ba5342962efad463b46a6831d73c4cde1df"
-    sha256 cellar: :any,                 arm64_sonoma:  "aef1cd2d0b53ac816683368252c64d99ea8da0002c95e144cd79a9da54bbb9ca"
-    sha256 cellar: :any,                 sonoma:        "5e2c8ffddf2c4955ac8a4f1d50b4863cc608bd7566a7ab7dbcf7c2d0a27ffe39"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3515bbd9a9ddebab74d80bf3e9a8b68ce3b07480d57e8ddccd40eee0e300bb9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "934824a5b692586a24f8bc4b3e23354adaff9feb425554d0a9383a2030041289"
+    sha256 cellar: :any,                 arm64_tahoe:   "e4c9cc4c139723b408091c01b18ef8249bbe08fe11e3d51f268d9cd908f7c750"
+    sha256 cellar: :any,                 arm64_sequoia: "fa794acfcedf3c15696c6ea696b209a57b7f869ed8946486314aa002b785dc3f"
+    sha256 cellar: :any,                 arm64_sonoma:  "7b1706e9e0e9865664ea19e0739b56d7080810e27100f49ca0b45591bee42b04"
+    sha256 cellar: :any,                 sonoma:        "83661d4af8d5ef9844d36db153b951253a27c2fed7d27c7694a2cf1f10436d09"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fd468daa240828c4fee288994bd82dd9ddd426726d4e8caf18b8965ef71eb9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37753c8c319f1738f80f5a055142384da4ed7835f89df80373f5101af6297e17"
   end
 
   depends_on "cmake" => [:build, :test]

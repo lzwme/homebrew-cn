@@ -2,6 +2,7 @@ class Root < Formula
   desc "Analyzing petabytes of data, scientifically"
   homepage "https://root.cern"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/root-project/root.git", branch: "master"
 
   stable do
@@ -21,12 +22,12 @@ class Root < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "fc6b42454754722d424d448d86566a6ba9d5640df7687fbcff76b913118465c6"
-    sha256 arm64_sequoia: "d87ffd237d5d1da1101390fe23299b52728f6408611ebd44796a55987e3d52b8"
-    sha256 arm64_sonoma:  "a68bd58a5f5004428d786e3078e08dc10e706f8c39cade5581c0fe74cd852bf7"
-    sha256 sonoma:        "4a511e186dd8ed972be0a948bf951a9f225f9eef96eae72d83113e3a4f44016a"
-    sha256 arm64_linux:   "46efd01341c7abd2ed38b63a00beec0410011b0206e5ae3492c92933619cf1a8"
-    sha256 x86_64_linux:  "7a76d2f94ea851152653af7876ee4d27fce8997b04984ea37b49c8a8f85606c0"
+    sha256 arm64_tahoe:   "ca193b0d28f11ebd2f7520ef17adec91dd08820e8be1109ef7a4ca02a67db342"
+    sha256 arm64_sequoia: "608949d8c9f2e16ebf1af7248466826ec56fad75dd716debb9dc99af6ece5130"
+    sha256 arm64_sonoma:  "04d38ad29bb0596b3253368dd87eb905a4ab78febf041cfe9cd5510abef69c4d"
+    sha256 sonoma:        "1a9bf4268511f5ca90573f39c19c1ae39d62d8f94dae62e4c68a46ff46abfbbb"
+    sha256 arm64_linux:   "b5c54797ff4dabad0823906270695d6725c91c65772e6fc4c13cb75b88e77238"
+    sha256 x86_64_linux:  "009e856b7343ee28ac0814404647be43e2a418216c67758930b567bef147b8d5"
   end
 
   depends_on "cmake" => :build

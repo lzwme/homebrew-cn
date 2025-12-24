@@ -1,8 +1,8 @@
 class PgpoolIi < Formula
   desc "PostgreSQL connection pool server"
   homepage "https://www.pgpool.net/mediawiki/index.php/Main_Page"
-  url "https://www.pgpool.net/mediawiki/images/pgpool-II-4.6.5.tar.gz"
-  sha256 "43dcb860e7099d3e322418378e856935f76bb4f3f09b9024c9b7d65af55e4036"
+  url "https://www.pgpool.net/mediawiki/images/pgpool-II-4.7.0.tar.gz"
+  sha256 "7f3edabb04ab7e22087d550e112c6666915df37ba833df722d96ddcb47313547"
   license all_of: ["HPND", "ISC"] # ISC is only for src/utils/strlcpy.c
 
   livecheck do
@@ -11,12 +11,12 @@ class PgpoolIi < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "60b6b09cd0a727350fae10befbea86dff9aeef373b9ad56f3f0e8dbaa26db6ce"
-    sha256               arm64_sequoia: "88fc5ff2c28b7031cfa956c59499aee7df0a382efd5696d0d662e903aa7f616f"
-    sha256               arm64_sonoma:  "e8275ac860c072cc9404c06297181dbdbb605ae1d5e090548ec8b040f47b9175"
-    sha256 cellar: :any, sonoma:        "1f4c5ea2eaf8bd4eaaa50b7833307a257ca8db3e03500f6bae7ad91866a6a7d2"
-    sha256               arm64_linux:   "ef6baf222cd6756295c555275c114e5699c8d7e34dc037c06db26238c5e82212"
-    sha256               x86_64_linux:  "2a2a091914ef4396bbaf7f33b98cc2af74a399eb0f588475bc64f90e3da81230"
+    sha256               arm64_tahoe:   "8232572a85b6da2a588cf5674cb60b588d1608e0e08a14c4894bd8ec8d8648ab"
+    sha256               arm64_sequoia: "33ceddee4ad0f216203d28cdcfa1f20c493e7388ec19ee2f4aa9d7c241bbad99"
+    sha256               arm64_sonoma:  "d0c0ad252f8db75b1961712ec63c08eaf796dfaffa2a7a1a42a67ce0077eebdb"
+    sha256 cellar: :any, sonoma:        "65ab1234098c05900398ae0355dacd53c1ded1f0dcb19e0b85c38b9726af1506"
+    sha256               arm64_linux:   "f0dd3870692dea75462866977c5022c759e952b87c3ab8b15c1d1ed8bc763436"
+    sha256               x86_64_linux:  "33cca1bb5660395149f84e2323a8620aca7be972a3e7928f8be184de3e2d2832"
   end
 
   depends_on "libmemcached"
@@ -44,7 +44,7 @@ class PgpoolIi < Formula
     # Install conf file with low enough memory limits for default `memqcache_method = 'shmem'`
     inreplace etc/"pgpool.conf.sample" do |s|
       s.gsub! "#pid_file_name = '/var/run/pgpool/pgpool.pid'", "pid_file_name = '#{var}/pgpool-ii/pgpool.pid'"
-      s.gsub! "#logdir = '/tmp'", "logdir = '#{var}/log'"
+      s.gsub! "#log_directory = '/tmp/pgpool_logs'", "logdir = '#{var}/pgpool_logs'"
       s.gsub! "#memqcache_total_size = 64MB", "memqcache_total_size = 1MB"
       s.gsub! "#memqcache_max_num_cache = 1000000", "memqcache_max_num_cache = 1000"
     end

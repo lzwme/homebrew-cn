@@ -1,18 +1,18 @@
 class Talm < Formula
   desc "Manage Talos Linux configurations the GitOps way"
   homepage "https://github.com/cozystack/talm"
-  url "https://ghfast.top/https://github.com/cozystack/talm/archive/refs/tags/v0.19.0.tar.gz"
-  sha256 "17191af770ec13593675208ecb07b8443d41f95b112fd8000b7e85df61410ec6"
+  url "https://ghfast.top/https://github.com/cozystack/talm/archive/refs/tags/v0.19.1.tar.gz"
+  sha256 "7f0c2761d75167eca86a1a637d68cd3f0487658334361724df1e12396e085d54"
   license "Apache-2.0"
   head "https://github.com/cozystack/talm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "abd1412ec18c2842eac1e0a6ce8a6c3c91c5a41cc893521d8534b0511f55db66"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37873a0cc56a6d307ec0d3b21e31c96026a08ac9227b8438ee1c814dbb57341f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3da111938ddcdb59e3a37b7f572fdcc0bca527e9ba934d72538e5e63b329d229"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0e410826ca0729525853021b8d8ec7d154166b0516f1ede7336ae2cca9d3d02b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15f691aa0441acfaab7ee3196fb98447a55fa47afa7cfb9e0ef4cb342a9436a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e63d2c2eda8b08df7220b7f039ce0b3b84cf03c1376eb7eed6708a2d47f87af"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d57ccc3439a32f3c554f2506b84bd92565b4984e6a9f6aa87bc81e1973593518"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5165acf3000ed70ffbceaad6cd52c777088059cbd68df9d3e5b0b6803fd4134"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e9bf74e261235919039d0e42705c3657c98d4c300df5df1eda270648ca80f3a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7ed1b16a12d83da84aa08f01755348eed61aae2e1efbd63e9bbfc0ec60ad401b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cf34aa6781527a6222735cecbd57eb5af9d044477bd450d7cf46d2831323802"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "305d6859db2063fb7a0b205a5883e37a8bc4fa2bdc143863c0378fca7be110f0"
   end
 
   depends_on "go" => :build
@@ -23,7 +23,7 @@ class Talm < Formula
 
   test do
     assert_match "talm version #{version}", shell_output("#{bin}/talm --version")
-    system bin/"talm", "init", "--preset", "generic"
+    system bin/"talm", "init", "--name", "brew", "--preset", "generic"
     assert_path_exists testpath/"Chart.yaml"
   end
 end

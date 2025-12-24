@@ -9,11 +9,11 @@ class Gsan < Formula
   head "https://github.com/franccesco/getaltname.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "68ffb7328e52fbaf5bd2e9622ee682b16eb4b345a5f5dd13ca047334ebe1a218"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "20b3dbc06b17525422c55c987d1486577f814e54781d8fd9084ab9438ce7c51a"
   end
 
-  depends_on "cryptography"
+  depends_on "cryptography" => :no_linkage
   depends_on "python@3.14"
 
   pypi_packages exclude_packages: "cryptography"
@@ -69,7 +69,12 @@ class Gsan < Formula
   end
 
   def install
+    # Turn on shell completions option
+    inreplace "src/gsan/main.py", "add_completion=False", "add_completion=True"
+
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"gsan", shell_parameter_format: :typer)
   end
 
   test do

@@ -1,21 +1,22 @@
 class Libcdio < Formula
   desc "Compact Disc Input and Control Library"
   homepage "https://savannah.gnu.org/projects/libcdio/"
-  url "https://ghfast.top/https://github.com/libcdio/libcdio/releases/download/2.2.0/libcdio-2.2.0.tar.gz"
-  sha256 "1b6c58137f71721ddb78773432d26252ee6500d92d227d4c4892631c30ea7abb"
+  url "https://ghfast.top/https://github.com/libcdio/libcdio/releases/download/2.3.0/libcdio-2.3.0.tar.gz"
+  sha256 "37bcb13296febbcff9dc4485834bac09212cb463c31fcea52f70ee1dd3a5a5de"
   license "GPL-3.0-or-later"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1a05d43f9bfaf6ae9d98ea2ee4130270809bf9b0cb03c8db4a920207575c421a"
-    sha256 cellar: :any,                 arm64_sequoia: "04bc4ddb58d98fa51c6fa0a8eed1b943b7d503432232c87ff3543d9f4377950a"
-    sha256 cellar: :any,                 arm64_sonoma:  "df4a0ca43f3cb7081a13dd27af54539628259a55b00903d33c57e025d9674ee7"
-    sha256 cellar: :any,                 arm64_ventura: "ee59e92928e52ec430a22e42664cb30312c77b89a5f9142a984841c129b03b6d"
-    sha256 cellar: :any,                 sonoma:        "40dfe0a999ecbb9daf288bd22512152d4bd51de75c6970ced86bffa556e5cd3a"
-    sha256 cellar: :any,                 ventura:       "082c88816cd181eb9b11f93a8efc07b699fa2bc07ee6891c98d2ec2250dc4392"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8db10577fa1ee081c45c704784b84e16671813ac8030890989b6673808337efc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9526b1ceafc1de7a14e44eef691aa7c863b68d6df90f33cdfd5d5763022c4aa7"
+    sha256 cellar: :any,                 arm64_tahoe:   "0540e17ae70efae2eed49362ed8facd0d34e107fe1d957ee0e65163d73a98157"
+    sha256 cellar: :any,                 arm64_sequoia: "4d78ef901f92ff3f14d5809a48cc58dcc8a9b52b615645dda588c80814106ebc"
+    sha256 cellar: :any,                 arm64_sonoma:  "a5f3c809caf711932d2f63d9dd90b4279749819c8a27fe529e4a1d7d163e7fad"
+    sha256 cellar: :any,                 sonoma:        "f5f5849a0fba0231d2ec81f8a0e14501d25fbd5c1085ac150163c3b88f4eae42"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "094b43451bd995b9369199268863682ec177fbd2a19da2e88ccbb37e26cafede"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91ce8a6bdca96d7b05c643598a02b3de6f13d70d845cbdd0cac40abf808255a1"
   end
 
   depends_on "pkgconf" => :build

@@ -8,13 +8,13 @@ class Oterm < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "a0356a52615603edabdb46ec51288bfb9495bd0f3485cab2b3f5d07ec7fc170c"
-    sha256 cellar: :any,                 arm64_sequoia: "9bf8e6f003d8fa799dc4e2b843d59436fe84a01fe61c9fa122ca8f32dd0d5279"
-    sha256 cellar: :any,                 arm64_sonoma:  "9d6ba58e91b43907ddc5ca354f1bcb519d4df2cb67ce5df48a9bf4d67b21ae95"
-    sha256 cellar: :any,                 sonoma:        "adfde489cc12937edee032d52473ba9a4cfb0cae4fb755681abe5dc80c0cbe67"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "43da1a0559cabf0c3b09362850e48c5e9ec7dec46d424c5ace53e05ba386ce39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4427e9d5229b5acd19b502d5210bd966b7d433ae3c4229cbc1d95fbcca3ddb46"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "91e918b67ece9c244e11a74d9ea5fc79d67643c8e91e7c26cad31c05f049e2ad"
+    sha256 cellar: :any,                 arm64_sequoia: "41fb3a8f73ab86ce523bd01bbb854fc28673472e7a6a4081febc40fcf5b054d0"
+    sha256 cellar: :any,                 arm64_sonoma:  "78be0b795964c78b6e0421994249a0e30235a7291cae3621905a965155c8ed22"
+    sha256 cellar: :any,                 sonoma:        "d288c4535ed61d4bc90eae256e675e0029ae4c6541057c4f59e669ae5e2ec754"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "78e2340e4fae470d7fc0546bf8bc67991835af9efa99091a8c5f56d6f00a4f5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b22f4232add001560f98ff9b808ef277e447bcf5242b69375277ecd3473ca73f"
   end
 
   depends_on "pkgconf" => :build
@@ -461,11 +461,7 @@ class Oterm < Formula
     without = %w[jeepney secretstorage] unless OS.linux?
     virtualenv_install_with_resources(without:)
 
-    # `shellingham` auto-detection doesn't work in Homebrew CI build environment so
-    # defer installation to allow `typer` to use argument as shell for completions
-    # Ref: https://typer.tiangolo.com/features/#user-friendly-cli-apps
-    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
-    generate_completions_from_executable(bin/"oterm", "--show-completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"oterm", shell_parameter_format: :typer)
   end
 
   test do

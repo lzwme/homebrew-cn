@@ -4,6 +4,7 @@ class Widelands < Formula
   url "https://ghfast.top/https://github.com/widelands/widelands/archive/refs/tags/v1.3.tar.gz"
   sha256 "8468b6bc0ddb70749c09c5603109ceeb79b95f3602d3aa55ecfad84f8ea82571"
   license "GPL-2.0-or-later"
+  revision 1
   version_scheme 1
 
   livecheck do
@@ -12,12 +13,12 @@ class Widelands < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "62311462c2370ab7780a7f8a8f301302471cde0140941e3dbca71825aee9eaf6"
-    sha256 arm64_sequoia: "2ad0a9c6fa5606711857c4cdca2b6035ee33ad7b29e3f79af470ed2fdd089749"
-    sha256 arm64_sonoma:  "fae160a4cbf9f8035d59bb39ba5e6eb1474e86ec2e9df352922f04389580fcc1"
-    sha256 sonoma:        "3162aeeee565681c4641075d6eaa6961234ac2c1d88783350b3d3de4e2a8e1be"
-    sha256 arm64_linux:   "eac299aa3f990e4e3754578f04af654190fa06d5bb1b430c4e8b4d21ce98f758"
-    sha256 x86_64_linux:  "fe252f216e075910f75a8cc42d853a00dcc1c162cf1759aab478488928e0b644"
+    sha256 arm64_tahoe:   "3a62a862ea1cf6d5f34619afd4c0b80b0ef433848ded0d103af4bb24b302fbcb"
+    sha256 arm64_sequoia: "0dc37d35152b9d92f8b2a1989e5d83a8d7c15456f070390e720b25396a6cca57"
+    sha256 arm64_sonoma:  "a671a12752fb6378b4afcf4609f8b80301f24c6bb0a32c6b69c8e836e4f935c7"
+    sha256 sonoma:        "e75054b0b228da298b0f20e2c513caa9cbd25504e186c57f637d2c21544727cf"
+    sha256 arm64_linux:   "e1e5ad56b87f7e520ab0ecb4eabc565cbe772e4ea1042eb927a26e7fbea3484b"
+    sha256 x86_64_linux:  "b9c9ed74ec42f56a34fe2fd7a75f28e7877c9ca4d27c17f9d69d856a2391aec2"
   end
 
   depends_on "asio" => :build

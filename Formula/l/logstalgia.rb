@@ -4,17 +4,17 @@ class Logstalgia < Formula
   url "https://ghfast.top/https://github.com/acaudwell/Logstalgia/releases/download/logstalgia-1.1.4/logstalgia-1.1.4.tar.gz"
   sha256 "c049eff405e924035222edb26bcc6c7b5f00a08926abdb7b467e2449242790a9"
   license "GPL-3.0-or-later"
-  revision 9
+  revision 10
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "d9713a3a4b39a4cdaf1fef081904e8509e9114a4d3b3930509f01e3ce636a845"
-    sha256 arm64_sequoia: "9fc65bdc67d5f6f8f7caa44df2e8a224d7e40497736125aa06599105c9ba90c4"
-    sha256 arm64_sonoma:  "2d7743f16c6829c28c5f2314e63297a2e437507efbd8404d24adb4f9a8086a18"
-    sha256 sonoma:        "9251546a0fb2f6588862dc7a5f5850b8c15cd7077fcf59f2ef4375ba4f121edc"
-    sha256 arm64_linux:   "71deac6511637ee0e267088d830135d4943a2fe7aab89a8bb5bc8c6d4f3116bf"
-    sha256 x86_64_linux:  "ddcb8819bf67f9efdf3602f7576d9e3fbc3605c973ccea1102986ec524d000e1"
+    sha256 arm64_tahoe:   "47177045aecd41e2bbe86ac76782ea2eefc84901094501d47320e473ba3ab17b"
+    sha256 arm64_sequoia: "2039f6f272486b22fb8aff40369f21ab925b7182b28cda00c8c376d7ec52b8ce"
+    sha256 arm64_sonoma:  "dd785c1059352d89129e483d132357f4bf9bc2552edba5024f2febe03c10554e"
+    sha256 sonoma:        "351c54e61da905e6218def44e302faeea0191a0bacf292ca2e982c0844fea6cc"
+    sha256 arm64_linux:   "fc45e511347222ea545ac70e7835ab62835fc0777241d8365ae6b990d6c89f76"
+    sha256 x86_64_linux:  "babb61947b8cf02f61630bd8c6634571594a8e194f78fd27e0604c687d42816c"
   end
 
   head do

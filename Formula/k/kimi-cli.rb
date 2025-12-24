@@ -9,12 +9,13 @@ class KimiCli < Formula
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "679aecc7e7847a3efd6fd6f11bf10d9ab169356773435c64e010a80982c3505a"
-    sha256 cellar: :any,                 arm64_sequoia: "a95aa0e9b8eacc4372c7c3aa3a2b20d79ed63ea917b70ffeb3941818d21ba9a8"
-    sha256 cellar: :any,                 arm64_sonoma:  "73fa2b56cfc822d34210103bbb6fa2f16210d21354646759184681070b043aec"
-    sha256 cellar: :any,                 sonoma:        "8e17e196b154dbe9cff156b979298328b1271c4129aba926042d5156dfa95eb7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "746c57ac4019426ef48ac71ac6edae76724c3dce8198fc13fb71b2049400bcda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a2d84d513413fbe0e8f933ff0dfec0c1b2083ac3e265c31b60ae8201cec2c46"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "33b02c32a594ccaeed57c1fecacd60bad0f7f90c67df22402313983e856d3248"
+    sha256 cellar: :any,                 arm64_sequoia: "dc01805f341e0ae2a264393c70d44bcbff22df2e57d62110f969234486e346e7"
+    sha256 cellar: :any,                 arm64_sonoma:  "64bc534989a8c66f976c8f32ecc5544460dce4b7bd20e167eb02d2876c12eb25"
+    sha256 cellar: :any,                 sonoma:        "840d66a98220c9d037df2ca37f44cc7c939124f80852ac85a4290fb57d0d9560"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f826c8dff6696583209a62d2ca36be6d915a261b7af35dbf05d1bebd8ebf5d27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7d6efb13da642631b263f09aca807e4705ad8a2b8646f0031e9116e217a470b"
   end
 
   depends_on "pkgconf" => :build
@@ -529,7 +530,12 @@ class KimiCli < Formula
     # Remove after https://github.com/pypa/hatch/pull/1999 is released.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
+    # Turn on shell completions option
+    inreplace "src/kimi_cli/cli.py", "add_completion=False", "add_completion=True"
+
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"kimi", shell_parameter_format: :typer)
   end
 
   test do

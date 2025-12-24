@@ -1,18 +1,18 @@
 class FluidSynth < Formula
   desc "Real-time software synthesizer based on the SoundFont 2 specs"
   homepage "https://www.fluidsynth.org"
-  url "https://ghfast.top/https://github.com/FluidSynth/fluidsynth/archive/refs/tags/v2.5.1.tar.gz"
-  sha256 "10b2e32ba78c72ac1384965c66df06443a4bd0ab968dcafaf8fa17086001bf03"
+  url "https://ghfast.top/https://github.com/FluidSynth/fluidsynth/archive/refs/tags/v2.5.2.tar.gz"
+  sha256 "1dcb13308b3aa383db658c60a7b63d73d0ff4601ccee589582ba7a816475410e"
   license "LGPL-2.1-or-later"
   head "https://github.com/FluidSynth/fluidsynth.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f1de36ea8f34f3f4096228398414a81ae6cacb76062869e643575cc367e04adf"
-    sha256 cellar: :any,                 arm64_sequoia: "4d4d25d02d8210aab969ea8d06f6e1d564c8d9088d918d5d9f1522fdcedbe297"
-    sha256 cellar: :any,                 arm64_sonoma:  "bdb87a8be3469df871cda8a6807e035e2797cbc28a9957b3991eeae5e0575230"
-    sha256 cellar: :any,                 sonoma:        "711437e42b4d1c6f506e97a63ebf493e8a9a9ba81f86c5f07d2ff8bb7bd5d4fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cceb10adb79d0a87a4cadc2e8279dde0cf42c1cc09a971b43e248a43b402af62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a515821bf33ce73bd71ca02a159047cb1f85391ca72b7559c98b00cccb6c2a9"
+    sha256 cellar: :any,                 arm64_tahoe:   "6f171d112d81af040767534a9923100f105fd610f21ad11064df6aa2c8e96061"
+    sha256 cellar: :any,                 arm64_sequoia: "05f2c73344154dd16b4e9ef7aac7e33fd5bc6eb4a3e520254000e58aaad6d523"
+    sha256 cellar: :any,                 arm64_sonoma:  "8df94fba76b75cb4ba91e890e03018ede154c6789188dc12c7c2a88be383c96b"
+    sha256 cellar: :any,                 sonoma:        "c69e657fb36b7ebee76f70853ae5c6e7542a590fee7317643360f688d946b10e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f36d1b2d5a35bb6d16a8e59bd9d01398b73406f6114a648089c11b5d680b5234"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "749a021fac69c4fdd6105cf95347e1ff3ace29bb7bb6d5fa94c5a92de1f51451"
   end
 
   depends_on "cmake" => :build

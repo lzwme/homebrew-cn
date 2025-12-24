@@ -9,13 +9,13 @@ class SnowflakeCli < Formula
   head "https://github.com/snowflakedb/snowflake-cli.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "1953897091ec1e19befab0fde54ea9f17ebdcaf1f619baf9e0075603178f869c"
-    sha256 cellar: :any,                 arm64_sequoia: "4a5043508ccb21ac9190fc4b24c532cb3bb759aa3aee40495ecaec3b8466d5bd"
-    sha256 cellar: :any,                 arm64_sonoma:  "57504ac1870f1d7e8a4626ec6361260c93da970af94af7337ced166884385064"
-    sha256 cellar: :any,                 sonoma:        "402f50653da1304a0e35ff3e948a2c078e909675c4e27baa44f7c080f95ead58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "846052e83f347987bcb5f1829e6ab4e4d143486a9614a889cc772893280079e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d83054a4fa1f12e340b6a40366bb2ada9b33d3569af3b22537b519491b17b99c"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "44fa87912367d21783f9be4fab9dc567c9d9b3a8ddb8eb4c0796b32389c6a49e"
+    sha256 cellar: :any,                 arm64_sequoia: "48c8ea3f6f7d215c2e67032bbea42e4a779acaaf2b0eaed719f21bcd5fbe7fc1"
+    sha256 cellar: :any,                 arm64_sonoma:  "bddb7143b1eec0f7e7747dda139e19c6b9b18418b2b4100c310742cdae5938fe"
+    sha256 cellar: :any,                 sonoma:        "20601972202fc1a0c932bc17319e8679bf2f0f7bc55e7360f7bb4695e6babff2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49b0435dea842934b78728a2f2325326fe6606ee202889808f8ada70cfec9ade"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8bcd0c5bf467dfbb23e6cc90468c99aeb1db9d0ad87b560c2392bf90ecfade2"
   end
 
   depends_on "certifi" => :no_linkage
@@ -296,11 +296,8 @@ class SnowflakeCli < Formula
   def install
     without = %w[jeepney secretstorage] unless OS.linux?
     virtualenv_install_with_resources(without:)
-    # `shellingham` auto-detection doesn't work in Homebrew CI build environment so
-    # disable it to allow `typer` to use argument as shell for completions
-    # Ref: https://typer.tiangolo.com/features/#user-friendly-cli-apps
-    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
-    generate_completions_from_executable(bin/"snow", "--show-completion")
+
+    generate_completions_from_executable(bin/"snow", shell_parameter_format: :typer)
   end
 
   test do

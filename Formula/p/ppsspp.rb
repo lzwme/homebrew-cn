@@ -4,15 +4,16 @@ class Ppsspp < Formula
   url "https://ghfast.top/https://github.com/hrydgard/ppsspp/releases/download/v1.19.3/ppsspp-1.19.3.tar.xz"
   sha256 "054401fa7fffbd99b7fd80e98a2951d6f0c3de83cb4b54719899c98bfad99614"
   license all_of: ["GPL-2.0-or-later", "BSD-3-Clause"]
+  revision 1
   head "https://github.com/hrydgard/ppsspp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ba081e90098ef595823c51bd0905005d5064eccec9fe7a2ab5cdd28bb7f6beb9"
-    sha256 cellar: :any, arm64_sequoia: "c52b76eec8f4d933a4a5a6d160b9b753c1f0e4fad97f500b953bc32ae4717670"
-    sha256 cellar: :any, arm64_sonoma:  "46aebb39a4f125ecfde641e0ba89f6abc01ce3afcdcf9017c56608f22113feb2"
-    sha256 cellar: :any, sonoma:        "7cbe7e5b1ee008c846e9dd75900f85483fd7672882373f313e7bb37cb5fa18b1"
-    sha256               arm64_linux:   "8b9509f8cca92b1b7ea3ad47c4f3275b0ad24ac45cd6e2eac8891148764c77b6"
-    sha256               x86_64_linux:  "e5be3400883cef9c47ed65e3fa02ff499d605364b0af88f0093b5ea1e84beed7"
+    sha256 cellar: :any, arm64_tahoe:   "3e2fcd799d8e7de99bc010dd8c80be895b4afc9a0c237e3baa7f32e0183c2756"
+    sha256 cellar: :any, arm64_sequoia: "b9fe66afc8e0ccd5cf7cd81f70457578027e80e5b98372e5ad3f79b54c8c7bc2"
+    sha256 cellar: :any, arm64_sonoma:  "31a184543316733df0dbf103c1b03724505a85b6a06ea98439d09c4e1ff50d7c"
+    sha256 cellar: :any, sonoma:        "7310a7c5ed39c5fac45c87aa99dc6663a8c0f6b9fe8ef847cfe10b7bc9a88cc3"
+    sha256               arm64_linux:   "172f34f0048cff0a1386dd25da7aa3a1d77d20b11aeb7e639bacb67612bae5f3"
+    sha256               x86_64_linux:  "2970058dad64bbdc0aac11c867034830d5d3cd4a40d42ba5477e9547b77a11bf"
   end
 
   depends_on "cmake" => :build

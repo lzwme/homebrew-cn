@@ -10,13 +10,13 @@ class HuggingfaceCli < Formula
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "650a0aa5b259511035733775317a13393ec010c5e46dc5447598f5a97850279f"
-    sha256 cellar: :any,                 arm64_sequoia: "f1701db9d098df5b87aeffa1d7ef16c8c547327777e52dfbf17b3bc723eef18d"
-    sha256 cellar: :any,                 arm64_sonoma:  "ed7028c5d989dc74963004e93ee697572b513853d6d819c241ba84df9e25f3a0"
-    sha256 cellar: :any,                 sonoma:        "747b800f1bd2c598d4d8d3ec358998e8a7711f0458dbdd2337e12e5de9759609"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6af92d4bafadc32e1003c03c6c1790db2cc3062fd9a3a58c75dbcc71a0d3462e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64b56e0bd92ca96e7c7773306fbf83fe3079d3e1e18a00f602432705ead56e52"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "b84ec93081063fac162fe4b0ec0e4166c333fa4424cf8808dcef6b2553371bbf"
+    sha256 cellar: :any,                 arm64_sequoia: "53cb9878b311ee5c785591b529f0d0ab7c7243d3110c5551f2e130436fd4b707"
+    sha256 cellar: :any,                 arm64_sonoma:  "799ab3abe6f365dbb927183484205a91fa66e494448b9aa79e575e95e0370816"
+    sha256 cellar: :any,                 sonoma:        "9b0bd4e96bd28d5be6f96bcdfaa439aa803e701ba15dd4f4db309d1dc516059a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b39138b6c281b6338c0a6c0ae025124793ab6b2faec518554f1f47f36732010"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcfdb94fb3dab485a097d59791dc5a44f2bffd4bfb666ba70e9e2c9e81d84c84"
   end
 
   depends_on "pkgconf" => :build
@@ -122,8 +122,7 @@ class HuggingfaceCli < Formula
       venv.pip_install Pathname.pwd
     end
 
-    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
-    generate_completions_from_executable(bin/"hf", "--show-completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"hf", shell_parameter_format: :typer)
   end
 
   test do

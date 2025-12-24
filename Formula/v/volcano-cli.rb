@@ -1,18 +1,18 @@
 class VolcanoCli < Formula
   desc "CLI for Volcano, Cloud Native Batch System"
   homepage "https://volcano.sh"
-  url "https://ghfast.top/https://github.com/volcano-sh/volcano/archive/refs/tags/v1.13.0.tar.gz"
-  sha256 "1839c3959a05292d741e7e26b0dc33e018acfc818f5a690fa8ccaa8fe847a3d2"
+  url "https://ghfast.top/https://github.com/volcano-sh/volcano/archive/refs/tags/v1.13.1.tar.gz"
+  sha256 "b0067999a4701878448fc7adba72b37b5888c8cfceaf1ceaa49a78ac579984b1"
   license "Apache-2.0"
   head "https://github.com/volcano-sh/volcano.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d753db4b00bd45c2420176535394cdbfe05aa8cfdf9c7bfe7d5921cf40557e9c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa4b9505f24d04917a6f03276e47411dcd4560629b739f13b201e668028d7452"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6b2364981682f4eabcda333112dae9209295536994d7223119629e6b09bbaa9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0d67f7ed570525b1eaad996edbde306095182fa3c85916c3605c6791456cac3e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15f70bf49e9dc50d3a1aa0b03fc41f5f37a4c52cef60452501e5560a6b1632f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2d068ecba92dbdfeccc8baeadaa348e8543a24d3d34874b67051a7f01e57da4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b89776e79f0dd94c0ae7e25dadce2bd026be5ef3ad243fa2b562376ddd6ecb0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e2ae02958c2542b8f8093baf48000ed95bf0a3de03fbd1404362128e09e5d97"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c999bc3c32df37a0b3435d58a897de2db4ba6739b6a08cc24740f338014c9711"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ec3fbf236eea1672adb700fddda21963242d55f0b6da02b76d8b8bf1886dcaa6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d0aaf20c64c50158e40fc55ae6108f278b5a94318262bcdd4f050d41a01e4d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9122d0f3ec92471b1f4dad8b68520e014c8b2cec1a83fe285026f96343325c1"
   end
 
   depends_on "go" => :build

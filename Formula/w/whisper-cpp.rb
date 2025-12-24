@@ -12,12 +12,13 @@ class WhisperCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8cb50399576f2aa6a88de95f5bb7635065b0235619f8d3f196753d8009aabfd3"
-    sha256 cellar: :any,                 arm64_sequoia: "a5ae48613187e5607b0d3338e7fea58ae1107a14de85d6adb5a3f07fc49c9724"
-    sha256 cellar: :any,                 arm64_sonoma:  "5d70c696e7a8e20375915f7565745d07c5d8cd2725595f172bf6cf6b46318b2e"
-    sha256 cellar: :any,                 sonoma:        "48518a1190475e02f7e1f5fe9adbd813f73ff91b3fb55b1834c0ce8ac4f94ea9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b2df7c96d567867f3114a3a4326c6d08cc37c98588cb58a0c8d6188ca296297"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4847bfe03f4be61bd1a364e6bddb259160d09de148cc870ab06058412359b57"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "5ec488affdcc40b564a691636a7be9cb681984ef5327fbf2e837ed881cad0a92"
+    sha256 cellar: :any,                 arm64_sequoia: "98f80dcf49429a56812105b152e88d30681adbb2e567e0d1131658ae2ff42c67"
+    sha256 cellar: :any,                 arm64_sonoma:  "95cb0830bfa50cf10a9c97e98dbb079491cdd747fe8d186e9e30df8ffad3baee"
+    sha256 cellar: :any,                 sonoma:        "c1f87d684b2f7f559b098fa27945037f13c06ebef53960d55218edae5a3e7780"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34200c0f5a102c0761f0f97ffee2e4a9488435d5cfe52619e38dafb9977e4caf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ad12253e983a1bc33cc52225651fe3d1907959cd81dbfd083a31f08cbac555b"
   end
 
   depends_on "cmake" => :build
@@ -46,6 +47,10 @@ class WhisperCpp < Formula
     # Expose executables and pkgconfig files
     bin.install_symlink libexec.glob("bin/*")
     (lib/"pkgconfig").install_symlink libexec.glob("lib/pkgconfig/*")
+
+    # Install whisper headers and libraries for opt paths
+    include.install_symlink libexec.glob("include/whisper.h")
+    lib.install_symlink libexec.glob("lib/libwhisper*")
 
     pkgshare.install "models/for-tests-ggml-tiny.bin", "samples/jfk.wav"
   end
