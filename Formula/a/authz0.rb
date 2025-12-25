@@ -9,16 +9,13 @@ class Authz0 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "07856f2310d354f1c7d363a2a7d1cfd3a1f1c5ca906934b57f33055b6c5633f9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "76f92010b14aae9dae0ead727ef643ce0b0edc8a5361530ffdfd549b9895e2ae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "14381da4ed533631835222d21cd916381953a087c3b1335bb4d30a8c26acd382"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2a469a36c22f19b0ecc5ee81c8aae79cdd1f826a6ee917865666b7f004ab3a0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "68a16964db28dc0169285a3a7dc06c19544ec0f53fcc83396d7944700aea3826"
-    sha256 cellar: :any_skip_relocation, sonoma:         "463ee39916da6ebe2df30fbf14805ea507a3c9be4881c5be47c8f538c34553d4"
-    sha256 cellar: :any_skip_relocation, ventura:        "97e19733f1cab9bece649e12ef4ea454f05cb9596755d90901c74e7ebedcc56f"
-    sha256 cellar: :any_skip_relocation, monterey:       "a3342b3b6def76d71b61f2a3c16cb9ce3ffed34787effd744d29de1a1277ebd1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "98a9bcfcd1fd8a2b5572144d3beb098e37b61fef453fdc06426a7fe4a29c5331"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c7d5364e993143029a3c66471ee76f88ed3f5e20e0094ba6aa497830b195fc6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0fe2da611b2c22d82a4279dc10401a4046c94da994c296f87e4cb30c6f1556d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fe2da611b2c22d82a4279dc10401a4046c94da994c296f87e4cb30c6f1556d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0fe2da611b2c22d82a4279dc10401a4046c94da994c296f87e4cb30c6f1556d5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0cc9c71a90cc770c96bd24a6946a23759912d1dd52bc0b0953732a33064c208a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e60ac9cf6e9d8901bf7ad5f70e96757abd79f6b6121ad1945135f6043cd010e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5b62fb4bf2c7ac8e013fbff4d57cbb6ab2ea703e16be23f0415dc0d02bd7c83"
   end
 
   depends_on "go" => :build
@@ -26,7 +23,7 @@ class Authz0 < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"authz0", "completion")
+    generate_completions_from_executable(bin/"authz0", shell_parameter_format: :cobra)
   end
 
   test do

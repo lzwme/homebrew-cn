@@ -7,16 +7,13 @@ class ArgocdVaultPlugin < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "6955e65b88cd94b91c5780fa18da4ee2804568242e0560e3c5143e92484269c2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "16c6f66c3a9728fb32b1098e4ac611c9e7f85d3da8fd59c464ec6662d8f472a7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e7dcbaa4f8fea11cbc2bff01602fe23caece755107e78213214a490423315938"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e7dcbaa4f8fea11cbc2bff01602fe23caece755107e78213214a490423315938"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e7dcbaa4f8fea11cbc2bff01602fe23caece755107e78213214a490423315938"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e5b3dae256fd58870d8257ad93bb990e01c59847de737cf6e11328568c07a518"
-    sha256 cellar: :any_skip_relocation, ventura:        "e5b3dae256fd58870d8257ad93bb990e01c59847de737cf6e11328568c07a518"
-    sha256 cellar: :any_skip_relocation, monterey:       "e5b3dae256fd58870d8257ad93bb990e01c59847de737cf6e11328568c07a518"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "71c58033fef7e4eac8c71e825df10dc0b275ce7fea93cd798e46780e89005a18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dea50d0a56408e8c396cb0bfc6534f025bc2e8acefb125f59a32a0fecc9eee89"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c5d4dd6c1a4f16a3c0fd46c1721e996d152df50986c46a1fa43698f6e31ac095"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5d4dd6c1a4f16a3c0fd46c1721e996d152df50986c46a1fa43698f6e31ac095"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5d4dd6c1a4f16a3c0fd46c1721e996d152df50986c46a1fa43698f6e31ac095"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1fc47e2adeb0af27bb1ad84156319b7196a8fabd70ea2712e4c673d55e85f867"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "69abd86b96dfd35560cff8ca258da75d78e26fbeb2f2a7139e03cf4749f53c2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cd74305d5e1cac49e5621a88abbfcdd897c07e81ebe27ddc30eeeba1cf40260"
   end
 
   depends_on "go" => :build
@@ -33,7 +30,7 @@ class ArgocdVaultPlugin < Formula
 
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"argocd-vault-plugin", "completion")
+    generate_completions_from_executable(bin/"argocd-vault-plugin", shell_parameter_format: :cobra)
   end
 
   test do

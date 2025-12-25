@@ -1,20 +1,18 @@
 class ClaudeSquad < Formula
   desc "Manage multiple AI agents like Claude Code, Aider and Codex in your terminal"
   homepage "https://smtg-ai.github.io/claude-squad/"
-  url "https://ghfast.top/https://github.com/smtg-ai/claude-squad/archive/refs/tags/v1.0.13.tar.gz"
-  sha256 "f621646464912f19196e1bf9da928fb3230854917d0cdfa112db4229f9e18053"
+  url "https://ghfast.top/https://github.com/smtg-ai/claude-squad/archive/refs/tags/v1.0.14.tar.gz"
+  sha256 "19951f70917aef7fda3810b47e3e2dc3110fb04027ff5dbbe3f3c502999b9610"
   license "AGPL-3.0-only"
   head "https://github.com/smtg-ai/claude-squad.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0b1bb8aa53f96586525577631be36fc7b2a9b04eb812cda3bbfdb1c706e6d7c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cfac1e30a04b1c13f84169a26471b35e1dfa316235c3a20078304cfa840f9ed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1cfac1e30a04b1c13f84169a26471b35e1dfa316235c3a20078304cfa840f9ed"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1cfac1e30a04b1c13f84169a26471b35e1dfa316235c3a20078304cfa840f9ed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cc839785050b1cda8d2a5994c87b6424e9cbb6bf7e44956e781a6e3f27f45501"
-    sha256 cellar: :any_skip_relocation, ventura:       "cc839785050b1cda8d2a5994c87b6424e9cbb6bf7e44956e781a6e3f27f45501"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "df6a88d6bbda2a5bae08218ba787e5c274c0541f5589c613925ec9a65b87f25a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ccdf7ad9252d0b8921928319a70fc9afcb63a1cc1a2b90f6e0255eda0e0b336b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d25d4a32533b88fe9647e2b5f3490a56f44c3b3e6e6e0f016d7bd9a2889da01"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d25d4a32533b88fe9647e2b5f3490a56f44c3b3e6e6e0f016d7bd9a2889da01"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d25d4a32533b88fe9647e2b5f3490a56f44c3b3e6e6e0f016d7bd9a2889da01"
+    sha256 cellar: :any_skip_relocation, sonoma:        "318a9572dfd22273eddc53aaea2f0000b20b26b4147617a15bad02814776e16d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd30d9753dea2b1415087f1dd474d8415a70c85adc52cd7ddca500a2c2489121"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a9952a066bab2bba7caf2310d2ade8dd4cb133583d75a75ed245994a2aecf3b"
   end
 
   depends_on "go" => :build

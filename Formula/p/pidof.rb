@@ -25,6 +25,7 @@ class Pidof < Formula
 
   # `nightproductions.net` is no longer accessible
   deprecate! date: "2025-01-12", because: :repo_removed
+  disable! date: "2026-01-12", because: :repo_removed
 
   # Hard dependency on sys/proc.h, which isn't available on Linux
   depends_on :macos

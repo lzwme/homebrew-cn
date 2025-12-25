@@ -9,12 +9,13 @@ class Cycode < Formula
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "493be95bdeba08949530bb11d0b80222be75c66c1b39b5845fd4ec59d51d0bf5"
-    sha256 cellar: :any,                 arm64_sequoia: "4372978b89fd9661cf9b4338da5601aab6cabb5b189b237c06281dd964d7d7ab"
-    sha256 cellar: :any,                 arm64_sonoma:  "149a7e180bf506e2e5dcc5637858f11cad901b21ce7489087b37e3ab73c035eb"
-    sha256 cellar: :any,                 sonoma:        "bd3c56227a67236898321b26ba819e4b5eb4a4b348866eb9d28eb5cdd0c9632c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "02138e5e59dbba496f3bc32b1f21f70bfd998f8d6e99b1f362563eb20d705b8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38de75e23a7900b069042b846b2ebb16ffa7a5fcf1f46921081d0fc7f9d346bd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "96158a464ef5a95709b18f79330fee6ba826495107f2b996d75ac9394c23177f"
+    sha256 cellar: :any,                 arm64_sequoia: "ec6ecbea8a47cc791b52d7701f6949bbc2f5dfffff9f57bf981c57a6a82b6664"
+    sha256 cellar: :any,                 arm64_sonoma:  "2a6996628396e4fc895fcd4fbb94f0d78d5e16098c3e4b9bca2df23e2cb8d24f"
+    sha256 cellar: :any,                 sonoma:        "b1ce8b227a2ce7d079c57aac1b351aba35cf757ceb45fe00c7e8dc38955338fb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e27487e1f115d8979a5c84476b95be3860edb85f036f0d7b1f08481b128c539e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ab03f1391590dc8436a324a95db7ee7cbf786f723a782c48712b74714fdfa11"
   end
 
   depends_on "certifi" => :no_linkage
@@ -257,11 +258,8 @@ class Cycode < Formula
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
     virtualenv_install_with_resources
-    # `shellingham` auto-detection doesn't work in Homebrew CI build environment so
-    # disable it to allow `typer` to use argument as shell for completions
-    # Ref: https://typer.tiangolo.com/features/#user-friendly-cli-apps
-    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
-    generate_completions_from_executable(bin/"cycode", "--show-completion")
+
+    generate_completions_from_executable(bin/"cycode", shell_parameter_format: :typer)
   end
 
   test do

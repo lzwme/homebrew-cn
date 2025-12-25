@@ -1,7 +1,7 @@
 class Liblzf < Formula
   desc "Very small, very fast data compression library"
-  homepage "http://oldhome.schmorp.de/marc/liblzf.html"
-  url "http://dist.schmorp.de/liblzf/liblzf-3.6.tar.gz"
+  homepage "https://oldhome.schmorp.de/marc/liblzf.html"
+  url "https://dist.schmorp.de/liblzf/liblzf-3.6.tar.gz"
   mirror "https://deb.debian.org/debian/pool/main/libl/liblzf/liblzf_3.6.orig.tar.gz"
   sha256 "9c5de01f7b9ccae40c3f619d26a7abec9986c06c36d260c179cedd04b89fb46a"
   license all_of: [
@@ -10,7 +10,7 @@ class Liblzf < Formula
   ]
 
   livecheck do
-    url "http://dist.schmorp.de/liblzf/"
+    url "https://dist.schmorp.de/liblzf/"
     regex(/href=.*?liblzf[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 

@@ -7,14 +7,13 @@ class Aliae < Formula
   head "https://github.com/jandedobbeleer/aliae.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23027e091dc14b23943ce0c49bbdd033aa88b284c31873db383174af492b1f0a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b92e61c0150e736a343ea89b719b2daa761b380e283a07ed186800c96566243"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67767bffeda6f91745690be6ad4f36de9095ed20338e4fd51f07b13c1380b053"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5c2e3fbd5cbacc683410564241b3af976f0dd7cce4927a01c44bae2617a5085a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "80f94a1ed79e0501da37ec491c68eeac725df677a1e4277a6f22a0a9f189798b"
-    sha256 cellar: :any_skip_relocation, ventura:       "c2147bc050d3bc14bd1d48a1bd2b9625143179da77c9666260e0dac634c2d1ae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "73937fe03334e20ce13283b3cca4f9494fa0ff1065238424584e39b553bf3393"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4322cff6d3ca1b321177b9f03422de1259caa1f173cd52c099e6e7afa1d696c1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d53160d4849356a90a2678dbf28084f59adb0500f7e9afd84878f5f70bd05ec5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98d44f2dca6d2b36d623e1b32c314020a7df181556e35b2e958929bd949c500c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e673fd81753e7e90ea1e6869fe8df79d44030cd4df7fa5081b46c05c73977bd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2232257f5cb03001eaba175dc4049386f8f93052907e8be1e1563f5635fd2089"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "749bcd42aad96e35d801f5eb1b732c58d2fd5f6e4dc521fbd2459384bde14a33"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d640083863cad4b03db8646421e518a9a02e9b599fe2344fad201d226db5499"
   end
 
   depends_on "go" => :build
@@ -25,7 +24,7 @@ class Aliae < Formula
       system "go", "build", *std_go_args(ldflags:)
     end
 
-    generate_completions_from_executable(bin/"aliae", "completion")
+    generate_completions_from_executable(bin/"aliae", shell_parameter_format: :cobra)
   end
 
   test do

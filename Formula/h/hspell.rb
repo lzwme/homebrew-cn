@@ -1,12 +1,12 @@
 class Hspell < Formula
   desc "Free Hebrew linguistic project"
-  homepage "http://hspell.ivrix.org.il/"
-  url "http://hspell.ivrix.org.il/hspell-1.4.tar.gz"
+  homepage "https://hspell.sourceforge.net/"
+  url "https://hspell.sourceforge.net/hspell-1.4.tar.gz"
   sha256 "7310f5d58740d21d6d215c1179658602ef7da97a816bc1497c8764be97aabea3"
   license "AGPL-3.0-only"
 
   livecheck do
-    url "http://hspell.ivrix.org.il/download.html"
+    url "https://hspell.sourceforge.net/download.html"
     regex(/href=.*?hspell[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 

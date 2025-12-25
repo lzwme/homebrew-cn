@@ -12,12 +12,13 @@ class Azurehound < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aeb73cfa276f63ee643441baaff4160710bd73dc972ced9f8c0b67e09ff99700"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aeb73cfa276f63ee643441baaff4160710bd73dc972ced9f8c0b67e09ff99700"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aeb73cfa276f63ee643441baaff4160710bd73dc972ced9f8c0b67e09ff99700"
-    sha256 cellar: :any_skip_relocation, sonoma:        "46926ac2a92c85559fa8066f2ed8bee09e32ee39532fa3bb6cff59a681a2268c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "189150a0291fbc90c0bdebc1714caad86439fc83ee1a62481189ae7e586a870c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02d75cf61783d9cb0e45d1159076ff43c15403ede7a15dd57fcfa466150e80cf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf0ca474e9606a9c99e3265d4dc793b45b69f5fe0cd981311862fc4bfe7697c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf0ca474e9606a9c99e3265d4dc793b45b69f5fe0cd981311862fc4bfe7697c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf0ca474e9606a9c99e3265d4dc793b45b69f5fe0cd981311862fc4bfe7697c1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "50f52a102a86d3e3c8c98ffaaeadc0f6f6b992c2a5f1e1855261527a04acf623"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7851bf709d3157d45bce15b64c666c1449e36de5c6c8cb9128840fb3e52693c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fce437240eeb0d9bc130b5b32c15fd09258ac1580eff89fb7b07096c9c528c06"
   end
 
   depends_on "go" => :build
@@ -25,7 +26,7 @@ class Azurehound < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/bloodhoundad/azurehound/v2/constants.Version=#{version}")
 
-    generate_completions_from_executable(bin/"azurehound", "completion")
+    generate_completions_from_executable(bin/"azurehound", shell_parameter_format: :cobra)
   end
 
   test do

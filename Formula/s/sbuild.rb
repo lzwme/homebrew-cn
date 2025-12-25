@@ -1,8 +1,7 @@
 class Sbuild < Formula
   desc "Scala-based build system"
   homepage "http://sbuild.org/"
-  url "http://sbuild.org/uploads/sbuild/0.7.7/sbuild-0.7.7-dist.zip"
-  mirror "https://github.com/SBuild-org/SBuild-org.github.io/raw/master/uploads/sbuild/0.7.7/sbuild-0.7.7-dist.zip"
+  url "https://github.com/SBuild-org/SBuild-org.github.io/raw/master/uploads/sbuild/0.7.7/sbuild-0.7.7-dist.zip"
   sha256 "606bc09603707f31d9ca5bc306ba01b171f8400e643261acd28da7a1a24dfb23"
   license "Apache-2.0"
   revision 2
@@ -18,6 +17,10 @@ class Sbuild < Formula
     rebuild 2
     sha256 cellar: :any_skip_relocation, all: "0a8af36def5cab55a8a4ed2a793572ec0f0f9f5afe15681f3b6bef38d571a389"
   end
+
+  # https://github.com/SBuild-org/sbuild
+  deprecate! date: "2025-12-24", because: :repo_archived
+  disable! date: "2026-12-24", because: :repo_archived
 
   depends_on "openjdk"
 

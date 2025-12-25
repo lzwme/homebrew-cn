@@ -23,6 +23,7 @@ class Termshark < Formula
 
   # https://github.com/gcla/termshark/issues/167
   deprecate! date: "2025-01-03", because: :unmaintained
+  disable! date: "2026-01-03", because: :unmaintained
 
   depends_on "go" => :build
   depends_on "socat" => :test

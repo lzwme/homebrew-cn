@@ -1,9 +1,9 @@
 class PhpAT86Zts < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/php/php-src/archive/ef87a146fb8a12398bc0ffc58b3493991f818167.tar.gz?commit=ef87a146fb8a12398bc0ffc58b3493991f818167"
+  url "https://ghfast.top/https://github.com/php/php-src/archive/e861608eee7598154b672fbccb97e516b8d9f09b.tar.gz?commit=e861608eee7598154b672fbccb97e516b8d9f09b"
   version "8.6.0"
-  sha256 "ba8358dcc43e322fa8038fc7b15530a08b00db46bfe311cdedfa95bd4563b056"
+  sha256 "2e3ac986bc12884e846e404cab2c65a3570c06ac8be37b7b84c25545756785d8"
   license all_of: [
     "PHP-3.01",
 
@@ -28,16 +28,17 @@ class PhpAT86Zts < Formula
     "TCL",                   # 7
     "Zlib",                  # 8
   ]
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 48
-    sha256 arm64_tahoe:   "01ade4e0443f76dd912c35d481fa5adb3c36eda838a74fa8e77b60d004d24bd4"
-    sha256 arm64_sequoia: "4ae16bbbf0bae2af4563236ed0a39a074fc97df80a4db62d70e60cac33c3634e"
-    sha256 arm64_sonoma:  "7e9ed772b1765bf120ca8cfe48488b3e7371ce2b27f12f9fa9ce6622387511cd"
-    sha256 sonoma:        "8609c9010a8fe080f05f45ea3d09c1b46235139accc6fb0cb904b80977ca5b72"
-    sha256 arm64_linux:   "b8009db5f4d8b137f9ef0c979e2b0b33b524e34ea94cc77917521f822d80d34a"
-    sha256 x86_64_linux:  "283caf745322e839fa9579869f5e2294bf7567395ff94cb6443138355ffa4632"
+    rebuild 1
+    sha256 arm64_tahoe:   "6dc61203c64db78ce9352610962923d02fe46db831d54cf9b6d988cc24359a7f"
+    sha256 arm64_sequoia: "791d12dcaca4609241408a95dcd3cb2a32b6b09ed8cf8ba7d09ce3522e402bd9"
+    sha256 arm64_sonoma:  "04d138aa52dae6e56d4d0859bb6503f29a2fef2a5e707312b5231857f5c04cc8"
+    sha256 sonoma:        "7a96e77fe91330ac9c1dbcacd68aea4d6f05a840050a28283c993b42d77e9e5e"
+    sha256 arm64_linux:   "a7a5608d6b967f3ad3cf236eb8d68fb460a2c1edb42128d99ce33b68e514b7e7"
+    sha256 x86_64_linux:  "d2843da20aff50719824b34c6e6d43b77f2955f8ad3858235f9dfea32c4867d3"
   end
 
   keg_only :versioned_formula

@@ -9,12 +9,13 @@ class Btcli < Formula
   head "https://github.com/opentensor/btcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "56effbc67101da902176124cf8fa39b1af64554f1779bcc19e968e4d1fc2f551"
-    sha256 cellar: :any,                 arm64_sequoia: "fb93e97df4765eb27d414d891b807bc84e639edd63540abff62aa609375c44b0"
-    sha256 cellar: :any,                 arm64_sonoma:  "72a9a630a1968a364719a04809f637393e13270b2e9bb9971f6394b3cd08f0cd"
-    sha256 cellar: :any,                 sonoma:        "24adb5b2f8d9473b825ec744451ca92222e59faa487aa17937000c38254112ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0297ea7c7ca545dce064de7265e5981007d7d3c4f458ed221795e93a04c1362"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21fe50abfe519c2aa0e5aa18f675451d2965cde29213019e1be766edc70b3981"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "1d9e9a027139ef97faa776775ed5f082af80a0de8174897aae744c4ff7f4fbc9"
+    sha256 cellar: :any,                 arm64_sequoia: "48877abb3db2dca55af3420ee7a331dc7a34780a86a8a335bb1f2a3756690d30"
+    sha256 cellar: :any,                 arm64_sonoma:  "0a4f2c154fcba86fd26a29357a9426ebbe07eb798079df7146a75d39f81071d8"
+    sha256 cellar: :any,                 sonoma:        "db54fd81a1be8a32a8b7c591910825313c065475461e73a89b968c321cdd6fea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "41717dbeb34c66eb55e685ced7e2b0c45a5bfba1f8976048c4215ca84c5f23fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ba92d29bada405a762fd482a4c029b90c6622e3297aa60c73a147959711b3cb"
   end
 
   depends_on "rust" => :build # for bittensor-wallet, plotly
@@ -261,11 +262,7 @@ class Btcli < Formula
     ENV["TRAVIS_TAG"] = resource("scalecodec").version.to_s
     virtualenv_install_with_resources
 
-    # `shellingham` auto-detection doesn't work in Homebrew CI build environment so
-    # disable it to allow `typer` to use argument as shell for completions
-    # Ref: https://typer.tiangolo.com/features/#user-friendly-cli-apps
-    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
-    generate_completions_from_executable(bin/"btcli", "--show-completion")
+    generate_completions_from_executable(bin/"btcli", shell_parameter_format: :typer)
   end
 
   test do

@@ -7,12 +7,13 @@ class Forgejo < Formula
   head "https://codeberg.org/forgejo/forgejo.git", branch: "forgejo"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8cbc964caabf7dc884834c4fd7d97d5647628d31774c0d35c42ec9e3cd4ccb59"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac06646e84f83d7e99aec19c0e1ae6989887e0c043ff521289ac2868fd710a33"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9cabc41ecb87dd4b9a55a2bfa059b2d8c579aaf95ca100ee35b399f773e8e156"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d1d528294740d54d394b03ffb2e5c93aa06a3e759bdd6d5f7f041e9fbac139e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a37fd1f52aa87c0255df9fb1f55bafbabd38c7e33e2f28d57f0872deba5d9ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06a4e8da9e1af872f758842cc306b826505e99c0eb2f3edb881860b3ad6191e8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7bfd47218df8a28920826f97333a7dc0797fb35dd1982121c26438848d3afdbb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3242d2ba011cc97da8d4afb4c94995891d283d37f08c9e30c67716658e20be51"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3aa8fdab919b4185a1de136cfb2d61b3ba5a1bda4d9f9e0e1a646897918e0fb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "24cad74f8139fe903709e767eb17e66cec6176f7696cc1dcb7db725898aa3b51"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb2e3f00f5f820c400cfbc43ddc6a5115fd87bc93946988916e876bad921b450"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa4a6dd73e3d33feebc0560156d007b55630d001ecd27e8325a36be82d050042"
   end
 
   depends_on "go" => :build
@@ -21,6 +22,7 @@ class Forgejo < Formula
   uses_from_macos "sqlite"
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
     ENV["TAGS"] = "bindata sqlite sqlite_unlock_notify"
     system "make", "build"
     bin.install "gitea" => "forgejo"

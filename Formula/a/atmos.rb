@@ -14,12 +14,13 @@ class Atmos < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1884b27942a4a74b15b05ad7d8715f22c5d7c66d22f14599b5d827f5dd5ddfd0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "489ea6428b91ec1390eaf61d6f3be7940c3e8c2efcc127f44d758131794a4b6a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7fd1cc51381d3a28cc6c05453e6fb900b674cefa81456bead8f1d7a0bc1c5724"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f65bad3c57855c2bd82c2e258044d63e351d70c67f7711259f341ac8364d959e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "11846a17d2b553b06028ab314983f2e229b5dbd43d707151dc9c8ce2b7c04732"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbc8a1093a414ffe7a8c6f8e3f19604d701bb725d261efc539e47ec53fc50b60"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6b9776ccb615dcdd269f7e05f1cd9c98687ba887ad565aa2702634ffa1133036"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d437df5e0fbea2ac47832fdd577d9cb7c02c4c83d842e389adb7cbe0972f77af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e19741d09334f4d42f25afcc5e6cf69d8281dc9438e6f366dd8f23721fd98e77"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3871bf4f01e1728403862ac9ce437a60b122b040d655b90c58ed3596f71a5901"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "24231d40ac16434f4535f206d91f07bd1d6161ad02c44d29ee30a8cbe5ca2275"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aea308c32983304f3be080d0cca580df98ab8fc4e6687878c573890e93a22281"
   end
 
   depends_on "go" => :build
@@ -36,7 +37,7 @@ class Atmos < Formula
 
     system "go", "build", *std_go_args(ldflags: "-s -w -X 'github.com/cloudposse/atmos/pkg/version.Version=#{version}'")
 
-    generate_completions_from_executable(bin/"atmos", "completion")
+    generate_completions_from_executable(bin/"atmos", shell_parameter_format: :cobra)
   end
 
   test do

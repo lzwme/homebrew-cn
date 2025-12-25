@@ -6,7 +6,8 @@ class Ni < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d4a448151946e4ba086cf681a03bb7e6eb0f8496d187b2bf9d49544c6657e26d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "9bd4e213de0c31097b7384422194f7a61d8b669f912326d18955b6895fb7ab68"
   end
 
   depends_on "node"
@@ -14,6 +15,8 @@ class Ni < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    generate_completions_from_executable(bin/"nr", shell_parameter_format: "--completion-")
   end
 
   test do

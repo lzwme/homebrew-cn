@@ -4,15 +4,16 @@ class Glew < Formula
   url "https://downloads.sourceforge.net/project/glew/glew/2.3.0/glew-2.3.0.tgz"
   sha256 "b261a06dfc8b970e0a1974488530e58dd2390acf68acb05b45235cd6fb17a086"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/nigels-com/glew.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2609a8eb123eb636047472bd9b50b7dc680cfaf777a3bbc78dc357f6b3b0b92a"
-    sha256 cellar: :any,                 arm64_sequoia: "9ec2825bcfd6801de72ccc23615dd322f563b7e8179374daf310bbcbd62f60d0"
-    sha256 cellar: :any,                 arm64_sonoma:  "ccda6940121477bff671c1bead8402196779ccef74dbe722a3ed52c44a5ff88c"
-    sha256 cellar: :any,                 sonoma:        "28db4c9a63529fafc90f3f63fc487f5c5905faea7ff01561813cd28f16340ff1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f68c506af46645931cef5812fdd7b515422571a5319c3572e6c5ebf99746fe54"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c738eba52384ae853e552d06fb8ab7d8df51a725c6a0c0646356bb7850a2892"
+    sha256 cellar: :any,                 arm64_tahoe:   "20ceac578d8d66661d5c65047ffddb4148ab236cb9e07f67462a46362aeafa95"
+    sha256 cellar: :any,                 arm64_sequoia: "19159872e52e5f03c4c83c772d8a388955bcf1cb3745cde6a07ea4395acf8bda"
+    sha256 cellar: :any,                 arm64_sonoma:  "33565abbfae16cbf1662f006df2254930506d09f23782b14f39b4704809d6938"
+    sha256 cellar: :any,                 sonoma:        "a20e82f3d6e66aeb6c178ed2aa2f331e915d6fff73e3e54df83f46629954fd1c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f1a4a8e64c51a9941d374dff39d952da8b93e0ce1ef2e4c2dd0df1ad00d9f39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "920af8d79b6b8c1db8c05084b92e9eff12d177254edff62fd235b29f71c9f0de"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -22,6 +23,13 @@ class Glew < Formula
     depends_on "libx11"
     depends_on "mesa"
     depends_on "mesa-glu"
+  end
+
+  # OpenGL extension fixes.
+  # Upstream PR ref: https://github.com/nigels-com/glew/pull/455
+  patch do
+    url "https://github.com/nigels-com/glew/commit/a7c9cc7c01fa9d59322edf702b6d59e10fe427cb.patch?full_index=1"
+    sha256 "d177dc99fb81d310d2b78b051cdddb4432843904806952794040f8201d702c0c"
   end
 
   def install

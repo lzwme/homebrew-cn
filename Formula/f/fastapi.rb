@@ -8,12 +8,13 @@ class Fastapi < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2e48f0e5a16186a6fd029d5bdfd256354f88a370e3470d5352b914ea094db0b9"
-    sha256 cellar: :any,                 arm64_sequoia: "e74478a7201377ab804d70e30f2374d62dcbe15d762681472b5ae0383945ee9f"
-    sha256 cellar: :any,                 arm64_sonoma:  "f5ce7959b85aa22265f5c4b8f5ccf41f44f78f95b86a4196edd4071640255147"
-    sha256 cellar: :any,                 sonoma:        "aa2aadea21cf058a3955c6b7af99224bb6057cf3b80013d49a2b3fa25815f7e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecbe3047a04de8d24bab732406fc8c7411a07eb6d88b234f8064e3194169d3e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8557d5581ddcb7dcf2e4171e510bdeb4078f5004f4a841d151d836690090163d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "037ef4e6222eca07aa9f20f0ef0de707ff35b5693de6b462eeb03fe99101985c"
+    sha256 cellar: :any,                 arm64_sequoia: "e5a253472a1f3dbd9571f71b676da1a0734e17cf67383c6db0e01dcc32ab2257"
+    sha256 cellar: :any,                 arm64_sonoma:  "b928c9430027524ca299861cfc085afec4f4882b6b347e454532228d5e4583a2"
+    sha256 cellar: :any,                 sonoma:        "18ba72e69b961cfa066e2384eec602bd09d9b5e4da0fc7dc3fed191680aa8482"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4b6732110782224d0aaa83b9c6eac01df6380e8a213bf57b46cb09982f9c02b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c2a59f7d74532b322647f1326a8f71ced5cc24737b3df7e35e1fd431edc2a91"
   end
 
   depends_on "rust" => :build # for annotated-doc
@@ -204,8 +205,7 @@ class Fastapi < Formula
     virtualenv_install_with_resources
     bin.install_symlink libexec/"bin/fastapi"
 
-    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
-    generate_completions_from_executable(bin/"fastapi", "--show-completion", shells: [:bash, :zsh, :fish])
+    generate_completions_from_executable(bin/"fastapi", shell_parameter_format: :typer)
   end
 
   test do

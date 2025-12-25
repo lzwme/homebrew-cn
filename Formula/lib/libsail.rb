@@ -18,6 +18,7 @@ class Libsail < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "giflib"
+  depends_on "imath"
   depends_on "jpeg-turbo"
   depends_on "jpeg-xl"
   depends_on "libavif"
@@ -28,6 +29,12 @@ class Libsail < Formula
   depends_on "openjpeg"
   depends_on "resvg"
   depends_on "webp"
+
+  on_macos do
+    depends_on "brotli"
+    depends_on "highway"
+    depends_on "little-cms2"
+  end
 
   def install
     args = %W[

@@ -1,8 +1,8 @@
 class Par < Formula
   desc "Paragraph reflow for email"
   homepage "http://www.nicemice.net/par/"
-  url "http://www.nicemice.net/par/Par-1.53.0.tar.gz"
-  sha256 "c809c620eb82b589553ac54b9898c8da55196d262339d13c046f2be44ac47804"
+  url "https://bitbucket.org/amc-nicemice/par/get/1.53.0.tar.bz2"
+  sha256 "6109b1811630e1e0e76fc87bf60ad9140440a145c9b4c9412fb36b4f73726a04"
   # par.doc includes a custom license and alternatively allows usage under MIT license
   license any_of: [:cannot_represent, "MIT"]
 
@@ -39,6 +39,6 @@ class Par < Formula
 
   test do
     expected = "homebrew\nhomebrew\n"
-    assert_equal expected, pipe_output("#{bin}/par 10gqr", "homebrew homebrew")
+    assert_equal expected, pipe_output("#{bin}/par 10gqr", "homebrew homebrew", 0)
   end
 end

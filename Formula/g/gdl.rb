@@ -16,6 +16,7 @@ class Gdl < Formula
   end
 
   deprecate! date: "2025-01-15", because: :repo_archived
+  disable! date: "2026-01-15", because: :repo_archived
 
   depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build

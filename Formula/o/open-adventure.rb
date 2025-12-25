@@ -3,8 +3,8 @@ class OpenAdventure < Formula
 
   desc "Colossal Cave Adventure, the 1995 430-point version"
   homepage "http://www.catb.org/~esr/open-adventure/"
-  url "http://www.catb.org/~esr/open-adventure/advent-1.20.tar.gz"
-  sha256 "88166db3356da1a11d6c5b9faa0137f046e6eb761333c8d40cb3bcab9fa03e4a"
+  url "https://gitlab.com/esr/open-adventure/-/archive/1.20/open-adventure-1.20.tar.bz2"
+  sha256 "d976df7b90d9b5cb3c93f3ac99b12392e60852557b2651e7c4dc15f51a74a5ad"
   license "BSD-2-Clause"
   head "https://gitlab.com/esr/open-adventure.git", branch: "master"
 
@@ -25,13 +25,15 @@ class OpenAdventure < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0aa4f90ca96e69a747ffa5e90d2f8388248c077f0c5f9154322f8df690bf048"
   end
 
-  depends_on "asciidoc" => :build
+  depends_on "asciidoctor" => :build
   depends_on "libyaml" => :build
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => :build
 
-  uses_from_macos "libxml2" => :build
   uses_from_macos "libedit"
+
+  pypi_packages package_name:   "",
+                extra_packages: "pyyaml"
 
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
@@ -42,7 +44,7 @@ class OpenAdventure < Formula
     venv = virtualenv_create(buildpath, "python3.14")
     venv.pip_install resources
     system venv.root/"bin/python", "./make_dungeon.py"
-    system "make"
+    system "make", "advent", "advent.6"
     bin.install "advent"
     man6.install "advent.6"
   end

@@ -1,7 +1,7 @@
 class Uni2ascii < Formula
   desc "Bi-directional conversion between UTF-8 and various ASCII flavors"
   homepage "https://billposer.org/Software/uni2ascii.html"
-  url "http://billposer.org/Software/Downloads/uni2ascii-4.20.tar.bz2"
+  url "https://billposer.org/Software/Downloads/uni2ascii-4.20.tar.bz2"
   sha256 "0c5002f54b262d937ba3a8249dd3148791a3f6ec383d80ec479ae60ee0de681a"
   license "GPL-3.0-only"
 

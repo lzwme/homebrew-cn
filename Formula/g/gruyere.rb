@@ -9,12 +9,13 @@ class Gruyere < Formula
   head "https://github.com/savannahostrowski/gruyere.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6cfb78e8fc2213526fa085bbf43fcde1f8a3829ddf7996ef9ba996bd15273770"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f6d7e8d185cacbf4c4367214b01c46d955a551fb4855d9eff1ca57a0c651c3c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec8c4b90756ccaaadf1f445915ab4668da04656008fc05930a34e357e7658094"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bf6a3d7d4f567b0614f1b381b01842c422b7c4b8bbe21f15cc90035dab6c76ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f486b840829401e4794b7b2007a4dc0ad5775bcf5664deb6a1b283c9c963c323"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3de8c087c930f801ecfd3c55274107bbfddf54278c26fb9b74405d8c61043007"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "38e59a53fe749631456936a2c79fc30af4bc34af533a4ec2f20e811528f49bf9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30c9f7ce268b4189536406f2a336d17e80a686e9985ba8fdf8cc58bb0686fd0c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42f7dbb6571a46dc17375cf5613cac6726e6430aefcd5a69841a0fc6950a7b1c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e05129fb5fcecc61357d6af820594845fc615d93e9510f2ae46f52c6c6704ace"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0267dd435ea1b6f08e1769b004fb3d9fb5fb06664aeb61a9abf55087f2e73cb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f256ebbe7ed92eb18431ec9a9f89452075ab13eeb28732f8a08ef8e16ea917d"
   end
 
   depends_on "python@3.14"
@@ -72,11 +73,7 @@ class Gruyere < Formula
   def install
     virtualenv_install_with_resources
 
-    # `shellingham` auto-detection doesn't work in Homebrew CI build environment so
-    # disable it to allow `typer` to use argument as shell for completions
-    # Ref: https://typer.tiangolo.com/features/#user-friendly-cli-apps
-    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
-    generate_completions_from_executable(bin/"gruyere", "--show-completion")
+    generate_completions_from_executable(bin/"gruyere", shell_parameter_format: :typer)
   end
 
   test do

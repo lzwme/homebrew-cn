@@ -1,8 +1,8 @@
 class Tin < Formula
   desc "Threaded, NNTP-, and spool-based UseNet newsreader"
   homepage "http://www.tin.org"
-  url "https://sunsite.icm.edu.pl/pub/unix/news/tin/v2.6/tin-2.6.4.tar.xz"
-  sha256 "c66a1e8db30ddabe7e3313e6870f7877fe20f0da99afb65db3d8c41012fe55f7"
+  url "https://sunsite.icm.edu.pl/pub/unix/news/tin/v2.6/tin-2.6.5.tar.xz"
+  sha256 "91384d133d72671863494dd9742bc622b4089ea8ea760884a5b8c34095d76dc5"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,14 +11,12 @@ class Tin < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "37d09deb544531a4da9a4cf852ca5dbd7f09cd02fd8b87f7344218ee6b5bbac5"
-    sha256                               arm64_sequoia: "3d597df858bc4fffb3f8be38154eaf650d981fbd36a609e1a0eb8b1113a01086"
-    sha256                               arm64_sonoma:  "e729c23660a5a51cb38391405c50fec69f2713c8517e319e4f425894ac1d98c5"
-    sha256                               arm64_ventura: "0bab093b5385450e3f87471243afe4b341443a141b971f5a02f7ad82a161f13b"
-    sha256                               sonoma:        "b426577ee9e85591383eb389a0b2077228699af99fe7f7fdf5cc942f8b486264"
-    sha256                               ventura:       "e9ee890eefb1b3cdde1c3c4420fab41c632163b30ce7429d74a67bf03b092fd6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "59fbbd067f08e1c809d0eac35d969b80b53dddddd7b0e447a06b3a33ad785727"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7da69315726b0f03dd42918f5e545befd3afc660d08f2b6ec70f1a651c421abb"
+    sha256                               arm64_tahoe:   "0331a52cf02914a9b691b82aec7907c4c7f2cd1350e2ee32d211f6bffe1cabfe"
+    sha256                               arm64_sequoia: "43463542d6dec64094e3601ebf8ca1274be58f9e4247a65bf98318ecbe3e7dc8"
+    sha256                               arm64_sonoma:  "32264e99abcdcd1d32589ba30f3c44a391a726e15cd3b06ef826338e65090bc7"
+    sha256                               sonoma:        "f4f1ef28eeb3cb7aed044a0a3fd774c30337c774ba34ea92e9436064407a14d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "230c5daa95b5616f1c3625d93ab5132aa86944f3dabb715a51fca63084d241f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e459eb91463c1ba613553317eb88a7acb625e401577ba98646803e4cd972059"
   end
 
   depends_on "pcre2"

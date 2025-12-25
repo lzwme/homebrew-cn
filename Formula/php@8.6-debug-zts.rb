@@ -1,9 +1,9 @@
 class PhpAT86DebugZts < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/php/php-src/archive/ef87a146fb8a12398bc0ffc58b3493991f818167.tar.gz?commit=ef87a146fb8a12398bc0ffc58b3493991f818167"
+  url "https://ghfast.top/https://github.com/php/php-src/archive/e861608eee7598154b672fbccb97e516b8d9f09b.tar.gz?commit=e861608eee7598154b672fbccb97e516b8d9f09b"
   version "8.6.0"
-  sha256 "ba8358dcc43e322fa8038fc7b15530a08b00db46bfe311cdedfa95bd4563b056"
+  sha256 "2e3ac986bc12884e846e404cab2c65a3570c06ac8be37b7b84c25545756785d8"
   license all_of: [
     "PHP-3.01",
 
@@ -28,16 +28,17 @@ class PhpAT86DebugZts < Formula
     "TCL",                   # 7
     "Zlib",                  # 8
   ]
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 48
-    sha256 arm64_tahoe:   "1924674cea5c7421433246a865ef0cf68fc60cda633f6dd9928b3afaa32a1da0"
-    sha256 arm64_sequoia: "ce6645092b0df47bb068d2a293883d602b0847d8911561e309a786845ea2ae6f"
-    sha256 arm64_sonoma:  "621da32181b72c7f9b1a1158bf772b94041668eea191fdd8ff4229cb37bed680"
-    sha256 sonoma:        "491bf900a30b52e2c78835746dfabf5e91726d6ad1894b1ea98a781dbbe2dd82"
-    sha256 arm64_linux:   "947e4346cf49954a3a700f86ba3dd7d0c081375060f7de38ee9871d6f91778a2"
-    sha256 x86_64_linux:  "b8dc0e9a9f3c2dc99bc8d21a946a75d1b5f362c8cf57ef9ca01eeb09f1b6687c"
+    rebuild 1
+    sha256 arm64_tahoe:   "e16759a57de2ceeff8649e544ab344a25fcec76230e9cd7800ded7296a6f1973"
+    sha256 arm64_sequoia: "8cf0a7be62842dd09e75138c628a2ac50809d6c7ad7e2f249ccbae0b98bbf7df"
+    sha256 arm64_sonoma:  "03bdb7a15daba1881fa335bf4a197aea9bee6486b3e1559596e1a63e017157a0"
+    sha256 sonoma:        "023ce9e36c903fcd64e848dc80a19bcf4b5659f22338d6281392d00fe985f608"
+    sha256 arm64_linux:   "fe362c4ed555a3affad30ef39f0960c45754b1eef9ca8c3cf9ae3e9937da819b"
+    sha256 x86_64_linux:  "7ac73c8341fce6a275449932955ee7017c174cd2f02725f329e4fd19b7ec19d5"
   end
 
   keg_only :versioned_formula

@@ -7,14 +7,13 @@ class Cxgo < Formula
   head "https://github.com/gotranspile/cxgo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b38c152f871497a6febc7e9628a1907f13eccd9a35c9212a009bc26f2a6d9371"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebcf34c360a23231c3a1a78a54ad1904ba3cbd3e7f2938844247bf0324b02639"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ebcf34c360a23231c3a1a78a54ad1904ba3cbd3e7f2938844247bf0324b02639"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ebcf34c360a23231c3a1a78a54ad1904ba3cbd3e7f2938844247bf0324b02639"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ce0073283d4a255dd5ba29fc637074fa24d59266c50826512b2217c8591e7427"
-    sha256 cellar: :any_skip_relocation, ventura:       "ce0073283d4a255dd5ba29fc637074fa24d59266c50826512b2217c8591e7427"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f849761eee11fc2b5b1a2b99d81685a384ccb0db1a558387aa9141f0c031845"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9cd5c2c79e9d44ec6bcb1dc71849d89e7c9f415b5f3abd4b757c31992bca295"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ab751b7d073f7c78c4ecb82c6edadc57476cdec1ea3c521b53cc232d66ad72da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab751b7d073f7c78c4ecb82c6edadc57476cdec1ea3c521b53cc232d66ad72da"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab751b7d073f7c78c4ecb82c6edadc57476cdec1ea3c521b53cc232d66ad72da"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f77ecb515a9c0b2a492156ca40f9b86596f37c655a62a7535a98e24fffede206"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "88adc13241a6def00e580f577e3d1d7c5a6d89e6ca08f8093786a99c1a0bed1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5eaee422179c374dbd0b2f525135398ec4135d37578272005971b8507950caec"
   end
 
   depends_on "go" => :build
@@ -28,6 +27,7 @@ class Cxgo < Formula
     ]
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/cxgo"
+    generate_completions_from_executable(bin/"cxgo", shell_parameter_format: :cobra)
   end
 
   test do

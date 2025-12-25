@@ -1,9 +1,10 @@
 class Ascii < Formula
   desc "List ASCII idiomatic names and octal/decimal code-point forms"
   homepage "http://www.catb.org/~esr/ascii/"
-  url "http://www.catb.org/~esr/ascii/ascii-3.30.tar.gz"
-  sha256 "ed2fdc973e1b87da2af83050e560e731b0f3bf5f6b4fd9babc9f60bb2b992443"
+  url "https://gitlab.com/esr/ascii/-/archive/3.30/ascii-3.30.tar.bz2"
+  sha256 "36e313791de9a1c9a4fd4133a6215279b8754dd1c4cb2ab2a3d7842f27dafb0c"
   license "BSD-2-Clause"
+  head "https://gitlab.com/esr/ascii.git", branch: "master"
 
   # The homepage links to the `stable` tarball but it can take longer than the
   # ten second livecheck timeout, so we check the Git tags as a workaround.
@@ -28,16 +29,11 @@ class Ascii < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4be383b6e806721fc89c09ab1e971ad2d5be5922952f8d67141fa765a50d8dc"
   end
 
-  head do
-    url "https://gitlab.com/esr/ascii.git", branch: "master"
-    depends_on "xmlto" => :build
-  end
+  depends_on "asciidoctor" => :build
 
   def install
-    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog" if build.head?
     bin.mkpath
     man1.mkpath
-    system "make"
     system "make", "PREFIX=#{prefix}", "install"
   end
 

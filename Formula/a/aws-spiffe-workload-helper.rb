@@ -7,12 +7,13 @@ class AwsSpiffeWorkloadHelper < Formula
   head "https://github.com/spiffe/aws-spiffe-workload-helper.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ff51eab0a8f05b348bbbd5cbc3716d66fc1ba822da8dd0f12750521fc2fea62"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ff51eab0a8f05b348bbbd5cbc3716d66fc1ba822da8dd0f12750521fc2fea62"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ff51eab0a8f05b348bbbd5cbc3716d66fc1ba822da8dd0f12750521fc2fea62"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a905126844616c11ebaf6b08b2e2c0f30c90f4ef56e0c0b00126db9aa928ba3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "37b7d29ecbf03bc4e70d824a211f7efbab2d6c951b244bc497cab721bc5074fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31ae53213ffa8c3cc2507d8b922edea19f64756b7d54c34b0258a4e231411f01"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79e7043c7acd958256f00e7365f673d48decb5cfd54382706453cbd127b19a0b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79e7043c7acd958256f00e7365f673d48decb5cfd54382706453cbd127b19a0b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79e7043c7acd958256f00e7365f673d48decb5cfd54382706453cbd127b19a0b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "632a7ebbce68251df65c5faa8ee27d14fe84865d53f25b9a50aea0c2e87e6e28"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "253295c66bb9b25829b094ed0b16edc17e69b4e6fc28b4f36fd489a2be0c07af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfa57b54f65b1d74543c5502a59086abbb727d0903a77c07e31bd3d5cd99b0b0"
   end
 
   depends_on "go" => :build
@@ -20,8 +21,7 @@ class AwsSpiffeWorkloadHelper < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd"
 
-    generate_completions_from_executable(bin/"aws-spiffe-workload-helper",
-                                             "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"aws-spiffe-workload-helper", shell_parameter_format: :cobra)
   end
 
   test do

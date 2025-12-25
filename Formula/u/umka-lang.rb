@@ -1,20 +1,18 @@
 class UmkaLang < Formula
   desc "Statically typed embeddable scripting language"
   homepage "https://github.com/vtereshkov/umka-lang"
-  url "https://ghfast.top/https://github.com/vtereshkov/umka-lang/archive/refs/tags/v1.5.4.tar.gz"
-  sha256 "b40ecaeafc4bcd2ed705868c183b0d40db344f28874933b67ee23d89dbe29518"
+  url "https://ghfast.top/https://github.com/vtereshkov/umka-lang/archive/refs/tags/v1.5.5.tar.gz"
+  sha256 "b7673a445ee2ffbd161c89cb076452d8e04c4d842babf6c5bca963e52b75adfd"
   license "BSD-2-Clause"
   head "https://github.com/vtereshkov/umka-lang.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0c45dad6f4dca2a4a4c00775b58f2b77ec2e050613bb44038f7a7491fd377352"
-    sha256 cellar: :any,                 arm64_sequoia: "e0cf3861d1cc51ff4dc39e62f05b9fc7ae92417010b53910f32b4545894af83f"
-    sha256 cellar: :any,                 arm64_sonoma:  "a35d9dc07073cef3ecf311f12cae7af924ee26ea7906a03958130035a4e0bef8"
-    sha256 cellar: :any,                 arm64_ventura: "81df877bb4721e395076e831e938121f0b6c29c992b98f61119db0834b6883eb"
-    sha256 cellar: :any,                 sonoma:        "9633dfef9c656af8c1f0b07f52215498751eaf08a334819e1b45217857963b28"
-    sha256 cellar: :any,                 ventura:       "b131af9e493d3a5f5ad1ebe5c1ef13fab4a947a20c2caef15c6b5c088eb3d244"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "59990ebcb7e37a492d0c39d74ca4267992a6d1d636bf82cd9dc3e211fd7be0e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c838094302eeeefd555650800cdd39a50828c187759418e1b726ab9852e03be"
+    sha256 cellar: :any,                 arm64_tahoe:   "71a5436d053b21e283fbb06d9af7e7759aa48e97595e75ee2a9988b057562bd4"
+    sha256 cellar: :any,                 arm64_sequoia: "d817c9cbc87a0b2b11e9d4f99a191cb5b79e501a1c5f143deaf92e639d279f5d"
+    sha256 cellar: :any,                 arm64_sonoma:  "410794c594fc46bbd6e6d462d778a72c0078670ac0783a7b2b6ffb719fff710a"
+    sha256 cellar: :any,                 sonoma:        "67a296c502cdd51cde57976e7bb79096d6de79ca7ced79a938e07867925b4838"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "166e489ab4ebceca8e323def456813df04abcc2ebb9d2e5954399baa66884a5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c75995cc4b4357d4df58387e9c25e310b599dfb7d9e4fa2ca38acc5a64213eee"
   end
 
   def install

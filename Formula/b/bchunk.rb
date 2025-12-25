@@ -1,8 +1,8 @@
 class Bchunk < Formula
   desc "Convert CD images from .bin/.cue to .iso/.cdr"
   homepage "http://he.fi/bchunk/"
-  url "http://he.fi/bchunk/bchunk-1.2.2.tar.gz"
-  sha256 "e7d99b5b60ff0b94c540379f6396a670210400124544fb1af985dd3551eabd89"
+  url "https://ghfast.top/https://github.com/hessu/bchunk/archive/refs/tags/release/1.2.2.tar.gz"
+  sha256 "48dd464d8547f368e6e3434e3e2d53e7b1a7748b4ecc2c8a423d614b0b1f7fc4"
   license "GPL-2.0-or-later"
   head "https://github.com/hessu/bchunk.git", branch: "master"
 

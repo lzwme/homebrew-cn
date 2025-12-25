@@ -12,12 +12,13 @@ class Astro < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d74de9481e0f6ccd002ca88c55f1f9ed26c67eb444a80d014cc1acf00ea283d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10bc1f20edce4f53e53c26f5b0ef401110f884edd5f3ddda607d2e91ee3a3aff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8aab02740965250bcd99f4cf0beb9890697537c06cc7117bb0e732c2682ea4c4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "12e0e6f31550aa46ace273871ad94a971806b2c5b78c65c13ab23c17350cab3d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e14b56f6fe5175aec17f567f49c7c2fd20b45a6f2a908563be5a34996f4e6dd5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa91ba67f2f132fcacb592745a92acddb1b40e390837ab4724c596658f02a607"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52cf9f98b753a5d77c80154e580a1d15fff8c19b6d14ca4b1ba2d62941450b89"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c6a6c6aec2dc84451f0b3ef6d8d008adf8a741d8214b8679e25cb9f22f91211"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a160813271c87340b72c5a935bfcc517b38c9e65a65d7871dd95db42242b55b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "390f668a975e78ca27b781740080a0ec5b5317cd3837c6d3d61f5640210c686f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9db86243eeb517eff3c92d86429abd14793acbb51654bcb8aa703a9514f3c297"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59e2d7ad73bbd7622cec1cf82d23a65e0dcd129d60cc4008772efd240ee5565f"
   end
 
   depends_on "go" => :build
@@ -29,7 +30,7 @@ class Astro < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/astronomer/astro-cli/version.CurrVersion=#{version}")
 
-    generate_completions_from_executable(bin/"astro", "completion")
+    generate_completions_from_executable(bin/"astro", shell_parameter_format: :cobra)
   end
 
   test do

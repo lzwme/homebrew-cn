@@ -61,7 +61,7 @@ class Ucon64 < Formula
 
   test do
     resource "homebrew-super_bat_puncher_demo" do
-      url "http://morphcat.de/superbatpuncher/Super%20Bat%20Puncher%20Demo.zip"
+      url "https://morphcat.de/superbatpuncher/Super%20Bat%20Puncher%20Demo.zip"
       sha256 "d74cb3ba11a4ef5d0f8d224325958ca1203b0d8bb4a7a79867e412d987f0b846"
     end
 

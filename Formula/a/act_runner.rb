@@ -6,13 +6,13 @@ class ActRunner < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3283c0d05e2583594f90c1430b16e99451e172d385475f138efa139e764c195"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3283c0d05e2583594f90c1430b16e99451e172d385475f138efa139e764c195"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3283c0d05e2583594f90c1430b16e99451e172d385475f138efa139e764c195"
-    sha256 cellar: :any_skip_relocation, sonoma:        "16bdbacd7f86a3ada3040c12a1f5db4aec0abae7f5467d52e8e38f8d26ca8af8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c57b15b24a7b4719926061d95b3840e42b07202a27cbcf284607acadc0dc6c13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bb584490a65e01c487c833f9b3778c804b82599893c06e53e3335e9f854a861"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81acfcb35b5d601017eb1c3d8bce6fec649f136ca4fc791e56d2905295bab613"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81acfcb35b5d601017eb1c3d8bce6fec649f136ca4fc791e56d2905295bab613"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81acfcb35b5d601017eb1c3d8bce6fec649f136ca4fc791e56d2905295bab613"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5229fa2af00fec17c952f11718551e4b78c26bf29da4bd53c786fac7259c7438"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "16298df23af4bdfc0c69f5c393cbdd5949ae89c7016c9da5a17ba1ee33628a9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7666bc1cdfb2b61a1be3c0346b8aa7c2d50bf193bd52432db0aadf00f3e9125"
   end
 
   depends_on "go" => :build
@@ -23,7 +23,7 @@ class ActRunner < Formula
       -X gitea.com/gitea/act_runner/internal/pkg/ver.version=v#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin/"act_runner", "completion")
+    generate_completions_from_executable(bin/"act_runner", shell_parameter_format: :cobra)
 
     (buildpath/"config.yaml").write Utils.safe_popen_read(bin/"act_runner", "generate-config")
     pkgetc.install "config.yaml"

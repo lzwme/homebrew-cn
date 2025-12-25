@@ -1,8 +1,8 @@
 class Libgrapheme < Formula
   desc "Unicode string library"
   homepage "https://libs.suckless.org/libgrapheme/"
-  url "https://dl.suckless.org/libgrapheme/libgrapheme-2.0.2.tar.gz"
-  sha256 "a68bbddde76bd55ba5d64116ce5e42a13df045c81c0852de9ab60896aa143125"
+  url "https://dl.suckless.org/libgrapheme/libgrapheme-3.0.0.tar.gz"
+  sha256 "32585af73dda62fbcc0fed14f199aa1bc988ad01dad0bfbd06cf175d9cf3d68c"
   license "ISC"
   head "https://git.suckless.org/libgrapheme/", using: :git, branch: "master"
 
@@ -11,22 +11,13 @@ class Libgrapheme < Formula
     regex(/href=.*?libgrapheme[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "1a83f1b069707a62ab7144ecd7702ce69bb04c622d873f984498dbf8dd355ed6"
-    sha256 cellar: :any,                 arm64_sequoia:  "15463cba352ca4de4ebd865ae7aeee520871711b7c0dca0cceebfba78dbe88c5"
-    sha256 cellar: :any,                 arm64_sonoma:   "961545ff7d4e1825ee195a79d6522ba7ae226c401d72b655410d8a132933eb2e"
-    sha256 cellar: :any,                 arm64_ventura:  "971fab94ac4bca569f0656596168b05847d4e25b566868e4c9ac3965ed336755"
-    sha256 cellar: :any,                 arm64_monterey: "f2e9d7e0dbed9091c6ff0feb79e94ce68f73c6a83a1774efd75c3d0e76c7fbb8"
-    sha256 cellar: :any,                 arm64_big_sur:  "b4ad8de03ed698baa6d540d58aa96ccb7b0f666fb357acbf55a5c75e50f9d818"
-    sha256 cellar: :any,                 sonoma:         "85e08a9ae4f0d7a6254abc0174d0f82c8d57c2f787719047d2109a015144a52a"
-    sha256 cellar: :any,                 ventura:        "4d09c7de0e3ddaea6266896b3a0da7349701f032ae9b4e85cad29bb0f1bb2575"
-    sha256 cellar: :any,                 monterey:       "14ae921b0f9c017dd446d9b05ef6d7f5ef7b1f3b30d9c3151ff64bbc9864624f"
-    sha256 cellar: :any,                 big_sur:        "3a840b6287ec37255d069209beb8f49cd9634e7640ed1b4bb1b63a7f5e79fe79"
-    sha256 cellar: :any,                 catalina:       "32cdbccf13da47774ca9aadd3826710c97c8bc5b9ff5cfdc8b809dd0f90ef9f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "5ea309461d84ca854a54880efc24a348a2bf76769c9512ef8167574f8a280b3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "60a6a771715b993b79da30c2f17553198b49ba71cb5ee5d9a07ea51c0199280b"
+    sha256 cellar: :any,                 arm64_tahoe:   "df5f451622029ee5e1e85d53e9c754527925124250633e0b9df7c13beaae176f"
+    sha256 cellar: :any,                 arm64_sequoia: "fc30d10212e3e2753b9df11ae83516604b0927387a03045434ce4799b32aba1b"
+    sha256 cellar: :any,                 arm64_sonoma:  "c2a97fd45b2768f92820a123be312808815983c1daf4ea5615bfdc6fd4436887"
+    sha256 cellar: :any,                 sonoma:        "433662111557ba36bd9fbcd35147cff1c2f7f0413d3ecedcb4e1460ad7c9f6da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98efa088f464cf572e88af5699db2b15a326b4e06a67a072cef4b11814e200aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba1358d8b88e8ce243d39c7eadccbccd14b13b095d6a6be4ff5240cf36e5ac59"
   end
 
   def install

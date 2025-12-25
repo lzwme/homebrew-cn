@@ -22,6 +22,7 @@ class Imagemagick < Formula
   end
 
   depends_on "pkgconf" => :build
+  depends_on "cairo"
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "jpeg-turbo"
@@ -46,6 +47,7 @@ class Imagemagick < Formula
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "gdk-pixbuf"
     depends_on "gettext"
     depends_on "glib"
     depends_on "imath"
@@ -53,6 +55,7 @@ class Imagemagick < Formula
   end
 
   on_linux do
+    depends_on "glib"
     depends_on "libx11"
     depends_on "libxext"
   end

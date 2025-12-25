@@ -7,13 +7,13 @@ class Act < Formula
   head "https://github.com/nektos/act.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fab9444143abf179ca512d117e9420a130f802d688a4dc0af086340a8749a9a2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e669b9d0c10bbd71383c9d4f6dca0007b411f556075528de398276054e4f0fc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a22440c51136c548d9fbeb3032ccab7cce5d704c796a4dd97a436c8153b26417"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5f41b6ff5e0ecf434322f507f62394f0d973cb08ee4d7b19b2ab7a33f48ecdbc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e40a17b9961c52956825c08fc709e2bdcdb1adea5755e1f166c784186f62f11c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37df0ff1a6ee48fe4a4dee04b1e9f67926e0bf690cbb27286bf2744859bdaf76"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "662b4f305718d312b68025d81c4b6464448c9618b908ab01d3551cd61ed22352"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "083bcce421391b24f83662daea4afeba2079dede274d92fdc7639bd560475b11"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e2b53dececdfbfa54ec5b91a8d2c839554e6a78a9998444ebf263dbacba42b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "288b4dcee1324691bd42563bc1728896b0c3f19f78f7406d2b0dd4882fb1d354"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a6f56785cfb1106d0ded5b400a41ec551428eeeac96b02acd7fcd8b2b92fa7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1809f336174774435bf86bd02ea25e1777684f44f80f83fca0d4fdcff0558574"
   end
 
   depends_on "go" => :build
@@ -22,7 +22,7 @@ class Act < Formula
     system "make", "build", "VERSION=#{version}"
     bin.install "dist/local/act"
 
-    generate_completions_from_executable(bin/"act", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"act", shell_parameter_format: :cobra)
   end
 
   test do

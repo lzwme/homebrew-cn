@@ -12,12 +12,13 @@ class Azcopy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ea9c8def369e8f97c32d4641ed6a78dab61122a6335fdc6242aff5ca73b4b85"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "223df44e2cbea3cd51ca1bf12643dd0df85dcc66a56921c32aeeb379fb1fde01"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e59532db8e96d7dd12b5715c143ee24e8d92d35b368a101e5ecaf4e9ef50bda"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0038eabb1d3b8d67aed7632d96c9dd23b2e19df31baa5be83442d78ae9591d19"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a888cbc20cc9a9fdcf6cd1bf6be28109e1e12a164fd41fe98149f2f8edb1947"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20ba89af84dc06563e074cb20c4c75d44a68587fe53a88671cf0aa2b6332c1f2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79ea7b96d109ea48fa9f2fab2c0389df9b01cca23c678c816295f8ccc61262a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4d6adb2d394b1272c78cecd033b5d10d3f2bff7576f57fe1adc258caf426445"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a9c9afa914f344ac436e1dfe0592234d146cd0b6550ec2e69169c574ba930a6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a967704656bb73e615538665399924c87fb27e18b39b61fb3b7cf65dc096f682"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3cab26d652b475da640ee7e947ec6f0b797deed722b6d60b5bfebee9e8b9f803"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2723bbc080ffd2f1a651623fd8d398498cc00c7d5c34c79a53b2548f5d619f68"
   end
 
   depends_on "go" => :build
@@ -25,7 +26,7 @@ class Azcopy < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"azcopy", "completion")
+    generate_completions_from_executable(bin/"azcopy", shell_parameter_format: :cobra)
   end
 
   test do

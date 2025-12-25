@@ -12,12 +12,13 @@ class Apigeecli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4258ee6b313df32d1a1f89fa22e966a28dc62cae6ccbf607ed870cc85afa73a4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4258ee6b313df32d1a1f89fa22e966a28dc62cae6ccbf607ed870cc85afa73a4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4258ee6b313df32d1a1f89fa22e966a28dc62cae6ccbf607ed870cc85afa73a4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3cb1d14ec106a4d6b4da8addee32e69064b9faa21eb5f3caa300d23a0237bfb7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bae233defe3cc1a64eb3824123d8551eb2b4840859b5527e0df04b6d3c4ac608"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "190e83a7bbe8b18c495d04d2a45a5f9e741b62a3120216e72bbc631bbfc3031e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b3e2dd0b50dfbeed437c7897cd71bfb03890c689bf7e7695ba78db62b4fa5810"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3e2dd0b50dfbeed437c7897cd71bfb03890c689bf7e7695ba78db62b4fa5810"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3e2dd0b50dfbeed437c7897cd71bfb03890c689bf7e7695ba78db62b4fa5810"
+    sha256 cellar: :any_skip_relocation, sonoma:        "07d490559e0593a3ae111edf348f93c8b31ff47614b0990ac03225ad8920ee01"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e68a5c4d374adb32b6d0ed07b96c721572a1298c96a0284a67746e48cd3a3776"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7a9e1da29957d72e9ba561b9eda0d1752f8b7d2741f3631a78ced2f397cc4ca"
   end
 
   depends_on "go" => :build
@@ -33,7 +34,7 @@ class Apigeecli < Formula
     gcflags = 'all="-l"'
     system "go", "build", *std_go_args(ldflags:, gcflags:), "./cmd/apigeecli"
 
-    generate_completions_from_executable(bin/"apigeecli", "completion")
+    generate_completions_from_executable(bin/"apigeecli", shell_parameter_format: :cobra)
   end
 
   test do

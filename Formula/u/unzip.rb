@@ -12,8 +12,6 @@ class Unzip < Formula
     regex(%r{url=.*?(?:%20)?v?(\d+(?:\.\d+)+)/unzip\d+\.t}i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be1cb055cbcf3e1420ea25a48ab6da010c2e70efff5ffe7e4e91dac7231c4ae2"
@@ -34,7 +32,7 @@ class Unzip < Formula
   # Upstream is unmaintained so we use the Ubuntu patchset:
   # https://packages.ubuntu.com/noble/unzip
   patch do
-    url "http://archive.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_6.0-28ubuntu4.1.debian.tar.xz"
+    url "https://archive.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_6.0-28ubuntu4.1.debian.tar.xz"
     sha256 "d123c8e6972dbdd17ba1a4920fb57ed2ede9237dbae149dcbf55df829c77baf3"
     apply %w[
       patches/01-manpages-in-section-1-not-in-section-1l.patch

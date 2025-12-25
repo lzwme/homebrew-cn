@@ -21,6 +21,7 @@ class Condure < Formula
   # project has been merged into [Pushpin](https://github.com/fastly/pushpin)
   # The `pushpin-connmgr` program can be used as a drop-in substitute.
   deprecate! date: "2025-01-10", because: :repo_archived, replacement_formula: "pushpin"
+  disable! date: "2026-01-10", because: :repo_archived, replacement_formula: "pushpin"
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build

@@ -1,9 +1,10 @@
 class Src < Formula
   desc "Simple revision control: RCS reloaded with a modern UI"
   homepage "http://www.catb.org/~esr/src/"
-  url "http://www.catb.org/~esr/src/src-1.41.tar.gz"
-  sha256 "5dc9302b161582149dbc191a0eeee43142b96386a542c870d56ac9fddb995d25"
+  url "https://gitlab.com/esr/src/-/archive/1.41/src-1.41.tar.bz2"
+  sha256 "12f22af9e3d3d8f9f43f0255bac117aed512752adf8799c66af6ec988e51f08d"
   license "BSD-2-Clause"
+  head "https://gitlab.com/esr/src.git", branch: "master"
 
   # The homepage links to the `stable` tarball but it can take longer than the
   # ten second livecheck timeout, so we check the Git tags as a workaround.
@@ -16,18 +17,12 @@ class Src < Formula
     sha256 cellar: :any_skip_relocation, all: "56096c026d4c1de4b67f49b8cff61aa96ba2e29265b548b2f31561624b363c22"
   end
 
-  head do
-    url "https://gitlab.com/esr/src.git", branch: "master"
-    depends_on "asciidoc" => :build
-  end
-
+  depends_on "asciidoctor" => :build
   depends_on "rcs"
 
   uses_from_macos "python"
 
   def install
-    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog" if build.head?
-
     system "make", "install", "prefix=#{prefix}"
   end
 

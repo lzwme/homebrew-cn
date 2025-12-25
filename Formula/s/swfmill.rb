@@ -17,6 +17,7 @@ class Swfmill < Formula
 
   # adobe flash player EOL 12/31/2020, https://www.adobe.com/products/flashplayer/end-of-life-alternative.html
   deprecate! date: "2025-01-12", because: :unmaintained
+  disable! date: "2026-01-12", because: :unmaintained
 
   depends_on "pkgconf" => :build
   depends_on "freetype"

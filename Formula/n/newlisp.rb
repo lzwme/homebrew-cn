@@ -1,12 +1,12 @@
 class Newlisp < Formula
   desc "Lisp-like, general-purpose scripting language"
-  homepage "http://www.newlisp.org/"
-  url "http://www.newlisp.org/downloads/newlisp-10.7.5.tgz"
+  homepage "https://www.newlisp.org/"
+  url "https://www.newlisp.org/downloads/newlisp-10.7.5.tgz"
   sha256 "dc2d0ff651c2b275bc4af3af8ba59851a6fb6e1eaddc20ae75fb60b1e90126ec"
   license "GPL-3.0-or-later"
 
   livecheck do
-    url "http://www.newlisp.org/index.cgi?Downloads"
+    url "https://www.newlisp.org/index.cgi?Downloads"
     regex(/href=.*?newlisp[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 

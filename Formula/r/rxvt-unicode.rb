@@ -1,13 +1,13 @@
 class RxvtUnicode < Formula
   desc "Rxvt fork with Unicode support"
-  homepage "http://software.schmorp.de/pkg/rxvt-unicode.html"
-  url "http://dist.schmorp.de/rxvt-unicode/rxvt-unicode-9.31.tar.bz2"
+  homepage "https://software.schmorp.de/pkg/rxvt-unicode.html"
+  url "https://dist.schmorp.de/rxvt-unicode/rxvt-unicode-9.31.tar.bz2"
   sha256 "aaa13fcbc149fe0f3f391f933279580f74a96fd312d6ed06b8ff03c2d46672e8"
   license "GPL-3.0-only"
   revision 2
 
   livecheck do
-    url "http://dist.schmorp.de/rxvt-unicode/"
+    url "https://dist.schmorp.de/rxvt-unicode/"
     regex(/href=.*?rxvt-unicode[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
@@ -42,7 +42,7 @@ class RxvtUnicode < Formula
   end
 
   resource "libptytty" do
-    url "http://dist.schmorp.de/libptytty/libptytty-2.0.tar.gz"
+    url "https://dist.schmorp.de/libptytty/libptytty-2.0.tar.gz"
     sha256 "8033ed3aadf28759660d4f11f2d7b030acf2a6890cb0f7926fb0cfa6739d31f7"
   end
 

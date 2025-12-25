@@ -3,9 +3,10 @@ class CvsFastExport < Formula
 
   desc "Export an RCS or CVS history as a fast-import stream"
   homepage "http://www.catb.org/~esr/cvs-fast-export/"
-  url "http://www.catb.org/~esr/cvs-fast-export/cvs-fast-export-1.68.tar.gz"
-  sha256 "841c60d9af70ca260fec572f2ef08ed523314f6cacfda40bb44dacb9dbcda841"
+  url "https://gitlab.com/esr/cvs-fast-export/-/archive/1.68/cvs-fast-export-1.68.tar.bz2"
+  sha256 "7007b6fde9e8d622e889f332012ac074a406d09189faf6c0c7bf24547fd55734"
   license "GPL-2.0-or-later"
+  head "https://gitlab.com/esr/cvs-fast-export.git", branch: "master"
 
   # The homepage links to the `stable` tarball but it can take longer than the
   # ten second livecheck timeout, so we check the Git tags as a workaround.
@@ -24,14 +25,11 @@ class CvsFastExport < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "61a5bca34f0a70c12aff21f7ec5f3188f7703036d40e150b76c6c91bd4de92fd"
   end
 
-  head do
-    url "https://gitlab.com/esr/cvs-fast-export.git", branch: "master"
-    depends_on "bison" => :build
-  end
-
   depends_on "asciidoctor" => :build
+  depends_on "bison" => :build
   depends_on "cvs" => :test
 
+  uses_from_macos "flex" => :build
   uses_from_macos "python"
 
   def install

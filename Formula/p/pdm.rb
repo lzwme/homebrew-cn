@@ -3,19 +3,18 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm-project.org"
-  url "https://files.pythonhosted.org/packages/a2/f8/cb7f2cdb69885f7c8fe2a166398acf26c2df7c241e315889260c8dc0b4fc/pdm-2.26.2.tar.gz"
-  sha256 "98207f8aabd6913a25ee0b4985e79e1652e2db274915f3ccf9408e33191ede4e"
+  url "https://files.pythonhosted.org/packages/fd/04/4b3abc83f9d4ae576065847ddbe216099d2018c9e63d6638dc5182a1f6f7/pdm-2.26.3.tar.gz"
+  sha256 "30e17ed5b1697949ac509d8c8e1ad96160eab21c88dea4f1a6cf101bdb2787e5"
   license "MIT"
-  revision 2
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a6c2de672c3726229589df5f53f33a5efcb5a1569c562c0178c8b1accc5c66b1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "336dca94465cadc90a3a9149a59e4f30cc2642be5fb3b49c30517995024a54d9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aab2ca3ed495d6ed21479166773ec4ef74382f5a7408db6398e493cf7b4796ee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e04ef4b7327321a25159399e3b1139f93156ebbc7215f34013998dde71ef61a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "16e73fa97fd419f4e44cb1213f1c5c31e0c379e0912a96ab97286d9e917a85db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c668047737a07420d99d31667745d09196816eb02f0d63fa11030fb1dc8ff03"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb2e7cd5ddebc342e336ae26ac00ab65c5b7f1c6d9a17df5dcb35f4418e4d492"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e7b83e996d485a8a7ea26ac53b9813f15ffeca3eddb53fca1e6063b184d310f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc14fbdace884593dff5b84227b312134b3107eb3e64b1c93136243c541b7d55"
+    sha256 cellar: :any_skip_relocation, sonoma:        "24586dbca5a3b2662012760eaea0923b7a2cb5237854e01dfd773b8230bb94c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd116166cbf388c3dc794c6c2e348d09811050f58220b14ba731fc33a20fda36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd3604ba00b4d375ff257714832f0f15e182a3a82871d44e2415ec0ca841b794"
   end
 
   depends_on "certifi" => :no_linkage
@@ -69,8 +68,8 @@ class Pdm < Formula
   end
 
   resource "hishel" do
-    url "https://files.pythonhosted.org/packages/e5/64/a104ccac48f123f853254483617b16e0efc1649bd7e35bcdc5a5a5ef0ae2/hishel-0.1.5.tar.gz"
-    sha256 "9d40c682cd94fd6e1394fb05713ae20a75ed8aeba6f5272380444039ce6257f2"
+    url "https://files.pythonhosted.org/packages/45/cf/4e1d09cc81c48ff7498398fd82c87fb21800c85e631d03831703d8594506/hishel-1.1.7.tar.gz"
+    sha256 "32c625be581e94dc50b773a8cfb9a65cba487660561950fe976ae49945455179"
   end
 
   resource "httpcore" do
@@ -190,8 +189,8 @@ class Pdm < Formula
   end
 
   resource "unearth" do
-    url "https://files.pythonhosted.org/packages/18/85/84b0d188eefc32b9e8825b43ce98c2018323ebb68d3b581e856061d1dacc/unearth-0.18.1.tar.gz"
-    sha256 "e8b132f73bf0dac7556a36419cb43125ced3bd172682bde1383cc5b193ccf73d"
+    url "https://files.pythonhosted.org/packages/47/1f/cdad555c0e8643232cce619e8d88d5bec81b4d41e4cc1c65bee8a51a4750/unearth-0.18.2.tar.gz"
+    sha256 "1e53d7f52f46dd5f875e77ff1c55b12477e215a092e4b66c9764a77df4a9b520"
   end
 
   resource "urllib3" do

@@ -1,7 +1,7 @@
 class Wordplay < Formula
   desc "Anagram generator"
-  homepage "http://hsvmovies.com/static_subpages/personal_orig/wordplay/"
-  url "http://hsvmovies.com/static_subpages/personal_orig/wordplay/wordplay722.tar.Z"
+  homepage "https://hsvmovies.com/static_subpages/personal_orig/wordplay/"
+  url "https://hsvmovies.com/static_subpages/personal_orig/wordplay/wordplay722.tar.Z"
   version "7.22"
   sha256 "9436a8c801144ab32e38b1e168130ef43e7494f4b4939fcd510c7c5bf7f4eb6d"
   # From readme:

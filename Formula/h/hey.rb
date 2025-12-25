@@ -25,6 +25,7 @@ class Hey < Formula
   # community discussion thread, https://github.com/rakyll/hey/issues/269
   # `oha` is a good alternative
   deprecate! date: "2025-01-12", because: :unmaintained
+  disable! date: "2026-01-12", because: :unmaintained
 
   depends_on "go" => :build
 

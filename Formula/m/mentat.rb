@@ -20,6 +20,7 @@ class Mentat < Formula
 
   # https://github.com/AbanteAI/archive-old-cli-mentat/commit/901f0726418e9e9a66bec78facecf3a45541002d
   deprecate! date: "2025-01-10", because: :repo_archived
+  disable! date: "2026-01-10", because: :repo_archived
 
   depends_on "rust" => :build # for tiktoken
   depends_on "certifi" => :no_linkage

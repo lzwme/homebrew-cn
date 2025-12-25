@@ -42,7 +42,7 @@ class Adplug < Formula
 
   test do
     resource "ksms" do
-      url "http://advsys.net/ken/ksmsongs.zip"
+      url "https://advsys.net/ken/ksmsongs.zip"
       sha256 "2af9bfc390f545bc7f51b834e46eb0b989833b11058e812200d485a5591c5877"
     end
 

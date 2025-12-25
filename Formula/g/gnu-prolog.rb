@@ -1,7 +1,8 @@
 class GnuProlog < Formula
   desc "Prolog compiler with constraint solving"
   homepage "http://www.gprolog.org/"
-  url "http://www.gprolog.org/gprolog-1.5.0.tar.gz"
+  url "https://ftpmirror.gnu.org/gnu/gprolog/gprolog-1.5.0.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/gprolog/gprolog-1.5.0.tar.gz"
   sha256 "670642b43c0faa27ebd68961efb17ebe707688f91b6809566ddd606139512c01"
   license any_of: ["LGPL-3.0-or-later", "GPL-2.0-or-later"]
 

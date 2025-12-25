@@ -1,21 +1,18 @@
 class S6 < Formula
   desc "Small & secure supervision software suite"
   homepage "https://skarnet.org/software/s6/"
-  url "https://skarnet.org/software/s6/s6-2.13.2.0.tar.gz"
-  sha256 "c5114b8042716bb70691406931acb0e2796d83b41cbfb5c8068dce7a02f99a45"
+  url "https://skarnet.org/software/s6/s6-2.14.0.0.tar.gz"
+  sha256 "586bf8474d852655b89f1144c3d95461a1cee77f016dae6e75a3328b8a2f5df6"
   license "ISC"
   head "git://git.skarnet.org/s6.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92ca9064a5fa950d6f77bd56dd55024b381f4458d4df539d859f384a60e3b28c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88fb583281e696ad18a4dab7b34ec8794d1c58dfa48c40a4b6a020138f26b0d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "105a08c0079ab7fb9fd049443a888ec673c2f3e4e241d4a7cd52065403881b8a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "de13a9f0b0d00175ce1365152621f160759d3de1d8344f520d19ff29418d5c38"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ecc8dab8a302e3f58a67b5e48269eb272018d9cc8d22ba6d2bfaebb5ade0835e"
-    sha256 cellar: :any_skip_relocation, ventura:       "1ae26881433c5dfaa3b514e161423d44f8bf22431c75a39d54a0c6507ff4d9d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "267d6e94207cb929ba43e44a4bd589e7628fde0cbf42d242069e1c5af2f82f5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f710b9295a5a5101c380603ed1741a4df17e5af0f5b21b7ea953c6a46065d12f"
+    sha256 cellar: :any,                 arm64_tahoe:   "1f01e573fba1d56838e827b5455224a5299dbdd85e6cdb81931c4a265a473db6"
+    sha256 cellar: :any,                 arm64_sequoia: "d4488f63b96ff55559e825d9367eb6a174ef6d12d79496f050dd4da767ca9b95"
+    sha256 cellar: :any,                 arm64_sonoma:  "a8f691cfaf659a1d72d93d1c582b56d012bdc5636b92796154a2d3877094bd30"
+    sha256 cellar: :any,                 sonoma:        "869a6c7000da29a7937bec581fd30a498d4a3a0846112f574221f025094941e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc8d3fbd546539676b8da20c4ae7132d84e4ba82e3ee3aa34abdfd517a752c0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0dd5dad76f3ee1558fc06357a606134321b76030ecf9c126d3742b5062c91a25"
   end
 
   depends_on "pkgconf" => :build
@@ -23,10 +20,9 @@ class S6 < Formula
   depends_on "skalibs"
 
   def install
-    # Shared libraries are linux targets and not supported on macOS.
     args = %W[
       --disable-silent-rules
-      --disable-shared
+      --enable-shared
       --enable-pkgconfig
       --with-pkgconfig=#{Formula["pkgconf"].opt_bin}/pkg-config
       --with-sysdeps=#{Formula["skalibs"].opt_lib}/skalibs/sysdeps

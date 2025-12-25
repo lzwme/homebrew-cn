@@ -48,17 +48,11 @@ class Patchelf < Formula
   end
 
   test do
-    resource "homebrew-helloworld" do
-      url "http://timelessname.com/elfbin/helloworld.tar.gz"
-      sha256 "d8c1e93f13e0b7d8fc13ce75d5b089f4d4cec15dad91d08d94a166822d749459"
-    end
-
-    resource("homebrew-helloworld").stage do
-      assert_equal "/lib/ld-linux.so.2\n", shell_output("#{bin}/patchelf --print-interpreter chello")
-      assert_equal "libc.so.6\n", shell_output("#{bin}/patchelf --print-needed chello")
-      assert_equal "\n", shell_output("#{bin}/patchelf --print-rpath chello")
-      assert_empty shell_output("#{bin}/patchelf --set-rpath /usr/local/lib chello")
-      assert_equal "/usr/local/lib\n", shell_output("#{bin}/patchelf --print-rpath chello")
-    end
+    cp test_fixtures("elf/hello"), testpath
+    assert_equal "/lib64/ld-linux-x86-64.so.2\n", shell_output("#{bin}/patchelf --print-interpreter hello")
+    assert_equal "libc.so.6\n", shell_output("#{bin}/patchelf --print-needed hello")
+    assert_equal "\n", shell_output("#{bin}/patchelf --print-rpath hello")
+    assert_empty shell_output("#{bin}/patchelf --set-rpath /usr/local/lib hello")
+    assert_equal "/usr/local/lib\n", shell_output("#{bin}/patchelf --print-rpath hello")
   end
 end

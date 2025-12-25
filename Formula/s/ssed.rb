@@ -2,7 +2,7 @@ class Ssed < Formula
   desc "Super sed stream editor"
   # Original website is down: https://sed.sourceforge.io/grabbag/ssed/
   homepage "https://packages.debian.org/sid/ssed"
-  url "http://deb.debian.org/debian/pool/main/s/ssed/ssed_3.62.orig.tar.gz"
+  url "https://deb.debian.org/debian/pool/main/s/ssed/ssed_3.62.orig.tar.gz"
   mirror "https://sed.sourceforge.io/grabbag/ssed/sed-3.62.tar.gz"
   sha256 "af7ff67e052efabf3fd07d967161c39db0480adc7c01f5100a1996fec60b8ec4"
   license "GPL-2.0-or-later"

@@ -37,7 +37,7 @@ class Urlview < Formula
   end
 
   patch do
-    url "http://ftp.debian.org/debian/pool/main/u/urlview/urlview_0.9-23.1.debian.tar.xz"
+    url "https://deb.debian.org/debian/pool/main/u/urlview/urlview_0.9-23.1.debian.tar.xz"
     sha256 "bdb3b403b165ff1fe7d1a7c05275b6c865e4740d9ed46fd9c81495be1fbe2b9f"
     apply "patches/debian.patch",
           "patches/Fix-warning-about-implicit-declaration-of-function.patch",

@@ -8,12 +8,13 @@ class ArgocdAutopilot < Formula
   head "https://github.com/argoproj-labs/argocd-autopilot.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6413e513cbc1efeaad2aaf4afe34e8cdb1e2b38eff30197754f3c9d2fde65a3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a030325b70b6a46c4d63136e638a852b25cfa90a871464f07724ea48951a7ccf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d34a4629f9d8089d89ca77a623618b73cb95c73afad228ffeb41a93ab021f067"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b5899d7d38572a62a7aacf3fb9b30536b3e970c8ef910015ed25ba7fbcf3051b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4a677b34fea2ba9324961d0da07ed40374625388f6bdf7e43b3f3afc7a9de28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5c224d930f9df3fc46eae79c4d0c9e15339628a40e80bef6fa2ee2a1999a0ca"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a14fad86f97d6d1434c5ed7e74b2ed3488354f777782ff105dc80765c409f45c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be3de2de809b1525f5812b4e0088cf4fb69febfe8d8f9f16ec12cab9523154e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d1b8ee76391c7f4f3cecf6475ebbc16778ece41c61fddd36b49845b375996b9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4c24727bb33f1b6b561a40e09f2d6f04adb3184a259622063033bf37c54eb271"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "43d271b59cee87bd956374bdecc77a94dfeaf834889193be442c5b5473ebc484"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d92042a9cbae654c5abe3821ca44e8bb65405f27872c12055e2e7f40cc466ad"
   end
 
   depends_on "go" => :build
@@ -22,7 +23,7 @@ class ArgocdAutopilot < Formula
     system "make", "cli-package", "DEV_MODE=false"
     bin.install "dist/argocd-autopilot"
 
-    generate_completions_from_executable(bin/"argocd-autopilot", "completion")
+    generate_completions_from_executable(bin/"argocd-autopilot", shell_parameter_format: :cobra)
   end
 
   test do

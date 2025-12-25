@@ -7,16 +7,13 @@ class Autorestic < Formula
   head "https://github.com/cupcakearmy/autorestic.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "ad574bcd9a1adb60d03421185b68465feb9b39db31df3e3031b6d691553c0df9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e2cade21fc658ba2dc41a9340b62816575ccc5107dd3785d0ff3a718efca1115"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b08a884dfb153b6fe2127bd30c91ee36aad5622ec69305b13ba23b43d358c351"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b08a884dfb153b6fe2127bd30c91ee36aad5622ec69305b13ba23b43d358c351"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b08a884dfb153b6fe2127bd30c91ee36aad5622ec69305b13ba23b43d358c351"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fe4791b279ef81457641763d07a23b02df7aeb2eafa8cd2ceaf72ba1ed9227c9"
-    sha256 cellar: :any_skip_relocation, ventura:        "fe4791b279ef81457641763d07a23b02df7aeb2eafa8cd2ceaf72ba1ed9227c9"
-    sha256 cellar: :any_skip_relocation, monterey:       "fe4791b279ef81457641763d07a23b02df7aeb2eafa8cd2ceaf72ba1ed9227c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "008bf52acf690ed12cb12f12d2827043f9748ce9dcbf99961acbfbd89a9eac0d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdcc8558f432a2b40971c51191e07ab9b8f21c60e3b8fd959f48a5139a483faa"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1ce7af07dc44415cdfed0f1cfbc5ce1b742cb2d79b22cdebf4598e50baf7f1f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ce7af07dc44415cdfed0f1cfbc5ce1b742cb2d79b22cdebf4598e50baf7f1f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ce7af07dc44415cdfed0f1cfbc5ce1b742cb2d79b22cdebf4598e50baf7f1f3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d541446d59262d79dc73caddd565430e5e70eb66aeea54d792af7bb516a40dac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d120e2c17beb148344666f41f7d6cd3f656188e82108dede92b123d54f1f59b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39477e9220efcad3687bab295231fab1b5dc1937c78b4b60269fb2df6792d79b"
   end
 
   depends_on "go" => :build
@@ -24,7 +21,7 @@ class Autorestic < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
-    generate_completions_from_executable(bin/"autorestic", "completion")
+    generate_completions_from_executable(bin/"autorestic", shell_parameter_format: :cobra)
   end
 
   test do

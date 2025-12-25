@@ -1,18 +1,18 @@
 class GoPassboltCli < Formula
   desc "CLI for passbolt"
   homepage "https://www.passbolt.com/"
-  url "https://ghfast.top/https://github.com/passbolt/go-passbolt-cli/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "009042a200146ddb1c8c2ed20084efb1fc65047219ef21a21d6c490af228f0cf"
+  url "https://ghfast.top/https://github.com/passbolt/go-passbolt-cli/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "0887d9c30b43db30d7386ebd7472ec39a38f3529b0aeda3eff0e619e388e8228"
   license "MIT"
   head "https://github.com/passbolt/go-passbolt-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14e9808152ed1f3941e4f14a110baff96b7e26879665c648c535beeb9945eb63"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14e9808152ed1f3941e4f14a110baff96b7e26879665c648c535beeb9945eb63"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14e9808152ed1f3941e4f14a110baff96b7e26879665c648c535beeb9945eb63"
-    sha256 cellar: :any_skip_relocation, sonoma:        "caf55984584c233354224e64e05c200645a5ea239d1f9483734723ec411c0722"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "80e6bc77a95a6be81d6d87fbad3baecec97ff27740c544376935f1168308a5e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfeb7c80de07ed39e3bcbb8e7eb192c7dfb976c7c52a8b93fe0f025191d0f2a8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a8eea0e480998a2eeea959f17a5550e7667dce9ceb93cd2298912f4f9634eab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2a8eea0e480998a2eeea959f17a5550e7667dce9ceb93cd2298912f4f9634eab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a8eea0e480998a2eeea959f17a5550e7667dce9ceb93cd2298912f4f9634eab"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a9949e5e1def8f6c08e1bea221cb89fa6121d388ef7ac1ab87305bfd5a0e869f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "433f822b5606277fa294935dd7ee3b287c4a87c64cbde14e608465b983ca48fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a587803280444b426c73e47d7b3f60217eef660bcea2b6a57cc202711da00afa"
   end
 
   depends_on "go" => :build

@@ -40,6 +40,7 @@ class Parrot < Formula
 
   # https://github.com/parrot/parrot/commit/f89a111c06ad0367817c52fda6ff5c24165c005b
   deprecate! date: "2025-01-09", because: :unmaintained
+  disable! date: "2026-01-09", because: :unmaintained
 
   uses_from_macos "perl" => :build
   uses_from_macos "zlib"

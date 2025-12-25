@@ -7,12 +7,13 @@ class Algolia < Formula
   head "https://github.com/algolia/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0f3a3ee93da672db9f429d351d7b381fb2c98bb74295b5864d1643dc0ff8d96"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0f3a3ee93da672db9f429d351d7b381fb2c98bb74295b5864d1643dc0ff8d96"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0f3a3ee93da672db9f429d351d7b381fb2c98bb74295b5864d1643dc0ff8d96"
-    sha256 cellar: :any_skip_relocation, sonoma:        "33bc87b6f7e7dfde2836eb978aed59c75a39435c08c3e856fd9cf20d3c98e452"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad2a24e5c775fb35f0daca856acdd25f71ba63c1dccbb20a82e8f53592a594cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5afdc37907f966a114f326de3ccd49a29f1a7d1c0344fc889e695ede5f20411e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8793143ba32c59eb92a56d6cb78810ac4ae5dce2e0d701f5eda245f72502043d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8793143ba32c59eb92a56d6cb78810ac4ae5dce2e0d701f5eda245f72502043d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8793143ba32c59eb92a56d6cb78810ac4ae5dce2e0d701f5eda245f72502043d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dcae2959e0157957a0c9812d800b642a8015e8ed8a63f854acdecf6b2e06b49b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bef97a8af4fd13535f8bfc8683cba135f15cd67e925c706b0a8df5289595acc3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76fcee9eb35f5abf29950923a26587d84a5baecfbefd65a56872724c067221b0"
   end
 
   depends_on "go" => :build
@@ -21,7 +22,7 @@ class Algolia < Formula
     ldflags = "-s -w -X github.com/algolia/cli/pkg/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/algolia"
 
-    generate_completions_from_executable(bin/"algolia", "completion")
+    generate_completions_from_executable(bin/"algolia", shell_parameter_format: :cobra)
   end
 
   test do

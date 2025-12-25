@@ -7,16 +7,13 @@ class Assh < Formula
   head "https://github.com/moul/assh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "11ccb1c7d31ec14e1328c0da793dd9140a26bbeb4c67f51c2722bf26c553c632"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "075a77507a18b82139c596e10594bf5584e3ed53016bd3d1fa43dd2bbb85afc6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0d4c84e457f4a186f199a65311f8ddaaf8c05f60387eb71f16d7608d05afd75e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b8d0b50314b10b93181797d66523827c575c3bfdba89045969cc26badadaddd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "68f821488002a3aec14d7de7ceb122e61b83ace0ff2f7de08aaa757c469a7c29"
-    sha256 cellar: :any_skip_relocation, sonoma:         "58b30be37e3af425f3074bad8582766f14845de9d8c79454d6a41dec8d98ad10"
-    sha256 cellar: :any_skip_relocation, ventura:        "469bfcb0438ab525e6522cd1041e3aec3aae29b7e8b7515ebc6557c034d6b31d"
-    sha256 cellar: :any_skip_relocation, monterey:       "2c5ef162523ae4a15d8cb5800666aad11a55bce998ac76805f0cf3a57455ef87"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "b2dc1fd2114c9b5f32d977f9cda64204e183f585e04c12d94407baf9cde97851"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "598e7c71ca8a20aec8985f1aee880fb6076081ed91622aa3983b41f3103f628f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4fb1cf4fcd56fd772fb822cb176403c7e5b53fe748f6856107a110183df594a4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c64d54282d0089e756577840cbc85421f70a62bc887fd0b40a9aa1f4ed1914b9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "acc81b07e98d1af7414c9f5daf44843e24aae63697162026545877599f4488f4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "107e7c6312a04e8533c56fb80ccc64d1513fbbbbafe2e9ccbdaaf7c497885b7f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2632f0565d8627eb0c74a77e8222e92c755fc5eb0f915e80ec04a041b3ce2e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "490d984610d2d2a1dab4d0c219d5a90c9d880f29d675e5ed453ff0d32d3478ac"
   end
 
   depends_on "go" => :build
@@ -24,7 +21,7 @@ class Assh < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"assh", "completion")
+    generate_completions_from_executable(bin/"assh", shell_parameter_format: :cobra)
   end
 
   test do

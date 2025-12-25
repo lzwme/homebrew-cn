@@ -1,8 +1,8 @@
 class Electric < Formula
   desc "Real-time sync for Postgres"
   homepage "https://electric-sql.com"
-  url "https://ghfast.top/https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.2.8.tar.gz"
-  sha256 "1be4803201ab9732883a987bca4fd515f6a18e4f8dce4c76879d9e74f65fcccc"
+  url "https://ghfast.top/https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.2.10.tar.gz"
+  sha256 "8c245c4c088668d365268222ca51c8073b6a214447337f90a85b569d12a9abf6"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Electric < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "32c9e8c6bc4112db70ab58f43501c9b8fec388e9b35fb65b1f3bca23cfb5ad0c"
-    sha256 cellar: :any,                 arm64_sequoia: "6aef79637e37c0f27ff8d77d1499d46a7fb87ca9de374098d98fcc09b9cbd304"
-    sha256 cellar: :any,                 arm64_sonoma:  "4e966f730e427fa5c79b526de19db5baff6932e6d89761b3aa2eb6f6d587db14"
-    sha256 cellar: :any,                 sonoma:        "2568ce88c83cd9fd2bc387a44d265f7496c300c81c4a2d44452df8820368fc0d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "463e94bffe03cefe8a660e31922eda6295f1595dacff47db05815e5a5b2859ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f135fc91da0b20ef126959ff386557d9e36a59c2d2d6364ee014436c2ff2d6b0"
+    sha256 cellar: :any,                 arm64_tahoe:   "84ce89521dd01053f76a32cd0c0ed0b678790c868ed700a35956e59abcfda133"
+    sha256 cellar: :any,                 arm64_sequoia: "d42317581c5750d59138ddcb354d4f5929a53e578084641ae4fedc180ca1480d"
+    sha256 cellar: :any,                 arm64_sonoma:  "00d97f69b29872dcbffcb599c52350282d83b4f9f7d92b2e0bba1370a1d78146"
+    sha256 cellar: :any,                 sonoma:        "4370f460accf0d4675effb9c6aca44ab01edd4a0426b671ace825500fa2c4276"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ab22de6c063930ac112055f3dd6fb0841a2d5d7ea85dca7573425da5e60fc00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ac27ba72613920984f5130c4f0a80ef60efc99bf45ad817f9d49fbf64e77e8b"
   end
 
   depends_on "elixir" => :build

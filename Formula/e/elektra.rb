@@ -22,6 +22,7 @@ class Elektra < Formula
   end
 
   deprecate! date: "2025-01-10", because: :repo_archived
+  disable! date: "2026-01-10", because: :repo_archived
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build

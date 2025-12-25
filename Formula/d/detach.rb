@@ -1,7 +1,7 @@
 class Detach < Formula
   desc "Execute given command in detached process"
-  homepage "http://inglorion.net/software/detach/"
-  url "http://inglorion.net/download/detach-0.2.3.tar.bz2"
+  homepage "https://inglorion.net/software/detach/"
+  url "https://inglorion.net/download/detach-0.2.3.tar.bz2"
   sha256 "b2070e708d4fe3a84197e2a68f25e477dba3c2d8b1f9ce568f70fc8b8e8a30f0"
   license "MIT"
 

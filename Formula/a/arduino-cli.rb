@@ -12,12 +12,13 @@ class ArduinoCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a72f04aef01813435ee9cbca07c7d2d77a7d451e7befb690e083f31bd7f1b962"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b947a38b69776a2afaa433f34df51a6f92544da9a34f7cb8403a17705dd1d30"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f960adf27555ab8019cc51bf60cd1aa362120892aa3934d389a84855730c7d37"
-    sha256 cellar: :any_skip_relocation, sonoma:        "61c3877965ae2940c164ea9935dad87556d156ba46674aacbefc85cc501137c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd00da57f9f0c6f3dfe9f120ee1bd03f77888ddb1f6f323f211cefd83178b037"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d11a9dfedd0d0754ebc2a20f8a3f4a45e88d22ce40660d75313152e87c5434d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "97251e43754d7351f747e7d250e1cd9dacd1043e7c7c35744f319171e13dcdbc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "090e63207aa44fede0cb59bf11573edf95c6703d57e2461321192458cb39623c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ae332bf72282d36a08a7d615840efb7b0ab7c3361f0893a186b0d66b9f6371a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0a73a2453bcd4a89ea7cf2a1d6b11143e63cb9186a37d773e255fbfd9c04ee31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a8d7d1c8d40e7970f6412415410991ffdded4869035451f043d121eb55bf542"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "716f027a92718c5c527fc4cd4250419081a65df1946e39afd7294c1726fff953"
   end
 
   depends_on "go" => :build
@@ -31,7 +32,7 @@ class ArduinoCli < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"arduino-cli", "completion")
+    generate_completions_from_executable(bin/"arduino-cli", shell_parameter_format: :cobra)
   end
 
   test do
