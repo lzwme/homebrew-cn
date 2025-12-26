@@ -1,8 +1,8 @@
 class Leptonica < Formula
   desc "Image processing and image analysis library"
   homepage "http://www.leptonica.org/"
-  url "https://ghfast.top/https://github.com/DanBloomberg/leptonica/releases/download/1.86.0/leptonica-1.86.0.tar.gz"
-  sha256 "1fa08e40bb37fd45802d5e6e7b43927449a5c47d4608ef99d3bd3f0fa76baedc"
+  url "https://ghfast.top/https://github.com/DanBloomberg/leptonica/releases/download/1.87.0/leptonica-1.87.0.tar.gz"
+  sha256 "c73363397f96eb1295602bf44d708a994ad42046c791bf03ea0505d829bdb6a7"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Leptonica < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "373b3c03b29d240d7ebecb0b513b8829bb2fe7d2d8b1c27a1dd95cbe076487ca"
-    sha256 cellar: :any,                 arm64_sequoia: "797df03f03bfa17345d7064ca4128d92943224c0a496ab77426b5a6710903348"
-    sha256 cellar: :any,                 arm64_sonoma:  "56e1fae220bd7d340b66fd04409d9cf61c61d2a50866319caf02517452c85a77"
-    sha256 cellar: :any,                 sonoma:        "f536e5d74cf3c967f33bc6ae9b55571961f81818590380bc4d58a331bc8e71f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f84cd2d6e6ea28c22b6bed9bad130e7af630c4d41a43a0b79c25b892d407979"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "848250f50de5d83d97ffce88a6093a29fa01ea149b9e7ea3137ea480dce3ff81"
+    sha256 cellar: :any,                 arm64_tahoe:   "ab32f1b8d1615316af71452ecb542668b6dc53b423389d87b15379f3a1640e27"
+    sha256 cellar: :any,                 arm64_sequoia: "ea09ebafbd5411252013d28e0814c832a707858791d8cc71b6cb0acaf6cd5b55"
+    sha256 cellar: :any,                 arm64_sonoma:  "4a62d0d40a8e5c0c38e814e39074371b56f19904d81c77800963d4da4f33f0e8"
+    sha256 cellar: :any,                 sonoma:        "95455f7ef798c9bf0f11eb0fde88da376784bab6bcd2e184cd2f09bb8201bb71"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "95b1abbce20ad2492f2d26c50140da14d15d06c42af9857a6fdb69e6b9cd25e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc17c54a9ba3ff16d5bf508ff236ca5a87c70b227af0e1fe7873581b40591edb"
   end
 
   depends_on "pkgconf" => :build

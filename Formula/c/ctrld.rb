@@ -6,12 +6,13 @@ class Ctrld < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "710b801a77ad73069363fdff50e2a62ab7ae3e1a122a9a4d0db03257f46d80ea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "710b801a77ad73069363fdff50e2a62ab7ae3e1a122a9a4d0db03257f46d80ea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "710b801a77ad73069363fdff50e2a62ab7ae3e1a122a9a4d0db03257f46d80ea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e3cf03f219e2c390c980e07dde007e4760d5c30c523cbde95c25bd37f3c9d5fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f276f6a16575d426ce8288830e0a1a8c7d9d2160affab78f64eb0c4843012ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00ae361937a0efd62e0a635587a3e32e96e9652edd13099a58890bd376bdda21"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9965bdb5e4a86a2e5cda9b42b03f1349a963eab9823bfd9c3ba67739d673d7fa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9965bdb5e4a86a2e5cda9b42b03f1349a963eab9823bfd9c3ba67739d673d7fa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9965bdb5e4a86a2e5cda9b42b03f1349a963eab9823bfd9c3ba67739d673d7fa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b2baa639cf4ef37c5cf95d8787fc316b990993d6c2f2fa25558cdceb08a8f9dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7af69577f5a91a52577d80295860df825155cd2a72a930c37437f6227fff8142"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d1d15ad3b53b3084313fe4e6c9877aeb4289da71c0f8bbf14de3a218009a606"
   end
 
   depends_on "go" => :build
@@ -23,6 +24,7 @@ class Ctrld < Formula
       -X github.com/Control-D-Inc/ctrld/cmd/cli.commit=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/ctrld"
+    generate_completions_from_executable(bin/"ctrld", shell_parameter_format: :cobra)
   end
 
   test do

@@ -7,14 +7,13 @@ class Bomber < Formula
   head "https://github.com/devops-kung-fu/bomber.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "746c9ea4e2f8e3c20774f9b9f587d6efc5611b9ec93483b076f1158fdbfd9b06"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "989ad14e281150f655296b8aa8ca9a3d24965bbd690d9ce8db45163e92429004"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "989ad14e281150f655296b8aa8ca9a3d24965bbd690d9ce8db45163e92429004"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "989ad14e281150f655296b8aa8ca9a3d24965bbd690d9ce8db45163e92429004"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ebe873ca7a04da1270598e2067be206460afa6d3779582773fc60e1529a3386c"
-    sha256 cellar: :any_skip_relocation, ventura:       "ebe873ca7a04da1270598e2067be206460afa6d3779582773fc60e1529a3386c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4990cf29a0f9a505ce0521327e90670810d2d62a8168cd18cc02f787c4f2f057"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59deb5d9be3344d651aeaa337219f5183857dcb09e1b460788f3549e57bc6d0d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16b7bea8527dff512ea3d05b41ef3a63b9cc0ab3e36d6a700d8f49f427dd7f3b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16b7bea8527dff512ea3d05b41ef3a63b9cc0ab3e36d6a700d8f49f427dd7f3b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16b7bea8527dff512ea3d05b41ef3a63b9cc0ab3e36d6a700d8f49f427dd7f3b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a4a897a38cde09a42551fde0010301b17b41334ddb261a6386249704ce8a9741"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8de74c0ad4a15499fcfaf276562b2821aec6f030ce81fe2897886b6dad93f417"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8041a282f0b4ec4162f928c91a501a1ad1e95a64b28fb21b771e2d2d357ddd6a"
   end
 
   depends_on "go" => :build
@@ -22,7 +21,7 @@ class Bomber < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"bomber", "completion")
+    generate_completions_from_executable(bin/"bomber", shell_parameter_format: :cobra)
 
     pkgshare.install "_TESTDATA_"
   end

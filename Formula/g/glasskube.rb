@@ -7,14 +7,13 @@ class Glasskube < Formula
   head "https://github.com/glasskube/glasskube.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf1a551442372a2ef6289b9df1dc405691a99f85a92a09b081311e78d90a4b77"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "063ecfd9f5070323a625742f6501bfa047a48b75ae7b82034a65019fb28d383a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "063ecfd9f5070323a625742f6501bfa047a48b75ae7b82034a65019fb28d383a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "063ecfd9f5070323a625742f6501bfa047a48b75ae7b82034a65019fb28d383a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e973c658e887038f7e9af6391821dd0ab5c5e8c8e576b5a607f0f786b9a1cf98"
-    sha256 cellar: :any_skip_relocation, ventura:       "e973c658e887038f7e9af6391821dd0ab5c5e8c8e576b5a607f0f786b9a1cf98"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15fde2176d6a1201b43e0b4edbb5fcffd40d956c77e2885546cc3d5cdf4f6c27"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ba2615470cf6001762cdb9acc28d84417494d385b53bd4c73a69e7a9109d56c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3babde1be2c32139d55c3d9d357e0dc0647acf1c51a7969c32fb219e01bf7671"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3babde1be2c32139d55c3d9d357e0dc0647acf1c51a7969c32fb219e01bf7671"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3babde1be2c32139d55c3d9d357e0dc0647acf1c51a7969c32fb219e01bf7671"
+    sha256 cellar: :any_skip_relocation, sonoma:        "12cdfcca0e5bbcc188c778493e12fc1f0062e737d6a59f4942192bf8cab55810"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f060357190000ffc79417336afd8b6b0abcfec355015e4a9502ffca4ba7bdd3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f74d440bd5ff5936c0ee805fa757c79f0891b65d4ba3c232da4caa69901264c4"
   end
 
   depends_on "go" => :build
@@ -31,7 +30,7 @@ class Glasskube < Formula
     system "make", "web"
     system "go", "build", *std_go_args(ldflags:), "./cmd/glasskube"
 
-    generate_completions_from_executable(bin/"glasskube", "completion")
+    generate_completions_from_executable(bin/"glasskube", shell_parameter_format: :cobra)
   end
 
   test do

@@ -7,12 +7,13 @@ class Crd2pulumi < Formula
   head "https://github.com/pulumi/crd2pulumi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c380a1dbe25ab6bc39fd1a6fb7f4d676ffbdfdd1ac6f5fe6de532f16e95663a8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ab981239750c76bf83cb6d29fd9c0486596c22a125318e760bb9b4877ca050b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "037495a268751f289edfd7c1ef440dcb609ec7e21c139c26d78279fe7613daf5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ef183fcd4992a46265574b8946c96993beb1cdf93a9d15a928b4970ca6f8eaef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d7228a160a405a73fdd32f62e83b3cbae37e5f2f5459e079ce184c96d0432e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20318e7be374b5f94eb7ad06a0cd7580ca2d1648cfeeb619f6d835824af47f6c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f2f6276697e0fbf5813f2a51405a7c7aa355a7caa276b0be0fdff66d4e29f1a3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2619f34633c4173d9c0d4c330ebed063e01d61208708558070ff1dce8fbc7d2d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b4f546f02b3a08ab8c15ac26fec587ae4b4188171d1f40cb4155581caf6eca5a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "01d177361c7d4af04228d7de997b6806f6eae68779995b352a08cc0349052910"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5424e8ef62ad55dd7f5815ef0b2ac873270d2ea66d8ef338298529a940ef9393"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63fe361c8a7ab7825a49df171ad3c907207f1f69fce95e703bf008c35b323fcd"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,7 @@ class Crd2pulumi < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/pulumi/crd2pulumi/cmd.Version=#{version}")
 
-    generate_completions_from_executable(bin/"crd2pulumi", "completion")
+    generate_completions_from_executable(bin/"crd2pulumi", shell_parameter_format: :cobra)
   end
 
   test do

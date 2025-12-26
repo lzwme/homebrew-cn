@@ -15,12 +15,13 @@ class Gitleaks < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b69222165e3992ec827f799080c99da6ddfb83b67a1cadb0279b5c1ed50dac4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b69222165e3992ec827f799080c99da6ddfb83b67a1cadb0279b5c1ed50dac4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b69222165e3992ec827f799080c99da6ddfb83b67a1cadb0279b5c1ed50dac4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a3be0014a6a247423522c3e26074156aca20cecc640fe9bccef25d656b981c82"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "03376dcde440d60bc146b0ceb6dc2d66387a73467ffdf0101dccda76c45dabcd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "569062400847b102f3c71673d130c11ec634b46fb656642f47b576b0bd5f3293"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a25a14d9aee2d018bc591993a0d711763f646dfb2470febbcbdac35fc2702e18"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a25a14d9aee2d018bc591993a0d711763f646dfb2470febbcbdac35fc2702e18"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a25a14d9aee2d018bc591993a0d711763f646dfb2470febbcbdac35fc2702e18"
+    sha256 cellar: :any_skip_relocation, sonoma:        "01e8b3aec5550aa8899176fb08566b6415d021ad6aedf1e474cea029291ddb8d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "77faf8e34c459370948485c9e24acdcd19b9c88f9866952e969a19ecf00f3ba7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb7706128893697dae8df92801a9303f2c6658782c23ceb2b3605667a293c6d2"
   end
 
   depends_on "go" => :build
@@ -29,7 +30,7 @@ class Gitleaks < Formula
     ldflags = "-s -w -X github.com/zricethezav/gitleaks/v#{version.major}/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"gitleaks", "completion")
+    generate_completions_from_executable(bin/"gitleaks", shell_parameter_format: :cobra)
   end
 
   test do

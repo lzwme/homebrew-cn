@@ -7,12 +7,13 @@ class Crane < Formula
   head "https://github.com/google/go-containerregistry.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "531595877872f345621dab9ab17731613e6e40a7a2cb01fa1b47c6ec41911f6b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "531595877872f345621dab9ab17731613e6e40a7a2cb01fa1b47c6ec41911f6b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "531595877872f345621dab9ab17731613e6e40a7a2cb01fa1b47c6ec41911f6b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "de6392fa513bd651a664a3ae74a69819c9ed3d3472c041884ee8c7674e41b85e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f96d8271a08b34ff99790f9ced31dc51953f8586db819ae620d5a4c481c3a46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "561680df7f182b8bf73710b65b85af983bc3c58aaec2a4ad852e8690ab06b370"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d1eb007d46a20d7951ed9d0c7bbc0ce26a27e2aa576b08cd25e68017e361194a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1eb007d46a20d7951ed9d0c7bbc0ce26a27e2aa576b08cd25e68017e361194a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1eb007d46a20d7951ed9d0c7bbc0ce26a27e2aa576b08cd25e68017e361194a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6c31eef5c2fa3efbd01c6df8cda5d4ffbc3acd1a6763b707e43134306f90ba56"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c1d172bcede0ef610c4cc5fd7b7ed8c6855f220f013a6f622821f8c20ba9d18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78bb2e5add10e20cef5621b5fff2483e5821faa75fdafb6300279cde599450ae"
   end
 
   depends_on "go" => :build
@@ -25,7 +26,7 @@ class Crane < Formula
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/crane"
 
-    generate_completions_from_executable(bin/"crane", "completion")
+    generate_completions_from_executable(bin/"crane", shell_parameter_format: :cobra)
   end
 
   test do

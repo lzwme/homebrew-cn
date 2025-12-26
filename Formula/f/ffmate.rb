@@ -7,12 +7,13 @@ class Ffmate < Formula
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f1c90cd20211ca3465ff81dba069dee99467513812355db250a0d6be18d1e1a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95a84eaac525fc433499d5d72bcd08ac706127d8d2bab605faed242fcf889a9c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "071fd32cb185344c9d8733efa5e49741696330173826fafb35896d7612e4cffa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "95cc36a49f86a87f8e9f54de173c394fc67cde4f529195c974c0507e2bdad6ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3faa4f152cbbbf776cb4fa0f28d7cb46e1512294fd5e241db5b7e5f2926c013b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b1869034aefa7b67ae099e7614fafcfbadb854cffc2da1cd524b3d6ea6a14d3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ecefc5f9a5662ccb5d9d314d6172f28c54d396f9d7bee368bd82ee53e3123cb9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8f974e7ac6c2cb8163395d6d53a2f80b53ea74bb8f9aef6af5bd559ed3f567e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc20c7fb2be650edc6af56126694af8f9a29acd3fb53cd1857dccd18a36c701d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "03d859753e3f4ec6289131313445c5c264c42777c7b2bb4e6c869e16e3cdb686"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56a9b6a3a8ec9c52685da3b7af4ded7f3050fd9e66aaa278f016e389f156e2ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04ba3e70eddeadc4cf99137e7c2b8ec964ea938c2dd1a6c8258e93f00cec04c6"
   end
 
   depends_on "go" => :build
@@ -20,6 +21,8 @@ class Ffmate < Formula
   depends_on "pnpm" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     cd "ui" do
       system "pnpm", "install"
       system "pnpm", "run", "generate"
@@ -31,7 +34,7 @@ class Ffmate < Formula
 
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"ffmate", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"ffmate", shell_parameter_format: :cobra)
   end
 
   test do

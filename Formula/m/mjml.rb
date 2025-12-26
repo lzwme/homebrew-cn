@@ -18,7 +18,7 @@ class Mjml < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     node_modules = libexec/"lib/node_modules/mjml/node_modules"
     deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?

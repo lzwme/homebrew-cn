@@ -9,12 +9,13 @@ class Gibo < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ffe8e070210ff0ed8c22cb6189f7c1a09578f3827088fd718f0f810e45aea9c1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ffe8e070210ff0ed8c22cb6189f7c1a09578f3827088fd718f0f810e45aea9c1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ffe8e070210ff0ed8c22cb6189f7c1a09578f3827088fd718f0f810e45aea9c1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b9bbb7e94587e1a2db3f380f2644d97694f0427d09e18824618a4f3f05f08722"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc340336477344eb0206820783479dc036ca2a223b009416b664dff2fd6acf94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f75ce062836a88b5a3d7a9550fa4ab9e1bd5df8b2b374bdfd7cf8ccee23397c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a67d83a8d370d32de6f47fa97210e972c0949caaf232cd98a15fe3a1e4249318"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a67d83a8d370d32de6f47fa97210e972c0949caaf232cd98a15fe3a1e4249318"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a67d83a8d370d32de6f47fa97210e972c0949caaf232cd98a15fe3a1e4249318"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f14c1c1fe00324fc685cc4f17e70891aad5bd2f3853f5b1eff5d90e2c9c74935"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ca9b9ae7f8c4c0a15a67756b37b45e94fa35a3fa5329238bde15d9d45eb4da5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "875cae4046adca98f41f232a963e59b59d05c4140267f08472d74c5cf9dde56c"
   end
 
   depends_on "go" => :build
@@ -25,7 +26,7 @@ class Gibo < Formula
       -X github.com/simonwhitaker/gibo/cmd.version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin/"gibo", "completion")
+    generate_completions_from_executable(bin/"gibo", shell_parameter_format: :cobra)
   end
 
   test do

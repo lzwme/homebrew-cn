@@ -1,8 +1,8 @@
 class Bottom < Formula
   desc "Yet another cross-platform graphical process/system monitor"
   homepage "https://clementtsang.github.io/bottom/"
-  url "https://ghfast.top/https://github.com/ClementTsang/bottom/archive/refs/tags/0.11.4.tar.gz"
-  sha256 "838db91511ff73aab0eeb03f47f77b62bdb78380470078e9785044d75b1139a6"
+  url "https://ghfast.top/https://github.com/ClementTsang/bottom/archive/refs/tags/0.12.1.tar.gz"
+  sha256 "bfa6fdf969998a4cc6225a0d9b8867bce50ca2f579330974ac2e2fcaa59cc928"
   license "MIT"
   head "https://github.com/ClementTsang/bottom.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Bottom < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d237401119743393a4b15895965687b32574b86328e663c322013c0448384f8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d36705f81ef957370366725c5138586b2c0b72c7ae2ccef07d2000947e02fd9e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f4330ff8c281ddff5bf69971cdf1544e77da83280b1bf7520fbabc9624372b3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f8f9f20252a4d0bdb4b8d2bf172b528819f15bf23f7ef0c7e4b3c7c4304ff457"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1efc4207c4944690cfffe24737eb66031ffbed5e2079cc5786695d28d11e2c78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c724284ccd59e32d354a9fa8b2ff61c8cb2d6f795ad256e047ba07015dd1b41f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60c9df212cccca3b701ad92da6d71e66a409e07db50c1e56c8b91668352523c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25aa13d59ce992c1e033481266a6940b21db8909d4bd2a9f46db3aa1f438eda7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "773a33efadee7f1cd02e50c059cb96eadc50d3a1cb06012dd76ccd2b6526d043"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e7854d88268ac8885194b492e051ca3c78b1c17b4e189962ee2ab2e3a67c1d18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0dface8106b3c4b3ca87df3245b8c2bb0d354ab8b833b1f7a01773aed815f7ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d4a2f10533cacc3a5ae5a9bdf6ee75c390e45df740d74bc5b838cc9dae4dd20"
   end
 
   depends_on "rust" => :build

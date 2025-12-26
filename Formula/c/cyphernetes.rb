@@ -7,14 +7,13 @@ class Cyphernetes < Formula
   head "https://github.com/AvitalTamir/cyphernetes.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b380ece361c7b87ff3e6994d6f5a688d79d7a4e489cf74c768a3bbffc346a51f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8e2d361e03bd89d0b809099a72eac56a8ab8ad739965a12cf7786733198e937"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8e2d361e03bd89d0b809099a72eac56a8ab8ad739965a12cf7786733198e937"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f8e2d361e03bd89d0b809099a72eac56a8ab8ad739965a12cf7786733198e937"
-    sha256 cellar: :any_skip_relocation, sonoma:        "47d0c969b66651f145c08a2dc6c600677bb6e9ab82c94a56e502a416a8e17440"
-    sha256 cellar: :any_skip_relocation, ventura:       "47d0c969b66651f145c08a2dc6c600677bb6e9ab82c94a56e502a416a8e17440"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33ffd997179ea645d2516af81580a4160ed9a9cf6e1fef5e7e5469e729d8bd13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "daa7cab1009d82326c2ad177bb5fbc6f03a8fd84ab4344a1784e3b30f1bd4208"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75b7e09d1628defdfceec77d3588840df8c7b9f5d6f4f2409f3a3b652b0e085a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75b7e09d1628defdfceec77d3588840df8c7b9f5d6f4f2409f3a3b652b0e085a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75b7e09d1628defdfceec77d3588840df8c7b9f5d6f4f2409f3a3b652b0e085a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "36eb2ee7fe1690f6a75f3b87fd33cda95826967af8322547fc3c39c39b81f5e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bf78468cac60b77e2498a7bd74e7d7c07776f7389843a0a272a299f02acb5e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad94e1890dcd0a59a18fcef531ba649b1e8f5d9786b30754e79d5049229b8c14"
   end
 
   depends_on "go" => :build
@@ -23,7 +22,7 @@ class Cyphernetes < Formula
     system "make", "operator-manifests"
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), "./cmd/cyphernetes"
 
-    generate_completions_from_executable(bin/"cyphernetes", "completion")
+    generate_completions_from_executable(bin/"cyphernetes", shell_parameter_format: :cobra)
   end
 
   test do

@@ -12,12 +12,13 @@ class Kops < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4fed8fa5ee46bdfc1774489723d220e2f5befbf711b722a21b6a7dfbc9a7ff7c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "759ecd4c274edb762fb44f765babd1a1dde0ff004f34ecc75c4fbc8073409389"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "219fe9ccf8d6ed670dce32c6546ca23c4348b0dc47c6f04c3bc0ea6b6c07cc4a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7f7b5a35bf3e8f5aeae24476d4fc40c02106318486c7668460a25738a1f67ed7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "99dcf090cb04e4330ad784128f73777207dfa4c03b4688789d4a0e07d1c1e2e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f2d0034aa2e5ad6b506155cfadad9cad8daa7a35595d2ed66218c7458260041"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2690e0e0530931568ffe02fc1fea8248be5d13039cacf428dfcea091d4a1fb5e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3da7197efb9b217736e7332ab8c1bc23c9db7415877adaab37abde7f92f5499c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "338f4822a27d9a2a9d3319900f892ace54818cd21d0df62d2b6727a299e9b582"
+    sha256 cellar: :any_skip_relocation, sonoma:        "241a7a05d02d702fe2a3526800a7c3583a3b7809b75f0cff3ec0b166a962d1fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1eeb382f1afa71c974f4921f458539d6ba6e0889c45a5b9e7bcf531bfa289474"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4d5b59eaba1844c00735ed8a2f6d4553aa74a81c0a81672f8108bbeb1027e0c"
   end
 
   depends_on "go" => :build
@@ -27,7 +28,7 @@ class Kops < Formula
     ldflags = "-s -w -X k8s.io/kops.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "k8s.io/kops/cmd/kops"
 
-    generate_completions_from_executable(bin/"kops", "completion")
+    generate_completions_from_executable(bin/"kops", shell_parameter_format: :cobra)
   end
 
   test do

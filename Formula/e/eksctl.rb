@@ -8,12 +8,13 @@ class Eksctl < Formula
   head "https://github.com/eksctl-io/eksctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d269272ee4c1bea0f46fd4ec25c9161563a957e387a2dd1e2bd5a57802024a8d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34fced9bc1f4b403df7f5f80f7491db0048ebc1458e969e4a21d698dfb988623"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5c9b6ca5e70a837f4e54980ebb59d8ff3bee63bf0418eaed64da9c1d068b0a3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "140a8b92305310e7ed3e2d260fdb44df7e45879d7fb252f84e49db9acdfa98b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4f9ce77c92f517aea34f70845480a81c69d80b90b4e1232f0d2cf9fded5e150"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edb08664649f1d3cc74bc6107ad4b88fe781ded90956851e252025bfd9b7af8b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80d034119116a40619116ba7c9474da06a554b5dbddcda25fad58f4e6444bbb2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "420b60223dd3eb234cdde4a005db8adec5333be68a55d794ae72bd3116bbacdf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35b524a23b26488a91be9e0e5edef48fb13415fc5b26ff2d57761eda20690680"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b29f11ee483d1f9f604e6550889526bd0bd7ba5309691b51b068219ba7b0cbd5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "137f459eaa6fed4ea10f8daf0b54f46a3ac004cea47f4b755cc46e4be694e499"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9fcefab5e54d1ef4d61376c7ff8519adab8b9bf59a2cc31f66483886724d217"
   end
 
   depends_on "go" => :build
@@ -22,7 +23,7 @@ class Eksctl < Formula
     system "make", "binary"
     bin.install "eksctl"
 
-    generate_completions_from_executable(bin/"eksctl", "completion")
+    generate_completions_from_executable(bin/"eksctl", shell_parameter_format: :cobra)
   end
 
   test do

@@ -12,12 +12,13 @@ class ImmichGo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d921b5c5a96b8797f29f37ea80f35e96fd3322585b87cd98d6cd378379780e04"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d921b5c5a96b8797f29f37ea80f35e96fd3322585b87cd98d6cd378379780e04"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d921b5c5a96b8797f29f37ea80f35e96fd3322585b87cd98d6cd378379780e04"
-    sha256 cellar: :any_skip_relocation, sonoma:        "be6741530f0e6350b1bcfc51612524fb79dfc0160cf7dff5dc6659d587f92768"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1090d16b91b9f6abcbdd2a94582727bde6ab378b916f70e7ef2d9b413ed2bf77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ede3d32fc5faf80f2237b25fe2971d1b4a69aa91b1c8c618a53f7c9d6ae5797"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8cd369ad88194accffa3aaa3b0d3c269daf665470cab90169b9e4f087e9b8354"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8cd369ad88194accffa3aaa3b0d3c269daf665470cab90169b9e4f087e9b8354"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8cd369ad88194accffa3aaa3b0d3c269daf665470cab90169b9e4f087e9b8354"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b1e766326a4a04710cf92ae2272fe40d0a512c56af09551a75efa8bd6afd13b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d4ace8aebe26da57ac040fb5d668d9ce20168cabe57b60703ec490e33730acd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00db9a4e128716bb2d8eb4d0aa8acb5da9d57c95a0900b6c1cfb21b1ddb9ac48"
   end
 
   depends_on "go" => :build
@@ -26,7 +27,7 @@ class ImmichGo < Formula
     ldflags = "-s -w -X github.com/simulot/immich-go/app.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"immich-go", "completion")
+    generate_completions_from_executable(bin/"immich-go", shell_parameter_format: :cobra)
   end
 
   test do

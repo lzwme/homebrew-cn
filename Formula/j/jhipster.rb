@@ -21,7 +21,7 @@ class Jhipster < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install Dir["#{libexec}/bin/*"]
+    bin.install libexec.glob("bin/*")
     bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env
   end
 

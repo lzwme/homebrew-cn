@@ -7,12 +7,13 @@ class DockerBuildx < Formula
   head "https://github.com/docker/buildx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b30ba0ff0a619c866f6295eef6d602ee27d8328f82f59b5677904a0fc9342ad5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b30ba0ff0a619c866f6295eef6d602ee27d8328f82f59b5677904a0fc9342ad5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b30ba0ff0a619c866f6295eef6d602ee27d8328f82f59b5677904a0fc9342ad5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3004b6816dc664bf886171d3ae22a84c998243cb244d8c3513b4377be9ba67b0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f56f6f995984f2176c8e2081486b42f5dfe6c094668ddc618ef8ce1cbd495e5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b90d1a75d757aab2450357440b15d680f363a1324e83d0a383ce02b836e11d26"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb8d78a164fb8cec434dedaa082c22c8179bd2d494e97fc67e580f3c9f077ec8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb8d78a164fb8cec434dedaa082c22c8179bd2d494e97fc67e580f3c9f077ec8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb8d78a164fb8cec434dedaa082c22c8179bd2d494e97fc67e580f3c9f077ec8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1e8cead5214bea485f7709c6245243b8553a69ec1ac0d1f61ebc688c53437d92"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5aa5307f3b8c8304d77e4f8cd53b15fe94370aae32963ed1686b62949190cf0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d46c7277aed9c1ceac69adb92859eddd708cfff97fee2c81926a9b4de27c813c"
   end
 
   depends_on "go" => :build
@@ -30,7 +31,7 @@ class DockerBuildx < Formula
     (lib/"docker/cli-plugins").install_symlink bin/"docker-buildx"
     doc.install buildpath.glob("docs/reference/*.md")
 
-    generate_completions_from_executable(bin/"docker-buildx", "completion")
+    generate_completions_from_executable(bin/"docker-buildx", shell_parameter_format: :cobra)
   end
 
   def caveats

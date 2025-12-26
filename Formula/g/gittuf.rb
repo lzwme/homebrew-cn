@@ -7,14 +7,13 @@ class Gittuf < Formula
   head "https://github.com/gittuf/gittuf.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf4ea3da53307721e7723579d2a2d7186973515dc9a6ef3e0bd45006ecc07b86"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf4ea3da53307721e7723579d2a2d7186973515dc9a6ef3e0bd45006ecc07b86"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf4ea3da53307721e7723579d2a2d7186973515dc9a6ef3e0bd45006ecc07b86"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bf4ea3da53307721e7723579d2a2d7186973515dc9a6ef3e0bd45006ecc07b86"
-    sha256 cellar: :any_skip_relocation, sonoma:        "303c0cc95a1591d6b76a1105481ac01a9ba6b3fe3cda0f3e43367cdeb7d676e2"
-    sha256 cellar: :any_skip_relocation, ventura:       "0a5166424f6694bfa31c0cbd1d6804f7606a63f799eb58e5312a7784d18ef94f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "74448791d88ea429a8a8cb3a1996eeea11bd5e710cfa41ece5a7f0f5e87d08dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3b2eb9a3004b065e3114d252a951c2648246753551e76a4e170d533052fbc7f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0a80e6ce9d0bb5776c04024d668f0c9418320dce34e46ba985ebb730e20432a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0a80e6ce9d0bb5776c04024d668f0c9418320dce34e46ba985ebb730e20432a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0a80e6ce9d0bb5776c04024d668f0c9418320dce34e46ba985ebb730e20432a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b1cc90f324aab34351f3e8178dc87e3d8a7d66d5f7e9d1ebb0ae04572f4b50fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e33ed1fc3d70cb84a096f8a8600747f47b09e99eb91a9e2515f5bf8ff4643d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10c78aa22deb7972af20909b88a7bf55d16bde2d290b41ce1c4fbed01cf7a1c6"
   end
 
   depends_on "go" => :build
@@ -23,7 +22,7 @@ class Gittuf < Formula
     ldflags = "-s -w -X github.com/gittuf/gittuf/internal/version.gitVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"gittuf", "completion")
+    generate_completions_from_executable(bin/"gittuf", shell_parameter_format: :cobra)
   end
 
   test do

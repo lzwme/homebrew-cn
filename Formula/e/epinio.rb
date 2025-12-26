@@ -15,12 +15,13 @@ class Epinio < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "51c64a93082af35d0bc720dee06a97281fd1c5d8fbf88360f166dedb38c7ec9f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c7522f386bf4e61fd72d0c55dc16f221432172e059352e845881f2e49d70d88"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "280350fb9fe9a95bd33cebcb5b38d3bdbdd51528d4ed2ebe99bbe5eff93b6f34"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b2a71e48f80a7f38732b39a834b9c890cdb011c5342b6642294658b8bb3a2c77"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27ee57bf2d021d7de759cebe4d1be8bb38b4002c9618ba900883e7530dfb653a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99bdfc02996dfe21a08fd47173ec089ee5f662487e2e75824c773564e901a78c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aafb6e9c34467c447905e37a61be05142e02f513cb108b366ef4bc0a40431225"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a78044e3477cd3842fee275558f83d410ada9136530be83bc587cb22ff3c1c34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84fe14e845b486bbdda9b4a29ddddd010249b70e26f9b09676a03995702d119a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f3d4e99a067a43fed8939261831beeb3c9a24342a11deaaf3b0dea112c0ae485"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f15b31677e8fb4477c9bb18f3893262e1e1f9729e4ade013e4778c17db6526e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ce2e4e402c5cd159a3dc546ad6236f3a202ce66ca428a3371e23e8ccfc0dfe4"
   end
 
   depends_on "go" => :build
@@ -28,7 +29,7 @@ class Epinio < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/epinio/epinio/internal/version.Version=v#{version}")
 
-    generate_completions_from_executable(bin/"epinio", "completion")
+    generate_completions_from_executable(bin/"epinio", shell_parameter_format: :cobra)
   end
 
   test do

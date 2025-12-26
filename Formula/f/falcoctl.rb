@@ -7,12 +7,13 @@ class Falcoctl < Formula
   head "https://github.com/falcosecurity/falcoctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ee0b23e669161779233848fad860521187151f1c7cc154f56bc0229d88881d7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "185ca71d955334d14dcc9d9c9dee9379e9762909a81c08e7912f8dbd5310739b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05b69f934216a147aa93b92dcaf72e9f38f806fbe1c87f044b9c999622315c97"
-    sha256 cellar: :any_skip_relocation, sonoma:        "642fb42ccac217d020faa57a26f9663cafc66a15499beda50424964796caf596"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac30ac5c95bfd0117a63e520e127c0e899a9500f71a18112871988daf4227659"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38df280421a9f00b883f113882555ab11e4707dee3d997c7c463f3f40095317a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7ed7960d0d3d8dd9a783992c72819879849d14f7963d358ab92031c2b5408f7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b39d47afd0dc7fdbfce9f558a171cac85a220a09a1c51c515a1e05666a6812a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "442689f9dbdcc2f0a04e1992bff5b73bbf9580e1ba4572c3f12c916635e798d6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0fc4f61150122d189a1f7527b696d8e869c3fbba7d3ffcd17a29ef2623d881d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6283e6c1230425687d0190010e2e1d884895f551e53dd63ad7ee2a8482bcbf7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a81dac9befc95952641f2018ac92eee92a4e53da0b79fba90e6c2cfef8b51141"
   end
 
   depends_on "go" => :build
@@ -28,7 +29,7 @@ class Falcoctl < Formula
 
     system "go", "build", *std_go_args(ldflags:), "."
 
-    generate_completions_from_executable(bin/"falcoctl", "completion")
+    generate_completions_from_executable(bin/"falcoctl", shell_parameter_format: :cobra)
   end
 
   test do

@@ -7,14 +7,13 @@ class Gut < Formula
   head "https://github.com/julien040/gut.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a5b8e5c4802862410954c0d1d18f5bfa76386573401482e378c0a4013e1423dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ffd25ab7b96ef2951a298214af160e7beb7e0079019bfac20f398bec5a42ce0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "993f5e0250aa0c86e7f439a332093c1e3384fcc5fd3979ba09485d0816947dc1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e0c4fba2fc790008bd0813b2313e81f75e2d02539e38f09141ee4082c5cafeb3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6e61dc52c2aecadc43b95b5a2a1e3c4b278ac6c182b37d989e81af5bdf162847"
-    sha256 cellar: :any_skip_relocation, ventura:       "c0bf2735f14841209395250135915692de7df22bafe1ad32e0e9d2f47c5b7ff5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4de7f052481f406eda6c1bfa8b8cf1ec54b73e476107127fe66927f3e09f3e1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41e669eaafcb962c1f07cfe0daed82e5a7342d017e8c0160059498c168db8d35"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee60c94f64823edc247db7d64fac9c6f35c7f7c4c2e894e67a52f15148c0a0ea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af0311402ae80932f3c55e62fffda6b731e0d191e0f0c14e35490e69803e04a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a2443c00f2a9e7bb81b0754add02c083455220aaf3cae06a041a10c3fb15434"
+    sha256 cellar: :any_skip_relocation, sonoma:        "82951d3153c048316f7a5180df7160847b93cd7ca8491638b27ca5e3e7319c30"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "55cadce09bb5c14fdf9e23ed605df31d4ec14d56503227f3fe098ff748a2d1f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9734fda07357cf7c57786fdb400b2be1363615dee08196472ffb0c1bcbcc3ee"
   end
 
   depends_on "go" => :build
@@ -23,7 +22,7 @@ class Gut < Formula
     ldflags = "-s -w -X github.com/julien040/gut/src/telemetry.gutVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"gut", "completion")
+    generate_completions_from_executable(bin/"gut", shell_parameter_format: :cobra)
   end
 
   test do

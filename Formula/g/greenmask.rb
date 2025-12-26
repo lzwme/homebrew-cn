@@ -12,12 +12,13 @@ class Greenmask < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eae56c1c6f824f69e79b2320b970f6a406498be1623734636e03f89723f96987"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eae56c1c6f824f69e79b2320b970f6a406498be1623734636e03f89723f96987"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eae56c1c6f824f69e79b2320b970f6a406498be1623734636e03f89723f96987"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9a7d04d6f332279d5827f720cc486861d7f5562f435675fd35d2f4d5e65dc54f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "98c27d2cb3401b86fdbc23de1200e7b8999b77acd4b42853c34e8c211669786b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09ee4b113e89694c2007581b625b3866303183be826ef9021174e8d9a806cc08"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6566ad58caea4006f873235d0f016a243c93c1ad99a4b17d5ab5051cdd264482"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6566ad58caea4006f873235d0f016a243c93c1ad99a4b17d5ab5051cdd264482"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6566ad58caea4006f873235d0f016a243c93c1ad99a4b17d5ab5051cdd264482"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8ca0a8491c68f12ffdbb48ea4bd34a38d9c0ca247969aebde5405db32e27884e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dcb3e75cefbab8ba63885b06bc585e45dc115751ffb0e4e73523be0387ae36c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82b797ee59e812456347e03bc649c0e5a1460d80e435006f00f90c787e8b3ecc"
   end
 
   depends_on "go" => :build
@@ -26,7 +27,7 @@ class Greenmask < Formula
     ldflags = "-s -w -X github.com/greenmaskio/greenmask/cmd/greenmask/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:, tags: "viper_bind_struct"), "./cmd/greenmask"
 
-    generate_completions_from_executable(bin/"greenmask", "completion")
+    generate_completions_from_executable(bin/"greenmask", shell_parameter_format: :cobra)
   end
 
   test do

@@ -7,14 +7,13 @@ class Draft < Formula
   head "https://github.com/Azure/draft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "27c17c73595cdc1c9ab58222bd7c5da79118315f7d3a81bd0ae969a774bbfd93"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acdfe376f2889fcf9c4a9b78da02486db3877b3895581c3b7511d7d8b3a38b84"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "179c2a499691c7f98f5250215d1c781777635ac169e0968cbf414ae24d623c9e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ef805b1bf2ee0af2f16208b39745ac91aea55f5c0b840a7aa1ccd68ea7f8f2d4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e25ed38ffef63fcca1d743ac697ca576a361ba124795ac633518a033debc3978"
-    sha256 cellar: :any_skip_relocation, ventura:       "e3273bd83c47d8159e8adc62f3cd4a195401e7bd31351a376cea8ef098351f54"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e263f231150b79d7ea82ee10347990ba170cc4624966a46ee6ee54480026eddf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69ca3bc8252d3a2479a8774dc3c09298e553d36b3ccec5fc4539f2e9a8e16b14"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "af0a442d8caf116eaef9b3313172865ff47805f46b7b69a50abb52074208e205"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d41b2f2ec5c21b70914773a759268bc059d654b0da01b2d9e912c48586a3c177"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc3a3e0b1344fe3229a1d040739d7e01d0c24d817554e6e29b390fff44f01d52"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6684f2e37b3e787101ea51ff84941cbd0395a9bd99ed41025eed50ca9928c6a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "36db0720f7a0c5f3d0a1001151f93d4626d18e55d70a955350f9991c7b74b209"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ca516655ed3e8e31fd18ad1a56f77957c0d3aa43851e93998935c7640f5b3c2"
   end
 
   depends_on "go" => :build
@@ -23,7 +22,7 @@ class Draft < Formula
     ldflags = "-s -w -X github.com/Azure/draft/cmd.VERSION=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"draft", "completion")
+    generate_completions_from_executable(bin/"draft", shell_parameter_format: :cobra)
   end
 
   test do

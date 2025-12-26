@@ -7,12 +7,13 @@ class K8sgpt < Formula
   head "https://github.com/k8sgpt-ai/k8sgpt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2474d981a4f3e9e1a850b67f10be4c372c2b21127ccec1142c527a18b960bf94"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c3ddbf3a8983c96e1bf3d63f92e18078ae50a4210bc2df4ed1cfb80dcc93e4e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5149538162878038dea7277a499d7a8daa0497944687f8187e2be134ae8e1b2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f68240766af0c12512a6c5a1b8522e23fe7fa67a8202887207915c010ed08a35"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a77ff21d6536b22f24b91247abef242fd1b39659d5543054923024f4b45a7a2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c12d783f64d2920782b9c0562ba1a18ba24ec1ac47e875bf2761952919c7292d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4362247aad89da15626c901f2731b088b48332a8a6808e88893850882eebef0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "874a4d01b76f311de2058e552172ed6efaa81dbe3c45d77f938840ffdb7ff49d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ebfa8a3d4601cf9a201e9e6ce40df495a0071d9cd6b880a053d11bc9c551ab4e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "329e8ea41ea9fdaaa823332fdb1eb85433f2e9bf7391f38ba94f9b5ddb53299a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf0aee5e30ac6815146bbdb78f30a61d90744dbed1392904a9bd51a0b8dcb474"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83f757fca556c176caf63b7132d109deda34659daf282816154024002837023c"
   end
 
   depends_on "go" => :build
@@ -21,7 +22,7 @@ class K8sgpt < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"k8sgpt", "completion")
+    generate_completions_from_executable(bin/"k8sgpt", shell_parameter_format: :cobra)
   end
 
   test do

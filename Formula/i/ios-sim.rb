@@ -18,7 +18,7 @@ class IosSim < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     # Build an `:all` bottle
     node_modules = libexec/"lib/node_modules/ios-sim/node_modules"

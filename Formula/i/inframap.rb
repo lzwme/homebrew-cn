@@ -12,14 +12,13 @@ class Inframap < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fead9853b4b1b9f4bca0b20656c6c5ff98555a0590e04beb1120ab95b4752635"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18e6aacb8e602b2c4fd488a1071209c1711ba388fda1f19797665915b6e84c36"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18e6aacb8e602b2c4fd488a1071209c1711ba388fda1f19797665915b6e84c36"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "18e6aacb8e602b2c4fd488a1071209c1711ba388fda1f19797665915b6e84c36"
-    sha256 cellar: :any_skip_relocation, sonoma:        "95af43179d426a7a6dd382dea950559c3bc479bc00cf7b9bf4865a854a44b57d"
-    sha256 cellar: :any_skip_relocation, ventura:       "95af43179d426a7a6dd382dea950559c3bc479bc00cf7b9bf4865a854a44b57d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "803d93620c47d794eb3b6336c1c0059725a941382b8c546c3f00ceb02ecdb3ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf01e9146e3abf82239ed0e2f498916a5eb8ff863099e70c840393adf8423dbf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "35238fd6006c1e1292640c56f85a7f36c2794851727b2ea8ea91a28ecd3b5056"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35238fd6006c1e1292640c56f85a7f36c2794851727b2ea8ea91a28ecd3b5056"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35238fd6006c1e1292640c56f85a7f36c2794851727b2ea8ea91a28ecd3b5056"
+    sha256 cellar: :any_skip_relocation, sonoma:        "869a30f97467cc4df989f532fd8e587e600bbcea1e32b7ae1ecb54ef7f545122"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34b08303d1e7bf81b263e4c775e3fca3900eb31d1e951667255a3cc5e6dc7ad0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "373101f264996d311db6bf6fdb35db1f53d1f0099ec8964bfd5168cdab64f1da"
   end
 
   depends_on "go" => :build
@@ -27,7 +26,7 @@ class Inframap < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/cycloidio/inframap/cmd.Version=v#{version}")
 
-    generate_completions_from_executable(bin/"inframap", "completion")
+    generate_completions_from_executable(bin/"inframap", shell_parameter_format: :cobra)
   end
 
   test do

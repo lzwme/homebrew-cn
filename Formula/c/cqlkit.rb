@@ -17,7 +17,7 @@ class Cqlkit < Formula
   def install
     libexec.install %w[bin lib]
     rm(Dir["#{libexec}/bin/*.bat"])
-    bin.install Dir["#{libexec}/bin/*"]
+    bin.install libexec.glob("bin/*")
     bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env
   end
 

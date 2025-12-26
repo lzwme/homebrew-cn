@@ -7,14 +7,13 @@ class AwsSsoCli < Formula
   head "https://github.com/synfinatic/aws-sso-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a49c0fa55021f88a3f8c658083946bc049f5920ce9ef831dfb2f84c67376f3e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56017c6be0977b895c4cabe77f016df3386eed97b081e2c66bbc7fb1e1067ebb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6fb251cd783f29eb194b2214f3dc33a15b906d88e9b88336bebd48a4cbf20d13"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "427855b807581225b458b77abdf85ec85a7078e747032769925b1585d2eb8b81"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a0b463a978cce6be0a7cffe431fdf2683c490cc640c131fb4367a102885ea99e"
-    sha256 cellar: :any_skip_relocation, ventura:       "5e939831d1930895e26566c71ba99271286206c1aac03497c96e395aaf3e3c88"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b229f48a550fb95e559a57002a32141aac154fa8dff1a6ce2fb7a4f71022eac5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cc894ad7d0d759c3e07b042658ddf839144109f2abe3af664e3a3f8ae7d3bd8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "696f1f95adeeea6032919881b25322e15f1782ac4627dbf48fdbb1c6ceced066"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52ba3ad28915d82ba6cfacb5f7946f6b9cf4ddfc83206d5403e5dcc964cceb6d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d95806c6e2ab2a7faa35ad3e8531de2d9263db71ad764f20876075d0b7cf8ee7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b8ee1a878f45ea44b7497241f9848086be764b3ded02c646242ec3f97cb26715"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b0806fc89befe663292fb806278efc9bbf5382562b8dfc71f411c86332fcad5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ce79a5ef4f6bd3dc0a9dfb830f38c2d196d132d329eed15c9a4600a8d0f6ae6"
   end
 
   depends_on "go" => :build
@@ -28,6 +27,9 @@ class AwsSsoCli < Formula
       -X main.CommitID=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"aws-sso"), "./cmd/aws-sso"
+
+    generate_completions_from_executable(bin/"aws-sso", "setup", "completions", "--source",
+                                         shell_parameter_format: :arg)
   end
 
   test do

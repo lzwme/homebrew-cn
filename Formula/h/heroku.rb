@@ -22,7 +22,7 @@ class Heroku < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     node_modules = libexec/"lib/node_modules/heroku/node_modules"
     # Remove vendored pre-built binary `terminal-notifier`

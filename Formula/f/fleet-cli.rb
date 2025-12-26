@@ -12,12 +12,13 @@ class FleetCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0bd5f66abe885a73cf5d8687ee1ddf464ce25b357a73d6d7e82ab9357371d021"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c9af480fac1f38d90d80490650e628ba43a89a05214f5de12b7f24cdfc7401e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "beb7d3d45c4bcd4f17b46436779501a59519961ab339c1162d918000fdfa3a95"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0fd9766cce33257fe91269b5d911eeda75e13d0e1ab864728dae6392fdaa7eab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd1b9db4ba6ad2f2d289595744a1f5b3d5ef96ff469f93b1c194a777b38b1789"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3d511377787600be65b2a0ef5f236b58252d2476e4f5070a7985a3cda1b422b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f2de638d5efa8d059b629fd47bfe67e7630ea189966b058be54f13200e77cb3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73da9bab780aff6763dd614906070318700a35fb8c1f63bfd79647c4f82c180c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad0b65c08fe426b69c61d4bf384a43269778f90f15c11a234d4162cd06898fd1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eb51ce36076a3430a4bddd8b153780cb25388c6e060de1a039e7899824764878"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9e28f6e88ad7e052e4c2ca872734b3ec6e73a1d02332d800dd567cff70cb3fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8203649b7ed0c07551d639f3e687bed8e82a6939c31c759e11b82a9642774ebe"
   end
 
   depends_on "go" => :build
@@ -30,7 +31,7 @@ class FleetCli < Formula
     ]
     system "go", "build", *std_go_args(output: bin/"fleet", ldflags:), "./cmd/fleetcli"
 
-    generate_completions_from_executable(bin/"fleet", "completion")
+    generate_completions_from_executable(bin/"fleet", shell_parameter_format: :cobra)
   end
 
   test do

@@ -8,12 +8,13 @@ class Kubebuilder < Formula
   head "https://github.com/kubernetes-sigs/kubebuilder.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12ebb56f847ad9acba38ec8707b0e4127207d305de8ed108679d0cbc348e3fdc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12ebb56f847ad9acba38ec8707b0e4127207d305de8ed108679d0cbc348e3fdc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12ebb56f847ad9acba38ec8707b0e4127207d305de8ed108679d0cbc348e3fdc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3a1b98bbd0207d0e2aadacac616a535cad6853a76299a291041ad258eb095cf9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "78af0f76b525a9313733ca38692d5bfb122b51cc540037ba45d6579df14137be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e24bcf8fc4d65e14803f9a704c17b9e036880b042290491b2c8facc5639b71d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "491a6bd03409c9c3c3a7aba37713742dfff02ea98a867b601a8946f85d452c25"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "491a6bd03409c9c3c3a7aba37713742dfff02ea98a867b601a8946f85d452c25"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "491a6bd03409c9c3c3a7aba37713742dfff02ea98a867b601a8946f85d452c25"
+    sha256 cellar: :any_skip_relocation, sonoma:        "68ca4eccbb5f2fdcba3703eae8321406cdaa108825cf7e91a29b62e72034938c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "77b1473ec59a4eae5b98c727ce090582cf494a2278b82a55a5c9568d7e86b9c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f735e9f9ff5ac7a383b9d53237744a10eb19ee582f2e0e2958b0a467b21471b1"
   end
 
   depends_on "go"
@@ -32,7 +33,7 @@ class Kubebuilder < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"kubebuilder", "completion")
+    generate_completions_from_executable(bin/"kubebuilder", shell_parameter_format: :cobra)
   end
 
   test do

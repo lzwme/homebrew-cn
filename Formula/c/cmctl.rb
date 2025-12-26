@@ -7,13 +7,13 @@ class Cmctl < Formula
   head "https://github.com/cert-manager/cmctl.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "89ef6ff0e9885b526ab3d84f5c6db013c2214267c64811f45c968032dc915d81"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0acd013714e2ce5175f24b1c5092017de5adc233c7f22268597a24521cb3b506"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f5129a1f9548870ca527149286f7ede6b2597db80d222a15b638682f4fa45cb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "14fcef525d7f0e747c1e26b2f2cd15022c5f4c8caf43f092e4315b0cdc3ebe3e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5c576f8f56fa35bfa56a6b10d192464bcdf45a70b9276fa428a0a82b6679eef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "201aed9e902e52062a6cfc63888056967554be57ede6d2da1f7340c185cbd51e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d261e97e575479d5b88fc0d138a497be6aa7815e5b7d566e0e2a11fc48deba1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0a72773524df6677d6bdc0531ca49d8a1a8774811bc243fcf68a0cfa165a29d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "96f6032892618ddaa22a270e58a6dfdb8577547c45b00831990cb5d98f0b2913"
+    sha256 cellar: :any_skip_relocation, sonoma:        "736e1fcbaefcfc1e055ee72f6ac1dec0ed2e971c644f0a10c4172ea79061bfba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6a14005f4a18617f2dc2f631eeedae85b11a9b3a9cb48962940c895919b3fed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d65c0f7dcc02e285e82c0bb3bbe2e327dc4303cde2d9c656bc7f4f5e9924e1f1"
   end
 
   depends_on "go" => :build
@@ -30,7 +30,7 @@ class Cmctl < Formula
 
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"cmctl", "completion")
+    generate_completions_from_executable(bin/"cmctl", shell_parameter_format: :cobra)
   end
 
   test do

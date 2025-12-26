@@ -7,12 +7,13 @@ class Ctlptl < Formula
   head "https://github.com/tilt-dev/ctlptl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8695380c3a5fa85d38fc375e58cd2f8f44d69bc601d9540b1bccad55071f6258"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5477cc39499d5642a04ef246262a0a448026479aa8c5b1f0445a88bc9f396e97"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35e1791ff8f1ff4ed8f0e55f50589d85589505f0aee19c232b1624b79c026e31"
-    sha256 cellar: :any_skip_relocation, sonoma:        "43c8008112bde8e8ab8e5345925cbe1dfe8f19dc01a2bdc8e748a3ff863cdb47"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ad5a5ca557399bde01998cb3f7427b8e2b883d634f3a63d09f99603785d0977"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51c829e2de7142b924f4c33e97ac2986b32d969fe5be28eeb593a95c6d49a1db"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "72662a0048e6407fc05e219b1d62b371e796db438dd2a3de7ae899d92eaf0cc9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2f3d3b470598c93210c4fcbb5b76b37617d7e33093c8dbe6e384b68af613d90"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06306bb8bbd76a8583aae8a4fecc341e5a337a0d973109cbe4d8fd21a692dfc9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ad043d5275a8cc7acdf8aca4b04a1bdcc1a1a7b78fbf695ec952cab2dc0612ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0875e166067afa21514d29d3f6b7bd1a71e10bacd6c3bbe1ab7d7095876df6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e17e64ccfc23bd4f0b50af0f2a56f493dadf85d3c714bec44739d96bfae8dbc"
   end
 
   depends_on "go" => :build
@@ -25,7 +26,7 @@ class Ctlptl < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/ctlptl"
 
-    generate_completions_from_executable(bin/"ctlptl", "completion")
+    generate_completions_from_executable(bin/"ctlptl", shell_parameter_format: :cobra)
   end
 
   test do

@@ -13,12 +13,13 @@ class Clusterawsadm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1efc88576eb2aeb8550ae8b0f80581562879a31c0c9a10ecc13a9a7cdf8f689f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8c6afd16a182d88113af661e4d3b0ae2fa4abf7783d3553cec341624c45cd23"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42d53101223b46b267d4c76594c0b251ec31be6d79e20c558ad508c13b680ab4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ded8fbddb7fd4715741ee45abb7b2d8bc85ef18f895dfeb524489a290656c5d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "25cef8c09625d0dfdda1519117c89ef1bc2a3a8727934ad9185916854fdb8cd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4465ab5739556ea147170d6ac1815f49e1d1b2262bb9d945b1e6b049eee3bedc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fcfa67441fcb063bcc8a32c50ba98b6b568df0cbb3a3bc575b313d4ab4133aec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99de2bb0e849f33ece980414f90341680580ae6799966ae638f69bef60b93ae1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b042e3e72aee33d204019778253ab63ca06cc6ae2a07b075f9d2f1678d4b8cd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0a3dd636de8ffc566d030b2145df7ddbc45b71c62bc4ece98bf6f8add406d7a7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cde735b325d9de83a1772212af642e9f83e877f61fd880e03b7e183858c90765"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "731c99329e7717d54255710599e2109d37c9458606f5b4da1c4fceaef6cd6703"
   end
 
   depends_on "go" => :build
@@ -27,7 +28,7 @@ class Clusterawsadm < Formula
     system "make", "clusterawsadm"
     bin.install Dir["bin/*"]
 
-    generate_completions_from_executable(bin/"clusterawsadm", "completion")
+    generate_completions_from_executable(bin/"clusterawsadm", shell_parameter_format: :cobra)
   end
 
   test do

@@ -6,12 +6,13 @@ class Gotun < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5bcf437b8bad68fbd4a99c5bfadac03bde329a346b3bedcc529e69499f135c77"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bcf437b8bad68fbd4a99c5bfadac03bde329a346b3bedcc529e69499f135c77"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5bcf437b8bad68fbd4a99c5bfadac03bde329a346b3bedcc529e69499f135c77"
-    sha256 cellar: :any_skip_relocation, sonoma:        "68aa1ae0851c6122f9a2b3a073cb9023276b7c098d0559151375b8f0551869ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bf22d6d937a3f19186e1aebe7007371cc7e5f588798e1b06416b1c35989fb11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d51f705ebbd925d58bebdc5dc3de337668c33661bf33746f73ed175770acdb1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b8bc4070d813f88b617d416aa857350dc0a87b00eca0c3f483e3a0a07af85992"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8bc4070d813f88b617d416aa857350dc0a87b00eca0c3f483e3a0a07af85992"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8bc4070d813f88b617d416aa857350dc0a87b00eca0c3f483e3a0a07af85992"
+    sha256 cellar: :any_skip_relocation, sonoma:        "043a8dc7c1b2d8edae0b1bc066dd7cfbf7ccc7837174b90ed15e3d22fedf9496"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "23a639c64836c3388aa5a14bb3bdd2722f25d3584a66e5a1fac61d85f517eb7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c1016d55e8e2c944d509f76cc724ee0a2e4e38da3df6f333f73c04f483349e8"
   end
 
   depends_on "go" => :build
@@ -19,7 +20,7 @@ class Gotun < Formula
   def install
     ldflags = "-s -w -X main.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/gotun"
-    generate_completions_from_executable(bin/"gotun", "completion")
+    generate_completions_from_executable(bin/"gotun", shell_parameter_format: :cobra)
   end
 
   test do

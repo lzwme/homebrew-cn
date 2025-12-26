@@ -12,12 +12,13 @@ class GithubMcpServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a5edfac8ad816135f623279ab49d427da88b29927237d88637d8be453dd77f89"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5edfac8ad816135f623279ab49d427da88b29927237d88637d8be453dd77f89"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5edfac8ad816135f623279ab49d427da88b29927237d88637d8be453dd77f89"
-    sha256 cellar: :any_skip_relocation, sonoma:        "05dab68bffbf06e081ed3a5694c2fc43722f9b51b52783986d3284da5dbd2cc4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0a7b3be5a1cf03b440252d2fb5ad7e9446ce03eaf997c53a87aec7192ff6341"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32344d0a30062ee9a637eedaf61ea6def0b72f04ad105edf80dddedfd6b642ce"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1917effd721372ed64a86731b4bf558a8ade562292c0fdbc072606c73edfc564"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1917effd721372ed64a86731b4bf558a8ade562292c0fdbc072606c73edfc564"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1917effd721372ed64a86731b4bf558a8ade562292c0fdbc072606c73edfc564"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7e52edc865f3032fe8617cf6bc11a0d2554f907b08fcf51ce62e27a28177ff01"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b463752f1cbcf2f98b30f5b038973b676d891e7d3a3d21c6a437020a6f61432"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46d92cf534bf413426496956fc4f1d428145cc09720ec396b6be48fe2bfd6ed8"
   end
 
   depends_on "go" => :build
@@ -26,7 +27,7 @@ class GithubMcpServer < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/github-mcp-server"
 
-    generate_completions_from_executable(bin/"github-mcp-server", "completion")
+    generate_completions_from_executable(bin/"github-mcp-server", shell_parameter_format: :cobra)
   end
 
   test do

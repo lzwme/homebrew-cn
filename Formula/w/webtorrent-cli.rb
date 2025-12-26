@@ -28,7 +28,7 @@ class WebtorrentCli < Formula
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
 
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     nm = libexec/"lib/node_modules/webtorrent-cli/node_modules"
 

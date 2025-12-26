@@ -14,12 +14,13 @@ class Kubefirst < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d5d5a9189ea3987bd6e684906bc7feaa24ecc97e91b2fbb278fff588b8309cf5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7952f84e2b24a544cc3b0a64b30349ad5915ef03856d8b9f47c4784e98b41144"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4ab16d887637a3e8b656d36a839e5496e5b37b040ce1d7f4a7bf85c9aba50ce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a4c121b6008fa8888b35dca21d034b74423aa472560ddd7057282eea9d5426a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "05b7dfb23e4bef35a50db2397656881fa11e75c8e3dcbcb44fe77213ce82ee7d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "176c6167e25dc1e9706e2985a9872681a77f9edbc3c60b008b4bb5fd0d974599"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d87dfce9291db445589af7261ae19a4c671d48656c3cd40bd4d69896a045bfa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8bc5e0284b97e24a0c41b858ed427e9c5bb82b120e8249aa346d47b487a8483f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f95da4ace3bf2f4541eecd67a84ad2af1d94aadb3d85da3bc5edeb300d1cb054"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8b4340b14799c843882fae04b5c598ebaefc42d22d228d221126619191c53995"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a20afb7b4daa48e7ca61afdce4ed08917cdd99991f005e5fd65bdf7cf4c948d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa05ad28b525df7fba36f7b910aaaa3584f16ef4651426fbf4a3b42182f9a8d3"
   end
 
   depends_on "go" => :build
@@ -28,7 +29,7 @@ class Kubefirst < Formula
     ldflags = "-s -w -X github.com/konstructio/kubefirst-api/configs.K1Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"kubefirst", "completion")
+    generate_completions_from_executable(bin/"kubefirst", shell_parameter_format: :cobra)
   end
 
   test do

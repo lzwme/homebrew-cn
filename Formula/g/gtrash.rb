@@ -7,14 +7,13 @@ class Gtrash < Formula
   head "https://github.com/umlx5h/gtrash.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "36c16ed00744a249888b082cf1beae2498baf11f9f484e52f60bbac02e75b28d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "857a779ba0bfda17f825bd37e0c694b39abe6c85ff518432e0904026643fa9d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "857a779ba0bfda17f825bd37e0c694b39abe6c85ff518432e0904026643fa9d6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "857a779ba0bfda17f825bd37e0c694b39abe6c85ff518432e0904026643fa9d6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3596f9c58e086381b19eaf305f014e68f6f000fd7ef05a074f5531f474dccb15"
-    sha256 cellar: :any_skip_relocation, ventura:       "3596f9c58e086381b19eaf305f014e68f6f000fd7ef05a074f5531f474dccb15"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f999d88ee8f19088384800b64e9e9924df91ecff3dd2db2b674f07f3d6bc808"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3e297de1658a618cb06feb006a9a5498e313aad3ccfcecc11430ef645f129fe"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb3b1bd8138c592581fc7ce7f3258e8cb63f0b249924bc868e73f24d6ddb2738"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb3b1bd8138c592581fc7ce7f3258e8cb63f0b249924bc868e73f24d6ddb2738"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb3b1bd8138c592581fc7ce7f3258e8cb63f0b249924bc868e73f24d6ddb2738"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3fcca14d1153b9a849fc117ca195c626be58f2466c46684f2cfd38392a6012ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fff31885606b9a3cf5642f91fdb40529488b74ff646913a72577ef156c31d59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e639a18c6dd01c500543db61e10c3588abf938d46687d36a14be74aff27cc07"
   end
 
   depends_on "go" => :build
@@ -23,7 +22,7 @@ class Gtrash < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601} -X main.builtBy=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"gtrash", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"gtrash", shell_parameter_format: :cobra)
   end
 
   test do

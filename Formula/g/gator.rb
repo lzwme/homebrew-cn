@@ -7,12 +7,13 @@ class Gator < Formula
   head "https://github.com/open-policy-agent/gatekeeper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b24e0539f519252f6635172cfa3784da34be9607838fbd8c0f37a47c117121d6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e2351a4d0d4163f7840df4e7d0fd9463dbb6fcee5559910535d7493406dfdb5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85521ed59f263bb188e2efd5f28cf4ad12ade4e810d476c307e25e9f436536af"
-    sha256 cellar: :any_skip_relocation, sonoma:        "706da3cd2d1fde49ea2951ef22c710f5432c33c408da2ffde1eccdb6a662f614"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "320923754a985e6fd15bdca53c8e34d2cd0312bc771e1ea6f4660df9545bf8ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3e24ced059fcc38ccd8f9c4d55486005a43de840a8f945f4f990ff8f9f7d792"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd01173581a0bdc7578d14bd531b65efb84e804a01652d35d8274c638acd102e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf8d46c3f835c40a9c557895a8643c7e4935874c5ce231370dcf122bc6d6ca56"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "328c00ede71cef6304cbbdf4ec60eb37c317a0d68269fb0c146b440c812f786a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d9c3268f584d90831bb6007fd76ca04dc4b4e2e628bf8ad02e3addfc62d3f4ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4436e79ddf336e381202723c0c9221fe69ff5e11df574e77b5228b6de6e984ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ec2e2065712f7ce6524ef29ef34094923e59cffc0863832ec4edfa424b3c6bf"
   end
 
   depends_on "go" => :build
@@ -24,7 +25,7 @@ class Gator < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/gator"
 
-    generate_completions_from_executable(bin/"gator", "completion")
+    generate_completions_from_executable(bin/"gator", shell_parameter_format: :cobra)
   end
 
   test do

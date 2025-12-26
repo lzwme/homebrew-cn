@@ -7,12 +7,13 @@ class Deck < Formula
   head "https://github.com/k1LoW/deck.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f39c43993b3b43ec5056c0a9b24d3dc4b4a5321e5d12f8dfb2f8aab5fd2a426d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f39c43993b3b43ec5056c0a9b24d3dc4b4a5321e5d12f8dfb2f8aab5fd2a426d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f39c43993b3b43ec5056c0a9b24d3dc4b4a5321e5d12f8dfb2f8aab5fd2a426d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b0fc45fc6306b86c2a374c35498269ffacc2706fa1a5315b499399726ed0ec21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "168f3636894fcba8844201e6595b14a6bdcf3b8afd6fdcc8d95a49cdcdded4cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe2444b3939c4d30d14708cb46055b2382ce6481e470298052e25ea64c78fff5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f6f519097b7b3ccd18dbe4162cf4a97cf2db90791fd2d87277e4e3ab3b5a143a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6f519097b7b3ccd18dbe4162cf4a97cf2db90791fd2d87277e4e3ab3b5a143a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6f519097b7b3ccd18dbe4162cf4a97cf2db90791fd2d87277e4e3ab3b5a143a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cf04d283611071f281fa40d290226415f3eeec080f907920f6617acf47465a1e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "74af4a7f55c63705d3ca20fb99fb37bd007f6f8031428ffa7420cf0c1b97144f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bedf8cbe3c8e7a1884f45f5892817cedd44197b829da627dc7566a1123638bb7"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,7 @@ class Deck < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/deck"
 
-    generate_completions_from_executable(bin/"deck", "completion")
+    generate_completions_from_executable(bin/"deck", shell_parameter_format: :cobra)
   end
 
   test do

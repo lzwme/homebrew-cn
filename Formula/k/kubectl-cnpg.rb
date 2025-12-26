@@ -8,12 +8,13 @@ class KubectlCnpg < Formula
   head "https://github.com/cloudnative-pg/cloudnative-pg.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ecf5cdc35416594de656fbbbc23bd7f9f3d4412915084fafe9022311cf654cc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b38bbc16f08d9010097b9b564997cfe5518097e836b4435b84519a11a0a41f75"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a65443490367afe7aa543cda41a164c13d0f80ddf52f778c088e2829d0983190"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8454f4756064ba41e819d237cdff2bcf9347122181d6f13e001e3e775eb5dc04"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1218c05e5919f6a3725f0a652a81b7627799d36c8749ab6f44e82fb6fbc76f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b77d43ec7e979d0c802000de5c2165b9035d8f7f8bf6c99d5f2a3d65aa42c7e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4acd9b902c8d1a8de896b1b9f8d3496562cbc777c9cc3af62c04c6244490cc51"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e5c5e274901fbc7fd4e0da0d4babee96778604b636fb9219e8a57936b310f41"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "689e64a206157534045538dee2778cfcf750c4ad1ce007d40c2ef66c0baa7dd6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ad54820b63e1c500d1f0d923bdd2ea58940e75b5fcbc594fe30ce977a0a11fbd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3141c9f96f0c1d110a52051135775217c6cde6752aab7717f691be25d1b7f572"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fc75f49da81511a3d323abd96d33d174ef14dcb82cbcde0a0ddce775242dd80"
   end
 
   depends_on "go" => :build
@@ -26,7 +27,7 @@ class KubectlCnpg < Formula
       -X github.com/cloudnative-pg/cloudnative-pg/pkg/versions.buildDate=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/kubectl-cnpg"
-    generate_completions_from_executable(bin/"kubectl-cnpg", "completion")
+    generate_completions_from_executable(bin/"kubectl-cnpg", shell_parameter_format: :cobra)
 
     kubectl_plugin_completion = <<~EOS
       #!/usr/bin/env sh

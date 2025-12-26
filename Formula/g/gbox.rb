@@ -6,13 +6,13 @@ class Gbox < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f399daa6aae8a063190ac9a538d27602155807be54656de90f2fbb86925fc660"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "479ed25fd38584e2210bb465ca4ca05e84a5b3d48929afd4d3894524d00d66a5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf2ff6e59adeef83fda1b5eddd0c81913b2a59dfff192f5c86715b895ee02ba2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "07359e14d74e1b687703087601323dc9d353d41f48db17c1e104b43342658887"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "df3fe03b62172d08ad7f3f26b6e4269af312077348633302b3ce4402c494545b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3293249ed91dd941e505dacb1aabfdf8ce90be3d9fea86790ccdc3b24c65970"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "011e64ea35e60795521020a58ddece288cda2aeea5ab3d9c17b0708ae3b4f14e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c73213b8085feb62e789eb3168645c386f82dc4d9e7a1249f856bea7b2e0b8ea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b56c45c820c82c226dd8839e11d65b7d64fb5dd03c414c294dba87068717008f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "81fb41cc0a5ebea3de86eb7cef678d2bd209c837d5311e90bcd640974cba2373"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "757f4a545764e0e23eb71092bd773ecd70be2a4f116e82e332fa87aeb35093d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6707054c068ff37ef549ae54f40c0604938fb28d1ab4afd880b9db1ac2b83913"
   end
 
   depends_on "go" => :build
@@ -24,7 +24,7 @@ class Gbox < Formula
 
   def install
     system "make", "install", "prefix=#{prefix}", "VERSION=#{version}", "COMMIT_ID=#{File.read("COMMIT")}", "BUILD_TIME=#{time.iso8601}"
-    generate_completions_from_executable(bin/"gbox", "completion")
+    generate_completions_from_executable(bin/"gbox", shell_parameter_format: :cobra)
   end
 
   test do

@@ -7,13 +7,13 @@ class CloudProviderKind < Formula
   head "https://github.com/kubernetes-sigs/cloud-provider-kind.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8caf58466a34f0e8eb819cb3d7a3fc02dbeb64d4e2857ed490b52102d5193eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6924a82e503920b46e03603091e86474e9b263a0b683687719e210e3fedb6886"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d719a91c18fb84bfa954d71d01b9dc592f2c5b1ca9f009e6424872010da7b311"
-    sha256 cellar: :any_skip_relocation, sonoma:        "da4719406822637d495b03e399015d5b874ace96fd2c25ff29bfecd6f88381a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a97ea2782cc52cbf4bfc29e09c7ce8616437d9356fcd22154677c5d6c11af959"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddc61e15b7aa0dfa19b57ea903ee5b0d31384fb663aa6e61a87315b4d644cb35"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c9a8248d6c8b7b94c81abb21d2595527ec32a8bac75ac5595476bef075feb03"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f71abaa7663200092f8b198f09930bc311b811be957e26adda42b818d069ae4e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "685eb50040567782880926ab4b29337b1f945ff8db7e1532a403eae1b2ed2c74"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d4a72446756aa5a41f10a1ff78861b6630ace289acc0896427557bf8884d80ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0380652e2cba6d08efbd5a1f8c0bb8c7134e2fe92627ca67ead13a04189ff66c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ea290e4546708f40d79a226969f39b33387e7658d6f0f736d375737cba30bdf"
   end
 
   depends_on "go" => :build
@@ -21,7 +21,7 @@ class CloudProviderKind < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"cloud-provider-kind", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"cloud-provider-kind", shell_parameter_format: :cobra)
   end
 
   test do

@@ -24,7 +24,7 @@ class Pandemics < Formula
     system "npm", "install", *std_npm_args
     # - call install script manually to ensure ENV is respected
     system "npm", "run", "--prefix", libexec/"lib/node_modules/pandemics", "install"
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do

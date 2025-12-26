@@ -15,12 +15,13 @@ class Hubble < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "58d4cb6cbdbb904ff69d121952ccbb455ba0a1ec8e6e4db3ffff6844e248a4a6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88efcf64cbc3a46826bc123b8477cee5ce8984ba74bfad3997f110f2d75b7db1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1563dd7c76ba9493be4e5af7799dc72becb2567a46b8920766f49922363f00ff"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f571762aec13934cab39afd4283f4111284b1ae1d1aed13857a0448df2ca6ca4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "623c7b52005a50784c97d3796012afa82f122c2830b5c2bf2f5f5c65a41791bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e15fbbfb6c90d55d6c75dafdc311944b5d3aba47c8877f27bdebb38066e531aa"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3b501e65a0dc82794394121c9710279b14b8b637712c7cc9733de93a1c41e7f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "286d46cf7cafc6be534e0ab871469511ee925ecc159acdd0cbd437a22f4e9613"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad58b341b833d45fd40a05f4d1e4b6b63c10f23354ac1c2e0228533ef09a2171"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f86917ad5249cff540ce900bb127fb195289f30c0b06a57914967d5146ddd7f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a8a86fe61bdf7f058f6554796b2066b6af56ac4d8455f20d4090d7e2697a458"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cf8a337b9932dc7d26de629b2f7f73c2d68f7720414a656d8e19e076d5b21ef"
   end
 
   depends_on "go" => :build
@@ -29,7 +30,7 @@ class Hubble < Formula
     ldflags = "-s -w -X github.com/cilium/cilium/hubble/pkg.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"hubble", "completion")
+    generate_completions_from_executable(bin/"hubble", shell_parameter_format: :cobra)
   end
 
   test do

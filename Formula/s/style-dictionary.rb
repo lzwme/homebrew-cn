@@ -13,7 +13,7 @@ class StyleDictionary < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     # Build an `:all` bottle by removing example files
     examples = libexec/"lib/node_modules/style-dictionary/examples"

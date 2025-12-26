@@ -14,15 +14,13 @@ class Hof < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2871a88c2a9de3ed790e3c6ef7730a9932adb5ca0d918b60836e6cfda1e6e6f0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e5275eb22672ae3f0bcf884becc77d6b34eda2b7ba84ffd3fe562fddbc3d5e5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e5275eb22672ae3f0bcf884becc77d6b34eda2b7ba84ffd3fe562fddbc3d5e5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8e5275eb22672ae3f0bcf884becc77d6b34eda2b7ba84ffd3fe562fddbc3d5e5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "96a01bb5adfdee2ac9d77baf10cdbd99682f95e487ea6fc9b0a0be59d3492c19"
-    sha256 cellar: :any_skip_relocation, ventura:       "96a01bb5adfdee2ac9d77baf10cdbd99682f95e487ea6fc9b0a0be59d3492c19"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0247c192be4a3d799e18e2c21587395e8294afcbb05daf3f2f91435f93e16743"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1649592d767a8d06f0db43de77032c854168d2626ba0113650942c1d3221e935"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9646fbe9aedd3339cc3502d4dd1217c6bd8f2a207e17f2d4aee664b7e60ae281"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9646fbe9aedd3339cc3502d4dd1217c6bd8f2a207e17f2d4aee664b7e60ae281"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9646fbe9aedd3339cc3502d4dd1217c6bd8f2a207e17f2d4aee664b7e60ae281"
+    sha256 cellar: :any_skip_relocation, sonoma:        "054e65b74ca1aebf0351cf1bcf145b7738aec5470c506c62d4b649d91bbc346b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0a4500b2b97316de21efb51fa8f5e7173576f91d80d3a04d2949398145deb12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4397be59f7e752c110cedf109d7cb9b8442105589f54e82e3e436c0561769fcc"
   end
 
   depends_on "go" => :build
@@ -44,7 +42,7 @@ class Hof < Formula
     ENV["HOF_TELEMETRY_DISABLED"] = "1"
     system "go", "build", *std_go_args(ldflags:), "./cmd/hof"
 
-    generate_completions_from_executable(bin/"hof", "completion")
+    generate_completions_from_executable(bin/"hof", shell_parameter_format: :cobra)
   end
 
   test do

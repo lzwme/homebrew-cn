@@ -14,7 +14,7 @@ class Ni < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     generate_completions_from_executable(bin/"nr", shell_parameter_format: "--completion-")
   end

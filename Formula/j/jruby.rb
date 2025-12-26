@@ -38,7 +38,7 @@ class Jruby < Formula
     # Only keep the macOS native libraries
     rm_r(Dir["lib/jni/*"] - ["lib/jni/Darwin"])
     libexec.install Dir["*"]
-    bin.install Dir["#{libexec}/bin/*"]
+    bin.install libexec.glob("bin/*")
     bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env
 
     # Remove incompatible libfixposix library

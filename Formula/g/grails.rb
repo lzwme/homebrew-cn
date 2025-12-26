@@ -25,7 +25,7 @@ class Grails < Formula
     rm Dir["bin/*.bat"]
 
     libexec.install Dir["*"]
-    bin.install Dir["#{libexec}/bin/*"]
+    bin.install libexec.glob("bin/*")
     bin.env_script_all_files libexec/"bin", Language::Java.java_home_env(java_version)
   end
 

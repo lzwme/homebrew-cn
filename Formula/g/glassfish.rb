@@ -26,7 +26,7 @@ class Glassfish < Formula
     rm_r(Dir["bin/*.bat", "glassfish/bin/*.bat"])
 
     libexec.install Dir["*"]
-    bin.install Dir["#{libexec}/bin/*"]
+    bin.install libexec.glob("bin/*")
 
     env = Language::Java.overridable_java_home_env("21")
     env["GLASSFISH_HOME"] = libexec

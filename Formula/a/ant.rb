@@ -30,7 +30,7 @@ class Ant < Formula
     rm Dir["bin/*.{bat,cmd,dll,exe}"]
 
     libexec.install Dir["*"]
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
     rm bin/"ant"
     (bin/"ant").write <<~SHELL
       #!/bin/bash

@@ -7,19 +7,20 @@ class Godap < Formula
   head "https://github.com/Macmod/godap.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "629dbba49bf9b7ba239e1d7e723203959d3b574dfc7604ac557d9ffd8a1f98c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "629dbba49bf9b7ba239e1d7e723203959d3b574dfc7604ac557d9ffd8a1f98c3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "629dbba49bf9b7ba239e1d7e723203959d3b574dfc7604ac557d9ffd8a1f98c3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fbbb3f3992ac2a0313db8b747053f8cfd831188c4c808edadfa4db44acfb685b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10e278e9ae9e08d8c3200b18fc2b3635d3ac958019d16c67086c2bd155b5679d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf3b6c99b1bfd2b8264b8d297fd0dc689760d886f63a796055f66ff873f9f809"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec57d30d1e1d9e56b83b41007776c1242b3ad7847c2e6883e89888e6297ee34b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec57d30d1e1d9e56b83b41007776c1242b3ad7847c2e6883e89888e6297ee34b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec57d30d1e1d9e56b83b41007776c1242b3ad7847c2e6883e89888e6297ee34b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f348129aca0b2d9029dadcb851a0cba84afc65ba6182f0360f0c1573b62e1814"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4802d15759c392dc4da01682e830ccbc07971e1568d0212a13aeedc257958c82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27fcd80069c66cb432a683f8b26076c550edcc63488fd39331fc76a7e2ae1483"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}")
-    generate_completions_from_executable(bin/"godap",  "completion")
+    generate_completions_from_executable(bin/"godap",  shell_parameter_format: :cobra)
   end
 
   test do

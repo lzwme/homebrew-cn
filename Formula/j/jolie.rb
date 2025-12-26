@@ -16,7 +16,7 @@ class Jolie < Formula
     "-jar", "jolie-#{version}.jar",
     "--jolie-home", libexec,
     "--jolie-launchers", libexec/"bin"
-    bin.install Dir["#{libexec}/bin/*"]
+    bin.install libexec.glob("bin/*")
     bin.env_script_all_files libexec/"bin",
       JOLIE_HOME: "${JOLIE_HOME:-#{libexec}}",
       JAVA_HOME:  "${JAVA_HOME:-#{Formula["openjdk"].opt_prefix}}"

@@ -7,14 +7,13 @@ class GoBlueprint < Formula
   head "https://github.com/Melkeydev/go-blueprint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "518ba176f2365fcba2c62d4f7953a95e576248b7254c69f88a02a61754396c7c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f9ef29a931115b5b44f61bf4cc1582fa48fde680e05f0111634c216e65abd66"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f9ef29a931115b5b44f61bf4cc1582fa48fde680e05f0111634c216e65abd66"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0f9ef29a931115b5b44f61bf4cc1582fa48fde680e05f0111634c216e65abd66"
-    sha256 cellar: :any_skip_relocation, sonoma:        "98b590e460f2a77c655783bf7d3a12d2228ea8e8a47a0b70cd03ad1b110f8e10"
-    sha256 cellar: :any_skip_relocation, ventura:       "98b590e460f2a77c655783bf7d3a12d2228ea8e8a47a0b70cd03ad1b110f8e10"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67d5c270678754708d5eec5561d7b24dc4ed928c638a60548e72ea28466dbd98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0bb3805c4152579c6b594374b5aee19b00271b0caf8b2465fe5cded05de73a8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42adecab62200e2165d945a5c3b76e4f6cdec39a6a48e8935f6bbf14d86c16a9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42adecab62200e2165d945a5c3b76e4f6cdec39a6a48e8935f6bbf14d86c16a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42adecab62200e2165d945a5c3b76e4f6cdec39a6a48e8935f6bbf14d86c16a9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "663fef6abed7598105374838919cf7e37832c6a0ee4b6eec64a9ff6b8277b470"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f1d443b7345a6939245e91d96bca1eb63d704c5144207b2f82f2541ffe7277b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b9d52610b84ad4d63ed527aa5e688980ba56aaa5ffa80bdd0dc5d9c0f132b87"
   end
 
   depends_on "go"
@@ -22,7 +21,7 @@ class GoBlueprint < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/melkeydev/go-blueprint/cmd.GoBlueprintVersion=#{version}")
 
-    generate_completions_from_executable(bin/"go-blueprint", "completion")
+    generate_completions_from_executable(bin/"go-blueprint", shell_parameter_format: :cobra)
   end
 
   test do

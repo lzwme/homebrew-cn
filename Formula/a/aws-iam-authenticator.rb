@@ -16,12 +16,13 @@ class AwsIamAuthenticator < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6455ad58ef02d09ba083e540d15f5fe40ea3c6b187d8efb244dfd042c0508c3a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad8777b161e0c913cfb29ef68068ba58282f7c9dacd77e19f5c1238afa7b92d4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fcc358227d57fa910960033b6d57ef0e0398d450f79cca4e44d78fd95c39f45d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0e194b5c2becb9f20b506b12184c708f56ecede8145e051f8ecd8592bed41401"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "850106bd56bad8ef35356cf1b4779cfdfce6212bb072278c4bdbe17b945a95b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb958ddbdbee980dcff3dd128c41223a7d5b87c07287560de34450b0f38d8553"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4dadcf1ac88b07fc3475c16e1922bdcea9f56879dc0085b6c2f7c12a0d8b920d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52c160f4bc24dd7229624dcc3bce4b595a348f3a07ecb141aefb2a3380732170"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1d8e16791f3bf4c36f91167ada5e8d95744f7a20e7b3d24a596a18eba52d22d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e02d3c25d44d170e96b654ff09a2dad5816aea46ab455e0b67b419a406100fde"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3bd6aa07c64dca80a99e9a5ef5bdc960437a6e75d6005ccda9e8bf3d5225d8f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36babf102f31dfc35d5a2bf5a21036b1d85111d13454769d5745985129a70065"
   end
 
   depends_on "go" => :build
@@ -34,6 +35,8 @@ class AwsIamAuthenticator < Formula
       -buildid=
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/aws-iam-authenticator"
+
+    generate_completions_from_executable(bin/"aws-iam-authenticator", shell_parameter_format: :cobra)
   end
 
   test do

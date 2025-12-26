@@ -23,7 +23,7 @@ class Groovy < Formula
     rm(Dir["bin/*.bat"])
 
     libexec.install "bin", "conf", "lib"
-    bin.install Dir["#{libexec}/bin/*"] - ["#{libexec}/bin/groovy.ico"]
+    bin.install libexec.glob("bin/*") - ["#{libexec}/bin/groovy.ico"]
     bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env
   end
 

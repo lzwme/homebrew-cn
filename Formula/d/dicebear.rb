@@ -39,7 +39,7 @@ class Dicebear < Formula
   def install
     ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
     system "npm", "install", *std_npm_args, *resources.map(&:cached_download)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     # Remove prebuilts which still get installed as optional dependencies
     rm_r(libexec.glob("lib/node_modules/dicebear/node_modules/@img/sharp-*"))

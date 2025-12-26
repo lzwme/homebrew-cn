@@ -7,12 +7,13 @@ class Delve < Formula
   head "https://github.com/go-delve/delve.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc53d895c66bc8b0b0cab4c6d3a0553824916b03ffceb98cdaec7b0800f1cef6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc53d895c66bc8b0b0cab4c6d3a0553824916b03ffceb98cdaec7b0800f1cef6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc53d895c66bc8b0b0cab4c6d3a0553824916b03ffceb98cdaec7b0800f1cef6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b33580d3d374f88e5127e01691cc9849d350124b127c8c2efd6c768881d991a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "86c74235355e1d17ca3f5c4c8a8690c7a8a33aa40723d1183107acd94f641246"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cfdaf3ff6e7c014e645b1a4fbcdcce1eba89fb0b451082d2440d4fcbeb983a3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5aa5bd26c3096a0771e74d85c3d5e9a13334309c852bdfc8d75e1dbd7f991a6a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5aa5bd26c3096a0771e74d85c3d5e9a13334309c852bdfc8d75e1dbd7f991a6a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5aa5bd26c3096a0771e74d85c3d5e9a13334309c852bdfc8d75e1dbd7f991a6a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d52f8dfa8c9d1c452e7a39ae44e26c4d6c71c25b4ae6ef3fa73d4236d87af6ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d06bb24b1ea38509e0edb9ae12e3d95b4007499e92008ca00090cff4f632eb19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38293817ed0c1b51a94b5f5aaae229cfc24b1362157926de6551ad8af46b3576"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,7 @@ class Delve < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"dlv"), "./cmd/dlv"
 
-    generate_completions_from_executable(bin/"dlv", "completion")
+    generate_completions_from_executable(bin/"dlv", shell_parameter_format: :cobra)
   end
 
   test do

@@ -7,18 +7,13 @@ class Gebug < Formula
   head "https://github.com/moshebe/gebug.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "3dd8c86eb0f4477d236cfc124fbc1e79bf3e3314013e09d0371fd767b50370ba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8249adde26fad306299fda82d64cf21407588745684177b189d572b0a6444b27"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "312131ff1206ebcb33f39aeba602acff59393b5990f13e4b2e0cc0888359ee8d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2af5ddd3ad9ce2496222ef20875a777fe323c1e3cc2e3d8e706c1ef439c8069"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e2af5ddd3ad9ce2496222ef20875a777fe323c1e3cc2e3d8e706c1ef439c8069"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e2af5ddd3ad9ce2496222ef20875a777fe323c1e3cc2e3d8e706c1ef439c8069"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e090b2958d2675a75d9a9acb3c7f9097ba545c901b393ed6fba60b3007915d81"
-    sha256 cellar: :any_skip_relocation, ventura:        "c8480f6e58a565ae8fe846128699ffd3a8a3990277468ff89a3a0f9098c5dea4"
-    sha256 cellar: :any_skip_relocation, monterey:       "c8480f6e58a565ae8fe846128699ffd3a8a3990277468ff89a3a0f9098c5dea4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c8480f6e58a565ae8fe846128699ffd3a8a3990277468ff89a3a0f9098c5dea4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "36f607990fbc237fe11cb9c3879ed288ad7c3b1dc780ff20689e3ad6560abfe0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b1810e5b52e8f5f5c9829025e39111c452b3a474fdb171d535d74d9a8492d68"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e4d6f729ca5b8587e2b444e3a4f8f75f1cb6dcb8561f5b40c0f06aa2bb84513"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e4d6f729ca5b8587e2b444e3a4f8f75f1cb6dcb8561f5b40c0f06aa2bb84513"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e4d6f729ca5b8587e2b444e3a4f8f75f1cb6dcb8561f5b40c0f06aa2bb84513"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6bfc58de4fccfcf5fd5bd95abdf39711c8be7604a533ac96b2b979dba1631598"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0bdb92d2b744c85b4b0dd0dc5846b0517716ce8edf62fb2503803e72acb0e07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db711bf46b680fb8cc9281aca1be97b803ac9ea2fe3734f1b736fec989c074c3"
   end
 
   depends_on "go" => :build
@@ -30,7 +25,7 @@ class Gebug < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"gebug", "completion")
+    generate_completions_from_executable(bin/"gebug", shell_parameter_format: :cobra)
   end
 
   test do

@@ -7,14 +7,13 @@ class Cntb < Formula
   head "https://github.com/contabo/cntb.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac6cd4334a1e67e96476b417a43f127487bfdeda97f793e7abd2cda8b205e5c9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef9426c451eb50163a08bb2f0275194db90e6a560582add3fd63f45b758c4429"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef9426c451eb50163a08bb2f0275194db90e6a560582add3fd63f45b758c4429"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ef9426c451eb50163a08bb2f0275194db90e6a560582add3fd63f45b758c4429"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f47955a60a9a69949e5a441a87de1b0ecc29fbad2b5e32a3fba24a7751f08031"
-    sha256 cellar: :any_skip_relocation, ventura:       "f47955a60a9a69949e5a441a87de1b0ecc29fbad2b5e32a3fba24a7751f08031"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "53157a86cb8a7c98d7400dbf0c87c726d85659ae2f1d446285c7c654e7e89d32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a72c88c25cfe526dbcac849cb91034c978c6f207588098e78440410795469e5e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ab5dfa20bc572faa11be29a57a5e472dc1a0f29210026f8558ae8ff1ec98826"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ab5dfa20bc572faa11be29a57a5e472dc1a0f29210026f8558ae8ff1ec98826"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ab5dfa20bc572faa11be29a57a5e472dc1a0f29210026f8558ae8ff1ec98826"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f001fb06386d6ac1e9aa152be2aac1fbc40cd0b7fe9094f8d5537284021087a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3a05bb063c99325120981ba2e1bf55daba26fc46d9e58b9996ca55144b5fff5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b727f7c5bb9baf5aa06f27f07940d1bae368edbdeb7174df834de6ff48fc953"
   end
 
   depends_on "go" => :build
@@ -23,7 +22,7 @@ class Cntb < Formula
     ldflags = "-s -w -X contabo.com/cli/cntb/cmd.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"cntb", "completion")
+    generate_completions_from_executable(bin/"cntb", shell_parameter_format: :cobra)
   end
 
   test do

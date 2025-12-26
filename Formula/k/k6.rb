@@ -12,12 +12,13 @@ class K6 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16d9d5cdc4f7c2a0e2420affbf03a30d8f40f7179069ee636a92dfba1e466ae4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16d9d5cdc4f7c2a0e2420affbf03a30d8f40f7179069ee636a92dfba1e466ae4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16d9d5cdc4f7c2a0e2420affbf03a30d8f40f7179069ee636a92dfba1e466ae4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8e87e08d199ee6ab373625095ffc95f50cb56570465826f3374aec5a28220094"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c9268001ac3541a3b3448401fc6c1d3e851473c91145e5ef437b54964dbfe69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4b39f62d3763e6462dcd0721dbd84393e5c933d62be984e6253c1b5f378b2bc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec275be509f0f1c057d5fa750d32b4fb358a3502093de20d1e598eb279a5aa5c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec275be509f0f1c057d5fa750d32b4fb358a3502093de20d1e598eb279a5aa5c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec275be509f0f1c057d5fa750d32b4fb358a3502093de20d1e598eb279a5aa5c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a8a4da10088f29e01c8308d1601523bd8500f81bb1c3d91ae6799b054f3a0de1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "767ea7d99f5cf847d6066611831816aa18bf6669ba4fb4e35ddacd90c72a1a3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6daf03a8c40ef77b2ab5befeff406882644562d348d141a2eb75970baa1084ba"
   end
 
   depends_on "go" => :build
@@ -25,7 +26,7 @@ class K6 < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"k6", "completion")
+    generate_completions_from_executable(bin/"k6", shell_parameter_format: :cobra)
   end
 
   test do

@@ -13,7 +13,7 @@ class Phantom < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     generate_completions_from_executable(bin/"phantom", "completion", shells: [:fish, :zsh])
   end

@@ -21,8 +21,8 @@ class Fantom < Formula
     inreplace "etc/build/config.props", %r{//jdkHome=/System.*$}, "jdkHome=#{java_home}"
 
     libexec.install Dir["*"]
-    chmod 0755, Dir["#{libexec}/bin/*"]
-    bin.install Dir["#{libexec}/bin/*"]
+    chmod 0755, libexec.glob("bin/*")
+    bin.install libexec.glob("bin/*")
     bin.env_script_all_files libexec/"bin", JAVA_HOME: java_home
   end
 

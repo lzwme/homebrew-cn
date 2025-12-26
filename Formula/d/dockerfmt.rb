@@ -7,19 +7,20 @@ class Dockerfmt < Formula
   head "https://github.com/reteps/dockerfmt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1b2c37874f97f7d25129b70ddb8c74d81bd838752bf52904f69acc25c11c480"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1b2c37874f97f7d25129b70ddb8c74d81bd838752bf52904f69acc25c11c480"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1b2c37874f97f7d25129b70ddb8c74d81bd838752bf52904f69acc25c11c480"
-    sha256 cellar: :any_skip_relocation, sonoma:        "553325e795e1f955251f53fcb2c91e4e24c64b12de9559039c018cf567e68f5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "af8eb457f9132d90da407300218c8b4c641d39db3d0d67d1aabcd117935e993a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e1680a1b9edf2bb8a7656961ac6cc13a5ee126fdae287b7ce0f5157c6ee6916"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "101a5934baacdd9c0eab3b1e9b335818dc1e5938b2cb264183cfa1a8f6dc455a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "101a5934baacdd9c0eab3b1e9b335818dc1e5938b2cb264183cfa1a8f6dc455a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "101a5934baacdd9c0eab3b1e9b335818dc1e5938b2cb264183cfa1a8f6dc455a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "08923cd6b556ad3c8d58ca04e7eda92aae0f5a6d167b275427e09d71c881fd30"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c551d692a59672c995321da96c3209cc3265c9cac3bb69b9e394483201d3a0de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfc5c09a56b3ab87c3a096c66965cedbd1ac51e6322334ec271454b52b9d0931"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
-    generate_completions_from_executable(bin/"dockerfmt", "completion")
+    generate_completions_from_executable(bin/"dockerfmt", shell_parameter_format: :cobra)
   end
 
   test do

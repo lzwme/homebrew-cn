@@ -7,12 +7,13 @@ class HarborCli < Formula
   head "https://github.com/goharbor/harbor-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e78a24b1c8308b67e46f19a9df083a6253e4a33d13df18e35d3a23bdf79043eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e78a24b1c8308b67e46f19a9df083a6253e4a33d13df18e35d3a23bdf79043eb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e78a24b1c8308b67e46f19a9df083a6253e4a33d13df18e35d3a23bdf79043eb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e5da3257ca34c7b9035ae893aac44ce75a1abb8ac92f4255e71cb8dd7b8c35af"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "54f5ae8e66d99a8f9c43412d709b3d159e885a509e3fb3b40216c4b0c7462ac8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c2af0b68ae68bbee178472b06c2b9bda57655c0df2dccd4c7ef90cf075bda54"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0cb769351d63965dce36dd9cffa9bf979e854327ffc1c791e7326a025d72ca3c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0cb769351d63965dce36dd9cffa9bf979e854327ffc1c791e7326a025d72ca3c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0cb769351d63965dce36dd9cffa9bf979e854327ffc1c791e7326a025d72ca3c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f17b25573f1c9f371eacac5b0304d616e7cd24e7e97678c178ff195d501ceb0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d71619dcca7d493e1b86e4d48d55064ef706fe68deace2ab1da9e31595ec31c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bac9abb0a28d26e58e2e8c440c7d1af9c49021eb8b929db4aad51b2981bbb99"
   end
 
   depends_on "go" => :build
@@ -27,7 +28,7 @@ class HarborCli < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"harbor"), "./cmd/harbor"
 
-    generate_completions_from_executable(bin/"harbor", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"harbor", shell_parameter_format: :cobra)
   end
 
   test do

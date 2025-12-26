@@ -2,11 +2,10 @@ class Burp < Formula
   desc "Network backup and restore"
   homepage "https://burp.grke.org/"
   license "AGPL-3.0-only" => { with: "openvpn-openssl-exception" }
-  revision 1
 
   stable do
-    url "https://ghfast.top/https://github.com/grke/burp/releases/download/2.4.0/burp-2.4.0.tar.bz2"
-    sha256 "1f88d325f59c6191908d13ac764db5ee56b478fbea30244ae839383b9f9d2832"
+    url "https://ghfast.top/https://github.com/grke/burp/releases/download/3.2.0/burp-3.2.0.tar.bz2"
+    sha256 "3f5e057d40d2986fbfbebdf7a64570719c4c664882a3fd038ebac5a20326c5cf"
 
     resource "uthash" do
       url "https://ghfast.top/https://github.com/troydhanson/uthash/archive/refs/tags/v2.3.0.tar.gz"
@@ -22,13 +21,12 @@ class Burp < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "a7109191d7db855c62b068e2228f1ad797b593d8004c71716c556e456c7fc45e"
-    sha256 arm64_sequoia: "b2a36bd6d3f368a0118e11ccd0aec2124d23550f3f9ea8c920fb708d6784de10"
-    sha256 arm64_sonoma:  "cc00de279b33f8bf62da8ba1ebdb2296386386f9657e5b6e970eb1077c8afca2"
-    sha256 sonoma:        "227276128efc3606042ac5dfbbbceffc6721b8938433d5537b3f10239d42f091"
-    sha256 arm64_linux:   "42dc8a91df37f4c58af048d4e637af41d4a08bbc999280875daf52a3a08e1a46"
-    sha256 x86_64_linux:  "010eeef54c260dddc609509ad79bf0a30aa2ea18d4e7206c3d7e93cdeea269be"
+    sha256 arm64_tahoe:   "ebb55cbcd5d0a9de3b663e009cd4963aa456f921f2aed92be95f7865aed1d607"
+    sha256 arm64_sequoia: "d6849a3d6b12bbd37eee1954a8da80f9826918e4eebd4dde260c1d2f64010a90"
+    sha256 arm64_sonoma:  "d8666ed44c3c211c796589cd9b5f6dac97d1e2634193b6a1a01d84e472d3d050"
+    sha256 sonoma:        "42b34598cd428004ff751be2f5db279d5cb1e36bbc1e48805a0b0d8e5d9cb6be"
+    sha256 arm64_linux:   "d10d8fc59ad7ce487887298aabe8f1d68cfefdbfff43735bbdf5871311dd48ff"
+    sha256 x86_64_linux:  "f5c4f3ffd0c70162456065c5abbdc737dc757bf1b043168f84bfb3b08405c66d"
   end
 
   head do

@@ -7,12 +7,13 @@ class Hysteria < Formula
   head "https://github.com/apernet/hysteria.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eecc8d7953eeddfd8029cea4415e710baf88dd91a7cb56dd8dac2e5bbe5cdd31"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eecc8d7953eeddfd8029cea4415e710baf88dd91a7cb56dd8dac2e5bbe5cdd31"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eecc8d7953eeddfd8029cea4415e710baf88dd91a7cb56dd8dac2e5bbe5cdd31"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cb5fffbe6c68731d8b21eeae22115ea84600e37648662089c8851ea2c584194e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e836bc634abef47ff748c6ba1adae0477ee3cacc1969c7acc41ed945381392d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3aab74d6349185d6b0f514b611e44f0e5569e4f9c07d14afa75570d35ee0ff42"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ee206f011999467cff5ac4002651dc077c4f66f0cf0c64086098b83e1acb60f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ee206f011999467cff5ac4002651dc077c4f66f0cf0c64086098b83e1acb60f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ee206f011999467cff5ac4002651dc077c4f66f0cf0c64086098b83e1acb60f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9b32f93d5d9f0b2ddae565cc876552da488dbcb8c892e36531ef291e98a4354a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf1220273d9b4569b1250037cb6c75084462a9a81c0b5b0d0ad3ced76a7080a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8fb5cc6d2a466025a2dc85904dc613a8f26ffe57e45bcd139130af211493a05"
   end
 
   depends_on "go" => :build
@@ -30,7 +31,7 @@ class Hysteria < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./app"
 
-    generate_completions_from_executable(bin/"hysteria", "completion")
+    generate_completions_from_executable(bin/"hysteria", shell_parameter_format: :cobra)
   end
 
   service do

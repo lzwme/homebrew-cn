@@ -12,12 +12,13 @@ class HelmAT3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25d677f8f7f6e9f85eb28731e4867a97ea4b0caaecd0d0865d0fbaa487a14d6e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bed5bbb491dd681da80167a5bf297c00e2a1ac6c26fd1d6d779d98d3099d0e2f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30958601a6af163669b3a09e6dc6c7c33aea9934c0402c0cae443bb737581d07"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6f4dcf4620cf4e3108f0334951723449b05e568f39cf93f745486407eb5a451e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1dbfa29938f8c918f92f2e314f9d63c2f7d96711cf35766188b045037efc6e58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63c48822a162ed663d876da6abbca128323d5242663183e56a315ac6cd432a2d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "204902c2af2d77ce6bcad91a9bc280aaed1402c30179a573a811aec7147b6b83"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3d740da22efd1000634940fbf2beb6e9f15f81491db90343fdc405ea1370b8d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24cbe7a36d186c1179622a99c3b7ec3cd137d82ab7acf58e61dc1cf5f4536f97"
+    sha256 cellar: :any_skip_relocation, sonoma:        "79854d6dc9ab27f41270754f96bba3ae31d9063a40fde9733177be4843451a78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5146c418f65d21776b2d6c37f5a58704d2aab553089ecc759dc31d152301b79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a6ab8035d3e050efdad3594affc600e0d6b693813cde95469974ca5bfe9d752"
   end
 
   keg_only :versioned_formula
@@ -33,7 +34,7 @@ class HelmAT3 < Formula
       man1.install Dir["*"]
     end
 
-    generate_completions_from_executable(bin/"helm", "completion")
+    generate_completions_from_executable(bin/"helm", shell_parameter_format: :cobra)
   end
 
   test do

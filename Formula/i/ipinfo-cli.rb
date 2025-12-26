@@ -12,16 +12,13 @@ class IpinfoCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "d4003a3599efd8fae79245cf56c6fc287316e88304e8b01f796c387d4575cef8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0d429542dab200b1fe6efea35c8c1c6af0f619c8b3fb54ebb01953334d6daf68"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "24a4a6cf506fe7c3f61570df82ab98529c08de85cf884fc87251268670e2b322"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a23d240ffde98765e7fe943aa1634f194df0d23cd9160060b892b6554316d911"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a612af30b534c65fa532a52be61ef3b74ced4a579439f90c1cff1200b5c9f346"
-    sha256 cellar: :any_skip_relocation, sonoma:         "93d7de1ed1ffcb8e5e7399debf034c5818874fd09666341ed70d46031d0ebccd"
-    sha256 cellar: :any_skip_relocation, ventura:        "1b62948b8934538adb736f4c828fe28ea5c12598adfa4023af12902d7021db24"
-    sha256 cellar: :any_skip_relocation, monterey:       "77e2425a41302f25261670c67c2d84730e24ec207d2ae7eea3fb22c57e1c4f3a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "df0244e963291a67068c47f729a080c427294d54bcac835814ba450da51b1684"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2880d661339a626ecb23cc58f0049c21f35c1991c1db50b9d40872cb5bac5207"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "629bce3608145a3bad1850c24b09617d223f4307e432b256cafb35a7f1d68bb1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49f5aa2b1f8995258d1afa217a73e990cd054775b09fe062d3e663dd8aa03c2e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "004f55184d0983e4ba071aa51c46eb7f2b421cbb424b88b9a315683aba9e6b71"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3909846e5be7d305fd8b3861957c719fee0a1490950f57bcb499ac6d5e4031da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "239dcc822e7759a8ae57a8df5bf91218e6ab59b5789e64b93bf5be59451e4be7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d357ca2a3418da8d4f16edeca092f2e10a9e30ccd71992f5aeaf5d320773c0c"
   end
 
   depends_on "go" => :build
@@ -31,7 +28,7 @@ class IpinfoCli < Formula
   def install
     system "./ipinfo/build.sh"
     bin.install "build/ipinfo"
-    generate_completions_from_executable(bin/"ipinfo", "completion")
+    generate_completions_from_executable(bin/"ipinfo", shell_parameter_format: :cobra)
   end
 
   test do

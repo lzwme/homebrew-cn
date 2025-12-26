@@ -7,12 +7,13 @@ class Dblab < Formula
   head "https://github.com/danvergara/dblab.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be097cf2cf94dbb10382dc368996a9c95b32865554f1e9a7acc23fa3c9d17e26"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a2e16b662a989bb2d732a07266615f44dfbcb2c3fe3eaf1b32e1f87b1ef82bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9dd0afebfc7e381b9768647680bd8ef9f7e7ff7a5fb4045ae7c37ae0e1f73897"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8378b8e347bddbd141046e1730fa6aeb328e38a0a57d080aaeb7e38c4ba72cd8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "90871ef01ab6711087c15e2492a0c22621887c808ad8e88daab39d34556fdf2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52c4d6943a392e8b2f56ebc43419b71f5fda6390d4cb824fda9fd2b5cf015216"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d43adf54e6fbfe3f960a9bd4bf528858dffa1bb81a851b6a4ca5aef05ffc140c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cea1288d11278beda5ccc60f3a408bda994a6369419bbbec5a0d2c95f2e03db1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ecbc95d339025267a8542c8098302c605ff3321be1e589df9f9c965cfccbca2b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2e920c103d4854a1451be086592028bd97510f06ac1c8eac56d0cab17a9307ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd7b61a08cb70653413b4db05ebe47e49215bd2c23e8d23a3cc1a973e0ef2d40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5737a66d22c3fb01cf61104de5d8addbf9935947cfd8fddfde71792fca629dc1"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,7 @@ class Dblab < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
 
-    generate_completions_from_executable(bin/"dblab", "completion")
+    generate_completions_from_executable(bin/"dblab", shell_parameter_format: :cobra)
   end
 
   test do

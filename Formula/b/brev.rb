@@ -15,12 +15,13 @@ class Brev < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e61bcca8c3dc2ff9e0f98f2ef29fdacf108bf2b15407ddb0da30eea0d8f1a295"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e61bcca8c3dc2ff9e0f98f2ef29fdacf108bf2b15407ddb0da30eea0d8f1a295"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e61bcca8c3dc2ff9e0f98f2ef29fdacf108bf2b15407ddb0da30eea0d8f1a295"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1e9d108663bcd696061bcf92e0bef3f27df240be6189dac0c1bf80f8c1ec3b24"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8bda584583e744917540bb0af8190a37e4f401627629728d61ce9c913e9bc10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9893c428f6ba24ac3668c7f88dff7655a2e9e3279121ff60cd57d7b67f855e45"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ba27dc84997071d831b399765c7056c03b719b8c120881d0c0f00fe16a992d8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ba27dc84997071d831b399765c7056c03b719b8c120881d0c0f00fe16a992d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ba27dc84997071d831b399765c7056c03b719b8c120881d0c0f00fe16a992d8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "474c041572726cb87ed4bbc7833673a1d1a521481485e5196c1634bed5d31179"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18d2aa0576db70b5dedff9f028969eab46e38561569fdd0750013e0790fda06d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3925b8151c2003e0971a59bc72a607603c848861ac34b7f3fabc5365bd1f74c"
   end
 
   depends_on "go" => :build
@@ -29,7 +30,7 @@ class Brev < Formula
     ldflags = "-s -w -X github.com/brevdev/brev-cli/pkg/cmd/version.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"brev", "completion")
+    generate_completions_from_executable(bin/"brev", shell_parameter_format: :cobra)
   end
 
   test do

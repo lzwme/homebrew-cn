@@ -6,14 +6,13 @@ class Glow < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d13f36888a111fc3be1c09e9594718066f928c60fd7a52087888a6947faed149"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "813e4db0b1535807ff2d01f01e45e00958df8e15ed78ed77e81b26634c6de8ce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "813e4db0b1535807ff2d01f01e45e00958df8e15ed78ed77e81b26634c6de8ce"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "813e4db0b1535807ff2d01f01e45e00958df8e15ed78ed77e81b26634c6de8ce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6c5e81f2c3b6dcdbee52aec59b60cfdb61418e240deafce26f45f6b405c6b8c3"
-    sha256 cellar: :any_skip_relocation, ventura:       "6c5e81f2c3b6dcdbee52aec59b60cfdb61418e240deafce26f45f6b405c6b8c3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "570b7b5bcfeb57443f86cd955e8d419dac4de16f855c378cf05badc656e482b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2ff701d58eacc08e527b0e6838462149784ab384a2ac7821bb90f2c5f4f96c6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "405c8ef5d9d73d681262c71f23f0ed7961ba5c5eff080e60b8aa54d26064412a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "405c8ef5d9d73d681262c71f23f0ed7961ba5c5eff080e60b8aa54d26064412a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "405c8ef5d9d73d681262c71f23f0ed7961ba5c5eff080e60b8aa54d26064412a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1520aab400517fb4fc94839296343ef10d585551a37eb36a316722091415fb2f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8abf70a282b522fe4a74596f2520b4cfe0b500904f37e25839b13ce2c875b94e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84ac1b0534794163758eb6c05728732620ff8b595d037fea7052f23633f2f179"
   end
 
   depends_on "go" => :build
@@ -21,7 +20,7 @@ class Glow < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}")
 
-    generate_completions_from_executable(bin/"glow", "completion")
+    generate_completions_from_executable(bin/"glow", shell_parameter_format: :cobra)
   end
 
   test do

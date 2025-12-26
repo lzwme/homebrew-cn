@@ -44,7 +44,7 @@ class Mahout < Formula
       libexec.install Dir["*.jar"]
     end
 
-    bin.install Dir["#{libexec}/bin/*"]
+    bin.install libexec.glob("bin/*")
     bin.env_script_all_files libexec/"bin", JAVA_HOME: ENV["JAVA_HOME"]
   end
 

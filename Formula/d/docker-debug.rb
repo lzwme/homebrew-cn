@@ -7,12 +7,13 @@ class DockerDebug < Formula
   head "https://github.com/zeromake/docker-debug.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "afbd63cd10a73b068298aacc91fdfb51e91dee353432f710abe981017804c1af"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afbd63cd10a73b068298aacc91fdfb51e91dee353432f710abe981017804c1af"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "afbd63cd10a73b068298aacc91fdfb51e91dee353432f710abe981017804c1af"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5f06227dd443be8e30c2c64d16c91fd47ab053fbab87ad0c44eb9637fe84d1e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4339ab5462b42fc79c1504e6e55b8773a40facbfb0619d4d88ef562f37dc4ba9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd5b63ab3c20097b3b4cffe0f6e9b5f163f13dad10da58c26b02516fcf68b46e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0faba1df5f1cadcedabd4487f30a0db88072ee50cd92d095f7366b410fb6c42"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0faba1df5f1cadcedabd4487f30a0db88072ee50cd92d095f7366b410fb6c42"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0faba1df5f1cadcedabd4487f30a0db88072ee50cd92d095f7366b410fb6c42"
+    sha256 cellar: :any_skip_relocation, sonoma:        "978911584a039d17fbc927934d0d9c9eb3477eba58b6ea1df5a461a6f3d4e92b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec74e9da2a07744c7608e482b1573a9178746022cc19ddac7b4c0e7a1f7fc82a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cacde51f354d073566e5f6452a545a0df24ae0ace59d8c2a60adb4954519cdf4"
   end
 
   depends_on "go" => :build
@@ -28,7 +29,7 @@ class DockerDebug < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/docker-debug"
 
-    generate_completions_from_executable(bin/"docker-debug", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"docker-debug", shell_parameter_format: :cobra)
   end
 
   test do

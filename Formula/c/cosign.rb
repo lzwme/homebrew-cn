@@ -8,12 +8,13 @@ class Cosign < Formula
   head "https://github.com/sigstore/cosign.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6353eaffac9f90cd74197456a826dea01dff6af4529d6f87e101130be1e38e9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd5cf37234587d322be47d4dfc426420ebabc3f5ddeed78150d62a8664ee0934"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c991d4f2dcbeb25a1fda9093eccc0c42d35330e20ee9cf46bdd0742f8df9a41"
-    sha256 cellar: :any_skip_relocation, sonoma:        "00ae19185f4448754b16241b44b0e2a000a82efde1b4a719452b5982cb20bff1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba0cb8bc803c38c6edb4916fc83035f1f886d0d725e3c5c31d3dfdc71d40b15c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffcf3b6caf285df88ad2312126161a074b363e6cd7c673b572592dc1f0a80d0e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05e43eb63610a560ec54fc07258efe871992d388a1228145b9b490825f4c7156"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25392d9b659dba84ab091283fdcc7fbc24677cfff856fad59ad042d74161045e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23122795e41f3f33cfdc01a8dff9f241c2dd26d522ec633ce1dae576652fcbc3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6cbde869440b8310f9625473453a373fdf346615ba2395c5cb0ab977d84c9aad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "868625c57c447b7b7f2aed816c835588801debc5614bad695ee88c6757849a9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed86050a57597950e0559dea5bd45675b3980caca91a218ee35b0d343741e968"
   end
 
   depends_on "go" => :build
@@ -30,7 +31,7 @@ class Cosign < Formula
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/cosign"
 
-    generate_completions_from_executable(bin/"cosign", "completion")
+    generate_completions_from_executable(bin/"cosign", shell_parameter_format: :cobra)
   end
 
   test do

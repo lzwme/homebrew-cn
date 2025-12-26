@@ -11,12 +11,13 @@ class KubectlAi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a55f94f1953ddaec0707e1572a6a9537251a3eda5ccaadc5712e85a950453d2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a55f94f1953ddaec0707e1572a6a9537251a3eda5ccaadc5712e85a950453d2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a55f94f1953ddaec0707e1572a6a9537251a3eda5ccaadc5712e85a950453d2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9a1bc2c5fdd677d4ef9f4179d784724c61cfe5e7ec1181238c0f49d81532db54"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb1c4844e7a10ef7fa38f195285900105f84cf388b4a0567ab4a6842130c77dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9282d1dfac83cf8b9bedb6ed2c6e549ee49af76e4d3cef97f36487cd55157d3a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc8ce823e627236a001d5c6570ed3b4e8f6ffdadaae9512c9c172d99c32d4a11"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc8ce823e627236a001d5c6570ed3b4e8f6ffdadaae9512c9c172d99c32d4a11"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc8ce823e627236a001d5c6570ed3b4e8f6ffdadaae9512c9c172d99c32d4a11"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e500e221569afbb81537c72e6af42591169bec835cce80c96e9a2bd5b249fb1a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "07cf3ba218c271a0822d2bc17ba4ea0c425502746dc2269d2de3921b0ec4e270"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "392a25015a5fc821f8523acd4b837fd3d84dadbc94283ea59f79e6e8c95507a1"
   end
 
   depends_on "go" => :build
@@ -25,7 +26,7 @@ class KubectlAi < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd"
 
-    generate_completions_from_executable(bin/"kubectl-ai", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"kubectl-ai", shell_parameter_format: :cobra)
   end
 
   test do

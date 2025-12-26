@@ -15,12 +15,13 @@ class Buf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a30ad357770a0ccab763521523d70da8d33a36788f45eca2b6a7f5a4b4d41a7b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a30ad357770a0ccab763521523d70da8d33a36788f45eca2b6a7f5a4b4d41a7b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a30ad357770a0ccab763521523d70da8d33a36788f45eca2b6a7f5a4b4d41a7b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "43c2a93cce548c9069eb9d2b4a7c1d735044d9f4dc025de986c4be49ac5c8440"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be12ee373dcfe3b3eacc6b9e229de822e5a87f23de4e7c8147246ceecd5adb6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b1dc26fd28f4db6132fc3a5b11bee3a80a1ba96de0af1190e66ea0e9fa93cdd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8cab22e1e5fafd35be9e4b60a1e56005c119e54ee081faf4bcffc505f8fe5764"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8cab22e1e5fafd35be9e4b60a1e56005c119e54ee081faf4bcffc505f8fe5764"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8cab22e1e5fafd35be9e4b60a1e56005c119e54ee081faf4bcffc505f8fe5764"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d5f74e3ebcd384d9ba089f0fb1171354e9fafc1a157c5bb4f159ff520e99f3cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "915f3ef85a3be05299d352d7a2350d03c6d3a38db981fed24cb9b99bc83be59f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a08d5c7b621bfcbcf665c687e5dff4c73ab56e61714af33aa37972df0bc5e3d7"
   end
 
   depends_on "go" => :build
@@ -30,7 +31,7 @@ class Buf < Formula
       system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/name), "./cmd/#{name}"
     end
 
-    generate_completions_from_executable(bin/"buf", "completion")
+    generate_completions_from_executable(bin/"buf", shell_parameter_format: :cobra)
     man1.mkpath
     system bin/"buf", "manpages", man1
   end

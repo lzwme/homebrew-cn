@@ -12,12 +12,13 @@ class Istioctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef42a0632b6af75db64ff065bc21a33cbb46483bbd177450df76432fb9bfff8d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea7b6c79e478e57cb6741c9e1bcbe71d8a62c9ae157b9f112aa52bfc9918c111"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "296132b574a4aec02d870e4895f6ddc7cd35f1ed5c8359d92c60080bd530d741"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d7e28e6311b409168f45a2d1813daba3f6cd6128fef08c44eb910b797bcbd58e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6a18efdd894b67a681621f6d2eed2626621c090f319a9cebc74b4a1bda62a65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f88ca2fa254e557a138658e6facd6cf626f26d54166117aba5e9ccc55930069"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed2988079b8b4c5c4d7248a48a23174128fceae72d0a88c9609f2466d5061add"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f07301b24c65d2c5dc7cb83c698d04a7ed30f1fb2be9b9d5f54d5d4af77bec9c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2ff84a336e13de18b00cfcb7b5ba1d1b573a9386b23def847374e12cc80e3b5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a39567f2dc0f6199515a871fe9ae3ae74bc13f932a5dce7003287f3eaeb8b489"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60f14438da1a5666a3761c9889fddf0da94e7442b896332d7ba5b3f2fc579cb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e94f6555b51fa9021d88d396f4ec657d87b5c6dce96fb855ec6845a2d066d91"
   end
 
   depends_on "go" => :build
@@ -33,7 +34,7 @@ class Istioctl < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./istioctl/cmd/istioctl"
 
-    generate_completions_from_executable(bin/"istioctl", "completion")
+    generate_completions_from_executable(bin/"istioctl", shell_parameter_format: :cobra)
     system bin/"istioctl", "collateral", "--man"
     man1.install Dir["*.1"]
   end

@@ -2,18 +2,18 @@ class EmmyluaLs < Formula
   desc "Lua Language Server"
   homepage "https://github.com/EmmyLuaLs/emmylua-analyzer-rust"
   # The project name is `emmylua-analyzer-rust`, but it contains several crates, not all of which we install.
-  url "https://ghfast.top/https://github.com/EmmyLuaLs/emmylua-analyzer-rust/archive/refs/tags/0.18.0.tar.gz"
-  sha256 "3606ef50a29792b0edd0b968a0fd0fd2c4dc409e639216604f807439e1bd62c3"
+  url "https://ghfast.top/https://github.com/EmmyLuaLs/emmylua-analyzer-rust/archive/refs/tags/0.19.0.tar.gz"
+  sha256 "3d2c49d1851a25bc2dd283fd73d6d3fecb14437d6d17588639a4548edcce2d49"
   license "MIT"
   head "https://github.com/EmmyLuaLs/emmylua-analyzer-rust.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b1e634365386f9d4d138d61c5d183deefccde8f25adfa824eadc05e3ceb54f63"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "442c79fb68464567d4cab165b12c52fcc560a1dcc9fefd4b2964ad15a4ac380b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1cd0b611a1ebafcf42ae17186121e78d81d1cb017839bc82c15cb2f2859cd100"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59092358847db63e9500ad00bc96ee20a6c13a7ef3e2c124fa46bd7c478aaf60"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "38be692287d237ee09432c8c9f77a0a5192e495dde922df8ef1b32a9aaea2b52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b79e10bafb9acc913d5e370d963831a787eeb530bdad60657fa2a6136534752"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ffbe1a47ab3d40e0e69b0661975f02fd968c59ca015961db4b25ed9b095c26a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9868a4735d41a47de3f3b0e4576bb6df5c52e9fc6df4bce2e54f16f2fab1d67"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5566aa65b79953b73241a056d36636fd97c9239c0b9a44dfb8702390e15722b9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a1915e8c1d59fe1251eb1bac1bb14340919d33e36b4946874983f33049b6fc1d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5af7ceee2ebe2f2a5c8cd1442af9f8ff25b769502ab771909744422d6ae5c77c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bf0b71bf8e10ac7105ddb365ac7c03c4370fd961deed93cbcd4427b4028fde0"
   end
 
   depends_on "rust" => :build

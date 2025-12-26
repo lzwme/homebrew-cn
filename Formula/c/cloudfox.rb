@@ -7,19 +7,20 @@ class Cloudfox < Formula
   head "https://github.com/BishopFox/cloudfox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd0ac8e28a5a01c82c40dfc010ccca1f663d07dfd463b7dbf47372db383ee628"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd0ac8e28a5a01c82c40dfc010ccca1f663d07dfd463b7dbf47372db383ee628"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd0ac8e28a5a01c82c40dfc010ccca1f663d07dfd463b7dbf47372db383ee628"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b8a6718041bc53c4d7f99b651343a171091f854e6afdf2a839da480b2084127f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e03a5b4c501c8732a0eb5c147df8426cb3542f0095417952e78e90fae63f2345"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "463891fbd39533502a27b25a39122bb882160fe5bb44d4006caf341a28e4b85e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5367d9ebb891aeb292c5a614e354ef1efe5452afd5af672ab8f8849d828f2b0a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5367d9ebb891aeb292c5a614e354ef1efe5452afd5af672ab8f8849d828f2b0a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5367d9ebb891aeb292c5a614e354ef1efe5452afd5af672ab8f8849d828f2b0a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fa57bb5237d757dfbd4a4af0868da333aa188f0ee944bbb4bd615069eeb5e8c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c75721c2521560b16399455a12f42d603239024c4173790219ee2772ce16a1fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d8756bb7ddeac31e9f0a2246208bc42518205bcd768c971eb523cdef5dfa866"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
-    generate_completions_from_executable(bin/"cloudfox", "completion")
+    generate_completions_from_executable(bin/"cloudfox", shell_parameter_format: :cobra)
   end
 
   test do

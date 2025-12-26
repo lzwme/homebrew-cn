@@ -7,12 +7,13 @@ class Conftest < Formula
   head "https://github.com/open-policy-agent/conftest.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52b37dac968404a51d6cbc1c8205adf08cabc627d64d6628e67f07c12d6b5d96"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92bc884325cb2712c98a7f13b43d009e204ee2a523d0f7859d0aa8ba2a8e53d9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fceede90dacfcc2bc6aba5ef276bae058b7ef3685f5159532da3b865b1d4a412"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7b2e807836ef0e0a72570fa98eee3465940e7f34f0085216767823806dcaf783"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d61970e42f7fc7dc545d1dff11e6607d2b5180ca176a487bd07c10ed4103538f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6172ffe534f7bdf63af42f5703c15b4e6ebda7b7a2923022629cd01caa8cad4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5dcad1365b01900bf73ccf60ff30e8aa514c17f57d593917b74bf80a110c6757"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "913647567d26c4cb0cac241c8a9a3c880322a73dbd4ec2416331e06a6aed61e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19aa7682ffc4847dbed5d32b565412cd4155d9d7ee1c3d8acc0b15a2568eb62c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c3f059bd9b5adbd2a5b5b9bd6b049932c24c14a1de35df5d042cd7b6bfa30378"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e83664bd32c398e990d83c893d262799f0369d688166f929189ea1d67da27986"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdcdb4b32b2dbd8c511ebc0ac072f242ace0d2620b43f79f6b31e2bbc657a97b"
   end
 
   depends_on "go" => :build
@@ -21,7 +22,7 @@ class Conftest < Formula
     ldflags = "-s -w -X github.com/open-policy-agent/conftest/internal/commands.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"conftest", "completion")
+    generate_completions_from_executable(bin/"conftest", shell_parameter_format: :cobra)
   end
 
   test do

@@ -7,22 +7,23 @@ class Gowall < Formula
   head "https://github.com/Achno/gowall.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a1ec11e01767a4c46928c76c1fdd08957a0e43d452b421b4438ec91ad49c9993"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34dc908f5f3d79cbec77054867e82ef3df922edd34d5911f4682962b8554ac28"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39ec1eb39a2b1c802bd77fe3cd726749e958387affdc9aafc1df9d3632a15c08"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "05ac7c037fe03766da5ddbd174b7269cd15a3776e8ea24a59a4867a136e79be0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "253286c45351373ed0553a5b7112a66d0357ba19ac7f10df563580dce782cfb1"
-    sha256 cellar: :any_skip_relocation, ventura:       "e1eaca5511b100652751f38a3aad0d706dc2b4c1c68bc43b6a14493fb34cb9ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "417047ad8f54043eaa06f701889b7260e15bc8819a886232f6b16cd21f79b056"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d366964c9da1cde599496cf92ef070bdffb9cbf1e71c96c1dedffe02af05e916"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "222163cc3152f06d848ac28ba2bab3ec6fd2203987a8f147ac59dbefc4fe692c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d18bb347bb59ae880592fe8e0678832e99380d8a51692664ceb676785589517"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1bb69283e0903f722879f96513a5f4c44b95e4b9a804a07bdc159673bdcafd9c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8af5bdd065485a4afa557d3a94caae8a1dd30da0207f5d99e20980da29709c40"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9d4b881ff9705718de4b96b63ab15e0f08e1d976b02eb027979760614f53478"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d10cab58524563fc7d14e63b4f8cb050b7eab22323538027c32a7a01c13feab1"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"gowall", "completion")
+    generate_completions_from_executable(bin/"gowall", shell_parameter_format: :cobra)
   end
 
   test do

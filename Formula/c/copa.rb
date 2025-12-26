@@ -7,13 +7,13 @@ class Copa < Formula
   head "https://github.com/project-copacetic/copacetic.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "635dacdab4c4c423d2756d4339b9dd3a39e4a8cd26b36fd835da42c4c16bb4d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "635dacdab4c4c423d2756d4339b9dd3a39e4a8cd26b36fd835da42c4c16bb4d3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "635dacdab4c4c423d2756d4339b9dd3a39e4a8cd26b36fd835da42c4c16bb4d3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8f5a3adf5c0a0185ece55991bcb596a487528039d9cc78757e1c43f7c64ed91e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "829abf9f91a4a3b6fe5bee50e6ac0fca53fb238d22ad7fb51ccb6f3da81a9a2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b77a337f0c26a6e9f106a1eb4f5efd277aab77ff0c11a7cc78eeb959e25b3c6c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6cbd7985b6dd0af17d4e6401a79e845dfc97697072d1cf3381139c6d34c7529"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6cbd7985b6dd0af17d4e6401a79e845dfc97697072d1cf3381139c6d34c7529"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c6cbd7985b6dd0af17d4e6401a79e845dfc97697072d1cf3381139c6d34c7529"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d98b13d9aef1764040a9c4b6d340ef7822bda738ae9c4b4bd27c5c367049da3d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a966c3adc8bbaa46fdec8d0936508c8f2165f9356c3be67a1aebd848bb56a4ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c25a12721b39bb7c7d4651ffe9240801d22d55ad884e27edb9961ec74cddd7e3"
   end
 
   depends_on "go" => :build
@@ -27,7 +27,7 @@ class Copa < Formula
       -X main.version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin/"copa", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"copa", shell_parameter_format: :cobra)
   end
 
   test do

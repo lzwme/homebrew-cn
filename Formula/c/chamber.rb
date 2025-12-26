@@ -13,19 +13,20 @@ class Chamber < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a251cb1b99832b9eec10b765fed82c32303eea069f305a1371ba6b73613788b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a251cb1b99832b9eec10b765fed82c32303eea069f305a1371ba6b73613788b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a251cb1b99832b9eec10b765fed82c32303eea069f305a1371ba6b73613788b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "19cc9283f7d59ae241ea1970b4f2d5e227952ca4f4b391bee3c0bd2636f84b14"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "88de458a5bfc02c14c1da9b1b910b5f4b400bf60ea71b9caf2fb164850690435"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2aa56437ba101da8306b53675aed5080d8caf3a7379fabfce44292de93cc7ef9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b5337bd1bd08714a29659e6d96e9e5c7fe8fb1588699673f9bcb3bbe92093f2d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5337bd1bd08714a29659e6d96e9e5c7fe8fb1588699673f9bcb3bbe92093f2d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5337bd1bd08714a29659e6d96e9e5c7fe8fb1588699673f9bcb3bbe92093f2d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1272a1b240390595c0334614deb8896d1398889673f061c83b52549ced6ef3b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7cbb3e3a701c9f6b4ace172f74d865255d7e1b6aa6f8e274275a877f6d754f8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69d7da496e18074c011af273f90fc95ccdc4aba35c14132f175090a01cfefd70"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=v#{version}")
-    generate_completions_from_executable(bin/"chamber", "completion")
+    generate_completions_from_executable(bin/"chamber", shell_parameter_format: :cobra)
   end
 
   test do

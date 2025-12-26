@@ -24,7 +24,7 @@ class Promptfoo < Formula
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version < 1700)
 
     system "npm", "install", *std_npm_args(ignore_scripts: false)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     os = OS.mac? ? "apple-darwin" : "unknown-linux-musl"
     arch = Hardware::CPU.arm? ? "aarch64" : "x86_64"

@@ -61,7 +61,7 @@ class Nexus < Formula
     assembly = "assemblies/nexus-repository-core/target/assembly"
     rm(Dir["#{assembly}/bin/*.bat"])
     libexec.install Dir["#{assembly}/*"]
-    chmod "+x", Dir["#{libexec}/bin/*"]
+    chmod "+x", libexec.glob("bin/*")
     (bin/"nexus").write_env_script libexec/"bin/nexus", java_env
 
     (var/"log/nexus").mkpath
@@ -94,12 +94,12 @@ index 9b8325fd98..2a58a07afe 100644
 @@ -172,7 +172,7 @@
          <artifactId>karaf-maven-plugin</artifactId>
        </plugin>
- 
+
 -      <plugin>
 +      <!--plugin>
          <groupId>com.github.eirslett</groupId>
          <artifactId>frontend-maven-plugin</artifactId>
- 
+
 @@ -212,12 +212,12 @@
              </goals>
              <phase>test</phase>
@@ -114,7 +114,7 @@ index 9b8325fd98..2a58a07afe 100644
 +      </plugin-->
      </plugins>
    </build>
- 
+
 diff --git a/pom.xml b/pom.xml
 index 6647497628..d99148b421 100644
 --- a/pom.xml
@@ -122,7 +122,7 @@ index 6647497628..d99148b421 100644
 @@ -877,7 +877,7 @@
            </executions>
          </plugin>
- 
+
 -        <plugin>
 +        <!--plugin>
            <groupId>com.github.eirslett</groupId>
@@ -134,6 +134,6 @@ index 6647497628..d99148b421 100644
            </executions>
 -        </plugin>
 +        </plugin-->
- 
+
          <plugin>
            <groupId>com.mycila</groupId>

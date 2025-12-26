@@ -1,20 +1,18 @@
 class Felinks < Formula
   desc "Text mode browser and Gemini, NNTP, FTP, Gopher, Finger, and BitTorrent client"
   homepage "https://github.com/rkd77/elinks"
-  url "https://ghfast.top/https://github.com/rkd77/elinks/releases/download/v0.18.0/elinks-0.18.0.tar.xz"
-  sha256 "e56ef15996a1ca130789293ee6d49cbecf175c06266acfa676fa6edb271a1173"
+  url "https://ghfast.top/https://github.com/rkd77/elinks/releases/download/v0.19.0/elinks-0.19.0.tar.xz"
+  sha256 "a993a4870cadce60abbc724cf6a5c2a80f6be9020243b9e5ce075c16c6665c04"
   license "GPL-2.0-only"
   head "https://github.com/rkd77/elinks.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "82aa634f9e6032e50868a8283b1e271925240a48e63b172b6f778776c289c4eb"
-    sha256 cellar: :any, arm64_sequoia: "529eb6faff1708b4e77d43909e658745d00b7eeacb37fb3db72e8b2bc7d558f9"
-    sha256 cellar: :any, arm64_sonoma:  "218fe1fdc56e6c73245834c41763b66d4277a85737b30a093eb4b15c38dd8c50"
-    sha256 cellar: :any, arm64_ventura: "fdee3c49900a48edafb82435144c94a2ddcaeecf30646b606a604e7ff3f4ca73"
-    sha256 cellar: :any, sonoma:        "c7d99c15f1ac89441b4de54cb413e22e6c096fc88828e5461822c5c6f8dcb856"
-    sha256 cellar: :any, ventura:       "0f268c3811c863f325f50c0d36bfffcb8d54d9d258871afa4501c2a6a71c2080"
-    sha256               arm64_linux:   "eff4235e7a240d220af0ab641c16c06e29a35ba2f655733d6fd6560cffaf0009"
-    sha256               x86_64_linux:  "f0ca366d10b01c506710abc06dec5f57ade08f76c4f233d2ce353e28c75bec2d"
+    sha256 cellar: :any, arm64_tahoe:   "71ffd50b78f14dff3602fafb9e249b3a1a712586698efdf4c6a32d39969b2341"
+    sha256 cellar: :any, arm64_sequoia: "1cad2a0ebe892022f566f2350c3fb74f30c0072977b5ea9c52bb246d00d20182"
+    sha256 cellar: :any, arm64_sonoma:  "de00151cc952660577f1897ffa5b684cd2751829c8b5d0eb671dce6b1221ee78"
+    sha256 cellar: :any, sonoma:        "bd0d4493bef7fd0ad399cc6d5b366c6b22bd4c04a0f444cfa7318deec24cc040"
+    sha256               arm64_linux:   "d7cad94afe5316f5449eb7fc8a7a70ce40c7a267357e78a507619c8293bd9529"
+    sha256               x86_64_linux:  "267e3566b8e3bc552eb4b808a82066ccc6cd8c0b963a1b532ac49bd6e3ece906"
   end
 
   depends_on "meson" => :build

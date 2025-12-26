@@ -1,20 +1,18 @@
 class Rmtrash < Formula
   desc "Move files and directories to the trash"
   homepage "https://github.com/TBXark/rmtrash"
-  url "https://ghfast.top/https://github.com/TBXark/rmtrash/archive/refs/tags/0.6.8.tar.gz"
-  sha256 "9055a538b7e282aebd61f74241d5e2009455b1ae7e7029eba87bc41bbd684d4a"
+  url "https://ghfast.top/https://github.com/TBXark/rmtrash/archive/refs/tags/0.7.0.tar.gz"
+  sha256 "b113bf35bd7e3d50e9dc1bf5959825614d5e81b1f2b64a5c8691e46ccfac7cde"
   license "MIT"
   head "https://github.com/TBXark/rmtrash.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1bfc33733f840b1f82a47a4da7c49ba55dfb8b1baed8c4df96d2a1d6fb7f217f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a30a53dd25ff977ad17267908d9d93d95f246e2d947aba78d181b5670a6ebcb3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d28190fb40efa3936483dd2f550e15911e86d1d533278f2bcdbb9b85aa3741f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "485892442e561173e63328f83f8f1c24d0623a0584eadf13ac7d279518820678"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2dab2f231c1d82859b8c2e43fd3e95a2e214c21020a67a58e91fd0805c10e52b"
-    sha256 cellar: :any_skip_relocation, ventura:       "ea999346b7c78ea4678cc4ecf3712d25a3780a8686137d00faa34cc0b1565abb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "50452ef2115a802bd88467f7c1fde1fd3103ed72bea1b51561a0b8b74c405883"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fca3148cc443cedd8c58e959ed175c1dc0881c016726fdeccdd04e70e3fd480"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b3576b72e0af7f7bfa1758406abca0eba72f43a0e219cf39806de534f90738b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e2ef2f92366c7ec747ec2b2420ce909617b9b1b481735c6c5018917b6fa86370"
   end
 
   depends_on xcode: ["12.0", :build]

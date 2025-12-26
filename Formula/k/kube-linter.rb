@@ -7,12 +7,13 @@ class KubeLinter < Formula
   head "https://github.com/stackrox/kube-linter.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c6429c5315d4b5a0bef1d989edebc2d96ab91508c9142f9aabc92ab82d46523"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c6429c5315d4b5a0bef1d989edebc2d96ab91508c9142f9aabc92ab82d46523"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c6429c5315d4b5a0bef1d989edebc2d96ab91508c9142f9aabc92ab82d46523"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8a7b8243658b8eb9346921dc65f87d80b22d01c8b56aa1cf872b29f411fbbb5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f2aac26be0042bab65336eaf6068601fdb2b3d43cf6a4396418c02c8515e875"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41267624d034c2d2e5b31012512177f6763f5688ab42f6b8d1a50480911ebcef"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37abe6a6a742262c59e2ae2e0165c073026931afd60578bdedef4d57819da275"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37abe6a6a742262c59e2ae2e0165c073026931afd60578bdedef4d57819da275"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37abe6a6a742262c59e2ae2e0165c073026931afd60578bdedef4d57819da275"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f0b5e53ce6fc39195bece11aa9fd5e75ad0e79fb611d2d8179138b4a401423ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7e80d34785bf009faea778585fad307b80799716a1e58181a3265caa604b2e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "525c4f25f865bd36f427aa7c19f02fcc24bdf56e20f9ac67c1a98be70bd4561f"
   end
 
   depends_on "go" => :build
@@ -22,7 +23,7 @@ class KubeLinter < Formula
     ldflags = "-s -w -X golang.stackrox.io/kube-linter/internal/version.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/kube-linter"
 
-    generate_completions_from_executable(bin/"kube-linter", "completion")
+    generate_completions_from_executable(bin/"kube-linter", shell_parameter_format: :cobra)
   end
 
   test do

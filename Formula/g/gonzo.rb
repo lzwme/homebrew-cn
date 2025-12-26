@@ -7,12 +7,13 @@ class Gonzo < Formula
   head "https://github.com/control-theory/gonzo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1afb94f08a77b0f7116ee8a191b51ff28611e9af3add31535e0b56e908a209e3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1afb94f08a77b0f7116ee8a191b51ff28611e9af3add31535e0b56e908a209e3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1afb94f08a77b0f7116ee8a191b51ff28611e9af3add31535e0b56e908a209e3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "04e4935f80635c060c068a49f52c4b864bc836943c8a785b1f92ee3b72bb9155"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e43f64f1f4d624ee2439ea47f1c4c12de7de62b5a9783646fb7a5c8f3d3024a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ece50899c584432930d48ef376a6fb450bd9fad9df6ba46958d8b8f3ef8e4755"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ecd334e61490b6a734c477bdbe78e7548868bc9bf05d8a78622f25812db057f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ecd334e61490b6a734c477bdbe78e7548868bc9bf05d8a78622f25812db057f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ecd334e61490b6a734c477bdbe78e7548868bc9bf05d8a78622f25812db057f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0a065352d7d9669cce6607643f13a0ece207ddf529cc0d024850dd03fb905dd5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "300cd6d81176bd15bea9d5ce24611506fb29a1655c4394255012e6bbb55a0886"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2c1e79002ac9ac510b57a2b50b6d1cda96e6862ad0589dd67058828dfab1ad6"
   end
 
   depends_on "go" => :build
@@ -27,7 +28,7 @@ class Gonzo < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/gonzo"
 
-    generate_completions_from_executable(bin/"gonzo", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"gonzo", shell_parameter_format: :cobra)
   end
 
   test do

@@ -6,7 +6,11 @@ class HttpServerRs < Formula
   license "Apache-2.0"
   head "https://github.com/http-server-rs/http-server.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
+  # Avoid pre-releases like `v1.0.0-pre.20251223080344`
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "0a809086a7ca4186c1f20e8ae46b1f5aae4af25494c69a4c3bdaf5463d94fdda"

@@ -16,12 +16,13 @@ class Kubekey < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63e5ff2229646f41b5b9b0c7ea09497c772916e85f9d7a54f46a30173c3bdb6f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "63e5ff2229646f41b5b9b0c7ea09497c772916e85f9d7a54f46a30173c3bdb6f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63e5ff2229646f41b5b9b0c7ea09497c772916e85f9d7a54f46a30173c3bdb6f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8161cf22913d66584cc9117ba42fd4238abbe1fd62eb5503688acc4247ccc0e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff797d16e6f6fa8976f675298a1aefc8b279467b63514b9dcacb93604e5c9f15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52a35b552e2d0dfd91cf636eeb13c85e9d003aab0c3034fab20b5bc433d5e312"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ecca1ee4a5b9902714dfed90abc22bcdc8cdef71a95c6cbc211338c927a1f19"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ecca1ee4a5b9902714dfed90abc22bcdc8cdef71a95c6cbc211338c927a1f19"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ecca1ee4a5b9902714dfed90abc22bcdc8cdef71a95c6cbc211338c927a1f19"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1f79e1a124c48c2cbc93eeffc0ff887b1025b05ca2f3d962c77a999535b696d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0bb9587e59c7e15cf59d844588b65fb110377a718769dae8f42f8a33be8bd16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af468947eef9b76fd53e7ae0475cf9831292a145465dc05a12960f05f1c065f7"
   end
 
   depends_on "go" => :build
@@ -46,7 +47,7 @@ class Kubekey < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, tags: "builtin", output: bin/"kk"), "./cmd/kk"
 
-    generate_completions_from_executable(bin/"kk", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"kk", shell_parameter_format: :cobra)
   end
 
   test do

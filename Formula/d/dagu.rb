@@ -7,12 +7,13 @@ class Dagu < Formula
   head "https://github.com/dagu-org/dagu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f1ca7b45ab165b6478ba9c6dd38f9d9eccc2ce2f793d0a5a0daa2941aa8da47"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e32655333eb427468b991fd8d097640fa104ce9b4c9608a493ce2e50486b368d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "920393f88ec31a74720d0bdcfd584f6691c420e47dab27f3d4c0c03ab127bb1c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ced161aba4ffc998bf948cedd909966704ec1a62d45d4c333d86e2cbf0fd4f73"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "019ce2d43cd6e304bb3ab5c4c5c920be9f95011c90c1a8fcbb614a2819e5f12d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa33c7286a62bbc9afdf1aafc4671053e5d3d2b9a25b4f168d79c37e412ad614"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "87d93e0ae0aceb7f04314152a69a6d1effcc860fd48e10e66caff80c00f4917f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a78431775f7545c80f35b754a9025a56b54860568b8d2d2b8fdd3defdc5fb95d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9d1c1e962314dbe96df547100dd6c30f1ae1d3049502fc988c8a6480f9e1888"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2166dd9ce7decd82b592e7424f81717e6ab73b1a6ea8c0bfef747fb05148485f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fba290cd5cc3afa9c09ca3677830d9594a0651df79b42dec60d971f9ef423245"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bee85e52d46f9fa78930b1f5376b3a1e850f785b0e59255054d258a1c3c5a999"
   end
 
   depends_on "go" => :build
@@ -26,6 +27,7 @@ class Dagu < Formula
 
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd"
+    generate_completions_from_executable(bin/"dagu", shell_parameter_format: :cobra)
   end
 
   service do

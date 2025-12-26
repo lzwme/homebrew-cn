@@ -7,13 +7,13 @@ class Clive < Formula
   head "https://github.com/koki-develop/clive.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be627ba710546e0407e1774fa1797a4fd0a33a092a44172531491974d8eae57c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be627ba710546e0407e1774fa1797a4fd0a33a092a44172531491974d8eae57c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be627ba710546e0407e1774fa1797a4fd0a33a092a44172531491974d8eae57c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0e6f1c9a2268c7c7be97b7abe8bc87a93a7dfd11f7fbf5fe5ad54c6c0316c017"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2045675e3d8b5535d1da74e9d9406c9ab7263aa39cb54cbcb45c66020b590d08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8a9ddf715e85b87e4518a2286794499e279f282eeb4ce87d05407a81497b3e5"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a9327759ff50f04774163452e0a60dff60b69f527e6469d41160ff1b035febe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a9327759ff50f04774163452e0a60dff60b69f527e6469d41160ff1b035febe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a9327759ff50f04774163452e0a60dff60b69f527e6469d41160ff1b035febe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "13dfb211db8851a2a42ac0f4821157125b4883fab14b108b74cc0bf791dfef73"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f659f4937a4a0c6ac175d18849e424e6507f23ae7ea5eb5edebf2ea372adee44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a747c9d5ef60f51f3cc127f41f0bd83efb2785835d0e35c59ecb437c3bf36ba"
   end
 
   depends_on "go" => :build
@@ -21,7 +21,7 @@ class Clive < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/koki-develop/clive/cmd.version=v#{version}")
-    generate_completions_from_executable(bin/"clive", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"clive", shell_parameter_format: :cobra)
   end
 
   test do

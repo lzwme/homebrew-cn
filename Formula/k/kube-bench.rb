@@ -7,12 +7,13 @@ class KubeBench < Formula
   head "https://github.com/aquasecurity/kube-bench.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7990926e12fcfea7de74fbb64654c2841788fd5a5086a8ee8dca97c70e2f3f1a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7990926e12fcfea7de74fbb64654c2841788fd5a5086a8ee8dca97c70e2f3f1a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7990926e12fcfea7de74fbb64654c2841788fd5a5086a8ee8dca97c70e2f3f1a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "45e1eebbb1992ec62485e039fc975f2a1c8e514690c98b063a4c690541c272bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8fd7cf9df6e8d167d55327dde8eee30bbbc7e276d4e0ce70e858a364304f056d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55f1cbcf44bc96e573729758356b8881b9997ebdcce9f381777d3ca063055d06"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2afbdb9a5900df8ef130ee9928debe03bfbc0b4ed65d5c55e6dce996b8332c24"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2afbdb9a5900df8ef130ee9928debe03bfbc0b4ed65d5c55e6dce996b8332c24"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2afbdb9a5900df8ef130ee9928debe03bfbc0b4ed65d5c55e6dce996b8332c24"
+    sha256 cellar: :any_skip_relocation, sonoma:        "776d80d4a519f8ed549e16de1e8362e4762150a8675d70b6cdc64873ee5233e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7df3eaf03ed2ee6145c7a617105ca8731224f0e3f2d96d353cf16f02088de0e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a4c7bb078169d3bc08456d37b049b38e31e9eb245ed23aeebcad62b4d8b0a51"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,7 @@ class KubeBench < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/aquasecurity/kube-bench/cmd.KubeBenchVersion=#{version}")
 
-    generate_completions_from_executable(bin/"kube-bench", "completion")
+    generate_completions_from_executable(bin/"kube-bench", shell_parameter_format: :cobra)
   end
 
   test do

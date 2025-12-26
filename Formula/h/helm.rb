@@ -8,12 +8,13 @@ class Helm < Formula
   head "https://github.com/helm/helm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4931eb04f1883cfb38398dfa4f50cddc71753f4d29b1111eb6513faf62e3484b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3559b0d4b8119c0320fcfce8d074d20d3b06e22ea8133cd3d801451af369662"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a6146e36e29f0931724bd4cba6c8ef6c7cdc9772d5df8c885a18f58b942ac58"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6e3da6d7e79ab645c0bf80eb841f88b9fd0b2d1885285f51603822e12b0ff497"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "83781c77532654a3c0756ecd29035d1d33d84307b67b5a4497af98c841cfe7e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b392347b5e3752840fd53043348ea2f220cc8c6418885ee0c2add442e57bbfad"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ac7fe8736fc1db9a388cdee6835e44bf05105d037762329fa1729447d1c86dd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "208abe5b28e84d3da8b7b645264d059f8822cf7b5eadb88ba396cb9e4b4e5141"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63f10b723fbf7b40c3d9eae25ad1319418736deb6eeab4724ca0599f259b614d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a73a4f4cad4b79ad8a4fb46e79ba5f9a6275f8af75964dd5985e389e77682aa8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4537235619bdc0947e725088fb15e30ea528c20d0d39b50269bfa6a53d319d12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d33f65f7acb5e8ba34c74b8cb93ef41da363eb8b145d8cc58b4b5d627e367437"
   end
 
   depends_on "go" => :build
@@ -27,7 +28,7 @@ class Helm < Formula
       man1.install Dir["*"]
     end
 
-    generate_completions_from_executable(bin/"helm", "completion")
+    generate_completions_from_executable(bin/"helm", shell_parameter_format: :cobra)
   end
 
   test do

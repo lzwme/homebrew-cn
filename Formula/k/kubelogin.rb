@@ -7,12 +7,13 @@ class Kubelogin < Formula
   head "https://github.com/int128/kubelogin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "87765478639ae16900b13c59943e44fe8a02fecfd03dc366e9efb94b925599e3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87765478639ae16900b13c59943e44fe8a02fecfd03dc366e9efb94b925599e3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87765478639ae16900b13c59943e44fe8a02fecfd03dc366e9efb94b925599e3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "80afa3e74c9aa30e2b702b28e996b1c7d7ac810c9dfb2275c4defc7d2007bd42"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63797ab8d7a8ddf4b624bdf63eaece04746a1a595f6f5933f92d7d7f8b9db9be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "555511434ab918d60437e3ccfeeaed8a0d7a5a861977da7ffef1ac2cb7b5f7f8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "539ea5e6e5e3d4e2f1bb5b644a012ad1fce7e4910eb8f450ba32fbec91d7f238"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "539ea5e6e5e3d4e2f1bb5b644a012ad1fce7e4910eb8f450ba32fbec91d7f238"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "539ea5e6e5e3d4e2f1bb5b644a012ad1fce7e4910eb8f450ba32fbec91d7f238"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a14b682ddf83845d8abd4ac7f1e6a38455f4c56459edfb12f81cd88c680b60b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "afd1ca34203d3a27de4c337b3fb110d12a38012d62a67b1f702da21726f428d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3c25ddd374b53035a8b5e7e7b6ccf8f40a2852f36e4036bccdbf700fd597092"
   end
 
   depends_on "go" => :build
@@ -23,7 +24,7 @@ class Kubelogin < Formula
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"kubectl-oidc_login")
 
-    generate_completions_from_executable(bin/"kubectl-oidc_login", "completion")
+    generate_completions_from_executable(bin/"kubectl-oidc_login", shell_parameter_format: :cobra)
   end
 
   test do

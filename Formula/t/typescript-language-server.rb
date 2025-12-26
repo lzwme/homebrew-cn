@@ -19,7 +19,7 @@ class TypescriptLanguageServer < Formula
     typescript = Formula["typescript"].opt_libexec/"lib/node_modules/typescript"
     ln_sf typescript.relative_path_from(node_modules), node_modules
 
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do

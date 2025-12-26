@@ -12,12 +12,13 @@ class FlowCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a984cc1df488c84ec3492dfa68f6097f8022ae8b46e85fd915d72fa1b823161"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04fe5a4c37a7711bd52bdce871742ad59ef78114c0898e9cadae32c077cda136"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79730f643f63a744b1cf9909f305950279886524763cf3c6f117bfae58cfe9fd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cd66849058fe9ad3479dd253991882fc135d6cf2efba99f28e0c393aef6dd5ff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "05a355ab8742388c3eec7bebde973d8b539dd94e24f05b468706369ba90c1b05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "450bb68839dd5edc5776a24e8dc89ad20dd99b8b8a2295bb720b85dfbb4c9d6f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd6cdd1eb2124d772b1351fa9e62166a46b0bee057bb4151ed0ebbbbb90a6b6e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ef700a6bd3432fafd249367bcf33c17e6abce288cf71aa7c38d919c6c5d0906"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04cc3cc1067fe5b703838b94bbbafc1de73f352e844fcf4112a26983471b2be0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cd7d0b8aad0c33a47f822efe397fc429a4ed4eeaa95662696faac8cc9839d226"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f90a094a41d5a4aeb4e744d8076fa69b3e41d549401fefd14ae52421a1c2fed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4ece1aa3d4e2594ebe690e7f578d0b53b705cb94dc68ab46049352911cb42b4"
   end
 
   depends_on "go" => :build
@@ -28,7 +29,7 @@ class FlowCli < Formula
     system "make", "cmd/flow/flow", "VERSION=v#{version}"
     bin.install "cmd/flow/flow"
 
-    generate_completions_from_executable(bin/"flow", "completion")
+    generate_completions_from_executable(bin/"flow", shell_parameter_format: :cobra)
   end
 
   test do

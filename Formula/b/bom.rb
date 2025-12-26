@@ -7,12 +7,13 @@ class Bom < Formula
   head "https://github.com/kubernetes-sigs/bom.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6db2ec5c4b09535a54d3d5d22d333082c00874771e37cf5ba956178621c5cc7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6db2ec5c4b09535a54d3d5d22d333082c00874771e37cf5ba956178621c5cc7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6db2ec5c4b09535a54d3d5d22d333082c00874771e37cf5ba956178621c5cc7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5c03b4702c232ee981567805de93cd236d5c1dacab4308b2d335a2dcd51cdf06"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9876413b628df258e61da35b3cb16261a9004eee9ceb72c116d7f74c65a2d4e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "596ccf20880d7904ed00aceece1233e21f9685d0655e7cd9e83352401ee5525a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b48f971e9f1eb27f2597c5b769d5c5b04c98b4a58e96d2a3518d4a70217a929"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b48f971e9f1eb27f2597c5b769d5c5b04c98b4a58e96d2a3518d4a70217a929"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b48f971e9f1eb27f2597c5b769d5c5b04c98b4a58e96d2a3518d4a70217a929"
+    sha256 cellar: :any_skip_relocation, sonoma:        "24e9021594ab6c2789cbbd4bcdb40d8c5572091da769a155a89e83b577d3e79d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d745d7af5e11523d0717206e9f42265663b3c6b39e5eaa51e366474897d6e140"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afd114ea53280a22f13d028a6c33e61e34193b24b54ac2ecf8e9c66db5e07b2f"
   end
 
   depends_on "go" => :build
@@ -25,7 +26,7 @@ class Bom < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/bom"
 
-    generate_completions_from_executable(bin/"bom", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"bom", shell_parameter_format: :cobra)
   end
 
   test do

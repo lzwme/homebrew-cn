@@ -7,12 +7,13 @@ class BoshCli < Formula
   head "https://github.com/cloudfoundry/bosh-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d5f451ac438be439e3dba7ccb5e8d621b40cd661d52d9d200f4ceb6c5e5f77a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d5f451ac438be439e3dba7ccb5e8d621b40cd661d52d9d200f4ceb6c5e5f77a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d5f451ac438be439e3dba7ccb5e8d621b40cd661d52d9d200f4ceb6c5e5f77a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "388b7c2711bac3adb49ddc6e382f82f869f949f3bb11a3bf0c5e3038a396238e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "146f6a1da2778e58c8b795fa02f75a005a26ddaf754903d56a9422dcb1c29b99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f479ba67f7ccb20e0a75a9dadd7b0ea7993d0ce18bbdf8754269f49a06d3631"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "364241ea84eaa99e11fbd16cb9e2a67455f9f46ea9d30a3cf5231bf59c09043e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "364241ea84eaa99e11fbd16cb9e2a67455f9f46ea9d30a3cf5231bf59c09043e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "364241ea84eaa99e11fbd16cb9e2a67455f9f46ea9d30a3cf5231bf59c09043e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "58dbfd06394ecf749429b5b966e69afcd7f2713d8103af0ab56c618ac8e7109b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3237a5c29d5512934a160a415ca855de71afad1c050814101d834568b102283f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b031d3c6e14a2d3636706a8493419fa764b8719e9a50e690afdba7bd141ede5"
   end
 
   depends_on "go" => :build
@@ -22,7 +23,7 @@ class BoshCli < Formula
     inreplace "cmd/version.go", "[DEV BUILD]", "#{version}-#{tap.user}-#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"bosh-cli", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"bosh-cli", shell_parameter_format: :cobra)
   end
 
   test do

@@ -7,14 +7,13 @@ class Frizbee < Formula
   head "https://github.com/stacklok/frizbee.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81268f603d077825e54b9ce23565dc975eacf37631b23048090823d962524a13"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3cccb25cf914098b92d2d170231b8ea4ae65a7e2ab325aaa2c834e027c026f5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3cccb25cf914098b92d2d170231b8ea4ae65a7e2ab325aaa2c834e027c026f5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f3cccb25cf914098b92d2d170231b8ea4ae65a7e2ab325aaa2c834e027c026f5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8350ae10a806428da912b930be21e87f5476630bf10d2c0fe4d00bbb7f7406c8"
-    sha256 cellar: :any_skip_relocation, ventura:       "8350ae10a806428da912b930be21e87f5476630bf10d2c0fe4d00bbb7f7406c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ab85f12053cfac1496011784823d6c9a026d7d2b75c3e06e8aabfce9e9fdb11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99ccd2e57c9257a04aea350b7f284d8788311f636c071ac3113571b538f5dae8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e7dccf5ade7ee183fb6e8672e0bcc0aa18e8667c25e31ca2da54818e5cba372"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e7dccf5ade7ee183fb6e8672e0bcc0aa18e8667c25e31ca2da54818e5cba372"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e7dccf5ade7ee183fb6e8672e0bcc0aa18e8667c25e31ca2da54818e5cba372"
+    sha256 cellar: :any_skip_relocation, sonoma:        "57d0f4e933b040caaaf10263f457f0112ea4f77b59a848edebcf117841deede1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed5ad38b59e10f8ee3853f6c542dd272185b638be61c3abba1408372b76735cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58a62928bbff93823a2fadaef5c7d6f4ec145decbd199d4bd7e0c3966b1479b4"
   end
 
   depends_on "go" => :build
@@ -23,7 +22,7 @@ class Frizbee < Formula
     ldflags = "-s -w -X github.com/stacklok/frizbee/internal/cli.CLIVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"frizbee", "completion")
+    generate_completions_from_executable(bin/"frizbee", shell_parameter_format: :cobra)
   end
 
   test do

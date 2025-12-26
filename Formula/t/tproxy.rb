@@ -1,20 +1,18 @@
 class Tproxy < Formula
   desc "CLI tool to proxy and analyze TCP connections"
   homepage "https://github.com/kevwan/tproxy"
-  url "https://ghfast.top/https://github.com/kevwan/tproxy/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "0d5b030c03791882ef077336b689e863b2e41d5f16cdaf8210a76770d219ebc9"
+  url "https://ghfast.top/https://github.com/kevwan/tproxy/archive/refs/tags/v0.9.2.tar.gz"
+  sha256 "5376816b6f5d7765b401f74d3feb78fbf307cb6b725627b2e953ff9d02e8dc53"
   license "MIT"
   head "https://github.com/kevwan/tproxy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d287d969b2cec4853843339cf6ab489ffd9fcda29758f850e81fddac0ed1c0b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f712de225051b2d0321080046ad650ae2c5b6b978514b371582780eaf33a1cb1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f712de225051b2d0321080046ad650ae2c5b6b978514b371582780eaf33a1cb1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f712de225051b2d0321080046ad650ae2c5b6b978514b371582780eaf33a1cb1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7568f803d5ed42f93f629f5132a3e9bc48deb6f345f600bb43fac27a12f2d78b"
-    sha256 cellar: :any_skip_relocation, ventura:       "7568f803d5ed42f93f629f5132a3e9bc48deb6f345f600bb43fac27a12f2d78b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7d9fdf1c245ec0aba0fd5ccd9724bba77b3c726066b1164f59b7b734d8efd48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2753876622eab4735d7d5c380464e18626ba7d22a89c99036aa9030e080402a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ab25a051fc746628c60b3112afe09dd6acd27da5e6abdba9c899bcf726bea0d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ab25a051fc746628c60b3112afe09dd6acd27da5e6abdba9c899bcf726bea0d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ab25a051fc746628c60b3112afe09dd6acd27da5e6abdba9c899bcf726bea0d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "14fc2adcdc0bc52e12e3a3a76abd49b182ff8a71efe1e87bb8cd632cfc6096a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d1ba9e470cf6a647f83c94cb2a4d34c27d2463d2e94993a248b3a2cd3f57537"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa2b5079962182fcbf0d691a8f57d5271a9a6daacf256b88e984b42938cbcc33"
   end
 
   depends_on "go" => :build

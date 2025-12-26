@@ -12,14 +12,13 @@ class Firefly < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa75e2365a7fb21b0182c1d85c270baa82a58e91c90ba670e2790810a9d5d7ca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b07256aa9e5357de95238db4778e2913a7960bedcc5ade1caddea9ef2dc25864"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3deadfffd5fa2fdf3eeffcf18e6515711f1b01d9729ec98df5e65b55ab29201a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c19b1162fc6fd74ae127d982ccfb5960882014297adda054e7feab87615b21e8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5a6e76d023ecf1e34786eb215cb68442c6fe258b7680f0fbd511e21e1200a7dc"
-    sha256 cellar: :any_skip_relocation, ventura:       "3308f1b297227d14bda4ca2677fc43d84d89b4209f608b2cfb284b978b345c5f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b4a6c6b4d81f767e2ec31f98c91dc6af6cc0559c131389ee11a2d2229167f87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fa41229e683fd285dd17a4a1c6988e7e8980cdefcacc7ca65d5480203e2e77b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "adbf91b1583f58b9cdf99e5b5f4702e7e382b68678d1a65038dac45a79d266bf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e65c9e835856a687ce4758d8de149fbec354041ef361e19bb16a29b44a55c86f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dde58aad5d6ce8e08b375223c5632a992f15dc010ff73db649d00f5d5fc94957"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9e58a9911ab5d61f995508662d10c94c6f75f9d4dabc6297e8e830b76130fbb9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8487d1cff3e216289b07a109fd41186c425d789eed7921e354c41a2d10bbbe60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14926594845c1055febc3c85ac56b950804433b2cd42014731881fe414bcf6c6"
   end
 
   depends_on "go" => :build
@@ -33,7 +32,7 @@ class Firefly < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./ff"
 
-    generate_completions_from_executable(bin/"firefly", "completion")
+    generate_completions_from_executable(bin/"firefly", shell_parameter_format: :cobra)
   end
 
   test do

@@ -12,12 +12,13 @@ class Kapp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "27f42f58ffe5c116dc22bf6a08254d36cffd19a003cfc6c40724aa4a245be491"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27f42f58ffe5c116dc22bf6a08254d36cffd19a003cfc6c40724aa4a245be491"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27f42f58ffe5c116dc22bf6a08254d36cffd19a003cfc6c40724aa4a245be491"
-    sha256 cellar: :any_skip_relocation, sonoma:        "95c9c16785778061841bdf2f15a4b30a4fff0b297c1adcbc3f5ed3da406d2625"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4be0543df816b7a566b47f4c81e2dc9ee7a5994f1b532c4277b1615e001cf113"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "250eb6f8982c5d5aa57153ad63d656f0491453e880f2ad2eb71fe2b38f7f869c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5392d1c444411b771ab5651b09c4779004a8a979ef1e4db20ebb9a1010e6716f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5392d1c444411b771ab5651b09c4779004a8a979ef1e4db20ebb9a1010e6716f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5392d1c444411b771ab5651b09c4779004a8a979ef1e4db20ebb9a1010e6716f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a87e16dce4aeff42ab1e88096e35c6a78d3eaa1fcca5076b1a8b7461aed92864"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "405507876fe4b05e0420112238c97f7ef22971dca45137139474f09525e7fa15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97526aee57e11d21f2bb509ab8787c5f4f70b7ca58a65f2f7098f9e194769ec9"
   end
 
   depends_on "go" => :build
@@ -26,7 +27,7 @@ class Kapp < Formula
     ldflags = "-s -w -X carvel.dev/kapp/pkg/kapp/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/kapp"
 
-    generate_completions_from_executable(bin/"kapp", "completion")
+    generate_completions_from_executable(bin/"kapp", shell_parameter_format: :cobra)
   end
 
   test do

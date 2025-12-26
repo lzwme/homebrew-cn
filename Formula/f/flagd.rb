@@ -18,12 +18,13 @@ class Flagd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "49c13bae1152087ffe3c9d4e51be5bf3bad9700b0bfd28719f0829edcbd6f417"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b4feec482c7fc2780e09c8b30521e66b0f9b0d15d027bffa54e7d93b9e8e416"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e2ece020d9270e258a326fdb5dd1039979d88149defe88d2471f5191ccbf2e5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6dfb90814b3d2274d6ce10b42883e0a94e6b889e04f87cb7df2b677698ed0c32"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "068c362a05a41aec4eb0452cc470ac77afa0c34e388eb38b91cecce37578269d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5470d0577304e84d024dcad2789b7745379f8dbdcab68ecba9d27ad4b7f2eb98"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e46eb3cafe1b0108f87e1779f1da8f32618386aa784fd3ac3e7e5c1602fc623"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d3566b2e1b1cb17ed294432ac91b5602412ab4bd1d0c68c8f5a18f24a7f73ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53d62f7c53b947c3319915a806820b0ec3d15500cf8cbdefbe16234d4c857664"
+    sha256 cellar: :any_skip_relocation, sonoma:        "becf43ae6fe6218c60187ca2c18e487a2988ecf6e074a9b9bdc694c057aaa742"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "142038a46a86607cd46734198a00ec9c9aa1f96b47ed1c39bb3f10f148f4e64f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "083c9c7b807ea3fac120156b2eb380184f8fe7ac78f37065ff6a72dfc788de7f"
   end
 
   depends_on "go" => :build
@@ -39,7 +40,7 @@ class Flagd < Formula
 
     system "make", "workspace-init"
     system "go", "build", *std_go_args(ldflags:), "./flagd/main.go"
-    generate_completions_from_executable(bin/"flagd", "completion")
+    generate_completions_from_executable(bin/"flagd", shell_parameter_format: :cobra)
   end
 
   test do

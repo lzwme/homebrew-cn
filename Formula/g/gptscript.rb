@@ -7,12 +7,13 @@ class Gptscript < Formula
   head "https://github.com/gptscript-ai/gptscript.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e68bfae17b15309e584e05a2fecf613db2c66b52fd71b31fc1170f48c9023d41"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e68bfae17b15309e584e05a2fecf613db2c66b52fd71b31fc1170f48c9023d41"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e68bfae17b15309e584e05a2fecf613db2c66b52fd71b31fc1170f48c9023d41"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e930b112405d15a1e6557420d4185c59286ff262e656e8e9bdbbf0a9cf373b80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fa40d8b022d84ac30f3ecda19cccfb9321a7cbcee8112d699b8f99de81036cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1aa753da115fcb83dc12d015faf64f5ab72de93071e37f9b18864ce00f69d314"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "98967124df84610751260f4f03fa7fee00a941da36856e3ffb8e20e41726d232"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98967124df84610751260f4f03fa7fee00a941da36856e3ffb8e20e41726d232"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "98967124df84610751260f4f03fa7fee00a941da36856e3ffb8e20e41726d232"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0fc40388c1dbb5e75e5270e56fb52a91972345b29499c6a101480b7f4fc6a6a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0563f0afa41010c31bab0afa7be1c030e92f341851a44c04c16bb7d327e0109"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "251b0b4896122432f75e7402bb84e136999962195563ca19e0d4cf05e5103dc4"
   end
 
   depends_on "go" => :build
@@ -25,7 +26,7 @@ class Gptscript < Formula
     system "go", "build", *std_go_args(ldflags:)
 
     pkgshare.install "examples"
-    generate_completions_from_executable(bin/"gptscript", "completion")
+    generate_completions_from_executable(bin/"gptscript", shell_parameter_format: :cobra)
   end
 
   test do

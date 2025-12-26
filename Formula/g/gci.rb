@@ -7,14 +7,13 @@ class Gci < Formula
   head "https://github.com/daixiang0/gci.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f786c3e4386bf3011564ae4f7d49b5726662305f18ece97bbb061f693e6cd906"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0c03634905d310823a14ef722f47b845c5cc7b6146b515d8db1d448dadb61a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0c03634905d310823a14ef722f47b845c5cc7b6146b515d8db1d448dadb61a6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c0c03634905d310823a14ef722f47b845c5cc7b6146b515d8db1d448dadb61a6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "700cf3bc54e94bd585135973e68ad53dabc9bb80b931882b1a1cab19373a6020"
-    sha256 cellar: :any_skip_relocation, ventura:       "700cf3bc54e94bd585135973e68ad53dabc9bb80b931882b1a1cab19373a6020"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b46392d9a7e515bf8ae3d80bd2cd888d686f4c5dfb455c3d71df4974fd1a8ab0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7a222a6d1853f3bce67bc65708056e6f1cf92670b5648e28f43456046405ca2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0707566034467c1c8d58e01a47add8cc7c608595e5427f03e7a0c8f9396a8f6b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0707566034467c1c8d58e01a47add8cc7c608595e5427f03e7a0c8f9396a8f6b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0707566034467c1c8d58e01a47add8cc7c608595e5427f03e7a0c8f9396a8f6b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "165b2c0724ca01b1c99216278ed57cd0d9d5c40b5348fcab0f6f50159eed83b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "67aa6f72141322d1d22cda16fa960bf98c53d2ef0af727f0930a9e2c92a90513"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf072ececd360e53f495d890b676c0407a740dc7669bfe18b90b36bf5c6a6761"
   end
 
   depends_on "go" => :build
@@ -22,7 +21,7 @@ class Gci < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"gci", "completion")
+    generate_completions_from_executable(bin/"gci", shell_parameter_format: :cobra)
   end
 
   test do

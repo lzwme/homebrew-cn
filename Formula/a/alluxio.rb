@@ -26,9 +26,9 @@ class Alluxio < Formula
 
   def install
     libexec.install Dir["*"]
-    bin.install Dir["#{libexec}/bin/*"]
+    bin.install libexec.glob("bin/*")
     bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env("11")
-    chmod "+x", Dir["#{libexec}/bin/*"]
+    chmod "+x", libexec.glob("bin/*")
 
     rm_r(Dir["#{etc}/alluxio/*"])
 

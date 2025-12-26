@@ -7,14 +7,13 @@ class Ingress2gateway < Formula
   head "https://github.com/kubernetes-sigs/ingress2gateway.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a9fc448e0894b03fd683ea68688b23f0e2488393e648c887f5fd1fdeb4be956"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "804894e94d5995db30d5c70e8ae93fadb64d95488792ad588f01508178f7c6ab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4fe29eb341d887273844fbbb2ac25d7016ea1c035200bcad34cef8ac3e27a905"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6eef8e59f45e555634acea8f44f91845d3e52c57a807aeeabf5ec4f114c3b75b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b532ae021e34552d352eed71e599c80dae9d6037dba5153b433ce30d0b2b73d8"
-    sha256 cellar: :any_skip_relocation, ventura:       "c23960ce300c4aa2ea510e24e7c480eb510cc2dfc9365109f0a2d6c7f130b1a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c26492ccbce780760a7ddf26595463229e745b7cba5d453d48fa71692842e909"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a76215216004e804caad4063551e07f7ccba6cf55f44d7e5f97cbc6678f34ef"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04f6588efa4dd83dc15982b8d5b01d0e8277d28e394092b05dd4a15c107f4250"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23e65c559979436b7ac7a5e97c36a4c11295b36f85fdd70e52d5dd869492db03"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60a08648e43d612dcd661cae2db2c37ac32f44905324f93671d9ac750269d9cd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6adfe802ae0473b4dfeccad977f810a78d69e4e27a7dd6f173aec976527f1cc0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "51775975c980566a1ac2c74de42cf0532e810e5d8b072e8dce8ca5ffdb817996"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd87e3f7ea0ad3345827af7335342dfe3cdfa856637334371af64da4d30e426c"
   end
 
   depends_on "go" => :build
@@ -22,7 +21,7 @@ class Ingress2gateway < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"ingress2gateway", "completion")
+    generate_completions_from_executable(bin/"ingress2gateway", shell_parameter_format: :cobra)
   end
 
   test do

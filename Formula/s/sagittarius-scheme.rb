@@ -1,8 +1,8 @@
 class SagittariusScheme < Formula
   desc "Free Scheme implementation supporting R6RS and R7RS"
   homepage "https://github.com/ktakashi/sagittarius-scheme"
-  url "https://ghfast.top/https://github.com/ktakashi/sagittarius-scheme/releases/download/v0.9.13/sagittarius-0.9.13.tar.gz"
-  sha256 "8cf812190c43738a9d6021e677c928a80c05cad1a03047c1868c865ccfd65773"
+  url "https://ghfast.top/https://github.com/ktakashi/sagittarius-scheme/releases/download/v0.9.14/sagittarius-0.9.14.tar.gz"
+  sha256 "2f464a0a249b9de59ed7e7338fcdf1f9b0873d9c35bae612749c0a1e9e2a4e79"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,14 +11,12 @@ class SagittariusScheme < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f2233759c744b4306a29c889f1353eb79d3ef63eb28ca67b04b5236adb4b108b"
-    sha256 cellar: :any,                 arm64_sequoia: "1a2a574e1ab887938910ae732c2361f97dd66a8781c0844f1272b48ad5c75ded"
-    sha256 cellar: :any,                 arm64_sonoma:  "b126aaf308f762b129314b25859c99a8c9cfd3fc8ba0bb66e136da369e98003e"
-    sha256 cellar: :any,                 arm64_ventura: "20f8fcc41f81fd346abc1a3e1aab0965e9ee575566acc9f61878188c3006b2a2"
-    sha256 cellar: :any,                 sonoma:        "70e046b1c40141507915325710175d48ce28c80eb6ed7ab0cdb478c0962d78b0"
-    sha256 cellar: :any,                 ventura:       "a6b58821c02c1f395ca5002a0c8c55c6cb531de4682a6166ef4c2963dfe8212a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a90dbb17deb8e950e169ff7c53b64e6258bcd890051946d61afe06d5f78edce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f0455c78b4d9b9df71d6863aa5bdbff00c3869878b3b0a80f1fcd76509b020d"
+    sha256 cellar: :any,                 arm64_tahoe:   "1cb98830feaedcb69a562e8bd26bdf1daf75727f9e7d9b1b8f07a1ebed6bb70d"
+    sha256 cellar: :any,                 arm64_sequoia: "ecfa692112d5f7ed323514966d439476328d4bcfa051437566d1b27c06565827"
+    sha256 cellar: :any,                 arm64_sonoma:  "0b3c3c3de1b4b0f765a988fcedc436cea4afb2213c8a93f32efdf83291f7b598"
+    sha256 cellar: :any,                 sonoma:        "73859b41b1c57444c735d6b951ab619c4ee1f156502ead10fb20aadb83394145"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ce23bb1611d8dd26758aa34956309ee7cda23b8ca8762f38dadce61703835e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c44c06e01d0857f84af6d255dccd3eae30e19ae5fe25d2ae9030aae155adf7d9"
   end
 
   depends_on "cmake" => :build

@@ -12,12 +12,13 @@ class Kraftkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f4907c40d3625ab565dde031189cb548177b1a8eff6b43d88d80039be63029b2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a231a11c287124275bc9e136905bb5c0fb85b887f2e7c0ff7e6c7a4b65056221"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4151df029d1e39e184e767a5d818cef41827fb0f5b71c56bc55c61ab04c63eb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c3590d7612d0f4269191aa6a0b81d3b531a7e030e863e8343142e6a9d94a3263"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "61fbd43b1c948aedab431c316f67cf7707f1db851d22c3b2f56e0b059664b5da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5c0eaffff32e224a023735cb0d8333bcd04a3f10e119b739f7ea6fba96e807d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4460e2412f7ea04f7c54620fc216d2003e52ec18105c7d6bc5f31fde127f308f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "288353d2c31c6790592b148ddf832e5938cc493357573f728e3dc295731afa2e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2cc8d32fd996e0f334f914bb9251f57573d8ec4255218740f736ce089d4c614"
+    sha256 cellar: :any_skip_relocation, sonoma:        "780657ed9827075fb1c6e8ce48505e82c5ff042d348d864579f80b80eb585102"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b38b10881e0648a3a369a5f5c15d46ee5d8016ab695aa319fa44c4d13a6e8d00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cce0e5b120ca6b93221ee7f940f72fc080ff4c5034bb5268b56f08aeecf6368a"
   end
 
   depends_on "go" => :build
@@ -44,7 +45,7 @@ class Kraftkit < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, tags:, output: bin/"kraft"), "./cmd/kraft"
 
-    generate_completions_from_executable(bin/"kraft", "completion")
+    generate_completions_from_executable(bin/"kraft", shell_parameter_format: :cobra)
   end
 
   test do

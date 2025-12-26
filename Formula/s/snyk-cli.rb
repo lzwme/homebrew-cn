@@ -19,7 +19,7 @@ class SnykCli < Formula
   def install
     # Highly dependents on npm scripts to install wrapper bin files
     system "npm", "install", *std_npm_args(ignore_scripts: false)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     # Remove x86-64 ELF binaries on incompatible platforms
     # TODO: Check if these should be built from source

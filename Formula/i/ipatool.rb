@@ -7,14 +7,13 @@ class Ipatool < Formula
   head "https://github.com/majd/ipatool.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e6c058d9f541092451cca81e074ba818289b762e5a6c48017c7d745abe0310c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d108282c96e19011ef57d18b0515746bc9d8207cbc6dc6e4bed2abfed460be72"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c16dab82815f8d00fc1a42710e183f428c8b5cf84d224890bfcfd6f292a8b426"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8e91289591a8fc30fae2288c79fc25ff14c586c3a169f58c88f2a8a1f654b666"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82cf37a21c4ad4a910d301b99bc05a530930f20c6ffc3e196ea87c889ffe006c"
-    sha256 cellar: :any_skip_relocation, ventura:       "44d411588250325cada66a9611f59bcc8111776b919d3594cc8b9edc7d85b3dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "db4b81f0d5228c0d992daa2b63fd37df025e805af6fa8a9b6affcfc89bc35dfa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6e0dd1772ebbb419eb4dad3f418b48a83b2e3be7c1539c3f242e2d582fa3802"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "69aa13c4e83fef7dbee43cdcc2cb42bc0d530af93d45d2b326bf085c9d811e95"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "649f464d9d76525c2c90a5b8a16e0b284bc840ea7e1a1a049ad588c8bf6e94ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ff81fb32aab580b49f2e9b08d515295d885635b3089d65d0d33f07dd5196a70"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4b61ffca2caeca97a77abe8913e8e185dcde8c78df7130fbf5247cfde668a638"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b315607c1a17e39775f320994f2daab2ba7e194da11f1b1bdc306dc45be1262c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ed178b7361e082c499c440b9c3f66868ec2d44341fb2030942da78eaf7bde54"
   end
 
   depends_on "go" => :build
@@ -22,7 +21,7 @@ class Ipatool < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/majd/ipatool/v2/cmd.version=#{version}")
 
-    generate_completions_from_executable(bin/"ipatool", "completion")
+    generate_completions_from_executable(bin/"ipatool", shell_parameter_format: :cobra)
   end
 
   test do

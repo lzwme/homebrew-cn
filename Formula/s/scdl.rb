@@ -3,14 +3,13 @@ class Scdl < Formula
 
   desc "Command-line tool to download music from SoundCloud"
   homepage "https://github.com/scdl-org/scdl"
-  url "https://files.pythonhosted.org/packages/28/c0/ba64efcd76edf786b1fcc0b15bb32936363213b116ce90c30bc93d56794d/scdl-3.0.0.tar.gz"
-  sha256 "efc34697df19ee9ced0e4d8425ba1aa93846d035821137a6ef3b3ebb4bed1232"
+  url "https://files.pythonhosted.org/packages/ec/e1/a7bd908761bb243faa259d946045f10f8957891f7be71f4179aa5df7c651/scdl-3.0.1.tar.gz"
+  sha256 "71b35748c1f85294721bb5390acbb7213b52eefa77c4cff255dc9845e2dc1c85"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/scdl-org/scdl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5d697031528a616adfc9b11ab89764818f583a50954d8111a8a5759db41bce6c"
+    sha256 cellar: :any_skip_relocation, all: "940baabf676ea5cc0cf64ae20e288640674ea224015f331c9572cdd37a6c4b17"
   end
 
   depends_on "certifi" => :no_linkage
@@ -65,13 +64,13 @@ class Scdl < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "yt-dlp" do
-    url "https://files.pythonhosted.org/packages/cf/41/53ad8c6e74d6627bd598dfbb8ad7c19d5405e438210ad0bbaf1b288387e7/yt_dlp-2025.11.12.tar.gz"
-    sha256 "5f0795a6b8fc57a5c23332d67d6c6acf819a0b46b91a6324bae29414fa97f052"
+    url "https://files.pythonhosted.org/packages/14/77/db924ebbd99d0b2b571c184cb08ed232cf4906c6f9b76eed763cd2c84170/yt_dlp-2025.12.8.tar.gz"
+    sha256 "b773c81bb6b71cb2c111cfb859f453c7a71cf2ef44eff234ff155877184c3e4f"
   end
 
   def install

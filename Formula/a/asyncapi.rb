@@ -20,7 +20,7 @@ class Asyncapi < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     # Cleanup .pnpm folder
     node_modules = libexec/"lib/node_modules/@asyncapi/cli/node_modules"

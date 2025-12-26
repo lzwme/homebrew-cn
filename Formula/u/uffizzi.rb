@@ -192,7 +192,7 @@ class Uffizzi < Formula
       system "gem", "install", r.cached_download, "--no-document", "--install-dir", libexec
     end
 
-    bin.install Dir["#{libexec}/bin/*"]
+    bin.install libexec.glob("bin/*")
 
     bin.env_script_all_files(libexec, GEM_HOME: ENV["GEM_HOME"], GEM_PATH: ENV["GEM_PATH"])
   end

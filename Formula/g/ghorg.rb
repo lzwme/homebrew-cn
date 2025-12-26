@@ -7,12 +7,13 @@ class Ghorg < Formula
   head "https://github.com/gabrie30/ghorg.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f97a23bfa6a45563ccd336c8a33b69a37b298a999a757cb361d968628af4bb7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f97a23bfa6a45563ccd336c8a33b69a37b298a999a757cb361d968628af4bb7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f97a23bfa6a45563ccd336c8a33b69a37b298a999a757cb361d968628af4bb7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "529418fbcaf3b4136373c57cbbdfa12401ae57345eccfd34f50cfdb2ef1dd913"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4aba9898597aa424373816a67f4557aa6a13938c36cbdb712b9a7e7c224dbb69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2accd19b131aa2fd867e8a9ef1f11472a8081e042af72ccf3874f5c4c4103e6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b57a87d80b7dd255e5a7653a98709c05cb6918cf63f92ee073939ad50bd51d6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b57a87d80b7dd255e5a7653a98709c05cb6918cf63f92ee073939ad50bd51d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b57a87d80b7dd255e5a7653a98709c05cb6918cf63f92ee073939ad50bd51d6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "91c334e16062db8ecbf4fd8503c0d0c9e9299970afc440e6318a388f7feab651"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "70d1b54adf440f677810232e55887af757d7d0c5da3cd7b12bb71bb00dca0f7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c720b3901186cdfa18640efd085134f10dd1500a1ac7779ae1b4dbcc2c5b505"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,7 @@ class Ghorg < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"ghorg", "completion")
+    generate_completions_from_executable(bin/"ghorg", shell_parameter_format: :cobra)
   end
 
   test do

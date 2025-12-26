@@ -7,12 +7,13 @@ class ContainerCanary < Formula
   head "https://github.com/NVIDIA/container-canary.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f05da274de16c17ed5b55914e94aa49245b13947f2684c45bb38241a3b64923"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d8aa6baa36bc85bd7f15afc41f04bfd76098b1e9d5f682ea1ea35a2373db933"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e092b3c8ee848f790f0288d740df5b7f52148f017fb32701c58f8884970593f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "644611fee14fa1426fbf69f998a4090763e39542e957146c21b5f65d80cde033"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c605a4323c42a1525fda0f8c1252f9ded6731329219aeadf9c782751731339c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fa7d10e14e625b54c9b2ea110d3f4db00f62293f944c764f3b45257425ea6aa"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fcbdae7844f8bce0c68e61297e385395bf4a2d7796ad9006a339b7c981d71ac1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0f3f8842347f850a77c1fcb74699751032dcb82f2547c6afbf9c84cf3529cc7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "377fa3b6cd3d4ec1d474592969e3597e3dc216ecd1152d6d4bcf3fcdd8c25db1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "578d69b9d161431ab116310231cc67d468c2e2926a8f2b93530647a797070cea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "efa81b38e25db9d6a96122fc20e2f92ee6e5330fea75397b72c9780b117c2a2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5dcb359196033e637aafe4cedcdf69237e76307ba651ce1a8fe449c468ec5b40"
   end
 
   depends_on "go" => :build
@@ -27,7 +28,7 @@ class ContainerCanary < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"canary")
 
-    generate_completions_from_executable(bin/"canary", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"canary", shell_parameter_format: :cobra)
   end
 
   test do

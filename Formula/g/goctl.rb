@@ -12,12 +12,13 @@ class Goctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3e4fcdc632397c89a8edd81ee22d9a11f38f1e76fbf08dd464739cf848e8201"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88141b5cc9fb90eb7b882a2fbe2792613b22b408ea6eda9ee93f9f8393db618f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3ee7ae77c4a461f69e6230a040737b6848d7dbce04cb387413edc66c498eb0c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "18e614a65e64ce7c6300a4eb782fa728979c3c458cdf93bfe5c5853e533306e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f66ee45312286459efc4da08ae5b147761296a7a666257fd1d66c2268001d29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85e55f9e8b01bb7698d70ee3ef544e1ce2db46779dc9190b7b6c08d24852da30"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f92baefb245bc91e0969717c9287bd7232dc0e462e1cb1e9aa1d73ac4fc678a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "189cc40e086e1b53c2d55ba333e64cd1635505f7685121f8e40afb7b9f8aa7be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85fbf31610463cee666590d696d65e7c248c3d9c5ce2fcbddaa88b51808fd75a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6e385d6f6556e5b1ab81d604dd9eeae09d155efb9648a0ce138c698f729ab05d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dd434282a87ae5f1cf26ed71d5bdc6a62b43f99e2112469aedcbd1d70d9e414"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86f49e389dc0ca241113685d8b465fd3b392601624efbcdffcd585d459a2988b"
   end
 
   depends_on "go" => :build
@@ -27,7 +28,7 @@ class Goctl < Formula
       system "go", "build", *std_go_args(ldflags: "-s -w"), "goctl.go"
     end
 
-    generate_completions_from_executable(bin/"goctl", "completion")
+    generate_completions_from_executable(bin/"goctl", shell_parameter_format: :cobra)
   end
 
   test do

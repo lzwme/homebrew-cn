@@ -12,12 +12,13 @@ class Ipsw < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ea081b7ffb4e253df7a1c384c87ef94419e151b72c00d463ac4b91d742f615f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25976958ecbec860a59a82dd6178fd54bce9dcdaf395aaa0a7f477a2188ef64a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70020992054cf17aaca9387737024aeca8cf2632b99af6d34e3a811c0b450e60"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a00a5b9a7419f20b2d86f99543612384bd2cdc4e2d3a53e44cc002a7f1a238a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4393b2005a2e3a3b896aaaed2c0b18518caaadf9ebd35a3d0e48c9c66556026"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "196b3f714e22ca427b4ecb6c51cf1e6188f39baa8639ba3779907a0dfdc88351"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b199e89fe5f9389ef8c15400b569eedc7cff4a5a44e89aaa06ffb9f035d4e703"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42f3117a2d5f657fd16ce16cdb9d26c7d0f51ec675f87490bbe9cfdca75aa194"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7482e5bff82b3782fb11797e6c7e9c3ecad9bb35b6555dc32ddea964e6daae5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b3275ef5e79cdf881ccc07885fc79e86f178e56f68a7899f90349913ef71017d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "91ddf341f8e1391d5b17ac1d66a66f03be7b514f49bf0e61075dba7caf8bb3c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83bbbe218794e56edbdec66bbf760070a467e0b4cb7bee8ecbcf2415a2378a34"
   end
 
   depends_on "go" => :build
@@ -31,7 +32,7 @@ class Ipsw < Formula
       -X github.com/blacktop/ipsw/cmd/ipsw/cmd.AppBuildCommit=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/ipsw"
-    generate_completions_from_executable(bin/"ipsw", "completion")
+    generate_completions_from_executable(bin/"ipsw", shell_parameter_format: :cobra)
   end
 
   test do

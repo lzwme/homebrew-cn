@@ -33,7 +33,7 @@ class Cortexso < Formula
 
   def install
     system "npm", "install", "--sqlite=#{Formula["sqlite"].opt_prefix}", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     # Replace pre-built binaries
     rm_r(libexec/"lib/node_modules/cortexso/node_modules/cpu-instructions/prebuilds")

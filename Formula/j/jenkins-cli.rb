@@ -7,14 +7,13 @@ class JenkinsCli < Formula
   head "https://github.com/jenkins-zh/jenkins-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3b2fa38df25580ae32faf95dd24a3a90b48be417330cf4e8b60594b198caa50"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85ed47aaf4a16751608eef650d8b7cab3e8af8c8133ed82bf6a7305004adb110"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85ed47aaf4a16751608eef650d8b7cab3e8af8c8133ed82bf6a7305004adb110"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "85ed47aaf4a16751608eef650d8b7cab3e8af8c8133ed82bf6a7305004adb110"
-    sha256 cellar: :any_skip_relocation, sonoma:        "61397dd36ee2b9195bbef96430a8aed787a0a38e733ed397c425400e03304848"
-    sha256 cellar: :any_skip_relocation, ventura:       "61397dd36ee2b9195bbef96430a8aed787a0a38e733ed397c425400e03304848"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4db512858657d7df787c2cb9c9c211e3dee2d6db7e3932ee284419c8728df9a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b253ad3ba372e8bf59b0724c656e5ce77b8b522cd9651e731aaea6d846309e78"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff9e6197d69c4a7985cafc84070c77acac3fdff42bb3df03ffe95de4af87856e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff9e6197d69c4a7985cafc84070c77acac3fdff42bb3df03ffe95de4af87856e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff9e6197d69c4a7985cafc84070c77acac3fdff42bb3df03ffe95de4af87856e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b9304a3673e5d1d11a8252881aaf88adf34e3c98cbe4016270266cba44ca6201"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1fc2d7c33e7fa4505e9964d32fb6be2e2078dced05297e9caed10dc16c95da30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30d8ef1de256e33c0e720c27b012510e9ce092cf4431a41437ac472318f5af08"
   end
 
   depends_on "go" => :build
@@ -28,7 +27,7 @@ class JenkinsCli < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"jcli")
 
-    generate_completions_from_executable(bin/"jcli", "completion")
+    generate_completions_from_executable(bin/"jcli", shell_parameter_format: :cobra)
   end
 
   test do

@@ -7,12 +7,13 @@ class Dyff < Formula
   head "https://github.com/homeport/dyff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "89616cf6c38258a497945df4a8dc78520bdfda7f855fd8ef9b589f5ffa149a36"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89616cf6c38258a497945df4a8dc78520bdfda7f855fd8ef9b589f5ffa149a36"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89616cf6c38258a497945df4a8dc78520bdfda7f855fd8ef9b589f5ffa149a36"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bb9949424ef87bdf93404b60a2aefd7e594312d4a12199520b4c220bf5371f33"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7c04e9fdba12c788168a826cb92bca1599c354f8bbb8f41241a30e7b45dfcb5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b638ef733d87df5abddce32508d66262d24dc8f77525a32b0c6327e6aaada2c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ca0fa87102d972896699f21fe03d568ac44c612c543c9f2d795745bed318f62"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ca0fa87102d972896699f21fe03d568ac44c612c543c9f2d795745bed318f62"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ca0fa87102d972896699f21fe03d568ac44c612c543c9f2d795745bed318f62"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5ab5d87309c094322025eabfec3e290c16c82a0f37c5750ddc451723f87b711b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a723f317c0d376ac0caa4035916abe657059b272dc44d0c02fdd2096463e693"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4f47f8ee55831732ab2ac7a3dc6fa6e0d2d21de056ace6253d337289ae9237a"
   end
 
   depends_on "go" => :build
@@ -21,7 +22,7 @@ class Dyff < Formula
     ldflags = "-s -w -X github.com/homeport/dyff/internal/cmd.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/dyff"
 
-    generate_completions_from_executable(bin/"dyff", "completion")
+    generate_completions_from_executable(bin/"dyff", shell_parameter_format: :cobra)
   end
 
   test do

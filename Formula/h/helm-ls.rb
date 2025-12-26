@@ -7,12 +7,13 @@ class HelmLs < Formula
   head "https://github.com/mrjosh/helm-ls.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34112bdfac9d66eb2ccd00d691751b6a4272cfd35e13b27eaebac29b561da065"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa7ca4321da24ac8caf711deefccd3f1cd694a9a47854db8c68d62f8cbd423b9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48cff4a67ba23584fc0a5e36e5512d7cc7c1a04eee40bb72cb2f32369b2ccd64"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c73b83c2c8ef38ee905970b62ce99a9b5a24302449a077b43f14959437a88215"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1d964572fa17d745a855acaa728e4fcb73eed62ce1ff7a59940fffcce4b5d69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1b453332395c02d589b21d0c87a7146fdfb1826cbb5dd3cbfb95e8ec69e3df1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "20bdf67a7e0236a71291e8859150a4881cb20f47f18291053c069a75c3f7cf2b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33272118580434420cd9afeb6d1b3b9c2a99197f11cf1ebdb5a6cf3b5108c924"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "945a15cc2432578822c0133e2391cc526775455c0606e4271a577d66cb06db5c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c283d2a66a8ac927eb6823d3936237bb5c09b106621972512720ba83f5ce894d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a7d9b12fb83c20cf9d8af4c64e33f62d5b427c155e6225c9f7579187b132d43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27695f6754f9efdd600932665de44b3e4cbd02f87ee95e69a639db027f8620b0"
   end
 
   depends_on "go" => :build
@@ -29,7 +30,7 @@ class HelmLs < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"helm_ls")
 
-    generate_completions_from_executable(bin/"helm_ls", "completion")
+    generate_completions_from_executable(bin/"helm_ls", shell_parameter_format: :cobra)
   end
 
   test do

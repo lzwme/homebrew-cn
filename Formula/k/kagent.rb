@@ -7,12 +7,13 @@ class Kagent < Formula
   head "https://github.com/kagent-dev/kagent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e504de36872b2532f0d7d1a1eaeb127b788055c24aa88b62a7bfcaa2e6de03e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e504de36872b2532f0d7d1a1eaeb127b788055c24aa88b62a7bfcaa2e6de03e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e504de36872b2532f0d7d1a1eaeb127b788055c24aa88b62a7bfcaa2e6de03e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a317a79f38b0cc611367c64bb062da4f9212d0baae54cfc44d4f1e8aa3af470"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "935d4fe715fe78355c830f23dca91f176c27a7ba54111f948ffa23a67a94e6e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3faec155874c54b6663ad91d7c6c44845e1ce9ddf4e65b19a1a787ffd687db7d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0395105b074a201ba2518b33703c3412787b71b0b66cef18bf766753c13b88a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0395105b074a201ba2518b33703c3412787b71b0b66cef18bf766753c13b88a0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0395105b074a201ba2518b33703c3412787b71b0b66cef18bf766753c13b88a0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d8bcb9dea1824021862d7e19a0eec9f981536abf9f84a08d7717824c5de2c54a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49eed7c606acd59dda303dcd85c9d03a2c60bebc3c89402902065a1f78803286"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "152f233973546b849e8b5c129668085bf838c77ccc35547d17ce3bd9402d76fc"
   end
 
   depends_on "go" => :build
@@ -28,7 +29,7 @@ class Kagent < Formula
       system "go", "build", *std_go_args(ldflags:), "./cli/cmd/kagent"
     end
 
-    generate_completions_from_executable(bin/"kagent", "completion")
+    generate_completions_from_executable(bin/"kagent", shell_parameter_format: :cobra)
   end
 
   test do

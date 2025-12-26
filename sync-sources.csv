@@ -3924,6 +3924,7 @@ Homebrew-homebrew-core/Formula/lib/libestr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libetonyek.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libetpan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libev.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libevdev.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libevent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libewf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libexif.rb, Homebrew/homebrew-core, 1
@@ -8417,7 +8418,6 @@ Homebrew-homebrew-cask/Casks/a/automute.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/autopkgr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/autovolume.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/autumn.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/a/ava.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/avast-secure-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/avast-security.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/avbeam.rb, Homebrew/homebrew-cask, 0
@@ -15545,6 +15545,7 @@ Homebrew-homebrew-cask/Casks/y/yep.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yes24-ebook.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yesplaymusic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yggdrasil.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/y/yingfu-online.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yinxiangbiji.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yippy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yoda.rb, Homebrew/homebrew-cask, 1

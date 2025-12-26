@@ -14,7 +14,7 @@ class Docmd < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     # Remove pre-built binaries
     rm_r(libexec/"lib/node_modules/@mgks/docmd/node_modules/@esbuild")

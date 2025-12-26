@@ -7,14 +7,13 @@ class Gmailctl < Formula
   head "https://github.com/mbrt/gmailctl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3572d62c576e30ea488295628db1acb8545e9f1415efb0c45b78ba9eece1dc3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee77aed19516c088c2d625ce4a0c235834e22b74092fec144dc1b48494f742ce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee77aed19516c088c2d625ce4a0c235834e22b74092fec144dc1b48494f742ce"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ee77aed19516c088c2d625ce4a0c235834e22b74092fec144dc1b48494f742ce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7fe6d471d8f4fda9b6c6e2f39b3d09b70c745291150d982db48ce8e03792a988"
-    sha256 cellar: :any_skip_relocation, ventura:       "7fe6d471d8f4fda9b6c6e2f39b3d09b70c745291150d982db48ce8e03792a988"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "95f6a9a9413f3826b37ca2b6a494867ba61a91512973e00b3fdbdaa7d437bb94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60d4a9f72f8bb954e35ad8a7b31147f1f5f87fa3f56a18eaacc62b570fe1a399"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77a704db92814c882fce2b066e26b8fe91545a9a5769047b6d087f5305d78fc3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77a704db92814c882fce2b066e26b8fe91545a9a5769047b6d087f5305d78fc3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77a704db92814c882fce2b066e26b8fe91545a9a5769047b6d087f5305d78fc3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "73a83c86b05cc2160d9f5ace393e223834eca4246bd8d4e3d3e2c700137f9dff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5702da40d84a0a374fbcdd6232f1c93654938b0ce81cec90bce2fd2adccb50f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ec77775a68bc9a7448687bab9cff015b8bed71079474eac17212bb4b54d8c00"
   end
 
   depends_on "go" => :build
@@ -22,7 +21,7 @@ class Gmailctl < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "cmd/gmailctl/main.go"
 
-    generate_completions_from_executable(bin/"gmailctl", "completion")
+    generate_completions_from_executable(bin/"gmailctl", shell_parameter_format: :cobra)
   end
 
   test do

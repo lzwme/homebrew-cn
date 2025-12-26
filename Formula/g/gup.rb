@@ -7,12 +7,13 @@ class Gup < Formula
   head "https://github.com/nao1215/gup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7115bdc618beecd0aa7d62e856cb71164ecfb1bc49097e5558f3fd87a338d93a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27a994704a5b6abdf0fbbbea359a85d3471cd982e4485a187c26e8c7423156e6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1840b35031eee7baea1ae818d17467d7ef41ea38920571853611b20cf2ef1ff8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "56dea024eb1ac892c62c9e586097f6cc425d030a93731c6aac9580013101b352"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecee44d22dd06031a6b54bd63a50c10e21bb57c33fd1361a648f47912cd48543"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f76ce108506dad25fbdd764ba66d524506ae0b60fe4f8a48b5ec13da5ae79ec"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95d56228252c1a255ab939ad4c330632dfef0b8ae0fdcde6bbb87da56755f7fd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76ebb8387070352405fec67061993e5a03e46371442550131ba11598a3eb4e42"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6db31be41d72711b0caf46cdef8b5a9e0f6ecec03ad10e97f89c9e875f09a609"
+    sha256 cellar: :any_skip_relocation, sonoma:        "15f6bdb844e2f38b980a8f869342f50a9bee304efdc889cfa03b4b70ab880489"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf03dde80422794a12003efb4b0ff3854b7dd7ad56c397bf7d51fdbd4180c901"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c1a54c12a6bad65c99323ff11e419ae83a2259189ff27d990e5eeeaf5790a3b"
   end
 
   depends_on "go"
@@ -20,7 +21,9 @@ class Gup < Formula
   def install
     ldflags = "-s -w -X github.com/nao1215/gup/internal/cmdinfo.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin/"gup", "completion")
+
+    generate_completions_from_executable(bin/"gup", shell_parameter_format: :cobra)
+
     ENV["MANPATH"] = man1.mkpath
     system bin/"gup", "man"
   end

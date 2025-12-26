@@ -9,16 +9,13 @@ class Kconf < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "6c87543d6c4aaedc4bb42116fe029725d36172535b401567bfbd0f5c3762e8d9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c7ff80bea648574258dd8824d20fba4332346ddb89dc566b6286a674a3a730a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ed57d62a2cfcb32f238460071f886311c492f9587ab87cfa3f23eb524e1ef490"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e32cdeb9dfbc9027d5dbce3599fed6d051b2d5a64519b09a766c219b4c829934"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a495204a9089651402915a598e0771df6f1e4818ff7cf37847976f06f0487289"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7c3acf1e1e4b50f0768139f778540093c96566a5524c910b1aeb990ad480180f"
-    sha256 cellar: :any_skip_relocation, ventura:        "3458e12b3ab15a5590da0c8967da531406be70c60c1e701bf40e60a8e42dce70"
-    sha256 cellar: :any_skip_relocation, monterey:       "9c32f638d936965c04287be80f5b25b0a6252b6d87e3a1dabc23db18b57589b5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "58922db06cb8ba21213152bd06fa5527900769b8fd34b691e0292b5b12e632c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "116d253ca110da35e26bd037ccbec2286fb5d01fb8dfb2d1ced726cb371bc7ec"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "716e365025812d14fe17774fc209d18cc8f37aeae47916525f4a1547797e12a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "716e365025812d14fe17774fc209d18cc8f37aeae47916525f4a1547797e12a0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "716e365025812d14fe17774fc209d18cc8f37aeae47916525f4a1547797e12a0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "848797af83206e5beba36e0796a0627a87ebf8821753cfaf11d2f4a916fa8aec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f003fc02c549d3c6963af7c0a455bdb796147ddba2d66aa0bf5c2be3458082f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "847f19228e51932af6b6ca5b484c82fc5e5b0baf62d54189333cf5f45e2fa6fd"
   end
 
   depends_on "go" => :build
@@ -33,7 +30,7 @@ class Kconf < Formula
 
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"kconf", "completion")
+    generate_completions_from_executable(bin/"kconf", shell_parameter_format: :cobra)
   end
 
   test do

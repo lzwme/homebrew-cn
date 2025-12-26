@@ -18,7 +18,7 @@ class Neonctl < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     %w[neonctl neon].each do |cmd|
       generate_completions_from_executable(bin/cmd, "completion", shells: [:bash, :zsh])

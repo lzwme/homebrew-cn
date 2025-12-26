@@ -7,13 +7,13 @@ class Egctl < Formula
   head "https://github.com/envoyproxy/gateway.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73fc4ed4e1f3bd6cb9bfe49319491bb8b6c9855dbced38d4a05ae28fb1916a72"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61b082693b26d6b61fc7d73846296023fe84b0d12c170a0a1e76b748da2ce341"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5dc4c5d34dc37ca78b4057814fc5e3803310e9b52af64760e75b607b939be96c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fd0c0685a92d4a032f8a21d5b8d8d67a4dc09d0c6185053a9d592c8a44f78faf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "52c3eda3c60de578a302ce2c85c676f22d90520181232756459b74b5d52f95f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5991c4b7b13229891267727a4e01fb9f2aacf3280af2fb8b1031df8491fa5d40"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "281b57a4ebc174cfe6255cabc7d6d895df0eb6378e9837d3102a9d79e2f4e285"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "329233d2ac8ace26cf74948648b01cf1135b2fe2c6b21401585e795eba24098c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51c534b5f4b6998d5881aa04ad725d3d7805cd00f36b3015b16cdad6618c55e6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3c180bbcb74bf92e43ef934ba3b8c73f3900eff5f58873ea2129510bf2b5f4f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9418f4a2ccdb6a639d3f48a774d0b60df8af1b1aa8f763e6c4d61abf41f65c18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26b2a9e718b515b3966a93a9f5ba4e24f6e7611e521c661f42a13fe59c489385"
   end
 
   depends_on "go" => :build
@@ -30,7 +30,7 @@ class Egctl < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/egctl"
 
-    generate_completions_from_executable(bin/"egctl", "completion")
+    generate_completions_from_executable(bin/"egctl", shell_parameter_format: :cobra)
   end
 
   test do

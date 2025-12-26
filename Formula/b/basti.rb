@@ -18,7 +18,7 @@ class Basti < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     # Remove incompatible pre-built binary, session-manager-plugin
     node_modules = libexec/"lib/node_modules/basti/node_modules"

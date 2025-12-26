@@ -7,12 +7,13 @@ class Kor < Formula
   head "https://github.com/yonahd/kor.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "36fa1bc7b373051fcf0b45601ce5ca8f05d3851bf37b977f2c935c863601c2e6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af23bf965170c800f41a54113de23bbb4103a3862e2b998e614dbe30f3548f35"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ea9df23a16f3ad23dc4c7f2f9c5c7b8734e3f64a3966922ed25b808c86935c6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2916efa9776111e48ca0b17e907474dc7eaa6134647910252d8368598802a045"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5ff651494040f6ff0d8d9e36f6fa17b29c63eda0271087d2c64a122aec45b1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91ffc1b4d3457f14e6ef1ad02ad3c91211651f40ac865534f44cdf3c4e6c40bd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "08457d9c20b4abfac9e6779dc8e114a3f2d2be7fe0ae193b473782a7b15aab08"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c38807e910f60217218943bab992ccaa367bfad21751e6eee7176138f7acdbf7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49a703361446c74029b678f290ff1aa8595da145488856cf98734f8afd472612"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cec304e5efd820ed26b1d8c5a309326c550d1c546ab54732d285b27db44eab43"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab9f6e773b533e4677f9b790e8952f87a43afc3e4a8e76f5bf9fabd0ff98c059"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38c1cdd443addc2389e94611df8b9aa51df760573291613178b637ca374c04f8"
   end
 
   depends_on "go" => :build
@@ -21,7 +22,7 @@ class Kor < Formula
     ldflags = "-s -w -X github.com/yonahd/kor/pkg/utils.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"kor", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"kor", shell_parameter_format: :cobra)
   end
 
   test do

@@ -13,12 +13,13 @@ class Colima < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a7f242382c46be1f99eddc585491ea078110f1e6e9e07b7f1f12fd0dd2460bb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7625efabf5dfe6080f76b2af352aabe20a0722b9884d8f5b14bc4a9f5ab586eb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bfd91649e2535ca35ea4f40beac828631a028e9e5e7a869df3ae7a124100e61b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fcd7375b90de4cf308fcb89f7a542fd947b43e4703eb4c268c7b75f7e0003524"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b5314fdeb1945dd23572eb317918b1a11c62452bcbe23e0d7270a5a67abea38d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ba50c768eb2d2f6cccec94cf3d784aad48848dd9544ee7a25a7a1be269e22f8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07fe7cb470fbc19ca9397ed2d70395568290db09ac1f6fc90b9826901f5092bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e2ab691c2d3ad9d783566b9c84b7c3805cd2520c3a06c7123d9a5209f4afc7e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a0e52df410904a565cb50a77e66d5a55775a156970a4134cf3c8baf20b3a451"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b725a6f9b340d9dd4aca8a3fea932ccf416eb3f27a71052c8a349fbdb4576b83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b96615720d89b7bbc35492fa556f738a4542fe39d9ede596e82014f4134594c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9bb263e4a5d0dfcb9a62c28fe553e231bbf44a469f07cdf7a3d92d1a1b0dbce"
   end
 
   depends_on "go" => :build
@@ -33,7 +34,7 @@ class Colima < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/colima"
 
-    generate_completions_from_executable(bin/"colima", "completion")
+    generate_completions_from_executable(bin/"colima", shell_parameter_format: :cobra)
   end
 
   service do

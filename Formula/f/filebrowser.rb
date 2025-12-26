@@ -7,12 +7,13 @@ class Filebrowser < Formula
   head "https://github.com/filebrowser/filebrowser.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79f1b75f8b5318cc5fbc82dd1ff67ff6dcc040c7ea9dae1ae5c1ff5da74b2a7e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "868c0af66283639a4142e9ac7c3760d3e8c7947649444c44761e669a4ea8dc43"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82e9f6e4631e999bdade71d3b681630c02b8ce2f60194c8121d4497767d0e44f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4ea99bcbba0fe6ec906031cc445b78c6435ec3e0ace377e30c6931dafc837ed4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2ae212c4a2e5ba2a22ce27fffe0bb6cb6249867286544ea6bbf539828288091"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "959356e80c01530406d710b9e41406841af9552abf55cc491c8baf671b523c23"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "639bfbd797aef7ef7be76dd8cec6d749490fbb97e22734802b00501bf82e6f95"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52e1bada9a1322c05209d92b720cb6b1e13307e9aa550d29cf5bfbfb622c5c8c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3e102635f311e7855be0c346f90cc9757000dc18e90bce7860bef3833c2c6f8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5446b5f6295850b96aec27f9f817c6f73a090fba812af07415388b1bfce201bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c0f1d5dc61adbb9b987e64ee11484b44e19893d6854e5258988191f1693c8a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03deb473cb343cfccd3688e726886c719b6df60197919b8ae90984d1640b5882"
   end
 
   depends_on "go" => :build
@@ -26,7 +27,7 @@ class Filebrowser < Formula
 
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"filebrowser", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"filebrowser", shell_parameter_format: :cobra)
   end
 
   test do

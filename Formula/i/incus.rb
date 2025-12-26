@@ -12,12 +12,13 @@ class Incus < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbe2f76432335da2af6c5f9d2798e2941bfdfb9c085990661f49a0841b0343e4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbe2f76432335da2af6c5f9d2798e2941bfdfb9c085990661f49a0841b0343e4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fbe2f76432335da2af6c5f9d2798e2941bfdfb9c085990661f49a0841b0343e4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "65008cd0a138f021f97770f99fe7839331f9fad6b573c9dde138b8a8f809d137"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9a1dcdb6e6d270db0cb32eff3f9c28df2545a1014618ae441b727c8b0767e84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6981e1a78a4861d15a9e5e5abd8445081ec3e439cf3ca5fff48882715ef63d5b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f189327750072416087ac908d2e0ccd0dac16bece35b7f24f232ff1c067e439"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f189327750072416087ac908d2e0ccd0dac16bece35b7f24f232ff1c067e439"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f189327750072416087ac908d2e0ccd0dac16bece35b7f24f232ff1c067e439"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7bc6ec414ece16f76c42b6655756fac6ac2c7af102ead44906fd46928f6521f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed54e378220b38eaa0fed336709b30870b5eb2f621ee0f88af0eca3422a64e78"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8ece1d3f41636f6e5e3cbc78c6f7c649c228a13ff0f222ce770732291c9cedb"
   end
 
   depends_on "go" => :build
@@ -25,7 +26,7 @@ class Incus < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/incus"
 
-    generate_completions_from_executable(bin/"incus", "completion")
+    generate_completions_from_executable(bin/"incus", shell_parameter_format: :cobra)
   end
 
   test do

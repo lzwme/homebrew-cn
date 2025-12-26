@@ -7,12 +7,13 @@ class Kubecm < Formula
   head "https://github.com/sunny0826/kubecm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f6445d2e011f6faecf4e72d5ddf2fe0d995c67589ecb9c01aa3fa26badf5a369"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6445d2e011f6faecf4e72d5ddf2fe0d995c67589ecb9c01aa3fa26badf5a369"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6445d2e011f6faecf4e72d5ddf2fe0d995c67589ecb9c01aa3fa26badf5a369"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f0dcd292a68b2e202be690ba95de57a2d5ccbb2cefff048d2084e2f523873590"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "09580199b744d164a8992984f270b007711354d3daedc68f2378ed20ae9ed194"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b56304fc2d7c89816c020b98934f5d5c2005459248b1def5bb6f0dc58f2e86a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "58bbfefd4f4690223bf8d9db1487904a6a3375ae4ea38ea3545bddeaa6f73b0b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58bbfefd4f4690223bf8d9db1487904a6a3375ae4ea38ea3545bddeaa6f73b0b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58bbfefd4f4690223bf8d9db1487904a6a3375ae4ea38ea3545bddeaa6f73b0b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8fa53bb01c1b646eca50397b1c85d747dbfc298bd01588806f5dc1d6375e514e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ca5bf3f0bf2d59221a93d7214fc0fc49c1487a08c101b12a434f886271cc034"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "892a724104214e188c3b8459505d9078cd8c80d8ffc22895497f17fa83ad621f"
   end
 
   depends_on "go" => :build
@@ -21,7 +22,7 @@ class Kubecm < Formula
     ldflags = "-s -w -X github.com/sunny0826/kubecm/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"kubecm", "completion")
+    generate_completions_from_executable(bin/"kubecm", shell_parameter_format: :cobra)
   end
 
   test do

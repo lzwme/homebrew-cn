@@ -12,12 +12,13 @@ class Cog < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ceb44c693ad1be55ce40fbae109e0783608537193fc54edcb1ec74ac76f3590"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ceb44c693ad1be55ce40fbae109e0783608537193fc54edcb1ec74ac76f3590"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ceb44c693ad1be55ce40fbae109e0783608537193fc54edcb1ec74ac76f3590"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f64c417716866dc2639b9924fa4c312781206d2ff45a90b29d08218db93f0a0f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bcee96878607aacfbf2d9e60768bdce322acec77aed6d4a94fa3bdfb21bc8162"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08d62fc0173dcd91ef42030dea173323d3497fc78b407c84f50deadb25779c3f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34367cbb25c32d9dd785b1030795fcbcbf42ae90584a1d97eefe698b59a8f5b9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34367cbb25c32d9dd785b1030795fcbcbf42ae90584a1d97eefe698b59a8f5b9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34367cbb25c32d9dd785b1030795fcbcbf42ae90584a1d97eefe698b59a8f5b9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "526edc6ad0f52e67bc969cb036ae04fa8d98ad697c39887034214d68e9bfe9bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "15a3792f5d0603c650629099d5bd6e86bfedb23fa92c15584873e9b97495a604"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db4c05261fec1d94f1e59fd5c68bd275c51db0a4349bf941c1c63a0763c0ff72"
   end
 
   depends_on "go" => :build
@@ -43,7 +44,7 @@ class Cog < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/cog"
 
-    generate_completions_from_executable(bin/"cog", "completion")
+    generate_completions_from_executable(bin/"cog", shell_parameter_format: :cobra)
   end
 
   test do

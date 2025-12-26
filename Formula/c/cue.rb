@@ -7,12 +7,13 @@ class Cue < Formula
   head "https://github.com/cue-lang/cue.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc2e60cd8e2d9206fbdf041242792f3c172a3808bab0d404ea547c3eb70e46f0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc2e60cd8e2d9206fbdf041242792f3c172a3808bab0d404ea547c3eb70e46f0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc2e60cd8e2d9206fbdf041242792f3c172a3808bab0d404ea547c3eb70e46f0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "49908dfd95a49f28c82dc6dc0bafc4d05b86d08affcd06351180e5e493ed1840"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2c275509c6de23906af38b5a85365609b3d11259d8e5c331897d4def4ead772"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72df844309135e9f5bfef9fcf644512f5e405cca81f91e7a39ce43f901e30b5c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "82348ab8d29840757a9f0902169d3e3ae81eb88f5f7a66ef38bbc2d814cfc598"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82348ab8d29840757a9f0902169d3e3ae81eb88f5f7a66ef38bbc2d814cfc598"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82348ab8d29840757a9f0902169d3e3ae81eb88f5f7a66ef38bbc2d814cfc598"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a26ff0d337ca5cacc8b134262f7d5af28ffb17bd63e62bd5987ec34a5a380e83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "665e16d25c97a6e35c922c1a0c658df78cd6036f705628460d235157eb69e5b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "caa549da20619dc6e0a5cb693d015af323cbb2f346542e56edc91f18b6793956"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,7 @@ class Cue < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X cuelang.org/go/cmd/cue/cmd.version=v#{version}"), "./cmd/cue"
 
-    generate_completions_from_executable(bin/"cue", "completion")
+    generate_completions_from_executable(bin/"cue", shell_parameter_format: :cobra)
   end
 
   test do

@@ -6,8 +6,6 @@ class AmazonEcsCli < Formula
   license "Apache-2.0"
   head "https://github.com/aws/amazon-ecs-cli.git", branch: "mainline"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "9a98803f22995cb9fd3ccfff0d9ac6bcb8de73df88e94c9bf60f16181ffab227"
@@ -24,6 +22,9 @@ class AmazonEcsCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:    "5c02a7a6f0510165209dd1770595340906f5c0165084dd88801ef76916c61270"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4bfbca5701b37d685a0f5da1a135e736e4a594079e2368262c498396f4446261"
   end
+
+  deprecate! date: "2025-12-25", because: :repo_archived
+  disable! date: "2026-12-25", because: :repo_archived
 
   depends_on "go" => :build
 

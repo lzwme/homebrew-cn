@@ -12,12 +12,13 @@ class Hugo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "798c0b5ba47fa62da06cf3ac98a1c4631f86414311b79f4b0afb08aba6e76432"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d782102c487167c97b096fe271f554d1d0b6c81f54e84ff00988ddfbc44f5ca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08a9e5b986fb001e0c01e91882add817f0ff2edeec89c84b42880e71fa417604"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c031fcfb648439b34d20565bfcc704a8eb30e0a2792f49c6818d685ef880699e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "334970792a7f5b5ab6011ea55264706b5f7ba45e94cd65e510cfdd2781a1fe66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ace5c8c2111cc855b4281359ed2235937ae67187a19f40e2d2f2bc314c3925a8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "91f421cf2c685780327cf9b3aaeab0de14aa53dc043ff722b077dc5f108aa309"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5330ef2318065e5ca54cb608702322966bff5444b5302064faa0e9e078082f4c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f5a16c03aa43ff748b721d06f4c32fff573ed58792f1523b651cc1af8e424a9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "55de4016f42ae3c73db2647503128005ff3cbc0c34f0c817ad30c75151673d7d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "16a2519e4cd56cc1e49278443a86bab24612db62646836f8d599d4867b4ba87a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48faea1247cd8edd2cdbcc3a00b89a7bb26b8c124efe72d5e9217f419efb4dd6"
   end
 
   depends_on "go" => :build
@@ -35,7 +36,7 @@ class Hugo < Formula
     tags = %w[extended withdeploy]
     system "go", "build", *std_go_args(ldflags:, tags:)
 
-    generate_completions_from_executable(bin/"hugo", "completion")
+    generate_completions_from_executable(bin/"hugo", shell_parameter_format: :cobra)
     system bin/"hugo", "gen", "man", "--dir", man1
   end
 

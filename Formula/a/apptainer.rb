@@ -7,8 +7,9 @@ class Apptainer < Formula
   head "https://github.com/apptainer/apptainer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "dfc87da12197d8e821313201e64170365415a95a56b042ea66103ef5599b52ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c1f26bbe3591684529f9b3ccf0f106a3be025924653c075faa74846c1f20e4d8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "869d04ad3305e8a4f7129c6cd978ec4d48972b049c65edfbb56d3c6048714df6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c0e1729e484d95e8c33083e9fa81046d60d4dc2ebae1c1ea195c4009158c7124"
   end
 
   # No relocation, the localstatedir to find configs etc is compiled into the program
@@ -37,6 +38,8 @@ class Apptainer < Formula
       system "make"
       system "make", "install"
     end
+
+    generate_completions_from_executable(bin/"apptainer", shell_parameter_format: :cobra)
   end
 
   test do

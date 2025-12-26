@@ -12,12 +12,13 @@ class Kubehound < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b21c06a276e833fc59793789abc140fedf34f87c929e11c4266573d547e95688"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d57b9946f4af692fbe0f724ca3097536ee7a04cf6e0eada398368ef1041b202c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3c7968bf9a46e7a70e3017eef5f5420e952f471ef7717d953af9c6f64df541ec"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1ea422b124724219a266999a7336d1b3e53cf9346ab4c720b0cb5a76d810d062"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc41bf622694ab862c26556620cbd4a82aad40db7cdd3dffee17e203a9caa451"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "342077b06c7865acd7822c1a298deada1058ae7fbebc9f269f5f875269bd4548"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ed0e5bcc02c1fe5fd9097597ec362a713a01d8dba8aed76a1dc35dca5423458"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22a99818f4c97fa26941886c33aafdacfb5c90ba0d6891d3004a0917dcf27ea8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c3f643db8156e52a8918569bd9e7a4b6ff46f471dacfe350fd1653160d4ffb7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "79367aaf47312361c2e27be4467c9038e71a51eb1143dcb9ab22b34b7f6b7c5b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "714f67c61f7051582d98cbcb3ad49b36df56f2cef8c60f5aad12806b166877a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7ae490424140e2fbd8d5d6ec33763774e4a566571cc70d77c2d10149e34d980"
   end
 
   depends_on "go" => [:build, :test]
@@ -35,7 +36,7 @@ class Kubehound < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, tags: "no_backend"), "./cmd/kubehound/"
 
-    generate_completions_from_executable(bin/"kubehound", "completion")
+    generate_completions_from_executable(bin/"kubehound", shell_parameter_format: :cobra)
   end
 
   test do

@@ -7,14 +7,13 @@ class Kool < Formula
   head "https://github.com/kool-dev/kool.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01b7a34a423abc2c66330ecb5dac5cc25f00760a3168ff5debc97c3d1d1f2b3c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e48a8e7d166938e43d4a68faf9912a34952934db3d665c297da9bf44069332a9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e48a8e7d166938e43d4a68faf9912a34952934db3d665c297da9bf44069332a9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e48a8e7d166938e43d4a68faf9912a34952934db3d665c297da9bf44069332a9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0f6186319cf2b73fb9a455254286ca785af62b79caf32ff17e731ef49bec2677"
-    sha256 cellar: :any_skip_relocation, ventura:       "0f6186319cf2b73fb9a455254286ca785af62b79caf32ff17e731ef49bec2677"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca872ac11f786417d0c851ad83bf64457f910fd14e1913d669cf9a50a0525024"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c68552d6fe32c2512b177459c9b04982c2f5a21c8b49eab5198a9a23899eaa67"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b8c40e986f6c4c6c1c3631702b1616a9df0f2b1f62ccdd3749f503a13edfdbb3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8c40e986f6c4c6c1c3631702b1616a9df0f2b1f62ccdd3749f503a13edfdbb3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8c40e986f6c4c6c1c3631702b1616a9df0f2b1f62ccdd3749f503a13edfdbb3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6b043cb0a1b3a010641bb43301f92cca8ef847503c81dbd539d8c68c6b9b6ccf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d2608ed1206d8d0fa0eb11637413658f61ffdba16ee77e4375628eba8526d31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56355058b598afd69012012fb789faa7043649b273459c52c0f13e198ec856bd"
   end
 
   depends_on "go" => :build
@@ -22,7 +21,7 @@ class Kool < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X kool-dev/kool/commands.version=#{version}")
 
-    generate_completions_from_executable(bin/"kool", "completion")
+    generate_completions_from_executable(bin/"kool", shell_parameter_format: :cobra)
   end
 
   test do

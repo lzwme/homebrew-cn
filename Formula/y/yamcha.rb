@@ -1,7 +1,7 @@
 class Yamcha < Formula
   desc "NLP text chunker using Support Vector Machines"
   homepage "http://chasen.org/~taku/software/yamcha/"
-  url "http://chasen.org/~taku/software/yamcha/src/yamcha-0.33.tar.gz"
+  url "https://deb.debian.org/debian/pool/main/y/yamcha/yamcha_0.33.orig.tar.gz"
   sha256 "413d4fc0a4c13895f5eb1468e15c9d2828151882f27aea4daf2399c876be27d5"
   license "LGPL-2.1-or-later"
 
@@ -101,7 +101,7 @@ index c012fec..b88bdff 100644
 --- a/libexec/mkdarts.cpp
 +++ b/libexec/mkdarts.cpp
 @@ -23,6 +23,7 @@
- 
+
  #include <cstdio>
  #include <cstring>
 +#include <cstdlib>
@@ -117,6 +117,6 @@ index bbf7761..053e3c8 100644
  #include "param.h"
  #include "common.h"
 +#include "string.h"
- 
+
  #ifdef HAVE_CONFIG_H
  #include "config.h"
