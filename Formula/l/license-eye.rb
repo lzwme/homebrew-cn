@@ -8,12 +8,13 @@ class LicenseEye < Formula
   head "https://github.com/apache/skywalking-eyes.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f129551508b02f5d729f793a9763c4026204face464a55b8150f3874613080b9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f129551508b02f5d729f793a9763c4026204face464a55b8150f3874613080b9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f129551508b02f5d729f793a9763c4026204face464a55b8150f3874613080b9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "45966756d7bf9ae5bfe0fe6b21de96647fcfb91ef8a7131d86df8f049f047f50"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "12eb95762b7cca2f8051e874dd1e12cbcb4cff0fcc55eadf63141a0411e01cd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9e1a93e105a6f7d6e651eaa3f3087e25b4f83460ec406ad6f0d6daf994c3a23"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f33dec54a6a87510fd2fa09014df3b7a49cff98db6736faf2ffa98afa2232854"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f33dec54a6a87510fd2fa09014df3b7a49cff98db6736faf2ffa98afa2232854"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f33dec54a6a87510fd2fa09014df3b7a49cff98db6736faf2ffa98afa2232854"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f6a0412827b3b186256859307f56089da159720583ca8405956f1bd69757f970"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8e4286769df4b08f934ea4dc7ad42cef78b87ae1a9748d51ef6f56b35f0849d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afeeb07c76862ca5bdd7d8144695a685ff819575e5656515259c7dac7cee027e"
   end
 
   depends_on "go" => :build
@@ -22,7 +23,7 @@ class LicenseEye < Formula
     ldflags = "-s -w -X github.com/apache/skywalking-eyes/commands.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/license-eye"
 
-    generate_completions_from_executable(bin/"license-eye", "completion")
+    generate_completions_from_executable(bin/"license-eye", shell_parameter_format: :cobra)
   end
 
   test do

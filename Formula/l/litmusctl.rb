@@ -7,12 +7,13 @@ class Litmusctl < Formula
   head "https://github.com/litmuschaos/litmusctl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a05e27ff15de6f9102a1edd11eb69186af98f550321b5876ed469df5cbf6fe79"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a05e27ff15de6f9102a1edd11eb69186af98f550321b5876ed469df5cbf6fe79"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a05e27ff15de6f9102a1edd11eb69186af98f550321b5876ed469df5cbf6fe79"
-    sha256 cellar: :any_skip_relocation, sonoma:        "63b20a4a3ace2f8f21378c015c939dc2e6249d91226308a71b7abb1ae2189406"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d0058eab50266ba776cf4de6e16d3cd1735fcfa5fdd4422f004bfc933cf21ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a480ad4724ab34499e5f5b5c7753b2a4a684b2c5e0502dff9c4b78579f001770"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "425da5d7187636f89ed543fd2711daff5e95e6dcf5b3165443b6495377b1ef07"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "425da5d7187636f89ed543fd2711daff5e95e6dcf5b3165443b6495377b1ef07"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "425da5d7187636f89ed543fd2711daff5e95e6dcf5b3165443b6495377b1ef07"
+    sha256 cellar: :any_skip_relocation, sonoma:        "be483e3a9e9640967109a6cc81df1b7793513468f4cf6c60c0312f79eb5c20b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18decd447c4ac8c6a1dbcf30670c50aa60082c9a8063747cdf2318a04b72786e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08ce81b1564cf969f27e3cfe3c644412e96e2a3bce9650f44b9b2b1144305956"
   end
 
   depends_on "go" => :build
@@ -21,7 +22,7 @@ class Litmusctl < Formula
     ldflags = "-s -w -X main.CLIVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"litmusctl", "completion")
+    generate_completions_from_executable(bin/"litmusctl", shell_parameter_format: :cobra)
   end
 
   test do

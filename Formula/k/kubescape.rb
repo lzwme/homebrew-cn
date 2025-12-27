@@ -12,13 +12,13 @@ class Kubescape < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b46e8475527e5d40b919e3519afa2d8668ae6cca36c15c9f021a6ad2bb560c55"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27546ff27da864fe1f13c8f1ce3b6b19e022370a08f489cb7f11d60f1d6ddcf8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e5cf5c97d7d05b4398c08f906a2d535174bde8dfeef5c719748ceb08c952e75"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f9107219c9f85191e3a4fbf4bc942a4905ace30750b4532811724a39063f4e1b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "32dc28f0d6a50f43b15597ea883e25c185709d42887ac0d26866602bfa0099e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89ce05132e8c310885b052c5de0fc3875e52cbab1a5b8fd2441f0abed1a01e97"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02a65f49275461aadf9838f091fe565d9e6223fdae4c8de6bc6f0484b533b4f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8052bfa6ca69ce5a2fa5b6e825021bcb0b16cfd067dd258d73ca5977a4f5205d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fdccdde42d095f15666cc5f322f6bc902aae05fcecd949fb251b3dfda546a747"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6af3cdb6659629e89d767c2af6d2bd5d993291e02e73943cfda881b7e7fa55dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8d70ef9c71d07c6a43a27d57f72c8e5d7979f899d1d41a25cbe262ecacbd688"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eaf33bb0738dbbae9ecbe8aee6ceb2da00533548f89b62266eaddf1c12294b44"
   end
 
   depends_on "go" => :build
@@ -26,12 +26,12 @@ class Kubescape < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/kubescape/kubescape/v3/core/cautils.BuildNumber=v#{version}
+      -X github.com/kubescape/kubescape/v#{version.major}/core/cautils.BuildNumber=v#{version}
     ]
 
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"kubescape", "completion")
+    generate_completions_from_executable(bin/"kubescape", "completion", shells: [:bash, :zsh, :fish])
   end
 
   test do

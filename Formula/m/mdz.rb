@@ -7,21 +7,22 @@ class Mdz < Formula
   head "https://github.com/LerianStudio/midaz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eae2798da396b801c695e6978eb58cb5e0bbf324ea42dae90b4f217626e176be"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72ee178fa41be3906334cc09bdbafd3f1e06fafa24ae9ec1e18468c05232dd34"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a6de3fe955f6a47f7f5de344e96a30922660bad15835fb4e9e9ed3787dc649c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "944c0dd7f07c17c109d1f4a9755aa5c244daa7ebbb4059fa12939e551b3a4ed6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a29bc7b1da823425c04ba436f2b748a7df60c5c3e7b4dab348327e695f9d8a59"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "520b220ac4c79235d78f4f307e3186f16fdf10b14acdf22f9284194c142229a0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e651d6352ecd5661ad278bb9587f2cb551aa8aecd6a69775be5f87d4a56736a2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e7c436dacbfba564ca6dd390bb667ff9162f341b136db66eff71d3280d5292b2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60d3f1ae7125eef0563ebdd7a2633030931a21c881e3eea38f4112d3d8216d4b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ff923d9e7e19fe78dcd0b35116b82615185cd2264f46debc8bac47cbc32e2479"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6704bc0532637b1c8487700b0520467c624ad4f314d5fe7f480ccc1ba5f435c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "927d3e625169f2db2a994e83874e434ac4de3b0a9551b35a61c56c6e24e5ca9a"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/LerianStudio/midaz/v3/components/mdz/pkg/environment.Version=#{version}"
+    ldflags = "-s -w -X github.com/LerianStudio/midaz/v#{version.major}/components/mdz/pkg/environment.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./components/mdz"
 
-    generate_completions_from_executable(bin/"mdz", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"mdz", shell_parameter_format: :cobra)
   end
 
   test do

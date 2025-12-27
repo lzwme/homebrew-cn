@@ -74,7 +74,7 @@ class Cmusfm < Formula
       end
       loop do
         sleep 0.5
-        assert_equal nil, Process.wait(server, Process::WNOHANG)
+        assert_nil Process.wait(server, Process::WNOHANG)
         break if cmusfm_sock.exist?
       end
 

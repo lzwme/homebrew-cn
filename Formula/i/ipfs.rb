@@ -15,21 +15,25 @@ class Ipfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "836e6dcb2521a9ef7842455c39b2d98b36b890aabde32196405fca8353c54c35"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2597b761f790adbb5611f83b6aaf07a333aff82c4c89d7134db6a6d794c648d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bed066dc60ff69686bd44f0df912f95abf484a06ce8bc4f4ff289d4854795918"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e73783a9e6acce1655332715bb58d673c56d41173d49daf75db7d547b6ac77d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fef5160602b9961932fc52863beaaf4c2aacc141eeee65d848a6a376c7e71b5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd3f4d987ac7be44dc19b44f4c6d3e6d3a8683cfb48692bd58a6f7dc38d0a755"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3f9bdd0ed71fd796e096e1244c8c4052b295a57b52e5f384c3b6503c69be242"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "469f768c0473c1b69a10e2642e3020d1f21624589d30874e7bef153a2f74deea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "566990448ff046022f76e62605c011ab0e4f6a8dce87d2d9c16a5ba242c6cbfb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2cb3e80d0945d2e946f42f2e212403056262a2042221afd61b36fb729be1a0fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "61225960961f9b954b1d73ff8cf5c5054b2d94b2267863f7f81aada5bd8b2a71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "403fc295aba889aa20f6234998d7949be052d6f1b12efc0d3d5450fb8ff982ad"
   end
 
   depends_on "go" => :build
 
+  # bump cockroachdb/swiss for Go 1.26 support, upstream pr ref, https://github.com/ipfs/kubo/pull/11124
+  patch do
+    url "https://github.com/ipfs/kubo/commit/ecf967de3a0ac32c0e2c4f2391518b64741376df.patch?full_index=1"
+    sha256 "2ed099b25219f9fde686461e684ff8fbe26fb8ab66b2e6cb213975e84e82dee1"
+  end
+
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/ipfs/kubo.CurrentCommit=#{tap.user}
-    ]
+    ldflags = "-s -w -X github.com/ipfs/kubo.CurrentCommit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/ipfs"
 
     generate_completions_from_executable(bin/"ipfs", "commands", "completion")

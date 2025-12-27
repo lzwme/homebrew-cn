@@ -7,14 +7,13 @@ class Mmdbctl < Formula
   head "https://github.com/ipinfo/mmdbctl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d83aff861970e82984f2a19c2fe0b969a786f5f2133148bfb51c3d88646426a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d83aff861970e82984f2a19c2fe0b969a786f5f2133148bfb51c3d88646426a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d83aff861970e82984f2a19c2fe0b969a786f5f2133148bfb51c3d88646426a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1d83aff861970e82984f2a19c2fe0b969a786f5f2133148bfb51c3d88646426a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bce3a893ebc1b01a1dbe6bcc7f972b634f4e463d7244373ff4dfb778a1639614"
-    sha256 cellar: :any_skip_relocation, ventura:       "bce3a893ebc1b01a1dbe6bcc7f972b634f4e463d7244373ff4dfb778a1639614"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd2829f9d0625c9515220cefee9a09f1046b91e70b61434a0f8cd85d8df18fb0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fec967e1d52cb9782b28147f9c503a135d4b2ed175895ea79c139bdb59583b41"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb1d20f3c8c716938b346034fb20381b864ed7d6ac63ae6fc156b9eb38ad7fc6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb1d20f3c8c716938b346034fb20381b864ed7d6ac63ae6fc156b9eb38ad7fc6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb1d20f3c8c716938b346034fb20381b864ed7d6ac63ae6fc156b9eb38ad7fc6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "980000b0e67d53d0a6b6aedf2d665ee25a24400ea07ca4b5e0544dcd9dff81f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "01fec8071fa10233cc0465a6ce62a6f0870719502e89b517cf178073ca643016"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3af00b80cd2a68401e3df838b6d40bfbcdcf58b59f9f2c04eccb9144b61e17fd"
   end
 
   depends_on "go" => :build
@@ -22,7 +21,7 @@ class Mmdbctl < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"mmdbctl", "completion")
+    generate_completions_from_executable(bin/"mmdbctl", shell_parameter_format: :cobra)
   end
 
   test do

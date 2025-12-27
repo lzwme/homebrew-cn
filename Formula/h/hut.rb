@@ -31,7 +31,7 @@ class Hut < Formula
           access-token "some_fake_access_token"
       }
     EOS
-    assert_match "Authentication error: Invalid OAuth bearer token",
+    assert_match "gqlclient: server failure: Invalid OAuth bearer token",
       shell_output("#{bin}/hut --config #{testpath}/config todo list 2>&1", 1)
   end
 end

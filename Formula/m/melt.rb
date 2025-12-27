@@ -7,14 +7,13 @@ class Melt < Formula
   head "https://github.com/charmbracelet/melt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9867029e68c10f409404183ef028dbf0b392117f38fa4dcc8dfe7cbf944a2c6b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "547013e6780070ab0e514c03cad053fcff034ed2bd938b43bb5ece9b71424274"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "547013e6780070ab0e514c03cad053fcff034ed2bd938b43bb5ece9b71424274"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "547013e6780070ab0e514c03cad053fcff034ed2bd938b43bb5ece9b71424274"
-    sha256 cellar: :any_skip_relocation, sonoma:        "01a243d60bb828e77591ce38242f3e63097adff342a71b87eb8864a17234141b"
-    sha256 cellar: :any_skip_relocation, ventura:       "01a243d60bb828e77591ce38242f3e63097adff342a71b87eb8864a17234141b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ffc976877557e3d59a0c68687554f754675e683848fec8bdbc7466a257327e9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ea2cb7ae00d2065de9d82efa15f5bbdba7f01a2424f83238a9635ecf4a4cc25"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6064c885c390d6c1b80356c097549fc1eea43ab0a1d12d50e2fb6cc3c1369321"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6064c885c390d6c1b80356c097549fc1eea43ab0a1d12d50e2fb6cc3c1369321"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6064c885c390d6c1b80356c097549fc1eea43ab0a1d12d50e2fb6cc3c1369321"
+    sha256 cellar: :any_skip_relocation, sonoma:        "859066b5a763b3515215482fdb28cabdca370c42ace805013046f56d6233c583"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "473a37ff07856f5f587fc22a267edb9e268aaa100cc60980bcbe1317d85454aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f036b14fd312ab891ca6ba924692520ccf73c4430e0c0d4dd95128858b11923"
   end
 
   depends_on "go" => :build
@@ -22,7 +21,7 @@ class Melt < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/melt"
 
-    generate_completions_from_executable(bin/"melt", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"melt", shell_parameter_format: :cobra)
   end
 
   test do

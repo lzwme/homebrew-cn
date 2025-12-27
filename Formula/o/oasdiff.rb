@@ -13,14 +13,13 @@ class Oasdiff < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b30a69746c46c6e2ab171dc35075133c80b84602d767cfe1cdd12767d5c11d0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb82a39e44dcda2cc1c4c712c5f8f82c84e9d9f5109e5f8afdcd815c4edcb712"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb82a39e44dcda2cc1c4c712c5f8f82c84e9d9f5109e5f8afdcd815c4edcb712"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "eb82a39e44dcda2cc1c4c712c5f8f82c84e9d9f5109e5f8afdcd815c4edcb712"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a0c386191ae5fd37be8dc2900796107df8ceedc03807fe4ed5fe5d3d9df0d9f7"
-    sha256 cellar: :any_skip_relocation, ventura:       "a0c386191ae5fd37be8dc2900796107df8ceedc03807fe4ed5fe5d3d9df0d9f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "13fba98e9166b1e63762f2ad442bd641507435846ea455655b70fe554d802f7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "adb371f77689c45db9bc52f4e47cc29d4da9ad9cb8dcd1abbd7464ce28e5ec1c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80b4c7eb3e6a9804d2dc7ac7b2508e7a345c446037dd224e68b6563f30e9dbd9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80b4c7eb3e6a9804d2dc7ac7b2508e7a345c446037dd224e68b6563f30e9dbd9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80b4c7eb3e6a9804d2dc7ac7b2508e7a345c446037dd224e68b6563f30e9dbd9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5c4341844285ca3ba57ebf4b790a12d67359393db372b607a848a4f61db0556a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0ba364544298d533a427f1624c64765a74aaafeb7c9df4afef731ebcf104d67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "574f188d914a8ca9740cca6d5fe86668720748aa29423fa754ca1741ff63c845"
   end
 
   depends_on "go" => :build
@@ -29,7 +28,7 @@ class Oasdiff < Formula
     ldflags = "-s -w -X github.com/oasdiff/oasdiff/build.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"oasdiff", "completion")
+    generate_completions_from_executable(bin/"oasdiff", shell_parameter_format: :cobra)
   end
 
   test do

@@ -13,12 +13,13 @@ class OpenshiftCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9df8c3b0ff60c9c16c7893ccfb700a99fb46ed032f64e7c3f0a8738cbd265db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3e0c662d1cf9f9693e7b3409f61f1274cbb46df96257eb334e8ce7988f31b82"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "901e98671d4d01d688e8194a9d6da201f13e6bddbc24c737e553ec766fcd3e64"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b9336eca66238ab125bbad720b77f5af43ca9219ee09112fed581ca8f1473759"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a83b84c8152225a6644a50f02dad1169a4fc8be4babf0df320ebde86e00c54a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "191179484edb13419fbe55f48a78cc64fdbaf91b4ad2930972a5d5d3fd2f1a0e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7e875ba5394ebfa76ea678389eaad68095d55aa86835808370ea3c7503313e2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2a23fdd38343d70079398ff500210cbaaabcd529de0c5774a5c853b3556f00e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4fb95dc570a39c1b5c57937914fde913ec01d5eb1ed6f0ebed8dd71c8bdd1cb0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8b0d2b8678aa2f80fef5be926a7e91e446e89af04a10e8240a4bb7f194eecf22"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "89df37bfb4cf84a868f80b4e2495fd4421b8fbc6cc872ffe1e0680e70902a2ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c0c4bc9315aeb15fbc8fbec7636526f17f0e6066e0d5e2ce16ddcef48c11938"
   end
 
   depends_on "go" => :build
@@ -34,7 +35,7 @@ class OpenshiftCli < Formula
 
     system "make", "cross-build-#{os}-#{arch}", "OS_GIT_VERSION=#{version}", "SOURCE_GIT_COMMIT=#{revision}", "SHELL=/bin/bash"
     bin.install "_output/bin/#{os}_#{arch}/oc"
-    generate_completions_from_executable(bin/"oc", "completion")
+    generate_completions_from_executable(bin/"oc", shell_parameter_format: :cobra)
   end
 
   test do

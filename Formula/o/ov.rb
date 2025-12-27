@@ -12,12 +12,13 @@ class Ov < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9eff9324341ccbe5264b6f42b3acc182f3c1a5f04673159a64305705e38b195a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9eff9324341ccbe5264b6f42b3acc182f3c1a5f04673159a64305705e38b195a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9eff9324341ccbe5264b6f42b3acc182f3c1a5f04673159a64305705e38b195a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2fa9d5323b28e2fea500878c88e8fc8d9f9635f15f23a100a51410fff6b63e6a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ba1ae53a800339f5e14fc953ff4c31c4a43d8ad272cedbdf745a6baa1893864"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c2047b24ed6df8ed8804ded0a5d295c257dee1ced6a9dbeb1a172b2841f3d2a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18c5d617a076539f22870d5d60b6c85558c4a5f31b16705c88edfdf3dd0e391e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18c5d617a076539f22870d5d60b6c85558c4a5f31b16705c88edfdf3dd0e391e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18c5d617a076539f22870d5d60b6c85558c4a5f31b16705c88edfdf3dd0e391e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b7f103b11f01c5a51d1638c8526d20c1c2351565128b416454fe03089c39bf70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4eb0193999c960d570c445f9aae87bf5bcd436c0ceb623b476bbdbee59e9e5d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04ab0160ca18db185916115691b6e9161988b0084d2a9ee235aae2a47fdce353"
   end
 
   depends_on "go" => :build
@@ -26,7 +27,7 @@ class Ov < Formula
     ldflags = "-s -w -X main.Version=#{version} -X main.Revision=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"ov", "--completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"ov", shell_parameter_format: :cobra)
   end
 
   test do

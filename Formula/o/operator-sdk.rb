@@ -13,12 +13,13 @@ class OperatorSdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3849b980fcbe3174aad5d5943de80a2ccd8f38563e9b612f9636050486ac10a0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2191d393bd79a01af24821ed094747f48216b95acb2fc84bbf421ba426b559e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8fb75fd97ba04adeeb63ab4158d1e4bfa69e51e7dd425040d0254edeb2c065be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "96b1589c9586b887f9c63e90dc64474f3dc1fb8eda3bf7a44d207348c2cb08a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ced779ec9e0b5b7cf0d8276109af98f03e37af69a99ab4cc7b5bf6ef86f1982"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02a7714ccd75b2bad79db9955e787aaa97da63103f527f5aa0acbd71b8ee8267"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "292910e2303b1807abfd2e15f36239768aa14aeecc57e8c344f1d3d0225aebfa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9016d1b8781a29b78156109cfcdd9455e8a462d73f96384dccca321e19e80023"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c80acbf5c023e2d17554f9a07388ab69c1c488763734cf06662b238a18a0804"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ada13ce55cc3cb321c796b393a29e2d102c4da57bc1878d96b7b9c1f2c272090"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe49bb3277029444d2a654cb0672c70718c4bff9439e27f87b7b95a96ff51b4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cb1e0336db204954dacbf3fef72dd6b586ec7b23e024632686815e4ce59c810"
   end
 
   depends_on "pkgconf" => :build
@@ -31,7 +32,7 @@ class OperatorSdk < Formula
     ENV["GOBIN"] = bin
     system "make", "install", "CGO_ENABLED=1"
 
-    generate_completions_from_executable(bin/"operator-sdk", "completion")
+    generate_completions_from_executable(bin/"operator-sdk", shell_parameter_format: :cobra)
   end
 
   test do

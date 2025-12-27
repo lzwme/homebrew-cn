@@ -7,14 +7,13 @@ class Notation < Formula
   head "https://github.com/notaryproject/notation.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f725b7dedf7c9605ed2a6733b0a8dcce2738d3dd6b3422fcb8a1c349ca2fd495"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4bdb5bb2c42513ae6b08e6fc8da7b11a7e7caf9693d24375f296a9b5fa28386"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b4bdb5bb2c42513ae6b08e6fc8da7b11a7e7caf9693d24375f296a9b5fa28386"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b4bdb5bb2c42513ae6b08e6fc8da7b11a7e7caf9693d24375f296a9b5fa28386"
-    sha256 cellar: :any_skip_relocation, sonoma:        "da080867497c76b99f1499f3394e0dff732029f3c946e46a3a24e670b7ca3e35"
-    sha256 cellar: :any_skip_relocation, ventura:       "da080867497c76b99f1499f3394e0dff732029f3c946e46a3a24e670b7ca3e35"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4e4276032d96d841d5c4906a097480d2aa27188d9b68be6d327a6aceddc14f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31bd008ba39c788f55adee11eed08cc7da11ef52f052818d000d6b22f3bc1c9a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0c86c17163bb958756fcdc3acceb03dc2305e4d773be66bcf955d6279de3b94"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0c86c17163bb958756fcdc3acceb03dc2305e4d773be66bcf955d6279de3b94"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0c86c17163bb958756fcdc3acceb03dc2305e4d773be66bcf955d6279de3b94"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cb0ad7df50b917a1cdb158856c230cc57f248959c070787c8f1255c5289ef5d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "df34a4436243a4732c50c3f9792a308d2ca8c9f3fafc8c26110e98582838aae6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab20e895a13f4caaa72e467a085dc3aee1da0c4445d567a75511a87df911af47"
   end
 
   depends_on "go" => :build
@@ -29,7 +28,7 @@ class Notation < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/notation"
 
-    generate_completions_from_executable(bin/"notation", "completion")
+    generate_completions_from_executable(bin/"notation", shell_parameter_format: :cobra)
   end
 
   test do

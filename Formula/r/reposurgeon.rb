@@ -19,7 +19,6 @@ class Reposurgeon < Formula
 
   depends_on "asciidoctor" => :build
   depends_on "go" => :build
-  depends_on "git" # requires >= 2.19.2
 
   uses_from_macos "ruby"
 

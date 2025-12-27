@@ -37,9 +37,9 @@ class Dumpling < Formula
   end
 
   test do
-    output = shell_output("#{bin}/dumpling --database db 2>&1", 1)
-    assert_match "create dumper failed", output
-
     assert_match version.to_s, shell_output("#{bin}/dumpling --version 2>&1")
+
+    output = shell_output("#{bin}/dumpling --host does-not-exist.invalid --port 1 --database db 2>&1", 1)
+    assert_match "create dumper failed", output
   end
 end

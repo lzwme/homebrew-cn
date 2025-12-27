@@ -12,12 +12,13 @@ class MongodbAtlasCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31b5cb49c893c32baf89ec1cf6f34ac28a3760b402d4c49ec03914d902093831"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7974d5a4e7ca06a95acb6653dc8c1b2879072d9ea1fa2e8f2ed31f36e650db3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0073588cc690259dccd6e6f08cb0900c4cda3b2eb7f593370ae2bd06a92c9acd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c33a0832efd3a4152326c75f9c2b44e6dfcbfcba2d0f355cbb312c131f46b934"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ac4385f3f8b7bfb9703d5aa7934d7f9d75044fef5405c8b00e99ac3e06b0df6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "260a8ff585b7d4703888258480eb8ef7c798c7988f090df69e627ba0b5d08286"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "735cdd2fe27a7163388dadcd93706101c1be71b55ea8fcb3dd7bcdcf1d6aee34"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b19a22a4c35e33a6331d5bf1a3e09f913eda6c9e61f2d07526066ac92ca0ee1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b354a8367d0326b17d1ad1956196fefd43edeae5a93ed385772ec18d285bea7e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "49aaac74499879d9ce08d319a90847f476d3e1aaa6c5e9975e726509f2d7b618"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9d272b29076a168a95ae1bd304c5ab2301603970589361811a8c6f07e90198c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b141c66b24be87cdd95202aa9e7331024c7293e031af9f7fadde939c9f8e501b"
   end
 
   depends_on "go" => :build
@@ -32,7 +33,7 @@ class MongodbAtlasCli < Formula
     system "make", "build"
     bin.install "bin/atlas"
 
-    generate_completions_from_executable(bin/"atlas", "completion")
+    generate_completions_from_executable(bin/"atlas", shell_parameter_format: :cobra)
   end
 
   test do

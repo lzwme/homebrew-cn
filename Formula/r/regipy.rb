@@ -3,24 +3,19 @@ class Regipy < Formula
 
   desc "Offline registry hive parsing tool"
   homepage "https://github.com/mkorman90/regipy"
-  url "https://files.pythonhosted.org/packages/9a/15/27bdafd21f4cb822ac0520487bea7b822a0f299a0f2a3083c855d00653e7/regipy-5.2.0.tar.gz"
-  sha256 "cf1e977625e9dcf6fe4facb0cffa21ce6300bf585dee6d451e5f03b26fc61336"
+  # pypi missing `regipy.plugins.system.external` package, upstream pr, https://github.com/mkorman90/regipy/pull/309
+  url "https://ghfast.top/https://github.com/mkorman90/regipy/archive/refs/tags/6.0.1.tar.gz"
+  sha256 "5a2c7e87e714d39f16b746fabf953af40ad3f9fa19a8bab377e08e4bd6b7f7af"
   license "MIT"
   head "https://github.com/mkorman90/regipy.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "9e9a174701b1fad8d188b6b3973b4cfa0dc3524ecf40c5cf4089060d7738982e"
+    sha256 cellar: :any_skip_relocation, all: "4897e82b414d1b76a45a2776eac85e0ab21260fb0dfe9cdd0e6057e0c6add879"
   end
 
   depends_on "python@3.14"
 
   pypi_packages package_name: "regipy[cli]"
-
-  resource "attrs" do
-    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
-    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
-  end
 
   resource "click" do
     url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
@@ -46,6 +41,9 @@ class Regipy < Formula
     url "https://files.pythonhosted.org/packages/ec/fe/802052aecb21e3797b8f7902564ab6ea0d60ff8ca23952079064155d1ae1/tabulate-0.9.0.tar.gz"
     sha256 "0095b12bf5966de529c0feb1fa08671671b3368eec77d7ef7ab114be2c068b3c"
   end
+
+  # add missing `regipy.plugins.system.external` package, upstream pr ref, https://github.com/mkorman90/regipy/pull/309
+  patch :DATA
 
   def install
     virtualenv_install_with_resources
@@ -73,3 +71,26 @@ class Regipy < Formula
     assert_equal h["computer_name"][1]["name"], "WIN-V5T3CSP8U4H"
   end
 end
+
+__END__
+diff --git a/pyproject.toml b/pyproject.toml
+index e090f68..8c2f61a 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -52,6 +52,7 @@ dev = [
+     "mypy",
+     "pre-commit",
+     "tabulate",  # Required for plugin validation
++    "tomli; python_version < '3.11'",  # For test_packaging.py on Python 3.9/3.10
+ ]
+
+ [project.scripts]
+@@ -68,7 +69,7 @@ Repository = "https://github.com/mkorman90/regipy/"
+ Issues = "https://github.com/mkorman90/regipy/issues"
+
+ [tool.setuptools]
+-packages = ["regipy", "regipy.plugins", "regipy.plugins.ntuser", "regipy.plugins.system", "regipy.plugins.software", "regipy.plugins.sam", "regipy.plugins.security", "regipy.plugins.amcache", "regipy.plugins.bcd", "regipy.plugins.usrclass"]
++packages = ["regipy", "regipy.plugins", "regipy.plugins.ntuser", "regipy.plugins.system", "regipy.plugins.system.external", "regipy.plugins.software", "regipy.plugins.sam", "regipy.plugins.security", "regipy.plugins.amcache", "regipy.plugins.bcd", "regipy.plugins.usrclass"]
+ include-package-data = true
+
+ [tool.ruff]

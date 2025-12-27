@@ -45,12 +45,6 @@ class Pianobar < Formula
   end
 
   test do
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    require "pty"
-    PTY.spawn(bin/"pianobar") do |stdout, stdin, _pid|
-      stdin.putc "\n"
-      assert_match "pianobar (#{version})", stdout.read
-    end
+    assert_match "pianobar (#{version})", pipe_output(bin/"pianobar", "\n", 0)
   end
 end

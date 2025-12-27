@@ -9,19 +9,13 @@ class Kustomizer < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "db1a9450e034758a16938409965b27bfd458ff6bad82ce621a8960c72ee6c8b7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0614a810f33b3319820a68d23aee72b4af6f04d937435e2b9df8c3a6c8991caa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "db4028189fa70a68b0c6c33a0837b864a9fce38f0b9e232c8adc3adfbf7a6efc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3ba254b8051b47aa5f1fb36236027a7ba73cda8218c504b43065ab3ad7677584"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cc06563ebe12218833949dd690e7c3ffbe71d815e16581657ba4971af6ad1a64"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "34ca6d21c6761b9732b0bd0cbb3bdc7bfa8c0701ba7edf2bd236f820be1ef44b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "49f39ea95d4c027c7ca8808b0d05258a3d6905debd124f198f34c20e95427231"
-    sha256 cellar: :any_skip_relocation, ventura:        "417bce8bb8cb178b6fcc5386ecbf4a01405253abfca33c036a03f99058ce9dd7"
-    sha256 cellar: :any_skip_relocation, monterey:       "826930275079d88859fd26976d3e7d8d7e9ebf57edeae256e232ce4c3603ce2f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8f9ac16b04e1da34901f680da8c8f481e605d374822cf77752d68777f9cd9cf1"
-    sha256 cellar: :any_skip_relocation, catalina:       "e954a47cd5a1e00b299a62432ec532ddd4545a7c2de6c4d669e2242af9080eb8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "b48f88c7d495d1eeb79bd63cff70648d07c4ca9615fa4d9a7ff89ea3e66bc1b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ed1242aaec95d97b1c835476b50556d96a6f8902d1bcdeca14fa7625243b437"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "adbdf2f47318e66addd680e6528bb80c8891bc65baa74cbc91223c16587a4339"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18175918940bf8594cb3bcbcdc1517f32d70d57ef4900ba3ee282543f6f7344f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eefd823c09b2da2b28e381cab34fd602f0cfac1419f640382a92091a7c20a936"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c04691595c0fc7e67cffa06e89de8c42d4ac72762bf3ccf497778500049a3c89"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd7029079ab5ac2601e34ef3f644f84498e392f8e200d0e552997b7a94150d02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "518b679442ab62cd90e797ac9ede68f336ec9557eae9ff2ce157ebbd1785cb15"
   end
 
   depends_on "go" => :build
@@ -29,7 +23,7 @@ class Kustomizer < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.VERSION=#{version}"), "./cmd/kustomizer"
 
-    generate_completions_from_executable(bin/"kustomizer", "completion")
+    generate_completions_from_executable(bin/"kustomizer", shell_parameter_format: :cobra)
   end
 
   test do

@@ -7,14 +7,13 @@ class Kwok < Formula
   head "https://github.com/kubernetes-sigs/kwok.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9da59fb00ae242492055b677af311bf49f0c7ae14877eb9216edd3ce647e2cc1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17ca4b4f59d0ef9c01ede4c2ca158428f53f35bae8cf57d2b3c374fe32927230"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10477738cc0f5a6ccd4bd9f5dba951e0094e14d48178a35ad471f373553878b4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0c6429022bffc022ed2b64e3dd81dd5207e8ee0d42350e8e0d530d7ec298bbb1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "481cdb115719ed6de328dcd241de02069e57dda4a964bade6ae11ea97133f1ee"
-    sha256 cellar: :any_skip_relocation, ventura:       "ddaf6d75cd5c04d5f872d8152f3c550388096185d62ac97f1230e0f3cad046c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a7a6767343dab0abab8c18b6d27792013ab03cd0adfe8952420b250890002d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d74d3089b75892e4629a723c08daed077484c0ffa7c2b5726f8c95b77472780b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c9829a6287114e9ca679cd313933facad7a57b2aceacd0a5d798b2f1d62927a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a802cd90ce86d92663520b4a243db27ab70989f0afc9fd3e452faf679078262"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb3a5257ca085b1854f846d8efa01a9394699f3a1d9c6ab749a6c6d6c1ed0cc1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "96a706a400c14a9263eb584fa70f3106cdae304f29cefc13bb8d3511148df225"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "335471ec0aedf121022f660336be8989cba4f124904733ac5145b6f03f87a550"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3ca81c0287d077692b4e1c69b426efa10f0cbf01015a4375b6c8856354cad44"
   end
 
   depends_on "go" => :build
@@ -27,7 +26,9 @@ class Kwok < Formula
     bin.install "bin/#{OS.kernel_name.downcase}/#{arch}/kwok"
     bin.install "bin/#{OS.kernel_name.downcase}/#{arch}/kwokctl"
 
-    generate_completions_from_executable("#{bin}/kwokctl", "completion")
+    %w[kwok kwokctl].each do |cmd|
+      generate_completions_from_executable(bin/cmd, shell_parameter_format: :cobra)
+    end
   end
 
   test do

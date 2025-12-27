@@ -7,15 +7,13 @@ class Kubespy < Formula
   head "https://github.com/pulumi/kubespy.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "efcc5504509a6dcb5da8b20224794ce8b23d8fc5a0401edb5f96eaee345c8ff6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d88d6926bf09883789531fe1cc9956908ae7ce115ef2a4a2ddccd932ca2323d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "350da84eb2954134ad621f85dd0619c00d76730835fbd03409b9d93bdff50543"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5f330bfacc517d413078b720bd062241fa133473261bc683d9817e7a0b102d73"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f9759118bb4059b89ddc15eeffde235cf2f38e6c43e3e8ab3f3c0963360da5d8"
-    sha256 cellar: :any_skip_relocation, ventura:       "efee99c55ca31291aab9dad8badf602a0d8eae65f201f407ec40eaed9362f1cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e00ec0730211581e28e9ce51a735efc19081821f363c0541e74917384544384"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36b1c1fb59db56e36ca01cfb315313a94796d679d7ae85988132f20b6706ffe3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "029feef7bf428cc4b613f95bdbd189e7277d400cb6f54165933dddbcb04be245"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c37522a8957c50550223fb4b2328c1898e03ac58b396b4a29935bfa0ba117ad0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ddb3fd9926acbd341443c5cba25eadb6033a63777be75c8ffd8634bf4d1d976"
+    sha256 cellar: :any_skip_relocation, sonoma:        "624ad6a1151a4771a25cfea3900ca0292ce77d97aa2da129cc7e9c9db2733513"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f43edfd8aafe2b5519b54c17e7028b53b365c29f5543b6af289ea84da49749d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f904a862816e12c913d12694bcfe8dab2bd6735704c2a33f75267e9888452f45"
   end
 
   depends_on "go" => :build
@@ -23,7 +21,7 @@ class Kubespy < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/pulumi/kubespy/version.Version=#{version}")
 
-    generate_completions_from_executable(bin/"kubespy", "completion")
+    generate_completions_from_executable(bin/"kubespy", shell_parameter_format: :cobra)
   end
 
   test do

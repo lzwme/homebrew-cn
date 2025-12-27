@@ -15,12 +15,13 @@ class Massdriver < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "515328d741a92133655067b639e1e77b14e11c20a017ace1eab287aded608e10"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "515328d741a92133655067b639e1e77b14e11c20a017ace1eab287aded608e10"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "515328d741a92133655067b639e1e77b14e11c20a017ace1eab287aded608e10"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d4beadbe18cb3404b91d9e789c373771fc28ccdfdb91c2e20a3d0b4a3a8ec538"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "992552b950ea4e8c50d506d03cb6589b0c267d61d489bff42f62a0011c55137f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c00ce58a4af1ccd0c84ca76b9ba02673f1aeaab1a80a6a2c06cc1de0d15e15f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4459bf3fd302052a6ee507ccf821be5e9b9eb5e40503d60a502f40a83d915b40"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4459bf3fd302052a6ee507ccf821be5e9b9eb5e40503d60a502f40a83d915b40"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4459bf3fd302052a6ee507ccf821be5e9b9eb5e40503d60a502f40a83d915b40"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2b4c00951b9d0f39d7f10986cf8822b90ee51f5f795e37a41ae19a42cd5704cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "283f30a6029c8e9e04c87042dd7070071991ce95a3f74f62b805183cf10eb9b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a42a792090bd14d033d475307272576571cdb1a7a1f1cd8f9b51414599abe782"
   end
 
   depends_on "go" => :build
@@ -33,7 +34,7 @@ class Massdriver < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"mass")
 
-    generate_completions_from_executable(bin/"mass", "completion")
+    generate_completions_from_executable(bin/"mass", shell_parameter_format: :cobra)
   end
 
   test do

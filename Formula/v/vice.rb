@@ -1,10 +1,9 @@
 class Vice < Formula
   desc "Versatile Commodore Emulator"
   homepage "https://sourceforge.net/projects/vice-emu/"
-  url "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.9.tar.gz"
-  sha256 "40202b63455e26b87ecc63eb5a52322c6fa3f57cab12acf0c227cf9f4daec370"
+  url "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.10.tar.gz"
+  sha256 "8e5bac18cbcb9f192380ad3ef881f8790f5b75c41d7b3da65d831985d864d6d1"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://svn.code.sf.net/p/vice-emu/code/trunk/vice"
 
   livecheck do
@@ -12,15 +11,13 @@ class Vice < Formula
     regex(%r{url=.*?/vice[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 arm64_tahoe:   "48ff65acfffb8aa3e3be49a0af15e562b31b5399d4e6af0b753b5703e7affd32"
-    sha256 arm64_sequoia: "cc2a998256bbc7166b7e2c91be9ce02966d5d243f9218bd0843185fd5f25a8b8"
-    sha256 arm64_sonoma:  "154373a70308d1f5777342f29cf0284d99d58199e5f16f31ada76b545e76fa42"
-    sha256 sonoma:        "6fa288ad937306036e0015227243efa3c4c94fb193a7e3bd4ee3cd4f3bac4174"
-    sha256 arm64_linux:   "d2702dfba91882288ca8222550110b83c43890d874d65e0dca0ccd942e085ce5"
-    sha256 x86_64_linux:  "a0741c399bfdb33f3a426f4e6a3045c5562cb6f503f558248fb515b11b1a2f98"
+    sha256 arm64_tahoe:   "72d2956c691be19c7fd2d3cabf5bdbdfeba7e3f82f025f6084463190f27d4b60"
+    sha256 arm64_sequoia: "0aca55924f4d7159a30dd60eff038d3a6d2c16fc001a637629953e841a1ddd72"
+    sha256 arm64_sonoma:  "d1c1f2e7b41ef6bce878be69e1d6f8593a0b3ffee382ec723a503876534c0687"
+    sha256 sonoma:        "f32364d8cd6e0d0f3c31c8b91b1c82580c3876c71119ceb2ec846b912b1976ac"
+    sha256 arm64_linux:   "d547ce42a42763a57e038f1a5380993add37ad9862474798d07f79efbfb1937e"
+    sha256 x86_64_linux:  "a51a3fefb5be0361e45f40723625546194d48fdab926b0ded6ff7cad886d84cb"
   end
 
   depends_on "autoconf" => :build
@@ -60,6 +57,7 @@ class Vice < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "fontconfig"
+    depends_on "libevdev"
     depends_on "libx11"
     depends_on "mesa"
     depends_on "pulseaudio"
@@ -79,7 +77,6 @@ class Vice < Formula
                           "--with-vorbis",
                           "--with-gif",
                           "--with-png",
-                          "--without-evdev", # TODO: needs libevdev
                           *std_configure_args
     system "make", "install"
   end

@@ -12,12 +12,13 @@ class Kubetail < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00bd0830ba713d1c41cd33599038a2b8782bdca8d0723d2b79a966918eea0237"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e5a15db093c542233b81597bc200a2e83cf218d861abb26e0e8e9cf3a947e67"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "418d31ae6f9a5cc50f23f54a0e4071fe6fd14bdb89730e1891be39ba684c3551"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6b7ed382d083c0b08d25edd3177dae2385bff8034d3766748457b8aac2c7e700"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "150d5d1e2fa5c40cabdab03841fa5158195a2d31e7e2bf6c23e5fa4b396da1f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbe2a8d27793484b00a9bffd203175a29039dc68bb469412063efbb1600d82bb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "620792ab465f0707a318e1cd2129e27ed919a6a5bb2850c7b6f22e4b80fdf009"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a0333a453f77283f5bc88f0ae0086950b8ed0f78659c7812e4ff376293fb871"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40905b20f5df1d0cff517507777e421de4067342b658c894e7326a1bd1c5b922"
+    sha256 cellar: :any_skip_relocation, sonoma:        "520af592cb2987e51ece834729345a728a6d39eff301468ea87fd697d4187238"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "77f3c6448afe6b34ba85fc650ea8427e4e1d6ff003fb474f5ca4a8a330f7bdfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9c88bf00cfe3c8f05e621f5df273a11ae42fd4bfd69ed17795f4882f2f746f2"
   end
 
   depends_on "go" => :build
@@ -28,7 +29,7 @@ class Kubetail < Formula
   def install
     system "make", "build", "VERSION=#{version}"
     bin.install "bin/kubetail"
-    generate_completions_from_executable(bin/"kubetail", "completion")
+    generate_completions_from_executable(bin/"kubetail", shell_parameter_format: :cobra)
   end
 
   test do

@@ -1,10 +1,10 @@
 class Openrtsp < Formula
   desc "Command-line RTSP client"
   homepage "http://www.live555.com/openRTSP"
-  url "http://www.live555.com/liveMedia/public/live.2025.11.06.tar.gz"
-  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2025.11.06.tar.gz"
+  url "http://www.live555.com/liveMedia/public/live.2025.12.26.tar.gz"
+  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2025.12.26.tar.gz"
   # Keep a mirror as upstream tarballs are removed after each version
-  sha256 "7614fa0a293e61b24bfd715a30a1c020fb4fe5490ebb02e71b0dadb5efc1d17c"
+  sha256 "9cb04dc576ff80dd363c9f98c421297e8ab50286ba80acc3a2ca94495e5b883a"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -13,12 +13,12 @@ class Openrtsp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5baabb1fe27ee14414890176c8506a4ffc5bdb9ce0bc53141a40761f7eb4823c"
-    sha256 cellar: :any,                 arm64_sequoia: "5c76a6d529589b9c121523e9ab0c16b33c303245699220c999b2a683f62b5298"
-    sha256 cellar: :any,                 arm64_sonoma:  "90217a0b6197669b2772a6528f725bae71df56f6d9f46e2447e4a86450966036"
-    sha256 cellar: :any,                 sonoma:        "929925dbc92aa1daa28bae947e8470090aa54c1b1a298c716241896efd0380bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbd233698491219e6a07cd8d55e544d3de1500d753c9a6ff2a80cc0616965c3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f766e5ac689227ad005b6f80ebdf5d162ab080a2662648706ce8b2542954d6c4"
+    sha256 cellar: :any,                 arm64_tahoe:   "20fd58449f6e6da93e9e91a6190b0492364ead2206acb92f9a7e532103a7c693"
+    sha256 cellar: :any,                 arm64_sequoia: "bcb754751bf1270fe7254725fcca37ede03a4749e294f644bc2578d1bb32a2da"
+    sha256 cellar: :any,                 arm64_sonoma:  "2ea41633070087ff52dcfd5326a8c5ac4b08e822399ad935e4fb3bc475e485b3"
+    sha256 cellar: :any,                 sonoma:        "d130ecfe9e386b60130272be4db22394d68d211c60ca3cc2ede1e11a6ea09474"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "774049ae99c0cac6e390de6d82aff278160782d4cc0e126b8a5dd59938cd211f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d6d55b9eb6afd0944fbce467bbd55d9a4a529b3be522bf5128d6365305dd103"
   end
 
   depends_on "openssl@3"

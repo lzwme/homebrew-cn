@@ -13,12 +13,13 @@ class KubernetesCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "94d25794c27019df7a3602fbbf6a6f4549392fd2771d59d479f8378d07f3df02"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0bbb19355da98430e2a926afc42c928cfcb90ef40cfdac6d105fc300310df96"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36b539ed5abce3653bdd50aab69acf5dc60043ce17243fd890089e590a77f8b2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "60320f39390aceb60d870c474e5167b86c445cb645c2797080657ab28e41a3c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee4b6d39cf8ab5ff6a8df95c43ab1d5411e980b7223a55889b95debdfbb6ea4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f539db32926f96cb3f2e4fd422f15106aba6b640fcc45d0ba78aa3d92683d2bc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b66315fe9895dc7726ab2df26ddb1b73dea60ac7d9f30a373a4e58b8fe1f0df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8aa210ba43c66e9f54ccfb01612c460b63829491fe9b46f8c5083e2df9b8e77c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04bbaa21344d23f043c72bacf6c630d33dc6e9da7479e73b874d5b059f503a2d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a9057f838f5c11145ec4acba4023d8eed4a7a742804f003fc855f3a574586e22"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca17c8cf10c9e2a5fd14f82ef037aef3cb96c4f632db3f009bff3dc854e2ed16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea1f7c5ce7e6c8cedf7a7cc2b4594f9457692e5bf7e03f99b9373d7b9f6e6333"
   end
 
   depends_on "bash" => :build
@@ -36,7 +37,7 @@ class KubernetesCli < Formula
     system "make", "WHAT=cmd/kubectl"
     bin.install "_output/bin/kubectl"
 
-    generate_completions_from_executable(bin/"kubectl", "completion")
+    generate_completions_from_executable(bin/"kubectl", shell_parameter_format: :cobra)
 
     # Install man pages
     # Leave this step for the end as this dirties the git tree

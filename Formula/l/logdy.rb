@@ -7,14 +7,13 @@ class Logdy < Formula
   head "https://github.com/logdyhq/logdy-core.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7379d846c24e613e23388d5e31a603494119bf223da64f165cfb4864ad50d69"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d3eeee30fcc05e4c7265ee505fd23095dff74d6154866ddeeaeaa76ef5d240b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d3eeee30fcc05e4c7265ee505fd23095dff74d6154866ddeeaeaa76ef5d240b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9d3eeee30fcc05e4c7265ee505fd23095dff74d6154866ddeeaeaa76ef5d240b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "282b0cb5c348d5d7bd00ba2c20df88ec44f27ae6d18bf38a4f8b3bbfda8a1859"
-    sha256 cellar: :any_skip_relocation, ventura:       "282b0cb5c348d5d7bd00ba2c20df88ec44f27ae6d18bf38a4f8b3bbfda8a1859"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "332340c409d174dba7ccd3c45ba80c50f3d045e31d9027568d4809bf246ec457"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6799e27353bd503dd977227b839131b17ff91a0006562464465eaa6d165a0bf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "53f402762567926f939ba76f3f885f54828264dc2c160c6d5bcf46f8afe49227"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53f402762567926f939ba76f3f885f54828264dc2c160c6d5bcf46f8afe49227"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53f402762567926f939ba76f3f885f54828264dc2c160c6d5bcf46f8afe49227"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f77f84e02e77364a615b9aa0c20abe11e759944c4398b4b886fb2dc0766f8a72"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4251ec939cfdb8640b16d3c2a1f0a1c8a8afe46a84f5630936470b0ff4e9caf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "164bd9fef16faca0f6a3d14b38a72c63127c1b7a8c4739428e2aba731265b3bc"
   end
 
   depends_on "go" => :build
@@ -23,7 +22,7 @@ class Logdy < Formula
     ldflags = "-s -w -X main.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"logdy", "completion")
+    generate_completions_from_executable(bin/"logdy", shell_parameter_format: :cobra)
   end
 
   test do

@@ -8,19 +8,18 @@ class Garble < Formula
   head "https://github.com/burrowers/garble.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a723761caefd99a243ede0763f6e468988d17fae15a234591f4bc3d4951807e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a723761caefd99a243ede0763f6e468988d17fae15a234591f4bc3d4951807e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a723761caefd99a243ede0763f6e468988d17fae15a234591f4bc3d4951807e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6e1b7789a134b3eb6d5d32dcf0957223adc2e711ef6b8e34edd53badb67c33bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbe1171298ffe0a1a7a17e252c37268f302cdb7d9984e678fa9f13921847a4d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89e70170430bc876393c37e7080381b4b384b1b8d6b1475baa4e11c362ee1067"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2316f3c47356373f8a21cc3e81a07227f9a1f3e35d9acd77d6b2da2817417b54"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2316f3c47356373f8a21cc3e81a07227f9a1f3e35d9acd77d6b2da2817417b54"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2316f3c47356373f8a21cc3e81a07227f9a1f3e35d9acd77d6b2da2817417b54"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7f80442d06943458ffd8d914aed55637acd34083e958d9e9b9cd509721880f0c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c886c2d9a825fe4ce5659d267cfe7056e6a834bf0d47b91e34a8ac105e3df068"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1127204df224fcbc59bde24d2d38deae1e37d96ec51d9d6eb661ffe046c00d6a"
   end
 
   depends_on "go" => [:build, :test]
-  depends_on "git"
 
   def install
-    inreplace "internal/linker/linker.go", "\"git\"", "\"#{Formula["git"].opt_bin}/git\""
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
@@ -34,6 +33,12 @@ class Garble < Formula
           fmt.Println("Hello World")
       }
     GO
+
+    # `garble` breaks our git shim by clearing the environment.
+    # Remove once git is no longer needed. See caveats:
+    # https://github.com/burrowers/garble?tab=readme-ov-file#caveats
+    ENV.remove "PATH", "#{HOMEBREW_SHIMS_PATH}/shared:"
+
     system bin/"garble", "-literals", "-tiny", "build", testpath/"hello.go"
     assert_equal "Hello World\n", shell_output("#{testpath}/hello")
 

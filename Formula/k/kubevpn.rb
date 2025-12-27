@@ -7,12 +7,13 @@ class Kubevpn < Formula
   head "https://github.com/kubenetworks/kubevpn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc629e2b7f293577ecbc3ae388af363f67b2dcff8a3b6df006bebf326f82a5dd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad9742e6f5d5d4dbf751174f8d74272b766ccdbe992cac89b943e79b6e3f73aa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c927e1f918f62f9d46edb370ccdaa24b805d2166dcd95261873392bb61b9dec"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4c9f62d22dad91338067803b9e3e087684ed87e05d25cc3b07b38412cbed40e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b2259d89728bd83b93c2a90532b8dd3bde22649439067f9a8be841a8e1bd17e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "833a1b77a5e178346f4169514da84529904ad69302c2b902ffe4615d17229fd0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5719b248b63e504297d49cf074f3f9fe20416df03341bda16d9a4ce9f517ecbc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85cd10a54fe996efd857c88148c7d28609f2ad99342b4a7310561fd0adc4070e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8290663aa7dc46af8d8a533d018a8001d36d084bbeef0c2021d8b6b0d2633989"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ad32c50e40a27eb9ecadbb4e9b97e58cc48803f3cefa8456a05d4d9fb5553bb1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6aedeeaf2140fc0fd54d1bafb0dd8d86dac4011eabda58edf9a30e2f24e8649"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4ea2cdd01cb84c401d921db0c0f3ac5355cf9ddd29f093ad0a0a5a6399cad5b"
   end
 
   depends_on "go" => :build
@@ -32,7 +33,7 @@ class Kubevpn < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/kubevpn"
 
-    generate_completions_from_executable(bin/"kubevpn", "completion")
+    generate_completions_from_executable(bin/"kubevpn", shell_parameter_format: :cobra)
   end
 
   test do

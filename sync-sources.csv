@@ -623,6 +623,7 @@ Homebrew-homebrew-core/Formula/b/bombardier.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bomber.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bonnie++.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bookloupe.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/bookokrat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/boolector.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/boom-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/boost-bcp.rb, Homebrew/homebrew-core, 1
@@ -3330,6 +3331,7 @@ Homebrew-homebrew-core/Formula/j/json2tsv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/json5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/json_spirit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jsoncpp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/jsonfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jsonlint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jsonnet-bundler.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jsonnet.rb, Homebrew/homebrew-core, 1
@@ -3425,6 +3427,7 @@ Homebrew-homebrew-core/Formula/k/keystone.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/keyutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kfr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/khal.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/khaos.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/khard.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/khiva.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/ki.rb, Homebrew/homebrew-core, 1
@@ -3675,6 +3678,7 @@ Homebrew-homebrew-core/Formula/l/liquibase.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/liquid-dsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/liquidctl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/liquidprompt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lispkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/litani.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/litecli.rb, Homebrew/homebrew-core, 0
@@ -6935,6 +6939,7 @@ Homebrew-homebrew-core/Formula/s/svls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/svt-av1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/svt-vp9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/svtplay-dl.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/svu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/swag.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/swagger-codegen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/swagger-codegen@2.rb, Homebrew/homebrew-core, 1
@@ -13951,6 +13956,7 @@ Homebrew-homebrew-cask/Casks/p/popclip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/popmaker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/popo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/popsql.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/portalbox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/portfolioperformance.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/porting-kit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/portx.rb, Homebrew/homebrew-cask, 0

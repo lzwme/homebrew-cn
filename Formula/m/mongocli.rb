@@ -12,12 +12,13 @@ class Mongocli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df2157f55b136a6c6f150329be822cd6d0f560ca5a2ee52caea1d64417459658"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e445bc0a3fd26236eabc4b87c2dfdd255ec980f764ae5e7c131be20f46cba721"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "213f5d5a81d213da3f42c1831fad858f96f627fc47324a1ca8842335ab46f7f9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a92abee340abedfb2c1ccd602141fe26db2c9d34afbbbcbd3b8b4c39519ed73f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7f11b48587f16bf224539129ad8f4e403c577c23f3f0dff7f5a30d80b0e8348"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1fa1629c5015df5038e68c3f0a61f04648f29f5bc48b9e5804f8d7997161dc6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "082900e821946103a3ddb01297607a5cdd5241a57f42c5b4cacc41c22d3afb45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "901eb552a683ca0e6b3d4fa461f2c1a857b96330586471894e109b4f63594051"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2915e3ecdd85f04323e65439f8c6b6d358a5c8852a50ec093b40d0c07bbe0cbc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8e85ff36e64fe3d33863301fcfba371808bb09a00773d052b6b29f5e301ddfb5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "627a29e8ef66496df33344b3763ec2c537c693cfd0ae31bc16e5a33487f7a789"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b34dd1ac20a70c44b2cb35ce0bcd2801dc7a7e103810a5075e183d63312efe38"
   end
 
   depends_on "go" => :build
@@ -31,7 +32,7 @@ class Mongocli < Formula
     end
     bin.install "bin/mongocli"
 
-    generate_completions_from_executable(bin/"mongocli", "completion")
+    generate_completions_from_executable(bin/"mongocli", shell_parameter_format: :cobra)
   end
 
   test do

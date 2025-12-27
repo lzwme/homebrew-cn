@@ -1,18 +1,17 @@
 class Igraph < Formula
   desc "Network analysis package"
   homepage "https://igraph.org/"
-  url "https://ghfast.top/https://github.com/igraph/igraph/releases/download/1.0.0/igraph-1.0.0.tar.gz"
-  sha256 "91e23e080634393dec4dfb02c2ae53ac4e3837172bb9047d32e39380b16c0bb0"
+  url "https://ghfast.top/https://github.com/igraph/igraph/releases/download/1.0.1/igraph-1.0.1.tar.gz"
+  sha256 "969f2d7d22f67e788d8638c9a8c96615f50d7819c08978b3ef4a787bb6daa96c"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fe00edb994e146b0cbec52620726016f7f0cfc9c30e24e34ebfd057770cbf20d"
-    sha256 cellar: :any,                 arm64_sequoia: "0c97c91e503b6f70db933d5bfafbc2cce75ebea5f22fa71cc119a537b18d4eec"
-    sha256 cellar: :any,                 arm64_sonoma:  "651b32c9be6f0e65008fc25a8023aa6a8b9518e7f115f5403e69b4162203d3ce"
-    sha256 cellar: :any,                 sonoma:        "acfc0a3257fbaade1e7d6353ca2c5519ea439c0d7ae7096b026f54f04639d918"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9459bd61fc47cbe5d04ee52e3e45a46ec6f8a57be6107884d0edefb43e3e9c91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7609c6d569ec5d74fc5d065201756f3209e9368421065ad77e179edadfe6f988"
+    sha256 cellar: :any,                 arm64_tahoe:   "b3805393001183d91ec1b827c3e8b0f7f1d891f3d212e06f96c04acba8f77e6f"
+    sha256 cellar: :any,                 arm64_sequoia: "3290ea536022e5aafdbe0a1e857bfa90cf47e74d10020b30d49200802714d148"
+    sha256 cellar: :any,                 arm64_sonoma:  "6346c4806faaeae0893e2ccdaac839e8afefc174c980317f2cd1b5b6c87dfea2"
+    sha256 cellar: :any,                 sonoma:        "d8edfe86b7564c1c2967631625918a878d905ddd69957ff7c4887ab6b2f9d0d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ceb3ff22b939cc3a1c9e56fd1ce861bb29ae0cf250f12a155078e44b34dfc23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd9b468b1f12e84c1b9c6a3b424ec783ebf87b363c46b30ddb076e967e8d6ffa"
   end
 
   depends_on "cmake" => :build

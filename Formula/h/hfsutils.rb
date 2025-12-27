@@ -7,9 +7,8 @@ class Hfsutils < Formula
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "ftp://ftp.mars.org/pub/hfs/"
-    regex(/hfsutils[._-]v?(\d+(?:\.\d+)+)\.t/i)
-    strategy :page_match
+    url "https://ftp.mars.org/hfs/"
+    regex(/href=.*?hfsutils[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   no_autobump! because: :requires_manual_review

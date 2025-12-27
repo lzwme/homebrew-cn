@@ -7,14 +7,13 @@ class Neosync < Formula
   head "https://github.com/nucleuscloud/neosync.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7dff0d67b524213408aba298d75f80fea1eafaf7756313dba20b8079d41b0f2b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d955843c57eaa847b43b5aefcce7d239677049fcd650059f7b056df93b4ee67"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d955843c57eaa847b43b5aefcce7d239677049fcd650059f7b056df93b4ee67"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2d955843c57eaa847b43b5aefcce7d239677049fcd650059f7b056df93b4ee67"
-    sha256 cellar: :any_skip_relocation, sonoma:        "14bcd6d91cb2fd66bc410cc059692c1a25db636a2e778fbdff31ef10f7b5b018"
-    sha256 cellar: :any_skip_relocation, ventura:       "14bcd6d91cb2fd66bc410cc059692c1a25db636a2e778fbdff31ef10f7b5b018"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "66642ba75fc6ba5df446549755498c22a0bdbb17ae84a7579cb580858b39d35a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9fe641cfecd902842f7dc37e292bc6eef5d6d545dc60bf266a59fc970de2976"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc8511aed8b89a42f541a67b4dad182c92b035ccdd80b9c72876f4eba0b0ba83"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc8511aed8b89a42f541a67b4dad182c92b035ccdd80b9c72876f4eba0b0ba83"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc8511aed8b89a42f541a67b4dad182c92b035ccdd80b9c72876f4eba0b0ba83"
+    sha256 cellar: :any_skip_relocation, sonoma:        "172953b083fafdc022eb569843bc73ee34a2748a2ac38538aabfcd02b31da70c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "287fca0fc0f4f143b28c9086ec8a9459bf07476d5929e01eb355863e31d2d4f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5902ad8c570eb479ae4f4a4f2b87e601e633357138b9f58f22fc46dcfba1a8a7"
   end
 
   deprecate! date: "2025-10-02", because: :repo_archived
@@ -30,7 +29,7 @@ class Neosync < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cli/cmd/neosync"
 
-    generate_completions_from_executable(bin/"neosync", "completion")
+    generate_completions_from_executable(bin/"neosync", shell_parameter_format: :cobra)
   end
 
   test do

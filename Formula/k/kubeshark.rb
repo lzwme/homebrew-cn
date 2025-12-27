@@ -15,12 +15,13 @@ class Kubeshark < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "108b9bbaa4572447be82175540ceb141a2e1959680b69e23a988d8e24494ffd2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d427ff15c9cfa0003a0c45099c6f1cf8f49c03e677389d36ae67ab591bee5bf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a88b63430aec508f0745bc5dadf03e9d9985598243c239489a8817be78dde74f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e1bff6e45c5e04889181b92a5e968fe142c89b59f35ae7eb98ba911f1e564039"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "18e174d4cb369e7470fa4965ccf1d940533674d20dde69c6ffdf7e5e9e80e165"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6876040753b0d1580e8a5e7f360329832dc48e76232bd54088f057c9ea294047"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2bbc48eb89b51a5b3a5e3090c0ae5e98e041b1e80f8d951ccd059bc2ed2cf58c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c87c5c8707303933d4ff239d561bbf3b8c6ad8121bf5bac4f1e8f35fd1756c6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31df1747521a214ead66591769cc3af06f5d48af380a8ca82ed8addb145e52a5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "743a52337a2ee33e6c8abdaa33f9caab899865ad650778ee94bdeba69297ad69"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecb06a7dc204c635d29413d80d511a66dd3e35a0a1bac1a1dd050159045b5f5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea3bc8db5afbb7316177d93fd75f6b8ed3117ac94b1ccec8a6a9d4922ce7f28b"
   end
 
   depends_on "go" => :build
@@ -34,7 +35,7 @@ class Kubeshark < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"kubeshark", "completion")
+    generate_completions_from_executable(bin/"kubeshark", shell_parameter_format: :cobra)
   end
 
   test do

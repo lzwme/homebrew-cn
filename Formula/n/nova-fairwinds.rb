@@ -7,12 +7,13 @@ class NovaFairwinds < Formula
   head "https://github.com/FairwindsOps/nova.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b56ea2cff008a496f6d00b5a6c341781b58629e40b483f0e959f22bbb3b28964"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b56ea2cff008a496f6d00b5a6c341781b58629e40b483f0e959f22bbb3b28964"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b56ea2cff008a496f6d00b5a6c341781b58629e40b483f0e959f22bbb3b28964"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2222a870301afe85a2f9630b42aab9b6e8a54d7d6b833a10731001270628e9da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c43d72312a2cdbed0f8502855f1e4a4813bfec542e85fe7bab1cd2a1368fa29a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9c425b47c796e35e45621c9883c2512a9abfcbf9b77336a91a866addf400ec3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d9a8371117343ad5dad1dadf33befe46d71b1f5a400d34d259a31c92509f1c52"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9a8371117343ad5dad1dadf33befe46d71b1f5a400d34d259a31c92509f1c52"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9a8371117343ad5dad1dadf33befe46d71b1f5a400d34d259a31c92509f1c52"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d7945efad0e489a138f84c3896ee384dbe8b8b5630b0704b70c82adfbbf80a01"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfa6fbf3378c1d774334ec67707f1bfe0e731909443f985613d2f61a75a75665"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c69045eeba0272760f9783cca577b96672741e734777125bed68aaa23174afc0"
   end
 
   depends_on "go" => :build
@@ -23,7 +24,7 @@ class NovaFairwinds < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
     system "go", "build", *std_go_args(output: bin/"nova", ldflags:)
 
-    generate_completions_from_executable(bin/"nova", "completion")
+    generate_completions_from_executable(bin/"nova", shell_parameter_format: :cobra)
   end
 
   test do

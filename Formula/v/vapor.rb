@@ -13,9 +13,10 @@ class Vapor < Formula
     sha256                               x86_64_linux:  "7d4caa94d7be2095ee335b2c954bea42d308e4f79aa641bf4d345671bb8445f1"
   end
 
+  depends_on xcode: ["26.0", :build]
   depends_on macos: :sequoia
 
-  uses_from_macos "swift", since: :tahoe # Swift 6.1
+  uses_from_macos "swift" => :build
 
   def install
     args = if OS.mac?

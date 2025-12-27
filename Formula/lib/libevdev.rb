@@ -20,34 +20,18 @@ class Libevdev < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <fcntl.h>
-      #include <stdio.h>
-      #include <stdlib.h>
+    (testpath/"test.c").write <<~C
       #include <string.h>
+      #include <stddef.h>
+      #include <stdio.h>
       #include <libevdev/libevdev.h>
-      int main() {
-        struct libevdev *dev = NULL;
-        int fd;
-        int rc = 1;
 
-        fd = open("/dev/input/event0", O_RDONLY|O_NONBLOCK);
-        rc = libevdev_new_from_fd(fd, &dev);
-        if (rc < 0) {
-          printf("Failed to init libevdev (%s)\\n", strerror(-rc));
-          exit(1);
-        }
-        printf("Input device name: \\"%s\\"\\n", libevdev_get_name(dev));
+      int main(void) {
+        int result = libevdev_new_from_fd(0, NULL);
+        printf("%s\\n", strerror(-result));
       }
-    EOS
+    C
     system ENV.cc, testpath/"test.c", "-I#{include}/libevdev-1.0", "-L#{lib}", "-levdev", "-o", "test"
-
-    fd_available = Pathname("/dev/input/event0").exist?
-    expected_output = if fd_available
-      "Input device name:"
-    else
-      "Failed to init libevdev (Bad file descriptor)"
-    end
-    assert_match expected_output, shell_output(testpath/"test", fd_available ? 0 : 1)
+    assert_equal "Inappropriate ioctl for device", shell_output(testpath/"test").chomp
   end
 end

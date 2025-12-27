@@ -7,14 +7,13 @@ class Oslo < Formula
   head "https://github.com/openslo/oslo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff44a4a69d5f3ca100d7aa93def60b26c01d8b5e76e22629d8a148d82fddf378"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1dc252e4e8d683047409636266e7c11e62725cc9ac3a21c394c1a0f04b644654"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1dc252e4e8d683047409636266e7c11e62725cc9ac3a21c394c1a0f04b644654"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1dc252e4e8d683047409636266e7c11e62725cc9ac3a21c394c1a0f04b644654"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bd87cd615862dce34c7e3372d0b2496cb34a4813a352fa0e9c677eaaaa2cbf95"
-    sha256 cellar: :any_skip_relocation, ventura:       "bd87cd615862dce34c7e3372d0b2496cb34a4813a352fa0e9c677eaaaa2cbf95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0cf3deec2c0c32fc60d36210e844c477b0aca9a9fdbd518ae364fc2b929e37e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ab3bfa70149e279e8a2902afe6ff19044c128da80df54b70fd711ed3ac445be"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1836a8af35219dad7ccc7356b6fc21582ea7caf647794abcf8e49de38c1aa0d8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1836a8af35219dad7ccc7356b6fc21582ea7caf647794abcf8e49de38c1aa0d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1836a8af35219dad7ccc7356b6fc21582ea7caf647794abcf8e49de38c1aa0d8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "54e95d65cc8760adaf32a962d23acfb89bceeb6e5c02ca013d3b3892c4bfcd33"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "24bfddf720e0e388ee1c742d8274a4b9c418f7715a6b770f8214a61fe177f8d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc923992b76b691507a0423c709070cbace601f1fef41ba8217a7d442591e900"
   end
 
   depends_on "go" => :build
@@ -23,7 +22,7 @@ class Oslo < Formula
     ldflags = "-s -w -X main.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/oslo"
 
-    generate_completions_from_executable(bin/"oslo", "completion")
+    generate_completions_from_executable(bin/"oslo", shell_parameter_format: :cobra)
 
     pkgshare.install "test"
   end

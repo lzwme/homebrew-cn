@@ -5,11 +5,6 @@ class Uffizzi < Formula
   sha256 "3f64e26f177fbf26840f0a3a044e26b1744eb139320cd94bc2a2e4e8111d0450"
   license "Apache-2.0"
 
-  livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "8360ffc4b2af6e03c6ae6167c9b9aacfcf53fe48372421e73053da6324b909bf"
     sha256 cellar: :any,                 arm64_sequoia: "48623cb8888180c827dacca11e41f476d88ac681de19db5e5343db6b059e4e17"
@@ -20,6 +15,10 @@ class Uffizzi < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "15fe59302710ebe347b090a31cba8e5ed24b40b34db36d2b96d79d201e520910"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d976bbe6deb261da05d0e050400ff12e5fd9a8f5462925c15e8ac856756e3332"
   end
+
+  # Gemfile pulls in incompatible versions of some dependencies. Upstream seems inactive.
+  deprecate! date: "2025-12-26", because: :does_not_build
+  disable! date: "2026-12-26", because: :does_not_build
 
   depends_on "ruby"
   depends_on "skaffold"

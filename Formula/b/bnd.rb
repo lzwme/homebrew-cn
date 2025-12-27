@@ -1,8 +1,8 @@
 class Bnd < Formula
   desc "Swiss Army Knife for OSGi bundles"
   homepage "https://bnd.bndtools.org/"
-  url "https://search.maven.org/remotecontent?filepath=biz/aQute/bnd/biz.aQute.bnd/7.1.0/biz.aQute.bnd-7.1.0.jar"
-  sha256 "d68703e97d0950ced1610f8ff5c37c11cc68e67b96d746c3c7375eaa4980210d"
+  url "https://search.maven.org/remotecontent?filepath=biz/aQute/bnd/biz.aQute.bnd/7.2.0/biz.aQute.bnd-7.2.0.jar"
+  sha256 "f5b76094561e3681f75fa8c44b5956aa3162559a8f5e6e29a43a4a04df9c823e"
   license any_of: ["Apache-2.0", "EPL-2.0"]
 
   livecheck do
@@ -11,7 +11,7 @@ class Bnd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7d052030c8ad5e158aed2587be01436bb0ec5d3f6133646108ee435bc46a7651"
+    sha256 cellar: :any_skip_relocation, all: "3dfde3cf303a2bc03117208ee393c0d71d782ed0603a68ae4e4727c4e05e5508"
   end
 
   depends_on "openjdk"

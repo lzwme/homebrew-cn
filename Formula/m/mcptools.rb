@@ -7,14 +7,13 @@ class Mcptools < Formula
   head "https://github.com/f/mcptools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9ed8a807126e862356c88f8d07ae06e2b363b7d2dde046c3a956e96844bdf62"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd293a1418a1f5bed9049cbe3a7adfcf0da1b90fa3ec205b1535ded3d134e9d9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd293a1418a1f5bed9049cbe3a7adfcf0da1b90fa3ec205b1535ded3d134e9d9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "dd293a1418a1f5bed9049cbe3a7adfcf0da1b90fa3ec205b1535ded3d134e9d9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5ab73dfea053a7272cd6afabc3d36da454d85fd304c7fc340e143863b912d88e"
-    sha256 cellar: :any_skip_relocation, ventura:       "5ab73dfea053a7272cd6afabc3d36da454d85fd304c7fc340e143863b912d88e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "634ea303a4300ab4a6eb836c866d646954d380e9238d18a484b63ad0719c3d2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc017eb921064bcb0820f8f141510aded2edc131bac3e2901c36ea0a6b2b773f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41935d9845af05cbe0d5845d48d39ba22cd2acaa506a7ef3b8d0236bd6a506c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "41935d9845af05cbe0d5845d48d39ba22cd2acaa506a7ef3b8d0236bd6a506c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41935d9845af05cbe0d5845d48d39ba22cd2acaa506a7ef3b8d0236bd6a506c1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61800bc1654c7d0bd81dcd620ab5807135d2f67644e5adf5b2e12c6441c166d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "01fe149647de823687588e4048620c3b8e1db66f3338df6f08fc837cca575a62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39ffab019c9f9ada55db8b089ed043c3356f93544dc5a5d58667f22d22f9724a"
   end
 
   depends_on "go" => :build
@@ -22,7 +21,7 @@ class Mcptools < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), "./cmd/mcptools"
 
-    generate_completions_from_executable(bin/"mcptools", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"mcptools", shell_parameter_format: :cobra)
   end
 
   test do

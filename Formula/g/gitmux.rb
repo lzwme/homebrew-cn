@@ -17,7 +17,6 @@ class Gitmux < Formula
   end
 
   depends_on "go" => :build
-  depends_on "git" => :test
   depends_on "tmux"
 
   def install
@@ -32,7 +31,7 @@ class Gitmux < Formula
     system "git", "init", "--initial-branch=gitmux"
 
     # `gitmux` breaks our git shim by clearing the environment.
-    ENV.prepend_path "PATH", Formula["git"].opt_bin
+    ENV.remove "PATH", "#{HOMEBREW_SHIMS_PATH}/shared:"
     assert_match '"LocalBranch": "gitmux"', shell_output("#{bin}/gitmux -dbg")
   end
 end

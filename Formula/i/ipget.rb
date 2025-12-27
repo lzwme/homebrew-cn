@@ -7,15 +7,22 @@ class Ipget < Formula
   head "https://github.com/ipfs/ipget.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e534e793352a8c580a7f5e497a74ef2c9aa5aa391355fec3adf36b2ed5d711a9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f91a096af69012ce7d96dc42804505610fb701c26df6b504f3afb711e4314e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4aafa5b71aa3c47d9f44363626622b12a1af7d4dc89681fac22f3f3a4a888b6a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cc0d36fea0b87e8915b9a32f3803721827d824eeb40b33acb5ae986be6908518"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d94b8c6ea38ce71e92475d3fd1be72bb8d9a57aee730333e5caf905cf2b7b39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ec55d55e12e1296df33663fd089520e312d2f3cea95518724c2a7eeddb1d154"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d163e6d5db5ff6882311ad197c5cd407b30233c40e421a7aefd072899ea7746"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc2ebfd1c24295e616273a8bdade66e4d6fa0cd6e1ec0ef944f3dbd4c29624f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4be6deb150fe8c9e59bb3a1eae1ba9d2e603842f25183f5f2d23b69f9db24c0f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a5bac4d9522be84e422661680b6e32df0da1d7d71b2148bc79da6ecdb182b7ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a45a70d52fde5147524156ce8f357c8ce2c26faa6a5ef34dcb574cc718035d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b09debcc769e34d7248d13df7b391f84e11ee5d782cfda9ef8b46770fa4c56fc"
   end
 
   depends_on "go" => :build
+
+  # bump cockroachdb/swiss for Go 1.26 support, upstream pr ref, https://github.com/ipfs/ipget/pull/189
+  patch do
+    url "https://github.com/ipfs/ipget/commit/8788a6e7c33a534a5822edcb973b5467274c9858.patch?full_index=1"
+    sha256 "a9da66913347839ecfcfcd95ae833e59d11700a56b377fe7b8e4c21fb9211115"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")

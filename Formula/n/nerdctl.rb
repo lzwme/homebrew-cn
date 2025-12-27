@@ -7,18 +7,19 @@ class Nerdctl < Formula
   head "https://github.com/containerd/nerdctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "4c002625d1bac4d4863d261a096431bd5f3dc5d4e2a6779add3149c7b32c802e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "24b211f327bf44329eba718fbec50aa41d0e924e4df401b0c904fd8e40f913c3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "988e4dc5097b4de4101f5cccd25de622b9d2871f4579b3ddb59863df5e640dff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e52decf20eb724537a3eb99dfebd44b23d07336ed86f67cd7d90430767fc5b9e"
   end
 
   depends_on "go" => :build
   depends_on :linux
 
   def install
-    ldflags = "-s -w -X github.com/containerd/nerdctl/v2/pkg/version.Version=#{version}"
+    ldflags = "-s -w -X github.com/containerd/nerdctl/v#{version.major}/pkg/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/nerdctl"
 
-    generate_completions_from_executable(bin/"nerdctl", "completion")
+    generate_completions_from_executable(bin/"nerdctl", shell_parameter_format: :cobra)
   end
 
   test do

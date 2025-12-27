@@ -16,12 +16,13 @@ class LaceworkCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7e9303020662c4a2f30af60b0fcf51914641654b1e0e79732df904fbe488e94"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7e9303020662c4a2f30af60b0fcf51914641654b1e0e79732df904fbe488e94"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7e9303020662c4a2f30af60b0fcf51914641654b1e0e79732df904fbe488e94"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fa0a91a4dee47e21d65d8f4fcc896db08c564cbf8931c4be592d8b9ed4da63d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "78af7e46ee788e5b2d99654b2d55bfbdec64e9148eb0c8e0ec2b4cad8a67ac4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd4d339cda920aedfdd70bb3279dc5007499607a1c247051470c23164cd3b098"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef5b0d4677650dbf9141ad8f134f605fb28031b898ba3a7b06d5ccfa42c988ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef5b0d4677650dbf9141ad8f134f605fb28031b898ba3a7b06d5ccfa42c988ac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef5b0d4677650dbf9141ad8f134f605fb28031b898ba3a7b06d5ccfa42c988ac"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5e63961eeb8daaf6e69abb1a4f41d470c833f2de72febce61bc0c2c5020abda0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82a76a1ef59c8b66eb18aca312a11f0f82f7c8a653a29503729d61988cc6e3ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f68a6ce34e9ca7ef6f7d636d09eea6afe7334b9d3d300a3af510d27817161aa7"
   end
 
   depends_on "go" => :build
@@ -36,7 +37,7 @@ class LaceworkCli < Formula
     ]
     system "go", "build", *std_go_args(output: bin/"lacework", ldflags:), "./cli"
 
-    generate_completions_from_executable(bin/"lacework", "completion")
+    generate_completions_from_executable(bin/"lacework", shell_parameter_format: :cobra)
   end
 
   test do

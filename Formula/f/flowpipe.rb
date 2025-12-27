@@ -25,6 +25,7 @@ class Flowpipe < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c9b2da386e4f32aa027f6f91451644838b1d69eb5cbd3e6d5424b2c9dba229f"
   end
 
+  depends_on "corepack" => :build
   depends_on "go" => :build
   depends_on "node" => :build
 
@@ -34,7 +35,8 @@ class Flowpipe < Formula
     system "corepack", "enable", "--install-directory", buildpath
 
     cd "ui/form" do
-      system buildpath/"yarn", "install"
+      system Formula["corepack"].opt_bin/"corepack", "enable", "--install-directory", buildpath
+      system buildpath/"yarn", "install", "--immutable"
       system buildpath/"yarn", "build"
     end
 

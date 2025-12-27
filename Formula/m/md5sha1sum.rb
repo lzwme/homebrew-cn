@@ -33,8 +33,16 @@ class Md5sha1sum < Formula
 
   depends_on "openssl@3"
 
+  on_sequoia :or_newer do
+    keg_only :shadowed_by_macos, "macOS provides FreeBSD md5sum and sha1sum"
+  end
+
   on_sonoma :or_older do
     conflicts_with "coreutils", because: "both install `md5sum` and `sha1sum` binaries"
+  end
+
+  on_linux do
+    keg_only "Linux provides md5sum and sha1sum via GNU coreutils or BusyBox"
   end
 
   def install

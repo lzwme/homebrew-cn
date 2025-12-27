@@ -7,12 +7,13 @@ class Mcphost < Formula
   head "https://github.com/mark3labs/mcphost.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a18c9366470783f75bfe3dd44b89ce484e84ad5a3ae3ad14bab7cb069e452d0d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a18c9366470783f75bfe3dd44b89ce484e84ad5a3ae3ad14bab7cb069e452d0d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a18c9366470783f75bfe3dd44b89ce484e84ad5a3ae3ad14bab7cb069e452d0d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "96c85baba08df8a6d2866516c9c84fa8ec0fce1f18137a6426793dc7393bd9fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "edea4949eb876b07b3f5f7ed4b07f3b6570b3e16f2fc7aa1b3cffdc59eeda766"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "602e326e243499daa5976dbb627cbc34537ce2419a98032e748717349457205e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d7708ccb7862998ee97e115862e6ee54098720a4d6fff091034f2200de3e7bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d7708ccb7862998ee97e115862e6ee54098720a4d6fff091034f2200de3e7bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d7708ccb7862998ee97e115862e6ee54098720a4d6fff091034f2200de3e7bd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6e2b5f97e692f75d8641d81901e4fd158d39c991fe7a185f5b14501c5632a5f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e13dfe2a8393c5df6f8f83eaaef0144db23a4d678781fac47234db60efe40aaf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d7e47fdb1fac51c7241139ed8ca9da0627fb04e45d83bc90dc58662ed28bdaa"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,7 @@ class Mcphost < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
 
-    generate_completions_from_executable(bin/"mcphost", "completion")
+    generate_completions_from_executable(bin/"mcphost", shell_parameter_format: :cobra)
   end
 
   test do

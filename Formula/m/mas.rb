@@ -15,14 +15,17 @@ class Mas < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a79e8bd2aa42699320c13ebea5c0a6f36c602b674fb38793a55632afbd24e78"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4aad2d8c74d92478bf7d6f7c1f1558d537c334218646619c137f8dddef90ca2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57663979cfa593ece69f62bd84a21ce2eec4ef3dec245f22f2c7dd25259c2e74"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d3717751838c37114159c0f111787d86451b637b0a4a4f02d9dfc89b84773cf5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb2b42291e08e1f9bb8a016d0faff3128a61eb8c9326f88431c7812ade7984b3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95511575a0d72b1e293b0e42aa9e46fe4e8c981ff0c5947eea2672eeb33af404"
+    sha256 cellar: :any,                 arm64_sonoma:  "a7fdaf0c2fb15169b75763fd54d487e851492b4af107e98be1d601cc06ed35d2"
+    sha256 cellar: :any,                 sonoma:        "30634436516c93ac57cc8e9c7ad32ea3bc179f80b6cdab4aeca3a57317ae1b74"
   end
 
   depends_on xcode: ["16.0", :build]
   depends_on :macos
+
+  uses_from_macos "swift" => :build, since: :sequoia # swift 6.2+
 
   def install
     ENV["MAS_DIRTY_INDICATOR"] = ""

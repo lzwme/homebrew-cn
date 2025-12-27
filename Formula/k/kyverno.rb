@@ -14,12 +14,13 @@ class Kyverno < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2ed9cbf27d9a5f45203e4a7a0fde6e184ad31fc4928c1434141a3d57d5247ba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53d6d3a36c44b2e3e854e285d0d5b6f00d59300a5b204d2d16c642f36e28640f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a93b62e8f76f6d351559beeec9beab6eff8e794e494c7c8c12707e02791ba93f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c598f42695ac7b59cfb499a7d538f7a2bc9642517c1eaa36c8c4e58565291ccc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "37d44014ae683f2bf3138112d55ab8a294a7b1139c1066e2d18fca720f8a819b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c291ee518185309d63e924685331468f880f4ce6d2fcb514a8a17d6e03c61a71"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f17ef6c6a412b4d23b34302a360804c42c393722931d5b00515a877382d9cbb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd49f93b967599c890e481e694a26ca527b18a6ac1d56ca8733e8cbcff9b02f1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "541036ede99d361a0c635cea1110e68c6ddd8330257b9e6a2576ff488dc8ece1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "da3ecc4806c38b8746481053fde56ca4f36ba3d5e05703f5fc5dfebc7367a38c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3866eb47bd1e7a6cef252704507c2e4426f8a9efe3bfc5d20c32c51f7cefdb49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0725adc36a61695c97ac24fb711b6d655d98f5a13c3f83d72958121834f0abe0"
   end
 
   depends_on "go" => :build
@@ -34,7 +35,7 @@ class Kyverno < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/cli/kubectl-kyverno"
 
-    generate_completions_from_executable(bin/"kyverno", "completion")
+    generate_completions_from_executable(bin/"kyverno", shell_parameter_format: :cobra)
   end
 
   test do

@@ -7,16 +7,23 @@ class Kuttl < Formula
   head "https://github.com/kudobuilder/kuttl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5311fc6c89e0cb5b80873a401b15c3f93f350efb00c7d3a4f00ae92ec54d19d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b70d0387e6b5afd9ec4ad4965a5318e54815213cc8d4f50ce2a57cd8d92ceb1d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14dfff13d47e3fc30c12eb10e1263361d61303a6f3241e978bb980c570528305"
-    sha256 cellar: :any_skip_relocation, sonoma:        "94b28be46971fd3d76ee66d9a02d2942a1244328e3e8d73c63d1d19a4803190c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ea07f76db88a1974c989fc5dc4051b30d8900ea96a9278b21c5898c3cf95bab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "839c2f0241bcfda2845f572a40cf6acc83cdde40bd2a5adcb3ef3172640f7bb9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31768f5c40e809d0517bb53112899083f9b8a012919a7ac1a35cecd32b782f6a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b79bd1d9bcc6929198da2e8b45a8696d1c4d23aacd715c76e542bf6a96f53c58"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7f7ea52d9a5df48ffa50dddff4278235bde7b20a86b50bbdb86766530f93b80"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3269e471333b67934d9679ed06ad78ffed1440e5cd2d76f8d8e6f0114255b10f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f89b1a3d4455cfe5d49fabb951a3a3e4815d5048c28ec64d4878759f964c32e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1a3fa46ee479beb11948ff8f5d04ccc70f5b96fe0f09fe594bfd67cef781eb2"
   end
 
   depends_on "go" => :build
   depends_on "kubernetes-cli" => :test
+
+  # patch to add Go 1.26 testDeps ModulePath, upstream pr ref, https://github.com/kudobuilder/kuttl/pull/664
+  patch do
+    url "https://github.com/kudobuilder/kuttl/commit/80911cc18d690efe88a8b12a32b419b495d7bb20.patch?full_index=1"
+    sha256 "8749ea6b9cabaa92b44894b8ed5e6a5271a9bbb5fa76f35502df948d529b83cb"
+  end
 
   def install
     project = "github.com/kudobuilder/kuttl"
@@ -28,7 +35,7 @@ class Kuttl < Formula
     ]
 
     system "go", "build", *std_go_args(output: bin/"kubectl-kuttl", ldflags:), "./cmd/kubectl-kuttl"
-    generate_completions_from_executable(bin/"kubectl-kuttl", "completion")
+    generate_completions_from_executable(bin/"kubectl-kuttl", shell_parameter_format: :cobra)
   end
 
   test do

@@ -9,19 +9,13 @@ class Lab < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "433eaa1680f1b54c580ee3c240138d977c127d8e682ab81bd1e7942e9d291b0f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5ad4754373780ae61c444bdfd9505479639b7d12a60613b3514e4f888335b347"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f11a5e58b8158bd43d1e4f93e4c85e398f6ba34308957b6e5b868c58d582cdb2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eee3b3d1a309b0a61a5224cc1c13b0de765518b86015f6985a09347e86554b00"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "31e8b682f99fd9f456d298e09d20521317f3b04248f53029d04ce5f8b3f3b75a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9cc2420cd4dd1db173333ff7c51530deee73b47a8fb5d3d36d60893dfd4c35ae"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9806b52adc5a587c7992ca6e1fc86da47bdd71020c93d24c8d1ceb118d419fa1"
-    sha256 cellar: :any_skip_relocation, ventura:        "5509e7f37eb68c9404e0f862fc87535091b7928a891fa38deede63fefcf314f5"
-    sha256 cellar: :any_skip_relocation, monterey:       "d1e3f02ef9e1748260a2ba5d9eefc79312b77f8d3ae223485aab7a025e7638e5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f20ca44b476a3d6a3ef9a74047d4dd863403d72a427f1baa0dc19a9df5b33667"
-    sha256 cellar: :any_skip_relocation, catalina:       "0ce4baa79e79a77dd30d3e7e839ef41c414329dc21ffa9386e74d7a0f69c7501"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "16b8efcf3a79c9b4f674d99af7d6931b4e7bb72d52616e56274c5dcc32860e9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22981b2ebc3d41dd9b1905ab8f8f715d38d09c85f173e848473a8f731039653d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e797c832335a5532813bc21bb9b373cec8551469955c9dea5826787f0053ed87"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e797c832335a5532813bc21bb9b373cec8551469955c9dea5826787f0053ed87"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e797c832335a5532813bc21bb9b373cec8551469955c9dea5826787f0053ed87"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b06e95e8b55727781750196473f8664c9bf4389d92291a2c7093495875bd7bc0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a9bd0118530f93d8ad3aac66be05e8498fa0bf281a828292556cfdca35664f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da46a19b9c616c7d034b36032f9032cfd66a09b225678f6d9b71ed6e5a515aa6"
   end
 
   depends_on "go" => :build
@@ -30,7 +24,7 @@ class Lab < Formula
     ldflags = "-X main.version=#{version} -s -w"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"lab", "completion")
+    generate_completions_from_executable(bin/"lab", shell_parameter_format: :cobra)
   end
 
   test do

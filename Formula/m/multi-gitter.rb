@@ -7,12 +7,13 @@ class MultiGitter < Formula
   head "https://github.com/lindell/multi-gitter.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "71157513185f9613482315d039748557eab8ef41af9e7eaee8a05e1eb9bda45c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71157513185f9613482315d039748557eab8ef41af9e7eaee8a05e1eb9bda45c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71157513185f9613482315d039748557eab8ef41af9e7eaee8a05e1eb9bda45c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4da6109b355f11dad453a617befb34bb0ffed3ef85458a30490be832d7cfabca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0701d4d18cb780de35805f43764270f01a0b2c610d0d92634ea6595fbedaaf4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bc7473e60befa9cb98228cabe0277d2d467ce930b2c20d51bccaf0917caf67f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fdd879cc6f72150c9d8bea936839ec55b77407e5581a0e472df792b7652d8507"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fdd879cc6f72150c9d8bea936839ec55b77407e5581a0e472df792b7652d8507"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fdd879cc6f72150c9d8bea936839ec55b77407e5581a0e472df792b7652d8507"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0339a193bf3694c6b8675d3daa8b380142f4f72948c0cb80b4c5859a583182f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "54041c0a558aae39c7c1a9accabdfccf02d9d5f81a7a4c3ddda1a2db64becfd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "586e199ca0a108704dd49fb8b9a603eae4b88f1c385038212c0c2cea91a6d983"
   end
 
   depends_on "go" => :build
@@ -21,7 +22,7 @@ class MultiGitter < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"multi-gitter", "completion")
+    generate_completions_from_executable(bin/"multi-gitter", shell_parameter_format: :cobra)
   end
 
   test do

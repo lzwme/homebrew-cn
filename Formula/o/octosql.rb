@@ -7,16 +7,13 @@ class Octosql < Formula
   head "https://github.com/cube2222/octosql.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "c7a4f8a7b4ef2166c839bffed27d9f03cc461a397a9599a8a928d7aa13769578"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6fb02732ee419bd030f5b4114904f013d2cbcbf6a5972c7c180cc8b39b50218f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b90c0eb55eba76d94d9b74ed271cec24ece2f80626fbc8984fd89a5c3572fad"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8756bbed1866ff4ec61d41c3fa9e311bc1363a92a1e5bb7bf8007f3dce1016f5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "266cbff44daa602cb4e315ab346893ec6f1c9ff8988629d25146555a702599c4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "15616e45d1f71f3adf387cccca95f024f6a47ebac1eb43cad2bcf4033ba86eca"
-    sha256 cellar: :any_skip_relocation, ventura:        "599c917127678f30d18e2992c5e313c9551e088f6c91641f2d41887ff006b073"
-    sha256 cellar: :any_skip_relocation, monterey:       "e66e8404c28c51cd31a53ce95ac96341355948d807b7ece05ec46aca7ea95ec3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "2c74938cd61568c5b569d3f86a0077aa1b0893aee68a8320386c373046728952"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d93635da70ab7707f9a337ce7d30badfaac5c31f3d2d40c55741cdd8ff3bf6ff"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c72a70690339c26059914fd99ec9e7ebc9b35b828ee6c07cbdde7af8bc1f7e5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c72a70690339c26059914fd99ec9e7ebc9b35b828ee6c07cbdde7af8bc1f7e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c72a70690339c26059914fd99ec9e7ebc9b35b828ee6c07cbdde7af8bc1f7e5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8aeea6a96ae461bec7631704def7cf422a25fcc2f433ac18e801e1ceac5d67a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9bcc6b096962d539dce6ae887259710127684f4246ecc5136f34fc4027dd263"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0756a2f3337b46a79897beaf2b080ffd1888c648e87751fedd999c7002c5937"
   end
 
   depends_on "go" => :build
@@ -25,7 +22,7 @@ class Octosql < Formula
     ldflags = "-s -w -X github.com/cube2222/octosql/cmd.VERSION=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"octosql", "completion")
+    generate_completions_from_executable(bin/"octosql", shell_parameter_format: :cobra)
   end
 
   test do

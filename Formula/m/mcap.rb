@@ -12,12 +12,13 @@ class Mcap < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "961c951ca20941d5bb2016b8543c690cb0cf0c8235869d0730d516bc564de9b9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3fe33e5f72eee2b3ecd8358039b7bd4904764c9e9fa7a362d2c88aee0bb96f53"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "252ea3c370645b0e41da88583f90c2cc2b5b505d31c41c2cdcdcb3866008fe72"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bb020843c4e00414dedf658cf161e01c434e92c01b3a432dbee38b6fda4f5ddf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ab62566be9088350f2f8d1282e7285d0b9d43e9d0b44968b4cb1cdda3611b58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f06a0d383b4c0698ae626bc8607650cd4722ce41f52d8418fefba8ffb1a59b2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f8e65c9663b0f6abb0d27cd14f73eb9ab7ec0a8f231ae2fbb44e5aff55f8228"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a61703a06b59b2a438c76f8a82160aae3e6c90df97c104b6e7314d6df4c4826c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "263d8675d5a386e90d8e3250d18b846a5c841b31ecba1ca00c611d3f3ebe5658"
+    sha256 cellar: :any_skip_relocation, sonoma:        "678c03962b0bfcd0be865fab5774eb3f73b1fa4c61925be73607822493617acf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "af298c9a99bb24e3b7923b87f53563a99aadf84a9ba1a5edb887b886cbf483e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afd398865e17ef8a407a2b9b1620abfc77af973832a18c42f00d6c04f67c0434"
   end
 
   depends_on "go" => :build
@@ -27,7 +28,7 @@ class Mcap < Formula
       system "make", "build", "VERSION=v#{version}"
       bin.install "bin/mcap"
     end
-    generate_completions_from_executable(bin/"mcap", "completion")
+    generate_completions_from_executable(bin/"mcap", shell_parameter_format: :cobra)
   end
 
   test do

@@ -12,12 +12,13 @@ class Kustomize < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9e70d396b3da0da6bb38f3c31edbadb41c2a2ecc2a9c724619fadb7e0207dfe2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1daaf54c5182da2835585a74b33c8a3de20eff9076411d3eceeba565cabe566"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dce029f0b716b861da807249960fb3d89f7c637ec800bd2a68273b986d115b59"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9f0159756c7f81a667caab38f156e463771c3591e3a66ff87121eb43eca0719a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d01cb1a1a0a390f606f5b31c9e094629af0dbdf0e86f542cc7ab44e4f039a3e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b24fdd60b8b7034438d4d3e4bb15a95175a85e55d8451c770b4640b05f4e6f13"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a6a7f68d08f572fcfbaf12159aa817ad023e3a939ceae9f29b8ddcf5084d1089"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32be3571b5861e577ba2f40f7207279cddf76597c5f35bd99461c7314f72e6ac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd3ac541719f316f264b0e7ffc27d5973414c3a2f2cd31cb7acf4a8b35171706"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3bba5cf3fce8ef568aa6ee2e47bee161c15777b21c1461ab6fdd1a90729f974e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe423c984e1e1013364b73b2b26b1541d419ad136d0e0e9e5377189cbc6560a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7274d6c446d49b864eb220923ad0364ab5119da390b7b130f18c8abc1b22268"
   end
 
   depends_on "go" => :build
@@ -31,7 +32,7 @@ class Kustomize < Formula
 
     system "go", "build", *std_go_args(ldflags:), "./kustomize"
 
-    generate_completions_from_executable(bin/"kustomize", "completion")
+    generate_completions_from_executable(bin/"kustomize", shell_parameter_format: :cobra)
   end
 
   test do

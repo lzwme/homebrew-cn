@@ -7,12 +7,13 @@ class Ocm < Formula
   head "https://github.com/openshift-online/ocm-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8660dea204623d4dc3a35deef9152d7c8fa42f29393cee5b2f24ac720295d1c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6cb721abba2413237ab1f6e2941c7d4fdbf433d436c8e3365331e324b7ebf806"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9f0468bb67dc7ee9d0e3d5b9e511f290c9ac6e0b1667dc1be0f8b2170690925"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f598c4fd738258bc4e62b0b05921cbb422c57d68342210af8a4f5bc8f28cab04"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e47d6f0b3a9006159b3d45ba291af1f03fa56a1094208c9d0747f50839fe775c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d2edc154137799b73fe84b13a739c87aabaf76265de9f4b9d5d5837c2380b4e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "acb09532281c5ffb1d13a3e9a94f23481cb43cdeb754fa2d3d6afc9620d83a0d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1976bdaab69a88b9dd3b5563686059a64a0b8b17e42c31517009350db8212947"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9af041a29f83799ed9e114892821cc14ae534c7f0ec1bfb63a5866d703bbc7f8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "35714691631753c66cfac421425962d10db603992b69b64efcd391bf0dd418c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "458a45e2bb182a794c6f09851f74148bc25ef94280922e4ddce1b7fdc0a67f69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1dbc1304ce4db4e5ab2081f89b6938be563092347773e55ad9a61fab661818ab"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,7 @@ class Ocm < Formula
   def install
     ldflags = "-s -w"
     system "go", "build", *std_go_args(ldflags:), "./cmd/ocm"
-    generate_completions_from_executable(bin/"ocm", "completion")
+    generate_completions_from_executable(bin/"ocm", shell_parameter_format: :cobra)
   end
 
   test do

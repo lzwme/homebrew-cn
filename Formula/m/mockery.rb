@@ -15,12 +15,13 @@ class Mockery < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "57b5888518af3514ad124f576e327f8961dacac05e09ff4a4e5932d95e97fb54"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "57b5888518af3514ad124f576e327f8961dacac05e09ff4a4e5932d95e97fb54"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57b5888518af3514ad124f576e327f8961dacac05e09ff4a4e5932d95e97fb54"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4c06213f493feca3cb38fe8fda74dc09d83afd971c540d599fc87c1c99fca623"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f72980b1c090c38a693b2113d24e1f210b142e5aa774eba2c15db43fffab3d6d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05199f77f9e5092090ba938fe48309b0dadb21bda29965a909efa03c90a8163f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ea8c2d3304c7b5f91280b05c4fc2c1e3941a1591b5ad67d6dafa416d020bd8b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ea8c2d3304c7b5f91280b05c4fc2c1e3941a1591b5ad67d6dafa416d020bd8b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ea8c2d3304c7b5f91280b05c4fc2c1e3941a1591b5ad67d6dafa416d020bd8b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f54aa400055804a634fa06354a6c1d95aa9b5c725d2c87cf377de12f7c726680"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a55991a52219c618eedfc180419607dafc471be9fe9d8d6325633ba3750b5d73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1e43436f0f6ef7ccb05bded5c4d8ce15ed81ecbd4ec9d2e8fde30e45344a47a"
   end
 
   depends_on "go" => :build
@@ -29,7 +30,7 @@ class Mockery < Formula
     ldflags = "-s -w -X github.com/vektra/mockery/v#{version.major}/internal/logging.SemVer=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"mockery", "completion")
+    generate_completions_from_executable(bin/"mockery", shell_parameter_format: :cobra)
   end
 
   test do

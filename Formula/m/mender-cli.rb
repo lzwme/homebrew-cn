@@ -11,12 +11,13 @@ class MenderCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8f1ba6b750a0ae35277fecc1943703ffdf0e88f0f6325f24737dbdf3ffcc4f41"
-    sha256 cellar: :any,                 arm64_sequoia: "b5e7d27ede4f0b37225e0b5f54e90119789ed0286e84d178715e3c33905c712f"
-    sha256 cellar: :any,                 arm64_sonoma:  "81998e6a9f3d7a6ffab24b3a25ece7aad078bff7b7ce947ef292b288222d5cb3"
-    sha256 cellar: :any,                 sonoma:        "ed7a797e3672c980e1b357e81b55489769234faef5c6518bc37664c8e4721daa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c664370a38bfc8568520d9842f597bac4dcf692d534a63d0d1fc6ff866a7915"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10bf572305613feff2b31a01d442a87322ee7dc2657da69942c8692a8d6e277f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "8f0671cfe824e3f01e2057b81f12836e55f9b0b8fbf055636189d197bcd3af41"
+    sha256 cellar: :any,                 arm64_sequoia: "5e0e61309b5cd8784776ef9edc0a2e3fd7a0c2af80e5006aa05628a1d1d512eb"
+    sha256 cellar: :any,                 arm64_sonoma:  "50ad0bf3c654112ea0c46b288cd00d4a80db67753d2dd5b854687c655e003cfa"
+    sha256 cellar: :any,                 sonoma:        "984ab3bb03029a0d1c71f7da55fdf46866e3aa2dbfacdab2bbf1f87f0311530b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce65a9c8f2dec521cc44bd235bd32794f842f6952b17fbce95443b3d7859fca8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b31de68de7647a35266abf1034897a691f8e097e7f36a47c3f3f6fcf02626f9"
   end
 
   depends_on "go" => :build
@@ -30,7 +31,7 @@ class MenderCli < Formula
     ldflags = "-s -w -X github.com/mendersoftware/mender-cli/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"mender-cli", "completion")
+    generate_completions_from_executable(bin/"mender-cli", shell_parameter_format: :cobra)
   end
 
   test do

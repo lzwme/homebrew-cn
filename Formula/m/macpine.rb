@@ -21,12 +21,13 @@ class Macpine < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a74b9ab086a73a7fdd82fc84cb28b6ea49f69c11d2eefca958d2d2ce1c791bdf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a74b9ab086a73a7fdd82fc84cb28b6ea49f69c11d2eefca958d2d2ce1c791bdf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a74b9ab086a73a7fdd82fc84cb28b6ea49f69c11d2eefca958d2d2ce1c791bdf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a036b7ce7045b2c361625e77ff2cbca3233da4886bab4987d725803f318e0a7e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5bb32e4932c0ea3ee9caf5f8dc4014ece95745a943d43b0027f7405688034ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c6aa501b9744069ad6f0f61e076d9bb69558fc8a160caa26b16e9fcf3d5ae18"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7105cc79202b0248984d1741b9709a479eaf7c145324a288bdaffadd12f4c8f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7105cc79202b0248984d1741b9709a479eaf7c145324a288bdaffadd12f4c8f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7105cc79202b0248984d1741b9709a479eaf7c145324a288bdaffadd12f4c8f3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eec8efe3b14eaee61cb9db6292c402135e7100f8539a00b4f17ecf917eac4b6e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d77eceb6fa16941e6378524ebce721ee1cebbc0846f65ff313e8434d3eb9aab1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39252a23eb162d8e255fbd000a29e56882824fc382064f9324c9925443bca3a0"
   end
 
   depends_on "go" => :build
@@ -36,7 +37,7 @@ class Macpine < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"alpine")
-    generate_completions_from_executable(bin/"alpine", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"alpine", shell_parameter_format: :cobra)
   end
 
   service do

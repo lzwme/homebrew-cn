@@ -7,12 +7,13 @@ class Lima < Formula
   head "https://github.com/lima-vm/lima.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73210eeb5ea58a7a3c6694659c1caec7a28f7544dd7dcc2818d93486a906d4ca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dda82893d81d727101d759eea2811299cd48d470cd73cdd61798568e18c01cab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3c387213b8834107c87f40a0ccb7a7fe3e110467a999e5a12264116616b3b443"
-    sha256 cellar: :any_skip_relocation, sonoma:        "395fe92acd723d415c65772e529f83e61f8c0a01cbea659f31845c4bce393fb0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae25e1fe3f14e5308d70b11fb7542b1bf8443b86a33989587c3403b3a5e3ecc1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e21d0a0fb0c5b7fdc127b322bcd97babce267d47bfa9ae374173e0034885646"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03c09127136956dd84a90626bf0da8a61ba27034cefb44f907467a15e85747a3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8413f1a4345b6d4d09491f34b31743db5c127e4b5be09e94aea254978cfd647d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15b4bb67026a8ece6a67c964c7ef3876f56fa984cc770d410ad07dec888486d0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2df3eb5de5aa4c29b3045562ab5d1a4f475cbed1b7b32ad4ac6a5a37c9483580"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1e395abb2679e126b217c5ad8803732429229da8ba1e2a7716e21ab4ace4757"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c16c98fca4ff0deae01d3ad5d13c013ebcc7012232a6f80228a83b4ccbe8bd90"
   end
 
   depends_on "go" => :build
@@ -37,7 +38,7 @@ class Lima < Formula
     share.install Dir["_output/share/*"]
 
     # Install shell completions
-    generate_completions_from_executable(bin/"limactl", "completion")
+    generate_completions_from_executable(bin/"limactl", shell_parameter_format: :cobra)
   end
 
   def caveats

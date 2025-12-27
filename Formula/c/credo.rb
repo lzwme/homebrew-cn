@@ -1,17 +1,17 @@
 class Credo < Formula
   desc "Static code analysis tool for the Elixir"
   homepage "https://github.com/rrrene/credo"
-  url "https://ghfast.top/https://github.com/rrrene/credo/archive/refs/tags/v1.7.14.tar.gz"
-  sha256 "4ff5f180dfd409515022279e958a6fa850ea13f2f08a791bf00e60ff6f6d71ac"
+  url "https://ghfast.top/https://github.com/rrrene/credo/archive/refs/tags/v1.7.15.tar.gz"
+  sha256 "29ab2c89bf26d4a0884e203c99ac5de65c7a984f7121bca5a5558f4fb00b3339"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "39e46879f9ea4764f90b4f0c1c79834bc8beaf7cdb7e37243b6f5419375e6049"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6adcd7ff6199850cf9a5d76c1e380e36dbf75755ed65f0b27f0e115d09b17f36"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3324fb4c7f5714d79b694f64d99dbd085d8aa8a82bd97999e90bff16916cc5be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e77dbf278bffc312bfab28e1d89fd1882a42f36c6b9eddfc9b6b6b135731f12e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8844c175f77115ccb788ec74fad1463076d4440cb883d5777a6c5ba43d1d0f6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a64beeaef44f288d7fa8f8f11b8dbe9b1618993effcc1f494609eb0fc0d4bf2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a900ea895f3491b3b89f7584a32a53a85a5853d8b2179eab67fdb42293924cc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "438dcc6d3902e10596e3cae7856965255541eb9b481b9dce6da2231d66498d3d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a96ff5bca1a695838efa89ab585cb622b0afe5f988a54aff8ca3b1f83123398"
+    sha256 cellar: :any_skip_relocation, sonoma:        "db581e5e8358dc0cdb3bfaa2d0b881f59ff1e63e1b8550827f56d0cfe6186974"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea2121402288e98feef3f40fe4a1b0322914b6e87bd0fda85a46cafdbba41151"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e79faefddfb98e42ed4d2fb32f3ff173648d747315904c84dd3782a44c32c62c"
   end
 
   depends_on "elixir"

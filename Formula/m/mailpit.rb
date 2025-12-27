@@ -6,12 +6,13 @@ class Mailpit < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9fdb8c1bd703f6cc14faab77839123ae3d2effdeb517a56b59b14edc8f00de5d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5315a3efccfb4cbaebedd5e1a7d0aff1a08ac90751670a0c9aa00728fe89e0d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4868a43e21e7337273faf747103bbaad5a7bdb354cfc5f645ebcaa0212bd366"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bf9758f2328ac43fb40e2ab8912dd587402e64af053e6f02994d6dab23cf3650"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2adc604c429177950ec9543b0551e8dfd7c80c4ba0e4c76df53f14d0a1c8adb0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "807cfc4326c85b02236c1fba8145231377fd1854c1c8022b933d40dd9905f6fd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "531d6abbfd3e2c517ac42d9e641e9c3a89cd5bbeb89b8edf68c185821dd88a3d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0309a75debc887ad0ce36019e6917e600853014f16e2a533f01926e71518687"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5472333659555406d985536b36b66f15cd7d48a3047003452b1fa348ea79a6a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fd8073b954c548c219e3e9e269fb7bb8e9bc870db1b2e16c8c39243e08626208"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "70f06f87d278cdcd367edaa3f1fb3230ff82ef984357cb3ffe8b3c394ae6696e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9305b4ca046d2056a445e9e17c92a2c6f6052eacfa1d2349b58fb69d7c521cf5"
   end
 
   depends_on "go" => :build
@@ -24,7 +25,7 @@ class Mailpit < Formula
     ldflags = "-s -w -X github.com/axllent/mailpit/config.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"mailpit", "completion")
+    generate_completions_from_executable(bin/"mailpit", shell_parameter_format: :cobra)
   end
 
   service do

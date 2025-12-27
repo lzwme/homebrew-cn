@@ -7,12 +7,13 @@ class Okteto < Formula
   head "https://github.com/okteto/okteto.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d90151af09048f1cb3fbb1d2ba202a5d7ebde0dc5a3c1ecf189fc025bb7405b1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e509975ba80833a6aed82c115fac2be13625b86c800d779d019f4899e90551d2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05c62689f41d013f8c6c2710bf9e9c3946c35283f39755679b74cf5aa20acd08"
-    sha256 cellar: :any_skip_relocation, sonoma:        "02aae418cf2a518b4a1b425ff1849342f5e95fef8c4b892d63ea80305d330bab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e2bbab309828b993b647c5ee799c97a0353735b607303767a755a76a5623199"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ac346b1ea7187e0a90c1bed13c46c34231992bbeb8412e89c4f33e3439440f6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bcece5f891f5df32af3afa3b0e39c598494a550f3f0c34e409290d7d077fc629"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "600e5d75a91ea781586c2a62ebb59d32194471f950e88cc4324cde5b60079fa3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d489f327aa59af1723ceb458254a6fd9bf58ce879bdc7eb950ebdfa4f8bcaa4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "19570bba01200c9ec88be569d5aabd7e48784d20f6a962396efb719fb76e42bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "333b28ad4db37bba95842349c4e509fa69002d25fec8ff3466fb0227c61f3e0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4839613194247fc70140506ce343bdf9faee2013a38d96afd3484ef13a417f4"
   end
 
   depends_on "go" => :build
@@ -22,7 +23,7 @@ class Okteto < Formula
     tags = "osusergo netgo static_build"
     system "go", "build", *std_go_args(ldflags:, tags:)
 
-    generate_completions_from_executable(bin/"okteto", "completion")
+    generate_completions_from_executable(bin/"okteto", shell_parameter_format: :cobra)
   end
 
   test do

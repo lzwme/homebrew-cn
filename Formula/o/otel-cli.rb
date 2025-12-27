@@ -7,14 +7,13 @@ class OtelCli < Formula
   head "https://github.com/equinix-labs/otel-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c6c809c63d335d997e8f794037c3188bf3d5bf1eca2e2a1a533e78616b0eb80"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ae87c2f9fafe21f6f99739e0d86b3e0f1d70bb75c355e434f911d58150e1f01"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ae87c2f9fafe21f6f99739e0d86b3e0f1d70bb75c355e434f911d58150e1f01"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9ae87c2f9fafe21f6f99739e0d86b3e0f1d70bb75c355e434f911d58150e1f01"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8184d3d001f134321d8d3ceb6ea5b29d61bf134b189ae9206e275010a0f9c6c8"
-    sha256 cellar: :any_skip_relocation, ventura:       "8184d3d001f134321d8d3ceb6ea5b29d61bf134b189ae9206e275010a0f9c6c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9825db7c6bd24d790f1270d5f2aadd3c9e96472743016f216554caccbec5edff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb6e8b16d5493b5443bced5761cfeed0322e32d2cb043f83ac4626e5c80a4d22"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a313a9133dd11b8af9799ab905e85d5621e0f39bf352644e507b50d917acf8f1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a313a9133dd11b8af9799ab905e85d5621e0f39bf352644e507b50d917acf8f1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a313a9133dd11b8af9799ab905e85d5621e0f39bf352644e507b50d917acf8f1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "58427fbc110afd673b17749c06ab3016b1f068871e16d7a652aeae0a21231010"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82c89926433523c86889f4308e4e39c05a68af344017b877911d269b68f66118"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad99c92f5002dcc5dd39e9e1cb4206ee327e6ef5514842fb972b4874a8f11ae5"
   end
 
   depends_on "go" => :build
@@ -23,7 +22,7 @@ class OtelCli < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"otel-cli", "completion")
+    generate_completions_from_executable(bin/"otel-cli", shell_parameter_format: :cobra)
   end
 
   test do

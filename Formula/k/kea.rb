@@ -1,20 +1,17 @@
 class Kea < Formula
   desc "DHCP server"
   homepage "https://www.isc.org/kea/"
+  # NOTE: the livecheck block is a best guess at excluding development versions.
+  #       Check https://www.isc.org/download/#Kea to make sure we're using a stable version.
   url "https://ftp.isc.org/isc/kea/3.0.2/kea-3.0.2.tar.xz"
   mirror "https://dl.cloudsmith.io/public/isc/kea-3-0/raw/versions/3.0.2/kea-3.0.2.tar.xz"
   sha256 "29f4e44fa48f62fe15158d17411e003496203250db7b3459c2c79c09f379a541"
   license "MPL-2.0"
   head "https://gitlab.isc.org/isc-projects/kea.git", branch: "master"
 
-  # NOTE: the livecheck block is a best guess at excluding development versions.
-  #       Check https://www.isc.org/download/#Kea to make sure we're using a stable version.
-
   livecheck do
-    url "ftp://ftp.isc.org/isc/kea/"
-    # Match the final component lazily to avoid matching versions like `1.9.10` as `9.10`.
-    regex(/v?(\d+\.\d*[02468](?:\.\d+)+?)$/i)
-    strategy :page_match
+    url "https://ftp.isc.org/isc/kea/"
+    regex(%r{href=["']?v?(\d+\.\d*[02468](?:\.\d+)*)/?["' >]}i)
   end
 
   bottle do

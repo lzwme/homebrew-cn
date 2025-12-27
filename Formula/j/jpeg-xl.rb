@@ -28,6 +28,7 @@ class JpegXl < Formula
   depends_on "doxygen" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "sphinx-doc" => :build
+  depends_on "webp" => :build
   depends_on "brotli"
   depends_on "giflib"
   depends_on "highway"
@@ -36,38 +37,34 @@ class JpegXl < Formula
   depends_on "libpng"
   depends_on "little-cms2"
   depends_on "openexr"
-  depends_on "webp"
 
   uses_from_macos "libxml2" => :build
   uses_from_macos "libxslt" => :build # for xsltproc
-  uses_from_macos "python"
 
   # These resources are versioned according to the script supplied with jpeg-xl to download the dependencies:
   # https://github.com/libjxl/libjxl/tree/v#{version}/third_party
   resource "sjpeg" do
-    url "https://github.com/webmproject/sjpeg.git",
-        revision: "94e0df6d0f8b44228de5be0ff35efb9f946a13c9"
+    url "https://ghfast.top/https://github.com/webmproject/sjpeg/archive/94e0df6d0f8b44228de5be0ff35efb9f946a13c9.tar.gz"
+    sha256 "ac94917fe745a674eabf1e044f23ec55cd5a548c9869c06ec4b19da14ee0227d"
   end
 
   def install
-    ENV.append_path "XML_CATALOG_FILES", HOMEBREW_PREFIX/"etc/xml/catalog"
+    ENV.append_path "XML_CATALOG_FILES", etc/"xml/catalog"
     resources.each { |r| r.stage buildpath/"third_party"/r.name }
     system "cmake", "-S", ".", "-B", "build",
                     "-DJPEGXL_FORCE_SYSTEM_BROTLI=ON",
                     "-DJPEGXL_FORCE_SYSTEM_LCMS2=ON",
                     "-DJPEGXL_FORCE_SYSTEM_HWY=ON",
                     "-DJPEGXL_ENABLE_DEVTOOLS=ON",
+                    "-DJPEGXL_ENABLE_MANPAGES=ON",
                     "-DJPEGXL_ENABLE_JNI=OFF",
                     "-DJPEGXL_ENABLE_JPEGLI=OFF",
                     "-DJPEGXL_ENABLE_SKCMS=OFF",
                     "-DJPEGXL_VERSION=#{version}",
-                    "-DJPEGXL_ENABLE_MANPAGES=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    "-DPython_EXECUTABLE=#{Formula["asciidoc"].libexec/"bin/python"}",
-                    "-DPython3_EXECUTABLE=#{Formula["asciidoc"].libexec/"bin/python3"}",
                     *std_cmake_args
     system "cmake", "--build", "build"
-    system "cmake", "--build", "build", "--target", "install"
+    system "cmake", "--install", "build"
 
     # Avoid rebuilding dependents that hard-code the prefix.
     inreplace (lib/"pkgconfig").glob("*.pc"), prefix, opt_prefix

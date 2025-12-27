@@ -9,12 +9,13 @@ class Kuzco < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6b9aa3c556ffc4a734b8b27a37879ac6be4380bd570e6f76c3f1f8257b79103a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b9aa3c556ffc4a734b8b27a37879ac6be4380bd570e6f76c3f1f8257b79103a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b9aa3c556ffc4a734b8b27a37879ac6be4380bd570e6f76c3f1f8257b79103a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "171c5cbd75d672fd5a745ef528aa505d72aad75e855c67dbe61f41cdedcc8716"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d11be849bffbdb7885482db5b8bc3bd81cc9b419b24d5fccc67f4a196e0d0d5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24bb1c8a705ed714836451cb45e50f5f97647fd25eccb6a88d42a864fb44da7a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95487a1522a341d29b92bd5c445a4dccfe1044b2ed98f9a7126223357b0084cd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95487a1522a341d29b92bd5c445a4dccfe1044b2ed98f9a7126223357b0084cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95487a1522a341d29b92bd5c445a4dccfe1044b2ed98f9a7126223357b0084cd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a31629ad0686c63c37142d6933c52429eb83785f9e7473c09feeeb5f10fc7c2c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a88f63be38154165a86ad19dc078bbecb012d395625b3b69fa712408b9b2d45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d94364db4bf83f55afdd7fe9e3dde36774ccf8363f87f32f56d12bf7440896a8"
   end
 
   depends_on "go" => :build
@@ -24,7 +25,7 @@ class Kuzco < Formula
     ldflags = "-s -w -X github.com/RoseSecurity/kuzco/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"kuzco", "completion")
+    generate_completions_from_executable(bin/"kuzco", shell_parameter_format: :cobra)
   end
 
   test do

@@ -11,15 +11,22 @@ class Plakar < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ac2ddfcbe2e5115613e19f9ce5a2d356bde679a58bd62326547270738d385ba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f2484b9522dcb6dddd7556d144543fe388b4c14ad1016011ac532ce81080eb6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5cb963f9a0ccfba98ce9962e0da149d412e362f7e3e13e136950bda9e68e093d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "774c10fedc3449a8e8ba3dc685cda56f8718c2153d0a10d808ee3100abed722b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b00e5e2583a6d7bc026cf53cd608c74fa1a38b444f0edcc74ae2d62028393570"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16b675f1981fe537ff5bd71ff616ce61abd72ee89c4f18c18a4bc7549056fab6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "054379a5d933068e2b4cb8f48fc11769a05ec55f5cc798520266046948bbee35"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f34a5a006de72588b106a09723fb32c3c321681652072687799cfae22ccce3cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd24298b97a6640cfe6c9b903e0a0764f79495cb7bc0b59e149a57b2690e44e5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d4ded53b51adcfce38ee43603aaa60d7cc9222e26f18ca0ece5a69dbc5927346"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a75c2526701fa560eb4af9eb9f49ee348a10591a2de1827b19c82efe6986532"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58e4bd7f403dc08a91f22db461e9e3647aeb5fde6c269d096bad97a5eca34f71"
   end
 
   depends_on "go" => :build
+
+  # bump cockroachdb/swiss for Go 1.26 support, upstream pr ref, https://github.com/PlakarKorp/plakar/pull/1845
+  patch do
+    url "https://github.com/PlakarKorp/plakar/commit/79c5ce3cf30822010e395d33078b6abc6a0b992a.patch?full_index=1"
+    sha256 "37df26982c016c3eefb1103db63622cffe65a8b79e114a3c5201b236276317fc"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")

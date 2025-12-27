@@ -12,18 +12,24 @@ class FlowCli < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd6cdd1eb2124d772b1351fa9e62166a46b0bee057bb4151ed0ebbbbb90a6b6e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ef700a6bd3432fafd249367bcf33c17e6abce288cf71aa7c38d919c6c5d0906"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04cc3cc1067fe5b703838b94bbbafc1de73f352e844fcf4112a26983471b2be0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cd7d0b8aad0c33a47f822efe397fc429a4ed4eeaa95662696faac8cc9839d226"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f90a094a41d5a4aeb4e744d8076fa69b3e41d549401fefd14ae52421a1c2fed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4ece1aa3d4e2594ebe690e7f578d0b53b705cb94dc68ab46049352911cb42b4"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f635cc9ba9bc22147d4d06bb80f4522a57946e3db14720436c20ed28bb06cf50"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d70a64d66129de6134d371931e46267c3dafff12595eb1d42a1602213bc0b08"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "993fe71a2ed3449f35f2fb4cf9dc4b20072ee012fd5368a1d1d34fdd05c36e35"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7e124b120e12160b0a578fd9eadf331402d59ddea4cc2dfb6904ad55bc9e55d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "68df28a8599aa81a1b7d68d8d08a0752d11eea3863ba5078168ac9319226f4a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd17ef61ca2744ca214e348fe80ef66c69e5bb09acf1e0e79ad34442ab8c2e1d"
   end
 
   depends_on "go" => :build
 
   conflicts_with "flow", because: "both install `flow` binaries"
+
+  # bump cockroachdb/swiss for Go 1.26 support, upstream pr ref, https://github.com/onflow/flow-cli/pull/2239
+  patch do
+    url "https://github.com/onflow/flow-cli/commit/bec1ee457616b9e39552bc15dc1d0370472445d5.patch?full_index=1"
+    sha256 "95c667fd71df39479f3368d5400351d47c3a870592497daba484f38efa88d446"
+  end
 
   def install
     system "make", "cmd/flow/flow", "VERSION=v#{version}"
