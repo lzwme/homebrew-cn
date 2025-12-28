@@ -8,7 +8,7 @@ class Atf < Formula
 
   livecheck do
     url :stable
-    regex(/^atf[._-]?v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do

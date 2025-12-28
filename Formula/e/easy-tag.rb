@@ -56,6 +56,7 @@ class EasyTag < Formula
 
   on_linux do
     depends_on "perl-xml-parser" => :build
+    depends_on "xorg-server" => :test
   end
 
   # easy-tag doesn't support taglib 2.x
@@ -88,10 +89,8 @@ class EasyTag < Formula
   end
 
   test do
-    # Disable test on Linux because it fails with:
-    # Gtk-WARNING **: 18:38:23.471: cannot open display
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    system bin/"easytag", "--version"
+    cmd = "#{bin}/easytag --version"
+    cmd = "#{Formula["xorg-server"].bin}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
+    assert_match version.to_s, shell_output(cmd)
   end
 end

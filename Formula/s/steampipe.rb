@@ -12,12 +12,13 @@ class Steampipe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ce103fd5bdc060eb7c55bda59218c8de3053dd7db1d6b8d2a0c02da99ec8492e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21f0522d5048e642d0af360d2c7f150135029bb0d7b574c8ced23b3558ceb5d4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "207fd6dd829c0739983384d6bddba2cd4ec3a9926fc26950d68d7bc59a9353b7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5c18783d603eaf06564d17c87c8270dee9600edbfdb43cc21c6675b9f09d75c2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e859762beda361f72c763a43599ac05cc96b2534550c3dd9f204ac2f3551754a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c922c3d3b8714c7b894bb003198a42127e0f4bcbccd6963547e87921308e7853"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "33de35893b3cf08ce0de1320684c92f92e9c70a0bc4b08b8000895beea95db45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f4456b3600be361c02ed5ba03344d79171bd5cbf00c3574c93369d93afdc689"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf9ec2b22db158d366c77df08a7a8bd8e183259f3cf0a40fbd94f46eda81e0f8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a9999c4d7fdef8e1c5d3d1fc25030d70ccfd06e9fcbe007d9e80f823aaffa23a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d27a6eec929dc775feb15813361f84b1d0efae9b5722418c5c88401b3ff5e7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be61c2337f62c61aa61bb1657bdb9e363d4e76fa64b495cf0a464e631fbe5f5b"
   end
 
   depends_on "go" => :build
@@ -26,7 +27,7 @@ class Steampipe < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.date=#{time.iso8601} -X main.commit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"steampipe", "completion")
+    generate_completions_from_executable(bin/"steampipe", shell_parameter_format: :cobra)
   end
 
   test do

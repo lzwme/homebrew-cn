@@ -7,12 +7,13 @@ class Regclient < Formula
   head "https://github.com/regclient/regclient.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "57e24b9b2c5c67d01c66b3c27104b7827d81ea7126376c41144a55b4e142b8d7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "57e24b9b2c5c67d01c66b3c27104b7827d81ea7126376c41144a55b4e142b8d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57e24b9b2c5c67d01c66b3c27104b7827d81ea7126376c41144a55b4e142b8d7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "05d72dff6b1b9a783339544dca1df04ca071177aab997884453138d9916e9562"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd4f70a427189356083f37a3608424a69ffcc17391ceb21d260ec31a38316121"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77b8b1bf940c943773f1cebf05d435c6d3e62743ea49713e86557c0cd7f2d21c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b0e28ade4c13dc0bebc51e032e6bd72525bd35f546e169187396893b04bc48e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b0e28ade4c13dc0bebc51e032e6bd72525bd35f546e169187396893b04bc48e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b0e28ade4c13dc0bebc51e032e6bd72525bd35f546e169187396893b04bc48e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "803554b5897f50285af54d56768debc97acf497562eb79fbe7e492d2dfd39b15"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "07fadb96eb705a04d080dac7ca164d05d5b1e3f11584fa6b9c67d37a9c4e9938"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39f22dcc005d4cdebbc8acc4047a8bcb1f1aeda086c58c27f3b7fd3d038b14a3"
   end
 
   depends_on "go" => :build
@@ -22,7 +23,7 @@ class Regclient < Formula
     ["regbot", "regctl", "regsync"].each do |f|
       system "go", "build", *std_go_args(ldflags:, output: bin/f), "./cmd/#{f}"
 
-      generate_completions_from_executable(bin/f, "completion")
+      generate_completions_from_executable(bin/f, shell_parameter_format: :cobra)
     end
   end
 

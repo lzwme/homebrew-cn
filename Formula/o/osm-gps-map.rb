@@ -68,6 +68,10 @@ class OsmGpsMap < Formula
     depends_on "pango"
   end
 
+  on_linux do
+    depends_on "xorg-server" => :test
+  end
+
   def install
     # TODO: Remove next release
     system "autoreconf", "--force", "--install", "--verbose" if build.stable?
@@ -91,10 +95,10 @@ class OsmGpsMap < Formula
 
     flags = shell_output("pkgconf --cflags --libs osmgpsmap-1.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-
-    # (test:40601): Gtk-WARNING **: 23:06:24.466: cannot open display
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    system "./test"
+    if OS.linux? && ENV.exclude?("DISPLAY")
+      system Formula["xorg-server"].bin/"xvfb-run", "./test"
+    else
+      system "./test"
+    end
   end
 end

@@ -2,8 +2,8 @@ class Wasmtime < Formula
   desc "Standalone JIT-style runtime for WebAssembly, using Cranelift"
   homepage "https://wasmtime.dev/"
   url "https://github.com/bytecodealliance/wasmtime.git",
-      tag:      "v39.0.1",
-      revision: "0163804870a2149c113a31a58da4635f79fc25ec"
+      tag:      "v40.0.0",
+      revision: "0807b003ef6250372b57cc083d2df28f8728abee"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/bytecodealliance/wasmtime.git", branch: "main"
 
@@ -16,12 +16,12 @@ class Wasmtime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9dd95e7af322fafe9b634794a6c698e723f56f35531be783f298f9e13138c3d7"
-    sha256 cellar: :any,                 arm64_sequoia: "0983b8593562239c01888c3dec296f06162ed7bc13a9fac8d5d5de517e5f5039"
-    sha256 cellar: :any,                 arm64_sonoma:  "0ecf35ee56d25415d3737df7056930d6026ab15be1b216b7dbdf41021af666ae"
-    sha256 cellar: :any,                 sonoma:        "f4aa8271c1b94c958db6fbbc9ca2fba6924216e9de8bc8b54a75d471ee3669b9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d54663a0a2a810910011279b7d99c5d5aea0f72256eb547081c7b5748e7a31a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a275bae2998031f880b56dca965f086b09a3009a0fc3ba50309bcb806aa1e967"
+    sha256 cellar: :any,                 arm64_tahoe:   "e44f5df0757beff3f7645769b505a4dc249e8c1407445486fc1b8ee6bfc8a1f6"
+    sha256 cellar: :any,                 arm64_sequoia: "191c761da28ef06ac2d08d20f05c83b42687bc0e38c4632091f5685885890329"
+    sha256 cellar: :any,                 arm64_sonoma:  "202c7f39d5da33c3d47e6666844f861fbf5a68a5565eb356944ad2d41f259eb6"
+    sha256 cellar: :any,                 sonoma:        "0bec9f68662cf271fc25ed4ef22ea8648760baf5c614b19f274800a881b0fe58"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de18581981f227647ec9402139b9b30b87b1adae87b4ba30485de7e1b4f650bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3381d42dda56451fa01fc57172b6c25e40c95562e0f61a6f80ed0b64aad3ab3f"
   end
 
   depends_on "cmake" => :build

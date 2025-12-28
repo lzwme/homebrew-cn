@@ -51,17 +51,18 @@ class CenterIm < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/centerim5 --version")
 
-    # FIXME: Unable to run TUI test in Linux CI.
-    # Error is "Placing the terminal into raw mode failed."
-    return if ENV["HOMEBREW_GITHUB_ACTIONS"] && OS.linux?
-
     ENV["TERM"] = "xterm"
-    File.open("output.txt", "w") do |file|
-      $stdout.reopen(file)
-      pid = spawn bin/"centerim5", "--basedir", testpath
-      sleep 25
-      Process.kill("TERM", pid)
+    cmd = "#{bin}/centerim5 --basedir #{testpath} > output.txt"
+    pid = if OS.mac?
+      spawn(cmd)
+    else
+      require "pty"
+      PTY.spawn(cmd).last
     end
+    sleep 25
+    Process.kill("TERM", pid)
+    Process.wait(pid)
+
     assert_match "Welcome to CenterIM", (testpath/"output.txt").read
     assert_path_exists testpath/"prefs.xml"
   end

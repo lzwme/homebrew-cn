@@ -6,15 +6,13 @@ class Sq < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4e7e26f4d83f7829d91c329688d051d834e8a8af95b2c020d67793a5eb87e236"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f7d17fcc389a770e377f4c1decb25b033b40ed0f3054982f4fcb73ffaa32f32"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ab356e5d43c53e4afbd823d3ed7205b148273fc79ed08e36428bc8b42a50de9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d2d2280b04a8a8b9cdd5ed35dd5686301c9708e580001948012b68ca5377cba7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "66320e44d65e85d579904c7f4dd8823a8fe9ec18a59e7e24b38fae78565656ad"
-    sha256 cellar: :any_skip_relocation, ventura:       "5b7ab78293193479047eafccfce81247ea02d73905bff3ee35a637ac76f241c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e5e69f47d93f1c7eabd2d38fae687102066278536e9f12dc130e437a7158294"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "436b94f41c3c115501602d3a4bacae43e6b0697dba66e4801527ad5d0b867b42"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d3d13d047ab5f8c92bd86f9b834d7b5db518aee41c0055b22f8c26cc0ad8eb3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "165e7742ac66e6d7a4cffe91f9b589c92149ebcb22bc5f4d74e390ca8f47b3be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1e2e0d899741aeb53f2025c3af772478921692af3367d688c1c5d433f5fb55f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2c62c37e5d001f5d2035a54327de20409d527d2b22638cfd64b7c544e32bd49f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7418d1e8666a52752ea5b7bd4106d684472b14e816509744843e4363023345a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21db459252b548be3859848c8146ec67ba36ad5a18e6270e96a082221f34f5b4"
   end
 
   depends_on "go" => :build
@@ -24,6 +22,8 @@ class Sq < Formula
   conflicts_with "squirrel-lang", because: "both install `sq` binaries"
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     pkg = "github.com/neilotoole/sq/cli/buildinfo"
     ldflags = %W[
       -s -w
@@ -36,7 +36,8 @@ class Sq < Formula
       sqlite_json sqlite_math_functions
     ]
     system "go", "build", *std_go_args(ldflags:, tags:)
-    generate_completions_from_executable(bin/"sq", "completion")
+
+    generate_completions_from_executable(bin/"sq", shell_parameter_format: :cobra)
     (man1/"sq.1").write Utils.safe_popen_read(bin/"sq", "man")
   end
 

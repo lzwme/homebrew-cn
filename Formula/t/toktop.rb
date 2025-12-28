@@ -27,11 +27,17 @@ class Toktop < Formula
   end
 
   test do
-    # Fails in Linux CI with `No such device or address` error
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     ENV["OPENAI_ADMIN_KEY"] = "test"
     ENV["ANTHROPIC_ADMIN_KEY"] = "test"
-    assert_match "OpenAI", pipe_output("#{bin}/toktop 2>&1", "\e")
+    assert_match "OpenAI", if OS.mac?
+      pipe_output("#{bin}/toktop 2>&1", "\e", 1)
+    else
+      require "pty"
+      r, w, pid = PTY.spawn("#{bin}/toktop 2>&1")
+      r.winsize = [80, 43]
+      w.write "q\nq"
+      Process.wait(pid)
+      r.read_nonblock(4096)
+    end
   end
 end

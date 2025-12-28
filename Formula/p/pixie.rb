@@ -13,14 +13,13 @@ class Pixie < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e17b0e1ecc5bf561d54cccb31a1303c348bee8bf51f640942463a7d6a8bb5dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c7fbaafa23de8f05e452d24747a4edd4c8a0d61a0a01b3ba664ca804c843e8e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76f8833feb8e94f8f7fb33848057603d35acf63c1d6acdbfd02d3a4c22e863fb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1cf672d31b3b683081c257958eb297f56ff5f0b394dc48f51e4be862751f9bce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8fdd739ced12415fabcad6ceeb96550171e1b585143f274376ec56f776c83d90"
-    sha256 cellar: :any_skip_relocation, ventura:       "afdfd7b18e2528f563336d90b53d9266a72b86d847df1afac796fc70f7f6e8e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eac95efb5aa8d4021a5c102cfcba35c8f5be2ebc2ce5f310cea8214699ae5f45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da530afc94d1ab1753b32d48e963b6cb6e4c45ef4daaaa2cad0255e54fab966a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83b266db822d9793caf6cf5a03e8317e02739f0d5f9406ca81beaec183f0146e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d6e42fdcbc35d05f2eeaffdf327ee3ca07e8e8ae7f07d418441f7446eee67f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "381b9ea04db887835776f25887660ff3377ab78da55c8e71408d7c0f023e499f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fd4ac012e19ff02c9ab8717d1a2fdc49b1da39ad8a37075d3d3bc848b353b0d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c86ec5008b0fbbeab19146112fb8b9474b41c09ec3de504c30727bf119b9b1cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f803b6103598540b99c6ad6f663c4240bba259e6da0ee27f7453e3cde980f80d"
   end
 
   depends_on "go" => :build
@@ -40,7 +39,7 @@ class Pixie < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"px"), "./src/pixie_cli"
 
-    generate_completions_from_executable(bin/"px", "completion")
+    generate_completions_from_executable(bin/"px", shell_parameter_format: :cobra)
   end
 
   test do

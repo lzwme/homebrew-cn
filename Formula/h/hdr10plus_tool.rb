@@ -1,8 +1,8 @@
 class Hdr10plusTool < Formula
   desc "CLI utility to work with HDR10+ in HEVC files"
   homepage "https://github.com/quietvoid/hdr10plus_tool"
-  url "https://ghfast.top/https://github.com/quietvoid/hdr10plus_tool/archive/refs/tags/1.7.1.tar.gz"
-  sha256 "39a6b63f83c8433e6e2ea1a4b54a3de6dbf24fff64b69566a99e6328f4f1d2e2"
+  url "https://ghfast.top/https://github.com/quietvoid/hdr10plus_tool/archive/refs/tags/1.7.2.tar.gz"
+  sha256 "cc917e769bad85323c7f596179798cc96ac878a01ddfd53b210fecae4c891849"
   license "MIT"
   head "https://github.com/quietvoid/hdr10plus_tool.git", branch: "main"
 
@@ -12,14 +12,12 @@ class Hdr10plusTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78ae74fd537427b5a147308e8bc2a67cb88530272a0cf5ab5399956a352098b6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5dfeac19a6b661e94df935d27fa225dc73338b93f1b6b8b47b2c4990905ef1b0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "65b805124a49edf9db43f55cbecb47cd7a79b5dfb9b2dd6eb665ca5a82fc9489"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b7c7ff273efa5264c458d146a7a8a063ac0484043332b62dcac2feb63d8c74ce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "942613e0a0a9fcc2636d63df7a992f20a61c1060ac127f7d7132daa9012bee17"
-    sha256 cellar: :any_skip_relocation, ventura:       "0243742abe39f9b62b887608e8844d2474fbe57645037f36c7143bbccfef3833"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5f68486d96825cbc9d807f2024c53bee11dd984115747be11516602a7545097"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6b11863c103ed0f67eba0ea2aa044bfaad6d95a1cb6dee3e03796ca5f1c60dc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "19047e28a0a09f67a3468de226119e6ef0f9bc75fcffee81369b8a6605ecaf36"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0d80db9a201aa675b80359047ff378ddae88e0c43e545eafd641012a891ddb9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7bc000ab8a85fcf936e2c0ca21e7f8f971a89898523b3346d07b173917b605dd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b523b4a7ee63a7fc2a837967be1e92743cac0b5c0eee032c3d63452ff0c3424b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f938183f8ea89d2fce37120e7b4f8aa1ed9c08b72d154c899a9472f95bfc08e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2f8bd3ce3cb730e2e071121e9b538c8ba942e329ca3a264f1e14833884f4b7b"
   end
 
   depends_on "pkgconf" => :build

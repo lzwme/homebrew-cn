@@ -27,9 +27,6 @@ class Benchi < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/benchi -v")
 
-    # Fails in Linux CI with "open /dev/tty: no such device or address"
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     ENV["DOCKER_HOST"] = "unix://#{testpath}/invalid.sock"
 
     test_config = testpath/"bench.yml"
@@ -46,7 +43,15 @@ class Benchi < Formula
           type: noop
     YAML
 
-    output = shell_output("#{bin}/benchi -config #{test_config} -out #{testpath} 2>&1", 1)
+    cmd = "#{bin}/benchi -config #{test_config} -out #{testpath} 2>&1"
+    output = if OS.mac?
+      shell_output(cmd, 1)
+    else
+      require "pty"
+      r, _w, pid = PTY.spawn(cmd)
+      Process.wait(pid)
+      r.read_nonblock(1024)
+    end
     assert_match "Cannot connect to the Docker daemon", output
   end
 end

@@ -12,12 +12,13 @@ class Supabase < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ab763fae41ad35af84d3b2107a87392d06875c31134843a0c23a64a767b729e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e80e2557285ceafc11e64a15421e2951fcd2244f8ae3af548a1e33822372973e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a8432846003af0f72c099b50a30619ddd809964132450c120de5b162af33d9f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "322cbcb68e3dd17cd3876d855bfa14b3ad23f3cb569696bcf634ae50c0c8e6d7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0620eb70ed547e5ddfba83ff077becfce82c6d045841572ecd9f5098dce23c1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b6f41b0e69f0a4b36cbd0d3672453c734c191abb2daf9194673def11cfdf501"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3bebfa8b3d99893ff7a00d7d45740cf07a52c7f349d99df48e15b50ddf2fe249"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afa0ac279e71d1296b091e0e4bf2cae53aa11fe6db4753bd2ab34662a886575f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9df2c218ade40ac66e3856e40dea57145521458566bd540a03366d64785ef5cf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9d28ee2066c0cf0cf0e3124253515bffe6c834ebed6797652fa9a7e475116da0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fe8796289f89d990ededf79d88ac9be498a3da80aeee476e2a693d1eaaf23fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0eca789cbe8968575b63020b484065dc208802096a1938730f9fb698316d3fc"
   end
 
   depends_on "go" => :build
@@ -28,7 +29,7 @@ class Supabase < Formula
       -X github.com/supabase/cli/internal/utils.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin/"supabase", "completion")
+    generate_completions_from_executable(bin/"supabase", shell_parameter_format: :cobra)
   end
 
   test do

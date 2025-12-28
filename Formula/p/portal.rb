@@ -9,15 +9,13 @@ class Portal < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1eb19a1a5286dff89e6c783dfb092baa8b5fc2e6a859c4fa19c748918b00299e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c0f1d260c58e98e4fd7899ef87280ffe8efcc67d77764203a9d54fe35e47ab4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c0f1d260c58e98e4fd7899ef87280ffe8efcc67d77764203a9d54fe35e47ab4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2c0f1d260c58e98e4fd7899ef87280ffe8efcc67d77764203a9d54fe35e47ab4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b091e6d917f3c32d54ae00142dbecf84c98b74985626b43df1dc4ea4c4bcf54c"
-    sha256 cellar: :any_skip_relocation, ventura:       "b091e6d917f3c32d54ae00142dbecf84c98b74985626b43df1dc4ea4c4bcf54c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7eaec7e69e6599f5618d67f3f1869d24ab28c7032f6817b0f9945cb9ca06d504"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4416bc3aa73043e6120fd97676142abae1de1f131454036ff9baecf61253068d"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a0fececdc0986916ca99288467480b34e73c7340a73dbf2a6686aa15f2c1e09"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a0fececdc0986916ca99288467480b34e73c7340a73dbf2a6686aa15f2c1e09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a0fececdc0986916ca99288467480b34e73c7340a73dbf2a6686aa15f2c1e09"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6be6e1884a5456ed3f4b00af608eb1f7fe3ae61c24955e849be533e160f8f2d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "618c8281bf6be5da1a11265d37c59366cf95968f5be4cb83cc1a04bbcb06c038"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c25fecd8c524f41b67e339aeca037e7782f157384c99ec550ccfe3d627f012ef"
   end
 
   depends_on "go" => :build
@@ -26,7 +24,7 @@ class Portal < Formula
     ldflags = "-s -w -X main.version=v#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/portal/"
 
-    generate_completions_from_executable(bin/"portal", "completion")
+    generate_completions_from_executable(bin/"portal", shell_parameter_format: :cobra)
   end
 
   test do

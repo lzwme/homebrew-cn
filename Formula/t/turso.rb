@@ -23,6 +23,17 @@ class Turso < Formula
   depends_on "rust" => :build
   uses_from_macos "sqlite" => :test
 
+  on_arm do
+    on_linux do
+      depends_on "llvm" => :build
+    end
+
+    fails_with :gcc do
+      version "12"
+      cause "error: inlining failed in call to 'always_inline' 'veor3q_u8'"
+    end
+  end
+
   # Fix to error unsupported option '-mcrypto|-maes' for target 'arm64-apple-macosx'
   # PR ref: https://github.com/tursodatabase/turso/pull/3561
   patch do
@@ -31,16 +42,12 @@ class Turso < Formula
   end
 
   def install
-    # Workaround to build `aegis v0.9.3` for arm64 linux without -march `sha3`
-    ENV.append_to_cflags "-march=native" if OS.linux? && Hardware::CPU.arm?
+    ENV.llvm_clang if OS.linux? && Hardware::CPU.arm?
     system "cargo", "install", *std_cargo_args(path: "cli")
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/tursodb --version")
-
-    # Fails in Linux CI with "Error: I/O error: Operation not permitted (os error 1)"
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     data = %w[Bob 14 Sue 12 Tim 13]
     create = "create table students (name text, age integer);\n"

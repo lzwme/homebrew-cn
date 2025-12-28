@@ -26,10 +26,15 @@ class Netscanner < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/netscanner --version")
 
-    # Fails in Linux CI with `No such device or address (os error 6)`
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     # Requires elevated privileges for network access
-    assert_match "Unable to create datalink channel", shell_output("#{bin}/netscanner 2>&1")
+    assert_match "Unable to create datalink channel", if OS.mac?
+      shell_output("#{bin}/netscanner 2>&1")
+    else
+      require "pty"
+      r, _w, pid = PTY.spawn("#{bin}/netscanner 2>&1")
+      r.winsize = [80, 43]
+      Process.wait(pid)
+      r.read_nonblock(1024)
+    end
   end
 end

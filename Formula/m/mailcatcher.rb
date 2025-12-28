@@ -4,16 +4,15 @@ class Mailcatcher < Formula
   url "https://ghfast.top/https://github.com/sj26/mailcatcher/archive/refs/tags/v0.10.0.tar.gz"
   sha256 "4cd027e22878342d6a002402306d42ada1f34045cc1d7f35b5a7fa37b944326e"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "10e444bbb623e60b18116178d5c67e58f2275f554e224ef97e4bd9fb6a22a539"
-    sha256 cellar: :any,                 arm64_sequoia: "51c31689b66432aea7f403ee5fe6e24fde501f23e86c221923aa190d724a08dd"
-    sha256 cellar: :any,                 arm64_sonoma:  "b78acc873482722d52b051257f358a7a1d45324dea1d08bf9ba085c100cefbd9"
-    sha256 cellar: :any,                 sonoma:        "49381f5b04c4cc45a3b155aab55eff722091ab419f14d317ed122698a77dccb6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "431bcfabfab145fdb3c7949666c9c8105fa41a707cb80905cc62f4ee9de1e529"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d16fab9b30aef4fc6514e6e0c0a76f5dbd002a012c3244b20415ea7bf13765d"
+    sha256 cellar: :any,                 arm64_tahoe:   "574e00bb8e66f77c67440e5509ca37dfd755c8eb725637571f8316b40c1d9d6b"
+    sha256 cellar: :any,                 arm64_sequoia: "1856171e11d03898bce8c0fc4798dc97c5026a855d310a6c2b077eddf4f17a85"
+    sha256 cellar: :any,                 arm64_sonoma:  "1b378930e1d9954f1d55897326c4f16aed612a35e9e1175635afd2d100a96101"
+    sha256 cellar: :any,                 sonoma:        "e2ef3898fdc9ce6a7f9fe108b0839b8ed349bfb45580a971173f4820e207f588"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b9d6b88128335c4950805eecda0c08d644267efc755fed6c46d59352e18e2f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a839abe265132df9b7a078e798acae6399d8a69fcaafd9c9d1be59aa44ac05c4"
   end
 
   depends_on "pkgconf" => :build

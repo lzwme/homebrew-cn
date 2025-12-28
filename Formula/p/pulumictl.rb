@@ -7,14 +7,13 @@ class Pulumictl < Formula
   head "https://github.com/pulumi/pulumictl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48dce17fc4889c8a7b274cf58f6cd0f6a3e24063a505930f98c12fe7c409784f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07ef245cd91ed7be0b36a07f73b41e3c20a95c589a98ff50a1a41c401d90f0cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07ef245cd91ed7be0b36a07f73b41e3c20a95c589a98ff50a1a41c401d90f0cb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "07ef245cd91ed7be0b36a07f73b41e3c20a95c589a98ff50a1a41c401d90f0cb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "054af9bbe6d7c11b30814f7aae599fdba815b7baadd3c637982f28b1c1023ef2"
-    sha256 cellar: :any_skip_relocation, ventura:       "054af9bbe6d7c11b30814f7aae599fdba815b7baadd3c637982f28b1c1023ef2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2527999f798d58194819b11fe1386555234c32ed4c2be61c086a2b91aae5ca11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f708231496a7cf63fe03a18deead41fc8040f0eba7f76e8d8e9f85ebc3032aab"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f16c5f57ad6bc4f89f15f468b9330118ab430700aba5d8277fb1c39afbd700ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f16c5f57ad6bc4f89f15f468b9330118ab430700aba5d8277fb1c39afbd700ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f16c5f57ad6bc4f89f15f468b9330118ab430700aba5d8277fb1c39afbd700ef"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c7775fe4816a00fe38c48a7f90cfb3a96c620175dbb79b9e982384858144e848"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc8ec7a5704c20da306196d68524fb2a13956b225b43dcab8c947da99acf22ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1424eb7c55b6b704f81424e95bb63a3042fe458cc9cb9cfbd78442932bd545f"
   end
 
   depends_on "go" => :build
@@ -23,7 +22,7 @@ class Pulumictl < Formula
     ldflags = "-s -w -X github.com/pulumi/pulumictl/pkg/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/pulumictl"
 
-    generate_completions_from_executable(bin/"pulumictl", "completion")
+    generate_completions_from_executable(bin/"pulumictl", shell_parameter_format: :cobra)
   end
 
   test do

@@ -4,16 +4,17 @@ class Pgsync < Formula
   url "https://ghfast.top/https://github.com/ankane/pgsync/archive/refs/tags/v0.8.1.tar.gz"
   sha256 "485c38e4c5bfec943bf8781f8c8ca4b773011c5767fb30be44d373566f40d5dc"
   license "MIT"
+  revision 1
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1f6a6e2b970a24e8d4de77f9c1e9adfd8285fbab0bfcf279e66b99b833a03530"
-    sha256 cellar: :any,                 arm64_sequoia: "4cdc2bb0bfcfc0f306696026ed00a5025c11d34a04e6787541782ca0b47dd543"
-    sha256 cellar: :any,                 arm64_sonoma:  "ce5c0f2b05b9f7380714773e17635bf35327defda51c519e751832eeff86cb76"
-    sha256 cellar: :any,                 sonoma:        "25aa2a324078445ed8e7089b0f990804b6f403a31a6e8f0be2608c777f9ea0cd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d5d706c169092ca88d882c52ad3b86c572182e51a41a86b01fa7747ba9b131d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ef4fcfe0b023ae63a909b42006fc3305f72695eec74256c47ef7729a8808057"
+    sha256 cellar: :any,                 arm64_tahoe:   "fe769a833d393d4a1a2d14e5ec710ce30ba26100f26c7de7afe3070772f92406"
+    sha256 cellar: :any,                 arm64_sequoia: "5799a23728b227d10d0b8502f3e16d911d77da00466cc5e70acfc53b51822cd8"
+    sha256 cellar: :any,                 arm64_sonoma:  "59dfc0e99d2e655745377685522d88f6fbe0f49e0c8646ae17377d4c0255bc29"
+    sha256 cellar: :any,                 sonoma:        "892cb4b2ca7209d33bf1c80d44e71c4b5e6c91000ff3bd719612dbb281bd6fd9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9596851af03225d8b7b43404b9cca41330948a7db7eb79601f4bde1c4a5f72ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57b9865d679544372d9bd0dabbb86025790c1a8f401e00a9251352f0b4a8a004"
   end
 
   depends_on "libpq"

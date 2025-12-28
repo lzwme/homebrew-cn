@@ -22,17 +22,17 @@ class Ktea < Formula
   end
 
   test do
-    # Fails in Linux CI with `/dev/tty: no such device or address`
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    begin
-      output_log = testpath/"output.log"
-      pid = spawn bin/"ktea", testpath, [:out, :err] => output_log.to_s
-      sleep 1
-      assert_match "No clusters configured. Please create your first cluster!", output_log.read
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
+    output_log = testpath/"output.log"
+    pid = if OS.mac?
+      spawn bin/"ktea", testpath, [:out, :err] => output_log.to_s
+    else
+      require "pty"
+      PTY.spawn("#{bin}/ktea #{testpath} > #{output_log}").last
     end
+    sleep 1
+    assert_match "No clusters configured. Please create your first cluster!", output_log.read
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end

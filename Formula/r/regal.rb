@@ -7,12 +7,13 @@ class Regal < Formula
   head "https://github.com/open-policy-agent/regal.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "29f4d579bee4cccde989b5d4ed7335ecd8499b24f23a0239496c9e0f89da4f49"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "214f7a3c33ce11a61f00ab51f67addf9507fff01696d7640383fadf2c8391ef2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1decfd6ada0d3f6839d60c76f12eb91c3457b48d591738f8e74faeacd134e97"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a9f535a91e3f234a5b4ab3223141f9910a4ed4c4265ba047f8dc02e78e33d14"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8deb844ee275e895f82c674a25e2c9da376a7ae9260106b41334dc6881e2f7c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e2f79f4de9b04b5df7d7ec39a5dea2a8bc2de3b2a840c1fe451b6f902fb5528"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e8059f850edfc73948843c402a5e31701ea1c96792c6b90fb8054a5939500ec9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9eab349ca9e0533521ac71aa86ea05b9d64ce9eb03198420e84c84d139cec9aa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d374e699cc63ce85ee3a3e6944e0b6f0ae99ce691e03fd6546f537c937bb079c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6a72f710c72afbc2af9207c167c2b40506cf350cccedd985631092f489b78fa5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e259d7ec3fcad40b6a77d9a23c372691042915ca150a9a6022e1f9288f94a39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af0ab687b45ed7a94c26186390fd7bdb5b6ba53f2436211b10d1eb9bdc36f4c0"
   end
 
   depends_on "go" => :build
@@ -27,7 +28,7 @@ class Regal < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"regal", "completion")
+    generate_completions_from_executable(bin/"regal", shell_parameter_format: :cobra)
   end
 
   test do

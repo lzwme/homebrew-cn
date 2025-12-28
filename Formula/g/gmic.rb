@@ -1,8 +1,8 @@
 class Gmic < Formula
   desc "Full-Featured Open-Source Framework for Image Processing"
   homepage "https://gmic.eu/"
-  url "https://gmic.eu/files/source/gmic_3.6.4.tar.gz"
-  sha256 "c482f7aa0751aef263ec83dc5057c886fd3c862fa8ff73e15686e12a25c8e731"
+  url "https://gmic.eu/files/source/gmic_3.6.5.tar.gz"
+  sha256 "0987e54d64dc3a82df6a3052e6aa5d5b5f1e9115c6fd4155e1aceb78e462169a"
   license "CECILL-2.1"
   head "https://github.com/GreycLab/gmic.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Gmic < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6a0d3d59f04a9702ecf806176ef85a83085d72c23d61540d410476be18c92722"
-    sha256 cellar: :any,                 arm64_sequoia: "6e7739391025393b1d3a32c0becd3c077c1dc77589c90957ead98a45242d7ee8"
-    sha256 cellar: :any,                 arm64_sonoma:  "30a5692fe4366c1f00a942377ba33454b2e3662bec5213910411b152bc5683d2"
-    sha256 cellar: :any,                 sonoma:        "279e348cd7b8b806d078647101e3ae39b953bd95b1f7c02e8123a19a8511f349"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e0279e4a720ba23d3302d56232fc4adcfcfed023e67f6734046dd71eb4a1e37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4106a371247d419776226d193ca932c6e8d5c1dff5d87fd2fbb86eed01419cb6"
+    sha256 cellar: :any,                 arm64_tahoe:   "daa84d25a47208a259037fb353e6ae39f021cc1f73642e27ac99f6d4a85e9372"
+    sha256 cellar: :any,                 arm64_sequoia: "b90605c4856646dd8a56942d8cb4244bcb04701d8c077e8e2f870a2a281adfbb"
+    sha256 cellar: :any,                 arm64_sonoma:  "8f790236680e4995753690d026b2213fcd9811fcf579d8289a41b57504208805"
+    sha256 cellar: :any,                 sonoma:        "09eb2d0798d1f7c276e0a3368713f88c2e1cd45e3e4fe57ef2ef9b7afe2c0e31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8fec1e1d0933ecc1467e6789d83bb26464ecb80dd1f60d3b07f82103e74e7a57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8216c0ad7e3d5d26e1114f45047533c50ee7bea5f5cf6d55e5194b43b52e62e9"
   end
 
   depends_on "cmake" => :build
@@ -38,6 +38,8 @@ class Gmic < Formula
   end
 
   def install
+    rm "src/CImg.h" if build.stable?
+
     args = %W[
       -DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath,#{rpath}
       -DENABLE_DYNAMIC_LINKING=ON

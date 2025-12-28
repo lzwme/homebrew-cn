@@ -7,23 +7,23 @@ class Reckoner < Formula
   head "https://github.com/FairwindsOps/reckoner.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03aea7e1ff644a4073e2434ff7ae3c883bbc6bd394b83a2aaecf2eec4a586381"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e819d54160c7f34ccc327200798bee113bdfa2cac49ce7c73b7b80dd1dbb6512"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e819d54160c7f34ccc327200798bee113bdfa2cac49ce7c73b7b80dd1dbb6512"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e819d54160c7f34ccc327200798bee113bdfa2cac49ce7c73b7b80dd1dbb6512"
-    sha256 cellar: :any_skip_relocation, sonoma:        "562a31411a4351cedcc0bb15a92147836bcf3444f36b44086e2bb4be34e8a808"
-    sha256 cellar: :any_skip_relocation, ventura:       "562a31411a4351cedcc0bb15a92147836bcf3444f36b44086e2bb4be34e8a808"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f840ec2114c6a8ac13d7c81e0562b1bf14b20c58407f644abdec811b623d6b35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a04b4b6ff5871fcc12e09cbfe65a9b8b06be2a9a3fd90d2e8b8337100b0087fb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52f96d24f75c2000278fe7ed91fe73d982683297d158e118e345331d24580804"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52f96d24f75c2000278fe7ed91fe73d982683297d158e118e345331d24580804"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52f96d24f75c2000278fe7ed91fe73d982683297d158e118e345331d24580804"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d14ba71c34740a9dd2ae9bbf97fd3f118dd1dcfd92bc267ef69d7daca27d8a8a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d20750b1c3e9b5c39f9c67970c2dd9295769a9d2fa3a581ce61a9d4a4ae546ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d44c9b58fe4752068e76ff69d1201a31434564482c05a7242220e4bf5fe26d98"
   end
 
   depends_on "go" => :build
   depends_on "helm"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.commit=#{tap.user}")
+    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
+    system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"reckoner", "completion")
+    generate_completions_from_executable(bin/"reckoner", shell_parameter_format: :cobra)
   end
 
   test do

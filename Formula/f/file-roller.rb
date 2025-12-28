@@ -33,6 +33,10 @@ class FileRoller < Formula
     depends_on "gettext"
   end
 
+  on_linux do
+    depends_on "xorg-server" => :test
+  end
+
   def install
     ENV["DESTDIR"] = "/"
 
@@ -48,9 +52,8 @@ class FileRoller < Formula
   end
 
   test do
-    # Fails in Linux CI with: Gtk-WARNING **: 13:08:32.713: Failed to open display
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    system bin/"file-roller", "--help"
+    cmd = "#{bin}/file-roller --help"
+    cmd = "#{Formula["xorg-server"].bin}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
+    assert_match "Create and modify an archive", shell_output(cmd)
   end
 end

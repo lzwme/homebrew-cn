@@ -1,15 +1,12 @@
 class Jbake < Formula
   desc "Java based static site/blog generator"
   homepage "https://jbake.org/"
-  url "https://ghfast.top/https://github.com/jbake-org/jbake/releases/download/v2.6.7/jbake-2.6.7-bin.zip"
-  sha256 "8d9c2b70fbf26415c5b3e530088b8b7fd1d236d3ce2c98a9c03fff4734bced39"
+  url "https://ghfast.top/https://github.com/jbake-org/jbake/releases/download/v2.7.0/jbake-2.7.0-bin.zip"
+  sha256 "dc602d6ebe12d99d33263d0c1cff7f0878c986906dbe6eddf2ca9a89ab14c013"
   license "MIT"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "1dba6c35944fe67596c7203fcbf3e291f0a48ce159afde7b943a446ed61c76b9"
+    sha256 cellar: :any_skip_relocation, all: "ef25972c89cab47c6cd977ca550134d0ad630af0eac2a479295d6a07b72c3fca"
   end
 
   depends_on "openjdk"

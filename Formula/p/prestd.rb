@@ -12,15 +12,13 @@ class Prestd < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6bf355f7cd67bdee9b319c0ac5b6399cae1931a634f472f9c530c4d721ae7a9b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eea2264c1eb95f71a00ea3f6dab68693bb5b1b9298e2f6761afd1ba3bd257e83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f98b664aed92e07ef3e312d71f344aad084b42566fdf0462a35cdaa30acaf4b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "21c93a08c0034b94acb228e73af97e4e86f3d659b6ddd77c4ce8695208150dc4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6a8079afe0412aee14b9fe226f92b6a8170c7e982110439b34dbfa0f91da9b49"
-    sha256 cellar: :any_skip_relocation, ventura:       "9f772bf14cb42300aa8bd426651df3f628898bbd50418260fc3dec288af47f6b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6154aa99c1ee993ecb5f5c38a1e22b84554bf0d3c6ac7cb387fc789f85c7e0fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53b738570b9680eab675d95dcb91a8498b7c14a98beff05602330f52034889f3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "acc8c8862ea6867aa11b5a5e9431c978c6252bc9c267b455cb004be3c4589efa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49bb751ee32ae1ba13d0e1b87b801b4b3f80d74adfdabc44467068c0abcd1a12"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1d02886e9ac10386dc793878548d3429bd99405212f10a27d25d63519702192"
+    sha256 cellar: :any_skip_relocation, sonoma:        "adaa7ed259ca16397bdc67c323eb8969aa02b6541275b892f98efae4ae49bb36"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "067511ae084f7eeb570344d47d52ed78ff71b5a679c92bd8dfb63d411ccb7307"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ac75a592d6bd7599df97d1ee3cd17d52c5d6c3ab8e37834a03a45abac8f81b2"
   end
 
   depends_on "go" => :build
@@ -29,7 +27,7 @@ class Prestd < Formula
     ldflags = "-s -w -X github.com/prest/prest/helpers.PrestVersionNumber=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/prestd"
 
-    generate_completions_from_executable(bin/"prestd", "completion")
+    generate_completions_from_executable(bin/"prestd", shell_parameter_format: :cobra)
   end
 
   test do

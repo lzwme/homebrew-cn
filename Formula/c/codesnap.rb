@@ -30,10 +30,6 @@ class Codesnap < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/codesnap --version")
-
-    # Fails in Linux CI with "no default font found"
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     assert_match "SUCCESS", shell_output("#{bin}/codesnap -f #{pkgshare}/examples/cli.sh -o cli.png")
   end
 end

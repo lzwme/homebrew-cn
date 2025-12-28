@@ -6,20 +6,22 @@ class Rospo < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "098ce38c1855fffde3d35d6ac17f8f83ae154014725a8a6e88200c5eb19c7135"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "098ce38c1855fffde3d35d6ac17f8f83ae154014725a8a6e88200c5eb19c7135"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "098ce38c1855fffde3d35d6ac17f8f83ae154014725a8a6e88200c5eb19c7135"
-    sha256 cellar: :any_skip_relocation, sonoma:        "04c2a346275bf6ad2b999c55f3e47531dbaa5c63be2db2e30ea43210f72ab6da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a09ced40fcb5678474430ece4175e646fa6ef02e87d87d32b8fe6650a388dba0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6448928c03fe0e27d84213e2ac02508ffdf652df73c6eefcc008df82c641c5a0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a5a76d59249cfd0a2b3a13e240de2743859cd2efcae738be4a2b868df84f16ca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5a76d59249cfd0a2b3a13e240de2743859cd2efcae738be4a2b868df84f16ca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5a76d59249cfd0a2b3a13e240de2743859cd2efcae738be4a2b868df84f16ca"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8e4104cebc3b70dc7386c81dcca0100ae2db2faeecaaaa5081411cc25813c082"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fc85fdc3962251bff000fa1fbac21a1d4735b9427ff3d6c919ce12652057218"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "593d8629d1bb8d3439b00aabcf405fa61f73c3f83e4705445a79c9835f89d683"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X 'github.com/ferama/rospo/cmd.Version=#{version}'")
+    ldflags = "-s -w -X github.com/ferama/rospo/cmd.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"rospo", "completion")
+    generate_completions_from_executable(bin/"rospo", shell_parameter_format: :cobra)
   end
 
   test do

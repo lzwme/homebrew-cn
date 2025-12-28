@@ -32,17 +32,19 @@ class Nnn < Formula
   end
 
   test do
-    # Test fails on CI: Input/output error @ io_fread - /dev/pts/0
-    # Fixing it involves pty/ruby voodoo, which is not worth spending time on
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     # Testing this curses app requires a pty
     require "pty"
 
     (testpath/"testdir").mkdir
-    PTY.spawn(bin/"nnn", testpath/"testdir") do |r, w, _pid|
+    PTY.spawn(bin/"nnn", testpath/"testdir") do |r, w, pid|
       w.write "q"
-      assert_match "~/testdir", r.read
+      output = if OS.mac?
+        r.read
+      else
+        Process.wait(pid)
+        r.read_nonblock(4096)
+      end
+      assert_match "~/testdir", output
     end
   end
 end

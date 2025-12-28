@@ -15,12 +15,13 @@ class Roxctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e5045291054946f9f56acef59ad7576f5b6857b0d35c70facf26bcdcd59b6cd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb32066bbd16132f6e2ed02cd32de0134c458ce7827eea3f0e85ce061873a81d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f695c5ceb4110063774112aefa22ed65f814d91ae4d2348bcc435c2503e26364"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4ef6ad0d3a4ddc0e775b64d9ea001f8ed5200563b89b7738d74bd565281b7c71"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1942e330ccef40aa7b186cfb7b34288f38f430dcd61d3b903dc83bf4ba9c1a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67898ca94aa69df8f6fa0288ffa3ef226499917781942e125e1add90c2cb8cf2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eebc92d659d73543139b7e97ecfd2e16e95f862abf85da27788c678ec7cb507d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "464d7df3d63302624b8637a68f335ddc3e1d88504d47753731f349162f4737a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea18d117eb31b55331b589e77c2bfba8afc6a173a9f89f96a520b2fd774b02d6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "75d390cf7f6a7bf98e8423f28192c7065f2232701f66e83351df80b65a90c6fb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e17613b8578b6420767e46df15603f00cce57adce15f31bac66f56350d306e26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9920a8793e0864111db1db0b8a3b5c579511c3efb40e78878ed9b98cf27291e"
   end
 
   depends_on "go" => :build
@@ -28,7 +29,7 @@ class Roxctl < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./roxctl"
 
-    generate_completions_from_executable(bin/"roxctl", "completion")
+    generate_completions_from_executable(bin/"roxctl", shell_parameter_format: :cobra)
   end
 
   test do

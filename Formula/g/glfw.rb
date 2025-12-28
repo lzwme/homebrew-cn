@@ -22,6 +22,7 @@ class Glfw < Formula
   depends_on "pkgconf" => :build
 
   on_linux do
+    depends_on "xorg-server" => :test
     depends_on "freeglut"
     depends_on "libxcursor"
     depends_on "libxkbcommon"
@@ -52,11 +53,11 @@ class Glfw < Formula
       }
     C
 
-    system ENV.cc, "test.c", "-o", "test",
-                   "-I#{include}", "-L#{lib}", "-lglfw"
-
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    system "./test"
+    system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lglfw"
+    if OS.linux? && ENV.exclude?("DISPLAY")
+      system Formula["xorg-server"].bin/"xvfb-run", "./test"
+    else
+      system "./test"
+    end
   end
 end

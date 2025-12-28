@@ -31,11 +31,9 @@ class Boring < Formula
   end
 
   test do
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     assert_match version.to_s, shell_output("#{bin}/boring version")
 
-    (testpath/".boring.toml").write <<~TOML
+    (testpath/(OS.linux? ? ".config/boring" : "")/".boring.toml").write <<~TOML
       [[tunnels]]
       name = "dev"
       local = "9000"
@@ -43,14 +41,6 @@ class Boring < Formula
       host = "dev-server"
     TOML
 
-    begin
-      output_log = testpath/"output.log"
-      pid = spawn bin/"boring", "list", [:out, :err] => output_log.to_s
-      sleep 2
-      assert_match "dev   9000   ->  localhost:9000  dev-server", output_log.read
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
-    end
+    assert_match "dev   9000   ->  localhost:9000  dev-server", shell_output("#{bin}/boring list")
   end
 end

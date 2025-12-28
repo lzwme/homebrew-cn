@@ -7,20 +7,22 @@ class Polaris < Formula
   head "https://github.com/FairwindsOps/polaris.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd7bd03e67b6dfebf14fd04353910ff437789b085b543a452895c4e6c239831d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d66210fc9a2c1f8734b3f726e6fc590eb2ee073340d579e07a98949ce2e622df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "397d4edde9178e7a6ba027880efe4621ce11ae84ef3e78ef25e31471bfa9b85a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "25919769685ca991f65992b8020fee7dad9243ccd2e82ed6c639c45a6b74ba48"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "677e1b0140ab2c10d144719bb13b88fd5a38ded134ee21d27f5acbfa1ade53ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6741fae123a99f1c79fe28ab58aae29bd4a418f522f2ea8fb6e830638a92ab2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e66e333ef34f15f0fac95c5cb9bfa7a9b8cb2c7db6863379a76ee9950016d2d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "167814c97e317e1be2e5555d9db90903bc4834b1722c8e1de385860687560912"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "113274a42105d150669a2345d6b6a37df314a66220d5ed6464d4dbba907fc890"
+    sha256 cellar: :any_skip_relocation, sonoma:        "95e27f90794d815758125f73ab8502f228b8733627cd6089fb5955a3e7f2e891"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "beaed4cd959e08e554f1f5060e067b1f1c05908c7350c8fc0dd37a7d24589214"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "892f3ea7d3cb7143d9bfe8bf7aec1b3d2c6f2586cf4e64cbfd33513b30be562f"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version} -X main.Commit=#{tap.user}")
+    ldflags = "-s -w -X main.Version=#{version} -X main.Commit=#{tap.user}"
+    system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"polaris", "completion")
+    generate_completions_from_executable(bin/"polaris", shell_parameter_format: :cobra)
   end
 
   test do

@@ -7,17 +7,22 @@ class Lazycontainer < Formula
   head "https://github.com/andreybleme/lazycontainer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0dc4071f1c199b099256ecbfae20165aefbeef9e9df7a0262d485f346039d13c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0dc4071f1c199b099256ecbfae20165aefbeef9e9df7a0262d485f346039d13c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0dc4071f1c199b099256ecbfae20165aefbeef9e9df7a0262d485f346039d13c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0dc4071f1c199b099256ecbfae20165aefbeef9e9df7a0262d485f346039d13c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9ce2b590419deecde11f0a99a3cb3a22591ddc7a80a6074c867394baa7d8da66"
-    sha256 cellar: :any_skip_relocation, ventura:       "9ce2b590419deecde11f0a99a3cb3a22591ddc7a80a6074c867394baa7d8da66"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b396694656fa99e4ac1eae3d55e9d4976ba3c009afa3d248bdc63cd31345c5f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b28e111c6514af466fa079101c6b027f543f7c23193dd3c65056429c7e933122"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "8104055ed3ee692a36571f79db76e927b9ae43e7fec301c9c8d859ced6687d90"
   end
 
   depends_on "go" => :build
+
+  # limited by Apple Containers support:
+  depends_on arch: :arm64
+  depends_on macos: :tahoe
+  depends_on :macos
+
+  # ref https://github.com/andreybleme/lazycontainer/pull/11
+  patch do
+    url "https://github.com/andreybleme/lazycontainer/commit/cc9ad42bce4a28d662726c41b55dc28d2cb6eaae.patch?full_index=1"
+    sha256 "7b1703ab7e11a1b655845ad98647fb01feb815db5caa1c42498169ec83f99ddd"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd"

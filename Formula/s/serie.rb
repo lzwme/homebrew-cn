@@ -24,15 +24,18 @@ class Serie < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/serie --version")
 
-    # Fails in Linux CI with "failed to initialize terminal: ... message: \"No such device or address\" }"
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     system "git", "init"
     system "git", "commit", "--allow-empty", "-m", "Initial commit"
 
     begin
       output_log = testpath/"output.log"
-      pid = spawn bin/"serie", [:out, :err] => output_log.to_s
+      if OS.mac?
+        pid = spawn bin/"serie", [:out, :err] => output_log.to_s
+      else
+        require "pty"
+        r, _w, pid = PTY.spawn("#{bin}/serie > #{output_log}")
+        r.winsize = [80, 130]
+      end
       sleep 1
       sleep 2 if OS.mac? && Hardware::CPU.intel?
       assert_match "Initial commit", output_log.read

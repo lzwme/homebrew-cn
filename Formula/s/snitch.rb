@@ -7,12 +7,13 @@ class Snitch < Formula
   head "https://github.com/karol-broda/snitch.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7cc122b706818cb174133f8355f38de919917153d82ac7037459d42c9e8f9c64"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1835fe74370c99af892bfef4d24616526e4ab62eefc6a066f7a8082fd71d0f13"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6b70ba73b0b4facd3f5d2684c5ed66fc25e5bc92e2118b018e3b3c2b693dbd5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dac2cb026492da957b8169c9ec8cd0a1f33c8c8281509c3659b40298d6ed87ad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9abf76dc60af7f39315e663bdf40dff130b82a5b985102718bee0e6da54b9c5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb9b532b581a84d2ce0a10b752832d47d898fb70895367879f416c2a9144405a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3003663bfb991ef0bb9693c2a54142e50e3c67044d66cdfc803280d680396d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea8e335bd6d1a4144d48a9bad65e553a22912154a5950dd91325c0f806a20dbd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b4708821544b9d95af38acc4f597d42dd380157e4196f5ce546ba35fe9054ab"
+    sha256 cellar: :any_skip_relocation, sonoma:        "58fe8e768035189d46fa13c4292045b958514c5d41bfe6cca52f17b978f074dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "78f8433e1b7c53cef5cffe1539b8c54a971ae31d635e604896525bfe3d4b3d04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3414aedecc982a10b31fb485945dbe301b7216477d73b5b0de62f755f78a0a4a"
   end
 
   depends_on "go" => :build
@@ -25,7 +26,7 @@ class Snitch < Formula
       -X github.com/karol-broda/snitch/cmd.Commit=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin/"snitch", "completion")
+    generate_completions_from_executable(bin/"snitch", shell_parameter_format: :cobra)
   end
 
   test do

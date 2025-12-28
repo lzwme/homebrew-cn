@@ -4,21 +4,19 @@ class Travis < Formula
   url "https://ghfast.top/https://github.com/travis-ci/travis.rb/archive/refs/tags/v1.14.0.tar.gz"
   sha256 "6fe418bf33b025a106dd99762aa8ebc595b4b549d4087c6921d5565b741f7361"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e8824ef084cf3367d7f585718d44436dc5b931e321059aa120e57379cb7665ff"
-    sha256 cellar: :any,                 arm64_sequoia: "a2656c812d2de510207764913a794922237221ac0840c5f238e391fc73b913c9"
-    sha256 cellar: :any,                 arm64_sonoma:  "51bf2cb257cdd819adb71a0e2b5c44177f5ef3ff83fd23718b08fd89248d8f97"
-    sha256 cellar: :any,                 arm64_ventura: "7b54aebccabde93f8f5898240e2107347d671d6d4e7a51606a674c7386111453"
-    sha256 cellar: :any,                 sonoma:        "5773a64c642d24d49102ae362ff3b877da2e78a2565aac86b8c84b008473fbe7"
-    sha256 cellar: :any,                 ventura:       "a722365f1d543352566b79d0468abe9a8eebc6b45707d1930af9d6c2cb679ac7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "842d832fc7b524d3c607f0773cbf61be80b49120b456b4dc197c10651fd7687e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad1edfc0f78b697477f04ac92d4e3b6a094341ef0894f92ee684c83b60aba68f"
+    sha256 cellar: :any,                 arm64_tahoe:   "7b1d54790aeac9a064ea9447f0a40c26ee6035a2985ec9e75f0f6d77f364a932"
+    sha256 cellar: :any,                 arm64_sequoia: "0f9bb3574e12920aba886efc69c9ff09612387722a52143c489aa6474536881e"
+    sha256 cellar: :any,                 arm64_sonoma:  "e9f1bca4991c3d06290fe852be8436e8191fa3508d4821f952d7ef2e5d4d1c7b"
+    sha256 cellar: :any,                 sonoma:        "88529185b3d99b3a0b296842b3acf81020285bad203e3df14bd7630b70f980bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b44c7c0f02ffa3aa586c66676fab5079f0a3efa6513a5ddac16bc25f708e4301"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5ae5f903cdc8a392312e2c41301e5a0ad166f815040f8e90fd0dd94ea9d22f7"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "ruby"
+  depends_on "ruby@3.4"
 
   uses_from_macos "libffi"
 

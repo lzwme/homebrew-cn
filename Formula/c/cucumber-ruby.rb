@@ -4,6 +4,7 @@ class CucumberRuby < Formula
   url "https://ghfast.top/https://github.com/cucumber/cucumber-ruby/archive/refs/tags/v10.2.0.tar.gz"
   sha256 "f17b66f2bbae36e883f4c943a6426529023c42946ea102df6e219e2874bd28aa"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,12 +12,12 @@ class CucumberRuby < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5420167939b0b1bd56a89186e10c84b3c8ae7172e34861542b51fa164bb461ca"
-    sha256 cellar: :any,                 arm64_sequoia: "7310bd384745f2f0e9f4cd9ffaabb9b4a17acd788050fbc912f4b3a4f9b3b44a"
-    sha256 cellar: :any,                 arm64_sonoma:  "f908da84fd02b0c18c8f00e354aff6a244bd27ab3d1d57414737083268583aae"
-    sha256 cellar: :any,                 sonoma:        "2bb20715a4038be6250b0859c39b3e03c1026dd8cda9114e2ee669a2141e81fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "846624710607d4909e7b12a7bce7a6e15cee66bb9ab0ca53617c6b11cad9c3b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ceffdfce5de65b49bc17086ac08c89451d1b32ba537fc0b852ae0ea87293347c"
+    sha256 cellar: :any,                 arm64_tahoe:   "1cf2ccf4fe38a1c09c019d1ebfb7955ce1ea5e330400328680c2975ce1ac4ff1"
+    sha256 cellar: :any,                 arm64_sequoia: "30e5c4e01d3866c6887a3420ce745e5a7a8f8f0f21a30c51356d2c0d07cf829f"
+    sha256 cellar: :any,                 arm64_sonoma:  "e67286b5fc56a8d1c99a93abafe9054e82f80d86297594302348fd5ba16aae84"
+    sha256 cellar: :any,                 sonoma:        "1c23a1fcfe5abd9db2f022bccba150a00e87a522e9fcfcff9fd961098aa34da1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "68d3a954bfb692028094fb34b0bb1bb44b569bf6d70415d60099ac10d6697d85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96fd0490409f57b755577457a05084e1bd32be304a2d1b61d8af82d9663e208a"
   end
 
   depends_on "pkgconf" => :build

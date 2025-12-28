@@ -40,6 +40,10 @@ class Pan < Formula
     depends_on "gettext"
   end
 
+  on_linux do
+    depends_on "xorg-server" => :test
+  end
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
@@ -47,9 +51,6 @@ class Pan < Formula
   end
 
   test do
-    # Test fails on headless CI
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     minimal = testpath/"minimal.nzb"
     minimal.write <<~XML
       <?xml version="1.0" encoding="iso-8859-1"?>
@@ -67,7 +68,8 @@ class Pan < Formula
     XML
 
     # this test works only if pan has not yet been configured with news servers
-    assert_match "Please configure Pan's news servers before using it as an nzb client.",
-      shell_output("#{bin}/pan --nzb #{testpath}/minimal.nzb 2>&1", 1)
+    cmd = "#{bin}/pan --nzb #{testpath}/minimal.nzb 2>&1"
+    cmd = "#{Formula["xorg-server"].bin}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
+    assert_match "Please configure Pan's news servers before using it as an nzb client.", shell_output(cmd, 1)
   end
 end

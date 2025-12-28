@@ -7,14 +7,13 @@ class Sqlc < Formula
   head "https://github.com/sqlc-dev/sqlc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6fca7e95ad97972c257cd88e4ffd75cbc4fd466b0ee9fe9a7db21a9eb19b4d35"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "804df54f6aa327864d260e50070f44a1aa0d70e9983c069b3b08dac10a4b21d9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72cf4daabe29f5ac51fe24d7fb511de87d672fe9e007f6e0de3191754376a649"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3a3400a7b98a53ab5b969fc4d7e30f4d7b1cd7e93da93cebc9aff9664690c465"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c88678492a2045628c286c57c17a2a29b213b5323fff965aabb6b3f0f47f976f"
-    sha256 cellar: :any_skip_relocation, ventura:       "331997dac9ac8cd9bb2f6fecab3d867ec9c2b8aa9511fa768eff24dc44fb4834"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee893ead14417e5cdfdeb738b797ac06d54624f278e98f31760ba1aeb603feeb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e823133161b575d2923432eb9bc5d52ef4143b20facdb7a3dd3aee2e067f1829"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "65a2c9a85988703e6034ce9568f7dda5be00815420d70b5ab72ccd800402f50a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b88f2250038d6f2b180887259f9c0f77acf70f3f6070624f42b7e1c313d4180e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30b22cc47b06649cbe945bf610f466cfe46f3bcad5319b6ed38b0f2ca18f3ee2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ea73b26ee1d06ee62c4e67aa5fa3c4c5becd4cfadabd5c5eb025b4ce4c9a5d69"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "456430594367578fb997bc22625954b1c72095d81a99faa09029c914fa3661ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04f0741a948e12432ca3c56088b59b49a391152e3802fc24a453642d1ca2bce5"
   end
 
   depends_on "go" => :build
@@ -22,7 +21,7 @@ class Sqlc < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/sqlc"
 
-    generate_completions_from_executable(bin/"sqlc", "completion")
+    generate_completions_from_executable(bin/"sqlc", shell_parameter_format: :cobra)
   end
 
   test do

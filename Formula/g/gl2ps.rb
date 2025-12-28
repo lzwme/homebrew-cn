@@ -31,8 +31,12 @@ class Gl2ps < Formula
   depends_on "cmake" => :build
   depends_on "libpng"
 
+  uses_from_macos "zlib"
+
   on_linux do
+    depends_on "xorg-server" => :test
     depends_on "freeglut"
+    depends_on "mesa"
   end
 
   def install
@@ -86,11 +90,12 @@ class Gl2ps < Formula
       return if MacOS.version == :tahoe && ENV["HOMEBREW_GITHUB_ACTIONS"]
     else
       system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lgl2ps", "-lglut", "-lGL"
-
-      # Fails without an X11 display: freeglut (./test): failed to open display ''
-      return if ENV["HOMEBREW_GITHUB_ACTIONS"]
     end
-    system "./test"
+    if OS.linux? && ENV.exclude?("DISPLAY")
+      system Formula["xorg-server"].bin/"xvfb-run", "./test"
+    else
+      system "./test"
+    end
     assert_path_exists testpath/"test.eps"
     assert_predicate File.size("test.eps"), :positive?
   end

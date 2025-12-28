@@ -4369,6 +4369,7 @@ Homebrew-homebrew-core/Formula/m/mabel.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mac-cleanup-py.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mac-robber.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mac.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/macchanger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/macchina.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mackup.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/maclaunch.rb, Homebrew/homebrew-core, 1
@@ -6294,6 +6295,7 @@ Homebrew-homebrew-core/Formula/r/ruby@3.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby@3.1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby@3.2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby@3.3.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/ruby@3.4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rubyfmt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/ruff-lsp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/ruff.rb, Homebrew/homebrew-core, 1
@@ -7779,6 +7781,7 @@ Homebrew-homebrew-core/Formula/w/wirouter_keyrec.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wishlist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/with-readline.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/witness.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/witr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wla-dx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wllvm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wmctrl.rb, Homebrew/homebrew-core, 1
@@ -13019,6 +13022,7 @@ Homebrew-homebrew-cask/Casks/m/maccleaner-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/maccy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macdependency.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macdive.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/macdown-3000.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macdown.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macdroid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mace.rb, Homebrew/homebrew-cask, 1

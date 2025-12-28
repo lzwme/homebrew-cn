@@ -4,14 +4,15 @@ class Krane < Formula
   url "https://rubygems.org/downloads/krane-3.9.0.gem"
   sha256 "f7d2e2e8b39da3311194efe7c5285cc9ff9caa57dc8de8b640aa729daaa4819e"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "881a059dd30331ba9a9e17bfa51906ad228ac2adf9881ab4d4cf9d06ce1d14bd"
-    sha256 cellar: :any,                 arm64_sequoia: "3d9fa3cc1a63d7d191e1a0dfe3fd87da728fedd057d70ad712b676df86d21457"
-    sha256 cellar: :any,                 arm64_sonoma:  "1775c1f38a52ca595446ac343993a8f4beaee320f9469dfe6f3177df00e4d6b4"
-    sha256 cellar: :any,                 sonoma:        "0af000dce011204dc420d6a28d8d64fd39370f714a03efe7d258b98897bb8a8d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c6129d4397b21098219b707ea6dd0208380500a641515e39eeacfbaaa0cbeb5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b25328ec83904ca0014b94b67742d1f5293d106ab8b9341989c78fd0f5a6b74"
+    sha256 cellar: :any,                 arm64_tahoe:   "ff4375ada94e25c3be816718edb77de00a3e50383107e074cae3b547503fe949"
+    sha256 cellar: :any,                 arm64_sequoia: "1c84ffec42dfd7237722c245d8f38560ab47fcedcca86cda16d88cbfc01c0fec"
+    sha256 cellar: :any,                 arm64_sonoma:  "cb6e6df4a27b749c1e21e83939ddb9a6cbec3e81765641d277a876c29a1ca331"
+    sha256 cellar: :any,                 sonoma:        "be1b01b767e055268246eb7b49412d917656f3fe13988418cea9d1a9de663cdc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c121303653c3a4ec91d9a1c50d29295602db6d744bff3d0978634de1f79a9b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69b1686a84c692ea97f3e6670e28769518f028a155fb32a8290401a516d8dc93"
   end
 
   depends_on "kubernetes-cli"
@@ -19,149 +20,32 @@ class Krane < Formula
 
   uses_from_macos "libffi"
 
-  resource "activesupport" do
-    url "https://rubygems.org/downloads/activesupport-8.0.2.1.gem"
-    sha256 "0405a76fd1ca989975d9ae00d46a4d3979bdf3817482d846b63affa84bd561c6"
+  # List with `gem install --explain krane -v #{version}`
+  # https://rubygems.org/gems/krane/versions/#{version}/dependencies
+
+  resource "thor" do
+    url "https://rubygems.org/downloads/thor-1.4.0.gem"
+    sha256 "8763e822ccb0f1d7bee88cde131b19a65606657b847cc7b7b4b82e772bcd8a3d"
   end
 
-  resource "addressable" do
-    url "https://rubygems.org/downloads/addressable-2.8.7.gem"
-    sha256 "462986537cf3735ab5f3c0f557f14155d778f4b43ea4f485a9deb9c8f7c58232"
+  resource "statsd-instrument" do
+    url "https://rubygems.org/downloads/statsd-instrument-3.8.0.gem"
+    sha256 "122e294845d9a05a74fa53a859010424b455b44f1605abac3108fbbabb2aa7cd"
   end
 
-  resource "base64" do
-    url "https://rubygems.org/downloads/base64-0.2.0.gem"
-    sha256 "0f25e9b21a02a0cc0cea8ef92b2041035d39350946e8789c562b2d1a3da01507"
+  resource "multi_json" do
+    url "https://rubygems.org/downloads/multi_json-1.19.1.gem"
+    sha256 "7aefeff8f2c854bf739931a238e4aea64592845e0c0395c8a7d2eea7fdd631b7"
   end
 
-  resource "benchmark" do
-    url "https://rubygems.org/downloads/benchmark-0.3.0.gem"
-    sha256 "4ca7995224b9982efccee9b44a4464a73201c5779d78cb5a4d99ec2f39acf071"
+  resource "netrc" do
+    url "https://rubygems.org/downloads/netrc-0.11.0.gem"
+    sha256 "de1ce33da8c99ab1d97871726cba75151113f117146becbe45aa85cb3dabee3f"
   end
 
-  resource "bigdecimal" do
-    url "https://rubygems.org/downloads/bigdecimal-3.1.5.gem"
-    sha256 "534faee5ae3b4a0a6369fe56cd944e907bf862a9209544a9e55f550592c22fac"
-  end
-
-  resource "colorize" do
-    url "https://rubygems.org/downloads/colorize-0.8.1.gem"
-    sha256 "0ba0c2a58232f9b706dc30621ea6aa6468eeea120eb6f1ccc400105b90c4798c"
-  end
-
-  resource "concurrent-ruby" do
-    url "https://rubygems.org/downloads/concurrent-ruby-1.3.5.gem"
-    sha256 "813b3e37aca6df2a21a3b9f1d497f8cbab24a2b94cab325bffe65ee0f6cbebc6"
-  end
-
-  resource "connection_pool" do
-    url "https://rubygems.org/downloads/connection_pool-2.5.4.gem"
-    sha256 "e9e1922327416091f3f6542f5f4446c2a20745276b9aa796dd0bb2fd0ea1e70a"
-  end
-
-  resource "domain_name" do
-    url "https://rubygems.org/downloads/domain_name-0.6.20240107.gem"
-    sha256 "5f693b2215708476517479bf2b3802e49068ad82167bcd2286f899536a17d933"
-  end
-
-  resource "drb" do
-    url "https://rubygems.org/downloads/drb-2.2.0.gem"
-    sha256 "e9e4af1cded3306cfe37e064a0086e302d5f40df9cb4d161d059a6bb3a75d40f"
-  end
-
-  resource "ejson" do
-    url "https://rubygems.org/downloads/ejson-1.5.3.gem"
-    sha256 "37f2935c650b846c1860be4b44d74b7983ae315e463aab5a31c9dae86046591d"
-  end
-
-  resource "faraday" do
-    url "https://rubygems.org/downloads/faraday-2.13.4.gem"
-    sha256 "c719ff52cfd0dbaeca79dd83ed3aeea3f621032abf8bc959d1c05666157cac26"
-  end
-
-  resource "faraday-net_http" do
-    url "https://rubygems.org/downloads/faraday-net_http-3.4.1.gem"
-    sha256 "095757fae7872b94eac839c08a1a4b8d84fd91d6886cfbe75caa2143de64ab3b"
-  end
-
-  resource "ffi" do
-    url "https://rubygems.org/downloads/ffi-1.17.2.gem"
-    sha256 "297235842e5947cc3036ebe64077584bff583cd7a4e94e9a02fdec399ef46da6"
-  end
-
-  resource "ffi-compiler" do
-    url "https://rubygems.org/downloads/ffi-compiler-1.3.2.gem"
-    sha256 "a94f3d81d12caf5c5d4ecf13980a70d0aeaa72268f3b9cc13358bcc6509184a0"
-  end
-
-  resource "googleauth" do
-    url "https://rubygems.org/downloads/googleauth-1.15.0.gem"
-    sha256 "122ae61813805a1cfdf225638f33d354ca6078be17e9712669667226a7243bcf"
-  end
-
-  resource "google-cloud-env" do
-    url "https://rubygems.org/downloads/google-cloud-env-2.3.1.gem"
-    sha256 "0faac01eb27be78c2591d64433663b1a114f8f7af55a4f819755426cac9178e7"
-  end
-
-  resource "google-logging-utils" do
-    url "https://rubygems.org/downloads/google-logging-utils-0.2.0.gem"
-    sha256 "675462b4ea5affa825a3442694ca2d75d0069455a1d0956127207498fca3df7b"
-  end
-
-  resource "http" do
-    url "https://rubygems.org/downloads/http-5.3.1.gem"
-    sha256 "c50802d8e9be3926cb84ac3b36d1a31fbbac383bc4cbecdce9053cb604231d7d"
-  end
-
-  resource "http-accept" do
-    url "https://rubygems.org/downloads/http-accept-1.7.0.gem"
-    sha256 "c626860682bfbb3b46462f8c39cd470fd7b0584f61b3cc9df5b2e9eb9972a126"
-  end
-
-  resource "http-cookie" do
-    url "https://rubygems.org/downloads/http-cookie-1.0.8.gem"
-    sha256 "b14fe0445cf24bf9ae098633e9b8d42e4c07c3c1f700672b09fbfe32ffd41aa6"
-  end
-
-  resource "http-form_data" do
-    url "https://rubygems.org/downloads/http-form_data-2.3.0.gem"
-    sha256 "cc4eeb1361d9876821e31d7b1cf0b68f1cf874b201d27903480479d86448a5f3"
-  end
-
-  resource "i18n" do
-    url "https://rubygems.org/downloads/i18n-1.14.7.gem"
-    sha256 "ceba573f8138ff2c0915427f1fc5bdf4aa3ab8ae88c8ce255eb3ecf0a11a5d0f"
-  end
-
-  resource "json" do
-    url "https://rubygems.org/downloads/json-2.7.2.gem"
-    sha256 "1898b5cbc81cd36c0fd4d0b7ad2682c39fb07c5ff682fc6265f678f550d4982c"
-  end
-
-  resource "jsonpath" do
-    url "https://rubygems.org/downloads/jsonpath-1.1.5.gem"
-    sha256 "29f70467193a2dc93ab864ec3d3326d54267961acc623f487340eb9c34931dbe"
-  end
-
-  resource "jwt" do
-    url "https://rubygems.org/downloads/jwt-3.1.2.gem"
-    sha256 "af6991f19a6bb4060d618d9add7a66f0eeb005ac0bc017cd01f63b42e122d535"
-  end
-
-  resource "kubeclient" do
-    url "https://rubygems.org/downloads/kubeclient-4.12.0.gem"
-    sha256 "8610b90f8c767303a633b0aafa53d9f61af03f5d9fca96fc0f21380843c309bd"
-  end
-
-  # TODO: Uploaded gem has aarch64-darwin prebuilt binaries. To make sure these
-  # are correctly rebuilt from source, we temporarily use the GitHub tarball
-  # which corresponds to 0.5.1. Check on new release if gem can be restored.
-  resource "llhttp-ffi" do
-    # url "https://rubygems.org/downloads/llhttp-ffi-0.5.1.gem"
-    url "https://ghfast.top/https://github.com/bryanp/llhttp/archive/refs/tags/2025-03-11.tar.gz"
-    version "0.5.1"
-    sha256 "ac334092160db470655dfbab6c9462a4a7ce189f75afe36fe3884cbc42c5550c"
+  resource "mime-types-data" do
+    url "https://rubygems.org/downloads/mime-types-data-3.2025.0924.gem"
+    sha256 "f276bca15e59f35767cbcf2bc10e023e9200b30bd6a572c1daf7f4cc24994728"
   end
 
   resource "logger" do
@@ -174,54 +58,19 @@ class Krane < Formula
     sha256 "dcebf61c246f08e15a4de34e386ebe8233791e868564a470c3fe77c00eed5e56"
   end
 
-  resource "mime-types-data" do
-    url "https://rubygems.org/downloads/mime-types-data-3.2025.0902.gem"
-    sha256 "5d8397fb76c075b483bed1d5ec64426d80aa6cd2133f3c0dc1dbb93aa85b1e1a"
+  resource "domain_name" do
+    url "https://rubygems.org/downloads/domain_name-0.6.20240107.gem"
+    sha256 "5f693b2215708476517479bf2b3802e49068ad82167bcd2286f899536a17d933"
   end
 
-  resource "minitest" do
-    url "https://rubygems.org/downloads/minitest-5.20.0.gem"
-    sha256 "a3faf26a757ced073aaae0bd10481340f53e221a4f50d8a6033591555374752e"
+  resource "http-cookie" do
+    url "https://rubygems.org/downloads/http-cookie-1.1.0.gem"
+    sha256 "38a5e60d1527eebc396831b8c4b9455440509881219273a6c99943d29eadbb19"
   end
 
-  resource "multi_json" do
-    url "https://rubygems.org/downloads/multi_json-1.17.0.gem"
-    sha256 "76581f6c96aebf2e85f8a8b9854829e0988f335e8671cd1a56a1036eb75e4a1b"
-  end
-
-  resource "net-http" do
-    url "https://rubygems.org/downloads/net-http-0.6.0.gem"
-    sha256 "9621b20c137898af9d890556848c93603716cab516dc2c89b01a38b894e259fb"
-  end
-
-  resource "netrc" do
-    url "https://rubygems.org/downloads/netrc-0.11.0.gem"
-    sha256 "de1ce33da8c99ab1d97871726cba75151113f117146becbe45aa85cb3dabee3f"
-  end
-
-  resource "os" do
-    url "https://rubygems.org/downloads/os-1.1.4.gem"
-    sha256 "57816d6a334e7bd6aed048f4b0308226c5fb027433b67d90a9ab435f35108d3f"
-  end
-
-  resource "ostruct" do
-    url "https://rubygems.org/downloads/ostruct-0.6.0.gem"
-    sha256 "3b1736c99f4d985de36bde1155be5e22aaf6e564b30ff9bd481e2ef7c2d9ba85"
-  end
-
-  resource "public_suffix" do
-    url "https://rubygems.org/downloads/public_suffix-6.0.2.gem"
-    sha256 "bfa7cd5108066f8c9602e0d6d4114999a5df5839a63149d3e8b0f9c1d3558394"
-  end
-
-  resource "rake" do
-    url "https://rubygems.org/downloads/rake-13.1.0.gem"
-    sha256 "be6a3e1aa7f66e6c65fa57555234eb75ce4cf4ada077658449207205474199c6"
-  end
-
-  resource "recursive-open-struct" do
-    url "https://rubygems.org/downloads/recursive-open-struct-1.3.1.gem"
-    sha256 "141b4a9c8817bb30f4275c5adb1b5bebaba41bf9b7dd6d6a75ad394390ad8720"
+  resource "http-accept" do
+    url "https://rubygems.org/downloads/http-accept-1.7.0.gem"
+    sha256 "c626860682bfbb3b46462f8c39cd470fd7b0584f61b3cc9df5b2e9eb9972a126"
   end
 
   resource "rest-client" do
@@ -229,14 +78,104 @@ class Krane < Formula
     sha256 "35a6400bdb14fae28596618e312776c158f7ebbb0ccad752ff4fa142bf2747e3"
   end
 
-  resource "ruby2_keywords" do
-    url "https://rubygems.org/downloads/ruby2_keywords-0.0.5.gem"
-    sha256 "ffd13740c573b7301cf7a2e61fc857b2a8e3d3aff32545d6f8300d8bae10e3ef"
+  resource "ostruct" do
+    url "https://rubygems.org/downloads/ostruct-0.6.3.gem"
+    sha256 "95a2ed4a4bd1d190784e666b47b2d3f078e4a9efda2fccf18f84ddc6538ed912"
   end
 
-  resource "securerandom" do
-    url "https://rubygems.org/downloads/securerandom-0.3.1.gem"
-    sha256 "98f0450c0ea46d2f9a4b6db4f391dbd83dc08049592eada155739f40e0341bde"
+  resource "recursive-open-struct" do
+    url "https://rubygems.org/downloads/recursive-open-struct-1.3.1.gem"
+    sha256 "141b4a9c8817bb30f4275c5adb1b5bebaba41bf9b7dd6d6a75ad394390ad8720"
+  end
+
+  resource "jsonpath" do
+    url "https://rubygems.org/downloads/jsonpath-1.1.5.gem"
+    sha256 "29f70467193a2dc93ab864ec3d3326d54267961acc623f487340eb9c34931dbe"
+  end
+
+  resource "rake" do
+    url "https://rubygems.org/downloads/rake-13.3.1.gem"
+    sha256 "8c9e89d09f66a26a01264e7e3480ec0607f0c497a861ef16063604b1b08eb19c"
+  end
+
+  resource "ffi" do
+    url "https://rubygems.org/downloads/ffi-1.17.2.gem"
+    sha256 "297235842e5947cc3036ebe64077584bff583cd7a4e94e9a02fdec399ef46da6"
+  end
+
+  resource "ffi-compiler" do
+    url "https://rubygems.org/downloads/ffi-compiler-1.3.2.gem"
+    sha256 "a94f3d81d12caf5c5d4ecf13980a70d0aeaa72268f3b9cc13358bcc6509184a0"
+  end
+
+  # TODO: Uploaded gem has aarch64-darwin prebuilt binaries. To make sure these
+  # are correctly rebuilt from source, we temporarily use the GitHub tarball
+  # which corresponds to 0.5.1. Check on new release if gem can be restored.
+  resource "llhttp-ffi" do
+    # url "https://rubygems.org/downloads/llhttp-ffi-0.5.1.gem"
+    url "https://ghfast.top/https://github.com/bryanp/llhttp/archive/refs/tags/2025-03-11.tar.gz"
+    version "0.5.1"
+    sha256 "ac334092160db470655dfbab6c9462a4a7ce189f75afe36fe3884cbc42c5550c"
+  end
+
+  resource "http-form_data" do
+    url "https://rubygems.org/downloads/http-form_data-2.3.0.gem"
+    sha256 "cc4eeb1361d9876821e31d7b1cf0b68f1cf874b201d27903480479d86448a5f3"
+  end
+
+  resource "public_suffix" do
+    url "https://rubygems.org/downloads/public_suffix-7.0.0.gem"
+    sha256 "f7090b5beb0e56f9f10d79eed4d5fbe551b3b425da65877e075dad47a6a1b095"
+  end
+
+  resource "addressable" do
+    url "https://rubygems.org/downloads/addressable-2.8.8.gem"
+    sha256 "7c13b8f9536cf6364c03b9d417c19986019e28f7c00ac8132da4eb0fe393b057"
+  end
+
+  resource "http" do
+    url "https://rubygems.org/downloads/http-5.3.1.gem"
+    sha256 "c50802d8e9be3926cb84ac3b36d1a31fbbac383bc4cbecdce9053cb604231d7d"
+  end
+
+  resource "kubeclient" do
+    url "https://rubygems.org/downloads/kubeclient-4.13.0.gem"
+    sha256 "51f666b14461e1933328670c5b21114d52518b420562728792e1579a9dde0693"
+  end
+
+  resource "base64" do
+    url "https://rubygems.org/downloads/base64-0.3.0.gem"
+    sha256 "27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b"
+  end
+
+  resource "jwt" do
+    url "https://rubygems.org/downloads/jwt-3.1.2.gem"
+    sha256 "af6991f19a6bb4060d618d9add7a66f0eeb005ac0bc017cd01f63b42e122d535"
+  end
+
+  resource "json" do
+    url "https://rubygems.org/downloads/json-2.18.0.gem"
+    sha256 "b10506aee4183f5cf49e0efc48073d7b75843ce3782c68dbeb763351c08fd505"
+  end
+
+  resource "uri" do
+    url "https://rubygems.org/downloads/uri-1.1.1.gem"
+    sha256 "379fa58d27ffb1387eaada68c749d1426738bd0f654d812fcc07e7568f5c57c6"
+  end
+
+  resource "net-http" do
+    url "https://rubygems.org/downloads/net-http-0.9.1.gem"
+    sha256 "25ba0b67c63e89df626ed8fac771d0ad24ad151a858af2cc8e6a716ca4336996"
+  end
+
+  resource "faraday-net_http" do
+    url "https://rubygems.org/downloads/faraday-net_http-3.4.2.gem"
+    sha256 "f147758260d3526939bf57ecf911682f94926a3666502e24c69992765875906c"
+  end
+
+  resource "faraday" do
+    url "https://rubygems.org/downloads/faraday-2.14.0.gem"
+    sha256 "8699cfe5d97e55268f2596f9a9d5a43736808a943714e3d9a53e6110593941cd"
   end
 
   resource "signet" do
@@ -244,14 +183,39 @@ class Krane < Formula
     sha256 "d617e9fbf24928280d39dcfefba9a0372d1c38187ffffd0a9283957a10a8cd5b"
   end
 
-  resource "statsd-instrument" do
-    url "https://rubygems.org/downloads/statsd-instrument-3.8.0.gem"
-    sha256 "122e294845d9a05a74fa53a859010424b455b44f1605abac3108fbbabb2aa7cd"
+  resource "os" do
+    url "https://rubygems.org/downloads/os-1.1.4.gem"
+    sha256 "57816d6a334e7bd6aed048f4b0308226c5fb027433b67d90a9ab435f35108d3f"
   end
 
-  resource "thor" do
-    url "https://rubygems.org/downloads/thor-1.4.0.gem"
-    sha256 "8763e822ccb0f1d7bee88cde131b19a65606657b847cc7b7b4b82e772bcd8a3d"
+  resource "google-logging-utils" do
+    url "https://rubygems.org/downloads/google-logging-utils-0.2.0.gem"
+    sha256 "675462b4ea5affa825a3442694ca2d75d0069455a1d0956127207498fca3df7b"
+  end
+
+  resource "google-cloud-env" do
+    url "https://rubygems.org/downloads/google-cloud-env-2.3.1.gem"
+    sha256 "0faac01eb27be78c2591d64433663b1a114f8f7af55a4f819755426cac9178e7"
+  end
+
+  resource "googleauth" do
+    url "https://rubygems.org/downloads/googleauth-1.16.0.gem"
+    sha256 "1e7b5c2ee7edc6a0f5a4a4312c579b3822dc0be2679d6d09ca19d8c7ca5bd5f1"
+  end
+
+  resource "ejson" do
+    url "https://rubygems.org/downloads/ejson-1.5.3.gem"
+    sha256 "37f2935c650b846c1860be4b44d74b7983ae315e463aab5a31c9dae86046591d"
+  end
+
+  resource "concurrent-ruby" do
+    url "https://rubygems.org/downloads/concurrent-ruby-1.3.6.gem"
+    sha256 "6b56837e1e7e5292f9864f34b69c5a2cbc75c0cf5338f1ce9903d10fa762d5ab"
+  end
+
+  resource "colorize" do
+    url "https://rubygems.org/downloads/colorize-0.8.1.gem"
+    sha256 "0ba0c2a58232f9b706dc30621ea6aa6468eeea120eb6f1ccc400105b90c4798c"
   end
 
   resource "tzinfo" do
@@ -259,9 +223,44 @@ class Krane < Formula
     sha256 "8daf828cc77bcf7d63b0e3bdb6caa47e2272dcfaf4fbfe46f8c3a9df087a829b"
   end
 
-  resource "uri" do
-    url "https://rubygems.org/downloads/uri-0.13.2.gem"
-    sha256 "a557196e652011bcff0b36d29f9e427fefcf60cc35c0ab8cce08768a6287e457"
+  resource "securerandom" do
+    url "https://rubygems.org/downloads/securerandom-0.4.1.gem"
+    sha256 "cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1"
+  end
+
+  resource "prism" do
+    url "https://rubygems.org/downloads/prism-1.7.0.gem"
+    sha256 "10062f734bf7985c8424c44fac382ac04a58124ea3d220ec3ba9fe4f2da65103"
+  end
+
+  resource "minitest" do
+    url "https://rubygems.org/downloads/minitest-6.0.0.gem"
+    sha256 "4ca597fc1d735ea18d2b4b98c5fb1d5a6da4a6f35ddf32bd5fa3eded33a453be"
+  end
+
+  resource "i18n" do
+    url "https://rubygems.org/downloads/i18n-1.14.8.gem"
+    sha256 "285778639134865c5e0f6269e0b818256017e8cde89993fdfcbfb64d088824a5"
+  end
+
+  resource "drb" do
+    url "https://rubygems.org/downloads/drb-2.2.3.gem"
+    sha256 "0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373"
+  end
+
+  resource "connection_pool" do
+    url "https://rubygems.org/downloads/connection_pool-3.0.2.gem"
+    sha256 "33fff5ba71a12d2aa26cb72b1db8bba2a1a01823559fb01d29eb74c286e62e0a"
+  end
+
+  resource "bigdecimal" do
+    url "https://rubygems.org/downloads/bigdecimal-4.0.1.gem"
+    sha256 "8b07d3d065a9f921c80ceaea7c9d4ae596697295b584c296fe599dd0ad01c4a7"
+  end
+
+  resource "activesupport" do
+    url "https://rubygems.org/downloads/activesupport-8.1.1.gem"
+    sha256 "5e92534e8d0c8b8b5e6b16789c69dbea65c1d7b752269f71a39422e9546cea67"
   end
 
   def install

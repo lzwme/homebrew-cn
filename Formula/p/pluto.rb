@@ -7,12 +7,13 @@ class Pluto < Formula
   head "https://github.com/FairwindsOps/pluto.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b8d25c2089f548dc29d0119087240591758964d155e47261f784996365a38a19"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8d25c2089f548dc29d0119087240591758964d155e47261f784996365a38a19"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8d25c2089f548dc29d0119087240591758964d155e47261f784996365a38a19"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3afda9efb98f89b31aedee1f6c62a774e07871a67e24e43da924db881dcbb6fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a7b01589ff3931c6a400d8e0c12ca855e7f734c4994b0d1f7340b1b307b5104"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b57d50df787a2cc4d8de497dd51392714af528857e47851bc23168377a4a21f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f8ba96221b5047fdebe52d7f9f56238749b473b120263f84655feb9c4cf84e2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f8ba96221b5047fdebe52d7f9f56238749b473b120263f84655feb9c4cf84e2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f8ba96221b5047fdebe52d7f9f56238749b473b120263f84655feb9c4cf84e2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "841f562aea4532e9d44d7a89620b0c2b34101eebf5b71970e098a47e26f4de28"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c6d4a81f33ca1336f92099474b102e36dd021f03822257d19d17d4da2617b96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fe0a7a915dd007ca6136e9c91f27ae003f08dff7d9823dcbade902df7aa4061"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,8 @@ class Pluto < Formula
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:), "cmd/pluto/main.go"
-    generate_completions_from_executable(bin/"pluto", "completion")
+
+    generate_completions_from_executable(bin/"pluto", shell_parameter_format: :cobra)
   end
 
   test do

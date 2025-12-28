@@ -22,6 +22,10 @@ class Xdot < Formula
   depends_on "pygobject3"
   depends_on "python@3.14"
 
+  on_linux do
+    depends_on "xorg-server" => :test
+  end
+
   pypi_packages exclude_packages: ["numpy", "pygobject"],
                 extra_packages:   "graphviz"
 
@@ -40,10 +44,8 @@ class Xdot < Formula
   end
 
   test do
-    # Disable test on Linux because it fails with this error:
-    # Gtk couldn't be initialized. Use Gtk.init_check() if you want to handle this case.
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    system bin/"xdot", "--help"
+    cmd = "#{bin}/xdot --help"
+    cmd = "#{Formula["xorg-server"].bin}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
+    assert_match "interactive viewer for graphs", shell_output(cmd)
   end
 end

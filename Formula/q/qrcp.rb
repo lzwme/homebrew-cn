@@ -11,14 +11,13 @@ class Qrcp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34ee2cedf3dbb46de85b7d6118830450f59a5aaeda93aea898a1d18331415d52"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30cabeb3467581c02c9d1a4927d837fc5ac96b8dea21e9f1b92ce2ee14addecd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30cabeb3467581c02c9d1a4927d837fc5ac96b8dea21e9f1b92ce2ee14addecd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "30cabeb3467581c02c9d1a4927d837fc5ac96b8dea21e9f1b92ce2ee14addecd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2210e68f4eeae23cf63041718cdce05fedbd072ceb434f9f1f1761667091e862"
-    sha256 cellar: :any_skip_relocation, ventura:       "2210e68f4eeae23cf63041718cdce05fedbd072ceb434f9f1f1761667091e862"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "796bdc0d75a55864879e3131ac332d3d99af5020bde0ccf0c7229da2aa7c0592"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cedce7a5fa2e8b0c5277bcce76038ca2f03a9eca77673d5636676717cd41134d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a8bbc5ad237bf97d73501062a2f1e30d7ce8a5b9a38912f6ffb158370c96a8e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a8bbc5ad237bf97d73501062a2f1e30d7ce8a5b9a38912f6ffb158370c96a8e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a8bbc5ad237bf97d73501062a2f1e30d7ce8a5b9a38912f6ffb158370c96a8e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ffc63e2c7d66b1e1faedb36c2df428c712fb5852f1d88d55c7ed80bb7b18bb2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a37b2bba75a20fd96c2dc6754444afb0bb152258e869d855644fa5bebb185a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d18ce31b0d751e4fffb64ecbac9d20fcb3bcda31877ca6de1950070fa3c06c91"
   end
 
   depends_on "go" => :build
@@ -31,7 +30,7 @@ class Qrcp < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"qrcp", "completion")
+    generate_completions_from_executable(bin/"qrcp", shell_parameter_format: :cobra)
   end
 
   test do

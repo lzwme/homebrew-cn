@@ -4,21 +4,21 @@ class RonnNg < Formula
   url "https://ghfast.top/https://github.com/apjanke/ronn-ng/archive/refs/tags/v0.10.1.tar.gz"
   sha256 "180f18015ce01be1d10c24e13414134363d56f9efb741fda460358bb67d96684"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95544c3a98367e90154643f7ba9a8f1294be476483e7f2faa32a65344ed23cb0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d39afaff29b90a17336c9033eb12d405f5b8c29c7e804872a87281c889d84d9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d39afaff29b90a17336c9033eb12d405f5b8c29c7e804872a87281c889d84d9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8d39afaff29b90a17336c9033eb12d405f5b8c29c7e804872a87281c889d84d9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f0d1bcdca16b8ce2b8641e8224a374ebe25cb744721c84047cd101e505e07f72"
-    sha256 cellar: :any_skip_relocation, ventura:       "f0d1bcdca16b8ce2b8641e8224a374ebe25cb744721c84047cd101e505e07f72"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d588a927ed953cb8901d41ab8af46b413fefc011d12e1e9c8aeabc23d582e35f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b303b18ed67bc5b328597d421c4a2c0449a5e65372706b04ed58f0f9319d10e"
+    sha256 cellar: :any,                 arm64_tahoe:   "6d1331b7762f2c22aa293706c8bf47a61dfdf219478c277f5dec6d5c2fce9a44"
+    sha256 cellar: :any,                 arm64_sequoia: "0734fb103f97545655590bd5778f7c4c64a984d7ef200580f6ac306cb7dbec23"
+    sha256 cellar: :any,                 arm64_sonoma:  "9b09b583821984dd3b095fd8762d84de2a6a95a66b1bfce30e3ec765031e5b53"
+    sha256 cellar: :any,                 sonoma:        "a38e92d2f695af08219c18c263275f1ec162588dbf17a41f4d374858cb435a1c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8a0040cdec456e90c21efae66d299b5a18650ee4eda8c9ff5a35e2bee4d1146"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdb2b1badb882a826f007c77a793d8ca6f7099c30843e9681766a964f6464367"
   end
 
-  # Nokogiri 1.9 requires a newer Ruby
   depends_on "ruby"
+  depends_on "xz"
+
+  uses_from_macos "zlib"
 
   conflicts_with "ronn", because: "both install `ronn` binaries"
 

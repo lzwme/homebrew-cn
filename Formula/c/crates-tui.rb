@@ -31,12 +31,15 @@ class CratesTui < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/crates-tui --version")
 
-    # failed with Linux CI, `No such device or address (os error 6)`
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     begin
       output_log = testpath/"output.log"
-      pid = spawn bin/"crates-tui", [:out, :err] => output_log.to_s
+      if OS.mac?
+        pid = spawn bin/"crates-tui", [:out, :err] => output_log.to_s
+      else
+        require "pty"
+        r, _w, pid = PTY.spawn(bin/"crates-tui", [:out, :err] => output_log.to_s)
+        r.winsize = [80, 43]
+      end
       sleep 2
       assert_match "New Crates", output_log.read
     ensure

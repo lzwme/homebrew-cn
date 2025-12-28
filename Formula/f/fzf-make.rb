@@ -26,8 +26,6 @@ class FzfMake < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/fzf-make -v")
 
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     (testpath/"Makefile").write <<~MAKE
       brew:
         cc test.c -o test
@@ -35,7 +33,13 @@ class FzfMake < Formula
 
     begin
       output_log = testpath/"output.log"
-      pid = spawn bin/"fzf-make", [:out, :err] => output_log.to_s
+      if OS.mac?
+        pid = spawn bin/"fzf-make", [:out, :err] => output_log.to_s
+      else
+        require "pty"
+        r, _w, pid = PTY.spawn("#{bin}/fzf-make > #{output_log} 2>&1")
+        r.winsize = [80, 130]
+      end
       sleep 5
       sleep 5 if OS.mac? && Hardware::CPU.intel?
       assert_match "make brew", output_log.read

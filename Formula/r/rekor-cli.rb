@@ -11,12 +11,13 @@ class RekorCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3f442dd21a8bcb916557c19626d062d224a2528dbb8f2f407fd64f42f745b1b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3f442dd21a8bcb916557c19626d062d224a2528dbb8f2f407fd64f42f745b1b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3f442dd21a8bcb916557c19626d062d224a2528dbb8f2f407fd64f42f745b1b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7eb776133c680c11283830a9c8db98d4d019987e11ae6d6e902a3f0e97be9784"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "579c88b107ef00034cf9f495c648e54397efb045346975bbc090b86ef971d0ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "835024c0d2f5e990e4d24edce5d67b6df4c11254bf8fa9cc397378144676c016"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "532d82354b7794e52f7354fcfde7fd2b8cb549f75d0a627889c7a2c61e531263"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "532d82354b7794e52f7354fcfde7fd2b8cb549f75d0a627889c7a2c61e531263"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "532d82354b7794e52f7354fcfde7fd2b8cb549f75d0a627889c7a2c61e531263"
+    sha256 cellar: :any_skip_relocation, sonoma:        "667adc6d79d5d83c5ffb9932cb9265cec106221ed4f8049c1f8197f7d3cbe244"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "424a916b8f1d7563bb5c95ea586eec52ef3ab7f72b6cdff97f38b65c9392c30f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cac58ab9734c2f9f4ed127681ab5651c4dc114696ece2e9fb662ec4ff36ef2d5"
   end
 
   depends_on "go" => :build
@@ -31,7 +32,7 @@ class RekorCli < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/rekor-cli"
 
-    generate_completions_from_executable(bin/"rekor-cli", "completion")
+    generate_completions_from_executable(bin/"rekor-cli", shell_parameter_format: :cobra)
   end
 
   test do

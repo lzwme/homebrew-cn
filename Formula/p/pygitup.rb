@@ -3,13 +3,12 @@ class Pygitup < Formula
 
   desc "Nicer 'git pull'"
   homepage "https://github.com/msiemens/PyGitUp"
-  url "https://files.pythonhosted.org/packages/43/d3/8fa476380d3b330a9284efd9b8f309cb239a90d7a86b0446f189d05692c0/git_up-2.3.0.tar.gz"
-  sha256 "4a771b9cae8bc6c95e2916bfb120a6ffc76c80fc3f5c91af61f91c21e5980f2e"
+  url "https://files.pythonhosted.org/packages/96/34/bbe46d4e478d8a128037d7c3634cffe90ba91bbb2602dda04892b8c21c23/git_up-2.4.0.tar.gz"
+  sha256 "aee933884d9f78eaa92fec41b0ef646dc41d38b95a6a248a548c9e2fe87e6ff9"
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "a43349fa4547826549999712ffa9c656930a51e4e9606528968c1e21ae6507b3"
+    sha256 cellar: :any_skip_relocation, all: "f2a3e0db03848b317aba39d39b5d755361426a3cfabec963ba40571faf4b8bc2"
   end
 
   depends_on "python@3.14"
@@ -29,14 +28,19 @@ class Pygitup < Formula
     sha256 "85b0ee964ceddf211c41b9f27a49086010a190fd8132a24e21f362a4b36a791c"
   end
 
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+  end
+
   resource "smmap" do
     url "https://files.pythonhosted.org/packages/44/cd/a040c4b3119bbe532e5b0732286f805445375489fceaec1f48306068ee3b/smmap-5.0.2.tar.gz"
     sha256 "26ea65a03958fa0c8a1c7e8c7a58fdc77221b8910f6be2131affade476898ad5"
   end
 
   resource "termcolor" do
-    url "https://files.pythonhosted.org/packages/37/72/88311445fd44c455c7d553e61f95412cf89054308a1aa2434ab835075fc5/termcolor-2.5.0.tar.gz"
-    sha256 "998d8d27da6d48442e8e1f016119076b690d962507531df4890fcd2db2ef8a6f"
+    url "https://files.pythonhosted.org/packages/87/56/ab275c2b56a5e2342568838f0d5e3e66a32354adcc159b495e374cda43f5/termcolor-3.2.0.tar.gz"
+    sha256 "610e6456feec42c4bcd28934a8c87a06c3fa28b01561d46aa09a9881b8622c58"
   end
 
   def install

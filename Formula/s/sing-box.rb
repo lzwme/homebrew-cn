@@ -7,12 +7,13 @@ class SingBox < Formula
   head "https://github.com/SagerNet/sing-box.git", branch: "dev-next"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "24a7741acab96325c27b56f01b75f4bde871ddbcff23a28d7c1468fcdf023f39"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ceb5728d097ff871b75356d806f261ffb6c4807623a7b204567bc9f19c060d32"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "528ad617a589dcefeab16610d702a77e16d423be5c597e3e8ca113fab4bf2106"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f8630fd3e20489025b21dc32a2058c2686817c4eadba1f004393fbb7c323ade3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c9ae4079d20cbaae5c37a4aea613278c993b0bed7ba6b8013ab2dfe21273f70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "695f870969368d4ede4ce862a5ec948e7949df5d3c7fb31e49ff86b7ca6bb094"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fefe9f37379ebee522206e5eaef26b7423a7f680563e5096db93eefe15b77c74"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4e011367a3b2f56bf8404e37a7cc528c81ac165e03b523c8e144624d7a2e270"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3ba719e6858441a84f6d18c172b8b419f60fc68478c9a808bcce36674de51e4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b8d340a84f8006b90aedd9c3540c5e725e6ed63cbad3e343ede854c2577f31b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ab58213fc7d3a0ba7904275184b9eb3270474c4c6fae6c7b5c14c6b67d7dd13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1642aac4505870f485c34576c3a451e654ad6290f0858c6761c54457b7a1c7bf"
   end
 
   depends_on "go" => :build
@@ -29,8 +30,8 @@ class SingBox < Formula
       with_utls
       with_wireguard
     ]
-    system "go", "build", *std_go_args(ldflags:, tags: tags.join(",")), "./cmd/sing-box"
-    generate_completions_from_executable(bin/"sing-box", "completion")
+    system "go", "build", *std_go_args(ldflags:, tags:), "./cmd/sing-box"
+    generate_completions_from_executable(bin/"sing-box", shell_parameter_format: :cobra)
   end
 
   service do

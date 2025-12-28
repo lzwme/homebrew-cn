@@ -4,14 +4,15 @@ class Dexter < Formula
   url "https://ghfast.top/https://github.com/ankane/dexter/archive/refs/tags/v0.6.3.tar.gz"
   sha256 "5aca9fcb671170bda6ae8a9b6d563a4813237412a658f614bb48c8caf6067f78"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "002eaa9abec0185a976061ea1bcbc43ac93b005abe2f0afe95d68ff35ce16401"
-    sha256 cellar: :any,                 arm64_sequoia: "4232cde75daa84becfd6be67644d621301640236f75c110fba05dc7517d65dbf"
-    sha256 cellar: :any,                 arm64_sonoma:  "6e143bf7c3c27e1588f54c19fa8d64c03985dfeede602504eb9dbd8dda226acf"
-    sha256 cellar: :any,                 sonoma:        "1b262e7f9be04b0c9330131c4263d98471cde13716a926792b19d18a1c23e911"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "26b4415aee5ac9ef0b7a2b307dce6527acf1de19e6d48bc077ecf68f6c73f119"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f0865d3289eaed64f068774d063bd8d084f08d6db09caac95539572e9ef3402"
+    sha256 cellar: :any,                 arm64_tahoe:   "2b592f0c8333110a04e3c57a72faf10ea3936ac4fe2595a7ca6a3389c6ae66d0"
+    sha256 cellar: :any,                 arm64_sequoia: "652ee45577f15e820fe6d52107b2a4353871261bbbf88393b6e1c81c36dea5d6"
+    sha256 cellar: :any,                 arm64_sonoma:  "c8330052136307a381187aa5cba1691d17ecbba9ee9b8349d8246147386c5b00"
+    sha256 cellar: :any,                 sonoma:        "129ab1c754862ceab9958091546556d6460dddb4c5229bf8a225222de6852874"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5b3e2ac62a51478d848a006cb2a09560f00f576636e1bd5d384376030cf97d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9b849261c597104bf285a9db07d30ef8ddf757061faf429e8b374d3247136b4"
   end
 
   depends_on "postgresql@18" => :test

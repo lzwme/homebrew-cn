@@ -12,12 +12,13 @@ class RosaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07bf7145a77864d5afb0f9d2d6fbd94451a963547774795abfc69e87e6b0d5f6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8af75a986b3cfbfdcd4715adcfe74e3b5fb8d92e8988940a1f3a826ef29957a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "413ee87660879890a623a3872bfa19de9d128b1bac848610e029ee66b37e425d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1692cdfa851335e1715c8770b43b7a84079ca9e1b5b2d45a4af392c9009a0c76"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eab9e8d358cb334c9a9122a6dbe6e4fc7f6d4a23e88a273a7795161635733956"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "695ca25a28c07948d025b93eb5ab720fbec58a0429d7456b01cc26cae75f7dcc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2443aafa830814a426abd29741650de71d6672d91031c6d77231d081c2220bb1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d69fe4414dcca63ef715ef95b078211a67a555ac69ef29dba92fa203e31a244"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d90d2bd7ee180d69c0113ff5cf5690043373e98f4139ba06687fa6f9a42db33"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f4cbcc7b3e79e8c59a9936ca2b8c122e7e19db63db204d92bdfe7cced3ac8145"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a1b08c06387aebe7ba47b4c4ef066ab6e4b03e35ea859278ed058afd41b6a16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb82d2e997ad60bea00105c9cff7f73d4c0270a777766f4e90889cc6d90057f0"
   end
 
   depends_on "go" => :build
@@ -26,7 +27,7 @@ class RosaCli < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"rosa"), "./cmd/rosa"
 
-    generate_completions_from_executable(bin/"rosa", "completion")
+    generate_completions_from_executable(bin/"rosa", shell_parameter_format: :cobra)
   end
 
   test do

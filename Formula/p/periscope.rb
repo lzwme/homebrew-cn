@@ -8,19 +8,20 @@ class Periscope < Formula
   head "https://github.com/anishathalye/periscope.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5765ada2bc369b8ec6146bd7ce9e93d1e30d8bb97069d940dc17ef4fb1b2ffa0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6d94c3ed7b19367c483d2e757040f66eeb55c7109d5b852ef95a4b2dceac4a5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "151bac7b4998a735eb059417d814e796f26edb35a795d89542fb5f4ac35d5cd2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "461ffa9b2eda689da1a8f6d35cfb1d348a44a438a9051551d594c02781235d60"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e793cccc4729c4b1a7dc3621ec0f16f266bf3c148e3a4e0035b4bae2de7a0c5c"
-    sha256 cellar: :any_skip_relocation, ventura:       "62beda5a28e320d04f9bb95613918fd7b55a6d59687b3db1ecb9844b4bb51889"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a853559bf9a3baac07b99b216416b69ecc445e3045b7147a2fae07c335d9db18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee3133ef30216e3c0d0c07d53af60848f4fd1d1815746dae655eafa8c39d4bce"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3189320a2bd3be0f1919621582743539f0af9915a92b26c2d4e95dc43466dc21"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c40e9cc889cfec650492994dbe0e5a9a17a9755f925bc73f904dd0844801fccb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f9fa628d7186231bf8115aad5b52202c36849701479b555742c16ff846227ea"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3e3e839701f4e03c35810ccbbdff7a656e0c378bd41aa45bd3043b05c9b24878"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "345da8c73fe8c8f7a7be4162ada3b06ac3c7bb5dcb713e901175867a6ea8b19a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "abf9ca3d7a4b3289def2009de76d1a93969011bdc3dcd344845fe3fbc9ca69ca"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X main.version=#{version}
@@ -28,7 +29,7 @@ class Periscope < Formula
     ]
     system "go", "build", *std_go_args(output: bin/"psc", ldflags:), "./cmd/psc"
 
-    generate_completions_from_executable(bin/"psc", "completion")
+    generate_completions_from_executable(bin/"psc", shell_parameter_format: :cobra)
   end
 
   test do

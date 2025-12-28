@@ -6,12 +6,13 @@ class Skopeo < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256               arm64_tahoe:   "42a235a9010237e3b8c381c53338c0580ffebd66188409e39b7bd4ed4542f2b3"
-    sha256               arm64_sequoia: "92c13c46dc6641cc2a45df17427731b29c71aa3a9819c837b3a11914afe56902"
-    sha256               arm64_sonoma:  "63d438d8feac6d73502bdd1b93bc889c48a54e1ffe3b72920b2b2ea21287771e"
-    sha256 cellar: :any, sonoma:        "6ce78007250925ec83c468f6d0c04bbbf78e858d75a2c4d30b2d1c41813c3d03"
-    sha256               arm64_linux:   "c7b7b957b0fe14c9cac3a84e92265a7f6873673562f7859cc2d6583302188c18"
-    sha256               x86_64_linux:  "73e7baa86798f4ee9680f332df3eb665bee222531f02aaca8e3e17cf08c505df"
+    rebuild 1
+    sha256               arm64_tahoe:   "1878c928f210477b2ad9cee8a3039d5f009d0183e2d8bb80593fb572b2dc55b9"
+    sha256               arm64_sequoia: "c0326e1463f60304b1f2f17da53d3df06ef16b922f61773c4fdd73a020d30f53"
+    sha256               arm64_sonoma:  "84c516aabdbd1bd1ffa77e7889d39f950f83c8f0a6f4125fb1609d0851b5ee65"
+    sha256 cellar: :any, sonoma:        "0a7b4a8f3293b70ffd6bfdfc7a788005a6cd57616a69a635db5c943ed844cdf0"
+    sha256               arm64_linux:   "3c36ef5de51d21386ed8ede6c1ac229abfadba10b666366dc09bd96a59108355"
+    sha256               x86_64_linux:  "abf6d2bc1c9f4e180b00468e7ea272870042f0da2ce03cffac7dbd5e3244b85c"
   end
 
   depends_on "go" => :build
@@ -49,7 +50,7 @@ class Skopeo < Formula
     (etc/"containers").install "default-policy.json" => "policy.json"
     (etc/"containers/registries.d").install "default.yaml"
 
-    generate_completions_from_executable(bin/"skopeo", "completion")
+    generate_completions_from_executable(bin/"skopeo", shell_parameter_format: :cobra)
   end
 
   test do

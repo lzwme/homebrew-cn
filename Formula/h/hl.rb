@@ -1,18 +1,18 @@
 class Hl < Formula
   desc "Fast and powerful log viewer and processor"
   homepage "https://github.com/pamburus/hl"
-  url "https://ghfast.top/https://github.com/pamburus/hl/archive/refs/tags/v0.33.1.tar.gz"
-  sha256 "179d8e5072e83918f42c6bf5de9e7943426322f693a6872b035a4cd41771e4fe"
+  url "https://ghfast.top/https://github.com/pamburus/hl/archive/refs/tags/v0.33.2.tar.gz"
+  sha256 "c3f40674ed7f9bf73c2a82cb99d7d6283d3fd6cdab52adefbe908a79bd057424"
   license "MIT"
   head "https://github.com/pamburus/hl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d40b689512725de188341a50c2efcbdc835ba2c7c752eca86a8fd0cbff86fa30"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d2fc9620323308bf0fb454ecaf2c7688a8ccf2c41a6bcc20e720cf023e3a1cc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a97229a21aaf8d5bd6d474dc75150aa342b45eeb7d936ad93018236c0c0b69fa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1d403613b3b979a4836b99d74ee249e0d95161055cc74615e7d989da3ae2c0d7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "829f0e4496c790cd9febe46119c9875bec8281050a3f174aba7671fb86ca77b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5937426c1785e07b7d6cfff8d5e3554d4c263d779d113166f3d8db513b374e24"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b1056e1b0d1586d39a76c97b8646fa870811facbe4b2f3fc01bbbadd77ba719d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29162114ecba30c4d92b7b980e8e663216dfbe21313a70416e437e45c9fcde37"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "539a5d17a60b2626152d3db5a472098cf33cd62bb2b6d930e43eddfd6afa31a5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bf1c9923a738e369fc7ac7c48fbbc5da25a8307250c40e667a97791ebb374610"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5917fffd2f4f256d0874791ca75a3d69fce7a0706e9446e2b485356c33956978"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "015ec6402d0f64977fc191b8c0c0f35eec436e3f4d0f52e06eb26765406736ac"
   end
 
   depends_on "rust" => :build

@@ -7,12 +7,13 @@ class RolesanywhereCredentialHelper < Formula
   head "https://github.com/aws/rolesanywhere-credential-helper.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de5ea641698ec89a74c7ce057e2bef80b1427c0d26d1058ce54d00ab4fd5c549"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e37c4830b4c6848c672a2d1de863b455c8ae06f063d45d7979a880c4edfcd55b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5778077a2403d9ad9383a1ee1376427b346e3ffe21eacdaded83c476893e2a0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "24a24b4e443d6ee9de3e5602358998d400ecc986ca42ae4c830eda5c17900a28"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "320846c98ce5c8d7fe6793f8b376927598aff3f837d49dc0a7f026e2e06bf8ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e35e0f91605ce14cffddde134fc9808d7099b3363acb2f5cbd9f63269fdde8d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4160285a050db96b1a89a09aee7398620ac1f12948a7b9834dc7c94c6d781107"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78f69d57febc0190442ab346e1944b8d3141baf71aa8ab796c0b50d0b381e5c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a052fed56e2aa570653b7e908b703a392c040dfce90e5d277d0758efc9f98479"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dfd0774dca9774fbe6b4a64a809ec7e1f16340a92741924776ebc3587551b458"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d69e8fa0cadcf09911835cd3951826b2c86b43af92e968c2d77e9a81d6f9b5d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8af8668166782d963c2d1b0b6e23152d002fc88a67aa4ccbcdd6a316dbafca3"
   end
 
   depends_on "go" => :build
@@ -23,7 +24,7 @@ class RolesanywhereCredentialHelper < Formula
     ldflags = "-s -w -X github.com/aws/rolesanywhere-credential-helper/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"aws_signing_helper")
 
-    generate_completions_from_executable(bin/"aws_signing_helper", "completion")
+    generate_completions_from_executable(bin/"aws_signing_helper", shell_parameter_format: :cobra)
   end
 
   test do

@@ -7,14 +7,13 @@ class QbittorrentCli < Formula
   head "https://github.com/ludviglundgren/qbittorrent-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8dbb1e0f3009ea428e38774124b3fd34a710fcff9a1f35cdffe613978ca55089"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e89063ee1ee9e114a32ce09eff29422cfb5b50f8a3ed324139e60828ab10123b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e89063ee1ee9e114a32ce09eff29422cfb5b50f8a3ed324139e60828ab10123b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e89063ee1ee9e114a32ce09eff29422cfb5b50f8a3ed324139e60828ab10123b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "78d01479e9ca94aa71093187fba7d532eca1057bd9b020bdf0440cb502c1ad0e"
-    sha256 cellar: :any_skip_relocation, ventura:       "78d01479e9ca94aa71093187fba7d532eca1057bd9b020bdf0440cb502c1ad0e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "48f2a2cb1e4cab81c481d4240fc488381faa6ea03e6b1665b4b87e677be4e88e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0949049acfbe454c435d710c62a96ca0651d32108511aefbc1d9f07e6daebc68"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "716525b58fbeb4067f489a3eb10428012b3fa9bcf3210a8054cae07778378e1e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "716525b58fbeb4067f489a3eb10428012b3fa9bcf3210a8054cae07778378e1e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "716525b58fbeb4067f489a3eb10428012b3fa9bcf3210a8054cae07778378e1e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3e5efce627c5e7478eea9103fb6d7804785d5596b666f00603d7d5ea89ee28dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "800339a3ae35a1ce3a8e523a5da78433475910b71186386a212ae4705928d3d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "beba3400eaf3260e34176efee850cd40f05ccb387156640327aa0495db3b9b7c"
   end
 
   depends_on "go" => :build
@@ -23,7 +22,7 @@ class QbittorrentCli < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"qbt"), "./cmd/qbt"
 
-    generate_completions_from_executable(bin/"qbt", "completion")
+    generate_completions_from_executable(bin/"qbt", shell_parameter_format: :cobra)
   end
 
   test do

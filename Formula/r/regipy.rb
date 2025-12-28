@@ -3,14 +3,13 @@ class Regipy < Formula
 
   desc "Offline registry hive parsing tool"
   homepage "https://github.com/mkorman90/regipy"
-  # pypi missing `regipy.plugins.system.external` package, upstream pr, https://github.com/mkorman90/regipy/pull/309
-  url "https://ghfast.top/https://github.com/mkorman90/regipy/archive/refs/tags/6.0.1.tar.gz"
-  sha256 "5a2c7e87e714d39f16b746fabf953af40ad3f9fa19a8bab377e08e4bd6b7f7af"
+  url "https://files.pythonhosted.org/packages/4c/31/b63b8c7a28c5895c7035cef68010d5a6d24cd03b9753c2357f8f50078de6/regipy-6.1.0.tar.gz"
+  sha256 "1358fa6cebb3d8816ac25d4f6f1a4a250cf1dbc38332ef7a3bdea42a3d0d2e4e"
   license "MIT"
   head "https://github.com/mkorman90/regipy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4897e82b414d1b76a45a2776eac85e0ab21260fb0dfe9cdd0e6057e0c6add879"
+    sha256 cellar: :any_skip_relocation, all: "78c33e3ea7bd9976f90511f7e411a90a3a666b1610ba6d9d0f507401a6f0f5a5"
   end
 
   depends_on "python@3.14"
@@ -42,9 +41,6 @@ class Regipy < Formula
     sha256 "0095b12bf5966de529c0feb1fa08671671b3368eec77d7ef7ab114be2c068b3c"
   end
 
-  # add missing `regipy.plugins.system.external` package, upstream pr ref, https://github.com/mkorman90/regipy/pull/309
-  patch :DATA
-
   def install
     virtualenv_install_with_resources
 
@@ -71,26 +67,3 @@ class Regipy < Formula
     assert_equal h["computer_name"][1]["name"], "WIN-V5T3CSP8U4H"
   end
 end
-
-__END__
-diff --git a/pyproject.toml b/pyproject.toml
-index e090f68..8c2f61a 100644
---- a/pyproject.toml
-+++ b/pyproject.toml
-@@ -52,6 +52,7 @@ dev = [
-     "mypy",
-     "pre-commit",
-     "tabulate",  # Required for plugin validation
-+    "tomli; python_version < '3.11'",  # For test_packaging.py on Python 3.9/3.10
- ]
-
- [project.scripts]
-@@ -68,7 +69,7 @@ Repository = "https://github.com/mkorman90/regipy/"
- Issues = "https://github.com/mkorman90/regipy/issues"
-
- [tool.setuptools]
--packages = ["regipy", "regipy.plugins", "regipy.plugins.ntuser", "regipy.plugins.system", "regipy.plugins.software", "regipy.plugins.sam", "regipy.plugins.security", "regipy.plugins.amcache", "regipy.plugins.bcd", "regipy.plugins.usrclass"]
-+packages = ["regipy", "regipy.plugins", "regipy.plugins.ntuser", "regipy.plugins.system", "regipy.plugins.system.external", "regipy.plugins.software", "regipy.plugins.sam", "regipy.plugins.security", "regipy.plugins.amcache", "regipy.plugins.bcd", "regipy.plugins.usrclass"]
- include-package-data = true
-
- [tool.ruff]

@@ -27,8 +27,17 @@ class Circumflex < Formula
 
   test do
     assert_match "List of visited IDs cleared", shell_output("#{bin}/clx clear 2>&1")
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
-    assert_match "Y Combinator", shell_output("#{bin}/clx article 1")
+    cmd = "#{bin}/clx article 1"
+    assert_match "Y Combinator", if OS.mac?
+      shell_output(cmd)
+    else
+      require "pty"
+      r, w, pid = PTY.spawn(cmd)
+      r.winsize = [80, 43]
+      w.write " q"
+      Process.wait(pid)
+      r.read_nonblock(1024)
+    end
   end
 end

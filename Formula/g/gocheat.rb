@@ -27,7 +27,12 @@ class Gocheat < Formula
 
     begin
       output_log = testpath/"output.log"
-      pid = spawn bin/"gocheat", [:out, :err] => output_log.to_s
+      pid = if OS.mac?
+        spawn bin/"gocheat", [:out, :err] => output_log.to_s
+      else
+        require "pty"
+        PTY.spawn("#{bin}/gocheat > #{output_log}").last
+      end
       sleep 1
       assert_match "Description : keybinding", output_log.read
     ensure

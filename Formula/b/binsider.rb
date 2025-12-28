@@ -29,10 +29,16 @@ class Binsider < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/binsider -V")
 
-    # IO error: `No such device or address (os error 6)`
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    assert_match "Invalid Magic Bytes", shell_output("#{bin}/binsider #{test_fixtures("mach/a.out")} 2>&1", 1)
 
-    assert_match "Invalid Magic Bytes",
-      shell_output("#{bin}/binsider 2>&1", 1)
+    require "pty"
+    PTY.spawn("#{bin}/binsider #{test_fixtures("elf/hello")} | tee #{testpath}/out.log") do |r, w, pid|
+      r.winsize = [80, 43]
+      sleep 5
+      w.write "q"
+      r.read if OS.mac?
+      Process.wait(pid)
+    end
+    assert_match "/lib64/ld-linux-x86-64.so.2", File.read("out.log")
   end
 end

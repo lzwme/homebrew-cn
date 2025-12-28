@@ -4,15 +4,15 @@ class Haiti < Formula
   url "https://ghfast.top/https://github.com/noraj/haiti/archive/refs/tags/v3.0.0.tar.gz"
   sha256 "f6b8bf21104cedda21d1cdfa9931b5f7a6049231aedba984a0e92e49123a3791"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "13b48fd2a1dd6cc4204ad1c00733a604ca0515d8f3139206b6f98c08d0fa8377"
-    sha256 cellar: :any,                 arm64_sequoia: "7411eadde72e740156cef4aacaed4a454bb2dbc956624e0bc5a8cd263ff74575"
-    sha256 cellar: :any,                 arm64_sonoma:  "21163fe9aa22b82cad01e8fe134c46defa97b35bafffd4724d4e930d30313aee"
-    sha256 cellar: :any,                 sonoma:        "1ca996eee260a6e729bc8b99cd1274c1c7e518bb305765c0a6686f1d6051fca4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "56fb594b6e92322b2bb6294c40b8d7a5fbe140324b72eb20a5e4aaac85e5d577"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b11c569349cc73a9344dfbe7b6110a1a3951fa8f0dbe0e9685b7528cb235f57a"
+    sha256 cellar: :any,                 arm64_tahoe:   "fa443195d86019eb3dbf68c67289d5fcc9310844d968f16f8f064973942df8d9"
+    sha256 cellar: :any,                 arm64_sequoia: "def333e10a42ff0a31ff160cf9baeaec0f4d51c865595f126fac3535762fc229"
+    sha256 cellar: :any,                 arm64_sonoma:  "c448f3eada543dc9614cd076b2e26ff11f28afe2afcde76668ffb7e8ae5d0887"
+    sha256 cellar: :any,                 sonoma:        "9a8ddd511fc386df87826a4c665082cf9e93d8fe7c1fd85e790d5eee01600abf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a99cdc8ea6ccbfb5094d92a33343e386251c33150bbf23943bd2bf76bf711c57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "373d6c82d524c8a543942e39fc466d61672457e5ec7a924927afa7bd3dfbb4d7"
   end
 
   depends_on "rust" => :build # for commonmarker
@@ -21,6 +21,11 @@ class Haiti < Formula
   uses_from_macos "llvm" # for libclang
 
   def install
+    # Support Ruby 4.x.x and Bundler 4.x.x
+    # Upstrem PR ref: https://github.com/noraj/haiti/pull/229
+    inreplace "Gemfile", "'bundler', '~> 2.1'", "'bundler', '>= 2.1'"
+    inreplace "#{name}.gemspec", "'>= 3.1.0', '< 4.0'", "'>= 3.1.0', '< 5.0'"
+
     ENV["BUNDLE_FORCE_RUBY_PLATFORM"] = "1"
     ENV["BUNDLE_VERSION"] = "system" # Avoid installing Bundler into the keg
     ENV["BUNDLE_WITHOUT"] = "development test"

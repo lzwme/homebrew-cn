@@ -4,17 +4,15 @@ class Cocoapods < Formula
   url "https://ghfast.top/https://github.com/CocoaPods/CocoaPods/archive/refs/tags/1.16.2.tar.gz"
   sha256 "3067f21a0025aedb5869c7080b6c4b3fa55d397b94fadc8c3037a28a6cee274c"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e0caae17dd3fbb66ff2ddfd2f0b729841b2b79150674f8123be0c4e67ba2810"
-    sha256 cellar: :any,                 arm64_sequoia: "c0bd1f8e2bdb31e76d8919d8c5181c5ffacab9aa03b9be9cd77c4fcfdd2f0527"
-    sha256 cellar: :any,                 arm64_sonoma:  "46d7033d09663c83d43346815b67d4abac9c68b2cff38a7a0eaf55fcf459f56d"
-    sha256 cellar: :any,                 arm64_ventura: "95765343247a0af19d81ab36c3ab8e379e7729f688da64ae723f49c7deba34d7"
-    sha256 cellar: :any,                 sonoma:        "783c64ac3c486bae33e11edf68a56380245d3fe783e1c60e2548a08e05adedef"
-    sha256 cellar: :any,                 ventura:       "b1358f53cd22a76793b935b5b3d4fa384cbe292d85d6a02fccf7232ea038890d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9adde4afac9cbde48d0356f24619557eb25ff14ccdf26c7038c76c783d88c676"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb0ed8f654a355942ff4df4236ad181fa474aad5188cf2de73e6412b9df098b1"
+    sha256 cellar: :any,                 arm64_tahoe:   "7e99020093a04819ec6b1641074829779977180837668593d1cefd9f5a1ac83f"
+    sha256 cellar: :any,                 arm64_sequoia: "b2ac49db7a229b2ccb5c8984ca0f12764f433a4c9d14b186ccdef45cbffbd13b"
+    sha256 cellar: :any,                 arm64_sonoma:  "8757b6f6609c8934bb149cd16a36dd23bb238ee61521628f6afa4d47bf981dc6"
+    sha256 cellar: :any,                 sonoma:        "be1632548200a7d64a0b80b6e6d0640674d7f3462d3ad64a2e31ea2882e44542"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e9d5a71964e1279d0157beaff7ab780807aeb455d4b466e5f12a54c66acc3cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc455c1453ff790433e652d66b708c13fd295c2ec666074c4fd422fb9dfff37e"
   end
 
   depends_on "pkgconf" => :build

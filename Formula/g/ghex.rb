@@ -52,9 +52,6 @@ class Ghex < Formula
   end
 
   test do
-    # (process:30744): Gtk-WARNING **: 06:38:39.728: cannot open display
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     system bin/"ghex", "--help"
   end
 end

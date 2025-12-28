@@ -11,12 +11,13 @@ class Sqlcmd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a34ea026882eb3c78f605dcb1fd496f8daa29da0bba42a54f7f3aafdb68a9cc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2a34ea026882eb3c78f605dcb1fd496f8daa29da0bba42a54f7f3aafdb68a9cc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a34ea026882eb3c78f605dcb1fd496f8daa29da0bba42a54f7f3aafdb68a9cc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5f65631314958538547f8caf001c295154ab99b8b31a61c1ac1846094b07d57f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "043ffd7a779436b3008bde8ffac5f3d5cebfe966dbcc336438262547a0ca5c41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "129f6709d9f3a1cb601282a5e132470da24cc3341c54bfe918bdd10cad6ade4e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "43a84a9f451d31c2c4805a1c021534e4f006dce1317cd565116017783e95b5e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43a84a9f451d31c2c4805a1c021534e4f006dce1317cd565116017783e95b5e1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43a84a9f451d31c2c4805a1c021534e4f006dce1317cd565116017783e95b5e1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c418ae417ad44216ba17e50996f4669504b19d32b6614aa81b8d88e5de805957"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c1fba7c92b62261a59c6dc8125b916c01c657cd1092f1473f46019949e6d683"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab4e14f44b07eed6933a266495d2ee2d0b688b32480b7dec04d5e907fb7f50dd"
   end
 
   depends_on "go" => :build
@@ -25,7 +26,7 @@ class Sqlcmd < Formula
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/modern"
 
-    generate_completions_from_executable(bin/"sqlcmd", "completion")
+    generate_completions_from_executable(bin/"sqlcmd", shell_parameter_format: :cobra)
   end
 
   test do

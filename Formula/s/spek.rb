@@ -23,6 +23,10 @@ class Spek < Formula
   depends_on "ffmpeg@7"
   depends_on "wxwidgets"
 
+  on_linux do
+    depends_on "xorg-server" => :test
+  end
+
   def install
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
@@ -34,8 +38,8 @@ class Spek < Formula
   end
 
   test do
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
-
-    assert_match "Spek version #{version}", shell_output("#{bin}/spek --version")
+    cmd = "#{bin}/spek --version"
+    cmd = "#{Formula["xorg-server"].bin}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
+    assert_match "Spek version #{version}", shell_output(cmd)
   end
 end

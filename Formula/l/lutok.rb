@@ -1,8 +1,8 @@
 class Lutok < Formula
   desc "Lightweight C++ API for Lua"
   homepage "https://github.com/freebsd/lutok"
-  url "https://ghfast.top/https://github.com/freebsd/lutok/releases/download/lutok-0.6.1/lutok-0.6.1.tar.gz"
-  sha256 "509c43c240ba47b8c452b45f3423a416fa91bdfc0341bfb806e0b78f65ce452d"
+  url "https://ghfast.top/https://github.com/freebsd/lutok/releases/download/lutok-0.6.2/lutok-0.6.2.tar.gz"
+  sha256 "1ef51f3741d28e27b09dfaee61ab432966cff56f50940eca1cbacffc11baa2ad"
   license "BSD-3-Clause"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,14 +14,12 @@ class Lutok < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8f10d485b0fc059f5a3cd9306bd913bea5b658ac7032afc2e73c9f41e1218a95"
-    sha256 cellar: :any,                 arm64_sequoia: "622214005100c49c8927563ebc9643a45ca09e6c2a046a3423f90536bf5c4fd8"
-    sha256 cellar: :any,                 arm64_sonoma:  "512239a68c9a297b3058e6218407cc08e3b893255afa64e1e6227ad7d7c54bf5"
-    sha256 cellar: :any,                 arm64_ventura: "4c01cfb8ed37128e7ff3319734958694600672c2885a9145f0199ba80f15c418"
-    sha256 cellar: :any,                 sonoma:        "5c6514ff4cddd77e9a5899ee67d7639ed0df16fcd40799f4b5a864996fc22be5"
-    sha256 cellar: :any,                 ventura:       "6cad6e4dd588227c1cba484e7b3eee3deb60350a50fa7a536359f95a9c804c53"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5bd35200c2438896dac87fd370af4be0a5f2fee03c23c6659f427523128f048"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "398180c13b8203f6004840922d92ef7d7d1893f7d3f5874580132089083cf5f3"
+    sha256 cellar: :any,                 arm64_tahoe:   "5b5c2b7b65fbf24a1f4ebb2662b41475d9ec0dad5db6a4c0d1f137540390780e"
+    sha256 cellar: :any,                 arm64_sequoia: "8dba584b59b9ec5a9711389056ea71ab5237a0857f9a21e09ab7bf7f58eeb6a3"
+    sha256 cellar: :any,                 arm64_sonoma:  "4123f23cd62ffdb746f5772d8e7e004b032ffef68fbbb9e02d533e4b0d446ed3"
+    sha256 cellar: :any,                 sonoma:        "f6e0c7a0eef0dbefbaa303869d37050ed911fbacecb74270280c058f1470fbf7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "228d1acc93f60bf3e273895f8dd3e2380bb5331b5605adf6312aa5e8c8008568"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9750afbc1c546418d5a6b86128b954ac82c9cf9f05128258ef3be35dcf19ebda"
   end
 
   depends_on "autoconf" => :build

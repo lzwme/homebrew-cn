@@ -4,19 +4,20 @@ class Pandocomatic < Formula
   url "https://ghfast.top/https://github.com/htdebeer/pandocomatic/archive/refs/tags/2.2.0.tar.gz"
   sha256 "8138b403aaa1d23db11701bf2bbcbf14447d89b7b05030fc2faf91d6fe11163c"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "610b5a3d8aedb25990e082c6ba6630be1f9ee44a4ee0bbd20cc67927fb36ee9d"
-    sha256 cellar: :any,                 arm64_sequoia: "67ddc692dda68137b2384cf9f9030026bab8e28807b332b147d345dde7f9d22b"
-    sha256 cellar: :any,                 arm64_sonoma:  "cd06357a968155b8bfc0668778ee80cb42e0f39364d4e448aa5a2bbe26c9f71a"
-    sha256 cellar: :any,                 sonoma:        "ba9c0a766d2d9867c0db458eb4f0241fdc0dc556b2c7474e6a2ba7f6936300a4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "55b246ba8c864a25928422f8fca0498ff2814fd680fa68e266c7882f43998b4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac22e7a5377dd38a6dfc21dd73c3615ac2d0cae4c6c6f441ce9d74aa93334c8a"
+    sha256 cellar: :any,                 arm64_tahoe:   "94dead39e2809e446ca5663efc490bde891f3d0e61169c092e7a9b71e1c6d04b"
+    sha256 cellar: :any,                 arm64_sequoia: "9fc14ce01a2aa580eed1b5d3ee9e640012b7c21047ee351b67e5fb9b3487da9b"
+    sha256 cellar: :any,                 arm64_sonoma:  "0ec017678ab1e2383ae6ae3ddaa9f6ce41b27a9cf524cb07e9626d6ad6a91bb3"
+    sha256 cellar: :any,                 sonoma:        "108f671c2357bb6574f6f139b0e84ba591c938d58ea2dc5da311b7f5c578bf3a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1260ba565529a1e73f1e4ab697c498b1a6e7338de14884483cc3cbeee61262b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "476704ca09fb05e3a0bc5b75818886130c40b05f72ca4b35dbd35a502997910c"
   end
 
   depends_on "libyaml"
   depends_on "pandoc"
-  depends_on "ruby"
+  depends_on "ruby@3.4"
 
   def install
     ENV["BUNDLE_FORCE_RUBY_PLATFORM"] = "1"

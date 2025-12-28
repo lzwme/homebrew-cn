@@ -49,12 +49,6 @@ class Pyvim < Formula
   end
 
   test do
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    # Need a pty due to https://github.com/prompt-toolkit/pyvim/issues/101
-    require "pty"
-    PTY.spawn(bin/"pyvim", "--help") do |r, _w, _pid|
-      assert_match "Vim clone", r.read
-    end
+    assert_match "Vim clone", shell_output("#{bin}/pyvim --help")
   end
 end

@@ -6,14 +6,13 @@ class Popeye < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f2ff1b22e885412cd8c699159328387edc033aea8dc59e3b452832ca22099ca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a29f831f909394c8c98753f0ca3cc25dbe30ce7b69c6241b8350376e40736092"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32632ae7cda036371ba5a29c5826f07665c9fab00d92f08914ddecb34705c709"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "95a5e69a47e586959e8fa11c1ffbd011bcaebbe9b27bb967380812cff73b8ed7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7c2b6d822b30777d3fd02b65cd00595c8e6b8642f57468f423c1a998dfaa91be"
-    sha256 cellar: :any_skip_relocation, ventura:       "df324d577d9723ecf63f7f9aa6e32c6018b30bc71a0cc505095a8c0a5e54f7f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "98c0311e4e966a6b7d956ecac5d5394a577cf22f899337d92eb43faa3872e74b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a29bddbc8b4d01dc7c21663db65b1d22f740f0f33544e89ba900f5a0674dd06"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de4eb07bc059e0cfa41014bce3619f91f6d4cf60cdff0eea2b697dff007fa473"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ceaf3bd7cb2f1566cda40e6cc3531fc1da09a98f9c7799fed9a54fb09529cb24"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b5116921f6593e7d94c2ad27ba0ff959958181a13b9890eeef1ca6c6e1998f7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5b641ed59b339dc31cf366849c8c95c1be2e94df248620b29d4e0e4bf0c1e985"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5991ede9c93a0b1036008a8f38df0693a054aac640f08629d0c7f9da44e3b2eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f7675cf16525330166d626f6ab5e83f38cf48026d9baaf9b0333de52055cf37"
   end
 
   depends_on "go" => :build
@@ -27,7 +26,7 @@ class Popeye < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"popeye", "completion")
+    generate_completions_from_executable(bin/"popeye", shell_parameter_format: :cobra)
   end
 
   test do

@@ -24,12 +24,15 @@ class Reddix < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/reddix --version")
 
-    # Fails in Linux CI with "No such device or address (os error 6)"
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     begin
       output_log = testpath/"output.log"
-      pid = spawn bin/"reddix", testpath, [:out, :err] => output_log.to_s
+      if OS.mac?
+        pid = spawn bin/"reddix", testpath, [:out, :err] => output_log.to_s
+      else
+        require "pty"
+        r, _w, pid = PTY.spawn("#{bin}/reddix #{testpath} > #{output_log}")
+        r.winsize = [80, 130]
+      end
       sleep 1
       assert_match "Sign in to load comments", output_log.read
     ensure

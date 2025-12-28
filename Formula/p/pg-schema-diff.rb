@@ -7,14 +7,13 @@ class PgSchemaDiff < Formula
   head "https://github.com/stripe/pg-schema-diff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7b9f07306b17afb7b12fa45a249b678a07150517c971b36cb110b2bf02f45d9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b98ed4ac4b75b8b959780a011c8b4fa6399267222bd2756a0d8989e249b2677"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b98ed4ac4b75b8b959780a011c8b4fa6399267222bd2756a0d8989e249b2677"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8b98ed4ac4b75b8b959780a011c8b4fa6399267222bd2756a0d8989e249b2677"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bbe23212edff4718890067907cad83d7cd8ae4c7fc53be464e1319c1c5d35a29"
-    sha256 cellar: :any_skip_relocation, ventura:       "bbe23212edff4718890067907cad83d7cd8ae4c7fc53be464e1319c1c5d35a29"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "52287a45b152a43d11d6f60375c3f3b31c5f8551f253f418f2045adb711f80fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "761c21b121914bd68e6e972d000f26cc08e809348945b48c467dbb51f6b9189e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "085c2bfe11972fb0922360499fd8d793facfe28817ec2313e58e1a1bbc97bb88"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "085c2bfe11972fb0922360499fd8d793facfe28817ec2313e58e1a1bbc97bb88"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "085c2bfe11972fb0922360499fd8d793facfe28817ec2313e58e1a1bbc97bb88"
+    sha256 cellar: :any_skip_relocation, sonoma:        "df336065efeb7b0b6abc02aac40e002453c508c0ff9bf5c09c178a0bd84776e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e1513230bb955ddb5bbf5fda5f89606d07477fdb250861ccafb1eac6f98fa6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d838eb7eecf2559d9e7e53f91eddc1e62011a444648ed5e3f927cc4518be244"
   end
 
   depends_on "go" => :build
@@ -22,7 +21,7 @@ class PgSchemaDiff < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/pg-schema-diff"
 
-    generate_completions_from_executable(bin/"pg-schema-diff", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"pg-schema-diff", shell_parameter_format: :cobra)
   end
 
   test do

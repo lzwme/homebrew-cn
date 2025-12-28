@@ -147,10 +147,6 @@ class Dolphie < Formula
   end
 
   test do
-    # Fails in Linux CI with "ParseError: end of file reached"
-    # See https://github.com/Homebrew/homebrew-core/pull/152912#issuecomment-1787257320
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     output = shell_output("#{bin}/dolphie mysql://user:password@host:port 2>&1")
     assert_match "Invalid URI: Port could not be cast to integer value as 'port'", output
 

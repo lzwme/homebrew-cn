@@ -38,7 +38,7 @@ class Periphery < Formula
     # to be at 'lib/libIndexStore.so' relative to the path of the 'swift' binary, which is a reasonable assumption for
     # most installations. However, this is not the case on the Homebrew Linux test container, and the shared libraries
     # do not appear to be present.
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    ENV.prepend_path "PATH", Formula["swift"].opt_libexec/"bin" if OS.linux?
 
     system "swift", "package", "init", "--name", "test", "--type", "executable"
     system "swift", "build", "--disable-sandbox"

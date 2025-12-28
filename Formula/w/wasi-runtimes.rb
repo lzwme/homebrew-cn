@@ -4,6 +4,7 @@ class WasiRuntimes < Formula
   url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.8/llvm-project-21.1.8.src.tar.xz"
   sha256 "4633a23617fa31a3ea51242586ea7fb1da7140e426bd62fc164261fe036aa142"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   livecheck do
@@ -11,12 +12,12 @@ class WasiRuntimes < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d9efe0127d98be637f67fc299174731e755d6ad19e6286610b57687deac8cbea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bec527c807b359cf6cd8555b8586d1e1081da3361fddf0a07cbce8eb76c70984"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a2860a282836b3ad4621c9d52da3d8cbc472b211b85187e0c83f07b5527dea8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "41c420ce303fa5ec3c81dc677575fb42f86839dcbe0be6c004ab6cfa3a720ccb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8eb23d33a08b50cbeafdd7404e686609661312d89944f9720c43a17bb27d3ece"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8df55af48c99d47911ceae8aa19aa8c8404b0f81974518b3efb6d56eb2e069a5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f433a3ccab0903146f085de87d846d145f265614f3bc4f5b704c993ded11a9c6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2df86ef680a00ec6f7717efdf7530821a2dd27dadfe1cb63c53075e68c018b8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2d4b154fce939f2063a0bc80b6b399cc0c83e7bd27076c4b604439e5feebeba"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a3dad12f44439045e740bb97fb746f4634c7cb4ffcd29553b290b802ecd3b1b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b4933ccfbb424f9bd78b55f6d7db3faaca5003d413335ef12fe2cc8e8fa6666"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ce5dca488c5fcbc1b0536d6ef8d8632d58798bd3a9905c8f76098593bbcb6cd"
   end
 
   depends_on "cmake" => :build
@@ -215,11 +216,18 @@ class WasiRuntimes < Formula
     clang = Formula["llvm"].opt_bin/"clang"
     targets.each do |target|
       system clang, "--target=#{target}", "-v", "test.c", "-o", "test-#{target}"
-      assert_equal "the answer is 42", shell_output("wasmtime #{testpath}/test-#{target}")
+      wasmtime_flags = if target.end_with?("-threads")
+        "-W threads=y -W shared-memory=y -S threads=y"
+      else
+        ""
+      end
+      assert_equal "the answer is 42",
+                   shell_output("wasmtime run #{wasmtime_flags} #{testpath}/test-#{target}").strip
 
       pthread_flags = target.end_with?("-threads") ? ["-pthread"] : []
       system "#{clang}++", "--target=#{target}", "-v", "test.cc", "-o", "test-cxx-#{target}", *pthread_flags
-      assert_equal "hello from C++ main with cout!", shell_output("wasmtime #{testpath}/test-cxx-#{target}").chomp
+      assert_equal "hello from C++ main with cout!",
+                   shell_output("wasmtime run #{wasmtime_flags} #{testpath}/test-cxx-#{target}").chomp
     end
   end
 end

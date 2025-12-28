@@ -7,14 +7,13 @@ class Skate < Formula
   head "https://github.com/charmbracelet/skate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd5a8f8f84a8edcb61c40733fbef18e4369af5ee7fd8c106d0dcdce1f5cc798b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51dffe30dad6853d764248411bd1b373e56795410d7480ffcee819a67cf5b641"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51dffe30dad6853d764248411bd1b373e56795410d7480ffcee819a67cf5b641"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "51dffe30dad6853d764248411bd1b373e56795410d7480ffcee819a67cf5b641"
-    sha256 cellar: :any_skip_relocation, sonoma:        "873150989401c84050ba2180e0edc835fd0daf05481d723626457ee6a7ff40cb"
-    sha256 cellar: :any_skip_relocation, ventura:       "873150989401c84050ba2180e0edc835fd0daf05481d723626457ee6a7ff40cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d14356cf95cc1e3ccfbe9fc80ea1982f615afee372c2392149ee64ef5fe6fb8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "698c00996b38d34b04b8adadba65ffc338f77ac2f58889a31721f3b54d2e4fff"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "966917f5054c2a722ce35156256437222602a118fa3a27a609c54397b7155730"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "966917f5054c2a722ce35156256437222602a118fa3a27a609c54397b7155730"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "966917f5054c2a722ce35156256437222602a118fa3a27a609c54397b7155730"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e28973a036de11d215bb911adf8708dd1e5d75071578bbc288c907c061cf23bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d5dad73511d894bf5ef083edeb30eef46b13398fabf73b1f6d92e062644c9c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69757b83e851a3f06e7bd001afd3f27b813076f66c7b99c0ed84b6715daa1a3f"
   end
 
   depends_on "go" => :build
@@ -23,7 +22,7 @@ class Skate < Formula
     ldflags = "-s -w -X main.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"skate", "completion")
+    generate_completions_from_executable(bin/"skate", shell_parameter_format: :cobra)
   end
 
   test do

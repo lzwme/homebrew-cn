@@ -7,12 +7,13 @@ class Permify < Formula
   head "https://github.com/Permify/permify.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2bfa88c22433d81bb6799628b86ffa83dba1e5fbe71aacd4ebb1a964a5d54672"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00641a1b86f4a75d7bab9930f6b49f2186dfe65266aac9c4d132392fa02be5a4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "071b104c7db2a94bb7b7675d59194c6f7b8fb55244c37a23cbd38de24dbbce56"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6916af6b708fa71a1e8d4f1e0c5ea5118eab8a52adccf1d81837d734190244ef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5f41298ea29c79474b4b27743b44ba9ec04d27ceef3d748abd39ec1d83c8e86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4c42d1ba88d0a755aaa5927ef68a135d605c9961fa0232bce7e0c6c34259df2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6da7d2570ed14fdf3cf21cb24290bc464b2a7ef0073c4c60a51526135688ce2b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b4e5375d724ca9f0b1e8cafc1d535011526a527ca9f329feebff4290ac16b05"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "637b1702a8a877117cb6602d37dfee04fbcaf7d81cac158488e1af7f1b06c6ba"
+    sha256 cellar: :any_skip_relocation, sonoma:        "04920f518edc7a4d70b8f38f63caebaf99497351c6136b0a7d37c1201f628e0a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b97266c456a2d9ec79989e83bdbfcd36c87bf1d1a71e09a460b1ffb2b2aa78c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "971c42a8b4dc275173d2e3a6d17da8019ef1a061629d514522a4436339d186a4"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,7 @@ class Permify < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/permify"
 
-    generate_completions_from_executable(bin/"permify", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"permify", shell_parameter_format: :cobra)
   end
 
   test do

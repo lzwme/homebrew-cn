@@ -65,6 +65,10 @@ class Xsane < Formula
     depends_on "pango"
   end
 
+  on_linux do
+    depends_on "xorg-server" => :test
+  end
+
   def install
     if build.head?
       # Work around https://gitlab.com/sane-project/frontend/xsane/-/issues/74
@@ -83,9 +87,8 @@ class Xsane < Formula
   end
 
   test do
-    # (xsane:27015): Gtk-WARNING **: 12:58:53.105: cannot open display
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    system bin/"xsane", "--version"
+    cmd = "#{bin}/xsane --version"
+    cmd = "#{Formula["xorg-server"].bin}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
+    assert_match version.to_s, shell_output(cmd)
   end
 end

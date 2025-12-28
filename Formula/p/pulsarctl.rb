@@ -19,12 +19,13 @@ class Pulsarctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e1bffe6aacaf35d6011b5c36695f4605d685a162b6944ab7e3415f7e68e20661"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1bffe6aacaf35d6011b5c36695f4605d685a162b6944ab7e3415f7e68e20661"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1bffe6aacaf35d6011b5c36695f4605d685a162b6944ab7e3415f7e68e20661"
-    sha256 cellar: :any_skip_relocation, sonoma:        "09cb2b5f4b5b935ae0edceb8f9257660635ac25ae1147d73aae0b59715da3784"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f9c818b233c057706a0e18821c6077dbc578d3c1647f5633b4f7f7f69f5c54f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38781c110e3113b8f201484d5b8bd1b37ce834042868ce81722837dfa0292427"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a89a7c1cf30aafa91f45d256a41eed6c2eec92092c01c718e5f21d4fcdbeea67"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a89a7c1cf30aafa91f45d256a41eed6c2eec92092c01c718e5f21d4fcdbeea67"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a89a7c1cf30aafa91f45d256a41eed6c2eec92092c01c718e5f21d4fcdbeea67"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2fc982b660f33391858d9c802147b182048394eb2cab66316d96b3fdf9be4221"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "08aaeaa538e0f9bba902db96bc67df3425351cd22e0803b6c0c0e80913f59f95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f786253e9c88dfb44474c450de7d6701afe5ec3b4325d05dcc336134e4398b9"
   end
 
   depends_on "go" => :build
@@ -40,8 +41,7 @@ class Pulsarctl < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    # Install shell completions
-    generate_completions_from_executable(bin/"pulsarctl", "completion")
+    generate_completions_from_executable(bin/"pulsarctl", shell_parameter_format: :cobra)
   end
 
   test do

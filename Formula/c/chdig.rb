@@ -26,9 +26,6 @@ class Chdig < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/chdig --version")
 
-    # failed with Linux CI, `No such device or address (os error 6)`
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     output = shell_output("#{bin}/chdig --url 255.255.255.255 dictionaries 2>&1", 1)
     assert_match "Error: Cannot connect to ClickHouse", output
   end

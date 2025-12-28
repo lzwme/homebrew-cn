@@ -2,7 +2,7 @@ class Mat2 < Formula
   include Language::Python::Virtualenv
 
   desc "Metadata anonymization toolkit"
-  homepage "https://0xacab.org/jvoisin/mat2"
+  homepage "https://github.com/jvoisin/mat2"
   url "https://files.pythonhosted.org/packages/ba/e1/9a8abf4f5ab3c3e214197e310e3f33418d79769ee89911da939a6c891d4f/mat2-0.14.0.tar.gz"
   sha256 "7f07db8c587f91bdfb15fb384bca05d741edc31888bd9844b9e91290c0f529c3"
   license "LGPL-3.0-or-later"

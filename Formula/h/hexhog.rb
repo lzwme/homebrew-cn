@@ -24,14 +24,17 @@ class Hexhog < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/hexhog --version")
 
-    # Fails in Linux CI with `No such device or address (os error 6)` error
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     begin
       output_log = testpath/"output.log"
 
       (testpath/"testfile").write("Hello, Hexhog!")
-      pid = spawn bin/"hexhog", testpath/"testfile", [:out, :err] => output_log.to_s
+      if OS.mac?
+        pid = spawn bin/"hexhog", testpath/"testfile", [:out, :err] => output_log.to_s
+      else
+        require "pty"
+        r, _w, pid = PTY.spawn("#{bin}/hexhog #{testpath}/testfile > #{output_log}")
+        r.winsize = [80, 130]
+      end
       sleep 1
       assert_match "hexhog", output_log.read
     ensure

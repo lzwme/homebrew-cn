@@ -33,12 +33,15 @@ class Tuisky < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/tuisky --version")
 
-    # Fails in Linux CI with `No such device or address (os error 6)`
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     begin
       output_log = testpath/"output.log"
-      pid = spawn bin/"tuisky", [:out, :err] => output_log.to_s
+      if OS.mac?
+        pid = spawn bin/"tuisky", [:out, :err] => output_log.to_s
+      else
+        require "pty"
+        r, _w, pid = PTY.spawn bin/"tuisky", [:out, :err] => output_log.to_s
+        r.winsize = [80, 130]
+      end
       sleep 1
       assert_match "https://bsky.social", output_log.read
     ensure

@@ -1,17 +1,17 @@
 class TomlTest < Formula
   desc "Language agnostic test suite for TOML parsers"
   homepage "https://github.com/toml-lang/toml-test"
-  url "https://ghfast.top/https://github.com/toml-lang/toml-test/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "ea14319a926cfd7d418e4b450b47264c478b38ce99280f0cf273c574536e544b"
+  url "https://ghfast.top/https://github.com/toml-lang/toml-test/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "41d5a748b6942e535c43fc6d8a12ea7ecb6b24cb8bbe09adf929364099407741"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "43b8c0ce050c61d3e2742e6bb08d83eea25bf90a01bc8d6d8e9b1d8aa8495c9d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43b8c0ce050c61d3e2742e6bb08d83eea25bf90a01bc8d6d8e9b1d8aa8495c9d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43b8c0ce050c61d3e2742e6bb08d83eea25bf90a01bc8d6d8e9b1d8aa8495c9d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e1e3befe97900b6bf368ee22fdda7f5855dda4ae1ea36e5da3806787341f8e7b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "059593ce826444b89566cd19de49dc06a30e8193a902d8bfc480b32c07435305"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05ae3ea138cdabd4d24f6afb16b72ae4f9c0ebd390d8d7b016aa2f06607294cf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee578e8acafde6cec49e74d85c3f71c6116d2594e742d5f2c4be1b39ca976ad5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee578e8acafde6cec49e74d85c3f71c6116d2594e742d5f2c4be1b39ca976ad5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee578e8acafde6cec49e74d85c3f71c6116d2594e742d5f2c4be1b39ca976ad5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "81bbd20b442bfa5ea9bd85890a038aabddaf74db0a46b5557a9ea0ccfb25ca25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "377ad217fbdd1c3724a31cabc7dca4fdad2c662bbe0a0a017e0ffd0b02fc95a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5334df336e9c02a5f219e31fcf9e7604ad73ddf8f5874f74fddfe501fb2d9594"
   end
 
   depends_on "go" => :build

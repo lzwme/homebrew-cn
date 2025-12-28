@@ -5,15 +5,15 @@ class Licensed < Formula
       tag:      "v5.0.4",
       revision: "6f7a4675fdf69647f524af3facd1d55f6f221d46"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "681b4cdb963593bcb7751932ce983f5c03f61f2f263853bbded0d7903ad48f85"
-    sha256 cellar: :any,                 arm64_sequoia: "2b8290b933763c4949199e2d218170fb1ff8fb3cae0a3018a8a4bccda3f3bd61"
-    sha256 cellar: :any,                 arm64_sonoma:  "99430c0001d8e2b6143046da71c78e6403e140ad99938380eeb32d14cea99cba"
-    sha256 cellar: :any,                 sonoma:        "9b8b1a4ea0dd4dcee609fa07c3f26b4e6e824aaf8c21defe8e622af8f04a3201"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22b87dba85b56514472ad6e21697259d4307f14a0ad9cb756fd12060c74c5e36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5060cceb3008241c3b011f5845890dffcaf7264bc43e4c319e226041fbd61c42"
+    sha256 cellar: :any,                 arm64_tahoe:   "ee35c122a511739e183c4ebde0df39dd1a11032b66ee5a4abe86be87c9d3959a"
+    sha256 cellar: :any,                 arm64_sequoia: "8372fdd8302b285179254b3375c6ccf0c3ba16a8c808cb78e851e707bfac7186"
+    sha256 cellar: :any,                 arm64_sonoma:  "63831487004179f5ad0fea2b90ffdfe21f10146ee1b672c1268dc2e9d6a19a11"
+    sha256 cellar: :any,                 sonoma:        "924c22137403515f8acf66c7c89a7bc47dde467d3a12d5a4c506cbe133c3327d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6abd7e8deaa295ec844a4396513cea608751b87d006c9929a68b4095465d7f0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3af54f112e9c2cc79bcb1d0453f2cc01f1e34de59f021e65e2eecc1538a4424b"
   end
 
   depends_on "cmake" => :build

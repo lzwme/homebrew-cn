@@ -22,10 +22,13 @@ class Jqp < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/jqp --version")
-
-    # Fails in Linux CI with `open /dev/tty: no such device or address`
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    assert_match "Error: please provide an input file", shell_output("#{bin}/jqp 2>&1", 1)
+    assert_match "Error: please provide an input file", if OS.mac?
+      shell_output("#{bin}/jqp 2>&1", 1)
+    else
+      require "pty"
+      r, _w, pid = PTY.spawn("#{bin}/jqp 2>&1")
+      Process.wait(pid)
+      r.read_nonblock(1024)
+    end
   end
 end

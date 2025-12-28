@@ -7,13 +7,13 @@ class Porter < Formula
   head "https://github.com/getporter/porter.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04e2fed73b28c43eee200d2639a3e72e6e9c04af2fa989c15ac41cf91db46bd6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ddc72c051d69934be4d142f8bbaca6e10556653941ace22760e2af2702880106"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c0db94ebea52d5df1cb0f8c7d967e0ad3b894e5d720a920219324f216f142cd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "add31efa6611268a8c9ff14d15a06d20f8903f524b2d62d9f2e56f8de1b1706b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "54c22ccd07d52d0856b8244141cd2642966ca1f1043b3f9da85bd3b871189711"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a695a1a5a42c665e50205e4e86df5f45f9b0f20b5303c1d199399bf45a2d2342"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d2e6cd91af0e966c8a821789017b81a0f22cfc0e8c9cf4a255ed92f7c852286"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3cb4bc83342ce948dba842220f49a0c6ad2ce8a968942d86a8bb3e80006e86b1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c727323f0731e8c18a28e7af6861bce624fd58b173cc34b2acbbbeb00b75a319"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a08aa9a85a9ba314cdf72d562d4a696146d10f3fa25847a4064a14feb10cdae3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7db333f4042ce5cbd45a23cc16d9fecfbd532989d70b4b63cfcb36a68fc43226"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69bfc2a23597a0050b2f267d0bb0f2183a599ed65e79f3a49ac89f282063f412"
   end
 
   depends_on "go" => :build
@@ -26,7 +26,7 @@ class Porter < Formula
     ]
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/porter"
-    generate_completions_from_executable(bin/"porter", "completion")
+    generate_completions_from_executable(bin/"porter", shell_parameter_format: :cobra)
   end
 
   test do

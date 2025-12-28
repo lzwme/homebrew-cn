@@ -6,6 +6,7 @@ class Macvim < Formula
   version "9.1.1887"
   sha256 "82148b9f7fa4c83e18ba7fea3f65289b1eb3e2775a4d17a4c3e0fe16087e0e53"
   license "Vim"
+  revision 1
   head "https://github.com/macvim-dev/macvim.git", branch: "master"
 
   # The stable Git tags use a `release-123` format and it's necessary to check
@@ -25,11 +26,10 @@ class Macvim < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "eae0d53565e43eeeb5995fd9dcd15dba9dd7b7126abfeca9223d5d527c73a552"
-    sha256 cellar: :any, arm64_sequoia: "88149d3fd08c35a282e1e402bcf7f04b4937ed0b9aba409695381ab1dd9d7185"
-    sha256 cellar: :any, arm64_sonoma:  "13baf6a9fcfae5fc9bece16bbc64088c27c83cd0f5dc97c1a65b2f9f28e59304"
-    sha256 cellar: :any, sonoma:        "6298c5dcc4a8d214897c44d192d1f802f88bb3fc05d7d85ebf0bd9fb83a457d1"
+    sha256 cellar: :any, arm64_tahoe:   "fc4ba6cff08eda192921bb41feee3baa71f17bc6b2ee11ad81a3e70b030079b3"
+    sha256 cellar: :any, arm64_sequoia: "0af5ce60294e63121a673999d2fa49a36b5e2de883a52cbc1d65cfc291e9c803"
+    sha256 cellar: :any, arm64_sonoma:  "b6b4a634fb4689ad32273ab2c8bdfc7c814347e0aa1e3a372a116f2696705207"
+    sha256 cellar: :any, sonoma:        "3e72d1935825d8767aedb5e03d034ad6e7333ae36a58e0b7d168bb33f025c96b"
   end
 
   depends_on "gettext" => :build

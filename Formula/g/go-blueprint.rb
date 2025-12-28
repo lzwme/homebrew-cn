@@ -27,12 +27,16 @@ class GoBlueprint < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/go-blueprint version")
 
-    # Fails in Linux CI with `/dev/tty: no such device or address`
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     module_name = "brew.sh/test"
-    system bin/"go-blueprint", "create", "--name", module_name,
-               "--framework", "gin", "--driver", "sqlite", "--git", "skip"
+    cmd = [bin/"go-blueprint", "create", "--name", module_name,
+           "--framework", "gin", "--driver", "sqlite", "--git", "skip"]
+    if OS.mac?
+      system(*cmd)
+    else
+      require "pty"
+      pid = PTY.spawn(*cmd).last
+      Process.wait(pid)
+    end
 
     test_project = testpath/"test"
     assert_path_exists test_project/"cmd/api/main.go"

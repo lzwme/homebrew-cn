@@ -25,12 +25,14 @@ class Pug < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/pug --version")
 
-    # Fails in Linux CI with `open /dev/tty: no such device or address`
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     begin
       output_log = testpath/"output.log"
-      pid = spawn bin/"pug", "--debug", [:out, :err] => output_log.to_s
+      pid = if OS.mac?
+        spawn bin/"pug", "--debug", [:out, :err] => output_log.to_s
+      else
+        require "pty"
+        PTY.spawn("#{bin}/pug --debug > #{output_log}").last
+      end
 
       sleep 1
 

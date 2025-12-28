@@ -16,12 +16,13 @@ class Scorecard < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbba38cdcacc8ec86d7c4487595614bde0e362247163910350ade8a5c5772891"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c8dab295791bc9b4619c483dc4eee68a7f1a84d25226fb8a830b9195b723795"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d2eb2e46c96207434e7bb23a4af49a08440c4269c5a6d0f6255b30d82ebd973"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2dea58448953f2e63497f045a0bc96e81c2823971e2e5d240abcd41e2a18f898"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f200038ea24d9fa0b87974bd7fa5921f2bd885bdde86a59ef56e154e96ef1d2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34118febe45d6da739aef5cbfcca5e4c0d9b8065ed626919a116755b42f6fdb1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2981be637900f3fda110a669805b1f0ce5860fabe1137ce5db64a615df51b3b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "098af34d7a9cb03717cd1a09ea36a27e32f530ca42d0412439d0d38eb12b8e2d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df92a13ab3fc9674a8aeec99475568b5d36c2708c1860ac41272248b906747d9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "49c787ddb6507aaf3211e1b4b1226df37446b0f3d7eefde86b571777e17e3eaa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6473855d91617f3d1290bc2545186ad2b3929bb081afb76dfca1ced080a80f39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd9f23e1989c85a62f28a89f884496b6fb9792c42b740ea530b1370a3bda44dd"
   end
 
   depends_on "go" => :build
@@ -39,7 +40,7 @@ class Scorecard < Formula
     system "make", "generate-docs"
     doc.install "docs/checks.md"
 
-    generate_completions_from_executable(bin/"scorecard", "completion")
+    generate_completions_from_executable(bin/"scorecard", shell_parameter_format: :cobra)
   end
 
   test do

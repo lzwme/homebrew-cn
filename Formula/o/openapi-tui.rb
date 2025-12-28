@@ -31,14 +31,17 @@ class OpenapiTui < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/openapi-tui --version")
 
-    # Fails in Linux CI with `No such device or address (os error 6)`
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     openapi_url = "https://ghfast.top/https://raw.githubusercontent.com/Tufin/oasdiff/8fdb99634d0f7f827810ee1ba7b23aa4ada8b124/data/openapi-test1.yaml"
 
     begin
       output_log = testpath/"output.log"
-      pid = spawn bin/"openapi-tui", "--input", openapi_url, [:out, :err] => output_log.to_s
+      if OS.mac?
+        pid = spawn bin/"openapi-tui", "--input", openapi_url, [:out, :err] => output_log.to_s
+      else
+        require "pty"
+        r, _w, pid = PTY.spawn bin/"openapi-tui", "--input", openapi_url, [:out, :err] => output_log.to_s
+        r.winsize = [80, 43]
+      end
       sleep 1
       assert_match "APIs", output_log.read
     ensure

@@ -7,14 +7,13 @@ class PolicyEngine < Formula
   head "https://github.com/snyk/policy-engine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a7b6e5da094097583ac46a181aab8f200f60f302d1f8d976910cfa3b9aa0b3a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "140f936020aef4bec9555f01b75d4efc2bbe7e4cf24aceda756ec9ba466328a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "140f936020aef4bec9555f01b75d4efc2bbe7e4cf24aceda756ec9ba466328a3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "140f936020aef4bec9555f01b75d4efc2bbe7e4cf24aceda756ec9ba466328a3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "828e03e6ac7d701c9a294bb80c58842888b6dc281e883bed99973c0c8d0d1a7f"
-    sha256 cellar: :any_skip_relocation, ventura:       "828e03e6ac7d701c9a294bb80c58842888b6dc281e883bed99973c0c8d0d1a7f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c57f3894e5318ef5241a4e7785ffffb40c3add087859c20485c686b02f5b760"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d6c08b38966d9334e76d04d8a023781430c3fbac95b06ee55abae297eb3f081"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "768e0365b393a969386e17ecd02ccba675277f6bfe5bfd33f41b9c7e2487791d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "768e0365b393a969386e17ecd02ccba675277f6bfe5bfd33f41b9c7e2487791d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "768e0365b393a969386e17ecd02ccba675277f6bfe5bfd33f41b9c7e2487791d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d709db4976b425f26b94b7642c293fc81e7e61ce2231ea2f01c74329c3446d48"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cafe2485ab49a5d760cf260234da92c13f48e0e84975bcf6c3f59c69b740de7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee93b1c06fbee851512e601de08f687b21541384d2d627992a303f0791e6059b"
   end
 
   depends_on "go" => :build
@@ -23,7 +22,7 @@ class PolicyEngine < Formula
     ldflags = "-s -w -X github.com/snyk/policy-engine/pkg/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"policy-engine", "completion")
+    generate_completions_from_executable(bin/"policy-engine", shell_parameter_format: :cobra)
   end
 
   test do

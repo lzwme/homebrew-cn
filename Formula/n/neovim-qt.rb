@@ -34,9 +34,8 @@ class NeovimQt < Formula
   end
 
   test do
-    # Disable tests in CI environment:
-    #   qt.qpa.xcb: could not connect to display
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
+    # Set QT_QPA_PLATFORM to minimal to avoid error "qt.qpa.xcb: could not connect to display"
+    ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     # Same test as Formula/neovim.rb
 

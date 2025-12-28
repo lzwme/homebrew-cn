@@ -7,12 +7,13 @@ class Runme < Formula
   head "https://github.com/runmedev/runme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e050326a5423e9431f29484248cc84288d0c3b825128bbf82854fe934fa4e998"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ad19d188ddeb414a179fe2fc2e7df1790cdc22d659b460fc9c58e278739cbb6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c15e937aa6b30520e1d6cb3611cb125f6029c7d0de9f0e97f3506865cdb51138"
-    sha256 cellar: :any_skip_relocation, sonoma:        "600b33c18aec2bb949846631263cf05e5881c89540d287c028cfc1ac3c2fe67b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d38c86df1772ce5871b0c70ccc7446eca2b2bbd900e81279683239e28badaf3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2086c6fce6f2c6ca52a98bb48aaaf4d5c004ed1227ea3b75f5bd4cb1718df367"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80483d4dead6b2f4caeee0c7af857cff2408808dd7d124a57e76275d31af6576"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d74dc405ac76ef67f146205e5d54c57b4ec598a378f404212508a548a7a6f6b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e438080e3cd1e7c993bc1be5a37c4b86941976c116effd509fc48ade9e2409aa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "17805a2fe646afc3d65083651973b93b2f79d53691915abf07c5757a1917fecc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a9cee8275ba783d5a94f05d13961cd1cfba7d001f8fc436d141ac2156bb1f4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af4d23d42c8f4f734eaf88bb6cfcb0370ad031c59174907c729095d2edc9583e"
   end
 
   depends_on "go" => :build
@@ -26,7 +27,7 @@ class Runme < Formula
     ]
 
     system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin/"runme", "completion")
+    generate_completions_from_executable(bin/"runme", shell_parameter_format: :cobra)
   end
 
   test do

@@ -1,18 +1,17 @@
 class Alda < Formula
   desc "Music programming language for musicians"
   homepage "https://alda.io"
-  url "https://ghfast.top/https://github.com/alda-lang/alda/archive/refs/tags/release-2.3.5.tar.gz"
-  sha256 "0d7babe617ea7e8e20db9cb0e9c95d8631e9d67babdcce73e26ebc545716365e"
+  url "https://ghfast.top/https://github.com/alda-lang/alda/archive/refs/tags/release-2.4.0.tar.gz"
+  sha256 "d2056fcab1d61d0abc17cd44d49ce8d9cb4c7e7c11c8f6ddb4cddfff8e4a60b6"
   license "EPL-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c52d9712b56d6b16154e7ebd6639357f51f0538f29d6f4c703ed250e42640b69"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8dc776d100206ee4e95ebb38ece200560baab2be2b14bf41b8d7c7fd6c8ac071"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20f9d335f847f676eb067adf7c49ac56d12cd368cbca0854f5ca14836ef3eed1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8e0070e1fa979f5c780a21f33c2681e7ebd942abcd2d41d5504124d4d8c47e6a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "95a2020222030a53e7c6ebd84c92f828878a90a6896227d3c303cf4bf2822649"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e6d7f350cd08653e637cd933924a3b11a6ddd7277148e705a30e674ed637763"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "39bcbff7df93e950b241a53dcc5b205136a3008235229f3a421b015c3613e775"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c22e038c5f94f4900ff2b72573fe4e21a45fcdceea300a8030773ddec1e858fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0dfc9aa9ee2f0ec5c62ca833071ca2267a98dab526ea6fc2d19c4cd4754f66f7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "857834ffcebecaf7030f3b7631382d42c000aa20a6c5f6337591a8e0180491a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a9878b7517b961c39e06034112331d19c9f4d68e73670426de716b24af7e659"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6bdb2862271b39c7485694f111b6811b8dbbb23774170c6daa970993fdc14aa"
   end
 
   depends_on "go" => :build

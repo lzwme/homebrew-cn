@@ -24,13 +24,19 @@ class Parqeye < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/parqeye --version")
 
-    # Fails in Linux CI with `No such device or address` error
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     (testpath/"test.parquet").write <<~PARQUET
       PAR1
     PARQUET
-    output = shell_output("#{bin}/parqeye #{testpath}/test.parquet 2>&1", 1)
+
+    cmd = "#{bin}/parqeye #{testpath}/test.parquet 2>&1"
+    output = if OS.mac?
+      shell_output(cmd, 1)
+    else
+      require "pty"
+      r, _w, pid = PTY.spawn(cmd)
+      Process.wait(pid)
+      r.read_nonblock(1024)
+    end
     assert_match "EOF: Parquet file too small. Size is 5 but need 8", output
   end
 end

@@ -7,18 +7,15 @@ class Licensefinder < Formula
       tag:      "v7.2.1",
       revision: "00b04cb91e8ec9021c939ccfceb69d4047f4c8ca"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "4cb34b2334a48e59f4f6e345ec724015ce1fcbef28863c8a7f1e45b7d851c3a7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "79f4e016ce9a7863fb1a8af0b6d05fbddda4d7bd73e0eb88e5fcdc167c0576be"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f393a73ba947c00a0a5c85d6ad643711f88b8432a8b02240e95fbc6897ae7b0c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d67039d8af9f8d4cb432b87d702b63596c32a3df5ee9873c827a2d65c73c387c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "94181e5784a74c2ce1c6ef53ca3036abfdacaf79a44c4cc0a36bacd316e57f67"
-    sha256 cellar: :any_skip_relocation, sonoma:         "77ac7350b5c910ef956d6fac8ffe98232bce930476f6b462e8fcf31379e2254d"
-    sha256 cellar: :any_skip_relocation, ventura:        "1c03235aa33eb51bee7344de88c4e16808a8f6283a0845c873784d37ec14a406"
-    sha256 cellar: :any_skip_relocation, monterey:       "076664ad53828cc598b55fa5dc0177bc57fd2a808d0c0ab20d85fac4e98dd3f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "51eb4b6c26c2d5088c2f382ffff159e64d3c54b1c1cecc539200024f31217171"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f8093e28fbd29078317ad298dd33971cd32950e5c56204eb2bff5de074b6ed9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc612bca33980e0d1b2c51b001fc295934c7d23bec6ecd3e546294488bf384eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc612bca33980e0d1b2c51b001fc295934c7d23bec6ecd3e546294488bf384eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc612bca33980e0d1b2c51b001fc295934c7d23bec6ecd3e546294488bf384eb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bc612bca33980e0d1b2c51b001fc295934c7d23bec6ecd3e546294488bf384eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d19855c60c9c10d7332caa54afd4af6edf8d2238ca52ff7501b3dc0a9753c43e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d19855c60c9c10d7332caa54afd4af6edf8d2238ca52ff7501b3dc0a9753c43e"
   end
 
   depends_on "ruby"
@@ -30,6 +27,10 @@ class Licensefinder < Formula
     url "https://github.com/pivotal/LicenseFinder/commit/4cac18e5c7a48f72700b8de4db97d3150637a20d.patch?full_index=1"
     sha256 "7a7a9b201cd34a5f868901841ba5f144f0e75580664c8ec024792449348f5875"
   end
+
+  # The logger gem was removed from the stdlib in Ruby 4.0.0.
+  # Project has had no commits since May 2024, so we patch the gemspec to add it as a dependency.
+  patch :DATA
 
   def install
     ENV["GEM_HOME"] = libexec
@@ -54,3 +55,16 @@ class Licensefinder < Formula
                   shell_output(bin/"license_finder", 1)
   end
 end
+__END__
+diff --git a/license_finder.gemspec b/license_finder.gemspec
+index 419a3a6d..62e40adc 100644
+--- a/license_finder.gemspec
++++ b/license_finder.gemspec
+@@ -45,6 +45,7 @@ Gem::Specification.new do |s|
+
+   s.add_dependency 'bundler'
+   s.add_dependency 'csv', '~> 3.2'
++  s.add_dependency 'logger', '~> 1.6.4'
+   s.add_dependency 'rubyzip', '>=1', '<3'
+   s.add_dependency 'thor', '~> 1.2'
+   s.add_dependency 'tomlrb', '>= 1.3', '< 2.1'

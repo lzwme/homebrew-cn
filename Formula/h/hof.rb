@@ -4,7 +4,7 @@ class Hof < Formula
   url "https://ghfast.top/https://github.com/hofstadter-io/hof/archive/refs/tags/v0.6.10.tar.gz"
   sha256 "87703d19a23121a4b617f1359aed9616dceb6c79718245861835b61ccff7e1eb"
   license "Apache-2.0"
-  head "https://github.com/hofstadter-io/hof.git", branch: "_dev"
+  head "https://github.com/hofstadter-io/hof.git", branch: "_next"
 
   # Latest release tag contains `-beta`, which is not ideal
   # adding a livecheck block to check the stable release
@@ -24,6 +24,12 @@ class Hof < Formula
   end
 
   depends_on "go" => :build
+
+  # patch to add Go 1.26 testDeps ModulePath, upstream pr ref, https://github.com/hofstadter-io/hof/pull/410
+  patch do
+    url "https://github.com/hofstadter-io/hof/commit/7d0389788a67be9bed36ab4d9ac8768b6890aff3.patch?full_index=1"
+    sha256 "662ef04018e749a0772ad099af209fc4e0caefba4ee0e7633be33182e0741dae"
+  end
 
   def install
     arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s

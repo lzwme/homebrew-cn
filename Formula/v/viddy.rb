@@ -24,16 +24,12 @@ class Viddy < Formula
   end
 
   test do
-    # Errno::EIO: Input/output error @ io_fread - /dev/pts/0
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     begin
-      pid = fork do
-        system bin/"viddy", "--interval", "1", "date"
-      end
+      pid = spawn bin/"viddy", "--interval", "1", "date"
       sleep 2
     ensure
       Process.kill("TERM", pid)
+      Process.wait(pid)
     end
 
     assert_match "viddy #{version}", shell_output("#{bin}/viddy --version")

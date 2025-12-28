@@ -4,17 +4,15 @@ class Youplot < Formula
   url "https://ghfast.top/https://github.com/red-data-tools/YouPlot/archive/refs/tags/v0.4.6.tar.gz"
   sha256 "126278103f6dbc4e28983b9e90a4e593f17e78b38d925a7df16965b5d3c145a4"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256                               arm64_tahoe:   "d29e20bfabf80a960825bb2f5eb22b697d946e019683e2844d5a96df3e4c76b5"
-    sha256                               arm64_sequoia: "f4f7a0b1d99fc9472d007745a96456a2d87626a21f9e2f1d781b81713904bc71"
-    sha256                               arm64_sonoma:  "0154fece0c0a8ddb10acbac21c168b33bacb2839ecc8f0f28d6d7dcf0ebe7047"
-    sha256                               arm64_ventura: "4bb2dff5ad2c3ed7d664ef15b09ce44f03b2ec9cb01fa538b6420b9aba56d5c1"
-    sha256                               sonoma:        "3373ffb2e43529719160f9be85457e89a87eb20648ca158c4b369b38d762b39c"
-    sha256                               ventura:       "b642704f1c8f283ef82b61ece8ee89f5bc758949d36c0f66b3bacd192843b223"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "563fd220cab701dd4db2819903e74fea7059cd91963169fafe06518fa4e50535"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c6afa1c010330d42e76bd3430040c5f289cea496fa805d0fb27a8494a33fd43"
+    sha256                               arm64_tahoe:   "1c739f9e27747bdbec27e82a88c3cc9ce882974a6918a3815cf5547d19f255e3"
+    sha256                               arm64_sequoia: "3188353334f66de3bc164af96efd052c0cd7041164d7f04be0fe6d24bdb0d66d"
+    sha256                               arm64_sonoma:  "02fa87a89be61f440f0729e7b2a89f51a898e7a94f167500244de0d345988d1b"
+    sha256                               sonoma:        "c0f738a4dd673db99a6541d7ec7a94314c7d9823a6a543902f1a090c39ed46b3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5765565dd1195a9709e85821ae349f88b87b4519fc27f6305260460d6e4eb545"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cf27ee6dd3a4fc889a2d085f897132c2586462351eb9e8731e8b8bd6952afb7"
   end
 
   uses_from_macos "ruby"

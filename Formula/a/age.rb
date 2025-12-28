@@ -1,20 +1,18 @@
 class Age < Formula
   desc "Simple, modern, secure file encryption"
   homepage "https://github.com/FiloSottile/age"
-  url "https://ghfast.top/https://github.com/FiloSottile/age/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "93bd89a16c74949ee7c69ef580d8e4cf5ce03e7d9c461b68cf1ace3e4017eef5"
+  url "https://ghfast.top/https://github.com/FiloSottile/age/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "71f69e5699a0b94aa1ca55b9b86b5bcf014f0c1412608a7a60b3e5fbbc553a77"
   license "BSD-3-Clause"
   head "https://github.com/FiloSottile/age.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c690cb985f65f678b227175723ef9bc12ea8c598b9200a8cb2b90cece7e0509e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "705c020da53169d3d628c90d98ffdbd0029da3e3ecfe84cca12a20fa4e0b76a1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "705c020da53169d3d628c90d98ffdbd0029da3e3ecfe84cca12a20fa4e0b76a1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "705c020da53169d3d628c90d98ffdbd0029da3e3ecfe84cca12a20fa4e0b76a1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5e44ff70a1bd1addf97fd49eab60126015d8f477493426a02866b927fa4cc485"
-    sha256 cellar: :any_skip_relocation, ventura:       "5e44ff70a1bd1addf97fd49eab60126015d8f477493426a02866b927fa4cc485"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "07553aac53785aceee7c03c807ab7b4d6b90770be185a0888ae7b1b7b635de9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "216ab3d1d02b2a71ff4003357d434c25d9e0357d7ac18f88ff5de2a645382c59"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd07d0e2a72ed2095988733afdd5a948ef9d3ecfc6d2de765bf67660a7b8f7a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd07d0e2a72ed2095988733afdd5a948ef9d3ecfc6d2de765bf67660a7b8f7a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd07d0e2a72ed2095988733afdd5a948ef9d3ecfc6d2de765bf67660a7b8f7a7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "baeb714550efa2509d92d8c984295d423dd6d9003dc4505b5e7a290c5b5144b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d92121e0250a95347609107752e2a8e8cf4a5061446f0c58c919ef05e152e112"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd3ab3b74840310914044d9c540b9ad753ebda66b664d2d9e874267e79bb2692"
   end
 
   depends_on "go" => :build

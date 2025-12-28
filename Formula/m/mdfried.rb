@@ -31,14 +31,19 @@ class Mdfried < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/mdfried --version")
 
-    # IO error: `No such device or address (os error 6)`
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     (testpath/"test.md").write <<~MARKDOWN
       # Hello World
     MARKDOWN
 
-    output = shell_output("#{bin}/mdfried #{testpath}/test.md 2>&1")
+    cmd = "#{bin}/mdfried #{testpath}/test.md 2>&1"
+    output = if OS.mac?
+      shell_output(cmd)
+    else
+      require "pty"
+      r, _w, pid = PTY.spawn({ "FONTCONFIG_FILE" => "#{etc}/fonts/fonts.conf" }, cmd)
+      Process.wait(pid)
+      r.read_nonblock(1024)
+    end
     assert_match "cursor position could not be read", output
   end
 end

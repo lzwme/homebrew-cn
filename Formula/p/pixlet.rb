@@ -7,12 +7,13 @@ class Pixlet < Formula
   head "https://github.com/tronbyt/pixlet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e7006149ff3de6757812317efb418126206df80e3698735fe0784b5bd6518fbe"
-    sha256 cellar: :any,                 arm64_sequoia: "4fa36e2efc607018d783f55ae89c3d2f8bc76bc8ee495a915335a5b8cca4ec73"
-    sha256 cellar: :any,                 arm64_sonoma:  "6557d738b0e023ae751f77104202a21d9aca15555ab31fdc75c5204252ba6f93"
-    sha256 cellar: :any,                 sonoma:        "453d460cc022d5f5ede9966f6af86d01fc39e9d63c7f44cc73525e732f1bda95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e8224ed39649220dd25a69060698f198e2508b589c925eade6f80cc4a1b9f23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8255890a67492eaa1554e5f87da53a402cc4a15d003fcfd58d69c2b0de02ef5c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "9d3cef5a781a01a23498849010f1e2daf91e2d0ab26f421c43a49540fadfb192"
+    sha256 cellar: :any,                 arm64_sequoia: "10b23c97730f2f6c90299f0a1fa19073733083b73bab1b2352f045fb1d171801"
+    sha256 cellar: :any,                 arm64_sonoma:  "6e45d0297a160e2e915262b2b72ed732786d47a8eaf7772a78af88b32b4f1c98"
+    sha256 cellar: :any,                 sonoma:        "1f84c7713fa3a47936e368fc6c532ce52ecfb5525721d4098aa8fecd5f829cb8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f9e7bfeff303c83a3e281846ad237f6a0427173fec32963cc3507602b6baf87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ad756e05ff556d9d75ba54371e83388aa0434c021c56623d0228a9ed605f5d7"
   end
 
   depends_on "go" => :build
@@ -28,10 +29,9 @@ class Pixlet < Formula
     end
 
     ldflags = "-s -w -X github.com/tronbyt/pixlet/runtime.Version=v#{version}"
-
     system "go", "build", *std_go_args(ldflags:, tags: "gzip_fonts")
 
-    generate_completions_from_executable(bin/"pixlet", "completion")
+    generate_completions_from_executable(bin/"pixlet", shell_parameter_format: :cobra)
   end
 
   test do

@@ -14,12 +14,13 @@ class Alot < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bafe239bf49b35e9221611636ee2fdeb27ab6c87226cd361d6cc2db75d0ec1b2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c32a9fc2edc767926054eec0088f7e046896a0ddb6db4fe81d8dcc6c3d2b6a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df061f67b09ef2ba202ee591aa2494f8d28f67102e4ad12dde5857a0f4d03d4d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d2cf7be85bb47c92443c4d4073783ffe081bb1b516a3c71906ecae224119db89"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5388543c998b2781ad298027a5c3b78747d68f2ec4b2f50b28f51d723b7445b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a5d1724c70d5a0e9afb11d269cce3b395ce1d3e58ac2bbd6236968004d4f505"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f75efaa2b8a673e7c156d2fe2f85351e16f96996ce3745aec793a3ab595601a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91861d611c164dce0fffacb4b2635184e2bdf99ec2d8c3facc3f1ec37fc99d91"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e276e9f74c21c55d1eef6bd0c5e22d2d412b7a52a1553cbed0e9bb1ce43046b4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dec524cd4c1013942005765ec9478e8cbbc39ffe5ba909799414a97ecebc8111"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0e294acc48f6670c5d9bd420a95ba19b124c6da01f57c846e7f93c6e1ef32a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5295e73a1b7fbe558a8ac1654654139f6f9b2dde2648bd16d58e1c80ec039925"
   end
 
   depends_on "sphinx-doc" => :build
@@ -114,8 +115,8 @@ class Alot < Formula
   end
 
   resource "urwid" do
-    url "https://files.pythonhosted.org/packages/e0/4d/f0832a6bf0986bdd770d61f9cf9e9915741171502c0c399bf934c72a3e5e/urwid-3.0.4.tar.gz"
-    sha256 "c3d0d2f47602b21949ffb8669a7ef0a8ca5fa13ed5c1ee1d2d81edf05616187f"
+    url "https://files.pythonhosted.org/packages/bb/d3/09683323e2290732a39dc92ca5031d5e5ddda56f8d236f885a400535b29a/urwid-3.0.3.tar.gz"
+    sha256 "300804dd568cda5aa1c5b204227bd0cfe7a62cef2d00987c5eb2e4e64294ed9b"
   end
 
   resource "urwidtrees" do

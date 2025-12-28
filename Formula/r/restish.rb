@@ -12,12 +12,13 @@ class Restish < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6246d26482830c8cd5f803e924e809d4435c0f392d463d386b07175f69e9d84"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2014864c672e3f861362294aa77e7f0dcacbff569a2347c550fa9f55677d15e5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "376b8c14238c5cf3f095346d7f7a4b8378aad09288c2fbfe12bb1bbc42919550"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4bbe15cbc23ce58c292823b9e4cd42a06673bdeb3aebe1c78534fac6c53df8a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "05f937623a0dfd7ec494f2f25dfa037c9899dfc9b3b341a394a3fcffed810d7d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12437fb2bf6d6c03963aab7f2a10dd861ec4f1d7ddd9258876b2e53d13612f93"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d9fdc528fbe2fccaca3bfab636db7872d1ede385b5709ed9c61e50085def7f66"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ef7937e4508123101de80ff1b78a6eaaee299c73207acfd8a7979a4b9e49a4f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d20de61133d8ea4332df51e6e452ac3ac113a7d555f95efab4840f03cbd1860"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ae17b3c10c11df3bb120154a6801e30e61a98242f9e42cf29f20e3d4fe80279b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "04054f2b8bbe4ae53bcb9a9b469d8e597f153ef2016bdf64f3982193d2b80cf1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33df4c0eccc2dc3c8cdca8c428ac26a756eac84750f3846ca0ff871aa0ff22d6"
   end
 
   depends_on "go" => :build
@@ -32,7 +33,7 @@ class Restish < Formula
 
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
 
-    generate_completions_from_executable(bin/"restish", "completion")
+    generate_completions_from_executable(bin/"restish", shell_parameter_format: :cobra)
   end
 
   test do

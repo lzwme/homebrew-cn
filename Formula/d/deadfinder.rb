@@ -4,16 +4,16 @@ class Deadfinder < Formula
   url "https://ghfast.top/https://github.com/hahwul/deadfinder/archive/refs/tags/1.9.1.tar.gz"
   sha256 "60942329779ba01d92532bdd3a937bfd04686693b911e6193692daee9634b4e6"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/hahwul/deadfinder.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1196ba7f69fa9a76f88885d99e4d5fa64075abbe0f6c89a4c2bb52989197d564"
-    sha256 cellar: :any,                 arm64_sequoia: "0785938ab4601e4c8371a92312db832f87987c81222eb739c54d943ecd7c8deb"
-    sha256 cellar: :any,                 arm64_sonoma:  "55e3dfeaebcc4fcef7a89bccdfea2b6f7992b9a42efd534bd6f2e76a463493c0"
-    sha256 cellar: :any,                 sonoma:        "defe5253cc1e6191ffe124ac210238638d4045a0d2d3c3d091871107ad571daa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b94db3d53d160760d22898af2ba63d16585acf50382f38de0b98bd36ab58f45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e7ca7f45309f8d124e6da42cabcdf6358fd4cc149d95f03aa88a712d83654a7"
+    sha256 cellar: :any,                 arm64_tahoe:   "005258486d707c6c6d63a2c03597e64f544f088ede9b9087db046aa4e405aece"
+    sha256 cellar: :any,                 arm64_sequoia: "146d09aa4890b2909b1210756224adf5430fe9182d8bdea1f69a9763f570063d"
+    sha256 cellar: :any,                 arm64_sonoma:  "8ca275b6c9592cc914faa47b2082a812ff7a6b243928f0e6819c4b37704dee8e"
+    sha256 cellar: :any,                 sonoma:        "1a99e5e1a82b6d028fe4ab482a45097868907a034082784a7172d0e9df879965"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f98f587d4c1ddfdb27ac0d2d01553a8b9b5b479b31f015280972985e34d513a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5315fc6ffc693ce9a5213595b8f972a990930905cff4308709b43a56c1b9b563"
   end
 
   depends_on "pkgconf" => :build

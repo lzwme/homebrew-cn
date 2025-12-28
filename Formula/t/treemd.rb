@@ -24,13 +24,17 @@ class Treemd < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/treemd --version")
 
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     (testpath/"test.md").write("# Test Heading\n\nThis is a test paragraph.")
 
     begin
       output_log = testpath/"output.log"
-      pid = spawn bin/"treemd", testpath/"test.md", [:out, :err] => output_log.to_s
+      if OS.mac?
+        pid = spawn bin/"treemd", testpath/"test.md", [:out, :err] => output_log.to_s
+      else
+        require "pty"
+        r, _w, pid = PTY.spawn("#{bin}/treemd #{testpath}/test.md > #{output_log}")
+        r.winsize = [80, 43]
+      end
       sleep 1
       assert_match "treemd - test.md - 1 headings", output_log.read
     ensure

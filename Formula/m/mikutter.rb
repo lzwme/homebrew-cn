@@ -4,19 +4,18 @@ class Mikutter < Formula
   url "https://mikutter.hachune.net/bin/mikutter-5.1.1.tar.gz"
   sha256 "ddff538aae249bd636604128bac1ccb526a4ed5c32f00b45d3c3c1dbcdb655de"
   license "MIT"
+  revision 1
   head "git://mikutter.hachune.net/mikutter.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "04c04af48a9b14b6d319694424d251a9c78a74cd6d3800de1609e0a7c85b00fd"
-    sha256 cellar: :any,                 arm64_sequoia: "ee481445aa3a12c60060f4f31d43d8d0378c8189e55c81c7400090b668f48abb"
-    sha256 cellar: :any,                 arm64_sonoma:  "b66c8480c121a81c26ec2b37e653fbb324c68c362c18e398ddc40129c3f9c9a4"
-    sha256 cellar: :any,                 arm64_ventura: "a4fc84de589aa90a7a78dc4c1d143bf4731f9ae7e251ac360bafffbdaa485db4"
-    sha256 cellar: :any,                 sonoma:        "ab93541b1f60859a5d8e524db4e29d532aff212bd97b5e039884bafb3c174861"
-    sha256 cellar: :any,                 ventura:       "b778e25fda7cb17ec806e6fb66166de3832d00af03f72f4b19bafb6319d246db"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef6f1ad4d02a73c31297fbf70f6c5a4c62f670f4ca3301ccbb1d3f14705d2deb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6009cbdabcfa5a3d06991b1b73bcf84412423289174569e276e3beddd419e3a"
+    sha256 cellar: :any,                 arm64_tahoe:   "11ddc87f285b209259432e9300ec37b00fd2c279ab26f99f21f9c30077cada8b"
+    sha256 cellar: :any,                 arm64_sequoia: "bff0efb2672daf2e67cb87d6b1588f188ce9764ccce7ead1f5feebda38a3bb93"
+    sha256 cellar: :any,                 arm64_sonoma:  "259ec1de6508d3d7233e51f80ddb16a3bcf4f18431b5d4fe1a7d892452eb6a0f"
+    sha256 cellar: :any,                 sonoma:        "16f048790f2e72a56a0101a3c504dc3f62f145afe40683ef315a10a8b92df2aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "33f0985f02df6c48f1292d1be0c7546505d8494b4d2a996b47acb8aaa0cb392d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "718a0a718deb541c1bd4991bc24e73127a9edb7c97ba01cfc5a217ce58ce63c2"
   end
 
   depends_on "at-spi2-core"

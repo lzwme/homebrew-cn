@@ -44,6 +44,10 @@ class Wxmaxima < Formula
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1300
   end
 
+  on_linux do
+    depends_on "xorg-server" => :test
+  end
+
   fails_with :clang do
     build 1300
     cause <<~EOS
@@ -86,10 +90,9 @@ class Wxmaxima < Formula
   end
 
   test do
-    # Error: Unable to initialize GTK+, is DISPLAY set properly
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    assert_equal "wxMaxima #{version}", shell_output("#{bin}/wxmaxima --version 2>&1").chomp
-    assert_match "extra Maxima arguments", shell_output("#{bin}/wxmaxima --help 2>&1", 1)
+    wxmaxima = "#{bin}/wxmaxima"
+    wxmaxima = "#{Formula["xorg-server"].bin}/xvfb-run #{wxmaxima}" if OS.linux? && ENV.exclude?("DISPLAY")
+    assert_match "wxMaxima #{version}", shell_output("#{wxmaxima} --version 2>&1").chomp
+    assert_match "extra Maxima arguments", shell_output("#{wxmaxima} --help 2>&1", 1)
   end
 end
