@@ -1,17 +1,17 @@
 class Scs < Formula
   desc "Conic optimization via operator splitting"
   homepage "https://web.stanford.edu/~boyd/papers/scs.html"
-  url "https://ghfast.top/https://github.com/cvxgrp/scs/archive/refs/tags/3.2.9.tar.gz"
-  sha256 "f3d9095fb01fd634d12ccbe6f79ed2acbb7101ad57b723157d44a49cbe187669"
+  url "https://ghfast.top/https://github.com/cvxgrp/scs/archive/refs/tags/3.2.10.tar.gz"
+  sha256 "4a6417ff73cdfeea6ddce99c5f10e3d15a3083abb7e44737b4405d24ee8884b0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c13642cfe0453436d0f43eb39566f75e4f04c5849d4b973e317f7899a1672fc7"
-    sha256 cellar: :any,                 arm64_sequoia: "461fe0b74cc5dd41fd8a031ac729c6237314ede47f6d428496ef6074cc6e6bab"
-    sha256 cellar: :any,                 arm64_sonoma:  "d2314d0694a4d2229a6db429a356a6440905b57c103614ee9727ec40a16a4c5a"
-    sha256 cellar: :any,                 sonoma:        "4f24992de230bab0d597b13150db3b449efeaf277a2c0de28f3b02b9a2c2a45b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "915268f6799f763232f4e5ec19fc7fe515d01e3d6b1be601999a88592c575c5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4f323c865ab69e6d5235aeecf07387a9db01849082f82caeb1abb624eec1557"
+    sha256 cellar: :any,                 arm64_tahoe:   "0ef68c58173c8a2cf0d8ad92c0f81f8e6f092d1178c9f5728c2a8dd09f5ea963"
+    sha256 cellar: :any,                 arm64_sequoia: "61ffe3ff4c4750851738fb78b3c971c8263ef4165f18e5ac3e43f35d8bb2b778"
+    sha256 cellar: :any,                 arm64_sonoma:  "095886205e419d1a80433caadee9ef6767bb2b69e149a7fcedf71ebb61f6395c"
+    sha256 cellar: :any,                 sonoma:        "6ff6705f89c87bb1e7cd5e2f0c8d58a3037af838a27d4528109aaa84ce097595"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1eec204b006ac6ffc6aadfe90940753a96f78a4c7aeee88da033b52d7b952bc8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4a5da000e6b0f4b4d6f89e53bd6782a95cbb50226357f8b767577c584210d40"
   end
 
   on_linux do

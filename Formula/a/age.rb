@@ -1,18 +1,18 @@
 class Age < Formula
   desc "Simple, modern, secure file encryption"
   homepage "https://github.com/FiloSottile/age"
-  url "https://ghfast.top/https://github.com/FiloSottile/age/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "71f69e5699a0b94aa1ca55b9b86b5bcf014f0c1412608a7a60b3e5fbbc553a77"
+  url "https://ghfast.top/https://github.com/FiloSottile/age/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "396007bc0bc53de253391493bda1252757ba63af1a19db86cfb60a35cb9d290a"
   license "BSD-3-Clause"
   head "https://github.com/FiloSottile/age.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd07d0e2a72ed2095988733afdd5a948ef9d3ecfc6d2de765bf67660a7b8f7a7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd07d0e2a72ed2095988733afdd5a948ef9d3ecfc6d2de765bf67660a7b8f7a7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd07d0e2a72ed2095988733afdd5a948ef9d3ecfc6d2de765bf67660a7b8f7a7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "baeb714550efa2509d92d8c984295d423dd6d9003dc4505b5e7a290c5b5144b2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d92121e0250a95347609107752e2a8e8cf4a5061446f0c58c919ef05e152e112"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd3ab3b74840310914044d9c540b9ad753ebda66b664d2d9e874267e79bb2692"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d0973c816849acd01fbcf90b81d502e0c2134e5c13a6f7976b55173e7d3567e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d0973c816849acd01fbcf90b81d502e0c2134e5c13a6f7976b55173e7d3567e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d0973c816849acd01fbcf90b81d502e0c2134e5c13a6f7976b55173e7d3567e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "03096cce35d10c3f8ece52f62efa7f4651171c74b152a796696079e9f23c56da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd530b9f55d8301bd1126a94505260a88a832e05c807e997f2c25473bc6af8d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "871198973767b6b4ca8dfc95202c3d23bf1af8ff0a3868c9830f1558d5991951"
   end
 
   depends_on "go" => :build

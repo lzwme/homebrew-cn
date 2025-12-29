@@ -7,12 +7,13 @@ class Trivy < Formula
   head "https://github.com/aquasecurity/trivy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "736fd4c3a992c16693cd74d4a7428a1756851d364158167bc87941c828457a05"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66e8a3619a4b6c62150a08e555fb0ebd5505a6fec9e12c79bca16173315c4f5d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5c31854001436332bc33e38a463c53a6725a0fd0161f7be272be2e05d32890e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4063537ebfe4e8fcc5e798be1d1872924d4fcb11d6fc70137a0876072740778b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "81ac448206616868162188bcc8fc9dcd54c161b58222abbc5ed094bdea03f004"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1896cd9a6ba970660ef27ecb7c5faca88e6895963ac5f9e6deb23ad1be1440ec"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0cc408d86410d9be6f6d1d9aefb1cecc65775e6e906b6a9d8bbfb5c0e6b5a283"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7fbff6cc920f5f32ff4b518ba9067b9039fa78396d8d560c13e1f87487445971"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20df353825a598a73db8eb9fbe3e7d5f5e51bffd7f1e4af09c7d0de698d572c7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9e2fc0c1e8c300437806279553340a119491f44b6fc69577ddeb5d35b50444ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9296188e3d2819c960dcd97b7f3a36f6b8731fddffe9a1a8dd8604e4c4ee4481"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c551a55ceeb43324fe23f6f3572366f7f347eaa2ab18e949b8ce42f5d3082220"
   end
 
   depends_on "go" => :build
@@ -27,7 +28,7 @@ class Trivy < Formula
     system "go", "build", *std_go_args(ldflags:), "./cmd/trivy"
     (pkgshare/"templates").install Dir["contrib/*.tpl"]
 
-    generate_completions_from_executable(bin/"trivy", "completion")
+    generate_completions_from_executable(bin/"trivy", shell_parameter_format: :cobra)
   end
 
   test do

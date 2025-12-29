@@ -6,14 +6,15 @@ class Ocrmypdf < Formula
   url "https://files.pythonhosted.org/packages/8c/52/be1aaece0703a736757d8957c0d4f19c37561054169b501eb0e7132f15e5/ocrmypdf-16.13.0.tar.gz"
   sha256 "29d37e915234ce717374863a9cc5dd32d29e063dfe60c51380dda71254c88248"
   license "MPL-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b1068631c1c6bae711b1735681b6c430cec607fa7228ca6db5e3dc99a2a1cbe1"
-    sha256 cellar: :any,                 arm64_sequoia: "6aa00560037836b540af85fc00f7df220ccbc27bfb4067ae1b9511895acbabe7"
-    sha256 cellar: :any,                 arm64_sonoma:  "00cbbde49e798ab7fa90942db83502144bcdf642bda6bae9b281bc988a901a64"
-    sha256 cellar: :any,                 sonoma:        "fa17533461586869e82693f4ae8d248f4a48beac4436d94e5fedda5eb422c6b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "38b92e35b621c2f0e73b658f5572a0dee9434f9e041c98e15bf110583e731b10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cd3572e2bdbbee8fb35ebfb515c91dad9f53338bb5d27f470b8a14f3593a803"
+    sha256 cellar: :any,                 arm64_tahoe:   "b2e108fa3fd8a370f28f4e46110a1a1c1fc8acf51f274836116ac135a074780f"
+    sha256 cellar: :any,                 arm64_sequoia: "9609656ee4c03c3ffdfb4bcc469756840cd2fceb2d26a5cb0c5f1d81c953b485"
+    sha256 cellar: :any,                 arm64_sonoma:  "93a7a8d2a803361f607ada042758b184f864dcb767291af12b5c77882ed93ff1"
+    sha256 cellar: :any,                 sonoma:        "4b4f5e4143bfef62dd61cbc9dafd44b6ed17945d98a0cccb18e367d3536e8a03"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e88320d3b5e8f3f1b2ab49a18be4f7f45dbc3153a4a249318e3d29db2710945"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9de21abbe350325efbee41d7d570e46c7042c08d5c7d0c0552d19b1fef6054ff"
   end
 
   depends_on "cmake" => :build # for pikepdf
@@ -80,8 +81,8 @@ class Ocrmypdf < Formula
   end
 
   resource "pdfminer-six" do
-    url "https://files.pythonhosted.org/packages/1d/50/5315f381a25dc80a8d2ea7c62d9a28c0137f10ccc263623a0db8b49fcced/pdfminer_six-20251107.tar.gz"
-    sha256 "5fb0c553799c591777f22c0c72b77fc2522d7d10c70654e25f4c5f1fd996e008"
+    url "https://files.pythonhosted.org/packages/fb/ef/543d0d44c9b03ac08316d31afd8e52b8ab8a86d03620ee0d61d6006bba9c/pdfminer_six-20251227.tar.gz"
+    sha256 "1d98781cf884d7274c694e742a94ffe6326ee11ee7ea79e73e1e75c4c74d91eb"
   end
 
   resource "pi-heif" do

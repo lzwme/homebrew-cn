@@ -8,12 +8,13 @@ class Tygo < Formula
   head "https://github.com/gzuidhof/tygo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbcd92f40af9744e9ba51a72afe6c7448bd0a15d00eef56d0ef97f507010fb39"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbcd92f40af9744e9ba51a72afe6c7448bd0a15d00eef56d0ef97f507010fb39"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fbcd92f40af9744e9ba51a72afe6c7448bd0a15d00eef56d0ef97f507010fb39"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6e91bb6c67113a05cd56699bb359cf80e2f3dff41f1e0f769efd9405ae4e4696"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3eb4c0e606b6f12f78c5d49b714e5057f2c1a004e6ba3be9e990bf0b06549025"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2acd601d4550badb0044bab8673684879d9a4706fa1a0ac8ad18b54f9c692103"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30489fe2f93459e58b4a614700bc44fa5291653e56da00e23a605280f6cf05a2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30489fe2f93459e58b4a614700bc44fa5291653e56da00e23a605280f6cf05a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30489fe2f93459e58b4a614700bc44fa5291653e56da00e23a605280f6cf05a2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9a3ccb639c69fa74a0ebe7e6139ec9853c691cf826a6bb34161e88725d741d77"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fdf9b24c93cd24c2ff8604011e9664dc098a6829c54044da1979fd2a937066d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "184150ec271b0743c5c4b5cfe4e816c45c4611ba25eb64171006f53f7b316a8f"
   end
 
   depends_on "go" => [:build, :test]
@@ -28,7 +29,7 @@ class Tygo < Formula
 
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"tygo", "completion")
+    generate_completions_from_executable(bin/"tygo", shell_parameter_format: :cobra)
     pkgshare.install "examples"
   end
 

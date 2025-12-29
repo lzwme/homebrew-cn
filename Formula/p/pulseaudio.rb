@@ -1,10 +1,19 @@
 class Pulseaudio < Formula
   desc "Sound system for POSIX OSes"
   homepage "https://wiki.freedesktop.org/www/Software/PulseAudio/"
-  url "https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-17.0.tar.xz"
-  sha256 "053794d6671a3e397d849e478a80b82a63cb9d8ca296bd35b73317bb5ceb87b5"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later", "BSD-3-Clause"]
   head "https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git", branch: "master"
+
+  stable do
+    url "https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-17.0.tar.xz"
+    sha256 "053794d6671a3e397d849e478a80b82a63cb9d8ca296bd35b73317bb5ceb87b5"
+
+    # Backport fix to run on macOS
+    patch do
+      url "https://gitlab.freedesktop.org/pulseaudio/pulseaudio/-/commit/c1990dd02647405b0c13aab59f75d05cbb202336.diff"
+      sha256 "46505b7f915a96a4e5f4c46cd8a2cfb5a74586bfd585d69f31b7b2e27e17a4c8"
+    end
+  end
 
   # The regex here avoids x.99 releases, as they're pre-release versions.
   livecheck do
@@ -15,15 +24,13 @@ class Pulseaudio < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "a5fb7e3985bda5814f9eac5afa28073cc8aa1690ef73981c98c5712731e0dc4b"
-    sha256 arm64_sequoia: "f279ea9efd07106c6e049b0d5bcca39a5fb06f5bd95079f998b2175726050c79"
-    sha256 arm64_sonoma:  "6c8704f6c5bce3450d75da7983a9d5ef2eca52ce9ef944c85a54e8e86c9c4354"
-    sha256 arm64_ventura: "8f36cbfefb820a38dce3efca6458c3837950448a59ff77337105f7f3cd550429"
-    sha256 sonoma:        "43cc094dbeb0681caa68cc3ed6e3dab115a0c52ae09fb39b6e3ac16a810edd4b"
-    sha256 ventura:       "26a46b5af9fa4436be2057e2c838ff5b4220cb6724ffa28ad10dec4437ba99ea"
-    sha256 arm64_linux:   "cbb10721c978f2be94f38829b6f1ab941cd6dd310fc00c45ee8b1d4ebdb16ab1"
-    sha256 x86_64_linux:  "0a8deac02332caf78aef95c279d76dd381ae1b08e0c8f74277880570a4d60527"
+    rebuild 2
+    sha256 arm64_tahoe:   "73c349f7d337ebb0bdd1169325685e79f4cb4c253dd920339a7bc52c833ea4c7"
+    sha256 arm64_sequoia: "3b0c4054a598015af0838395bfb6b96b40ff9297d4d382b80e06c6df7b76b9ab"
+    sha256 arm64_sonoma:  "bf612fdd30e917faf4c6627a1324f1ffaf509f5dfa92748199ff57c6ce1efcfb"
+    sha256 sonoma:        "07c3d88ac76789dc1c94b6881a11ea02868a3e0023f3fd3e2760b95c5aef2161"
+    sha256 arm64_linux:   "2122e7fdeb6dfbd23c71b1454e5da23792857aa2b0e9a78db172ab6448891675"
+    sha256 x86_64_linux:  "3e8c61fa5d337d64747fb305559f1a4821d75cecfd15dc59323450cde1816d29"
   end
 
   depends_on "gettext" => :build
@@ -56,8 +63,6 @@ class Pulseaudio < Formula
       ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5"
       "enabled"
     else
-      # Restore coreaudio module as default on macOS
-      inreplace "meson.build", "cdata.set('HAVE_COREAUDIO', 0)", "cdata.set('HAVE_COREAUDIO', 1)"
       "disabled"
     end
 
@@ -92,7 +97,7 @@ class Pulseaudio < Formula
     system "meson", "install", "-C", "build"
 
     # Don't hardcode Cellar references in configuration files
-    inreplace etc.glob("pulse/*"), prefix, opt_prefix, audit_result: false
+    inreplace etc.glob("pulse/*").select(&:file?), prefix, opt_prefix, audit_result: false
 
     # Create the `default.pa.d` directory to avoid error messages like
     # https://github.com/Homebrew/homebrew-core/issues/224722

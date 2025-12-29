@@ -1,11 +1,18 @@
 class Watch < Formula
   desc "Executes a program periodically, showing output fullscreen"
   homepage "https://gitlab.com/procps-ng/procps"
-  url "https://gitlab.com/procps-ng/procps.git",
-      tag:      "v4.0.5",
-      revision: "f46b2f7929cdfe2913ed0a7f585b09d6adbf994e"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  head "https://gitlab.com/procps-ng/procps.git", branch: "master"
+
+  stable do
+    url "https://downloads.sourceforge.net/project/procps-ng/Production/procps-ng-4.0.5.tar.xz"
+    sha256 "c2e6d193cc78f84cd6ddb72aaf6d5c6a9162f0470e5992092057f5ff518562fa"
+
+    # guard `SIGPOLL` to fix build on macOS, upstream pr ref, https://gitlab.com/procps-ng/procps/-/merge_requests/246
+    patch do
+      url "https://gitlab.com/procps-ng/procps/-/commit/2dc340e47669e0b0df7f71ff082e05ac5fa36615.diff"
+      sha256 "a6ae69b3aff57491835935e973b52c8b309d3943535537ff33a24c78d18d11aa"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "9c5d3d966dd480ec6c0db515cbc01609736ece1123e1069d1b99d5199431f143"
@@ -18,30 +25,28 @@ class Watch < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6bb244d3c65a2710ac9922b4cd7d2bf25c22ebd7a865f26b7e32d512291efff"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "gettext" => :build
-  depends_on "libtool" => :build
-  depends_on "pkgconf" => :build
+  head do
+    url "https://gitlab.com/procps-ng/procps.git", branch: "master"
 
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "gettext" => :build
+    depends_on "libtool" => :build
+  end
+
+  depends_on "pkgconf" => :build
   depends_on "ncurses"
 
   conflicts_with "visionmedia-watch"
 
-  # guard `SIGPOLL` to fix build on macOS, upstream pr ref, https://gitlab.com/procps-ng/procps/-/merge_requests/246
-  patch do
-    url "https://gitlab.com/procps-ng/procps/-/commit/2dc340e47669e0b0df7f71ff082e05ac5fa36615.diff"
-    sha256 "a6ae69b3aff57491835935e973b52c8b309d3943535537ff33a24c78d18d11aa"
-  end
-
   def install
-    system "autoreconf", "--force", "--install", "--verbose"
-
     args = %w[
       --disable-nls
       --enable-watch8bit
     ]
     args << "--disable-pidwait" if OS.mac?
+
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system "./configure", *args, *std_configure_args
     system "make", "src/watch"
     bin.install "src/watch"
@@ -51,9 +56,15 @@ class Watch < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/watch --version")
 
-    # Fails in Linux CI with "getchar(): Inappropriate ioctl for device"
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    system bin/"watch", "--errexit", "--chgexit", "--interval", "1", "date"
+    cmd = "#{bin}/watch --errexit --chgexit --interval 1 date"
+    output = if OS.mac?
+      shell_output(cmd)
+    else
+      require "pty"
+      r, _w, pid = PTY.spawn(cmd)
+      Process.wait(pid)
+      r.read_nonblock(4096)
+    end
+    assert_match "Every 1.0s: date", output
   end
 end

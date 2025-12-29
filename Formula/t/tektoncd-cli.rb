@@ -11,12 +11,13 @@ class TektoncdCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b5d81112b16e845cc7be2c90b036c572392506db2253166cb2e6dd206ac3e344"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dcbaf894431dce86b992f5d8b35d24df41245c0d73a34e73d2fb6a6c9260a623"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f19ee9251a5a47ef112579d6b4a38a99912c196659b36289ca355e7af138178"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3e9289d35373c9baf4ac42bce9ac5946fc95ba4a6885c3f716fc3be39aaf98f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1af6245eba6389dc00cbc4aed9f0e583a20c6c497e7ed31f28f682aebb286b78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1715fc112159d402f1abd1e40e9b50947851bb258fbaf1ad7f97b214868c7cd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9bc9ac74ad61b93bc1cedf9a62ca877cb8dc9a77f9d92d763b257cacde2b0e78"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf6eda0825027c670d76902ffa49106940d03f910d20e32d55e5228daf32dffb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "308df02ca4ab15a9dc0c695ba76d22207aa2f8d59c7446a6a4db69abf8b744ca"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c07d413a8e34efcbaa4c1d20b56ccc329119b25a13f1d83f90df1465cfa26730"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "070a5333d68d95c8ba40301d572ea138e4a3a3cbfd95aadb1680b9bf5850e50f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3961abece37fd68476161a8c5fd427521ce30cbe033d2ad388f348d2688c4a6"
   end
 
   depends_on "go" => :build
@@ -25,7 +26,7 @@ class TektoncdCli < Formula
     system "make", "bin/tkn"
     bin.install "bin/tkn" => "tkn"
 
-    generate_completions_from_executable(bin/"tkn", "completion")
+    generate_completions_from_executable(bin/"tkn", shell_parameter_format: :cobra)
   end
 
   test do

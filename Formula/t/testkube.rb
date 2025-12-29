@@ -12,12 +12,13 @@ class Testkube < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "216e67fb7cc4650d40ee3272014c1579577b2f607c06933c52bd7b2e68bdc71e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44ac18e9e48a4a7c32f6d048f16e4af6fc513ad785b9b9416c9e34a4b4d69a04"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21dfb255c03737d81135e6bb71331ccd08fd4988e3e620f5779dfec70ec07829"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a0e646e1031a6324781865f0f1a58c204d33ed4b2f6b22dcc2abf42d79d2700"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a62bcac5928b2aee34344ec99b18ab94aecf6f02845b556438f14bd3d8aac74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9d9e0726c42c0d081ba624db61477eda766e1c0dd1015b35f82e9da508716c0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80f15e37452f3a2d89dd0b91f65f14eeefd68b35c95f9d22f8032b0fda19d0a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0ac98568f23255eca4771a49514742e637900c79116950479fc012e06a70567"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63ce28f437e1c5761020690abf8349d37b64e3b9687ae5d4393c735ec0d36628"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c79a724b3fa53872dcdc69b4bc3dbc0de9e23b49d0a6431da3a7c63f2920992b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "233d0abf568f38ae5f4a7b5925c8a1f23c79908bd902b767cda143a9cfa001f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10ef31691379c8e005e5b01b4964e0020b5a86833b6d19e94068375441e404c3"
   end
 
   depends_on "go" => :build
@@ -30,7 +31,7 @@ class Testkube < Formula
     system "go", "build", *std_go_args(ldflags:, output: bin/"kubectl-testkube"), "./cmd/kubectl-testkube"
     bin.install_symlink "kubectl-testkube" => "testkube"
 
-    generate_completions_from_executable(bin/"kubectl-testkube", "completion")
+    generate_completions_from_executable(bin/"kubectl-testkube", shell_parameter_format: :cobra)
   end
 
   test do

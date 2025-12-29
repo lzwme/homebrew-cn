@@ -7,13 +7,13 @@ class Whalebrew < Formula
   head "https://github.com/whalebrew/whalebrew.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b125f806242ba20dc7c14b14a23467cf59e022911036674f33a540aad35af8b3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b125f806242ba20dc7c14b14a23467cf59e022911036674f33a540aad35af8b3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b125f806242ba20dc7c14b14a23467cf59e022911036674f33a540aad35af8b3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "132b42892e11feae8f7498c190024daf51ea29f7dcb9480b8a67e2fe6989db94"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "812e1faaafe66a26fd5c72c52659f11f46968a588d7afef73d133a6b79964dea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85863cd113b47cc45953fcb9eb928710e08eae63290ed8a09678cdfa8c89a23f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1f6830e7d52fc290dc2436ff9c6284990599dcb4c0425ea5f88e7010e0e6e40"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1f6830e7d52fc290dc2436ff9c6284990599dcb4c0425ea5f88e7010e0e6e40"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1f6830e7d52fc290dc2436ff9c6284990599dcb4c0425ea5f88e7010e0e6e40"
+    sha256 cellar: :any_skip_relocation, sonoma:        "37d1cce1732c129b95ecb9802c4e59cf6d404407835d545f0d5019387e0ef37d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d87aaaf730a6451d6442f3caa38545e5bb3ed6779926d712ea111823d26f3058"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0143e7491195c0620ed7a492aab85c01fbe901849955acc5278a23d224b01550"
   end
 
   depends_on "go" => :build
@@ -32,7 +32,7 @@ class Whalebrew < Formula
       -X github.com/whalebrew/whalebrew/version.Version=#{version}+homebrew
     ]
     system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin/"whalebrew", "completion")
+    generate_completions_from_executable(bin/"whalebrew", shell_parameter_format: :cobra)
   end
 
   test do

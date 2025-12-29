@@ -7,12 +7,13 @@ class Tracetest < Formula
   head "https://github.com/kubeshop/tracetest.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4e174c5e1728e5f76c7474244d22351c5c0ec14d02d3f9e0fa9cf0471fd798a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4e174c5e1728e5f76c7474244d22351c5c0ec14d02d3f9e0fa9cf0471fd798a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4e174c5e1728e5f76c7474244d22351c5c0ec14d02d3f9e0fa9cf0471fd798a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d6b1da02531d87d79eac9d39dfb0ca789d31dfb1f4ee9711b2f65a6031609240"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "00de76769264422d7739b45c3bfcafcf599a347ef4e2dbb666ad39951874e33a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b93cbf60776d43d78f16f9f6235519ff7c1a3c4546770b680fd44e443f4df7a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b58559ad7258bb4a1e2dc9903e0e242575e902f74f09c80113674c36d37de090"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b58559ad7258bb4a1e2dc9903e0e242575e902f74f09c80113674c36d37de090"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b58559ad7258bb4a1e2dc9903e0e242575e902f74f09c80113674c36d37de090"
+    sha256 cellar: :any_skip_relocation, sonoma:        "24ca141eae8774c3027fa5fcd9adaa53da4583f50f70ef202690a78614192ba9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "76ef355e9882480d77b0169167f8fa1987da394adfe293b3ebd19547883ee999"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92d2ceaeb6301b5cf9376ac4f915427c575dab211370621627234070f7b5127a"
   end
 
   depends_on "go" => :build
@@ -21,7 +22,7 @@ class Tracetest < Formula
     ldflags = "-s -w -X github.com/kubeshop/tracetest/cli/config.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cli"
 
-    generate_completions_from_executable(bin/"tracetest", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"tracetest", shell_parameter_format: :cobra)
   end
 
   test do

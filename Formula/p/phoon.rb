@@ -7,20 +7,9 @@ class Phoon < Formula
   license "BSD-2-Clause"
   version_scheme 1
 
-  # We check the site using HTTP (rather than HTTPS) because this server
-  # produces the following cURL error on our Ubuntu CI:
-  #   curl: (56) GnuTLS recv error (-110): The TLS connection was non-properly
-  #   terminated.
-  # If/when this is resolved, we can update this to use `url :homepage`.
   livecheck do
-    url "http://www.acme.com/software/phoon/"
-    regex(/href=.*?phoon[._-]v?(\d{1,2}[a-z]+\d{2,4})\.t/i)
-    strategy :page_match do |page, regex|
-      page.scan(regex).map { |match| Date.parse(match.first)&.strftime("%Y%m%d") }
-    end
+    skip "No longer developed or maintained"
   end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "636b515de152863a3694ddd5cab6745302e40fc8d649cd14bcf2b1debc5c2ba6"

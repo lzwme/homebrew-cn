@@ -6,12 +6,13 @@ class Vexctl < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a98d2b6408c16612ccb3d1db6ecdda65bbf6b40d4b07adca31dd8704666aafa4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a98d2b6408c16612ccb3d1db6ecdda65bbf6b40d4b07adca31dd8704666aafa4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a98d2b6408c16612ccb3d1db6ecdda65bbf6b40d4b07adca31dd8704666aafa4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9db5167ea7db6957525725f29c57b9a72f0b758ec16f002a44af866e2100e138"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fdb980c111f359a32bc0597528f517846a2b806cb25b28cf09d3373ec315b47f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fee7ab65814a907c75c47fede705015488316e2e5d145e9f8822e1c3bc37f6be"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f2c5b287cf8b296ef3e6d85b38212179eebea16f070bfce1baea6ac0d119e7cf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2c5b287cf8b296ef3e6d85b38212179eebea16f070bfce1baea6ac0d119e7cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2c5b287cf8b296ef3e6d85b38212179eebea16f070bfce1baea6ac0d119e7cf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dcae34a87491e8efef1aa942274facd1fc985f36e76cf6b9671e4b0d66738335"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1adeeacdaf6ad3a33abafc10856dc356bfab928a5a18de8cfa69a015ad18f7ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9053ff8fcb65e7f520118e1d2a02dd377a0a9951b5dc3f4a667e640e81eb919"
   end
 
   depends_on "go" => :build
@@ -27,7 +28,7 @@ class Vexctl < Formula
 
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"vexctl", "completion")
+    generate_completions_from_executable(bin/"vexctl", shell_parameter_format: :cobra)
   end
 
   test do

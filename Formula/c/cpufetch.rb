@@ -26,24 +26,15 @@ class Cpufetch < Formula
   end
 
   test do
-    # This fails in our Docker container.
-    return if ENV["HOMEBREW_GITHUB_ACTIONS"].present? && OS.linux?
-
     ephemeral_arm = ENV["HOMEBREW_GITHUB_ACTIONS"].present? &&
                     Hardware::CPU.arm? &&
                     OS.mac? &&
                     MacOS.version > :big_sur
-    expected_result, line = if ephemeral_arm
-      [1, 1]
-    elsif OS.mac? && Hardware::CPU.intel?
-      [0, 1]
-    else
-      [0, 0]
-    end
-    actual = shell_output("#{bin}/cpufetch --debug 2>&1", expected_result).lines[line].strip
+    expected_result = ephemeral_arm ? 1 : 0
+    actual = shell_output("#{bin}/cpufetch --debug 2>&1", expected_result).lines[0..1].join.strip
 
     system_name = OS.mac? ? "macOS" : OS.kernel_name
-    arch = (OS.mac? && Hardware::CPU.arm?) ? "ARM" : "x86 / x86_64"
+    arch = Hardware::CPU.arm? ? "ARM" : "x86 / x86_64"
     expected = "cpufetch v#{version} (#{system_name} #{arch} build)"
 
     assert_match expected, actual

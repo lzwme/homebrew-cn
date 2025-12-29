@@ -7,15 +7,13 @@ class Terrascan < Formula
   head "https://github.com/tenable/terrascan.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b40d6c29fb9eecb6f19626e2f1b9f65babf3be3388542f81ed459f153a49399"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55eba53ea3122827a508c8e157c2454488eba175c7be3f8bf5b936de423b0139"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f60423de629cd20ce0ff69e89135366135b39210338c3888c2431b4c7426b9d0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "592b8157f3ccc5c93b0639f8309a4a5a302ca89df28ac7d2d0952844db61966a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "32e3939c3b64a6998af3fdb27aa6d47e783c4add9025b96b26a752075c5759c8"
-    sha256 cellar: :any_skip_relocation, ventura:       "d8339a426f1cdf82ac986fdf3a72ecb4b8405c2c34f17552aca0ff55218de9ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b993936733949479fd684722cec212f9820553e9e21fede7b3da620067c1a69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc9651bca3ae4b21cea476f602ee391066e161aa1151a3eb80d32b5c725ffe1e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "036641e1af3550fa344928b99fdabcb1b11961e3b0812bb15f8f3cddaa259023"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c5210ca6ec0c8dd636a8e5a154f8ea0b75361beead716efbd83143b4475d986"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "835ec90adf52e9d99a51bdc96789a542529bcdcf21c5e511c2f0ed961c5a1dff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c48066b69004a0dca1cbc0c5c8071430f9bb61c208a85c43e1814a3d48573614"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca058cf4a6962757ebe84e7c2c4a910a53a17f26a52f6b7675248c6437613f1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1da9aea6b543cbb9ffb3716413505ed1ed0ec1ad731a62309b54c39211ab3b51"
   end
 
   depends_on "go" => :build
@@ -24,7 +22,7 @@ class Terrascan < Formula
     ldflags = "-s -w -X google.golang.org/protobuf/reflect/protoregistry.conflictPolicy=ignore"
     system "go", "build", *std_go_args(ldflags:), "./cmd/terrascan"
 
-    generate_completions_from_executable(bin/"terrascan", "completion")
+    generate_completions_from_executable(bin/"terrascan", shell_parameter_format: :cobra)
   end
 
   test do

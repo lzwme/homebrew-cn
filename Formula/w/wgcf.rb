@@ -7,14 +7,13 @@ class Wgcf < Formula
   head "https://github.com/ViRb3/wgcf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ba799c69141d00580e0b958f56c0a3af8b1dc8e0ce8951e40dd3bc634af35574"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2d96ee5fd4aa174e7b9359a066fd9debdfcd3a7f6a02530fe30d35a410d1530"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2d96ee5fd4aa174e7b9359a066fd9debdfcd3a7f6a02530fe30d35a410d1530"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c2d96ee5fd4aa174e7b9359a066fd9debdfcd3a7f6a02530fe30d35a410d1530"
-    sha256 cellar: :any_skip_relocation, sonoma:        "47628a8d27650cbb1bf170fe9483c572e720e92aaefd8c0eab5e5b73afa573b2"
-    sha256 cellar: :any_skip_relocation, ventura:       "47628a8d27650cbb1bf170fe9483c572e720e92aaefd8c0eab5e5b73afa573b2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d66b38508019bc88af75c9ae9080316ecbd6755b8bb7041eab3746774543abe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c71ca47de68b992c0f2db9643994547cdaf63fa15810098257552cae6ee747e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c9adcc8bf972aaa8df188ecbd7e7063fd6c1c7c5a48329d621101c90b72044f7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9adcc8bf972aaa8df188ecbd7e7063fd6c1c7c5a48329d621101c90b72044f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9adcc8bf972aaa8df188ecbd7e7063fd6c1c7c5a48329d621101c90b72044f7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8831843b37878ac2c9be55e77cbc9a0ece6eb0f42e3bc24f42502df75caebdc3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "16c0287850880581b36ca81efa48b9eb2adc01bc5d029e9697b19963a091b4c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3890d93b2ee62f417566b021fa9affd15a59417e8bf1a6d66e6f106a55c5ee53"
   end
 
   depends_on "go" => :build
@@ -22,7 +21,7 @@ class Wgcf < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"wgcf", "completion")
+    generate_completions_from_executable(bin/"wgcf", shell_parameter_format: :cobra)
   end
 
   test do

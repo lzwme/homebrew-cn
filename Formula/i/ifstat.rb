@@ -1,7 +1,9 @@
 class Ifstat < Formula
   desc "Tool to report network interface bandwidth"
   homepage "http://gael.roualland.free.fr/ifstat/"
-  url "http://gael.roualland.free.fr/ifstat/ifstat-1.1.tar.gz"
+  # Upstream is only available via HTTP, so we prefer Debian's HTTPS mirror
+  url "https://deb.debian.org/debian/pool/main/i/ifstat/ifstat_1.1.orig.tar.gz"
+  mirror "http://gael.roualland.free.fr/ifstat/ifstat-1.1.tar.gz"
   sha256 "8599063b7c398f9cfef7a9ec699659b25b1c14d2bc0f535aed05ce32b7d9f507"
   license "GPL-2.0-or-later"
 

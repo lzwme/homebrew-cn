@@ -180,9 +180,6 @@ class Bilix < Formula
   end
 
   test do
-    # By pass linux CI test due to the networking issue for `bilix info`
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    system bin/"bilix", "info", "https://www.bilibili.com/video/av20203945/"
+    assert_match "day by day", shell_output("#{bin}/bilix info https://www.bilibili.com/video/av20203945/")
   end
 end

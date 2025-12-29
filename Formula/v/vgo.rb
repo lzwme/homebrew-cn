@@ -7,12 +7,13 @@ class Vgo < Formula
   head "https://github.com/vg006/vgo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "625060653e73c0e996276bc83f4f6dfc586c10739248ea167e296ef4d1212d64"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "625060653e73c0e996276bc83f4f6dfc586c10739248ea167e296ef4d1212d64"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "625060653e73c0e996276bc83f4f6dfc586c10739248ea167e296ef4d1212d64"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ed465eb32ba71c56fbb1f2430e89f8db84230a825ea361a7332d622065be2ee0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9544aa949090a4777ed45e28cb84512c712899bb7d2f512e4629174e261a3f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00919354e85aa7eabe2a62e05f80e9704ec285193c5caf5a5a752d26af38084f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "49332789cd1015c1e0cc9a4178c8e258207a6579aba7d4f6275322aef8ce77e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49332789cd1015c1e0cc9a4178c8e258207a6579aba7d4f6275322aef8ce77e6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49332789cd1015c1e0cc9a4178c8e258207a6579aba7d4f6275322aef8ce77e6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e4bc7f63a8904dd9303fa6c648e166114851f1813b6e0f2616196d09f9a22e89"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44c08e12409364cc439bfa6c9f936e9c18a4f6bb1e3dcb1a28e077b0f5776256"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd6d56ca79564aae50cd1ccacb48c3b3fecd0dd378a12a5fddaa8fc77f75e369"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,7 @@ class Vgo < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"vgo", "completion")
+    generate_completions_from_executable(bin/"vgo", shell_parameter_format: :cobra)
   end
 
   test do

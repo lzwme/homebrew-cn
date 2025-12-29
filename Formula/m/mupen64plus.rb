@@ -62,8 +62,7 @@ class Mupen64plus < Formula
   end
 
   test do
-    # Disable test in Linux and Tahoe CI because it hangs because a display is not available.
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    # Disable test in Tahoe CI because it hangs because a display is not available.
     return if OS.mac? && MacOS.version == :tahoe && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     resource "rom" do
@@ -71,8 +70,7 @@ class Mupen64plus < Formula
       sha256 "b5fe9d650a67091c97838386f5102ad94c79232240f9c5bcc72334097d76224c"
     end
 
-    resource("rom").stage do
-      system bin/"mupen64plus", "--testshots", "1", "m64p_test_rom.v64"
-    end
+    resource("rom").stage(testpath)
+    system bin/"mupen64plus", "--testshots", "1", "m64p_test_rom.v64"
   end
 end

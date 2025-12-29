@@ -7,12 +7,13 @@ class Talhelper < Formula
   head "https://github.com/budimanjojo/talhelper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12b1656f1a11b5809c050d12af65c68a8139c6465fd804bef3171e53d91a44e1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12b1656f1a11b5809c050d12af65c68a8139c6465fd804bef3171e53d91a44e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12b1656f1a11b5809c050d12af65c68a8139c6465fd804bef3171e53d91a44e1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7ca2e53914a34ca668d4c82f52fa7f92b80f1b9f58d0b9315ddd8c96329419d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3be44cabd989d5b54c57209ea082e793d4cef3595b5180ea38faa50e32b039bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb0a4e5ae49d265c69e3f526bee99fd7b0f57bc3d0b112891ad737b07a326a93"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd8a55a7f04591267c55530576608510b9c3b7a0b20c67d734ad6e4500f58667"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd8a55a7f04591267c55530576608510b9c3b7a0b20c67d734ad6e4500f58667"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd8a55a7f04591267c55530576608510b9c3b7a0b20c67d734ad6e4500f58667"
+    sha256 cellar: :any_skip_relocation, sonoma:        "60ea2581d753fad91e9d43edab01cfe996e09ae571b214cfbcf5bc2689bf4320"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2264372e53b83a94db95e2e5320655d0022d0800c26eb2c624561bdcfa95017c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff56ad1cfc8a83688bf1cb9001bab11c8f4f03bd3a8a870480a50465dbd34c7f"
   end
 
   depends_on "go" => :build
@@ -21,7 +22,7 @@ class Talhelper < Formula
     ldflags = "-s -w -X github.com/budimanjojo/talhelper/v#{version.major}/cmd.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"talhelper", "completion")
+    generate_completions_from_executable(bin/"talhelper", shell_parameter_format: :cobra)
     pkgshare.install "example"
   end
 

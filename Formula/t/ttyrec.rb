@@ -1,7 +1,9 @@
 class Ttyrec < Formula
   desc "Terminal interaction recorder and player"
   homepage "http://0xcc.net/ttyrec/"
-  url "http://0xcc.net/ttyrec/ttyrec-1.0.8.tar.gz"
+  # Upstream is only available via HTTP, so we prefer Debian's HTTPS mirror
+  url "https://deb.debian.org/debian/pool/main/t/ttyrec/ttyrec_1.0.8.orig.tar.gz"
+  mirror "http://0xcc.net/ttyrec/ttyrec-1.0.8.tar.gz"
   sha256 "ef5e9bf276b65bb831f9c2554cd8784bd5b4ee65353808f82b7e2aef851587ec"
   license "BSD-4-Clause"
   revision 1

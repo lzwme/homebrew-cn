@@ -3552,6 +3552,7 @@ Homebrew-homebrew-core/Formula/k/kyma-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kyoto-cabinet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kyoto-tycoon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kytea.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kyua.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kyverno.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lab.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/labctl.rb, Homebrew/homebrew-core, 1
@@ -14869,6 +14870,7 @@ Homebrew-homebrew-cask/Casks/t/talon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tandem.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/taobao.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tap-forms.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/taphouse.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tartelet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/taskade.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/taskbar.rb, Homebrew/homebrew-cask, 1

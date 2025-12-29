@@ -1,8 +1,8 @@
 class Geogram < Formula
   desc "Programming library of geometric algorithms"
   homepage "https://github.com/BrunoLevy/geogram/wiki"
-  url "https://ghfast.top/https://github.com/BrunoLevy/geogram/releases/download/v1.9.7/geogram_1.9.7.tar.gz"
-  sha256 "b6c99fbdbefd633f03443c9c6359dfb6eb26cda0a54202793a633cce34cff6bf"
+  url "https://ghfast.top/https://github.com/BrunoLevy/geogram/releases/download/v1.9.8/geogram_1.9.8.tar.gz"
+  sha256 "6df1186d8e7ed5a7ee02cf486f823cbc74400199822709b2b3faa9b7d6596c96"
   license all_of: ["BSD-3-Clause", :public_domain, "LGPL-3.0-or-later", "MIT"]
   head "https://github.com/BrunoLevy/geogram.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Geogram < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "339c1b2f4c08c37877ed0ee8729cf875d03c69ba49927a0023fb4babc05f7bf2"
-    sha256 cellar: :any,                 arm64_sequoia: "14f837b32d5bda21736fdb8427ce9917498d88fa57a96baeda598ff0b70277fd"
-    sha256 cellar: :any,                 arm64_sonoma:  "86cdf2e7221acab9b10bc56741384f246646d23cdb36d8e81e83bafb5d130903"
-    sha256 cellar: :any,                 sonoma:        "aad14ec877ebce04d7f95cc99457572aba9b64cefd693f49dc34690540de82fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2097eaf3fe7c590ca188c708c3d8fc10493c23156f27e6eb61912a10c958e1b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31f19bd58253d1ebdfe5d0d467b2914299e9c3debb533f5a45e7709cac7ffa50"
+    sha256 cellar: :any,                 arm64_tahoe:   "fcbcffb58f843416edb93e723c69ad4f863ecf415afed56004f573aedc221e77"
+    sha256 cellar: :any,                 arm64_sequoia: "f6eceeb388082e67fa7bb28980f309d7aa9b0371a85f773d2199144e6dd10b48"
+    sha256 cellar: :any,                 arm64_sonoma:  "d2b2962192fb8cabc7df065a773c8208fda5ac12313e9f261d8a0fb3b0bbdde6"
+    sha256 cellar: :any,                 sonoma:        "8172ee2fdd0d49444ca551c0872707f02b8ae6ab79fc33eae619a6d385ccd440"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "af84f2817f95d088a2aa5a2ea55d6a3f0e0a969a37d32a04e4d6a931d45ff04c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed8a1d410f9ecbb2ee5fc85576e947ab231b78026b08e909d9776d623635439f"
   end
 
   depends_on "cmake" => :build

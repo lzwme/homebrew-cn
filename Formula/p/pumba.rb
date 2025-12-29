@@ -25,22 +25,26 @@ class Pumba < Formula
   depends_on "go" => :build
 
   def install
-    goldflags = %W[
+    ldflags = %W[
       -s -w
       -X main.version=#{version}
       -X main.commit=#{tap.user}
       -X main.branch=master
       -X main.buildTime=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags: goldflags), "./cmd"
+    system "go", "build", *std_go_args(ldflags:), "./cmd"
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/pumba --version")
-    # CI runs in a Docker container, so the test does not run as expected.
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
-    output = pipe_output("#{bin}/pumba rm test-container 2>&1")
-    assert_match "Is the docker daemon running?", output
+    # Linux CI container on GitHub actions exposes Docker socket but lacks permissions to read
+    expected = if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+      "/var/run/docker.sock: connect: permission denied"
+    else
+      "Is the docker daemon running?"
+    end
+
+    assert_match expected, shell_output("#{bin}/pumba rm test-container 2>&1", 1)
   end
 end

@@ -12,12 +12,13 @@ class Tenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6f88f4ab71b33bbe739a34e73291b1ba7c9651ac2636a700af5fe3974004f01"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6f88f4ab71b33bbe739a34e73291b1ba7c9651ac2636a700af5fe3974004f01"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6f88f4ab71b33bbe739a34e73291b1ba7c9651ac2636a700af5fe3974004f01"
-    sha256 cellar: :any_skip_relocation, sonoma:        "655c1bd74c52e47d8786eab4a3e22c0fe45d0c175f534d6c91c3f6b01635e9ba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd1af3dae5d6db1014daa38e96bab6057e64bada4c412eb56224c9ce4840f8ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf1a87cdda83db11d58d15370971d429a5d930107ac2549488d7ea2acfb6a25c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ba012cb4aa497e16c74cedcdbc73985833b5b68e446359dc42c0818d92cadcb8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba012cb4aa497e16c74cedcdbc73985833b5b68e446359dc42c0818d92cadcb8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba012cb4aa497e16c74cedcdbc73985833b5b68e446359dc42c0818d92cadcb8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "84279c6c46997ad972f50376d20af6caa7c8531a1a0160930fd29fe9573c4494"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b62bd907c933a33db60ad630713b2341103a8370773274850403cd8df97a5a6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9a1c1fd851a368459edcf1a299713a1fac7260b09703159347bb3f989aa8b5f"
   end
 
   depends_on "go" => :build
@@ -35,7 +36,7 @@ class Tenv < Formula
     %w[tenv terraform terragrunt terramate tf tofu atmos].each do |f|
       system "go", "build", *std_go_args(ldflags:, output: bin/f), "./cmd/#{f}"
     end
-    generate_completions_from_executable(bin/"tenv", "completion")
+    generate_completions_from_executable(bin/"tenv", shell_parameter_format: :cobra)
   end
 
   test do

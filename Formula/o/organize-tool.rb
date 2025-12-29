@@ -6,17 +6,16 @@ class OrganizeTool < Formula
   url "https://files.pythonhosted.org/packages/3c/bd/1b4217217aadce0d46e28042c0e06bb28863bfdfb383ce7afb18f69a1553/organize_tool-3.3.0.tar.gz"
   sha256 "034fdcf9ffeb23d21b495e038665278e589fa04dc7c0c0a01a4a3b30a06c539f"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/tfeldmann/organize.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ce4788ed6da69ac197dc46c6e7b2b6d4d2b745a438417754c97b3f3487619697"
-    sha256 cellar: :any,                 arm64_sequoia: "7de2076d1a821d1fa08d10ad6c201eb36850b320391426fa31f2c5613f8cdd94"
-    sha256 cellar: :any,                 arm64_sonoma:  "19fe492eda25dfa3e136258e1be100d236b93748dcdf3de30bbc7967c10f2f48"
-    sha256 cellar: :any,                 sonoma:        "4b1d5f9f7cab148e6a38a006f1cc78ac74bd78d1dd5b20b4c29a1040ac410323"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b210602bdbc55e32ee03788c523e93853ba6bf7d455e1e727eb8d63bb15f7311"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b939aebdb3520dc47fd6a2c5916f6719206c94ff95b626407bdb4d160c80df3d"
+    sha256 cellar: :any,                 arm64_tahoe:   "e9b38344617ae9c3f12abd06316603bf18cba93ef5cd4e933cd5197e036cbe9e"
+    sha256 cellar: :any,                 arm64_sequoia: "53b55eb7067806090543df875074bd29b35953f2dde1e390df3b77afd75bb4ea"
+    sha256 cellar: :any,                 arm64_sonoma:  "fc6e20133c66d7570362c31d1aeacdb0fa9575eb5401efd888991dd6ef7e710c"
+    sha256 cellar: :any,                 sonoma:        "2e16c533292a7d64dee563233f35b56bd612c30121c92c6d4cc48af3f36542b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ee138086cd554175fc0e07620181fced54763dcf674aea752d37f6e82206a9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afc1129641cdd6cf602b26662d8777edf3bffe40ae39bc63879d734be6d2ad39"
   end
 
   depends_on "cmake" => :build
@@ -97,13 +96,13 @@ class OrganizeTool < Formula
   end
 
   resource "pdfminer-six" do
-    url "https://files.pythonhosted.org/packages/1d/50/5315f381a25dc80a8d2ea7c62d9a28c0137f10ccc263623a0db8b49fcced/pdfminer_six-20251107.tar.gz"
-    sha256 "5fb0c553799c591777f22c0c72b77fc2522d7d10c70654e25f4c5f1fd996e008"
+    url "https://files.pythonhosted.org/packages/fb/ef/543d0d44c9b03ac08316d31afd8e52b8ab8a86d03620ee0d61d6006bba9c/pdfminer_six-20251227.tar.gz"
+    sha256 "1d98781cf884d7274c694e742a94ffe6326ee11ee7ea79e73e1e75c4c74d91eb"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "pygments" do
@@ -152,8 +151,8 @@ class OrganizeTool < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
-    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
+    url "https://files.pythonhosted.org/packages/5e/a7/c202b344c5ca7daf398f3b8a477eeb205cf3b6f32e7ec3a6bac0629ca975/tzdata-2025.3.tar.gz"
+    sha256 "de39c2ca5dc7b0344f2eba86f49d614019d29f060fc4ebc8a417896a620b56a7"
   end
 
   resource "xattr" do

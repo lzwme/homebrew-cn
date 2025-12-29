@@ -7,12 +7,13 @@ class Tbls < Formula
   head "https://github.com/k1LoW/tbls.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df1f4d6c069c4b6583363adc9628d878b2ef3a87c9f9a17237574978ebc9ee90"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95b010f2c90bb8b61de1eb6a804111522a46d7e04541f942c59fc9a6a84bcccd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f12b7ecbef7bc3505587998a76a281f1ea189284c866976210e6912d3083582"
-    sha256 cellar: :any_skip_relocation, sonoma:        "47aea81fbf2a041de54b98459021f7ede91c40652f1d807ef93f834dc7981c70"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5dbb4c6e74846928db706a88feab33735f194194abcf3ccc571510ee8993079"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fcde201c8043b9578fc7ba34945b9e5118c5c226bba2fc89c4059b9beaecf15"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e775c0bb0abebe003d30377667ad4560ed80b50cb4aafeed146412f3c4f800a9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55d8de514eb4ce7828974010bdef0868c108ba1de054255b8518f10cbf781eb6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b986874d4a28f807828abd6eaf12d481cdc6b93c376d9cb612120624cbc48897"
+    sha256 cellar: :any_skip_relocation, sonoma:        "927f7cb508009725263811270b5d0ddb5beeea74d4e23a94a970a574a35203e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5283b61c4ef109226ffa79b5a04d112450ec30ab0616dd350893918e3fe7447e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9acb9001574bfbe444140cc500f888e4c55759af93cdf4733818af165485d4f9"
   end
 
   depends_on "go" => :build
@@ -26,7 +27,7 @@ class Tbls < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"tbls", "completion")
+    generate_completions_from_executable(bin/"tbls", shell_parameter_format: :cobra)
   end
 
   test do

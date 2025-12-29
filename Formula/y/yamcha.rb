@@ -1,7 +1,9 @@
 class Yamcha < Formula
   desc "NLP text chunker using Support Vector Machines"
   homepage "http://chasen.org/~taku/software/yamcha/"
+  # Upstream is only available via HTTP, so we prefer Debian's HTTPS mirror
   url "https://deb.debian.org/debian/pool/main/y/yamcha/yamcha_0.33.orig.tar.gz"
+  mirror "http://chasen.org/~taku/software/yamcha/src/yamcha-0.33.tar.gz"
   sha256 "413d4fc0a4c13895f5eb1468e15c9d2828151882f27aea4daf2399c876be27d5"
   license "LGPL-2.1-or-later"
 

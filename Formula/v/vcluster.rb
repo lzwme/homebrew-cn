@@ -16,12 +16,13 @@ class Vcluster < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1bde3884f9038ca818f42ee4d45a6f501e0c112c186ca77b07a7a382d591d9b4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35c07bd8d3e86df0df81e43e6586f45ff296de33d0a1d2f0c6c5cf2ed8e2f7a9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71df9f2f7558a3d19f70cb08d4615a9b907356e9aa416b4554921bb008d8d6b1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2f9ac82ac1950441c6fb6bf03a18c8c61df91a54ce53bc0906c9be3fb49c9de9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a70e41273eccb833f5a93e54c13f56952cd7251549ea13eec6b7c397ab160fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1afb90b0f4f46dd9fe3cb7285290dde536ba1e9f23b715023d2a513766d47271"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2bf3479cec0436e85b7ab5bdf9afa4a8a4664ce37ee2120e0aff01abed70c3a9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0a7fb3fd85bef2bee868b01af4b54e819aa39bf82c2556fb577bf89467e8fd0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "126a1772ab4e5071c3eb0c97266c35008fd4f59290ecd0712dcd6b0954c921c5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aef7da6ea3a7af882e75c061d69bbc4905533d4fd418ba743d999a44a2bf37fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d957cc21c4b242e0ea68e53037c4b3e0bd3318ae5184691e54c864428f3d284b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf7b499da33f762ff1e4780f18ff967f2d1ef15123d139cf15a672fee3e7f89b"
   end
 
   depends_on "go" => :build
@@ -33,7 +34,7 @@ class Vcluster < Formula
     system "go", "generate", "./..."
     system "go", "build", "-mod", "vendor", *std_go_args(ldflags:), "./cmd/vclusterctl"
 
-    generate_completions_from_executable(bin/"vcluster", "completion")
+    generate_completions_from_executable(bin/"vcluster", shell_parameter_format: :cobra)
   end
 
   test do

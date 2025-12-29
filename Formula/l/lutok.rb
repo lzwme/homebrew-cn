@@ -4,10 +4,8 @@ class Lutok < Formula
   url "https://ghfast.top/https://github.com/freebsd/lutok/releases/download/lutok-0.6.2/lutok-0.6.2.tar.gz"
   sha256 "1ef51f3741d28e27b09dfaee61ab432966cff56f50940eca1cbacffc11baa2ad"
   license "BSD-3-Clause"
+  head "https://github.com/freebsd/lutok.git", branch: "master"
 
-  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
-  # labeled as "pre-release" on GitHub before the version is released, so it's
-  # necessary to use the `GithubLatest` strategy.
   livecheck do
     url :stable
     strategy :github_latest
@@ -27,19 +25,16 @@ class Lutok < Formula
   depends_on "libtool" => :build
   depends_on "pkgconf" => [:build, :test]
 
-  depends_on "atf"
   depends_on "lua"
 
   def install
     system "glibtoolize", "--force", "--install"
     system "autoreconf", "--force", "--install", "--verbose"
 
-    system "./configure", "--disable-silent-rules", "--enable-atf", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     ENV.deparallelize
-    system "make", "check"
     system "make", "install"
-    system "make", "installcheck"
   end
 
   test do

@@ -1,17 +1,17 @@
 class Arping < Formula
   desc "Utility to check whether MAC addresses are already taken on a LAN"
   homepage "https://github.com/ThomasHabets/arping"
-  url "https://ghfast.top/https://github.com/ThomasHabets/arping/archive/refs/tags/arping-2.27.tar.gz"
-  sha256 "b54a1c628c1cd5222a787c739e544b0a456684aa1d4b04757ce2340cdd4eb506"
+  url "https://ghfast.top/https://github.com/ThomasHabets/arping/archive/refs/tags/arping-2.28.tar.gz"
+  sha256 "43b94dbb96d288096ebe0e81c0411c2e69d329d7447ac1fd7b758eda38fd35a8"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a3aff9845c1fd707997efed9953bb134dbda55a9c72c80a7d06fe7ae23fede6e"
-    sha256 cellar: :any,                 arm64_sequoia: "25d4e9b1e36a6944be8a1c4d40b90e42b4b9e879eedea9de5d767220e2f8c138"
-    sha256 cellar: :any,                 arm64_sonoma:  "c6e844d75f708b7ccf79291715943316e470125adeea1d2f20476e5a6c5b7e63"
-    sha256 cellar: :any,                 sonoma:        "60b619b4e702d9a83345324dcf66d6ac9b914e79a10f4998160d73ba38adf967"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0802cd9860cbedfe5dd7c739813eceb9cf2e983908e8b56163a34df90641d1c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "520897903811e7126ae3c4ade9c554f8b134a36a5c91b76d45d47c0d073cd63f"
+    sha256 cellar: :any,                 arm64_tahoe:   "dc8c29ee0f45d69f2d0a34ea300d46379d41cfa1f551c3dcf32a12cb4f299f4c"
+    sha256 cellar: :any,                 arm64_sequoia: "354ef9db34e2aa56586faeb87a8303f2bc15412645bd3ccb388b6de570fa9d9f"
+    sha256 cellar: :any,                 arm64_sonoma:  "3bbc282a841a98e362241b8678207bdcb1f7982a5ee190ae4f72193e08ac0693"
+    sha256 cellar: :any,                 sonoma:        "cebc2ab2ac9c7781eb24bfcc1148e9e553f400a8f6603e46cbdbfd4c175d6269"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "649e47c98c1f5ac7b109423c48ac8e376214c4404d4022b1f03d9111054e25f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a7775d5a971141ca866af205bcf2dee52af6dd736422afed98cbe5f5d1d75f5"
   end
 
   depends_on "autoconf" => :build
@@ -19,13 +19,6 @@ class Arping < Formula
   depends_on "libnet"
 
   uses_from_macos "libpcap"
-
-  # Fix build portability.
-  # Upstream PR ref: https://github.com/ThomasHabets/arping/pull/58
-  patch do
-    url "https://github.com/ThomasHabets/arping/commit/9c6758ad17b0b11ab5abacbed511379ff62255ca.patch?full_index=1"
-    sha256 "b618a1e6cd517b40d42a2561d6b0c6dbfc90e89d5d5d6032e9b899d3caf17e92"
-  end
 
   def install
     system "./bootstrap.sh"

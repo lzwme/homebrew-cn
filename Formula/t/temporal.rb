@@ -12,12 +12,13 @@ class Temporal < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aac60cdba8f3404bdb99f7a3bbffa4b3f87eed42a4d3fa9d25f713e47efe4c1d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a60f858acca3c426cbbc3c3d44bcf300ff3c21d07d0a4283f98e4f0599b2df8b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e2e9e9b71dc15b45e9ac6e4793d92c1b10b9437c6ba841155e7b0b5495cc184"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a8d2fe89d770ac803683188b1bccd3271c2499c5e4024db263d1c486b5b11c54"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba07ab189d087b8a6580c0897b463369f6ecf7903920e252cc063fc101cfc3df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1207471e6b15856c80c00e392bab6217dddbe5ca26a689435446e2e061d085cb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "82c0f26acd6a4c6385fa3549d872f61a956401ccc7ddaa939dcc9e4f665669cc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2adb78c9fea26d55e865e8004a2765fd4526b442f76f9d6489ebbd405e9dac21"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d9175db0088a135048c8cc63517f8af8cf50cd59a2cf8b955b56d59d1cdfb73"
+    sha256 cellar: :any_skip_relocation, sonoma:        "03587c99c54be762b89e4e9bb0db4a16536fb4126cb1baa34cdc1c79fd526189"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "43eb2efae26665e68b1c7dfc266ed7734fe42ca68b8cf47c3b721815e462401a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d9933fe62ca6bd26fdf1a136fd30a2bcd0620ce582869a5e5475158a22c3c3d"
   end
 
   depends_on "go" => :build
@@ -25,7 +26,8 @@ class Temporal < Formula
   def install
     ldflags = "-s -w -X github.com/temporalio/cli/temporalcli.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/temporal"
-    generate_completions_from_executable bin/"temporal", "completion"
+
+    generate_completions_from_executable(bin/"temporal", shell_parameter_format: :cobra)
   end
 
   service do

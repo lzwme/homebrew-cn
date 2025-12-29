@@ -64,6 +64,10 @@ class Geeqie < Formula
     depends_on "harfbuzz"
   end
 
+  on_linux do
+    depends_on "xorg-server" => :test
+  end
+
   def install
     args = %w[-Dlua=disabled -Dyelp-build=disabled]
     system "meson", "setup", "build", *args, *std_meson_args
@@ -72,9 +76,8 @@ class Geeqie < Formula
   end
 
   test do
-    # Disable test on Linux because geeqie cannot run without a display.
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    system bin/"geeqie", "--version"
+    cmd = "#{bin}/geeqie --version"
+    cmd = "#{Formula["xorg-server"].bin}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
+    assert_match version.to_s, shell_output(cmd)
   end
 end

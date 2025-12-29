@@ -6,12 +6,13 @@ class Vet < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41abd1bd42438d29a1041f274e6a2e9be20f1e5a82d56a08752bf344b88d95eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7237eabd378568e0905d0693fe6dbcefb33ea403fbc7efd64f5f1a466d3c217d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5c055ca23834eab8eec12b1eeb637017cf8e4008c3efd51747bdb08f0b67f98"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fc9a6113cacb9280a8b50030c0b4596d18b48138ca53a05b1f6558f35c709911"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9629bf2dacef0c95ac47f354699e4ba265925d84c4d7d1bcada49ea6868d09bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72db7c1c9d5e0f2bcd0f928df33722874b2460dcdd8359843491bb3497806f71"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a45b1d04276f70ae216d9d8fff8c1466ee829de5faef6673b9b6eb939b45e45b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5308cf52570c93b09e08e4419a44ed91259f7dcafdf9dda96e3eec23956b209f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db348b6e06a071d28701fc6b3e7270d19e55ddbe33707bc0806cb7e73eacf4b4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "27a6a215a21f59d1abfe9b70f5f60d1874e0ac134189a10d6cccb77868a39d3b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e34bd97681bef8ed0a1c2852fd2e81fc070336025a430114fb3f061baf19881"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bab2fa5778263e20120f4e474e34d8d93b02ccedac66fa8ef5915b61957bdb71"
   end
 
   depends_on "go"
@@ -21,7 +22,7 @@ class Vet < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"vet", "completion")
+    generate_completions_from_executable(bin/"vet", shell_parameter_format: :cobra)
   end
 
   test do

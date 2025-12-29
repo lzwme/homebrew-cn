@@ -1,34 +1,18 @@
 class Newsboat < Formula
   desc "RSS/Atom feed reader for text terminals"
   homepage "https://newsboat.org/"
+  url "https://newsboat.org/releases/2.42/newsboat-2.42.tar.xz"
+  sha256 "7fe56497f5368d7d5f9ab76e755e768c0e26605cc32d56b94d3133ee81d88e9b"
   license "MIT"
-  revision 1
   head "https://github.com/newsboat/newsboat.git", branch: "master"
 
-  stable do
-    url "https://newsboat.org/releases/2.40/newsboat-2.40.tar.xz"
-    sha256 "1e656636009ffad3aeb87f8d0e4c36d2e913eac155b5f3ec85d00e8287b477c2"
-
-    # Backport fix for Rust 1.89
-    patch do
-      url "https://github.com/newsboat/newsboat/commit/3a018bbf88fef74d1af24c79f5d640c6d753ab16.patch?full_index=1"
-      sha256 "af1f0969b14ae80439e4e14c5126425221eabae285ba15eeb1c63980cd905612"
-    end
-
-    # Backport fix for curl 8.16
-    patch do
-      url "https://github.com/newsboat/newsboat/commit/c80d4c30901514188502f6f858b78a0896d9603e.patch?full_index=1"
-      sha256 "92b86c657555c4b5c841e5a185c26f9b1532cd9423dc7fbbe12d3c433e2ccadb"
-    end
-  end
-
   bottle do
-    sha256 arm64_tahoe:   "77be3fdd5e78e568ab0f85f4e579ad557b504450cbd957c0943a5c7a42cdb566"
-    sha256 arm64_sequoia: "e21e148c22b1be21032db1cd876ff935df8131e9a732dd5b1092a8b2769268f7"
-    sha256 arm64_sonoma:  "c0e8453d573451fd06bfb8115249fff274efe7b6836bff59b7484c645e0dafc8"
-    sha256 sonoma:        "43b76b8fa54e2cc89ffeb1233755a9d2c344d8d58ac3a9fdaa1dda1f14e94aec"
-    sha256 arm64_linux:   "859ab5f98262ab39657b2976f98302ce0b40f2849d8399e93cdf24014bb45818"
-    sha256 x86_64_linux:  "2a66752a0919a45b762aa4b2198759f743370f60a3d7b66524037505fe49f037"
+    sha256 arm64_tahoe:   "b610948d104b7556fc62a95d0f9bf842e13ea0c6aeac3939af71a32e5a3dd22d"
+    sha256 arm64_sequoia: "7b1d62e63c130de7db559543124c5fc97dbffb4cda7091061374ea25c49238d8"
+    sha256 arm64_sonoma:  "9b62381e36cdc45c85b1bd4d490047c9bc3a5393b33cde0a44fe8b5a6b258cc6"
+    sha256 sonoma:        "b37943a296488d563127aea5a6d715f23b66164765cfbc0429c96cee6723109b"
+    sha256 arm64_linux:   "fa2284f76d28afb1a331ad5b65e98ea5048ae22ccd448ad67e1e350093fe0ae5"
+    sha256 x86_64_linux:  "ca54d697581473d3d2788b59cedda849e9c6f61f6d3f5d6a6cdf32706a2fdfdd"
   end
 
   depends_on "asciidoctor" => :build

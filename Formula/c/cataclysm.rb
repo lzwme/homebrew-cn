@@ -73,12 +73,12 @@ class Cataclysm < Formula
   end
 
   test do
-    # Disable test on Linux because it fails with this error:
-    # Error while initializing the interface: SDL_Init failed: No available video device
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     # make user config directory
-    user_config_dir = testpath/"Library/Application Support/Cataclysm/"
+    user_config_dir = if OS.mac?
+      testpath/"Library/Application Support/Cataclysm"
+    else
+      testpath/".cataclysm-dda"
+    end
     user_config_dir.mkpath
 
     # run cataclysm for 30 seconds
@@ -88,6 +88,7 @@ class Cataclysm < Formula
       assert_path_exists user_config_dir/"config", "User config directory should exist"
     ensure
       Process.kill("TERM", pid)
+      Process.wait(pid)
     end
   end
 end

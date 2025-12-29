@@ -8,12 +8,13 @@ class TerraformDocs < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e325aa06f0cf53aace520e3818c0b29c6f310d1d21db704a50f59e8a92ae23b1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1412944dfbc952119ae641341114703c5f8fa6941a295f2ffad5d77169ff3918"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "effe5309b77c590d818d05b80ad62963f0b8106992cf886525670649e0d02b8d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "626c6775931d952219907d7ef27ae221d998d5c6a89c7ea05a29bd6a1f98dff4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "54108f65756d822d1ae1b9d95f2d66a3ac2b0ce9fd8c0b6e795cd1433f52af04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78249117db0046aed56949592d27224f7e6b2c5b8b998fabf3e240489cd66274"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0d3dc055f2dec3731d78b46495b133ff703f1552380f32020ab8efcc59f6f82"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d35e1bb260d8ec2fd27135ffddaa6d59a41b7fba788c99f4fdd9f7f9157b82b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "efbfbfdbad330848c4b3e1f7165765aed9616a65a438fb90de41af9243f97eda"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e1b1e387eb27ef167275c66f73dc3019c082777c333ef8c03f93372594394c7f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "728494fc61676afd9396d470988588a9961c4609820bb2028194864f37f2ed1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef78dd170f5f0e90ab3b71116d50949545fb6b5c7de883749f9f9fc151f2c3ac"
   end
 
   depends_on "go" => :build
@@ -25,7 +26,7 @@ class TerraformDocs < Formula
 
     bin.install "bin/#{os}-#{cpu}/terraform-docs"
 
-    generate_completions_from_executable(bin/"terraform-docs", "completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin/"terraform-docs", "completion")
   end
 
   test do

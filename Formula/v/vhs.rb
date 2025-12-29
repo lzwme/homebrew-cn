@@ -7,14 +7,13 @@ class Vhs < Formula
   head "https://github.com/charmbracelet/vhs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b559e27a6e0ba6aa3a9e576306c5de4c7623df4e66fe22b23d8b064a785cba75"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62e58ee735695f64fff35b0c32c1ddda7688d7da3c970652e3118ec8843394be"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62e58ee735695f64fff35b0c32c1ddda7688d7da3c970652e3118ec8843394be"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "62e58ee735695f64fff35b0c32c1ddda7688d7da3c970652e3118ec8843394be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "555c4a74bb2df5b11488b54589a7b8b4cea5bcddba87ad9c1bf04a2054ffa154"
-    sha256 cellar: :any_skip_relocation, ventura:       "555c4a74bb2df5b11488b54589a7b8b4cea5bcddba87ad9c1bf04a2054ffa154"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5f740a33f47dd36334f738d3e737470af49606c175729525b1436dae5ea5f33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f1fe18a37fa617a10925711ff8d2c00ea7f61a9030537d478b2df88fe3aec46"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc042cfbdee07dea3f8c861cb000601322597f7ac7486c333f10d5de8ef21cde"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc042cfbdee07dea3f8c861cb000601322597f7ac7486c333f10d5de8ef21cde"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc042cfbdee07dea3f8c861cb000601322597f7ac7486c333f10d5de8ef21cde"
+    sha256 cellar: :any_skip_relocation, sonoma:        "15bfbc955ca5dc09d33141d3994e639b76aec988a7eea564041e01c1fb121e5b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5105b1a3316e949465fbbd7f1840d721c5e84b5aa8698cc5a2184c3157fdedf9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1d30de9afd56023e000a52794944b76d746544e681da39905811384c60dce97"
   end
 
   depends_on "go" => :build
@@ -26,7 +25,7 @@ class Vhs < Formula
 
     (man1/"vhs.1").write Utils.safe_popen_read(bin/"vhs", "man")
 
-    generate_completions_from_executable(bin/"vhs", "completion")
+    generate_completions_from_executable(bin/"vhs", shell_parameter_format: :cobra)
   end
 
   test do

@@ -48,11 +48,8 @@ class Lgeneral < Formula
 
   test do
     system bin/"lgeneral", "--version"
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
-    pid = fork do
-      exec bin/"lgeneral"
-    end
+    pid = spawn bin/"lgeneral"
     sleep 3
     Process.kill "TERM", pid
   end

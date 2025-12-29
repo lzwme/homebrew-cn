@@ -7,14 +7,13 @@ class TfProfile < Formula
   head "https://github.com/datarootsio/tf-profile.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "634e5dd145e202275e5d16c3f2653b6e0827e3f96d1f7abbcb40b3aea6380e53"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3d27c04d0f690020ab293d51b7c1bcba6cec6570b0c5e9505c55710a001746a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3d27c04d0f690020ab293d51b7c1bcba6cec6570b0c5e9505c55710a001746a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f3d27c04d0f690020ab293d51b7c1bcba6cec6570b0c5e9505c55710a001746a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "55fc5b3eff827ab558666e9c4b398da3b813185347583fc9b7f86fc9a8fc8f63"
-    sha256 cellar: :any_skip_relocation, ventura:       "55fc5b3eff827ab558666e9c4b398da3b813185347583fc9b7f86fc9a8fc8f63"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3fc725da2027e30719d536c6d3eb6c774512abc7264e35dafa00e7a79e34c274"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fa07426feb28fb5add75bf78c5c11884f62ba74783161b861d70783149eccab"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2f2be0e109cfe0075937bd1654d7a35776f509cdbbc76099cb18ff546ffed9c2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f2be0e109cfe0075937bd1654d7a35776f509cdbbc76099cb18ff546ffed9c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f2be0e109cfe0075937bd1654d7a35776f509cdbbc76099cb18ff546ffed9c2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cb5f59260a96d66609a1ecbfc9e7b10c5b607c9ae64a52b3ea9737244445eabf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb717e3db18cfe1755b6f74c713a4dcc9a1884aaab3dc5183f3bc9b14af154f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b114c3deb9e37d74136eb0d45ffb77650b029fd20a738315deb1c0cc3605714c"
   end
 
   depends_on "go" => :build
@@ -23,7 +22,7 @@ class TfProfile < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w", tags: "netgo")
     pkgshare.install "test"
 
-    generate_completions_from_executable(bin/"tf-profile", "completion")
+    generate_completions_from_executable(bin/"tf-profile", shell_parameter_format: :cobra)
   end
 
   test do

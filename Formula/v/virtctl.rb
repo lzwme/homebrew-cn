@@ -15,12 +15,13 @@ class Virtctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2142ce8cc310b1054fc16895251defd48bfc4a9b5ced1159a0163f8e489e7fc5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42573fe8fe2ea4be5276e00a188bd5b71473ddb157904adf13696bf16f7bd963"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6fc68c13ab187a9b86847a60e53d592f796d4f7c2ee340e0f18eca03ff64a5e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2257d8ac380af04a605d66f0c751590ff27bd2ed8de88ba669b76cfa08a2c10b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45c7ec59a78af5497b158db2b12fc822a9a5e6afa14ff5c0cd282ce8ccd31078"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4a587dbc3ab8ae1678c880b31b71c7891643bc42061d99322bae7750b22cab2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "17ce8dc50ceafbb57d9e81bcbde5895e237220c92c911e7bb348f1d52fea56a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb3cf89ecc52d5489b18a611a463f974e1a69f95fdb2c0b480a3bc4f6fe2870f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c115a2212bd10628f6b426b51ed402fdeec2f497f0e42e88e8b5b87d35989a8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "57d0c0b6842f45586eedc236040a56b820ef7cc1d298e0839af753e11b534889"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c926412df85cdc9493630a7aa414ba96f94fb94ca1b4fc180bcd0eafa25e1b80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcb0457cec7d329f1cad8f2d371a62511bea01bbb28652729e4a9ad180a1783d"
   end
 
   depends_on "go" => :build
@@ -29,7 +30,7 @@ class Virtctl < Formula
     ldflags = "-s -w -X kubevirt.io/client-go/version.gitVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/virtctl"
 
-    generate_completions_from_executable(bin/"virtctl", "completion")
+    generate_completions_from_executable(bin/"virtctl", shell_parameter_format: :cobra)
   end
 
   test do

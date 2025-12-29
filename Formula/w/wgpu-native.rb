@@ -18,8 +18,11 @@ class WgpuNative < Formula
 
   depends_on "rust" => :build
   depends_on "cmake" => :test
-  depends_on "ninja" => :test
   uses_from_macos "llvm" => :build
+
+  on_linux do
+    depends_on "mesa" => :test
+  end
 
   def install
     ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib.to_s if OS.linux?
@@ -41,13 +44,11 @@ class WgpuNative < Formula
   end
 
   test do
-    system "cmake", "-G", "Ninja",
-           "-S", pkgshare/"examples",
-           "-B", "build",
-           "-DCMAKE_BUILD_TYPE=Release"
+    system "cmake", "-S", pkgshare/"examples", "-B", "build", "-DCMAKE_BUILD_TYPE=Release"
     system "cmake", "--build", "build", "--target", "compute"
-    # Running the built example fails in CI.
-    return if ENV["HOMEBREW_GITHUB_ACTIONS"] && (OS.linux? || Hardware::CPU.intel?)
+
+    # Running the built example fails in Intel macOS CI.
+    return if ENV["HOMEBREW_GITHUB_ACTIONS"] && OS.mac? && Hardware::CPU.intel?
 
     cp pkgshare/"examples/compute/shader.wgsl", "."
     assert_match "times: [0, 1, 7, 2]", shell_output("./build/compute/compute")

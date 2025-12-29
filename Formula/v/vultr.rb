@@ -7,12 +7,13 @@ class Vultr < Formula
   head "https://github.com/vultr/vultr-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "879612d01a2224cfdeeaddd7d8afa85ce071742e8af0deabe8afd9bcd851e71c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "879612d01a2224cfdeeaddd7d8afa85ce071742e8af0deabe8afd9bcd851e71c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "879612d01a2224cfdeeaddd7d8afa85ce071742e8af0deabe8afd9bcd851e71c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7ff5eb9f6fde77ef29c3e113e1dcda6c0142c41b730a0163028ecf6faaf4bd75"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d91debae77ec8d0930597124fdfa1614736f797a88ae1e1df032a2121bee49c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26d0f20f4eab68a6dd7c023ff3cabd474ac26d25422f98614611c5277ed825f8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f9a74884d0432d2cc32306431969d37c16b64ed5ffa4f64834168cdf8595f808"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f9a74884d0432d2cc32306431969d37c16b64ed5ffa4f64834168cdf8595f808"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9a74884d0432d2cc32306431969d37c16b64ed5ffa4f64834168cdf8595f808"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ae0b71e0b1b478419735a43ee0bafd839a3251316e2b560ae8239775ff06edd2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3beec54204eb258eb8770196ba08264f6f011cae6bc04818b96d5e7226cc4212"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7c607a84ed880626d6a1feca8ced6fc1d13e9abcc5c6e5d50410c68bac81f07"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,7 @@ class Vultr < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"vultr", "completion")
+    generate_completions_from_executable(bin/"vultr", shell_parameter_format: :cobra)
   end
 
   test do

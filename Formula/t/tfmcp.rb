@@ -1,18 +1,18 @@
 class Tfmcp < Formula
   desc "Terraform Model Context Protocol (MCP) Tool"
   homepage "https://github.com/nwiizo/tfmcp"
-  url "https://ghfast.top/https://github.com/nwiizo/tfmcp/archive/refs/tags/v0.1.6.tar.gz"
-  sha256 "e6ef00157370981ec2fc1447c83f6b47dd10884c4852332a1b090cdda78c9449"
+  url "https://ghfast.top/https://github.com/nwiizo/tfmcp/archive/refs/tags/v0.1.9.tar.gz"
+  sha256 "a7f41f6e570fa4512e14c341073faec8206ae21998b135ce0da8bc50dcf7b3f2"
   license "MIT"
   head "https://github.com/nwiizo/tfmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d252aa93ec4e8e2d48aca0c0ffa390e2ab212f23d1c85328efcf3a3b5024239c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55d6a1003826c083220ea9eb6cbded664d5a0360010fc0c485ac1b4625fd8551"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ed1394be14b3c9e55b26133aa88bae0eab1e7790474f7451e531f1b46c79d20"
-    sha256 cellar: :any_skip_relocation, sonoma:        "61d195c362ffe0046e7684bb21984917b3c94e4e656425ba50584708746919a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "091a1d8963330f550d5aade99ae3948118b20ab2b51cba8fb5244309766d5e1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7857a7bd7203bfee5318277d2450673158d29995914f682604700ae74c5b1e9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4d054365458568e0890ed4485317fb01d1b0f63d159c89cf69e90e22db523bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a383d95000bab1e4f76a72f7e24b09677c41d6e73bd7e8d13aae23dca9e09fc2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8622fd30478fb8bfd284b6b45de1db412ab50d5f42ec22f397e81dc71de60645"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b109a5fab2069d3c6d6a089893d98af6d91cb470ef2a3d9e0c572c166561887d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7058b7da00775b347b19ad369260aad5cb87dd02f5d83f9355a3c677c0f09246"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b3c9b3fd78744bb4040c4682bcde59a914a26ed55e10f3b5fd0670541c8c8ed"
   end
 
   depends_on "rust" => :build

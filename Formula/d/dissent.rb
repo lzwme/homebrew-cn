@@ -7,14 +7,13 @@ class Dissent < Formula
   head "https://github.com/diamondburned/dissent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "97643003bef7a54d768a1f7878b036270d6e1845a7089fd76d99141a9eea56a8"
-    sha256 cellar: :any,                 arm64_sequoia: "c910693be03f0bd067d9f4d007b836145221602c286039353719daaad66e58c2"
-    sha256 cellar: :any,                 arm64_sonoma:  "2b481aebf10e511c8598309b4d2a0e8fbf6ec099af82d4c2102699976e50bd3d"
-    sha256 cellar: :any,                 arm64_ventura: "ed3a59ef647f6a22544b57a23ee1a248ba0b03f49ad55145b9acfa3af1488f3d"
-    sha256 cellar: :any,                 sonoma:        "5232410d3f1ec1ea33b66ef3abf77f21eabd684cb95061adcf1e34162abcb54e"
-    sha256 cellar: :any,                 ventura:       "5a84a47da950058aee7e17a25a13fc41c21de3105b3ed0a29189a1dbdc8fb22d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2f74a11d7d2d4953f4fdc35d06c4b39ad53ef3d316720f7b33d38273782b44b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "330a993d8dd432857f392c561754222f045c86c52d9d2ae6476fe55c0cb3e081"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "dd1e49a1cba57126c5863d4a2b677b02fd03fdbaf8a1ce6f81474007b9394661"
+    sha256 cellar: :any,                 arm64_sequoia: "b45fd55dfd1e9cd6191fb59cc7cac06c310e90414a44033c916c84fb572da839"
+    sha256 cellar: :any,                 arm64_sonoma:  "9604a42062cae3551df4c41f8c47a79f7d743fd8fe42c870655240652d79c074"
+    sha256 cellar: :any,                 sonoma:        "ea9319c548bdd84c5a00e110f352299d4c3f586fc9a176005e71dd5fdd18ad07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "09d43aa6bfef20752ac31e2b33ad1737a2e40ee0d57bf3ee214833302e2ad81a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7cb6a3cebf7c5fcebeed8c7ee8180e59dc465c4e9c4c1595b40de885392caaa"
   end
 
   depends_on "go" => :build
@@ -37,15 +36,25 @@ class Dissent < Formula
     depends_on "harfbuzz"
   end
 
+  on_linux do
+    depends_on "xorg-server" => :test
+  end
+
   def install
+    # Workaround to avoid patchelf corruption when cgo is required
+    if OS.linux? && Hardware::CPU.arm64?
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
-    # Fails in Linux CI with "Failed to open display"
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     # dissent is a GUI application
-    system bin/"dissent", "--help"
+    cmd = "#{bin}/dissent --help"
+    cmd = "#{Formula["xorg-server"].bin}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
+    assert_match "Show all help options", shell_output(cmd)
   end
 end

@@ -49,17 +49,9 @@ class Tnftpd < Formula
   end
 
   test do
-    # Errno::EIO: Input/output error @ io_fillbuf - fd:5 /dev/pts/0
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     # running a whole server, connecting, and so forth is a bit clunky and hard
     # to write properly so...
-    require "pty"
-    require "expect"
-
-    PTY.spawn "#{sbin}/ftpd -x" do |input, _output, _pid|
-      str = input.expect(/ftpd: illegal option -- x/)
-      assert_match "ftpd: illegal option -- x", str[0]
-    end
+    expected = OS.mac? ? "ftpd: illegal option -- x" : "ftpd: invalid option -- 'x'"
+    assert_match expected, shell_output("#{sbin}/ftpd -x 2>&1", 1)
   end
 end

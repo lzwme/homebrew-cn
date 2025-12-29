@@ -11,12 +11,13 @@ class Tetra < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd5eeed671d70196a85650b5cbed6983a65736fd1dcb93467f67cd46b49c3d1d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2eed2fea2a2857a98f3fe6606a620afae50ae014211eb75e4c8a7080e4c2b65"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1909076e0a335f5e09b2aa738dd1ccf93baf2cedac0ef4e72f6b47542557052a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7d9f4f87022c5ff971733c04095877a0904e2549b4d4d7d090adcdb48d6d70d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce66eb92abce3d9e047ca52f8048a1b8a53693523b4ba173c3eceb392eade209"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fa4268ef3b24e2d63b989a6012df5bda72d48e0821ee287e0b4039a2396c817"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0111161e8793db09cd938510cca6dada677985f41a7ba2b6aa9c8f55b7daf7c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ffac422ba4d5219d062e6f81d67607e74c20d8e12e3cc32c33da2429c1f89f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0adf70e96f251d395b1cd432012de0d6ce59fd775103c61f775ca0126b5ca516"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b1c926f99a77c8cd14552ccf57788c3453753101cf8ad1b3d853b8dcf44f2b85"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e2938872c80920878fb745c56ae96bed320150c878aca248f1e0ce5f47ff2af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78633dd890f3b3552edb26ae9822200ac52febaf56a5c23c02423eca6577c895"
   end
 
   depends_on "go" => :build
@@ -25,7 +26,7 @@ class Tetra < Formula
     ldflags = "-s -w -X github.com/cilium/tetragon/pkg/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"tetra"), "./cmd/tetra"
 
-    generate_completions_from_executable(bin/"tetra", "completion")
+    generate_completions_from_executable(bin/"tetra", shell_parameter_format: :cobra)
   end
 
   test do

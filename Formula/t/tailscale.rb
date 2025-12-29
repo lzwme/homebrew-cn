@@ -13,12 +13,13 @@ class Tailscale < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b522802056b79c93db39396c706b98b2465890e43bce9009d5554b3d8016844"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7670a838bd39c079434fc34020846fa2c950b286793811414da740958b9b8ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bda881eb9be29e8e4e234225ba8dd748d58bc411337fe8a20265ea0995eb5775"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8268cbff3181971301093b289d699a67db989b873aa1bfa02563037f1b307b46"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b484bfebabf3295a45f229b319ea3715d44e0c72e8f9099ce8eabbb9aa9c0c52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1770121c122e062de034c24fcba003349bedb4a953645fd0064ee039428f2bda"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "97a0d09374b7b9cd21fad0aa3bc29341b2a1f60af898b38234985e7aa82343f7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6c49216615365885afcacafb0c67e2dd619630ca171fc00c712468aa135a3c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d31c2ab209830bd5d52a9000d21a79d8ee6af9a747c37abd740f11b5650a85b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7668b591b100d6cead540f111064e3362b20ababc21921eca407a8b88635d543"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb3450cafb3ef2c19f498278e8c0a5ccd7db0b1201d7b232b98dd240acaec30f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "434601c5a047fd9acc4654d2e31ba242a424722b13eb02ae81208faec10f00e2"
   end
 
   depends_on "go" => :build
@@ -36,7 +37,7 @@ class Tailscale < Formula
     system "go", "build", *std_go_args(ldflags:), "./cmd/tailscale"
     system "go", "build", *std_go_args(ldflags:, output: bin/"tailscaled"), "./cmd/tailscaled"
 
-    generate_completions_from_executable(bin/"tailscale", "completion")
+    generate_completions_from_executable(bin/"tailscale", shell_parameter_format: :cobra)
   end
 
   service do

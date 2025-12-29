@@ -1,7 +1,9 @@
 class Ratfor < Formula
   desc "Rational Fortran"
   homepage "http://www.dgate.org/ratfor/"
-  url "http://www.dgate.org/ratfor/tars/ratfor-1.07.tar.gz"
+  # Upstream is only available via HTTP, so we prefer Debian's HTTPS mirror
+  url "https://deb.debian.org/debian/pool/main/r/ratfor/ratfor_1.07.orig.tar.gz"
+  mirror "http://www.dgate.org/ratfor/tars/ratfor-1.07.tar.gz"
   sha256 "943b5de328d7b890cb444b17fb7dab656ffaa0d388c7d40b649d34b736b137ff"
   license :public_domain
 

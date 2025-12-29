@@ -22,22 +22,17 @@ class Gocheat < Formula
   end
 
   test do
-    # failed with Linux CI, `open /dev/tty: no such device or address`
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    begin
-      output_log = testpath/"output.log"
-      pid = if OS.mac?
-        spawn bin/"gocheat", [:out, :err] => output_log.to_s
-      else
-        require "pty"
-        PTY.spawn("#{bin}/gocheat > #{output_log}").last
-      end
-      sleep 1
-      assert_match "Description : keybinding", output_log.read
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
+    output_log = testpath/"output.log"
+    pid = if OS.mac?
+      spawn bin/"gocheat", [:out, :err] => output_log.to_s
+    else
+      require "pty"
+      PTY.spawn(bin/"gocheat", [:out, :err] => output_log.to_s).last
     end
+    sleep 1
+    assert_match "Description : keybinding", output_log.read
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end

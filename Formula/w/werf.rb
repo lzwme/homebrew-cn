@@ -15,12 +15,13 @@ class Werf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a304f8e9c4673af83e2a5fce9ca74091590e87c1baad22c9bfd60a43e77769c9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2ee4312f865b5b995d9429128682b453062cd12467de3f89cb8c70cf843dfc4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e9c90ea485399eeabf1bcfc2bed016c7896600e74c6083ef689b535a2113a01"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f0bec8342452e9077154dc052d413089c0e7c8fe972f8b7bc697d3727aabb879"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7b9af0874250c34283a60c2bec67c3866d98fd5e34868cd51e73a9703ab078c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41ecd4526ccece88ce54e014ce68d5ac0d9ca561ed3f86da0338079931c4d796"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b70ed6f7f87a0390b0d1b71b2659f045d4572c606634259412215942db7a8f3f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1357b6729c6641382b856c187cd3ab8ce712dcdca3cdea42a16d3ef38791d5ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78b0553c5827204850c6e53836d7d82395ff24e552f2a1707f8a3bd133d14c5b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9bf3fc0c84a9d6b1519436cbef14feb3cd357ecc831f4cf4d8c792cdb64ee0d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "326030ba158938a51886fae3c976cb7f0f98279f21cd6cd349f957fab127e554"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d37c99cf5720fa9b3e003647e2677ca5d7cc0cc15959501d49cafcf323599726"
   end
 
   depends_on "go" => :build
@@ -52,7 +53,7 @@ class Werf < Formula
 
     system "go", "build", *std_go_args(ldflags:, tags:), "./cmd/werf"
 
-    generate_completions_from_executable(bin/"werf", "completion")
+    generate_completions_from_executable(bin/"werf", shell_parameter_format: :cobra)
   end
 
   test do

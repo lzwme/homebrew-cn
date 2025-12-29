@@ -6,12 +6,13 @@ class Youtubedr < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e87ab759d1215c50ae144a8aab75c4e2781a9cf7ac4e5d3e3a2923a01a331c5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e87ab759d1215c50ae144a8aab75c4e2781a9cf7ac4e5d3e3a2923a01a331c5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e87ab759d1215c50ae144a8aab75c4e2781a9cf7ac4e5d3e3a2923a01a331c5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f4896dac10773c7b78a959cf661f84a5b0cae7ebd5b95c7665780111330dea11"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "52642a705d28d7c58d676c6eb270dc76c2152b5c48f4bc9ee03e3c998488c6c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75074b9e7b3f2947fd535a1654a8f369ce4b7b1bb18fb5eec96e573d1edb8be2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b7981af15f827a881e2aa7fceab42b16e005910d4ff2d46d6db633a7d575264"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b7981af15f827a881e2aa7fceab42b16e005910d4ff2d46d6db633a7d575264"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b7981af15f827a881e2aa7fceab42b16e005910d4ff2d46d6db633a7d575264"
+    sha256 cellar: :any_skip_relocation, sonoma:        "05c20777846400eca21ac26fdfdada02d52204ed8afb125ba38b3390a572e21e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "710706ec6dbf8eed88a69bbf9e612d4091d68b56ba681a158693a5da12d78464"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40235abb2ff3934b3dbc9ac18320034def5efd627ac026bf224b93f0d0f83b1e"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,7 @@ class Youtubedr < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/youtubedr"
 
-    generate_completions_from_executable(bin/"youtubedr", "completion")
+    generate_completions_from_executable(bin/"youtubedr", shell_parameter_format: :cobra)
   end
 
   test do

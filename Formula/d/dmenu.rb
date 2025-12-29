@@ -32,10 +32,7 @@ class Dmenu < Formula
   end
 
   test do
-    # Disable test on Linux because it fails with this error:
-    # cannot open display
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    assert_match "warning: no locale support", shell_output("#{bin}/dmenu 2>&1", 1)
+    expected = ENV["DISPLAY"].present? ? "warning: no locale support" : "cannot open display"
+    assert_match expected, shell_output("#{bin}/dmenu 2>&1", 1)
   end
 end

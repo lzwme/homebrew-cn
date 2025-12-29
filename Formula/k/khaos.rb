@@ -3,18 +3,18 @@ class Khaos < Formula
 
   desc "Kafka traffic simulator for observability and chaos engineering"
   homepage "https://github.com/aleksandarskrbic/khaos"
-  url "https://files.pythonhosted.org/packages/06/a4/899a08537480822f3fc9c79d272bb1fa6331607ec433b0fa92106c8b5e19/khaos_cli-0.5.1.tar.gz"
-  sha256 "09f537eb6a98edea1f45a7a268cee14b9df9ef12f58afecfc11cfb0479b66763"
+  url "https://files.pythonhosted.org/packages/56/21/e141421bbeec357238902169392f8de1417ee856e9cb742499e5547d66a6/khaos_cli-0.6.0.tar.gz"
+  sha256 "30c62c64bf96786e1e52956d10c88315bc216785d5a78fd8fe2d44278808f890"
   license "Apache-2.0"
   head "https://github.com/aleksandarskrbic/khaos.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ca634a321cc720e43f9b67a878bf9233ca1f7c6c57ac885940e27f202a3a44fc"
-    sha256 cellar: :any,                 arm64_sequoia: "67ac906a9d2ff4896dd40619590c78c3771572210108f2406af0d8b89578eb80"
-    sha256 cellar: :any,                 arm64_sonoma:  "92836b39e9bee2ed8d9d5f61d87ebad1eeb7e85c18c949eaabb8dfff20d97559"
-    sha256 cellar: :any,                 sonoma:        "e6aa898aa149da70c9a88f9977f532cef61f804681fbee8cedcf2dab57aea525"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "214da3b0e75349ae2c2c529a307ea9c90ebf746d344315072433ae2fcaaaadba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4686dbec3d23968802f929721a05cb7807cada60d6294b7e0c653bd5bd38bc3"
+    sha256 cellar: :any,                 arm64_tahoe:   "2e6c8dfdb2ad960784c6a548ce0ab055025ac4f4011c44d45ce4c6685b7742d1"
+    sha256 cellar: :any,                 arm64_sequoia: "9118fe458146dd0ace277967ce89314f478a6940f704fb3b3d646527b8d21fef"
+    sha256 cellar: :any,                 arm64_sonoma:  "9df8d77f364b3d0aa71d699532887d0d0df385ebd8acd1a4145fc141049359b0"
+    sha256 cellar: :any,                 sonoma:        "bcf1e57789f26b1a7ebfe08d55eede517c9f1301e497e0762b3a804d97d29ac1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a399a83c754db737c4063e85c1fffa9a6a3a1905232e6a9fe75907453ef361ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97a0a149cfb3b3b3012819569f4575a637ec477eaa7ec270d58e9211501ef34e"
   end
 
   depends_on "certifi" => :no_linkage

@@ -76,10 +76,6 @@ class Projectm < Formula
     CPP
     flags = shell_output("pkgconf libprojectM sdl2 --cflags --libs").split
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
-
-    # Fails in Linux CI with "Video init failed: No available video device"
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     system "./test"
   end
 end

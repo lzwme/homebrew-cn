@@ -56,8 +56,6 @@ class Asciiquarium < Formula
   end
 
   test do
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     # This is difficult to test because:
     # - There are no command line switches that make the process exit
     # - The output is a constant stream of terminal control codes
@@ -73,12 +71,13 @@ class Asciiquarium < Formula
     PTY.spawn(bin/"asciiquarium") do |stdout, stdin, _pid|
       sleep 5
       stdin.write "q"
-      output = begin
-        stdout.gets
+      output = []
+      begin
+        stdout.each_char { |char| output << char }
       rescue Errno::EIO
-        nil
+        # GNU/Linux raises EIO when read is done on closed pty
       end
-      assert_match "\e[?10", output[0..4]
+      assert_match "\e[?10", output[0..4].join
     end
   end
 end

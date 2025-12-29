@@ -137,10 +137,6 @@ class Mpd < Formula
   end
 
   test do
-    # oss_output: Error opening OSS device "/dev/dsp": No such file or directory
-    # oss_output: Error opening OSS device "/dev/sound/dsp": No such file or directory
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     assert_match "[wavpack] wv", shell_output("#{bin}/mpd --version")
 
     require "expect"
@@ -152,8 +148,10 @@ class Mpd < Formula
       port "#{port}"
     EOS
 
+    plugin = OS.mac? ? "osx" : "pulse"
+
     io = IO.popen("#{bin}/mpd --stdout --no-daemon #{testpath}/mpd.conf 2>&1", "r")
-    io.expect("output: Successfully detected a osx audio device", 30)
+    io.expect("output: Successfully detected a #{plugin} audio device", 30)
 
     ohai "Connect to MPD command (localhost:#{port})"
     TCPSocket.open("localhost", port) do |sock|

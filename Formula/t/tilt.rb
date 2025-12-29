@@ -10,12 +10,13 @@ class Tilt < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a7b209b3804917ca0ef40d5678ade7781870c426a066b9710791e35b9a007c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "561f455a090278933b4a1310686e90313239e080b11f8afb7459fb55d2e96192"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "66f8b7668b9f3dee49649536807329e2b211e215bba1a2e4b1e561da2c7f2174"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6579a8a25b53bc31a56d5e5df83c00ea410a187f4a9d1fbfe444a0dd9ed30d7d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "948c08fbdf77defcc7b89fd2653e1ebfe66279aa115d600a11362ecf42d3dd76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3703e7b58f462a3cb1417019d5a72a5ff0500dd543bf88c47650c25f32b451e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21a4b4914d8b38ffa6d49a40c085aad2f209659569519682ec608e0cc76e1fa0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f761d5778e7ea6dba64b76cdaccbd0333c3affb1fa80fe323a520df15c04e56a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f786299789b0636df3b8a34602b130807f59e794463f8528de172a9d10517220"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b623f3fa5552dba5d1b9257e31c79a086bfb10e811405212048c1370c6295bbf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "476cae759e5f2dc3ec062d6115f3c4ecf9de9ce885c47b2e7d8246557cab3376"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de8f2ff81ee85fb6761fccef7e6d786f1dd49e433ba91478e80c02961196d5b2"
   end
 
   depends_on "go" => :build
@@ -37,7 +38,7 @@ class Tilt < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/tilt"
 
-    generate_completions_from_executable(bin/"tilt", "completion")
+    generate_completions_from_executable(bin/"tilt", shell_parameter_format: :cobra)
   end
 
   test do

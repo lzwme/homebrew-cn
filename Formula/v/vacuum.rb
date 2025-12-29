@@ -7,12 +7,13 @@ class Vacuum < Formula
   head "https://github.com/daveshanley/vacuum.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1ee41e2c3b53b5e316bacca2c7751f1529ca022ce4d460807ef35da5d9239959"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6781707ee72c0ddcf9390e9687bc627a4d023ae124af1fda0c147127f2649cd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14e311afa80265dd383ef8f56be1ec71ec5618a100d0562a8cef2ce23f13b53c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "52e3912012ac40651e792ebe7e271e54e505c1d0650992b38153243b0daba3ef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "96d09ae7ec10d614c4d952d4aa875bea552cc85588e49051a03331999b7c716f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42cf19025db718e35e3d7dedc23c58f19bdb97575b10bd76baf56e753ba02272"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7463c71e8cf56a03da830b99e334230efa8a049950a50a948584ac90ad80e3c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "945b4599a9c3d44e0ad993f9ecc35813771d153853b0cb3624fd984e4cc4faab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "405f666bebc2d2a627ef8362ef21911a88db150857b28f12cce06a3e9e9c2496"
+    sha256 cellar: :any_skip_relocation, sonoma:        "43a2463f9877a876c1030eb3a9055b8547ffa4739802ad9c37abf6bdb6f67457"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ded13ada388c21c24383608123c4c2d68952098e34ec907d4c45d37d9552f8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea19ef701e41311f9cebfbddac8739542627cf7b09d89360bcebcf812161eead"
   end
 
   depends_on "go" => :build
@@ -21,7 +22,7 @@ class Vacuum < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"vacuum", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"vacuum", shell_parameter_format: :cobra)
   end
 
   test do

@@ -7,12 +7,13 @@ class Webdav < Formula
   head "https://github.com/hacdias/webdav.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85007316c5da4e68cc1757779bd75308033987eaa93e9a00b0eac634bd9308db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85007316c5da4e68cc1757779bd75308033987eaa93e9a00b0eac634bd9308db"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85007316c5da4e68cc1757779bd75308033987eaa93e9a00b0eac634bd9308db"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d8694d01019af945338e82c82a598ec975e6a84290f6d4ac313017a8f95e9154"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "329c660ed4195b6f7f842615c6f0e7fc8f22e893faa56afeda661126ba7e08b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00ec962b6b70ea27d26f17b665bfbe838d59af0d96b8270a8a868bca547da0c0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae1bd9347cac2636204fea1d640dae22494a7286d1803a9e471e563de6335462"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae1bd9347cac2636204fea1d640dae22494a7286d1803a9e471e563de6335462"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae1bd9347cac2636204fea1d640dae22494a7286d1803a9e471e563de6335462"
+    sha256 cellar: :any_skip_relocation, sonoma:        "878b1ef609d7a81c2f17e07bb286562abbb3e7c9f41a4e7bf66b690c1c6b6e93"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1386ad2a86ab7e82433f14009f78bd1e0789b7a5ba81c4a38d0dddb2acca71c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa211edf9a4f41a9d41549b1dc81fe61eee588f2bded6ed82b12a066985e4ad4"
   end
 
   depends_on "go" => :build
@@ -21,7 +22,7 @@ class Webdav < Formula
     ldflags = "-s -w -X github.com/hacdias/webdav/v5/cmd.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"webdav", "completion")
+    generate_completions_from_executable(bin/"webdav", shell_parameter_format: :cobra)
   end
 
   test do

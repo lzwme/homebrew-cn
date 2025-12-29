@@ -7,12 +7,13 @@ class Tuios < Formula
   head "https://github.com/Gaurav-Gosain/tuios.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c9ef8e2a046f473ae51ea53aa8ef8e820adb52a8c23d2ac1bf7cc33588b193e6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3530c0ddda1efbb98c1b17f30598b5e8e16f61b98859eb565257c3d4e142e34b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a62a2839c34a9d120ae79029f696e6480b655c1881802d757635b91b0d4128f4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "40b3de9b4a9f5a72984b5d0a599d64bf4021c344d7b676fb5b7be4c00e42ec19"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6386c978dbd5d2dbf1124cbb5faa9a44e571909202fa85bc5c51b5e80dc545d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77df1265a6c39140c25c10f0a384cc43410cf78eee5f5f14e036fcf39fec67c9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5fb2a54385290a39e1463fa4dc77dc374f56aeeaa2e862d1abc257bf1524e319"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acd127d4a745b13713c7dd9c08d96f28888e4cfde1dbdfbd86930218a796845b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "313c907bbca23c6e1cb3738e470dd04fdcfaf0438cc47cfd78d05bba0bce8261"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e706487018295439922af957114e154bafc386ee7ec38aa39c7857300d50f10a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37566ad6d56fe46142a6dc448718bb70ea24ab932d4141e6e6d536fa6cecaf11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "421be098ea1963a07b1167b94a7888df3ccf089073d86afdb0a413b2c2dcef0c"
   end
 
   depends_on "go" => :build
@@ -21,7 +22,7 @@ class Tuios < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601} -X main.builtBy=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/tuios"
 
-    generate_completions_from_executable(bin/"tuios", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"tuios", shell_parameter_format: :cobra)
   end
 
   test do

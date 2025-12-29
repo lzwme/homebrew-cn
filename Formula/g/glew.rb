@@ -20,6 +20,7 @@ class Glew < Formula
 
   on_linux do
     depends_on "freeglut" => :test
+    depends_on "xorg-server" => :test
     depends_on "libx11"
     depends_on "mesa"
     depends_on "mesa-glu"
@@ -94,12 +95,14 @@ class Glew < Formula
       flags << "-lglut"
     end
     system ENV.cc, testpath/"test.c", "-o", "test", *flags
-    # Fails in Linux CI with: freeglut (./test): failed to open display ''
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
     # Tahoe running is headless for now, maybe remove this later
     # ("GLUT Fatal Error: redisplay needed for window 1, but no display callback")
     return if OS.mac? && MacOS.version == :tahoe && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system "./test"
+    if OS.linux? && ENV.exclude?("DISPLAY")
+      system Formula["xorg-server"].bin/"xvfb-run", "./test"
+    else
+      system "./test"
+    end
   end
 end

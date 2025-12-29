@@ -6,12 +6,13 @@ class VulsioGost < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef1e4f34fc896f7cd417d261fa2e2c3f81f4d8ce7da45e1496d3a326a9244486"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef1e4f34fc896f7cd417d261fa2e2c3f81f4d8ce7da45e1496d3a326a9244486"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef1e4f34fc896f7cd417d261fa2e2c3f81f4d8ce7da45e1496d3a326a9244486"
-    sha256 cellar: :any_skip_relocation, sonoma:        "09c21122932ebe6f1b65067dae6f12118f845347251774e7f959e6d41fd6a304"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a01361bfdfd62c862e1382a9cbd3b19e0c89e4b63ec382a30846f2b35cb3a0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "394315676580dff1b3828ff24a4842a069b6420479cce77569ab5c5ff850dedb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4df9c6ac1df41a22b28b0c1dc0b737be77dc7e4d30966150643a5736eb5379ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4df9c6ac1df41a22b28b0c1dc0b737be77dc7e4d30966150643a5736eb5379ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4df9c6ac1df41a22b28b0c1dc0b737be77dc7e4d30966150643a5736eb5379ae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "00e44cc7abccb140fcc53068a8aeb8f78ba283c46592cea7613d946fdd7384ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a21670c2f8559076801cdd67fefebde38508d34a9cabc2de730f8b5e5fb40bf1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4190e90c79d58465830bf6d5ab383dbc2dbf1fdc65d860ada2ce6b6c66b9e176"
   end
 
   depends_on "go" => :build
@@ -26,7 +27,7 @@ class VulsioGost < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"gost")
 
-    generate_completions_from_executable(bin/"gost", "completion")
+    generate_completions_from_executable(bin/"gost", shell_parameter_format: :cobra)
   end
 
   test do

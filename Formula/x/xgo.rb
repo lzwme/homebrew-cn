@@ -7,12 +7,13 @@ class Xgo < Formula
   head "https://github.com/goplus/xgo.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "a75c004854a1a9bc80a4cf44e9587d66fea27e47c3d766cd51d51b7c02df3006"
-    sha256 arm64_sequoia: "0833d3abb66a496f7f4dac08bbb60e140213560acc6b88044d3c275bcd2ef268"
-    sha256 arm64_sonoma:  "4d9fd8b8ef8b25a88fc0e34c480f07ef2a8057f3aae157d774e3aa1f51959be1"
-    sha256 sonoma:        "9af23dadf176158e70483d0647a4562f627975335664c868f94e1ea33b24a9ce"
-    sha256 arm64_linux:   "b836969dc91f0841cfaef9a87fdc1a7ed3efd1dc7bb45a60ede2845573bc0491"
-    sha256 x86_64_linux:  "928ebd50cc947e4aab439df06de50e88b70345bed28e63b7dd84d3a685678db3"
+    rebuild 1
+    sha256 arm64_tahoe:   "db22007b23ef06d4484c60b697d6045966001f6077aefc12ab33c3569794113a"
+    sha256 arm64_sequoia: "f3c8351706da49467a02b816225a37b0dee6fd5ef7f00e9e6d3562e25dec7565"
+    sha256 arm64_sonoma:  "0112b7fdc299819e902b81588d4de6be6c298f98848b178e7b83aecd3441d843"
+    sha256 sonoma:        "8e0c261e9093f9070da88e1d97b30a56170976266a4f12638df238846ce072a5"
+    sha256 arm64_linux:   "1d2ad096a30f1f54186ee5f324688f580f2749a68254f35bfbfda767abd2a3ed"
+    sha256 x86_64_linux:  "59b8e2ead8b18c27e3dd72206d909bbffce49213c5b9552607db7a50c36212cd"
   end
 
   depends_on "go"
@@ -24,7 +25,7 @@ class Xgo < Formula
     libexec.install Dir["*"] - Dir[".*"]
     bin.install_symlink Dir[libexec/"bin/*"]
 
-    generate_completions_from_executable(bin/"xgo", "completion")
+    generate_completions_from_executable(bin/"xgo", shell_parameter_format: :cobra)
   end
 
   test do

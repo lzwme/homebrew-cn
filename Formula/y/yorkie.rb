@@ -12,12 +12,13 @@ class Yorkie < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8de4f6533b10538884a421e3e2958e2a2d40687956603948cd597d4235e98598"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7300ca0770dd45f9ca0653b91d4cdbbb12f075837e7c469be5be019bc03d7aeb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7296630b6a86400b5bbb51672a7a5d4842dcce5737c63cb064ac7d38f601f5e6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c6ffa0efcf3896ae5f63e24e11778c47ce874809a8267f20c50f5c344829a949"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22bd9eebd3c56856fae884a7912b8d376451be7944a3cacdc2087e2758ff4640"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0bfab98b50e70bd517b2eb9f0678581c369573ecdce689cf58c6977ee4b8e11"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9cb90f7876477356042b6aa484942d93437613e42d95183f6a27c6786bf7e289"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82b434c7dcf0cc82f26893df4b7d97f9f5034459228fa169e6ae17c360831aa7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e88bdbb152fb0a75ae94eb1f9b3ad623d7937a583af1b361558f9b90d6929ef"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c12d0ebee18f4e5200938080f785414b86ad1a98dbe5cf950905e29eb05f6ccf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "572471c63618e9cfc0813b1a51c4a9813c215df65dffc9d42cd25ce8e2373fd7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c324125d91026045390e1a7a8702187c30678072190cce0f9ce2e689d18c8982"
   end
 
   depends_on "go" => :build
@@ -31,7 +32,7 @@ class Yorkie < Formula
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/yorkie"
 
-    generate_completions_from_executable(bin/"yorkie", "completion")
+    generate_completions_from_executable(bin/"yorkie", shell_parameter_format: :cobra)
   end
 
   service do
