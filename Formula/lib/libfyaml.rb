@@ -1,23 +1,17 @@
 class Libfyaml < Formula
   desc "Fully feature complete YAML parser and emitter"
   homepage "https://github.com/pantoniou/libfyaml"
-  url "https://ghfast.top/https://github.com/pantoniou/libfyaml/releases/download/v0.9/libfyaml-0.9.tar.gz"
-  sha256 "7731edc5dfcc345d5c5c9f6ce597133991a689dabede393cd77bae89b327cd6d"
+  url "https://ghfast.top/https://github.com/pantoniou/libfyaml/releases/download/v0.9.2/libfyaml-0.9.2.tar.gz"
+  sha256 "d76da1dcc91f5d74cb9812ecce141477be93a258001e05a268a86715c0eea098"
   license "MIT"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "2af9a61ac94f34469841b23e4fd9c82049b46225c6acc7580f6a9703acec3750"
-    sha256 cellar: :any,                 arm64_sequoia:  "4296a8c80863d912ba93d237d0635b4b6568dfaec713cd69d5424ea77ad4097e"
-    sha256 cellar: :any,                 arm64_sonoma:   "f048b398ea675ff84cffed39be72aad7aebc2ff7b343291e82982e1d8aa299bc"
-    sha256 cellar: :any,                 arm64_ventura:  "7e0abdbb0374744a92305e607e3fccee6ba6bc09f01906719ec91b721a7176a8"
-    sha256 cellar: :any,                 arm64_monterey: "a4b6daf2e59d3361a9eeda457e5964672ecba38d7126c731684aec495db5bd2c"
-    sha256 cellar: :any,                 sonoma:         "6758d7c2b7667096e19a1b6f5a41b072fe34aafda17650fc873b781eeebc7211"
-    sha256 cellar: :any,                 ventura:        "24121cefb2cdd277652bfc857f9fd2b01042769aeeb9a622aba142e978ba99c0"
-    sha256 cellar: :any,                 monterey:       "4730aa6a64ffd960a0d82cbcc69734ffddb7abf29ae27450dfed7fc818a17935"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "d657e265f72bf3f8704c2d903d419ecbf89ad79803c4b67563e619733530117d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e4efc82a84ba883c56fe0ee85008a68a91863460ae0eae5dc02952143c8983d"
+    sha256 cellar: :any,                 arm64_tahoe:   "ec40fa5cfa28199daf08a21ecb57d7e1d0937c39e29b292721dad1c6e8b94661"
+    sha256 cellar: :any,                 arm64_sequoia: "b8a7731d03b6dd7e0e327b316974dd5aa3a6845ca2d38d81ac42406ca4244315"
+    sha256 cellar: :any,                 arm64_sonoma:  "2e13376d69d9d2550d3419d5e91dee57e60e87f1d30d328fe32deb1490760a36"
+    sha256 cellar: :any,                 sonoma:        "31d12784eae3f32f18e808ce66fd14e79acffde46cbaf42bfacdd25daa5b92e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf91c5cd0b358fb56a38cc8876b4bd16f4a0d42d339911e441379455e92e4b3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16791920f201ffa6465fbbadfd0226eac75e5a5a0e1c983b85a59b6fbcf07d07"
   end
 
   uses_from_macos "m4" => :build

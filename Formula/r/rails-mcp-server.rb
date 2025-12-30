@@ -1,18 +1,17 @@
 class RailsMcpServer < Formula
   desc "MCP server for Rails applications"
   homepage "https://github.com/maquina-app/rails-mcp-server"
-  url "https://ghfast.top/https://github.com/maquina-app/rails-mcp-server/archive/refs/tags/v1.4.1.tar.gz"
-  sha256 "aef71b34cb41b4dbcd93d97f8e750d4f2fd15e74fb03c363dbceba22d6d5fa52"
+  url "https://ghfast.top/https://github.com/maquina-app/rails-mcp-server/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "3a9fdb7c03ba728e200780a04c10c058e87d51f81470abfcb97075d64208c11d"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4da7b2c531ffc5359df7787e39c6d0082c09bcf926dc78ff5f86e9375bca1c53"
-    sha256 cellar: :any,                 arm64_sequoia: "6a119aa7dca2269d00b881f21909599440b2f1b4df4d9a2a0a423b287be0fc2f"
-    sha256 cellar: :any,                 arm64_sonoma:  "81e78ace76bfd91c9e1a912d76214bfd5d0d400f0bef661a8852097a4b7ab21b"
-    sha256 cellar: :any,                 sonoma:        "54b8592a3ab95d03d7811e5b468b6a70db2d06ae16b7ac15cfb7284955013e9f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f88feed51fdc4c3eb4f72fb01b1565430ca453cf8f7b0d545fdcba37e41896f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c171df4f13a77ef2a9f0e031e2d10a17710aa52852566dbc47778974477b700a"
+    sha256 cellar: :any,                 arm64_tahoe:   "266411d2fa7287beef8bbdfbee49535654e7ffc4770c0cef6a54ef14e9bd3a95"
+    sha256 cellar: :any,                 arm64_sequoia: "4daba4aef52ba85e9064cb6c6d9bc608a6ceefe6ee051ca45a56e8a496e377fa"
+    sha256 cellar: :any,                 arm64_sonoma:  "364dcefd65d8dcd05a1209a642446d0044513b37a07ee2ebef79aaabcc2678dd"
+    sha256 cellar: :any,                 sonoma:        "cf42d056cb4bd01fbd9602b6efedd6ebef494fbe04e134dce65ddba85d5ffe70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "17a313c3ec68ad6eafdfe9b874c268b7ade8879a747c470ea879c56faaddd277"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "166c6790a41329b48e62b4ebb67639739db9bd54f1f864557eae6c2198e35362"
   end
 
   depends_on "openssl@3"
@@ -34,9 +33,7 @@ class RailsMcpServer < Formula
 
   test do
     (testpath/".config/rails-mcp/projects.yml").write <<~YAML
-      projects:
-        - name: test
-          path: #{testpath}
+      test: #{testpath}
     YAML
 
     json = <<~JSON

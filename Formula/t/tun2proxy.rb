@@ -1,8 +1,8 @@
 class Tun2proxy < Formula
   desc "Tunnel (TUN) interface for SOCKS and HTTP proxies"
   homepage "https://github.com/tun2proxy/tun2proxy"
-  url "https://ghfast.top/https://github.com/tun2proxy/tun2proxy/archive/refs/tags/v0.7.18.tar.gz"
-  sha256 "4b99f7108f13eb4685777a76b9ecae2173f9786b20be7e740f1cc6400d812bee"
+  url "https://ghfast.top/https://github.com/tun2proxy/tun2proxy/archive/refs/tags/v0.7.19.tar.gz"
+  sha256 "85c467d3cfd7512f16596161fd8b7da912711a7aa3a9f4cf12877ba482143f9f"
   license "MIT"
   head "https://github.com/tun2proxy/tun2proxy.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Tun2proxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "66d1b6294adb34a35878b8b66aa3ea73ca11796f446efdd343a0509206d2c0c2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fb94b60f18e7b5f19bb4e3009c0041c69e4db6f498566ac7b4d5962015dc752"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0726135dd6a62c239ac311e63d11f9467a77fa2dd1078e7ccfcef84a9e6995c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8142df97f5a4944fb487f2d901be9c05de1770217961709ae29fafdcb610197d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2905d18a2b66e5061596fa529ccfdf6e3bca2f0e6ae09329604ca565f2d9174"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c2a4a031876bc70634e7d4e1a6b7efc6d3922dbfd7608bd446ae716652c3e7f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c242daa0a2c886c8346585c1777dbabb1de956d0b0e55b91b4905013db4ecdbe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e20c9949c607fd5ce0e04ccf113b7400e55ad1769fbe2d780441d7996240b8b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e361a130aa02b10ac03d286f597815c364755a7b7e77c20e8d60f134403a4629"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a3305dd85bc551ac80fb7210db425c8d8264b04be45f6b610181aebadcbdb6bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dcfba492c9d8923a62aa701da1a93ce459bab15893b9606df072b9a393ab840"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ba6d9f98c511ac9b84e6d2885f2393bd67bb9df10a0139b682587be088dea7a"
   end
 
   depends_on "rust" => :build

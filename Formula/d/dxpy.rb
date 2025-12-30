@@ -3,34 +3,57 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/79/8e/e26977a5f918cfa63fdc3364ca2b2784a6a3b4824d0e1e48e43236e02291/dxpy-0.401.0.tar.gz"
-  sha256 "1f8c09aa191941210c4371fdad4566ff9c9a689b0f72ca9a09a9a233207e880b"
+  url "https://files.pythonhosted.org/packages/0b/b8/b25a425d2a31dd8324b6b356d06c33ccfe6a1a80518e5e0d4d6f6addf0b1/dxpy-0.402.0.tar.gz"
+  sha256 "ae3d43ac10b54162b2b51e646e3054d9824af251f771f2a846776087141e9198"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4049f6c13b648465cb6f983683c1121d2734ff878c752de6fe64cd1273706bc4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8995d33a4f7cfee1ca0299641eb476c6b66781c70932a95073821b2d88c3ae43"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6910305b7fe97b813990b1bd88990c78a4146a226fc8815adc71ca6ab543c2fa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cff8901c67f69940884267b93a404bd152c0f1be0024ebf2f28c8afcc0414c09"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfa2513a2aa191126016f4e4e2f98e62e9907b9f26d6e8686f0ab012e198ac1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bb51069fde0160143d86cb3d15d1881ddcb426f415d87b6a924c47e971b1c3f"
+    sha256 cellar: :any,                 arm64_tahoe:   "8d4ac68826f96569ac975f7d736d00595175a0f3197f60c6601b09ee66b02b42"
+    sha256 cellar: :any,                 arm64_sequoia: "232a6a654d9d2792df172be5dba831550138580580254881d375c852ef58ef57"
+    sha256 cellar: :any,                 arm64_sonoma:  "7b2ffd4b7405bdb8117cb1cb355b46e6f99a08b664d5c0c033304454f1ffbcbb"
+    sha256 cellar: :any,                 sonoma:        "ec462e2093d83cda470d293078db112685752123d45c2f365283605dd5d7419b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "955b0ded5a0feb1b6419bdf3642accb7551a4b8e97eb8285632bf674b6b84712"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "046c4b2eea9e84781720b18fcdec996377aeea80ffe222d1240724294da3ffe8"
   end
 
-  depends_on "certifi"
-  depends_on "cryptography"
+  depends_on "cmake" => :build # for awscrt
+  depends_on "aws-c-auth"
+  depends_on "aws-c-cal"
+  depends_on "aws-c-common"
+  depends_on "aws-c-compression"
+  depends_on "aws-c-event-stream"
+  depends_on "aws-c-http"
+  depends_on "aws-c-io"
+  depends_on "aws-c-mqtt"
+  depends_on "aws-c-s3"
+  depends_on "aws-c-sdkutils"
+  depends_on "aws-checksums"
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
+  depends_on "openssl@3"
   depends_on "python@3.14"
 
   uses_from_macos "libffi"
 
   on_macos do
-    depends_on "readline"
+    depends_on "readline" => :no_linkage
   end
 
-  pypi_packages exclude_packages: ["cryptography", "certifi"]
+  on_linux do
+    depends_on "aws-lc"
+    depends_on "s2n"
+  end
+
+  pypi_packages exclude_packages: %w[cryptography certifi]
 
   resource "argcomplete" do
     url "https://files.pythonhosted.org/packages/38/61/0b9ae6399dd4a58d8c1b1dc5a27d6f2808023d0b5dd3104bb99f45a33ff6/argcomplete-3.6.3.tar.gz"
     sha256 "62e8ed4fd6a45864acc8235409461b72c9a28ee785a2011cc5eb78318786c89c"
+  end
+
+  resource "awscrt" do
+    url "https://files.pythonhosted.org/packages/82/1b/b5578329a77fe06aa66645f3827a4f5c1291ad39925775b49343f209b5d5/awscrt-0.30.0.tar.gz"
+    sha256 "e1a133430e71116e9c0f101b0d11227f47b7c561ad5303f5af00f6c33a16f382"
   end
 
   resource "crc32c" do
@@ -39,8 +62,8 @@ class Dxpy < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
-    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
+    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
+    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
   end
 
   resource "python-dateutil" do
@@ -64,6 +87,9 @@ class Dxpy < Formula
   end
 
   def install
+    ENV["AWS_CRT_BUILD_USE_SYSTEM_LIBCRYPTO"] = "1"
+    ENV["AWS_CRT_BUILD_USE_SYSTEM_LIBS"] = "1"
+
     virtualenv_install_with_resources
   end
 

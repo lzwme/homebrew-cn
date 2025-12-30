@@ -12,12 +12,13 @@ class Capnp < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f56d8d6a7908f45ad6b9304ebeec5c20f8ffb049911d129aed81b60b377fa4dd"
-    sha256 arm64_sequoia: "f41fee1317b745f8bcd6855dd1ec95deb5181b876c34731904cd0d91c4ae31df"
-    sha256 arm64_sonoma:  "9e4290ac485126048dba7b742b13b54329ea7bc17d7cb2bc11f624daf92d1af1"
-    sha256 sonoma:        "0871e73f16c2707186a4ec8ebddc9976f8a576ec44db531db8743306929f2c87"
-    sha256 arm64_linux:   "4416f977ef5a1497696be71a27547eee795a5a43677de79c06a083e4c56b5b04"
-    sha256 x86_64_linux:  "28d742cf52dcff528d8a55ea3c0ef6a1e6a18f1537536b01f78c9c1cbefce63a"
+    rebuild 1
+    sha256 arm64_tahoe:   "830c585121ebefe42e7fd8687dc6c4a16791709ddc82400531e426decbbaf579"
+    sha256 arm64_sequoia: "0b22246ef1430b58434c29e1060ebee51bfbc29d388ab0e97b3a7b6ea347aa93"
+    sha256 arm64_sonoma:  "933447a496eb80984f2fede5b6483a77b9146e146473cdc4d18b24b90ccd0ca1"
+    sha256 sonoma:        "020c95a5ec0a2aec01133ae4bd2571c6bd196ef705a4fbca5f27f365ed1b9580"
+    sha256 arm64_linux:   "17188a4772e30b20fb5563630136e090ade04e78d2494598b2099431e714152f"
+    sha256 x86_64_linux:  "1516426871f805f99d241f9a5b0d4d73c6c76ca698d232d85339fd9bbf2d4a14"
   end
 
   depends_on "cmake" => :build
@@ -47,8 +48,8 @@ class Capnp < Formula
                     "-DCMAKE_CXX_FLAGS=-fPIC",
                     *std_cmake_args
     system "cmake", "--build", "build_static"
-    lib.install buildpath.glob("build_static/src/capnp/*.a")
-    lib.install buildpath.glob("build_static/src/kj/*.a")
+    lib.install buildpath.glob("build_static/c++/src/capnp/*.a")
+    lib.install buildpath.glob("build_static/c++/src/kj/*.a")
   end
 
   test do

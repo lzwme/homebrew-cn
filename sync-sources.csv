@@ -12313,6 +12313,7 @@ Homebrew-homebrew-cask/Casks/g/goldenpassport.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/golly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gologin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/goneovim.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/g/gonhanh.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/goodsync.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/google-ads-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/google-analytics-opt-out.rb, Homebrew/homebrew-cask, 0
@@ -12828,6 +12829,7 @@ Homebrew-homebrew-cask/Casks/k/kube-forwarder.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kubecontext.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kubenav.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kubernetic.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/k/kubeterm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kunkun.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kvirc.rb, Homebrew/homebrew-cask, 1
@@ -13370,6 +13372,7 @@ Homebrew-homebrew-cask/Casks/m/mqttfx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mqttx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/msgfiler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/msty.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/mstystudio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mtgaprotracker.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mtmr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mu-editor.rb, Homebrew/homebrew-cask, 1
@@ -13432,6 +13435,7 @@ Homebrew-homebrew-cask/Casks/n/nagbar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nagstamon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/name-mangler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/namechanger.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/nani.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nano-node.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nanoem.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nanoleaf.rb, Homebrew/homebrew-cask, 0

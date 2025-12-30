@@ -3,13 +3,13 @@ class BumpMyVersion < Formula
 
   desc "Version bump your Python project"
   homepage "https://callowayproject.github.io/bump-my-version/"
-  url "https://files.pythonhosted.org/packages/c5/01/2bff065f653fed342a1a7118566ce6bebc44445ec70c1dce60fc9eeac184/bump_my_version-1.2.5.tar.gz"
-  sha256 "827af6c7b13111c62b45340f25defd105f566fe0cdbbb70e2c4b2f005b667e1f"
+  url "https://files.pythonhosted.org/packages/47/d3/43acec2ec4a477d6c6191faebe5f2e79facd80936ab3e93b6f9d18d11593/bump_my_version-1.2.6.tar.gz"
+  sha256 "1f2f0daa5d699904e9739be8efb51c4c945461bad83cd4da4c89d324d9a18343"
   license "MIT"
   head "https://github.com/callowayproject/bump-my-version.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e5380f6e944fde514b3da3655c227d29dc5f7aee83179400c9278a206760a129"
+    sha256 cellar: :any_skip_relocation, all: "1fa181e2ccf797279cd7d13fa0e27c7cb765cd6d927950deda22c14cd6399a4a"
   end
 
   depends_on "certifi" => :no_linkage
@@ -29,8 +29,8 @@ class BumpMyVersion < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "h11" do
@@ -94,8 +94,8 @@ class BumpMyVersion < Formula
   end
 
   resource "rich-click" do
-    url "https://files.pythonhosted.org/packages/bf/d8/f2c1b7e9a645ba40f756d7a5b195fc104729bc6b19061ba3ab385f342931/rich_click-1.9.4.tar.gz"
-    sha256 "af73dc68e85f3bebb80ce302a642b9fe3b65f3df0ceb42eb9a27c467c1b678c8"
+    url "https://files.pythonhosted.org/packages/6b/d1/b60ca6a8745e76800b50c7ee246fd73f08a3be5d8e0b551fc93c19fa1203/rich_click-1.9.5.tar.gz"
+    sha256 "48120531493f1533828da80e13e839d471979ec8d7d0ca7b35f86a1379cc74b6"
   end
 
   resource "tomlkit" do

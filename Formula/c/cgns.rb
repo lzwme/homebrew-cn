@@ -1,8 +1,8 @@
 class Cgns < Formula
   desc "CFD General Notation System"
   homepage "https://cgns.github.io/"
-  url "https://ghfast.top/https://github.com/CGNS/CGNS/archive/refs/tags/v4.5.0.tar.gz"
-  sha256 "c72355219318755ba0a8646a8e56ee1c138cf909c1d738d258d2774fa4b529e9"
+  url "https://ghfast.top/https://github.com/CGNS/CGNS/archive/refs/tags/v4.5.1.tar.gz"
+  sha256 "5da0e19907c1649a2f4b5d2abdb733674ae1a58d7436916a5fba1eb2f33f395f"
   license "BSD-3-Clause"
   head "https://github.com/CGNS/CGNS.git", branch: "develop"
 
@@ -12,28 +12,25 @@ class Cgns < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "b331f93f59e5f71811c11ec52ba9f1338688326246c98446191fe2444ef20294"
-    sha256                               arm64_sequoia: "60d460320a92ecb06f0102b192002150f3822f71b0ca08afac1d0d2b2d7a03ee"
-    sha256                               arm64_sonoma:  "059388e3ab976982dd8766d5331ee7c675d465199dadd0e51081332f739f5bcc"
-    sha256                               arm64_ventura: "46b2bb044517369bba1c9dad5b820a3d4f9afeff452e662210d5dba46d1376f9"
-    sha256                               sonoma:        "b0c10740cb9177010cf815816c1f31882d8ac61213022d68729dc2f3b65c43f2"
-    sha256                               ventura:       "73cdae1cc580e91901eb1716e3c63fe55ed314a7f7855b9359f668b32151630b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5febb80e3e67c84e95a514afb3f9c084b5efa0f74290b74a49c48a69cedacec6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc3307b328259a4c034e3a8a14c4bae802f8a3d054858f2abb2f942a0e8927ed"
+    sha256                               arm64_tahoe:   "c7f96718f36eb18d9a05381c313665a062617a603a5f716c53d93747e75a25d8"
+    sha256                               arm64_sequoia: "9cc8f9ae5b023e4ec4e3f8dac4f82d0255ca6c7d767a718fc8e651e6bfaab07f"
+    sha256                               arm64_sonoma:  "23ee5135084e419ee9faf9740f395a920a5016097ab79bcfe34bd27ee46786f1"
+    sha256                               sonoma:        "7a0d3fbf1574d2351cb0a974084d9b84b6d675cb986bbeeb147583856c4721af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee020f9fef1fe98cddb5a3d01a5a3df51733b2623931cccb363c6e0f7723bcc6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fad29163df664e319377262322630cced218cae72c5cecc9e72a2e831ca6dce"
   end
 
   depends_on "cmake" => :build
   depends_on "gcc" # for gfortran
   depends_on "hdf5"
-  depends_on "libaec"
-
-  uses_from_macos "zlib"
 
   def install
+    # Use GCC matching gfortran to avoid ABI issues with Fortran interface on Linux
+    ENV["CC"] = Formula["gcc"].opt_bin/"gcc-#{Formula["gcc"].version.major}" if OS.linux?
+
     args = %w[
       -DCGNS_ENABLE_64BIT=YES
       -DCGNS_ENABLE_FORTRAN=YES
-      -DCGNS_ENABLE_HDF5=YES
     ]
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args

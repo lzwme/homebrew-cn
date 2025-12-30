@@ -3,13 +3,13 @@ class Regipy < Formula
 
   desc "Offline registry hive parsing tool"
   homepage "https://github.com/mkorman90/regipy"
-  url "https://files.pythonhosted.org/packages/4c/31/b63b8c7a28c5895c7035cef68010d5a6d24cd03b9753c2357f8f50078de6/regipy-6.1.0.tar.gz"
-  sha256 "1358fa6cebb3d8816ac25d4f6f1a4a250cf1dbc38332ef7a3bdea42a3d0d2e4e"
+  url "https://files.pythonhosted.org/packages/44/85/b1bd8f1011954d6541c7450934a84962f39bed5dec390ea0ca5062effb0b/regipy-6.2.0.tar.gz"
+  sha256 "a1290ce2894200b3e86efbd18c1ff9b1d407f1da755f561f2de04bd460a41302"
   license "MIT"
   head "https://github.com/mkorman90/regipy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "78c33e3ea7bd9976f90511f7e411a90a3a666b1610ba6d9d0f507401a6f0f5a5"
+    sha256 cellar: :any_skip_relocation, all: "e99eb47c68013b67186902254f535312cc54f22b654724de8c5c4dec6360a9fb"
   end
 
   depends_on "python@3.14"

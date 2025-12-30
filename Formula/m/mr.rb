@@ -20,7 +20,7 @@ class Mr < Formula
   uses_from_macos "perl"
 
   resource("test-repo") do
-    url "https://github.com/Homebrew/homebrew-command-not-found.git"
+    url "https://github.com/Homebrew/homebrew-services.git"
   end
 
   def install

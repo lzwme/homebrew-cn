@@ -28,12 +28,15 @@ class Youtubedr < Formula
     version_output = pipe_output("#{bin}/youtubedr version").split("\n")
     assert_match(/Version:\s+#{version}/, version_output[0])
 
-    # Fails in Linux CI with "can't bypass age restriction: login required"
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    info_output = pipe_output("#{bin}/youtubedr info https://www.youtube.com/watch?v=pOtd1cbOP7k").split("\n")
-    assert_match "Title:       History of homebrew-core", info_output[0]
-    assert_match "Author:      Rui Chen", info_output[1]
-    assert_match "Duration:    13m15s", info_output[2]
+    output = pipe_output("#{bin}/youtubedr info https://www.youtube.com/watch?v=pOtd1cbOP7k 2>&1")
+    if $CHILD_STATUS.exitstatus.nonzero? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+      # CI runners can be blocked by YouTube, https://github.com/kkdai/youtube/issues/336
+      assert_match "can't bypass age restriction:", output
+    else
+      info_output = output.split("\n")
+      assert_match "Title:       History of homebrew-core", info_output[0]
+      assert_match "Author:      Rui Chen", info_output[1]
+      assert_match "Duration:    13m15s", info_output[2]
+    end
   end
 end

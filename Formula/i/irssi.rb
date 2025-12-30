@@ -11,17 +11,14 @@ class Irssi < Formula
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 arm64_tahoe:   "93d6623c013c8a0706babc77ef4d9991da385e441db4cdabe08ef916008e6b94"
-    sha256 arm64_sequoia: "9f640f1d64cf5331669a1f872ef3f797d4c4360015bba172c9b2ce4c48412453"
-    sha256 arm64_sonoma:  "ca992d7b5d2a8af9a75712670cacccf4910fa7c706e39169037a1c957ca314f1"
-    sha256 arm64_ventura: "618eb4e0270a79ba93e8a11a190c9650cbf274fb25b029b57c306c236ec68d07"
-    sha256 sonoma:        "24ab2a3d9546159460cb4248a74a0548cc63799ca80ab588f52a04a159c19282"
-    sha256 ventura:       "f35187d68cac2f55f1208c5ca2a362676e55fff197bea91e1a3720dd9e590f52"
-    sha256 arm64_linux:   "41225f150571644cb4b871859ff86b56eac1188ba6c6694a03c3800c22e7842c"
-    sha256 x86_64_linux:  "4af07634acbc8972700abb9dd307360a506032ab34eaf389fbb55780f4cd9781"
+    rebuild 1
+    sha256 arm64_tahoe:   "74e1b6d8caa18817f530fcadf38bb9953b59f38ce6737eeef7d48637c1378c87"
+    sha256 arm64_sequoia: "6648cf9bbf5d3e6b5881764f5c2b7d7c26bbfcaf2aff8be1239254fbe2d31aa8"
+    sha256 arm64_sonoma:  "c01e49f0179eb2539e8b64b7d88c52cce505d126becaa9d8a60a4ac339fc5783"
+    sha256 sonoma:        "568e0b0c2515f6cd4e8b219b4b812d36c3cf1af511d5ecb8b63b024ef5ff36ea"
+    sha256 arm64_linux:   "1f38e18fa6a4bfcfc28d10076927f3f845334df4f8cca64bb51a69f6cca6ab79"
+    sha256 x86_64_linux:  "8393b14f9ae8a38f55d99ce3e3f8fa2601b84d2b90a10568092bbdc7b4458c1a"
   end
 
   depends_on "pkgconf" => :build
@@ -33,6 +30,13 @@ class Irssi < Formula
 
   on_macos do
     depends_on "gettext"
+  end
+
+  # Fix build with Perl 5.40+
+  # Upstream PR ref: https://github.com/irssi/irssi/pull/1573
+  patch do
+    url "https://github.com/irssi/irssi/commit/6395b93cc8461f8a3da1877c18b4abff490a3965.patch?full_index=1"
+    sha256 "55b68fe2ae2e7c893cea2ffb1ccdfd6e52b3c6658d26cd5d46ec8612723bd3a8"
   end
 
   def install

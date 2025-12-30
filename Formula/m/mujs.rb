@@ -4,7 +4,7 @@ class Mujs < Formula
   url "https://mujs.com/downloads/mujs-1.3.8.tar.gz"
   sha256 "506d34882f2620a2fdeb6db63dbb7a8ffd98f417689d8f3c84f2feac275e39a9"
   license "ISC"
-  head "https://github.com/ccxvii/mujs.git", branch: "master"
+  head "https://codeberg.org/ccxvii/mujs.git", branch: "master"
 
   livecheck do
     url "https://mujs.com/downloads/"

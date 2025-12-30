@@ -3,18 +3,18 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/ad/bc/cb84a2d87b565964a30c7cdda2f0b467ddecba6953ab868f971560d93d5b/commitizen-4.10.1.tar.gz"
-  sha256 "14d12252970463db2fa7c7e7e4753321190a093e7d5c99efcd1a63be73e3c1f8"
+  url "https://files.pythonhosted.org/packages/c4/aa/e0188faa6eecd4293a1d4213ea2b2ddcbed7f8f248ef41594662a78bba92/commitizen-4.11.0.tar.gz"
+  sha256 "d311297a0165ef9f30e0877e04608b786d5fd69760f32245fbf1c21e793e91df"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b191e9a7a893b1a7243bc1c1413b7b90b8cdfd2d28fc940c9eecb5b082706120"
-    sha256 cellar: :any,                 arm64_sequoia: "0269699586c1a333042d3bf3288db652795ba0c8d242d26e3062c7794ddea207"
-    sha256 cellar: :any,                 arm64_sonoma:  "01eb187add5069306ce0a47be8835b1e212138ba1e2f9a70e7099aadec369bad"
-    sha256 cellar: :any,                 sonoma:        "4791651e5c90f1eb284abd6220362c193e0c790621147ad7f51a422bc01e44fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "78a461dfd49d45126d3df76def569083ec9b9b0120cf732493d3eb4f2bd52cca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "830c4c43e031f76b92432680ffd1bae267fc3b44f17c69a4c9214d84367f827b"
+    sha256 cellar: :any,                 arm64_tahoe:   "39d4890c5652b7b30e10142fbe16121ea73c34232750ceb1347efe74c9a99694"
+    sha256 cellar: :any,                 arm64_sequoia: "4f8fe44650c0b9e73c5ca44f53840dd93e65480077a4f463b18d811adccb280e"
+    sha256 cellar: :any,                 arm64_sonoma:  "b6104bda493314d79893bb42536a947eb1090e1c78ffbf59a2d1d8a08dceb989"
+    sha256 cellar: :any,                 sonoma:        "94f553becd77cb9407794eedfb77b045327b0fe0816848b1356b374c3f4ca82a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a53bc2140c8ef398e52d3e5fe98df99cea427a6d5ce60029655b41b76b59c0c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5abcc178aada0d158239d229f9f4e816f2317033d75a99294eb713f33ff5760"
   end
 
   depends_on "libyaml"
@@ -76,8 +76,8 @@ class Commitizen < Formula
   end
 
   resource "termcolor" do
-    url "https://files.pythonhosted.org/packages/87/56/ab275c2b56a5e2342568838f0d5e3e66a32354adcc159b495e374cda43f5/termcolor-3.2.0.tar.gz"
-    sha256 "610e6456feec42c4bcd28934a8c87a06c3fa28b01561d46aa09a9881b8622c58"
+    url "https://files.pythonhosted.org/packages/46/79/cf31d7a93a8fdc6aa0fbb665be84426a8c5a557d9240b6239e9e11e35fc5/termcolor-3.3.0.tar.gz"
+    sha256 "348871ca648ec6a9a983a13ab626c0acce02f515b9e1983332b17af7979521c5"
   end
 
   resource "tomlkit" do

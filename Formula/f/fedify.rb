@@ -7,27 +7,46 @@ class Fedify < Formula
   head "https://github.com/fedify-dev/fedify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "84e131894162e9a855383ea75987afa4bfc45a907c0f33458af068d1cfc6907b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1028a82c334841f012c59885bae0e6430d46ffcbf23f7e09d2c4c09ce7013d0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d230abbd0b38ab86888ae7d7db059ccf6610d9c3789622abfa2acc79c836a56"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0af4e80f92bfb48537d5a7034e28ec39ff15108405b9df33afe39c23728039f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "97867f5751272ab601c1237e51b2bdd9a916f8b6bf4ee5a16e4fdbb04c2a2a24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43a02e9dfb71486cfe573e90b28cc2bedb50fe6ba7661f6a6231148c71e5aac2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b7179e7af4e4a58b670810c178dc3411c482185f64f48debeb53945aad54ebb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebf72d9cbfd76b2ed7e117a72af7b05a710f9f890c8b60f99a2d0008d6fb2b39"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1cd59514c90521138b6e99d9ba15c9ddfefcc4a3ce4ce1c4ad40276e9fc5bbf5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2a998198482565a62908cde5e5b4653fc77e975a0528709ece66c4f66a5629bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3fcb69cdcbc7b093ab73925b4dd2cc0abbaa32b89be722f044bb2893c692362"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8df44de056aacd5393f27325fa2361e058348d8e37e0f511c438775288ee965"
   end
 
   depends_on "deno" => :build
+
+  on_linux do
+    # We use a workaround to prevent modification of the `fedify` binary
+    # but this means brew cannot rewrite paths for non-default prefix
+    pour_bottle? only_if: :default_prefix
+  end
 
   def install
     system "deno", "task", "codegen"
     system "deno", "compile", "--allow-all", "--output=#{bin/"fedify"}", "packages/cli/src/mod.ts"
     generate_completions_from_executable(bin/"fedify", "completions")
+
+    # FIXME: patchelf corrupts the ELF binary as Deno needs to find a magic
+    # trailer string `d3n0l4nd` at a specific location. This workaround should
+    # be made into a brew DSL to skip running patchelf.
+    if OS.linux? && build.bottle?
+      prefix.install bin/"fedify"
+      Utils::Gzip.compress(prefix/"fedify")
+    end
+  end
+
+  def post_install
+    if (prefix/"fedify.gz").exist?
+      system "gunzip", prefix/"fedify.gz"
+      bin.install prefix/"fedify"
+      (bin/"fedify").chmod 0755
+    end
   end
 
   test do
-    # Skip test on Linux CI due to environment-specific failures that don't occur in local testing.
-    # This test passes on macOS CI and all local environments (including Linux).
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     version_output = shell_output "NO_COLOR=1 #{bin}/fedify --version"
     assert_equal "fedify #{version}", version_output.strip
 

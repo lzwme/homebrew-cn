@@ -4,17 +4,23 @@ class Gstreamer < Formula
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
 
   stable do
-    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.9/gstreamer-1.26.9.tar.bz2"
-    sha256 "55c89ffa14e97efe1d14a46d129e23ccb5b0e9160cfea6bc6a70e55a61423070"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.10/gstreamer-1.26.10.tar.bz2"
+    sha256 "9cdda214b0b843780e180c624932d96e8e3101a870048f2f207ac70c7abec645"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.26.9/gst-plugins-rs-gstreamer-1.26.9.tar.bz2"
-      sha256 "f747cb27e232c0c07943b3d17d2bd39c4a753ad5e50a9ef85e81426e997684d9"
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.26.10/gst-plugins-rs-gstreamer-1.26.10.tar.bz2"
+      sha256 "463abc9d388190c35c163e719d345198521078f7fd81585bfc3ead46d7e9cc60"
 
       livecheck do
         formula :parent
       end
+    end
+
+    # patch to use `typing.Self` from stdlib on Python 3.11+, upstream pr ref, https://gitlab.freedesktop.org/gstreamer/gstreamer/-/merge_requests/10452
+    patch do
+      url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/commit/a77a4f3f5388cde3c4592d1193ae82692fd2bdbb.diff"
+      sha256 "a874f85318ea56abdd19381b9ada24f93dfcc9ad4397e5591ca20e101152f0be"
     end
   end
 
@@ -24,12 +30,12 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d8461b666e97b21ea4b9c24956db64f1c5b012d77c2b3e5ae9b6628da9690af6"
-    sha256 arm64_sequoia: "409bcf39c4b15c7c92a461f0eb6ceb5b5593598c0e3740014d243b9c114124b3"
-    sha256 arm64_sonoma:  "04011b64168578e0106b518ffeec228311db1b4b5075dcaaf18bc3382f428c28"
-    sha256 sonoma:        "cf4fc037ff0e860bc438db69ae68977f73009932c1845e96d44248e3005d9ba7"
-    sha256 arm64_linux:   "93f78a205d1636a0e36eaedc15b9f4132d4bf9bf6a47ca6d53cd054f0a21a0a3"
-    sha256 x86_64_linux:  "7c5c11c15fd9b0cce3e87a9d5fe6fa4901962fcfec2daa91e2659a575589e661"
+    sha256 arm64_tahoe:   "a6501828af9ce32b2089e0793b106cde74fd6fbe1c855e6842a9a74748e84b90"
+    sha256 arm64_sequoia: "2daeef4894b2e1456f3446a326dd26008c3e387b8a1baa5f51a3489770825cbd"
+    sha256 arm64_sonoma:  "80779d46e04f90591cc18d18c653dd43acdd372896bd1b3ee4dde2be819b6ab1"
+    sha256 sonoma:        "f200824778c0dec095c2f8bab0ba62763aab85bb5cb0e4ec40e0a02bb191895c"
+    sha256 arm64_linux:   "cc45e957d12e8100e6876e98f32e77c96a0d1526efb841d18547d07c9b78aa43"
+    sha256 x86_64_linux:  "a0675faa09c52b3668004244682cf13432cfa56cd9c9880eb9047a8cdd77291c"
   end
 
   head do

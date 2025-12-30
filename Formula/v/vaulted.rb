@@ -34,7 +34,6 @@ class Vaulted < Formula
   test do
     (testpath/".local/share/vaulted").mkpath
     touch(".local/share/vaulted/test_vault")
-    output = IO.popen([bin/"vaulted", "ls"], &:read)
-    output == "test_vault\n"
+    assert_equal "test_vault\n", shell_output("#{bin}/vaulted ls")
   end
 end

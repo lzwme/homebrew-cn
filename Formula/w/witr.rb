@@ -1,18 +1,17 @@
 class Witr < Formula
   desc "Why is this running?"
   homepage "https://github.com/pranshuparmar/witr"
-  url "https://ghfast.top/https://github.com/pranshuparmar/witr/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "5d697999be5684a2723d92e649a72c80ca2df464f6e7dcf5e52551b5ee9194fd"
+  url "https://ghfast.top/https://github.com/pranshuparmar/witr/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "489b8bbe863eb119b830ee0a9287ca835d1201379b885e4cb7353b5e59138d53"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d1d87b6680102abefc57482c4b339733ce6f846520a64ed2514d24552a27a79"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d1d87b6680102abefc57482c4b339733ce6f846520a64ed2514d24552a27a79"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d1d87b6680102abefc57482c4b339733ce6f846520a64ed2514d24552a27a79"
-    sha256 cellar: :any_skip_relocation, sonoma:        "517bc9b81db2de6b2054e5b47a2091b2ad81ee445d40b17c3a3205e2fee9c538"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "faab68bd4539896e97aff48f49cd42738538646036152c68e4c4bbc0d329c400"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3236ab219398015a9b203973631df16f0ee2ee4c5585d5bd187b99e0b9ca189"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76685cf44e1ac8609a46051ab21b0a78ed9ceb4201c026743a5a38fee66c23cd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76685cf44e1ac8609a46051ab21b0a78ed9ceb4201c026743a5a38fee66c23cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76685cf44e1ac8609a46051ab21b0a78ed9ceb4201c026743a5a38fee66c23cd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c319cee0b67acacfba1968813bba4139bac9e5a19496d856ec2116e619e6d372"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbe5d1dee5cc4e97f4e4ee82418bdb39555d1549f44e745112d1e994c0bb6bea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9340b7fab7add980ab1239cfdbcb5ad8276fefa235d498bdd1b78401a7d5e429"
   end
 
   depends_on "go" => :build

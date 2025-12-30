@@ -1,8 +1,8 @@
 class Libsvm < Formula
   desc "Library for support vector machines"
   homepage "https://www.csie.ntu.edu.tw/~cjlin/libsvm/"
-  url "https://www.csie.ntu.edu.tw/~cjlin/libsvm/libsvm-3.36.tar.gz"
-  sha256 "bc92901fbb928c44bb6d0c38189624c7443bcdbf1dd8350b4914e58e57b93c11"
+  url "https://www.csie.ntu.edu.tw/~cjlin/libsvm/libsvm-3.37.tar.gz"
+  sha256 "1fa553edc776be3d62fab4607b96ffa505093ea6e3e759a4c7f96294ff75e29a"
   license "BSD-3-Clause"
   head "https://github.com/cjlin1/libsvm.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Libsvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6546714deddbd0e4a709d6987ffaaf66342b9bfa032f2ebb3ac8138ee1b9be07"
-    sha256 cellar: :any,                 arm64_sequoia: "07c47f5b7781dd3fffb83c47d6ea6568e7979e1222eb214c7a85d1323841a91a"
-    sha256 cellar: :any,                 arm64_sonoma:  "491c601bed6a963a50717df1a90b1a0c9a73f73b19f64778239a1668edb96440"
-    sha256 cellar: :any,                 arm64_ventura: "4025272abab33c159ef9ce0133a1716d3936d2b10a0f26c630a68e19547c4bb5"
-    sha256 cellar: :any,                 sonoma:        "0bb3867e246b44702d4f0504b0fd8cbc52a7995d9c083ad1be071eedac630f33"
-    sha256 cellar: :any,                 ventura:       "7756ddc93d633b6de91c42f80ea3fba436cdfd9a9eb7af9f7413ec9f15ba1af5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfdef8c630fd3e6fd561ae9b0fe3d3063777ddb0553e06b00477fa29bf28f1a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1c622afb8f5923a625dbdd52197af588febd196e1d2eabfa3e1c9b3664e4386"
+    sha256 cellar: :any,                 arm64_tahoe:   "9dc419641847bea4ed0dd9bd75efbcee7ce92258b76d54a71183a8a87822753b"
+    sha256 cellar: :any,                 arm64_sequoia: "dcca828a3fd8e13db027d142d5416fa00c637d00a4baadb188721959baa54eb1"
+    sha256 cellar: :any,                 arm64_sonoma:  "230982cb0d8fdc93e919379e6cd82f3a758293c2adc59863550f585a618d2055"
+    sha256 cellar: :any,                 sonoma:        "8340e3967715a32035f0c88c4645bae3592efc1d7c11280dfb58bd9580e75cda"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a27b8ad220f9d4062b409f1a7f370fd56bacc1205cbcc1a30fdee8208d81f5d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f86e224fd89d5916216306486326df059340edf248a09e03d9a118add4db35ea"
   end
 
   def install

@@ -1,19 +1,18 @@
 class Snitch < Formula
   desc "Prettier way to inspect network connections"
   homepage "https://github.com/karol-broda/snitch"
-  url "https://ghfast.top/https://github.com/karol-broda/snitch/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "0dca3cad9563e2bc76c0f23dc475d1707644971d51f52ed0a4cd317f30d05cb8"
+  url "https://ghfast.top/https://github.com/karol-broda/snitch/archive/refs/tags/v0.2.2.tar.gz"
+  sha256 "e0bc3a0b2e4f99d51fcd46217bd863d1ab18c08462fbbf1e875862fb8909c632"
   license "MIT"
   head "https://github.com/karol-broda/snitch.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3003663bfb991ef0bb9693c2a54142e50e3c67044d66cdfc803280d680396d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea8e335bd6d1a4144d48a9bad65e553a22912154a5950dd91325c0f806a20dbd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b4708821544b9d95af38acc4f597d42dd380157e4196f5ce546ba35fe9054ab"
-    sha256 cellar: :any_skip_relocation, sonoma:        "58fe8e768035189d46fa13c4292045b958514c5d41bfe6cca52f17b978f074dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "78f8433e1b7c53cef5cffe1539b8c54a971ae31d635e604896525bfe3d4b3d04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3414aedecc982a10b31fb485945dbe301b7216477d73b5b0de62f755f78a0a4a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a89f1ef41e5f83a56f4fa0b118fd514993fa22dac5b031cb4e6f087e05680e7c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60b586aee24f23eea1ef1078541c07a8aaaca8c72de11d829a11da4898ed4ae4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff92a1d1c2a23b803728eb9374b48bf77d8c0fbd2132c35242b32b4f07f73499"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8c09b4b77d447461362347c6befc8ebbfa2677c7e271f67dd26dda41a672ef6d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf2940c863c05cbd97ee356d149049cbecc40357fcb49431e18f68a36663f52c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e46445e8ff57282389e49e331dcf5fbff204ce1c32bd1f18b88f457a3dea3298"
   end
 
   depends_on "go" => :build

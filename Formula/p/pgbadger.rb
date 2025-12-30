@@ -1,14 +1,13 @@
 class Pgbadger < Formula
   desc "Log analyzer for PostgreSQL"
   homepage "https://pgbadger.darold.net/"
-  url "https://ghfast.top/https://github.com/darold/pgbadger/archive/refs/tags/v13.1.tar.gz"
-  sha256 "9658ff222ed7b387d3cb76c3e3d90d1862b885c13b26aa9ff652e133f5d018f1"
+  url "https://ghfast.top/https://github.com/darold/pgbadger/archive/refs/tags/v13.2.tar.gz"
+  sha256 "94074714bb4928c69c9e977da02d50e197a9d428fa3f235f25c103ef3c7d9a9d"
   license "PostgreSQL"
   head "https://github.com/darold/pgbadger.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "7660efd39ced9f239c33d6f2eddfa4741e980cfe7e90d8947cd268847fc2643b"
+    sha256 cellar: :any_skip_relocation, all: "0bb5a45931dcd0a4936f649e36b01e3b4dffb63193b565c99f57a409162c36ac"
   end
 
   def install

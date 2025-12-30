@@ -6,9 +6,13 @@ class Libsql < Formula
   license "MIT"
   head "https://github.com/tursodatabase/libsql.git", branch: "main"
 
+  # Upstream releases other resources in the same repo, so filter out the
+  # prefix `libsql-server-v` from tag names and also there is no guarantee
+  # the release is latest. So we have to use `GithubReleases`.
   livecheck do
     url :stable
     regex(/^libsql-server-v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases
   end
 
   bottle do

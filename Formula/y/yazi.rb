@@ -1,8 +1,8 @@
 class Yazi < Formula
   desc "Blazing fast terminal file manager written in Rust, based on async I/O"
   homepage "https://github.com/sxyazi/yazi"
-  url "https://ghfast.top/https://github.com/sxyazi/yazi/archive/refs/tags/v25.5.31.tar.gz"
-  sha256 "4d005e7c3f32b5574d51ab105597f3da3a4be2f7b5cd1bcb284143ad38253ed4"
+  url "https://ghfast.top/https://github.com/sxyazi/yazi/archive/refs/tags/v25.12.29.tar.gz"
+  sha256 "95d426eb933837bc499d3cddadaf845b919586d0105ffb831dcd5e085f73fd6c"
   license "MIT"
   head "https://github.com/sxyazi/yazi.git", branch: "main"
 
@@ -15,14 +15,12 @@ class Yazi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "17380d2a5e88efbc19f9b0ce24f82abd130d524faceaeb7ea66df68a1c0787e4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55ae93d2fd850112f783f4052e4246bdc0d978717bf128afffaee1386c367fbe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f068f0631c6431fd36de113d88875a0ac10875f6cabc08f19251cab578a6fa97"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "66a6dd96dd47205f720454d129eb74bd483137f7aef9c166f4b041cbf045345d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4cba596dd9ee6335a7424596fab979a3845877c87fb3bd7b3259b30f11e17517"
-    sha256 cellar: :any_skip_relocation, ventura:       "1b00c00a1d6ebb2f02badd0a37610674ea71e7f954fcecdec2568e58e3374709"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8abea4a36aaa705edd6ef655ce3d24fc58346ac1ddf041e85589b2ce352ed23f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "961112614f3d0ec7052085aa2208e299cdf00002454c04777ef703fd5eb38837"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b1ea8fa23afbc725aff06c304a30fd303807a874151dad6101874b9d83cae94e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9f28f325a26f9258e730a93b6b2fd6f891d0491b5e82ec1c862e9d74d0ac08a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "574f15574d345a82da711338b46d6737ba5dd49cb18a0359edd4410d5653d76a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7bb461edf43231afee496619ef31b7a783ead4ed7a47dd3409a143e511071105"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e4f488373f021a9f3a0420e715e19029cbc02b9a6feba581803a91417c22fd1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bd7b91a909f4b703cdff63e7e5f5b32d299a591d776d434d1683039ed281009"
   end
 
   depends_on "rust" => :build

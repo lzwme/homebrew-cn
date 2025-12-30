@@ -1,12 +1,12 @@
 class Context7Mcp < Formula
   desc "Up-to-date code documentation for LLMs and AI code editors"
   homepage "https://github.com/upstash/context7"
-  url "https://registry.npmjs.org/@upstash/context7-mcp/-/context7-mcp-1.0.33.tgz"
-  sha256 "825f1539d05ac5812826660a855a334acb0dee87f01377e04cabf0ed26d8b341"
+  url "https://registry.npmjs.org/@upstash/context7-mcp/-/context7-mcp-2.0.0.tgz"
+  sha256 "260b2fcfee88fb5bd57f69a65ddb039aacd0e7e3b856a579edac0553ea7f0aec"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c7678233479bb62d5b0a97f3702068473217fff2d5de4e42c3e5c2e23afec1c4"
+    sha256 cellar: :any_skip_relocation, all: "58e33981556904c4a3574ec120cad0803478eeb5d69b6de327e0807a11fa9c04"
   end
 
   depends_on "node"
@@ -23,6 +23,5 @@ class Context7Mcp < Formula
     JSON
     output = pipe_output(bin/"context7-mcp", json, 0)
     assert_match "resolve-library-id", output
-    assert_match "get-library-docs", output
   end
 end
