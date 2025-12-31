@@ -4,15 +4,15 @@ class Latexindent < Formula
   url "https://ghfast.top/https://github.com/cmhughes/latexindent.pl/archive/refs/tags/V3.24.7.tar.gz"
   sha256 "04f58396a780d3a533cfa943b48b7799e065000c406e239224c383c56bd86133"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1607266f1092b4e3fbe9c153ac67ac0006f71c8513ea20a410cfedd11d9615af"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "577009fcb4b1351d2b0811d2e696e72e7d77d0c07570247c922fd893c4219e75"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5beea1b18310662e28195e38dc5d15da354b82ca1adb7c50ac3128a40911792"
-    sha256 cellar: :any_skip_relocation, sonoma:        "74e95c0a3d9ae3b3d4f5fa16d16c6ff5f174753c3b1708b29cb4eaf1e12d3fba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6349239f6ec3c44cdc3cf2d0a05f3bac2def44fe75ea8a314e8ac26449d272c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "430b8f6960dbac3333f8f84fc15b7ba768393603c983a2ecded879ac409e4fdf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8968ad8832757ec7735a9d85fee1f221338d14fe5356ae827ad51cc79d2d93e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96114788821ea8f4a8c42d11abca5e0818f812689d049b927fcc732f2af28e69"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa988f581ec8e44ce331055b7052e0fb73792913cd901744d87b68c157397a92"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6ac91cecd5ca28baca7b9c427f7ddc629b5523a1ef5dd91d7885bec422b99191"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e491ff88a404ab91d242975ebea0beb16aa14ab184af0c3de857204b0266b12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f8001b0b14905f9c561a0e90d445ee14008db2de494271341aab70e0093e2c0"
   end
 
   depends_on "perl"

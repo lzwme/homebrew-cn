@@ -7,12 +7,13 @@ class Frps < Formula
   head "https://github.com/fatedier/frp.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e26c30ec9715ba678a0f56047bc286047db7eb4925f3fcdb6b3ed00ead4ff1df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e26c30ec9715ba678a0f56047bc286047db7eb4925f3fcdb6b3ed00ead4ff1df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e26c30ec9715ba678a0f56047bc286047db7eb4925f3fcdb6b3ed00ead4ff1df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "da0f0da90f709eb63699b20f5fd9c43050a74f4eecee5dec3ffa16339a8c0f94"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "13649d7616ddd32de46d0e9f7aa5759782f9c19a9b2c891ded40ceebad960279"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c832378f3a33854b923674a9e4ff6c4c68f93b6ac51adfd6137c5efad2259818"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f3053a5843deca96265304ff627b1c7b6951ef6abcd248a12ea12756ac0c465"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f3053a5843deca96265304ff627b1c7b6951ef6abcd248a12ea12756ac0c465"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f3053a5843deca96265304ff627b1c7b6951ef6abcd248a12ea12756ac0c465"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6fccfe49d437feea557993d1b0a9f90b4326134e458d2c0af62de5c89578e881"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7b07ac18033aca3a8f2b95ed2ec66bd38cbab7340e1d8600351f66ef3aa61e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61f78b1dd179993df4d3ec3fe67c2fb1e7ad1ffc1ad0a8db21314b7744a07c39"
   end
 
   depends_on "go" => :build
@@ -22,6 +23,8 @@ class Frps < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w", tags: "frps"), "./cmd/frps"
 
     (etc/"frp").install "conf/frps.toml"
+
+    generate_completions_from_executable(bin/"frps", "completion")
   end
 
   service do

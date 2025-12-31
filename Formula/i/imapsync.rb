@@ -5,6 +5,7 @@ class Imapsync < Formula
   # NOTE: The mirror will return 404 until the version becomes outdated.
   sha256 "34e1715c6584889ff3bd9c0acc2fab254446282beda90c8e5a71a83b3a59dbca"
   license "NLPL"
+  revision 1
   head "https://github.com/imapsync/imapsync.git", branch: "master"
 
   livecheck do
@@ -13,12 +14,12 @@ class Imapsync < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2f407b5ac18dc912864150ceade929689b707569a6bf21624a32f453aef3f0a1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c4a8219d8f90921713ba21e235b13ee1894984e7aff4b5c5779f33083afb5f0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb8f896a90ca433339f0bc4440375cd7fa5f44fa199ca3d938a764ce1e5e3148"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ad64d2ca74795ebd8f022d65d0d7ac52dd580cfc98cbf4600deb60fdd9e55f63"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ad7c2de7c9ad4fb055227eeb7887c6aa1d523ed75210c07da245c7f24e3e216"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b788e7bf24d14b8f1ad33bc2772ac947406ebcaaeb25b55908f7e26e56f4a66"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "315c28d274ad31fa73e5a31fb36915a066523919b9aa0eed48be54299db75354"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40c6c7e28edd206bcfab258b4ab1758ac68cd48bc0b469329e3856a6078fb82a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61e3da329b36f9a5ddd87691194cf3ce116ea72b5a21f06e2c54efcf65b01017"
+    sha256 cellar: :any_skip_relocation, sonoma:        "afd145e9ad346962e091e1a05a73450b582d7fb241053a49d91458a733113c86"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f70c8f3a73e97d0041427886a0dc4a9a58c66e47021aa5a9cefe3b508ff2e03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd40f2dab2a203b1e3931a2093ae474d8a80b48521e1381d0a64811627a45f26"
   end
 
   depends_on "pod2man" => :build

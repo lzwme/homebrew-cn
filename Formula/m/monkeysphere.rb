@@ -4,7 +4,7 @@ class Monkeysphere < Formula
   url "https://deb.debian.org/debian/pool/main/m/monkeysphere/monkeysphere_0.44.orig.tar.gz"
   sha256 "6ac6979fa1a4a0332cbea39e408b9f981452d092ff2b14ed3549be94918707aa"
   license "GPL-3.0-or-later"
-  revision 9
+  revision 10
 
   livecheck do
     url "https://deb.debian.org/debian/pool/main/m/monkeysphere/"
@@ -14,14 +14,12 @@ class Monkeysphere < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c9e8dcdb90ed4f9787eeac0331f5fa3e46bed605cff5b34530d24653c7e17420"
-    sha256 cellar: :any,                 arm64_sequoia: "40d8c3289f12c710d030f446886eb4e45c396e4b1517dbc722a6e639cd113193"
-    sha256 cellar: :any,                 arm64_sonoma:  "898254e686c3406c0af79584f182a97fd0796a66f755055c3c59745850ee6bde"
-    sha256 cellar: :any,                 arm64_ventura: "e04ebbbfc60f349cebc2a8574367934080b0c52c61e6ed1d988b5965b4a2650e"
-    sha256 cellar: :any,                 sonoma:        "855d71f1d6e31d991fa30df070c136fcaa99457573f16ac6e05defae3e3ac7d3"
-    sha256 cellar: :any,                 ventura:       "ac5c54b17c62e126b1f10c18918fd2a66e8bff38a0a51379e7ddac0890fa9997"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e7683b31a0dafac66f8ccb8947c440af2225b6340a9934b0fb7e1d897001ea9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21398c0664f91eddb4e26a9b1f00cdc17e3462647651c04ada0eaa76a93d0b19"
+    sha256 cellar: :any,                 arm64_tahoe:   "270aaca29d4132b3fe6334cfdb4fb76c3fc1719af706ebbc2efdab1ecfaf2bb2"
+    sha256 cellar: :any,                 arm64_sequoia: "a2a32750ec3795bc95626c88255eff29170a8aa91d4f39cf6bb24dce87f8dd99"
+    sha256 cellar: :any,                 arm64_sonoma:  "15eb16e6f47470cec82e402aae7b64ff696fe6bd7c7ddfb8d3d3eb2e884a5c22"
+    sha256 cellar: :any,                 sonoma:        "2e7ba58c484a094f7ff4bfd954997e66bd97adf3f41014a2d62541c92df46f3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7e31987425d7b97ebc7ed8413f9ae776b4a031851094f2074e062d1d68d9d28"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1914ebe00f06674a892da92c25d236f87e05dfe185728a961fa19373ba9d0c42"
   end
 
   depends_on "gnu-sed" => :build

@@ -4,7 +4,7 @@ class Sslmate < Formula
   url "https://packages.sslmate.com/other/sslmate-1.9.1.tar.gz"
   sha256 "179b331a7d5c6f0ed1de51cca1c33b6acd514bfb9a06a282b2f3b103ead70ce7"
   license "MIT"
-  revision 2
+  revision 3
 
   livecheck do
     url "https://packages.sslmate.com/other/"
@@ -14,14 +14,14 @@ class Sslmate < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a1b305211c239b3c0476b01d55bd397da45a59013ab35a1b939b1e7c43c0b32"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "565aa3ae6e99d734fa430a664c3d08b6ff2301127da6b4f408009fd96a6fa384"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "565aa3ae6e99d734fa430a664c3d08b6ff2301127da6b4f408009fd96a6fa384"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "565aa3ae6e99d734fa430a664c3d08b6ff2301127da6b4f408009fd96a6fa384"
-    sha256 cellar: :any_skip_relocation, sonoma:        "351e49ea1faf2c054b781097608e26a6e13e7af5259be2471993fa69d91102a2"
-    sha256 cellar: :any_skip_relocation, ventura:       "351e49ea1faf2c054b781097608e26a6e13e7af5259be2471993fa69d91102a2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "766551303f82f9d0d67eb302c7e9d3f40cc72d5b3a3d6ab242c61e0f60688277"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb4a80e5c90b0d869a6c6734e7c768ae81ec3112890c72034cd74071cc08b20a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0ab2aaac709b5ceb82a209942838750de64729f4aceebea3ce0dcc7874a3b2d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0ab2aaac709b5ceb82a209942838750de64729f4aceebea3ce0dcc7874a3b2d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0ab2aaac709b5ceb82a209942838750de64729f4aceebea3ce0dcc7874a3b2d"
+    sha256 cellar: :any_skip_relocation, tahoe:         "d0ab2aaac709b5ceb82a209942838750de64729f4aceebea3ce0dcc7874a3b2d"
+    sha256 cellar: :any_skip_relocation, sequoia:       "d0ab2aaac709b5ceb82a209942838750de64729f4aceebea3ce0dcc7874a3b2d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d0ab2aaac709b5ceb82a209942838750de64729f4aceebea3ce0dcc7874a3b2d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3bdbdeca9bd38aa4c2b587b7fadd710978a2d12b20c814b8f463817cce90eee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a33c4fb02cd4543853b119533923a62e80f5690e23e42272b94c6a467c880320"
   end
 
   uses_from_macos "perl"

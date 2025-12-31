@@ -30,14 +30,10 @@ class Minipro < Formula
   end
 
   test do
-    output_minipro = shell_output("#{bin}/minipro 2>&1", 1)
-    assert_match "minipro version #{version}", output_minipro
+    assert_match "minipro version #{version}", shell_output("#{bin}/minipro 2>&1", 1)
 
-    output_minipro_read_nonexistent = shell_output("#{bin}/minipro -p \"ST21C325@DIP7\" -b 2>&1", 1)
-    if output_minipro_read_nonexistent.exclude?("Device ST21C325@DIP7 not found!") &&
-       output_minipro_read_nonexistent.exclude?("Error opening device") &&
-       output_minipro_read_nonexistent.exclude?("No programmer found.")
-      raise "Error validating minipro device database."
-    end
+    allowed_errors = ["Device ST21C325@DIP7 not found!", "Error opening device", "No programmer found."]
+    output = shell_output("#{bin}/minipro -p \"ST21C325@DIP7\" -b 2>&1", 1)
+    assert_match Regexp.union(allowed_errors), output, "Error validating minipro device database."
   end
 end

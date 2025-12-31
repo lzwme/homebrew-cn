@@ -31,6 +31,6 @@ class Cask < Formula
       (depends-on "chess")
     LISP
     system bin/"cask", "install"
-    (testpath/".cask").directory?
+    assert_predicate testpath/".cask", :directory?
   end
 end

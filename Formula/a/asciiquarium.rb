@@ -4,7 +4,7 @@ class Asciiquarium < Formula
   url "https://robobunny.com/projects/asciiquarium/asciiquarium_1.1.tar.gz"
   sha256 "1b08c6613525e75e87546f4e8984ab3b33f1e922080268c749f1777d56c9d361"
   license "GPL-2.0-or-later"
-  revision 5
+  revision 6
 
   livecheck do
     url "https://robobunny.com/projects/asciiquarium/"
@@ -14,17 +14,12 @@ class Asciiquarium < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:    "c8d27e98633a1e5c8824aee48999c9d5ba0fa06da02b268772fcf8e7b6a9e492"
-    sha256 cellar: :any,                 arm64_sequoia:  "080079f96aa210857f68ea0e376ce057dca85875e94df0a2da695559d37d08e9"
-    sha256 cellar: :any,                 arm64_sonoma:   "059912db660f5e55c48c425c6c227f9122d02055e13bdaf1633ce39e0a4f575e"
-    sha256 cellar: :any,                 arm64_ventura:  "6f9aa92e662714c05c5abebf715071a583eafdc0f639a1d0230a66043d28d088"
-    sha256 cellar: :any,                 arm64_monterey: "025b86916160e616180c3c84e58dbe678dafc777704d66ce9d7a2ba07df5241e"
-    sha256 cellar: :any,                 sonoma:         "821f581063ff102904f53455f6f7c412e060a0da3be1563dae89fe592b613986"
-    sha256 cellar: :any,                 ventura:        "d1774d0ec6069c399b4a40e49e7f98f7df94fa51b3f6ddd3a402e14c96c34f2b"
-    sha256 cellar: :any,                 monterey:       "0e107b8988ca4b01b6a7df53abb9fd894447836f3bca8af95528c5a26ca1da76"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "1038d221610a6828fff3e680fa8a32142b5a731c6b19ee5a4ff87f8c86317c45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c07d0ae91d74691fa184d850d1444412042d9302d52ef44c37f14ab6f00cb433"
+    sha256 cellar: :any,                 arm64_tahoe:   "3a1be21d11ec20615ff2c00ab0e5de809faac013935caefb4806e3760371768b"
+    sha256 cellar: :any,                 arm64_sequoia: "394e9653d05e18f7dd1e482fd327fd8c6ac44a924aa2ac09e3d238bc0651e7b2"
+    sha256 cellar: :any,                 arm64_sonoma:  "1ff4fa17576229f515f77c9c568bd5dccf156115b280b6884436caf6b386a127"
+    sha256 cellar: :any,                 sonoma:        "5170e968489608bd26069c5ea75151d67811f3555308f12009fcd6a3825bf93a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f412126cb90749fdff6d137087dc9fff2eccbe08c537b873119c1916f2b0c6fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d307a446c2b1c54a8f6b6636253479844b123ceb66a7b3b669993b29275befd2"
   end
 
   depends_on "ncurses"

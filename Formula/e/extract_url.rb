@@ -4,19 +4,19 @@ class ExtractUrl < Formula
   url "https://ghfast.top/https://github.com/m3m0ryh0l3/extracturl/archive/refs/tags/v1.6.2.tar.gz"
   sha256 "5f0b568d5c9449f477527b4077d8269f1f5e6d6531dfa5eb6ca72dbacab6f336"
   license "BSD-2-Clause"
-  revision 3
+  revision 4
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b43b0bb3cd6d6a9257bf56ef5abc259ed7b3db24722f893841ec4754e44d5c26"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07d5950507abddf2124e3327888d40a80fe013caab73fcb3ee917258cb541859"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "388031e9b2d1cc1bb1769b5ff6c0dfc2970d331ef77b773e9c91e09a1c9b1c03"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b97be35fd8b8f65e9279919a8591b68ec203d62bca48a770c18e7ba68df773f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7003ca22244c8eb39c0ed2d364467258633fbf667ffb620e3de6e2e8abaef933"
-    sha256 cellar: :any_skip_relocation, ventura:       "f56056378bcb02706ac9521a8a23bf58c4317d4c8289e1ea68a4231581d87e40"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d9a785bcf601785473676f7f4a88a3bf607162b94941b2bbfe8bb864dd7dd08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b595a9f2511b3993c121584da5ec45017388e0d1cb680000f070a36e05e5a0a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "160fbf5e75d447edf2f1769a1d4960906df27652a6849d19ac122689102b47ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2a565d71f29f03e9160f187615c545935db2ae098ebb8aff901932d8579500d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2a3eb7fe036307b921324ba71eead19534b37c3bbb47f16481d76c1fdb13b29"
+    sha256 cellar: :any_skip_relocation, tahoe:         "eb0760f5c01a362d6f704fcf1e005d38f3a41228dbc041072bfb6927c0fb74de"
+    sha256 cellar: :any_skip_relocation, sequoia:       "b4726e6215dc76ad8f1cf403618557361379644780e0727feb9e65a241ad3d24"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b1a9b40af8d79f7c0db5d3bcd88ddebf0e2bccf6c7057a189d189af6cd12765f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fb17c0cf4ed6894006819a6d8df16b1657fd6bda55626bc4201d2350048c3bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b82abb25a1f169aa7ae9507c37283fd2d0586447b877e1ca5973dd1535fa3152"
   end
 
   uses_from_macos "ncurses"

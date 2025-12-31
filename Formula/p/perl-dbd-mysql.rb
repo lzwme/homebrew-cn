@@ -6,17 +6,16 @@ class PerlDbdMysql < Formula
   url "https://cpan.metacpan.org/authors/id/D/DV/DVEEDEN/DBD-mysql-5.013.tar.gz"
   sha256 "aeb0a6e1c26fc28a5cf6de1161e0f056ddcbb739f87954dba7cb1c5acb4e1c33"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
+  revision 1
   head "https://github.com/perl5-dbi/DBD-mysql.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4ad07b6c961ce9f5bc834cd91d9e42e08ea07ae54d7ae4bcdccad9dab9dcb0fc"
-    sha256 cellar: :any,                 arm64_sequoia: "362421d937a7a3e460644202dd26cd18935d194dda030453042496b2615fe3ca"
-    sha256 cellar: :any,                 arm64_sonoma:  "90fd966b55bbdaf4c3572c56df0e02618235975c160db102f908766e97038865"
-    sha256 cellar: :any,                 arm64_ventura: "aaae867fda8e960c87a295b1cf6eca715b7649bff89dc8c3d456ef5741f0c207"
-    sha256 cellar: :any,                 sonoma:        "cc693a7827cd08a75dbc23e0188c34af720484fc06d022f751b3189c46da5168"
-    sha256 cellar: :any,                 ventura:       "77527158123bca639ebf1fa1b68bbca79b5f164c0fa7141e1c1c84b462cae943"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b028bb689ed1d8e1d0c66988375750af4149ac3d2cc759fb486eee27a4f22a61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c18a48e80c359be6b7a6394aed27625c34709a42cea045d9a7e34ca31c8fe45"
+    sha256 cellar: :any,                 arm64_tahoe:   "46058ff8375c1910f2659d74bf7d970660caa254c904a8ce7471404dd92ea753"
+    sha256 cellar: :any,                 arm64_sequoia: "04dab546b5f1b2beea4f48e2652ee330e291d1de91be072e4551f7778fed0b70"
+    sha256 cellar: :any,                 arm64_sonoma:  "3de7bb854dd36cf5a4814534fd458ec7bcd5f321b07c820d439fbe353024641a"
+    sha256 cellar: :any,                 sonoma:        "63fc77caa080333bb8c3d556a63a118b37de0e0ed1d3d2693ee7742dd89ea238"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5ef3810cdbdef812e17eb7853009477a2ee8d2686cf167bf508009235542b63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f4505f4880b300ef75af71b5c4628b3406f358bfbd35098688747292a9f2f0b"
   end
 
   keg_only <<~EOS

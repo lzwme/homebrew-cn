@@ -27,14 +27,13 @@ class G3log < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~CPP.gsub("TESTDIR", testpath)
+    (testpath/"test.cpp").write <<~CPP
       #include <g3log/g3log.hpp>
       #include <g3log/logworker.hpp>
       int main()
       {
-        using namespace g3;
-        auto worker = LogWorker::createLogWorker();
-        worker->addDefaultLogger("test", "TESTDIR");
+        auto worker = g3::LogWorker::createLogWorker();
+        worker->addDefaultLogger("test", "#{testpath}");
         g3::initializeLogging(worker.get());
         LOG(DEBUG) << "Hello World";
         return 0;
@@ -42,6 +41,9 @@ class G3log < Formula
     CPP
     system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lg3log", "-o", "test"
     system "./test"
-    Dir.glob(testpath/"test.g3log.*.log").any?
+
+    log = testpath.glob("test.g3log.*.log").first
+    refute_nil log, "Expected log file"
+    assert_match "\tDEBUG [test.cpp->main:8]\tHello World\n", log.read
   end
 end

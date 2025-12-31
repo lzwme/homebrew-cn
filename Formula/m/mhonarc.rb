@@ -4,12 +4,13 @@ class Mhonarc < Formula
   url "https://cpan.metacpan.org/authors/id/L/LD/LDIDRY/MHonArc-2.6.24.tar.gz"
   sha256 "457dc7374ee59cb75a0729e51cef2f2c52b48180f739d8fd956ea19882815f33"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/sympa-community/mhonarc.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c6d3c93cbdca1f8cfba7471ad031646541f79d166e2a560006c6f445d748fa33"
+    sha256 cellar: :any_skip_relocation, all: "d648abb0708b23fccab9dc49db5ced470814ee385962ab662f7209b657fe05e3"
   end
 
   depends_on "perl"

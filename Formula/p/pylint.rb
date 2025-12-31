@@ -8,7 +8,8 @@ class Pylint < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e412985eb67330cb013068787d1f85f3d5b639cd69a4919ec6fb32a1109ae524"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "55c6e4cac20eba51829d3381bce3b8f43331b782ce770f84d19ff1dadb61d2fe"
   end
 
   depends_on "python@3.14"
@@ -45,6 +46,8 @@ class Pylint < Formula
 
   def install
     virtualenv_install_with_resources
+
+    inreplace libexec/"pyvenv.cfg", HOMEBREW_PREFIX, prefix
   end
 
   test do

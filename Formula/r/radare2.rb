@@ -1,8 +1,8 @@
 class Radare2 < Formula
   desc "Reverse engineering framework"
   homepage "https://radare.org"
-  url "https://ghfast.top/https://github.com/radareorg/radare2/archive/refs/tags/6.0.7.tar.gz"
-  sha256 "315f988cb5cc6f0e243bf191227cec1f54382056bdf7a1a21b26719528982a1f"
+  url "https://ghfast.top/https://github.com/radareorg/radare2/archive/refs/tags/6.0.8.tar.gz"
+  sha256 "430692ae5d12531d14447b7ab4a0d83cb77e79aa18e7eae9355ea363618b779e"
   license "LGPL-3.0-only"
   head "https://github.com/radareorg/radare2.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Radare2 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "b68721cb6f8c9e113d94a9b70bfb8f7daa70eaf0c55dd5289d5aa6b9a86940ea"
-    sha256 arm64_sequoia: "9a4601f4e576663894e882121d9be4ca7ccbf7d625f09ea9accab6d625986ac0"
-    sha256 arm64_sonoma:  "04849ef4c1ca69ee3c0d6627f371bc362b8aa844cae50c29f6354993d9b1e55f"
-    sha256 sonoma:        "1baa0b23eb4953bfc03e9b7ae97be13ce10525e1ee673e6b5409da976b90f042"
-    sha256 arm64_linux:   "daa2a8a270b5924e9c4bda27c6fa5f84a30b10400a5404912578340ab4450e36"
-    sha256 x86_64_linux:  "b603b1042b6ae39b1dd640c420c9b42fbc23ed8636a8c2c0119adc94dad8fab4"
+    sha256 arm64_tahoe:   "2b187bc235433f5fcff90e7aff1c0d837ab0f0e90d884244f404a932634486b2"
+    sha256 arm64_sequoia: "c853bed6715f7d8bedfc42cdcb724e3d8d56a11ab1057b46da8479edbda10911"
+    sha256 arm64_sonoma:  "14312ae7222ccab5cb82b5f4297dd7869cf829011429f7e14614d831cf814b58"
+    sha256 sonoma:        "d8eacff62d17c1d32f451668cc4a1762f36834d3c38a966c1550fbd803fb28a7"
+    sha256 arm64_linux:   "a1179a9324baddcf8e6d8b073f6a168d298647205563da610a837d49ad0a58f5"
+    sha256 x86_64_linux:  "6419cbe38eef2c331f09bff032e7f0de8f51976bab0bca316f1a13e500c42d15"
   end
 
   # Required for r2pm (https://github.com/radareorg/radare2-pm/issues/170)

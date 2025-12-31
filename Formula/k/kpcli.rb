@@ -4,6 +4,7 @@ class Kpcli < Formula
   url "https://downloads.sourceforge.net/project/kpcli/kpcli-4.1.3.pl"
   sha256 "c91363e4e07f3521a867f68db602c95b53dc167e4366ee7ff254252b4176c62f"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
+  revision 1
 
   livecheck do
     url :stable
@@ -11,14 +12,14 @@ class Kpcli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f492be754f5e743083057c2afb72a1a1dd72f7cd3b6210468336fa7f0c05cf42"
-    sha256 cellar: :any,                 arm64_sequoia: "07acbda85e763997f4f4350cb67ee904413309b57132dd9b528fd73913dc6320"
-    sha256 cellar: :any,                 arm64_sonoma:  "ccc808e72ee497400ca548656f35fa746f00c43acafa9000a2c82608e2d9a23e"
-    sha256 cellar: :any,                 arm64_ventura: "e749db8f89b0c44e1f4bdf8939f17d17588d0ad085b80eec57133550180974d9"
-    sha256 cellar: :any,                 sonoma:        "7e4fbc43db9b559627b88caeaac89eb1c0a7b3bf94830cc47fb52498a9121c71"
-    sha256 cellar: :any,                 ventura:       "5b6f7ccdcd16433c960df66d0219223f9b16879052f3762b632ded2f51ea104d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fdd8b44c6fd748f5c76213ec6913259e1fbbd1c04a3d565672a06d503757fca1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "194893adad47f2845c789a032750b49f46ce0900a6d72858305f9f820de97a04"
+    sha256 cellar: :any,                 arm64_tahoe:   "1e53483c46df116c1f9d3a05b932dcd09e5bd1656a3144c0bc83ad210cbb6edd"
+    sha256 cellar: :any,                 arm64_sequoia: "5b1aee92cd03c609b34d0fcd86f97d9ea38696136efeb3e6811c466c929b838b"
+    sha256 cellar: :any,                 arm64_sonoma:  "bf459126cdac64c3193c977998618a49dfa4a6556cfab7781c423894940ada71"
+    sha256 cellar: :any,                 tahoe:         "0a2d315fe00606775c74d73b3ceeff9ad88f5fc29011987417c73951ef4450c4"
+    sha256 cellar: :any,                 sequoia:       "ec63a3956eab847eb1e6678bbef3161b901e3ecc845fbdf4a600b96c8731bbeb"
+    sha256 cellar: :any,                 sonoma:        "f2a646079c617087d3e1b9479297de6022039ff3040f06b1fa65dc34748b7905"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe8641b4a34aabded3af096c3b1456b6e6c2dce601b3f749d9785e10fcf84466"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "113958b15f87cf17ecbbf2e458da972e19e41dd07247c321441496b3230efc58"
   end
 
   depends_on "readline"

@@ -4,16 +4,17 @@ class Rex < Formula
   url "https://cpan.metacpan.org/authors/id/F/FE/FERKI/Rex-1.16.1.tar.gz"
   sha256 "b66ff756db8c8479ab99d2c9ec9827bf624b8bca2e96ef9ccf2395e279731662"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0c9642847deaa4d8bf040a6d54def45ce7aa3f658109a7eabc731fb073901cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0c9642847deaa4d8bf040a6d54def45ce7aa3f658109a7eabc731fb073901cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0c9642847deaa4d8bf040a6d54def45ce7aa3f658109a7eabc731fb073901cb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "903b511e474d98b27fd8324272b7925ee37afc311c1a18ebef0eb3abcd196029"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3088c8f5ad9aed2584b405494fdbb10928c7c833ce9da45444e2b1e105d4fde7"
-    sha256 cellar: :any_skip_relocation, ventura:       "ded62b5eeb9a01e7a2ea466a8e162d0c102bc5c1f13ef306694fe563f4d515ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb6348230177ed3b004e9f8ef6bd3cb79a208ae983ed1ba6efa79b9617f73329"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f05c3c843367e1ee2ea8d40c6797dc332b3a1ea5f739381a330a83c279e3eca"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "108db27f72d9cafd700190736bb8128ee7488afedc3023dd30132dba8a4f395a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "108db27f72d9cafd700190736bb8128ee7488afedc3023dd30132dba8a4f395a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "108db27f72d9cafd700190736bb8128ee7488afedc3023dd30132dba8a4f395a"
+    sha256 cellar: :any_skip_relocation, tahoe:         "752faa83e90ab66d2e21f6e5cbadda2503c84e6238ef79a23895081352e4303b"
+    sha256 cellar: :any_skip_relocation, sequoia:       "752faa83e90ab66d2e21f6e5cbadda2503c84e6238ef79a23895081352e4303b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "752faa83e90ab66d2e21f6e5cbadda2503c84e6238ef79a23895081352e4303b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1163166f56b4b24e1d3dd451ccf390c956b818097f898f2ccd5089fd0ef613d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1086daafd3a7f244cb445d43e9ff1bce49e24a7269856e4bcce45bfe2b2777c"
   end
 
   uses_from_macos "expat"

@@ -4,20 +4,18 @@ class Innotop < Formula
   url "https://ghfast.top/https://github.com/innotop/innotop/archive/refs/tags/v1.15.2.tar.gz"
   sha256 "cfedf31ba5617a5d53ff0fedc86a8578f805093705a5e96a5571d86f2d8457c0"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
+  revision 1
   head "https://github.com/innotop/innotop.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b44c7861957b9ff6ce395e4232c5d21944d6493e972e5d5dc2f205de0acc644d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "954079748cf6e9ff2ed6cf2f1c32596c923dcc1b91e5731eda1b99c58644d239"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "954079748cf6e9ff2ed6cf2f1c32596c923dcc1b91e5731eda1b99c58644d239"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1d857ac77497c1ee6be53254808fb73c50f6906270d7c9d0480a69181375233f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "954079748cf6e9ff2ed6cf2f1c32596c923dcc1b91e5731eda1b99c58644d239"
-    sha256 cellar: :any_skip_relocation, ventura:       "1d857ac77497c1ee6be53254808fb73c50f6906270d7c9d0480a69181375233f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "87b81323270bd39ae2d5b41b93f84b766d47afc5145416f97e7247460b26dab4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55b9d968176edd6d7ef594c1e0b8ba4cd349999aa9b7e4c6161f30f8d0ce8157"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f1f7200e8bc7f549dd1ac59d991d20fc90fefbd86e1aaa94e6c1106e02b651f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f1f7200e8bc7f549dd1ac59d991d20fc90fefbd86e1aaa94e6c1106e02b651f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f1f7200e8bc7f549dd1ac59d991d20fc90fefbd86e1aaa94e6c1106e02b651f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5f1f7200e8bc7f549dd1ac59d991d20fc90fefbd86e1aaa94e6c1106e02b651f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f2878c0dbd65584c8a7d7c7a04a569412c1301654a02ecc227f1b509df65a8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "994567fc14ad431d0d5e464dd59887da03c8ea478d712b24492c20f5a3b5c827"
   end
 
   depends_on "perl-dbd-mysql"

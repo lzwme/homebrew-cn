@@ -4,7 +4,7 @@ class Latexml < Formula
   url "https://dlmf.nist.gov/LaTeXML/releases/LaTeXML-0.8.8.tar.gz"
   sha256 "7d2bbe2ce252baf86ba3f388cd0dec3aa4838f49d612b9ec7cc4ff88105badcc"
   license :public_domain
-  revision 2
+  revision 3
   head "https://github.com/brucemiller/LaTeXML.git", branch: "master"
 
   livecheck do
@@ -13,12 +13,12 @@ class Latexml < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b04f2c5db4df15e69d6fc0c7a8f359e974fb71d663d28f910b7887e35077a248"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "398aefab0bbbe84fea807b76e47724cb4a9025f51e91892f752d04f185639ee1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "131fe20e76df2175ebff1bccc70e7e7279d25d5e51ff5f72732ba2933817b79f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b7759474dfe2c67d6f64ed6b0439e3c93f20ad0df76146f71d5cac3ba80f87ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "04fd37e658b0a2d036642aea41df66a046fcc59dc61e2c5a9f86a852a1cb75a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b8ad83d90d8f448c9d968c75f8a25dd9dd34bdac2b822f22ac1706615f523c0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf351f2a5fabcf2e7a3c41e3eed74e545d2b7e9794d453e36063a4fda573fba6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42357059c8adcd3b7fb4fee64e394bb12eb2f41b08b73ac3094a72ae230d3c5a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "976befc421c0dc888763fa18bca525d9d73129be22cbfc51c6d1314c2c3f7c10"
+    sha256 cellar: :any_skip_relocation, sonoma:        "43ec71440eb6168973a749bf05991317208dfd3321489bf0bb96e816391cf3d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc89bfc08c008d55534468490880499f205e56454f5e731899be2f2698d70742"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc94fb47aa14b8abe6542e3d6fc55139259a702f91ffe335ab5da1567dfae542"
   end
 
   depends_on "pkgconf" => :build

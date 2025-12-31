@@ -1,18 +1,18 @@
 class Utf8proc < Formula
   desc "Clean C library for processing UTF-8 Unicode data"
   homepage "https://juliastrings.github.io/utf8proc/"
-  url "https://ghfast.top/https://github.com/JuliaStrings/utf8proc/archive/refs/tags/v2.11.2.tar.gz"
-  sha256 "a9b8d8fd57fb3aeca2aede62fd58958036d3bd29871afc1b871e3916c48420a7"
+  url "https://ghfast.top/https://github.com/JuliaStrings/utf8proc/archive/refs/tags/v2.11.3.tar.gz"
+  sha256 "abfed50b6d4da51345713661370290f4f4747263ee73dc90356299dfc7990c78"
   license all_of: ["MIT", "Unicode-DFS-2015"]
   head "https://github.com/JuliaStrings/utf8proc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "94d896c25b5923143b9b144a8a81368a0a1681cb660f80cd822d790871aaf13d"
-    sha256 cellar: :any,                 arm64_sequoia: "8e8cdcfe7126bf3e45bec8f25ae7bc35e0be0a9af4d01f62568d9d24712d4770"
-    sha256 cellar: :any,                 arm64_sonoma:  "b994a8e7634bef43d9ac6491caa0e5607cf26b60d6697865e5155a940e440fea"
-    sha256 cellar: :any,                 sonoma:        "a45a23b9e2479f1bd5d77e40e927da55b02c90efa52d60b624b6ca564a616e83"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "250f34822e47569f9259e08825ffb05474d53f47069f44b15697943ea992e8df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11c6a84a10fada96f33b3c9c261990dae718b20f74746cfb8d0b55fd090794d0"
+    sha256 cellar: :any,                 arm64_tahoe:   "adbb8b5967020e6bcc0589b4a2bfd112c801238f611bd6b591904fd6359a004b"
+    sha256 cellar: :any,                 arm64_sequoia: "7d6762b39eb04fea426d4c6656bb596be63f4d1f6f19807aba314a253715d8d8"
+    sha256 cellar: :any,                 arm64_sonoma:  "7fd4f73331796506f399a12a7349ad533d0ad27bf261a08e9c1d88dd41922249"
+    sha256 cellar: :any,                 sonoma:        "b637585a34b76179c02b738f88b137571663a2044978c760e7df6e3a6520df18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a3f276f2a44273b4948df2416761a1cf996fbac0a168af4f4d11b947e58c655"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2faa88cd8a625700d288ae4b89b3913273a0de36ef941a990b7f2fe242cf00e"
   end
 
   def install

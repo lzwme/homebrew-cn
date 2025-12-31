@@ -1,8 +1,8 @@
 class Rv < Formula
   desc "Ruby version manager"
   homepage "https://github.com/spinel-coop/rv"
-  url "https://ghfast.top/https://github.com/spinel-coop/rv/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "3fe6617b49cba218ae6133f1bdf64008bac88ddbf94c13d24014716ea65012fc"
+  url "https://ghfast.top/https://github.com/spinel-coop/rv/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "4b498e776679da822a67e854857cecdddf5d012c9cfc03a3f60c3b0a6ca0ff4e"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/spinel-coop/rv.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Rv < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1de251348620d1e1a4e9e877d605c1a5813603b6a809651e8a9554d2e2643975"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bab519e6552ced20a13260c72f72546b8d45eb36956b0e99d7fcea3f512d915b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "338efd70193bd6f0c891820313840f81d522fcc5110a654e1e35339c4a5a8856"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c373505e884ea846fa3af2b77bf936a467e82e253632ecf0e0f927b1668ab55d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "30de8f767c4aca0b5708bf0c7ef2e48f24a0176a539f752f8cc717d1fd2b4fe6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbf2f9af69ab6c4a0bfb7364310acad673d80a2e556166b97ee0ca3165ae246b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "69a1aaba8e5870210053774505177835368aee1047b9eb569e219a301350dd15"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "370e3d95cf4843aabcc652ea5da4da8195749bba546ece53b9463e883bc13041"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17ce2f1babb5482bda680790c286e716f8ab897180c9f21194ee195fe7ba4bd1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "660155f3797a422d63564ea54e678b1c9a7a3afa392ad8157d2cf26184c490e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "561113a52cb89e1a25a4fb67c1e9038fbb5db64298b5f144ee8e3e6f92753919"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe184c82a73ba951e49c2f262b5df81681b8ce24114b28edbe71f0df357e0e25"
   end
 
   depends_on "rust" => :build

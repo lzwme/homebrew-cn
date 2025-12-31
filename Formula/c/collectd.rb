@@ -2,7 +2,7 @@ class Collectd < Formula
   desc "Statistics collection and monitoring daemon"
   homepage "https://collectd.org/"
   license "MIT"
-  revision 9
+  revision 10
 
   stable do
     url "https://storage.googleapis.com/collectd-tarballs/collectd-5.12.0.tar.bz2"
@@ -23,12 +23,12 @@ class Collectd < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "1a268b0f545523eb5e85857f4262aa7239ecd363ebacd8d2bd7f584360e0e4dc"
-    sha256 arm64_sequoia: "679e6366ea5e3adc8226ed48455375cadec1073994cf074b127b7ee85cd474ba"
-    sha256 arm64_sonoma:  "6bd27b7755fe06afe17a30f9210bbec87d1caf2c4f5cea8a1463546a91d16c0d"
-    sha256 sonoma:        "18e97db540cf2a6a20a3daceec1ba52e226c253b7950ba5ba6b15cebc6315984"
-    sha256 arm64_linux:   "fab3b28974cf328519a4f8391a8b860309c4c4caf0eb9eee17341450a31023f4"
-    sha256 x86_64_linux:  "89efd8f0153514681b15c56dbb88a27fa4a1c4508668b9e30379f69ad8db6b40"
+    sha256 arm64_tahoe:   "96b35082902fad36f2eebfadecfb13424f4f019cb051fb7cc8a80aa10369e618"
+    sha256 arm64_sequoia: "bd6bbc019cd159129bf0ae691889eb75bdb223852a510b968ac1d9f80e2f0fbe"
+    sha256 arm64_sonoma:  "bb7547382bb6e48626b092b4176b71bce3c3931d7aae4e0f1f181ee82429eeda"
+    sha256 sonoma:        "a43c1a21faa9efe89488e6f8804bafbe299ffa1ef88700257a274b964b9ab94f"
+    sha256 arm64_linux:   "ffdcf420ea811f4ed5dfb2679314260669bd20fa13ff7b309fe112eae86758f7"
+    sha256 x86_64_linux:  "34583c194f6ce6c0b08ebd64e91b079083b038139c24bd9a8d93c1ba35883526"
   end
 
   head do

@@ -1,9 +1,19 @@
 class Libid3tag < Formula
   desc "ID3 tag manipulation library"
-  homepage "https://www.underbit.com/products/mad/"
-  url "https://codeberg.org/tenacityteam/libid3tag/archive/0.16.3.tar.gz"
-  sha256 "0561009778513a95d91dac33cee8418d6622f710450a7cb56a74636d53b588cb"
+  homepage "https://codeberg.org/tenacityteam/libid3tag"
   license "GPL-2.0-only"
+  head "https://codeberg.org/tenacityteam/libid3tag.git", branch: "main"
+
+  stable do
+    url "https://codeberg.org/tenacityteam/libid3tag/archive/0.16.3.tar.gz"
+    sha256 "0561009778513a95d91dac33cee8418d6622f710450a7cb56a74636d53b588cb"
+    # Allow build with CMake 4.0.0
+    # Remove on next release.
+    patch do
+      url "https://codeberg.org/tenacityteam/libid3tag/commit/eee94b22508a066f7b9bc1ae05d2d85982e73959.patch"
+      sha256 "f4278e88cb23b0a2aa2bb2c074c6fc2e61029b6d0d77856f4439c3f75f888cbc"
+    end
+  end
 
   no_autobump! because: :requires_manual_review
 
@@ -24,15 +34,8 @@ class Libid3tag < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :test
 
-  uses_from_macos "gperf"
+  uses_from_macos "gperf" => :build
   uses_from_macos "zlib"
-
-  # Allow build with CMake 4.0.0
-  # Remove on next release.
-  patch do
-    url "https://codeberg.org/tenacityteam/libid3tag/commit/eee94b22508a066f7b9bc1ae05d2d85982e73959.patch"
-    sha256 "f4278e88cb23b0a2aa2bb2c074c6fc2e61029b6d0d77856f4439c3f75f888cbc"
-  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
@@ -44,7 +47,7 @@ class Libid3tag < Formula
     (testpath/"test.c").write <<~C
       #include <id3tag.h>
 
-      int main(int n, char** c) {
+      int main() {
         struct id3_file *fp = id3_file_open("#{test_fixtures("test.mp3")}", ID3_FILE_MODE_READONLY);
         struct id3_tag *tag = id3_file_tag(fp);
         struct id3_frame *frame = id3_tag_findframe(tag, ID3_FRAME_TITLE, 0);

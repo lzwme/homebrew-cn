@@ -4,7 +4,7 @@ class Bioperl < Formula
   url "https://cpan.metacpan.org/authors/id/C/CJ/CJFIELDS/BioPerl-1.7.8.tar.gz"
   sha256 "c490a3be7715ea6e4305efd9710e5edab82dabc55fd786b6505b550a30d71738"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
-  revision 3
+  revision 4
   head "https://github.com/bioperl/bioperl-live.git", branch: "master"
 
   # We specifically match versions with three numeric parts because upstream
@@ -19,12 +19,12 @@ class Bioperl < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37d322cedc377c2a3c9a34a83de2ae93351c8f73d1656daab3a09fddda619c77"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e45145efdf9a960ff029e1ae85eb674748286090b4356cbcac2a2dcd218f3748"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0855b98104524f572d7905d390b09c380158baa27172afdb8029947dabaeb1c9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fea0dc5ebfa54b87c14ae3b92f873e5cf6a7bf4d23b07abbfa110c2611f1b7ad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9144102354a8e56e04a9a0bb09c4601248be8d5227732310066e544aa8281eed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1db5e85902ffbdf1682881c5fa3c25eb7290e94c818b7f6928413be95b61102b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "17405e0b0b17e484a222e76279b4b9732b3d1010f0ef33a05552d8ee4cec1272"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61acb5dde612cf25bbc0f07789dc4275f0b630f09c3b264c36e1d015f8b9eb52"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc1d1db579a29a458201328a3607ab29ed9ad2702fbece0f6f3152f32614c5b1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3b8c427638890704e973ffabfaedf465c9f26da45019d3b0a06a0ed35982d804"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "55291459382b946db20a86f1dc47d828263b2cb79470351fe18a3396880db4d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c47f38eb54d21c53685df9838272b3cc06a7ded2ec3c51a3a6a75160a3c0abcf"
   end
 
   depends_on "cpanminus" => :build

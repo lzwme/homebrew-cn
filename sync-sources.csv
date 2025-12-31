@@ -50,6 +50,7 @@ Homebrew-homebrew-core/Formula/a/addons-linter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/adios2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/admesh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adns.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/adplay.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adplug.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adr-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adr-viewer.rb, Homebrew/homebrew-core, 0
@@ -2515,6 +2516,7 @@ Homebrew-homebrew-core/Formula/g/glider.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/glkterm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/glktermw.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/glm.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/global-arrays.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/global.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/globjects.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/globstar.rb, Homebrew/homebrew-core, 1
@@ -3953,7 +3955,7 @@ Homebrew-homebrew-core/Formula/lib/libfreefare.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libfreehand.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libfreenect.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libfs.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/lib/libftdi.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libftdi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libfuse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libfuse@2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libfyaml.rb, Homebrew/homebrew-core, 1
@@ -5406,6 +5408,7 @@ Homebrew-homebrew-core/Formula/p/pastel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/patat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/patch-package.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/patchelf.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/patchpal.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/patchutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pawk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pax-runner.rb, Homebrew/homebrew-core, 0
@@ -5827,6 +5830,7 @@ Homebrew-homebrew-core/Formula/p/pushpin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/putty.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/puzzles.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pv.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pvetui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pwgen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pwnat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pwncat.rb, Homebrew/homebrew-core, 0
@@ -8940,7 +8944,6 @@ Homebrew-homebrew-cask/Casks/c/contexts.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/continuity-activation-tool.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/contour.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/contraste.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/c/controlplane.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/convert3dgui.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cookie.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cool-retro-term.rb, Homebrew/homebrew-cask, 1
@@ -13544,6 +13547,7 @@ Homebrew-homebrew-cask/Casks/n/notunes.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/noun-project.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nova.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/novabench.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/novation-components.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/now-tv-player.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/noxappplayer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nozbe.rb, Homebrew/homebrew-cask, 0
@@ -14466,7 +14470,6 @@ Homebrew-homebrew-cask/Casks/s/sessionrestore.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/setapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sf-symbols.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sfm.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/s/shadow-bot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/shadow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/shadow@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/shadowsocksx-ng-r.rb, Homebrew/homebrew-cask, 1

@@ -23,17 +23,22 @@ class Diffr < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "diffutils" => :test
 
   def install
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    (testpath/"a").write "foo"
-    (testpath/"b").write "foo"
-    _output, status =
-      Open3.capture2("#{Formula["diffutils"].bin}/diff -u a b | #{bin}/diffr")
-    status.exitstatus.zero?
+    output = pipe_output("#{bin}/diffr --colors refine-added:none --colors added:foreground:blue", <<~DIFF, 0)
+      @@ -1 +1,2 @@
+       foo
+      +bar
+    DIFF
+
+    assert_equal <<~DIFF, output
+      \e[0m@@ -1 +1,2 @@\e[0m
+      \e[0m foo\e[0m
+      \e[0m\e[34m+\e[0m\e[0mbar\e[0m
+    DIFF
   end
 end

@@ -7,6 +7,7 @@ class Exiftool < Formula
   mirror "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-13.44.tar.gz"
   sha256 "59a762acd704f045a0f5ad5e5ba5d8ef05138fcc027840665a312103c7c02111"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
+  revision 1
 
   livecheck do
     url "https://exiftool.org/history.html"
@@ -14,12 +15,14 @@ class Exiftool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "38da95ca6619126fc2a958419ed6f94c2643d97fb788b01ce264e21e7d3efbaf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1e9a21f727239679881dc78b49faa5f6abe71a1664fb580e9fb431e998a9ca1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c32b26d473819b2db6777d7c65f32a19988356919163b7298c5e919aef8bfa1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c15a96ff83abc421ce70b9a088bd6982c1f223e5e4380371c29964dacb5a14ac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2d21c5ef43725b7b19e754777ae9aa7c9562772d2ec5a5fa8301c918f352d93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15fc72901f120f8aa4988d901e1bf80e17e96482c10bad484e59901840f43217"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b6c2148d16f0fe6143ef7ccf022048610d2aa7cabbe4a40993c5284518c5b67"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93a448201429f1bdb0ed362bf1c3c8408c0d9284f16ec36eca711a83204c4562"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd24055659f9ba8fc97cb1ffbae507b204f79b6a432a475f1edffb33f0e40f91"
+    sha256 cellar: :any_skip_relocation, tahoe:         "245ed9b709ecca21684f192923b945a56ead8d81fcb9bc8ffdf3b96bfaeb97c2"
+    sha256 cellar: :any_skip_relocation, sequoia:       "a4e93002817b031d5a5aa696c9fe8ecd52695410eb29ca5aef74b2890377b879"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3a8f60fbae49ba726e86ec7f8242a7deb7f4ece22374dc77e10d37694b3b5816"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a2705bdc753a5edf3176b5eb2ce622c7f39dc608ea47895bb4ebe4ad8e46ecb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "189fc8c7bdcf19943eb437efbf9987cbcb43a1cfff922248228b82a7376fa1ec"
   end
 
   depends_on "cmake" => :build
