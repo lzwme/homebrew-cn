@@ -12,7 +12,7 @@ class Julia < Formula
   # version. This checks the first-party download page, which links to the
   # `stable` tarballs from the newest releases on GitHub.
   livecheck do
-    url "https://julialang.org/downloads/"
+    url "https://julialang.org/downloads/manual-downloads/"
     regex(/href=.*?julia[._-]v?(\d+(?:\.\d+)+)[._-]full\.t/i)
   end
 

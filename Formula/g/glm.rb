@@ -1,8 +1,8 @@
 class Glm < Formula
   desc "C++ mathematics library for graphics software"
   homepage "https://glm.g-truc.net/"
-  url "https://ghfast.top/https://github.com/g-truc/glm/archive/refs/tags/1.0.2.tar.gz"
-  sha256 "19edf2e860297efab1c74950e6076bf4dad9de483826bc95e2e0f2c758a43f65"
+  url "https://ghfast.top/https://github.com/g-truc/glm/archive/refs/tags/1.0.3.tar.gz"
+  sha256 "6775e47231a446fd086d660ecc18bcd076531cfedd912fbd66e576b118607001"
   # GLM is licensed under The Happy Bunny License or MIT License
   license "MIT"
   head "https://github.com/g-truc/glm.git", branch: "master"
@@ -13,13 +13,12 @@ class Glm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "05a06dc75a170c9f3fee69590447f2f69bb84db32077103d118233dc7896e026"
-    sha256 cellar: :any,                 arm64_sequoia: "27ae6d2faa2182f30fab3fb0ed1f80f46bdd3c3503087679264e508d212496cf"
-    sha256 cellar: :any,                 arm64_sonoma:  "b75dba49b0edfef6d292617d47acde17a848a1472c30a27a0ed505e2c101781d"
-    sha256 cellar: :any,                 sonoma:        "a1b897cb22a4c0fcee80fddd1db7f909aa615bf67c8b3d9b337defb2cec56e07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "65f2283d562242b9b2f39ff853a1b7811c130e12064889136405c454d0c1003b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01be3766386d6d4343e0744f61bf19bfd385687b0b79f98ae930c5c446eb01ec"
+    sha256 cellar: :any,                 arm64_tahoe:   "8249c4e8338f0d834f967436fd7dbd239ba6dec2117716983a3fe54a5d091ef5"
+    sha256 cellar: :any,                 arm64_sequoia: "fae85fca847469c7c7e71ea2ef03f363ac98d3b95855c6eb444ac9ea22f7b96d"
+    sha256 cellar: :any,                 arm64_sonoma:  "81e11f0978855c2389d2283042e0c33e65ac04dedcf19743d3e7b89040abe5ca"
+    sha256 cellar: :any,                 sonoma:        "86c4b9d9788fe78f27caf754e87ae66e85c420e728eca547afb8512eaa66c906"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb411dab3df676bd1e7150c3ca6c76048cef96dec5fab02499701fd4ca5a7006"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3a08b5ba3b2bbd1afce59a27bb1957dc4e5f96e1f573771998b2efaab6b7adf"
   end
 
   depends_on "cmake" => :build

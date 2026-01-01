@@ -3,18 +3,18 @@ class Hapless < Formula
 
   desc "Run and manage background processes"
   homepage "https://bmwant.link/hapless-easily-run-and-manage-background-processes/"
-  url "https://files.pythonhosted.org/packages/3e/b9/ef10de2bb7245bae7aed75cb52c713cebeed4a119fcd7a48ce7ac2f5dd4b/hapless-0.15.0.tar.gz"
-  sha256 "e6abb39255025f1ff7c2359c35247bdd4767bbe015265c9470f123e0625a744d"
+  url "https://files.pythonhosted.org/packages/2c/ab/a5c875f00927421371c9c36849030ba84dc171e7157575fd85126e893064/hapless-0.15.1.tar.gz"
+  sha256 "b54707a5f77ac8e779bfd0c8c49344333e9d40a5c9479f0da1c303ffa237077d"
   license "MIT"
   head "https://github.com/bmwant/hapless.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "87a3bb6ef8acd85e05dc74048b17e1a20c1052a8578e14d9fdcd2372c5f75e6f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59cc708de3b71fa59f3381b429d8be9a4f225de93c5bed0728d7ed7faca3b8e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "926413b5835830d002b48ca335c61fda3a83f40c2b074849d7bdfb5442ff937c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6e5191025775c162c0b37da68c6e5d48fffb56471bdc57b0a908e5b3e53c253f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8dedde3a2701f85b59d9ec6b630118ea8b0afcfccc0e99808fdf9399fb1228ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "576f423acdb42c56ec574d75cc6851fe77a3c655df733c4a0cffb6efe912e788"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10bca31787230dbc7dea0b9c712227213933bfc8e787517336e05af2b20482ab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bbaab090f0b2b39cd85b5998db27b9b939f96913468ba3e996fe7d250babe00d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "811714c5adb45e7d208ac4131ba087a107cf255fad0d81ab4082ec3024c7938e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c24bf0290bdf13f87894126b8affc18cbbcf7557b24afbb8ed771381ec5729e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd5b41eadd8958beb78247a97440cc9f047868f068a1b24ed291264804a2e941"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38580e0b77980e077abdfb6d5ae9b15423add9d65cb59630a62c41fb86e4495c"
   end
 
   depends_on "python@3.14"
@@ -62,11 +62,6 @@ class Hapless < Formula
   resource "structlog" do
     url "https://files.pythonhosted.org/packages/ef/52/9ba0f43b686e7f3ddfeaa78ac3af750292662284b3661e91ad5494f21dbc/structlog-25.5.0.tar.gz"
     sha256 "098522a3bebed9153d4570c6d0288abf80a031dfdb2048d59a49e9dc2190fc98"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   def install

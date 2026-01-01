@@ -7,12 +7,13 @@ class Ghalint < Formula
   head "https://github.com/suzuki-shunsuke/ghalint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e3e179f2fcf0e0831f3f13f7fa4fa2683bbbfb47faf1e685dae331d0eda175b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e3e179f2fcf0e0831f3f13f7fa4fa2683bbbfb47faf1e685dae331d0eda175b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e3e179f2fcf0e0831f3f13f7fa4fa2683bbbfb47faf1e685dae331d0eda175b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "01479ab393749b664a5e5a3e349726ca9447d41a3f596a0133262b6752cf36c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad7e75a4beff5fa95e0d60cb1349329b4a19e01f8ef66108186594a35ee7f030"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c6aaeab36b13a7dabc95f4ba7700219fd8ccba540eacd178bbd3f7ba32f7399"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34563846ca0b2ecfa8f93b3731ef87cf701f3d3d9dec3b65d4a159b7a9cb1a15"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34563846ca0b2ecfa8f93b3731ef87cf701f3d3d9dec3b65d4a159b7a9cb1a15"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34563846ca0b2ecfa8f93b3731ef87cf701f3d3d9dec3b65d4a159b7a9cb1a15"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3698d68a7c3cc1d34dbeb90c16ec5fd64a6899b8a21ad812609ff071bba79efd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3bf871746002efddf8f508268403acc60384cb45a9bcaecbf698db0a821cf16d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43910da32f7c8270e8c1f9a2026616f5d89fd86f1e70c331e98620fb7c20bbfd"
   end
 
   depends_on "go" => :build
@@ -20,6 +21,8 @@ class Ghalint < Formula
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/ghalint"
+
+    generate_completions_from_executable(bin/"ghalint", "completion")
   end
 
   test do

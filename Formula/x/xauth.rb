@@ -1,19 +1,17 @@
 class Xauth < Formula
   desc "X.Org Applications: xauth"
   homepage "https://www.x.org/"
-  url "https://www.x.org/pub/individual/app/xauth-1.1.4.tar.xz"
-  sha256 "e9318141464ad7b4dc0f8564a580f0d20f977c85a388cc40d5a766206151c690"
+  url "https://www.x.org/pub/individual/app/xauth-1.1.5.tar.xz"
+  sha256 "a4000e2f441facebf569026bedecc23ba262cc6927be52070abe0002625cfbe0"
   license "MIT-open-group"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "482732473b597b69803aa752a8b3e81727ef704ea114afaba8189ec8f8174b5d"
-    sha256 cellar: :any,                 arm64_sequoia: "5a9d8f5e963c19c5245d33ea579cc87384a2e0d6e50d34979dccabd027efc3c1"
-    sha256 cellar: :any,                 arm64_sonoma:  "8a24eae57487dfa2e9eea59f32f921da0f80e6d5cf6cae52683b0d1da150c4f2"
-    sha256 cellar: :any,                 arm64_ventura: "1c8d12d20eec9be0585b8c6bd44b36929c4cd2b6f1598148e490d3a388d36edc"
-    sha256 cellar: :any,                 sonoma:        "9dde39c14d1fad1e94571a181c8fa62f1a944c9ff332873a8e149a179a93f6dc"
-    sha256 cellar: :any,                 ventura:       "69af4439e0d66e4f233a1eb679754c388e3bc0ab79912e15760bddb6648fde31"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e192fd49a6a232b2002d8835654499c2a01a34332f157e127c6b5269fb3b05f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a562860d2d2ed8bec6fd14a4929e3be833423fb707ae79fdab37c190ed97e5ff"
+    sha256 cellar: :any,                 arm64_tahoe:   "c41ec4cab2cf6579ed12863a167d2c8cd5d9ee442f75e59687c616094960a6cc"
+    sha256 cellar: :any,                 arm64_sequoia: "7c1cda56269b3c051bdad31e681565c66e58c2dcbcb029381de38dfbb353353d"
+    sha256 cellar: :any,                 arm64_sonoma:  "982b0370134b594c6c98433bc73c4e3efda11525e729c1b91fd388a71b85ca7e"
+    sha256 cellar: :any,                 sonoma:        "cead5271fac2eb731921d8e90ba19568d94c7dfe90f3401619e557e5481af528"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecad1dc56975cdab489d246cf7fe25ae04a08298e4482195dbc5ddd91783d3db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f2c4255c039ae81f80704d6965f1ab02ad51877e8ca0a93e5d00a9b36e925f4"
   end
 
   depends_on "pkgconf" => :build

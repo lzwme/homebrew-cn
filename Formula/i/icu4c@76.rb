@@ -22,6 +22,7 @@ class Icu4cAT76 < Formula
 
   # Deprecated with ICU 77.1 release
   deprecate! date: "2025-03-29", because: :versioned_formula
+  disable! date: "2026-03-29", because: :versioned_formula
 
   def install
     args = %w[

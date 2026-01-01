@@ -7,7 +7,7 @@ class Kafka < Formula
   license "Apache-2.0"
 
   livecheck do
-    url "https://kafka.apache.org/downloads"
+    url "https://kafka.apache.org/community/downloads/"
     regex(/href=.*?kafka[._-]v?\d+(?:\.\d+)+-(\d+(?:\.\d+)+)\.t/i)
   end
 

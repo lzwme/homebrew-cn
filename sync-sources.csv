@@ -150,7 +150,7 @@ Homebrew-homebrew-core/Formula/a/ansible-cmdb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ansible-creator.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible-language-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible-lint.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/a/ansible.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/ansible.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ansible@10.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible@12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible@9.rb, Homebrew/homebrew-core, 0
@@ -3704,7 +3704,6 @@ Homebrew-homebrew-core/Formula/l/llm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/llnode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@12.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/l/llvm@13.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@14.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@15.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@16.rb, Homebrew/homebrew-core, 1
@@ -5102,7 +5101,7 @@ Homebrew-homebrew-core/Formula/o/objc-run.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/objconv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/objfw.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/observerward.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/o/ocaml-findlib.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/ocaml-findlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ocaml-num.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ocaml-zarith.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ocaml.rb, Homebrew/homebrew-core, 0
@@ -12583,7 +12582,6 @@ Homebrew-homebrew-cask/Casks/i/internxt-drive.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/intune-company-portal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/invesalius.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/invisiblix.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/i/invisionsync.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/invisor-lite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/invoker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ioquake3.rb, Homebrew/homebrew-cask, 0
@@ -13728,7 +13726,6 @@ Homebrew-homebrew-cask/Casks/o/oryoki.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/osaurus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/oscar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oscilloscope.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/o/osculator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/osirix-quicklook.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/osmc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oso-cloud.rb, Homebrew/homebrew-cask, 0

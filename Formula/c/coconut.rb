@@ -3,26 +3,24 @@ class Coconut < Formula
 
   desc "Simple, elegant, Pythonic functional programming"
   homepage "https://coconut-lang.org/"
-  url "https://files.pythonhosted.org/packages/93/75/414f33186846444da53b4e834d5ccfb0577d0e09b997819c183fa509f70a/coconut-3.1.2.tar.gz"
-  sha256 "ef0656ee2df4594007f998f4a9c2a1b9bfbc40541a400cbaa00ccbbac50e5414"
+  url "https://files.pythonhosted.org/packages/06/f4/38f315a1d8568257a74fe482e925368a2ef4bccc9b1d5751f003570bccc5/coconut-3.2.0.tar.gz"
+  sha256 "0c64554deef3a35b2688368315cc2087dd8244e1b13d6b869fe5c2e679d6a0ad"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a1429eacd7ba88e78c7cc9e1c8b0208845c4d7dcc675315fcb831e6ad797c4e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6502a220c4da2b19a4dc7194abb01a95c02f02e3f5d9837a440b95452a6d691"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c59cb4b6a3e3c16a8e12dcb6ccef7119f35649fe14cfcecf74da20dac3ea268"
-    sha256 cellar: :any_skip_relocation, sonoma:        "913e4387061d7e486ca1f85b02eb080af9078121ec3a29784433f090292f0e45"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b84d98135ff77c2dbadbd696b92746185826c2dcdb78111c6d10bf916e65c6c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59e33f91e69d5216ddc4d2dec613b7ea6e23e8f17a37946b8539cf52d1349f1e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "040ca85e616756590d1bc5e3f0f8c083bc9c9c9968202f9a6821b290dd5ac46b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2ae0c9fa05684caa4310454a077bdf5a76638bb80d0583ab106f9f46bdd04ed"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c62ac6e9687c695468cd21215194fbcbf34ff28dcee0aaa022f49eb7046ef684"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3bb30bc217e0ef036a3fbe12e345450a1d8e9e79bf46c05129807beff7e3e264"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c02250bddf8b7ce6c06e1117ff7d67d4ef0fe7f5c4eaa8bd0526ec7c96195c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f73d968aa3e8f182260d25a640d9424e63609ba5ebda21822db8d7c949f6732"
   end
 
-  depends_on "python@3.13" # planning to support Python 3.14, issue ref: https://github.com/evhub/coconut/issues/866
+  depends_on "python@3.14"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "async-generator" do
@@ -46,8 +44,8 @@ class Coconut < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
-    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
+    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
+    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
   end
 
   resource "pygments" do
@@ -60,9 +58,9 @@ class Coconut < Formula
     sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
-  resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
-    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
+  resource "tstr" do
+    url "https://files.pythonhosted.org/packages/bc/03/03144b7a0ff44105f88469aba140ddaabda870d4d3fa71e403953a020544/tstr-0.4.0.post1.tar.gz"
+    sha256 "b1a977868e909eaf1fb03b31cb79809389c3195164f03fca08b6eb17824db209"
   end
 
   resource "typing-extensions" do

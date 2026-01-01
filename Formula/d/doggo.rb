@@ -7,13 +7,13 @@ class Doggo < Formula
   head "https://github.com/mr-karan/doggo.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04ed8b12923f3746f5b31fffc1066bc2df35a8e593a9450da18414509a9bc16b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04ed8b12923f3746f5b31fffc1066bc2df35a8e593a9450da18414509a9bc16b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04ed8b12923f3746f5b31fffc1066bc2df35a8e593a9450da18414509a9bc16b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7b26db6470789b2a22a6e2e059b55e3d23b05afa3ded87521ca2c3e5fa717ee0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "540ceaa283366547bdcacdac13e93a599464b56f79dc44c2220eb1dafafade71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fb0555b6f8e7361987ab1fd5028a385d1bb21201e26d2db4c39a5741fc84349"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee81094e37d53fbe7d1a5fc633c407ae823e1a39527cdc620b6945180b821f96"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee81094e37d53fbe7d1a5fc633c407ae823e1a39527cdc620b6945180b821f96"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee81094e37d53fbe7d1a5fc633c407ae823e1a39527cdc620b6945180b821f96"
+    sha256 cellar: :any_skip_relocation, sonoma:        "65f0cfaea518c041f9feafbc4ece8dc7c21e6ee245f913bc2813eb6004f25fec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8157ffe8259a6710f23941b4bc301ff2f910cea882b6314797735cd3edcc5520"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d67e9a4969775d536e5cecb3b6c03b469b75a3844d9441e8848514b432279c9c"
   end
 
   depends_on "go" => :build
@@ -22,7 +22,7 @@ class Doggo < Formula
     ldflags = "-s -w -X main.buildVersion=#{version} -X main.buildDate=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/doggo"
 
-    generate_completions_from_executable(bin/"doggo", shell_parameter_format: :cobra)
+    generate_completions_from_executable(bin/"doggo", "completions")
   end
 
   test do

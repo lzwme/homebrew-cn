@@ -1,18 +1,18 @@
 class Karmadactl < Formula
   desc "CLI for Karmada control plane"
   homepage "https://karmada.io/"
-  url "https://ghfast.top/https://github.com/karmada-io/karmada/archive/refs/tags/v1.16.0.tar.gz"
-  sha256 "61c0e81f91e5b638775b22e0e324fcb974a36b136008ceb841a3398ef04b79a4"
+  url "https://ghfast.top/https://github.com/karmada-io/karmada/archive/refs/tags/v1.16.1.tar.gz"
+  sha256 "beba11cef484b2a5ea72bb3fe193b0ff9b2caa9afca5f491dcadbd7221cedc1f"
   license "Apache-2.0"
   head "https://github.com/karmada-io/karmada.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0e8152187d3b3f1f86f7ed7326829d784b955add62adc7f95fc5f45b2aa486d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e715bc2a976e294f0c7cde2ff59d573f6f27aedaaa8bc43125067ccf6762e35e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05d69b443a09e98e708984d04d10f9ba7b0039a3af703fa72c39dbcb789ec154"
-    sha256 cellar: :any_skip_relocation, sonoma:        "38e120de4c123df4d0b1eeb89f8f70ec0b3367aa0946715baaf4a7a150d7a551"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8fec9bc29d79353fde9d6da458a19da2e0751fe59b33058d39e0c8568c08b708"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9abe1236986000b3a74e23d8e9dbbb7f3d2bc446ca2b6e195590dcf29b23da3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7625e68ac7cd8a18d70d6869ae388498bf0a09b5f46752b66735170ffcf10a2a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9228c8a12be8582031e3285b693750e8c0bb4c0eab8d8746839be666ef32b1a8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35b1c7d129ecc5ff80786340b1893e574cbb3fdc79cfd4f62f51d965123819b3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "80fe009c5445354dbc45ae851c425ff3e7f536abb156ae281929c42f68db36e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb18ba29b4485ad0a6b9154ae8bb92bbf884b615f77918387e3144ebc7892db7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ded992d51202360c7bca853eba9646612a75ea7b09f2cc3e79de92b94b2f5ca"
   end
 
   depends_on "go" => :build

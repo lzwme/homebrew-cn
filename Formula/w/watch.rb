@@ -56,15 +56,20 @@ class Watch < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/watch --version")
 
-    cmd = "#{bin}/watch --errexit --chgexit --interval 1 date"
-    output = if OS.mac?
-      shell_output(cmd)
-    else
-      require "pty"
-      r, _w, pid = PTY.spawn(cmd)
+    require "pty"
+    output = []
+    PTY.spawn("#{bin}/watch --errexit --chgexit --interval 1 date") do |r, w, pid|
+      r.winsize = [24, 160]
+      begin
+        r.each_char { |char| output << char }
+      rescue Errno::EIO
+        # GNU/Linux raises EIO when read is done on closed pty
+      end
+    ensure
+      r.close
+      w.close
       Process.wait(pid)
-      r.read_nonblock(4096)
     end
-    assert_match "Every 1.0s: date", output
+    assert_match "Every 1.0s: date", output.join
   end
 end

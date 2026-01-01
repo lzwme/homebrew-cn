@@ -1,10 +1,9 @@
 class Wget2 < Formula
   desc "Successor of GNU Wget, a file and recursive website downloader"
   homepage "https://gitlab.com/gnuwget/wget2"
-  url "https://ftpmirror.gnu.org/gnu/wget/wget2-2.2.0.tar.gz"
-  sha256 "2b3b9c85b7fb26d33ca5f41f1f8daca71838d869a19b406063aa5c655294d357"
+  url "https://ftpmirror.gnu.org/gnu/wget/wget2-2.2.1.tar.gz"
+  sha256 "d7544b13e37f18e601244fce5f5f40688ac1d6ab9541e0fbb01a32ee1fb447b4"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,19 +11,16 @@ class Wget2 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "02f865ef13cd93291ae12b59dac0eb9c883c9078430e63ba1176bc82b27c911b"
-    sha256 arm64_sequoia: "b863537174ece79da6195e2ac5707cd31488d58088bdccb573e189aa75153bff"
-    sha256 arm64_sonoma:  "99190ec35480c9addfc7d84e5a026eceb272213914048503ec9c21c5385990cf"
-    sha256 arm64_ventura: "c707efb734c4e2338ec805111837642cf423a7aab4439f4743bdcb9bccfd46e7"
-    sha256 sonoma:        "fb4276bbc11f84ce2d2b98daf426fd4a1b1aa5ffd10973f3f07d868429059ab3"
-    sha256 ventura:       "b0ef99e0d7383df8316c5284d7ff38d02415f6cae006aad83ffe21e078262069"
-    sha256 arm64_linux:   "7c20c1db23e50bdc5fdb67333ea80ed932235f79b2a82c28afe92e621a5667d2"
-    sha256 x86_64_linux:  "a6580c39554f67d8db6d5817945792dc48c0c9e648d39043aa9bb4fc314e171c"
+    sha256 arm64_tahoe:   "f3a9adec245bbd9635183135de06592de77d3adcc2399fc183223158cb87ee09"
+    sha256 arm64_sequoia: "ad8b8ac220a86f7fdaf8e4ad4489cded0339c37d3ae28b10fa5ecf03719a0d33"
+    sha256 arm64_sonoma:  "60b93781fbdb1aa2fe674b9367dfb744dee46574e86e570ca7b7af1cc0a28a00"
+    sha256 sonoma:        "9dbb77158a907ea8a23e6f787ac84bfd5d7ef4f6ee820b3cc5f7a72c3dbbb02e"
+    sha256 arm64_linux:   "f8bcd1f6bf5c56bb03b743083a814f77cf7d6bd4959311b5e9f8fcd71cd01f23"
+    sha256 x86_64_linux:  "2f92b4c85c3a7e3676cff954aefd305b31fe259331c07085daa3cb486e4ee7e5"
   end
 
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "lzlib" => :build # static lib
   depends_on "pandoc" => :build
   depends_on "pkgconf" => :build
   depends_on "texinfo" => :build # Build fails with macOS-provided `texinfo`
@@ -35,6 +31,7 @@ class Wget2 < Formula
   depends_on "libidn2"
   depends_on "libnghttp2"
   depends_on "libpsl"
+  depends_on "lzlib" # static lib
   depends_on "pcre2"
   depends_on "xz"
   depends_on "zstd"

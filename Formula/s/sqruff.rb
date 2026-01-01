@@ -1,18 +1,18 @@
 class Sqruff < Formula
   desc "Fast SQL formatter/linter"
   homepage "https://github.com/quarylabs/sqruff"
-  url "https://ghfast.top/https://github.com/quarylabs/sqruff/archive/refs/tags/v0.31.0.tar.gz"
-  sha256 "2970a5eb8e4df663ec6abcae148b19667c8bc0fd3c48a20d3eb57603b8450176"
+  url "https://ghfast.top/https://github.com/quarylabs/sqruff/archive/refs/tags/v0.32.0.tar.gz"
+  sha256 "6a8859ac1ad6e453f24fd03e503a9c7b65a2a80bddf541b6970d07895ea58143"
   license "Apache-2.0"
   head "https://github.com/quarylabs/sqruff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ee48774426ee4378a2f64f2c43ff20f0fa0cc5119a24e8a6c4bc22ca6d9a411"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94812d960797af5adce5456730f866d6177282578c8bc853bd66ec343e77e770"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fae3c1e05bfc6bfa1c40f0044760cae413661e14d352b431989131699fcc2923"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4393df5facbd60e609b45c83b43d2bcb41ebdfe78e0967cb92f0c83ae9ad8e73"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "31da9bc642ba7979ad98d70e5db073f3decbee3e32e77eb16bdc8ea21a3f66c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27b5ca9c671ada457f4d4ef2c30541164513a181f40b09f7fb943d03f861a905"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1ea4798fc29738aaab18388a1ddc12d40392ed359199b0e719cb16ef74ef53e3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6891fc1624865c77286c54c160560c74dd606012c759a8ed448b460e750e966b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6260172935a9df28f39fc8caa2f829da27269a1b68d6f8a6940c64f4723b89bb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a73e3751f0c4069ba415b843e33dc8fce5d6f70019022cc31683b25cf3b6a3f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "31a86357e96ba1a4bca666fad40880e5a4d1a4aa6e82123ac93c48188c864afd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "659774f303a132d9720f1d8280ceae36b020e85d09cc56b861eaedf303665326"
   end
 
   depends_on "rust" => :build

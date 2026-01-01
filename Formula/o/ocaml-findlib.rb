@@ -1,25 +1,24 @@
 class OcamlFindlib < Formula
   desc "OCaml library manager"
   homepage "http://projects.camlcity.org/projects/findlib.html"
-  url "http://download.camlcity.org/download/findlib-1.9.8.tar.gz"
-  sha256 "662c910f774e9fee3a19c4e057f380581ab2fc4ee52da4761304ac9c31b8869d"
+  url "https://ghfast.top/https://github.com/ocaml/ocamlfind/archive/refs/tags/findlib-1.9.8.tar.gz"
+  sha256 "d6899935ccabf67f067a9af3f3f88d94e310075d13c648fa03ff498769ce039d"
   license "MIT"
   revision 2
 
   livecheck do
-    url "http://download.camlcity.org/download/"
+    url "https://opam.ocaml.org/packages/ocamlfind/"
     regex(/href=.*?findlib[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
-    sha256               arm64_tahoe:   "78208d12d896d767f2cf86d461a3d7c7c89d4bcd300000958a64bd5a91008003"
-    sha256               arm64_sequoia: "d6a7d8f506f4d089a8f30572798cb972357c01eac1a487f14c3aafeecf1fe980"
-    sha256               arm64_sonoma:  "ca98c985d8842a3f5062b7d48592b6f0347a8f5459b23907253d15e0b3abfd29"
-    sha256               arm64_ventura: "8b74e02480dff2c49430ee62defa16c3f9dcd87f174b98e6e8e648dcbc8bd8ef"
-    sha256 cellar: :any, sonoma:        "40788547ebec28eaed2a8811f9b3bd748a069abe43cca7c9485705d1b82681d1"
-    sha256 cellar: :any, ventura:       "b48edfe29118e8d0a15ac967c3dd8b8aa4de92c6e7b70190658a08e3a7e58398"
-    sha256               arm64_linux:   "37808e687a6c05f3ffcc60ebbcc85c816e2daea1b7298f6cde2a1b67718cfc1b"
-    sha256               x86_64_linux:  "2f34394dd75304d28a920c3f20abb41d206af10ba07b010fa3d702ea09293537"
+    rebuild 1
+    sha256               arm64_tahoe:   "6f6f7669b4187e082f14cb9c9f617bec4490a32d719caecad5b7f4d01dff2d91"
+    sha256               arm64_sequoia: "fca7c5a0a0cf78d4339970cee1d0a80605e4adce120ba9e75eaaaed96cd0055d"
+    sha256               arm64_sonoma:  "4cf42f610e5248913f7cf5b494ccb84384063c3a13470547fc573dc1a532e746"
+    sha256 cellar: :any, sonoma:        "4addf3b776fbe1b639f4c3f7412a04ba799125dbdc567b79879310401481bd54"
+    sha256               arm64_linux:   "06f20185aef240f8b740a0347c04e4ba2f912c912b8c36b3464cc54fafaa1f56"
+    sha256               x86_64_linux:  "26996e1d983d47ca18e8fef158d9254b94a2ea7e0399386f518e9935aaf032c4"
   end
 
   depends_on "ocaml"

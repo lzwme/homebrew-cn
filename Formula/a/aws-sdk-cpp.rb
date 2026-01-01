@@ -1,8 +1,8 @@
 class AwsSdkCpp < Formula
   desc "AWS SDK for C++"
   homepage "https://github.com/aws/aws-sdk-cpp"
-  url "https://ghfast.top/https://github.com/aws/aws-sdk-cpp/archive/refs/tags/1.11.705.tar.gz"
-  sha256 "9b2b7d572980ce0be1239199da441588eedda4c6b4e82d28e53b1ebbe91cbd9f"
+  url "https://ghfast.top/https://github.com/aws/aws-sdk-cpp/archive/refs/tags/1.11.720.tar.gz"
+  sha256 "6b0f56e8f6f7d5a837e73173646630161c2b7419ed178afc3f5fd5b7bab25e11"
   license "Apache-2.0"
   head "https://github.com/aws/aws-sdk-cpp.git", branch: "main"
 
@@ -11,12 +11,12 @@ class AwsSdkCpp < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "2ed03f47637b64f869f208f0c83258fc174bdef00ef9a33f1b9777d54b1c1370"
-    sha256                               arm64_sequoia: "be3c75b67330b99745ecae2e2bfada1de60d9edfc4f7f363f1ec2ffb33531eb8"
-    sha256                               arm64_sonoma:  "a2601b2faf557b1f80568a73fcb0298205e62354b780649bd430cc3a62b93800"
-    sha256 cellar: :any,                 sonoma:        "28c84dc2f11e587ce1176f1475aa3e4ba32b76d818af8fc5360debc7865e2ecd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "73582181ba999d52bee256b02b12816d691e8524435f332c8ea5e86c5c90768e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30f3728d81fa662b13afa4e0e0b5211059b713a0a441bfe78d415a64b614364c"
+    sha256                               arm64_tahoe:   "c1464a35d01570d2a72f37c426fe1500d8b7e1d6c55dba4cae40387fcc65b0f7"
+    sha256                               arm64_sequoia: "3a9bee1d12a201f4593b2d6bd25be9e6d5c74062f63eb661aa7ffbf65c67c43f"
+    sha256                               arm64_sonoma:  "b4387f61dba330666f7f7f80118f16c344b0de6d4d74cd318b7597c11475ff22"
+    sha256 cellar: :any,                 sonoma:        "069d1e23cca439e822572c52caa7cbae8604c6ea49825095c1eab451b41be0e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b0c2ea0f61bd45dafa6a3fbc0b3cf40efec7675efe2ea2729d9d2dc238af462"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b91fe6ab9bd011b62af774f240f520c2fb6a44352e9ffe1abc6522732ae7350d"
   end
 
   depends_on "cmake" => :build

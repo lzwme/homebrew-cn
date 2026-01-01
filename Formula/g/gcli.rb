@@ -1,19 +1,18 @@
 class Gcli < Formula
   desc "Portable Git(hub|lab|tea)/Forgejo/Bugzilla CLI tool"
   homepage "https://herrhotzenplotz.de/gcli/"
-  url "https://ghfast.top/https://github.com/herrhotzenplotz/gcli/archive/refs/tags/v2.9.1.tar.gz"
-  sha256 "5f48c3f016c1ef92c53b319ebdf751e66d5757070fc9ae678bedb185a450d426"
+  url "https://ghfast.top/https://github.com/herrhotzenplotz/gcli/archive/refs/tags/v2.10.0.tar.gz"
+  sha256 "500da41d29fa53ab412a81864624b9e2bcd0785be61234f6cfb6b3b031b83280"
   license "BSD-2-Clause"
-  revision 1
   head "https://github.com/herrhotzenplotz/gcli.git", branch: "trunk"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2344c39c56ddf3570ce15be918336c0be109d61daf94e976be567c148ea68ab1"
-    sha256 cellar: :any,                 arm64_sequoia: "d6199150cd0606278d0704d86eef9ba6086ed1c4c8ebfaad6fce0780964e527a"
-    sha256 cellar: :any,                 arm64_sonoma:  "de591e52de72fadee5bf0451001752004a203416bdc4fa8330d11b61af2901fc"
-    sha256 cellar: :any,                 sonoma:        "708969b7ca1882adc2368caff7cb540eb035cf72dc8aa49a9c391d1eeff15cb5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fa5f424991939f335b5e5ac511db43a540ba63c8edd2bfb60e86228143ea863"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53e1cffcc03eece2cc7f7240a6d5140b081d5021a85489a82bf6facab0a50b1a"
+    sha256 cellar: :any,                 arm64_tahoe:   "3ed8bca5940b303f3f1637ff75a4edd33bf4b7a7261ea6ac078c83ba4265b9f1"
+    sha256 cellar: :any,                 arm64_sequoia: "9252a4d927139f16322d9f450d1ec0002c5e39f846b740f5cf93559d5f45d523"
+    sha256 cellar: :any,                 arm64_sonoma:  "59a4a1d558e26fa17ff26d3a7f845ae5db2491cab4c653c8a537a413f8f7597d"
+    sha256 cellar: :any,                 sonoma:        "bcb8f2c876dc256421965dadabe5f2cce00bf01c5b1a848d9bcdb7e153a325b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "070aa65dde3c80d77327ff1589f5042909f5bac2842d3c04a3e5e30eae3de97a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "766b5e4ee7c4d0bd37d14dc7d07c0f104b4795f595fe4a1456f1d443e4a2f18c"
   end
 
   depends_on "pkgconf" => :build

@@ -3,21 +3,20 @@ class Trailscraper < Formula
 
   desc "Tool to get valuable information out of AWS CloudTrail"
   homepage "https://github.com/flosell/trailscraper"
-  url "https://files.pythonhosted.org/packages/dd/1e/34d60a04f97291d8c3c316a4f61d22b0870100adc704e8bedfb4930c0401/trailscraper-0.9.1.tar.gz"
-  sha256 "96278fcd08aba2c684cad5e73972149d3f756ef52f146532440793ddcbbf9230"
+  url "https://files.pythonhosted.org/packages/43/82/74344dd629ac17dc4b3906eb07a53a731c3ccc80913abdbbe378c658498f/trailscraper-0.10.0.tar.gz"
+  sha256 "805994a27ebd3ecd9353cd85b54139822e73980b1da93f63fa0e5d42c8b67ec1"
   license "Apache-2.0"
-  revision 3
   head "https://github.com/flosell/trailscraper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83c4ac3cfcbe349686688398f61a08f045991ee5ea057971b48ae94c87f880f8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2ef4700db76554a995a6bc762f55368c7320bd3b577843993bca4fb51ec6071"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "855562442db8071fa2fff697356a69351d9ac4ea0e1b7941f3918543badb76b3"
-    sha256 cellar: :any_skip_relocation, tahoe:         "042e8422fc256ce3f84f283b8b8417c6f4e235bca828726403eebd78a7446b76"
-    sha256 cellar: :any_skip_relocation, sequoia:       "873d7d73197bfbf03f4076a99127af27c867ad04e9219ce4f4edfcb913dd5f02"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6552faec89be20496db9102b531cbe001607812176347ad92c766ce52c6916d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e72ed9e9a1b6a6125e2ed06f0981563687f0f8950e678943ba8b57431eff3767"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e35d0be8294a6955941a44f32ce4db2ee5b4dc8a98816d30f367a427a9c68db"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc7f20c88ebc8240d3c462fad9d105cbe1e00403a3429e5830b2356967ffd574"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53dae5d4cdcee5fb12c56c61a9a12fc3fef1f1744205aa2713e5a095dea182f9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0edbc7dcfeb094abb3bfc4e00f079152ada2cccca8e7b1ead23395b2be66d412"
+    sha256 cellar: :any_skip_relocation, tahoe:         "6c3d5dd01cb4cc8b9887fe3b1b4a6c4510a49b44b1b5b6430e1aac689cc53346"
+    sha256 cellar: :any_skip_relocation, sequoia:       "3e133d9de7bd2d16e549049779a8e713660aa8ae64072b7a12d00d0aae4f19d2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "be8f17b06e5004f7342603f172d8b358fd1f3ce17d35a116aa7ec176af70ec68"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff67b98f467483cbebd6e7fe4ebf8cb974cbe403a528e509d9d50f12dea523a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0e545b726ddd1dfd6a2ec285b11629cba7ce9cf6f236a57e4639534ae2dfe54"
   end
 
   depends_on "python@3.14"
@@ -25,13 +24,13 @@ class Trailscraper < Formula
   pypi_packages extra_packages: "setuptools"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/32/f7/b870fb8d2ca96a996db97c9d30d1eb087b341cec1004722e99672a79800d/boto3-1.37.9.tar.gz"
-    sha256 "51b76da93d7c2a3dff6155ee4aa25455940e7ade08292d22aeeed08b9e0dbf0b"
+    url "https://files.pythonhosted.org/packages/61/ce/d6fbf9cdda1b40023ef60507adc1de1d7ba0786dc73ddca59f4bed487e40/boto3-1.38.3.tar.gz"
+    sha256 "655d51abcd68a40a33c52dbaa2ca73fc63c746b894e2ae22ed8ddc1912ddd93f"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/34/79/4e072e614339727f79afef704e5993b5b4d2667c1671c757cc4deb954744/botocore-1.37.38.tar.gz"
-    sha256 "c3ea386177171f2259b284db6afc971c959ec103fa2115911c4368bea7cbbc5d"
+    url "https://files.pythonhosted.org/packages/cf/5f/d76870e4399fbfc12aa5c3bb36029edfc1a434392afc70a343c9d7d96e90/botocore-1.38.46.tar.gz"
+    sha256 "8798e5a418c27cf93195b077153644aea44cb171fcd56edc1ecebaa1e49e226e"
   end
 
   resource "click" do
@@ -55,8 +54,8 @@ class Trailscraper < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/5f/57/df1c9157c8d5a05117e455d66fd7cf6dbc46974f832b1058ed4856785d8a/pytz-2025.1.tar.gz"
-    sha256 "c2db42be2a2518b28e65f9207c4d05e6ff547d1efa4086469ef855e4ab70178e"
+    url "https://files.pythonhosted.org/packages/f8/bf/abbd3cdfb8fbc7fb3d4d38d320f2441b1e7cbe29be4f23797b4a2b5d8aac/pytz-2025.2.tar.gz"
+    sha256 "360b9e3dbb49a209c21ad61809c7fb453643e048b38924c765813546746e81c3"
   end
 
   resource "regex" do
@@ -70,8 +69,8 @@ class Trailscraper < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/c4/2b/5c9562795c2eb2b5f63536961754760c25bf0f34af93d36aa28dea2fb303/s3transfer-0.11.5.tar.gz"
-    sha256 "8c8aad92784779ab8688a61aefff3e28e9ebdce43142808eaa3f0b0f402f68b7"
+    url "https://files.pythonhosted.org/packages/fc/9e/73b14aed38ee1f62cd30ab93cd0072dec7fb01f3033d116875ae3e7b8b44/s3transfer-0.12.0.tar.gz"
+    sha256 "8ac58bc1989a3fdb7c7f3ee0918a66b160d038a147c7b5db1500930a607e9a1c"
   end
 
   resource "setuptools" do
@@ -95,8 +94,8 @@ class Trailscraper < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install

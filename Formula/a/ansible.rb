@@ -3,18 +3,18 @@ class Ansible < Formula
 
   desc "Automate deployment, configuration, and upgrading"
   homepage "https://www.ansible.com/"
-  url "https://files.pythonhosted.org/packages/de/73/a6df4f46328a5548b7da2169fcfb37cf48d120def26f75917baf41af255b/ansible-13.1.0.tar.gz"
-  sha256 "e527b9511be1382e31e8ef7650e2338a7b0f09d63fc5ded3ce9bf8234444d771"
+  url "https://files.pythonhosted.org/packages/61/18/f13c9a462ef20893d30bd11c4089edee02b5ef1d31e1c2634da592732279/ansible-13.2.0.tar.gz"
+  sha256 "fac46e202d1020027341659918b39e588dd7c43cef26537d7ca7fe51c324fe31"
   license "GPL-3.0-or-later"
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e7ee3eb22db38b5ce327508116774c58c89c7e9584c9536255bd4144511256f6"
-    sha256 cellar: :any,                 arm64_sequoia: "20e67d3e1e7f74f1be77b737e38015a5d0b4aceebf2b02adb3966065da55a8ca"
-    sha256 cellar: :any,                 arm64_sonoma:  "649b203324c5c21c9082df4a22f79ff2bc0eb6b3f491096994b74b831a9c4f68"
-    sha256 cellar: :any,                 sonoma:        "bb293cbd8cf17128764c60b600226a003f5b80dbaffdd1c11988b3d2fdc4acba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a03744814121369a6692bd5ef56e0fa1d5d419a795d05bbcd460c530afd5d95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "390520075489e003d5e2c425792fca9f6e9f850e27d3d70284a06026772da7a9"
+    sha256 cellar: :any,                 arm64_tahoe:   "d320465ad1a5fd5e4b7aabc3b1e32b809703a06c3e5e29b570c8e826af96b41f"
+    sha256 cellar: :any,                 arm64_sequoia: "b5c1c7ef2df768e907b1ca8d2a02322c1d6fe60b95f09496470bc819ba7d9a00"
+    sha256 cellar: :any,                 arm64_sonoma:  "2b04f226cb092953118b1bb545a15818315140379b4a76288877f8fbc3bd6b5c"
+    sha256 cellar: :any,                 sonoma:        "e01f93dc0f57e0c5feeb502401b70ee53241c5eef18e982609d615bb64c54d4f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8cdb7a741760ce2627fcc5422d8683e2cb1c0a1ed1f9cb80924cbdd504dff860"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0405bd589b25af819baea94181bc2af941f9e0ff24e30310f36d938bf7fed49"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -80,18 +80,18 @@ class Ansible < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/06/a8/e7a408127d61569df097d6c128775ffa3e609a023d4461686fd85fe5eef4/boto3-1.42.6.tar.gz"
-    sha256 "11dab889a24f378af6c93afd4aa06d7cace3866cbf02e78c7a77e9a7fb41967a"
+    url "https://files.pythonhosted.org/packages/34/36/045babbc2978fe3bf051a002e9ee492a815e50b90aea514b811d12aa33cb/boto3-1.42.19.tar.gz"
+    sha256 "5933696a28bf8eb62fc54e4de5583f78a0efef59c8164ee1850436aa22f53aa7"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/a6/28/e1ad336dd409e3cde0644cbba644056248e873b77129502f81581f5a222f/botocore-1.42.6.tar.gz"
-    sha256 "ab389c6874dfbdc4c18de9b4a02d300cb6c7f6f2d4622c73e5965aeef80e570d"
+    url "https://files.pythonhosted.org/packages/39/d6/33565766764492a0a4956ef161498d81a8c48c1e918aeaeb29def52c3367/botocore-1.42.19.tar.gz"
+    sha256 "8d38f30de983720303e95951380a2c9ac515159636ee6b5ba4227d65f14551a4"
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/fb/44/ca1675be2a83aeee1886ab745b28cda92093066590233cc501890eb8417a/cachetools-6.2.2.tar.gz"
-    sha256 "8e6d266b25e539df852251cfd6f990b4bc3a141db73b939058d809ebd2590fc6"
+    url "https://files.pythonhosted.org/packages/bc/1d/ede8680603f6016887c062a2cf4fc8fdba905866a3ab8831aa8aa651320c/cachetools-6.2.4.tar.gz"
+    sha256 "82c5c05585e70b6ba2d3ae09ea60b79548872185d2f24ae1f2709d37299fd607"
   end
 
   resource "charset-normalizer" do
@@ -100,13 +100,13 @@ class Ansible < Formula
   end
 
   resource "cliff" do
-    url "https://files.pythonhosted.org/packages/e5/4b/54c6c59c35559c0364981a96dba327673368e91ea5a078e5ae71c201b98c/cliff-4.13.0.tar.gz"
-    sha256 "54df5434f12d3d9f0724f50feef950ee4b79ed1bd560b42fa28901a1c9656e7f"
+    url "https://files.pythonhosted.org/packages/26/a4/21798803bcc0c096f6d6d8977a02f6b04b6d9681fcb50d876ae7c65417f6/cliff-4.13.1.tar.gz"
+    sha256 "b79cc0b2c19f6c6e78c82bd923e06785035d77cb0d2a1a483229f0a2836f0ca7"
   end
 
   resource "cmd2" do
-    url "https://files.pythonhosted.org/packages/04/0c/391fcec0218d7319a9b2aefeb42c4f92ee80f27d36b09b995a792a74b4ae/cmd2-3.0.0.tar.gz"
-    sha256 "f6fab21d2b344a3ab9fe174a6286c9fb4f43a185ad1dfacd13ef017a26a2c333"
+    url "https://files.pythonhosted.org/packages/c7/f7/224338332fd867dcef9004a7d576b3909b5b27a6686d42a1cfa31ee6d1a1/cmd2-3.1.0.tar.gz"
+    sha256 "cce3aece018b0b1055988adaa2b687ac9c1df38bfd2abfc29dbeb51a9707de33"
   end
 
   resource "debtcollector" do
@@ -145,8 +145,8 @@ class Ansible < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/ff/ef/66d14cf0e01b08d2d51ffc3c20410c4e134a1548fc246a6081eae585a4fe/google_auth-2.43.0.tar.gz"
-    sha256 "88228eee5fc21b62a1b5fe773ca15e67778cb07dc8363adcb4a8827b52d81483"
+    url "https://files.pythonhosted.org/packages/e5/00/3c794502a8b892c404b2dea5b3650eb21bfc7069612fbfd15c7f17c1cb0d/google_auth-2.45.0.tar.gz"
+    sha256 "90d3f41b6b72ea72dd9811e765699ee491ab24139f34ebf1ca2b9cc0c38708f3"
   end
 
   resource "idna" do
@@ -275,8 +275,8 @@ class Ansible < Formula
   end
 
   resource "osc-lib" do
-    url "https://files.pythonhosted.org/packages/7c/63/ea0eda39e1b2c0ca3e9d87798568f881ea7aa90e4f94affb78676215f72d/osc_lib-4.2.0.tar.gz"
-    sha256 "99718f06a990c1ad6fb9034bbed9655390a2ea83cef71a53781e7e9abd9f20ce"
+    url "https://files.pythonhosted.org/packages/9a/ea/d2916e572035de9602437b0ff5b3969504371e87d06880fa9e1624d7bc16/osc_lib-4.3.0.tar.gz"
+    sha256 "4f7f682c0e7df187aecba5bbbb5ee64796a2da03d23cba981245bdc27f6f8b97"
   end
 
   resource "oslo-config" do
@@ -295,13 +295,13 @@ class Ansible < Formula
   end
 
   resource "oslo-log" do
-    url "https://files.pythonhosted.org/packages/81/6b/a7f1c1daeadd36f71633fb3ebac9817fcb1f8edfd06d6bdd71384f39010f/oslo_log-7.2.1.tar.gz"
-    sha256 "01aebabdcf06b62df00e479db99df0c23f6cd24c6500ab3110e604bd059fa8d5"
+    url "https://files.pythonhosted.org/packages/d9/95/b16153fa2fa16f25b496be7a23b07774e25b9169473c57c1fc41bb693693/oslo_log-8.0.0.tar.gz"
+    sha256 "d3e0c67a509fca99e9b76eaedcb2fa8c5a1140659de8a50d5a4df6a3fa933227"
   end
 
   resource "oslo-serialization" do
-    url "https://files.pythonhosted.org/packages/d4/ac/119c430df3a86dc6a664fa864f777b4fd5cc16c50caa1ba3dd3bf10f43ae/oslo_serialization-5.8.0.tar.gz"
-    sha256 "5871a62b23f98cacd5518482941ae6d2a983e2936ed52d543ad08685dc6d2343"
+    url "https://files.pythonhosted.org/packages/de/da/c7568b0d6e1e0d442178240bc22c1701a69d9592b1e132e1292769704529/oslo_serialization-5.9.0.tar.gz"
+    sha256 "5dd15a7f2ffaed25e8d3c295ee305d3b864b04e4ae3d705ad9e628d5ab8a82f8"
   end
 
   resource "oslo-utils" do
@@ -326,7 +326,10 @@ class Ansible < Formula
     # bcrypt no longer truncates long passwords: https://github.com/pyca/bcrypt/commit/d50ab05b2bece07d5c8d6a4179064fc714fd9126
     # And breaks unmaintained passlib: https://foss.heptapod.net/python-libs/passlib/-/issues/196
     # See also https://github.com/ansible/ansible/issues/85919
-    patch :DATA
+    patch do
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/31c70b01322a41e3337c3c2443940e4b81110c3a/Patches/ansible/passlib-1.7.4.patch"
+      sha256 "16a8c2c3ebc0a1d494567f04a12c1b58fa4f50113b364c7ee8fb39d856882861"
+    end
   end
 
   resource "pbr" do
@@ -355,8 +358,8 @@ class Ansible < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
-    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
+    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
+    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
   end
 
   resource "ptyprocess" do
@@ -390,8 +393,8 @@ class Ansible < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/f2/a5/181488fc2b9d093e3972d2a472855aae8a03f000592dbfce716a512b3359/pyparsing-3.2.5.tar.gz"
-    sha256 "2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6"
+    url "https://files.pythonhosted.org/packages/33/c1/1d9de9aeaa1b89b0186e5fe23294ff6517fce1bc69149185577cd31016b2/pyparsing-3.3.1.tar.gz"
+    sha256 "47fad0f17ac1e2cad3de3b458570fbc9b03560aa029ed5e16ee5554da9a2251c"
   end
 
   resource "pyperclip" do
@@ -555,13 +558,13 @@ class Ansible < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
-    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
+    url "https://files.pythonhosted.org/packages/5e/a7/c202b344c5ca7daf398f3b8a477eeb205cf3b6f32e7ec3a6bac0629ca975/tzdata-2025.3.tar.gz"
+    sha256 "de39c2ca5dc7b0344f2eba86f49d614019d29f060fc4ebc8a417896a620b56a7"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
-    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
+    url "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz"
+    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
   end
 
   resource "wcwidth" do
@@ -642,17 +645,3 @@ class Ansible < Formula
     end
   end
 end
-
-__END__
-diff --git a/passlib/handlers/bcrypt.py b/passlib/handlers/bcrypt.py
---- a/passlib/handlers/bcrypt.py
-+++ b/passlib/handlers/bcrypt.py
-@@ -644,7 +644,7 @@
-         config = self._get_config(ident)
-         if isinstance(config, str):
-             config = config.encode("ascii")
--        hash = _bcrypt.hashpw(secret, config)
-+        hash = _bcrypt.hashpw(secret[:72], config)
-         assert isinstance(hash, bytes)
-         if not hash.startswith(config) or len(hash) != len(config)+31:
-             raise uh.exc.CryptBackendError(self, config, hash, source="`bcrypt` package")

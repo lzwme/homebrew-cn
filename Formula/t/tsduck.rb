@@ -6,8 +6,12 @@ class Tsduck < Formula
   license "BSD-2-Clause"
   head "https://github.com/tsduck/tsduck.git", branch: "master"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
   livecheck do
     url :stable
+    regex(/^v?(\d+(?:[.-]\d+)+)$/i)
     strategy :github_latest
   end
 
