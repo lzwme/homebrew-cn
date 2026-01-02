@@ -6,17 +6,18 @@ class KeeperCommander < Formula
   url "https://files.pythonhosted.org/packages/a2/00/b94749f9831c02d11df0ce5aa7d2a1d7c471cb92eb7b572986de7ec6fcfe/keepercommander-17.2.1.tar.gz"
   sha256 "b9b7e92c4a129d77203f19e4ca43a03d32cc611bc990c8f93deb6512222639e0"
   license "MIT"
+  revision 1
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ef78dba2c2b566edf45074a94eab8c6cc874cfcd69b717a9c663436ad405f290"
-    sha256 cellar: :any,                 arm64_sequoia: "c842f4c360b8429a01e0399aaf9eb0443d4501de60a0d133311d507cd997f8d3"
-    sha256 cellar: :any,                 arm64_sonoma:  "d45fda0e7820ba4490992044cc7edaad4306babce31b1ef18e7657eb094a17b5"
-    sha256 cellar: :any,                 sonoma:        "290a5657d9f46497be0dedc0bd8d0a5149c6fedf957544c6f9ccbd3872b86e0a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f25f3e76783d13fdc05612910e6ea1863d936dd6b54cbc0fb4eb6e20c9cf66d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc7768117e49cc87f462d206ea1e5713ecd26fe15f5f88a036d0da2fc4e1f351"
+    sha256 cellar: :any,                 arm64_tahoe:   "02fe73129fb000300a3540c9af5169b0e50eea535ea1640296f8604e48d2350d"
+    sha256 cellar: :any,                 arm64_sequoia: "93de352bc630e37ea7f1f8ad6e91116c8d85ea2dafa13f31bf76aa2cb838f632"
+    sha256 cellar: :any,                 arm64_sonoma:  "d0487b8f35f4568f0668c66f10b7498263f21b72c5e5178d67988c98bc5541dd"
+    sha256 cellar: :any,                 sonoma:        "1bb923e99173d11ccb82e20f6cbbad7ba9dcc787954a5b1232f85afcd6f5d8d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "47590563390cf06a3638444b7188baa0bffd8cfaf81ec6c65febf521dec77ccf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48b0174b14cf6e415cf661d39a41c790b725ca8005863ad0754390f9b8edbc17"
   end
 
   depends_on "pkgconf" => :build
@@ -62,8 +63,8 @@ class KeeperCommander < Formula
   end
 
   resource "cbor2" do
-    url "https://files.pythonhosted.org/packages/a2/b8/c0f6a7d46f816cb18b1fda61a2fe648abe16039f1ff93ea720a6e9fb3cee/cbor2-5.7.1.tar.gz"
-    sha256 "7a405a1d7c8230ee9acf240aad48ae947ef584e8af05f169f3c1bde8f01f8b71"
+    url "https://files.pythonhosted.org/packages/d9/8e/8b4fdde28e42ffcd741a37f4ffa9fb59cd4fe01625b544dfcfd9ccb54f01/cbor2-5.8.0.tar.gz"
+    sha256 "b19c35fcae9688ac01ef75bad5db27300c2537eb4ee00ed07e05d8456a0d4931"
   end
 
   resource "charset-normalizer" do
@@ -122,8 +123,8 @@ class KeeperCommander < Formula
   end
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/76/66/650a33bd90f786193e4de4b3ad86ea60b53c89b669a5c7be931fac31cdb0/importlib_metadata-8.7.0.tar.gz"
-    sha256 "d13b81ad223b890aa16c5471f2ac3056cf76c5f10f82d6f9292f0b415f389000"
+    url "https://files.pythonhosted.org/packages/f3/49/3b30cad09e7771a4982d9975a8cbf64f00d4a1ececb53297f1d9a7be1b10/importlib_metadata-8.7.1.tar.gz"
+    sha256 "49fef1ae6440c182052f407c8d34a68f72efc36db9ca90dc0113398f2fdde8bb"
   end
 
   resource "itsdangerous" do
@@ -142,8 +143,11 @@ class KeeperCommander < Formula
   end
 
   resource "keeper-pam-webrtc-rs" do
-    url "https://files.pythonhosted.org/packages/a6/1d/44e01ed1783bd22c0e2ad6f2f42114a22446b636f09d92cb463ad2dea50a/keeper_pam_webrtc_rs-1.2.0.tar.gz"
-    sha256 "b8dfd781902388870d8326279c0d571d0665ed9a877fa6543a95812ba2aa2628"
+    url "https://files.pythonhosted.org/packages/27/90/113cbc91bf3dd582de25f377a9e98b75890e6ffcab1b7141dc287f92405d/keeper_pam_webrtc_rs-1.2.4.tar.gz"
+    sha256 "fa9c5ee30a01a7aa88daaacc0e1d2875155771a77424ca0d2fdcdddb638a01dd"
+
+    # Remove `readme` field to avoid build error for missing file
+    patch :DATA
   end
 
   resource "keeper-secrets-manager-core" do
@@ -182,8 +186,8 @@ class KeeperCommander < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
-    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
+    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
+    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
   end
 
   resource "pycryptodomex" do
@@ -297,3 +301,17 @@ class KeeperCommander < Formula
     assert_match "keepersecurity.com", shell_output("#{bin}/keeper server")
   end
 end
+
+__END__
+diff --git a/Cargo.toml b/Cargo.toml
+index 6bdce2f..3106404 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -4,7 +4,6 @@ version = "1.2.4"
+ edition = "2021"
+ description = "Keeper PAM WebRTC for Python - A secure, stable, and high-performance Tube API for Python, providing WebRTC-based secure tunneling with enterprise-grade security and reliability optimizations."
+ license = "MIT"
+-readme = "README.md"
+ 
+ [lib]
+ name = "keeper_pam_webrtc_rs"

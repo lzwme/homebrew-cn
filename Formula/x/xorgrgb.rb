@@ -1,26 +1,17 @@
 class Xorgrgb < Formula
   desc "X.Org: color names database"
   homepage "https://www.x.org/"
-  url "https://xorg.freedesktop.org/archive/individual/app/rgb-1.1.0.tar.gz"
-  sha256 "77142e3d6f06cfbfbe440e29596765259988a22db40b1e706e14b8ba4c962aa5"
+  url "https://xorg.freedesktop.org/archive/individual/app/rgb-1.1.1.tar.gz"
+  sha256 "9bceca0821a46ff54989ab08ab00d6dd87eb2779fc15165d848eaa0ddd742fbe"
   license "MIT"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "b4c43ac48800387feaa8d8d91d20977069578a7a13efdf0f4198b9a2eb763062"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4cc8217eee8a4df6d597f4f6ab26718712256edd2bb0c5babcd646719ef052c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4148ce78e43c9aae8e75e639f5ebab603d20cd3aabd2e6421b71d967ac92aab7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25ddac19c5361bd478b8c9ac4fab8210be7b8811f9b2edf586156604badfce23"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d9bb5c41b1ef76f04324db74b789330210d48be78c751ce4d0439e3b24a8b49"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "30ee14ffdbb2418cc39884775ba8b61ab19452cd3e4e95609d5c67ac2bf56013"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f65ce4c85f3617949dcb191a098b6fcf70c1815a76831753953734504ed3f6b0"
-    sha256 cellar: :any_skip_relocation, ventura:        "39d8b12e69f0c07bfa6c78f682ed3160b81e0a986871821ec8871772f01bb5af"
-    sha256 cellar: :any_skip_relocation, monterey:       "8a5606f9cdba7608ebc27042ced7920658ed39593a0338a0d02ccdd067290fe4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "db4fb9cf83a6fcc75036c4c3b3fdac6ac0fe47108311a1f83a35ebbe97e7f1e7"
-    sha256 cellar: :any_skip_relocation, catalina:       "4f39373ce62247b2a47ff8f0a02fbdcb9af7e280aa7b1fa7443865024a0f561c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "99fca7eae8c246f93d1f36f833c7031caf3d10a1f6273a556054396847f23679"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6c3eca82aa9624b8b521d9d0e5cec68b9391538717c36c4d438edc75bb0085f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "159d5fec59b9e636d32f19ea34afbede62f66570ccdf032640bcec65bab8dd8a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35bf31cee3ecc5346e8e702941b781afeb6ac9e3e41723094a47ab4863429fbb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f3467d30599e1855fc62b23db5b4dbe709b593c90b9fef775ea86141bd6c05d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f7638605023153225dc39fb4322ef00ec039531ca1ba13f12ff26f2dbf8b17d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "625580b1d2ca0c33fa1aaea94a23cf29945e8d9a9de97286ea728369b5a8ff6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d3a5e626941b7b150c0e39f5101b8320d637f20ac0f03f6532d7f671aa2f001"
   end
 
   depends_on "pkgconf" => :build

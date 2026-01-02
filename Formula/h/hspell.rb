@@ -8,6 +8,7 @@ class Hspell < Formula
   livecheck do
     url "https://hspell.sourceforge.net/download.html"
     regex(/href=.*?hspell[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    strategy :page_match
   end
 
   no_autobump! because: :requires_manual_review

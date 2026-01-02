@@ -1,28 +1,21 @@
 class Sqlboiler < Formula
   desc "Generate a Go ORM tailored to your database schema"
   homepage "https://github.com/volatiletech/sqlboiler"
-  url "https://ghfast.top/https://github.com/volatiletech/sqlboiler/archive/refs/tags/v4.19.6.tar.gz"
-  sha256 "e016d069ec5c6a363019899857aa522dbb14e72c8034048d490be4e045dc7073"
+  url "https://ghfast.top/https://github.com/volatiletech/sqlboiler/archive/refs/tags/v4.19.7.tar.gz"
+  sha256 "b6e3ca096750ef7f917a81045d779126985c5aa68e3179746e05e8d108e9244d"
   license "BSD-3-Clause"
   head "https://github.com/volatiletech/sqlboiler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c25806bc9e49e46a56884c91ce7b0407b17c84b10ef009ba58112773f0ee6c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c25806bc9e49e46a56884c91ce7b0407b17c84b10ef009ba58112773f0ee6c3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c25806bc9e49e46a56884c91ce7b0407b17c84b10ef009ba58112773f0ee6c3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7c876ec35f7993973996f7dae5cbdddb307555bb6428e8dfaf98cb6f1b3fc887"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8fde34c3561274c55601a868846947bc7526d017585617f22e590c6d9c1bda31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aafe10042a4d9f3c7ac05bbb8e82bd0e975c7c330d0a35f7e0e04534b2f5fbfc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9da5bc117d6334b1e04bd17a1a5fcee72fb506aa0d7fd821b2ba79a3b579f9bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9da5bc117d6334b1e04bd17a1a5fcee72fb506aa0d7fd821b2ba79a3b579f9bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9da5bc117d6334b1e04bd17a1a5fcee72fb506aa0d7fd821b2ba79a3b579f9bc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d1c5f8a9bb11ea5a4deff6ca86985d488647dd03978382912ba8bbf340fe69c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7d17c535299cdad709093d4dad12bde1b6b1a84b85f4517bfb927b97c6e6115"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02355a4d2f91c2068f54cd28f5bf09e80b164c558bf943bf1111feca994a0eb7"
   end
 
   depends_on "go" => :build
-
-  # Fix incorrect version reporting.
-  # Upstream PR ref: https://github.com/aarondl/sqlboiler/pull/1468
-  patch do
-    url "https://github.com/aarondl/sqlboiler/commit/59f05ce1e989295571789514f68bbd0bff18b730.patch?full_index=1"
-    sha256 "a892cdea048c66d4ffbb701c5983c158b6eb74bcf23cc2239728b184aacfdd88"
-  end
 
   def install
     %w[mssql mysql psql sqlite3].each do |driver|

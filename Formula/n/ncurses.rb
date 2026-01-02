@@ -1,26 +1,20 @@
 class Ncurses < Formula
   desc "Text-based UI library"
   homepage "https://invisible-island.net/ncurses/announce.html"
-  url "https://ftpmirror.gnu.org/gnu/ncurses/ncurses-6.5.tar.gz"
-  mirror "https://invisible-mirror.net/archives/ncurses/ncurses-6.5.tar.gz"
-  mirror "ftp://ftp.invisible-island.net/ncurses/ncurses-6.5.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/ncurses/ncurses-6.5.tar.gz"
-  sha256 "136d91bc269a9a5785e5f9e980bc76ab57428f604ce3e5a5a90cebc767971cc6"
+  url "https://ftpmirror.gnu.org/gnu/ncurses/ncurses-6.6.tar.gz"
+  mirror "https://invisible-mirror.net/archives/ncurses/ncurses-6.6.tar.gz"
+  mirror "ftp://ftp.invisible-island.net/ncurses/ncurses-6.6.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/ncurses/ncurses-6.6.tar.gz"
+  sha256 "355b4cbbed880b0381a04c46617b7656e362585d52e9cf84a67e2009b749ff11"
   license "X11-distribute-modifications-variant"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 arm64_tahoe:    "cdf1f60b77e8f2f431f010c987a57452b95c1c6426e4ddf829f701f6e7ce5058"
-    sha256 arm64_sequoia:  "4a529cb864994c26766c55ae8e506297523b36319e0f5f5af0faf8250a451f77"
-    sha256 arm64_sonoma:   "ee5253473badfa0701deac8e9973a7358c761dd287f0d748f753130a7a6d2705"
-    sha256 arm64_ventura:  "b79562983390463a00077616c6b3e460aa170bdca43f32839af802aac594aae0"
-    sha256 arm64_monterey: "75db7bcba54b3acdb36b0dd08f0ce0a0631f7bfda83da3877aab35242ff7276a"
-    sha256 sonoma:         "eb22b3753261f99aa36f5d9e1511a0bca5ea70cd645f7068af2ac5514aafd6a7"
-    sha256 ventura:        "d6316fb9989753d52db231cc4dfe20746c5e2b6dced2ba6136ad1f11e99814aa"
-    sha256 monterey:       "9c262007804eca602c67d686878778051d2ff813237d6805665831a1ea705477"
-    sha256 arm64_linux:    "a41105c555fcaf7cc16cf53be73187724576129a8c39902378d742a8dc396850"
-    sha256 x86_64_linux:   "7c49662d0f319baec24475d38210b2f9c754b2ec1d21a4a3ff39ce81d8605f03"
+    sha256 arm64_tahoe:   "b43443ba3c3c8728e79413c7c3fed4a0eb293bd77c8492c1ec4c5d05233a97f1"
+    sha256 arm64_sequoia: "3fe0a6d4482023f880e9542af63e9229c6fcd7456b46e88b5d2d4703eb2ec943"
+    sha256 arm64_sonoma:  "d4df00300346955c4703c7deecd3affca58a0a27477087d6ff387beb30a3ac9f"
+    sha256 sonoma:        "3981626d4214e14e1d01528b4652e0c9ac470c0a63fc2c995b875cd39efd1976"
+    sha256 arm64_linux:   "02abc7eacf7d1f27c992888494a19a397bd4911fc6a92c34db232714488aec12"
+    sha256 x86_64_linux:  "12c037b176c3300398cc53f0f278ba14195ae525cb6188dc085fd07236e5db48"
   end
 
   keg_only :provided_by_macos
@@ -41,9 +35,6 @@ class Ncurses < Formula
       "--without-ada",
     ]
     args << "--with-terminfo-dirs=#{share}/terminfo:/etc/terminfo:/lib/terminfo:/usr/share/terminfo" if OS.linux?
-
-    odie "`-std=gnu17` workaround should be removed!" if build.stable? && version > "6.5"
-    ENV.append_to_cflags "-std=gnu17" if OS.linux? && DevelopmentTools.gcc_version("gcc") >= 15
 
     system "./configure", *args
     system "make", "install"

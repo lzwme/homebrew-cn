@@ -1,9 +1,9 @@
 class Mame < Formula
   desc "Multiple Arcade Machine Emulator"
   homepage "https://mamedev.org/"
-  url "https://ghfast.top/https://github.com/mamedev/mame/archive/refs/tags/mame0283.tar.gz"
-  version "0.283"
-  sha256 "cffd615ec2e7a1c708a75ef52593f84b501ff792ebfa553bde0e20ccd5f30d07"
+  url "https://ghfast.top/https://github.com/mamedev/mame/archive/refs/tags/mame0284.tar.gz"
+  version "0.284"
+  sha256 "54c9ab67953247c655be47f06575fe3a156f75e2192cfd88e5b865f165057217"
   license "GPL-2.0-or-later"
   head "https://github.com/mamedev/mame.git", branch: "master"
 
@@ -21,12 +21,12 @@ class Mame < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7f3ff4fb008f181faf0c65194d0a0df05e09ea4259a2db0880370795e8f1c16b"
-    sha256 cellar: :any,                 arm64_sequoia: "1b3fe3044b83dc11d2a983ec4712b9ae1f06c899a450b6da6a7470875bbbeb58"
-    sha256 cellar: :any,                 arm64_sonoma:  "41a621149336614e4d1a36e4d0d8b23c781f06097bd87f839d5c33073615d0c5"
-    sha256 cellar: :any,                 sonoma:        "72dbf11799e5ea44b32714e932ee666e6364a202fe009fdc117d9dc8a0ddc995"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "39bc2e9b9139f2762b0022e334c148cd74b64d02ac2466f45bcc522906c184c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf3522a664333d8aa47a951c91b0896c4baedacc7b3d0b73bfa1df18160859ea"
+    sha256 cellar: :any,                 arm64_tahoe:   "ec2ff388f604db4925ab1d03261c5ea67a871b1310f1c827dad4459f03ae3531"
+    sha256 cellar: :any,                 arm64_sequoia: "b2ce6a81d34750f61d5106b59390e5b3ade95ad322a938e1d2557c1b03e339a8"
+    sha256 cellar: :any,                 arm64_sonoma:  "d70aebb422aa668ea266e96f23255cd600fe907dda8cd6bc5daf7b15590cbd70"
+    sha256 cellar: :any,                 sonoma:        "a254ef03b2cce41246de8cdf199e3ea709a6c49729cb14f46f82812f2751db70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3846f0de779d6a71c953678693520c17bc988346a837a116da57c9fc207eb7d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21ed205e73d7d79244855cb8ab74b4b4408b4add3b89da6e1951e43427d1a3e4"
   end
 
   # `asio`` v1.30.1 is bundled and it is not compatible with the `asio` formula

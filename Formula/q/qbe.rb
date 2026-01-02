@@ -4,6 +4,7 @@ class Qbe < Formula
   url "https://c9x.me/compile/release/qbe-1.2.tar.xz"
   sha256 "a6d50eb952525a234bf76ba151861f73b7a382ac952d985f2b9af1df5368225d"
   license "MIT"
+  head "git://c9x.me/qbe.git", branch: "master"
 
   livecheck do
     url "https://c9x.me/compile/releases.html"
@@ -11,16 +12,13 @@ class Qbe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "c91a5215a04c30570ccba0a0c958e748e4ffe2ea953a08721ab712c82ed022cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c3ca1c4e4642a2846dc825fa86ea27b7b4118829ce5e7c72bdf56d668c7a29ab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2a90df32c350542929724a253efe4d9f5039fb3cf27364e7b08a2f6aff816d50"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8cee652f4a0941d2ffda250f8b8da61502de995ac1f84ad64aec8127b24e091e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5eff52847b1d8b30c6c56d65986801508cef2bb613c0f2c202c518c276b97cbb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "08b4c0f09bc6459c9439b017e60848b4cef7ae2f9c69fe9b54576b64a9c66742"
-    sha256 cellar: :any_skip_relocation, ventura:        "5a74085a4f075f38f4945d760ab274c4a5e4fc059ef27f0fdecef82b8f29eafc"
-    sha256 cellar: :any_skip_relocation, monterey:       "ffb1426fef8e72648b3fcc550d2dd72454cb40d82f553b75c42f16e4d91f4a23"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "fcf0274fdecef1821c3fcaed007074429d8517168f31747c1eaed904a3bb13dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56401769cc3485e1d15f4a245404068c2b2d7996e86e470904a76b77f9eae01f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c41fd6b7adfea92b2b90f14ff60a584d471f1b79d343949bcb4e42ff0b55bbc6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "971805c559bb8ae51a1c900d90f21530bdc47752b53f140c8ba8f4a66c63dc55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85df90e1fa6920fb08e7b1a082927d655e7f051cf2078dda1137a032249b80ff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "59e80cb7758faa82c7f4b2541deef61f12fae3186843c869cb2a0856eef4d268"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "45b6dfaf0ead4216cfe8d0f328fc30e5f69f5d827f03c9a18b8e576eb3027ba9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eab98f6cfc7bc3c366c0aa92f785940bb8de5b2e0384495d6f1752629b4e9acf"
   end
 
   def install

@@ -14,6 +14,9 @@ cask "sourcegit" do
     strategy :github_releases
   end
 
+  deprecate! date: "2026-01-01", because: "is available in default tap - uninstall then reinstall",
+             replacement_cask: "sourcegit"
+
   depends_on macos: ">= :big_sur"
 
   app "SourceGit.app"

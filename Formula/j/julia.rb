@@ -2,8 +2,8 @@ class Julia < Formula
   desc "Fast, Dynamic Programming Language"
   homepage "https://julialang.org/"
   # Use the `-full` tarball to avoid having to download during the build.
-  url "https://ghfast.top/https://github.com/JuliaLang/julia/releases/download/v1.12.2/julia-1.12.2-full.tar.gz"
-  sha256 "fcb641075c5465e5de4de15d0c5c73c23517a31fe8e65f8ad89b6a7cc847d46c"
+  url "https://ghfast.top/https://github.com/JuliaLang/julia/releases/download/v1.12.3/julia-1.12.3-full.tar.gz"
+  sha256 "22778903ef8df828cb11341c977237bec2d11b1de238597c8ba4a938e49fd2a9"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
   head "https://github.com/JuliaLang/julia.git", branch: "master"
 
@@ -17,11 +17,11 @@ class Julia < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f5435c7a2aa8bfca2d15167832577d8caacd4997443493ebe388d3fe33b1b266"
-    sha256 cellar: :any,                 arm64_sequoia: "978903b643a290574e54716d57d5f661d4387bb5c11fe1af1148e93fe7bed79d"
-    sha256 cellar: :any,                 arm64_sonoma:  "15e76dfc12bf66e53517366c2051cd40cd7b99f47d6557094668754e6a6f47fe"
-    sha256 cellar: :any,                 sonoma:        "b33aa40c661a0472be63a14ce3380a8e4a2bb600ecf8b7d957d003671a396927"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aaf9aec2367571152cb6b142816d60806ef20cdc1e8e0cb5cd1caca078c305c1"
+    sha256 cellar: :any,                 arm64_tahoe:   "4d180617b85f0f19973b6869da3ff285cf0825693e89a3fef72d0a3d853bd8aa"
+    sha256 cellar: :any,                 arm64_sequoia: "4f2995c62dd4e0a971629caaa14ce8d2e24e177cc453a66a9e342681c9bd1485"
+    sha256 cellar: :any,                 arm64_sonoma:  "b27527911e1f0a5781eb63353872a160b2b7f923f6c8713c7a8cc29a9fbdb594"
+    sha256 cellar: :any,                 sonoma:        "9aac056d02bb00d300bbbb20ccae1f607adb500840b8195cbfda7dd2ab1e692d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "006fdc26d7c4272f20c19fd1e98a2e179747884207dfd03f62fd6758de7f97f0"
   end
 
   depends_on "cmake" => :build # Needed to build LLVM

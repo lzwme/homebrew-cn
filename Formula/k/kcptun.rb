@@ -1,8 +1,8 @@
 class Kcptun < Formula
   desc "Stable & Secure Tunnel based on KCP with N:M multiplexing and FEC"
   homepage "https://github.com/xtaci/kcptun"
-  url "https://ghfast.top/https://github.com/xtaci/kcptun/archive/refs/tags/v20251219.tar.gz"
-  sha256 "766fda88f4dd3491a8175117f8db13347b2182178d463a21b8d19e381f3ad515"
+  url "https://ghfast.top/https://github.com/xtaci/kcptun/archive/refs/tags/v20260101.tar.gz"
+  sha256 "814dcd0b1af47b8230b28139fda2187b3b1c2bf4c04b31648d72bc32daca299d"
   license "MIT"
   head "https://github.com/xtaci/kcptun.git", branch: "master"
 
@@ -16,12 +16,12 @@ class Kcptun < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14ba25b6b4dd2504e1962eb944f6ed09a5800f1945dac8668b45aa8365a94cc5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14ba25b6b4dd2504e1962eb944f6ed09a5800f1945dac8668b45aa8365a94cc5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14ba25b6b4dd2504e1962eb944f6ed09a5800f1945dac8668b45aa8365a94cc5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d060bc0d34993aa0dc14e94569167cd8b3e3c1da9d0be2c182cc1caacbc4db9a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b2ba2431e122d247e087878a927b55347a7ad6d5cc23a61b58affa889fddad4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eff747d29e3cbfe2155c55b698be8bc9cdc3380fd14ccb0b2ac77b22468966db"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "966cf0596429206627bddde19064d5056c205f7bbaa2f4a8359d7b3e045ee433"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "966cf0596429206627bddde19064d5056c205f7bbaa2f4a8359d7b3e045ee433"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "966cf0596429206627bddde19064d5056c205f7bbaa2f4a8359d7b3e045ee433"
+    sha256 cellar: :any_skip_relocation, sonoma:        "da4d188c1e30dbe1885719381bbc3e5c39304f22d714efec18cb2de64c2c5123"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "48bd3cba76710b64c3ec47769984b02cc006e79c344af099ce0cfd6233fc315e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c71cd11997ea6c9d0454a6ee452c619b178dfa34918e8f9c909998a138ab423"
   end
 
   depends_on "go" => :build

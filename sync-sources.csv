@@ -4241,7 +4241,6 @@ Homebrew-homebrew-core/Formula/lib/libtcod.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libtecla.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libtensorflow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libtermkey.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/lib/libtextcat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libtickit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libtiff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libtins.rb, Homebrew/homebrew-core, 1
@@ -7222,7 +7221,6 @@ Homebrew-homebrew-core/Formula/t/tinyxml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tinyxml2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tippecanoe.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/titan-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/titlecase.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tivodecode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tkdiff.rb, Homebrew/homebrew-core, 0
@@ -7392,7 +7390,6 @@ Homebrew-homebrew-core/Formula/t/two-lame.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/two-ms.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/twoping.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/twtxt.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/t/twty.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/txr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/txt2man.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/txt2tags.rb, Homebrew/homebrew-core, 0

@@ -5,6 +5,14 @@ class Joyce < Formula
   sha256 "85659a6ac9b94fdf78c28d5d8d65a4f69e7520e1c02a915b971c2754695ab82c"
   license "GPL-2.0-or-later"
 
+  # Upstream indicates stable releases with an even-numbered minor (e.g., 1.2.3)
+  # and the regex below only matches these versions as a way of avoiding the
+  # development tarball on the download page.
+  livecheck do
+    url "https://www.seasip.info/Unix/Joyce/download.html"
+    regex(/href=.*?joyce[._-]v?(\d+\.\d*[02468](?:\.\d+)*)\.t/i)
+  end
+
   bottle do
     sha256 arm64_tahoe:   "20c5f21b6b676f4519154d1102c52754dd27dabdc86b315608606df1c3ba37b4"
     sha256 arm64_sequoia: "ae0fdeaa3809a10e27b240f1f29e70d158f88534129099ec6d99217486def25a"

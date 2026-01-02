@@ -1,8 +1,8 @@
 class Rgbds < Formula
   desc "Rednex GameBoy Development System"
   homepage "https://rgbds.gbdev.io"
-  url "https://ghfast.top/https://github.com/gbdev/rgbds/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "e2cc698faab1526770e4080763efd95713f20a8459977ba0bc402d2c2f986c5e"
+  url "https://ghfast.top/https://github.com/gbdev/rgbds/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "193469d38229a653bb33a25ebb73fd0ae33da4be80191d83bce8d427d23b7704"
   license "MIT"
   head "https://github.com/gbdev/rgbds.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Rgbds < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "932807ce8cafe868439e1e0191dd3f578f637a404a772046c888f14a778d389f"
-    sha256 cellar: :any,                 arm64_sequoia: "0d294dca021c83b86a8d64ba863b2dff314b584a2b3175afe1d055e560c9d49b"
-    sha256 cellar: :any,                 arm64_sonoma:  "84b5bd7baf7c9e1366468a2d072f67e00718d7fc5b8c3ae7cdeb3691535dd81f"
-    sha256 cellar: :any,                 sonoma:        "50976526eb7e75a1365b2218eb7262b4280c056b2c6b4cc4bb9c257ee861910f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a80312f79d9c3020079d1f1cadd81be1c1f2e67a4c368a7e6832f94cf7ca1498"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d176a4f6cb13352755f441453c19c3fae5ab1b46b46090d12b9be9a907871a0f"
+    sha256 cellar: :any,                 arm64_tahoe:   "fedb922933f87988dedef927823d41d3426509ab9b203baab00747ec86bb227e"
+    sha256 cellar: :any,                 arm64_sequoia: "b7da5ca6fb3eb3d3a9016e9089a7e6ee8f05b59717503faddb49e8b4ea76bbc6"
+    sha256 cellar: :any,                 arm64_sonoma:  "ee01628a3b4b7e3af26905957aa60d41bff57e45ada79ca1ea43f80587534f19"
+    sha256 cellar: :any,                 sonoma:        "4b787f2390864c7d1fe0aff76137fd0ee77e74320100925813b81a672c988561"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dacc9e6e1a2791f7dbfcea1e34a6bd178b767664d21b225527247044e9b401c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a835c2383da7339dbd7d22dd817484207a7a04e0e26fd664c7068cfcb5dd0de6"
   end
 
   depends_on "bison" => :build

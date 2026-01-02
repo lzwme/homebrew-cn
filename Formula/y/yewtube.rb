@@ -92,18 +92,7 @@ class Yewtube < Formula
     (libexec/"share/applications").install "yewtube.desktop" if OS.mac?
   end
 
-  def caveats
-    <<~EOS
-      Install the optional mpv app with Homebrew Cask:
-        brew install --cask mpv
-    EOS
-  end
-
   test do
-    console = fork do
-      assert_match "checkupdate set to False", shell_output("#{bin}/yt set checkupdate false")
-    end
-    sleep 1
-    Process.kill("TERM", console)
+    assert_match "checkupdate set to False", shell_output("#{bin}/yt set checkupdate false, exit")
   end
 end

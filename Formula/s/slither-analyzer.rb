@@ -6,16 +6,16 @@ class SlitherAnalyzer < Formula
   url "https://files.pythonhosted.org/packages/f9/d7/327729240d0ab0291cf3e9b36f05e135676ffea796e4a74ec6b7ef7ad2dd/slither_analyzer-0.11.3.tar.gz"
   sha256 "09953ddb89d9ab182aa5826bda6fa3da482c82b5ffa371e34b35ba766044616e"
   license "AGPL-3.0-only"
-  revision 4
+  revision 5
   head "https://github.com/crytic/slither.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d2df02e4e8c6b6ba23bbfd38df9420d4ba558644aff22e79ad89db8f75c6ae7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6c169c9a8075ccd97a1d2411f3c8c1906e953c8de7c6e08c01a7e128f9dcdcc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9dbf782d0f6178368d078216b1b6504a91e22ec0b38130b85f08ce4abecc7b17"
-    sha256 cellar: :any_skip_relocation, sonoma:        "777f92d60954747a7e408a3ceef6836dd15babe8fbe1acdaed24b97aaf3ceee0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec6f30f3354f9fc6432b291bc7e315ad1577c7a4a6f7bde21b3777d4764b9daf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bba338583156c079744e2d38b4870fcc7bdb90382196dc238784c38b73925f8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1cd4fc7881d5f724b13c39d18081b2d188a75362d587247d34cf3d8e537052b5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48c948e30a0db9946c5604b22bf8b9342b4475fabf350b90e76a64f691024fb1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7606ec622ebbb4bb736f774517d4b00f92449c9c881be5ac8e920008b61b0213"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ff5ebb005c97bc3e5916c59629ae345ba6df43836c202b8b32ef3b0e11a11df2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ad460a0fa166a7d91f1e3febab1f0d41589fd72ead63712896ead11fa660716"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33e1c6dfeba39a49317c5cea104d02f62173ccce0813b1c3a0f9dd859f60e1b8"
   end
 
   depends_on "certifi" => :no_linkage
@@ -50,8 +50,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "cbor2" do
-    url "https://files.pythonhosted.org/packages/a2/b8/c0f6a7d46f816cb18b1fda61a2fe648abe16039f1ff93ea720a6e9fb3cee/cbor2-5.7.1.tar.gz"
-    sha256 "7a405a1d7c8230ee9acf240aad48ae947ef584e8af05f169f3c1bde8f01f8b71"
+    url "https://files.pythonhosted.org/packages/d9/8e/8b4fdde28e42ffcd741a37f4ffa9fb59cd4fe01625b544dfcfd9ccb54f01/cbor2-5.8.0.tar.gz"
+    sha256 "b19c35fcae9688ac01ef75bad5db27300c2537eb4ee00ed07e05d8456a0d4931"
   end
 
   resource "charset-normalizer" do
@@ -195,8 +195,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "wcwidth" do
