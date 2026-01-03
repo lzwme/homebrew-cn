@@ -1623,6 +1623,7 @@ Homebrew-homebrew-core/Formula/d/dotenv-linter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotnet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotnet@6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotnet@8.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dotnet@9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotslash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/double-conversion.rb, Homebrew/homebrew-core, 1
@@ -2909,7 +2910,7 @@ Homebrew-homebrew-core/Formula/h/hermit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/heroku.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hesiod.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hevea.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/h/hevi.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/hevi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hexcurse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hexd.rb, Homebrew/homebrew-core, 1
@@ -7285,6 +7286,7 @@ Homebrew-homebrew-core/Formula/t/topfew.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/topgit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/topgrade.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/topiary.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/topydo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/torchvision.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/torrra.rb, Homebrew/homebrew-core, 0
@@ -8990,6 +8992,7 @@ Homebrew-homebrew-cask/Casks/c/crosspaste.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/crunch-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/crushftp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/crypter.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/crypto-native-app-ng.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cryptomator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cryptr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/crystaldiffract.rb, Homebrew/homebrew-cask, 0

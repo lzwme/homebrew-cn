@@ -12,14 +12,13 @@ class Gomplate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b58508f75f9246edc00686759e9f5e6742830fd426225438d7426f3b42bc7579"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a8700eac00d73546e47d3e0b0d0dd30de1dd196a74e34c0a155501cef6e180b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fbe5d9228796ed7b924946237b59ecaf33082c9fe243e58db17d1a00d401f3e1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "592498b49bf2e7f61dbc0dfc7d1ba6fac6b36858f145eaf3a70802d11a423267"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3128c00339ee05d26a06b47da27f321a52413e37debb95ac25932b33d80128ae"
-    sha256 cellar: :any_skip_relocation, ventura:       "76525c040ca5b17f378711daf85d414221f794e4d4ca2c564ab3366fa2ab21f5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "21242f12dca5069200cd7c671fc5c595785dfcf5f86443fccf9e17465aaf83ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90a09f23e144ae6acad537a85cf735435aa1e4fc46ef33703e965c55c0616c96"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbaa6caf97a3f94c4b014ce4c6e0d720bd6f7715ce43513953bba7176a7e4fff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b58161dc9a49352c77dde2e9acff85ebcdf521a78bae12431df7ab101dd83b63"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2e37058dac0080cb1b43968d727a4bdbeac883622eb7a8ba109eb12d687bd23"
+    sha256 cellar: :any_skip_relocation, sonoma:        "34b3e415c42373b54fd1d20df9fcf470052ccd0163c95036b876b38aebc4dc04"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a49359096e1e5874d612ba6aaeaf97bd7315798ed9a9ab07e624697ed0f7f0a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "666de4e8f6ff9c36e5eb969230fea96f352505abba53deb490305c7a1ac60c1a"
   end
 
   depends_on "go" => :build
@@ -27,6 +26,7 @@ class Gomplate < Formula
   def install
     system "make", "build", "VERSION=#{version}"
     bin.install "bin/gomplate" => "gomplate"
+    generate_completions_from_executable(bin/"gomplate", shell_parameter_format: :cobra)
   end
 
   test do

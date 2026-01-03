@@ -1,18 +1,18 @@
 class Dra < Formula
   desc "Command-line tool to download release assets from GitHub"
   homepage "https://github.com/devmatteini/dra"
-  url "https://ghfast.top/https://github.com/devmatteini/dra/archive/refs/tags/0.10.0.tar.gz"
-  sha256 "f790665e760576aac5490c2cb39f78b2547d49975b0cb39a3a4f5376c1a1305f"
+  url "https://ghfast.top/https://github.com/devmatteini/dra/archive/refs/tags/0.10.1.tar.gz"
+  sha256 "81fc4e6bd174d238932a6415db7029a84acda5f4dc84a285ee0a10c6b3cb3580"
   license "MIT"
   head "https://github.com/devmatteini/dra.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7020f34c23a2270ac2be8f5abc46ab8194ff0251f7659d8b3b32a49ca4cb454e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3167e3fa8280e22d3646b5fc92a7deefd19da1a301accaa6b17e3047f5debee2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b41726e471051a0e9817bd12ef8b4445ebb46907ad2fa4480c112eb8373d659"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e811c9d6a7629c16e6353cb0565247e6546c908e4765b7158f035b57f1e9f83a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c314cd1e890e65851075fb8d44b73cc7e141a5e158f7d664facc243fe95f8f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7e970eee5cbe65bf4315205b98f81a2d5872714e19d0707465ad2a36c5ed8d7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "031cbc375e142c2f2f9900838bf86a81d961d967fd585699dda13eaca25ebd37"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "348e9f517772c9f869fdd2016d2df4fa835e2fc54ff8a04451c002e498a39cae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e52533217cb82e1da25963d56222ca2c87890406ff538ec653daf3954b912f27"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c762127ac0eb2a0de24933ff71a177edd803cd5a04b7b150e945826dab703e2d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9cdbc317602cec10306a6b5571c0b3214405530fb4e8a8b42ccdb7174b3da9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdd8087eba173830ce4c65a84615320b922d46729ba6621c177be947b9ef1e7a"
   end
 
   depends_on "rust" => :build

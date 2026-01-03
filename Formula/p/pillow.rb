@@ -1,18 +1,18 @@
 class Pillow < Formula
   desc "Friendly PIL fork (Python Imaging Library)"
   homepage "https://python-pillow.github.io/"
-  url "https://files.pythonhosted.org/packages/5a/b0/cace85a1b0c9775a9f8f5d5423c8261c858760e2466c79b2dd184638b056/pillow-12.0.0.tar.gz"
-  sha256 "87d4f8125c9988bfbed67af47dd7a953e2fc7b0cc1e7800ec6d2080d490bb353"
+  url "https://files.pythonhosted.org/packages/d0/02/d52c733a2452ef1ffcc123b68e6606d07276b0e358db70eabad7e40042b7/pillow-12.1.0.tar.gz"
+  sha256 "5c5ae0a06e9ea030ab786b0251b32c7e4ce10e58d983c0d5c56029455180b5b9"
   license "HPND"
   head "https://github.com/python-pillow/Pillow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ff2bbd99dda7ce7abb304d4928959c1724f6ddf193194021b1c3074966eeb4b3"
-    sha256 cellar: :any, arm64_sequoia: "1833bd4053addaf27fc722cd8a492436a59e3cf02a219a94bf84f49c63537d2e"
-    sha256 cellar: :any, arm64_sonoma:  "fcb4113eb505824c5c113b6aef44af0dea7b9bf7c877f07483d5ebed1265948a"
-    sha256 cellar: :any, sonoma:        "e54ba44aa57a4ca0654b4dd48e65205b1d410f232658280ca24af471bacc6bae"
-    sha256               arm64_linux:   "b106456d1752531caca067c9a2759f5eb27da100fb40adf30b6326056e7edc8d"
-    sha256               x86_64_linux:  "46340278cadab63940fbcf66191001ac0ab1e89522c9cd9801cf484939e963c3"
+    sha256 cellar: :any, arm64_tahoe:   "f1cc35bb04a8d357cc3a374fdae3c5907b81aeb08b766c89551ccb41cac655e3"
+    sha256 cellar: :any, arm64_sequoia: "8f663e601bed2880fb64c36c04832baabd41010e593b098312f0ec65d119cedf"
+    sha256 cellar: :any, arm64_sonoma:  "30184a3281f66c5d7523a9632d64968677e2a2c650eac588b3552fc1deeba3df"
+    sha256 cellar: :any, sonoma:        "bdae0ae4039f16e305c73799d20b739fddabe5cb33ec5c6a4c01b7bad4dba8c4"
+    sha256               arm64_linux:   "8e49d14f11815297cc6cee9a2ad896741592054089f46732a7c5808a22db0a49"
+    sha256               x86_64_linux:  "00056eb146e22b5ea8f4599591049bd7282421e0f7d9881a407cdfca3efe1c7f"
   end
 
   depends_on "pkgconf" => :build

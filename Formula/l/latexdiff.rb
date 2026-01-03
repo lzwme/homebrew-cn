@@ -1,13 +1,12 @@
 class Latexdiff < Formula
   desc "Compare and mark up LaTeX file differences"
   homepage "https://www.ctan.org/pkg/latexdiff"
-  url "https://ghfast.top/https://github.com/ftilmann/latexdiff/releases/download/1.3.4/latexdiff-1.3.4.tar.gz"
-  sha256 "aed1c39d51e5c7a8894a5e4b7190106e93968dd90edcc0dde803fcbffe01b2b4"
+  url "https://ghfast.top/https://github.com/ftilmann/latexdiff/releases/download/1.4.0/latexdiff-1.4.0.tar.gz"
+  sha256 "2aaea10ae1a9c1b975c9dc933da6ac6f83f665eea76b358daf86b97b606912ea"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "1a230eb09bffbf99ebf1b39acc145a728223d5c97a4ade526295743f02fa1a97"
+    sha256 cellar: :any_skip_relocation, all: "746b7460cf8014f4097fe356f29c89316814db4f3bc3ce2a638dca6c6e9fd0bd"
   end
 
   # osx default perl cause compilation error

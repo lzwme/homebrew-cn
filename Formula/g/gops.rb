@@ -9,24 +9,20 @@ class Gops < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "af565d548b9189c123da62047369e06c967a6f98a291a1dbd8c1043c5f95174f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6e6424f29a0624aa928ab6604ea0bfebd30fbf1359343c94a827deb39dc32561"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9705e404ae430eef52e18a9bd0efcd7aba007de76ef17d967a1da2c949e73130"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7680e1666c0a84e516a2d8cfc5882137a3ceec2f766ed52fd329c5f2381c2fb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "73b0acd3e244d661ad8afb34b2deae54ce4fae4ff0915a96fe74d97d869f55dd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "153c588b4492ff65989099e2906417ce9653ad5d3d44268efcb616d353e181e8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4cbc574d3ccc11003eee6cb68d68f0e64235a84007feddcc0e5a1e154bbd9089"
-    sha256 cellar: :any_skip_relocation, ventura:        "108f4f2b6f4e5f79ca47026f68830c2b9b024afd3d725b58dc8ae6e65a4dd25d"
-    sha256 cellar: :any_skip_relocation, monterey:       "a65ae8fbe8e9761b3326e1b3f39dfbfa2bbcbc1156adfa012824661735c360b0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e14a6d521e10aaedd20738507a2e02100d66c31b90243916ad846bd500c7bfa5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "82dc7c2c146110527906aa868bebda31477f7f91ad900036eac2cb459015fc78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8358b184e1d9926fb8083d0f3db365b091d18ce132d5b2732cb441c2e0aa03fb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13afac20f62471389e906baee36e73ded82d21423768084f37935f56ff6bfb22"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83f555aaca8cb0ff590716cffa03e86e90e1dfd8ac5606471ed225575bb7ebf9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd34ef9045205ce3cda53d14b05cb9cb2a861bd6546a485beb1bbd2fd690f1cd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "11c1ff7be42fe13491955d2a6f5c7a7d129cdd08de0b8f2fef7d83e254b9cc3a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac5fb615419e0abaf0a025cf267c64c18c5057153709e788758c341e60689b11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87de4de9b1447d8b78d423186b4b4a746bac7e076bbaf6e901fb75af3e5ceeec"
   end
 
   depends_on "go" => [:build, :test]
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
+    generate_completions_from_executable(bin/"gops", shell_parameter_format: :cobra)
   end
 
   test do

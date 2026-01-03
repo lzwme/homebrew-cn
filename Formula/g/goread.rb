@@ -7,20 +7,20 @@ class Goread < Formula
   head "https://github.com/TypicalAM/goread.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de16aa7632f4d0cefab3cfed64fefb063b207059ea2726840976ffbbb32cb5cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f54a965d898329bdd7071bcb6b5d3d3fa76e21ec181c48209943ad9a4e424ab3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f54a965d898329bdd7071bcb6b5d3d3fa76e21ec181c48209943ad9a4e424ab3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f54a965d898329bdd7071bcb6b5d3d3fa76e21ec181c48209943ad9a4e424ab3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "28c65443c15b23ca7042ac03c8ba09deb9117e4c931e5423e4367403d5b36553"
-    sha256 cellar: :any_skip_relocation, ventura:       "28c65443c15b23ca7042ac03c8ba09deb9117e4c931e5423e4367403d5b36553"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a7e6beb7a80ca028a56c0e13ae193fa6a29134e38de1efece8126f21f1bd8f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bc61108955a4fc3f22de1900278227627b2f5fc44547a92513a751da780e1a1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3f2abcbf279010d6288ba9103f6f06e98f06293bd5b175fd047e4529cdfc644"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3f2abcbf279010d6288ba9103f6f06e98f06293bd5b175fd047e4529cdfc644"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3f2abcbf279010d6288ba9103f6f06e98f06293bd5b175fd047e4529cdfc644"
+    sha256 cellar: :any_skip_relocation, sonoma:        "872638c548cd01fdfac5d2067ffe292c69f4de26daf2e3082c03be0ce6317341"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8135fd745a08cb6fcc5c594068d20f4473f825f000ab5d3dfb073fd3be9f143a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aff2dfdb38dc38094eda152368a17a74174e146cb1bd7709ba11ec28ea26550b"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
+    generate_completions_from_executable(bin/"goread", shell_parameter_format: :cobra)
   end
 
   test do

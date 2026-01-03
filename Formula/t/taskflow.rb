@@ -1,13 +1,13 @@
 class Taskflow < Formula
   desc "General-purpose Task-parallel Programming System using Modern C++"
   homepage "https://github.com/taskflow/taskflow"
-  url "https://ghfast.top/https://github.com/taskflow/taskflow/archive/refs/tags/v3.11.0.tar.gz"
-  sha256 "5e45a7ee032cae136843c76824519acbc0306f02d682f7e69fb1d53f69173dcb"
+  url "https://ghfast.top/https://github.com/taskflow/taskflow/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "0a9e0f700e7750834f717d7523660399ff7ec455e51000009b3e17923c26b80d"
   license "MIT"
   head "https://github.com/taskflow/taskflow.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fec211cfb51a98e86ef5d7f7f710432d5ab50b9c268b7c6f30d28ea51c94ee7e"
+    sha256 cellar: :any_skip_relocation, all: "ad26c3494c386b2c0be1bc7b84dfc4a764b2ee710e865bf8f09b9505f9fd010e"
   end
 
   depends_on "cmake" => :build

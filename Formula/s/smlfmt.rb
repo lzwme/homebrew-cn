@@ -1,22 +1,18 @@
 class Smlfmt < Formula
   desc "Custom parser and code formatter for Standard ML"
   homepage "https://github.com/shwestrick/smlfmt"
-  url "https://ghfast.top/https://github.com/shwestrick/smlfmt/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "6517b0186518308d26f388d882af3b6106103a3ca3f00a4974e54fb526225df5"
+  url "https://ghfast.top/https://github.com/shwestrick/smlfmt/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "9d26a87bfba7d49929edf3cbdc060e9a58cd5a5b1367456281aed2e3e267926a"
   license "MIT"
   head "https://github.com/shwestrick/smlfmt.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "90962a33b9f4c6ced5fe20c3f9d44e4a0757d028ed454cae1e47e6d9833830ad"
-    sha256 cellar: :any,                 arm64_sequoia: "ca671852fb33a6c846046fc88e6ba48b80f18a2b41844bbb6f711c9ca6600e2b"
-    sha256 cellar: :any,                 arm64_sonoma:  "4a4d72dd8bc6a5eb4cc96f5b8029163371f7a8d8bc8ca005a6a01f874f8b24d7"
-    sha256 cellar: :any,                 arm64_ventura: "a69daa52e744e9fad8803348b5f29487de9d07fd1f4d7146402371e765c55da2"
-    sha256 cellar: :any,                 sonoma:        "76372f8a0e174f68b5dadaaa5cc621fb5cc71ea212284333c9b26dfc3d3a3a36"
-    sha256 cellar: :any,                 ventura:       "d64483f4b661c239a66377251e21db3c9194f9e5146e1bf0150994fd93c4f4d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "215c5fe4dc87bb774faa139d50d6e794398d09f96e1f20da68d1ba58208de60b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24cd0363e581e4721ee4717895fcd05cbe4cfeab264515bdcbb7d6bd905ee2f9"
+    sha256 cellar: :any,                 arm64_tahoe:   "6a261ad88d56f8c39d85e62003120fab2d483e2f1a7af2be48e5c8eb7f7224a6"
+    sha256 cellar: :any,                 arm64_sequoia: "06620f62039562a032792cdbadaa780edde9700e4c0499e08daac2243fb146f7"
+    sha256 cellar: :any,                 arm64_sonoma:  "f24dc78b13263922af685639ff341ae26c1db6721dacdbd71e79fc2c6ddfd518"
+    sha256 cellar: :any,                 sonoma:        "3c56a9b0ccf0437cc718ad0e1a91e677398551402d4a672a31b7614bf2faa036"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1e32327ddde900882ec6ee21d13fd810086e8fbd08ad313bf8c0c4f504b48b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a8693b806e6d7ff754d15bcb36caa3166ec181c384928b720220551a3213ecc"
   end
 
   depends_on "mlton" => :build

@@ -1,19 +1,17 @@
 class Libtpms < Formula
   desc "Library for software emulation of a Trusted Platform Module"
   homepage "https://github.com/stefanberger/libtpms"
-  url "https://ghfast.top/https://github.com/stefanberger/libtpms/archive/refs/tags/v0.10.1.tar.gz"
-  sha256 "ebc24f3191d90f6cf0b4d4200cd876db4bd224b3c565708bbea0a82ee275e0fb"
+  url "https://ghfast.top/https://github.com/stefanberger/libtpms/archive/refs/tags/v0.10.2.tar.gz"
+  sha256 "edac03680f8a4a1c5c1d609a10e3f41e1a129e38ff5158f0c8deaedc719fb127"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1415455064a8814adc7ba082a5288b70166d818b52bcc4b6313f0cb07cca510a"
-    sha256 cellar: :any,                 arm64_sequoia: "15359aca8b873a6965f40e824368108637c9f8cf48b28fba6323f9752071023c"
-    sha256 cellar: :any,                 arm64_sonoma:  "42a7c3f06554cb88deeff3b7b79ab082ed8eff5180ce06a0612a6f2b1191de95"
-    sha256 cellar: :any,                 arm64_ventura: "19e27301de4d0e3be8f6e64d365fcea16829ddf004c4c2634fc8464e3a29ad11"
-    sha256 cellar: :any,                 sonoma:        "8d898dc691972d2dc4a536f2f90608723593b2cccec3878c81a29f7524dac0e1"
-    sha256 cellar: :any,                 ventura:       "74c6e183ed2cbbb2d453c422560cd77ea56a92f0f3fd82650ebb3e56633341fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "06262b5d69c7ee3a6f2083b6d36afd63e9b4c051f53a8f842d9f5c377fb3b180"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea4a8d8b452a7bb8f7a8fb9d50db91e964e3d9c656ba14475ed94a480bd2a12f"
+    sha256 cellar: :any,                 arm64_tahoe:   "66fd464e0e778e9d1c3bfff440e5f280891e5eee4d58e2c536a0d855bda23116"
+    sha256 cellar: :any,                 arm64_sequoia: "0439dcadfc4c140158d1a5d7f63c7ffeb3fdc69b4e90943c422e3d5de7664a7e"
+    sha256 cellar: :any,                 arm64_sonoma:  "112fd1f45e4a807f37a3e1cb29039e767c6d202d06209387ae484502d79775de"
+    sha256 cellar: :any,                 sonoma:        "f066899b2329dd5224682c03485d8f376538f888d443f4efa411cbb2ad5d01fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9647eaa61b0021650f0d1f7bf6f9d6dce81d4df1cf33cedbc2de1315e99035d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8726633ed87a22297c0943d83329308c0e9187496cfdab7c322789f536e8a4b8"
   end
 
   depends_on "autoconf" => :build

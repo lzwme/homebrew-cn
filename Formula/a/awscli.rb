@@ -3,18 +3,18 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://ghfast.top/https://github.com/aws/aws-cli/archive/refs/tags/2.32.26.tar.gz"
-  sha256 "a14d55646b899e2a33168b83627200a7c0520549feab9b5b75fe07442ba6a4b2"
+  url "https://ghfast.top/https://github.com/aws/aws-cli/archive/refs/tags/2.32.27.tar.gz"
+  sha256 "e13fe3c9bcb474cdb1f159bd648391f2bad14a6e0c03556d49c015167ce68937"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bd92587e4b749c8d64260fbd8cd586d23cd63aa843a8f7b929fb3ce8111d85c2"
-    sha256 cellar: :any,                 arm64_sequoia: "68f1750584dd6dc8bb6e01d2c7acdf0e6569c4d62c42711b30f034472f556f37"
-    sha256 cellar: :any,                 arm64_sonoma:  "3f3a8966c5918bef39764abfddd1997ea164adc50729258cc00ef3f845899341"
-    sha256 cellar: :any,                 sonoma:        "ab1245f2c01ea17aeb6c0cd234e42aa9eda8d05dc3358f38a95efb9951690601"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5540a843b4edd1553dbc48ed0141eeddb36591097ea1aa659a634de565a87bbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a03de3312e4bfefabe563971bbffa3f0ae84d25349f4fc93fccb41b1c905d6d3"
+    sha256 cellar: :any,                 arm64_tahoe:   "35c9fdac8d81bd65137e563fe192d0c34eb48f3a01114e3511abbae5ee77b16c"
+    sha256 cellar: :any,                 arm64_sequoia: "1bcd0da842dd5c525714311159b19a1c506dee083d3552fd01e7dce76c5b6f1d"
+    sha256 cellar: :any,                 arm64_sonoma:  "7271117e6b2e5211ad9ca8abd9e906595acca83a52e17eb9d4b1622882f87a33"
+    sha256 cellar: :any,                 sonoma:        "12d0dae1028c1851d1092c74205d660e3f3acd31dc59a6027ed43ef3fbfb8922"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5a7d965d5f7f9853c9e65bfa0660bcf3c72437ab741bdadf24bb71b04b2fab9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d44e3da989ce2848c4566810439584aea26c04fff1f9a5ea468e84b5f27df957"
   end
 
   depends_on "cmake" => :build

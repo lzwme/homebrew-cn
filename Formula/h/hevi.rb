@@ -1,8 +1,8 @@
 class Hevi < Formula
   desc "Hex viewer"
-  homepage "https://github.com/Arnau478/hevi"
-  url "https://ghfast.top/https://github.com/Arnau478/hevi/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "d1c444301c65910b171541f1e3d1445cc3ff003dfc8218b976982f80bccd9ee0"
+  homepage "https://codeberg.org/arnauc/hevi"
+  url "https://codeberg.org/arnauc/hevi/archive/v1.1.0.tar.gz"
+  sha256 "8ad6a056cd7ae5e3ba52abeffc7e1c45f591266cf5896d8decb7e487a7596db9"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -16,8 +16,7 @@ class Hevi < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "98a58cbce9389c32d13ddf68be6a62b89113000d5ae6f82711174b90cf63174e"
   end
 
-  # https://github.com/Arnau478/hevi/commit/6f46f9e6fbcfb7bd331dadbde7f6da48a6679b5c
-  depends_on "zig@0.14" => :build
+  depends_on "zig" => :build
 
   # Backport support for Zig 0.14
   patch do
@@ -28,6 +27,20 @@ class Hevi < Formula
   patch do
     url "https://github.com/Arnau478/hevi/commit/830ce7fff48429027c6a527b9c9a53935a212e81.patch?full_index=1"
     sha256 "9a78d4e64126c0ddc4c2fa84c0f6a163b8dacd41558df564ca4918c4c3454ea8"
+  end
+
+  # Backport support for Zig 0.15
+  patch do
+    url "https://codeberg.org/arnauc/hevi/commit/810fdf763ccb7069103b8350fab699bb9d3b7b15.diff"
+    sha256 "6dff03ca70c27d9f514d541045eeaa1a9fc8e3ac7405329ce58f144b1f8dce88"
+  end
+  patch do
+    url "https://codeberg.org/arnauc/hevi/commit/1e0d70fd6f61b4515f2dbc02ddc214388cf9b5d6.diff"
+    sha256 "3c467402c7ac5547081d8cf69eb3a37bcdb9da37441d504b280617749c5e2c4b"
+  end
+  patch do
+    url "https://codeberg.org/arnauc/hevi/commit/6f46f9e6fbcfb7bd331dadbde7f6da48a6679b5c.diff"
+    sha256 "8649801251f87c51db9735cafb4eaf14f6c9255c45f0e9dea2a70b7f0f578bf9"
   end
 
   def install
