@@ -1,18 +1,18 @@
 class GnomeOnlineAccounts < Formula
   desc "Single sign-on framework for GNOME"
   homepage "https://gitlab.gnome.org/GNOME/gnome-online-accounts"
-  url "https://download.gnome.org/sources/gnome-online-accounts/3.56/gnome-online-accounts-3.56.2.tar.xz"
-  sha256 "ce88df65457f0e63a0d8daff13322e29ecb584197a187f48a3a21be2fcd1c824"
+  url "https://download.gnome.org/sources/gnome-online-accounts/3.56/gnome-online-accounts-3.56.3.tar.xz"
+  sha256 "38596f17e0269f77e1623a6bf79569573c7bdf7b7cd863fb478a78ae664dea30"
   license "LGPL-2.0-or-later"
   head "https://gitlab.gnome.org/GNOME/gnome-online-accounts.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "1492e1a9a936971a5e12f3d6c862d19096f4d31197d8331f0b5d0a9473d3852b"
-    sha256 arm64_sequoia: "bc63a927db9db6fb2c87cb53a41dbda80ee7b623e712fa81574a7bf121cd8cea"
-    sha256 arm64_sonoma:  "194868d6fd9eb67562b4a870a1d6902a179bbd78353a04d3214e54b7853cb79f"
-    sha256 sonoma:        "0eb02defa41c67f060c6d3a7e4076b4b33fd55e92fd9480e19295c913ce20bb5"
-    sha256 arm64_linux:   "a3b3cf1640df9843a2ad51519d437407658ac82eabe3ac6aee837defeb90a30e"
-    sha256 x86_64_linux:  "cb237e7d60f3f66aba52ba581eb5ab48d8d4d9367e06eb7545b740dbc28b113d"
+    sha256 arm64_tahoe:   "085c77c9dcff7a4769aec6cae0d5506117593b70f56ba76221d4cab019706ab9"
+    sha256 arm64_sequoia: "54502402945f1b65bb79c29a2125e2b169ee5e235b0d36162b2a7b250bf29563"
+    sha256 arm64_sonoma:  "4839c2e37c5641acdf1a74ff49f1a44b243234523d9e8b78601a0c39cc7e5d0a"
+    sha256 sonoma:        "f978eddbf77b8ebe597411779a239a871a310a77b2b395670a7c35d7e428e3c1"
+    sha256 arm64_linux:   "b64f3d64a6115fa1a315d18f4794778ee2982697a7f36908b396fe8a26b40f71"
+    sha256 x86_64_linux:  "629a65257c077d6c2ac2230f3d2aa060f523bb25fe595206363aceec7332e742"
   end
 
   depends_on "dbus" => :build

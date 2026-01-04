@@ -1,17 +1,18 @@
 class Witr < Formula
   desc "Why is this running?"
   homepage "https://github.com/pranshuparmar/witr"
-  url "https://ghfast.top/https://github.com/pranshuparmar/witr/archive/refs/tags/v0.1.6.tar.gz"
-  sha256 "a9092216c396292972d6f4d83b55f1b3688e6c3e07ed6251ba77adc4dc34c039"
+  url "https://ghfast.top/https://github.com/pranshuparmar/witr/archive/refs/tags/v0.1.7.tar.gz"
+  sha256 "6338acdd363614d3327e8b4826492b98133748997b43016354a45fa55e799eca"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93cf51c22a69c4fc89724129059ea6d2f8b9a09b7564cd47fe46e8401ad5a3f8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93cf51c22a69c4fc89724129059ea6d2f8b9a09b7564cd47fe46e8401ad5a3f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93cf51c22a69c4fc89724129059ea6d2f8b9a09b7564cd47fe46e8401ad5a3f8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9986cc73fda296400317b3efae6b792829f017216feb187eb5be2bca7614be43"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a20bd7d5bee3667f8d962a7cb964025dc1580e42cd276957e139d436eca4f9cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d344f77f628f9ed84c459e85834b82bc8a23a41b363047c409dea64e0ffeb28"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf55b88dd0e9576ce68596d5060abd376bfd72e662edc0b5adbebcccb8734b67"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf55b88dd0e9576ce68596d5060abd376bfd72e662edc0b5adbebcccb8734b67"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf55b88dd0e9576ce68596d5060abd376bfd72e662edc0b5adbebcccb8734b67"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f96ad2253590a895ef6ead0835d035e0bb436765a54e12e2ca1cb51dd04fb968"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b5aa32bdb1457b5f78a1a880bbf73b8b78960322fd4ac3490a6353b1d1f46359"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3068598d2c124e96827f8cf3faf26afbeac665087f0452b9404ada75316be582"
   end
 
   depends_on "go" => :build
@@ -19,6 +20,7 @@ class Witr < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.buildDate=#{time.iso8601}"), "./cmd/witr"
     generate_completions_from_executable(bin/"witr", "completion")
+    man1.install "docs/cli/witr.1"
   end
 
   test do

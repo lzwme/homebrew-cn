@@ -20,29 +20,18 @@ class Simdutf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e133be72a6b98b5092cfeb3f0e06a5d9365672aeb139d6ec96114a9224e2ef43"
   end
 
+  depends_on "aklomp-base64" => :build
   depends_on "cmake" => :build
   depends_on "icu4c@78"
 
   uses_from_macos "python" => :build
 
-  resource "base64" do
-    url "https://ghfast.top/https://github.com/aklomp/base64/archive/refs/tags/v0.5.2.tar.gz"
-    sha256 "723a0f9f4cf44cf79e97bcc315ec8f85e52eb104c8882942c3f2fba95acc080d"
-
-    livecheck do
-      url "https://ghfast.top/https://raw.githubusercontent.com/simdutf/simdutf/v#{LATEST_VERSION}/benchmarks/base64/CMakeLists.txt"
-      regex(/VERSION\s+(\d+(?:\.\d+)+)/)
-    end
-  end
-
   def install
-    (buildpath/"base64").install resource("base64")
-
     args = %W[
       -DBUILD_SHARED_LIBS=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
-      -DFETCHCONTENT_SOURCE_DIR_BASE64=#{buildpath}/base64
+      -DCPM_LOCAL_PACKAGES_ONLY=ON
       -DPython3_EXECUTABLE=#{which("python3")}
       -DSIMDUTF_BENCHMARKS=ON
     ]

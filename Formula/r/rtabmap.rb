@@ -4,7 +4,7 @@ class Rtabmap < Formula
   url "https://ghfast.top/https://github.com/introlab/rtabmap/archive/refs/tags/0.23.1.tar.gz"
   sha256 "8f0463d0b46418921da0503d5f991c7d0b8308b4926a069d9fe4ec811113502f"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/introlab/rtabmap.git", branch: "master"
 
   # Upstream doesn't create releases for all tagged versions, so we use the
@@ -17,12 +17,12 @@ class Rtabmap < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256                               arm64_tahoe:   "5ebbaa690b10a9328fd2105a2c6976e6b2bcdad67033a67d23796ca540d41548"
-    sha256                               arm64_sequoia: "14b6a3d6bb2c561baaa6fb48dc7aa6bdbc8b55f7a71d7b758499a54877c2b480"
-    sha256                               arm64_sonoma:  "ea14957ba981c1a07ccea57f2e6cec1821f2e4a77124f374377b6ba56ae1dd0c"
-    sha256                               sonoma:        "b738c14b384cb483224f4edcf52158768b5214b56a7dd5e04fb3cac2337e42d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "055175bc683c10abdc66ee3b0d7a851203592e46b7e0396cb9366a2d946b52b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "436485b18123458c34fb5583df95dfdc9df23aa0c804293a5b0d2c68a22de875"
+    sha256                               arm64_tahoe:   "288d26f9845db235aba5a0f17ea178180ca93b1981d3a9b5bd89811376a6f70c"
+    sha256                               arm64_sequoia: "9028fab4e0e8e682e8747e50661cf26a6227ce0c46cb452d340e21da3fee92fc"
+    sha256                               arm64_sonoma:  "3280b7cfd33b46e1f99cd0dddac407c7d9d52bfef934a47f765c46cac11a6a20"
+    sha256                               sonoma:        "b53ab915a9d7e033988ca01a181c0a35c86fa78cc4cd25a97bb6b8aa6e358dff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "97be7c3ad9515c465ade4b10bb69a186ef15bcb89ede036c917b302e50035e35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1252c4ddd1c171cebdc39d126f99009f50844c6474fb3484fcd9ae27005e8cbe"
   end
 
   depends_on "cmake" => [:build, :test]

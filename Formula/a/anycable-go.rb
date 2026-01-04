@@ -37,9 +37,7 @@ class AnycableGo < Formula
 
   test do
     port = free_port
-    pid = fork do
-      exec "#{bin}/anycable-go --port=#{port}"
-    end
+    pid = spawn bin/"anycable-go", "--port=#{port}"
     sleep 1
     sleep 2 if OS.mac? && Hardware::CPU.intel?
     output = shell_output("curl -sI http://localhost:#{port}/health")

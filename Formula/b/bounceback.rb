@@ -25,9 +25,7 @@ class Bounceback < Formula
 
     pkgshare.install "data"
     # update relative data path to homebrew pkg path
-    inreplace "config.yml" do |s|
-      s.gsub! " data", " #{pkgshare}/data"
-    end
+    inreplace "config.yml", " data", " #{pkgshare}/data"
     etc.install "config.yml" => "bounceback.yml"
   end
 
@@ -40,11 +38,12 @@ class Bounceback < Formula
   end
 
   test do
-    fork do
-      exec bin/"bounceback", "--config", etc/"bounceback.yml"
-    end
+    pid = spawn bin/"bounceback", "--config", etc/"bounceback.yml"
     sleep 2
     assert_match "\"message\":\"Starting proxies\"", (testpath/"bounceback.log").read
     assert_match version.to_s, shell_output("#{bin}/bounceback --help", 2)
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end

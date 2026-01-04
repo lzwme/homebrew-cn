@@ -1,8 +1,8 @@
 class Brev < Formula
   desc "CLI tool for managing workspaces provided by brev.dev"
   homepage "https://developer.nvidia.com/brev"
-  url "https://ghfast.top/https://github.com/brevdev/brev-cli/archive/refs/tags/v0.6.315.tar.gz"
-  sha256 "5bb2e40d4dd80d368c2c0dcc1b2520eeccc530555381b578ed73270ddc4ec180"
+  url "https://ghfast.top/https://github.com/brevdev/brev-cli/archive/refs/tags/v0.6.316.tar.gz"
+  sha256 "095452684cb08ffc3b94d1415c17ba9ef25f1355d4d3105645bdc6ad498e2278"
   license "MIT"
   head "https://github.com/brevdev/brev-cli.git", branch: "main"
 
@@ -15,13 +15,12 @@ class Brev < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ba27dc84997071d831b399765c7056c03b719b8c120881d0c0f00fe16a992d8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ba27dc84997071d831b399765c7056c03b719b8c120881d0c0f00fe16a992d8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ba27dc84997071d831b399765c7056c03b719b8c120881d0c0f00fe16a992d8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "474c041572726cb87ed4bbc7833673a1d1a521481485e5196c1634bed5d31179"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "18d2aa0576db70b5dedff9f028969eab46e38561569fdd0750013e0790fda06d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3925b8151c2003e0971a59bc72a607603c848861ac34b7f3fabc5365bd1f74c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b03e0c6f35cee6c9429546caa7f234cf4d81823e9b9d7b3c70a7904202d63831"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b03e0c6f35cee6c9429546caa7f234cf4d81823e9b9d7b3c70a7904202d63831"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b03e0c6f35cee6c9429546caa7f234cf4d81823e9b9d7b3c70a7904202d63831"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8dc968faad45671c0aa786fba01ba18098901495150a287e24db32e12e4744f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "51b6a9d8acc2a759a774bd5d4355f92e724dddb71296c371ef545bd49378e04c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1731517e837c3949ca6ebe97b97e9adfe50090cde7dd6b96190064ee5a44e5dc"
   end
 
   depends_on "go" => :build

@@ -42,11 +42,8 @@ class Bastet < Formula
   end
 
   test do
-    pid = fork do
-      exec bin/"bastet"
-    end
+    pid = spawn bin/"bastet"
     sleep 3
-
     assert_path_exists bin/"bastet"
     assert_predicate bin/"bastet", :executable?
   ensure

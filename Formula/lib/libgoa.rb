@@ -1,8 +1,8 @@
 class Libgoa < Formula
   desc "Single sign-on framework for GNOME - client library"
   homepage "https://gitlab.gnome.org/GNOME/gnome-online-accounts"
-  url "https://download.gnome.org/sources/gnome-online-accounts/3.56/gnome-online-accounts-3.56.2.tar.xz"
-  sha256 "ce88df65457f0e63a0d8daff13322e29ecb584197a187f48a3a21be2fcd1c824"
+  url "https://download.gnome.org/sources/gnome-online-accounts/3.56/gnome-online-accounts-3.56.3.tar.xz"
+  sha256 "38596f17e0269f77e1623a6bf79569573c7bdf7b7cd863fb478a78ae664dea30"
   license "LGPL-2.0-or-later"
   head "https://gitlab.gnome.org/GNOME/gnome-online-accounts.git", branch: "master"
 
@@ -11,12 +11,12 @@ class Libgoa < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4a90e8349385646ad092554a37a3960c024900251295eb1f418446a0d33bcba8"
-    sha256 cellar: :any, arm64_sequoia: "e709b320b7f4a7d105609fd6a45b3822efd5a37a602aa1c3aede9d1eaae948c7"
-    sha256 cellar: :any, arm64_sonoma:  "a282bf499ccca1c64bc7deef4828c6a36c06ee932822920a6dce5e223b3005f2"
-    sha256 cellar: :any, sonoma:        "3a19e135f8d3dfc59d8e46a49d8be26fede8219b4e9de58eae09da991ac42e49"
-    sha256               arm64_linux:   "6f09d38ac646e25b5fa5490f8943218b3d72bd7659d337750ceef080df1512f7"
-    sha256               x86_64_linux:  "76e0520792c21f6af8efbaa111d44d932ba32ab92e02bd5f40d3acf182e961b8"
+    sha256 cellar: :any, arm64_tahoe:   "4588e55d56f432dfa6f3359c4a170a891278a16f22aceaa4c45c8303884004d8"
+    sha256 cellar: :any, arm64_sequoia: "164fa2d3f0902092f2f99c9c6945906da577301f54ed9cabc383729ee790b9d4"
+    sha256 cellar: :any, arm64_sonoma:  "b4b235b16a3c757260ccb99190aee7e824ea1be691a95a74360d7544604dd820"
+    sha256 cellar: :any, sonoma:        "936a16a926d04c970f0020ecfd1ca71a5f27126ebaffea55da556d6364c22c9f"
+    sha256               arm64_linux:   "91d5961d09dd9f3cc27808e712317ea0c0cb609b34f6076150de4565f40c6beb"
+    sha256               x86_64_linux:  "7029ae35828b269d5944886a501524d5e70eaa84e1ae8119692e9ee9aca04ae7"
   end
 
   depends_on "dbus" => [:build, :test]

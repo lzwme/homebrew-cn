@@ -31,10 +31,7 @@ class Algernon < Formula
 
   test do
     port = free_port
-    pid = fork do
-      exec bin/"algernon", "-s", "-q", "--httponly", "--boltdb", "tmp.db",
-                              "--addr", ":#{port}"
-    end
+    pid = spawn bin/"algernon", "-s", "-q", "--httponly", "--boltdb", "tmp.db", "--addr", ":#{port}"
     sleep 20
     output = shell_output("curl -sIm3 -o- http://localhost:#{port}")
     assert_match(/200 OK.*Server: Algernon/m, output)

@@ -1,23 +1,25 @@
 class Kiota < Formula
   desc "OpenAPI based HTTP Client code generator"
   homepage "https://aka.ms/kiota/docs"
+  # Try upgrade to latest `dotnet` on next release
   url "https://ghfast.top/https://github.com/microsoft/kiota/archive/refs/tags/v1.29.0.tar.gz"
   sha256 "8d75ae103efc94edc0615b1a7427ce6ef970fde389f3f4de5722eec97bcb4860"
   license "MIT"
   head "https://github.com/microsoft/kiota.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b53629836e75eaac33ca417ab050311a263365f921d053e43a926ff1a6d60e8c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2455e0baf73eb677bba2cb4ee186a0e08a8d919e9d7f650cc4ba4e331da0faa8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b27803ce4122c455e5ad33668e3985cef4ada574259d4c62a4825fa3aeb96d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "08605532539ded3e7f61638cee291649055f315d4385683121c370e5bd5524f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b933531887d8898bfc1a8f877d6221672f16950d70ef9fd37915d0a263577e0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ca572635df3058ea0bbb1cdb82421564caac65be8c8b1e61cc854e1b6338943"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a9c3b9ca9829ab90cc7b8597d8b340d9dcb1aecb27770250ec0d971da9eb505f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68c6c9518430f0f768efeb287f540888ad7bbaa68cb92b9a1f646d768ded09a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "171b247625f3c1bded7586c9837fff00d2439d52d61fd0f83a04dfd53916c30f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f916084cae0e42d83e4db30186631bb3572f1a6f35e314efff6ab48180306b2"
   end
 
-  depends_on "dotnet"
+  depends_on "dotnet@9"
 
   def install
-    dotnet = Formula["dotnet"]
+    dotnet = Formula["dotnet@9"]
 
     args = %W[
       --configuration Release

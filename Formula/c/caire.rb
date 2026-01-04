@@ -42,14 +42,9 @@ class Caire < Formula
   end
 
   test do
-    pid = fork do
-      system bin/"caire", "-in", test_fixtures("test.png"), "-out", testpath/"test_out.png",
-            "-width=1", "-height=1", "-perc=1"
-      assert_path_exists testpath/"test_out.png"
-    end
-
+    system bin/"caire", "-in", test_fixtures("test.png"), "-out", testpath/"test_out.png",
+                        "-width=1", "-height=1", "-perc=1", "-preview=false"
+    assert_path_exists testpath/"test_out.png"
     assert_match version.to_s, shell_output("#{bin}/caire -help 2>&1")
-  ensure
-    Process.kill("HUP", pid)
   end
 end

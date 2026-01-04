@@ -1,23 +1,24 @@
 class Statesmith < Formula
   desc "State machine code generation tool suitable for bare metal, embedded and more"
   homepage "https://github.com/StateSmith/StateSmith"
+  # Try upgrade to latest `dotnet` on version bump
   url "https://ghfast.top/https://github.com/StateSmith/StateSmith/archive/refs/tags/cli-v0.19.0.tar.gz"
   sha256 "62eb44d15a978c82f1ad8a54506f750b76c3dd30ebd1087384366a939a118749"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e93f4b8a25969a81b59a0eeb374fc6c062f8a8af3276f721926d117519438f5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16da18559d959ead7b6e22c1af0d1424338c11619ed347d145ff4a151dad0252"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bbd75a3a2d138a6448dd30b22e02603d58f0cb15a5a22f5d50ea686205c9dd39"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ee04a000fea7bfc26bf67fe5ee3d4d66b68c82b53a75fc087733aea8bdee6f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fb6e2df6189fddea319ff63410c71874a3f599fb06e0cac9b42247ff520409d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b58b31d35712d1ec9129d4b79c11b75f2b8a2dfa29b7e0514d21f1af80f4bd5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a1485ae419ffc50bc791307f3be45f1fd423fef401b3fbc52dc9f38f425d252"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de391ced760ccc51cd731eaad848a8cc1a694275ffdd5994b333817f68e727a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63d9b709b74a920d0f661df59f163de1c02f073b22efe01bf85b2643eaa50116"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc1b26d3f0b017dc07473ba5b9020fe2b2da8d558a9d07c69d35e7da357ce8e2"
   end
 
-  depends_on "dotnet"
+  depends_on "dotnet@9"
 
   def install
-    dotnet = Formula["dotnet"]
+    dotnet = Formula["dotnet@9"]
     args = %W[
       -c Release
       --framework net#{dotnet.version.major_minor}

@@ -1,13 +1,12 @@
 class Fnt < Formula
   desc "Apt for fonts, the missing font manager for macOS/linux"
   homepage "https://github.com/alexmyczko/fnt"
-  url "https://ghfast.top/https://github.com/alexmyczko/fnt/archive/refs/tags/1.9.tar.gz"
-  sha256 "4801b58e007aa5d84b112afbea3a5e449fb8d73124fb34182efe228fc37ac3e0"
+  url "https://ghfast.top/https://github.com/alexmyczko/fnt/archive/refs/tags/1.9.1.tar.gz"
+  sha256 "d3021cbed37ae39a58e8b18ed5bdc471a12660b12e368d91270b438e58df671f"
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "5cf790744e15280ed2d5fa7114f0724e1a2ca96e3014ccecb8012c1ac1df964d"
+    sha256 cellar: :any_skip_relocation, all: "739eb3bc354e7cb07938c6e58079a7a56b143feacd8eecba4b841d6ac2b34ebb"
   end
 
   depends_on "chafa"

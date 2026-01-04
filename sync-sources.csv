@@ -2885,6 +2885,7 @@ Homebrew-homebrew-core/Formula/h/hdf5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hdf5@1.10.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hdr10plus_tool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hdt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/headson.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/healpix.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/heartbeat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/heatshrink.rb, Homebrew/homebrew-core, 1
@@ -9393,6 +9394,7 @@ Homebrew-homebrew-cask/Casks/e/evkey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/exactscan.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/excalidrawz.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/excire-foto.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/e/excire-search.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/exelearning.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/exfalso.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/exifcleaner.rb, Homebrew/homebrew-cask, 1

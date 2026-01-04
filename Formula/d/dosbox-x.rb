@@ -1,8 +1,8 @@
 class DosboxX < Formula
   desc "DOSBox with accurate emulation and wide testing"
   homepage "https://dosbox-x.com/"
-  url "https://ghfast.top/https://github.com/joncampbell123/dosbox-x/archive/refs/tags/dosbox-x-v2025.12.01.tar.gz"
-  sha256 "1777a5ff5ee214e2eb524740cee4b3299e87041ea7f9d8471b71d8003de210f1"
+  url "https://ghfast.top/https://github.com/joncampbell123/dosbox-x/archive/refs/tags/dosbox-x-v2026.01.02.tar.gz"
+  sha256 "191e5de64f19b26f5a78a05b70e3216d62f3eaf2d0495f6258a12213a3d691c9"
   license "GPL-2.0-or-later"
   version_scheme 1
   head "https://github.com/joncampbell123/dosbox-x.git", branch: "master"
@@ -19,12 +19,12 @@ class DosboxX < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "890f79e8da608a79afd358d735cbec9939b1c21aff472fa64e83ecb3bdec0ad5"
-    sha256                               arm64_sequoia: "202fedb32623c9f2a3721770529e5799ecfbf0e86bc2f180f01814a6413b3366"
-    sha256                               arm64_sonoma:  "55eab25dba882282b9732af1bceb02970a820d80935e7444179f510a0bd57ad6"
-    sha256                               sonoma:        "69a76fe894d0fd0748ec37f53576b0051111c07911ab4e858b33ac1006a6a1a9"
-    sha256                               arm64_linux:   "bf79960c82005408647f8f49eaba6a4d5d2d301d55198f49ce72e13bde6871b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0926875272c6b112db4bc32aa20c8b589eb1a81fbffa0620666c0df6c2102223"
+    sha256                               arm64_tahoe:   "7d44cb98ab9706fb3cd2565d04e52810e75d725ce8c89b304844019593b8069d"
+    sha256                               arm64_sequoia: "17b050b27100667a068c451eb00e425a6b44a7a81ba71e2315788d16ba430989"
+    sha256                               arm64_sonoma:  "8af02abe6bb49f4aa92cd414a768cdc3d526bab3616441ddd637b7021e518cef"
+    sha256                               sonoma:        "b50881cddb629a6d20515fe8d0fac8e1dd6291c1b035bf49ec1d5329d9b2ab43"
+    sha256                               arm64_linux:   "729937ce051cef8686d3832e67010cb4ee848431ca2a1933b5883006fd711344"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "056fab36f82ab74ca4083422af5766006491ee2e45836508085d3f8258cb9d17"
   end
 
   depends_on "autoconf" => :build

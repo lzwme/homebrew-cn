@@ -27,6 +27,9 @@ class Zigup < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec4689d639d16b0ddc595eeecf71a24209d8d91bd8a4ffbcdbe2b18e6025715a"
   end
 
+  # Aligned to `zig@0.14` formula. Can be removed if upstream updates to newer Zig.
+  deprecate! date: "2026-08-19", because: "does not build with Zig >= 0.15"
+
   depends_on "zig@0.14" => :build
 
   def install

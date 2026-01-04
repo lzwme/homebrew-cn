@@ -30,12 +30,13 @@ class Bluetoothconnector < Formula
       # We cannot test any useful command since Sonoma as OS privacy restrictions
       # will wait until Bluetooth permission is either accepted or rejected.
       # Since even `--help` needs permissions, we just check process is still running.
-      pid = fork { exec bin/"BluetoothConnector" }
+      pid = spawn bin/"BluetoothConnector"
       begin
         sleep 5
         Process.getpgid(pid)
       ensure
         Process.kill("TERM", pid)
+        Process.wait(pid)
       end
     else
       shell_output("#{bin}/BluetoothConnector", 64)

@@ -4,14 +4,15 @@ class Pymupdf < Formula
   url "https://files.pythonhosted.org/packages/48/d6/09b28f027b510838559f7748807192149c419b30cb90e6d5f0cf916dc9dc/pymupdf-1.26.7.tar.gz"
   sha256 "71add8bdc8eb1aaa207c69a13400693f06ad9b927bea976f5d5ab9df0bb489c3"
   license "AGPL-3.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0111cd0136789c1d0dc81f8c0c955213299fd080dfccf60872215117073909b8"
-    sha256 cellar: :any,                 arm64_sequoia: "5fe46d87df57b9ae1aa0816514de07a904c32820e16f1164128508fc75a8d689"
-    sha256 cellar: :any,                 arm64_sonoma:  "b2be496d683ee29c0f56c3be754e05080424ff0bac33a508ab8a7eb25f1c11ae"
-    sha256 cellar: :any,                 sonoma:        "699c7a839e15f6af61f3b05cb5a61c54e2b6f3e154ff99e07c522f6b2626cbbd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "76b5f7510652546e6616ce3fd2c4bdda19b33e20a74157bc40c51df8523a3e4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa8850f29fab7568822eee03aff9983a56c025131365d552633dad75a13a480e"
+    sha256 cellar: :any,                 arm64_tahoe:   "ef42b609802efca6b500706222da4181b149071548ad35f912b07e191475d29c"
+    sha256 cellar: :any,                 arm64_sequoia: "1aefe2ab221fb0c81bb65c911fe8705638a29e961cc460317c8042e9ef42551f"
+    sha256 cellar: :any,                 arm64_sonoma:  "3624e11f3406d716b6b55f219606c600b74cfdd05a0a4dbf308438237a959725"
+    sha256 cellar: :any,                 sonoma:        "14e453ef57ff19d4f672b1462a12b6cd2055fba527f6d3732de3671c13dd8659"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7fef809b76c383b9b1cc782496516ce23246f4f2527f4da629a85127b47bfcb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e90333800e74be7879216166979b70ffe15219c09dfc7b45262e63109dcad0b"
   end
 
   depends_on "freetype" => :build
@@ -29,7 +30,10 @@ class Pymupdf < Formula
     # https://github.com/pymupdf/PyMuPDF/blob/1.20.0/setup.py#L447
     ENV["PYMUPDF_SETUP_MUPDF_BUILD"] = ""
     ENV["PYMUPDF_INCLUDES"] = "#{Formula["mupdf"].opt_include}:#{Formula["freetype"].opt_include}/freetype2"
-    ENV["PYMUPDF_MUPDF_LIB"] = Formula["mupdf"].opt_lib.to_s
+
+    mupdf_libpath = Formula["mupdf"].opt_lib.to_s
+    ENV["PYMUPDF_MUPDF_LIB"] = mupdf_libpath
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{mupdf_libpath}" if OS.mac?
 
     system python3, "-m", "pip", "install", *std_pip_args, "."
   end

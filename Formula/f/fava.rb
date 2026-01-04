@@ -3,18 +3,18 @@ class Fava < Formula
 
   desc "Web interface for the double-entry bookkeeping software Beancount"
   homepage "https://beancount.github.io/fava/"
-  url "https://files.pythonhosted.org/packages/4a/5c/a1b32fc2ce4ffa4380c067be9c071e2866f2e8403e257d8cbd2e33991925/fava-1.30.8.tar.gz"
-  sha256 "82a3268b175c007cdba0eab7c59c30e6b28f8fa3a7d652a85619395d9bf2970a"
+  url "https://files.pythonhosted.org/packages/e6/e4/ad931e5a089d2924f9a25eb959e41098e71f43531f27bb4a7e30dd2a2c47/fava-1.30.9.tar.gz"
+  sha256 "adf762ffab2e65f23fcc2abb97466b63f55937082578a2902f36bfcc67428808"
   license "MIT"
   head "https://github.com/beancount/fava.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "08a9e37a58ebcd5b8bb9ecab79466b7097719dd0571460438d76dc12561b2115"
-    sha256 cellar: :any,                 arm64_sequoia: "377ff1fdb5e4ec3ae21679d38d0244f230d0f31cbee1e4f4cce5820b418347b3"
-    sha256 cellar: :any,                 arm64_sonoma:  "baad8cbffffb28105d01c2a6986d919085f8437a028f3fda62e2bd1a6c9e3c43"
-    sha256 cellar: :any,                 sonoma:        "a273605ce2d40464094430858943fd77fe837e5292c0f76d74ff2c3a31864f23"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a47220cf77b725b4d594c8b29375d1d42852d3613f176d88b779173eaecff1f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd2bcd47da9355ef6443bf2fdf2779b1c04f237623ae94379bc9a37d5b54502b"
+    sha256 cellar: :any,                 arm64_tahoe:   "33681323d58a0e9619ec1495f33488ed6a29dcaa90135c3183848bae1f598e20"
+    sha256 cellar: :any,                 arm64_sequoia: "29c76ea94bb15df387eab4cddbfcf15743ec476ef77752cac78df1ee1df36839"
+    sha256 cellar: :any,                 arm64_sonoma:  "53c3d6ca384362dcf2eefcb8c6e79067f1ff1aab0ac8ea82349889288db1c7b5"
+    sha256 cellar: :any,                 sonoma:        "e1d0a18b8477a0a40b59161fa76b58de63dc6da8fa77213b4e8fdb8835f1ca9a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4a6aab5c52f7fb68893a096f5e3d8b976d4a93174786eea3666f7c5f0c4add3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20d75077d30f678e048b2c721e6748f4967a7a8b099384a8c507500a641cc83d"
   end
 
   depends_on "bison" => :build # for beancount
@@ -75,8 +75,8 @@ class Fava < Formula
   end
 
   resource "cheroot" do
-    url "https://files.pythonhosted.org/packages/63/e2/f85981a51281bd30525bf664309332faa7c81782bb49e331af603421dbd1/cheroot-10.0.1.tar.gz"
-    sha256 "e0b82f797658d26b8613ec8eb563c3b08e6bd6a7921e9d5089bd1175ad1b1740"
+    url "https://files.pythonhosted.org/packages/68/e4/5c2020b60a55aca8d79ed55b62ad1cd7fc47ea44ad6b584e83f5f1bf58b0/cheroot-11.1.2.tar.gz"
+    sha256 "bfb70c49663f63b0440f2b54dbc6b0d1650e56dfe4e2641f59b2c6f727b44aca"
   end
 
   resource "click" do
@@ -105,8 +105,8 @@ class Fava < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
-    sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
+    url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
+    sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
   end
 
   resource "jinja2" do
@@ -170,13 +170,13 @@ class Fava < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/6d/e6/21ccce3262dd4889aa3332e5a119a3491a95e8f60939870a3a035aabac0d/soupsieve-2.8.tar.gz"
-    sha256 "e2dd4a40a628cb5f28f6d4b0db8800b8f581b65bb380b97de22ba5ca8d72572f"
+    url "https://files.pythonhosted.org/packages/89/23/adf3796d740536d63a6fbda113d07e60c734b6ed5d3058d1e47fc0495e47/soupsieve-2.8.1.tar.gz"
+    sha256 "4cf733bc50fa805f5df4b8ef4740fc0e0fa6218cf3006269afd3f9d6d80fd350"
   end
 
   resource "tatsu-lts" do
-    url "https://files.pythonhosted.org/packages/62/55/8123c70881c58d0f01f48d869378717a101149491dd8e13cd908eb06a5a4/tatsu_lts-5.13.2.tar.gz"
-    sha256 "7204dbc3075fabecedd1ec1cbe04c5f20b159d7344f63280e580a21f3c14bf9f"
+    url "https://files.pythonhosted.org/packages/ec/c3/d542908e1e541ec028dd6a7be800c20da02282bda15b57de441afff98bfb/tatsu_lts-5.14.0.tar.gz"
+    sha256 "1f09f328aa4a5b53242055e8e24493ef7d9e4f770b90daa4d4de7c88523c232a"
   end
 
   resource "typing-extensions" do

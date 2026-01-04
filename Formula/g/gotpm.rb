@@ -7,18 +7,20 @@ class Gotpm < Formula
   head "https://github.com/google/go-tpm-tools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1fd031098d332d234bd90c2e6027f9c8b95b691f0075ef2acd14b2ad46e2206e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1fd031098d332d234bd90c2e6027f9c8b95b691f0075ef2acd14b2ad46e2206e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1fd031098d332d234bd90c2e6027f9c8b95b691f0075ef2acd14b2ad46e2206e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "113486d4f7246d7f8f7b7f0508dca32e0692ca5dca7824a995eb187b1d63b113"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ef6c7e200d40f3db0796b752e6220b7d130931a39984e62d63d07fd7e3ce1f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb7f33899d93564d0a57ad249e106a406edcff238c1f673b06c38f6d43a33474"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e1fbf201152c1d92e0fee354a2736c1c9ecd1cf1f657d3b9df4f0c2bbf547424"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1fbf201152c1d92e0fee354a2736c1c9ecd1cf1f657d3b9df4f0c2bbf547424"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1fbf201152c1d92e0fee354a2736c1c9ecd1cf1f657d3b9df4f0c2bbf547424"
+    sha256 cellar: :any_skip_relocation, sonoma:        "37e6a3f7449e763691e10f7355279e2d3043923cce437f25ff5db98ea80af47d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d097bb0ed3355e982eeee89dadcd9d3da64eb5ab14e0c44d6bc77749956f5eef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0be077482b2c4d14b4a8f86a6b5a4235215b4a9d5b4f22659e94dc72e3a282e"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gotpm"
+    generate_completions_from_executable(bin/"gotpm", shell_parameter_format: :cobra)
   end
 
   test do

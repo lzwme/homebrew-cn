@@ -37,10 +37,10 @@ class Asio < Formula
       system "./autogen.sh"
     end
 
-    system "./configure", *std_configure_args,
-                          "--disable-silent-rules",
-                          "--with-boost=no",
-                          "--with-openssl=#{Formula["openssl@3"].opt_prefix}"
+    system "./configure", "--disable-silent-rules",
+                          "--without-boost",
+                          "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
+                          *std_configure_args
     system "make", "install"
     pkgshare.install "src/examples"
   end
@@ -50,11 +50,9 @@ class Asio < Formula
     raise "no http_server example file found" if found.empty?
 
     port = free_port
-    pid = fork do
-      exec found.first, "127.0.0.1", port.to_s, "."
-    end
-    sleep 5
+    pid = spawn found.first, "127.0.0.1", port.to_s, "."
     begin
+      sleep 5
       assert_match "404 Not Found", shell_output("curl http://127.0.0.1:#{port}")
     ensure
       Process.kill 9, pid

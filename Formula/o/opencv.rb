@@ -2,31 +2,18 @@ class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
   license "Apache-2.0"
-  revision 19
 
   stable do
-    url "https://ghfast.top/https://github.com/opencv/opencv/archive/refs/tags/4.12.0.tar.gz"
-    sha256 "44c106d5bb47efec04e531fd93008b3fcd1d27138985c5baf4eafac0e1ec9e9d"
+    url "https://ghfast.top/https://github.com/opencv/opencv/archive/refs/tags/4.13.0.tar.gz"
+    sha256 "1d40ca017ea51c533cf9fd5cbde5b5fe7ae248291ddf2af99d4c17cf8e13017d"
 
     resource "contrib" do
-      url "https://ghfast.top/https://github.com/opencv/opencv_contrib/archive/refs/tags/4.12.0.tar.gz"
-      sha256 "4197722b4c5ed42b476d42e29beb29a52b6b25c34ec7b4d589c3ae5145fee98e"
+      url "https://ghfast.top/https://github.com/opencv/opencv_contrib/archive/refs/tags/4.13.0.tar.gz"
+      sha256 "1e0077a4fd2960a7d2f4c9e49d6ba7bb891cac2d1be36d7e8e47aa97a9d1039b"
 
       livecheck do
         formula :parent
       end
-    end
-
-    # Backport support for FFmpeg 8.0
-    patch do
-      url "https://github.com/opencv/opencv/commit/90c444abd387ffa70b2e72a34922903a2f0f4f5a.patch?full_index=1"
-      sha256 "5b662eea7b5de1dac3e06895c711955c9d1515d1202191b68594f4f9cfa23242"
-    end
-
-    # Backport support for eigen 5.0.0
-    patch do
-      url "https://github.com/opencv/opencv/commit/468de9b36740b3355f0d5cd8be2ce28b340df120.patch?full_index=1"
-      sha256 "b86ca3cf644a49ab7219348db2bc78497235df75ceef714d46fc80e9e80f2a06"
     end
   end
 
@@ -35,15 +22,13 @@ class Opencv < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 arm64_tahoe:   "77c66be0dc07971d34d302dd41b3d6d71b23cd5c23ddbf6ee7d19ebce56e3587"
-    sha256 arm64_sequoia: "b40ba53ca8a546c5f09dc428d8cfcd1db52872fcaade464ff7c0c11826a20600"
-    sha256 arm64_sonoma:  "72eb63442dae08eaedecbff5d3e9b39b77ee90ece7c33469e761804d5da6064b"
-    sha256 sonoma:        "805ee5e6b9f2e56a620456a276019049d5c6632db1fb8fbfb893145f1156828a"
-    sha256 arm64_linux:   "e8433ac6b9d66dbb01eec9d4161b17eb91e86b9342c29944e8d91aab74b15e43"
-    sha256 x86_64_linux:  "6e85d605250fbba1014bc7abc4b23589c6a3064b75f1b15a1c6e9212378f9d8d"
+    sha256 arm64_tahoe:   "1e8c2311fa4bbf564a4568bd954da27c34ac24f7df97d4bf31fbb84be7df21de"
+    sha256 arm64_sequoia: "c18fa9478ef8cd0097cacc7b044d543dafac4955b60f2cff62ee0fb9eafef918"
+    sha256 arm64_sonoma:  "0bb6bc7722070ad666307d5cc730876a74f665003497373278e025b2f18936db"
+    sha256 sonoma:        "1640498a328ef8cd7fab676126bfe7ebb864295e3b9cf40545f44a53171ea1e9"
+    sha256 arm64_linux:   "835404f6e9e6aa909e4d9080614e10fa0582a479ca1a45ad5aa744e67505aff9"
+    sha256 x86_64_linux:  "b8d639eb0fb3c53c3f7224da90becdccfefa12e759b248feb60e4807b196f752"
   end
 
   head do

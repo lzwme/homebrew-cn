@@ -3,13 +3,13 @@ class Sqlmap < Formula
 
   desc "Penetration testing for SQL injection and database servers"
   homepage "https://sqlmap.org"
-  url "https://ghfast.top/https://github.com/sqlmapproject/sqlmap/archive/refs/tags/1.9.12.tar.gz"
-  sha256 "c0d825644222c147c044a9215642515f760f047d690329bbf806dd89e873b68a"
+  url "https://ghfast.top/https://github.com/sqlmapproject/sqlmap/archive/refs/tags/1.10.tar.gz"
+  sha256 "aea3bf921d9a2466bc0e33cf43bc941f527eabf7981ec1de104220def3a1cba4"
   license "GPL-2.0-or-later"
   head "https://github.com/sqlmapproject/sqlmap.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "79f9d1f4ae71c7c2af289a2778fe0cfc9646afabb6859e3ea5a6a8108c4e7bdf"
+    sha256 cellar: :any_skip_relocation, all: "5160948123e8e2554a4df905929c06173341196b3b0ac66fb4fd40d99a297155"
   end
 
   depends_on "python@3.14"
@@ -27,6 +27,8 @@ class Sqlmap < Formula
 
     # Build an `:all` bottle
     inreplace libexec/"thirdparty/magic/magic.py", "/usr/local/Cellar", "#{HOMEBREW_PREFIX}/Cellar"
+    inreplace libexec/"lib/core/dicts.py", "/usr/local/var/www", "#{HOMEBREW_PREFIX}/var/www"
+    inreplace libexec/"lib/core/settings.py", "/opt/homebrew", HOMEBREW_PREFIX
   end
 
   test do

@@ -1,18 +1,18 @@
 class Bookokrat < Formula
   desc "Terminal EPUB Book Reader"
   homepage "https://bugzmanov.github.io/bookokrat/index.html"
-  url "https://ghfast.top/https://github.com/bugzmanov/bookokrat/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "c3e65ab54bfd0bb3b4abf21139ccf07d32f15316afec69eb011ff74dd3893a1d"
+  url "https://ghfast.top/https://github.com/bugzmanov/bookokrat/archive/refs/tags/v0.2.2.tar.gz"
+  sha256 "45cf2216993cbb2fda2d71f2fdf0f479d62cb5a5a0867c9b4413e4c9d38e335a"
   license "MIT"
   head "https://github.com/bugzmanov/bookokrat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0196823dc3ba3905fc5e3a182bf5c2d3bfea43582f7b0ad82e2aa7f1ae52ffe0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "793e450cc492e31b98dfd282912533219ec82ba9fd84d1d1bc93e136545ce850"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3fd9ee5923c4382f41907925018ccb6b3466d45f4de3e47d4b72863ba94b2a2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "078c855cec6d967ff01d0c4510ac9fea3e906b3f0d01eb186b80e50dc681500a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e1b44fdf0f48b7e60f41816495c4d4d7500bb189ab5e1514f11cdc4f863592f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9b645baad9b536dea11b58a41242f00ab0e43f7d6956b00e54a1ec0cd56978a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9fa7a415c17f090fea2057aa9e6e94ef63b30e4510cc53f791feb3711759a48f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64576761cfa3434a8af7c6a6f63d604fa8530038acc7266d9254e5f6f89a1d50"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1427a0ef4c3a06d1a2a5f98c048db1d143dafc74b2f2b92975aeea0ed754c2ee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7893e940b471334b24065aed9325c2f556fe4f67fad1a323ad57ea8e16c9b02a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5228a478d71f7b0666855dd85804fa27aba76a07344912c718a869ba7243dfd9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f39489b128a4e299023cc0b81d29f8d15363d7785eb1cfe1d52e539e59f1defd"
   end
 
   depends_on "rust" => :build

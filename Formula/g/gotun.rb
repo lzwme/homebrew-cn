@@ -1,18 +1,17 @@
 class Gotun < Formula
   desc "Lightweight HTTP proxy over SSH"
   homepage "https://github.com/Sesame2/gotun"
-  url "https://ghfast.top/https://github.com/Sesame2/gotun/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "068bc457d87bb389fe107c8bcf5c132ba372b4700c79d4978e9de6bb8e3d0620"
+  url "https://ghfast.top/https://github.com/Sesame2/gotun/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "c0521f2e4df9bd8bae9afbca4bd4ab48bc1b3b24ef06ec17301dcfa1dfef1f93"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b8bc4070d813f88b617d416aa857350dc0a87b00eca0c3f483e3a0a07af85992"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8bc4070d813f88b617d416aa857350dc0a87b00eca0c3f483e3a0a07af85992"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8bc4070d813f88b617d416aa857350dc0a87b00eca0c3f483e3a0a07af85992"
-    sha256 cellar: :any_skip_relocation, sonoma:        "043a8dc7c1b2d8edae0b1bc066dd7cfbf7ccc7837174b90ed15e3d22fedf9496"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "23a639c64836c3388aa5a14bb3bdd2722f25d3584a66e5a1fac61d85f517eb7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c1016d55e8e2c944d509f76cc724ee0a2e4e38da3df6f333f73c04f483349e8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1404cfcbbe2c3948baa3388361eeb2be34b590fbbdfd090849e38a10a1eeadc9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1404cfcbbe2c3948baa3388361eeb2be34b590fbbdfd090849e38a10a1eeadc9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1404cfcbbe2c3948baa3388361eeb2be34b590fbbdfd090849e38a10a1eeadc9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ce42412109096343b27d56419cc3c9ba18e4012556f7f221cf727af8d00e1bce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b4aa3385559f0ac14ce53cd7e1630f1e444dfd469b6b77a8ae8d6b2b8135c1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4781293eb4e7feed7cb77184d0896c1e84f7416b90f20a220d08942606527910"
   end
 
   depends_on "go" => :build

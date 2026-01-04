@@ -278,11 +278,7 @@ class Buku < Formula
     assert_match version.to_s, result
 
     port = free_port
-    pid = fork do
-      $stdout.reopen(File::NULL)
-      $stderr.reopen(File::NULL)
-      exec bin/"bukuserver", "run", "--host", "127.0.0.1", "--port", port.to_s
-    end
+    pid = spawn bin/"bukuserver", "run", "--host", "127.0.0.1", "--port", port.to_s, [:out, :err] => File::NULL
 
     begin
       sleep 15

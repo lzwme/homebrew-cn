@@ -3,18 +3,18 @@ class Badkeys < Formula
 
   desc "Tool to find common vulnerabilities in cryptographic public keys"
   homepage "https://badkeys.info"
-  url "https://files.pythonhosted.org/packages/11/5b/2a1400df2f62c3f473d46dd8ef8f7591a9a052b7f73b364d71f88bc7ae95/badkeys-0.0.15.tar.gz"
-  sha256 "620b07053f1bff5041201923187c839454332ee474dcd793b4ce6c90276ffd6b"
+  url "https://files.pythonhosted.org/packages/57/7d/f74cca4803f32e3088ae24e5186693facff1fb9c9e3f81497c4fbde63591/badkeys-0.0.16.tar.gz"
+  sha256 "c9d292ea1c78f6076662b923d854620f08dce46df1d4c162185625c7bfe58030"
   license "MIT"
   head "https://github.com/badkeys/badkeys.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "005315fdbc9c5fc6b4b28c07199fc7285a434a1b441aa56c4da646c0290b2fe1"
-    sha256 cellar: :any,                 arm64_sequoia: "da809e3b1d9357aee1f41777c5cb5e27cd119f9963eb6b0ccc95f082d68cf196"
-    sha256 cellar: :any,                 arm64_sonoma:  "82800c5b15c870d1684e02a66a9562fce2cff2bd8fe051ac88b398f1386234fd"
-    sha256 cellar: :any,                 sonoma:        "aa62342782ee8322039087072a430f2b492cdf9eb300b13385d87d5f5004a07f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ea712ef7a3c81a7e477b7ba28c1d19d9cc603f95f6e774cd9e9c2916200155b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b19433c10ecf99f90fb890a830e1a70a693bb9f1e2f4a471d79b3b19fcb78c5b"
+    sha256 cellar: :any,                 arm64_tahoe:   "d2c34e7ce3a7ad3b79e579fffa5d268e4666fff4ceecbf891751ec6756fd3829"
+    sha256 cellar: :any,                 arm64_sequoia: "21db3db1703244ecabc2c1e5b6930b06b795d19a4fe251bb0d65671efcbb74a5"
+    sha256 cellar: :any,                 arm64_sonoma:  "a110ae31d0a3982fbe4491469ed5355c255b78f415a11d87192965a76c555c62"
+    sha256 cellar: :any,                 sonoma:        "00f8b99d969e15b2c595d61da82a8032239753c981108930063a95be5ae4f98d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c6f55b83a73a639171aec0c6903c45113bcb6410af62aabb7f5ee14f612d88f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d9085c2391bf77d4762907efdeea82d5a03d647f496af0cdef479e415743b35"
   end
 
   depends_on "cryptography" => :no_linkage
@@ -26,8 +26,8 @@ class Badkeys < Formula
   pypi_packages exclude_packages: "cryptography"
 
   resource "gmpy2" do
-    url "https://files.pythonhosted.org/packages/07/bd/c6c154ce734a3e6187871b323297d8e5f3bdf9feaafc5212381538bc19e4/gmpy2-2.2.1.tar.gz"
-    sha256 "e83e07567441b78cb87544910cb3cc4fe94e7da987e93ef7622e76fb96650432"
+    url "https://files.pythonhosted.org/packages/fa/58/aff69026cd43a284b979d6be8104a82bd2378ca8f1aaa036508dbee7f1d9/gmpy2-2.2.2.tar.gz"
+    sha256 "d9b8c81e0f5e1a3cabf1ea8d154b29b5ef6e33b8f4e4c37b3da957b2dd6a3fa8"
   end
 
   def install

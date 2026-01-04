@@ -7,12 +7,13 @@ class AutoEditor < Formula
   head "https://github.com/WyattBlue/auto-editor.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "922bbbb4afbaf20024bea5e1e802c0061d8a738994af91c77a5309adc2738c91"
-    sha256 cellar: :any,                 arm64_sequoia: "1f608cf9a7a8acc0deee5ab20d47553dbaa39ec27b2f1c52d067d6f246f4a8dd"
-    sha256 cellar: :any,                 arm64_sonoma:  "018bdf94f36f7a86f5018c42e9d0218eb7b9886cb7d8748d9ddd16df41db3565"
-    sha256 cellar: :any,                 sonoma:        "2b16e9cb14298ad68b7f8fa62a7ee67f724ad5b88685a37b8d29f0a75fd4d1aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0eda0ec1aa9d65552ea5411386de5963c94b77488f61773bd52fd7ae612bc659"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0da7dcfae54094b6244bcb185e64cad0a39169df2337fe65e528fc733c3728d3"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "28907b8748ee92a014e5e62ec824980422ba07780d0e6818f1f3b9bba117e371"
+    sha256 cellar: :any,                 arm64_sequoia: "fa1a86860a2df94e679a12caa0c2f030a346aeb15460b90276f169ba33296859"
+    sha256 cellar: :any,                 arm64_sonoma:  "d587f58f716e3075be28e4acfb9b586ac3df712dbb60b827e1c2b209373e0bbb"
+    sha256 cellar: :any,                 sonoma:        "41ddc3671033f528d89d0644cc11d9d07a9acae26b0f314443e02738a5551e24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0def3cd3306f76824ef6c026461b1a6d86e39f591f0622cbceffb2611e0592cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64acf7157012568e943769378ce55bec3cf89534283b9d0e5eaaaf747a703c50"
   end
 
   depends_on "nim" => :build
@@ -30,6 +31,7 @@ class AutoEditor < Formula
 
   def install
     system "nimble", "make"
+    generate_completions_from_executable("nimble", "zshcomplete", "--silent", shells: [:zsh])
     bin.install "auto-editor"
   end
 

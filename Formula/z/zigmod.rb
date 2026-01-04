@@ -1,8 +1,8 @@
 class Zigmod < Formula
   desc "Package manager for the Zig programming language"
   homepage "https://nektro.github.io/zigmod/"
-  url "https://ghfast.top/https://github.com/nektro/zigmod/archive/refs/tags/r98.tar.gz"
-  sha256 "a7fc24e2784bf35660e7736b92f63049cbd6c98693724c930a1755284c20cabc"
+  url "https://ghfast.top/https://github.com/nektro/zigmod/archive/refs/tags/r99.tar.gz"
+  sha256 "b2bb91cfae4cb470c6b5e461f6a8bc33b0d4df8a8b0ddf35505ac9bf42b76072"
   license "MIT"
 
   livecheck do
@@ -11,18 +11,19 @@ class Zigmod < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4e8ed85856fc8f7d8947e41faa35e63bc8f63cd2b8cac1a09ad349107ef663f3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ff38379c6544b1c8d59e7f8859a8b0f525e28641daf2169cc678dfadf7e08da"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81e04b9abb26106139fc02dd432eb6414765fb628fcc94cb438eca21d546b300"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "452789666788c8fc49734e0b45e2387766129a7df577680375419299f45a1b23"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59088c6d7e3d66a9831c094a37a2f5cef94f41efdb795c32ff28b158f470a66f"
-    sha256 cellar: :any_skip_relocation, ventura:       "1a50f4a916744e595d706c2981e2de16945ecc0b2b783d98fde78a39bc34f16e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "321a231d3ff12fe33ad5fc4056b9e006d16e53e47c8a7d7ac7f0314eaaa87310"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e666d0c5fe0d8de4c76617fd9dbf0584470919b89946b730f637b303ef45ed00"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fcd2ad3392aae6c20b201de6a0ae1885d1d05e6ab2fb1c9166a3c258d92dd1c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72f2899614daf31c4786d3bb3c9df2aac398ff49f150c87c8fc1d80b4f8d6ee7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7fb4c072fbe0055ecdcd5420c8ab54b9fc50fcaa3dfb24c5f6d76326253e278"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ae568a5381dbba1ca1dd0e8864cf4cd3d098d5e1b65bdc507706e7bb99e653ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6667190a84c317f48674c5ea1c9d67c7f0c2267d1c407ffc24acafae5c241e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "404076d214fae1b64dcc4f17ec37606fc303fa18f475342933cfd93331817323"
   end
 
+  # Aligned to `zig@0.14` formula. Can be removed if upstream updates to newer Zig.
+  deprecate! date: "2026-08-19", because: "does not build with Zig >= 0.15"
+
   depends_on "pkgconf" => :build
-  depends_on "zig@0.14"
+  depends_on "zig@0.14" # https://github.com/nektro/zigmod/issues/113
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
@@ -37,7 +38,7 @@ class Zigmod < Formula
     # https://github.com/nektro/zigmod/pull/109
     args = %W[
       --prefix #{prefix}
-      -Dtag=#{version}
+      -Dtag=r#{version}
       -Dmode=ReleaseSafe
       -Dstrip=true
       -fno-rosetta

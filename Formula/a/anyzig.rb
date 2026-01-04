@@ -16,6 +16,9 @@ class Anyzig < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b96df77ca3f2ffd21ff157661045237683a954504516c300c8965232329446c3"
   end
 
+  # Aligned to `zig@0.14` formula. Can be removed if upstream updates to newer Zig.
+  deprecate! date: "2026-08-19", because: "does not build with Zig >= 0.15"
+
   depends_on "zig@0.14" => :build
 
   conflicts_with "zig", because: "both install `zig` binaries"
