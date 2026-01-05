@@ -1,8 +1,8 @@
 class Imake < Formula
   desc "Build automation system written for X11"
   homepage "https://xorg.freedesktop.org"
-  url "https://xorg.freedesktop.org/releases/individual/util/imake-1.0.10.tar.xz"
-  sha256 "75decbcea8d7b354cf36adc9675e53c4790ee3de56a14bd87b42c8e8aad2ecf5"
+  url "https://xorg.freedesktop.org/releases/individual/util/imake-1.0.11.tar.xz"
+  sha256 "55955527eaebe94633e4083d4fe5f2160a65fe4c6dafdee48b89fea5f1ca8a78"
   license "MIT"
 
   livecheck do
@@ -13,25 +13,23 @@ class Imake < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:    "627e80ff4e32522a945b7f3cc0fb89d5103a8d1b8ee325df80c399f33155f521"
-    sha256 arm64_sequoia:  "7ec67382a8dbee7134f20cacb6f701e780ce5e0da7902341047bfcff4492c9e2"
-    sha256 arm64_sonoma:   "2e5e51212893abfdefa9fe94309a52728693418424af70ad64424974816d1624"
-    sha256 arm64_ventura:  "1bf5d0e8b8fc5f7030162a29d9054863f2af080a8ec62db87d8f6ce90c55d8d6"
-    sha256 arm64_monterey: "5708253a196811ca791e556e6b22582b84b8f925d15b2bccca6d13b9f049002b"
-    sha256 sonoma:         "f2362816e0e06c863938298689c9cc9b9ee34ffe2aace4369fd42774ab5a66a4"
-    sha256 ventura:        "d62ef9dabad43d8c1bf7ee4d40762bf36dab9475ddcbfaf205f67303e3b197b5"
-    sha256 monterey:       "b288cbb7cb8faf0e38bd79cae80e0a9b47eebd3e760caaae129aaa001d880fc1"
-    sha256 arm64_linux:    "4ba1ca704e4e9383f470dba78fefde5e6eacf51384aecc964221055e36ced4b1"
-    sha256 x86_64_linux:   "296155e61983cc533d3f5ab094d796d2ab3d992606be73da1f7a51f3920ea41e"
+    sha256 arm64_tahoe:   "e00d84afa586ef13b9a3839fb78191004c4bb76953057ccda30f602cc274565d"
+    sha256 arm64_sequoia: "16145a844d8aaf431a839bc9d6c8ecc3ce22738e61536a1edfca0888ac8b9c20"
+    sha256 arm64_sonoma:  "b21feb76732b8c591a4edc56c06904a411f58c7a406700f7aa1dfc42f14c7910"
+    sha256 sonoma:        "63dbde50254d19999a5a6fd43f0107eb3cb7a5e43ef148eb27a725bc32f385e9"
+    sha256 arm64_linux:   "513164454011b2cf9941f92eea4ad738a28b37265b3606838f26bd15223b2493"
+    sha256 x86_64_linux:  "a5b7ebc580e66c9f4f72b61e1b6ad51228d41f25620d66e4959334bad6b5c15f"
   end
 
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "xorgproto" => :build
   depends_on "tradcpp"
 
   resource "xorg-cf-files" do
-    url "https://xorg.freedesktop.org/releases/individual/util/xorg-cf-files-1.0.8.tar.xz"
-    sha256 "7408955defcfab0f44d1bedd4ec0c20db61914917ad17bfc1f1c9bf56acc17b9"
+    url "https://xorg.freedesktop.org/releases/individual/util/xorg-cf-files-1.0.9.tar.xz"
+    sha256 "07716eb1fe1fd1f8a1d6588457db0101cae70cb896d49dc65978c97b148ce976"
   end
 
   def install
@@ -44,8 +42,6 @@ class Imake < Formula
       #undef USE_CC_E"
     C
 
-    inreplace "imake.man", /__cpp__/, cpp_program
-
     # also use gcc's cpp during buildtime to pass ./configure checks
     ENV["RAWCPP"] = cpp_program
 
@@ -56,9 +52,11 @@ class Imake < Formula
       # Fix for different X11 locations.
       inreplace "X11.rules", "define TopXInclude	/**/",
                 "define TopXInclude	-I#{HOMEBREW_PREFIX}/include"
-      system "./configure", "--with-config-dir=#{lib}/X11/config",
-                            "--prefix=#{HOMEBREW_PREFIX}"
-      system "make", "install"
+
+      system "meson", "setup", "build", "-Dwith-config-dir=#{lib}/X11/config",
+                      "--prefix=#{HOMEBREW_PREFIX}", "--buildtype=release", "--wrap-mode=nofallback"
+      system "meson", "compile", "-C", "build", "--verbose"
+      system "meson", "install", "-C", "build"
     end
   end
 

@@ -47,7 +47,7 @@ class Webfs < Formula
 
   test do
     port = free_port
-    pid = fork { exec bin/"webfsd", "-F", "-p", port.to_s }
+    pid = spawn bin/"webfsd", "-F", "-p", port.to_s
     sleep 5
     assert_match %r{webfs/1.21}, shell_output("curl localhost:#{port}")
   ensure

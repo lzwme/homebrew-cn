@@ -61,10 +61,10 @@ class TerraformLandscape < Formula
     output = shell_output("#{bin}/landscape -v")
     assert_match "Terraform Landscape #{version}", output
 
-    test_input = "+ some_resource_type.some_resource_name"
+    test_input = "+ some_resource_type.some_resource_name\n"
     colorized_expected_output = "\e[0;32;49m+ some_resource_type.some_resource_name\e[0m\n\n\n"
 
-    output = shell_output("echo '#{test_input}' | #{bin}/landscape")
+    output = pipe_output(bin/"landscape", test_input, 0)
     assert_match colorized_expected_output, output
   end
 end

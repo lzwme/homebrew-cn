@@ -28,14 +28,8 @@ class WormholeWilliam < Formula
   test do
     # Send "foo" over the wire
     code = "#{rand(1e12)}-test"
-    pid = fork do
-      exec bin/"wormhole-william", "send", "--code", code, "--text", "foo"
-    end
-
-    # Give it some time
+    pid = spawn bin/"wormhole-william", "send", "--code", code, "--text", "foo"
     sleep 2
-
-    # Receive the text back
     assert_match "foo\n", shell_output("#{bin}/wormhole-william receive #{code}")
   ensure
     Process.wait(pid)

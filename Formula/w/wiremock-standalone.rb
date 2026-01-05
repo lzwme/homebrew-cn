@@ -24,9 +24,7 @@ class WiremockStandalone < Formula
   test do
     port = free_port
 
-    wiremock = fork do
-      exec "#{bin}/wiremock", "-port", port.to_s
-    end
+    wiremock = spawn "#{bin}/wiremock", "-port", port.to_s
 
     loop do
       Utils.popen_read("curl", "-s", "http://localhost:#{port}/__admin/", "-X", "GET")

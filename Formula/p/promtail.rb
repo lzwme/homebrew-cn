@@ -49,7 +49,7 @@ class Promtail < Formula
       s.gsub!(/__path__: .+$/, "__path__: #{testpath}")
     end
 
-    fork { exec bin/"promtail", "-config.file=promtail-local-config.yaml" }
+    spawn bin/"promtail", "-config.file=promtail-local-config.yaml"
     sleep 3
     sleep 3 if OS.mac? && Hardware::CPU.intel?
 

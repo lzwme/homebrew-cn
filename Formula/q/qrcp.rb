@@ -36,13 +36,11 @@ class Qrcp < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/qrcp version")
 
-    (testpath/"test_data.txt").write <<~EOS
-      Hello there, big world
-    EOS
-
+    data = "Hello there, big world\n"
     port = free_port
     server_url = "http://localhost:#{port}/send/testing"
 
+    (testpath/"test_data.txt").write data
     (testpath/"config.json").write <<~JSON
       {
         "interface": "any",
@@ -51,12 +49,10 @@ class Qrcp < Formula
       }
     JSON
 
-    fork do
-      exec bin/"qrcp", "-c", testpath/"config.json", "--path", "testing", testpath/"test_data.txt"
-    end
+    spawn bin/"qrcp", "-c", testpath/"config.json", "--path", "testing", testpath/"test_data.txt"
     sleep 1
 
     # User-Agent header needed in order for curl to be able to receive file
-    assert_equal "Hello there, big world\n", shell_output("curl -H \"User-Agent: Mozilla\" #{server_url}")
+    assert_equal data, shell_output("curl -H \"User-Agent: Mozilla\" #{server_url}")
   end
 end

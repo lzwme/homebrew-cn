@@ -27,10 +27,7 @@ class Pmtiles < Formula
 
   test do
     port = free_port
-
-    pid = fork do
-      exec bin/"pmtiles", "serve", ".", "--port", port.to_s
-    end
+    pid = spawn bin/"pmtiles", "serve", ".", "--port", port.to_s
     sleep 3
     output = shell_output("curl -sI http://localhost:#{port}")
     assert_match "HTTP/1.1 204 No Content", output

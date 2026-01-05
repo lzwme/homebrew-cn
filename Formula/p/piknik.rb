@@ -42,22 +42,14 @@ class Piknik < Formula
     genkeys = shell_output("#{bin}/piknik -genkeys")
     lines = genkeys.lines.grep(/\s+=\s+/).map { |x| x.gsub(/\s+/, " ").gsub(/#.*/, "") }.uniq
     conffile.write lines.join("\n")
-    pid = fork do
-      exec bin/"piknik", "-server", "-config", conffile
-    end
+    pid = spawn bin/"piknik", "-server", "-config", conffile
     begin
       sleep 1
-      IO.popen([{}, bin/"piknik", "-config", conffile, "-copy"], "w+") do |p|
-        p.write "test"
-      end
-      IO.popen([{}, bin/"piknik", "-config", conffile, "-move"], "r") do |p|
-        clipboard = p.read
-        assert_equal clipboard, "test"
-      end
+      pipe_output("#{bin}/piknik -config #{conffile} -copy", "test", 0)
+      assert_equal "test", shell_output("#{bin}/piknik -config #{conffile} -move")
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)
-      conffile.unlink
     end
   end
 end

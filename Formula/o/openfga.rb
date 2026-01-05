@@ -34,16 +34,12 @@ class Openfga < Formula
     assert_match version.to_s, shell_output("#{bin}/openfga version 2>&1")
 
     port = free_port
-    pid = fork do
-      exec bin/"openfga", "run", "--playground-port", port.to_s
-    end
+    pid = spawn bin/"openfga", "run", "--playground-port", port.to_s
     sleep 3
     output = shell_output("curl -s http://localhost:#{port}/playground")
     assert_match "title=\"Embedded Playground\"", output
-
-    assert_match version.to_s, shell_output("#{bin}/openfga version 2>&1")
   ensure
-    Process.kill("SIGTERM", pid)
+    Process.kill("TERM", pid)
     Process.wait(pid)
   end
 end

@@ -62,12 +62,13 @@ class Ollama < Formula
     port = free_port
     ENV["OLLAMA_HOST"] = "localhost:#{port}"
 
-    pid = fork { exec bin/"ollama", "serve" }
-    sleep 3
+    pid = spawn bin/"ollama", "serve"
     begin
+      sleep 3
       assert_match "Ollama is running", shell_output("curl -s localhost:#{port}")
     ensure
-      Process.kill "SIGTERM", pid
+      Process.kill "TERM", pid
+      Process.wait pid
     end
   end
 end

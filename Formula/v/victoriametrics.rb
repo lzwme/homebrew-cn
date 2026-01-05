@@ -64,18 +64,16 @@ class Victoriametrics < Formula
           - targets: ["127.0.0.1:#{http_port}"]
     YAML
 
-    pid = fork do
-      exec bin/"victoria-metrics",
-        "-httpListenAddr=127.0.0.1:#{http_port}",
-        "-promscrape.config=#{testpath}/scrape.yml",
-        "-storageDataPath=#{testpath}/victoriametrics-data"
-    end
+    pid = spawn bin/"victoria-metrics",
+                "-httpListenAddr=127.0.0.1:#{http_port}",
+                "-promscrape.config=#{testpath}/scrape.yml",
+                "-storageDataPath=#{testpath}/victoriametrics-data"
     sleep 5
     assert_match "Single-node VictoriaMetrics", shell_output("curl -s 127.0.0.1:#{http_port}")
 
     assert_match version.to_s, shell_output("#{bin}/victoria-metrics --version")
   ensure
-    Process.kill(9, pid)
+    Process.kill("TERM", pid)
     Process.wait(pid)
   end
 end

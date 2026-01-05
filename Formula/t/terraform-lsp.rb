@@ -40,13 +40,9 @@ class TerraformLsp < Formula
 
   test do
     port = free_port
-
-    pid = fork do
-      exec "#{bin}/terraform-lsp serve -tcp -port #{port}"
-    end
-    sleep 2
-
+    pid = spawn bin/"terraform-lsp", "serve", "-tcp", "-port", port.to_s
     begin
+      sleep 2
       tcp_socket = TCPSocket.new("localhost", port)
       tcp_socket.puts <<~EOF
         Content-Length: 59

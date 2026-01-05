@@ -76,8 +76,8 @@ class Fann < Formula
     output = shell_output(testpath/"test")
     epoch, error = output.lines.last.match(/Epochs\s+(\d+)\.\s+Current error:\s+(\d+\.\d+)\. Bit fail 0\./).captures
 
-    assert epoch.to_i <= max_epochs
-    assert error.to_f <= desired_error
+    assert_operator max_epochs, :>=, epoch.to_i
+    assert_operator desired_error, :>=, error.to_f
     assert_path_exists testpath/"xor_float.net"
   end
 end

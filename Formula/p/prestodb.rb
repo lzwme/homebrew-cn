@@ -101,19 +101,15 @@ class Prestodb < Formula
   end
 
   test do
-    port = free_port
-    cp libexec/"etc/config.properties", testpath/"config.properties"
-    inreplace testpath/"config.properties", "8080", port.to_s
-    server = fork do
-      exec bin/"presto-server", "run", "--verbose",
-                                       "--data-dir", testpath,
-                                       "--config", testpath/"config.properties"
-    end
-    sleep 60
-
+    config = testpath/"config.properties"
     query = "SELECT state FROM system.runtime.nodes"
-    output = shell_output("#{bin}/presto --debug --server localhost:#{port} --execute '#{query}'")
-    assert_match "\"active\"", output
+    port = free_port
+
+    cp libexec/"etc/config.properties", config
+    inreplace config, "8080", port.to_s
+    server = spawn bin/"presto-server", "run", "--verbose", "--data-dir", testpath, "--config", config
+    sleep 60
+    assert_match "\"active\"", shell_output("#{bin}/presto --debug --server localhost:#{port} --execute '#{query}'")
   ensure
     Process.kill("TERM", server)
     Process.wait server

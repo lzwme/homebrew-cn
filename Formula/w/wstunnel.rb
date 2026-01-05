@@ -33,8 +33,7 @@ class Wstunnel < Formula
     ENV["NO_COLOR"] = "1"
 
     port = free_port
-
-    pid = fork { exec bin/"wstunnel", "server", "ws://[::]:#{port}" }
+    pid = spawn bin/"wstunnel", "server", "ws://[::]:#{port}"
     sleep 2
 
     output = shell_output("curl -sI http://localhost:#{port}")

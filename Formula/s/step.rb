@@ -42,34 +42,32 @@ class Step < Formula
 
     # Generate a root certificate and private key with subject baz written to baz.crt and baz.key.
     system bin/"step", "certificate", "create", "--profile", "root-ca",
-        "--no-password", "--insecure", "baz", "baz.crt", "baz.key"
+           "--no-password", "--insecure", "baz", "baz.crt", "baz.key"
     assert_path_exists testpath/"baz.crt"
     assert_path_exists testpath/"baz.key"
-    baz_crt = File.read(testpath/"baz.crt")
+    baz_crt = (testpath/"baz.crt").read
     assert_match(/^-----BEGIN CERTIFICATE-----.*/, baz_crt)
     assert_match(/.*-----END CERTIFICATE-----$/, baz_crt)
-    baz_key = File.read(testpath/"baz.key")
+    baz_key = (testpath/"baz.key").read
     assert_match(/^-----BEGIN EC PRIVATE KEY-----.*/, baz_key)
     assert_match(/.*-----END EC PRIVATE KEY-----$/, baz_key)
-    shell_output("#{bin}/step certificate inspect --format json baz.crt > baz_crt.json")
-    baz_crt_json = JSON.parse(File.read(testpath/"baz_crt.json"))
+    baz_crt_json = JSON.parse(shell_output("#{bin}/step certificate inspect --format json baz.crt"))
     assert_equal "CN=baz", baz_crt_json["subject_dn"]
     assert_equal "CN=baz", baz_crt_json["issuer_dn"]
 
     # Generate a leaf certificate signed by the previously created root.
     system bin/"step", "certificate", "create", "--profile", "intermediate-ca",
-        "--no-password", "--insecure", "--ca", "baz.crt", "--ca-key", "baz.key",
-        "zap", "zap.crt", "zap.key"
+           "--no-password", "--insecure", "--ca", "baz.crt", "--ca-key", "baz.key",
+           "zap", "zap.crt", "zap.key"
     assert_path_exists testpath/"zap.crt"
     assert_path_exists testpath/"zap.key"
-    zap_crt = File.read(testpath/"zap.crt")
+    zap_crt = (testpath/"zap.crt").read
     assert_match(/^-----BEGIN CERTIFICATE-----.*/, zap_crt)
     assert_match(/.*-----END CERTIFICATE-----$/, zap_crt)
-    zap_key = File.read(testpath/"zap.key")
+    zap_key = (testpath/"zap.key").read
     assert_match(/^-----BEGIN EC PRIVATE KEY-----.*/, zap_key)
     assert_match(/.*-----END EC PRIVATE KEY-----$/, zap_key)
-    shell_output("#{bin}/step certificate inspect --format json zap.crt > zap_crt.json")
-    zap_crt_json = JSON.parse(File.read(testpath/"zap_crt.json"))
+    zap_crt_json = JSON.parse(shell_output("#{bin}/step certificate inspect --format json zap.crt"))
     assert_equal "CN=zap", zap_crt_json["subject_dn"]
     assert_equal "CN=baz", zap_crt_json["issuer_dn"]
 
@@ -80,40 +78,31 @@ class Step < Formula
     mkdir_p(steppath)
     ENV["STEPPATH"] = steppath
     system bin/"step", "ca", "init", "--address", "127.0.0.1:8081",
-        "--dns", "127.0.0.1", "--password-file", "#{testpath}/password.txt",
-        "--provisioner-password-file", "#{testpath}/password.txt", "--name",
-        "homebrew-smallstep-test", "--provisioner", "brew"
+           "--dns", "127.0.0.1", "--password-file", "#{testpath}/password.txt",
+           "--provisioner-password-file", "#{testpath}/password.txt", "--name",
+           "homebrew-smallstep-test", "--provisioner", "brew"
 
+    pid = spawn bin/"step-ca", "--password-file", "#{testpath}/password.txt", "#{steppath}/config/ca.json"
     begin
-      pid = fork do
-        exec bin/"step-ca", "--password-file", "#{testpath}/password.txt",
-          "#{steppath}/config/ca.json"
-      end
-
       sleep 6
-      shell_output("#{bin}/step ca health > health_response.txt")
-      assert_match(/^ok$/, File.read(testpath/"health_response.txt"))
+      assert_match(/^ok$/, shell_output("#{bin}/step ca health"))
 
-      shell_output("#{bin}/step ca token --password-file #{testpath}/password.txt " \
-                   "homebrew-smallstep-leaf > token.txt")
-      token = File.read(testpath/"token.txt")
-      system bin/"step", "ca", "certificate", "--token", token,
-          "homebrew-smallstep-leaf", "brew.crt", "brew.key"
+      token = shell_output("#{bin}/step ca token --password-file #{testpath}/password.txt homebrew-smallstep-leaf")
+      system bin/"step", "ca", "certificate", "--token", token, "homebrew-smallstep-leaf", "brew.crt", "brew.key"
 
       assert_path_exists testpath/"brew.crt"
       assert_path_exists testpath/"brew.key"
-      brew_crt = File.read(testpath/"brew.crt")
+      brew_crt = (testpath/"brew.crt").read
       assert_match(/^-----BEGIN CERTIFICATE-----.*/, brew_crt)
       assert_match(/.*-----END CERTIFICATE-----$/, brew_crt)
-      brew_key = File.read(testpath/"brew.key")
+      brew_key = (testpath/"brew.key").read
       assert_match(/^-----BEGIN EC PRIVATE KEY-----.*/, brew_key)
       assert_match(/.*-----END EC PRIVATE KEY-----$/, brew_key)
-      shell_output("#{bin}/step certificate inspect --format json brew.crt > brew_crt.json")
-      brew_crt_json = JSON.parse(File.read(testpath/"brew_crt.json"))
+      brew_crt_json = JSON.parse(shell_output("#{bin}/step certificate inspect --format json brew.crt"))
       assert_equal "CN=homebrew-smallstep-leaf", brew_crt_json["subject_dn"]
       assert_equal "O=homebrew-smallstep-test, CN=homebrew-smallstep-test Intermediate CA", brew_crt_json["issuer_dn"]
     ensure
-      Process.kill(9, pid)
+      Process.kill("TERM", pid)
       Process.wait(pid)
     end
   end

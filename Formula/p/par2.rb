@@ -52,6 +52,6 @@ class Par2 < Formula
     assert_match "Repair complete.", repair_command_output
 
     # Verify that par2 actually repaired the file.
-    assert File.read(test_file) == "file contents"
+    assert_equal "file contents", File.read(test_file)
   end
 end

@@ -33,13 +33,12 @@ class Websocketd < Formula
 
   test do
     port = free_port
-    pid = Process.fork { exec bin/"websocketd", "--port=#{port}", "echo", "ok" }
-    sleep 2
-
+    pid = spawn bin/"websocketd", "--port=#{port}", "echo", "ok"
     begin
+      sleep 2
       assert_equal("404 page not found\n", shell_output("curl -s http://localhost:#{port}"))
     ensure
-      Process.kill 9, pid
+      Process.kill "TERM", pid
       Process.wait pid
     end
   end

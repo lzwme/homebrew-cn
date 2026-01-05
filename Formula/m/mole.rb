@@ -7,10 +7,11 @@ class Mole < Formula
   head "https://github.com/tw93/Mole.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "751052d81ac57c58dec8a99d001fad4ebe870bcae2da6dbf7d41863449f9fa07"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7eea39f28920688775317f72aaae8b2cc90d24d1ffed0aad2c4d12ae5ccf24cf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e24c0aaf6ed586fb0e6d1e7e483ed7b7313e8fa5a3142128eb02e6b3f17f2292"
-    sha256 cellar: :any_skip_relocation, sonoma:        "460b3ee491ee59d6b424603086e9e5e25aca3f3b45e7c1ca65097fb0f744d4a8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e5c74d2c6345cfdeef8bdceb1bcbb450c808c5eb61d01dfabe9311d18213edb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e087f1c94d96b223f93b8753075f570121461bf3fa7e7decfea804dfcecc1bd5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eba363e730a48e644b6f7e4cc1aef0b94298bcca5103394e6962f58d92368684"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b0b0ea267781960df9abe30ec7a5ce539062d2cf82be485cbc270c91a60bfedd"
   end
 
   depends_on "go" => :build
@@ -29,6 +30,7 @@ class Mole < Formula
     libexec.install "bin", "lib"
     bin.install "mole"
     bin.install_symlink bin/"mole" => "mo"
+    generate_completions_from_executable(bin/"mole", "completion")
   end
 
   test do

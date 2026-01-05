@@ -69,7 +69,7 @@ class TkeySshAgent < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/tkey-ssh-agent --version")
     socket = testpath/"tkey-ssh-agent.sock"
-    fork { exec bin/"tkey-ssh-agent", "--agent-socket", socket }
+    spawn bin/"tkey-ssh-agent", "--agent-socket", socket
     sleep 1
     assert_path_exists socket
   end

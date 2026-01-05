@@ -11,6 +11,11 @@ class Derby < Formula
     sha256 cellar: :any_skip_relocation, all: "a4ec775f18dc3de32bd09a237f3ed1eba99aa4b137cf4eedb529232a03e85201"
   end
 
+  # Project is retired and will have no further releases
+  # See https://db.apache.org/derby/#Derby+Retired
+  deprecate! date: "2026-01-03", because: :unsupported
+  disable! date: "2027-01-03", because: :unsupported
+
   depends_on "openjdk"
 
   def install
@@ -30,16 +35,12 @@ class Derby < Formula
   end
 
   test do
-    assert_match "libexec/lib/derby.jar] #{version}",
-                 shell_output("#{bin}/sysinfo")
+    assert_match "libexec/lib/derby.jar] #{version}", shell_output(bin/"sysinfo")
 
-    pid = fork do
-      exec "#{bin}/startNetworkServer"
-    end
-
+    pid = spawn bin/"startNetworkServer"
     begin
       sleep 12
-      exec "#{bin}/stopNetworkServer"
+      system bin/"stopNetworkServer"
     ensure
       Process.wait(pid)
     end

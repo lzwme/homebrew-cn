@@ -77,9 +77,7 @@ class Sftpgo < Formula
     ENV["SFTPGO_SFTPD__BINDINGS__0__ADDRESS"] = "127.0.0.1"
     ENV["SFTPGO_SFTPD__HOST_KEYS"] = "#{testpath}/id_ecdsa,#{testpath}/id_ed25519"
     ENV["SFTPGO_LOG_FILE_PATH"] = ""
-    pid = fork do
-      exec bin/"sftpgo", "serve", "--config-file", "#{pkgetc}/sftpgo.json"
-    end
+    pid = spawn bin/"sftpgo", "serve", "--config-file", "#{pkgetc}/sftpgo.json"
 
     sleep 5
     assert_match expected_output, shell_output("curl -s 127.0.0.1:#{http_port}/healthz")

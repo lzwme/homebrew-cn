@@ -32,12 +32,9 @@ class Pueue < Formula
   end
 
   test do
-    pid = fork do
-      exec bin/"pueued"
-    end
-    sleep 2
-
+    pid = spawn bin/"pueued"
     begin
+      sleep 2
       mkdir testpath/"Library/Preferences" # For macOS
       mkdir testpath/".config" # For Linux
 
@@ -51,6 +48,7 @@ class Pueue < Formula
       assert_match "(1 parallel): running", output
     ensure
       Process.kill("TERM", pid)
+      Process.wait(pid)
     end
 
     assert_match "pueued #{version}", shell_output("#{bin}/pueued --version")

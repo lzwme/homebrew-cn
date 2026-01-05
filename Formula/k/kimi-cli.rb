@@ -3,18 +3,18 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/95/d5/4b7d5cbc45c82fe0ad6763463c25fc0f2773307ae980fb3d78156094c963/kimi_cli-0.70.tar.gz"
-  sha256 "67c8b0f434a55fa5f5f7abe85a72ee55c40678c357240630f070e6811228a9ff"
+  url "https://files.pythonhosted.org/packages/05/a6/69f8740180e08e3d65276af399669eb3640d2de11afd2086869bfc76c37f/kimi_cli-0.72.tar.gz"
+  sha256 "aa29409b5bd94989157cd53df20f849a4c370935da3aecd15afa88e148421848"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0a21547e02c3107ac8eb0296b7e364f5b5cdee14a2fa60621ac5cb5c1e12e167"
-    sha256 cellar: :any,                 arm64_sequoia: "1756ca04c780e4b8eef454386e54b8f9d853eb78f1685fd8ce9f8af01ccc19e0"
-    sha256 cellar: :any,                 arm64_sonoma:  "c2da8335973181be900ecb420283691d99a671e822efd7b0a8e1c0ad240f8cc7"
-    sha256 cellar: :any,                 sonoma:        "193817c13f447842eba46467cf08b701d596a451fb0f81f13c77bdc515d593de"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a33bec3236ee48485b740c88d8b963c72682d9b9ff6bca23a936e41316449b39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d98480123dfcb86830dc91ec171146a43bcd18cfab46021974dc9a82345a4067"
+    sha256 cellar: :any,                 arm64_tahoe:   "0180e6adba379a0adfc5fcd1c062f56d0a698360d17ff8371b812595e50b2bc6"
+    sha256 cellar: :any,                 arm64_sequoia: "9ba7ea496a4dc69c5c9cb312773ff98f749e65b0d08b7ea3e5258d9764016ee8"
+    sha256 cellar: :any,                 arm64_sonoma:  "f31afb1694a387a4ec7621dc6e11d124311938f7de0de7febe5fb0723847cff3"
+    sha256 cellar: :any,                 sonoma:        "1ccd4fbe1e2ba618d03aafb01d05b6eafe447ceae051683025acd542d824bddd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6db634bd4aa3b03378732465491249618f4dfe470d56b12392d3f774042ea1c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7e69842f416c35d569297b823b29e79289bb4ffa7dd0ab4001b8485015ac711"
   end
 
   depends_on "pkgconf" => :build
@@ -229,8 +229,8 @@ class KimiCli < Formula
   end
 
   resource "kosong" do
-    url "https://files.pythonhosted.org/packages/2e/c1/ffeb1034ceb3a29664c90545ed1336a8bd8f05a485482abe1952f8a4b8a1/kosong-0.36.0.tar.gz"
-    sha256 "fed6d8de6bf5ad5e819afba46513a47ba720df23d7f70f33576d4ba31af53c3a"
+    url "https://files.pythonhosted.org/packages/34/03/3a53deec2a890eddaf8e89eb0242e549cc9203c46f6eb1e7f66a867a3fea/kosong-0.36.1.tar.gz"
+    sha256 "139abafc09e061bac645b064015ea7c606c4ca8aeb03aa985f011f27ba27c337"
   end
 
   resource "lazy-object-proxy" do
@@ -530,7 +530,7 @@ class KimiCli < Formula
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
     # Turn on shell completions option
-    inreplace "src/kimi_cli/cli.py", "add_completion=False", "add_completion=True"
+    inreplace "src/kimi_cli/cli/__init__.py", "add_completion=False", "add_completion=True"
 
     virtualenv_install_with_resources
 

@@ -32,9 +32,7 @@ class Webify < Formula
 
   test do
     port = free_port
-    fork do
-      exec bin/"webify", "-addr=:#{port}", "cat"
-    end
+    spawn bin/"webify", "-addr=:#{port}", "cat"
     sleep 1
     assert_equal "Homebrew", shell_output("curl -s -d Homebrew http://localhost:#{port}")
   end

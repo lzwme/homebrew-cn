@@ -24,15 +24,9 @@ class AbAv1 < Formula
   end
 
   test do
-    resource "sample-mp4" do
-      url "https://download.samplelib.com/mp4/sample-5s.mp4"
-      sha256 "05bd857af7f70bf51b6aac1144046973bf3325c9101a554bc27dc9607dbbd8f5"
-    end
+    assert_match version.to_s, shell_output("#{bin}/ab-av1 --version")
 
-    assert_match "ab-av1 #{version}", shell_output("#{bin}/ab-av1 --version")
-
-    resource("sample-mp4").stage testpath
-    system bin/"ab-av1", "auto-encode", "-i", testpath/"sample-5s.mp4"
-    assert_path_exists testpath/"sample-5s.av1.mp4"
+    system bin/"ab-av1", "encode", "-i", test_fixtures("test.mp4"), "--crf", "32", "-o", testpath/"test.av1.mp4"
+    assert_path_exists testpath/"test.av1.mp4"
   end
 end

@@ -35,19 +35,18 @@ class Shellinabox < Formula
     # https://github.com/shellinabox/shellinabox/issues/518
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
-    system "autoreconf", "-fiv"
+    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
     port = free_port
-    pid = fork do
-      system bin/"shellinaboxd", "--port=#{port}", "--disable-ssl", "--localhost-only"
-    end
+    pid = spawn bin/"shellinaboxd", "--port=#{port}", "--disable-ssl", "--localhost-only"
     sleep 1
     assert_match "ShellInABox - Make command line applications available as AJAX web applications",
                  shell_output("curl -s http://localhost:#{port}")
     Process.kill "TERM", pid
+    Process.wait pid
   end
 end

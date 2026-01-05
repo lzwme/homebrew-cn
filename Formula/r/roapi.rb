@@ -44,10 +44,8 @@ class Roapi < Formula
     (testpath/"data.csv").write "name,age\nsam,27\n"
     expected_output = '[{"name":"sam"}]'
 
+    pid = spawn bin/"roapi", "-a", "localhost:#{port}", "-t", "#{testpath}/data.csv"
     begin
-      pid = fork do
-        exec bin/"roapi", "-a", "localhost:#{port}", "-t", "#{testpath}/data.csv"
-      end
       query = "SELECT name from data"
       header = "ACCEPT: application/json"
       url = "localhost:#{port}/api/sql"

@@ -1,8 +1,8 @@
 class Cppad < Formula
   desc "Differentiation of C++ Algorithms"
   homepage "https://cppad.readthedocs.io/latest/"
-  url "https://ghfast.top/https://github.com/coin-or/CppAD/archive/refs/tags/20250000.3.tar.gz"
-  sha256 "a3a4030ae49719e88e5057e923c4c97c5ba8910e22471f22661420ce65747fbe"
+  url "https://ghfast.top/https://github.com/coin-or/CppAD/archive/refs/tags/20260000.0.tar.gz"
+  sha256 "41ec617bb1e4163da381aaa5083a152e033631e9b5e135ccdc3466aaa1dc9001"
   license "EPL-2.0"
   version_scheme 1
   head "https://github.com/coin-or/CppAD.git", branch: "master"
@@ -13,12 +13,12 @@ class Cppad < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c4ca96c223421fc69777fe2aea0bf71870cf0096ad35dfc4776a8dfbf04b8da2"
-    sha256 cellar: :any,                 arm64_sequoia: "79b692e9389231c28284fbfc67f305fa34f6c48bbb9abd6fc280807d44e8cb39"
-    sha256 cellar: :any,                 arm64_sonoma:  "07f62979a2d934260215b3a1723ff3510596bac8a2a03083280d1229205b9c0a"
-    sha256 cellar: :any,                 sonoma:        "29a9228e0f99a231764248907ceb760a819c1b992c66c5224be6ccc8375dafd0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "916e3b757043c51a31262da4ada982ad4a9656f90c71ccf76974b575d185828e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1342ad344a8979c92aebd9a78c2e5c21fc7b470fd69f93abf45a2095c4acce1f"
+    sha256 cellar: :any,                 arm64_tahoe:   "aa14284fc5488a36f4aa1dc1be45515d6d96425e4ce6156117a67de19affcc1c"
+    sha256 cellar: :any,                 arm64_sequoia: "39b11c1f3ff357ee7719ac3139fe5fcd26ec4d269c9e0d7ce804632ecbfc091f"
+    sha256 cellar: :any,                 arm64_sonoma:  "47f1e2955ac6995a50ed0948b9f430eea2a4a06a6bb8420ee886cfc60730a399"
+    sha256 cellar: :any,                 sonoma:        "cce0487a84168dc9bb427918621ffc42f61795afce0e108439b6c8e15532389e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a191c00757e8dcbb8bb90b1752deca422aa78cdd319c978d33ce84098e0a9021"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43af0c723529ed52a763fa69cc12132230ae0098f7768f81554d1adf309d050c"
   end
 
   depends_on "cmake" => :build

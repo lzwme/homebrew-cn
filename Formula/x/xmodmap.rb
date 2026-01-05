@@ -35,9 +35,7 @@ class Xmodmap < Formula
   end
 
   test do
-    fork do
-      exec Formula["xorg-server"].bin/"Xvfb", ":1"
-    end
+    spawn Formula["xorg-server"].bin/"Xvfb", ":1"
     ENV["DISPLAY"] = ":1"
     sleep 10
     sleep 10 if OS.mac? && Hardware::CPU.intel?

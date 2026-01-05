@@ -49,7 +49,7 @@ class OryHydra < Formula
           port: #{admin_port}
     YAML
 
-    fork { exec bin/"hydra", "serve", "all", "--config", "#{testpath}/config.yaml" }
+    spawn bin/"hydra", "serve", "all", "--config", "#{testpath}/config.yaml"
     sleep 20
 
     endpoint = "http://127.0.0.1:#{admin_port}/"

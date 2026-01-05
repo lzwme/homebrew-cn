@@ -80,12 +80,7 @@ class Rtags < Formula
       42
     EOS
 
-    rdm = fork do
-      $stdout.reopen(File::NULL)
-      $stderr.reopen(File::NULL)
-      exec "#{bin}/rdm", "--exclude-filter=\"\"", "-L", "log"
-    end
-
+    rdm = spawn "#{bin}/rdm", "--exclude-filter=\"\"", "-L", "log", [:out, :err] => File::NULL
     begin
       sleep 5
       pipe_output("#{bin}/rc -c", "clang -c #{testpath}/src/foo.c", 0)
@@ -93,7 +88,7 @@ class Rtags < Formula
       assert_match "foo.c:1:6", shell_output("#{bin}/rc -f #{testpath}/src/foo.c:5:3")
       system bin/"rc", "-q"
     ensure
-      Process.kill 9, rdm
+      Process.kill "TERM", rdm
       Process.wait rdm
     end
   end

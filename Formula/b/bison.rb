@@ -63,7 +63,7 @@ class Bison < Formula
     EOS
     system bin/"bison", "test.y"
     system ENV.cxx, "test.tab.c", "-o", "test"
-    assert_equal "pass", shell_output("echo \"((()(())))()\" | ./test")
-    assert_equal "fail", shell_output("echo \"())\" | ./test")
+    assert_equal "pass", pipe_output("./test", "((()(())))()\n", 0)
+    assert_equal "fail", pipe_output("./test", "())\n", 0)
   end
 end

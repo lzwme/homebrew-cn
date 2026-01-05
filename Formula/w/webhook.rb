@@ -37,9 +37,7 @@ class Webhook < Formula
     YAML
 
     port = free_port
-    fork do
-      exec bin/"webhook", "-hooks", "hooks.yaml", "-port", port.to_s
-    end
+    spawn bin/"webhook", "-hooks", "hooks.yaml", "-port", port.to_s
     sleep 1
 
     system "curl", "localhost:#{port}/hooks/test"

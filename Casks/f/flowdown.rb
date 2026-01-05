@@ -1,6 +1,6 @@
 cask "flowdown" do
-  version "4.4.5"
-  sha256 "21f99d8bc8984d6bda7bbb0ba98a302c0bfa4cafba6fed45ad185ff0d93c8355"
+  version "4.4.8"
+  sha256 "c2aecb5ad13863769c3a67109f7856c24bc6b007737216c1fe100609226a696c"
 
   url "https://ghfast.top/https://github.com/Lakr233/FlowDown/releases/download/#{version}/FlowDown-#{version}.zip",
       verified: "github.com/Lakr233/FlowDown/"
@@ -14,7 +14,7 @@ cask "flowdown" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: ">= :ventura"
 
   app "FlowDown.app"
 

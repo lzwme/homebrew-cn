@@ -43,8 +43,8 @@ class ShadowsocksRust < Formula
           "local_port":#{local_port}
       }
     JSON
-    fork { exec bin/"ssserver", "-c", testpath/"server.json" }
-    fork { exec bin/"sslocal", "-c", testpath/"local.json" }
+    spawn bin/"ssserver", "-c", testpath/"server.json"
+    spawn bin/"sslocal", "-c", testpath/"local.json"
     sleep 3
     sleep 3 if OS.mac? && Hardware::CPU.intel?
 

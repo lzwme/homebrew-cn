@@ -41,12 +41,8 @@ class Questdb < Formula
 
     mkdir_p testpath/"data"
     begin
-      fork do
-        exec bin/"questdb", "start", "-d", testpath/"data"
-      end
-      sleep 30
-      output = shell_output("curl -Is localhost:9000/index.html")
-      sleep 8
+      spawn bin/"questdb", "start", "-d", testpath/"data"
+      output = shell_output("curl --head --silent --retry 5 --retry-connrefused localhost:9000/index.html")
       assert_match "questDB", output
     ensure
       system bin/"questdb", "stop"

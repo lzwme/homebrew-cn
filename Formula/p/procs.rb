@@ -32,7 +32,7 @@ class Procs < Formula
   test do
     output = shell_output(bin/"procs")
     count = output.lines.count
-    assert count > 2
-    assert output.start_with?(" PID:")
+    assert_operator 2, :<, count
+    assert_match(/^ PID:/, output)
   end
 end

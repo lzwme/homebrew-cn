@@ -75,15 +75,13 @@ class Squid < Formula
   test do
     assert_match version.to_s, shell_output("#{sbin}/squid -v")
 
-    pid = fork do
-      exec "#{sbin}/squid"
-    end
-    sleep 2
+    pid = spawn "#{sbin}/squid"
 
     begin
-      system "#{sbin}/squid", "-k", "check"
+      sleep 2
+      system sbin/"squid", "-k", "check"
     ensure
-      exec "#{sbin}/squid -k interrupt"
+      system sbin/"squid", "-k", "interrupt"
       Process.wait(pid)
     end
   end

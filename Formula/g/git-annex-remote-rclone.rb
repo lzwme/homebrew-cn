@@ -30,10 +30,10 @@ class GitAnnexRemoteRclone < Formula
     system "git", "annex", "init"
 
     (testpath/"Hello.txt").write "Hello!"
-    assert !File.symlink?("Hello.txt")
+    refute_predicate testpath/"Hello.txt", :symlink?
     assert_match(/^add Hello.txt.*ok.*\(recording state in git\.\.\.\)/m, shell_output("git annex add ."))
     system "git", "commit", "-a", "-m", "Initial Commit"
-    assert File.symlink?("Hello.txt")
+    assert_predicate testpath/"Hello.txt", :symlink?
 
     ENV["RCLONE_CONFIG_TMPLOCAL_TYPE"]="local"
     system "git", "annex", "initremote", "testremote", "type=external", "externaltype=rclone",

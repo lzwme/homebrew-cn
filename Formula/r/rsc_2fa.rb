@@ -33,7 +33,7 @@ class Rsc2fa < Formula
     out = shell_output("#{bin}/2fa -help 2>&1", 2)
     assert_match(/^usage:/, out)
 
-    out = shell_output("echo AAAAAAAAAAAAAAAA | #{bin}/2fa -add example 2>&1")
+    out = pipe_output("#{bin}/2fa -add example 2>&1", "AAAAAAAAAAAAAAAA\n", 0)
     assert_match(/^2fa key for example:/, out)
 
     out = shell_output("#{bin}/2fa example")

@@ -45,9 +45,7 @@ class Podsync < Formula
         url = "https://www.youtube.com/channel/UCxC5Ls6DwqV0e-CYcAKkExQ"
     TOML
 
-    pid = fork do
-      exec bin/"podsync"
-    end
+    pid = spawn bin/"podsync"
     sleep 3
 
     Process.kill("SIGINT", pid)

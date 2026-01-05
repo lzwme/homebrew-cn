@@ -1,20 +1,18 @@
 class Opkssh < Formula
   desc "Enables SSH to be used with OpenID Connect"
   homepage "https://eprint.iacr.org/2023/296"
-  url "https://ghfast.top/https://github.com/openpubkey/opkssh/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "71796c060705411e98fc7d11d944c531cea1d09df14cc1331c5647a31483de41"
+  url "https://ghfast.top/https://github.com/openpubkey/opkssh/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "120b2fafeffb8043c39d8b6e0f799a5b4c1e46a6b512307a1f7f8138d2280044"
   license "Apache-2.0"
   head "https://github.com/openpubkey/opkssh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "44ad548c145cb779e6d50733b58db55b117d4329729b70fe0cffdc3279498c24"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44ad548c145cb779e6d50733b58db55b117d4329729b70fe0cffdc3279498c24"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44ad548c145cb779e6d50733b58db55b117d4329729b70fe0cffdc3279498c24"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "44ad548c145cb779e6d50733b58db55b117d4329729b70fe0cffdc3279498c24"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a35524a4291410b6ceea50271ae654dd7eb893739a1c40968e734c08e82b5ff"
-    sha256 cellar: :any_skip_relocation, ventura:       "4a35524a4291410b6ceea50271ae654dd7eb893739a1c40968e734c08e82b5ff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "81e5ae721162aa37d4c09a40aca5e253e21cf32e601b9a8ed0abbc22fe2e7078"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "164ecd36445fc15136df17384e10271908eedece6c8e1b1a1b4f56a7d8fcf782"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f44f006b584643ae30b1c6ed2f1fd8252c0aecd1ab77c3606a891f56b62c8d39"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f44f006b584643ae30b1c6ed2f1fd8252c0aecd1ab77c3606a891f56b62c8d39"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f44f006b584643ae30b1c6ed2f1fd8252c0aecd1ab77c3606a891f56b62c8d39"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6170ce79392f48407af9785d880bb4829d38a97d2eed72ccd2a5f595d4de7c41"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8664694a6f31b0c4a633105133b10ca86e51d06d70a8bb58faae7c4f6ec54d8f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68689bc8ea2e223a5b49f5ccc0a74b0c34e7ea84d719f2f8d71f6349590858c5"
   end
 
   depends_on "go" => :build

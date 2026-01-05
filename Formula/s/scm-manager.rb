@@ -42,10 +42,11 @@ class ScmManager < Formula
       s.gsub! "port: 8080", "port: #{port}"
     end
     ENV["JETTY_BASE"] = testpath
-    pid = fork { exec bin/"scm-server" }
-    sleep 15
-    assert_match "<title>SCM-Manager</title>", shell_output("curl http://localhost:#{port}/scm/")
+    pid = spawn bin/"scm-server"
+    output = shell_output("curl --silent --retry 5 --retry-connrefused http://localhost:#{port}/scm/")
+    assert_match "<title>SCM-Manager</title>", output
   ensure
     Process.kill "TERM", pid
+    Process.wait pid
   end
 end

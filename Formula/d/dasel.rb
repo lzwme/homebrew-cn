@@ -23,7 +23,7 @@ class Dasel < Formula
   end
 
   test do
-    assert_equal "\"Tom\"", shell_output("echo '{\"name\": \"Tom\"}' | #{bin}/dasel -i json 'name'").chomp
+    assert_equal "\"Tom\"", pipe_output("#{bin}/dasel -i json 'name'", '{"name": "Tom"}', 0).chomp
     assert_match version.to_s, shell_output("#{bin}/dasel version")
   end
 end

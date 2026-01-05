@@ -70,15 +70,12 @@ class WildflyAs < Formula
     mkdir testpath/"standalone"
     mkdir testpath/"standalone/deployments"
     cp_r libexec/"standalone/configuration", testpath/"standalone"
-    fork do
-      exec opt_libexec/"bin/standalone.sh", "--server-config=standalone.xml",
-                                            "-Djboss.http.port=#{port}",
-                                            "-Djboss.server.base.dir=#{testpath}/standalone"
-    end
-    sleep 10
-    sleep 10 if Hardware::CPU.intel?
-
+    spawn opt_libexec/"bin/standalone.sh", "--server-config=standalone.xml",
+                                           "-Djboss.http.port=#{port}",
+                                           "-Djboss.server.base.dir=#{testpath}/standalone"
     begin
+      sleep 10
+      sleep 10 if Hardware::CPU.intel?
       system "curl", "-X", "GET", "localhost:#{port}/"
       output = shell_output("curl -s -X GET localhost:#{port}")
       assert_match "Welcome to WildFly", output

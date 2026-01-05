@@ -24,6 +24,10 @@ class Fsw < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8eda4b9b2f8597f3fab6330e173bcfdfbd77e41fc406f22be2235055d4d555af"
   end
 
+  # https://github.com/emcrisostomo/fsw/commit/36152c3d1ea3495420bdef809ddaff0fa972ab77
+  deprecate! date: "2026-01-04", because: :unmaintained, replacement_formula: "fswatch"
+  disable! date: "2027-01-04", because: :unmaintained, replacement_formula: "fswatch"
+
   def install
     ENV.append "CXXFLAGS", "-stdlib=libc++" if OS.mac?
     system "./configure", "--disable-dependency-tracking",

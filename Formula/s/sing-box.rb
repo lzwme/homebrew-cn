@@ -55,7 +55,7 @@ class SingBox < Formula
         ]
       }
     JSON
-    server = fork { exec bin/"sing-box", "run", "-D", testpath, "-c", testpath/"shadowsocks.json" }
+    server = spawn bin/"sing-box", "run", "-D", testpath, "-c", testpath/"shadowsocks.json"
 
     sing_box_port = free_port
     (testpath/"config.json").write <<~JSON
@@ -79,15 +79,15 @@ class SingBox < Formula
       }
     JSON
     system bin/"sing-box", "check", "-D", testpath, "-c", "config.json"
-    client = fork { exec bin/"sing-box", "run", "-D", testpath, "-c", "config.json" }
+    client = spawn bin/"sing-box", "run", "-D", testpath, "-c", "config.json"
 
-    sleep 3
     begin
+      sleep 3
       system "curl", "--socks5", "127.0.0.1:#{sing_box_port}", "github.com"
     ensure
-      Process.kill 9, server
+      Process.kill "TERM", server
+      Process.kill "TERM", client
       Process.wait server
-      Process.kill 9, client
       Process.wait client
     end
   end

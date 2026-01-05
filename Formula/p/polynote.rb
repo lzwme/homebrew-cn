@@ -105,12 +105,9 @@ class Polynote < Formula
         dir: #{testpath}/notebooks
     YAML
 
+    pid = spawn bin/"polynote", "--config", "#{testpath}/config.yml"
     begin
-      pid = fork do
-        exec bin/"polynote", "--config", "#{testpath}/config.yml"
-      end
       sleep 5
-
       assert_match "<title>Polynote</title>", shell_output("curl -s 127.0.0.1:#{port}")
     ensure
       Process.kill("TERM", pid)

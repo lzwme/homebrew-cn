@@ -33,12 +33,9 @@ class TofuLs < Formula
   test do
     port = free_port
 
-    pid = fork do
-      exec "#{bin}/tofu-ls serve -port #{port} /dev/null"
-    end
-    sleep 2
-
+    pid = spawn bin/"tofu-ls", "serve", "-port", port.to_s, File::NULL
     begin
+      sleep 2
       tcp_socket = TCPSocket.new("localhost", port)
       tcp_socket.puts <<~EOF
         Content-Length: 59

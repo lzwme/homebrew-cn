@@ -30,6 +30,6 @@ class Html2markdown < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/html2markdown --version")
 
-    assert_match "**important**", shell_output("echo '<strong>important</strong>' | #{bin}/html2markdown")
+    assert_match "**important**", pipe_output(bin/"html2markdown", "<strong>important</strong>", 0)
   end
 end

@@ -41,9 +41,7 @@ class Tika < Formula
     assert_equal "application/pdf\n", shell_output("#{bin}/tika --detect #{pdf}")
 
     port = free_port
-    pid = fork do
-      exec bin/"tika-rest-server", "--port=#{port}"
-    end
+    pid = spawn bin/"tika-rest-server", "--port=#{port}"
 
     sleep 10
     response = shell_output("curl -s -i http://localhost:#{port}")

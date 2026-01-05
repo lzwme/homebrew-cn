@@ -30,17 +30,15 @@ class Vitess < Formula
     peer_port = free_port
     cell = "testcell"
 
-    fork do
-      exec Formula["etcd"].opt_bin/"etcd",
-           "--name=vitess_test",
-           "--data-dir=#{testpath}/etcd",
-           "--listen-client-urls=http://#{etcd_server}",
-           "--advertise-client-urls=http://#{etcd_server}",
-           "--listen-peer-urls=http://localhost:#{peer_port}",
-           "--initial-advertise-peer-urls=http://localhost:#{peer_port}",
-           "--initial-cluster=vitess_test=http://localhost:#{peer_port}",
-           "--auto-compaction-retention=1"
-    end
+    spawn Formula["etcd"].opt_bin/"etcd",
+          "--name=vitess_test",
+          "--data-dir=#{testpath}/etcd",
+          "--listen-client-urls=http://#{etcd_server}",
+          "--advertise-client-urls=http://#{etcd_server}",
+          "--listen-peer-urls=http://localhost:#{peer_port}",
+          "--initial-advertise-peer-urls=http://localhost:#{peer_port}",
+          "--initial-cluster=vitess_test=http://localhost:#{peer_port}",
+          "--auto-compaction-retention=1"
 
     sleep 3
 
@@ -55,27 +53,23 @@ class Vitess < Formula
            "put", "/vitess/#{cell}", ""
 
     # Run vtctl with etcd2 implementation but using etcd v3 API
-    fork do
-      exec bin/"vtctl", "--topo_implementation", "etcd2",
-                        "--topo_global_server_address", etcd_server,
-                        "--topo_global_root", testpath/"global",
-                        "VtctldCommand", "AddCellInfo",
-                        "--root", testpath/cell,
-                        "--server-address", etcd_server,
-                        cell
-    end
+    spawn bin/"vtctl", "--topo_implementation", "etcd2",
+                       "--topo_global_server_address", etcd_server,
+                       "--topo_global_root", testpath/"global",
+                       "VtctldCommand", "AddCellInfo",
+                       "--root", testpath/cell,
+                       "--server-address", etcd_server,
+                       cell
     sleep 1
 
     port = free_port
-    fork do
-      exec bin/"vtgate", "--topo_implementation", "etcd2",
-                         "--topo_global_server_address", etcd_server,
-                         "--topo_global_root", testpath/"global",
-                         "--tablet_types_to_wait", "PRIMARY,REPLICA",
-                         "--cell", cell,
-                         "--cells_to_watch", cell,
-                         "--port", port.to_s
-    end
+    spawn bin/"vtgate", "--topo_implementation", "etcd2",
+                        "--topo_global_server_address", etcd_server,
+                        "--topo_global_root", testpath/"global",
+                        "--tablet_types_to_wait", "PRIMARY,REPLICA",
+                        "--cell", cell,
+                        "--cells_to_watch", cell,
+                        "--port", port.to_s
     sleep 8
 
     output = shell_output("curl -s localhost:#{port}/debug/health")

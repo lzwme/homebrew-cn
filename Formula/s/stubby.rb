@@ -74,9 +74,7 @@ class Stubby < Formula
     output = shell_output("#{bin}/stubby -i -C stubby_test.yml")
     assert_match "bindata for 8.8.8.8", output
 
-    fork do
-      exec bin/"stubby", "-C", testpath/"stubby_test.yml"
-    end
+    spawn bin/"stubby", "-C", testpath/"stubby_test.yml"
     sleep 2
 
     assert_match "status: NOERROR", shell_output("dig @127.0.0.1 -p 5553 getdnsapi.net")

@@ -34,9 +34,7 @@ class Teku < Formula
       --p2p-enabled=false
 
     ]
-    fork do
-      exec bin/"teku", *test_args
-    end
+    spawn bin/"teku", *test_args
     sleep 15
 
     output = shell_output("curl -sS -XGET http://127.0.0.1:#{rest_port}/eth/v1/node/syncing")

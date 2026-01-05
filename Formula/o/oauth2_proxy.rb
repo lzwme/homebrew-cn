@@ -24,9 +24,7 @@ class Oauth2Proxy < Formula
   end
 
   def caveats
-    <<~EOS
-      #{etc}/oauth2-proxy/oauth2-proxy.cfg must be filled in.
-    EOS
+    "#{etc}/oauth2-proxy/oauth2-proxy.cfg must be filled in."
   end
 
   service do
@@ -36,30 +34,19 @@ class Oauth2Proxy < Formula
   end
 
   test do
-    require "timeout"
-
     port = free_port
-
-    pid = fork do
-      exec "#{bin}/oauth2-proxy",
-        "--client-id=testing",
-        "--client-secret=testing",
-        # Cookie secret must be 16, 24, or 32 bytes to create an AES cipher
-        "--cookie-secret=0b425616d665d89fb6ee917b7122b5bf",
-        "--http-address=127.0.0.1:#{port}",
-        "--upstream=file:///tmp",
-        "--email-domain=*"
-    end
+    pid = spawn "#{bin}/oauth2-proxy",
+                "--client-id=testing",
+                "--client-secret=testing",
+                # Cookie secret must be 16, 24, or 32 bytes to create an AES cipher
+                "--cookie-secret=0b425616d665d89fb6ee917b7122b5bf",
+                "--http-address=127.0.0.1:#{port}",
+                "--upstream=file:///tmp",
+                "--email-domain=*"
 
     begin
-      Timeout.timeout(10) do
-        loop do
-          Utils.popen_read "curl", "-s", "http://127.0.0.1:#{port}"
-          break if $CHILD_STATUS.exitstatus.zero?
-
-          sleep 1
-        end
-      end
+      output = shell_output("curl --silent --retry 5 --retry-connrefused http://127.0.0.1:#{port}")
+      assert_match "<title>Sign In</title>", output
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

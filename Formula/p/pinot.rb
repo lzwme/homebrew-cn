@@ -36,25 +36,13 @@ class Pinot < Formula
     zkport = free_port
     controller_port = free_port
 
-    zkpid = fork do
-      exec "#{opt_bin}/pinot-admin",
-        "StartZookeeper",
-        "-zkPort",
-        zkport.to_s
-    end
-
+    zkpid = spawn "#{opt_bin}/pinot-admin", "StartZookeeper", "-zkPort", zkport.to_s
     sleep 10
     sleep 30 if Hardware::CPU.intel?
 
-    controller_pid = fork do
-      exec "#{opt_bin}/pinot-admin",
-        "StartController",
-        "-zkAddress",
-        "localhost:#{zkport}",
-        "-controllerPort",
-        controller_port.to_s
-    end
-
+    controller_pid = spawn "#{opt_bin}/pinot-admin", "StartController",
+                           "-zkAddress", "localhost:#{zkport}",
+                           "-controllerPort", controller_port.to_s
     sleep 30
     sleep 30 if Hardware::CPU.intel?
 

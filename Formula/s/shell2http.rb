@@ -30,9 +30,7 @@ class Shell2http < Formula
 
   test do
     port = free_port
-    pid = fork do
-      exec bin/"shell2http", "-port", port.to_s, "/echo", "echo brewtest"
-    end
+    pid = spawn bin/"shell2http", "-port", port.to_s, "/echo", "echo brewtest"
     sleep 1
     output = shell_output("curl -s http://localhost:#{port}")
     assert_match "Served by shell2http/#{version}", output

@@ -1,8 +1,8 @@
 class Privoxy < Formula
   desc "Advanced filtering web proxy"
   homepage "https://www.privoxy.org/"
-  url "https://downloads.sourceforge.net/project/ijbswa/Sources/4.0.0%20%28stable%29/privoxy-4.0.0-stable-src.tar.gz"
-  sha256 "c08e2ba0049307017bf9d8a63dd2a0dfb96aa0cdeb34ae007776e63eba62a26f"
+  url "https://downloads.sourceforge.net/project/ijbswa/Sources/4.1.0%20%28stable%29/privoxy-4.1.0-stable-src.tar.gz"
+  sha256 "23e4686e5848c74cb680c09c2811f0357739ecfe641f9c4072ee42399092c97b"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class Privoxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "94236b3fa68f8bf7018b3665783ba73d85eb752d785e36e5f2e64a635125bb32"
-    sha256 cellar: :any,                 arm64_sequoia: "d83863aa3c2b997f07b85eb2c0508411720d70c7d9e2d8a0d3aad6f6570dd4c7"
-    sha256 cellar: :any,                 arm64_sonoma:  "5ffeba4e02190b9ef05a1991918b68f35816922b1e5ea18222823abd3b04efae"
-    sha256 cellar: :any,                 arm64_ventura: "320b704c330b960bff73567056912529c9840b7be022b2fa36d336755fab634e"
-    sha256 cellar: :any,                 sonoma:        "890bbcfe55da09152be6367010e6a102ea9163b0e95c76a93051f41fc069a84d"
-    sha256 cellar: :any,                 ventura:       "87f744512b9c327b249c529495b8604cb6e4b0dbcd4bccbe8380e300dc1dfde8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "44e368da9249571e6f5cc634b511d39adf5dc28c8cf667a893740a9201807e5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "deeadf7f6f8e636fecafd58b7b3c201f1303f7b971af0667d43c54ccf3977bc7"
+    sha256 cellar: :any,                 arm64_tahoe:   "711388f3a2676dfdbd54e2653f477c1f75b08702efb67fe45785d92ed1c7f47e"
+    sha256 cellar: :any,                 arm64_sequoia: "0cc5e99582a9045a4a09b818eea04c6a2d44b0cf429b8616e95b5263142df2a9"
+    sha256 cellar: :any,                 arm64_sonoma:  "689b7feae3d74e45dd819b5fc99660465622b03d7317ee183c1baf3ba30882f4"
+    sha256 cellar: :any,                 sonoma:        "fd44e98d51314e7ac4d518684d7931a1baf48aa34e946630c6a15aad737a0065"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7832b8650f419d38f63f27f48c5a669208dfd714d5469cfe5ca7cb0d8901519c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fda2b1458d6b7067b029dc05e8f4c1c1d5b9d19fab689f052f8431276248b0a7"
   end
 
   depends_on "autoconf" => :build

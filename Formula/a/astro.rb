@@ -46,7 +46,7 @@ class Astro < Formula
       assert_path_exists testpath/".astro/config.yaml"
     end
 
-    run_output = shell_output("echo 'test@invalid.io' | #{bin}/astro login astronomer.io --token-login=test", 1)
+    run_output = pipe_output("#{bin}/astro login astronomer.io --token-login=test", "test@invalid.io", 1)
     assert_match(/^Welcome to the Astro CLI*/, run_output)
   end
 end

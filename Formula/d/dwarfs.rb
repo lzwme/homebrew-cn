@@ -108,7 +108,7 @@ class Dwarfs < Formula
     # get JSON info about the image
     info = JSON.parse(shell_output("#{bin}/dwarfsck test.dwarfs -j"))
     assert_equal info["created_by"], "libdwarfs v#{version}"
-    assert info["inode_count"] >= 10
+    assert_operator 10, :<=, info["inode_count"]
 
     # extract the image
     system bin/"dwarfsextract", "-i", "test.dwarfs"

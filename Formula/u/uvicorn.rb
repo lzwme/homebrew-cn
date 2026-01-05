@@ -98,9 +98,7 @@ class Uvicorn < Formula
     PYTHON
 
     port = free_port
-    pid = fork do
-      exec bin/"uvicorn", "--port=#{port}", "example:app"
-    end
+    pid = spawn bin/"uvicorn", "--port=#{port}", "example:app"
 
     assert_match "Hello, Homebrew!", shell_output("curl --silent --retry 5 --retry-connrefused 127.0.0.1:#{port}/")
   ensure

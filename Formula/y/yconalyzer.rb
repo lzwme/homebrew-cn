@@ -34,11 +34,18 @@ class Yconalyzer < Formula
   end
 
   def install
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    # Workaround for error: 'strptime' was not declared in this scope
+    # Upstream is not maintained
+    ENV.append_to_cflags "-include time.h"
+
+    system "./configure", "--mandir=#{man}", *std_configure_args
     system "make"
     chmod 0755, "./install-sh"
     system "make", "install"
+  end
+
+  test do
+    output = shell_output("#{bin}/yconalyzer -p 80 -r #{test_fixtures("test.pcap")}")
+    assert_match "Avg Server Data: 311 bytes", output
   end
 end

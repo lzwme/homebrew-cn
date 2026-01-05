@@ -3,19 +3,18 @@ class Bazarr < Formula
 
   desc "Companion to Sonarr and Radarr for managing and downloading subtitles"
   homepage "https://www.bazarr.media"
-  url "https://ghfast.top/https://github.com/morpheus65535/bazarr/releases/download/v1.5.2/bazarr.zip"
-  sha256 "63519d9855e5b84c947b18d72fa36dfa9341a040879d1079bfde2fabfe8ab30e"
+  url "https://ghfast.top/https://github.com/morpheus65535/bazarr/releases/download/v1.5.4/bazarr.zip"
+  sha256 "cad2afdf10e3f654cd4e95013193edb91bdc31885a3405348253f3339ebd1dd6"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/morpheus65535/bazarr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "280d7f21274ef211e8cf910eb6b75543742bd2cb75277c3eaa29f852fcb8284a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3118dd4a74161ef8752c9e5ee55ac95d81504858e697b14e40b9030907ab01b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ff3c21d66b660bbe256035a7bb9c55e4688beb08799a1289f19758185d88761"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6c6ed4b1bfa50dd33fcdc32c2b354c4a97d9a8b54b661d0ca9aec099dbef64f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eaa66d3244da0df7374e603c8bbcbaf95fefbb10d7c617c5071ea187ae20278c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78cb9837b2adc294bfb7aa9fd66dfefb85d2b548d960d439debe2b9cd315db9b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c789c89b17af743fc6a4e5d296a6ecbe75e4ca3f89ab439a4f8938590afbc0cc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b6a1b460cae6179b38a653acac1817900397f8b7655622386289e0099e8249d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a77e435c77ce6265ab627ecc6ff14aa393d83221ab682891c1f62b1e13d5f1c1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d1bb10a522bbef19b559ced092317dcbab0089f9d332f80ac4c6455b9cbcab4b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee2b071e5dbc9efbe5a502ffaf9fa1754002a7cff4bb05f2316e5278bd28c19b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66b10d7ccee455482b4e7e4cc4dfab74e8500f9044389dfb8e13b14c922ace0e"
   end
 
   depends_on "node" => :build
@@ -115,7 +114,7 @@ class Bazarr < Formula
       Timeout.timeout(45) do
         stderr.each do |line|
           refute_match "ERROR", line unless line.match? "Error trying to get releases from Github"
-          break if line.include? "BAZARR is started and waiting for requests on: http://0.0.0.0:#{port}"
+          break if line.include? "BAZARR is started and waiting for requests on: http://***.***.***.***:#{port}"
         end
         assert_match "<title>Bazarr</title>", shell_output("curl --silent http://localhost:#{port}")
       end

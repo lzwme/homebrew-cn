@@ -51,7 +51,7 @@ class Serveit < Formula
 
   test do
     port = free_port
-    pid = fork { exec bin/"serveit", "-p", port.to_s }
+    pid = spawn bin/"serveit", "-p", port.to_s
     sleep 2
     assert_match(/Listing for/, shell_output("curl localhost:#{port}"))
   ensure

@@ -18,7 +18,10 @@ class Flash < Formula
   test do
     cp test_fixtures("test.dmg.gz"), "test.dmg.gz"
     system "gunzip", "test.dmg"
-    output = shell_output("echo foo | #{bin}/flash --device /dev/disk42 test.dmg", 1)
-    assert_match "Please answer yes or no.", output
+    output = pipe_output("#{bin}/flash --device /dev/disk42 test.dmg", "foo\n", 1)
+    # On Linux, need `hdparm` installed by system package manager as it is run
+    # via `sudo` which will not have Homebrew's bin in PATH.
+    expected = OS.mac? ? "Please answer yes or no." : "No 'hdparm' command found"
+    assert_match expected, output
   end
 end

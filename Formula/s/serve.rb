@@ -32,9 +32,7 @@ class Serve < Formula
 
   test do
     port = free_port
-    pid = fork do
-      exec "#{bin}/serve -port #{port}"
-    end
+    pid = spawn bin/"serve", "-port", port.to_s
     sleep 1
     output = shell_output("curl -sI http://localhost:#{port}")
     assert_match(/200 OK/m, output)

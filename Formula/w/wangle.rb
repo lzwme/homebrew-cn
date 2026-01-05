@@ -68,7 +68,7 @@ class Wangle < Formula
     system "cmake", "--build", "build"
 
     port = free_port
-    fork { exec testpath/"build/EchoServer", "-port", port.to_s }
+    spawn testpath/"build/EchoServer", "-port", port.to_s
     sleep 30
 
     require "pty"

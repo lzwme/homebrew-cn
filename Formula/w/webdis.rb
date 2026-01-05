@@ -41,9 +41,7 @@ class Webdis < Formula
     cp etc/"webdis.json", testpath/"webdis.json"
     inreplace "webdis.json", "7379", port.to_s
 
-    server = fork do
-      exec bin/"webdis", "webdis.json"
-    end
+    server = spawn bin/"webdis", "webdis.json"
     sleep 2
     # Test that the response is from webdis
     assert_match(/Server: Webdis/, shell_output("curl --silent -XGET -I http://localhost:#{port}/PING"))
