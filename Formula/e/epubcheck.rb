@@ -16,4 +16,8 @@ class Epubcheck < Formula
     libexec.install jarname, "lib"
     bin.write_jar_script libexec/jarname, "epubcheck"
   end
+
+  test do
+    assert_match "No errors or warnings detected", shell_output("#{bin}/epubcheck #{test_fixtures("test.epub")}")
+  end
 end

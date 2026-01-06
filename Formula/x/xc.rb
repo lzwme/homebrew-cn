@@ -1,20 +1,18 @@
 class Xc < Formula
   desc "Markdown defined task runner"
   homepage "https://xcfile.dev/"
-  url "https://ghfast.top/https://github.com/joerdav/xc/archive/refs/tags/v0.8.6.tar.gz"
-  sha256 "142c28aafa454b461b2950d980f0a8a5d89b59fb9032bbe23ca1015472bff691"
+  url "https://ghfast.top/https://github.com/joerdav/xc/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "afcb5e1fbd1be5f0b6dcb802e02c96527ac0e96ddeb47471b8ad4056f91ccc72"
   license "MIT"
   head "https://github.com/joerdav/xc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03d65a6b086162b16edbf2c1fdd19712b0d82396c17e6ce51c66f65bbcbad2f1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd1805689cb9420c2b7e6430f9f7365e9b58cf815cacc77f6f651d94aced9789"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd1805689cb9420c2b7e6430f9f7365e9b58cf815cacc77f6f651d94aced9789"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cd1805689cb9420c2b7e6430f9f7365e9b58cf815cacc77f6f651d94aced9789"
-    sha256 cellar: :any_skip_relocation, sonoma:        "53e4ba82822edc0b6fd7644a9671f18a9936db0daa8e021367bbf4dda8f602ba"
-    sha256 cellar: :any_skip_relocation, ventura:       "53e4ba82822edc0b6fd7644a9671f18a9936db0daa8e021367bbf4dda8f602ba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1399a1f09e5a6191cace90c94185a077f1f22ec82e2a83e4ec7ea5702e0ca56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8a043102c801801a4a603a0aa813513a40d32f957fbfe0355e7c13cb9ede630"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6f689507921d13ac9c5c3b31858a07034fdde3c9b2745cff3965bba02b8de3b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f689507921d13ac9c5c3b31858a07034fdde3c9b2745cff3965bba02b8de3b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f689507921d13ac9c5c3b31858a07034fdde3c9b2745cff3965bba02b8de3b7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e56d4eef3826dcd65197d0b5f38eb49632d374163b59af75695050645018d1f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "61c8010926e5f1fa66da4eb63c21dafe8e5f92febd5de72d3d542f309a25c3c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "965b9b02792fdfae0f1072431a50dea31e8df09bde42521c3b2eadb9432b5c09"
   end
 
   depends_on "go" => :build

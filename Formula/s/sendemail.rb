@@ -1,18 +1,18 @@
 class Sendemail < Formula
   desc "Email program for sending SMTP mail"
   homepage "http://caspian.dotconf.net/menu/Software/SendEmail/"
-  url "http://caspian.dotconf.net/menu/Software/SendEmail/sendEmail-v1.56.tar.gz"
+  url "https://deb.debian.org/debian/pool/main/s/sendemail/sendemail_1.56.orig.tar.gz"
+  mirror "http://caspian.dotconf.net/menu/Software/SendEmail/sendEmail-v1.56.tar.gz"
   sha256 "6dd7ef60338e3a26a5e5246f45aa001054e8fc984e48202e4b0698e571451ac0"
   license "GPL-2.0-or-later"
-
-  livecheck do
-    skip "Not actively developed or maintained"
-  end
 
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, all: "113001c5e97ed667b4f8401c335b3a337a7354b1562ca8b40b6499e6cdb68278"
   end
+
+  # Upstream homepage is gone
+  deprecate! date: "2026-01-05", because: :repo_removed
 
   # Reported upstream: https://web.archive.org/web/20191013154932/caspian.dotconf.net/menu/Software/SendEmail/#comment-1119965648
   patch do

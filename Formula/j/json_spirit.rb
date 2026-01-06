@@ -50,4 +50,31 @@ class JsonSpirit < Formula
     system "cmake", "--build", "build_shared"
     system "cmake", "--install", "build_shared"
   end
+
+  test do
+    # https://github.com/png85/json_spirit/blob/master/README.md#writing-json
+    (testpath/"test.cpp").write <<~CPP
+      #include <json_spirit.h>
+      #include <fstream>
+
+      int main(void) {
+        json_spirit::Object addr_obj;
+        addr_obj.push_back(json_spirit::Pair("house_number", 42));
+        addr_obj.push_back(json_spirit::Pair("road", "East Street"));
+        addr_obj.push_back(json_spirit::Pair("town", "Newtown"));
+
+        std::ofstream os("address.json");
+        write(addr_obj, os, json_spirit::pretty_print);
+        os.close();
+        return 0;
+      }
+    CPP
+
+    system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", "-I#{include}/json_spirit", "-L#{lib}", "-ljson_spirit"
+    system "./test"
+
+    expected = { "house_number" => 42, "road" => "East Street", "town" => "Newtown" }
+    assert_path_exists testpath/"address.json"
+    assert_equal expected, JSON.parse(File.read("address.json"))
+  end
 end

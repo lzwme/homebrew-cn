@@ -1,8 +1,8 @@
 class Meli < Formula
   desc "Terminal e-mail client and e-mail client library"
   homepage "https://meli-email.org/"
-  url "https://git.meli-email.org/meli/meli/archive/v0.8.12.tar.gz"
-  sha256 "6f03f50b7e3ee29d34716f31d77e75eca72ab651d67ea1de2dffc5813565180f"
+  url "https://git.meli-email.org/meli/meli/archive/v0.8.13.tar.gz"
+  sha256 "b1414defb7973a96ed0510b5cb888aa8671fe4f3f832c5baa0c79dcd61ba2edf"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,22 +11,17 @@ class Meli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4df6b386819ad120f3a769b825ed9ce061ba27075a75b103039f3f7eede3bccb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ae5ed00801662f9da4b1a479344585e6d0480cee748dcacdb883b7ea2bb66e6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dac2ad7eb3a1e48bda3441a6c9e0c2f63bf2c0d1ea126e88fb75de3d56d31eca"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "393461b613aac77018e34a3fa8f61a5fabb3e8d8cc9d3c05e2ab8e6a5d98e8fc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e12530beb8d7459163493fa1023db9e935166f2da8462c12d4045cd70634ccef"
-    sha256 cellar: :any_skip_relocation, ventura:       "f9990332e7df125ca426b2365e96e29f58abf8ddef887e0ebf124e22b0683f18"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10c9adf5564a3dc95ce9739b6b39d6fbba9ea4f41f79378fa26446223505e0d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56eff4ef3a14f017e0754562442c901e980c8b7ab10d2be634148dfe36cc9ec6"
+    sha256 cellar: :any,                 arm64_tahoe:   "5784a603ab62624ab0f093ccc3f407c5390841ea780dedd72e3cbbcb87943259"
+    sha256 cellar: :any,                 arm64_sequoia: "217a27feab49a34548a1ba893647f7b9a899513ba0b63897475e28d212bf3b6a"
+    sha256 cellar: :any,                 arm64_sonoma:  "b66fa0a475e1b0bfb810e3d579eb1b129c1475afb9443e254f076e71342203af"
+    sha256 cellar: :any,                 sonoma:        "a1c21bf8bfe2800cd52c7f3d23dc76871b99635578defaed3db7f43064f88d4c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6aab574892fb5e9ef1b2654b840e94c364f4981086e5c7ba84ed4b477438700"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df9bb9511f829b1e9773a7d20f8998945daad30be756da93ebc6ae0306f0b6da"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-
-  on_linux do
-    depends_on "openssl@3"
-  end
+  depends_on "openssl@3"
 
   def install
     system "cargo", "install", *std_cargo_args(path: "meli")

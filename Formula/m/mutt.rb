@@ -10,7 +10,8 @@
 class Mutt < Formula
   desc "Mongrel of mail user agents (part elm, pine, mush, mh, etc.)"
   homepage "http://www.mutt.org/"
-  url "http://ftp.mutt.org/pub/mutt/mutt-2.2.16.tar.gz"
+  url "https://cdn.netbsd.org/pub/pkgsrc/distfiles/mutt-2.2.16.tar.gz"
+  mirror "http://ftp.mutt.org/pub/mutt/mutt-2.2.16.tar.gz"
   sha256 "1d3109a743ad8b25eef97109b2bdb465db7837d0a8d211cd388be1b6faac3f32"
   license "GPL-2.0-or-later"
 

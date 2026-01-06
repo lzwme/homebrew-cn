@@ -44,10 +44,7 @@ class Ninja < Formula
     NINJA
     system bin/"ninja", "-t", "targets"
     port = free_port
-    fork do
-      exec bin/"ninja", "-t", "browse", "--port=#{port}", "--hostname=127.0.0.1", "--no-browser", "foo.o"
-    end
-    sleep 15
-    assert_match "foo.c", shell_output("curl -s http://127.0.0.1:#{port}?foo.o")
+    spawn bin/"ninja", "-t", "browse", "--port=#{port}", "--hostname=127.0.0.1", "--no-browser", "foo.o"
+    assert_match "foo.c", shell_output("curl --silent --retry 5 --retry-connrefused http://127.0.0.1:#{port}?foo.o")
   end
 end

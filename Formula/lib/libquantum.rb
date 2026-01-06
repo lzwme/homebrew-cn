@@ -1,7 +1,8 @@
 class Libquantum < Formula
   desc "C library for the simulation of quantum mechanics"
   homepage "http://www.libquantum.de/"
-  url "http://www.libquantum.de/files/libquantum-1.0.0.tar.gz"
+  url "https://cdn.netbsd.org/pub/pkgsrc/distfiles/libquantum-1.0.0.tar.gz"
+  mirror "http://www.libquantum.de/files/libquantum-1.0.0.tar.gz"
   sha256 "b0f1a5ec9768457ac9835bd52c3017d279ac99cc0dffe6ce2adf8ac762997b2c"
   license "GPL-3.0-or-later"
   version_scheme 1

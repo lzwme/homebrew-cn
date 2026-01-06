@@ -27,6 +27,6 @@ class Brag < Formula
   end
 
   test do
-    system bin/"brag", "-s", "nntp.perl.org", "-L"
+    assert_match "Couldn't make news connection", shell_output("#{bin}/brag -s localhost -P 9999 -L 2>&1", 2)
   end
 end

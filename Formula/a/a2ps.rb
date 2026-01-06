@@ -18,7 +18,6 @@ class A2ps < Formula
   depends_on "pkgconf" => :build
   depends_on "bdw-gc"
   depends_on "libpaper"
-  uses_from_macos "gperf"
 
   def install
     system "./configure", "--sysconfdir=#{etc}",
@@ -27,13 +26,16 @@ class A2ps < Formula
                           "--with-packager-version=#{pkg_version}",
                           "--with-packager-bug-reports=#{tap.issues_url}",
                           *std_configure_args
-    system "make", "install"
-    inreplace etc/"a2ps.cfg", prefix, opt_prefix
+    system "make"
+    # Avoid overwriting existing a2ps.cfg
+    system "make", "install", "sysconfdir=#{prefix}/etc"
+    inreplace prefix/"etc/a2ps.cfg", prefix, opt_prefix
+    etc.install (prefix/"etc").children
   end
 
   test do
     (testpath/"test.txt").write("Hello World!\n")
     system bin/"a2ps", "test.txt", "-o", "test.ps"
-    assert File.read("test.ps").start_with?("")
+    assert_match "(Hello World!) p n\n", File.read("test.ps")
   end
 end

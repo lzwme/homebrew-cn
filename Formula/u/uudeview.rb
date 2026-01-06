@@ -1,7 +1,8 @@
 class Uudeview < Formula
   desc "Smart multi-file multi-part decoder"
   homepage "http://www.fpx.de/fp/Software/UUDeview/"
-  url "http://www.fpx.de/fp/Software/UUDeview/download/uudeview-0.5.20.tar.gz"
+  url "https://cdn.netbsd.org/pub/pkgsrc/distfiles/uudeview-0.5.20.tar.gz"
+  mirror "http://www.fpx.de/fp/Software/UUDeview/download/uudeview-0.5.20.tar.gz"
   sha256 "e49a510ddf272022af204e96605bd454bb53da0b3fe0be437115768710dae435"
   license "GPL-2.0-or-later"
   revision 1

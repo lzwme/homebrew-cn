@@ -1,7 +1,8 @@
 class Enet < Formula
   desc "Provides a network communication layer on top of UDP"
   homepage "http://enet.bespin.org"
-  url "http://enet.bespin.org/download/enet-1.3.18.tar.gz"
+  url "https://cdn.netbsd.org/pub/pkgsrc/distfiles/enet-1.3.18.tar.gz"
+  mirror "http://enet.bespin.org/download/enet-1.3.18.tar.gz"
   sha256 "2a8a0c5360d68bb4fcd11f2e4c47c69976e8d2c85b109dd7d60b1181a4f85d36"
   license "MIT"
   head "https://github.com/lsalzman/enet.git", branch: "master"

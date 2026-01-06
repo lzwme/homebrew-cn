@@ -3,18 +3,18 @@ class Khaos < Formula
 
   desc "Kafka traffic simulator for observability and chaos engineering"
   homepage "https://github.com/aleksandarskrbic/khaos"
-  url "https://files.pythonhosted.org/packages/e0/ff/d7648a6290f398517b335642a1fa2f912a6b2f6d8c7ba24dd1835fba967f/khaos_cli-0.7.0.tar.gz"
-  sha256 "e40f2f32144d7fb0674a478329da72074ed310aeed821f2e3685fa4e362e866a"
+  url "https://files.pythonhosted.org/packages/7f/0c/932228842cb6c0357fa4f41c5e68afaf3b41b7698f0794af300533594432/khaos_cli-0.7.1.tar.gz"
+  sha256 "f5eb232f427dab15bbaa7ff8200a17d04c036a695c1c614e862bf87d93917b20"
   license "Apache-2.0"
   head "https://github.com/aleksandarskrbic/khaos.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b6d368fa1d51fa7b41c2e64c800b76895a11c1b0d73326e79b497d39f029b104"
-    sha256 cellar: :any,                 arm64_sequoia: "bce63439c2e6e6e71f457871e68df0b1178118e68739f93c4497e3463525f764"
-    sha256 cellar: :any,                 arm64_sonoma:  "365e6a95fa88932968cea202935e5f6f9ab23dad951f71492d33cadc67128454"
-    sha256 cellar: :any,                 sonoma:        "47515134f64bd26c39705aab29bf02470cb6ce5b891063e33758aeedaabe8801"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7f44d84f7504c135415014241f786728bd1c9a64b783690c23680020b413805"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5050ee49fac3fb30163b9d1c2b39a68af5a6a0fa1b8e00ba89bb22247afb6b5a"
+    sha256 cellar: :any,                 arm64_tahoe:   "5ebba246d720526ff3d76811f9b410719796be3453fc9a83999e3639ae0c8bf0"
+    sha256 cellar: :any,                 arm64_sequoia: "1f2448eb738013b3966e67c5dff5bebc717c8e801f23d6d15ed03910579e6435"
+    sha256 cellar: :any,                 arm64_sonoma:  "59b49a78aaa35f44296eb504de7b3d5fe3642808d0ed0eab4f0a5dfa700f9d66"
+    sha256 cellar: :any,                 sonoma:        "aba470f89b612aa3955f845449afb525db9e2e29788a887257ac2883f55c325f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9244b67d2c3d416e675cbc4a6d00e00f1bee001bc4ff1a10c8740d14d7cf1849"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3490664edda57aab7a65f37d0f89ee396699e8550e554577eb3fdefcdeff952"
   end
 
   depends_on "certifi" => :no_linkage
@@ -51,8 +51,8 @@ class Khaos < Formula
   end
 
   resource "confluent-kafka" do
-    url "https://files.pythonhosted.org/packages/c2/cd/18ffb1d2a7e189fee50b4a9597255e1078580d679daf913c25d0d13c3f88/confluent_kafka-2.12.2.tar.gz"
-    sha256 "5a50bfcd24f9dcf34b986f837f80126a71087364d44fcb8b45e8e74080fb6e98"
+    url "https://files.pythonhosted.org/packages/b4/d0/1f5055331fa660225de6829b143e6f083913f0a96481134a91390bad62c1/confluent_kafka-2.13.0.tar.gz"
+    sha256 "eff7a4391a9e6d4a33f0c05d0935b200a7463834f1f5d6e6253be318f910babd"
   end
 
   resource "faker" do

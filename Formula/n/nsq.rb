@@ -33,23 +33,15 @@ class Nsq < Formula
   end
 
   test do
-    lookupd = fork do
-      exec bin/"nsqlookupd"
-    end
+    lookupd = spawn bin/"nsqlookupd"
     sleep 2
-    d = fork do
-      exec bin/"nsqd", "--lookupd-tcp-address=127.0.0.1:4160"
-    end
+    d = spawn bin/"nsqd", "--lookupd-tcp-address=127.0.0.1:4160"
     sleep 2
-    admin = fork do
-      exec bin/"nsqadmin", "--lookupd-http-address=127.0.0.1:4161"
-    end
+    admin = spawn bin/"nsqadmin", "--lookupd-http-address=127.0.0.1:4161"
     sleep 2
-    to_file = fork do
-      exec bin/"nsq_to_file", "--lookupd-http-address=127.0.0.1:4161",
-                              "--output-dir=#{testpath}",
-                              "--topic=test"
-    end
+    to_file = spawn bin/"nsq_to_file", "--lookupd-http-address=127.0.0.1:4161",
+                                       "--output-dir=#{testpath}",
+                                       "--topic=test"
     sleep 2
     system "curl", "-d", "hello", "http://127.0.0.1:4151/pub?topic=test"
     sleep 2

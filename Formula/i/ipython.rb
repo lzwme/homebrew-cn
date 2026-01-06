@@ -3,13 +3,13 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https://ipython.org/"
-  url "https://files.pythonhosted.org/packages/12/51/a703c030f4928646d390b4971af4938a1b10c9dfce694f0d99a0bb073cb2/ipython-9.8.0.tar.gz"
-  sha256 "8e4ce129a627eb9dd221c41b1d2cdaed4ef7c9da8c17c63f6f578fe231141f83"
+  url "https://files.pythonhosted.org/packages/46/dd/fb08d22ec0c27e73c8bc8f71810709870d51cadaf27b7ddd3f011236c100/ipython-9.9.0.tar.gz"
+  sha256 "48fbed1b2de5e2c7177eefa144aba7fcb82dac514f09b57e2ac9da34ddb54220"
   license "BSD-3-Clause"
   head "https://github.com/ipython/ipython.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "339e12472f70941e0a6b1b058444cce99fb90570570edec2e41a38bf243535e7"
+    sha256 cellar: :any_skip_relocation, all: "1d9e9e261f1e46805e7163035167d424e4349fc4de079587962b4164f13b280e"
   end
 
   depends_on "python@3.14"

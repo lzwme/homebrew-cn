@@ -1,9 +1,8 @@
 class Glooctl < Formula
   desc "Envoy-Powered API Gateway"
   homepage "https://docs.solo.io/gloo-edge/main/reference/cli/glooctl/"
-  url "https://github.com/solo-io/gloo.git",
-      tag:      "v1.20.7",
-      revision: "887d34e7892059e8b8e6551cafa12ddec07d943b"
+  url "https://ghfast.top/https://github.com/solo-io/gloo/archive/refs/tags/v1.20.7.tar.gz"
+  sha256 "a1961311cbf1d2c2c9ee1b9c4773cd767bb51aabac00268652604690578227dd"
   license "Apache-2.0"
   head "https://github.com/solo-io/gloo.git", branch: "main"
 
@@ -27,22 +26,22 @@ class Glooctl < Formula
   depends_on "go" => :build
 
   def install
-    system "make", "glooctl", "VERSION=#{version}"
-    bin.install "_output/glooctl"
+    ldflags = "-s -w -X github.com/solo-io/gloo/pkg/version.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags:), "./projects/gloo/cli/cmd"
 
     generate_completions_from_executable(bin/"glooctl", "completion", shells: [:bash, :zsh])
   end
 
   test do
-    run_output = shell_output("#{bin}/glooctl 2>&1")
-    assert_match "glooctl is the unified CLI for Gloo.", run_output
+    output = shell_output("#{bin}/glooctl 2>&1")
+    assert_match "glooctl is the unified CLI for Gloo.", output
 
-    version_output = shell_output("#{bin}/glooctl version 2>&1")
-    assert_match "\"client\": {\n    \"version\": \"#{version}\"\n  }\n}", version_output
-    assert_match "Server: version undefined", version_output
+    output = shell_output("#{bin}/glooctl version -o table 2>&1")
+    assert_match "Client version: #{version}", output
+    assert_match "Server: version undefined", output
 
     # Should error out as it needs access to a Kubernetes cluster to operate correctly
-    status_output = shell_output("#{bin}/glooctl get proxy 2>&1", 1)
-    assert_match "failed to create kube client", status_output
+    output = shell_output("#{bin}/glooctl get proxy 2>&1", 1)
+    assert_match "failed to create kube client", output
   end
 end

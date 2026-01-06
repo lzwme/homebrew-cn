@@ -1,7 +1,8 @@
 class Aamath < Formula
   desc "Renders mathematical expressions as ASCII art"
   homepage "http://fuse.superglue.se/aamath/"
-  url "http://fuse.superglue.se/aamath/aamath-0.3.tar.gz"
+  url "https://cdn.netbsd.org/pub/pkgsrc/distfiles/aamath-0.3.tar.gz"
+  mirror "http://fuse.superglue.se/aamath/aamath-0.3.tar.gz"
   sha256 "9843f4588695e2cd55ce5d8f58921d4f255e0e65ed9569e1dcddf3f68f77b631"
   license "GPL-2.0-only"
 

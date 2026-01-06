@@ -1,8 +1,8 @@
 class Libcpucycles < Formula
   desc "Microlibrary for counting CPU cycles"
   homepage "https://cpucycles.cr.yp.to/"
-  url "https://cpucycles.cr.yp.to/libcpucycles-20251226.tar.gz"
-  sha256 "5dc17b801b9b27f3861aab0e1754285b1703bffe9b8f469dc666de6d9be2f93f"
+  url "https://cpucycles.cr.yp.to/libcpucycles-20260105.tar.gz"
+  sha256 "e87dcaaa28e905b574ccf3d49e23e05c73edb3f99136dcd566bca16829ab6694"
   license any_of: [:public_domain, "CC0-1.0", "0BSD", "MIT-0", "MIT"]
 
   livecheck do
@@ -11,12 +11,12 @@ class Libcpucycles < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dc7548e7fcfc557a5101c15d1b5fc6ddcfb17d0b7510c9c96c4d584b123da9db"
-    sha256 cellar: :any,                 arm64_sequoia: "c2c0ac07f059d701198ae2f192321ea28d976947697cd94ae7cbcfa2706fed7f"
-    sha256 cellar: :any,                 arm64_sonoma:  "e3eb9c855917b802fc34e6f55ad86fbb95d82a900ae99ca686df58301b160148"
-    sha256 cellar: :any,                 sonoma:        "2fdeebd3792e2c38d244c265baf8c8716320ce637469bd0a99bbdd2fc62a4861"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "daa822e85793a60d0a237a9a16f87b4be6be61fd6801b3f60804b176b02caf32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9534e15d4eef0d7b5c16dd359f36e489e72512cd463a1019fafd960de87e0a55"
+    sha256 cellar: :any,                 arm64_tahoe:   "6d0d624a923f07935e6e91ea524def9d852f5a6916bf501b8661e4c7983fc2af"
+    sha256 cellar: :any,                 arm64_sequoia: "44eda163d6b173499275564c2a96ca7d51e0156875c2b75674b56839e17ca37c"
+    sha256 cellar: :any,                 arm64_sonoma:  "1596cb50ee60f75911e1b4f05949645f055d7a8775c57ede61f478171be0068b"
+    sha256 cellar: :any,                 sonoma:        "05e0ac733b7b0ba78b14dc929bf41901aceedfc293a9b1aa55f767814d45e79f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "79fa7b230fc71e0576f56eaed3ba4656e76844a52e5272efd4dfa55f04605c35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a6bac3d0373927187fc0aa235374d1c0e1bc9b4df30bff91f80cb3242996504"
   end
 
   uses_from_macos "python" => :build

@@ -1,7 +1,8 @@
 class Dmg2img < Formula
   desc "Utilities for converting macOS DMG images"
   homepage "http://vu1tur.eu.org/tools/"
-  url "http://vu1tur.eu.org/tools/dmg2img-1.6.7.tar.gz"
+  url "https://cdn.netbsd.org/pub/pkgsrc/distfiles/dmg2img-1.6.7.tar.gz"
+  mirror "http://vu1tur.eu.org/tools/dmg2img-1.6.7.tar.gz"
   sha256 "02aea6d05c5b810074913b954296ddffaa43497ed720ac0a671da4791ec4d018"
   license "GPL-2.0-only"
   revision 1

@@ -1,7 +1,8 @@
 class Autobench < Formula
   desc "Automatic webserver benchmark tool"
   homepage "http://www.xenoclast.org/autobench/"
-  url "http://www.xenoclast.org/autobench/downloads/autobench-2.1.2.tar.gz"
+  url "https://distfiles.macports.org/autobench/autobench-2.1.2.tar.gz"
+  mirror "http://www.xenoclast.org/autobench/downloads/autobench-2.1.2.tar.gz"
   sha256 "d8b4d30aaaf652df37dff18ee819d8f42751bc40272d288ee2a5d847eaf0423b"
   license "GPL-2.0-or-later"
 

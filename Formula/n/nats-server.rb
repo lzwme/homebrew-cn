@@ -33,13 +33,11 @@ class NatsServer < Formula
   test do
     port = free_port
     http_port = free_port
-    fork do
-      exec bin/"nats-server",
-           "--port=#{port}",
-           "--http_port=#{http_port}",
-           "--pid=#{testpath}/pid",
-           "--log=#{testpath}/log"
-    end
+    spawn bin/"nats-server",
+          "--port=#{port}",
+          "--http_port=#{http_port}",
+          "--pid=#{testpath}/pid",
+          "--log=#{testpath}/log"
     sleep 3
 
     assert_match version.to_s, shell_output("curl localhost:#{http_port}/varz")

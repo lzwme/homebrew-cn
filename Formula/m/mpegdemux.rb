@@ -1,7 +1,8 @@
 class Mpegdemux < Formula
   desc "MPEG1/2 system stream demultiplexer"
   homepage "http://www.hampa.ch/mpegdemux/"
-  url "http://www.hampa.ch/mpegdemux/mpegdemux-0.1.5.tar.gz"
+  url "https://deb.debian.org/debian/pool/main/m/mpegdemux/mpegdemux_0.1.5.orig.tar.gz"
+  mirror "http://www.hampa.ch/mpegdemux/mpegdemux-0.1.5.tar.gz"
   sha256 "05015755d45e50cbd3018baeaa8abcedc003b1162fa28237a72ab25c1bc00023"
   license "GPL-2.0-only"
 

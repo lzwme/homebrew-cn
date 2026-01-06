@@ -6,7 +6,8 @@ class CeresSolver < Formula
   head "https://ceres-solver.googlesource.com/ceres-solver.git", branch: "master"
 
   stable do
-    url "http://ceres-solver.org/ceres-solver-2.2.0.tar.gz"
+    url "https://distfiles.macports.org/ceres-solver/ceres-solver-2.2.0.tar.gz"
+    mirror "http://ceres-solver.org/ceres-solver-2.2.0.tar.gz"
     sha256 "48b2302a7986ece172898477c3bcd6deb8fb5cf19b3327bc49969aad4cede82d"
 
     # Backport support for eigen 5.0.0

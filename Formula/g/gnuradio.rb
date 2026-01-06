@@ -6,7 +6,7 @@ class Gnuradio < Formula
   url "https://ghfast.top/https://github.com/gnuradio/gnuradio/archive/refs/tags/v3.10.12.0.tar.gz"
   sha256 "fe78ad9f74c8ebf93d5c8ad6fa2c13236af330f3c67149d91a0647b3dc6f3958"
   license "GPL-3.0-or-later"
-  revision 8
+  revision 9
   head "https://github.com/gnuradio/gnuradio.git", branch: "main"
 
   livecheck do
@@ -15,12 +15,12 @@ class Gnuradio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dc15a69136ee9920ba4b9dfd934676e593dc269786fb4e70c59285a2c1f6ae66"
-    sha256 cellar: :any,                 arm64_sequoia: "5cd3b4fbce31944aac3f00736d8071b0977b1f0576f896e1f4b19d3c3414fae4"
-    sha256 cellar: :any,                 arm64_sonoma:  "c81534a91e71b14db506f581672acec1547cb956312f01133e4a7b41f48b1c22"
-    sha256 cellar: :any,                 sonoma:        "8d51285eeb11426847289fa303afc4f286687e9216986705a6b2ae2f862458f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0db98b6ee042de98e520e5376d8fcd93d6dad514ba2904bd067bd94dff9db290"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2a4ab6670510fe1d20979b53e3575a471bcb865ce92c86426dd64712f07a51d"
+    sha256 cellar: :any,                 arm64_tahoe:   "69a6f99df58bb7273c724c60bae36c895c495d0a76f6cc3904ce029f649003bd"
+    sha256 cellar: :any,                 arm64_sequoia: "2c2b17a49ab1093b60e8aa230d279d2db800512b8d6a4ccf67ceeb697668cad7"
+    sha256 cellar: :any,                 arm64_sonoma:  "ed154a7caf787b2158eb2b6d3b4b7ecbeb02173f7a451302683aaa8c2089b7b4"
+    sha256 cellar: :any,                 sonoma:        "5cca00b2996aeb3c92a30083ce57999916c267618ba9363e98ceda6d4d2be25b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebc2c8d94d2dfb8e21dc4c75666f1273dd5962c96919e10b251755f6c9ab5fb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c462bc5933ac83c7a146e9d5f7fa752c27dd0f85fbea4af2acf5e1e1dbb14222"
   end
 
   depends_on "cmake" => :build

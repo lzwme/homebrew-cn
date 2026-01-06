@@ -5,13 +5,6 @@ class Libxdiff < Formula
   sha256 "e9af96174e83c02b13d452a4827bdf47cb579eafd580953a8cd2c98900309124"
   license "LGPL-2.1-or-later"
 
-  livecheck do
-    url :homepage
-    regex(/href=.*?libxdiff[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:    "52f89bab5540ae76ddffb01090a41adc4ca1f11696aa0f64274307b1fc84bfcc"
@@ -28,6 +21,8 @@ class Libxdiff < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:    "145ff279df6f6dc46924f9a8182d89c1e568156f29f711efef540649e653d90d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7b3220efc3c97fefbe4ec212663fe86de66179d36fb974377790d72ebd5ed41"
   end
+
+  deprecate! date: "2026-01-05", because: "is not available via HTTPS"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build

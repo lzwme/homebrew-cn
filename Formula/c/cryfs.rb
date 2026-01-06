@@ -6,11 +6,12 @@ class Cryfs < Formula
   url "https://ghfast.top/https://github.com/cryfs/cryfs/releases/download/1.0.3/cryfs-1.0.3.tar.gz"
   sha256 "5550f612f7b692e60c0c10a0331dcefbcc9616ad1411a016de7e4503ad866696"
   license "LGPL-3.0-or-later"
+  revision 1
   head "https://github.com/cryfs/cryfs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "c2cb0fe76c99cf3acbc52ba2fe8b0bf5b18640dbe5d428dd2fe203015347c19c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a8fbff9bde080e8cb6acddb1d4d6a62c0dcb90ea89a0188f677275c75fa69012"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "aad3465262b4d592cf14d87253fca6f7543c8f1f1b6a5ab177d36befda519fd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4d391a757720609a5f34600e573d517e8f061afddb31ff743d4f18737e2cf399"
   end
 
   depends_on "cmake" => :build

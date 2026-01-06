@@ -5,11 +5,6 @@ class Goredo < Formula
   sha256 "7aaab717697b1c15f24164122f80e769a82a6a157b01a6590365c749d326bd06"
   license "GPL-3.0-only"
 
-  livecheck do
-    url "http://www.goredo.cypherpunks.su/Install.html"
-    regex(/href=.*?goredo[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a9b1660695595402615e05a83aa7fdb7542387dffad6fdc251bfd7b1569e3d7"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a9b1660695595402615e05a83aa7fdb7542387dffad6fdc251bfd7b1569e3d7"
@@ -18,6 +13,8 @@ class Goredo < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "d427a1c2fb0cbab8edb36e9378324d938e09c00e214ad0aac0eca221ee3ad1c6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e538694b61f3e59d986cdc13616c9f3388d44ca6be1dd063a2d4fba5452d9ec9"
   end
+
+  deprecate! date: "2026-01-05", because: "is not available via HTTPS"
 
   depends_on "go" => :build
 

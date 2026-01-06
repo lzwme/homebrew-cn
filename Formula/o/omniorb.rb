@@ -1,8 +1,8 @@
 class Omniorb < Formula
   desc "IOR and naming service utilities for omniORB"
   homepage "https://omniorb.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/omniorb/omniORB/omniORB-4.3.3/omniORB-4.3.3.tar.bz2"
-  sha256 "accd25e2cb70c4e33ed227b0d93e9669e38c46019637887c771398870ed45e7a"
+  url "https://downloads.sourceforge.net/project/omniorb/omniORB/omniORB-4.3.4/omniORB-4.3.4.tar.bz2"
+  sha256 "79720d415d23cd8da99287a4ef4da0aa1bd34d3e4c7b1530715600adc5ed3dc3"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   livecheck do
@@ -11,13 +11,12 @@ class Omniorb < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "d3e724bd8c66b8c85adde6ca4551f195147576384d7381e1fb23296a8d03c421"
-    sha256 cellar: :any,                 arm64_sequoia: "3de267638de92404fea8f73f7b093ffe1e1f24431c554638e6e452c7ac2adcee"
-    sha256 cellar: :any,                 arm64_sonoma:  "c1f622c04da99ede9d10731c823c7ba212a701d3e054fae614b16a36202d2849"
-    sha256 cellar: :any,                 sonoma:        "d2e8bc653769aef5203ef679b70e2b8cf6c571c11f668fe2b429c542d5144166"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "64c28b492eb0b7d70e9f95f1d63861bc94c2bd202d2a159be67a57b40939a1fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b00950095cce6ed4ab5f7315da5f399e71eb8befa784afcd9e0876fc80f793d9"
+    sha256 cellar: :any,                 arm64_tahoe:   "d1d18197b8e60eb0d7c301cedf714d2f77371a84767060df364e0939b6623d13"
+    sha256 cellar: :any,                 arm64_sequoia: "26608b9e21b3bd279db67b11721e8b6db62b0f635e4aa4c136025e3ec85939b8"
+    sha256 cellar: :any,                 arm64_sonoma:  "e7456a95b773cdbbb5911f76b7dbd2795dbe09979d704589a2c9ab7d0ee5209e"
+    sha256 cellar: :any,                 sonoma:        "f82a0ddf7c8ecdc548722f7189f3bd22740cac3730717c57f3defb39f34ba4e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf8cd5089645a78552c75ed40807748947caabf2a8b21c748a2551f531b520db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83475901471cdf6d650972b34703694938352ae993900762f70f246427b534cb"
   end
 
   depends_on "pkgconf" => :build
@@ -28,8 +27,8 @@ class Omniorb < Formula
   uses_from_macos "zlib"
 
   resource "bindings" do
-    url "https://downloads.sourceforge.net/project/omniorb/omniORBpy/omniORBpy-4.3.3/omniORBpy-4.3.3.tar.bz2"
-    sha256 "385c14e7ccd8463a68a388f4f2be3edcdd3f25a86b839575326bd2dc00078c22"
+    url "https://downloads.sourceforge.net/project/omniorb/omniORBpy/omniORBpy-4.3.4/omniORBpy-4.3.4.tar.bz2"
+    sha256 "a709c3c77b9c6b08616e1c9e12a5a9b9d5ccc1f2dcf6f647f205018d77f819a7"
 
     livecheck do
       formula :parent

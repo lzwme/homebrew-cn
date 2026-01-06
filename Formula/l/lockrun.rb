@@ -6,15 +6,6 @@ class Lockrun < Formula
   sha256 "cea2e1e64c57cb3bb9728242c2d30afeb528563e4d75b650e8acae319a2ec547"
   license :public_domain
 
-  # The upstream website doesn't publish version information, so we check the
-  # version history comment in `lockrun.c` itself.
-  livecheck do
-    url :stable
-    regex(%r{v?(\d+(?:\.\d+)+)\s+\d{4}[/-]\d{2}[/-]\d{2}}i)
-  end
-
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "4fb5751401d9a0c9e2cb5abef0124aa4fa8ed867591b6055fdb52455452b6389"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fa9f904cbb5c509a1aeef7afb173599b212352054380f017c9ff657a90aa866c"
@@ -30,6 +21,8 @@ class Lockrun < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:    "141fc5e4c50953b8ed382b7c3cee817d578808ccaed0c72e00d7fc3c0eda8942"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f98a31a7651fbacfd1ccd1085b99fd53d1f4a5a981e4ed2702f2cbf1293126dc"
   end
+
+  deprecate! date: "2026-01-05", because: "is not available via HTTPS"
 
   def install
     system ENV.cc, "lockrun.c", "-o", "lockrun"

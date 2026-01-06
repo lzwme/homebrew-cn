@@ -9,8 +9,8 @@ class WasiLibc < Formula
   head "https://github.com/WebAssembly/wasi-libc.git", branch: "main"
 
   stable do
-    url "https://ghfast.top/https://github.com/WebAssembly/wasi-libc/archive/refs/tags/wasi-sdk-28.tar.gz"
-    sha256 "6f0b2e533ba09617c1f65496e5537806e1a7b0a34d4939f7dbb659ff30857b38"
+    url "https://ghfast.top/https://github.com/WebAssembly/wasi-libc/archive/refs/tags/wasi-sdk-29.tar.gz"
+    sha256 "d511de1f556521041b0811c6fb9c3e175d9a527bce5ade9ca31ab79b0941823c"
 
     resource "WASI" do
       # Check the commit hash of `tools/wasi-headers/WASI` from the commit of the tag above.
@@ -20,8 +20,7 @@ class WasiLibc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "a529c0735dbb8a0650b31e03540ce34aa2821efba92b1b032e15e47a662fe5d9"
+    sha256 cellar: :any_skip_relocation, all: "e5019f0f9e847b3b1eabbfb77e7d76a809c9668d3e7d318df270102c21fd1106"
   end
 
   depends_on "llvm" => [:build, :test]

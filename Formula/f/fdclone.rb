@@ -1,16 +1,10 @@
 class Fdclone < Formula
   desc "Console-based file manager"
   homepage "https://hp.vector.co.jp/authors/VA012337/soft/fd/"
-  url "http://www.unixusers.net/src/fdclone/FD-3.01j.tar.gz"
+  url "https://deb.debian.org/debian/pool/main/f/fdclone/fdclone_3.01j.orig.tar.gz"
+  mirror "http://www.unixusers.net/src/fdclone/FD-3.01j.tar.gz"
   sha256 "fe5bb67eb670dcdb1f7368698641c928523e2269b9bee3d13b3b77565d22a121"
   license :cannot_represent
-
-  livecheck do
-    url :homepage
-    regex(%r{href=.*?\./FD[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t}i)
-  end
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 arm64_sonoma:   "78daa3983f98bea1071db92ef70b8c9a3ea5e01f1d36a32d093de1512b1a65d8"
@@ -25,6 +19,9 @@ class Fdclone < Formula
     sha256 arm64_linux:    "f711ab13e2d255a899f98e9b4d1938dd8fd94236362c62a8fcdbcd3b9346dc54"
     sha256 x86_64_linux:   "b7a4047ede40d7981d2496e42cf32f2886a9bb182a2275f4697b70f20ec5f7f3"
   end
+
+  # Upstream homepage is gone and doesn't build on macOS Sequoia and later
+  deprecate! date: "2026-01-05", because: :repo_removed
 
   depends_on maximum_macos: [:sonoma, :build]
   depends_on "nkf" => :build

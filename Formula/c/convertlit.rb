@@ -6,15 +6,6 @@ class Convertlit < Formula
   sha256 "d70a85f5b945104340d56f48ec17bcf544e3bb3c35b1b3d58d230be699e557ba"
   license "GPL-2.0-or-later"
 
-  # The archive filenames don't use periods in the version, so we have to match
-  # the version from the link text.
-  livecheck do
-    url "http://www.convertlit.com/download.php"
-    regex(/href=.*?clit[._-]?v?\d+(?:\.\d+)*src\.zip[^>]+>\s*?Convert LIT v?(\d+(?:\.\d+)+)/i)
-  end
-
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0cfe39c84460ec28081f4e2fa92771253085837c8986d9d3121c573eb1a6a072"
@@ -26,6 +17,8 @@ class Convertlit < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "28b8504282e33b2b346b2bc88313fcaac3d9525327d576341adb40b7da58b0af"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9e0dbeb09435b5d6c8a8f0e728d345185e14bb1bd4a799c05a1cefde6938046"
   end
+
+  deprecate! date: "2026-01-05", because: "is not available via HTTPS"
 
   depends_on "libtommath"
 

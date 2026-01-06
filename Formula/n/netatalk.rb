@@ -1,8 +1,8 @@
 class Netatalk < Formula
   desc "File server for Macs, compliant with Apple Filing Protocol (AFP)"
   homepage "https://netatalk.io"
-  url "https://ghfast.top/https://github.com/Netatalk/netatalk/releases/download/netatalk-4-3-2/netatalk-4.3.2.tar.xz"
-  sha256 "2977b4fd113182f0cc183337ba23d5701fb2be4e0dfcec7ee575b4d73a738d3a"
+  url "https://ghfast.top/https://github.com/Netatalk/netatalk/releases/download/netatalk-4-4-0/netatalk-4.4.0.tar.xz"
+  sha256 "18ca32dc6c25e7ba3528594b784379f013888fa9840ffc478cd1fef55513825c"
   license all_of: [
     "GPL-2.0-only",
     "GPL-2.0-or-later",
@@ -17,14 +17,12 @@ class Netatalk < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "a996c4867d72289a1d1b6de73069dab3ff7e975f2a9e41af1572548e617e9663"
-    sha256 arm64_sequoia: "33055225df69045cbc4e9b44e4830ba1dd979f83dbb15726258fb09908047819"
-    sha256 arm64_sonoma:  "2ebdbc3faeb4a7ef33d4c863e7336685510e2c58ad28df1d136b0de83bc9cbbc"
-    sha256 arm64_ventura: "dbac843786ce3ce67d91c56d6052f2fb5d90897abe1c0596cd22f13f687f32ba"
-    sha256 sonoma:        "adb8b67efc6450b746c0fd67dacf69845207db2b32904eea20fcfc931cb5dc67"
-    sha256 ventura:       "2b1cb2ab91c8e9c685dddd614dd89f2391b8de3207e21c5098bb1eb5c0a6e62e"
-    sha256 arm64_linux:   "f6bb7dc5baca9769b091710448d9f6542b996778e34b86689f5f4a24e629a8d9"
-    sha256 x86_64_linux:  "d55c30bfa29981cb9c05c3eb2a9e5b1ee99d35ae295e0bfbeac2e6c51ee1d093"
+    sha256 arm64_tahoe:   "66bb3e06001fb9756d0998b11d3f043a03d143ea8c8a5f6d5329e1cbf4f71b6e"
+    sha256 arm64_sequoia: "dada53b09048c2a0bc950145a7f66f8e70f7781fc9486a92c2c9cde5bf93a168"
+    sha256 arm64_sonoma:  "8b356204aa369d432f0961cc532980b9fcd64a2f5af9991f4270ee064a073098"
+    sha256 sonoma:        "3610308403d4332e1972708c48552a0afe54d468869503d8283828e82ddd9031"
+    sha256 arm64_linux:   "3e093f4b147438555799fb03f77ada0bbd69b39e1bc838b5b6d43124bf4ceb8e"
+    sha256 x86_64_linux:  "612d363969c1c3672698e7faa250a588443e7de213dcd72fb2139449aca43fa7"
   end
 
   depends_on "cmark-gfm" => :build

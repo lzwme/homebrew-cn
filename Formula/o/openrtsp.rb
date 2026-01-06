@@ -1,9 +1,10 @@
 class Openrtsp < Formula
   desc "Command-line RTSP client"
   homepage "http://www.live555.com/openRTSP"
-  url "http://www.live555.com/liveMedia/public/live.2025.12.26.tar.gz"
-  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2025.12.26.tar.gz"
+  url "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2025.12.26.tar.gz"
   # Keep a mirror as upstream tarballs are removed after each version
+  mirror "https://pkg.freebsd.org/ports-distfiles/live.2025.12.26.tar.gz"
+  mirror "http://www.live555.com/liveMedia/public/live.2025.12.26.tar.gz"
   sha256 "9cb04dc576ff80dd363c9f98c421297e8ab50286ba80acc3a2ca94495e5b883a"
   license "LGPL-3.0-or-later"
 

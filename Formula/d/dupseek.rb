@@ -5,17 +5,12 @@ class Dupseek < Formula
   sha256 "c046118160e4757c2f8377af17df2202d6b9f2001416bfaeb9cd29a19f075d93"
   license "GPL-2.0-only"
 
-  livecheck do
-    url :homepage
-    regex(/href=.*?dupseek[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 3
     sha256 cellar: :any_skip_relocation, all: "af5b3ecacae9c0ace4403ba786d09138413571a9dc52d95ed59b289118683ff4"
   end
+
+  deprecate! date: "2026-01-05", because: "is not available via HTTPS"
 
   def install
     bin.install "dupseek"

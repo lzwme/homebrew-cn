@@ -74,11 +74,8 @@ class Nuvie < Formula
   end
 
   test do
-    pid = fork do
-      exec bin/"nuvie"
-    end
+    pid = spawn bin/"nuvie"
     sleep 3
-
     assert_path_exists bin/"nuvie"
     assert_predicate bin/"nuvie", :executable?
   ensure

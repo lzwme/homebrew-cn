@@ -1,8 +1,8 @@
 class Ldapvi < Formula
   desc "Update LDAP entries with a text editor"
   homepage "http://www.lichteblau.com/ldapvi/"
-  url "http://www.lichteblau.com/download/ldapvi-1.7.tar.gz"
-  mirror "https://deb.debian.org/debian/pool/main/l/ldapvi/ldapvi_1.7.orig.tar.gz"
+  url "https://deb.debian.org/debian/pool/main/l/ldapvi/ldapvi_1.7.orig.tar.gz"
+  mirror "http://www.lichteblau.com/download/ldapvi-1.7.tar.gz"
   sha256 "6f62e92d20ff2ac0d06125024a914b8622e5b8a0a0c2d390bf3e7990cbd2e153"
   license "GPL-2.0-or-later"
   revision 9

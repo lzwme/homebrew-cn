@@ -36,6 +36,8 @@ class Harbour < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2087353cafad551175524915a162da8520c6401686c1d4d70414553fbc2d1f1b"
   end
 
+  deprecate! date: "2026-01-05", because: "uses deprecated libxdiff"
+
   depends_on "jpeg-turbo"
   depends_on "libharu"
   depends_on "libpng"

@@ -1,19 +1,18 @@
 class Azion < Formula
   desc "CLI for the Azion service"
   homepage "https://github.com/aziontech/azion"
-  url "https://ghfast.top/https://github.com/aziontech/azion/archive/refs/tags/4.13.0.tar.gz"
-  sha256 "1d90e73957abaf84cf9ede427c0297f62e3f9a589add4b4dd9171afa266b5971"
+  url "https://ghfast.top/https://github.com/aziontech/azion/archive/refs/tags/4.13.1.tar.gz"
+  sha256 "82256753e129fc8b054d3f229ab400d0536073d68736225a5324c238ec7870a2"
   license "MIT"
   head "https://github.com/aziontech/azion.git", branch: "dev"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b97abbd89c6a2c309759d2d712e57f2a805e6dbb00bfd29371f10057037b48ab"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b97abbd89c6a2c309759d2d712e57f2a805e6dbb00bfd29371f10057037b48ab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b97abbd89c6a2c309759d2d712e57f2a805e6dbb00bfd29371f10057037b48ab"
-    sha256 cellar: :any_skip_relocation, sonoma:        "307f3f8459fe63e541e7a87ee749b4b1f0abcfef5a4706bfa4a230f172dd40e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2745fba65728d9dd64b603b40c275db56dac0cbaad84dca86326d637cce3afc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d6f6ffbf568cde1910ad23f4e1ef8546d4def54c445fed361d72260adc87ad4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bcd9bffd37ecb6553ca719b16b6e302593db9d41db21511e93e08f31475f88ce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bcd9bffd37ecb6553ca719b16b6e302593db9d41db21511e93e08f31475f88ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bcd9bffd37ecb6553ca719b16b6e302593db9d41db21511e93e08f31475f88ce"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5a85af8f1aa5ff709312c21603c1bf6f2dfffd54f9a766f94041007d87e8342e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "833b1c8f31052eecf39ac22f3c70d7788ea6d4af2db634b0bd595e50c76a590f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d087c35a699b7bd394c476cbc5655b6c9ef32b71a2d7a854debf7b2e3f5d7fc0"
   end
 
   depends_on "go" => :build

@@ -41,6 +41,21 @@ class KyotoCabinet < Formula
     system "make" # Separate steps required
     system "make", "install"
   end
+
+  test do
+    # https://dbmx.net/kyotocabinet/spex.html#tutorial_kchashmgr
+    system bin/"kchashmgr", "create", "staffs.kch"
+    system bin/"kchashmgr", "set", "staffs.kch", "1001", "George Washington"
+    system bin/"kchashmgr", "set", "staffs.kch", "1002", "John Adams"
+    system bin/"kchashmgr", "set", "staffs.kch", "1003", "Thomas Jefferson"
+    system bin/"kchashmgr", "set", "staffs.kch", "1004", "James Madison"
+    assert_equal <<~EOS, shell_output("#{bin}/kchashmgr list -pv staffs.kch")
+      1001\tGeorge Washington
+      1002\tJohn Adams
+      1003\tThomas Jefferson
+      1004\tJames Madison
+    EOS
+  end
 end
 
 

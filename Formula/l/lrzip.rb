@@ -5,13 +5,6 @@ class Lrzip < Formula
   sha256 "2c6389a513a05cba3bcc18ca10ca820d617518f5ac6171e960cda476b5553e7e"
   license "GPL-2.0-or-later"
 
-  livecheck do
-    url "http://ck.kolivas.org/apps/lrzip/"
-    regex(/href=.*?lrzip[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "7ba040424b61861e2e583c5797cde65885622182d4a99a20a38be74e0c4b86b9"
     sha256 cellar: :any,                 arm64_sequoia:  "34d8b5415f33f6227a73dbc8ab1957c2b1e3591e1c3ee5b8d01ca6123b9d9525"
@@ -27,6 +20,9 @@ class Lrzip < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:    "3f8dfe3dd08b7231d134922f66dca8c88575590259bc3646d6582f2b4c6fb011"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5515b974789a0665b67ceb99c09d7c2b4edae560c5d7e4d7aee765fe95a563e0"
   end
+
+  # Newer versions also don't build
+  deprecate! date: "2026-01-05", because: "is not available via HTTPS"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build

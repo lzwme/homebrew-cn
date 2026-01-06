@@ -1,8 +1,8 @@
 class Testkube < Formula
   desc "Kubernetes-native framework for test definition and execution"
   homepage "https://testkube.io"
-  url "https://ghfast.top/https://github.com/kubeshop/testkube/archive/refs/tags/2.5.3.tar.gz"
-  sha256 "1b7e7fef43c761cec51e9004f46376dd075c39999c82696a2fcc067a9b2481be"
+  url "https://ghfast.top/https://github.com/kubeshop/testkube/archive/refs/tags/2.5.4.tar.gz"
+  sha256 "6e73770a74e5873ef4b350be2e9ded3da6f72cb1af18ac7a89f4c038e3d3af0e"
   license "MIT"
   head "https://github.com/kubeshop/testkube.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Testkube < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80f15e37452f3a2d89dd0b91f65f14eeefd68b35c95f9d22f8032b0fda19d0a7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0ac98568f23255eca4771a49514742e637900c79116950479fc012e06a70567"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63ce28f437e1c5761020690abf8349d37b64e3b9687ae5d4393c735ec0d36628"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c79a724b3fa53872dcdc69b4bc3dbc0de9e23b49d0a6431da3a7c63f2920992b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "233d0abf568f38ae5f4a7b5925c8a1f23c79908bd902b767cda143a9cfa001f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10ef31691379c8e005e5b01b4964e0020b5a86833b6d19e94068375441e404c3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4325030a2d7df409c6c5e20d7543a1f54f113a0d641c30e928067084340f331"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d48790189e0ad264fbd397ba9511084758c4e185ee4e6b035354cec162a9d98"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a0f49f4e5071bf8b5a61771ef273d4cd5fc93c745ec66d3df3175a425428b56"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6dc4a83f6806d4ea7e12a2841e205ea447be9376307fbf7ea0f3f620871c28e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "23339aadc62bb54675e4896f4641e488183a2999b59d8ef309f340b37424ccdd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e33f7a3e912b1ad67a31d85e7fb01f8cf0f7fa65132abd207ebecf437227a19"
   end
 
   depends_on "go" => :build

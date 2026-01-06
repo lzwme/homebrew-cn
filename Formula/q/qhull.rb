@@ -1,8 +1,8 @@
 class Qhull < Formula
   desc "Computes convex hulls in n dimensions"
   homepage "http://www.qhull.org/"
-  url "http://www.qhull.org/download/qhull-2020-src-8.0.2.tgz"
-  version "2020.2"
+  url "https://deb.debian.org/debian/pool/main/q/qhull/qhull_2020.2.orig.tar.gz"
+  mirror "http://www.qhull.org/download/qhull-2020-src-8.0.2.tgz"
   sha256 "b5c2d7eb833278881b952c8a52d20179eab87766b00b865000469a45c1838b7e"
   license "Qhull"
   head "https://github.com/qhull/qhull.git", branch: "master"

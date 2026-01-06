@@ -1,14 +1,13 @@
 class Bitcoin < Formula
   desc "Decentralized, peer to peer payment network"
   homepage "https://bitcoincore.org/"
-  url "https://bitcoincore.org/bin/bitcoin-core-30.0/bitcoin-30.0.tar.gz"
-  sha256 "9b472a4d51dfed9aa9d0ded2cb8c7bcb9267f8439a23a98f36eb509c1a5e6974"
+  url "https://bitcoincore.org/bin/bitcoin-core-30.1/bitcoin-30.1.tar.gz"
+  sha256 "5d5518782c3000f64717ec1b4291e7e609a1f900d9729ee83c982243779c3f43"
   license all_of: [
     "MIT",
     "BSD-3-Clause", # src/crc32c, src/leveldb
     "BSL-1.0", # src/tinyformat.h
   ]
-  revision 1
   head "https://github.com/bitcoin/bitcoin.git", branch: "master"
 
   livecheck do
@@ -17,12 +16,12 @@ class Bitcoin < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1cbbb663003fe06195bcfbd38fc39b4871d25a6860f8dce9862d1f6999f615e4"
-    sha256 cellar: :any,                 arm64_sequoia: "1129e1fb0f2987790d5918f091511d6b9f8cf10a9c2176883224bb74980f0aad"
-    sha256 cellar: :any,                 arm64_sonoma:  "a4686325aad304bf3ff7f4ff15a3247f41a94ad08e69d297f9b9cfa5c6e8cddf"
-    sha256 cellar: :any,                 sonoma:        "63b063364472fa378c8eb99c5fc6626540a0c0ccc52c63108abcccd1862d6d74"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5999e3be7485159f9de4c3acdb136474d25d61767e327efdc70a088fdd4bc557"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96b2a420c36860cef86f8629053d06dd3aac750cc4ced5acfcd7b1615df79e84"
+    sha256 cellar: :any,                 arm64_tahoe:   "a6ffcbdd788bcda0475a11a6d1357fe95f9b6f13795e2e92af7deadaf23c2b7e"
+    sha256 cellar: :any,                 arm64_sequoia: "789aa9906d7af4c70d33a2ce67b2af8a4748293057cb189e50a9bd1e6809dacc"
+    sha256 cellar: :any,                 arm64_sonoma:  "f80cb1015724372f46297ebca8ebcb718bacb8c4ebf6737d51551c827974bb65"
+    sha256 cellar: :any,                 sonoma:        "53bd35b86388771303cee989f7f6b728d32da9ea212d6bc8239054035d2b18ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ef2398cfdf3456d653f91bd9527f19a3ef3901c34954ab9268ca36d27276733"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9c41b0d9a6bb969186a3d7ddfc540cfd2190973501959bbb519ee5b2edcad86"
   end
 
   depends_on "boost" => :build

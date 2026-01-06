@@ -7,8 +7,6 @@ class Xboard < Formula
   license "GPL-3.0-or-later"
   revision 4
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 arm64_tahoe:    "49fb2045c979c8788ec25bbba4416f8f5a38729d9018d610ea1dd41f2595263b"
     sha256 arm64_sequoia:  "a3b2d95bd28d0e7034e8c740bb5daf60ebd131dec5586eda4c8caa491b96f99b"
@@ -29,6 +27,8 @@ class Xboard < Formula
     depends_on "automake" => :build
     depends_on "gettext" => :build
   end
+
+  deprecate! date: "2026-01-05", because: "uses deprecated polyglot"
 
   depends_on "pkgconf" => :build
   depends_on "cairo"

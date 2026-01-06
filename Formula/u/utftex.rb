@@ -1,17 +1,17 @@
 class Utftex < Formula
   desc "Pretty print math in monospace fonts, using a TeX-like syntax"
   homepage "https://github.com/bartp5/libtexprintf"
-  url "https://ghfast.top/https://github.com/bartp5/libtexprintf/archive/refs/tags/v1.27.tar.gz"
-  sha256 "1ee792e5a4b1691272367c837e58fe5c7c90d1253bde522eca28c48aa244963f"
+  url "https://ghfast.top/https://github.com/bartp5/libtexprintf/archive/refs/tags/v1.28.tar.gz"
+  sha256 "9db41a6d59ab20d55936a825b0fdd5ad0168599eca16ea7a2a11218a0c140798"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b097def87ce2a42d882f12c78914297ae95d7f544f281d80bb699c415dfbf5c1"
-    sha256 cellar: :any,                 arm64_sequoia: "1b632a10326e687284eec1088058933653ffe0fabe3696e42b1da39e63938680"
-    sha256 cellar: :any,                 arm64_sonoma:  "f06c29f006abf9b07d9bd4832ca82d08dad6021b9470aedcd9dea3a96782261d"
-    sha256 cellar: :any,                 sonoma:        "5f2b4dfb3f916dbdcbc3006a3f741a94e2f7947d61f4ba4af30dcee11b220516"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5c751c2580d67c56903ac82ba5673b42f6a3fab5ea021f25dc25138a37ac478"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99540b48b6874d68bfda00c3f13d13355965eba0627c5ba67d413890e7115874"
+    sha256 cellar: :any,                 arm64_tahoe:   "4d034f23babf992ee2eac7ab994c72be940354498015c88597f2b6a82bfe2f8a"
+    sha256 cellar: :any,                 arm64_sequoia: "609bd90c8adae4a948aca166f3624daa8407404c6959427224b90be54185dbe0"
+    sha256 cellar: :any,                 arm64_sonoma:  "e6dc4264e5a27545d328f30800b285222c22a9b32b42797453de14988617359b"
+    sha256 cellar: :any,                 sonoma:        "3e07289f95664623ee186e015c4a660097161f6fa92f44989a27903fd7400bc8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9a4dd8c616bcfe728ef03fe4526da7f1b800a7315c73c0ecdbc6ec4d34f5748"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06207925105da3d4c3b3118f685c0e5e7e96996bcc627864d14e79aa032a6215"
   end
 
   depends_on "autoconf" => :build

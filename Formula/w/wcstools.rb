@@ -1,7 +1,8 @@
 class Wcstools < Formula
   desc "Tools for using World Coordinate Systems (WCS) in astronomical images"
   homepage "http://tdc-www.harvard.edu/wcstools/"
-  url "http://tdc-www.harvard.edu/software/wcstools/wcstools-3.9.7.tar.gz"
+  url "https://distfiles.macports.org/wcstools/wcstools-3.9.7.tar.gz"
+  mirror "http://tdc-www.harvard.edu/software/wcstools/wcstools-3.9.7.tar.gz"
   sha256 "525f6970eb818f822db75c1526b3122b1af078affa572dce303de37df5c7b088"
   license "GPL-2.0-or-later"
 

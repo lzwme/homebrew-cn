@@ -1,14 +1,13 @@
 class Fairymax < Formula
   desc "AI for playing Chess variants"
   homepage "https://www.chessvariants.com/index/msdisplay.php?itemid=MSfairy-max"
-  url "http://hgm.nubati.net/git/fairymax.git",
-      tag:      "5.0b",
-      revision: "f7a7847ea2d4764d9a0a211ba6559fa98e8dbee6"
-  version "5.0b"
+  url "https://deb.debian.org/debian/pool/main/f/fairymax/fairymax_5.0b.orig.tar.gz"
+  sha256 "3e36ba168aa10179225f8dd6953d1c39c4cd4526572765b2e9c77717efe3e52f"
   license :public_domain
-  head "http://hgm.nubati.net/git/fairymax.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    skip "No longer developed or maintained"
+  end
 
   bottle do
     rebuild 1

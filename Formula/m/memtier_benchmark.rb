@@ -1,21 +1,20 @@
 class MemtierBenchmark < Formula
   desc "Redis and Memcache traffic generation and benchmarking tool"
   homepage "https://github.com/RedisLabs/memtier_benchmark"
-  url "https://ghfast.top/https://github.com/RedisLabs/memtier_benchmark/archive/refs/tags/2.2.0.tar.gz"
-  sha256 "73bcdaca9a5e9c87c6f060637125885f8a01f178061fd67cd05f9da762d3490d"
+  url "https://ghfast.top/https://github.com/RedisLabs/memtier_benchmark/archive/refs/tags/2.2.1.tar.gz"
+  sha256 "e417382826ea1b93f93441bfa52d7556fb41a85b29e20d5f87c4b1a972ee3a6b"
   license all_of: [
     "GPL-2.0-only",
     any_of: ["CC0-1.0", "BSD-2-Clause"], # deps/hdr_histogram
   ]
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "fe41e5410fbd6119297a0cd33096ab7e7b557f8fd00ef8c415f579659170abd9"
-    sha256 cellar: :any,                 arm64_sequoia: "2a7a858f3a3adef5a4b970642b090536e1debb3766cd254acd8b627e4d18747b"
-    sha256 cellar: :any,                 arm64_sonoma:  "84eafcf539ad203a2eb7044bff2632301490e02951d8b019a41ae4186cacc0ef"
-    sha256 cellar: :any,                 sonoma:        "6544f4bc25c790be6f0f93249580a05aca7d3f92d7f457a5430dfa127fa59b61"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "291b2c1df8539b7e33f65c459a159113808c173bc767393531363d060a149821"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ff298123c9b8d1d0fd2620edb33f388262d0502e88c0565958f754af714336d"
+    sha256 cellar: :any,                 arm64_tahoe:   "3e15c6fea91dc997dc546c8a29ae42a0be0934d2ad90c05a5702ac35144df9d6"
+    sha256 cellar: :any,                 arm64_sequoia: "c455afad00fa3c262967a688113cae7fb99a3a57dd8598f1d4e56343590b5416"
+    sha256 cellar: :any,                 arm64_sonoma:  "a47cce15057b9c87c01b2d4937822a91e3855e94594b1c25e36f1ca5837b2b6b"
+    sha256 cellar: :any,                 sonoma:        "b66a8ea448dda20fa590224b20d55ba357601c38ead37726a86fc1d53a7045b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8917d60ffd266846cfb82fbc1b9ded44d8c12b9f8266237aab88109f39e0df0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c877599a2e60a755c2751518988ee1906d30a27bfa4d21f9ac91075311c49d23"
   end
 
   depends_on "autoconf" => :build
@@ -26,12 +25,6 @@ class MemtierBenchmark < Formula
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
-
-  # Backport removal of pcre dependency
-  patch do
-    url "https://github.com/RedisLabs/memtier_benchmark/commit/f3545b0f59ae21ad8b702aec9d15aacbccdbc41b.patch?full_index=1"
-    sha256 "f78c13a299e7f4dbcd5926b0e111f06143e187d915d7811e4290f12125deab65"
-  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"

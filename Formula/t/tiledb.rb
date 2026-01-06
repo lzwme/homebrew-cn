@@ -4,6 +4,7 @@ class Tiledb < Formula
   url "https://ghfast.top/https://github.com/TileDB-Inc/TileDB/archive/refs/tags/2.30.0.tar.gz"
   sha256 "c5f94da6de0e0f93925f7ad107bd80fef0615f9b3d111a5bae245f75b1fcc173"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,12 +12,12 @@ class Tiledb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d24643620924306af3314b92336a425196ee12ac582b5cf454aeb95918c82e34"
-    sha256 cellar: :any,                 arm64_sequoia: "447fb3b5eb102ae3ed47d77b6aa1f978c9b3d3e1b7a23090d3ef2886b685320f"
-    sha256 cellar: :any,                 arm64_sonoma:  "92da40d1dd7e7dfe082f95eeadceb9a8190d6db64d454a14820d1d4b68e7771e"
-    sha256 cellar: :any,                 sonoma:        "f38a90aa06777eaa085e4f92fb496dadb443db1de3c7ebf1f2d43b15def77776"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b521539ed19cbb3f04687298c61c2ebe9fd0cb6fb2cb845dc2915f543ecbbba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e78c42be0f23e86e08deb5490473fbaee901d311aa8950fdd07b620ccb96066"
+    sha256 cellar: :any,                 arm64_tahoe:   "9cb9feab02cde5e8ae87d39892c0ba44d3952b85e06f77eabe7485bb18f749cd"
+    sha256 cellar: :any,                 arm64_sequoia: "4e0f295fac5255c7a82b939636c5fa248cfdfe4671d55e7a92b386e2527d2f7a"
+    sha256 cellar: :any,                 arm64_sonoma:  "67b8e120c9b979462ae503e21318fd44c3fe6380acaca245dc4caba4a249a633"
+    sha256 cellar: :any,                 sonoma:        "fbb4cbb718aae628c1c511101f68fa391362f8ebb4855502eacb759e959e4f07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "beb2c3db549c2b2ee1c014ae97f9a58080c4da0a2b53a7c1f968b79d653f98e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebceb1fdef18e9956deae5774bbc31c04f795cbfb60551ae87829e0ee53a0a3c"
   end
 
   depends_on "c-blosc2" => :build

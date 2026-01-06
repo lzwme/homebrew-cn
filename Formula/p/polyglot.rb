@@ -6,13 +6,6 @@ class Polyglot < Formula
   license "GPL-2.0-or-later"
   head "http://hgm.nubati.net/git/polyglot.git", branch: "learn"
 
-  livecheck do
-    url "http://hgm.nubati.net/releases"
-    regex(/href=.*?polyglot[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "6bf5814277c6a0cc6281f0d3e6911d909ef872edc68db77c9a382d17162020af"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7c17a367c2d5da43b534695330ea6467fb27dcd887afeb6dc582601c4a6a5fdc"
@@ -28,6 +21,8 @@ class Polyglot < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:    "9ad5fabb4324b9766a57bfb9889d17d2044e0f4ad9cdd8758e8fc968571919d8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d78f2053c59df94cc0389beaf43906198ebc01dcb86c8cb888fdc6c640a9bc2"
   end
+
+  deprecate! date: "2026-01-05", because: "is not available via HTTPS"
 
   def install
     # Fix compile with newer Clang

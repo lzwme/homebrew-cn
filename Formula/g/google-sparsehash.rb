@@ -14,9 +14,20 @@ class GoogleSparsehash < Formula
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "check"
     system "make", "install"
+  end
+
+  test do
+    resource "simple_test.cc" do
+      url "https://ghfast.top/https://raw.githubusercontent.com/sparsehash/sparsehash/b621b0c53615473a172aeb7fed0164a7d4df25ba/src/simple_test.cc"
+      sha256 "7592cec53ea45a87d7df86e5215747666c85677a1216e701b4c9248e633c65c3"
+    end
+    testpath.install resource("simple_test.cc")
+    inreplace "simple_test.cc", /^#include <config.h>/, "// \\0"
+
+    system ENV.cxx, "simple_test.cc", "-o", "test"
+    assert_equal "PASS", shell_output("./test").chomp
   end
 end

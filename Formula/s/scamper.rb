@@ -1,8 +1,8 @@
 class Scamper < Formula
   desc "Advanced traceroute and network measurement utility"
   homepage "https://www.caida.org/catalog/software/scamper/"
-  url "https://www.caida.org/catalog/software/scamper/code/scamper-cvs-20251113.tar.gz"
-  sha256 "350f93566ffecc62dcab451397d5a2adab55aa316f1127bb154193b3a084294c"
+  url "https://www.caida.org/catalog/software/scamper/code/scamper-cvs-20260105.tar.gz"
+  sha256 "31aeb84f82019052d12d85ebbf275ff1a1d465c0a80d1283e973445cbbbb75d7"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,12 +11,12 @@ class Scamper < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ac0b13e5bce4f56257e28e11a60b124d80142267125171e4e938721591c653df"
-    sha256 cellar: :any,                 arm64_sequoia: "8fdd4cc1f9913137274ffae288af5d2012b5a69ae9f5d3b46490c9d795b6139f"
-    sha256 cellar: :any,                 arm64_sonoma:  "dcefac7e0ea17eaa68058685988d6954ddfa66119b74f94cd1e877d7a03ff645"
-    sha256 cellar: :any,                 sonoma:        "c6a6a085f8bf66defaba5a5b46c2fbcc7f609b4788b3427492fdb56b7a3f3b62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c9c9f38453f9fea0226d976ab60dab8dee778d2b2e971e80d3c86454bf0e21f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e45a08b5b04d4facac8124297d23558da31d7bb4be703f098d9f1359f5203aaa"
+    sha256 cellar: :any,                 arm64_tahoe:   "cc1dab292233658922f8aa36ace6b77838684052e90d620914cb59172f558d11"
+    sha256 cellar: :any,                 arm64_sequoia: "349acebd63d3bd7e3e4672fb3da3944ca12ef12145ab11584d01e48f73edebe5"
+    sha256 cellar: :any,                 arm64_sonoma:  "2aa2fef8c312a1deb13bd60fbec3dd2ab5aa77cae50654fba5431357a671fa3e"
+    sha256 cellar: :any,                 sonoma:        "40900ad2efabd493b4fc3bad503fff05df43e89b1ee4bcb93f41d9514a4ca79b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be064651416cb723e0a9eb516f04f486ef2dd09e66e0893bd81153ec53848862"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce0a8d08e6840e368dbcc8780de5aa16ed64f3f3f7ee09d7ade199fb54889126"
   end
 
   depends_on "pkgconf" => :build

@@ -1,7 +1,8 @@
 class Fox < Formula
   desc "Toolkit for developing Graphical User Interfaces easily"
   homepage "http://fox-toolkit.org/"
-  url "http://fox-toolkit.org/ftp/fox-1.6.59.tar.gz"
+  url "https://distfiles.macports.org/fox/fox-1.6.59.tar.gz"
+  mirror "http://fox-toolkit.org/ftp/fox-1.6.59.tar.gz"
   sha256 "48f33d2dd5371c2d48f6518297f0ef5bbf3fcd37719e99f815dc6fc6e0f928ae"
   license "LGPL-2.1-or-later"
 

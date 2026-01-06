@@ -6,13 +6,6 @@ class Bookloupe < Formula
   license "GPL-2.0-only"
   revision 1
 
-  livecheck do
-    url :homepage
-    regex(/href=.*?bookloupe[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "5fdd9c33dda4df9eb880724c9ebf43aba9c5c9ebcd3eaa3659c06dee3506a9af"
     sha256 cellar: :any,                 arm64_sequoia:  "7ba3e588146783e6f0257c71de17fd54e6f4690c272790982b98f58bbfbf62f3"
@@ -28,6 +21,8 @@ class Bookloupe < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:    "a0c355266c0aa5d07d939056e39cd9747d893d84e8f80814d7b75d6483e8ddba"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b7cdc047eeed0574f7b0c8bccae751fa4b047b0a2aa30d71153960b75b52444"
   end
+
+  deprecate! date: "2026-01-05", because: "is not available via HTTPS"
 
   depends_on "pkgconf" => :build
 

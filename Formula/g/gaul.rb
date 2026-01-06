@@ -36,4 +36,15 @@ class Gaul < Formula
     system "./configure", "--disable-g", *std_configure_args
     system "make", "install"
   end
+
+  test do
+    resource "gaul-examples" do
+      url "https://downloads.sourceforge.net/project/gaul/gaul-examples/0.1849/gaul-examples-0.1849-0.tar.bz2"
+      sha256 "f4f59a0d676b0d58ba068424dfcb2c1715ff9aeaa940cab2daebff323274594c"
+    end
+    testpath.install resource("gaul-examples")
+
+    system ENV.cc, "src/struggle.c", "-o", "test", "-L#{lib}", "-lgaul_util", "-lgaul"
+    assert_match "The solution with seed = 49 was:\nWhen w^ yeil^ct%on%this strsggln,", shell_output("./test")
+  end
 end

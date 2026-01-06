@@ -6,7 +6,8 @@ class SpeechTools < Formula
   head "https://github.com/festvox/speech_tools.git", branch: "master"
 
   stable do
-    url "http://festvox.org/packed/festival/2.5/speech_tools-2.5.0-release.tar.gz"
+    url "https://deb.debian.org/debian/pool/main/s/speech-tools/speech-tools_2.5.0.orig.tar.gz"
+    mirror "http://festvox.org/packed/festival/2.5/speech_tools-2.5.0-release.tar.gz"
     sha256 "e4fd97ed78f14464358d09f36dfe91bc1721b7c0fa6503e04364fb5847805dcc"
 
     # Fix build on Apple Silicon. Remove in the next release.

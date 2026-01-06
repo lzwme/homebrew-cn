@@ -32,19 +32,17 @@ class NatsStreamingServer < Formula
   test do
     port = free_port
     http_port = free_port
-    pid = fork do
-      exec bin/"nats-streaming-server",
-           "--port=#{port}",
-           "--http_port=#{http_port}",
-           "--pid=#{testpath}/pid",
-           "--log=#{testpath}/log"
-    end
-    sleep 3
+    pid = spawn bin/"nats-streaming-server",
+                "--port=#{port}",
+                "--http_port=#{http_port}",
+                "--pid=#{testpath}/pid",
+                "--log=#{testpath}/log"
 
     begin
+      sleep 3
       assert_match "uptime", shell_output("curl localhost:#{http_port}/varz")
       assert_path_exists testpath/"log"
-      assert_match version.to_s, File.read(testpath/"log")
+      assert_match version.to_s, (testpath/"log").read
     ensure
       Process.kill "SIGINT", pid
       Process.wait pid

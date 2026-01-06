@@ -1,7 +1,8 @@
 class Nrg2iso < Formula
   desc "Extract ISO9660 data from Nero nrg files"
   homepage "http://gregory.kokanosky.free.fr/v4/linux/nrg2iso.en.html"
-  url "http://gregory.kokanosky.free.fr/v4/linux/nrg2iso-0.4.1.tar.gz"
+  url "https://distfiles.macports.org/nrg2iso/nrg2iso-0.4.1.tar.gz"
+  mirror "http://gregory.kokanosky.free.fr/v4/linux/nrg2iso-0.4.1.tar.gz"
   sha256 "3be36a416758fc1910473b49a8dadf2a2aa3d51f1976197336bc174bc1e306e5"
   license "GPL-3.0-or-later"
 

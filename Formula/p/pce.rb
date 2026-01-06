@@ -6,7 +6,8 @@ class Pce < Formula
 
   # TODO: Remove `-fcommon` workaround and switch to `sdl2` on next release
   stable do
-    url "http://www.hampa.ch/pub/pce/pce-0.2.2.tar.gz"
+    url "https://cdn.netbsd.org/pub/pkgsrc/distfiles/pce-0.2.2.tar.gz"
+    mirror "http://www.hampa.ch/pub/pce/pce-0.2.2.tar.gz"
     sha256 "a8c0560fcbf0cc154c8f5012186f3d3952afdbd144b419124c09a56f9baab999"
     depends_on "sdl12-compat"
   end
