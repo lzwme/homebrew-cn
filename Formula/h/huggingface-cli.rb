@@ -3,20 +3,18 @@ class HuggingfaceCli < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/a7/c8/9cd2fcb670ba0e708bfdf95a1177b34ca62de2d3821df0773bc30559af80/huggingface_hub-1.2.3.tar.gz"
-  sha256 "4ba57f17004fd27bb176a6b7107df579865d4cde015112db59184c51f5602ba7"
+  url "https://files.pythonhosted.org/packages/fb/94/42ed2ff780f4bc58acbe4b8cb98eb4574310ad6feba12f76a820e7546120/huggingface_hub-1.2.4.tar.gz"
+  sha256 "7a1d9ec4802e64372d1d152d69fb8e26d943f15a2289096fbc8e09e7b90c21a5"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "b84ec93081063fac162fe4b0ec0e4166c333fa4424cf8808dcef6b2553371bbf"
-    sha256 cellar: :any,                 arm64_sequoia: "53cb9878b311ee5c785591b529f0d0ab7c7243d3110c5551f2e130436fd4b707"
-    sha256 cellar: :any,                 arm64_sonoma:  "799ab3abe6f365dbb927183484205a91fa66e494448b9aa79e575e95e0370816"
-    sha256 cellar: :any,                 sonoma:        "9b0bd4e96bd28d5be6f96bcdfaa439aa803e701ba15dd4f4db309d1dc516059a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b39138b6c281b6338c0a6c0ae025124793ab6b2faec518554f1f47f36732010"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcfdb94fb3dab485a097d59791dc5a44f2bffd4bfb666ba70e9e2c9e81d84c84"
+    sha256 cellar: :any,                 arm64_tahoe:   "ffccedd463e80dcdaea13127ea577ebd664ba6f4f72a17f528ff558aa01badeb"
+    sha256 cellar: :any,                 arm64_sequoia: "603aae91b56569d2c1076061abb9869af61753e039edef7628fb2872224385da"
+    sha256 cellar: :any,                 arm64_sonoma:  "059cb778f67494af2eaab914720891ce68dd68a6ef0a9df2609c9d34534d386c"
+    sha256 cellar: :any,                 sonoma:        "d6ac5319a9576b989c8c68e21fa6bb83d4b68bdf4b1347c52ab085e3decfda8e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0331e38a29ef1afec05d9f8e1fe0eba9a6c342e7f42d5b4f7956dace526cf384"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea054c08a61ee42a400ce72f2cc0c3b9b748f7365e92e30a21d7632a193b6bec"
   end
 
   depends_on "pkgconf" => :build
@@ -45,8 +43,8 @@ class HuggingfaceCli < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
-    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
+    url "https://files.pythonhosted.org/packages/c1/e0/a75dbe4bca1e7d41307323dad5ea2efdd95408f74ab2de8bd7dba9b51a1a/filelock-3.20.2.tar.gz"
+    sha256 "a2241ff4ddde2a7cebddf78e39832509cb045d18ec1a09d7248d6bfc6bfbbe64"
   end
 
   resource "fsspec" do
@@ -100,8 +98,8 @@ class HuggingfaceCli < Formula
   end
 
   resource "typer-slim" do
-    url "https://files.pythonhosted.org/packages/3f/3d/6a4ec47010e8de34dade20c8e7bce90502b173f62a6b41619523a3fcf562/typer_slim-0.20.1.tar.gz"
-    sha256 "bb9e4f7e6dc31551c8a201383df322b81b0ce37239a5ead302598a2ebb6f7c9c"
+    url "https://files.pythonhosted.org/packages/f9/3b/2f60ce16f578b1db5b8816d37d6a4d9786b33b76407fc8c13b0b86312c31/typer_slim-0.21.0.tar.gz"
+    sha256 "f2dbd150cfa0fead2242e21fa9f654dfc64773763ddf07c6be9a49ad34f79557"
   end
 
   resource "typing-extensions" do

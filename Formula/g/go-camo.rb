@@ -25,9 +25,7 @@ class GoCamo < Formula
 
   test do
     port = free_port
-    fork do
-      exec bin/"go-camo", "--key", "somekey", "--listen", "127.0.0.1:#{port}", "--metrics"
-    end
+    spawn bin/"go-camo", "--key", "somekey", "--listen", "127.0.0.1:#{port}", "--metrics"
     sleep 1
     assert_match "200 OK", shell_output("curl -sI http://localhost:#{port}/metrics")
 

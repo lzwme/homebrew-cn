@@ -133,9 +133,7 @@ class Gdbgui < Formula
     assert_equal version.to_s, shell_output("#{bin}/gdbgui -v").strip
     port = free_port
 
-    fork do
-      exec bin/"gdbgui", "-n", "-p", port.to_s
-    end
+    spawn bin/"gdbgui", "-n", "-p", port.to_s
     sleep 3
 
     assert_match "gdbgui - gdb in a browser", shell_output("curl -s 127.0.0.1:#{port}")

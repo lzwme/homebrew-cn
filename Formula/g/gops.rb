@@ -48,9 +48,9 @@ class Gops < Formula
     GO
 
     system "go", "build"
-    pid = fork { exec "./brew-test" }
-    sleep 1
+    pid = spawn "./brew-test"
     begin
+      sleep 1
       assert_match(/\d+/, shell_output(bin/"gops"))
     ensure
       Process.kill("SIGINT", pid)

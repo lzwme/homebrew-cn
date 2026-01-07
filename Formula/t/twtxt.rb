@@ -6,18 +6,17 @@ class Twtxt < Formula
   url "https://files.pythonhosted.org/packages/fc/4c/cff74642212dbca8d4d9059119555cd335324b3da0b52990a414a0257756/twtxt-1.3.1.tar.gz"
   sha256 "f15e580f8016071448b24048402b939b9e8dec07eabacd84b1f2878d751b71ff"
   license "MIT"
-  revision 6
+  revision 7
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "770eca225a0a54216e7df9eeabc1f62662ad7c3e843ec7932fe5f8fa9dc3ebfd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65084f6db31ebe76cb66b50614e0efc3fc33ce5d5b2d8b7b5b95c6b41301cbae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "98acc47c361296e7cd9d4d6d85e355b81bc91f6418ab7425c8868b5faf7d167e"
-    sha256 cellar: :any_skip_relocation, tahoe:         "cc6acc2cf1214951a2fa8c20f71559d3a7bb1964f04067c38459026db532c608"
-    sha256 cellar: :any_skip_relocation, sequoia:       "f3786d5fb528221022304c98473b3a95b99a9a97075ef2423b4ba70b7fa130b7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "68cce3972d43daca56824086ee5abe882b5e48dfb176f54adfbe48a32271c09a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e56165f0ffc1993594d02f626a9fba47a06d26237f702e9fb47fff1df48f5a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40b14baf842363c7ec3cfb9a64196afc01fb7d6d35b11c2678a87d9adcf33047"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "911f4cf4aaaa2b13ca4d5e1ac85d6251dfdf3734d58a6c37501b0ea277ae0f21"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59e000dd4fbe0d09e6a33ac3bf74fb7d112f7647346692e82f28dcf516dd3f34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18fa8469eacee8cc37794e87d22a0e93fa6a8b4dc8e7decca224122728d6a497"
+    sha256 cellar: :any_skip_relocation, tahoe:         "7a35287fe061b310150f595648d9439d98e3efbbb898d2d122cd1bab51c45733"
+    sha256 cellar: :any_skip_relocation, sequoia:       "c3027ffc990a91d54b90fa734b81c2c941afa082844c794687e7d8ce33cbd0b0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9acd630daf3082262aefe8084c9665dced3e955dde467b7c30469a1ae7986034"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a1e2e46b6a887d111e84d9df0708fbf492f59dafac19bf8e7d625c862699a9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdf642358ef57540439860600486f807ab0938d04aa6e42875fba28579bfc4e6"
   end
 
   depends_on "python@3.14"
@@ -28,8 +27,8 @@ class Twtxt < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/62/f1/8515650ac3121a9e55c7b217c60e7fae3e0134b5acfe65691781b5356929/aiohttp-3.13.0.tar.gz"
-    sha256 "378dbc57dd8cf341ce243f13fa1fa5394d68e2e02c15cd5f28eae35a70ec7f67"
+    url "https://files.pythonhosted.org/packages/50/42/32cf8e7704ceb4481406eb87161349abb46a57fee3f008ba9cb610968646/aiohttp-3.13.3.tar.gz"
+    sha256 "a949eee43d3782f2daae4f4a2819b2cb9b0c5d3b7f7a927067cc84dafdbb9f88"
   end
 
   resource "aiosignal" do
@@ -43,8 +42,8 @@ class Twtxt < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "frozenlist" do
@@ -53,13 +52,13 @@ class Twtxt < Formula
   end
 
   resource "humanize" do
-    url "https://files.pythonhosted.org/packages/98/1d/3062fcc89ee05a715c0b9bfe6490c00c576314f27ffee3a704122c6fd259/humanize-4.13.0.tar.gz"
-    sha256 "78f79e68f76f0b04d711c4e55d32bebef5be387148862cb1ef83d2b58e7935a0"
+    url "https://files.pythonhosted.org/packages/ba/66/a3921783d54be8a6870ac4ccffcd15c4dc0dd7fcce51c6d63b8c63935276/humanize-4.15.0.tar.gz"
+    sha256 "1dd098483eb1c7ee8e32eb2e99ad1910baefa4b75c3aff3a82f4d78688993b10"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "multidict" do

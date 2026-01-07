@@ -33,14 +33,7 @@ class Etcd < Formula
 
   test do
     test_string = "Hello from brew test!"
-    etcd_pid = fork do
-      exec bin/"etcd",
-           "--force-new-cluster",
-           "--logger=zap",
-           "--data-dir=#{testpath}"
-    end
-
-    # Wait a bit for etcd to initialize
+    etcd_pid = spawn bin/"etcd", "--force-new-cluster", "--logger=zap", "--data-dir=#{testpath}"
     sleep 10
 
     key_base64 = Base64.strict_encode64("brew_test")

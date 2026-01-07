@@ -39,16 +39,12 @@ class Forgejo < Formula
     ENV["FORGEJO_WORK_DIR"] = testpath
     port = free_port
 
-    pid = fork do
-      exec bin/"forgejo", "web", "--port", port.to_s, "--install-port", port.to_s
-    end
-    sleep 5
-    sleep 10 if OS.mac? && Hardware::CPU.intel?
+    pid = spawn bin/"forgejo", "web", "--port", port.to_s, "--install-port", port.to_s
 
-    output = shell_output("curl -s http://localhost:#{port}/api/settings/api")
+    output = shell_output("curl --silent --retry 5 --retry-connrefused http://localhost:#{port}/api/settings/api")
     assert_match "Go to default page", output
 
-    output = shell_output("curl -s http://localhost:#{port}/")
+    output = shell_output("curl --silent http://localhost:#{port}/")
     assert_match "Installation - Forgejo: Beyond coding. We Forge.", output
 
     assert_match version.to_s, shell_output("#{bin}/forgejo -v")

@@ -26,16 +26,11 @@ class ChiselTunnel < Formula
   end
 
   test do
-    _, write = IO.pipe
     server_port = free_port
-
-    server_pid = fork do
-      exec "#{bin}/chisel server -p #{server_port}", out: write, err: write
-    end
-
-    sleep 2
+    server_pid = spawn bin/"chisel", "server", "-p", server_port.to_s, [:out, :err] => File::NULL
 
     begin
+      sleep 2
       assert_match "Connected", shell_output("curl -v 127.0.0.1:#{server_port} 2>&1")
     ensure
       Process.kill("TERM", server_pid)

@@ -24,9 +24,7 @@ class Gaze < Formula
   end
 
   test do
-    pid = fork do
-      exec bin/"gaze", "-c", "cp test.txt out.txt", "test.txt"
-    end
+    pid = spawn bin/"gaze", "-c", "cp test.txt out.txt", "test.txt"
     sleep 5
     File.write("test.txt", "hello, world!")
     sleep 2

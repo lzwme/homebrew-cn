@@ -6,15 +6,16 @@ class Parsedmarc < Formula
   url "https://files.pythonhosted.org/packages/91/b8/183509122785d68069b586ef2c196b3e1a3870bbb278e8c068eeab72fd88/parsedmarc-9.0.8.tar.gz"
   sha256 "52c0b2d876845ba7813528fe94121db4eade19438aebe2c7dbe3d244933ad3f5"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c41a1f847f37c70f7fb359bd6b8a009e855d6a8ca3a770f6e72fe6a9be5219ba"
-    sha256 cellar: :any,                 arm64_sequoia: "77d1f20e6f435e47616afa04a79b9080a91bacbeb61fb7babb9d5680ab877b2a"
-    sha256 cellar: :any,                 arm64_sonoma:  "8c0b6ae1cf5ac347fbbb474bf5a7dcf21ff3c99ce80687449f0e842d6f47cbff"
-    sha256 cellar: :any,                 sonoma:        "1dd626a70a825f62357fecb88ad70919c7f9f575445210acdc3f17266bfef284"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2c238cb279f168b9880216d65e580cc5ab21cfedbb43595d637bc85330b6cd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1dea92573dbd4f66c221736818e9111d36a840dc9fb031fedea36645ebe2471c"
+    sha256 cellar: :any,                 arm64_tahoe:   "f0d306b6e36261ff68e4dd7ee6dc4595b518a96632c9f0fae1d18462537ecedd"
+    sha256 cellar: :any,                 arm64_sequoia: "45c4a8b4ae0735dfa6e579743a3b5a23b5da3121ca8da4136c0ad3ec06b44c2d"
+    sha256 cellar: :any,                 arm64_sonoma:  "c63dc603b917bbc065b2c2ae4c8a46144c47a387bf32e66c4d7766d2c6d343bc"
+    sha256 cellar: :any,                 sonoma:        "7b820c924b61332aeda09f69103bf8c982ae7caf1af80ea7f61428865f27ea62"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0d7c10cddf3c2ef9491a4ce21fb4904eb24b9a604456ad3f1d9ac8829f282e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce5c290d6509eb8744f5f9f0c018f9a39b14dbfee258a9ff728882471f730585"
   end
 
   depends_on "rust" => :build
@@ -34,8 +35,8 @@ class Parsedmarc < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/1c/ce/3b83ebba6b3207a7135e5fcaba49706f8a4b6008153b4e30540c982fae26/aiohttp-3.13.2.tar.gz"
-    sha256 "40176a52c186aefef6eb3cad2cdd30cd06e3afbe88fe8ab2af9c0b90f228daca"
+    url "https://files.pythonhosted.org/packages/50/42/32cf8e7704ceb4481406eb87161349abb46a57fee3f008ba9cb610968646/aiohttp-3.13.3.tar.gz"
+    sha256 "a949eee43d3782f2daae4f4a2819b2cb9b0c5d3b7f7a927067cc84dafdbb9f88"
   end
 
   resource "aiosignal" do
@@ -64,13 +65,13 @@ class Parsedmarc < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/f0/f0/00b15a4ffe86d35bd83551b1b355d514c0229cf7b1fd46e36ba82bf29be9/boto3-1.42.18.tar.gz"
-    sha256 "6388d8908331f29e7fc7a464f24aaa49070fac70bda1284ba3b7996c32f55465"
+    url "https://files.pythonhosted.org/packages/4f/91/87a0cedb0335f2c0653fe7353fc47d785b092353dab5b2d7141efd5d74b5/boto3-1.42.22.tar.gz"
+    sha256 "8550d91432dec1e587ab6d97f7e031bb334ca4fbb7824b8b63bca6e69c7e84b5"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/04/e3/163d8c95de39b039b27fd50794456f226412c16ca048a981162589fd7e2c/botocore-1.42.18.tar.gz"
-    sha256 "49fe04e25ec90e516a1399aceee2a38ebf63e183d25e4823a8d8e01349589742"
+    url "https://files.pythonhosted.org/packages/a9/86/b6f00de81a3f0e7e83328354b38376fbb9f0be1c8b66626ac9a274cdca4e/botocore-1.42.22.tar.gz"
+    sha256 "635c9213a448885a1cf735f1a950b83adaced0860b8159fc26d1242abc042443"
   end
 
   resource "cachetools" do

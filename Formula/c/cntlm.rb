@@ -61,9 +61,7 @@ class Cntlm < Formula
       Listen		#{bind_port}
     EOS
 
-    fork do
-      exec "#{bin}/cntlm -c #{testpath}/cntlm.conf -v"
-    end
+    spawn bin/"cntlm", "-c", testpath/"cntlm.conf", "-v"
     sleep 2
     # "unreacheable" is a typo in upstreams code. There haven't been
     # any updates to `cntlm` in over a decade, so this can't be fixed.

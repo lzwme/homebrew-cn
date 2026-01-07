@@ -6,16 +6,15 @@ class Streamrip < Formula
   url "https://files.pythonhosted.org/packages/b8/c9/6997772e0217f3081e4e692c7b8b104aaa564c008f2593341e81bbbd2396/streamrip-2.1.0.tar.gz"
   sha256 "e59b4b406f9ac77eb59c927a1a082644e0902152ffeb6212b6b24af7fbef5540"
   license "GPL-3.0-only"
-  revision 5
+  revision 6
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "51e337f8e192c05a235bb4cc5a2401d89d2273fce02fe234502d57d420c6fb8c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b2e2668123df3d1f769af94ec924c85a1d1f50fea3656e053574d77a9685d73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7a9645f9ba6dc503bd621f716a26c1e432ae5d2519db9c4bcf742fa855e571c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6f9f3b1016b491bbffc98ffd966e517bf575a91672363ed820149ab1fa91df70"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "821120b84526fc1191d4a22c1f464ae57a6a82bd3cfc9f86729b8764abe67e4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb8dc5a56259b6444a4d6450d96ccb1f54395417b251d6d5b5ea96ea32c06298"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a5ed2fed0b5dc201792dd9805ee1f8104476b921b143199843bfbebd35a332e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13af668f8418fc9da4defa8cbc0b1890822777a2ab960c348a1eafb31801d4a8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0f828d0961af1d2eeb3879482f7d4f83b71150c84fdc7b733b77c8fa9ca5cbc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "af8b82405f478b446e570f30ba64ac6d1e15206e4866d4f5d3ca73f52a04eed5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "74192b36e8348d7ee59820b792ca2f2b157b29856da62037a78e8118989727a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80d917f900b88745b920586e9569ac804d2514e54325a2ca63fb5abbf9b2672a"
   end
 
   depends_on "certifi" => :no_linkage
@@ -44,8 +43,8 @@ class Streamrip < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/1c/ce/3b83ebba6b3207a7135e5fcaba49706f8a4b6008153b4e30540c982fae26/aiohttp-3.13.2.tar.gz"
-    sha256 "40176a52c186aefef6eb3cad2cdd30cd06e3afbe88fe8ab2af9c0b90f228daca"
+    url "https://files.pythonhosted.org/packages/50/42/32cf8e7704ceb4481406eb87161349abb46a57fee3f008ba9cb610968646/aiohttp-3.13.3.tar.gz"
+    sha256 "a949eee43d3782f2daae4f4a2819b2cb9b0c5d3b7f7a927067cc84dafdbb9f88"
   end
 
   resource "aiolimiter" do

@@ -6,15 +6,16 @@ class McpScan < Formula
   url "https://files.pythonhosted.org/packages/e7/52/b1165560e3b06e0fd34e60cf16e81069da3c0c9683c57924948d69711bbd/mcp_scan-0.3.36.tar.gz"
   sha256 "618550fc145f7982bd6fc7be8c2c1b04438bb652a91daf5f99bcd85f0173936d"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/invariantlabs-ai/mcp-scan.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c237600fa1a3bb7007a3191673453ab9697b93456e6df4e82b2f3f467810e613"
-    sha256 cellar: :any,                 arm64_sequoia: "e6bbf790a7cd170db1f8099b3503363edd53346fcd753274143d0fce732ac7ed"
-    sha256 cellar: :any,                 arm64_sonoma:  "6d360003e88f244d2a0ecc4fab1dec46c209899a0acc807bb128175f3c066fcf"
-    sha256 cellar: :any,                 sonoma:        "5a8b5a23fde974a1ba715b9d20da27ec2d7aceb8484c4dc72e83dfa9125cd986"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0fe5d4dace2d91f8d7e8635f52c9b4eac9eac633833c8584cc9d06476aa8990"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a85d381d752b0309cc516089918aac0053f14996711f4ca188e217c388c50ab"
+    sha256 cellar: :any,                 arm64_tahoe:   "147f4a1f2fe0bdcb238ee524f8f00b8405e8990b3895ff82646ff0151f79382e"
+    sha256 cellar: :any,                 arm64_sequoia: "68faf3f11808c088781a09a42612a4ed75169880782c9709988d8984ec3db879"
+    sha256 cellar: :any,                 arm64_sonoma:  "2de091f5a82b337d7f147d5913ba527fcf36a7e7b8dfae24c059fb0ecfbf4d8c"
+    sha256 cellar: :any,                 sonoma:        "d961f47e161faffe231e6fe22e52ba33ef324aaab2b6ad1555b14b3fab7e9e3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4cdd7528217cb504e5654df94d43039943890d3710cb65cdac68e11026d89dee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8c5f2d57f6df39cbd2574378b898c493ee7eaf94a7fe061b73ab35c63995c52"
   end
 
   depends_on "certifi" => :no_linkage
@@ -36,8 +37,8 @@ class McpScan < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/1c/ce/3b83ebba6b3207a7135e5fcaba49706f8a4b6008153b4e30540c982fae26/aiohttp-3.13.2.tar.gz"
-    sha256 "40176a52c186aefef6eb3cad2cdd30cd06e3afbe88fe8ab2af9c0b90f228daca"
+    url "https://files.pythonhosted.org/packages/50/42/32cf8e7704ceb4481406eb87161349abb46a57fee3f008ba9cb610968646/aiohttp-3.13.3.tar.gz"
+    sha256 "a949eee43d3782f2daae4f4a2819b2cb9b0c5d3b7f7a927067cc84dafdbb9f88"
   end
 
   resource "aiosignal" do
@@ -66,13 +67,13 @@ class McpScan < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/0c/02/2cbbecf6551e0c1a06f9b9765eb8f7ae126362fbba43babbb11b0e3b7db3/fastapi-0.127.0.tar.gz"
-    sha256 "5a9246e03dcd1fdb19f1396db30894867c1d630f5107dc167dcbc5ed1ea7d259"
+    url "https://files.pythonhosted.org/packages/52/08/8c8508db6c7b9aae8f7175046af41baad690771c9bcde676419965e338c7/fastapi-0.128.0.tar.gz"
+    sha256 "1cc179e1cef10a6be60ffe429f79b829dce99d8de32d7acb7e6c8dfdf7f2645a"
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
-    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
+    url "https://files.pythonhosted.org/packages/c1/e0/a75dbe4bca1e7d41307323dad5ea2efdd95408f74ab2de8bd7dba9b51a1a/filelock-3.20.2.tar.gz"
+    sha256 "a2241ff4ddde2a7cebddf78e39832509cb045d18ec1a09d7248d6bfc6bfbbe64"
   end
 
   resource "frozenlist" do
@@ -146,8 +147,8 @@ class McpScan < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
-    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
+    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
+    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
   end
 
   resource "pydantic-settings" do
@@ -206,8 +207,8 @@ class McpScan < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/17/8b/54651ad49bce99a50fd61a7f19c2b6a79fbb072e693101fbb1194c362054/sse_starlette-3.0.4.tar.gz"
-    sha256 "5e34286862e96ead0eb70f5ddd0bd21ab1f6473a8f44419dd267f431611383dd"
+    url "https://files.pythonhosted.org/packages/da/34/f5df66cb383efdbf4f2db23cabb27f51b1dcb737efaf8a558f6f1d195134/sse_starlette-3.1.2.tar.gz"
+    sha256 "55eff034207a83a0eb86de9a68099bd0157838f0b8b999a1b742005c71e33618"
   end
 
   resource "starlette" do
@@ -221,8 +222,8 @@ class McpScan < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/6d/c1/933d30fd7a123ed981e2a1eedafceab63cb379db0402e438a13bc51bbb15/typer-0.20.1.tar.gz"
-    sha256 "68585eb1b01203689c4199bc440d6be616f0851e9f0eb41e4a778845c5a0fd5b"
+    url "https://files.pythonhosted.org/packages/85/30/ff9ede605e3bd086b4dd842499814e128500621f7951ca1e5ce84bbf61b1/typer-0.21.0.tar.gz"
+    sha256 "c87c0d2b6eee3b49c5c64649ec92425492c14488096dfbc8a0c2799b2f6f9c53"
   end
 
   resource "types-aiofiles" do

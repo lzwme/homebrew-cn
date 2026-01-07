@@ -29,16 +29,14 @@ class JettyRunner < Formula
     touch "#{testpath}/test.war"
 
     port = free_port
-    pid = fork do
-      exec "#{bin}/jetty-runner --port #{port} test.war"
-    end
-    sleep 10
+    pid = spawn bin/"jetty-runner", "--port", port.to_s, "test.war"
 
     begin
+      sleep 10
       output = shell_output("curl -I http://localhost:#{port}")
-      assert_match %r{HTTP/1\.1 200 OK}, output
+      assert_match "HTTP/1.1 200 OK", output
     ensure
-      Process.kill 9, pid
+      Process.kill "TERM", pid
       Process.wait pid
     end
   end

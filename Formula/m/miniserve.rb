@@ -25,13 +25,10 @@ class Miniserve < Formula
 
   test do
     port = free_port
-    pid = fork do
-      exec bin/"miniserve", bin/"miniserve", "-i", "127.0.0.1", "--port", port.to_s
-    end
-
-    sleep 2
+    pid = spawn bin/"miniserve", bin/"miniserve", "-i", "127.0.0.1", "--port", port.to_s
 
     begin
+      sleep 2
       read = (bin/"miniserve").read
       assert_equal read, shell_output("curl localhost:#{port}")
     ensure

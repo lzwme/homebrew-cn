@@ -26,10 +26,12 @@ class Astroterm < Formula
 
   resource "bsc5" do
     url "https://distfiles.alpinelinux.org/distfiles/edge/astroterm-bsc5-20231007", using: :nounzip
+    mirror "http://tdc-www.harvard.edu/catalogs/BSC5"
     sha256 "e471d02eaf4eecb61c12f879a1cb6432ba9d7b68a9a8c5654a1eb42a0c8cc340"
   end
 
   def install
+    # `mirror` has a different filename, but Homebrew always uses the primary URL's filename
     resource("bsc5").stage do
       (buildpath/"data").install "astroterm-bsc5-20231007" => "bsc5"
     end

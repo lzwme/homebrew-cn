@@ -1,10 +1,9 @@
 class Yaz < Formula
   desc "Toolkit for Z39.50/SRW/SRU clients/servers"
   homepage "https://www.indexdata.com/resources/software/yaz/"
-  url "https://ftp.indexdata.com/pub/yaz/yaz-5.35.1.tar.gz"
-  sha256 "db030d6d66880398a44215e26132630ee94f5e462d838809e43f97e6399c1353"
+  url "https://ftp.indexdata.com/pub/yaz/yaz-5.36.0.tar.gz"
+  sha256 "e9389ff5d7e76b4a50c89d72715a96a3ed48bbb97bd91b56eeb5146fa1be5d7d"
   license "BSD-3-Clause"
-  revision 2
 
   # The latest version text is currently omitted from the homepage for this
   # software, so we have to check the related directory listing page.
@@ -14,12 +13,12 @@ class Yaz < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "73a47b82e3c73803671866c251283e4ed9952f3f436eef749bf9e1f21b29b229"
-    sha256 cellar: :any,                 arm64_sequoia: "eae087ee9e852385c94699e9a0ba55f762cdd42b0fee1216036f31d991732f65"
-    sha256 cellar: :any,                 arm64_sonoma:  "9a3d0c899ed8111307adda8cd58612900560508421cf3811f225cdb545c0ad86"
-    sha256                               sonoma:        "68aadbbe4c8b599ae82785b47e9de7a77e5dfed42fd04279feadf1b0199c11d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a56ee687d9c52f3ffe6cb4caab43e1a1d2e4f082b7c2a48eec6b33bb40a55240"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da30acbcadad740ef3de76a8f890b38d5667331248597abe72085a343adb010a"
+    sha256 cellar: :any,                 arm64_tahoe:   "3f56088979fe27b1021fbc48a1501bce6e464e8f56c357fbb9ad644f25aac824"
+    sha256 cellar: :any,                 arm64_sequoia: "db1bafac4e2be774244d6c930f816c84688cad54190777d3df7f27d5f696a6b6"
+    sha256 cellar: :any,                 arm64_sonoma:  "c22db6d1969f1945b82a4f375fde237ec9471ae1eb903fe16b968cef8118dbda"
+    sha256                               sonoma:        "cab7510395a7eb8787ae6b78c64b72306cd13c891481ebfbf1a3fa356343b3c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20b94a1ce4543ff242a026ccb12f5162da86162947b504400faddc06e42bd869"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f51730918ed9aea291227fb19aac9694951e8ad917956e342a44ef18a92d629e"
   end
 
   head do

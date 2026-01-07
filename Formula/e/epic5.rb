@@ -29,19 +29,18 @@ class Epic5 < Formula
   uses_from_macos "ncurses"
 
   def install
-    system "./configure", *std_configure_args,
-                          "--mandir=#{man}",
+    system "./configure", "--mandir=#{man}",
                           "--with-ipv6",
-                          "--with-ssl=#{Formula["openssl@3"].opt_prefix}"
+                          "--with-ssl=#{Formula["openssl@3"].opt_prefix}",
+                          *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    connection = fork do
-      exec bin/"epic5", "irc.freenode.net"
-    end
+    connection = spawn bin/"epic5", "irc.freenode.net"
     sleep 5
     Process.kill("TERM", connection)
+    Process.wait(connection)
   end
 end

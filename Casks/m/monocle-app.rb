@@ -1,14 +1,14 @@
 cask "monocle-app" do
-  version "3.0.2"
-  sha256 "0cfa3ba106e5733afe53519df43edc0293e7abfce2e73ce9686a06a618028a5e"
+  version "3.0.3"
+  sha256 "a18b42ef927fe1d1cbc1521cc77c20222beabffb5c16e5240aba7363dc69cb21"
 
-  url "https://heyiam.dk/updates/monocle/Monocle-#{version.dots_to_hyphens}.zip"
+  url "https://files.heyiam.dk/updates/monocle/Monocle-#{version.dots_to_hyphens}.zip"
   name "Monocle"
   desc "Window dimming utility"
   homepage "https://monocle.heyiam.dk/"
 
   livecheck do
-    url "https://heyiam.dk/updates/monocle/appcast.xml"
+    url "https://files.heyiam.dk/updates/monocle/appcast.xml"
     strategy :sparkle, &:short_version
   end
 

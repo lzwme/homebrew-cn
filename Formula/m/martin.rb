@@ -32,13 +32,11 @@ class Martin < Formula
 
   test do
     sqlfile = pkgshare/"mbtiles/world_cities.sql"
-    system "sqlite3 world_cities.mbtiles < #{sqlfile}"
     mbtiles = testpath/"world_cities.mbtiles"
+    system "sqlite3 #{mbtiles} < #{sqlfile}"
 
     port = free_port
-    fork do
-      exec bin/"martin", mbtiles, "-l", "127.0.0.1:#{port}"
-    end
+    spawn bin/"martin", mbtiles, "-l", "127.0.0.1:#{port}"
     sleep 3
     output = shell_output("curl -s 127.0.0.1:#{port}")
     assert_match "Martin server is running.", output

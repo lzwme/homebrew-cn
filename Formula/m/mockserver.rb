@@ -33,9 +33,7 @@ class Mockserver < Formula
   test do
     port = free_port
 
-    mockserver = fork do
-      exec bin/"mockserver", "-serverPort", port.to_s
-    end
+    mockserver = spawn bin/"mockserver", "-serverPort", port.to_s
 
     loop do
       Utils.popen_read("curl", "-s", "http://localhost:#{port}/status", "-X", "PUT")

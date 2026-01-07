@@ -34,9 +34,7 @@ class Conman < Formula
   end
 
   def caveats
-    <<~EOS
-      Before starting the conmand service, configure some consoles in #{etc}/conman.conf.
-    EOS
+    "Before starting the conmand service, configure some consoles in #{etc}/conman.conf."
   end
 
   service do
@@ -54,7 +52,7 @@ class Conman < Formula
       console name="test-sleep2" dev="/bin/sleep 30"
     EOS
 
-    fork { exec "#{sbin}/conmand", "-F", "-c", conffile }
+    spawn sbin/"conmand", "-F", "-c", conffile
     sleep 5
     assert_match(/test-sleep\d\ntest-sleep\d\n/, shell_output("#{bin}/conman -q 2>&1"))
   end

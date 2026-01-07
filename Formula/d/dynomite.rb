@@ -71,7 +71,7 @@ class Dynomite < Formula
       s.gsub! ":22222", ":#{stats_port}"
     end
 
-    fork { exec sbin/"dynomite", "-c", "redis_single.yml" }
+    spawn sbin/"dynomite", "-c", "redis_single.yml"
     sleep 5
     assert_match "OK", shell_output("curl -s 127.0.0.1:#{stats_port}")
   end

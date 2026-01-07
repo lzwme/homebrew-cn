@@ -1,19 +1,18 @@
 class Wasmedge < Formula
   desc "Lightweight, high-performance, and extensible WebAssembly runtime"
   homepage "https://WasmEdge.org/"
-  url "https://ghfast.top/https://github.com/WasmEdge/WasmEdge/releases/download/0.16.0/WasmEdge-0.16.0-src.tar.gz"
-  sha256 "6a12152c1d7fd27e4f4fb6486c63e4c2f2663bb0c6be0edb287ef5796ed32610"
+  url "https://ghfast.top/https://github.com/WasmEdge/WasmEdge/releases/download/0.16.1/WasmEdge-0.16.1-src.tar.gz"
+  sha256 "fc256b8be022eb0487549cc2119c57fd12ad402e4130a05263b7aa85e2df89b9"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/WasmEdge/WasmEdge.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "795c3d010d96d15af80ecfc7e5f2d30e6aec3db4de88b5c47bf404c28d6726b7"
-    sha256 cellar: :any,                 arm64_sequoia: "d6de57d459b125caf80f6d81add83df6bb1b490ffc273b69eea6f4eff1ce20b6"
-    sha256 cellar: :any,                 arm64_sonoma:  "42fb88c08046bd7f7c730d86b5a732d6bd8072430e55f22d80fdffa6da7bc4c6"
-    sha256 cellar: :any,                 sonoma:        "ab850da1a998976a418fa60e2c44d738390fb4746c6243e215c427ecf0bc10d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "200f391a76b1a3c6d096e864f8d27c39aa318a671185f1c5f959791b0a01f3c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5dfaf2ca3e72990cd712dafebfec607717bb5fb932f8fc6640d5a3c0985355f"
+    sha256 cellar: :any,                 arm64_tahoe:   "17b4077e8280d81f8d20142527f6ff595553584b8e872defbbaeb35eb4c90b26"
+    sha256 cellar: :any,                 arm64_sequoia: "6574474138284180a40d7611d6e216f9f7aa00e8063e74d847f675e7434606f3"
+    sha256 cellar: :any,                 arm64_sonoma:  "55bd85f30c4d11db7ee8a32429dcdae83c0185c52fcb21d277ab9f6c093953f0"
+    sha256 cellar: :any,                 sonoma:        "a01d8c8fe72f3fe00b2e6b23ff6a3f96e26d29b65bcb0e25eb34c21d12d3aad4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6774ab480d49e40c30811b4d182e2b223401e5f8714c5a4ed04c2a85c6df893c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7014a79a9395ab15fae21ccd420926891ced8f05a095bbc888852cbc46d9a8d8"
   end
 
   depends_on "cmake" => :build

@@ -33,18 +33,15 @@ class GnuTypist < Formula
     # libiconv is not linked properly without this
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--with-lispdir=#{elisp}"
+    system "./configure", "--with-lispdir=#{elisp}", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    session = fork do
-      exec bin/"gtypist", "-t", "-q", "-l", "DEMO_0", share/"gtypist/demo.typ"
-    end
+    session = spawn bin/"gtypist", "-t", "-q", "-l", "DEMO_0", share/"gtypist/demo.typ"
     sleep 2
     Process.kill("TERM", session)
+    Process.wait(session)
   end
 end

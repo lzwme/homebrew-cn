@@ -62,13 +62,11 @@ class Chronograf < Formula
 
   test do
     port = free_port
-    pid = fork do
-      exec bin/"chronograf", "--port=#{port}"
-    end
+    pid = spawn bin/"chronograf", "--port=#{port}"
     sleep 10
     output = shell_output("curl -s 0.0.0.0:#{port}/chronograf/v1/")
     sleep 1
-    assert_match %r{/chronograf/v1/layouts}, output
+    assert_match "/chronograf/v1/layouts", output
   ensure
     Process.kill("SIGTERM", pid)
     Process.wait(pid)

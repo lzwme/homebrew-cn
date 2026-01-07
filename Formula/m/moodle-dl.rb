@@ -6,15 +6,15 @@ class MoodleDl < Formula
   url "https://files.pythonhosted.org/packages/0b/44/9c283a04b0ede0bcaa2f3595b523cb115c662fe349f215631484035126d1/moodle_dl-2.3.13.tar.gz"
   sha256 "7a6d813b3241497fb79a34a428aa266b2d2d3c175e05d46752e0a8040adaddce"
   license "GPL-3.0-or-later"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0d7a961df0e8e7c435fbbc77f846a9d50d98b3b86d97a8ec29a288af4e216a9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61f33fe222577475a64f4f00886dcbcd0c4172901a26d62b3af8da897128fcf2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d990f8c0c2285538e786b371c73b004052184891255ed8a9b7610e949d0c4330"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fa5c1e33858a20649502066f9780b17215677de8d21af2cbc208cda452dbabce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1036c9cfe8af875f1e53f2e2232e6815e46b7ff2c5bfb13d4534e5964f6de84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2aeda4b7f6202c7de41e467077eda3024dade7a5a33e29fd12c3ba621f36f55"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23260909b460421a118814e496f08b50da0048041e358bd1cdb95e24205ee4ba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37d7db8da3800d32414201cf271062cb8718f7c7924f144535547b1f027ac18d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da64d3c1a41d82fbfcafcc1e7992641fe5ffb58458a714b9fc3262a9d47acbaf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "459bd15855c5423786b2ad90e943d6ad3d0b5eaeb4d39978ab8e96a62dd8b97a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b54da51a0ec30532ac756d17ca4b5fe833d1349ff11f5ac218306834f4f77cdf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18c82a20147dc5386f8bf9c0aee6dd220206665c8111c97a49c5aa50ba6118c4"
   end
 
   depends_on "certifi" => :no_linkage
@@ -26,8 +26,8 @@ class MoodleDl < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "aiodns" do
-    url "https://files.pythonhosted.org/packages/e6/11/238e97cbf5c1c0f725d590a092e0618dcdc50f44dbd1e2a926fae27e6f06/aiodns-3.6.0.tar.gz"
-    sha256 "9b0ef54339e6687cdbd39a7d73d7de2467cb5c115281da28f2598f058633dac8"
+    url "https://files.pythonhosted.org/packages/85/2f/9d1ee4f937addda60220f47925dac6c6b3782f6851fd578987284a8d2491/aiodns-3.6.1.tar.gz"
+    sha256 "b0e9ce98718a5b8f7ca8cd16fc393163374bc2412236b91f6c851d066e3324b6"
   end
 
   resource "aiofiles" do
@@ -41,8 +41,8 @@ class MoodleDl < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/1c/ce/3b83ebba6b3207a7135e5fcaba49706f8a4b6008153b4e30540c982fae26/aiohttp-3.13.2.tar.gz"
-    sha256 "40176a52c186aefef6eb3cad2cdd30cd06e3afbe88fe8ab2af9c0b90f228daca"
+    url "https://files.pythonhosted.org/packages/50/42/32cf8e7704ceb4481406eb87161349abb46a57fee3f008ba9cb610968646/aiohttp-3.13.3.tar.gz"
+    sha256 "a949eee43d3782f2daae4f4a2819b2cb9b0c5d3b7f7a927067cc84dafdbb9f88"
   end
 
   resource "aiosignal" do
@@ -121,8 +121,8 @@ class MoodleDl < Formula
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/4a/2a/d225cbf87b6c8ecce5664db7bcecb82c317e448e3b24a2dcdaacb18ca9a7/sentry_sdk-2.47.0.tar.gz"
-    sha256 "8218891d5e41b4ea8d61d2aed62ed10c80e39d9f2959d6f939efbf056857e050"
+    url "https://files.pythonhosted.org/packages/40/f0/0e9dc590513d5e742d7799e2038df3a05167cba084c6ca4f3cdd75b55164/sentry_sdk-2.48.0.tar.gz"
+    sha256 "5213190977ff7fdff8a58b722fb807f8d5524a80488626ebeda1b5676c0c1473"
   end
 
   resource "six" do
@@ -131,8 +131,8 @@ class MoodleDl < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "xmpppy" do
@@ -146,8 +146,8 @@ class MoodleDl < Formula
   end
 
   resource "yt-dlp" do
-    url "https://files.pythonhosted.org/packages/cf/41/53ad8c6e74d6627bd598dfbb8ad7c19d5405e438210ad0bbaf1b288387e7/yt_dlp-2025.11.12.tar.gz"
-    sha256 "5f0795a6b8fc57a5c23332d67d6c6acf819a0b46b91a6324bae29414fa97f052"
+    url "https://files.pythonhosted.org/packages/14/77/db924ebbd99d0b2b571c184cb08ed232cf4906c6f9b76eed763cd2c84170/yt_dlp-2025.12.8.tar.gz"
+    sha256 "b773c81bb6b71cb2c111cfb859f453c7a71cf2ef44eff234ff155877184c3e4f"
   end
 
   def install

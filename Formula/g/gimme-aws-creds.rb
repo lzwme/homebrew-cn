@@ -6,17 +6,16 @@ class GimmeAwsCreds < Formula
   url "https://files.pythonhosted.org/packages/63/73/9e508d37d4d301f6a3811fdc0b0a076696de87f82ad8a81ec28c3e6befb5/gimme_aws_creds-2.8.2.tar.gz"
   sha256 "12784f4b749617d7391bf2056373990277858dc9886328832b545e9e334f24d3"
   license "Apache-2.0"
-  revision 5
+  revision 6
   head "https://github.com/Nike-Inc/gimme-aws-creds.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "6dcd6833ff8f8af21c333fa0becc75c89371e2df3071a36bf5e2e5b501b08e03"
-    sha256 cellar: :any,                 arm64_sequoia: "22268f59c3b71df45c5385773a1086c1bcec4067a282ed4dc32f983a89430cf9"
-    sha256 cellar: :any,                 arm64_sonoma:  "72f0b352dc736aac05c3f00573ce8ac8b558a820d6adb627eb21058d60a6e58f"
-    sha256 cellar: :any,                 sonoma:        "c2e0e5f418cc9f664a094c92f36c16d7ad4eade3270a70eeb2e57f781e637b04"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3aba4171d3172a422f3f66b32fa85831778af5113e4576fad88c96b165b50ec1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "debd178cc8114f64624385a013a6fe1b6e54541d4e91e78fc82b49c4ef5aa470"
+    sha256 cellar: :any,                 arm64_tahoe:   "d599311b2b316e852f304b7b2e6fa1a2d3dc70aa0f4e29a7e088a1a92f806f20"
+    sha256 cellar: :any,                 arm64_sequoia: "73667ca40764ed25775a76a8a4664e1e4de6ee7573e332bfb885f8b10e61ae3e"
+    sha256 cellar: :any,                 arm64_sonoma:  "53f14b63b85f1237f980be2a26a994af542069bf04f9e166c9a13c74b6236923"
+    sha256 cellar: :any,                 sonoma:        "760874c7528735b2fde288332818d3cde5ff0b382e982994f77b1103f4b29559"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3fa3cbb6f55bf62bd7d87b94b6106eeb2e2a17de30444d583bc8a744be129c07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13c16cbb3c41563419d7651ac68ddf99e3e4236fe50cec4fa464340f4b27b5ce"
   end
 
   depends_on "certifi"
@@ -56,8 +55,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/1c/ce/3b83ebba6b3207a7135e5fcaba49706f8a4b6008153b4e30540c982fae26/aiohttp-3.13.2.tar.gz"
-    sha256 "40176a52c186aefef6eb3cad2cdd30cd06e3afbe88fe8ab2af9c0b90f228daca"
+    url "https://files.pythonhosted.org/packages/50/42/32cf8e7704ceb4481406eb87161349abb46a57fee3f008ba9cb610968646/aiohttp-3.13.3.tar.gz"
+    sha256 "a949eee43d3782f2daae4f4a2819b2cb9b0c5d3b7f7a927067cc84dafdbb9f88"
   end
 
   resource "aiosignal" do
@@ -76,13 +75,13 @@ class GimmeAwsCreds < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/8c/07/dfa651dbd57bfc34d952a101280928bab08ed6186f009c660a36c211ccff/boto3-1.42.9.tar.gz"
-    sha256 "cdd4cc3e5bb08ed8a0c5cc77eca78f98f0239521de0991f14e44b788b0c639b2"
+    url "https://files.pythonhosted.org/packages/4f/91/87a0cedb0335f2c0653fe7353fc47d785b092353dab5b2d7141efd5d74b5/boto3-1.42.22.tar.gz"
+    sha256 "8550d91432dec1e587ab6d97f7e031bb334ca4fbb7824b8b63bca6e69c7e84b5"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/fd/f3/2d2cfb500e2dc00b0e33e3c8743306e6330f3cf219d19e9260dab2f3d6c2/botocore-1.42.9.tar.gz"
-    sha256 "74f69bfd116cc7c8215481284957eecdb48580e071dd50cb8c64356a866abd8c"
+    url "https://files.pythonhosted.org/packages/a9/86/b6f00de81a3f0e7e83328354b38376fbb9f0be1c8b66626ac9a274cdca4e/botocore-1.42.22.tar.gz"
+    sha256 "635c9213a448885a1cf735f1a950b83adaced0860b8159fc26d1242abc042443"
   end
 
   resource "charset-normalizer" do
@@ -138,13 +137,13 @@ class GimmeAwsCreds < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/df/ad/f3777b81bf0b6e7bc7514a1656d3e637b2e8e15fab2ce3235730b3e7a4e6/jaraco_context-6.0.1.tar.gz"
-    sha256 "9bae4ea555cf0b14938dc0aee7c9f32ed303aa20a3b73e7dc80111628792d1b3"
+    url "https://files.pythonhosted.org/packages/8d/7d/41acf8e22d791bde812cb6c2c36128bb932ed8ae066bcb5e39cb198e8253/jaraco_context-6.0.2.tar.gz"
+    sha256 "953ae8dddb57b1d791bf72ea1009b32088840a7dd19b9ba16443f62be919ee57"
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
-    sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
+    url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
+    sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
   end
 
   resource "jeepney" do
@@ -258,8 +257,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/6d/e6/21ccce3262dd4889aa3332e5a119a3491a95e8f60939870a3a035aabac0d/soupsieve-2.8.tar.gz"
-    sha256 "e2dd4a40a628cb5f28f6d4b0db8800b8f581b65bb380b97de22ba5ca8d72572f"
+    url "https://files.pythonhosted.org/packages/89/23/adf3796d740536d63a6fbda113d07e60c734b6ed5d3058d1e47fc0495e47/soupsieve-2.8.1.tar.gz"
+    sha256 "4cf733bc50fa805f5df4b8ef4740fc0e0fa6218cf3006269afd3f9d6d80fd350"
   end
 
   resource "typing-extensions" do

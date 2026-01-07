@@ -2,18 +2,17 @@ class Librime < Formula
   desc "Rime Input Method Engine"
   homepage "https://rime.im"
   url "https://github.com/rime/librime.git",
-      tag:      "1.15.0",
-      revision: "75bc43ae9acdd2042d150a8c446e9ac8b6d77c84"
+      tag:      "1.16.0",
+      revision: "a251145d3aafa33871824a40bbec04c966bd8b56"
   license "BSD-3-Clause"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e9ac3d0096903a7c93752b927f6a827189cb8b922564a2eab8cf3715cd68e239"
-    sha256 cellar: :any,                 arm64_sequoia: "9f8dc11482f6a3aed9884d939a70e4ab259ab4aaee6118c3447e50f61de59faf"
-    sha256 cellar: :any,                 arm64_sonoma:  "cf5028b839271e12231caef38b943f9ae715136f78b01c5ec7e4ad9764c06676"
-    sha256 cellar: :any,                 sonoma:        "1975705ba31371e312941ae3f7360e6cb24d0fe8c9ccbd427cd4bca0718050fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "966948bbcfa84ad0c66afbdf506eab7dc46da0a4fab15dc12c5741c1d4a9077d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b369c5893f6a3f48f64612719ba8418e808e5167debfbb433f800c8917c7bb2a"
+    sha256 cellar: :any,                 arm64_tahoe:   "332447e47986003e838ce0f8a7b1ee492294d1e63b476b0fdf58d1d45d946d62"
+    sha256 cellar: :any,                 arm64_sequoia: "f9ad344a6d347d8ca6fe201b644b31370177a924f0f04d0e0175772983094605"
+    sha256 cellar: :any,                 arm64_sonoma:  "5d0ddc59faf1383c513a4ec8a6e282ca741342874c3063265f407c4ef275e7d5"
+    sha256 cellar: :any,                 sonoma:        "b6a7d0d562e9009b73ee535195231506b1c9550edeff57f19da2f79b44ab8ec9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "47a15181c449c458bed0637ad2c0f6b252ed44895e461c5741b33cf384908bf4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5364dfc32fe4907f06f139838e68ffe52dccade8e4013918935cfcc209df6eeb"
   end
 
   depends_on "boost" => :build

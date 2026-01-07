@@ -4,20 +4,28 @@ class Undercutf1 < Formula
   url "https://ghfast.top/https://github.com/JustAman62/undercut-f1/archive/refs/tags/v3.4.32.tar.gz"
   sha256 "3e90ccd0c7f02240c9ff8b175c84a37b62cb82774a62d46b44ee7103996dd30a"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/JustAman62/undercut-f1.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf6dced13a74ab4be86e42598f3060fc793c02124845dcd0bbd01fe75d98435c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2c981c163aeb31b4bd9c2f78b981a498d48177c878e1adb4bbbead2eccea15a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "604e94c8900e985742ab199a4fea8a599737e0575d9ae9ed8604d315915641f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "34ed8f66628d4bf90ca53ebd6ec69b531c44377b0efc1518406a0d8849b85d8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b0b4cc8d05958e111c9f918c3c96141b83ef99dae3ca48df9c2ff6018d116f9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4fc68891a534638218604c7c01baec8acc61c581357e22715f12df0a9d393991"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e228fa87e578f3049427dfc59586e38b1f1d6cfca29169c1ee27fd03b0e3fda"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e265140152d66e401b4ee41d7eda1756235cc341fd05cc3901e72a02375a0d77"
+    sha256 cellar: :any_skip_relocation, sonoma:        "943bacbb0c6d4ffed72770b51c8b5228ba735e1c8d2736f64be2f327e53c4f6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8217e2a97d90119c30a47d8f8369fb7bf9c6d07401bf0f46be8deb94662b9018"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3674c96f9266e772f647e8bf73f47b6ae3622fc5b9042d1ffe1f5b12b3bd1451"
   end
 
   depends_on "dotnet"
   depends_on "ffmpeg"
   depends_on "fontconfig"
   depends_on "mpg123"
+
+  # Support dotnet 10 - remove in next release
+  patch do
+    url "https://github.com/JustAman62/undercut-f1/commit/2ae7e47daab9250d31878a92943864fabd04db59.patch?full_index=1"
+    sha256 "b51d288893a1ce6e5abfe759f498ce79d2ebcc5c17ab6b328c16d5ad8f2a1a06"
+  end
 
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"

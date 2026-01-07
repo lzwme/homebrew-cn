@@ -26,13 +26,10 @@ class Dufs < Formula
 
   test do
     port = free_port
-    pid = fork do
-      exec bin/"dufs", bin.to_s, "-b", "127.0.0.1", "--port", port.to_s
-    end
-
-    sleep 2
+    pid = spawn bin/"dufs", bin.to_s, "-b", "127.0.0.1", "--port", port.to_s
 
     begin
+      sleep 2
       read = (bin/"dufs").read
       assert_equal read, shell_output("curl localhost:#{port}/dufs")
     ensure

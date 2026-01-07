@@ -71,9 +71,7 @@ class CppHttplib < Formula
     system ENV.cxx, "server.cpp", "-I#{include}", "-lpthread", "-std=c++11", "-o", "server"
     system ENV.cxx, "client.cpp", "-I#{include}", "-lpthread", "-std=c++11", "-o", "client"
 
-    fork do
-      exec "./server"
-    end
+    spawn "./server"
     sleep 3
     assert_match "Hello World!", shell_output("./client")
   end

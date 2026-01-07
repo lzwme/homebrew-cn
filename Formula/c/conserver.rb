@@ -40,10 +40,9 @@ class Conserver < Formula
   end
 
   test do
-    console = fork do
-      exec bin/"console", "-n", "-p", "8000", "test"
-    end
+    console = spawn bin/"console", "-n", "-p", "8000", "test"
     sleep 1
     Process.kill("TERM", console)
+    Process.wait(console)
   end
 end

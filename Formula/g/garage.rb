@@ -51,12 +51,8 @@ class Garage < Formula
       root_domain = ".s3.garage.localhost"
     TOML
 
-    fork do
-      exec bin/"garage", "--config", testpath/"garage.toml", "server"
-    end
-
+    spawn bin/"garage", "--config", testpath/"garage.toml", "server"
     sleep 5
-
     assert_match "==== HEALTHY NODES ====", shell_output("#{bin}/garage -c #{testpath}/garage.toml status")
   end
 end

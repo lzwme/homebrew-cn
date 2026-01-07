@@ -52,12 +52,9 @@ class Glassfish < Formula
     cp_r libexec/"glassfish/domains", testpath
     inreplace testpath/"domains/domain1/config/domain.xml", "port=\"4848\"", "port=\"#{port}\""
 
-    fork do
-      exec bin/"asadmin", "start-domain", "--domaindir=#{testpath}/domains", "domain1"
-    end
-    sleep 60
+    spawn bin/"asadmin", "start-domain", "--domaindir=#{testpath}/domains", "domain1"
 
-    output = shell_output("curl -s -X GET localhost:#{port}")
+    output = shell_output("curl --silent --retry 5 --retry-connrefused -X GET localhost:#{port}")
     assert_match "GlassFish Server", output
 
     assert_match version.to_s, shell_output("#{bin}/asadmin version")

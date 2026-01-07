@@ -31,9 +31,7 @@ class Gost < Formula
 
   test do
     bind_address = "127.0.0.1:#{free_port}"
-    fork do
-      exec bin/"gost", "-L", bind_address
-    end
+    spawn bin/"gost", "-L", bind_address
     sleep 2
     output = shell_output("curl -I -x #{bind_address} https://github.com")
     assert_match %r{HTTP/\d+(?:\.\d+)? 200}, output

@@ -39,13 +39,9 @@ class JenkinsLts < Formula
     ENV.prepend "_JAVA_OPTIONS", "-Djava.io.tmpdir=#{testpath}"
 
     port = free_port
-    fork do
-      exec "#{bin}/jenkins-lts --httpPort=#{port}"
-    end
-    sleep 45
-    sleep 45 if OS.mac? && Hardware::CPU.intel?
+    spawn bin/"jenkins-lts", "--httpPort=#{port}"
 
-    output = shell_output("curl localhost:#{port}/")
+    output = shell_output("curl --silent --retry 5 --retry-connrefused localhost:#{port}/")
     assert_match(/Welcome to Jenkins!|Unlock Jenkins|Authentication required/, output)
   end
 end

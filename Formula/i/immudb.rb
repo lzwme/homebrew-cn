@@ -46,9 +46,7 @@ class Immudb < Formula
   test do
     port = free_port
 
-    fork do
-      exec bin/"immudb", "--port=#{port}"
-    end
+    spawn bin/"immudb", "--port=#{port}"
     sleep 3
 
     assert_match "immuclient", shell_output("#{bin}/immuclient version")

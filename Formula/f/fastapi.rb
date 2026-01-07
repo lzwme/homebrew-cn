@@ -220,13 +220,8 @@ class Fastapi < Formula
           return {"Hello": "World"}
     PYTHON
 
-    pid = fork do
-      exec bin/"fastapi", "dev", "--port", port.to_s, "main.py"
-    end
-
-    sleep 12
-    sleep 12 if OS.mac? && Hardware::CPU.intel?
-    output = shell_output("curl -s http://127.0.0.1:#{port}")
+    pid = spawn bin/"fastapi", "dev", "--port", port.to_s, "main.py"
+    output = shell_output("curl --silent --retry 5 --retry-connrefused http://127.0.0.1:#{port}")
     assert_equal '{"Hello":"World"}', output
   ensure
     Process.kill("TERM", pid)

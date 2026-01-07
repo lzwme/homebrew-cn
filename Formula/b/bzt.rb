@@ -6,16 +6,16 @@ class Bzt < Formula
   url "https://files.pythonhosted.org/packages/ff/7a/84abef5f6b22ed50b25dfbdc73e65af2ab70df182e31bd4c85161b2a5821/bzt-1.16.46.tar.gz"
   sha256 "0e0b0feaf5a93e14a746aa14fab56faffedcd2cd80213f6eba7a995c34c7bdf7"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c0dc93972f62d8cb75b564a1f4d9d795858d166a5b5277dfb88e7a11e393dc8e"
-    sha256 cellar: :any,                 arm64_sequoia: "cbed694a2c04d4cd2421136290ebf7a71927e9790fe0f47774690f8c9040852d"
-    sha256 cellar: :any,                 arm64_sonoma:  "546efae72e8b32095d2c245ed9b6da7dd9756354aea81be114ca38494f623385"
-    sha256 cellar: :any,                 sonoma:        "3d8814d3d242439042c83ee09fda5430ce990be45b7f2d1b922dba1dcad91be3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd64499143ba7d62606e8c54c59349b019278bb9eb3b07de44a683d49d804ec5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4dbf18728c610f3002f9febe08d17df7ebff12ce09e310ba83db2bf71fd1b84e"
+    sha256 cellar: :any,                 arm64_tahoe:   "e2442e88c560917c1ffbb82e715ac1397e904f7a27962c1b330bf75e8391a096"
+    sha256 cellar: :any,                 arm64_sequoia: "53605fea5e5ba82e30c71bb34d3cdee8a0f1743202219bba5d4dfc33ceb2b23c"
+    sha256 cellar: :any,                 arm64_sonoma:  "16bbcd8cc13d11f1c266842ad8ec90b658b22821c1b59f2fcdce5cb4c4bbfc86"
+    sha256 cellar: :any,                 sonoma:        "7d6b8948914b3beee3996f8673ae4d8504b619487fe6a25b891b93b3b3ad8295"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5c38dadafdd6eb027ec837cc9670924a9407dbc1289b60feab90eb84d7aee9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be0dfca8960e9daf132b86abf3d35b84b95a5cb69bc8d5a7a5101cf65ce1ac87"
   end
 
   depends_on "cmake" => :build
@@ -41,8 +41,8 @@ class Bzt < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/1c/ce/3b83ebba6b3207a7135e5fcaba49706f8a4b6008153b4e30540c982fae26/aiohttp-3.13.2.tar.gz"
-    sha256 "40176a52c186aefef6eb3cad2cdd30cd06e3afbe88fe8ab2af9c0b90f228daca"
+    url "https://files.pythonhosted.org/packages/50/42/32cf8e7704ceb4481406eb87161349abb46a57fee3f008ba9cb610968646/aiohttp-3.13.3.tar.gz"
+    sha256 "a949eee43d3782f2daae4f4a2819b2cb9b0c5d3b7f7a927067cc84dafdbb9f88"
   end
 
   resource "aiosignal" do
@@ -81,8 +81,8 @@ class Bzt < Formula
   end
 
   resource "cython" do
-    url "https://files.pythonhosted.org/packages/e3/58/6a8321cc0791876dc2509d7a22fc75535a1a7aa770b3496772f58b0a53a4/cython-3.1.6.tar.gz"
-    sha256 "ff4ccffcf98f30ab5723fc45a39c0548a3f6ab14f01d73930c5bfaea455ff01c"
+    url "https://files.pythonhosted.org/packages/91/85/7574c9cd44b69a27210444b6650f6477f56c75fee1b70d7672d3e4166167/cython-3.2.4.tar.gz"
+    sha256 "84226ecd313b233da27dc2eb3601b4f222b8209c3a7216d8733b031da1dc64e6"
   end
 
   resource "dill" do
@@ -111,8 +111,8 @@ class Bzt < Formula
   end
 
   resource "humanize" do
-    url "https://files.pythonhosted.org/packages/b6/43/50033d25ad96a7f3845f40999b4778f753c3901a11808a584fed7c00d9f5/humanize-4.14.0.tar.gz"
-    sha256 "2fa092705ea640d605c435b1ca82b2866a1b601cdf96f076d70b79a855eba90d"
+    url "https://files.pythonhosted.org/packages/ba/66/a3921783d54be8a6870ac4ccffcd15c4dc0dd7fcce51c6d63b8c63935276/humanize-4.15.0.tar.gz"
+    sha256 "1dd098483eb1c7ee8e32eb2e99ad1910baefa4b75c3aff3a82f4d78688993b10"
   end
 
   resource "idna" do
@@ -166,8 +166,8 @@ class Bzt < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/cd/ec/7b8e6b9b1d22708138630ef34c53ab2b61032c04f16adfdbb96791c8c70c/psutil-7.1.2.tar.gz"
-    sha256 "aa225cdde1335ff9684708ee8c72650f6598d5ed2114b9a7c5802030b1785018"
+    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
+    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
   end
 
   resource "python-dateutil" do
@@ -176,13 +176,13 @@ class Bzt < Formula
   end
 
   resource "python-engineio" do
-    url "https://files.pythonhosted.org/packages/c9/d8/63e5535ab21dc4998ba1cfe13690ccf122883a38f025dca24d6e56c05eba/python_engineio-4.12.3.tar.gz"
-    sha256 "35633e55ec30915e7fc8f7e34ca8d73ee0c080cec8a8cd04faf2d7396f0a7a7a"
+    url "https://files.pythonhosted.org/packages/42/5a/349caac055e03ef9e56ed29fa304846063b1771ee54ab8132bf98b29491e/python_engineio-4.13.0.tar.gz"
+    sha256 "f9c51a8754d2742ba832c24b46ed425fdd3064356914edd5a1e8ffde76ab7709"
   end
 
   resource "python-socketio" do
-    url "https://files.pythonhosted.org/packages/c0/3f/02f5970c82285bd015ec433078bfc3275580b03715ed6024607dbe0f1966/python_socketio-5.14.3.tar.gz"
-    sha256 "cd8da5e0666e741b4be19e07882e880f57a4751d1645f92c2bc746c95f23b1eb"
+    url "https://files.pythonhosted.org/packages/b8/55/5d8af5884283b58e4405580bcd84af1d898c457173c708736e065f10ca4a/python_socketio-5.16.0.tar.gz"
+    sha256 "f79403c7f1ba8b84460aa8fe4c671414c8145b21a501b46b676f3740286356fd"
   end
 
   resource "pytz" do
@@ -256,8 +256,8 @@ class Bzt < Formula
   end
 
   resource "wsproto" do
-    url "https://files.pythonhosted.org/packages/c9/4a/44d3c295350d776427904d73c189e10aeae66d7f555bb2feee16d1e4ba5a/wsproto-1.2.0.tar.gz"
-    sha256 "ad565f26ecb92588a3e43bc3d96164de84cd9902482b130d0ddbaa9664a85065"
+    url "https://files.pythonhosted.org/packages/c7/79/12135bdf8b9c9367b8701c2c19a14c913c120b882d50b014ca0d38083c2c/wsproto-1.3.2.tar.gz"
+    sha256 "b86885dcf294e15204919950f666e06ffc6c7c114ca900b060d6e16293528294"
   end
 
   resource "yarl" do

@@ -31,7 +31,7 @@ class GitPages < Formula
 
     ENV["PAGES_INSECURE"] = "1"
 
-    fork { exec bin/"git-pages" }
+    spawn bin/"git-pages"
 
     sleep 2
     system "curl", "http://127.0.0.1:#{port}", "-X", "PUT", "-d", "https://codeberg.org/git-pages/git-pages.git"

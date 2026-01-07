@@ -1,8 +1,8 @@
 class Yazpp < Formula
   desc "C++ API for the Yaz toolkit"
   homepage "https://www.indexdata.com/resources/software/yazpp/"
-  url "https://ftp.indexdata.com/pub/yazpp/yazpp-1.9.0.tar.gz"
-  sha256 "17aa0f5b45edbfa9ee0363cb3b684e895d3d05e74024384d6c8707875621dcfc"
+  url "https://ftp.indexdata.com/pub/yazpp/yazpp-1.9.1.tar.gz"
+  sha256 "7fe5487d66fafdb0a3c2ceeec2b7ad27d8d8718c57f5d6d7a5598d724ccee5d2"
   license "BSD-3-Clause"
 
   livecheck do
@@ -10,19 +10,16 @@ class Yazpp < Formula
     regex(/href=.*?yazpp[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1282e706247f55d29fd6ae7db1132e0360339d64b7641d7a539cba08b6474532"
-    sha256 cellar: :any,                 arm64_sequoia: "3db462397a75847cfe8f47b63a8e72357aeb56c3e6ad39f1e56f961fa6c67031"
-    sha256 cellar: :any,                 arm64_sonoma:  "8a0413a93b0784924650e2e642e5044b3547361916ca81e4231828ce24ce3322"
-    sha256 cellar: :any,                 arm64_ventura: "de090b1f94e5f04a32d266054df63e033d664af6baf02d70be02ee13ca2d2736"
-    sha256 cellar: :any,                 sonoma:        "9a5bc3ac4c69833f33f9712a26d823c1f99348fec776a63eb04c1bf1b9cdc5d9"
-    sha256 cellar: :any,                 ventura:       "41e4fc7540a5215ad4e4eff87779f604723adefc05223b4f16041fabdfe0723d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "90e01abea34f80017b98c621560c31326b42fc4abb0668b84e943117918e1ce6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fadea04212654ddcc34aa0a5bf5127f6c53a652c21d98a52b168c584e3a3fccc"
+    sha256 cellar: :any,                 arm64_tahoe:   "677c4daba736dcf25027fbf4f5959ee72362f7f5fe48dadcc486c7d825c9d370"
+    sha256 cellar: :any,                 arm64_sequoia: "bc9fd6e68ba2530c7fb772b73ed7d02a7bc9e23f5f6ec7fc95cb65802aa85ba1"
+    sha256 cellar: :any,                 arm64_sonoma:  "a23e37c0b8def3ccae0b1017b8ebc738d0b1c3ef62d328d2201fbc1b18ac4841"
+    sha256 cellar: :any,                 sonoma:        "9de8a746324a0f109f6925a679ada8ce20d36e459354b135318a7486bda5e26d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec4cb7a2b40cc13cb050563725363088cfa8f5865fa2823ecea89e4dcd1b96cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4795313aadd5eb1836d8299386570dd872993f28226031de66d371de07ff3161"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "yaz"
 
   def install

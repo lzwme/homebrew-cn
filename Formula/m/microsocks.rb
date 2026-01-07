@@ -23,11 +23,9 @@ class Microsocks < Formula
 
   test do
     port = free_port
-    fork do
-      exec bin/"microsocks", "-p", port.to_s
-    end
+    spawn bin/"microsocks", "-p", port.to_s
     sleep 2
-    assert_match "The Missing Package Manager for macOS (or Linux)",
-      shell_output("curl --socks5 0.0.0.0:#{port} https://brew.sh")
+    output = shell_output("curl --socks5 0.0.0.0:#{port} https://brew.sh")
+    assert_match "The Missing Package Manager for macOS (or Linux)", output
   end
 end

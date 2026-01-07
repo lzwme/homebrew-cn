@@ -8,10 +8,11 @@ class Glooctl < Formula
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
-  # necessary to use the `GithubLatest` strategy.
+  # necessary to use the `GithubReleases` strategy.
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases
   end
 
   bottle do

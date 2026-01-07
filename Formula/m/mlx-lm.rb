@@ -3,15 +3,15 @@ class MlxLm < Formula
 
   desc "Run LLMs with MLX"
   homepage "https://github.com/ml-explore/mlx-lm"
-  url "https://ghfast.top/https://github.com/ml-explore/mlx-lm/archive/refs/tags/v0.30.0.tar.gz"
-  sha256 "743898d1a5cb99523dd671d8ccd9e26127a5a971ae21cf858f68eb3d37de258e"
+  url "https://ghfast.top/https://github.com/ml-explore/mlx-lm/archive/refs/tags/v0.30.2.tar.gz"
+  sha256 "d4823c92e1199a71e5f785a1d6cd4ebd8a0af42220de2b52758c6f1b1e34a12e"
   license "MIT"
   head "https://github.com/ml-explore/mlx-lm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1bdeb8a07f2849aec1ca9ee16f1b6180209863948bf97c372828b97caa8628bf"
-    sha256 cellar: :any, arm64_sequoia: "8d6355bd789776f398c8ebd836da4d4c36234c80dbe8ec0c2c411b3c1e4cd2b6"
-    sha256 cellar: :any, arm64_sonoma:  "9a0b0286bdfa9b295b3a543c3c5fa59a3740de17e84c2e5af282b777c6e91942"
+    sha256 cellar: :any, arm64_tahoe:   "3e13d3b98e254ca9679787ae51e66d9acb441b2eaed8058680c54a4a2f8ce00b"
+    sha256 cellar: :any, arm64_sequoia: "ccefe149102e0a76420ae0cbfabd10d4b377c39c802a81b761c0d9fcfdcb9ddc"
+    sha256 cellar: :any, arm64_sonoma:  "d1cf79c42124c9e86e5c1c512f8f1e8ac4c447e15b5bac261c455bbc35b825c5"
   end
 
   depends_on "pkgconf" => :build
@@ -44,8 +44,8 @@ class MlxLm < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
-    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
+    url "https://files.pythonhosted.org/packages/c1/e0/a75dbe4bca1e7d41307323dad5ea2efdd95408f74ab2de8bd7dba9b51a1a/filelock-3.20.2.tar.gz"
+    sha256 "a2241ff4ddde2a7cebddf78e39832509cb045d18ec1a09d7248d6bfc6bfbbe64"
   end
 
   resource "fsspec" do
@@ -134,8 +134,8 @@ class MlxLm < Formula
   end
 
   resource "tokenizers" do
-    url "https://files.pythonhosted.org/packages/1c/46/fb6854cec3278fbfa4a75b50232c77622bc517ac886156e6afbfa4d8fc6e/tokenizers-0.22.1.tar.gz"
-    sha256 "61de6522785310a309b3407bac22d99c4db5dba349935e99e4d15ea2226af2d9"
+    url "https://files.pythonhosted.org/packages/73/6f/f80cfef4a312e1fb34baf7d85c72d4411afde10978d4657f8cdd811d3ccc/tokenizers-0.22.2.tar.gz"
+    sha256 "473b83b915e547aa366d1eee11806deaf419e17be16310ac0a14077f1e28f917"
   end
 
   resource "tqdm" do
@@ -149,8 +149,8 @@ class MlxLm < Formula
   end
 
   resource "typer-slim" do
-    url "https://files.pythonhosted.org/packages/8e/45/81b94a52caed434b94da65729c03ad0fb7665fab0f7db9ee54c94e541403/typer_slim-0.20.0.tar.gz"
-    sha256 "9fc6607b3c6c20f5c33ea9590cbeb17848667c51feee27d9e314a579ab07d1a3"
+    url "https://files.pythonhosted.org/packages/f9/3b/2f60ce16f578b1db5b8816d37d6a4d9786b33b76407fc8c13b0b86312c31/typer_slim-0.21.0.tar.gz"
+    sha256 "f2dbd150cfa0fead2242e21fa9f654dfc64773763ddf07c6be9a49ad34f79557"
   end
 
   resource "typing-extensions" do
@@ -177,14 +177,13 @@ class MlxLm < Formula
 
   test do
     port = free_port
-    pid = fork { exec bin/"mlx_lm.server", "--port=#{port}" }
-    sleep 10
-    sleep 10 if OS.mac? && Hardware::CPU.intel?
+    pid = spawn bin/"mlx_lm.server", "--port=#{port}"
     begin
-      output = JSON.parse shell_output("curl -s localhost:#{port}/health")
+      output = JSON.parse(shell_output("curl --silent --retry 5 --retry-connrefused localhost:#{port}/health"))
       assert_equal "ok", output["status"]
     ensure
       Process.kill "SIGTERM", pid
+      Process.wait pid
     end
   end
 end

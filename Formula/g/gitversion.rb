@@ -1,21 +1,23 @@
 class Gitversion < Formula
   desc "Easy semantic versioning for projects using Git"
   homepage "https://gitversion.net/docs/"
-  url "https://ghfast.top/https://github.com/GitTools/GitVersion/archive/refs/tags/6.5.0.tar.gz"
-  sha256 "28a3ee76ae3a4f7cd035e6f3b4d458bbcc82ea757fe91d6563e969416f66027f"
+  url "https://ghfast.top/https://github.com/GitTools/GitVersion/archive/refs/tags/6.5.1.tar.gz"
+  sha256 "4a6ef13d01b949c953767188aab5f394d0a0b13ed926c1c91584d2d0cdf38b03"
   license "MIT"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f52db0fc4ce219eadce847fc615696550e18c3a7f891163a4318d2512043c326"
-    sha256 cellar: :any,                 arm64_sequoia: "9cf44b3860130862cdbc7eca12640169319f3d468f5063cad4f5100ee653ff32"
-    sha256 cellar: :any,                 arm64_sonoma:  "fe3371a0819227415ac80423ae97edcd57ec8ef67f6bb52cc039a12a9c0a0da0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "57f7c2dcd3f478941eb63c563366d0b00c8e5798a0542058b923e50340a0b575"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08a1e2b8d1da9dec483ba02748783f86f4e6fffcb97d69288aa313012b04d959"
+    sha256 cellar: :any,                 arm64_tahoe:   "942a470f118b326107a6b3c702c514d05fa50e57fd51b6f472b325bcf93b35ef"
+    sha256 cellar: :any,                 arm64_sequoia: "fcdd4dc3b2cd6de103045baf5e07e56ff0b8b46e4a20c7aa7bed9ec02fa3d2a6"
+    sha256 cellar: :any,                 arm64_sonoma:  "bd96d2e19f8a8d999948c77097a021a905896b632cf4567f0aad1ca9fced3a51"
+    sha256 cellar: :any,                 sonoma:        "15c4f6703ffbc8ad7f6e5ad19daeae2e608b82de5cd3575ae0f2892d672a9b1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ab18f5bf4377626a877cb5c52758e3ec3ec43ce4efef36e4d07b8ddc91fe366"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e6c4f74f405abc6729397b7afeba17ff235bbdd7f083ffc12311d6c9e24a16d"
   end
 
   depends_on "dotnet"
+  depends_on "openssl@3"
 
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
@@ -37,6 +39,8 @@ class Gitversion < Formula
     File.rename("global.json", "global.json.ignored")
     system "dotnet", "publish", "src/GitVersion.App/GitVersion.App.csproj", *args
     env = { DOTNET_ROOT: "${DOTNET_ROOT:-#{dotnet.opt_libexec}}" }
+    # Ensure OpenSSL is available for cryptography operations on Linux
+    env["LD_LIBRARY_PATH"] = "#{Formula["openssl"].opt_lib}:$LD_LIBRARY_PATH" if OS.linux?
     (bin/"gitversion").write_env_script libexec/"gitversion", env
   end
 

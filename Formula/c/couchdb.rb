@@ -60,16 +60,14 @@ class Couchdb < Formula
   test do
     cp_r prefix/"etc", testpath
     port = free_port
-    inreplace "#{testpath}/etc/default.ini", "port = 5984", "port = #{port}"
-    inreplace "#{testpath}/etc/default.ini", "#{var}/couchdb/data", "#{testpath}/data"
-    inreplace "#{testpath}/etc/local.ini", ";admin = mysecretpassword", "admin = mysecretpassword"
-
-    fork do
-      exec "#{bin}/couchdb -couch_ini #{testpath}/etc/default.ini #{testpath}/etc/local.ini"
+    inreplace "etc/local.ini", ";admin = mysecretpassword", "admin = mysecretpassword"
+    inreplace "etc/default.ini" do |s|
+      s.gsub! "port = 5984", "port = #{port}"
+      s.gsub! "#{var}/couchdb/data", "#{testpath}/data"
     end
-    sleep 30
 
-    output = JSON.parse shell_output("curl --silent localhost:#{port}")
+    spawn bin/"couchdb", "-couch_ini", testpath/"etc/default.ini", testpath/"etc/local.ini"
+    output = JSON.parse(shell_output("curl --silent --retry 5 --retry-connrefused localhost:#{port}"))
     assert_equal "Welcome", output["couchdb"]
   end
 end

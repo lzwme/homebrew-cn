@@ -6,14 +6,15 @@ class LueReader < Formula
   url "https://files.pythonhosted.org/packages/a0/02/492383eb53224831f2f5ccbbc3f7aca9ba051b89e7df03233d3c41856ec3/lue_reader-0.4.0.tar.gz"
   sha256 "eb44619754938f8a1c2c2bde0f5deed9909e0f8b089f61514c7f751e1edd6ae9"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54ea5aa717e23b32acd6d79697487d7de5c0cc9ed2cf889560c88622155af9cf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13446a5207d044e3cd82400095aa42b841f6c472e4f7cb1e271a8efd98b04f80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37965e5eaa4195b2fc3eba9aba9b1c3346a5f4572229280163ef38da8d779544"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1f631e23c2c9bf29bded38bb28957a54daf41f147dd314e3180955d97957465e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8c00618105d4ebd9e29b05b2840f0caf24fea2b6d27422ee7a3632e58d72d57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efd0a28dfa94a48fbfa4ed5afb3486dbd37dc8cd22bd362b443611bc36d9f417"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a37ede75691b404e47a6c7d176338f59b911f00989a6f355f4f8fcd8838d1742"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3cc8bed59fe2f4904fc2661a0f660dcdadb706128d4bc33b9d5c21f0dd6829d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27809bec115be9640108ea626f87ef50f74a363e70875e632ec120f0f752e01b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9035e7d864690bf2e4b7e3361ec533ae483001120374fe170202ca8a2c31500d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d51373d0230a9c39e273349a4c327d4faf87f5cee885475e8d0187be56ae1eb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b171c47fae2cadcbe2e1f8fdcee93f9695f7c88275549503532ba0172eee835"
   end
 
   depends_on "certifi" => :no_linkage
@@ -32,8 +33,8 @@ class LueReader < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/1c/ce/3b83ebba6b3207a7135e5fcaba49706f8a4b6008153b4e30540c982fae26/aiohttp-3.13.2.tar.gz"
-    sha256 "40176a52c186aefef6eb3cad2cdd30cd06e3afbe88fe8ab2af9c0b90f228daca"
+    url "https://files.pythonhosted.org/packages/50/42/32cf8e7704ceb4481406eb87161349abb46a57fee3f008ba9cb610968646/aiohttp-3.13.3.tar.gz"
+    sha256 "a949eee43d3782f2daae4f4a2819b2cb9b0c5d3b7f7a927067cc84dafdbb9f88"
   end
 
   resource "aiosignal" do

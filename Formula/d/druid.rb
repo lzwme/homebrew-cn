@@ -93,7 +93,7 @@ class Druid < Formula
 
     system Formula["zookeeper"].opt_bin/"zkServer", "start"
     begin
-      pid = fork { exec bin/"druid-broker.sh", "start" }
+      pid = spawn bin/"druid-broker.sh", "start"
       sleep 40
     ensure
       system bin/"druid-broker.sh", "stop"

@@ -42,9 +42,7 @@ class Coredns < Formula
 
   test do
     port = free_port
-    fork do
-      exec bin/"coredns", "-dns.port=#{port}"
-    end
+    spawn bin/"coredns", "-dns.port=#{port}"
     sleep(2)
     output = shell_output("dig @127.0.0.1 -p #{port} example.com.")
     assert_match(/example\.com\.\t\t0\tIN\tA\t127\.0\.0\.1\n/, output)

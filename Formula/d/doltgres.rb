@@ -52,9 +52,7 @@ class Doltgres < Formula
         write_timeout_millis: 28800000
     YAML
 
-    fork do
-      exec bin/"doltgres", "--config", testpath/"config.yaml"
-    end
+    spawn bin/"doltgres", "--config", testpath/"config.yaml"
     sleep 5
 
     psql = Formula["libpq"].opt_bin/"psql"

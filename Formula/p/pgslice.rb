@@ -1,23 +1,22 @@
 class Pgslice < Formula
   desc "Postgres partitioning as easy as pie"
   homepage "https://github.com/ankane/pgslice"
-  url "https://ghfast.top/https://github.com/ankane/pgslice/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "9c4b597c376217f81b40775906a07d1a294f22236f357bc88551b4a3a67b6172"
+  url "https://ghfast.top/https://github.com/ankane/pgslice/archive/refs/tags/v0.7.2.tar.gz"
+  sha256 "8c028497e33be976c7431fbd7d4f5b2318422ffd99625f7aa5c8dcf664179d51"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b4b4be0e0a1b904fdf2f4e7070bbe4584d1f5c6ffc396d4adb1f2235ff929b09"
-    sha256 cellar: :any,                 arm64_sequoia: "235fbcf25da6377e07285f0709b32c1d4072801d4658709c3153c271a4498df1"
-    sha256 cellar: :any,                 arm64_sonoma:  "f81815ec0b91b0f5148540325ccb3cd023a1fe7225eecf60036c4fdbebccb3c7"
-    sha256 cellar: :any,                 sonoma:        "cd3701c2c376c921e0983117e83fc3120870598323b47551e11b7f27c4eff7eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec2808ecc86a8937058214ec2cab7f2e683b8e8fa408457ecbce6994b91c53a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5007de865319d87c2b166c1efaef97c4fdeebbea3263adbc2f47b8fb6b72a410"
+    sha256 cellar: :any,                 arm64_tahoe:   "11819b8c5a090be57c1d7122e5fc3462159fb7190e1ca5610f7e7eb637f7bebe"
+    sha256 cellar: :any,                 arm64_sequoia: "8f8dba8973d4a01f2fe35dec6df26d676f87078d7ca8ea3d709a3c2166eedcf2"
+    sha256 cellar: :any,                 arm64_sonoma:  "35e77ea0148bd8ffd8f0d5116af8fb842dd20a2178f95e45ca01e0b2c7724217"
+    sha256 cellar: :any,                 sonoma:        "9fb2970a1336b2488378de8c6e291a5c63d7468b7c4635895ba96d89e8a6e6be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "78b9262b02cb4a3124062fa362d07bbadfb86110c4c00a7b081a20d43a2f070d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8416b778ccc3f5aa00631ddfc2f76957efd54b39fc22273edadf9c461a9892c5"
   end
 
   depends_on "postgresql@18" => :test
   depends_on "libpq"
-  depends_on "ruby@3.4"
+  depends_on "ruby"
 
   # List with `gem install --explain pgslice -v #{version}`
   # https://rubygems.org/gems/pgslice/versions/#{version}/dependencies
@@ -28,8 +27,13 @@ class Pgslice < Formula
   end
 
   resource "pg" do
-    url "https://rubygems.org/gems/pg-1.6.2.gem"
-    sha256 "58614afd405cc9c2c9e15bffe8432e0d6cfc58b722344ad4a47c73a85189c875"
+    url "https://rubygems.org/gems/pg-1.6.3.gem"
+    sha256 "1388d0563e13d2758c1089e35e973a3249e955c659592d10e5b77c468f628a99"
+  end
+
+  resource "cgi" do
+    url "https://rubygems.org/gems/cgi-0.5.1.gem"
+    sha256 "e93fcafc69b8a934fe1e6146121fa35430efa8b4a4047c4893764067036f18e9"
   end
 
   def install

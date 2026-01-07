@@ -39,11 +39,10 @@ class McpToolbox < Formula
     EOS
 
     port = free_port
-    pid = fork { exec bin/"toolbox", "--tools-file", testpath/"tools.yaml", "--port", port.to_s }
-
-    sleep 5
+    pid = spawn bin/"toolbox", "--tools-file", testpath/"tools.yaml", "--port", port.to_s
 
     begin
+      sleep 5
       output = shell_output("curl -s -i http://localhost:#{port} 2>&1")
       assert_match "HTTP/1.1 200 OK", output, "Expected HTTP/1.1 200 OK response"
     ensure

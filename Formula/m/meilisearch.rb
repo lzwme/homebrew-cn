@@ -40,10 +40,8 @@ class Meilisearch < Formula
 
   test do
     port = free_port
-    fork { exec bin/"meilisearch", "--http-addr", "127.0.0.1:#{port}" }
-    sleep_count = Hardware::CPU.arm? ? 3 : 10
-    sleep sleep_count
-    output = shell_output("curl -s 127.0.0.1:#{port}/version")
+    spawn bin/"meilisearch", "--http-addr", "127.0.0.1:#{port}"
+    output = shell_output("curl --silent --retry 5 --retry-connrefused 127.0.0.1:#{port}/version")
     assert_match version.to_s, output
   end
 end

@@ -55,10 +55,7 @@ class Davmail < Formula
       davmail.smtpPort=#{smtp_port}
     EOS
 
-    fork do
-      exec bin/"davmail", testpath/"davmail.properties"
-    end
-
+    spawn bin/"davmail", testpath/"davmail.properties"
     sleep 10
 
     system "nc", "-z", "localhost", caldav_port

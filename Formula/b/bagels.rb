@@ -6,16 +6,15 @@ class Bagels < Formula
   url "https://files.pythonhosted.org/packages/6e/04/e19a99e357221cb41e1e2f0352172e282ac8195fa2418b776345497fb260/bagels-0.3.12.tar.gz"
   sha256 "c3ebd4a727ddd62450528676a1ce3e475f92bd36edfed5f9c0b110bb24592608"
   license "GPL-3.0-or-later"
-  revision 3
+  revision 4
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "6e165dc0cab9d0bb224a903b8a6798a8a27c37a7899018c5c8ad482ea7357b26"
-    sha256 cellar: :any,                 arm64_sequoia: "c052cd04198e401a101f2619607b231fdd133def04ff2aa9fc0f41f382c41482"
-    sha256 cellar: :any,                 arm64_sonoma:  "ee1bf7617c4a412bf3791ccab76cfa246c45089f7b4c0cb6a6878b4e61531060"
-    sha256 cellar: :any,                 sonoma:        "a64d5050c09a34e8321e53c121a42bd43379869c43c9606ed285d0168a354b61"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b262011ce2d7bc8125587c18debf7a910520691b732f9abe640daaa5e85fcc1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1112c10a54227230a086302c0ce2e6363aee8dba80f2234744e5bedc38664d74"
+    sha256 cellar: :any,                 arm64_tahoe:   "c3b995908eccbd43319faa0279607d006879e3267f3c8a657317d0ec800ce465"
+    sha256 cellar: :any,                 arm64_sequoia: "f8125a1817e7c67ff2c1b616d5a4241b5c420da66fd9ce15f85ae202359ec1ff"
+    sha256 cellar: :any,                 arm64_sonoma:  "94634b328a899105e12f026723b362d866c262c54c1aca27d11eabdee4cc5100"
+    sha256 cellar: :any,                 sonoma:        "8c89202159f9f7fd3c82e1c379bc1ea10a4837cb20d60241c11154d8661d07bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8865bac5ff43f2290dc3da9db4830a4447415d6cf8451319d93cacfc285a29c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12fd9170776f1a4010308eb76051d1068bf3c88896b4891f8f7da04f8c8fb7a3"
   end
 
   depends_on "certifi" => :no_linkage
@@ -32,8 +31,8 @@ class Bagels < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/1c/ce/3b83ebba6b3207a7135e5fcaba49706f8a4b6008153b4e30540c982fae26/aiohttp-3.13.2.tar.gz"
-    sha256 "40176a52c186aefef6eb3cad2cdd30cd06e3afbe88fe8ab2af9c0b90f228daca"
+    url "https://files.pythonhosted.org/packages/50/42/32cf8e7704ceb4481406eb87161349abb46a57fee3f008ba9cb610968646/aiohttp-3.13.3.tar.gz"
+    sha256 "a949eee43d3782f2daae4f4a2819b2cb9b0c5d3b7f7a927067cc84dafdbb9f88"
   end
 
   resource "aiohttp-jinja2" do

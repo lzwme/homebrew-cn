@@ -7,18 +7,20 @@ class Harsh < Formula
   head "https://github.com/wakatara/harsh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "348204ec3b79bcecfc973be7c3d0cd383842701a28db5eba2d93cdae321344c6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "348204ec3b79bcecfc973be7c3d0cd383842701a28db5eba2d93cdae321344c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "348204ec3b79bcecfc973be7c3d0cd383842701a28db5eba2d93cdae321344c6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a95d4d4891176bad062e3fbee076160dffb5b3186a4bae411f13405d502e1c91"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "730143b1a6c755437fa9301cd2947cc4f44031e61fecd04c91b5ac757f11415b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "269eba6f7b315fc448263299eb1abd3e5484806367b6536e12450243d43b8d21"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ddc38ab5421fc915abcfd8f76991b8d85153c1c5de29f1b4b28f803fb57ab8e3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ddc38ab5421fc915abcfd8f76991b8d85153c1c5de29f1b4b28f803fb57ab8e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ddc38ab5421fc915abcfd8f76991b8d85153c1c5de29f1b4b28f803fb57ab8e3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7da240c38518d0e8dbb073170ce5def5e5ae8361d991e6d1b3855c6f5a98f7c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "85638d52a26c4b964d27ef093a9e1caf382e915cbc81eff3f9c7b804ac0ed6d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0543bc8a1d80ef3c26e5f8e796764ec71b7f85245c4a924b67015d9ced164554"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/wakatara/harsh/cmd.version=#{version}")
+    generate_completions_from_executable(bin/"harsh", shell_parameter_format: :cobra)
   end
 
   test do

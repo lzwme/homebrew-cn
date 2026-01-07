@@ -2,8 +2,8 @@ class Apt < Formula
   desc "Advanced Package Tool"
   homepage "https://wiki.debian.org/Apt"
   # Using git tarball as Debian does not retain old versions at deb.debian.org
-  url "https://salsa.debian.org/apt-team/apt/-/archive/3.1.12/apt-3.1.12.tar.bz2"
-  sha256 "9a4acfe5954debae7bdc218aec5b17e1db5fcfd2544ac092619ed52533596e50"
+  url "https://salsa.debian.org/apt-team/apt/-/archive/3.1.13/apt-3.1.13.tar.bz2"
+  sha256 "1d15f5d270a59f125822da535dbb036679ffd0e15e43e34bc576bc4fe8d8f6e1"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,8 +12,8 @@ class Apt < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "a1660b2c0902ea55742b1b939b11206420083b4a19391f07390d4992e4458443"
-    sha256 x86_64_linux: "71d5c3dab6c6ad9e76418dbe37364fdf83b6d69047d408c27452a14a7206feb1"
+    sha256 arm64_linux:  "7c90bbc28ba0370a200bc06fb57ab205f574e28375032821e001e67fcb9ab4a1"
+    sha256 x86_64_linux: "c960f838b61d94bdd36e4673386b9e3f37df86135f2e873a28d332c2fe2ca949"
   end
 
   keg_only "it conflicts with system apt"
@@ -30,6 +30,7 @@ class Apt < Formula
   depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL-3.0 restrictions
   depends_on "bzip2"
   depends_on "dpkg"
+  depends_on "gcc"
   depends_on :linux
   depends_on "lz4"
   depends_on "openssl@3"
@@ -40,6 +41,11 @@ class Apt < Formula
   depends_on "xz"
   depends_on "zlib"
   depends_on "zstd"
+
+  fails_with :gcc do
+    version "12"
+    cause "Requires C++23 support for `std::ranges::contains`"
+  end
 
   resource "triehash" do
     url "https://ghfast.top/https://github.com/julian-klode/triehash/archive/refs/tags/v0.3.tar.gz"
@@ -88,5 +94,5 @@ index 7ea1878..117644d 100644
  #include <cstring>
 +#include <optional>
  #include <unistd.h>
- 
+
  #include <algorithm>

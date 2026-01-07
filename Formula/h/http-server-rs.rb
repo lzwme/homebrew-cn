@@ -36,7 +36,7 @@ class HttpServerRs < Formula
   test do
     touch testpath/"foobar"
     port = free_port
-    pid = fork { exec bin/"http-server", "-q", "-p", port.to_s }
+    pid = spawn bin/"http-server", "-q", "-p", port.to_s
     sleep 3
     output = shell_output("curl -s http://localhost:#{port}")
     assert_match "foobar", output

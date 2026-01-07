@@ -89,7 +89,7 @@ class Collectd < Formula
       LoadPlugin memory
     EOS
     begin
-      pid = fork { exec sbin/"collectd", "-f", "-C", "collectd.conf" }
+      pid = spawn sbin/"collectd", "-f", "-C", "collectd.conf"
       sleep 3
       assert_path_exists log, "Failed to create log file"
       assert_match "plugin \"memory\" successfully loaded.", log.read
