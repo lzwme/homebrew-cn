@@ -6,14 +6,15 @@ class AwsElasticbeanstalk < Formula
   url "https://files.pythonhosted.org/packages/3c/f5/4281c2233232af71d118fa5205d0543dd92a6215d181aa8df75211b8100c/awsebcli-3.25.3.tar.gz"
   sha256 "718e94e8d0cd49cc54879996ae030c7bad38a63afbdf5077bd7a6edc59938fee"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "389c0f23a7ec280882100b22a410ce68ea3df24e6c568498781fd6bbfd12b330"
-    sha256 cellar: :any,                 arm64_sequoia: "e2361c1ef9cc5dc3403b7d27f9c35d1aef822633393762967959040de787481b"
-    sha256 cellar: :any,                 arm64_sonoma:  "105dcf130267bcf923e8c799d7c3c408cbde873a04fe1e86e8b190b3cab81a54"
-    sha256 cellar: :any,                 sonoma:        "c80b730280c52a49a0c4f3ad95d6d4bcec0285ee080bc83af0fdbce6c38395da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "017627498bac89eae0a9a0e72362fdc49b39db86c4465e288c7218d18262f65f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a557537a5b357ca3c80d1d50e204d605ffba551d6c1c4e273b9a6a51e44bc78e"
+    sha256 cellar: :any,                 arm64_tahoe:   "8ce56385d6001d3c7f4f0aa221d41693116bf661e8644b89c2c7bdf8ab44c134"
+    sha256 cellar: :any,                 arm64_sequoia: "8b970d7f587406412e1424c67d8409d26a349a7c133691f9c7d0c85ca7a4441e"
+    sha256 cellar: :any,                 arm64_sonoma:  "42d6a3b6dc12deef498a18a2e4536f2a2343393b5de142e12d0ce4a085c237f2"
+    sha256 cellar: :any,                 sonoma:        "a7479ceff7d24c1f39bd56d372bed320f0abde0f34c827721b2a507d3e6a8a0c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d52589bbc5537316eafd58edef008f0b7c497c8294dcc03aa81335cae856f627"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a480a0541ca79bbe036ae4ef6a2b84a17415955d86c1bf334611bde7d6ba1843"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -33,13 +34,13 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "blessed" do
-    url "https://files.pythonhosted.org/packages/c6/70/057c35a79a2015a6e35e45101d710b7a84b92af0c1104399bb83d33cd0d4/blessed-1.23.0.tar.gz"
-    sha256 "56591a32966f704f6131f1400af4151d9e8f5f4144133a5ca034019763dee77b"
+    url "https://files.pythonhosted.org/packages/33/cd/eed8b82f1fabcb817d84b24d0780b86600b5c3df7ec4f890bcbb2371b0ad/blessed-1.25.0.tar.gz"
+    sha256 "606aebfea69f85915c7ca6a96eb028e0031d30feccc5688e13fd5cec8277b28d"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/5f/2f/7e5b9a0f9f9c958e1b70734be9b5cbcef64a1bfa9a570bcaafea0c997840/botocore-1.40.71.tar.gz"
-    sha256 "7ed28c2e092fc0d67fbfba818fbdccc92426b452cc936bf034db6de717e0d068"
+    url "https://files.pythonhosted.org/packages/2c/2c/db33716f86b67c514f895c60694a25cd7428d2137b574b59d09d626b0e2e/botocore-1.42.23.tar.gz"
+    sha256 "453ce449bd1021acd67e75c814aae1b132b1ab3ee0ecff248de863bf19e58be8"
   end
 
   resource "cement" do
@@ -103,8 +104,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "pynacl" do
-    url "https://files.pythonhosted.org/packages/b2/46/aeca065d227e2265125aea590c9c47fbf5786128c9400ee0eb7c88931f06/pynacl-1.6.1.tar.gz"
-    sha256 "8d361dac0309f2b6ad33b349a56cd163c98430d409fa503b10b70b3ad66eaa1d"
+    url "https://files.pythonhosted.org/packages/d9/9a/4019b524b03a13438637b11538c82781a5eda427394380381af8f04f467a/pynacl-1.6.2.tar.gz"
+    sha256 "018494d6d696ae03c7e656e5e74cdfd8ea1326962cc401bcf018f1ed8436811c"
   end
 
   resource "python-dateutil" do

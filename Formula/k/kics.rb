@@ -1,8 +1,8 @@
 class Kics < Formula
   desc "Detect vulnerabilities, compliance issues, and misconfigurations"
   homepage "https://kics.io/"
-  url "https://ghfast.top/https://github.com/Checkmarx/kics/archive/refs/tags/v2.1.18.tar.gz"
-  sha256 "ee3773db190581b2a5a438333a0124093d93ba1c8332210e0e790f0dbd4b9392"
+  url "https://ghfast.top/https://github.com/Checkmarx/kics/archive/refs/tags/v2.1.19.tar.gz"
+  sha256 "9996054a715a8f614f33491e8c61e99b28758e9ea8273da2ce4962d7c5cf0b46"
   license "Apache-2.0"
   head "https://github.com/Checkmarx/kics.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Kics < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a260c528a90a685ea1232abef07bfad5445dfa4f3f3ac024dfb2ce78728b605"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "156b7a994f5a644a729d9eb54411275b4c1f542f934dac36c954742613119675"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f1f1ffd331a6e625ded77f1392c953b4801414569836c94343e7962664e53fb3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "048f0647dae8207b26c40fbbaa9202913bebe9590aba3f0f793344e0cabb762a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15bd9b13d4c4c2b2a8a7ee75e2daa9892b2a9ab2288658a27e9b28880e0f42c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01dafc973ddf17bfbe5040565cc4e4bec148bd16d41720474da8fb74a15a756a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c536cc4739127d369897eb6f04b3eada4718680474b0f8ca065e79a6858f6aa5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43b057ae5dba48a73bff322c3e9d7171748d42616130740d82032a7344f7fc10"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45340b8bdc03e7e68fb9b784f577457ef623583e1fe10cc22de8d045e210d370"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d51a12dc27980b64d44f0064121b8d75f9b01b77dfa5d9c41cc8e2be35fb5599"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0a832e64716f012e4d67c12bd4de5d0a1e13bec5e85e4036dc5a51855620424"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "565113143a0e9650558e8ed7387312da4e7d8f9157b8e23d23313a5c2551c484"
   end
 
   depends_on "go" => :build

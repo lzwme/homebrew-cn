@@ -32,9 +32,7 @@ class Livekit < Formula
   test do
     http_port = free_port
     random_key = "R4AA2dwX3FrMbyY@My3X&Hsmz7W)LuQy"
-    fork do
-      exec bin/"livekit-server", "--keys", "test: #{random_key}", "--config-body", "port: #{http_port}"
-    end
+    spawn bin/"livekit-server", "--keys", "test: #{random_key}", "--config-body", "port: #{http_port}"
     sleep 3
     assert_match "OK", shell_output("curl -s http://localhost:#{http_port}")
 

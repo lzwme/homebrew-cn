@@ -1,20 +1,18 @@
 class Chronograf < Formula
   desc "Open source monitoring and visualization UI for the TICK stack"
   homepage "https://docs.influxdata.com/chronograf/latest/"
-  url "https://ghfast.top/https://github.com/influxdata/chronograf/archive/refs/tags/1.10.8.tar.gz"
-  sha256 "6bf4e5176d4b0f039c078c5c71a80a460813f6f40028c76828d35392cb4c2d02"
+  url "https://ghfast.top/https://github.com/influxdata/chronograf/archive/refs/tags/1.10.9.tar.gz"
+  sha256 "15c7cc80cc5e1e2d6ef33bffce1b6a26729f45b80453714f424eec03974f7e14"
   license "AGPL-3.0-or-later"
   head "https://github.com/influxdata/chronograf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b173f2fbad114a2efe46f6f8a4f210b21b4c90166273c8cd8b57c43801e131f0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2aa264c77b7a1580f44f13fe423a5057a8cca42ed6c1681e65dd99ac673365f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "338e3d49164c033aff7aaacb29efa9f7c138f169c13bd7e7cc9c6ced32e8f986"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ba7d5a5e977bc21bd5b38c992c9e662971edef12bfffdb564fe0aae14f85a325"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2f4bc398a63f400a368e0ac15b5c76695fa4931d1a12cfeebdefeb8f2099ab41"
-    sha256 cellar: :any_skip_relocation, ventura:       "bf4bceda8fe5e269e3fb1e431afa340871ea7fbb6508fbef4e633b7cbf191231"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa7a72d163fef81177dba41159edde265a214d4fcbde8d4e05e441802689b0f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbb34f30e0bfcd31f6a12a844471439e68c0fa470f8d14eb70f01b0172e19944"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "91cd22b2b6b8793e72f37916d451fe1fd7c89cab46bce1de95c6d27045fe84f8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d9eb5a49b5d262d5ca7fd0558a59f0b96e403d4f5bf9a71436fbdd15d3573fa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76a9fa0bad678e7e38c7bad9ca6dc3479f9102376eb3b6aacd39d57bbef2d484"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b205bc5e83253166087d3895ba61466bbb6d0a30a96be3a041907bf03b0a8fcf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "154313920e25dc36c56c26aa567af0753f3092949f7d6b4a497e671808deea56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e5b01f1a9c61c9acbae2b41a803c5e7cd7c471cab324ae399fcbaf3c895741d"
   end
 
   depends_on "go" => :build

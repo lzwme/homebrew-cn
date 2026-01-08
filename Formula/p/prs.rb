@@ -1,17 +1,17 @@
 class Prs < Formula
   desc "Secure, fast & convenient password manager CLI with GPG & git sync"
   homepage "https://timvisee.com/projects/prs"
-  url "https://ghfast.top/https://github.com/timvisee/prs/archive/refs/tags/v0.5.5.tar.gz"
-  sha256 "833e47894b64e9da25183782fd10b16c6879d201cf5f60e02ce3d4c654309f53"
+  url "https://ghfast.top/https://github.com/timvisee/prs/archive/refs/tags/v0.5.6.tar.gz"
+  sha256 "b848e6097444b56c41aba1e489dfb94e2b2695c09cf2b583b9b0bea2e771e292"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6b6ba3893c637d7d43c3cd63427f125b0e0033a04247284b8fa81e6daf2c72c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eccd7f0e9e1519265b50002aa29def833a870cb826cf3e71ee1231b493181acd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3514b10156042e9b99cf4dfe627ab9a968178ebb21b85e25e8a7ab264cd35d9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f612132dc672132ed25235e3678b17658f5acad5d0efb226174374c0787fe8d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2a819c27ce1f9742733d7e6f5e79dd6ee9ee75f7caf7a66d03052bf6b7b062d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7481a21f903a29e8dc9dcc33b321aa5253a6089b0ee088315d3513a73371d2ad"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0747e8b6185f41648e55f70fbe6c00943d981293ff0485d21eac21b78ac70865"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96512e0d40d7ecc8d4b197fa25a8a92d6af2e50f6e4013d14449554618af7847"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "045ef64253da298d44c59b5dd4a7551cb564160d14815df324052fec3ba1c521"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eeb26686994fd4aa0d4d8f5bdce55e96462e5d2c64c6d38b7dfc88d43e360036"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "977da3dc46c600e43c8e5eaeeb2dacee925ed090b36a2d78c2ee29f978b6bae4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8030795c46d22bcf5c79bdd233be871a581e1f23fc7644cdd55fe43416f898bf"
   end
 
   depends_on "pkgconf" => :build

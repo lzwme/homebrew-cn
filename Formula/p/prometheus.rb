@@ -1,8 +1,8 @@
 class Prometheus < Formula
   desc "Service monitoring system and time series database"
   homepage "https://prometheus.io/"
-  url "https://ghfast.top/https://github.com/prometheus/prometheus/archive/refs/tags/v3.8.1.tar.gz"
-  sha256 "4745c45427a297a8736d5796297721dfa467f3c5af6422d4ac22360580e0f0fb"
+  url "https://ghfast.top/https://github.com/prometheus/prometheus/archive/refs/tags/v3.9.1.tar.gz"
+  sha256 "b97651c0aa00d0f6fd2973b773b18d31fe0402a4ca75b1eba7e788d7de42c9c0"
   license "Apache-2.0"
 
   # There can be a notable gap between when a version is tagged and a
@@ -14,12 +14,12 @@ class Prometheus < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4858c4654dbef27519b7813489e50b691afd92dcde6c95377120915d725b9141"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f91bfb19bef66a301ae0067f3bfd07dd752f253112b5fb5b3029a890419672cf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9635229dbe4fe6e8faf2a9eed75229c0be587fb95d4c01be78aaf396d46a30a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "84d81b57c1b46f4c86085be7352fe074a867789c693d1a36a73efcf4bbff1b50"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a8e4a023e3424629dc7ebfa47b5f3fb241a4782b51ed73116523e054a3a62a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "178131251e84b27a64345238c701d3849bddef35a2247d57cecdc6bc881809d3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "912173b70b3150399f3a908025f3e2edc26084ba53379281754b5135e15c8340"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "271edf8e6dcba9ec01cd3d74d3f4fc10c538d4f27f7c2c9cb3ab520f6c60be3a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11ae861ea386aaa6059652d19d77d6d95d3717f5016167cbe08f49ecb1fa8fc2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "474ca230aee9be98d608b6e35f5ce15fa81015e723ce201263ab08e5c33e9a9c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8add80594efd8cab6da21ecb39167f89930e0628f912613b444dd9be2a9573ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbcb6f3055ec10a93702d055ea58f10eaad109baeab10f83db2db2796fea9faa"
   end
 
   depends_on "gnu-tar" => :build

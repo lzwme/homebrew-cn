@@ -1,19 +1,18 @@
 class Wgcf < Formula
   desc "Generate WireGuard profile from Cloudflare Warp account"
   homepage "https://github.com/ViRb3/wgcf"
-  url "https://ghfast.top/https://github.com/ViRb3/wgcf/archive/refs/tags/v2.2.29.tar.gz"
-  sha256 "25bd436c3d0919c8e76a2e31806520c401c9561663946951746d4027a7fab96a"
+  url "https://ghfast.top/https://github.com/ViRb3/wgcf/archive/refs/tags/v2.2.30.tar.gz"
+  sha256 "91dae7e063476486643bc20005fa764380e2a3b38f42002b4c5e17da637bafba"
   license "MIT"
   head "https://github.com/ViRb3/wgcf.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c9adcc8bf972aaa8df188ecbd7e7063fd6c1c7c5a48329d621101c90b72044f7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9adcc8bf972aaa8df188ecbd7e7063fd6c1c7c5a48329d621101c90b72044f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9adcc8bf972aaa8df188ecbd7e7063fd6c1c7c5a48329d621101c90b72044f7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8831843b37878ac2c9be55e77cbc9a0ece6eb0f42e3bc24f42502df75caebdc3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "16c0287850880581b36ca81efa48b9eb2adc01bc5d029e9697b19963a091b4c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3890d93b2ee62f417566b021fa9affd15a59417e8bf1a6d66e6f106a55c5ee53"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "09a2d9d054df9f938a6ba1a2c6e78fef704c042cefa20d624d30814cffb1d659"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "09a2d9d054df9f938a6ba1a2c6e78fef704c042cefa20d624d30814cffb1d659"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09a2d9d054df9f938a6ba1a2c6e78fef704c042cefa20d624d30814cffb1d659"
+    sha256 cellar: :any_skip_relocation, sonoma:        "abfb16110ebfe84fe340587f1e8f3e674094c468b4b14a6159325667e899dbe0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "11e09aea187b8d8e88cc2c4846cf3c49aab45e900922b56b32cc78f3485e8079"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ae80ab0bb56632e4a8249c291db64c5143968422ec9548c7f87fe371d52b05b"
   end
 
   depends_on "go" => :build

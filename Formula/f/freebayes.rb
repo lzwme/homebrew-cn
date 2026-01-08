@@ -19,14 +19,13 @@ class Freebayes < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6c56a131cdd190ae3ca497c0bb7289b6433ee8476b2fabcabd87c6237eb8ca2d"
-    sha256 cellar: :any, arm64_sequoia: "fe3551f272a78c35e210c171b28a89f3d21ccf8d9bf7ca8e6754880c3d228e55"
-    sha256 cellar: :any, arm64_sonoma:  "0a3d8fe813c8e97ded11ea118bc911eabe1268978384c8258311eee2c8faff58"
-    sha256 cellar: :any, arm64_ventura: "e7cf7f62a74dc67a7da26bb0de4c61235564ed4319da0e068562f5259636b056"
-    sha256 cellar: :any, sonoma:        "f4cff84f549d2e6b9b40e2ab84ae82ed07fe5b7da2b7673f0f5679f9d0b93d09"
-    sha256 cellar: :any, ventura:       "2bc50a5d6aac51804c8c7a12145660f09c7e68c453e43206e371335209ca0cd6"
-    sha256               arm64_linux:   "c076ac85a630648c4972beb9c1db024a5753fb877621c7222a91546e6d0d5773"
-    sha256               x86_64_linux:  "6b15a1010ab2db38829e674e191ed2ac8a78b579ee1c4c3f8b9fbe33285c3133"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "6ac99ac74405aba54f7b65a2b36ca561ba46b5566829dc1c2b9758cc8be12aca"
+    sha256 cellar: :any, arm64_sequoia: "514ae73cd4c7187fd2bbcbb18ac5f6f688ac03f389e7ec93c50fc29136f2c5be"
+    sha256 cellar: :any, arm64_sonoma:  "7c97223f0041563242414bd68dc319fd288d7521add1d8f87671f98f8ba79c64"
+    sha256 cellar: :any, sonoma:        "1a6e217f03bd2122f3ef8ab00c72ae7780018794ffb8dc67972760dd2b3bf727"
+    sha256               arm64_linux:   "4eba699d3f1534639286e3b1f8b5aa3dad87a474bff7d99a92c35a6298f2d3df"
+    sha256               x86_64_linux:  "9bff5501fddada4a471d2b1d8580bf71e7dbf7ad405ca7b7381ae3050bd6e775"
   end
 
   depends_on "cmake" => :build
@@ -50,13 +49,16 @@ class Freebayes < Formula
   end
 
   def install
-    # add contrib to include directories
-    inreplace "meson.build", "incdir = include_directories(", "incdir = include_directories('contrib',"
+    inreplace "meson.build" do |s|
+      # add contrib to include directories
+      s.gsub! "incdir = include_directories(", "incdir = include_directories('contrib',"
+
+      # add tabixpp to library directories, https://github.com/mesonbuild/meson/issues/8091
+      s.gsub! "find_library('tabixpp'", "\\0, dirs: '#{Formula["tabixpp"].opt_lib}'"
+    end
 
     # install intervaltree
     (buildpath/"contrib/intervaltree").install resource("intervaltree")
-    # add tabixpp to include directories
-    ENV.append_to_cflags "-I#{Formula["tabixpp"].opt_include} -L#{Formula["tabixpp"].opt_lib} -ltabix"
 
     # Set prefer_system_deps=false as we don't have formulae for these and some are not versioned/tagged
     system "meson", "setup", "build", "-Dcpp_std=c++14", "-Dprefer_system_deps=false", *std_meson_args

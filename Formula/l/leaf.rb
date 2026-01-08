@@ -35,15 +35,13 @@ class Leaf < Formula
 
   test do
     (testpath/"a").write "foo"
-    fork do
-      exec bin/"leaf", "-f", "+ a", "-x", "cp a b"
-    end
+    spawn bin/"leaf", "-f", "+ a", "-x", "cp a b"
     sleep 1
 
-    assert_equal (testpath/"a").read, (testpath/"b").read
+    assert_equal "foo", (testpath/"b").read
     (testpath/"a").append_lines "bar"
     sleep 1
 
-    assert_equal (testpath/"a").read, (testpath/"b").read
+    assert_equal "foobar\n", (testpath/"b").read
   end
 end

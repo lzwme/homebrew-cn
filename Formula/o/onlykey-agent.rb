@@ -6,15 +6,15 @@ class OnlykeyAgent < Formula
   url "https://files.pythonhosted.org/packages/68/80/e89b6c3680bedb1e14e99f0539ac805bddc7d8dd87c58805c64484966b7c/onlykey-agent-1.1.15.tar.gz"
   sha256 "49b19bec28dc0fb7053ef01266d8a9e7a078bb146214a641bdbb1feac6fc7ddb"
   license "LGPL-3.0-only"
-  revision 8
+  revision 9
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9b4a11c4877111b534597d25dce4f80af51bf4124872c7c41ebb76e86951b2ba"
-    sha256 cellar: :any,                 arm64_sequoia: "ec671e0f48cb4c122d1a677f6b96a67c5c6b6b06d38ef5130ba3bd08dc437615"
-    sha256 cellar: :any,                 arm64_sonoma:  "c089c0e63350f3b37cedfd7b802f2755cd90f4bd4488a8516842e0b38c1a1489"
-    sha256 cellar: :any,                 sonoma:        "09504b091a875e7f6f3a617eef95bc143eed075ff7f8e267036d1e107abbe4e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d0fcd2bc34ee8ac15476fbf80219966faac22a2d32a33148c1736b83ea130d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04ae2643d70a6eed37771ec364ee271b2f0364e7babaeb8901d763a8b5fda298"
+    sha256 cellar: :any,                 arm64_tahoe:   "41f51879b9ccc2e1dc8c987ecb4b84d01b4b4f448687f65268d778bcfb8dff8a"
+    sha256 cellar: :any,                 arm64_sequoia: "29507222f8d8f2a984af9a9ae79f523a206bd0936f82b1c0ea9a2d16c45aba8a"
+    sha256 cellar: :any,                 arm64_sonoma:  "c8da9d194e5671af61277f450ea0423463cf7c243c5bfd7df50b4d10a6ab0a48"
+    sha256 cellar: :any,                 sonoma:        "edec80bda54b4517ceb4cc6805f7184878bb2395ad094d7d8d43bec64e2f5a78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "76ec93e57d12f3357da2ea0e7307594c17272fbc57d9d816311203472fe7ef4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85a7aaa27c6ca881a19d246faf5be929ceaed3353e551194b72ca83141699166"
   end
 
   depends_on "pkgconf" => :build
@@ -59,13 +59,13 @@ class OnlykeyAgent < Formula
   end
 
   resource "cython" do
-    url "https://files.pythonhosted.org/packages/29/17/55fc687ba986f2210298fa2f60fec265fa3004c3f9a1e958ea1fe2d4e061/cython-3.2.2.tar.gz"
-    sha256 "c3add3d483acc73129a61d105389344d792c17e7c1cee24863f16416bd071634"
+    url "https://files.pythonhosted.org/packages/91/85/7574c9cd44b69a27210444b6650f6477f56c75fee1b70d7672d3e4166167/cython-3.2.4.tar.gz"
+    sha256 "84226ecd313b233da27dc2eb3601b4f222b8209c3a7216d8733b031da1dc64e6"
   end
 
   resource "docutils" do
-    url "https://files.pythonhosted.org/packages/d9/02/111134bfeb6e6c7ac4c74594e39a59f6c0195dc4846afbeac3cba60f1927/docutils-0.22.3.tar.gz"
-    sha256 "21486ae730e4ca9f622677b1412b879af1791efcfba517e4c6f60be543fc8cdd"
+    url "https://files.pythonhosted.org/packages/ae/b6/03bb70946330e88ffec97aefd3ea75ba575cb2e762061e0e62a213befee8/docutils-0.22.4.tar.gz"
+    sha256 "4db53b1fde9abecbb74d91230d32ab626d94f6badfc575d6db9194a49df29968"
   end
 
   resource "ecdsa" do
@@ -79,8 +79,8 @@ class OnlykeyAgent < Formula
   end
 
   resource "hidapi" do
-    url "https://files.pythonhosted.org/packages/47/72/21ccaaca6ffb06f544afd16191425025d831c2a6d318635e9c8854070f2d/hidapi-0.14.0.post4.tar.gz"
-    sha256 "48fce253e526d17b663fbf9989c71c7ef7653ced5f4be65f1437c313fb3dbdf6"
+    url "https://files.pythonhosted.org/packages/74/f6/caad9ed701fbb9223eb9e0b41a5514390769b4cb3084a2704ab69e9df0fe/hidapi-0.15.0.tar.gz"
+    sha256 "ecbc265cbe8b7b88755f421e0ba25f084091ec550c2b90ff9e8ddd4fcd540311"
   end
 
   resource "idna" do
@@ -134,8 +134,8 @@ class OnlykeyAgent < Formula
   end
 
   resource "pynacl" do
-    url "https://files.pythonhosted.org/packages/b2/46/aeca065d227e2265125aea590c9c47fbf5786128c9400ee0eb7c88931f06/pynacl-1.6.1.tar.gz"
-    sha256 "8d361dac0309f2b6ad33b349a56cd163c98430d409fa503b10b70b3ad66eaa1d"
+    url "https://files.pythonhosted.org/packages/d9/9a/4019b524b03a13438637b11538c82781a5eda427394380381af8f04f467a/pynacl-1.6.2.tar.gz"
+    sha256 "018494d6d696ae03c7e656e5e74cdfd8ea1326962cc401bcf018f1ed8436811c"
   end
 
   resource "pyserial" do
@@ -179,8 +179,8 @@ class OnlykeyAgent < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "wcwidth" do

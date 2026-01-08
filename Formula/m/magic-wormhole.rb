@@ -6,15 +6,16 @@ class MagicWormhole < Formula
   url "https://files.pythonhosted.org/packages/65/34/08813891da57999cf953e9c553193c900ff363c4cdfdd48a74f65536a883/magic_wormhole-0.22.0.tar.gz"
   sha256 "52a3ae2f0c56d0d4cd52188e50f10d2fe14bfd46e287dd50b72e7f7e851434ac"
   license "MIT"
+  revision 1
   head "https://github.com/magic-wormhole/magic-wormhole.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8226a6515129b2f273eca3b7d206e376defde125526347a864a08604d158cd90"
-    sha256 cellar: :any,                 arm64_sequoia: "76aa4222820bac4c3a5562361e84ae6f127bc572cf8d1dbadfb409980f2b08c9"
-    sha256 cellar: :any,                 arm64_sonoma:  "8a973f2c71b2d0c0773fe5f6ca98324c093d6090fc06d88ba76f4a33435c94a5"
-    sha256 cellar: :any,                 sonoma:        "2ebbebef63bc2f30fe9568f4731f72d25bf9a874ef390af62793be94708c3306"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c60fbba3c893821e67c88fdd1a732e577fbf0e33d469fb897774154da983f62f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdb1d31a63b10eff6970483960e46a8ca1a2302ec2f2755f9e149d363bf91bde"
+    sha256 cellar: :any,                 arm64_tahoe:   "19e01e7cec1445226c992ba7857ac7d2c6728c3612dfdab7923c54560bfd02a4"
+    sha256 cellar: :any,                 arm64_sequoia: "aa984fa455f38c3f3790aca03fe5acbada43206e503f0dd1ee11b44eeffa5495"
+    sha256 cellar: :any,                 arm64_sonoma:  "fb8316c13783ee8961bdb082caa450497b8aeb57c7bf03d9d0355ed01015cb1f"
+    sha256 cellar: :any,                 sonoma:        "162e33d24324bf62bfeb8009500004614b52ff5f8fb77a27bbb5a6467496634f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "209138b8870f0e695f19b6c097cde7018bddcce583f9ccae900a06da614e078e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12323d0ecfc8f7ab37e278fdb96b34c0b162fc7eb528dc30ff1b98109b36ac22"
   end
 
   depends_on "cryptography" => :no_linkage
@@ -106,8 +107,8 @@ class MagicWormhole < Formula
   end
 
   resource "pynacl" do
-    url "https://files.pythonhosted.org/packages/b2/46/aeca065d227e2265125aea590c9c47fbf5786128c9400ee0eb7c88931f06/pynacl-1.6.1.tar.gz"
-    sha256 "8d361dac0309f2b6ad33b349a56cd163c98430d409fa503b10b70b3ad66eaa1d"
+    url "https://files.pythonhosted.org/packages/d9/9a/4019b524b03a13438637b11538c82781a5eda427394380381af8f04f467a/pynacl-1.6.2.tar.gz"
+    sha256 "018494d6d696ae03c7e656e5e74cdfd8ea1326962cc401bcf018f1ed8436811c"
   end
 
   resource "pyopenssl" do

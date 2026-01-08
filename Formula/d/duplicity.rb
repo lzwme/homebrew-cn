@@ -8,17 +8,18 @@ class Duplicity < Formula
   url "https://files.pythonhosted.org/packages/16/96/fc07257297b433c19162764f8c3b8649cf788201890c2563476570e1167e/duplicity-3.0.7.tar.gz"
   sha256 "464245217285012e8e0c74ad3edf16be7ff4801caa5272745f10d93a2a7de44e"
   license "GPL-2.0-or-later"
+  revision 1
 
   # FIXME: Fails trying to resolve lxml as needs `libxml2`/`libxslt` installed
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3f05fff562685c1d418f29994c833969a6e22c3523f9d100809c8b9fafca4133"
-    sha256 cellar: :any,                 arm64_sequoia: "e84d22085b4a1327d3e00ba72fe70f242bcf1f635776f8816d1534d9b577ce43"
-    sha256 cellar: :any,                 arm64_sonoma:  "9e955546b7b9d2845ac6dec68ad70cf03f9f85a5e8928ccdc573304a62005661"
-    sha256 cellar: :any,                 sonoma:        "a720c9dd5064dd7e96cef487f999e748d9b69f2e4a27900dcae3c34f34bb6e95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0057d85345b835d2a4f72e56c431360079d10007d804b0fbf7ab97872de8a53a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc339803f9ce2e009f557c5e78c44ce6e9bd6e8c94f29ec300c6635d9f18cce0"
+    sha256 cellar: :any,                 arm64_tahoe:   "b4d9d0118a5ee0c1649acf2eb83ae3b8c77c33777f2f61bbc30221a7e41ff133"
+    sha256 cellar: :any,                 arm64_sequoia: "798f26e044d176003c5d3b1ab614e25abb9073e23ffa1fec8dc3284a506a60e4"
+    sha256 cellar: :any,                 arm64_sonoma:  "f27eb68b0eae1c6907b379342b230eac578afe3f8529da64a8d318afa100933a"
+    sha256 cellar: :any,                 sonoma:        "5ca8a32fd1a10382d2483806799175de9835097d7e2b28e512679851294674f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "afc7d639b9466286ecc8618cf935233ba001e9397242661c6989cf4238dd448e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3bb9b790847d8d4dc8a6df0f90e43a5d0eb2f8ff5afca8847f5514edfce68ee"
   end
 
   depends_on "gettext" => :build # for msgfmt
@@ -55,8 +56,8 @@ class Duplicity < Formula
   end
 
   resource "azure-storage-blob" do
-    url "https://files.pythonhosted.org/packages/36/7c/2fd872e11a88163f208b9c92de273bf64bb22d0eef9048cc6284d128a77a/azure_storage_blob-12.27.1.tar.gz"
-    sha256 "a1596cc4daf5dac9be115fcb5db67245eae894cf40e4248243754261f7b674a6"
+    url "https://files.pythonhosted.org/packages/71/24/072ba8e27b0e2d8fec401e9969b429d4f5fc4c8d4f0f05f4661e11f7234a/azure_storage_blob-12.28.0.tar.gz"
+    sha256 "e7d98ea108258d29aa0efbfd591b2e2075fa1722a2fae8699f0b3c9de11eff41"
   end
 
   resource "b2sdk" do
@@ -70,13 +71,13 @@ class Duplicity < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/34/36/045babbc2978fe3bf051a002e9ee492a815e50b90aea514b811d12aa33cb/boto3-1.42.19.tar.gz"
-    sha256 "5933696a28bf8eb62fc54e4de5583f78a0efef59c8164ee1850436aa22f53aa7"
+    url "https://files.pythonhosted.org/packages/0d/df/17828670134e56ffca8cf8b017477f16d1a9df7ecfc3870d02aa6d4d2e20/boto3-1.42.23.tar.gz"
+    sha256 "f681a8d43b46b3d8acf0be4f3894eb85e40e75945431d0dfe0542edda7025512"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/39/d6/33565766764492a0a4956ef161498d81a8c48c1e918aeaeb29def52c3367/botocore-1.42.19.tar.gz"
-    sha256 "8d38f30de983720303e95951380a2c9ac515159636ee6b5ba4227d65f14551a4"
+    url "https://files.pythonhosted.org/packages/2c/2c/db33716f86b67c514f895c60694a25cd7428d2137b574b59d09d626b0e2e/botocore-1.42.23.tar.gz"
+    sha256 "453ce449bd1021acd67e75c814aae1b132b1ab3ee0ecff248de863bf19e58be8"
   end
 
   resource "boxsdk" do
@@ -405,8 +406,8 @@ class Duplicity < Formula
   end
 
   resource "pynacl" do
-    url "https://files.pythonhosted.org/packages/b2/46/aeca065d227e2265125aea590c9c47fbf5786128c9400ee0eb7c88931f06/pynacl-1.6.1.tar.gz"
-    sha256 "8d361dac0309f2b6ad33b349a56cd163c98430d409fa503b10b70b3ad66eaa1d"
+    url "https://files.pythonhosted.org/packages/d9/9a/4019b524b03a13438637b11538c82781a5eda427394380381af8f04f467a/pynacl-1.6.2.tar.gz"
+    sha256 "018494d6d696ae03c7e656e5e74cdfd8ea1326962cc401bcf018f1ed8436811c"
   end
 
   resource "pyopenssl" do

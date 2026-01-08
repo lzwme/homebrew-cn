@@ -1,8 +1,8 @@
 class PcscLite < Formula
   desc "Middleware to access a smart card using SCard API"
   homepage "https://pcsclite.apdu.fr/"
-  url "https://pcsclite.apdu.fr/files/pcsc-lite-2.4.0.tar.xz"
-  sha256 "22307017a99e123dbecb991136783beca07966f1376d74d9ad0004ba5f81c4f1"
+  url "https://pcsclite.apdu.fr/files/pcsc-lite-2.4.1.tar.xz"
+  sha256 "afd3ba68c8000d2be048dc292df99a9812df9ad2efaf0a366eea22ac1faa19a7"
   license all_of: ["BSD-3-Clause", "GPL-3.0-or-later", "ISC"]
 
   livecheck do
@@ -11,12 +11,12 @@ class PcscLite < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "624e3633fdfb5bde643c14849b17220fb75205b05b59366a39718a07f204b196"
-    sha256 cellar: :any, arm64_sequoia: "0e94c4180a09b362bb8fcd80176b9241cbe0f4e1627d3c3d7ddc3fee2c511e55"
-    sha256 cellar: :any, arm64_sonoma:  "8d4a14f8e2b1c0ef123148ac876acbbb4d71442bb0b674b4c5c665566edc614d"
-    sha256 cellar: :any, sonoma:        "cf1d373145c45d0c6f7622d8d80d68a8647bdb0184ab7ff64c1e6466a29d1418"
-    sha256               arm64_linux:   "9b2e981ff7c80e860eb43ab3cf95029460c4a88f586ee06b30a0ae2886286720"
-    sha256               x86_64_linux:  "63dd908bb72b286a75adf102a827e95013f63931347940e82dc0ea9ea90eaa32"
+    sha256 cellar: :any, arm64_tahoe:   "bbcb4cec53c676bc0c0d909b48a4880d0245e248301b1c02bcf2ba2db08ab29c"
+    sha256 cellar: :any, arm64_sequoia: "0d2a59a7d1d8b287f77d8f4fa22f465caef5b96a68f549a89add5a7d4fc21788"
+    sha256 cellar: :any, arm64_sonoma:  "349f8e1bbc4fc03f07eac0abe9a9217bab513dfc79c9a8dc238cc7d5ca619ecf"
+    sha256 cellar: :any, sonoma:        "0f44502f904a7084905a92de0ec7cf8433ee98b1d8190928096659caae01dbba"
+    sha256               arm64_linux:   "3c60cdfcf25e57250a4259695c38127608738afc3fd9c7979a4b0387fde8402f"
+    sha256               x86_64_linux:  "8646d8eae3480db54d39cd2fc59466b5f3f72c58691cf36f4b8afced83e41c1a"
   end
 
   keg_only :shadowed_by_macos, "macOS provides PCSC.framework"

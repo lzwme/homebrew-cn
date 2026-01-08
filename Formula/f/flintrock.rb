@@ -6,15 +6,15 @@ class Flintrock < Formula
   url "https://files.pythonhosted.org/packages/e9/3b/810c7757f6abb0a73a50c2da6da2dacb5af85a04b056aef81323b2b6a082/Flintrock-2.1.0.tar.gz"
   sha256 "dde4032630ad44c374c2a9b12f0d97db87fa5117995f1c7dd0f70b631f47a035"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    rebuild 6
-    sha256 cellar: :any,                 arm64_tahoe:   "3f62ae6a65feab73644226a481a28b155dc5a2d607139ec4233dc7f9fc4e757e"
-    sha256 cellar: :any,                 arm64_sequoia: "127432ae39c73662b25044a21d91e22fdf3e9af06b76d735474d01c84348b0d6"
-    sha256 cellar: :any,                 arm64_sonoma:  "5c80b77f50eb1c6d43b55ff1112b2d3a0173a584da9f74b5498d3803a689f2f6"
-    sha256 cellar: :any,                 sonoma:        "1d7f089c52d88f351ccbc0eea15ba834ccfcfbd597191480be7cbc58af84dceb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e63dbb5e0d087eccc75f15c30ded821018dfc034597ed56cff8218342221cdd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff3f69ebe041c56f33fd019cbcb28e58220571692d2d487c6078a2e285b71449"
+    sha256 cellar: :any,                 arm64_tahoe:   "1561728f5ee680f1cf1f42eef3667cdddba8800903c8b9a68c1d8f341d2a8c0f"
+    sha256 cellar: :any,                 arm64_sequoia: "3189349906f04737772d0b1acb6f4a523b5430b65271626778f07e1d8d9c94f6"
+    sha256 cellar: :any,                 arm64_sonoma:  "148986f12dd15e824c46d2251521e19b6a5e19d9ee0eadf027ab692fb3f5183b"
+    sha256 cellar: :any,                 sonoma:        "e5d6aff8a0895ff834f6e74bbb1ef9166120566d264166fa339a1d6ef2d11f90"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c57d22478c82da7ea46b9b3f7b11315a9f7decb7862e557bb24214efe141ec45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17ac5368bc13e842cb4b2649cf2872c3d75a7c2c47e3f29c3db2c8cd63cb7416"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -59,8 +59,8 @@ class Flintrock < Formula
   end
 
   resource "pynacl" do
-    url "https://files.pythonhosted.org/packages/06/c6/a3124dee667a423f2c637cfd262a54d67d8ccf3e160f3c50f622a85b7723/pynacl-1.6.0.tar.gz"
-    sha256 "cb36deafe6e2bce3b286e5d1f3e1c246e0ccdb8808ddb4550bb2792f2df298f2"
+    url "https://files.pythonhosted.org/packages/d9/9a/4019b524b03a13438637b11538c82781a5eda427394380381af8f04f467a/pynacl-1.6.2.tar.gz"
+    sha256 "018494d6d696ae03c7e656e5e74cdfd8ea1326962cc401bcf018f1ed8436811c"
   end
 
   resource "python-dateutil" do

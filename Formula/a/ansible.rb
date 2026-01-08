@@ -6,15 +6,16 @@ class Ansible < Formula
   url "https://files.pythonhosted.org/packages/61/18/f13c9a462ef20893d30bd11c4089edee02b5ef1d31e1c2634da592732279/ansible-13.2.0.tar.gz"
   sha256 "fac46e202d1020027341659918b39e588dd7c43cef26537d7ca7fe51c324fe31"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d320465ad1a5fd5e4b7aabc3b1e32b809703a06c3e5e29b570c8e826af96b41f"
-    sha256 cellar: :any,                 arm64_sequoia: "b5c1c7ef2df768e907b1ca8d2a02322c1d6fe60b95f09496470bc819ba7d9a00"
-    sha256 cellar: :any,                 arm64_sonoma:  "2b04f226cb092953118b1bb545a15818315140379b4a76288877f8fbc3bd6b5c"
-    sha256 cellar: :any,                 sonoma:        "e01f93dc0f57e0c5feeb502401b70ee53241c5eef18e982609d615bb64c54d4f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8cdb7a741760ce2627fcc5422d8683e2cb1c0a1ed1f9cb80924cbdd504dff860"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0405bd589b25af819baea94181bc2af941f9e0ff24e30310f36d938bf7fed49"
+    sha256 cellar: :any,                 arm64_tahoe:   "349e825ed8784c9852e9501c0dee24aa96ceebc472050d3c9bc6c0a89c8c3b63"
+    sha256 cellar: :any,                 arm64_sequoia: "980be997f39de6cc83077094cc8017453291b27a873f09a4597256c300d6cf0e"
+    sha256 cellar: :any,                 arm64_sonoma:  "f40ee17d26d01b289dc5335eca48ee8c8a6297a19c3ff511962bfafa363598b3"
+    sha256 cellar: :any,                 sonoma:        "e2b1d1aa0d1f4f253b4673a8748732cceb66042d84ce3d25d9ad1d7f676dcacb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d5416852c95abb42458d3f946269973a681337c012bd94b31620fd4be0a6734"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a86c64611767389ace80e353b7495599b19e9357645801e4bc420b0e17a86077"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -80,18 +81,13 @@ class Ansible < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/34/36/045babbc2978fe3bf051a002e9ee492a815e50b90aea514b811d12aa33cb/boto3-1.42.19.tar.gz"
-    sha256 "5933696a28bf8eb62fc54e4de5583f78a0efef59c8164ee1850436aa22f53aa7"
+    url "https://files.pythonhosted.org/packages/0d/df/17828670134e56ffca8cf8b017477f16d1a9df7ecfc3870d02aa6d4d2e20/boto3-1.42.23.tar.gz"
+    sha256 "f681a8d43b46b3d8acf0be4f3894eb85e40e75945431d0dfe0542edda7025512"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/39/d6/33565766764492a0a4956ef161498d81a8c48c1e918aeaeb29def52c3367/botocore-1.42.19.tar.gz"
-    sha256 "8d38f30de983720303e95951380a2c9ac515159636ee6b5ba4227d65f14551a4"
-  end
-
-  resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/bc/1d/ede8680603f6016887c062a2cf4fc8fdba905866a3ab8831aa8aa651320c/cachetools-6.2.4.tar.gz"
-    sha256 "82c5c05585e70b6ba2d3ae09ea60b79548872185d2f24ae1f2709d37299fd607"
+    url "https://files.pythonhosted.org/packages/2c/2c/db33716f86b67c514f895c60694a25cd7428d2137b574b59d09d626b0e2e/botocore-1.42.23.tar.gz"
+    sha256 "453ce449bd1021acd67e75c814aae1b132b1ab3ee0ecff248de863bf19e58be8"
   end
 
   resource "charset-normalizer" do
@@ -145,8 +141,8 @@ class Ansible < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/e5/00/3c794502a8b892c404b2dea5b3650eb21bfc7069612fbfd15c7f17c1cb0d/google_auth-2.45.0.tar.gz"
-    sha256 "90d3f41b6b72ea72dd9811e765699ee491ab24139f34ebf1ca2b9cc0c38708f3"
+    url "https://files.pythonhosted.org/packages/60/3c/ec64b9a275ca22fa1cd3b6e77fefcf837b0732c890aa32d2bd21313d9b33/google_auth-2.47.0.tar.gz"
+    sha256 "833229070a9dfee1a353ae9877dcd2dec069a8281a4e72e72f77d4a70ff945da"
   end
 
   resource "idna" do
@@ -383,8 +379,8 @@ class Ansible < Formula
   end
 
   resource "pynacl" do
-    url "https://files.pythonhosted.org/packages/b2/46/aeca065d227e2265125aea590c9c47fbf5786128c9400ee0eb7c88931f06/pynacl-1.6.1.tar.gz"
-    sha256 "8d361dac0309f2b6ad33b349a56cd163c98430d409fa503b10b70b3ad66eaa1d"
+    url "https://files.pythonhosted.org/packages/d9/9a/4019b524b03a13438637b11538c82781a5eda427394380381af8f04f467a/pynacl-1.6.2.tar.gz"
+    sha256 "018494d6d696ae03c7e656e5e74cdfd8ea1326962cc401bcf018f1ed8436811c"
   end
 
   resource "pynetbox" do

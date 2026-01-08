@@ -1,16 +1,19 @@
 class ApacheFlinkAT1 < Formula
   desc "Scalable batch and stream data processing"
   homepage "https://flink.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=flink/flink-1.20.2/flink-1.20.2-bin-scala_2.12.tgz"
-  mirror "https://archive.apache.org/dist/flink/flink-1.20.2/flink-1.20.2-bin-scala_2.12.tgz"
-  version "1.20.2"
-  sha256 "76923477b2d12a992f1713954c03611a37a293349ae9e21e163790c1fd6a676a"
+  url "https://www.apache.org/dyn/closer.lua?path=flink/flink-1.20.3/flink-1.20.3-bin-scala_2.12.tgz"
+  mirror "https://archive.apache.org/dist/flink/flink-1.20.3/flink-1.20.3-bin-scala_2.12.tgz"
+  version "1.20.3"
+  sha256 "af791074d2aaf5d9dd0938b215e05e22a602e32879005daf8de3f900469f5ac4"
   license "Apache-2.0"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    url :stable
+    regex(%r{href=["']?flink-v?(1(?:\.\d+)+)/}i)
+  end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "343d4caf2add1dd23ff46d12008f3726787b3fc443f3fb31fc5eef0ff3b734e3"
+    sha256 cellar: :any_skip_relocation, all: "5fa38e74640401d922a7d4be29970534d07481ed7e77345d294763395ee82503"
   end
 
   keg_only :versioned_formula

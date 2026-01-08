@@ -6,6 +6,11 @@ class Hl < Formula
   license "MIT"
   head "https://github.com/pamburus/hl.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "320e12bf8979beb2e174f4d79dc4e37919f0b9e551e1cf32a9785e8c78dd1920"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c314af89417d4ded8184e3e880e5ff7570c2447852d3a8225a08760e0f8b894"

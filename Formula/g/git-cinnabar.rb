@@ -19,6 +19,7 @@ class GitCinnabar < Formula
   depends_on "rust" => :build
   depends_on "mercurial"
 
+  uses_from_macos "bzip2"
   uses_from_macos "curl"
   uses_from_macos "zlib"
 

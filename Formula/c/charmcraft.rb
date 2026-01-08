@@ -6,15 +6,15 @@ class Charmcraft < Formula
   url "https://files.pythonhosted.org/packages/08/66/48bba084a9e894571107eacdac3eae04ece27e83ceae4e71b5f8ed59077b/charmcraft-4.1.0.tar.gz"
   sha256 "b8b81cd6fcf58997fb9d28b3d0124b178d92a9eed4f77cc6350d778629f21653"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "611f2da4fcaa3de7445632ac1eef6d10d2bd357c17b5018ded1f58356c9667c9"
-    sha256 cellar: :any,                 arm64_sequoia: "9f73c890c100192f8ce3420fb362bc3f9193de91e1341776771324178fdcacb2"
-    sha256 cellar: :any,                 arm64_sonoma:  "cd4d68854103a8cb11fcdf8f5c9cf2f5cd1a29c5bec8fb544389e3b39549f434"
-    sha256 cellar: :any,                 sonoma:        "6d09ab50b54b1516817915c0854d1b7384fe5e7fde691dc2111565f03c9e25ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6fe5e95d5c5219a27e56d2e053497ff4b2f066d90775a3cc9a68677f09404ff3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71d69afe69f769eba08be9222cc63cd9be0e292dac2b06469b9a880733940a2f"
+    sha256 cellar: :any,                 arm64_tahoe:   "58bea37feb4c04db2c27a36406c227a360a17b6c6f746382891c9bcae0c905e3"
+    sha256 cellar: :any,                 arm64_sequoia: "934fb975dce954714701d9ec3b65ff5045cccb91ec99eac32ff4427bf5e98f24"
+    sha256 cellar: :any,                 arm64_sonoma:  "8ee3e4ef1faa7166d7f6b11c0c6ee98abf4c7c4ac346b6925ed774998bd395d2"
+    sha256 cellar: :any,                 sonoma:        "6e0a3891f049e8cdb2c62d9cd0f3999b95d1e3eeeaada4d611788b3b0114820f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e822674eac22d76f1a2b6615a783edfd8751af567dc06a72bedcc8e01bed7f22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a31a12de939e5bdd8f0c6780eb16586c881616606a40c358240aa3b3c807a53"
   end
 
   depends_on "certifi" => :no_linkage
@@ -33,8 +33,8 @@ class Charmcraft < Formula
                 extra_packages:   %w[jeepney secretstorage]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
-    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
+    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
+    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
   end
 
   resource "attrs" do
@@ -98,8 +98,8 @@ class Charmcraft < Formula
   end
 
   resource "distro-support" do
-    url "https://files.pythonhosted.org/packages/90/c8/40cf2bdb5647c0ccad40a02edde6966d03a3258c550d92a2030427867029/distro_support-2025.8.13.tar.gz"
-    sha256 "12a73039db0a04e4b987789598f05c554adb3b2ec8e97bc28f40a125dc82d982"
+    url "https://files.pythonhosted.org/packages/91/9f/530d03c3d7172f787949af55768d088a341e52974c03ce26142693375de1/distro_support-2025.12.16.tar.gz"
+    sha256 "95d93375983a68cd749e7ae9d434a22ab7d5b6f515fbed52541ecc9457296946"
   end
 
   resource "docker" do
@@ -128,8 +128,8 @@ class Charmcraft < Formula
   end
 
   resource "humanize" do
-    url "https://files.pythonhosted.org/packages/b6/43/50033d25ad96a7f3845f40999b4778f753c3901a11808a584fed7c00d9f5/humanize-4.14.0.tar.gz"
-    sha256 "2fa092705ea640d605c435b1ca82b2866a1b601cdf96f076d70b79a855eba90d"
+    url "https://files.pythonhosted.org/packages/ba/66/a3921783d54be8a6870ac4ccffcd15c4dc0dd7fcce51c6d63b8c63935276/humanize-4.15.0.tar.gz"
+    sha256 "1dd098483eb1c7ee8e32eb2e99ad1910baefa4b75c3aff3a82f4d78688993b10"
   end
 
   resource "idna" do
@@ -143,13 +143,13 @@ class Charmcraft < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/df/ad/f3777b81bf0b6e7bc7514a1656d3e637b2e8e15fab2ce3235730b3e7a4e6/jaraco_context-6.0.1.tar.gz"
-    sha256 "9bae4ea555cf0b14938dc0aee7c9f32ed303aa20a3b73e7dc80111628792d1b3"
+    url "https://files.pythonhosted.org/packages/8d/7d/41acf8e22d791bde812cb6c2c36128bb932ed8ae066bcb5e39cb198e8253/jaraco_context-6.0.2.tar.gz"
+    sha256 "953ae8dddb57b1d791bf72ea1009b32088840a7dd19b9ba16443f62be919ee57"
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
-    sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
+    url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
+    sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
   end
 
   resource "jeepney" do
@@ -163,8 +163,8 @@ class Charmcraft < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
-    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
+    url "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz"
+    sha256 "0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326"
   end
 
   resource "jsonschema-specifications" do
@@ -253,13 +253,13 @@ class Charmcraft < Formula
   end
 
   resource "pynacl" do
-    url "https://files.pythonhosted.org/packages/b2/46/aeca065d227e2265125aea590c9c47fbf5786128c9400ee0eb7c88931f06/pynacl-1.6.1.tar.gz"
-    sha256 "8d361dac0309f2b6ad33b349a56cd163c98430d409fa503b10b70b3ad66eaa1d"
+    url "https://files.pythonhosted.org/packages/d9/9a/4019b524b03a13438637b11538c82781a5eda427394380381af8f04f467a/pynacl-1.6.2.tar.gz"
+    sha256 "018494d6d696ae03c7e656e5e74cdfd8ea1326962cc401bcf018f1ed8436811c"
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/f2/a5/181488fc2b9d093e3972d2a472855aae8a03f000592dbfce716a512b3359/pyparsing-3.2.5.tar.gz"
-    sha256 "2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6"
+    url "https://files.pythonhosted.org/packages/33/c1/1d9de9aeaa1b89b0186e5fe23294ff6517fce1bc69149185577cd31016b2/pyparsing-3.3.1.tar.gz"
+    sha256 "47fad0f17ac1e2cad3de3b458570fbc9b03560aa029ed5e16ee5554da9a2251c"
   end
 
   resource "pyrfc3339" do

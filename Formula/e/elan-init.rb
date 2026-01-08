@@ -31,6 +31,10 @@ class ElanInit < Formula
   uses_from_macos "curl"
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "xz"
+  end
+
   conflicts_with "lean-cli", because: "both install `lean` binaries"
 
   def install

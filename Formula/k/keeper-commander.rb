@@ -3,20 +3,20 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/7f/0d/148701a08a481bab21777b61fd65bd9f2761e4a5ec2489d6f6919ae0335c/keepercommander-17.2.3.tar.gz"
-  sha256 "129599f2ba0a1d1dbd6457dd3b3a3c09ad4469071a1608c5383b2f54f4b884d8"
+  url "https://files.pythonhosted.org/packages/5d/30/31eeed2f626139aa432f6cc6c92702c582cb23f5038f135158ae8ba07d59/keepercommander-17.2.4.tar.gz"
+  sha256 "0dd79da6f59fe23c27b96b9815ad4b4493c3e1ea539d1f04372169a480cd0f8f"
   license "MIT"
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dac8e98c1319c012ea3ac00971ab622a5e38236669b56b95dc46a03452a6edfe"
-    sha256 cellar: :any,                 arm64_sequoia: "7528d18a129fb7827958bd6532d64f584eb034a59f3233074632188a8137d1c0"
-    sha256 cellar: :any,                 arm64_sonoma:  "1c4e7b275c78fcce07f6dc28f00cfd473db2855058efc155f9fd7277dea9e224"
-    sha256 cellar: :any,                 sonoma:        "a0c8171efcc5dc8334dbdc822ef76bcf99db1af200c5891b1a7b578e8bf42106"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "215553da55cf8aa25c1860e6544b25de50fa3ab3a1eb81d83637426fd59543e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eab884cfa3a63fe87caf113b47a10ee3c6797533463fb79f3eec3c694090148a"
+    sha256 cellar: :any,                 arm64_tahoe:   "0c3a86289a705e042caa213c17bae06d64b533671439c4e032ef171069b4641b"
+    sha256 cellar: :any,                 arm64_sequoia: "d45daf8bfb86bc7e5544e5ae0507c24509147bd79af217c39e02ef1a6a9f021d"
+    sha256 cellar: :any,                 arm64_sonoma:  "f4c92198fed95e238d7f296f9e92c6ae1e1b9835c99f7f5f28c6b2aee6123564"
+    sha256 cellar: :any,                 sonoma:        "7501f89f8dcaccb1ba74f2c2936c732ec85dec3526ec01a77ce0c5054d9e751f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ea33140191390d2a1d274d1fbaa6eb00facf676bf9afe47d66c2a01b09daee5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fcd9300443d135e284d5827b27519af9b7e8e3407e17636a5cb0fda48116d98"
   end
 
   depends_on "pkgconf" => :build
@@ -142,8 +142,8 @@ class KeeperCommander < Formula
   end
 
   resource "keeper-pam-webrtc-rs" do
-    url "https://files.pythonhosted.org/packages/27/90/113cbc91bf3dd582de25f377a9e98b75890e6ffcab1b7141dc287f92405d/keeper_pam_webrtc_rs-1.2.4.tar.gz"
-    sha256 "fa9c5ee30a01a7aa88daaacc0e1d2875155771a77424ca0d2fdcdddb638a01dd"
+    url "https://files.pythonhosted.org/packages/41/54/89e01bb5e5235c091a39b84f16f690bf2a9a01c9e8616b35a1ae98f5b682/keeper_pam_webrtc_rs-1.2.5.tar.gz"
+    sha256 "6e07dd2982aedaca5df67bfe33e14b51435cb92dcd139c2cc47663c822c9f342"
 
     # Remove `readme` field to avoid build error for missing file
     patch :DATA

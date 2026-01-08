@@ -1,17 +1,17 @@
 class Easyengine < Formula
   desc "Command-line control panel to manage WordPress sites"
   homepage "https://easyengine.io/"
-  url "https://ghfast.top/https://github.com/EasyEngine/easyengine/releases/download/v4.10.1/easyengine.phar"
-  sha256 "8a4cbfa78b1a5baed59c881716cb5233e198a9879c2fdeb1a2ac6058101cde5d"
+  url "https://ghfast.top/https://github.com/EasyEngine/easyengine/releases/download/v4.10.2/easyengine.phar"
+  sha256 "7fcf21ac7cb8ea42295fa4b9617436de40b2fbbe1202bdc001c0cf5d5af9fa1c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae83c0ee21d0de849c199cb3f6ec15abdd08fae50b219967fba96423f2afe803"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae83c0ee21d0de849c199cb3f6ec15abdd08fae50b219967fba96423f2afe803"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae83c0ee21d0de849c199cb3f6ec15abdd08fae50b219967fba96423f2afe803"
-    sha256 cellar: :any_skip_relocation, sonoma:        "12f5c71b85d29bfff1f4b39c8069dfd3fe18842da50fcfe4fe6e12a7869d6d7d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "12f5c71b85d29bfff1f4b39c8069dfd3fe18842da50fcfe4fe6e12a7869d6d7d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12f5c71b85d29bfff1f4b39c8069dfd3fe18842da50fcfe4fe6e12a7869d6d7d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f5cdff945a1a1f6eb20d56964a207870bbd9479d823162f5cd85765e5da2f8d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f5cdff945a1a1f6eb20d56964a207870bbd9479d823162f5cd85765e5da2f8d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f5cdff945a1a1f6eb20d56964a207870bbd9479d823162f5cd85765e5da2f8d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c8d35791db595e47d9df99820915b1e76e4e550d6e6af302b6138e4d36900e09"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8d35791db595e47d9df99820915b1e76e4e550d6e6af302b6138e4d36900e09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8d35791db595e47d9df99820915b1e76e4e550d6e6af302b6138e4d36900e09"
   end
 
   depends_on "dnsmasq"

@@ -1,17 +1,17 @@
 class NodeRed < Formula
   desc "Low-code programming for event-driven applications"
   homepage "https://nodered.org/"
-  url "https://registry.npmjs.org/node-red/-/node-red-4.1.2.tgz"
-  sha256 "a0203340780a07e7214d2e1bc88a575ee431da89a2045665142a9d55f57f79eb"
+  url "https://registry.npmjs.org/node-red/-/node-red-4.1.3.tgz"
+  sha256 "88b21a94a765bd436e73d2cc3b966140835a48fe2720905a33c48248b7235d2f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "deb69f1b659b48287c5596e77349528a9fc404e04fbe6153cd021048beb2b537"
-    sha256 cellar: :any,                 arm64_sequoia: "89c3a639d9ca0b3e41905428cfc31d955a3f32ab815b9b9773f3cfe90926bef6"
-    sha256 cellar: :any,                 arm64_sonoma:  "89c3a639d9ca0b3e41905428cfc31d955a3f32ab815b9b9773f3cfe90926bef6"
-    sha256 cellar: :any,                 sonoma:        "8e5012ad19cb5f96ae0cc069707c4aed80c8f9cb755a1c42482415ddfa334b57"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbb87981c1c5d1b74292f6f54b4b73d2696d6fdc27408d9e1ee6c5a1d97c6bd2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59f76cda3a6f24146d7ad0ace05f72508e962044f09d85a1b5fdec8ce3e22c79"
+    sha256 cellar: :any,                 arm64_tahoe:   "366122ba428bddd8c5a562888c98ec86817d33a5f383c0c1f2777dfd44de2fe2"
+    sha256 cellar: :any,                 arm64_sequoia: "2380feeffc891a0d99be149845f1337f0946c4ccaea3daa47cc0096364e9bc13"
+    sha256 cellar: :any,                 arm64_sonoma:  "2380feeffc891a0d99be149845f1337f0946c4ccaea3daa47cc0096364e9bc13"
+    sha256 cellar: :any,                 sonoma:        "ed8d348218efe5434889b5b6df8e9bfd5ffffed2283103d4c54dd773d3369039"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "895e26f26527cc6b30bf644aef2a3ee88764ddbecb9030f33bf271e5832e7203"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4bfda3c2d224fead43d484cafdcaba7d808f12e7c8513b36432f3b885b087fe"
   end
 
   depends_on "node"

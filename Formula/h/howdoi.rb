@@ -6,15 +6,15 @@ class Howdoi < Formula
   url "https://files.pythonhosted.org/packages/6d/43/0e8166583575bd500c0f8f1a4ab9429af9466feb6fcdc006e88de8fd23e9/howdoi-2.0.20.tar.gz"
   sha256 "51cd40c53e0c0f8f8da88f480eb7423183be2350ab4f0a4d9d4763ca6ac3e2a9"
   license "MIT"
-  revision 13
+  revision 14
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0b3f0b70935d33334c938e0121cf71cfd1726d24090629b93a488228a7be213b"
-    sha256 cellar: :any,                 arm64_sequoia: "821109f63f80f5089f64ee3ee7ab7d7282a935d9b8449147adad32e19e3eb39d"
-    sha256 cellar: :any,                 arm64_sonoma:  "746e067f74797dbe974b08e44acad3986827e5be2cfd6a3c2fbe0e2098eb4e29"
-    sha256 cellar: :any,                 sonoma:        "195fe686e22830dbca720cfa4f2ae10505f0c2cd7f533e67696ddfaef61f6d37"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "760c51842d3906cda8fe188eb30a873062db081b23779e03ac05b7fa3df16c43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da059fcbe02abfab417ca7978008fe2c18e1e6b0b331e0c50999701ed6d44fce"
+    sha256 cellar: :any,                 arm64_tahoe:   "c40561d62a40aac457420c1a4696c31ef78da618575488b1338e9e7751eab568"
+    sha256 cellar: :any,                 arm64_sequoia: "c9690fe0b338d2a6c1e80d09d06a7a45f526761f095204e9e2ed53c73b00dfe5"
+    sha256 cellar: :any,                 arm64_sonoma:  "8d99aee3435bcdff3ff5ed71d0a72c76ed892953a81e2f686b90d222cf092a1b"
+    sha256 cellar: :any,                 sonoma:        "8dd6f7f1cbdb52d715ada2978e2a57044f225fb8499a13941539e3f577779101"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddf7c3a7a0e052346c5dd9598819caf3eaa00fb5f66126b5e8b36883b02c0068"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1fea5556dd8cef5bb71594d013850347507f16d8649e222ce8a87f4f753d91d"
   end
 
   depends_on "certifi" => :no_linkage
@@ -98,8 +98,8 @@ class Howdoi < Formula
   end
 
   resource "pynacl" do
-    url "https://files.pythonhosted.org/packages/b2/46/aeca065d227e2265125aea590c9c47fbf5786128c9400ee0eb7c88931f06/pynacl-1.6.1.tar.gz"
-    sha256 "8d361dac0309f2b6ad33b349a56cd163c98430d409fa503b10b70b3ad66eaa1d"
+    url "https://files.pythonhosted.org/packages/d9/9a/4019b524b03a13438637b11538c82781a5eda427394380381af8f04f467a/pynacl-1.6.2.tar.gz"
+    sha256 "018494d6d696ae03c7e656e5e74cdfd8ea1326962cc401bcf018f1ed8436811c"
   end
 
   resource "pyquery" do
@@ -128,8 +128,8 @@ class Howdoi < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   def install

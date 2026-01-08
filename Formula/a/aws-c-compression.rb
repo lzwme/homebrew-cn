@@ -1,19 +1,17 @@
 class AwsCCompression < Formula
   desc "C99 implementation of huffman encoding/decoding"
   homepage "https://github.com/awslabs/aws-c-compression"
-  url "https://ghfast.top/https://github.com/awslabs/aws-c-compression/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "d89fca17a37de762dc34f332d2da402343078da8dbd2224c46a11a88adddf754"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-compression/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "f93f5a5d8b3fee3a6d97b14ba279efacd4d4016ef9cc7dc4be7d43519ecfbe93"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c9e37702140dfa756eeb6c2fff4a319764847207c95d029b236212b02d91161c"
-    sha256 cellar: :any,                 arm64_sequoia: "07ad5126a62967518823503ad65c6eceedb164aaa28e8f4b817d8fb8eb6d8f2c"
-    sha256 cellar: :any,                 arm64_sonoma:  "e90f0d8370adc024e41c89f650c4fd37c62e396a05d369e1b8e834bca6cf63dc"
-    sha256 cellar: :any,                 arm64_ventura: "8025bc877dd2221c32bb3527e34ee5d618156f40c972a13189857c63b0da2a56"
-    sha256 cellar: :any,                 sonoma:        "cca91302bdbb311dbf40825511da49c15da10943ec8ee9bf4f0d2761a7885306"
-    sha256 cellar: :any,                 ventura:       "9348145f22774820af3b513272e03e0d453b677d452671d42776fc0f735d7e4a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "29653a96519fab683d1b00e0df5611e28cee7a1c1b7a4f1e4fe711ca291ece1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a52c6fef0619145315545b21c86be299989bf437e5e8eac6bbc2ed817ac51dd"
+    sha256 cellar: :any,                 arm64_tahoe:   "2f21b6ad21619121cdafdc6cab4fe62b71cf845b7a281211a5099dd02b49f12a"
+    sha256 cellar: :any,                 arm64_sequoia: "a5331bcd673f255c1aa6a40444f650bf8bd14ff8426fd70059ab3897ab445bbe"
+    sha256 cellar: :any,                 arm64_sonoma:  "3d3710eda9b726d9129d7299699dc76c13078a69d35a7a458e892976ac74289c"
+    sha256 cellar: :any,                 sonoma:        "90624e8c8471e6d1922b9bfe4e215a42e1b938fc2d13f14ad65a04db0d2c1baf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "30c32bddc0dc1bda08c68edf91cd62444b265e09ce00d0fc772efeea627a93d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12443c30024526e9902b8bc57bc22dd8bd950d7e7b5dab799cc7fae31a895f49"
   end
 
   depends_on "cmake" => :build

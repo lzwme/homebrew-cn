@@ -6,17 +6,16 @@ class SshMitm < Formula
   url "https://files.pythonhosted.org/packages/f0/4e/c804d08c336bcff29fd665fdc3ff9d3698d529b1d75462b89bc53527862a/ssh_mitm-5.0.1.tar.gz"
   sha256 "221dafeed602c4cca7a3c7fb2eee55eb9725ea11d19a75fd13c9bc3a1cf274ed"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
   head "https://github.com/ssh-mitm/ssh-mitm.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "bb328e391efdd20338ccb0d52286001bd7addda4abe125fade1044bd4ff46ef9"
-    sha256 cellar: :any,                 arm64_sequoia: "32525be3e1ff98532e355ea6165aecd326e15da73c418819101c7a9a2c4aaf5a"
-    sha256 cellar: :any,                 arm64_sonoma:  "85c9b351a0a1b4e61c5441a9ad0c71e5349cdb37874f760925179b449e00f7b2"
-    sha256 cellar: :any,                 sonoma:        "262b76263d007f25b580cd4e1dfd5dfecd60a55e88e43072e9e71578affeaef1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f720197fc87dc632fecc63e61dab27f375eda6edcf958fda852181ae200e1fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8463b187525bc4b838a9cacc3794d0e55b4dbda6702051711053316b6b36ee1"
+    sha256 cellar: :any,                 arm64_tahoe:   "9aacf02b8edaac0d51db1761c733149853ab1767a92444bfd9ca0ef1fcda32b7"
+    sha256 cellar: :any,                 arm64_sequoia: "fb2a77d504d881511a270440f0491152fcb6cdb6f7d7b267d30d397db3d548ee"
+    sha256 cellar: :any,                 arm64_sonoma:  "9ff87606e5c61c27a5f67767c6d055f4bff18e215e7e190c4f62cb56d161e0db"
+    sha256 cellar: :any,                 sonoma:        "51bad8720276750080843a272e394aca10bae95411b7bb601b04abec2a8d65b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8553cf164c140040c777c54d9473200d9685c6589df7f676ca3e1ce5c2e6ba2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c788d3f37a0a03db875b307a9805b384d92efda60a2629769fcd80486f0ec4dd"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -33,8 +32,8 @@ class SshMitm < Formula
   end
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/16/0f/861e168fc813c56a78b35f3c30d91c6757d1fd185af1110f1aec784b35d0/argcomplete-3.6.2.tar.gz"
-    sha256 "d0519b1bc867f5f4f4713c41ad0aba73a4a5f007449716b16f385f2166dc6adf"
+    url "https://files.pythonhosted.org/packages/38/61/0b9ae6399dd4a58d8c1b1dc5a27d6f2808023d0b5dd3104bb99f45a33ff6/argcomplete-3.6.3.tar.gz"
+    sha256 "62e8ed4fd6a45864acc8235409461b72c9a28ee785a2011cc5eb78318786c89c"
   end
 
   resource "bcrypt" do
@@ -78,8 +77,8 @@ class SshMitm < Formula
   end
 
   resource "pynacl" do
-    url "https://files.pythonhosted.org/packages/06/c6/a3124dee667a423f2c637cfd262a54d67d8ccf3e160f3c50f622a85b7723/pynacl-1.6.0.tar.gz"
-    sha256 "cb36deafe6e2bce3b286e5d1f3e1c246e0ccdb8808ddb4550bb2792f2df298f2"
+    url "https://files.pythonhosted.org/packages/d9/9a/4019b524b03a13438637b11538c82781a5eda427394380381af8f04f467a/pynacl-1.6.2.tar.gz"
+    sha256 "018494d6d696ae03c7e656e5e74cdfd8ea1326962cc401bcf018f1ed8436811c"
   end
 
   resource "python-json-logger" do
@@ -113,8 +112,8 @@ class SshMitm < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/95/8f/aeb76c5b46e273670962298c23e7ddde79916cb74db802131d49a85e4b7d/wrapt-1.17.3.tar.gz"
-    sha256 "f66eb08feaa410fe4eebd17f2a2c8e2e46d3476e9f8c783daa8e09e0faa666d0"
+    url "https://files.pythonhosted.org/packages/49/2a/6de8a50cb435b7f42c46126cf1a54b2aab81784e74c8595c8e025e8f36d3/wrapt-2.0.1.tar.gz"
+    sha256 "9c9c635e78497cacb81e84f8b11b23e0aacac7a136e73b8e5b2109a1d9fc468f"
   end
 
   def install

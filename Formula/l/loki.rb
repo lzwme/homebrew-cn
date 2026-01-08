@@ -47,10 +47,9 @@ class Loki < Formula
       s.gsub! var, testpath
     end
 
-    fork { exec bin/"loki", "-config.file=loki-local-config.yaml" }
-    sleep 8
+    spawn bin/"loki", "-config.file=loki-local-config.yaml"
 
-    output = shell_output("curl -s localhost:#{port}/metrics")
+    output = shell_output("curl --silent --retry 5 --retry-connrefused localhost:#{port}/metrics")
     assert_match "log_messages_total", output
   end
 end
