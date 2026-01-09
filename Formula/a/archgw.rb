@@ -6,15 +6,15 @@ class Archgw < Formula
   url "https://files.pythonhosted.org/packages/a4/76/79f9d1fab003cf58703ac6db13f8f84f75fd9135c57e4937ae363aaf37fb/archgw-0.3.22.tar.gz"
   sha256 "809a97dfe33e797616b4e039d21c2a9bee8fc3af8e45e98724155e6702d32cdb"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ee0d080dd833d2afa4b648288f29b3459ddc5aa3f56030d14755f63d61c55808"
-    sha256 cellar: :any,                 arm64_sequoia: "4ac5f5f9720c043b4fb221bd41765d26c896b01760ea2d6b4ddd730d2c8d3719"
-    sha256 cellar: :any,                 arm64_sonoma:  "2a70517f7540bd8834d11c597cc164e098da8e00ff607e1e5899a13699ffda02"
-    sha256 cellar: :any,                 sonoma:        "ba759c6af3c10a79c36914247be6655cd3e30d2415e11e731a46d06ca2ef57d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "07568c307013f80665ec96f5ebb5ab4be4b83aaae7575e18a1640b9b66b8bc52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfc5e136786b0fbc0796689ed318e14f8ed087fc7c2fce6dedd8080390a9d15d"
+    sha256 cellar: :any,                 arm64_tahoe:   "cde4cde267e77b58d5caeb355625111fe5ef351a9d42eb0c525be2b83dcb9498"
+    sha256 cellar: :any,                 arm64_sequoia: "37204b2d2ccc58945598122060c0697f2b60359d429b4a395b9ce23844f741e3"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe67a825df3ff36122d40c1a831687e24189572484e544ea7d7a3db2805e1682"
+    sha256 cellar: :any,                 sonoma:        "ab8d8237720e64ac024e29b5add8f33a88417afbcfd706576b569e974c65b352"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8e5e612c9bb8cd939e9e54458d3227ecb19a9c03fe99dbd9369edeec2bda1fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85566a740218450e7f0df93ce7923e05881c5cd18cce76f684e90216642bbf19"
   end
 
   depends_on "certifi" => :no_linkage
@@ -50,8 +50,8 @@ class Archgw < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
-    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
+    url "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz"
+    sha256 "0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326"
   end
 
   resource "jsonschema-specifications" do
@@ -80,8 +80,8 @@ class Archgw < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

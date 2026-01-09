@@ -1,18 +1,18 @@
 class Csvlens < Formula
   desc "Command-line csv viewer"
   homepage "https://github.com/YS-L/csvlens"
-  url "https://ghfast.top/https://github.com/YS-L/csvlens/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "4e759823b8df1d03b0a1e0202e6b300d1a99eea6898cfdf827accb89f1547b65"
+  url "https://ghfast.top/https://github.com/YS-L/csvlens/archive/refs/tags/v0.15.1.tar.gz"
+  sha256 "4396cf4e0c51be589f86aed662b9cb03f4f9414d8e2fd80dbc18f20eaf447bb7"
   license "MIT"
   head "https://github.com/YS-L/csvlens.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d45497892d5a4dfda3e556a75d1c04654d711fc31bfd1e7248634c6b45e069bc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "068159ffd0035defaa8cef9089da8ab9a6793b42e49144d58a1028987c188b1a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "678929ed5c012104d567b3a781c9116ebb084cfa48fa65b5b4ede802021e63aa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "11df833e3fad752c933a8adfe15f1b12f2017491581db3ee5cd8e5856ac4e5e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "059260a6c9fbb73e0585a3f5ec3427f5b9b6d1a17844c0a3920683520f6ad2e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "135a918240e82dc0312388b386c65c245c26bc1bf3cfde49aad97b8da6c8049b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c11aa18b416fc38eb25df2ec3963fb2c5c300f8979aeba2642ec780865858d34"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dcb4d3a424d61a67bafa876bfc9125dc5a9e582a4fe1acb6c6e51f9112a99247"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f73c7eb50cf7f250e95690a36a1d233a748aaea69e26f3da87526672ee3cffcb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e8f401dec9ed33c0b345b96f5b4c2e454d48dd8c8f84357f7feaecb97754f96c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8e442634b87705728a3064b56ceffe3100c2b2938ad654ba964c742b351350f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3149de80a4f3bce2c31ddfc8f3db96a8066460a7e4b113f8d3f0a40b4e2a2e42"
   end
 
   depends_on "rust" => :build

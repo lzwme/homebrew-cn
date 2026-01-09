@@ -16,7 +16,7 @@ class RustScript < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a621299898caf1365fe29b39303f41b4becbce8e6450db1a787b07e6de258307"
   end
 
-  depends_on "rust"
+  depends_on "rust" => :no_linkage
 
   def install
     system "cargo", "install", *std_cargo_args

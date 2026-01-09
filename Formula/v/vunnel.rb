@@ -3,18 +3,18 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/9e/38/65eed32df533518eab923d9cd5bab7a182e5405ccd1061ee9a81493d0306/vunnel-0.46.2.tar.gz"
-  sha256 "06769ffb653bc05d51933e471bc4757c90af6682837d6ef708fd52a41e44e777"
+  url "https://files.pythonhosted.org/packages/4a/d5/960e76b1f3555c0398af605ed0ed845e95305124487523a7da133477b56f/vunnel-0.46.3.tar.gz"
+  sha256 "5f1f99b410b796e1babb069a74d2e0e2b91139905a44f4b9dcddd326664fadb7"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5250036108859c9d3d1595fed27c5b648f787b06e6783779441c02d9536daa5c"
-    sha256 cellar: :any,                 arm64_sequoia: "1f904cd219457cd8bdb83541c5682cf5493592dcb2f3c8aa5bc6464ffd0286cd"
-    sha256 cellar: :any,                 arm64_sonoma:  "35bc279928d5b00c88808f48281169065e6c66f400c4e653a8c285829c3f2f7a"
-    sha256 cellar: :any,                 sonoma:        "4a3675fdd74ed9f0873722da75443e02d748fbda7f21ab9d810de15897ee34ab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc02417a572ae5ae903da9fb97775f8bb7ea91951555de2202c4378bbc6ba747"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "491025de39b8e4b8d59f2d5ff9b4990534c3ae333e3cfa12607cab81320df751"
+    sha256 cellar: :any,                 arm64_tahoe:   "e5b3b5e3148a051e5e97137d3c68111c4549e5ec46d0e810595a0c41291730fe"
+    sha256 cellar: :any,                 arm64_sequoia: "4b37fc63b88132992d281cb96da6b829027634df65bb5da78440b91e2077905f"
+    sha256 cellar: :any,                 arm64_sonoma:  "c1f18aab954449649f05e278be3ba1cbad19cc62c51b496a4f2fa0df6db806ef"
+    sha256 cellar: :any,                 sonoma:        "575bdc624bf26385bdf32b122bba0ac16abf870c94e6f318b7a900b02dbb4fac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1018f1a11e5a8aded2f78fdd92d0f913977d836ec172963c70aeb717fb9a9bea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa87a8b94a1214df11ec936ae134ac4aeaec37e29df0aff52c8151afe8985295"
   end
 
   depends_on "rust" => :build
@@ -104,8 +104,8 @@ class Vunnel < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
-    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
+    url "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz"
+    sha256 "0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326"
   end
 
   resource "jsonschema-specifications" do
@@ -231,8 +231,8 @@ class Vunnel < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "xsdata" do

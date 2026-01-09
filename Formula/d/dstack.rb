@@ -3,18 +3,17 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://dstack.ai/"
-  url "https://files.pythonhosted.org/packages/53/84/838f8e0e374a390b3ca7c524bbb45913b6c41fba6078cb11b8497fd787fa/dstack-0.20.2.tar.gz"
-  sha256 "0b66883e48e4046bc30d5725be12850116d851b7bc22c7b249605e3b3c30f244"
+  url "https://files.pythonhosted.org/packages/27/3a/31e3722b94dfbc5e4e9d0f64423cba42c4911ca907117c015ccbc54203e4/dstack-0.20.3.tar.gz"
+  sha256 "06145df7d095cc135fce11bd43a32d457eb462cf82fc2d86b4e448aa71261f63"
   license "MPL-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4e47203ed731ffc3de34c9ba99593ce2f894bc1b634374b3026dce5ece49e104"
-    sha256 cellar: :any,                 arm64_sequoia: "747f85aea7c67f1b0bfb8b23dced58fed3d0161b52d58bcf718a46b798c7f92d"
-    sha256 cellar: :any,                 arm64_sonoma:  "8800830e218f4b64fa21d86c2f9a18c3bcfbca85f887b2b64ffaeb4dc174a847"
-    sha256 cellar: :any,                 sonoma:        "2a9a92e29dde6bebf1f4f058d9454febe5346cffab700f7d83588a8fb301a26c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c55dcc2b410b86494b4bd7b2f405a08247ac36b5e6bef28c3da5dd30647fad7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f2ade6efcda5ee5cf9d249f194a23cd77b3612a880c1dcddace76767a422c5a"
+    sha256 cellar: :any,                 arm64_tahoe:   "b34fa877504fe96c9e0f48d375a6b8342a807cbe53e527f6dd268377b751ae5f"
+    sha256 cellar: :any,                 arm64_sequoia: "ec6b0fcf881fd64650a4b40590521dbb7b93e5b053ba26b7686bcf41760c476d"
+    sha256 cellar: :any,                 arm64_sonoma:  "f9da9b13186969bdd1847ccfb5b9595a094da0b8ee0b5c13245bf947732cead4"
+    sha256 cellar: :any,                 sonoma:        "0753b4f4bacfadb09ec8720c85f4a7a09476f4c47b80dc8f087dfb3c668d9dba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "39a37d27948a79e47bff5a5a5b216cf21e7d32bf7840f76410463fd1c7487e43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96c8f8f7aefaa538d6cbe94f76ae946373d17410449117b2bbcd7713b337a301"
   end
 
   # `pkgconf` and `rust` are for bcrypt.
@@ -146,13 +145,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0d/df/17828670134e56ffca8cf8b017477f16d1a9df7ecfc3870d02aa6d4d2e20/boto3-1.42.23.tar.gz"
-    sha256 "f681a8d43b46b3d8acf0be4f3894eb85e40e75945431d0dfe0542edda7025512"
+    url "https://files.pythonhosted.org/packages/ee/21/8be0e3685c3a4868be48d8d2f6e5b4641727e1d8a5d396b8b401d2b5f06e/boto3-1.42.24.tar.gz"
+    sha256 "c47a2f40df933e3861fc66fd8d6b87ee36d4361663a7e7ba39a87f5a78b2eae1"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/2c/2c/db33716f86b67c514f895c60694a25cd7428d2137b574b59d09d626b0e2e/botocore-1.42.23.tar.gz"
-    sha256 "453ce449bd1021acd67e75c814aae1b132b1ab3ee0ecff248de863bf19e58be8"
+    url "https://files.pythonhosted.org/packages/12/d7/bb4a4e839b238ffb67b002d7326b328ebe5eb23ed5180f2ca10399a802de/botocore-1.42.24.tar.gz"
+    sha256 "be8d1bea64fb91eea08254a1e5fea057e4428d08e61f4e11083a02cafc1f8cc6"
   end
 
   resource "cached-classproperty" do
@@ -561,8 +560,8 @@ class Dstack < Formula
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/40/f0/0e9dc590513d5e742d7799e2038df3a05167cba084c6ca4f3cdd75b55164/sentry_sdk-2.48.0.tar.gz"
-    sha256 "5213190977ff7fdff8a58b722fb807f8d5524a80488626ebeda1b5676c0c1473"
+    url "https://files.pythonhosted.org/packages/02/94/23ac26616a883f492428d9ee9ad6eee391612125326b784dbfc30e1e7bab/sentry_sdk-2.49.0.tar.gz"
+    sha256 "c1878599cde410d481c04ef50ee3aedd4f600e4d0d253f4763041e468b332c30"
   end
 
   resource "simple-term-menu" do
@@ -616,8 +615,8 @@ class Dstack < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "uvicorn" do

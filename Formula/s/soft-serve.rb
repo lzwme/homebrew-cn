@@ -1,18 +1,18 @@
 class SoftServe < Formula
   desc "Mighty, self-hostable Git server for the command-line"
   homepage "https://github.com/charmbracelet/soft-serve"
-  url "https://ghfast.top/https://github.com/charmbracelet/soft-serve/archive/refs/tags/v0.11.1.tar.gz"
-  sha256 "c0d9b4e7f1b2cbe3d2abc161b61846ce03743f365d961619fb43b4fa35da11b7"
+  url "https://ghfast.top/https://github.com/charmbracelet/soft-serve/archive/refs/tags/v0.11.2.tar.gz"
+  sha256 "c596fbf7a79249d8e97da532ce3e8d7ce06bc2164f880cb1f920410705c49eef"
   license "MIT"
   head "https://github.com/charmbracelet/soft-serve.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "346b950e55031ae029a9e315c6bd95b1087641c68d67bcd0ad19b0b9462c6a29"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c183e7b48cd167d9d3a1d9f0888cb463653301a468486ac05b038f1971e5c431"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c067ebbc93a15e69d2d9300d6a377d7ebb4f5fdfebe0d627b14b9cc4f2222ab"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e6c695c34a265c6e360d8a173b9f5db8dc2aaf153129adf7421cb691de75b390"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ffd5dc8993ff069d2629b69807cf40e0650755f4a5558dc852535253b1e42a2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7939e9e481165c7f89891ae8e7abd51d20230443daf12064e6c5732b49b19f57"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2c162cc14c9f37264bcd2f418b3733371f3fb2558b408e2c674a71eefe07f24f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42bc0686895b817550b23cab3a1576e65813d0e9fce44deb373f5dbe24d46744"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a9814f583370777910e42d4be456bd7cfb93c45126c8c341964eade5d9bf83d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "04f7e1dea19446039d393967962187d85bbbcafaa222c11d9171243d519bd546"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1cf4b654c6fe9e1b96d730f579cda85129993aa810ac6b791e5583c1b0933bee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "770b55932c1ae7f6e57935f203b57c47884de13227c423ee51c491cbb1a71a8b"
   end
 
   depends_on "go" => :build

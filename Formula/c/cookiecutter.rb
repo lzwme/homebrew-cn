@@ -6,16 +6,16 @@ class Cookiecutter < Formula
   url "https://files.pythonhosted.org/packages/52/17/9f2cd228eb949a91915acd38d3eecdc9d8893dde353b603f0db7e9f6be55/cookiecutter-2.6.0.tar.gz"
   sha256 "db21f8169ea4f4fdc2408d48ca44859349de2647fbe494a9d6c3edfc0542c21c"
   license "BSD-3-Clause"
-  revision 9
+  revision 10
   head "https://github.com/cookiecutter/cookiecutter.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "11f61bc0819d0cbc5e31a481e57e0386f219d66c9cbe0e2b85f1b456c8c39042"
-    sha256 cellar: :any,                 arm64_sequoia: "04f9641d89c912c1d6b4787ba129b1388f6ef978248aa4c3a01dc1c415481d31"
-    sha256 cellar: :any,                 arm64_sonoma:  "e118c3cd27fa82a314aaf42f1b5b4eed9e0606e5d946614c458a78d312ae5bef"
-    sha256 cellar: :any,                 sonoma:        "2570bc38d897f347ab97f1c016971d02e8d733a92ab625d68afecc7b03c53707"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddf877ab5e918dd523e20ebe7315f97e4febde105e821c86bac55c91cea003fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ae047403f3c9b8427d4453b72699e2ba544a990fcf8a3f951ea6d8e977b1521"
+    sha256 cellar: :any,                 arm64_tahoe:   "1a9a8d92358c9f266422597108b2086484d088c09f1a1cab66b89288cd87cf2d"
+    sha256 cellar: :any,                 arm64_sequoia: "99741644640c2c8e242ca82f167e84c168d87142d90a04eeff07d724241e3e9a"
+    sha256 cellar: :any,                 arm64_sonoma:  "7496091a5024306e77518c7e15c32672b582ff77d7dbcda14b75c8c54763e6b4"
+    sha256 cellar: :any,                 sonoma:        "e96031b8a8f36479c546c24a1c5d304d492bafcb4245416f4fb894b501b624fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "09e31fc95a317f998cf8cffe2e7f19cfd923c576210097ecb1f78930a7041048"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e33153fe5f1de663e3cf01134d1378b318c259297a05f4d7993f81310936e39"
   end
 
   depends_on "certifi" => :no_linkage
@@ -115,13 +115,13 @@ class Cookiecutter < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
-    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
+    url "https://files.pythonhosted.org/packages/5e/a7/c202b344c5ca7daf398f3b8a477eeb205cf3b6f32e7ec3a6bac0629ca975/tzdata-2025.3.tar.gz"
+    sha256 "de39c2ca5dc7b0344f2eba86f49d614019d29f060fc4ebc8a417896a620b56a7"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

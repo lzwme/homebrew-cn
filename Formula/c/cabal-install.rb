@@ -1,22 +1,20 @@
 class CabalInstall < Formula
   desc "Command-line interface for Cabal and Hackage"
   homepage "https://www.haskell.org/cabal/"
-  url "https://hackage.haskell.org/package/cabal-install-3.16.0.0/cabal-install-3.16.0.0.tar.gz"
-  sha256 "282a499fe3beeee0a2a50dc1adf264c204a090873679e2753e0355d6cf6c561a"
+  url "https://hackage.haskell.org/package/cabal-install-3.16.1.0/cabal-install-3.16.1.0.tar.gz"
+  sha256 "9d27bc22989f3933486a7bba6ac0a2d8fef16891bf46a973f4d80f429ae95120"
   license "BSD-3-Clause"
   head "https://github.com/haskell/cabal.git", branch: "3.16"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0144bed245e8dbc50270243010162b7e02c15cbb617e091a24ef4ef4d0e60630"
-    sha256 cellar: :any,                 arm64_sequoia: "0c9fd4abd5dcc2bd5b30c5a4d5200231f12631a05592a1053bd767a05e00bc58"
-    sha256 cellar: :any,                 arm64_sonoma:  "681c54b7997d6fba9d6e126dec76e727eb478300ce7ce3982eee252fc6b4109a"
-    sha256 cellar: :any,                 arm64_ventura: "d2f8ed39fc3b8e068d158ec33dd2fa6c57dd44877a622b7a431190c4716f6446"
-    sha256 cellar: :any,                 sonoma:        "8e4b24151c8f14fac714a5ad33eb21d92add3fb6b081248aa8cda69bec4653bb"
-    sha256 cellar: :any,                 ventura:       "1ba4d13261deb28ca5cc41da5aeed93a10447024fb46d080e271ad41f2be145f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b52abb52d9b1c628fa91b2e59dec5cd20b6060ed9c74e462f2fb9b16f70da4d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa2b8c45e87fb83aca1bf2fc72ee85fa18962c2432bbb6927d0562907faf6aa3"
+    sha256 cellar: :any,                 arm64_tahoe:   "bbdbd2d24abedde5ad3aab56bf78c13014d7af25ca24b932c93c2ad4ccb5db01"
+    sha256 cellar: :any,                 arm64_sequoia: "0fffcb2447db94c51f83ba808fb6bf5e589a7d681ded946586dcba4d0b6dfb97"
+    sha256 cellar: :any,                 arm64_sonoma:  "e37e0f711065c866c67503915bc2ca93b5c88700937722ea1f2df84e9bae101b"
+    sha256 cellar: :any,                 sonoma:        "8986f33f58368f5b09227b2bcc8fd60537568f08364617e99f20fe30764f6003"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b797af2df63f560d5172e7fb6effda985482b94689cb90c0241578c8922f88a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebe5f10854e5a41d1d2f515f83852605a215cdaf5e22113b5bcd8abbed9958c4"
   end
 
   depends_on "ghc"

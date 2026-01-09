@@ -6,15 +6,15 @@ class Charmcraft < Formula
   url "https://files.pythonhosted.org/packages/08/66/48bba084a9e894571107eacdac3eae04ece27e83ceae4e71b5f8ed59077b/charmcraft-4.1.0.tar.gz"
   sha256 "b8b81cd6fcf58997fb9d28b3d0124b178d92a9eed4f77cc6350d778629f21653"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "58bea37feb4c04db2c27a36406c227a360a17b6c6f746382891c9bcae0c905e3"
-    sha256 cellar: :any,                 arm64_sequoia: "934fb975dce954714701d9ec3b65ff5045cccb91ec99eac32ff4427bf5e98f24"
-    sha256 cellar: :any,                 arm64_sonoma:  "8ee3e4ef1faa7166d7f6b11c0c6ee98abf4c7c4ac346b6925ed774998bd395d2"
-    sha256 cellar: :any,                 sonoma:        "6e0a3891f049e8cdb2c62d9cd0f3999b95d1e3eeeaada4d611788b3b0114820f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e822674eac22d76f1a2b6615a783edfd8751af567dc06a72bedcc8e01bed7f22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a31a12de939e5bdd8f0c6780eb16586c881616606a40c358240aa3b3c807a53"
+    sha256 cellar: :any,                 arm64_tahoe:   "d0356b08f5bcf7702009ec5b21ecd33d6708c345b8b29b09819551382cab1c4c"
+    sha256 cellar: :any,                 arm64_sequoia: "e0fd5413a68ebe9e60ef4124fc3b8a4ab64d4c4c0fed9358f4612978a5d69d44"
+    sha256 cellar: :any,                 arm64_sonoma:  "35da84ea4d650ba1f09a11f4106abfea43110417a0e0eede5a7df0bbcfa24c50"
+    sha256 cellar: :any,                 sonoma:        "c74025e4a6b2b7307d6bc5c2be6ce48909dd571e3de6770e6119198902e2f1e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "368d2bfd51e3936b3af8e5ab8e92c1547c6ce9a9473631c56b5dc61e937f0dcf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da1e3395a125ecc52c9083a8dd0b76ea71a371b55b26650bf8474383eded75e7"
   end
 
   depends_on "certifi" => :no_linkage
@@ -343,8 +343,8 @@ class Charmcraft < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "wadllib" do

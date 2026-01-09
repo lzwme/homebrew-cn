@@ -6,16 +6,16 @@ class Bpython < Formula
   url "https://files.pythonhosted.org/packages/44/29/cd80e9108a6fc6a925ffb915f8f69198a2bb2388e39167a41d743ac2a8f4/bpython-0.26.tar.gz"
   sha256 "f79083e1e3723be9b49c9994ad1dd3a19ccb4d0d4f9a6f5b3a73bef8bc327433"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/bpython/bpython.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26cf692603fb30a8b833b14e423115fc4f375bb8aa8e8e3a0fbe138992a77e7a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "768c96a4a6980781c9bb3cebf2a569af3a697f5320206a5c89558f6702b6426a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b1b150468ae7e61b7bd8bd484300a9a6a13ec703b13041caff522d706ee9c8d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5dc4660896910e093ed62002d6f99c0e687dac54336de66656842e2f31c46289"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d179986984a052130e83b10b740818cb6af477ea032b306c741fb053181e581"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c20b23e11d41902a6bcda73de253191f719ed9d97b1f297bf7392455f6614957"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "993caa0f820df15958cf204030750aa1ba8e1b02ec27de609b7097ad333059e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b6505564e9e79ec15450c355eeaa309f10217636048b8aa110bc5d7cbed5ba1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "573725d972b81031ebf405234a45ed9dfd33f44f25030d50369ad8ade2796e62"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4e7c426822b644ea7a879329f20e540c414d8eeed1263cfd60d3ec1a8162076b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fcb94ebfba3d03fe2259f7fe0199cd854db7041d4834a4749e407014bd01a60f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cced3a11eaf8380ec74cd46476852805bb6b0d20487c9e44ff3991cbc2660ba2"
   end
 
   depends_on "certifi" => :no_linkage
@@ -69,8 +69,8 @@ class Bpython < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "wcwidth" do

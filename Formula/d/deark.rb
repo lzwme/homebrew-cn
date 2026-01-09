@@ -1,8 +1,8 @@
 class Deark < Formula
   desc "File conversion utility for older formats"
   homepage "https://entropymine.com/deark/"
-  url "https://entropymine.com/deark/releases/deark-1.7.1.tar.gz"
-  sha256 "f7e7d286e0e3b8003e1e758b59f8aee1fa2dd24e1c9aceb03d4e603cb8efcad4"
+  url "https://entropymine.com/deark/releases/deark-1.7.2.tar.gz"
+  sha256 "e2163169b18781425e87566abf21a235513cef457a4bd27c14c304cf9a872971"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,12 @@ class Deark < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca11890ec7e64ca56ca323a81f7aa13b16f2b17920055c57ae0c5cba61c5f909"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c414593cf0e104f8d6e2533a60bb8b84cdea746979c0a78ee77579f16160bb02"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "853f3505aa76f132c3decc2beeb078dbbc820ac029c9d0b380bc92fccc6caefa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "76255d15e1004ad0f221385140922b681d0b86a60fc6cd8fe38d885e1e6b7ac0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f59ec8540e631ef2638cea25659f5d0d440ad080ddc776883bd8bc87bbf65eb8"
-    sha256 cellar: :any_skip_relocation, ventura:       "2e7c24cf96486214b2a7674e5b3d4f4454b74a1c4e6858620128dc9b73b187c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "db7f69c2b1b09fd39dba3c04c1f9fa598d5d5d7e5c0ff7867bafba85b937d636"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "866c1952cc923ea0347d00d07766bde3cc678f46cb39df4ab34fcb3b635ec3af"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b1d89387da4b2e5c2626e39e67a38042b5ebb77c041be2fcc3e267bd59814e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ac463d89b1de8e703446ae41acc161e4b2188decceb0709fe188c11a0674bda"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "029dcced69ea218ee0dcdff678387ac17d421b2debe472b40b87e5dca8dd2afe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "124d7842655076287bfb363bdd3cc0c7c97c7275125588ae9f44ab8a324c3262"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4caec2711f3f0f3e3d9339a4efead42bf0c10a05d4a6986c466f976a877d119"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0dafff439bf4b70a04558225a992ff78f4da434d4dd6b7d6ced1da488341d1e6"
   end
 
   def install

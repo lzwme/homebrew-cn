@@ -6,20 +6,20 @@ class Darcs < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f9ef3739cd7aef89964796218a15346faed915fbfcd207775c54809560b2bea6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "507dfc31c10438735098621aed6c75916d2b807bc7a72f957dbc0e808ff65916"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2772f85e77f266ccecd9f8c5dbabf09b965b789d92b1d7c202989317cb832e7e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "22caed7f5b40475b198b0474c056c477f8d6b6cbbb980b14a813829d362d9261"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d73fa876ba56773601ad0aba9d459a14bd08f9678a1c1ef412b099b2f10bb11f"
-    sha256 cellar: :any_skip_relocation, ventura:       "22ad293dec66d2b02d524e7f2b2f7a41d667af225130a832d26023cad73088a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7aa0e49c8fb1a0af523aba68346a85b97441475d0e415c7d4d22487ef96adf88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "caaab41754cacb2f6265623542eae257e1c2dfd5ef0d585632ca1dcad59cfc91"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "60ea4e045b5df028037e96e75d87ec49abf683f86fe06783a62c9252c12b6857"
+    sha256 cellar: :any,                 arm64_sequoia: "c6e054554c172fd77903e34d991250008b7189cc169fb598adf6bf9a4b5c956c"
+    sha256 cellar: :any,                 arm64_sonoma:  "fc15e6c6b4f25d8bc96517ca1fc1c03fecf6e5bb344a40e7b39c467507c9ab5f"
+    sha256 cellar: :any,                 sonoma:        "a9a5404dcb578f8169bc4c640ca8eb7c4ee85bc2165eadb15c6b3abcc80ebcc6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b59ab9ff70e3a68a4e48f44070a4f9a2cc79270aa9678b90138b913fb4b00ac6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "038ccd3331bc1203def1a825cbf497efd76069efea5d45fa4a2a3fb40badbd6c"
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.10" => :build
+  depends_on "ghc" => :build
   depends_on "gmp"
 
+  uses_from_macos "libffi"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
@@ -35,8 +35,11 @@ class Darcs < Formula
   patch :DATA
 
   def install
+    # Workaround to build with GHC >= 9.12
+    args = ["--allow-newer=base"]
+
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *std_cabal_v2_args
+    system "cabal", "v2-install", *args, *std_cabal_v2_args
   end
 
   test do

@@ -1,19 +1,18 @@
 class Syft < Formula
   desc "CLI for generating a Software Bill of Materials from container images"
   homepage "https://github.com/anchore/syft"
-  url "https://ghfast.top/https://github.com/anchore/syft/archive/refs/tags/v1.39.0.tar.gz"
-  sha256 "399e8b4bd1a772212f5e473a480a571bef3e7d2f55bd489cb3e6932dc62e341c"
+  url "https://ghfast.top/https://github.com/anchore/syft/archive/refs/tags/v1.40.0.tar.gz"
+  sha256 "c43a75055ccc0bebc0e295653a884b57bbab2d14057eb9da2f58a83725a10f16"
   license "Apache-2.0"
   head "https://github.com/anchore/syft.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b4ed1f8abf47ede3500ea742f9d27cd443f57b22d660a8d83fa93e44387c1a6e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4cb2f006048d49b0cb94138b096b974d041d47193afa99b575719dccde6d381"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59ff696b896e0e275912c870bb103f591ebfc9c916a1d7348842a7c19a79326b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "11dc6e674fc9658c75a4fa24a6cbb5b06564ef84b02de783600672879913874b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "adf7c43c87266a314d2ed7cdd61e26d392b7fe340e025c1abe9e7e62237fbd8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb2d5db72932ec61f3afc73c6796bb9880028d1827d977dba6f00670feb8ddcf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b69907286ac29af7539689f807b84a8007e949b29b78f187ea9aadfcf7f09c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4983a7c0c5b1fa0fdcf9151eaddf90670fed08e829f9989be000796ca703ae0f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4903724c63c4f9daa5c86c6b240ef63ec69a37342a7b115194aeee7fe933c0c7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d42774399e2b2cc467abb29850e968a63bf5daee794dfb4419f1f5e4087ba94a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b954b82aa93adf72da42aee2c20d78848efcd506a5d58ecbc4832de5b455bde"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f551ecb778088c643ad5eefe9ebb5a6102ec11e54a0e068670e1c211b23e68d"
   end
 
   depends_on "go" => :build

@@ -25,7 +25,6 @@ class HaskellLanguageServer < Formula
   depends_on "cabal-install" => [:build, :test]
   depends_on "ghc" => [:build, :test]
   depends_on "ghc@9.10" => [:build, :test]
-  depends_on "ghc@9.8" => [:build, :test]
   depends_on "gmp"
 
   uses_from_macos "libffi"

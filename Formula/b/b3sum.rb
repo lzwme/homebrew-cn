@@ -1,8 +1,8 @@
 class B3sum < Formula
   desc "Command-line implementation of the BLAKE3 cryptographic hash function"
   homepage "https://github.com/BLAKE3-team/BLAKE3"
-  url "https://ghfast.top/https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/1.8.2.tar.gz"
-  sha256 "6b51aefe515969785da02e87befafc7fdc7a065cd3458cf1141f29267749e81f"
+  url "https://ghfast.top/https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/1.8.3.tar.gz"
+  sha256 "5a11e3f834719b6c1cae7aced1e848a37013f6f10f97272e7849aa0da769f295"
   license any_of: [
     "CC0-1.0",
     "Apache-2.0",
@@ -10,14 +10,12 @@ class B3sum < Formula
   ]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e07d5d585f8a33c42965dc6da2b1d46898bda73e1b604a63c562b73603be1c3e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bad04179c8c37e7afa0fd83d28af8fe27607994fa8c39f309bd3e3c69b613086"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e906f67b37fd1f69281f71039786cf49bc8aba72b5879cc1dad720c414ad3982"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cfdaa91ad3f88c6fb734acad4adfd0e272881182d7f9810223964d1003c94ab0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8786885a570f8b3b2d6d66c2dbf7cdbe0317c4393bbf6a390882a450d6d5f4aa"
-    sha256 cellar: :any_skip_relocation, ventura:       "61606af42f07a5a6dcfcf1b2ffe6f76b046213cfba6f42a2afa1d06a798dc37b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d94b9769af2a11c7ce1e4e1e8ecdd6c649ee305ed58e0363da5ce4509afe904"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c65b99dc2886d78591ab8ffcb62c760869a41c4c30b75677ac07830f96e4756"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6aaf982754d33580087973ca57abe9cac3e80a9555177128acfb0d172deabbb9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f33d4bcdc088033950592a36f76b8f05f9715d24443e6f77ec4f727883859680"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f4512945637551c43ecedc21c8155d7db4fd366ace20cba409d049a9d00fe39"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b268f3ce958127c16a7ea5d433c4ca3ee91d1363ea18f575d1f185610cf2b8e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "45792accea89ca0d2d227df9261cf7d894cc7aab297abf8edcb258e085c70aba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "826be694ff9a93cb3dea1f7dee19533475c00e97a7c058878ae0dd3dcfc44df1"
   end
 
   depends_on "rust" => :build

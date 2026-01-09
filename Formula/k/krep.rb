@@ -1,17 +1,17 @@
 class Krep < Formula
   desc "High-Performance String Search Utility"
   homepage "https://github.com/davidesantangelo/krep"
-  url "https://ghfast.top/https://github.com/davidesantangelo/krep/archive/refs/tags/v1.4.1.tar.gz"
-  sha256 "cfe921da29aaf3877531837ee5fac244555f619da9ebc948fa135790dfe647fd"
+  url "https://ghfast.top/https://github.com/davidesantangelo/krep/archive/refs/tags/v1.4.2.tar.gz"
+  sha256 "d0201fb5fb6fbea95fc76318b343281ce9c622297b82133f53b2bfe2ddcf5a17"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42328c1fb3e47dca5cd25275bce384c334364cd233d8e9badd8d0098de4742a2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e40d459c63507a6244fbc637d4fb248a84db7bb721bcf97c73e3c636c85c596"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a159c58faf1f7df1022eeb4672163144c33383cf6007b441873dc06fc224c783"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fa4153b3fa26b92c364cd565cc4cf8edde3b3eee00187cb1a7b0339aabd159a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae591caafb9d6dcfd7d3de9edebb103f012711e81a0e73c6d68121485079a600"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fcf30adf67790d1b4d1267fffc66ae2de2a6f050f7e58cc42afc7c5d5e09084"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7d57b9bdff9b9e8489767d08b8a7afe51a0903271f0c3d64b3975c7590e8d12"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05bba2b8f87114b01ccf7e4acfc18224af8d5a7996774b529461b43e4c184060"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a01d23a6db4d4a01a4f65f9c6ec4013f07476c93554a6b44f8c3fd1d9789e787"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a22c87d9960908afc5f86c5316a7ef3de460429bf2fd31a7a05524edb60b420c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfa55d89227c4c3eccd74953f05a0f37d081fe2581c99ea7c5e6690a3a63e823"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ed36281b9081080b1fdb3209c55cd24ab140fd4c1ae782c92e4ba73a3271c70"
   end
 
   def install

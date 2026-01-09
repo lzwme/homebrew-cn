@@ -6,14 +6,15 @@ class CfnLint < Formula
   url "https://files.pythonhosted.org/packages/02/b4/b4ba37398d56451e171219f9ffa4dcb5954d93f86d138781b1012be86aba/cfn_lint-1.43.2.tar.gz"
   sha256 "c27a2e0b2665925af03e5140236dcd0c117233e224a6d2209bf0930c88fc0271"
   license "MIT-0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0e79f3f889550df6d72b6aa297dcff619463bae7050daff0308bf8cbdac29b95"
-    sha256 cellar: :any,                 arm64_sequoia: "895ca7d7de0ed3bf51ab8f400d242ab9f1aad96fcdbdd844dba269ce8e8e7b4d"
-    sha256 cellar: :any,                 arm64_sonoma:  "f6318877672296964395478dfe085525546ea85cd292c00a2d2fae676be15936"
-    sha256 cellar: :any,                 sonoma:        "1131ab4b5a633684e029b38f77011d055e4f3c4d3ed685a465e4c47e2b83c420"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "540a4d35b36f033b62cd490490482a87005bb5ef4e82fa998121049a125ad447"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b42d7c388010627b2172b29dc28a3ae5c38dc146ad0d4e9ab515c465f683e3d"
+    sha256 cellar: :any,                 arm64_tahoe:   "877796dc164a6a58909bd901dafc6bef77f0d67542ae06cb9068394c71361346"
+    sha256 cellar: :any,                 arm64_sequoia: "3e87ea30e4cab5106875fadf499fdead52890f36efc86c336cfad777566e4443"
+    sha256 cellar: :any,                 arm64_sonoma:  "7bcb99ae16bdf137e7488f92e668635150f875f4f471e389e4b1f72c937ec9a1"
+    sha256 cellar: :any,                 sonoma:        "c30c30fdf402fb811933c0983b1f0b6ccd2a883985a766138aafd128701e95e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "886aaae1ef0f95d944df8557dd3e2a02989418d0e66e64c58e4efa5be31b14bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d615a44170c7852913b3c6c17601530e274b22e4342546fe7ab73838b10c4d39"
   end
 
   depends_on "libyaml"
@@ -34,13 +35,13 @@ class CfnLint < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/27/36/999f23a821567334ecdfaec31fad556f5569383006543be63fdd1e17193f/boto3-1.42.21.tar.gz"
-    sha256 "9b92943d253bc837323079fe88460e741cb2eb80abaebcb558b2446bdb4049d6"
+    url "https://files.pythonhosted.org/packages/ee/21/8be0e3685c3a4868be48d8d2f6e5b4641727e1d8a5d396b8b401d2b5f06e/boto3-1.42.24.tar.gz"
+    sha256 "c47a2f40df933e3861fc66fd8d6b87ee36d4361663a7e7ba39a87f5a78b2eae1"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/4c/df/dfd07d75fda643ba07af75e33cfd72472a12bb13901812ca34e47f081507/botocore-1.42.21.tar.gz"
-    sha256 "db8f99d186156da42feb4fd2098017383d9b155097290cc53da7258f6e652c39"
+    url "https://files.pythonhosted.org/packages/12/d7/bb4a4e839b238ffb67b002d7326b328ebe5eb23ed5180f2ca10399a802de/botocore-1.42.24.tar.gz"
+    sha256 "be8d1bea64fb91eea08254a1e5fea057e4428d08e61f4e11083a02cafc1f8cc6"
   end
 
   resource "jmespath" do
@@ -59,8 +60,8 @@ class CfnLint < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
-    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
+    url "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz"
+    sha256 "0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326"
   end
 
   resource "jsonschema-specifications" do
@@ -114,8 +115,8 @@ class CfnLint < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

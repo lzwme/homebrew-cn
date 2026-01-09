@@ -1,20 +1,17 @@
 class Sugarjar < Formula
   desc "Helper utility for a better Git/GitHub experience"
   homepage "https://github.com/jaymzh/sugarjar/"
-  url "https://ghfast.top/https://github.com/jaymzh/sugarjar/archive/refs/tags/v2.0.1.tar.gz"
-  sha256 "7ae427d8dff1a293f063617365e76615ea7d238aaa7def260fd2b6f2cfa5e768"
+  url "https://ghfast.top/https://github.com/jaymzh/sugarjar/archive/refs/tags/v2.0.2.tar.gz"
+  sha256 "b6db88d6539e662749a7cb78804bcdf89feac188310b87ab55d791aa18475ee3"
   license "Apache-2.0"
-  revision 1
-
-  no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b7bf1fb7c778622b53a508daeb750b2db8111a2c4bba753d774887675e02ade1"
-    sha256 cellar: :any,                 arm64_sequoia: "c84ec1f5ae6bff4f8dbd2b7e48586267ddc5ee1db8f40d7cc566a3a6e8b77b1f"
-    sha256 cellar: :any,                 arm64_sonoma:  "62e9d53bb0f055c501e15c1d7b01b50bb5e380e6d76e2a764887eac948f0ccd6"
-    sha256 cellar: :any,                 sonoma:        "de56c6a946f4e8ee98a7156fe97d25fcea6200db8f2132b56b3440365a798b34"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "015c56a4c20529943d38b59a371d7b01ad27696378c499934811ada3d4e4c6e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0463a14f72f0bc96e494ec5731b25c3f75afb993df840566808e32195e9907d2"
+    sha256 cellar: :any,                 arm64_tahoe:   "1ea59ae258cb0a280477db2508df2f70645df8860d1713d34f1c3c7304e60d70"
+    sha256 cellar: :any,                 arm64_sequoia: "701a642c86fa408018f6c4431c6b108667b177d46ea29db2bc31faf7568f02d8"
+    sha256 cellar: :any,                 arm64_sonoma:  "2b66f25d655ae20cca9104a9b6ae6f3c19d7fe8bc82b3a86136e6c35e5693086"
+    sha256 cellar: :any,                 sonoma:        "faa748b8acbc999bae3834785abfa3ee835bedd5c5ed1e11cd1a8d61b794e55b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a518760f0fae7fe19353cfa1ebcf304eb18dd15f60f362d28ebaef1cc2196256"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e3a13b8ac77471cf1ff034b5edb50ba9d77aba8856b45a82c57645647efdf78"
   end
 
   depends_on "gh"

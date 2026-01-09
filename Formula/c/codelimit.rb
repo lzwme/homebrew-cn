@@ -6,15 +6,15 @@ class Codelimit < Formula
   url "https://files.pythonhosted.org/packages/b7/e5/36aae3a408a00642a7ffa95c200799bdcecb8402e495f4ceffca44a7ab13/codelimit-0.21.0.tar.gz"
   sha256 "bd43892398acd2e20fa97d37cb6180e679745c6125253a055a55f75357bf8afb"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "99483caa1b3290e72e9516287d5d95e4e93d6f53984e05dc1982a6291a6696cf"
-    sha256 cellar: :any,                 arm64_sequoia: "0911b610e75fc4dcd5eda49e08d5e1332147aa8a942a66153ad68f18337f8223"
-    sha256 cellar: :any,                 arm64_sonoma:  "84fbb7562efd957e0358ed9f33c115fd2f453b3f74a1611a3abafeebc10b6271"
-    sha256 cellar: :any,                 sonoma:        "b0c7869392b75443103caa5e672f54a017054a117146c7f8637425e9cfc37a7c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "040abb69a6de0e2c6e51d3cbfb8ddc383587a3f6f73016b9326fa3982add29a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54efcbc931d9df7f9bb04aa1b8190ee273ef610350521db1609e8045227194d5"
+    sha256 cellar: :any,                 arm64_tahoe:   "de65fb9f85f38054d30ce66eaadbcfe5ef6ba075c46948ebf99bd112b43e383c"
+    sha256 cellar: :any,                 arm64_sequoia: "eb4983504c146385ebaeb5762640b327bb5b86cb7d71f227c458a16fa3f59d8a"
+    sha256 cellar: :any,                 arm64_sonoma:  "9febe5fa1744491f99e5bbc2c9aa7f73ac0482e9ae8e945f19d4ff1bd82ae02c"
+    sha256 cellar: :any,                 sonoma:        "ba08062e856c430f4b3fd1fa5aa42212934a214a652fd6572d817dd801fa268b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "818507befbc7eb2ae1d1794905d0f79001b853cfa807734c3ec5709bca8ca9d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9fea9adbd1e85370595eb41d018b9c8a726c7dfc8dd24039bf52b850b4fb5a4"
   end
 
   depends_on "certifi" => :no_linkage
@@ -124,8 +124,8 @@ class Codelimit < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/85/30/ff9ede605e3bd086b4dd842499814e128500621f7951ca1e5ce84bbf61b1/typer-0.21.0.tar.gz"
-    sha256 "c87c0d2b6eee3b49c5c64649ec92425492c14488096dfbc8a0c2799b2f6f9c53"
+    url "https://files.pythonhosted.org/packages/36/bf/8825b5929afd84d0dabd606c67cd57b8388cb3ec385f7ef19c5cc2202069/typer-0.21.1.tar.gz"
+    sha256 "ea835607cd752343b6b2b7ce676893e5a0324082268b48f27aa058bdb7d2145d"
   end
 
   resource "typing-extensions" do
@@ -134,8 +134,8 @@ class Codelimit < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "yarl" do

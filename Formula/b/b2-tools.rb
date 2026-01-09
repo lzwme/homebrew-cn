@@ -3,13 +3,12 @@ class B2Tools < Formula
 
   desc "B2 Cloud Storage Command-Line Tools"
   homepage "https://github.com/Backblaze/B2_Command_Line_Tool"
-  url "https://files.pythonhosted.org/packages/e8/be/5787c4a1ab6d996e6740904fc8bfcf9b39de5cafc2aae0b8d84a997d26e2/b2-4.4.2.tar.gz"
-  sha256 "61ac927da23e5c69bbc87b217b21cec442c809f890bc07e2dcc9f66a75e2d60b"
+  url "https://files.pythonhosted.org/packages/76/a6/b32e76f93ecc86a2081c6106df7c22c56b95ee8ccafca7746753b38341bc/b2-4.5.0.tar.gz"
+  sha256 "e07b10bc451331ac7150f27c227e9be9a9958dd3a96480db19f9ac6d565cbaef"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5d393211788a04b1e67b27b1a3f7d28a5136bf55a84ac60c343c18f283159d2c"
+    sha256 cellar: :any_skip_relocation, all: "993ab879d4ba3922f91e37830c8a2f78bb6299ae458080d479d9984fee790fa4"
   end
 
   depends_on "certifi"
@@ -35,8 +34,8 @@ class B2Tools < Formula
   end
 
   resource "b2sdk" do
-    url "https://files.pythonhosted.org/packages/f2/d2/3418125c13b35960d0fa00cdb58bfe03c4b88fb74519c5930a47802c1b63/b2sdk-2.10.1.tar.gz"
-    sha256 "92c860a4a2e64d4a30d255d5a8d6d9049ff6d2bc64ff5751c0e05b1a2921fd1f"
+    url "https://files.pythonhosted.org/packages/7f/e3/5407dff7dc483e216c5cca50f4597f698b97546f1296b9011dc49c3201d7/b2sdk-2.10.2.tar.gz"
+    sha256 "39e51ea164a0e12c4ecbf0dac1f290622902ffa0cfa3de83e6b50ee3c95c1465"
   end
 
   resource "charset-normalizer" do
@@ -100,13 +99,13 @@ class B2Tools < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
-    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
+    url "https://files.pythonhosted.org/packages/5e/a7/c202b344c5ca7daf398f3b8a477eeb205cf3b6f32e7ec3a6bac0629ca975/tzdata-2025.3.tar.gz"
+    sha256 "de39c2ca5dc7b0344f2eba86f49d614019d29f060fc4ebc8a417896a620b56a7"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

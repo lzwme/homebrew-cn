@@ -6,11 +6,11 @@ class BandcampDl < Formula
   url "https://files.pythonhosted.org/packages/78/c2/2c11878a494ceef38ed5ac51dede216547cb14ef40a30f8f009fca0ceab6/bandcamp_downloader-0.0.17.tar.gz"
   sha256 "d5e47777d0b1a14e49ba72d78ffa9b150e72af51d28e981231a0bd32c1c2e159"
   license "Unlicense"
-  revision 3
+  revision 4
   head "https://github.com/evolution0/bandcamp-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2505971784afe936459d53c81926b22e4ac7db640869dee849dcf47e0bda6da1"
+    sha256 cellar: :any_skip_relocation, all: "53326f35aad56f235a313e6d8290a01e5d624d7c85b20d3e7cc363f7c9fa3c04"
   end
 
   depends_on "certifi"
@@ -54,8 +54,8 @@ class BandcampDl < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/6d/e6/21ccce3262dd4889aa3332e5a119a3491a95e8f60939870a3a035aabac0d/soupsieve-2.8.tar.gz"
-    sha256 "e2dd4a40a628cb5f28f6d4b0db8800b8f581b65bb380b97de22ba5ca8d72572f"
+    url "https://files.pythonhosted.org/packages/89/23/adf3796d740536d63a6fbda113d07e60c734b6ed5d3058d1e47fc0495e47/soupsieve-2.8.1.tar.gz"
+    sha256 "4cf733bc50fa805f5df4b8ef4740fc0e0fa6218cf3006269afd3f9d6d80fd350"
   end
 
   resource "typing-extensions" do
@@ -74,8 +74,8 @@ class BandcampDl < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

@@ -6,16 +6,16 @@ class CloudflareCli4 < Formula
   url "https://files.pythonhosted.org/packages/77/fd/87b3e026dcee2a6b891f2b6c98b8f0bc98a175c4b731c046b528298c07c5/cloudflare_cli4-2.19.4.post3.tar.gz"
   sha256 "36efe09d188678e8c99e654b79162758594107342d11f88192423aa47fd6c0b8"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/cloudflare/python-cloudflare-cli4.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fa04cd2a3ae3fdc9dd3cbf0a9a3295c5fa2846d57df976beec72c34463973995"
-    sha256 cellar: :any,                 arm64_sequoia: "3398bc28eca4d4cccdd80233e99bb242181adc127d93c4b38255398a73a73870"
-    sha256 cellar: :any,                 arm64_sonoma:  "2deb462777a50e07c046c661fb1c7ec597b7043a41017d708c853fa9e809220f"
-    sha256 cellar: :any,                 sonoma:        "a237476724511c8e2329098171f2a4373d6e3f6d5d4c1702747ce26ca7d3bb8c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e03a52b1b48582556e106b6cbac0865746981b69ee186337db8cfec295deba9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0f8bc83b78988b58754b9d7665ddae43673d8b8cace77f371aab046095c5c57"
+    sha256 cellar: :any,                 arm64_tahoe:   "b9710d1e00f4e93cb745b8d458b8cc3f3413e23bb2b075c251949965e0e3a05b"
+    sha256 cellar: :any,                 arm64_sequoia: "c7d31ce268a74557f20099173c00c5f85ba62f8d20c4cf195153987fbe195eb7"
+    sha256 cellar: :any,                 arm64_sonoma:  "24107baf0f07332d8362e848ff1f7fc81002c55443c4be1b5d35a32731b332a6"
+    sha256 cellar: :any,                 sonoma:        "22616ef63b50c8f50241b221b07523e6b091082c25ff24f199cb788ee4ee3a12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a88895f966880af0860d81f239e7f243765d0b8d5c153ae205523d4dd994866"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b21fe7364c0bcb218b31975c04298faaf97eec2daf63b7ab3c2865197c7f5d1"
   end
 
   depends_on "certifi" => :no_linkage
@@ -55,8 +55,8 @@ class CloudflareCli4 < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

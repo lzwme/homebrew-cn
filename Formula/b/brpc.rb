@@ -1,19 +1,29 @@
 class Brpc < Formula
   desc "Better RPC framework"
   homepage "https://brpc.apache.org/"
-  url "https://dlcdn.apache.org/brpc/1.15.0/apache-brpc-1.15.0-src.tar.gz"
-  sha256 "0bc8c2aee810c96e6c77886f828fbfdf32ae353ce997eb46f2772c0088010c35"
   license "Apache-2.0"
   revision 1
   head "https://github.com/apache/brpc.git", branch: "master"
 
+  stable do
+    url "https://dlcdn.apache.org/brpc/1.15.0/apache-brpc-1.15.0-src.tar.gz"
+    sha256 "0bc8c2aee810c96e6c77886f828fbfdf32ae353ce997eb46f2772c0088010c35"
+
+    # Backport support for Protobuf 30+
+    patch do
+      url "https://github.com/apache/brpc/commit/8d87814330d9ebbfe5b95774fdb71056fcb3170c.patch?full_index=1"
+      sha256 "33a133c583d39a1d8394174c8c5f02b791411036faa3b1afe38841c3e6b2e0f1"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a717956c5a369f398e56b76ff82b4d174bee5ac45e146c71622d150752cc8204"
-    sha256 cellar: :any, arm64_sequoia: "be8f287e39290e85309bb5edc8692247e6a2a9a12ff60e746d9a4a416af10097"
-    sha256 cellar: :any, arm64_sonoma:  "077f72babfe5e3360ac3ea4c1bf7360576fe529fdee919d5bd952ea2b18ba78a"
-    sha256 cellar: :any, sonoma:        "36626965d76c93590d8676a1f81c321298c251c9ef0e4b64da63ec8d0cfd0c0c"
-    sha256               arm64_linux:   "3ec33864c3e4c1ae23eff2ae7d3cdf560a44b1fafc956ad1f26c0ea7044b9bb9"
-    sha256               x86_64_linux:  "4d0b4d90964afcb19e0dea4ac28d731579a246f002160a13fbd14b223731ff15"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "9bb436955c0e7cc31bdd69b2c5203371b0e0c96c943ad8dde2e73fafed38dbd8"
+    sha256 cellar: :any, arm64_sequoia: "46acf59fb455c4ec854afd7768d257c203ab33bee2f0306e3031881a2a032c36"
+    sha256 cellar: :any, arm64_sonoma:  "ad4a98f0eba3fa216a849dde8fd3b0026f7d9d18920bc067e5b30e4a57d3cd07"
+    sha256 cellar: :any, sonoma:        "3e5cfc764225b58abaef78dfa4fb951596303c8b66af6b2d86b26d259a2b64a5"
+    sha256               arm64_linux:   "1518389f91a45158db7e6ca2ba19677e74b280817d28d9105bc73b6827b9dc05"
+    sha256               x86_64_linux:  "354a66dd4e9acd360de270ac92acbaa0a58361821cc9f61a49352cca375b499f"
   end
 
   depends_on "cmake" => :build
@@ -21,7 +31,7 @@ class Brpc < Formula
   depends_on "gflags"
   depends_on "leveldb"
   depends_on "openssl@3"
-  depends_on "protobuf@29"
+  depends_on "protobuf"
 
   on_linux do
     depends_on "pkgconf" => :test
@@ -72,7 +82,7 @@ class Brpc < Formula
       }
     CPP
 
-    protobuf = Formula["protobuf@29"]
+    protobuf = Formula["protobuf"]
     flags = %W[
       -I#{include}
       -I#{protobuf.opt_include}

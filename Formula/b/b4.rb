@@ -6,15 +6,15 @@ class B4 < Formula
   url "https://files.pythonhosted.org/packages/70/99/2b34c8451ad6599090f7d9045adb9f19270c2ed8cef4d52c179b297f8e37/b4-0.14.3.tar.gz"
   sha256 "31a4927b8dfbb5c97edfc9569cda3b6737bbfd8430881e8cc48a0b088ced6147"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8453be93746bb20272dcaaa698640121543c7d302f6e329a9c7234ae04eae087"
-    sha256 cellar: :any,                 arm64_sequoia: "4ddeb4803767cd7768d2b2bce4226811531ca2da7a322b2609b64f82e542b9fc"
-    sha256 cellar: :any,                 arm64_sonoma:  "85d1ae911275c1b361a2f26aa0e7cf1eeddf11f9cab91b32de1121df1eafa455"
-    sha256 cellar: :any,                 sonoma:        "792f552d8eb8d0130cedfa6c80b09c63f3e04e524463b71083143891bc7aa387"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "12827382c8d93b3ec82dd70eb4322a27a7336bd19f2d93b6f4de8561fd157c99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bf468e560ce499619167ff729a75c2014d30f55de6caab00329b59c86353ddd"
+    sha256 cellar: :any,                 arm64_tahoe:   "226178f28760b3e75b93ad075d7cba47415807704747091f0f9936bae9cebb77"
+    sha256 cellar: :any,                 arm64_sequoia: "3a1458c9fecd965d519219cc0bf2b2118f0197ace563f85b6e111ca353da081d"
+    sha256 cellar: :any,                 arm64_sonoma:  "bbc146f6f134b8bf3b4b35f10bd3bcd90a71e7bb6440ec62ca20379a38b563c2"
+    sha256 cellar: :any,                 sonoma:        "7cabca1836d799761cb89839cb54f9f610c99f3477647c62b9ed065a3bf8238f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cfccc9296b18d132f87b4fd52cdb677fcc629396cbd817195d1b81d88f580ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d856f2ab7a98f6eb09662cae0a4a52fc638a5250bea634dda33d0e8f7e809854"
   end
 
   depends_on "certifi" => :no_linkage
@@ -65,8 +65,8 @@ class B4 < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

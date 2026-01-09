@@ -51,8 +51,6 @@ class Netatalk < Formula
     depends_on "linux-pam"
   end
 
-  conflicts_with "ad", because: "both install `ad` binaries"
-
   def install
     inreplace "distrib/initscripts/macos.netatalk.in", "@sbindir@", opt_sbin
     inreplace "distrib/initscripts/macos.netatalk.plist.in", "@bindir@", opt_bin

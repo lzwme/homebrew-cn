@@ -6,17 +6,16 @@ class Aqtinstall < Formula
   url "https://files.pythonhosted.org/packages/76/19/24a588de6c25d43169d172dab47e63a63cd0d8f90e98cf86487acbf00ac7/aqtinstall-3.3.0.tar.gz"
   sha256 "9c7d85fbe7258be2d7d23fda33f8aff2e8b7536817255eaeaaf4226da8546a31"
   license "MIT"
-  revision 4
+  revision 5
   head "https://github.com/miurahr/aqtinstall.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d9f36f60878779a7a770a6eddf5abc6237ef634483c55907c6a8cc1f1f59f60"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6025cedc5e8de2dbd2061ccf9c8771628fccb7f9f158a2d63020594d24c29a75"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cdc5899720a3f4533dbf3c0cb6a345a28a0cb1ce39ef60c539c49e7efd63f66f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4edc842f962c1003fdbaeda4c6cbb4702df1823b2d0f0a394e26cdf0fbf56421"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45263f2eda3a4ca184cfb37337eebcf930c076e791abe7adb0158b1edddde2c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d050ddf94f6a78d0174f4cb53f854060c80a028af1cff05d5bdb32560356c80"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "72ea2a7cc474aa9f230a2d0dd443c4724eab1e1d368ca9ac13d87872af47670c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3d4e4c17fc74253fff4789e0c16282d277bb09569e9e98d65c80e9c60b087e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d58f3908fd9c69fefa5eea8dd82ae0100a349f54b9fed4709faf5e4b65509c53"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4dfc9f111eee0f13a14c203d2ba5f1117a867228332e93ec57d9c7081cc606db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2385771954909c0a7188a3279e61d203785ea8eb5f46b29b988f2fac9d779875"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a71594666ae2e3e252a9d21b6811842252a071fd92d5fe59cfe4fbd9eda4067c"
   end
 
   depends_on "certifi" => :no_linkage
@@ -75,8 +74,8 @@ class Aqtinstall < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
-    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
+    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
+    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
   end
 
   resource "py7zr" do
@@ -125,8 +124,8 @@ class Aqtinstall < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

@@ -6,15 +6,16 @@ class Certbot < Formula
   url "https://files.pythonhosted.org/packages/65/d2/d457c39d48a1a5c8c80036f81ee470cf4cd69d254561abb699d74b8a3473/certbot-5.2.2.tar.gz"
   sha256 "16cf7c83572796f1a86c685e4dd365f8f5b834541163cc2f242aa834e3849d2d"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/certbot/certbot.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e2553c4588945fd685d7dc40c5c37fe65fb2b8dc21db07b404a683f2dacd9861"
-    sha256 cellar: :any,                 arm64_sequoia: "9cfd48538692771e0543f92218a02276943990f65c622ddacf6bbacf7e311994"
-    sha256 cellar: :any,                 arm64_sonoma:  "bf860ef628bd8d3a3f60a92195aeaefd2f3bcd810a014514323ad001c7f99ee9"
-    sha256 cellar: :any,                 sonoma:        "8bd63386a4a18c730c70eb2d3e276245091bc3f2ea17c13413f39a470b0c5ba7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a120141e7c8bb212e3d0e66f8cea1105f45398e67efa36412691b3b9446a2a2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12ffa3cdd63b2fb9031a512516a3c29945bac3a9a5ab5049a038c40bd2174e7f"
+    sha256 cellar: :any,                 arm64_tahoe:   "0d37f6f206a60ac19e11e3f368618f2fab753e5942ddee70ffc8335b5a3a51a9"
+    sha256 cellar: :any,                 arm64_sequoia: "7134bdf0bf134b088a74bb44ecf2030103b4145cc3ade9202f017390ce551173"
+    sha256 cellar: :any,                 arm64_sonoma:  "3663bf28524c21c2233c7ac848d093fc5584a05138f3a0a0dcc8c08a1c5856c2"
+    sha256 cellar: :any,                 sonoma:        "99e65306978d6ae69b03523241670df25952679d474580fc8fd0b32d1550d171"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63b9c67d750d5fb05641a332667af538df4a571b4297e28611b5b3ad16372e9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3a1621e34a546780485cda05c9a3da7a992b5de45b21872276a0927794fd2cf"
   end
 
   depends_on "augeas"
@@ -104,8 +105,8 @@ class Certbot < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/f2/a5/181488fc2b9d093e3972d2a472855aae8a03f000592dbfce716a512b3359/pyparsing-3.2.5.tar.gz"
-    sha256 "2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6"
+    url "https://files.pythonhosted.org/packages/33/c1/1d9de9aeaa1b89b0186e5fe23294ff6517fce1bc69149185577cd31016b2/pyparsing-3.3.1.tar.gz"
+    sha256 "47fad0f17ac1e2cad3de3b458570fbc9b03560aa029ed5e16ee5554da9a2251c"
   end
 
   resource "pyrfc3339" do
@@ -129,8 +130,8 @@ class Certbot < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
-    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

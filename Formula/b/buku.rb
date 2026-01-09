@@ -7,15 +7,16 @@ class Buku < Formula
   url "https://ghfast.top/https://github.com/jarun/buku/archive/refs/tags/v5.1.tar.gz"
   sha256 "0f1a3e15f882fe9a0f8e550abae7388d3cb81d4718a1b4309dcf4363633cb7b1"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/jarun/buku.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "da47799d5257c924e9e64b09a35d37e8495b0be883be4453d06050f341649187"
-    sha256 cellar: :any,                 arm64_sequoia: "fe32036e212bd3dee51c5e419cd0a4dd5f6eecaead62508882b0b03c0064661c"
-    sha256 cellar: :any,                 arm64_sonoma:  "7ce1e2cab18d9fc25fc31ac01d384d6a5d7dc2ce39613d408f4f8c3ea7c3db56"
-    sha256 cellar: :any,                 sonoma:        "0dd901b36f3a3b2abd4c04bf97274e0097be31946e5c85b2d1e3012ef0296464"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22392d5a3158932650d76548080476649790aa7cfa02596c8a40645978a8bfab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f243cb9536f3da984a35dad5630a4fcea4f3f073bcf435b1fceb5d0511e991f"
+    sha256 cellar: :any,                 arm64_tahoe:   "b31e058cee25f8bdb44d3d3fb7c3fb0080e5e3c4871fb37a04d1b5b80831309b"
+    sha256 cellar: :any,                 arm64_sequoia: "45006528f2238483b4074cbbcca612e7103eb981cf2a00e3603d8c17b6a8e90e"
+    sha256 cellar: :any,                 arm64_sonoma:  "5a8f29ec482342b13695e9ba812aa4dc0a4f341d785a5cdbc28e6a43beae2f97"
+    sha256 cellar: :any,                 sonoma:        "faab3ba81017f2307559c10cfea1c6033206fcff0d956bf2cc4946a965c2f23b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1a63dc9d80fae60247b6c635a896821985908e60faf99e33727067b2672f81f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a56e7d3050966f822f0cb35eeb62b1979724a412408d82cba755c0d9a25c1238"
   end
 
   depends_on "certifi" => :no_linkage
@@ -102,8 +103,8 @@ class Buku < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
-    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
+    url "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz"
+    sha256 "0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326"
   end
 
   resource "jsonschema-specifications" do
@@ -117,8 +118,8 @@ class Buku < Formula
   end
 
   resource "mistune" do
-    url "https://files.pythonhosted.org/packages/d7/02/a7fb8b21d4d55ac93cdcde9d3638da5dd0ebdd3a4fed76c7725e10b81cbe/mistune-3.1.4.tar.gz"
-    sha256 "b5a7f801d389f724ec702840c11d8fc48f2b33519102fc7ee739e8177b672164"
+    url "https://files.pythonhosted.org/packages/9d/55/d01f0c4b45ade6536c51170b9043db8b2ec6ddf4a35c7ea3f5f559ac935b/mistune-3.2.0.tar.gz"
+    sha256 "708487c8a8cdd99c9d90eb3ed4c3ed961246ff78ac82f03418f5183ab70e398a"
   end
 
   resource "packaging" do
@@ -147,8 +148,8 @@ class Buku < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/6d/e6/21ccce3262dd4889aa3332e5a119a3491a95e8f60939870a3a035aabac0d/soupsieve-2.8.tar.gz"
-    sha256 "e2dd4a40a628cb5f28f6d4b0db8800b8f581b65bb380b97de22ba5ca8d72572f"
+    url "https://files.pythonhosted.org/packages/89/23/adf3796d740536d63a6fbda113d07e60c734b6ed5d3058d1e47fc0495e47/soupsieve-2.8.1.tar.gz"
+    sha256 "4cf733bc50fa805f5df4b8ef4740fc0e0fa6218cf3006269afd3f9d6d80fd350"
   end
 
   resource "typing-extensions" do
@@ -157,13 +158,13 @@ class Buku < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
-    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
+    url "https://files.pythonhosted.org/packages/5e/a7/c202b344c5ca7daf398f3b8a477eeb205cf3b6f32e7ec3a6bac0629ca975/tzdata-2025.3.tar.gz"
+    sha256 "de39c2ca5dc7b0344f2eba86f49d614019d29f060fc4ebc8a417896a620b56a7"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
-    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "webencodings" do

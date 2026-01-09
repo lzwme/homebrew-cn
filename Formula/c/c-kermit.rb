@@ -16,19 +16,13 @@ class CKermit < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "9f4e1eb3f4cea80c8e82892451358cc831f6aebcd024a7776a2ce89d86fd8c2c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cea3196c019d7d08ec77210cc9ce17c3339c84d5255f914bf773e5186ae709bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "399806a413435186dd70cd55cd12782354c3642259870b348f81ca40b6424cbb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6ee8af35826f4b5be62d1c4b4e8b38eb39915da0b28d6b8f53ff9dfbb99f6698"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8315af8bc632253d0b2fdfde4b9da0fef5ad11af891b4e4eb8b51a35902f1e33"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "259f1f0d2e2a1af6545bec724db3e1f154169dbd33e2b8ef43364381b3664cfe"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b940d6c43c5b2298913376ff58726c674de4a741353460e7de2a94c7d01d99df"
-    sha256 cellar: :any_skip_relocation, ventura:        "0772fae0e560c8e726c611bd1e5b55d03e77f6f42feb3f763cb12f15a0151dc9"
-    sha256 cellar: :any_skip_relocation, monterey:       "e379dd0cdd6eb9eec792cdd48ca7c5b7cd9281288840b15ce1d860fbb78982b2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c2867c176bc81a35f56d5fe29847500b7c5f8c3e05ac10b5986073502a888a0f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "7c5ef16933a585d24b5186f5588e5cbb59d3a57af93e447660e159dc98a649f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d5959e91d9fce4bee2b835433a8d2cc589f8f9f37e02c0f1078dbe645e6351a"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f03cdb09826ffb13c05935041e5eace02ccaa28ceb1414476dd13ca58a8412bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ff30edc6320921e86421083b31edfca494af2769ceb2d7401adaa4240ebdfc4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32b86b1e8e3d2f5ec5c7b36b3c4681fbac18da12184fd3abb9868f200f2c0cda"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0d37a2d0fcd584f8d5255dd975dd6bba66381b7a78e8c499626655efe9ccf32c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "35510dc1aa49e7b5d34b546a293ad6ae2de3012aa79476a7faa8f87c53a262da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48c31890a6637bc31380b57ea68a0a7ae608ae969fd3ac4a80abc56735a9d20f"
   end
 
   uses_from_macos "libxcrypt"

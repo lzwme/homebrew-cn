@@ -6,10 +6,11 @@ class Censys < Formula
   url "https://files.pythonhosted.org/packages/41/aa/ed0d0faf4f7015bac902cdad929f487f9baefd224ab6fa9aba5635dd5d60/censys-2.2.19.tar.gz"
   sha256 "9202e17c2583d4b3d0af32a5be161ddb505edd390a9ca909f2e7470d4af19a97"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/censys/censys-python.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "13d83b36fce0c4e402c6a4db5a1c6d489e598912ecee4e2d58a2d53bc113be14"
+    sha256 cellar: :any_skip_relocation, all: "fb4181faaf8df7242422e351e55cd0e39f9be80860ead2508b8d2b31185a0523"
   end
 
   depends_on "certifi" => :no_linkage
@@ -63,8 +64,8 @@ class Censys < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

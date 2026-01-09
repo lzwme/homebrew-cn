@@ -3,18 +3,18 @@ class MistralVibe < Formula
 
   desc "Minimal CLI coding agent"
   homepage "https://github.com/mistralai/mistral-vibe"
-  url "https://files.pythonhosted.org/packages/c1/a7/a9dce16e9ab81140665783a40f9174c98946212425d96a63fe664d6ec661/mistral_vibe-1.3.3.tar.gz"
-  sha256 "1c4e6a96325cd028a1e86076e72914b9538223961a8acb27265c1af5c0758b22"
+  url "https://files.pythonhosted.org/packages/37/73/5608c5b09fa264ce937997b3e24658173595863115780cd553502a005e35/mistral_vibe-1.3.4.tar.gz"
+  sha256 "a93bfb17bb2ea4d6a092410021636079c15b279bbfbc20f9b122a586ea4a76b5"
   license "Apache-2.0"
   head "https://github.com/mistralai/mistral-vibe.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "121494f6907d16c4b6969e7b3d4e6a0fef5d0421aa6f6a5386a5f0751dbe4e3c"
-    sha256 cellar: :any,                 arm64_sequoia: "b0da5e372e27a3a935842637d4038494393ca1d9ec1249394f9bc8c327333c4f"
-    sha256 cellar: :any,                 arm64_sonoma:  "fec1e21ecc62e57ea6c634fbaab14cada80804e864c6836780b06b9f5ccf2285"
-    sha256 cellar: :any,                 sonoma:        "9fa49fa7eeaeebc60810d1f174d7f7c641fc72e68bed894c922356a8624bc7e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "09c05d05a0e61671008d431213a86efcd9fc74b91a3fbd1f2f559ba6555dc4d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a80ec9624bfd1f68ba4b4a3f1270e833ac3ab71b2691be84a202628d35a4220"
+    sha256 cellar: :any,                 arm64_tahoe:   "eaf7608ef63ded56957f015e9d195133090cb74121c7652a5986028e09fdeb9d"
+    sha256 cellar: :any,                 arm64_sequoia: "a1943c6456c894b3d5bc2175f7c6efd668c910e2c4c0c4ce12331ad6ba342bca"
+    sha256 cellar: :any,                 arm64_sonoma:  "5431dd271fe95b6e041733a2476ad753489436a2f96edca846126aaabecd14de"
+    sha256 cellar: :any,                 sonoma:        "d116b1bcbd08d624c14aa0a252e0a1b4cd9015ff040f2b06cd5d22b7bbffc6eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a49d3418d165e58b5bea2a496f5a908885fef7ee0f5686f125349cd78fa15e2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "457a07e65744f3be6fa6b996f3f08108513e229e42ffd0da9d0eedff2b1850e8"
   end
 
   depends_on "rust" => :build
@@ -38,8 +38,8 @@ class MistralVibe < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
-    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
+    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
+    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
   end
 
   resource "attrs" do
@@ -88,8 +88,8 @@ class MistralVibe < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
-    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
+    url "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz"
+    sha256 "0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326"
   end
 
   resource "jsonschema-specifications" do
@@ -203,8 +203,8 @@ class MistralVibe < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/62/08/8f554b0e5bad3e4e880521a1686d96c05198471eed860b0eb89b57ea3636/sse_starlette-3.1.1.tar.gz"
-    sha256 "bffa531420c1793ab224f63648c059bcadc412bf9fdb1301ac8de1cf9a67b7fb"
+    url "https://files.pythonhosted.org/packages/da/34/f5df66cb383efdbf4f2db23cabb27f51b1dcb737efaf8a558f6f1d195134/sse_starlette-3.1.2.tar.gz"
+    sha256 "55eff034207a83a0eb86de9a68099bd0157838f0b8b999a1b742005c71e33618"
   end
 
   resource "starlette" do
@@ -213,8 +213,8 @@ class MistralVibe < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/55/06/906f86bbc59ec7cd3fb424250e19ce670406d1f28e49e86c2221e9fd7ed2/textual-6.11.0.tar.gz"
-    sha256 "08237ebda0cfbbfd1a4e2fd3039882b35894a73994f6f0fcc12c5b0d78acf3cc"
+    url "https://files.pythonhosted.org/packages/db/ab/d94bc20d701061f21c7d0669db8d5609d835298369bd71aff99b388bfeac/textual-7.0.1.tar.gz"
+    sha256 "d61db446d22913c0fa6ca2a110c895732b40408e12b0eab1022b5d766924e1ed"
   end
 
   resource "textual-speedups" do
@@ -225,6 +225,16 @@ class MistralVibe < Formula
   resource "tomli-w" do
     url "https://files.pythonhosted.org/packages/19/75/241269d1da26b624c0d5e110e8149093c759b7a286138f4efd61a60e75fe/tomli_w-1.2.0.tar.gz"
     sha256 "2dd14fac5a47c27be9cd4c976af5a12d87fb1f0b4512f81d69cce3b35ae25021"
+  end
+
+  resource "tree-sitter" do
+    url "https://files.pythonhosted.org/packages/66/7c/0350cfc47faadc0d3cf7d8237a4e34032b3014ddf4a12ded9933e1648b55/tree-sitter-0.25.2.tar.gz"
+    sha256 "fe43c158555da46723b28b52e058ad444195afd1db3ca7720c59a254544e9c20"
+  end
+
+  resource "tree-sitter-bash" do
+    url "https://files.pythonhosted.org/packages/8e/0e/f0108be910f1eef6499eabce517e79fe3b12057280ed398da67ce2426cba/tree_sitter_bash-0.25.1.tar.gz"
+    sha256 "bfc0bdaa77bc1e86e3c6652e5a6e140c40c0a16b84185c2b63ad7cd809b88f14"
   end
 
   resource "uc-micro-py" do

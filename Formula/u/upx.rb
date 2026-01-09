@@ -1,22 +1,18 @@
 class Upx < Formula
   desc "Compress/expand executable files"
   homepage "https://upx.github.io/"
-  url "https://ghfast.top/https://github.com/upx/upx/releases/download/v5.0.2/upx-5.0.2-src.tar.xz"
-  sha256 "209b219bbcfa58c249ffe6eba3c244e0910fa8be792b5521e4daf938167f05cc"
+  url "https://ghfast.top/https://github.com/upx/upx/releases/download/v5.1.0/upx-5.1.0-src.tar.xz"
+  sha256 "9f7a810b8a810b1ca2c5cb01ffcf23066e3fb8a51ddc406ea05bdd5d37d0b8bd"
   license "GPL-2.0-or-later"
   head "https://github.com/upx/upx.git", branch: "devel"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a10f0dbe257ac5d72be40562532c272d3fe14aa4c49c0f3454ec23f0691806e8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "183ba13b8566966fb0f428fe17e887ffeea096c87e59c0be317b8552974f042d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3fdcbfa167531022ea0a4fc110c9b96c95fed073027ae048b4357be3189dcaa8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "21354b0a85693c6c93d65b82ba60ea6d1cbfd13e5710fd8c9e262f5feded4d0f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3802c1dede88d78c6d6799e807c0f2cb2b92d8baa1fe09806128c77ea3a0c2d6"
-    sha256 cellar: :any_skip_relocation, ventura:       "921b8e0d57058148d566ad538cacfd3566a20b0f7d61eeb02f7c529f6859d0ba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a8479dbe20775134e426975ca1fcada5c4b0aafd4b9c31ff5b8cc45803d348e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "164093aeaaae9de464485858f091a3c5b7cba6a4f5e589fb12864c9ceb2cfa16"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4ebde3877f05d87b6de56f376f781973138dd7cd571b8226b8f5909ed2366d0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5764837b7a4307a62ab3dacee48265d9403d4a3ad943a0c6e3ebd6f2afacc18"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00a0b48fe65fcfe3685d2a15e49069296978326ba58656c793d11194d34026b4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "acdf3dac97fdaa2db80c1594edd245ffcfa0434e6d1e90cdf929b9b5a4fe920a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1ddb61d7777d87a7553fe292b17738f23e48772dcb7c27bc85256c80c1aa25a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12eac546886d5fca0594fd1a704c7449456cf25e50b8e3d84704223a81695300"
   end
 
   depends_on "cmake" => :build

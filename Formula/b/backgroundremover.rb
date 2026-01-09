@@ -6,15 +6,15 @@ class Backgroundremover < Formula
   url "https://files.pythonhosted.org/packages/b9/4a/18deace4c210d722e4dde75a7f445f105d96d190f767b9132d789b1503dd/backgroundremover-0.3.8.tar.gz"
   sha256 "0f6c25e500eab0268fdc3f50574e5f8aca1f5f47fcad86f4b52ea2af814a7434"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "d5fb0c49038237bd451b1703db577ad9168fefece300ea117bd2f9c53c98480b"
-    sha256 cellar: :any,                 arm64_sequoia: "d9913c4553f6c65d4e38367b1942a312986d8550aa9cab040ad2a1461103113e"
-    sha256 cellar: :any,                 arm64_sonoma:  "660251e830c3166d38066ee0c689ba3f76dfe08d79e11dad6fee40ec5003c9a8"
-    sha256 cellar: :any,                 sonoma:        "e90fcb3a2a5f6266d2b2a880285496dc58a47c9e366d1f45e6f77cf13ae21bb0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e8d48f826188b70ccd136b2235bf647b91eafcdec51a83187536d1fad62adee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98ccf973216664676721c7f08ea852db7793a78b6aeeec1fcb6612eb961f96b3"
+    sha256 cellar: :any,                 arm64_tahoe:   "cb9535742c2272ef1b00e3e1c4b22717a003d57342b7d26a08a77279fc996a67"
+    sha256 cellar: :any,                 arm64_sequoia: "cea3635bc47e83a51b9bdd43d6bfd590f09b449833345bb5882bc9cef79d55bc"
+    sha256 cellar: :any,                 arm64_sonoma:  "3090a1590eb3b5252b99f8d9f27d8256321ae91ff6726e08ca584cd7e2e2955a"
+    sha256 cellar: :any,                 sonoma:        "197d040553fbbd33c7ea83d0423239ca922a34a8b8204804b9a948cc1d548ce6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "277aa00a89d5c1576a172a2069df9ddc016239f356072bf8c9209874c586d4c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a36139dd1293bdfbb308666d652f8cff7b575633809e5ee63d40db2b5edb432"
   end
 
   depends_on "cmake" => :build
@@ -174,8 +174,8 @@ class Backgroundremover < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "waitress" do

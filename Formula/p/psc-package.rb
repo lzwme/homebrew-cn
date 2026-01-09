@@ -9,22 +9,21 @@ class PscPackage < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "d0b451d9760801f148494b4e3e0038186fdd645a2099f43a8209e4c67593ed4d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "caa3fd862fbd5b0fee519827956ee81da5cb790c8f4818b63c25e4e3b4647f9d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "60ce822c848d09c9d477d37c8c3e7667ffae266897f06d538368c5d66746e1f2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d218b3190d7af58a6dee769d8fc8b0543ac7eed760af9552b871ec9e6c28b918"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0f896fa8803f8405c76b6814302c9a81bc88ad63facccf653f302ca6c7314862"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2745b40b2ca64e1a6e369b79ab2c3141ea04c84538d335be866978c594e2bde6"
-    sha256 cellar: :any_skip_relocation, ventura:        "34a6d89e4900fadd0f3844622d53df285ab26a54fb2b46c61191bd6b1b835c29"
-    sha256 cellar: :any_skip_relocation, monterey:       "c96222df112a5a511469867e560157aab7ffc0fba812261302ac227fc682aebe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "680bb83343573560dfa3bc8628fcb60ef41ec5f116fba1e0cec88f81f3d0fb40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57150c2dfc8edce29db3b116563bb83d58c573b95cf497381a711f960f804378"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "b1489b1776cdab0800397074dbb0ec35a89ad1038e8cf35243cc9a6c452e1355"
+    sha256 cellar: :any,                 arm64_sequoia: "74cbe29713b84ceac9b1e0805c3585905d239c8c09692ee9fffaf24fc0c24fcd"
+    sha256 cellar: :any,                 arm64_sonoma:  "82d40bcd3e5b27f749a1c6fb8cc8707805844928200c9c0e6fb03d8248afb61f"
+    sha256 cellar: :any,                 sonoma:        "1fb1adcb05550a799c54784b0141d3b8877766fd8845543e1ec05130b2e8bdcb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3084a949cb92ad9b031bcf3b4bb96f6fd607073dbf86868826041794335ec9f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7f15621b52993c984fd4efa03e350ead5b93353ce17bf734f28788b8288525d"
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.10" => :build
+  depends_on "ghc" => :build
+  depends_on "gmp"
   depends_on "purescript"
+
+  uses_from_macos "libffi"
 
   # Apply upstream patch to fix build. Remove with next release.
   patch do
@@ -37,7 +36,7 @@ class PscPackage < Formula
 
   def install
     # Workaround to build with GHC 9.10 until upstream allows `turtle >= 1.6`
-    args = ["--allow-newer=turtle:text"]
+    args = ["--allow-newer=base,turtle:text"]
 
     system "cabal", "v2-update"
     system "cabal", "v2-install", *args, *std_cabal_v2_args

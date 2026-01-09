@@ -1,19 +1,18 @@
 class Forgejo < Formula
   desc "Self-hosted lightweight software forge"
   homepage "https://forgejo.org/"
-  url "https://codeberg.org/forgejo/forgejo/releases/download/v13.0.3/forgejo-src-13.0.3.tar.gz"
-  sha256 "2054f0dce0eb8be6e1a8e765d931ee515241e09fe6928ecbb698447c73c11e6f"
+  url "https://codeberg.org/forgejo/forgejo/releases/download/v13.0.4/forgejo-src-13.0.4.tar.gz"
+  sha256 "812c1d1f7e30170e614ce09406b76a0963068162862a9e3e7ffe3140b0569fe9"
   license "GPL-3.0-or-later"
   head "https://codeberg.org/forgejo/forgejo.git", branch: "forgejo"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7bfd47218df8a28920826f97333a7dc0797fb35dd1982121c26438848d3afdbb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3242d2ba011cc97da8d4afb4c94995891d283d37f08c9e30c67716658e20be51"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3aa8fdab919b4185a1de136cfb2d61b3ba5a1bda4d9f9e0e1a646897918e0fb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "24cad74f8139fe903709e767eb17e66cec6176f7696cc1dcb7db725898aa3b51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb2e3f00f5f820c400cfbc43ddc6a5115fd87bc93946988916e876bad921b450"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa4a6dd73e3d33feebc0560156d007b55630d001ecd27e8325a36be82d050042"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d35c14642a820c5a11b0da44bd4b902f84cd45d97c86b23bbd6663a05fc09d19"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76bf4f2c1b97927e7502d676a2605efcce39d4f29d22256f1baff3cfe7ccc335"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ef01a5c15f2fefcec557c0e9e1b7f671e902e20cf843b9c260b485442c5fd01"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e64986889309593bce8e189314fdabd24f067b24acd11f5066d935623fc5848f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3a9f7b1beadaf8cdabc68994a1c8326eecda510320f475197a52f92e045105b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c4a5740e0f2a953697cfe7cac1f0f77fc1141103e06c0b03dd3455aa0e4de7c"
   end
 
   depends_on "go" => :build

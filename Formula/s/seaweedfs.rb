@@ -50,11 +50,9 @@ class Seaweedfs < Formula
     master_grpc_port = free_port
     volume_grpc_port = free_port
 
-    fork do
-      exec bin/"weed", "server", "-dir=#{testpath}", "-ip.bind=0.0.0.0",
-           "-master.port=#{master_port}", "-volume.port=#{volume_port}",
-           "-master.port.grpc=#{master_grpc_port}", "-volume.port.grpc=#{volume_grpc_port}"
-    end
+    spawn bin/"weed", "server", "-dir=#{testpath}", "-ip.bind=0.0.0.0",
+          "-master.port=#{master_port}", "-volume.port=#{volume_port}",
+          "-master.port.grpc=#{master_grpc_port}", "-volume.port.grpc=#{volume_grpc_port}"
     sleep 30
 
     # Upload a test file

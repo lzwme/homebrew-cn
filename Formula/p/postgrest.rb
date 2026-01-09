@@ -12,23 +12,29 @@ class Postgrest < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "12a1571e56b3eac5d776eb280237f864e56f0309437f5f77d2783864a5e997a5"
-    sha256 cellar: :any,                 arm64_sequoia: "509e5e62f463cf8cef263642819fef33a40841207bbcc0b2d13ff90af64f371e"
-    sha256 cellar: :any,                 arm64_sonoma:  "bc966cbf541f884c5d6c4c9b0ca0b727f610a7654d6bb815bff36c2fc81a43a7"
-    sha256 cellar: :any,                 sonoma:        "9680ebea8832ece0af07e962352f1fc0ceede0e143fb85cd83eecc245ca368d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d738c830fd2d2de67a4ba0e1e5fd2b05d6a0bc36ff45d4de3e1b60f29811af4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "413a3fe3adab1264bd7be2a066083bb55ebd166a341b173625a39180d1eb248b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "bffed42b459115c6831bdbde95eefa27cd94f1fb4c94c9d3517b6adedbe3d900"
+    sha256 cellar: :any,                 arm64_sequoia: "024fcad9eefff9dc23f9e2d3bc4dff2ad7a778ef25d72bd7d4df9c36178724b8"
+    sha256 cellar: :any,                 arm64_sonoma:  "8caabe204aa6435660cae20e86759c1299ec064784ec27c13291ffc37b18ca33"
+    sha256 cellar: :any,                 sonoma:        "832cc49b92ffd3add29a590f4933c55b7c7f2aca7f5fd449e902f39b56fe07a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "642805b73e8416c260f0dad1f6398b21d41625d534d16cf348763e9abfc55176"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d50bc9bb4fca7caca6e77f8952dc0b5983a6db852d7c3fa08a8c41055571ef48"
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.8" => :build # GHC 9.10 blocked by deps, e.g. https://github.com/protolude/protolude/issues/149
+  depends_on "ghc" => :build
+  depends_on "gmp"
   depends_on "libpq"
 
+  uses_from_macos "libffi"
   uses_from_macos "zlib"
 
   def install
+    # Workaround to build with GHC >= 9.10
+    args = ["--allow-newer=base,fuzzyset:text"]
+
     system "cabal", "v2-update"
-    system "cabal", "v2-install", "--ignore-project", *std_cabal_v2_args
+    system "cabal", "v2-install", "--ignore-project", *args, *std_cabal_v2_args
   end
 
   test do

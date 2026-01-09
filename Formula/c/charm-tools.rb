@@ -6,15 +6,15 @@ class CharmTools < Formula
   url "https://files.pythonhosted.org/packages/da/8c/26dcc9b99c6fbacd989f5d54b7a3a976cfa5b8ac26f6992d134091add085/charm_tools-3.0.8.tar.gz"
   sha256 "ad1e8aaf8f6aece19f3f7db1d45010b471be998b54a0b2861f24b62912f24b9d"
   license "GPL-3.0-only"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e7271889606167b76e7de85a519b97e71ae3bbc43e5b10e125362fa98fa18bc8"
-    sha256 cellar: :any,                 arm64_sequoia: "79082c5927154d56fb6f42d8f6a2149937f920a147bf4a588911def36603ef11"
-    sha256 cellar: :any,                 arm64_sonoma:  "ca0d5d2d9b0e7eac44a565428fff5f53bf6a396d9fdf2e100c9e2d92462c9630"
-    sha256 cellar: :any,                 sonoma:        "36764fd8ab18ef82741d0e523a1ca6a8319cf35cb3111ac9a1ca6ffa0951c117"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "159076c60891245671055dfc24fd9ea109c0489c428972e0e32d5a1d3617666c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e0754707a7a8cdf06ced0a741b8bdd4b5f5069a7a046d80e61944f681722558"
+    sha256 cellar: :any,                 arm64_tahoe:   "a065fed0b9021357b2f6b6f9f3a1c9a2ad731cfe88629ba683c39d20eb65934e"
+    sha256 cellar: :any,                 arm64_sequoia: "9c0d96beda5926da61c0ffa7f94db393db44bda611328962971c3bbe70d5050f"
+    sha256 cellar: :any,                 arm64_sonoma:  "6d4f6bc73eff910a2e6df68143a9e146c54b9d0194bced5d6f0bda2cd7a44cf2"
+    sha256 cellar: :any,                 sonoma:        "072d0161bda5704d8a154ae35cc4a42d8a397fff00ae068734763254213b9485"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34df22a9bde1a13a8aecb8986ffd1958b32fa01e30c6f0b11099ba6f19b40ad6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bedf6cfcecf48de65aed5c425350f5ca47505d7891bc832095fbcfff186a5b0"
   end
 
   depends_on "certifi"
@@ -69,8 +69,8 @@ class CharmTools < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
-    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
+    url "https://files.pythonhosted.org/packages/c1/e0/a75dbe4bca1e7d41307323dad5ea2efdd95408f74ab2de8bd7dba9b51a1a/filelock-3.20.2.tar.gz"
+    sha256 "a2241ff4ddde2a7cebddf78e39832509cb045d18ec1a09d7248d6bfc6bfbbe64"
   end
 
   resource "idna" do
@@ -189,13 +189,13 @@ class CharmTools < Formula
   end
 
   resource "types-setuptools" do
-    url "https://files.pythonhosted.org/packages/19/bd/1e5f949b7cb740c9f0feaac430e301b8f1c5f11a81e26324299ea671a237/types_setuptools-80.9.0.20250822.tar.gz"
-    sha256 "070ea7716968ec67a84c7f7768d9952ff24d28b65b6594797a464f1b3066f965"
+    url "https://files.pythonhosted.org/packages/00/07/d1b605230730990de20477150191d6dccf6aecc037da94c9960a5d563bc8/types_setuptools-80.9.0.20251223.tar.gz"
+    sha256 "d3411059ae2f5f03985217d86ac6084efea2c9e9cacd5f0869ef950f308169b2"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "vergit" do
@@ -204,8 +204,8 @@ class CharmTools < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/20/28/e6f1a6f655d620846bd9df527390ecc26b3805a0c5989048c210e22c5ca9/virtualenv-20.35.4.tar.gz"
-    sha256 "643d3914d73d3eeb0c552cbb12d7e82adf0e504dbf86a3182f8771a153a1971c"
+    url "https://files.pythonhosted.org/packages/78/49/87e23d8f742f10f965bce5d6b285fc88a4f436b11daf6b6225d4d66f8492/virtualenv-20.36.0.tar.gz"
+    sha256 "a3601f540b515a7983508113f14e78993841adc3d83710fa70f0ac50f43b23ed"
   end
 
   def install

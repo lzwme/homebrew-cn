@@ -1,8 +1,8 @@
 class Libtcod < Formula
   desc "API for roguelike developers"
   homepage "https://github.com/libtcod/libtcod"
-  url "https://ghfast.top/https://github.com/libtcod/libtcod/archive/refs/tags/2.2.1.tar.gz"
-  sha256 "5eb8e30d937840986c11c7baa22ffa93252aa4ac1824fe2c5fa1d760b3496a8e"
+  url "https://ghfast.top/https://github.com/libtcod/libtcod/archive/refs/tags/2.2.2.tar.gz"
+  sha256 "69f30fe65df1c84049a8f4f4b1ea0894191221da3a671be61832e33e75df898e"
   license all_of: [
     "BSD-3-Clause",
     "Zlib", # src/vendor/lodepng.c
@@ -11,19 +11,18 @@ class Libtcod < Formula
   ]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9b74aebec81d3ccba2c7272f3041b8336601c84d8e5769a9210b478f4ad4a527"
-    sha256 cellar: :any,                 arm64_sequoia: "9204636d7c64daf224117866ea8b740a85b47e99bc2acb50e824e75fc6d420f1"
-    sha256 cellar: :any,                 arm64_sonoma:  "e6413d51dc366f870b92bc423a06b0d723425d344302c13acdf841bde807b4b0"
-    sha256 cellar: :any,                 arm64_ventura: "d95b990a8dd6007006c88586e34a22945caaf30958c56f728d5cc6e135598055"
-    sha256 cellar: :any,                 sonoma:        "60136c98d9a40fb59ea7dd6c85cdf22931a992931dc1485bf93a1b0394610104"
-    sha256 cellar: :any,                 ventura:       "360ef3e725a8f627ca0d071f752cabbd63e6c9dd48381f55ad2ea30df9412f9b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da2ab505637a97abd3cc2e6451764cd25d7c753652c72f7e6eac05c2c6da1c45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff4a6678933d2be5dd6d4a525ecd2695f513db4e2993d7bea439ead2e8d2bf14"
+    sha256 cellar: :any,                 arm64_tahoe:   "3687d7b12bb271b81362baef090770acda1e6b7917e6321e0bae1dc3ac520e06"
+    sha256 cellar: :any,                 arm64_sequoia: "c08ce55939f22ea91ce2a5f195e5cc8640c29ea4e75dae51773dfd86b78750c7"
+    sha256 cellar: :any,                 arm64_sonoma:  "a696e891e5fc13f55b730c8c2e3c3a80d616fb0ec11cdfd7ffe3e74611b31bec"
+    sha256 cellar: :any,                 sonoma:        "2d82f0ef65eb6bd3ae04ac29c6c58051d43339ba50ef40ff1d46dce2547b31c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0066f7f25b53c3ef0f386b63b11a04c1c15bdf804348f0f893c20b696b7ec89a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d02c1e93daa5f1c0d1256280caa89e53b4825949778e5567ee537d406709160b"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "sdl3"
+  depends_on "utf8proc"
 
   uses_from_macos "zlib"
 
@@ -33,13 +32,17 @@ class Libtcod < Formula
   def install
     rm_r("src/vendor/zlib")
 
+    # We bypass brew's dependency provider to set `FETCHCONTENT_TRY_FIND_PACKAGE_MODE`
+    # which redirects FetchContent_Declare() to find_package() and helps find our `sdl3`.
+    # To re-block fetches, we use the not-recommended `FETCHCONTENT_FULLY_DISCONNECTED`.
     system "cmake", "-S", ".", "-B", "build",
+                    "-DHOMEBREW_ALLOW_FETCHCONTENT=ON",
+                    "-DFETCHCONTENT_FULLY_DISCONNECTED=ON",
+                    "-DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS",
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DCMAKE_INSTALL_INCLUDEDIR=#{include}",
-                    "-DCMAKE_TOOLCHAIN_FILE=",
                     "-DLIBTCOD_LODEPNG=vendored",
                     "-DLIBTCOD_STB=vendored",
-                    "-DLIBTCOD_UTF8PROC=vendored", # https://github.com/JuliaStrings/utf8proc/pull/260
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

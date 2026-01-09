@@ -6,11 +6,11 @@ class Cinecli < Formula
   url "https://files.pythonhosted.org/packages/df/c6/bc46bf8f30ce881a8822ce7b4ead93f9cfaee466852c78cab3f8931f5639/cinecli-0.1.2.tar.gz"
   sha256 "5e2e053a6b0f71070b8e7028dab69be47b8def42639b90f805f28da5a040a141"
   license "MIT"
+  revision 1
   head "https://github.com/eyeblech/cinecli.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "76ea5574fbf64de54361efcf07115cabfe29f2005bae3dc4e48f215efa486712"
+    sha256 cellar: :any_skip_relocation, all: "19505474657e7e7403dc03a0a718c6a4f0d300484cf8f841eb7b5a726bbda3f8"
   end
 
   depends_on "certifi" => :no_linkage
@@ -64,8 +64,8 @@ class Cinecli < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/6d/c1/933d30fd7a123ed981e2a1eedafceab63cb379db0402e438a13bc51bbb15/typer-0.20.1.tar.gz"
-    sha256 "68585eb1b01203689c4199bc440d6be616f0851e9f0eb41e4a778845c5a0fd5b"
+    url "https://files.pythonhosted.org/packages/36/bf/8825b5929afd84d0dabd606c67cd57b8388cb3ec385f7ef19c5cc2202069/typer-0.21.1.tar.gz"
+    sha256 "ea835607cd752343b6b2b7ce676893e5a0324082268b48f27aa058bdb7d2145d"
   end
 
   resource "typing-extensions" do
@@ -74,8 +74,8 @@ class Cinecli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

@@ -1,10 +1,20 @@
 class Echidna < Formula
   desc "Ethereum smart contract fuzzer"
   homepage "https://github.com/crytic/echidna"
-  url "https://ghfast.top/https://github.com/crytic/echidna/archive/refs/tags/v2.3.0.tar.gz"
-  sha256 "6fb673b10fc22068f74529ceff4e10b779f9489acaf189148fcb48f317606bf8"
   license "AGPL-3.0-only"
   head "https://github.com/crytic/echidna.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/crytic/echidna/archive/refs/tags/v2.3.0.tar.gz"
+    sha256 "6fb673b10fc22068f74529ceff4e10b779f9489acaf189148fcb48f317606bf8"
+
+    # GHC 9.10 fixes
+    # https://github.com/crytic/echidna/pull/1500
+    patch do
+      url "https://github.com/crytic/echidna/commit/e302a0ab768d382644be4895d7a3aab60942952d.patch?full_index=1"
+      sha256 "a0ed8330757f925f7832872ac33a9912f3dbdb52c63c363f090eacd5214ede34"
+    end
+  end
 
   livecheck do
     url :stable
@@ -20,7 +30,7 @@ class Echidna < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "40ff247be0dee656ee1a7b0bbfc561abf0c558ab87c89a1b314432ccb11b135a"
   end
 
-  depends_on "ghc@9.8" => :build
+  depends_on "ghc@9.10" => :build
   depends_on "haskell-stack" => :build
   depends_on "solidity" => :test
 

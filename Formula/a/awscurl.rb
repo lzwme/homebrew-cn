@@ -6,11 +6,11 @@ class Awscurl < Formula
   url "https://files.pythonhosted.org/packages/f0/53/68500d2e61aff7549f878a9227eea5c80eaf6ffcad7c134c576360b1bae7/awscurl-0.36.tar.gz"
   sha256 "9eb9d4949616d90dd7bf0d12a67eb3e1d3487bf08d75a7555d979811e5da1cb4"
   license "MIT"
-  revision 3
+  revision 4
   head "https://github.com/okigan/awscurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3d1b74eee6601ba3f8bf47a5416d4f596b7411939da707cbf301767ae2a86b77"
+    sha256 cellar: :any_skip_relocation, all: "d591ce8c32173fb4db02ac1b857588730cd2dc62565c115f62ef444e41262046"
   end
 
   depends_on "certifi" => :no_linkage
@@ -22,8 +22,8 @@ class Awscurl < Formula
   pypi_packages exclude_packages: ["certifi", "cryptography"]
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/5c/b7/dec048c124619b2702b5236c5fc9d8e5b0a87013529e9245dc49aaaf31ff/botocore-1.42.4.tar.gz"
-    sha256 "d4816023492b987a804f693c2d76fb751fdc8755d49933106d69e2489c4c0f98"
+    url "https://files.pythonhosted.org/packages/12/d7/bb4a4e839b238ffb67b002d7326b328ebe5eb23ed5180f2ca10399a802de/botocore-1.42.24.tar.gz"
+    sha256 "be8d1bea64fb91eea08254a1e5fea057e4428d08e61f4e11083a02cafc1f8cc6"
   end
 
   resource "charset-normalizer" do
@@ -67,8 +67,8 @@ class Awscurl < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

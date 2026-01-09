@@ -1,18 +1,18 @@
 class CargoDeny < Formula
   desc "Cargo plugin for linting your dependencies"
   homepage "https://github.com/EmbarkStudios/cargo-deny"
-  url "https://ghfast.top/https://github.com/EmbarkStudios/cargo-deny/archive/refs/tags/0.18.9.tar.gz"
-  sha256 "e08c9e54c9493a6e8c2b7ee9ffa73909d33e1b22e49696102aee8559fafa7c93"
+  url "https://ghfast.top/https://github.com/EmbarkStudios/cargo-deny/archive/refs/tags/0.19.0.tar.gz"
+  sha256 "0d4d6972b9ab8ba939a7d26f5c5fd0227dc9d4e8579f6baec6f4831f50155a1d"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/EmbarkStudios/cargo-deny.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "883b5f6e31c52ce16b1f5e38b5e023823bf014b3de26f4a894482306732f084d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5524b6117160d4b85247fe782c97a658615fac9fd05068a6d5bd30233a53351"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b6667570ade75cb8b30d3ee84dcad8695cb3bcccf154cfb05fb995e03b2cabd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "69c18d63a3a855854edfc810b5b8f26f34a08c13594732a061e0e8218a379c00"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "762800f9f180f726e1d5c05e0a00cd93b192d4c693ad281ece15857d8f437d23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11fec7ce1285c9c94f672fbcb1b580b46988137cf111cedd959641a2e3bc8195"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95107dd182252ad629558292d3b32470809154f25154ef6c307e1450b5953cd8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3edce97742a97b3523c737ea8ac74c675a61246706770de32d4d8d7fa20623c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "56ddf4a229ce19e1b0b6857e8b65cae0c751ef3259c6ac5d2174c46466388b02"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e82bb74957324383560f1e89fc07add19141c2c9f30b55a96c9f6dd8d8885f2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc2324f01b058b4532d935f752014436b7ececc979914d4afb7e74af6a621cba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "151b560a8a62a72480a81b95b2fdef54e6533c4a59064674260e08961e74dad1"
   end
 
   depends_on "pkgconf" => :build

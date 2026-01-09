@@ -6,15 +6,15 @@ class Bagels < Formula
   url "https://files.pythonhosted.org/packages/6e/04/e19a99e357221cb41e1e2f0352172e282ac8195fa2418b776345497fb260/bagels-0.3.12.tar.gz"
   sha256 "c3ebd4a727ddd62450528676a1ce3e475f92bd36edfed5f9c0b110bb24592608"
   license "GPL-3.0-or-later"
-  revision 4
+  revision 5
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c3b995908eccbd43319faa0279607d006879e3267f3c8a657317d0ec800ce465"
-    sha256 cellar: :any,                 arm64_sequoia: "f8125a1817e7c67ff2c1b616d5a4241b5c420da66fd9ce15f85ae202359ec1ff"
-    sha256 cellar: :any,                 arm64_sonoma:  "94634b328a899105e12f026723b362d866c262c54c1aca27d11eabdee4cc5100"
-    sha256 cellar: :any,                 sonoma:        "8c89202159f9f7fd3c82e1c379bc1ea10a4837cb20d60241c11154d8661d07bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8865bac5ff43f2290dc3da9db4830a4447415d6cf8451319d93cacfc285a29c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12fd9170776f1a4010308eb76051d1068bf3c88896b4891f8f7da04f8c8fb7a3"
+    sha256 cellar: :any,                 arm64_tahoe:   "34b819af69e4617154829eebe19f45b14375136188a6a2ba18a054786317300d"
+    sha256 cellar: :any,                 arm64_sequoia: "5a2a3e80ea157b3c444339d6974875924c3a92a5835ae3793f59731736f6d96e"
+    sha256 cellar: :any,                 arm64_sonoma:  "629e4ff77e17fb4dc5c31e1c0125e30a7738407b97769825f818fa9f9f30500c"
+    sha256 cellar: :any,                 sonoma:        "3fc5c9fc1b1011c223bfbb164fb8f1454a55354ab8545ba14c1d478c263a4567"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd857db335b77a10acf811ab7a9aeb04237d0a4736c1904da7cdc114736552cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74274cfd2a7f3d9bb4d38596abba801c4391d50a0d1209785d3bb3ba73d056ae"
   end
 
   depends_on "certifi" => :no_linkage
@@ -196,8 +196,8 @@ class Bagels < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "werkzeug" do

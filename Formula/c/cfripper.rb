@@ -6,14 +6,15 @@ class Cfripper < Formula
   url "https://files.pythonhosted.org/packages/7d/98/6caba75675f70f42ecc226b6d5c160a98b6631f1009b407c282a787592fa/cfripper-1.19.1.tar.gz"
   sha256 "89578fdb7c83ea5d6bf328b1b014352f8a57059e7f36730fbc94a17a78379bfa"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ebf401524e9da9307f2b168eeba1934531eb1771b7a6af639809cc0643dbafe3"
-    sha256 cellar: :any,                 arm64_sequoia: "fad654926119779dc98f19efd5ce3ec197ea63d38eb3d6abc1c654d1e6b93c55"
-    sha256 cellar: :any,                 arm64_sonoma:  "5cf38b852743e5fd9d2938f061a28d046eb56a5c63e366ad983a3fc9f25b9ce8"
-    sha256 cellar: :any,                 sonoma:        "fc3032fbbc7a725e9df80d0e6aed6cf7d987d961258de71bdbde40418156152a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f69ab2d657ff36b1fb560a56cf78a3e17dc0a3fabbaa9af94f76e66a78e502fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdb9851611e9cec913a4fff11ae50e55bb88b9b50071fbc8d6d9d35b89d5a15a"
+    sha256 cellar: :any,                 arm64_tahoe:   "41c727404875b0202db76056f481ce3716d2b8f3ad05258bc51449054f600d5d"
+    sha256 cellar: :any,                 arm64_sequoia: "0be932d54e96f9feef4554ba79d6a156022c68e8845acf4154662feb1d9458d1"
+    sha256 cellar: :any,                 arm64_sonoma:  "04ff6cbd9af7a7ce3f761797dbacf34bbe1f452e58e0eb0b1796361cedda01bb"
+    sha256 cellar: :any,                 sonoma:        "bddfb07fa0a6fd71a593fc29d6d49042bdf24750af507595bb65537896e3d438"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "213d09a6c9ec686414c5b12cf94f29aa00ce764d76eb698883f73be97ad1a2cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d4aad0819170d90afcf74f4d16dd8df7f664d3133a59b731455047449be4b04"
   end
 
   depends_on "libyaml"
@@ -23,13 +24,13 @@ class Cfripper < Formula
   pypi_packages exclude_packages: "pydantic"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/a0/82/66f1cd7ce283ab717c96700899e9d128927abda236bd96019747f45ad53d/boto3-1.42.15.tar.gz"
-    sha256 "d673c9b6bb9e293e028e354de6701351f1881e3fbeb25d739dd33c4940a30929"
+    url "https://files.pythonhosted.org/packages/ee/21/8be0e3685c3a4868be48d8d2f6e5b4641727e1d8a5d396b8b401d2b5f06e/boto3-1.42.24.tar.gz"
+    sha256 "c47a2f40df933e3861fc66fd8d6b87ee36d4361663a7e7ba39a87f5a78b2eae1"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/be/ae/80c8689a846066156117ad76cdfca52003fb9d3f1f5de38535f4aba9bf6c/botocore-1.42.15.tar.gz"
-    sha256 "504c548aa333728c99a692908d3e6acb718983585ad7a836d2fab9604518a636"
+    url "https://files.pythonhosted.org/packages/12/d7/bb4a4e839b238ffb67b002d7326b328ebe5eb23ed5180f2ca10399a802de/botocore-1.42.24.tar.gz"
+    sha256 "be8d1bea64fb91eea08254a1e5fea057e4428d08e61f4e11083a02cafc1f8cc6"
   end
 
   resource "cfn-flip" do
@@ -83,8 +84,8 @@ class Cfripper < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

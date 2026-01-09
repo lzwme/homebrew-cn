@@ -17,8 +17,6 @@ class Ad < Formula
 
   depends_on "rust" => :build
 
-  conflicts_with "netatalk", because: "both install `ad` binaries"
-
   def install
     system "cargo", "install", *std_cargo_args
     man.install buildpath/"docs/man/ad.1"

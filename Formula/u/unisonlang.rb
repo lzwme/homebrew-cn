@@ -4,9 +4,8 @@ class Unisonlang < Formula
   license "MIT"
 
   stable do
-    url "https://github.com/unisonweb/unison.git",
-        tag:      "release/1.0.2",
-        revision: "23b831f6e3736d54a0516940dec3f56d143b9015"
+    url "https://ghfast.top/https://github.com/unisonweb/unison/archive/refs/tags/release/1.0.2.tar.gz"
+    sha256 "e650cdf2eeb1cae806b4fcba8f08184c0b9541ae4a30274f212c3ce70ded1c7b"
 
     resource "local-ui" do
       url "https://ghfast.top/https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/1.0.2.tar.gz"
@@ -42,7 +41,7 @@ class Unisonlang < Formula
 
   depends_on "elm" => :build
   depends_on "elm-format" => :build
-  depends_on "ghc@9.6" => :build
+  depends_on "ghc@9.6" => :build # GHC 9.10 PR: https://github.com/unisonweb/unison/pull/6046
   depends_on "haskell-stack" => :build
   depends_on "node" => :build
 

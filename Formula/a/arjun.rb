@@ -6,10 +6,10 @@ class Arjun < Formula
   url "https://files.pythonhosted.org/packages/04/22/c5b969720d2802de2248c2aac0414ee5ae234887cfe150564d591c73fb23/arjun-2.2.7.tar.gz"
   sha256 "b193cdaf97bf7b0e8cd91a41da778639e01fd9738d5f666a8161377f475ce72e"
   license "AGPL-3.0-only"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f1809d5387de02b3e167d186c9f6ed964e9a6ac57ae564e91a33500cb5f7d734"
+    sha256 cellar: :any_skip_relocation, all: "0789abd9244f990ad66cb3ab01e8bdf64f5cd5546d2b5de1d18b1bc1939076a0"
   end
 
   depends_on "certifi"
@@ -47,8 +47,8 @@ class Arjun < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

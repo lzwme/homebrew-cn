@@ -3,13 +3,13 @@ class Scdl < Formula
 
   desc "Command-line tool to download music from SoundCloud"
   homepage "https://github.com/scdl-org/scdl"
-  url "https://files.pythonhosted.org/packages/ec/e1/a7bd908761bb243faa259d946045f10f8957891f7be71f4179aa5df7c651/scdl-3.0.1.tar.gz"
-  sha256 "71b35748c1f85294721bb5390acbb7213b52eefa77c4cff255dc9845e2dc1c85"
+  url "https://files.pythonhosted.org/packages/b8/7e/a96edba727832f06d513975f0f791c6c085d7e6fde4402b79e7ac3302606/scdl-3.0.2.tar.gz"
+  sha256 "b89bf9dd7e1e292a9a534a668b1df0c67de6a3fe82dc6a5275899aea324140a3"
   license "GPL-2.0-only"
   head "https://github.com/scdl-org/scdl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "940baabf676ea5cc0cf64ae20e288640674ea224015f331c9572cdd37a6c4b17"
+    sha256 cellar: :any_skip_relocation, all: "74ab5cdcf20dffd1b1952d1a9b6bb628bf9ca773bfe3cf893c44412b4af8fe46"
   end
 
   depends_on "certifi" => :no_linkage
@@ -59,13 +59,13 @@ class Scdl < Formula
   end
 
   resource "soundcloud-v2" do
-    url "https://files.pythonhosted.org/packages/3b/bb/ba779b3cb9597ddf88bb7b31bd6d2a984f972ee3a8f198d32935540058a7/soundcloud-v2-1.6.0.tar.gz"
-    sha256 "462513146c0ffc9ec729c1c616f4f72b0dcd33f81478c64207f265f072e78243"
+    url "https://files.pythonhosted.org/packages/a0/a3/5df894f113268c456d3e1ad94a8530ff5a39931a81449507f4627d67dcde/soundcloud_v2-1.6.1.tar.gz"
+    sha256 "b6646e7883a9986a92bdfb6caded9ca65453899f90517e47ecf82d21ca0ae627"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "yt-dlp" do

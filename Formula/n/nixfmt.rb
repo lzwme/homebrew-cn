@@ -1,18 +1,18 @@
 class Nixfmt < Formula
   desc "Command-line tool to format Nix language code"
   homepage "https://github.com/NixOS/nixfmt"
-  url "https://ghfast.top/https://github.com/NixOS/nixfmt/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "7feef8f70f2f565c5fae54fa5ca99ca9dcc80603d593386885117b78ee6e04a3"
+  url "https://ghfast.top/https://github.com/NixOS/nixfmt/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "818746d03e9027b55c592fea15375bef03f0b59a2158739a4917396a2b476003"
   license "MPL-2.0"
   head "https://github.com/NixOS/nixfmt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d373613d9e5347e722ee05880bcb062bfdaae1bc6ec8c7801ece89bd192764ee"
-    sha256 cellar: :any,                 arm64_sequoia: "77aacbc49e2be610768d8dfdba87e3eb0e2b72ce0ad9e1bed50b401e1ef66632"
-    sha256 cellar: :any,                 arm64_sonoma:  "f9022748f44c472d48cf51e18e9c5c9d1dad9a0d74fdbe1b4bfb06b96abe3fbf"
-    sha256 cellar: :any,                 sonoma:        "4a0bfdf2df6b2bdbe2c8219bd96a7ece1f797ebe18f405b8b377adbc711eeb2b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3882c4283b966bc4bf7ce4c2a2513ebc602d800fcf04cd7b5ef9370d0f58aa7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b57857acee4f03b8ee5be8499bd2c465b0eac166ddb08029628aa2e9ab070b32"
+    sha256 cellar: :any,                 arm64_tahoe:   "ded0d88ed29c6af0ad4875a7640519663f37e25e5e923c12fcf81d880513009e"
+    sha256 cellar: :any,                 arm64_sequoia: "4b211b61de67f43bea63bc8b6f41051810fd93e7a047598f2305b8e2a7cd42bc"
+    sha256 cellar: :any,                 arm64_sonoma:  "24d0785ae425f1096e662be0bd948c6edd5207d4b3d981b201faef7b1f40fd9d"
+    sha256 cellar: :any,                 sonoma:        "c1e7686fa27a56b9079b05087ee0fa0a8f242d647ae278e6ecb5d7d1c6a62c61"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18ce5920d0f0f821e531adceba0e53944cca874c8d366641c098a242e19b108b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbce491b522c3775bc6ac974960e238bb2e92d3b0fd43ef5ce9f682dfded22cb"
   end
 
   depends_on "cabal-install" => :build

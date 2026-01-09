@@ -3,17 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/f0/44/b8d89d8a016cf333cdf60b1eaf22a4e799a0fc9a2f04c05126405ba2448e/mycli-1.43.1.tar.gz"
-  sha256 "7d46f0e08db8aa90f2ba34014363485404dac33ebb98123ca2b662e439f6700d"
+  url "https://files.pythonhosted.org/packages/83/90/be2cf35ad5133fdd64c56e094bd95582612ef06048e0a4fb52a4f4d7cc16/mycli-1.44.0.tar.gz"
+  sha256 "550ff5a2c4500dbf5600fd525f811a9632f2c2b9e771a5739e161e0f5f93938b"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "23fe68953c7ab8de32c8d0f659c827aeb16acdf3656db66640ff15275ddf975b"
-    sha256 cellar: :any,                 arm64_sequoia: "6eeeed43633bafe9704f8c0d46bd424d4ba36b78c1e8a597f0512e3b1fc08a3d"
-    sha256 cellar: :any,                 arm64_sonoma:  "f8856f37653ea6cec74e431d6db5a5d39625e49ffc240315547bc78188db05a5"
-    sha256 cellar: :any,                 sonoma:        "8ed2747d2b23858edad7d31bbb3d56552a7e4c101a5f54163c406e2ab00c9429"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4dfa41d820b2999eb482e3731b06d62cbf28ba5e777dd9162d2fdb7e7bf726a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60141fcca9341051c78b0c3ed5c3b32fd0cd77c7e0a3f9be2b7c074c6e9f33c1"
+    sha256 cellar: :any,                 arm64_tahoe:   "ebcebfc898dad3e26768737c9cfbaa52dde67087c61fd90b83fbef47b9b0e297"
+    sha256 cellar: :any,                 arm64_sequoia: "0914788cd628f652b148e3bb48d8ec9015bffcc4602ae67b661d0beb9d563d44"
+    sha256 cellar: :any,                 arm64_sonoma:  "66a94bb3f02ce59831c734fad12fef659fe214a42b59ebc075d26f85f3215398"
+    sha256 cellar: :any,                 sonoma:        "94c40fb406b390f68b51cc6eecc0fb1ec3f2763784e1ac3388271910e6ac3105"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a3d8ecce53fb16f2da99483b17e7622c7f93a5c277255719a913801b8177560"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ac6281d7f6536b0a027c33835f64f4f6c3d3a8023ad302b1d398314ac841f81"
   end
 
   depends_on "rust" => :build # for jiter, sqlglotrs
@@ -29,8 +29,8 @@ class Mycli < Formula
                 exclude_packages: %w[certifi cryptography pydantic]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
-    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
+    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
+    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
   end
 
   resource "cli-helpers" do

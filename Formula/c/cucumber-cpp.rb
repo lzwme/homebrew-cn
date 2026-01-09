@@ -2,20 +2,17 @@ class CucumberCpp < Formula
   desc "Support for writing Cucumber step definitions in C++"
   homepage "https://cucumber.io"
   url "https://github.com/cucumber/cucumber-cpp.git",
-      tag:      "v0.7.0",
-      revision: "ceb025fb720f59b3c8d98ab0de02925e7eab225c"
+      tag:      "v0.8.0",
+      revision: "38bd34a3caaeb3fa6ab80d09b323e1a9d6fe24b7"
   license "MIT"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "a84c27a7c5c122364e12ee74e3140a6ccd22656fc6df6da1cf8dc29b3161cf3b"
-    sha256 cellar: :any,                 arm64_sequoia: "35387bbcd3b131388528b44ac54f5d695d1fbc9c927d3b172d4793cba0c0ebb0"
-    sha256 cellar: :any,                 arm64_sonoma:  "ff5c68f821cd56afe208298382d865e998f272cf64e8c9810a6154d570317176"
-    sha256 cellar: :any,                 sonoma:        "9bf81577eead937163e41fcfa5c32bc9d913bca9364a3d5da546cef5a7fd3252"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "29733451777a0846cf111ee7f5c165009c1a7ae22543252252282006a997b046"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4aced1fbb5e0c5eefff25bd4a29efdd7a719e1d14e68f915e89d1c04eef0659e"
+    sha256 cellar: :any,                 arm64_tahoe:   "35223aa4c6b55a58d5791ee51e2ae47359e11a8c4cf4512227e13150d443a4e3"
+    sha256 cellar: :any,                 arm64_sequoia: "22354d052564f4bf8e49d62f5b99f1789c39fadba6e1ae42aaf7d44ad4fd7a20"
+    sha256 cellar: :any,                 arm64_sonoma:  "c99200855796c764cf8fb723fe2f70ba8a4c53dfe5b880ee3c2fe2ac85dbfc68"
+    sha256 cellar: :any,                 sonoma:        "3b9169520a6eb955a10b97cdcd5de61709a49df4b047a60fb52db09e03a0b83b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18c389442081099600284c429bcb1693cdbde8af1c2705750d4d358918e4cbfd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f94c8fe6c5d816f8b8a8e7cb6885d032e8a27431827ad6fd96aea155d37bc66c"
   end
 
   depends_on "cmake" => :build
@@ -24,19 +21,8 @@ class CucumberCpp < Formula
   depends_on "asio"
   depends_on "tclap"
 
-  # Backport support for Asio 1.33+
-  patch do
-    url "https://github.com/cucumber/cucumber-cpp/commit/da6345bd1d0b0ac4cf4bc71866c98d55c72522a8.patch?full_index=1"
-    sha256 "1ad7f6513ee2d41c5625933b05249704c14484a7029acd330c5f665a11e6a66f"
-  end
-
   def install
-    # TODO: Remove Cuke args on next release as they are the defaults
     args = %w[
-      -DCUKE_ENABLE_BOOST_TEST=OFF
-      -DCUKE_ENABLE_GTEST=OFF
-      -DCUKE_ENABLE_QT=OFF
-      -DCUKE_TESTS_UNIT=OFF
       -DBUILD_SHARED_LIBS=ON
     ]
 
