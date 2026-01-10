@@ -6,16 +6,15 @@ class Gitingest < Formula
   url "https://files.pythonhosted.org/packages/d6/fe/a915f0c32a3d7920206a677f73c185b3eadf4ec151fb05aedd52e64713f7/gitingest-0.3.1.tar.gz"
   sha256 "4587cab873d4e08bdb16d612bb153c23e0ce59771a1d57a438239c5e39f05ebf"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "7f52978c3b37489c3a95c7f50fad5257a1770c26af581b20a5f650c68ba348e1"
-    sha256 cellar: :any,                 arm64_sequoia: "66efc4439daaaae90bdb59e4dcb6a2cf82b0ee82ef34fb507639f04e830cf064"
-    sha256 cellar: :any,                 arm64_sonoma:  "fa25a9ae5c4b8f97243de275bb837caca579faf9bf8204773a003e856a02e3a4"
-    sha256 cellar: :any,                 sonoma:        "038fc3194d4a00986e318863315db13e68fa33235a2391566f9ae55f5bf39076"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c11fc5ecddd82542cefba042bdd9a85c3863febfbf5f82a651fabb3f86839c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b51c63a078bc3653a776dba89f31a16e517ff193a55d5f98c16a3658eefb04d"
+    sha256 cellar: :any,                 arm64_tahoe:   "4e65cfedc333cadcb9d97d1fb3e19868979e74860cbae53b173dd0659e82a323"
+    sha256 cellar: :any,                 arm64_sequoia: "bf816d5deaba2dcdec23b21c860befa0fbb8ccba7d4ddb855cdae34d7ba7c82a"
+    sha256 cellar: :any,                 arm64_sonoma:  "912a9c607110aa9d02ce0c0602eacbee4f15b6b64c762ed95267687487ff07f3"
+    sha256 cellar: :any,                 sonoma:        "1e33ef84ac972359b717dbf49f5615eb6fd692eb0fd96dfced6c278cf97d70b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57a2b5a757a14e3543fb2c6d353931163b239c92a1732430f06337de1cdbfc65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74118d003cadaef01ff68bb83bb5cc0dadbc172d6c7c58611ea92bacab5026a8"
   end
 
   depends_on "rust" => :build # for tiktoken
@@ -26,8 +25,8 @@ class Gitingest < Formula
   pypi_packages exclude_packages: ["certifi", "pydantic"]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
-    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
+    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
+    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
   end
 
   resource "charset-normalizer" do
@@ -66,8 +65,8 @@ class Gitingest < Formula
   end
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/ca/bc/f35b8446f4531a7cb215605d100cd88b7ac6f44ab3fc94870c120ab3adbf/pathspec-0.12.1.tar.gz"
-    sha256 "a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712"
+    url "https://files.pythonhosted.org/packages/41/b9/6eb731b52f132181a9144bbe77ff82117f6b2d2fbfba49aaab2c014c4760/pathspec-1.0.2.tar.gz"
+    sha256 "fa32b1eb775ed9ba8d599b22c5f906dc098113989da2c00bf8b210078ca7fb92"
   end
 
   resource "python-dotenv" do
@@ -96,8 +95,8 @@ class Gitingest < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

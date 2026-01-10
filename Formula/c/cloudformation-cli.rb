@@ -6,15 +6,15 @@ class CloudformationCli < Formula
   url "https://files.pythonhosted.org/packages/12/ed/36f14b63957e99d9f2cbb5ac5671eed9fb93569e57add60534d47fc630e4/cloudformation-cli-0.2.39.tar.gz"
   sha256 "63bd83ad0b40b6ad21983dfe05f0717aeaa36cb3f935ef6825f8ca73d7a8e5a7"
   license "Apache-2.0"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c426a6306967ef2b986767acdd85eb33e02f829790ef31c2a1158b3ae2b00461"
-    sha256 cellar: :any,                 arm64_sequoia: "77dc0d7acba72e26f6cb8f24ce914d56e6943d56b43320f6286f16e24b0009ed"
-    sha256 cellar: :any,                 arm64_sonoma:  "de1fdbf5f6181745718694d091248f6aa6854e7de3d0fcc11e1aba93eeb66b2e"
-    sha256 cellar: :any,                 sonoma:        "0df7d3f7daa38a0a5d775c61018dc5d17b01ec447a9ea7c867ab51a601fbfda8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3bc9df4b67392f89675ada5274e8c5a3588867600e91ac698d4c1908e49fbfdc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d67ebe02c75d2fd9bb5c6ce3a480b0015d528123f6377dbe86b33f136489bc2"
+    sha256 cellar: :any,                 arm64_tahoe:   "59cd87c4c3da5bf2b4448fe6d435e1927989b6d10588964a9ab512814b06f913"
+    sha256 cellar: :any,                 arm64_sequoia: "ec1a27fb82b87ad00f6dccbebfb5f52c320e823a6f3fa5c849d030ba3cf2200e"
+    sha256 cellar: :any,                 arm64_sonoma:  "9a7627e3c7bd64e9639d955c67b1f3693a073a2273dfd7e4e734d3474452e8e2"
+    sha256 cellar: :any,                 sonoma:        "a8e8eb009fd346294c1ebb18409409f3aeea7c992aa02178092542a45d1095af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5535002bf1d8703ce0b4437f4d2ea18ec9295c40351a206f701bb59a12f01e03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "adae890ec67a3588467608b15377ed01c08225f5045f4e979603b228f5cecb66"
   end
 
   depends_on "go" => :test
@@ -253,8 +253,8 @@ class CloudformationCli < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/45/ea/b0f8eeb287f8df9066e56e831c7824ac6bab645dd6c7a8f4b2d767944f9b/werkzeug-3.1.4.tar.gz"
-    sha256 "cd3cd98b1b92dc3b7b3995038826c68097dcb16f9baa63abe35f20eafeb9fe5e"
+    url "https://files.pythonhosted.org/packages/5a/70/1469ef1d3542ae7c2c7b72bd5e3a4e6ee69d7978fa8a3af05a38eca5becf/werkzeug-3.1.5.tar.gz"
+    sha256 "6a548b0e88955dd07ccb25539d7d0cc97417ee9e179677d22c7041c8f078ce67"
   end
 
   def install

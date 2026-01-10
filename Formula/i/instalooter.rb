@@ -6,11 +6,10 @@ class Instalooter < Formula
   url "https://files.pythonhosted.org/packages/30/13/907e6aaba6280e1001080ab47e750068ffc5fb7174203985b3c9d678e3f2/instalooter-2.4.4.tar.gz"
   sha256 "fb9b4a948702361a161cc42e58857e3a6c9dafd9e22568b07bc0d0b09c3c34a9"
   license "GPL-3.0-or-later"
-  revision 14
+  revision 15
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "70dae1557bbe7466db51d87f095ef21219f1ede14454a866f8399dbdbb2eb785"
+    sha256 cellar: :any_skip_relocation, all: "088c426ea8b0ca8b5da21f7b37d65897fdfc1dee860c319c080ea1bfebb400d9"
   end
 
   depends_on "certifi" => :no_linkage
@@ -90,8 +89,8 @@ class Instalooter < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "verboselogs" do

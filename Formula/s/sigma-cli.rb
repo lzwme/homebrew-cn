@@ -3,18 +3,18 @@ class SigmaCli < Formula
 
   desc "CLI based on pySigma"
   homepage "https://github.com/SigmaHQ/sigma-cli"
-  url "https://files.pythonhosted.org/packages/c5/e5/5f37f62b21db05d63cf00838f7453e3ad15b79a8dcef7297e72a14213f12/sigma_cli-2.0.0.tar.gz"
-  sha256 "cd1de2e7cca39d5d45f3073e543d37594eed38b46b0276932755047cff44e6b3"
+  url "https://files.pythonhosted.org/packages/68/0b/15ac402f81a252baf60040ede4704983e37301011c62d487741b6a7cb3cd/sigma_cli-2.0.1.tar.gz"
+  sha256 "b507993dd6418bd2a0b5a9efac27101c75d0f90ccae59c604e771a5d55bc5375"
   license "LGPL-2.1-or-later"
   head "https://github.com/SigmaHQ/sigma-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a65b90bccb68a036394e47be38a735396bd09adbd00fec51233e55b952b9503c"
-    sha256 cellar: :any,                 arm64_sequoia: "9e98528f420514a072857def02381fd6c8c6d53e417185d2331ea7643eb7a123"
-    sha256 cellar: :any,                 arm64_sonoma:  "d895264e03ac2de69c88c71749a9216125292a0085e7448bb02a2e2516b42078"
-    sha256 cellar: :any,                 sonoma:        "7c877de32f2727cc7d1a3a8cd7adc582703c3a59bd9d87e1a2326c2678bd9311"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c198a1aea7bb9f7db52cda3b11e6b47e50a72a36ac347a056f6fdcaef7d009ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fc5a09a839b566c32130b4883a6c00b5f07969867eba34ab90bdc32cba71d6e"
+    sha256 cellar: :any,                 arm64_tahoe:   "ae4050235b947f2f823cd488e9c960202e231263d64d529eb4db0b6d1b3b262e"
+    sha256 cellar: :any,                 arm64_sequoia: "c7c3a4d197d228fc63e1258db7fab77622a0082048a3d7d28a6b73da6a60688b"
+    sha256 cellar: :any,                 arm64_sonoma:  "66fb1692707b7367e2f64f0cd9c086ea4e5b36edf417b1af9218d8778e1fedc1"
+    sha256 cellar: :any,                 sonoma:        "38276a168023ccf6cb446fb36df032cdbab99ff3d084008eaed9e123e9cb8f31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb2a32da7bfbabcaa35b10f9b0821081cf0d87c360227ad443eede61313603f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cfb02de6804a9ef67ac757ff670d43c2e47ae362b241ad398c2ca68d9ec57e2"
   end
 
   depends_on "certifi" => :no_linkage
@@ -78,13 +78,13 @@ class SigmaCli < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/f2/a5/181488fc2b9d093e3972d2a472855aae8a03f000592dbfce716a512b3359/pyparsing-3.2.5.tar.gz"
-    sha256 "2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6"
+    url "https://files.pythonhosted.org/packages/33/c1/1d9de9aeaa1b89b0186e5fe23294ff6517fce1bc69149185577cd31016b2/pyparsing-3.3.1.tar.gz"
+    sha256 "47fad0f17ac1e2cad3de3b458570fbc9b03560aa029ed5e16ee5554da9a2251c"
   end
 
   resource "pysigma" do
-    url "https://files.pythonhosted.org/packages/75/74/4fe9979c92fe09f1f5555750b16db83af2f0acd18061776d52be526a223f/pysigma-1.0.2.tar.gz"
-    sha256 "81ead98efac4aea4f861545659ee5bc70c44b1c7c55651b71f40c5bf3293bc20"
+    url "https://files.pythonhosted.org/packages/4d/8c/6a8fef80ac86295eee28364d45168e8a1ed0940bf1c10c442c3bead579bf/pysigma-1.1.0.tar.gz"
+    sha256 "4ff157f2ce0d24beacd89176b74643aab72e6b32f10966e731ab0ddff4f96451"
   end
 
   resource "pyyaml" do
@@ -108,8 +108,8 @@ class SigmaCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
-    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "wcwidth" do

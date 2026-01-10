@@ -6,16 +6,16 @@ class HttpPrompt < Formula
   url "https://files.pythonhosted.org/packages/bf/e2/bc5b0df107afcac65fde7015df48cbe9b4d877d1d0818203544ed1a41d4c/http-prompt-2.1.0.tar.gz"
   sha256 "eee71a00fed0b8a2a35bb338b269be7a20e8a1a6f6465a65561d76a21521e7f3"
   license "MIT"
-  revision 14
+  revision 15
   head "https://github.com/httpie/http-prompt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8aaff5971acd677f815cd2f966c43e1b2f6362d7ca8db1792c30ba871edd7c45"
-    sha256 cellar: :any,                 arm64_sequoia: "ec400da3a8fc7cf7e7d9751038e41f87ef8a232ee8252aa0d3f57bdff204c5a0"
-    sha256 cellar: :any,                 arm64_sonoma:  "21af7ae503024529c1be3c855342d44a6c83bb7d2e66028bf9623c7be7ea198d"
-    sha256 cellar: :any,                 sonoma:        "c238b6d55b1d5b958182607e90df1ecc86ca8815b0c1806ef600324800de995a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1842a94aa78e07dec634e3dc64dc86f90da8fa5edb94a2acebecd39c9515c20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a27b21bd491b5dfb67511eee039cc736e4874423e03377d75e33a46b0686b3fe"
+    sha256 cellar: :any,                 arm64_tahoe:   "e7e492d77c1bc9d74d521dcd5f9aa229d11503471e531d0f9165b16f09618019"
+    sha256 cellar: :any,                 arm64_sequoia: "aca135c4fdab815207ad2995a2650da886a1798c5caab385836e92780fc8c485"
+    sha256 cellar: :any,                 arm64_sonoma:  "77201aaeb8c45f07ba31807f61d469149c33a65aadc07d8b8b717c127736dd65"
+    sha256 cellar: :any,                 sonoma:        "638b1b65f869ae5db105ee16bfa5d48325bd3249bcbdc79906f3e74d504cbd29"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e099019b5cd44280c2e58f534646b246d944e8a95ddac9b9a4a47eeb43f6c6d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5277a2351464d9e69d530c4843f423dc95f97e7abe07e5d74f52550c8782474c"
   end
 
   depends_on "certifi" => :no_linkage
@@ -120,8 +120,8 @@ class HttpPrompt < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "wcwidth" do

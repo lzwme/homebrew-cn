@@ -26,9 +26,6 @@ class Libtcod < Formula
 
   uses_from_macos "zlib"
 
-  # TODO: Remove in syntax-only PR
-  conflicts_with "libzip", because: "libtcod and libzip install a `zip.h` header"
-
   def install
     rm_r("src/vendor/zlib")
 

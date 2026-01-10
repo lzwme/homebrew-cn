@@ -6,15 +6,15 @@ class Bagels < Formula
   url "https://files.pythonhosted.org/packages/6e/04/e19a99e357221cb41e1e2f0352172e282ac8195fa2418b776345497fb260/bagels-0.3.12.tar.gz"
   sha256 "c3ebd4a727ddd62450528676a1ce3e475f92bd36edfed5f9c0b110bb24592608"
   license "GPL-3.0-or-later"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "34b819af69e4617154829eebe19f45b14375136188a6a2ba18a054786317300d"
-    sha256 cellar: :any,                 arm64_sequoia: "5a2a3e80ea157b3c444339d6974875924c3a92a5835ae3793f59731736f6d96e"
-    sha256 cellar: :any,                 arm64_sonoma:  "629e4ff77e17fb4dc5c31e1c0125e30a7738407b97769825f818fa9f9f30500c"
-    sha256 cellar: :any,                 sonoma:        "3fc5c9fc1b1011c223bfbb164fb8f1454a55354ab8545ba14c1d478c263a4567"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd857db335b77a10acf811ab7a9aeb04237d0a4736c1904da7cdc114736552cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74274cfd2a7f3d9bb4d38596abba801c4391d50a0d1209785d3bb3ba73d056ae"
+    sha256 cellar: :any,                 arm64_tahoe:   "1dad1fc1fef02aeb54cb07c86ca1cdac1bd1765a361de4288e8399fd982e9f69"
+    sha256 cellar: :any,                 arm64_sequoia: "da7423ec2d6597f5aa5e28e232918ce3a4f1a224024d05ee0305025fe9741f5d"
+    sha256 cellar: :any,                 arm64_sonoma:  "d0492357086859cc4e798df084ef164738db0cc0cfb3554fa34390237578a767"
+    sha256 cellar: :any,                 sonoma:        "992786146cf54913c488e62f6b91577a18c5fe214eccbe03e27fb73ae809a51d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b61e6d4a956b556626be7b1ec419ef6ea0d6b1e1aa7f5e18a8b2d5b6cc00389d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81ad6fa9758b3d50f95fce3b26087aba4ad0551ed1dd174de7dd267f3c385114"
   end
 
   depends_on "certifi" => :no_linkage
@@ -201,8 +201,8 @@ class Bagels < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/45/ea/b0f8eeb287f8df9066e56e831c7824ac6bab645dd6c7a8f4b2d767944f9b/werkzeug-3.1.4.tar.gz"
-    sha256 "cd3cd98b1b92dc3b7b3995038826c68097dcb16f9baa63abe35f20eafeb9fe5e"
+    url "https://files.pythonhosted.org/packages/5a/70/1469ef1d3542ae7c2c7b72bd5e3a4e6ee69d7978fa8a3af05a38eca5becf/werkzeug-3.1.5.tar.gz"
+    sha256 "6a548b0e88955dd07ccb25539d7d0cc97417ee9e179677d22c7041c8f078ce67"
   end
 
   resource "xdg-base-dirs" do

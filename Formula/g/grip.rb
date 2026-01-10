@@ -6,15 +6,15 @@ class Grip < Formula
   url "https://files.pythonhosted.org/packages/f4/3f/e8bc3ea1f24877292fa3962ad9e0234ad4bc787dc1eb5bd08c35afd0ceca/grip-4.6.2.tar.gz"
   sha256 "3cf6dce0aa06edd663176914069af83f19dcb90f3a9c401271acfa71872f8ce3"
   license "MIT"
-  revision 15
+  revision 16
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f3024f83159ded8118888cf47453945147ab256f1c222ad083f58503b6cf25f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69f929db63bd99b526aa05959e34b806762dc49a9879057483a13358f85c641b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e34495e680caff3b0b90dc80ba999221eddc97d36677a89de4815599c27b2c22"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f291f3c40e308fa6f0b7182ba5dbffdfa2f457306536a7f5e78e6bce2c4762b2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "905e6c11685d83b65cb3a578700ab66d79c9fa777cc91247deb323f39b362285"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe9dd4e9f51cf3c6d447ad069a092cf9173a4ef870a313111ed71127f4f77761"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "772b45894be6eda316ff33151f3e61e8b9d30bfe980aef3a28c4815c21c69778"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5cfd9ac43374b5729bc23fffc63dc2a393d9697b1afb34f433b8aa5ca406416"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7b6431119196b4df7f45a66122b964ff524a29619a439608f74392f312d9161"
+    sha256 cellar: :any_skip_relocation, sonoma:        "57faf63be7d659ee8da285ed555e75bad3d63f21dec71655b2f0de5b4099c5a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e141c5984dbf47c333b1baae2a143744472fb3383e771012e768056cd2a9543"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77881f8c0129cd48d885595b793eedb61ab7ceb9b9f1e1c6f01876875a2f3db1"
   end
 
   depends_on "certifi"
@@ -88,13 +88,13 @@ class Grip < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/45/ea/b0f8eeb287f8df9066e56e831c7824ac6bab645dd6c7a8f4b2d767944f9b/werkzeug-3.1.4.tar.gz"
-    sha256 "cd3cd98b1b92dc3b7b3995038826c68097dcb16f9baa63abe35f20eafeb9fe5e"
+    url "https://files.pythonhosted.org/packages/5a/70/1469ef1d3542ae7c2c7b72bd5e3a4e6ee69d7978fa8a3af05a38eca5becf/werkzeug-3.1.5.tar.gz"
+    sha256 "6a548b0e88955dd07ccb25539d7d0cc97417ee9e179677d22c7041c8f078ce67"
   end
 
   def install

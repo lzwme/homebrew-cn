@@ -30,6 +30,9 @@ class PerconaServerAT80 < Formula
 
   keg_only :versioned_formula
 
+  # https://www.percona.com/services/policies/percona-software-support-lifecycle
+  deprecate! date: "2026-04-01", because: :unsupported
+
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build

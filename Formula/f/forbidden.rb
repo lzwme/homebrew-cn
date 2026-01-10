@@ -6,16 +6,16 @@ class Forbidden < Formula
   url "https://files.pythonhosted.org/packages/9b/aa/98fc3ee28aac41cae341a197858ff6af5d79e40dcd45c8a6e37b1fdbfd19/forbidden-13.4.tar.gz"
   sha256 "dc987150b71515810d7ae252895b3ca6e077a8d9b3cbb0d09dfc9797c933a14d"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/ivan-sincek/forbidden.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0c6d488eb6055c9606a835b9661bec7e1faf09b4ea43818f6663133f5fff98e3"
-    sha256 cellar: :any,                 arm64_sequoia: "15b494d89c92b5bd84b8a06a0448755d157bd08f64f9c15a76fcbbea0a6f61d6"
-    sha256 cellar: :any,                 arm64_sonoma:  "3887645875e461c7862f9795999f4c89f9b5536a11c6b15ad0aad3d103ef80af"
-    sha256 cellar: :any,                 sonoma:        "d4931013eca439d88c25cce11461acb42a6c40fae7ec9085df57afdcf3b60ac3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4945b03d1f311af15548be05b0064b0b7540332d2df07d4a315115dd8fb96fff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a35892523804707604ff6676f9622c74e1d1ee477db6397c496cf6f3af5e810d"
+    sha256 cellar: :any,                 arm64_tahoe:   "d21fcb52bada13dd9d0cf51e1d76d8c9aa791f001f51889ce62943bf7768f453"
+    sha256 cellar: :any,                 arm64_sequoia: "b6b3b1d0a4dbf3bb558d841e271abaa1c610274caf4bd7b95767bbf037a32c32"
+    sha256 cellar: :any,                 arm64_sonoma:  "9b75c4162cbe807c469e945e058f76ed35bbf90259a055b6a99ecae07bcebbac"
+    sha256 cellar: :any,                 sonoma:        "38cd1caa2f9c02ed4957ff7519fd10c945a5ddb5cbb8abf564d2a7aa9448261e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b5c5f55da4309ba5621107f839031fa983fee11077e567137e5efc49bde484ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f91cf6f82e3aed050177a1b5dcd57a7fbcba8447ef197373aafe634e721bc73"
   end
 
   depends_on "certifi" => :no_linkage
@@ -89,13 +89,13 @@ class Forbidden < Formula
   end
 
   resource "termcolor" do
-    url "https://files.pythonhosted.org/packages/87/56/ab275c2b56a5e2342568838f0d5e3e66a32354adcc159b495e374cda43f5/termcolor-3.2.0.tar.gz"
-    sha256 "610e6456feec42c4bcd28934a8c87a06c3fa28b01561d46aa09a9881b8622c58"
+    url "https://files.pythonhosted.org/packages/46/79/cf31d7a93a8fdc6aa0fbb665be84426a8c5a557d9240b6239e9e11e35fc5/termcolor-3.3.0.tar.gz"
+    sha256 "348871ca648ec6a9a983a13ab626c0acce02f515b9e1983332b17af7979521c5"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

@@ -10,12 +10,13 @@ class Prowler < Formula
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6b33ff0ce6398eeb4732ff975d0c5dbebbbe9f559e14e57bb6b1556f7f99fe9c"
-    sha256 cellar: :any,                 arm64_sequoia: "781c458cfb59c35e766a128bfc78c28342be94d6505e81cd6bb26288b941df9e"
-    sha256 cellar: :any,                 arm64_sonoma:  "ea4d99866972554a41de381e7c60056a90121dca391b421b152b692453440452"
-    sha256 cellar: :any,                 sonoma:        "70b61008470ebef64cb82afc72102552347a81c6c85f7b3138c681da78c2dfdc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "88c2eb85faa79315fe32199b69768df99cef52692c8c6833ed93f856a8012e3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6461172f404d3af55d00d49633ad0093c4c1e5078f0ecd71d1251bb699d3fe3"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "295f989083641178f7b2118e7cebfb27d63b05f39ddeeb29db0da0c600e2e3f6"
+    sha256 cellar: :any,                 arm64_sequoia: "98e04f31f3284cf2d0295972ec85893601105b9accc95e1ed96e424d713e94aa"
+    sha256 cellar: :any,                 arm64_sonoma:  "9ded554b8e4d7e76b0fc0179e9b59a236e9c3accaf10970f43ee0fd391a6293f"
+    sha256 cellar: :any,                 sonoma:        "0cd8cbfb0767c80c5adc23a616402104ea35520ee9cffe48cd1eabefd078adcb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac538e97c653ee4f70b2895adf892eb9c9cfab37485d60dc2e451e6667453220"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b4ee029f811da2b4d0c7f4602431f440e8eba09d442ad509b8dab27527b760c"
   end
 
   depends_on "cmake" => :build
@@ -529,8 +530,8 @@ class Prowler < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/4c/6d/dd93ee542979b681c9a5d33970033807beb5114e6194365464581fefaa3e/google_auth-2.46.0.tar.gz"
-    sha256 "cb04c071a73394a6e3b9e48c1a7f48506001175b33e9679587a0f5320a21a34d"
+    url "https://files.pythonhosted.org/packages/60/3c/ec64b9a275ca22fa1cd3b6e77fefcf837b0732c890aa32d2bd21313d9b33/google_auth-2.47.0.tar.gz"
+    sha256 "833229070a9dfee1a353ae9877dcd2dec069a8281a4e72e72f77d4a70ff945da"
   end
 
   resource "google-auth-httplib2" do

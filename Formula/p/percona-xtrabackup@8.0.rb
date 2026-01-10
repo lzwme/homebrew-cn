@@ -31,6 +31,9 @@ class PerconaXtrabackupAT80 < Formula
 
   keg_only :versioned_formula
 
+  # https://www.percona.com/services/policies/percona-software-support-lifecycle
+  deprecate! date: "2026-04-01", because: :unsupported
+
   depends_on "bison" => :build # needs bison >= 3.0.4
   depends_on "cmake" => :build
   depends_on "libevent" => :build

@@ -2349,6 +2349,7 @@ Homebrew-homebrew-core/Formula/g/gh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/ghalint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/ghc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.10.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/ghc@9.12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.6.rb, Homebrew/homebrew-core, 0
@@ -8994,7 +8995,6 @@ Homebrew-homebrew-cask/Casks/c/cpu-info.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cpuinfo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/craft.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/c/craftmanager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/crashplan.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/creality-print.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/creality-slicer.rb, Homebrew/homebrew-cask, 0
@@ -15463,6 +15463,7 @@ Homebrew-homebrew-cask/Casks/w/wiso-steuer-2023.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiso-steuer-2024.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiso-steuer-2025.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiso-steuer-2026.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/wispr-flow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/witch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/witsy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wizcli.rb, Homebrew/homebrew-cask, 0
@@ -15595,6 +15596,7 @@ Homebrew-homebrew-cask/Casks/z/zap.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zappy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zed.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zed@preview.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/z/zedis.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zeitgeist.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zen-privacy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zen.rb, Homebrew/homebrew-cask, 1

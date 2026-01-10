@@ -1,12 +1,12 @@
 class Varlock < Formula
   desc "Add declarative schema to .env files using @env-spec decorator comments"
   homepage "https://varlock.dev"
-  url "https://registry.npmjs.org/varlock/-/varlock-0.1.4.tgz"
-  sha256 "b1db7551d9316929a846c14afbbbfa7603ab136426245f271d90e3a23337e27e"
+  url "https://registry.npmjs.org/varlock/-/varlock-0.1.5.tgz"
+  sha256 "a8fef673aeb0769eb47e52e9800925828f5f1c3934fec09476f464c85c0b1fe1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7ffa91e7ee9861514caa98cb9624932ae7b2e6b33c17b5fef434d999d5e32e76"
+    sha256 cellar: :any_skip_relocation, all: "d52736491f789e709cbc1f16303b2deeb4ad260b1e6905b84f5449c3aea48a88"
   end
 
   depends_on "node"

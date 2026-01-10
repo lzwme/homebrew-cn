@@ -7,16 +7,16 @@ class Buku < Formula
   url "https://ghfast.top/https://github.com/jarun/buku/archive/refs/tags/v5.1.tar.gz"
   sha256 "0f1a3e15f882fe9a0f8e550abae7388d3cb81d4718a1b4309dcf4363633cb7b1"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/jarun/buku.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b31e058cee25f8bdb44d3d3fb7c3fb0080e5e3c4871fb37a04d1b5b80831309b"
-    sha256 cellar: :any,                 arm64_sequoia: "45006528f2238483b4074cbbcca612e7103eb981cf2a00e3603d8c17b6a8e90e"
-    sha256 cellar: :any,                 arm64_sonoma:  "5a8f29ec482342b13695e9ba812aa4dc0a4f341d785a5cdbc28e6a43beae2f97"
-    sha256 cellar: :any,                 sonoma:        "faab3ba81017f2307559c10cfea1c6033206fcff0d956bf2cc4946a965c2f23b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1a63dc9d80fae60247b6c635a896821985908e60faf99e33727067b2672f81f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a56e7d3050966f822f0cb35eeb62b1979724a412408d82cba755c0d9a25c1238"
+    sha256 cellar: :any,                 arm64_tahoe:   "978988301396ed5a6e48b95a2804238b625683614b4fb05115416cdc906f9cf6"
+    sha256 cellar: :any,                 arm64_sequoia: "e7d8bd71d4cb5313a7e7ced4c190cd0161c2bb1d62ba5a183146d88958dd85eb"
+    sha256 cellar: :any,                 arm64_sonoma:  "4eb6363c9ed04dc7b69507c67ee2d6bdb62edb103b5041ac1c286ff61e4d8e24"
+    sha256 cellar: :any,                 sonoma:        "3ae7dc4aa6d1f0c72e35fda5d158b06d56af52282ac3901c0b2cfa702eea3248"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb2e5af49d5b6bfdb1eded592ac04c90ffbee7ab3795c9b0c0293fd91e669d1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05530c0c8b99247e64f2bc2b361951ea2568b339b1250af3f87ce6bb9dd2e9e0"
   end
 
   depends_on "certifi" => :no_linkage
@@ -173,8 +173,8 @@ class Buku < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/45/ea/b0f8eeb287f8df9066e56e831c7824ac6bab645dd6c7a8f4b2d767944f9b/werkzeug-3.1.4.tar.gz"
-    sha256 "cd3cd98b1b92dc3b7b3995038826c68097dcb16f9baa63abe35f20eafeb9fe5e"
+    url "https://files.pythonhosted.org/packages/5a/70/1469ef1d3542ae7c2c7b72bd5e3a4e6ee69d7978fa8a3af05a38eca5becf/werkzeug-3.1.5.tar.gz"
+    sha256 "6a548b0e88955dd07ccb25539d7d0cc97417ee9e179677d22c7041c8f078ce67"
   end
 
   resource "wtforms" do

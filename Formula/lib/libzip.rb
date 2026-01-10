@@ -35,8 +35,6 @@ class Libzip < Formula
     depends_on "openssl@3"
   end
 
-  conflicts_with "libtcod", because: "libtcod and libzip install a `zip.h` header"
-
   def install
     args = %w[
       -DENABLE_GNUTLS=OFF

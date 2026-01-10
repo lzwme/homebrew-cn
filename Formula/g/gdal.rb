@@ -4,6 +4,7 @@ class Gdal < Formula
   url "https://ghfast.top/https://github.com/OSGeo/gdal/releases/download/v3.12.1/gdal-3.12.1.tar.gz"
   sha256 "266cbadf8534d1de831db8834374afd95603e0a6af4f53d0547ae0d46bd3d2d1"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://download.osgeo.org/gdal/CURRENT/"
@@ -11,12 +12,12 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "35b2db219c06ab0559d680d62d30f5875f41a9894039c54b5a77d19381f7e85d"
-    sha256 arm64_sequoia: "4fae82cf9b416f38e61e955008137d25c2c6fe2bd098afa591980ae63a7bf08e"
-    sha256 arm64_sonoma:  "0f8254a39fbe2e1a7c5506f423a05caf99284087b4b8b7962773ed99ef26501f"
-    sha256 sonoma:        "bb33c2ef8254c55769c49addbfa48d5cc2ace4f9acf443f91af6c6dde40902ad"
-    sha256 arm64_linux:   "bcd78fbb881170e992a701329d050a6cc4585b7f47b10b996df7311081faaa7b"
-    sha256 x86_64_linux:  "bf98ad9b5895220f3ecf78804553f0ca2ef1b3e8d6547b8454b402aff8d3b38b"
+    sha256 arm64_tahoe:   "844ea4e12cb613ed804d23d3214d3298cb14dfb13d5d8c226163f0a427e41a45"
+    sha256 arm64_sequoia: "d04a32aceedb0fb32de7b322e3c156cc8bf6f10b0235a3a94e303e784ad150f8"
+    sha256 arm64_sonoma:  "8afe531b9fa3e364b1be26000981f2163a9ffc3b302a6ff5fad71c82562fa4da"
+    sha256 sonoma:        "3adefd7229a79fa7d99955877f0bca4b8410a3dd3913b4560414c9f9632b6c6b"
+    sha256 arm64_linux:   "5da0d234589d53362f087ef3a95bddd781a340658e50d6c290d935a9bd156686"
+    sha256 x86_64_linux:  "c8015e5c4c402203bb9c061d1897189fe0c38ed73722a58a2e50662705ebffba"
   end
 
   head do
@@ -87,6 +88,13 @@ class Gdal < Formula
 
   conflicts_with "avce00", because: "both install a cpl_conv.h header"
   conflicts_with "cpl", because: "both install cpl_error.h"
+
+  # Backport fix for poppler 26+ compatibility, remove in next release
+  # PR ref: https://github.com/OSGeo/gdal/pull/13664
+  patch do
+    url "https://github.com/OSGeo/gdal/commit/28a15cb76d26a27be96ab8b8bc8fcb52c153c3a9.patch?full_index=1"
+    sha256 "89171ad0d0e9edd531022011c59d1d0ae21910b4c69c44ab453c5722c82fe297"
+  end
 
   def python3
     "python3.14"

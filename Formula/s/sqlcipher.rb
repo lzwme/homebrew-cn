@@ -1,40 +1,28 @@
 class Sqlcipher < Formula
   desc "SQLite extension providing 256-bit AES encryption"
   homepage "https://www.zetetic.net/sqlcipher/"
-  url "https://ghfast.top/https://github.com/sqlcipher/sqlcipher/archive/refs/tags/v4.6.1.tar.gz"
-  sha256 "d8f9afcbc2f4b55e316ca4ada4425daf3d0b4aab25f45e11a802ae422b9f53a3"
-  license "BSD-3-Clause"
+  url "https://ghfast.top/https://github.com/sqlcipher/sqlcipher/archive/refs/tags/v4.12.0.tar.gz"
+  sha256 "151a1c618c7ae175dfd0f862a8d52e8abd4c5808d548072290e8656032bb0f12"
+  license all_of: ["BSD-3-Clause", "blessing"]
   head "https://github.com/sqlcipher/sqlcipher.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "07939e4e3872fb2105ee37426c0f79b195c61bc27ab28cff562d696fa5487094"
-    sha256 cellar: :any,                 arm64_sequoia:  "2bce86a48eb9ce4e89f10638971fe3e3d338e410c41432f4480866dccc8b8a25"
-    sha256 cellar: :any,                 arm64_sonoma:   "ce9815c45580388609c3c3523f8cca865a4a38b809f08a31a786fdefd8829e63"
-    sha256 cellar: :any,                 arm64_ventura:  "f52dbcc2f74a793f58fadd7309c2ebe5619aa47ebaedc9285331f5f3c9afd7df"
-    sha256 cellar: :any,                 arm64_monterey: "99ceb412afb90b295aa64a1d9ba6bf25bbfb7887b50825154fc8baba3e879874"
-    sha256 cellar: :any,                 sonoma:         "14842c50c9074b36748f2d8f8c3e3ba51b6b8dafa4d6c939462ec5d96c0ef5d1"
-    sha256 cellar: :any,                 ventura:        "69bdd462ec7b165dfc656e05b206c43b0115754e9a49b3f5a2b3d3e2fa6718d9"
-    sha256 cellar: :any,                 monterey:       "69a4c545f99bdd3dee89090c3a264f33d333d4b41be5a368c6a078ea1234fe1f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "736d4a62c71de3eeda25366f71092586634a4b0b3febc4b8732b9b4f7e8276bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b698c95084d0ec890fc103429bb615a8c13c87bd13b6a29b246579feb5a0763"
+    sha256 cellar: :any,                 arm64_tahoe:   "2ad3dc1b2491204ec9531a3a20dd97134583304854b0ed444b54e9471825296a"
+    sha256 cellar: :any,                 arm64_sequoia: "0fb3416129b895d27745b15ae8ce8b0b0cec057e3559b76a4115b3201d13af02"
+    sha256 cellar: :any,                 arm64_sonoma:  "6621dbcbd60279560fd3ce7d294d4fe6763c26aaeca486194c09a00c9b2ba0c1"
+    sha256 cellar: :any,                 sonoma:        "2573725a149d2cda4c7f098f623de4077b1ed711d4b3a17a39631836ebbe7139"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ffe3f61a2045343dcd2e048ef9f5037300760b157870a795ee56d25f9c72296"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6bae5917d672b9020150547a6b18d6db64de12b9443970ee06d0d55cd451dd7"
   end
 
   depends_on "openssl@3"
 
   # Build scripts require tclsh. `--disable-tcl` only skips building extension
   uses_from_macos "tcl-tk" => :build
-  uses_from_macos "sqlite"
+  uses_from_macos "sqlite" => :test # check for conflicts on Linux
   uses_from_macos "zlib"
 
   def install
-    args = %W[
-      --prefix=#{prefix}
-      --enable-tempstore=yes
-      --with-crypto-lib=#{Formula["openssl@3"].opt_prefix}
-      --enable-load-extension
-      --disable-tcl
-    ]
-
     # Build with full-text search enabled
     cflags = %w[
       -DSQLITE_HAS_CODEC
@@ -43,14 +31,47 @@ class Sqlcipher < Formula
       -DSQLITE_ENABLE_FTS3_PARENTHESIS
       -DSQLITE_ENABLE_FTS5
       -DSQLITE_ENABLE_COLUMN_METADATA
+      -DSQLITE_EXTRA_INIT=sqlcipher_extra_init
+      -DSQLITE_EXTRA_SHUTDOWN=sqlcipher_extra_shutdown
     ].join(" ")
-    args << "CFLAGS=#{cflags}"
 
-    args << "LIBS=-lm" if OS.linux?
+    args = %W[
+      --disable-tcl
+      --dll-basename=libsqlcipher
+      --enable-load-extension
+      --includedir=#{include}/sqlcipher
+      --prefix=#{prefix}
+      --with-tempstore=yes
+      CFLAGS=#{cflags}
+      LDFLAGS=-lcrypto
+    ]
 
     system "./configure", *args
     system "make"
     system "make", "install"
+
+    # Modify file names to avoid conflicting with sqlite. Similar to
+    # * Debian  - https://salsa.debian.org/debian/sqlcipher/-/blob/master/debian/rules
+    # * Liguros - https://gitlab.com/liguros/liguros-repo/-/blob/develop/dev-db/sqlcipher/sqlcipher-4.12.0.ebuild
+    # * OpenBSD - https://codeberg.org/OpenBSD/ports/src/branch/master/databases/sqlcipher/Makefile
+    [
+      bin/"sqlite3",
+      man1/"sqlite3.1",
+      lib/"pkgconfig/sqlite3.pc",
+      lib/"libsqlite3.a",
+      lib/shared_library("libsqlcipher"),
+      *lib.glob(shared_library("libsqlite3", "*")),
+    ].each do |path|
+      basename = path.basename.sub("sqlite3", "sqlcipher")
+      if path.symlink?
+        source = path.readlink.sub("sqlite3", "sqlcipher")
+        rm(path)
+        path.dirname.install_symlink source => basename
+      else
+        path.dirname.install path => basename
+      end
+    end
+    inreplace lib/"pkgconfig/sqlcipher.pc", "-lsqlite3", "-lsqlcipher"
   end
 
   test do

@@ -1,18 +1,18 @@
 class Checkmake < Formula
   desc "Linter/analyzer for Makefiles"
   homepage "https://github.com/checkmake/checkmake"
-  url "https://ghfast.top/https://github.com/checkmake/checkmake/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "37f14cbf37135e3c7507b990234c4fdfd9643d4227924541db901b84a66dcd14"
+  url "https://ghfast.top/https://github.com/checkmake/checkmake/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "4c45c5eda4d22b1b603cad7836805927f047ca5e3a88fbefbbf1a636c87495b7"
   license "MIT"
   head "https://github.com/checkmake/checkmake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "20eb1f2b1bd0712c1faf5e1894c4c9e8807f8f3b9057997ab77c3b6afcf11803"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2671c063f1de1df73c0a878d3dacb4fcbfd562da98ab8adc411b3408d7652161"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6861c1acb385360d905769ae854d5ddebbe8554bbaed1ee165f9a8a6c06c16c4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0b8950eed6254cc674ab0d8748d6c102c1d81ba9265a127f4a7b9fc7bb6a8d8b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "39d6415b50e45cafe74c342e668ccaa7e8b92a159f16f6414e6cbab1e0734605"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddf6346c8e59fdbe229ed6ce6763ce0d48f1b9428fefb17027723847bd76a868"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b356d80755d1ebde3985e45a45e04b31099ecf331d8fe62b43f08c3a58d389a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4e0d43b2fe578c569af32e37643a2872f798b75664895e527a7c9c9c12a5244"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4063c62653908758f99a7d2510a2283747f18f300c0d508e5e20a539d672210a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e4a6dbf5bc7ffee2a1cd8c1cfa71f8c67eb1ad9cf782bae335c1e2fe1c57b064"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a463bb5cc4a2e1c1c2d750bf3acfc749f10b75dd30f1a46d679109e0bbbf8a0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cf3283cf437a78fcc85460c311c110b16fb4513acbfaea46bbad21ab3df500b"
   end
 
   depends_on "go" => :build

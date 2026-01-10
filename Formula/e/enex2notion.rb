@@ -6,15 +6,15 @@ class Enex2notion < Formula
   url "https://files.pythonhosted.org/packages/de/5c/c0ce22d810226345411b03177f9b43c35b82c3a671d5d73f56fc43b0858e/enex2notion-0.3.1.tar.gz"
   sha256 "f11d8a7b6c135b4d08c63e1256279d56b3798cdd48ad3b6e39c0770dc3bd82e6"
   license "MIT"
-  revision 16
+  revision 17
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26e3388289e5ba0e0de91efb6b8e00aa88813401a872b9ada86cb8267842361b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97afc1112eacd3f7942cbd69e3e00b0876c37c1fa8df91890a0df2e9700c65a4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4d001ffbe10590a2514818fd533ec4ef8dd3901f7c7f7175926de5a7f9307a1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9fa88935b1304f9f5934fa3889dab761b6f00f4f746afb222d112f1ae89be565"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "80c5e8b3f7c4eeac4e7962531d8a73c33c839a8eb0ae195606f577b9e4694a71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6dc04846d2519d44575914987ad854ebc5625a0cec9e773c02022535e1b29ddf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e13e820f1bf41f33543fe1f3a38864985e7ccd73899b993a3ac857db30f1e714"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3331396477cfe59373c64efb73aae765bec87dcdadb2f8e4a7da5a7f8aadee84"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7619e0da8d00b1456b1512994f5ba96842a8d0d975566d461be10a42debc8375"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0b797877705534bab754ed3f8127df32f7835d134ecdd9a026287d274d24ea83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4c2b655ed4b327dcedaf79547d0499143ca0783fe851bf2ebf22a02eacd0f62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ad72decb59d5e77ecc0b9387394a17601ee1baac3c403fcede14a0a2fc4a848"
   end
 
   depends_on "certifi" => :no_linkage
@@ -110,8 +110,8 @@ class Enex2notion < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/6d/e6/21ccce3262dd4889aa3332e5a119a3491a95e8f60939870a3a035aabac0d/soupsieve-2.8.tar.gz"
-    sha256 "e2dd4a40a628cb5f28f6d4b0db8800b8f581b65bb380b97de22ba5ca8d72572f"
+    url "https://files.pythonhosted.org/packages/89/23/adf3796d740536d63a6fbda113d07e60c734b6ed5d3058d1e47fc0495e47/soupsieve-2.8.1.tar.gz"
+    sha256 "4cf733bc50fa805f5df4b8ef4740fc0e0fa6218cf3006269afd3f9d6d80fd350"
   end
 
   resource "text-unidecode" do
@@ -135,8 +135,8 @@ class Enex2notion < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
-    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
+    url "https://files.pythonhosted.org/packages/5e/a7/c202b344c5ca7daf398f3b8a477eeb205cf3b6f32e7ec3a6bac0629ca975/tzdata-2025.3.tar.gz"
+    sha256 "de39c2ca5dc7b0344f2eba86f49d614019d29f060fc4ebc8a417896a620b56a7"
   end
 
   resource "tzlocal" do
@@ -145,8 +145,8 @@ class Enex2notion < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "w3lib" do

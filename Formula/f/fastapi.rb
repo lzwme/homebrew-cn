@@ -6,14 +6,15 @@ class Fastapi < Formula
   url "https://files.pythonhosted.org/packages/52/08/8c8508db6c7b9aae8f7175046af41baad690771c9bcde676419965e338c7/fastapi-0.128.0.tar.gz"
   sha256 "1cc179e1cef10a6be60ffe429f79b829dce99d8de32d7acb7e6c8dfdf7f2645a"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3373d41aa166c856656af29c836735f6cb708a298635ee81d334df45a331ca54"
-    sha256 cellar: :any,                 arm64_sequoia: "6d6b7d5df1e4ad090536105d9c120dd9fdb21aeda71df38b719ef065981c645f"
-    sha256 cellar: :any,                 arm64_sonoma:  "0627fec802db7c3daad53a269558e40cf9de5c91e6e47a7f361fcd9a80c1090b"
-    sha256 cellar: :any,                 sonoma:        "215063be1f4de140aa64c90595b3c20a7ec39994371d3f56e55b90b40a3cbdc1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad50df0cf061a0dc2849d97d692384052484658d2c3d966a248689576c254f39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20169dca24731939d942008db559103626d7d0e81edebc91602b4240c2cda7f8"
+    sha256 cellar: :any,                 arm64_tahoe:   "08c49dd016162212e3dab8dbc530b97f0552e8484ef13bfbb52d3d22cd1b04bb"
+    sha256 cellar: :any,                 arm64_sequoia: "7235c1ef8cb0d28b4d04c0c229538096fb6e64451113248bfc30618a1271c385"
+    sha256 cellar: :any,                 arm64_sonoma:  "0e768044cd24592333c396a4eb018bee90091124e0d5532756958c8cceb93608"
+    sha256 cellar: :any,                 sonoma:        "ffbb782de0e538a56b2aa7d008ea6b89f55b44481e498f1e66c5eb01ffb37e4c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a6b5c4d4e84931886658cfb1946a53215bf65f3d7c97e528339b60ac4f6cc9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca7275ed6fe31881753ce5b30e80e60b25c077113bb63c9a8830cf9789cafc7c"
   end
 
   depends_on "rust" => :build # for annotated-doc
@@ -31,8 +32,8 @@ class Fastapi < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
-    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
+    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
+    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
   end
 
   resource "click" do
@@ -111,8 +112,8 @@ class Fastapi < Formula
   end
 
   resource "pydantic-extra-types" do
-    url "https://files.pythonhosted.org/packages/3a/10/fb64987804cde41bcc39d9cd757cd5f2bb5d97b389d81aa70238b14b8a7e/pydantic_extra_types-2.10.6.tar.gz"
-    sha256 "c63d70bf684366e6bbe1f4ee3957952ebe6973d41e7802aea0b770d06b116aeb"
+    url "https://files.pythonhosted.org/packages/fd/35/2fee58b1316a73e025728583d3b1447218a97e621933fc776fb8c0f2ebdd/pydantic_extra_types-2.11.0.tar.gz"
+    sha256 "4e9991959d045b75feb775683437a97991d02c138e00b59176571db9ce634f0e"
   end
 
   resource "pydantic-settings" do
@@ -156,8 +157,8 @@ class Fastapi < Formula
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/40/f0/0e9dc590513d5e742d7799e2038df3a05167cba084c6ca4f3cdd75b55164/sentry_sdk-2.48.0.tar.gz"
-    sha256 "5213190977ff7fdff8a58b722fb807f8d5524a80488626ebeda1b5676c0c1473"
+    url "https://files.pythonhosted.org/packages/02/94/23ac26616a883f492428d9ee9ad6eee391612125326b784dbfc30e1e7bab/sentry_sdk-2.49.0.tar.gz"
+    sha256 "c1878599cde410d481c04ef50ee3aedd4f600e4d0d253f4763041e468b332c30"
   end
 
   resource "shellingham" do
@@ -171,13 +172,13 @@ class Fastapi < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/85/30/ff9ede605e3bd086b4dd842499814e128500621f7951ca1e5ce84bbf61b1/typer-0.21.0.tar.gz"
-    sha256 "c87c0d2b6eee3b49c5c64649ec92425492c14488096dfbc8a0c2799b2f6f9c53"
+    url "https://files.pythonhosted.org/packages/36/bf/8825b5929afd84d0dabd606c67cd57b8388cb3ec385f7ef19c5cc2202069/typer-0.21.1.tar.gz"
+    sha256 "ea835607cd752343b6b2b7ce676893e5a0324082268b48f27aa058bdb7d2145d"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "uvicorn" do

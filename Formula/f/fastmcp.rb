@@ -6,15 +6,16 @@ class Fastmcp < Formula
   url "https://files.pythonhosted.org/packages/d1/1e/e3528227688c248283f6d86869b1e900563ffc223eff00f4f923d2750365/fastmcp-2.14.2.tar.gz"
   sha256 "bd23d1b808b6f446444f10114dac468b11bfb9153ed78628f5619763d0cf573e"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4e6f2ad3ea56b926b553d184161b07bc518edc71535d30f8ebcd491ea9ac1a87"
-    sha256 cellar: :any,                 arm64_sequoia: "80f01a9483e77899879c1fabe70242558572a74c9c6f5ba20fdde1546aa4895e"
-    sha256 cellar: :any,                 arm64_sonoma:  "8f6c7a83f55dbe3ca8e4b257075394413aeabfa8dca81f7aa364f4dc6d3cc602"
-    sha256 cellar: :any,                 sonoma:        "cb0235893d1deda25e39a063c8c3cfcb2c9e9a9dd62c2f20cd30656a53ea56f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "40d150e5968bcca17c606a3ea60d010dac1ede8a1d78dc52cd2d333e1345130d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67743f674fe2b695c02f692ff16a4762cd4e92f67f7905078cded491ae0875ff"
+    sha256 cellar: :any,                 arm64_tahoe:   "53f95b4a8be684690c0780851292420319ee36582b59265b076f8d28b2b6a8f6"
+    sha256 cellar: :any,                 arm64_sequoia: "b7ab7309ebf4309232d13e1331caa4117f4612048b63ad493269f6d2ca760aff"
+    sha256 cellar: :any,                 arm64_sonoma:  "1fd8632b52c7065169f19923055edf5add7f49f6068b4d8f2477941b1e6e5592"
+    sha256 cellar: :any,                 sonoma:        "4d94fa5e013e444a42830b98396254bf84fb90f57af42b3cdc05a697cd9717b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4914f9fc2524a91638d9011f90810a2ff7cfa1a0bf6a6e36f653063501a1cb0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae20a52955e3c2bae450d1fefe3cab47cd959237ac279e8c1e806e69bf82d5fb"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -30,8 +31,8 @@ class Fastmcp < Formula
                 extra_packages:   %w[jeepney secretstorage]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
-    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
+    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
+    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
   end
 
   resource "attrs" do
@@ -70,8 +71,8 @@ class Fastmcp < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/8f/21/732453ae69d65d72fe37a34f8b1a455c72313b8b0a905b876da20ff7e81a/cyclopts-4.4.3.tar.gz"
-    sha256 "03797c71b49a39dcad8324d6655363056fb998e2ba0240940050331a7f63fe65"
+    url "https://files.pythonhosted.org/packages/43/c4/60b6068e703c78656d07b249919754f8f60e9e7da3325560574ee27b4e39/cyclopts-4.4.4.tar.gz"
+    sha256 "f30c591c971d974ab4f223e099f881668daed72de713713c984ca41479d393dd"
   end
 
   resource "diskcache" do
@@ -160,8 +161,8 @@ class Fastmcp < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
-    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
+    url "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz"
+    sha256 "0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326"
   end
 
   resource "jsonschema-path" do
@@ -275,8 +276,8 @@ class Fastmcp < Formula
   end
 
   resource "pydocket" do
-    url "https://files.pythonhosted.org/packages/e0/c5/61dcfce4d50b66a3f09743294d37fab598b81bb0975054b7f732da9243ec/pydocket-0.16.3.tar.gz"
-    sha256 "78e9da576de09e9f3f410d2471ef1c679b7741ddd21b586c97a13872b69bd265"
+    url "https://files.pythonhosted.org/packages/4d/c6/eb7f3af72fa5c04b52a3f9390ff0c948987441987f9526dd992d2a6b3524/pydocket-0.16.4.tar.gz"
+    sha256 "d034d1ac75877560d86329fb3643e7b862fcbcdac407d876a62f5d9e386e8753"
   end
 
   resource "pygments" do
@@ -365,13 +366,13 @@ class Fastmcp < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/85/30/ff9ede605e3bd086b4dd842499814e128500621f7951ca1e5ce84bbf61b1/typer-0.21.0.tar.gz"
-    sha256 "c87c0d2b6eee3b49c5c64649ec92425492c14488096dfbc8a0c2799b2f6f9c53"
+    url "https://files.pythonhosted.org/packages/36/bf/8825b5929afd84d0dabd606c67cd57b8388cb3ec385f7ef19c5cc2202069/typer-0.21.1.tar.gz"
+    sha256 "ea835607cd752343b6b2b7ce676893e5a0324082268b48f27aa058bdb7d2145d"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "uvicorn" do

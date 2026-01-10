@@ -7,12 +7,13 @@ class Infisical < Formula
   head "https://github.com/Infisical/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd74ae4277be1400283daaaeb5c4fdf88efc3912d5f449f5e87d2b720440dd5a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd74ae4277be1400283daaaeb5c4fdf88efc3912d5f449f5e87d2b720440dd5a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd74ae4277be1400283daaaeb5c4fdf88efc3912d5f449f5e87d2b720440dd5a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6398b0454ea0c0b4520351b81a0e73baefd1f520597cb761f25bec6e48be3363"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2d4249cb4f53a725f7e508021e8e47ea25a1830c1808c7f6738d92ae17ad718"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7034d542daf543af0c16f847d8a5ecb0ec54706834a2427297ba4e35f13de131"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0525109f960875e0dadfc5f6692d9ac0539179912528c686e534c21aec2672e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0525109f960875e0dadfc5f6692d9ac0539179912528c686e534c21aec2672e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0525109f960875e0dadfc5f6692d9ac0539179912528c686e534c21aec2672e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fd465a9d2f6520ec34e99fae70e6fd33c4292d90b6712d9e6ab5539beaa78081"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8cca9584abc927c5d9bed81153e79345fbc681d3bb4c0100cd33e42a2ab2cb5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b258382f56fc0b00e686d11ce170b7f10571352c13190ba4c96eba9cf56f013"
   end
 
   depends_on "go" => :build
@@ -23,6 +24,8 @@ class Infisical < Formula
       -X github.com/Infisical/infisical-merge/packages/util.CLI_VERSION=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
+
+    generate_completions_from_executable(bin/"infisical", shell_parameter_format: :cobra)
   end
 
   test do

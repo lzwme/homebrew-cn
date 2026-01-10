@@ -6,15 +6,15 @@ class Howdoi < Formula
   url "https://files.pythonhosted.org/packages/6d/43/0e8166583575bd500c0f8f1a4ab9429af9466feb6fcdc006e88de8fd23e9/howdoi-2.0.20.tar.gz"
   sha256 "51cd40c53e0c0f8f8da88f480eb7423183be2350ab4f0a4d9d4763ca6ac3e2a9"
   license "MIT"
-  revision 14
+  revision 15
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c40561d62a40aac457420c1a4696c31ef78da618575488b1338e9e7751eab568"
-    sha256 cellar: :any,                 arm64_sequoia: "c9690fe0b338d2a6c1e80d09d06a7a45f526761f095204e9e2ed53c73b00dfe5"
-    sha256 cellar: :any,                 arm64_sonoma:  "8d99aee3435bcdff3ff5ed71d0a72c76ed892953a81e2f686b90d222cf092a1b"
-    sha256 cellar: :any,                 sonoma:        "8dd6f7f1cbdb52d715ada2978e2a57044f225fb8499a13941539e3f577779101"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddf7c3a7a0e052346c5dd9598819caf3eaa00fb5f66126b5e8b36883b02c0068"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1fea5556dd8cef5bb71594d013850347507f16d8649e222ce8a87f4f753d91d"
+    sha256 cellar: :any,                 arm64_tahoe:   "c2fc2a8f3eb6316da64b83b877527b5d37e6ab3fdec6db33880e11cef96a6f65"
+    sha256 cellar: :any,                 arm64_sequoia: "5098cce44b2d6eacad2b33fc0b3f93c16600cfa37d139ead7c3097e0d47adc43"
+    sha256 cellar: :any,                 arm64_sonoma:  "3db5c27abb48bf692dfdc94467acde83d22e1ab0d46bc99c8d70b1501ba5cd12"
+    sha256 cellar: :any,                 sonoma:        "13d89a993ea3ce204cceac71e8776147feb8e251e67f61009007ac63e15e9453"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "19beadcf503cb30a4cdbc420e1b80d0c5a3e0be3af0b2a0d0744b1a448c2dc0b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4e0d3b1b980ead84216f5a282e142de7401a351632926304cf32e12b324ce93"
   end
 
   depends_on "certifi" => :no_linkage
@@ -128,8 +128,8 @@ class Howdoi < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

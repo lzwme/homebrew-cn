@@ -1,8 +1,8 @@
 class Micromamba < Formula
   desc "Fast Cross-Platform Package Manager"
   homepage "https://github.com/mamba-org/mamba"
-  url "https://ghfast.top/https://github.com/mamba-org/mamba/archive/refs/tags/2.4.0.tar.gz"
-  sha256 "a49646eadb913d5c761e316dfcb9f277278c5fd99fc2851d06e4bcf00f1c1412"
+  url "https://ghfast.top/https://github.com/mamba-org/mamba/archive/refs/tags/2.5.0.tar.gz"
+  sha256 "2d8761e423275b2e2b46352c99bdedc062ca22b98871ffa82e044d2be74b350f"
   license "BSD-3-Clause"
   head "https://github.com/mamba-org/mamba.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Micromamba < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ea114ed7a87ea39d8a7ec4581e9b87dc47d50af31098190fcba45aa81efcb60a"
-    sha256 cellar: :any,                 arm64_sequoia: "b7d7ae6a51ba2299e18a779e9e0e9fd7b0dd5a4f07eef5a5dd378cefd848266b"
-    sha256 cellar: :any,                 arm64_sonoma:  "b944f17c24c151c158bcf0f5d41b5d8b3edda3e58c06c0eca9e5b8f481f0e46b"
-    sha256 cellar: :any,                 sonoma:        "ddfc17d46b2ccf804717631e41ca9b00943c57fd05081cb7c4d2b3a572105109"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "684ca0889ab766be4d4cf0312590868e2c276edffdb8ef612a25cffbab2ff6fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a14e61df1f7ddfaa170bf0e5b165a9f4f63c55348d7c16bc68126c009d4430d"
+    sha256 cellar: :any,                 arm64_tahoe:   "f29a2aef292188acc0fdff5ec645117f60a06795a0a950d94c681847eb8e9620"
+    sha256 cellar: :any,                 arm64_sequoia: "ec435f3a4ca58fc2874a1f2d30ad56012a59e758167e854c7e2277998caca1eb"
+    sha256 cellar: :any,                 arm64_sonoma:  "bcd976b92c837edceca899dc97281679662185faabf05abbc06a2fab73982f48"
+    sha256 cellar: :any,                 sonoma:        "e0a5b4755a90a47b8c0401906a3789e046a19e454c1e52067ace687e4ecf2da3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "256a600336abdd6e1619c47733ef896acd98a980b16a5b4bb00ae2bbcde1419c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65e0a9d6db0d56d8f0836f84a13db4af43b3fa4978b09ca7c38e78518d69cf3e"
   end
 
   depends_on "cli11" => :build
@@ -60,6 +60,7 @@ class Micromamba < Formula
 
     args = %W[
       -DBUILD_LIBMAMBA=ON
+      -DBUILD_LIBMAMBA_SPDLOG=ON
       -DBUILD_SHARED=ON
       -DBUILD_STATIC=OFF
       -DBUILD_MAMBA=ON

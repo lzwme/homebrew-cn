@@ -1,8 +1,8 @@
 class Orc < Formula
   desc "Oil Runtime Compiler (ORC)"
-  homepage "https://gstreamer.freedesktop.org/projects/orc.html"
-  url "https://gstreamer.freedesktop.org/src/orc/orc-0.4.41.tar.xz"
-  sha256 "cb1bfd4f655289cd39bc04642d597be9de5427623f0861c1fc19c08d98467fa2"
+  homepage "https://gstreamer.freedesktop.org/modules/orc.html"
+  url "https://gstreamer.freedesktop.org/src/orc/orc-0.4.42.tar.xz"
+  sha256 "7ec912ab59af3cc97874c456a56a8ae1eec520c385ec447e8a102b2bd122c90c"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause"]
 
   livecheck do
@@ -11,21 +11,19 @@ class Orc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "89375069efcb10db89dc7379679b12f8d0be120b8bd31921ffa66b9df4ae8926"
-    sha256 cellar: :any,                 arm64_sequoia: "8ec6640411fd5de65f5064ac884686380efb68725317a0121e3ecadbdcca196b"
-    sha256 cellar: :any,                 arm64_sonoma:  "3dae83cc3cd5a637b63a012b72f45dafccd4b45da20c86dbc2eea6e7827d166c"
-    sha256 cellar: :any,                 arm64_ventura: "fede6fc3e9d0b04237bff31412097f951b2744a28270dacb0746a8fe61b27952"
-    sha256 cellar: :any,                 sonoma:        "825f58d2fd7605ce40ae7876b1c79480e6f502340d9c572cfd6b7ac5a75856cf"
-    sha256 cellar: :any,                 ventura:       "dabcd68e29c8efe82ea9763f6a481568147bc50b02d04b6db6df0684b3f77b18"
-    sha256                               arm64_linux:   "4e5427467da0b9ffb697dc68629c29663b98593a80146e01f75149cc6e2322d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80a5318eccb15cd2ce95c016f3406eeef7957647b409c43875b194e83d8d6666"
+    sha256 cellar: :any, arm64_tahoe:   "a45340cf95a072f37cb00f9bcb8b1dfe31128fe4a9421957c9a57938a87341a1"
+    sha256 cellar: :any, arm64_sequoia: "7a0d9ba6e8e8279bc1c17502bb2384564ee63b8df3f0db9e2fdbc04084807713"
+    sha256 cellar: :any, arm64_sonoma:  "cdf97de8164961de85d7f7b18b07b725770c767bd8ebd0bb3ec88c0c31381bc6"
+    sha256 cellar: :any, sonoma:        "177f50d05d85775089fab59021fdbc7d483814f42558d170cd8f26d146512262"
+    sha256               arm64_linux:   "f8b2f804f9e7cac847bc8d375976f29d9a6f3a1a78e2bedf91ce677d1801b5a5"
+    sha256               x86_64_linux:  "f61c9e4d2bc4894d65d16c7ccedeba81ffaac9c07cbc337be00cd8d77d353c06"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
 
   def install
-    system "meson", "setup", "build", "-Dgtk_doc=disabled", *std_meson_args
+    system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end

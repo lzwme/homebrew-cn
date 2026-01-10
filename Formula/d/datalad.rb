@@ -6,17 +6,16 @@ class Datalad < Formula
   url "https://files.pythonhosted.org/packages/e9/36/0fa094173c8676a9f1187179941ba619a016afb6cfa46c92171c8edb2edf/datalad-1.2.3.tar.gz"
   sha256 "48f19d3e4fc7b2725240e6c47d6710f3bc46ad6b42455ff76dd3f6e34226f39f"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/datalad/datalad.git", branch: "maint"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c3bd03d12d3d9ebc6fb95fa48cc0e4f392e28c32ff82e701b5c79a6183998b5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6b83a34b0ec6d0f7002e550e6ea80c273bdd0aecffee4a7ab16212fd7fcd71d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a4f39520f7f68d2bb1c48e00557c5dcf67e6de4d12afd0981eae6bc916bda1c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2d49c0c6d2382aa24c8e90cd20c042284beff55b846bb6205db774efb7f26da5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7515c6713dc1096f0ee5a1ff91bf67b8d19bd46533736b3bf35fcb98276f9654"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ec0c5467c3ab27f312215467bf712924f4c808a75391b26c3448dac1f90ed7e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e34c612d974fa0cbe37571f051892140ae062571d0c3e40a5892a501db4b5471"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "028107307d32fab63cf979a8f514ba79dfa405a5d1620a86d47a214bcf63ab22"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b7639fa32075db4a946a01cb0f692362f8dac5204b7c7d008e7fe763dc63f8b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "17265288439b8232afd4bfffca4c4021bda08bcce38ec90bc27fba283dc9e471"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "964505e3165b0d0f8d93632fbc7b8f43e87be4ae9cf71f913c4eb641bdd65f5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "179ec7d65c31cdbe7c795572e6f3a51b857ba5b412981f6b258294a4f2d233b6"
   end
 
   depends_on "certifi" => :no_linkage
@@ -40,13 +39,13 @@ class Datalad < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/f3/31/246916eec4fc5ff7bebf7e75caf47ee4d72b37d4120b6943e3460956e618/boto3-1.42.4.tar.gz"
-    sha256 "65f0d98a3786ec729ba9b5f70448895b2d1d1f27949aa7af5cb4f39da341bbc4"
+    url "https://files.pythonhosted.org/packages/ee/21/8be0e3685c3a4868be48d8d2f6e5b4641727e1d8a5d396b8b401d2b5f06e/boto3-1.42.24.tar.gz"
+    sha256 "c47a2f40df933e3861fc66fd8d6b87ee36d4361663a7e7ba39a87f5a78b2eae1"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/5c/b7/dec048c124619b2702b5236c5fc9d8e5b0a87013529e9245dc49aaaf31ff/botocore-1.42.4.tar.gz"
-    sha256 "d4816023492b987a804f693c2d76fb751fdc8755d49933106d69e2489c4c0f98"
+    url "https://files.pythonhosted.org/packages/12/d7/bb4a4e839b238ffb67b002d7326b328ebe5eb23ed5180f2ca10399a802de/botocore-1.42.24.tar.gz"
+    sha256 "be8d1bea64fb91eea08254a1e5fea057e4428d08e61f4e11083a02cafc1f8cc6"
   end
 
   resource "chardet" do
@@ -70,8 +69,8 @@ class Datalad < Formula
   end
 
   resource "humanize" do
-    url "https://files.pythonhosted.org/packages/b6/43/50033d25ad96a7f3845f40999b4778f753c3901a11808a584fed7c00d9f5/humanize-4.14.0.tar.gz"
-    sha256 "2fa092705ea640d605c435b1ca82b2866a1b601cdf96f076d70b79a855eba90d"
+    url "https://files.pythonhosted.org/packages/ba/66/a3921783d54be8a6870ac4ccffcd15c4dc0dd7fcce51c6d63b8c63935276/humanize-4.15.0.tar.gz"
+    sha256 "1dd098483eb1c7ee8e32eb2e99ad1910baefa4b75c3aff3a82f4d78688993b10"
   end
 
   resource "idna" do
@@ -90,13 +89,13 @@ class Datalad < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/df/ad/f3777b81bf0b6e7bc7514a1656d3e637b2e8e15fab2ce3235730b3e7a4e6/jaraco_context-6.0.1.tar.gz"
-    sha256 "9bae4ea555cf0b14938dc0aee7c9f32ed303aa20a3b73e7dc80111628792d1b3"
+    url "https://files.pythonhosted.org/packages/8d/7d/41acf8e22d791bde812cb6c2c36128bb932ed8ae066bcb5e39cb198e8253/jaraco_context-6.0.2.tar.gz"
+    sha256 "953ae8dddb57b1d791bf72ea1009b32088840a7dd19b9ba16443f62be919ee57"
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
-    sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
+    url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
+    sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
   end
 
   resource "jeepney" do
@@ -140,8 +139,8 @@ class Datalad < Formula
   end
 
   resource "patool" do
-    url "https://files.pythonhosted.org/packages/26/3e/9537c0921cddfb84f786ad6808d7b9edcee1cf606a53d0d7272fb27487d5/patool-4.0.2.tar.gz"
-    sha256 "e7f62d222f4a8a6c48dbfb38056dc7f9e5778ccc07c1f16d9653a316812f83ba"
+    url "https://files.pythonhosted.org/packages/84/6a/d8cc4ee61e6cc066a0c8d4ef2118c5fbf4d8e3ad8ee94192cc097749ae8a/patool-4.0.3.tar.gz"
+    sha256 "d7e3d3b69857edd4441061e27254ff1761c9e7a0627562be9eb1fc90cc08770f"
   end
 
   resource "platformdirs" do
@@ -160,8 +159,8 @@ class Datalad < Formula
   end
 
   resource "python-gitlab" do
-    url "https://files.pythonhosted.org/packages/5e/c4/0b613303b4f0fcda69b3d2e03d0a1fb1b6b079a7c7832e03a8d92461e9fe/python_gitlab-7.0.0.tar.gz"
-    sha256 "e4d934430f64efc09e6208b782c61cc0a3389527765e03ffbef17f4323dce441"
+    url "https://files.pythonhosted.org/packages/31/98/0b5d0a0367b90aec818298390b60ae65e6a08989cf5140271d0ee0206882/python_gitlab-7.1.0.tar.gz"
+    sha256 "1c34da3de40ad21675d788136f73d20a60649513e692f52c5a9720434db97c46"
   end
 
   resource "requests" do
@@ -195,8 +194,8 @@ class Datalad < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

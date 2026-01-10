@@ -1,6 +1,6 @@
 cask "cinderella" do
-  version "3.0.2110"
-  sha256 "c8237138a6af0043320450c76c41077f184a8b68b772071be071f1b5bc124091"
+  version "3.0.2112"
+  sha256 "1a2626f94b503533d7d46a9fafc6d7d67b496f5a39e0b9d71ed0e7d4c85fbffd"
 
   url "https://beta.cinderella.de/Cinderella-#{version}.dmg"
   name "Cinderella"

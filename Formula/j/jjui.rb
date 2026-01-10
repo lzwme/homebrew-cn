@@ -1,17 +1,17 @@
 class Jjui < Formula
   desc "TUI for interacting with the Jujutsu version control system"
   homepage "https://github.com/idursun/jjui"
-  url "https://ghfast.top/https://github.com/idursun/jjui/archive/refs/tags/v0.9.8.tar.gz"
-  sha256 "2752e6586c1cd010d077aff202d7da00923c593bd8e124d17c6b44804a521a93"
+  url "https://ghfast.top/https://github.com/idursun/jjui/archive/refs/tags/v0.9.9.tar.gz"
+  sha256 "2bb02c22f1164856909152a7f13aaa24b8e97169b8377c711d4682fd32d8d85b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7eab8f4970c0d8bdd698d26b37ad12453bba2fb1d688de2ed0a673760126d6a3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7eab8f4970c0d8bdd698d26b37ad12453bba2fb1d688de2ed0a673760126d6a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7eab8f4970c0d8bdd698d26b37ad12453bba2fb1d688de2ed0a673760126d6a3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "76223739ce82fad6fdae3fe7d587cba888bcf276275a82a78b4be6b8b084296f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "494e9c76265547bb120f327698a70ed98f59c57bbd2837fb77c4ea94fe8894fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "420af7e16efe6da7e4e6666947f1a6eb1c7e101a5bd7f7725cbc61ee484cea02"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e52f6426042f9681f38e705a7d1d2b9f97ccd87715e3e3a3055488223a346bfd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e52f6426042f9681f38e705a7d1d2b9f97ccd87715e3e3a3055488223a346bfd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e52f6426042f9681f38e705a7d1d2b9f97ccd87715e3e3a3055488223a346bfd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ec3bdf0550bf9385e439ddf5dbd81e79ddc7389cb967434c5e1b10e8b7b266bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "511a532ccd915c2a7ee4ee04348481421266107c9faaa4959ba1fe22d55ac659"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c65f766e6b41098349f3ac2cf0606e0e7e7a897601d8ab756692aa00cf507f7e"
   end
 
   depends_on "go" => :build
@@ -24,6 +24,6 @@ class Jjui < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/jjui -version")
-    assert_match "Error: There is no jj repo in", shell_output("#{bin}/jjui 2>&1", 1)
+    assert_match "There is no jj repo in", shell_output("#{bin}/jjui 2>&1", 1)
   end
 end

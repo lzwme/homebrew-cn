@@ -6,14 +6,15 @@ class Flexget < Formula
   url "https://files.pythonhosted.org/packages/14/e8/b0b76935588abf944c5bf4ac3ad0ad46681691f35463d2ff069b25853ea0/flexget-3.18.35.tar.gz"
   sha256 "3c2f6880c66abe854175e3c119c6b40775f570017c6f0ca580b0521672562a97"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a24351a0b6ec66b7eb4e30ec0bae5af951479e2bb60daa14e1cc84203a35d976"
-    sha256 cellar: :any,                 arm64_sequoia: "b1d034a39a664404305d69a1d640636f8c0259573a9555053f1417275a8c3d62"
-    sha256 cellar: :any,                 arm64_sonoma:  "aa4984fdcea7c49b631c6ab0852e19cd72278b8c4334b740a62e829a4190bc0c"
-    sha256 cellar: :any,                 sonoma:        "0b71c4523e57bcdab961c77f3ed56231172f34672f01661e51ca3d45a7243728"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7eeca14d72883d432d83151a2b62edc1ec1e429b003089e2e308ba86a9d0020"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d76b8a6ad94f7d21a158409a3008b1288f737d51caa1c6a28606138926817508"
+    sha256 cellar: :any,                 arm64_tahoe:   "7e3de19ce13d1bebe8ae75a4673451b63cfee7114b0c13883418acb2a2340e95"
+    sha256 cellar: :any,                 arm64_sequoia: "8cc04f0fe45baffa0915f63d6338adca75b0c8744cb64d1915d5889fc553603d"
+    sha256 cellar: :any,                 arm64_sonoma:  "e7340795f9a796de3a3a3c1d079c7a2f236cf063bb990c55890c1411015c4b34"
+    sha256 cellar: :any,                 sonoma:        "e61b46e2f8ab1d3dc472fd513877a247446391c31383bd657c7e934bbdef4310"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c62615e3b4ff3aaee7f88d8b39c4a50c3c77d40ce75614a0f688775e94fa6b32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "867de8e363480c101a61942d922b1141cbc89bc77bd33beacbc8a93c91031443"
   end
 
   depends_on "rust" => :build
@@ -115,11 +116,6 @@ class Flexget < Formula
     sha256 "0ae13d77e7d7e4dce513970cfa9db45364aef210e99022de26d2b73eb4dbced5"
   end
 
-  resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/c7/e5/40dbda2736893e3e53d25838e0f19a2b417dfc122b9989c91918db30b5d3/greenlet-3.3.0.tar.gz"
-    sha256 "a82bb225a4e9e4d653dd2fb7b8b2d36e4fb25bc0165422a11e48b88e9e6f78fb"
-  end
-
   resource "guessit" do
     url "https://files.pythonhosted.org/packages/d0/07/5a88020bfe2591af2ffc75841200b2c17ff52510779510346af5477e64cd/guessit-3.8.0.tar.gz"
     sha256 "6619fcbbf9a0510ec8c2c33744c4251cad0507b1d573d05c875de17edc5edbed"
@@ -178,8 +174,8 @@ class Flexget < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
-    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
+    url "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz"
+    sha256 "0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326"
   end
 
   resource "jsonschema-specifications" do
@@ -360,8 +356,8 @@ class Flexget < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/45/ea/b0f8eeb287f8df9066e56e831c7824ac6bab645dd6c7a8f4b2d767944f9b/werkzeug-3.1.4.tar.gz"
-    sha256 "cd3cd98b1b92dc3b7b3995038826c68097dcb16f9baa63abe35f20eafeb9fe5e"
+    url "https://files.pythonhosted.org/packages/5a/70/1469ef1d3542ae7c2c7b72bd5e3a4e6ee69d7978fa8a3af05a38eca5becf/werkzeug-3.1.5.tar.gz"
+    sha256 "6a548b0e88955dd07ccb25539d7d0cc97417ee9e179677d22c7041c8f078ce67"
   end
 
   resource "zc-lockfile" do

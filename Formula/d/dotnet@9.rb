@@ -74,6 +74,13 @@ class DotnetAT9 < Formula
     end
   end
 
+  # Backport fix for https://github.com/dotnet/dotnet/issues/4037
+  patch do
+    url "https://github.com/dotnet/source-build-externals/commit/509ae3f3bf4e405e55b635699970a2d8014fba59.patch?full_index=1"
+    sha256 "83174ff071f181f720a77c01df46340c4410bc56908d7c10700498649734bda7"
+    directory "src/source-build-externals"
+  end
+
   def install
     odie "Update release.json resource!" if resource("release.json").version != version
     buildpath.install resource("release.json")
@@ -100,11 +107,6 @@ class DotnetAT9 < Formula
                 '"$(DotnetTool) build-server shutdown --vbcscompiler"',
                 '"true"'
     end
-
-    # Work around https://github.com/dotnet/dotnet/issues/4037 using the last
-    # valid version (2025-12-31 => 61231). Remove when upstream issue is fixed.
-    f = "src/source-build-externals/src/azure-activedirectory-identitymodel-extensions-for-dotnet/build/common.props"
-    inreplace f, '.$([System.DateTime]::Now.AddYears(-2019).Year)$([System.DateTime]::Now.ToString("MMdd"))', ".61231"
 
     args = %w[
       --clean-while-building

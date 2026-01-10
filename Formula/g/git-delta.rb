@@ -8,14 +8,13 @@ class GitDelta < Formula
   head "https://github.com/dandavison/delta.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e4a5904f5e25b1b653170e507f305fa84f14f51d104cdc194233c49873f8c4bf"
-    sha256 cellar: :any,                 arm64_sequoia: "7c27a32de04509f9a25338f7cc4bafb70afd00f7cbea5da8c204a71c0f2a732b"
-    sha256 cellar: :any,                 arm64_sonoma:  "a6c8b820d16efadc9177575a7fb3a4a523156d025be6ab605a9309669171e63d"
-    sha256 cellar: :any,                 arm64_ventura: "ff3d53184c7906ef335c901fec639c8355f802644d025703b0b39c6b18b0727f"
-    sha256 cellar: :any,                 sonoma:        "e17a98613a20338c989370e9d6f456d526b5cfb3d9ba92ad9b6a48b409948ca0"
-    sha256 cellar: :any,                 ventura:       "c84810ecf79b524ce48078f5c7356385fd9dd00d79aeb6ce5f907d4e08264061"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "06c529b61898673d7b0537378247b4865402459abf6fb0967a5454f895796ba1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbff34c88d3f5db15c4cb31935f6727e7fc2f682ae3a4e0ccd572685cd5c2fb5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "702c33af336cc6b1cf1950f3bbba87df652d9310d6880a2779f0be9e8a915f43"
+    sha256 cellar: :any,                 arm64_sequoia: "e5572a654e8c6d38a1ca6d51ddffafc83abeb11bdee3a39208fb22371c7eeaf9"
+    sha256 cellar: :any,                 arm64_sonoma:  "4af7f1406d4f2e21632498f31d64b2fb7962630c9e7235312ce9bf0ad8a6d2f3"
+    sha256 cellar: :any,                 sonoma:        "fdd627e7a918dab21f5ef18f6c9c6454ea15ab13f0dc46d90816db96ad2f72b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f508627daf3121478652a6d704bd9b0a7030c270aa90277fba075ef75480f19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b6c3c87ac8377cca7ea3f1da5de9de07d511d88eb68c50118b6ac0f3ab6bbe8"
   end
 
   depends_on "pkgconf" => :build
@@ -36,6 +35,8 @@ class GitDelta < Formula
     ENV["RUSTONIG_SYSTEM_LIBONIG"] = "1"
 
     system "cargo", "install", *std_cargo_args
+
+    pkgshare.install "themes.gitconfig"
 
     generate_completions_from_executable(bin/"delta", "--generate-completion")
   end

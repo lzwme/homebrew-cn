@@ -6,11 +6,11 @@ class Easyeda2kicad < Formula
   url "https://files.pythonhosted.org/packages/f1/78/fde265892294c733590a9089f37cc8ea1478b9c632d76c0a11b8f20fe6f3/easyeda2kicad-0.8.0.tar.gz"
   sha256 "a781be6d1076f6e06886a4292373eb930c9921de4c709d6dd91bb6ea104f4a4b"
   license "AGPL-3.0-or-later"
-  revision 3
+  revision 4
   head "https://github.com/uPesy/easyeda2kicad.py.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6cc11ff9d72cc0f07cd0fcdd5271f1fdd76d93e7482783a90654eda38a4795fe"
+    sha256 cellar: :any_skip_relocation, all: "5466e26d21c75f24b9bc6de69a75ce25eb7a4ec3f7586058ed00d119ddb2ce51"
   end
 
   depends_on "certifi" => :no_linkage
@@ -35,8 +35,8 @@ class Easyeda2kicad < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

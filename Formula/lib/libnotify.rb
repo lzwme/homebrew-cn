@@ -1,17 +1,17 @@
 class Libnotify < Formula
   desc "Library that sends desktop notifications to a notification daemon"
   homepage "https://gitlab.gnome.org/GNOME/libnotify"
-  url "https://download.gnome.org/sources/libnotify/0.8/libnotify-0.8.7.tar.xz"
-  sha256 "4be15202ec4184fce1ac15997ece5530d2be32fe9573875aeb10e3b573858748"
+  url "https://download.gnome.org/sources/libnotify/0.8/libnotify-0.8.8.tar.xz"
+  sha256 "23420ef619dc2cb5aebad613f4823a2fa41c07e5a1d05628d40f6ec4b35bfddd"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "432a1a5516773598e091d855d0ea1794d18465685c8b0c7bc634b0298440fb19"
-    sha256 cellar: :any, arm64_sequoia: "ae0b1cb150777c646427142e8b1c1bee766e0494a2dcb57304d56ce2fc4d96a6"
-    sha256 cellar: :any, arm64_sonoma:  "a3d7d0aa240cc2e3239448a84b2345b6e92dd5992e40be29e66b916a2c7a34a0"
-    sha256 cellar: :any, sonoma:        "c5f342a40d5eb2daea339a3321f600e0fe134926f51ecb13b18022727cd2f0fe"
-    sha256               arm64_linux:   "6964c240d0cbcd83d519a48cb96773fe9537374c35324f5e2cc1ca8451899a53"
-    sha256               x86_64_linux:  "0fbf7d4e76fec144b95d570657b493bc41d4cac2cab6482038455f35b7ea9f43"
+    sha256 cellar: :any, arm64_tahoe:   "d8ee57b001510f29334c55080553cf34f41b9e8643484429ec1a0d4852f9fb58"
+    sha256 cellar: :any, arm64_sequoia: "4081e1a50cd23929e7c1ae070e81bf2dc85e6099a274d4e1b98a60da459d0cb6"
+    sha256 cellar: :any, arm64_sonoma:  "2f5cab371969079dbee0c140accfc7a3267bbf006c63e3a1935c153fde4033a7"
+    sha256 cellar: :any, sonoma:        "43ec242ea169e80dda511f44370f9df94f2f50d0996a60149f236c9bbcc515ef"
+    sha256               arm64_linux:   "30a82c884d084884e6d52521fd84aa30c4192e60bca5756b8973a4a786280cf1"
+    sha256               x86_64_linux:  "8a89fcc90b7fc4b1a4559cadd439c9565ea597d4b6184125eb7e17ece817e483"
   end
 
   depends_on "docbook-xsl" => :build
@@ -26,14 +26,6 @@ class Libnotify < Formula
 
   on_macos do
     depends_on "gettext"
-  end
-
-  # Do not include <gio/gdesktopappinfo.h> header
-  # on the platforms that do not support it (i.e. macOS)
-  # https://gitlab.gnome.org/GNOME/libnotify/-/merge_requests/53
-  patch do
-    url "https://gitlab.gnome.org/GNOME/libnotify/-/commit/13de65ad2a76255ffde5d6da91d246cd7226583b.diff"
-    sha256 "243f8b03abb80bbd9df9d69f4883ee249b44d6260fbf7bc2e54c9f612f478c59"
   end
 
   def install

@@ -1,20 +1,18 @@
 class Libtasn1 < Formula
   desc "ASN.1 structure parser library"
   homepage "https://www.gnu.org/software/libtasn1/"
-  url "https://ftpmirror.gnu.org/gnu/libtasn1/libtasn1-4.20.0.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.20.0.tar.gz"
-  sha256 "92e0e3bd4c02d4aeee76036b2ddd83f0c732ba4cda5cb71d583272b23587a76c"
+  url "https://ftpmirror.gnu.org/gnu/libtasn1/libtasn1-4.21.0.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.21.0.tar.gz"
+  sha256 "1d8a444a223cc5464240777346e125de51d8e6abf0b8bac742ac84609167dc87"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c8b872f9b9bda9d74184575f84a277ea8cb32c49c60c5615cd2b0ebcd2279d9a"
-    sha256 cellar: :any,                 arm64_sequoia: "e847b97b86b1caab2eff1498c82c411459e1e7c176de72e6c53aed4528ab80ce"
-    sha256 cellar: :any,                 arm64_sonoma:  "8a2d13e7d0c687470f2be9e213432b93c22d3ab9b674fce2a950d7eb45432cac"
-    sha256 cellar: :any,                 arm64_ventura: "b202c24f2e22f7f709473f72ec9c26f3ec43d643b8488378690c83fd96d48d69"
-    sha256 cellar: :any,                 sonoma:        "75cccbdfc213e905656c372ca5b9496cf88dea3a0fd9dcb032f06bbdd061228b"
-    sha256 cellar: :any,                 ventura:       "544067beee3846eafd9a1ecdd5d25646d8ff3f417f5f2e464441b0a2c6a19b39"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec6abf595dd54b05c55662226b05301d9e27b3e61f427866b1ba7686d01f8633"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a141f58624a57f3370d4ed714225a78f24bddbb6a3b60ed82127614090cdb9d9"
+    sha256 cellar: :any,                 arm64_tahoe:   "ae01713eec0bd922b903ed2bf514dc085ec3108636c4ead84614b23a2c33f267"
+    sha256 cellar: :any,                 arm64_sequoia: "973e0fd7d529808f53fa9ae281020bcbcc750a1dff60e5e5bc37c0da274cca5e"
+    sha256 cellar: :any,                 arm64_sonoma:  "2dceab4bf93738bd4f3efd9063a5cf60ccd96e5b0e5a3ac9fca508e42b5f3336"
+    sha256 cellar: :any,                 sonoma:        "71c5d144fdce79e4cfe7bbd5863da5171a13d892a26475c5ea183e7e3ef21d8f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8b7973e5f6822f25876da6b60138eec386a3d3b9f0a694dff7b5a7073fcf82d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0394c5c9c0b278c37eb9f817a282054d64654f7b27eb86100bb5b307a0d72b5"
   end
 
   def install

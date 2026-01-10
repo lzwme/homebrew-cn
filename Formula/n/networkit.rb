@@ -1,17 +1,17 @@
 class Networkit < Formula
   desc "Performance toolkit for large-scale network analysis"
   homepage "https://networkit.github.io"
-  url "https://ghfast.top/https://github.com/networkit/networkit/archive/refs/tags/11.2.tar.gz"
-  sha256 "ed762fb2b893425fe05074fa746db58c1e7bef4d96d9921e72d6ae8ca387f995"
+  url "https://ghfast.top/https://github.com/networkit/networkit/archive/refs/tags/11.2.1.tar.gz"
+  sha256 "969718847465937086728a884b5f143d7f36cfd3f6cdc04ef9ae4f64ba61b60c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7bfe393457656684e4d99dde255af9d08e2fb0398e8af143f649d8d0f13caf6f"
-    sha256 cellar: :any, arm64_sequoia: "beda63eb01b52c280720c5c836772bd5a3f32d4f21e8e1a7943fb75b50df979f"
-    sha256 cellar: :any, arm64_sonoma:  "5956b4c185583fc4647acad32be3769323eb8d5db4ef49ad9dc1dddd1acd6e83"
-    sha256 cellar: :any, sonoma:        "f1facd484f2223890376be420ae5cb588b8720dd7a6ce5fac6ea28b09470b578"
-    sha256               arm64_linux:   "b8a4e9fcd03bf9c5b7340aede1d10af2ab37456f63ad0a7b819e3e878d237278"
-    sha256               x86_64_linux:  "2dde033c4a4b5963d0f646cdbe87a929fcf1d6795c2c0c2c63c69b73f5fd3e6f"
+    sha256 cellar: :any, arm64_tahoe:   "ced2920bc1e6701e30cca2d8fc70cf0f9b785cb5fdced49dcaae63ddb2f77d9b"
+    sha256 cellar: :any, arm64_sequoia: "04f4977d13c5198b836327852a765cd9e9a8d213817f859cbc51b66a7cd324ca"
+    sha256 cellar: :any, arm64_sonoma:  "3dc11cc11c07c71c6d19a9990ecbaa90f0482a0c7d6ef2947ceb3b2550053018"
+    sha256 cellar: :any, sonoma:        "84202ae39b325a754d091cb55f9ea530fd378fc9bf81f3aea896b49f3cf8bcd1"
+    sha256               arm64_linux:   "b0a4297e282a3eece612c67f3ef520ef56df2687e060588bc8fea3d13cec2b36"
+    sha256               x86_64_linux:  "f3490cbbda12ffaeff0028a1353d8763c526d8dd430b01512f4c908cb8619905"
   end
 
   depends_on "cmake" => :build

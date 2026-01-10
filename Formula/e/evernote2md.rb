@@ -1,20 +1,18 @@
 class Evernote2md < Formula
   desc "Convert Evernote .enex file to Markdown"
   homepage "https://github.com/wormi4ok/evernote2md"
-  url "https://ghfast.top/https://github.com/wormi4ok/evernote2md/archive/refs/tags/v0.22.1.tar.gz"
-  sha256 "1c9f8b6efdc6374fe493be39890d75788cd6e341cd1b0e9abec972ac8d9c6cbf"
+  url "https://ghfast.top/https://github.com/wormi4ok/evernote2md/archive/refs/tags/v0.22.2.tar.gz"
+  sha256 "643b6f12f2a6874293f7ed0c0de69089cd5c7cd8ee30899f1a85f9a63008fd9d"
   license "MIT"
   head "https://github.com/wormi4ok/evernote2md.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "94b86dd0f2fc910f5fd28bb8c6fb72aa3a8df7e0fb17e07842caf0c3cb55db78"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4695d5deaf82ebc326e8fd8352df78e1bd0c152ee2019a15fc05b222aea70615"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4695d5deaf82ebc326e8fd8352df78e1bd0c152ee2019a15fc05b222aea70615"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4695d5deaf82ebc326e8fd8352df78e1bd0c152ee2019a15fc05b222aea70615"
-    sha256 cellar: :any_skip_relocation, sonoma:        "478cce9d01b44842dd82b25fd1660e3447f1de3e85d094c2f54012a197b41c0a"
-    sha256 cellar: :any_skip_relocation, ventura:       "478cce9d01b44842dd82b25fd1660e3447f1de3e85d094c2f54012a197b41c0a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c61ead54808398828d01a20218b5e1e4822af7c05238aab1aa945ff6507ead10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a94b33b8d7f6b9bd261156e5a3d417d77bbc0dcf53e18f857984f187a610d8f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc05023d2f533a633f39bdc2b459410d5641f34d25ad36869564cfb1a5588b93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc05023d2f533a633f39bdc2b459410d5641f34d25ad36869564cfb1a5588b93"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc05023d2f533a633f39bdc2b459410d5641f34d25ad36869564cfb1a5588b93"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b7dbea9edb565c916a6421b4ccca7e02bbc3103717363865a48bcca01988c110"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "355b84e80e8c95f159d6c1323b5765177b4b285139aede2db278ab44dd89577d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad6aabd701ef98384847b5911bc5740aac59ef85bf9792c52145fec41f344449"
   end
 
   depends_on "go" => :build

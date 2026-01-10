@@ -8,18 +8,18 @@ class Duplicity < Formula
   url "https://files.pythonhosted.org/packages/16/96/fc07257297b433c19162764f8c3b8649cf788201890c2563476570e1167e/duplicity-3.0.7.tar.gz"
   sha256 "464245217285012e8e0c74ad3edf16be7ff4801caa5272745f10d93a2a7de44e"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   # FIXME: Fails trying to resolve lxml as needs `libxml2`/`libxslt` installed
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b4d9d0118a5ee0c1649acf2eb83ae3b8c77c33777f2f61bbc30221a7e41ff133"
-    sha256 cellar: :any,                 arm64_sequoia: "798f26e044d176003c5d3b1ab614e25abb9073e23ffa1fec8dc3284a506a60e4"
-    sha256 cellar: :any,                 arm64_sonoma:  "f27eb68b0eae1c6907b379342b230eac578afe3f8529da64a8d318afa100933a"
-    sha256 cellar: :any,                 sonoma:        "5ca8a32fd1a10382d2483806799175de9835097d7e2b28e512679851294674f4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "afc7d639b9466286ecc8618cf935233ba001e9397242661c6989cf4238dd448e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3bb9b790847d8d4dc8a6df0f90e43a5d0eb2f8ff5afca8847f5514edfce68ee"
+    sha256 cellar: :any,                 arm64_tahoe:   "4d3eea2606f8cc3e952bb33b60113e410574a0669b74c327034f2a32a03910dc"
+    sha256 cellar: :any,                 arm64_sequoia: "36dd7d8772480f82fa111426cff9ca9dd56342108b80708db1f6ab8802fa7a72"
+    sha256 cellar: :any,                 arm64_sonoma:  "3c4ee6d7c4c3b15df586058b1069dffab3d34d87767df6305d0545b50a61c310"
+    sha256 cellar: :any,                 sonoma:        "29c8b4cba378e055362d8f8320e9bd25e3c8cff8e803619608c208d63e036b22"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f59c42118d361677424ebb63c26fd07a24f44cd7fb3e9c4ddba18e062fa8f42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "975df8e13e056f1352fea5d5dcd307733c4b71624d4de738d6999c4172df95a3"
   end
 
   depends_on "gettext" => :build # for msgfmt
@@ -71,13 +71,13 @@ class Duplicity < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0d/df/17828670134e56ffca8cf8b017477f16d1a9df7ecfc3870d02aa6d4d2e20/boto3-1.42.23.tar.gz"
-    sha256 "f681a8d43b46b3d8acf0be4f3894eb85e40e75945431d0dfe0542edda7025512"
+    url "https://files.pythonhosted.org/packages/ee/21/8be0e3685c3a4868be48d8d2f6e5b4641727e1d8a5d396b8b401d2b5f06e/boto3-1.42.24.tar.gz"
+    sha256 "c47a2f40df933e3861fc66fd8d6b87ee36d4361663a7e7ba39a87f5a78b2eae1"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/2c/2c/db33716f86b67c514f895c60694a25cd7428d2137b574b59d09d626b0e2e/botocore-1.42.23.tar.gz"
-    sha256 "453ce449bd1021acd67e75c814aae1b132b1ab3ee0ecff248de863bf19e58be8"
+    url "https://files.pythonhosted.org/packages/12/d7/bb4a4e839b238ffb67b002d7326b328ebe5eb23ed5180f2ca10399a802de/botocore-1.42.24.tar.gz"
+    sha256 "be8d1bea64fb91eea08254a1e5fea057e4428d08e61f4e11083a02cafc1f8cc6"
   end
 
   resource "boxsdk" do
@@ -141,8 +141,8 @@ class Duplicity < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/61/da/83d7043169ac2c8c7469f0e375610d78ae2160134bf1b80634c482fa079c/google_api_core-2.28.1.tar.gz"
-    sha256 "2b405df02d68e68ce0fbc138559e6036559e685159d148ae5861013dc201baf8"
+    url "https://files.pythonhosted.org/packages/0d/10/05572d33273292bac49c2d1785925f7bc3ff2fe50e3044cf1062c1dde32e/google_api_core-2.29.0.tar.gz"
+    sha256 "84181be0f8e6b04006df75ddfe728f24489f0af57c96a529ff7cf45bc28797f7"
   end
 
   resource "google-api-python-client" do
@@ -546,8 +546,8 @@ class Duplicity < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "wcwidth" do

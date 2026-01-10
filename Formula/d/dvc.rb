@@ -3,17 +3,17 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/31/36/f8f074250f3b75cef0c183f3c1446b56dd61d7a343871792f7d169ace21e/dvc-3.66.0.tar.gz"
-  sha256 "de999939f21fc258cc0ecc34558e1ac14750b167de8f7c78354ad0fd83be1e09"
+  url "https://files.pythonhosted.org/packages/b6/46/134ce696e6d4e857e4378ad5dd6f84eac3e1c3b66cdada89baade9cfd1e9/dvc-3.66.1.tar.gz"
+  sha256 "ed8e07050fdf1fc222ea95afbef8540820179e42022bc068c7b343f2a1304e69"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1479af0a185af0f797e965c6b47764b100a047ce93e53c83c20beae69f9c35c4"
-    sha256 cellar: :any,                 arm64_sequoia: "aebaea84061bfa68cef83c674fa9133630c9ad25b7fd425bc419c3ba61958883"
-    sha256 cellar: :any,                 arm64_sonoma:  "d1f85fb99a57dcb265b71671bd96c04ab236618757342511881844a06a4400d3"
-    sha256 cellar: :any,                 sonoma:        "c55d19a1796bba5949d59010e2e0ca36a3781803450e5faa2b8b9e59ef2ce400"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2d79288477e3037dc487da4c8c5412f8dc2d388ddbd52f71f03f5ffad827e39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41d8ef126aa79f428cb90e48c595c63ffedd7fc3d14f15cf4a3d67199fbf2e62"
+    sha256 cellar: :any,                 arm64_tahoe:   "4a6742658ec01981fa84377f4a28535faefa57234cff3c5b16cf874ad9d0f357"
+    sha256 cellar: :any,                 arm64_sequoia: "bc03f9446a2d3ac367e2fb59aa57f6b2892b99c4b365372cb9c1a1bb5e8fa001"
+    sha256 cellar: :any,                 arm64_sonoma:  "4d7291a5d2433d15cd02c535c75cc72ec6e97d0c054294806892695c6f370e2f"
+    sha256 cellar: :any,                 sonoma:        "387fa96b914d9d47b4e331f814ddf85559943779dc415dc5f89b93dc235f3894"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "da44de7a205d268b09cfb5b13f4952b69af586b993cfa2b057105c8143e2af16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b3b8406b8eb466cdeeca5e40a4e3fd884265e68338c83fcb578710504605426"
   end
 
   depends_on "cmake" => :build # for pyarrow
@@ -142,8 +142,8 @@ class Dvc < Formula
   end
 
   resource "azure-storage-blob" do
-    url "https://files.pythonhosted.org/packages/36/7c/2fd872e11a88163f208b9c92de273bf64bb22d0eef9048cc6284d128a77a/azure_storage_blob-12.27.1.tar.gz"
-    sha256 "a1596cc4daf5dac9be115fcb5db67245eae894cf40e4248243754261f7b674a6"
+    url "https://files.pythonhosted.org/packages/71/24/072ba8e27b0e2d8fec401e9969b429d4f5fc4c8d4f0f05f4661e11f7234a/azure_storage_blob-12.28.0.tar.gz"
+    sha256 "e7d98ea108258d29aa0efbfd591b2e2075fa1722a2fae8699f0b3c9de11eff41"
   end
 
   resource "bcrypt" do
@@ -252,8 +252,8 @@ class Dvc < Formula
   end
 
   resource "dvc-data" do
-    url "https://files.pythonhosted.org/packages/50/ef/a258ed2e77b9350b19b102ced61d2fa162bb1e0ccaf8126b57c6fc08cf4c/dvc_data-3.17.0.tar.gz"
-    sha256 "c380c32cb3bf52195e285b0d84bcc0cf8eed0fb09ba9173bdf53b279a74481ce"
+    url "https://files.pythonhosted.org/packages/ab/7f/fa1be22d32ccf49fb605cad410182f85c744bbfc51e5759141f0a7eaad64/dvc_data-3.18.2.tar.gz"
+    sha256 "71c0bf7e62514dbad06db796a3f3aac5ccae672222b6be67029157e4efa5d359"
   end
 
   resource "dvc-gdrive" do
@@ -802,8 +802,8 @@ class Dvc < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "vine" do

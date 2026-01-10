@@ -3,18 +3,18 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/a4/c3/0c65733b87376cb89c41e15fda353fad25d2d10cd736e5a48b1b68d0c9d3/kimi_cli-0.73.tar.gz"
-  sha256 "4b8248fe2c6b1eb1639395db81f9a64d94a76c173bb5e0439eb699ee19aefd92"
+  url "https://files.pythonhosted.org/packages/d3/9a/e2217f522b8dd9e045b9e4de5f6084baec90fd82a057a252404728de61bf/kimi_cli-0.75.tar.gz"
+  sha256 "b51557ebffb2ca49ccb784b4da696941017a53fe14dd3dfb1282003b69a7e829"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "02c033363b30159865f52ba195103d4e49164784887bd473482b3c1832fc8bb3"
-    sha256 cellar: :any,                 arm64_sequoia: "afa18a241a57e07f691404f855ac6022f1ccd9300c4ec64c978507c26148ddae"
-    sha256 cellar: :any,                 arm64_sonoma:  "4ae9fc4b684108eabc65c77df394b675baab6c6928e08b2b174f453085ef7fa5"
-    sha256 cellar: :any,                 sonoma:        "ebb6d08269d3e1b88c77ddd07ef3b454ba8d485ec8f7477a6498e67ab44ba37c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6879521e8f5a808666490ce7739d05400b6b60936216d900af074020a997781"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "502b127f44637dc7a359ad3c4887f5e28b4cb8c50db8fb4721aaf80027b6d5b2"
+    sha256 cellar: :any,                 arm64_tahoe:   "b9e30fd6dc03227a946cd1ec798481b4e2462d26fc769b4d34f33d7aff743011"
+    sha256 cellar: :any,                 arm64_sequoia: "62bdf7c6b198f17176f06cd3b2b8c16cb23320eef5df98a5e6183bcad30dffc7"
+    sha256 cellar: :any,                 arm64_sonoma:  "8c335eb9d3219948f9ce5ef8466de70a16cc4217ed2a44f774d378e959494eb1"
+    sha256 cellar: :any,                 sonoma:        "6e88bde64280949b88cfd2708495d485603d7b9d419325cddb3d8615d56ed2d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "95e7c5179fb8c29d4f7968df593a694ba9d152d606d6cc683ddd8c9e431b05e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "967cf833c3b712ac252dded21e3d0e035c7f7519de2141b9f41f0b4bc45b71fc"
   end
 
   depends_on "pkgconf" => :build
@@ -339,8 +339,8 @@ class KimiCli < Formula
   end
 
   resource "pykaos" do
-    url "https://files.pythonhosted.org/packages/12/8b/f862a3c4cfe2d85a5ff0148a59be8b6f5576d31a95a7b18cc1d798cb2de6/pykaos-0.5.4.tar.gz"
-    sha256 "646bffbd016c5dba813196e6567e55595f9860442d86748cd2baa526425e4d16"
+    url "https://files.pythonhosted.org/packages/4f/b9/d30975957232dbd291f4991d03964b0a985df2acbe118645547ddc64100c/pykaos-0.6.0.tar.gz"
+    sha256 "87522cc07548243d55ee65ce7c6f17caf323bc7ba8bd43f611e4a48adb978bde"
   end
 
   resource "pyperclip" do
@@ -510,8 +510,8 @@ class KimiCli < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/45/ea/b0f8eeb287f8df9066e56e831c7824ac6bab645dd6c7a8f4b2d767944f9b/werkzeug-3.1.4.tar.gz"
-    sha256 "cd3cd98b1b92dc3b7b3995038826c68097dcb16f9baa63abe35f20eafeb9fe5e"
+    url "https://files.pythonhosted.org/packages/5a/70/1469ef1d3542ae7c2c7b72bd5e3a4e6ee69d7978fa8a3af05a38eca5becf/werkzeug-3.1.5.tar.gz"
+    sha256 "6a548b0e88955dd07ccb25539d7d0cc97417ee9e179677d22c7041c8f078ce67"
   end
 
   resource "yarl" do

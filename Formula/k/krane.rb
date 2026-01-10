@@ -1,18 +1,17 @@
 class Krane < Formula
   desc "Kubernetes deploy tool with rollout verification"
   homepage "https://github.com/Shopify/krane"
-  url "https://rubygems.org/downloads/krane-3.9.0.gem"
-  sha256 "f7d2e2e8b39da3311194efe7c5285cc9ff9caa57dc8de8b640aa729daaa4819e"
+  url "https://rubygems.org/downloads/krane-3.9.1.gem"
+  sha256 "eda88d26175aaf257df71b55b5df9d4868710a28df2b595bebadc1192a65bb8d"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ff4375ada94e25c3be816718edb77de00a3e50383107e074cae3b547503fe949"
-    sha256 cellar: :any,                 arm64_sequoia: "1c84ffec42dfd7237722c245d8f38560ab47fcedcca86cda16d88cbfc01c0fec"
-    sha256 cellar: :any,                 arm64_sonoma:  "cb6e6df4a27b749c1e21e83939ddb9a6cbec3e81765641d277a876c29a1ca331"
-    sha256 cellar: :any,                 sonoma:        "be1b01b767e055268246eb7b49412d917656f3fe13988418cea9d1a9de663cdc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c121303653c3a4ec91d9a1c50d29295602db6d744bff3d0978634de1f79a9b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69b1686a84c692ea97f3e6670e28769518f028a155fb32a8290401a516d8dc93"
+    sha256 cellar: :any,                 arm64_tahoe:   "c6f7ce0880691e99783350621b81f818c2ab45895deda32fb071b718f7ae9c3c"
+    sha256 cellar: :any,                 arm64_sequoia: "d7654441d438414758693a1ea71be2f1158b81363cc392de3854566c9805d1a6"
+    sha256 cellar: :any,                 arm64_sonoma:  "6201a5021aaf84c0783e76164be2007faa3194d8277e607296c82c35a180c510"
+    sha256 cellar: :any,                 sonoma:        "fcee877569b1606da620e2e189084e1aa1d902f56ca0b453d6838e2f625dd643"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "08545226cfed372f535b9aa70549de7ab57782bbc5793082005f357a04f5d768"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56898f13d9e4ece67e8720802746036fab763dad1a8bf90de3cd59e0c905d0d6"
   end
 
   depends_on "kubernetes-cli"
@@ -24,8 +23,8 @@ class Krane < Formula
   # https://rubygems.org/gems/krane/versions/#{version}/dependencies
 
   resource "thor" do
-    url "https://rubygems.org/downloads/thor-1.4.0.gem"
-    sha256 "8763e822ccb0f1d7bee88cde131b19a65606657b847cc7b7b4b82e772bcd8a3d"
+    url "https://rubygems.org/downloads/thor-1.5.0.gem"
+    sha256 "e3a9e55fe857e44859ce104a84675ab6e8cd59c650a49106a05f55f136425e73"
   end
 
   resource "statsd-instrument" do
@@ -99,8 +98,8 @@ class Krane < Formula
   end
 
   resource "ffi" do
-    url "https://rubygems.org/downloads/ffi-1.17.2.gem"
-    sha256 "297235842e5947cc3036ebe64077584bff583cd7a4e94e9a02fdec399ef46da6"
+    url "https://rubygems.org/downloads/ffi-1.17.3.gem"
+    sha256 "0e9f39f7bb3934f77ad6feab49662be77e87eedcdeb2a3f5c0234c2938563d4c"
   end
 
   resource "ffi-compiler" do
@@ -124,8 +123,8 @@ class Krane < Formula
   end
 
   resource "public_suffix" do
-    url "https://rubygems.org/downloads/public_suffix-7.0.0.gem"
-    sha256 "f7090b5beb0e56f9f10d79eed4d5fbe551b3b425da65877e075dad47a6a1b095"
+    url "https://rubygems.org/downloads/public_suffix-7.0.2.gem"
+    sha256 "9114090c8e4e7135c1fd0e7acfea33afaab38101884320c65aaa0ffb8e26a857"
   end
 
   resource "addressable" do

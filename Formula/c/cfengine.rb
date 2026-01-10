@@ -1,10 +1,9 @@
 class Cfengine < Formula
   desc "Help manage and understand IT infrastructure"
   homepage "https://cfengine.com/"
-  url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-community-3.26.0.tar.gz"
-  sha256 "d3c3884b314dae48a6884e919d0a12acac5aea95d970544e4632a1773857d19b"
+  url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-community-3.27.0.tar.gz"
+  sha256 "d793e830b02e09843bf8ece1efd538cd65fa0428f249bbf7e371ca52d5f97b43"
   license all_of: ["BSD-3-Clause", "GPL-2.0-or-later", "GPL-3.0-only", "LGPL-2.0-or-later"]
-  revision 1
 
   livecheck do
     url "https://cfengine-package-repos.s3.amazonaws.com/release-data/community/releases.json"
@@ -18,12 +17,12 @@ class Cfengine < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "194b3201f5b814761facbd866c90ec628022d8725eb2f86a577468f310c48611"
-    sha256 arm64_sequoia: "d6076844084c19870cdae5aaac4214a2f71e07255b97e82c68d95f540b9f2e12"
-    sha256 arm64_sonoma:  "1994f0d7654e3078812d7e5920d9b07cc22b34c94c4079804cffdd5bcf21754f"
-    sha256 sonoma:        "85eb2b22b230823f8c0efc0d6694ed0a70389bda905f4d49fa789798d213dd44"
-    sha256 arm64_linux:   "8f689a3cb668ca26e7a4a4867c87902c859f047ae189468183a667c867379101"
-    sha256 x86_64_linux:  "eafd202ffd88f9364ca84f3431740a23f75350bbae158de2fa3252df1f6f7eae"
+    sha256 arm64_tahoe:   "88253c85fccbca421d2196a0f5bc2f90156d48fe00f30da27b5f35b2710981da"
+    sha256 arm64_sequoia: "e9a9d144edc93a46a5d22e950081937a61834c5c855d6587f9dd19ee9e2f5f8a"
+    sha256 arm64_sonoma:  "d819919d8817ed210999d70b3ff83e268c628bd2ad6bb2047bcacfb9ec281bef"
+    sha256 sonoma:        "e0e0d90a26cbd07bdf1909a034fb4c928baf2e445a26b22964e1aa8a61ab05d0"
+    sha256 arm64_linux:   "8903b84dc6823ed93ce4efd43b3c8fb634690dccd7f8011526cf21b91914293b"
+    sha256 x86_64_linux:  "2d141b557648c744e4ff619b81d2590e27d1568d2bf6ad9939ce718c55c1832b"
   end
 
   depends_on "librsync"
@@ -39,8 +38,8 @@ class Cfengine < Formula
   end
 
   resource "masterfiles" do
-    url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-masterfiles-3.26.0.tar.gz"
-    sha256 "fc8b0ad20e803e0d1e9dcda7afb2f3f5110357ac0e553ed95cf2cbea9652451d"
+    url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-masterfiles-3.27.0.tar.gz"
+    sha256 "84803035168af3e43c1fb25ba5f90561dec33b151ef5d5359a108a06c4c7c61d"
 
     livecheck do
       formula :parent
