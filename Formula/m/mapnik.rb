@@ -1,10 +1,8 @@
 class Mapnik < Formula
   desc "Toolkit for developing mapping applications"
   homepage "https://mapnik.org/"
-  # needs submodules
-  url "https://github.com/mapnik/mapnik.git",
-      tag:      "v4.2.0",
-      revision: "b806a6c64994eca7ec5b991c2e81471d89b81b1c"
+  url "https://ghfast.top/https://github.com/mapnik/mapnik/releases/download/v4.2.0/mapnik-v4.2.0.tar.bz2"
+  sha256 "22299a06e466b1a32e6b1bfe5aaa5194289f94d5cdea7e18e631c1de4de785fb"
   license "LGPL-2.1-or-later"
   head "https://github.com/mapnik/mapnik.git", branch: "master"
 
@@ -14,12 +12,13 @@ class Mapnik < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bd281e1f31f066cc8075673fa027dd132977273432cc131322906c191de810b5"
-    sha256 cellar: :any,                 arm64_sequoia: "92246218dd3f2e7d75e9d4a3e14442f5d758fe419239fd20ccc1ce0d71b57c29"
-    sha256 cellar: :any,                 arm64_sonoma:  "c472690d65e5479aa4c9e3837e778dc0e442c660818ff3db22f0f9e5fad7c05b"
-    sha256 cellar: :any,                 sonoma:        "2050c55c0cce24ca0240559f6cd7cd710662021b3902557b77dc7c2442dd9f03"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c7215f5d2b32df37cc4fc125cb0e9172a7698587dcfe06534fe4b9e7a5416ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88245d1ed1fe12273415968a5b24716abcfdc33422cd981e3902e7dd4888fef3"
+    rebuild 1
+    sha256                               arm64_tahoe:   "f43169902fc168e5f4f39880f3cd7b706a07c83920b0fa14d02feefb0343c184"
+    sha256                               arm64_sequoia: "117830d1281cf7a9fdf5f48c784bc9f1165126b16ae864d09aaa0e0d51003865"
+    sha256                               arm64_sonoma:  "44f3bf5870bdfbf872557008b130a33924c27af343e0b49460b673945c7e1df0"
+    sha256 cellar: :any,                 sonoma:        "62cb63357c8b633a16900ace42b5bb0d708726bccf40267db53b74621aa413d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d83840bcb15ea2b37c40a2a43c8fdec7b31b0f20fa51150aab79bb5c405bc92b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01032bc0c51c3b879932dee92dddd998d073d2cdb33bf62eb1cfffa0ba175fed"
   end
 
   depends_on "cmake" => :build
@@ -51,7 +50,7 @@ class Mapnik < Formula
       -DBUILD_BENCHMARK:BOOL=OFF
       -DBUILD_DEMO_CPP:BOOL=OFF
       -DBUILD_DEMO_VIEWER:BOOL=OFF
-      -DCMAKE_INSTALL_RPATH:PATH=#{rpath}
+      -DCMAKE_INSTALL_RPATH:PATH=#{rpath};#{rpath(source: lib/"mapnik/input")}
       -DUSE_EXTERNAL_MAPBOX_PROTOZERO=ON
     ]
 

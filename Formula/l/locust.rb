@@ -6,14 +6,15 @@ class Locust < Formula
   url "https://files.pythonhosted.org/packages/98/5b/114d2a51b0e699ce4fcdc1767fcbb2a4b6b2cb05646c313edd6883e41c03/locust-2.43.0.tar.gz"
   sha256 "7a0d76e842c0dab7dccde6bd8abaef5e2c2966f8ab69c34761341bb80af66db9"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3d47b84ad515ae9a2c950bf22e3dd8c1691f181dad591f21e9145bd710d49d3a"
-    sha256 cellar: :any,                 arm64_sequoia: "cc4f3c7bcea53f38560681ae00a2eb25aa901a92ec9e8414889e2cb210ee4924"
-    sha256 cellar: :any,                 arm64_sonoma:  "b544b4dd61430722292c0253c32119e0b9adc72761b3e456c6e9e211af6e4075"
-    sha256 cellar: :any,                 sonoma:        "1432e3e6ba13b42ae2f353807964bfe49e819ab6e16ccb834d87b5d182c500cd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1abb96f4e0130df27ab76ea3ff551849a85cf0a313b636dfbb95cd8c197b210"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4c098a792a60a3aa03fe60e8971f6aea5536aa8f7968dd27ac442ceaa65832a"
+    sha256 cellar: :any,                 arm64_tahoe:   "d525145c80ed86e1585f69d5776bff55db95168e1c31ebff7b4c36f9bc7f7191"
+    sha256 cellar: :any,                 arm64_sequoia: "4322efcf9d2e8c36f549bf14c9bb0884ac3b5e16c07a47463acdfb7113d03874"
+    sha256 cellar: :any,                 arm64_sonoma:  "f3dc818c49a023d9e496ee0b03d9a15408b5795a597989e12f1a60793130e754"
+    sha256 cellar: :any,                 sonoma:        "669e48da761cb9198230048b189618e6599ee8dcc5cebfd674c369e5e9c03aad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4c710f46867c3c89ebbdccd0ba77e979b06d9dce4fc7cadfa951405d950ec2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c58af69ee58600c832812488a0843f827971c00221aac5e76e1aa7788244085"
   end
 
   depends_on "cmake" => :build # for pyzmq
@@ -170,8 +171,8 @@ class Locust < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "websocket-client" do
@@ -180,8 +181,8 @@ class Locust < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/45/ea/b0f8eeb287f8df9066e56e831c7824ac6bab645dd6c7a8f4b2d767944f9b/werkzeug-3.1.4.tar.gz"
-    sha256 "cd3cd98b1b92dc3b7b3995038826c68097dcb16f9baa63abe35f20eafeb9fe5e"
+    url "https://files.pythonhosted.org/packages/5a/70/1469ef1d3542ae7c2c7b72bd5e3a4e6ee69d7978fa8a3af05a38eca5becf/werkzeug-3.1.5.tar.gz"
+    sha256 "6a548b0e88955dd07ccb25539d7d0cc97417ee9e179677d22c7041c8f078ce67"
   end
 
   resource "wsproto" do
@@ -195,8 +196,8 @@ class Locust < Formula
   end
 
   resource "zope-interface" do
-    url "https://files.pythonhosted.org/packages/71/c9/5ec8679a04d37c797d343f650c51ad67d178f0001c363e44b6ac5f97a9da/zope_interface-8.1.1.tar.gz"
-    sha256 "51b10e6e8e238d719636a401f44f1e366146912407b58453936b781a19be19ec"
+    url "https://files.pythonhosted.org/packages/86/a4/77daa5ba398996d16bb43fc721599d27d03eae68fe3c799de1963c72e228/zope_interface-8.2.tar.gz"
+    sha256 "afb20c371a601d261b4f6edb53c3c418c249db1a9717b0baafc9a9bb39ba1224"
   end
 
   def install

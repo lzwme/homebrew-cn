@@ -6,15 +6,16 @@ class Awscli < Formula
   url "https://ghfast.top/https://github.com/aws/aws-cli/archive/refs/tags/2.32.32.tar.gz"
   sha256 "2042e9c26c01da03a52387390707cce809ea0b632935b6313ca98e7aebe05e59"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dd8ef22cca7bc5f9b68b91ffa837253d0dcdf743f100e9ee5e609329265d9e45"
-    sha256 cellar: :any,                 arm64_sequoia: "866700b1d28c11ddcb98ecbcd9c02eadf5f763339e275ded8292e3ff26cc5893"
-    sha256 cellar: :any,                 arm64_sonoma:  "45336fcd31bbb95a5736ff63d8845843eda4732acd467e9370d46d6b9bd504a2"
-    sha256 cellar: :any,                 sonoma:        "a1e97507560f16ab5f6c8e52dbbfecc8cedf447729de6b080e12dd105bdc085e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "805f96e1ef096cbb2b970d21323f6d1c11418de91ff6bf913ec71960b7fa574f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2cb9f1e310b7908c7c7d866019e90afd22e6992b74e30445d9e4999beef39aa"
+    sha256 cellar: :any,                 arm64_tahoe:   "30ed0283b78dc4b0391a9fe943ef67098cb0f19ea19aae7bdbf541a363aff20a"
+    sha256 cellar: :any,                 arm64_sequoia: "156e69a7f7c99158a08f488fd5036ff21946ee1c35d44e70de61cc6364664ece"
+    sha256 cellar: :any,                 arm64_sonoma:  "f064fbfacc3868f51964a0d09442138c6a1642f18bcff226e0ea2031bb75584b"
+    sha256 cellar: :any,                 sonoma:        "17cfa47c133b6f62ae60b15abda6c0d7ef5e26ef0a12a4ba595e99ea4aec5bdd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "900bb6ce6662eac8135aaa00286c4d1eaca1b29b38dcf8a0ba72bf9eafe7e5a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e91d5d793ba912bfc1e10d7afcf41891428c27260f5dbda5b44e0db11d9328a4"
   end
 
   depends_on "cmake" => :build
@@ -82,8 +83,8 @@ class Awscli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/e4/e8/6ff5e6bc22095cfc59b6ea711b687e2b7ed4bdb373f7eeec370a97d7392f/urllib3-1.26.20.tar.gz"
-    sha256 "40c2dc0c681e47eb8f90e7e27bf6ff7df2e677421fd46756da1161c39ca70d32"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "wcwidth" do

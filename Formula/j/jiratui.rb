@@ -273,7 +273,6 @@ class Jiratui < Formula
   end
 
   test do
-    ENV["HOME"] = testpath
     assert_match version.to_s, shell_output("#{bin}/jiratui version")
     assert_match "#{testpath}/.config/jiratui/config.yaml", shell_output("#{bin}/jiratui config")
   end

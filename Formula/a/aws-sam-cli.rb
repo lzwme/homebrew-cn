@@ -6,16 +6,19 @@ class AwsSamCli < Formula
   url "https://files.pythonhosted.org/packages/4b/0d/759f076e047ce33be9ae5aa638a1293f8ae45855d37a78920d95be2bdc5a/aws_sam_cli-1.151.0.tar.gz"
   sha256 "e3ad69a3f576e050b6f4c15d6e8d98a1b27f5e3fda37f1b42c0fcd0ffe99441c"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "dec1c11b5c3b51f864c7f06ff38382fc27fb6772bc74148c5a8d550d175e6712"
-    sha256 cellar: :any, arm64_sequoia: "df415446ad311c5b390bf1b8bfb9c86623d575aade4d433f66908964d38727c5"
-    sha256 cellar: :any, arm64_sonoma:  "22034e4038f26cb8aa5d1de48e3cf529d1760ce74e2108b6a6bf2a7dcaffedf6"
-    sha256 cellar: :any, sonoma:        "b3c603fe7a25ba10ffa703c95a9689f353c13d6e2534f3e68d457089f0ea960a"
+    sha256 cellar: :any,                 arm64_tahoe:   "8a8bdca6d9835be3a29e60ce42f18c65e5a5c43a2dc0b60b6d41f258017ebc8b"
+    sha256 cellar: :any,                 arm64_sequoia: "f1f865c1938bf5cc7a70ba72109e64149cb90f75b0a09c9ffc3d7fa96a77f55b"
+    sha256 cellar: :any,                 arm64_sonoma:  "cc02ddccd53956c877054dd20cb75e9b2bfef310ddf578038193634776083ccf"
+    sha256 cellar: :any,                 sonoma:        "85957c62133d5075771aa1e33c00519aed32f35a152a1dfcbc3e41b4f23a2889"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "afd443c2572dd2560030a8994049ecef87403ee18fe25d5bf6f9de419863c54f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "938cb96db9366f9b0293afa62aa25fbbd5b0e987a624d68b91339fb803642fd4"
   end
 
   depends_on "cmake" => :build # for `awscrt`
+  depends_on "go" => :build
   depends_on "pkgconf" => :build
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
@@ -385,13 +388,19 @@ class AwsSamCli < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/45/ea/b0f8eeb287f8df9066e56e831c7824ac6bab645dd6c7a8f4b2d767944f9b/werkzeug-3.1.4.tar.gz"
-    sha256 "cd3cd98b1b92dc3b7b3995038826c68097dcb16f9baa63abe35f20eafeb9fe5e"
+    url "https://files.pythonhosted.org/packages/5a/70/1469ef1d3542ae7c2c7b72bd5e3a4e6ee69d7978fa8a3af05a38eca5becf/werkzeug-3.1.5.tar.gz"
+    sha256 "6a548b0e88955dd07ccb25539d7d0cc97417ee9e179677d22c7041c8f078ce67"
   end
 
   resource "wheel" do
     url "https://files.pythonhosted.org/packages/8a/98/2d9906746cdc6a6ef809ae6338005b3f21bb568bea3165cfc6a243fdc25c/wheel-0.45.1.tar.gz"
     sha256 "661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729"
+  end
+
+  # Manually update following resource
+  resource "aws-lambda-rie" do
+    url "https://ghfast.top/https://github.com/aws/aws-lambda-runtime-interface-emulator/archive/refs/tags/v1.30.tar.gz"
+    sha256 "c5869902fc6d443504feec0cced1098afe87b96052684da49fdb09ae15ab0edc"
   end
 
   def python3
@@ -402,13 +411,28 @@ class AwsSamCli < Formula
     ENV["AWS_CRT_BUILD_USE_SYSTEM_LIBCRYPTO"] = "1"
 
     venv = virtualenv_create(libexec, python3, system_site_packages: false)
-    venv.pip_install resources.reject { |r| r.name == "awscrt" }
+    venv.pip_install resources.reject { |r| ["awscrt", "aws-lambda-rie"].include?(r.name) }
     # CPU detection is available in AWS C libraries
     ENV.runtime_cpu_detection
     venv.pip_install resource("awscrt")
     venv.pip_install_and_link buildpath, build_isolation: false
 
     generate_completions_from_executable(bin/"sam", shell_parameter_format: :click)
+
+    # Remove pre-built binaries where source is not available
+    rapid_dir = venv.root/Language::Python.site_packages(python3)/"samcli/local/rapid"
+    rm([rapid_dir/"aws-durable-execution-emulator-arm64", rapid_dir/"aws-durable-execution-emulator-x86_64"])
+
+    # Rebuild pre-built binaries where source is available
+    resource("aws-lambda-rie").stage do
+      { "arm64" => "arm64", "x86_64" => "amd64" }.each do |arch, goarch|
+        with_env(CGO_ENABLED: "0", GOOS: "linux", GOARCH: goarch) do
+          output = rapid_dir/"aws-lambda-rie-#{arch}"
+          rm(output)
+          system "go", "build", "-buildvcs=false", *std_go_args(ldflags: "-s -w", output:), "./cmd/aws-lambda-rie"
+        end
+      end
+    end
   end
 
   test do

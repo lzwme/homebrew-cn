@@ -1,20 +1,18 @@
 class Circumflex < Formula
   desc "Hacker News in your terminal"
   homepage "https://github.com/bensadeh/circumflex"
-  url "https://ghfast.top/https://github.com/bensadeh/circumflex/archive/refs/tags/3.8.tar.gz"
-  sha256 "1041d27ef87a6fb123740d6423cd3fd66ced0ccf43d834c8d421aad3c8e8c96b"
+  url "https://ghfast.top/https://github.com/bensadeh/circumflex/archive/refs/tags/3.9.tar.gz"
+  sha256 "1169377621ccc4e552c7a55f12f03bf7bee0df28a1cf60a1609017723018e4bb"
   license "AGPL-3.0-only"
   head "https://github.com/bensadeh/circumflex.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "452a6764489fafe9f61ed53a7e83a578ae1ab2ccc4c307a22e3a3f25157f5483"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7703a8fe49c3a13299c37b9bd75f42674a245a866148a0d71d0b050be0e5b441"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7703a8fe49c3a13299c37b9bd75f42674a245a866148a0d71d0b050be0e5b441"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7703a8fe49c3a13299c37b9bd75f42674a245a866148a0d71d0b050be0e5b441"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9b50ad11b46f45cde111438cb6f63bf91c204d55dc054175b74da06cea8b68da"
-    sha256 cellar: :any_skip_relocation, ventura:       "9b50ad11b46f45cde111438cb6f63bf91c204d55dc054175b74da06cea8b68da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "53c94f24dca42570b50974959436b94e090dc99d380e9226b29b72f9f1c43630"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "186c35290bbefbbf90f8e42467aebf479c405be7d4803a66dee198b6dbbcf879"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c83a06eae0fbc270ddb34dd279062a1416ad1b9e19fb806946d24a8296e5fb9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c83a06eae0fbc270ddb34dd279062a1416ad1b9e19fb806946d24a8296e5fb9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c83a06eae0fbc270ddb34dd279062a1416ad1b9e19fb806946d24a8296e5fb9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2137b07aaee21bcc42ac1c292ee38dc1e4dc6c9edd4d100426adefc8467e76ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3444a94d4b08f460552b034a7b5e33f22083e10a18e7d9c9c9062e0a17d97f78"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "895b9bb9c58ac50967a72be03b5decf82db2449773ba79b525fa9d53450fce07"
   end
 
   depends_on "go" => :build

@@ -6,14 +6,15 @@ class Pytr < Formula
   url "https://files.pythonhosted.org/packages/db/1d/f7d0c067f6f56b8d723e57ed60c2558137a97b332acc0279b457e7f8bf35/pytr-0.4.5.tar.gz"
   sha256 "6be72cc8b848f6cf6f34e72b5897bd580e2a37997d69eb99e44d3a6fa64d0911"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8dc2a7eefee133a1768f6adecd156394e4645f33a469c5cc6b591717b1cd2b2c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c810ad62bdc9424c7fb62c5ed398c47b781c42343f3003cda5aac2d7acbc8798"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f698d24829b38ec04c87f98b0da82659b5071eaa7698ac054be0e46e691ffc0a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "45d8d4c414db6cdcb91e51860c16512e9f8b0eecfa97044ce99b94ec84c53eb8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ea1317b854a3ed5021dec01d46ad6a85edcf03a80846add9769dcfecde52d7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5c1331d6a291268c8c77c72dba19e789c59e2502c9b37dc6646eaa43a6cfc78"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de2e9deba3c544c3b89710b49514b47ff4294f8b15ad86668469c90ff35de3b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fc070782ceb93a105084822251268a9f33cf9a923bc1d7662c60c8eb9b655c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d9f7d78185b4c0b31deddc6288fe68fc733a774291f7d9c34efe251f141f5f8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a79c281b08b37f629be1e608621f19b68821ee8c9df8fd822a778755e3d755fa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "51eceaf6a64cb5bf7d83bdb0f811d706e6e217039028f51cbe42b2ec63ea4c38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e75d04904988694accb1e2d053bd6342a0c8af3881d3ef9e8086dd32e98ea628"
   end
 
   depends_on "certifi" => :no_linkage
@@ -87,8 +88,8 @@ class Pytr < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "websockets" do

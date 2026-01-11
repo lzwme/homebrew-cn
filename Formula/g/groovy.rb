@@ -11,7 +11,8 @@ class Groovy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "dc02cd1e043878373a36da5755effd2c32346da5191555fd5e3096cb1e3ac4f8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "1ebedbd80fa21c00fb5b04cc1829c63554c8663003074df8d1fa0ba4bf9c8c3a"
   end
 
   depends_on "openjdk"
@@ -19,19 +20,22 @@ class Groovy < Formula
   conflicts_with "groovysdk", because: "both install the same binaries"
 
   def install
-    # Don't need Windows files.
-    rm(Dir["bin/*.bat"])
+    libexec.install "conf", "lib"
 
-    libexec.install "bin", "conf", "lib"
-    bin.install libexec.glob("bin/*") - ["#{libexec}/bin/groovy.ico"]
-    bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env
-  end
+    buildpath.glob("bin/*").each do |f|
+      next if f.extname == ".bat"
+      next if f.extname == ".ico"
+      next if f.basename.to_s.end_with?("_completion")
 
-  def caveats
-    <<~EOS
-      You should set GROOVY_HOME:
-        export GROOVY_HOME=#{opt_libexec}
-    EOS
+      bin.install f
+    end
+
+    env = Language::Java.overridable_java_home_env
+    env["GROOVY_HOME"] = "${GROOVY_HOME:-#{libexec}}"
+    bin.env_script_all_files libexec/"bin", env
+
+    buildpath.glob("bin/*.ico").each { |f| (libexec/"bin").install f }
+    buildpath.glob("bin/*_completion").each { |f| bash_completion.install f => File.basename(f, "_completion") }
   end
 
   test do

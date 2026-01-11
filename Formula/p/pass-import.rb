@@ -6,16 +6,16 @@ class PassImport < Formula
   url "https://files.pythonhosted.org/packages/f1/69/1d763287f49eb2d43f14280a1af9f6c2aa54a306071a4723a9723a6fb613/pass-import-3.5.tar.gz"
   sha256 "e3e5ec38f58511904a82214f8a80780729dfe84628d7c5d6b1cedee20ff3fb23"
   license "GPL-3.0-or-later"
-  revision 6
+  revision 7
   head "https://github.com/roddhjav/pass-import.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4d8d61ee47ca8356bd13f1a37da5b0b54bb47d06a63aac3ca6dd22e712a59121"
-    sha256 cellar: :any,                 arm64_sequoia: "72d4dab492f009f2441cd54318c3381f95a95beed28f642d5a61b3038e89190f"
-    sha256 cellar: :any,                 arm64_sonoma:  "2b54f299510d989fd39cdb92efb2e5c789540ce23c0e553f82a46b53b05ab02e"
-    sha256 cellar: :any,                 sonoma:        "7692c6f32e12b448f0c4dd019256d4464fda010904e718817051510e27f736ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fecfeb170c2f18c1d5b28991b32d596e16b8c23b2f2ceb6c47e549b7ab77673"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec6c76b914dc6b1a189ed215e3631e8644da9229a4af90c0267cd6bfeec30032"
+    sha256 cellar: :any,                 arm64_tahoe:   "27bd7cd3e6fec863f922b1148d2f9ab87056f5f9508a37d15055f23e3934bf7a"
+    sha256 cellar: :any,                 arm64_sequoia: "432d5082644edc2630bdf4094ab0bdf6984b29ba404119989f70abd79c5174a6"
+    sha256 cellar: :any,                 arm64_sonoma:  "98dba1334b3b10ddb5b8566889fd3dfeeed1d9a310077b9bb02a71dd500efc25"
+    sha256 cellar: :any,                 sonoma:        "6eaf95e64f75a96138db851dce93e796e26225a4a35b17984d8c5252f92927cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "39c068df8ae97fe0cd9be17d72252e8f05df5bdf797f8394ea7d6fdb40215453"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58511f4c1c484f7a81eb7a3c4994f0313c4539404ca44e3242231f2483dd34cc"
   end
 
   depends_on "certifi"
@@ -50,8 +50,8 @@ class PassImport < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "zxcvbn" do

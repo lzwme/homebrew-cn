@@ -6,15 +6,15 @@ class Ocrmypdf < Formula
   url "https://files.pythonhosted.org/packages/8c/52/be1aaece0703a736757d8957c0d4f19c37561054169b501eb0e7132f15e5/ocrmypdf-16.13.0.tar.gz"
   sha256 "29d37e915234ce717374863a9cc5dd32d29e063dfe60c51380dda71254c88248"
   license "MPL-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b2e108fa3fd8a370f28f4e46110a1a1c1fc8acf51f274836116ac135a074780f"
-    sha256 cellar: :any,                 arm64_sequoia: "9609656ee4c03c3ffdfb4bcc469756840cd2fceb2d26a5cb0c5f1d81c953b485"
-    sha256 cellar: :any,                 arm64_sonoma:  "93a7a8d2a803361f607ada042758b184f864dcb767291af12b5c77882ed93ff1"
-    sha256 cellar: :any,                 sonoma:        "4b4f5e4143bfef62dd61cbc9dafd44b6ed17945d98a0cccb18e367d3536e8a03"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e88320d3b5e8f3f1b2ab49a18be4f7f45dbc3153a4a249318e3d29db2710945"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9de21abbe350325efbee41d7d570e46c7042c08d5c7d0c0552d19b1fef6054ff"
+    sha256 cellar: :any,                 arm64_tahoe:   "443749df3a4e28f797c2bb6a3a720300a5eaaaf5a9c5e6d239fad2ceb96c3133"
+    sha256 cellar: :any,                 arm64_sequoia: "781c9014b77709f58479edd2c278fc4bce6e2455e9dc19cedbea6d5008aca40e"
+    sha256 cellar: :any,                 arm64_sonoma:  "0f01fcd7dc6807d1a1ac4d8838458ac94021e8330c1929fad0c64c3766868a79"
+    sha256 cellar: :any,                 sonoma:        "86597e14a0f0737efefc444787d13b44d21fb584fd6fc2711813f54c42abfeb1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe77652ddaf38ed82dadbeb259bf376a4aa9633ee8e52ef4b8f3785e0216b408"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "daca346f2c5fcd75bb799bf76e1c695395bd65b1c2a4c92d28689c8b64f670da"
   end
 
   depends_on "cmake" => :build # for pikepdf
@@ -81,8 +81,8 @@ class Ocrmypdf < Formula
   end
 
   resource "pdfminer-six" do
-    url "https://files.pythonhosted.org/packages/fb/ef/543d0d44c9b03ac08316d31afd8e52b8ab8a86d03620ee0d61d6006bba9c/pdfminer_six-20251227.tar.gz"
-    sha256 "1d98781cf884d7274c694e742a94ffe6326ee11ee7ea79e73e1e75c4c74d91eb"
+    url "https://files.pythonhosted.org/packages/34/a4/5cec1112009f0439a5ca6afa8ace321f0ab2f48da3255b7a1c8953014670/pdfminer_six-20260107.tar.gz"
+    sha256 "96bfd431e3577a55a0efd25676968ca4ce8fd5b53f14565f85716ff363889602"
   end
 
   resource "pi-heif" do
@@ -91,8 +91,8 @@ class Ocrmypdf < Formula
   end
 
   resource "pikepdf" do
-    url "https://files.pythonhosted.org/packages/60/9b/a5c3a783acb41f6c0375de4c3e133a57752082f04f7a234972dabaa887f9/pikepdf-10.1.0.tar.gz"
-    sha256 "d75778283c354580a462d31bd4334f6ba92225e41ccd8bb949ec6e98a23d4eb2"
+    url "https://files.pythonhosted.org/packages/6e/e9/a1462d6160805ca80c8f4aafc941aaf410a92d0fcc683706e94f499c2fac/pikepdf-10.2.0.tar.gz"
+    sha256 "0f398b0daeb2ffd2358f75c06f1dd47b9ba76f1a77dfe938cccf7080c58227d7"
   end
 
   resource "pluggy" do

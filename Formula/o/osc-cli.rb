@@ -6,11 +6,10 @@ class OscCli < Formula
   url "https://files.pythonhosted.org/packages/02/cd/f1b796f5e7a301f6a3c0b910be07188cbfd329d2758e036d24ef26b4ee96/osc-sdk-1.11.0.tar.gz"
   sha256 "d3b71b326b0698da1b9a503cd511a992fe578375fd01b30bdec0d63d8328af66"
   license "BSD-3-Clause"
-  revision 10
+  revision 11
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "67d966bcb73fd3f74296d867eb8f5713e10657ddbba737b963dfdab13757d51a"
+    sha256 cellar: :any_skip_relocation, all: "820b90ae6e87b38e55a060d573fceff7121e75c7e473e7de77ab399181c282dd"
   end
 
   depends_on "certifi" => :no_linkage
@@ -55,8 +54,8 @@ class OscCli < Formula
   end
 
   resource "termcolor" do
-    url "https://files.pythonhosted.org/packages/87/56/ab275c2b56a5e2342568838f0d5e3e66a32354adcc159b495e374cda43f5/termcolor-3.2.0.tar.gz"
-    sha256 "610e6456feec42c4bcd28934a8c87a06c3fa28b01561d46aa09a9881b8622c58"
+    url "https://files.pythonhosted.org/packages/46/79/cf31d7a93a8fdc6aa0fbb665be84426a8c5a557d9240b6239e9e11e35fc5/termcolor-3.3.0.tar.gz"
+    sha256 "348871ca648ec6a9a983a13ab626c0acce02f515b9e1983332b17af7979521c5"
   end
 
   resource "typing-extensions" do
@@ -65,8 +64,8 @@ class OscCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "xmltodict" do

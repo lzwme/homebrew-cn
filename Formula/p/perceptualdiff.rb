@@ -18,6 +18,9 @@ class Perceptualdiff < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d9a1e10f07e3467e60a855f18c75a07fee4c238d746dc0b91652c147733e9c8"
   end
 
+  deprecate! date: "2026-01-10", because: "uses deprecated `freeimage`"
+  disable! date: "2027-01-10", because: "uses deprecated `freeimage`"
+
   depends_on "cmake" => :build
   depends_on "freeimage"
 

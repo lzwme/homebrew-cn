@@ -20,6 +20,7 @@ class Binocle < Formula
   depends_on "rust" => :build
 
   on_linux do
+    depends_on "xorg-server" => :test
     depends_on "libx11"
     depends_on "libxcursor"
     depends_on "libxrandr"
@@ -32,16 +33,14 @@ class Binocle < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/binocle --version")
 
-    # Fails in Linux CI with
-    # "Failed to initialize any backend! Wayland status: XdgRuntimeDirNotSet X11 status: XOpenDisplayFailed"
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    expected = if Hardware::CPU.arm?
-      "Error: No such file or directory"
-    else
+    expected = if OS.mac? && Hardware::CPU.intel?
       "Error: No suitable `wgpu::Adapter` found."
+    else
+      "Error: No such file or directory"
     end
 
-    assert_match expected, shell_output("#{bin}/binocle test.txt 2>&1", 1)
+    cmd = "#{bin}/binocle test.txt 2>&1"
+    cmd = "#{Formula["xorg-server"].bin}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
+    assert_match expected, shell_output(cmd, 1)
   end
 end

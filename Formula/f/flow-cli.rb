@@ -1,8 +1,8 @@
 class FlowCli < Formula
   desc "Command-line interface that provides utilities for building Flow applications"
   homepage "https://onflow.org"
-  url "https://ghfast.top/https://github.com/onflow/flow-cli/archive/refs/tags/v2.13.3.tar.gz"
-  sha256 "a79de946c606c8d5fae6e1b82f9921b961709fe7f648f522bf4f5c2f1076d597"
+  url "https://ghfast.top/https://github.com/onflow/flow-cli/archive/refs/tags/v2.13.4.tar.gz"
+  sha256 "1bfbd4c42d4f5c00eea738bf93a1b6d1b90ad6a934af84b775f8aa1bd7381435"
   license "Apache-2.0"
   head "https://github.com/onflow/flow-cli.git", branch: "master"
 
@@ -12,23 +12,17 @@ class FlowCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "334cbff336740a29ff925030d86766a9f188e3ad272cc4440b47de73812dca5d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd02e6ec3660df263b9826b4a1bff3100fc813d4d774cbd195637b427e353c7f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3943f02c565b7306560687b6b874c48d64c9931bcb60480b16f1547e17b656c8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "85bddc9e1a03c4d0f6bfcb6748fe5b8d26dcf62f955465789a8de6ade537865d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3fd2c52be4904068655f28e39f190fa77d61fc6e0efbb6947ad4b68043ff5ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "539d7cc51ae74d4618cd6bfaf5feeab619a922a6e4af236a4393888649c42418"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b0d33f1fb94fe1a97b7e92377d16e6850d32e7628fdb062ae83ca3531a366a50"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d5eca0db2771fad8d6be39728a4d9c7c434aa03b718ec520bad8ee3a780e469"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "522ed47a0879387b363bb1d9baa7a295fb343a7eccf8fe68dca2fa0badbbf95f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ec694d033c8d81117b05ec834d0c98355453e61f4568a2f33daea9e91133ec85"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fe3ed5446cdd2a191a66d0bd1db02013f3bfdb89312df294968abac85c65c45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfe15af8246d1607424ba9ab6ea506ef0c447152db143f36ca52a23e88af15e2"
   end
 
   depends_on "go" => :build
 
   conflicts_with "flow", because: "both install `flow` binaries"
-
-  # bump cockroachdb/swiss for Go 1.26 support, upstream pr ref, https://github.com/onflow/flow-cli/pull/2239
-  patch do
-    url "https://github.com/onflow/flow-cli/commit/bec1ee457616b9e39552bc15dc1d0370472445d5.patch?full_index=1"
-    sha256 "95c667fd71df39479f3368d5400351d47c3a870592497daba484f38efa88d446"
-  end
 
   def install
     system "make", "cmd/flow/flow", "VERSION=v#{version}"

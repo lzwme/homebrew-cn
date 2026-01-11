@@ -1,10 +1,10 @@
 class Qtlanguageserver < Formula
   desc "Implementation of the Language Server Protocol and JSON-RPC"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtlanguageserver-everywhere-src-6.9.3.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.9/6.9.3/submodules/qtlanguageserver-everywhere-src-6.9.3.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.9/6.9.3/submodules/qtlanguageserver-everywhere-src-6.9.3.tar.xz"
-  sha256 "c8e8a6c4f8cb25626922e78f398b13b02eea21c4cc5525ffc2a0da7469369d33"
+  url "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtlanguageserver-everywhere-src-6.10.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.1/submodules/qtlanguageserver-everywhere-src-6.10.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.1/submodules/qtlanguageserver-everywhere-src-6.10.1.tar.xz"
+  sha256 "3360526b4f4d556673b31e29a49e15d02da52d5eaa53b0204d56a0ba160a556c"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
@@ -16,12 +16,12 @@ class Qtlanguageserver < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d4229ffcdccf46c7de6c85f6c172fe4d32e98c4de97eac26308d325d101285e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "224eff3ca1a5461c2e30e2a2ce2e08255c5ef59e6e155a101fd76f89f0ce3658"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e70336d46487107ec97a74126f4abe4fb81eb376f1fbb44194ee330b690330c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c02e42a854bdce647fbdbee94996bd4ef0527d55768b1a724279d003a4589a66"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "38f6f031e539929940c80febf7c5720e4efeae36b98f626a6a9a4ac8be9acca9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f88fd9cdb6fde0da393d684f91fd8d80a7edbbbcce56d33a8131ffa838f464f5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a6c0e83127c5cbcac9e34ff8612657dbfb2b5a3ee7e94054436578cd1ecb410"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d0d6381178a018d0a7f2b5f3653f6fc2d6535c1322af779a7c88395a4f18c77"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c6c692b3a772db38f231959ec960dc417ad3b9663bb0640e78f08e1647a56938"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fc067cf86fdebfc76ee74b26d6dcc3f013bd3151e46685661c96525cf2ba5632"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6cb636613d7b9de1c04041c5f12e5f8fa1a3661983cc95ee3a247e660f0b7cf3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbce2813ad196843221d84a477be941869de3f79571d7d5f0f55f9aeab397652"
   end
 
   depends_on "cmake" => [:build, :test]

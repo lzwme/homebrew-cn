@@ -6,6 +6,7 @@ class Openvino < Formula
   url "https://ghfast.top/https://github.com/openvinotoolkit/openvino/archive/refs/tags/2025.4.1.tar.gz"
   sha256 "9926c8a8188d0baa9730623efaeb9f0bccf7059f5e4e957a8d238c3226c2b19b"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/openvinotoolkit/openvino.git", branch: "master"
 
   livecheck do
@@ -14,12 +15,12 @@ class Openvino < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d6e3b09ee3beb9ebaa14c20382318bcd8fb27d2f289e05f0e361dea27339b3ae"
-    sha256 cellar: :any, arm64_sequoia: "13c99a6bbe4e9eb29ce58a5f072b979778373172d727ccf49cd9ce3c3a580e58"
-    sha256 cellar: :any, arm64_sonoma:  "2b4f9edc37c8df6456ed562ce8765727676cac542cbbc8678aab736d40f87bae"
-    sha256 cellar: :any, sonoma:        "3e617ec87f404fc1b4dfc3d491fc05733ec6918ba81b934165e484c599403b9a"
-    sha256               arm64_linux:   "424579fd645ac0b64dd4fca1596f8b7592c457490104ecb24549210a0448a878"
-    sha256               x86_64_linux:  "bc8221dc45085f97e29bef6d0b4f836cedc72715a2efc70191ea56702f90034c"
+    sha256 cellar: :any, arm64_tahoe:   "a7137cbf881d477160e70b19904045459dddf4d6e52d3767f0849fed27617c3e"
+    sha256 cellar: :any, arm64_sequoia: "08dc902a333049c716ea8bb94319920e31c515aa69ccea6c5f7a7286cd976cad"
+    sha256 cellar: :any, arm64_sonoma:  "3be91b51c500fea1139acb19c7f850aed3868d5b653a6f8035282771c7042c47"
+    sha256 cellar: :any, sonoma:        "8d805bbdf1dd0ff760ca6a8f29a1ca50df7db21722443c0247e87b97ae1f0b5f"
+    sha256               arm64_linux:   "d199b779a796088ade4c42d5b69b75bf78596dd9201b8e3788854ecfe215f5d9"
+    sha256               x86_64_linux:  "3ee567b4babc2200865e23f44379a722756edccbb9c91d48aca589603abd4c28"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -135,6 +136,7 @@ class Openvino < Formula
 
     resource("mlas").stage buildpath/"src/plugins/intel_cpu/thirdparty/mlas"
     resource("onednn_cpu").stage buildpath/"src/plugins/intel_cpu/thirdparty/onednn"
+    resource("onednn_gpu").stage buildpath/"src/plugins/intel_gpu/thirdparty/onednn_gpu" if OS.linux?
 
     if Hardware::CPU.arm?
       resource("arm_compute").stage buildpath/"src/plugins/intel_cpu/thirdparty/ComputeLibrary"
@@ -143,8 +145,6 @@ class Openvino < Formula
       # TODO: Remove once able to build with xbyak >= 7.29
       resource("xbyak").stage buildpath/"thirdparty/xbyak"
     end
-
-    resource("onednn_gpu").stage buildpath/"src/plugins/intel_gpu/thirdparty/onednn_gpu" if OS.linux?
 
     cmake_args = %w[
       -DENABLE_CPPLINT=OFF
@@ -181,11 +181,13 @@ class Openvino < Formula
 
     # build & install python bindings
     ENV["OPENVINO_BINARY_DIR"] = openvino_binary_dir
-    ENV["PY_PACKAGES_DIR"] = Language::Python.site_packages(python3)
+    ENV["PY_PACKAGES_DIR"] = site_packages = Language::Python.site_packages(python3)
     ENV["WHEEL_VERSION"] = version
     ENV["SKIP_RPATH"] = "1"
     ENV["PYTHON_EXTENSIONS_ONLY"] = "1"
     ENV["CPACK_GENERATOR"] = "BREW"
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(source: libexec/site_packages/"openvino")}"
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(source: libexec/site_packages/"openvino/frontend/onnx")}"
 
     # Allow our newer `numpy`
     inreplace "pyproject.toml", "numpy>=1.16.6,<2.4.0", "numpy>=1.16.6"

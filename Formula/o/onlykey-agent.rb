@@ -6,15 +6,15 @@ class OnlykeyAgent < Formula
   url "https://files.pythonhosted.org/packages/68/80/e89b6c3680bedb1e14e99f0539ac805bddc7d8dd87c58805c64484966b7c/onlykey-agent-1.1.15.tar.gz"
   sha256 "49b19bec28dc0fb7053ef01266d8a9e7a078bb146214a641bdbb1feac6fc7ddb"
   license "LGPL-3.0-only"
-  revision 9
+  revision 10
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "41f51879b9ccc2e1dc8c987ecb4b84d01b4b4f448687f65268d778bcfb8dff8a"
-    sha256 cellar: :any,                 arm64_sequoia: "29507222f8d8f2a984af9a9ae79f523a206bd0936f82b1c0ea9a2d16c45aba8a"
-    sha256 cellar: :any,                 arm64_sonoma:  "c8da9d194e5671af61277f450ea0423463cf7c243c5bfd7df50b4d10a6ab0a48"
-    sha256 cellar: :any,                 sonoma:        "edec80bda54b4517ceb4cc6805f7184878bb2395ad094d7d8d43bec64e2f5a78"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "76ec93e57d12f3357da2ea0e7307594c17272fbc57d9d816311203472fe7ef4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85a7aaa27c6ca881a19d246faf5be929ceaed3353e551194b72ca83141699166"
+    sha256 cellar: :any,                 arm64_tahoe:   "2a32378a637be74a9311bea60078379223da0b9c79eb552bce1155347cb15bcf"
+    sha256 cellar: :any,                 arm64_sequoia: "067a8fda53b5e56e1fd24a26f6c27f326288fedf3bb1e7176c77ffde8ef1d72d"
+    sha256 cellar: :any,                 arm64_sonoma:  "9b8af1799a2e86620c08c7688ad23e6c40a4fa9b6a58e8280b05a78184cca72c"
+    sha256 cellar: :any,                 sonoma:        "48c4e980f6c6503b76f7e2d15abb1bae628e852c40c6ebc5fc0d904257013797"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d00ee0176eb25e75281aa87e64516917f029f85b0abfd4eda0a295d58e3ce8f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3ff8af32d2607fa3bed7ba5f1903efc34070e74060ea169f7b5b88d809f79c6"
   end
 
   depends_on "pkgconf" => :build
@@ -26,7 +26,8 @@ class OnlykeyAgent < Formula
   depends_on "libusb" => :no_linkage # for pyusb
   depends_on "python@3.14"
 
-  pypi_packages exclude_packages: %w[certifi cryptography]
+  pypi_packages exclude_packages: %w[certifi cryptography],
+                extra_packages:   "setuptools"
 
   resource "aenum" do
     url "https://files.pythonhosted.org/packages/e3/52/6ad8f63ec8da1bf40f96996d25d5b650fdd38f5975f8c813732c47388f18/aenum-3.1.16-py3-none-any.whl"
@@ -179,8 +180,8 @@ class OnlykeyAgent < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "wcwidth" do

@@ -6,16 +6,16 @@ class Pwntools < Formula
   url "https://files.pythonhosted.org/packages/f2/5c/9ae3d94c98b0b038ffd7f09ebdac506d346fe1b964999f71c96c8a904efd/pwntools-4.15.0.tar.gz"
   sha256 "d99a917298c1ca7241b51bba9ad2212f2af441ef66488059b2426508e9a2a776"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/Gallopsled/pwntools.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0df92c2a8ae0a3c330d656fd37a8449917caf16e7319efae15466b89331386e4"
-    sha256 cellar: :any,                 arm64_sequoia: "ec152b72e96c551204a5e95b27950cf5afc32e5c5abf19d781d8103bd72cb609"
-    sha256 cellar: :any,                 arm64_sonoma:  "0375349ed5c3daa6ec64243c8627540e04210db61bd4e87b4f39fa2c273858dc"
-    sha256 cellar: :any,                 sonoma:        "1185665c32badbbf6105800d3ca84d5cc664c96a9be7ba6cc1ffc21721bc8037"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1ad10706775be2e2852b87685fe62218d091e2fabd766f39038a8f8c5e437a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ae265ff677fc9bbe7d6fc52a8917fc0bf8912aaf0e780c44c761f342bdbd837"
+    sha256 cellar: :any,                 arm64_tahoe:   "620dd787f93c98a5dc4506f69d7764f4af36444ada3fea4d5cdb4bad08a51476"
+    sha256 cellar: :any,                 arm64_sequoia: "80e8346facb2431dcd22596781b22731d19af7a7db93e09bc8540605ddf6620c"
+    sha256 cellar: :any,                 arm64_sonoma:  "daeeca7e82acf679cb15f9817cfff08f627297aab05e94d83a39e593583650cf"
+    sha256 cellar: :any,                 sonoma:        "2fbb55f6d41dc830d10a8e2b2f36a6736a1da3c89fa312017ef46aa70471b9b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "97cf9ed3f6aeeecbf2c81c2186ec5904fde522b1f545de991eb4d521ffd7e3a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe19848767ab22b74cadddf97eba47f2185f6ea8d3beef5b92615cd4277bbeb4"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -161,8 +161,8 @@ class Pwntools < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "zstandard" do

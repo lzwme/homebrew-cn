@@ -1,10 +1,10 @@
 class Qtmultimedia < Formula
   desc "Provides APIs for playing back and recording audiovisual content"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtmultimedia-everywhere-src-6.9.3.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.9/6.9.3/submodules/qtmultimedia-everywhere-src-6.9.3.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.9/6.9.3/submodules/qtmultimedia-everywhere-src-6.9.3.tar.xz"
-  sha256 "a275bee7ea60c91851236acdf99d76b891da90f428b68f51fe332354f19b86f5"
+  url "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtmultimedia-everywhere-src-6.10.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.1/submodules/qtmultimedia-everywhere-src-6.10.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.1/submodules/qtmultimedia-everywhere-src-6.10.1.tar.xz"
+  sha256 "f7a4f9bc2840d4f0f9f7329f0dcb3d3500c54177b8e368091a3727c7320e67b8"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { all_of: ["MPL-2.0", "BSD-3-Clause"] }, # bundled eigen
@@ -20,12 +20,12 @@ class Qtmultimedia < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8c98117497f1e2f5bd945d05bc3b3f067d7bd5bd3c905f48d702f3ea57805d2c"
-    sha256 cellar: :any,                 arm64_sequoia: "6b3f315f1376b882bbaa53ae8aa1e2332f4d59bfb3dfdc66707f960f7062792d"
-    sha256 cellar: :any,                 arm64_sonoma:  "2e907662de15c622360bc5b660cbf65161b6751f4014ec32cc0fe1c2d985b545"
-    sha256 cellar: :any,                 sonoma:        "d3e94fc3374bd95e2239c636fd8919153d9a1211844070993086b373d98218ab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8091085974b33f71688fda156e04ac91ff9c62e87334f4464746cc7a6b96dfe3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ecbdada04e1d7ec73800531f1f3bd52a9f6bea16f12b54e8ceb12f3b4b64b31f"
+    sha256 cellar: :any,                 arm64_tahoe:   "4f0bc9a87479f84db661dfff03a932530e92d31c7f2a0dbe54aad2f22109d7be"
+    sha256 cellar: :any,                 arm64_sequoia: "21dd8a4d444f9f316435cae7b35afb978a4a93445b434ce80fd86a9b1abc5744"
+    sha256 cellar: :any,                 arm64_sonoma:  "4b91e5dc3c4775cb6510c3e1059b12acb27bc17dc7e1ca5f7e696612d6ddeabd"
+    sha256 cellar: :any,                 sonoma:        "c8fb40f6dc91c85a8338626f4ce20b74dff67febc8b36bcd8bea5c1d61acb3cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d73c2daee22810b71d1225ef53e720163b86ef16c7018b9b0799b35a7ae2359"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b190596af18f265b63442ac90400e3d79ba4e4a38e31efa5dccb141ee3c7e8a"
   end
 
   depends_on "cmake" => [:build, :test]

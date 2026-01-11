@@ -1,10 +1,9 @@
 class Pianod < Formula
   desc "Pandora client with multiple control interfaces"
   homepage "https://deviousfish.com/pianod/"
-  url "https://deviousfish.com/Downloads/pianod2/pianod2-410.tar.gz"
-  sha256 "28c1b28b320acff3fe46c79748c55370ba4333544e0c27e90a3520d42a9914cf"
+  url "https://deviousfish.com/Downloads/pianod2/pianod2-420.tar.gz"
+  sha256 "9fa739cf28d5f554d982acecb94857b9fe0d0fd839d238dfca90f143c9fab216"
   license "MIT"
-  revision 1
 
   livecheck do
     url "https://deviousfish.com/Downloads/pianod2/"
@@ -12,14 +11,12 @@ class Pianod < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "1054dcefc6d2f8d2463e1d4e220a720b3ad71e3be1c4cd1467d9c7a0f154c189"
-    sha256 arm64_sequoia: "65b0b7edda8a3ebe8dba97e532141dd9b985ec7ec2cc799b00b1086337a35c85"
-    sha256 arm64_sonoma:  "92a0bf60d6c4f5a5b57cbe70d6cb357373420514b401bd1a463ced3a1fa3fd0e"
-    sha256 arm64_ventura: "8fa61c25c901c6c762ca574b5c398281b579a92e940c2adcdc9cbf452cbf86b3"
-    sha256 sonoma:        "16275adaae7a5388bbda493535d734b6a5a9b84dfa3c566d600adb42751633e5"
-    sha256 ventura:       "327ae74f956db17289622864bb4e272fe0184ee0c54f1b542c9601160a0e3765"
-    sha256 arm64_linux:   "5317f74dd5f53f1e824b2659883704b34bca67fd86256ad573f517de9ab66e19"
-    sha256 x86_64_linux:  "03553138132bc05944d3eaa1e23ebbbae75831148c38eed4b4567fd36d2b4314"
+    sha256 arm64_tahoe:   "b623727180aca736393b728354e2ac5f3b265141c93b9a726dd6d7d440038172"
+    sha256 arm64_sequoia: "f7d2ba1c1152ea177cf01d2238a332addc20a9d19092d4bb5ac1fb34a00fcc1a"
+    sha256 arm64_sonoma:  "2d937b02a8431acc858ed326662072ff33c84274921aa2749facdf8124b2ebc6"
+    sha256 sonoma:        "c3e1a56ec0fb9d96950cc4b9ef61973a8d0f20c486e84ccb77f35ac86a57e4a7"
+    sha256 arm64_linux:   "119a870280b5f91d8c0f9571db0bd6c09441a75cc3df34357f1eddff7817e916"
+    sha256 x86_64_linux:  "aab5825968b3667c5403f80fe2fb0e1ad1f4a5c5ea6f8e6b02dafa477284594e"
   end
 
   depends_on "pkgconf" => :build

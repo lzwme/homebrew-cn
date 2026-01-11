@@ -74,10 +74,6 @@ class DsdaDoom < Formula
   end
 
   test do
-    ENV["HOME"] = testpath
-    ENV["XDG_DATA_HOME"] = testpath
-    mkdir testpath/"Library/Application Support"
-
     expected_output = "dsda-doom v#{version.major_minor_patch}"
     assert_match expected_output, shell_output("#{bin}/dsda-doom -iwad invalid_wad 2>&1", 255)
   end

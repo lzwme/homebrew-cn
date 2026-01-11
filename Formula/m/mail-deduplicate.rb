@@ -6,13 +6,14 @@ class MailDeduplicate < Formula
   url "https://files.pythonhosted.org/packages/0c/0c/0e83bc1a549394b6c372caa8e6e5859020d23f470362d02276f1d2d56645/mail_deduplicate-8.1.2.tar.gz"
   sha256 "30ed948490f35f47da27829f239c20068a936010d78e198da44b69f1d65c3d1e"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/kdeldycke/mail-deduplicate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "831b5ba6e78c566751519449d4f13b9469f77c61cb04204ba90ebbf33f56476f"
+    sha256 cellar: :any_skip_relocation, all: "03bcd3be40f5122e5bf174e5edd3aa219bfb410b57e86fd9f1108fa2150e86dc"
   end
 
+  depends_on "rust" => :build # for click_extra > uv_build
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "python@3.14"
@@ -45,8 +46,8 @@ class MailDeduplicate < Formula
   end
 
   resource "click-extra" do
-    url "https://files.pythonhosted.org/packages/54/33/de5fb9b1d65b443c3a09c30832d00807a3ea69a1732833cb589d8aa38e91/click_extra-7.3.0.tar.gz"
-    sha256 "1de0c01161dc23d15466364f2595f3f917e5dd696b36e81982fa57745dbd3b8f"
+    url "https://files.pythonhosted.org/packages/50/2a/79e85d7683fd97037326dbdad60524c075ef01dad2adad0a6d6fa40c41a4/click_extra-7.4.0.tar.gz"
+    sha256 "869cd811074a4c5049fb241087e55242bf36ee328133ae932f37730833d9b9d9"
   end
 
   resource "cloup" do
@@ -65,8 +66,8 @@ class MailDeduplicate < Formula
   end
 
   resource "extra-platforms" do
-    url "https://files.pythonhosted.org/packages/fe/13/bcc99643d71c1c5e1bd0571549fe32275aac6cf905b4c84ee21bf9f0eb41/extra_platforms-5.0.1.tar.gz"
-    sha256 "96dddd8e16711187305e20cbc8005efada786155b658ac6983647c975a70ca34"
+    url "https://files.pythonhosted.org/packages/fb/df/73e313d4ecca7b703b6f369d9ed0c2c0d4d8a149e1c675e9915f8426a513/extra_platforms-6.0.0.tar.gz"
+    sha256 "ff0d392e390d2447183af4b300dd4569d2dbf760adf1e30c2b0cefb30ee58488"
   end
 
   resource "idna" do
@@ -95,13 +96,13 @@ class MailDeduplicate < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
-    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
+    url "https://files.pythonhosted.org/packages/5e/a7/c202b344c5ca7daf398f3b8a477eeb205cf3b6f32e7ec3a6bac0629ca975/tzdata-2025.3.tar.gz"
+    sha256 "de39c2ca5dc7b0344f2eba86f49d614019d29f060fc4ebc8a417896a620b56a7"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "wcmatch" do

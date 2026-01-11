@@ -1,8 +1,8 @@
 class Pyenv < Formula
   desc "Python version management"
   homepage "https://github.com/pyenv/pyenv"
-  url "https://ghfast.top/https://github.com/pyenv/pyenv/archive/refs/tags/v2.6.17.tar.gz"
-  sha256 "c1716bef2cc2c41154c9e60694546abd39efca522bd427764c0a6a929d1fe2ec"
+  url "https://ghfast.top/https://github.com/pyenv/pyenv/archive/refs/tags/v2.6.18.tar.gz"
+  sha256 "db0ce74a5a6e2b63d80788823802d9437bacf15ef297dea73efa1516af3365e9"
   license "MIT"
   version_scheme 1
   head "https://github.com/pyenv/pyenv.git", branch: "master"
@@ -13,12 +13,12 @@ class Pyenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "57c18870563cd0766d37f7d31492c99438580aa4be9293c4f5987c2e5d9f7217"
-    sha256 cellar: :any,                 arm64_sequoia: "23c5fa4d0a7dc92b62ba6c9c635d462559d9d63d533364452f838ed244a59016"
-    sha256 cellar: :any,                 arm64_sonoma:  "646361f8a0c9795b0ce24b5fcc77b1fcf2f92832fe09bb78cbfa31d33ed77edd"
-    sha256 cellar: :any,                 sonoma:        "d3c753d5109867a035ab5746b86372e23a86f59af9232d2543373654d16c0cb4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "841b84dd57351b7210942232b5f79efc79f88ff65e89587879c9dee6aab5c509"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ebde81a4d86bab8f0d0b0f80e5e5bd4508338d8e935d97c11a4c86d2eee0288"
+    sha256 cellar: :any,                 arm64_tahoe:   "31953d4cea89fd8d1d4d8b4e8b3b95752944e383e19e34731ce7202070d2d3b7"
+    sha256 cellar: :any,                 arm64_sequoia: "db9e66a422b84461931dc79275af2e6ad29de2e5dedb0ae7b76a282cccb3c655"
+    sha256 cellar: :any,                 arm64_sonoma:  "d13e52adeee3198f6620dfb6b82bef02f650e18bd9a76200854111a190f95c15"
+    sha256 cellar: :any,                 sonoma:        "3f2b10d96cf8482dd2da6cf6c8554e7b0ed7435f2f7b640aa5bef023ea7c5da4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "509a1d6495ee85c63fa6692d6fe87ea380fa69ffd95cf2af39c3ffa25fbadc8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d56db38d9e91292779a36156d550e18b57a48dfc5cead9500f86a43e8f2aabab"
   end
 
   depends_on "autoconf"

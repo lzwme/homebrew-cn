@@ -11,12 +11,13 @@ class Qmmp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bdffcfbaf408012ed8f63840e63fa0c8afbe5f51f6f1a56ce05990acb90ebac4"
-    sha256 cellar: :any,                 arm64_sequoia: "f041db0eb34aa15533930f73bfa271288471d6d9dc531bc71ab4e193774720c4"
-    sha256 cellar: :any,                 arm64_sonoma:  "9e402aaef842c83fcb657526e51af5d74d47fb2ac9ccef6943ef7e83ef7b818a"
-    sha256 cellar: :any,                 sonoma:        "22d10425a1e756966dd5ac9a05aed2d48b98b9baeb1831c1b0c5cbf9c6e1fea5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "329a836c91ab33d1a552cee2cd2b19e80bfd96246a935ba6aca4afc96bcd31d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60990541ab13026ec96dfe7882ef4ab6e5b61043a70ce0e9e7094c8dd902fab7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "f6f475ce1d985bbc1f5629a8fc3eca7fdef4b455236bbe5014826a9808fb8877"
+    sha256 cellar: :any,                 arm64_sequoia: "14df780f8490ea8f942f2735f42d8055d842f1a4b9bdd2f397084d240dd8995a"
+    sha256 cellar: :any,                 arm64_sonoma:  "5afff4d2c09436aafc49521a5a548f4c53e82d9c8194ffddec947bcab58c0dd2"
+    sha256 cellar: :any,                 sonoma:        "22671d345648a48ac2e78f8aeeb9ba04671fd81de20665597afe41b5702f38aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4d1f4306bd1e5f83896efd45d48b0d53a7c48bbe0a45c3daff45879ae8ae403"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fe25b0aa178b76e52520e2d586dc3cecd274def275c79093187aa063a970477"
   end
 
   depends_on "cmake" => :build
@@ -33,6 +34,7 @@ class Qmmp < Formula
   depends_on "libbs2b"
   depends_on "libcddb"
   depends_on "libcdio"
+  depends_on "libcdio-paranoia"
   depends_on "libmms"
   depends_on "libmodplug"
   depends_on "libogg"
@@ -41,7 +43,6 @@ class Qmmp < Formula
   depends_on "libsndfile"
   depends_on "libsoxr"
   depends_on "libvorbis"
-  depends_on "libxcb"
   depends_on "libxmp"
   depends_on "mad"
   depends_on "mpg123"
@@ -67,6 +68,7 @@ class Qmmp < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "libx11"
+    depends_on "libxcb"
     depends_on "mesa"
   end
 
@@ -81,8 +83,9 @@ class Qmmp < Formula
   end
 
   def install
+    rpaths = [rpath, "#{loader_path}/../.."]
     cmake_args = %W[
-      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}
       -DCMAKE_STAGING_PREFIX=#{prefix}
       -DUSE_SKINNED=ON
       -DUSE_ENCA=ON
@@ -100,7 +103,7 @@ class Qmmp < Formula
 
     ENV.append_path "PKG_CONFIG_PATH", lib/"pkgconfig"
     resource("qmmp-plugin-pack").stage do
-      system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args
+      system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}", *std_cmake_args
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end

@@ -38,14 +38,11 @@ class TomlBombadil < Formula
       testpath/".config"
     end
 
-    config_dir.mkpath
     (config_dir/"bombadil.toml").write <<~TOML
       dotfiles_dir = "dotfiles"
     TOML
 
     (testpath/"dotfiles").mkpath
-
-    ENV["HOME"] = testpath
 
     output = shell_output("#{bin}/bombadil get vars")
 

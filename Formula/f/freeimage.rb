@@ -26,6 +26,11 @@ class Freeimage < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6c63d08f4adf2395f983ad5f8a51f36ac1e749de9fe6428d056859b199ac6e6"
   end
 
+  # Last release on 2018-07-31 which has 16 outstanding CVEs as of deprecation date:
+  # https://nvd.nist.gov/vuln/search#/nvd/home?cpeFilterMode=cpe&cpeName=cpe:2.3:a:freeimage_project:freeimage:3.18.0:*:*:*:*:*:*:*&resultType=records
+  deprecate! date: "2026-01-10", because: "has outstanding CVEs and requires patches to build"
+  disable! date: "2027-01-10", because: "has outstanding CVEs and requires patches to build"
+
   patch do
     on_macos do
       url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/freeimage/3.17.0.patch"

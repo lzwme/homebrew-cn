@@ -1,8 +1,8 @@
 class Yaz < Formula
   desc "Toolkit for Z39.50/SRW/SRU clients/servers"
   homepage "https://www.indexdata.com/resources/software/yaz/"
-  url "https://ftp.indexdata.com/pub/yaz/yaz-5.36.0.tar.gz"
-  sha256 "e9389ff5d7e76b4a50c89d72715a96a3ed48bbb97bd91b56eeb5146fa1be5d7d"
+  url "https://ftp.indexdata.com/pub/yaz/yaz-5.37.0.tar.gz"
+  sha256 "9257feb06e2fdbbfceb7d040c139fa13957c4d1ebba6aa293a6dd13cab2225ce"
   license "BSD-3-Clause"
 
   # The latest version text is currently omitted from the homepage for this
@@ -13,12 +13,12 @@ class Yaz < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3f56088979fe27b1021fbc48a1501bce6e464e8f56c357fbb9ad644f25aac824"
-    sha256 cellar: :any,                 arm64_sequoia: "db1bafac4e2be774244d6c930f816c84688cad54190777d3df7f27d5f696a6b6"
-    sha256 cellar: :any,                 arm64_sonoma:  "c22db6d1969f1945b82a4f375fde237ec9471ae1eb903fe16b968cef8118dbda"
-    sha256                               sonoma:        "cab7510395a7eb8787ae6b78c64b72306cd13c891481ebfbf1a3fa356343b3c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "20b94a1ce4543ff242a026ccb12f5162da86162947b504400faddc06e42bd869"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f51730918ed9aea291227fb19aac9694951e8ad917956e342a44ef18a92d629e"
+    sha256 cellar: :any,                 arm64_tahoe:   "d6d6028599aa47ab490f8a1e31094ad3b98654a341d5404b6714eae11f07277a"
+    sha256 cellar: :any,                 arm64_sequoia: "5d06978120647ff35ffc60d6a6d5f5f33c3d4f5f492602a5a9d9527e6557940d"
+    sha256 cellar: :any,                 arm64_sonoma:  "db0b99cac9134eadf7e17e76648a82d6b22410c02562c983cd1bff98881e09fc"
+    sha256                               sonoma:        "a6ad4012dc2a6d7336181c90efe7a83c757fc3c439b01dbf56fc1f33f9bb788d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "99bc45ef9c3141cacb60d90295bb3fcd6e366408988e44f1903cf52fad12a18d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19dde3890b9ed3876aedcb7b17e6c9f0c1d33d0b34c2a7e0b6f7efa75be30f80"
   end
 
   head do

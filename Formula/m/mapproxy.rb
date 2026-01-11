@@ -6,15 +6,15 @@ class Mapproxy < Formula
   url "https://files.pythonhosted.org/packages/7d/5e/972a52a0b3f646a53dd3e8a552256a649548b8fb84b4fbb1b43b90de86ea/mapproxy-6.0.1.tar.gz"
   sha256 "aada98e509b8b0b99eb3f9f97bebf5f284711bd1bfae46e8e6f2b296581bc677"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ca7d704d34e42aa9063ed0a09387eb4d2c72d0387930303e091efa48fe076c45"
-    sha256 cellar: :any,                 arm64_sequoia: "be989960e81323826b17086f814ec1112305358f710e2ce91d564913b335987c"
-    sha256 cellar: :any,                 arm64_sonoma:  "1b86ee6941dfc9ef09dfaec3cca068d0c8e690bd91d9fe1ae31b92576abf4aa9"
-    sha256 cellar: :any,                 sonoma:        "adead010807a92f384eb42497788a49c8aafe2ab41e600e2830669a1ade85151"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e692a79aaccd1b55188198e513ea9ca5aceab963cdce82fc6bfdc5668baeb4e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72b01756ff2c769baee189ba0e3855604d5c404b32d98c7fcf5971b2fdaa749c"
+    sha256 cellar: :any,                 arm64_tahoe:   "b0728d13b04f6432edd2b9133e8b6481e98351a1d5127513fdf4a370aedc4bb4"
+    sha256 cellar: :any,                 arm64_sequoia: "29635c1379e483159dc64471c1f803cca29c912cee8c7c720135cea4b6cd0e25"
+    sha256 cellar: :any,                 arm64_sonoma:  "c20fee6a17d9a2ccb8272898770c01a80c4a46165f2205398c0a6c71d0907655"
+    sha256 cellar: :any,                 sonoma:        "7df1ce76b9da4f1a5f7f391e5990c6b37d7512cac7149a4be2ff9577a2481619"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "776f7c3124b697d0286737b11d6c9179f734e65c91dbca7d0e7b64455c9f188d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "367f2279c9ca9ee7cfef67d7f7363a8affa871b468cada2db6a63842594e8224"
   end
 
   depends_on "pkgconf" => :build
@@ -59,8 +59,8 @@ class Mapproxy < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
-    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
+    url "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz"
+    sha256 "0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326"
   end
 
   resource "jsonschema-specifications" do
@@ -109,8 +109,8 @@ class Mapproxy < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/45/ea/b0f8eeb287f8df9066e56e831c7824ac6bab645dd6c7a8f4b2d767944f9b/werkzeug-3.1.4.tar.gz"
-    sha256 "cd3cd98b1b92dc3b7b3995038826c68097dcb16f9baa63abe35f20eafeb9fe5e"
+    url "https://files.pythonhosted.org/packages/5a/70/1469ef1d3542ae7c2c7b72bd5e3a4e6ee69d7978fa8a3af05a38eca5becf/werkzeug-3.1.5.tar.gz"
+    sha256 "6a548b0e88955dd07ccb25539d7d0cc97417ee9e179677d22c7041c8f078ce67"
   end
 
   def python3

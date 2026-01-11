@@ -6,16 +6,16 @@ class Pocsuite3 < Formula
   url "https://files.pythonhosted.org/packages/12/33/a9f77b222075f034c04c615de19c9ef0f93457d9b627e95cc40d07949e70/pocsuite3-2.1.0.tar.gz"
   sha256 "4107396b5fbbeeb65b27b574c6fb5a40831d1983ad4fd2f9a83c87006bed98e6"
   license "GPL-2.0-only"
-  revision 5
+  revision 6
   head "https://github.com/knownsec/pocsuite3.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "20fcbaa1895594171bc63d97c8fce91ff72e30937bda87a95a46bb3fc36a7b94"
-    sha256 cellar: :any,                 arm64_sequoia: "6194f7a1179f3cf359d665e46e02c9a7753a2582d5269e34498bcfc4f96b5036"
-    sha256 cellar: :any,                 arm64_sonoma:  "f61418f6fd5e8fbe66abc7870b5154b753c09e2971642e2ff004e55972031dc0"
-    sha256 cellar: :any,                 sonoma:        "fef4748ea36edee0d2b2952d1b83c3f90d124e3dda10a0d5f36e9ab43f1f6c0d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4049468f2be9a5a3d6e3fadbce6f30f829c6472f0066f995796536c25e019ca3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "590bad510af832da4b270e4fbc0c6d6aeddf700c8bb8fd59e9c93f4fc21f3a0c"
+    sha256 cellar: :any,                 arm64_tahoe:   "99a1ccadcc528d3fd8484e9d401fb57893e7a8eb82aa8078415c27cad0592206"
+    sha256 cellar: :any,                 arm64_sequoia: "77ca4efd0bb12f252c12075c013f3775778abb764a54e7d4b933e480b8eba979"
+    sha256 cellar: :any,                 arm64_sonoma:  "c009edef937b4d17edecf6ca03aae51ce457ab79f4febf538df6e9f7d05d1ecd"
+    sha256 cellar: :any,                 sonoma:        "3ee4326327152d70b8e0c3c65aa6943f76417580dc7ab6592fcb35406aa1d964"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7df09cdce4ce3f77142449a37198e550b3612a9c80ace0d1631c5b3271e64ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33005097856baf0340168d75948ea00439e35530d21fabdbbc52fed977294657"
   end
 
   depends_on "pkgconf" => :build
@@ -62,8 +62,8 @@ class Pocsuite3 < Formula
   end
 
   resource "faker" do
-    url "https://files.pythonhosted.org/packages/30/b9/0897fb5888ddda099dc0f314a8a9afb5faa7e52eaf6865c00686dfb394db/faker-39.0.0.tar.gz"
-    sha256 "ddae46d3b27e01cea7894651d687b33bcbe19a45ef044042c721ceac6d3da0ff"
+    url "https://files.pythonhosted.org/packages/d7/1d/aa43ef59589ddf3647df918143f1bac9eb004cce1c43124ee3347061797d/faker-40.1.0.tar.gz"
+    sha256 "c402212a981a8a28615fea9120d789e3f6062c0c259a82bfb8dff5d273e539d2"
   end
 
   resource "idna" do
@@ -132,8 +132,8 @@ class Pocsuite3 < Formula
   end
 
   resource "termcolor" do
-    url "https://files.pythonhosted.org/packages/87/56/ab275c2b56a5e2342568838f0d5e3e66a32354adcc159b495e374cda43f5/termcolor-3.2.0.tar.gz"
-    sha256 "610e6456feec42c4bcd28934a8c87a06c3fa28b01561d46aa09a9881b8622c58"
+    url "https://files.pythonhosted.org/packages/46/79/cf31d7a93a8fdc6aa0fbb665be84426a8c5a557d9240b6239e9e11e35fc5/termcolor-3.3.0.tar.gz"
+    sha256 "348871ca648ec6a9a983a13ab626c0acce02f515b9e1983332b17af7979521c5"
   end
 
   resource "tzdata" do
@@ -142,8 +142,8 @@ class Pocsuite3 < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "wcwidth" do

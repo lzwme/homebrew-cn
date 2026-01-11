@@ -6,16 +6,16 @@ class Poetry < Formula
   url "https://files.pythonhosted.org/packages/19/28/f790e21769afaaa1f326d9634f9a5c700c4cdb4c468a1707c6db0b350505/poetry-2.2.1.tar.gz"
   sha256 "bef9aa4bb00ce4c10b28b25e7bac724094802d6958190762c45df6c12749b37c"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/python-poetry/poetry.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "826dd8edf8b53842b6f20e142de7d1e17382cb9978a24dfa7f38aad87d21906d"
-    sha256 cellar: :any,                 arm64_sequoia: "e456b645589b6414278124630e19487dd1b05ede493d5832fe0ac4bb1ff76df9"
-    sha256 cellar: :any,                 arm64_sonoma:  "a34e5991d036d564d6ea6c136f8a3e9910dc663a3de239e218747953c0409485"
-    sha256 cellar: :any,                 sonoma:        "7d30ce471af0bf1ea93d93016a79e927ad3e2945a329b5bc0b8d8603ade475ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b1583da63af7e1731b40840cb4125fe0d11b96e361cd8adbda95d68ecb6b36b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4cfd4bfed6de76a9e5fc297160b5f02a546e36fcb1c95d317db72679ebf6557"
+    sha256 cellar: :any,                 arm64_tahoe:   "e830c2b0e851220fc437b9d7cde56d16135ba8bb21092cf92534d652d5bb92ff"
+    sha256 cellar: :any,                 arm64_sequoia: "d265210fabadc2317b67af758d0bd4743fe5ff3d9ec1ea5ce194f2f3687b690d"
+    sha256 cellar: :any,                 arm64_sonoma:  "495b4766d81409eeef49b2e6044281a7ea3bf99e54438ac8d24149baa59782c4"
+    sha256 cellar: :any,                 sonoma:        "fc8d4fa33a8b010d8c593a9ee63decd7423a146619fafafe1ab32d00cc510afd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa38eafd69abc8bfc0ef5d717c86eb390de19eaf4324115e8afee9fa40f1e2fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94fdf59c063a0792eb1dc986f2e57faf10ff4e4cacdd2c93b363509faf06ff47"
   end
 
   depends_on "cmake" => :build # for rapidfuzz
@@ -37,13 +37,13 @@ class Poetry < Formula
                 extra_packages:   %w[jeepney secretstorage xattr]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
-    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
+    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
+    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
   end
 
   resource "build" do
-    url "https://files.pythonhosted.org/packages/25/1c/23e33405a7c9eac261dff640926b8b5adaed6a6eb3e1767d441ed611d0c0/build-1.3.0.tar.gz"
-    sha256 "698edd0ea270bde950f53aed21f3a0135672206f3911e0176261a31e0e07b397"
+    url "https://files.pythonhosted.org/packages/42/18/94eaffda7b329535d91f00fe605ab1f1e5cd68b2074d03f255c7d250687d/build-1.4.0.tar.gz"
+    sha256 "f1b91b925aa322be454f8330c6fb48b465da993d1e7e7e6fa35027ec49f3c936"
   end
 
   resource "cachecontrol" do
@@ -82,8 +82,8 @@ class Poetry < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
-    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
+    url "https://files.pythonhosted.org/packages/1d/65/ce7f1b70157833bf3cb851b556a37d4547ceafc158aa9b34b36782f23696/filelock-3.20.3.tar.gz"
+    sha256 "18c57ee915c7ec61cff0ecf7f0f869936c7c30191bb0cf406f1341778d0834e1"
   end
 
   resource "findpython" do
@@ -122,13 +122,13 @@ class Poetry < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/df/ad/f3777b81bf0b6e7bc7514a1656d3e637b2e8e15fab2ce3235730b3e7a4e6/jaraco_context-6.0.1.tar.gz"
-    sha256 "9bae4ea555cf0b14938dc0aee7c9f32ed303aa20a3b73e7dc80111628792d1b3"
+    url "https://files.pythonhosted.org/packages/8d/7d/41acf8e22d791bde812cb6c2c36128bb932ed8ae066bcb5e39cb198e8253/jaraco_context-6.0.2.tar.gz"
+    sha256 "953ae8dddb57b1d791bf72ea1009b32088840a7dd19b9ba16443f62be919ee57"
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
-    sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
+    url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
+    sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
   end
 
   resource "jeepney" do
@@ -217,13 +217,13 @@ class Poetry < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/20/28/e6f1a6f655d620846bd9df527390ecc26b3805a0c5989048c210e22c5ca9/virtualenv-20.35.4.tar.gz"
-    sha256 "643d3914d73d3eeb0c552cbb12d7e82adf0e504dbf86a3182f8771a153a1971c"
+    url "https://files.pythonhosted.org/packages/aa/a3/4d310fa5f00863544e1d0f4de93bddec248499ccf97d4791bc3122c9d4f3/virtualenv-20.36.1.tar.gz"
+    sha256 "8befb5c81842c641f8ee658481e42641c68b5eab3521d8e092d18320902466ba"
   end
 
   resource "xattr" do

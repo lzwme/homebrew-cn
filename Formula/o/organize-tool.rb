@@ -6,16 +6,16 @@ class OrganizeTool < Formula
   url "https://files.pythonhosted.org/packages/3c/bd/1b4217217aadce0d46e28042c0e06bb28863bfdfb383ce7afb18f69a1553/organize_tool-3.3.0.tar.gz"
   sha256 "034fdcf9ffeb23d21b495e038665278e589fa04dc7c0c0a01a4a3b30a06c539f"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/tfeldmann/organize.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e9b38344617ae9c3f12abd06316603bf18cba93ef5cd4e933cd5197e036cbe9e"
-    sha256 cellar: :any,                 arm64_sequoia: "53b55eb7067806090543df875074bd29b35953f2dde1e390df3b77afd75bb4ea"
-    sha256 cellar: :any,                 arm64_sonoma:  "fc6e20133c66d7570362c31d1aeacdb0fa9575eb5401efd888991dd6ef7e710c"
-    sha256 cellar: :any,                 sonoma:        "2e16c533292a7d64dee563233f35b56bd612c30121c92c6d4cc48af3f36542b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ee138086cd554175fc0e07620181fced54763dcf674aea752d37f6e82206a9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afc1129641cdd6cf602b26662d8777edf3bffe40ae39bc63879d734be6d2ad39"
+    sha256 cellar: :any,                 arm64_tahoe:   "383ee565ecc3c645f914dc9f499316b03fe1d2569102138de0028c39415e5a53"
+    sha256 cellar: :any,                 arm64_sequoia: "fca1b4049ed4f4f71929f480c4dca59e839135af2295e738721439fde44b172c"
+    sha256 cellar: :any,                 arm64_sonoma:  "38011718894115eb91cd1e8d05956fd633ae9d4b2484c7745bf71aa05f8a899b"
+    sha256 cellar: :any,                 sonoma:        "6eda0ab7df7cd94393a2bb97c7044a4176963b8d24e35bdf6c6c1dd69d23825a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e152ff516d766bee554f13f60ecd6a9d265e9226f5577c6d2add6e197b0f754"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4925b1d0d3dc26871a474d90c00ffac3034dbdf39525f83d05d1de5ccd72e062"
   end
 
   depends_on "cmake" => :build
@@ -96,8 +96,8 @@ class OrganizeTool < Formula
   end
 
   resource "pdfminer-six" do
-    url "https://files.pythonhosted.org/packages/fb/ef/543d0d44c9b03ac08316d31afd8e52b8ab8a86d03620ee0d61d6006bba9c/pdfminer_six-20251227.tar.gz"
-    sha256 "1d98781cf884d7274c694e742a94ffe6326ee11ee7ea79e73e1e75c4c74d91eb"
+    url "https://files.pythonhosted.org/packages/34/a4/5cec1112009f0439a5ca6afa8ace321f0ab2f48da3255b7a1c8953014670/pdfminer_six-20260107.tar.gz"
+    sha256 "96bfd431e3577a55a0efd25676968ca4ce8fd5b53f14565f85716ff363889602"
   end
 
   resource "platformdirs" do

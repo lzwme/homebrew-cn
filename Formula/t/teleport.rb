@@ -28,7 +28,7 @@ class Teleport < Formula
 
   depends_on "binaryen" => :build
   depends_on "go" => :build
-  depends_on "node@22" => :build # node 24 support issue, https://github.com/gravitational/teleport/issues/57202
+  depends_on "node" => :build
   depends_on "pkgconf" => :build
   depends_on "pnpm" => :build
   depends_on "rust" => :build

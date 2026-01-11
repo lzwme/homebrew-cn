@@ -18,17 +18,19 @@ class Tkdiff < Formula
     sha256 cellar: :any_skip_relocation, all: "0d252a16273fc3118cb657242250606329c9076ea30a20ba5ecbffd2b7d304d5"
   end
 
-  # upstream bug report about running with system tcl-tk, https://sourceforge.net/p/tkdiff/bugs/98/
   depends_on "tcl-tk"
+
+  on_linux do
+    depends_on "xorg-server" => :test
+  end
 
   def install
     bin.install "tkdiff"
   end
 
   test do
-    # Fails with: no display name and no $DISPLAY environment variable on GitHub Actions
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
-
-    system bin/"tkdiff", "--help"
+    cmd = "#{bin}/tkdiff --help"
+    cmd = "#{Formula["xorg-server"].bin}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
+    assert_match "tkdiff FSPEC1 FSPEC2", shell_output(cmd)
   end
 end

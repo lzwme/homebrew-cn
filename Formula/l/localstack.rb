@@ -6,14 +6,15 @@ class Localstack < Formula
   url "https://files.pythonhosted.org/packages/80/89/871ca102d172d38a3b017e51fd1ad473381e537fb7099234aa1a58971f02/localstack-4.12.0.tar.gz"
   sha256 "87e0824d3115fc72fe78efa6d8bda942e68e69e38b74173c4bff3091efaea1ea"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ca4ae41210325936f56f7446fcfc8b6b03d14c8f56f73392475ca85fa2c59dc3"
-    sha256 cellar: :any,                 arm64_sequoia: "22aed4154cfa23744ecb4f7a80c532404f07d44b7e9b514de90b10c4d7e3fbe5"
-    sha256 cellar: :any,                 arm64_sonoma:  "87174696707ccce616ab89e6f55b4903cba73b44f5e41a7b769cf92b6f807b52"
-    sha256 cellar: :any,                 sonoma:        "b9379e2659f576b247d3176bab56004ce382a5f8e25a3b488d7e53d024097dc3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6473d2015a98c7d0979d8e35c50921ea0a5ba1c8d9beea79e0b8f18151f49f1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "768a39d098eab3052a13f61fad35c7d1169cbaa773db9a2e210d27fcb0e14aff"
+    sha256 cellar: :any,                 arm64_tahoe:   "1239e8d942bf95f33da1d1431b3a17e68d121e9af1744b7e0083e712c36fa14d"
+    sha256 cellar: :any,                 arm64_sequoia: "16cded49fd994c2e414e9da0da898c7e4645b83fbb9208015fb0e26d301b0115"
+    sha256 cellar: :any,                 arm64_sonoma:  "5fd9d5db314ccf5b025dd167c4e37571b7642145f12fcc3b94b6e16bf32b19b1"
+    sha256 cellar: :any,                 sonoma:        "16eff3b4fe753fa4cb6e01e6ed92ec6a9e345e89903a3e707fcec8a1f332970f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f57cc1126726fc7ea385094aabb7e97ee25bbfb14014a786c89b07130a099e82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02935f6fd7e1db3c952cc88dc719e59068ce9c39ba15bb429134b54b208af205"
   end
 
   depends_on "rust" => :build # for orjson
@@ -31,8 +32,8 @@ class Localstack < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/fb/44/ca1675be2a83aeee1886ab745b28cda92093066590233cc501890eb8417a/cachetools-6.2.2.tar.gz"
-    sha256 "8e6d266b25e539df852251cfd6f990b4bc3a141db73b939058d809ebd2590fc6"
+    url "https://files.pythonhosted.org/packages/bc/1d/ede8680603f6016887c062a2cf4fc8fdba905866a3ab8831aa8aa651320c/cachetools-6.2.4.tar.gz"
+    sha256 "82c5c05585e70b6ba2d3ae09ea60b79548872185d2f24ae1f2709d37299fd607"
   end
 
   resource "charset-normalizer" do
@@ -96,8 +97,8 @@ class Localstack < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
-    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
+    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
+    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
   end
 
   resource "pygments" do
@@ -156,8 +157,8 @@ class Localstack < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
-    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

@@ -1,8 +1,8 @@
 class Dwm < Formula
   desc "Dynamic window manager"
   homepage "https://dwm.suckless.org/"
-  url "https://dl.suckless.org/dwm/dwm-6.6.tar.gz"
-  sha256 "7cfc2c6d9386c07c49e2c906f209c18ba3364ce0b4872eae39f56efdb7fc00a3"
+  url "https://dl.suckless.org/dwm/dwm-6.7.tar.gz"
+  sha256 "91ffbaa148bf63e965b21eb94597edbba53431c19f5061874e04ef3c58c1f192"
   license "MIT"
   head "https://git.suckless.org/dwm/", using: :git, branch: "master"
 
@@ -12,14 +12,12 @@ class Dwm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f54870201f722572b9dd08b71200bc041635209fdec7ec1ed35bf75d71cffe02"
-    sha256 cellar: :any,                 arm64_sequoia: "6eeb362a8c4a091e32a4e9bbad14b3475f89360df494e35dfb028c0dcebe8624"
-    sha256 cellar: :any,                 arm64_sonoma:  "94d791de879fd2634abb78108dc9cac02821a49eeb9051ac6650ecbf9e0d03e1"
-    sha256 cellar: :any,                 arm64_ventura: "106704c41bfc3aa0de266096aab0afafca663735607f60618d8469ad0be950e2"
-    sha256 cellar: :any,                 sonoma:        "41e6a95715296f82e4c90aedc01e24edd56422016c19add4a2c2f089b5980ca0"
-    sha256 cellar: :any,                 ventura:       "1a8627175db294d799fe38c162aff94588530842ead319c02bb33f20a25b5b7b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c899def601035f7642aa2309b8b0206610d36875c18b52eb9db85ad27e0395c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5b93278a8d7083fe2d9bf319d6ecac058e36c7477483697454a348a485c70b2"
+    sha256 cellar: :any,                 arm64_tahoe:   "eb7401dfd0524539c062b1d39b53b478ce8c194215404e83d6ba02fa31c0f830"
+    sha256 cellar: :any,                 arm64_sequoia: "652c6fcfe1bd90255cf18acecbad3a66ba14d945c4d6588b7d1439883297d92b"
+    sha256 cellar: :any,                 arm64_sonoma:  "d204902f42dbd6ea6d15c574970f0ff23d2cd1da9f995f329626db046b3cc4ac"
+    sha256 cellar: :any,                 sonoma:        "f23ab8c5686104d50484cb737ac312a149fb477257495be3f99ca7919fdcff12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0280054fcf5e1aadd0d3dfda7ee279ee7d0da10e173acd397f4c5328deaaaadf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "708e8cf4e8da730da44a2bcbde8566acf3d47188b39b41ba022a86c183d657f7"
   end
 
   depends_on "dmenu"

@@ -1,10 +1,10 @@
 class Qtlottie < Formula
   desc "Display graphics and animations exported by the Bodymovin plugin"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtlottie-everywhere-src-6.9.3.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.9/6.9.3/submodules/qtlottie-everywhere-src-6.9.3.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.9/6.9.3/submodules/qtlottie-everywhere-src-6.9.3.tar.xz"
-  sha256 "116e105574f0bb442b80251fa60b88d1c9fe55db64e11b549e8fc2063b90df33"
+  url "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtlottie-everywhere-src-6.10.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.1/submodules/qtlottie-everywhere-src-6.10.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.1/submodules/qtlottie-everywhere-src-6.10.1.tar.xz"
+  sha256 "bc9c363c48486d790a998d25119bc0e7d2499266c3be96e61e3032422b0457c2"
   license all_of: [
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
@@ -16,12 +16,12 @@ class Qtlottie < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "638ca0b85bad94892f667db6cab7b794d8d4e12d248ce452877a1f88d171b59f"
-    sha256 cellar: :any,                 arm64_sequoia: "2bdb25e54cd94248e580137ce08b74f380b3868286702cc043630d89ff3a56de"
-    sha256 cellar: :any,                 arm64_sonoma:  "388c2261688b21086cfd85bfae8f9a8db9833cee13fb47ad27cd2b7cc6912832"
-    sha256 cellar: :any,                 sonoma:        "159a91be2af2925b26a0eb2ebb25d987184e68d77e5b915db772c52853e85276"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6526e1149d8e85929bb675933a2fcad7d2e610b1a5b1690297d2f87ec19687f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "619b473ce6b5b3230a3667ba7b6e86a5532202057157d839769b9a4867165b35"
+    sha256 cellar: :any,                 arm64_tahoe:   "ed98ad30cb5c8ae6ec4b1d301f7126d41b5779104b9098a850483b56b5239b5b"
+    sha256 cellar: :any,                 arm64_sequoia: "13a58a60c5846777fb87b278904c87297fbc19e0acd42537b3f14669e3d62294"
+    sha256 cellar: :any,                 arm64_sonoma:  "7887b1834ed423ebda08b9636d7632706bb7cc3e71cb60bea08b9ec408625366"
+    sha256 cellar: :any,                 sonoma:        "b63b31be63d55abad8aae1a624ae5e95639cc87a636f1f052a477d80e37d90f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "72deb127c1b5299ec0ee3cfb0476f82769571478ca7bd988c7e48a6f2a77f3c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be173652b00eaf7f593e2edd30f00dda8fb00dae7c949d1376ce68d053cb16a2"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -1,10 +1,10 @@
 class Qtserialport < Formula
   desc "Provides classes to interact with hardware and virtual serial ports"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtserialport-everywhere-src-6.9.3.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.9/6.9.3/submodules/qtserialport-everywhere-src-6.9.3.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.9/6.9.3/submodules/qtserialport-everywhere-src-6.9.3.tar.xz"
-  sha256 "4b18ec030ff2644698c3f5c776894d8ffe5d3174c964d9bd8668429c943e8298"
+  url "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtserialport-everywhere-src-6.10.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.1/submodules/qtserialport-everywhere-src-6.10.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.1/submodules/qtserialport-everywhere-src-6.10.1.tar.xz"
+  sha256 "17b2f68435f67785a0c75fd70125f3e1892282efdab2098dcdac02d1d70f4c4c"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
@@ -16,12 +16,12 @@ class Qtserialport < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a8a89abf674c18356e224b863c50ef93de9443c4c00f4988a54c3a1719f1b184"
-    sha256 cellar: :any,                 arm64_sequoia: "e73491d79f3318f356bbedfdf194b30e24d4591c3c7e0daa3556d1977b812607"
-    sha256 cellar: :any,                 arm64_sonoma:  "be4b0ebdc65e7f9c6162d08e86db40e90923bb6c70907591533f39c107e582b9"
-    sha256 cellar: :any,                 sonoma:        "6c03a8b4fb34e06d80abdab55dc6821dbb7b04d7f508b980af32681e3ef91f02"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a6286dcb267ef4602cb8b11faba3a1ce80c19fd1affd2d0dca59bc3e59384ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6f4079925529e453d07694d63aa22a15a19cec659cce192559a3857832d67c9"
+    sha256 cellar: :any,                 arm64_tahoe:   "af814e3cc44bc1a27e07b3f2cc6968295b45e9d8ff871f94ad2c8fc82bb518d5"
+    sha256 cellar: :any,                 arm64_sequoia: "4c096cb4e067f3cafce0aa9f1b8c66923c920b9a0c9144678cea3500308e9ee1"
+    sha256 cellar: :any,                 arm64_sonoma:  "7d17b535c69e4624d5f481c36e219c58f27e4ece28948d149fcb113acca58b66"
+    sha256 cellar: :any,                 sonoma:        "e728f43f2db6fc84abdfad3e441ebfe16b30c9ef5b95e15486d54be1aeee7cb5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "47ab88a6cbeabaa1def2e85b4965e7e11ba542597bc757034add3ac8b99da4c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4da99a146d400f9d01321ca61ec5abf9faf6572fca5c4a868f997b7e02d1ab25"
   end
 
   depends_on "cmake" => [:build, :test]

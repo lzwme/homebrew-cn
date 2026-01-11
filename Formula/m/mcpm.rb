@@ -6,14 +6,15 @@ class Mcpm < Formula
   url "https://files.pythonhosted.org/packages/78/7a/601c18f30409867780e6febc26af0e32985c8f8301fbeaf620f62e9a113f/mcpm-2.12.0.tar.gz"
   sha256 "b48941df62a111ba55586e21ffa25e49fa3073b52ccfda0a5203f280b572d3ae"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d837a3b7d0c736c5f2d04c8410cefe3fa30db11421183638d6ad4278c5e58b1a"
-    sha256 cellar: :any,                 arm64_sequoia: "589b0d93e24cc656c4adaf48cf334190042a528f2220c2981edd2894614185e2"
-    sha256 cellar: :any,                 arm64_sonoma:  "966f3cf25996d5b9e8a0c4b295790521fb6b8fc997e003127ae08476f824fcc4"
-    sha256 cellar: :any,                 sonoma:        "9929a9f7fea94e983c177252e1111a72f6c42317ab2d24d5a5b5964fd4b32ed4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f874aef9425ff9ada815149d7c84d4d3036d84b6506be715017e1b5049cb0b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c412018072f7869c40ff5c0deae01e81bd0730a677a5de82ecdd806fdde93f6d"
+    sha256 cellar: :any,                 arm64_tahoe:   "e29022a26fdaa725ba1be9e8ab0d8e99e9582f93c1dd0b49f381d4fd8f75d87d"
+    sha256 cellar: :any,                 arm64_sequoia: "851cec5b26864314c5e76b7d3cd0a5e53c890fb331907fb7fa661b3f0e3f0e30"
+    sha256 cellar: :any,                 arm64_sonoma:  "a9e6389fac50f57eb9d209ad94942f101e0502af06cfd8bb7789f9438193d0c8"
+    sha256 cellar: :any,                 sonoma:        "11a5d455cecd2af6836d93423725aa92b34f86f36359ba250393e68153c4bbec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5027a8e057712eca26d9c973dc65984cd07e1fc53a982d5d088dbeb111158d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9deef148f42fa0fcdda064e6f4af5a32437a490d1137911b87038c57d16b9261"
   end
 
   depends_on "cmake" => :build # for duckdb
@@ -29,8 +30,8 @@ class Mcpm < Formula
   pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
-    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
+    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
+    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
   end
 
   resource "attrs" do
@@ -64,8 +65,8 @@ class Mcpm < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/40/99/e1b75193ee23bd10a05a3b90c065d419b1c8c18f61cae6b8218c7158f792/cyclopts-4.4.1.tar.gz"
-    sha256 "368a404926b46a49dc328a33ccd7e55ba879296a28e64a42afe2f6667704cecf"
+    url "https://files.pythonhosted.org/packages/43/c4/60b6068e703c78656d07b249919754f8f60e9e7da3325560574ee27b4e39/cyclopts-4.4.4.tar.gz"
+    sha256 "f30c591c971d974ab4f223e099f881668daed72de713713c984ca41479d393dd"
   end
 
   resource "deprecated" do
@@ -159,8 +160,8 @@ class Mcpm < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/df/ad/f3777b81bf0b6e7bc7514a1656d3e637b2e8e15fab2ce3235730b3e7a4e6/jaraco_context-6.0.1.tar.gz"
-    sha256 "9bae4ea555cf0b14938dc0aee7c9f32ed303aa20a3b73e7dc80111628792d1b3"
+    url "https://files.pythonhosted.org/packages/8d/7d/41acf8e22d791bde812cb6c2c36128bb932ed8ae066bcb5e39cb198e8253/jaraco_context-6.0.2.tar.gz"
+    sha256 "953ae8dddb57b1d791bf72ea1009b32088840a7dd19b9ba16443f62be919ee57"
   end
 
   resource "jaraco-functools" do
@@ -169,8 +170,8 @@ class Mcpm < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
-    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
+    url "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz"
+    sha256 "0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326"
   end
 
   resource "jsonschema-path" do
@@ -279,8 +280,8 @@ class Mcpm < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
-    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
+    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
+    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
   end
 
   resource "py-key-value-aio" do
@@ -374,13 +375,8 @@ class Mcpm < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/3a/2b/7a1f1ebcd6b3f14febdc003e658778d81e76b40df2267904ee6b13f0c5c6/ruamel_yaml-0.18.17.tar.gz"
-    sha256 "9091cd6e2d93a3a4b157ddb8fabf348c3de7f1fb1381346d985b6b247dcd8d3c"
-  end
-
-  resource "ruamel-yaml-clib" do
-    url "https://files.pythonhosted.org/packages/ea/97/60fda20e2fb54b83a61ae14648b0817c8f5d84a3821e40bfbdae1437026a/ruamel_yaml_clib-0.2.15.tar.gz"
-    sha256 "46e4cc8c43ef6a94885f72512094e482114a8a706d3c555a34ed4b0d20200600"
+    url "https://files.pythonhosted.org/packages/c7/3b/ebda527b56beb90cb7652cb1c7e4f91f48649fbcd8d2eb2fb6e77cd3329b/ruamel_yaml-0.19.1.tar.gz"
+    sha256 "53eb66cd27849eff968ebf8f0bf61f46cdac2da1d1f3576dd4ccee9b25c31993"
   end
 
   resource "shellingham" do
@@ -394,8 +390,8 @@ class Mcpm < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/17/8b/54651ad49bce99a50fd61a7f19c2b6a79fbb072e693101fbb1194c362054/sse_starlette-3.0.4.tar.gz"
-    sha256 "5e34286862e96ead0eb70f5ddd0bd21ab1f6473a8f44419dd267f431611383dd"
+    url "https://files.pythonhosted.org/packages/da/34/f5df66cb383efdbf4f2db23cabb27f51b1dcb737efaf8a558f6f1d195134/sse_starlette-3.1.2.tar.gz"
+    sha256 "55eff034207a83a0eb86de9a68099bd0157838f0b8b999a1b742005c71e33618"
   end
 
   resource "starlette" do
@@ -419,8 +415,8 @@ class Mcpm < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "uvicorn" do
@@ -444,8 +440,8 @@ class Mcpm < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/45/ea/b0f8eeb287f8df9066e56e831c7824ac6bab645dd6c7a8f4b2d767944f9b/werkzeug-3.1.4.tar.gz"
-    sha256 "cd3cd98b1b92dc3b7b3995038826c68097dcb16f9baa63abe35f20eafeb9fe5e"
+    url "https://files.pythonhosted.org/packages/5a/70/1469ef1d3542ae7c2c7b72bd5e3a4e6ee69d7978fa8a3af05a38eca5becf/werkzeug-3.1.5.tar.gz"
+    sha256 "6a548b0e88955dd07ccb25539d7d0cc97417ee9e179677d22c7041c8f078ce67"
   end
 
   resource "wrapt" do

@@ -1,10 +1,10 @@
 class Qtquick3dphysics < Formula
   desc "High-level QML module adding physical simulation capabilities to Qt Quick 3D"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtquick3dphysics-everywhere-src-6.9.3.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.9/6.9.3/submodules/qtquick3dphysics-everywhere-src-6.9.3.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.9/6.9.3/submodules/qtquick3dphysics-everywhere-src-6.9.3.tar.xz"
-  sha256 "dcd7b22d745d249eb602c5d4d8af8a8e9d11217ccb42b3dd611bb047153b5a6e"
+  url "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtquick3dphysics-everywhere-src-6.10.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.1/submodules/qtquick3dphysics-everywhere-src-6.10.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.1/submodules/qtquick3dphysics-everywhere-src-6.10.1.tar.xz"
+  sha256 "d973847df1be6ee711e771df923537fb62fcac5bf57100f2ebc6f7742c8d2fee"
   license all_of: [
     "GPL-3.0-only",
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # cooker
@@ -17,12 +17,12 @@ class Qtquick3dphysics < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "821fb7522f7756940c7f86760f31c1d3171a7a2a3c01306c3931fd1c713bc180"
-    sha256 cellar: :any,                 arm64_sequoia: "ea3cf9eac77865b8a79a12e4cd4f0ff8617f902307b91ca30072fcb9a0b5dbc0"
-    sha256 cellar: :any,                 arm64_sonoma:  "b548ef2824ee560dfeecdd114cc05fe2a0d453f12bc73b185dcaf62a3681799a"
-    sha256 cellar: :any,                 sonoma:        "e4390f70dd85beff44fa7fae526836cffe45532c9acff35ec14b55aeaf7db196"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ccdaee4f4fe6eca58805b1aba30d2798c239c6127ce9f8497c1c0d9f4d462c02"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10884c823dcc774344c7fb8bfa38d90532ad4bcc8fbe815aeefb912651183faf"
+    sha256 cellar: :any,                 arm64_tahoe:   "160236d2d41e44ccb25816860b0bcc35d8851a44f1331327d5bbd0120c1e3d7e"
+    sha256 cellar: :any,                 arm64_sequoia: "6d1044b2a73b208c46c0e0447f8176c18acbaa22c9c21b1c85396b8d8fad13cd"
+    sha256 cellar: :any,                 arm64_sonoma:  "ce9c8b683a3b8332632c3a5213fb8cb10afc5611b0b1190f9f32f2bb09ff3c0c"
+    sha256 cellar: :any,                 sonoma:        "34145474435160f077e60bb292da32ad8be0bab0f11a8bc40945b04828c4e764"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed268096b1788a13302b2dee1c6397b9a725eeb8888e21e6a68a164a3003861a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "942bcab07efc72e64a02363e785a97778e282d58ce648e21640a7736d589f374"
   end
 
   depends_on "cmake" => :build

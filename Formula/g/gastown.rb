@@ -1,17 +1,17 @@
 class Gastown < Formula
   desc "Multi-agent workspace manager"
   homepage "https://github.com/steveyegge/gastown"
-  url "https://ghfast.top/https://github.com/steveyegge/gastown/archive/refs/tags/v0.2.3.tar.gz"
-  sha256 "1fc02fef9b46544af153402162201dcf89c0de12f09968741748355ee04752ed"
+  url "https://ghfast.top/https://github.com/steveyegge/gastown/archive/refs/tags/v0.2.4.tar.gz"
+  sha256 "085995a036e88de536c0b1286b093eb391f73e33cf5e601ef85393d1b93dff21"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "385180674678331c0f8e97199f9cabb444c67b4132439aba72dcc312e541ce33"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "385180674678331c0f8e97199f9cabb444c67b4132439aba72dcc312e541ce33"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "385180674678331c0f8e97199f9cabb444c67b4132439aba72dcc312e541ce33"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b3e1f12290bad73da024a967b25da59bd31e0634f976d67759ec2cdd08e9e9fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca79144c99d60de9e763a4287421a9cc1167f534d630211def5ffe5dcd1636d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0281ac653cc07a6e0ba5cf1ba18491ebfdd222e2b1577e03793fcf308e400246"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a15e9420d9c20d35aaeb7f70784cf3144809065fb33bab69ad07f612eeeecc82"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a15e9420d9c20d35aaeb7f70784cf3144809065fb33bab69ad07f612eeeecc82"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a15e9420d9c20d35aaeb7f70784cf3144809065fb33bab69ad07f612eeeecc82"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e5a8e268a1a1392aebf3b60c188a56c09021b82af570e6a30734ca7391ed7ffa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f2cd405cbafab52b165b688a0b560ac562368a395b6083dd94a03412b479eed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfb0ce4fe972d506d1328f33b61344703d49976547b76971c2f9f6b2f6fa4017"
   end
 
   depends_on "go" => :build

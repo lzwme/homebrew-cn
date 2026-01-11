@@ -98,7 +98,6 @@ Homebrew-homebrew-core/Formula/a/aiven-client.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/akamai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/akku.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aklomp-base64.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/alac.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/alass.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/alda.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aldo.rb, Homebrew/homebrew-core, 1
@@ -166,6 +165,7 @@ Homebrew-homebrew-core/Formula/a/antiword.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/antlr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/antlr4-cpp-runtime.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/anubis.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/any2fasta.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/anycable-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/anyenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/anyquery.rb, Homebrew/homebrew-core, 1
@@ -252,7 +252,6 @@ Homebrew-homebrew-core/Formula/a/arm-none-eabi-gdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/armadillo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/arp-scan-rs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arp-scan.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/arp-sk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/arpack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arping.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arpoison.rb, Homebrew/homebrew-core, 0
@@ -394,7 +393,7 @@ Homebrew-homebrew-core/Formula/a/aws-keychain.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-lc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-nuke.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-rotate-key.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/aws-sam-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/aws-sam-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-sdk-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-shell.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aws-spiffe-workload-helper.rb, Homebrew/homebrew-core, 1
@@ -422,6 +421,7 @@ Homebrew-homebrew-core/Formula/a/azure-storage-blobs-cpp.rb, Homebrew/homebrew-c
 Homebrew-homebrew-core/Formula/a/azure-storage-common-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azure-storage-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azurehound.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/azurite.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/b2-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/b2sum.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/b3sum.rb, Homebrew/homebrew-core, 1
@@ -1129,6 +1129,7 @@ Homebrew-homebrew-core/Formula/c/cocogitto.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coconut.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cocot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coda-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/codanna.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/code-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/code-minimap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/code-server.rb, Homebrew/homebrew-core, 0
@@ -3075,7 +3076,6 @@ Homebrew-homebrew-core/Formula/i/icu4c@75.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icu4c@76.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icu4c@77.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icu4c@78.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/i/id3ed.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/id3lib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/id3tool.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/id3v2.rb, Homebrew/homebrew-core, 0
@@ -4440,7 +4440,7 @@ Homebrew-homebrew-core/Formula/m/manticoresearch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mantra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mapcidr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mapcrafter.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mapnik.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mapnik.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mapproxy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mapscii.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mapserver.rb, Homebrew/homebrew-core, 0
@@ -4638,6 +4638,7 @@ Homebrew-homebrew-core/Formula/m/minised.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/miniserve.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minisign.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/miniupnpc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/minizign.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minizinc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minizip-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minizip.rb, Homebrew/homebrew-core, 0
@@ -7922,7 +7923,6 @@ Homebrew-homebrew-core/Formula/x/xml-security-c.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xml-tooling-c.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xml2rfc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xmlcatmgr.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/x/xmlformat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xmlrpc-c.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xmlsectool.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xmlstarlet.rb, Homebrew/homebrew-core, 1
@@ -9587,6 +9587,7 @@ Homebrew-homebrew-cask/Casks/f/foobar2000.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/force-paste.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/forecast.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fork.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/fork@dev.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/forkgram-telegram.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/forklift.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fossa.rb, Homebrew/homebrew-cask, 1

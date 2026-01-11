@@ -9,8 +9,8 @@ class PyqtBuilder < Formula
   head "https://github.com/Python-PyQt/PyQt-builder.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "109c45b488442c303a287a1688cc02841d29fb727608a482f11f250df3572b2a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "a9cedbc925b2eb0084510ec10953c83495eb8240477a8c70855bdf72dcbb2cd4"
   end
 
   depends_on "python@3.14"
@@ -33,8 +33,8 @@ class PyqtBuilder < Formula
   end
 
   resource "sip" do
-    url "https://files.pythonhosted.org/packages/d0/5f/d6dc58565d2d174064b545f8b3bef7b6117d25ee06181d5560cc290bd344/sip-6.15.0.tar.gz"
-    sha256 "3920f26515456ee21114a1f8282144f8c156b1aabc3b44424155d5f81396025f"
+    url "https://files.pythonhosted.org/packages/8e/3d/4245885c0480230d4bc389c6165c841546bf43c1e780fd77995caf5ad7b8/sip-6.15.1.tar.gz"
+    sha256 "dc2e58c1798a74e1b31c28e837339822fe8fa55288ae30e8986eb28100ebca5a"
   end
 
   def python3

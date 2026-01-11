@@ -13,12 +13,13 @@ class Openbao < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f0e7c834e6dce0cf00128593516c0f600f8a5f63941ba5cdc5af4fac101f89e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a21513f1c682beba9555549dec65bb052c0b4911784985d2487e91b3c1d4dde1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa115e2a8cdbcc979ae939d874f169ab11c3290dc00715b9a3d12343ce0c1fcf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cbe4fe7600d30c316be5789116fd2f91299f0b3986613c6bdf3932801e81ba47"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75f06a3e8035b9f0f8288dbea4e4ef7115ae92ab4739fdb1b84fc2d173081730"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16a548408a29fa19ae80ac8e81cb90c22f5589ad5888f80a02d960b51786bc55"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8999fa214ae6d762b4a220a4f50962446163fe41b1fee27b219a24654efa5397"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f68a8e8b14b413aa61647add948f8012222f7b11a33be605bfaf62c1610fac79"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82e7b1d677857025887ba8d7e27295705b53589927a88b1cfcd671ca5d064d1c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "170749bba9981bcee3d88ce4e73fc6a4edbcd22c0d0abccc580d548e2f44b99e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e16e7abfa3a9107c25dd26b0d5d0361bd1e25278f75e5ab96a1235d012338c29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fde949f5478f711a4a67dfaf406e3081b6cec60f42e789f53fdf1cb1cad779f"
   end
 
   depends_on "go" => :build
@@ -28,9 +29,24 @@ class Openbao < Formula
   conflicts_with "bao", because: "both install `bao` binaries"
 
   def install
-    ENV.prepend_path "PATH", Formula["node@22"].opt_libexec/"bin" # for npm
-    system "make", "bootstrap", "static-dist", "dev-ui"
-    bin.install "bin/bao"
+    # Build ui assets
+    cd "ui" do
+      ENV.prepend_path "PATH", Formula["node@22"].opt_libexec/"bin" # for npm
+      system "yarn", "install", "--immutable"
+      system "yarn", "build"
+    end
+
+    # Bootstrap go modules
+    system "go", "generate", "-tags", "tools", "tools/tools.go"
+
+    ldflags = %W[
+      -s -w
+      -X github.com/openbao/openbao/version.fullVersion=#{version}
+      -X github.com/openbao/openbao/version.GitCommit=#{Utils.git_head}
+      -X github.com/openbao/openbao/version.BuildDate=#{time.iso8601}
+    ]
+    tags = %w[testonly ui]
+    system "go", "build", *std_go_args(ldflags:, tags:, output: bin/"bao")
   end
 
   service do
@@ -49,6 +65,7 @@ class Openbao < Formula
     pid = spawn bin/"bao", "server", "-dev"
     sleep 5
     system bin/"bao", "status"
+
     # Check the ui was properly embedded
     assert_match "User-agent", shell_output("curl #{addr}/robots.txt")
   ensure

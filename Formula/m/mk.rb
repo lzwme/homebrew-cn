@@ -6,17 +6,16 @@ class Mk < Formula
   url "https://files.pythonhosted.org/packages/75/9e/dcc7813d9f7133f8d384eca24a4d4bb0cb056abcc53f1f170b8353084feb/mk-3.0.0.tar.gz"
   sha256 "0a041a3620057165f155b8372469d8ab55ae94dd91d6e27723ab9a7de1aa2086"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/pycontribs/mk.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "9913b1cbabedd1e04234f7b0fafc8ec1ca0407a64b157971c9edb68019f97b4b"
-    sha256 cellar: :any,                 arm64_sequoia: "d634f4600f5770ba33f51f90cfc344762f4b66e723a3adfeaa36a5c8c5063737"
-    sha256 cellar: :any,                 arm64_sonoma:  "579238db5a0a322ce59e33756a3acc6ffb0761508d19a9d59de278d9d0abdbaa"
-    sha256 cellar: :any,                 sonoma:        "ca2d9716bc26b04e562ccea66cf4b045b70c5ec3b6a8f0046dd6dcdb88a4b87e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "77952353b914bfc4aaa671acda01fe506e59560a271e5179154ac128a9f713b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39df8180e8100a4d70256ccdbd829416a71d2fe839cf7939ca3c9fe84a2916d3"
+    sha256 cellar: :any,                 arm64_tahoe:   "957a9e4a496990c2f05c75b6ed4e46ded6083b42ed4ff157cb31522f0afa0afd"
+    sha256 cellar: :any,                 arm64_sequoia: "4e1d0f92e3ed207388a5c577f9b99432dcc41c18bdcb674b6bbb6fb6e3174f16"
+    sha256 cellar: :any,                 arm64_sonoma:  "cf4907849bf739b53050d62c4a25410d2a4d86f520c014caa54735443f819239"
+    sha256 cellar: :any,                 sonoma:        "47f8cfdc3110d415531e6f3062b6c5b1ab3b2e74c027ea534cb77ed484b0f864"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e9e81854f4e4007bca8b7d377f93b46fd0e5f45749fb3866255e3df69fd52d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fda70ec75c7f54a397b7f2cc72fff19aa30ed9af72c5ba73c9b8c8f5f3c5f497"
   end
 
   depends_on "rust" => :build
@@ -32,8 +31,8 @@ class Mk < Formula
                 extra_packages:   %w[jeepney secretstorage]
 
   resource "build" do
-    url "https://files.pythonhosted.org/packages/25/1c/23e33405a7c9eac261dff640926b8b5adaed6a6eb3e1767d441ed611d0c0/build-1.3.0.tar.gz"
-    sha256 "698edd0ea270bde950f53aed21f3a0135672206f3911e0176261a31e0e07b397"
+    url "https://files.pythonhosted.org/packages/42/18/94eaffda7b329535d91f00fe605ab1f1e5cd68b2074d03f255c7d250687d/build-1.4.0.tar.gz"
+    sha256 "f1b91b925aa322be454f8330c6fb48b465da993d1e7e7e6fa35027ec49f3c936"
   end
 
   resource "charset-normalizer" do
@@ -52,8 +51,8 @@ class Mk < Formula
   end
 
   resource "docutils" do
-    url "https://files.pythonhosted.org/packages/d9/02/111134bfeb6e6c7ac4c74594e39a59f6c0195dc4846afbeac3cba60f1927/docutils-0.22.3.tar.gz"
-    sha256 "21486ae730e4ca9f622677b1412b879af1791efcfba517e4c6f60be543fc8cdd"
+    url "https://files.pythonhosted.org/packages/ae/b6/03bb70946330e88ffec97aefd3ea75ba575cb2e762061e0e62a213befee8/docutils-0.22.4.tar.gz"
+    sha256 "4db53b1fde9abecbb74d91230d32ab626d94f6badfc575d6db9194a49df29968"
   end
 
   resource "gitdb" do
@@ -62,8 +61,8 @@ class Mk < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/9a/c8/dd58967d119baab745caec2f9d853297cec1989ec1d63f677d3880632b88/gitpython-3.1.45.tar.gz"
-    sha256 "85b0ee964ceddf211c41b9f27a49086010a190fd8132a24e21f362a4b36a791c"
+    url "https://files.pythonhosted.org/packages/df/b5/59d16470a1f0dfe8c793f9ef56fd3826093fc52b3bd96d6b9d6c26c7e27b/gitpython-3.1.46.tar.gz"
+    sha256 "400124c7d0ef4ea03f7310ac2fbf7151e09ff97f2a3288d64a440c584a29c37f"
   end
 
   resource "id" do
@@ -82,13 +81,13 @@ class Mk < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/df/ad/f3777b81bf0b6e7bc7514a1656d3e637b2e8e15fab2ce3235730b3e7a4e6/jaraco_context-6.0.1.tar.gz"
-    sha256 "9bae4ea555cf0b14938dc0aee7c9f32ed303aa20a3b73e7dc80111628792d1b3"
+    url "https://files.pythonhosted.org/packages/8d/7d/41acf8e22d791bde812cb6c2c36128bb932ed8ae066bcb5e39cb198e8253/jaraco_context-6.0.2.tar.gz"
+    sha256 "953ae8dddb57b1d791bf72ea1009b32088840a7dd19b9ba16443f62be919ee57"
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
-    sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
+    url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
+    sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
   end
 
   resource "jeepney" do
@@ -202,8 +201,8 @@ class Mk < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/8f/28/7c85c8032b91dbe79725b6f17d2fffc595dff06a35c7a30a37bef73a1ab4/typer-0.20.0.tar.gz"
-    sha256 "1aaf6494031793e4876fb0bacfa6a912b551cf43c1e63c800df8b1a866720c37"
+    url "https://files.pythonhosted.org/packages/36/bf/8825b5929afd84d0dabd606c67cd57b8388cb3ec385f7ef19c5cc2202069/typer-0.21.1.tar.gz"
+    sha256 "ea835607cd752343b6b2b7ce676893e5a0324082268b48f27aa058bdb7d2145d"
   end
 
   resource "typer-config" do
@@ -217,8 +216,8 @@ class Mk < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install
