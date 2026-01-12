@@ -6,11 +6,11 @@ class Wtfis < Formula
   url "https://files.pythonhosted.org/packages/aa/a3/6ed63e7bdc5e643360d203c9aae7a12e92b777accd2c2dbabe8598610114/wtfis-0.14.0.tar.gz"
   sha256 "71ce501972dace781316f2b1cedcc3a5783a46a4f9b87acba355eb33d86528b6"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/pirxthepilot/wtfis.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "07f015e0d6f6c6b44ac587bbca041e91237f57fa09fb5ced8a6200f369d1880f"
+    sha256 cellar: :any_skip_relocation, all: "47af37a09d5c681c4df4cbbc474032acb277e6310d4f9c74bd3bcc606258ce6c"
   end
 
   depends_on "certifi" => :no_linkage
@@ -60,8 +60,8 @@ class Wtfis < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

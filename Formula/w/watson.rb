@@ -6,17 +6,16 @@ class Watson < Formula
   url "https://files.pythonhosted.org/packages/a9/61/868892a19ad9f7e74f9821c259702c3630138ece45bab271e876b24bb381/td-watson-2.1.0.tar.gz"
   sha256 "204384dc04653e0dbe8f833243bb833beda3d79b387fe173bfd33faecdd087c8"
   license "MIT"
-  revision 9
+  revision 10
   head "https://github.com/jazzband/Watson.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b303be0d5eec194786e890baf80cad56b0d1a08daa63e07de75e823663a09a6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "02770c159096d64e191ddf6b727277cc9e4d748db16a243c11bea68004876e16"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f111d38e5b360a5a04ddd5dbc8b98d000ffd9753b1bc002f8ec73dceb5e51a2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "79ceefc40dd4d2c5ff49219efbc8ff2c4bbbb1ef176e45c0753c4b2ddaab578f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c3d2b6c5dc3c0fd9d86032e50ae297a70f9baab30ca64559961a1f6b967f59e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd02d4cedb4fbe3cc048316b38b685977b80aba90c2e285f54a604294220cbb0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd59d5755139b4ef6952e14515584bc20dfa1603f89caee9057532b2bce7f611"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43673f64013557f7d5694db5e026908ffb66a70f617b4c6d8c026470b79bb9e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f490cf7058219e9c270dc8b5cdfd05858fff45fc58ab70628c9c44efa97e217"
+    sha256 cellar: :any_skip_relocation, sonoma:        "29d16ea3e55b56995e95e4e14045bf36072147c56da7b3d2dbf1451981614ce6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "155dd0deb4d9ccfd91caf092d719dda688ea2761bac9178271b4c614aa6ae482"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a28ef0742aa99dbd31a42f7cdc49a704c1ef93140b5c1c4df977d4a9fbe8c10a"
   end
 
   depends_on "certifi" => :no_linkage
@@ -70,8 +69,8 @@ class Watson < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

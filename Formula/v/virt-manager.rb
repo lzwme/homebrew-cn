@@ -5,7 +5,7 @@ class VirtManager < Formula
   desc "App for managing virtual machines"
   homepage "https://virt-manager.org/"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
   head "https://github.com/virt-manager/virt-manager.git", branch: "main"
 
   stable do
@@ -33,7 +33,7 @@ class VirtManager < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "40158f5937287a834f293c5d46c280fefc8ba342c0e9a373c4fe34b36e9cbc5c"
+    sha256 cellar: :any_skip_relocation, all: "8a3e60113fb3ef59278da6a46c6676d71717c231c102b34fc4ea820be6e5367e"
   end
 
   depends_on "docutils" => :build
@@ -77,8 +77,8 @@ class VirtManager < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

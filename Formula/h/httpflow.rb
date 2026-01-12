@@ -24,6 +24,10 @@ class Httpflow < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4974439a78ea50c5a49a972f340395f0f2a8305ff2980e9eab9bb27b94de9778"
   end
 
+  # Last release on 2020-05-07 and needs EOL `pcre` (https://github.com/six-ddc/httpflow/issues/12)
+  deprecate! date: "2026-01-10", because: :unmaintained
+  disable! date: "2027-01-10", because: :unmaintained
+
   depends_on "pcre"
 
   uses_from_macos "libpcap"

@@ -1,17 +1,17 @@
 class Ladybug < Formula
   desc "Embedded graph database built for query speed and scalability"
   homepage "https://ladybugdb.com/"
-  url "https://ghfast.top/https://github.com/LadybugDB/ladybug/archive/refs/tags/v0.14.1.tar.gz"
-  sha256 "354d3e9c93fabb7a0d29b56bc1fcf6e28fdcebc2c18fba2af5c67feb647aeea6"
+  url "https://ghfast.top/https://github.com/LadybugDB/ladybug/archive/refs/tags/v0.14.3.tar.gz"
+  sha256 "9fcae7c52640ea11dd58c1424552dcd34bdb835e10b1c812fdd361a7a1b30377"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ee668faad7fd7fee4660b765282429507dc169603b2896564830e9dc7169ac5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13b1008fea84cdc5b16a73cb9d083187e2731ed858784f25a766e8a525331613"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c584b28c4581454977e15e2e0e76640063dc24962c05322d53f87ee281be29f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0d103041f736015e654e04e7fcad29dbf3c5ca31d575d47cff2a093ba0b92460"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0ea598575a318a0c846553bd24214841ee691cee482df222093673480ad18bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c209a655855f26a0c040f38472cd0275bd5ec768593ba03116d8277f4233096"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85118d8cbe0dd171baf10824103f938fd139bd971fdf74864c63a7ef92e43d6c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "241757fc482e3679056b74e344a3c0c58d9050df013bdba3457f8418db5726a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e1764e7e275ddd54c4b3caacc1ecfdd2b0977adfbff989fb78832b33c428e36"
+    sha256 cellar: :any_skip_relocation, sonoma:        "136df9ec9fb7b9d0f7973b617372cb1d5b5e994461156f9a2280ac96540d1933"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b897b41a46b517b2c1fc857a7f67fcd016f2de8decbb7f10ac0bf6fa6cf576c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c090dfae861eafd229be01fa76d6b47562ce97bae6fa4d9cf51f5e7422f57ea"
   end
 
   depends_on "cmake" => :build

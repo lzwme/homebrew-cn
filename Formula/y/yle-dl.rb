@@ -6,16 +6,16 @@ class YleDl < Formula
   url "https://files.pythonhosted.org/packages/a1/92/f2c10d7390899c9f26e08102143d9c0a8d375a7d7a7314e17913ddfa162e/yle_dl-20250730.tar.gz"
   sha256 "2122741f515d5829eff28b2f6b96c251f4f7434412ea6c3ca60e526e60563c89"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
   head "https://github.com/aajanki/yle-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8002212d9df652c6b26e638a2dea16ddc2fd4b3a39eb02fb28a3495fb0095a8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9fd4a476b2f25a2a2512d8e0e0e59d92b30c36b69746f75dd4de517ec545732c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c98da4f9be2cf63ab996232f845c0e75b514ebd1a4d6a3d572b8b6a709669e12"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ae813eefe91ebc5039a9b70e4e95ec2196afde071658caa52d70208e85cc86ab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb10c6d6615807fc30118204a4ead746b701429349fd11bea31beafde1407a32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ef3c6ad29cbf06442042c266d5f68422abcefcee5764917154b92795a763328"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d67b5633ba8b0e56a467d11488447b79550f54c2465111f52b40aa6e4a98573"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "776889ed5e08f7ff1163ab55b42f2266ec8e407631003a0af2fc15e222dc1ffe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53dc8dcb927ac65d64368da9b475b24baced3f9e678012f2174553a987c0ee16"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b502856a8098e86d4acac6143c0d1ec4d4ce24c511b6422c4705211549d5f859"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9f47466eac8bb391ef77e43bfb88eb67d68f5fc576bc1cf9b7745682e0a6d2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "471c142f296490781521ce551a8c1bc96973a1fe02ed3180da9f8864e9099abd"
   end
 
   depends_on "certifi"
@@ -54,8 +54,8 @@ class YleDl < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

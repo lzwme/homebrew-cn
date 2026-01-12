@@ -6,15 +6,16 @@ class Scrapy < Formula
   url "https://files.pythonhosted.org/packages/03/05/db301a334044577e2f341b19631229aae06f4664dc4c6c3c6246b4081872/scrapy-2.14.0.tar.gz"
   sha256 "5df8326d9bffc90a719c4579b80195fc0b3c85a0503c73e0f75a5c582da4c064"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/scrapy/scrapy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d9872a2e15cd2306b10410936f2c08fe1ac442df70e27a3f98cf9d0b4c0d2424"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07d052f08947c943bbed599ea61cc7d83d48f65ade81a48bada5489963e40105"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9adfed0b8e3074f806011b9308a8ae4e39c14cb00c5bcca1ad6a670b977f11a7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a56ec3f6c292a850c5e9b67b458e62943f2bec0658ab3a5d2ae5d1b93d048b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d78dfb0832c4edddcdc8f85aa80de2dcbbc6ab7c4a286e4d5cdea0a978d1ec08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b31cb2c117ab2f317b42dd5ac7b736f9f7695e8b450257d0bd6f36b9679709eb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05212f0987de08b44a649f9c426a0f3cec7e6a833510e6e4b67b94cc99d44c69"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3087c3361203d55902a69284a3ab24aaea4caf66ef096b3da9aed579b91fd35"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce56cd1b94363d6dd5794ff572e7496767b62dc3cacdd6c61e3ae41b108dec42"
+    sha256 cellar: :any_skip_relocation, sonoma:        "47ee4630a5dd105fc3b784985156b1676b25ac9ca31d7939a1c5fea8468461bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "85eae03689d391beffec7565c64721c55b115dc9fdbebdcfa462dcfed48804a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3c8ee0496406bfe8fc9b8306597abe5b4ae77ece2ee3ae5d9d63c47322e9c87"
   end
 
   depends_on "certifi" => :no_linkage
@@ -57,8 +58,8 @@ class Scrapy < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/c1/e0/a75dbe4bca1e7d41307323dad5ea2efdd95408f74ab2de8bd7dba9b51a1a/filelock-3.20.2.tar.gz"
-    sha256 "a2241ff4ddde2a7cebddf78e39832509cb045d18ec1a09d7248d6bfc6bfbbe64"
+    url "https://files.pythonhosted.org/packages/1d/65/ce7f1b70157833bf3cb851b556a37d4547ceafc158aa9b34b36782f23696/filelock-3.20.3.tar.gz"
+    sha256 "18c57ee915c7ec61cff0ecf7f0f869936c7c30191bb0cf406f1341778d0834e1"
   end
 
   resource "hyperlink" do
@@ -77,8 +78,8 @@ class Scrapy < Formula
   end
 
   resource "itemadapter" do
-    url "https://files.pythonhosted.org/packages/4c/41/227d1c97c9ff6637b07719276ff21a4b47d5da5bbec7ab06b434bfa20d47/itemadapter-0.13.0.tar.gz"
-    sha256 "bed9ef00e3bcb04f0c8478f11fdebe63ebf45bacffe802719dfb070e969d2062"
+    url "https://files.pythonhosted.org/packages/52/47/4c75c5396941e653d5f864389964da6951e8f338c6739602dd778f62333e/itemadapter-0.13.1.tar.gz"
+    sha256 "fa139c7be2aa80f8874b2f23d165d5d4aa47c4b85c54ab530b567fd5f684f1b4"
   end
 
   resource "itemloaders" do
@@ -178,8 +179,8 @@ class Scrapy < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "w3lib" do
@@ -188,8 +189,8 @@ class Scrapy < Formula
   end
 
   resource "zope-interface" do
-    url "https://files.pythonhosted.org/packages/71/c9/5ec8679a04d37c797d343f650c51ad67d178f0001c363e44b6ac5f97a9da/zope_interface-8.1.1.tar.gz"
-    sha256 "51b10e6e8e238d719636a401f44f1e366146912407b58453936b781a19be19ec"
+    url "https://files.pythonhosted.org/packages/86/a4/77daa5ba398996d16bb43fc721599d27d03eae68fe3c799de1963c72e228/zope_interface-8.2.tar.gz"
+    sha256 "afb20c371a601d261b4f6edb53c3c418c249db1a9717b0baafc9a9bb39ba1224"
   end
 
   def install

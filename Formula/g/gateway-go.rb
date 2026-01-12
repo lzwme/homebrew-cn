@@ -1,20 +1,18 @@
 class GatewayGo < Formula
   desc "GateWay Client for OpenIoTHub"
   homepage "https://github.com/OpenIoTHub"
-  url "https://ghfast.top/https://github.com/OpenIoTHub/gateway-go/archive/refs/tags/v2.0.11.tar.gz"
-  sha256 "8e6eb66bbc95a22bfa09c25cf55e20a803cda64c8e38c4fc8d01389cb6c20581"
+  url "https://ghfast.top/https://github.com/OpenIoTHub/gateway-go/archive/refs/tags/v2.0.12.tar.gz"
+  sha256 "b06175c5c5ee602ca1a2c4652033c865a12e226eee7adfefb0dde807a3c5ff63"
   license "MIT"
   head "https://github.com/OpenIoTHub/gateway-go.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db8344f11e99cc6b59e7d04c52f767a25fe19b1baa9bf3619527281a87282e8c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "432159ef7f4efaad41c272483803834c97a5e2da4324999d2d5bb8e84190283d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73153cdeb9af0633d107a707bd4380ed45510be96f0f580623dc1a673746a164"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d2fee6e26ef52c684f07404f43b28cca3d6c98c7e2eb77c05778e71a0892be54"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ea1f7e04b61873ecc112c7a780d9f6865a0361b48bdd4ba4ee88544fa7bf898b"
-    sha256 cellar: :any_skip_relocation, ventura:       "b908b6d560ba03720d79b9346d86966f62b0bfb54dc849013224ab08463aa4fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75f39c500b0df9aa0e7a6edc132e0989784cb70589ee49f38f88462a835b96cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "574a9244c32bf65a8bf49a14573b4911ce71cfaf344a3efadbad65833d5ba854"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f75ffdf01910d42ba4414beb0c093ce7cb20f305c7409f2e9b329949bdd19bbf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ed644b847ee7f2626fe8f017d4e95b9be6e2d644c4ab04d02f5da16c5cd2dad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36b71b06b0647849bde0330e0927b965f898565c52d3a192cbc426d98746202a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "99cde3cd4107a5c0b13f6eca935df9fbc2bbb7dfb0b40b3c92f0b47cfbb33f42"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ad72f55a82ffd324c334b6fcc428c0d1d650ebfe4078b76de451339c8b9d89d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c02836cc5373617ea8332bd360e9a727db388e29a981337eac7087cbd1eeb712"
   end
 
   depends_on "go" => :build

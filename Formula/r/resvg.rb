@@ -1,20 +1,18 @@
 class Resvg < Formula
   desc "SVG rendering tool and library"
   homepage "https://github.com/linebender/resvg"
-  url "https://ghfast.top/https://github.com/linebender/resvg/archive/refs/tags/v0.45.1.tar.gz"
-  sha256 "02915519b7409f43110f3cbdc5f87724efd58da1d8516914bdabf060c8a9a178"
+  url "https://ghfast.top/https://github.com/linebender/resvg/archive/refs/tags/v0.46.0.tar.gz"
+  sha256 "81a82a8de33da0fcf13fd18532d653bbd0b50b146d82c319dd0ce7294562c7c5"
   license "MPL-2.0"
   head "https://github.com/linebender/resvg.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b394b8ad855982ab291e3aca3018d7d41325d9ade7bae391733163655c7bfd36"
-    sha256 cellar: :any,                 arm64_sequoia: "034dd22dbb4bf616d68ca85e3b2bdd929f780fcad78ba5b961daba8644f897da"
-    sha256 cellar: :any,                 arm64_sonoma:  "08fe0cffbd93de9a3e9a264c3df96614db26d18eb7afc77f14a30a2a6d5779da"
-    sha256 cellar: :any,                 arm64_ventura: "cde09970ac7839b75906d8c3e7937eb66cefe1c6d3e931e4632a00bf7877aa21"
-    sha256 cellar: :any,                 sonoma:        "3551c00ad4ce2fae49386e1a1fb5a6c63c33ca00c602aa04d9aa988a50a1afb3"
-    sha256 cellar: :any,                 ventura:       "544d2b12b296cfc510382c6ed8ff519224c0cb3d9e9ba127023d18c67535bc41"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "91f4bf60e4faa8f86d61d65d2cc7f51589643721cd565b48cee80492cba5150a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b219d496cf0be62b4172762515ccf8039ec43e9864b2d80b641fff9e5a8ea7f9"
+    sha256 cellar: :any,                 arm64_tahoe:   "eeefb58f87c2e4eaabc68fb25a4983b08d671330f4fab4f4167d28c22525b3e7"
+    sha256 cellar: :any,                 arm64_sequoia: "e66c608cee33495f3639b3083083aaa8bb22b3f3f8573bad573488f2af8df652"
+    sha256 cellar: :any,                 arm64_sonoma:  "a5e28f71e73c113f16aab3f9895c1eb2fcde4dbb0ea601adfce9cf846a67cf79"
+    sha256 cellar: :any,                 sonoma:        "fdb9d9d3d1f988caf540bd3293f71a2da872acfebb2378e94168f7cf252069e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d1b0293f6452ee8d17b239ec47d31a0194cc9e1389cec99dc021cbe5beb46d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99e532b6cac7b885974e04a7ec1dc52990bfcf0f8b34a3d1d5122b84cb2d6a26"
   end
 
   depends_on "cargo-c" => :build

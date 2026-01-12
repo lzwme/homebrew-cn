@@ -6,15 +6,15 @@ class Streamrip < Formula
   url "https://files.pythonhosted.org/packages/b8/c9/6997772e0217f3081e4e692c7b8b104aaa564c008f2593341e81bbbd2396/streamrip-2.1.0.tar.gz"
   sha256 "e59b4b406f9ac77eb59c927a1a082644e0902152ffeb6212b6b24af7fbef5540"
   license "GPL-3.0-only"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a5ed2fed0b5dc201792dd9805ee1f8104476b921b143199843bfbebd35a332e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13af668f8418fc9da4defa8cbc0b1890822777a2ab960c348a1eafb31801d4a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0f828d0961af1d2eeb3879482f7d4f83b71150c84fdc7b733b77c8fa9ca5cbc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "af8b82405f478b446e570f30ba64ac6d1e15206e4866d4f5d3ca73f52a04eed5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "74192b36e8348d7ee59820b792ca2f2b157b29856da62037a78e8118989727a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80d917f900b88745b920586e9569ac804d2514e54325a2ca63fb5abbf9b2672a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7410e3c65b79df9f5b208ba8097f5552510d790c176ccbbdfd21726f58641a76"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30224cdcaa8c3ca3e2556fc41b3abcf8c35ebbe906c8a30b5c2fe2ba006d4f14"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50defc9faa77dd29727f9e043a17f22e97dbbae6f865bf940a2dfa6f9bd2e8b9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "35ddef95f2e85edcb252d701b046f054307f40e8fc62759298ca942937e5b8e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a9e07cf21dd4e604991d45a8836a0fa79c37815eb23e4f0d180e98846b25fd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97ef055ea54d754f48da23b5e4799c17b67eba27194803d40ce150eb5cd96f7b"
   end
 
   depends_on "certifi" => :no_linkage
@@ -183,8 +183,8 @@ class Streamrip < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "yarl" do

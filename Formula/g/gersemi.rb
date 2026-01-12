@@ -3,17 +3,17 @@ class Gersemi < Formula
 
   desc "Formatter to make your CMake code the real treasure"
   homepage "https://github.com/BlankSpruce/gersemi"
-  url "https://files.pythonhosted.org/packages/ac/03/0b438c6b708e0c3f22f71d87dd46bc054ab720f5d8bbeac520d8468e93c2/gersemi-0.25.0.tar.gz"
-  sha256 "5b19c70f5e9e575127ca019ecc13d1c61ca59cbddbebd0688ce08864c0d7f67b"
+  url "https://files.pythonhosted.org/packages/35/2a/5455504ca290394572fb3fc03baaf1ecd1186fb6b07ac28f33eb828af364/gersemi-0.25.1.tar.gz"
+  sha256 "a119f5ff0c5133b25e72a5c39f7722535741cb311f66ae17bf1aaf1d1190751a"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2b6199c81299795a53fb0f5aa2deedb3ae4f49743b068bcd598178cb36498d8f"
-    sha256 cellar: :any,                 arm64_sequoia: "50c922c505301510a2c1a6c724837056587b6ec435f734cae800094ee0d5eee1"
-    sha256 cellar: :any,                 arm64_sonoma:  "49dcacecd387d761a8a5c70de7181c8264bd8c7cf4f971c6e718c99edbff2995"
-    sha256 cellar: :any,                 sonoma:        "25ec2921b6b9c19935ef4c2cc4bf18ef5d5d8d2f39449c2d5e977e19e68c6c93"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8669ccc91362efe8ea252cddd8b8c403731f3075adf02664577afb48daefcb05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9685c1fd0991cd175d0a7b4b76188e3f3c2ddee0049143d44a160750c982341c"
+    sha256 cellar: :any,                 arm64_tahoe:   "b3bdb72da93c135297ed078e2c5b9cc51b146d4d0005a117eb5630b0b837ce66"
+    sha256 cellar: :any,                 arm64_sequoia: "4bc01f2daefd8db0c1dccc288195e066056ca1b6db5bdf7cda402ead2412d8e5"
+    sha256 cellar: :any,                 arm64_sonoma:  "578714bc000f4fd45439a7cbed39509216c6e67071ab9937319de18cd8ab6fb7"
+    sha256 cellar: :any,                 sonoma:        "4b63d0c039fdfa2272392384b1d9aec1b54153f403aa9dbf1b3450655e45c260"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7e5f2d441b86b961e4162925a4cf387bb7b2dc19b8287f10203fee0e7be6662"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e537505a7b6109d564697696a44ce1214b2b7b4395f99624901cb2119a6aa48f"
   end
 
   depends_on "rust" => :build
@@ -21,8 +21,8 @@ class Gersemi < Formula
   depends_on "python@3.14"
 
   resource "ignore-python" do
-    url "https://files.pythonhosted.org/packages/fb/d1/fd458543147240d9c154de5205b87911b37cefae5841d9034459acec7db5/ignore_python-0.3.0.tar.gz"
-    sha256 "7c3d255c51b36310daafc78b16a61b5e9fffbb5d1e3b5675b36ddc4ff8630797"
+    url "https://files.pythonhosted.org/packages/5a/c1/39cfd73def936e6c9c06ae6227b314c90f7a57d725cf1cd15e3f576906c6/ignore_python-0.3.1.tar.gz"
+    sha256 "a9c691ca0f5002391fc10c7d8c29859d38594b4751a5eb43f95b5a9f7bda30bc"
   end
 
   resource "lark" do

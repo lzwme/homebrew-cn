@@ -6,16 +6,15 @@ class Urlwatch < Formula
   url "https://files.pythonhosted.org/packages/76/a3/e3bc54a669fa3ec440ea9d8db64590e761343b02b6ae9fcfcdc05c28d9ea/urlwatch-2.29.tar.gz"
   sha256 "f317ca8b123b15af510ec9e08bf885d8a8b574f502253e5ded200d757366da98"
   license "BSD-3-Clause"
-  revision 4
+  revision 5
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "26879ec1a7124688eb6e8317621fe96c0bf09e6ca9041157669e2212b53ff50d"
-    sha256 cellar: :any,                 arm64_sequoia: "968ae0c7dd731c66064bfa751183dd8a4ae0cfedc1e4ccf2ac14ec8b2d6fc860"
-    sha256 cellar: :any,                 arm64_sonoma:  "8fd660dd096d0e25921df61d6d1d4720fea1718a5fbc8d30d619edd2b6724fa4"
-    sha256 cellar: :any,                 sonoma:        "7f961beeded2c2a8bbdd28c98c347b03a7e8ad42f56a652b38029df1fbd16477"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0698875e83ff28f553da9e0facf776b2d1a8b403c8a22e92cde3eec24bf22a46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2cfa6b321efcfd1a446ceb1bbddf248ecdc2734a6db1add54348e64025b4e2e"
+    sha256 cellar: :any,                 arm64_tahoe:   "26c33e4fb7ea6df2be5cd8ee0a45e479af8f04f26820a1412073927c8b73212e"
+    sha256 cellar: :any,                 arm64_sequoia: "270944fd3c767c4e4eaf0dc2cfe39c7bb03a0ba4da8b6c83b8d5239e8a3ec696"
+    sha256 cellar: :any,                 arm64_sonoma:  "729d074849ee4042fd36e7eba1de04c57865d3f8e63ff766f53f2bf28e038426"
+    sha256 cellar: :any,                 sonoma:        "1a52ee8216911dedce0a15fe8b5a9147944c6fadf4d740009e41789dae251456"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ca5381cc4855b061acc821aa651680dbe676e61a678392e319aa8a99de047d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d65272fbac5d86d86dbe8b2aa10f3d9fe05574892950ea113f08e2091730392"
   end
 
   depends_on "certifi"
@@ -53,13 +52,13 @@ class Urlwatch < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/df/ad/f3777b81bf0b6e7bc7514a1656d3e637b2e8e15fab2ce3235730b3e7a4e6/jaraco_context-6.0.1.tar.gz"
-    sha256 "9bae4ea555cf0b14938dc0aee7c9f32ed303aa20a3b73e7dc80111628792d1b3"
+    url "https://files.pythonhosted.org/packages/8d/7d/41acf8e22d791bde812cb6c2c36128bb932ed8ae066bcb5e39cb198e8253/jaraco_context-6.0.2.tar.gz"
+    sha256 "953ae8dddb57b1d791bf72ea1009b32088840a7dd19b9ba16443f62be919ee57"
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/f7/ed/1aa2d585304ec07262e1a83a9889880701079dde796ac7b1d1826f40c63d/jaraco_functools-4.3.0.tar.gz"
-    sha256 "cfd13ad0dd2c47a3600b439ef72d8615d482cedcff1632930d6f28924d92f294"
+    url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
+    sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
   end
 
   resource "jeepney" do
@@ -108,8 +107,8 @@ class Urlwatch < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

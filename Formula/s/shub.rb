@@ -6,16 +6,16 @@ class Shub < Formula
   url "https://files.pythonhosted.org/packages/11/a4/91a0d8c3dccf5dedb7e75a65ecd0bb2a1d789ef34e1630642864b62dea75/shub-2.16.0.tar.gz"
   sha256 "776283a538b6cd1749f4bf6a94db9d39da208383e37558603b0cf2ed64acbd08"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/scrapinghub/shub.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4c34349ca5ccf63e3f24711f58d64c4882880d39c2fc85d0796322306e3bffcc"
-    sha256 cellar: :any,                 arm64_sequoia: "45c6fa2e020369d5f133098870e12f8587fb964bea73b1f07ac9818ff5249e34"
-    sha256 cellar: :any,                 arm64_sonoma:  "378b18334a651f3ede1a15c2b85259853817dfe5223e5b0116ec6062bddd7198"
-    sha256 cellar: :any,                 sonoma:        "bb2a7e7ed79b5a2bf17ac2f5b2bf2e2ab98dcc8c3d4e2774dbcec6cc08b269c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb79bbabfb34ff4a00308682328e9561286d5e4776233f188039086827782b35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "041ac815824fc70ea963efb5ec5317c403736a7243a86476a9334766d1e281f7"
+    sha256 cellar: :any,                 arm64_tahoe:   "ff2b86fcc9e91303ccae53d4f7fcb3c683fe0d344cc6dfaf0773d8e3bbf1574d"
+    sha256 cellar: :any,                 arm64_sequoia: "d041e2c8cd1d3a8c8dca3897eff9305072bcedf22354bb5863e25cab270a91e2"
+    sha256 cellar: :any,                 arm64_sonoma:  "66226e4a06545f42200b48ca97e0c0341f4a14325911df73b6291a96deb09183"
+    sha256 cellar: :any,                 sonoma:        "037628a76f59a6af099436cb81356f1ac3e901e1b23780fd2c4b20f3ea1d6b81"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "221237e759342b9ed5b86291358f57b599d9b0f90777d5f562f9ae8eb526f7b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a67633d08fcbf6d06863a4e66e63867d9a56a63668e638e33563ea2e38e4a05"
   end
 
   depends_on "certifi" => :no_linkage
@@ -90,8 +90,8 @@ class Shub < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

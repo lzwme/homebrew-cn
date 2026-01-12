@@ -6,15 +6,16 @@ class Subliminal < Formula
   url "https://files.pythonhosted.org/packages/74/f6/2ab857184363b1153212be632e88c66b2332329d2793c98d5bba5c2efc34/subliminal-2.5.0.tar.gz"
   sha256 "3c79507e9c304895fb41eb0039b11f5abcb9f77376fe550cb605932836dfadc3"
   license "MIT"
+  revision 1
   head "https://github.com/Diaoul/subliminal.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4aa557444723feddfcc594b76b2518264b481754f61bb4cb97bee178dbaac2d5"
-    sha256 cellar: :any,                 arm64_sequoia: "9376b3f05b2a6a2aade813e304977d640812a041fcae2a60f2951853a83e003f"
-    sha256 cellar: :any,                 arm64_sonoma:  "88a4bbc1ebf5883198312851dba60b6cd7f274dedeb7e57be17298ef7168c367"
-    sha256 cellar: :any,                 sonoma:        "9ceb4fa75908571be4572ca737cb7e9b7d5cc374101f5c9b0986d2ee015aa591"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "180a904cbfc965fc33f4a5883aec05c333bed8ec157103b36ec3ef2e61691956"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0dcf9dab68e2dc03f08491a7f2d286dbff8ab5aba131e748244a214a18eea1e9"
+    sha256 cellar: :any,                 arm64_tahoe:   "52de7c0191c270da71118e508d1f7c02c8e1aff54dd8976591af6e036033d3b5"
+    sha256 cellar: :any,                 arm64_sequoia: "4ae1956bb3ac12c5fe5aa23778539f1868324b890183f2d3d175a4119f69aba6"
+    sha256 cellar: :any,                 arm64_sonoma:  "d916d0873cf7634baa3befdf0531d642b80e9efe9bc5947687066112c8f3f304"
+    sha256 cellar: :any,                 sonoma:        "2980005ca701a3d548f3b4fdcd230bd71ad5707ca18708117b8f8f53f3f6419c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f940b89c703ce62122d6956ec5c1e981684470f2cd82d9601986cdb3f4bcdcb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b84dea27eb67cd61af9c427784a99bd14c83f68361e2eeff1039a6f27c587b0"
   end
 
   depends_on "certifi" => :no_linkage
@@ -129,8 +130,8 @@ class Subliminal < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/6d/e6/21ccce3262dd4889aa3332e5a119a3491a95e8f60939870a3a035aabac0d/soupsieve-2.8.tar.gz"
-    sha256 "e2dd4a40a628cb5f28f6d4b0db8800b8f581b65bb380b97de22ba5ca8d72572f"
+    url "https://files.pythonhosted.org/packages/89/23/adf3796d740536d63a6fbda113d07e60c734b6ed5d3058d1e47fc0495e47/soupsieve-2.8.1.tar.gz"
+    sha256 "4cf733bc50fa805f5df4b8ef4740fc0e0fa6218cf3006269afd3f9d6d80fd350"
   end
 
   resource "srt" do
@@ -159,8 +160,8 @@ class Subliminal < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

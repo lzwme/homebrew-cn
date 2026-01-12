@@ -6,15 +6,16 @@ class Streamlink < Formula
   url "https://files.pythonhosted.org/packages/ad/bc/75add1d40af43e2d665c6ca56de31bab47f538e81e9fe8259d0a64831c41/streamlink-8.1.0.tar.gz"
   sha256 "acd297219a0cbaaffe4e292290554b9c45408fa9f6e4dc1211d1ccd1f4a44039"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c2374374323679c72526c94d99c28d7f42b2c17640317e6015353ad570a346c4"
-    sha256 cellar: :any,                 arm64_sequoia: "e359cecd7f0180a4fbf3fe07ba56b1fd7f80d5c318231b053fce242d592e272c"
-    sha256 cellar: :any,                 arm64_sonoma:  "c39d810c84250c074c12a364f263e5f165942fe43c2e41825a7d52f548315cea"
-    sha256 cellar: :any,                 sonoma:        "2ee28ac4cbb990768b4cb5439834b3a8353f9e6e0b0af0f9566bd705b917affb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d24dc2c4cdfedb2a70e70f2858b3ada7dccadc0c620b5c951fada25f60a0242b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "219ebb63556210e42005de722c3298a13a683223d06958476f0454401c2cadb3"
+    sha256 cellar: :any,                 arm64_tahoe:   "09d82dd433191d32298c0d997a655530c2781f3a74c8eab96b2df546fdb72c0e"
+    sha256 cellar: :any,                 arm64_sequoia: "cef959a3c7c9952ed773505a849197f2d5a373b6d64b1ab850210e4dfb70f5e7"
+    sha256 cellar: :any,                 arm64_sonoma:  "86d38ca65d69fedc77e581ccae7bf40fbc88e96de634976bf8b0578ddcf143af"
+    sha256 cellar: :any,                 sonoma:        "b88408bc1f4950d8528dab9bc31ba3df1ae0546ec5f6c3f033a6a1c8af976a3b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ff42aecccb3873655a8ee617126074b19b5adb487576d965e4118dc582e17ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a79a4f58784675f0a1afcc60b93edc3fe9fe3898dea690228a17b29240f9a1a7"
   end
 
   depends_on "pkgconf" => :build
@@ -103,8 +104,8 @@ class Streamlink < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "websocket-client" do

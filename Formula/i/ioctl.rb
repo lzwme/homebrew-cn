@@ -12,12 +12,13 @@ class Ioctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7fcc7d0943fb950ccbae5a9968018d2da86e8df26e5e23e6d15b90e0327b23b9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b22f27928fb55c3e8014dc285873b6bd9848ad0e276e75116f62040c1dc574c1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fbeb1198e6a0e6d7203943ffe0bbf252201fb4f4bb52277187c02ffcfa268abc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3c54bf515f40fa9b00c9a67c7630c16d7b83a864bdff86963fecc1623cb3925a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "06cf829f8a2f17a965fd4ae45b6de2bafda1e4792bacec585eb6f2fb13787eb7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63c242f28dbf7d03f103c5eaeafe28b96c7984180311ed1593c1e988746d3024"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9eedea6ac42d2f903ea355853426e9ade1d8e51c0c8c0970c7845478b7f5f19f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f5ac55590d519e716148a31c1fcc689d0058f7110777a8308ceb3f0910e64bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0cb026c98207704d3131a50d93751f5eadbd74362b434946cc8007811711da1e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "faff9560e695ba6b8ba05881ca90a93f6af05a152ff381059e99d70b0dacdabe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fb99ec75c335dbbfbbf5655859a108933af130beaa5b85e2cdfbd5b20538863"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b950b02dac2ffc160332555416f3d779db3f02fc2eccd9e8c51a4a3aa998236c"
   end
 
   depends_on "go" => :build
@@ -33,6 +34,8 @@ class Ioctl < Formula
       -X github.com/iotexproject/iotex-core/v2/pkg/version.BuildTime=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:, tags: "nosilkworm"), "./tools/ioctl"
+
+    generate_completions_from_executable(bin/"ioctl", shell_parameter_format: :cobra)
   end
 
   test do

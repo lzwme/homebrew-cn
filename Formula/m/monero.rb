@@ -1,10 +1,9 @@
 class Monero < Formula
   desc "Official Monero wallet and CPU miner"
   homepage "https://www.getmonero.org/downloads/#cli"
-  url "https://downloads.getmonero.org/cli/monero-source-v0.18.4.4.tar.bz2"
-  sha256 "84570eee26238d8f686605b5e31d59569488a3406f32e7045852de91f35508a2"
+  url "https://downloads.getmonero.org/cli/monero-source-v0.18.4.5.tar.bz2"
+  sha256 "7c2ffec3fe0e30f6d6aca4abe26f3e1179be275ee3073fa6eea535e4b163337e"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url "https://downloads.getmonero.org/cli/source"
@@ -12,12 +11,12 @@ class Monero < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b22361941573abc4e3a30433f7109e71d038d8d9263fa1ceda7853cd61141b51"
-    sha256 cellar: :any,                 arm64_sequoia: "54b1e670e042a54085388ded9f3d97994a9db03d70e5bade2c253cd38b0765e5"
-    sha256 cellar: :any,                 arm64_sonoma:  "6b794e9de314e69f227f646754c3d27916e2177421daff7280ebcbedd2484ca2"
-    sha256 cellar: :any,                 sonoma:        "d3cbb64e0e18c9ebd7f1fb731e4c5cd5802e478717e925dfcde8f19e5f36efbc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2544739d80f5817010f0b51f7dfdae86ef8605a9293d176e685b09f61d39e5f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba8ef29e9ea3215b2abddaab46061606522d200e23ca567cd4cf8f8aae694c25"
+    sha256 cellar: :any,                 arm64_tahoe:   "9abda2d7e64821bb17097447405975a1eb42bd009144fcbbd59c178bd24cc38f"
+    sha256 cellar: :any,                 arm64_sequoia: "aefb7aa8f7f26da42a4a74320b7fc0f50e968543b6083226a063ba49c11f29a1"
+    sha256 cellar: :any,                 arm64_sonoma:  "d39731b34ffd91f59232f541bd9ae3dad2fee4b37c7bfa40693b5900a7091f50"
+    sha256 cellar: :any,                 sonoma:        "38f6a3ce15bd649acc39499985d6808455f5c4141c0d41e0f2a9b441c0ebcda0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65f6e4d7e1c524a68b261eefbcfe77a74d34cfb85e151bf9d6fc57b4681ba2f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8900fe698480acba97ba549e930f53ff4a197eae7eae1f0a466f4c548f480533"
   end
 
   head do

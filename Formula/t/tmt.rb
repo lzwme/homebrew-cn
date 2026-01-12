@@ -6,14 +6,15 @@ class Tmt < Formula
   url "https://files.pythonhosted.org/packages/40/00/6653b20b631c46aaea216d48432f4498b31cbe72bcf4b6a9459832c9bbc5/tmt-1.64.0.tar.gz"
   sha256 "d358cf00ed6b7174335d03fe401312abd71a723ce4957cedac3b3ce941538026"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8cabe20a0e0f9afb14cebdf9a319f9bc82bd15d195035559cc854cbfcbab784e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "886fb781a616405233726a579e30ed910ae5b5c433f3afdf2d7910d49253edf4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f63da365373e7957979260c85e390230db8c065e4d2f6bd38eb995bc700036e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0ae9daf2c7b3195791e8cd987ea07993b8655336c723e9f74cf8c727012d508b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c81efea8ae92d098aca053d1370d2737805066d85bd490580910ec1a6a44b926"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e44697bee809b82935c4b6a5cf99b011e46741d9707faf9ba27ac0cf6058216b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23cc5dfafb1dc511f68121feaafba84622644daa267eb206586a05e542c70498"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bce95280168a1b68fa4f8fd0f8d0c5590b3d4fdc98be8b2e7b3e4d29717437b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d3d55588fbf0776b33fa941aaffc3ca1276ab8ee8bf8768d2b16e578d4b3951"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f450f607f51585b2ff173e6214269cf89237971e1b8fe7488866a5fdc0359ed9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0863e632131c64b49888ffbde14398862380ecaa072eb29467926202968dce8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7085cd02ff1c46fcac73404b162baeb1655a2949f19f5e6cd437bd2b1c599a3c"
   end
 
   depends_on "beakerlib"
@@ -40,13 +41,13 @@ class Tmt < Formula
   end
 
   resource "docutils" do
-    url "https://files.pythonhosted.org/packages/d9/02/111134bfeb6e6c7ac4c74594e39a59f6c0195dc4846afbeac3cba60f1927/docutils-0.22.3.tar.gz"
-    sha256 "21486ae730e4ca9f622677b1412b879af1791efcfba517e4c6f60be543fc8cdd"
+    url "https://files.pythonhosted.org/packages/ae/b6/03bb70946330e88ffec97aefd3ea75ba575cb2e762061e0e62a213befee8/docutils-0.22.4.tar.gz"
+    sha256 "4db53b1fde9abecbb74d91230d32ab626d94f6badfc575d6db9194a49df29968"
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
-    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
+    url "https://files.pythonhosted.org/packages/1d/65/ce7f1b70157833bf3cb851b556a37d4547ceafc158aa9b34b36782f23696/filelock-3.20.3.tar.gz"
+    sha256 "18c57ee915c7ec61cff0ecf7f0f869936c7c30191bb0cf406f1341778d0834e1"
   end
 
   resource "flexcache" do
@@ -75,8 +76,8 @@ class Tmt < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
-    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
+    url "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz"
+    sha256 "0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326"
   end
 
   resource "jsonschema-specifications" do
@@ -120,18 +121,13 @@ class Tmt < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/3a/2b/7a1f1ebcd6b3f14febdc003e658778d81e76b40df2267904ee6b13f0c5c6/ruamel_yaml-0.18.17.tar.gz"
-    sha256 "9091cd6e2d93a3a4b157ddb8fabf348c3de7f1fb1381346d985b6b247dcd8d3c"
-  end
-
-  resource "ruamel-yaml-clib" do
-    url "https://files.pythonhosted.org/packages/ea/97/60fda20e2fb54b83a61ae14648b0817c8f5d84a3821e40bfbdae1437026a/ruamel_yaml_clib-0.2.15.tar.gz"
-    sha256 "46e4cc8c43ef6a94885f72512094e482114a8a706d3c555a34ed4b0d20200600"
+    url "https://files.pythonhosted.org/packages/c7/3b/ebda527b56beb90cb7652cb1c7e4f91f48649fbcd8d2eb2fb6e77cd3329b/ruamel_yaml-0.19.1.tar.gz"
+    sha256 "53eb66cd27849eff968ebf8f0bf61f46cdac2da1d1f3576dd4ccee9b25c31993"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

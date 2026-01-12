@@ -14,12 +14,13 @@ class Gitea < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2be433ecbb19092991807566c5db0b771abb7d53c5717053ca86c6b00e4e14e6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd3e67c05e3b869a29566502cd56355b0f87eef59dd66166cade2cc1b13fad33"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab754d51c1286e69308c7e165ae3f4226a17f37206ad673c35853100c87d67b0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4113394445ddcb411c22b887ca409f374b023cc7016195c629178d7a62dcfa8b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "203c2227638ffbbd238f1e241d34eac2084fba836856fa745214eef2a8a2c881"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23772c4ee28e82c7cd2f864feeb84c0d463f51b7303cbedea64b4c28bbdd4fb5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "072f405f39314a5c85336950105f95048fce111540c7e31d6351e5a3991986ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "113aa1fa7c7ea11d7e3a05c07a254629e2ca6be945aaa6601df9b72350fd96e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75eb9f7a8b595a1158abee96a31770bfe6d6952d0466c7a022e36a801a2c8a80"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ac3accb416b40bf895ecb000b7768fbea2cd67f7d31fc2bf722b284761011835"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbbf2506e6942a7052d7f71df19cccd7c4d1874914dcaec28df1cd73e21d786b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ff64919c38e6190401c2c9b76e537f1c2ef9e2f9a3443bd56b0b95c3152067a"
   end
 
   depends_on "go" => :build
@@ -32,6 +33,9 @@ class Gitea < Formula
     ENV["TAGS"] = "bindata sqlite sqlite_unlock_notify"
     system "make", "build"
     bin.install "gitea"
+    system bin/"gitea", "docs", "--man", "-o", "gitea.1"
+    man1.install "gitea.1"
+    generate_completions_from_executable(bin/"gitea", shell_parameter_format: :cobra, shells: [:bash, :fish, :zsh])
   end
 
   service do

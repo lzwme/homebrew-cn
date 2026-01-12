@@ -13,19 +13,19 @@ class Yaf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d2461d16db50027d858d889e9ca08476103d2e05599b222635c8fc0957d730c5"
-    sha256 cellar: :any,                 arm64_sequoia: "535f168208c61a4357fd2c19d17762696b88bcf2239e088a618f87852349fbb5"
-    sha256 cellar: :any,                 arm64_sonoma:  "cfa7304be5e50eec278e09863f79c71669df96c3d6d44967720a4b2f47785352"
-    sha256 cellar: :any,                 sonoma:        "a5af33750b3d302b0230c276a16655e3a8469355ecc4babd36cecf45511d936c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a127992c1701c3908a38d1ffea02c891af3f2718745898ab6ec5dad2abf98426"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23c4f60c383485adc953ed5bf7811e5590bb56948161908d84c53f3588417176"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "7201b08b55d9bce81c4f67e08eae208fdb9f5f65e638b59d129a52747b3bd0d1"
+    sha256 cellar: :any,                 arm64_sequoia: "3edc90e7654f43e5e6825a43cf264b5551b0e32c06e3b2bc92674822204d6a6b"
+    sha256 cellar: :any,                 arm64_sonoma:  "54b00a860afdff9c4cc7cd27822bfb6c7a7e16ec78637b6a811b430074ebac3e"
+    sha256 cellar: :any,                 sonoma:        "cb777e8ff186f4f52d9da9becefea457f54890f6445a4b1ba6762144d6793e10"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b5973aac45d6f926fefcb8326fcfe8b7aaecebb66f0ec19d5725ed12b6844e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9502982332be786abd5420bca28a7e70d3d2180cc81b74f40844aceadabf5a76"
   end
 
   depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "libfixbuf"
   depends_on "libtool"
-  depends_on "pcre"
 
   uses_from_macos "libpcap"
   uses_from_macos "zlib"
@@ -43,7 +43,7 @@ class Yaf < Formula
 
   test do
     input = test_fixtures("test.pcap")
-    output = pipe_output("#{bin}/yafscii", shell_output("#{bin}/yaf --in #{input}"))
+    output = pipe_output("#{bin}/yafscii", shell_output("#{bin}/yaf --in #{input}"), 0)
     expected = "2014-10-02 10:29:06.168497 - 10:29:06.169875 (0.001378 sec) tcp " \
                "192.168.1.115:51613 => 192.168.1.118:80 71487608:98fc8ced " \
                "S/APF:AS/APF (7/453 <-> 5/578) rtt 451 us"

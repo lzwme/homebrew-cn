@@ -2,20 +2,21 @@ class Sherlock < Formula
   include Language::Python::Virtualenv
 
   desc "Hunt down social media accounts by username"
-  homepage "https://sherlockproject.xyz/"
+  # TODO: check the original homepage "https://sherlockproject.xyz/" is back online
+  homepage "https://github.com/sherlock-project/sherlock"
   url "https://files.pythonhosted.org/packages/76/17/d29f35df6ec6424ec15f273a31ad54ad314d1f9056321fb824bed4eda128/sherlock_project-0.16.0.tar.gz"
   sha256 "fcc8f05fb6f55de30938cce5727249f70917b226918a71f6ed3f50d8a6467610"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/sherlock-project/sherlock.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7527b420a5cd5c35d70be6ef667d7bbbf9bd95b647742ba7e1357e3290d5186"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c98aa61882c4f8d0116d14a623e5221e39733715d9162ad98ed7e598ed88f6c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c51e827a232454f8760bc8002b61d5d0573f029d7d79e4a37cbc0e0fec2754b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "703316d84b8da29aa04f7493666a8c4fd85ee7518b7f6ed29c238a6123b6827d"
-    sha256                               arm64_linux:   "cc71375550b13fca3787dfaa0ff0a78a065218f9b49938ccd1b80cd1bb47480d"
-    sha256                               x86_64_linux:  "74dc3d9671272f1db44ea5b81a5424ff9cc9123de72e73795330ac71e25f7286"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "172bfac00b591668aaadb6823c7f85246383069d6ef31db3a05f9ec17ae14144"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "262c372c24bc602b590a0fcece35b00dfefecf3c6a315e1f3a368f34628031b1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce87d7bfed9e3311f89f150b1024d44ae06fe18e7fc8e970636cef21009d13e8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c8216dc7eaf85a508cc893f85bb68d6f72dc3dc6b4181bbe47287260631af63e"
+    sha256                               arm64_linux:   "efc7f912dfd3f1152ef8404ff9b1899ff330f81e75e8e5da600dc575787b1d70"
+    sha256                               x86_64_linux:  "4f6e377caf203851c7a283a02a8dfdc6dbd5fc9ee67c53eda37f6983ebca5d4b"
   end
 
   depends_on "cmake" => :build
@@ -95,13 +96,13 @@ class Sherlock < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
-    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
+    url "https://files.pythonhosted.org/packages/5e/a7/c202b344c5ca7daf398f3b8a477eeb205cf3b6f32e7ec3a6bac0629ca975/tzdata-2025.3.tar.gz"
+    sha256 "de39c2ca5dc7b0344f2eba86f49d614019d29f060fc4ebc8a417896a620b56a7"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

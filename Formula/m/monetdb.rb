@@ -14,12 +14,13 @@ class Monetdb < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "8cef9a117f2d3ed5056d3e5e7291f2273241a592b80a2c7a32c403de804e936b"
-    sha256 arm64_sequoia: "eb99c8534561a7a7b7b07977f4bd6a2474b6327a3d4764c345c5589d6da9ae5f"
-    sha256 arm64_sonoma:  "d1b804fa762abe8c747b5a99a2710b080428b9f12af787e2d0e60844195b73d4"
-    sha256 sonoma:        "237d613c63a9d44144f022c915df9e0f8c05a427de0a11ef7e1781c72047f8d4"
-    sha256 arm64_linux:   "b95207ec31139d4d2b45efd62164efca075d211e2c216adc2b6e28c4d1c65bb8"
-    sha256 x86_64_linux:  "be9449ed54cbd051d018f3ad9fff9f9750c685fc7348e64884845dc0cba4fca3"
+    rebuild 1
+    sha256 arm64_tahoe:   "088ee9cc35814652e59b13eb0e8be109b2cc48054684670233e6103450dce94e"
+    sha256 arm64_sequoia: "217891c7ccab24f60e2668c49742b2a6c65b0040d7a6d3b35b01d017a22d2d1c"
+    sha256 arm64_sonoma:  "6b68ffafb0d7dcc1dfacb33dadc151eb55c6d6f7dfee7592c55d532e2222f9fb"
+    sha256 sonoma:        "74235d4b82a8b2e4a0f01dc6c54252ab487f46e2432d372301f2e33ab312a6f0"
+    sha256 arm64_linux:   "863a28ebac90f2fa1fd5c25e0a1b03f6aaeb8a9c978dac4b00a75c49e20d896c"
+    sha256 x86_64_linux:  "511467df6002ea0e9b6266e99f29d49947daa4d202f3309a96723eb62fb00054"
   end
 
   depends_on "bison" => :build # macOS bison is too old
@@ -27,7 +28,7 @@ class Monetdb < Formula
   depends_on "pkgconf" => :build
   depends_on "lz4"
   depends_on "openssl@3"
-  depends_on "pcre"
+  depends_on "pcre2"
   depends_on "readline" # Compilation fails with libedit
   depends_on "xz"
 

@@ -1,8 +1,8 @@
 class Hyx < Formula
   desc "Powerful hex editor for the console"
   homepage "https://yx7.cc/code/"
-  url "https://yx7.cc/code/hyx/hyx-2024.02.29.tar.xz"
-  sha256 "76e7f1df3b1a6de7aded1a7477ad0c22e36a8ac21077a52013b5836583479771"
+  url "https://yx7.cc/code/hyx/hyx-2026.01.11.tar.xz"
+  sha256 "550863c9e6a2c0e2618c16a562c8ee995e88c1d30e62abfdf4ecb819b3c4df54"
   license "MIT"
 
   livecheck do
@@ -11,16 +11,12 @@ class Hyx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "585c67802079a4dd6d7ac7dacbb6fa218a6a491ba32b1926277d37e24acbc489"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "dd26c1c352925782b4e7d45785b76f40f245fa2f1dbbc98f9cc4f2d3666cfa58"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7f55cd07a556e62e1b0264f158397ab1a13ee78ceed580c499b40b8f4158a8a7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa1142ffce4cb48c51d90fa02b8dfcf43d9685bae6011f6ec072b71bc916035c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ab078d0fa36bef1b72850c4a355268afaeb8f889fb96cc14d4ac0fa0292727c8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9f084d25734ace46da19988e530330c80da3aee8d09b474ed151c0fe67ee45ca"
-    sha256 cellar: :any_skip_relocation, ventura:        "3328518acd239a750d5abf4aa64ce03a5cde6ba9e4d295008ba88211bf6da8fe"
-    sha256 cellar: :any_skip_relocation, monterey:       "652226492680dbb33afac3764bac50c27386811d37922f08c487ef0086b3426f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "dcbfd8ea3d3bf741858c96956174d8813ddd1e925c334643cbcd7883b0dbdf10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "caa4542a609e244b3d83ca4e45e3fb9a71d3fa77e8ba0346803b24f63cc205bf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02dc7c7794bf71ba86674791229d5a5a128e3b65a29e45a277138f488ecb0b7d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c036ff1df80bd3f6775c65cc746cef1b78de719338b2cec813183e4e18a1bd83"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "331d208afd17f67c2d297451462f66394d729c8260ed95fbe3b6f8baa7ad9da0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "551a6a0ff4d2e4511f8d9992905f1ba983c2b30badfba6f5be0cffa62b83240b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0185c1cc5db86b21db59e9519419e65b7f70d118d627f363a7318aafbf2ce69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66f76d65ed139e22da8c4425dae64c28ed56c5ede6de83d57288d5e4dce5045f"
   end
 
   def install

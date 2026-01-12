@@ -1,20 +1,18 @@
 class Ghostunnel < Formula
   desc "Simple SSL/TLS proxy with mutual authentication"
   homepage "https://github.com/ghostunnel/ghostunnel"
-  url "https://ghfast.top/https://github.com/ghostunnel/ghostunnel/archive/refs/tags/v1.8.4.tar.gz"
-  sha256 "6700ea0ae9a83df18aa216f6346f177ff70e6d80df16690742b823a92af3af46"
+  url "https://ghfast.top/https://github.com/ghostunnel/ghostunnel/archive/refs/tags/v1.9.0.tar.gz"
+  sha256 "0cc3b2ac8b30aa6d6c2c3df9289436b985c21aed6f986b025c7a4057666bd47c"
   license "Apache-2.0"
   head "https://github.com/ghostunnel/ghostunnel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ec1ebfd92444053c51500764c2b2ff9a68f63f589443b976aafa8d01b600db6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c224c228e987028819e5d11a479f03ebba9173fe8efc946c00bf1df7820a8472"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "352ef0ea3c5832ce3469d5fa44d2820a9d9d1dc691f7189057a9b8fb5b450ff1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c2fb4451bc2b01b7eb2322c1b5477b97bf770deeb6476da7009e5f95a6873811"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c1e1083b6d3476a7ffea3a80471e54d120051f5b9283cc0755a6b3c20a57c8d9"
-    sha256 cellar: :any_skip_relocation, ventura:       "b6bd8fc84a044dac20a64b2559742e404d5a1e69bea41bbcffc623c14c939e1b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6782ee6ff76538a6681c530f078da7ab66560e32ed4265d948a10a7e3e6a06e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ede20e59499a513433440f3d7c7b3cd2eef379baf06222fee5bc502c9bccc65"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e7a20b00c13370e76d0a8b577b684db1e45a0d2a995431626ba1fd3efa74619"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ccfce7faa55579b7bfd9876182f7fcacf0e9599960f491831982a0edac8b5547"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61591938a1e79b411194f2039b0cb185a2d9e47ba40de13f824101033320e9a1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c79a3f280a8b44e9e738044de0c50dbfa649b2433ecdb920f4caf057d11b420b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a41b75f4e1cbb692f30e8486c4e4c520b7889c2802d4ffa34234b4365ec780e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d94210c52d82c0d045e180d5e0b777e33e5aa17cf4b6c48c94a7df748c2a2db"
   end
 
   depends_on "go" => :build

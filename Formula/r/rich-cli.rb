@@ -6,10 +6,10 @@ class RichCli < Formula
   url "https://files.pythonhosted.org/packages/57/7b/70878722e04b8eb8dba4d00429bce31cd012a6a4caf09dbf012bbf007104/rich_cli-1.8.1.tar.gz"
   sha256 "16992bcbd454974dc53671ba1a12e189148566164aaa7370bdf6648c8b1438c3"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e6131549892c86af3c4723c364cfca15b05e8ee12962ebd20092374ee37888c3"
+    sha256 cellar: :any_skip_relocation, all: "9654763c12fff8e2cab5bc7690623866b8a2d193b074e46956ddaadb0e3d9051"
   end
 
   depends_on "certifi" => :no_linkage
@@ -33,8 +33,8 @@ class RichCli < Formula
   end
 
   resource "docutils" do
-    url "https://files.pythonhosted.org/packages/d9/02/111134bfeb6e6c7ac4c74594e39a59f6c0195dc4846afbeac3cba60f1927/docutils-0.22.3.tar.gz"
-    sha256 "21486ae730e4ca9f622677b1412b879af1791efcfba517e4c6f60be543fc8cdd"
+    url "https://files.pythonhosted.org/packages/ae/b6/03bb70946330e88ffec97aefd3ea75ba575cb2e762061e0e62a213befee8/docutils-0.22.4.tar.gz"
+    sha256 "4db53b1fde9abecbb74d91230d32ab626d94f6badfc575d6db9194a49df29968"
   end
 
   resource "idna" do
@@ -68,8 +68,8 @@ class RichCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

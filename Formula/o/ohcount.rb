@@ -9,25 +9,28 @@ class Ohcount < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "e44046c903fb421bf44b7dc8a9a4862d4cda4c7530dd3c6f6fd5c4e2f375b1ed"
-    sha256 cellar: :any,                 arm64_sequoia:  "d537aa1e6a4a264ac45a9fa154b6dc8d0fdfae03fafe2cc2f81cdd4396aa5769"
-    sha256 cellar: :any,                 arm64_sonoma:   "27c7e0899c7845d03e7f17f2a97f2fa6e47a6923fb1c232ce50551cd5a95122a"
-    sha256 cellar: :any,                 arm64_ventura:  "2651774c46561b5dd0c6b71c9db1776367cbd6f31b83471abbe4ba54a92499c8"
-    sha256 cellar: :any,                 arm64_monterey: "4d5cc69e38917712d81bfb15e4cd044af67b6fdc3b4229e6030656dca705e8c6"
-    sha256 cellar: :any,                 arm64_big_sur:  "43a0bac3974271a961f6cbb035aeb37e0f63e6fc05200bdf8b28064ca7faf128"
-    sha256 cellar: :any,                 sonoma:         "8bfe6b81dc3efdb8efbb539e73d09ce97372a216269a3cdc64248d28da641a45"
-    sha256 cellar: :any,                 ventura:        "2aa5b5bd949c86b0a05afe668a3d840d42e6a5c6797d7115eac0670623d2589c"
-    sha256 cellar: :any,                 monterey:       "c536c13d4e615310df75e452d175b13fc036fde61675adba34b89851097ad814"
-    sha256 cellar: :any,                 big_sur:        "4c6dbf352f569f3976b9c3992376f9afbd4cc05ceb1bbf129b4e462628dbe618"
-    sha256 cellar: :any,                 catalina:       "49de65862c42d1e653b84aa09a3ca9015de5afa40d9c1069d5a7f5a4e35060e5"
-    sha256                               arm64_linux:    "e5b7f38361c5247632be1f37eae14d3d1fee98d4a35c3feb6864e699300f2fc2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39d8342b2b51c283aa66ab2c23b79ad9bc4a98c6c2d93bb8ae857a63fbe1f23b"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "9615278e57b6c482ce61401b0fedef9bdb322b7a7adb23f86c3322d1bfd18123"
+    sha256 cellar: :any, arm64_sequoia: "665dfce8bf062ae58c855c9c310d4f981b85a25c44c185b524c1ecfc2783673b"
+    sha256 cellar: :any, arm64_sonoma:  "baca64f4438b650363e55d0a697040696a5ad6f34ce7120ed952f0877bf52d80"
+    sha256 cellar: :any, sonoma:        "a152e81df3a3a299919fddce7809d4313b3ea1fc518274dcb460cce85055ded3"
+    sha256               arm64_linux:   "40730cf6a816e974616ac45b32abe5fb17b21a06b1d542274f02c44fdf3a834a"
+    sha256               x86_64_linux:  "bf23b772fbaf08da94df72051a63eb74562310b9b328c56a60f47b16d2414565"
   end
 
   depends_on "gperf" => :build
   depends_on "libmagic"
-  depends_on "pcre"
+  depends_on "pcre2"
   depends_on "ragel"
+
+  # Apply Debian patch to port to `pcre2`
+  # Issue ref: https://github.com/blackducksoftware/ohcount/issues/93
+  patch do
+    url "https://deb.debian.org/debian/pool/main/o/ohcount/ohcount_4.0.0-5.debian.tar.xz"
+    sha256 "740228713ed4494577f9932ec13fe4be863daba9868d0bd2ac3f082c847d6a4b"
+    apply "patches/build-cflags.diff",
+          "patches/pcre2.patch"
+  end
 
   def install
     system "./build", "ohcount"

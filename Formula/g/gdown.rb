@@ -3,14 +3,13 @@ class Gdown < Formula
 
   desc "Google Drive Public File Downloader when Curl/Wget Fails"
   homepage "https://github.com/wkentaro/gdown"
-  url "https://files.pythonhosted.org/packages/09/6a/37e6b70c5bda3161e40265861e63b64a86bfc6ca6a8f1c35328a675c84fd/gdown-5.2.0.tar.gz"
-  sha256 "2145165062d85520a3cd98b356c9ed522c5e7984d408535409fd46f94defc787"
+  url "https://files.pythonhosted.org/packages/f4/cf/919a9fa16faf8e4572a24d941353edaf4d54e3ddcd048e6c1aeb8c7a9903/gdown-5.2.1.tar.gz"
+  sha256 "247c2ad1f579db5b66b54c04e6a871995fc8fd7021708b950b8ba7b32cf90323"
   license "MIT"
-  revision 5
   head "https://github.com/wkentaro/gdown.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "66ab7a8f6c8d945d2644307d67a7a06f90866d68a48c8b1953ff551cecfb5843"
+    sha256 cellar: :any_skip_relocation, all: "db743556c73c945b469df43da84c5da0b2dc127e7e365fa5a318f49562755ac1"
   end
 
   depends_on "certifi"
@@ -29,8 +28,8 @@ class Gdown < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/c1/e0/a75dbe4bca1e7d41307323dad5ea2efdd95408f74ab2de8bd7dba9b51a1a/filelock-3.20.2.tar.gz"
-    sha256 "a2241ff4ddde2a7cebddf78e39832509cb045d18ec1a09d7248d6bfc6bfbbe64"
+    url "https://files.pythonhosted.org/packages/1d/65/ce7f1b70157833bf3cb851b556a37d4547ceafc158aa9b34b36782f23696/filelock-3.20.3.tar.gz"
+    sha256 "18c57ee915c7ec61cff0ecf7f0f869936c7c30191bb0cf406f1341778d0834e1"
   end
 
   resource "idna" do

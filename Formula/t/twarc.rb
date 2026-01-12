@@ -6,16 +6,15 @@ class Twarc < Formula
   url "https://files.pythonhosted.org/packages/44/1e/b124f63e6b220c0bd85abe062b77809a0cfd2e9e6d8aed25f9069687df5a/twarc-2.14.1.tar.gz"
   sha256 "54537495c6575863769e82ba4a0db7d68538e7c5afa9b8fcc8856a0ae94d9fa0"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8eb0504f36f0fe60258156527ff6e41bbde1d210d9364dfb4f418deb252573c5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba00e29a8477469255d98b031dffa6ef58db1c864e87fc30853815a80f8d5c39"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87cc3f1aa9ac22f477a8b16377526dbfcfbe14b7dfbbdeadbc3df41fd2b3ba4a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a44433d6df97c382fcfe65457bd81e0718ef99be1b62d196f3ea24438b9e554"
-    sha256                               arm64_linux:   "3bd61c27be902d005aca0c40c9e005e6dfe02db9f36f5577d496343edbb2ce6f"
-    sha256                               x86_64_linux:  "103c2c355bc9000205381bc608229f9166c5d1e405c73ddf39ba6b7054f9d2ff"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db9e6c81fdf10b57b1088a8ab38e39df62e6c7e7a4ff59ac7c99a831b6e3a436"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8ece55dd20076323c923f67c06cc05ce2dbc3d535d3746c08420cdd9613daaa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bbf83545193ee50cbdca9c86d942a41556754ad4d4c55bfd6f4ae3cea04c7242"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b175e12ab700e554a919fb5ed97b10cf97d3d039db90ef7bbb97f2ac741b8224"
+    sha256                               arm64_linux:   "97ac9dcf94d545374e82cceeab9a681b5aa9381986ed82ce55dd0f90aa5a8075"
+    sha256                               x86_64_linux:  "d553debe051e9d6d6797a7d89ccd0b943234542d4fd576b6722250cc533a7432"
   end
 
   depends_on "cmake" => :build
@@ -58,8 +57,8 @@ class Twarc < Formula
   end
 
   resource "humanize" do
-    url "https://files.pythonhosted.org/packages/b6/43/50033d25ad96a7f3845f40999b4778f753c3901a11808a584fed7c00d9f5/humanize-4.14.0.tar.gz"
-    sha256 "2fa092705ea640d605c435b1ca82b2866a1b601cdf96f076d70b79a855eba90d"
+    url "https://files.pythonhosted.org/packages/ba/66/a3921783d54be8a6870ac4ccffcd15c4dc0dd7fcce51c6d63b8c63935276/humanize-4.15.0.tar.gz"
+    sha256 "1dd098483eb1c7ee8e32eb2e99ad1910baefa4b75c3aff3a82f4d78688993b10"
   end
 
   resource "idna" do
@@ -123,8 +122,8 @@ class Twarc < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

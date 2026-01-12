@@ -1,10 +1,9 @@
 class Corsixth < Formula
   desc "Open source clone of Theme Hospital"
   homepage "https://github.com/CorsixTH/CorsixTH"
-  url "https://ghfast.top/https://github.com/CorsixTH/CorsixTH/archive/refs/tags/v0.69.1.tar.gz"
-  sha256 "08eec141bdd8adf265f341a8452601f844a3eaab0378535b2655198fd373a7f8"
+  url "https://ghfast.top/https://github.com/CorsixTH/CorsixTH/archive/refs/tags/v0.69.2.tar.gz"
+  sha256 "cbad15f9a16edd4c068ce14fb17f39cdb811dab0135fca80fafffa9a45732aec"
   license "MIT"
-  revision 1
   head "https://github.com/CorsixTH/CorsixTH.git", branch: "master"
 
   # Upstream uses GitHub releases to indicate that a version is released
@@ -16,14 +15,12 @@ class Corsixth < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d753e18ec56907c2b0033343d131b80390f15d1ba7ad9db9e5ccb43bb98b43af"
-    sha256 arm64_sequoia: "3cb067dfba410ffb3801e0e70d5d4a79841742cdf81b1d295aa378b2702f0d20"
-    sha256 arm64_sonoma:  "915084f0279e8c300639051bc5ac2451afdc29676b48bd3ecb4c61d18710c9b6"
-    sha256 arm64_ventura: "753909b4988900d132e387f99e064d2979063e1543e984e5825880f561db419f"
-    sha256 sonoma:        "c5f817b34df2a948e14936c85ccabf8b13bbc58208031a142f68d9904e8bf67c"
-    sha256 ventura:       "529c7ad432164591a315b326e0aaa2c0f50ff96ab75265072cb29a5f588c844b"
-    sha256 arm64_linux:   "eab424f31ed2b847de8ad0be1637b02471ea557609652143bb361c849f6603fb"
-    sha256 x86_64_linux:  "649e38315d446085d93dfcf3014a204d878ceb68ff4d999cf7a42d4071af90ab"
+    sha256 arm64_tahoe:   "e4db49792837ef97ede9e390becba49c9ca4b5b74cdb65a3db2830a982245edc"
+    sha256 arm64_sequoia: "85f3c97033e315c7002e410857f2a896018fe5b93a446f95b83f0cdefd910f62"
+    sha256 arm64_sonoma:  "76d79a2109ccc63b17bd1a6f73af0f69d8d1df514f40b5bab953a8c19a20fde6"
+    sha256 sonoma:        "17ad046129a03c40a7cade3dd01425574eb4861068b463b55e9370e7b6e09ecd"
+    sha256 arm64_linux:   "133802d597b3c9ca344b8e70f79012380cb02d93eb76f8e97bd7ba742847da82"
+    sha256 x86_64_linux:  "b5b7c68918ad8a91cda1a2c1a1b56d6de38a9e238e2a2b8299f64824f3f4ecf0"
   end
 
   depends_on "cmake" => :build
@@ -42,8 +39,8 @@ class Corsixth < Formula
   end
 
   resource "luafilesystem" do
-    url "https://ghfast.top/https://github.com/keplerproject/luafilesystem/archive/refs/tags/v1_8_0.tar.gz"
-    sha256 "16d17c788b8093f2047325343f5e9b74cccb1ea96001e45914a58bbae8932495"
+    url "https://ghfast.top/https://github.com/keplerproject/luafilesystem/archive/refs/tags/v1_9_0.tar.gz"
+    sha256 "1142c1876e999b3e28d1c236bf21ffd9b023018e336ac25120fb5373aade1450"
   end
 
   def install

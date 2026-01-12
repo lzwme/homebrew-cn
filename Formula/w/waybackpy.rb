@@ -6,10 +6,10 @@ class Waybackpy < Formula
   url "https://files.pythonhosted.org/packages/34/ab/90085feb81e7fad7d00c736f98e74ec315159ebef2180a77c85a06b2f0aa/waybackpy-3.0.6.tar.gz"
   sha256 "497a371756aba7644eb7ada0ebd4edb15cb8c53bc134cc973bf023a12caff83f"
   license "MIT"
-  revision 9
+  revision 10
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "02d05f3560c514c1438eedb157bae313487285893cb2fb6d8f621ff5b84d953a"
+    sha256 cellar: :any_skip_relocation, all: "8a9d8d688e66109ab2d436f33be7ae2b8e857fb88c034ca7077c1009e6289bb9"
   end
 
   depends_on "certifi"
@@ -38,8 +38,8 @@ class Waybackpy < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install

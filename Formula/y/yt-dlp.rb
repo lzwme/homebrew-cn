@@ -6,14 +6,15 @@ class YtDlp < Formula
   url "https://files.pythonhosted.org/packages/14/77/db924ebbd99d0b2b571c184cb08ed232cf4906c6f9b76eed763cd2c84170/yt_dlp-2025.12.8.tar.gz"
   sha256 "b773c81bb6b71cb2c111cfb859f453c7a71cf2ef44eff234ff155877184c3e4f"
   license "Unlicense"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03a036177843fd8540c380fcd3b16131517ed2eb45711d6ee5e63aa65eb42b79"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9dbbb7d92b2e8b2ec62ac898aa21d01bc7688d1376f8fcf1ce044656df11215b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "456f98e57d91f1f369f41c2b8a57ff31e29abec5aceeebc165c84c8ff929e22a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f217a88ef89c2c6f41f1b32c85f535eb032eaaf1029ee2ffdbd9015795874ed3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0103510413e10b32764dc6efc61c740ef9133e6241385131098a90fd8e1becb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd89266b4a21bc374f7231ede96b5b972227724a019037ab3557082c8b0d93e3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f74efdcdc655fd8f94a9f68d35a93c59f9903dfda9a745ebf7ba24914946f474"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0da94ad79a794eb394c03565e093ea51457d587cb5713a50a972f825de61ea01"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6dbf2745167434e0eb047e3932729105a15b20e264db8dad4f65c631167838c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "77b9978c92811898c82c87e4702a15a1e05876410fb85eab4c2005acdaa31fb8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "84514cdf0df392a4ab89a63be235bbca9fe7df66108f19c3acb80615bd123009"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "816972b8b4a2ee5cc617a5c4b6ce18a8f6415ca2379195e6f6d5f25b3100150a"
   end
 
   head do
@@ -65,13 +66,13 @@ class YtDlp < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/21/e6/26d09fab466b7ca9c7737474c52be4f76a40301b08362eb2dbc19dcc16c1/websockets-15.0.1.tar.gz"
-    sha256 "82544de02076bafba038ce055ee6412d68da13ab47f0c60cab827346de828dee"
+    url "https://files.pythonhosted.org/packages/04/24/4b2031d72e840ce4c1ccb255f693b15c334757fc50023e4db9537080b8c4/websockets-16.0.tar.gz"
+    sha256 "5f6261a5e56e8d5c42a4497b364ea24d94d9563e8fbd44e78ac40879c60179b5"
   end
 
   resource "yt-dlp-ejs" do

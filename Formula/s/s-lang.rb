@@ -14,32 +14,23 @@ class SLang < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:    "01cd4cc9e90651603d409a7ee189fb646c080ec0f337317450b0efd91970b269"
-    sha256 arm64_sequoia:  "cbde9efbeeec2fdc059f3527e88ff6e3e9f84c9c59060b5d7a90851cf41c7999"
-    sha256 arm64_sonoma:   "8f5f2ce496f0103eb571b4762b956193adf5819a4800192c62be5e8b0beae99b"
-    sha256 arm64_ventura:  "efee4508d1dca5519b52de6bea66a589bcb203c62b826101fe599e4f3862f149"
-    sha256 arm64_monterey: "5378418e6b6e974287ded1bc8f6ecbcffe4dfab01ac35c92a1f83336d0d49270"
-    sha256 arm64_big_sur:  "c79914984d5c401d8fed000d07ca34b914ae585461c86be3672e3172d5035f9a"
-    sha256 sonoma:         "72b3198c9149036ea0924f9ab8a7d3254969edf4a6a28c6ece19e7592969bdbb"
-    sha256 ventura:        "cbb5b0a2f1b1821be50e9c3ca7c01811ad60ddfe49c2c022cf486399f664e994"
-    sha256 monterey:       "66e107f60db823f566bf6d2101fca2b2aff3b572312cd34a9a86b0cdba47adcd"
-    sha256 big_sur:        "71450b5ff5941e3b2f6a8ca4864affbf8fa5c50b4753860ca86e596834618638"
-    sha256 catalina:       "658b0b6498b5c7f7c65c8d5ca99ee601dcfd4c9978bb7961613a1a9513f78609"
-    sha256 arm64_linux:    "8543716549f8be356cdcd9e25c7348ab8e6deac9770dadb301717bc3d169b896"
-    sha256 x86_64_linux:   "6e07e31addec7d56674c850019014a1b529cf4f869f47f3c247a9d490982a13c"
+    rebuild 1
+    sha256 arm64_tahoe:   "4501b4277af6a136a6ac81ee096feacf8e8a9d32324482f9b9cdb60ec9b513e2"
+    sha256 arm64_sequoia: "3d8e852f17793468f76777ca0fafbc7cb43bc45ba3abc5e2a31e177918be143f"
+    sha256 arm64_sonoma:  "faef8261bcc436c422dcc8e125d851a246860356f53c80aef017048a99e21d15"
+    sha256 sonoma:        "8e18a9ad12b0db57d0b46bd3342c1aadc4c0a662ed47d5900961576f2a99e0f2"
+    sha256 arm64_linux:   "5a14d1dd14b8bd40405616172456dfc0cc8b3af2bfb873e7a8853e07c27c8f5e"
+    sha256 x86_64_linux:  "72a9f13d969bd75373501dbac11238d2b4a7fcbc934624f50b14ad6f5185c22d"
   end
 
   depends_on "libpng"
-
-  on_linux do
-    depends_on "pcre"
-  end
 
   def install
     png = Formula["libpng"]
     system "./configure", "--prefix=#{prefix}",
                           "--with-pnglib=#{png.lib}",
-                          "--with-pnginc=#{png.include}"
+                          "--with-pnginc=#{png.include}",
+                          "--without-pcre" # avoid EOL `pcre`
     ENV.deparallelize
     system "make"
     system "make", "install"

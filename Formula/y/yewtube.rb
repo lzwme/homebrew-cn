@@ -6,11 +6,11 @@ class Yewtube < Formula
   url "https://ghfast.top/https://github.com/mps-youtube/yewtube/archive/refs/tags/v2.12.1.tar.gz"
   sha256 "012c1a8a185dd4ef81074631bca91e327ac4e634b36301a50ffbcd67838b847f"
   license "GPL-3.0-or-later"
-  revision 4
+  revision 5
   head "https://github.com/mps-youtube/yewtube.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "feae9e2422eb561a4e97a40b5d127d445dae1cdd7727cd4dd5abacc38d762152"
+    sha256 cellar: :any_skip_relocation, all: "03f7657aa911a810148d9250b34e84b1df19467464ee50f5716a49e7fc0b92f9"
   end
 
   depends_on "certifi"
@@ -21,8 +21,8 @@ class Yewtube < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
-    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
+    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
+    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
   end
 
   resource "charset-normalizer" do
@@ -51,8 +51,8 @@ class Yewtube < Formula
   end
 
   resource "pylast" do
-    url "https://files.pythonhosted.org/packages/e5/63/18c2c08bbbf30bf331f965f842016d8426b3a4c26033e76be9f953c62848/pylast-7.0.0.tar.gz"
-    sha256 "05803f66d50e33521788f01eb30a9d4e3fbffbb4d81420826a2e3e9ca598a370"
+    url "https://files.pythonhosted.org/packages/b9/b7/d242cbcce3e53cc69050f005672a00a639154c9e78c612951ac4513a201b/pylast-7.0.1.tar.gz"
+    sha256 "319251236ba5c3e907232aacf1d6a7ff831f2243e85ace6ec6623a552ec2e0eb"
   end
 
   resource "pyperclip" do
@@ -71,8 +71,8 @@ class Yewtube < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1c/43/554c2569b62f49350597348fc3ac70f786e3c32e7f19d266e19817812dd3/urllib3-2.6.0.tar.gz"
-    sha256 "cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "youtube-search-python" do
@@ -81,8 +81,8 @@ class Yewtube < Formula
   end
 
   resource "yt-dlp" do
-    url "https://files.pythonhosted.org/packages/cf/41/53ad8c6e74d6627bd598dfbb8ad7c19d5405e438210ad0bbaf1b288387e7/yt_dlp-2025.11.12.tar.gz"
-    sha256 "5f0795a6b8fc57a5c23332d67d6c6acf819a0b46b91a6324bae29414fa97f052"
+    url "https://files.pythonhosted.org/packages/14/77/db924ebbd99d0b2b571c184cb08ed232cf4906c6f9b76eed763cd2c84170/yt_dlp-2025.12.8.tar.gz"
+    sha256 "b773c81bb6b71cb2c111cfb859f453c7a71cf2ef44eff234ff155877184c3e4f"
   end
 
   def install

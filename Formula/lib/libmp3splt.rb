@@ -17,28 +17,31 @@ class Libmp3splt < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "cf832d5f19a4a5c00e9ceccc25a6669791ce4dc1bf2c93b34556ee0eeaa272bf"
-    sha256 arm64_sequoia: "7ab04ee463178da4c4319a3e795ad0f18d09aff98450a5f8eacdf206fdb059ff"
-    sha256 arm64_sonoma:  "8ac44f180edcd601f4fd078a49742f91387466489c3336d534772702ca8d3e61"
-    sha256 arm64_ventura: "2d729d944e28d5d3c651b5be9e7b4aed770fdd51894175b82318414d12fd1850"
-    sha256 sonoma:        "b5f348f71b30146bc33730f43b14e5129cb27aa4c9a1bfb6a39c92ac2bbf5ca5"
-    sha256 ventura:       "dbacb2e3b18de32c6398f7123f0eb826ad56f1969ac45b027cfd3030544fe8a8"
-    sha256 arm64_linux:   "958fa980c431ae3b8c2dc65956c24bf0c0baef98ac9a7cc4b2cd771a8336c5dd"
-    sha256 x86_64_linux:  "b92f917113de228d2bac95e4672b4741c8a5256f55834b6b498bc0697e5e4a3c"
+    rebuild 1
+    sha256 arm64_tahoe:   "71e27509f2f5051c193c6dde207ea520cbd24d1f3d7a90664cd67befce73adb1"
+    sha256 arm64_sequoia: "093990114c593106e24cfd2e289dab0972431ad116963e132ced44a8e89b7bd2"
+    sha256 arm64_sonoma:  "3ca9671420bb9e1e7ad7c7364afc53d20d1dc663332ad74205743dfb35b5191c"
+    sha256 sonoma:        "9bb8fa8d9d96fb01773c04fa564c8b4103c82fbd9e686198dc02944b09b2dbbc"
+    sha256 arm64_linux:   "999824bf55c08a531c0eb124f5fc53f9b9b7b66287cec4243a3ce5c2445f522a"
+    sha256 x86_64_linux:  "b2b5ae6925094b4619cc97902c8bdd27088fbbd78343f5acc4d9fe2b6153d58d"
   end
 
   depends_on "pkgconf" => :build
   depends_on "flac"
-  depends_on "gettext"
   depends_on "libid3tag"
   depends_on "libogg"
   depends_on "libtool"
   depends_on "libvorbis"
   depends_on "mad"
-  depends_on "pcre"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
-    system "./configure", *std_configure_args
+    # Disabling usage of EOL `pcre`. Can be reconsidered if upstream ports to `pcre2`.
+    # Issue ref: https://github.com/mp3splt/mp3splt/issues/366
+    system "./configure", "--disable-pcre", *std_configure_args
     system "make", "install"
   end
 end
