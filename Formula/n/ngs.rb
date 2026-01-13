@@ -17,6 +17,10 @@ class Ngs < Formula
     sha256 x86_64_linux:  "9c4e5283fc854c1e1489d98ef5d234163222567da81348d751084d2ba138ac11"
   end
 
+  # Analytics on deprecation date: "install: 3 (30 days), 8 (90 days), 83 (365 days)"
+  deprecate! date: "2026-01-12", because: "needs EOL `pcre`"
+  disable! date: "2027-01-12", because: "needs EOL `pcre`"
+
   depends_on "cmake" => :build
   depends_on "pandoc" => :build
   depends_on "pkgconf" => :build

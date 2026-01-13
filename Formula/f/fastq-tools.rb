@@ -23,6 +23,10 @@ class FastqTools < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "abd98e72c698e16a077443d29259f946f7ac36c6e5f5a6e172be5466c4cbf2cd"
   end
 
+  # Last release on 2020-10-30 and needs EOL `pcre`
+  deprecate! date: "2026-01-12", because: :unmaintained
+  disable! date: "2027-01-12", because: :unmaintained
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build

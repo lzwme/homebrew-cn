@@ -14,20 +14,16 @@ class OpenSimh < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "ce5bc721d70a624ffd4f0a85a667c83f2c86158384785dc29741cfd958aacd44"
-    sha256 cellar: :any,                 arm64_sequoia:  "848fae7d7b6b38629ba56cee3fe71d9d622ae73a15f6da231fe185ebf7250607"
-    sha256 cellar: :any,                 arm64_sonoma:   "43567e394094f3435e761a4114a421c0488f5af137ce9b4d8aff87d75b485fa1"
-    sha256 cellar: :any,                 arm64_ventura:  "ee7d22345190d2009472b2233bb6c974790f5b38331877ec647be5971f403ae6"
-    sha256 cellar: :any,                 arm64_monterey: "134f1dff238a06523a66039d07f44493460b8b3cdc22b652cd2a6f5e64180e00"
-    sha256 cellar: :any,                 sonoma:         "086bbb15c8872e69967c8b5c600ae22a5389fd37e4e3a7fcc54cabae7cbe4cc6"
-    sha256 cellar: :any,                 ventura:        "28c9c12e56fea289d1d1803752e517f162e4692d76a24f33d7edc09288a02915"
-    sha256 cellar: :any,                 monterey:       "c68fb8a31e1b55c2a5aa6a907df37ab80ce8672573283adf394906720309a743"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "ed4ccf5fd723feaf76ffe1d8ee55828a51773f71d9afa67826751ad456a79109"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15e1de5c0c7a5ac581db904d311b660667ea9937cca2745c8b225856b5454208"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "67df29be666984944e37f97342ad07fc1461f5cbe01c0cb8f42bd922ce052274"
+    sha256 cellar: :any,                 arm64_sequoia: "3bd5b3ff10236b2b6f4c2cd999ccb7e2153a88d016d6481ac78cbd29e3eac677"
+    sha256 cellar: :any,                 arm64_sonoma:  "7cef924d844b2c9292b3bac8b15984b75dda71442d37bfd68a0a85c2ea6df235"
+    sha256 cellar: :any,                 sonoma:        "04fcdedce9b84cb20f27ef9cfdf872125cbc372f051a9260e0bd9b986a2f339d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "45c1d47467c0db6b528fe3e51e07852409bf7a69d752126ecb3caa31224e60df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47f761326158b79077aa6838502fc6186f111da84c6e98425f8722f0165ec5c1"
   end
 
   depends_on "libpng"
-  depends_on "pcre"
   depends_on "vde"
 
   uses_from_macos "libedit"
@@ -38,13 +34,11 @@ class OpenSimh < Formula
   conflicts_with "sigma-cli", because: "both install `sigma` binaries"
 
   def install
-    ENV.append_to_cflags "-Os -fcommon" if OS.linux?
-    inreplace "makefile" do |s|
-      s.gsub! "+= /usr/lib/", "+= /usr/lib/ #{HOMEBREW_PREFIX}/lib/" if OS.linux?
-      s.gsub! "GCC = gcc", "GCC = #{ENV.cc}"
-      s.gsub! "= -O2", "= #{ENV.cflags}"
+    if OS.linux?
+      ENV.append_to_cflags "-fcommon"
+      inreplace "makefile", "+= /usr/lib/", "+= /usr/lib/ #{HOMEBREW_PREFIX}/lib/"
     end
-    system "make", "all"
+    system "make", "GCC=#{ENV.cc}", "CFLAGS_G=#{ENV.cflags}", "all"
 
     bin.install Dir["BIN/*"]
     doc.install Dir["doc/*"]
@@ -55,6 +49,6 @@ class OpenSimh < Formula
   end
 
   test do
-    assert_match(/Goodbye/, pipe_output("#{bin}/altair", "exit\n", 0))
+    assert_match "Goodbye", pipe_output("#{bin}/altair", "exit\n", 0)
   end
 end

@@ -13,24 +13,14 @@ class Classads < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:    "246c662700cc0ac2a7d9e7e5bf715215a00d01cf386d6ef285c071e090384efb"
-    sha256 cellar: :any,                 arm64_sequoia:  "5ed81428780f7cec908f7100cf6acaa0e6dc048636e9b0154c50b45ac4373e13"
-    sha256 cellar: :any,                 arm64_sonoma:   "661d3187c8f61482409ea38879746f2d43e6f2a910b8ea361b4e3507668383af"
-    sha256 cellar: :any,                 arm64_ventura:  "0eab6257d1140e45a9de7be3672d4d78e62a639348cc30b00fab1f68048b5e84"
-    sha256 cellar: :any,                 arm64_monterey: "7f4e50e3dc7c4c163e872815a050edb28feca33f5a56998023a187f11da1fcae"
-    sha256 cellar: :any,                 arm64_big_sur:  "86c8c701a789392ad203154ec4dc6a7cd41401bdd0e667ce2c830c171f94bfd5"
-    sha256 cellar: :any,                 sonoma:         "fa2d8e7c0713d7cdcf49ffe76d836058aa692553b6e6a970cda711696fa31680"
-    sha256 cellar: :any,                 ventura:        "ea9ce2a0d341634d85367e39140f3e3aa7921e94830cdfe9c9f748acb35d857b"
-    sha256 cellar: :any,                 monterey:       "3543be5b0a443e9600bab626a336244bdee95bf7a79856def626e740e6d0a0f8"
-    sha256 cellar: :any,                 big_sur:        "738e16888e4030668b0bf2b7fe190b559b4c1d92dfcd09f95f190cef8deddcfb"
-    sha256 cellar: :any,                 catalina:       "6217077882b497726e1b05407038fcff6ae512cabe8580f35731c5c3a3523538"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "a5e99703af8185a5f39c39f6bf7f56707c17bab75d5a599c40294925d8f1d94e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21874caebbec12fa4ee41c6f4830146dc725dfec2658b8c08eb02dc7d2585583"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "ed590f0506873b6a0335e92654469e50424ca16a916afc92b9f5180906060bfc"
+    sha256 cellar: :any,                 arm64_sequoia: "bf778bd185e235b5e755771e29b123cb64da53d8daeabf8b6950c205706b92e2"
+    sha256 cellar: :any,                 arm64_sonoma:  "5302ef3e7141dcd4cd694d6321c782c8707a90ac36af8be04c137548dd36752e"
+    sha256 cellar: :any,                 sonoma:        "f1e93502256b06a0fca5214a1df36c5f35b211b14d376f718d2a86088465dfe5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f93a457d340d975d207f60f2b88049fab2ac1fc59f957421bb5e6d71a1817b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f04a28af4368948ee8ce693f3ab6e30d9d6294d726e2a04ad7ca44e84ffcf07"
   end
-
-  # PCRE2 commit ref: https://github.com/htcondor/htcondor/commit/b7d84f79384dec9c500611afed87d71d77148176
-  depends_on "pcre" # PCRE2 needs new release. Upstream fix in HTCondor requires new CMake build system.
 
   on_macos do
     depends_on "autoconf" => :build
@@ -43,7 +33,7 @@ class Classads < Formula
   patch :DATA
 
   def install
-    args = ["--enable-namespace"]
+    args = ["--enable-namespace", "--without-pcre"]
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 

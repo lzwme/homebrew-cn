@@ -4,17 +4,18 @@ class Standardebooks < Formula
   desc "Tools for producing ebook files"
   homepage "https://github.com/standardebooks/tools"
   url "https://ghfast.top/https://github.com/standardebooks/tools/archive/refs/tags/2.10.2.tar.gz"
-  sha256 "9fedd680f600802b259dd50ef0bee5a6d7a54f2ad0290ab14e8731c61e8f0203"
+  sha256 "2dae00b4e872d99fddd00460c0da02d94f982f51348477b60a1a6077c4e69a54"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/standardebooks/tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b5bf7901206c97e49feb0f79e2f1db2c2b8dbe7d17d6c401585cebce9260b76"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d31955137f990847b94608c1704cc3c10c2e8e4ba649bc47f0d0fd88418811f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c1eed6c518efe88ff1a40b139d34d0daf7ae78d0d189fc61f51e1dcccbf7e31"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e96a53c9edf4f8824e3ad4db85ce76075218018179d03827da37f8775336e69d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "90c77f42b41b252bf143c79e1e5fd2ce89710454c6e5cd8a96907d87efa4bd09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6be8fe8d17ff88b2beeba61122b4b1bdc35e336668c6ebbc027e4b866bfbdd02"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1327d251a9ed11313075f07391403ebd242a6359984a440de68df50a35977e31"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "315d028d80fe41a3dfcc646a28c6758519b46b85feee386eb2c9abfd9bb739f9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8ac37afa8b9b3e5ed7fd348ed1f8f7f809fb4402ef0c666ad47106e0969e518"
+    sha256 cellar: :any_skip_relocation, sonoma:        "da6e846866e1a47e582cd59d234fbc3cf99fbabc15537b90cb995429e19386d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f6b1b5b7c6303edc3e88d409ff4894d3df678777be45f900701dbfd0a4df271"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cfd998d4a45d6da7ff6e90eaa277faa54dd2cfed7748876c9209281039ede8f"
   end
 
   depends_on "rust" => :build # for selenium
@@ -243,8 +244,8 @@ class Standardebooks < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
-    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "wcwidth" do

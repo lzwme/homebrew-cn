@@ -5,7 +5,7 @@ class Ola < Formula
   desc "Open Lighting Architecture for lighting control information"
   homepage "https://github.com/OpenLightingProject/ola"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 7
+  revision 8
 
   stable do
     # TODO: Check if we can use unversioned `protobuf` at version bump
@@ -29,13 +29,12 @@ class Ola < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 3
-    sha256 arm64_tahoe:   "6ba62681374ac79077d185493e09aeefac7adc0746896ccb0485eb6668889015"
-    sha256 arm64_sequoia: "168690a27dd864abd1543df81298977f2a1cebe34c633a89c97afcccc010697d"
-    sha256 arm64_sonoma:  "b9d261def4d9d8c34fb73c52aa273480fdeda6c08d1cd62d7cbadf967a4d087d"
-    sha256 sonoma:        "f0cde66cdb2622d4f30d4c9980e61db42b71f9d8c819d3663b2fb61390297b17"
-    sha256 arm64_linux:   "a9d38c240b245f7e0e6bbd1ae81dd88e93861858b22acb2fd9938387d14bc7b8"
-    sha256 x86_64_linux:  "612776413721251613393b949c31da2493dd19527442b8efb23a9d1bf77abb80"
+    sha256 arm64_tahoe:   "b4d1b9691f659d49667cf55be27f9ad7c62a2655428a4f3aa8934a54dbe311a1"
+    sha256 arm64_sequoia: "002022365aaa2579b37ea08fd534f65838187e4a6c62f005c2bb8e4839225ffd"
+    sha256 arm64_sonoma:  "e2b0a357e840e2b6de8d15f94d6792eb67882478f2fe383be6067e96fbe4257f"
+    sha256 sonoma:        "2840580cf7483896ea140328cd7e966c9169d1bb6ea6bb816b79e02137a44cee"
+    sha256 arm64_linux:   "6b42431dccfa85cb7d6537fadb668c5c487f27cc112b6db052ab34880b2430bc"
+    sha256 x86_64_linux:  "32730886d9c85ba3eb30461beb1d161642be7dd9f229d674b7cc22b2babaa5ce"
   end
 
   head do

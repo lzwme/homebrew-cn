@@ -1,18 +1,18 @@
 class Groestlcoin < Formula
   desc "Decentralized, peer to peer payment network"
   homepage "https://www.groestlcoin.org/groestlcoin-core-wallet/"
-  url "https://ghfast.top/https://github.com/Groestlcoin/groestlcoin/releases/download/v30.1/groestlcoin-30.1.tar.gz"
-  sha256 "8c67fab6a12e5cff8861b9c8be91ea5ca5590de6b92a85508e76098a1964591a"
+  url "https://ghfast.top/https://github.com/Groestlcoin/groestlcoin/releases/download/v30.2/groestlcoin-30.2.tar.gz"
+  sha256 "0428a5c7b36185770248ffe5a41ca7bc7a6ce0d6f11216e624287827d8cd29bc"
   license "MIT"
   head "https://github.com/groestlcoin/groestlcoin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7b58cf718ca9c862ca893f35a2e50d4df75bd1f25de21d531fa96fd63bbc8f98"
-    sha256 cellar: :any,                 arm64_sequoia: "b5e56a4e777e1ae793d6829908fe9e1893c6a04d609ac7966666ffa19a893a67"
-    sha256 cellar: :any,                 arm64_sonoma:  "22790c6323df8877b7f8564eabb05d325549bcf778bffb999a90b78adcb96ada"
-    sha256 cellar: :any,                 sonoma:        "bcedb81b561bcc3f5dcff2c6ce810be3f5d619830665f6b4f8da6d20baa19b6d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc8eb9d459302fb2de79eb8afb3c3bfbeea6f0695549563319f767541e963885"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "524d3da763086542e931389fe98082e43f2bd58560f3c5212f71a01154a6675f"
+    sha256 cellar: :any,                 arm64_tahoe:   "64eb4cab5c90777cf160c7abcf67a643672c46518e859adcc8829fd43439a963"
+    sha256 cellar: :any,                 arm64_sequoia: "4e9ac50eab5edc51a670ef1d3a72dff43f25ffa233be992093b188b81e7b69af"
+    sha256 cellar: :any,                 arm64_sonoma:  "bdf90a22213215a8eca15c51e427e103963df73fbe41e0e2f6df87e00fe41459"
+    sha256 cellar: :any,                 sonoma:        "9e517a9d0bf166f213ae9f16eaa4f6556580a875450490b783c6685fea9e643a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8337bb0bf0fd3b01d654ac45c034a9b94f778bf7ad9ce3ea8485d7bb36aa1fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a7ce38034127aa2762ed818eb60a1a3257f722bb855188bc232180338044933"
   end
 
   depends_on "boost" => :build

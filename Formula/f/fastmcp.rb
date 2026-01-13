@@ -3,19 +3,18 @@ class Fastmcp < Formula
 
   desc "Fast, Pythonic way to build MCP servers and clients"
   homepage "https://gofastmcp.com/getting-started/welcome"
-  url "https://files.pythonhosted.org/packages/d1/1e/e3528227688c248283f6d86869b1e900563ffc223eff00f4f923d2750365/fastmcp-2.14.2.tar.gz"
-  sha256 "bd23d1b808b6f446444f10114dac468b11bfb9153ed78628f5619763d0cf573e"
+  url "https://files.pythonhosted.org/packages/72/b5/7c4744dc41390ed2c17fd462ef2d42f4448a1ec53dda8fe3a01ff2872313/fastmcp-2.14.3.tar.gz"
+  sha256 "abc9113d5fcf79dfb4c060a1e1c55fccb0d4bce4a2e3eab15ca352341eec8dd6"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "53f95b4a8be684690c0780851292420319ee36582b59265b076f8d28b2b6a8f6"
-    sha256 cellar: :any,                 arm64_sequoia: "b7ab7309ebf4309232d13e1331caa4117f4612048b63ad493269f6d2ca760aff"
-    sha256 cellar: :any,                 arm64_sonoma:  "1fd8632b52c7065169f19923055edf5add7f49f6068b4d8f2477941b1e6e5592"
-    sha256 cellar: :any,                 sonoma:        "4d94fa5e013e444a42830b98396254bf84fb90f57af42b3cdc05a697cd9717b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4914f9fc2524a91638d9011f90810a2ff7cfa1a0bf6a6e36f653063501a1cb0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae20a52955e3c2bae450d1fefe3cab47cd959237ac279e8c1e806e69bf82d5fb"
+    sha256 cellar: :any,                 arm64_tahoe:   "5257d51238d66d2c03114ca93644f732ac05436d86013f18dc8444ad63f9c059"
+    sha256 cellar: :any,                 arm64_sequoia: "fab188bc9d9a8e29b0fd5029bce4943458db479ff5eb480e7907d5a5115e2410"
+    sha256 cellar: :any,                 arm64_sonoma:  "e1845b62dc05fe8a36232bacd28dabeaf70f898cdb39ea7f9e6dd8224ae2e81d"
+    sha256 cellar: :any,                 sonoma:        "073db771a225e0da4126751c425f753b5395c9d45b34db36f0422fc11f036292"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49efb10cfc1cc5d7ba942bc8ecc1b72db8c01a73bce35082d689b30372dc1b86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93917a00fa636d326d42dc53d1065c99c9b23d0c70696ca20c8eb3d4458103b6"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -256,8 +255,8 @@ class Fastmcp < Formula
   end
 
   resource "prometheus-client" do
-    url "https://files.pythonhosted.org/packages/23/53/3edb5d68ecf6b38fcbcc1ad28391117d2a322d9a1a3eff04bfdb184d8c3b/prometheus_client-0.23.1.tar.gz"
-    sha256 "6ae8f9081eaaaf153a2e959d2e6c4f4fb57b12ef76c8c7980202f1e57b48b2ce"
+    url "https://files.pythonhosted.org/packages/07/8f/35d31c925f33a494b3f4f10ee25bf47757aff2d63424a06af13814293f13/prometheus_client-0.24.0.tar.gz"
+    sha256 "726b40c0d499f4904d4b5b7abe8d43e6aff090de0d468ae8f2226290b331c667"
   end
 
   resource "py-key-value-aio" do
@@ -276,8 +275,8 @@ class Fastmcp < Formula
   end
 
   resource "pydocket" do
-    url "https://files.pythonhosted.org/packages/4d/c6/eb7f3af72fa5c04b52a3f9390ff0c948987441987f9526dd992d2a6b3524/pydocket-0.16.4.tar.gz"
-    sha256 "d034d1ac75877560d86329fb3643e7b862fcbcdac407d876a62f5d9e386e8753"
+    url "https://files.pythonhosted.org/packages/72/00/26befe5f58df7cd1aeda4a8d10bc7d1908ffd86b80fd995e57a2a7b3f7bd/pydocket-0.16.6.tar.gz"
+    sha256 "b96c96ad7692827214ed4ff25fcf941ec38371314db5dcc1ae792b3e9d3a0294"
   end
 
   resource "pygments" do
@@ -361,8 +360,8 @@ class Fastmcp < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/ba/b8/73a0e6a6e079a9d9cfa64113d771e421640b6f679a52eeb9b32f72d871a1/starlette-0.50.0.tar.gz"
-    sha256 "a2a17b22203254bcbc2e1f926d2d55f3f9497f769416b3190768befe598fa3ca"
+    url "https://files.pythonhosted.org/packages/e7/65/5a1fadcc40c5fdc7df421a7506b79633af8f5d5e3a95c3e72acacec644b9/starlette-0.51.0.tar.gz"
+    sha256 "4c4fda9b1bc67f84037d3d14a5112e523509c369d9d47b111b2f984b0cc5ba6c"
   end
 
   resource "typer" do
@@ -381,8 +380,8 @@ class Fastmcp < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/21/e6/26d09fab466b7ca9c7737474c52be4f76a40301b08362eb2dbc19dcc16c1/websockets-15.0.1.tar.gz"
-    sha256 "82544de02076bafba038ce055ee6412d68da13ab47f0c60cab827346de828dee"
+    url "https://files.pythonhosted.org/packages/04/24/4b2031d72e840ce4c1ccb255f693b15c334757fc50023e4db9537080b8c4/websockets-16.0.tar.gz"
+    sha256 "5f6261a5e56e8d5c42a4497b364ea24d94d9563e8fbd44e78ac40879c60179b5"
   end
 
   resource "wrapt" do

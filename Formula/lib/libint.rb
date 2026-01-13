@@ -1,17 +1,17 @@
 class Libint < Formula
   desc "Library for computing electron repulsion integrals efficiently"
   homepage "https://github.com/evaleev/libint"
-  url "https://ghfast.top/https://github.com/evaleev/libint/archive/refs/tags/v2.11.2.tar.gz"
-  sha256 "f2fba90579d95f535a93decdae98028ef3a982e6570e1547a0916186f51e86f2"
+  url "https://ghfast.top/https://github.com/evaleev/libint/archive/refs/tags/v2.12.0.tar.gz"
+  sha256 "732988a1ea95eb4eae91bcb2b2a718d95dc5caca41533746fc4111532d55ae74"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7af4dab8242ce8ddd3a69bb78b8ddac45e42533c1ca6214993d4ef1c43fa3e2e"
-    sha256 cellar: :any,                 arm64_sequoia: "7a4d7f01be48bc37f6127a9ba3986a48e38a7a770f2e10d5f740e644d725a6a4"
-    sha256 cellar: :any,                 arm64_sonoma:  "62a17714752ac307164d3dfb29be32578f548ecd2d88938eac582f42bb5f3595"
-    sha256 cellar: :any,                 sonoma:        "e62dfac42c0bceeafa6041d4117d2ac249f381739c7d486b0fa2e7a85fe69374"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a24d4b1a267ace8365de2f8b7f98b200e86403f02f289833cf42429dbdcee262"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2814f8cd9ed88148a055020bb9ecc75a804a7aa184f9ca6423052fc4ba43435c"
+    sha256 cellar: :any,                 arm64_tahoe:   "50a2ca6ce8e4e38f6af74eadd1016ccf6a5e3ab582f07f880e1b35165b95fb4c"
+    sha256 cellar: :any,                 arm64_sequoia: "b66b1bbaa3d92054712f83cbda0942041e950ab63e3bdd310bb576f5ecc8c708"
+    sha256 cellar: :any,                 arm64_sonoma:  "c024ee927a2654942604d17a5c0102954e0b975f9331fdadddcfe9cf0abf5ba5"
+    sha256 cellar: :any,                 sonoma:        "7da400a5ccb1a38661fb374da8c17faaeaa944959dbcd05f75ad87c0eabba8d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1719df4e7c6c147daf60e16bd2da82b2ff0c1414d0f21b185557fa6d829c140b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d6b3acd049664939677c56e25b871982d901bc39eb343fa0eb77a31d0cb1c0e"
   end
 
   depends_on "autoconf" => :build

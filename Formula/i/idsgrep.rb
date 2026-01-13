@@ -13,24 +13,22 @@ class Idsgrep < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "38089cc00edfbfcda646205285bb2e4274ff12c2d3373225e16509c12bdcc304"
-    sha256 cellar: :any,                 arm64_sequoia: "9195c89da2a586ec7c5d86d4b7da682d4d358ff39581755414f6040dce4db197"
-    sha256 cellar: :any,                 arm64_sonoma:  "cd0cd350e0b1880c10cdb41eb85aa6a2f72829b08bffb5ef4c507ae9b75359e4"
-    sha256 cellar: :any,                 arm64_ventura: "a674cfac9231215819fb5c3d6dc777f4b4ed316d2b1ef85bf959e5eb199d4414"
-    sha256 cellar: :any,                 sonoma:        "f3e253e90dc6299cce14e78d01062c00aa36894449e1a2d24c93b1080613ae0f"
-    sha256 cellar: :any,                 ventura:       "4a17486e3c1cd52db67298ab9ec094c171a46ae0636bc460a112b80453944645"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f532dc4ea8d251de9f344575f969d869ad14be07deffa3c86c090112232d008"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5570ed64d7e567b0ca54977415c5b45653b7e5ad1aa04ff9f2d6e30d048a536"
+    rebuild 1
+    sha256 arm64_tahoe:   "599f0677a847ef317bb1cf0a80501b84531bf0a3083f6cf31052bb5f70bab0fc"
+    sha256 arm64_sequoia: "1c94fbfcf90ac7576c2b006a8ee3c80f07a4013eebb232eec219b47203b8a765"
+    sha256 arm64_sonoma:  "84923961452a0d7c070b7c78375c936fedff5455612aa226e747df022cfa1daf"
+    sha256 sonoma:        "d3d1fc3dee5ac6f139f457881bfc85f865ed0ed5dd94fa856396085c9bebcac7"
+    sha256 arm64_linux:   "656ffb858db27d6e80c9df19854d995ee1d45c0aaca683b2048125ad8021dc80"
+    sha256 x86_64_linux:  "4ba4398d84c8f0d78e838d5b39182bd0eab662606d8a77e895fc663e5558307d"
   end
 
   depends_on "cmake" => :build
-  depends_on "pcre"
 
   def install
-    system "./configure", "--disable-silent-rules"
-    system "make", "idsgrep"
-    bin.install "idsgrep"
-    man1.install "idsgrep.1"
+    system "./configure", "--disable-silent-rules",
+                          "--without-pcre",
+                          *std_configure_args.reject { |arg| arg["--libdir"] }
+    system "make", "install"
     pkgshare.install "chise.eids"
   end
 
@@ -46,6 +44,6 @@ class Idsgrep < Formula
       【𭊼】⿱<酒>⿰氵酉<吒>⿰口<乇>⿱丿七
       【𭳒】⿰<酒>⿰氵酉<或>⿹戈<CDP-8BE2>⿱口一
     EOS
-    assert_equal expected, shell_output("#{bin}/idsgrep -d '...酒' #{pkgshare}/chise.eids")
+    assert_equal expected, shell_output("#{bin}/idsgrep -dk '...酒' #{pkgshare}/chise.eids")
   end
 end

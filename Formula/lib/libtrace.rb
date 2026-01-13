@@ -1,9 +1,9 @@
 class Libtrace < Formula
   desc "Library for trace processing supporting multiple inputs"
   homepage "https://github.com/LibtraceTeam/libtrace"
-  url "https://ghfast.top/https://github.com/LibtraceTeam/libtrace/archive/refs/tags/4.0.28-1.tar.gz"
-  version "4.0.28"
-  sha256 "94406738d590a4a65172dcb1a1957f00781b793398f212e35e8119598ff95bcc"
+  url "https://ghfast.top/https://github.com/LibtraceTeam/libtrace/archive/refs/tags/4.0.29-1.tar.gz"
+  version "4.0.29"
+  sha256 "daec03300ac611eeb89ec21b0232494ee0cef6159b8ca94447ff7bc1655af698"
   license all_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
 
   livecheck do
@@ -15,14 +15,12 @@ class Libtrace < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "23a854fe5d776634bc606e14e4da65497d595299edc1d74e1147cc5d3729ded2"
-    sha256 cellar: :any,                 arm64_sequoia: "33385a076780758c33ac37e59d3667304c9733792265ceaf9c7a9c5453a628e6"
-    sha256 cellar: :any,                 arm64_sonoma:  "5fa670f301736144c77b8bb1c88aae1aff35c1dd5fe0bcb260a086946c14b646"
-    sha256 cellar: :any,                 arm64_ventura: "f924814b1274c1d3d21471eb9c49ab2efb61f75e22a61557b7dbbb14d0f7d088"
-    sha256 cellar: :any,                 sonoma:        "21c92f7c30fdf1fa0ed6aabd48b1777c0fe252dbc73106cb7be465de8ef840e6"
-    sha256 cellar: :any,                 ventura:       "a5980413f55fefc4f1754526e060520257aae1f70f322d5da291d4ab0501526f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce2d4b9fa25d3ef6a8e627ee21653eff269cb204dc42b7665b9c70c922e1bb13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb7b948eb96dd83e18188176de55f4964f1d2e27e8f8a3bfab6a6275f99a9cdc"
+    sha256 cellar: :any,                 arm64_tahoe:   "5369c4c9df746a6fff7af2a8b80d28f93bfcd01f48f2e06d924beb5bf256c5c1"
+    sha256 cellar: :any,                 arm64_sequoia: "13dd6a8d1468e809f0bd1f1727ac6ba3854fc0d5c3ad3b913f0e3ad4fc5a511a"
+    sha256 cellar: :any,                 arm64_sonoma:  "a04e4170a575a034f962e4ec0bd55abc6dc13d76fb0599dfb5133d285db21b94"
+    sha256 cellar: :any,                 sonoma:        "7871954d8beb70c062b419441090d1564cf64d5917d7d237f0fc397e2d65e092"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fae33e10e3ac2d5d6257114aea95c2f3ec050d5e33aa584e9c565cbd8b9c1d04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a768935645512609150e7b1164b92a70f229256136a54480480c6ad21960e36e"
   end
 
   depends_on "autoconf" => :build
@@ -36,6 +34,13 @@ class Libtrace < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "libpcap"
   uses_from_macos "ncurses"
+
+  # Fix build with missing input variable for `format_bpf.c`
+  # PR ref: https://github.com/LibtraceTeam/libtrace/pull/218
+  patch do
+    url "https://github.com/LibtraceTeam/libtrace/commit/593a045f314b87ab6dfb6c5ba9e1883fb17ddc9c.patch?full_index=1"
+    sha256 "a8658c93ecdc3dbffe232d4a3a78feb8da54e32256e5721eb7f7bbc2ed88cf30"
+  end
 
   def install
     system "./bootstrap.sh"

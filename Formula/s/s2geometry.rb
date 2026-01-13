@@ -4,6 +4,7 @@ class S2geometry < Formula
   url "https://ghfast.top/https://github.com/google/s2geometry/archive/refs/tags/v0.13.1.tar.gz"
   sha256 "df001f8352dce083a87b74646bcbc65fbbcd039646bda5b64adfda1e2ea32d47"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :homepage
@@ -11,13 +12,12 @@ class S2geometry < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "586fc4ef544739a97e7ab80d869a82f3a41f791b000a9d589c157df462fab30f"
-    sha256 cellar: :any,                 arm64_sequoia: "eaed9c2d9316cb6685daafcbc83e94141b2bd5c53598b0eda8d02c79bcd027f8"
-    sha256 cellar: :any,                 arm64_sonoma:  "bc48dd50ded585c37721cc2d554a74452ac98943ba5762345ab7c8fe25ddcc51"
-    sha256 cellar: :any,                 sonoma:        "9fa3d8417b79c305dd322cb159e33c5436005081726ec93402690adcd0dc849f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5840bc6b34da16172e1a997f6ae3afdec4a7f33263ce78a113a4e971a75e8d97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd2ce367c61688933d4d7ae564d5521e52daebb7708b25c1ddd674abdda3b83b"
+    sha256 cellar: :any,                 arm64_tahoe:   "8f79d0c4a802ebb6534abcf48d19ff6b23e7b3dd2f00bacab751be2795b17ee5"
+    sha256 cellar: :any,                 arm64_sequoia: "97278dc633347c47bdb0ab98b766f3e0d878ddb69ab42d07deae9d28222b7c0f"
+    sha256 cellar: :any,                 arm64_sonoma:  "04808ef92b7db6eb5f653296206f4e228136db79fea36ca811ea31d7e3a3b582"
+    sha256 cellar: :any,                 sonoma:        "e619f78302f4cf5ec4a2977fc7a1d7f3a03703a7f0d64ffd15190554afaa5b26"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0134241899aea80e57425a5acc31198a3d43722551e523186ef9693786ba7c3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "781a1286862396a5a038f772d972654fb61087bf9f7d1a872a6d05bcb4982bbe"
   end
 
   depends_on "cmake" => [:build, :test]

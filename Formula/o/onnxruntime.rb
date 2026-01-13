@@ -5,6 +5,7 @@ class Onnxruntime < Formula
       tag:      "v1.23.2",
       revision: "a83fc4d58cb48eb68890dd689f94f28288cf2278"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,12 +13,12 @@ class Onnxruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e5730d1f45b8c38449fd45ffee376378a8489df65b45d7154d72a7e880cc40f7"
-    sha256 cellar: :any,                 arm64_sequoia: "16c88b670f483a873f7350ef116e464c37bf44f07201077ac0c4658fdb8464c9"
-    sha256 cellar: :any,                 arm64_sonoma:  "9480526a0ffd131a8e1a3e53d4340d410db141d90bdbcb385cb79cbc3631706d"
-    sha256 cellar: :any,                 sonoma:        "3187e32cd6f2c5cfa2566869c61d298f63ce086088cb6452a437ab7fda1c0570"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f2f24a088056ffc3f50d9d9d9fe0ce119dd58d5a5e68ba4f61f9c5ac19620d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e791735032db97dbab100bbae35d7d2a6786f0f2e1a2e5d795ec676c0e9a48c"
+    sha256 cellar: :any,                 arm64_tahoe:   "3139ecbf2526d38e761f344cda531b3876c72a944508be02849f1be7c6060467"
+    sha256 cellar: :any,                 arm64_sequoia: "384348bcb99aaec171fafb39a5d21b5bb04a10f3ff53a3a63196921ec052c6f9"
+    sha256 cellar: :any,                 arm64_sonoma:  "a9c9dd397827d17f28540445bc8d5e9d556fa6397c93da02e2b274f77d0ed4d7"
+    sha256 cellar: :any,                 sonoma:        "2823f61a3638962e3a9aa71c0e720fa3f3527d3342220d2df05b8354bdbafb05"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab9c33e0561663e3fe57884cafd5e70168b2504847d35fd3e1f4b02484cf71bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "325a8fe0a714b5a807e9d44c91ee2fdaf5673704373fbb310e1164b0c675dfde"
   end
 
   depends_on "boost" => :build

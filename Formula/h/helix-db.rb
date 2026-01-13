@@ -1,17 +1,17 @@
 class HelixDb < Formula
   desc "Open-source graph-vector database built from scratch in Rust"
   homepage "https://helix-db.com"
-  url "https://ghfast.top/https://github.com/HelixDB/helix-db/archive/refs/tags/v2.1.10.tar.gz"
-  sha256 "4f42fd3fb5b208eb76767076c1c71ecaa47dbcc80a4e672b03008e5ebe61d613"
+  url "https://ghfast.top/https://github.com/HelixDB/helix-db/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "b00ff6213065f1b8a29251656ccee5f11b17f120832269ceb38fe26e0e1dd22a"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ffc34ddb02018443eac441cdaeb2f7a437c448a042d876e26b3aeb5726a5643e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f73ff4722641d833644a0debd037ba1358f54c7ea1ac795288282542c151067"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d130c5175636df86f19b86b12ecbdd6c452ef98f6f34ca89066cb4b50665988a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "56fd9e43d6cb684859ac8bada45a790226e34de7789ac83d201276dc5b8e8d1d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "51ae29f4a8e352844be23979315ec5ab2d5696424d71e79c7ed7a7fedc14a9de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ac4a19092115426443ac3b839dab285cd255b3749cef82e7b7987a5960a30eb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "38f06fdef522655150063a9401ebb8f86bfcb230e02fc4953084ba1ef2af6dce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f4d30569d3d4030e51660c452f6dd6e1d0f82c02f945ca96f3c1861a68a54cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72063d891e2a367734de19c945acb746d83adc2ea5d7c136e6d38d13dd396a00"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aa09186f4730ac4c4cb0baf493729812d4aca5b1c7391db7fdd88247390cc579"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9843887e03bb186ace4892fc7db8a64ede653a1ee7cb8624eba9cbd9edc0b5dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ddebb1a2b68bff78f16021c3b8c0adbf0bbf861266c85e242cd0a1e40346f21"
   end
 
   depends_on "rust"

@@ -15,6 +15,10 @@ class Fourstore < Formula
     sha256 x86_64_linux:  "d98981cc3228b17fb2ad4364a186756c88d9f8499c60d4bad3ea6d5a3c86513a"
   end
 
+  # Last release on 2024-05-10 and needs EOL `pcre`
+  deprecate! date: "2026-01-12", because: "needs EOL `pcre`"
+  disable! date: "2027-01-12", because: "needs EOL `pcre`"
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
@@ -22,7 +26,7 @@ class Fourstore < Formula
 
   depends_on "dbus"
   depends_on "glib"
-  depends_on "pcre"
+  depends_on "pcre" # https://github.com/4store/4store/issues/167
   depends_on "raptor"
   depends_on "rasqal"
   depends_on "readline"

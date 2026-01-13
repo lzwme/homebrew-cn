@@ -20,6 +20,10 @@ class Vimpc < Formula
     sha256 x86_64_linux:  "20f51a883a9520406f7cbfd7e8c8d9bc533efbb03ce4ecd63e3578aca351daa4"
   end
 
+  # Last release on 2014-03-02 and needs EOL `pcre`
+  deprecate! date: "2026-01-11", because: :unmaintained
+  disable! date: "2027-01-11", because: :unmaintained
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build

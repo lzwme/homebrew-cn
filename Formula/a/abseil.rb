@@ -1,18 +1,18 @@
 class Abseil < Formula
   desc "C++ Common Libraries"
   homepage "https://abseil.io"
-  url "https://ghfast.top/https://github.com/abseil/abseil-cpp/archive/refs/tags/20250814.1.tar.gz"
-  sha256 "1692f77d1739bacf3f94337188b78583cf09bab7e420d2dc6c5605a4f86785a1"
+  url "https://ghfast.top/https://github.com/abseil/abseil-cpp/archive/refs/tags/20260107.0.tar.gz"
+  sha256 "4c124408da902be896a2f368042729655709db5e3004ec99f57e3e14439bc1b2"
   license "Apache-2.0"
   head "https://github.com/abseil/abseil-cpp.git", branch: "master"
 
   bottle do
-    sha256                               arm64_tahoe:   "a420c5f258edbae66fd2f5ac17320d46fd1e9e884f1cbb7cb23c9711e46d67f8"
-    sha256                               arm64_sequoia: "fc8915867a2ee9678dc1603c12d4b69e4c88fc5e5e4d71b44b1279e7a598bcc1"
-    sha256                               arm64_sonoma:  "327300ffe635b76ee159dafd5cdc48f5a6ff9757673673b75d8a86ed6ca08475"
-    sha256 cellar: :any,                 sonoma:        "15a4561cad35249b0f19cb876e874e4a8d892e287267985c24a47cb6835ec66d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd2d71f5e2f747eda4d887d3d841ae87f6d1e02d337ae635f54c1444daacc6bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f1d2a133d4f0273361ac12b4b9286ce855a53914dbdd2d85b095efe779f62a1"
+    sha256                               arm64_tahoe:   "679fc61815e1766f17f00bee96adbd893e67c909847f8c64a50a2b5a8f8a373c"
+    sha256                               arm64_sequoia: "34658fda62a841a641422fad4009ccde0e5f87393eb2577a5b083bdbfb54f3c9"
+    sha256                               arm64_sonoma:  "aa115570367e0c35003c12e814fd57a88e993471794c37609d348050f10a88d2"
+    sha256 cellar: :any,                 sonoma:        "2597c939403696589d7660c1b2f58b1aef3e98cbfe61120f636bda1fbcc5d64b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba6c1c7f40b286832620466ea8f8af959eec4a07fcf25d2720c9f5ce7ac2c986"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "172d809a0f30f2576c8cb520d74810163f68b8bf649955e0a58a8fa140c4070a"
   end
 
   depends_on "cmake" => [:build, :test]

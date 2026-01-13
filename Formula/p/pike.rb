@@ -12,22 +12,19 @@ class Pike < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0c0dbf05213979a83add31b2d9c0983fbaeda715b9d644886ae523e6da58524f"
-    sha256 arm64_sequoia: "1f3675eb394156e536145ea57151f73999675893f4827358673338d31e5dd044"
-    sha256 arm64_sonoma:  "86a5d508ea7ef36bc6c160adce3672556ca34b0f636227cc78fb69b1ebe69579"
-    sha256 arm64_ventura: "6b6f4b66d20a1d4f0d12955f939280a02635e8c459d803ae90ba900d9b3d2401"
-    sha256 sonoma:        "3020a095c90dea0257703d3c47f594c5c9d136655469d57e369d9e89daf3fe97"
-    sha256 ventura:       "6cbd38e90fd0f66a8e87e084e7b78a659cf8e27c9b6f5e3ab001bdec2bd72656"
-    sha256 arm64_linux:   "d508b63e39b6dc8e7be55395dc1a87dfc1da292ddc638a254b49c0bd7052887d"
-    sha256 x86_64_linux:  "59dae235eeb446e2a34bcf99aa113b9571bb012f4559e44b973d2fbbd6d40832"
+    rebuild 1
+    sha256 arm64_tahoe:   "189339328f08b4736331e28f84a222c9bd77ee5f3d0742ddf4f5a8a4b153682f"
+    sha256 arm64_sequoia: "75e3d156d755d9f21686a6a97f7abe5bab99543aed10c0bc9b1924b522a76be3"
+    sha256 arm64_sonoma:  "aa0db19f0c8c530b0a2987a8e9109f59e912bed0e03230d648a6d5626b60f6f5"
+    sha256 sonoma:        "23f03f540634e32d1d2daecd6b396753b133aeb78a6bddc1c8e8a01907068835"
+    sha256 arm64_linux:   "4fff05c1bf9d0b62313086b0a50fdf8fad2cf794d27db659c3f87d3d22a8aff6"
+    sha256 x86_64_linux:  "b657334fefce83ee4ce0a359c8eea9a8b2d5a07638bba4972a33f4fe6c9bf89b"
   end
 
-  depends_on "gettext"
   depends_on "gmp"
   depends_on "jpeg-turbo"
   depends_on "libtiff"
   depends_on "nettle"
-  depends_on "pcre"
   depends_on "webp"
 
   uses_from_macos "bzip2"
@@ -38,10 +35,7 @@ class Pike < Formula
 
   on_macos do
     depends_on "gnu-sed" => :build
-  end
-
-  on_linux do
-    depends_on "libnsl"
+    depends_on "gettext"
   end
 
   def install
@@ -62,6 +56,7 @@ class Pike < Formula
       --without-bundles
       --without-freetype
       --without-gdbm
+      --without-libpcre
       --without-odbc
     ]
 

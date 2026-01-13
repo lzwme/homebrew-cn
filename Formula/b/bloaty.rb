@@ -2,7 +2,7 @@ class Bloaty < Formula
   desc "Size profiler for binaries"
   homepage "https://github.com/google/bloaty"
   license "Apache-2.0"
-  revision 44
+  revision 45
   head "https://github.com/google/bloaty.git", branch: "main"
 
   stable do
@@ -20,12 +20,12 @@ class Bloaty < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a3b4c5a5b27a5ba273b2b7a1fd34d2ba0798b1dc4ba333b6d6e3d5fa8c590840"
-    sha256 cellar: :any, arm64_sequoia: "82c6c79536703aa6ef95ee29af7501baf710f42275aeb746f0eeb53f78f144f0"
-    sha256 cellar: :any, arm64_sonoma:  "2d2540ebff2617bf68e481155cd0d9a21c6652dc9e9eb18b63c8522b74585106"
-    sha256 cellar: :any, sonoma:        "d1a3dcc3d9d2dda73e9696a600e03e07928ee12954e0b803754092fcc5ebb8e3"
-    sha256               arm64_linux:   "8b836d6a3f88992c0b8e595f925dd4c31dcd9965e56bd69a6d608567bd748f64"
-    sha256               x86_64_linux:  "108d66f2cc2edd4fda4049da1ddb75c2f7510e2086bccdb69836f93843064fd0"
+    sha256 cellar: :any, arm64_tahoe:   "1f785f2534938dfe5cdb8f3b6ee7198b0d782dd7495e13904451fc971d16aa6f"
+    sha256 cellar: :any, arm64_sequoia: "894a5b33890f3ccd6f111ca8fc12529ee89f587fa48fb6758a08c320f59b07ac"
+    sha256 cellar: :any, arm64_sonoma:  "ded4855fd2ab9c4d8f6e6e79f4dd866502d1dd35642d79dd29ea33e1025872ef"
+    sha256 cellar: :any, sonoma:        "d10b09b9100d1dbae1f73d4f33b2d1e1c3129c2fbc15ec4fc6badd58b7bb147a"
+    sha256               arm64_linux:   "aace88559daacee6e850902d94fd2bec2184c65fa8a398ea553aff6fe67a99b9"
+    sha256               x86_64_linux:  "d56cba32081741cf94f86d3ab09f3a496aa9d7a5827e6eeebfcbdd49863483ce"
   end
 
   depends_on "cmake" => :build
@@ -36,6 +36,9 @@ class Bloaty < Formula
   depends_on "re2"
 
   def install
+    # Workaround until new release with
+    # https://github.com/google/bloaty/commit/9677d4938ec5be44f04eae774c94e10d339fd3a7
+    ENV.append "CXXFLAGS", "-include stdexcept"
     # https://github.com/protocolbuffers/protobuf/issues/9947
     ENV.append_to_cflags "-DNDEBUG"
     # Remove vendored dependencies

@@ -5,6 +5,7 @@ class Re2 < Formula
   version "20251105"
   sha256 "87f6029d2f6de8aa023654240a03ada90e876ce9a4676e258dd01ea4c26ffd67"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/google/re2.git", branch: "main"
 
   # The `strategy` block below is used to massage upstream tags into the
@@ -21,12 +22,12 @@ class Re2 < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0529b431de81bc292e81fb08238a99601ee5aba8f42aed78e6fe5bacfcf580b8"
-    sha256 cellar: :any,                 arm64_sequoia: "6ba2f2a97afd7c09910638e2f714a4aec43385583e09703fc14e1862f6870c01"
-    sha256 cellar: :any,                 arm64_sonoma:  "bca9b2b0b60ed7dbfde82a3beb8a3383e90be2b3fadf5114bbeca35ce459d99c"
-    sha256 cellar: :any,                 sonoma:        "1fdfab2bdfe78e47ab2791305c14ad69f73b9491772f0c6c037aaf33414bcce4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c042a6c01aa7ac1bba39b586d933a6cc60d2a00f2cbe35efd7b70a7fa201b2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2d28f82483022a00c6f9415de2b69cecdcd03d5597943eccdb77e96a9ca6ac4"
+    sha256 cellar: :any,                 arm64_tahoe:   "fcfe114f9aee2fa6475c6f33cfdcf28cdcaa3541a52c5920bbbc70aeda67988d"
+    sha256 cellar: :any,                 arm64_sequoia: "641887401a7eda45a625cc261028c49d56201bf36fab51ceb659960d598d507c"
+    sha256 cellar: :any,                 arm64_sonoma:  "6b011837ff4b94803354ef61e7e01704cf601ac1795bb0373d70a2e844481c50"
+    sha256 cellar: :any,                 sonoma:        "23e7c11d34e75bf179f0e538a75a7e96b4e2b821ad34773fe25e3ea13df435ee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a78b637b87c698826c3c7afe7e2741496403c0b64a0c9b8679198fc230ae813"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ebbd0be34db042d26aaabd84f79b1c94980e1911578879accb9b93b88f016a2"
   end
 
   depends_on "cmake" => :build

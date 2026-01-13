@@ -7,23 +7,25 @@ class Vectorscan < Formula
   head "https://github.com/VectorCamp/vectorscan.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2ccf33c9cfa23e8e02319a6ed2a40d116699c7c943439b44e88e6068f8696f79"
-    sha256 cellar: :any,                 arm64_sequoia: "7fedda4e165b82f826e9d5fc14d8be8cd2c55dcd26c08d474271b07c74b2ab9b"
-    sha256 cellar: :any,                 arm64_sonoma:  "3bcf577d4c91d01f7519cbb38e00bb3bae03328adf8798cc725576b9aa578f9d"
-    sha256 cellar: :any,                 arm64_ventura: "ed29f6c36f2949e388e2c3f721ecf46891ed855d5c58212e06f559e0908c5e52"
-    sha256 cellar: :any,                 sonoma:        "b628c16819474af7f2f092daaf2d4a3f0497ad9129925c9100a7cc1112077f9a"
-    sha256 cellar: :any,                 ventura:       "d20eebae83e57037cf31393d3e6fcea980bf6e6681d7e42bf03bf1858f4aeb4f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6235d9e69a6434f6be35351c33eb667b45e533fe26d8755253368e5a1ae7f512"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "764260a875c598d22c3abc692855aa7045fb5350e78add953320055f786f0154"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c6d394819c0355675f1ab7d48cf50cf99d68ae837bce318937c17893a9d2bd3e"
+    sha256 cellar: :any,                 arm64_sequoia: "2f6a350d68116e7831fbfe724b02d5aa673f537a08e549cb9c6ca42e71ff0d97"
+    sha256 cellar: :any,                 arm64_sonoma:  "b6de07c88d0e1b9d50c59eb42f1a66a2456e418ade7c01b23ec39b122664029b"
+    sha256 cellar: :any,                 sonoma:        "9a688ccb297c63cd173638267cac86dc0ce20f3f128d5e4a37270bff8fed567e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "431822dd8fb05a2df316274fa9b8e0bbf11585b00d34a72dd82262507c4929dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08b6394af47d74481f091177957ac9b7ea5fb799975482102223714ddd2c5eba"
   end
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
-  depends_on "pcre" => :build # PCRE2 issue: https://github.com/VectorCamp/vectorscan/issues/320
   depends_on "pkgconf" => :build
   depends_on "ragel" => :build
 
   def install
+    # Avoid building hscollider which needs EOL `pcre`
+    # Issue ref: https://github.com/VectorCamp/vectorscan/issues/320
+    rm("tools/hscollider/CMakeLists.txt")
+
     cmake_args = [
       "-DCCACHE_FOUND=CCACHE_FOUND-NOTFOUND",
       "-DBUILD_STATIC_LIBS=ON",

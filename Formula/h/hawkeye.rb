@@ -1,17 +1,17 @@
 class Hawkeye < Formula
   desc "Simple license header checker and formatter, in multiple distribution forms"
   homepage "https://github.com/korandoru/hawkeye"
-  url "https://ghfast.top/https://github.com/korandoru/hawkeye/archive/refs/tags/v6.3.0.tar.gz"
-  sha256 "b83f1f9b3fc349e51ba1bb791d0b438de9aae4b4e10be865d14dce3a8fa70182"
+  url "https://ghfast.top/https://github.com/korandoru/hawkeye/archive/refs/tags/v6.4.0.tar.gz"
+  sha256 "04556d69eadc502cd9aab0b591f1cd996aa8cb699ebafcab362ac598ae4369eb"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a3ab2aef2a64345717f82a6e177d66f3545cb379b8d84f67b36d400d0798c7ae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "500c3e86d1fade2a902ec160d668ace68e0f029b5ffcc67e0730dcdb087d117c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df6eb2f9221caf586cd3507c0dcfd4cd2ec81e7828293562da0c7d91936f32dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7600195b05d90df34c5a29cf4e43989380a6fe33f6ea428b3b0b9e89aed527ff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3f68642869d38afd7e51d81c3cb72e9f99d8530c53c0a929ceac4c598d84a8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d29a088e48ff2f798f38b79a773fb0504b70a58053acc7b45de6ca1df3873418"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "518c539f55042b6a6e16a97dbd43a1fe9bf946ee1d969b3afcca728fcd682e55"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47982ee37d2d1e1e56271c5bcf24a9f96320ebc96bb9c826de229a7a451e8b9f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63ed42b01f233b25dfc35f983813603ce3113e365cc666e6588190d46e4a323d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eb627f84ebf00eb082f8eb2cdb05f22870a7495492e49928a12e21eeb858676c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2131c8ab7fbdb9de70b6c8bc8c846d94fcceb76065e409e62d2dcfcc8e0e6b4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "565d02cd592f2a48ea232ab0c272a16cb878941d42056f54b5ca131be5e110d3"
   end
 
   depends_on "rust" => :build

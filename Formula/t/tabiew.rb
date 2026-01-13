@@ -1,19 +1,17 @@
 class Tabiew < Formula
   desc "TUI to view and query tabular files (CSV,TSV, Parquet, etc.)"
   homepage "https://github.com/shshemi/tabiew"
-  url "https://ghfast.top/https://github.com/shshemi/tabiew/archive/refs/tags/v0.11.1.tar.gz"
-  sha256 "da3b74987f318471aa9701a80deb69837be82df9c9308f4380abfb26df2abf79"
+  url "https://ghfast.top/https://github.com/shshemi/tabiew/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "a1deae7e912493f89223e19c017d3e38ea17f821b00e9213c4506dc503242a2e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6bd1b2dbb9ac3e7ad069e1125f9e17368f2e85a6f887772037d6a53bedb47d23"
-    sha256 cellar: :any,                 arm64_sequoia: "e1c27e0718dd472be14f51e58d56bd08854c5f97923be23fe9a77de930305231"
-    sha256 cellar: :any,                 arm64_sonoma:  "0fb4cd270519ff8c1b470aaa18f23f64c9b0c4c38698001345d7e32dfcd24205"
-    sha256 cellar: :any,                 arm64_ventura: "06556b8ff92c18611451060c5ca6ba3441b90bf31a53b61ca9ce4705b52a359c"
-    sha256 cellar: :any,                 sonoma:        "ca433890032f62f4e49995a401d8460a55a1202b70a7b709283b0cea273b850b"
-    sha256 cellar: :any,                 ventura:       "b4a4baa0102dd4abc3cf871f10152d2585913e85f4c71b6bb3f161a2f9150965"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f71cf83e2cf034bdc1215039c5888ce591a69daf0508d08cc47bda3075244615"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6533aa32a5da1e32d851244d7661063147a020a70c2b76771f3e3c7616be9453"
+    sha256 cellar: :any,                 arm64_tahoe:   "5fe26af0d775f7f38e58a4af2cd5c8a9877bd5c9e745dda6fc9b200066d41bfa"
+    sha256 cellar: :any,                 arm64_sequoia: "dc4771f858152520fea4fffebd98814ec95b444cced99c0e740726fbef08dd8e"
+    sha256 cellar: :any,                 arm64_sonoma:  "e86594ad0b1e26c4b7a373bd8092bbf364747a43748bf8c66256caf4caa9bf91"
+    sha256 cellar: :any,                 sonoma:        "168ce86a9420304295c58ed81f8bd0940dc8ab18b93d14896f3a11c913dccb0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab43c2c430f32bd4b400f0f60c671937f257e70dce5feb62acbedaf9aa1b4226"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2593655526975484ea5ad31526ce5e1adb57b6a9b701fe1f837cb66802329420"
   end
 
   depends_on "pkgconf" => :build

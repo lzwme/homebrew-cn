@@ -1,18 +1,18 @@
 class Fizz < Formula
   desc "C++14 implementation of the TLS-1.3 standard"
   homepage "https://github.com/facebookincubator/fizz"
-  url "https://ghfast.top/https://github.com/facebookincubator/fizz/archive/refs/tags/v2026.01.05.00.tar.gz"
-  sha256 "a389a46460a7231e120d37e99130f304ce5efdf5c50e1bf6a2d69e85311a87d1"
+  url "https://ghfast.top/https://github.com/facebookincubator/fizz/archive/refs/tags/v2026.01.12.00.tar.gz"
+  sha256 "b7ae5196273553ee2d04830120830c1f1604b9e96d78db9b58c2ef2b753580d2"
   license "BSD-3-Clause"
   head "https://github.com/facebookincubator/fizz.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "07942c023676e25bb782b70ea254711002b2ff2adc85ba024dcf961c87a99325"
-    sha256                               arm64_sequoia: "f37748d246d7e693b430621a59d8d366926a9b3800d9b82eaa875da4ecb4a736"
-    sha256                               arm64_sonoma:  "0d844e5f57c343dfb0485218e8f2c3773264315f3d3172d34b33bd965b88422d"
-    sha256 cellar: :any,                 sonoma:        "9c9b27e9fc130ad58020b5ed156b9fe89208b3db6853aa2f01ee7e99ed61fa8a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f155ea235f927d5474c4f41f8e525ff2e82f42236b16f2be8591aa5778773508"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35a60c4e5848971ed8ea203222cf6c66d085c2dbfac3d37dd0954583798878ca"
+    sha256                               arm64_tahoe:   "7e2a36fc3b2091f62458aa747a1633c49a7f322dd26dd53c8cefb196e9f66e4f"
+    sha256                               arm64_sequoia: "5ef8d99e8ddd672cd3a2f810cb4bebf80bf5e8881ab8e26924209ed72f2bbaf5"
+    sha256                               arm64_sonoma:  "b51d586bc1c776867792901d7f3812b0dac4bc4d96ac08466eb1104a95b82fb9"
+    sha256 cellar: :any,                 sonoma:        "7d70c6f0772375e92ceb37ac7a78420a3ef213bee3378178cb6aa7634a421fd2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "abb4543c9597aae082dc22b63822012d465cfeb9b350cbe07f43ebe322cda37a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a140a9b8beccccf7217c5e1021e22345fdffde4811fab4a25237f8bff0c7637"
   end
 
   depends_on "cmake" => [:build, :test]

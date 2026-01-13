@@ -1,17 +1,17 @@
 class Gobo < Formula
   desc "Free and portable Eiffel tools and libraries"
   homepage "https://www.gobosoft.com/"
-  url "https://downloads.sourceforge.net/project/gobo-eiffel/gobo-eiffel/25.12/gobo-25.12.tar.gz"
-  sha256 "d8db1bd9fffa32b09eca4cfc3748bb8e6e8e0d71a8e12d33acc366bf675493a8"
+  url "https://downloads.sourceforge.net/project/gobo-eiffel/gobo-eiffel/26.01/gobo-26.01.tar.gz"
+  sha256 "1cc8b7367721242a1e22c0a1418b1b1366be6039235c1b2dcd440585964654f4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ac9c2dda16f06f39269c7e6c9883c50cf1242d4f56fe75408f31dfb7147364b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e350b5800d02ffe3943c9316147acef229397a6be9b6abf7fa94eeba78ecdbe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "602bebfce472d39a08225dc9761afe7fa07c06f71ea2e0bc575fedf90190ebb3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5b672ec137f80cae00aa3430241d552a625a21b209a28167d95d440a6e681c9f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "501f0101db273078334a7e608a44bc06d89f3e1d76c48992175f616df2b0a7ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5c4c3987bcfb0de460d0a3ee00af6fd69ce0b2d0af1dec70db11d91b984aa15"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "44681e7a3236f134c0bb8219467a3200e16ee4a1199bf6ff74fccbaa2f5765a2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b7318550d4a6ef54193ec57e2a9fa40a3bf92d050a4e561a68be0a0f8aa076f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f337c653609c93dbdfa84accd160a33ed0679d332c1ac86a4b18ab3f21bb21ff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fd758ad5dee96d4a0b2f2e0e5cef27959ef5305a514cba46bf6b85a5de042448"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5494f05faa8de949ebc54c0bbaf120183a8fe15139788c04d40c4062e2e74169"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a10cc331f3235ea05493937fd07690e5666e6d0751f12083b1a423e75783ae9e"
   end
 
   depends_on "eiffelstudio" => :test

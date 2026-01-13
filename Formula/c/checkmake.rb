@@ -7,12 +7,13 @@ class Checkmake < Formula
   head "https://github.com/checkmake/checkmake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ca1c4b1a0476638ac6d77ac1fd8382e92ff676868570426c68f806d68bc8fce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08b50af7212339c032d4e88ed510fc18190411ec2ede062daf307c9a8175cfef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dec784fef942f957b50b11dfce657ea2e42e4b7b49df58e027ec10fff08bf8c7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "459e323f8cb533dcead13656a5cdf62baa4ce8c02046cd2e0f216deabe3e029a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c20cea79f960a78601f693e52b2f6aa6c8767f9c3dd7eb5a165fbced4874e150"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "216c1f4df03223c8ce81087dc71c78071263ca6653f6e2e112e13452fe1a08c2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "830ad356f8143c6cf17c178be7e6b244982354975ffa8a4b2fa1b5150907b58d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4cc9b6deb720d7ef53cad7f243810dc3e1217307035256d7b56865eda287382"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "128dd99341f31a790f9ae61549bb735909989086659b192cecff3f0aeba556f5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "62d2f5dcd3fd0fd6f1162bd67d58812aa5e59f78af2dc193c98c20b04eaa07fa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac2838e91b6e12598749426385f3f02470cc749d78bb5783020a00fd65f82139"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73f82defd4eb6ae7267171725d0c0c672583ec1184463858b90d79b1dccf884c"
   end
 
   depends_on "go" => :build
@@ -22,11 +23,13 @@ class Checkmake < Formula
     ENV["BUILDER_NAME"] = "Homebrew"
     ENV["BUILDER_EMAIL"] = "homebrew@brew.sh"
     ENV["PREFIX"] = prefix
-    system "make"
+    system "make", "VERSION=#{version}"
     system "make", "install"
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/checkmake --version")
+
     sh = testpath/"Makefile"
     sh.write <<~EOS
       clean:

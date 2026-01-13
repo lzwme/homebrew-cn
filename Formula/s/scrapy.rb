@@ -3,19 +3,18 @@ class Scrapy < Formula
 
   desc "Web crawling & scraping framework"
   homepage "https://scrapy.org"
-  url "https://files.pythonhosted.org/packages/03/05/db301a334044577e2f341b19631229aae06f4664dc4c6c3c6246b4081872/scrapy-2.14.0.tar.gz"
-  sha256 "5df8326d9bffc90a719c4579b80195fc0b3c85a0503c73e0f75a5c582da4c064"
+  url "https://files.pythonhosted.org/packages/db/fb/0ccc11eaabdac1f210f27fb6b2ad4aa4ff8a5085cbc616102536fe2c56f4/scrapy-2.14.1.tar.gz"
+  sha256 "b2a4e61802e0a5518bc8293058adedbb6b0d51c08c125d1322b1af7c7cbca4c1"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/scrapy/scrapy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05212f0987de08b44a649f9c426a0f3cec7e6a833510e6e4b67b94cc99d44c69"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3087c3361203d55902a69284a3ab24aaea4caf66ef096b3da9aed579b91fd35"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce56cd1b94363d6dd5794ff572e7496767b62dc3cacdd6c61e3ae41b108dec42"
-    sha256 cellar: :any_skip_relocation, sonoma:        "47ee4630a5dd105fc3b784985156b1676b25ac9ca31d7939a1c5fea8468461bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85eae03689d391beffec7565c64721c55b115dc9fdbebdcfa462dcfed48804a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3c8ee0496406bfe8fc9b8306597abe5b4ae77ece2ee3ae5d9d63c47322e9c87"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e120e988196829606b4665235399291a7c3d20ac1497615dd867ff4d7837634f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ef003f677663fc322c6bbd42d425f96b1bda6875f94fa840571b4f7b1876580"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "681a620957f66e17487505df93fdb9ddecc0e5590a211d43dac7794d7be469ce"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7f2f5ce6196ad38957096e9638fd95b86a3850737a9c9f01da0d3f9a53a4f56b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a28f763881e4a2693ce53fa0e629bfb4874420dfd6697c03f285808be31842a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cceb29b8272097ca32a5a67109676de206f516dacb12fc0b2e72a4858ea17c30"
   end
 
   depends_on "certifi" => :no_linkage

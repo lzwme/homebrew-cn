@@ -3,21 +3,20 @@ class Jupyterlab < Formula
 
   desc "Interactive environments for writing and running code"
   homepage "https://jupyter.org/"
-  url "https://files.pythonhosted.org/packages/09/21/413d142686a4e8f4268d985becbdb4daf060524726248e73be4773786987/jupyterlab-4.5.1.tar.gz"
-  sha256 "09da1ddfbd9eec18b5101dbb8515612aa1e47443321fb99503725a88e93d20d9"
+  url "https://files.pythonhosted.org/packages/93/dc/2c8c4ff1aee27ac999ba04c373c5d0d7c6c181b391640d7b916b884d5985/jupyterlab-4.5.2.tar.gz"
+  sha256 "c80a6b9f6dace96a566d590c65ee2785f61e7cd4aac5b4d453dcc7d0d5e069b7"
   license all_of: [
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "76d8e52892142400d2408fc0b0a3d74e4636793314e0cefa2db53e6115c9e6a5"
-    sha256 cellar: :any,                 arm64_sequoia: "68800786fc01615de7197966d782e26b59dec327bc0b40bbf93a84b6ff0400d1"
-    sha256 cellar: :any,                 arm64_sonoma:  "d13239501bf9517972e8ddee397ffb39f637aed2216938fade46657d1e803cc8"
-    sha256 cellar: :any,                 sonoma:        "5366aa694409958703f9d94d5928ebe968a71630fcc6577ebb27282f32746be8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6b7ef31cf38a55feb850642e5df331f082ea83fed3b47a292f3731e055d7920"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9cd08fb5b0d9a1849cce27f4acdcee70593805829c4c9deb8e21edd89c9a32d"
+    sha256 cellar: :any,                 arm64_tahoe:   "80034d791824f5538de55ca445d26a126db3925e41621f88ac64e526092ecc00"
+    sha256 cellar: :any,                 arm64_sequoia: "6c2ca46ea628508c37421cb1bb9fd542edcd5bc6431ff62937f8dec236216610"
+    sha256 cellar: :any,                 arm64_sonoma:  "e99c782ef8cf20a4835eae9623d33ecfcee275d530d6d03b28fef26fe2c4dbd0"
+    sha256 cellar: :any,                 sonoma:        "3f3393bc71741a51cb3e36d7de232c940d78ac68f3d869e2c0e5fa8135621aff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a568285e13eba1579902f22ae7b1311b9c799b5c3ab2584a7b7f1ab244f61bc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7fbc08638c3f7a29e409d798838960602c94b852e36b7a554e1d040973134dc"
   end
 
   depends_on "cmake" => :build # for ipykernel

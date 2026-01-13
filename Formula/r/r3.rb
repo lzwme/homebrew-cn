@@ -1,10 +1,19 @@
 class R3 < Formula
   desc "High-performance URL router library"
   homepage "https://github.com/c9s/r3"
-  url "https://ghfast.top/https://github.com/c9s/r3/archive/refs/tags/1.3.4.tar.gz"
-  sha256 "db1fb91e51646e523e78b458643c0250231a2640488d5781109f95bd77c5eb82"
   license "MIT"
   head "https://github.com/c9s/r3.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/c9s/r3/archive/refs/tags/1.3.4.tar.gz"
+    sha256 "db1fb91e51646e523e78b458643c0250231a2640488d5781109f95bd77c5eb82"
+
+    # Backport of https://github.com/c9s/r3/commit/c105117b40d1a7b2b9ddf1672cd08b11bd565bd9
+    patch do
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/7ecb03ef6d73f3ed71546fb0c34023f9a23dbd74/Patches/r3/1.3.4.patch"
+      sha256 "c00d9af0b30d94d918cf438834f2ca06e1f756ee56ed0205f9f6f82bf909cb0e"
+    end
+  end
 
   livecheck do
     url :stable
@@ -14,19 +23,13 @@ class R3 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "b6f7a41b6a7f3197243733ce8a7bd9837f0d96b3b1d78046e8ed135db7a7109b"
-    sha256 cellar: :any,                 arm64_sequoia:  "0e983875043e6a6111ce6f46615faf14adb57a8fa96c7a1cf5ae10d7d415a879"
-    sha256 cellar: :any,                 arm64_sonoma:   "9648d6bd8f125398cc101581e8ee3b8b304fa6e8ab92f018dc538843c04fd920"
-    sha256 cellar: :any,                 arm64_ventura:  "fa1e649709ce6c6d16c631a2192d2dd7fea34b7398e55eabe5f7bd51953745ab"
-    sha256 cellar: :any,                 arm64_monterey: "2f26748893003e7e0b99a574126c06c451222144979b0230babe37128328214f"
-    sha256 cellar: :any,                 arm64_big_sur:  "be0883f3dfc67b2469eef537376a04bbae36ec3aab8ca58ffb66491a81e6db5d"
-    sha256 cellar: :any,                 sonoma:         "bdf44bc7e03016c2b5c4b2f414d2c4560d6b6a502023f5225dfb98cbd615d9fb"
-    sha256 cellar: :any,                 ventura:        "95f67c8b6bd1c106e6c61623df3ea82a5faf030928bb4a996fb1bea738f27679"
-    sha256 cellar: :any,                 monterey:       "a33cc32d0cfb9190bb99931d5dc9dba21899df9103ef7d892b8b083672d78662"
-    sha256 cellar: :any,                 big_sur:        "c9fa16048947ebd0c297b700ff7a528c7e45f46bd719cd196d4f7c74de7b491d"
-    sha256 cellar: :any,                 catalina:       "96787f402bbc3a37207c3d5c3468d3b98028a12335a66d176d18d268e2406462"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "0d5a55e6af91f035641e99ced2f417050df5bb6d782922cb7270866659fe105d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36037bda00ae1253fb158f5cdf2619c2194a33a6ddb6598f9fb7901f37928348"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ee6d57c13ed2ec24283ad9837f731a7964943070535d903206e8b7481a73dfad"
+    sha256 cellar: :any,                 arm64_sequoia: "a6aaba3f459b35b6ef04844f558fc82886c589159e406ad206a0a62e6b15cc1d"
+    sha256 cellar: :any,                 arm64_sonoma:  "8a3ba999410ade8c4c63d420e75f480a6c655172f462da5ed1e61ef4614b2861"
+    sha256 cellar: :any,                 sonoma:        "6ab1c2ef8e37e2d55981cb55fb8ea9556521f4cd9df65792f909573e72d05bc0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b947da0474e0674ab147aa19a3e7d6a5adbf6f22eeb99445be3e43e6af89ff58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06edf11bc09dab6f013e3d3ec0c2789572bd64fbdabcb546e6b87600d3c48d4b"
   end
 
   depends_on "autoconf" => :build
@@ -34,7 +37,7 @@ class R3 < Formula
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
   depends_on "jemalloc"
-  depends_on "pcre"
+  depends_on "pcre2"
 
   def install
     system "./autogen.sh"

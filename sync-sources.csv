@@ -8435,6 +8435,7 @@ Homebrew-homebrew-cask/Casks/a/audius.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/augur.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aural.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aurora-hdr.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/ausweisapp.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/authy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/autodesk-fusion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/autodmg.rb, Homebrew/homebrew-cask, 1
@@ -13536,7 +13537,6 @@ Homebrew-homebrew-cask/Casks/n/nosql-workbench.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nosqlbooster-for-mongodb.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nota.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notable.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/n/notch-simulator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notchnook.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/notebooks.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/notepadexe.rb, Homebrew/homebrew-cask, 1
@@ -15380,6 +15380,7 @@ Homebrew-homebrew-cask/Casks/w/waterfox-classic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/waterfox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wave.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wavebox.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/waveforms.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/waves-central.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wavesurfer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wch-ch34x-usb-serial-driver.rb, Homebrew/homebrew-cask, 0

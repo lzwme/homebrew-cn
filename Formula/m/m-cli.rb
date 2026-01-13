@@ -1,14 +1,13 @@
 class MCli < Formula
   desc "Swiss Army Knife for macOS"
   homepage "https://github.com/rgcr/m-cli"
-  url "https://ghfast.top/https://github.com/rgcr/m-cli/archive/refs/tags/v2.0.5.tar.gz"
-  sha256 "506fc6fe4ae4500607aad3b56af2e1af3dfb1c67332472b3a85950a2dab53ef9"
+  url "https://ghfast.top/https://github.com/rgcr/m-cli/archive/refs/tags/v2.0.6.tar.gz"
+  sha256 "cb6b4c73d45f5d7b99b9663b1addcb7fefd3098f4033f4c88d1a94f6f43c61da"
   license "MIT"
   head "https://github.com/rgcr/m-cli.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "81c1152ababf9d2211b86c4f6bb58f767d128c2e03bd1d720166404e7c3ccec1"
+    sha256 cellar: :any_skip_relocation, all: "6f350177ea92c8d9adc99a8cb9777bbd69d6ff55a823c9d961a4e9447e13bc1a"
   end
 
   depends_on :macos

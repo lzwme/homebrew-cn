@@ -1,8 +1,8 @@
 class Mcap < Formula
   desc "Serialization-agnostic container file format for pub/sub messages"
   homepage "https://mcap.dev"
-  url "https://ghfast.top/https://github.com/foxglove/mcap/archive/refs/tags/releases/mcap-cli/v0.0.60.tar.gz"
-  sha256 "a4cbd23b9e06a66c6c950c5a82a1daed67948d537772f1c71969adad2a23e3a0"
+  url "https://ghfast.top/https://github.com/foxglove/mcap/archive/refs/tags/releases/mcap-cli/v0.0.61.tar.gz"
+  sha256 "8bc715a6a667cdd0d9ce7d474436ca19a9be06d1350ddf026f43cc499c203886"
   license "MIT"
   head "https://github.com/foxglove/mcap.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Mcap < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e05404215c72bdf6a3de94037e114fde0e8b60e205a4c300befc96858661fabf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f354566fd99f64360dc00bd00238a2b7861d3d566a82ae7bf5243809bb6df19"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4bc62402a621873f06ee30645fe3cbb4f596aefef10c8f469015199aea91eb17"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d0df1579922f99fdaab5e507002ad0d48294e5efb0e473e221195b6c64ca6c24"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "463471d62380fef65198a9ac4b5bc5dfcaef4fdfa54e797be3877a287d02f660"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f27376ab38f4bdc5376790282e1ce12e34c30d34d3489c9c3b3264bb8b568073"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a5285d5c2295682d3fe70506004115e76ee695a4a1a6f7a48b4fb08080eb7bbc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3313c1c9d3ab7168084813e3b2f72095a6727c8e0b7106df8b83cdcbf623b3e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d6abf93d29a22f0a753b6912416c8f3eef4bfb2eee8a2b6d5afee62ed8d9ead"
+    sha256 cellar: :any_skip_relocation, sonoma:        "63e074b0de17ef809ec07fe19f765f85ba51805d34fd7612add347ff17265ffc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d00e8a12ebe7a922495bb3ed892bc27f40b1784f20aceef441b2a67b4c003c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a09c30d2a63b3914170287fc55d5d293a089c4bf46d20172f98859d8a20f5fc"
   end
 
   depends_on "go" => :build

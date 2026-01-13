@@ -1,18 +1,18 @@
 class Bacon < Formula
   desc "Background rust code check"
   homepage "https://dystroy.org/bacon/"
-  url "https://ghfast.top/https://github.com/Canop/bacon/archive/refs/tags/v3.20.3.tar.gz"
-  sha256 "9dcc1a2e250b1c9617845c0f223a0b4a18cb37aa8c2c64247ffdd23e8e41e10b"
+  url "https://ghfast.top/https://github.com/Canop/bacon/archive/refs/tags/v3.21.0.tar.gz"
+  sha256 "4d258b57976f234547d01ad64e3609e675a5689c28107e74e75bfbede82bf20a"
   license "AGPL-3.0-or-later"
   head "https://github.com/Canop/bacon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9000f3fb86aff70d76843400041709883cc4594bd4efc1555fbfc4dccbebe5a7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad46706f4e8d38c987d1fc62997aeb24f5959031a9f3121de48ea7aaed26a67d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ba69f309c22d66a7da8d2752e5d56803602de9d7edd95e0826c11ed25833b06"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eb2172c145afe5ae437979ae9f12b01dbed5479f628f3346bfd769e2b7c36cfe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "616e7a8629b4b114dacd37e9d18404046e29fafb3dba76ac2c79062c23ac1678"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbf3badb3d41a28f18489cc4b30c63b7603af6c9a619ac71510355be8fc6890e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f20eea4ac33022a5979c3b1a1264dff38c6f0fa6b82c94b477106fd032f49bfa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1aff917fc6dcb14700d158f6762050b9b37681d86dd1a0c2f12a48e57171fcc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d0f34d068394a18c3d683651e0aaeb5c9d73979bb01917e8b441a3dbe64c6db"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0aeb89ecb831573ffef666dd4e03c0385d71b7e3fc4cc59db858887c40484ecd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "27ef0626b1831168f162d90d92cc3934d5ed3f7d2506892736b87811b3ec161b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a15bf9c710270c87281094c987da22e9b848e34420735ba66923739e13b64f2"
   end
 
   depends_on "pkgconf" => :build
