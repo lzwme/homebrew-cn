@@ -1,8 +1,8 @@
 class Reprepro < Formula
   desc "Debian package repository manager"
   homepage "https://salsa.debian.org/debian/reprepro"
-  url "https://deb.debian.org/debian/pool/main/r/reprepro/reprepro_5.4.7.orig.tar.xz"
-  sha256 "df87e4168a580366cdeb3fdc31c5fa99b7d73140e7a7ca5d85ce64bb25370d6f"
+  url "https://deb.debian.org/debian/pool/main/r/reprepro/reprepro_5.4.8.orig.tar.xz"
+  sha256 "f25409cf50acfc8b01a8e1e7c4e176292107763beedb058b42d7bf8e56a8e9c2"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,12 +11,12 @@ class Reprepro < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2844e0a31431948d7695c42943a5eca453e15ecf54d4bd31cbc7cb0863670443"
-    sha256 cellar: :any,                 arm64_sequoia: "5146c355e2be811b41d026ae77f5c0d51fcc91d19cbb15a5e0fc4e6b78808834"
-    sha256 cellar: :any,                 arm64_sonoma:  "e912a43c8faef1de37effce75d6b5665d5d8039c86e73c1cebf71e9845255b29"
-    sha256 cellar: :any,                 sonoma:        "d0894c2657bddb755593ef65724ad0da78d742d26c9092433f6886bad46db64b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d952be54d3928a47d9191c3e9b5218e19fb27c4b38a13c2c1e7a1da5e8383edc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b1f03fb797c16bdea4c00888be000b40ea8c6ef9b8d6f3cc189601093f70d6b"
+    sha256 cellar: :any,                 arm64_tahoe:   "5e4f24abe9836969e7089bc7862bba0666f5c59b7332612f604d02a597960b86"
+    sha256 cellar: :any,                 arm64_sequoia: "2baab6ad6ba965ea94537aad8d592612752d2aee1267240a3d101dd7f4df8f79"
+    sha256 cellar: :any,                 arm64_sonoma:  "6a9d163e434e467024671e1c19cb2e14bfddcb84605e80ae8e4456275c2f07a9"
+    sha256 cellar: :any,                 sonoma:        "5e8ea5e5fc80e440ef93cf8a61b90537fcafc150668d4c3cb7d473db2c5ba29a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "315a7155b8557e575cc84791abad4dafcc88ef4fbcd0e42d745c4079cf1b5b8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8798fa0fd08a477f21852eeef3920f9a62618679fa7af97212622ef08026f0bf"
   end
 
   depends_on "autoconf" => :build

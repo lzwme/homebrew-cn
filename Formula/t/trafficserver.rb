@@ -1,10 +1,15 @@
 class Trafficserver < Formula
   desc "HTTP/1.1 and HTTP/2 compliant caching proxy server"
   homepage "https://trafficserver.apache.org/"
-  url "https://downloads.apache.org/trafficserver/trafficserver-10.1.0.tar.bz2"
-  mirror "https://archive.apache.org/dist/trafficserver/trafficserver-10.1.0.tar.bz2"
-  sha256 "bccc35bbfc80f215b0858a0a7e531ac990b13a9eb1e3e81a3b15eaa3fde0596e"
   license "Apache-2.0"
+
+  stable do
+    url "https://downloads.apache.org/trafficserver/trafficserver-10.1.0.tar.bz2"
+    mirror "https://archive.apache.org/dist/trafficserver/trafficserver-10.1.0.tar.bz2"
+    sha256 "bccc35bbfc80f215b0858a0a7e531ac990b13a9eb1e3e81a3b15eaa3fde0596e"
+
+    depends_on "pcre" # PCRE2 issue: https://github.com/apache/trafficserver/issues/8780
+  end
 
   bottle do
     sha256 arm64_tahoe:   "f1f228335aa43ef6fc7ff8e68c2777dc3ff42335cb0b9b71bc74deac28998ab3"
@@ -15,6 +20,12 @@ class Trafficserver < Formula
     sha256 ventura:       "49c8fba7b87b464e8fa5b22cf02f94c353cdca306b8860249e004e2b801a7216"
     sha256 arm64_linux:   "445d11a0ce8676fe74a1df1be2fa6b1bf9544ab7e7bd69bdfa931acf62424f1c"
     sha256 x86_64_linux:  "701d46ac0f4dfd5ed88a48e5f01bb55f675f9e275a4e692ba7a773e82e0d39f6"
+  end
+
+  head do
+    url "https://github.com/apache/trafficserver.git", branch: "master"
+
+    depends_on "zstd"
   end
 
   depends_on "cmake" => :build
@@ -28,7 +39,6 @@ class Trafficserver < Formula
   depends_on "luajit"
   depends_on "nuraft"
   depends_on "openssl@3"
-  depends_on "pcre" # PCRE2 issue: https://github.com/apache/trafficserver/issues/8780
   depends_on "pcre2"
   depends_on "xz"
   depends_on "yaml-cpp"
@@ -44,6 +54,8 @@ class Trafficserver < Formula
   end
 
   def install
+    odie "Remove `pcre` dependency!" if build.stable? && version >= "10.2.0"
+
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_EXPERIMENTAL_PLUGINS=ON",
                     "-DEXTERNAL_YAML_CPP=ON",

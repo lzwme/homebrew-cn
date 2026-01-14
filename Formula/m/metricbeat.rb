@@ -2,18 +2,18 @@ class Metricbeat < Formula
   desc "Collect metrics from your systems and services"
   homepage "https://www.elastic.co/beats/metricbeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v9.2.3",
-      revision: "b95cc76490c9bb4184f98e0094be4af14b5d7bd2"
+      tag:      "v9.2.4",
+      revision: "fd909e2bd4416ce14162971875d6013334f6fd44"
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d21bd995b570f6576478b912e83f6d64a845dd6f3d557cfb5810acfdabf9df5d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e0066e9333cd6ee7e9893def56b0a580c5a7494afbcdc64b1af45adbb65d81f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1013f1d9f21cec4149bc4b160cb902310c4a6045a721e9481f99e9b6adc3e58d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ac9f1378910cb38ca7930d49fa664d4dc47cb7fc63c5cdcbc29912f3635c9ff6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "311e80e736baeeadb2c3b032f4b7392d7b5e492d7d07f21a0db2c6822b354683"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33ac6b2d1541d6420d73342100afce172019882fc1a5ab9b34f73087cecffe83"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7fd944001ffeb0229eea625d3690aacbb50b872dffc2d75ee338de00704a0c4d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0cbfe549af27f95b520897c6d22e9bf31c78de1b349dc05381fb6c9b130fa3fc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd50ae6378bb6f2512ab6bf94d2ce6c5aa20393a09428b09a3823d2d17b3ef2c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "22ef72351b11082b564072cce5e612024001a87d7a11481fc4087dd5ee63cf5d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f8c4db5038954a30c86224a84afafa741aad47ad45f8135c1032387af99273b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2be85825c1cb46e4b517678c56255056e3bfe6a230d53f6fa2aaca775577895"
   end
 
   depends_on "go" => :build

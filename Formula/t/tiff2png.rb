@@ -27,6 +27,8 @@ class Tiff2png < Formula
   depends_on "libpng"
   depends_on "libtiff"
 
+  uses_from_macos "zlib"
+
   def install
     bin.mkpath
     system "make", "INSTALL=#{prefix}", "CC=#{ENV.cc}", "install"

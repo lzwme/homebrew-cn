@@ -9228,7 +9228,7 @@ Homebrew-homebrew-cask/Casks/d/dotnet-sdk@8.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dotnet-sdk@9.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dotnet-sdk@preview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/doubao.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/d/double-commander.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/double-commander.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/doughnut.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/douyin-chat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/douyin.rb, Homebrew/homebrew-cask, 0
@@ -12312,6 +12312,7 @@ Homebrew-homebrew-cask/Casks/g/gitx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/glance-chamburr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/glaze-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/glide-browser.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/g/glide.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/glkvm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gltfquicklook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gluemotion.rb, Homebrew/homebrew-cask, 0
@@ -13554,6 +13555,7 @@ Homebrew-homebrew-cask/Casks/n/noun-project.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nova.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/novabench.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/novation-components.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/novation-play.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/now-tv-player.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/noxappplayer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nozbe.rb, Homebrew/homebrew-cask, 0
@@ -13770,7 +13772,7 @@ Homebrew-homebrew-cask/Casks/o/oxygen-xml-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/p4.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/p4v.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pacifist.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/packages.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/packages.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/packet-peeper.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/packetproxy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/packetsender.rb, Homebrew/homebrew-cask, 1

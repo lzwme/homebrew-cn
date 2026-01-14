@@ -1,18 +1,18 @@
 class Diffnav < Formula
   desc "Git diff pager based on delta but with a file tree"
   homepage "https://github.com/dlvhdr/diffnav"
-  url "https://ghfast.top/https://github.com/dlvhdr/diffnav/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "3866b98df7c2b5a55c9598e493ddaf7c9b6187dfa570656259221e1a14a6b59b"
+  url "https://ghfast.top/https://github.com/dlvhdr/diffnav/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "2503e10c6c49f0926a33b78373ded5aea7c35b911ccf18d80df3c6d461e7d36f"
   license "MIT"
   head "https://github.com/dlvhdr/diffnav.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f867756de3169c361546a9012a92142bd2e81ea9e087692d20dfba836f1f59ef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f867756de3169c361546a9012a92142bd2e81ea9e087692d20dfba836f1f59ef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f867756de3169c361546a9012a92142bd2e81ea9e087692d20dfba836f1f59ef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d4aaaf5b0b069f4f6a72c374784d34f5a132c0a863980fabe3a81de60330144c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfc0f7b3b098dd80a299c437e201ba4ee24914411b04f2654fa2fa648eeb17ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a72668b0c4bddbcd00c1071ff02dfee7b366f4895fa73ed618c11def360135f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ecac4a1afe5e9eedab1b701f9326a7143bc4c0bffdce0a246f9a40ce814edf16"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ecac4a1afe5e9eedab1b701f9326a7143bc4c0bffdce0a246f9a40ce814edf16"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ecac4a1afe5e9eedab1b701f9326a7143bc4c0bffdce0a246f9a40ce814edf16"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2010b1588557b117ec36d91f058cb7443bcb9c2c8f1c81f55ece6e884ba26554"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "850cfc07701930dc801891504f4c1308adfbafd66780efc9113e9a2cae9a1901"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e883df9943c50d6b2ed91ca2e2f3a303bb68df4be4674b2b18e1387480531d76"
   end
 
   depends_on "go" => :build

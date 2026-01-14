@@ -57,8 +57,6 @@ class Itstool < Formula
       # Run configure to generate setup.py and Doxygen XML
       system "./configure", "--disable-silent-rules",
                             "--with-history",
-                            "--with-http",
-                            "--with-icu",
                             "--with-legacy", # https://gitlab.gnome.org/GNOME/libxml2/-/issues/751#note_2157870
                             "--with-python",
                             *std_configure_args(prefix: libexec)

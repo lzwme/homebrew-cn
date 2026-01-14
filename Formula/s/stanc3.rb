@@ -2,55 +2,38 @@ class Stanc3 < Formula
   desc "Stan transpiler"
   homepage "https://github.com/stan-dev/stanc3"
   url "https://github.com/stan-dev/stanc3.git",
-      tag:      "v2.37.0",
-      revision: "31d2a6e3a7a84e97a3bd8cabc205c76a063fb91f"
+      tag:      "v2.38.0",
+      revision: "e05ba2b1c68af5abf6bb4ce4279e82b6d1059f8b"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a506ef69a644c723648740b9cf97b7c9f4c816cbba534afff9b6537d9ba8c418"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b75f859506655cb2629cee53326a56d2adf8990f5465b4b043d10a67723059f9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6429a0f13f93478838dc9524af1246a844e2e3922ead3c8b0fadd9abc66124d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "966e95130f8a0695eab22f16796d4383f5e5aafbc35811008c3c848acdb077a5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8a4ee8620a6a19639f9e004d6e024464f8b95e86959d50c17165d027c1284f90"
-    sha256 cellar: :any_skip_relocation, ventura:       "3b5e9cda6c9f7701747cca00dcc29c2f209b92c530e5f82ff0404e29481940f9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7762a898b7afcb8f32cdf7b3fdcc2c02d991765067ff0c2942711cb557e602d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb5ab07bb40e6941e98d579dfc196f1294f0ae3f55a45a092aed2182a40e0e0d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "052f27eccaa5dd5a4b9c441846e3741cee2b3e5e733d52094db2c3e39e7dca54"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d835afe8912f71f5772dcf3384bc177b4dacea3906acb13e116e1dd9adb7322"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb02b223a6c2b33b7284e59ce8f068816246aa13057430eb6a5269de7cca0964"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0bc2c520dc35d62340f74eea4243e70921af2d4c4e8b991edee6016e77781405"
+    sha256                               arm64_linux:   "e0581e5129dd2feeb742d8bf10db92be453f5fc081c55bbf490f37eb9b6769c6"
+    sha256                               x86_64_linux:  "3b13da81774f275c774e28c92965d9469e136f9afbf2389d1f76cceace80ddb3"
   end
 
-  depends_on "ocaml@4" => :build # FIXME: pinned ppx_deriving.5.2.1 not compatible with OCaml >= 5.3
+  depends_on "ocaml" => :build
   depends_on "opam" => :build
 
   uses_from_macos "unzip" => :build
 
-  # Workaround for error due to `-mpopcnt` on arm64 macOS with Xcode 16.3+.
-  # TODO: Remove once base >= 0.17.3 or if fix is backported to 0.14 and released
-  on_sequoia :or_newer do
-    on_arm do
-      resource "base" do
-        url "https://ghfast.top/https://github.com/janestreet/base/archive/refs/tags/v0.16.4.tar.gz"
-        sha256 "200c053b69c04dd5cdc5bcb3ae27d098a88a311fb48c28d6382abe76e2a588f5"
-
-        patch do
-          url "https://github.com/janestreet/base/commit/68f18ed6a5e94dda1ed423c3435d1515259dcc7d.patch?full_index=1"
-          sha256 "054fc30c7e748b2ad8ba8e2b8eead1309b8d7229821b57478cb604d5da5b69c6"
-        end
-      end
-    end
-  end
-
   def install
+    # Workaround to build with OCaml 5.4.0
+    inreplace "stanc.opam" do |s|
+      s.gsub! '"ocaml" {= "4.14.1"}', '"ocaml" {>= "4.14.1"}'
+      s.gsub! '"core" {= "v0.16.1"}', '"core" {= "v0.17.1"}'
+      s.gsub! '"ppx_deriving" {= "5.2.1"}', '"ppx_deriving" {= "6.1.1"}'
+    end
+
     ENV["OPAMROOT"] = buildpath/".opam"
     ENV["OPAMYES"] = "1"
     ENV["OPAMVERBOSE"] = "1"
 
     system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing", "--no-setup"
-    # Workaround for https://github.com/janestreet/base/issues/164
-    if OS.mac? && MacOS.version >= :sequoia
-      resource("base").stage do
-        system "opam", "install", ".", "--yes", "--no-depexts", "--working-dir"
-      end
-    end
-    system "bash", "-x", "scripts/install_build_deps.sh"
+    system "opam", "install", ".", "--deps-only", "--yes", "--no-depexts"
     system "opam", "exec", "dune", "subst"
     system "opam", "exec", "dune", "build", "@install"
 

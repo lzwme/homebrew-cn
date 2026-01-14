@@ -15,6 +15,9 @@ class Mdz < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "df3007f6d42e420fbb28b893c09e219fedde0418df2a6d9612c4ca7e84c58e61"
   end
 
+  deprecate! date: "2026-01-13", because: :unsupported
+  disable! date: "2027-01-13", because: :unsupported
+
   depends_on "go" => :build
 
   def install

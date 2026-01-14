@@ -3,18 +3,17 @@ class AwsElasticbeanstalk < Formula
 
   desc "Client for Amazon Elastic Beanstalk web service"
   homepage "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3.html"
-  url "https://files.pythonhosted.org/packages/3c/f5/4281c2233232af71d118fa5205d0543dd92a6215d181aa8df75211b8100c/awsebcli-3.25.3.tar.gz"
-  sha256 "718e94e8d0cd49cc54879996ae030c7bad38a63afbdf5077bd7a6edc59938fee"
+  url "https://files.pythonhosted.org/packages/51/84/fd42ca7b28982e9e38a2155837ebbfbe2cb5832d4f6cc5b8d89c9cea48bd/awsebcli-3.26.tar.gz"
+  sha256 "410916a83c511b47e220af2ccc15d11f88c00ccb0487ef5e69a15b75d3ed58f4"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8ce56385d6001d3c7f4f0aa221d41693116bf661e8644b89c2c7bdf8ab44c134"
-    sha256 cellar: :any,                 arm64_sequoia: "8b970d7f587406412e1424c67d8409d26a349a7c133691f9c7d0c85ca7a4441e"
-    sha256 cellar: :any,                 arm64_sonoma:  "42d6a3b6dc12deef498a18a2e4536f2a2343393b5de142e12d0ce4a085c237f2"
-    sha256 cellar: :any,                 sonoma:        "a7479ceff7d24c1f39bd56d372bed320f0abde0f34c827721b2a507d3e6a8a0c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d52589bbc5537316eafd58edef008f0b7c497c8294dcc03aa81335cae856f627"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a480a0541ca79bbe036ae4ef6a2b84a17415955d86c1bf334611bde7d6ba1843"
+    sha256 cellar: :any,                 arm64_tahoe:   "3ca67a64edb1c8ce61f3c863d94a93ee05c346214b28951a72fcd7aeeb2c7806"
+    sha256 cellar: :any,                 arm64_sequoia: "0433230a5166e16c60cc354a9bc08d946e69a6ea45f2393d672d070dce1735d5"
+    sha256 cellar: :any,                 arm64_sonoma:  "12a5212f8818ce8ddb6fe5e1c525c26003c445acd6fb2a79fccaff642c46b800"
+    sha256 cellar: :any,                 sonoma:        "cd7d9ee2ee0d4f41d386409c0e020aa39d9f3e2bf972ff4903aa40614ee22383"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d7ddabbae13253ca070d649053e043ea4d0357bb61fbd749db9914b9dd3f2a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a338ed82cc0e56cdc47c2ab7c89fc8286eef5f4cf52401f4a5a29054b08506f3"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -39,8 +38,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/2c/2c/db33716f86b67c514f895c60694a25cd7428d2137b574b59d09d626b0e2e/botocore-1.42.23.tar.gz"
-    sha256 "453ce449bd1021acd67e75c814aae1b132b1ab3ee0ecff248de863bf19e58be8"
+    url "https://files.pythonhosted.org/packages/67/c9/6ce745d4233aeb3abdb18205739b394f7955087f7603cb324a797adbf8d2/botocore-1.42.26.tar.gz"
+    sha256 "1c8855e3e811f015d930ccfe8751d4be295aae0562133d14b6f0b247cd6fd8d3"
   end
 
   resource "cement" do

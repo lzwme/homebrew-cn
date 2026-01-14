@@ -1,17 +1,17 @@
 class VercelCli < Formula
   desc "Command-line interface for Vercel"
   homepage "https://vercel.com/home"
-  url "https://registry.npmjs.org/vercel/-/vercel-50.3.0.tgz"
-  sha256 "1cd2bd15ef38893966de744796d2e93acb2af09c2ac6853fb967b2e712a0cc44"
+  url "https://registry.npmjs.org/vercel/-/vercel-50.3.2.tgz"
+  sha256 "910f334a4ce03d3f5f32d9ad7f80950ab52ad05f7aeb8887fca2a1ed93d4aefd"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7ffc9dc9018f1fdef2e9b0f4fdba1894862565d2acbf83cd6ca68130fa674f2e"
-    sha256 cellar: :any,                 arm64_sequoia: "f5562787bd45ee9375160a019e2994181f151a448ef92b4179587f22e3aa01df"
-    sha256 cellar: :any,                 arm64_sonoma:  "f5562787bd45ee9375160a019e2994181f151a448ef92b4179587f22e3aa01df"
-    sha256 cellar: :any,                 sonoma:        "249f4d5b8620984ef313bac2c3c73622007a13bf66e5d4554dd68a226db663e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e548df2bab4264876409f48b2af503291eb7c471298d6f466d9a110703383420"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "814156432af1319eeba8072b73ace3d1238ca340a507378cabe99707992a5f83"
+    sha256 cellar: :any,                 arm64_tahoe:   "5095ef6ca04b8d675346784243f354a9ee78c6fc2881ab494553885cc9183aec"
+    sha256 cellar: :any,                 arm64_sequoia: "b7a0a9a71340f09a33f3b77b432f3b040622ecbc7015f778b9eb1116311f06e3"
+    sha256 cellar: :any,                 arm64_sonoma:  "b7a0a9a71340f09a33f3b77b432f3b040622ecbc7015f778b9eb1116311f06e3"
+    sha256 cellar: :any,                 sonoma:        "1d86702bd4e155d78e049ba477ba9a94ae8b844645e7dc8942c323b11e7c7fa8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "54af5424f41e707b8efa461e0e9f31f49a4b0be08ffe797525f4669181dac0ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c444f34c9089ea178c8498fe440644d0b219a11799827ee9b5da8e55ff163504"
   end
 
   depends_on "node"
@@ -23,20 +23,9 @@ class VercelCli < Formula
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
-    # Rebuild rolldown bindings from source so the Mach-O header has enough
-    # padding for install_name rewrites performed during relocation (macOS only).
+    # Remove incompatible deasync modules
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    if OS.mac?
-      cervel = libexec/"lib/node_modules/vercel/node_modules/@vercel/cervel"
-      rm cervel/"node_modules/@rolldown/binding-#{os}-#{arch}/rolldown-binding.#{os}-#{arch}.node"
-      cd cervel do
-        system "npm", "rebuild", "@rolldown/binding-#{os}-#{arch}", "--build-from-source"
-        system "npm", "rebuild", "@rolldown/rolldown", "--build-from-source"
-      end
-    end
-
-    # Remove incompatible deasync modules
     node_modules = libexec/"lib/node_modules/vercel/node_modules"
     node_modules.glob("deasync/bin/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }

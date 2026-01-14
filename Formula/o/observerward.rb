@@ -1,17 +1,17 @@
 class Observerward < Formula
   desc "Web application and service fingerprint identification tool"
   homepage "https://blog.kali-team.cn/projects/observer_ward/"
-  url "https://ghfast.top/https://github.com/emo-crab/observer_ward/archive/refs/tags/v2026.1.8.tar.gz"
-  sha256 "bf6d8fdf3d6611930d6fa25afe179a9283faf1eb104d388b9fc1638c769a7928"
+  url "https://ghfast.top/https://github.com/emo-crab/observer_ward/archive/refs/tags/v2026.1.13.tar.gz"
+  sha256 "7f15a48928617b9acd08ec189b20e9dd796830328c27f7bdea8369a5605f30de"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cced63f50db35ff90185184740ccb2ad11b05c7fa0f44757face8b5ce05caa3e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "767d58d929782840f8b10fa5d0a4d39795006c4e64e20998c2353a31a8705714"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14d24494e0d69cf28a42efda57b46bd0b2ca56cba8f9b853f4c295e642a05e69"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bee2cbae1c9ba0665c8c25dfff4f13208a626c2103685aa7f1bd277189d9852a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a87dd2a35335d1a805e5dee056721f6fe65e81349ef50df6ad8131198007dd08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e7eae4602562147a12b01e607c562499e691b2a85fd9201c9ea6b1d50bb257d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a512214aebb7ce2c5b30521407db42d54444ffe70138d9ef5148be6256ec6797"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "321a40ced48d4388890747b981f3688e3f5a8a8d8a9d77d4f30793e3f223b3d2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95774cd0f192c59984a4342241991c4030b78fbb405edc3da5f54be2b29f295e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4b97113459bf0f3cfd930ce7108670b5669c425e9ae3bbcea8e203ba7bfd6ed1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a220e4fc24e90d8f1cc080b1cd79fc46de666a7323392cb45c0fd9c45ed54751"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2996035aa9b94a3a89a82f5fc45758a3cf1cb30fea55c7a5967e6fd7c3bd3924"
   end
 
   depends_on "protobuf" => :build

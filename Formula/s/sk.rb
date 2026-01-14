@@ -6,6 +6,11 @@ class Sk < Formula
   license "MIT"
   head "https://github.com/skim-rs/skim.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8673c1f23e20a9046e5341e7f9bb2029966aad393adea9a92c839332e99a3807"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e64e2ab2050344a8e178d635f300acb272a27b414efcce6dc06296b6414c84c"

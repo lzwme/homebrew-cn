@@ -1,19 +1,19 @@
 class Mongosh < Formula
   desc "MongoDB Shell to connect, configure, query, and work with your MongoDB database"
   homepage "https://github.com/mongodb-js/mongosh"
-  url "https://registry.npmjs.org/@mongosh/cli-repl/-/cli-repl-2.5.10.tgz"
-  sha256 "ae1a9be2ab8e8c5ab37e436129799577943e160bac58bc893510484e4ab330b8"
+  url "https://registry.npmjs.org/@mongosh/cli-repl/-/cli-repl-2.6.0.tgz"
+  sha256 "d2a3f47bdde82e4eb68dc33e08ec521b0884cee9797bdcbf3d283b711a63f6ce"
   license "Apache-2.0"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "51b764312585b0e918c40b648ede465b04ad0b9e3a4526e7cda7184e56413fbf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51b764312585b0e918c40b648ede465b04ad0b9e3a4526e7cda7184e56413fbf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51b764312585b0e918c40b648ede465b04ad0b9e3a4526e7cda7184e56413fbf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "30bcc38c17624b628fd1a256fd638c42d093a113a0eb313e998b4c64c75f5e26"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "756f84e2b00017c0ab40ff7687c92b495e95b513ad21dee8dfef21b3f097fcf9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "756f84e2b00017c0ab40ff7687c92b495e95b513ad21dee8dfef21b3f097fcf9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14de0fa668c3fc36afdb2e7a1b0b9bb9ff67cf65e9a9a3af29d006470c56e851"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14de0fa668c3fc36afdb2e7a1b0b9bb9ff67cf65e9a9a3af29d006470c56e851"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14de0fa668c3fc36afdb2e7a1b0b9bb9ff67cf65e9a9a3af29d006470c56e851"
+    sha256 cellar: :any_skip_relocation, sonoma:        "df6f63cd5805ead173ba860dd70ff5a2e6e23ecbf8076f52770fe4cd92e4e74c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "318773263a854bf00a90298f1d1157a33471a878cdacc523f717335387b68a60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "318773263a854bf00a90298f1d1157a33471a878cdacc523f717335387b68a60"
   end
 
   depends_on "node"

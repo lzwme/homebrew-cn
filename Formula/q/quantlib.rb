@@ -1,17 +1,17 @@
 class Quantlib < Formula
   desc "Library for quantitative finance"
   homepage "https://www.quantlib.org/"
-  url "https://ghfast.top/https://github.com/lballabio/QuantLib/releases/download/v1.40/QuantLib-1.40.tar.gz"
-  sha256 "5d6b971b998b8b47e5694dfc4851e9c8809624ff24c620579efc7fedef9dc149"
+  url "https://ghfast.top/https://github.com/lballabio/QuantLib/releases/download/v1.41/QuantLib-1.41.tar.gz"
+  sha256 "c5e9a30fce129660932e643647eb9a14e19ec24344d6b813c57c054187b03bdd"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "58937ba7f8806db68889903a328ddc94edf78bf92bbc8ee09fb71272649bd1db"
-    sha256 cellar: :any,                 arm64_sequoia: "77f85d593d7c0dff0bf47800fed21cb86c2338049af672cc19cdaa0325a5e5bf"
-    sha256 cellar: :any,                 arm64_sonoma:  "06b5e6ee4920b501f7e2676167d4622fed88bb18629d68b02e61beb53bbb5f13"
-    sha256 cellar: :any,                 sonoma:        "e01238d588812433834915f2f8589297f19a033f45b1fe104654741ab19c1c67"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "499049928740908c868de1fdc617702d74cf7045d776ae02612c840eb37233d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b1dbe754cf7b0d255b9161577ee51acea10a19a60178299bfebad0f24755099"
+    sha256 cellar: :any,                 arm64_tahoe:   "3928aa0f4834d8aabc97762d5fbc4198e5e43ae3e2ec80bde053b094fbc575d2"
+    sha256 cellar: :any,                 arm64_sequoia: "232bbfca61db5a8beda3c39c540e25dd4c5115690c4e68bb3f4b6ebc27c01614"
+    sha256 cellar: :any,                 arm64_sonoma:  "8243380d2f1efc805c3927a2d67f1e710de7339cf8bb3727b9748db930bbe402"
+    sha256 cellar: :any,                 sonoma:        "02f6a2fcfe39e7ab28a6b347ff22c5d80987dbebb87332f9a614f0fbcd47d87e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a071b78ff0ecf0971d9460b456beeddf5484af56dcf07a5ce16720497967d32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84189c896b25208c88447848bfc8381c33471514d85e316a3e4117bd9662e9d7"
   end
 
   head do

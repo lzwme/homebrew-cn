@@ -1,10 +1,9 @@
 class NodeAT22 < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v22.21.1/node-v22.21.1.tar.xz"
-  sha256 "487d73fd4db00dc2420d659a8221b181a7937fbc5bc73f31c30b1680ad6ded6a"
+  url "https://registry.npmmirror.com/-/binary/node/v22.22.0/node-v22.22.0.tar.xz"
+  sha256 "4c138012bb5352f49822a8f3e6d1db71e00639d0c36d5b6756f91e4c6f30b683"
   license "MIT"
-  revision 4
 
   livecheck do
     url "https://registry.npmmirror.com/-/binary/node/"
@@ -12,13 +11,12 @@ class NodeAT22 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "4899b11cebf0179a7fa104f4bda08cd81b9c863b8b8fde46793f82053880c7bf"
-    sha256 cellar: :any,                 arm64_sequoia: "8c404ee263ac937917d845b5d85414051d96194a0eea5243873e1b5c72f124fa"
-    sha256 cellar: :any,                 arm64_sonoma:  "4f847511ef5fa3afb48e191879f2c6dbc2e6416096c109dd2dcc5606739d9794"
-    sha256 cellar: :any,                 sonoma:        "19073211c4304e11ff20104163b9921a79c91162356da9eac57bbe69f37bb042"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "958d0d88018dca4de8d28925046376797cad6fb20812157e045182bbbb241d14"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ccd103940998340bfa07c2151d55b64d8168ca068ba381aac79b2a0baa204ab"
+    sha256 cellar: :any,                 arm64_tahoe:   "40e01214ea4051854d6a01a1ee8f447fe3ea332ed72cc8729e94fb8893f3d4fe"
+    sha256 cellar: :any,                 arm64_sequoia: "8df9622529cea51c29297c490f028aad42b402dd3ad0f36e0a48a57b2fbd5678"
+    sha256 cellar: :any,                 arm64_sonoma:  "8f8bb90848e2174224316b81ef3f34aa333684d7ee809a8bbf74a89bc4f1d2fe"
+    sha256 cellar: :any,                 sonoma:        "76af282fde5dabab1c469c1e4c8f3670f22bf2bc5cf56b6b4562fb6c1bfff6be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "138c857478d15f76fee87190397d6706d58488926c693a2c8c9a31e979ad74ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eec931d242d22fe55b84bab6c283d8e3b67e6cbb91283b91a2357615e166945f"
   end
 
   keg_only :versioned_formula

@@ -21,6 +21,12 @@ class Comby < Formula
     sha256               x86_64_linux:   "6a87649180d98f7555771ceb9d6062a1ce98f2aaaff996f52f9f8249bf300a8c"
   end
 
+  # https://github.com/comby-tools/comby/issues/358
+  # https://github.com/comby-tools/comby/issues/381
+  # https://github.com/comby-tools/comby/issues/392
+  deprecate! date: "2026-01-13", because: "needs EOL `pcre`, OCaml < 5 and multiple workarounds to build"
+  disable! date: "2027-01-13", because: "needs EOL `pcre`, OCaml < 5 and multiple workarounds to build"
+
   depends_on "autoconf" => :build
   depends_on "gmp" => :build
   depends_on "ocaml@4" => :build # https://github.com/comby-tools/comby/issues/358

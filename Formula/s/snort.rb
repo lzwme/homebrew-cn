@@ -1,9 +1,9 @@
 class Snort < Formula
   desc "Flexible Network Intrusion Detection System"
   homepage "https://www.snort.org"
-  url "https://ghfast.top/https://github.com/snort3/snort3/archive/refs/tags/3.10.0.0.tar.gz"
-  mirror "https://fossies.org/linux/misc/snort3-3.10.0.0.tar.gz"
-  sha256 "fbd6619e612998330f8459486158a3ea571473218628d9011982aaf238e480e2"
+  url "https://ghfast.top/https://github.com/snort3/snort3/archive/refs/tags/3.10.1.0.tar.gz"
+  mirror "https://fossies.org/linux/misc/snort3-3.10.1.0.tar.gz"
+  sha256 "fca496990d37adaf1ba9d61b7a89388a1a78b3d59bdc5980bffb39c616e0584f"
   license "GPL-2.0-only"
   head "https://github.com/snort3/snort3.git", branch: "master"
 
@@ -16,12 +16,12 @@ class Snort < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4fb4b1c2607726513d9d0ed202c3a0a23d0d236141d1676ed4a6021606fbc9ac"
-    sha256 cellar: :any,                 arm64_sequoia: "64dd5b9d69229c10ba034befce6ed483279b01d527365493ada3892907585498"
-    sha256 cellar: :any,                 arm64_sonoma:  "6ae3223cb870e302a25bac2b1b904d630fef3cf50ca4ebeb8d7c45ecc2e8fd67"
-    sha256 cellar: :any,                 sonoma:        "499562e2c285def293c0aececfa9de7babac25e8ab4f46d06f37cee4728d9980"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be45db270eba7ccea6e7e5654408334f8a20f92df080109dce8672077f2d1c32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1a108b5b3da511f2844970fc4dacd316c041123f53cc019b0fb8698a505b69a"
+    sha256 cellar: :any,                 arm64_tahoe:   "9abbf5d21692ab159a44d6bdfe484dd661ec87116924be603f0d9ffbb6e6dd32"
+    sha256 cellar: :any,                 arm64_sequoia: "96e08a9f1b30093d9c75fb3fe383e07706e9a8bfc9a57a68b693caf5d9216c2c"
+    sha256 cellar: :any,                 arm64_sonoma:  "52fb8766ccadf343c4869fbb5f0bd7a6c56836d4795fd55ea7150e58fb350bf5"
+    sha256 cellar: :any,                 sonoma:        "ea945086d6ff41a70d4dfcec9874bf66daf673d8d47bab24503e350f2a4bf875"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b80cddb02df03aa96338a9ec70a7d5d1381d23cf33567d049d71ace80a95402"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3da5b37024260eb5e308f0a2645d195555b7302ccbb68b26c9b07a2bfe87df1"
   end
 
   depends_on "cmake" => :build

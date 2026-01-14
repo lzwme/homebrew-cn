@@ -3,18 +3,18 @@ class Gcovr < Formula
 
   desc "Reports from gcov test coverage program"
   homepage "https://gcovr.com/"
-  url "https://files.pythonhosted.org/packages/47/12/460c5d026ea8877cade21473e090a125288442ff930cd08bdf5e3f9eb194/gcovr-8.5.tar.gz"
-  sha256 "9f0e21aab72b70fc26a4a0b6e35f25b97eefb5ce6e9c57388bf4a065726f7965"
+  url "https://files.pythonhosted.org/packages/07/37/b4a87dff166dc0a5002e9d03fcb6ca8eeff048247b011b67f047e31122c9/gcovr-8.6.tar.gz"
+  sha256 "b2e7042abca9321cadbab8a06eb34d19f801b831557b28cdc30a029313de8b9e"
   license "BSD-3-Clause"
   head "https://github.com/gcovr/gcovr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "987ff0c69f40efff1a75416a8df8b685de88d804b6abd1f999841189e98b5288"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6b10244e902e6ca3f0846b4094f13214807bd849496c49550e855d6bc7e674e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5f87abec3e99472b6c36aa772deab78aebc214f23362f591ce9d6e1e1d68071"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0302bf151507a54b5282c7c6b39f74f3f39cc712b5b9262dbde3a8ffab199397"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "08ee045705e83170f6aad7c82e870e38799c2753163d46ae356f0fc991d7c689"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d8d0dcd8f16b74d82f6032f3379a073b4d77b3b079dc0c8e1273dd03114e6f9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "49fb3d1e586e2f9dc1cd64e58167158f38a8246f3014943327abcff092aa2bdf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3ed44ba1b42ef26b474a36f17251e2d538d42c98aa8bf5c55ad82a56a932df7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0dee9c6126251e0b9492ab42dce9c630a4b8f1a9ea504abaa7009bcfa2190819"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1ff642a465d7cefa35c1e8708bd3a2699b806105bf835102dfcf521bfe78f1f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2833433cdbd2cd88bb6fca30ac2152e89fd4b4346f26657cace31524fe055f89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "798eca898b3c7345e82eb9240b05a0b60ca803fb202c9b602f01daa85caefb62"
   end
 
   depends_on "python@3.14"

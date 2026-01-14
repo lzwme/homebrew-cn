@@ -11,12 +11,13 @@ class LuaLanguageServer < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "304638afe999d206b0f349f17f7931f4dc1ccb68c012a3e61bdda98d97568383"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f4681b980954d8df87b0d30210edfb8b05cb907346a3eab76eb3ed53dd0b143"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a3da0f939da9d385449f15c20b625df8f75ef9758893c8d80d039a1e0c13fc2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f1ebf685f5975b9176134becbf4bfe877cfa83c0a58ee24c4cc47077f7ea3c3a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb923264cc411ad9092603efa18023efcd7f5c66248e71dce65b73f22832a35a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6eb4ec4506c0a178b69f57beda66a94402f92578853313c38794f750bdf37bfa"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8af3de53188d33f02493d5081ef9279b2c04ad018f6abf75f69edebbbe8f2a00"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6dee007d8edfe16b4acdceb052c5736296ba3d7e10ed3ea3f9ae1ca961bd2e82"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90fdf528d831b557390b35d7b8fdd662539e9b644691b093ad094e4e0de4f3ca"
+    sha256 cellar: :any_skip_relocation, sonoma:        "983b65dfbd7be26fc90026d85c420fa99edfb705216036f4bcf5990221f76fa5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6881ec3396fd2f214ca1c4dcd3f3fa29c66d5b48d3b99ad9fc70d7f501905708"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b793c672f958d2b5d542b2691f12a3a72411dde3e2faf11b0e2bd1ba29de10c"
   end
 
   depends_on "ninja" => :build
@@ -30,6 +31,9 @@ class LuaLanguageServer < Formula
     inreplace buildpath.glob("**/3rd/bee.lua/test/test.lua"),
       "os.exit(lt.run(), true)",
       "os.exit(true, true)"
+
+    # remove git metadata from submodules
+    rm_r Dir["meta/3rd/*/.git"]
 
     chdir "3rd/luamake" do
       system "compile/install.sh"
