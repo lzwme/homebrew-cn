@@ -6,16 +6,16 @@ class Virtualfish < Formula
   url "https://files.pythonhosted.org/packages/1f/4e/343d044d61e80a44163d15ad2f6ca20eca0cb4fef4058caf8e5e55fc3dd9/virtualfish-2.5.9.tar.gz"
   sha256 "9beada15b00c5b38c700ed8dfd76fe35ad0c716dec391536cc322ddd1bccf5e2"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/justinmayer/virtualfish.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7db8cd891c3045609c6d05bdd8a1c85ee0b55d84e78a766b41d26305ade9b9eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf17137816a392422d3cccc72d524845aaffef465754c17d57299656a71281fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e37b1a1685c3894bf8106b8c0e07f3d2f31cdf3e3e3f756503ea266b853aa343"
-    sha256 cellar: :any_skip_relocation, sonoma:        "53ef8ca19c8e024c1fe9d49403494d6ae51253f5c87c17fd28ffcfbafa5986d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6270630687ce8f737c9e93c8b70546a381fcb990adb4e2949b2c77e689e42704"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9adca74ba05d686ef47e880de8160131cdc6936f8757e3a1b8bdb357f620b5e2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "583e62178567f9891da395f2bf897d181cc18c973319a9c9b34039a3798dd036"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "997e99c272f6bda6bc7c4ae1f276c64db8619a7e56d678b3b0b55ecdc6c2ca1d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f695ccdee63677833334b2670280984b5dab5b1ace0c00ce6f25a265e09049ea"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2c6c84c215d19c32e42c40dafcae570328000363d8f178256bead3dd0f2db157"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e82e0d0cc3afa2e4cbc9902ea7fbf0db7d55b18990815fca1ab68941aec83ea3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2303f8040a45c1900835749518087ea475281d9f78da15634b669d6f269a3076"
   end
 
   depends_on "fish"
@@ -27,8 +27,8 @@ class Virtualfish < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
-    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
+    url "https://files.pythonhosted.org/packages/1d/65/ce7f1b70157833bf3cb851b556a37d4547ceafc158aa9b34b36782f23696/filelock-3.20.3.tar.gz"
+    sha256 "18c57ee915c7ec61cff0ecf7f0f869936c7c30191bb0cf406f1341778d0834e1"
   end
 
   resource "packaging" do
@@ -47,13 +47,13 @@ class Virtualfish < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
-    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
+    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
+    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/20/28/e6f1a6f655d620846bd9df527390ecc26b3805a0c5989048c210e22c5ca9/virtualenv-20.35.4.tar.gz"
-    sha256 "643d3914d73d3eeb0c552cbb12d7e82adf0e504dbf86a3182f8771a153a1971c"
+    url "https://files.pythonhosted.org/packages/aa/a3/4d310fa5f00863544e1d0f4de93bddec248499ccf97d4791bc3122c9d4f3/virtualenv-20.36.1.tar.gz"
+    sha256 "8befb5c81842c641f8ee658481e42641c68b5eab3521d8e092d18320902466ba"
   end
 
   def install

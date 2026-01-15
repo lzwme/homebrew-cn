@@ -1,18 +1,18 @@
 class Yozefu < Formula
   desc "TUI for exploring data in a Kafka cluster"
   homepage "https://github.com/MAIF/yozefu"
-  url "https://ghfast.top/https://github.com/MAIF/yozefu/archive/refs/tags/v0.0.24.tar.gz"
-  sha256 "20bc3c9f88bde4595ac658ac4d4929b214a9857971d0427b24569a4cf2766762"
+  url "https://ghfast.top/https://github.com/MAIF/yozefu/archive/refs/tags/v0.0.25.tar.gz"
+  sha256 "82c3cafd34152527c680780dd0a68c18bf8d00a94696c4a8781e458c1ac43707"
   license "Apache-2.0"
   head "https://github.com/MAIF/yozefu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "971c80b2402ffaf7464a74b68467833080a5b47f3268c8b9b4e257225605c02e"
-    sha256 cellar: :any,                 arm64_sequoia: "70f6407f1531c1a21583a48563e72c05f389462a9b43704702fde9230ae0f797"
-    sha256 cellar: :any,                 arm64_sonoma:  "d1f7f64081cabdec187355a24b6cff1459a9a16432d7119e99f7e626aaa20410"
-    sha256 cellar: :any,                 sonoma:        "04c4dc08d3cb435705442302cd4e77fa24daddd07ae1424112752260fc6ae421"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbe2d3197fceada7340ee3bc9a40df5d96fb3aa876a0c1e4313f47bccd01b430"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddb89838312847f4e2b58fe4b9ca3fc63a77ef0b5731647fe9ec6985169584e2"
+    sha256 cellar: :any,                 arm64_tahoe:   "35f3ea379653f624b52501faa94b9ae05e6cb287ddba55feefdc5bbc7ea861ce"
+    sha256 cellar: :any,                 arm64_sequoia: "3862b4501f5b4b401405d18eb34c61aaa07995486ff14a49d66d2725c3cbf0f2"
+    sha256 cellar: :any,                 arm64_sonoma:  "c02322ffceb785f43db752f63a9de1d7744d9bc68b7366e8d89b5eb857db6ee0"
+    sha256 cellar: :any,                 sonoma:        "4dc38b3acbd8154c90509dbe102738796f9337fa09cbcabe96d67e04316a8249"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ccac69a0c5cf12729ac70546aadf4f9d1fda92b1db55d10dbd43d3eef166596c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9590346a8e4de43c564dfba2a2794095842b38b04630bc16154b4ba39f138609"
   end
 
   depends_on "cmake" => :build

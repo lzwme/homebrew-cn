@@ -6,16 +6,16 @@ class AwsGoogleAuth < Formula
   url "https://files.pythonhosted.org/packages/32/4c/3a1dd1781c9d3bb4a85921b3d3e6e32fc0f0bad61ace6a8e1bd1a59c5ba0/aws-google-auth-0.0.38.tar.gz"
   sha256 "7a044636df2f0ce6ceb01f8f57aba0b6a79ae58a91bef788b0ccc6474914e8ee"
   license "MIT"
-  revision 17
+  revision 18
   head "https://github.com/cevoaustralia/aws-google-auth.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34d013359705dd80da5a1bfd035db983b84f5e6a148c2e3562c8337b0d77b99d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0eedd4aa7f87e1b20c95f8acf83edb96039a2bd8ed865704802dce28c12d08c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1f56e1d3a2e42f33e7b0425af1de9c7a0edc84d0e1dd880fb38fbe48a93ba0a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8651432cbe3c80f4fc0d949e27447b4b8fc2ba3ca3a6c0762c4c43d7d3de191e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "66db2612e3111a13954337e0c227cb65c6f4cb881dad28bc39c1b890a9658c81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ff781a71c44989fae694cef35b5a5d4ebddeb6fe850b5cb3b3e65c459972b67"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "28c25bf71c4b34dee1e142dfc65dd855d07e8e91bab29048ad477ee0f75e1544"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c774d82e47046e5bd108f6ae349a2dd3e61909822cc000ff3f822563164c7fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62b5a19c1c131d46c172905894acb2ddd1fb303b2c14c3d71fef60f6be97b167"
+    sha256 cellar: :any_skip_relocation, sonoma:        "450847cfae4aea0422421b051f22c19c464ad5687680c1e6a744710a676194f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "84ed2bc606e0af339317b8f051e778b51eeefa7da3542f3a3cd2651f171657d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d978a7c26a3698872ea52cd41afb1c663223e46635c69eb7a551cd840edbbf6e"
   end
 
   depends_on "certifi" => :no_linkage
@@ -38,13 +38,13 @@ class AwsGoogleAuth < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/ee/21/8be0e3685c3a4868be48d8d2f6e5b4641727e1d8a5d396b8b401d2b5f06e/boto3-1.42.24.tar.gz"
-    sha256 "c47a2f40df933e3861fc66fd8d6b87ee36d4361663a7e7ba39a87f5a78b2eae1"
+    url "https://files.pythonhosted.org/packages/8d/99/65569052c911160702ad371b0b08b751bb1df29deeef0c5c117528074c29/boto3-1.42.27.tar.gz"
+    sha256 "a8a53abb98ff1a24d9a88d9d8c0285bf02d23189666130456e8951ede2f7db98"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/12/d7/bb4a4e839b238ffb67b002d7326b328ebe5eb23ed5180f2ca10399a802de/botocore-1.42.24.tar.gz"
-    sha256 "be8d1bea64fb91eea08254a1e5fea057e4428d08e61f4e11083a02cafc1f8cc6"
+    url "https://files.pythonhosted.org/packages/65/90/55b003d38f947c90c0d7e306d377dcdfd9cd0dc1e184082b2d1a6adb0eec/botocore-1.42.27.tar.gz"
+    sha256 "c8e1e3ffb6c871622b1c8054f064d60cbc786aa5ca1f97f5f9fd5fa0a9d82d05"
   end
 
   resource "charset-normalizer" do
@@ -58,8 +58,8 @@ class AwsGoogleAuth < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/c1/e0/a75dbe4bca1e7d41307323dad5ea2efdd95408f74ab2de8bd7dba9b51a1a/filelock-3.20.2.tar.gz"
-    sha256 "a2241ff4ddde2a7cebddf78e39832509cb045d18ec1a09d7248d6bfc6bfbbe64"
+    url "https://files.pythonhosted.org/packages/1d/65/ce7f1b70157833bf3cb851b556a37d4547ceafc158aa9b34b36782f23696/filelock-3.20.3.tar.gz"
+    sha256 "18c57ee915c7ec61cff0ecf7f0f869936c7c30191bb0cf406f1341778d0834e1"
   end
 
   resource "idna" do
@@ -73,8 +73,8 @@ class AwsGoogleAuth < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/8d/7d/41acf8e22d791bde812cb6c2c36128bb932ed8ae066bcb5e39cb198e8253/jaraco_context-6.0.2.tar.gz"
-    sha256 "953ae8dddb57b1d791bf72ea1009b32088840a7dd19b9ba16443f62be919ee57"
+    url "https://files.pythonhosted.org/packages/cb/9c/a788f5bb29c61e456b8ee52ce76dbdd32fd72cd73dd67bc95f42c7a8d13c/jaraco_context-6.1.0.tar.gz"
+    sha256 "129a341b0a85a7db7879e22acd66902fda67882db771754574338898b2d5d86f"
   end
 
   resource "jaraco-functools" do

@@ -4,15 +4,13 @@ class BlueprintCompiler < Formula
 
   desc "Markup language and compiler for GTK 4 user interfaces"
   homepage "https://gnome.pages.gitlab.gnome.org/blueprint-compiler/"
-  url "https://gitlab.gnome.org/GNOME/blueprint-compiler/-/archive/0.18.0/blueprint-compiler-0.18.0.tar.gz"
-  sha256 "51aa472ecd7bd4b32b8baa7ae6768b19810793d4a2a1aba39c5b31b0170cb258"
+  url "https://gitlab.gnome.org/GNOME/blueprint-compiler/-/archive/0.19.0/blueprint-compiler-0.19.0.tar.gz"
+  sha256 "f5aaf95d8a0ba4c8ad104465dd3df3eeb2e72b67785d969d7fd8bc7cf4127ee9"
   license "LGPL-3.0-or-later"
-  revision 1
   head "https://gitlab.gnome.org/GNOME/blueprint-compiler.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "d935e3b6be2f9ca0baba92580a768de9e3bdc89f3d55e24113e39336456eb414"
+    sha256 cellar: :any_skip_relocation, all: "b78efc382e4cc768ec177a1c5495d31ca74063b9be63f2b69f3b507ea8a1d183"
   end
 
   depends_on "meson" => :build

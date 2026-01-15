@@ -2,7 +2,7 @@ class Gpac < Formula
   desc "Multimedia framework for research and academic purposes"
   homepage "https://gpac.io/"
   license "LGPL-2.1-or-later"
-  revision 4
+  revision 5
   head "https://github.com/gpac/gpac.git", branch: "master"
 
   stable do
@@ -34,12 +34,12 @@ class Gpac < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bbdf9e8ba90e9b978db456626bbfe892ceeb0b48f8931b4f45759be06e91a4e9"
-    sha256 cellar: :any,                 arm64_sequoia: "c2901d56f864a0a2b9ae3913626bac8c2f234e13e23e7ccf8e5906c6e4635473"
-    sha256 cellar: :any,                 arm64_sonoma:  "82883dfbdcc0eb50c377c76149a112105e7a9d42e1d234812597a523d6880108"
-    sha256                               sonoma:        "b515a5123f256d810a2b53f3110ffd4adf1ced2005d4a961c4995135207093c2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d5dce0bd91c203ce9fb938b4de0909b6ee8d7b54ccb635506816638836c7d60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c71f8c9e35e72185a39aaf05d12126203e10f7dce1be02e7e7134f8e3b8ec9a2"
+    sha256 cellar: :any,                 arm64_tahoe:   "8bf0f70df5ff6eb637496a701d1edb87d1c0cba64d37727a0b901534a4bf0d25"
+    sha256 cellar: :any,                 arm64_sequoia: "335e62cb07a553ba150f6af7f4908187c75df376fc51f1e8eb090fa40db1d3b0"
+    sha256 cellar: :any,                 arm64_sonoma:  "f037bb51fc3e11634361c80b4a7ba00550fd1e7fb933cb12a940282bf3710a9f"
+    sha256                               sonoma:        "62c598517a06e0e18a0704e6b1252cd4f3adb1aca18a32befc6001092c88d620"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "11baac845e8aa3acfd9eb7cc026271bf87e93aa2041fe7b405d64b499634156c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6ade92b91ef193a6ff88d76a1f311a96785b203487e7d6f4f6a862497625f5d"
   end
 
   depends_on "pkgconf" => :build

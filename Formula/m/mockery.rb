@@ -1,8 +1,8 @@
 class Mockery < Formula
   desc "Mock code autogenerator for Golang"
   homepage "https://github.com/vektra/mockery"
-  url "https://ghfast.top/https://github.com/vektra/mockery/archive/refs/tags/v3.6.1.tar.gz"
-  sha256 "7a6f1a99626cd4471353d6726e48980911763dfce67a04131235ca586e75b579"
+  url "https://ghfast.top/https://github.com/vektra/mockery/archive/refs/tags/v3.6.2.tar.gz"
+  sha256 "9a02920a4f97cbf2b6e673ccbb3234f7b5683e0ee8c9340cb14fefd0e9e7f505"
   license "BSD-3-Clause"
   head "https://github.com/vektra/mockery.git", branch: "v3"
 
@@ -15,13 +15,12 @@ class Mockery < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ea8c2d3304c7b5f91280b05c4fc2c1e3941a1591b5ad67d6dafa416d020bd8b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ea8c2d3304c7b5f91280b05c4fc2c1e3941a1591b5ad67d6dafa416d020bd8b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ea8c2d3304c7b5f91280b05c4fc2c1e3941a1591b5ad67d6dafa416d020bd8b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f54aa400055804a634fa06354a6c1d95aa9b5c725d2c87cf377de12f7c726680"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a55991a52219c618eedfc180419607dafc471be9fe9d8d6325633ba3750b5d73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1e43436f0f6ef7ccb05bded5c4d8ce15ed81ecbd4ec9d2e8fde30e45344a47a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0a010a67b83d018311f9fe7c16b9e1bfa8da96e0adc8020ab1aa2b1ef94a180"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0a010a67b83d018311f9fe7c16b9e1bfa8da96e0adc8020ab1aa2b1ef94a180"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0a010a67b83d018311f9fe7c16b9e1bfa8da96e0adc8020ab1aa2b1ef94a180"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4d992ad6d2a9a1037b84e73ff2eb1c97353f9ef53524efb3b204de5882543560"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ed6c5ca4f2e7642bc111ddfcbb719818c41c5104b4472f59a1f788452c20d2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0454360d7dcc197d309aff84ece49e22a30462c6f8531b8e4bd106663ac461cc"
   end
 
   depends_on "go" => :build

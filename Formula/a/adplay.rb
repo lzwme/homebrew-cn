@@ -27,11 +27,16 @@ class Adplay < Formula
   depends_on "libbinio"
   depends_on "sdl2"
 
+  on_linux do
+    depends_on "alsa-lib"
+  end
+
   def install
-    system "autoreconf", "-ivf" if build.head?
-    system "./configure", *std_configure_args, "--disable-silent-rules",
-                          # SDL output works better than libao
-                          "--disable-output-ao"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    # SDL output works better than libao
+    system "./configure", "--disable-output-ao",
+                          "--disable-silent-rules",
+                          *std_configure_args
     system "make", "install"
   end
 

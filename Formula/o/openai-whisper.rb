@@ -31,6 +31,7 @@ class OpenaiWhisper < Formula
 
   on_linux do
     depends_on "patchelf" => :build
+    depends_on "openblas"
   end
 
   # numba 0.63.1 does not support numpy 2.4.x, see https://github.com/numba/numba/issues/10263

@@ -1,8 +1,8 @@
 class Bold < Formula
   desc "Drop-in replacement for Apple system linker ld"
-  homepage "https://github.com/kubkon/bold"
-  url "https://ghfast.top/https://github.com/kubkon/bold/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "7b12aceeabe32249784347f3bb1befde6dcf621668d0352497ee8ef8c381d9ee"
+  homepage "https://codeberg.org/kubkon/bold"
+  url "https://codeberg.org/kubkon/bold/archive/v0.2.0.tar.gz"
+  sha256 "23f334869f73d85fdc761df4a4d2c43864ae31563280f52568f314ccae393e46"
   license "MIT"
 
   bottle do
@@ -49,7 +49,7 @@ class Bold < Formula
     macos_min = MacOS.version.to_s
 
     system bin/"bold", "hello.o", "-arch", arch, "-macos_version_min", macos_min,
-                        "-syslibroot", MacOS.sdk_path, "-lSystem", "-o", "test"
+                       "-syslibroot", MacOS.sdk_path, "-lSystem", "-o", "test"
 
     assert_equal "Hello from Bold", shell_output("./test")
   end

@@ -6,11 +6,11 @@ class Dnsgen < Formula
   url "https://files.pythonhosted.org/packages/5f/e1/1c7d86f51da5b93f3f99ac99e3ad051ed82234147ddd869f77a3959e6abc/dnsgen-1.0.4.tar.gz"
   sha256 "1087e9e5c323918aa3511e592759716116a208012aee024ffdbeac5fce573a0c"
   license "MIT"
-  revision 5
+  revision 6
   head "https://github.com/AlephNullSK/dnsgen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "885d4d9c14a8f8c3101eeb01fd21038cb151462aa3ce9a5341c520880a1496d3"
+    sha256 cellar: :any_skip_relocation, all: "64866d936e60c1aca1bffdcd1537291c9ca99d0a09d3a4d7722818bbbc442630"
   end
 
   depends_on "certifi"
@@ -29,8 +29,8 @@ class Dnsgen < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/c1/e0/a75dbe4bca1e7d41307323dad5ea2efdd95408f74ab2de8bd7dba9b51a1a/filelock-3.20.2.tar.gz"
-    sha256 "a2241ff4ddde2a7cebddf78e39832509cb045d18ec1a09d7248d6bfc6bfbbe64"
+    url "https://files.pythonhosted.org/packages/1d/65/ce7f1b70157833bf3cb851b556a37d4547ceafc158aa9b34b36782f23696/filelock-3.20.3.tar.gz"
+    sha256 "18c57ee915c7ec61cff0ecf7f0f869936c7c30191bb0cf406f1341778d0834e1"
   end
 
   resource "idna" do

@@ -11,6 +11,11 @@ class Trafficserver < Formula
     depends_on "pcre" # PCRE2 issue: https://github.com/apache/trafficserver/issues/8780
   end
 
+  # Allow livechecking for new releases while deprecated.
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 arm64_tahoe:   "f1f228335aa43ef6fc7ff8e68c2777dc3ff42335cb0b9b71bc74deac28998ab3"
     sha256 arm64_sequoia: "bd0435227b8259ad3ddb4f0e2554fa80313afc5534a216727907e93ed4449154"
@@ -27,6 +32,10 @@ class Trafficserver < Formula
 
     depends_on "zstd"
   end
+
+  # Can be undeprecated with 10.2.0 release.
+  # Backporting PCRE2 support requires 30+ commits and resolving conflicts, so not worth it.
+  deprecate! date: "2026-01-14", because: "needs EOL `pcre`"
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build

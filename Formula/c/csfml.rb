@@ -1,48 +1,50 @@
 class Csfml < Formula
-  # Don't update CSFML until there's a corresponding SFML release
   desc "SMFL bindings for C"
   homepage "https://www.sfml-dev.org/"
-  url "https://ghfast.top/https://github.com/SFML/CSFML/archive/refs/tags/2.6.1.tar.gz"
-  sha256 "f3f3980f6b5cad85b40e3130c10a2ffaaa9e36de5f756afd4aacaed98a7a9b7b"
+  url "https://ghfast.top/https://github.com/SFML/CSFML/archive/refs/tags/3.0.0.tar.gz"
+  sha256 "903cd4a782fb0b233f732dc5b37861b552998e93ae8f268c40bd4ce50b2e88ca"
   license "Zlib"
-  revision 1
   head "https://github.com/SFML/CSFML.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8e33a6a3f34a298c1d64efc5460ed274423457ed95052252dfe1b803b79c26e5"
-    sha256 cellar: :any,                 arm64_sequoia: "e1e1172b80909989105f3813e7d1dba2ce0caca2a7efdd2717724e624b7e9cb0"
-    sha256 cellar: :any,                 arm64_sonoma:  "1a1763c3710588f2e1eff5569802b195f89582cdc9e5dd842cd818135fede023"
-    sha256 cellar: :any,                 arm64_ventura: "0f5543e8c4f83ba20d16b986870afdb4d127326e9b4545b2d98bab4430be4000"
-    sha256 cellar: :any,                 sonoma:        "c63caf00bb7ab923a8d49448b410dd7c269fc1a6e8f194326286d610b972f6af"
-    sha256 cellar: :any,                 ventura:       "d2d7e9b7eef45f2cd6fa0a48c3f0e606f9690945c8bc7ef396eeeb6640bd62e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8233ef7ba98f94386973b6594231a3fdae9706f0c769aa5ae4b23a2ce12a103f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4c772a79cfa52cd66d37f85c6964473519693d3661f593ede05b4103ae09983"
+    sha256 cellar: :any,                 arm64_tahoe:   "079033bd42bdbbc6d32540f4cdd0d6d4edd734e2dd2b3b29221ca1302e8b88f6"
+    sha256 cellar: :any,                 arm64_sequoia: "5908757a15a2ce67c4c38c47fdcad0dbdd9ab3eb3b4b3f9cd82e94ad70028cfa"
+    sha256 cellar: :any,                 arm64_sonoma:  "8b6e300e881791159f17fc8f0408a1186098ff0c998c098f19ce04a8ced46fa6"
+    sha256 cellar: :any,                 sonoma:        "9edacf0a72a2a907a76ee25e8a05ef1a1ab9dcab14f31bbea0a93d319d882429"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "322b12666dc4b5c0f017f359146b95c6b8efa87a2c234ee9a22af3da326febba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e25efc33ea956ec8be19658b2b82b81cafcd1c971b493e25258b4f8bf4a42b2"
   end
 
   depends_on "cmake" => :build
-  depends_on "sfml@2" # milestone to support sfml 3.0, https://github.com/SFML/CSFML/milestone/1
+  depends_on "sfml"
 
   def install
-    args = %W[
-      -DCMAKE_MODULE_PATH=#{Formula["sfml@2"].share}/SFML/cmake/Modules/
-    ]
-
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    (testpath/"test.c").write <<~C
-      #include <SFML/Window.h>
+    (testpath/"test.cpp").write <<~CPP
+      #include <CSFML/Window/Window.h>
 
-      int main (void)
+      int main()
       {
-        sfWindow * w = sfWindow_create (sfVideoMode_getDesktopMode (), "Test", 0, NULL);
-        return 0;
+          sfVideoMode m = {800, 600, 32};
+          sfWindow* w = sfWindow_create(m, "csfml", sfClose, sfWindowed, NULL);
+
+          while (sfWindow_isOpen(w))
+          {
+              sfEvent e;
+              sfWindow_pollEvent(w, &e);
+              sfWindow_close(w);
+          }
+
+          sfWindow_destroy(w);
+          return 0;
       }
-    C
-    system ENV.cc, "test.c", "-L#{lib}", "-lcsfml-window", "-o", "test"
+    CPP
+    system ENV.cxx, "test.cpp", "-L#{lib}", "-lcsfml-window", "-o", "test"
     # Disable this part of the test on Linux because display is not available.
     system "./test" if OS.mac?
   end

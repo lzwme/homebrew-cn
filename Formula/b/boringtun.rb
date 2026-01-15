@@ -1,20 +1,18 @@
 class Boringtun < Formula
   desc "Userspace WireGuard implementation in Rust"
   homepage "https://github.com/cloudflare/boringtun"
-  url "https://ghfast.top/https://github.com/cloudflare/boringtun/archive/refs/tags/boringtun-0.6.0.tar.gz"
-  sha256 "3b9fbd7bbc76c5e98237b34b9790656fb38d09cb9ac417361bf5881e44581035"
+  url "https://ghfast.top/https://github.com/cloudflare/boringtun/archive/refs/tags/boringtun-0.7.0.tar.gz"
+  sha256 "a49f3c230825f44d5c304d95751d7fb4dd2df6ddb9e47535e1b186c8bd8d56ef"
   license "BSD-3-Clause"
   head "https://github.com/cloudflare/boringtun.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c63f98c9e4fd4cc7d16792968d183925958bda7ee096f5960eabce10c372b2e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b99c028395d91a7117b2287ea874730fa564416df85b646a6a078543a139320a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ce4199d92b31f23dfe37ce587a933fe2d7dba7bf832a4cfab6bd7dda783bb57"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "47c31d89d533a16220f0f88f23347357f95f7d815e7ceb0773e9ad0423691db2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8bc9c266cd64613c37408c3e98ef80eaef53c4461f16c1a3891e361e4cd29c6b"
-    sha256 cellar: :any_skip_relocation, ventura:       "0a9e89734c509ad3c0f8dd48d7a8150d0e861ae8120bb8d95ff0b27b44525fb2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "210e8a4f5b83d3d7d3ba20fd36651c98bb0025901a51a222412d8a55b89dfe0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8165499bd4051c41df6b5a00dd62b9e5839e5863e54ec9992d7dd83ec400f88"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c25b6f0df17bab99cdfceb31f2d5a9cd138bf7964bf645c758d4b5ce0c4e5671"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "19ed7d7915ab9a8384c3f78e5c2ba051d6cebfa54a1ee5279f79e6c98d650b47"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e504446eed22fda2b5c33de673790e413af99d5d319922fdf8b6205360c2f571"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3093bdb97aaac295e60d427c12f09adaa21f392eedecb51fefe617d2210ac48c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "576770d4e4f0ab75c50ade48145b27fa9f30ac03e5a24f72b374c7921a8d95d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed03ae2827ea946af365aa93bef4ce8d020ad2603becd561cae40f0e97964d66"
   end
 
   depends_on "rust" => :build

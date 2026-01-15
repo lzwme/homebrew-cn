@@ -1,15 +1,13 @@
 class Zug < Formula
   desc "C++ library providing transducers"
   homepage "https://sinusoid.es/zug/"
-  url "https://ghfast.top/https://github.com/arximboldi/zug/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "1b9c8f962e40baa6f0c6af35f957444850063d550078a3ebd0227727b8ef193c"
+  url "https://ghfast.top/https://github.com/arximboldi/zug/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "75ff666a4ce1615b3ca26abbb17b10f5cb5cf5f86c9c293ec430c34750d3ea27"
   license "BSL-1.0"
-
-  no_autobump! because: :requires_manual_review
+  head "https://github.com/arximboldi/zug.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "33a7f1d34c98cd5ee378621ce802982e1e74416ace1e10eb9c2c7d48efc8cb17"
+    sha256 cellar: :any_skip_relocation, all: "e3834dddcd9eb7036a9a75ea740f0498c6566cfb6dec6f3d20e488b7f4881f96"
   end
 
   depends_on "cmake" => :build

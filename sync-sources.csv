@@ -620,7 +620,7 @@ Homebrew-homebrew-core/Formula/b/boa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bob.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bochs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bogofilter.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/b/bold.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bold.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bom.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bombadillo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bombardier.rb, Homebrew/homebrew-core, 1
@@ -2017,6 +2017,7 @@ Homebrew-homebrew-core/Formula/f/ffe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffmate.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/ffmpeg-full.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/ffmpeg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/ffmpeg2theora.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/ffmpeg@2.8.rb, Homebrew/homebrew-core, 0
@@ -6479,7 +6480,7 @@ Homebrew-homebrew-core/Formula/s/seexpr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/selecta.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/selene.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/selenium-server.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/semgrep.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/semgrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/semtag.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/semver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sendemail.rb, Homebrew/homebrew-core, 1
@@ -6553,6 +6554,7 @@ Homebrew-homebrew-core/Formula/s/sherif.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sherlock.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/shfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shibboleth-sp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/shiki.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/shimmy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shivavg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/shmcat.rb, Homebrew/homebrew-core, 0
@@ -9627,6 +9629,7 @@ Homebrew-homebrew-cask/Casks/f/freeorion.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freepdf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freeplane.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/freeshow.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/f/freeshow@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freesurfer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/freetex.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freetube.rb, Homebrew/homebrew-cask, 1
@@ -12833,6 +12836,7 @@ Homebrew-homebrew-cask/Casks/k/koala.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kobo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kodelife.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kodi.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/k/kogiqa.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/komet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/konica-minolta-bizhub-c750i-driver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/konica-minolta-bizhub-c759-c658-c368-c287-c3851-driver.rb, Homebrew/homebrew-cask, 0
@@ -13544,7 +13548,6 @@ Homebrew-homebrew-cask/Casks/n/notepadexe.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notes-better.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notesnook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notesollama.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/n/noti-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notion-calendar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/notion-enhanced.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notion-mail.rb, Homebrew/homebrew-cask, 0
@@ -13644,7 +13647,6 @@ Homebrew-homebrew-cask/Casks/o/open-eid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/open-in-code.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-video-downloader.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openaudible.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/o/openbazaar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openbb-terminal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openbci.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openboard.rb, Homebrew/homebrew-cask, 1
@@ -14050,6 +14052,7 @@ Homebrew-homebrew-cask/Casks/p/pronotes.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pronterface.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/propresenter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/propresenter@beta.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/proscoreboard.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/prosys-opc-ua-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/protege.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/protoio-overflow.rb, Homebrew/homebrew-cask, 0
@@ -14060,6 +14063,7 @@ Homebrew-homebrew-cask/Casks/p/proton-mail.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/proton-pass.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/protonvpn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/protopie.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/provideoplayer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/provisioning.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/provisionql.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/prowlarr.rb, Homebrew/homebrew-cask, 1

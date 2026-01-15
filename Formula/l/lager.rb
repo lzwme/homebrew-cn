@@ -1,15 +1,13 @@
 class Lager < Formula
   desc "C++ lib for value-oriented design using unidirectional data-flow architecture"
   homepage "https://sinusoid.es/lager/"
-  url "https://ghfast.top/https://github.com/arximboldi/lager/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "9e4743c3fe2c95c1653c3fd088a2200108f09d758725697831852dc91d15d174"
+  url "https://ghfast.top/https://github.com/arximboldi/lager/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "026e12a86214e7a2c24477a307c82240f07dcc65b53b68763b7b408c43d5d2cb"
   license "MIT"
-
-  no_autobump! because: :requires_manual_review
+  head "https://github.com/arximboldi/lager.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "092b29ac8e64b817faba834b6b03d4970ce7cf939a271e812bdfcfd09dd081ff"
+    sha256 cellar: :any_skip_relocation, all: "ebbb63b2e8a33ba657c94b3e3cf14879d196bc909805a3a507b75739ee145e83"
   end
 
   depends_on "cmake" => :build

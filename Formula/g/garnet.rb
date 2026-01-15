@@ -1,20 +1,22 @@
 class Garnet < Formula
   desc "High-performance cache-store"
   homepage "https://microsoft.github.io/garnet/"
-  url "https://ghfast.top/https://github.com/microsoft/garnet/archive/refs/tags/v1.0.91.tar.gz"
-  sha256 "18a6690341c944977ef909b76068669e179ce237d842fbe764df48f6963931a9"
+  # Check for dotnet 10 support on release updates
+  # https://github.com/microsoft/garnet/blob/main/Directory.Build.props#L4
+  url "https://ghfast.top/https://github.com/microsoft/garnet/archive/refs/tags/v1.0.92.tar.gz"
+  sha256 "955877a8e3f6177737aca5237b0f627e9d4d503a0282b9009340e0660f8234d3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9de73832b4035e8e5a84127f3015cbe0b0fa6401332012c58bd65b921fb187f9"
-    sha256 cellar: :any,                 arm64_sequoia: "e93003f24323e8a4e0f56258369b03f6be737f3af597950c13bd6f36c2577719"
-    sha256 cellar: :any,                 arm64_sonoma:  "47772246726056bdd1e89d07982da2cc3af38d3dce607d381610811c0bdc17fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "04b9d4dde7a2049448bdab617b9a060d932741a4123c0953c59bf16381b884ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f650dd847522750d3eda1104af1a467abe826916f2f040a6547e29db9b3a1580"
+    sha256 cellar: :any,                 arm64_tahoe:   "6429b48e56443a78082dbbc95fc063fb0a0a6dd34a71ce11c6d75d0d1e4f473a"
+    sha256 cellar: :any,                 arm64_sequoia: "793cf6634199e0b2ec3d092bda3875ef7d310f40bacc4de17efa6eb9dec8c41b"
+    sha256 cellar: :any,                 arm64_sonoma:  "8d70d83e4446dce8bd5190658d709fb3caac527d39aae2d0e7a3ce2b57830dbf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "908456c13bc5d75db5d8cf9e3119797b27be2e7b7984c74b1612bd8175ff9b1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd9cb94dc2599d09b241af849d7c08ade29250972a9493954abd0574606d1053"
   end
 
   depends_on "valkey" => :test
-  depends_on "dotnet"
+  depends_on "dotnet@9"
 
   on_linux do
     depends_on "cmake" => :build
@@ -37,7 +39,7 @@ class Garnet < Formula
       end
     end
 
-    dotnet = Formula["dotnet"]
+    dotnet = Formula["dotnet@9"]
     args = %W[
       --configuration Release
       --framework net#{dotnet.version.major_minor}

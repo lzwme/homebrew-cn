@@ -1,9 +1,9 @@
 class Spigot < Formula
   desc "Command-line streaming exact real calculator"
   homepage "https://www.chiark.greenend.org.uk/~sgtatham/spigot/"
-  url "https://www.chiark.greenend.org.uk/~sgtatham/spigot/spigot-20240909.f158e08.tar.gz"
+  url "https://www.chiark.greenend.org.uk/~sgtatham/spigot/spigot-20260114.ed81b83.tar.gz"
   version "20240909"
-  sha256 "f2b7b8b9b0e0b138dcfd6ac4eb46fa79706b1842522894c45ddfd731d27bf673"
+  sha256 "40a1bcfc52d6c581ae67b2a1456ec9f28b959789a00faf487cd06b4585576e67"
   license "MIT"
 
   livecheck do
@@ -11,19 +11,16 @@ class Spigot < Formula
     regex(/href=.*?spigot[._-]v?(\d+(?:\.\d+)*)(?:[._-][\da-z]+)?\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "101f725aafee893f70ecd25457844a6c3a4d1d432d7c2dc82f285ad02a51389e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f2820ca0f23f9516c1e27c3ea1488558a4912f0eb75dd361917705e02b2096ef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb86f3da309c5adb78f3dd822284df1a561e77056ae252dcfa79e787c8601c3b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9101dda021b8f6fdfdb377750cfc9aeae90a2f050126223201c98a0d5be09732"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a9002983a479f2f2d328b8dc3ae4f41e9d4ed5813493d77ab5caa3725c77d6c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "65911180b9cca1a6b1febd6e2f35bf68563ef2dfa6095c5b079cec693a82d5b5"
-    sha256 cellar: :any_skip_relocation, ventura:        "7e70ba708f6667e2733026ec5b277f6c585e1ed325632aa3bd0ab091910c142b"
-    sha256 cellar: :any_skip_relocation, monterey:       "2c82b6ea337b197745e2416acb4b2e8e0b236972c1a1ae5f7eaa0f78e67493f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "3bfd33b820e4011431439c66813914c647cbbea77c0e17e185c990775345aa24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29e623ea321b9038b416675b0646e872c34c230ced67a62a527cd0e08470a8b4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "15223c0b5cf422b0f03b13e6484f7958c83bfa7114d91953613506aaf08c8e71"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e6a47eb11c75f57fcadc269e69b7d364af2d25b7ccb9c318b2c7572635dfc9d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "850f141863594676ef5a764560473ac3b87e114d0dc74259339dad2667b4d269"
+    sha256 cellar: :any_skip_relocation, sonoma:        "93e53dc9175402447f0ccc2cd2dde44e7de0714ef75f5c8ce8fdb65f4749c5f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c77b170d055bfeaca1902289dd580df99889d9059aa5a0386ed5ad99e7773323"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca8662a6fdd1d277ee211deee1d53f6ea97a186762df2e2a73374f1093364ecb"
   end
 
   depends_on "cmake" => :build

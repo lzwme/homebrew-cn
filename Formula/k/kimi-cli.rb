@@ -3,18 +3,18 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/7a/c3/3596b3a407d8452a633e1cb7d20dd5f1bd78e01b9659583ae3812d464d35/kimi_cli-0.76.tar.gz"
-  sha256 "6d41245bd95ff84fef6640684f82d78f5539811877992bb4f590ad87be05315e"
+  url "https://files.pythonhosted.org/packages/e5/82/82ad9a6dd1bee95b3d1a68ea5fafcb5ddf94178618b0fc50e3386b695411/kimi_cli-0.77.tar.gz"
+  sha256 "617981dd04c3e1556cb52efaa61c8a37d51118f8ac2db9c08cbfe61b5e1ebeff"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7286aaab79532d206bb331e1abd26c52902dc25261c58a93431926d3d71281b9"
-    sha256 cellar: :any,                 arm64_sequoia: "3bf04f8a602bffed465b8f31b944ca047b6465ce7aac27cdc4a08ccfc0452c15"
-    sha256 cellar: :any,                 arm64_sonoma:  "4ae8105e3c1d7c1fa65c9b1afa391a0c6ae1b05ba11375c697e7036b09ae55e5"
-    sha256 cellar: :any,                 sonoma:        "40ffd01c45550803ba93b971d1df7996e58f01e1d14f1615a79fed66fea600c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec756b94215ed1b68870a9e2eb9dbdb85c1d33a5d50973a3d615472297d7aec0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d64a01a2d3a3fd2b3df7885a7d99677e28f8be445837d7a912c1daa71752977"
+    sha256 cellar: :any,                 arm64_tahoe:   "cba0e5db6c5dd23599602c30f92049bbc4038b0a08dabd142310a065e5b34f31"
+    sha256 cellar: :any,                 arm64_sequoia: "62ba349faa89024b158964710ba40e815f1a94d7a083c1337ac7999d8f94c4a2"
+    sha256 cellar: :any,                 arm64_sonoma:  "8f6cc3ed440f4d90feb0c19614ef8183a506df94f55814a27e53dadaf67a8e45"
+    sha256 cellar: :any,                 sonoma:        "1578f35f7e56579e84c28f2e593b404f2713591a00c1b73fa18a092fc01ec3fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f035896e66968aac60c3ef6a101a312ecbf18dd51628b763d9ae5a68f2207f62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cae412037809eeabe6a8cfb20150c83fee9b80f4f629678b6ce69cb99674d5d5"
   end
 
   depends_on "pkgconf" => :build
@@ -59,8 +59,8 @@ class KimiCli < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/04/1f/08e95f4b7e2d35205ae5dcbb4ae97e7d477fc521c275c02609e2931ece2d/anthropic-0.75.0.tar.gz"
-    sha256 "e8607422f4ab616db2ea5baacc215dd5f028da99ce2f022e33c7c535b29f3dfb"
+    url "https://files.pythonhosted.org/packages/6e/be/d11abafaa15d6304826438170f7574d750218f49a106c54424a40cef4494/anthropic-0.76.0.tar.gz"
+    sha256 "e0cae6a368986d5cf6df743dfbb1b9519e6a9eee9c6c942ad8121c0b34416ffe"
   end
 
   resource "anyio" do
@@ -104,8 +104,8 @@ class KimiCli < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/43/c4/60b6068e703c78656d07b249919754f8f60e9e7da3325560574ee27b4e39/cyclopts-4.4.4.tar.gz"
-    sha256 "f30c591c971d974ab4f223e099f881668daed72de713713c984ca41479d393dd"
+    url "https://files.pythonhosted.org/packages/4f/31/0c2526868b1454f2e7aaac5b05f262df4513917942beef9c0040415c7664/cyclopts-4.4.5.tar.gz"
+    sha256 "02c2c9375c57bb7622a4aab3511cdeb9d762dd0579b13ab467535e34f6be3c54"
   end
 
   resource "dateparser" do
@@ -229,8 +229,8 @@ class KimiCli < Formula
   end
 
   resource "kosong" do
-    url "https://files.pythonhosted.org/packages/da/d8/ea9c1d7487fbed23129b2733cafa163e212a0bc50733149311e133f7df67/kosong-0.37.0.tar.gz"
-    sha256 "36b451774fbdf673ed49e456e641e08fae3a9314ab1d1c98e0aa20a7c13437d0"
+    url "https://files.pythonhosted.org/packages/12/ab/e0c5432a83ec0e15588954b804e1f9c261f7bdba69a9b9773fa188a7e7c0/kosong-0.38.0.tar.gz"
+    sha256 "9033df1d4afd409f56e6cda9540d326b51498a67c3763a95cf2a3a7a2d6400ca"
   end
 
   resource "lazy-object-proxy" do
@@ -384,8 +384,8 @@ class KimiCli < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/cc/a9/546676f25e573a4cf00fe8e119b78a37b6a8fe2dc95cda877b30889c9c45/regex-2025.11.3.tar.gz"
-    sha256 "1fedc720f9bb2494ce31a58a1631f9c82df6a09b49c19517ea5cc280b4541e01"
+    url "https://files.pythonhosted.org/packages/ad/f2/638ef50852dc5741dc3bb3c7d4e773d637bc20232965ef8b6e7f6f7d4445/regex-2026.1.14.tar.gz"
+    sha256 "7bdd569b6226498001619751abe6ba3c9e3050f79cfe097e84f25b2856120e78"
   end
 
   resource "requests" do

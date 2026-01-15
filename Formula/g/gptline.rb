@@ -6,16 +6,16 @@ class Gptline < Formula
   url "https://files.pythonhosted.org/packages/5b/28/d15a9a5b349c77a051a633e13141151314f352067ec7d516220bd6b20fcf/gptline-1.0.8.tar.gz"
   sha256 "4a0a0b5fa4f23e5f2ad7ac5bf44a9143e5de3757b0b8eefe5d78a7757d1d34bb"
   license "GPL-3.0-only"
-  revision 12
+  revision 13
   head "https://github.com/gnachman/gptline.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "09ac0fda720888ff416fe8d96088ae56f8e19d2737034ffba192874f7de1db34"
-    sha256 cellar: :any,                 arm64_sequoia: "348af188a3cf3e6663edd544d522ee665ad267d87a47f94b6adb147c9854c7be"
-    sha256 cellar: :any,                 arm64_sonoma:  "ab2b05cc79ee5c830559692fefa843107afe1d2ee3e7fbba1fa0b32a843559b4"
-    sha256 cellar: :any,                 sonoma:        "de79a83253270e736cbb2b2a600e08176769451602d7fbcf3e60dac5faf2ac9b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d736b75fe0690fe922fc0cead0855f7670a2b47ca2bd05ce8defb8a1f57e9e50"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f56e635950414693842fcd16e0b4074f38e09f0f957803f22eecb4727d38346"
+    sha256 cellar: :any,                 arm64_tahoe:   "12cc77c33dc3c9e694eb3aec0e4fc3f00f6a8401e16f18b52e50dcbc3ebdcb90"
+    sha256 cellar: :any,                 arm64_sequoia: "59a1f34ec281719ee3ee90b824636245c8c9b6ea52da28eef35ad3212afab8e1"
+    sha256 cellar: :any,                 arm64_sonoma:  "216b7b8b0c0e8d20f979e80a84b6a572d44d56d530ab76ddef50db30573d5d85"
+    sha256 cellar: :any,                 sonoma:        "52feeb40370d16711c4ee2cf03b909efbb0d7e1e7a01bc5c495bd54b622a1fd3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be99140f786dd977e37c915463fb53862e213a64985633df60b8d252ed427192"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "700965e16a2c0f37d09be0a49a5edd360a26d2e0650c9944c52429e792e1a92c"
   end
 
   depends_on "pkgconf" => :build
@@ -85,8 +85,8 @@ class Gptline < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/c1/e0/a75dbe4bca1e7d41307323dad5ea2efdd95408f74ab2de8bd7dba9b51a1a/filelock-3.20.2.tar.gz"
-    sha256 "a2241ff4ddde2a7cebddf78e39832509cb045d18ec1a09d7248d6bfc6bfbbe64"
+    url "https://files.pythonhosted.org/packages/1d/65/ce7f1b70157833bf3cb851b556a37d4547ceafc158aa9b34b36782f23696/filelock-3.20.3.tar.gz"
+    sha256 "18c57ee915c7ec61cff0ecf7f0f869936c7c30191bb0cf406f1341778d0834e1"
   end
 
   resource "h11" do
@@ -150,8 +150,8 @@ class Gptline < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/d8/b1/12fe1c196bea326261718eb037307c1c1fe1dedc2d2d4de777df822e6238/openai-2.14.0.tar.gz"
-    sha256 "419357bedde9402d23bf8f2ee372fca1985a73348debba94bddff06f19459952"
+    url "https://files.pythonhosted.org/packages/94/f4/4690ecb5d70023ce6bfcfeabfe717020f654bde59a775058ec6ac4692463/openai-2.15.0.tar.gz"
+    sha256 "42eb8cbb407d84770633f31bf727d4ffb4138711c670565a41663d9439174fba"
   end
 
   resource "prompt-toolkit" do

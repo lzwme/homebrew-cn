@@ -3,13 +3,12 @@ class Hy < Formula
 
   desc "Dialect of Lisp that's embedded in Python"
   homepage "https://github.com/hylang/hy"
-  url "https://files.pythonhosted.org/packages/eb/4e/30dbda9961e5eec63606c8d2fd08ece12f28244111df05a79adac2b02f37/hy-1.1.0.tar.gz"
-  sha256 "c8943ce306341b4b3edab4142f2c7ca55b43415b0ebf6c0e7969290a6eed2948"
+  url "https://files.pythonhosted.org/packages/4f/65/4e9976d7dfedc2c929534de8455bafa7b78b621a6bb18e9a4d0e19b9d89d/hy-1.2.0.tar.gz"
+  sha256 "fa1a193fb2ccbe977681b15cc59094b2ee5ff4e22119fd723f8a35951003cf76"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "2ff4aa7f7ab624b14b2c22ef0f4139f28fa1bc38cd62f117573045c52aea319d"
+    sha256 cellar: :any_skip_relocation, all: "7cf2d933c6cd5c65016cd864911408242516bba32cba3f17a79b442569030ea8"
   end
 
   depends_on "python@3.14"

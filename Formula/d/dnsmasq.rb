@@ -1,8 +1,8 @@
 class Dnsmasq < Formula
   desc "Lightweight DNS forwarder and DHCP server"
   homepage "https://thekelleys.org.uk/dnsmasq/doc.html"
-  url "https://thekelleys.org.uk/dnsmasq/dnsmasq-2.91.tar.gz"
-  sha256 "2d26a048df452b3cfa7ba05efbbcdb19b12fe7a0388761eb5d00938624bd76c8"
+  url "https://thekelleys.org.uk/dnsmasq/dnsmasq-2.92.tar.gz"
+  sha256 "fd908e79ff37f73234afcb6d3363f78353e768703d92abd8e3220ade6819b1e1"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
 
   livecheck do
@@ -11,13 +11,12 @@ class Dnsmasq < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "1fc3abe9a474251aeb4979e50a9b70cf87948af082fa3e5f0254f713b0e95fdc"
-    sha256 arm64_sequoia: "b785296bd80d891b648da7927ace6803f604f43ea4612e74ef2fafd8a4dc31f6"
-    sha256 arm64_sonoma:  "ac9befb6d7fdf93f73600545580edd512d3f945698f9d4b335c602028f68e91c"
-    sha256 sonoma:        "bfefd73ce943255a2e67834d26f2e07ac02023ef9bfa3747969d035b9914a065"
-    sha256 arm64_linux:   "9dc2c044fc89c0163cd967ab4dc09ec9a756297cacd4c9a9eb3de8317a9aafc4"
-    sha256 x86_64_linux:  "34e0fc6ec9cdff68e1e5711f56f7e2a484c1cece80b1222e71e248c9c2509e83"
+    sha256 arm64_tahoe:   "4087c3f45434a6029c6ea7ba65d900b5e8cb0710a991f6245d9112dc87dc5c5c"
+    sha256 arm64_sequoia: "f36ffb5abb49ca8e568c9dd1f3b9891bd9e849769966cd1b0155ef85857d5f8b"
+    sha256 arm64_sonoma:  "2c7e0731da8c3568db5298aadfaa29a5e7fab84660440c2e230b789178ddf686"
+    sha256 sonoma:        "89d78775d031b10a8e9a8b9da7566df28984392b0956aead0a0d8f6244c213b6"
+    sha256 arm64_linux:   "1c05bb3e06a434205b8150ecce4f75896b8fcafb29756f40a48e68fd49633df1"
+    sha256 x86_64_linux:  "df026a9ad95a66aafb276bb28fdbbe23809bef4344acee595c072cbe59be9508"
   end
 
   depends_on "pkgconf" => :build

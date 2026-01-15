@@ -1,10 +1,9 @@
 class RubyAT32 < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/3.2/ruby-3.2.9.tar.gz"
-  sha256 "abbad98db9aeb152773b0d35868e50003b8c467f3d06152577c4dfed9d88ed2a"
+  url "https://cache.ruby-lang.org/pub/ruby/3.2/ruby-3.2.10.tar.gz"
+  sha256 "880acb05e08da8c559c56a13e512bae1b472da67c72ebb750c765f9c2134e689"
   license "Ruby"
-  revision 1
 
   livecheck do
     url "https://www.ruby-lang.org/en/downloads/"
@@ -12,12 +11,12 @@ class RubyAT32 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "850eb4a323d765ee686a0ef2cba9a79a2ad4b581b3c22c5c9a263a38c019c68d"
-    sha256 arm64_sequoia: "c0333a8d58a19c18dd1dfd2fc4d794e0b56683a6263dbfb7b6e7d8c31ee8916e"
-    sha256 arm64_sonoma:  "a1c5d10b027435c318c39a0f35592f5b5329a68a0d928ba6081f3337ae39af74"
-    sha256 sonoma:        "12d8ff67cd5fd2dc4b1ca2b5a0fca0c85ff8ef287fa0cac6932e4a1ada24c999"
-    sha256 arm64_linux:   "d7399b88bbc194a82cc7d89c4aca3988b978c065ee6f5020e12fbce4bcaee37a"
-    sha256 x86_64_linux:  "a5990cbc9859fad46e2d5ed3d255bb306d67b6061460e89aa76a31cc11faf793"
+    sha256 arm64_tahoe:   "5e10b6ebb0c5937dbbdba4b16cb3ca4b8c69ac3c82bb557c8b1cb173ab45f5b5"
+    sha256 arm64_sequoia: "dc35d419cc01036779be8ec03904cbd0d8313443551108f956545ca65a302347"
+    sha256 arm64_sonoma:  "a6618142ce02899ee1d75ffa158098248e6b2fbb8673c47ecfabcb4c17e7e34c"
+    sha256 sonoma:        "fc7da0025fd5b0a3b1473b47fb8754ef2611983ff809ff8253e7a4a953eaa933"
+    sha256 arm64_linux:   "70261493f424d2877c7fac9f9ad623cbebe1f3ac86df581f1194cb8b1798cd65"
+    sha256 x86_64_linux:  "0d4f0b6f2814ae368970780593a46e363fae7dfdc623252089434b1180feded9"
   end
 
   keg_only :versioned_formula

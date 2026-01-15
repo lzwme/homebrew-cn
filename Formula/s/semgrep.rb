@@ -3,7 +3,11 @@ class Semgrep < Formula
 
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
-  # pull from git tag to get submodules
+  # Pull from git tag to get submodules, https://github.com/semgrep/semgrep/issues/10877
+  # NOTE: When bumping version, make sure to update Python resources. One way to do this is,
+  # 1. comment out `pcre` resource
+  # 2. run `brew update-python-resources semgrep`
+  # 3. uncomment `pcre` resource
   url "https://github.com/semgrep/semgrep.git",
       tag:      "v1.146.0",
       revision: "079e05d08b86ec1b07509d2e755c631156d3705b"
@@ -16,29 +20,26 @@ class Semgrep < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  no_autobump! because: "contains non-PyPI resources"
+
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "71bc5bf66c570de06f06089ac3e43ebc5dd7898982f5cce005ab764d39e9cf8d"
-    sha256 cellar: :any, arm64_sequoia: "3e023bddf01d293d03542b62a157b60a23769ed6ee6318b31ee024f826f161fe"
-    sha256 cellar: :any, arm64_sonoma:  "d875e819a8bba728fb642df911cda7dd462d4f5bc92715d589aec1cce8a082ec"
-    sha256 cellar: :any, sonoma:        "97abdd9efae82ea882830715e632e9d34e8b0fa4b5eb73c3d07b985e68012a03"
-    sha256               arm64_linux:   "9ddad2c6a6ac7fc601c7625093f43bd03adfd95ecb32a5a5152331fbece4530b"
-    sha256               x86_64_linux:  "c13ee51588b4c5af4e5c19dd761363be3a02a66f4e8d07ab3052c2d5eb35457b"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "603a50f804d5eb99c3a46c13cd044da69f38fe21c360dc8034138fb7cfcb2f6e"
+    sha256 cellar: :any, arm64_sequoia: "b13bf222207312424553050ddb2b378ed7825a47fcfe59764c4cfd7ec360c6c6"
+    sha256 cellar: :any, arm64_sonoma:  "fa7b435b66176a2ca00c6d7bf4a94a097b80f7fc40ef9857c8eca285c5d67023"
+    sha256 cellar: :any, sonoma:        "16f0ca619861bde599dd3479681b16e509995c8dc37c55c9ca20d16ae8e685be"
+    sha256               arm64_linux:   "62ea451a2aef829b84e3b157bb8703d0224c4fa5acc90e729e352df1e3218494"
+    sha256               x86_64_linux:  "e83d0d6e33804a8a1eb2a0b644ba03a92e299b4f7fa381b203d540ecaac6444d"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "cmake" => :build
-  depends_on "coreutils"=> :build
-  depends_on "dune" => :build
   depends_on "ocaml" => :build
   depends_on "opam" => :build
-  depends_on "pipenv" => :build
   depends_on "pkgconf" => :build
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "dwarfutils"
   depends_on "gmp"
   depends_on "libev"
-  depends_on "pcre"
   depends_on "pcre2"
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
@@ -323,7 +324,32 @@ class Semgrep < Formula
     sha256 "a07157588a12518c9d4034df3fbbee09c814741a33ff63c05fa29d26a2404166"
   end
 
+  # Due to the popularity of Semgrep, we provide an exception to bundle a copy of
+  # EOL `pcre` until the upstream has completely migrated to `pcre2`. This allows
+  # us to deprecate the `pcre` formula and avoid unwanted usage in core formulae.
+  resource "pcre" do
+    url "https://downloads.sourceforge.net/project/pcre/pcre/8.45/pcre-8.45.tar.bz2"
+    mirror "https://www.mirrorservice.org/sites/ftp.exim.org/pub/pcre/pcre-8.45.tar.bz2"
+    sha256 "4dae6fdcd2bb0bb6c37b5f97c33c2be954da743985369cddac3546e3218bffb8"
+
+    # Fix -flat_namespace being used on Big Sur and later.
+    patch do
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-big_sur.diff"
+      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+    end
+  end
+
   def install
+    resource("pcre").stage do
+      # Only need to build 8 bit static library (libpcre.a)
+      args = %w[--disable-shared --disable-cpp --enable-unicode-properties --with-pic]
+      args << "--enable-jit" if OS.mac? && !Hardware::CPU.arm?
+
+      system "./configure", *args, *std_configure_args(prefix: buildpath/"pcre")
+      system "make", "install"
+      ENV.prepend_path "PKG_CONFIG_PATH", buildpath/"pcre/lib/pkgconfig"
+    end
+
     # Ensure dynamic linkage to our libraries
     inreplace "src/main/flags.sh" do |s|
       s.gsub!("$(brew --prefix libev)/lib/libev.a", Formula["libev"].opt_lib/shared_library("libev"))
@@ -332,10 +358,6 @@ class Semgrep < Formula
       s.gsub!(
         "$(pkg-config tree-sitter --variable libdir)/libtree-sitter.a",
         Formula["tree-sitter"].opt_lib/shared_library("libtree-sitter"),
-      )
-      s.gsub!(
-        "$(pkg-config libpcre --variable libdir)/libpcre.a",
-        Formula["pcre"].opt_lib/shared_library("libpcre"),
       )
       s.gsub!(
         "$(pkg-config libpcre2-8 --variable libdir)/libpcre2-8.a",
@@ -384,7 +406,7 @@ class Semgrep < Formula
 
     ENV["SEMGREP_SKIP_BIN"] = "1"
     venv = virtualenv_create(libexec, "python3.14")
-    venv.pip_install resources.reject { |r| r.name == "glom" }
+    venv.pip_install resources.reject { |r| ["glom", "pcre"].include? r.name }
 
     # Replace `imp` usage: https://github.com/mahmoud/glom/commit/1f883f0db898d6b15fcc0f293225dcccc16b2a57
     # TODO: remove with glom>=23.4.0

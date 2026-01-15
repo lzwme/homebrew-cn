@@ -5,15 +5,16 @@ class Pc6001vx < Formula
   url "https://eighttails.up.seesaa.net/bin/PC6001VX_4.3.0_src.tar.gz"
   sha256 "a5536f7bd4931b2efcbdcd85707a9c6fa82a6b169773e6d13d74cea8107ee9cc"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/eighttails/PC6001VX.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dc583a60c9740a5d32eef957ab29607d195bb5b3df2bd48cb2bbf9ca5cb94c89"
-    sha256 cellar: :any,                 arm64_sequoia: "bb18666eaecfe0cac52f38cfd62e96ca86a628e99da2d9c310013ba57fb593dd"
-    sha256 cellar: :any,                 arm64_sonoma:  "648bd5ff43a2628c375ac8719174794ab82a4576df6c8e976f75a0647216e627"
-    sha256 cellar: :any,                 sonoma:        "f2f06bb81db5a8c5f8282aec9ffda9c902613b22e19379a338d6f4c5480f6369"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c07878d6f75097acff1e644c451829d8d46d9006362e5f781e17351a3bdd653d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d484870b507bf1ee5c321595fcee9fa79ab68542d1f80edd4d8ff0864ff8a03"
+    sha256 cellar: :any,                 arm64_tahoe:   "0da9f1919b004524e9677255d6829e1e5fb9a472a04405db822cf38b0bb5ea37"
+    sha256 cellar: :any,                 arm64_sequoia: "6bcf86f65d128104f01b83e6969a1d0f6938ec0f52a8aeb856667f3e15a171cf"
+    sha256 cellar: :any,                 arm64_sonoma:  "efcd02e0c65882c3effcbf79b4c0825c78ac9b43873277fc87f5fa21ae67a746"
+    sha256 cellar: :any,                 sonoma:        "6642ccbb7526d4b08a5cd3fbae82119eec81c19634232d7fbb63d70d61cab34d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e8afac0eb25d8086990982f1aa2e0bf2ea916e267beb9fc8a84661a30885bb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b90e9cc7da63eabbd08dec431bb01db9522c7529d7b02dca1bd7b44ea2c3ea4"
   end
 
   depends_on "pkgconf" => :build

@@ -20,6 +20,7 @@ class Yo < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/yo --version")
-    assert_match "Everything looks all right!", shell_output("#{bin}/yo doctor")
+    assert_match "Couldn't find any generators", shell_output("#{bin}/yo --generators")
+    assert_match "Running sanity checks on your system", shell_output("#{bin}/yo doctor")
   end
 end

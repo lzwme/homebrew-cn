@@ -4,20 +4,19 @@ class Qmmp < Formula
   url "https://qmmp.ylsoftware.com/files/qmmp/2.3/qmmp-2.3.1.tar.bz2"
   sha256 "a61d1c1faa9c411c75292a5710999182b918831b8f0f200c87149e3ff353bea9"
   license "GPL-2.0-or-later"
-
+  revision 1
   livecheck do
     url "https://qmmp.ylsoftware.com/downloads.php"
     regex(/href=.*?qmmp[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "f6f475ce1d985bbc1f5629a8fc3eca7fdef4b455236bbe5014826a9808fb8877"
-    sha256 cellar: :any,                 arm64_sequoia: "14df780f8490ea8f942f2735f42d8055d842f1a4b9bdd2f397084d240dd8995a"
-    sha256 cellar: :any,                 arm64_sonoma:  "5afff4d2c09436aafc49521a5a548f4c53e82d9c8194ffddec947bcab58c0dd2"
-    sha256 cellar: :any,                 sonoma:        "22671d345648a48ac2e78f8aeeb9ba04671fd81de20665597afe41b5702f38aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4d1f4306bd1e5f83896efd45d48b0d53a7c48bbe0a45c3daff45879ae8ae403"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fe25b0aa178b76e52520e2d586dc3cecd274def275c79093187aa063a970477"
+    sha256 cellar: :any,                 arm64_tahoe:   "325c1290350157b642ffbd3571937e81e8c2baff0a48930a3303c9831f79f857"
+    sha256 cellar: :any,                 arm64_sequoia: "4d5a4086a5587a7eee245b3394da3bef3f0fbc46ae46f927f83e0e4a10297478"
+    sha256 cellar: :any,                 arm64_sonoma:  "09462312d1c684873aed7d297e0681a38c81081f55f37e95205ca08b1f5e783a"
+    sha256 cellar: :any,                 sonoma:        "fb2823cea55e2f56de666f0dc2f636646124cdca8e2ec6c379b5be86754c20f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ee446b2d6e0bb504d563a00cfdac8bc212bb50c188e92861bb296745da082d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93e249d6775b45f06d7e24053e57f8263ca2389c67a491ccff2ef9b9cce22dc3"
   end
 
   depends_on "cmake" => :build
