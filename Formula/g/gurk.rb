@@ -1,17 +1,17 @@
 class Gurk < Formula
   desc "Signal Messenger client for terminal"
   homepage "https://github.com/boxdot/gurk-rs"
-  url "https://ghfast.top/https://github.com/boxdot/gurk-rs/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "8254e7aae79d1d1e79a543965c9f44624a817e9cbc0cd8eee973fd3118b3af26"
+  url "https://ghfast.top/https://github.com/boxdot/gurk-rs/archive/refs/tags/v0.8.1.tar.gz"
+  sha256 "08077c44f4cee3b5f2f31a0cc90d978e052a51677ed73af61419093ca154163f"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f89e5c54aeb34f6a3878cbd36179b6fd311457db6b5464fd453bb03c1ac16579"
-    sha256 cellar: :any,                 arm64_sequoia: "b52bd87d7a51c556dc2d1e8f4ea6fe7fcb6eca351cc2aecd365f12ebe516a008"
-    sha256 cellar: :any,                 arm64_sonoma:  "e78ba88a862ea96456f0f2ba5f0b2049321fc9e97f37a43533c46926b8b80a31"
-    sha256 cellar: :any,                 sonoma:        "6ef0b8d129796d0b4c4f0b07c8bc9f1706f31174073fb3e10ba9d266d8afa01a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d23f21211c22e078b0e0d9422c58bc952955e0d49a1652fa114ebcbc9c216d7c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2951a701af60d7be93f871d6c21d6cd4c8b7cda69b1274379242ddb4de74d25"
+    sha256 cellar: :any,                 arm64_tahoe:   "1f8677e9862814aefb81d13df70195b6c7968e8b0798a7d5890e748cfd93c702"
+    sha256 cellar: :any,                 arm64_sequoia: "8e84a4a3ee7c669685f09e0197c119319995fc26fa30869097c2342088a5622b"
+    sha256 cellar: :any,                 arm64_sonoma:  "3067ee9d06bcfe7f7a33ca4bebbb9f78c2ed76e7d6417edb9d7cb2604605fc5f"
+    sha256 cellar: :any,                 sonoma:        "2284714d7d6bc0c1464236f086bb6391960a443cd23865ab37d796d925ac281f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c52b48a19871ae47fb2da507362cc82bad0521ee3cefcf82d49a3f8c6d4887a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef9250243f80efd13a03c4f709ecaab1928dcfb19b28f77c6498034602a495ee"
   end
 
   depends_on "pkgconf" => :build

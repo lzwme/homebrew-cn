@@ -18,7 +18,7 @@ class Hlint < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc" => :build
+  depends_on "ghc@9.12" => :build # GHC 9.14 issue: https://github.com/ndmitchell/hlint/issues/1672
   depends_on "gmp"
 
   uses_from_macos "libffi"

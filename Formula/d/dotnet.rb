@@ -7,33 +7,27 @@ class Dotnet < Formula
 
   stable do
     # Source-build tag announced at https://github.com/dotnet/source-build/discussions
-    url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.101.tar.gz"
-    sha256 "cac1181919374d061ff73e7e58cc9f7a5480acb0c8dc2e309c5bd844217f7962"
+    url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.102-sb1.tar.gz"
+    version "10.0.102"
+    sha256 "cc544f357e3674f3f4d170c82f781f6f9406760e8badbe1fbcaf04657e1554d4"
 
     resource "release.json" do
-      url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v10.0.101/release.json"
-      sha256 "9c27aa3643fa1562356bb8c4ab0a94fa22f7d2d23bdc546ecf61ed089cb4ffa1"
+      url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v10.0.102-sb1/release.json"
+      sha256 "f22c317a69e38fbd5f1b0cf482065c8cc40dddedb4c3dc7f659c07b3603c46ed"
 
       livecheck do
         formula :parent
       end
     end
-
-    # Backport fix for https://github.com/dotnet/dotnet/issues/4037
-    patch do
-      url "https://github.com/dotnet/source-build-reference-packages/commit/1f538e55a45f4672186a68a08639160d5a4d3ce6.patch?full_index=1"
-      sha256 "3ae2156ee50e9351295a71551e8fc4a096b3bfa61a14a40b5266629afc6ae1bd"
-      directory "src/source-build-reference-packages"
-    end
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2d5fbb0e7b7c483898afb76d882e0bac871f7dfbdacde9f43c2b4669cbeb1e32"
-    sha256 cellar: :any,                 arm64_sequoia: "99efb1b371be439b59f16e6bfe918bbe923f283f49ac472c627349960e8bfbe6"
-    sha256 cellar: :any,                 arm64_sonoma:  "6135d2357bbebf28d1fa35d68e65acb5d4bf53ca921c761630fd1bb53a5a8faf"
-    sha256 cellar: :any,                 sonoma:        "88043ff87736c9dce2f25c7cc21e9bc4a5ec01ab1728c16e9e93c136feec9dbe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "01cc5e37350b0d4de0de52f8a094863a21cdda2c1d0a01a344dd565312530d48"
-    sha256                               x86_64_linux:  "93d7fdd268437cc2e54a3378b08a5961f5f7208b1a6afad097837e36290c95cd"
+    sha256 cellar: :any,                 arm64_tahoe:   "a9deaed142a3b459cd2ef0bdcef80e35ebc969e23829bd67cf27d8d70f5f4847"
+    sha256 cellar: :any,                 arm64_sequoia: "f493923c039918e9ffb6df9a0aecc99d6dc41a2d739ebb4d0ff0df5e6c438dc4"
+    sha256 cellar: :any,                 arm64_sonoma:  "0bb256b07f545fae407a2b113ab836bc39cc26184d9ce56176e5f27de94ec7ff"
+    sha256 cellar: :any,                 sonoma:        "a367371bb8c135d7383fa3b9c57052b4faaf18a336e1125bf2d8d5afb9521406"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3df0c663104332af2706dab8a7806f58937be0426e401e31efe8e9918093c85"
+    sha256                               x86_64_linux:  "8e8217be0316b539ecf9e345e3edd2c58762af31deaee9ff4e992f4292232f06"
   end
 
   depends_on "cmake" => :build
@@ -108,7 +102,7 @@ class Dotnet < Formula
     end
 
     args = %w[
-      --branding rtm
+      --branding release
       --clean-while-building
       --source-build
       --with-system-libs all

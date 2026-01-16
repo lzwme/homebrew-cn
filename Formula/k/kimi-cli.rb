@@ -3,18 +3,18 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/e5/82/82ad9a6dd1bee95b3d1a68ea5fafcb5ddf94178618b0fc50e3386b695411/kimi_cli-0.77.tar.gz"
-  sha256 "617981dd04c3e1556cb52efaa61c8a37d51118f8ac2db9c08cbfe61b5e1ebeff"
+  url "https://files.pythonhosted.org/packages/32/1a/24a901ebd060e7b013b1c27f112e8f1cf415138751b7d28c627803d610d7/kimi_cli-0.78.tar.gz"
+  sha256 "90b1bb16464fe734e209eda65330cf217a6cc1c766ccb4236a542e92142c3c85"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cba0e5db6c5dd23599602c30f92049bbc4038b0a08dabd142310a065e5b34f31"
-    sha256 cellar: :any,                 arm64_sequoia: "62ba349faa89024b158964710ba40e815f1a94d7a083c1337ac7999d8f94c4a2"
-    sha256 cellar: :any,                 arm64_sonoma:  "8f6cc3ed440f4d90feb0c19614ef8183a506df94f55814a27e53dadaf67a8e45"
-    sha256 cellar: :any,                 sonoma:        "1578f35f7e56579e84c28f2e593b404f2713591a00c1b73fa18a092fc01ec3fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f035896e66968aac60c3ef6a101a312ecbf18dd51628b763d9ae5a68f2207f62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cae412037809eeabe6a8cfb20150c83fee9b80f4f629678b6ce69cb99674d5d5"
+    sha256 cellar: :any,                 arm64_tahoe:   "d6cd6a13d9d473066a69cd4106b1c19c1931a45b6dc2497f8d15e2e1a7675281"
+    sha256 cellar: :any,                 arm64_sequoia: "ecbaa41cbe74a96c32c00511a27ded13686687a0c02ceb32d9bb6adfc44b133e"
+    sha256 cellar: :any,                 arm64_sonoma:  "ad62c4883d0e318b20805280be9d5cd7dc3eec6fbd388dd52118999c1563cb25"
+    sha256 cellar: :any,                 sonoma:        "42c7a72c8c7c91be31d962b5ed07bb463a66409a040ca98f23e684430fde9295"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2dc3e89602a6b13b87086c0f600ca77618b8b19f91716ba2011436adf9c7536d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e54ca35abfccfe27bfa0923cd729a69cbd5c59980ddd482628d30965d63d996"
   end
 
   depends_on "pkgconf" => :build
@@ -104,8 +104,8 @@ class KimiCli < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/4f/31/0c2526868b1454f2e7aaac5b05f262df4513917942beef9c0040415c7664/cyclopts-4.4.5.tar.gz"
-    sha256 "02c2c9375c57bb7622a4aab3511cdeb9d762dd0579b13ab467535e34f6be3c54"
+    url "https://files.pythonhosted.org/packages/dd/6d/0e0f03214f6a5fae79d934d1de8a570bda37235d991d1b6dee9cd99c8e44/cyclopts-4.4.6.tar.gz"
+    sha256 "ffeef064d867b8a567b5efdfc09e3295b2774735ea1df33e5230e818d52d9942"
   end
 
   resource "dateparser" do
@@ -159,8 +159,8 @@ class KimiCli < Formula
   end
 
   resource "google-genai" do
-    url "https://files.pythonhosted.org/packages/2b/b4/8251c2d2576224a4b51a8ab6159820f9200b8da28ff555c78ee15607096e/google_genai-1.57.0.tar.gz"
-    sha256 "0ff9c36b8d68abfbdbd13b703ece926de5f3e67955666b36315ecf669b94a826"
+    url "https://files.pythonhosted.org/packages/b4/49/0c2dd11c50db7ee2c299c63f1795256c96543be8b40e6f139c1a680f92e8/google_genai-1.58.0.tar.gz"
+    sha256 "bbec3abf253c17ad57b68e7f8d87d5cda34d5909c67b7ba726207a2bd10aa9fd"
   end
 
   resource "h11" do
@@ -384,8 +384,8 @@ class KimiCli < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/ad/f2/638ef50852dc5741dc3bb3c7d4e773d637bc20232965ef8b6e7f6f7d4445/regex-2026.1.14.tar.gz"
-    sha256 "7bdd569b6226498001619751abe6ba3c9e3050f79cfe097e84f25b2856120e78"
+    url "https://files.pythonhosted.org/packages/0b/86/07d5056945f9ec4590b518171c4254a5925832eb727b56d3c38a7476f316/regex-2026.1.15.tar.gz"
+    sha256 "164759aa25575cbc0651bef59a0b18353e54300d79ace8084c818ad8ac72b7d5"
   end
 
   resource "requests" do

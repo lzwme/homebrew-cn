@@ -1,24 +1,28 @@
 class Beads < Formula
   desc "Memory upgrade for your coding agent"
   homepage "https://github.com/steveyegge/beads"
-  url "https://ghfast.top/https://github.com/steveyegge/beads/archive/refs/tags/v0.47.1.tar.gz"
-  sha256 "2450a770aecb9a8790f95d50b69574461e3ff99285d7c8159e7be7df91e36265"
+  url "https://ghfast.top/https://github.com/steveyegge/beads/archive/refs/tags/v0.47.2.tar.gz"
+  sha256 "0c42194d5fa73cc60a345207f1487121f1390858eeef1e5e376f947f48f0e8e4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c50c368befe7bf5e27c0d45cb2e5ebb28a85dd3f9d545c09b2cdf9884af6d0d1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c50c368befe7bf5e27c0d45cb2e5ebb28a85dd3f9d545c09b2cdf9884af6d0d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c50c368befe7bf5e27c0d45cb2e5ebb28a85dd3f9d545c09b2cdf9884af6d0d1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "55a06e60797fe8f26852bdfa1eea03d12586c0eaf145783b6ceb61bc5a488059"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "310ff06438ddcf97ced3b091cef5d550b9e6d911f9b6176093cec90be62898b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f68ba5ff972f0560de20a963e5f59e528f691364f9b772acb1d6dbb0fcdaf3c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0cf897e0aa7de106b92278a8a46e895497914366701debe4d868b33fbc97c6ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96e40e716898901b2cc15580958fea31eba3966d819435a0e7d1e0fd0e183484"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93b8f36ac40e4466509095fab9245749fcc709dcb268ba3965cf130efebb9ee8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "992e9e35c48c6b634e6cad4782f41aeded3a2cdb6472741147e7f38a15a7256a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8eaf420a890f431a38b62f21c271f01d97af0ebbee49de9af3211d6f3c2a24bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2dfc3f331a8025d80fb0b1ad5ac71b6428755f87498a14d9a0aea68e5a8eadab"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/bd"
     bin.install_symlink "beads" => "bd"
+
+    generate_completions_from_executable(bin/"bd", shell_parameter_format: :cobra)
   end
 
   test do

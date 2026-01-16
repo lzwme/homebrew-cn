@@ -1,17 +1,17 @@
 class Codanna < Formula
   desc "Code intelligence system with semantic search"
   homepage "https://github.com/bartolli/codanna"
-  url "https://ghfast.top/https://github.com/bartolli/codanna/archive/refs/tags/v0.9.11.tar.gz"
-  sha256 "725f0156cbf036df5674aea794c4e508ee95d6c98500db8bb9f6561cbc630b88"
+  url "https://ghfast.top/https://github.com/bartolli/codanna/archive/refs/tags/v0.9.12.tar.gz"
+  sha256 "e391c8ed5a79fe3a0237e60916562100c1869f026e7479f1ea7c4e78cb28cdb2"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ccdb083c6d33296d950fa83759232d975c719f01df89ec42a5cca469033ea448"
-    sha256 cellar: :any,                 arm64_sequoia: "13fecd271a5c0a6d3914602f017e666754b8a02972e32c6d82abb701693bc87e"
-    sha256 cellar: :any,                 arm64_sonoma:  "ca3f729f9689d511392116e812e38044fccd46b53761d63803c88e8bc78227cd"
-    sha256 cellar: :any,                 sonoma:        "26a7b20a47035f4d9fb27398495ee1325ad8d6cbb3efdf4c017902431322de5b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "98741692a4a5ccb9948762928ca3ec357f6d3cfcfd03ae32e91e071bea0f6fbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0aa56a33b8b7d17f97659e340297962b12529989f3bcbefa6493a90edb9e5787"
+    sha256 cellar: :any,                 arm64_tahoe:   "baee8b9956d75d3a65f0241e9befc41023f01e0bfba466a127e9bb169a247798"
+    sha256 cellar: :any,                 arm64_sequoia: "996b3fa11d89595f1dcf8f40765698a01818f436a88f2ac67d9ff4ad8994363c"
+    sha256 cellar: :any,                 arm64_sonoma:  "b869d935b8c28a6f593c259f2a94155ecc029f96a159cfeb2b8a2315b79cb37d"
+    sha256 cellar: :any,                 sonoma:        "db4e09cd8294697d1f8c4d8e38cd4d406ed903e640296eb99e60c52b16bacb2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c8f84ea84a2e17d546382a1f96d11a755797c4374e2e62a93c1bfa57aecf52d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ac7c0c2a760e3432df078ddb0349466b8ebb85f0a1cc1bfa6059cb85a26f9c3"
   end
 
   depends_on "pkgconf" => :build

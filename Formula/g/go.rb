@@ -1,9 +1,9 @@
 class Go < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.25.5.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.25.5.src.tar.gz"
-  sha256 "22a5fd0a91efcd28a1b0537106b9959b2804b61f59c3758b51e8e5429c1a954f"
+  url "https://go.dev/dl/go1.25.6.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.25.6.src.tar.gz"
+  sha256 "58cbf771e44d76de6f56d19e33b77d745a1e489340922875e46585b975c2b059"
   license "BSD-3-Clause"
   head "https://go.googlesource.com/go.git", branch: "master"
 
@@ -21,12 +21,12 @@ class Go < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a08dc2f6914ccf3edf0a4e0401595216fb890ffd253ee1147a7241e4f5dc8c15"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a08dc2f6914ccf3edf0a4e0401595216fb890ffd253ee1147a7241e4f5dc8c15"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a08dc2f6914ccf3edf0a4e0401595216fb890ffd253ee1147a7241e4f5dc8c15"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b40bc5deb0d8f4a0ed30763b774c294e2033be3af9ae1febc428260bc9080739"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "986db3b38f0108765760294d979cbe758411f9668b099ab852ca1f463d9aa2ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c44f1e34c0b26a987008b483cf22f188a0c60533277ffcb9485bf66045c82094"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a367c20ea5e73fb63c8448a476693273c03cc8c184acab8daedaa4c20f6c7c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a367c20ea5e73fb63c8448a476693273c03cc8c184acab8daedaa4c20f6c7c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a367c20ea5e73fb63c8448a476693273c03cc8c184acab8daedaa4c20f6c7c1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b58eec9e49e5c7f71b80c9ed6f949fd68474c6cf92deb75b7dde2d94d4e872a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49d7d612a620aece265ba66d0e9cfe0bc76e418b412cf9e08af2c6f52e0b64f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ae958e52552439be1b5d86041dfbfe929c0b3e22f24aa331af7890665462ddd"
   end
 
   depends_on macos: :monterey

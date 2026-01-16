@@ -3,18 +3,18 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/9a/7a/a1a6bcc83a2c9a24ef385a762a08fe00d1e579dca8f5c44fc21043a9abff/vunnel-0.47.0.tar.gz"
-  sha256 "f8d1f2a059d966769146445781fe6064205c0345e8c7a319d67de424b5570bd4"
+  url "https://files.pythonhosted.org/packages/61/bc/b595c77c4c2272eefdd30eca06aed1db3339654aa7b4d081b8a40c188069/vunnel-0.48.0.tar.gz"
+  sha256 "119327eb19ab2ba90b1a145677cde49dd8406ae917146694c4f0a037cf096016"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "182911e1b4f82d5e0e69057c7eb7531780d9c4af8f7773ce881a8e291be48ea3"
-    sha256 cellar: :any,                 arm64_sequoia: "5f9cdd3994e2818b6ad9e31c604de494bc2e3e3b43d77d417c53b42754a09965"
-    sha256 cellar: :any,                 arm64_sonoma:  "defdb4d2449454f379439d7c47198fde2b85e21e306f19fd0c27c482ff0d69c8"
-    sha256 cellar: :any,                 sonoma:        "f0fcdedc722aea3873e6511c03fe7991c664193c1311312d8a401d79e079d741"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8228d95c8da23c560650b8044a7c5df30448ed35a7ccfd398e9d1c64dc520f79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8adddb4a69616174d2f35568f8ef21e2db0a4feeddc2b497201e5bb853728b0"
+    sha256 cellar: :any,                 arm64_tahoe:   "813430f494b7c781d1afbd7c3a22246f9477a337b8cc9a54b6e4818b6d839ebb"
+    sha256 cellar: :any,                 arm64_sequoia: "e7f6f14830414a068d73a77b78b7a957d29a1e4095b85f08577470f46188d7a9"
+    sha256 cellar: :any,                 arm64_sonoma:  "6e1fc1d50306adf1224e2abdca962629e127c69904539f005044f7497988bfe0"
+    sha256 cellar: :any,                 sonoma:        "a0f76860ec8586367313e8b662ad725753af4323e0ff0ffda64d613783a20cc4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b81be3e78da8396b57d70c1a83f939587dffc21646576a3cf6a381719d367d22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c30570dc0c9eeeb43319ffa2605461d11a1db8221fb8a8cf0c34213c211e3ab6"
   end
 
   depends_on "rust" => :build

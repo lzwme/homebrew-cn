@@ -6,6 +6,11 @@ class Xgo < Formula
   license "Apache-2.0"
   head "https://github.com/goplus/xgo.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "db22007b23ef06d4484c60b697d6045966001f6077aefc12ab33c3569794113a"

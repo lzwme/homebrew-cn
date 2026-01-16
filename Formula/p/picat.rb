@@ -1,9 +1,9 @@
 class Picat < Formula
   desc "Simple, and yet powerful, logic-based multi-paradigm programming language"
   homepage "https://picat-lang.org/"
-  url "https://picat-lang.org/download/picat394_src.tar.gz"
-  version "3.9.4"
-  sha256 "740622576cc6d99d35a81b21b2a3912fda11d8dbcd9d16afbc648368e1097439"
+  url "https://picat-lang.org/download/picat395_src.tar.gz"
+  version "3.9.5"
+  sha256 "b993f2949e14a1724bb3b05bd856f5fe79d1d167ee79b7e92eeb4ce050572051"
   license "MPL-2.0"
 
   livecheck do
@@ -14,12 +14,12 @@ class Picat < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f91317152f8e9606dd659aff7c47667047356dc0b9cf5a61013883a931eef4bf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4efe81777466562f470f56f4111f11852b187014d70f8b514a8462fcf0b91b7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e41ef0585e81fa898a4e2779a74fee34b4dc4670bb702bae28f43378841e1c5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "13c07dbfcd81afa71492936367de432adbfca0fb8beeb79ba8c1f31cdde76110"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "49145f401e18cb61f2325d327b9a96170f92a037f67aa66fa27cd941a38b4027"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "963666619b07ea68fe3f1bb0cce0c0eac5feeeed4b43a1446b1607f3a93bf158"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7733afa877ae6738e9a4e0f1d92f5547818d8127b727b3bdb7b7e564672c3686"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3bcbbd30e29759aafe5c3a168e2060530bef22fb791d9d15c80409b6fd875be2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "069a89210239bcc92c36279de62a774e896434e70cb37ec16af4811130d9b0e2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b849c0cbd07c742886be31f0abdef47139e6d21afd20dfba6c82fb1645dbf7ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "604cd6575b984d2e2883871f4feb4578789e19f307e007576865b7903c30fe22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "184b89bbe6c7971e3898e5ff039bb0614081a1a4c8960a49562c3ba7b681aa5d"
   end
 
   def install

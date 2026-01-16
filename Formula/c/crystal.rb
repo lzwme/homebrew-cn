@@ -4,13 +4,12 @@ class Crystal < Formula
   license "Apache-2.0"
 
   stable do
-    # TODO: Replace arm64 linux bootstrap with official when available
-    url "https://ghfast.top/https://github.com/crystal-lang/crystal/archive/refs/tags/1.18.2.tar.gz"
-    sha256 "f2cd4b20f649ef716fcfa758972f36bb35f2f67e13991e3055226a0d101c19ca"
+    url "https://ghfast.top/https://github.com/crystal-lang/crystal/archive/refs/tags/1.19.0.tar.gz"
+    sha256 "9b1bc649408a61721b98fd027cbc53d52e75a3ac0ae12f2a0d0324adb37e9464"
 
     resource "shards" do
-      url "https://ghfast.top/https://github.com/crystal-lang/shards/archive/refs/tags/v0.19.1.tar.gz"
-      sha256 "2a49e7ffa4025e0b3e8774620fa8dbc227d3d1e476211fefa2e8166dcabf82b5"
+      url "https://ghfast.top/https://github.com/crystal-lang/shards/archive/refs/tags/v0.20.0.tar.gz"
+      sha256 "8655b87761016409e4411056e350b24e7fe79eae3f227b3354b181a03f14d5da"
     end
   end
 
@@ -20,12 +19,12 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d9d9d8a302e0e077addabd4582a87016c9a42cfe838ccca342c93ce74701041e"
-    sha256 cellar: :any,                 arm64_sequoia: "557108f40e134b73ab0981588304d99938afb1a499127511fe2acf373d3f567b"
-    sha256 cellar: :any,                 arm64_sonoma:  "9671d7644ca65fae47d0749ff85b266914a4e9de2406e29e7e68f987bbca6883"
-    sha256 cellar: :any,                 sonoma:        "bb4a5e74c1eb39ae63cc8a7dfe9b577a72fd28d36a0600a2459e445e6de3bf73"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cff98960a55b4706772a4879d5520e216d19132a77dc3b70d3705cc34e36c098"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5306fac9bd46d271cd52e90c6c632e9a2f8e846b30dcfcae518f137d79525a20"
+    sha256 cellar: :any,                 arm64_tahoe:   "574a0e238dadfcfefb61b1503af3638c7d9de8839ed565427af1353d81ea06bb"
+    sha256 cellar: :any,                 arm64_sequoia: "189d79ccec2532001c374773decc698f92c0d48680aae5dc9ae1fdd2a2508a50"
+    sha256 cellar: :any,                 arm64_sonoma:  "49eee598645fbefc2c46ba2d11e07dc9026b3407eb62f849f3537a93db1ba88e"
+    sha256 cellar: :any,                 sonoma:        "7b7e2b6d7a7d368248afc37fe8bb35440d80978ed1a510a7c79671517c218c01"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0329f92d5dd45595e1fd86a4e5542ad65c6fabf337c0d390ace06860387c8ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f33f2bcff7bc35bcbad3d4ae3a96d92aeb9baa8515129b9e9093dd4b731003b"
   end
 
   head do
@@ -53,30 +52,25 @@ class Crystal < Formula
   #
   # See: https://github.com/Homebrew/homebrew-core/pull/81318
   resource "boot" do
-    boot_version = Version.new("1.10.1-1")
+    boot_version = Version.new("1.18.2-1")
     version boot_version
 
     on_macos do
       url "https://ghfast.top/https://github.com/crystal-lang/crystal/releases/download/#{boot_version.major_minor_patch}/crystal-#{boot_version}-darwin-universal.tar.gz"
       # version boot_version
-      sha256 "e6490e6d09745483bacea43c4d8974273632526c1f98f13db5aae0a5fc2c7924"
+      sha256 "f61620ac389d640d4d429d114c725d6d53df27f0a3e54af25beb398a5815d6db"
     end
 
     on_linux do
       on_arm do
-        # NOTE: Since there are no official arm64 linux builds, we use the recommended[^1]
-        # community-maintained builds. Upstream CI also uses 84codes docker images[^2].
-        # The version used is 1.11.0 as there was an issue building with 1.10.1.
-        #
-        # [^1]: https://github.com/crystal-lang/crystal/issues/9833#issuecomment-1766007872
-        # [^2]: https://github.com/crystal-lang/crystal/blob/master/.github/workflows/aarch64.yml#L70
-        url "https://packagecloud.io/84codes/crystal/packages/any/any/crystal_1.11.0-124_arm64.deb/download.deb?distro_version_id=35"
-        sha256 "fc42e49f703a9b60c81a87be67ea68726125cf7fddce2d4cafceb4324dca1ec8"
+        url "https://ghfast.top/https://github.com/crystal-lang/crystal/releases/download/#{boot_version.major_minor_patch}/crystal-#{boot_version}-linux-aarch64.tar.gz"
+        # version boot_version
+        sha256 "4bc44af4d9eedff2980b62d57bd0cbc111dd68f5b5b5df22751056aca59948c6"
       end
       on_intel do
         url "https://ghfast.top/https://github.com/crystal-lang/crystal/releases/download/#{boot_version.major_minor_patch}/crystal-#{boot_version}-linux-x86_64.tar.gz"
         # version boot_version
-        sha256 "1742e3755d3653d1ba07c0291f10a517fa392af87130dba4497ed9d82c12348b"
+        sha256 "de73134563db840791bc85bacd4e7f1360dc9c04af6e32a9b104300c561716b6"
       end
     end
   end
@@ -93,15 +87,7 @@ class Crystal < Formula
     non_keg_only_runtime_deps = deps.filter_map { |dep| dep.to_formula unless dep.build? }
                                     .reject(&:keg_only?)
 
-    if OS.linux? && Hardware::CPU.arm?
-      resource("boot").stage do
-        system "ar", "x", Dir["*.deb"].first
-        system "tar", "xf", "data.tar.gz"
-        (buildpath/"boot").install Dir["usr/*"]
-      end
-    else
-      resource("boot").stage "boot"
-    end
+    resource("boot").stage "boot"
     ENV.append_path "PATH", "boot/bin"
     ENV["LLVM_CONFIG"] = llvm.opt_bin/"llvm-config"
     ENV["CRYSTAL_LIBRARY_PATH"] = ENV["HOMEBREW_LIBRARY_PATHS"]

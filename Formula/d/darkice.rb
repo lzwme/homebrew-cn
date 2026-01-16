@@ -1,8 +1,8 @@
 class Darkice < Formula
   desc "Live audio streamer"
   homepage "http://www.darkice.org/"
-  url "https://ghfast.top/https://github.com/rafael2k/darkice/releases/download/v1.5/darkice-1.5.tar.gz"
-  sha256 "18b4c4573a7ccfe09c1094eb5798159e2a9892106ea62d753933f6f2a746058e"
+  url "https://ghfast.top/https://github.com/rafael2k/darkice/archive/refs/tags/v1.6.tar.gz"
+  sha256 "52807d887d60646776110b63543d3845ebe9ed52d3eea44bed7c4bdd95b6575e"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,21 +11,21 @@ class Darkice < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "164c7248bbc46a4a79b4156816e541a874247a98fb95d7d43759182022983c0d"
-    sha256 cellar: :any,                 arm64_sequoia:  "63d77f3484a28636bd7c5a7a804a0d8e3e410e3b07b4859d27ce0a8b9b714233"
-    sha256 cellar: :any,                 arm64_sonoma:   "089a73da66e99a1289c3259dc974acf0ffcc053af05facf3b760f8b0d7c4b0e9"
-    sha256 cellar: :any,                 arm64_ventura:  "22abd05d4b3d880d9b1ad6abaf636f7d31c65ff3d20a7ce54c888d5464b32369"
-    sha256 cellar: :any,                 arm64_monterey: "d70aab113619347c2b1ab5dc69b265a0dcacab27c30a81ad852c12417960e670"
-    sha256 cellar: :any,                 sonoma:         "01555e1eff33f033c509891563900a3bd69bbaa658570d298e40f5ed6438a0eb"
-    sha256 cellar: :any,                 ventura:        "f922c9ca8895e789a65b11fdabda217f1301d91ce1c19890de8e433a19f8c5f8"
-    sha256 cellar: :any,                 monterey:       "47f4bafaa04a5c4eb24783771215f643bf032dbd911145812b3b27d8d3034b39"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "95f5d5e05e922c398d1f8277465fe2d1350cf7f330d1aa7228026a52a674397d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e96398becc4f8c42c2fa104ea86e96207756ee073a301d0acb0fe56fd665ebcb"
+    sha256 cellar: :any,                 arm64_tahoe:   "20fadd1b316d8b747e228c02b325d21329a90591a3aab8b02bcfe02d4898a905"
+    sha256 cellar: :any,                 arm64_sequoia: "0958adc999ddfef904b1b9df902c624cf22fcfc2dc85d04baa6764dd530ad378"
+    sha256 cellar: :any,                 arm64_sonoma:  "736bf8e9a4e8d8fac78557dbd7cd3cacf25998edc324271a75b8ea4fcdca0835"
+    sha256 cellar: :any,                 sonoma:        "ebde2620aa8397e50338a25ba5d370ef82fbe08ed2b4c9fd7da46baef13fac45"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02aeec8949bff8c5e533dcc7bf3b55793a96f791b3f053ffbf5457da241e0733"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26e67b2c6571fc9bafab6e97febb01e97e86f9f77a18397b1e08ccb944c4805c"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "pkgconf" => :build
 
   depends_on "faac"
+  depends_on "fdk-aac"
   depends_on "jack"
   depends_on "lame"
   depends_on "libogg"
@@ -39,16 +39,22 @@ class Darkice < Formula
 
   def install
     ENV.cxx11
-    system "./configure", "--sysconfdir=#{etc}",
-                          "--with-lame-prefix=#{Formula["lame"].opt_prefix}",
-                          "--with-faac-prefix=#{Formula["faac"].opt_prefix}",
-                          "--with-twolame",
-                          "--with-jack",
-                          "--with-vorbis",
-                          "--with-samplerate",
-                          "--without-opus",
-                          *std_configure_args
-    system "make", "install"
+    # TODO: Remove when source is back to the release tarball
+    cd "darkice/trunk" do
+      system "autoreconf", "--install", "--force", "--verbose"
+
+      system "./configure", "--sysconfdir=#{etc}",
+                            "--with-lame-prefix=#{Formula["lame"].opt_prefix}",
+                            "--with-faac-prefix=#{Formula["faac"].opt_prefix}",
+                            "--with-fdkaac-prefix=#{Formula["fdk-aac"].opt_prefix}",
+                            "--with-twolame",
+                            "--with-jack",
+                            "--with-vorbis",
+                            "--with-samplerate",
+                            "--without-opus",
+                            *std_configure_args
+      system "make", "install"
+    end
   end
 
   test do

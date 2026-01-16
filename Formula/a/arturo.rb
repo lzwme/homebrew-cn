@@ -1,57 +1,27 @@
 class Arturo < Formula
   desc "Simple, modern and portable programming language for efficient scripting"
   homepage "https://arturo-lang.io/"
-  url "https://ghfast.top/https://github.com/arturo-lang/arturo/archive/refs/tags/v0.9.83.tar.gz"
-  sha256 "0bb3632f21a1556167fdcb82170c29665350beb44f15b4666b4e22a23c2063cf"
+  url "https://ghfast.top/https://github.com/arturo-lang/arturo/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "408646496895753608ad9dc6ddfbfa25921c03c4c7356f2832a9a63f4a7dc351"
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:    "a3f8a2cb4563008ea24c54345240b6c92553291c12860425cc069903ef4e484a"
-    sha256 cellar: :any,                 arm64_sequoia:  "8a85e164420eed7be9149784ed3186c27e475ac4249396bf7cab23d0cbb9d612"
-    sha256 cellar: :any,                 arm64_sonoma:   "a5ec87e6b0b78f8f9c7488ee60fba66fa32b820ad0beb17a2a2ad609cf0db4ef"
-    sha256 cellar: :any,                 arm64_ventura:  "18491874794e510a5ceab9f85b056dd5338869c63d6590bd8d2e5e5eb451e081"
-    sha256 cellar: :any,                 arm64_monterey: "97ada88c358d6b8fee6731bc2fb5a2b6f869ff0d9798b831801aa16096db0e40"
-    sha256 cellar: :any,                 sonoma:         "080ae8f329e1f5434ff565a2731066510251e94be46b3dbc88ce81d7fa131395"
-    sha256 cellar: :any,                 ventura:        "bfd55cd5a7c527f3ee97be03d31019f19bcc42e8827eff660a3e0225fc010601"
-    sha256 cellar: :any,                 monterey:       "a131b4cca2eb06a0077955ad754e0cf2e028b6edcb8d59f671d3863f4d0c9e09"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "0fda47994e673c1315f52cde8615be23dd6cdf870982562aa2cc7a09ae44c8a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58f4a8c2fa4c22f00887c45852b4fe5326d1df941f484f5884bf5cab6df1c81a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bec0bf611d5b163f27570f515cf75ee10fba14495abe8968de89f14341b330ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "491a45db95d74a0ffa6eb7c14a331a0a143184c0ede7b009932b6a82bf9023b6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "96b375631ac5736b75de2936ddc339403a9d43316a6f235befc2645bfcc20e5a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0516e45a8542660710b27f57be323b2d6ef9195659d3a58148fa2a9fb3a74325"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae4e0d88082826a38c7370c47bc7d99ce8ae6ce30e5e23af8859ea92a794c6eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f93afae9df508cadacbe60f96b2c73f8fd2f276181cc3da9d8b5ef81d804c24"
   end
 
+  depends_on "nim" => :build
   depends_on "gmp"
   depends_on "mpfr"
 
-  # TODO: switch to `depends_on "nim" => :build` in the next release
-  resource "nim" do
-    url "https://nim-lang.org/download/nim-1.6.14.tar.xz"
-    sha256 "d070d2f28ae2400df7fe4a49eceb9f45cd539906b107481856a0af7a8fa82dc9"
-  end
-
-  # Workaround for newer Clang
-  # upstream pr ref, https://github.com/arturo-lang/arturo/pull/1635
-  patch :DATA
-
   def install
-    (buildpath/"nim").install resource("nim")
-    cd "nim" do
-      system "./build.sh"
-      system "./bin/nim", "c", "-d:release", "koch"
-      system "./koch", "boot", "-d:release", "-d:useLinenoise"
-    end
-    ENV.prepend_path "PATH", buildpath/"nim/bin"
+    inreplace "build.nims", 'targetDir = getHomeDir()/".arturo"', "targetDir=\"#{prefix}\""
 
-    inreplace "build.nims", /ROOT_DIR\s*=\s*r"\{getHomeDir\(\)\}.arturo".fmt/, "ROOT_DIR=\"#{prefix}\""
-
-    # Work around issues with Xcode 14.3
-    # @mhelpers@swebviews.nim.c:1116:2: error: call to undeclared function 'generateDefaultMainMenu';
-    # ISO C99 and later do not support implicit function declarations
-    inreplace "build.nims", "--passC:'-flto'", "--passC:'-flto' --passC:'-Wno-implicit-function-declaration'"
-
-    # Use mini install on Linux to avoid webkit2gtk dependency, which does not have a formula.
-    args = ["log", "release"]
-    args << "mini" if OS.linux?
-    system "./build.nims", "install", *args
+    system "./build.nims", "--install", "--mode", "mini"
   end
 
   test do
@@ -61,18 +31,3 @@ class Arturo < Formula
     assert_equal "hello", shell_output("#{bin}/arturo #{testpath}/hello.art").chomp
   end
 end
-
-__END__
-diff --git a/build.nims b/build.nims
-index 9c3f812..c4ed4c0 100755
---- a/build.nims
-+++ b/build.nims
-@@ -104,7 +104,7 @@ var
-                           "--skipUserCfg:on --colors:off -d:danger " &
-                           "--panics:off --mm:orc -d:useMalloc --checks:off " &
-                           "-d:ssl --cincludes:extras --opt:speed --nimcache:.cache --passL:'-pthread' " & 
--                          "--path:src "
-+                          "--path:src --passC:\"-Wno-error=incompatible-pointer-types\""
-     CONFIG              ="@full"
- 
-     ARGS: seq[string]   = @[]

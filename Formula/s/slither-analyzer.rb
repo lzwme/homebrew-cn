@@ -3,19 +3,18 @@ class SlitherAnalyzer < Formula
 
   desc "Solidity static analysis framework written in Python 3"
   homepage "https://github.com/crytic/slither"
-  url "https://files.pythonhosted.org/packages/f9/d7/327729240d0ab0291cf3e9b36f05e135676ffea796e4a74ec6b7ef7ad2dd/slither_analyzer-0.11.3.tar.gz"
-  sha256 "09953ddb89d9ab182aa5826bda6fa3da482c82b5ffa371e34b35ba766044616e"
+  url "https://files.pythonhosted.org/packages/b7/14/21c74116b0d088ab8c69c48ad7991c2b0fa6cb854486ad9261db17eb1307/slither_analyzer-0.11.4.tar.gz"
+  sha256 "f5ecc15a7995e73581a5829e53d0f7fc061c9d64db54c6b3340c912d0959e642"
   license "AGPL-3.0-only"
-  revision 7
   head "https://github.com/crytic/slither.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f67273e19c954121e80055f941108b8a5c90b1dc171ee0a3db3be10d0d9be0f8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e50a30ee498d73b7ccc6d8a53a0f69d52acaa3fa86537da0deb92d6200b86fbc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ceb537ff860e5e5685ff42025aeac3608b52464f18a2a460356cd87a6366ddf2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "307b0aa0d4f4f751519afae37e8ccf37c16ea31488ed18606933c6f6bbb6f9fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "466ac40e8895e318b45d6f1b52abbcfaf65b78c5c2291d52843ae575a8ecb0cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31ba22610e81625cd1789f4c8b0c2451c02601eaaefed4391720d6f2bfe2b159"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ec86820bda0090bd0070405a0154e55fa03adb080cc84f55cb9b873b02fc952"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8e8e31ff1e13222ef4937f5e237cd2dd60e5efb1a846e9010c0af9cc7a48366"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d61154faa254ac458a31fd9016d63275d11bb2c7787477836b1b1a45528bb28d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d3e012e5fc64dfefa9b3f94fd1c2885fe5a9171a4f26d27cc40df6eba7fa22bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "07bd707d45e0e0ad63bb085354fe059d462f0dcb2a9d498aaab3d95ec1b6e04d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59fe25b6f7994b3b3e56ef1da8731614a916af4831db374d0882633de21418f0"
   end
 
   depends_on "certifi" => :no_linkage
@@ -129,6 +128,11 @@ class SlitherAnalyzer < Formula
     sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
+  resource "importlib-metadata" do
+    url "https://files.pythonhosted.org/packages/f3/49/3b30cad09e7771a4982d9975a8cbf64f00d4a1ececb53297f1d9a7be1b10/importlib_metadata-8.7.1.tar.gz"
+    sha256 "49fef1ae6440c182052f407c8d34a68f72efc36db9ca90dc0113398f2fdde8bb"
+  end
+
   resource "multidict" do
     url "https://files.pythonhosted.org/packages/80/1e/5492c365f222f907de1039b91f922b93fa4f764c713ee858d235495d8f50/multidict-6.7.0.tar.gz"
     sha256 "c6e99d9a65ca282e578dfea819cfa9c0a62b2499d8677392e09feaf305e9e6f5"
@@ -165,8 +169,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/cc/a9/546676f25e573a4cf00fe8e119b78a37b6a8fe2dc95cda877b30889c9c45/regex-2025.11.3.tar.gz"
-    sha256 "1fedc720f9bb2494ce31a58a1631f9c82df6a09b49c19517ea5cc280b4541e01"
+    url "https://files.pythonhosted.org/packages/0b/86/07d5056945f9ec4590b518171c4254a5925832eb727b56d3c38a7476f316/regex-2026.1.15.tar.gz"
+    sha256 "164759aa25575cbc0651bef59a0b18353e54300d79ace8084c818ad8ac72b7d5"
   end
 
   resource "requests" do
@@ -217,6 +221,11 @@ class SlitherAnalyzer < Formula
   resource "yarl" do
     url "https://files.pythonhosted.org/packages/57/63/0c6ebca57330cd313f6102b16dd57ffaf3ec4c83403dcb45dbd15c6f3ea1/yarl-1.22.0.tar.gz"
     sha256 "bebf8557577d4401ba8bd9ff33906f1376c877aa78d1fe216ad01b4d6745af71"
+  end
+
+  resource "zipp" do
+    url "https://files.pythonhosted.org/packages/e3/02/0f2892c661036d50ede074e376733dca2ae7c6eb617489437771209d4180/zipp-3.23.0.tar.gz"
+    sha256 "a07157588a12518c9d4034df3fbbee09c814741a33ff63c05fa29d26a2404166"
   end
 
   def install

@@ -3,18 +3,17 @@ class Tmt < Formula
 
   desc "Test Management Tool"
   homepage "https://tmt.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/40/00/6653b20b631c46aaea216d48432f4498b31cbe72bcf4b6a9459832c9bbc5/tmt-1.64.0.tar.gz"
-  sha256 "d358cf00ed6b7174335d03fe401312abd71a723ce4957cedac3b3ce941538026"
+  url "https://files.pythonhosted.org/packages/05/ea/b3c92be257a13a1617f1c3be053d938881c63a851caa44a751fedf9c40d8/tmt-1.65.0.tar.gz"
+  sha256 "1cf7e6fe784aa842644cfced7f3f007551da1a1dfb27e1837c75095f435587a2"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23cc5dfafb1dc511f68121feaafba84622644daa267eb206586a05e542c70498"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bce95280168a1b68fa4f8fd0f8d0c5590b3d4fdc98be8b2e7b3e4d29717437b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d3d55588fbf0776b33fa941aaffc3ca1276ab8ee8bf8768d2b16e578d4b3951"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f450f607f51585b2ff173e6214269cf89237971e1b8fe7488866a5fdc0359ed9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0863e632131c64b49888ffbde14398862380ecaa072eb29467926202968dce8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7085cd02ff1c46fcac73404b162baeb1655a2949f19f5e6cd437bd2b1c599a3c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d68b15adefacffa873e541d6972680e48ab4d32ef6cc865cf5a4a2855a5b7e38"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "557b23a539a78880514120c72a1dcb329ea5333d7b87d9c93faccde775d2a937"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "071009c293f5f927f64b14e553fb4c52d187d097bef6d5a04ec2c08ac9782293"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5fe471f8f0851a31869f174e7cd0a34156c30ef5032ed5e193eb331a4ce84747"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc5019fca84151ecd78ae5dbeec84c142e4509e640b2f513fa981e0ac9ab7170"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74454d232d86b0b1daf8363cda9661e5e1fffd1a42454bf1ba042740190f7517"
   end
 
   depends_on "beakerlib"

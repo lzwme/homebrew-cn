@@ -3,13 +3,12 @@ class Nbdime < Formula
 
   desc "Jupyter Notebook Diff and Merge tools"
   homepage "https://nbdime.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/a6/f1/4be57ecea4d55d322f05a0f89e0b73d7a8d90a16dbf01168eab3e7bf5939/nbdime-4.0.2.tar.gz"
-  sha256 "d8279f8f4b236c0b253b20d60c4831bb67843ed8dbd6e09f234eb011d36f1bf2"
+  url "https://files.pythonhosted.org/packages/fe/f6/b11298ca912477e3c392c5332d9c0c3d3a36ea62e1b80f03295605d6d504/nbdime-4.0.3.tar.gz"
+  sha256 "62ab50a758282523c4501144b9f314221dbbaed0403c12fd70f6a4fcc532ec24"
   license "BSD-3-Clause"
-  revision 6
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d3471a00b3f2405f95e89ff287c61e7049f4e571ec5a10c86bc8cfd8955481cb"
+    sha256 cellar: :any_skip_relocation, all: "8b002e03c4bf2d7c2cad5860801e8cec7ecadd4ea5cb27dc68412c74767d5523"
   end
 
   depends_on "certifi"

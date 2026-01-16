@@ -44,10 +44,15 @@ class Elm < Formula
   end
 
   def install
-    # Work around build failure due to incompatibility with newer `tls` package
-    # Ref: https://github.com/elm/compiler/pull/2325
-    args = ["--constraint=tls<2"]
-    odie "Check if `tls` constraint can be removed!" if version > "0.19.1"
+    # Workaround to build with GHC 9.14. Related issues:
+    # https://github.com/well-typed/cborg/issues/373
+    # https://github.com/haskellari/these/issues/211
+    args = %w[
+      --allow-newer=cborg:base,cborg:containers,serialise:base,serialise:containers
+      --allow-newer=these:base
+      --allow-newer=snap-server:containers
+      --constraint=tls>=2
+    ]
 
     system "cabal", "v2-update"
     system "cabal", "v2-install", *args, *std_cabal_v2_args

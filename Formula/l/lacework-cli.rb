@@ -2,8 +2,8 @@ class LaceworkCli < Formula
   desc "CLI for managing Lacework"
   homepage "https://docs.lacework.com/cli"
   url "https://github.com/lacework/go-sdk.git",
-      tag:      "v2.8.4",
-      revision: "edf92c488cac5431929aa5d5474347d17842ff52"
+      tag:      "v2.8.5",
+      revision: "9bde50ff9eec9188e033486256823a06b35ccd17"
   license "Apache-2.0"
   head "https://github.com/lacework/go-sdk.git", branch: "main"
 
@@ -16,13 +16,12 @@ class LaceworkCli < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef5b0d4677650dbf9141ad8f134f605fb28031b898ba3a7b06d5ccfa42c988ac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef5b0d4677650dbf9141ad8f134f605fb28031b898ba3a7b06d5ccfa42c988ac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef5b0d4677650dbf9141ad8f134f605fb28031b898ba3a7b06d5ccfa42c988ac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5e63961eeb8daaf6e69abb1a4f41d470c833f2de72febce61bc0c2c5020abda0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "82a76a1ef59c8b66eb18aca312a11f0f82f7c8a653a29503729d61988cc6e3ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f68a6ce34e9ca7ef6f7d636d09eea6afe7334b9d3d300a3af510d27817161aa7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d354c9af9b9d8f1fd9827e9d8ff6d1f65cc1890d89f7974efcb47bd113157c97"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d354c9af9b9d8f1fd9827e9d8ff6d1f65cc1890d89f7974efcb47bd113157c97"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d354c9af9b9d8f1fd9827e9d8ff6d1f65cc1890d89f7974efcb47bd113157c97"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0093fd21de15d865cb624dc7aefd81a687f14f173b185311e7e77cd72fb8fbbf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "940bdde483fc6e14cd182d23d4cc3b551ce5be5531928a76b00b95bd6c8f567b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9083e57bce2846b2ac83b8f29eaac53665af89717a869eb90097ec99feb864d"
   end
 
   depends_on "go" => :build

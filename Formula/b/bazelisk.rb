@@ -1,20 +1,18 @@
 class Bazelisk < Formula
   desc "User-friendly launcher for Bazel"
   homepage "https://github.com/bazelbuild/bazelisk/"
-  url "https://ghfast.top/https://github.com/bazelbuild/bazelisk/archive/refs/tags/v1.27.0.tar.gz"
-  sha256 "d4abfac1a39876ec1e6c6fa04ec0b62cc4bef174f11d19848bc80dc15ee05261"
+  url "https://ghfast.top/https://github.com/bazelbuild/bazelisk/archive/refs/tags/v1.28.0.tar.gz"
+  sha256 "f9cde570efb98f0b607c4caed6bfe393252ef8a24f83f5ca549b48d3aeab3c64"
   license "Apache-2.0"
   head "https://github.com/bazelbuild/bazelisk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e92a349b08740b3610079e799d5f80870a912790bff674a2da456859d38697a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "793f2de5437dab04d53985229024b5ebd8f53c08932df8777da135c71356d745"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "793f2de5437dab04d53985229024b5ebd8f53c08932df8777da135c71356d745"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "793f2de5437dab04d53985229024b5ebd8f53c08932df8777da135c71356d745"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1c0aa4a5126a4ada7dc36f18f01ddad84e448c275cde3d75423586ced6c5343e"
-    sha256 cellar: :any_skip_relocation, ventura:       "1c0aa4a5126a4ada7dc36f18f01ddad84e448c275cde3d75423586ced6c5343e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "26fb1ee2c4bf8f45e51e3a53d8503c2c60c50139b9d9a333e11fa0ed4904ffb6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3030c623242031fd6262a4eaea9919f3f7941376b2cdc192f88c21fa48b11d5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e67ccff1f222064f33beb522f97340a3f689a038ae80eec3e9cdd250f1d11e97"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e67ccff1f222064f33beb522f97340a3f689a038ae80eec3e9cdd250f1d11e97"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e67ccff1f222064f33beb522f97340a3f689a038ae80eec3e9cdd250f1d11e97"
+    sha256 cellar: :any_skip_relocation, sonoma:        "95d073e1a77ecd0895e02909d0687785e4a6f15292c459a60f0c78e43b07354c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "59a44e5cd50fb1689ac76d9ae9869c423136a637d1f88ccb6676df7d0a6e1b8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2c15a3f460a7eb491b19ce7e26dfaa310a9f2bfab3aedd41212ed3df3ab73c0"
   end
 
   depends_on "go" => :build

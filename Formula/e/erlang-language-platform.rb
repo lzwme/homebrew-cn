@@ -3,18 +3,18 @@ class ErlangLanguagePlatform < Formula
   homepage "https://whatsapp.github.io/erlang-language-platform/"
   # We require the submodules, so we fetch via git
   url "https://github.com/WhatsApp/erlang-language-platform.git",
-      tag:      "2025-12-12",
-      revision: "553c90d63143c82057d4888b40109ec9dca2f329"
+      tag:      "2026-01-15",
+      revision: "da5ec8d23af9df264c33cc1ce2d74844d13a5b77"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/WhatsApp/erlang-language-platform.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55661c68b112926c89343e3c2da047d6a0af88da1f17cfe6b65ce244a02d6167"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7177e1f14ee5d6edcf6d68d162045c2e0f7ef43483e99f6f04daf49421bfc6a4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "139ac3fc1c8c0ca7ae3ee8730ea0aa7b3cc33dd958c39942bf421b495fa5965a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e34997ea7ddcf9c7506d57f5fd4e44e6c21d7a3ef666b0c388862173078b2f35"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c83c4e6f954ef03e2dc925279d0844962432788d751867ebbe71f64529679d40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "967a37f1abd84b8e99eba64379d8f4f4904dffff2a88387c83437641bdc3546b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "040a4e92cb397e6a7cbcffe64ce430752ead2e698a52f020ef0d26b7eba3c94b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23aeca9955cbfa193c228f75054d0bb009f962a9b7dab14f259a41c7483a1b8d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "350edc5aeb41c02b381d1e04f23649e986b7f58991ddf09fe03b900ba549cd5c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f40912c298670c75879c68de4d66c4caa3c3f8ab0d24e29b926b5251755ed3a7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d207054c85fa68fd4d5d54b00e12f5801f4554d06608b8b722b94b9ccece3a6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c04b3f6599af457cdcce9859f5608d98f5a16e49325b6147c2498bf464e4516"
   end
 
   depends_on "rust" => :build

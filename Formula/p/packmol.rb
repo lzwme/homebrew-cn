@@ -1,8 +1,8 @@
 class Packmol < Formula
   desc "Packing optimization for molecular dynamics simulations"
   homepage "https://www.ime.unicamp.br/~martinez/packmol/"
-  url "https://ghfast.top/https://github.com/m3g/packmol/archive/refs/tags/v21.1.4.tar.gz"
-  sha256 "62e0bf9a5d0671ff1f03d57671c8bb91fd16790fcc07f0e68f1829b1f34fae48"
+  url "https://ghfast.top/https://github.com/m3g/packmol/archive/refs/tags/v21.2.0.tar.gz"
+  sha256 "b842e3a3b5e98c6ccd2782c0bc5ae28f46134c2d1470056f153d44ade6e9cd6d"
   license "MIT"
   head "https://github.com/m3g/packmol.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Packmol < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e09ea01de1dd25a21f4b6dcde144bc30e27abc703432d561e97f2c56a61e4ffc"
-    sha256 cellar: :any,                 arm64_sequoia: "bf58a1611c2329dd02ccb486c0ea27beb5dadb8b3dd0b0e74459ddaca0f976cd"
-    sha256 cellar: :any,                 arm64_sonoma:  "9b3c6314fbc1c63d17856e6b443620850f26f0eb573661591c043d730b753f4b"
-    sha256 cellar: :any,                 sonoma:        "8d0078d5e626a6468dba4ab5a3cf0e76e168972e250b77f1c5b186881c24b588"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3bc81fce99ef72fa922db22d78ee3495a3a796e33f7dc03b38d4795a29966a6d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97f68a16c611156d55f30e6a96534cca8c6b54d9754f362c303cb0c2bcd0a84a"
+    sha256 cellar: :any,                 arm64_tahoe:   "a96743852ff12954acc74cd45865ba0806294928c40b4b9bb8e33e8491d95be3"
+    sha256 cellar: :any,                 arm64_sequoia: "486069ee140a54494ae5307cea78c2c18fb67db695c63bab201741dbe6ba8108"
+    sha256 cellar: :any,                 arm64_sonoma:  "4d389bddffd0d14cf143fbafb72460247f0305252a03bfa912db865273db40fd"
+    sha256 cellar: :any,                 sonoma:        "0db1bd849ff8bfd7ba213853d88c8847e8fa039fc563bc3bce021d1b220d2dbb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d63528f167c14c38ef6beb7a612368caf96d8c6f680e0b1221b06e9f117fc17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f55a02c1887c26d76cfed3c24e12924a6c76ea6311d2e31bc1da32962db2df4"
   end
 
   depends_on "cmake" => :build

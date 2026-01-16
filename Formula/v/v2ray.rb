@@ -1,8 +1,8 @@
 class V2ray < Formula
   desc "Platform for building proxies to bypass network restrictions"
   homepage "https://v2fly.org/"
-  url "https://ghfast.top/https://github.com/v2fly/v2ray-core/archive/refs/tags/v5.43.0.tar.gz"
-  sha256 "e8e61a2ec0ec124d00922578ea2e194c953baeb633668f1a6b1339c8d8125cd6"
+  url "https://ghfast.top/https://github.com/v2fly/v2ray-core/archive/refs/tags/v5.44.1.tar.gz"
+  sha256 "b11d6ff12e69e1cc21e18e4eb6da2fb6332fa6a6cca53fb1a3f42e2484e0ebf3"
   license all_of: ["MIT", "CC-BY-SA-4.0"]
   head "https://github.com/v2fly/v2ray-core.git", branch: "master"
 
@@ -12,12 +12,12 @@ class V2ray < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf641169a1faec6c2e711856f2092d39c58eb1343851b65b8352ac078f749a14"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf641169a1faec6c2e711856f2092d39c58eb1343851b65b8352ac078f749a14"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf641169a1faec6c2e711856f2092d39c58eb1343851b65b8352ac078f749a14"
-    sha256 cellar: :any_skip_relocation, sonoma:        "454bfef863a38286f6ec0fe8c9d9d2d1b9615dc522b214d43e06dc4587135fc0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7efba8d414eaa8304fb6efe366d8748f30cf27b26bce0891b2af6d79c9c5ee6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1e0ccaaae09cca0a7aa423a9f077c2afc8bb7bcc8613291cb336e7fffe6f4d9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "425f3b5f3ca1f653e2d3fd258818c4594bf86ec8503150e187ac9ae5077d38ce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "425f3b5f3ca1f653e2d3fd258818c4594bf86ec8503150e187ac9ae5077d38ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "425f3b5f3ca1f653e2d3fd258818c4594bf86ec8503150e187ac9ae5077d38ce"
+    sha256 cellar: :any_skip_relocation, sonoma:        "94d505a6fa0d44b125ff6591f05b3b30c716dbb39f3376595f318099b5ce621d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "24c033643be2d055a4447a4b21822c59dec1e3ec32a013c4a7e03f2c5b0d61a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7406404b69b61b21176e77607ea9142b8e9b16c8b2504f41ce636d8e76a58c2b"
   end
 
   depends_on "go" => :build
@@ -33,8 +33,8 @@ class V2ray < Formula
   end
 
   resource "geosite" do
-    url "https://ghfast.top/https://github.com/v2fly/domain-list-community/releases/download/20260114095327/dlc.dat"
-    sha256 "6f000a21368d702f6c05bcf4ad62d9aebe5a0055f0a171bf2af7dff9393c8d20"
+    url "https://ghfast.top/https://github.com/v2fly/domain-list-community/releases/download/20260115051358/dlc.dat"
+    sha256 "f90a40e8e499036f408a62160fbc1c8eecf87ef81cc456f094ab728da5a6f586"
   end
 
   def install

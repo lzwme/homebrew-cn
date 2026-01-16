@@ -1,8 +1,8 @@
 class WhisperCpp < Formula
   desc "Port of OpenAI's Whisper model in C/C++"
   homepage "https://github.com/ggml-org/whisper.cpp"
-  url "https://ghfast.top/https://github.com/ggml-org/whisper.cpp/archive/refs/tags/v1.8.2.tar.gz"
-  sha256 "bcee25589bb8052d9e155369f6759a05729a2022d2a8085c1aa4345108523077"
+  url "https://ghfast.top/https://github.com/ggml-org/whisper.cpp/archive/refs/tags/v1.8.3.tar.gz"
+  sha256 "870ba21409cdf66697dc4db15ebdb13bc67037d76c7cc63756c81471d8f1731a"
   license "MIT"
   head "https://github.com/ggml-org/whisper.cpp.git", branch: "master"
 
@@ -12,13 +12,12 @@ class WhisperCpp < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "5ec488affdcc40b564a691636a7be9cb681984ef5327fbf2e837ed881cad0a92"
-    sha256 cellar: :any,                 arm64_sequoia: "98f80dcf49429a56812105b152e88d30681adbb2e567e0d1131658ae2ff42c67"
-    sha256 cellar: :any,                 arm64_sonoma:  "95cb0830bfa50cf10a9c97e98dbb079491cdd747fe8d186e9e30df8ffad3baee"
-    sha256 cellar: :any,                 sonoma:        "c1f87d684b2f7f559b098fa27945037f13c06ebef53960d55218edae5a3e7780"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "34200c0f5a102c0761f0f97ffee2e4a9488435d5cfe52619e38dafb9977e4caf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ad12253e983a1bc33cc52225651fe3d1907959cd81dbfd083a31f08cbac555b"
+    sha256 cellar: :any,                 arm64_tahoe:   "5eedd491cfac5e7fb0212068d794ff129ab2b7b1e0353c16e9b69c3ef8040278"
+    sha256 cellar: :any,                 arm64_sequoia: "315a2b2b47fc231ad88586dae9c1f2d4147222d0d6acd62a921eba6263c32c2d"
+    sha256 cellar: :any,                 arm64_sonoma:  "f0901568c7babbd3022a043887007400e4b57a22d3a90b9c0824d01fa3a77270"
+    sha256 cellar: :any,                 sonoma:        "e6c2f78cbc5d6b311dfe24d8c5d4ffc68a634465c5e35ed11746068583d273c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "684199fd6bec28cddfa086c584a49d236386c109f901a443b577b857fd052f83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09defdf76a98554ed27b2fd4c2e34472b83603b17ed0411505166146799800ac"
   end
 
   depends_on "cmake" => :build

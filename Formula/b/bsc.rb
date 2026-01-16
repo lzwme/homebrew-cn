@@ -38,16 +38,12 @@ class Bsc < Formula
   patch :DATA
 
   def install
+    store_dir = buildpath/"store"
+    haskell_libs = %w[old-time regex-compat split syb]
     system "cabal", "v2-update"
-    system "cabal", "v2-install", "--lib",
-                    "old-time",
-                    "regex-compat",
-                    "split",
-                    "syb"
+    system "cabal", "--store-dir=#{store_dir}", "v2-install", "--lib", *haskell_libs
 
-    store_dir = Utils.safe_popen_read("cabal", "path", "--store-dir").chomp
-    ghc_version = Utils.safe_popen_read("ghc", "--numeric-version").chomp
-    package_db = "#{store_dir}/ghc-#{ghc_version}-inplace/package.db"
+    package_db = store_dir.glob("ghc-*/package.db").first
 
     with_env(
       PREFIX:           libexec,

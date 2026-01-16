@@ -4260,6 +4260,7 @@ Homebrew-homebrew-core/Formula/lib/libtcod.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libtecla.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libtensorflow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libtermkey.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libthai.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libtickit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libtiff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libtins.rb, Homebrew/homebrew-core, 1
@@ -5521,6 +5522,7 @@ Homebrew-homebrew-core/Formula/p/pgloader.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgpdump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgpool-ii.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgrok.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pgroll.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgroonga.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pgrouting.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgrx.rb, Homebrew/homebrew-core, 1
@@ -8416,7 +8418,6 @@ Homebrew-homebrew-cask/Casks/a/astropad.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/atemosc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/atext.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/athas.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/a/athens.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/atlauncher.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/atok.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/atomic-wallet.rb, Homebrew/homebrew-cask, 0
@@ -9377,7 +9378,6 @@ Homebrew-homebrew-cask/Casks/e/energia.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/energiza.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/enfusegui.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/engine-dj.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/e/engine-prime.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/enigma-game.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/enjoyable.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/enpass.rb, Homebrew/homebrew-cask, 0
@@ -14767,6 +14767,7 @@ Homebrew-homebrew-cask/Casks/s/streamlabs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/streamlink-twitch-gui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stremio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/stremio@beta.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/stremioservice.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stretchly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stringsfile.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/stringz.rb, Homebrew/homebrew-cask, 1
