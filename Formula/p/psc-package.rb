@@ -38,6 +38,9 @@ class PscPackage < Formula
     # Workaround to build with GHC 9.10 until upstream allows `turtle >= 1.6`
     args = ["--allow-newer=base,turtle:text"]
 
+    # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
+    args << "--allow-newer=containers,template-haskell"
+
     system "cabal", "v2-update"
     system "cabal", "v2-install", *args, *std_cabal_v2_args
   end

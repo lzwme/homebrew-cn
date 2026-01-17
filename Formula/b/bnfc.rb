@@ -30,8 +30,11 @@ class Bnfc < Formula
   uses_from_macos "libffi"
 
   def install
-    system "cabal", "v2-update"
-    system "cabal", "v2-install", buildpath/"source", *std_cabal_v2_args
+    rm "cabal.project" # avoid resolving test dependencies
+    cd "source" do
+      system "cabal", "v2-update"
+      system "cabal", "v2-install", *std_cabal_v2_args
+    end
     system "make", "-C", "docs", "text", "man", "SPHINXBUILD=#{Formula["sphinx-doc"].bin}/sphinx-build"
 
     man1.install "docs/_build/man/bnfc.1"

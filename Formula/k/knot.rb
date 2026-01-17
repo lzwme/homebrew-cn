@@ -1,8 +1,8 @@
 class Knot < Formula
   desc "High-performance authoritative-only DNS server"
   homepage "https://www.knot-dns.cz/"
-  url "https://knot-dns.nic.cz/release/knot-3.5.2.tar.xz"
-  sha256 "6f577c247ef870a55fe3377246bc1c2d643c673cd32de6c26231ff51d3fc7093"
+  url "https://knot-dns.nic.cz/release/knot-3.5.3.tar.xz"
+  sha256 "e003ad1eef229c4e65a6cac876ee773e25a06177ecdc83795a26617a6eebe471"
   license all_of: ["GPL-3.0-or-later", "0BSD", "BSD-3-Clause", "LGPL-2.0-or-later", "MIT"]
 
   livecheck do
@@ -11,12 +11,12 @@ class Knot < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5c5bcfd9d245e00a6128b8ce0d0e0d8d817a43f4fc54d9b13b74c44b6479c331"
-    sha256 arm64_sequoia: "7fe456c52622f925ba46a7ec93dd0093a59da2117a9125fb29d35fd7f0101a61"
-    sha256 arm64_sonoma:  "1813915fe4bf5fa11ce2a1c7729879d31a4918b98112521e17cdace37f8fc09e"
-    sha256 sonoma:        "bb832bf04f8aecf909ee60849fa4dfe6be380d96473b8fe4942399e5f729a107"
-    sha256 arm64_linux:   "4f794e2182ce9c25416069ef2ef7c1ccfdd6afcb35c10e6445d4dd252fc48124"
-    sha256 x86_64_linux:  "b89cb9ce916f5e3a7a2f0c9e0fe8a0258ebd8a35570173d6286f514ca3bf60de"
+    sha256 arm64_tahoe:   "bc0c1ce69bfb8207b9ba59b4ca897c95de7a1917ebc4fbf4ea544a66c5ab47ea"
+    sha256 arm64_sequoia: "cebdffaa3639390405ec21b513e5ddef268b865a55918346bf5ad5ce10fbd3ba"
+    sha256 arm64_sonoma:  "51c0ac6de8584b943110e3a4ae8f13be99cfb1ecad1b0baad5437908f8dd9d08"
+    sha256 sonoma:        "ee6b51cfba74a46f04c4d5292418b0a0e564707ed446ac7e5efdc7c54d31c3ad"
+    sha256 arm64_linux:   "bbfb5510a47663ff854a9b7e95a7456c325389ecec8995dd2b477ab7ab14e01d"
+    sha256 x86_64_linux:  "c0aca513df98073d9dda1578d71f393778b0f325b737ad4d2736fb5364412a07"
   end
 
   head do

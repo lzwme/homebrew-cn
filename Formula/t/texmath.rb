@@ -22,8 +22,11 @@ class Texmath < Formula
   uses_from_macos "libffi"
 
   def install
+    # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
+    args = ["--allow-newer=base,containers,template-haskell"]
+
     system "cabal", "v2-update"
-    system "cabal", "v2-install", "--flags=executable", *std_cabal_v2_args
+    system "cabal", "v2-install", "--flags=executable", *args, *std_cabal_v2_args
   end
 
   test do

@@ -6,6 +6,11 @@ class Sdl3Image < Formula
   license "Zlib"
   head "https://github.com/libsdl-org/SDL_image.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^(?:release[._-])?v?(3(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "25fa2fff7bcc01bdec93f57335163bec94b72d377c8e7a4c0e827783f6745b82"
     sha256 cellar: :any,                 arm64_sequoia: "30d46fa48cee0ce8a4146efc76c45cbd62f632272a39d9508590e06938494a02"

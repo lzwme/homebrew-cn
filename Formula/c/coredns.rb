@@ -1,8 +1,8 @@
 class Coredns < Formula
   desc "DNS server that chains plugins"
   homepage "https://coredns.io/"
-  url "https://ghfast.top/https://github.com/coredns/coredns/archive/refs/tags/v1.14.0.tar.gz"
-  sha256 "97fa2dda2fbb7f9756cfe4062a6a70edfe6471f120f980e86326ddce06995a77"
+  url "https://ghfast.top/https://github.com/coredns/coredns/archive/refs/tags/v1.14.1.tar.gz"
+  sha256 "ec814e2de304caaaabdbdc0c174e8f5e1668274d8c3da387d76cbb9b91faad66"
   license "Apache-2.0"
   head "https://github.com/coredns/coredns.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Coredns < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e4cb85034347f4c96bf8383de6a3d5438cb3127d7d184e9b31ac84530e451a9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6235fc2882eca8ff0090ca0fcf401f34cc90d6aa0dbcf3efbf64b9bed9065918"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d7146ce0e7dd70a33f65b483cd3e83524dfe6b8bac913850b5dbbd58b16ab4e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bba87bb5ba4f32b2eb4c40adecd2a5148ad6f260425252552981b957dcdc4a73"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7d76b4b4c4628e8b470113a7c97b3eac43977c7ddb4eeb3157b82759b1ae161"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17868c996d118e5ce635933751b8374a99df9dee46912fcfca28dfd436abbd38"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4cc382bccb03573529e724ba558311637188c44a096581caaf2186f94723748c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12d21a321b6b64fe4b3ebacad7ad249ba57765ce796d21b1fc19d02e517fb145"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "900f0cb3957d2c685e6eba843b02b802fd0375bb6e03723f9eb0ebf30dba43e5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e28357362fbee2e52cd240e7d2c4fe70aa0a7f0ecc541a5fe9f4d9013a29daa1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbb9ba2274ec2e7b39eac7d6d1b92c0f30210e475448940045f14794a19245a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcc63ea358a2b160f0a3bd295b315ff93865cd7063d212c5efc19ffe9b94126b"
   end
 
   depends_on "go" => :build

@@ -4,7 +4,7 @@ class Efl < Formula
   url "https://download.enlightenment.org/rel/libs/efl/efl-1.28.1.tar.xz"
   sha256 "84cf6145f9cc82bfff690005be24392c8f3c52f8e00ff04d8eea371429c09424"
   license all_of: ["GPL-2.0-only", "LGPL-2.1-only", "BSD-2-Clause", "FTL", "zlib-acknowledgement"]
-  revision 1
+  revision 2
 
   livecheck do
     url "https://download.enlightenment.org/rel/libs/efl/"
@@ -12,12 +12,12 @@ class Efl < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4f7931f7bbba7b77cdffec8ad7f786fbf391c751cca06e21bfd36db76b45a9c8"
-    sha256 arm64_sequoia: "ca39300711b68d4b9b204e11a26e087d653d07b820a566abb8f2571511bef9df"
-    sha256 arm64_sonoma:  "37008b1b96a2bcb02b6f107554e48064f18f45b749db0f59fe58f9b08dc801a2"
-    sha256 sonoma:        "b34db0280911ff0635abc86cc72887bdf894f0a308e1ec23b69afbe9b12db2c4"
-    sha256 arm64_linux:   "29ab5ac199b353fc6d3e2ee896f36e804f5745111c73e2e31405c7cec5f2a874"
-    sha256 x86_64_linux:  "5345f7a0bfe8001c148667d79ab69e5488f7619213a4dba32de5ae23cf239659"
+    sha256 arm64_tahoe:   "ff9e74361fb44547be5d3b75bf79da07951908b98ef3d95b36ab1da053eaeae1"
+    sha256 arm64_sequoia: "28325e6e21f61357a195f7c59a3f92e30b5a8ad1b0385d2af6521a26a91894f0"
+    sha256 arm64_sonoma:  "fef2c199370b4f0bd018d387df3dc1bd118f5b6bcd495a1eb5a821970297ae7f"
+    sha256 sonoma:        "911cfa99069ed354357027da43d3db6bf48b0f49c5d3b425eaea82f93c00fea1"
+    sha256 arm64_linux:   "36ada6d00f35841ed4c0045fef852362498d5c5c46808bdfcf7b8119d6d5f871"
+    sha256 x86_64_linux:  "79eb03fa89429fb5bfe0f6c48388f6964f5088bb45deaed7b9489efb07c1b6ba"
   end
 
   depends_on "meson" => :build

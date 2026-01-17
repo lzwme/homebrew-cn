@@ -27,7 +27,9 @@ class DhallYaml < Formula
   uses_from_macos "zlib"
 
   def install
-    args = []
+    # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
+    args = ["--allow-newer=base,containers,template-haskell"]
+
     if build.stable?
       # Backport support for GHC 9.10
       args += ["--allow-newer=dhall-json:aeson", "--allow-newer=dhall-json:text"]

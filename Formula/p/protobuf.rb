@@ -1,8 +1,8 @@
 class Protobuf < Formula
   desc "Protocol buffers (Google's data interchange format)"
   homepage "https://protobuf.dev/"
-  url "https://ghfast.top/https://github.com/protocolbuffers/protobuf/releases/download/v33.3/protobuf-33.3.tar.gz"
-  sha256 "1c9996fa0466206d5e4b8120b3fceb332369b64248e0649089aad586569d3896"
+  url "https://ghfast.top/https://github.com/protocolbuffers/protobuf/releases/download/v33.4/protobuf-33.4.tar.gz"
+  sha256 "bc670a4e34992c175137ddda24e76562bb928f849d712a0e3c2fb2e19249bea1"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Protobuf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "99dcbec9fd51287155423d15b2c1d0c1b33968c8ca3994bff881be818bfc7f31"
-    sha256 cellar: :any, arm64_sequoia: "f6681df36b2d892cf46834cb521198965fee84afad565c3df4a4a15649daa1f8"
-    sha256 cellar: :any, arm64_sonoma:  "77772e5296647df005ed91fe6b9f977b707ed7b58e7e46e23ac20ccdd53818d5"
-    sha256 cellar: :any, sonoma:        "7b85ffa6431d5233d026b92ce7d18a37dd7722c4a5b8856f57ce5f40587e64d0"
-    sha256               arm64_linux:   "dc1dcc26698801c9ced12b34589a2d0d2e5a7219cdbd86cf595cbf511d6e364b"
-    sha256               x86_64_linux:  "a90c5e6adc0a7860fc8bdb9a85589f9220f3317413f947a144e3c553a125253d"
+    sha256 cellar: :any, arm64_tahoe:   "36d36efccf5a514d46b81d9719bd185644ff6a228862096e1a60a98060e08b35"
+    sha256 cellar: :any, arm64_sequoia: "eb4d37b99bc6d8769c5bad17bf4fd79abc6108c5a68997b91ae117404f62ef42"
+    sha256 cellar: :any, arm64_sonoma:  "0fc269052b938715697ae849ffc2e46f196a88b0f1790725c7e486e78e5bbb59"
+    sha256 cellar: :any, sonoma:        "3a5b7d66a76d15a84e7615dca3826a0a0722cf35c9cc2d01623de37251d329dc"
+    sha256               arm64_linux:   "5cf2bd6de03a95be0bfe53dcfb20b622f1b8a1ab3a425f463483c18af7d31f3d"
+    sha256               x86_64_linux:  "1f9161269399b70e869c94aa18e62702cdacde0e64b26d1e8858bcabc72dc7a0"
   end
 
   depends_on "cmake" => :build

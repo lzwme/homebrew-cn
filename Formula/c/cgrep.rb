@@ -36,8 +36,11 @@ class Cgrep < Formula
     # `base <4.16.0.0` is not available in the most recent GHC
     inreplace "cgrep.cabal", "base ^>=4.15.0.0", "base >=4.15.0.0"
 
+    # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
+    args = ["--allow-newer=base,containers,template-haskell"]
+
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *std_cabal_v2_args
+    system "cabal", "v2-install", *args, *std_cabal_v2_args
   end
 
   test do

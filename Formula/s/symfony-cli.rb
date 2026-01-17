@@ -6,26 +6,39 @@ class SymfonyCli < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7294e9bb6c9b561d7d568a66a2594923da43f4d61577be9c14144f81c2dd4601"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39d0aa5ab764b9db8ec29445313703267d2041d00607d8bba71492a6c2b93e75"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3fdb7cbb13b2a54f94f05e2e5f684df055457ec031f3204be2af50bf42135f8e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "61c748301831d07a267613df6dbfceda7a00812e199fd3acceab7da66d7aec52"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3489c0d872fd805a1aaec5309e272ea9bbd7e39cb41ee0ef22decbee605eb48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c147525fbbb70028f6a75ccf68d2f8b972efa2c006d7fe6f595a14d9251ec359"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3686f63b764302e774456bf898f2674bedcc295fff45a9f88e9dc229329207f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d618f2a9539c12b70149cb84fa99e3e9be6926cb13610a59dc9339571d1b31de"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13ec5b53e97f7f219ea9c1e62dce82936062253a6aa14bd66a50c213bf04f2e4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2e0389f858e43fb275cf0de8728acaf09b2487f9e09641aa936f9fe9d153d1ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f2af81225d2ab9e606f1fc01ad814469797a3fce2b4cf42125b02834b80942c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b96691de854b7d81284dabc89f3f1ade63e227139a250278578dba99067f67bb"
   end
 
   depends_on "go" => :build
   depends_on "composer" => :test
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.channel=stable", output: bin/"symfony")
+    ldflags = %W[
+      -s -w
+      -X main.version=#{version}
+      -X main.buildDate=#{time.iso8601}
+      -X main.channel=stable
+    ]
+    system "go", "build", *std_go_args(ldflags:, output: bin/"symfony")
+
+    generate_completions_from_executable(bin/"symfony", "self:completion")
+  end
+
+  service do
+    run ["#{opt_bin}/symfony", "local:proxy:start", "--foreground"]
+    keep_alive true
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/symfony self:version")
+
     system bin/"symfony", "new", "--no-git", testpath/"my_project"
     assert_path_exists testpath/"my_project/symfony.lock"
-    output = shell_output("#{bin}/symfony -V")
-    assert_match version.to_s, output
-    assert_match "stable", output
   end
 end

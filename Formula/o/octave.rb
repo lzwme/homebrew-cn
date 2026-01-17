@@ -137,9 +137,12 @@ class Octave < Formula
 
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
+    ENV.delete "CXX" # make sure Octave's default works without manual -std=...
+
     system bin/"octave", "--eval", "(22/7 - pi)/pi"
     # This is supposed to crash octave if there is a problem with BLAS
     system bin/"octave", "--eval", "single ([1+i 2+i 3+i]) * single ([ 4+i ; 5+i ; 6+i])"
+
     # Test basic compilation
     (testpath/"oct_demo.cc").write <<~CPP
       #include <octave/oct.h>
@@ -147,17 +150,26 @@ class Octave < Formula
       { return ovl (42); }
     CPP
     system bin/"octave", "--eval", <<~MATLAB
-      mkoctfile ('-v', '-std=c++17', '-L#{lib}/octave/#{version}', 'oct_demo.cc');
+      mkoctfile ('-v', '-L#{lib}/octave/#{version}', 'oct_demo.cc');
       assert(oct_demo, 42)
     MATLAB
+
     # Test FLIBS environment variable
     system bin/"octave", "--eval", <<~MATLAB
       args = strsplit (mkoctfile ('-p', 'FLIBS'));
       args = args(~cellfun('isempty', args));
-      mkoctfile ('-v', '-std=c++17', '-L#{lib}/octave/#{version}', args{:}, 'oct_demo.cc');
+      mkoctfile ('-v', '-L#{lib}/octave/#{version}', args{:}, 'oct_demo.cc');
       assert(oct_demo, 42)
     MATLAB
-    ENV["QT_QPA_PLATFORM"] = "minimal"
-    system bin/"octave", "--gui"
+
+    if OS.linux?
+      ENV["QT_QPA_PLATFORM"] = "minimal"
+      system bin/"octave", "--gui"
+    else
+      pid = spawn(bin/"octave", "--gui")
+      sleep 5
+      system "pkill", "-KILL", "octave-gui"
+      Process.wait(pid)
+    end
   end
 end

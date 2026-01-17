@@ -6,7 +6,7 @@ class Pytorch < Formula
   url "https://ghfast.top/https://github.com/pytorch/pytorch/releases/download/v2.9.1/pytorch-v2.9.1.tar.gz"
   sha256 "e17504700ebc4c87f9b57059df1c4d790b769458c04db144c7a92aea90f2c92b"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
 
   livecheck do
     url :stable
@@ -16,12 +16,12 @@ class Pytorch < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "df02d9b645fe6228b60c02cbaf3ca659e5b64e478ba6b3f674a707b839d1d79c"
-    sha256 cellar: :any, arm64_sequoia: "c7c9f8f81cfcf42e3356a117f7185a06d824e9eddb300bc339c0814a21587638"
-    sha256 cellar: :any, arm64_sonoma:  "a0bff8ffd5fd4205ef34ad2263a574735e686e181716fcc64a9d9dccd542dc5c"
-    sha256 cellar: :any, sonoma:        "6f2131e161fb41629f3805a6495b7b74f3df84000dfcfff65e8188c2dbc97608"
-    sha256               arm64_linux:   "2062874bdde8b786c8f37e287890f1ffe62672e4cd9d1f94f9944d18a1b4e820"
-    sha256               x86_64_linux:  "569e009ce4d06a80ac5cc71ca050146e48efabced5d1668a4889b4db45316f16"
+    sha256 cellar: :any, arm64_tahoe:   "b7fb4b3a10390af168b1272c51245df679dc6bf59846e6719996da9a13871ac0"
+    sha256 cellar: :any, arm64_sequoia: "8213af1e9f09232d06778589afd2b5d7ac56b8de120ec3bb78963f69555e80fe"
+    sha256 cellar: :any, arm64_sonoma:  "f5730df509d424bbce1927dd8bc6b4a59f6c10ef3994aa6cb9e8937e0362b626"
+    sha256 cellar: :any, sonoma:        "f50474020f2f8a5eb99ef5e85156995fd87e378626d644f6235328de98ccc567"
+    sha256               arm64_linux:   "b8c591098e616bada220f5623ab8a81fd124ddf380e8aeec802be064a3139909"
+    sha256               x86_64_linux:  "0434b78cba9d0032ba3485f1ce7a142ea1e390dcff798abefaaf88efc4f68835"
   end
 
   depends_on "cmake" => :build

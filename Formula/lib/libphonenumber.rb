@@ -1,10 +1,9 @@
 class Libphonenumber < Formula
   desc "C++ Phone Number library by Google"
   homepage "https://github.com/google/libphonenumber"
-  url "https://ghfast.top/https://github.com/google/libphonenumber/archive/refs/tags/v9.0.21.tar.gz"
-  sha256 "4261a7c38744b3b4859a424a193714ef55b53cd9f3d3d463f9ac589a2c778102"
+  url "https://ghfast.top/https://github.com/google/libphonenumber/archive/refs/tags/v9.0.22.tar.gz"
+  sha256 "2a5bd5ea96a497cb917511f521b638b1e953212efbd3c601653df07ebd99289d"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,12 +11,13 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4a70bc9cbf93e00ead2c99d01a2cc242313fbf3eb180c9ad0d6d87e180abc5d9"
-    sha256 cellar: :any,                 arm64_sequoia: "7a9af2873ba58968bae401a949653522773789f35984962117ef8d0efb430a81"
-    sha256 cellar: :any,                 arm64_sonoma:  "d82c9c2007c07b91def42858004934b5e36e5152b14a3f0ad6cfb8ba84113705"
-    sha256 cellar: :any,                 sonoma:        "04431a230a026866ebb43a089f6fe226936a9f94edbdcaf0c739274c727ec31c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4ef249a717fad488fcd4d509547624df725b0f2f8f86f59d17fa99f00f86064"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d047cde68ceb189d0da93cc96bccdc97bfff9e68b2179aa60c97bbaabce1e48c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "875e8f191c714e55a7d588151b4f5b29066dfcd317d55176f083d3cf0fcdf61b"
+    sha256 cellar: :any,                 arm64_sequoia: "2fe731514711a07c1832855d56af0d75b79bcb7dfcc88f54fbd41e846679a0fe"
+    sha256 cellar: :any,                 arm64_sonoma:  "061edb25ea6bb31f7859ed7081d2b58d3fa124be013183b84c8e61c2bad0da03"
+    sha256 cellar: :any,                 sonoma:        "edf59c1febde7c25d12feb768714a0cca4ac92e54642ae41bb5640f76149a41a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a08d17fe841844ae20ad92519b03b964094235652cb42dea70c694afad3dce0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b37a478692edf3acf3bd8ee217e519456eb51f503f4be814449c5d51901fb7b2"
   end
 
   depends_on "cmake" => [:build, :test]

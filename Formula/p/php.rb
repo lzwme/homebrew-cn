@@ -3,9 +3,9 @@ class Php < Formula
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
   # TODO: Remove TAILCALL VM workaround in next release
-  url "https://www.php.net/distributions/php-8.5.1.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.5.1.tar.xz"
-  sha256 "3f5bf99ce81201f526d25e288eddb2cfa111d068950d1e9a869530054ff98815"
+  url "https://www.php.net/distributions/php-8.5.2.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.5.2.tar.xz"
+  sha256 "cb75a9b00a2806f7390dd64858ef42a47b443b3475769c8af6af33a18b1381f1"
   license all_of: [
     "PHP-3.01",
 
@@ -30,7 +30,6 @@ class Php < Formula
     "TCL",                   # 7
     "Zlib",                  # 8
   ]
-  revision 2
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
@@ -38,12 +37,12 @@ class Php < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "22175a5dac314b39bdce030764d9a4278cd50f97d42d6474673bdcca993613a5"
-    sha256 arm64_sequoia: "98fc86d979d5c033151d1f27771fa78150908fee777a750f8bead34a857cb623"
-    sha256 arm64_sonoma:  "8321b011a49f9683a07d1db18906ca9ca46a1c451488798f8730f7ddee21472d"
-    sha256 sonoma:        "fe4377a9d7ac30b5d342836c83ae83d171d1cca706520bbd45c0871938d4abbf"
-    sha256 arm64_linux:   "dcaf6a2606b51f988f7d15a79b19c6cdeec4e27153283e053882378c2bdf589e"
-    sha256 x86_64_linux:  "b7d5609eb141b6c1e0997eba25039ef77746afa57f8e0914bddaf84188639b94"
+    sha256 arm64_tahoe:   "c5b132c0bf56d68ad6c240ddf72bf610eb41b03a6a60c50b8875ead25263e079"
+    sha256 arm64_sequoia: "265c26d2873a7a016ef3c742ec9690fb804609bdff6c4208bccea6adae85f52a"
+    sha256 arm64_sonoma:  "08f7b891905ba9117ddbe214750ce1fe0f2bcdb685bd1f76500b5377f6f1c585"
+    sha256 sonoma:        "a151f64a4d1f0644ac83383a2b961615397c7449dae4883cfc7ca836ec274b0c"
+    sha256 arm64_linux:   "55698912be71be10f1b43afb645dac4205a01c93b5f245fc5cf160d1a64cc804"
+    sha256 x86_64_linux:  "0a6102245c0810cc990bdb74633f20dad39564fed5bb8042f36fe60aea447ee2"
   end
 
   head do

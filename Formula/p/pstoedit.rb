@@ -22,6 +22,7 @@ class Pstoedit < Formula
   depends_on "gd"
   depends_on "ghostscript"
   depends_on "imagemagick"
+  depends_on "libzip"
   depends_on "plotutils"
 
   def install

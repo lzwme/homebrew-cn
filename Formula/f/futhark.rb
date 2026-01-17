@@ -25,6 +25,9 @@ class Futhark < Formula
   uses_from_macos "zlib"
 
   def install
+    # Workaround to fetch integer-logarithms 1.0.5 to build with GHC 9.14
+    inreplace "cabal.project", "index-state: 2025-10-31T08:41:05Z", "index-state: 2026-01-04T20:13:48Z"
+
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
 

@@ -1,18 +1,18 @@
 class Gf < Formula
   desc "App development framework of Golang"
   homepage "https://goframe.org"
-  url "https://ghfast.top/https://github.com/gogf/gf/archive/refs/tags/v2.9.7.tar.gz"
-  sha256 "9e509ef355c3bc80ae5f200bacaccf9d9b61fbc814dc1f64e38dd992dab0162a"
+  url "https://ghfast.top/https://github.com/gogf/gf/archive/refs/tags/v2.9.8.tar.gz"
+  sha256 "1b3d28dd8bff2821d87d66ffa84fd3c8c4970148f53e9bc3c9c04899f8cba88a"
   license "MIT"
   head "https://github.com/gogf/gf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0b5ed20de04946ba0f43a2998bb451509eae95b1b961175928a01e908136cf7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0b5ed20de04946ba0f43a2998bb451509eae95b1b961175928a01e908136cf7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0b5ed20de04946ba0f43a2998bb451509eae95b1b961175928a01e908136cf7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "326105b7b8726b47e2a3bba7c19da5f1da8bf49c87a1c59516ae20e9d3a25616"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "383e08928d79012fff369cac70c0de33ce484779fa6f82bf50921f03594696a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dca8b5b205454365251c46240aea7704d6d26afb58c93edaad44dde24774b0d1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0128dccead33539d340b3ef1c80eba116f2f007da959af7381982afe6728f82"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0128dccead33539d340b3ef1c80eba116f2f007da959af7381982afe6728f82"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0128dccead33539d340b3ef1c80eba116f2f007da959af7381982afe6728f82"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f45b54fdf6ac485d95cf6600ebb49dc6306b35f51b51910d67c181fcc0d28582"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fc3e14a5f0155edf0e9ba3b5b7fcac7e98bb1b10d4015d121fa2ec548577200"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e40a385fd224ac0066726645b0014a9b6e0530727e6314100ad027ba1f90071"
   end
 
   depends_on "go" => [:build, :test]

@@ -4,6 +4,7 @@ class Imagemagick < Formula
   url "https://imagemagick.org/archive/releases/ImageMagick-7.1.2-12.tar.xz"
   sha256 "e22c5dc6cd3f8e708a2809483fd10f8e37438ef7831ec8d3a07951ccd70eceba"
   license "ImageMagick"
+  revision 1
   head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
 
   livecheck do
@@ -12,12 +13,12 @@ class Imagemagick < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "b1127b74cf62f1e39d12ef998d82bdd2980f1354e3418df4575b2c5128626864"
-    sha256 arm64_sequoia: "72fc0bbea94873060546253b97b0067197ad4c4a3915139db04f322ecb328f44"
-    sha256 arm64_sonoma:  "54b6fa5544bdf460b91842b7492d53e103c39d21ba974f983d6208fd8f83ee6a"
-    sha256 sonoma:        "c058fbd1fbd49ffccc719db8d42d27ba5e714fb89d21d660448c94e4f7845d54"
-    sha256 arm64_linux:   "1fdc6ee1ecb4b9f895c08921c2cca1383d2ffd343dae961e59bea23f8a329bce"
-    sha256 x86_64_linux:  "8635ced3861958ea9cc512c03cd006cb23ccc3388833ce8aa78e41e4162fd227"
+    sha256 arm64_tahoe:   "70a4007af2df1cbceee0f1d245b9c3b63610c7e47ea17bafb6722964b401c8b3"
+    sha256 arm64_sequoia: "aa09d81bf684995f2b039a6fea27b58c5fa68d69af3b1111bc4f659a691e55ba"
+    sha256 arm64_sonoma:  "3a6ab91642e7cd983422eddfc2535c56365dad208e4ecc10b2162fab2029e55d"
+    sha256 sonoma:        "126ce8dfc0ac26bcc92193f6c27d49a9d79a9fa652cf56bb37107f2789736940"
+    sha256 arm64_linux:   "0e44e1adc76f7985b20ef49cbeb1a96128b748fc27c2c8d52b3b2e192744c38d"
+    sha256 x86_64_linux:  "97bf08e3d0a9dc3adaed58d3b6142bee0542de0add7c7882ccebf28f783a8949"
   end
 
   depends_on "pkgconf" => :build
@@ -60,6 +61,12 @@ class Imagemagick < Formula
   end
 
   skip_clean :la
+
+  # Patch to fix build with LibRaw 0.22+
+  patch do
+    url "https://gitlab.archlinux.org/archlinux/packaging/packages/imagemagick/-/raw/ca9b35f767e1c4a166847fbfe17c2d715aa80582/libraw-0.22.patch"
+    sha256 "baed7cbfb378734d32d277b6e13882ac541932ef67e6aa8867b185ffef12f986"
+  end
 
   def install
     # Avoid references to shim

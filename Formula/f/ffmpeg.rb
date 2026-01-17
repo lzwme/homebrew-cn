@@ -16,23 +16,29 @@ class Ffmpeg < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "67485da6130564573f58a371edfa0ba1d395a4f4d33b98e0274dc00eee423c0a"
-    sha256 arm64_sequoia: "72d0a14e79de3fe77f8e82b8cd19317a51ee825b5a432c2f001fd626c259d54d"
-    sha256 arm64_sonoma:  "19389f40342e20e7d898e7d7d447ee396f7fe0017fef412bc1304a7a8de46513"
-    sha256 sonoma:        "c6b3f49257834d6a99e6101c46543c97d36e23f8fe29a090373c6072c065826f"
-    sha256 arm64_linux:   "e38791d20251d1c4a27adb183d5cd2c9c6f300fd6a25a272839c58a1064c08c8"
-    sha256 x86_64_linux:  "1dc46eb43e40507d8843f66656855ecdcd44c3b1ca29d376c40e62f773fd541c"
+    rebuild 1
+    sha256 arm64_tahoe:   "357d928e81040097dc5a7095e7fe2034b55d6a9c0cdc0912c7be076483e134aa"
+    sha256 arm64_sequoia: "2be01a2367e2ce908a7a74f5944668348aa11aba8eb6996f85918319307a8aac"
+    sha256 arm64_sonoma:  "5618637ddd01d2641c35dbc1c2f77bc06c12fbd322657a4916761e106352c0b7"
+    sha256 sonoma:        "ed0e659304fa2e5698fdb342879ece26f63c5fa39d64014d6aaff20b4e83faa8"
+    sha256 arm64_linux:   "4a8cbf885a6f493baa11bea483ad6b404071a6f19d05eca18dc0fb1d21f586d3"
+    sha256 x86_64_linux:  "73ddf986d58dd8b70aee6585ad2d0ae6a83b9decf5d438c09beac47b4c56ae4f"
   end
 
   depends_on "pkgconf" => :build
 
-  # Only add dependencies required for dependents in homebrew-core.
-  # Add other dependencies to ffmpeg-full formula.
+  # Only add dependencies required for dependents in homebrew-core
+  # or INCREDIBLY widely used and light codecs in the current year.
+  # Add other dependencies to ffmpeg-full formula or consider making
+  # formulae dependent on ffmpeg-full.
+  depends_on "dav1d"
   depends_on "lame"
+  depends_on "libvpx"
   depends_on "opus"
   depends_on "sdl2"
   depends_on "svt-av1"
   depends_on "x264"
+  depends_on "x265"
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
@@ -53,6 +59,7 @@ class Ffmpeg < Formula
     # The new linker leads to duplicate symbol issue https://github.com/homebrew-ffmpeg/homebrew-ffmpeg/issues/140
     ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.ld64_version.between?("1015.7", "1022.1")
 
+    # Fine adding any new options that don't add dependencies to the formula.
     args = %W[
       --prefix=#{prefix}
       --enable-shared
@@ -67,6 +74,9 @@ class Ffmpeg < Formula
       --enable-libopus
       --enable-libx264
       --enable-libmp3lame
+      --enable-libdav1d
+      --enable-libvpx
+      --enable-libx265
     ]
 
     # Needs corefoundation, coremedia, corevideo

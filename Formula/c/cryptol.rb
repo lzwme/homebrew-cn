@@ -16,7 +16,7 @@ class Cryptol < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc" => :build
+  depends_on "ghc@9.12" => :build
   depends_on "gmp"
   depends_on "z3"
 

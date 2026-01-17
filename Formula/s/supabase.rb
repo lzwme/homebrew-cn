@@ -1,8 +1,8 @@
 class Supabase < Formula
   desc "Open source Firebase alternative"
   homepage "https://supabase.com/docs/reference/cli/about"
-  url "https://ghfast.top/https://github.com/supabase/cli/archive/refs/tags/v2.67.1.tar.gz"
-  sha256 "61dcf4b34dd2ef31caf6233964ff94575dbd5951951a47ce855672f7fb31ebe7"
+  url "https://ghfast.top/https://github.com/supabase/cli/archive/refs/tags/v2.72.7.tar.gz"
+  sha256 "8b32027af98bc253c06b99b7d549622cee62c941228d9807a770f14cccfde6e9"
   license "MIT"
   head "https://github.com/supabase/cli.git", branch: "develop"
 
@@ -12,13 +12,12 @@ class Supabase < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3bebfa8b3d99893ff7a00d7d45740cf07a52c7f349d99df48e15b50ddf2fe249"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afa0ac279e71d1296b091e0e4bf2cae53aa11fe6db4753bd2ab34662a886575f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9df2c218ade40ac66e3856e40dea57145521458566bd540a03366d64785ef5cf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9d28ee2066c0cf0cf0e3124253515bffe6c834ebed6797652fa9a7e475116da0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fe8796289f89d990ededf79d88ac9be498a3da80aeee476e2a693d1eaaf23fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0eca789cbe8968575b63020b484065dc208802096a1938730f9fb698316d3fc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "629d76dd7ed60100da0f768cab9219893c1e8e88eb4d8eb9b36439b3ed975a18"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ff694034ece4f4f13fb923f45fbb4cca094e394241fe692cae124cc43bd75c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ccb65de36130a51ae0a11eb6c388f20d9f80a102bd344e2e1c50e1e580ed7b75"
+    sha256 cellar: :any_skip_relocation, sonoma:        "148b27378e24f1fa9e956425245d0ecead6c3e0c0dd3e8f866f4deef2eb6357b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b5f2ae6040c386c0ee9869de69a37b1642af0af60900c7194148a2896e377a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73ea13b5047f639561bf57580500437703c7fe49e9943359bad48e10cf7b43ac"
   end
 
   depends_on "go" => :build

@@ -1,19 +1,17 @@
 class Nvtop < Formula
   desc "Interactive GPU process monitor"
   homepage "https://github.com/Syllo/nvtop"
-  url "https://ghfast.top/https://github.com/Syllo/nvtop/archive/refs/tags/3.2.0.tar.gz"
-  sha256 "d26df685455023cedc4dda033862dcddb67402fbdb685da70da78492f73c41d0"
+  url "https://ghfast.top/https://github.com/Syllo/nvtop/archive/refs/tags/3.3.0.tar.gz"
+  sha256 "bc133b3baeb620d3b859aab6238c45de64b8269579b62e544f2ff747d129337e"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3a65819fce8a84ff3a8a60fe8e46deb4a62e20617560307b23b24998730ce415"
-    sha256 cellar: :any,                 arm64_sequoia: "d327c8084394f866b030d090a70cf2873d3fc5be34a49ee17e8f0d5261704289"
-    sha256 cellar: :any,                 arm64_sonoma:  "7166164de3da0785848dbd34ceb6168bdcb0b8bf1ec2c7bbcf164884b96a3fbe"
-    sha256 cellar: :any,                 arm64_ventura: "77a4d9add58013fbecaae97c280f72e254a02b470f8181d405a80adb4764b435"
-    sha256 cellar: :any,                 sonoma:        "29ea0fd9d87ee2f1e9e7cc6b9c6569f19d675346e842df3224a5761b1926c784"
-    sha256 cellar: :any,                 ventura:       "e4b5532744457331e345ba2236c284655499881e91d4627b9e3cf480b1af4f49"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "067c3bc059ebd070d62abcc594a0e390587b6e37ca122ef384129347f95da546"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f75c62d6bc039a39e81eb04dbb4b0ba8f95ec6d4f2ba3c6dd1fc3a105cca847"
+    sha256 cellar: :any,                 arm64_tahoe:   "bdeaed767344decc599d0ed011e3b939f4cba54c7ec427843e18a2cef8e6caff"
+    sha256 cellar: :any,                 arm64_sequoia: "c1d95b468b04c63fe2effacf9460142e50e09a9ddbaea57b1a7fa933909ca0cc"
+    sha256 cellar: :any,                 arm64_sonoma:  "b869a6723082c1adf7625bc25e9bbecd3bcc6ffcfd4e111b105ae41de8103b10"
+    sha256 cellar: :any,                 sonoma:        "9551f92829295a680795710d818c935844170a8963b96d19eb423f87c23402f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "656ec0f61b24cc3707e2edbf714bc612a169fc3c3ee740a03ac71bd72b615185"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "077c483851dd590a4c6e4844e03dbef012001878acc65455d273c557704ecd71"
   end
 
   depends_on "cmake" => :build

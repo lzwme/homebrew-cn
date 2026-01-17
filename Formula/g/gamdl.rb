@@ -3,18 +3,17 @@ class Gamdl < Formula
 
   desc "Python CLI app for downloading Apple Music songs, music videos and post videos"
   homepage "https://github.com/glomatico/gamdl"
-  url "https://files.pythonhosted.org/packages/f7/b7/58e7aa740451b5ac81a12b6c0f71a6f23f00edfadc395c59f422ac6a2180/gamdl-2.8.2.tar.gz"
-  sha256 "8658b6c86e312367390ee8bbf3e52cb024efd153342273ed0db64ccb413242d6"
+  url "https://files.pythonhosted.org/packages/59/c2/c365c924f92f1fa04a6ca158c4333732bc6d5d419a18e549ea7a30319bf1/gamdl-2.8.4.tar.gz"
+  sha256 "80e0305f917c4f5dc0e8819ed8f964f30db853758f578726c399e2935cea4ac7"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1fc2b44978333e2898d2836d5ac1997620dd82bd909102d66300646622619053"
-    sha256 cellar: :any,                 arm64_sequoia: "b084ab2713ecac7d6dcc5bb4dce2dfb75eb0de3d30b6b034492255bc65c26fd9"
-    sha256 cellar: :any,                 arm64_sonoma:  "ec87a3c77e39fc220773f59248b3eb5d693797b38be7c197879f81f8c1f75ab0"
-    sha256 cellar: :any,                 sonoma:        "4a84a924436ba22025081361847dbac6e58ae43dbcaf90e17758311bc6310e34"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f114095f56eb281cf2c373ae533cca69e142603fc5b30c09564504117020e921"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9432940ca595019a014b7a5968d4af06c6b0b8eca4512cc689f570d6afc624e5"
+    sha256 cellar: :any,                 arm64_tahoe:   "62f49f617669ad1f298bc9e7273a3a1f0a71e1486535d6e3d56dd6e4e88ae942"
+    sha256 cellar: :any,                 arm64_sequoia: "f2b655fa6090696339a597b7929aef2a62f36b4f10a4c8f5fb5ad54fdcbf4627"
+    sha256 cellar: :any,                 arm64_sonoma:  "605cd68536c3a5017ed7b7ec994f4ccd53bc871b5a1f1a97cbecf37fe93994b3"
+    sha256 cellar: :any,                 sonoma:        "cdfee1ae26d2a1c1966618bd28ed005144ef996553313dde58723200ecbb6416"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf4d56e53fbd53a18a8cca3f0e4ab8332cda560f39859d7256f8e5817fc6e56f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25e2c7793d502aed1604b1b2ec7c095b013c2e6dfa674dfe82eb7e308b5a9997"
   end
 
   depends_on "certifi" => :no_linkage
@@ -52,6 +51,11 @@ class Gamdl < Formula
   resource "construct" do
     url "https://files.pythonhosted.org/packages/b6/2c/66bab4fef920ef8caa3e180ea601475b2cbbe196255b18f1c58215940607/construct-2.8.8.tar.gz"
     sha256 "1b84b8147f6fd15bcf64b737c3e8ac5100811ad80c830cb4b2545140511c4157"
+  end
+
+  resource "dataclass-click" do
+    url "https://files.pythonhosted.org/packages/89/82/5b6035efd90621771fa039960eab3e1ec7ff2a8625033272856843e8bd27/dataclass_click-1.0.4.tar.gz"
+    sha256 "10e7de638dd9e68ae9abd5086f61d8ddee42b1873a70f5fd9fd2167856afac11"
   end
 
   resource "h11" do
@@ -100,8 +104,8 @@ class Gamdl < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/34/44/e49ecff446afeec9d1a66d6bbf9adc21e3c7cea7803a920ca3773379d4f6/protobuf-6.33.2.tar.gz"
-    sha256 "56dc370c91fbb8ac85bc13582c9e373569668a290aa2e66a590c2a0d35ddb9e4"
+    url "https://files.pythonhosted.org/packages/53/b8/cda15d9d46d03d4aa3a67cb6bffe05173440ccf86a9541afaf7ac59a1b6b/protobuf-6.33.4.tar.gz"
+    sha256 "dc2e61bca3b10470c1912d166fe0af67bfc20eb55971dcef8dfa48ce14f0ed91"
   end
 
   resource "pycryptodome" do

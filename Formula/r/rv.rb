@@ -23,6 +23,8 @@ class Rv < Formula
   depends_on "rust" => :build
   depends_on macos: :sonoma
 
+  conflicts_with "rv-r", because: "both install `rv` binary"
+
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/rv")
     generate_completions_from_executable(bin/"rv", "shell", "completions")

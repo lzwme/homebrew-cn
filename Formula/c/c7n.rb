@@ -3,10 +3,9 @@ class C7n < Formula
 
   desc "Rules engine for cloud security, cost optimization, and governance"
   homepage "https://github.com/cloud-custodian/cloud-custodian"
-  url "https://ghfast.top/https://github.com/cloud-custodian/cloud-custodian/archive/refs/tags/0.9.48.0.tar.gz"
-  sha256 "44c5ca2da22ef9f1ce0550729acd2d4d55e1c96ced95c3978fc75ebfcf6c6775"
+  url "https://ghfast.top/https://github.com/cloud-custodian/cloud-custodian/archive/refs/tags/0.9.49.0.tar.gz"
+  sha256 "1381234a127fe6b9e0d2d8311370872ffbaa4a1f06c0ddeb267c5c1787ad6934"
   license "Apache-2.0"
-  revision 2
 
   livecheck do
     url :stable
@@ -14,12 +13,12 @@ class C7n < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3c0abb231e3e630432efcf9bc3ede312a85dd8e45b6cf1acd545a9ce0dd07fa3"
-    sha256 cellar: :any,                 arm64_sequoia: "7cb8cce09c0889dab326b75350f63314d6f6d2f8b94dc8933a118dd8aee9ddaa"
-    sha256 cellar: :any,                 arm64_sonoma:  "ca4f77de819d4d5aee7effaf140e5ffbec7f78382dd2b4478ce2732e329d6eb0"
-    sha256 cellar: :any,                 sonoma:        "2e8867223c425aa4c99faea864a36bebd6aeac036a46a73d7db27cdc6a218f4e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3dd3426dec653d333ff0f3e8d782a71ee42de9c8be30cfc4b9f97c3179e50c33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02ed23e6a3d77e6c8aaa515915fd77827352a2c83372cb251cea8002c87dad33"
+    sha256 cellar: :any,                 arm64_tahoe:   "a9dac537ea251f664ce56cf9f2aa5094403a353031a80f545f68aa35f2ecbc23"
+    sha256 cellar: :any,                 arm64_sequoia: "9644279717ba642a2febb5a99e4cf9ec74368304386a3c708feae0404fdd0606"
+    sha256 cellar: :any,                 arm64_sonoma:  "ebf72590d0abf196867dc802f6aa441f93f8fb43366cc709c589df475d455332"
+    sha256 cellar: :any,                 sonoma:        "37665a19ced3db873f95d19e001a2077323a66bb3e91abfcfaf2058c2936ca2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f12bdb60b8522eb665671a5bb5a32c68d4aa1d9073dc63a2e597e57dc150b47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50b81664894d361f31d99622dde15a222742c592420f17803c333f35163e165b"
   end
 
   depends_on "cryptography" => :no_linkage

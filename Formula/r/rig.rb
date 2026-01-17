@@ -23,6 +23,8 @@ class Rig < Formula
     sha256                               x86_64_linux:   "ea660b88d2d27477728bd628b496e6a6588c7dff8d4a46051e2b9fd0504e726b"
   end
 
+  conflicts_with "rig-r", because: "both install `rig` binary"
+
   # Fix build failure because of missing #include <cstring> on Linux.
   # Patch submitted to author by email.
   patch :DATA

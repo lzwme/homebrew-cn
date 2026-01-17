@@ -6,7 +6,7 @@ class Openvino < Formula
   url "https://ghfast.top/https://github.com/openvinotoolkit/openvino/archive/refs/tags/2025.4.1.tar.gz"
   sha256 "9926c8a8188d0baa9730623efaeb9f0bccf7059f5e4e957a8d238c3226c2b19b"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/openvinotoolkit/openvino.git", branch: "master"
 
   livecheck do
@@ -15,12 +15,12 @@ class Openvino < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a0a2e5aff8f88df162421cd31e2cbcefc12679547d8e48be032d5c03e7f4c959"
-    sha256 cellar: :any, arm64_sequoia: "6f70a057d4f2efe13ee5ceadad31b5a11d611e8a1d1dea99df37fe128f8af136"
-    sha256 cellar: :any, arm64_sonoma:  "f1d3a0640b9f566491845ccca30c2b4456c0ff56e7207330553a0828df847fe2"
-    sha256 cellar: :any, sonoma:        "c4cb41b3c5e56845694685d6d643a98e3e086cebd049d2fd59340917663fb4f0"
-    sha256               arm64_linux:   "c7d413b7b703b17542e074124b6ff055dfcaa07ed2b77d7fe10e8fd19b9c59ac"
-    sha256               x86_64_linux:  "0618813f01f852a78ff58144e02f7d59c6c3e08966601e4fa429dd498ca4c7ca"
+    sha256 cellar: :any, arm64_tahoe:   "b7895df6f9ee49841183ca7abee864afd873a0551f8ce670c63fd5a2233721cb"
+    sha256 cellar: :any, arm64_sequoia: "7c35f852dd76bb733c65c0cdd03697e4d15302d26a06d3bf3a26076c7fe06383"
+    sha256 cellar: :any, arm64_sonoma:  "c77e0be7587b288bf16e5c16841d7a9596f6df42ce25b05b04d12ff42759c221"
+    sha256 cellar: :any, sonoma:        "6cb024e7254ef5c1d8e8383a886bf6b08f46d18baf1a16141f46d3fe86e63f2c"
+    sha256               arm64_linux:   "d92af382c49e55fb26cb62dc75e5d83b7b4acc88def02fbe24ddc10a72e1a06c"
+    sha256               x86_64_linux:  "bc3a2cfc540d30861b2d4a0979c7c4dfd975490ca091c87c0a807582141e4643"
   end
 
   depends_on "cmake" => [:build, :test]

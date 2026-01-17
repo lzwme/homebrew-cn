@@ -4,7 +4,7 @@ class Vips < Formula
   url "https://ghfast.top/https://github.com/libvips/libvips/releases/download/v8.18.0/vips-8.18.0.tar.xz"
   sha256 "b85ab92280c30d22f5c8fe2f68b809cddb7eaac437d8c33474475dac84ddc574"
   license "LGPL-2.1-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -12,12 +12,12 @@ class Vips < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "721d7d494bc54c92b622d4b28acd648d5736ed7211f48653c563974bfedc9331"
-    sha256 arm64_sequoia: "4fa8776ab7dd244b9506cba094b4cd7f335bbc1abfff1f2ade54694ef365eb39"
-    sha256 arm64_sonoma:  "a75d4e3c1f674c8a6e5bbf9a4d08845e4f0450bc0175ce513ba149b6a4a25f8c"
-    sha256 sonoma:        "b42a7bf0cdaeb59e672d9eba8d63d2ac801d5f1d6064812dd91ca7070da5990f"
-    sha256 arm64_linux:   "ffc6d3ec7ee70eeeb89d53779beb8dcf53f5f4d640f1612f53eacc35983451c3"
-    sha256 x86_64_linux:  "9a0f52d894c75aa1b7902cb5a46cc2d7cc525fbb0ea315f6630dd83093d08b7d"
+    sha256 arm64_tahoe:   "b806822f928a2678f4d29538c0c73e806ede8a6ae7d7ecf82f0e96e6d05f30e5"
+    sha256 arm64_sequoia: "a70e8caf492541c7772935b9f199cd07ce63266ca634352fa195bd2052a9e837"
+    sha256 arm64_sonoma:  "660f84803d688867e2024c50be97a30c2be6cf671bb2a0d08173fd90422e9c04"
+    sha256 sonoma:        "fc3d79657db2b998bbc323c3c3d1da206efed83758ecdfe280d9ca4e08bba6ec"
+    sha256 arm64_linux:   "a52f472c33e9a099d4aac73cb0eff64c6d04d42cb92b76ad1bd385ccba6d7f62"
+    sha256 x86_64_linux:  "e507a55b10673f0fd6679203d1d30b7d5cb9e8898e5552846039a3447ec33e9f"
   end
 
   depends_on "gobject-introspection" => :build

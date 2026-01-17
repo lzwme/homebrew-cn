@@ -7,12 +7,13 @@ class Deno < Formula
   head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "786a0e636be02df6bef69226066d55de1b85da90e811e7bc3476f833d93770f3"
-    sha256 cellar: :any,                 arm64_sequoia: "d8f7589720721eb9e916dd5fc79f2f67b4f49fcdbc31ea611c53dc0ad0455f9f"
-    sha256 cellar: :any,                 arm64_sonoma:  "a245aea057ade57a2f5379c14bc510248d0fae3cb06e420836ef336a621629d7"
-    sha256 cellar: :any,                 sonoma:        "b6438e9d6f08f91645030bb44d57ae653be39a63d786d7263f4df9ecc1dc995b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da70aaf9bd7270301c10d8b44b312f0d4e66cc8b7accf66110342fd3d0959b25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8132bc9973746f02904d16f7d3abcb3f4cefc550dbb4c48b3c02067883cc6f88"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "9469f83c4afec771e5b560db59e81c6bcf8f956c8e6d295f1f921a7096aed888"
+    sha256 cellar: :any,                 arm64_sequoia: "38a8acf958e49e733676b2553f7fc132c572af04b3ac1009a9074d26f1f3f9f8"
+    sha256 cellar: :any,                 arm64_sonoma:  "5783aef527525c07409650114c711efd4038854142c10ed1d9e767305a69e835"
+    sha256 cellar: :any,                 sonoma:        "c1972d76bd4af5d7f7c7b30dd11f765667b8f27f8f60c79fc2e62aa94a04261c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "42c7464ccbc89b4922152b22376dc505f73f2f5df63e5eaa5402ef0c74a0e703"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f3fe6d45602f166f53cd327f9030c678787c83f4e441493c3d261f63182cdcb"
   end
 
   depends_on "cmake" => :build
@@ -62,6 +63,7 @@ class Deno < Formula
     ENV["GN_ARGS"] = "clang_version=#{llvm.version.major} use_lld=#{OS.linux?}"
 
     system "cargo", "install", "--no-default-features", "-vv", *std_cargo_args(path: "cli")
+    bin.install_symlink bin/"deno" => "dx"
     generate_completions_from_executable(bin/"deno", "completions")
   end
 
@@ -83,6 +85,7 @@ class Deno < Formula
     assert_match "hello deno", shell_output("#{bin}/deno run hello.ts")
     assert_match "Welcome to Deno!",
       shell_output("#{bin}/deno run https://deno.land/std@0.100.0/examples/welcome.ts")
+    assert_match "hello deno", shell_output("#{bin}/dx -y cowsay hello deno")
 
     linked_libraries = [
       Formula["sqlite"].opt_lib/shared_library("libsqlite3"),

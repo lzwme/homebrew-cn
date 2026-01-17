@@ -45,9 +45,12 @@ class DhallBash < Formula
                                  "text                      >= 0.2      && < 2.2"
     end
 
+    # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
+    args = ["--allow-newer=base,containers,template-haskell"]
+
     cd "dhall-bash" if build.head?
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *std_cabal_v2_args
+    system "cabal", "v2-install", *args, *std_cabal_v2_args
   end
 
   test do

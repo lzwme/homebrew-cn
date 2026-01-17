@@ -4,7 +4,7 @@ class PerconaServerAT80 < Formula
   url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.44-35/source/tarball/percona-server-8.0.44-35.tar.gz"
   sha256 "e1e88d2b35f37394c086c748290bf2850927b0e89549291b6570c563ea889d81"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.percona.com/products-api.php", post_form: {
@@ -21,12 +21,12 @@ class PerconaServerAT80 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f6d085e26ad62acf65b80b041b7bcfb76a06bc181d6e69c8d8076848aff9d528"
-    sha256 arm64_sequoia: "1075d5e835d012832da45e1ccb232f627810cc31d871fd110087bc7ae8ef0db8"
-    sha256 arm64_sonoma:  "3133513559cd5215498e5ba34cf14198bdade42e3b9798c0781ffd96e4e87281"
-    sha256 sonoma:        "0bdb9ee9f20a15fc439e0b064be90ec3f60f225681b2eafb35d07d569e29bb9c"
-    sha256 arm64_linux:   "28467463ecc7b9bde1aaeef6640db031c3257a74f7e6967a7772513afdd10d57"
-    sha256 x86_64_linux:  "34647116ead9d65e765cfd6d1b05071d772b297fa88fd9aa1fc0b95a2d874eb1"
+    sha256 arm64_tahoe:   "f1dbd528492984198c9bb40f8cbc31f2cdfee87c00240a1068114fdd0610fe7a"
+    sha256 arm64_sequoia: "cbea36663913bc9fae7de10591a1da3b348f1012200cacdd4ba83192769eccf6"
+    sha256 arm64_sonoma:  "1995a6d5589981966e2690539892c1a751023333ee733e434a0703cb1861f1d8"
+    sha256 sonoma:        "dde8b25089ea14167bc30ae09454f7b990994ec4c68f94c59c08a6e925021854"
+    sha256 arm64_linux:   "f6b4fc5314c1b687da08ff0c371b53aeded951245e8402e189608fe64c09c363"
+    sha256 x86_64_linux:  "f979e6375c2d0801c269502529598d5c8736996722cbb52dda1d2a1b08493c39"
   end
 
   keg_only :versioned_formula

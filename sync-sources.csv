@@ -2153,7 +2153,7 @@ Homebrew-homebrew-core/Formula/f/fortran-stdlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fortune.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fossil.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/foundry.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/fourmolu.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fourmolu.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fourstore.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/foxglove-cli.rb, Homebrew/homebrew-core, 1
@@ -3213,7 +3213,6 @@ Homebrew-homebrew-core/Formula/i/irrtoolset.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/irssi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/is-fast.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/isa-l.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/i/isc-dhcp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/isl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/iso-codes.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/isort.rb, Homebrew/homebrew-core, 0
@@ -5305,7 +5304,7 @@ Homebrew-homebrew-core/Formula/o/org-formation.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/orgalorg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/organize-tool.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/orientdb.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/o/ormolu.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/ormolu.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/orocos-kdl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/orogene.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ortp.rb, Homebrew/homebrew-core, 0
@@ -6213,6 +6212,7 @@ Homebrew-homebrew-core/Formula/r/richgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/riemann-client.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/riemann.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/riff.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rig-r.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rinetd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ringojs.rb, Homebrew/homebrew-core, 1
@@ -6346,6 +6346,7 @@ Homebrew-homebrew-core/Formula/r/rustls-ffi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustscan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustywind.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rv-r.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rxvt-unicode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ry.rb, Homebrew/homebrew-core, 1
@@ -12224,6 +12225,7 @@ Homebrew-homebrew-cask/Casks/font/font-z/font-zhuque-fangsong.rb, Homebrew/homeb
 Homebrew-homebrew-cask/Casks/font/font-z/font-zilla-slab-highlight.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-z/font-zilla-slab.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-z/font-zpix.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-z/font-zxgamut.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/g-desktop-suite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/galaxybudsclient.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gama-jdk.rb, Homebrew/homebrew-cask, 1

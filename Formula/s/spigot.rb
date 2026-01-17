@@ -2,7 +2,7 @@ class Spigot < Formula
   desc "Command-line streaming exact real calculator"
   homepage "https://www.chiark.greenend.org.uk/~sgtatham/spigot/"
   url "https://www.chiark.greenend.org.uk/~sgtatham/spigot/spigot-20260114.ed81b83.tar.gz"
-  version "20240909"
+  version "20260114"
   sha256 "40a1bcfc52d6c581ae67b2a1456ec9f28b959789a00faf487cd06b4585576e67"
   license "MIT"
 
@@ -14,13 +14,12 @@ class Spigot < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "15223c0b5cf422b0f03b13e6484f7958c83bfa7114d91953613506aaf08c8e71"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e6a47eb11c75f57fcadc269e69b7d364af2d25b7ccb9c318b2c7572635dfc9d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "850f141863594676ef5a764560473ac3b87e114d0dc74259339dad2667b4d269"
-    sha256 cellar: :any_skip_relocation, sonoma:        "93e53dc9175402447f0ccc2cd2dde44e7de0714ef75f5c8ce8fdb65f4749c5f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c77b170d055bfeaca1902289dd580df99889d9059aa5a0386ed5ad99e7773323"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca8662a6fdd1d277ee211deee1d53f6ea97a186762df2e2a73374f1093364ecb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "796c91a6f26abde3e8b1e7442dc494ac9565d9b713abd90364dc8f3b5f4d8201"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d646d7a7573059b0c84a2b400308c3a9bb3c9e36ae4e37bcbc45c714accc873a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7dffcdd0a5c8cf6b69da95b6b0bf5ec3a5ab21c4cfeb38a95662774710263cda"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2d0a76572b40b8b54901a3f783d6cdda0192ecdde9c9509dbd65545525fe6c1a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5bfffdc5199f78db2f9300a5e2cec93fcb5e02e24d6a7e081603db12c28278b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb0e856d59ab1089a7681eb42de24233ab637699b51dc1471735fae61e579d22"
   end
 
   depends_on "cmake" => :build
