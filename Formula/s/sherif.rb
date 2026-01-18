@@ -1,17 +1,17 @@
 class Sherif < Formula
   desc "Opinionated, zero-config linter for JavaScript monorepos"
   homepage "https://github.com/QuiiBz/sherif"
-  url "https://registry.npmjs.org/sherif/-/sherif-1.9.0.tgz"
-  sha256 "c3f0229293efbdeb9118e373238a19a96879f441e5c75348925cb365b471cac5"
+  url "https://registry.npmjs.org/sherif/-/sherif-1.10.0.tgz"
+  sha256 "3058b503c365a62f4306376da07d3dea9f0a0660a065f942e590e2e6259a54a2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04be639f56c6492ce49cc215fd8fd1896daa5fbd9a4d26549541f934e7e7ce0d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04be639f56c6492ce49cc215fd8fd1896daa5fbd9a4d26549541f934e7e7ce0d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04be639f56c6492ce49cc215fd8fd1896daa5fbd9a4d26549541f934e7e7ce0d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a5a0a4c778d9f96fc9afca83405ea942bee15aab5cbb9e25eece722af233b021"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f60a64c8a3081446c378d870d428d231f4105090c54ffa1d9df838d7c82e6358"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "545173b12e4e441867e4dc2658da0a9d270ba452b97b9d0ce762833a618c9611"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1afcca9e45a59a6e150218cad1239d8e525f7edecdb88ff4eb0585b3b11174ca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1afcca9e45a59a6e150218cad1239d8e525f7edecdb88ff4eb0585b3b11174ca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1afcca9e45a59a6e150218cad1239d8e525f7edecdb88ff4eb0585b3b11174ca"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d24c059d359117d10e108726de4ee593a447d69b7bef8f44612dbb687f058bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "364a99bca0225cff1966a190cd08fad26560bf7a23bf221733d223d39a26d720"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af1c725f2ab491cad57c9daeb679f6ad3fb4e5dc5b6ececa87c6e9aec877e519"
   end
 
   depends_on "node"

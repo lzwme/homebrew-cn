@@ -3,19 +3,18 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/ad/bc/75add1d40af43e2d665c6ca56de31bab47f538e81e9fe8259d0a64831c41/streamlink-8.1.0.tar.gz"
-  sha256 "acd297219a0cbaaffe4e292290554b9c45408fa9f6e4dc1211d1ccd1f4a44039"
+  url "https://files.pythonhosted.org/packages/18/27/c0f91843f4ce05376417b9c8f9bf4aba560167ea3a4a6ce8d3838f478c9d/streamlink-8.1.1.tar.gz"
+  sha256 "3521de0373f26e463d7e1bd8e13cd6d201bde093fe1b3e20d11531ce2d5ce5aa"
   license "BSD-2-Clause"
-  revision 1
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "09d82dd433191d32298c0d997a655530c2781f3a74c8eab96b2df546fdb72c0e"
-    sha256 cellar: :any,                 arm64_sequoia: "cef959a3c7c9952ed773505a849197f2d5a373b6d64b1ab850210e4dfb70f5e7"
-    sha256 cellar: :any,                 arm64_sonoma:  "86d38ca65d69fedc77e581ccae7bf40fbc88e96de634976bf8b0578ddcf143af"
-    sha256 cellar: :any,                 sonoma:        "b88408bc1f4950d8528dab9bc31ba3df1ae0546ec5f6c3f033a6a1c8af976a3b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ff42aecccb3873655a8ee617126074b19b5adb487576d965e4118dc582e17ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a79a4f58784675f0a1afcc60b93edc3fe9fe3898dea690228a17b29240f9a1a7"
+    sha256 cellar: :any,                 arm64_tahoe:   "72aab9f742c30545e0b58bb97ad324b8cef4ebd7c91b4d2bcf92d3ef4aaf73c8"
+    sha256 cellar: :any,                 arm64_sequoia: "7d62f4bc67a851f6af2a340ffe6ab7d484f5ae4cae0d57d26b818c7591edb979"
+    sha256 cellar: :any,                 arm64_sonoma:  "c769ff45c0fe3872f00bdb21d52da81751d89cc13512061be8a47cf35c129f79"
+    sha256 cellar: :any,                 sonoma:        "d0be90163d8b500d494bee9ebbbf0c08bbc068a50cf61fe3c17a7fb0d4a0f95d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b261b0f4cc9affc19bf3997c57a73e3f1b4c6d9b9acdf4bb9e62d11d4c09fd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ff0b0a4f101305aed9d4c977c307629a0d2cc4b343b9f9c03d7bce9c4a56785"
   end
 
   depends_on "pkgconf" => :build

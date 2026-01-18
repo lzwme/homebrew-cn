@@ -1,17 +1,17 @@
 class GitPages < Formula
   desc "Scalable static site server for Git forges"
   homepage "https://codeberg.org/git-pages/git-pages"
-  url "https://codeberg.org/git-pages/git-pages/archive/v0.3.1.tar.gz"
-  sha256 "1debdbbd101fe156ffe1ba8c679946165217005366b9c212427d1a91dfa6ed76"
+  url "https://codeberg.org/git-pages/git-pages/archive/v0.4.0.tar.gz"
+  sha256 "e75c373858e28e5e38307dc85ade51ad668c6ba64f49bfad94a85d2fb7d09d4e"
   license "0BSD"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d0772dec80e3adfa342115c12c2a14463140f59a6feb05e46f8989872553a5a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb384f6f3305ad4596d97880100bf42dd80ff8095ffdeae2dea3ac44d452875c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "563234deb9be40543f0baf209a22f72a2300afd0591e5190bf40843b620f70f5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bccdc1efdd9c410ca7477d257962f9d030dfbe23a55eff30e6509482d821d936"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "efb638a555544adfad44e35679b7b73a89443a44c7c52c7eb3167eea34b9944c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94bef86aa93db3dbcd770bfdf0d2e8faf090072d68d63a8d0483a8acb7d483b3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f743854760ec54d3f2453a41416fa47fff3c7e74867f10833f8e6544e838b21"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a01498f156a2d2f03ebb9ed237336b1b6a2ca0150d97b11e9ec922290dd70e54"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6161421a0d4473b6c4d048d2f8eaef85639b55cbc53a3c30e89b0ae3e72f7c7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8b61791a7c4d861b30d77c6f6efb8c5abd541cc5b85b524ef83b06199e49c566"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "52b23955bfc195e6d92b4e52f34def2834b437f2969ae2e53385f2f4bc4eadff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "409c29c9968f7166bf5ae8ae239fd8aea6ad96c0f24a1a226db84c3a3128c391"
   end
 
   depends_on "go" => :build

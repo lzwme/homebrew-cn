@@ -3,19 +3,18 @@ class Grayskull < Formula
 
   desc "Recipe generator for Conda"
   homepage "https://github.com/conda/grayskull"
-  url "https://files.pythonhosted.org/packages/c7/20/c8557733b2b52ea1714c018a24b735e33cb69f9b44dbcef9cf4dd562f849/grayskull-2.9.2.tar.gz"
-  sha256 "874890191b1999bfde97b09ac6d37dae4636aa87a9dd2ee1bf10e748ffba20ef"
+  url "https://files.pythonhosted.org/packages/5b/cd/b5a1755af96a07d13c398e9aed60896f6af2c81005e253a9e58c530a9aa6/grayskull-3.0.0.tar.gz"
+  sha256 "266362f51ccd71453001224e9a89770745c455fb131982d770cfb005d388b885"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/conda/grayskull.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3d726e726ab18c193078615e4be3e8183efb6901a745df4438ac57081f9f59fd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a9e267a2a26f568a9a27b70e78e9756c6cf15aee03f9a11e739694b10fd62b5e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca1029660493749203c4448d9059cc528a53a3196b6dcd82273bc3b09497eae4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f15e968cfd9f1824cf685c226d0ff65018d9e2a66d3beb9edc8df48998b521f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d73018f98953aa0266dbd888b7783564e5ca50b85a77572cbda742b001d00c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d412aa618d063d2a7332feccc6974917c10aa1ac073159c3427e17712e130720"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "821e314d2e182b58f9a5a11c611e3522c88ba67037748b716e8f62388cf58d01"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b5f3567724c5f9b58a2ec5d2f76cfe8cd889d0766effbd53691a7324fb616b5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "917b18c2cbe524fad70d0fab94f5bf6e8bbb243bd7573a7087c38d1be69b5cf6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aeec1cbe1dfd513d5ff11a494aafc0f2979140138ee74c806db8a20b1dd27f75"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "06f4001a204b35be1e90f52f37e471f836f36e7b841a9410c8f0e246633cb053"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "732229f9c67d20236e0fd6c5f3c843b9fc2f76a986de60d3d81eee261cf6938b"
   end
 
   depends_on "cmake" => :build
@@ -41,8 +40,8 @@ class Grayskull < Formula
   end
 
   resource "conda-souschef" do
-    url "https://files.pythonhosted.org/packages/78/6a/c4d067f8ef39b058a9bd03018093e97f69b7b447b4e1c8bd45439a33155d/conda-souschef-2.2.3.tar.gz"
-    sha256 "9bf3dba0676bc97616636b80ad4a75cd90582252d11c86ed9d3456afb939c0c3"
+    url "https://files.pythonhosted.org/packages/5b/bb/1d24463afd34bd572d4da1cae26a353925c8102241944d47c75b23321eb8/conda_souschef-3.0.1.tar.gz"
+    sha256 "0df9fa12d826ab349e8006e498c6067b3a5161cf5b860baf08601829cb1b200b"
   end
 
   resource "idna" do

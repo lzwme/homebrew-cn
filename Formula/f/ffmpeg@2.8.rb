@@ -28,6 +28,16 @@ class FfmpegAT28 < Formula
 
   keg_only :versioned_formula
 
+  # On deprecation date, we had over 5 versions of FFmpeg and `ffmpeg@2.8` was
+  # the least popular with 280 installs in 90 days. This means it no longer
+  # satisfies https://docs.brew.sh/Versions#acceptable-versioned-formulae
+  #
+  # > No more than five versions of a formula (including the main one)
+  # > will be supported at any given time, unless they are popular
+  # > (e.g. have over 1000 analytics 90 days installs of usage)
+  deprecate! date: "2026-01-17", because: :versioned_formula
+  disable! date: "2027-01-17", because: :versioned_formula
+
   depends_on "pkgconf" => :build
   depends_on "texi2html" => :build
   depends_on "yasm" => :build

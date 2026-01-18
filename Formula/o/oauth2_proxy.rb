@@ -1,18 +1,18 @@
 class Oauth2Proxy < Formula
   desc "Reverse proxy for authenticating users via OAuth 2 providers"
   homepage "https://oauth2-proxy.github.io/oauth2-proxy/"
-  url "https://ghfast.top/https://github.com/oauth2-proxy/oauth2-proxy/archive/refs/tags/v7.13.0.tar.gz"
-  sha256 "86d005585f753cda3495cf68f231bcb3be13d7c96d80c8890c0f9939e0bddcad"
+  url "https://ghfast.top/https://github.com/oauth2-proxy/oauth2-proxy/archive/refs/tags/v7.14.1.tar.gz"
+  sha256 "0c8267d6e79123421d8e1487a5a79168df79b27a73480f595ef40fe4ab779606"
   license "MIT"
   head "https://github.com/oauth2-proxy/oauth2-proxy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f86bf18a5897098ef96e16577d35121b6931b7b80153ce0805c7dd034f67432d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e92f0af0553a5607efb02eadd04e274ffaab348995e9ec40ed166a485b1f72d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e2c8ac95c58bad8a49fbc2fdbbb41407b0b59361ed726e7a1b2cf0a722d6991"
-    sha256 cellar: :any_skip_relocation, sonoma:        "38a1f93ba92f7b70f06b17311221464107f16dfc0300ac2811b22a2be4cb76e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5669bfc7396ac777fe122e986cf90f1391b53ee95ff5c0bbd200bd9828412c3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f39fb2b7c2b2e06cf7139c71c9cb79135f9a187b6e61b27da8c0b4ddd8bb8b53"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db49f910b73aaecd44527f9d690902b04a3590060ab460354918dfdc1363c58a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b9fe829613f2812646d3280a917356805330b6b20fb5b435b74caac33281fc9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f39fc2cca79f74e27363502339a8caa30ae619b9b735480685d314b609925a50"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1c9cbe78b8a3d88400a6ee53facab72d2e86d85072bcbc36ed0eef7ae9865fb7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4647316844df9519ea61db1719979235f57c24769811bc62131cc828ac7370a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa77bc86450f14a71957382161417cb92fdf775e0158d02f3197f65d59cb9d98"
   end
 
   depends_on "go" => :build

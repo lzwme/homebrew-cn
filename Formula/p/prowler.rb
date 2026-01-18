@@ -6,16 +6,16 @@ class Prowler < Formula
   url "https://files.pythonhosted.org/packages/c6/5c/4526e8a5c9d055991d50556d124129c96f1567b7899e9e0088fa527f8982/prowler-5.16.1.tar.gz"
   sha256 "bb485798e6769a4746413553800f2def79d62c039c888fb5b6ff95c33a144f2d"
   license "Apache-2.0"
-  revision 3
+  revision 4
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3c389e1098f0de38cc6c5a2aaf512e57eb79e4966880731a989a561491ee9708"
-    sha256 cellar: :any,                 arm64_sequoia: "716cff925e426cdbc7284a373b39112e2d09577bff72fd8c613b17dbc35e2bda"
-    sha256 cellar: :any,                 arm64_sonoma:  "87046068d7b3e2f6e4e1d72833371d1879ef9e75c83c83ed7ec0a8c0fa551bb6"
-    sha256 cellar: :any,                 sonoma:        "229397af1fca9441b51dd1fb9b59c2e165a1f1696a8f3a273e2f42f10e24be6a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "429b7eaedb33b169750bae2f7739847bbd95d00365ec239c48658bfb06eeb542"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76157a2d5d043ab30abd2473f102ecd333918253cd3a51927338b79b276b6061"
+    sha256 cellar: :any,                 arm64_tahoe:   "7aa71758944a24a7208de2c004dfeb3e59cfb684c0190c9d9df15638b6950803"
+    sha256 cellar: :any,                 arm64_sequoia: "48dd3bff721473a2bd82e3f6938606cab73163d15f704d6dbc7e10df3652a4f2"
+    sha256 cellar: :any,                 arm64_sonoma:  "1cd04cf91ce7775c6f44517bc7344645728e4612509bea6d6fe72fc3343d3279"
+    sha256 cellar: :any,                 sonoma:        "d00f6b17af12f52abb9cbea9ba6274ac7100e65495924d78f4518bc42309080d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "abeff548bee011ca49f5265553687e325840f93c109b236b0a301e399b70eaaf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44191d71417095d9add1baf71fb1ed1bed4db48cf9206552ff8a50ec46d2a182"
   end
 
   depends_on "cmake" => :build
@@ -26,6 +26,7 @@ class Prowler < Formula
   depends_on "certifi" => :no_linkage
   depends_on "libsodium" # for pynacl
   depends_on "libyaml"
+  depends_on "lz4"
   depends_on "openssl@3"
   depends_on "python@3.12" # https://github.com/prowler-cloud/prowler/issues/6737
 
@@ -149,8 +150,8 @@ class Prowler < Formula
   end
 
   resource "alibabacloud-openapi-util" do
-    url "https://files.pythonhosted.org/packages/f6/50/5f41ab550d7874c623f6e992758429802c4b52a6804db437017e5387de33/alibabacloud_openapi_util-0.2.2.tar.gz"
-    sha256 "ebbc3906f554cb4bf8f513e43e8a33e8b6a3d4a0ef13617a0e14c3dda8ef52a8"
+    url "https://files.pythonhosted.org/packages/f6/51/be5802851a4ed20ac2c6db50ac8354a6e431e93db6e714ca39b50983626f/alibabacloud_openapi_util-0.2.4.tar.gz"
+    sha256 "87022b9dcb7593a601f7a40ca698227ac3ccb776b58cb7b06b8dc7f510995c34"
   end
 
   resource "alibabacloud-oss-util" do
@@ -579,8 +580,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/b4/53/7c23f9568deaa9c4788f7890f50282ce2b68e12b9a39a6f5f324fccd26fa/iamdata-0.1.202601141.tar.gz"
-    sha256 "a27fd79610465635749c1a93bfa6d215ee61b47a7d818feab6c49265a1d7859a"
+    url "https://files.pythonhosted.org/packages/e8/f8/fc9fa887032fa7e58694915750ec9f13afcaf2dee6f6cbe69a75f1778b17/iamdata-0.1.202601171.tar.gz"
+    sha256 "04aacce609692c037dc32fa44768529f8b99f0be4c14dc8c04ec2044e55b0533"
   end
 
   resource "idna" do
@@ -765,8 +766,8 @@ class Prowler < Formula
   end
 
   resource "plotly" do
-    url "https://files.pythonhosted.org/packages/d6/ff/a4938b75e95114451efdb34db6b41930253e67efc8dc737bd592ef2e419d/plotly-6.5.1.tar.gz"
-    sha256 "b0478c8d5ada0c8756bce15315bcbfec7d3ab8d24614e34af9aff7bfcfea9281"
+    url "https://files.pythonhosted.org/packages/e3/4f/8a10a9b9f5192cb6fdef62f1d77fa7d834190b2c50c0cd256bd62879212b/plotly-6.5.2.tar.gz"
+    sha256 "7478555be0198562d1435dee4c308268187553cc15516a2f4dd034453699e393"
   end
 
   resource "propcache" do
@@ -795,8 +796,8 @@ class Prowler < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/ba/e9/01f1a64245b89f039897cb0130016d79f77d52669aae6ee7b159a6c4c018/pyasn1-0.6.1.tar.gz"
-    sha256 "6f580d2bdd84365380830acf45550f2511469f673cb4a5ae3857a3170128b034"
+    url "https://files.pythonhosted.org/packages/fe/b6/6e630dff89739fcd427e3f72b3d905ce0acb85a45d4ec3e2678718a3487f/pyasn1-0.6.2.tar.gz"
+    sha256 "9b59a2b25ba7e4f8197db7686c09fb33e658b98339fadb826e9512629017833b"
   end
 
   resource "pyasn1-modules" do

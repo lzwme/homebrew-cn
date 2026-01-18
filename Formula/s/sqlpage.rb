@@ -1,18 +1,18 @@
 class Sqlpage < Formula
   desc "Web app builder using SQL queries to create dynamic webapps quickly"
   homepage "https://sql-page.com/"
-  url "https://ghfast.top/https://github.com/sqlpage/SQLpage/archive/refs/tags/v0.41.0.tar.gz"
-  sha256 "85f214f72633a5e24d36038215fafa8e3dadc297cb17a216bceea73f5f9a77e8"
+  url "https://ghfast.top/https://github.com/sqlpage/SQLpage/archive/refs/tags/v0.42.0.tar.gz"
+  sha256 "6bb1b40a4bef392c7b6c7d2f480be4ed78cd3474c38d55f61875c38605548ae1"
   license "MIT"
   head "https://github.com/sqlpage/SQLpage.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1d6eb60cb0a1a8197821c8e531118b98d285e6a1742efc45ff043e922ae8f6e9"
-    sha256 cellar: :any,                 arm64_sequoia: "f2b07e4e69735ef075c662cf5a62ab17ca54b11e62946c6a112d34951a3612d4"
-    sha256 cellar: :any,                 arm64_sonoma:  "1b5046b75c0ec1ad07daeb0338514e22b5d73ffaadd86beaa9752ef8900a2e16"
-    sha256 cellar: :any,                 sonoma:        "ccd4ffe92e6879322b9bb583b9e1f10b5ff362fed14799de7c957dd05bf519b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "32cbc0f1d4aae55b2df8dfde654852ea235d07aca87012bb20748283f554fee8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e637baa0ca70803a3c4a8e510975510f7721ad76fc9d64c0cc781248b6d422e6"
+    sha256 cellar: :any,                 arm64_tahoe:   "81794c5a53d80246d8200391e85519dad26903b92a9bd102b729a4e753f55cbf"
+    sha256 cellar: :any,                 arm64_sequoia: "7bd6bfd080e274f0b316afe403a8b69ef0d318d1d4c0c1c1adc834805f50f04b"
+    sha256 cellar: :any,                 arm64_sonoma:  "963c6f701e8d157970ff7f1b1b1cfee4400a81fb9c44668dfc210429b102a242"
+    sha256 cellar: :any,                 sonoma:        "20979861bb6ed73967141d3f6b102e6cf73cab80ab7cd7f03ada8f76e084049b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6587be5ea69b037caa94745a280e7215245999b179d64724e7e878925dcd1bfa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13ff127930824305e30105e8c1c3d892b91d7333a5561787b096cb3bb0d83d13"
   end
 
   depends_on "rust" => :build

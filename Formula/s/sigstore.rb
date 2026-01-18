@@ -6,16 +6,16 @@ class Sigstore < Formula
   url "https://files.pythonhosted.org/packages/64/1e/8c115a155b67254b52780730bc86edf90d108d172377e526ce91e42ba9de/sigstore-4.1.0.tar.gz"
   sha256 "312f7f73fe27127784245f523b86b6334978c555fe4ba7831be5602c089807c1"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/sigstore/sigstore-python.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "73ad528fe8dc5b86e0ae27947820ae7f1ea1855d20e8ee86eb979d916ed950ad"
-    sha256 cellar: :any,                 arm64_sequoia: "d974581a087be1b1f59761d805351e35027a5575000ce2470daa2a775ef62f35"
-    sha256 cellar: :any,                 arm64_sonoma:  "0054f00e3194486bdd758942aea77b79f3d6d4cc15a4f7a9afe3d216468b9e1c"
-    sha256 cellar: :any,                 sonoma:        "3f3af7e3389bf84f15a31639d5dbd66b97a725a7d43944d3162f04d66a37bbf1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "19d6fce3e150534f3e87d644c0e547f5681da579e155bbc5958a617f61f2a380"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "add14d2e3b3d80d6a1aa5f9f90cfb9491883b97e91af94ece37c4343c753def4"
+    sha256 cellar: :any,                 arm64_tahoe:   "5017b7503385105c6831f35785ade7ee2236d5d62aa47b9d3572c73a39d29b5b"
+    sha256 cellar: :any,                 arm64_sequoia: "3cad77b74c7f988ebbb37920262b6c0d6b6ac5143e8d4b878706bae208d0651a"
+    sha256 cellar: :any,                 arm64_sonoma:  "0fe11870991e218cd0735731a7dc3fd8524f40d33a85514c8385597cb64aa995"
+    sha256 cellar: :any,                 sonoma:        "5ec77ece5b3410a8a8bdd9bb71d52ff916fb67d2461c38c1714e173d177bd3dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f05b1d271fa1a07b4ff2b081d58c73611012b30548c3821e05468a355cf09fc5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5809e8e9bf783b1c49d9090b363261b6be31122d033864f156fcfeab6d056436"
   end
 
   depends_on "pkgconf" => :build # for rfc3161-client
@@ -69,8 +69,8 @@ class Sigstore < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/ba/e9/01f1a64245b89f039897cb0130016d79f77d52669aae6ee7b159a6c4c018/pyasn1-0.6.1.tar.gz"
-    sha256 "6f580d2bdd84365380830acf45550f2511469f673cb4a5ae3857a3170128b034"
+    url "https://files.pythonhosted.org/packages/fe/b6/6e630dff89739fcd427e3f72b3d905ce0acb85a45d4ec3e2678718a3487f/pyasn1-0.6.2.tar.gz"
+    sha256 "9b59a2b25ba7e4f8197db7686c09fb33e658b98339fadb826e9512629017833b"
   end
 
   resource "pygments" do

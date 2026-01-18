@@ -2,8 +2,8 @@ class Koka < Formula
   desc "Compiler for the Koka language"
   homepage "http://koka-lang.org"
   url "https://github.com/koka-lang/koka.git",
-    tag:      "v3.2.2",
-    revision: "39b4bec7327dbbcb2f83ce7aca5fe061931a4dc3"
+      tag:      "v3.2.2",
+      revision: "39b4bec7327dbbcb2f83ce7aca5fe061931a4dc3"
   license "Apache-2.0"
   head "https://github.com/koka-lang/koka.git", branch: "dev"
 
@@ -36,6 +36,9 @@ class Koka < Formula
       s.gsub! '["/usr/local/lib"', "[\"#{HOMEBREW_PREFIX}/lib\""
       s.gsub! '"-march=haswell"', "\"-march=#{ENV.effective_arch}\"" if Hardware::CPU.intel? && build.bottle?
     end
+
+    # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
+    (buildpath/"cabal.project.local").write "allow-newer: base, containers, template-haskell\n"
 
     system "cabal", "v2-update"
     system "cabal", "v2-build", *std_cabal_v2_args.reject { |s| s["install"] }

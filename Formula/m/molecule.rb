@@ -6,15 +6,15 @@ class Molecule < Formula
   url "https://files.pythonhosted.org/packages/b8/b1/205ca8017593656836463cee1e4690b86d219ca19caebc704b8b00f7c6e8/molecule-25.12.0.tar.gz"
   sha256 "b226bf1be67ce0fa30c726aab226063f9443e561d7e3d048f55dfb2ee51adbd6"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "babd45a947da7254284ccc478500ea2f70329233f07379471ff2b38da1fa446e"
-    sha256 cellar: :any,                 arm64_sequoia: "a718ff70a055adb7c87816504a2bb6402ed0ea9ba34806bc0cb4095d18b8493a"
-    sha256 cellar: :any,                 arm64_sonoma:  "65419fdbd2cf37cc0458e6a375bdcd6d50487f86422ffba08ef5e485000b316b"
-    sha256 cellar: :any,                 sonoma:        "8b0604f9d9342212958e265a14f8424bd5281c67ce2b92419d6905a2c4040780"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4feb904053e440de577208389964ae5b5056d0e660300919273b0420d16d457c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdd771f7099e63608652560fba024bbdce04225f85b2ee9d584423138003abf7"
+    sha256 cellar: :any,                 arm64_tahoe:   "17b2c09320f7c58f594e194c6dabbfc45bac01279149ec82053e52759d6838c8"
+    sha256 cellar: :any,                 arm64_sequoia: "ed5f7b70355d42931d126e2b5a6ea2988cd888c9975ba21b9652f4d9af05571e"
+    sha256 cellar: :any,                 arm64_sonoma:  "612a6f799e40c89e0d704293faa86d0d4d9793cf9f06696cf0cf9e7164782316"
+    sha256 cellar: :any,                 sonoma:        "3c0d0f8e0f914bdcb885568650ee740a4dd42f607d771d5135f5407275d13e75"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ac5a07b10e0cfb42e504f7bdb68ee4bd6ff620ad93cfb6d932e4bc966d6c6f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d36c2382819973477455f4bc1734f1533462a9151ce67a9915fd90353321ace7"
   end
 
   depends_on "ansible"
@@ -199,8 +199,8 @@ class Molecule < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/ba/e9/01f1a64245b89f039897cb0130016d79f77d52669aae6ee7b159a6c4c018/pyasn1-0.6.1.tar.gz"
-    sha256 "6f580d2bdd84365380830acf45550f2511469f673cb4a5ae3857a3170128b034"
+    url "https://files.pythonhosted.org/packages/fe/b6/6e630dff89739fcd427e3f72b3d905ce0acb85a45d4ec3e2678718a3487f/pyasn1-0.6.2.tar.gz"
+    sha256 "9b59a2b25ba7e4f8197db7686c09fb33e658b98339fadb826e9512629017833b"
   end
 
   resource "pyasn1-modules" do

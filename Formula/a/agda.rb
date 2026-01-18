@@ -4,6 +4,7 @@ class Agda < Formula
   # agda2hs.cabal specifies BSD-3-Clause but it installs an MIT LICENSE file.
   # Everything else specifies MIT license and installs corresponding file.
   license all_of: ["MIT", "BSD-3-Clause"]
+  revision 1
 
   stable do
     url "https://ghfast.top/https://github.com/agda/agda/archive/refs/tags/v2.8.0.tar.gz"
@@ -54,12 +55,12 @@ class Agda < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "67c4869f12105c37ce7d68aafc8ef8c6f86d1024ad8c82701515eee2f5271d70"
-    sha256 arm64_sequoia: "d9b340ab2150f6e9becd13e074ad823263f724d2ac26ce62ff90730f18ec3216"
-    sha256 arm64_sonoma:  "3ac61a6a0e70f1ff409d14feb6f9b393d7d8265397b20055b467a6664c858081"
-    sha256 sonoma:        "4f0b8ad5cc891d516865477f8a2cd9968ed6d9eaf706a37885ad23774b1ad26f"
-    sha256 arm64_linux:   "47ed5d37c034a4554932e439e03188cc20294b4158cefe140ac42ccb3e9534db"
-    sha256 x86_64_linux:  "28ee793e66ef9bb78c80055e7f69f978ef2b5f5eae67d56d8f2ff2a47db5ac8f"
+    sha256 arm64_tahoe:   "b0b7ab12ac19d533c7dc37e6f11b7cf17729b176a41c1c5d53ea8c34e6d6615e"
+    sha256 arm64_sequoia: "e3b43d5354650ef5603c7c838a9ec1658795a93112393fc3e04002a63c29c93c"
+    sha256 arm64_sonoma:  "2e43e9dcf8147a8c45647aed49f5e81ea76da774a5aba545826c6f8c7fe3e5a4"
+    sha256 sonoma:        "6c4ed39ac8d453d22c68148d7411341059cd09f88362f95779063824545dfdb2"
+    sha256 arm64_linux:   "b3aa90ba8de385fa884e64139b79ea45389e86959b8bc1f5dde9e2d2c5091ed4"
+    sha256 x86_64_linux:  "20e68ba94e2bba1687c2f962fb1587eb3005bb913e78c6b94e0afd8e8b16e27f"
   end
 
   head do
@@ -84,7 +85,9 @@ class Agda < Formula
 
   depends_on "cabal-install" => :build
   depends_on "emacs" => :build
-  depends_on "ghc"
+  # TODO: switch to the latest GHC in the next release
+  # https://github.com/agda/agda/pull/8303
+  depends_on "ghc@9.12"
   depends_on "gmp"
 
   uses_from_macos "libffi"

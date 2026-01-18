@@ -6,15 +6,16 @@ class Scrapy < Formula
   url "https://files.pythonhosted.org/packages/db/fb/0ccc11eaabdac1f210f27fb6b2ad4aa4ff8a5085cbc616102536fe2c56f4/scrapy-2.14.1.tar.gz"
   sha256 "b2a4e61802e0a5518bc8293058adedbb6b0d51c08c125d1322b1af7c7cbca4c1"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/scrapy/scrapy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e120e988196829606b4665235399291a7c3d20ac1497615dd867ff4d7837634f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ef003f677663fc322c6bbd42d425f96b1bda6875f94fa840571b4f7b1876580"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "681a620957f66e17487505df93fdb9ddecc0e5590a211d43dac7794d7be469ce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7f2f5ce6196ad38957096e9638fd95b86a3850737a9c9f01da0d3f9a53a4f56b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a28f763881e4a2693ce53fa0e629bfb4874420dfd6697c03f285808be31842a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cceb29b8272097ca32a5a67109676de206f516dacb12fc0b2e72a4858ea17c30"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "adf60e63466d69c7ecbdaa039ec52db39ca53ecc2bf038ebd34837c3428a1ec7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67a2bcce8fbd6586f613428133249ff795c699257b76da409b60b484d51fd9c6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "469ebb9721dfd9c7269819eb6e7828537974e36f76378cfd9d622300d41c260e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "39666b581cf3aa60fb7e421b8bff677a317cd0399fbf717b4a128e850e41a98e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7b66503f6eaf0be160b6c357c68fad6b67babacac3fc5f16c1515ba1dea4242"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eefe161b06cb8459e9b7ab06e2eb3c61d5ccc65d36739bc6aa61960fdf567580"
   end
 
   depends_on "certifi" => :no_linkage
@@ -112,8 +113,8 @@ class Scrapy < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/ba/e9/01f1a64245b89f039897cb0130016d79f77d52669aae6ee7b159a6c4c018/pyasn1-0.6.1.tar.gz"
-    sha256 "6f580d2bdd84365380830acf45550f2511469f673cb4a5ae3857a3170128b034"
+    url "https://files.pythonhosted.org/packages/fe/b6/6e630dff89739fcd427e3f72b3d905ce0acb85a45d4ec3e2678718a3487f/pyasn1-0.6.2.tar.gz"
+    sha256 "9b59a2b25ba7e4f8197db7686c09fb33e658b98339fadb826e9512629017833b"
   end
 
   resource "pyasn1-modules" do

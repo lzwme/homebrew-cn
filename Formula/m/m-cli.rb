@@ -7,7 +7,8 @@ class MCli < Formula
   head "https://github.com/rgcr/m-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a29e58b7e4c6b7b855cc1a1b004d8d972a52e43fe867c9c2348b65534daf769a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "be6e119c88c80d133735f628de0bf47be59ff170e9b2f20888df8ea0ea419b98"
   end
 
   depends_on :macos
@@ -24,7 +25,7 @@ class MCli < Formula
       s.sub!(/^\s*uninstall_mcli\s*&&.*/,
              'printf "\'m-cli\' was installed by brew, try: brew uninstall m-cli\n" && exit 0')
       s.sub!(/^\s*get_version\s*&&.*/,
-             "printf \"m-cli version: v2.0.4\\n\" && exit 0")
+             "printf \"m-cli version: v#{version}\\n\" && exit 0")
     end
 
     inreplace prefix/"completions/bash/m" do |s|

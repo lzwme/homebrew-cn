@@ -1,8 +1,8 @@
 class Vfox < Formula
   desc "Version manager with support for Java, Node.js, Flutter, .NET & more"
   homepage "https://vfox.dev/"
-  url "https://ghfast.top/https://github.com/version-fox/vfox/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "988a97844402a01887dbdc45322b2dbc6e0db70005bd79b4b2c361377286cc93"
+  url "https://ghfast.top/https://github.com/version-fox/vfox/archive/refs/tags/v1.0.3.tar.gz"
+  sha256 "a6e8d6373fef6cf1a684197dffebb665ef85b5be9b461ad13519c392c9e2944e"
   license "Apache-2.0"
   head "https://github.com/version-fox/vfox.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Vfox < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "29ddf974131be640a7db3a368a622b3e4b6d08c30b4f937fac6c5040389df2f2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7ba9881e12303c8849c37b1b946c3d2f2ab1a06dd2af9c1c00a42803f96032d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88596f7207ab10bd6307d00ad972534c5091059224fd57e67e91b65a1acfdcd8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bab2938f6d88cb205b2b658060413e92081a181a112f1475763df1e468382283"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8710189fb91d88b9d0da7969f7c2bd6a7ce818990e07cb9b9f193e5a323910db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba0448f71d526de320fb3bb0f29aeab67129087e60ad4c076cbb178bf51d6565"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "266098a13d333ad4270c72345c7e0d41652bd7a25cba1ce6607c9ffd14c93aea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86e5358361c1443601f3598a5514ed1cca237411cc4cd21b74db96736acfe883"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a45b7398dfef7a7afe5a54e67381d51c6a5fbfbd650ad70b9601e95df10e7df"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c8045c25770e3460c2d5d1ad7eadec712a9c2164e8844ead23b4be4f42026a02"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9569c0b5f57c4b323ce3b2334885c4d0d9824e340d8379797b9759d7950ca522"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c434e6a30089e4c4a28bb7f8ab6e60a7ebedfd6eed13fd07bd45ba32b6cbfa5b"
   end
 
   depends_on "go" => :build

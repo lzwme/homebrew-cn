@@ -6,15 +6,16 @@ class KimiCli < Formula
   url "https://files.pythonhosted.org/packages/32/1a/24a901ebd060e7b013b1c27f112e8f1cf415138751b7d28c627803d610d7/kimi_cli-0.78.tar.gz"
   sha256 "90b1bb16464fe734e209eda65330cf217a6cc1c766ccb4236a542e92142c3c85"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d6cd6a13d9d473066a69cd4106b1c19c1931a45b6dc2497f8d15e2e1a7675281"
-    sha256 cellar: :any,                 arm64_sequoia: "ecbaa41cbe74a96c32c00511a27ded13686687a0c02ceb32d9bb6adfc44b133e"
-    sha256 cellar: :any,                 arm64_sonoma:  "ad62c4883d0e318b20805280be9d5cd7dc3eec6fbd388dd52118999c1563cb25"
-    sha256 cellar: :any,                 sonoma:        "42c7a72c8c7c91be31d962b5ed07bb463a66409a040ca98f23e684430fde9295"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2dc3e89602a6b13b87086c0f600ca77618b8b19f91716ba2011436adf9c7536d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e54ca35abfccfe27bfa0923cd729a69cbd5c59980ddd482628d30965d63d996"
+    sha256 cellar: :any,                 arm64_tahoe:   "1514c1f0e5da64172685b4a89861b9e69cad8a6e832b199457f3cb047a6460e8"
+    sha256 cellar: :any,                 arm64_sequoia: "7fe22a90bd203547702d0613a194cbfaff4970b2c4d8704bfddcc1ed86abb4db"
+    sha256 cellar: :any,                 arm64_sonoma:  "0373bff0233713cd5a0edd4f21f4231f3061d877b647722398246433d8a4e930"
+    sha256 cellar: :any,                 sonoma:        "ac49b8d1076aeceff1810cab4bc8b64ca8691555d74421d0bd400040357b41e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9129d37ce800a639f4930884526bf54c597ced16937a8158fa54e961316db1d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fcc973d995edb8414ca6b6337593ab33a14381401b2553ece713df0757f4335"
   end
 
   depends_on "pkgconf" => :build
@@ -104,8 +105,8 @@ class KimiCli < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/dd/6d/0e0f03214f6a5fae79d934d1de8a570bda37235d991d1b6dee9cd99c8e44/cyclopts-4.4.6.tar.gz"
-    sha256 "ffeef064d867b8a567b5efdfc09e3295b2774735ea1df33e5230e818d52d9942"
+    url "https://files.pythonhosted.org/packages/13/7b/663f3285c1ac0e5d0854bd9db2c87caa6fa3d1a063185e3394a6cdca9151/cyclopts-4.5.0.tar.gz"
+    sha256 "717ac4235548b58d500baf7e688aa4d024caf0ee68f61a012ffd5e29db3099f9"
   end
 
   resource "dateparser" do
@@ -159,8 +160,8 @@ class KimiCli < Formula
   end
 
   resource "google-genai" do
-    url "https://files.pythonhosted.org/packages/b4/49/0c2dd11c50db7ee2c299c63f1795256c96543be8b40e6f139c1a680f92e8/google_genai-1.58.0.tar.gz"
-    sha256 "bbec3abf253c17ad57b68e7f8d87d5cda34d5909c67b7ba726207a2bd10aa9fd"
+    url "https://files.pythonhosted.org/packages/40/34/c03bcbc759d67ac3d96077838cdc1eac85417de6ea3b65b313fe53043eee/google_genai-1.59.0.tar.gz"
+    sha256 "0b7a2dc24582850ae57294209d8dfc2c4f5fcfde0a3f11d81dc5aca75fb619e2"
   end
 
   resource "h11" do
@@ -324,8 +325,8 @@ class KimiCli < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/ba/e9/01f1a64245b89f039897cb0130016d79f77d52669aae6ee7b159a6c4c018/pyasn1-0.6.1.tar.gz"
-    sha256 "6f580d2bdd84365380830acf45550f2511469f673cb4a5ae3857a3170128b034"
+    url "https://files.pythonhosted.org/packages/fe/b6/6e630dff89739fcd427e3f72b3d905ce0acb85a45d4ec3e2678718a3487f/pyasn1-0.6.2.tar.gz"
+    sha256 "9b59a2b25ba7e4f8197db7686c09fb33e658b98339fadb826e9512629017833b"
   end
 
   resource "pyasn1-modules" do

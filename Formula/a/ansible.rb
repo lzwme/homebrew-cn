@@ -6,16 +6,16 @@ class Ansible < Formula
   url "https://files.pythonhosted.org/packages/61/18/f13c9a462ef20893d30bd11c4089edee02b5ef1d31e1c2634da592732279/ansible-13.2.0.tar.gz"
   sha256 "fac46e202d1020027341659918b39e588dd7c43cef26537d7ca7fe51c324fe31"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "33e677896bdeb586461b299d8cbc31e9011c9019b866cc5a97710b5f1b80df61"
-    sha256 cellar: :any,                 arm64_sequoia: "26e7557b9917076bfa8a0c1bc2fd97ce35f7f3313ea65b96ae67739836947e0a"
-    sha256 cellar: :any,                 arm64_sonoma:  "1b9b26303010f88e640e146225b3b2549a993be385d0d6891d976e3b1e9029e8"
-    sha256 cellar: :any,                 sonoma:        "c58ced3e15c77742ae8f3c0c7ae47f6fb26c967b9a92030e1b85c2403d0c2b8a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6e73c1a465a989527685492fea8637f48bdc0da96219e10b58b9535952ec8a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e311fcc3fd069ddc4b53bd12693d40db1127935bcae4d3d212146ad775574bd"
+    sha256 cellar: :any,                 arm64_tahoe:   "3b965543ae0d59150d955b35aff98f2bc7c42f587887e0d81e55e85d72722020"
+    sha256 cellar: :any,                 arm64_sequoia: "6678ab8baf3b0307ba5805a380977339203046fd90314b2fa27e298a2002e530"
+    sha256 cellar: :any,                 arm64_sonoma:  "aa04d9ebe926747fd0499cdc2f63c493293c4d0cbe42a773e5f84b1f1339e148"
+    sha256 cellar: :any,                 sonoma:        "73064acd903fdff97923993a03d170a86fb39823a74e60000b924f15a57dead2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd92bd69fd00074bab7335ffd86a5f94819c369d9585f5e6ada0adbe084fa236"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc3a3589dbbd8397386d35df68c89cf2398fa88d73f7af7792eb1eecedee593c"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -81,13 +81,13 @@ class Ansible < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/5c/24/1dd85b64004103c2e60476d0fa8d78435f5fed9db1129cd2cd332784037a/boto3-1.42.29.tar.gz"
-    sha256 "247e54f24116ad6792cfc14b274288383af3ec3433b0547da8a14a8bd6e81950"
+    url "https://files.pythonhosted.org/packages/42/79/2dac8b7cb075cfa43908ee9af3f8ee06880d84b86013854c5cca8945afac/boto3-1.42.30.tar.gz"
+    sha256 "ba9cd2f7819637d15bfbeb63af4c567fcc8a7dcd7b93dd12734ec58601169538"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/70/08/8a8e0255949845f764c5126f97b1bc09a6484077f124c2177b979ecfbbff/botocore-1.42.29.tar.gz"
-    sha256 "0fe869227a1dfe818f691a31b8c1693e39be8056a6dff5d6d4b3fc5b3a5e7d42"
+    url "https://files.pythonhosted.org/packages/44/38/23862628a0eb044c8b8b3d7a9ad1920b3bfd6bce6d746d5a871e8382c7e4/botocore-1.42.30.tar.gz"
+    sha256 "9bf1662b8273d5cc3828a49f71ca85abf4e021011c1f0a71f41a2ea5769a5116"
   end
 
   resource "charset-normalizer" do
@@ -359,8 +359,8 @@ class Ansible < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/ba/e9/01f1a64245b89f039897cb0130016d79f77d52669aae6ee7b159a6c4c018/pyasn1-0.6.1.tar.gz"
-    sha256 "6f580d2bdd84365380830acf45550f2511469f673cb4a5ae3857a3170128b034"
+    url "https://files.pythonhosted.org/packages/fe/b6/6e630dff89739fcd427e3f72b3d905ce0acb85a45d4ec3e2678718a3487f/pyasn1-0.6.2.tar.gz"
+    sha256 "9b59a2b25ba7e4f8197db7686c09fb33e658b98339fadb826e9512629017833b"
   end
 
   resource "pyasn1-modules" do

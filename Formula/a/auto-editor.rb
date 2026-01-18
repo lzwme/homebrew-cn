@@ -17,7 +17,6 @@ class AutoEditor < Formula
 
   depends_on "nim" => :build
   depends_on "pkgconf" => :build
-  depends_on "ffmpeg" => :test
   depends_on "dav1d"
   depends_on "ffmpeg-full"
   depends_on "lame"
@@ -37,6 +36,7 @@ class AutoEditor < Formula
   end
 
   test do
+    ENV.prepend_path "PATH", Formula["ffmpeg-full"].bin
     mp4in = testpath/"video.mp4"
     mp4out = testpath/"video_ALTERED.mp4"
     system "ffmpeg", "-filter_complex", "testsrc=rate=1:duration=5", mp4in

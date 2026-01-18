@@ -1,20 +1,10 @@
 class Echidna < Formula
   desc "Ethereum smart contract fuzzer"
   homepage "https://github.com/crytic/echidna"
+  url "https://ghfast.top/https://github.com/crytic/echidna/archive/refs/tags/v2.3.1.tar.gz"
+  sha256 "4ba8598467d06c6f2ea6ca453b2c4e51c318752dff39cd1c8510470ed0fd7b75"
   license "AGPL-3.0-only"
   head "https://github.com/crytic/echidna.git", branch: "master"
-
-  stable do
-    url "https://ghfast.top/https://github.com/crytic/echidna/archive/refs/tags/v2.3.0.tar.gz"
-    sha256 "6fb673b10fc22068f74529ceff4e10b779f9489acaf189148fcb48f317606bf8"
-
-    # GHC 9.10 fixes
-    # https://github.com/crytic/echidna/pull/1500
-    patch do
-      url "https://github.com/crytic/echidna/commit/e302a0ab768d382644be4895d7a3aab60942952d.patch?full_index=1"
-      sha256 "a0ed8330757f925f7832872ac33a9912f3dbdb52c63c363f090eacd5214ede34"
-    end
-  end
 
   livecheck do
     url :stable
@@ -22,12 +12,12 @@ class Echidna < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2959014c245f48091a17431a0f25f2add16f5e753a598c4f5668dc7a4b7b6663"
-    sha256 cellar: :any,                 arm64_sequoia: "122afc3cbcdb997b2e490cc1959e32a8dda3ea7079dce4a87a40ee4c9a77016e"
-    sha256 cellar: :any,                 arm64_sonoma:  "cd30326888e4cc7f00ba3becfa9a603fc68767bb2d1e5c262f926dc9bf862ec5"
-    sha256 cellar: :any,                 sonoma:        "28f133e7ace9607803b0d93bcc10f0f158fe22d6b84c0bf538b582a7fb6e0589"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b14de6de490927ba6db29496b45e3d18213f6f8da65d992d61a089693c780403"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40ff247be0dee656ee1a7b0bbfc561abf0c558ab87c89a1b314432ccb11b135a"
+    sha256 cellar: :any,                 arm64_tahoe:   "b4c0c8e4703789c0a9a78b8581dbd70d8111ce6df831232915a4df984e886de1"
+    sha256 cellar: :any,                 arm64_sequoia: "b82dac91e964bcaccb7daf3bf674390548087480013e4b5a6e8988df4a7d7d91"
+    sha256 cellar: :any,                 arm64_sonoma:  "a390cb7a1f470f2c745413f52686357d1a0e1a08d54090c7a4d2a9c70162951e"
+    sha256 cellar: :any,                 sonoma:        "8dc501bded131ae6f2902e226834031ceb45780219771b102416af8017fe15c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7f057c41d4aa548b33bf692c57d697d16363bc3694511bd3117e5ccdbbdb47c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0799bd6976031fa133b66f5262a9327260cf4a3da4fc44452054c021d7260b7a"
   end
 
   depends_on "ghc@9.10" => :build
