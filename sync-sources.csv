@@ -907,7 +907,6 @@ Homebrew-homebrew-core/Formula/c/certsync.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cf-terraforming.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cf2tf.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/c/cf4ocl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cfengine.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cffi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cfitsio.rb, Homebrew/homebrew-core, 0
@@ -2183,7 +2182,7 @@ Homebrew-homebrew-core/Formula/f/freeipmi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/freeling.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/freeradius-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/freerdp.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/freeswitch.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/freeswitch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/freetds.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/freetype.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/freexl.rb, Homebrew/homebrew-core, 0
@@ -2233,6 +2232,7 @@ Homebrew-homebrew-core/Formula/f/fx-upscale.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fypp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fzf-make.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fzf-tab.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fzf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fzy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/g-ls.rb, Homebrew/homebrew-core, 1
@@ -3106,6 +3106,7 @@ Homebrew-homebrew-core/Formula/i/iir1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ijq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ike-scan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imagejs.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/imagemagick-full.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/imagemagick.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/imagemagick@6.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/imageoptim-cli.rb, Homebrew/homebrew-core, 1
@@ -4049,6 +4050,7 @@ Homebrew-homebrew-core/Formula/lib/libkate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libkeccak.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libkeyfinder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libkml.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libks.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libksba.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/liblbfgs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/liblc3.rb, Homebrew/homebrew-core, 1
@@ -7198,6 +7200,7 @@ Homebrew-homebrew-core/Formula/t/tfschema.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfsec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfsort.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfstate-lookup.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tftp-now.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfupdate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tgenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tgif.rb, Homebrew/homebrew-core, 0
@@ -7827,6 +7830,7 @@ Homebrew-homebrew-core/Formula/w/wordgrinder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wordle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wordnet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wordplay.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/worktrunk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wormhole-william.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wownero.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wp-cli-completion.rb, Homebrew/homebrew-core, 1
@@ -8446,6 +8450,7 @@ Homebrew-homebrew-cask/Casks/a/aural.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aurora-hdr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ausweisapp.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/authy.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/auto-claude.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/autodesk-fusion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/autodmg.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/autofirma.rb, Homebrew/homebrew-cask, 0
@@ -8552,6 +8557,7 @@ Homebrew-homebrew-cask/Casks/b/betterandbetter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/betterdiscord-installer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/betterdisplay.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bettermouse.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/bettershot.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bettertouchtool.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bettertouchtool@alpha.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/betterzip.rb, Homebrew/homebrew-cask, 0

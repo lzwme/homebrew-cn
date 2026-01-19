@@ -1,20 +1,18 @@
 class Luv < Formula
   desc "Bare libuv bindings for lua"
   homepage "https://github.com/luvit/luv"
-  url "https://ghfast.top/https://github.com/luvit/luv/archive/refs/tags/1.51.0-1.tar.gz"
-  sha256 "d4a11178ae8e16ba5886799ea91905dd9b0b479c75aebd67866d37373e41526f"
+  url "https://ghfast.top/https://github.com/luvit/luv/archive/refs/tags/1.51.0-2.tar.gz"
+  sha256 "d70cf20b16ab05ceaa3bb448f3e1b3ef63a5949e34184255c52a3e92efcd39b4"
   license "Apache-2.0"
   head "https://github.com/luvit/luv.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "240b167542fb90098f7aa07b2ad0f3d05f86d8d57adacd854dc686c4f2da7d63"
-    sha256 cellar: :any,                 arm64_sequoia: "16a81eb3ddde559c8ff70e156d3074147397781669a9c17c5fa26b90daa659d9"
-    sha256 cellar: :any,                 arm64_sonoma:  "e20c2a94e3d7ee950f8603955110bfc16d63b716da7a5bd857760905651db3b6"
-    sha256 cellar: :any,                 arm64_ventura: "fc890936cace3f29f66ccd430cb2f0eecd5c414792484ab3257eb396ef0d7842"
-    sha256 cellar: :any,                 sonoma:        "0b15ebe460d36241159d9edfe302a5fd885e397f4532b5a8aad8cbbd12044766"
-    sha256 cellar: :any,                 ventura:       "5203840ddd749196567a7a93e52964d0157dd30b0a1a481a28155b0c7f9df142"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8610e16fce0c69eec05792b55040b0afa027a94b42057e8518ca65a31eec13e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7498d20bd2e167f2740e3419a999463b7253014ffc0a9af35e32732fe0a5988b"
+    sha256 cellar: :any,                 arm64_tahoe:   "8a8f77a081d0976eea4b61cc72a9bcec9c913f2d76c5933632e840602cad5f6b"
+    sha256 cellar: :any,                 arm64_sequoia: "f06d42943074e293060d972e368c692d5ac9ce3f0da5de641ad0f148c5fe057a"
+    sha256 cellar: :any,                 arm64_sonoma:  "db52f0890b575e7926f7875c33853691b05e6655022d0b32bdb0866de4ecaaff"
+    sha256 cellar: :any,                 sonoma:        "88d513ccb8ee6b33f4e2420ba9c331fb4bec78e9e181bfc5ca12979ef323db8d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d748e16e1eed08fc90b00324a0da9ce3b639946b5d922eabd9c28df3b8be16e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e36a6b3522e93573456d0c5a224dccee69855281bc8d131ed1bf5e18b088a753"
   end
 
   depends_on "cmake" => :build

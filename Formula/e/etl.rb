@@ -1,8 +1,8 @@
 class Etl < Formula
   desc "Extensible Template Library"
   homepage "https://synfig.org"
-  url "https://ghfast.top/https://github.com/synfig/synfig/releases/download/v1.5.3/ETL-1.5.3.tar.gz"
-  sha256 "640f4d2cbcc1fb580028de8d23b530631c16e234018cefce33469170a41b06bf"
+  url "https://ghfast.top/https://github.com/synfig/synfig/releases/download/v1.5.4/ETL-1.5.4.tar.gz"
+  sha256 "d9f9d162fa8a8f61ab1b9983b69180fb0e39573535dfce3b1cbb912a6ffe2d51"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -10,17 +10,12 @@ class Etl < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3c63ed72c0400281f0b83a9db3437aa84426d37f482feaf4dcf2c9accc70caf6"
+    sha256 cellar: :any_skip_relocation, all: "b9be50e653da648b1206894ca4374aa8e0209c8422a307e019fc37152f819df8"
   end
 
   depends_on "pkgconf" => :build
   depends_on "glibmm@2.66"
-
-  # upstream bug report, https://github.com/synfig/synfig/issues/3371
-  patch :DATA
 
   def install
     system "./configure", *std_configure_args
@@ -49,15 +44,3 @@ class Etl < Formula
     assert_match version.to_s, output
   end
 end
-
-__END__
-diff --git a/config/install-sh b/config/install-sh
-index e046efd..ec298b5 100755
---- a/config/install-sh
-+++ b/config/install-sh
-@@ -1,4 +1,4 @@
--#!/usr/bin/sh
-+#!/bin/sh
- # install - install a program, script, or datafile
-
- scriptversion=2020-11-14.01; # UTC

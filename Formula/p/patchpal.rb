@@ -6,12 +6,13 @@ class Patchpal < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ed3fdaeadc6ca32bc785e6a50bf0bf12891eeeb8ee83d1dc1940b7096be25f3a"
-    sha256 cellar: :any,                 arm64_sequoia: "05eb13cf2c732413c7f0370941f47424f98a31c1496d826c50dadd21aad88df7"
-    sha256 cellar: :any,                 arm64_sonoma:  "3290ede113c6e6c018b621e488af651881d57734bb9e2f1d36773f5efcec3bc1"
-    sha256 cellar: :any,                 sonoma:        "e176488c998688d8fed8ae3bef3cac933e914b8b98310d12cead4defd6fcf730"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a135e7c4073c0bb8ea834e7d3e6e80d0061824eaa90a897b77cd522d2fe8098"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00912762acaf66ee454284a2f9f5ef83cf424e4ed26b636f354743d5d63cae1b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "9ec3667a5465d04310a8ed0494964d4d46587bb614bea2f2ace5f6dde26a36b5"
+    sha256 cellar: :any,                 arm64_sequoia: "1e495f29b0bfae5a27e1e4dbe6b107f7ea5828495dc1cdcfa5fcc5c37a9619c6"
+    sha256 cellar: :any,                 arm64_sonoma:  "ba360627b1f49bfcbb8e05a6ed187970ba2761f36d4ea69c4352618cbf21d677"
+    sha256 cellar: :any,                 sonoma:        "f743492a8757db7aa2a2aaa18f37327362d892c4e8a80abe7db1b95c92a7e360"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8c0ce0d1c5975fb1dbe146461147c187aa1ef215c4abe6d753c3ab7c5d66a6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c79d015a7f15a5862c66729731c4886bc6e2622f10ff05911e67b9c6933f990"
   end
 
   depends_on "pkgconf" => :build
@@ -23,11 +24,11 @@ class Patchpal < Formula
   depends_on "graphene"
   depends_on "gtk4"
   depends_on "harfbuzz"
+  depends_on "llvm"
   depends_on "pango"
 
   on_macos do
     depends_on "gettext"
-    depends_on "llvm"
   end
 
   on_linux do

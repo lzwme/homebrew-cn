@@ -1,18 +1,18 @@
 class CodebergCli < Formula
   desc "CLI for Codeberg"
   homepage "https://codeberg.org/Aviac/codeberg-cli"
-  url "https://codeberg.org/Aviac/codeberg-cli/archive/v0.5.3.tar.gz"
-  sha256 "2c61338400569660d069304a213d2f3bfc9ef8e9f541f561eb4da23a98304499"
+  url "https://codeberg.org/Aviac/codeberg-cli/archive/v0.5.4.tar.gz"
+  sha256 "dd19f9b4ada8759b8736303c24a04bc5c697d2ab72f8bbcfb13e84899cc6f635"
   license "AGPL-3.0-or-later"
   head "https://codeberg.org/Aviac/codeberg-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "605359c2e068f2e67c4f81a9896a19c6740167fe1b1476c60f241657c8841fab"
-    sha256 cellar: :any,                 arm64_sequoia: "3fe8673b2a6c7f0b8c237adde6685e837c1da6dfc9fba0971d8752df2fd669ef"
-    sha256 cellar: :any,                 arm64_sonoma:  "1071a90d7eae3d1840d7669934bc7a9b305aee74974ccb0dfd966b92dfb9be7b"
-    sha256 cellar: :any,                 sonoma:        "c491e1fdc0fc706b442d54da2a0b314025e25d2e02ee321c360042bec70be28f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "48b07566e6a25a92ec6c3f8d46725c028c362dd6bf21f1fca398ff2b6b771e66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ef806c8947b0a0d6f153d1cf319fcfcdcf3d4357db9d533ffe0cffab5ea7655"
+    sha256 cellar: :any,                 arm64_tahoe:   "cfcda84a25d0552cb299a1d58ced6ad3ecb83d82eb5d9dce39995ffb03d1c906"
+    sha256 cellar: :any,                 arm64_sequoia: "63a1fd6335fedaac639a58946e76c6160569afca10fd1b131280e50f1f5c01e7"
+    sha256 cellar: :any,                 arm64_sonoma:  "84b1be81b4ed6aa2ddb43bb735bee6d65d31556c4bd01580f93adac9bb93c9f1"
+    sha256 cellar: :any,                 sonoma:        "78d9f177ee5807113a8e399a5422838fe22273a9c979730320225beef06dc3a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbd727c94f132d006db3804109abf744e60521e6ee8d0b3c6252b9991f3fbb89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d057403e008355affe773cde562accbb2a1141079ed692894942913034699b0"
   end
 
   depends_on "pkgconf" => :build

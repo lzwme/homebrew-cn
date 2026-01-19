@@ -7,12 +7,13 @@ class Mpv < Formula
   head "https://github.com/mpv-player/mpv.git", branch: "master"
 
   bottle do
-    sha256               arm64_tahoe:   "49e900d3bffca0107e0ebd716a14150abe69160c9ea3d55ab0f5933627e21374"
-    sha256               arm64_sequoia: "96266e7c8086e412a21dfebbaaf0205f6d4d9ebd59642a625931c0f378893734"
-    sha256               arm64_sonoma:  "3dcf4533e71b8116dd2e53740cfffceaeca77d541d57124d181b4c5432d9aa2b"
-    sha256 cellar: :any, sonoma:        "b8d5b2bd8cb1f592710babd8ca55529e56b28280243a412f5687c18a75d60f67"
-    sha256               arm64_linux:   "e55246a636094d6b20ea1dc64cec64f98ab97cbc6815107d9a791b92fcf729ee"
-    sha256               x86_64_linux:  "a563e0f84bd7a2f47c2b7875d7a91b453c4f4c99f09261c860e00828701e4c56"
+    rebuild 1
+    sha256               arm64_tahoe:   "564a30afb1b03beb488917ccd2759b6d9e8b3083f41245ae0512a29c2b6ab18d"
+    sha256               arm64_sequoia: "13bdd939815343f1352cef1ec987ea97fc1fd99b697d8e466eb1602b4735bd08"
+    sha256               arm64_sonoma:  "88b9c084aa04c0eb29e6351709a0b4022ccf27198048ac2afa61315747afcfd2"
+    sha256 cellar: :any, sonoma:        "37965c940f710111b0f7af0ed67b140c979148ac9a00adc579ce2a3f0f8ce4fe"
+    sha256               arm64_linux:   "1aa15f14db12fdc770942a1ac450378407f516325e0ac21e1f533f48ddcf5456"
+    sha256               x86_64_linux:  "a93d1eacfec60583dceb4b48d8aa98c9e6d3fd28ff701cd31457830776cb6459"
   end
 
   depends_on "docutils" => :build
@@ -20,7 +21,7 @@ class Mpv < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on xcode: :build
-  depends_on "ffmpeg"
+  depends_on "ffmpeg-full"
   depends_on "jpeg-turbo"
   depends_on "libarchive"
   depends_on "libass"
@@ -119,6 +120,7 @@ class Mpv < Formula
     assert_match "vapoursynth", shell_output("#{bin}/mpv --vf=help")
 
     # Make sure `pkgconf` can parse `mpv.pc` after the `inreplace`.
+    ENV.append_path "PKG_CONFIG_PATH", Formula["ffmpeg-full"].opt_lib/"pkgconfig"
     system "pkgconf", "--print-errors", "mpv"
   end
 end

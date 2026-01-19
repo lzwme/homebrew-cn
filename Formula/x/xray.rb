@@ -1,8 +1,8 @@
 class Xray < Formula
   desc "Platform for building proxies to bypass network restrictions"
   homepage "https://xtls.github.io/"
-  url "https://ghfast.top/https://github.com/XTLS/Xray-core/archive/refs/tags/v26.1.13.tar.gz"
-  sha256 "c814c9b2e6c92e08d3db929792c56e2863a1a0e252c774ec048095efea6b67a1"
+  url "https://ghfast.top/https://github.com/XTLS/Xray-core/archive/refs/tags/v26.1.18.tar.gz"
+  sha256 "1a5f6e23997b45eb096b905d41fd2ab026063e7889d38c69694f2be69a74d712"
   license all_of: ["MPL-2.0", "CC-BY-SA-4.0"]
   head "https://github.com/XTLS/Xray-core.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Xray < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2c0f4e4e295d87da14b03ce1e51403635758303ab046f5a40e9891080a8a1e50"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c0f4e4e295d87da14b03ce1e51403635758303ab046f5a40e9891080a8a1e50"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c0f4e4e295d87da14b03ce1e51403635758303ab046f5a40e9891080a8a1e50"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8a13c59867a4f9389dae519de92d8a893df16e4bc23a06a00c591d5e2a2614a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "86bc68f7348a1eaae973307ead7cd9002c1f3d84f311e04c4afaa6c5e4810281"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67998b49127e430df4e2d86d01884e47ae770519d07ab0db45d408e459b7738a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "46b1a513371a2e9d2e7abc20ba3760f35ff59227d3b94e4d9291719c14401601"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46b1a513371a2e9d2e7abc20ba3760f35ff59227d3b94e4d9291719c14401601"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46b1a513371a2e9d2e7abc20ba3760f35ff59227d3b94e4d9291719c14401601"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8bec5be95c8f8a76c8e922fb9a5160842676ce676310faaead8897b26b9dc5f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92683a89767c9a401b2900a98723d27bf1aa82958dfd279a5636ddf94550b4f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c0050811c294f2a04dfc1ae77110785f691afc1b8f8ff445b8406eca9d7408f"
   end
 
   depends_on "go" => :build
@@ -28,8 +28,8 @@ class Xray < Formula
   end
 
   resource "geosite" do
-    url "https://ghfast.top/https://github.com/v2fly/domain-list-community/releases/download/20260113123549/dlc.dat"
-    sha256 "6ef1e466e7f672a3c49dcd1378b96c8bf38334024252d4a00b1e725df389558d"
+    url "https://ghfast.top/https://github.com/v2fly/domain-list-community/releases/download/20260117053629/dlc.dat"
+    sha256 "b8ae0a67f1abff87fcdef3ae4439984075a7ba6af667fa6d8b5bfe316ccf65c5"
   end
 
   resource "example_config" do

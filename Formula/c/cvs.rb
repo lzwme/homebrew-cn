@@ -13,7 +13,7 @@ class Cvs < Formula
 
   livecheck do
     url "https://ftpmirror.gnu.org/non-gnu/cvs/source/feature/"
-    regex(%r{href=.*?v?(\d+(?:\.\d+)+)/}i)
+    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
   no_autobump! because: :requires_manual_review

@@ -6,12 +6,13 @@ class Beads < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "39db5591933e06be23b06c242b2f54af5aa97a642dd6b646e9fc19817156d268"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0de7052063bd2355bf666dd627b73a5155ac5dc228ce29038a829cb2c930c8eb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85fef7e00c133f2e68512b162330e50d0f61ae4640f79872ee24a0dfbf98bbb1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fb44155806e9f6dd44f0031a19af827e7f21fd6879990c25c462598b1980560e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "17341b1d00c51c1265ed727a940be37d9723d6b144ebc27808b893a9a7499d40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ef784a8c0acd80856570f61b2b3491548b0971f78aba884285af141c5663bc9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f409c9cca986ca1217c1dcac0ba928c6a42e137249d2e55d66809293f1dd3e06"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e1d331a0f9513b065013abd4167fe935007a3c8cdae213b2da9d965182541a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86bdeff77506957fef1669ae6bc6968ec221ae40b63c7be3837c982a8f305018"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d9475f43e392b8fd9813860c0eeb4738f26b99160a45384252dc4991c1c47d5b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "81b01d95bfaa79007aea3152dadf8ece8c74de6a451096b5e15bd61bef43cdb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "041a4563aa52196cd34f4f02f98cfea35d2b0bbd4a9235c981b896dd107ea8eb"
   end
 
   depends_on "go" => :build
@@ -19,7 +20,14 @@ class Beads < Formula
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/bd"
+    ldflags = %W[
+      -s -w
+      -X main.Version=#{version}
+      -X main.Build=#{tap.user}
+      -X main.Commit=#{tap.user}
+      -X main.Branch=v#{version}
+    ]
+    system "go", "build", *std_go_args(ldflags:), "./cmd/bd"
     bin.install_symlink "beads" => "bd"
 
     generate_completions_from_executable(bin/"bd", shell_parameter_format: :cobra)

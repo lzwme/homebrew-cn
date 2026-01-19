@@ -3,19 +3,18 @@ class Parsedmarc < Formula
 
   desc "DMARC report analyzer and visualizer"
   homepage "https://domainaware.github.io/parsedmarc/"
-  url "https://files.pythonhosted.org/packages/0f/5f/057b0b850ee67f5678c3587f8e5a3d5cc38ce03c5b4663c2aede8d80c5ad/parsedmarc-9.0.9.tar.gz"
-  sha256 "726ec405355581192eef0660b2af95a7e9fa76a30242d80d0f1703e9251fc941"
+  url "https://files.pythonhosted.org/packages/a8/23/9d999d3f650204c37970fba92ac278adeabb10044665595d81b5e21fece5/parsedmarc-9.0.10.tar.gz"
+  sha256 "9f7fb2bdb73747ea2e94058ff60f2739b0ce43fd7cfdd6833e8b5101f219afb9"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d0bb7e6fdb2c98ce72905c8685ae9934289e59f23c39d1c6326d136a6d08bb59"
-    sha256 cellar: :any,                 arm64_sequoia: "57b33f51429cfac4283fe04a1f27d5440f38a5a9dd14aaa08cd1310c1a2e27a6"
-    sha256 cellar: :any,                 arm64_sonoma:  "fcac017c17bcee1ece06d77906480d9ed180f18fa05f0884634aea0b167d3f52"
-    sha256 cellar: :any,                 sonoma:        "38e86db2023a41c7d076db574d2fa874290ce6a74debd951a8980e8abcf8ec58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfa189fd13a7239f1b719bace69fca4bd1965fd1cd397f4d4d6a8dc3779ff2ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efca39163c9015d7a579b39a57d7939ea0279afb0a115ddde9f437a88ea3c10e"
+    sha256 cellar: :any,                 arm64_tahoe:   "76ce8736f3d7f164cd8d489d40f06701f4ede466478d5e3096c73b28b8d0e644"
+    sha256 cellar: :any,                 arm64_sequoia: "d53c28ed534c4eec81b0078d1b6d372533edd92a4eca0ddcab323490710c001c"
+    sha256 cellar: :any,                 arm64_sonoma:  "89cc02c17d8c14d158579955377c41f005d454cf71c142845a08f19a495fdb25"
+    sha256 cellar: :any,                 sonoma:        "b2e8f315ac9f4ab5eb42afcbb6e76f2a256fb798a086cd9dd71b6587d5af00bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bec7b9799ebcef38d2b69689f3e4fd4462fa7908a093188c3862482eab26f530"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55fd3b67bf2f2549969064e1d14908ac834bdd1701ad3a5f2918e9921abd5404"
   end
 
   depends_on "rust" => :build
@@ -165,8 +164,8 @@ class Parsedmarc < Formula
   end
 
   resource "imapclient" do
-    url "https://files.pythonhosted.org/packages/b6/63/0eea51c9c263c18021cdc5866def55c98393f3bd74bbb8e3053e36f0f81a/IMAPClient-3.0.1.zip"
-    sha256 "78e6d62fbfbbe233e1f0e0e993160fd665eb1fd35973acddc61c15719b22bc02"
+    url "https://files.pythonhosted.org/packages/58/79/8138f8c91e791f49cf4c2269b1eaaaddb93013d162e92ddc249b84d38105/imapclient-3.1.0.tar.gz"
+    sha256 "b0413a516ffcc4b4d69f2c611c0e95da57968edf5a5c78ac82d1bf882305facc"
   end
 
   resource "isodate" do
@@ -195,8 +194,8 @@ class Parsedmarc < Formula
   end
 
   resource "mailsuite" do
-    url "https://files.pythonhosted.org/packages/9d/6c/e39906068978b6721c2a86803edceaa831017b5b94dfca725cb65545079b/mailsuite-1.11.1.tar.gz"
-    sha256 "695d252079258e36213a2820041b6374f90776f935cfcf980e248af3cba04fbf"
+    url "https://files.pythonhosted.org/packages/67/46/6a77b4b3282e6a76ee07f3c1908934800f80d53d0b6e47f0c00c821e3e68/mailsuite-1.11.2.tar.gz"
+    sha256 "8a570e1f6ee554a861ff114efdd916664c2dc7ac0f62b293591de7d71aa851d9"
   end
 
   resource "maxminddb" do

@@ -1,6 +1,6 @@
 class Siege < Formula
   desc "HTTP regression testing and benchmarking utility"
-  homepage "https://www.joedog.org/siege-home/"
+  homepage "https://www.joedog.org/siege"
   url "https://download.joedog.org/siege/siege-4.1.7.tar.gz"
   sha256 "ec140cedd159979383d60dbe87a0151c2c12ada78791095a8fa84ae635b93026"
   license "GPL-3.0-or-later"

@@ -1,8 +1,8 @@
 class Cdncheck < Formula
   desc "Utility to detect various technology for a given IP address"
   homepage "https://projectdiscovery.io"
-  url "https://ghfast.top/https://github.com/projectdiscovery/cdncheck/archive/refs/tags/v1.2.18.tar.gz"
-  sha256 "ca7f78dbbe01db3a679fb3ccb8a49609f28807f7294c7c2cb425442404ef0d4c"
+  url "https://ghfast.top/https://github.com/projectdiscovery/cdncheck/archive/refs/tags/v1.2.19.tar.gz"
+  sha256 "04e84f790dad95b90699bc241f854aa14819575c46b517fc5ccfd140f7fbceb1"
   license "MIT"
   head "https://github.com/projectdiscovery/cdncheck.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Cdncheck < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "654f687d94150b49cb378f345ea752e890dbd9918adf8f2db557ddb6ed2a99b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bca786e0291823bde3334bf00eb9153975d8614e14f4f371eaafa50cf408a216"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3be7160d5aec4a0d38164177642e2fd88256e8c6a198009a93f4b66238b5ce53"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f58d24d3c2621891f71816b7e8043d7b69f2d45d6b46d3f5947176967f62c1c2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1ecfa7622aa0bab39b7cf4536b21cf6a0040abbc22fb38b61bc0b9056c5fcc9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "763e5c708ac33ad2f76c746e6ac0cfb469779f04df20782d6865da906db18254"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "36c875968df4ab0301cc98ce87aa970347d0f5162a510037d8d2dc9854624e1f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "080ed421d1221452fc2521781d7596e1c09bd19b0789a98ab932c300ee4362d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6f5a314f1acc4babec211804a755557d5fef6087e90403cf616923e14d1789f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5c4dc783019c7daaa28af5cbd4d4aed5f3b8843a7315410e5130a6b1215259d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f13cb9321480abfb0d154342ce2ff09ba82d5f72cddfcfb78538f8131b2a0252"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29d580d860cf532e4a8056457fc0668a68d2aa2debc99a76f846d094e0ca7ab5"
   end
 
   depends_on "go" => :build

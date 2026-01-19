@@ -3,12 +3,12 @@ class DoviConvert < Formula
 
   desc "Dolby Vision Profile 7 to 8.1 MKV converter"
   homepage "https://github.com/cryptochrome/dovi_convert"
-  url "https://ghfast.top/https://github.com/cryptochrome/dovi_convert/archive/refs/tags/v7.3.1.tar.gz"
-  sha256 "ab53d2a64524ebb26ff3734c199d93d948848d00ea1fe7565abf132f5bd3f7e2"
+  url "https://ghfast.top/https://github.com/cryptochrome/dovi_convert/archive/refs/tags/v7.3.2.tar.gz"
+  sha256 "8252401d8506a12de011de1762d9546f8437e77cf1de155e23eb39523b826634"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8478fae5ae341ee2c41709819529d0473a39829d47e5a5d1deed0999b070d148"
+    sha256 cellar: :any_skip_relocation, all: "58290fcc0779e2adcede1b5fe0fe33e5e4b7e3f198176062d4dd1d57a08a874e"
   end
 
   depends_on "dovi_tool"

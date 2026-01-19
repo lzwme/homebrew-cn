@@ -3,19 +3,18 @@ class Black < Formula
 
   desc "Python code formatter"
   homepage "https://black.readthedocs.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/c4/d9/07b458a3f1c525ac392b5edc6b191ff140b596f9d77092429417a54e249d/black-25.12.0.tar.gz"
-  sha256 "8d3dd9cea14bff7ddc0eb243c811cdb1a011ebb4800a5f0335a01a68654796a7"
+  url "https://files.pythonhosted.org/packages/13/88/560b11e521c522440af991d46848a2bde64b5f7202ec14e1f46f9509d328/black-26.1.0.tar.gz"
+  sha256 "d294ac3340eef9c9eb5d29288e96dc719ff269a88e27b396340459dd85da4c58"
   license "MIT"
-  revision 1
   head "https://github.com/psf/black.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "402beac3c1d2bd7f25ed2402fa584dda5e7bf45dad3de070d689f199f2bb16f5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43a52505fb33ff82d69e8e5c36d2c32da8e308f1966734190eb6fba53d639ea7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "307969881ca959d61eb92f210fa146f27f1017619a07a3c0a0327447065f8e62"
-    sha256 cellar: :any_skip_relocation, sonoma:        "af624c170d77a534de6b48fb2473e411f0b9f93d593e57e102e4aeced9fd0bb6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "60e23cb57c81013f0f2fd171aa6534d08569bb6ab626f0ad6e126cdb37ad2fa7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15be293675f539fe4d3695a9a70e9850c2e90b744f39870c35c8ed94dd70e9c3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cbd1f8cf8d35ee909a3453ef97027c3b8d99e0ac652ada54b581fd8044709f2b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4182b03a0e4de5718afc262719a91d559df50e08c4f04a708b4aabdde81aa27b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b06bfacf9218f039b00d4b4636d259042129dd9757226365b43cc8cc90f94ac"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bfb65f801be6489d37b89a30d3deb0a915495fd34542c7910386464c74a03889"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab4ebeee4c361339c321a5fd97be86f76ae30b3f0f3f88b974e8bb4ca43c2752"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4a42c523c52c578661e2e4ceb6cfea5287779c8dd7bae2cf4ea5f70e48e7802"
   end
 
   depends_on "python@3.14"
@@ -73,8 +72,8 @@ class Black < Formula
   end
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/c2/97/39352be14d20d377a387828daf9d3f765fad1ff29bd49913d5bbf4cefe61/pathspec-1.0.0.tar.gz"
-    sha256 "9ada63a23541746b0cf7d5672a39ea77eac31dd23a80470be90df83537512131"
+    url "https://files.pythonhosted.org/packages/4c/b2/bb8e495d5262bfec41ab5cb18f522f1012933347fb5d9e62452d446baca2/pathspec-1.0.3.tar.gz"
+    sha256 "bac5cf97ae2c2876e2d25ebb15078eb04d76e4b98921ee31c6f85ade8b59444d"
   end
 
   resource "platformdirs" do

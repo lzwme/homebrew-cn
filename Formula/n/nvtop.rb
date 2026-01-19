@@ -1,17 +1,17 @@
 class Nvtop < Formula
   desc "Interactive GPU process monitor"
   homepage "https://github.com/Syllo/nvtop"
-  url "https://ghfast.top/https://github.com/Syllo/nvtop/archive/refs/tags/3.3.0.tar.gz"
-  sha256 "bc133b3baeb620d3b859aab6238c45de64b8269579b62e544f2ff747d129337e"
+  url "https://ghfast.top/https://github.com/Syllo/nvtop/archive/refs/tags/3.3.1.tar.gz"
+  sha256 "8318aff973e0850bea4b9d7d313c513206cdc9b8387e8441681e84ac2bc0e980"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bdeaed767344decc599d0ed011e3b939f4cba54c7ec427843e18a2cef8e6caff"
-    sha256 cellar: :any,                 arm64_sequoia: "c1d95b468b04c63fe2effacf9460142e50e09a9ddbaea57b1a7fa933909ca0cc"
-    sha256 cellar: :any,                 arm64_sonoma:  "b869a6723082c1adf7625bc25e9bbecd3bcc6ffcfd4e111b105ae41de8103b10"
-    sha256 cellar: :any,                 sonoma:        "9551f92829295a680795710d818c935844170a8963b96d19eb423f87c23402f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "656ec0f61b24cc3707e2edbf714bc612a169fc3c3ee740a03ac71bd72b615185"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "077c483851dd590a4c6e4844e03dbef012001878acc65455d273c557704ecd71"
+    sha256 cellar: :any,                 arm64_tahoe:   "79ceb85e928e2b408064888dc3efe468b806c00b3bfc0611a9d6583c59fc0904"
+    sha256 cellar: :any,                 arm64_sequoia: "88557d9cf986f9333a3a63a093475311c8d02506b394d8ca690786b1ed790ba5"
+    sha256 cellar: :any,                 arm64_sonoma:  "e07f967450b3c0cfe41ca7f7f4d069450cc9daa5401a17ea6d77854e6ed3c81a"
+    sha256 cellar: :any,                 sonoma:        "8524e48ed257d48ee710c16ca6e0ea14e18a6518dce65f7c0727ad2b880847db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f0b836e1e8f581c731dfa0d4599f67a65c4341402c4b58fec3498b53c525ee5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8498c7cef82206099db804bcaeb06650011db7f5cc8d40d96915b2be36c2d8f"
   end
 
   depends_on "cmake" => :build

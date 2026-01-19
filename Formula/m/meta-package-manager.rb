@@ -4,18 +4,18 @@ class MetaPackageManager < Formula
 
   desc "Wrapper around all package managers with a unifying CLI"
   homepage "https://kdeldycke.github.io/meta-package-manager/"
-  url "https://files.pythonhosted.org/packages/55/04/b6c2432a812ec3cbb184a124fbc45b75af63d89e6cb7bebf354635a22937/meta_package_manager-6.0.2.tar.gz"
-  sha256 "6d84f35f890414640f30d37c8ff7a3cfb35a0f96de277473ae637f2717fc304a"
+  url "https://files.pythonhosted.org/packages/38/55/3d0e52ca7363a6a16347f0730de828e238c9a4e4f226679be82582e76b1c/meta_package_manager-6.1.0.tar.gz"
+  sha256 "8e053d13ee1e8bd9026ab6c06f7cdad29816b534bbacea326763db9d1ea3ff7e"
   license "GPL-2.0-or-later"
   head "https://github.com/kdeldycke/meta-package-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b25afb472cae7499a3875d0bae44219deab49bab3a3c1b37f9f5a0680939d4f1"
-    sha256 cellar: :any,                 arm64_sequoia: "d3813424f0ca25789892d568b696a819fa5b2b003ea4671cf0cad15596608346"
-    sha256 cellar: :any,                 arm64_sonoma:  "c0866878a32e53852cb26d00e610d73a2026af9b6408dbccafc62933d5257097"
-    sha256 cellar: :any,                 sonoma:        "53467bd9a6ebd747ca1b9228882083d53e9f789b98fe0974d5745202ae49242e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27afeb4cbfe200c86c1758a620e2d49883b31b2dd235fc3bdb938fbd43a3414f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7f162a4ba3a6e2035bcce2d16b88746b3f2a6b9e30f9c6bc8d5a70bc5ac98ae"
+    sha256 cellar: :any,                 arm64_tahoe:   "ae184d028714e9017025de80029f0059d1e092896daf301ca1574ceaec14af52"
+    sha256 cellar: :any,                 arm64_sequoia: "c8c2119c98aa898148ed575257d29f90d5370cddc4ad8f1198937a4020b77cec"
+    sha256 cellar: :any,                 arm64_sonoma:  "9696592f3237607e70ff88aa25439217bd5bc6003eb30fc15631d5780fd170cb"
+    sha256 cellar: :any,                 sonoma:        "9fc86bdbc2dce6d63cdef4fefc3c0299b172a4314b20160465c60c4b3f1dbbed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2d5426adad0305be5dd0032dc22d62204b0f06e33a1888946bae73ec1a6f5e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0188ed994191f854e6f4f923378c85e8bcaa4c7d9b4e09bbaae486d54026a45"
   end
 
   depends_on "rust" => :build
@@ -101,8 +101,8 @@ class MetaPackageManager < Formula
   end
 
   resource "extra-platforms" do
-    url "https://files.pythonhosted.org/packages/fb/df/73e313d4ecca7b703b6f369d9ed0c2c0d4d8a149e1c675e9915f8426a513/extra_platforms-6.0.0.tar.gz"
-    sha256 "ff0d392e390d2447183af4b300dd4569d2dbf760adf1e30c2b0cefb30ee58488"
+    url "https://files.pythonhosted.org/packages/8c/36/1cf59977458a824a759a38b8279c7d5e41d8de12368f3685d188a5cc3ce4/extra_platforms-7.0.0.tar.gz"
+    sha256 "e45d539ae667e59711d3d4c25bba36bf0a45af7d444a64f6d22466cec3826965"
   end
 
   resource "fqdn" do

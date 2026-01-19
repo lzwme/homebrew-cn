@@ -1,5 +1,5 @@
 class Ffmpeg < Formula
-  desc "Play, record, convert, and stream audio and video"
+  desc "Play, record, convert, and stream select audio and video codecs"
   homepage "https://ffmpeg.org/"
   url "https://ffmpeg.org/releases/ffmpeg-8.0.1.tar.xz"
   sha256 "05ee0b03119b45c0bdb4df654b96802e909e0a752f72e4fe3794f487229e5a41"
@@ -28,9 +28,11 @@ class Ffmpeg < Formula
   depends_on "pkgconf" => :build
 
   # Only add dependencies required for dependents in homebrew-core
-  # or INCREDIBLY widely used and light codecs in the current year.
+  # or INCREDIBLY widely used and light codecs in the current year (2026).
   # Add other dependencies to ffmpeg-full formula or consider making
   # formulae dependent on ffmpeg-full.
+  # We should expect to remove e.g. x264 eventually (>=2027) when usage of it is
+  # negligible and has all moved to e.g. x265 instead.
   depends_on "dav1d"
   depends_on "lame"
   depends_on "libvpx"

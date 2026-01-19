@@ -1,18 +1,17 @@
 class OsmiumTool < Formula
   desc "Libosmium-based command-line tool for processing OpenStreetMap data"
   homepage "https://osmcode.org/osmium-tool/"
-  url "https://ghfast.top/https://github.com/osmcode/osmium-tool/archive/refs/tags/v1.18.0.tar.gz"
-  sha256 "5438f57043c9df05137ca4bd1b1e4a5fb1c9c8c49cb4bec43a5f1ef30ed68fb5"
+  url "https://ghfast.top/https://github.com/osmcode/osmium-tool/archive/refs/tags/v1.19.0.tar.gz"
+  sha256 "192713eef894735cf2d0dbeed3f8def67c067198e553de01d4a1f14417a64019"
   license "GPL-3.0-or-later"
-  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9628b5bb2ded899a0b418e46dd80aa57e49b03ed8a0731efc9a3d2ceae6625c5"
-    sha256 cellar: :any,                 arm64_sequoia: "e74f0554ad833680a84c2c282449310987319ba52c636a8fa708fc6e12f8775b"
-    sha256 cellar: :any,                 arm64_sonoma:  "af46c190895a353b1976d8baf3152c5caaea90e3773c0bb6a205aaa8a9c820dc"
-    sha256 cellar: :any,                 sonoma:        "cd2766f4778e03b4047d3daa8b1fc38adb1517ac6f0ca65352accc236f7a2127"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8fabe88144b92310d9b99e689e39a722a8a45a5eb4835376d1713391a5c7f69f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdf9503490509be6381708d39b012b6a6f4142f84aa724f86190c6c0d1d2c4df"
+    sha256 cellar: :any,                 arm64_tahoe:   "bc1baa5dd5df76da0e60f58ab7aeca9dcc6777db4a17e0dfb504bacc257d9244"
+    sha256 cellar: :any,                 arm64_sequoia: "e57e2cba4963d12d94581a3a36a4c72da6cb1d525424fcb453b7fd0aaed010a2"
+    sha256 cellar: :any,                 arm64_sonoma:  "fc65c6b56db4e2d6c82c11aceede8839433d417cb1e03db37f7ce60c99cc046d"
+    sha256 cellar: :any,                 sonoma:        "4ef02a031522ff53efdf941b319ac1f6cc87e03cb2f90f3955c642ab4c594bdc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a7b8de027ed75631ab6ed95bf5d49f64ec865f863cf1f52bd036cdd55299b74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5df231e42fafe4d7e276c602219adce1c84ac38e536871af96322730caa7f795"
   end
 
   depends_on "cmake" => :build

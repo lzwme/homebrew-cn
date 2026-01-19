@@ -1,10 +1,10 @@
 class Imagemagick < Formula
-  desc "Tools and libraries to manipulate images in many formats"
+  desc "Tools and libraries to manipulate images in select formats"
   homepage "https://imagemagick.org/index.php"
   url "https://imagemagick.org/archive/releases/ImageMagick-7.1.2-12.tar.xz"
   sha256 "e22c5dc6cd3f8e708a2809483fd10f8e37438ef7831ec8d3a07951ccd70eceba"
   license "ImageMagick"
-  revision 1
+  revision 2
   head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
 
   livecheck do
@@ -13,32 +13,28 @@ class Imagemagick < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "70a4007af2df1cbceee0f1d245b9c3b63610c7e47ea17bafb6722964b401c8b3"
-    sha256 arm64_sequoia: "aa09d81bf684995f2b039a6fea27b58c5fa68d69af3b1111bc4f659a691e55ba"
-    sha256 arm64_sonoma:  "3a6ab91642e7cd983422eddfc2535c56365dad208e4ecc10b2162fab2029e55d"
-    sha256 sonoma:        "126ce8dfc0ac26bcc92193f6c27d49a9d79a9fa652cf56bb37107f2789736940"
-    sha256 arm64_linux:   "0e44e1adc76f7985b20ef49cbeb1a96128b748fc27c2c8d52b3b2e192744c38d"
-    sha256 x86_64_linux:  "97bf08e3d0a9dc3adaed58d3b6142bee0542de0add7c7882ccebf28f783a8949"
+    sha256 arm64_tahoe:   "aad5fc7749d91edf4f9f8340a9a89b042368dc353e7751ab3fa463e2c78ec336"
+    sha256 arm64_sequoia: "cb1edb6b9073b44f9a9a9a96e88f2061be3332a8a933e329540764f8cc0f2983"
+    sha256 arm64_sonoma:  "068e0c8ba5387c15421a00265147b04c3afdff8aa7c56cb1841c9a9c4467955a"
+    sha256 sonoma:        "d5b690a4b989f732c022673dc1a76ee566a10d290c536435b7408f74ef96c1f5"
+    sha256 arm64_linux:   "724870b999a939457eb40326bdc8e8231b9a71f94a8b6cf50c19199b4b583df2"
+    sha256 x86_64_linux:  "f9f3f1107aa32df9e481fca5cf2ade56b6d22072283d83d9007d1234d724c78c"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "cairo"
-  depends_on "fontconfig"
-  depends_on "freetype"
+
+  # Only add dependencies required for dependents in homebrew-core,
+  # recursive dependencies or INCREDIBLY widely used and light formats in the
+  # current year (2026).
+  # Add other dependencies to imagemagick-full formula or consider making
+  # formulae dependent on imagemagick-full.
+  depends_on "glib"
   depends_on "jpeg-turbo"
-  depends_on "jpeg-xl"
   depends_on "libheif"
-  depends_on "liblqr"
   depends_on "libpng"
-  depends_on "libraw"
-  depends_on "librsvg"
   depends_on "libtiff"
   depends_on "libtool"
-  depends_on "libultrahdr"
-  depends_on "libzip"
   depends_on "little-cms2"
-  depends_on "openexr"
-  depends_on "openjpeg"
   depends_on "webp"
   depends_on "xz"
 
@@ -47,26 +43,11 @@ class Imagemagick < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "gdk-pixbuf"
     depends_on "gettext"
-    depends_on "glib"
     depends_on "imath"
-    depends_on "libomp"
-  end
-
-  on_linux do
-    depends_on "glib"
-    depends_on "libx11"
-    depends_on "libxext"
   end
 
   skip_clean :la
-
-  # Patch to fix build with LibRaw 0.22+
-  patch do
-    url "https://gitlab.archlinux.org/archlinux/packaging/packages/imagemagick/-/raw/ca9b35f767e1c4a166847fbfe17c2d715aa80582/libraw-0.22.patch"
-    sha256 "baed7cbfb378734d32d277b6e13882ac541932ef67e6aa8867b185ffef12f986"
-  end
 
   def install
     # Avoid references to shim
@@ -80,33 +61,23 @@ class Imagemagick < Formula
       "--disable-opencl",
       "--enable-shared",
       "--enable-static",
-      "--with-freetype=yes",
-      "--with-rsvg=yes",
       "--with-gvc=no",
       "--with-modules",
-      "--with-openjp2",
-      "--with-openexr",
       "--with-webp=yes",
       "--with-heic=yes",
-      "--with-raw=yes",
-      "--with-uhdr=yes",
-      "--with-zip=yes",
+      "--with-raw=no",
       "--without-gslib",
-      "--with-gs-font-dir=#{HOMEBREW_PREFIX}/share/ghostscript/fonts",
       "--with-lqr",
       "--without-djvu",
       "--without-fftw",
       "--without-pango",
       "--without-wmf",
-      "--enable-openmp",
+      "--without-jxl",
+      "--without-openexr",
     ]
     if OS.mac?
       args += [
         "--without-x",
-        # Work around "checking for clang option to support OpenMP... unsupported"
-        "ac_cv_prog_c_openmp=-Xpreprocessor -fopenmp",
-        "ac_cv_prog_cxx_openmp=-Xpreprocessor -fopenmp",
-        "LDFLAGS=-lomp -lz",
       ]
     end
 
@@ -116,8 +87,7 @@ class Imagemagick < Formula
 
   def caveats
     <<~EOS
-      Ghostscript is not installed by default as a dependency.
-      If you need PS or PDF support, ImageMagick will still use the ghostscript formula if installed directly.
+      imagemagick-full includes additional tools and libraries that are not included in the regular imagemagick formula.
     EOS
   end
 
@@ -126,14 +96,8 @@ class Imagemagick < Formula
 
     # Check support for recommended features and delegates.
     features = shell_output("#{bin}/magick -version")
-    %w[Modules freetype heic jpeg png raw rsvg tiff].each do |feature|
+    %w[Modules heic jpeg png tiff].each do |feature|
       assert_match feature, features
-    end
-
-    # Check support for a few specific image formats, mostly to ensure LibRaw linked correctly.
-    formats = shell_output("#{bin}/magick -list format")
-    ["AVIF  HEIC      rw+", "ARW  DNG       r--", "DNG  DNG       r--"].each do |format|
-      assert_match format, formats
     end
   end
 end

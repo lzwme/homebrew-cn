@@ -3,20 +3,20 @@ class Theharvester < Formula
 
   desc "Gather materials from public sources (for pen testers)"
   homepage "https://www.edge-security.com"
-  url "https://ghfast.top/https://github.com/laramies/theHarvester/archive/refs/tags/4.9.1.tar.gz"
-  sha256 "0f6ef00f61726dfc3f74e061bf3bceaabe0dae2a65800da108a4030bebad38cf"
+  url "https://ghfast.top/https://github.com/laramies/theHarvester/archive/refs/tags/4.10.0.tar.gz"
+  sha256 "f2ffa9f506205438c3589dba2f66c55237a840b7e75ca654a699ef4397dae991"
   license "GPL-2.0-only"
   head "https://github.com/laramies/theHarvester.git", branch: "master"
 
   no_autobump! because: "'playwright' resource lacks PyPI sdist"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "17ee05cd8991d36e2ee9728eb378d2abadc2c568e40962bc318e1d72351c1b02"
-    sha256 cellar: :any,                 arm64_sequoia: "b7c9b1b519691ee189ab2d930002b607710524eb18dda5d67875e27d7a231e40"
-    sha256 cellar: :any,                 arm64_sonoma:  "13db9d67a0ae5bd6529e0a371aca24199d9dfab50ae3b19ce8fbf555d5234ac2"
-    sha256 cellar: :any,                 sonoma:        "8921fce874005315dc9cae36e0db9f0b92d425d43077a5556f1701e185b00b90"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c28a0b5b9207418535cc5147b23c08a9ba73d1d2ab4c1ae98efd83d8f99e081"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc88162e4b1b4d08824765e1395dfa0b72bf0e487378a31ca599d136dcdc8edc"
+    sha256 cellar: :any,                 arm64_tahoe:   "d00668c16deaee602dd0080dce392226839ecda02c2a3d5f522a9961709fb17a"
+    sha256 cellar: :any,                 arm64_sequoia: "19d7add1b07c42b7a5a85ff8ae0a97a35cdf68b68f372d58d14046226cb067d6"
+    sha256 cellar: :any,                 arm64_sonoma:  "e351dc0f2d21dc7d33096c9ae162510f8b4e55e62c93c65c916eb4ecfd1081d3"
+    sha256 cellar: :any,                 sonoma:        "f2c6bbe84f9fca4fbb1fab600cfe5609f8c17d371728608d6728aafc55ccdf55"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad70461ae4e7991126d49d4d77d7fca31446dd35e58b2ca6b4f033201af4b751"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69e1553ae01506472d3e33b98df1de5821e8bbe08e5e1d06d147f356ceddd58b"
   end
 
   depends_on "cmake" => :build
@@ -43,8 +43,8 @@ class Theharvester < Formula
   end
 
   resource "aiodns" do
-    url "https://files.pythonhosted.org/packages/85/2f/9d1ee4f937addda60220f47925dac6c6b3782f6851fd578987284a8d2491/aiodns-3.6.1.tar.gz"
-    sha256 "b0e9ce98718a5b8f7ca8cd16fc393163374bc2412236b91f6c851d066e3324b6"
+    url "https://files.pythonhosted.org/packages/10/da/97235e953109936bfeda62c1f9f1a7c5652d4dc49f2b5911f9ae1043afa9/aiodns-4.0.0.tar.gz"
+    sha256 "17be26a936ba788c849ba5fd20e0ba69d8c46e6273e846eb5430eae2630ce5b1"
   end
 
   resource "aiofiles" do
@@ -58,8 +58,13 @@ class Theharvester < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/1c/ce/3b83ebba6b3207a7135e5fcaba49706f8a4b6008153b4e30540c982fae26/aiohttp-3.13.2.tar.gz"
-    sha256 "40176a52c186aefef6eb3cad2cdd30cd06e3afbe88fe8ab2af9c0b90f228daca"
+    url "https://files.pythonhosted.org/packages/50/42/32cf8e7704ceb4481406eb87161349abb46a57fee3f008ba9cb610968646/aiohttp-3.13.3.tar.gz"
+    sha256 "a949eee43d3782f2daae4f4a2819b2cb9b0c5d3b7f7a927067cc84dafdbb9f88"
+  end
+
+  resource "aiohttp-socks" do
+    url "https://files.pythonhosted.org/packages/1f/cc/e5bbd54f76bd56291522251e47267b645dac76327b2657ade9545e30522c/aiohttp_socks-0.11.0.tar.gz"
+    sha256 "0afe51638527c79077e4bd6e57052c87c4824233d6e20bb061c53766421b10f0"
   end
 
   resource "aiomultiprocess" do
@@ -83,8 +88,8 @@ class Theharvester < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
-    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
+    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
+    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
   end
 
   resource "argcomplete" do
@@ -148,8 +153,8 @@ class Theharvester < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/a7/23/ce7a1126827cedeb958fc043d61745754464eb56c5937c35bbf2b8e26f34/filelock-3.20.1.tar.gz"
-    sha256 "b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c"
+    url "https://files.pythonhosted.org/packages/1d/65/ce7f1b70157833bf3cb851b556a37d4547ceafc158aa9b34b36782f23696/filelock-3.20.3.tar.gz"
+    sha256 "18c57ee915c7ec61cff0ecf7f0f869936c7c30191bb0cf406f1341778d0834e1"
   end
 
   resource "frozenlist" do
@@ -222,11 +227,9 @@ class Theharvester < Formula
     sha256 "f48107a8c637e80362555f37ecf49abe20370e557cc4ab374f04ec4423c97c3d"
   end
 
-  # pycares 5.0.0 fails to build with from source
-  # https://github.com/saghul/pycares/issues/292
   resource "pycares" do
-    url "https://files.pythonhosted.org/packages/8d/ad/9d1e96486d2eb5a2672c4d9a2dd372d015b8d7a332c6ac2722c4c8e6bbbf/pycares-4.11.0.tar.gz"
-    sha256 "c863d9003ca0ce7df26429007859afd2a621d3276ed9fef154a9123db9252557"
+    url "https://files.pythonhosted.org/packages/df/a0/9c823651872e6a0face3f0311de2a40c8bbcb9c8dcb15680bd019ac56ac7/pycares-5.0.1.tar.gz"
+    sha256 "5a3c249c830432631439815f9a818463416f2a8cbdb1e988e78757de9ae75081"
   end
 
   resource "pyee" do
@@ -242,6 +245,11 @@ class Theharvester < Formula
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
     sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+  end
+
+  resource "python-socks" do
+    url "https://files.pythonhosted.org/packages/6c/07/cfdd6a846ac859e513b4e68bb6c669a90a74d89d8d405516fba7fc9c6f0c/python_socks-2.8.0.tar.gz"
+    sha256 "340f82778b20a290bdd538ee47492978d603dff7826aaf2ce362d21ad9ee6f1b"
   end
 
   resource "pyyaml" do
@@ -285,8 +293,8 @@ class Theharvester < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/89/23/adf3796d740536d63a6fbda113d07e60c734b6ed5d3058d1e47fc0495e47/soupsieve-2.8.1.tar.gz"
-    sha256 "4cf733bc50fa805f5df4b8ef4740fc0e0fa6218cf3006269afd3f9d6d80fd350"
+    url "https://files.pythonhosted.org/packages/93/f2/21d6ca70c3cf35d01ae9e01be534bf6b6b103c157a728082a5028350c310/soupsieve-2.8.2.tar.gz"
+    sha256 "78a66b0fdee2ab40b7199dc3e747ee6c6e231899feeaae0b9b98a353afd48fd8"
   end
 
   resource "starlette" do
@@ -305,8 +313,8 @@ class Theharvester < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "uvicorn" do

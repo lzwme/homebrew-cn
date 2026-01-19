@@ -1,23 +1,13 @@
 class Meson < Formula
   desc "Fast and user friendly build system"
   homepage "https://mesonbuild.com/"
+  url "https://ghfast.top/https://github.com/mesonbuild/meson/releases/download/1.10.1/meson-1.10.1.tar.gz"
+  sha256 "c42296f12db316a4515b9375a5df330f2e751ccdd4f608430d41d7d6210e4317"
   license "Apache-2.0"
   head "https://github.com/mesonbuild/meson.git", branch: "master"
 
-  stable do
-    url "https://ghfast.top/https://github.com/mesonbuild/meson/releases/download/1.10.0/meson-1.10.0.tar.gz"
-    sha256 "8071860c1f46a75ea34801490fd1c445c9d75147a65508cd3a10366a7006cc1c"
-
-    # Backport fix for https://github.com/mesonbuild/meson/issues/15360
-    patch do
-      url "https://github.com/mesonbuild/meson/commit/4bbd1ef923e995cd88c255cef65649ab8b07cfc6.patch?full_index=1"
-      sha256 "096b1d5c9c4121e64f188cf6775045c86f9e64c7787e7015ca6d182ba35e0771"
-    end
-  end
-
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "1d795f4fb3d1f6f8046e95d58f8f47d5c95e15e4299a1789cd91677a9df45445"
+    sha256 cellar: :any_skip_relocation, all: "d9393b1c283c020f13e754ce937ce39fafb9fc48cbeb797d596062babbd8a01a"
   end
 
   depends_on "ninja"

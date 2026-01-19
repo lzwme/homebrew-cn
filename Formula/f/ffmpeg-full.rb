@@ -1,5 +1,5 @@
 class FfmpegFull < Formula
-  desc "Play, record, convert, and stream audio and video"
+  desc "Play, record, convert, and stream many audio and video codecs"
   homepage "https://ffmpeg.org/"
   url "https://ffmpeg.org/releases/ffmpeg-8.0.1.tar.xz"
   sha256 "05ee0b03119b45c0bdb4df654b96802e909e0a752f72e4fe3794f487229e5a41"
@@ -13,12 +13,13 @@ class FfmpegFull < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "35f83f7e54a03bfd0e703457877748eaf26830c8a0e5549005e493287ac3aefe"
-    sha256 arm64_sequoia: "3f93e78d820ce0abdbf2d7ca85abef2114f4158ab8a42279717000f730a0b73f"
-    sha256 arm64_sonoma:  "71ab6bdc0a0dc9e2e125e2101f9ba1cd8bbfd8da0753a45ac8b3ae11ce09805f"
-    sha256 sonoma:        "051d412ce667496d5f917e717ae317c5df25fd78ddff019c27e16f857aa5e7a4"
-    sha256 arm64_linux:   "e991199149ba3be42d3a6e3250b87a4692488ae2ab6957866d5bdf419fab38c5"
-    sha256 x86_64_linux:  "118476947da3654a3db8c37e83f5d20247a515cc554cc400463d30fd69df0646"
+    rebuild 1
+    sha256 arm64_tahoe:   "619a125bf434e4286d47d825588e423d4292d7a23d93c86e66ffea96ecfde5d1"
+    sha256 arm64_sequoia: "19717d14acb90017e5ee18abf95a410ab2e738f636b1ea0959eded69db99ee17"
+    sha256 arm64_sonoma:  "16856043f5d14b18992a94b2eb976982ca0825fdbeaa25be94f77daa46b004d2"
+    sha256 sonoma:        "9a1faeacc5554c63e8e2e3fda4f9c54f9fc1807bc882290d945d73da3d03ae55"
+    sha256 arm64_linux:   "9ce0cb2e2bef5003eee67366972209e4e941172c26570c794c2c206ecb8e3d4f"
+    sha256 x86_64_linux:  "9b6254689d409c94dcb3d7dc81ad0b42fd6a03cc42284aacb4ea87a03a1079d7"
   end
 
   keg_only :versioned_formula
@@ -36,6 +37,7 @@ class FfmpegFull < Formula
   depends_on "lame"
   depends_on "libass"
   depends_on "libbluray"
+  depends_on "libplacebo"
   depends_on "librist"
   depends_on "libsoxr"
   depends_on "libssh"
@@ -117,6 +119,7 @@ class FfmpegFull < Formula
       --enable-libjxl
       --enable-libmp3lame
       --enable-libopus
+      --enable-libplacebo
       --enable-librav1e
       --enable-librist
       --enable-librubberband
