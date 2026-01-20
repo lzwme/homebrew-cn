@@ -40,6 +40,7 @@ class Nmh < Formula
   depends_on "w3m"
 
   uses_from_macos "cyrus-sasl"
+  uses_from_macos "ncurses"
 
   on_linux do
     depends_on "gdbm"

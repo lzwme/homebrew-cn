@@ -1,8 +1,8 @@
 class Libplctag < Formula
   desc "Portable and simple API for accessing AB PLC data over Ethernet"
   homepage "https://github.com/libplctag/libplctag"
-  url "https://ghfast.top/https://github.com/libplctag/libplctag/archive/refs/tags/v2.6.13.tar.gz"
-  sha256 "cb204226a17459a44269302bf46fcda9aa3bf24f84ea9f25801aef6e5f42225e"
+  url "https://ghfast.top/https://github.com/libplctag/libplctag/archive/refs/tags/v2.6.14.tar.gz"
+  sha256 "b58aaae10efd99bec820cf1f66ff39cced5b9b31bd4f4e0695811ea33b469c10"
   license any_of: ["LGPL-2.0-or-later", "MPL-2.0"]
 
   livecheck do
@@ -11,12 +11,12 @@ class Libplctag < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fa4a5fc3bda90f1d3c024a39de9de655ad4221698a47a76152ebd30936d2ac2b"
-    sha256 cellar: :any,                 arm64_sequoia: "49a52e1560cedaf548eea0101054cc51e7fc6a5477c3a455b3f8d144060f31cc"
-    sha256 cellar: :any,                 arm64_sonoma:  "a5927805a61cc92fd291f3bbaf1ac43f684ef1d7dd0acdcc75414000b890b054"
-    sha256 cellar: :any,                 sonoma:        "27ac7feafd0afdecc4e5e476467f6f46985fde068a93270b23147eb3b32565e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc974040343aa8351b8f26b1469cf8b2b0c42e9a1b42c7f79a3f2e5732d96cf4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d997648911d08752f523583ba71501c32b0ef375571f18fe95369c74db173210"
+    sha256 cellar: :any,                 arm64_tahoe:   "dceb68f387f52e6931dc3e2b822bf7cdb1fa465a20ab6db4fd219a123a851bae"
+    sha256 cellar: :any,                 arm64_sequoia: "d56001ff1d7199ae10cecc34235132b4d7a6ee6d833edd6cb0b737a03a4654f9"
+    sha256 cellar: :any,                 arm64_sonoma:  "68d62103d8394cf7f7b13ac0068393ae6f1c14d39874ca7d1924f7e7cbdf3f00"
+    sha256 cellar: :any,                 sonoma:        "838d47ae8ed445678848882754e999aa5ba34b78a24c5d0f3fe766f444676118"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02526c74c4617eefb4f2282a73a7d35565f68b515250f05203c83ab3a9507fc7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fa5fc29d194fade63f7de33f1842a1a79b2ff36899953f9a951e4a46bcd42ef"
   end
 
   depends_on "cmake" => :build

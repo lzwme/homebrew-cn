@@ -15,12 +15,13 @@ class Ejabberd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fb03cdd8427030f04552ab27c20ae4dd4e8622507e54357e22d1db117c0afcdb"
-    sha256 cellar: :any,                 arm64_sequoia: "6c2af70ef4c7beba90ad33237b2ff25b6d427e2e2cd282f5ef39a1f22d1e1a8a"
-    sha256 cellar: :any,                 arm64_sonoma:  "df253b058b0d822faf3f7633f0b2329b4c8d1c6c5171aa283676fe75ea6db0b8"
-    sha256 cellar: :any,                 sonoma:        "ce332373f5629441ec5d72d5e3af4442bcc5cdc0367c4fabbe003da0df89c4d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc673d4b32c832b4dd1d26d74ef115b0f8cefc4926260cae982502e1d2fe15cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "567bcd25ca021bd22afac704b2c7ad1e02fe64b7a55b065048a3d1aa8154e3c3"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "0820537ced409e826ae4b0aadb194aec0e0eed682234748ef154d58a5d322611"
+    sha256 cellar: :any,                 arm64_sequoia: "07a1787155e1e0b2b61f58a800ea98318352fcc38ed63f35d298d08414d1b647"
+    sha256 cellar: :any,                 arm64_sonoma:  "1db4a5c656e9f73aad5f92b8e40dd0db0032f8a3a578363135a74c01efd6d0b8"
+    sha256 cellar: :any,                 sonoma:        "8277715921e6a22e508224ce860251266792aae0e6f6da8d235a9f35db9b2c48"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "38855ce0cba970ef8ac1ddd63d30a7927600a062e9a536669d082bdc31ce0725"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66312f043670fcab793d62d6fdf753095cb660a829c0744f5790ce493d960917"
   end
 
   depends_on "autoconf" => :build
@@ -94,7 +95,13 @@ class Ejabberd < Formula
   end
 
   test do
-    pid = spawn sbin/"ejabberdctl", "start"
+    ENV["EJABBERD_BYPASS_WARNINGS"] = "true"
+    ENV["EJABBERD_CONFIG_PATH"] = testpath/"ejabberd.yml"
+
+    cp etc/"ejabberd/ejabberd.yml", testpath/"ejabberd.yml"
+    inreplace testpath/"ejabberd.yml", "port: 1883", "port: #{free_port}"
+
+    pid = spawn sbin/"ejabberdctl", "foreground"
     sleep 1
     system sbin/"ejabberdctl", "ping"
   ensure

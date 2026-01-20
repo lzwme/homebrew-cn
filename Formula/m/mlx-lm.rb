@@ -3,16 +3,15 @@ class MlxLm < Formula
 
   desc "Run LLMs with MLX"
   homepage "https://github.com/ml-explore/mlx-lm"
-  url "https://ghfast.top/https://github.com/ml-explore/mlx-lm/archive/refs/tags/v0.30.2.tar.gz"
-  sha256 "d4823c92e1199a71e5f785a1d6cd4ebd8a0af42220de2b52758c6f1b1e34a12e"
+  url "https://ghfast.top/https://github.com/ml-explore/mlx-lm/archive/refs/tags/v0.30.4.tar.gz"
+  sha256 "d2d55a3d72b33d343cdda20de738ca9a1405aaeb4ebbe8a967d8f2f1b17baf2f"
   license "MIT"
-  revision 1
   head "https://github.com/ml-explore/mlx-lm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3c572bd0f8cff5f357be860ae6399b685914b79f2c553906e3990b251b8d6bcf"
-    sha256 cellar: :any, arm64_sequoia: "b2c6cff32c3c44ace7f55ed292ae1cf3b8910e352aeebdadd1ec1a48c33e5538"
-    sha256 cellar: :any, arm64_sonoma:  "3bbc6286f853f0903bad719ff6b244468758c2692b2216a53f859fd2848d5128"
+    sha256 cellar: :any, arm64_tahoe:   "6142fcca9d2c2492e7700f17e87057141b54e39a3848d42bfcf6598665aa584a"
+    sha256 cellar: :any, arm64_sequoia: "fd68fe3434f2c5a0353bd8a472f604ca4096e15f0243718589cf8a86b50c2b8e"
+    sha256 cellar: :any, arm64_sonoma:  "57bf6e07c238cd079a0bb18e43fb24dae07c6bb03fa466c1e33f5aa40a01339d"
   end
 
   depends_on "pkgconf" => :build
@@ -75,8 +74,8 @@ class MlxLm < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/dd/dd/1cc985c5dda36298b152f75e82a1c81f52243b78fb7e9cad637a29561ad1/huggingface_hub-1.3.1.tar.gz"
-    sha256 "e80e0cfb4a75557c51ab20d575bdea6bb6106c2f97b7c75d8490642f1efb6df5"
+    url "https://files.pythonhosted.org/packages/ba/d6/02d1c505e1d3364230e5fa16d2b58c8f36a39c5efe8e99bc4d03d06fd0ca/huggingface_hub-1.3.2.tar.gz"
+    sha256 "15d7902e154f04174a0816d1e9594adcf15cdad57596920a5dc70fadb5d896c7"
   end
 
   resource "idna" do
@@ -100,8 +99,8 @@ class MlxLm < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/cc/5c/f912bdebdd4af4160da6a2c2b1b3aaa1b8c578d0243ba8f694f93c7095f0/protobuf-6.33.3.tar.gz"
-    sha256 "c8794debeb402963fddff41a595e1f649bcd76616ba56c835645cab4539e810e"
+    url "https://files.pythonhosted.org/packages/53/b8/cda15d9d46d03d4aa3a67cb6bffe05173440ccf86a9541afaf7ac59a1b6b/protobuf-6.33.4.tar.gz"
+    sha256 "dc2e61bca3b10470c1912d166fe0af67bfc20eb55971dcef8dfa48ce14f0ed91"
   end
 
   resource "pyyaml" do
@@ -110,8 +109,8 @@ class MlxLm < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/cc/a9/546676f25e573a4cf00fe8e119b78a37b6a8fe2dc95cda877b30889c9c45/regex-2025.11.3.tar.gz"
-    sha256 "1fedc720f9bb2494ce31a58a1631f9c82df6a09b49c19517ea5cc280b4541e01"
+    url "https://files.pythonhosted.org/packages/0b/86/07d5056945f9ec4590b518171c4254a5925832eb727b56d3c38a7476f316/regex-2026.1.15.tar.gz"
+    sha256 "164759aa25575cbc0651bef59a0b18353e54300d79ace8084c818ad8ac72b7d5"
   end
 
   resource "requests" do

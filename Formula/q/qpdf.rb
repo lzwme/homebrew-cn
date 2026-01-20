@@ -1,17 +1,17 @@
 class Qpdf < Formula
   desc "Tools for and transforming and inspecting PDF files"
   homepage "https://github.com/qpdf/qpdf"
-  url "https://ghfast.top/https://github.com/qpdf/qpdf/releases/download/v12.3.0/qpdf-12.3.0.tar.gz"
-  sha256 "5e59dbea264ce096bcaf230ea2a2fb1d991a9d56d940fd54c1a7570b48dde04b"
+  url "https://ghfast.top/https://github.com/qpdf/qpdf/releases/download/v12.3.1/qpdf-12.3.1.tar.gz"
+  sha256 "6de2a390b807a881bba2ab1abb080e985c2338a64137807ed28a946a258ffc89"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0aea468ba83ad0a201aa2c2f353eafe8de5fdb1b8885cef4c59ba51216ff702f"
-    sha256 cellar: :any,                 arm64_sequoia: "23a8b3e5b740fc89b944500b54b29dcfbc6ad35ecab2aecf4794acf115c6e840"
-    sha256 cellar: :any,                 arm64_sonoma:  "2d918e2aad06ca1a750d3bedbc8b411f8883a7eabb391899f89f92ac917b1289"
-    sha256 cellar: :any,                 sonoma:        "ef802aa680168e6f84aafb5d319a46c6f01205ae9cb800c6f9e9f7a8575cc78a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bcdca7010dcb5da1a15ac11fa66e14804a6869efe3d22cc6541a8b7e8b286aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8044ee0d1bd315395428fcec6cefd2bf64417054c7eb8a239e001f057ef6b19d"
+    sha256 cellar: :any,                 arm64_tahoe:   "743b373c6cbd172e788a28218de5bfe4802fd7bc266d7f7baa19eca35755526e"
+    sha256 cellar: :any,                 arm64_sequoia: "c73184d33bd689074bda1b9d87e4855ffd93b9301ba17dc691210b2f3d9fdf2f"
+    sha256 cellar: :any,                 arm64_sonoma:  "3ebc67d71199dd6a1e6c06aff7670b698af37aae5ab51e72a0d554a98d014508"
+    sha256 cellar: :any,                 sonoma:        "1a9ee5b566d382e827e1a24d059b5d50fcea64ab6b8f2fd60ef7b6fdbf44a242"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e5dfb6e93e4501ebee0f1a753bbb8205aa776da8e4e500bcbbe1c7dfb58a65d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9dd79762a64f55a1df360aef87e84e57779480c98dc2850b58a7d0d7492f355"
   end
 
   depends_on "cmake" => :build

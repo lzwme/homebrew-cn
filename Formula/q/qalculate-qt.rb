@@ -1,18 +1,18 @@
 class QalculateQt < Formula
   desc "Multi-purpose desktop calculator"
   homepage "https://qalculate.github.io/"
-  url "https://ghfast.top/https://github.com/Qalculate/qalculate-qt/releases/download/v5.8.2/qalculate-qt-5.8.2.tar.gz"
-  sha256 "ebf547910ce5c5624b8d158873ff88c4379288cc687993e50655f9f7ead171ae"
+  url "https://ghfast.top/https://github.com/Qalculate/qalculate-qt/releases/download/v5.9.0/qalculate-qt-5.9.0.tar.gz"
+  sha256 "c018e8ccc4c48c5c831d28c32b960f77de1c7e0e8cb6e26e0b9a2cccc91e5ee3"
   license "GPL-2.0-or-later"
   head "https://github.com/Qalculate/qalculate-qt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b56c88a0f7ce91274cff9184de1c602710122ca79d9f6c0d8169f96cf1dc5a74"
-    sha256 cellar: :any,                 arm64_sequoia: "2d785c0960737200d9ddad9c5c47a091fbafc859cb01a2352216b1a769f421f1"
-    sha256 cellar: :any,                 arm64_sonoma:  "45277ba986814980a6a1e0788d2b0b3174121fd8ce1172eae7e7c69c21250e9c"
-    sha256 cellar: :any,                 sonoma:        "d672d5c1b0f064245f07fa0a9a2671d9c7a7f24f8f1d7fe1f983bbc067314f44"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33ac3485b2ab79a014f4671a08d575fc86d2528444686f5a7045b46753e84ce7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d63973b163ebe486bf4d1a4ac4da371f24af5d8e084f4ece33049b4cb9201b7"
+    sha256 cellar: :any,                 arm64_tahoe:   "68951fa9b696f107a1bb8cb603031ae7e1ea90accd7d04ac0d50952ace5078ba"
+    sha256 cellar: :any,                 arm64_sequoia: "05d3f2d36d4c785d678f7b0a46f11f60350797d9f17ced407f255d9db46ac591"
+    sha256 cellar: :any,                 arm64_sonoma:  "153aea0658a4d7e14c108ce6b71f43e30b3c78ee087c6d36abb18ee50d262f8b"
+    sha256 cellar: :any,                 sonoma:        "c0aca1b086f02bdf72478865882b1ec7ac1f00f2554d31c386d41c6cf926a797"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3ff58539bbe16e17dc7eacfbed3eb44f73b333a15776d1eda92485004471a77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc30f8723c18ee04a1556e209a0cfeebc7262c0342654c791d610cc7ea0d68db"
   end
 
   depends_on "pkgconf" => :build

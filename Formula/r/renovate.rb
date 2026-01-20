@@ -5,14 +5,15 @@ class Renovate < Formula
   sha256 "fc23f96d6cdda3b19eddbc44280136d1d9b994e5e8175407dad678492d8561e4"
   license "AGPL-3.0-only"
 
-  # There are thousands of renovate releases on npm and the page the `Npm`
-  # strategy checks is several MB in size and can time out before the request
-  # resolves. This checks the first page of tags on GitHub (to minimize data
-  # transfer).
+  # livecheck needs to surface multiple versions for version throttling but
+  # there are thousands of renovate releases on npm. The package page showing
+  # versions is several MB in size (and the registry response is 10x that),
+  # so curl can time out before the response finishes. This checks releases on
+  # GitHub as a workaround, as it provides information on multiple versions
+  # but has a much smaller size.
   livecheck do
-    url "https://github.com/renovatebot/renovate/tags"
-    regex(%r{href=["']?[^"' >]*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
-    strategy :page_match
+    url :homepage
+    strategy :github_releases
     throttle 10
   end
 

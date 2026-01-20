@@ -5,8 +5,6 @@ class Aicommits < Formula
   sha256 "b74cf25eb31eb7098d01f482cd64a87e2f59d7efa11f5273fbb353f35e850c5d"
   license "MIT"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, all: "605e05c0b7da41359670b8ed4b085303685c3398bf624db9cdde9b2fb38a38aa"

@@ -12,7 +12,8 @@ class Rabbitmq < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "050adad3dc2609fdebe1ff3b3e010b86d86809c4cc8bd8483d01870c0930f313"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "17ad343703afa3ca2baf513856d90e3771b1372d4a49e0b6fdad7486e64efc0f"
   end
 
   depends_on "erlang"
@@ -91,9 +92,19 @@ class Rabbitmq < Formula
 
   test do
     ENV["RABBITMQ_MNESIA_BASE"] = testpath/"var/lib/rabbitmq/mnesia"
+    ENV["RABBITMQ_CONFIG_FILE"] = testpath/"rabbitmq.conf"
+
+    mqtt_port = free_port
+    (testpath/"rabbitmq.conf").write <<~CONF
+      mqtt.listeners.tcp.default=#{mqtt_port}
+    CONF
+
     pid = spawn sbin/"rabbitmq-server"
     system sbin/"rabbitmq-diagnostics", "wait", "--pid", pid
     system sbin/"rabbitmqctl", "status"
     system sbin/"rabbitmqctl", "stop"
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end

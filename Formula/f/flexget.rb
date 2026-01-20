@@ -3,17 +3,17 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/c4/78/25c46fec65d3dc17b4b3157427f16d2350616e897147979e45d53105398e/flexget-3.18.38.tar.gz"
-  sha256 "c3eac48a0df5937560786ebf220ff14995f0a8d41ee69e2154d4efab4868d746"
+  url "https://files.pythonhosted.org/packages/6f/a6/060647d5f7b5ef6d7e8db517b761a66c7e7756e8167338c99c697a8217d6/flexget-3.18.39.tar.gz"
+  sha256 "cbe2064b08bffd721f3c6e6109805b398c7f81c21afa101c337224e87dd0374f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c1b95d834e3dd99e9709a8cbcf4c1e0fd8bc9de47838e0772aa7a6e40401d3ed"
-    sha256 cellar: :any,                 arm64_sequoia: "8f05e85360dc7bdf6e0061b3be2cfaba24547c7e5a5e666985e362334d0fd34d"
-    sha256 cellar: :any,                 arm64_sonoma:  "199f6030ca18bfd32b441c07c1a306e23117e63b8d3e80b329c1e11f3f1282e1"
-    sha256 cellar: :any,                 sonoma:        "d8322c6ba12c40a2f439c011711fa9f9560f5802fa0e6398bde8d4c4811d6585"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "301089b1b7b97a4f0725cd60f375c79f8297fe81adca24a380703b99c327d8dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdd66102453cd56bb8f2f481d16964331ac6b4bf78f59e17e6a4f8209695ebcf"
+    sha256 cellar: :any,                 arm64_tahoe:   "056a6796fe2c241e9aa2d9bfacccc5a49d854c5a2654c34c702a26f03aa69d53"
+    sha256 cellar: :any,                 arm64_sequoia: "6c2a95636f061f4267c24801c81cbc0ccb15dd1fd8577b861d170dae6d4982f9"
+    sha256 cellar: :any,                 arm64_sonoma:  "b82149815d7a78328e1e0e281d93e91aaca414bfd9f8d8b5b1b3b4e94e1ae97a"
+    sha256 cellar: :any,                 sonoma:        "7749b709cd4111aaabbabc8067db6486a6b2ba9a1efbf249339bca9bd6f72c49"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6c73f49076aaf5a3d2391e89666fc1f7ee8fc72f01007c3190c8a7e8a1d5bb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95112585e57abf38c7b25344d5649c012090de0aac417758fb0c0cd5252cdfef"
   end
 
   depends_on "rust" => :build
@@ -315,8 +315,8 @@ class Flexget < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/89/23/adf3796d740536d63a6fbda113d07e60c734b6ed5d3058d1e47fc0495e47/soupsieve-2.8.1.tar.gz"
-    sha256 "4cf733bc50fa805f5df4b8ef4740fc0e0fa6218cf3006269afd3f9d6d80fd350"
+    url "https://files.pythonhosted.org/packages/93/f2/21d6ca70c3cf35d01ae9e01be534bf6b6b103c157a728082a5028350c310/soupsieve-2.8.2.tar.gz"
+    sha256 "78a66b0fdee2ab40b7199dc3e747ee6c6e231899feeaae0b9b98a353afd48fd8"
   end
 
   resource "sqlalchemy" do

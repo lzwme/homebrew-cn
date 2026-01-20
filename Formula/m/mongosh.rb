@@ -5,8 +5,6 @@ class Mongosh < Formula
   sha256 "d2a3f47bdde82e4eb68dc33e08ec521b0884cee9797bdcbf3d283b711a63f6ce"
   license "Apache-2.0"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14de0fa668c3fc36afdb2e7a1b0b9bb9ff67cf65e9a9a3af29d006470c56e851"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "14de0fa668c3fc36afdb2e7a1b0b9bb9ff67cf65e9a9a3af29d006470c56e851"

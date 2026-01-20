@@ -5,6 +5,8 @@ class Freeswitch < Formula
   head "https://github.com/signalwire/freeswitch.git", branch: "master"
 
   stable do
+    # TODO: switch to tarball on next release and make autoconf/automake/libtool HEAD-only.
+    # url "https://files.freeswitch.org/releases/freeswitch/freeswitch-1.10.12.-release.tar.gz"
     url "https://github.com/signalwire/freeswitch.git",
         tag:      "v1.10.12",
         revision: "a88d069d6ffb74df797bcaf001f7e63181c07a09"
@@ -67,21 +69,19 @@ class Freeswitch < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 arm64_tahoe:   "f242f81b7d51d7508fda54b6c733bc4c1b32ea83b4b88d3ddba83465bee05dc0"
-    sha256 arm64_sequoia: "22c26fbbba270a2ff54f11cdcc272bad656af8d594f921039afa246fefd1f15f"
-    sha256 arm64_sonoma:  "b720f921e808967c121436b6b397bcea568793595418df361ba2b3a7fdcadfab"
-    sha256 sonoma:        "1ec22357741dbfb505410fb992ae391ded48f03bf500dd550ff16d3fcd5e7c22"
-    sha256 arm64_linux:   "c50815be96dba1fd11234d3c9b21bf0eb1f1150e5c45c924b796c33f7af4d91d"
-    sha256 x86_64_linux:  "c0fe050fad77c2eaa8c7633d9f51384c6f38dcd578b0f08b06171c9bab2bc848"
+    rebuild 4
+    sha256 arm64_tahoe:   "9cb8409408cc01cc8e19a512f9eda755f265a04f206a73d8e4f1603fb83f6952"
+    sha256 arm64_sequoia: "26ad3b1d0473455bc8de23fb19319039bba987ccd691cf6f056a4bd2f287fc03"
+    sha256 arm64_sonoma:  "e10676bb9b427165069892057a399218500dba99b5f8ab6830ef425cb88d6dfe"
+    sha256 sonoma:        "86246d29684a3845246c201c54ab73c3b521b7a9cbd690cd98e649f4efc38b47"
+    sha256 arm64_linux:   "7ac4e295edcb214731c6f0acbf463e44828b33e2ebd773dbc78611cac146f75b"
+    sha256 x86_64_linux:  "c38b84dcd8b19b037354c7924ed564b942b517f1634844075b2e37d307aaf1d0"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "cmake" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
-  depends_on "yasm" => :build
 
   depends_on "ffmpeg@7"
   depends_on "freetype"
@@ -97,6 +97,7 @@ class Freeswitch < Formula
   depends_on "openssl@3"
   depends_on "opus"
   depends_on "pcre2"
+  depends_on "signalwire-client-c"
   depends_on "sofia-sip"
   depends_on "speex"
   depends_on "speexdsp"
@@ -104,11 +105,13 @@ class Freeswitch < Formula
 
   uses_from_macos "curl"
   uses_from_macos "libedit"
-  uses_from_macos "libxcrypt"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "util-linux"
+  end
+
+  on_intel do
+    depends_on "yasm" => :build
   end
 
   #----------------------- Begin sound file resources -------------------------
@@ -177,43 +180,31 @@ class Freeswitch < Formula
   #------------------------ End sound file resources --------------------------
 
   # There's no tags for now https://github.com/freeswitch/spandsp/issues/13
+  # Using same source tarball as upstream's `signalwire/signalwire/spandsp` formula:
+  # https://github.com/signalwire/homebrew-signalwire/blob/master/Formula/spandsp.rb
   resource "spandsp" do
-    url "https://ghfast.top/https://github.com/freeswitch/spandsp/archive/67d2455efe02e7ff0d897f3fd5636fed4d54549e.tar.gz"
-    sha256 "aae3c3ae9f99311b2760bd344d28ab420f3b211f58355e010c8035cecf88ecfb"
-  end
+    url "https://files.freeswitch.org/downloads/libs/spandsp-3.0.0-0d2e6ac65e.tar.gz"
+    version "3.0.0-0d2e6ac65e"
+    sha256 "29c728fab504eb83aa01eb4172315c2795c8be6ef9094005f21bd1e3463f5f2f"
 
-  resource "signalwire-c" do
-    url "https://github.com/signalwire/signalwire-c.git",
-        tag:      "v2.0.0",
-        revision: "c432105788424d1ddb7c59aacd49e9bfa3c5e917"
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/signalwire/homebrew-signalwire/refs/heads/master/Formula/spandsp.rb"
+      regex(/url ".*?spandsp[._-]v?(\d+(?:\.\d+)+-\h+)\.t/i)
+    end
+
+    # Fix -flat_namespace being used on Big Sur and later.
+    patch do
+      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-big_sur.diff"
+      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+    end
   end
 
   def install
     resource("spandsp").stage do
-      system "./bootstrap.sh"
-      system "./configure", "--disable-silent-rules", *std_configure_args(prefix: libexec/"spandsp")
-      system "make"
-      ENV.deparallelize { system "make", "install" }
-
-      ENV.append_path "PKG_CONFIG_PATH", libexec/"spandsp/lib/pkgconfig"
+      system "./configure", "--disable-silent-rules", *std_configure_args(prefix: libexec)
+      system "make", "install"
+      ENV.append_path "PKG_CONFIG_PATH", libexec/"lib/pkgconfig"
     end
-
-    resource("signalwire-c").stage do
-      ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
-      system "cmake", ".", *std_cmake_args(install_prefix: libexec/"signalwire-c")
-      system "cmake", "--build", "."
-      system "cmake", "--install", "."
-
-      ENV.append_path "PKG_CONFIG_PATH", libexec/"signalwire-c/lib/pkgconfig"
-
-      # Add RPATH to signalwire_client2.pc so libsignalwire_client2.so
-      # can be found by freeswitch modules.
-      inreplace libexec/"signalwire-c/lib/pkgconfig/signalwire_client2.pc",
-                "-L${libdir}",
-                "-Wl,-rpath,${libdir} -L${libdir}"
-    end
-
-    system "./bootstrap.sh", "-j"
 
     args = %W[
       --enable-shared
@@ -223,11 +214,7 @@ class Freeswitch < Formula
     # Fails on ARM: https://github.com/signalwire/freeswitch/issues/1450
     args << "--disable-libvpx" if Hardware::CPU.arm?
 
-    ENV.append_to_cflags "-D_ANSI_SOURCE" if OS.linux?
-
-    # Fix compile with newer Clang
-    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
-
+    system "./bootstrap.sh", "-j" # TODO: if build.head?
     system "./configure", *args, *std_configure_args
     system "make", "all"
     system "make", "install"

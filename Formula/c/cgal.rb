@@ -5,6 +5,11 @@ class Cgal < Formula
   sha256 "618da8a8b3f5be46b4f0a47a1efb3c9e6c03d6aab0f5531d56d355d32701d79f"
   license "GPL-3.0-or-later"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "1cb25e46dd6fd689eb3d5ca560f4f18410647f824a8e694e599eff18b7df2b84"
   end

@@ -1,8 +1,8 @@
 class ImagemagickAT6 < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://legacy.imagemagick.org/"
-  url "https://imagemagick.org/archive/releases/ImageMagick-6.9.13-37.tar.xz"
-  sha256 "5e74353f10a44c1019a8bbc06a5f5ce596cab448d7d9d88bb61e1398832ef575"
+  url "https://imagemagick.org/archive/releases/ImageMagick-6.9.13-38.tar.xz"
+  sha256 "db5f9b4581119d53cf237153703ddb1a3551c145e562563f769b09903f027cc4"
   license "ImageMagick"
   head "https://github.com/imagemagick/imagemagick6.git", branch: "main"
 
@@ -12,12 +12,12 @@ class ImagemagickAT6 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "6595f12701b81c22399861e9fda8627242c2597514ec205942c88aa517138fc0"
-    sha256 arm64_sequoia: "b8babc6e922878bf212dcbf1ad5be076481ad9a90eaf7c89a5b22d4dd718e3e8"
-    sha256 arm64_sonoma:  "86d64898bdb4c8be81fea6bade17490705a3da0d0da9cba5f59af163f90fee3e"
-    sha256 sonoma:        "c49bf710dd7f75cf36f3da5cb3d86bda9eb1a6ecf5a03dbd49db1684cda1c447"
-    sha256 arm64_linux:   "a0ebb2085cb1fac1367703e02de6d57c0a5ba3fef7da2d5bd76acfb593cc7925"
-    sha256 x86_64_linux:  "a45a838cc9837b0992a26b928d90f821df336778401288412817320471a49800"
+    sha256 arm64_tahoe:   "68383b56a4692580f926e56592a2eb9c3927f8a214bd7041812b90b2233f7ac2"
+    sha256 arm64_sequoia: "ce86618f3bf6f802a44591ace554453c3c970c2b0c93b3728cea69e0a1a7ca6c"
+    sha256 arm64_sonoma:  "d14379f748e674fa1354c52b261713ede267a5266815b5536959f28befa184e7"
+    sha256 sonoma:        "929c153da4964d14256356f66caad15bcc9fb4213c7913304204a213670f0bd4"
+    sha256 arm64_linux:   "572991a1922596796ee2da1777ba55b7df3ded6a0c09eba92d5df03ea351c75b"
+    sha256 x86_64_linux:  "d6eaa9019f58ea231a882e0187bd8cd25db3bf6c976f1bfbc2e2a82872dc1aa2"
   end
 
   keg_only :versioned_formula

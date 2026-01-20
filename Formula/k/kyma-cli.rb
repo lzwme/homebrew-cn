@@ -1,8 +1,8 @@
 class KymaCli < Formula
   desc "Kyma command-line interface"
   homepage "https://kyma-project.io"
-  url "https://ghfast.top/https://github.com/kyma-project/cli/archive/refs/tags/3.3.0.tar.gz"
-  sha256 "10ba1e5fe4ad6b9f37ec2b7366f55fa8c7a54718584d9a98ad047926f45f2976"
+  url "https://ghfast.top/https://github.com/kyma-project/cli/archive/refs/tags/3.3.1.tar.gz"
+  sha256 "6b51be95f4c2f5e7d1edc0d4b0dd60662dfcb01309ce8fd32b6bffdcf7b12cbb"
   license "Apache-2.0"
   head "https://github.com/kyma-project/cli.git", branch: "main"
 
@@ -15,13 +15,12 @@ class KymaCli < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3738fb8f93f95daaac81de4da069185ed0e575d2c64486573b024e411fd6c076"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c95e039f82d5d592b50e3eb6267c5f320e27634aed690cf7cb5cb9becd0e1e93"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3dd4fe2e234281e45679648cbf5037ba93afb84915e47f08d7c57904a7896aa8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9fe2fc388b5474e421876db7fd4a39832d055c23a84cb247c83b0ebc9952e239"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e5f75763645dfa08fbfadfe35e8b9dcce417a8881108c141585d4b901efafab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b9f15e1f70a1777268ee3e2090b0fd905f31557247abbee652ca14fa2b66413"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b2857650aad511a6859bbd23f0a8dfbc9d844b9bdfd2fd13ffed7c07d7d8e08"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f597a01e25e8357d2554b96a3d197bab7db3188a80e28e9a740a79043e54be3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf8ca2fb70efb03f01becc66662a02ce5887fa802c8f1503b4de84b686f711b5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c36e4fb091e8ca9a70c3cf4bec4b0fa1a059f99463b64b4b8ed2a29c28322300"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e78168e250054f1ddb267b060adab1e4c096ecebf334c674dc05b9c36254514f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9e3a3051c0ab24d090f521d47063c93537c175cb0bd2abb4169c42107cefbd7"
   end
 
   depends_on "go" => :build
