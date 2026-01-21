@@ -1,18 +1,18 @@
 class Dnspyre < Formula
   desc "CLI tool for a high QPS DNS benchmark"
   homepage "https://tantalor93.github.io/dnspyre/"
-  url "https://ghfast.top/https://github.com/Tantalor93/dnspyre/archive/refs/tags/v3.7.0.tar.gz"
-  sha256 "198bda936364a71c09749c625d19e67ba2125639dad54ebd81467fc071cc979a"
+  url "https://ghfast.top/https://github.com/Tantalor93/dnspyre/archive/refs/tags/v3.8.0.tar.gz"
+  sha256 "0209904c728c6f844a1d9b8e63c407b01a377b7354171cb082d3e503ee81b90a"
   license "MIT"
   head "https://github.com/Tantalor93/dnspyre.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7ab0bf15190946990982b665bd871c61a522478edc321f66933451895a71de7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf762fea6cff6876e5f7c0e76860498f66147c6120257e2523f9b83bb3096352"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02a5a04ac7f694d3a4e9bf596dff880f4764e7ab6978d3e623ec769a1c4d70d2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "62fa9fda30f140b7885ea225b971ecf28156687a2cef2476bcf1e6d58149fe9b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d8f9615714e8e64b0b906c3d7ea272f8c68cb34ab8ad05b4dbf9b97e6bfeadf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d58c6f706beb818f71e8a13a262ee654ff90221c8850a8aee565e42196fb923"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a674c91cf8c84681530709612d7690c8d05e50c910b77b6034e8da28a2338bff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7eeeac56977d561d9ed4173b3be35f535a29319a25a5dd1ef54f2c3390bf082"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3f8407e55d90a2e053a7cab549fbb905e3eccaee84b76a1941f542a04741e64"
+    sha256 cellar: :any_skip_relocation, sonoma:        "48aea410721a3fc68ae772632d055865d69e10136150c66e7e743648b31456d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d713d18febf48e77c9a6412b6d2875c136c183160c3ce4fab99e67ceafc959f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ccf0089124d87995945d3bda85545b1b58b66268fbe9e66c5c746145710854d"
   end
 
   depends_on "go" => :build

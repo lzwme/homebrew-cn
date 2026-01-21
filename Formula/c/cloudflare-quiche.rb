@@ -2,8 +2,8 @@ class CloudflareQuiche < Formula
   desc "Savoury implementation of the QUIC transport protocol and HTTP/3"
   homepage "https://docs.quic.tech/quiche/"
   url "https://github.com/cloudflare/quiche.git",
-      tag:      "0.24.7",
-      revision: "d680c81a79718c6e3eb6467349a8a6eb7c6cce3a"
+      tag:      "0.24.8",
+      revision: "c9d3e85f0f2acda30acbe186033bf534faeba7f3"
   license "BSD-2-Clause"
   head "https://github.com/cloudflare/quiche.git", branch: "master"
 
@@ -13,12 +13,12 @@ class CloudflareQuiche < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "649bddf4ea4a9e6b4b9832212c2b0bc5be05ded2859d337c7dd7effb82daebb0"
-    sha256 cellar: :any,                 arm64_sequoia: "c47bc09bc902616086647aa0d2b579a6d01327bfbcce3b5f2c28379d00fee8f5"
-    sha256 cellar: :any,                 arm64_sonoma:  "da308103499f245f4292057df0ba65d24d42dcd8d8fbc60403749cce1dec2c82"
-    sha256 cellar: :any,                 sonoma:        "a77fcd909429b79e06675b4b5105faf24b06bbe5f37496a335e1e4a4e2ac87be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd817b288af61e0994776f501aaeefa74e06aa6eb32ac45ef475a5278ba30196"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f30dd008571cb4e1464a6b39bd3d250e8e5650cbb858b803c624aabd5c17334"
+    sha256 cellar: :any,                 arm64_tahoe:   "ba78563fafdaf69338396b4734533541ec95a4e9c36cead1d287791fc201c856"
+    sha256 cellar: :any,                 arm64_sequoia: "c92ce4617bdd0ff59d27e49f6a1d737f61970a89519ef8ee365e3db2a12859c0"
+    sha256 cellar: :any,                 arm64_sonoma:  "e7028455aeb569bd24049fa7ace630ee7b43895277287eccaffaa749b9ce5103"
+    sha256 cellar: :any,                 sonoma:        "1b5aa7ccc0b2d5896b66b9a74f9b4998aafb305f8ded6196639c9f1a82f11185"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c5f7fc2fc291253b0cd5d2cd6a3cf5a82195d881b3d03e29bce4cf3ea7f84c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a45ea376a784323b0bd7ee2e67e2be69b645e71cf0564b8b00853cf34e3ce5cc"
   end
 
   depends_on "cmake" => :build

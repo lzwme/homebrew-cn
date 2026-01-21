@@ -3,18 +3,17 @@ class Bbot < Formula
 
   desc "OSINT automation tool"
   homepage "https://github.com/blacklanternsecurity/bbot"
-  url "https://files.pythonhosted.org/packages/1a/09/df14cf3ff1043e0ffd8dfb64c8bf70b8c7ac59c19cf90be58ccd4c1f829c/bbot-2.7.2.tar.gz"
-  sha256 "be929ecc6d67255c501384228dff1f79e4450f8863cbdf07ce75435cbf8c0641"
-  license "GPL-3.0-or-later"
-  revision 5
+  url "https://files.pythonhosted.org/packages/c1/8e/e0393c58f9afa4bf1c1ad45a774e892030a47f93a99d9816fc776d175b6d/bbot-2.8.0.tar.gz"
+  sha256 "ef71474b54cab571644bf1d1ff1765d0e54cefd8fb3d86fa1159f1a086179e31"
+  license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fc957803ef54b4fdf23afb877d54aa47916f7104081ac1784c7cb5e3925f09fb"
-    sha256 cellar: :any,                 arm64_sequoia: "2201af5641c190d3e469a09cb1ed25a0831a87dc2ffaa5be3cba7819022b0889"
-    sha256 cellar: :any,                 arm64_sonoma:  "5ee1c412b54566c1ba7a3eff4f376bd89cec3d8b8221c4ff181aea8f3b28cf9f"
-    sha256 cellar: :any,                 sonoma:        "05b0f68f0ee4b216ac6571d36d61241f0f6ad8db0eed958a2d878188f22ebb33"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ded361c1d0bcc1c1887939ae6c65fa013729c31ce7643c61138962a937afec07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9456c80dfb4d9bdb4a7442b0ac2a08f903c9e3172dccae49b27e51be00596362"
+    sha256 cellar: :any,                 arm64_tahoe:   "26eee301880ff3a5826df55ac3c16ee01884dfef31e9ce99e0b343268f4c72ce"
+    sha256 cellar: :any,                 arm64_sequoia: "8f5ca2e79e1f5564d684b3b173232b7f41d26895ecb14623cc05077a2b64a43e"
+    sha256 cellar: :any,                 arm64_sonoma:  "8d7fdcb129b0a92effc47722ff88ec4452c4f7ff4f543284d941d30f903420c0"
+    sha256 cellar: :any,                 sonoma:        "be3a840eaf1cee7199668383a855cfde94ddee313ddd6897ac7989facfd64521"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "86dc2c672f57d88dc2dd8fa5fd8da362896e2c555b172209de974601d5dc5772"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7d7ae960e5f1774c1bc611712942f5a08c0a3c01eeecf44f378c1b7b1e4912e"
   end
 
   depends_on "cmake" => :build
@@ -71,8 +70,8 @@ class Bbot < Formula
   end
 
   resource "cloudcheck" do
-    url "https://files.pythonhosted.org/packages/5b/24/e72b0dc3b219787a61cdd1ae1250d143227b73424c50c6ddfa7258f95914/cloudcheck-7.2.149.tar.gz"
-    sha256 "419c549581da2cb3e955f5fe4113724e25639b1678075f3aee56e8a68a865801"
+    url "https://files.pythonhosted.org/packages/ab/61/6cc3017bb397f340d0f8de723b1dfae96f0f6ff36d16422c5a527fbd64df/cloudcheck-8.7.2.tar.gz"
+    sha256 "dc4598e41919e79abffdab3a2763dc4f01fab06cdf6bae37b2332a85bc16c917"
   end
 
   resource "deepdiff" do
@@ -206,8 +205,8 @@ class Bbot < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/8e/5f/bd69653fbfb76cf8604468d3b4ec4c403197144c7bfe0e6a5fc9e02a07cb/regex-2024.11.6.tar.gz"
-    sha256 "7ab159b063c52a0333c884e4679f8d7a85112ee3078fe3d9004b2dd875585519"
+    url "https://files.pythonhosted.org/packages/cc/a9/546676f25e573a4cf00fe8e119b78a37b6a8fe2dc95cda877b30889c9c45/regex-2025.11.3.tar.gz"
+    sha256 "1fedc720f9bb2494ce31a58a1631f9c82df6a09b49c19517ea5cc280b4541e01"
   end
 
   resource "requests" do
@@ -242,8 +241,8 @@ class Bbot < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/89/23/adf3796d740536d63a6fbda113d07e60c734b6ed5d3058d1e47fc0495e47/soupsieve-2.8.1.tar.gz"
-    sha256 "4cf733bc50fa805f5df4b8ef4740fc0e0fa6218cf3006269afd3f9d6d80fd350"
+    url "https://files.pythonhosted.org/packages/7b/ae/2d9c981590ed9999a0d91755b47fc74f74de286b0f5cee14c9269041e6c4/soupsieve-2.8.3.tar.gz"
+    sha256 "3267f1eeea4251fb42728b6dfb746edc9acaffc4a45b27e19450b676586e8349"
   end
 
   resource "tabulate" do

@@ -1,8 +1,8 @@
 class Istioctl < Formula
   desc "Istio configuration command-line utility"
   homepage "https://istio.io/"
-  url "https://ghfast.top/https://github.com/istio/istio/archive/refs/tags/1.28.2.tar.gz"
-  sha256 "ee4b5d1ce045c98e09e97bce2e48c2d1ae262ae02db8829b5b1f4b3e546b0874"
+  url "https://ghfast.top/https://github.com/istio/istio/archive/refs/tags/1.28.3.tar.gz"
+  sha256 "f545dfef2297c6c643fa98b217435472106822550d9b08e66fe0831b6c740291"
   license "Apache-2.0"
   head "https://github.com/istio/istio.git", branch: "master"
 
@@ -12,13 +12,12 @@ class Istioctl < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed2988079b8b4c5c4d7248a48a23174128fceae72d0a88c9609f2466d5061add"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f07301b24c65d2c5dc7cb83c698d04a7ed30f1fb2be9b9d5f54d5d4af77bec9c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2ff84a336e13de18b00cfcb7b5ba1d1b573a9386b23def847374e12cc80e3b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a39567f2dc0f6199515a871fe9ae3ae74bc13f932a5dce7003287f3eaeb8b489"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "60f14438da1a5666a3761c9889fddf0da94e7442b896332d7ba5b3f2fc579cb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e94f6555b51fa9021d88d396f4ec657d87b5c6dce96fb855ec6845a2d066d91"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "44ef04cb21f2fe2b8bb56852b89e87a12aeac8f4e9596183438933bbbf3eab69"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9fc77e358be6ef1eb30135e5b25bf2faaf0d50bf655cc823e91389e61acda45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7369dc9ec787554c50b366d7ad4170ea73ac8616100b676feab9e97eca88afb7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "efe09ccf410e189596212bb1816f02e8a7301075e709e4535ab61adf801f6bb0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "280a2fa06d9d7bbd0c697af540364a9823f17391b5bf403f6a8a5458bde243dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa20b98b689821a541ab677bc216551434fac933dfecf48602222eab1ded9cb9"
   end
 
   depends_on "go" => :build

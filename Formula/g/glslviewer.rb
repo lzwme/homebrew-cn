@@ -1,30 +1,43 @@
 class Glslviewer < Formula
   desc "Live-coding console tool that renders GLSL Shaders"
   homepage "https://patriciogonzalezvivo.com/2015/glslViewer/"
-  url "https://github.com/patriciogonzalezvivo/glslViewer.git",
-      tag:      "v3.10.1",
-      revision: "2671e0f0b362bfd94ea5160f2ecb7f7363d4991d"
   license "BSD-3-Clause"
-  revision 3
+  version_scheme 1
   head "https://github.com/patriciogonzalezvivo/glslViewer.git", branch: "main"
+
+  stable do
+    url "https://github.com/patriciogonzalezvivo/glslViewer.git",
+        tag:      "3.2.4",
+        revision: "7eb6254cb4cedf03f1c78653f90905fe0c3b48fb"
+
+    # Backport support for FFmpeg 8
+    patch do
+      url "https://github.com/patriciogonzalezvivo/vera/commit/74b6ff1eccb7baccdb3f7506377846ef20051de1.patch?full_index=1"
+      sha256 "9fe1f83af45a8740bb7bd3322e9b71bd5c3582b7397d68864d4f75e0c83541d4"
+      directory "deps/vera"
+    end
+  end
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f25ca87f936785a700c936f8688f53288f56a0b3381f733903c8015e043c66ca"
-    sha256 cellar: :any,                 arm64_sequoia: "f93e79a8c9bbb23141884d1fd55ebbeeb61d5a7665216b9d7db827326696e60d"
-    sha256 cellar: :any,                 arm64_sonoma:  "90427fe8b299fa3dd6957524230ba594113461d675d82a24d4a8620dde6fa95b"
-    sha256 cellar: :any,                 arm64_ventura: "c9bda2b56948e4699561887fa2bcc1e7aa3569ab1b5809cc8d1735783ba8a484"
-    sha256 cellar: :any,                 sonoma:        "75599a64a2330bcf425ada92665a9cdeb1947cfa233537f2262cb91271ec9b99"
-    sha256 cellar: :any,                 ventura:       "18ce0a09b72766aae3aa5350221de2181c7f292f0b432e90805c6926c273283b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3deaca23949aeb02d9640edd9b3799226b6515bbd9d862dedd30b68b4f01d878"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "780804999964b261746f467387a11366e6c197f23d703181111101ddc0f8204f"
+    sha256 cellar: :any,                 arm64_tahoe:   "71def3742a3b6dcd962ba7fd6cdd972a32eb958457b4e95ecdbd25270260ed0c"
+    sha256 cellar: :any,                 arm64_sequoia: "81f3f92b622f746143e0093ae8fc2a285e3d84f3301507ff69afe9928ea5ab3d"
+    sha256 cellar: :any,                 arm64_sonoma:  "50ab6a1054838c1bb0149c7d01bafd270e4c60ecaa8fd9224b4edfbf4cecb355"
+    sha256 cellar: :any,                 sonoma:        "7fb9c08e7bac8481dcb111484dc3eae1cc737217ae5cf1f97f1fe7752700217e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc1b7fd1658789fd23a044debe30deca835490c7a00409507672a9f9c4c998d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39bc756f9b0b10b57aaf57d366b2d21fcf601d3be5cff1f98a0b7af6610cf755"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 
-  depends_on "ffmpeg@7"
+  depends_on "ffmpeg"
   depends_on "glfw"
 
   uses_from_macos "ncurses"

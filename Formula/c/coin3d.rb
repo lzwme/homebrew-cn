@@ -4,8 +4,8 @@ class Coin3d < Formula
   license "BSD-3-Clause"
 
   stable do
-    url "https://ghfast.top/https://github.com/coin3d/coin/releases/download/v4.0.6/coin-4.0.6-src.tar.gz"
-    sha256 "e04a600809593feb2acbec4282803d1673926ddfa1d9fcd402f35ec26fc52e7e"
+    url "https://ghfast.top/https://github.com/coin3d/coin/releases/download/v4.0.7/coin-4.0.7-src.tar.gz"
+    sha256 "a01276052c31e84e4a069ee4452eab3b65a7d101a3fd7a09803be59125616270"
 
     resource "soqt" do
       url "https://ghfast.top/https://github.com/coin3d/soqt/releases/download/v1.6.4/soqt-1.6.4-src.tar.gz"
@@ -19,12 +19,12 @@ class Coin3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "40a953c5da778240ee206304efd942c4c6417e30520700ac37f54b17840d9559"
-    sha256 cellar: :any,                 arm64_sequoia: "f97cbf252a50387b2589db4f56bc474c45235095a017bcb1afd033e09c1f7c23"
-    sha256 cellar: :any,                 arm64_sonoma:  "a516f84b868ed0911b2d7ca6d3bbc29252501955a146147c8cad25f2914aced7"
-    sha256 cellar: :any,                 sonoma:        "758e7e7da2579c5462b5beff4370099d7d640d513c4ba2688b3a9d539b29270d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8857329b9b978a804adfa800124678ae573b981cd815f31a8017cf3d1c5fa6ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0f975512d3180a87c61ed8c5fb7b4a49c95065239a5379779261e98dd749f5d"
+    sha256 cellar: :any,                 arm64_tahoe:   "49443d09f0467d12e81c022f986b92c6c2ea98aed128e2c04d7343b4b089734e"
+    sha256 cellar: :any,                 arm64_sequoia: "df83d5cf0449dec342406f9d66d5413fac738b1f188fb662da43f037d46510d5"
+    sha256 cellar: :any,                 arm64_sonoma:  "a9f49771924fc09d2fea2471bfa26ce75eb575f1f6de875cff005cf787a50950"
+    sha256 cellar: :any,                 sonoma:        "bdd27ec1686977865494c754219a9d0c8e15fd3edea4d3e4097de330fb40b3bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "297309b6aafc080387697d01842df94757b58000c84b4ef00ea8a1ee44437cdf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ccd152688f979fb8d5f33f635d51ea71a887fabada4ae949bd9280590d77815b"
   end
 
   head do

@@ -3,18 +3,18 @@ class Poetry < Formula
 
   desc "Python package management tool"
   homepage "https://python-poetry.org/"
-  url "https://files.pythonhosted.org/packages/4a/fb/200d1d4ddff66242be16455137667ac0c0e3524613f1f546667d8241fdf6/poetry-2.3.0.tar.gz"
-  sha256 "56ef2a8188bb5157ef9df7e3d968cd27bacad34710818f1cd0306a46ac0b4d41"
+  url "https://files.pythonhosted.org/packages/f0/c1/1cafdad3dae01aa5693339809847d89cd1379d1dff0329da7d791a2db5c4/poetry-2.3.1.tar.gz"
+  sha256 "423cbccfe3533155ce9f49e929780a1386e564b2d97d2380664ea388cfe1191c"
   license "MIT"
   head "https://github.com/python-poetry/poetry.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "adf3cac92d1e648914ddc74507c9f719c82a2a18fc244f74b8536b46fb4e2b50"
-    sha256 cellar: :any,                 arm64_sequoia: "f1562779debdedd1350b3c44c6291edd53773820082c785d8d9d113a4972251b"
-    sha256 cellar: :any,                 arm64_sonoma:  "703d1e332bb2e09103955134bac885b7e1b8268c1ace321a2e1c8bb783838f4d"
-    sha256 cellar: :any,                 sonoma:        "ff276307b97b1f30997e8684d117207eb8b2d900671c7436544231427be5f30b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2055087ca2dd430c5171d73a879404fe0c731e68ba8f44052c3196074f1b3e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7bbc0449510f70141176bbf283fb14acaafc2b4042a07af626d07310dfeed25"
+    sha256 cellar: :any,                 arm64_tahoe:   "42538328f55616f3eb8c8f88ba81fd461d2b632a054e338258869b9242865278"
+    sha256 cellar: :any,                 arm64_sequoia: "5e2f138bc3cb01b51b12c195eedb838da7cfcf710712e91b869abe3f9d8a1261"
+    sha256 cellar: :any,                 arm64_sonoma:  "15313884a382aafbbf4737b48d86c318a3ebfa41e34d925b584b4d9fadde2e44"
+    sha256 cellar: :any,                 sonoma:        "ad8b152a1019a929c3f1d8df814af39a76d2889cb363f73a71e2ca209ccb5847"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3e9b110071741c26acab63d68a031a68dbac74ff70ff4e36af77aabb69be846"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfa65f14fa1e18c1636095a66e54542c312f8998fb4b9d2d60d9c3bb749392df"
   end
 
   depends_on "cmake" => :build # for rapidfuzz

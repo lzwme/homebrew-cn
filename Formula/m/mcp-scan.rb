@@ -3,28 +3,28 @@ class McpScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/invariantlabs-ai/mcp-scan"
-  url "https://files.pythonhosted.org/packages/e7/52/b1165560e3b06e0fd34e60cf16e81069da3c0c9683c57924948d69711bbd/mcp_scan-0.3.36.tar.gz"
-  sha256 "618550fc145f7982bd6fc7be8c2c1b04438bb652a91daf5f99bcd85f0173936d"
+  url "https://files.pythonhosted.org/packages/fe/45/8b5ab0d13fe214c855f627a2552b2165f1f0d40861642757fd9f713e476e/mcp_scan-0.3.37.tar.gz"
+  sha256 "d9164e47525acca0803b9485b01436ac1b7560d02a5114d6fcbbc0bc2b5434e2"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/invariantlabs-ai/mcp-scan.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "812d3a038e788376d3f71fd8824d7d9952026c9124d55b6ccc1f13f623f3bde5"
-    sha256 cellar: :any,                 arm64_sequoia: "ad8bde0a5b2fff5900ec808be8b1bc5a785a7dce3f43e7b72a0fd25e22a84573"
-    sha256 cellar: :any,                 arm64_sonoma:  "205b5dd0241928c6ec137e434b48caa2dfa88a23a3b3ed6e8944d442e9c3f390"
-    sha256 cellar: :any,                 sonoma:        "e4678cbcdd2c444bdacd353ab410cac1797c375be6517516468ed7de17b6e7a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "247fbe39891f7c3d5daa40ea13ae336e0063021d801ae877aa75e117fccd916f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "904458709e8fd3ea5b2b42026f8c36ca739371059943999e721aa1d47fb2722a"
+    sha256 cellar: :any,                 arm64_tahoe:   "5ec30bc5c99a731db95bfa1b7679d615b00b8b765c12985bf3d8793bd849fa8c"
+    sha256 cellar: :any,                 arm64_sequoia: "8a347fe2ccb78360061a8e4206809f5763de8ad3b6487d88654d34e4ab89edfa"
+    sha256 cellar: :any,                 arm64_sonoma:  "b365e9fb93bae92101b04d339a6fca3fbda61f60b967d9598636eb44f3a76acf"
+    sha256 cellar: :any,                 sonoma:        "769f9eabcb090f8f74cead24e80bc70bd50976cb0c970e31166daa423a45e4b3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0bc6f67722a5cd76eaafa6744ea88cf1a603df6f1b750cf846d136a8f0364017"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20a0d66aa668854198e91760167053554c4a714121450ffc0e561696d2f3c9ea"
   end
 
   depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
-  pypi_packages exclude_packages: %w[certifi pydantic rpds-py]
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
 
   resource "aiofiles" do
     url "https://files.pythonhosted.org/packages/41/c3/534eac40372d8ee36ef40df62ec129bee4fdb5ad9706e58a29be53b2c970/aiofiles-25.1.0.tar.gz"
@@ -127,8 +127,8 @@ class McpScan < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/3d/a1/b1f328da3b153683d2ec34f849b4b6eac2790fb240e3aef06ff2fab3df9d/mcp-1.16.0.tar.gz"
-    sha256 "39b8ca25460c578ee2cdad33feeea122694cfdf73eef58bee76c42f6ef0589df"
+    url "https://files.pythonhosted.org/packages/d5/2d/649d80a0ecf6a1f82632ca44bec21c0461a9d9fc8934d38cb5b319f2db5e/mcp-1.25.0.tar.gz"
+    sha256 "56310361ebf0364e2d438e5b45f7668cbb124e158bb358333cd06e49e83a6802"
   end
 
   resource "mdurl" do
@@ -166,6 +166,11 @@ class McpScan < Formula
     sha256 "7ccc98586cf87dfeadfa76de8df4c9cb0c3d21d1b559e28812dd9633748d6e25"
   end
 
+  resource "pyjwt" do
+    url "https://files.pythonhosted.org/packages/e7/46/bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726/pyjwt-2.10.1.tar.gz"
+    sha256 "3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"
+  end
+
   resource "python-dotenv" do
     url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
     sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
@@ -192,8 +197,8 @@ class McpScan < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/cc/a9/546676f25e573a4cf00fe8e119b78a37b6a8fe2dc95cda877b30889c9c45/regex-2025.11.3.tar.gz"
-    sha256 "1fedc720f9bb2494ce31a58a1631f9c82df6a09b49c19517ea5cc280b4541e01"
+    url "https://files.pythonhosted.org/packages/0b/86/07d5056945f9ec4590b518171c4254a5925832eb727b56d3c38a7476f316/regex-2026.1.15.tar.gz"
+    sha256 "164759aa25575cbc0651bef59a0b18353e54300d79ace8084c818ad8ac72b7d5"
   end
 
   resource "rich" do
@@ -207,8 +212,8 @@ class McpScan < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/da/34/f5df66cb383efdbf4f2db23cabb27f51b1dcb737efaf8a558f6f1d195134/sse_starlette-3.1.2.tar.gz"
-    sha256 "55eff034207a83a0eb86de9a68099bd0157838f0b8b999a1b742005c71e33618"
+    url "https://files.pythonhosted.org/packages/8b/8d/00d280c03ffd39aaee0e86ec81e2d3b9253036a0f93f51d10503adef0e65/sse_starlette-3.2.0.tar.gz"
+    sha256 "8127594edfb51abe44eac9c49e59b0b01f1039d0c7461c6fd91d4e03b70da422"
   end
 
   resource "starlette" do

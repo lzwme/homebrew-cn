@@ -3,8 +3,8 @@ class Hk < Formula
   homepage "https://hk.jdx.dev"
   # pull from git tag to get submodules
   url "https://github.com/jdx/hk.git",
-      tag:      "v1.29.0",
-      revision: "b397b72f3791a4edb8d6dff25fcbb4f00a7510db"
+      tag:      "v1.32.0",
+      revision: "22cdebf1c3d3ad1fa868ec4cd6f863982368bef0"
   license "MIT"
   head "https://github.com/jdx/hk.git", branch: "main"
 
@@ -14,14 +14,15 @@ class Hk < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dd8d3a3d49cc6e2e4b55d773178454ebdb6df815d995f5ee3257c156533b50e6"
-    sha256 cellar: :any,                 arm64_sequoia: "1bfd758baf0c5ed6d1c23196ccef35bcec459b8e6ee6e5f4196ac4c58e4d3328"
-    sha256 cellar: :any,                 arm64_sonoma:  "64acdfb131512278aee33873aabe1dec587f29efe1a450aa629af633575af60e"
-    sha256 cellar: :any,                 sonoma:        "7699fac780ede047f14518be89ce6ee25ad06cd0cd53a013a91fb103444079ff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1aa01dce24d72474fbff8a1387d27e280f5fed1b827169d22ecb483a580671c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "783478f5fe3b8ccd74cbaf8e8f67eeeb0b9a807070b6eed1fa911e1da5524eaf"
+    sha256 cellar: :any,                 arm64_tahoe:   "8f1539eefff4466f52ab468c5f4378e98cbad82f5e84960cb0ea0b39214dc4b7"
+    sha256 cellar: :any,                 arm64_sequoia: "7153e82e3b6561ffd52e7977f4f5ef24d8ea8a0735c4e8ecd2a949776a831e86"
+    sha256 cellar: :any,                 arm64_sonoma:  "a7a2b21a7bc4e8ce60445ae7d4543ca2909fea12e9d838da211f25c1ff00e45c"
+    sha256 cellar: :any,                 sonoma:        "d84f756e9183b6277d25b45fab08a08f6038ba1855f23323a02ebe073dd1be96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0184301fb7e3f8511699eb25ff15bd7276335ef146cfb3f5b6b632774c28a8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "230ccab19ead7fda742d074595e9dbe4a01fe1ee76dbc7a4e03e78e99dda1f3b"
   end
 
+  depends_on "mise" => :build
   depends_on "rust" => [:build, :test]
 
   depends_on "openssl@3"
@@ -39,6 +40,8 @@ class Hk < Formula
 
     generate_completions_from_executable(bin/"hk", "completion")
 
+    system "mise", "trust"
+    system "mise", "run", "pkl:gen"
     pkgshare.install "pkl"
   end
 
