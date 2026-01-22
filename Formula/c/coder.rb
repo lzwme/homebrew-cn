@@ -1,19 +1,10 @@
 class Coder < Formula
   desc "Tool for provisioning self-hosted development environments with Terraform"
   homepage "https://coder.com"
+  url "https://ghfast.top/https://github.com/coder/coder/archive/refs/tags/v2.28.7.tar.gz"
+  sha256 "d19147bc5c633515a858e7336a8f05b9fa5e2c96067cc3084dc948a32c89cbc0"
   license "AGPL-3.0-only"
   head "https://github.com/coder/coder.git", branch: "main"
-
-  stable do
-    url "https://ghfast.top/https://github.com/coder/coder/archive/refs/tags/v2.28.6.tar.gz"
-    sha256 "294e8f3d0b8bfa2ada25ddbc7cb5cdb479d0293459bbc2b60b28fb76795108b8"
-
-    # fix invalid pseudo-version issue for `coder/boundary`, upstream pr ref, https://github.com/coder/coder/pull/21290
-    patch do
-      url "https://github.com/coder/coder/commit/b690c3e90b42b1c6c81899a603789d309e64aafb.patch?full_index=1"
-      sha256 "09734d19299872eac2fa10bb45eca619a66455817e9ebf45f09a484f3218b864"
-    end
-  end
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -24,13 +15,12 @@ class Coder < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "562ec6299846281fcbda88715b88f4b7bc2a76383def442e11ee9a0918bf1dfc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d3722049ee34a915e4acd530ae9e0bec4cab95e466cb6f03f974f75fa754f74"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b391b8e2eae7670173322f64095f96961f47df434404de1802d97be641df3a5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7eb9fce97769e9cc1b0fe1e8a5aece73ea0726d8d98f740af28873926a5c0437"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb68e392d994450afc502fe5883b7e70bb7c50f20d6c2401698da80ea159964d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "113ace2a68fd34b94fa0e830209c58ecd0a9d3e5ff7b8658882ac67a4220f240"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4deef5236392e2ebfe59f4827966cc547e015612840d5bf0aa262cea38c1d014"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b3aa835b3658638a0409c862eb18827f6e1c8c25ab7216f2d100ee6bcd0994a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b7b37260d07de2c1fb06e20120062b11b8fbf3afdc9810b2d8fa6d75a80d274"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bccf54976f91a136aae6bf37a165f87f6139322425f8479f0a6e88d80f1e606f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f280d01eed661343a2326b66cfc57212d71ce886aed133426d3e91402b2c1227"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1d5bd7987cc2fe27b1dd9b90006531a4213f022db61896c036d56ae1c73e489"
   end
 
   depends_on "go" => :build

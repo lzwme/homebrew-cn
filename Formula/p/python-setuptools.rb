@@ -1,14 +1,12 @@
 class PythonSetuptools < Formula
   desc "Easily download, build, install, upgrade, and uninstall Python packages"
   homepage "https://setuptools.pypa.io/"
-  url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
-  sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
+  url "https://files.pythonhosted.org/packages/86/ff/f75651350db3cf2ef767371307eb163f3cc1ac03e16fdf3ac347607f7edb/setuptools-80.10.1.tar.gz"
+  sha256 "bf2e513eb8144c3298a3bd28ab1a5edb739131ec5c22e045ff93cd7f5319703a"
   license "MIT"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "3f1216774825c551075a7a28ca8c7412e56ddb635f495275e5c231801d3a5abd"
+    sha256 cellar: :any_skip_relocation, all: "4eb1cfad054aa8c4a7148bf8a09e940389d5b86575087d4416eab746041d941f"
   end
 
   depends_on "python@3.14" => [:build, :test]
@@ -46,7 +44,6 @@ class PythonSetuptools < Formula
       #{setuptools_site_packages}/_vendor/platformdirs/unix.py
     ] + setuptools_site_packages.glob("_vendor/platformdirs-*dist-info/METADATA")
     inreplace inreplace_files, "/usr/local", HOMEBREW_PREFIX
-    inreplace setuptools_site_packages/"_vendor/platformdirs/macos.py", "/opt/homebrew", HOMEBREW_PREFIX
   end
 
   test do

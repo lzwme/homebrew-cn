@@ -1,8 +1,8 @@
 class OpenjdkAT11 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.org/"
-  url "https://ghfast.top/https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.29-ga.tar.gz"
-  sha256 "258bc09a2b1ce6d5965a1538ffaa2e2d25670ac3b75a43e7a08d210257e99bfc"
+  url "https://ghfast.top/https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.30-ga.tar.gz"
+  sha256 "5357c80e529dc131cbd8eb1121fa1e54bae7aaa53c038391ea053281266c1718"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,12 +11,12 @@ class OpenjdkAT11 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b875ce8663a9289eccae0fa30d62bdcda5d3b631042815a2328cdf7b7ac9dd87"
-    sha256 cellar: :any,                 arm64_sequoia: "9384f064288561194d829c9ae8ddf9317779dbb03719147bd083947102a3eae7"
-    sha256 cellar: :any,                 arm64_sonoma:  "51e1988c65678c7aee681f8bd8e3a9b72990f95261a63462bea27b5e97c34165"
-    sha256 cellar: :any,                 sonoma:        "ee236dbfc3233de084214b44b53b914a335b654eec29091d090ee72831fe76c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d50a89130774edf8e0f479db89fd1c474ead639c66a5c31e5d0774861ea0853a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8598539e03ab4926b51f70220f899345166cce89b72f049da2960a60b80e7692"
+    sha256 cellar: :any,                 arm64_tahoe:   "e9aab4cfc0f038f4df2c56ee00b2e91b24a77b5701d8199fee2dade4a49f4f62"
+    sha256 cellar: :any,                 arm64_sequoia: "c385c29dc71f54e8497edc77f85dab140197986b97ca41a8d47891a28bbcddac"
+    sha256 cellar: :any,                 arm64_sonoma:  "c6942cedd965c52520aa647af2876f27f9302b43f4447d63334225c5c4097806"
+    sha256 cellar: :any,                 sonoma:        "dc0231e8703191255a11398b3749604c414cf2597524f7bc024282cde5cbe8cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "88427747e5a4ee4ad6261cfdbc5e03f14d96bf90c32b2cb4429ce392b759b5cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6dbbf6abb6070e722516dfecde3f2db828b11dd92fe0b9eb20569d2bc41e5cd"
   end
 
   keg_only :versioned_formula
@@ -52,8 +52,8 @@ class OpenjdkAT11 < Formula
   resource "boot-jdk" do
     on_macos do
       on_arm do
-        url "https://cdn.azul.com/zulu/bin/zulu11.68.17-ca-jdk11.0.21-macosx_aarch64.tar.gz"
-        sha256 "f7b7d10d42b75f9ac8e7311732d039faee2ce854b9ad462e0936e6c88d01a19f"
+        url "https://cdn.azul.com/zulu/bin/zulu11.84.17-ca-jdk11.0.29-macosx_aarch64.tar.gz"
+        sha256 "09ed1734c2d88fadcb75fdbec1ba5467d32e7fa2b10894541aa8e3d3ce78dc2d"
       end
       on_intel do
         url "https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_osx-x64_bin.tar.gz"
@@ -62,8 +62,8 @@ class OpenjdkAT11 < Formula
     end
     on_linux do
       on_arm do
-        url "https://cdn.azul.com/zulu/bin/zulu11.68.17-ca-jdk11.0.21-linux_aarch64.tar.gz"
-        sha256 "5638887df0e680c890b4c6f9543c9b61c96c90fb01f877d79ae57566466d3b3d"
+        url "https://cdn.azul.com/zulu/bin/zulu11.84.17-ca-jdk11.0.29-linux_aarch64.tar.gz"
+        sha256 "5a225a0fe0a92bc6c04c8c5aeb03c697c6fd114465829f23e494a2ad44fa1cc0"
       end
       on_intel do
         url "https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz"

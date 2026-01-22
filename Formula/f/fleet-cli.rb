@@ -1,8 +1,8 @@
 class FleetCli < Formula
   desc "Manage large fleets of Kubernetes clusters"
   homepage "https://github.com/rancher/fleet"
-  url "https://ghfast.top/https://github.com/rancher/fleet/archive/refs/tags/v0.14.1.tar.gz"
-  sha256 "63408c6c225d43fea36410defe3b7d56f17e5c84b857eaa2fae97fdaeb80d20d"
+  url "https://ghfast.top/https://github.com/rancher/fleet/archive/refs/tags/v0.14.2.tar.gz"
+  sha256 "cd2019c5db15f0b37c9f97113869c0b08368af4fecf8ad69a1862cbf6ea41368"
   license "Apache-2.0"
   head "https://github.com/rancher/fleet.git", branch: "main"
 
@@ -12,13 +12,12 @@ class FleetCli < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f2de638d5efa8d059b629fd47bfe67e7630ea189966b058be54f13200e77cb3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73da9bab780aff6763dd614906070318700a35fb8c1f63bfd79647c4f82c180c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad0b65c08fe426b69c61d4bf384a43269778f90f15c11a234d4162cd06898fd1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eb51ce36076a3430a4bddd8b153780cb25388c6e060de1a039e7899824764878"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9e28f6e88ad7e052e4c2ca872734b3ec6e73a1d02332d800dd567cff70cb3fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8203649b7ed0c07551d639f3e687bed8e82a6939c31c759e11b82a9642774ebe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34607fd1793e96234ed825e6b2341e0afbb9dd2fd93f2932e08eef73d514e200"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f61b43b88591e1cce74645247396d4b9d809cb878942fd2c89dfeab72d8ecc99"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f971779a94b94d7e43f03a7b43d23a952b7558d9663552ae07401b507ee9749"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5b8b1aa3bc3a739580772e922b89fa18e5ddab2d2bee4f877cdda9e883582e98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c97cfe45ed92053ee10476933831a1fab53509f354c6ac0944cfa6f9a9007875"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74783dc1b1a980be2c00bd3c21c4543cada6185bb576e05f0f6693e1279277ca"
   end
 
   depends_on "go" => :build

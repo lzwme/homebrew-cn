@@ -2,7 +2,7 @@ class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   stable do
     url "https://ghfast.top/https://github.com/opencv/opencv/archive/refs/tags/4.13.0.tar.gz"
@@ -24,12 +24,12 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5b9b8a1cb45dcbe391c586f959ac2c2707ce735d96ef35519fb4552ce0f7db0b"
-    sha256 arm64_sequoia: "2df1cfc612113bb3662159b996791f61fd59308344b506eb31f91f5d61adec26"
-    sha256 arm64_sonoma:  "ba3c6c97d56af29994d8f0d8626b2cf02714e678ffa4c08df91e41d7802c59f8"
-    sha256 sonoma:        "3df4c1392b6801071b46a240e29d85718b34e35fe7d8d135c14a686afe23b94a"
-    sha256 arm64_linux:   "5d53cb005807712c467ab28e3450ed9f896a1131ee74b57d131f8daa400b88e7"
-    sha256 x86_64_linux:  "64c58fea477dc0d75e695998a65aa93f26b9476f4e049fe7771edf2a28bc613b"
+    sha256 arm64_tahoe:   "7509e5aab7a68f202b6ea35b6d5ec06b36192d6008fc1820dc610ca68d069381"
+    sha256 arm64_sequoia: "3288d1924eb14507d69289c3fe3418f3bb8ae320f848f85f809bff44a44a27bd"
+    sha256 arm64_sonoma:  "fe502f7d3171c7e81a38811317b9a4bbd407aa560b2d9b4c308b9522ef359eef"
+    sha256 sonoma:        "eae7edc0cb7d77c144d0b13e927c396205c8709a514ef9eea4fa0feff01bc30b"
+    sha256 arm64_linux:   "2e2586e3977315aca77e69d171b005e550158578e332bb832d75eb583488711b"
+    sha256 x86_64_linux:  "358ede10a74e16651e00de9fc10dbe6e75393f60be7d9280ebe488031f6d2278"
   end
 
   head do

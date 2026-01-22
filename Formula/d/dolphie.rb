@@ -3,18 +3,17 @@ class Dolphie < Formula
 
   desc "Feature-rich top tool for monitoring MySQL"
   homepage "https://github.com/charles-001/dolphie"
-  url "https://files.pythonhosted.org/packages/16/1e/590744803ab53aa6a416db328764c2fe6e9615ad41f1a391bea1b4366fc4/dolphie-6.11.2.tar.gz"
-  sha256 "af203edb3efbecb0893209845d625f622ecd3f091ad2f57e0aaaadb4c00d3559"
+  url "https://files.pythonhosted.org/packages/fb/39/a44bd83ed3d5fc561415fd05d2b5d07f35f766e6b6cc40201f18c36132cf/dolphie-6.11.4.tar.gz"
+  sha256 "9385534c2a5fe5b65ed5cb8b153abd751c366d04d31c728b580b7a4374b2d110"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1e3bebd7bbac9ab7e421c7bed1b14cd5bf1091febe5ca0d91b6bea775ca3cd95"
-    sha256 cellar: :any,                 arm64_sequoia: "3a94b55985d0b958197e8c45452a856a9f30990478487f2735c7850ea471e542"
-    sha256 cellar: :any,                 arm64_sonoma:  "c083c3a10c1c0f82d19bcfb071ad623d86fbc52000398daf6d97c97e9bfe29d0"
-    sha256 cellar: :any,                 sonoma:        "eb73b2253f9254ed20c062c7fcddc1451eaad4b8476c8630a82d05f90c1dc4f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "070acfdd476a597589dd53619be4703b14850277a0d6e3ae37fbb3b4e2fffdd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65d17eb66c3814b73fb838c9139e1bbc986525aaf2b43b90372800661b81256a"
+    sha256 cellar: :any,                 arm64_tahoe:   "73978ef13c70c5071e093208e4ea69c9391b3c28a8cf40afe650fe114ddc336a"
+    sha256 cellar: :any,                 arm64_sequoia: "81c97577f43f4311d05c52834a0e176ae34b2699c99c6859e50802c9c1d673fd"
+    sha256 cellar: :any,                 arm64_sonoma:  "d2b5432b43a222b325bbfcbea5f84d8a1736c521fea55f29df8f2a0c833047f0"
+    sha256 cellar: :any,                 sonoma:        "9f5c7e29fe3a4691807485655182f6a8b194f60edf6e3f25dc3bf2a11eea15b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d69a0874cf52561bd1ef91efc2765c4afd2c02e2120c260183bd331a805f8689"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68c3f39493ba521d2ae07a5020a7421d5b5e2616d0d122e9fa3ef6677602c153"
   end
 
   depends_on "rust" => :build # for orjson

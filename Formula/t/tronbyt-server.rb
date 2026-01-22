@@ -1,18 +1,18 @@
 class TronbytServer < Formula
   desc "Manage your apps on your Tronbyt (flashed Tidbyt) completely locally"
   homepage "https://github.com/tronbyt/server"
-  url "https://ghfast.top/https://github.com/tronbyt/server/archive/refs/tags/v2.1.0.tar.gz"
-  sha256 "27dc4ae2c977bf9e48516853bb0084250930eb8a99cb862e5d67c660321490f8"
+  url "https://ghfast.top/https://github.com/tronbyt/server/archive/refs/tags/v2.1.1.tar.gz"
+  sha256 "688809fdac4691a3a4a0412726600985ba087c9daeefabaa3f74a910aeb0fc3d"
   license "Apache-2.0"
   head "https://github.com/tronbyt/server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4f23405bbe0b32cf872c58a0af2203c3f8a658ecfc11748b3158dc1f76735f73"
-    sha256 cellar: :any,                 arm64_sequoia: "c0c0b701195576636b5fcfa09b2b53dfd7cf7a2937b7c6e5e5d77ee66dc00e6a"
-    sha256 cellar: :any,                 arm64_sonoma:  "2d998256f0067db6864d5dcab164cbe3aa6264d29ba8862d3f6ed6441add81c5"
-    sha256 cellar: :any,                 sonoma:        "07e2d438a680016d30f73a7af6f1f04c31c04b05f2fb93d0c0b7b2b56cc58a16"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2085bb9ab2960019dd0a1cb0687b2ea1863b959154c0bc057c44fdce5b52f401"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a95963aab6008b4c7f056ec2a8492c1a59365e38d951743f93fb33eb97a8d1c9"
+    sha256 cellar: :any,                 arm64_tahoe:   "4396ced4c747b73cfc48571484ddce6dd4165e83ddb410ae8da1ca3de5ff3b87"
+    sha256 cellar: :any,                 arm64_sequoia: "c4b5f49ac4925df7990e96fc87ffc35029264cb21ce756f72507e893c3ef4dc5"
+    sha256 cellar: :any,                 arm64_sonoma:  "4e168227724429c76973786a0309c4828fddfe71f0af24bc99d5d5bb908ea42d"
+    sha256 cellar: :any,                 sonoma:        "e6ae27b1290d8417b108248ff6a2d0ccb4829e24ebf521ac4166786ffb3f0907"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bca4c5a14be8de31d3a80ceef17587621cd196dde84fc2087e646c268aa5727"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d34d82e0202027838297db69327a86e19fb19c3e6dd9d5ba7ae5f592b5f5f44b"
   end
 
   depends_on "go" => :build

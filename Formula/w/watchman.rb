@@ -6,15 +6,16 @@ class Watchman < Formula
   url "https://ghfast.top/https://github.com/facebook/watchman/archive/refs/tags/v2026.01.12.00.tar.gz"
   sha256 "5b6be267c159356a77511545b0608b0dcbd1dfa4c6277b0a5385fc221e85392a"
   license "MIT"
+  revision 1
   head "https://github.com/facebook/watchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a4f981517f2b29ec3677c9ddb47112db5c3a874936fab1ebf869c6c461ad1216"
-    sha256 cellar: :any,                 arm64_sequoia: "2d623018f178f89697c5b458d30b44d4db4abc1f822d6ded5eecb378a425e2ee"
-    sha256 cellar: :any,                 arm64_sonoma:  "2eff728b93c649cef408b12e9cd446d51b6d8a8bcd837381644fa7c6a7b7ea4b"
-    sha256 cellar: :any,                 sonoma:        "8899735b314440e8cb0e6fbcf20bb648568e81023146beea11a0bdf30c7769e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1221b89fad95e3ce0bb341a58c6bcafa1af27c76ae43390bbb01910cd014223"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9519c02179114c91005296c14a3f2482139ee4ed52b1951342c469cbd2981f6"
+    sha256 cellar: :any,                 arm64_tahoe:   "e8736dd3b9092eb68a6ef2aa774064f6583ca17528617477f106f3e8020f8554"
+    sha256 cellar: :any,                 arm64_sequoia: "7059f5d9723128bfee6d0192d222f25591bbc7ce6b05c0b8fe7f3d7e5f75cf1b"
+    sha256 cellar: :any,                 arm64_sonoma:  "5c2602095c42b8c91d06202f9183c603b4590161a4cca8620c393a4a998133ad"
+    sha256 cellar: :any,                 sonoma:        "10e9e856ae379b3a8f3c647b7ae6940cac6318b6d6e83ea6cd8489da075c9e8a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "19f6f44cdb927b22fd84628c69291de2ec1d68880a7f170bd19ff22baf9efaf2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac52e0bcde511e8d9667a9dc3078694b12be035e997458c0e3b74cc8ec751285"
   end
 
   depends_on "cmake" => :build
@@ -42,6 +43,9 @@ class Watchman < Formula
   end
 
   def install
+    # Workaround to build with glog >= 0.7 until fixed upstream
+    inreplace "CMakeLists.txt", "find_package(Glog REQUIRED)", "find_package(glog CONFIG REQUIRED)"
+
     # NOTE: Setting `BUILD_SHARED_LIBS=ON` will generate DSOs for Eden libraries.
     #       These libraries are not part of any install targets and have the wrong
     #       RPATHs configured, so will need to be installed and relocated manually

@@ -1,18 +1,18 @@
 class Naabu < Formula
   desc "Fast port scanner"
   homepage "https://docs.projectdiscovery.io/tools/naabu/overview"
-  url "https://ghfast.top/https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.3.7.tar.gz"
-  sha256 "a6dee678235ee42bb874ef42d9f0c873062c85a35829ecfc9f204c0c654a3b44"
+  url "https://ghfast.top/https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.4.0.tar.gz"
+  sha256 "01e9a154182bf76f50b4f1058f5812e0e9541fc7be9a62b45f14938345e32109"
   license "MIT"
   head "https://github.com/projectdiscovery/naabu.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4cd29c1aff268f682da3ae652fff806ccaa433c1740f4f4f949bff404c6c6c5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d59fb207f3d532fe02fedabe790f01d3d46b61bdabcebd21c53a93d7e13ec8ac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f767ad436f3345273795a103b9647fe54d3b4fe79e276c7ff68f17aeeb7c48e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "21ab98b9bb7c747b1d7db756354db7f3a2468509a5c78ed91b3bb366f82ff6e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "038a957b3ea8af0e777f7c31afb329bacff07be8a7543abf4aae12375aeab0f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3909df2136b4905f915935c59a5d9904742f079a8b3c810161a1095ec998af4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ead8a0cda239faf84417c8a8284e4891381afc5d3ae5db47ff4f054f086eb7f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31ccd94915755659347bd856b778912571a43ec3d589c7e865766e185e3326d0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67a37de25452869cf3d20aad7de9199180dcb055343e0177c698513d6973904f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "60e421f0e68a5c0c6ae4d96f3db544bbd89d582080fb28d86057a49a7ed1cb42"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc7d864b5a806fc962231e3411031711cf524595d073709d1182e912177b0a2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21085cf0ea66e302d1765d6a18aa7fd90f6de466b0e6c438101a5a898739ebe1"
   end
 
   depends_on "go" => :build

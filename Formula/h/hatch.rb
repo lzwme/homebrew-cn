@@ -3,18 +3,17 @@ class Hatch < Formula
 
   desc "Modern, extensible Python project management"
   homepage "https://hatch.pypa.io/latest/"
-  url "https://files.pythonhosted.org/packages/b9/c1/8598996a6f264d430c530799dc65fb13942fb29092e35505039a5f2fb5dc/hatch-1.16.2.tar.gz"
-  sha256 "f288938da85b4b90e47d94788e19e9976dcd6fd53b48343ea251a2a37256a980"
+  url "https://files.pythonhosted.org/packages/41/c1/976b807478878d31d467dd17b9fe642962f292e16ed13c34b593c0453fde/hatch-1.16.3.tar.gz"
+  sha256 "2a50ecc912adfc8122cd2ccdcc15254cdef829e5d158be9014180cd7f0fb7ea9"
   license "MIT"
-  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18ec0a030d241e70e4f7c1fef34766718dfa531d98ce1bf116dac689b4dfe4dd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18ec0a030d241e70e4f7c1fef34766718dfa531d98ce1bf116dac689b4dfe4dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18ec0a030d241e70e4f7c1fef34766718dfa531d98ce1bf116dac689b4dfe4dd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "53ed728d47cb4e112392c30dbb2662d5ce457c0663593eb952ceb2b1f8682b48"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d62953697641420d3d4dc59be6a2055b9ed67c2dd5534a31e84728f3f95850a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d62953697641420d3d4dc59be6a2055b9ed67c2dd5534a31e84728f3f95850a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b4338d8c3171b40f518c702323caacf1c45ad6884d9338bfd521691db56640b3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4338d8c3171b40f518c702323caacf1c45ad6884d9338bfd521691db56640b3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b4338d8c3171b40f518c702323caacf1c45ad6884d9338bfd521691db56640b3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f0e397bb4ad0f6f410acadec5856919e6fd9b7a747b9b40740057fe8dc4a8173"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fed75010e1d5d8e29ffe3d7da57c00d370642e57c41141a4aea773baf644a79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fed75010e1d5d8e29ffe3d7da57c00d370642e57c41141a4aea773baf644a79"
   end
 
   depends_on "certifi" => :no_linkage
@@ -186,8 +185,8 @@ class Hatch < Formula
   end
 
   resource "trove-classifiers" do
-    url "https://files.pythonhosted.org/packages/4c/3b/600fa0e35b353a66d1134a233d67feee4d934b7878aef10a21f39b17c6ab/trove_classifiers-2026.1.12.15.tar.gz"
-    sha256 "832a7e89ccc43b64b89f8f9d9150c069ebcd17d2dc68279bc00bb53f2a9ae112"
+    url "https://files.pythonhosted.org/packages/d8/43/7935f8ea93fcb6680bc10a6fdbf534075c198eeead59150dd5ed68449642/trove_classifiers-2026.1.14.14.tar.gz"
+    sha256 "00492545a1402b09d4858605ba190ea33243d361e2b01c9c296ce06b5c3325f3"
   end
 
   resource "userpath" do

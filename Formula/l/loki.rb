@@ -1,8 +1,8 @@
 class Loki < Formula
   desc "Horizontally-scalable, highly-available log aggregation system"
   homepage "https://grafana.com/loki"
-  url "https://ghfast.top/https://github.com/grafana/loki/archive/refs/tags/v3.6.3.tar.gz"
-  sha256 "1a47ed5aca892c9d0c55bfbf059b0efd8b75ae2c0140407f4d48f29bbc15d62e"
+  url "https://ghfast.top/https://github.com/grafana/loki/archive/refs/tags/v3.6.4.tar.gz"
+  sha256 "99da52c3d14c7bd7e528d9e84dbf8e7261a0ef216c8af4cfaf59d173707fb283"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/loki.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Loki < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8c4f19ea996608af2505fe674040d8f3bb4f49a8501768ce42ec850c7ce0a678"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a6ece1d5e77815cf4e984f3f799aa1c54d19a73cf3b85bcafc93d74488fda14"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8171e6b957019d8a8df4a61bc5a3f72e30525bfc77b8c5f141bc37d91f4b8727"
-    sha256 cellar: :any_skip_relocation, sonoma:        "888b87d1d2c6f6c76c3c89235bbba531fc2b5495790ce59be051f126f493cc6d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "256afb883fbf38fb962ae5620638ce8bf5cd993f6d97dd1569d97f95e70ee4bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "969ef2aeac90126e91572983d6006e9ea259a692fd2a3bc764fbf4539b84bbed"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2cf71fe457fbb6c7e94a234f8020c5c5cc00712592d9fab9866f1693f234ba1e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe52ba64c877e89c68aad133d11e58d917ebfe4abb643bfeecfd57a6c8ea3f1e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f067b4ca7428d777846329740e7b53d6382f6b08986b47b480d06b4c9b8e44a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f8a04c4f5713eb75c41e1be5c7f59614b5cbc829ba3849d784fc52cf93edf116"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e15c25cfe4f443ce24ca7e1af4e2e63f1a4c10ee397e9ceb57ceb44999dc3b54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22ec594a3613caeec32e3ff374d01fb31f5e00f0c1714b88e272a54166796b30"
   end
 
   depends_on "go" => :build

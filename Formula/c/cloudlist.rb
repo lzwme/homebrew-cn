@@ -1,20 +1,18 @@
 class Cloudlist < Formula
   desc "Tool for listing assets from multiple cloud providers"
   homepage "https://github.com/projectdiscovery/cloudlist"
-  url "https://ghfast.top/https://github.com/projectdiscovery/cloudlist/archive/refs/tags/v1.2.2.tar.gz"
-  sha256 "53efb4bff46b533fab0bbb0003c3fddb5874e64cde8beda977856af3e8fdb064"
+  url "https://ghfast.top/https://github.com/projectdiscovery/cloudlist/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "4e44a8ae6f0b87731e8f411ef92521486b03535c3d83eb103c948a82382fdca8"
   license "MIT"
   head "https://github.com/projectdiscovery/cloudlist.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05ee74dbd140cf4d1fe0390ee4e72107f3d0c2676396cc2960595bb1ab222a49"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3eeeff6d7b3312e6bd66a20976b56b8d6ce218432349e0b5c033bef25917bb9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3a031f1ad78d063784809b8c086edfb9b92047ddae1c53ae6948debfc7e3e2a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7a14d6684860a6ef496dc5b65862ef0f29060d49292d96fd5a447ade69f862f0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "432374a4bd4b58a1f7e8fc2b636236cc51629ed2dcd78489733844b5a4f3e632"
-    sha256 cellar: :any_skip_relocation, ventura:       "bc9838edd6c20e8d284902868aa1e88d05199fed36c5726723d263fc21ef5eba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bedbbb60c02445c4637a38c8758de70b2d9f5e3ac19f4f3c181e361536b4f8f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3114ba22694e7c5f3b4cd24c016b5556fb2a570c461efe3cad27f27c34a3f63"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02cf10614473e0d90d5b6b8fcf75b83fded7f77827d57ff60dcb40eb08fb2127"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "885322b2c40445653eba730cc10fd391f27bdc71bdbfcc8f26ee01c25629a288"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49a479f11c8f263ff2b6948327319ced818a67376fc4996476aa66889cee7dbd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4cac162800822bd1de827dcc18b43944569de3a5efa28acb836c5e64e58b4876"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ad675df55e88b1e5e8407211f2ee43ed292b0eaaa228ff348c7fdc6f9daba7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fad4c35ef47c0687ef22c5f761e09fe5966d58c8e0fd98fa694771f51d8357a"
   end
 
   depends_on "go" => :build

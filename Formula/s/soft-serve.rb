@@ -1,18 +1,18 @@
 class SoftServe < Formula
   desc "Mighty, self-hostable Git server for the command-line"
   homepage "https://github.com/charmbracelet/soft-serve"
-  url "https://ghfast.top/https://github.com/charmbracelet/soft-serve/archive/refs/tags/v0.11.2.tar.gz"
-  sha256 "c596fbf7a79249d8e97da532ce3e8d7ce06bc2164f880cb1f920410705c49eef"
+  url "https://ghfast.top/https://github.com/charmbracelet/soft-serve/releases/download/v0.11.3/soft-serve-0.11.3.tar.gz"
+  sha256 "63e33c159cd633b90e06baf2a4d35d7fb11566c7ca253b6742e4295da5722901"
   license "MIT"
   head "https://github.com/charmbracelet/soft-serve.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2c162cc14c9f37264bcd2f418b3733371f3fb2558b408e2c674a71eefe07f24f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42bc0686895b817550b23cab3a1576e65813d0e9fce44deb373f5dbe24d46744"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a9814f583370777910e42d4be456bd7cfb93c45126c8c341964eade5d9bf83d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "04f7e1dea19446039d393967962187d85bbbcafaa222c11d9171243d519bd546"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1cf4b654c6fe9e1b96d730f579cda85129993aa810ac6b791e5583c1b0933bee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "770b55932c1ae7f6e57935f203b57c47884de13227c423ee51c491cbb1a71a8b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b864993474e39f6298fa839e5fb3e64d5803bba0e7b27cc82da51c668a90246b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e57338847eaa1f4c5d19d9bbdb27e1262887e81e35170bd2dacc7a4f0eb5d87"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8fb24b50ff3c4f71065d66f36e0b3cff60964b21bac9a815b77dae41e04da72b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eb1a94a09ed3887e6e4c972ed53c3e497f37ee5f2cb74aee4da79991c13e9f02"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c947845ed920bccf2a75942cf9fd7c9699a1bd4326f9af8523e86694cbc7a38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "305e3a1c776f91c8eb91efcaa8bc08d91b2f1a1943b3338ccd1a9cf0b0277a75"
   end
 
   depends_on "go" => :build

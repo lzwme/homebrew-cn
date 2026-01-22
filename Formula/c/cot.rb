@@ -1,19 +1,17 @@
 class Cot < Formula
   desc "Rust web framework for lazy developers"
   homepage "https://cot.rs"
-  url "https://ghfast.top/https://github.com/cot-rs/cot/archive/refs/tags/cot-v0.4.0.tar.gz"
-  sha256 "590ada9692fb28426f94280c1642bf2aa6c36fdc2c940ac71bc33011c4969b8d"
+  url "https://ghfast.top/https://github.com/cot-rs/cot/archive/refs/tags/cot-v0.5.0.tar.gz"
+  sha256 "cc0ecb18c0936faa6b45132b1f26165c78e5dc026385be5ffbf6583a37d410b3"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8ffcfb65d79e650fad48210f0e4047194bf48f7ac0e39fcd01f2bbb172de4b4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0918e6397771642e1d6b4c341e70172239d0e47f66bab6b4492c3ee5bcd2a339"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7becb7d2b615af5fdfbd8315ad84c7b1f5e3d0f6b1400d0b3e0e85a218d59fc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4a15ca90aa6c119e9d9cffb663514908d9d1ae708af9879379a34fad5d47a198"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a170f45a7999ec42ee9986877a0d75066b4d16f047ef2736fb2a4c48d14320e3"
-    sha256 cellar: :any_skip_relocation, ventura:       "3179696b655c6e8e09d70d497e9efe8672ada1b9e243f55845904e7d0de9fe07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c716a0e45b1a9eb0c66a3289bd62a724184e60685608df828620c69e70b512a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c61947e23edbe24f383949d80128c5e537c2641bf07a1409aec859bfc316091"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f49168ef7185f9913abec4529a3989942be8228f682d077d12ba56b2ae7cec1f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "143d6ead2384a0304331c46aae4969e9b25f2d5427bfb10c2b00f39129b0685d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48c8ad7a25c636a2faa1b9942be723f81b6a39e84731b01e803a71b3652cce5d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b62e01680e2916a7a93190fa70fb4bff1daa1a47dfd79af54bfe17fcc9f6c1e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6908f2349a3ed8cfa0eb06fd2eb08d72441acd76fa6a05f7c0bd39beb1e469ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3eccbd8666727dbb6f0cf095d53e3369f907fd616b0a78b8139be4b8e2052033"
   end
 
   depends_on "rust" => :build

@@ -1,8 +1,8 @@
 class MysqlConnectorCxx < Formula
   desc "MySQL database connector for C++ applications"
   homepage "https://github.com/mysql/mysql-connector-cpp"
-  url "https://cdn.mysql.com/Downloads/Connector-C++/mysql-connector-c++-9.5.0-src.tar.gz"
-  sha256 "386006a7c2deeecfd4d198315a474a1981784f8310b40d5b442ed8dbf0412a11"
+  url "https://cdn.mysql.com/Downloads/Connector-C++/mysql-connector-c++-9.6.0-src.tar.gz"
+  sha256 "b25a9a139855da9713c863b5a64c7f10c52eded76b2c04a2fb2deb9aab456b3d"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
@@ -11,12 +11,12 @@ class MysqlConnectorCxx < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3a78bf07f08472b0892d3b03114998331eb07e392068a6ac9da322e85bb2e40d"
-    sha256 cellar: :any,                 arm64_sequoia: "4e341ecfaaf3c2961a109671e9c722ff04d71a5378190ec56e9592cbd75dfbe6"
-    sha256 cellar: :any,                 arm64_sonoma:  "a892e2a9077670e75699f36d6b3e9733139addadd58576eb215865b4eed0fb4e"
-    sha256 cellar: :any,                 sonoma:        "2cfc7fc6f303d0a3a7faf6f1dcb940f2f29493735d8ad6097ba23e60d8a94a53"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1192115c0ce239f289f0bbe1949fc6c8154537840afecf37292ea74534a5dde"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f14ca0f1b8de286e833098df920db40f47a5fb9cda0c6e866d9f8500b38fc02b"
+    sha256 cellar: :any,                 arm64_tahoe:   "85b33ab13724c520b2e241bf9aa0e56f879a3193c9f6c79d713db38cabd6c739"
+    sha256 cellar: :any,                 arm64_sequoia: "3bf252190f11a80e20ef18227f1e4543d1aee5ddf0eebb04aab0b3f972651b0f"
+    sha256 cellar: :any,                 arm64_sonoma:  "b265e7438cae35b9db981b4b1118393d53d193767d8cbc0a1956e8526d269748"
+    sha256 cellar: :any,                 sonoma:        "9cacb7778940c1334fde91c6fd687b33079124a87ec67c38cce336e82717e5bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f00730d63bad1ca79b7d25b0ff268555e0c6377bea52eefb1dafc44dd17537f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f7596409d95470a6887c2fb465d79fa04a3b429ae5436ac04129c00f3065dd7"
   end
 
   depends_on "cmake" => :build

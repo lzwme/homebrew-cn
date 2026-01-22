@@ -3,18 +3,18 @@ class Parsedmarc < Formula
 
   desc "DMARC report analyzer and visualizer"
   homepage "https://domainaware.github.io/parsedmarc/"
-  url "https://files.pythonhosted.org/packages/a8/23/9d999d3f650204c37970fba92ac278adeabb10044665595d81b5e21fece5/parsedmarc-9.0.10.tar.gz"
-  sha256 "9f7fb2bdb73747ea2e94058ff60f2739b0ce43fd7cfdd6833e8b5101f219afb9"
+  url "https://files.pythonhosted.org/packages/dc/f5/df65edc7ff83812c48c2c37447a813cab1b8a4942ec3fa26ef438503b093/parsedmarc-9.0.11.tar.gz"
+  sha256 "f4744f2e2409e0e0e441154ce4625b5a18474c1fd7893e28104b6617090dd724"
   license "Apache-2.0"
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "76ce8736f3d7f164cd8d489d40f06701f4ede466478d5e3096c73b28b8d0e644"
-    sha256 cellar: :any,                 arm64_sequoia: "d53c28ed534c4eec81b0078d1b6d372533edd92a4eca0ddcab323490710c001c"
-    sha256 cellar: :any,                 arm64_sonoma:  "89cc02c17d8c14d158579955377c41f005d454cf71c142845a08f19a495fdb25"
-    sha256 cellar: :any,                 sonoma:        "b2e8f315ac9f4ab5eb42afcbb6e76f2a256fb798a086cd9dd71b6587d5af00bc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bec7b9799ebcef38d2b69689f3e4fd4462fa7908a093188c3862482eab26f530"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55fd3b67bf2f2549969064e1d14908ac834bdd1701ad3a5f2918e9921abd5404"
+    sha256 cellar: :any,                 arm64_tahoe:   "fb10a5a77fa2c787598c16ff8b5aa214e333658af674a4af665cdab35724fd6a"
+    sha256 cellar: :any,                 arm64_sequoia: "65eb9d50c54f72824eea9ab33f09c1b840872980758a557e78bd8dd6c132920b"
+    sha256 cellar: :any,                 arm64_sonoma:  "2ed1c843b2b0c627f29cd0e9a419a73b8da730ddb66f96e151a6449a818de49d"
+    sha256 cellar: :any,                 sonoma:        "4377cab072f43d3b27e7813bb36a54c1a7a42b088e77bb54d44ea4716345b098"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b90866cdc3ea8bd85be8b1309374b14efd8fc5c39afc81f31eec10ceb10787c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bda6de080e5556fc205af7da517e67060594402735686ad27a99cf2ac5acbd3"
   end
 
   depends_on "rust" => :build
@@ -64,13 +64,13 @@ class Parsedmarc < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/42/79/2dac8b7cb075cfa43908ee9af3f8ee06880d84b86013854c5cca8945afac/boto3-1.42.30.tar.gz"
-    sha256 "ba9cd2f7819637d15bfbeb63af4c567fcc8a7dcd7b93dd12734ec58601169538"
+    url "https://files.pythonhosted.org/packages/a4/da/d81abc51bd35c2d2154f1caa0040843ada7df1689ea17d51c116c793b8f0/boto3-1.42.31.tar.gz"
+    sha256 "b2038fc5dbcd6746a16ada8d55fe73659b8cf95c7b6aeb63fe782e831485edaa"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/44/38/23862628a0eb044c8b8b3d7a9ad1920b3bfd6bce6d746d5a871e8382c7e4/botocore-1.42.30.tar.gz"
-    sha256 "9bf1662b8273d5cc3828a49f71ca85abf4e021011c1f0a71f41a2ea5769a5116"
+    url "https://files.pythonhosted.org/packages/ab/78/4fd91ed2f9d4b500680f33c714b7716fc37690083a8c8d3e94177cbc811e/botocore-1.42.31.tar.gz"
+    sha256 "62f2c31e229df625612dd4d7c72618948e4064436d71a647102f36fcddfa0f4d"
   end
 
   resource "charset-normalizer" do
@@ -254,8 +254,8 @@ class Parsedmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/db/a0/df4d9eb48b7e6359bd66e2ba28cdc191bf602f8db0fd9f54e0aa622c142d/publicsuffixlist-1.0.2.20260117.tar.gz"
-    sha256 "24e11230db4fe4d7e68bb43203f80bf527f614c0625a7dc2749d7b0444d858e5"
+    url "https://files.pythonhosted.org/packages/e6/ca/e3bb9ce1b5b2086b73eff26d060041ea2db2b1439d45cafebfd5dc869d0e/publicsuffixlist-1.0.2.20260121.tar.gz"
+    sha256 "dc28d4d26df7d065ab424b017bb77d5bc3d97c0232cd9f343250cd7b08160bbf"
   end
 
   resource "pyasn1" do
@@ -279,8 +279,8 @@ class Parsedmarc < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/33/c1/1d9de9aeaa1b89b0186e5fe23294ff6517fce1bc69149185577cd31016b2/pyparsing-3.3.1.tar.gz"
-    sha256 "47fad0f17ac1e2cad3de3b458570fbc9b03560aa029ed5e16ee5554da9a2251c"
+    url "https://files.pythonhosted.org/packages/f3/91/9c6ee907786a473bf81c5f53cf703ba0957b23ab84c264080fb5a450416f/pyparsing-3.3.2.tar.gz"
+    sha256 "c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc"
   end
 
   resource "python-dateutil" do

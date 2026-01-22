@@ -1,4 +1,4 @@
-class Ipfs < Formula
+class Kubo < Formula
   desc "Peer-to-peer hypermedia protocol"
   homepage "https://docs.ipfs.tech/how-to/command-line-quick-start/"
   url "https://ghfast.top/https://github.com/ipfs/kubo/archive/refs/tags/v0.39.0.tar.gz"
@@ -15,13 +15,12 @@ class Ipfs < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3f9bdd0ed71fd796e096e1244c8c4052b295a57b52e5f384c3b6503c69be242"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "469f768c0473c1b69a10e2642e3020d1f21624589d30874e7bef153a2f74deea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "566990448ff046022f76e62605c011ab0e4f6a8dce87d2d9c16a5ba242c6cbfb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2cb3e80d0945d2e946f42f2e212403056262a2042221afd61b36fb729be1a0fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "61225960961f9b954b1d73ff8cf5c5054b2d94b2267863f7f81aada5bd8b2a71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "403fc295aba889aa20f6234998d7949be052d6f1b12efc0d3d5450fb8ff982ad"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6fafb4b11cd40c9552ff50782000b4cd3582b742995d27da775c44e8a9ebee94"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e55dad3da85e1983f50f3039dc46a88e8ddb449a7850593e2aff3009f2137593"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fdef8ec73d0ce0f5a690a229930c8d9648c3598402aed43dbdb6ff60745ceafc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9ea3fe7f705fcf2425ec60f485b7df938c3f2a5f6c3096d11150f041e2ec1b8f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "05f0196e054936ae401b64ec8541c615c4319aa608e7b4684b9d672b6c8ab92a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9f9e599789c54d8b74054a8701d927601d76f7440e49503035c0092e752585b"
   end
 
   depends_on "go" => :build
@@ -34,7 +33,7 @@ class Ipfs < Formula
 
   def install
     ldflags = "-s -w -X github.com/ipfs/kubo.CurrentCommit=#{tap.user}"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/ipfs"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"ipfs"), "./cmd/ipfs"
 
     generate_completions_from_executable(bin/"ipfs", "commands", "completion")
   end

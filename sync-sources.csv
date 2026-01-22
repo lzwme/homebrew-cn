@@ -3189,7 +3189,6 @@ Homebrew-homebrew-core/Formula/i/ipbt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ipcalc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iperf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/iperf3.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/i/ipfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ipget.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ipinfo-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ipinfo.rb, Homebrew/homebrew-core, 0
@@ -3558,6 +3557,7 @@ Homebrew-homebrew-core/Formula/k/kubevela.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kubevious.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kubevpn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubie.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kubo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kumactl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kumo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kustomize.rb, Homebrew/homebrew-core, 1
@@ -3875,7 +3875,7 @@ Homebrew-homebrew-core/Formula/lib/libbsd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libbtbb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libcaca.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libcanberra.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libcap-ng.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libcap-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libcap.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libcaption.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libcbor.rb, Homebrew/homebrew-core, 1
@@ -4037,7 +4037,7 @@ Homebrew-homebrew-core/Formula/lib/libimobiledevice-glue.rb, Homebrew/homebrew-c
 Homebrew-homebrew-core/Formula/lib/libimobiledevice.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libiodbc.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libiptcdata.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libiptcdata.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libirecovery.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libiscsi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libisofs.rb, Homebrew/homebrew-core, 0
@@ -4198,7 +4198,7 @@ Homebrew-homebrew-core/Formula/lib/libressl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/librest.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libretls.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/librevenge.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/lib/librime.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/librime.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/librist.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/librsvg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/librsync.rb, Homebrew/homebrew-core, 1
@@ -4220,8 +4220,8 @@ Homebrew-homebrew-core/Formula/lib/libserialport.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libshout.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libshumate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libsidplayfp.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libsigc++.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/lib/libsigc++@2.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libsigc++.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libsigc++@2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libsignal-protocol-c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libsigrok.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libsigrokdecode.rb, Homebrew/homebrew-core, 0
@@ -4350,10 +4350,10 @@ Homebrew-homebrew-core/Formula/lib/libxkbfile.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libxlsxwriter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libxmi.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/lib/libxml++.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/lib/libxml++@3.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/lib/libxml++@4.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/lib/libxml++@5.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libxml++.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libxml++@3.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libxml++@4.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libxml++@5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libxml2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxmlb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libxmlsec1.rb, Homebrew/homebrew-core, 1
@@ -5274,6 +5274,7 @@ Homebrew-homebrew-core/Formula/o/opensca-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opensearch-dashboards.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opensearch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openshift-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/openskills.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openslide.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openslp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssh.rb, Homebrew/homebrew-core, 1
@@ -5669,6 +5670,7 @@ Homebrew-homebrew-core/Formula/p/pnpm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pnpm@8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pnpm@9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/po4a.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pocket-tts.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pocketbase.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pocl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/poco.rb, Homebrew/homebrew-core, 0
@@ -6075,7 +6077,7 @@ Homebrew-homebrew-core/Formula/r/ranger.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rapidfuzz-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rapidjson.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rapidyaml.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/raptor.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/raptor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rargs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rarian.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rasqal.rb, Homebrew/homebrew-core, 1
@@ -6340,7 +6342,7 @@ Homebrew-homebrew-core/Formula/r/rune.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/runit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/runitor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/runme.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/rure.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rure.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rush-parallel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rush.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rust-analyzer.rb, Homebrew/homebrew-core, 0
@@ -7290,6 +7292,7 @@ Homebrew-homebrew-core/Formula/t/tnef.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tnftp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tnftpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/toast.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tock.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/todo-txt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/todoist-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/todoman.rb, Homebrew/homebrew-core, 0
@@ -8393,6 +8396,7 @@ Homebrew-homebrew-cask/Casks/a/aqua-data-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aqua-voice.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aquamacs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aquaskk.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/aquaskk@prerelease.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/araxis-merge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/arc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/archaeology.rb, Homebrew/homebrew-cask, 0
@@ -13182,6 +13186,7 @@ Homebrew-homebrew-cask/Casks/m/mbed-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mcbopomofo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mcedit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mcloud.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/mcpbundler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mcreator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mdb-accdb-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mdrp.rb, Homebrew/homebrew-cask, 0
@@ -13384,6 +13389,7 @@ Homebrew-homebrew-cask/Casks/m/morisawa-desktop-manager.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask/Casks/m/morkro-papyrus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/morpheus-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mos.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/mos@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mosaic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/moscow-ml.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/motion.rb, Homebrew/homebrew-cask, 1

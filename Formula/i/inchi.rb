@@ -1,20 +1,17 @@
 class Inchi < Formula
   desc "IUPAC International Chemical Identifier"
   homepage "https://www.inchi-trust.org/"
-  url "https://ghfast.top/https://github.com/IUPAC-InChI/InChI/releases/download/v1.07.3/INCHI-1-SRC.zip"
-  sha256 "b42d828b5d645bd60bc43df7e0516215808d92e5a46c28e12b1f4f75dfaae333"
+  url "https://ghfast.top/https://github.com/IUPAC-InChI/InChI/releases/download/v1.07.4/INCHI-1-SRC.zip"
+  sha256 "9228a214a2817aa6508c81803b656333531bb86d2c37c8a4916c2883cb88b2ad"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c2ab3b6c1fc1a9753168ee404157c0773dc268416f8ef52f90ff19a799edb168"
-    sha256 cellar: :any,                 arm64_sequoia: "e2bb4775d1cf80b33c796a64d26cee00204db264397f07257069b2dd50a503c4"
-    sha256 cellar: :any,                 arm64_sonoma:  "ec8c1fd3849b6e0a443dbb825a1bda423a4d57fb31988c5225fd369dafe2555b"
-    sha256 cellar: :any,                 arm64_ventura: "17dfc12c8c97191dc5e622a7bf38098d2c7198ba763cf75945ceca662da1c5b1"
-    sha256 cellar: :any,                 sonoma:        "9f3d129b9d5e9a0b40789665a003470e5d876a75d4f23a7a8959ce51fcfcbf6e"
-    sha256 cellar: :any,                 ventura:       "8b825f53d14319b5bafa6e9d556033da1bd531d6a7410d83e6640a609d89b44e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c830915f64f9b964f200923ea06d4aa3ca7906a6f2b56da01650356c0dc9efbd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16142b1bb7018bd3641a4ed78dc992d489661f65797e1c77c24ddaa0014042b8"
+    sha256 cellar: :any,                 arm64_tahoe:   "c4e58edd54851bab4ff3ee9281a11dfb07f32874118e595b6bd026de85d6ef8d"
+    sha256 cellar: :any,                 arm64_sequoia: "60b1d27d2cddb718a3821199a70d517663ce34fa76b6325afdf8ba43bbc4a880"
+    sha256 cellar: :any,                 arm64_sonoma:  "7b4d93bbaccc17ae6456a06ad4cfc052157476e9a66e82a0a872eddbbd537593"
+    sha256 cellar: :any,                 sonoma:        "61cfaea70f0fb94e90160d0f5aad68af49265fed492f2a6797a154d7fde4d286"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "77227fd2f62a240045efecf527760cff9e44bf703bbc51835990df1333c33e6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3053b57f288336c1124ba2ab89a26f8486499b4bf865dc9602d972a21d66481"
   end
 
   # These used to be part of open-babel
@@ -27,12 +24,6 @@ class Inchi < Formula
     args = ["C_COMPILER=#{ENV.cc}", "BIN_DIR=#{bin}", "LIB_DIR=#{lib}"]
     system "make", "-C", "INCHI_API/libinchi/gcc", *args
     system "make", "-C", "INCHI_EXE/inchi-1/gcc", *args
-
-    # Add major versioned and unversioned symlinks
-    libinchi = shared_library("libinchi", version.to_s[/^(\d+\.\d+)/, 1])
-    odie "Unable to find #{libinchi}" unless (lib/libinchi).exist?
-    lib.install_symlink libinchi => shared_library("libinchi", version.major.to_s)
-    lib.install_symlink shared_library("libinchi", version.major.to_s) => shared_library("libinchi")
 
     # Install the same headers as Debian[^1] and Fedora[^2]. Some are needed by `open-babel`[^3]
     # and `rdkit`[^4].

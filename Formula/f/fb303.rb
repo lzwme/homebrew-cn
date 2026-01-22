@@ -4,19 +4,20 @@ class Fb303 < Formula
   url "https://ghfast.top/https://github.com/facebook/fb303/archive/refs/tags/v2026.01.12.00.tar.gz"
   sha256 "e455652551702d040b9ba7c9e3991f556c851fc513fd28b039a56127a1190dd5"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/facebook/fb303.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "342e0512149ac41ce762f451f5345a0809b3e24b83fcb8b30837e8978d7cc431"
-    sha256                               arm64_sequoia: "bd1fd7e297571c608e0155ee435d22ee2f17514f07adb7e68633f331cadf6170"
-    sha256                               arm64_sonoma:  "92d0d72f2b26eb915f0e74d87868a878bed4793e7c35cfca7ff4cb42a6bae150"
-    sha256 cellar: :any,                 sonoma:        "ca591f9bf14af70b415783e01bbf283fec8bcbe9abc5359d7fb99d4f92424168"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d4eea8812686e19787b8824f7d7a2536c24096cc248c479f5518110551799c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7242cbadf175d2c9961144eda50f3adcafdbbb73f75b28e86b80f036b5b7948"
+    sha256                               arm64_tahoe:   "a2ca11b554ea9b7110a5a897a78efe7c908e816d7ac7055d683378629239a331"
+    sha256                               arm64_sequoia: "af12a8e70f3c967fcf69ced337f68a5965f1aa22194f0af40e548d2db06a6ca1"
+    sha256                               arm64_sonoma:  "0390e77b75ddbccf590874c04c36e434554aea4a6e7cfde26bf3feadb13e3ae4"
+    sha256 cellar: :any,                 sonoma:        "5b266a720a5708b3676e4789ecc490ce3eea7b455a46fea786168325f67d3628"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a48765f312636e7109a0d8db061767d0805a7ffbd112ec2dddf5e025d6807995"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fc0acecdb8da793d006c74a8b8202282beff9f5d85fb80e2974394350a5d764"
   end
 
-  depends_on "cmake" => :build
-  depends_on "mvfst" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "mvfst" => [:build, :test]
   depends_on "fbthrift"
   depends_on "fizz"
   depends_on "fmt"
@@ -26,6 +27,9 @@ class Fb303 < Formula
   depends_on "openssl@3"
 
   def install
+    # Workaround to build with glog >= 0.7 until fixed upstream
+    inreplace "CMakeLists.txt", /^find_package\(Glog MODULE /, "# \\0"
+
     shared_args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
     shared_args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?
 
@@ -45,19 +49,30 @@ class Fb303 < Formula
       }
     CPP
 
+    (testpath/"CMakeLists.txt").write <<~CMAKE
+      cmake_minimum_required(VERSION 4.0)
+      project(test LANGUAGES CXX)
+      set(CMAKE_CXX_STANDARD 20)
+
+      list(APPEND CMAKE_MODULE_PATH "#{Formula["fizz"].opt_libexec}/cmake")
+      list(APPEND CMAKE_MODULE_PATH "#{Formula["fbthrift"].opt_libexec}/cmake")
+      find_package(FBThrift CONFIG REQUIRED)
+      find_package(wangle CONFIG REQUIRED)
+      find_package(fb303 CONFIG REQUIRED)
+
+      add_executable(test test.cpp)
+      target_link_libraries(test fb303::fb303_thrift_cpp)
+    CMAKE
+
+    ENV.delete "CPATH" if OS.mac?
     if Tab.for_formula(Formula["folly"]).built_as_bottle
       ENV.remove_from_cflags "-march=native"
       ENV.append_to_cflags "-march=#{Hardware.oldest_cpu}" if Hardware::CPU.intel?
     end
 
-    ENV.append "CXXFLAGS", "-std=c++20"
-    system ENV.cxx, *ENV.cxxflags.split, "test.cpp", "-o", "test",
-                    "-I#{include}", "-I#{Formula["openssl@3"].opt_include}",
-                    "-L#{lib}", "-lfb303_thrift_cpp",
-                    "-L#{Formula["folly"].opt_lib}", "-lfolly",
-                    "-L#{Formula["glog"].opt_lib}", "-lglog",
-                    "-L#{Formula["fbthrift"].opt_lib}", "-lthriftprotocol", "-lthriftcpp2",
-                    "-lthriftmetadata", "-lthrifttyperep", "-ldl"
+    args = OS.mac? ? [] : ["-DCMAKE_BUILD_RPATH=#{lib};#{HOMEBREW_PREFIX}/lib"]
+    system "cmake", "-S", ".", "-B", ".", *args, *std_cmake_args
+    system "cmake", "--build", "."
     assert_equal "BaseService", shell_output("./test").strip
   end
 end

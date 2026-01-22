@@ -1,8 +1,8 @@
 class KubectlAi < Formula
   desc "AI powered Kubernetes Assistant"
   homepage "https://github.com/GoogleCloudPlatform/kubectl-ai"
-  url "https://ghfast.top/https://github.com/GoogleCloudPlatform/kubectl-ai/archive/refs/tags/v0.0.28.tar.gz"
-  sha256 "b9c6edc1db0238ec79049c4090fec57023a00e13f72e1125cdbefe7ed10eb948"
+  url "https://ghfast.top/https://github.com/GoogleCloudPlatform/kubectl-ai/archive/refs/tags/v0.0.29.tar.gz"
+  sha256 "1910e96d1d1f3c1180f1f288e2c362c90ecb3f0101e8133a40096368d69eb61c"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,12 @@ class KubectlAi < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc8ce823e627236a001d5c6570ed3b4e8f6ffdadaae9512c9c172d99c32d4a11"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc8ce823e627236a001d5c6570ed3b4e8f6ffdadaae9512c9c172d99c32d4a11"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc8ce823e627236a001d5c6570ed3b4e8f6ffdadaae9512c9c172d99c32d4a11"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e500e221569afbb81537c72e6af42591169bec835cce80c96e9a2bd5b249fb1a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "07cf3ba218c271a0822d2bc17ba4ea0c425502746dc2269d2de3921b0ec4e270"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "392a25015a5fc821f8523acd4b837fd3d84dadbc94283ea59f79e6e8c95507a1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e2a67423eb2cd82deeb3dc7a19e7b9d2077c3e301611778c23c115b7f8e1ad07"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2a67423eb2cd82deeb3dc7a19e7b9d2077c3e301611778c23c115b7f8e1ad07"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2a67423eb2cd82deeb3dc7a19e7b9d2077c3e301611778c23c115b7f8e1ad07"
+    sha256 cellar: :any_skip_relocation, sonoma:        "94e2319c962f2017bff56b7ba9aa413f0fb4ea21a43445401dbe5fe72f237971"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c20c658418c707f535a2197695b7e9117fd6584e6cb6a1da0e071ebd529e40e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f6c086aa37afc23548ace865384d2d1261a069cdf6af56a96b284755f72095b"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class Fastfetch < Formula
   desc "Like neofetch, but much faster because written mostly in C"
   homepage "https://github.com/fastfetch-cli/fastfetch"
-  url "https://ghfast.top/https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.57.1.tar.gz"
-  sha256 "ab09e4954d99377b5ba15d74cb2d7c9efb82af12788b3a009c40c804371af588"
+  url "https://ghfast.top/https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.58.0.tar.gz"
+  sha256 "95c6bb522d455ed0bd35cc0f7f3a44a70663c0e81d03fe9bfe6ffa5ea19c2b1d"
   license "MIT"
   head "https://github.com/fastfetch-cli/fastfetch.git", branch: "dev"
 
@@ -12,12 +12,12 @@ class Fastfetch < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "75ae90d92644c0de95bcb5f85ab6742542bb95c0b18f1440bb11591cd02dafcb"
-    sha256               arm64_sequoia: "d72776f972123d801cfa8e25af5c76fcef0f5b34e61dd019b4e9a54318f05fc9"
-    sha256               arm64_sonoma:  "86418529e759057688de381e571422c884eaaae9a6d2ba054acccb36b46d8126"
-    sha256 cellar: :any, sonoma:        "e5520793c6ee34e17d8f7e8ec78d44ff53ef792b02af2e27a751a0b50115aa22"
-    sha256               arm64_linux:   "326f2ecf1f59f220a4c119da4d35024d39ac939adb12e6ccb411f8c61d15b2c0"
-    sha256               x86_64_linux:  "2533bf487931e794864ff3633309b72932b3f9dfdfeb0c02f992659f871804d7"
+    sha256               arm64_tahoe:   "f50745d3fded38b9c2a99d9639c66f4a7f92181190f37a06f1a5944dcce3e50f"
+    sha256               arm64_sequoia: "8022d438015646682e0036e4697bf8ebd7ebac8bb19d591d098d53a7f74b81c6"
+    sha256               arm64_sonoma:  "a17a5a960fbfcb6b81afa6370ba5ad3a3659c3ec73bae0cbc1b0292381e01a54"
+    sha256 cellar: :any, sonoma:        "848e1fbf4748432a787910ef0a326f3bdc9570fd300da601dbcca26385a9dc78"
+    sha256               arm64_linux:   "afffd1767b9d07b93600cd1515b7617e436622eb06a44c54b45aa2f4aad72318"
+    sha256               x86_64_linux:  "21a72a7e1a1bed79ca380fb6f5683df77e33364ec26f0bef197332560a0a5f97"
   end
 
   depends_on "chafa" => :build

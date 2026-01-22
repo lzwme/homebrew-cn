@@ -1,18 +1,18 @@
 class LibpgQuery < Formula
   desc "C library for accessing the PostgreSQL parser outside of the server environment"
   homepage "https://github.com/pganalyze/libpg_query"
-  url "https://ghfast.top/https://github.com/pganalyze/libpg_query/archive/refs/tags/17-6.2.0.tar.gz"
-  version "17-6.2.0"
-  sha256 "4d5f70f23d44b6a35f1420f15b42e83b383b9db91931bdb15c9b1856800c9fa7"
+  url "https://ghfast.top/https://github.com/pganalyze/libpg_query/archive/refs/tags/17-6.2.1.tar.gz"
+  version "17-6.2.1"
+  sha256 "678434d59511c8892c37ba5b9816ab641bd007cef2eda215b2297c39b79c861d"
   license all_of: ["BSD-3-Clause", "PostgreSQL"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "70a995cd785be06bc4f2775a7bfcc89aa90dec7c0fb82e5a2543b6b427d0de08"
-    sha256 cellar: :any,                 arm64_sequoia: "60aa4a1c296803ec4870adda330a4a33ddca6050961c2da9fac357e85dd99cce"
-    sha256 cellar: :any,                 arm64_sonoma:  "3990de99cd90479ec619c93ae176410e70727dc5f56ff71b5ffd83522b8d67e3"
-    sha256 cellar: :any,                 sonoma:        "9b6d50fefa6c25dd452215f892499892457be50e4c4508892f571ac4f502eec9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a88c02c03b8682a474e40d8eba4dcc51c3c01fa7545f17d9ce7f968366e64fce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5840f46f8bb0b632ff289d294543d8cc8300e9957be6417ea828003953b5c684"
+    sha256 cellar: :any,                 arm64_tahoe:   "b7ac671a9f6a473804c6e8d35d1315f3605dafcf607669dfd25a9e212ca84135"
+    sha256 cellar: :any,                 arm64_sequoia: "9ab75fa1681cb5dbbed5bdc163bbf34754170532e927e6accdad9b3dd1ae4e5a"
+    sha256 cellar: :any,                 arm64_sonoma:  "69f7951383df6b26b84eb5e69400e2c6612dd438055e9335482142c01c8a09e6"
+    sha256 cellar: :any,                 sonoma:        "eb2aaf54780882b089cff93eabad8c4e108c4576e44291107834b30222bc74a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "66732147d9a8bbe39081cf799ad4075ff31bea39c66dd2c75fd1a342b278e12d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a819fc4660a0552e70f8d2895b68d44e6240d3e4d140eef5c1a2ab1f05fb414a"
   end
 
   def install

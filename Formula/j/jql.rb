@@ -1,18 +1,18 @@
 class Jql < Formula
   desc "JSON query language CLI tool"
   homepage "https://github.com/yamafaktory/jql"
-  url "https://ghfast.top/https://github.com/yamafaktory/jql/archive/refs/tags/jql-v8.0.9.tar.gz"
-  sha256 "ed754f2d13e396b57b9108b219a8d6ada1d49ec92a076e84cbe6565b2b0a9cdf"
+  url "https://ghfast.top/https://github.com/yamafaktory/jql/archive/refs/tags/jql-v8.0.10.tar.gz"
+  sha256 "f8c26ed8178de263ad06bbe6096de0e81dbf22f90a281d6fbd87d25c9f7e2dc7"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/yamafaktory/jql.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "62c4b7855b6f53085354a250ed3b805e133fae9dced8184059913b9563466af7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4cfb6d984d382be271c3a304ab7441005f1b6b1bfa9302e40733be93e3d3291"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1da1f7a58c734dd780047f611af56f40ba4b87ca6ecdb94073888fde38b8ddcc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "be7e5d33a5db9654cce0da85c40ed41afff4a62b0b31b150e10e224c011ed98c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6785a79806f3d1e3b83ae801ab3a35711f767f83504887650898249b30182739"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2939d5472dd80755ddfac42bac2ac044606eaaa0ae4df6665d5561da19003e3e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "84968f0bd4795164136f2812467afce9bf94fa885d84ed3a63e859d568f2dcf0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3813b1af5cefd55ffd35a7ce51c95b71275d490038c45aebfd7ccb602a2f843"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53dd91c250fca472c4415143cb8db298673cdba335739a4304f75873371f6903"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ac630a373ba506551dea9f991535546476344e6536ee2d9e48df75f78b5a9c79"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f33adb947aa5c5868e1ccc1437f47a45e4a397b26ff164d9fbf56202a09d5c26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9df115cbf7add4f682b2ef2d54f2c65dcf5147570537795709f30299cfc5523"
   end
 
   depends_on "rust" => :build

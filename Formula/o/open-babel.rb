@@ -2,7 +2,7 @@ class OpenBabel < Formula
   desc "Chemical toolbox"
   homepage "https://github.com/openbabel/openbabel"
   license "GPL-2.0-only"
-  revision 4
+  revision 5
   head "https://github.com/openbabel/openbabel.git", branch: "master"
 
   stable do
@@ -19,12 +19,12 @@ class OpenBabel < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256                               arm64_tahoe:   "37da789f563a487a27f8c7fbb8ecce87ce6f192852ba0e1c97eae748b425199d"
-    sha256                               arm64_sequoia: "8a1f9f14d38fae8c7dd36a28b1d43c229978d8f3e652fd0bab0f2a4e6a4e4677"
-    sha256                               arm64_sonoma:  "0c6f3868747c69959966495b34b059d4793e5e4a50d7f4b0c8d3ef327c602f7d"
-    sha256                               sonoma:        "03a180d4412df1f0d6e3d0b6e865fcea2978d36a4d6bed6cd236d96ded931d0e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0aa8391693fb00503fdc467c0d3377b3c9fda78e02ca7d394883f67ec2ecb77a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52a63e3ffd5f4037277d25fbb3572dd6c527770a3d16fbaa7f7a9d0d4503b204"
+    sha256                               arm64_tahoe:   "d6f4008b2e5325223bc0d19908d67eea2c7530c1d44b56199bfb650822693622"
+    sha256                               arm64_sequoia: "74eb232097ce4a70c19de17cd182920d2445bdcb76a4c50d46b6120ce2c51260"
+    sha256                               arm64_sonoma:  "e8ab498a9d07c02f8ee4fdba64a17a960a1fbc87aa48f2a16417fd0204b41a28"
+    sha256                               sonoma:        "6d3673642faf25364acf5efec9e8e7914e29fe151766a504acdf852342cd58a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd93d88d67a2413e837d21538547f7afaed7f8f5f560d6528ff6051539f94e7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8981fddd1ab4e9354513f107f8b96673869295664c0391cf643646e92d221284"
   end
 
   depends_on "cmake" => :build

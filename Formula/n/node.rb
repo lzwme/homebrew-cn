@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v25.3.0/node-v25.3.0.tar.xz"
-  sha256 "97939099edd035a0c1a2d1fc849cac018ec2a38c0c28dd8e8246fd883cdb9e9e"
+  url "https://registry.npmmirror.com/-/binary/node/v25.4.0/node-v25.4.0.tar.xz"
+  sha256 "04e365aadcd7bf4cf1a6001723ea41035bfb118d78f8a8ee2054b37fc5cb67d6"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Node < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5352d3d6e53ce10049015cc43d955bdfcab073810176f61764505abe948dd5f0"
-    sha256 cellar: :any,                 arm64_sequoia: "3d6eec633a0b1cbbae2a55d2b3950f0e3e27b24e1cb53cb8a2ab5338947f913e"
-    sha256 cellar: :any,                 arm64_sonoma:  "25ae27e94cd552926e97fef3520821505bdba748a882eacabfddb4d6da0af8ab"
-    sha256 cellar: :any,                 sonoma:        "fa9027180e2ed287ba6564319cedce9610517943831ff5770615fb7a99542399"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b5d456b08e1bf3a2e8e0b8b7c99788fb77a76540ec9279ca51413db5a7dc3b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c54a7ca42f9fa45e3e71827c8edc90d11a0d38ae53808d91d05c6f1ffc0bf4a3"
+    sha256 cellar: :any,                 arm64_tahoe:   "396e3ee9154fe6a3e175da15d023967279557e7e6dbeeb168d9b9eccc233c033"
+    sha256 cellar: :any,                 arm64_sequoia: "f79ebe3c2705d5bde4350f07b771988a30d53499aa3597f17c882dd4e932e7df"
+    sha256 cellar: :any,                 arm64_sonoma:  "eb096a56a25930fd4762203122580d6407a0b618ad2b0b0100a8c229448cfdde"
+    sha256 cellar: :any,                 sonoma:        "37e5afb593efb04672cb0b6a48bbee25639f128bc69a38a30f3081b1b5fce5ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37596617d9ceb43d6161b1263be0bcc4c478d88d1992dcc037ce137ec4b72aa9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19902f74409f6b36e84b3138321faed81405131d0c6eaca873722572cbfa37c9"
   end
 
   depends_on "pkgconf" => :build
@@ -120,12 +120,18 @@ class Node < Formula
 
     # TODO: Try to devendor these libraries.
     # - `--shared-ada` needs the `ada-url` formula, but requires C++20
+    # - `--shared-gtest` is only used for building the test suite, which we don't run here.
+    # - `--shared-hdr-histogram` is not currently a dependency we track.
     # - `--shared-simdutf` seems to result in build failures.
     # - `--shared-http-parser` and `--shared-uvwasi` are not available as dependencies in Homebrew.
+    # - `--shared-temporal_capi` is not packaged as an external dependency in Homebrew, so we keep it vendored.
     ignored_shared_flags = %w[
       ada
+      gtest
+      hdr-histogram
       http-parser
       simdutf
+      temporal_capi
     ].map { |library| "--shared-#{library}" }
 
     configure_help = Utils.safe_popen_read("./configure", "--help")

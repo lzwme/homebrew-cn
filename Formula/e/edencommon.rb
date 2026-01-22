@@ -4,15 +4,16 @@ class Edencommon < Formula
   url "https://ghfast.top/https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2026.01.12.00.tar.gz"
   sha256 "3b60d7dd939c5844b1758a843a37f42cfafda37536a4396eb3876cee70a844bd"
   license "MIT"
+  revision 1
   head "https://github.com/facebookexperimental/edencommon.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "68431e68b917d19eef7ef625bed17d6ed66a4fa66e30bef05d706149e14b232f"
-    sha256                               arm64_sequoia: "4e104bccf00323341a9295f04fc6aff71b0c0d938b80df9f9f7c85ca614b127a"
-    sha256                               arm64_sonoma:  "15c6165774ebbde7fb798c38aaf09a5aeab237ceea49bff3c26cfc06d84baf7b"
-    sha256 cellar: :any,                 sonoma:        "d21cf165a5b968305b3b97156cfe1ef2e58ac4339280b6a6f5765aeb5cf58e62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c1684e7f2e5897ec9b2a7cfd993bd8ba224f674572677a2d1871472eef7fc35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02d2a3173346e0ff88dea196ad6fb1fb5eda23ba9bd33c59b6ad07d5dd53a1ae"
+    sha256                               arm64_tahoe:   "ff942a530e45fb9f08635976fab75a51051f3a4df8b0bc40c95905d912bf69c5"
+    sha256                               arm64_sequoia: "422a39ee2415e2b4be9469c4a3f58c4d814aa24746d78b26286d540f64889ab6"
+    sha256                               arm64_sonoma:  "49e25ce35016c1b3f96cc5357a4214fbe642e7ffb384486d2e339ca0652330a0"
+    sha256 cellar: :any,                 sonoma:        "f4b2e78e855180b5839b6a9d942f88c55de21d7a682714848a69b393672fb729"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7f762271950bf4220b9d53e9531f1b6c46af0fc792d9691960b7234de1ecaec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0269aa5d2ab3b0d02cfca1d218696098348194210562eb58184af593900ff264"
   end
 
   depends_on "cmake" => :build
@@ -29,6 +30,9 @@ class Edencommon < Formula
   depends_on "openssl@3"
 
   def install
+    # Workaround to build with glog >= 0.7 until fixed upstream
+    inreplace "CMakeLists.txt", /^find_package\(Glog MODULE /, "# \\0"
+
     # Fix "Process terminated due to timeout" by allowing a longer timeout.
     inreplace buildpath.glob("eden/common/{os,utils}/test/CMakeLists.txt"),
               /gtest_discover_tests\((.*)\)/,

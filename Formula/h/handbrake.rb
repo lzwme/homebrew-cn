@@ -55,6 +55,10 @@ class Handbrake < Formula
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "libx11"
+  end
+
   on_linux do
     depends_on "numactl"
   end

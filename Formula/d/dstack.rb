@@ -3,18 +3,17 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://dstack.ai/"
-  url "https://files.pythonhosted.org/packages/27/3a/31e3722b94dfbc5e4e9d0f64423cba42c4911ca907117c015ccbc54203e4/dstack-0.20.3.tar.gz"
-  sha256 "06145df7d095cc135fce11bd43a32d457eb462cf82fc2d86b4e448aa71261f63"
+  url "https://files.pythonhosted.org/packages/52/ed/e8883be7fc2063c643c4b026a2081c7bb7e7c3af100604326d0999020b0b/dstack-0.20.6.tar.gz"
+  sha256 "d39f82ca7ccfdec1ac73dce88c0c78e929b17f8dc56219d4bd90a8e92c50f894"
   license "MPL-2.0"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5ddc26b3630d1b9f55ccf0af0694a4be251e3926eeb9a0c9ffa3e0461c588f46"
-    sha256 cellar: :any,                 arm64_sequoia: "d07e2408cfd319af4e7b2dc8ad4260d311a27e421aa67de7913abda802790042"
-    sha256 cellar: :any,                 arm64_sonoma:  "2230d4e26564dfd008ccec07e99842413211f9ea0582af33bc9d07e17f323c88"
-    sha256 cellar: :any,                 sonoma:        "afb34e71fe10757f782a4a755da64db5764aac19692cfe45ff3401f96c07d253"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6be96b6154b8457552985e1855ce72927ca1d92ffee41f828ca5fe64e4f89c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7de5dd62b151fabcde1449fba02c0bba02b4a32c1a33e4a252fce6f1107dc85a"
+    sha256 cellar: :any,                 arm64_tahoe:   "32252f10aa80a5f61952758467e956237e18e674c0fd0c9cc12e6135212d781e"
+    sha256 cellar: :any,                 arm64_sequoia: "82a21e6bc48cef8820d659b7133635212ce0d5bd7e9ff95951739208b36bb159"
+    sha256 cellar: :any,                 arm64_sonoma:  "095ce1db350383d21fe1d9f9f615a124378d38ae9655c1267035f4dfccc4a3fb"
+    sha256 cellar: :any,                 sonoma:        "0e4b4a5e389c28ea787f0154133fe786632bf98e5d868bf5a2120a7ceed3303d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a45616bb862896d03efdae7de064994cd985098ebdd063b8ccbc38437d4c13fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19ba724204f41e1c416399547ec9fbf9b7c343b2ebe63a596df92a083d81f44c"
   end
 
   # `pkgconf` and `rust` are for bcrypt.
@@ -146,13 +145,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/42/79/2dac8b7cb075cfa43908ee9af3f8ee06880d84b86013854c5cca8945afac/boto3-1.42.30.tar.gz"
-    sha256 "ba9cd2f7819637d15bfbeb63af4c567fcc8a7dcd7b93dd12734ec58601169538"
+    url "https://files.pythonhosted.org/packages/a4/da/d81abc51bd35c2d2154f1caa0040843ada7df1689ea17d51c116c793b8f0/boto3-1.42.31.tar.gz"
+    sha256 "b2038fc5dbcd6746a16ada8d55fe73659b8cf95c7b6aeb63fe782e831485edaa"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/44/38/23862628a0eb044c8b8b3d7a9ad1920b3bfd6bce6d746d5a871e8382c7e4/botocore-1.42.30.tar.gz"
-    sha256 "9bf1662b8273d5cc3828a49f71ca85abf4e021011c1f0a71f41a2ea5769a5116"
+    url "https://files.pythonhosted.org/packages/ab/78/4fd91ed2f9d4b500680f33c714b7716fc37690083a8c8d3e94177cbc811e/botocore-1.42.31.tar.gz"
+    sha256 "62f2c31e229df625612dd4d7c72618948e4064436d71a647102f36fcddfa0f4d"
   end
 
   resource "cached-classproperty" do
@@ -491,8 +490,8 @@ class Dstack < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/33/c1/1d9de9aeaa1b89b0186e5fe23294ff6517fce1bc69149185577cd31016b2/pyparsing-3.3.1.tar.gz"
-    sha256 "47fad0f17ac1e2cad3de3b458570fbc9b03560aa029ed5e16ee5554da9a2251c"
+    url "https://files.pythonhosted.org/packages/f3/91/9c6ee907786a473bf81c5f53cf703ba0957b23ab84c264080fb5a450416f/pyparsing-3.3.2.tar.gz"
+    sha256 "c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc"
   end
 
   resource "python-dateutil" do
@@ -561,8 +560,8 @@ class Dstack < Formula
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/02/94/23ac26616a883f492428d9ee9ad6eee391612125326b784dbfc30e1e7bab/sentry_sdk-2.49.0.tar.gz"
-    sha256 "c1878599cde410d481c04ef50ee3aedd4f600e4d0d253f4763041e468b332c30"
+    url "https://files.pythonhosted.org/packages/15/8a/3c4f53d32c21012e9870913544e56bfa9e931aede080779a0f177513f534/sentry_sdk-2.50.0.tar.gz"
+    sha256 "873437a989ee1b8b25579847bae8384515bf18cfed231b06c591b735c1781fe3"
   end
 
   resource "simple-term-menu" do

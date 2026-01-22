@@ -1,17 +1,17 @@
 class VideoCompare < Formula
   desc "Split screen video comparison tool using FFmpeg and SDL2"
   homepage "https://github.com/pixop/video-compare"
-  url "https://ghfast.top/https://github.com/pixop/video-compare/archive/refs/tags/20260120.tar.gz"
-  sha256 "c4ee73031baa055a41e39a9872b5e4b08bed5801b1224886262ad94d6bd69da5"
+  url "https://ghfast.top/https://github.com/pixop/video-compare/archive/refs/tags/20260121.tar.gz"
+  sha256 "32c86e98fbcfb54a8bbbd9b47bcee016350958845fd8f5aebb62b73da3bec4ce"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1338dff46ade41bcf520e332cc6ad05ff00933ae1dc5bcfdb3e3afc3c7278627"
-    sha256 cellar: :any,                 arm64_sequoia: "6cb41e8f610a176c32a53b0463852402d20e01587b631bf5d4a851bd9f9ba6c0"
-    sha256 cellar: :any,                 arm64_sonoma:  "f61600e309313ad54b9f163093e00dc2943baf6296fc0e962abfa61e48e10693"
-    sha256 cellar: :any,                 sonoma:        "6db1244cde14782462ee9995bf083f2b81233597da492fe0e2dc3e31769deeae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4ff96b71fc0894e41dd1b7f7a99239c2e00fa33378f29ff88a63709315271a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "749cc35aa6d05cabc44743340fbe32bd258f5c2eb8bc1ab4e14fc1d7f1361751"
+    sha256 cellar: :any,                 arm64_tahoe:   "eeafb5dd900172d801da9d734de479970fb6391982657616b84577539569120b"
+    sha256 cellar: :any,                 arm64_sequoia: "d461c229409833abc722d5af6c07d4bbc36f9007e6108800f1438147fbad9f5b"
+    sha256 cellar: :any,                 arm64_sonoma:  "e255d256f2c6dcbd879443beb6d16d12cdc080caeae66b846aeffb82a8d7f703"
+    sha256 cellar: :any,                 sonoma:        "81f6e64caf988858a28ee907a0be2fce1e6a79a5f168e1926b1c6e36d6517d86"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e68bcf5ee0b2a50682f6305490a633d8655be5ec761571aee30e4ff88f6be99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "595e426e9cb41d7410bec47bb7a3deb8aa44598c850caef59d55904674d3d520"
   end
 
   depends_on "ffmpeg"

@@ -38,6 +38,9 @@ class Raptor < Formula
   end
 
   test do
-    system bin/"rapper", "--output", "ntriples", "https://planetrdf.com/guide/rss.rdf"
+    test_url = "https://ghfast.top/https://raw.githubusercontent.com/dajobe/raptor/" \
+               "b5e91dfdf7e1ea5ca5a5f7b48c428dd3da1219e0/tests/feeds/test01.rdf"
+    output = shell_output("#{bin}/rapper --output ntriples #{test_url}")
+    assert_match '_:genid2 <http://purl.org/dc/elements/1.1/title> "Example"', output
   end
 end
