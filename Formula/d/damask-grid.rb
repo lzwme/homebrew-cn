@@ -4,7 +4,7 @@ class DamaskGrid < Formula
   url "https://damask-multiphysics.org/download/damask-3.0.2.tar.xz"
   sha256 "82f9b3aefde87193c12a7c908f42b711b278438f6cad650918989e37fb6dbde4"
   license "AGPL-3.0-only"
-  revision 1
+  revision 2
 
   # The first-party website doesn't always reflect the newest version, so we
   # check GitHub releases for now.
@@ -14,12 +14,12 @@ class DamaskGrid < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "af5453a9caa4ceb66ae92013124cb47ec4816c2633551012a28c786de869f7ea"
-    sha256 cellar: :any,                 arm64_sequoia: "dbe12573573118c4e67b5035d500d16a2f4883f5cef5c99b371b1683ee517a7f"
-    sha256 cellar: :any,                 arm64_sonoma:  "467cf16fa9ef3fbcf8159d71a8ae6d18f8d9422a71dd41d3e8ff39f3c5d5ef1c"
-    sha256 cellar: :any,                 sonoma:        "b7f9a6d18fa58333c98ae6303e3ada4e2a3571dd278f5cae2e3be19ce28aa5e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "139bc698159d3ec3f16266958e5a48bc716c48ac89129190bc44433c318eef5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24734feb1be5d996087cfc5b2aae66041d3ab99321587fa5b922ab9551fc1c25"
+    sha256 cellar: :any,                 arm64_tahoe:   "9df36df1df3c44fafd77ffe2f800f3d6d841551625ec03edba00707bf6e902ea"
+    sha256 cellar: :any,                 arm64_sequoia: "47f893f9748b2f73b1bca5854ec9a7aa20472f36bee9369931603ca1fb0b45eb"
+    sha256 cellar: :any,                 arm64_sonoma:  "aebce96fb01a23702698deeb0e09d517beacbf32a8c7cb9c210e9f5ea18f74af"
+    sha256 cellar: :any,                 sonoma:        "110db396997a4063c67974f1816a00ff272ac2a2a5892a5387f5349bc61dc747"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "52cd6629883662df732f93e125da1939c593a47bc5d5e5993acab75ba83dab8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f14f9441087d0102bffd6e43f4c3e87376fc79bc5029ee33b0c18aafcacef34c"
   end
 
   depends_on "cmake" => :build

@@ -6,15 +6,15 @@ class Oterm < Formula
   url "https://files.pythonhosted.org/packages/37/e4/1df0729d9f86e3d52b0b0fb92e7d57eab21fd41071043ae8587252c38385/oterm-0.14.7.tar.gz"
   sha256 "eeed277840c3314aef90042a9a43e10de7fc9110212c56ad729a0b4255d356f7"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dde03de8d956d854a2c7082a224a24a50d4275bb5885a58d15ece9eadf44abc3"
-    sha256 cellar: :any,                 arm64_sequoia: "f77c8fe712b295258897a6497ea26fc675482e5ce3b83dc2d4f40b58f0f7f6d0"
-    sha256 cellar: :any,                 arm64_sonoma:  "397eab85cecb4ab6aea419c59bb0b831f3a91e88eea492adaddf66e1053c85aa"
-    sha256 cellar: :any,                 sonoma:        "7a9956d49dcf6bcac02840724b06e3fa8d59d18357c35da087ab73706d57b44d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85286ddf1573cf3a8b92644425caca3dc3655a33a28b9f32b54df9c73e00133b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfa2bd90eaf8e320ec7c1ac7f1946df8ffd143b4b2d9ea1720c438bfbefcfb7c"
+    sha256 cellar: :any,                 arm64_tahoe:   "9891065d64eff9314f5db56b3d756907a5271aa576133fc5f9f9bad5547540e5"
+    sha256 cellar: :any,                 arm64_sequoia: "423fe994e3620b7927a1bac94a29242ed1fdfed438fedaf021002bb48b21a028"
+    sha256 cellar: :any,                 arm64_sonoma:  "4a020028d1ad6669f73b1200d3abda56a672b8c131acf3e14358f0967fe29606"
+    sha256 cellar: :any,                 sonoma:        "95f5cb1b71d8f401c57be9a9590c2cb417adeb3c4ffbde7f0f4e83d43f5c8838"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2323dabb34540eb2c3deca534be510307c6e1920658e5b822c1067f2a9dfbda7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef53ce01b30582157b0c2a9f3f11485d5f854ba703a266ccb479f93de495cc5f"
   end
 
   depends_on "pkgconf" => :build
@@ -83,8 +83,8 @@ class Oterm < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/43/c4/60b6068e703c78656d07b249919754f8f60e9e7da3325560574ee27b4e39/cyclopts-4.4.4.tar.gz"
-    sha256 "f30c591c971d974ab4f223e099f881668daed72de713713c984ca41479d393dd"
+    url "https://files.pythonhosted.org/packages/13/7b/663f3285c1ac0e5d0854bd9db2c87caa6fa3d1a063185e3394a6cdca9151/cyclopts-4.5.0.tar.gz"
+    sha256 "717ac4235548b58d500baf7e688aa4d024caf0ee68f61a012ffd5e29db3099f9"
   end
 
   resource "diskcache" do
@@ -123,8 +123,8 @@ class Oterm < Formula
   end
 
   resource "fastmcp" do
-    url "https://files.pythonhosted.org/packages/d1/1e/e3528227688c248283f6d86869b1e900563ffc223eff00f4f923d2750365/fastmcp-2.14.2.tar.gz"
-    sha256 "bd23d1b808b6f446444f10114dac468b11bfb9153ed78628f5619763d0cf573e"
+    url "https://files.pythonhosted.org/packages/72/b5/7c4744dc41390ed2c17fd462ef2d42f4448a1ec53dda8fe3a01ff2872313/fastmcp-2.14.3.tar.gz"
+    sha256 "abc9113d5fcf79dfb4c060a1e1c55fccb0d4bce4a2e3eab15ca352341eec8dd6"
   end
 
   resource "h11" do
@@ -163,8 +163,8 @@ class Oterm < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/8d/7d/41acf8e22d791bde812cb6c2c36128bb932ed8ae066bcb5e39cb198e8253/jaraco_context-6.0.2.tar.gz"
-    sha256 "953ae8dddb57b1d791bf72ea1009b32088840a7dd19b9ba16443f62be919ee57"
+    url "https://files.pythonhosted.org/packages/cb/9c/a788f5bb29c61e456b8ee52ce76dbdd32fd72cd73dd67bc95f42c7a8d13c/jaraco_context-6.1.0.tar.gz"
+    sha256 "129a341b0a85a7db7879e22acd66902fda67882db771754574338898b2d5d86f"
   end
 
   resource "jaraco-functools" do
@@ -288,8 +288,8 @@ class Oterm < Formula
   end
 
   resource "prometheus-client" do
-    url "https://files.pythonhosted.org/packages/23/53/3edb5d68ecf6b38fcbcc1ad28391117d2a322d9a1a3eff04bfdb184d8c3b/prometheus_client-0.23.1.tar.gz"
-    sha256 "6ae8f9081eaaaf153a2e959d2e6c4f4fb57b12ef76c8c7980202f1e57b48b2ce"
+    url "https://files.pythonhosted.org/packages/f0/58/a794d23feb6b00fc0c72787d7e87d872a6730dd9ed7c7b3e954637d8f280/prometheus_client-0.24.1.tar.gz"
+    sha256 "7e0ced7fbbd40f7b84962d5d2ab6f17ef88a72504dcf7c0b40737b43b2a461f9"
   end
 
   resource "py-key-value-aio" do
@@ -388,13 +388,13 @@ class Oterm < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/da/34/f5df66cb383efdbf4f2db23cabb27f51b1dcb737efaf8a558f6f1d195134/sse_starlette-3.1.2.tar.gz"
-    sha256 "55eff034207a83a0eb86de9a68099bd0157838f0b8b999a1b742005c71e33618"
+    url "https://files.pythonhosted.org/packages/8b/8d/00d280c03ffd39aaee0e86ec81e2d3b9253036a0f93f51d10503adef0e65/sse_starlette-3.2.0.tar.gz"
+    sha256 "8127594edfb51abe44eac9c49e59b0b01f1039d0c7461c6fd91d4e03b70da422"
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/ba/b8/73a0e6a6e079a9d9cfa64113d771e421640b6f679a52eeb9b32f72d871a1/starlette-0.50.0.tar.gz"
-    sha256 "a2a17b22203254bcbc2e1f926d2d55f3f9497f769416b3190768befe598fa3ca"
+    url "https://files.pythonhosted.org/packages/c4/68/79977123bb7be889ad680d79a40f339082c1978b5cfcf62c2d8d196873ac/starlette-0.52.1.tar.gz"
+    sha256 "834edd1b0a23167694292e94f597773bc3f89f362be6effee198165a35d62933"
   end
 
   resource "terminaltexteffects" do
@@ -443,8 +443,8 @@ class Oterm < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/21/e6/26d09fab466b7ca9c7737474c52be4f76a40301b08362eb2dbc19dcc16c1/websockets-15.0.1.tar.gz"
-    sha256 "82544de02076bafba038ce055ee6412d68da13ab47f0c60cab827346de828dee"
+    url "https://files.pythonhosted.org/packages/04/24/4b2031d72e840ce4c1ccb255f693b15c334757fc50023e4db9537080b8c4/websockets-16.0.tar.gz"
+    sha256 "5f6261a5e56e8d5c42a4497b364ea24d94d9563e8fbd44e78ac40879c60179b5"
   end
 
   resource "wrapt" do

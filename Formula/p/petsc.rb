@@ -4,6 +4,7 @@ class Petsc < Formula
   url "https://web.cels.anl.gov/projects/petsc/download/release-snapshots/petsc-3.24.3.tar.gz"
   sha256 "dde6f6ef2c5ef8c473a831d56a2e3192b5304c50c4cc5ded7f296ef6d86aaf13"
   license "BSD-2-Clause"
+  revision 1
 
   livecheck do
     url "https://web.cels.anl.gov/projects/petsc/download/release-snapshots/"
@@ -11,12 +12,12 @@ class Petsc < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "cdbd1c3c2d05b51e64e2cf4952a318449779b92e4c2b3689be6f5811519d142a"
-    sha256 arm64_sequoia: "05d1307086b912d3bd1ffc0f14e455ce3b9680f8f35d3ba2121f99e6d6d8f680"
-    sha256 arm64_sonoma:  "a9d17dbd7584eedc333a97539ab84c08164ad368c46c47f2ba448acec784f8f9"
-    sha256 sonoma:        "1d794857ec04ce8c60b3fab39024965029d08b36ccfa39c373185ca6a57e7f49"
-    sha256 arm64_linux:   "b824024b6135de84fadb587222d1a4c8f53686f38991613221bd053fcee6585e"
-    sha256 x86_64_linux:  "6620570ec6bc5baebd33dfccc17174158653b3e8794bdef818fa5ce2e217606e"
+    sha256 arm64_tahoe:   "438628095a241231f2f31189a3ddffbe5d55ccab1fd1e649d2c9d3a7577cbeb5"
+    sha256 arm64_sequoia: "04d8d70f84c500e86d0d0dab7f7ca9d9632223300803cf7915f06246051a47c8"
+    sha256 arm64_sonoma:  "3588b9ed1035fe48c80bcfc88dce1a87fef4fde08dc539aa1ac7a6b01bf90f92"
+    sha256 sonoma:        "ea27fb81933485811353230fdfde972e39036324deb40dbfa530c793710f021a"
+    sha256 arm64_linux:   "9c0ea4b60ebe8262f0aa7b864d4572231a2ecd7b30d4e93b4f3f043556ff4804"
+    sha256 x86_64_linux:  "41bd6f3d971ad148f2255d29e5d9534861b74b89c30a06424d72ec3f1d42ba68"
   end
 
   depends_on "fftw"

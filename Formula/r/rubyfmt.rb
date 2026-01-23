@@ -14,8 +14,6 @@ class Rubyfmt < Formula
     strategy :github_latest
   end
 
-  no_autobump! because: :bumped_by_upstream
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1ae4924754e4f83c5911314dec2ec3ff4dd4c1cfdf5257223e86742e9c3f842"

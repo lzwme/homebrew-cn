@@ -1,18 +1,17 @@
 class Beads < Formula
   desc "Memory upgrade for your coding agent"
   homepage "https://github.com/steveyegge/beads"
-  url "https://ghfast.top/https://github.com/steveyegge/beads/archive/refs/tags/v0.48.0.tar.gz"
-  sha256 "85a9c6185d63eb8a300852947203cf5cdb4926249e3ac7f800a12df0f61d797e"
+  url "https://ghfast.top/https://github.com/steveyegge/beads/archive/refs/tags/v0.49.0.tar.gz"
+  sha256 "d47826717cb369cf0874e6ec61c46c11c95fb8f1afa697994a25c0b5caef8232"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f409c9cca986ca1217c1dcac0ba928c6a42e137249d2e55d66809293f1dd3e06"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e1d331a0f9513b065013abd4167fe935007a3c8cdae213b2da9d965182541a7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86bdeff77506957fef1669ae6bc6968ec221ae40b63c7be3837c982a8f305018"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d9475f43e392b8fd9813860c0eeb4738f26b99160a45384252dc4991c1c47d5b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "81b01d95bfaa79007aea3152dadf8ece8c74de6a451096b5e15bd61bef43cdb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "041a4563aa52196cd34f4f02f98cfea35d2b0bbd4a9235c981b896dd107ea8eb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31ed192011c19b37f7874e7482c03959e5a43aff9e3a23d74949cb5ac2b4052f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d32d14c5cca33aa080ecfb16144993c897d14ec1a2a217bb107e9df143ed864"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "426cc34c229c4c6808ab2d475a28d5d415b2c2af89aa0225ad3e5fa1796d0bb8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3fe84617e87fc4db0672954d441166f0670c64bf90eba4b7a957bcd194c0578a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6803c786a1600f094ff0978529ef0ccc63ce750b77df19675fea541e937c69bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fd0816a81f24ce1f614dd979df0c0a053790e5c278b7463c519da999986a59a"
   end
 
   depends_on "go" => :build

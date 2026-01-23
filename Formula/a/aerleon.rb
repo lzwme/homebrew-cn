@@ -3,18 +3,18 @@ class Aerleon < Formula
 
   desc "Generate firewall configs for multiple firewall platforms"
   homepage "https://aerleon.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/a4/22/079a6c48d1056f467497b10b74e0220c5d0a2179d40b3f834d7b958f2df7/aerleon-1.13.0.tar.gz"
-  sha256 "808cad55fd89847d2554897aaee16d03366d5c5aba8a0ed0af6e66c2db55f0de"
+  url "https://files.pythonhosted.org/packages/a3/a5/ef91ae48d38cac58412bc92402f0697a2b6f409491584256ebf083d4d173/aerleon-1.14.0.tar.gz"
+  sha256 "9b7c48f65839504028de9c7199a526c806c45e948fea09d23dcd86684357b337"
   license "Apache-2.0"
   head "https://github.com/aerleon/aerleon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d63e8d51cd50715a3d7a5bdd7cd1d09ccca607dbc706ae4a5681a42de58a1764"
-    sha256 cellar: :any,                 arm64_sequoia: "adc88c699a238f1477df65ef0910bbd531bac0f6e93517aeee1d454d35a3512e"
-    sha256 cellar: :any,                 arm64_sonoma:  "c95ed01d689093777ace7814147cb7808ef308074beadb9952750ed3638e3472"
-    sha256 cellar: :any,                 sonoma:        "f887530122100e8490ba2e32c6a666a45c62e0118fc6c16baaac608bd4a1acbc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e662c448375d0ca403572d13e3a301f47aa3a738631913a3c85801620bdb97a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c469a07c7e07a1e77001e5974e83345053453dfa3196b361d07493324151d59"
+    sha256 cellar: :any,                 arm64_tahoe:   "70f7c3e18fa0474c2619fc308e072b61059e45a9cead28d70a7aa26c0293a8e5"
+    sha256 cellar: :any,                 arm64_sequoia: "8b136446b187af56793489ec3d06ef7ac2d86fe51a23aa6e3fb2bdbb8d6a6607"
+    sha256 cellar: :any,                 arm64_sonoma:  "284be19f7fffaadbea982ade7bbfcc9dbe5ad7bab6d1b2f30e335a3f087dcf8c"
+    sha256 cellar: :any,                 sonoma:        "788f318211658cd09c8adc281602f0ff22e7115f3b7884cc61c4711f3d2a7cf1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a349c925d24de73ca80d9b4ad4cdf0f12742cf2f21d568b293870d49990097f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f571b9016c62bd30c39176fd68a87b5972ba33a7f1a6aafb4c9fc2d477a38818"
   end
 
   depends_on "libyaml"

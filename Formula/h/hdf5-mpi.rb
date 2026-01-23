@@ -1,8 +1,8 @@
 class Hdf5Mpi < Formula
   desc "File format designed to store large amounts of data"
   homepage "https://www.hdfgroup.org/solutions/hdf5/"
-  url "https://ghfast.top/https://github.com/HDFGroup/hdf5/releases/download/hdf5_1.14.6/hdf5-1.14.6.tar.gz"
-  sha256 "e4defbac30f50d64e1556374aa49e574417c9e72c6b1de7a4ff88c4b1bea6e9b"
+  url "https://ghfast.top/https://github.com/HDFGroup/hdf5/releases/download/2.0.0/hdf5-2.0.0.tar.gz"
+  sha256 "f4c2edc5668fb846627182708dbe1e16c60c467e63177a75b0b9f12c19d7efed"
   license "BSD-3-Clause"
   version_scheme 1
 
@@ -10,17 +10,13 @@ class Hdf5Mpi < Formula
     formula "hdf5"
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0ba24bdbc4fb2fdbf5ffc2e602d49bba1d8d3e85a2c84e9d648749a0ea19032b"
-    sha256 cellar: :any,                 arm64_sequoia: "3d151c2f7f4e990d4c87d09cfd1159a00eeced94110946b04d78e8afc643532d"
-    sha256 cellar: :any,                 arm64_sonoma:  "328ef1d38510de4d0b6acdd2aa8ba2bf96ee37c7006ee56b7cf33107386a4eb3"
-    sha256 cellar: :any,                 arm64_ventura: "ab720a1b8793cda7b0726ca973b97823986b14a01829b01532dc9ac27872851c"
-    sha256 cellar: :any,                 sonoma:        "e33bdad2d726e495962a617bfe049532cbb7fe0b65cc7e023888c8b02028ddb3"
-    sha256 cellar: :any,                 ventura:       "8a473329abf771f03d917727b158c734fc39e25a2dc11bd484d0b035ddd106c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a08338aebc175d621fe8d25c8ce7545228c8ed465e0f8e4f2b7af29a6abfe33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "effb5567624b9c92939a07d58a03c66710dec767d17b1e85f94a7ac94f1db18d"
+    sha256 cellar: :any,                 arm64_tahoe:   "caf2dbe3e96d3e7ed4f8457fbc4b11786c7529e2dd70cbb7ec941f8bfc6dfe7f"
+    sha256 cellar: :any,                 arm64_sequoia: "53fcc73745c194a5fac3e1f1e7173de981c70dffae569a0c9cd68507c0d478fe"
+    sha256 cellar: :any,                 arm64_sonoma:  "e9309fccc7350411d7548fe88c0deb09f50062e1f3900bb0eac4b99542a1bcdc"
+    sha256 cellar: :any,                 sonoma:        "717e830e7379dbd12d506c7c3a0bfe00ef4349ba29c9ccea9044cf7e06b31c53"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "36474a3ff7fc0e0aec844374fb2f738c9a4d8657c10bd19d2d46a4e1c17243ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff89895ec5e2f43e0c1eaddcdca76aadc61f9b5b61519d945df29d734d509e7a"
   end
 
   depends_on "cmake" => :build
@@ -34,36 +30,27 @@ class Hdf5Mpi < Formula
   conflicts_with "hdf5", because: "hdf5-mpi is a variant of hdf5, one can only use one or the other"
 
   def install
+    # CMake FortranCInterface_VERIFY fails with LTO on Linux due to different GCC and GFortran versions
+    ENV.append "FFLAGS", "-fno-lto" if OS.linux?
+
     args = %w[
+      -DCMAKE_C_COMPILER=mpicc
+      -DCMAKE_CXX_COMPILER=mpicxx
+      -DCMAKE_Fortran_COMPILER=mpif90
       -DHDF5_USE_GNU_DIRS:BOOL=ON
       -DHDF5_INSTALL_CMAKE_DIR=lib/cmake/hdf5
       -DHDF5_ENABLE_PARALLEL:BOOL=ON
-      -DALLOW_UNSUPPORTED:BOOL=ON
+      -DHDF5_ALLOW_UNSUPPORTED:BOOL=ON
       -DHDF5_BUILD_FORTRAN:BOOL=ON
       -DHDF5_BUILD_CPP_LIB:BOOL=ON
       -DHDF5_ENABLE_SZIP_SUPPORT:BOOL=ON
+      -DHDF5_ENABLE_ZLIB_SUPPORT:BOOL=ON
     ]
 
     # https://github.com/HDFGroup/hdf5/issues/4310
     args << "-DHDF5_ENABLE_NONSTANDARD_FEATURE_FLOAT16:BOOL=OFF"
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
-
-    # Avoid c shims in settings files
-    inreplace_c_files = %w[
-      build/src/H5build_settings.c
-      build/src/libhdf5.settings
-    ]
-    inreplace inreplace_c_files, Superenv.shims_path/ENV.cc, ENV.cc
-
-    # Avoid cpp shims in settings files
-    inreplace_cxx_files = %w[
-      build/CMakeFiles/h5c++
-      build/CMakeFiles/h5hlc++
-    ]
-    inreplace_cxx_files << "build/src/libhdf5.settings" if OS.linux?
-    inreplace inreplace_cxx_files, Superenv.shims_path/ENV.cxx, ENV.cxx
-
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

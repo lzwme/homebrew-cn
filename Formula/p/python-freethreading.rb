@@ -4,20 +4,21 @@ class PythonFreethreading < Formula
   url "https://www.python.org/ftp/python/3.14.2/Python-3.14.2.tgz"
   sha256 "c609e078adab90e2c6bacb6afafacd5eaf60cd94cf670f1e159565725fcd448d"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     formula "python"
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c4e44996a1c5039ad3ef1a62ca62f23f61378e254489745b5dd1808820a42603"
-    sha256 arm64_sequoia: "3754f1ded413890fa9b7bf3febcfdd599291a40efb3c4d8df7213de8fa1d3456"
-    sha256 arm64_sonoma:  "f4a720480acc3ab9d88782af590534687bad18cee3e55533d8af23d1f8e17895"
-    sha256 tahoe:         "56e47f44bf050e33bd866498f925f513f22a167e7a81ee0194551d2cbd89dca9"
-    sha256 sequoia:       "ec771da1d9f72dc9d8add6daa4edba3354fea80af0c4ccbc9d3e0dbf378e4c43"
-    sha256 sonoma:        "7acdfd03bb9d482041f04add33c0bd2390e9093959f5502c325d0651e5567c9f"
-    sha256 arm64_linux:   "6776898cc755dad3eff3dd97848b8be64d8b9615b9809b0a00a2a8696d93ffb7"
-    sha256 x86_64_linux:  "00fd027c6ee94b887d61e8b571038f577d86429f2918ca14aafbce6efbe1a8a6"
+    sha256 arm64_tahoe:   "7a756845edc6c27caf06e62dcb0041d0cba8c1041fab4d8f5d0199f1d7ccaab9"
+    sha256 arm64_sequoia: "eb721c29a02ca474c14d0bfccef303cb95042b638a36f221533f86174a587ea8"
+    sha256 arm64_sonoma:  "3ec95ad5030c5f4af5f292e684ffbd70d30ff480e72c10c0bde711213c8d8131"
+    sha256 tahoe:         "5a5b0e416098b792656bc966c8f06dd9177c8189ec66bcac35cd5fe865fd8f4b"
+    sha256 sequoia:       "5d046bea83c0569c198c867f3aad8834495074e73d9522333df4fa4e7b41cdc5"
+    sha256 sonoma:        "336019694586cc3ec3d51269e42097ee41f6109a32244ebd7e157fb419f3b927"
+    sha256 arm64_linux:   "59b9e8d2484b5c816cad4ef9384ba65853e32af106f20dafa54b66afb1f144b2"
+    sha256 x86_64_linux:  "d9b6d595bdf61f02a45892ca40769c9a4291f8e1b77cd304a136c5fd3c9858e2"
   end
 
   depends_on "pkgconf" => :build
@@ -53,14 +54,19 @@ class PythonFreethreading < Formula
     sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
   end
 
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+  end
+
   resource "pip" do
     url "https://files.pythonhosted.org/packages/fe/6e/74a3f0179a4a73a53d66ce57fdb4de0080a8baa1de0063de206d6167acc2/pip-25.3.tar.gz"
     sha256 "8d0538dbbd7babbd207f261ed969c65de439f6bc9e5dbd3b3b9a77f25d95f343"
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/8a/98/2d9906746cdc6a6ef809ae6338005b3f21bb568bea3165cfc6a243fdc25c/wheel-0.45.1.tar.gz"
-    sha256 "661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729"
+    url "https://files.pythonhosted.org/packages/89/24/a2eb353a6edac9a0303977c4cb048134959dd2a51b48a269dfc9dde00c8a/wheel-0.46.3.tar.gz"
+    sha256 "e3e79874b07d776c40bd6033f8ddf76a7dad46a7b8aa1b2787a83083519a1803"
   end
 
   # Modify default sysconfig to match the brew install layout.

@@ -3,18 +3,18 @@ class PocketTts < Formula
 
   desc "Text-to-speech application designed to run efficiently on CPUs"
   homepage "https://github.com/kyutai-labs/pocket-tts"
-  url "https://files.pythonhosted.org/packages/8d/41/777d34b5867d3b653a222c8039f110df4d06dfc224dcf018d9100c7a0937/pocket_tts-1.0.2.tar.gz"
-  sha256 "81239a598cad56a24f117b5c800df2d6a94f573f9a9fe49faf2ca05b258886d4"
+  url "https://files.pythonhosted.org/packages/27/e0/29673b627639e5112d840fc9a4fcca2c0dc43491c57d2f3d757b169bf254/pocket_tts-1.0.3.tar.gz"
+  sha256 "9f63ba293666dc338ab4e99a7bfee6f079ee78cd4c64c532a6706925aa702921"
   license "MIT"
   head "https://github.com/kyutai-labs/pocket-tts.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5e88f18f63cb98c122f563023da5b8878cdf194166329728783b84e089e64815"
-    sha256 cellar: :any,                 arm64_sequoia: "bd83d8727a89493e749e959eff76c38022bf11a8ca5eb7d828ad5bb9eef9d30b"
-    sha256 cellar: :any,                 arm64_sonoma:  "55bfed15a3c324204471b57a893d74756be703258ffa6cf394411bc78654eb71"
-    sha256 cellar: :any,                 sonoma:        "f412156390de30cb5e53b8306f8924ed460d1b88a6d257a0f55717b8c408d7b9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9698023f2e27a9930c4e5c30cb1daf50cb55f496b9e717ba7ccf7b79f8901daa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5214f370cfb10e13ca03a0b7969f9d780e605a1cb91d9951be85bc3c5febb5a3"
+    sha256 cellar: :any,                 arm64_tahoe:   "b5af778ce72b915b298a9a4653716944fb9e5e00b4ba7cb6cffb30a744bcbb8c"
+    sha256 cellar: :any,                 arm64_sequoia: "7dd483d4cf8cf32a3e41fcb34f7ddab919c3bd450c66163fe638cb3ada73608b"
+    sha256 cellar: :any,                 arm64_sonoma:  "04acff84d205526c9c4ab11d4cc10a6a6da186ff7a8b26025f92200046708b85"
+    sha256 cellar: :any,                 sonoma:        "af64d74d87a7caf10cdfa2072399fe8b0838292542a587591e33483d54fedb01"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "121a405116b87f15b50f7bb382ce01a200dfa56e41cb5114349ad342f293c191"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a694e6e26b2be6906f0fcaa6b179427268c69f49becf8d89e1c121fb696e954"
   end
 
   depends_on "cmake" => :build
@@ -104,8 +104,8 @@ class PocketTts < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "pygments" do

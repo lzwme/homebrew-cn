@@ -1,8 +1,8 @@
 class RekorCli < Formula
   desc "CLI for interacting with Rekor"
   homepage "https://docs.sigstore.dev/logging/overview/"
-  url "https://ghfast.top/https://github.com/sigstore/rekor/archive/refs/tags/v1.4.3.tar.gz"
-  sha256 "bc459b43c3da644c827ae15e3675bbf3ed7cb1135f07eff0d98fc8cd6495f2e3"
+  url "https://ghfast.top/https://github.com/sigstore/rekor/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "84ad7f314c87b1ba8b9198aea318327dfbf97a2367bdebecb0054fb4d8b3b89b"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,12 @@ class RekorCli < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "532d82354b7794e52f7354fcfde7fd2b8cb549f75d0a627889c7a2c61e531263"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "532d82354b7794e52f7354fcfde7fd2b8cb549f75d0a627889c7a2c61e531263"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "532d82354b7794e52f7354fcfde7fd2b8cb549f75d0a627889c7a2c61e531263"
-    sha256 cellar: :any_skip_relocation, sonoma:        "667adc6d79d5d83c5ffb9932cb9265cec106221ed4f8049c1f8197f7d3cbe244"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "424a916b8f1d7563bb5c95ea586eec52ef3ab7f72b6cdff97f38b65c9392c30f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cac58ab9734c2f9f4ed127681ab5651c4dc114696ece2e9fb662ec4ff36ef2d5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "49653b8b8750690c92ff1cd00462638aec874589298fbee806c25e86f010d23e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49653b8b8750690c92ff1cd00462638aec874589298fbee806c25e86f010d23e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49653b8b8750690c92ff1cd00462638aec874589298fbee806c25e86f010d23e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61a8866b7d5853d906201ad1c5cefbd069a6c51a32dd48332829501349975696"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6dc6a1eab182b049d9f41f1a1af0ddf727c778ade03edbf8910a404a50817f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69ada55b8cc3141dee6ed1aaa4f1e909257a9dfff08562210db481d503baa1cc"
   end
 
   depends_on "go" => :build

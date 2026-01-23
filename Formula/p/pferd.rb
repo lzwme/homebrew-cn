@@ -6,15 +6,15 @@ class Pferd < Formula
   url "https://files.pythonhosted.org/packages/2f/af/371337e0e06866d4efb36c1ab8e375736f1e2d7280544da130ef6687534b/pferd-3.8.3.tar.gz"
   sha256 "0f2c4e582a885b2a1a88b9a896cfd0932e8f25db60b252c0957a6ffdd2085763"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9f0b81d562b52213b4408e8f0a861cdf57cda3ed99ca190313c10dc9790bae1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36c8e23d94ae0230337d4b8c72a4160c26a51238e577c094928f6c47a0bcef84"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc8b981be76cd191d2f37cd195020372e0eb2671065ea96c5db3fe64b5d3543b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5a443867f5f817c274a74aa042fb93f1f0ce1c8033a1a27c9b96b3312dd2f993"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fdc155a334484e256b7432e9a902a4bbbe54d255d2d6b02c25d423437eb8bd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cbf796f23ad70c37139ba12bfaaa537ada1c0fc4391d35e36593f58f95240d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2f4a957b1bafaacbd1f1dcac71bbc4e0f33a88cc467a83b75a4c35e870c3b598"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e1b2360d5c14f84d5e625f8b0ae868a50751f062375f303470dfef9bf783c91"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d3b3442bb3fd6b67f6cc7674a97bcb2b7466e961b4b2f439e17b4392c60938b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7c94737cea56098da20bf1254a47bb0b754e6da1e582b31f4808f0a4eb75f0ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e070b0aff032e2b5ab00d461c029a241701146660acea26cb4ec2861c40ef98d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d3be4ae9b5017dd4448787deb74124628af8f9b47bed7b034973714bd6076c7"
   end
 
   depends_on "certifi" => :no_linkage
@@ -65,8 +65,8 @@ class Pferd < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/8d/7d/41acf8e22d791bde812cb6c2c36128bb932ed8ae066bcb5e39cb198e8253/jaraco_context-6.0.2.tar.gz"
-    sha256 "953ae8dddb57b1d791bf72ea1009b32088840a7dd19b9ba16443f62be919ee57"
+    url "https://files.pythonhosted.org/packages/cb/9c/a788f5bb29c61e456b8ee52ce76dbdd32fd72cd73dd67bc95f42c7a8d13c/jaraco_context-6.1.0.tar.gz"
+    sha256 "129a341b0a85a7db7879e22acd66902fda67882db771754574338898b2d5d86f"
   end
 
   resource "jaraco-functools" do
@@ -125,8 +125,8 @@ class Pferd < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/89/23/adf3796d740536d63a6fbda113d07e60c734b6ed5d3058d1e47fc0495e47/soupsieve-2.8.1.tar.gz"
-    sha256 "4cf733bc50fa805f5df4b8ef4740fc0e0fa6218cf3006269afd3f9d6d80fd350"
+    url "https://files.pythonhosted.org/packages/7b/ae/2d9c981590ed9999a0d91755b47fc74f74de286b0f5cee14c9269041e6c4/soupsieve-2.8.3.tar.gz"
+    sha256 "3267f1eeea4251fb42728b6dfb746edc9acaffc4a45b27e19450b676586e8349"
   end
 
   resource "typing-extensions" do

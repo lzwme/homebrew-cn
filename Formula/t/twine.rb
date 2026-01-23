@@ -6,16 +6,16 @@ class Twine < Formula
   url "https://files.pythonhosted.org/packages/e0/a8/949edebe3a82774c1ec34f637f5dd82d1cf22c25e963b7d63771083bbee5/twine-6.2.0.tar.gz"
   sha256 "e5ed0d2fd70c9959770dce51c8f39c8945c574e18173a7b81802dab51b4b75cf"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/pypa/twine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3cfa850f12b93b982f096b13bf805b95bdf23ebd004cc676fcae608d57fd5119"
-    sha256 cellar: :any,                 arm64_sequoia: "6f813eb8c6ebd4bbc0d69829a7bf8122ac28f49651b2e2493580d932ce91e8d4"
-    sha256 cellar: :any,                 arm64_sonoma:  "eb409aa1017fed045615fcef44828b18de672ca7b40fc4118ee46ecee8f588b3"
-    sha256 cellar: :any,                 sonoma:        "2214864e24ec3e0afbce87bfde719ee361e78bcd6d1a928c7e2812b18460c022"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba7e28965320c92c9649db67b82861946b432b4bc4d9b6f22bbf032edecc8c56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c921ca70ab070a0e6659c0d60fca4df7dc0dffd6dae7d94dce6ac5f2241ef74a"
+    sha256 cellar: :any,                 arm64_tahoe:   "fffde30a224bdcaa17699c40175b77e6a013b11b8cda4c86da2e6ae63bcad76a"
+    sha256 cellar: :any,                 arm64_sequoia: "bac3b0fea3f112562a47f2583fd02b8acb337759db02d2495e1b4da9477c2b8f"
+    sha256 cellar: :any,                 arm64_sonoma:  "c93c7a6a6f0047307b03d8fd7e9a124bf116b600430a2c84a8b2c1c951f1568e"
+    sha256 cellar: :any,                 sonoma:        "3a4f49aa4f2af3fee510a445fcf77a4d60ba1f7b2ee668405ca1fb1d89b4c61d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02cf16d00ac5b1b5ef3751ec2709b7735b18513000ab396db10bd2519d03cbda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60c01e8f6b9ef9c72157775459a492e5c627ca8a7e915542e6676a8c12599e04"
   end
 
   depends_on "rust" => :build
@@ -55,8 +55,8 @@ class Twine < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/8d/7d/41acf8e22d791bde812cb6c2c36128bb932ed8ae066bcb5e39cb198e8253/jaraco_context-6.0.2.tar.gz"
-    sha256 "953ae8dddb57b1d791bf72ea1009b32088840a7dd19b9ba16443f62be919ee57"
+    url "https://files.pythonhosted.org/packages/cb/9c/a788f5bb29c61e456b8ee52ce76dbdd32fd72cd73dd67bc95f42c7a8d13c/jaraco_context-6.1.0.tar.gz"
+    sha256 "129a341b0a85a7db7879e22acd66902fda67882db771754574338898b2d5d86f"
   end
 
   resource "jaraco-functools" do
@@ -95,8 +95,8 @@ class Twine < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "pygments" do

@@ -9,15 +9,15 @@ class TrezorAgent < Formula
   url "https://files.pythonhosted.org/packages/11/bc/aa2bdee9cd81af9ecde0a9e8b5c6c6594a4a0ee7ade950b51a39d54f9e63/trezor_agent-0.12.0.tar.gz"
   sha256 "e08ca5a54bd7658017164c8518d6cdf623d3b077dfdccfd12f612af5fef05855"
   license "LGPL-3.0-only"
-  revision 10
+  revision 11
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0d243f29c2033d6a1aa4d5128aa1462b8035b61566b476ecb658e24339b2a59a"
-    sha256 cellar: :any,                 arm64_sequoia: "56130555ac5d8f99daabd2f22bee91766ee71ceef1467f876f7e34858c1343f9"
-    sha256 cellar: :any,                 arm64_sonoma:  "6c5704ca2d1506f593f98f4653c265e00f881e7416685aaadfb70b4e0401d3e9"
-    sha256 cellar: :any,                 sonoma:        "5190ffb805e917a5757ad30a9f42b8af242905e92744a4ea81ac912fa00a9add"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cad5c3a8aa852202fbd5b2417526a761448b4591ae2b31e984d798c2f0bde417"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70cf671780281d92d0e76beac29db63dd254f6d6997b703fa4bc124039481df4"
+    sha256 cellar: :any,                 arm64_tahoe:   "df5b99a9d545671b2cb423188f153a025863cdcefe714b4928c6b7115e7d0785"
+    sha256 cellar: :any,                 arm64_sequoia: "22bb51ed5c8e6ec5a27b8078fc57c2d0182ec6b558d0323717dcbdc247cf7d1c"
+    sha256 cellar: :any,                 arm64_sonoma:  "80ba6ad08d5b46c3cb48f030f541eb6691aa77ea31131ed93127123a68a0305c"
+    sha256 cellar: :any,                 sonoma:        "4d3aeb4be6a588d188f211f3dbd7255411b006b43075883a1c953911c0018efb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4757d6705f5a2e43bc7bc505dab6f2dc553960dddb08ab51b445da67d2a86c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "372dbf44e8976d1d8f9d734674e3eedef39bd875bba5b55a80a9e4e66af0402e"
   end
 
   depends_on "pkgconf" => :build # for hidapi resource
@@ -166,9 +166,14 @@ class TrezorAgent < Formula
     sha256 "e5bd08d0119e1d9e95d05215f838b07b44d03b651adddc523cc1a38892b8af6b"
   end
 
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+  end
+
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/cc/5c/f912bdebdd4af4160da6a2c2b1b3aaa1b8c578d0243ba8f694f93c7095f0/protobuf-6.33.3.tar.gz"
-    sha256 "c8794debeb402963fddff41a595e1f649bcd76616ba56c835645cab4539e810e"
+    url "https://files.pythonhosted.org/packages/53/b8/cda15d9d46d03d4aa3a67cb6bffe05173440ccf86a9541afaf7ac59a1b6b/protobuf-6.33.4.tar.gz"
+    sha256 "dc2e61bca3b10470c1912d166fe0af67bfc20eb55971dcef8dfa48ce14f0ed91"
   end
 
   resource "pycryptodome" do
@@ -292,8 +297,8 @@ class TrezorAgent < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/8a/98/2d9906746cdc6a6ef809ae6338005b3f21bb568bea3165cfc6a243fdc25c/wheel-0.45.1.tar.gz"
-    sha256 "661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729"
+    url "https://files.pythonhosted.org/packages/89/24/a2eb353a6edac9a0303977c4cb048134959dd2a51b48a269dfc9dde00c8a/wheel-0.46.3.tar.gz"
+    sha256 "e3e79874b07d776c40bd6033f8ddf76a7dad46a7b8aa1b2787a83083519a1803"
   end
 
   def install

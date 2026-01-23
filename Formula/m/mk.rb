@@ -6,16 +6,16 @@ class Mk < Formula
   url "https://files.pythonhosted.org/packages/75/9e/dcc7813d9f7133f8d384eca24a4d4bb0cb056abcc53f1f170b8353084feb/mk-3.0.0.tar.gz"
   sha256 "0a041a3620057165f155b8372469d8ab55ae94dd91d6e27723ab9a7de1aa2086"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/pycontribs/mk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "957a9e4a496990c2f05c75b6ed4e46ded6083b42ed4ff157cb31522f0afa0afd"
-    sha256 cellar: :any,                 arm64_sequoia: "4e1d0f92e3ed207388a5c577f9b99432dcc41c18bdcb674b6bbb6fb6e3174f16"
-    sha256 cellar: :any,                 arm64_sonoma:  "cf4907849bf739b53050d62c4a25410d2a4d86f520c014caa54735443f819239"
-    sha256 cellar: :any,                 sonoma:        "47f8cfdc3110d415531e6f3062b6c5b1ab3b2e74c027ea534cb77ed484b0f864"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e9e81854f4e4007bca8b7d377f93b46fd0e5f45749fb3866255e3df69fd52d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fda70ec75c7f54a397b7f2cc72fff19aa30ed9af72c5ba73c9b8c8f5f3c5f497"
+    sha256 cellar: :any,                 arm64_tahoe:   "f41a3e482b7b72e734ab98477364b45911a32d40ddddd96e7eef1cccd0f67053"
+    sha256 cellar: :any,                 arm64_sequoia: "a6cab0d3361303a23886894a889007eb9b3cc597909854d973cf8e9420f5f897"
+    sha256 cellar: :any,                 arm64_sonoma:  "6da335fb2bc931c4624ccdbf2dfae0aa71498be2594780e4b2a7165a69acff1e"
+    sha256 cellar: :any,                 sonoma:        "fbd3f3511b55664d53b5f05f53916e56a52e8fbe6d5594bc1c6a41f9205ae6b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6eff011b586681b6c3c0d3dabb16e5c46bbabf4abbffb2848e077ca018ffaf18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bfe5ff7651239de872fe84beaf0f86c9659b4db299998ab8eaf9d750f8cd38e"
   end
 
   depends_on "rust" => :build
@@ -81,8 +81,8 @@ class Mk < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/8d/7d/41acf8e22d791bde812cb6c2c36128bb932ed8ae066bcb5e39cb198e8253/jaraco_context-6.0.2.tar.gz"
-    sha256 "953ae8dddb57b1d791bf72ea1009b32088840a7dd19b9ba16443f62be919ee57"
+    url "https://files.pythonhosted.org/packages/cb/9c/a788f5bb29c61e456b8ee52ce76dbdd32fd72cd73dd67bc95f42c7a8d13c/jaraco_context-6.1.0.tar.gz"
+    sha256 "129a341b0a85a7db7879e22acd66902fda67882db771754574338898b2d5d86f"
   end
 
   resource "jaraco-functools" do
@@ -121,8 +121,8 @@ class Mk < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "pluggy" do
@@ -176,8 +176,8 @@ class Mk < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
-    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
+    url "https://files.pythonhosted.org/packages/86/ff/f75651350db3cf2ef767371307eb163f3cc1ac03e16fdf3ac347607f7edb/setuptools-80.10.1.tar.gz"
+    sha256 "bf2e513eb8144c3298a3bd28ab1a5edb739131ec5c22e045ff93cd7f5319703a"
   end
 
   resource "shellingham" do

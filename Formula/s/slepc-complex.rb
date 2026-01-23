@@ -4,18 +4,19 @@ class SlepcComplex < Formula
   url "https://slepc.upv.es/download/distrib/slepc-3.24.2.tar.gz"
   sha256 "6f1f7e45b9bbd15631562f193284832ae4e9655eb3af7f1ba59bdf8bdaefb638"
   license "BSD-2-Clause"
+  revision 1
 
   livecheck do
     formula "slepc"
   end
 
   bottle do
-    sha256 arm64_tahoe:   "97dd1650a3aa0dea1116fd15c58a56f41d8917a5bd56d3b883e463199942b1e8"
-    sha256 arm64_sequoia: "98d2d4a4310377396fe7e8716b5691f598030566c384c52939680e3ac99bcc6c"
-    sha256 arm64_sonoma:  "1f9604a22706789b8cd42c72c5fbeec646512d98683c7cec356f6036889f4d71"
-    sha256 sonoma:        "4d18c4c48a8910040aa9014eaf8693f8a9980cbfac91a60ba9d14203d5723c1e"
-    sha256 arm64_linux:   "85ecf1c09c85d51164656999b842ec4c001ad02a8a01540199068c871f8b6305"
-    sha256 x86_64_linux:  "fafdd44777bdae17328bee9a8bf6b91d6dce229c40c05660eee556d3f2ce1dce"
+    sha256 arm64_tahoe:   "0ee41fed06f6b2e13da19287ae9d84f33dceb875619a42e141e3cf0320a96792"
+    sha256 arm64_sequoia: "bec90525830fee8e73558025a9e3babe097058f25d9fe7310bb25f56398836ce"
+    sha256 arm64_sonoma:  "dc0f20f37361117ede47e9c0d826f96ceb4905d0f010ffb61deecdc00cdfcaa8"
+    sha256 sonoma:        "c4e384ba2d616ff7209a7272b3aeaa3a5689e48b63e6fa469fb38c630981ad83"
+    sha256 arm64_linux:   "19cc65f5b7a14207e95817c09cbb90272f90e513ce7cb8aba553f3511a494cc8"
+    sha256 x86_64_linux:  "bce927791f699727b7a95cc1f5952427e9e7cb26603ca87ab8b16f5a22022aa1"
   end
 
   depends_on "open-mpi"

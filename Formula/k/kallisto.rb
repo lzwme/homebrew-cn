@@ -4,17 +4,15 @@ class Kallisto < Formula
   url "https://ghfast.top/https://github.com/pachterlab/kallisto/archive/refs/tags/v0.51.1.tar.gz"
   sha256 "a8bcc23bca6ac758f15e30bb77e9e169e628beff2da3be2e34a53e1d42253516"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b929096e1a95232a1a3834756bd83367868f0cace211b481f951d1834d717b67"
-    sha256 cellar: :any,                 arm64_sequoia: "952ef6635a1537aeb609ea82597d95e6411a5cf351e5916a5507acf833f9fa0b"
-    sha256 cellar: :any,                 arm64_sonoma:  "bd9eb12bce6d33e5640a0e0c0fc3f76f8f68c4732e09e22398740132d42af405"
-    sha256 cellar: :any,                 arm64_ventura: "1628bb7528f5118ab8a2739b279604dd01fcb6b1175e01fc6c93246e5b6a62eb"
-    sha256 cellar: :any,                 sonoma:        "872bfc8d27e0c9d83e7c35e67904492807acae02d145d79491289cd1f343fa91"
-    sha256 cellar: :any,                 ventura:       "368d851057292860af1245b39a7daa8ec873a2bcd64fdc8a6bdbf5186d1f53f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "136b6889873455553eab3ecbd9eafac5180005427d8698309d3c1f53a5cca76a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a85a57db730f00c05d2adeff1493065baa6d23480bd36db9ca5f5e17634f42b9"
+    sha256 cellar: :any,                 arm64_tahoe:   "15c815ef2a93f3146564787c2c161bb20cdf757e0f62b5fdaf339adc5c282a44"
+    sha256 cellar: :any,                 arm64_sequoia: "ceab1faa800ab8b8b82a197142dc5f3520897089cbfb97eddf080bf3178085d0"
+    sha256 cellar: :any,                 arm64_sonoma:  "ba1270ba9840d1547752cd56bd71678a08dfb4dec5e1564aae71ca43c2858eaf"
+    sha256 cellar: :any,                 sonoma:        "d0a212cf0c56d348b3665b7338957e457890501cf58c8f20f2cd250d790330dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "40005484f9991f8c84a914e970f83424f5917abe9d4501c02951fb22e5b2b690"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "092a025475cfbabeef5f0ccb3b8e65faf367bc35779f845f8c01ce598a90c70a"
   end
 
   depends_on "cmake" => :build

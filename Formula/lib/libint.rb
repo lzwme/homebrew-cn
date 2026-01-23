@@ -6,12 +6,13 @@ class Libint < Formula
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "50a2ca6ce8e4e38f6af74eadd1016ccf6a5e3ab582f07f880e1b35165b95fb4c"
-    sha256 cellar: :any,                 arm64_sequoia: "b66b1bbaa3d92054712f83cbda0942041e950ab63e3bdd310bb576f5ecc8c708"
-    sha256 cellar: :any,                 arm64_sonoma:  "c024ee927a2654942604d17a5c0102954e0b975f9331fdadddcfe9cf0abf5ba5"
-    sha256 cellar: :any,                 sonoma:        "7da400a5ccb1a38661fb374da8c17faaeaa944959dbcd05f75ad87c0eabba8d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1719df4e7c6c147daf60e16bd2da82b2ff0c1414d0f21b185557fa6d829c140b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d6b3acd049664939677c56e25b871982d901bc39eb343fa0eb77a31d0cb1c0e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "7753ab7a751682e82933f613c3e8f0dbed020c187f4033bf7883f43c13fb9906"
+    sha256 cellar: :any,                 arm64_sequoia: "b35ebbd19dd5eceb28e1ea684489c72d038796b5a3bc8bc73df07807f9b38ae7"
+    sha256 cellar: :any,                 arm64_sonoma:  "493aff546d60aeb2d28c27328d5f097152743d26d8545628ed7232c5a9b3e2ec"
+    sha256 cellar: :any,                 sonoma:        "7dcbe9fe6ddaca8d21fd647012357711aecae571726fc34e8b42285b2dbc87a5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "05a3e7fc3a2c80b48ebec6c5a4a00d9e66aa6657a251b7c9dd7cab6377cacfd1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a63c3942366b5bef4c40b335ffb6cea146836af7db0aeb2a0aaf9537666780f"
   end
 
   depends_on "autoconf" => :build
@@ -23,9 +24,16 @@ class Libint < Formula
   depends_on "mpfr"
 
   def install
+    args = %w[
+      --enable-shared
+      --disable-static
+      --enable-eri=1
+      --enable-eri2=1
+      --enable-eri3=1
+    ]
     system "glibtoolize", "--install", "--force"
     system "./autogen.sh"
-    system "./configure", "--enable-shared", "--disable-static", *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
     pkgshare.install "tests/hartree-fock/hartree-fock.cc"

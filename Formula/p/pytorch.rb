@@ -3,10 +3,9 @@ class Pytorch < Formula
 
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
-  url "https://ghfast.top/https://github.com/pytorch/pytorch/releases/download/v2.9.1/pytorch-v2.9.1.tar.gz"
-  sha256 "e17504700ebc4c87f9b57059df1c4d790b769458c04db144c7a92aea90f2c92b"
+  url "https://ghfast.top/https://github.com/pytorch/pytorch/releases/download/v2.10.0/pytorch-v2.10.0.tar.gz"
+  sha256 "fa8ccbe87f83f48735505371c1c313b4aa6db400b0ae4f8a02844d1e150c695f"
   license "BSD-3-Clause"
-  revision 4
 
   livecheck do
     url :stable
@@ -16,12 +15,12 @@ class Pytorch < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b7fb4b3a10390af168b1272c51245df679dc6bf59846e6719996da9a13871ac0"
-    sha256 cellar: :any, arm64_sequoia: "8213af1e9f09232d06778589afd2b5d7ac56b8de120ec3bb78963f69555e80fe"
-    sha256 cellar: :any, arm64_sonoma:  "f5730df509d424bbce1927dd8bc6b4a59f6c10ef3994aa6cb9e8937e0362b626"
-    sha256 cellar: :any, sonoma:        "f50474020f2f8a5eb99ef5e85156995fd87e378626d644f6235328de98ccc567"
-    sha256               arm64_linux:   "b8c591098e616bada220f5623ab8a81fd124ddf380e8aeec802be064a3139909"
-    sha256               x86_64_linux:  "0434b78cba9d0032ba3485f1ce7a142ea1e390dcff798abefaaf88efc4f68835"
+    sha256 cellar: :any, arm64_tahoe:   "1fdb982bd44569c59eee93c00b077f176faf85fc34c5d6ff139a3619c843fce9"
+    sha256 cellar: :any, arm64_sequoia: "e35118ea4fd3d74157f5aa9572809e3129c79cec5f3220294893891a9612189c"
+    sha256 cellar: :any, arm64_sonoma:  "7ae1f37acbb2c43e1b8f21eb8325f4bd68bbdca58ce5d9a51bbe5372138ef8c2"
+    sha256 cellar: :any, sonoma:        "619c5aabd0994910640f9657de0c3be693af529081db9fcb578e157b8654ce8a"
+    sha256               arm64_linux:   "b2d6d3495d201287fa31984f4b2c5b0f7413b9edbcc26f860051216707be41f8"
+    sha256               x86_64_linux:  "b14466e5f1aa3de2b11cc726556472d49edb3085a8dd8b6158f95881b36abc95"
   end
 
   depends_on "cmake" => :build
@@ -44,17 +43,17 @@ class Pytorch < Formula
   end
 
   pypi_packages package_name:     "torch[opt-einsum]",
-                extra_packages:   "pyyaml",
+                extra_packages:   %w[pyyaml packaging],
                 exclude_packages: "numpy"
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
-    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
+    url "https://files.pythonhosted.org/packages/1d/65/ce7f1b70157833bf3cb851b556a37d4547ceafc158aa9b34b36782f23696/filelock-3.20.3.tar.gz"
+    sha256 "18c57ee915c7ec61cff0ecf7f0f869936c7c30191bb0cf406f1341778d0834e1"
   end
 
   resource "fsspec" do
-    url "https://files.pythonhosted.org/packages/24/7f/2747c0d332b9acfa75dc84447a066fdf812b5a6b8d30472b74d309bfe8cb/fsspec-2025.10.0.tar.gz"
-    sha256 "b6789427626f068f9a83ca4e8a3cc050850b6c0f71f99ddb4f542b8266a26a59"
+    url "https://files.pythonhosted.org/packages/d5/7d/5df2650c57d47c57232af5ef4b4fdbff182070421e405e0d62c6cdbfaa87/fsspec-2026.1.0.tar.gz"
+    sha256 "e987cb0496a0d81bba3a9d1cee62922fb395e7d4c3b575e57f547953334fe07b"
   end
 
   resource "jinja2" do
@@ -73,13 +72,18 @@ class Pytorch < Formula
   end
 
   resource "networkx" do
-    url "https://files.pythonhosted.org/packages/6c/4f/ccdb8ad3a38e583f214547fd2f7ff1fc160c43a75af88e6aec213404b96a/networkx-3.5.tar.gz"
-    sha256 "d4c6f9cf81f52d69230866796b82afbccdec3db7ae4fbd1b65ea750feed50037"
+    url "https://files.pythonhosted.org/packages/6a/51/63fe664f3908c97be9d2e4f1158eb633317598cfa6e1fc14af5383f17512/networkx-3.6.1.tar.gz"
+    sha256 "26b7c357accc0c8cde558ad486283728b65b6a95d85ee1cd66bafab4c8168509"
   end
 
   resource "opt-einsum" do
     url "https://files.pythonhosted.org/packages/8c/b9/2ac072041e899a52f20cf9510850ff58295003aa75525e58343591b0cbfb/opt_einsum-3.4.0.tar.gz"
     sha256 "96ca72f1b886d148241348783498194c577fa30a8faac108586b14f1ba4473ac"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "pyyaml" do
@@ -88,8 +92,8 @@ class Pytorch < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
-    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
+    url "https://files.pythonhosted.org/packages/86/ff/f75651350db3cf2ef767371307eb163f3cc1ac03e16fdf3ac347607f7edb/setuptools-80.10.1.tar.gz"
+    sha256 "bf2e513eb8144c3298a3bd28ab1a5edb739131ec5c22e045ff93cd7f5319703a"
   end
 
   resource "sympy" do

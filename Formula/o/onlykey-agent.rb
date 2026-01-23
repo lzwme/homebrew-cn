@@ -6,15 +6,15 @@ class OnlykeyAgent < Formula
   url "https://files.pythonhosted.org/packages/68/80/e89b6c3680bedb1e14e99f0539ac805bddc7d8dd87c58805c64484966b7c/onlykey-agent-1.1.15.tar.gz"
   sha256 "49b19bec28dc0fb7053ef01266d8a9e7a078bb146214a641bdbb1feac6fc7ddb"
   license "LGPL-3.0-only"
-  revision 10
+  revision 11
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2a32378a637be74a9311bea60078379223da0b9c79eb552bce1155347cb15bcf"
-    sha256 cellar: :any,                 arm64_sequoia: "067a8fda53b5e56e1fd24a26f6c27f326288fedf3bb1e7176c77ffde8ef1d72d"
-    sha256 cellar: :any,                 arm64_sonoma:  "9b8af1799a2e86620c08c7688ad23e6c40a4fa9b6a58e8280b05a78184cca72c"
-    sha256 cellar: :any,                 sonoma:        "48c4e980f6c6503b76f7e2d15abb1bae628e852c40c6ebc5fc0d904257013797"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d00ee0176eb25e75281aa87e64516917f029f85b0abfd4eda0a295d58e3ce8f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3ff8af32d2607fa3bed7ba5f1903efc34070e74060ea169f7b5b88d809f79c6"
+    sha256 cellar: :any,                 arm64_tahoe:   "02d754797497e491be94a2ecec98bd2745e98c23350f84f29b5a201ebfb2cf89"
+    sha256 cellar: :any,                 arm64_sequoia: "e87b81ad3220f487f73d27cca29972d6a0056688c86ee960ecef4917a4e2bbf1"
+    sha256 cellar: :any,                 arm64_sonoma:  "14b7bb51dbb7d5b6f472403f69816556c3f7580ae7a988da613cb762d25ea744"
+    sha256 cellar: :any,                 sonoma:        "84f5e77dc0e99d71751bccdc2237974ad6e4d5c9a010c543f0456b74f5207255"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f2378af747cecafb7ab65810ef50fbc349e3df6d928c6510de6d4c212362dd7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ccb753c42280e0f62fd3d932877f77a87df03c1c9881e3a23fff279d372ba12"
   end
 
   depends_on "pkgconf" => :build
@@ -30,8 +30,8 @@ class OnlykeyAgent < Formula
                 extra_packages:   "setuptools"
 
   resource "aenum" do
-    url "https://files.pythonhosted.org/packages/e3/52/6ad8f63ec8da1bf40f96996d25d5b650fdd38f5975f8c813732c47388f18/aenum-3.1.16-py3-none-any.whl"
-    sha256 "9035092855a98e41b66e3d0998bd7b96280e85ceb3a04cc035636138a1943eaf"
+    url "https://files.pythonhosted.org/packages/09/7a/61ed58e8be9e30c3fe518899cc78c284896d246d51381bab59b5db11e1f3/aenum-3.1.16.tar.gz"
+    sha256 "bfaf9589bdb418ee3a986d85750c7318d9d2839c1b1a1d6fe8fc53ec201cf140"
   end
 
   resource "backports-shutil-which" do
@@ -119,6 +119,11 @@ class OnlykeyAgent < Formula
     sha256 "f3c0ee8605f8142c3320acf0e11a9680cb6345d7f986e5652841c00049a29ee4"
   end
 
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+  end
+
   resource "prompt-toolkit" do
     url "https://files.pythonhosted.org/packages/a1/96/06e01a7b38dce6fe1db213e061a4602dd6032a8a97ef6c1a862537732421/prompt_toolkit-3.0.52.tar.gz"
     sha256 "28cde192929c8e7321de85de1ddbe736f1375148b02f2e17edd840042b1be855"
@@ -165,8 +170,8 @@ class OnlykeyAgent < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
-    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
+    url "https://files.pythonhosted.org/packages/86/ff/f75651350db3cf2ef767371307eb163f3cc1ac03e16fdf3ac347607f7edb/setuptools-80.10.1.tar.gz"
+    sha256 "bf2e513eb8144c3298a3bd28ab1a5edb739131ec5c22e045ff93cd7f5319703a"
   end
 
   resource "six" do
@@ -185,13 +190,13 @@ class OnlykeyAgent < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
-    sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
+    url "https://files.pythonhosted.org/packages/25/6f/e1ea6dcb21da43d581284d8d5a715c2affb906aa3ed301f77f7f5ae0e7d5/wcwidth-0.3.1.tar.gz"
+    sha256 "5aedb626a9c0d941b990cfebda848d538d45c9493a3384d080aff809143bd3be"
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/8a/98/2d9906746cdc6a6ef809ae6338005b3f21bb568bea3165cfc6a243fdc25c/wheel-0.45.1.tar.gz"
-    sha256 "661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729"
+    url "https://files.pythonhosted.org/packages/89/24/a2eb353a6edac9a0303977c4cb048134959dd2a51b48a269dfc9dde00c8a/wheel-0.46.3.tar.gz"
+    sha256 "e3e79874b07d776c40bd6033f8ddf76a7dad46a7b8aa1b2787a83083519a1803"
   end
 
   def install

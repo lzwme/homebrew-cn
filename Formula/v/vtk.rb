@@ -4,16 +4,16 @@ class Vtk < Formula
   url "https://www.vtk.org/files/release/9.5/VTK-9.5.2.tar.gz"
   sha256 "cee64b98d270ff7302daf1ef13458dff5d5ac1ecb45d47723835f7f7d562c989"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https://gitlab.kitware.com/vtk/vtk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1c527182b2977e2a90c68cd000622dc312685e49a9a87402917a416969203b56"
-    sha256 cellar: :any,                 arm64_sequoia: "40821fb74f71d78ea3c1a8a3de870a31f977a17d31ddd6aac627a2423c01e6f5"
-    sha256 cellar: :any,                 arm64_sonoma:  "a6549d4e94df069fe0dc2eaa771136292820eb3462c6493c66385fddbe873d17"
-    sha256 cellar: :any,                 sonoma:        "3dc0560fee378ce9b12866898a5675bad8e1d3837e5a6bf8877248b3b933f311"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "89c83a857f7f529adaecea5c7f18926bf80409f30043b8d1c25cec30350cd6c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5971c75d68c2918f19705522211fd276c8de22878656fb1fed2bcd77c55333bc"
+    sha256 cellar: :any,                 arm64_tahoe:   "6a404451bc75f2e87bed93f0b1317732e6a4f64faac8904b5027df1e7aa9035d"
+    sha256 cellar: :any,                 arm64_sequoia: "d15103e929fc467e48a58f370f3e0e7dcec3606ee00846e6cdaaf164e6b89afa"
+    sha256 cellar: :any,                 arm64_sonoma:  "c6abc4c8f786d992716a221d3af7b57c3d28081fac6ccbafad3bda99e2e95ee5"
+    sha256 cellar: :any,                 sonoma:        "85306ce7d65dbf0b374fe880bde15ddcd378a7355839c419a0fc0f6cd6895964"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "74c97f51d11842d28689f867add2ea7f7124b9fda635cb8bbdcbf2cfec17a76e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8eb6d5cbe2266a2f7b19672b9a907ff1861bae277b446ccae9b9e76a2e8b047"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -53,6 +53,13 @@ class Vtk < Formula
     depends_on "libx11"
     depends_on "libxcursor"
     depends_on "mesa"
+  end
+
+  # Backport fix for HDF5 2.0.0
+  patch :p2 do
+    url "https://github.com/Kitware/CMake/commit/27e558dfa5a5441954d8930f2b6d9ae700c95050.patch?full_index=1"
+    sha256 "ba4ecd3f9abfaae2c60c9be6978c250622bdb9979b42ddec52116d51d034f911"
+    directory "CMake/patches/99"
   end
 
   def install

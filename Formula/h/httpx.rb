@@ -1,18 +1,18 @@
 class Httpx < Formula
   desc "Fast and multi-purpose HTTP toolkit"
   homepage "https://github.com/projectdiscovery/httpx"
-  url "https://ghfast.top/https://github.com/projectdiscovery/httpx/archive/refs/tags/v1.8.0.tar.gz"
-  sha256 "1f91fcda7ef7e547a252a8da3c54c0723528cab972cdbd274139b6f96bce60d6"
+  url "https://ghfast.top/https://github.com/projectdiscovery/httpx/archive/refs/tags/v1.8.1.tar.gz"
+  sha256 "063093ba08409131a2b760807ddaa65ea7b42cc2e9fd3fca6ba32c3d94b6ba92"
   license "MIT"
   head "https://github.com/projectdiscovery/httpx.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "485abd90058d3300b485c1a8a404673e66b8924afd388e052cbd48dfeaa782ea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c8a644963510db3de117d5ba1560d7e912840da475c1af75ecc7a4139c94a50"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e66c0ea7ed028ff6384e99465fbcf9855000884bc0779ded1b34c3b5e8e7729"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ef3cae1c7b9e7b154a1221db5f373eaade88640b516964d4fa2d35b02b2f4b85"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8fbb04251e0ccce3028867ed07985ab799f71fe3e87edbb05e3aae265ef3864"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f8c4be6998108698577126ee4574c67db511131c5826069b75a0baa48dbeb07"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb053ee31728725df8445811dc154df8fc618c9e912d6a4f8576288c896fab61"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66f75f921084e2dd98e02ab1e9fdc8c7fcb1f2b52636e4c970a978a59db927ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e430007ad651f3c52838fc563549add7fba7cae3004f2067824f7f73a924a1a1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a9afaef26fb2013693302949b43f13d60ea4e8be35cd87ae8f81424b4baebae0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba657fae0927582e8d90c315c81a956c8be73321bde3363d0cb62b3eb36188ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32d26892b13133b03906d45460228c11f8ab8cf15a03ff169a75904626c6fecb"
   end
 
   depends_on "go" => :build

@@ -6,6 +6,11 @@ class CargoPublicApi < Formula
   license "MIT"
   head "https://github.com/cargo-public-api/cargo-public-api.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "65f62e4639327b4515376fd6d35e7362bf47d241da47679dd8ac38f1cc599556"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "644f56927fdf51f3bdb11a5f65bcb0ee5d9f838172f4069e6a7252cef474ad39"

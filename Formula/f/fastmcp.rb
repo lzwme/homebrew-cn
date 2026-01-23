@@ -3,18 +3,18 @@ class Fastmcp < Formula
 
   desc "Fast, Pythonic way to build MCP servers and clients"
   homepage "https://gofastmcp.com/getting-started/welcome"
-  url "https://files.pythonhosted.org/packages/72/b5/7c4744dc41390ed2c17fd462ef2d42f4448a1ec53dda8fe3a01ff2872313/fastmcp-2.14.3.tar.gz"
-  sha256 "abc9113d5fcf79dfb4c060a1e1c55fccb0d4bce4a2e3eab15ca352341eec8dd6"
+  url "https://files.pythonhosted.org/packages/fd/a9/a57d5e5629ebd4ef82b495a7f8e346ce29ef80cc86b15c8c40570701b94d/fastmcp-2.14.4.tar.gz"
+  sha256 "c01f19845c2adda0a70d59525c9193be64a6383014c8d40ce63345ac664053ff"
   license "Apache-2.0"
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5257d51238d66d2c03114ca93644f732ac05436d86013f18dc8444ad63f9c059"
-    sha256 cellar: :any,                 arm64_sequoia: "fab188bc9d9a8e29b0fd5029bce4943458db479ff5eb480e7907d5a5115e2410"
-    sha256 cellar: :any,                 arm64_sonoma:  "e1845b62dc05fe8a36232bacd28dabeaf70f898cdb39ea7f9e6dd8224ae2e81d"
-    sha256 cellar: :any,                 sonoma:        "073db771a225e0da4126751c425f753b5395c9d45b34db36f0422fc11f036292"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "49efb10cfc1cc5d7ba942bc8ecc1b72db8c01a73bce35082d689b30372dc1b86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93917a00fa636d326d42dc53d1065c99c9b23d0c70696ca20c8eb3d4458103b6"
+    sha256 cellar: :any,                 arm64_tahoe:   "42589149e6cfab6750cb0d2abeb41e7e8cba2d4db62c4d57ab7a9025833e396c"
+    sha256 cellar: :any,                 arm64_sequoia: "70c35d063dacee1c5e426daec376c9f5348970b25cf6f19241776b5f32a5b3a9"
+    sha256 cellar: :any,                 arm64_sonoma:  "cfb88abec4cbba473cb0df32be905215c025e93c86c5bae2af06a82af442645e"
+    sha256 cellar: :any,                 sonoma:        "a3a44b51f1cf9c68654efc51fa370a1305d60a65aa356fb1bc3e0030ce0b0904"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "35e1c58a9d5d2ad241b67e70b25dd346c02241af4e0fe4a5f8b70a61f664262b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc9c801902e81d16a90e41f5e1b9b979353d0662e4fc3487b2cf3550d011d148"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -70,8 +70,8 @@ class Fastmcp < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/43/c4/60b6068e703c78656d07b249919754f8f60e9e7da3325560574ee27b4e39/cyclopts-4.4.4.tar.gz"
-    sha256 "f30c591c971d974ab4f223e099f881668daed72de713713c984ca41479d393dd"
+    url "https://files.pythonhosted.org/packages/13/7b/663f3285c1ac0e5d0854bd9db2c87caa6fa3d1a063185e3394a6cdca9151/cyclopts-4.5.0.tar.gz"
+    sha256 "717ac4235548b58d500baf7e688aa4d024caf0ee68f61a012ffd5e29db3099f9"
   end
 
   resource "diskcache" do
@@ -145,8 +145,8 @@ class Fastmcp < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/8d/7d/41acf8e22d791bde812cb6c2c36128bb932ed8ae066bcb5e39cb198e8253/jaraco_context-6.0.2.tar.gz"
-    sha256 "953ae8dddb57b1d791bf72ea1009b32088840a7dd19b9ba16443f62be919ee57"
+    url "https://files.pythonhosted.org/packages/cb/9c/a788f5bb29c61e456b8ee52ce76dbdd32fd72cd73dd67bc95f42c7a8d13c/jaraco_context-6.1.0.tar.gz"
+    sha256 "129a341b0a85a7db7879e22acd66902fda67882db771754574338898b2d5d86f"
   end
 
   resource "jaraco-functools" do
@@ -157,6 +157,11 @@ class Fastmcp < Formula
   resource "jeepney" do
     url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
     sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
+  end
+
+  resource "jsonref" do
+    url "https://files.pythonhosted.org/packages/aa/0d/c1f3277e90ccdb50d33ed5ba1ec5b3f0a242ed8c1b1a85d3afeb68464dca/jsonref-1.1.0.tar.gz"
+    sha256 "32fe8e1d85af0fdefbebce950af85590b22b60f9e95443176adbde4e1ecea552"
   end
 
   resource "jsonschema" do
@@ -235,8 +240,8 @@ class Fastmcp < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "pathable" do
@@ -255,8 +260,8 @@ class Fastmcp < Formula
   end
 
   resource "prometheus-client" do
-    url "https://files.pythonhosted.org/packages/07/8f/35d31c925f33a494b3f4f10ee25bf47757aff2d63424a06af13814293f13/prometheus_client-0.24.0.tar.gz"
-    sha256 "726b40c0d499f4904d4b5b7abe8d43e6aff090de0d468ae8f2226290b331c667"
+    url "https://files.pythonhosted.org/packages/f0/58/a794d23feb6b00fc0c72787d7e87d872a6730dd9ed7c7b3e954637d8f280/prometheus_client-0.24.1.tar.gz"
+    sha256 "7e0ced7fbbd40f7b84962d5d2ab6f17ef88a72504dcf7c0b40737b43b2a461f9"
   end
 
   resource "py-key-value-aio" do
@@ -355,13 +360,13 @@ class Fastmcp < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/da/34/f5df66cb383efdbf4f2db23cabb27f51b1dcb737efaf8a558f6f1d195134/sse_starlette-3.1.2.tar.gz"
-    sha256 "55eff034207a83a0eb86de9a68099bd0157838f0b8b999a1b742005c71e33618"
+    url "https://files.pythonhosted.org/packages/8b/8d/00d280c03ffd39aaee0e86ec81e2d3b9253036a0f93f51d10503adef0e65/sse_starlette-3.2.0.tar.gz"
+    sha256 "8127594edfb51abe44eac9c49e59b0b01f1039d0c7461c6fd91d4e03b70da422"
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/e7/65/5a1fadcc40c5fdc7df421a7506b79633af8f5d5e3a95c3e72acacec644b9/starlette-0.51.0.tar.gz"
-    sha256 "4c4fda9b1bc67f84037d3d14a5112e523509c369d9d47b111b2f984b0cc5ba6c"
+    url "https://files.pythonhosted.org/packages/c4/68/79977123bb7be889ad680d79a40f339082c1978b5cfcf62c2d8d196873ac/starlette-0.52.1.tar.gz"
+    sha256 "834edd1b0a23167694292e94f597773bc3f89f362be6effee198165a35d62933"
   end
 
   resource "typer" do

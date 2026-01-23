@@ -4,7 +4,7 @@ class PythonAT311 < Formula
   url "https://www.python.org/ftp/python/3.11.14/Python-3.11.14.tgz"
   sha256 "563d2a1b2a5ba5d5409b5ecd05a0e1bf9b028cf3e6a6f0c87a5dc8dc3f2d9182"
   license "Python-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,13 +12,12 @@ class PythonAT311 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "b79ec08f171be45de6720db5dc1c332bc11a33bd8ee15debc2ec01feee5d85e1"
-    sha256 arm64_sequoia: "e483746daf9f88fe10533ad5cec6d6798751cd7d214504bfc166c9d2ab7e9cfb"
-    sha256 arm64_sonoma:  "09c3d368240780d6612c207c204c13c0312e475e3e70a8b3353c0a5e28b2c7c5"
-    sha256 sonoma:        "a50d3c0cc53c6a806a8a97083e06680b39f0e174619ba7eb1a0dac03ee408856"
-    sha256 arm64_linux:   "7a8d069741df56f34546c4c8425570f96012fc1247da789087ac2e3df62ac61f"
-    sha256 x86_64_linux:  "c9c7259c4c23f3131e7e3d70696ee158ffc861e456bcf2304fbb6b2b90794d40"
+    sha256 arm64_tahoe:   "36edfd7ef2802833ffec6792cf760b39e2626c406e8aa71131f62b1143c77f74"
+    sha256 arm64_sequoia: "15679fe92790dfb4b181427d54f0cffd1ceffccdafac44eaba73ce12d9ee2af3"
+    sha256 arm64_sonoma:  "f630497a1d155a9cc6b2ea97d27e0b47257b5e1237c829b0ae40ed8496289e1f"
+    sha256 sonoma:        "319aca7f63fa6f4cda9b0bd1133afaea9d89ab47dec2bf63011d6ac561e5e22b"
+    sha256 arm64_linux:   "2f7be6fc3120ae8709fe1f24378c1064fb27a79d58089d7fd34fb4fc4d5f6608"
+    sha256 x86_64_linux:  "ac01a6b7d82bea60e8c6273caba378905cffc6b3b4c3f1fc4a7d6c4a8b46054d"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -55,19 +54,24 @@ class PythonAT311 < Formula
     sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
   end
 
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+  end
+
   resource "pip" do
     url "https://files.pythonhosted.org/packages/fe/6e/74a3f0179a4a73a53d66ce57fdb4de0080a8baa1de0063de206d6167acc2/pip-25.3.tar.gz"
     sha256 "8d0538dbbd7babbd207f261ed969c65de439f6bc9e5dbd3b3b9a77f25d95f343"
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
-    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
+    url "https://files.pythonhosted.org/packages/86/ff/f75651350db3cf2ef767371307eb163f3cc1ac03e16fdf3ac347607f7edb/setuptools-80.10.1.tar.gz"
+    sha256 "bf2e513eb8144c3298a3bd28ab1a5edb739131ec5c22e045ff93cd7f5319703a"
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/8a/98/2d9906746cdc6a6ef809ae6338005b3f21bb568bea3165cfc6a243fdc25c/wheel-0.45.1.tar.gz"
-    sha256 "661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729"
+    url "https://files.pythonhosted.org/packages/89/24/a2eb353a6edac9a0303977c4cb048134959dd2a51b48a269dfc9dde00c8a/wheel-0.46.3.tar.gz"
+    sha256 "e3e79874b07d776c40bd6033f8ddf76a7dad46a7b8aa1b2787a83083519a1803"
   end
 
   # Modify default sysconfig to match the brew install layout.

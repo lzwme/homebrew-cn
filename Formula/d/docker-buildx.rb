@@ -1,19 +1,18 @@
 class DockerBuildx < Formula
   desc "Docker CLI plugin for extended build capabilities with BuildKit"
   homepage "https://docs.docker.com/buildx/working-with-buildx/"
-  url "https://ghfast.top/https://github.com/docker/buildx/archive/refs/tags/v0.30.1.tar.gz"
-  sha256 "d16adbb11be83edfff646d8a980e7bef1768b57120e5af35f37f70f97d0cbaa3"
+  url "https://ghfast.top/https://github.com/docker/buildx/archive/refs/tags/v0.31.0.tar.gz"
+  sha256 "4e6d04dff8bfb21529db57341ca213b3e94132275d5e1c6782e02b27a1b8ff27"
   license "Apache-2.0"
   head "https://github.com/docker/buildx.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb8d78a164fb8cec434dedaa082c22c8179bd2d494e97fc67e580f3c9f077ec8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb8d78a164fb8cec434dedaa082c22c8179bd2d494e97fc67e580f3c9f077ec8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb8d78a164fb8cec434dedaa082c22c8179bd2d494e97fc67e580f3c9f077ec8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1e8cead5214bea485f7709c6245243b8553a69ec1ac0d1f61ebc688c53437d92"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5aa5307f3b8c8304d77e4f8cd53b15fe94370aae32963ed1686b62949190cf0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d46c7277aed9c1ceac69adb92859eddd708cfff97fee2c81926a9b4de27c813c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "beb6d19f7d093351e6596cc6e846eab2c0db5b199e3a000ff889c5d8e7cae700"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58d21eb4f6401d61ef2f6fcaf8fd9863eaf0f930a350c92fa9b6a19e7da41db6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86602151079bbc84f0ec43b29fbaae024004b6495a14555fbfe46f7bddeaa970"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d118b27197ba728821cecd3eb94289a04e45e0788d257abc3e4763eb002cfdc8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac10dcf0e9b7b57b1452dc37eb1785058a3fb2443860ee2398cd15d047eddc37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72de067f376a353fa5d6762c807a2f2165564ef0a60063c18f36fd5e6b5c4d8f"
   end
 
   depends_on "go" => :build
@@ -46,6 +45,6 @@ class DockerBuildx < Formula
   test do
     assert_match "github.com/docker/buildx v#{version}", shell_output("#{bin}/docker-buildx version")
     output = shell_output("#{bin}/docker-buildx build . 2>&1", 1)
-    assert_match(/(denied while trying to|Cannot) connect to the Docker daemon/, output)
+    assert_match(/(denied while trying|failed) to connect to the docker API/, output)
   end
 end

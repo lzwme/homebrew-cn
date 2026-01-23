@@ -3,18 +3,18 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/31/a4/54acca8f0c9a0dd39765414aac088ffa3ac12d273b04008d4a032eac9c88/cycode-3.8.8.tar.gz"
-  sha256 "4b85c3a2b2047914aa5d85ac1d20730e87f9ef850a3bb1caa648fd67c618da17"
+  url "https://files.pythonhosted.org/packages/3d/5f/589b70ae38b0513e258133e57a8da65b2e8eda99e2fc15286aa115183f0d/cycode-3.8.9.tar.gz"
+  sha256 "0fd585b82917aa057727b5561651130d8f1f4c9c21b8de1dbcdc201ebb8ef1b4"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5572954e8aae656ecae63959ed41b9ca57b1abaa9f92321dd2d1b47e802b7b3e"
-    sha256 cellar: :any,                 arm64_sequoia: "d6f3a39b7ab169aa68dcf917a97e6fe6ac8c99b8d8adc84e52bb4f46f6dbd741"
-    sha256 cellar: :any,                 arm64_sonoma:  "9c412c8e20cfabda3ad26da4bd2532ff9d7ef7abf6508661d1793b2147663ab4"
-    sha256 cellar: :any,                 sonoma:        "9b72b562629dd7c91f7f24411532922229f86c8c729028cd8261d0391c4a4c09"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b997bee9d2239f755b67c6ebb85c1d0177638fbcd740cbf224a93cdcf397643f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5be101fa5d80d610ab333a283e520663e2168b9292246325fbf88e0c75d3283"
+    sha256 cellar: :any,                 arm64_tahoe:   "0e7fd373d732b9a48359f92ec8c9284a0d8df2680498d7cd1f41b4acc85ba0d6"
+    sha256 cellar: :any,                 arm64_sequoia: "e7a2ec909000939493cec984601bdb593f37b9d43ac47c48aeea5ecb349fb8ee"
+    sha256 cellar: :any,                 arm64_sonoma:  "f600c2c025a9d2f416b1375f0acad9b29a0db65ccf49a710bf5fc0fa7e5044b4"
+    sha256 cellar: :any,                 sonoma:        "a020169a6cd2facf742940577c5c11871e6961cf80d85f88c01e26c7a2c0c29a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e214c6fc4eeae7e64fb01a865ee6ba14ffe36a90a66ede7da77fc7786cad924"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9906fa94b9aa49bf715b4a8f6449d5852b104f050bca8ba26125f18024a6113"
   end
 
   depends_on "certifi" => :no_linkage
@@ -132,8 +132,8 @@ class Cycode < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "patch-ng" do

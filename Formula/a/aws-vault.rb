@@ -1,8 +1,8 @@
 class AwsVault < Formula
   desc "Securely store and access AWS credentials in development environments"
   homepage "https://github.com/ByteNess/aws-vault"
-  url "https://ghfast.top/https://github.com/ByteNess/aws-vault/archive/refs/tags/v7.8.7.tar.gz"
-  sha256 "94ad51b78f62da1ac7c4e5d88ff84e3bf9f9fbe18ede0e04ea449d55c4a3e4b7"
+  url "https://ghfast.top/https://github.com/ByteNess/aws-vault/archive/refs/tags/v7.9.1.tar.gz"
+  sha256 "dbe369c526df46ce5d8eaa1548023adfab5ba22d3f4f193644980b775345aa6d"
   license "MIT"
   head "https://github.com/ByteNess/aws-vault.git", branch: "main"
 
@@ -12,17 +12,19 @@ class AwsVault < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6be2e4abf974fe460866aee5be814e94549bcab4c932b820bb76e3b96385ab3b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "937167117c1a8445ff573cbef0d32ec9a4e10083516f1e584ff90cd566378f9b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "33692ba458739f0f133f55cf602b3e5c7f7f9449d4ca767db711a501bfa22e0d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5824b1b56b971cd6a157fd806fc06c1c7cdf60e1572b06d6c726b3c3862a10de"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "00fdc0808a6d2bf8dc0e4f64a7c2bb697b32890bbf10a8b07c4cb5ae6ef7fb78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d5202ecbd7d46882da06715894d61a768a4e7a5f1bb233ed154f268538e6fea"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0fb4989ee2909d5a6af3e8e8d8b8b331883923ecccbb55d63128dc0157793639"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04f27f01bedf260054d5f67b1fbd2b0af697304e8db4d3cf5d6c07cf0452d6ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f82b27b24983befc25d50fcda5abaa10c44fb94d5190e8d324fbeec16a90fd9c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f18f8c12a3ad67b790b5eacbbbac7f9b9dc95ea0fd65035e7a6e9d833d9b0350"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4f39eb5b975c48c55f03b7c5ea5f8268996bd8c13743b54c178cf9f042e20fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e845deffadc4ee78f6d0c3d0bbe56c8ac9e7e6da6dd8dc02f3bf33dd2d82853"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     # Remove this line because we don't have a certificate to code sign with
     inreplace "Makefile",
       "codesign --options runtime --timestamp --sign \"$(CERT_ID)\" $@", ""

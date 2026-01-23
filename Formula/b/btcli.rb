@@ -6,16 +6,16 @@ class Btcli < Formula
   url "https://files.pythonhosted.org/packages/d8/89/75a59ca4db8776ed12ed6d6cf63185f65bd256ed7caa23834157bce5aa9a/bittensor_cli-9.17.0.tar.gz"
   sha256 "ca0525d4d0c720a9550705dd24e3fa7ac11bf83ed568932865d5bddf5fcecea4"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/opentensor/btcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f8cff6b458d19cb1bf5c2c893c245693996976476ff74e28793eb7fe1f545ca1"
-    sha256 cellar: :any,                 arm64_sequoia: "a79a5f891e8839beccc699fb916a6628f95fb5cb92f69915bcbcb68f79b35c84"
-    sha256 cellar: :any,                 arm64_sonoma:  "40e12be4c250558c4cc51df3596007d7a254199055e501f05d604f6d6cf67d10"
-    sha256 cellar: :any,                 sonoma:        "2d616d16b11e8e040ec838b3c5661b832f987f669969ed259cd8a47c34741d21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2bd86a929cfa93a37c6d117ed16e5cb4c0bc5489d7a0cb1a2ebb1e88c7a41364"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6caf196489846a07ef5283e0383a5224b6224cfe9118e6c4579b60056eb391fa"
+    sha256 cellar: :any,                 arm64_tahoe:   "f1c364753095c657851c73fb26b2962d5b4c3793d1842f36b616a6809540cb75"
+    sha256 cellar: :any,                 arm64_sequoia: "53c93467aeceb746c443636588476c6dd3116ece50e2c91e7a56a15531a6a8af"
+    sha256 cellar: :any,                 arm64_sonoma:  "5753fc5a23227846e01821136ea5216fb0737f1e5ffec6dc699902ae13019eb7"
+    sha256 cellar: :any,                 sonoma:        "cd1862a6d26b6f70172743f8c515206d96e5d50419f682013172726cf1ebd757"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e521c0d314e588415a26542f6c63344e7ecdfb1ad5c1218ae6c2a6c4bb418e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "673b41391d8b2d70838233fc679014869a03a9e5ecaef5f95e208e7784bd361d"
   end
 
   depends_on "rust" => :build # for bittensor-wallet, plotly
@@ -156,8 +156,8 @@ class Btcli < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "plotille" do
@@ -166,8 +166,8 @@ class Btcli < Formula
   end
 
   resource "plotly" do
-    url "https://files.pythonhosted.org/packages/d6/ff/a4938b75e95114451efdb34db6b41930253e67efc8dc737bd592ef2e419d/plotly-6.5.1.tar.gz"
-    sha256 "b0478c8d5ada0c8756bce15315bcbfec7d3ab8d24614e34af9aff7bfcfea9281"
+    url "https://files.pythonhosted.org/packages/e3/4f/8a10a9b9f5192cb6fdef62f1d77fa7d834190b2c50c0cd256bd62879212b/plotly-6.5.2.tar.gz"
+    sha256 "7478555be0198562d1435dee4c308268187553cc15516a2f4dd034453699e393"
   end
 
   resource "propcache" do
@@ -236,13 +236,13 @@ class Btcli < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/21/e6/26d09fab466b7ca9c7737474c52be4f76a40301b08362eb2dbc19dcc16c1/websockets-15.0.1.tar.gz"
-    sha256 "82544de02076bafba038ce055ee6412d68da13ab47f0c60cab827346de828dee"
+    url "https://files.pythonhosted.org/packages/04/24/4b2031d72e840ce4c1ccb255f693b15c334757fc50023e4db9537080b8c4/websockets-16.0.tar.gz"
+    sha256 "5f6261a5e56e8d5c42a4497b364ea24d94d9563e8fbd44e78ac40879c60179b5"
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/8a/98/2d9906746cdc6a6ef809ae6338005b3f21bb568bea3165cfc6a243fdc25c/wheel-0.45.1.tar.gz"
-    sha256 "661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729"
+    url "https://files.pythonhosted.org/packages/89/24/a2eb353a6edac9a0303977c4cb048134959dd2a51b48a269dfc9dde00c8a/wheel-0.46.3.tar.gz"
+    sha256 "e3e79874b07d776c40bd6033f8ddf76a7dad46a7b8aa1b2787a83083519a1803"
   end
 
   resource "xxhash" do
