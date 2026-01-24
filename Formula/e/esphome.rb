@@ -3,20 +3,20 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/57/2d/917f66c041ee0a5aaa88b122f27b14daaed28d4ac4e16e235dd52af30316/esphome-2026.1.0.tar.gz"
-  sha256 "dded2fef2f40277bc7454ac610470b3194e049f390eebe8bee3afdb441a92069"
+  url "https://files.pythonhosted.org/packages/71/2e/ee80b2a407c612d95dc66a5a7ebeb6c667f7f7a83297a2fa4089b374bc10/esphome-2026.1.1.tar.gz"
+  sha256 "5a2beb24e3b459f9cb86bcd149488b778c5fcbd996e57e65fbc30e8fa3f97b56"
   license "MIT"
 
   # Issue ref: https://github.com/Homebrew/homebrew-core/issues/257992
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e8e79e3cee9b5d0924d555ad23194905c41d681bcd3a364c4eaec8077ac91b01"
-    sha256 cellar: :any,                 arm64_sequoia: "37a0f0543a1a57af1860788d08cd9b9fad3cb3488c7d93783a724d15a10b995c"
-    sha256 cellar: :any,                 arm64_sonoma:  "d7c1a9d45e169851159b8de2b1f4fbb6efaae9ee08b2543c18fa90917fc87ae3"
-    sha256 cellar: :any,                 sonoma:        "9b9261a262c52921e72b6415b7d052db5f6150656a70cb2cd864da87ffccbe2f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea7c81ea7143de19b846b304e794d3c7a680771daa4405469fb90bb9902dcc28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c3ce50133865124c0e02e13e02a4b936b0187a1a32c372247790ffb02fe9071"
+    sha256 cellar: :any,                 arm64_tahoe:   "ed846378e985a5e4dbe00e5b9ebaeb7eab339f0ccbaf3a9b489cebe99a464b16"
+    sha256 cellar: :any,                 arm64_sequoia: "16d8fc18b294a99cfab7df325254342c201c2fd76560c751f4c8d10819ad4eca"
+    sha256 cellar: :any,                 arm64_sonoma:  "755df689c6ec16bc0d6a5ce9e043e56a38c31aaf13b2fa2b6191822846c8a262"
+    sha256 cellar: :any,                 sonoma:        "2fcdb31902e3499bd287ae6b3ade1f89f9fe3b06892bf137109ee60988d33242"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4837012778501a7ab30e49d61c437ff5c34fbfc2652299c3fe16e15ca9654f6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa97d2500b19d03bae32cccf20a0fe2d98546e6256622fe09cf12c6e19e01264"
   end
 
   depends_on "rust" => :build
@@ -189,8 +189,8 @@ class Esphome < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "paho-mqtt" do
@@ -279,8 +279,8 @@ class Esphome < Formula
   end
 
   resource "rich-click" do
-    url "https://files.pythonhosted.org/packages/6b/d1/b60ca6a8745e76800b50c7ee246fd73f08a3be5d8e0b551fc93c19fa1203/rich_click-1.9.5.tar.gz"
-    sha256 "48120531493f1533828da80e13e839d471979ec8d7d0ca7b35f86a1379cc74b6"
+    url "https://files.pythonhosted.org/packages/4b/50/1497dbc52297d6759451bf5a991e9b2d0a122a5d33ac8cd057f81cb9910a/rich_click-1.9.6.tar.gz"
+    sha256 "463bd3dbef54a812282bfa93dde80c471bce359823fc1301be368eab63391cb2"
   end
 
   resource "ruamel-yaml" do

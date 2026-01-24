@@ -1,17 +1,17 @@
 class Lmod < Formula
   desc "Lua-based environment modules system to modify PATH variable"
   homepage "https://lmod.readthedocs.io"
-  url "https://ghfast.top/https://github.com/TACC/Lmod/archive/refs/tags/9.0.5.tar.gz"
-  sha256 "7d5b5db9f252dff7469d3a5369b7b58dbbfd4b3a879a97ee21954f26e04b13e3"
+  url "https://ghfast.top/https://github.com/TACC/Lmod/archive/refs/tags/9.0.6.tar.gz"
+  sha256 "370c154ef22d5fec5dd567ed26478aaf6ff55323b09a9d96826e12ca570e777e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7517a87455dc9a52a896c35dd8036dc7aba34b7742deb6d2fc932aa3e73341af"
-    sha256 cellar: :any,                 arm64_sequoia: "b69db71ff9e0cc5a11c88e689b8046e7bc42a5c6406ba128f65196ec4b734cb4"
-    sha256 cellar: :any,                 arm64_sonoma:  "9415728157c8e19e1b681e5446e4d41446cb30e98adfe6fd6fd53f4644414718"
-    sha256 cellar: :any,                 sonoma:        "51d4b1b2ed9b6986060ff517134b2558f73589c41469af414e68e8a3ea774d89"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc1c0b52c6caf7d3a92f377e624863ea5401c78c802c3d1f5ed1c8e7639d7f2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3eb551c67e48d20a359d0dc484c622016d88682022eb173410fc4c47a8a4458a"
+    sha256 cellar: :any,                 arm64_tahoe:   "61e5a984cf9f6c502ebea120cd5f191448270ad339e481473048873c38cf46d3"
+    sha256 cellar: :any,                 arm64_sequoia: "6214fd884d64438ece3f047d646166f39e73505a3d1f82487b72bac86b463f78"
+    sha256 cellar: :any,                 arm64_sonoma:  "7e628ca56296dc7a1237f813c294f329980f39aed568fdf44fc0a6f221992c00"
+    sha256 cellar: :any,                 sonoma:        "63d513cb90b1b9e4956e4d68e284a2f8a55df8fb37e72e814e47ae0638ecfe3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de647cf52bb825b797d3713e9e4077c721a788735bc6b4a42a3b099189383bd0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2b5ae6edeef717703eff2e3b6b1a698b57a96626c565163bde8381cca1cd2ea"
   end
 
   depends_on "luarocks" => :build
@@ -32,8 +32,8 @@ class Lmod < Formula
   end
 
   resource "luafilesystem" do
-    url "https://ghfast.top/https://github.com/lunarmodules/luafilesystem/archive/refs/tags/v1_8_0.tar.gz"
-    sha256 "16d17c788b8093f2047325343f5e9b74cccb1ea96001e45914a58bbae8932495"
+    url "https://ghfast.top/https://github.com/lunarmodules/luafilesystem/archive/refs/tags/v1_9_0.tar.gz"
+    sha256 "1142c1876e999b3e28d1c236bf21ffd9b023018e336ac25120fb5373aade1450"
   end
 
   resource "luaposix" do

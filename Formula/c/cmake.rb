@@ -1,12 +1,21 @@
 class Cmake < Formula
   desc "Cross-platform make"
   homepage "https://www.cmake.org/"
-  url "https://ghfast.top/https://github.com/Kitware/CMake/releases/download/v4.2.1/cmake-4.2.1.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/cmake-4.2.1.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/legacy/cmake-4.2.1.tar.gz"
-  sha256 "414aacfac54ba0e78e64a018720b64ed6bfca14b587047b8b3489f407a14a070"
   license "BSD-3-Clause"
   head "https://gitlab.kitware.com/cmake/cmake.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/Kitware/CMake/releases/download/v4.2.2/cmake-4.2.2.tar.gz"
+    mirror "http://fresh-center.net/linux/misc/cmake-4.2.2.tar.gz"
+    mirror "http://fresh-center.net/linux/misc/legacy/cmake-4.2.2.tar.gz"
+    sha256 "bbda94dd31636e89eb1cc18f8355f6b01d9193d7676549fba282057e8b730f58"
+
+    # Backport support for Lua 5.5
+    patch do
+      url "https://github.com/Kitware/CMake/commit/6347854fa279cda0682c72dffbb402a0ce29ba51.patch?full_index=1"
+      sha256 "d0c0b08826fc16468dba8672f8a6b77c56062bead4c5c501360e868e511ee91e"
+    end
+  end
 
   # The "latest" release on GitHub has been an unstable version before, and
   # there have been delays between the creation of a tag and the corresponding
@@ -17,14 +26,14 @@ class Cmake < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60d81644bd73a572793cbcd7a74c4cddbec34ee53ee09e24848d33afaaddb8eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e06a9009d98f940d2873e2e21cdaad13f622e8866f838991ed06fa44245424c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55b4255c8eafdb8b0f4672a441f0ae6b91420a6a363569022f690aea1f39a531"
-    sha256 cellar: :any_skip_relocation, tahoe:         "35e42f8d06ef0caed4c22be018b075c46a1cde0c45ed1b1b31875b6069f7c6bc"
-    sha256 cellar: :any_skip_relocation, sequoia:       "2357e7be073335b1369b2e5201d5d2af3cceeb43bbe4fa97f8a3171359350242"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e4cb6757bef63855fa0969e7f5507de92cd74d739e67cf3e9d40ae6938cb9183"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "657277ecb3da86ef8cbec1d8dd24e2a7fac9d805153634c1c328cafb386e16b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8704a4160e387e165b172089faa268727ab5bb43acc66f9fd6ade052d7d18e02"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5eeea08a18c94f5db07c6d9156bef40942c6b0bfd9439485ea7ed65b283fe20f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10a21246d23fad0433574e13dd997653bb00cd23ac54f4b8c9d5a6969ebd3bbf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "98c904ea38d37cd272deb3375561731dbf927e5fb307d48534536e55b2b247d0"
+    sha256 cellar: :any_skip_relocation, tahoe:         "99dd33767b64ff4ad0aec416a67b3c2aa008416243c66e01679a2f7382b7fe19"
+    sha256 cellar: :any_skip_relocation, sequoia:       "4d39186960cbbdf3d88013c6d326e07884ada7c7b98fe125c76a02b372aff93f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d0e0dd8ca0d3ad4981e17ea2c0657d712b31aca1af4d2ce3d413947f36047963"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e920cc4cbccf4d5d78e5589fea910cda2b054f7dac34fcf3dc82c96ca3faa122"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d356f1c01e3917f11edeaf048510bc56457442f871a5a66fe5b71b23757edea2"
   end
 
   uses_from_macos "ncurses"
@@ -34,12 +43,6 @@ class Cmake < Formula
   end
 
   conflicts_with cask: "cmake-app"
-
-  # The completions were removed because of problems with system bash
-
-  # The `with-qt` GUI option was removed due to circular dependencies if
-  # CMake is built with Qt support and Qt is built with MySQL support as MySQL uses CMake.
-  # For the GUI application please instead use `brew install --cask cmake`.
 
   def install
     args = %W[
@@ -64,6 +67,9 @@ class Cmake < Formula
                                        "-DCMake_BUILD_LTO=ON"
     system "make"
     system "make", "install"
+
+    # Move ctest completion because of problems with macOS system bash 3
+    (share/"bash-completion/completions").install bash_completion/"ctest"
   end
 
   def caveats

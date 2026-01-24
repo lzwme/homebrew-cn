@@ -2821,7 +2821,7 @@ Homebrew-homebrew-core/Formula/g/gts.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gucharmap.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/guetzli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/guichan.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/guile-fibers.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/guile-fibers.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/guile-gnutls.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/guile.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gulp-cli.rb, Homebrew/homebrew-core, 0
@@ -4032,6 +4032,7 @@ Homebrew-homebrew-core/Formula/lib/libident.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libidl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libidn.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libidn2.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libigloo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libilbc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libimagequant.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libimobiledevice-glue.rb, Homebrew/homebrew-core, 1
@@ -4041,7 +4042,7 @@ Homebrew-homebrew-core/Formula/lib/libiodbc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libiptcdata.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libirecovery.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libiscsi.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libisofs.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libisofs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libjcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libjodycode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libjson-rpc-cpp.rb, Homebrew/homebrew-core, 1
@@ -5436,7 +5437,7 @@ Homebrew-homebrew-core/Formula/p/patat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/patch-package.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/patchelf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/patchpal.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/patchutils.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/patchutils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pawk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pax-runner.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pax.rb, Homebrew/homebrew-core, 0
@@ -8389,6 +8390,7 @@ Homebrew-homebrew-cask/Casks/a/applite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/approf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/apptivate.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/apptrap.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/appvolume.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/appzapper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aptakube.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aptanastudio.rb, Homebrew/homebrew-cask, 1
@@ -8869,6 +8871,7 @@ Homebrew-homebrew-cask/Casks/c/classroom-mode-for-minecraft.rb, Homebrew/homebre
 Homebrew-homebrew-cask/Casks/c/claude-code.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/claude.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/claudebar.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/clawdbot.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cleanapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cleanclip.rb, Homebrew/homebrew-cask, 0
@@ -15132,6 +15135,7 @@ Homebrew-homebrew-cask/Casks/t/transcribe.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/transfer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/transmission-remote-gui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/transmission.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/transmission@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/transmission@nightly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/transmit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/transnomino.rb, Homebrew/homebrew-cask, 0

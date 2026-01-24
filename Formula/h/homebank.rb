@@ -1,24 +1,22 @@
 class Homebank < Formula
   desc "Manage your personal accounts at home"
-  homepage "http://homebank.free.fr"
-  # A mirror is used as primary URL because the official one is unstable.
-  url "https://deb.debian.org/debian/pool/main/h/homebank/homebank_5.9.5.orig.tar.gz"
-  mirror "http://homebank.free.fr/public/sources/homebank-5.9.5.tar.gz"
-  sha256 "ff6c8b0f6da411133e29b848e91f48fdb88de40ad02cba20a8840930a3e7ed43"
+  homepage "https://www.gethomebank.org/en/index.php"
+  url "https://www.gethomebank.org/public/sources/homebank-5.9.7.tar.gz"
+  sha256 "2b8fdf512429a30ed7a457cf5af476756c0cfddc9fce7600dab95c7f03be26e4"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https://deb.debian.org/debian/pool/main/h/homebank/"
-    regex(/href=.*?homebank[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
+    url "https://www.gethomebank.org/public/sources/"
+    regex(/href=.*?homebank[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9f89d7fb7213ee3b39a0dd6e271d5c67aba04d04296f384814b10a146d25cff6"
-    sha256 arm64_sequoia: "6fad90e911e7b4f35abebd7618081ce7379d0470c6be1fdde9f7a9c9e82712ed"
-    sha256 arm64_sonoma:  "215d825b353afddbb69fcb61a13e04d89ea2d258bdfc15090de362f4188f6dd7"
-    sha256 sonoma:        "1cfb79ab1182f869c33e09d85b85868f1038d3e5e5283e21e2c38e1a5da15b9d"
-    sha256 arm64_linux:   "6c48c62f28a07472024fdf43035f404dbaeb5871241d85a84ddbe1b772fe730c"
-    sha256 x86_64_linux:  "4fafbfca53d6c6c09c736a1260e8ad9c4dbc5267000f31eccf8d7dffd922e462"
+    sha256 arm64_tahoe:   "3988f0b361d633eef069fbed7cde09c3b4ebd067187b9d11169ba1202b7ed5a7"
+    sha256 arm64_sequoia: "da4e8fe1e597fdb149d5b7650b349dd7ec4176250ba69a406a75931654eefd0a"
+    sha256 arm64_sonoma:  "fe2624c7b3006d5df116145b519a951d5015aee8108d3dbff1d5d8e6931c4209"
+    sha256 sonoma:        "3b512e6ee0a6aa2a6004e064467561412aac122e88ae6e4ba95b9ff3cd0b226d"
+    sha256 arm64_linux:   "93ef66a1d299281342aee3a472b1720985a171920a0a659517dc0b4514dc4af3"
+    sha256 x86_64_linux:  "331f89447df7924ae0da3c5354d9106193b94a6faf0dd74060e87114103abd46"
   end
 
   depends_on "intltool" => :build
@@ -50,7 +48,6 @@ class Homebank < Formula
 
   def install
     system "./configure", "--with-ofx", *std_configure_args
-    chmod 0755, "./install-sh"
     system "make", "install"
   end
 

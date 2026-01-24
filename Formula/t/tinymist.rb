@@ -1,8 +1,8 @@
 class Tinymist < Formula
   desc "Services for Typst"
   homepage "https://myriad-dreamin.github.io/tinymist/"
-  url "https://ghfast.top/https://github.com/Myriad-Dreamin/tinymist/archive/refs/tags/v0.14.8.tar.gz"
-  sha256 "22d4d682df5ad56496da6965e74f0a89f00133c22a30c1c07f1bb45acd841aa7"
+  url "https://ghfast.top/https://github.com/Myriad-Dreamin/tinymist/archive/refs/tags/v0.14.10.tar.gz"
+  sha256 "215c08d8a10ff51e15711f0684eafc85d119dc98db57f4f47ec7bf5987ea681e"
   license "Apache-2.0"
   head "https://github.com/Myriad-Dreamin/tinymist.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Tinymist < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b57227cca825bda57d190ae14ba15ad84add86254b78f70d7cb91e185264040"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52a9848d94c16db3ae6d25e54b7e834fc1931bedfb3e2725e15a149a6fc670b2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7089799b9fbca088cc2be33dc75a751672c94e271412dd25243f4343e457e84"
-    sha256 cellar: :any_skip_relocation, sonoma:        "992d957c9eccbd7b321f5a4ed892ae04beed06157c287df20c55286ea1056d3e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de14db163fe69d65314fc0cf9a68a5e8da248d6f410d593b12336448ea95b9e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e33e476b3382e68dbc6bfbdbbb431bd9e2897a0d433c54d3d23f4bd725677fa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "141107cd600ec9084c0f23aa6d17237f46befa0ea399f9c45ac0950948771480"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c59d1f7108e44f67d21de944a49aee909d28a6477d44b8bb5f850bc7269588e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3994687ebc60daa4f52deac832cbde58b13221ebe4adfbfd09ee8d9d7158912c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7bed8575ead5a60d5fffbf620bdff2d7e685cb2d7818aebbdd9160a5775b0fe4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb341def15d08ce05ba41de06e10355b1416203347dbb8392e458ad6fd3e6cb5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e56aeaab347eb1a83fcee80aa29f9007f12214d72fc3f733e5835b01e3c2bf1e"
   end
 
   depends_on "rust" => :build

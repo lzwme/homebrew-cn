@@ -1,28 +1,18 @@
 class Libaec < Formula
   desc "Adaptive Entropy Coding implementing Golomb-Rice algorithm"
   homepage "https://gitlab.dkrz.de/k202009/libaec"
+  url "https://gitlab.dkrz.de/k202009/libaec/-/archive/v1.1.5/libaec-v1.1.5.tar.bz2"
+  sha256 "f129d7252de350713a398aa39353e709fd7ef2690fc68c9c32ec4e993cb207a9"
   license "BSD-2-Clause"
-  revision 1
   head "https://gitlab.dkrz.de/k202009/libaec.git", branch: "master"
 
-  stable do
-    url "https://gitlab.dkrz.de/k202009/libaec/-/archive/v1.1.4/libaec-v1.1.4.tar.bz2"
-    sha256 "cf869c166656a83857adf62a092311a0069855c6ced3446e3f090a6d52279f65"
-
-    # Backport commit needed to build gdal with HDF5 2.0.0
-    patch do
-      url "https://github.com/MathisRosenhauer/libaec/commit/2c6619c1313826df864065427055ed14c83d1998.patch?full_index=1"
-      sha256 "513af4b0e24f23e84e4416fa52ad87e4058be364fab627a3b728bdd25074f17b"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6e7b1c24e7985960eec07aa6e1d17c5ec678715aaeebe58a97284d21c4919010"
-    sha256 cellar: :any,                 arm64_sequoia: "3acd842c8ac138ae7459401e6019a8f4974b59b162d2df161f296b072f0cf29e"
-    sha256 cellar: :any,                 arm64_sonoma:  "60105095768ff9f169acfacf1993fbd6e4b3b5606fa3a20922c34a638cbd4fa0"
-    sha256 cellar: :any,                 sonoma:        "bb50b30a32e031ae6ee15db6f97bb0bf6ddd88a188b7f7a98200baef767250ef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8764ca35bda1f432c360fed0799de5cfb9919dc7f1855659a4f559d8c475924e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1e769b1fb71bc71a5f3cea7597718c797f472bddb602924cf044a2158ac00a0"
+    sha256 cellar: :any,                 arm64_tahoe:   "73ecd34168e9061b0194fd51866ab1583c332ee16913781a89fcc3ffcf788a8b"
+    sha256 cellar: :any,                 arm64_sequoia: "ab75c786f54188ea7f2ee396fdbfb3aac2b77109dcdb82da4205cba0ac41b5da"
+    sha256 cellar: :any,                 arm64_sonoma:  "51efef7e6f1a4490c9fa112d7c042cce83957c90a841642f76b6f3f8fdfdc29e"
+    sha256 cellar: :any,                 sonoma:        "14ad03840669dea79f40f71d3d99ddffd99e5d9fe3b26e06dc7c69b693bf8abe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "16dbe3097ccfbbc0aa85e408a63b04c535a61c2dc1a52732e7b8360e943f902b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e486505f19a3c98f19697450d3922dc460b2ad5300400bc7a4d0543cb9132b9"
   end
 
   depends_on "cmake" => [:build, :test]

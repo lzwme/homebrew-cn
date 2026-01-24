@@ -1,8 +1,8 @@
 class Metals < Formula
   desc "Scala language server"
   homepage "https://github.com/scalameta/metals"
-  url "https://ghfast.top/https://github.com/scalameta/metals/archive/refs/tags/v1.6.4.tar.gz"
-  sha256 "e0b9f77d3a796c93c4294897d0a1ec15e399770107b9a20192db8736ae11eaa7"
+  url "https://ghfast.top/https://github.com/scalameta/metals/archive/refs/tags/v1.6.5.tar.gz"
+  sha256 "a6f9b70ae9f46a555549f1b9fe7db60a1e982999c346dad50fa54fb68557bea2"
   license "Apache-2.0"
 
   # Some version tags don't become a release, so it's necessary to check the
@@ -13,12 +13,12 @@ class Metals < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ced8731b756b7d256a0ee5a08310716cfd1758d601328aa685a5e66de72525e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92ddc2f9661e649016cc4892dc4a72e8cecfb2ac0bf9988ed6bba5176ca44794"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c57e41618a1cef5b10f8dd33e2f8331aa6604cce4f1375e189fe10d24d87453"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7470c10aeeea77eb27afff32d82aa2b53abfea740b8f810fa74f34ffec2e7ad9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a15165e2fc0aaebb1a40aef8abafd4cc5d6a43d1fa2bb298dad5645ea5e1d77a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9984656b6707e7ccbe821a23517ea5d0b235e36f04aa9829e171ba21bb547ab"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "817df4688e312ca69320964fdca39354046523765ade920d1736328ab6c6483c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6842fd80fa4f8e628dc98908590efa259f71b0c923587e956ebc1bb197dab5c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d99dea8e2dc23ed2854c09f5230ec1041584b336cb918722a4f8bb64dee6ee5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "08ec20fb03902e3543d8014dbc2c9e84de7f6708d5ae32588fe538b87a19aa1b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2424662fb0344cdb1345acd63538a4159a8c6e57b34c2c8ca480c2e0873eeb75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87646bbe2b46af016c9989c3d1edeef6e2d193e1672158c16ca3b5d2e01a833e"
   end
 
   depends_on "sbt" => :build

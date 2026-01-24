@@ -1,17 +1,17 @@
 class Diamond < Formula
   desc "Accelerated BLAST compatible local sequence aligner"
   homepage "https://github.com/bbuchfink/diamond"
-  url "https://ghfast.top/https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.19.tar.gz"
-  sha256 "245436374e4f0f025465a686963852492a0d036a58f01185b7ec9eed145cc347"
+  url "https://ghfast.top/https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.20.tar.gz"
+  sha256 "d5a95172e9ec616b7d33e6bd903046893a05bcfefb721ba2ac3a485bbadc7178"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a1d8c9732dc52187440e85725a0ea960cadbfdea78249442998b5e966edf868"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f81e2bab087b9f70495dd919e1969666e2f20c9c85382a3ba0d1023bfb1c0ba3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e9b6c4c566be9e2cd9e8157ccb9703d79a6859f82b699221761670f386dc352"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8d8978d294a6b3038687814241fa772023a21013b28a2582d65ca93d6084f8af"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eac1237f75d0e97d5c56d29b14586809650881928d47ab553d16892871b9874c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf11aebb85eab528a416d2d40751f3f1511652fc1279a64d2e40b85aee9902d3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f693f773d5d30085a6735cf7ab22500ae86e0540ebca950b4edcb346ee75feac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8bb2e9e975c040a1e89fc9f7f8f4ccc485c9a5810b266d51103ceb4489f44ddc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2dc65086a4f2872664fbbc44ea6c6f973cc2188185d80afcb96bb8f765ffb393"
+    sha256 cellar: :any_skip_relocation, sonoma:        "20c5a2bf34fe08a2dfb3504018e8e1d28c373d9a717d1ba9c02acd4a5f4315f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6dee316f0b691bdc594f44d82dee77d3e7805674bc048748d54cba09f759eb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1f4d002641de0885c7b886a3c159bb24e8c014c93b0e80bf541dc93b49acd16"
   end
 
   depends_on "cmake" => :build

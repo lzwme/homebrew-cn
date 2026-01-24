@@ -1,18 +1,18 @@
 class Pspg < Formula
   desc "Unix pager optimized for psql"
   homepage "https://github.com/okbob/pspg"
-  url "https://ghfast.top/https://github.com/okbob/pspg/archive/refs/tags/5.8.14.tar.gz"
-  sha256 "9ff44945fdf08b99468808ff67c903f62205583743b6b45921dc6b366aa5e243"
+  url "https://ghfast.top/https://github.com/okbob/pspg/archive/refs/tags/5.8.15.tar.gz"
+  sha256 "c5aebbc16c35d6386fe9f5d8ab34c31c4a7b859017adb1a856aa2cacaec5cafc"
   license "BSD-2-Clause"
   head "https://github.com/okbob/pspg.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3bd320dc103c7cc54f32a50a8d358c5dbaf71202b79f8e8ae3bd91fdeb3731bd"
-    sha256 cellar: :any,                 arm64_sequoia: "6d3cd071149d70c9196df3b9f25eeb5c200d41085d2392d4f772ec7a7999221c"
-    sha256 cellar: :any,                 arm64_sonoma:  "b56421cf9701222a3c0a2d88652366aab074560a4e39321ba0cf82f01343a4a7"
-    sha256 cellar: :any,                 sonoma:        "327205344bdb1b698cd384b78e36117937ed9cc4933e354d2de12dce025390a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f587c97a65ace4875682b9e448f447bc137998abc30437e78c20d3cc914d6628"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ceeb51c20f981031a75291774e8956c408dace40055ef216a289edc8518606b3"
+    sha256 cellar: :any,                 arm64_tahoe:   "10b7661dcf750dc647ee20917d2935a54201e0ac962bbb43d7f31e6887ef3195"
+    sha256 cellar: :any,                 arm64_sequoia: "c18f95c1972302027d0ef606e1bac60b071d77a5d5d4fa9bb9f9ffa97332939a"
+    sha256 cellar: :any,                 arm64_sonoma:  "05b20b88553f81e2ee524dac5948ed73b40f3d2f3512af6d0af2f993aa9e2d73"
+    sha256 cellar: :any,                 sonoma:        "4cbfe4e187ba454cdbc55566dc3292178b9a3a0dcec37dc448f6c92b6bd8302c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c4e1d79e3a3b1d57c895684685da899554db1a6493c9a4eeee8efe1890d8097"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d5383f3e886cf5c2baa4a81e65e2c588810e44d3feaee6d3dd3a980385ef1d8"
   end
 
   depends_on "pkgconf" => :build

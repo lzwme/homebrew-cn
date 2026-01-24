@@ -1,22 +1,24 @@
 class Komac < Formula
   desc "Community Manifest Creator for Windows Package Manager (WinGet)"
   homepage "https://github.com/russellbanks/Komac"
-  url "https://ghfast.top/https://github.com/russellbanks/Komac/archive/refs/tags/v2.14.0.tar.gz"
-  sha256 "00e2dbc44bbc25bdfa9c8b425b641736b6677bc8b388d288e2c9bc37531d4ddd"
+  url "https://ghfast.top/https://github.com/russellbanks/Komac/archive/refs/tags/v2.15.0.tar.gz"
+  sha256 "c22ef89c9018a35b10de14c953616721864a86f2a6c4c83f4ceb95785cb8635d"
   license "GPL-3.0-or-later"
   head "https://github.com/russellbanks/Komac.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "84dbdb915c8a60ef427b244d1358abd5f04f9e02cdb8f60bb65a69ea1cddbeea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62412ca1ce2fccf139a4b85b308cad62c58dbb58b3c8649dfa854674e07b43c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c2694b4f7a1acd52f057efe6c5f541e550c21b1d884481880cdc3b1075ff5a9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0c39adf41541f063b64a935841fc190024cad997ee9165f3e14272525babfdf5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85d86fdc309d27b48f7703d45fb771390978be13647158e1e70443151d98cb2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e12421bdc9dfffc4875c41b7a118673c67cec6bb4437225731d8f77288a9fe68"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ddfd2f6f77e51cab05ef1d0a59343f7876b2271aba367f5ac3bb7ce47e9c06c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff3c63304b0a4d63931ffd3d97ef4a35dc7bb80b36de1d7f96c68731ddd2552c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db66f8ff8d9eb2b543f2ffa1bb77100cef79a0be8544357e428c5036c573db40"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2f4c81523218b2cd40be944ea8ae117fa29a1d4a6dc50728407cb38e7ead8391"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8448b2fe798feb6cb2c0787d8eed1db7d5b8fd04b03256556a8673f57484e172"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f598bbd10ea65233232ce712a78b0d93a34e989bb70778cceb44a20695089c4"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  uses_from_macos "zlib"
 
   on_linux do
     depends_on "openssl@3"

@@ -1,17 +1,17 @@
 class McpToolbox < Formula
   desc "MCP server for databases"
   homepage "https://github.com/googleapis/genai-toolbox"
-  url "https://ghfast.top/https://github.com/googleapis/genai-toolbox/archive/refs/tags/v0.25.0.tar.gz"
-  sha256 "7f7cf0123e19db010c43aea51bc8f46af495415fca530e01f10ea763b5713659"
+  url "https://ghfast.top/https://github.com/googleapis/genai-toolbox/archive/refs/tags/v0.26.0.tar.gz"
+  sha256 "4a0ff01cedc7ccc8c831907af1b269c56682be7b8477fa2e09957515f73707fe"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "08b32f26f392e4bc727a5cb0042fc260bbf5bb051fe687957a9da2852e619dd9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c15040dc341ef27261520b2cd99843772697354a88a5e18d8558a367e70a65b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77b173f372ca9643de555e495b22a83067648da1f346a6cbacd6eed204515d9d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "edd7971f1160c4dc81c3835acbf2ec6c78316ddb32ce5bc5809d6461b8d18cd2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "642baa8ffc5363918cccd6fbe802e925a19c9cb0783c661ab20b821bb18f0b8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f5685b7d6c95ac5d7ec68da329d2bd77ab1a591bbd97b77d3acebc8eddaa056"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5b0771136af48c6e1daa802a7e9a8acb60a0e213d6dd0e6d4fa70c0185f5cef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44b72329c32cdf6b2c277d6cfd79b9251b3c2c506ca0d1bce6f806002c3a7c5a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d17934d7688cbae48cf8e118eff85935646ac0ef3e318ded5b1814cc9a81145"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bde2ae5b8b6065fd1a608464b4bbec5563a4ce66c5e1cf0271d1f959227c0955"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "658f05f1e1f5b23c96bda37ab5d6fc8b14bc07e5d270e37cf416c50d0957c930"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5010a9c748a8e6414265528657735f7bc32459a486b7dcc7ff4131d0b0ba2595"
   end
 
   depends_on "go" => :build
