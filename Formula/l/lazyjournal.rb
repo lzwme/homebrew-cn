@@ -1,18 +1,18 @@
 class Lazyjournal < Formula
   desc "TUI for logs from journalctl, file system, Docker, Podman and Kubernetes pods"
   homepage "https://github.com/Lifailon/lazyjournal"
-  url "https://ghfast.top/https://github.com/Lifailon/lazyjournal/archive/refs/tags/0.8.3.tar.gz"
-  sha256 "0e8525060eb63dc49f1dd254e742b8e68cf8a18f966440dd5e0b8d01dc1e55f8"
+  url "https://ghfast.top/https://github.com/Lifailon/lazyjournal/archive/refs/tags/0.8.4.tar.gz"
+  sha256 "9129e9d01ba4ba7a90749297150b567803071f450b7c681a47705e41586aef42"
   license "MIT"
   head "https://github.com/Lifailon/lazyjournal.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "33515fa417b33688f50db52fe8eb3df795f2887c391f3eee6e51df5cd09c0389"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33515fa417b33688f50db52fe8eb3df795f2887c391f3eee6e51df5cd09c0389"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "33515fa417b33688f50db52fe8eb3df795f2887c391f3eee6e51df5cd09c0389"
-    sha256 cellar: :any_skip_relocation, sonoma:        "75794090fdb452b5c362b45dc22b4589f6d7abf0708ffcf05c7ef43b3ca0db6e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "93e6efba050a3a3c319bf49219460ce420786f0f6f66b2aacb6daa0f8f65a2cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "abca5a9f72ee87d3518ca75b44cc4ceb1e598454751a5bee6ea32e6586ecbd95"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d60ad451b8301fbb64cdcece0b8da356daa25c1459ef21edce05caf5c25a17f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d60ad451b8301fbb64cdcece0b8da356daa25c1459ef21edce05caf5c25a17f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d60ad451b8301fbb64cdcece0b8da356daa25c1459ef21edce05caf5c25a17f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "03c4d1a90a6ffbeb4ba00df4e07f6d25a3ab8240f633a78c1a53b632c9595d6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5db94f08841d06a917139e9244b6fb057c7699b836b71fcd2a782ac0fc282264"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae0d2f165d0cdd65d0c6d134daad5fe9367fc371f87579aff343c9824d8cf28e"
   end
 
   depends_on "go" => :build

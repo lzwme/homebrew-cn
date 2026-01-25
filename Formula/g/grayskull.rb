@@ -3,18 +3,18 @@ class Grayskull < Formula
 
   desc "Recipe generator for Conda"
   homepage "https://github.com/conda/grayskull"
-  url "https://files.pythonhosted.org/packages/be/da/0149f14fac6e6785c00293706691aba3fa9e6e43b41b7dddb63cf651cb3c/grayskull-3.0.2.tar.gz"
-  sha256 "8d0f5c6ab1266d42ce8b8ada06d56c290791b2c19d2285067e314af86687a6ad"
+  url "https://files.pythonhosted.org/packages/9e/b3/3dc573164d215320b0f2ebd2da07352abb13a843d1dcae6e261d678aa712/grayskull-3.1.0.tar.gz"
+  sha256 "6ccbcc7455c08b68d95ed880fe486d87ad321ee483ccb375bfd8163c19a0fdfa"
   license "Apache-2.0"
   head "https://github.com/conda/grayskull.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "530e65f99d1886566a39abd23d9f49a891ae38dcda2aabba2359d6cdd2cc4819"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "713b2812ba8b1bfd856a7a7c31106f7c794e5dbb67c95f8f05bdf91ea290d225"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f497d747e9a89761f5e7640b0c834ba255ec43c27596234fb2d7233b384d7dd3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8930e4ee960c439a505dec7ddeb50f4b5e035dad73ee43d521914550298e716d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dac70cbf05066d3fd04ae10f7602cca7e01496d54065ae85770457472e59476a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a09af2c401df67ccc11a611f442744bbae7caa1497c234557c5479430636fb9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0bea4584f95992631872492944f970fd8b6838029272e482f0af91ff4ec49fab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98e6bff6dd3f70ca04329de31140a49a6feb923f33bca6da7d10277300953f3b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d672938ecfee9c49fe85bd635b7f5148e868130d619d03045e7f842cf0b439f5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "455ecffa8668b228f7c533e17171c8e4652cad0777f5326fc8ef685cb34258e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9946d2b6317b89568ce26e827e1474468225b0176fc6a4b8622dbf6ead0f9664"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5299e0fa8d78b94e14d85746dfa9c48897bdf6e88d533aa7d134e756e20e95d"
   end
 
   depends_on "cmake" => :build
@@ -50,8 +50,8 @@ class Grayskull < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "pkginfo" do
@@ -90,8 +90,8 @@ class Grayskull < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
-    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
+    url "https://files.pythonhosted.org/packages/86/ff/f75651350db3cf2ef767371307eb163f3cc1ac03e16fdf3ac347607f7edb/setuptools-80.10.1.tar.gz"
+    sha256 "bf2e513eb8144c3298a3bd28ab1a5edb739131ec5c22e045ff93cd7f5319703a"
   end
 
   resource "soupsieve" do

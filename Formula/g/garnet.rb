@@ -3,16 +3,16 @@ class Garnet < Formula
   homepage "https://microsoft.github.io/garnet/"
   # Check for dotnet 10 support on release updates
   # https://github.com/microsoft/garnet/blob/main/Directory.Build.props#L4
-  url "https://ghfast.top/https://github.com/microsoft/garnet/archive/refs/tags/v1.0.93.tar.gz"
-  sha256 "3561d7b6c0508915ab33a3b470d18a4201a10712b7a16c626b29af9bb28e8e02"
+  url "https://ghfast.top/https://github.com/microsoft/garnet/archive/refs/tags/v1.0.94.tar.gz"
+  sha256 "695a978865a175a2503fae0e93f5045ce2a65386e91f005031924abf90596979"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "eab9e7149cae2986393261d01d7dc4637fb8fc0214e9e3c8621b66413f353123"
-    sha256 cellar: :any,                 arm64_sequoia: "0bece0253902b61f4e063a61466a0086a94d27eefed1f0891ac8b40ad7b6df80"
-    sha256 cellar: :any,                 arm64_sonoma:  "f5116b8cad3a2c20784fcb521b0da72be81f36a3aa642446439810a85372e1b9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8673e0a0de56cca287174baefa5da53ada7e10dfd94cf11ba398aca82cddadaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90f78f4cba3ed79b39b24603e6c586e29afa90969768b7c2207cbf9c84adbf2a"
+    sha256 cellar: :any,                 arm64_tahoe:   "ab1b3dce7bc85bec254e04c8b0711ae8c14d991c62059e8c1301645abaaaed7d"
+    sha256 cellar: :any,                 arm64_sequoia: "105c286172216b397b461b8abe39fc8e7c8aa9c614c52e7be6c3a67be597e400"
+    sha256 cellar: :any,                 arm64_sonoma:  "328c46b12961a4a1b2876ed3b96f021235112cfa98ef92631178b127bed7fdbd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fca653a7a94bea5bb893160e94bf6f2faff94ab7e9be0dc591ba529fa199fc67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "393532dec2a43a840c1ca303b745bf81538b567286a86c49b5124c13fb256ddb"
   end
 
   depends_on "valkey" => :test

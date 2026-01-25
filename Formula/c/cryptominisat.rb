@@ -1,25 +1,24 @@
 class Cryptominisat < Formula
   desc "Advanced SAT solver"
   homepage "https://www.msoos.org/cryptominisat5/"
-  url "https://ghfast.top/https://github.com/msoos/cryptominisat/archive/refs/tags/5.12.1.tar.gz"
-  sha256 "fa504ae5846c80a3650fda620383def7f3d1d9d5d08824b57e13c4d41e881d89"
+  url "https://ghfast.top/https://github.com/msoos/cryptominisat/archive/refs/tags/release/5.13.0.tar.gz"
+  sha256 "1bfcd8a314706b3ac7831f215bae50251d9b61f3bbe90cbdcbed190741f6ee54"
   # Everything that's needed to run/build/install/link the system is MIT licensed. This allows
   # easy distribution and running of the system everywhere.
   license "MIT"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(%r{^(?:release/)?v?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "e18323988f4b9cfbe9bb913ed9c71ae2136810154aa92b79aae4988e49577d31"
-    sha256 cellar: :any, arm64_sequoia: "522fce8ee008386a1431ef14b1a6c9f71f9469b18c2ccd273bb415d687943430"
-    sha256 cellar: :any, arm64_sonoma:  "2ef59704360415707ecd49a707e5981972b77a1701d97316ec039d1c6c6fbc4a"
-    sha256 cellar: :any, sonoma:        "d18984954ac374a9a479df3972636b8371c31f15650afd7efd2427025447838d"
-    sha256               arm64_linux:   "9f7f65846e6a8cc116f56a0d3dc8bb223abc1f101724cec7bf733df930ec44cb"
-    sha256               x86_64_linux:  "1ead5cf6b9ce64e9366c7d5379fc9049ef3836609df6d11fbd9e6b38d136d3e9"
+    sha256 cellar: :any,                 arm64_tahoe:   "70bf28562a05a8aaf76e1a5807e7057eebfb59e237441068c842114a4a74a71f"
+    sha256 cellar: :any,                 arm64_sequoia: "b506255464c537d13d70d7b61b622f7c20bf0684f61ee0b3e078146d99a3aa06"
+    sha256 cellar: :any,                 arm64_sonoma:  "97f377a954302387397eedd2721534ec085c6022ffc1e71b448c65da05353457"
+    sha256 cellar: :any,                 sonoma:        "ff0109fe3a9173ecbfc63dfc51285602f9163627b96f9e385d0dbffb3b29487a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a2046c1aa8b5e7ec0d39c5135b992ba232b00976b75ebbaa311a3773e5b6390"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7411367b3a354849291f1d37a3f70fa73603068ef2b5e7272f07f30f2b2d3ce"
   end
 
   depends_on "cmake" => :build
@@ -28,25 +27,20 @@ class Cryptominisat < Formula
 
   uses_from_macos "zlib"
 
-  # Currently using latest commit from `mate-only-libraries-1.8.0` branch.
-  # Check cryptominisat README.markdown and/or CI workflow to see if branch has changed.
+  # Currently using revision in flake.lock
   resource "cadical" do
-    url "https://ghfast.top/https://github.com/meelgroup/cadical/archive/c90592eab35a4a26ad901367db3cd727c5ab79c5.tar.gz"
-    sha256 "ac54f000b26083c44873e0ce581dac1cb56f91a8835082287b391af089547c3d"
+    url "https://ghfast.top/https://github.com/meelgroup/cadical/archive/8fcb8139c453e7cb85c470cea5d783db8e229518.tar.gz"
+    sha256 "9880d09a7ff3d9dc4b633fa8230ff168b089c78a4c1811efd467925eb9972f9b"
   end
 
-  # Currently using a git checkout of `mate` branch as the generate script runs `git show`.
-  # Check cryptominisat README.markdown and/or CI workflow to see if branch has changed.
+  # Currently using revision in flake.lock
   resource "cadiback" do
     url "https://github.com/meelgroup/cadiback.git",
-        revision: "ea65a9442fc2604ee5f4ffd0f0fdd0bf481d5b42"
+        revision: "c24a73f62da2f984df6d3f1cf37283b1ca1c9f9e"
   end
 
-  # Apply Arch Linux patch to avoid rebuilding C++ library for Python bindings
-  patch do
-    url "https://gitlab.archlinux.org/archlinux/packaging/packages/cryptominisat/-/raw/20200db986b018b724363352954cfef8006da079/python-system-libs.patch"
-    sha256 "0fb932fbf83c351568f54fc238827709e6cc2646d124af751050cfde0c255254"
-  end
+  # Apply modified Arch Linux patch to avoid rebuilding C++ library for Python bindings
+  patch :DATA
 
   # Apply Arch Linux patch to avoid paths to non-installed static libraries in CMake config file
   patch do
@@ -65,6 +59,8 @@ class Cryptominisat < Formula
     (buildpath/name).install buildpath.children
     (buildpath/"cadical").install resource("cadical")
     (buildpath/"cadiback").install resource("cadiback")
+
+    ENV.append_to_cflags "-fPIC" if OS.linux?
 
     cd "cadical" do
       system "./configure"
@@ -106,3 +102,63 @@ class Cryptominisat < Formula
     assert_equal "(None, True, False, True)\n", shell_output("#{python3} test.py")
   end
 end
+
+__END__
+diff --git a/setup.py b/setup.py
+index 537d78313..2e9a58ffd 100644
+--- a/setup.py
++++ b/setup.py
+@@ -58,51 +58,9 @@ def gen_modules(version):
+         include_dirs = ["src/", "./"],
+         sources = ["python/src/pycryptosat.cpp",
+                    "python/src/GitSHA1.cpp",
+-                   "src/backbone.cpp",
+-                   "src/cardfinder.cpp",
+-                   "src/ccnr_cms.cpp",
+-                   "src/ccnr.cpp",
+-                   "src/clauseallocator.cpp",
+-                   "src/clausecleaner.cpp",
+-                   "src/cnf.cpp",
+-                   "src/completedetachreattacher.cpp",
+-                   "src/cryptominisat_c.cpp",
+-                   "src/cryptominisat.cpp",
+-                   "src/datasync.cpp",
+-                   "src/distillerbin.cpp",
+-                   "src/distillerlitrem.cpp",
+-                   "src/distillerlong.cpp",
+-                   "src/distillerlongwithimpl.cpp",
+-                   "src/gatefinder.cpp",
+-                   "src/gaussian.cpp",
+-                   "src/get_clause_query.cpp",
+-                   "src/hyperengine.cpp",
+-                   "src/idrup.cpp",
+-                   "src/intree.cpp",
+-                   "src/lucky.cpp",
+-                   "src/matrixfinder.cpp",
+-                   "src/occsimplifier.cpp",
+-                   "src/packedrow.cpp",
+-                   "src/propengine.cpp",
+-                   "src/reducedb.cpp",
+-                   "src/sccfinder.cpp",
+-                   "src/searcher.cpp",
+-                   "src/searchstats.cpp",
+-                   "src/sls.cpp",
+-                   "src/solutionextender.cpp",
+-                   "src/solverconf.cpp",
+-                   "src/solver.cpp",
+-                   "src/str_impl_w_impl.cpp",
+-                   "src/subsumeimplicit.cpp",
+-                   "src/subsumestrengthen.cpp",
+-                   "src/vardistgen.cpp",
+-                   "src/varreplacer.cpp",
+-                   "src/xorfinder.cpp",
+-                   "src/oracle/oracle.cpp",
+-                   "src/oracle_use.cpp",
+-                   "src/probe.cpp",
+                ],
+-        libraries = ['/usr/lib/libcadiback.so'], #, 'libgmpxx.so', 'libgmp.so'
++        library_dirs = ["../build/lib"],
++        libraries = ['cryptominisat5', '/usr/lib/libcadiback.so'], #, 'libgmpxx.so', 'libgmp.so'
+         extra_compile_args = extra_compile_args_val,
+         define_macros=define_macros_val,
+         language = "c++",

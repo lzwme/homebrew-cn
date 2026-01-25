@@ -1,8 +1,8 @@
 class Moarvm < Formula
   desc "VM with adaptive optimization and JIT compilation, built for Rakudo"
   homepage "https://moarvm.org"
-  url "https://ghfast.top/https://github.com/MoarVM/MoarVM/releases/download/2025.12/MoarVM-2025.12.tar.gz"
-  sha256 "23291b5fa7557c80d4ad3254d8e8bd51b3380989a1575b3d264dbe72a1cad1c0"
+  url "https://ghfast.top/https://github.com/MoarVM/MoarVM/releases/download/2026.01/MoarVM-2026.01.tar.gz"
+  sha256 "0bb57343c864c2af55ab0d7fc7c99257e06bcf5399e0f8191a97127b7ff040de"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Moarvm < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "b34284ac58b766be9d3fc80cd1106ba20d266690f3c9d3d898923597952eda62"
-    sha256 arm64_sequoia: "50416aa38770ec17a0a16d38a546bb18f851915b456d1c4cc94c7c63f8bb19c3"
-    sha256 arm64_sonoma:  "33a9ea6fa6a82111dfcd5b62ad7ae7fbdb8a33f6a5c89b6015bfac9bd94f50ad"
-    sha256 sonoma:        "2a9b57585df431899b5d5db1908fafd9e33415080743eea2632716de256a1123"
-    sha256 arm64_linux:   "1356f7a9422e54faa593d8c2cf44b9d11164545f4946a17aaa08789c7aa623ad"
-    sha256 x86_64_linux:  "522149d7eecf9291af7d95c896f005a35de3922cb332234ecd2ccbdde450dae5"
+    sha256 arm64_tahoe:   "046dafdb7d6c7c374b4ba9db321ec376ba3c247c6cdf06863a2e2ddbaa322d51"
+    sha256 arm64_sequoia: "152d37b34d37eb40e734a4ecb68cd9386b4d5dc0437836000bf5713102afc81d"
+    sha256 arm64_sonoma:  "25586ef430ad14b6f8314be3999e3080a9ff2c6c15ffba5a31dec9635d957c76"
+    sha256 sonoma:        "1a50a0112d948ea14a36ef677fd2c73fc25a6144b99ece5f2f205bb427556a4c"
+    sha256 arm64_linux:   "dccc21a1df5217495f33de49fd2942593f24430f996ec15f2f86e0be1681aeea"
+    sha256 x86_64_linux:  "089e8da906371baa0f28085ccf37572f5f1e78fe5440de436525a5341930e501"
   end
 
   depends_on "pkgconf" => :build
@@ -35,19 +35,12 @@ class Moarvm < Formula
   conflicts_with "rakudo-star", because: "rakudo-star currently ships with moarvm included"
 
   resource "nqp" do
-    url "https://ghfast.top/https://github.com/Raku/nqp/releases/download/2025.12/nqp-2025.12.tar.gz"
-    sha256 "074147578bfc0d2f91a6702270517803ff4e960e9f175dfe14b00eee6febc0c6"
+    url "https://ghfast.top/https://github.com/Raku/nqp/releases/download/2026.01/nqp-2026.01.tar.gz"
+    sha256 "6bb80256bc5274a2a89eac9b86fe8dd808b25657cf460ea0d3d847958ba54b25"
 
     livecheck do
       formula :parent
     end
-  end
-
-  # Fix build with a system provided libuv
-  # PR Ref: https://github.com/MoarVM/MoarVM/pull/1981
-  patch do
-    url "https://github.com/MoarVM/MoarVM/commit/52a918c82bddeef58a842d112bcb42c6f33883ab.patch?full_index=1"
-    sha256 "91b77fb7a11bfa9711e48745c3056ed5beb783234ac4728c7081a32b42349fba"
   end
 
   def install

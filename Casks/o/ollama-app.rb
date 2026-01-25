@@ -1,6 +1,6 @@
 cask "ollama-app" do
-  version "0.14.3"
-  sha256 "6fbb6eafba125bf617c55bd0fc0e226579d498ab24f56649469c226763354228"
+  version "0.15.0"
+  sha256 "92dce9334b1d796998b1f94fba824273a5954d12cab8f56189e4ddfc0393095d"
 
   url "https://ghfast.top/https://github.com/ollama/ollama/releases/download/v#{version}/Ollama-darwin.zip",
       verified: "github.com/ollama/ollama/"
@@ -22,7 +22,9 @@ cask "ollama-app" do
   zap trash: [
     "~/.ollama",
     "~/Library/Application Support/Ollama",
+    "~/Library/Caches/com.electron.ollama",
     "~/Library/Preferences/com.electron.ollama.plist",
     "~/Library/Saved Application State/com.electron.ollama.savedState",
+    "~/Library/Webkit/com.electron.ollama",
   ]
 end

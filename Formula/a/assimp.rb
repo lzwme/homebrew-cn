@@ -1,8 +1,8 @@
 class Assimp < Formula
   desc "Portable library for importing many well-known 3D model formats"
   homepage "https://www.assimp.org/"
-  url "https://ghfast.top/https://github.com/assimp/assimp/archive/refs/tags/v6.0.2.tar.gz"
-  sha256 "d1822d9a19c9205d6e8bc533bf897174ddb360ce504680f294170cc1d6319751"
+  url "https://ghfast.top/https://github.com/assimp/assimp/archive/refs/tags/v6.0.4.tar.gz"
+  sha256 "afa5487efdd285661afa842c85187cd8c541edad92e8d4aa85be4fca7476eccc"
   # NOTE: BSD-2-Clause is omitted as contrib/Open3DGC/o3dgcArithmeticCodec.c is not used
   license all_of: [
     "BSD-3-Clause",
@@ -15,14 +15,12 @@ class Assimp < Formula
   head "https://github.com/assimp/assimp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cd42d21879d88bf5c153f8c356ba0641b3cdfa8d1ae0d965734ff51440c9304d"
-    sha256 cellar: :any,                 arm64_sequoia: "6ab85fd16cd1f86fc8ee199e49d4f57d9b23eb0e2b598e32d1450913862506a8"
-    sha256 cellar: :any,                 arm64_sonoma:  "3ce55f76aaeb9b538266dfc81622bf6e33e1d4fdf2aebf69e442369378830a95"
-    sha256 cellar: :any,                 arm64_ventura: "ed951286fbf3dc3362927d2698df086e7da7ed6ae9be2fd83f4fba310431266b"
-    sha256 cellar: :any,                 sonoma:        "1b6514222b86287994281fd61e7d30e5a087ecf143fc3f190afb9fc17048f061"
-    sha256 cellar: :any,                 ventura:       "69f5e3ac41175e81f7431ea19ca6514790ce82107f71a843f739042394d221f5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c781ef6fdfe87c1074960fd21abfa8e43c6ff35955b15b29a1e0ef0ceaf08f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e96dbe0de6b786a99551d144173516e4ae104bacb2c20ee0bcabd6af405ef90"
+    sha256 cellar: :any,                 arm64_tahoe:   "4fb93e11d0dbc91e5f60c420b1c9f1ddd83c0f41a5b9e4f3ec487e6d899314d8"
+    sha256 cellar: :any,                 arm64_sequoia: "3b3010df5e86ee71ed540a702249bd592d7de657fbd9211cb218256616c10479"
+    sha256 cellar: :any,                 arm64_sonoma:  "17f3e415cf49f3efa93f8fe69f17b260a3f22426ff92e96fd4c8395d5e4513c9"
+    sha256 cellar: :any,                 sonoma:        "ec56e5465d0c69ce620d89ffd84c758b791efebcf2b5466ee59b1ccf6018886b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "889fe27d780890620a6eab60cc3298ecc18642a138db9b47a8cc12663c7ff5fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b4441a7429f787b6874ec574968e08a7328739dfb707881d1ccbc19630ab5f3"
   end
 
   depends_on "cmake" => :build
@@ -31,6 +29,11 @@ class Assimp < Formula
   uses_from_macos "zlib"
 
   def install
+    # Ignore error on older GCC
+    if ENV.compiler.to_s.start_with?("gcc") && DevelopmentTools.gcc_version(ENV.compiler) < 15
+      ENV.append_to_cflags "-Wno-maybe-uninitialized"
+    end
+
     args = %W[
       -DASSIMP_BUILD_TESTS=OFF
       -DASSIMP_BUILD_ASSIMP_TOOLS=ON

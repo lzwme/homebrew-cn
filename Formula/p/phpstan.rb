@@ -1,17 +1,17 @@
 class Phpstan < Formula
   desc "PHP Static Analysis Tool"
   homepage "https://github.com/phpstan/phpstan"
-  url "https://ghfast.top/https://github.com/phpstan/phpstan/releases/download/2.1.36/phpstan.phar"
-  sha256 "9711f41b56904b32605b380476d71654dba84f656d79170b32fc68ee849ef4fa"
+  url "https://ghfast.top/https://github.com/phpstan/phpstan/releases/download/2.1.37/phpstan.phar"
+  sha256 "98c823d461b0533a0afc0b1cc8ce8af74b1ba9a26f993014d31d1f4cc022405d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e252d1c16eeecc8df678ad469cde4c7f52a40e2bc51990b5e553a2779b1b115c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e252d1c16eeecc8df678ad469cde4c7f52a40e2bc51990b5e553a2779b1b115c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e252d1c16eeecc8df678ad469cde4c7f52a40e2bc51990b5e553a2779b1b115c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "85d55f7c1f617d8575c6c6d6d58a29f7335b14c67e5c5a1c45634f26ae7db074"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85d55f7c1f617d8575c6c6d6d58a29f7335b14c67e5c5a1c45634f26ae7db074"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85d55f7c1f617d8575c6c6d6d58a29f7335b14c67e5c5a1c45634f26ae7db074"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b9fe3087f3f60238ec5233d09f3b583187542d79e024ca9f0e585337c842d43"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b9fe3087f3f60238ec5233d09f3b583187542d79e024ca9f0e585337c842d43"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b9fe3087f3f60238ec5233d09f3b583187542d79e024ca9f0e585337c842d43"
+    sha256 cellar: :any_skip_relocation, sonoma:        "56f50b96c83374289c4d9645ad0c8ac4f2b9eb5aa485c267f37d0dfbe2fe04ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56f50b96c83374289c4d9645ad0c8ac4f2b9eb5aa485c267f37d0dfbe2fe04ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56f50b96c83374289c4d9645ad0c8ac4f2b9eb5aa485c267f37d0dfbe2fe04ae"
   end
 
   depends_on "php" => :test

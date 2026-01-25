@@ -1,8 +1,8 @@
 class Bkmr < Formula
   desc "Unified CLI Tool for Bookmark, Snippet, and Knowledge Management"
   homepage "https://github.com/sysid/bkmr"
-  url "https://ghfast.top/https://github.com/sysid/bkmr/archive/refs/tags/v6.4.3.tar.gz"
-  sha256 "326fb7ef727f964cae15f4fd47daa4415d3fc5034acac7bbaa5960af4ca121c4"
+  url "https://ghfast.top/https://github.com/sysid/bkmr/archive/refs/tags/v6.5.0.tar.gz"
+  sha256 "4ec864f2678ff9eb48e612e9ce18d832b8bed969524d27169211f3484d064e7c"
   license "BSD-3-Clause"
   head "https://github.com/sysid/bkmr.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Bkmr < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d1b36025982ed266754e5bd59d0ed25e57e600cb5727e3fe39411d32914db513"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2c1372edd1f40b5bf5d800ae313ab4c87f66c1298951446dd625b7dae5ffa80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1019fc0d68205d3dc54c2ac5556c5bde55058301a0e444c19888d150a19b822"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d800a6f00267edcbe97c258ae4c496812aad888f20d7b1a0c8e4fd9599029503"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "223cb099914d5af7c1398855da5600f3bf2fd15845500e152f6e2f39239112ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73be2e3a7e9cdaf868f4101102ef5fde52882c6c7c415cba19da30b07a4d9d86"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3019ba82f2e7eeeba3022fc84340a2d6ac8bf4b941fa6662c8a3093f9ff4c893"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82a8f8df23af13a5879b3c89fec219cd7291d6b7fc15f25390007e209d75fc6e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "627eb4a376fd470d09c0cc8c492356862da5b713f034f9dca782a6b17ad3c71d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3a729c19ae6857d6a5e09332ed840596c4f21b82daa3fa2d09aea0a2db87b681"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "99f361d376fef207fb43ce3885dbafa3bf166c0c7a875073a98f4ea8540eba7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5e0d32604a5acb5ef19805b65f670bc49de8b443019164a16cb11c46124c364"
   end
 
   depends_on "rust" => :build

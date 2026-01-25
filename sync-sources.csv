@@ -407,7 +407,7 @@ Homebrew-homebrew-core/Formula/a/awscli@1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/awscurl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/awsdac.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/awslogs.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/a/awsume.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/awsume.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/awsweeper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/axel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ayatana-ido.rb, Homebrew/homebrew-core, 1
@@ -3001,7 +3001,7 @@ Homebrew-homebrew-core/Formula/h/htmlhint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/htmlq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/htmltest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/htop.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/h/htpdate.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/h/htpdate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/htslib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/httm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/http-prompt.rb, Homebrew/homebrew-core, 0
@@ -3203,7 +3203,7 @@ Homebrew-homebrew-core/Formula/i/ipsw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iptables.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/iputils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ipv6calc.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/i/ipv6toolkit.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/i/ipv6toolkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ipython.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ircd-hybrid.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ircd-irc2.rb, Homebrew/homebrew-core, 0
@@ -8772,6 +8772,7 @@ Homebrew-homebrew-cask/Casks/c/caprine.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/capslocknodelay.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/captain.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/captainplugins.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/captains-deck.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/captin.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/caption.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/capto.rb, Homebrew/homebrew-cask, 0

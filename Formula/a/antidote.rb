@@ -6,12 +6,14 @@ class Antidote < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3a19f334b85a2f9f92261f841ffb2caf871eb006cef7d9645441b202baf5ca22"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "974e2b7322e3fe842a7211da40afbfda61d4457e23b7474e234537d537b8928a"
   end
 
   uses_from_macos "zsh"
 
   def install
+    pkgshare.install "antidote"
     pkgshare.install "antidote.zsh"
     pkgshare.install "functions"
     man.install "man/man1"

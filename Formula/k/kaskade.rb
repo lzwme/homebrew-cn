@@ -6,16 +6,16 @@ class Kaskade < Formula
   url "https://files.pythonhosted.org/packages/8e/e0/58bfb461d4cf41aaa673957308ed66a251e7f6aa78acde36360f800d84ae/kaskade-4.0.6.tar.gz"
   sha256 "8f88866fdb275f14be05e6e137718b7bc9667aa52434e8f21e37267b8b8a7337"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/sauljabin/kaskade.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ba178903544076536ff83d2aa4325654624b438b99a41c37267c5edbcaea2588"
-    sha256 cellar: :any,                 arm64_sequoia: "dc1386c21c4f3115c9f14d3a67694b83f7b67695238244362f821ef841a0c8f5"
-    sha256 cellar: :any,                 arm64_sonoma:  "2d207871f08b6124382b225de0965c38798b7c42cdfe15cb119eb8f1dc300c6b"
-    sha256 cellar: :any,                 sonoma:        "ed8fe0df429de2e708cb716789d921a8494dd9d21d881d3fed32a1cde8ca1a9f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c380265c45e8516d85aebc84cff0c8da03c5a6e19a8292f13555506aadb76986"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "092422f835237b5e36ec2a0a42278032b084b152002b0f79847e420ac0a4bc01"
+    sha256 cellar: :any,                 arm64_tahoe:   "b11a074c13e333b8670c23708be661043dca2c0160b41976b3d0346cfb18a4d2"
+    sha256 cellar: :any,                 arm64_sequoia: "4250d45736e9d19a3515fe3957b6d4205ae67277fdd3529573895be03e4b5f6d"
+    sha256 cellar: :any,                 arm64_sonoma:  "6ed2fb92ecff7f2468a82b1279f758de44a018dde87e2f09ab073d2f7cd1bdd8"
+    sha256 cellar: :any,                 sonoma:        "a6e933d3e3ac06e159d4e1f867b3427e492c1b724846e47ce540519f57db8f61"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aecaaea2e8eb9f3bc299810d6b03ae6926de7ab7a5da83399fc9484f65eb06b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "960b5c150a9800a6360eca02e59cede13efd5650f658c1299a057f6a2887143c"
   end
 
   depends_on "rust" => :build # for orjson
@@ -143,8 +143,8 @@ class Kaskade < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/cc/5c/f912bdebdd4af4160da6a2c2b1b3aaa1b8c578d0243ba8f694f93c7095f0/protobuf-6.33.3.tar.gz"
-    sha256 "c8794debeb402963fddff41a595e1f649bcd76616ba56c835645cab4539e810e"
+    url "https://files.pythonhosted.org/packages/53/b8/cda15d9d46d03d4aa3a67cb6bffe05173440ccf86a9541afaf7ac59a1b6b/protobuf-6.33.4.tar.gz"
+    sha256 "dc2e61bca3b10470c1912d166fe0af67bfc20eb55971dcef8dfa48ce14f0ed91"
   end
 
   resource "pygments" do
@@ -173,8 +173,8 @@ class Kaskade < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/c7/14/3d5afaec9af0cfed28d629b4bce8209d680f7cd1d34aeeb2ddcf2d2aac7a/textual-7.0.3.tar.gz"
-    sha256 "e9206a33bcd9486650d3e954147cd94ef49170df09d9a6dfc349400a4b25772d"
+    url "https://files.pythonhosted.org/packages/6f/ee/620c887bfad9d6eba062dfa3b6b0e735e0259102e2667b19f21625ef598d/textual-7.3.0.tar.gz"
+    sha256 "3169e8ba5518a979b0771e60be380ab1a6c344f30a2126e360e6f38d009a3de4"
   end
 
   resource "typing-extensions" do

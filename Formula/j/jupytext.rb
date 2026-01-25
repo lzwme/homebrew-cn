@@ -3,18 +3,18 @@ class Jupytext < Formula
 
   desc "Jupyter notebooks as Markdown documents, Julia, Python or R scripts"
   homepage "https://jupytext.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/9b/5d/82a614a49493fa84b2019a3e03020a8b9927208ae177b81f7e0b30330c82/jupytext-1.18.1.tar.gz"
-  sha256 "5c0962ca8d222db45cbe1848b4805dbbe3ddb957603fc96651b6cd7fd403fafb"
+  url "https://files.pythonhosted.org/packages/2b/84/79a28abd8e6a9376fa623670ab8ac7ebcf45b10f2974e0121bb5e8e086a2/jupytext-1.19.0.tar.gz"
+  sha256 "724c1f75c850a12892ccbcdff33004ede33965d0da8520ab9ea74b39ff51283a"
   license "MIT"
+  head "https://github.com/mwouts/jupytext.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "bb9fd834932f365f6a4d830496323b3dcbe4cbebeb35509282ea1db8462b1ede"
-    sha256 cellar: :any,                 arm64_sequoia: "e7aaf23a662d7cc97815b7e66989265ca4f1ecf28a3fd1260f01fda4a93e4dcc"
-    sha256 cellar: :any,                 arm64_sonoma:  "a5ddfe33dd4dae8ae9cb59ea2f79e11ea4ae48e5cf7afa1b1e82be27e84ea429"
-    sha256 cellar: :any,                 sonoma:        "305470d3effc49840ebb410d3147c734980cf47c432ac0ff960099058ca71ff7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b15c968c58c46ebe3161f46463844b6cd3a45c24bc77691c07343e90afa215b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "715114fd24e9ed1258702d844b90b0ef99c181c980813404fd24bee427a440e6"
+    sha256 cellar: :any,                 arm64_tahoe:   "21ffece9b579cf2e463e1353c0ea8dd59beec58f11ed9b91ada09850ffecac3e"
+    sha256 cellar: :any,                 arm64_sequoia: "0cdac1b71602677c411555274a157bb86b0d4eb471391ca75c2efc15190cfc16"
+    sha256 cellar: :any,                 arm64_sonoma:  "54ce22c880e80b79e24faa995fb2f7291718cb19996286ebb645080deed7dcc6"
+    sha256 cellar: :any,                 sonoma:        "1d00bcec5d3874c13b8870e5b703027e8b904a7c8227f2a15befaec9350b1a9c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb95b6894d10570e27ebef887cb116ac0a91c512fa8c6153acfb433156fdcdc3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f08cf1c1a7485faee44875adf663ba3f5e5b9ee3c37f32298f5b1a3851142ce6"
   end
 
   depends_on "libyaml"
@@ -34,8 +34,8 @@ class Jupytext < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
-    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
+    url "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz"
+    sha256 "0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326"
   end
 
   resource "jsonschema-specifications" do
@@ -69,13 +69,13 @@ class Jupytext < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
+    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
   end
 
   resource "pyyaml" do
@@ -94,6 +94,10 @@ class Jupytext < Formula
   end
 
   def install
+    # Remove unused build requirements for optional JupyterLab extension
+    # that cause a circular build dependency: https://github.com/jupyterlab/jupyterlab_pygments/issues/23
+    inreplace "pyproject.toml", 'requires = ["hatchling>=1.5.0", "hatch-jupyter-builder>=0.5", "jupyterlab>=4"]',
+                                'requires = ["hatchling>=1.5.0"]'
     virtualenv_install_with_resources
   end
 

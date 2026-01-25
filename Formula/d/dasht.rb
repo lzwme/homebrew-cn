@@ -23,6 +23,37 @@ class Dasht < Formula
   end
 
   test do
+    # Avoid test failure from GitHub API rate limit by creating fallback files
+    (testpath/".cache/dasht/master").write <<~JSON
+      {
+        "ref": "refs/heads/master",
+        "node_id": "MDM6UmVmMTEyMzkyNzk6cmVmcy9oZWFkcy9tYXN0ZXI=",
+        "url": "https://api.github.com/repos/Kapeli/feeds/git/refs/heads/master",
+        "object": {
+          "sha": "a6a68e3648364e4c2ebbe0da7d29d9e723723115",
+          "type": "commit",
+          "url": "https://api.github.com/repos/Kapeli/feeds/git/commits/a6a68e3648364e4c2ebbe0da7d29d9e723723115"
+        }
+      }
+    JSON
+    (testpath/".cache/dasht/a6a68e3648364e4c2ebbe0da7d29d9e723723115").write <<~JSON
+      {
+        "sha": "a6a68e3648364e4c2ebbe0da7d29d9e723723115",
+        "url": "https://api.github.com/repos/Kapeli/feeds/git/trees/a6a68e3648364e4c2ebbe0da7d29d9e723723115",
+        "tree": [
+          {
+            "path": "Bash.xml",
+            "mode": "100755",
+            "type": "blob",
+            "sha": "fc5a54826f8976e581d7069454e0aeb8f46babe7",
+            "size": 359,
+            "url": "https://api.github.com/repos/Kapeli/feeds/git/blobs/fc5a54826f8976e581d7069454e0aeb8f46babe7"
+          }
+        ],
+        "truncated": false
+      }
+    JSON
+
     system bin/"dasht-docsets-install", "--force", "bash"
     assert_equal "Bash\n", shell_output(bin/"dasht-docsets")
   end
