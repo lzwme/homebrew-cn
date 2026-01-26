@@ -1,18 +1,18 @@
 class Mq < Formula
   desc "Jq-like command-line tool for markdown processing"
   homepage "https://mqlang.org/"
-  url "https://ghfast.top/https://github.com/harehare/mq/archive/refs/tags/v0.5.11.tar.gz"
-  sha256 "a61f8436f22d2339047162cec71a740189fdbd1471c1e7b2b5fdf4668ee37798"
+  url "https://ghfast.top/https://github.com/harehare/mq/archive/refs/tags/v0.5.12.tar.gz"
+  sha256 "b5b8307a312463d7602255d0c2fe003c19ece2e46a0efc1d013d30c7be0846c6"
   license "MIT"
   head "https://github.com/harehare/mq.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e8ea7cf46dbc7a365349fa895261fc4173757ba43b6edeb66d9616fd7949e5d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dabf662acc804df31dbf614382b68d4c488899a926b827c15c8a3812f0b561b9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c73c78184f8e049e749830598000edbb896946761f3c0b92523efc126d21bbe"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b6add5373ba7d3e22ccaed0adf8764e99d0b6af16cccc7690d2fc04a7e305211"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c0cd7dbfaf0d96c30ce8c3a5b30d17fc904c6ce85b3f5e94f7e8acc2f11ae6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d3c27408ed39b5c3f739f0d8a06769bb4ce6b84080596e2c04c88f699ad31d1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b004634015936a8211ef6b7942a4665e3be3cbada7307c5c215b8b6f7b46f38b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01173fe3d93f0432ee8878ccd87e65d7a8832fbc44a284e1550c0e5dbc1bd2b0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91c5e5298ba3bef0c19ceb2aa4014594332051ea1a3db2af4b8974fa2fb84482"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8b5294f022842f19d2e615470c5a9a9db2c44955c9b06f24a6ce4ea1a2251286"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2a5feefa814ddc345effac4793710cf67874aa4c3d9ec7864ff1446ce2c0a08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f3fe7f6975abaae14681f0cea25fcea48d4bdc6ad33d5b38f9fa17726085c60"
   end
 
   depends_on "rust" => :build

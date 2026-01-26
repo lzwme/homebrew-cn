@@ -14,12 +14,13 @@ class Cdo < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dfacd892a34ff89006c66cd1d0123591e82d5761afc98fdb96e29c840aa616de"
-    sha256 cellar: :any,                 arm64_sequoia: "76ec5dc1b8b67ea28b5b9b5e9f3b04e9fcfcba4a092d69e5e972940b726607de"
-    sha256 cellar: :any,                 arm64_sonoma:  "69959355e26fc581feb8a5a1983b6bd791bcff9b75aa286c28dc09e43e3ab280"
-    sha256 cellar: :any,                 sonoma:        "fcd6ff17a782a62cf9b8028da2e0a4daaa22dc2e0db2b93fb94980625730a2ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f78e98e71248499b8627eeccfb880464d46b365ab5d6b5cf1bb617811f0be04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0df7d4228b094933bb580f9d4872d255a566e909d1444b15af57085da541070b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "895bb2a7a6f9dc329535089444eb352c81123d9869cad730d4721d2cec851ef4"
+    sha256 cellar: :any,                 arm64_sequoia: "b3549cf83a97f5262f0efd6faaa8721e8bbb128f9a2e19b005361f8a7b9a14f0"
+    sha256 cellar: :any,                 arm64_sonoma:  "e61f98a07756a0b4b780f39b3b0b83948d13fde8d270ef226d71574d17c33d40"
+    sha256 cellar: :any,                 sonoma:        "a12b01b5b6a5b81c4a3ea2e1b962862c14b6e53fd170fb41af17191175d70904"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c88d42b076ec7343fc339f79c84ff03654d57e3b2f1e17aedceb2769a7bf3880"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b284ae6d808c0453e0eb5c748a09574d8180ec382c15d5cca99f3f84566c11fc"
   end
 
   depends_on "eccodes"
@@ -44,13 +45,12 @@ class Cdo < Formula
   end
 
   def install
-    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1500
-
     args = %W[
       --disable-openmp
       --with-eccodes=#{Formula["eccodes"].opt_prefix}
       --with-netcdf=#{Formula["netcdf"].opt_prefix}
       --with-hdf5=#{Formula["hdf5"].opt_prefix}
+      --with-proj=#{Formula["proj"].opt_prefix}
       --with-szlib=#{Formula["libaec"].opt_prefix}
     ]
 

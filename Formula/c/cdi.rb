@@ -22,10 +22,8 @@ class Cdi < Formula
   end
 
   depends_on "eccodes"
-  depends_on "hdf5"
   depends_on "libaec"
   depends_on "netcdf"
-  depends_on "proj"
 
   uses_from_macos "python" => :build
 
@@ -38,7 +36,6 @@ class Cdi < Formula
       --disable-silent-rules
       --with-eccodes=#{Formula["eccodes"].opt_prefix}
       --with-netcdf=#{Formula["netcdf"].opt_prefix}
-      --with-hdf5=#{Formula["hdf5"].opt_prefix}
       --with-szlib=#{Formula["libaec"].opt_prefix}
     ]
 

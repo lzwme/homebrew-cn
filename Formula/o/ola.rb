@@ -6,6 +6,7 @@ class Ola < Formula
   homepage "https://github.com/OpenLightingProject/ola"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   revision 8
+  head "https://github.com/OpenLightingProject/ola.git", branch: "master"
 
   stable do
     # TODO: Check if we can use unversioned `protobuf` at version bump
@@ -35,17 +36,6 @@ class Ola < Formula
     sha256 sonoma:        "2840580cf7483896ea140328cd7e966c9169d1bb6ea6bb816b79e02137a44cee"
     sha256 arm64_linux:   "6b42431dccfa85cb7d6537fadb668c5c487f27cc112b6db052ab34880b2430bc"
     sha256 x86_64_linux:  "32730886d9c85ba3eb30461beb1d161642be7dd9f229d674b7cc22b2babaa5ce"
-  end
-
-  head do
-    url "https://github.com/OpenLightingProject/ola.git", branch: "master"
-
-    # Apply open PR to fix macOS HEAD build
-    # PR ref: https://github.com/OpenLightingProject/ola/pull/1983
-    patch do
-      url "https://github.com/OpenLightingProject/ola/commit/b8134b82e15f19266c79620b9c3c012bc515357d.patch?full_index=1"
-      sha256 "d168118436186f0a30f4f7f2fdfcde69a5d20a8dcbef61c586d89cfd8f513e33"
-    end
   end
 
   depends_on "autoconf" => :build
@@ -150,8 +140,8 @@ class Ola < Formula
 
   def caveats
     <<~EOS
-      To use the bundled Python libraries:
-        #{Utils::Shell.export_value("PYTHONPATH", extra_python_path)}
+      Python support will be removed due to:
+        https://github.com/OpenLightingProject/ola/issues/2008
     EOS
   end
 

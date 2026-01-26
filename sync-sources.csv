@@ -306,7 +306,7 @@ Homebrew-homebrew-core/Formula/a/at-spi2-core.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ata.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/atac.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/atari800.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/atasm.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/atasm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/atf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/athenacli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/atkmm.rb, Homebrew/homebrew-core, 0
@@ -2580,6 +2580,7 @@ Homebrew-homebrew-core/Formula/g/gnu-time.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnu-typist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnu-units.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnu-which.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gnuastro.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnucobol.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnumeric.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnunet.rb, Homebrew/homebrew-core, 0
@@ -4690,6 +4691,7 @@ Homebrew-homebrew-core/Formula/m/mlogger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mlpack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mlt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mlton.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mlx-c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mlx-lm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mlx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mm-common.rb, Homebrew/homebrew-core, 0
@@ -13026,6 +13028,7 @@ Homebrew-homebrew-cask/Casks/l/logmein-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/logmein-hamachi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/logos.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/logseq.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/l/lolgato.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/longbridge-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/longplay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lookaway.rb, Homebrew/homebrew-cask, 1
@@ -13383,6 +13386,7 @@ Homebrew-homebrew-cask/Casks/m/monodraw.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/monofocus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/monokle.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/monolingual.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/monologue.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/monotype.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/moom.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/moonlight.rb, Homebrew/homebrew-cask, 1

@@ -23,8 +23,8 @@ class Catgirl < Formula
     sha256 x86_64_linux:  "b6849416058a2849403173bf34aba0a45d8c27f3a3ff2e43973f0480f6552c00"
   end
 
-  depends_on "ctags" => :build
   depends_on "pkgconf" => :build
+  depends_on "universal-ctags" => :build
 
   depends_on "libretls"
   uses_from_macos "ncurses"
@@ -37,7 +37,7 @@ class Catgirl < Formula
 
     args << "--enable-sandman" if OS.mac?
 
-    system "./configure", *std_configure_args, *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

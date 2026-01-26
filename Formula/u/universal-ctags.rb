@@ -1,9 +1,9 @@
 class UniversalCtags < Formula
   desc "Maintained ctags implementation"
   homepage "https://ctags.io/"
-  url "https://ghfast.top/https://github.com/universal-ctags/ctags/archive/refs/tags/p6.2.20260118.0.tar.gz"
-  version "p6.2.20260118.0"
-  sha256 "111bd34e10e135acab97384dcf63aa6f73330b00a852f9c412331fd9f0cd735c"
+  url "https://ghfast.top/https://github.com/universal-ctags/ctags/archive/refs/tags/p6.2.20260125.0.tar.gz"
+  version "p6.2.20260125.0"
+  sha256 "ba5a4dbd4132f9e11f6e38fdbc3960874ebdb61af7ede074de0b8c23a4a8dd6e"
   license "GPL-2.0-only"
   head "https://github.com/universal-ctags/ctags.git", branch: "master"
 
@@ -13,12 +13,12 @@ class UniversalCtags < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e2d23b274b8847f8ba0b1db995cc88b2d3d7ae08aba1b96be5a37a124cc30aad"
-    sha256 cellar: :any,                 arm64_sequoia: "9d68ab2b6b5afea31d24a41541b2d5960937cbc62b4ec876807e6cfa43c7d015"
-    sha256 cellar: :any,                 arm64_sonoma:  "9fd0f1eac2a5d4bb12832b37b55c3d7cc54dd0e2a6a088dd9b40b881dcc2935f"
-    sha256 cellar: :any,                 sonoma:        "d91e2486d6a866caaa2850873f7818785a8ca918a3ae8bced99c92de51b842b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "774fcd2e108351fab45ceb1ea5daf88106f2c48448b8588d826ff733e2a7d450"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e2d332b54af58d2035b709aa5839d13db15ff0d81d0976c70c580df366d240a"
+    sha256 cellar: :any,                 arm64_tahoe:   "997619dc5d8a09df1cd353bbe24fa9d0a6246dc7ab87c2f1850ca7d969f6bb4d"
+    sha256 cellar: :any,                 arm64_sequoia: "3f4b8cd92b67750b15963cfc6011915c96528f2a87207ff9b2963c41e51bd2d9"
+    sha256 cellar: :any,                 arm64_sonoma:  "d0aba5fba5032ac9b829e0a108cd8226d5d6066c67ba5623e1d39655bef0ed93"
+    sha256 cellar: :any,                 sonoma:        "8399abb0635d1846504913c106b710385ec0c1409d0e4c682c27bc1e939a313c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "51140552e4970aace5cfdcff7b1eedc76e7cb5ad8fcbde19195182c6cd6c3b5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "295d8b4be91bd542854afbe09ec71bc56cb1fe07a99f34e8528baf6e2ee37535"
   end
 
   depends_on "autoconf" => :build

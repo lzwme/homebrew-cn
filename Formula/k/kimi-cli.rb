@@ -3,18 +3,18 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/3c/4c/7fc469b8b3d7c49ea99335e0b38e1c85a04e1d64babbde326499ee1844ee/kimi_cli-0.86.tar.gz"
-  sha256 "9cf448a2edba2f07a3e4601bfc09ce5f2e275091911df476f21754af94e88f72"
+  url "https://files.pythonhosted.org/packages/0c/95/65cf84b911c43b4af31bea33173247508aaa40bd5403910b412ff287ae91/kimi_cli-0.87.tar.gz"
+  sha256 "014a4168213b23deaa05ddb8dd8174dcf3fedc9b0dc2ce3b7e14b5ed3599d287"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "af07074a24b8ed8e990074b2e46bbb9748c4485aac0e6c83045e6a0acd5317e2"
-    sha256 cellar: :any,                 arm64_sequoia: "070c5cb70c7799b8cfbc6b2ea9f20750b37601066af3f28e897ad0e2c03ecb45"
-    sha256 cellar: :any,                 arm64_sonoma:  "74ced01d3cb0df85b93e6093e4c5a6b2463764a6f0201032921e2a8a4e581114"
-    sha256 cellar: :any,                 sonoma:        "d58a117a327b929ccfaa62d1858ce7428af26795234871ac57edfe3268ed26d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f20fb249375defb5af4921fb701f99a2e43ed8016e0bb02ee3bfc15e6765e664"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ffc57eba0d180718d28b2429932488c9af55a9c3dc4d56e83bcff6835b16baf"
+    sha256 cellar: :any,                 arm64_tahoe:   "8724259ef495175573ad9624fcf35326b68f1952c65af4bec8295d96be6e3b76"
+    sha256 cellar: :any,                 arm64_sequoia: "458f8c2f7696dffdd1f579146eb87b8bbabcac3d0203a46149e3207b525cdaa1"
+    sha256 cellar: :any,                 arm64_sonoma:  "8e60a635b6632bef68b8d2149d8303d8b0a94e720ec3987d9786872cebbecef0"
+    sha256 cellar: :any,                 sonoma:        "610a7e75c9b9d9fb4e609ea2977c1958d0c7bbc9e772b5284b2e27d4c6277a25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9baec68ce24472be4a2cb0a996177aebefd2a1d4ee50c6974e778b9cefdf1814"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3aba830265afba848ad0b030b8b3ff2e7ac93a25fa380af319759c1902190ecf"
   end
 
   depends_on "pkgconf" => :build
@@ -364,8 +364,8 @@ class KimiCli < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/78/96/804520d0850c7db98e5ccb70282e29208723f0964e88ffd9d0da2f52ea09/python_multipart-0.0.21.tar.gz"
-    sha256 "7137ebd4d3bbf70ea1622998f902b97a29434a9e8dc40eb203bbcf7c2a2cba92"
+    url "https://files.pythonhosted.org/packages/94/01/979e98d542a70714b0cb2b6728ed0b7c46792b695e3eaec3e20711271ca3/python_multipart-0.0.22.tar.gz"
+    sha256 "7340bef99a7e0032613f56dc36027b959fd3b30a787ed62d310e951f7c3a3a58"
   end
 
   resource "pytz" do
@@ -505,8 +505,8 @@ class KimiCli < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/b5/3a/c63d2afd6dc2cad55a44bea48c7db75edde859e320bdceb9351ba63fceb6/wcwidth-0.3.3.tar.gz"
-    sha256 "f8f7d42c8a067d909b80b425342d02c423c5edc546347475e1d402fe3d35bb63"
+    url "https://files.pythonhosted.org/packages/95/fc/44799c4a51ff0da0de0ff27e68c9dea3454f3d9bf15ffb606aeb6943e672/wcwidth-0.3.5.tar.gz"
+    sha256 "7c3463f312540cf21ddd527ea34f3ae95c057fa191aa7a9e043898d20d636e59"
   end
 
   resource "websockets" do

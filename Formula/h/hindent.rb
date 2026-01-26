@@ -1,18 +1,18 @@
 class Hindent < Formula
   desc "Haskell pretty printer"
   homepage "https://github.com/mihaimaruseac/hindent"
-  url "https://ghfast.top/https://github.com/mihaimaruseac/hindent/archive/refs/tags/v6.2.1.tar.gz"
-  sha256 "9f3dcd310b5ef773600551af9eda8db40f69ffd570d8ed474f7b8c2e93cd55ec"
+  url "https://ghfast.top/https://github.com/mihaimaruseac/hindent/archive/refs/tags/v6.3.0.tar.gz"
+  sha256 "2726bdbf137691624997f181c29392f22f8566ebc87c5f82e420adfb0068ef07"
   license "BSD-3-Clause"
   head "https://github.com/mihaimaruseac/hindent.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f18ed01446a282c5a45a1dc27587c1f23de3fd5bf79c2e16894f3bee21012a19"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2df0e64d7e7f95bb8db73c8fd210caef819e13b833a5e5916b0e9268c5648c4e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af07d6596d2ed1c545188526c22d66ad15a49f25044e2581592312d81e6797f8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4d66526b97f7fb1f4e99de9024f51a080099281a5c5900590bc469f166a2a4bc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "42766c8e3e09c699c48d2e27b5814e709975f6c1a16df0c576e72253ef18a7f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bf3e51687afa14afc64e1aec02272666e4bb95c197e34b5b6592eb220ecd079"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b3d7317ba8d50474ca4075b3a1964fcf3f97b24faf92b1543a63b88e19342ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d7ff8ab144f02b3faa551d69a7b0ec12904d564a1680db14095210a7136438c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "331c7d1a2c52920aab79d21e878e11ce0fda1304ae0780bc3795a1bbb7c5b73d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "586852757b86870cdfe2fee14837c91d802db6e80f747d8c1d7f45749abc38ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "968afdac71bf20e80f9948914eed5b02522ea376de2e271631baad0103c92905"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c90b935923f54e30d49278ca6d4da909fda5db261a57886764b3829f8fa52231"
   end
 
   depends_on "cabal-install" => :build

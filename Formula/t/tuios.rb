@@ -1,19 +1,18 @@
 class Tuios < Formula
   desc "Terminal UI OS (Terminal Multiplexer)"
   homepage "https://github.com/Gaurav-Gosain/tuios"
-  url "https://ghfast.top/https://github.com/Gaurav-Gosain/tuios/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "0a64b1381b276f00038ae05e8ab8963f486a8f0d7da09383be84e147e2cc7834"
+  url "https://ghfast.top/https://github.com/Gaurav-Gosain/tuios/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "722af8631edbf4572d5edc4e067ab8fb5fc5e06cc6052a2f2a292e95c392011c"
   license "MIT"
   head "https://github.com/Gaurav-Gosain/tuios.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5fb2a54385290a39e1463fa4dc77dc374f56aeeaa2e862d1abc257bf1524e319"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acd127d4a745b13713c7dd9c08d96f28888e4cfde1dbdfbd86930218a796845b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "313c907bbca23c6e1cb3738e470dd04fdcfaf0438cc47cfd78d05bba0bce8261"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e706487018295439922af957114e154bafc386ee7ec38aa39c7857300d50f10a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "37566ad6d56fe46142a6dc448718bb70ea24ab932d4141e6e6d536fa6cecaf11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "421be098ea1963a07b1167b94a7888df3ccf089073d86afdb0a413b2c2dcef0c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e08771c4d69980c52802f937b63cc40ac7c6088c90f5d973aa6f257d9cb0fd0f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "971610634ce07ba4a83fe37ca448ebfe368dc01edf795fc310ba1c1746cd2c40"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "255d6cebc99d6cbd96e6910b2cf6add2306d9bbab80a7daafc9385ed28aee076"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b839698c72b70875aed723ef2c29e8096256db5f189498849b7704cb99f8d9f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae813b65158d68c11f04c06e054d0b564d6424d086a6db5cc27aab4a984e237c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e0750ab97df56afb8a6a33a08f3cb41bd735e95f81fc51b1eacdb77b8ae6f09"
   end
 
   depends_on "go" => :build
