@@ -3,13 +3,13 @@ class Scdl < Formula
 
   desc "Command-line tool to download music from SoundCloud"
   homepage "https://github.com/scdl-org/scdl"
-  url "https://files.pythonhosted.org/packages/b8/7e/a96edba727832f06d513975f0f791c6c085d7e6fde4402b79e7ac3302606/scdl-3.0.2.tar.gz"
-  sha256 "b89bf9dd7e1e292a9a534a668b1df0c67de6a3fe82dc6a5275899aea324140a3"
+  url "https://files.pythonhosted.org/packages/1f/0f/48fbebdf53bb5a82a55a424aef30d929bbe4a2fa01804339b690393e05e7/scdl-3.0.3.tar.gz"
+  sha256 "087220a10d5a30388f4a7c9b927af8f6d0ddcb7d0c3fd154788e947df7b15ce3"
   license "GPL-2.0-only"
   head "https://github.com/scdl-org/scdl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "74ab5cdcf20dffd1b1952d1a9b6bb628bf9ca773bfe3cf893c44412b4af8fe46"
+    sha256 cellar: :any_skip_relocation, all: "2731d2c780fd12b4a5d8886b630ddd7cdedc8e1f98124997bbc4c6fabab81e8b"
   end
 
   depends_on "certifi" => :no_linkage

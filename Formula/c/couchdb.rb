@@ -63,7 +63,7 @@ class Couchdb < Formula
     inreplace "etc/local.ini", ";admin = mysecretpassword", "admin = mysecretpassword"
     inreplace "etc/default.ini" do |s|
       s.gsub! "port = 5984", "port = #{port}"
-      s.gsub! "#{var}/couchdb/data", "#{testpath}/data"
+      s.gsub! "#{var}/couchdb/data", testpath/"data"
     end
 
     spawn bin/"couchdb", "-couch_ini", testpath/"etc/default.ini", testpath/"etc/local.ini"

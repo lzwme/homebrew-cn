@@ -60,7 +60,7 @@ class Rathole < Formula
 
     read, write = IO.pipe
     fork do
-      exec bin/"rathole", "-s", "#{testpath}/rathole.toml", out: write
+      exec bin/"rathole", "-s", testpath/"rathole.toml", out: write
     end
     sleep 5
 

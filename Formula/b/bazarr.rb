@@ -123,7 +123,7 @@ class Bazarr < Formula
     end
 
     assert_path_exists (testpath/"config/config.ini.old")
-    assert_includes (testpath/"config/config.yaml").read, "#{testpath}/custom_backup"
+    assert_includes (testpath/"config/config.yaml").read, testpath/"custom_backup"
     assert_match "BAZARR is started and waiting for request", (testpath/"log/bazarr.log").read
   end
 end

@@ -30,7 +30,7 @@ class Nef < Formula
   test do
     system bin/"nef", "markdown",
            "--project", "#{share}/tests/Documentation.app",
-           "--output", "#{testpath}/nef"
+           "--output", testpath/"nef"
     assert_path_exists "#{testpath}/nef/library/apis.md"
   end
 end

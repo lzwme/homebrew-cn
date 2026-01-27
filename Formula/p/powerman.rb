@@ -46,6 +46,6 @@ class Powerman < Formula
   end
 
   test do
-    system "#{sbin}/powermand", "-h"
+    system sbin/"powermand", "-h"
   end
 end

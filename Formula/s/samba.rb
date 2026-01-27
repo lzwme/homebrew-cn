@@ -141,9 +141,9 @@ class Samba < Formula
 
   test do
     smbd = if OS.mac?
-      "#{sbin}/samba-dot-org-smbd"
+      sbin/"samba-dot-org-smbd"
     else
-      "#{sbin}/smbd"
+      sbin/"smbd"
     end
 
     system smbd, "--build-options", "--configfile=/dev/null"

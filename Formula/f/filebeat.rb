@@ -83,10 +83,10 @@ class Filebeat < Formula
     (testpath/"log").mkpath
     (testpath/"data").mkpath
 
-    pid = spawn bin/"filebeat", "-c", "#{testpath}/filebeat.yml",
-                                "--path.config", "#{testpath}/filebeat",
+    pid = spawn bin/"filebeat", "-c", testpath/"filebeat.yml",
+                                "--path.config", testpath/"filebeat",
                                 "--path.home=#{testpath}",
-                                "--path.logs", "#{testpath}/log",
+                                "--path.logs", testpath/"log",
                                 "--path.data", testpath
 
     sleep 1

@@ -48,6 +48,6 @@ class Pla < Formula
           dep 2
           dep 6
     EOS
-    system bin/"pla", "-i", "#{testpath}/test.pla", "-o test"
+    system bin/"pla", "-i", testpath/"test.pla", "-o test"
   end
 end

@@ -75,7 +75,7 @@ class Squid < Formula
   test do
     assert_match version.to_s, shell_output("#{sbin}/squid -v")
 
-    pid = spawn "#{sbin}/squid"
+    pid = spawn sbin/"squid"
 
     begin
       sleep 2

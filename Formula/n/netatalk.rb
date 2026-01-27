@@ -115,7 +115,7 @@ class Netatalk < Formula
       signature = 1234567890ABCDEF
     EOS
     fork do
-      system sbin/"netatalk", "-d", "-F", "#{testpath}/afp.conf"
+      system sbin/"netatalk", "-d", "-F", testpath/"afp.conf"
     end
     system sbin/"afpd", "-V"
     system sbin/"netatalk", "-V"

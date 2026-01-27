@@ -44,7 +44,7 @@ class Tmpwatch < Formula
       touch %w[a b c]
       ten_minutes_ago = Time.new - 600
       File.utime(ten_minutes_ago, ten_minutes_ago, "a")
-      system "#{sbin}/tmpwatch", "2m", Pathname.pwd
+      system sbin/"tmpwatch", "2m", Pathname.pwd
       assert_equal %w[b c], Dir["*"]
     end
   end

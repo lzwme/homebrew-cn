@@ -162,7 +162,7 @@ class Httpd < Formula
         LoadModule mpm_prefork_module #{lib}/httpd/modules/mod_mpm_prefork.so
       EOS
 
-      pid = spawn bin/"httpd", "-X", "-f", "#{testpath}/httpd.conf"
+      pid = spawn bin/"httpd", "-X", "-f", testpath/"httpd.conf"
 
       sleep 3
       sleep 2 if OS.mac? && Hardware::CPU.intel?

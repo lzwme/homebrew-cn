@@ -2,7 +2,7 @@ class Fricas < Formula
   desc "Advanced computer algebra system"
   homepage "https://fricas.github.io"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/fricas/fricas.git", branch: "master"
 
   stable do
@@ -24,12 +24,12 @@ class Fricas < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e9a297b78558b91737c3c3d03d12437405551fac907e9652eab4d415ac6fa961"
-    sha256 cellar: :any,                 arm64_sequoia: "36c8ae50dbb6ebca8fcb7bc76692470997f05428af2969ae2e5ed1aeb4a52adc"
-    sha256 cellar: :any,                 arm64_sonoma:  "89c1c4e80411f7d0eafc487926f589ca3a0d874f88dad2133fa5676af9542a1e"
-    sha256 cellar: :any,                 sonoma:        "43e36b8ff4477029525d7051560309056e8f101873306dacdb9ac8c4ce26475e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "57900b6decf4be69df0dfb499be874dfae4b250465f1d0e59dc25468738884af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f303fc5d5793d86993b3c8355a436b821a5791ec5be5476202c3faae5959fbd"
+    sha256 cellar: :any,                 arm64_tahoe:   "abf9e9018419b356c136c10412fcaf51fd0e77697c5cc87c268ce1625bb2ed6b"
+    sha256 cellar: :any,                 arm64_sequoia: "4211cba7854be0862f9b765af57dd42854e2b32dba4a65dbacc8ffe5d00d37e3"
+    sha256 cellar: :any,                 arm64_sonoma:  "45c3b8c0d824edaca8f2c1fce7388b86a039bbc7b25100838c3db513e73b8080"
+    sha256 cellar: :any,                 sonoma:        "0bac3e7d0f507d38f6ceebfd68baba0456175addd098e7a78ce5846291a460ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ff18b13ffa73ebf16619fb54ade2c619a26ecc7b05818051015d599fa1d3186"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b766b70eb7b19006654af31259d48ce59486bdf1e7181da771656d3ab850a8a4"
   end
 
   depends_on "gmp"

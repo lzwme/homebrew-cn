@@ -51,6 +51,6 @@ class Allure < Formula
         ]
       }
     JSON
-    system bin/"allure", "generate", "#{testpath}/allure-results", "-o", "#{testpath}/allure-report"
+    system bin/"allure", "generate", testpath/"allure-results", "-o", testpath/"allure-report"
   end
 end

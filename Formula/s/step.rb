@@ -78,11 +78,11 @@ class Step < Formula
     mkdir_p(steppath)
     ENV["STEPPATH"] = steppath
     system bin/"step", "ca", "init", "--address", "127.0.0.1:8081",
-           "--dns", "127.0.0.1", "--password-file", "#{testpath}/password.txt",
-           "--provisioner-password-file", "#{testpath}/password.txt", "--name",
+           "--dns", "127.0.0.1", "--password-file", testpath/"password.txt",
+           "--provisioner-password-file", testpath/"password.txt", "--name",
            "homebrew-smallstep-test", "--provisioner", "brew"
 
-    pid = spawn bin/"step-ca", "--password-file", "#{testpath}/password.txt", "#{steppath}/config/ca.json"
+    pid = spawn bin/"step-ca", "--password-file", testpath/"password.txt", "#{steppath}/config/ca.json"
     begin
       sleep 6
       assert_match(/^ok$/, shell_output("#{bin}/step ca health"))

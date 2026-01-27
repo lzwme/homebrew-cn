@@ -43,7 +43,7 @@ class Autobench < Formula
   end
 
   test do
-    system bin/"crfile", "-f", "#{testpath}/test", "-s", "42"
+    system bin/"crfile", "-f", testpath/"test", "-s", "42"
     assert_path_exists testpath/"test"
     assert_equal 42, File.size("test")
   end

@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/30/7b/9d3dfa6a0eae70b7b1cbe066532225283580cfd4f4b2c3a4273631753e43/prowler-5.17.0.tar.gz"
-  sha256 "8bb25e54ca5633afca13a05561d043786a245b0b9428f4395b4a9003a2ee12bf"
+  url "https://files.pythonhosted.org/packages/d7/91/2af2e926e5527684bffdc96018c5bc258acd789e8a54c83df42ec7ff9514/prowler-5.17.1.tar.gz"
+  sha256 "9f27b6e801ef95d94d952d650c21300b7b8427087de48e24dfe2fcf5fa24cfaa"
   license "Apache-2.0"
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e60ec1d2025ec7cc82af797d93e21b4d25241b1deb3d97c0e7161033c5c28903"
-    sha256 cellar: :any,                 arm64_sequoia: "6d3ff9a18f0435a8705108b2d61582b938a1e884420f210fdbce47ff623e9236"
-    sha256 cellar: :any,                 arm64_sonoma:  "565c7611c91532b520e2a59b703f536c463f2a42dcf55fb3b36cebdecefe434f"
-    sha256 cellar: :any,                 sonoma:        "9f8e3a21ba90b8609957aaac7ed2be6877c23d7969797c1ed406265c2cad7329"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1da1eb9831972238e46579b9533ef0e1838b85366d8fa2478e7865e8fb326487"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cbc8e0b5b5163e434f908ad632b40164615dd7965c745fb535e1f79f31dd76a"
+    sha256 cellar: :any,                 arm64_tahoe:   "d86a41c4f86c99be342e3fe1dfc3585dd1bb418d858cef7a1b104f7fe85f63bf"
+    sha256 cellar: :any,                 arm64_sequoia: "893ebbaeb398ec7cb81829a71eba18e4a608af5a97e7b89591c2916ab3b680e8"
+    sha256 cellar: :any,                 arm64_sonoma:  "2c886de369573ddb204a6acd07c2531b3693da0f97c9d3b2a7db42e96b158144"
+    sha256 cellar: :any,                 sonoma:        "2c62aaaa467871a6469550d171d05803f1314c5b12c44728a31be9c0c91d93b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "95e0a1764e5970b72fe400b1986f6de7dd52fb36e58f6c823433e7f30fef0996"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66160ebad7bfe63ac241b5e5e40eabacc419fa6538d27a14073b0d48e4e152cf"
   end
 
   depends_on "cmake" => :build
@@ -574,8 +574,8 @@ class Prowler < Formula
   end
 
   resource "httplib2" do
-    url "https://files.pythonhosted.org/packages/77/df/6eb1d485a513776bbdbb1c919b72e59b5acc51c5e7ef28ad1cd444e252a3/httplib2-0.31.1.tar.gz"
-    sha256 "21591655ac54953624c6ab8d587c71675e379e31e2cfe3147c83c11e9ef41f92"
+    url "https://files.pythonhosted.org/packages/c1/1f/e86365613582c027dda5ddb64e1010e57a3d53e99ab8a72093fa13d565ec/httplib2-0.31.2.tar.gz"
+    sha256 "385e0869d7397484f4eab426197a4c020b606edd43372492337c0b4010ae5d24"
   end
 
   resource "httpx" do
@@ -589,8 +589,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/ce/76/84315b51bcbeed856948439ada40f3b8c935b6afc1fa0ef3941f0dc405b7/iamdata-0.1.202601221.tar.gz"
-    sha256 "d5dcb530b3b19cf3ad538e29d3063a2eacbbf5ec3c83f5aa11acbec58d01b2a2"
+    url "https://files.pythonhosted.org/packages/b3/31/e121331fbaa41c6fd39d0c89a6a8733459713f177e9bcdc5558463a047ef/iamdata-0.1.202601261.tar.gz"
+    sha256 "f8e9923a85833921c505b0270502c6afc16c016de630d01d40bec495c07d2831"
   end
 
   resource "idna" do
@@ -619,8 +619,8 @@ class Prowler < Formula
   end
 
   resource "jmespath" do
-    url "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
-    sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
+    url "https://files.pythonhosted.org/packages/d3/59/322338183ecda247fb5d1763a6cbe46eff7222eaeebafd9fa65d4bf5cb11/jmespath-1.1.0.tar.gz"
+    sha256 "472c87d80f36026ae83c6ddd0f1d05d4e510134ed462851fd5f754c8c3cbb88d"
   end
 
   resource "jsonschema" do
@@ -714,8 +714,8 @@ class Prowler < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/80/1e/5492c365f222f907de1039b91f922b93fa4f764c713ee858d235495d8f50/multidict-6.7.0.tar.gz"
-    sha256 "c6e99d9a65ca282e578dfea819cfa9c0a62b2499d8677392e09feaf305e9e6f5"
+    url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
+    sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
   end
 
   resource "narwhals" do
@@ -915,8 +915,8 @@ class Prowler < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/86/ff/f75651350db3cf2ef767371307eb163f3cc1ac03e16fdf3ac347607f7edb/setuptools-80.10.1.tar.gz"
-    sha256 "bf2e513eb8144c3298a3bd28ab1a5edb739131ec5c22e045ff93cd7f5319703a"
+    url "https://files.pythonhosted.org/packages/76/95/faf61eb8363f26aa7e1d762267a8d602a1b26d4f3a1e758e92cb3cb8b054/setuptools-80.10.2.tar.gz"
+    sha256 "8b0e9d10c784bf7d262c4e5ec5d4ec94127ce206e8738f29a437945fbc219b70"
   end
 
   resource "shodan" do

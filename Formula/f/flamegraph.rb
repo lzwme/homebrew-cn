@@ -70,6 +70,6 @@ class Flamegraph < Formula
     output = shell_output "#{bin}/stackcollapse-perf.pl #{testpath}/perf-mirageos-stacks-01.txt"
     assert_match (testpath/"perf-mirageos-stacks-01-collapsed-all.txt").read, output
 
-    system bin/"flamegraph.pl", "#{testpath}/perf-mirageos-stacks-01-collapsed-all.txt"
+    system bin/"flamegraph.pl", testpath/"perf-mirageos-stacks-01-collapsed-all.txt"
   end
 end

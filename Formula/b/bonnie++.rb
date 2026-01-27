@@ -46,6 +46,6 @@ class Bonniexx < Formula
   end
 
   test do
-    system "#{sbin}/bonnie++", "-s", "0"
+    system sbin/"bonnie++", "-s", "0"
   end
 end

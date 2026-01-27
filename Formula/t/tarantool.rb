@@ -78,6 +78,6 @@ class Tarantool < Formula
       end
       os.exit(0)
     LUA
-    system bin/"tarantool", "#{testpath}/test.lua"
+    system bin/"tarantool", testpath/"test.lua"
   end
 end

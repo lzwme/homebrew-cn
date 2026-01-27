@@ -1,8 +1,8 @@
 class YaraX < Formula
   desc "Tool to do pattern matching for malware research"
   homepage "https://virustotal.github.io/yara-x/"
-  url "https://ghfast.top/https://github.com/VirusTotal/yara-x/archive/refs/tags/v1.11.0.tar.gz"
-  sha256 "951c504c0869ed1e20598c8ab3b374607a412c564e863e2d2cb3ff7800aee162"
+  url "https://ghfast.top/https://github.com/VirusTotal/yara-x/archive/refs/tags/v1.12.0.tar.gz"
+  sha256 "d0bc7d3ff356416e6c236137b1893983b876e92fbc40faeb8e630e840acb15c8"
   license "BSD-3-Clause"
   head "https://github.com/VirusTotal/yara-x.git", branch: "main"
 
@@ -12,12 +12,12 @@ class YaraX < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2949e1fb7092bb97257203f258a5c13e6ff278439477250163a6f58a23819957"
-    sha256 cellar: :any,                 arm64_sequoia: "31900d25eb69cd254bcc7ee06979cadc47c081674d319d5b1b92c81fb9924ba9"
-    sha256 cellar: :any,                 arm64_sonoma:  "86e8b4380bb05a8a33858f8424e353c5e38794bdaa771b6631f5c865e3f88bd9"
-    sha256 cellar: :any,                 sonoma:        "6870a6e10a69de830283490771bd816f4ee4edaf980743912bfe7201f46fbfc4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cee3950784b23b3798b7b1567a75ba41c0783e0d827ec79fd03cadb09aed26bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ebb517fd43555091f27cb1fdd81abd1bcfb283012279fdbb3854d339afedaed"
+    sha256 cellar: :any,                 arm64_tahoe:   "12858be40a6788c02f5182290663456722ae650901cf053791ba74b072474e18"
+    sha256 cellar: :any,                 arm64_sequoia: "1b2fde6bc56cb803813315607fe34bd52a9d0b991db1c4b0a2e495c997d2df6c"
+    sha256 cellar: :any,                 arm64_sonoma:  "e390def5e40f2f10387103e60b982b71021535fe3748dfda1beff44f56cf5e7d"
+    sha256 cellar: :any,                 sonoma:        "eafe5f0cfc8f0e5e3335ed82f8edce8ffaef9dff6e18eda3eab27ac2ffd7bc20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "edd2c36af36da5a83064569596da1b6755f8990488e653687614d763e30480ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "596473fa887462bd2ab8b597ec231c2ca332b3f65f81f24efa3db33ec394fcf8"
   end
 
   depends_on "cargo-c" => :build

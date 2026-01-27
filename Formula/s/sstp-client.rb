@@ -47,6 +47,6 @@ class SstpClient < Formula
   end
 
   test do
-    system "#{sbin}/sstpc", "--version"
+    system sbin/"sstpc", "--version"
   end
 end

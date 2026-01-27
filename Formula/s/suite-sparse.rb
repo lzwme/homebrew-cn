@@ -40,14 +40,14 @@ class SuiteSparse < Formula
   end
 
   def install
-    ENV["CC"] = "#{Formula["gcc"].opt_bin}/gcc-15"
+    # CMake FortranCInterface_VERIFY fails with LTO on Linux due to different GCC and GFortran versions
+    ENV.append "FFLAGS", "-fno-lto" if OS.linux?
 
     # Avoid references to Homebrew shims
     inreplace "GraphBLAS/cmake_modules/GraphBLAS_JIT_configure.cmake",
               "C_COMPILER_BINARY \"${CMAKE_C_COMPILER}\"", "C_COMPILER_BINARY \"#{ENV.cc}\""
 
-    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", "-DCMAKE_C_COMPILER=#{ENV.cc}",
-                                              *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 

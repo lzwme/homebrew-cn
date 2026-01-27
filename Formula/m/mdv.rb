@@ -47,6 +47,6 @@ class Mdv < Formula
       ## Header 2
       ### Header 3
     MARKDOWN
-    system bin/"mdv", "#{testpath}/test.md"
+    system bin/"mdv", testpath/"test.md"
   end
 end

@@ -3,12 +3,12 @@ class B2Tools < Formula
 
   desc "B2 Cloud Storage Command-Line Tools"
   homepage "https://github.com/Backblaze/B2_Command_Line_Tool"
-  url "https://files.pythonhosted.org/packages/76/a6/b32e76f93ecc86a2081c6106df7c22c56b95ee8ccafca7746753b38341bc/b2-4.5.0.tar.gz"
-  sha256 "e07b10bc451331ac7150f27c227e9be9a9958dd3a96480db19f9ac6d565cbaef"
+  url "https://files.pythonhosted.org/packages/f5/53/b45d2d04d4154d0dc0ed1c7be5ee1eeeac011504f1f60b6da1dc0270ddf5/b2-4.5.1.tar.gz"
+  sha256 "2df5b4864d3a231e895e335fb03fd5c32376a8152c9b282f193df8d07f072b87"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "993ab879d4ba3922f91e37830c8a2f78bb6299ae458080d479d9984fee790fa4"
+    sha256 cellar: :any_skip_relocation, all: "36086fc1980210e5980643dc34e9baf33b1d00d48fd0bb8042555e3355cf3cfe"
   end
 
   depends_on "certifi"
@@ -56,11 +56,6 @@ class B2Tools < Formula
   resource "logfury" do
     url "https://files.pythonhosted.org/packages/90/f2/24389d99f861dd65753fc5a56e2672339ec1b078da5e2f4b174d0767b132/logfury-1.0.1.tar.gz"
     sha256 "130a5daceab9ad534924252ddf70482aa2c96662b3a3825a7d30981d03b76a26"
-  end
-
-  resource "phx-class-registry" do
-    url "https://files.pythonhosted.org/packages/79/ce/db26f7f8ed4f4b200f34b8401ecaa9cbb0709f3c3822ae0d29a6019ad2a8/phx-class-registry-4.1.0.tar.gz"
-    sha256 "6a7fe8568f9000ad1f90c9a81c5cb65ec20ee3b89b2aaab7a67e14dbb67e11d1"
   end
 
   resource "platformdirs" do

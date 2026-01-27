@@ -37,7 +37,7 @@ class HgFastExport < Formula
       system "git", "config", "--global", "init.defaultBranch", "master"
       system "git", "init"
       system "git", "config", "core.ignoreCase", "false"
-      system bin/"hg-fast-export.sh", "-r", "#{testpath}/hg-repo"
+      system bin/"hg-fast-export.sh", "-r", testpath/"hg-repo"
       system "git", "checkout", "HEAD"
     end
 

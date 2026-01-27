@@ -38,7 +38,7 @@ class Bibtexconv < Formula
   test do
     cp "#{opt_share}/doc/bibtexconv/examples/ExampleReferences.bib", testpath
 
-    system bin/"bibtexconv", "#{testpath}/ExampleReferences.bib",
+    system bin/"bibtexconv", testpath/"ExampleReferences.bib",
                              "-export-to-bibtex=UpdatedReferences.bib",
                              "-check-urls", "-only-check-new-urls",
                              "-non-interactive"

@@ -16,16 +16,23 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e2cc46b5563959d274c35e439f0aba64036023170a5aabe892d076df638d0b7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84d1659bf21d2fa9795592f9d62be4cc2bb2b557514f2b736289eff76a175003"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2f67a2b27b611da42b76aa630a4c9c17d758d0ae04726284e4c8a937bfe25ad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "31f2901519f23203d60ecfbd7586f1bd616ff6f38ab04ee98e28faa5b3137206"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "14375690eff2c3eab38fa81b1522f5019605fddbf0997934b6d898cc3781fbb6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a84a20303bae0a01b980e9e86d5c9149842f02dced71b26894f15d6130ffb535"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60b65805b9db4b7a95ce127d839ada458c20e6f678d66e5b7ad0266c2b14563c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14b47c31e394c20af47cda53e1e03df20fa315b91e714478775db924519d3c32"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2baf66743a486bda085140b1a6fb57976dd5486738bb981c9f006f4d1dba60cb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "74aedc0b16277909ca09375986a498000b1b2d4f6591328db641c4c5babcb736"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb27f916aeecfcc118e9e09130ce0a0052eca36e635eaa2bbd58b52f879c8761"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07c0b1a6a6fea4654dc50228c865d19fb814761390ad125d230c4f81fab5b7c8"
   end
 
   depends_on "cmake" => :build
   depends_on "go" => :build
+
+  on_macos do
+    on_arm do
+      depends_on "mlx-c" => :no_linkage
+    end
+  end
 
   conflicts_with cask: "ollama-app"
 
@@ -44,8 +51,17 @@ class Ollama < Formula
       -X github.com/ollama/ollama/server.mode=release
     ]
 
+    mlx_args = []
+
+    # Flags for MLX (Apple silicon only)
+    if OS.mac? && Hardware::CPU.arm?
+      mlx_rpath = rpath(target: Formula["mlx-c"].opt_lib)
+      ldflags << "-extldflags '-Wl,-rpath,#{mlx_rpath}'"
+      mlx_args << "-tags=mlx"
+    end
+
     system "go", "generate", "./..."
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *mlx_args, *std_go_args(ldflags:)
   end
 
   service do

@@ -47,6 +47,6 @@ class Pixz < Formula
     ENV["LC_ALL"] = "en_US.UTF-8"
     testfile = testpath/"file.txt"
     testfile.write "foo"
-    system bin/"pixz", testfile, "#{testpath}/file.xz"
+    system bin/"pixz", testfile, testpath/"file.xz"
   end
 end

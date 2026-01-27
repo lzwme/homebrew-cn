@@ -50,7 +50,7 @@ class Jobber < Formula
           time: '*'
     YAML
 
-    spawn libexec/"jobberrunner", "#{testpath}/.jobber"
+    spawn libexec/"jobberrunner", testpath/".jobber"
     sleep 3
 
     assert_match "Hi!", (testpath/"output").read

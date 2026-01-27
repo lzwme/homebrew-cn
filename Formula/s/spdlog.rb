@@ -50,7 +50,7 @@ class Spdlog < Formula
       int main()
       {
         try {
-          auto console = spdlog::basic_logger_mt("basic_logger", "#{testpath}/basic-log.txt");
+          auto console = spdlog::basic_logger_mt("basic_logger", testpath/"basic-log.txt");
           console->info("Test");
         }
         catch (const spdlog::spdlog_ex &ex)

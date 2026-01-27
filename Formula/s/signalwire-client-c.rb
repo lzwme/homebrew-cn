@@ -1,17 +1,17 @@
 class SignalwireClientC < Formula
   desc "SignalWire C Client SDK"
   homepage "https://github.com/signalwire/signalwire-c"
-  url "https://ghfast.top/https://github.com/signalwire/signalwire-c/archive/refs/tags/v2.0.4.tar.gz"
-  sha256 "17fa86ba45b4c6363321eac73305153f322342d3f3a101a456f72abeac2ebd89"
+  url "https://ghfast.top/https://github.com/signalwire/signalwire-c/archive/refs/tags/v2.0.5.tar.gz"
+  sha256 "336c88a28015cf666bdbb070e9e11ce53dfd05baec074171fe8866945b68e8f9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ab21cc264193c4ddd8d1f0c3a8e7139aba70da83fd668ee6c76b7091d0945a8c"
-    sha256 cellar: :any,                 arm64_sequoia: "fe08fc8e14ede77e5bd01ff99911eee6293dbb93a9fea67d9019f18d63b3cf5e"
-    sha256 cellar: :any,                 arm64_sonoma:  "ab8f032f759edbafe13460bfc32f629b6cbd1dffb60683ac9f38454c4a8744aa"
-    sha256 cellar: :any,                 sonoma:        "256edaf2b0a871c291ede2cb4c87337628f9aff6a23c55ddff2aca52a5bacda5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b669777a936ad84939098f4b0ea6fbd10ff81ac6867404f21818a32562fe47bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc6f146d1b53114994c7d769c741098e8a6c08baccfb89b0b873cc4157f493f6"
+    sha256 cellar: :any,                 arm64_tahoe:   "7fa3e639978d147b3bdde2bd26a5d6cc166ba1079d3bb01abf9cd00040d63dd9"
+    sha256 cellar: :any,                 arm64_sequoia: "b51d2b663c7d248f5a65c6eff63d43f49b20c2401946e426a29a6114ed12ee67"
+    sha256 cellar: :any,                 arm64_sonoma:  "1c1654fd69c722d7a6e23f47ee6e8bf1884447f66d9f1731afe28f94fdebd2da"
+    sha256 cellar: :any,                 sonoma:        "858aaffb29a67fcf11f2e0f11635c309ef0d3ccb834d4c876caca5f1445fce3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f627c192ac1ca0d74004678e131290de2e1d6725f39656d96f0c38572b082a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e3d5525d1058fc641f1f5a254ecb949798e098a5bbf7e470e70db5f7c17c80a"
   end
 
   depends_on "cmake" => :build

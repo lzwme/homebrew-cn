@@ -45,6 +45,6 @@ class Sexpect < Formula
       [ $? -eq 129 ]
     SHELL
 
-    system "sh", "#{testpath}/test.sh"
+    system "sh", testpath/"test.sh"
   end
 end

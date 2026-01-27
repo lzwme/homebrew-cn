@@ -31,6 +31,6 @@ class Quotatool < Formula
   end
 
   test do
-    system "#{sbin}/quotatool", "-V"
+    system sbin/"quotatool", "-V"
   end
 end

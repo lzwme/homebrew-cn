@@ -39,7 +39,7 @@ class Daemonize < Formula
       echo "#{version}" >> "#{output_file}"
     SH
     chmod 0700, dummy_script_file
-    system "#{sbin}/daemonize", "-p", pid_file, dummy_script_file
+    system sbin/"daemonize", "-p", pid_file, dummy_script_file
     assert_path_exists pid_file, "The file containing the PID of the child process was not created."
     sleep(4) # sleep while waiting for the dummy script to finish
     assert_path_exists output_file, "The file which should have been created by the child process doesn't exist."

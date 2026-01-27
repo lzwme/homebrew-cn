@@ -23,6 +23,6 @@ class Docx2txt < Formula
 
   test do
     testpath.install resource("sample_doc")
-    system bin/"docx2txt.sh", "#{testpath}/demo.docx"
+    system bin/"docx2txt.sh", testpath/"demo.docx"
   end
 end

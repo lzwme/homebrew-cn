@@ -50,7 +50,7 @@ class Autobrr < Formula
       sessionSecret = "secret-session-key"
     TOML
 
-    pid = spawn bin/"autobrr", "--config", "#{testpath}/"
+    pid = spawn bin/"autobrr", "--config", testpath/""
     begin
       sleep 4
       system "curl", "-s", "--fail", "http://127.0.0.1:#{port}/api/healthz/liveness"

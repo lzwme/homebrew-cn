@@ -41,7 +41,7 @@ class Wordgrinder < Formula
   end
 
   test do
-    system bin/"wordgrinder", "--convert", "#{doc}/README.wg", "#{testpath}/converted.txt"
+    system bin/"wordgrinder", "--convert", "#{doc}/README.wg", testpath/"converted.txt"
     assert_path_exists testpath/"converted.txt"
   end
 end

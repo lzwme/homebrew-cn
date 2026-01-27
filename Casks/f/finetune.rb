@@ -1,6 +1,6 @@
 cask "finetune" do
-  version "1.0.0"
-  sha256 "6b67f13a2414f58e85ef50380dce16ae790a1fe2c47abb30c95fc2942d8e6a51"
+  version "1.1.0"
+  sha256 "a8da29efbedcab85bd8f451fbae2da2b1224c23ccac80e123f667313dc9a5757"
 
   url "https://ghfast.top/https://github.com/ronitsingh10/FineTune/releases/download/v#{version}/FineTune-#{version}.dmg"
   name "FineTune"
@@ -12,6 +12,7 @@ cask "finetune" do
     strategy :github_latest
   end
 
+  auto_updates true
   depends_on macos: ">= :sonoma"
 
   app "FineTune.app"

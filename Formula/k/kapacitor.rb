@@ -89,9 +89,9 @@ class Kapacitor < Formula
     inreplace testpath/"config.toml" do |s|
       s.gsub! "disable-subscriptions = false", "disable-subscriptions = true"
       s.gsub! %r{data_dir = "/.*/.kapacitor"}, "data_dir = \"#{testpath}/kapacitor\""
-      s.gsub! %r{/.*/.kapacitor/replay}, "#{testpath}/kapacitor/replay"
-      s.gsub! %r{/.*/.kapacitor/tasks}, "#{testpath}/kapacitor/tasks"
-      s.gsub! %r{/.*/.kapacitor/kapacitor.db}, "#{testpath}/kapacitor/kapacitor.db"
+      s.gsub! %r{/.*/.kapacitor/replay}, testpath/"kapacitor/replay"
+      s.gsub! %r{/.*/.kapacitor/tasks}, testpath/"kapacitor/tasks"
+      s.gsub! %r{/.*/.kapacitor/kapacitor.db}, testpath/"kapacitor/kapacitor.db"
     end
 
     http_port = free_port

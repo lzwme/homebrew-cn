@@ -42,7 +42,7 @@ class Zopfli < Formula
 
   test do
     system bin/"zopfli"
-    system bin/"zopflipng", test_fixtures("test.png"), "#{testpath}/out.png"
+    system bin/"zopflipng", test_fixtures("test.png"), testpath/"out.png"
     assert_path_exists testpath/"out.png"
   end
 end

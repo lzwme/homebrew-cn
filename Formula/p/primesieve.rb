@@ -1,17 +1,17 @@
 class Primesieve < Formula
   desc "Fast C/C++ prime number generator"
   homepage "https://github.com/kimwalisch/primesieve"
-  url "https://ghfast.top/https://github.com/kimwalisch/primesieve/archive/refs/tags/v12.11.tar.gz"
-  sha256 "a4f15a055a60fcc5b2198335ca39f3e78cf9eade4b2fe258fe16b3bf1ba4abbb"
+  url "https://ghfast.top/https://github.com/kimwalisch/primesieve/archive/refs/tags/v12.12.tar.gz"
+  sha256 "1a94574552f67c9ef45d89a435510c2c9bd1b93c6097509cf8834167c2b486ee"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f3e44bd724601327a982ec9a98a9700cfccc2ff1dcc9a73e311f4725bbe05480"
-    sha256 cellar: :any,                 arm64_sequoia: "e4b94e44eacd63ca7e3bf0c45afdd783d20bff9b79905625768203ce6fdcb887"
-    sha256 cellar: :any,                 arm64_sonoma:  "3dcdd448317dc9d37e52ea520870fd24a7441bfd7f80ce3aa68b9503553055f8"
-    sha256 cellar: :any,                 sonoma:        "430d5ed46d0390f23f3a4c51fbf05f7ee549c3a9b43f24cdcab62a6bcae0542d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "79cd7a47dbf4124d654b98edb32eb5f2362298a094510cfb8d456ecdee24879b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5ae8113f0a6ff1a29f57eb0b4a50137c650a62e3adc8f63c7494a4c3f068b12"
+    sha256 cellar: :any,                 arm64_tahoe:   "d191e9293f272211aecf4d4ce6601fdcd7981f624096e882bacd6b92cb90fd39"
+    sha256 cellar: :any,                 arm64_sequoia: "3f51ae4b8538ad6f85fd7f6df2ac09a4ecd8d22c3d0369a562a9179886fb8d3c"
+    sha256 cellar: :any,                 arm64_sonoma:  "5e8105a0281f490f84f19e644a771be5564748f62499a970cb60c48dc2715632"
+    sha256 cellar: :any,                 sonoma:        "2858e187b4d18e313243d842e4001a490382d7d19854fd80cfa179a79b939864"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "36f43bf915880257be79af0df6ba7488873f92589f69316d3063fb2fe59271ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09ad0650aa9f4f71b41251be7128f067b81a562e0db7e53507cacb0d1bf7cb00"
   end
 
   depends_on "cmake" => :build

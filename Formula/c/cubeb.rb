@@ -109,7 +109,7 @@ class Cubeb < Formula
         return 0;
       }
     C
-    system ENV.cc, "-o", "test", "#{testpath}/test.c", "-L#{lib}", "-lcubeb"
+    system ENV.cc, "-o", "test", testpath/"test.c", "-L#{lib}", "-lcubeb"
     refute_match(/FAIL:.*/, shell_output("#{testpath}/test"),
                     "Basic sanity test failed.")
   end

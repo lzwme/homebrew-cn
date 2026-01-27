@@ -41,7 +41,7 @@ class P0f < Formula
   end
 
   test do
-    system "#{sbin}/p0f", "-r", test_fixtures("test.pcap")
+    system sbin/"p0f", "-r", test_fixtures("test.pcap")
   end
 end
 

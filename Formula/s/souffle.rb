@@ -59,7 +59,7 @@ class Souffle < Formula
     (testpath/"edge.facts").write <<~EOS
       1,2
     EOS
-    system bin/"souffle", "-F", "#{testpath}/.", "-D", "#{testpath}/.", "#{testpath}/example.dl"
+    system bin/"souffle", "-F", testpath/".", "-D", testpath/".", testpath/"example.dl"
     assert_path_exists testpath/"path.csv"
     assert_equal "1,2\n", shell_output("cat #{testpath}/path.csv")
   end

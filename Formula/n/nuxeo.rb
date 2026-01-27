@@ -59,7 +59,7 @@ class Nuxeo < Formula
 
   test do
     # Copy configuration file to test path, due to some automatic writes on it.
-    cp "#{etc}/nuxeo.conf", "#{testpath}/nuxeo.conf"
+    cp "#{etc}/nuxeo.conf", testpath/"nuxeo.conf"
     inreplace "#{testpath}/nuxeo.conf" do |s|
       s.gsub! var.to_s, testpath
       s.gsub!(/#nuxeo\.tmp\.dir.*/, "nuxeo.tmp.dir=#{testpath}/tmp")

@@ -82,9 +82,9 @@ class InfluxdbAT1 < Formula
   test do
     (testpath/"config.toml").write shell_output("#{bin}/influxd config")
     inreplace testpath/"config.toml" do |s|
-      s.gsub! %r{/.*/.influxdb/data}, "#{testpath}/influxdb/data"
-      s.gsub! %r{/.*/.influxdb/meta}, "#{testpath}/influxdb/meta"
-      s.gsub! %r{/.*/.influxdb/wal}, "#{testpath}/influxdb/wal"
+      s.gsub! %r{/.*/.influxdb/data}, testpath/"influxdb/data"
+      s.gsub! %r{/.*/.influxdb/meta}, testpath/"influxdb/meta"
+      s.gsub! %r{/.*/.influxdb/wal}, testpath/"influxdb/wal"
     end
 
     begin

@@ -51,7 +51,7 @@ class Ntfs3g < Formula
     system "make", "install"
 
     # Install a script that can be used to enable automount
-    File.open("#{sbin}/mount_ntfs", File::CREAT|File::TRUNC|File::RDWR, 0755) do |f|
+    File.open(sbin/"mount_ntfs", File::CREAT|File::TRUNC|File::RDWR, 0755) do |f|
       f.puts <<~EOS
         #!/bin/bash
 

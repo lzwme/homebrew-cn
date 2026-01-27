@@ -36,7 +36,7 @@ class Sub2srt < Formula
       homebrew
       two
     SRT
-    system bin/"sub2srt", "#{testpath}/test.sub"
+    system bin/"sub2srt", testpath/"test.sub"
     assert_equal expected, (testpath/"test.srt").read.chomp
   end
 end

@@ -89,7 +89,7 @@ class Notmuch < Formula
       assert str(db.path) == '#{testpath}/Mail', 'Wrong db.path!'
       db.close()
     PYTHON
-    system bin/"notmuch-git", "-C", "#{testpath}/git", "init"
+    system bin/"notmuch-git", "-C", testpath/"git", "init"
     assert_path_exists testpath/"git"
   end
 end

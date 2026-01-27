@@ -32,7 +32,7 @@ class Pax < Formula
 
   test do
     (testpath/"foo").write "test"
-    system bin/"pax", "-f", "#{testpath}/foo.pax", "-w", "#{testpath}/foo"
+    system bin/"pax", "-f", testpath/"foo.pax", "-w", testpath/"foo"
     rm testpath/"foo"
     system bin/"pax", "-f", testpath/"foo.pax", "-r"
     assert_path_exists testpath/"foo"

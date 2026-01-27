@@ -1,18 +1,18 @@
 class Neocmakelsp < Formula
   desc "Another cmake lsp"
   homepage "https://neocmakelsp.github.io/"
-  url "https://ghfast.top/https://github.com/neocmakelsp/neocmakelsp/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "e3369930e42967d661eca3ac97990f01bac04bd72fb198d954911f995f0220a5"
+  url "https://ghfast.top/https://github.com/neocmakelsp/neocmakelsp/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "084f4e8605e0834c3ca85abd7460801dc22454f45f68557340d02642a4be3c72"
   license "MIT"
   head "https://github.com/neocmakelsp/neocmakelsp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4862922f59af7d4ea36d088b722a28fa5b18fc064626285ac2aba4bd17d72412"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51cd6574a2b0c6923762c7604fd79c1c1eabd4a6eac9d58b4625fb33b5ccdf79"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "173550773febdaf8dc1ab9a3d9e71d49dda1b61a61b6ab5b228526279eb0209a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "509f1783bbf33fdcd78026fbdb2c2a7f69ca51765f7997aad5560590596d634a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5b1cf722126ff7e12927e4e479083807942bd5604434493da241e0d8a3b2316"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af714fd3572b5a911688c5e698418310f2904243bffb3440dabb3dac911b81ba"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2afe8752916aca756af224086167a1061dbfcac57a687f3efe550bb7b9859a6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44678992f4e1b602e5e06ee6753579aedb3e39a51490a8e5bfbc438a51bd856c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48ec9ee248477c09088fe9f87e028ccdb034111cc451bc26b75e905866e34a76"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5a96e372c15c036bf15d45c64158fdd497e64112f996394b20af3f26725be94d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b5564bff0ebd47b024a17049bda7457854772f664e9aea42c5fdc719a638b902"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f11802847f41311ac23d32b2b25b860da1a03a601d259983cdc2f0b77bbb86d"
   end
 
   depends_on "rust" => :build

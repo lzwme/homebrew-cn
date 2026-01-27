@@ -41,7 +41,7 @@ class Beakerlib < Formula
     SHELL
     expected_journal = /\[\s*PASS\s*\]\s*::\s*All works/
     ENV["BEAKERLIB_DIR"] = testpath
-    system "bash", "#{testpath}/test.sh"
+    system "bash", testpath/"test.sh"
     assert_match expected_journal, File.read(testpath/"journal.txt")
     assert_match "TESTRESULT_STATE=complete", File.read(testpath/"TestResults")
     assert_match "TESTRESULT_RESULT_STRING=PASS", File.read(testpath/"TestResults")

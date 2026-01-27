@@ -69,7 +69,7 @@ class ApachePulsar < Formula
     ENV["PULSAR_LOG_DIR"] = testpath
     ENV["PULSAR_STANDALONE_USE_ZOOKEEPER"] = "1"
 
-    spawn bin/"pulsar", "standalone", "--zookeeper-dir", "#{testpath}/zk", "--bookkeeper-dir", "#{testpath}/bk"
+    spawn bin/"pulsar", "standalone", "--zookeeper-dir", testpath/"zk", "--bookkeeper-dir", testpath/"bk"
     # The daemon takes some time to start; pulsar-client will retry until it gets a connection, but emit confusing
     # errors until that happens, so sleep to reduce log spam.
     sleep 30

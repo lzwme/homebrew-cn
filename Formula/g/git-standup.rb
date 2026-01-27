@@ -22,7 +22,7 @@ class GitStandup < Formula
   test do
     system "git", "init"
     (testpath/"test").write "test"
-    system "git", "add", "#{testpath}/test"
+    system "git", "add", testpath/"test"
     system "git", "commit", "--message", "test"
     system "git", "standup"
   end

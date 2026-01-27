@@ -42,6 +42,6 @@ class Binkd < Formula
   end
 
   test do
-    system "#{sbin}/binkd", "-v"
+    system sbin/"binkd", "-v"
   end
 end

@@ -52,7 +52,7 @@ class Sdcc < Formula
         return 0;
       }
     C
-    system bin/"sdcc", "-mz80", "#{testpath}/test.c"
+    system bin/"sdcc", "-mz80", testpath/"test.c"
     assert_path_exists testpath/"test.ihx"
   end
 end
