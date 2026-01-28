@@ -19,7 +19,7 @@ class Npq < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/npq --version")
 
-    output = shell_output("#{bin}/npq install npq --dry-run")
-    assert_match "Packages with issues found", output
+    output = shell_output("#{bin}/npq install npq@3.5.3 --dry-run")
+    assert_match "Package Health - Detected an old package", output
   end
 end

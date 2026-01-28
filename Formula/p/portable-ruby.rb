@@ -6,6 +6,7 @@ class PortableRuby < PortableFormula
   url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.1.tar.gz"
   sha256 "3924be2d05db30f4e35f859bf028be85f4b7dd01714142fd823e4af5de2faf9d"
   license "Ruby"
+  revision 1
 
   # This regex restricts matching to versions other than X.Y.0.
   livecheck do
@@ -14,10 +15,10 @@ class PortableRuby < PortableFormula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "0cb864bed6007c7d15638ab38bc60e0f16bd6de93c09503d76a5128d2a74d4e6"
-    sha256 cellar: :any_skip_relocation, catalina:      "d0bb5e0d020fb001c263f8e0f64e129551ed5b87a2698ec3189758bb425dd25e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2135f7cd7eec7bf63ea0ea1790c80cca9c807f130489fac2404d65a8f531c281"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26bf8cd5f607bd48fd2a5eff837f68038b2ba8e5a1b053f25ff682940a553257"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "318ced2abea09f36871a662504f1cbd3ffb8e9644a535ade926426d866c6b5be"
+    sha256 cellar: :any_skip_relocation, catalina:      "6c9e563047b31a2d5a5de4f183fba77a8cc5b4f32acb3a76238618d553d0669b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "297f3999884fc58d269a0332a1a4684f92089643502d0487ebd859a262ea8468"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc5d1cf7293f0b728c19d048fa2f3e70042a82e89ecc3d805fd5eed1ae6d0606"
   end
 
   depends_on "pkgconf" => :build
@@ -164,6 +165,10 @@ class PortableRuby < PortableFormula
       # Ship libcrypt.a so that building native gems doesn't need system libcrypt installed.
       cp libxcrypt.lib/"libcrypt.a", lib/"libcrypt.a"
     end
+
+    # Ship libyaml.a & yaml.h so that building native gems doesn't need system libyaml installed.
+    cp libyaml.lib/"libyaml.a", lib/"libyaml.a"
+    cp libyaml.include/"yaml.h", include/"yaml.h"
 
     libexec.mkpath
     cp openssl.libexec/"etc/openssl/cert.pem", libexec/"cert.pem"

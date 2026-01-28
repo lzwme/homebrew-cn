@@ -2634,6 +2634,7 @@ Homebrew-homebrew-core/Formula/g/godap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goffice.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gofumpt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gogcli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goimports.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gojq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gokart.rb, Homebrew/homebrew-core, 1
@@ -2901,6 +2902,7 @@ Homebrew-homebrew-core/Formula/h/hdf5-mpi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hdf5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hdf5@1.10.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hdr10plus_tool.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/hdrhistogram_c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hdt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/headscale-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/headson.rb, Homebrew/homebrew-core, 1
@@ -3724,6 +3726,7 @@ Homebrew-homebrew-core/Formula/l/lld@19.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lld@20.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lldpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/llgo.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/llhttp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/llnode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm.rb, Homebrew/homebrew-core, 1
@@ -5165,7 +5168,6 @@ Homebrew-homebrew-core/Formula/o/oh-my-posh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oha.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ohcount.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ohdear-cli.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/o/oil.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/oils-for-unix.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/oj.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oksh.rb, Homebrew/homebrew-core, 1
@@ -6059,6 +6061,7 @@ Homebrew-homebrew-core/Formula/r/rabbitmq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rad.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/radamsa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/radare2.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/radicle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/radvd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rage.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ragel.rb, Homebrew/homebrew-core, 0
@@ -7808,6 +7811,7 @@ Homebrew-homebrew-core/Formula/w/whisper-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/whisperkit-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/whistle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/whois.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/whosthere.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/widelands.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wifi-password.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wifitui.rb, Homebrew/homebrew-core, 1
@@ -12649,6 +12653,7 @@ Homebrew-homebrew-cask/Casks/i/ioquake3.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ios-app-signer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/ip-in-menu-bar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ipa-manager.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/ipaverse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/ipe.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/ipepresenter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/ipfs-desktop.rb, Homebrew/homebrew-cask, 1
@@ -15476,6 +15481,7 @@ Homebrew-homebrew-cask/Casks/w/whispering.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/white-rabbit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/whodb.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/whoozle-android-file-transfer.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/w/whyfi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/widelands-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/widgettoggler.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wifi-explorer-pro.rb, Homebrew/homebrew-cask, 0

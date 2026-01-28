@@ -64,8 +64,6 @@ class Adios2 < Formula
   end
 
   def install
-    ENV.llvm_clang if DevelopmentTools.clang_build_version == 1400
-
     # CMake FortranCInterface_VERIFY fails with LTO on Linux due to different GCC and GFortran versions
     ENV.append "FFLAGS", "-fno-lto" if OS.linux?
 

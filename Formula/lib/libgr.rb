@@ -1,17 +1,17 @@
 class Libgr < Formula
   desc "GR framework: a graphics library for visualisation applications"
   homepage "https://gr-framework.org/"
-  url "https://ghfast.top/https://github.com/sciapp/gr/archive/refs/tags/v0.73.21.tar.gz"
-  sha256 "ccc5a67f0e7116f65249d0bb5171fb09f9aa4f1e5133db355b4c77490e3c6170"
+  url "https://ghfast.top/https://github.com/sciapp/gr/archive/refs/tags/v0.73.22.tar.gz"
+  sha256 "528872d82f313517b80ac9233300f6fa9a3083f98ef25585f77260e8985b8263"
   license "MIT"
 
   bottle do
-    sha256 arm64_tahoe:   "1d4b4728af2b5f17cd9f83d8df1db16f38aa39a9bf135b5b02f581f8d6e95251"
-    sha256 arm64_sequoia: "abcfc2b0b0923598ca823578a9c9b3a440ccee39ade170e1f38042ae4cc0841e"
-    sha256 arm64_sonoma:  "48947904bd84057fb13fd0cf9ed644ab85b40245b8509e940d665b42baeae1fb"
-    sha256 sonoma:        "2de1e646866f9a50dcea4f1e31b829f4366e4b8ceabf3c6c76a180e9109d1b3b"
-    sha256 arm64_linux:   "4833973e09a3743f45721254533545606e882fdce84d10c35c7ad0b2622f264b"
-    sha256 x86_64_linux:  "923b1972117b14a69de24251ca3cfd9ff625c2dbf5550cc2f143fab44245ed68"
+    sha256 arm64_tahoe:   "85b081742b70d8f9d5a386419678cbbfa1c2acf537421c5ac5cda79427c56497"
+    sha256 arm64_sequoia: "cfce776a1fa94b9e3562c940cf7d6fa6209a50e57f99f4a7dc5dc3d290014ebc"
+    sha256 arm64_sonoma:  "a26d35055f23d1a38f638a57a737206bf8b0fd9a3f772f2a81815862e21c7bac"
+    sha256 sonoma:        "471139272541ade0255a18423d57a8bc094e962c62fd751c76503f77eef7d481"
+    sha256 arm64_linux:   "26746198cf92945b7dbd2100d02543ef90f5261f21fed37d5ef46033b8474bd4"
+    sha256 x86_64_linux:  "c3823b892c93e98765afff93df8ead2bb6dbff0daddd74de17205caae376af69"
   end
 
   depends_on "cmake" => :build

@@ -55,8 +55,6 @@ class Botan < Formula
     args << "--with-commoncrypto" if OS.mac?
 
     if OS.mac? && DevelopmentTools.clang_build_version <= 1400
-      ENV.llvm_clang
-
       ldflags = %W[-L#{Formula["llvm"].opt_lib}/c++ -L#{Formula["llvm"].opt_lib}/unwind -lunwind]
       args << "--ldflags=#{ldflags.join(" ")}"
     end

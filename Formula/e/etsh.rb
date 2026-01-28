@@ -29,7 +29,7 @@ class Etsh < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b63d3ead94501c6b8a1f2fd2e6cf5465e7d0f36dc1d2e1303b0ed23254141d2"
   end
 
-  conflicts_with "oil", "oils-for-unix", "omake", because: "both install `osh` binaries"
+  conflicts_with "oils-for-unix", "omake", because: "both install `osh` binaries"
   conflicts_with "teleport", because: "both install `tsh` binaries"
 
   def install

@@ -4,7 +4,7 @@ class Acl2 < Formula
   url "https://ghfast.top/https://github.com/acl2/acl2/archive/refs/tags/8.6.tar.gz"
   sha256 "c2d73e66422901b3cc2a6f5a9ab50f5f3b1b4060cf9dc9148d076f3a8b957cf9"
   license "BSD-3-Clause"
-  revision 14
+  revision 15
 
   livecheck do
     url :stable
@@ -12,11 +12,11 @@ class Acl2 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a4b38a21e4a0e08312a1661ecc08ac08be8e430abb8d96d0bbf58582cf7247ef"
-    sha256 arm64_sequoia: "caca08c7a554d2f88b3c86d28ff38fe7bfef97410faad9a933d1237753216c9c"
-    sha256 arm64_sonoma:  "0cce484281e73990c4cad9a07e9cdb95b152660e4d5ef58518c95bccf00413b4"
-    sha256 sonoma:        "7efac9505fb7e9633d6817e58d9d4375c3b78252f8855396baa34739555d3fb5"
-    sha256 x86_64_linux:  "1298392545f7690fe775a1ebd7352caa43fe7decfd0afdedee70ea7925c42a5c"
+    sha256 arm64_tahoe:   "1206a65d92771cb92c143f845aea5d823cd51e9509c4a9634f81ca6dbc34093c"
+    sha256 arm64_sequoia: "e1ea055ee9d9b0ca6390d588b36b87404f3db11adfc9b6d1a08bc9f739b8db3f"
+    sha256 arm64_sonoma:  "33da5327235e954378f521c26627f0c340d07eab414fff7974373a1b30b68753"
+    sha256 sonoma:        "19f12e7e0c35bfae87ee58e66f0ec527138e1aa88120b173acce226b4d3b3a1a"
+    sha256 x86_64_linux:  "36e546567d2531e1d88437d92508f20bf5800e016b5ac7b48afa805a8168ac90"
   end
 
   depends_on "sbcl"

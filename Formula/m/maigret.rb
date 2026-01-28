@@ -6,16 +6,16 @@ class Maigret < Formula
   url "https://files.pythonhosted.org/packages/3d/29/ef75d365917075a72ad88b7b1027bc6f93d6e45f27aec1ee6410607eb5f6/maigret-0.5.0.tar.gz"
   sha256 "d85c7f799cce51b6edf7179dda36019d0081bba528ce77284925499b07a49be7"
   license "MIT"
-  revision 3
+  revision 4
   head "https://github.com/soxoj/maigret.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "360565e1c2f8e18a6c09bf9b7d39114b18bd28b93939867791b91e4f5fb30dd3"
-    sha256 cellar: :any,                 arm64_sequoia: "8a465190fffa297d5d78f9fe48204a6396e8efb213d4526586d07ebb87f16748"
-    sha256 cellar: :any,                 arm64_sonoma:  "6dc2836e29ae6b97e427d9f24f984650987c34f0bc03c54a3d2b87589664a0ae"
-    sha256 cellar: :any,                 sonoma:        "6aa9109911109187274636fd39f63ec42eb7a21eb2f7d01b7733f95e82d6aa0e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e05b07b2e50d7898534f20a4cd5735a8eb1f7171c3494a3eb451725f4ef475af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e3dca6419ce20e1c29431908d8ffd74eaf54436f48dad941047c6c09e514722"
+    sha256 cellar: :any,                 arm64_tahoe:   "25afd7de361b9a5876ffbc1542763da2d9ba9c65efa199698746ba361db70408"
+    sha256 cellar: :any,                 arm64_sequoia: "50bcd32ceef6a6080b072b3aca4141d5091d7c38d2097e48669f071b1249638c"
+    sha256 cellar: :any,                 arm64_sonoma:  "7feb79aa0c9b2f816528020e979e49456a3f12afd2c14c4dd0dfd506c817fff9"
+    sha256 cellar: :any,                 sonoma:        "175fff46f1ac1fc679e128f57342808bfab142bd7d81aca57c4cb6dbb7b76296"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7a2eeab23ade2089b6ac86c68a166d3201376ae569afc6378623137aab34015"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "509f7b9aaba9c03c30fbf54a2b1492a0ee112a4f0b1362c77478bd9437c3cfd4"
   end
 
   depends_on "rust" => :build
@@ -239,8 +239,8 @@ class Maigret < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/80/1e/5492c365f222f907de1039b91f922b93fa4f764c713ee858d235495d8f50/multidict-6.7.0.tar.gz"
-    sha256 "c6e99d9a65ca282e578dfea819cfa9c0a62b2499d8677392e09feaf305e9e6f5"
+    url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
+    sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
   end
 
   resource "networkx" do
@@ -314,13 +314,13 @@ class Maigret < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/33/c1/1d9de9aeaa1b89b0186e5fe23294ff6517fce1bc69149185577cd31016b2/pyparsing-3.3.1.tar.gz"
-    sha256 "47fad0f17ac1e2cad3de3b458570fbc9b03560aa029ed5e16ee5554da9a2251c"
+    url "https://files.pythonhosted.org/packages/f3/91/9c6ee907786a473bf81c5f53cf703ba0957b23ab84c264080fb5a450416f/pyparsing-3.3.2.tar.gz"
+    sha256 "c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc"
   end
 
   resource "pypdf" do
-    url "https://files.pythonhosted.org/packages/d8/f4/801632a8b62a805378b6af2b5a3fcbfd8923abf647e0ed1af846a83433b2/pypdf-6.6.0.tar.gz"
-    sha256 "4c887ef2ea38d86faded61141995a3c7d068c9d6ae8477be7ae5de8a8e16592f"
+    url "https://files.pythonhosted.org/packages/b8/bb/a44bab1ac3c54dbcf653d7b8bcdee93dddb2d3bf025a3912cacb8149a2f2/pypdf-6.6.2.tar.gz"
+    sha256 "0a3ea3b3303982333404e22d8f75d7b3144f9cf4b2970b96856391a516f9f016"
   end
 
   resource "pypdf2" do
@@ -359,8 +359,8 @@ class Maigret < Formula
   end
 
   resource "reportlab" do
-    url "https://files.pythonhosted.org/packages/f8/a7/4600cb1cfc975a06552e8927844ddcb8fd90217e9a6068f5c7aa76c3f221/reportlab-4.4.7.tar.gz"
-    sha256 "41e8287af965e5996764933f3e75e7f363c3b6f252ba172f9429e81658d7b170"
+    url "https://files.pythonhosted.org/packages/1a/39/42cf24aee570a80e1903221ae3a92a2e34c324794a392eb036cbb6dc3839/reportlab-4.4.9.tar.gz"
+    sha256 "7cf487764294ee791a4781f5a157bebce262a666ae4bbb87786760a9676c9378"
   end
 
   resource "requests" do
@@ -389,8 +389,8 @@ class Maigret < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/89/23/adf3796d740536d63a6fbda113d07e60c734b6ed5d3058d1e47fc0495e47/soupsieve-2.8.1.tar.gz"
-    sha256 "4cf733bc50fa805f5df4b8ef4740fc0e0fa6218cf3006269afd3f9d6d80fd350"
+    url "https://files.pythonhosted.org/packages/7b/ae/2d9c981590ed9999a0d91755b47fc74f74de286b0f5cee14c9269041e6c4/soupsieve-2.8.3.tar.gz"
+    sha256 "3267f1eeea4251fb42728b6dfb746edc9acaffc4a45b27e19450b676586e8349"
   end
 
   resource "stack-data" do
@@ -449,8 +449,8 @@ class Maigret < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
-    sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
+    url "https://files.pythonhosted.org/packages/64/6e/62daec357285b927e82263a81f3b4c1790215bc77c42530ce4a69d501a43/wcwidth-0.5.0.tar.gz"
+    sha256 "f89c103c949a693bf563377b2153082bf58e309919dfb7f27b04d862a0089333"
   end
 
   resource "webencodings" do

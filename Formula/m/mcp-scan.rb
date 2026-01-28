@@ -6,15 +6,16 @@ class McpScan < Formula
   url "https://files.pythonhosted.org/packages/fe/45/8b5ab0d13fe214c855f627a2552b2165f1f0d40861642757fd9f713e476e/mcp_scan-0.3.37.tar.gz"
   sha256 "d9164e47525acca0803b9485b01436ac1b7560d02a5114d6fcbbc0bc2b5434e2"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/invariantlabs-ai/mcp-scan.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5ec30bc5c99a731db95bfa1b7679d615b00b8b765c12985bf3d8793bd849fa8c"
-    sha256 cellar: :any,                 arm64_sequoia: "8a347fe2ccb78360061a8e4206809f5763de8ad3b6487d88654d34e4ab89edfa"
-    sha256 cellar: :any,                 arm64_sonoma:  "b365e9fb93bae92101b04d339a6fca3fbda61f60b967d9598636eb44f3a76acf"
-    sha256 cellar: :any,                 sonoma:        "769f9eabcb090f8f74cead24e80bc70bd50976cb0c970e31166daa423a45e4b3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0bc6f67722a5cd76eaafa6744ea88cf1a603df6f1b750cf846d136a8f0364017"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20a0d66aa668854198e91760167053554c4a714121450ffc0e561696d2f3c9ea"
+    sha256 cellar: :any,                 arm64_tahoe:   "6202c0249130c3336f57543c3d1274e3ed69ba994913752f7e808e4349546f36"
+    sha256 cellar: :any,                 arm64_sequoia: "7afbb4b1423cf0724847f1f04f69f2cb9dce5c520caeb375f4af89394e0056b5"
+    sha256 cellar: :any,                 arm64_sonoma:  "f9bd3dad328a86d0b8124da04b18445ebdd32aa133a5a37aeb0a163b7d184fb8"
+    sha256 cellar: :any,                 sonoma:        "dfa9183ec70aef9ec2d099165540d3e9a363253b7471889f8dc5c67b995ce787"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9439f82c7694d81dd5eae41876f3ffd7301de28464dfaabb6092df8cc6c384a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdc2888f6ecc390f2513552dbc30545162188f5c914d71ca2bbe98365f3ba5b8"
   end
 
   depends_on "certifi" => :no_linkage
@@ -137,8 +138,8 @@ class McpScan < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/80/1e/5492c365f222f907de1039b91f922b93fa4f764c713ee858d235495d8f50/multidict-6.7.0.tar.gz"
-    sha256 "c6e99d9a65ca282e578dfea819cfa9c0a62b2499d8677392e09feaf305e9e6f5"
+    url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
+    sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
   end
 
   resource "propcache" do
@@ -177,8 +178,8 @@ class McpScan < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/78/96/804520d0850c7db98e5ccb70282e29208723f0964e88ffd9d0da2f52ea09/python_multipart-0.0.21.tar.gz"
-    sha256 "7137ebd4d3bbf70ea1622998f902b97a29434a9e8dc40eb203bbcf7c2a2cba92"
+    url "https://files.pythonhosted.org/packages/94/01/979e98d542a70714b0cb2b6728ed0b7c46792b695e3eaec3e20711271ca3/python_multipart-0.0.22.tar.gz"
+    sha256 "7340bef99a7e0032613f56dc36027b959fd3b30a787ed62d310e951f7c3a3a58"
   end
 
   resource "pyyaml" do
@@ -202,8 +203,8 @@ class McpScan < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
-    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
+    url "https://files.pythonhosted.org/packages/a1/84/4831f881aa6ff3c976f6d6809b58cdfa350593ffc0dc3c58f5f6586780fb/rich-14.3.1.tar.gz"
+    sha256 "b8c5f568a3a749f9290ec6bddedf835cec33696bfc1e48bcfecb276c7386e4b8"
   end
 
   resource "shellingham" do

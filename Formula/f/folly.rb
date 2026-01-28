@@ -55,8 +55,6 @@ class Folly < Formula
   patch :DATA
 
   def install
-    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
-
     args = %W[
       -DCMAKE_LIBRARY_ARCHITECTURE=#{Hardware::CPU.arch}
       -DFOLLY_USE_JEMALLOC=OFF

@@ -1,8 +1,8 @@
 class Libks < Formula
   desc "Foundational support for signalwire C products"
   homepage "https://github.com/signalwire/libks"
-  url "https://ghfast.top/https://github.com/signalwire/libks/archive/refs/tags/v2.0.8.tar.gz"
-  sha256 "5f91d4c5021e472eedfbfa74c33c64e568f5ac0c43958d60f7b721fdb05b7138"
+  url "https://ghfast.top/https://github.com/signalwire/libks/archive/refs/tags/v2.0.10.tar.gz"
+  sha256 "cd0d8504870c2e0e1306e55fd27dede976ab9f3a919487bc10b526576d24d568"
   license all_of: [
     "MIT",
     "BSD-3-Clause", # src/ks_hash.c
@@ -12,12 +12,12 @@ class Libks < Formula
   head "https://github.com/signalwire/libks.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f73a64c0f07c4391a8d65430fd5f634993a4e9f515ea7242ee66d4f4095c044a"
-    sha256 cellar: :any,                 arm64_sequoia: "a7e8dffe7957121f41ad61a87877170d701316647d25cee1be287b4d7cb9fcf4"
-    sha256 cellar: :any,                 arm64_sonoma:  "8659789bf2947c1ce0a865c46ec177f41b278eb0d054095c0b014bf8e4158816"
-    sha256 cellar: :any,                 sonoma:        "3a1e0878d7f81e5ddf99e93f8f1cd583b00e48f8b685da254a516e3ed5158b87"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef344cc88ef01ac0e1375013469ee3c3197b5f1bb37b3cb4718815e8056c7278"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "706ed3466fd408dff3622234395571be20e522eaf07e0471cc32f8af5c3588de"
+    sha256 cellar: :any,                 arm64_tahoe:   "a4e047c7d6a018d97d15aed23f7898d8f1f4f0f46c7fe9ae790432b082e7cc1c"
+    sha256 cellar: :any,                 arm64_sequoia: "82aa683dcba005cb4012c17026023457c8effed0966553cd4b2bcd9549723f1b"
+    sha256 cellar: :any,                 arm64_sonoma:  "1a17d6bfb39fd8fd205dea626914b248aef3f3886cf1d3f977186b6275fcdc15"
+    sha256 cellar: :any,                 sonoma:        "6bfeeb306bea73531d3ce22ee0f92292024cbd1c20e3f1325cb14df1b149145a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4cf5d4dd4dfe67a804525da361f14112da1ebae458b30f7a135c1ff9963a51e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfc07b908ad7fdd8b6eab80ff9d607542c225a1ef81f8fb061798ee812a68c18"
   end
 
   depends_on "cmake" => :build

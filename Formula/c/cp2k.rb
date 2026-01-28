@@ -11,14 +11,13 @@ class Cp2k < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "444d3d295a337c9248256b7fedff8a3659b739645d968839dd926623098ff329"
-    sha256 arm64_sequoia: "46b2e75543dc15952e00a6614a0257225b5ed00d8c038cfb3546061a8e6446bb"
-    sha256 arm64_sonoma:  "c2b1c3f70cc13fb9c89b8b5713a1702715e3ee01584ddb1113780ddfceeaf7ac"
-    sha256 arm64_ventura: "1f4f74b1fcb70f1f88625059dfa197e5fd00cdd6560de061f8b7a709a3abec28"
-    sha256 sonoma:        "d6b69ff15f5582ebe7093c86e9664aae11e1e2670eb428d83f774c2507592133"
-    sha256 ventura:       "da3a27206ed2d1345338e3c764cf485cf003f13db52b38ec99be75eece741913"
-    sha256 arm64_linux:   "0e8bcf5883b48d160e1c7f8e0b58f4cec83251fa118875fa88ed15bde4df5730"
-    sha256 x86_64_linux:  "92120af9f50b710a84a8637f0294803f1ec745d4c49f3a9d19258955ded5e5bb"
+    rebuild 1
+    sha256 arm64_tahoe:   "7af6ab77ed39609075e8e08c7921f405c024dbf045dde7cf1ce6164aac550fd8"
+    sha256 arm64_sequoia: "142ab8353ffe343a3adbb5bc83841a6037f1433379f7371ffa3b97e9ca33b051"
+    sha256 arm64_sonoma:  "ff960f844b190cdffe23054a7d234012baf132db17928f2ffa4bb98c8023d946"
+    sha256 sonoma:        "2b7c500da363bbb9a7466c1ab3612827803b769b689b55194cb62efbc9074c52"
+    sha256 arm64_linux:   "14f388d665962f10f5692d5c280a150b79bc228ad93418e54e8befda5e30c590"
+    sha256 x86_64_linux:  "7f19e8f4da26c16b8f3ff8f5a7c8965d6defe54e1212a8a5b20f8be87d0fee9a"
   end
 
   depends_on "cmake" => :build
@@ -27,6 +26,7 @@ class Cp2k < Formula
 
   depends_on "fftw"
   depends_on "gcc" # for gfortran
+  depends_on "libint"
   depends_on "libxc"
   depends_on "open-mpi"
   depends_on "openblas"
@@ -38,28 +38,7 @@ class Cp2k < Formula
     cause "needs OpenMP support for C/C++ and Fortran"
   end
 
-  resource "libint" do
-    url "https://ghfast.top/https://github.com/cp2k/libint-cp2k/releases/download/v2.6.0/libint-v2.6.0-cp2k-lmax-5.tgz"
-    sha256 "1cd72206afddb232bcf2179c6229fbf6e42e4ba8440e701e6aa57ff1e871e9db"
-  end
-
   def install
-    resource("libint").stage do
-      # Work around failure: ld: Assertion failed: (slot < _sideTableBuffer.size()), function addAtom
-      if DevelopmentTools.clang_build_version == 1500 && Hardware::CPU.arm?
-        inreplace "Makefile.in", "$(LTLINKLIBOPTS)", "\\0 -Wl,-ld_classic"
-      end
-
-      system "./configure", "--disable-static",
-                            "--enable-shared",
-                            "--enable-fortran",
-                            "--with-pic",
-                            *std_configure_args(prefix: libexec)
-      system "make"
-      ENV.deparallelize { system "make", "install" }
-      ENV.prepend_path "PKG_CONFIG_PATH", libexec/"lib/pkgconfig"
-    end
-
     # TODO: Add workaround to link to LLVM OpenMP (libomp) with gfortran after migrating OpenBLAS
     omp_args = []
     # if OS.mac?
@@ -87,9 +66,7 @@ class Cp2k < Formula
     # Avoid trying to access /proc/self/statm on macOS
     ENV.append "FFLAGS", "-D__NO_STATM_ACCESS" if OS.mac?
 
-    # Set -lstdc++ to allow gfortran to link libint
     cp2k_cmake_args = %W[
-      -DCMAKE_SHARED_LINKER_FLAGS=-lstdc++
       -DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(target: libexec/"lib")}
       -DCP2K_BLAS_VENDOR=OpenBLAS
       -DCP2K_USE_LIBINT2=ON

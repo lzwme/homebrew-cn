@@ -6,15 +6,16 @@ class PocketTts < Formula
   url "https://files.pythonhosted.org/packages/27/e0/29673b627639e5112d840fc9a4fcca2c0dc43491c57d2f3d757b169bf254/pocket_tts-1.0.3.tar.gz"
   sha256 "9f63ba293666dc338ab4e99a7bfee6f079ee78cd4c64c532a6706925aa702921"
   license "MIT"
+  revision 1
   head "https://github.com/kyutai-labs/pocket-tts.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b5af778ce72b915b298a9a4653716944fb9e5e00b4ba7cb6cffb30a744bcbb8c"
-    sha256 cellar: :any,                 arm64_sequoia: "7dd483d4cf8cf32a3e41fcb34f7ddab919c3bd450c66163fe638cb3ada73608b"
-    sha256 cellar: :any,                 arm64_sonoma:  "04acff84d205526c9c4ab11d4cc10a6a6da186ff7a8b26025f92200046708b85"
-    sha256 cellar: :any,                 sonoma:        "af64d74d87a7caf10cdfa2072399fe8b0838292542a587591e33483d54fedb01"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "121a405116b87f15b50f7bb382ce01a200dfa56e41cb5114349ad342f293c191"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a694e6e26b2be6906f0fcaa6b179427268c69f49becf8d89e1c121fb696e954"
+    sha256 cellar: :any,                 arm64_tahoe:   "7bf0384c944d7324bb590e0283aa7b69f48d155219e8936ec033c94c9b3dd748"
+    sha256 cellar: :any,                 arm64_sequoia: "634e2f2f6810e78ff406e2bff505265a8d8112a864688a662d2f9858b68dc1d3"
+    sha256 cellar: :any,                 arm64_sonoma:  "563af15ea638883a455dbdc016a024323d760318d8add654bd21a8e5fa5cf966"
+    sha256 cellar: :any,                 sonoma:        "76ff1c7bc64d74f3a121f78c3ad625d9b1a291c1048eb0ecb6ae2edbeb46aaca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb643c6caf171120ceb91c062c88cdc79ea3cdb8ee246c8d00be78c52f32b30a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b66999734ceef970409d3c82c2fcd7f6e3f31371a57dfd950304cb60eeb7e3a"
   end
 
   depends_on "cmake" => :build
@@ -54,8 +55,8 @@ class PocketTts < Formula
   end
 
   resource "einops" do
-    url "https://files.pythonhosted.org/packages/e5/81/df4fbe24dff8ba3934af99044188e20a98ed441ad17a274539b74e82e126/einops-0.8.1.tar.gz"
-    sha256 "de5d960a7a761225532e0f1959e5315ebeafc0cd43394732f103ca44b9837e84"
+    url "https://files.pythonhosted.org/packages/2c/77/850bef8d72ffb9219f0b1aac23fbc1bf7d038ee6ea666f331fa273031aa2/einops-0.8.2.tar.gz"
+    sha256 "609da665570e5e265e27283aab09e7f279ade90c4f01bcfca111f3d3e13f2827"
   end
 
   resource "fastapi" do
@@ -84,8 +85,8 @@ class PocketTts < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/ba/d6/02d1c505e1d3364230e5fa16d2b58c8f36a39c5efe8e99bc4d03d06fd0ca/huggingface_hub-1.3.2.tar.gz"
-    sha256 "15d7902e154f04174a0816d1e9594adcf15cdad57596920a5dc70fadb5d896c7"
+    url "https://files.pythonhosted.org/packages/af/25/74af9d16cd59ae15b12467a79a84aa0fe24be4aba68fc4da0c1864d49c17/huggingface_hub-1.3.4.tar.gz"
+    sha256 "c20d5484a611b7b7891d272e8fc9f77d5de025b0480bdacfa858efb3780b455f"
   end
 
   resource "idna" do
@@ -114,8 +115,8 @@ class PocketTts < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/78/96/804520d0850c7db98e5ccb70282e29208723f0964e88ffd9d0da2f52ea09/python_multipart-0.0.21.tar.gz"
-    sha256 "7137ebd4d3bbf70ea1622998f902b97a29434a9e8dc40eb203bbcf7c2a2cba92"
+    url "https://files.pythonhosted.org/packages/94/01/979e98d542a70714b0cb2b6728ed0b7c46792b695e3eaec3e20711271ca3/python_multipart-0.0.22.tar.gz"
+    sha256 "7340bef99a7e0032613f56dc36027b959fd3b30a787ed62d310e951f7c3a3a58"
   end
 
   resource "pyyaml" do
@@ -129,8 +130,8 @@ class PocketTts < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
-    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
+    url "https://files.pythonhosted.org/packages/a1/84/4831f881aa6ff3c976f6d6809b58cdfa350593ffc0dc3c58f5f6586780fb/rich-14.3.1.tar.gz"
+    sha256 "b8c5f568a3a749f9290ec6bddedf835cec33696bfc1e48bcfecb276c7386e4b8"
   end
 
   resource "safetensors" do

@@ -6,16 +6,16 @@ class Gptme < Formula
   url "https://files.pythonhosted.org/packages/1a/20/57d7b444abc582b5aa09b98aa6821fefa728eb056a1c4371d475d19514dd/gptme-0.31.0.tar.gz"
   sha256 "96e17e9dd82c409743b1b81dad08c6c024ace108d829f80c557be8eb2c429ffb"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/ErikBjare/gptme.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d73b6e91b6fe10d5f4bdb943a5516ace598d14f3400344a95b4a814e71c15c98"
-    sha256 cellar: :any,                 arm64_sequoia: "7ed71e10a3de254a81ddb6939bc32fa202b0771cbb66dfd6ce4a626b389e3703"
-    sha256 cellar: :any,                 arm64_sonoma:  "d26026cc2fc32be3468ce6db64c796bec6fe344d295967447f3964a343ff67d0"
-    sha256 cellar: :any,                 sonoma:        "7f2852ac90d20e2d815273938e92273e861c5fe4cd4d8fce0cfe719bf3ac1d1c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7dce16912af3d2cd8944413d8bfe7f7b05c01e4cb6b83bb1b5d4f8ec469a24b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47ff059536d6c539bbf9f24f7d9b5ce0d247152cbc2680048f70af8d53a20d99"
+    sha256 cellar: :any,                 arm64_tahoe:   "98aefa5c5c52d4a44a0b8b041edffdb581ab57cb3ffadf71cb8cc7f23e61b8a9"
+    sha256 cellar: :any,                 arm64_sequoia: "c2328ca858140cade5a3b32c785e4a630302220f8706b27cb70909f0569f0d64"
+    sha256 cellar: :any,                 arm64_sonoma:  "b1e0ffb45bae9ecb4fb0ae5e4bd53ab0eb472f30f103ff9a1f5c575bffa56004"
+    sha256 cellar: :any,                 sonoma:        "daa842026ddd80bae7092903e314509972185537194d1cd5591fb097994d20ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "217f5241b28f15daf5f2a2395e13a5e446978389b3977adb05472bf3d7239a97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59a512064fe46cf2ee7f050c1a64f64bdba3f305353d75caaf01b529c7ddfc32"
   end
 
   depends_on "rust" => :build # for jitter
@@ -163,8 +163,8 @@ class Gptme < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/d5/2d/649d80a0ecf6a1f82632ca44bec21c0461a9d9fc8934d38cb5b319f2db5e/mcp-1.25.0.tar.gz"
-    sha256 "56310361ebf0364e2d438e5b45f7668cbb124e158bb358333cd06e49e83a6802"
+    url "https://files.pythonhosted.org/packages/fc/6d/62e76bbb8144d6ed86e202b5edd8a4cb631e7c8130f3f4893c3f90262b10/mcp-1.26.0.tar.gz"
+    sha256 "db6e2ef491eecc1a0d93711a76f28dec2e05999f93afd48795da1c1137142c66"
   end
 
   resource "mdurl" do
@@ -243,8 +243,8 @@ class Gptme < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/78/96/804520d0850c7db98e5ccb70282e29208723f0964e88ffd9d0da2f52ea09/python_multipart-0.0.21.tar.gz"
-    sha256 "7137ebd4d3bbf70ea1622998f902b97a29434a9e8dc40eb203bbcf7c2a2cba92"
+    url "https://files.pythonhosted.org/packages/94/01/979e98d542a70714b0cb2b6728ed0b7c46792b695e3eaec3e20711271ca3/python_multipart-0.0.22.tar.gz"
+    sha256 "7340bef99a7e0032613f56dc36027b959fd3b30a787ed62d310e951f7c3a3a58"
   end
 
   resource "pyyaml" do
@@ -263,8 +263,8 @@ class Gptme < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/cc/a9/546676f25e573a4cf00fe8e119b78a37b6a8fe2dc95cda877b30889c9c45/regex-2025.11.3.tar.gz"
-    sha256 "1fedc720f9bb2494ce31a58a1631f9c82df6a09b49c19517ea5cc280b4541e01"
+    url "https://files.pythonhosted.org/packages/0b/86/07d5056945f9ec4590b518171c4254a5925832eb727b56d3c38a7476f316/regex-2026.1.15.tar.gz"
+    sha256 "164759aa25575cbc0651bef59a0b18353e54300d79ace8084c818ad8ac72b7d5"
   end
 
   resource "requests" do
@@ -288,8 +288,8 @@ class Gptme < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/da/34/f5df66cb383efdbf4f2db23cabb27f51b1dcb737efaf8a558f6f1d195134/sse_starlette-3.1.2.tar.gz"
-    sha256 "55eff034207a83a0eb86de9a68099bd0157838f0b8b999a1b742005c71e33618"
+    url "https://files.pythonhosted.org/packages/8b/8d/00d280c03ffd39aaee0e86ec81e2d3b9253036a0f93f51d10503adef0e65/sse_starlette-3.2.0.tar.gz"
+    sha256 "8127594edfb51abe44eac9c49e59b0b01f1039d0c7461c6fd91d4e03b70da422"
   end
 
   resource "stack-data" do
@@ -298,8 +298,8 @@ class Gptme < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/ba/b8/73a0e6a6e079a9d9cfa64113d771e421640b6f679a52eeb9b32f72d871a1/starlette-0.50.0.tar.gz"
-    sha256 "a2a17b22203254bcbc2e1f926d2d55f3f9497f769416b3190768befe598fa3ca"
+    url "https://files.pythonhosted.org/packages/c4/68/79977123bb7be889ad680d79a40f339082c1978b5cfcf62c2d8d196873ac/starlette-0.52.1.tar.gz"
+    sha256 "834edd1b0a23167694292e94f597773bc3f89f362be6effee198165a35d62933"
   end
 
   resource "tabulate" do
@@ -313,8 +313,8 @@ class Gptme < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/cc/18/0bbf3884e9eaa38819ebe46a7bd25dcd56b67434402b66a58c4b8e552575/tomlkit-0.13.3.tar.gz"
-    sha256 "430cf247ee57df2b94ee3fbe588e71d362a941ebb545dec29b53961d61add2a1"
+    url "https://files.pythonhosted.org/packages/c3/af/14b24e41977adb296d6bd1fb59402cf7d60ce364f90c890bd2ec65c43b5a/tomlkit-0.14.0.tar.gz"
+    sha256 "cf00efca415dbd57575befb1f6634c4f42d2d87dbba376128adb42c121b87064"
   end
 
   resource "tqdm" do
@@ -338,8 +338,8 @@ class Gptme < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
-    sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
+    url "https://files.pythonhosted.org/packages/64/6e/62daec357285b927e82263a81f3b4c1790215bc77c42530ce4a69d501a43/wcwidth-0.5.0.tar.gz"
+    sha256 "f89c103c949a693bf563377b2153082bf58e309919dfb7f27b04d862a0089333"
   end
 
   resource "wrapt" do

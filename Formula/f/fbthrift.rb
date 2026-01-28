@@ -53,7 +53,6 @@ class Fbthrift < Formula
     # Issue ref: https://github.com/facebook/fbthrift/issues/607
     ENV.append "CXXFLAGS", "-fno-assume-unique-vtables" if DevelopmentTools.clang_build_version >= 1600
 
-    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
     ENV["OPENSSL_ROOT_DIR"] = Formula["openssl@3"].opt_prefix
 
     # The static libraries are a bit annoying to build. If modifying this formula

@@ -1,18 +1,18 @@
 class Repeater < Formula
   desc "Flashcard program that uses spaced repetition"
   homepage "https://shaankhosla.github.io/repeater/"
-  url "https://ghfast.top/https://github.com/shaankhosla/repeater/archive/refs/tags/v0.1.3.tar.gz"
-  sha256 "9620fdbbbaf4befc28afde38905c2915a31fc551b44f1aa6838a2f2bb8993892"
+  url "https://ghfast.top/https://github.com/shaankhosla/repeater/archive/refs/tags/v0.1.4.tar.gz"
+  sha256 "c0d6926615820a46f35c1f8603899b0acb0f2d7096d0379e0a276367f8177d36"
   license "Apache-2.0"
   head "https://github.com/shaankhosla/repeater.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b6b7b9b4e663d6ac2b1358b015dc91d61ccb0c8cf7cb7a09244b3448d341df5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72951d823a1a3686df4aeab50866b04e3b18f8ace1e042056169b25e6258976d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc02b0a95deac63e43d0d3acefc28f4f7f240343f7a87ede4e47eed7829fb5f7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "722d1d291f5fb68e065e3dd4f2b73abbb704c759e62be20b1686ba29facb58a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a371e59424a7a173bf3f0b736f7e7ce29b3281464d0d91097a01782f2dd47dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53e72d870f45d412e0dc018acd7cc0b2cfe59dde367fa366ebc67d8823f0f17d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "91d26548e401e1e9a044790a0521b3189c577cc94c2cc56ae6a9cef998c6c3b6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6677b1e8fb2527ba148b1b93eb69169a4ea089a3d351f91d4ce3ad4ab34f08b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d6acfe66da6422ffdfc2c8923c00caa3ec3b52ffd7cbbbdfe1679d544e1ad3f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1eb6748e1a3ac38098fc3cba403163d60dba099c575c5fe832d83584e66a6e4d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "295a09563d97f7af04c3a55fab1725c0c1de69fb0513cbeaa52956d2dc43e300"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc7a35600fefc23b5aa7a536cd20cea4316f43ca23edd30d5473edf8c1690979"
   end
 
   depends_on "cmake" => :build

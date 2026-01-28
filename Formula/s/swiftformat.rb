@@ -1,23 +1,27 @@
 class Swiftformat < Formula
   desc "Formatting tool for reformatting Swift code"
   homepage "https://github.com/nicklockwood/SwiftFormat"
-  url "https://ghfast.top/https://github.com/nicklockwood/SwiftFormat/archive/refs/tags/0.58.7.tar.gz"
-  sha256 "5b89d0bb827c8207ee5de77d20f9faa63b7514417ec31eabf4949929967f06f6"
+  url "https://ghfast.top/https://github.com/nicklockwood/SwiftFormat/archive/refs/tags/0.59.0.tar.gz"
+  sha256 "3547c8128d925dc92be59eb9c386a39533148b1ac91daaf1e6bbd5617eb0f75e"
   license "MIT"
   head "https://github.com/nicklockwood/SwiftFormat.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fcc8cc0c5f6bda7935993aa05083d6ebe573ac6197da51152f0197c2b853b946"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9e861bd8f6b0c217877b8348122cdcf9a4f0f5e40ffd54e4dfc6e15baa0e08b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "497cb6a71f6cb16893fadc3f8b27435bb8ee8aa44e3e26045d8cf28ccfe2e9db"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6a99de82c2b83c2fd69f77904cb740439dc3c16bd8117e3199acf04c412fdf87"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c1bf3918f2a61e81e2475d9aeb5014ca62960a6e1aa25a3ec4fee1063c0738b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05dda1a4f47c0d709a7b45bebbb1c3398c2e9f7a72174eb63900cb814d582600"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "49af7062a3c7c3e34b787174deaad4a7a2bb92330bbbdc9cdf94638458c43442"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d94873a12daa46f22cb067f5bf593a0bb786fdf5460cf8c6dc386c7cfa9790ed"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de9ae74e3fd4634856d17356bc20a27b8ff611f190c4df68710dd8e703b2078f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b1d18de1c6460ee0d0c3c9ef6c07caf3cf2dd490a5783cbd0fcf2ea056899438"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff1e46423fceb1b3fe05596bcd143b12f02662914cbc03c1460d59b3276a9d93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5df13b6a60867c549fb68f93ea3b77924d55f0da46c547577ec78cfcf1a5ce8"
   end
 
-  depends_on xcode: ["10.1", :build]
-
   uses_from_macos "swift" => :build
+
+  # Fix for macOS 13+ only Range.contains(_:) API, upstream pr ref, https://github.com/nicklockwood/SwiftFormat/pull/2328
+  patch do
+    url "https://github.com/nicklockwood/SwiftFormat/commit/9774a88b325382209eedc8e955cbaddc402b13a1.patch?full_index=1"
+    sha256 "2f77becf3c71759e01ab1821871e6f78c10c25b7d3091b36f70202de3244eb26"
+  end
 
   def install
     args = if OS.mac?

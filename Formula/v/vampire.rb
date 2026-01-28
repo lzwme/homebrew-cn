@@ -5,6 +5,11 @@ class Vampire < Formula
   sha256 "3d991c914e9f400641d8b2e4362065c218c0ecb08079b96b0da1714aa6842520"
   license "BSD-3-Clause"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7ddec00fee445a0e1bfd5caca53a28e4a30e41fcb0cdfe4e9c5497bfc78f70d"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0cd98ea75f19465e88f05a2da929d1758c71989744ed1035d58413ca5a0a16d0"

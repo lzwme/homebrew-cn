@@ -1,11 +1,10 @@
 class OathToolkit < Formula
   desc "Tools for one-time password authentication systems"
   homepage "https://www.nongnu.org/oath-toolkit/"
-  url "https://download-mirror.savannah.gnu.org/releases/oath-toolkit/oath-toolkit-2.6.13.tar.gz"
-  mirror "https://fossies.org/linux/privat/oath-toolkit-2.6.13.tar.gz"
-  sha256 "5b5d82e9a4455206d24fcbd7ee58bf4c79398a2e67997d80bd45ae927586b18b"
+  url "https://download-mirror.savannah.gnu.org/releases/oath-toolkit/oath-toolkit-2.6.14.tar.gz"
+  mirror "https://fossies.org/linux/privat/oath-toolkit-2.6.14.tar.gz"
+  sha256 "8b1da365759f1249be57a82aec6e107f7b57dc77d813f96dc0aaf81624f28971"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.1-or-later"]
-  revision 1
 
   livecheck do
     url "https://download.savannah.gnu.org/releases/oath-toolkit/"
@@ -13,12 +12,12 @@ class OathToolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "49c74a2b634c5656da1dbc1e8f611619d41c9d14e40178c09e0d00896bab242e"
-    sha256 cellar: :any, arm64_sequoia: "883602908ae3413d7f7a8c9fb563e2c0a43733b94a2f7e29c34e297774d6f981"
-    sha256 cellar: :any, arm64_sonoma:  "1326ac22546cde2d3f61daeec243129c369a085d760231214ac796b350295c86"
-    sha256               sonoma:        "67b72f23e1f876bba4b98b4f69fdbb2034caec6ce11dde9ad42f52f97bb773f6"
-    sha256               arm64_linux:   "f66209c876693a77907889efe837c136174c768d958e4b7946bc98324e2eb1de"
-    sha256               x86_64_linux:  "1e825b733079a0d317fe81b037b64c4e049a0bb18bfb5b60d25b4d66b46af55e"
+    sha256 cellar: :any, arm64_tahoe:   "be69513c03fa1a31c6e590fd6873033505f82612471832e327d55cfa55ae822e"
+    sha256 cellar: :any, arm64_sequoia: "031067b5c96b2a25e386455e275a1e742275e079bebe392579cfc67c86508e8f"
+    sha256 cellar: :any, arm64_sonoma:  "fbf83d68bec1c112f46fc73fa20a697f374fb28dc318c3cd03abbed5fbb4274a"
+    sha256               sonoma:        "1eeb6226466d3aa467080421151f80284865f7abf8be8b93fe2b320c3408b3c2"
+    sha256               arm64_linux:   "f8175b382aa6a5cbcfac359b445da5e60739fc745dce2ba19789085b98fb9869"
+    sha256               x86_64_linux:  "ae317354c3e8fd7ebd807e9f50e27cc2b5e06d9c3059500d5a49b0abf93b170e"
   end
 
   head do

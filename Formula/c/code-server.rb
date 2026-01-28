@@ -1,17 +1,17 @@
 class CodeServer < Formula
   desc "Access VS Code through the browser"
   homepage "https://github.com/coder/code-server"
-  url "https://registry.npmjs.org/code-server/-/code-server-4.108.1.tgz"
-  sha256 "489087c7400871b096acca94455b2452fe3dc854141e47e62b3316f9e7cd7668"
+  url "https://registry.npmjs.org/code-server/-/code-server-4.108.2.tgz"
+  sha256 "b188d4da150211b510116619daa8c21c4bfe0a21b5aa41910b8acab60304d4f4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c816f5a0538d4b153652c8ad2dbc64ed0c940ccdea0d2324b6c3ae502e640fd7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "63f0f2fe5b282b8adabf1332623e4db56e977ea59962c18a60e34650a37af1f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d34a561dc2c5f6af232a4a41e5fb19ec44746e0231dd5d9ce698cc5d8474c557"
-    sha256 cellar: :any_skip_relocation, sonoma:        "417efd2ce3c593f2bcf4dddf71c407fb61ee0b6aff7a398c1b579d9b2402c6d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "95c29a0defac05254d2ab606317b6674fc48eca299641c7b7b83a77eb0592e8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59229dd3c3b56c21f4f7a8cb19f933dd2993b157280d2e14f2678b31e6b23184"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a3f0ddd6eb6c7fc6e35ef4b30a7a317f500a19b7e56d704cde86286111b6e7ea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "476a01757451165df7af02da5b6fb9fdd913e3756fcbadb1bb8ad50a44031b20"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91f8fb98c626f25e30e71f58f984d43693d266c1ac34310f1f9deea064d22651"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e0c6dbb00567b9dc10ff44fb43a243111470b63b6eced2ce13b6b4c8c0581fcb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c32cfedb24e730cc73a279e8089bfd9b5bed49285b7ddb313ac631732eb9a25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed63830bdd367a40a2d077d820c073078b4839383371ae749bad43487f718e21"
   end
 
   depends_on "pkgconf" => :build
@@ -33,6 +33,9 @@ class CodeServer < Formula
 
     libexec.install Dir["*"]
     bin.install_symlink libexec/"out/node/entry.js" => "code-server"
+
+    # Remove pre-built binaries which are unused as a source-built binary is available
+    rm_r(libexec/"node_modules/argon2/prebuilds")
 
     # Remove pre-built binaries where source in not available to allow compilation
     # https://www.npmjs.com/package/@azure/msal-node-runtime
