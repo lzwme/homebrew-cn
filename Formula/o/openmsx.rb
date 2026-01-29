@@ -62,7 +62,6 @@ class Openmsx < Formula
 
   def install
     if OS.mac? && MacOS.version <= :ventura
-      ENV.llvm_clang
       ENV.prepend "LDFLAGS", "-L#{Formula["llvm"].opt_lib}/unwind -lunwind"
       # When using Homebrew's superenv shims, we need to use HOMEBREW_LIBRARY_PATHS
       # rather than LDFLAGS for libc++ in order to correctly link to LLVM's libc++.

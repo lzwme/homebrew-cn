@@ -38,10 +38,7 @@ class Vapoursynth < Formula
   end
 
   def install
-    if OS.mac? && MacOS.version <= :ventura
-      ENV.llvm_clang
-      ENV.prepend "LDFLAGS", "-L#{Formula["llvm"].opt_lib}/c++"
-    end
+    ENV.prepend "LDFLAGS", "-L#{Formula["llvm"].opt_lib}/c++" if OS.mac? && MacOS.version <= :ventura
 
     system "./autogen.sh"
     inreplace "Makefile.in", "pkglibdir = $(libdir)", "pkglibdir = $(exec_prefix)"

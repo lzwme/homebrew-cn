@@ -50,8 +50,6 @@ class Mold < Formula
   end
 
   def install
-    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1500)
-
     # Avoid embedding libdir in the binary.
     # This helps make the bottle relocatable.
     inreplace "lib/config.h.in", "@CMAKE_INSTALL_FULL_LIBDIR@", ""
@@ -73,9 +71,7 @@ class Mold < Formula
   end
 
   def caveats
-    <<~EOS
-      Support for Mach-O targets has been removed.
-    EOS
+    "Support for Mach-O targets has been removed."
   end
 
   test do

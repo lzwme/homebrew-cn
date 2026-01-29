@@ -1,17 +1,17 @@
 class Libre < Formula
   desc "Toolkit library for asynchronous network I/O with protocol stacks"
   homepage "https://github.com/baresip/re"
-  url "https://ghfast.top/https://github.com/baresip/re/archive/refs/tags/v4.4.0.tar.gz"
-  sha256 "fd7d8bd9ce31aee6ce95e0162931330493b6ca816fa7eb00a6801ca1af01745c"
+  url "https://ghfast.top/https://github.com/baresip/re/archive/refs/tags/v4.5.0.tar.gz"
+  sha256 "be6bc1adb74bac8ea866e7fff655f9c9bcd9dbceebf7337649c7ac834c7028dd"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a29017c6c68d56ea7f28f79010e3f4279fa9f1ae49fa430c830c3386de0e66af"
-    sha256 cellar: :any,                 arm64_sequoia: "68d21d2fcfa677398b4dea15812ca014e05ca3c06fb6a51e8dc19af23c638882"
-    sha256 cellar: :any,                 arm64_sonoma:  "9a66e4fd0c389f99f9882517f000c5335d7f875a450b362681a72c07a848aad3"
-    sha256 cellar: :any,                 sonoma:        "5ab3bc7e6922cce5a1a186b0c670f35de12efe51d1c5e7960f9fd62e4590b780"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cb20117f8b7785e02582520ec6fe5efcfa48582c3526069bb98dd928736e870"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2eac19de6abafce9d5d9a86d7f674024b394fc5883485d4c9fb357b9473923b"
+    sha256 cellar: :any,                 arm64_tahoe:   "9e1ec091c8bda61d0a8848d078f519fc66852bf5be67ace00163f8ced60c5cc2"
+    sha256 cellar: :any,                 arm64_sequoia: "2b775c95e27bb0efbbab252db37c78dbc4ed47a1c96dfe7e867d77a6b40d04c4"
+    sha256 cellar: :any,                 arm64_sonoma:  "d4f532cf113353710686a29adb131d3b366c3506426589f9f5504584e2fd37b4"
+    sha256 cellar: :any,                 sonoma:        "4a06200d20f6cb554366026649ea83f001736718a792443e5f5e196b99b0f34a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9f873587a29add341a2721846e801fbcb4a5965dc6c04dba61251a0c8cd2bb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8d9563cdb9d0ea9e2d9f6e2093685eb207177628b384ee75999bc68710596f6"
   end
 
   depends_on "cmake" => :build

@@ -43,7 +43,6 @@ class Podofo < Formula
 
   def install
     if OS.mac? && MacOS.version <= :ventura
-      ENV.llvm_clang
       # When using Homebrew's superenv shims, we need to use HOMEBREW_LIBRARY_PATHS
       # rather than LDFLAGS for libc++ in order to correctly link to LLVM's libc++.
       ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib/"c++"

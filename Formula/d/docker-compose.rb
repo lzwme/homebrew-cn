@@ -15,12 +15,13 @@ class DockerCompose < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed4d83eae8c854b5654e8010377b786ecd59d1968093217dc0ca6f4a37b59958"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da792e02fc30e72174782f85ac32f474cff6fbcc2a28d8d179b2ee2d59ca681c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a83dc20ff4e53f24a988e0339162641a7b5a9bf99742487530ec003ce47c6e73"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fe086d302aefeb54f8bf3d99833c77b1140b14366b5c6688e61eb57c777eac52"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "13893ab3953b8fd045e8d8c0b80bd5cba3f04f43462024bbc8a727a7ad5fd9a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2af5a767cd2a4d4fc7a3e6bb9a782f7ccff30c3177f0de024c9a79adf587911"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a07dbf37dbac45c75c2542a42f613f919f1eb622e7cd1828e82e1d2731a87bf5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2b20efa8c6288da16d59c32780244af8d1d90605a0ca6e688080913eb1ec43c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6189f2ca577c2e8176365c76f1452d025efb47f9409fd80ee1b711d37e72593"
+    sha256 cellar: :any_skip_relocation, sonoma:        "422a0e8618aa5bbee703be3082f6fff599e69b5a0c0627612175cfcf199a1b05"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "58d3a5a787903a32e883f74f59357ff7a169811448749a65640ee2b7d27f043b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f366a89330d5ba5581ce7d324543820064e0a86723ef0e9cb50f181758c9a63"
   end
 
   depends_on "go" => :build
@@ -33,7 +34,8 @@ class DockerCompose < Formula
       -s -w
       -X github.com/docker/compose/v#{version.major}/internal.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags:), "./cmd"
+    tags = %w[fsnotify] if OS.mac?
+    system "go", "build", *std_go_args(ldflags:, tags:), "./cmd"
 
     (lib/"docker/cli-plugins").install_symlink bin/"docker-compose"
   end

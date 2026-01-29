@@ -20,12 +20,12 @@ class Pdnsrec < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "python@3.14" => :build
   depends_on "rust" => :build
   depends_on "boost"
   depends_on "lua"
   depends_on "openssl@3"
 
+  uses_from_macos "python" => :build
   uses_from_macos "curl"
 
   on_macos do
@@ -41,11 +41,7 @@ class Pdnsrec < Formula
   end
 
   def install
-    ENV.cxx11
-    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
-
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}/powerdns
       --disable-silent-rules
       --with-boost=#{Formula["boost"].opt_prefix}
@@ -54,7 +50,7 @@ class Pdnsrec < Formula
       --without-net-snmp
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 

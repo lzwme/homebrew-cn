@@ -3,15 +3,12 @@ class Shellshare < Formula
 
   desc "Live Terminal Broadcast"
   homepage "https://github.com/vitorbaptista/shellshare"
-  url "https://ghfast.top/https://github.com/vitorbaptista/shellshare/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "0a102c863f60402ab48908563edde38450add0ae02454360fa94065824a61907"
+  url "https://ghfast.top/https://github.com/vitorbaptista/shellshare/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "bc56d21bcef73aa2c40cd689c84cf8a0c8d2682e76b1f48e8f7ff53b7325f72e"
   license "Apache-2.0"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "74bd14d6127d61de20dc99c0936450669eb5bbe22788f0ef64abdcacf2c1f7a0"
+    sha256 cellar: :any_skip_relocation, all: "ba4ddd42e53194b47c2128991ff4bc17e5eace09dd41819771fe3bd9fd02f54f"
   end
 
   uses_from_macos "python"

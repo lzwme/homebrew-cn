@@ -1,18 +1,18 @@
 class Falcoctl < Formula
   desc "CLI tool for working with Falco and its ecosystem components"
   homepage "https://github.com/falcosecurity/falcoctl"
-  url "https://ghfast.top/https://github.com/falcosecurity/falcoctl/archive/refs/tags/v0.12.1.tar.gz"
-  sha256 "343fdb1c622b63463afe6a1b955a0ad129ea51f128cd4ab8c7c85eab6dfc1fdb"
+  url "https://ghfast.top/https://github.com/falcosecurity/falcoctl/archive/refs/tags/v0.12.2.tar.gz"
+  sha256 "05290a97ac6ac886fc4b34d157d533de37d5a1031f81cf4e6eb1f056c4015f49"
   license "Apache-2.0"
   head "https://github.com/falcosecurity/falcoctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "82cfefec251a03a107d2658ace80dac509f84a31d596de266f22bbc449f6c896"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83d7d2c0116986bb91ff67c87c39b0380b700acfe1316d63e02f3672b42486d4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "38388125005a44879322761b0d71ae30ca10e82f9276b2d917494f555d1a888f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59768a28ac90c84fb1834470221911c10643a4d591d42137648aa344ea5a2a51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7da0c9c3071c94bfa6fa2459a5e3ae8634b1b23a2d2eef279ca6ae4cf4f91e16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1852833d366550c1699aeb7a9fbbe39bd5ff18bf418519e1e48a7c14af7bbb5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "580f5b4448b45dbce6b0c81469ab2aa5fff60527bfba560e32aba21c4398065c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "975a8845bcb5401fe6b9b8084512ce4ec1f800ca8ea4eb56fce4c1c9cde5c962"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3fd72eb17b4b6f5d6839d42f7c4dedc96d3fc0b525a56fda6e8de0169d27757d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9ffd3c24f261628ce5cd34e8e3ed7eb5f1400bfb6c6ef403ee20346b27e94d97"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "166745727c43a2c13dc11acbda8317b4eef4d2603a944dfe5aeee949bcc0792d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a77803385d65096c0b0cad6fbf99aa6b78f47b00c501378e506921893cd7cbe1"
   end
 
   depends_on "go" => :build

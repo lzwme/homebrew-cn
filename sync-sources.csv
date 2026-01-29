@@ -2769,7 +2769,7 @@ Homebrew-homebrew-core/Formula/g/grizzly.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/groestlcoin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/groff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/grok.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/grokj2k.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/grokj2k.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grokmirror.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gromacs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gron.rb, Homebrew/homebrew-core, 1
@@ -14481,6 +14481,7 @@ Homebrew-homebrew-cask/Casks/s/sdformatter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sdm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/seadrive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/seafile-client.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/seam-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/seamonkey.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/second-life-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/secretive.rb, Homebrew/homebrew-cask, 1
@@ -15161,6 +15162,7 @@ Homebrew-homebrew-cask/Casks/t/trilium-notes.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/trim-enabler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/triplecheese.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tripmode.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/tritium.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/trivial.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/trojanx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/trolcommander.rb, Homebrew/homebrew-cask, 1

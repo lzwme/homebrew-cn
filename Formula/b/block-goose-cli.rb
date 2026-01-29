@@ -1,8 +1,8 @@
 class BlockGooseCli < Formula
   desc "Open source, extensible AI agent that goes beyond code suggestions"
   homepage "https://block.github.io/goose/"
-  url "https://ghfast.top/https://github.com/block/goose/archive/refs/tags/v1.21.1.tar.gz"
-  sha256 "02b30adb483dbd1fb30ffa3f5d96e81c95dd103c22c1fe8b2e7cc4c98d525326"
+  url "https://ghfast.top/https://github.com/block/goose/archive/refs/tags/v1.21.2.tar.gz"
+  sha256 "e52105b0c4c24ba2c31175ee8fef562af62c7e82e8b3b94abf64566f8d448fe7"
   license "Apache-2.0"
   head "https://github.com/block/goose.git", branch: "main"
 
@@ -12,12 +12,12 @@ class BlockGooseCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e40ae638762c68da5d2158f516d293736e7b48f762abd75f13eed8ddba8fa3eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d74b64dd9a15ae96848c47e9df486ca2b4f19a952ac349bf136601486d54e03"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea4d01c958cb69ba44942121781a7ecaac947355458b3bf51e1b3f1328d7543c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "56138f739b112c5c54610ae5cb9fd95879e471c23a4aa6ccd74625308cee90b5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7e832e49c9deeb0c3769a413817e7a97feba2bace0fae57a48329459b9cac98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f11afa63146347abb8c7b7f74236aa7257ddfc86b2cbf420eb71a650e1d41773"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae4910ece38859b81c54ac85035df9896a7e96772b0e1cf2f979e1984e9aea86"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9587e3a43456ed02859bb7ef5cb833c935839853efd1f978a0abb2c7d7136e09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "defc9868b49664ff2b9b52bfbd537870d4fd05efe4e8eea4b39c0a8918d62b74"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9fad8ca56fa1c1f3a7d33ca478fc6c7da2726f5b8d8b0ed67908e0c495dcd1b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aaa656ea1679b18da8ca517e6aad4643df29400ed545623d544bd3c27fd28db5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdda0ba612b51a8fb8b301261201319eae4fac55eb72ab26ec62eca7799ed784"
   end
 
   depends_on "pkgconf" => :build

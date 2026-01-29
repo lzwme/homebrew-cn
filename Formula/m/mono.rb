@@ -65,8 +65,6 @@ class Mono < Formula
   link_overwrite "lib/cli"
 
   def install
-    ENV.llvm_clang if DevelopmentTools.clang_build_version >= 1600
-
     # Replace hardcoded /usr/share directory. Paths like /usr/share/.mono,
     # /usr/share/.isolatedstorage, and /usr/share/template are referenced in code.
     inreplace_files = %w[

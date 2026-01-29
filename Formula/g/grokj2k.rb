@@ -1,10 +1,8 @@
 class Grokj2k < Formula
   desc "JPEG 2000 Library"
   homepage "https://github.com/GrokImageCompression/grok"
-  # pull from git tag to get submodules
-  url "https://github.com/GrokImageCompression/grok.git",
-      tag:      "v20.0.5",
-      revision: "6367d1f466557e8cd96187de30da6e4899cb425d"
+  url "https://ghfast.top/https://github.com/GrokImageCompression/grok/releases/download/v20.0.5/source-full.tar.gz"
+  sha256 "7c34c4cd2b545d3bbd05b13c8e57db6a27dfd301613932f26aac3b4bd5397a8b"
   license "AGPL-3.0-or-later"
   head "https://github.com/GrokImageCompression/grok.git", branch: "master"
 
@@ -41,7 +39,7 @@ class Grokj2k < Formula
   end
 
   fails_with :clang do
-    build 1200
+    build 1699
     cause "Requires C++20"
   end
 
@@ -52,8 +50,6 @@ class Grokj2k < Formula
   end
 
   def install
-    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version < 1700)
-
     # Fix: ExifTool Perl module not found
     ENV.prepend_path "PERL5LIB", Formula["exiftool"].opt_libexec/"lib/perl5"
 

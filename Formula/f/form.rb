@@ -1,8 +1,8 @@
 class Form < Formula
   desc "Symbolic manipulation system"
   homepage "https://www.nikhef.nl/~form/"
-  url "https://ghfast.top/https://github.com/form-dev/form/releases/download/v4.3.1/form-4.3.1.tar.gz"
-  sha256 "f1f512dc34fe9bbd6b19f2dfef05fcb9912dfb43c8368a75b796ec472ee8bbce"
+  url "https://ghfast.top/https://github.com/form-dev/form/releases/download/v5.0.0/form-5.0.0.tar.gz"
+  sha256 "10d22acf2f0acf831b494e6a73682828980b9054ea8ec2b5dc46677dca8d6518"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -10,24 +10,17 @@ class Form < Formula
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "68c5aae18792314ad080873826f587a7648e493621d5723cae8c45c7bb330bf5"
-    sha256 cellar: :any,                 arm64_sequoia:  "891f2e2731329a342dcbda8da08939d5ef910a1bedfaab2be34da51c1f6fe72d"
-    sha256 cellar: :any,                 arm64_sonoma:   "9ebf608d1d098eac5b6b0ed04117538f42719ac61db8b7bc06a40aca73d62fab"
-    sha256 cellar: :any,                 arm64_ventura:  "9db94c3342b5744b787f9950b3b5931f2b4a1d55daad02352d3daffde5d6b376"
-    sha256 cellar: :any,                 arm64_monterey: "ddfd7b8d84cc991ca0ccaea83bab5135535d5a4d96f4daca1dce9b89b18f7992"
-    sha256 cellar: :any,                 arm64_big_sur:  "e30e69e4931094eafe38a8c2d25966b86f0df3a8aacffe5480cf0098b84d97c9"
-    sha256 cellar: :any,                 sonoma:         "73d42177eaa7cc3546234363beebd1aee8011333ea798cc8020fc65e79bb5824"
-    sha256 cellar: :any,                 ventura:        "fc08ffd719328fbd615fc269e7a0a70ed51b1d365abdbd336361ab3645a90d63"
-    sha256 cellar: :any,                 monterey:       "4e4183cd34e538a43a6cfcb99ef054ab75786e40088806aed7d61a54950869e5"
-    sha256 cellar: :any,                 big_sur:        "62ddb0717b667323815d8a35c6377bb479be7ebe6ceb5e331d341191d6cb0e5e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "97d17131f6de2b0dff19e8777cf5e26148e0b713c6e6ea2ad66bb740ed8ca5a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1bdafe12587a3d4a8f64c28024b01ba0137e81ae5ceab40c865614544c66eb89"
+    sha256 cellar: :any,                 arm64_tahoe:   "2a51453b7d9db299d5e3a952ef662df7fff36998798529e0e521e187acb944b0"
+    sha256 cellar: :any,                 arm64_sequoia: "67c1e4e94dab3c4e15240846106c7c324649440406571491448ac7b12202eaf3"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe7861af0557ce649d0ddfa2d5519fef77ba640683eba01c42df6da3f5a5128c"
+    sha256 cellar: :any,                 sonoma:        "7d1945e672162a5aca46fdf069a224c83fdc498f62dc06fc47fec612744b83f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f37e47b7e8e866f1a05744ebd993ca8db1d3c5f59f01c9cb9e2a4393dda21604"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7452db7be5b86008708893949d2bc6435e13ec7dd9e620ab54fe5c43d00edaae"
   end
 
   depends_on "gmp"
+  depends_on "mpfr"
 
   uses_from_macos "zlib"
 
