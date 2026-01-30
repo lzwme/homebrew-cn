@@ -38,10 +38,7 @@ class Libbdplus < Formula
   end
 
   depends_on "libgcrypt"
-
-  on_macos do
-    depends_on "libgpg-error"
-  end
+  depends_on "libgpg-error"
 
   def install
     system "./bootstrap" if build.head?

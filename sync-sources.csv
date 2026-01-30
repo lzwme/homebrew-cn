@@ -804,6 +804,7 @@ Homebrew-homebrew-core/Formula/c/cargo-dist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-docset.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-edit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-expand.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cargo-features-manager.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-flamegraph.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-fuzz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-geiger.rb, Homebrew/homebrew-core, 1
@@ -1412,6 +1413,7 @@ Homebrew-homebrew-core/Formula/d/davix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/davmail.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/db-vcs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dbacl.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dbcsr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dbg-macro.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dbhash.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dblab.rb, Homebrew/homebrew-core, 1
@@ -12614,6 +12616,7 @@ Homebrew-homebrew-cask/Casks/i/imgotv.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/imhex.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/impactor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/inav-configurator.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/i/infinidesk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/infinity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/inform.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/infra.rb, Homebrew/homebrew-cask, 0
@@ -15056,7 +15059,7 @@ Homebrew-homebrew-cask/Casks/t/tidelift.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tidgi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tiger-trade.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tigerjython.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/t/tigervnc-viewer.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/tigervnc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tikzit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tiled.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tiles.rb, Homebrew/homebrew-cask, 0

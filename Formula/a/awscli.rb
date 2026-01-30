@@ -3,18 +3,18 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://ghfast.top/https://github.com/aws/aws-cli/archive/refs/tags/2.33.9.tar.gz"
-  sha256 "d4a4e926a1978bcf36344e616ce199ec079632369c2f19643529c09af194624f"
+  url "https://ghfast.top/https://github.com/aws/aws-cli/archive/refs/tags/2.33.11.tar.gz"
+  sha256 "5b1ca71a6d79db436aba35d97347d168cfd796bcbb774c7e18372dcb2bbfb7ca"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7bfea84d49d9ac8041c5e367cec0a3b359522a822b6fbab805b46857af7676dc"
-    sha256 cellar: :any,                 arm64_sequoia: "276ecd1baa266964843e49f5fd5a9ce2fa650cb298e439df987a0561fa673cbc"
-    sha256 cellar: :any,                 arm64_sonoma:  "0467d57e6c12f8a28c74d28d9ef809e1c3760d9109bb66019b1152d7fa7baa67"
-    sha256 cellar: :any,                 sonoma:        "0a02b0c4631e3e191648dbd3e217bd3c86b3f5b2ea3cc6662b5e3e31d6d7568a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "04dab93839a3c8b70a25fa83972ec8a81b00022f1329796019dead202510682d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb8c06b137e43bf49f53f591fb38d1ad6c2ac4da15a7c6f81f423cb4d465f99b"
+    sha256 cellar: :any,                 arm64_tahoe:   "12fa8eddda561f7f6784e46fbfb7e4e63461cc5612576d31fd92f588eace3d49"
+    sha256 cellar: :any,                 arm64_sequoia: "e2d4fe225ddf4693ee4218fc04bf09cb667966376ae8ec6cfec9002e9d6a6652"
+    sha256 cellar: :any,                 arm64_sonoma:  "43dd978660b56159042f382209ce5b836d9c1f798bece5b93bcabb322644304c"
+    sha256 cellar: :any,                 sonoma:        "c2fc392752021bdcab52e15e9832b2d496ac519e57d11ea8a8fb10f25743ef3f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1cb725064f00ba1063de5957c8258b42b8414fcc96cfc3607d73157fcb81a840"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23d571dbb96ee11800a4e1f858edd26e74d090f19f5b9941d623b797bf4913cf"
   end
 
   depends_on "cmake" => :build
@@ -27,8 +27,8 @@ class Awscli < Formula
   pypi_packages extra_packages: "flit-core"
 
   resource "awscrt" do
-    url "https://files.pythonhosted.org/packages/67/59/ad1d57c1cc5e76e11b762b3412183e2addf506f7f1e42f7b28aeee7631f6/awscrt-0.29.1.tar.gz"
-    sha256 "8fc304af5f6f83e7e73096fb42eb51d4a85fa7a90456466ef22872095d4ca46f"
+    url "https://files.pythonhosted.org/packages/35/c9/8e397a679f43c53cb51b338bda2645e8a474c9a4dd5606d0ee365b7b5fbc/awscrt-0.31.1.tar.gz"
+    sha256 "abb64768d25bf563da8e2165d477a491cba18bc22c4ec8db7acbdae94e59ebc4"
   end
 
   resource "colorama" do

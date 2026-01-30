@@ -28,6 +28,8 @@ class Libvncserver < Formula
   depends_on "libpng"
   depends_on "openssl@3"
 
+  uses_from_macos "zlib"
+
   def install
     args = %W[
       -DJPEG_INCLUDE_DIR=#{Formula["jpeg-turbo"].opt_include}

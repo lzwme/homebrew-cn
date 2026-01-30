@@ -1,8 +1,8 @@
 class Sysdig < Formula
   desc "System-level exploration and troubleshooting tool"
   homepage "https://sysdig.com/"
-  url "https://ghfast.top/https://github.com/draios/sysdig/archive/refs/tags/0.41.3.tar.gz"
-  sha256 "ec5a4a485655ccf14395ac5b8fc71344c6fd46c8336c686aabe22f89f138da20"
+  url "https://ghfast.top/https://github.com/draios/sysdig/archive/refs/tags/0.41.4.tar.gz"
+  sha256 "36daa6a06705569fcc9b0579992e2457494003aea0065eabf54b3e16d67511f7"
   license all_of: [
     "Apache-2.0",
     { any_of: ["GPL-2.0-only", "MIT"] },                  # `falcosecurity-libs`, driver/
@@ -16,12 +16,12 @@ class Sysdig < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "4864cf82b58c869a934c3b080529550bde3cb8517f74d17481b41044eb9993f6"
-    sha256                               arm64_sequoia: "4a14d84ec1a651caaa1dc1feca0967aa02382584fdbae3dbeaa0a67a2bf59297"
-    sha256                               arm64_sonoma:  "0706da11716ecb6e9b53079c510cd708e626a82753364794f4f3f20fd88344ec"
-    sha256                               sonoma:        "4184dc03f3cc50ee4fcaede5c7f8d44e8d62cc8b06561c25e51ffb40ed31c659"
-    sha256                               arm64_linux:   "212837259a524f0ed319cf6cd971618393f2a8b7f5232cc1ea349070cb540296"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc435715d41202b5f9f3ea27cd7d73b93136ed89ddadafe286fc8e23fcbefbc4"
+    sha256                               arm64_tahoe:   "e786adfbdbe1369eb90eecac547c16018415c5694ec7375f4996594a2a232ebb"
+    sha256                               arm64_sequoia: "78c9297d83306170d2bc43f2a92db0c0fd06ed1756b94cc631c6d353dbe7b94d"
+    sha256                               arm64_sonoma:  "97bc43a3b1e88440ee5f83e7fbfb004af08feaef74046b74fff30c55ddcfbd81"
+    sha256                               sonoma:        "16b73e4bb647fc7349f4ea5f72c622711fcc629f16fe1dbef0c1b1ad601c7dd7"
+    sha256                               arm64_linux:   "c2d55cd64ff3cf196bf2d234f743b4174a33dd8103ffc4895c8b6f90c2b7bc56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f0aa0b0d832cdda512511e596bf147c55f4a9d9fed2ddb5f4f07710c7e581ec"
   end
 
   # FIXME: switch to brewed `falcosecurity-libs`

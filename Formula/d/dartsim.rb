@@ -1,17 +1,17 @@
 class Dartsim < Formula
   desc "Dynamic Animation and Robotics Toolkit"
   homepage "https://dartsim.github.io/"
-  url "https://ghfast.top/https://github.com/dartsim/dart/archive/refs/tags/v6.16.5.tar.gz"
-  sha256 "ea1709540131718a1af8138a89687e9cb2c3d21304c4d773ae6d70815e843cf6"
+  url "https://ghfast.top/https://github.com/dartsim/dart/archive/refs/tags/v6.16.6.tar.gz"
+  sha256 "e61435cd5fb12025c7dce8020088a64701a50d90f63e9b8a0f77e447d120bdae"
   license "BSD-2-Clause"
 
   bottle do
-    sha256                               arm64_tahoe:   "6aa5dc663ed9ead88c923696a692162969cae52f29054eb4859e8529145524f8"
-    sha256                               arm64_sequoia: "9dfdab046191fcc7e1ea632eb5054c22fb173c39455270a5d14575378704ec3a"
-    sha256                               arm64_sonoma:  "72ff4719a6ba87dab3afd4a46a695b0ede364f729906dab597ff5368a64ce773"
-    sha256                               sonoma:        "0d9999bd67417071d68c4443e2c05abf33b47801159b71410e1923b0b62b794c"
-    sha256                               arm64_linux:   "1d98618f75b3c75ecfa4bf071ca252d2d477dad314d0f45f61eea9d34ead8d3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2de237e1e710a5e85b355a3dc6bc6225e393d2a8af7d066f2056e130b8a4c737"
+    sha256                               arm64_tahoe:   "1141172197f68282dad6067fc8ac26839c038f371a634680ab23ed17dacf8ee5"
+    sha256                               arm64_sequoia: "d074243f7df39a7e0ad0a718a3f7a6784adf5fd09494856d770f7e968350b25e"
+    sha256                               arm64_sonoma:  "716807915b17820161b7283fca68c55676fa5da6e2fc713aeb242ddd7801e849"
+    sha256                               sonoma:        "a930a8b3d702fb929e8df33e8a98c7041984f4a144e45b0e47fb8a65f69eec8c"
+    sha256                               arm64_linux:   "8259470d6c621852bb2047f952d82a5b016b09a9bc93b52fafdaba4405b4cc13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca1568d591c6cbc02e0fca067247dcc12bc74c1ecfaea53bfd72e9b3a4c9fe88"
   end
 
   depends_on "cmake" => [:build, :test]

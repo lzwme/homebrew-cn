@@ -36,12 +36,13 @@ class Texlive < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "471f7e5214e3ab4c76acd78d2590fa138b7e1a2371e732501783a5fa7f864ee9"
-    sha256 arm64_sequoia: "55c883a3c91d1f4f78e296797b03b92e8014e2be22381e0fc56d1635c37006f2"
-    sha256 arm64_sonoma:  "7167dd978f68302473502f115d92cae0e5a90a3b3a384b58b2b5cfcf14b1dade"
-    sha256 sonoma:        "ea49145d420909cea69d40c39c1c163467755baa718f14943e3d28f91659e48c"
-    sha256 arm64_linux:   "55905476b8ff7ca098788bd7e52dd3385604703332c155caede4aed94eddb479"
-    sha256 x86_64_linux:  "5246ba8db60933f761a9a803359fe9a406f5287fc9c5304b9ecfd51c501d7b27"
+    rebuild 1
+    sha256 arm64_tahoe:   "180a15058e025c1da8584e299d281f83046c032470342d3a24301563f5ff7b52"
+    sha256 arm64_sequoia: "e3edcce538cd04e1cae94257e4034e49ca69a7001176074f2f1aa7049419ee01"
+    sha256 arm64_sonoma:  "1213f823c65a7055bddc2c1262ee5cf8ad3eeeda6b8124f14b1b65773dc1c264"
+    sha256 sonoma:        "6a291f2cf9da55669a766d38854a4006d3ec762673ca602833feb36829793432"
+    sha256 arm64_linux:   "b3ae8c0726854f48cfb819339985d87a6e4db7eaed2592ed3f88f42a2f747451"
+    sha256 x86_64_linux:  "943351d0f4e4b543e811b5b008a074de0ff7b2a5d6ada7f40cef9246403ccb55"
   end
 
   depends_on "pkgconf" => :build
@@ -69,10 +70,10 @@ class Texlive < Formula
   depends_on "potrace"
   depends_on "pstoedit"
   depends_on "python@3.14"
+  depends_on "tcl-tk"
 
   uses_from_macos "ncurses"
   uses_from_macos "ruby"
-  uses_from_macos "tcl-tk"
   uses_from_macos "zlib"
 
   on_linux do

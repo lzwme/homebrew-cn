@@ -13,11 +13,6 @@ class AssimpAT5 < Formula
     "Zlib",      # contrib/unzip
   ]
 
-  livecheck do
-    url :stable
-    regex(/^v?(5(?:\.\d+)+)$/i)
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "3faef1c367567a99e18a728139d787d046e0aefc30f65d541f88ccfd27b1ce19"
     sha256 cellar: :any,                 arm64_sequoia: "88b53d2e04bf2557a8b9231ccf1d7924bb55917003fe16872c8f864de930feb4"
@@ -30,6 +25,10 @@ class AssimpAT5 < Formula
   end
 
   keg_only :versioned_formula
+
+  # https://github.com/assimp/assimp/blob/master/SECURITY.md
+  deprecate! date: "2026-01-29", because: :unsupported
+  disable! date: "2027-01-29", because: :unsupported
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build

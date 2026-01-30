@@ -1,17 +1,17 @@
 class Libxmu < Formula
   desc "X.Org: X miscellaneous utility routines library"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libXmu-1.3.0.tar.xz"
-  sha256 "983b090a245a33f2ea561895bf8aed5b709ef25ac06af0e1ccffecf15acc09d5"
+  url "https://www.x.org/archive/individual/lib/libXmu-1.3.1.tar.xz"
+  sha256 "81a99e94c4501e81c427cbaa4a11748b584933e94b7a156830c3621256857bc4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ab4c600bd72d40fa49afd32e6133163ad650df61074620bd92f2a99ade510314"
-    sha256 cellar: :any,                 arm64_sequoia: "e59d51c83501b661fecfaf6a5e66faba5f8d0adaece6a293738c1e67112c712f"
-    sha256 cellar: :any,                 arm64_sonoma:  "103588f768f0ae6cdadba8dad3a3fadc2ff6e3ef91e243e6e072f3030c2bf8c0"
-    sha256 cellar: :any,                 sonoma:        "fb06bfa8c6dca90cf5eee7dc1b2de38e88ceb3ef9b9cc949b2b56fb79227a529"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4424f0ba2eb7452caa1f49dd0ac7d8c1b8ba41d33e12911f08ec75571637f5fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c43704f643250f8ca01798410167abeee5890051b1133c34d1053054611d8ef"
+    sha256 cellar: :any,                 arm64_tahoe:   "f3119cf62a6b19cb301339f6611ad94df20c57f1d1f7cf508284f38baf9688bc"
+    sha256 cellar: :any,                 arm64_sequoia: "bf7fa457cb2dc12f1ecf9adfb0e96187fc41f1d9654750c89c121e840df67d02"
+    sha256 cellar: :any,                 arm64_sonoma:  "209c3e6cd9b134c9ccc2a59c27ead872c83a334c8d426fc3e845b363ab47f431"
+    sha256 cellar: :any,                 sonoma:        "ae23ca0f5401937f9d17c94c13b0b34b1f4e514da51333974fd1da20dcd59cb5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "89de2ef3c3cd5817dff3f0967e7a737fe5a1d3fc26a2bc5b77c52da24f1a4ac9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9563085140d7172e3e0365803b529a62a211a55611907b58e6fdb3ce726ae19b"
   end
 
   depends_on "pkgconf" => :build

@@ -1,10 +1,10 @@
 cask "seam-app" do
-  version "0.1.0"
-  sha256 "a54bb0a6fe10fe3dc05ef242deb2061a086ff20fdfeab463171a753f58b71a9e"
+  version "0.1.1"
+  sha256 "f6a5af21253ef3524f1e059abaf0c54d2ab135d4de84c398bb074101a6ace1e8"
 
   url "https://releases.getseam.app/#{version}/Seam.dmg"
   name "Seam"
-  desc "Dynamic Island with system HUDs and notifications"
+  desc "Productivity-first Dynamic Island for your Notch"
   homepage "https://getseam.app/"
 
   livecheck do

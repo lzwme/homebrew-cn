@@ -1,8 +1,8 @@
 class Tintin < Formula
   desc "MUD client"
   homepage "https://tintin.mudhalla.net/"
-  url "https://ghfast.top/https://github.com/scandum/tintin/releases/download/2.02.60/tintin-2.02.60.tar.gz"
-  sha256 "b638031d56029ae03365b81e6ef9069837a71a4fb8fb2d52453261114a76cc41"
+  url "https://ghfast.top/https://github.com/scandum/tintin/releases/download/2.02.61/tintin-2.02.61.tar.gz"
+  sha256 "640b4823b6f24ada6d417311bfd6263ab13be2422573c3b4ad4352223b535d88"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Tintin < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3c963d41b41220fa59dd9501af58cd4413d65cbb93da3efb8fa8e19b8405b1f0"
-    sha256 cellar: :any,                 arm64_sequoia: "3f5f2ea6f21237bbd0ff590dcfd5ab6690965925a5d3d72abd731dadf4aa8b52"
-    sha256 cellar: :any,                 arm64_sonoma:  "3c598cbc2d82074a8ddd339e73f2f38726f4985b88c27fd2d79e00f8397ba1fa"
-    sha256 cellar: :any,                 sonoma:        "b60885656a80c04a6a1542ed2ef6e55976c55e679fbc82877fd4f614761f0ef2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "796d114b742a1096b8c4514c2e3b5017ea3b6e7cea366610df47a5fafac0edbb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc9be808404bcf82a30c32258f3ccb5ded69d1e510fc4265b56a2da85866d448"
+    sha256 cellar: :any,                 arm64_tahoe:   "703ec5ebcc98c21a3d5d6b07ac46a6f9fa873424a5c4d3bb72099a99d70ed74a"
+    sha256 cellar: :any,                 arm64_sequoia: "45a2bd003f8af9e75652aa3eae618565b7d3855c64e27e959ce619503c50431d"
+    sha256 cellar: :any,                 arm64_sonoma:  "29db49a2c0495ee7f69d736d1175dc1629f6910647cb82ffaee82d36e32912d1"
+    sha256 cellar: :any,                 sonoma:        "0a26a3534747268cdb94ff00ca79f1bc82c60c4baf5511d339b58385bf70cabe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "55c5da4c7f337551822f85be46322e99b3885db87d50df1ec4f3accdba33dea5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be0a084d5f7c9bb8a0b273a4fd509c0ab115e5c8c7d1ffaa8e11911eae07149c"
   end
 
   depends_on "gnutls"

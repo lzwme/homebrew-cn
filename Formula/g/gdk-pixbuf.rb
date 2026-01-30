@@ -1,17 +1,17 @@
 class GdkPixbuf < Formula
   desc "Toolkit for image loading and pixel buffer manipulation"
   homepage "https://gtk.org"
-  url "https://download.gnome.org/sources/gdk-pixbuf/2.44/gdk-pixbuf-2.44.4.tar.xz"
-  sha256 "93a1aac3f1427ae73457397582a2c38d049638a801788ccbd5f48ca607bdbd17"
+  url "https://download.gnome.org/sources/gdk-pixbuf/2.44/gdk-pixbuf-2.44.5.tar.xz"
+  sha256 "69b93e09139b80c0ee661503d60deb5a5874a31772b5184b9cd5462a4100ab68"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "214a9f8db6df7d437e6d31978ebd428c038747fd48ea043d405077394c2b29f9"
-    sha256 arm64_sequoia: "0b34cc23df643d3c751ca5f447f23f7b7b816c11c9c051d9c95eb580e97e29e6"
-    sha256 arm64_sonoma:  "f268913eef8782bd96e7f07778e5af1b9e85d2ade10c802e0f3c55c03a218d65"
-    sha256 sonoma:        "bf1b48ffb8d7aa8d1227dd27aae65a02fa8835b83981ad35729364e62edb96ff"
-    sha256 arm64_linux:   "3e412198db87d9c389989e08a361dfd0cec5cc5b835a57c385bd77685ae8f05b"
-    sha256 x86_64_linux:  "775f3df6c2eeaa4bd0fe2581eadf8bb4b835417294545e558c831992d91839ab"
+    sha256 arm64_tahoe:   "0d6052d4db7c5a04aaf283aade5ebed7b59897ef3c71d078b1370971d0273fa6"
+    sha256 arm64_sequoia: "bbc77ab8f6598d5eea69412eb88243a63675bd710358ce935e25baa811868432"
+    sha256 arm64_sonoma:  "04682b77f2d62e7ab863888adb26b34031c5b5a1752d5ede0c3b4b5acf6a0572"
+    sha256 sonoma:        "6a7f1775452b41c9ce4925dbe83663c5901773a0ae7796f67b94f87b0fb340c7"
+    sha256 arm64_linux:   "e9b3519a2c8c45040212087aad4f5d757ddb9f2438072126e9938bdaa99fbdc2"
+    sha256 x86_64_linux:  "248afff2035368912d6e199728bca9db35e0e856712ba54221d5edc208e31a22"
   end
 
   depends_on "docutils" => :build # for rst2man
