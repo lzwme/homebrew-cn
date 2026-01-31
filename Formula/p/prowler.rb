@@ -6,15 +6,16 @@ class Prowler < Formula
   url "https://files.pythonhosted.org/packages/d7/91/2af2e926e5527684bffdc96018c5bc258acd789e8a54c83df42ec7ff9514/prowler-5.17.1.tar.gz"
   sha256 "9f27b6e801ef95d94d952d650c21300b7b8427087de48e24dfe2fcf5fa24cfaa"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d86a41c4f86c99be342e3fe1dfc3585dd1bb418d858cef7a1b104f7fe85f63bf"
-    sha256 cellar: :any,                 arm64_sequoia: "893ebbaeb398ec7cb81829a71eba18e4a608af5a97e7b89591c2916ab3b680e8"
-    sha256 cellar: :any,                 arm64_sonoma:  "2c886de369573ddb204a6acd07c2531b3693da0f97c9d3b2a7db42e96b158144"
-    sha256 cellar: :any,                 sonoma:        "2c62aaaa467871a6469550d171d05803f1314c5b12c44728a31be9c0c91d93b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "95e0a1764e5970b72fe400b1986f6de7dd52fb36e58f6c823433e7f30fef0996"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66160ebad7bfe63ac241b5e5e40eabacc419fa6538d27a14073b0d48e4e152cf"
+    sha256 cellar: :any,                 arm64_tahoe:   "c78476e822c17dfbe6cea0cc5aef62fc4bcab9fd9c213484d51e66103b8bb20a"
+    sha256 cellar: :any,                 arm64_sequoia: "ac0f92b5a4a20de7ef7e8bd0c1c84c4034368f5e679e26183ab9fe244a2adc58"
+    sha256 cellar: :any,                 arm64_sonoma:  "d71d3c87970f14a78e7c777e236e17a3685daf18f7bbdeff6fb630852aee3de8"
+    sha256 cellar: :any,                 sonoma:        "49001343cefb5653c5e14d38ea870ed889175d8e9206cec275149b5137283175"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bbe6334715dac2e8c2b8541cf422e183a090d3f4ac487fcea4788469bb9b37e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eac08d8b0f69ed520367d575238352970fb99f09231783716c7aff724dadcf37"
   end
 
   depends_on "cmake" => :build
@@ -534,8 +535,8 @@ class Prowler < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/34/10/0d79026ba60eadaae83796600cdf997ab5c99fae35742581f77687f6f174/google_auth-2.48.0rc0.tar.gz"
-    sha256 "63dca521b006aaeb945d80076ad80df1910e4accff1b2621d2d8ae7c2cec3ec1"
+    url "https://files.pythonhosted.org/packages/f9/e5/0f232ebec2089bf7bb9c2ee5ef115957dbc9a0eed795617ac063214f8fef/google_auth-2.49.0.dev0.tar.gz"
+    sha256 "8ebdc83d298b130bde4ded0e19cb983330f885736000348a83c161de23205e86"
   end
 
   resource "google-auth-httplib2" do
@@ -589,8 +590,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/b3/31/e121331fbaa41c6fd39d0c89a6a8733459713f177e9bcdc5558463a047ef/iamdata-0.1.202601261.tar.gz"
-    sha256 "f8e9923a85833921c505b0270502c6afc16c016de630d01d40bec495c07d2831"
+    url "https://files.pythonhosted.org/packages/ec/b1/d45554fd6370f86d2ae42f7400f5b45471b3a42f15a8f344d61918549b28/iamdata-0.1.202601301.tar.gz"
+    sha256 "19096c146031f19b0615f74b474fe6ebbfa6563466f3d7ecb67e27ea8eaea9a7"
   end
 
   resource "idna" do
@@ -790,8 +791,8 @@ class Prowler < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/53/b8/cda15d9d46d03d4aa3a67cb6bffe05173440ccf86a9541afaf7ac59a1b6b/protobuf-6.33.4.tar.gz"
-    sha256 "dc2e61bca3b10470c1912d166fe0af67bfc20eb55971dcef8dfa48ce14f0ed91"
+    url "https://files.pythonhosted.org/packages/ba/25/7c72c307aafc96fa87062aa6291d9f7c94836e43214d43722e86037aac02/protobuf-6.33.5.tar.gz"
+    sha256 "6ddcac2a081f8b7b9642c09406bc6a4290128fce5f471cddd165960bb9119e5c"
   end
 
   resource "py-iam-expand" do
@@ -897,11 +898,6 @@ class Prowler < Formula
   resource "rpds-py" do
     url "https://files.pythonhosted.org/packages/20/af/3f2f423103f1113b36230496629986e0ef7e199d2aa8392452b484b38ced/rpds_py-0.30.0.tar.gz"
     sha256 "dd8ff7cf90014af0c0f787eea34794ebf6415242ee1d6fa91eaba725cc441e84"
-  end
-
-  resource "rsa" do
-    url "https://files.pythonhosted.org/packages/da/8a/22b7beea3ee0d44b1916c0c1cb0ee3af23b700b6da9f04991899d0c555d4/rsa-4.9.1.tar.gz"
-    sha256 "e7bdbfdb5497da4c07dfd35530e1a902659db6ff241e39d9953cad06ebd0ae75"
   end
 
   resource "s3transfer" do

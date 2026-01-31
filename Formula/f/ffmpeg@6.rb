@@ -6,6 +6,7 @@ class FfmpegAT6 < Formula
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://ffmpeg.org/download.html"
@@ -13,12 +14,12 @@ class FfmpegAT6 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d9810751f734c06357db89e7fe085445afc046e9b95af867b5d01f9951fba106"
-    sha256 arm64_sequoia: "cc014b1a78effa32a96cb50a04e52249cc0b0d7b2a03505099d6eeb1c0a68e1b"
-    sha256 arm64_sonoma:  "4cd8d9dd427220c76e6b2c1792ed28b74e2268fef98ea55242e47e8aa9e6630e"
-    sha256 sonoma:        "a4a5ee337970a24332ebedeb3ce3db3226a16e03b0f4a0665a3796f38f5cfe24"
-    sha256 arm64_linux:   "673b4d6715b74ba45aed373abd5fe5747aa28e0648f68ba6005349fe9680eb1e"
-    sha256 x86_64_linux:  "daab35504afd471e75752462d1c5a9ff7b81d3c8a42fe907c7d958009666a98f"
+    sha256 arm64_tahoe:   "ac83e7def8f082c9cf6c9d8b1f0124f5b9448c3ed5d64e85bf1d44c7eae97826"
+    sha256 arm64_sequoia: "806a2e83d3051429ae4d5dc7683884211347db79d1801da41475e5f10233a90c"
+    sha256 arm64_sonoma:  "d60bb763d20b227978418082148044a72d49a93b342764c69e1115da57a7e4fb"
+    sha256 sonoma:        "dd567f7e5c94d06539e4396651539c8a8c701224feb4d1af5dbe756ef6840874"
+    sha256 arm64_linux:   "90d3d91a13e38c6dac93fbe9387506f072d5a13defe601173ce13337cc2fbe8e"
+    sha256 x86_64_linux:  "724739c5e928dcbacf430ba159369b61f81f6ea9c12153a8ad051f147594c82f"
   end
 
   keg_only :versioned_formula
@@ -96,6 +97,12 @@ class FfmpegAT6 < Formula
   patch do
     url "https://github.com/FFmpeg/FFmpeg/commit/d1ed5c06e3edc5f2b5f3664c80121fa55b0baa95.patch?full_index=1"
     sha256 "0eb23ab90c0e5904590731dd3b81c86a4127785bc2b367267d77723990fb94a2"
+  end
+
+  # Backport support for svt-av1 4.x
+  patch do
+    url "https://git.ffmpeg.org/gitweb/ffmpeg.git/patch/a5d4c398b411a00ac09d8fe3b66117222323844c"
+    sha256 "1dbbc1a4cf9834b3902236abc27fefe982da03a14bcaa89fb90c7c8bd10a1664"
   end
 
   def install

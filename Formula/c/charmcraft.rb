@@ -6,15 +6,15 @@ class Charmcraft < Formula
   url "https://files.pythonhosted.org/packages/08/66/48bba084a9e894571107eacdac3eae04ece27e83ceae4e71b5f8ed59077b/charmcraft-4.1.0.tar.gz"
   sha256 "b8b81cd6fcf58997fb9d28b3d0124b178d92a9eed4f77cc6350d778629f21653"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6f33dbce5392a67c84033ac669566d74cb87cd55050d7e35328add4ae0403a25"
-    sha256 cellar: :any,                 arm64_sequoia: "e194461dfc9367f8340371c9c7f04eebf50935d0445da54158a56e04ca0477c5"
-    sha256 cellar: :any,                 arm64_sonoma:  "7eb7577212b692d86019060a1bb329a6f5803adfccb3f1fdc13d60b90de4d8bd"
-    sha256 cellar: :any,                 sonoma:        "4d8f5bca6c93b8890832e473b2bb506df78d4a6417d838ed15686e76879d33e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75206822e4ad2f7b5c1b8751e19ec60ca2c7cb85216f8bab0c44bda30b32166a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a22e3c30ffb84be0736493165740c14e4dcd0cbb5ee30a577d9bf7be06ab8c4"
+    sha256 cellar: :any,                 arm64_tahoe:   "d9ae45c8b2356f12e5a2b8415b865dbd1f9efe97c5b62442bcff03d28732ff4d"
+    sha256 cellar: :any,                 arm64_sequoia: "562da25c0a2fd3d0580c7a0d1cc0521a1d44532d5906caa1f9a603e99f5ad8c2"
+    sha256 cellar: :any,                 arm64_sonoma:  "99f7baac494834e34d23281f1aaab0ae446873b3b5b67f1dc4dcec6de8c9e1fb"
+    sha256 cellar: :any,                 sonoma:        "3dd35ed9cb87f49192867538b58b7fac6b6c682ea22f136dfdae556dc9e89bb2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1297ad5a4c42ad31332c508bcf39f1ce15abee53a98f02a19cf95dca0a4da222"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e855130fbc6a3e8b83bed0414de38c16e40ede334f2933f08804ce1f9774cb7"
   end
 
   depends_on "certifi" => :no_linkage
@@ -53,8 +53,8 @@ class Charmcraft < Formula
   end
 
   resource "craft-application" do
-    url "https://files.pythonhosted.org/packages/8a/d7/11fb39172bb1381084aa284fcfd2ccc8372c78fdb4782e86c23acf0508b8/craft_application-6.1.0.tar.gz"
-    sha256 "a12c302e3b2ac6d2b1958cf9ad1596ab9d634a91d94fee662ec46bd62604ac0e"
+    url "https://files.pythonhosted.org/packages/93/22/2b357189ad52133e4841afae1091691e873828d2cb0732e65ca058c479fb/craft_application-6.1.1.tar.gz"
+    sha256 "2223ac6b9c8db7567eda5f3ba839f85ff7a170cc198fce4f08a19d720d3205b9"
   end
 
   resource "craft-archives" do
@@ -118,8 +118,8 @@ class Charmcraft < Formula
   end
 
   resource "httplib2" do
-    url "https://files.pythonhosted.org/packages/77/df/6eb1d485a513776bbdbb1c919b72e59b5acc51c5e7ef28ad1cd444e252a3/httplib2-0.31.1.tar.gz"
-    sha256 "21591655ac54953624c6ab8d587c71675e379e31e2cfe3147c83c11e9ef41f92"
+    url "https://files.pythonhosted.org/packages/c1/1f/e86365613582c027dda5ddb64e1010e57a3d53e99ab8a72093fa13d565ec/httplib2-0.31.2.tar.gz"
+    sha256 "385e0869d7397484f4eab426197a4c020b606edd43372492337c0b4010ae5d24"
   end
 
   resource "httpx" do
@@ -238,8 +238,8 @@ class Charmcraft < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/53/b8/cda15d9d46d03d4aa3a67cb6bffe05173440ccf86a9541afaf7ac59a1b6b/protobuf-6.33.4.tar.gz"
-    sha256 "dc2e61bca3b10470c1912d166fe0af67bfc20eb55971dcef8dfa48ce14f0ed91"
+    url "https://files.pythonhosted.org/packages/ba/25/7c72c307aafc96fa87062aa6291d9f7c94836e43214d43722e86037aac02/protobuf-6.33.5.tar.gz"
+    sha256 "6ddcac2a081f8b7b9642c09406bc6a4290128fce5f471cddd165960bb9119e5c"
   end
 
   resource "pylxd" do
@@ -323,8 +323,8 @@ class Charmcraft < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/86/ff/f75651350db3cf2ef767371307eb163f3cc1ac03e16fdf3ac347607f7edb/setuptools-80.10.1.tar.gz"
-    sha256 "bf2e513eb8144c3298a3bd28ab1a5edb739131ec5c22e045ff93cd7f5319703a"
+    url "https://files.pythonhosted.org/packages/76/95/faf61eb8363f26aa7e1d762267a8d602a1b26d4f3a1e758e92cb3cb8b054/setuptools-80.10.2.tar.gz"
+    sha256 "8b0e9d10c784bf7d262c4e5ec5d4ec94127ce206e8738f29a437945fbc219b70"
   end
 
   resource "six" do

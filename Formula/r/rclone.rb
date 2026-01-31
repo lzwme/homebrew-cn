@@ -1,18 +1,18 @@
 class Rclone < Formula
   desc "Rsync for cloud storage"
   homepage "https://rclone.org/"
-  url "https://ghfast.top/https://github.com/rclone/rclone/archive/refs/tags/v1.72.1.tar.gz"
-  sha256 "322c73932b533571880832c0e07abdf9492c7f329b7d1dcdbd2a195fa2635a77"
+  url "https://ghfast.top/https://github.com/rclone/rclone/archive/refs/tags/v1.73.0.tar.gz"
+  sha256 "91c777ce0bf41caa5de9aeaeae37310f9310bd7b12b5eee7337f57cbaae5830c"
   license "MIT"
   head "https://github.com/rclone/rclone.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea7dc91584bac82ff0e4d1aceb4d09add4973e6b517e0f6e27fc6e34193eb6ca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68057aa1780bf9c24ac8a98dc1ca1246eaaabc3325bb03a3a53b9b47d29562b3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6aacd5425947c0fae123012f6d51138d13fa68b48fd17d7dcd9838066eb2a0a8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e4575b558cb787a2970dd1235e96f4b465e3c372b5ba97fe727807c5e5b1b851"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7091b1e162cf5d039bcaa0255f8eb749a93ada24c67af676b838cc41f44c4f21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9b9c0fa08b71e5c6fb6d4facf8f79375691a48971961543005f3ebe114d786c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6a1ec94e5f5c4c12b3b35eb85ddf39f80214063a932f24cd3dc7b6af7feefc0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "940ecc5f8b7b71edbdf7e0160a5fd368d88470c6b1cf64ec3c56d359c6a81744"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5feb8fc5e6ea3256b759be7e64a1f117e9fa3dc46d87a6657462c6ee7b85d97e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "14c6b386c466932ba813a0b9c6a42a609a88c805de4927f7854e6e9006f9e83b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "31b928cc7ea70fe040dc1045dcfb504267fbaf28756e8ed96375f34566e179da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "950572c8999baa924b088836d2bbb68a719147e7c7d6061ec8271a2bd981b68c"
   end
 
   depends_on "go" => :build

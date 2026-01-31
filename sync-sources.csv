@@ -1145,6 +1145,7 @@ Homebrew-homebrew-core/Formula/c/coder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codesnap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codespell.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/codevis.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/codex-acp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coffeescript.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cogapp.rb, Homebrew/homebrew-core, 0
@@ -3716,6 +3717,7 @@ Homebrew-homebrew-core/Formula/l/litecli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/litehtml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/literate-git.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/litmusctl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/litra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/little-cms2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/livekit-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/livekit.rb, Homebrew/homebrew-core, 1
@@ -5233,6 +5235,7 @@ Homebrew-homebrew-core/Formula/o/opencc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opencl-clhpp-headers.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opencl-headers.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opencl-icd-loader.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/openclaw-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opencoarrays.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opencode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opencolorio.rb, Homebrew/homebrew-core, 1
@@ -7344,6 +7347,7 @@ Homebrew-homebrew-core/Formula/t/touca.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tox.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/toxcore.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/toxiproxy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tpix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tpl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tpm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tproxy.rb, Homebrew/homebrew-core, 1
@@ -8881,7 +8885,6 @@ Homebrew-homebrew-cask/Casks/c/classroom-mode-for-minecraft.rb, Homebrew/homebre
 Homebrew-homebrew-cask/Casks/c/claude-code.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/claude.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/claudebar.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/c/clawdbot.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cleanapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cleanclip.rb, Homebrew/homebrew-cask, 0
@@ -13701,6 +13704,7 @@ Homebrew-homebrew-cask/Casks/o/openboard.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openboardview.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openchrom.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/openclaw.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencloud.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencode-desktop.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencore-configurator.rb, Homebrew/homebrew-cask, 0
@@ -15579,7 +15583,6 @@ Homebrew-homebrew-cask/Casks/x/xcodeclangformat.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xcodepilot.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xcodes-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xctu.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/x/xdm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xee.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xemu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xiami.rb, Homebrew/homebrew-cask, 0

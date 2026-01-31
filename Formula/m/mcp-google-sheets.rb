@@ -6,15 +6,15 @@ class McpGoogleSheets < Formula
   url "https://files.pythonhosted.org/packages/49/5c/f2a7e5bfc4557ad2fd7559a2dcd75633e5ecef9673a2070fe5b685fc6b14/mcp_google_sheets-0.6.0.tar.gz"
   sha256 "9c1523c6ec2fd5c06a39e37e25116d489e9af04cd97d7bb41e14fc3c586c95ac"
   license "MIT"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ad51ce58a898c7d40f76c54729d16bd0ca5d56ffc25ad44b6143aad038fd219"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a568c8fb40e09ad077668f29365ae67dbdac300bf5006b1351e611474757a514"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "218fc471599545bca2dba52d4812aabaa228be92cec4314446b00b5fd9af23bb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "31cebf5fe90f0ad66ca74d4a547a2ed8964cb9382867b970a4f72a028260dc60"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2726044def182597b75d3c043be8a96c77b4d45c6010b8f32b28847a7c1898a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3bbda7950cb3c04340864dcc90ab28e8b197972933b121379aef3560166015f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc09715995b5a9d113d779fa506e7fa0dc20201d08c2ed724fdf84ef5d87f373"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43b637ecda5918c6892f43b898f6d266a9289d8d880d4c38246ae7073ea6eda7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9fa32318db90bee89ba2ef5c21d3e6580b2299a846771f1712f276b89683a665"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b45d044a3c645fa063915616a520711823e480f63017662e073c02e2d8201c0e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "87332f7b121315e947ac5501099a69c2c9bbd484767f9e2e4a3ea64baa0bbb36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5b6b1e83c0aeec11f2b94cebcc1edd7971d71e81a903ddc8ceda28c7295a719"
   end
 
   depends_on "certifi" => :no_linkage
@@ -131,8 +131,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/53/b8/cda15d9d46d03d4aa3a67cb6bffe05173440ccf86a9541afaf7ac59a1b6b/protobuf-6.33.4.tar.gz"
-    sha256 "dc2e61bca3b10470c1912d166fe0af67bfc20eb55971dcef8dfa48ce14f0ed91"
+    url "https://files.pythonhosted.org/packages/ba/25/7c72c307aafc96fa87062aa6291d9f7c94836e43214d43722e86037aac02/protobuf-6.33.5.tar.gz"
+    sha256 "6ddcac2a081f8b7b9642c09406bc6a4290128fce5f471cddd165960bb9119e5c"
   end
 
   resource "pyasn1" do

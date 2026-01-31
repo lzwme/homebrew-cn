@@ -20,8 +20,8 @@ class TigerVnc < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "gettext" => :build
   depends_on "fltk@1.3" # fltk 1.4 issue: https://github.com/TigerVNC/tigervnc/issues/1949
-  depends_on "gettext"
   depends_on "gmp"
   depends_on "gnutls"
   depends_on "jpeg-turbo"
@@ -29,6 +29,10 @@ class TigerVnc < Formula
   depends_on "pixman"
 
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   on_linux do
     depends_on "libx11"
@@ -46,12 +50,7 @@ class TigerVnc < Formula
   end
 
   def install
-    turbo = Formula["jpeg-turbo"]
-    args = %W[
-      -DJPEG_INCLUDE_DIR=#{turbo.include}
-      -DJPEG_LIBRARY=#{turbo.lib}/#{shared_library("libjpeg")}
-    ]
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

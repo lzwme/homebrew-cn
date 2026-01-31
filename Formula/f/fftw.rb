@@ -20,7 +20,7 @@ class Fftw < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "062535068e14404ec86b816c0c1987d9d90213d05c27cfaaa9767c22c7c8b636"
   end
 
-  depends_on "open-mpi"
+  depends_on "open-mpi" => :build
 
   on_macos do
     depends_on "libomp"

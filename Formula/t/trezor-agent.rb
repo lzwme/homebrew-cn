@@ -9,15 +9,15 @@ class TrezorAgent < Formula
   url "https://files.pythonhosted.org/packages/11/bc/aa2bdee9cd81af9ecde0a9e8b5c6c6594a4a0ee7ade950b51a39d54f9e63/trezor_agent-0.12.0.tar.gz"
   sha256 "e08ca5a54bd7658017164c8518d6cdf623d3b077dfdccfd12f612af5fef05855"
   license "LGPL-3.0-only"
-  revision 11
+  revision 12
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "df5b99a9d545671b2cb423188f153a025863cdcefe714b4928c6b7115e7d0785"
-    sha256 cellar: :any,                 arm64_sequoia: "22bb51ed5c8e6ec5a27b8078fc57c2d0182ec6b558d0323717dcbdc247cf7d1c"
-    sha256 cellar: :any,                 arm64_sonoma:  "80ba6ad08d5b46c3cb48f030f541eb6691aa77ea31131ed93127123a68a0305c"
-    sha256 cellar: :any,                 sonoma:        "4d3aeb4be6a588d188f211f3dbd7255411b006b43075883a1c953911c0018efb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4757d6705f5a2e43bc7bc505dab6f2dc553960dddb08ab51b445da67d2a86c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "372dbf44e8976d1d8f9d734674e3eedef39bd875bba5b55a80a9e4e66af0402e"
+    sha256 cellar: :any,                 arm64_tahoe:   "dd5158b625457e967c61316e70a4256a46023d042fb9c1b3dc501de4a6016de0"
+    sha256 cellar: :any,                 arm64_sequoia: "6e0b6d43ac7f223d7b43aeab5a83d75a5dcebe5e0168fec7aec23ed44c623c52"
+    sha256 cellar: :any,                 arm64_sonoma:  "3d52ab9e936932aac693da7a325dc3859691ab59c39f85d3ffba6a8b9de4a86e"
+    sha256 cellar: :any,                 sonoma:        "aab76535b0432eff5a60d97eda1ff25175dde3e42394adb55b7089e34844b3d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3711d33acf62dc7f6c5dbac9c1618e5b41a9a786d3342fa68b9945220be2ce78"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf962f527f32532b78068efb4a38598795f37913ffe0c711e5981bb9b48cab97"
   end
 
   depends_on "pkgconf" => :build # for hidapi resource
@@ -172,8 +172,8 @@ class TrezorAgent < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/53/b8/cda15d9d46d03d4aa3a67cb6bffe05173440ccf86a9541afaf7ac59a1b6b/protobuf-6.33.4.tar.gz"
-    sha256 "dc2e61bca3b10470c1912d166fe0af67bfc20eb55971dcef8dfa48ce14f0ed91"
+    url "https://files.pythonhosted.org/packages/ba/25/7c72c307aafc96fa87062aa6291d9f7c94836e43214d43722e86037aac02/protobuf-6.33.5.tar.gz"
+    sha256 "6ddcac2a081f8b7b9642c09406bc6a4290128fce5f471cddd165960bb9119e5c"
   end
 
   resource "pycryptodome" do

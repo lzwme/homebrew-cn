@@ -1,18 +1,19 @@
 class SvtAv1 < Formula
   desc "AV1 encoder"
   homepage "https://gitlab.com/AOMediaCodec/SVT-AV1"
-  url "https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v4.0.0/SVT-AV1-v4.0.0.tar.bz2"
-  sha256 "33512ba15e4e89632a6bcc87ee1be72917580ce470092f89b00c6b1dc9d3fea0"
+  url "https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v4.0.1/SVT-AV1-v4.0.1.tar.bz2"
+  sha256 "df2a2dd51512717e8c3637072750a3899c3a69d684accccace33c1c467f7e852"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://gitlab.com/AOMediaCodec/SVT-AV1.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "414314961013ac08b3d045a4aeb05ed12c232f3c0ad9f0cc2665b6ebbd847984"
-    sha256 cellar: :any,                 arm64_sequoia: "488fb41a50a872b777d159931d939351687fc0be76574b619678ab72af0878df"
-    sha256 cellar: :any,                 arm64_sonoma:  "671b42e5accbdf0cff74d9915e5039ac8ffcff44bbe6167b3083356962bd7777"
-    sha256 cellar: :any,                 sonoma:        "00fafbc444bfdaa3de880955328dc6cd19ac89f0771a1cc5ea6912cf54a712a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "64a5ff0f215f7a3e803b0276f96bc600e41592726b2a5cd6320c723fe4f579f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cfb3507b2551f7f1219708028da07eb6a3ad22817a07ee459084620d6e7d3ac"
+    sha256 cellar: :any,                 arm64_tahoe:   "f7bebdeefcfa1362b2a1ac7cd354f72468b396e6b969a9aa21f5a0bfa331aa6b"
+    sha256 cellar: :any,                 arm64_sequoia: "cf2340cca402d20b1ed309d22080259279741c7ff1e5326c317f2714f6ae2664"
+    sha256 cellar: :any,                 arm64_sonoma:  "1c721eca3d502b95ab157653fb9deda961971ed750a2fb61567dfdf579badc0a"
+    sha256 cellar: :any,                 sonoma:        "98cf4aab77023163121366a30dc3a224a6e0cabb79965ac8d7512a1888c361db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6deb25e23c0701c15e68d5af77d213fccd82f6c8d9463cb3f388e74e6ef202da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d9573303a838e5714aaacb71f6ea7cb88b9bcd6063f0854b7db3c13bfdc0dc6"
   end
 
   depends_on "cmake" => :build

@@ -3,17 +3,17 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/c6/88/00f6116992091c3c4be9d606b693c5a4314210eda6e63fa4b2efae3614cc/flexget-3.18.41.tar.gz"
-  sha256 "b34ee3d62e18c93b2179618385129174270f843ce7625a55bf28c46752e04f3d"
+  url "https://files.pythonhosted.org/packages/16/7a/15ef05cb5ba9b760da61964127791ebd0c1e112ee645d587ca421b475a6b/flexget-3.18.42.tar.gz"
+  sha256 "30274ecbfda4a02b2047d7b7ef367106d41278665cdfac0b8c4c5e954e9a73d7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "16567277cc1eb67a1b8a86342cf83ea83977072ac078c85a24f0f694af890f88"
-    sha256 cellar: :any,                 arm64_sequoia: "d7445af1a26bfbdc5ef51b18035a64fb5d7f4ea6681e022d2b750c2b02bbc4ef"
-    sha256 cellar: :any,                 arm64_sonoma:  "0f715c816f2b2fe5da89c1364dc1ba55518b6c3759319c8f5b1aa0055af14e65"
-    sha256 cellar: :any,                 sonoma:        "b0dced996dee8b8a7237d9e581a244fe1d174b41a1026d1011377ba4c4da7e80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "546093d5de45f307e6876db68a0b76d9d87a1d01b94c879b3317102e2bd62b0d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "871e12b637515c61be8046a3ac149c517918dddaa729f03999db679d2d133528"
+    sha256 cellar: :any,                 arm64_tahoe:   "bc5c5ee766c9d7d3c4b0e52c7b446e2c9a39162138a37385b663c1893799e606"
+    sha256 cellar: :any,                 arm64_sequoia: "32ea0ba34a14a07916a6bdac299e21983395ae6744b229347c5c1be69a746227"
+    sha256 cellar: :any,                 arm64_sonoma:  "8b6dfa562a8977d0fb45fe50eded7f7631fb00b900100ad2102bd4c797c9fc79"
+    sha256 cellar: :any,                 sonoma:        "3f80169971861785a62302b5d3112ab08d9639f3a4e316de1f936d7b04a79395"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6cc197a7485fd76a89921b7e2dbdda5c0a1b283535bb97d71235c69365fc7ab4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e65eae4a9d5f49456c7cdb4b1a36452dccddf98f2252c8cef66e8c553e440399"
   end
 
   depends_on "rust" => :build
@@ -218,15 +218,8 @@ class Flexget < Formula
   end
 
   resource "pendulum" do
-    url "https://files.pythonhosted.org/packages/23/7c/009c12b86c7cc6c403aec80f8a4308598dfc5995e5c523a5491faaa3952e/pendulum-3.1.0.tar.gz"
-    sha256 "66f96303560f41d097bee7d2dc98ffca716fbb3a832c4b3062034c2d45865015"
-
-    # Bump PyO3 version to add python@3.14 support
-    # https://github.com/python-pendulum/pendulum/pull/914
-    patch do
-      url "https://github.com/python-pendulum/pendulum/commit/0e9299108fc691cf993db31bd4d136b75a86079e.patch?full_index=1"
-      sha256 "cec51de828647d2768bdf739eecd567c6c15986272fc80c9c3eb3ba1f8d470a3"
-    end
+    url "https://files.pythonhosted.org/packages/cb/72/9a51afa0a822b09e286c4cb827ed7b00bc818dac7bd11a5f161e493a217d/pendulum-3.2.0.tar.gz"
+    sha256 "e80feda2d10fa3ff8b1526715f7d33dcb7e08494b3088f2c8a3ac92d4a4331ce"
   end
 
   resource "plumbum" do
@@ -240,8 +233,8 @@ class Flexget < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
-    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
+    url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
+    sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
   end
 
   resource "pygments" do

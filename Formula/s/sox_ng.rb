@@ -1,10 +1,9 @@
 class SoxNg < Formula
   desc "Sound eXchange NG"
   homepage "https://codeberg.org/sox_ng/sox_ng"
-  url "https://codeberg.org/sox_ng/sox_ng/releases/download/sox_ng-14.7.0.5/sox_ng-14.7.0.5.tar.gz"
-  sha256 "f78450f0c3704840f796627ef63020b6b0ffd45d108ef0ab0bee7b9daa0b0315"
+  url "https://codeberg.org/sox_ng/sox_ng/releases/download/sox_ng-14.7.0.6/sox_ng-14.7.0.6.tar.gz"
+  sha256 "24bf3eef707b161da4bad200af8df3eb14e1847f11747d88f70b23aec770ec0f"
   license "GPL-2.0-only"
-  revision 2
   head "https://codeberg.org/sox_ng/sox_ng.git", branch: "main"
 
   livecheck do
@@ -13,12 +12,12 @@ class SoxNg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e29b85259f24a49fa5714632bb0abb6c2b3c34fdb8e58f83875c7573df240273"
-    sha256 cellar: :any,                 arm64_sequoia: "a2e7d10ad342ce1018ecbe712608c757796c1aadec8740bdbdc8b5790ceb1801"
-    sha256 cellar: :any,                 arm64_sonoma:  "88309269a7cd183e16b4f3aff439911268dc2334c4b7ad73e5c3aa1466560d8f"
-    sha256 cellar: :any,                 sonoma:        "e02010f74d7dd670c76088ecd4725cd28333fa71d476187a93770983961b0973"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f60204734058a0076bca931093663438ab44aa5b9d3f57242def5c97456c5081"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66427b4c0368cc5236eedce183a08135083563bd09fc5f4497ae1094158e12a6"
+    sha256 cellar: :any,                 arm64_tahoe:   "11be261e18ad28c8d9ec3797e319d3d084b215a38746d5d2587c4e36f303dcb1"
+    sha256 cellar: :any,                 arm64_sequoia: "e8c0978b1e21f3213c74b64a37a2e7d3dd2e9a43474002f33474fedc45b60e75"
+    sha256 cellar: :any,                 arm64_sonoma:  "fa6b3f192d1cf1113a7c9a538ccf42e8c98a7290ca5810ea4b09ec85344983c8"
+    sha256 cellar: :any,                 sonoma:        "2f8225afeed6cd536000339910f151b15d3ed8f1faf639faba4c8f331b759657"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "445a5f015cfb6b39c050a304f62b739be0961e2ac6268791101e21d133a09525"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7d45830c1452737a3783fd2070233368c45dd8ea737d4a770b57f5a23255140"
   end
 
   depends_on "pkgconf" => :build

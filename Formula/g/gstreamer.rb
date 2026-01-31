@@ -2,25 +2,20 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
+  revision 1
 
   stable do
-    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.10/gstreamer-1.26.10.tar.bz2"
-    sha256 "9cdda214b0b843780e180c624932d96e8e3101a870048f2f207ac70c7abec645"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.0/gstreamer-1.28.0.tar.bz2"
+    sha256 "f1ab0903c789ee153e116963b8dbc02d40d7bf5e8bc25c70777585b5b61f5a15"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.26.10/gst-plugins-rs-gstreamer-1.26.10.tar.bz2"
-      sha256 "463abc9d388190c35c163e719d345198521078f7fd81585bfc3ead46d7e9cc60"
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.0/gst-plugins-rs-gstreamer-1.28.0.tar.bz2"
+      sha256 "00c3e13cf2aeb5340159c046f01e6d41690157fc93a643727b03f32ac955197d"
 
       livecheck do
         formula :parent
       end
-    end
-
-    # patch to use `typing.Self` from stdlib on Python 3.11+, upstream pr ref, https://gitlab.freedesktop.org/gstreamer/gstreamer/-/merge_requests/10452
-    patch do
-      url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/commit/a77a4f3f5388cde3c4592d1193ae82692fd2bdbb.diff"
-      sha256 "a874f85318ea56abdd19381b9ada24f93dfcc9ad4397e5591ca20e101152f0be"
     end
   end
 
@@ -30,12 +25,12 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a6501828af9ce32b2089e0793b106cde74fd6fbe1c855e6842a9a74748e84b90"
-    sha256 arm64_sequoia: "2daeef4894b2e1456f3446a326dd26008c3e387b8a1baa5f51a3489770825cbd"
-    sha256 arm64_sonoma:  "80779d46e04f90591cc18d18c653dd43acdd372896bd1b3ee4dde2be819b6ab1"
-    sha256 sonoma:        "f200824778c0dec095c2f8bab0ba62763aab85bb5cb0e4ec40e0a02bb191895c"
-    sha256 arm64_linux:   "cc45e957d12e8100e6876e98f32e77c96a0d1526efb841d18547d07c9b78aa43"
-    sha256 x86_64_linux:  "a0675faa09c52b3668004244682cf13432cfa56cd9c9880eb9047a8cdd77291c"
+    sha256 arm64_tahoe:   "53c72342367355e243bb0c7f1fab43728e74733cf0eb3fdb013f05fb04f2583d"
+    sha256 arm64_sequoia: "1323de42a3e118dd5377307a0fcd74f8f1fd46f7f8e02edfaec365d417b3d1b9"
+    sha256 arm64_sonoma:  "ba4d78b14c825a0887732d1242fc129e0664e45c0b653665ca38a4cf8c85ad8a"
+    sha256 sonoma:        "9b10549f31b7b3a00f0cb17e2f009e8a160ed5fe8d858edcfb0aa08911d9f36f"
+    sha256 arm64_linux:   "1e18942901b85385fec860b1df7011463b74ede8e69796588a9cdc700a2dd641"
+    sha256 x86_64_linux:  "90f3affcdf77731011b603d1bdfbf1b2010c307d52dfe303a7affbd5139dc3be"
   end
 
   head do
@@ -82,6 +77,7 @@ class Gstreamer < Formula
   depends_on "libsodium"
   depends_on "libsoup" => :no_linkage # dlopen'd
   depends_on "libusrsctp"
+  depends_on "libvmaf"
   depends_on "libvorbis"
   depends_on "libvpx"
   depends_on "libx11"

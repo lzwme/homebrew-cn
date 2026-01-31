@@ -3,9 +3,9 @@ class Jdtls < Formula
 
   desc "Java language specific implementation of the Language Server Protocol"
   homepage "https://github.com/eclipse-jdtls/eclipse.jdt.ls"
-  url "https://www.eclipse.org/downloads/download.php?file=/jdtls/milestones/1.55.0/jdt-language-server-1.55.0-202601131729.tar.gz"
-  version "1.55.0"
-  sha256 "90627c9f03704dbb404f37651625d0751c078ab7534246023d53adcea1411b91"
+  url "https://www.eclipse.org/downloads/download.php?file=/jdtls/milestones/1.56.0/jdt-language-server-1.56.0-202601291528.tar.gz"
+  version "1.56.0"
+  sha256 "988492f1a4350be52aafbe538dc04f5c4dae08ad0e1f2aa35317622ed2dbe3c6"
   license "EPL-2.0"
   version_scheme 1
 
@@ -17,7 +17,7 @@ class Jdtls < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1ba89569d91346d68121ce55e0cd322e8e5d840c5bfcc5e4bf2e7c554ddd9c37"
+    sha256 cellar: :any_skip_relocation, all: "a5848ba812368121c5e4a90c44ce6975e6ca20d2ec1c575b8e70a973337529c2"
   end
 
   depends_on "openjdk"

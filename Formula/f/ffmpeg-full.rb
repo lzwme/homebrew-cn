@@ -6,6 +6,7 @@ class FfmpegFull < Formula
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/FFmpeg/FFmpeg.git", branch: "master"
 
   livecheck do
@@ -13,13 +14,12 @@ class FfmpegFull < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "619a125bf434e4286d47d825588e423d4292d7a23d93c86e66ffea96ecfde5d1"
-    sha256 arm64_sequoia: "19717d14acb90017e5ee18abf95a410ab2e738f636b1ea0959eded69db99ee17"
-    sha256 arm64_sonoma:  "16856043f5d14b18992a94b2eb976982ca0825fdbeaa25be94f77daa46b004d2"
-    sha256 sonoma:        "9a1faeacc5554c63e8e2e3fda4f9c54f9fc1807bc882290d945d73da3d03ae55"
-    sha256 arm64_linux:   "9ce0cb2e2bef5003eee67366972209e4e941172c26570c794c2c206ecb8e3d4f"
-    sha256 x86_64_linux:  "9b6254689d409c94dcb3d7dc81ad0b42fd6a03cc42284aacb4ea87a03a1079d7"
+    sha256 arm64_tahoe:   "f7b575036e0b9f145fde4d7a1ea0dcc03f265f700ab94c01d4193183cda9a126"
+    sha256 arm64_sequoia: "e84291835eeea71163eac0714e7eda2ed063da5c4006000163437c6a51a7a856"
+    sha256 arm64_sonoma:  "0f1e9d75d104bc2b322972661a4c7c734ab09e7a56df2d7a8aa8a0e3d5aa6824"
+    sha256 sonoma:        "fb988af9d63f4afad1df59552679c99e5bd683a924ba631c11cf56b04438792f"
+    sha256 arm64_linux:   "64fc6332944f5bd29f195428b98a2ca7d77aa137bafe6096d71adc1cb8743733"
+    sha256 x86_64_linux:  "1f3654f80a216169247294da13a5d064b12bf0c2df15c6b7dd812dbcaa64dbfd"
   end
 
   keg_only :versioned_formula
@@ -94,6 +94,12 @@ class FfmpegFull < Formula
   patch do
     url "https://gitlab.archlinux.org/archlinux/packaging/packages/ffmpeg/-/raw/5670ccd86d3b816f49ebc18cab878125eca2f81f/add-av_stream_get_first_dts-for-chromium.patch"
     sha256 "57e26caced5a1382cb639235f9555fc50e45e7bf8333f7c9ae3d49b3241d3f77"
+  end
+
+  # Add svt-av1 4.x support
+  patch do
+    url "https://git.ffmpeg.org/gitweb/ffmpeg.git/patch/a5d4c398b411a00ac09d8fe3b66117222323844c"
+    sha256 "1dbbc1a4cf9834b3902236abc27fefe982da03a14bcaa89fb90c7c8bd10a1664"
   end
 
   def install

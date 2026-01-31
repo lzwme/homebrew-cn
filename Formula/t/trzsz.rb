@@ -6,15 +6,15 @@ class Trzsz < Formula
   url "https://files.pythonhosted.org/packages/22/1e/40a495c84a0dc625a4d97638c5cae308306718c493f480ee5ac64801947b/trzsz-1.1.5.tar.gz"
   sha256 "57be064b259d57326f75683704b8e93a56ce0d67d9b3b2b36ad4d53e98a28854"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b53eb96bf24109ca3361d1100ccaffc7a96e87d4471470d5a22c6196f894767d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31641794cb5aeb07b28545ec68ec9a92ee60cf8fc302377416eef5f571913f08"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d9785d8fb896ea637760176fe66011a2c93057f57ab235536d32608747ebe38"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e862bc307c4434aec3ac573118820aad2a05ab3488f5f5d1a6d64ce60d688445"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1ff38e5d3473b2cc82ba2f15a60188d7df95cb7c6218a713cf4d1d3f3eca647"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b9b00b90344932762d829c1e1fcb49c4d3d058bd5c8b0e3114323006975fdf0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18ceb2b8e4ef4b313862b6119dbf1e91bc466e3aed2bb69689d69af43047ed09"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f87c644de771a0348261686ace196462c1bffd66a761db34333e29cfc946d1b1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b7b205435ce3504af46aff402036fd67d8de96262db3b0a8850246c46561ac1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9f42b5cc4b373447f9471d5c272791fb0bb9ed0191fa7cb7a540a1fa37a84097"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae88a004c6f5ae6bac55d16170511072994d19842a3cac6d629e7e43995aa7d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4533c6cf24c2515bd79a4bca7cbcadbb276dc4bbb29fae8ba1078fbe14465b66"
   end
 
   depends_on "python@3.14"
@@ -29,8 +29,8 @@ class Trzsz < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/53/b8/cda15d9d46d03d4aa3a67cb6bffe05173440ccf86a9541afaf7ac59a1b6b/protobuf-6.33.4.tar.gz"
-    sha256 "dc2e61bca3b10470c1912d166fe0af67bfc20eb55971dcef8dfa48ce14f0ed91"
+    url "https://files.pythonhosted.org/packages/ba/25/7c72c307aafc96fa87062aa6291d9f7c94836e43214d43722e86037aac02/protobuf-6.33.5.tar.gz"
+    sha256 "6ddcac2a081f8b7b9642c09406bc6a4290128fce5f471cddd165960bb9119e5c"
   end
 
   resource "trzsz-iterm2" do

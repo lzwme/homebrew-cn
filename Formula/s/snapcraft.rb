@@ -8,6 +8,7 @@ class Snapcraft < Formula
       tag:      "8.13.2",
       revision: "14f7883a5ee1a5825beb9e0db4e0f2b77958a853"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/canonical/snapcraft.git", branch: "main"
 
   livecheck do
@@ -16,12 +17,12 @@ class Snapcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "32f467858a4db7f53d344130b5278a0c805746ab74e2d92d86638df49a382433"
-    sha256 cellar: :any,                 arm64_sequoia: "4f64ce9e3dace826aa1e5b44fa45e70ee4569284b53fd511c7c547f3ffc24401"
-    sha256 cellar: :any,                 arm64_sonoma:  "718ee0548b7ea7080e9fe8d34cdfd3030baa862bf232b42c80b2396fd2ea80bf"
-    sha256 cellar: :any,                 sonoma:        "c54a4aa70b10aa289fc8a764d0d9841e58697db82a00a3bbbdf6ae0990d58b93"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cdebd847ccdb0e2fa5c40761782cbb172df31d4e267d6b8b9506b0a336370a7c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8727aab8c0f160fae6e377024db0327a54fd7b507ca6aa357a5ee008e9a1d95b"
+    sha256 cellar: :any,                 arm64_tahoe:   "145436a4f35c7a9779d635c29a86716925f1bafcc8f91c4aa481533c0aa7fdb8"
+    sha256 cellar: :any,                 arm64_sequoia: "6338c5dcf62c969dd3aadc44ac90246e072a8271b73bb0bb502a12873e791819"
+    sha256 cellar: :any,                 arm64_sonoma:  "01e10e9e2f1a64af20b8775baeaec4f0e1fe0674c03a4ee8d0dc1369b37554b3"
+    sha256 cellar: :any,                 sonoma:        "6feef3e99f8fe404b54de33e1a6279d5ad3e3b006d0db9c20df3315c60f3c627"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d80749963db9d40657955dd540db829c86362c7c12b0a75a177a64a5154244a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "603e42860e22b262e5089abeefc673a961ab147b623e6a4baca9ca705a2c9c95"
   end
 
   depends_on "certifi" => :no_linkage
@@ -156,8 +157,8 @@ class Snapcraft < Formula
   end
 
   resource "httplib2" do
-    url "https://files.pythonhosted.org/packages/77/df/6eb1d485a513776bbdbb1c919b72e59b5acc51c5e7ef28ad1cd444e252a3/httplib2-0.31.1.tar.gz"
-    sha256 "21591655ac54953624c6ab8d587c71675e379e31e2cfe3147c83c11e9ef41f92"
+    url "https://files.pythonhosted.org/packages/c1/1f/e86365613582c027dda5ddb64e1010e57a3d53e99ab8a72093fa13d565ec/httplib2-0.31.2.tar.gz"
+    sha256 "385e0869d7397484f4eab426197a4c020b606edd43372492337c0b4010ae5d24"
   end
 
   resource "httpx" do
@@ -261,8 +262,8 @@ class Snapcraft < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "platformdirs" do
@@ -276,13 +277,13 @@ class Snapcraft < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/53/b8/cda15d9d46d03d4aa3a67cb6bffe05173440ccf86a9541afaf7ac59a1b6b/protobuf-6.33.4.tar.gz"
-    sha256 "dc2e61bca3b10470c1912d166fe0af67bfc20eb55971dcef8dfa48ce14f0ed91"
+    url "https://files.pythonhosted.org/packages/ba/25/7c72c307aafc96fa87062aa6291d9f7c94836e43214d43722e86037aac02/protobuf-6.33.5.tar.gz"
+    sha256 "6ddcac2a081f8b7b9642c09406bc6a4290128fce5f471cddd165960bb9119e5c"
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
-    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
+    url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
+    sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
   end
 
   resource "pyelftools" do
@@ -306,8 +307,8 @@ class Snapcraft < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/33/c1/1d9de9aeaa1b89b0186e5fe23294ff6517fce1bc69149185577cd31016b2/pyparsing-3.3.1.tar.gz"
-    sha256 "47fad0f17ac1e2cad3de3b458570fbc9b03560aa029ed5e16ee5554da9a2251c"
+    url "https://files.pythonhosted.org/packages/f3/91/9c6ee907786a473bf81c5f53cf703ba0957b23ab84c264080fb5a450416f/pyparsing-3.3.2.tar.gz"
+    sha256 "c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc"
   end
 
   resource "pyrfc3339" do

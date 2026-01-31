@@ -6,6 +6,7 @@ class FfmpegAT5 < Formula
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://ffmpeg.org/download.html"
@@ -13,12 +14,12 @@ class FfmpegAT5 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "75948f570299e2766e9078c7054db95f49d909302052ce31133801f2523d66e1"
-    sha256 arm64_sequoia: "29efa40b2416c2bcbadfe685c3a5ef2bc8ac48eee47aaed9aeb8873b3daa2da0"
-    sha256 arm64_sonoma:  "866e83efa92706d4229d7c2516de60530b3cf1b76e6e7c54dfd7f16b193fd030"
-    sha256 sonoma:        "cfa520601fc49a292ce455c8919d045b49de280f9227d51c1900fa4377721b0f"
-    sha256 arm64_linux:   "53fc44bc89756822428aa36613f87f5ebec20ac46edddb95bca16e4fafab9d7b"
-    sha256 x86_64_linux:  "1a2df05af000d720f0075011f874823a5207a182296fbdcb740a2df1b334b4c6"
+    sha256 arm64_tahoe:   "4765d973c22f1ec6dc469fb100eda5ebab902ef2174eaedaefb71dd698feac6f"
+    sha256 arm64_sequoia: "056d3588f8587086e3fe141657d2624f744368ab4719657f0e1e575425406d75"
+    sha256 arm64_sonoma:  "fcb2def49d68d9d442aa58693fab7d7197dce453d509ccc4e60e514a941057bb"
+    sha256 sonoma:        "6be53848912d0e9e87e5b4bf9f5bc3708733521a4b7cee7d9acbfa41627a7e45"
+    sha256 arm64_linux:   "28444f14166d510e3ebd93d23c2c954d845a0240434465f51e4731e283d53bcc"
+    sha256 x86_64_linux:  "29ca3b0a8e08e5563f7c53ab9ed08c711c14b2a6c4ad3c1083b7623764ad7408"
   end
 
   keg_only :versioned_formula
@@ -82,10 +83,16 @@ class FfmpegAT5 < Formula
     depends_on "nasm" => :build
   end
 
-  # Backport support for recent svt-av1 (3.0.0)
+  # Backport support for svt-av1 3.x
   patch do
     url "https://github.com/FFmpeg/FFmpeg/commit/d1ed5c06e3edc5f2b5f3664c80121fa55b0baa95.patch?full_index=1"
     sha256 "0eb23ab90c0e5904590731dd3b81c86a4127785bc2b367267d77723990fb94a2"
+  end
+
+  # Backport support for svt-av1 4.x
+  patch do
+    url "https://git.ffmpeg.org/gitweb/ffmpeg.git/patch/a5d4c398b411a00ac09d8fe3b66117222323844c"
+    sha256 "1dbbc1a4cf9834b3902236abc27fefe982da03a14bcaa89fb90c7c8bd10a1664"
   end
 
   def install

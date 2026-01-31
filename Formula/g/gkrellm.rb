@@ -19,23 +19,18 @@ class Gkrellm < Formula
     sha256               x86_64_linux:  "bf71285bb443e61a5a7c4ef900a07e21799131b0a342eda2c0c7ffd205e3240f"
   end
 
-  depends_on "cmake" => :build
+  depends_on "gettext" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "at-spi2-core"
-  depends_on "cairo"
-  depends_on "fontconfig"
-  depends_on "freetype"
   depends_on "gdk-pixbuf"
-  depends_on "gettext"
   depends_on "glib"
   depends_on "gtk+" # GTK3 issue: https://git.srcbox.net/gkrellm/gkrellm/issues/1
   depends_on "openssl@3"
   depends_on "pango"
 
   on_macos do
-    depends_on "harfbuzz"
+    depends_on "gettext"
   end
 
   on_linux do
@@ -54,9 +49,8 @@ class Gkrellm < Formula
 
   test do
     pid = spawn "#{bin}/gkrellmd --pidfile #{testpath}/test.pid"
-    sleep 2
-
     begin
+      sleep 2
       assert_path_exists testpath/"test.pid"
     ensure
       Process.kill "SIGINT", pid

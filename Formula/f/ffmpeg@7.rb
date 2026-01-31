@@ -6,6 +6,7 @@ class FfmpegAT7 < Formula
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://ffmpeg.org/download.html"
@@ -13,12 +14,12 @@ class FfmpegAT7 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c4be5df50b550bf03a5ffd7300aad473882388a0a95708f35179fb3437291f60"
-    sha256 arm64_sequoia: "9c79fbff7b977e7033b7144528cb5f418bfc29e46ab163054711207d3fb1de0e"
-    sha256 arm64_sonoma:  "ff0baf6b09690df920923884c92c56c6188f2aad2bc181b9357bd3f921653046"
-    sha256 sonoma:        "74a2806432e0301ad2743b6851745910ed025fc94a6237da4f72c7cd1c0649c9"
-    sha256 arm64_linux:   "7592c5c39ffdc37f52eef41c425da85857f9ad0765ecb9229c82a1178ecab36b"
-    sha256 x86_64_linux:  "fa8ddea42442204b31d9e5110102f45c7cd1a5c1c6f608d491fce62376357d17"
+    sha256 arm64_tahoe:   "34ee1214f887598dccac2dc4560040391a9149f3151a9ce482815baa8db6740f"
+    sha256 arm64_sequoia: "ead94fe59c517ed4c2ad679a7a9c7bed1385f118a7bc57d1bd67c548b9372d28"
+    sha256 arm64_sonoma:  "d4691b1e03ec6799b521f52e7909931de25ed6599788b3dc8c67aca486dd1611"
+    sha256 sonoma:        "1d42053b19ef4dbe3461cedcde787b063e4097d51af5c63a4a66fcc0b88e2309"
+    sha256 arm64_linux:   "90315b8a449233bf4ea284eeed22df4da7755716c110d7e53702faab1b06d5ae"
+    sha256 x86_64_linux:  "4c5545de4bb151a83a6d58af0af50bf53035fcaf62d74318ab2dba4319670535"
   end
 
   keg_only :versioned_formula
@@ -90,6 +91,12 @@ class FfmpegAT7 < Formula
   patch do
     url "https://gitlab.archlinux.org/archlinux/packaging/packages/ffmpeg/-/raw/5670ccd86d3b816f49ebc18cab878125eca2f81f/add-av_stream_get_first_dts-for-chromium.patch"
     sha256 "57e26caced5a1382cb639235f9555fc50e45e7bf8333f7c9ae3d49b3241d3f77"
+  end
+
+  # Backport support for svt-av1 4.x
+  patch do
+    url "https://git.ffmpeg.org/gitweb/ffmpeg.git/patch/a5d4c398b411a00ac09d8fe3b66117222323844c"
+    sha256 "1dbbc1a4cf9834b3902236abc27fefe982da03a14bcaa89fb90c7c8bd10a1664"
   end
 
   def install

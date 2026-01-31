@@ -6,12 +6,13 @@ class MlxLm < Formula
   url "https://ghfast.top/https://github.com/ml-explore/mlx-lm/archive/refs/tags/v0.30.5.tar.gz"
   sha256 "9f290ceaf9591f6212983262ef1217426b8861249a4901cb7b43aa72c136fa36"
   license "MIT"
+  revision 1
   head "https://github.com/ml-explore/mlx-lm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "079dd0d0e5392751b5ae61abb200d941b231c18b3e7a91498c70152979ebee37"
-    sha256 cellar: :any, arm64_sequoia: "f5f32a09ba298ff58d0b4829b3beb442133342eaa4aa23c5386040b9182fc25d"
-    sha256 cellar: :any, arm64_sonoma:  "281c7c7006d3b2b73574e002a2cb174a3f6870d96350834b1d3c68a246ad79d2"
+    sha256 cellar: :any, arm64_tahoe:   "f164235cc14282aa68fee043f4d20a4d4ee316d6aa8e48e5ee39cf9c3a354be7"
+    sha256 cellar: :any, arm64_sequoia: "ea63d40b9dba51dfa07ff542ba9b69ae2bf3bcabd285a3b44dbcd48f46995e7a"
+    sha256 cellar: :any, arm64_sonoma:  "3c8eb357bb70306d552317a3cd9710a02a1cc6a259330c9f13a15795e0b21b0b"
   end
 
   depends_on "pkgconf" => :build
@@ -74,8 +75,8 @@ class MlxLm < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/02/c3/544cd4cdd4b3c6de8591b56bb69efc3682e9ac81e36135c02e909dd98c5b/huggingface_hub-1.3.3.tar.gz"
-    sha256 "f8be6f468da4470db48351e8c77d6d8115dff9b3daeb30276e568767b1ff7574"
+    url "https://files.pythonhosted.org/packages/67/e9/2658cb9bc4c72a67b7f87650e827266139befaf499095883d30dabc4d49f/huggingface_hub-1.3.5.tar.gz"
+    sha256 "8045aca8ddab35d937138f3c386c6d43a275f53437c5c64cdc9aa8408653b4ed"
   end
 
   resource "idna" do
@@ -99,8 +100,8 @@ class MlxLm < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/53/b8/cda15d9d46d03d4aa3a67cb6bffe05173440ccf86a9541afaf7ac59a1b6b/protobuf-6.33.4.tar.gz"
-    sha256 "dc2e61bca3b10470c1912d166fe0af67bfc20eb55971dcef8dfa48ce14f0ed91"
+    url "https://files.pythonhosted.org/packages/ba/25/7c72c307aafc96fa87062aa6291d9f7c94836e43214d43722e86037aac02/protobuf-6.33.5.tar.gz"
+    sha256 "6ddcac2a081f8b7b9642c09406bc6a4290128fce5f471cddd165960bb9119e5c"
   end
 
   resource "pyyaml" do

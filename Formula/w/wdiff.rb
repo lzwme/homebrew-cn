@@ -25,9 +25,11 @@ class Wdiff < Formula
     sha256 x86_64_linux:   "f627f458d7e201ad95a07bfc91fbd1aa0e676e695d8002415a02f4b74734e1a4"
   end
 
-  depends_on "gettext"
-
   uses_from_macos "ncurses"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
@@ -36,9 +38,7 @@ class Wdiff < Formula
   conflicts_with "montage", because: "both install an `mdiff` executable"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--enable-experimental"
+    system "./configure", "--enable-experimental", *std_configure_args
     system "make", "install"
   end
 

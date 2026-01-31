@@ -4,7 +4,7 @@ class Pango < Formula
   url "https://download.gnome.org/sources/pango/1.57/pango-1.57.0.tar.xz"
   sha256 "890640c841dae77d3ae3d8fe8953784b930fa241b17423e6120c7bfdf8b891e7"
   license "LGPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://gitlab.gnome.org/GNOME/pango.git", branch: "main"
 
   # Pango doesn't follow GNOME's "even-numbered minor is stable" version
@@ -16,12 +16,12 @@ class Pango < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "dd27a8a5aa57deade2909c9f8054000cf8f289e4c416b3448c4c71159941e941"
-    sha256 cellar: :any, arm64_sequoia: "b81624cd5d7a41cfa1242840ca5d8deb0e03e9fa1951841690fa1a94291293ef"
-    sha256 cellar: :any, arm64_sonoma:  "6edeafd5ccd0552dfa16d7790ab1e07a736076bfead4998d4e8222ae430e7ddc"
-    sha256 cellar: :any, sonoma:        "ae4ef39435487540dff3163e170936841edd376cd6ca56d5f4ba9765ce8f144e"
-    sha256               arm64_linux:   "20e27986a4cb125faff80a45c80e3bf052f0f47deedb1f845f85010185d43ffa"
-    sha256               x86_64_linux:  "0d6b77557f01f42a3143618f129f096403ac2fb84475017057b7d9fd09f00261"
+    sha256 cellar: :any, arm64_tahoe:   "666e399270228506a57d243de5c340c42de149abc9c3a75b01044417f8db6222"
+    sha256 cellar: :any, arm64_sequoia: "e5e1310e53ccc4258f523df667f092dcf694f01e9a700883f15121ca23fb1714"
+    sha256 cellar: :any, arm64_sonoma:  "e346d0be5c3608d82e370e02cac4e0b8112a925cafe733d5f8219f593c02cf92"
+    sha256 cellar: :any, sonoma:        "0da3e9d5b786f46857fa9372b8644da690f3902421f5996e9bb058525cdf6d67"
+    sha256               arm64_linux:   "c3e8f72ff6a5385bd5f24ec2bf7ec1f656c11bdb6ad57cc912a35d21db6ee3cd"
+    sha256               x86_64_linux:  "da9d2d48f51a6364f7e3edac502478231ccffab76ad8775ca3555ce87d39f524"
   end
 
   depends_on "gobject-introspection" => :build
@@ -34,6 +34,7 @@ class Pango < Formula
   depends_on "fribidi"
   depends_on "glib"
   depends_on "harfbuzz"
+  depends_on "libthai"
 
   # PR ref: https://gitlab.gnome.org/GNOME/pango/-/merge_requests/891
   patch do
@@ -48,6 +49,7 @@ class Pango < Formula
       -Dfontconfig=enabled
       -Dcairo=enabled
       -Dfreetype=enabled
+      -Dlibthai=enabled
     ]
 
     system "meson", "setup", "build", *args, *std_meson_args

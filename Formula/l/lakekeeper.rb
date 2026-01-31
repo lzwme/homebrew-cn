@@ -1,18 +1,18 @@
 class Lakekeeper < Formula
   desc "Apache Iceberg REST Catalog"
   homepage "https://github.com/lakekeeper/lakekeeper"
-  url "https://ghfast.top/https://github.com/lakekeeper/lakekeeper/archive/refs/tags/v0.11.1.tar.gz"
-  sha256 "4890fb0b5b6548ec7175b301b0bfe043227007c3e6e23df0695ee2894f86579d"
+  url "https://ghfast.top/https://github.com/lakekeeper/lakekeeper/archive/refs/tags/v0.11.2.tar.gz"
+  sha256 "d7487a517e8431063f4cc6aee01637b37402ceb4db7d8a05e1f1fc86d9b6c89e"
   license "Apache-2.0"
   head "https://github.com/lakekeeper/lakekeeper.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f420ee3280aaa5ad869c66bb98ee5cb3cb5a6bd4bf1829f1dd85bd3770d8484c"
-    sha256 cellar: :any,                 arm64_sequoia: "3cac9ed4acfabad9814695dacda36c59522baeed184a6e259f031b80f350dda6"
-    sha256 cellar: :any,                 arm64_sonoma:  "f721fa4ec6f581842959e950485b55bdb4bf1963708ffad84451b200bbbd2eb9"
-    sha256 cellar: :any,                 sonoma:        "d85100cb2be7696b2f85952d7bf5decbae59854cf2bd3874559cdf6a29e2e7f4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "89a4e0d9ffa1582905b20576a87fcfe050898a5f3bd77247cb2dd32ba56a5093"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9faad18dbe20a81ec0dc8bca5acc302f1290a99c30f25811f3de2158df6a9e4f"
+    sha256 cellar: :any,                 arm64_tahoe:   "6f7271f10f1ec09aa7985c8d27f5a7d4d74aa9ef44473159c6b71904855e0f6c"
+    sha256 cellar: :any,                 arm64_sequoia: "f6d924e9624c18f32dc1774e22a95edc263f45e6dbc52c8bd4dbb960026f8de1"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac3cf3735076050b4e5740b05d036d289f0c8d260ddf854f0c8dbb7a07edcec7"
+    sha256 cellar: :any,                 sonoma:        "cecaff2bd1aa57acaaacd56a16dc197127fa1fd8815d2ebf1700cd596a004448"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e629ffb3d5e156c74a055068ccbeef84b02fbf3c99d0a3e6693f339525ae2e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca3e632b99ffc2205d7dbadc9250d47b64fa2f7593317259652c81ef65c93f71"
   end
 
   depends_on "cmake" => :build

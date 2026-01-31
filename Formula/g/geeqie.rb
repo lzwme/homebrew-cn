@@ -20,19 +20,17 @@ class Geeqie < Formula
     sha256               x86_64_linux:  "a55a62fecad230dfaf69feaa59a7be76ecb416897324f7a0dac1c0c0bf3aa4b4"
   end
 
+  depends_on "gettext" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
 
-  depends_on "adwaita-icon-theme"
-  depends_on "at-spi2-core"
+  depends_on "adwaita-icon-theme" => :no_linkage
   depends_on "cairo"
   depends_on "djvulibre"
-  depends_on "evince" # for print preview support
   depends_on "exiv2"
   depends_on "ffmpegthumbnailer"
   depends_on "gdk-pixbuf"
-  depends_on "gettext"
   depends_on "glib"
   depends_on "gspell" # for spell checks support
   depends_on "gtk+3"
@@ -44,22 +42,19 @@ class Geeqie < Formula
   depends_on "libheif"
   depends_on "libraw"
   depends_on "libtiff"
-  depends_on "libx11"
   depends_on "little-cms2"
   depends_on "openexr"
   depends_on "openjpeg"
   depends_on "pango"
   depends_on "poppler" # for pdf support # for video thumbnails support
-  depends_on "webp"
-  depends_on "webp-pixbuf-loader" # for webp support
+  depends_on "webp" # for webp support
 
   uses_from_macos "libxslt" => :build # for xsltproc
   uses_from_macos "python" => :build
   uses_from_macos "vim" => :build # for xxd
 
   on_macos do
-    depends_on "enchant"
-    depends_on "harfbuzz"
+    depends_on "gettext"
   end
 
   on_linux do

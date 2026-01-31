@@ -3,18 +3,18 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/43/5b/b7c99cf754ad3e7d140f7a33e3b193eab55be178fb15463fce285f901150/kimi_cli-1.3.tar.gz"
-  sha256 "47ae9bab64b41e0e8c20ed4c39b09dc39b1d786152553fc4f79c5e70cc1cf00a"
+  url "https://files.pythonhosted.org/packages/1f/85/c0e227bc8c33a3b80fc519be4933c99d8e45abe94bc523522e506789aebf/kimi_cli-1.5.tar.gz"
+  sha256 "c296e84932d89ecad2cd5347810bc600399c4a8f7fa9b137f30c4bb18c159a16"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7d8585e9ad7fb4caf3e948bed406234adb7a0ac26dfd523405d1023c23c6dd95"
-    sha256 cellar: :any,                 arm64_sequoia: "725e83e94732a82170bf71fbb801df4a6ce581df55507128ef8cde19a20aea4f"
-    sha256 cellar: :any,                 arm64_sonoma:  "835f46b6714399854da0c81b6bbab83a9aae07eaa591291ce27899e81e9fc0b9"
-    sha256 cellar: :any,                 sonoma:        "36648bfbccc00a2443c2a8ee135633b5fcb00896566acb701a26a47c46e14d01"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "177b9da332f8d116e745c8f8da82ffa1cce4b136d78ea9014ba49f6355762a22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9573ce250a99b46838c6671a2485c35c58a7b4ff17aa3fbcdaea1ac2961045e"
+    sha256 cellar: :any,                 arm64_tahoe:   "d09eb7547f90f5cb8c22b7bcfcb47b1dc8f2ec46476343379997130196f11d8f"
+    sha256 cellar: :any,                 arm64_sequoia: "cade6ef0aa90a9f37aa0377cb5a74f15de6f89d46d8a2df7d84ff57aea2dbad6"
+    sha256 cellar: :any,                 arm64_sonoma:  "9b1135e84bb10596aaaded68cfaca4799ef5e163785b58f6e7a8d64cda240391"
+    sha256 cellar: :any,                 sonoma:        "79830677cfe87aa6cdfb99d968ed37257b14b2e8d1a9f654dbfbac0488a9a2f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be1d861fef615ca72b56a99621809ba27907df985d3ff89ff0a3f2cd9f53dacf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3dddca4055bb1ae7c3de02ff11439c0eb7895d6c8d3a7822be4643e886a1fdf8"
   end
 
   depends_on "pkgconf" => :build
@@ -58,9 +58,14 @@ class KimiCli < Formula
     sha256 "f47eecd9468083c2029cc99945502cb7708b082c232f9aca65da147157b251c7"
   end
 
+  resource "annotated-doc" do
+    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
+    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
+  end
+
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/6e/be/d11abafaa15d6304826438170f7574d750218f49a106c54424a40cef4494/anthropic-0.76.0.tar.gz"
-    sha256 "e0cae6a368986d5cf6df743dfbb1b9519e6a9eee9c6c942ad8121c0b34416ffe"
+    url "https://files.pythonhosted.org/packages/eb/85/6cb5da3cf91de2eeea89726316e8c5c8c31e2d61ee7cb1233d7e95512c31/anthropic-0.77.0.tar.gz"
+    sha256 "ce36efeb80cb1e25430a88440dc0f9aa5c87f10d080ab70a1bdfd5c2c5fbedb4"
   end
 
   resource "anyio" do
@@ -143,6 +148,11 @@ class KimiCli < Formula
     sha256 "8b412432c6055b0b7d14c310000ae93352ed6754f70fa8f7c34141f91c4e3219"
   end
 
+  resource "fastapi" do
+    url "https://files.pythonhosted.org/packages/52/08/8c8508db6c7b9aae8f7175046af41baad690771c9bcde676419965e338c7/fastapi-0.128.0.tar.gz"
+    sha256 "1cc179e1cef10a6be60ffe429f79b829dce99d8de32d7acb7e6c8dfdf7f2645a"
+  end
+
   resource "fastmcp" do
     url "https://files.pythonhosted.org/packages/00/a6/e3b46cd3e228635e0064c2648788b6f66a53bf0d0ddbf5fb44cca951f908/fastmcp-2.12.5.tar.gz"
     sha256 "2dfd02e255705a4afe43d26caddbc864563036e233dbc6870f389ee523b39a6a"
@@ -176,6 +186,11 @@ class KimiCli < Formula
   resource "httpcore" do
     url "https://files.pythonhosted.org/packages/06/94/82699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cb/httpcore-1.0.9.tar.gz"
     sha256 "6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"
+  end
+
+  resource "httptools" do
+    url "https://files.pythonhosted.org/packages/b5/46/120a669232c7bdedb9d52d4aeae7e6c7dfe151e99dc70802e2fc7a5e1993/httptools-0.7.1.tar.gz"
+    sha256 "abd72556974f8e7c74a259655924a717a2365b236c882c3f6f8a45fe94703ac9"
   end
 
   resource "httpx" do
@@ -443,6 +458,11 @@ class KimiCli < Formula
     sha256 "e7bdbfdb5497da4c07dfd35530e1a902659db6ff241e39d9953cad06ebd0ae75"
   end
 
+  resource "scalar-fastapi" do
+    url "https://files.pythonhosted.org/packages/db/56/bb31bc04d42b989db6933c2c3272d229d68baff0f95214e28e20886da8f6/scalar_fastapi-1.6.1.tar.gz"
+    sha256 "5d3cc96f0f384d388b58aba576a903b907e3c98dacab1339072210e946c4f033"
+  end
+
   resource "secretstorage" do
     url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
     sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
@@ -480,8 +500,8 @@ class KimiCli < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/c4/68/79977123bb7be889ad680d79a40f339082c1978b5cfcf62c2d8d196873ac/starlette-0.52.1.tar.gz"
-    sha256 "834edd1b0a23167694292e94f597773bc3f89f362be6effee198165a35d62933"
+    url "https://files.pythonhosted.org/packages/ba/b8/73a0e6a6e079a9d9cfa64113d771e421640b6f679a52eeb9b32f72d871a1/starlette-0.50.0.tar.gz"
+    sha256 "a2a17b22203254bcbc2e1f926d2d55f3f9497f769416b3190768befe598fa3ca"
   end
 
   resource "streamingjson" do
@@ -534,9 +554,19 @@ class KimiCli < Formula
     sha256 "839676675e87e73694518b5574fd0f24c9d97b46bea16df7b8c05ea1a51071ea"
   end
 
+  resource "uvloop" do
+    url "https://files.pythonhosted.org/packages/06/f0/18d39dbd1971d6d62c4629cc7fa67f74821b0dc1f5a77af43719de7936a7/uvloop-0.22.1.tar.gz"
+    sha256 "6c84bae345b9147082b17371e3dd5d42775bddce91f885499017f4607fdaf39f"
+  end
+
+  resource "watchfiles" do
+    url "https://files.pythonhosted.org/packages/c2/c9/8869df9b2a2d6c59d79220a4db37679e74f807c559ffe5265e08b227a210/watchfiles-1.1.1.tar.gz"
+    sha256 "a173cb5c16c4f40ab19cecf48a534c409f7ea983ab8fed0741304a1c0a31b3f2"
+  end
+
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/64/6e/62daec357285b927e82263a81f3b4c1790215bc77c42530ce4a69d501a43/wcwidth-0.5.0.tar.gz"
-    sha256 "f89c103c949a693bf563377b2153082bf58e309919dfb7f27b04d862a0089333"
+    url "https://files.pythonhosted.org/packages/5f/3e/3d456efe55d2d5e7938b5f9abd68333dd8dceb14e829f51f9a8deed2217e/wcwidth-0.5.2.tar.gz"
+    sha256 "c022c39a02a0134d1e10810da36d1f984c79648181efcc70a389f4569695f5ae"
   end
 
   resource "websockets" do

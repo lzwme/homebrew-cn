@@ -4,16 +4,16 @@ class AutoEditor < Formula
   url "https://ghfast.top/https://github.com/WyattBlue/auto-editor/archive/refs/tags/29.6.2.tar.gz"
   sha256 "71144d2deb1796ba289853507d15e74a45099d250d606eba2d6d8e3aaf3ed6a1"
   license "Unlicense"
-  revision 1
+  revision 2
   head "https://github.com/WyattBlue/auto-editor.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "85933df5bf14f3485c41425a68d07e1f093f001176b86faf19e7c6c6318bf9cd"
-    sha256 cellar: :any,                 arm64_sequoia: "41ba20cc7431a8c899e7294a209d13ccc33dd5dc94b21bb479185e3213c27c0f"
-    sha256 cellar: :any,                 arm64_sonoma:  "8578eb90c12cbb1ffddba3f38bce01949fc91de0dfc4e3cf4159c41cd98071b7"
-    sha256 cellar: :any,                 sonoma:        "19e534f5a2a204749d513095b3f7db7e1ddd8dfadec59a9a0c9c351f26414c39"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff8ad76c0714c482857e1dd8e599fd8c6d7a41c81cbfd702c52c0cc271a754da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc3e53a1011284d2b9818faeb7542381fd43e2c4b8380d75f4cff351f0e68324"
+    sha256 cellar: :any,                 arm64_tahoe:   "7ec3fe063fa9e1f2cceca539aec5d9bd949ccbef31ba34b7700cf7936098746d"
+    sha256 cellar: :any,                 arm64_sequoia: "5c667b75e32c5d3c46ef78d76b478f4e0b06d07572a91f807d3d99492913b3a4"
+    sha256 cellar: :any,                 arm64_sonoma:  "82f9cb5b9ce558e6bc819203d398e708c7e55e10670653b4b49bfdeb0fcab357"
+    sha256 cellar: :any,                 sonoma:        "7278935edc4f846fc52e7dfb3b89c49be096b5638fe5793ba13369fc759cb6c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b4f48eebd729fa759c10546f89e411d003db17423513961832164f0696c156b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "347fb0de9990947b847a9a023a21f0369594df7a3072eecae2edcee038e63a0f"
   end
 
   depends_on "nim" => :build

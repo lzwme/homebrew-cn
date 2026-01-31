@@ -6,14 +6,15 @@ class Dstack < Formula
   url "https://files.pythonhosted.org/packages/55/ce/ef1ffa47e2e2f08f271527569c986bf898baec626893fee78a08fc1e30ec/dstack-0.20.7.tar.gz"
   sha256 "4ebb58f1d10178e297048b253f8598d0ce3ac80e8a21f0c448c5fbf280de5ffd"
   license "MPL-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b208ec6f4e3c2f83706dbdc995999bf65752b8c8a3d3ca9f55e91fa3933eb237"
-    sha256 cellar: :any,                 arm64_sequoia: "adbc48fccdb88eab6ceceb2fd040d0d9fcfb4e294ecf7b58b0d1cd5efdb448bd"
-    sha256 cellar: :any,                 arm64_sonoma:  "75977f1e4e1c808c7cf6badfb1023fd19fdc83693b67497d055a5d06d5a6734d"
-    sha256 cellar: :any,                 sonoma:        "37db7ffe3f4c3280547f9b427dee3337f45dccd23c6c75e6e6621d1b1a126bca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba448c5d09af8729c202b3c84ebbaf0001434f3efbc8f3977566cb62e416df01"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ce385a510e8eea0974de18c6f035412a49b499de1ebfeeb9d72f9922b7c61e3"
+    sha256 cellar: :any,                 arm64_tahoe:   "8e6b7eec481bbd4ce7e4624ae18a9a50ea3598ac8c7f9a5b1956c0a7e942857e"
+    sha256 cellar: :any,                 arm64_sequoia: "3e595f29aa10de9285e7c8e6dbca51b9c16e7eef1db0f57247557c9874823077"
+    sha256 cellar: :any,                 arm64_sonoma:  "1d6ee85ff75442768a668bc8e15b28e18226639d6dd6e822b376051af651aee0"
+    sha256 cellar: :any,                 sonoma:        "a1fe20492b74758cec2ba74d648ed0dc48e7a3daf116dd92f1ede60427256ac8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eceef54ebbd637d46ab0a0250d3ea7812702a65ade1e1242c710d05628b55d31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31d5f50944604dc80ec3847a546c0c077fd2dd6a555b7b9f0f9fe121e7c2765e"
   end
 
   # `pkgconf` and `rust` are for bcrypt.
@@ -45,8 +46,8 @@ class Dstack < Formula
   end
 
   resource "alembic" do
-    url "https://files.pythonhosted.org/packages/49/cc/aca263693b2ece99fa99a09b6d092acb89973eb2bb575faef1777e04f8b4/alembic-1.18.1.tar.gz"
-    sha256 "83ac6b81359596816fb3b893099841a0862f2117b2963258e965d70dc62fb866"
+    url "https://files.pythonhosted.org/packages/79/41/ab8f624929847b49f84955c594b165855efd829b0c271e1a8cac694138e5/alembic-1.18.3.tar.gz"
+    sha256 "1212aa3778626f2b0f0aa6dd4e99a5f99b94bd25a0c1ac0bba3be65e081e50b0"
   end
 
   resource "alembic-postgresql-enum" do
@@ -145,13 +146,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/54/06/50ff808cf4f40efada8edc20f9d563ab287864423c874dfb94f755a60c52/boto3-1.42.36.tar.gz"
-    sha256 "a4eb51105c8c5d7b2bc2a9e2316e69baf69a55611275b9f189c0cf59f1aae171"
+    url "https://files.pythonhosted.org/packages/e8/38/1e5eb348e41d97ca2b6164df28501409c2fe9bd34455c256dd87644b7c0e/boto3-1.42.38.tar.gz"
+    sha256 "af2e5c08972d35fa4b4bc457031794343a6ddb1df5692db43302d5b5feaac23e"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/66/4e/b24089cf7a77d38886ac4fbae300a3c4c6d68c1b9ccb66af03cb07b6c35c/botocore-1.42.36.tar.gz"
-    sha256 "2ebd89cc75927944e2cee51b7adce749f38e0cb269a758a6464a27f8bcca65fb"
+    url "https://files.pythonhosted.org/packages/b1/b7/a02a9db7f5267547da79a28e0832059f87b7e8f275423b4384891d53bf3b/botocore-1.42.38.tar.gz"
+    sha256 "eb36d09b5c61b3ede6129f7b54630049f3eeeccf1327a32cf8944563027a4002"
   end
 
   resource "cached-classproperty" do
@@ -240,8 +241,8 @@ class Dstack < Formula
   end
 
   resource "google-cloud-compute" do
-    url "https://files.pythonhosted.org/packages/12/66/7cf77a3fe251974a2cab4dbfdcbe2f52cb6615afe5f685a4f4886d798e1b/google_cloud_compute-1.42.0.tar.gz"
-    sha256 "08b1dbc5758baa5491087bcefb574e59d911520b714eda79b4ebf1cb429d8d98"
+    url "https://files.pythonhosted.org/packages/df/e0/2ff59f2712c0b62ae376a532e732e76dee585e3a5eb028ac6ccfef0824e4/google_cloud_compute-1.43.0.tar.gz"
+    sha256 "113fd6a5e1832e5d032b94e391c3bd7e3b06e1bee0ed6665085dfefffb41360a"
   end
 
   resource "google-cloud-core" do
@@ -420,8 +421,8 @@ class Dstack < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/04/b8/333fdb27840f3bf04022d21b654a35f58e15407183aeb16f3b41aa053446/orjson-3.11.5.tar.gz"
-    sha256 "82393ab47b4fe44ffd0a7659fa9cfaacc717eb617c93cde83795f14af5c2e9d5"
+    url "https://files.pythonhosted.org/packages/70/a3/4e09c61a5f0c521cba0bb433639610ae037437669f1a4cbc93799e731d78/orjson-3.11.6.tar.gz"
+    sha256 "0a54c72259f35299fd033042367df781c2f66d10252955ca1efb7db309b954cb"
   end
 
   resource "packaging" do
@@ -450,13 +451,13 @@ class Dstack < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/53/b8/cda15d9d46d03d4aa3a67cb6bffe05173440ccf86a9541afaf7ac59a1b6b/protobuf-6.33.4.tar.gz"
-    sha256 "dc2e61bca3b10470c1912d166fe0af67bfc20eb55971dcef8dfa48ce14f0ed91"
+    url "https://files.pythonhosted.org/packages/ba/25/7c72c307aafc96fa87062aa6291d9f7c94836e43214d43722e86037aac02/protobuf-6.33.5.tar.gz"
+    sha256 "6ddcac2a081f8b7b9642c09406bc6a4290128fce5f471cddd165960bb9119e5c"
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
-    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
+    url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
+    sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
   end
 
   resource "pyasn1" do
@@ -640,8 +641,8 @@ class Dstack < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/64/6e/62daec357285b927e82263a81f3b4c1790215bc77c42530ce4a69d501a43/wcwidth-0.5.0.tar.gz"
-    sha256 "f89c103c949a693bf563377b2153082bf58e309919dfb7f27b04d862a0089333"
+    url "https://files.pythonhosted.org/packages/5f/3e/3d456efe55d2d5e7938b5f9abd68333dd8dceb14e829f51f9a8deed2217e/wcwidth-0.5.2.tar.gz"
+    sha256 "c022c39a02a0134d1e10810da36d1f984c79648181efcc70a389f4569695f5ae"
   end
 
   resource "websocket-client" do

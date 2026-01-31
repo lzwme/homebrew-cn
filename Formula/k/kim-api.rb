@@ -11,14 +11,13 @@ class KimApi < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6f5066e030212361416ff286ce20bb6d45d0c87a5225cdabd4905b29e2abfd90"
-    sha256 cellar: :any,                 arm64_sequoia: "c8214b21245469eccfe7693dacb9146bd28a71c0dbcf60f2655cc664e2ae65bc"
-    sha256 cellar: :any,                 arm64_sonoma:  "19feb0d8847607b24f869cb2d82c7378d4196a7c7ae2224e6f33f5d54aa47e3d"
-    sha256 cellar: :any,                 arm64_ventura: "67b165f2b4604391a1fefb0554bbe3a3260ef5ddd789479925f857ee7cb59893"
-    sha256 cellar: :any,                 sonoma:        "238895ca76d8aeb1e2759426a25d726a5e5754cbd77ae48fecc871dfe4aa94e4"
-    sha256 cellar: :any,                 ventura:       "594b5361fb31557732acdb6d373be537aafca3e39731e6eecae5c4d4f63b0f08"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "591e234dddd71d0bbbf44bf0b3c948279f10822b5bfb6d437b53597ab6b030a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b9c0aa802b5478594414159c28c7dbe8304ac91d965b176f20ffbd269fc131f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "d79142cae17a24d254880b026a8137762fe02c82bed8f3b7350f18a8ffd5dda8"
+    sha256 cellar: :any,                 arm64_sequoia: "6f92c783490359b5af15dca8d0b8384392640aedecbb60690c11ebe3cb3f6e54"
+    sha256 cellar: :any,                 arm64_sonoma:  "e0c81eb361cbad87a74edfff4746cc111516a16227b1e771d9bbfc1e12681fe7"
+    sha256 cellar: :any,                 sonoma:        "cdf27f43903be385039cf5807c405594077dab622db22ca2b6769852386ccbd5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e993a48b7e16c52e42273e60fca86c3c3a7020ebde221107bfe9cc5478c29e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "471b9f1da935d02529fee88ca227059900744cd0d61444ae94e5e0a3f6f8198e"
   end
 
   depends_on "cmake" => :build
@@ -29,7 +28,7 @@ class KimApi < Formula
 
   def install
     args = [
-      "-DCMAKE_INSTALL_RPATH=#{rpath}",
+      "-DCMAKE_INSTALL_RPATH=#{rpath};#{loader_path}/../../..",
       # adjust libexec dir
       "-DCMAKE_INSTALL_LIBEXECDIR=lib",
       # adjust directories for system collection

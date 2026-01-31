@@ -6,16 +6,16 @@ class Khaos < Formula
   url "https://files.pythonhosted.org/packages/7f/0c/932228842cb6c0357fa4f41c5e68afaf3b41b7698f0794af300533594432/khaos_cli-0.7.1.tar.gz"
   sha256 "f5eb232f427dab15bbaa7ff8200a17d04c036a695c1c614e862bf87d93917b20"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/aleksandarskrbic/khaos.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "67b2363ebd2b4762a6fa187b59ee81568835ae11db9dcbfafc81facdf9a214bc"
-    sha256 cellar: :any,                 arm64_sequoia: "28113ce9e1382a414854f764b31ce848c47b12679d6245e5577d0e918321d6aa"
-    sha256 cellar: :any,                 arm64_sonoma:  "9339c50aa5f97e135c211b4528bc82a9acf55362f7abcfd201e010169e85d4a5"
-    sha256 cellar: :any,                 sonoma:        "6be61d15b5905df36e13c76f676ef200c724f63191e18912c3e6d7a175693509"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b4e5f6ffde339e97e1325e4cda6ea08c1e9d50ce0f468568bebcf087b4f0948"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d36c6983944b049c4adef79c830fec1890e0041bd08bc4456197e30f239101a"
+    sha256 cellar: :any,                 arm64_tahoe:   "f093bf3aca78af2ef48f3c1c70038f67a5b97c37c5e835f48e6e77c5dee242f5"
+    sha256 cellar: :any,                 arm64_sequoia: "efbe1e36604db2a0b7569f3ccf25ae5d5bbb951e8a6b79c96cf3faef11a3ca06"
+    sha256 cellar: :any,                 arm64_sonoma:  "d919b0d1bc42d5bbe52c6ae76563d308fd5e899baf6e02bcf8359d92d6ce7f73"
+    sha256 cellar: :any,                 sonoma:        "7c761a194bdff94fde36638fdf0117204444a64d4664c6bd252dc1697a842378"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "73b6bf894c21f65e7cf4aba61653a83f9596d4a52ded8406a348e9cb1b37f6a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04e40c5230c5298d142524aa3483db76ca05ef46483285b65bd60051bbd976c9"
   end
 
   depends_on "certifi" => :no_linkage
@@ -42,8 +42,8 @@ class Khaos < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/bc/1d/ede8680603f6016887c062a2cf4fc8fdba905866a3ab8831aa8aa651320c/cachetools-6.2.4.tar.gz"
-    sha256 "82c5c05585e70b6ba2d3ae09ea60b79548872185d2f24ae1f2709d37299fd607"
+    url "https://files.pythonhosted.org/packages/39/91/d9ae9a66b01102a18cd16db0cf4cd54187ffe10f0865cc80071a4104fbb3/cachetools-6.2.6.tar.gz"
+    sha256 "16c33e1f276b9a9c0b49ab5782d901e3ad3de0dd6da9bf9bcd29ac5672f2f9e6"
   end
 
   resource "click" do
@@ -102,8 +102,8 @@ class Khaos < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/53/b8/cda15d9d46d03d4aa3a67cb6bffe05173440ccf86a9541afaf7ac59a1b6b/protobuf-6.33.4.tar.gz"
-    sha256 "dc2e61bca3b10470c1912d166fe0af67bfc20eb55971dcef8dfa48ce14f0ed91"
+    url "https://files.pythonhosted.org/packages/ba/25/7c72c307aafc96fa87062aa6291d9f7c94836e43214d43722e86037aac02/protobuf-6.33.5.tar.gz"
+    sha256 "6ddcac2a081f8b7b9642c09406bc6a4290128fce5f471cddd165960bb9119e5c"
   end
 
   resource "pygments" do
@@ -117,8 +117,8 @@ class Khaos < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
-    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
+    url "https://files.pythonhosted.org/packages/a1/84/4831f881aa6ff3c976f6d6809b58cdfa350593ffc0dc3c58f5f6586780fb/rich-14.3.1.tar.gz"
+    sha256 "b8c5f568a3a749f9290ec6bddedf835cec33696bfc1e48bcfecb276c7386e4b8"
   end
 
   resource "shellingham" do

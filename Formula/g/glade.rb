@@ -17,29 +17,33 @@ class Glade < Formula
     sha256 x86_64_linux:  "d74c163da2a0558dbbb9d167f3ecea4bbc9c653b4a1f6f3539dc99a92452e624"
   end
 
+  # https://gitlab.gnome.org/GNOME/glade (archived)
+  # https://glade.gnome.org/news.html
+  # > Glade is not being actively developed or maintained anymore
+  deprecate! date: "2026-01-30", because: :repo_archived
+  disable! date: "2027-01-30", because: :repo_archived
+
   depends_on "docbook-xsl" => :build
+  depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
   depends_on "itstool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
 
-  depends_on "adwaita-icon-theme"
+  depends_on "adwaita-icon-theme" => :no_linkage
   depends_on "cairo"
   depends_on "gdk-pixbuf"
-  depends_on "gettext"
   depends_on "glib"
   depends_on "gtk+3"
-  depends_on "hicolor-icon-theme"
+  depends_on "hicolor-icon-theme" => :no_linkage
   depends_on "libxml2"
   depends_on "pango"
 
   uses_from_macos "libxslt" => :build
 
   on_macos do
-    depends_on "at-spi2-core"
-    depends_on "gtk-mac-integration"
-    depends_on "harfbuzz"
+    depends_on "gettext"
   end
 
   def install

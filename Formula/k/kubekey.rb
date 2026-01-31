@@ -3,7 +3,7 @@ class Kubekey < Formula
   homepage "https://kubesphere.io"
   url "https://github.com/kubesphere/kubekey.git",
       tag:      "v4.0.3",
-      revision: "5fd34cef73a94de91ece59d3b326bce393ef6dc1"
+      revision: "fd08c8caab8116f87810b5cde3313a7cbacc53fb"
   license "Apache-2.0"
   head "https://github.com/kubesphere/kubekey.git", branch: "main"
 
@@ -16,12 +16,13 @@ class Kubekey < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5cf1e1e270e45f2f0c71a2e47ca3f213579b3e1b57e7a186f0bde712f6954968"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c88917ffc11e16e9ee8ff770c18aa6fb05c2cbc887256cdd53b07947b814425d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "907607f48c0381d26bbe9c7219a406a9d35902b188505ab99729ff0fdd71e0ed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6da8e134ee43aa2f7c2c320e7c07c19256934da0dd8bb06f514049b8383c6e54"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4f39cc3005108ed21edf994ea1b6af7bef7606c4adb18070f79ebd90fa1cd6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "225744a3ad43305635d073bfd6bccb73aef6f00cd9443ceae809935ca7449e9d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70e7ccca03b7e117d1f5ef89b40483bffc6f9882682ee0351e3277b131a90fb2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf42787485da8a12098d89821019ce392313c576d9f225f7b283ffac1ad7ae45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d6a2052c4a4c2a149ae71ee16412b6067a3aada9e64750e7b8bb38f5180d621"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d3c0b5a907c9c562a9950487ad2d1e4d12944af310aa1a7ed500e97efa3c9e18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8263b2f8d799fca7b87fa4e0bab9a6dac2bc347b4d82a1522e5e366b5f6aaa3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c3c11a92a99856a4adeddf811f6309cb77bc4f30b5a3dc32fb47508d482e7f9"
   end
 
   depends_on "go" => :build
