@@ -2598,6 +2598,7 @@ Homebrew-homebrew-core/Formula/g/gnuski.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnustep-base.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnustep-make.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnutls.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/go-air.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-bindata.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-blueprint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-boring.rb, Homebrew/homebrew-core, 0
@@ -4402,6 +4403,7 @@ Homebrew-homebrew-core/Formula/m/m4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/m68k-elf-binutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/m68k-elf-gcc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mabel.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mac-cleanup-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mac-cleanup-py.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mac-robber.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mac.rb, Homebrew/homebrew-core, 0
@@ -5708,7 +5710,6 @@ Homebrew-homebrew-core/Formula/p/polyml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/polynote.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/polypolish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pomsky.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pony-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/ponyc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/ponysay.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pop.rb, Homebrew/homebrew-core, 1
@@ -9445,6 +9446,7 @@ Homebrew-homebrew-cask/Casks/e/es-de.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/eset-cyber-security.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/espanso.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/espresso.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/e/ethui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/etrecheckpro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/eu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/eudic.rb, Homebrew/homebrew-cask, 0
@@ -13304,6 +13306,7 @@ Homebrew-homebrew-cask/Casks/m/microsoft-teams@classic.rb, Homebrew/homebrew-cas
 Homebrew-homebrew-cask/Casks/m/microsoft-word.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/middle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/middleclick.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/middledrag.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/midi-monitor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/midi-router-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/midikeys.rb, Homebrew/homebrew-cask, 1

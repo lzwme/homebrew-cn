@@ -1,8 +1,8 @@
 class Teleport < Formula
   desc "Modern SSH server for teams managing distributed infrastructure"
   homepage "https://goteleport.com/"
-  url "https://ghfast.top/https://github.com/gravitational/teleport/archive/refs/tags/v18.6.1.tar.gz"
-  sha256 "96923c4f116c9b4726f3abd0da6878c771fa0494631a1737b9200225e425a93f"
+  url "https://ghfast.top/https://github.com/gravitational/teleport/archive/refs/tags/v18.6.5.tar.gz"
+  sha256 "b4f4a706939853da6b92f2267ba610447bdd3093dd439e80690b0166c4ac7986"
   license all_of: ["AGPL-3.0-or-later", "Apache-2.0"]
   head "https://github.com/gravitational/teleport.git", branch: "master"
 
@@ -18,12 +18,12 @@ class Teleport < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ef87c716916b73aded5ce7c7905919cb2ca4e5b488a196cdc439b3bae5ecf949"
-    sha256 cellar: :any,                 arm64_sequoia: "279f31f42859fc9ff756f2678da07f5167f9fc533926eee4a2527ef8084f9632"
-    sha256 cellar: :any,                 arm64_sonoma:  "da8d4ff36ddf0eb082b146036f1c0f3f7125019099e6731e264568cb2f8adc7a"
-    sha256 cellar: :any,                 sonoma:        "0908dad3662dbe669ea8fc96db59a6bde698d99457446e20420bdc66481c1601"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e0785eb19d45d2f6e8131f18d6cdf899bb64f38f21ecdd6355af8785eae8ccb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7457dcff2605fa5d39bd7d0efe8edb0d3065c05a4f39203bea0371d0e46f6621"
+    sha256 cellar: :any,                 arm64_tahoe:   "33d9fc1ec46ea9e8a4329d4dc513bdde39de4cda31dea1876a1dbba359cc268a"
+    sha256 cellar: :any,                 arm64_sequoia: "254fe6ef4a3d5de4aa60b39841b61685c9d2f56a1ba155b40e079552d56b6ba3"
+    sha256 cellar: :any,                 arm64_sonoma:  "bc8de3f5ba35159231cb2e8639fa601021c30f8b89bcd5c672b76ac436f55c5c"
+    sha256 cellar: :any,                 sonoma:        "bc56bd756f7e6b33a0ab7414f7deb539c685ed1a0d3ed46e663c6615cf41e9b3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c627376eefeb6e96a63fa63fad62d7ce1882b138a9b536f1ea01884c6449cef5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5011b7ae53161d0d2a97cd5e6ef5dd3560176a01358c824cb019ff830423236"
   end
 
   depends_on "binaryen" => :build
@@ -55,6 +55,12 @@ class Teleport < Formula
   patch :DATA
 
   def install
+    # Workaround to avoid patchelf corruption when cgo is required
+    if OS.linux? && Hardware::CPU.arm64?
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     # Prevent pnpm from downloading another copy due to `packageManager` feature
     (buildpath/"pnpm-workspace.yaml").append_lines <<~YAML
       managePackageManagerVersions: false

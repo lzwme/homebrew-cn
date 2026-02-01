@@ -1,24 +1,18 @@
 class Reshape < Formula
   desc "Easy-to-use, zero-downtime schema migration tool for Postgres"
   homepage "https://github.com/fabianlindfors/reshape"
-  url "https://ghfast.top/https://github.com/fabianlindfors/reshape/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "f348a21547cb2bfdc294ecc8a846eacec1708c29458db9afb6f8a1239f68d6cb"
+  url "https://ghfast.top/https://github.com/fabianlindfors/reshape/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "e18d64c8d7a093e45e829354ad8cf24ffbd6d2d6a1ae7b45471145264cb4bcff"
   license "MIT"
   head "https://github.com/fabianlindfors/reshape.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "4cfaa10f4b329f49d24d50df97f84fc1457d655f27b74da5849a72190e052473"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "44a403226dcc034a328658eef19b96d0abf441c2042d4777fdad22b74dc4cc41"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b29676af2bbf22ea192ead306a354827084c97c13eec0bac3f51a05117a598d3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f233439c22ef1cff6dfda8ee24fb2ddf5e4a95c30ac5381b8d7163f9ed2d0619"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e7c394f7f2fcbbb5c77df28da0a1e7a19a33e65352ade54c1a7ed2ae962efa63"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0dfcd8ebd783f1dd0dc53e59c54e513240d690eee50cecfb9ef7e305871b70cd"
-    sha256 cellar: :any_skip_relocation, ventura:        "67a29159ee666c5b6f0df160456cdbe810458da743942096972f7afb14d4a652"
-    sha256 cellar: :any_skip_relocation, monterey:       "7dfc950175556a422af65fe3385113aced74343cf5d472d8b07542f59dea1e5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "f81a7c24e3998e367e975ee46da03f2fe8c368253e93942c3735787d9d8cab16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38e9d423508ef37fa5359093653cf9dd6766419b3480159d7b9dd4fdb65a7677"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0483e216223d820bbdc4cb94c3ef5b1fb7fac2812e89eb7859feb851048dbfe3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e2507ba15bb6e31c6556cc3c9e5d33d8b9c010d6e84acf375956a6f5d266bfb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73680127359be8de1469b82e303431060e8e91933e4cc2a8909e3ee32eed5514"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5af2cc8c9db1119618463bd4e70ac0a4caa78f526b05c808ba10b041fe07e9b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c290f80b51e2645e7f08236d641c155ae0303e625bd781cdefac545d06534b83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0c836aadca352d56ac386436c9f4c3cbad3e088fce3c87c19d5d9aa63d465be"
   end
 
   depends_on "rust" => :build
@@ -47,7 +41,7 @@ class Reshape < Formula
     assert_match "SET search_path TO migration_test",
       shell_output("#{bin}/reshape generate-schema-query")
 
-    assert_match "Error: error connecting to server:",
+    assert_match "Error: error connecting to server",
       shell_output("#{bin}/reshape migrate 2>&1", 1)
   end
 end

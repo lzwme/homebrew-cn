@@ -6,15 +6,18 @@ class Air < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "50c8d275e751ca5ea4ce9f09c1086d67a68e0c19af1dedcc8fa77a26e20c0973"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9662db912578844579fc7ad0d13161c147cf1e020dfe304e20db932f7cf3c926"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a15f6087e2cb369ff3424b9cb8500ff6fade33e298075f11bdaff11ed1d8fec6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3054333b1a65cc2aee65464dc04c695de43f86f7213f0206a3049b0e85907ccc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "328a0708468d6d91273ca36a3495ab860af89ff263c0c1783e8badb5591415dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30d1f6723c09bab69478fb67362f19515f2a5f6bc19c55798235a19e78742816"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "078dd37959d207d294fdfd5619c22d40190048caee0e355f9b436cd8f7810904"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66be0d37d7e424ef885fdbb14f0883cb98d0f3d3cb703994d3fda5242a250fc0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35922c152779f31d53d57e2644fe098561f0056cfb579529c95c3539c8f3b4e1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e12336b3f00141c4fba4e2e0e24122faaf1a0774173185cb1d8bdcdff193c92a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "100a438291a034863c8bad0973fcebc8cb1cca067ede14ddb7094fa6277bfe16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f35e9759f3e71135b1865a1f7588ac020c67ad728a9d2349543312c0ea1c9ba8"
   end
 
   depends_on "rust" => :build
+
+  conflicts_with "go-air", because: "both install binaries with the same name"
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/air")

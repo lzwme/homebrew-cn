@@ -9,14 +9,15 @@ class Jupyterlab < Formula
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "79ff011ff28a93947d3b35f1fb2bbd1980b0033630cff3c33ab29c7465488243"
-    sha256 cellar: :any,                 arm64_sequoia: "0889df42db98a1842e96a090e1c83b2b0f9528a6d0191f17ada7c1ffb84beb50"
-    sha256 cellar: :any,                 arm64_sonoma:  "d11abca16819017fd651b7d265182326ba375fb34304d0cdaadeca24736c683e"
-    sha256 cellar: :any,                 sonoma:        "f43ff5ec01e054c5f3a3f75415d02086b08f8f7d319b81b168e3d895fa0f9f4c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc4c30cbebc49c53892715d028366cdda81d80389fd2703598d7d4f5ffa0fa60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "300e16399459a852dde4aada5b8a7f8e19cccec7cff17a8fa940e483c6d49395"
+    sha256 cellar: :any,                 arm64_tahoe:   "39fb033f7b9a954aac0df5cc371f4d3601faa08ad0fadb4b6c29561a87af45c2"
+    sha256 cellar: :any,                 arm64_sequoia: "c4b0e17461b50675f25e1951a2f9b06142710206b76a169bd4beff596569864a"
+    sha256 cellar: :any,                 arm64_sonoma:  "7ba2143c95b10d81aff9db94c417212ddf05e8b6ef7419f03c79d284eac7d51b"
+    sha256 cellar: :any,                 sonoma:        "1f18989c64332dfc34aac66486cd0458ab22ea5aa34c12ed76fa6e86fb5d8fb2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dba11cef02f6d2e4c8d30087fb7fa3511ca582518f983efe37e559b2940663f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d91bafbff6ca835b73a08c90cb3470cb34c0d5aa149a3102ac160ecbbea7e9a1"
   end
 
   depends_on "cmake" => :build # for ipykernel
@@ -105,8 +106,8 @@ class Jupyterlab < Formula
   end
 
   resource "debugpy" do
-    url "https://files.pythonhosted.org/packages/73/75/9e12d4d42349b817cd545b89247696c67917aab907012ae5b64bbfea3199/debugpy-1.8.19.tar.gz"
-    sha256 "eea7e5987445ab0b5ed258093722d5ecb8bb72217c5c9b1e21f64efe23ddebdb"
+    url "https://files.pythonhosted.org/packages/e0/b7/cd8080344452e4874aae67c40d8940e2b4d47b01601a8fd9f44786c757c7/debugpy-1.8.20.tar.gz"
+    sha256 "55bc8701714969f1ab89a6d5f2f3d40c36f91b2cbe2f65d98bf8196f6a6a2c33"
   end
 
   resource "decorator" do
@@ -290,8 +291,8 @@ class Jupyterlab < Formula
   end
 
   resource "nbconvert" do
-    url "https://files.pythonhosted.org/packages/a3/59/f28e15fc47ffb73af68a8d9b47367a8630d76e97ae85ad18271b9db96fdf/nbconvert-7.16.6.tar.gz"
-    sha256 "576a7e37c6480da7b8465eefa66c17844243816ce1ccc372633c6b71c3c0f582"
+    url "https://files.pythonhosted.org/packages/38/47/81f886b699450d0569f7bc551df2b1673d18df7ff25cc0c21ca36ed8a5ff/nbconvert-7.17.0.tar.gz"
+    sha256 "1b2696f1b5be12309f6c7d707c24af604b87dfaf6d950794c7b07acab96dda78"
   end
 
   resource "nbformat" do
@@ -305,8 +306,8 @@ class Jupyterlab < Formula
   end
 
   resource "notebook" do
-    url "https://files.pythonhosted.org/packages/3b/b6/6b2c653570b02e4ec2a94c0646a4a25132be0749617776d0b72a2bcedb9b/notebook-7.5.2.tar.gz"
-    sha256 "83e82f93c199ca730313bea1bb24bc279ea96f74816d038a92d26b6b9d5f3e4a"
+    url "https://files.pythonhosted.org/packages/b8/cb/cc7f4df5cee315dd126a47eb60890690a0438d5e0dd40c32d60ce16de377/notebook-7.5.3.tar.gz"
+    sha256 "393ceb269cf9fdb02a3be607a57d7bd5c2c14604f1818a17dbeb38e04f98cbfa"
   end
 
   resource "notebook-shim" do
@@ -330,8 +331,8 @@ class Jupyterlab < Formula
   end
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/4c/b2/bb8e495d5262bfec41ab5cb18f522f1012933347fb5d9e62452d446baca2/pathspec-1.0.3.tar.gz"
-    sha256 "bac5cf97ae2c2876e2d25ebb15078eb04d76e4b98921ee31c6f85ade8b59444d"
+    url "https://files.pythonhosted.org/packages/fa/36/e27608899f9b8d4dff0617b2d9ab17ca5608956ca44461ac14ac48b44015/pathspec-1.0.4.tar.gz"
+    sha256 "0210e2ae8a21a9137c0d470578cb0e595af87edaa6ebf12ff176f14a02e0e645"
   end
 
   resource "pexpect" do
@@ -360,8 +361,8 @@ class Jupyterlab < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
-    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
+    url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
+    sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
   end
 
   resource "ptyprocess" do
@@ -435,8 +436,8 @@ class Jupyterlab < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/86/ff/f75651350db3cf2ef767371307eb163f3cc1ac03e16fdf3ac347607f7edb/setuptools-80.10.1.tar.gz"
-    sha256 "bf2e513eb8144c3298a3bd28ab1a5edb739131ec5c22e045ff93cd7f5319703a"
+    url "https://files.pythonhosted.org/packages/76/95/faf61eb8363f26aa7e1d762267a8d602a1b26d4f3a1e758e92cb3cb8b054/setuptools-80.10.2.tar.gz"
+    sha256 "8b0e9d10c784bf7d262c4e5ec5d4ec94127ce206e8738f29a437945fbc219b70"
   end
 
   resource "six" do
@@ -500,8 +501,8 @@ class Jupyterlab < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/25/6f/e1ea6dcb21da43d581284d8d5a715c2affb906aa3ed301f77f7f5ae0e7d5/wcwidth-0.3.1.tar.gz"
-    sha256 "5aedb626a9c0d941b990cfebda848d538d45c9493a3384d080aff809143bd3be"
+    url "https://files.pythonhosted.org/packages/5f/3e/3d456efe55d2d5e7938b5f9abd68333dd8dceb14e829f51f9a8deed2217e/wcwidth-0.5.2.tar.gz"
+    sha256 "c022c39a02a0134d1e10810da36d1f984c79648181efcc70a389f4569695f5ae"
   end
 
   resource "webcolors" do

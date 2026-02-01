@@ -3,20 +3,20 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/a4/41/bab9848bf510cc5dc92ce9a198e8ff6d8c22340028d667e417c784f2de45/keepercommander-17.2.6.tar.gz"
-  sha256 "33041047dc8e798af7c82ba8a4e411683a318606869b6cba98e1d128178cd2e1"
+  url "https://files.pythonhosted.org/packages/fd/5c/25d9ca8ba2eb21e34d4ef3daf441cfa95d4123e9576e8bc40811e29a4e80/keepercommander-17.2.7.tar.gz"
+  sha256 "a113233ce5882110560b08bdb76426a5869c9a1a18a59df331e589bdc28ef1e2"
   license "MIT"
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b8fc61d334126aee1dd6670c51f6129b42afb9267b1f9241451455f3cb010790"
-    sha256 cellar: :any,                 arm64_sequoia: "46e9028430827c91a2ae3b4ec8fc77f4598f723fbe2ca0d6aa8424fc087fff7c"
-    sha256 cellar: :any,                 arm64_sonoma:  "dcfa77765bc3d2a321975124adfeea8cfc0132cf7ec2ae8421ced27abc92dc6e"
-    sha256 cellar: :any,                 sonoma:        "854f45d72f43656b909b839c02b993dd18b9acbfd8d5c51447401ed13f3abca7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba697338850431d83f034d85d11818d5017b3f63d938d109bdb5b0a2b6f42ea3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7387462546fed58d31b3d3389303208de34e5baa6095a6eabc525eaab8c8ee02"
+    sha256 cellar: :any,                 arm64_tahoe:   "32373137c4bc951cdd176ec612233fcd26178bbded6efad995cd9ff6a76c331b"
+    sha256 cellar: :any,                 arm64_sequoia: "b03649b1d09138b16df09137b4fc6abe9d7f13357b57f4b4f68dee74a82900d3"
+    sha256 cellar: :any,                 arm64_sonoma:  "641cce37a7574b2edf823d1e4451e764a670c05e88677adca6c60a911160e008"
+    sha256 cellar: :any,                 sonoma:        "a5b0791b572bc9edea791c6447ec721263d67d56c8a4251c75849aa256bee4dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6d0a6652e806a83f28cd423b28a17dcd2be580b4fda1cfa59064fe8e1a10adc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5e22878c93a941b4dbd529dc9201ce9bd4d81f370d783fa414b74800b5d75db"
   end
 
   depends_on "pkgconf" => :build
@@ -205,8 +205,8 @@ class KeeperCommander < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/53/b8/cda15d9d46d03d4aa3a67cb6bffe05173440ccf86a9541afaf7ac59a1b6b/protobuf-6.33.4.tar.gz"
-    sha256 "dc2e61bca3b10470c1912d166fe0af67bfc20eb55971dcef8dfa48ce14f0ed91"
+    url "https://files.pythonhosted.org/packages/ba/25/7c72c307aafc96fa87062aa6291d9f7c94836e43214d43722e86037aac02/protobuf-6.33.5.tar.gz"
+    sha256 "6ddcac2a081f8b7b9642c09406bc6a4290128fce5f471cddd165960bb9119e5c"
   end
 
   resource "psutil" do
@@ -280,8 +280,8 @@ class KeeperCommander < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/64/8d/2fbd6b8652f4cabf9cb0852d7af1aa45b6cad32d0f50735856e8f9e41719/textual-7.4.0.tar.gz"
-    sha256 "1a9598e485492f9a8f033c7ec5e59528df3ab0742fda925681acf78b0fb210de"
+    url "https://files.pythonhosted.org/packages/9f/38/7d169a765993efde5095c70a668bf4f5831bb7ac099e932f2783e9b71abf/textual-7.5.0.tar.gz"
+    sha256 "c730cba1e3d704e8f1ca915b6a3af01451e3bca380114baacf6abf87e9dac8b6"
   end
 
   resource "uc-micro-py" do
@@ -295,8 +295,8 @@ class KeeperCommander < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/64/6e/62daec357285b927e82263a81f3b4c1790215bc77c42530ce4a69d501a43/wcwidth-0.5.0.tar.gz"
-    sha256 "f89c103c949a693bf563377b2153082bf58e309919dfb7f27b04d862a0089333"
+    url "https://files.pythonhosted.org/packages/c2/62/a7c072fbfefb2980a00f99ca994279cb9ecf310cb2e6b2a4d2a28fe192b3/wcwidth-0.5.3.tar.gz"
+    sha256 "53123b7af053c74e9fe2e92ac810301f6139e64379031f7124574212fb3b4091"
   end
 
   resource "websockets" do

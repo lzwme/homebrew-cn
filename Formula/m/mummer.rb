@@ -27,9 +27,10 @@ class Mummer < Formula
 
   fails_with :clang do
     cause <<~CAUSE
-      Clang+libstdc++ seem to have issues:
+      Clang+libc++ seem to have issues:
         * the unittest for multi-threaded output fails
         * tools using multi-threaded output have incomplete and inconsistent output
+      See https://github.com/mummer4/mummer/issues/224
     CAUSE
   end
 

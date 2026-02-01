@@ -22,22 +22,20 @@ class AutoEditor < Formula
   depends_on "ffmpeg"
   depends_on "lame"
   depends_on "libvpx"
-  depends_on "llama.cpp"
   depends_on "opus"
   depends_on "svt-av1"
-  depends_on "whisper-cpp"
   depends_on "x264"
   depends_on "x265"
 
   def install
     ENV["DISABLE_VPL"] = "1"
+    ENV["DISABLE_WHISPER"] = "1"
     system "nimble", "make"
     generate_completions_from_executable("nimble", "zshcomplete", "--silent", shells: [:zsh])
     bin.install "auto-editor"
   end
 
   test do
-    ENV.prepend_path "PATH", Formula["ffmpeg-full"].bin
     mp4in = testpath/"video.mp4"
     mp4out = testpath/"video_ALTERED.mp4"
     system "ffmpeg", "-filter_complex", "testsrc=rate=1:duration=5", mp4in

@@ -3,18 +3,17 @@ class Litecli < Formula
 
   desc "CLI for SQLite Databases with auto-completion and syntax highlighting"
   homepage "https://github.com/dbcli/litecli"
-  url "https://files.pythonhosted.org/packages/5e/74/92c1d364ca40be3f879cacc0b0a509e925c9208e1c412c85d5b20a7538e7/litecli-1.17.0.tar.gz"
-  sha256 "93cfefa9765f4bdcaaf6d6c9b717b4d5720a8893c92c8eb99debf04cb371fcb7"
+  url "https://files.pythonhosted.org/packages/e3/d5/afec99cc3eaba96214d77e76438d7fe5e6ea54704b0e47dd97d9696ccd6c/litecli-1.17.1.tar.gz"
+  sha256 "e2f7191eaba830b24dbbfc9171a495c62562df923ba1cc3b2db2652547c1bac8"
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "becc6fb363f8febd1295149e5958705e146560956bd69aa902f9242926e6c919"
-    sha256 cellar: :any,                 arm64_sequoia: "295f5e0ca0acb11d5436197db293d8b6876c4d8f8ca3fb82372496ebe031ff00"
-    sha256 cellar: :any,                 arm64_sonoma:  "ebfdbe8b7280437b3a59c06c3a205bd3ef8b7223c82470ae6530eaf2bbe5d1d6"
-    sha256 cellar: :any,                 sonoma:        "7d6b415368a5cc010d4e4babf9ffc26cd416af900f472bab13f384ee22b072f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "880bf2366a97870e9b6a477d37a079e3459ab7fb5c9967beccecb66abc93a805"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "261be847818fd5b2a5c9d94fd10bfb40d18ddb528fad510ebd74541042e20fd9"
+    sha256 cellar: :any,                 arm64_tahoe:   "d09527a75ebc37b768e5a24f7dcfe560fb55744b085bebcb587f3c80ce23966c"
+    sha256 cellar: :any,                 arm64_sequoia: "9bd1740ccc13ea5218382024877256ca06e901ea0919db3dfa629f0695b0c212"
+    sha256 cellar: :any,                 arm64_sonoma:  "ec25be9574bf6ca7456974f95fad70f36d2fd22482d396d7ad795f84e41b9cb9"
+    sha256 cellar: :any,                 sonoma:        "c9d722db2165c56d7ba2e767ec5367ea4313b74c47562074e421b3754e8edfbc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "99c31c21b00cd7003ce6e63b40c0a0b79463d383897968fc57185d94c0d4673e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1ba22c40747a36d8078d09271bb3b7e345b1a5217707259e92510bded47a922"
   end
 
   depends_on "rust" => :build # for jiter
@@ -25,21 +24,22 @@ class Litecli < Formula
 
   uses_from_macos "sqlite"
 
-  pypi_packages exclude_packages: %w[certifi pydantic setuptools]
+  pypi_packages package_name:     "litecli[ai]",
+                exclude_packages: %w[certifi pydantic setuptools]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
+    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
   end
 
   resource "cli-helpers" do
-    url "https://files.pythonhosted.org/packages/5a/e6/51b043e8c4ae390af61af35f73a9c2a69a26ea9cf4d061ab45c59f8e20f4/cli_helpers-2.7.0.tar.gz"
-    sha256 "62d11710dbebc2fc460003de1215688325d8636859056d688b38419bd4048bc0"
+    url "https://files.pythonhosted.org/packages/3b/a3/0eead9f2b507c8f71db89984870ae9ba2e92a01ae28dda6c1b91030cac5d/cli_helpers-2.9.0.tar.gz"
+    sha256 "a988745ec431ddae707f738dd0d13890b74a00a2aa0428eacd7fc1e03b206a17"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "click-default-group" do
@@ -83,33 +83,18 @@ class Litecli < Formula
   end
 
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/a3/68/0357982493a7b20925aece061f7fb7a2678e3b232f8d73a6edb7e5304443/jiter-0.11.1.tar.gz"
-    sha256 "849dcfc76481c0ea0099391235b7ca97d7279e0fa4c86005457ac7c88e8b76dc"
+    url "https://files.pythonhosted.org/packages/45/9d/e0660989c1370e25848bb4c52d061c71837239738ad937e83edca174c273/jiter-0.12.0.tar.gz"
+    sha256 "64dfcd7d5c168b38d3f9f8bba7fc639edb3418abcc74f22fdbe6b8938293f30b"
   end
 
   resource "llm" do
-    url "https://files.pythonhosted.org/packages/05/7f/f2fe103b8fa6c5a96ba117fef46af15c766d4c28640893c2c7feb79c0df3/llm-0.27.1.tar.gz"
-    sha256 "02b0b393e31cf0e0ee1f2a6006c451c74ec18c7ec3973218de56e76fd72baa80"
-  end
-
-  resource "mypy" do
-    url "https://files.pythonhosted.org/packages/c0/77/8f0d0001ffad290cef2f7f216f96c814866248a0b92a722365ed54648e7e/mypy-1.18.2.tar.gz"
-    sha256 "06a398102a5f203d7477b2923dda3634c36727fa5c237d8f859ef90c42a9924b"
-  end
-
-  resource "mypy-extensions" do
-    url "https://files.pythonhosted.org/packages/a2/6e/371856a3fb9d31ca8dac321cda606860fa4548858c0cc45d9d1d4ca2628b/mypy_extensions-1.1.0.tar.gz"
-    sha256 "52e68efc3284861e772bbcd66823fde5ae21fd2fdb51c62a211403730b916558"
+    url "https://files.pythonhosted.org/packages/cb/91/5071c6e0e7eabbf3a95870a4b2ec0fc585e0d4d57532d305d08d6595f8a3/llm-0.28.tar.gz"
+    sha256 "e3d8bcc0f016fae8aeca1d702491a1891523702983459cb66afec99d74cabfc1"
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/51/a2/f4023c1e0c868a6a5854955b3374f17153388aed95e835af114a17eac95b/openai-2.7.1.tar.gz"
-    sha256 "df4d4a3622b2df3475ead8eb0fbb3c27fd1c070fa2e55d778ca4f40e0186c726"
-  end
-
-  resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/ca/bc/f35b8446f4531a7cb215605d100cd88b7ac6f44ab3fc94870c120ab3adbf/pathspec-0.12.1.tar.gz"
-    sha256 "a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712"
+    url "https://files.pythonhosted.org/packages/b1/6c/e4c964fcf1d527fdf4739e7cc940c60075a4114d50d03871d5d5b1e13a88/openai-2.16.0.tar.gz"
+    sha256 "42eaa22ca0d8ded4367a77374104d7a2feafee5bd60a107c3c11b5243a11cd12"
   end
 
   resource "pluggy" do
@@ -168,13 +153,13 @@ class Litecli < Formula
   end
 
   resource "sqlite-utils" do
-    url "https://files.pythonhosted.org/packages/51/43/ce9183a21911e0b73248c8fb83f8b8038515cb80053912c2a009e9765564/sqlite_utils-3.38.tar.gz"
-    sha256 "1ae77b931384052205a15478d429464f6c67a3ac3b4eafd3c674ac900f623aab"
+    url "https://files.pythonhosted.org/packages/b3/e3/6b1106349e2576c18409b27bd3b16f193b1cf38220d98ad22aa454c5e075/sqlite_utils-3.39.tar.gz"
+    sha256 "bfa2eac29b3e3eb5c9647283797527febcf4efd4a9bbb31d979a14a11ef9dbcd"
   end
 
   resource "sqlparse" do
-    url "https://files.pythonhosted.org/packages/e5/40/edede8dd6977b0d3da179a342c198ed100dd2aba4be081861ee5911e4da4/sqlparse-0.5.3.tar.gz"
-    sha256 "09f67787f56a0b16ecdbde1bfc7f5d9c3371ca683cfeaa8e6ff60b4807ec9272"
+    url "https://files.pythonhosted.org/packages/90/76/437d71068094df0726366574cf3432a4ed754217b436eb7429415cf2d480/sqlparse-0.5.5.tar.gz"
+    sha256 "e20d4a9b0b8585fdf63b10d30066c7c94c5d7a7ec47c889a2d83a3caa93ff28e"
   end
 
   resource "tabulate" do
@@ -183,13 +168,13 @@ class Litecli < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
-    sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
+    url "https://files.pythonhosted.org/packages/27/89/4b0001b2dab8df0a5ee2787dcbe771de75ded01f18f1f8d53dedeea2882b/tqdm-4.67.2.tar.gz"
+    sha256 "649aac53964b2cb8dec76a14b405a4c0d13612cb8933aae547dd144eacc99653"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
-    sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
+    url "https://files.pythonhosted.org/packages/5f/3e/3d456efe55d2d5e7938b5f9abd68333dd8dceb14e829f51f9a8deed2217e/wcwidth-0.5.2.tar.gz"
+    sha256 "c022c39a02a0134d1e10810da36d1f984c79648181efcc70a389f4569695f5ae"
   end
 
   def install
