@@ -1,8 +1,8 @@
 class TreeSitter < Formula
   desc "Incremental parsing library"
   homepage "https://tree-sitter.github.io/"
-  url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.26.3.tar.gz"
-  sha256 "7f4a7cf0a2cd217444063fe2a4d800bc9d21ed609badc2ac20c0841d67166550"
+  url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.26.5.tar.gz"
+  sha256 "8e012493b2103e0471d3aba8048b73bc1a3138132974e2fd8bfb89a63e62f478"
   license "MIT"
   head "https://github.com/tree-sitter/tree-sitter.git", branch: "master"
 
@@ -12,12 +12,12 @@ class TreeSitter < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a9814378eff0b42340bbff075c6e52b68dfb29edc6f0b264334809b02eedffbc"
-    sha256 cellar: :any,                 arm64_sequoia: "40213cc22c7b17e0d7265b72af2bf1c650203ea5379b3e91f5debb46c1104058"
-    sha256 cellar: :any,                 arm64_sonoma:  "e7ddb00fbb96876e17b73e7765f54bdf63104821d5656ae6cd4913f40540e25d"
-    sha256 cellar: :any,                 sonoma:        "426074ecd8fee3c336468daf48958a638274eecd0b305ff13d4bb11ef4ae82d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "01ae81da74c8f8f3b3cbcf3641e2a25a813987500ec42eaba0a44ca001320b63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9c21b563ee81bbe684db5743a5b6f4245ba7cf81c5102fb40d3c2dde3ea8add"
+    sha256 cellar: :any,                 arm64_tahoe:   "0af4d4b6d239133dbf53f1b666448d89c6b1e7de2083f140e70473bd9957658b"
+    sha256 cellar: :any,                 arm64_sequoia: "ad99138158db223f367412b2c03bc613e29dde67cc00fd89c5a6ace2a83b41c3"
+    sha256 cellar: :any,                 arm64_sonoma:  "b89d47b1af9429d76bea00252a062994bc29f9380cbedbcbeb952170ccd040e1"
+    sha256 cellar: :any,                 sonoma:        "d39575eb2e6412e5631f13c4ee199cb911d5bed31aece69db4c43828eeaf286f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d17e9e0faf8106187ab5b603b81f9525834c19d6b1d24937edec2410ae074783"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8eb22984decfe950f5c4a156cab5e2d8d271327696c7b7babebe987aebf8bf8"
   end
 
   def install

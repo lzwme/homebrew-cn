@@ -1,18 +1,18 @@
 class Fnox < Formula
   desc "Fort Knox for your secrets - flexible secret management tool"
   homepage "https://fnox.jdx.dev/"
-  url "https://ghfast.top/https://github.com/jdx/fnox/archive/refs/tags/v1.10.1.tar.gz"
-  sha256 "5ee8477d6b094b32ff835294959859efd3b706a45b4210168352017f905ddbd3"
+  url "https://ghfast.top/https://github.com/jdx/fnox/archive/refs/tags/v1.11.0.tar.gz"
+  sha256 "0e9960825c02b39e1a021f5dc5a3dd9cfab48b6e24a2351ea09ff5a129059666"
   license "MIT"
   head "https://github.com/jdx/fnox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "38ccf5f378fc09533ca130eaf4631859b3c58ca89e75abfc1ddbf7f27f282595"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62fc76449bd40626eaee3609ec9b350ad917ba180b3d4564642424baab7f45a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "225c7456aaeae87c4cba4ceda86b5cf497a7ec99214041bf7a3429c1ae6ba482"
-    sha256 cellar: :any_skip_relocation, sonoma:        "477dfb23b40a5f6cbf1e637b2994bc8c5be3a26965d4310304cd5b03ff99b825"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "254af20c88720bedf1cb3b2f7fd2595f97fe8a421148df32e287af0df45ec421"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63adad1c46f7401e447a3467854ea6d62716ca0ef47bce814aaaf7bce52e79b5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f96e48260445b86314651a97993599f77e43c58f3a3b6c7567117df611bb8162"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54b7900c8ade7ef45038134c4d1af3a2c0b57ef46d391576db99ba6b302e00a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5876e4b7e39046fa6c5804a3cefa2abf9ea2b2b23689f4740c4104590d554b62"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f498af512531f4380b9bd89e50f993994273984df394df3441588b256e589d78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a2e29c06e84a5e05fa75bad99aae0995c3b2f71e83ea68205370014ff851ac9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd739189e9a354ccc2198d503a681f81516d2f25132cf19719290318b4bb0dc7"
   end
 
   depends_on "pkgconf" => :build

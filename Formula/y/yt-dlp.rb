@@ -3,17 +3,17 @@ class YtDlp < Formula
 
   desc "Feature-rich command-line audio/video downloader"
   homepage "https://github.com/yt-dlp/yt-dlp"
-  url "https://files.pythonhosted.org/packages/42/b6/b401777f2fb16cb35bfc352079b8c5a60fbc8189c655539f51a9847d1e0b/yt_dlp-2026.1.29.tar.gz"
-  sha256 "12b489eb16828cc3fff1723f244992ebae8a5bf1ad75c8e9f01d729ae237ebb9"
+  url "https://files.pythonhosted.org/packages/93/b3/025d41aa2b5b814c0898a4c5b2a9aa210192f616738aac5a86ef5780f0f6/yt_dlp-2026.1.31.tar.gz"
+  sha256 "16767a3172cbb7183199f4db19e34b77b19e030ab7101b8f26d6c9e6af6f42ae"
   license "Unlicense"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e99b9f929255f4ae74713e105e69927e49655b27f978761ba68e3072260f1c64"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0629251f9f8fd1c3d6797d9c07ac1459ea6e79e973a49609235219e3e6801794"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e54d83e5ef2f831561c46725bd39a6c108bb47aec7fee0859822860e12906acd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f74ae5b6bac2f6eb86c4580ba1447cc42333ea63fed375080fc799fa5541dc9c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a7cc36e80cbdeb67c9995985952394a0c828e9ebd60fc695c98ca28ed21a78e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b07455aff61cbcd46eaf67a11054d2228a38c9b7b1ab473c546bfcf99c7f97c5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "534466fb651ae9570f666b9917f6c271fdeee3e2c1ac094414aeb7697e61c36d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd94679c02b7c813794cfd144bc37adcbba4ac7a126bd0af1181d84c7ef7ae7b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cbfe57cc51b659551c8615cc9f32f0ebc2ce30c4fb69a2dde9d5c0a70aed7e40"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f2b88c7c547f3e5a1521d0d1d623fb25af579dbf84827597d9508959634ff043"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "75d743b346a335f234fe6ac1161329ff2592f6470e69993d9a5850678ad6d99b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f3e6d2cc2163a328068bad452ae3efb1c69c6ed99ccf2f2e31dcfc205cc06d8"
   end
 
   head do

@@ -1,21 +1,18 @@
 class EfmLangserver < Formula
   desc "General purpose Language Server"
   homepage "https://github.com/mattn/efm-langserver"
-  url "https://ghfast.top/https://github.com/mattn/efm-langserver/archive/refs/tags/v0.0.54.tar.gz"
-  sha256 "4149b2922899ce313a89f60851f6678369253ed542dd65bdc8dd22f3cf1629bb"
+  url "https://ghfast.top/https://github.com/mattn/efm-langserver/archive/refs/tags/v0.0.55.tar.gz"
+  sha256 "3e46b2e95725dc0e85816c6c6811cb81ab573147df0e888bb3354642e1286e9f"
   license "MIT"
   head "https://github.com/mattn/efm-langserver.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "57061fc09229dcf958741bac9f8cb35a94fc8979252b642b9f34a7b651dee4cd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3fec389284c49ce09101a88899c580d03ead74e23638a30284d903e3f4e5c8a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3fec389284c49ce09101a88899c580d03ead74e23638a30284d903e3f4e5c8a3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3fec389284c49ce09101a88899c580d03ead74e23638a30284d903e3f4e5c8a3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a243107e41b7158b42aaef39c118b8ad6b2e321bedbedbbec267cc55ae1cd40"
-    sha256 cellar: :any_skip_relocation, ventura:       "1a243107e41b7158b42aaef39c118b8ad6b2e321bedbedbbec267cc55ae1cd40"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "93769ecdecbd00b0b2c0e6bf77397f307aaea3952a6049741ba9f46eefbfada2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84eb67d38a415d8f87456816e0ae24e0c1e000d8836f70ba0d9fa115a423a811"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0693ca4e1b15f73eb34c1d3102c260eda6a224a2c1465b507b010e22fd180435"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0693ca4e1b15f73eb34c1d3102c260eda6a224a2c1465b507b010e22fd180435"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0693ca4e1b15f73eb34c1d3102c260eda6a224a2c1465b507b010e22fd180435"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ac937f6c7f36311cfab5a1e97dab37b8c0338c1e02c355e0751afbb6fd9033aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f68a3e2e52b57d2b1fe1655277267c139232e69af2c93557b744dfba0f8f889b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76991739d7e07865d25f1e0a11711572e38919a9096095778aaec8d05269b27e"
   end
 
   depends_on "go" => :build

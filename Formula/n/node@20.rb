@@ -1,8 +1,8 @@
 class NodeAT20 < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v20.19.6/node-v20.19.6.tar.xz"
-  sha256 "2026f9ff52c286d7c7d99932b21be313d1736aea524c5aff1748d41ab0bd9a20"
+  url "https://registry.npmmirror.com/-/binary/node/v20.20.0/node-v20.20.0.tar.xz"
+  sha256 "5294d9d2915620e819e6892fd7e545b98d650bad36dae54e6527eaac482add98"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class NodeAT20 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0edc905bc51f6b8d91f5bbf4e13fd1a9be5624a0ef91cfaa18a8f464ac6a1640"
-    sha256 arm64_sequoia: "289f3e166e10b5d8d0879f9043be771beac4d1056119f4b6710ebd6395f7ded0"
-    sha256 arm64_sonoma:  "f40771e2ba2e923ebf511a1c854a1a3be6c1cd7ed25f12a034ad7221fe9971bd"
-    sha256 sonoma:        "d62f13c779c6debac33cb13c0bba7e509b20828f8f77132b28c6c9c4dc4f915c"
-    sha256 arm64_linux:   "3c4cca0584cbfe892e49db2f303bf8c7250e7bcd795fcc56f88bf5a932d6142d"
-    sha256 x86_64_linux:  "4926e3225247f1dae9d6aeeed2b2d28adb769d0c1e11cb9b9130a739916b140f"
+    sha256 arm64_tahoe:   "76adee89028931714d22598994e9ccc062f1f3eef5d8720d3ed7d7b97b6c43dd"
+    sha256 arm64_sequoia: "3c0886b13699f4ea73f06981d45f4f5d29a5bc4aa6ad388d6fc285f9912b4164"
+    sha256 arm64_sonoma:  "bcc7551fac7000b3410b33a81ea412ce29596391575d0d414e7a5e005b3dbde0"
+    sha256 sonoma:        "71e72070c7ff1052e35fad85f4f4d257c4bb4b908415f81457de350ef0fb2d0b"
+    sha256 arm64_linux:   "b60b80c88a6ccffb6e0746a4da163053a55fda9d0e60775243206398d32429ad"
+    sha256 x86_64_linux:  "1206d022dc11d1434dae27c842697704be49aaa8189588c06363cdf67f497a88"
   end
 
   keg_only :versioned_formula

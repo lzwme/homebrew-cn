@@ -8986,6 +8986,7 @@ Homebrew-homebrew-cask/Casks/c/command-pad.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/command-tab-plus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/command-x.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/commander-one.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/commander.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/commandpost.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/commandq.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/companion-satellite.rb, Homebrew/homebrew-cask, 0
@@ -9381,6 +9382,7 @@ Homebrew-homebrew-cask/Casks/e/electrum-grs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/electrum-ltc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/electrum.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/electrumsv.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/e/elegoo-slicer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/elektron-overbridge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elektron-transfer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/element.rb, Homebrew/homebrew-cask, 0
@@ -14342,6 +14344,7 @@ Homebrew-homebrew-cask/Casks/r/restfox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/restic-browser.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/restream-chat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/retcon.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/r/retrace.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/retro-virtual-machine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/retroactive.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/retroarch-metal.rb, Homebrew/homebrew-cask, 0
