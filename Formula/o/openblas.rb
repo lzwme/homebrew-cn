@@ -9,6 +9,7 @@ class Openblas < Formula
   # 3. interface/{gemmt.c,sbgemmt.c} is BSD-2-Clause
   # 4. relapack/ is MIT but license is omitted as it is not enabled
   license all_of: ["BSD-3-Clause", "BSD-2-Clause-Views", "BSD-3-Clause-Open-MPI", "BSD-2-Clause"]
+  revision 1
   head "https://github.com/OpenMathLib/OpenBLAS.git", branch: "develop"
 
   livecheck do
@@ -17,19 +18,22 @@ class Openblas < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "135aee4c324efce7de6269682367ce7a934daabb873c2edc0ea32e77d5857bd7"
-    sha256 cellar: :any,                 arm64_sequoia: "c8b91996840c394ac8f97e200bffacc20c300b5ec4f7d0b30d89f35a8e973c86"
-    sha256 cellar: :any,                 arm64_sonoma:  "978353b2670e5ccb034c4b5c68fc75747bfc3c95b50bc1c412030f5c6d50637c"
-    sha256 cellar: :any,                 sonoma:        "bb4e278d374d524fe6284140264907278d29a1bd373a94b32fe039295b881ec1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc71fe7c9141a710dcfef0277565ba7d58eaa63c35718fc38fd77e01e4a61e72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fa5c092b66e69dd666b9476801dfd33a7bd84041a3ce85fd32b4e9b78a95b9b"
+    sha256 cellar: :any,                 arm64_tahoe:   "86be8c9ee5070d3b4e940ab72cd89998dcf59ece4691d7b3bc2a9549f3999d31"
+    sha256 cellar: :any,                 arm64_sequoia: "fcde181971556b1ef2febf3051c4365c2138e5be4b81c44b14ebf642a7aa0bd2"
+    sha256 cellar: :any,                 arm64_sonoma:  "a29ae64872e453f299745202b9cdcad7d9479b00af47528d80d3ce068b0bb80d"
+    sha256 cellar: :any,                 sonoma:        "b44311b4806a899fb976c6e7f9369ef1a8f913324f32b2b631dd7bcac2dd93fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dcaadf5e964f6c0de691cf40697b9a0981926396a8fd5a2253db7fe4dd006a3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df4ff7c931ea08422354e0d8dcd1efb84144b91393ec58572434483a154f6bbf"
   end
 
   keg_only :shadowed_by_macos, "macOS provides BLAS in Accelerate.framework"
 
   depends_on "pkgconf" => :test
   depends_on "gcc" # for gfortran
-  fails_with :clang
+
+  on_macos do
+    depends_on "libomp"
+  end
 
   # Fix configuration header on Linux Arm with GCC 12
   # https://github.com/OpenMathLib/OpenBLAS/pull/5606
@@ -39,6 +43,20 @@ class Openblas < Formula
   end
 
   def install
+    # Workaround to use Apple Clang, GCC gfortran and link to `libomp`. We do not
+    # want to link GCC's libgomp as it will cause dependents to mix multiple OpenMP:
+    # https://cpufun.substack.com/p/is-mixing-openmp-runtimes-safe
+    if ENV.compiler == :clang
+      inreplace "Makefile.install" do |s|
+        s.gsub! ":= -fopenmp", ":= -I#{Formula["libomp"].opt_include} -Xpreprocessor -fopenmp"
+        s.gsub! "+= -lgomp", "+= -L#{Formula["libomp"].opt_lib} -lomp"
+      end
+      inreplace "Makefile.system" do |s|
+        s.gsub! "+= -fopenmp", "+= -Xpreprocessor -fopenmp"
+        s.gsub! "+= -lgfortran", "+= -L#{Formula["gcc"].opt_lib}/gcc/current -lgfortran"
+      end
+    end
+
     ENV.runtime_cpu_detection
     ENV.deparallelize # build is parallel by default, but setting -j confuses it
 
@@ -72,6 +90,14 @@ class Openblas < Formula
   end
 
   test do
+    if OS.mac?
+      require "utils/linkage"
+      libgomp = Formula["gcc"].opt_lib/"gcc/current/libgomp.dylib"
+      libomp = Formula["libomp"].opt_lib/"libomp.dylib"
+      refute Utils.binary_linked_to_library?(lib/"libopenblas.dylib", libgomp), "Unwanted linkage to libgomp!"
+      assert Utils.binary_linked_to_library?(lib/"libopenblas.dylib", libomp), "Missing linkage to libomp!"
+    end
+
     (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
@@ -99,6 +125,8 @@ class Openblas < Formula
     cp_r pkgshare/"cpp_thread_test/.", testpath
     ENV.prepend_path "PKG_CONFIG_PATH", lib/"pkgconfig" if OS.mac?
     flags = shell_output("pkgconf --cflags --libs openblas").chomp.split
+    flags += %W[-L#{Formula["libomp"].lib} -lomp] if OS.mac?
+
     %w[dgemm_thread_safety dgemv_thread_safety].each do |test|
       inreplace "#{test}.cpp", '"../cblas.h"', '"cblas.h"'
       system ENV.cxx, *ENV.cxxflags.to_s.split, "-std=c++11", "#{test}.cpp", "-o", test, *flags

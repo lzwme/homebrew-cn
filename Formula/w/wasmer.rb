@@ -1,18 +1,18 @@
 class Wasmer < Formula
   desc "Universal WebAssembly Runtime"
   homepage "https://wasmer.io"
-  url "https://ghfast.top/https://github.com/wasmerio/wasmer/archive/refs/tags/v7.0.0.tar.gz"
-  sha256 "e522bfd979ad1892e23823e665f285b5ffb90bce585848617f7e2dd03e7c56c0"
+  url "https://ghfast.top/https://github.com/wasmerio/wasmer/archive/refs/tags/v7.0.1.tar.gz"
+  sha256 "1cd67765b834dd509d29fd7420819af37af852b877bc32b31c07bf92d27ffd31"
   license "MIT"
   head "https://github.com/wasmerio/wasmer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2853202ea049c14c7766c03e087cd5a3c514b7e7ce6b9c17e2f53326c1d68252"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a025248f43ae83434e817ed0efc9ba621da46610ae6f48cd0f51f0dd9470b29b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8be56c1a61cb599a1282f1f46683cd1bdc21dd6cbdbaf40bc7d2a07174744240"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e8b730c8ee3c3ac6c4452e6a36a4cfa892f616805667c00c3c3efa16e896c0ba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff998b030206db7b563a936e541b424fd8b34ed5d8fdacb3425faff9d2e154d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b89e172b84d76bfb22657c5538721165d72f805ef1ea4aae67742333fbc1505"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01ca5aa4e2349a5cef9b277ccbd3040b7b57dddbaee41788e2734a597af44ab6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52ec552035a8edd72cd462a1ef4e991e2f8a174f0f483d506c172db54d186bd0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4ed4dc185c00a0cde9966c9122aa0abb3e6d5def3b1358a6a997eb4ff753c63"
+    sha256 cellar: :any_skip_relocation, sonoma:        "af8c5da656d665fce998bfbb1fd59c4874270183a5592f45bcefa34c922a9207"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "851013b1f02a3bd26e55eb35e84bb8b387504cabfb8dc858c45d4e854d15e787"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "976886b95d606f2b1cd6eb45f35fad3b36a6039af6a2153dfd8d4125ea5cf8fb"
   end
 
   depends_on "cmake" => :build

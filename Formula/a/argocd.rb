@@ -2,8 +2,8 @@ class Argocd < Formula
   desc "GitOps Continuous Delivery for Kubernetes"
   homepage "https://argoproj.github.io/cd/"
   url "https://github.com/argoproj/argo-cd.git",
-      tag:      "v3.2.6",
-      revision: "65b029342d656c03c57f0d0e14433438750c8f5d"
+      tag:      "v3.3.0",
+      revision: "fd6b7d5b3cba5e7aa7ad400b0fb905a81018a77b"
   license "Apache-2.0"
 
   # There can be a notable gap between when a version is tagged and a
@@ -18,12 +18,12 @@ class Argocd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f37f6f2bfaf186a83252314ee34ec0072750ae2b4dada28d4b5b45a0a2e12b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "198247b1697f57aab0fd52489da1a8ca61e24f7dae97167846328c269fd6abaf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0efe91eb9b42aadcd665c120ef368e402f87dcbadb14016d4ae73409d8b8261a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6bfc391a377fa00f7572307003c71ead7febb211f8728611b1df623a01b3dfa6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9efc0cd212d4f7d4b92f900c8cc9487178e164086d49660a51abf53fa41a65d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab1d557a8ee41b145bafbfe61374ed2963e6be1b71efeff600f9499c97101f54"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a6675ccccf401207c5bf9649b6f25ff4c0764c2c81ff412e93858b99617a50f4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d364b2ffcac01f8bda0aa725679d85d21d83720a80dfc91845e7ee6b3e80235f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8df845234d44be09fbebdd60424f244f98eb741e69b67e81c66f1829b8a2ed46"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c9baaff8ced722ff2c5f7c3bdaa4b442f6412e821132c83a25cd6d6fb0f7112d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4e585f90d52a510ef911e0dfd69a10e7af0bc872ff3960e82f0977adc25f6e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d1515e7b001f72264250c28b5de29698642feb5a4f336c6b9aea85fbf0b0d2c"
   end
 
   depends_on "go" => :build

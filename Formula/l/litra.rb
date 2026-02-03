@@ -1,18 +1,18 @@
 class Litra < Formula
   desc "Control Logitech Litra lights from the command-line"
   homepage "https://github.com/timrogers/litra-rs"
-  url "https://ghfast.top/https://github.com/timrogers/litra-rs/archive/refs/tags/v3.2.0.tar.gz"
-  sha256 "c17bcd2afefdc9634b22319a88ea3f366b724c046d84ca744296365574c69123"
+  url "https://ghfast.top/https://github.com/timrogers/litra-rs/archive/refs/tags/v3.3.0.tar.gz"
+  sha256 "18b998c9d4d7d4db515765852d667fcb24b9ed84ba917d2d8385bee3eb59cfa6"
   license "MIT"
   head "https://github.com/timrogers/litra-rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d20facfab389e4384e0ad9ddc25209994a9d1f99a62f4e06b7de0e4c1939176b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c78ec1209989a8a4ab913671f63d9d438925eeb5c8eaac996ea551022f1e0bcf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2127667a8e46a92e5e37d0a7790dd08db2e403ca0b8015632b10bc197d53bb0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "de95f352fecb9f5975e631f4b85da72f352097177aba856f6c28f849cebcee7f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1c3eacd2b01b1af5584e701288634a7bb2207f842452369b6cc1562ae979e59"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "525e76895c39c11297fec9578989775cc589c40d14d38dfdf93d6c19a701d987"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "36fb6a68b593db3540bb1f56f0a93e78f352037c74087c895866a5b3b19c1a54"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47760a0c05a934fec198bea24f521151e291bd37d1e7fcc32cffefc6aa0fe10c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc9a58f9d9d86cdb5c782f87c248f2c4af3424f698414cc369fcde628e5ba932"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ebe982baddbefa1ffd6ce03227526560d8e90672d98471e09760f899bc76e477"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c49d0cb09b0d496fae5fbe1661e5ad3809d440740070404231ecd8c07c3e7b5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ef3fbf28dfb425e767db30e4402f5ecd743b3ac8265c15f997a6205701038b6"
   end
 
   depends_on "pkgconf" => :build

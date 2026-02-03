@@ -6,8 +6,6 @@ class Freeling < Formula
   license "AGPL-3.0-only"
   revision 13
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "e156b45ac74b87aa415932e5577173796a7b77207708b9b599200b7438bc86ac"
     sha256 cellar: :any,                 arm64_sequoia: "7260ffdbaeef2635424243bef7a16d75f32361d81b4f1946691a6a8ad0f10662"
@@ -16,6 +14,11 @@ class Freeling < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "10357fffdd9dcc0bce6b4e234caae1d60e2c996a6260d97cdf3ba6380219e754"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8314e02d61508254e04ef46a8a6a0bebc8817ef9ba265536da3065b92915b6cc"
   end
+
+  # Last release on 2022-07-15, bundles a copy of `dynet` which doesn't work
+  # with latest Eigen and requires patching to build with latest ICU
+  deprecate! date: "2026-02-02", because: :unmaintained
+  disable! date: "2027-02-02", because: :unmaintained
 
   depends_on "cmake" => :build
   depends_on "boost"

@@ -1,18 +1,18 @@
 class Malcontent < Formula
   desc "Supply Chain Attack Detection, via context differential analysis and YARA"
   homepage "https://github.com/chainguard-dev/malcontent"
-  url "https://ghfast.top/https://github.com/chainguard-dev/malcontent/archive/refs/tags/v1.20.4.tar.gz"
-  sha256 "9877f66f9f2ac65418ece6fc9b61e347243b56eaffaa38d4bd87f7769053fba2"
+  url "https://ghfast.top/https://github.com/chainguard-dev/malcontent/archive/refs/tags/v1.20.5.tar.gz"
+  sha256 "cbea1c73f1bf262571ba42797a89fc47e0b51ebe7569f1d384cc195ddfb29b09"
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/malcontent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "080f0335c77a628a742c09f574085e6994cac85a5a3b566fbad869d232126dc8"
-    sha256 cellar: :any,                 arm64_sequoia: "3527ae70d21e806b14831b6c329b11c839cd8075a9457dc60eecca15a0fde400"
-    sha256 cellar: :any,                 arm64_sonoma:  "e75b025ddc406b3e1c63159e92b9c25720b430f32931207e68c9d7c77ec7123d"
-    sha256 cellar: :any,                 sonoma:        "8e472d3fcdaae47ba63acc0d08f044b57e3793f104f2045273de7423885a1b78"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "14d379f685e6a86119bec1e52eee42887339371f8c64f2ec467e2c0f4edaaf90"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a049933d3de6b01cf53ecb5109ddeb8d46c10588df908ec9dcff68fbb364679a"
+    sha256 cellar: :any,                 arm64_tahoe:   "9c0fef3aed136966f0ba7061a138693fdafda0d6adba73d6e8f23877d2092092"
+    sha256 cellar: :any,                 arm64_sequoia: "90dfe387aeb5ba8178b518eee20034dba07acee88684560aeb6f9ca8c489163a"
+    sha256 cellar: :any,                 arm64_sonoma:  "6e36f92b1e98177adc221947b3eb395bf64ae8925cdf397c4d3b1882d11c75b6"
+    sha256 cellar: :any,                 sonoma:        "551faf7b2a1b7617bbf9d0c31dd512447c4e845c9f5d12a430af0eb577ddb155"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2769604060486e0f14d4a6a9c0b353031e2a310836471aeed505b95c17f6ef6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03528b719cda3ff42ea486bb246e66ed76f78e0687dedcd6d365c6d5777ca36a"
   end
 
   depends_on "go" => :build

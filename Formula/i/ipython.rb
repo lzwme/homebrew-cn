@@ -3,13 +3,13 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https://ipython.org/"
-  url "https://files.pythonhosted.org/packages/46/dd/fb08d22ec0c27e73c8bc8f71810709870d51cadaf27b7ddd3f011236c100/ipython-9.9.0.tar.gz"
-  sha256 "48fbed1b2de5e2c7177eefa144aba7fcb82dac514f09b57e2ac9da34ddb54220"
+  url "https://files.pythonhosted.org/packages/a6/60/2111715ea11f39b1535bed6024b7dec7918b71e5e5d30855a5b503056b50/ipython-9.10.0.tar.gz"
+  sha256 "cd9e656be97618a0676d058134cd44e6dc7012c0e5cb36a9ce96a8c904adaf77"
   license "BSD-3-Clause"
   head "https://github.com/ipython/ipython.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1d9e9e261f1e46805e7163035167d424e4349fc4de079587962b4164f13b280e"
+    sha256 cellar: :any_skip_relocation, all: "60ff68287fcf7e057c59159f4efbd82cb2b14d8b9c4801be92ee8792ecc572c7"
   end
 
   depends_on "python@3.14"
@@ -85,8 +85,8 @@ class Ipython < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
-    sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
+    url "https://files.pythonhosted.org/packages/c2/62/a7c072fbfefb2980a00f99ca994279cb9ecf310cb2e6b2a4d2a28fe192b3/wcwidth-0.5.3.tar.gz"
+    sha256 "53123b7af053c74e9fe2e92ac810301f6139e64379031f7124574212fb3b4091"
   end
 
   def install
