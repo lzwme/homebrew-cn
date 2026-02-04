@@ -1,17 +1,17 @@
 class Menhir < Formula
   desc "LR(1) parser generator for the OCaml programming language"
   homepage "http://cristal.inria.fr/~fpottier/menhir"
-  url "https://gitlab.inria.fr/fpottier/menhir/-/archive/20260122/menhir-20260122.tar.bz2"
-  sha256 "b48f54226f1517916d0921e6081806d4ae1d072ef92d3cb1f261d95977e2cd0f"
+  url "https://gitlab.inria.fr/fpottier/menhir/-/archive/20260203/menhir-20260203.tar.bz2"
+  sha256 "6d795a21085c4fed4a165a9ceee4b1f359aae7ffe5002c31c5f665699e649ce1"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c6ef5a791843f78e5c5c10cbfc1dc854576c24f3b22ac6ec7e0af9b69778c293"
-    sha256 cellar: :any,                 arm64_sequoia: "c7326dafd84a611613543309304cec4f68edb20c738792f937c81fc07b008ca8"
-    sha256 cellar: :any,                 arm64_sonoma:  "d792f197f6136a7922d276424ef4121a4822aa06badddcca9973ad6a9b114b0f"
-    sha256 cellar: :any,                 sonoma:        "d3e1ed8e091b1b39615d195aad094d7bf8e6160af34552251d13d8a3bca5c493"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f968299ee2023489efd3bc4000634538472661f1da210981d75fe3c8812ea55e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc43534f0c0032dfd44d3aed01855397f6fdba9a17dbd5c0b2cb3d5d2d593f11"
+    sha256 cellar: :any,                 arm64_tahoe:   "9ec1c5060493d1649286ef47da0ed3cee35b4f0cd2dc92b78d9866b0e2287e7a"
+    sha256 cellar: :any,                 arm64_sequoia: "c449bcec9b59ce780a0a714c74272ebe4b05ac7641ad252852484b524db6e7fa"
+    sha256 cellar: :any,                 arm64_sonoma:  "c0f8f397647d39c7faaf1eb10fbe5407b8646c766cfa22fb29729cb26b5ff0d1"
+    sha256 cellar: :any,                 sonoma:        "10023f8a099fa1fca270e4f33115f6b8bdc38fe3dbed6e4cdebe9bb4b8debf4f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d509211deb212cdc7cc907e1c0b7aef902022c24d0fcd4ab1bbb2e13b778e09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ee2ca5943144c093a602f6688950249ec304674d673c792cde766fff713539c"
   end
 
   depends_on "dune" => :build

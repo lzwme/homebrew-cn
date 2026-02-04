@@ -1,17 +1,17 @@
 class Appwrite < Formula
   desc "Command-line tool for Appwrite"
   homepage "https://appwrite.io"
-  url "https://registry.npmjs.org/appwrite-cli/-/appwrite-cli-13.1.0.tgz"
-  sha256 "8d1a4684f97566352b43256b48cbf7bf60de098012d406a643d98df75aa04729"
+  url "https://registry.npmjs.org/appwrite-cli/-/appwrite-cli-13.2.0.tgz"
+  sha256 "984e4cdb8917487753a34cb58702c3a14c9c672927351674feb989eef146d0d0"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb64af9cb03b48893c19cd72903bb72f8df5092e0eae5cb520e59af962ccb297"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b1b2cbd3ca47e5ae2a518941b41df1fca2e6f4bbbdf7259796591982f2f16f9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b1b2cbd3ca47e5ae2a518941b41df1fca2e6f4bbbdf7259796591982f2f16f9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "820ce78f469b4b3206c1efea4dc22c8b4b107f36ef4f9aeeff05ea94a4ffe8da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a775afc64023abbf595551bfd69e344d47c77397410d90b4e13bc77411c57d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a775afc64023abbf595551bfd69e344d47c77397410d90b4e13bc77411c57d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "50cb747ec81a0b8960e8e546dd5b97e0f32b2d62e3680923c3d4641f06b0ed50"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "504ea86037fe0733080aa0a8ae5a5b014bebe95eaae30bd43e1d6e6e8fa7adcf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "504ea86037fe0733080aa0a8ae5a5b014bebe95eaae30bd43e1d6e6e8fa7adcf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "62372021bc346f3179032aba38628b438bcde9cde2d675813606f952c059ad73"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5ffc5526ddcb72beaff4b91fda4b499da403d58432d92bad20f3446cee5d55a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5ffc5526ddcb72beaff4b91fda4b499da403d58432d92bad20f3446cee5d55a"
   end
 
   depends_on "node"

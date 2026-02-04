@@ -1,17 +1,17 @@
 class DartSdk < Formula
   desc "Dart Language SDK, including the VM, dart2js, core libraries, and more"
   homepage "https://dart.dev"
-  url "https://ghfast.top/https://github.com/dart-lang/sdk/archive/refs/tags/3.10.8.tar.gz"
-  sha256 "240859c359fbcc116f52648a56986befca0ffe576573bd45f1a6b7ff0d030403"
+  url "https://ghfast.top/https://github.com/dart-lang/sdk/archive/refs/tags/3.10.9.tar.gz"
+  sha256 "6ee0eb28f514863186a16aaac104f4ff7259ee336dd226d63e68d438ce76cefa"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06dcf557e66ee95770aa0cb92e1f51dbd29974fc361b6ce743976f05c5395948"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37f0e4622494e0c49c1149d60d4942c6cad1994379065d2dacf56db333951fa5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48affd6cd0447e7f3629f8cc710c0860954e5ba7485c74026c34a32e44f4a19c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c92517c5bae0d220357336ecf21d92b94e573a729b7904090b315d838bb1d543"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "80c2e03773e188c4dfe308cdef4fa584657d4f42516da226cf57570c1224c52c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee689d3887428758263df849bb973d1efcd57a16616574f6285246e4e2a2c6f3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd6a2b40c04613362f69fdd55daeb1493c1855ec425c112f55eddb674c1f07b2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "850e2e0000da69af2c4efaf6e5406f6efae3596d718e0ff39347cf9e139e6dd4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31b9c51b41866554180bd57cf6112ba224ee180a3b3ff6ca922fd063208a21dd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "19e50ac9ff35f000328f79c29b7491340af96f42cf94f2b8bc88f6756948a5f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f71e58ae7fb7884b6f65584638c76bf2f1a5b235a0724d5dcca9166a887566c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5096dc1827faea662b63166f0c321710333926e122c9521d8238c7146b1c4db"
   end
 
   depends_on "ninja" => :build

@@ -1,8 +1,8 @@
 class Jruby < Formula
   desc "Ruby implementation in pure Java"
   homepage "https://www.jruby.org/"
-  url "https://search.maven.org/remotecontent?filepath=org/jruby/jruby-dist/10.0.2.0/jruby-dist-10.0.2.0-bin.tar.gz"
-  sha256 "b8a026f38aa98461a04ed0aa0b20891ce257ecbe53e124719ce9ee5b804525f1"
+  url "https://search.maven.org/remotecontent?filepath=org/jruby/jruby-dist/10.0.3.0/jruby-dist-10.0.3.0-bin.tar.gz"
+  sha256 "0edb5b02c3f482205d1cf8358f38e31d9e4c6d93a210039224750c72501e4717"
   license any_of: ["EPL-2.0", "GPL-2.0-only", "LGPL-2.1-only"]
 
   livecheck do
@@ -11,14 +11,12 @@ class Jruby < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8ff9e65ec790dbeedb0a41315ef7f746925be0c07594954f4b9c5d28d3745ade"
-    sha256 cellar: :any,                 arm64_sequoia: "4533bcfbb2de5a18e4ca5c3818ae7d0d6469fe0497870825e9bc63eb83787d20"
-    sha256 cellar: :any,                 arm64_sonoma:  "4533bcfbb2de5a18e4ca5c3818ae7d0d6469fe0497870825e9bc63eb83787d20"
-    sha256 cellar: :any,                 arm64_ventura: "4533bcfbb2de5a18e4ca5c3818ae7d0d6469fe0497870825e9bc63eb83787d20"
-    sha256 cellar: :any,                 sonoma:        "7b0dafeb94e91c3eae2ef5b7503166dafcbaeec4d40b61b56ac059f70d77e107"
-    sha256 cellar: :any,                 ventura:       "7b0dafeb94e91c3eae2ef5b7503166dafcbaeec4d40b61b56ac059f70d77e107"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5894ffe9d19c1b6ab847448d2566b5e20bc8242d0f34e00c4e615207d482c6a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "368c33ad9367cca9ed918a31d2ee028ea860b8a6885f47366647647f177561af"
+    sha256 cellar: :any,                 arm64_tahoe:   "4783fa4522fff8ab6e18ce78a71fa442147f6978ee429eba8a9c59ad10f65295"
+    sha256 cellar: :any,                 arm64_sequoia: "f5ce8335c6a3290e3c00494555cbf39b447804e6ff544572c7765449f235f445"
+    sha256 cellar: :any,                 arm64_sonoma:  "f5ce8335c6a3290e3c00494555cbf39b447804e6ff544572c7765449f235f445"
+    sha256 cellar: :any,                 sonoma:        "8437a84326e58721881f7c790687c9181f8d87f4b6f394d1bc8a270c90d5f405"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac44cac0e6865a8f3c2e51bce0d0922d23a9277001ba046e876a1be927e547e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f7f3b5501ef40ed646ad5ee00f0f2184765d2138fa3f483601b32de5aedc724"
   end
 
   depends_on "openjdk"

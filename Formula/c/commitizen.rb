@@ -3,18 +3,18 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/b5/6c/373401c521611312aea4d199140034337aedd8fe3d4b038a72944503183a/commitizen-4.13.0.tar.gz"
-  sha256 "4d6c90c1e43d83a71b396ca6e65ef3d2e62bfc1961ad3ae7cd8a257478243455"
+  url "https://files.pythonhosted.org/packages/38/cb/b403960929d8d7b5d4f42d99d0fe97f07a93698b82076d80b5bef3d4f955/commitizen-4.13.2.tar.gz"
+  sha256 "a2f3e08749c8c63cfbca61f29babb3d3c82b4810d7204f54761ba4f600d40a4e"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3d5a43f74c4c00c587f1873927c5d616fe5b4ba674109498c491dc918ccb4977"
-    sha256 cellar: :any,                 arm64_sequoia: "d1932aec21a8c01e7e6029db32b6e32e6c15dfd02c8a5296b93508eaab878cb6"
-    sha256 cellar: :any,                 arm64_sonoma:  "b380e99afc6aa761d219ce9032b24e2982146e56eabffc60b88486af1ba3366d"
-    sha256 cellar: :any,                 sonoma:        "7aa20e0cc4630f8c0dc0482d668be5236d165260d6ad3e021874bb1fcd331008"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "87ca9865f245d39a19cb406ac6f0a6fe4c84483b6fedd2fb8bda63131659205c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5429ed6be219e317d4ccb4b11d7f84661f11aae45d4662f2ddc7fa13577c8e6f"
+    sha256 cellar: :any,                 arm64_tahoe:   "8555fdf398b6f659b299eb157f66fb08a53d8ddf2fd324dfdd74225fa47525db"
+    sha256 cellar: :any,                 arm64_sequoia: "abcf0b57f671632f5f92b525c2490185dcc556de81b213448272aa2f1268eb03"
+    sha256 cellar: :any,                 arm64_sonoma:  "6fb749f523f10180a2ea77f983befe511cb606df702bd0dc41ca946183f2f928"
+    sha256 cellar: :any,                 sonoma:        "6244a5780b4bad3d267d019c562dbf272c5eb9d16ffde3ce4f0e6588f5b7a57e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bffcec885492fdc3c65353c6a0404dd1002c7457779006e004b6fbde130dd224"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4d45fa07a481c8f255adfbbfa8701de2e7c390cde1560a2cc362e8cc06330cc"
   end
 
   depends_on "maturin" => :build
@@ -93,8 +93,8 @@ class Commitizen < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/86/31/afb4cf08b9892430ec419a3f0f469fb978cb013f4432e0edb9c2cf06f081/wrapt-2.1.0.tar.gz"
-    sha256 "757ff1de7e1d8db1839846672aaecf4978af433cc57e808255b83980e9651914"
+    url "https://files.pythonhosted.org/packages/f7/37/ae31f40bec90de2f88d9597d0b5281e23ffe85b893a47ca5d9c05c63a4f6/wrapt-2.1.1.tar.gz"
+    sha256 "5fdcb09bf6db023d88f312bd0767594b414655d58090fc1c46b3414415f67fac"
   end
 
   def install

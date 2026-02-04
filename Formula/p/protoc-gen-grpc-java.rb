@@ -1,18 +1,17 @@
 class ProtocGenGrpcJava < Formula
   desc "Protoc plugin for gRPC Java"
   homepage "https://grpc.io/docs/languages/java/"
-  url "https://ghfast.top/https://github.com/grpc/grpc-java/archive/refs/tags/v1.78.0.tar.gz"
-  sha256 "ce1afcdf5130e74138e93a0f9f0bb77241610d7f00c987f46dffc5fb083f6f0a"
+  url "https://ghfast.top/https://github.com/grpc/grpc-java/archive/refs/tags/v1.79.0.tar.gz"
+  sha256 "ca53210ee823a15d9b1ebe86a36b564d6834fd0c049e207469803180b7f8a20e"
   license "Apache-2.0"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "31ff91c682fb0b58c75cc521ef2fc4f35bf7f753f822c9b40dcd087edff1e881"
-    sha256 cellar: :any,                 arm64_sequoia: "e0e5ce91ffd05519f011a9bbdb5886c4e0d85d57e5f3508c3497d11d3cb1836c"
-    sha256 cellar: :any,                 arm64_sonoma:  "16ef57a192b72ba92702c7a38e0209f0242bd10a0825e37f9a519ccf4b8fe5a9"
-    sha256 cellar: :any,                 sonoma:        "03d033c130bb0ef1cfde67849fdce6325afcc87f5beeeeb6cdcf04d76ce605db"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1793129cef9d78b34058982fdad5a1679d3462428746f09c26e6744bbbcc73f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e4b847ecc8d3547354da88a2154330625de473213ba8fff2da467fc75e6d552"
+    sha256 cellar: :any,                 arm64_tahoe:   "2b8d9c7d94b2304deb66aa8985e75efae1a858fe603fa3436f9231a924796395"
+    sha256 cellar: :any,                 arm64_sequoia: "2ec7d0331e1db4daefe3856ffae9ec19048607aa7b7ec9b62bef76fec48d7dec"
+    sha256 cellar: :any,                 arm64_sonoma:  "7978cbf06f6bf3d13393c67f375ca95e5a549d98745c1b677913bbd7462e5253"
+    sha256 cellar: :any,                 sonoma:        "eaaa37819c533065e99740dc493e9f3a6657d961070991418e6f7fac3dc3484b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eaa6c375a7cd40113dc9aad5880111def0dbb4ec992830152aef290e9da13162"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4eaa1d2b6cf10232ae4f1e5bad3580385d892daa0d136cde28849ed114416f94"
   end
 
   depends_on "gradle@8" => :build

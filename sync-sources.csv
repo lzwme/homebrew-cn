@@ -3331,6 +3331,7 @@ Homebrew-homebrew-core/Formula/j/jpegrescan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jprq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jq-lsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jq.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/jqfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jqp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jr.rb, Homebrew/homebrew-core, 1
@@ -8959,6 +8960,7 @@ Homebrew-homebrew-cask/Casks/c/coderabbit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/coderunner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/codeship-jet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/codespace.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/codex-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/codex.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/codexbar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/codux.rb, Homebrew/homebrew-cask, 1
@@ -13982,6 +13984,7 @@ Homebrew-homebrew-cask/Casks/p/pktriot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/plain-clip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/plan.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/planet.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/p/plasticity.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/plasticscm-cloud-edition.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/platypus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/plaud.rb, Homebrew/homebrew-cask, 0

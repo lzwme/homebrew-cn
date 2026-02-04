@@ -3,13 +3,12 @@ class StrandsAgentsSops < Formula
 
   desc "Standard Operating Procedures for AI agents using natural language"
   homepage "https://github.com/strands-agents/agent-sop"
-  url "https://files.pythonhosted.org/packages/9a/b7/1b40165c948fe6a3b5f8fc17e02be1ba4199175f0a65a00a462243129a91/strands_agents_sops-1.0.5.tar.gz"
-  sha256 "b9cc2c0e6eab9c59463c4dfcb8a5d3a9ae502b7f017662043303b06e5b891e95"
+  url "https://files.pythonhosted.org/packages/da/a8/32c318cd0c03989eb1b8fb7da66606e0b19c5ccc9be41b8ca671666accdf/strands_agents_sops-1.0.6.tar.gz"
+  sha256 "ecc934ce5f048343db563d90c08ddf700f9e7b4439fbe5a0678565f1e62ebe38"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4eb11f582fbc6a99b01cd7c3b64bb11207f58ac586da052d2c144461948966c0"
+    sha256 cellar: :any_skip_relocation, all: "f88f818c814a425ff6962833c0d5359db9f9e99f5c77c603f7b341a6309f5037"
   end
 
   depends_on "certifi" => :no_linkage
@@ -81,8 +80,8 @@ class StrandsAgentsSops < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/e7/46/bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726/pyjwt-2.10.1.tar.gz"
-    sha256 "3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"
+    url "https://files.pythonhosted.org/packages/5c/5a/b46fa56bf322901eee5b0454a34343cdbdae202cd421775a8ee4e42fd519/pyjwt-2.11.0.tar.gz"
+    sha256 "35f95c1f0fbe5d5ba6e43f00271c275f7a1a4db1dab27bf708073b75318ea623"
   end
 
   resource "python-dotenv" do

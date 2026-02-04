@@ -1,27 +1,19 @@
 class Container < Formula
   desc "Create and run Linux containers using lightweight virtual machines"
   homepage "https://apple.github.io/container/documentation/"
-  url "https://ghfast.top/https://github.com/apple/container/archive/refs/tags/0.8.0.tar.gz"
-  sha256 "f2673cf3c3ce95dfd07068d802873a4a0a0dd8b449c7a20819a75787865a24a1"
+  url "https://ghfast.top/https://github.com/apple/container/archive/refs/tags/0.9.0.tar.gz"
+  sha256 "2199d9f7241d7363a7cd3687e4fc3dd571c0b6a52c971266b9f2fe24fdb66eda"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/apple/container.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe: "09c752e1322377203240406ae5f4aeb595fbc1a2391ffc11982830a43183a2b9"
+    sha256 arm64_tahoe: "4206649cd81aac28ad7118eaf9a8a446cac05cd91a45ddd21ff57382ffaf1823"
   end
 
   depends_on xcode: ["26.0", :build]
   depends_on arch: :arm64
   depends_on macos: :tahoe
   depends_on :macos
-
-  # Fixes services not stopping in different launchd domains
-  # PR ref: https://github.com/apple/container/pull/1077
-  patch do
-    url "https://github.com/apple/container/commit/048bdac921ccd8395b6c5f1305fe2473616a40fc.patch?full_index=1"
-    sha256 "1a02b062531cab7852768b724d2f57e26f37e1173f9e5b86f70e3b7171d8c331"
-  end
 
   def install
     if build.head?

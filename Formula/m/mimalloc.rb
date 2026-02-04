@@ -1,8 +1,8 @@
 class Mimalloc < Formula
   desc "Compact general purpose allocator"
   homepage "https://github.com/microsoft/mimalloc"
-  url "https://ghfast.top/https://github.com/microsoft/mimalloc/archive/refs/tags/v3.2.7.tar.gz"
-  sha256 "33621bea902711639b8f83128e64685ffc8224a65443625530747603a2d8726d"
+  url "https://ghfast.top/https://github.com/microsoft/mimalloc/archive/refs/tags/v3.2.8.tar.gz"
+  sha256 "68163666575518c213a6593850099adce3863b340ca2751103dbd1f253664e05"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Mimalloc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "16d4d25364809b2040df7ffe0ec3cf47d7207c9c0ae0109255ed21cd7cc6600e"
-    sha256 cellar: :any,                 arm64_sequoia: "1826ca9e06e2ef683d66cfdf4bbbe01995fed8a9f1a513572863be15416b4e80"
-    sha256 cellar: :any,                 arm64_sonoma:  "591c1738cf48f244a2fbd9a79cfd89d9c40d4207efd1eb60451a4a233286a115"
-    sha256 cellar: :any,                 sonoma:        "d779c65f26702e21b83811e15dcee9f544c8658a4d85fa206b6779a1eab75dac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "761330f4930b0faae8680e3f13c3afe9b27edfd538a04e5a038bab56cad139fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "176610b6c2dfc5a0588633aad6c9f511fa349b12b74fb6ce76060b8d1f6a04bc"
+    sha256 cellar: :any,                 arm64_tahoe:   "bc6f9b1db6effe64908a85e46ecfb03341acf1352ba7a3c83308bf1af3e50ffb"
+    sha256 cellar: :any,                 arm64_sequoia: "17c926d79dcead2314f91f205bf85f37114f909a6e6a838840ad923552df2731"
+    sha256 cellar: :any,                 arm64_sonoma:  "6f87b08db6ad3e794a298afdb385eece6ff31068f3b1211916404b262b5752ac"
+    sha256 cellar: :any,                 sonoma:        "4b586ead845fadaff26fea75596f2115cd2f4f9184184c82487e4bff9d4bfeb5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "84ccd64fddcd740fd1d8e19b4dc36af100b80cd8210d8ba0bd667605c749029e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0554e2b09e732858ef460e41a80216e3fc2937711aa244a543e6735991a11557"
   end
 
   depends_on "cmake" => :build

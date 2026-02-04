@@ -3,17 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/df/d2/b1f34f1c38946b160ddc89a629e59855e7b81def65f1dc24628624b8164c/mycli-1.48.0.tar.gz"
-  sha256 "ff642bfc1c24742bedbeecd1e9371ab98aa6c6eaac17afdf446d4274564e75ea"
+  url "https://files.pythonhosted.org/packages/71/f1/d5503cc06772731b2e9f7c67e19130277570b26ecdafffb8ec54eb8c23b2/mycli-1.49.0.tar.gz"
+  sha256 "76f958a387871d246b2e3cd8178cc9b14a3a2a5758b08e756a29fd6cfd251d0b"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4c0bb26c26ae32c1eb2eca963012bf3662af21d9a5bcd008f4e88bd1469a3fd6"
-    sha256 cellar: :any,                 arm64_sequoia: "02a629c93baea817dee04dc0683e476ad43bda874dff3100b17d47310c7a332e"
-    sha256 cellar: :any,                 arm64_sonoma:  "017cd62da605492bdc4ace9adecc839228abd661b2da7babb8986084272531aa"
-    sha256 cellar: :any,                 sonoma:        "d9bec79cd6ccedceed5c0e92117dc7524eb7e8d731cd0bca81a91ac3edb942a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "31deecdf526e24d461d6c67eff0dc4ed1773b49bb56ef60b95ffde3e2577192b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "359b646b376466ebcadbd8d8de0034ae6b14410e340aba0f6aacc31798d47669"
+    sha256 cellar: :any,                 arm64_tahoe:   "ffab784691ad890701ce30325cf3dcab935f5ce78e75434cb0ea9ffe89c94884"
+    sha256 cellar: :any,                 arm64_sequoia: "facecb63fff7112892aa6882a16dd34e8427ff4f0aac9ae34f435a44575736a7"
+    sha256 cellar: :any,                 arm64_sonoma:  "6f2b80c9d12ffa2d378fe35c7f3fb1d5c5bddbed1e703af2f798cead3c0ff31c"
+    sha256 cellar: :any,                 sonoma:        "3d335ad5238b16ff7359ed62e9f7dd5adc0f4102b5ad167cf25ffdf3c23bede0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0db6576693561c76e8ca1e62cf7d8c5e14d94473a058eb711516edf9b0a17442"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aaf96439c9384c4ede87d58473efb9b34e9d0060cc68357ded7544c82a3e431f"
   end
 
   depends_on "rust" => :build # for jiter, sqlglotrs
@@ -83,9 +83,34 @@ class Mycli < Formula
     sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
+  resource "jaraco-classes" do
+    url "https://files.pythonhosted.org/packages/06/c0/ed4a27bc5571b99e3cff68f8a9fa5b56ff7df1c2251cc715a652ddd26402/jaraco.classes-3.4.0.tar.gz"
+    sha256 "47a024b51d0239c0dd8c8540c6c7f484be3b8fcf0b2d85c13825780d3b3f3acd"
+  end
+
+  resource "jaraco-context" do
+    url "https://files.pythonhosted.org/packages/cb/9c/a788f5bb29c61e456b8ee52ce76dbdd32fd72cd73dd67bc95f42c7a8d13c/jaraco_context-6.1.0.tar.gz"
+    sha256 "129a341b0a85a7db7879e22acd66902fda67882db771754574338898b2d5d86f"
+  end
+
+  resource "jaraco-functools" do
+    url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
+    sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
+  end
+
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
+    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
+  end
+
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/45/9d/e0660989c1370e25848bb4c52d061c71837239738ad937e83edca174c273/jiter-0.12.0.tar.gz"
-    sha256 "64dfcd7d5c168b38d3f9f8bba7fc639edb3418abcc74f22fdbe6b8938293f30b"
+    url "https://files.pythonhosted.org/packages/0d/5e/4ec91646aee381d01cdb9974e30882c9cd3b8c5d1079d6b5ff4af522439a/jiter-0.13.0.tar.gz"
+    sha256 "f2839f9c2c7e2dffc1bc5929a510e14ce0a946be9365fd1219e7ef342dae14f4"
+  end
+
+  resource "keyring" do
+    url "https://files.pythonhosted.org/packages/43/4b/674af6ef2f97d56f0ab5153bf0bfa28ccb6c3ed4d1babf4305449668807b/keyring-25.7.0.tar.gz"
+    sha256 "fe01bd85eb3f8fb3dd0405defdeac9a5b4f6f0439edbb3149577f244a2e8245b"
   end
 
   resource "llm" do
@@ -93,9 +118,14 @@ class Mycli < Formula
     sha256 "e3d8bcc0f016fae8aeca1d702491a1891523702983459cb66afec99d74cabfc1"
   end
 
+  resource "more-itertools" do
+    url "https://files.pythonhosted.org/packages/ea/5d/38b681d3fce7a266dd9ab73c66959406d565b3e85f21d5e66e1181d93721/more_itertools-10.8.0.tar.gz"
+    sha256 "f638ddf8a1a0d134181275fb5d58b086ead7c6a72429ad725c67503f13ba30bd"
+  end
+
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/94/f4/4690ecb5d70023ce6bfcfeabfe717020f654bde59a775058ec6ac4692463/openai-2.15.0.tar.gz"
-    sha256 "42eb8cbb407d84770633f31bf727d4ffb4138711c670565a41663d9439174fba"
+    url "https://files.pythonhosted.org/packages/b1/6c/e4c964fcf1d527fdf4739e7cc940c60075a4114d50d03871d5d5b1e13a88/openai-2.16.0.tar.gz"
+    sha256 "42eaa22ca0d8ded4367a77374104d7a2feafee5bd60a107c3c11b5243a11cd12"
   end
 
   resource "pluggy" do
@@ -158,6 +188,11 @@ class Mycli < Formula
     sha256 "2491937177868bc4b1e469087601d53f925e8d270ccc21e07404b4b5814b7b5f"
   end
 
+  resource "secretstorage" do
+    url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
+    sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
+  end
+
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/76/95/faf61eb8363f26aa7e1d762267a8d602a1b26d4f3a1e758e92cb3cb8b054/setuptools-80.10.2.tar.gz"
     sha256 "8b0e9d10c784bf7d262c4e5ec5d4ec94127ce206e8738f29a437945fbc219b70"
@@ -209,13 +244,13 @@ class Mycli < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
-    sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
+    url "https://files.pythonhosted.org/packages/27/89/4b0001b2dab8df0a5ee2787dcbe771de75ded01f18f1f8d53dedeea2882b/tqdm-4.67.2.tar.gz"
+    sha256 "649aac53964b2cb8dec76a14b405a4c0d13612cb8933aae547dd144eacc99653"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/64/6e/62daec357285b927e82263a81f3b4c1790215bc77c42530ce4a69d501a43/wcwidth-0.5.0.tar.gz"
-    sha256 "f89c103c949a693bf563377b2153082bf58e309919dfb7f27b04d862a0089333"
+    url "https://files.pythonhosted.org/packages/c2/62/a7c072fbfefb2980a00f99ca994279cb9ecf310cb2e6b2a4d2a28fe192b3/wcwidth-0.5.3.tar.gz"
+    sha256 "53123b7af053c74e9fe2e92ac810301f6139e64379031f7124574212fb3b4091"
   end
 
   def install

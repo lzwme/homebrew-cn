@@ -1,8 +1,8 @@
 class Valkey < Formula
   desc "High-performance data structure server that primarily serves key/value workloads"
   homepage "https://valkey.io"
-  url "https://ghfast.top/https://github.com/valkey-io/valkey/archive/refs/tags/9.0.1.tar.gz"
-  sha256 "9cfbc5f32a2a6058ee0f8c532b9c4d24167cc49d719f091dd75f1bb8353a1fc5"
+  url "https://ghfast.top/https://github.com/valkey-io/valkey/archive/refs/tags/9.0.2.tar.gz"
+  sha256 "0ebaa583659ab784ce19170627032cfab7793a5570b7262775f9dbf77c103ec7"
   license all_of: [
     "BSD-3-Clause",
     "BSD-2-Clause", # deps/jemalloc, deps/linenoise, src/lzf*
@@ -13,12 +13,12 @@ class Valkey < Formula
   head "https://github.com/valkey-io/valkey.git", branch: "unstable"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "54f90d4322ca6d169c361df71504abd5081417059fbaca2a415f783e50b47ab5"
-    sha256 cellar: :any,                 arm64_sequoia: "f3ed5832c34d998d2e899ef61e5da1619286b37f6f327d43e4ef42d0276f65b7"
-    sha256 cellar: :any,                 arm64_sonoma:  "ac98b63602dcc892f1913806005b27b7c042c5fa37f5819abfd68fefaa6e80bf"
-    sha256 cellar: :any,                 sonoma:        "5570a8590a990c1c1177814315718d8bbe2f09b5c3711ce3d737c20e63fc7ef0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cdd1c6cdb27e1423fb3e3caf93b49391a0736ec68d64859e0110035597353ada"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fbadf8df708530dcf823bbccca58ceb7ddb93792a3c898136515ce4fc701ae9"
+    sha256 cellar: :any,                 arm64_tahoe:   "035b175b2c6f1d151bd3b34e82e64de7a8eed0fbbd7108b20f8633b8a6826aca"
+    sha256 cellar: :any,                 arm64_sequoia: "ba944dc1057098e602d50860ec04f7aa3c13a5895623bae9e177abbdae1fad79"
+    sha256 cellar: :any,                 arm64_sonoma:  "e99d08bda23f2a7a540265507c22dbc58bbb0683114ee586133f8ecc5e53638f"
+    sha256 cellar: :any,                 sonoma:        "180c21581c0590f743f6a504bea268db48bf03cbc413ef893e8c28844deecf92"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db8a717ffaf5a7ccf88ae09c817a5cfbde39d89d808f8efa30b6224c279132ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14dad301e80e63b062140810c7b147ada47408083d7b43e09daa67996d08d8bb"
   end
 
   depends_on "openssl@3"

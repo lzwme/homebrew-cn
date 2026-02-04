@@ -3,8 +3,8 @@ class KnotResolver < Formula
 
   desc "Minimalistic, caching, DNSSEC-validating DNS resolver"
   homepage "https://www.knot-resolver.cz"
-  url "https://secure.nic.cz/files/knot-resolver/knot-resolver-6.1.0.tar.xz"
-  sha256 "7921df7507286d90574bbf5ae664a8a537805ce40b5fa8b15f5d0d33e2c438d0"
+  url "https://secure.nic.cz/files/knot-resolver/knot-resolver-6.2.0.tar.xz"
+  sha256 "b44633bc843180c0bc7c77cf7b15fe571243ae992b4ddb74afdee4cfa803701b"
   license all_of: ["CC0-1.0", "GPL-3.0-or-later", "LGPL-2.1-or-later", "MIT"]
   head "https://gitlab.labs.nic.cz/knot/knot-resolver.git", branch: "master"
 
@@ -14,13 +14,12 @@ class KnotResolver < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "97d5240f290badc160df58eaeaeef31e8de31be51be2b343bc34106b9e3f67d5"
-    sha256 arm64_sequoia: "c46c527e67100d77fa83eb2c9d7698034a134371bcfb670d715344357531e8ed"
-    sha256 arm64_sonoma:  "7198cdae43ca26f1198a8b5b97beda3aaa2fdbd1f969288356f3141f43acdc58"
-    sha256 sonoma:        "8a9399ce3c7b5084ef8165bdebfc85a8a8e7452b69bd8f51d8f509dfe9a83dd3"
-    sha256 arm64_linux:   "b213e8c6953abb084a2818a2b9a9daacce913655fc25c76d28461304fa522819"
-    sha256 x86_64_linux:  "93cca41ec25e28a21c1aaec43c3c6aee34821a8548d80008d01bde812637c683"
+    sha256 arm64_tahoe:   "ddcc4fa27f264923b54c35196e6edae2f3b3df7a3b5c9a8ea49cc6d13e89983c"
+    sha256 arm64_sequoia: "5815943024b335698473f7604659ebd954119a7f68ba23da369a228d60d331c0"
+    sha256 arm64_sonoma:  "76abbf27fdf3b54e0eed1ec347493c941055e51456b946cf7cb24357af7edba5"
+    sha256 sonoma:        "719ebcd371e7126931ed1721625cff7d5ab3b30ccbfe7d70e6a47bd64f130f78"
+    sha256 arm64_linux:   "39801f1e1ab9553964216de8106e296d6bedf8651c329cf0370a1b6281f4c2e9"
+    sha256 x86_64_linux:  "9e1b841948f0dbb8c8f706edec71982111290cd2c03dcaa0268a4b45b7e78756"
   end
 
   depends_on "meson" => :build
@@ -89,13 +88,13 @@ class KnotResolver < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/80/1e/5492c365f222f907de1039b91f922b93fa4f764c713ee858d235495d8f50/multidict-6.7.0.tar.gz"
-    sha256 "c6e99d9a65ca282e578dfea819cfa9c0a62b2499d8677392e09feaf305e9e6f5"
+    url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
+    sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
   end
 
   resource "prometheus-client" do
-    url "https://files.pythonhosted.org/packages/23/53/3edb5d68ecf6b38fcbcc1ad28391117d2a322d9a1a3eff04bfdb184d8c3b/prometheus_client-0.23.1.tar.gz"
-    sha256 "6ae8f9081eaaaf153a2e959d2e6c4f4fb57b12ef76c8c7980202f1e57b48b2ce"
+    url "https://files.pythonhosted.org/packages/f0/58/a794d23feb6b00fc0c72787d7e87d872a6730dd9ed7c7b3e954637d8f280/prometheus_client-0.24.1.tar.gz"
+    sha256 "7e0ced7fbbd40f7b84962d5d2ab6f17ef88a72504dcf7c0b40737b43b2a461f9"
   end
 
   resource "propcache" do

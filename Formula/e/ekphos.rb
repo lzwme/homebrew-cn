@@ -1,18 +1,18 @@
 class Ekphos < Formula
   desc "Terminal-based markdown research tool inspired by Obsidian"
   homepage "https://ekphos.xyz"
-  url "https://ghfast.top/https://github.com/hanebox/ekphos/archive/refs/tags/v0.20.0.tar.gz"
-  sha256 "b0d7a902902d08e1dfc75325241f3dfa8f82700870dec8c9b3cdf011814adce2"
+  url "https://ghfast.top/https://github.com/hanebox/ekphos/archive/refs/tags/v0.20.5.tar.gz"
+  sha256 "176e455367d6ac361ee2802d7310f4595bc4a94c05781f3a95a74e6d68d8b0ba"
   license "MIT"
   head "https://github.com/hanebox/ekphos.git", branch: "release"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d5fb5bea27dd82e9a34037863e9ae195c8b707d950440f0d4088eb34ef21af34"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3484cee003184b1c2361479512b2088bf8f06ffd962c872a30e81bd0b0a77670"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa98ca9c574de40134ffb292fe96a11de07d0af74bb38d30ddb1986f1e843fab"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dfadd8a174923771f61340aa296180e401a93bd61c3ae980a7541fcc600faa66"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9c338d46fe82075436b8beab0a25e716ad043577d4b75a13a4d11f9a4056f57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0412f843a3ad09e95ca4d255734e9fcf371c57fa7d8803112f7d55858923ef28"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cda53d70a176b0b8aa4d6aeda133683d0844ddddd304963bee0dbd838680c592"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ae1142fcb4b576a8be726a94321c413aeb93ca3765b36c3c8fa0669f8ebab96"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d76b0576c92b298730b92e7b2f97dc65155f14e82226b2e0b1edfbd28f583a8d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6b5348f64b80437ea87032ca0269bcc221de9ddd0838671a5ccdc94c98378bf3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0547bf734c27f4e6d608a2fed616ab74d192eaa86ab414893e54e82be5ba9a9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c772aaf5050cfc5e0a7047a71c6361935b209a4229ceb238bc1c3cf39778d956"
   end
 
   depends_on "rust" => :build

@@ -1,8 +1,8 @@
 class TyposLsp < Formula
   desc "Language Server for typos-cli"
   homepage "https://github.com/tekumara/typos-lsp"
-  url "https://ghfast.top/https://github.com/tekumara/typos-lsp/archive/refs/tags/v0.1.47.tar.gz"
-  sha256 "f8e427e0340c3d212541ab6350ae52c971a0b0607c0c9cdd2215616b27d12fc4"
+  url "https://ghfast.top/https://github.com/tekumara/typos-lsp/archive/refs/tags/v0.1.48.tar.gz"
+  sha256 "cecf41f1f0967edb7d4c1ffebdbef9165c710a8fd7117c0f0488f33e8406aa32"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class TyposLsp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "687ba0edba02f7f64cf1fb9f872b316bcea5466272cad6f083f7b8deb13dc804"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b947c893be50e5b6dfe77bb6b38b1634e94effa65d84f21d8bf4fe2f19d21796"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "64711962bada527af01393a4a336f4defb59fbe33d24684a66b57cd409f7b1aa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "197792f1868b4e23ba51f1aff0908719c6487abc720c3bc4bf0febc5f47e1a91"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "30a93558ca995194fff44149e05f857b39c13647fcb458fe57a3edb53dd1d2b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb1485cc4290174dddb8e316d06a24ac6cd3b42fe5b10dad55477263649c0162"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "324b1c0faa1860bb7c001f60e33ad716ef870f2bc7cb5eba93a43b4a43c4dec7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "110eb3eea95ff3817cefe249ddecf40de64636af43d098c7ab312c1a9d5f4076"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "191f9cd52bbf74c6c219827d72ba124340553b6ab2e5e9c178d23c38003b1908"
+    sha256 cellar: :any_skip_relocation, sonoma:        "85bb22ba50ba035efb695480112dc9c7db8b9239b6d831781cc4906d2c55f687"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d38cde5d6a0f467e55040f3d246c474f971347293947a88d835a5605ba7f3348"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "819ff5662149c97a583a173a71cfb49cc14bedc0df718c4652b1eaa88d805d28"
   end
 
   depends_on "rust" => :build

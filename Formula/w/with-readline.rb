@@ -31,15 +31,12 @@ class WithReadline < Formula
 
   depends_on "readline"
 
-  uses_from_macos "tcl-tk" => :test
-
   def install
     system "./configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    tclsh = OS.mac? ? "/usr/bin/tclsh" : Formula["tcl-tk"].bin/"tclsh"
-    pipe_output("#{bin}/with-readline #{tclsh}", "exit", 0)
+    pipe_output("#{bin}/with-readline dash", "exit", 0)
   end
 end

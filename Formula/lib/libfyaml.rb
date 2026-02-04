@@ -1,17 +1,17 @@
 class Libfyaml < Formula
   desc "Fully feature complete YAML parser and emitter"
   homepage "https://github.com/pantoniou/libfyaml"
-  url "https://ghfast.top/https://github.com/pantoniou/libfyaml/releases/download/v0.9.3/libfyaml-0.9.3.tar.gz"
-  sha256 "d4541c36ae726f51e9df22dd8ac1a19d122666060daf3806e37b848d4c73a8ed"
+  url "https://ghfast.top/https://github.com/pantoniou/libfyaml/releases/download/v0.9.4/libfyaml-0.9.4.tar.gz"
+  sha256 "dac2b0af7b757b32a4fa7c6493d85d0f7dea6effd20ae4352570b6a450b9e5fb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4c1c1ab8e0f5572427244b924002b54449706b1047ec752c255fb7b0909a4126"
-    sha256 cellar: :any,                 arm64_sequoia: "ca9cbce826779d6fc10cbe085eb5120583f39e78230c573789f6e6fafc9e798b"
-    sha256 cellar: :any,                 arm64_sonoma:  "8cd8ddda0c6e921e174064fcfcde3a500f9b52a0d8dbe28161d216b27080e1d7"
-    sha256 cellar: :any,                 sonoma:        "f61135a902bfdd9d0bfc85b122e980553564f4cc125607fbde02e003b75a8a16"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d99d0e24c030a2461a4448569cc10c0328f2202422ce141866bead6cd500597"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b579d6e46da5731229cf7a4e12b6d7a773778fa6d2b8ba7dfbc19658b9f66bcd"
+    sha256 cellar: :any,                 arm64_tahoe:   "5fab9ef2a5b35ceaaa66ae9651d5b360b61f11785c3f501bcbe4eeef94d0fbe9"
+    sha256 cellar: :any,                 arm64_sequoia: "ffbae1db72dca752e9c4101cac7c98eb6ce9519bfcb07a1d6a85af536ae64c78"
+    sha256 cellar: :any,                 arm64_sonoma:  "3fb3558cc25558c914181ad7a69a715a429aa91d3500a2e9df9b7655f7952024"
+    sha256 cellar: :any,                 sonoma:        "dab4726be4d9ec849dae8f8199cbafe93f50b89d238b2df612d01ad72a259a54"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "52adfa81a7599fa7b76eb853727084b7f6e9147590efd944a18c90fc4a41e0dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3c68885b9453639f731e261c39c8a04d6cfe8b150efb311635ce7cb10e30462"
   end
 
   uses_from_macos "m4" => :build

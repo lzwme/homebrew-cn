@@ -1,8 +1,8 @@
 class Lazysql < Formula
   desc "Cross-platform TUI database management tool"
   homepage "https://github.com/jorgerojas26/lazysql"
-  url "https://ghfast.top/https://github.com/jorgerojas26/lazysql/archive/refs/tags/v0.4.6.tar.gz"
-  sha256 "e8a06583d19f1053be13be800db5a3b6d273b992fcc335f539c40e39a6485e4c"
+  url "https://ghfast.top/https://github.com/jorgerojas26/lazysql/archive/refs/tags/v0.4.7.tar.gz"
+  sha256 "7d0ebba0e9549b3f43d25358a6633e706ab3b1a410d323add7c7ef3397071f37"
   license "MIT"
   head "https://github.com/jorgerojas26/lazysql.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Lazysql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b26f4a380fc5bd534c6366a8cf490890d8b4eb7e3e2baa164e896d1f4c03ca3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b26f4a380fc5bd534c6366a8cf490890d8b4eb7e3e2baa164e896d1f4c03ca3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b26f4a380fc5bd534c6366a8cf490890d8b4eb7e3e2baa164e896d1f4c03ca3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0539da42429bc08d8c2c90101c166af5b85a11786785eb855b082aa7752ca9eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b56c8926afdc815ba5461ad08e8d8935066dc3987578676069822fbc6b4f397c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db02f4f492da359743cc90b9f4a545981ff43249e1cb32829f0d49b127098da5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3436d97575b002a692d6692e3fc731e79970335b5c003b06c94f54a18856197a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3436d97575b002a692d6692e3fc731e79970335b5c003b06c94f54a18856197a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3436d97575b002a692d6692e3fc731e79970335b5c003b06c94f54a18856197a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f06113baadd141d3b137dd93ff67262a831336884ce16dac5e5ea54cc8732c1b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "673f311d9d481fee1dcc51041bfb0e8b8e9600c920272b18a13afc20130010df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0afa666e039117e7ddae18549d4d31e983102a832788f0e15d92064a2b0c861"
   end
 
   depends_on "go" => :build

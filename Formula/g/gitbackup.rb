@@ -1,18 +1,18 @@
 class Gitbackup < Formula
   desc "Tool to backup your Bitbucket, GitHub and GitLab repositories"
   homepage "https://github.com/amitsaha/gitbackup"
-  url "https://ghfast.top/https://github.com/amitsaha/gitbackup/archive/refs/tags/v1.0.3.tar.gz"
-  sha256 "cd3d042e3aafe76bba7e1d47ee7de89b5b9c33132d352100016daedcbb367bce"
+  url "https://ghfast.top/https://github.com/amitsaha/gitbackup/archive/refs/tags/v1.0.4.tar.gz"
+  sha256 "aa24a246c47af92116e143c73535951645a7640a0ab97b3710347fc34f43f3d3"
   license "MIT"
   head "https://github.com/amitsaha/gitbackup.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "989b3758a2e2f071075f546d6b6181efd46fd0381442df8a49fd93bd0dc36875"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "989b3758a2e2f071075f546d6b6181efd46fd0381442df8a49fd93bd0dc36875"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "989b3758a2e2f071075f546d6b6181efd46fd0381442df8a49fd93bd0dc36875"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6507498acad64888299ae56fa740d3e1f6df54591a46cc5461c6e35a93edc8ad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6c4303a2036983ad977fbcc6e5d2a130c6b906fd8dcca1b87fe4c11c349cbfe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49dbdf8d2a3e7a54afb26999cb9ca118253983a4d864faf6eac6b398722f675f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "035d6e8ca3692824a3965463833a31867fa797234b2112a90fe554e6ce637fe5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "035d6e8ca3692824a3965463833a31867fa797234b2112a90fe554e6ce637fe5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "035d6e8ca3692824a3965463833a31867fa797234b2112a90fe554e6ce637fe5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3f21c1d5aadfb422a874c6b82b3236ed8d66c809fb3bd0f25347939839d3ab34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb2ac710f7d0f399024870f884ce85cde2e451ffa8fb9e60420b3f801463b984"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1759d3ec6f3b9c816f6dacf36e3a7939a0fb93dc0722a0b40c0e07a9273a1e01"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class MongoCDriver < Formula
   desc "C driver for MongoDB"
   homepage "https://github.com/mongodb/mongo-c-driver"
-  url "https://ghfast.top/https://github.com/mongodb/mongo-c-driver/archive/refs/tags/2.2.1.tar.gz"
-  sha256 "de10b35ad8362eaf6951723117f90c3c171548da05980890f7e5f60aa56f8d24"
+  url "https://ghfast.top/https://github.com/mongodb/mongo-c-driver/archive/refs/tags/2.2.2.tar.gz"
+  sha256 "ac04c7125f2eae0288f11ddeb1aa76fd318df7228ff3484aa9b415aed52665e2"
   license "Apache-2.0"
   head "https://github.com/mongodb/mongo-c-driver.git", branch: "master"
 
@@ -12,12 +12,12 @@ class MongoCDriver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "91b814c83ad34c45cc0ccfd23246d982664301193ca0d27596050fa2932d23a6"
-    sha256 cellar: :any,                 arm64_sequoia: "dda81c7482c96dc7dfe7e5695c37dc6fc5dac89f8e9a890e2f3187398eefcf23"
-    sha256 cellar: :any,                 arm64_sonoma:  "2b80e4bd923221f10098a423c68bdbacdaf581b558debc241cd6c58300cb4a4f"
-    sha256 cellar: :any,                 sonoma:        "6d0eb5e51731fa75235e996e3c8549b06ce75b0339b0d75429790fa006ac138d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ba490162f0a908cc4f1654fcc4cada11b95fdbbdc048b0279fe967bc1bb985b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a165552f0541590e64aebf561042b9ff4d0b744cc7ea81425c724d4c3777beb3"
+    sha256 cellar: :any,                 arm64_tahoe:   "e030a8e11fb749b2c139f7ab17eae42b0b25e18320e714101a9ab4668e97dd42"
+    sha256 cellar: :any,                 arm64_sequoia: "88866bd39983a3cc2df75048e2330ece3732b81e4e73bd6a8cf0c4cca6f046bb"
+    sha256 cellar: :any,                 arm64_sonoma:  "9ea42156445e23e3057478ba46561a2b102f9a6de1348fcebf2667a426c5698a"
+    sha256 cellar: :any,                 sonoma:        "035335e1b308d1033a82d9bc7ce6df7ba81a98b1e3fffb187c290f60d17e0dad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "33cbe95ae81336300d8cc2bafe4009bfd40efe3ac4be2001b0d747584b22cbf6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3b976dc8eb00e21d415bb453dd01775567feefdf0886affb7ebe673068fcdd6"
   end
 
   depends_on "cmake" => :build

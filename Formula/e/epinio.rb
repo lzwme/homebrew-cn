@@ -1,8 +1,8 @@
 class Epinio < Formula
   desc "CLI for Epinio, the Application Development Engine for Kubernetes"
   homepage "https://epinio.io/"
-  url "https://ghfast.top/https://github.com/epinio/epinio/archive/refs/tags/v1.13.7.tar.gz"
-  sha256 "2a76233b9505b56412b6e0c94262f5e280ee994f52b274b91d2d3885f5167896"
+  url "https://ghfast.top/https://github.com/epinio/epinio/archive/refs/tags/v1.13.8.tar.gz"
+  sha256 "8e9d9ef6a68f01d9db6b5cdea8d8f87e9809c995818580cff87e60fc3a44b4c0"
   license "Apache-2.0"
 
   # Upstream creates a stable version tag ahead of release but a version isn't
@@ -15,12 +15,12 @@ class Epinio < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e9939142c9afbdf45d913167c183e5924e210c974a96f0514303e54b16250e69"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14be1d65fb6c9a2ca089f95d2997748eb292085a18b2abee91722525eaabe452"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9106aaae80f1dd972e111bbd214d2ae143727b69b3e4c9f2ef8146534d12fbad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1d7ec94d78cb849a577333123139e99109882573be987db24b45ea27d85fdeb4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a920907c0b93e56441159d28beb97e38235211470f3fa4a1f2d2d2a4e1e56150"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba723d8589e4ac397193ecca44b4bd24aa95a3ae54e4012e15416a79ba0ce288"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "631eae6549319558ae0cb9d2f8431d75288d631f0ff0c9ee120f12abee7bc8ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee059124aa9e92d99b864c1835ea607940f767dc16ef814915b4c3a923fc17c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92efb403b063fef71776c2dd569d460cda70750501959dbb32260ac474b3dcd6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5ae57061d3a8f4d98dde127e12dfe9aa5f706248b93a23408cc1cbfad86ecfba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63abae1d38002e212785d2c7531dd1f2a19ba07b22dc9c8796ff0ff4e3fa282e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c12e107509ae925e60fcc6104789dea757dcf30d262b58d42128805af2d4c2a"
   end
 
   depends_on "go" => :build

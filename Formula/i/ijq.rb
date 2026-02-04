@@ -1,11 +1,10 @@
 class Ijq < Formula
   desc "Interactive jq"
-  homepage "https://sr.ht/~gpanders/ijq/"
-  url "https://git.sr.ht/~gpanders/ijq",
-      tag:      "v1.2.0",
-      revision: "f32d134098dba2b2a716bb6fb70804a8ba7b2b43"
+  homepage "https://codeberg.org/gpanders/ijq"
+  url "https://codeberg.org/gpanders/ijq/archive/v1.2.0.tar.gz"
+  sha256 "f026e0f479dc951fbc6e72a9815d426cb10c2c7c91dd5ed60915960c800ecb72"
   license "GPL-3.0-or-later"
-  head "https://git.sr.ht/~gpanders/ijq", branch: "master"
+  head "https://codeberg.org/gpanders/ijq.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c43fcb146ba1903decacf72c0ab569035a1a5d3c19d3503ae592b288916c3147"
@@ -18,7 +17,8 @@ class Ijq < Formula
 
   depends_on "go" => :build
   depends_on "scdoc" => :build
-  depends_on "jq"
+
+  uses_from_macos "jq", since: :sequoia
 
   def install
     system "make", "prefix=#{prefix}", "install"

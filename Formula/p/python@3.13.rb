@@ -4,7 +4,7 @@ class PythonAT313 < Formula
   url "https://www.python.org/ftp/python/3.13.11/Python-3.13.11.tgz"
   sha256 "03cfedbe06ce21bc44ce09245e091a77f2fee9ec9be5c52069048a181300b202"
   license "Python-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,14 +12,14 @@ class PythonAT313 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3ee75c596e967fba85b7a0797dac8f15db62fa19aeeb3a8c506ef4bfede27294"
-    sha256 arm64_sequoia: "e8f141ca8e1231877c14b1df1b8b5d4d344533490a42ebc3c601f6641fa69ba6"
-    sha256 arm64_sonoma:  "1f37091637c3f92baf836073f77d0d7a8b14dbbf38ece0d7e7a706a6bde41097"
-    sha256 tahoe:         "82a8ad749c87303dd6e6aa3dc5a19eed78a26beac00c8d1057b883d56213bce3"
-    sha256 sequoia:       "6cc7bcd7263509ce10c5eec7d5c363a6d05d703f776702933e863004957fd6c4"
-    sha256 sonoma:        "63d4465333e6e37cfed86ca3d6ef95012e4a2e0917813c5947df830a0163887c"
-    sha256 arm64_linux:   "e02387d7ab7a4b42966990e5151d3fa290d3ab61815a9ca704306652efd654e9"
-    sha256 x86_64_linux:  "bc988c27b8d794b3449a65cac78c12c53ac13689edc06649b0ad46f447406ffa"
+    sha256 arm64_tahoe:   "54b402e37605e61ed48bbbbfd488314bfbf92f3d27b81d09b732280f5bf56ffe"
+    sha256 arm64_sequoia: "11893025e6ed4bda3522ba633b8338cb9ae34d712fd83b0b14941c1fac2467fc"
+    sha256 arm64_sonoma:  "71b31838f6faa85332912afd1e33c62198d89719e8a55d96387ff9b666f97f52"
+    sha256 tahoe:         "5030b7da6426597ea87586e144a400c4d1861c79ae2213ef9c2f1fe2ff9dee99"
+    sha256 sequoia:       "e7bb6750d0553c09b6a74bf9329936b7d3b6c8878303f00da9aaff2ec7196d6e"
+    sha256 sonoma:        "6edd054ce8d3741cac8c27bf9771baf1c9d5d21e76fb7526d2e579dfff7e006f"
+    sha256 arm64_linux:   "437dcd644821f55d1cd24286a38bed67e68597f00a6cca5f2bf3c807fb4fc4d4"
+    sha256 x86_64_linux:  "67549bb988abde450626040ff70b8d4a48a71ce2abb284f2fac9bd207ea749a2"
   end
 
   depends_on "pkgconf" => :build
@@ -57,8 +57,8 @@ class PythonAT313 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/fe/6e/74a3f0179a4a73a53d66ce57fdb4de0080a8baa1de0063de206d6167acc2/pip-25.3.tar.gz"
-    sha256 "8d0538dbbd7babbd207f261ed969c65de439f6bc9e5dbd3b3b9a77f25d95f343"
+    url "https://files.pythonhosted.org/packages/44/c2/65686a7783a7c27a329706207147e82f23c41221ee9ae33128fc331670a0/pip-26.0.tar.gz"
+    sha256 "3ce220a0a17915972fbf1ab451baae1521c4539e778b28127efa79b974aff0fa"
   end
 
   resource "wheel" do

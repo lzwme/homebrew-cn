@@ -1,18 +1,18 @@
 class Poutine < Formula
   desc "Security scanner that detects vulnerabilities in build pipelines"
   homepage "https://boostsecurityio.github.io/poutine/"
-  url "https://ghfast.top/https://github.com/boostsecurityio/poutine/archive/refs/tags/v1.0.6.tar.gz"
-  sha256 "2320a3ab5f25abb4da4bea0591667593b8d7353489a3bfa64d594dfa8c84ff08"
+  url "https://ghfast.top/https://github.com/boostsecurityio/poutine/archive/refs/tags/v1.0.7.tar.gz"
+  sha256 "4f9afcc3b28d1d45a6197347f0b490daccdbaee8b00948c21ac97ddae8becbb3"
   license "Apache-2.0"
   head "https://github.com/boostsecurityio/poutine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23eb2d15c7fdaa581164fb63673277bcbe2ed836f59ecf89a31db5841bc25ca0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30d1272fab67295395b009135c1771aab1367e9001123d15f3994317f9c0b8b5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e4a7a322d1c355cadce567d790d245b24269a08d45d3fa6bf338b73df12e74f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "354829a30716b550f324c9e9bd9d7e7a4e5a809b8c66cbf4cb15122ed5380cc2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f91d93d812eb65fe7cb368a010b774dbc815b6f6fc5c2a34f9a382e49b8d348"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd632bdaccae61dfdb39b05c01c49d70d3c90418dcca71ef27634fee1971758e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3a1d7b6c03e3a65a362b9e0e6b336cda3a9a54596eefe43e225b2f89fd45aa0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed1b800dfe6416b29a3d2e7370d2b8975930f7bc67aa19b62f2b92b938643bca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e817a66bbe8aeb126212d5019f3d3cb84bde5e5637931c20904f934a96ccbb48"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dfda9e0ac756d2883b94e4c860a28fda2d11d8b5e43d0e3b41c333f1d21e1c25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be5163a1819edf58b6f0d40de0c55018114da3ac14fc2f1b93e898928f0ba6da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eabf6bfd4eff9c3e15496c03f3ec9d9705c9add4e2364c10ac2c31640bc0f13d"
   end
 
   depends_on "go" => :build

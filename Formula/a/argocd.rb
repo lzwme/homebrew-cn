@@ -18,12 +18,13 @@ class Argocd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a6675ccccf401207c5bf9649b6f25ff4c0764c2c81ff412e93858b99617a50f4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d364b2ffcac01f8bda0aa725679d85d21d83720a80dfc91845e7ee6b3e80235f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8df845234d44be09fbebdd60424f244f98eb741e69b67e81c66f1829b8a2ed46"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c9baaff8ced722ff2c5f7c3bdaa4b442f6412e821132c83a25cd6d6fb0f7112d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4e585f90d52a510ef911e0dfd69a10e7af0bc872ff3960e82f0977adc25f6e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d1515e7b001f72264250c28b5de29698642feb5a4f336c6b9aea85fbf0b0d2c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "abe5e5154cdc75a257a7953be4a46b83a2a9fb6b62ba06981821a6e50b42590b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aac390b747bc40f24847cd8f12e0c4a8cfd1622d876ac5c095e9941ba03d07b5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "69057dce95ad0741d199cc93624077ff5089bbef3a3dab57f14b2cd06623135f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "69fc031e593a5d11532af74075913da63bce8d93eab9c1dc713bfce5fe76e116"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6229d9d96bd2cb8caf37900b7c188a1d2d94d3b1a5cb3c25afac799a5e36c36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70bc21c2884a042c505a7a39bbf699725ff500a2a426b60cd8756c1f7e9abd09"
   end
 
   depends_on "go" => :build
@@ -38,7 +39,7 @@ class Argocd < Formula
     ) do
       system "yarn", "--cwd", "ui", "build"
     end
-    system "make", "cli-local"
+    system "make", "cli-local", "GIT_TAG=v#{version}"
     bin.install "dist/argocd"
 
     generate_completions_from_executable(bin/"argocd", "completion")

@@ -1,9 +1,9 @@
 class Mac < Formula
   desc "Monkey's Audio lossless codec"
   homepage "https://www.monkeysaudio.com"
-  url "https://monkeysaudio.com/files/MAC_1209_SDK.zip"
-  version "12.09"
-  sha256 "b4628d585fb056c0c23c55b83d434e000d72129baf313d6087a696bb84e30dbf"
+  url "https://monkeysaudio.com/files/MAC_1211_SDK.zip"
+  version "12.11"
+  sha256 "3dc9603706edc74641c5c6286298d01c831450f6150bc45f234866c8df20e164"
   license "BSD-3-Clause"
 
   livecheck do
@@ -14,12 +14,12 @@ class Mac < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3b00bef2620eb48b4b69543bd1dc336aa7fa9b69fde107ebe49071cdee1143e6"
-    sha256 cellar: :any,                 arm64_sequoia: "a93e49a9477e2547765948f7a3058fcd36180b6544f5d0b7488b002b3390479e"
-    sha256 cellar: :any,                 arm64_sonoma:  "9a191e04c8e05b5bafe3705e97245979aba317ba4812cc83c91c916d6a420b1c"
-    sha256 cellar: :any,                 sonoma:        "3ffd611bfa8ed53067c57aee5f7a69dd9297f781290d23c347be0e67601d4796"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8ae9f3c5a6cd64ffde6f9e28ed667e40aa623eae76f44c903417704cc015092"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35405a4e03725564d84c721102f42dc146ac581458019333407b763315e3b670"
+    sha256 cellar: :any,                 arm64_tahoe:   "e8b8a5377ba66b8fd3428c248549b0aab8e4ad9b83b326d92c28074f6981d793"
+    sha256 cellar: :any,                 arm64_sequoia: "3ce0dfbb10b97966cae8509150e499c43c9a16df51a0f21d9585a68b07f001b1"
+    sha256 cellar: :any,                 arm64_sonoma:  "f9cf06b3b6c3a8b3a1e5bc534e32e3804b7affa7cf156f2d0c62bd921bbb60f0"
+    sha256 cellar: :any,                 sonoma:        "682472ce55e76956a9837b2d887b0fb6faf5fcaee0a080860430f9ed3e8c04ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb298c108871c3bd8e0aefd73220f281dde8f4ba3bc3e359ca28cea8ebc46c0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a84ddd75231dac5721dcc0ef62e9e62433dd79e96ee5bac3612e4518549559fa"
   end
 
   depends_on "cmake" => :build
