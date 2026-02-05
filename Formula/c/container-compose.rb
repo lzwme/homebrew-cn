@@ -1,14 +1,14 @@
 class ContainerCompose < Formula
   desc "Manage Apple Container with Docker Compose files"
   homepage "https://github.com/mcrich23/container-compose"
-  url "https://ghfast.top/https://github.com/Mcrich23/container-compose/archive/refs/tags/0.8.0.tar.gz"
-  sha256 "ee6863984c6d2d31ca998d0fd64d95ce4b098b86a77f1b747f9dafc8fe144b85"
+  url "https://ghfast.top/https://github.com/Mcrich23/container-compose/archive/refs/tags/0.9.0.tar.gz"
+  sha256 "7ffe905fea325b01f6090e95fd97f9165a69080e12b928a55f927b8adaa8949d"
   license "MIT"
   head "https://github.com/mcrich23/container-compose.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "7f6197b7f3cb571099efbd01d0bc346024726235161c36c6669b7e55a942d830"
-    sha256 arm64_sequoia: "e31e67acf32149b2b7543fa4b3b7dc0014b3be6a1ab00fd6bf79163953cf88ae"
+    sha256 arm64_tahoe:   "f1064610f320d7c888a99eafe6469d4b1ba3bc928d32028a26106b634c69a264"
+    sha256 arm64_sequoia: "14a8b833341d8e79b46ae990b60fb7d61c032e36d38db037b79cc931f52e563b"
   end
 
   depends_on xcode: ["26.0", :build]

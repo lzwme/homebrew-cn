@@ -20,11 +20,10 @@ class Oq < Formula
   depends_on "crystal" => :build
 
   depends_on "bdw-gc"
-  depends_on "jq"
-  depends_on "libevent"
   depends_on "libyaml"
   depends_on "pcre2"
 
+  uses_from_macos "jq", since: :sequoia
   uses_from_macos "libxml2"
 
   def install
@@ -36,10 +35,12 @@ class Oq < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/oq --version")
 
-    assert_equal(
-      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<root><foo>1</foo><bar>2</bar></root>\n",
-      pipe_output("#{bin}/oq -o xml --indent 0 .", '{"foo":1, "bar":2}'),
-    )
-    assert_equal "{\"age\":12}\n", pipe_output("#{bin}/oq -i yaml -c .", "---\nage: 12")
+    assert_equal <<~XML, pipe_output("#{bin}/oq -o xml --indent 0 .", '{"foo":1, "bar":2}', 0)
+      <?xml version="1.0" encoding="UTF-8"?>
+      <root><foo>1</foo><bar>2</bar></root>
+    XML
+    assert_equal <<~JSON, pipe_output("#{bin}/oq -i yaml -c .", "---\nage: 12", 0)
+      {"age":12}
+    JSON
   end
 end

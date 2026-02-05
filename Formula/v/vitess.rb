@@ -1,18 +1,17 @@
 class Vitess < Formula
   desc "Database clustering system for horizontal scaling of MySQL"
   homepage "https://vitess.io"
-  url "https://ghfast.top/https://github.com/vitessio/vitess/archive/refs/tags/v23.0.0.tar.gz"
-  sha256 "4048df4344eeead97dbf6126e09b9ccb2c5d83258bda19028f641b9a9f4e0b07"
+  url "https://ghfast.top/https://github.com/vitessio/vitess/archive/refs/tags/v23.0.1.tar.gz"
+  sha256 "2ee250d371817f72e89f1c2e87044a84624a5f219a8e61a13ebcdd7e1c4cbd6d"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e5062c627f55690c1d508ae83d4701108b622e8b98f246827c32d52cfaa890c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c0e5aaa0998b48dbdefbbcf78b9c2bbf6cf757b66499635e3ed9424c5f7b76d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a1e98fcb3238e8a6ccf7732856194c9d8b3d6c30cf2023e924ceb0160bd59ca"
-    sha256 cellar: :any_skip_relocation, sonoma:        "88bb197ebcebef61867972adbb702f6941d4d8b6e53473f6ec9eb09d248d32fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "54145d2a4da2451a4b059a59504b5b09eaa810e4cbe611466e5744a06a46a498"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31f4388df79ec234090e71ecf2601620263156d0dc2e816d6f92736d9d912753"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4cdd2d26a5dd1554448bbae8de3be8a84e1909da87923494e0cd114b1811e2ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5bd46b72c64f0ff8f014e2a9001f93e4bbf25fe95771931b24514a3f5d3294a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7b7ef4d7593693d78e9bfc8aebae852147b25776c58401e9e558d7be1f859ec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9d5c798678517df3dcf13be10153a63f6602d120e6b577fe40dfa6759bf4315c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a388b39e5816af5ec1ded3cbc3d75c8db2488ee5ad89908c4a202cd14216743"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e5b896fff3facad19567ca3c215667309002d2d32ed80a8ae191d26fbcfea33"
   end
 
   depends_on "go" => :build

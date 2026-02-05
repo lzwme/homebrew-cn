@@ -22,10 +22,10 @@ class Decasify < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "jq" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
+  uses_from_macos "jq" => :build, since: :sequoia
   uses_from_macos "zlib"
 
   def install

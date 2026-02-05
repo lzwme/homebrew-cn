@@ -48,7 +48,7 @@ class Scala < Formula
       }
     SCALA
 
-    out = shell_output("#{bin}/scala #{file}").strip
+    out = shell_output("#{bin}/scala --server=false #{file}").strip
 
     assert_equal "4", out
   end

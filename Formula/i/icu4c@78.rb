@@ -17,12 +17,13 @@ class Icu4cAT78 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dd21a03a000575112907785abf94f853facdf981442d0637605aa890a74c8181"
-    sha256 cellar: :any,                 arm64_sequoia: "f153ba0774789f39daed4e3546ec6b2575ad742f7c71cf79ecb845f89bf9e70e"
-    sha256 cellar: :any,                 arm64_sonoma:  "89115911782060dd1f716f987cd81be17dd6effc9f747b83c25d6f509ebce479"
-    sha256 cellar: :any,                 sonoma:        "c07ff4225a3f67025780fc7c5bf2802a67897ae147b8d51d7e53531bc6d05b2d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f52ad3ea43bfa3c16aac234217f0c0d6acc1787f5083d05c49213f12d5c097e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7aa8dc4368de2e9cd560ce809722ba32ad2292a0fe8459d3932f46325ce53427"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "09a7b7f48d9545c653c69a5b815dd20688ab5645b42ec54b445197d79643e7d1"
+    sha256 cellar: :any,                 arm64_sequoia: "3222838f8607a84d15de1f8a3acada84ff52cfe9854d5dd90c1aa63dfb034f08"
+    sha256 cellar: :any,                 arm64_sonoma:  "ebffbf5bdd705b2280389cdd357249b00c7fdd04546c86235fd44f64e0c84a62"
+    sha256 cellar: :any,                 sonoma:        "07e6f9e32f5b4a8faea004fd398d15e88b4868f7d524c39bf9d41dcfe08ad649"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2922da686864b89f1667c55132a937376685960de702f7a2399d09061815a1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1551d2c21bfc6a1ef4143e41a030c8773eab13821f70491a16025e1419768893"
   end
 
   keg_only :shadowed_by_macos, "macOS provides libicucore.dylib (but nothing else)"
@@ -42,6 +43,8 @@ class Icu4cAT78 < Formula
       system "make"
       system "make", "install"
     end
+
+    inreplace [bin/"icu-config", *lib.glob("pkgconfig/icu-*.pc")], prefix, opt_prefix
   end
 
   test do

@@ -1,8 +1,8 @@
 class CargoAudit < Formula
   desc "Audit Cargo.lock files for crates with security vulnerabilities"
   homepage "https://rustsec.org/"
-  url "https://ghfast.top/https://github.com/rustsec/rustsec/archive/refs/tags/cargo-audit/v0.22.0.tar.gz"
-  sha256 "77a739cd31259ce9365716ba1831fd401a4e29b111dea5b27ff567822811c898"
+  url "https://ghfast.top/https://github.com/rustsec/rustsec/archive/refs/tags/cargo-audit/v0.22.1.tar.gz"
+  sha256 "262d42fcca5db8629b6220d84e62e7ffda913846a36089a847ffe276e6b09446"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/rustsec/rustsec.git", branch: "main"
 
@@ -12,12 +12,12 @@ class CargoAudit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "081b812983513020dddd43c3e921583347aa1780f85dd744ad4794e545a6914e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8267c0ab28037b82c915da17aae11c9e23764cdd012a7c371c04532a8716256d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b1bf7333128b3ad15565fa1fab3add833864949f3556469cc676a8fd98a98be8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3c72248e214204d81448af092ae6ca32893ce339e598b12ba472d9cd70a9c6bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae8c7a01bd831f830df00b7420942247320a26575569e07e83728981ab7e53b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ccab29bc1251e83250dc6886392a735c79f253dfca3ecd3c173559893770799e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f6e1da58874562864d3ddf655bc8e0bc37aabafcae816ee8e8783aad19934220"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77c19a55bbd46c4b6f164860bce8773545619d7bc33386339e55f06e876b3521"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1122954b7f865130a467e057ec4b08095a439b7fd78e88b3f742743f225d7f53"
+    sha256 cellar: :any_skip_relocation, sonoma:        "008da23bccc764848791d2d1c2b8989a01cd2302d076dc92b62165be76644ecb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1fd429416d65215512e1edff026556bb643d92eab15a641225deeb85404a1fb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "feddcd6bb9aebd8baba3b4d9a6bb0a1c2fdb5809eab759b979c25d41ec11db2d"
   end
 
   depends_on "pkgconf" => :build

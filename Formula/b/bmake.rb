@@ -19,7 +19,7 @@ class Bmake < Formula
     sha256                               x86_64_linux:  "05ad36b4ab08784d9a3063c8dab2d705f8d36710a4a499ff87bdd05c7c3fe151"
   end
 
-  uses_from_macos "bc" => :build
+  uses_from_macos "bc-gh" => :build
 
   def install
     # -DWITHOUT_PROG_LINK means "don't symlink as bmake-VERSION."

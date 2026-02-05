@@ -1,17 +1,17 @@
 class FreshEditor < Formula
   desc "Text editor for your terminal: easy, powerful and fast"
   homepage "https://sinelaw.github.io/fresh/"
-  url "https://ghfast.top/https://github.com/sinelaw/fresh/archive/refs/tags/v0.1.98.tar.gz"
-  sha256 "f20c70b0a7e26d13e7ab8cae91ce249af249c60c214c4264ac43d1fc01f5d2a9"
+  url "https://ghfast.top/https://github.com/sinelaw/fresh/archive/refs/tags/v0.1.99.tar.gz"
+  sha256 "01628722f584057ae71a6a731511f4b8c527b80a88b4d0d9be83fa23cd73848c"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f06881a36d79cd70bce518c13b61583a30aac1d5ee5c024db7a5942854aa489"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbd9184adfbe17beb21630acfe77e934e04783cf7f3bd15071b3a4e4ccc3448e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7084d5ec58f3475b3cf94bd9b38844361a403a8af44c9abd4546ece91b8eecdc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bc381f3094a8fdb1513acf6ed54c558ba3a7eb17cc6d4f7770e2a3a1ebcf539f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb76afc3174b2a7391417dba21fe8f53fc5197e7a208c9f76fc003b726c4ca3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1618b2e0e78903b4b2b4196ab3275911c8daf09ba806f196e0df08766d90acd2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c803065613bed5d886f60b4b2cce10f4c53ad867cf4870d3ea65c2ebbbc09a3d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af968ca60cadaf74057393409da1ae6684ccaeb5c96ed1ab2f4c691cc921b875"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0b2a297818a511297b1df1921e2dcc8fdc9499cf29b049341d4831cea4db32a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e22b6b1a6ac172ad1953ab3c16dbd58dddc9db192ee2a3b9ae076b47ebe1e68f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f916377b8c878f41463e7626fddafbd1b37dc354397d65f1ea921e4a6ee16637"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f71aab27657835016643dd27588e757d77c419ae560e211f74428bef00d25de9"
   end
 
   depends_on "rust" => :build

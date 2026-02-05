@@ -1,8 +1,8 @@
 class Ispc < Formula
   desc "Compiler for SIMD programming on the CPU"
   homepage "https://ispc.github.io"
-  url "https://ghfast.top/https://github.com/ispc/ispc/archive/refs/tags/v1.29.1.tar.gz"
-  sha256 "d5819f3feb66eeba31e080a880b5b47b6bdbf8462cc145cdf71f535af249d88f"
+  url "https://ghfast.top/https://github.com/ispc/ispc/archive/refs/tags/v1.30.0.tar.gz"
+  sha256 "73b30c74fdfc56c3097015476df14d0a4bcb6705d9e286c6d51c1ed578d49e22"
   license "BSD-3-Clause"
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
@@ -14,12 +14,12 @@ class Ispc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a9442dfb39dd78c2dc7e0e03291077fa2cf2355376243ffd6783231789585ba6"
-    sha256 cellar: :any,                 arm64_sequoia: "6741b207cbf0496215cf9995a60ea6ea1270db20c8e522d3a877c438720bc083"
-    sha256 cellar: :any,                 arm64_sonoma:  "5ea53973b788c29ed03c298edd6a8b99a34a4f335819fd0ee4ba76bafd44d601"
-    sha256 cellar: :any,                 sonoma:        "f50862e874e57c3325bc02c76a57798bc4d02ab2e6476dc0fa1ef08d38ebf0a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63b2bbf4afd720a2f4e372a3687f92c393ed383496b908f4c80934591d112071"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "706ed77632178f84ece9b0f2c5cb89a9d2f49e896c8a1d3537fc4ebcdc77f199"
+    sha256 cellar: :any,                 arm64_tahoe:   "9bdc1d455e185c88f8520edbfc67471f5b687752765811712548ed3835e11817"
+    sha256 cellar: :any,                 arm64_sequoia: "2322d9bc5f413ac944cfadd524f268a467a685e2853552a6d2781c313bb9544e"
+    sha256 cellar: :any,                 arm64_sonoma:  "913706450be7b0ddf4c2540faa9d4c6ff2d477e105f4f587da5438a423246932"
+    sha256 cellar: :any,                 sonoma:        "34d56a54439aeee4832e56b54d9c8dcff9bdcad67e35d6d2ad312fd8fd0b7d75"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b201999610c12ce48c9a70127f16fb675a84c1c78cc0f8a573d0933a1dc5447f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73c75d3435f08639793b1a886a79adbf9fb02e504d568f2620471330317f7d06"
   end
 
   depends_on "bison" => :build

@@ -23,7 +23,6 @@ class Sile < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "jq" => :build
   depends_on "pkgconf" => :build
   depends_on "poppler" => :build
   depends_on "rust" => :build
@@ -36,6 +35,7 @@ class Sile < Formula
   depends_on "luarocks"
   depends_on "openssl@3"
 
+  uses_from_macos "jq" => :build, since: :sequoia
   uses_from_macos "unzip" => :build
   uses_from_macos "expat"
   uses_from_macos "zlib"

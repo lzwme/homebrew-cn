@@ -10,8 +10,9 @@ class Dockcheck < Formula
     sha256 cellar: :any_skip_relocation, all: "9648794cea62cb77b723d8a7482a0c34fd482d52af41892c21b24ad585173b19"
   end
 
-  depends_on "jq"
   depends_on "regclient"
+
+  uses_from_macos "jq", since: :sequoia
 
   def install
     bin.install "dockcheck.sh" => "dockcheck"

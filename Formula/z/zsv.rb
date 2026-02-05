@@ -7,23 +7,32 @@ class Zsv < Formula
   head "https://github.com/liquidaty/zsv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2fdae13abc1b1e22b1dcac9a2da1eb55f010dca80f7cf311dd69fe4cd7196e1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2c2b5647f504f93e9b93bd3bf95b8109cff5ade016f94cd9d88fc84cde1ffba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d91d65dc761c247db36d9ce086133ee63c987a38b2ce53f60b7b1305598bcff2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ef2b52a21d84f9b3549a108234e471b7573e995716066c60b38bd4bb9c13f090"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1caede721d04f19432a2b4566772c5ee37c2081a72fca2e7c8ffb78ae8c133ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f12396502a16441e4b71b78c1c261b23e4ed0ea426f8e013be71eff2c3740d0"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "76284618eb9197f6a95662fef7b0561317264ca45478ca0b618c7cade04715af"
+    sha256 cellar: :any,                 arm64_sequoia: "ab57f85786b1350ecb12706551c04d19bc9648f7cc85797e8a20781bf16304a9"
+    sha256 cellar: :any,                 arm64_sonoma:  "90368dd0b65b8302ba68063510aae8c2df88195c906167adb3aa4bf4caa0559a"
+    sha256 cellar: :any,                 sonoma:        "f98f1e5a3782f5ef64573d80acfe89e75e7793dd56ea574cec7cad2cca30c4af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e195404e9bc473770a34909d508a813dea95c0b3bb64e0b4e3d618bb3d060c9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32cb9126d5d14d886c92d2e12b4e71cd7d45c3c6e1e6789b289f531db60a05f6"
   end
 
   depends_on "jq"
+  depends_on "pcre2"
 
   uses_from_macos "ncurses"
 
   def install
-    system "./configure", *std_configure_args
+    rm(Dir["app/external/{jq,pcre}*"])
 
+    args = %W[
+      --jq-prefix=#{Formula["jq"].opt_prefix}
+      --pcre2-8-prefix=#{Formula["pcre2"].opt_prefix}
+      --ncurses-dynamic
+    ]
+
+    system "./configure", *args, *std_configure_args
     ENV.deparallelize
-    system "make", "install", "VERSION=#{version}"
+    system "make", "install", "VERSION=#{version}", "PCRE2_STATIC="
   end
 
   test do

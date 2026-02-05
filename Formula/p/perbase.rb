@@ -5,8 +5,8 @@ class Perbase < Formula
   head "https://github.com/sstadick/perbase.git", branch: "master"
 
   stable do
-    url "https://ghfast.top/https://github.com/sstadick/perbase/archive/refs/tags/v1.2.0.tar.gz"
-    sha256 "35b35573e48e5af17d953e66d345c5e8b2ea69bb072e5bbaff87adbfc02cb472"
+    url "https://ghfast.top/https://github.com/sstadick/perbase/archive/refs/tags/v1.4.0.tar.gz"
+    sha256 "fc0d08964950381969a1cf12e1e1e39eb8edde26794b8d653e7d80b08180fc43"
 
     uses_from_macos "xz" => :build
     uses_from_macos "curl"
@@ -26,12 +26,12 @@ class Perbase < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0636431f82c8954c63cde109db5836e5e6e15eb184d8bd27a7903e309cce9c60"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb08705eac22818c85049618ac85b7c2f9d426791b6f4335cb2f3f9f072ecf08"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a111ce2213e482f9a6c1455868a16f1468f131447c4b1faa47b8b27995480b7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b8a6a7e3ffaef9e99a7031f89bd2a2fefe1f70b066f95114f2233d024f7b96bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0adff209fb65737baa373c804ad1d5fd1b3fef82fd666b12e814070fd7fd1f3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ce57814f35a422bd640d24d830c988e273b21c141411c7f5f9939f54becf812"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b27f4cd506f89c3822aa14588869b38b370dad2b9c4a054263d3c12765c00c9a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a1c6d4c2ae40f87cc7a785ffb31f0d64da26369ca813ebd1dc8ebcf9b33cd1c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4dd7e81330143f8e68f14c8188b3616571a1f2f55da6c64bc349b56b3e80bbbf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cab8cc6d3e4cd2c64c8895b23ecd4b1021151d6ce3b94e3bc74b650c0430a473"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29544aef879ded62af4a4c9344507a18d5e49fb430b05d0e7284180960ac8d34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97139d275264bcab4fc057f2e7e4fa2cdf187f73bfbd3e438956ff137151d026"
   end
 
   depends_on "cmake" => :build

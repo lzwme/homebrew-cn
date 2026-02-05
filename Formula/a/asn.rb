@@ -7,20 +7,23 @@ class Asn < Formula
   head "https://github.com/nitefood/asn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fcf15b34feaab955f5d34ccdfa9bfa0946aeeffb7bd699fee3e94beb53145cbf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "284c2eaf06c2c94b578910396028e9bedd8dd1ece2b0d985903569ffe9ef6d94"
   end
 
   depends_on "aha"
-  depends_on "bash"
   depends_on "coreutils"
   depends_on "grepcidr"
   depends_on "ipcalc"
-  depends_on "jq"
   depends_on "mtr"
   depends_on "nmap"
 
-  uses_from_macos "curl"
+  uses_from_macos "jq", since: :sequoia
   uses_from_macos "whois"
+
+  on_macos do
+    depends_on "bash" # Bash 4.2+
+  end
 
   on_linux do
     depends_on "bind" # for `host`
@@ -28,6 +31,7 @@ class Asn < Formula
 
   def install
     bin.install "asn"
+    man1.install "asn.1"
   end
 
   test do

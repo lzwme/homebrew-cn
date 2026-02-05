@@ -11,9 +11,9 @@ class Dzr < Formula
   end
 
   depends_on "dialog"
-  depends_on "jq"
   depends_on "mpv"
-  uses_from_macos "curl"
+
+  uses_from_macos "jq", since: :sequoia
 
   def install
     bin.install "dzr", "dzr-url", "dzr-dec", "dzr-srt", "dzr-id3"

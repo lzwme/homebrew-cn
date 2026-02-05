@@ -16,7 +16,7 @@ class Gifify < Formula
   depends_on "ffmpeg"
   depends_on "imagemagick"
 
-  uses_from_macos "bc"
+  uses_from_macos "bc-gh"
 
   def install
     bin.install "gifify.sh" => "gifify"

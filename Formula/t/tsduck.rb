@@ -16,12 +16,13 @@ class Tsduck < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6df3bda97beca0157e253de2048841ef6d0164bcd624f50e8444e552766b2cc1"
-    sha256 cellar: :any,                 arm64_sequoia: "5b7140f45aed01d2b25bb577b21600b64057c41326a604e4f3e816e9d0c9b031"
-    sha256 cellar: :any,                 arm64_sonoma:  "b21748e23ee625c44d7fa743c03eb7c61b556d4104191dae75662ad1f22de88e"
-    sha256 cellar: :any,                 sonoma:        "2bfd6c803f74c29ae919f147980ae9fa44a830070cb9319ae5f7d5d615db0109"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e422088c607c170a5dcb7d7e1dda9eeacd8507dca9b7f37b33f97d0bff7b437"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68e7d58bf0f93d4600bc093b729163245b709edb9bb83282017c718cfb744e3d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "0748c78d1f5ee0e5e2c5b06817620a2c43bb0ab5d81d4d0662be07f88a89aaa2"
+    sha256 cellar: :any,                 arm64_sequoia: "8ab669be5e06d283575341a204ca7b2bf78b6c3018e4a94fd6b42a4d5e36b6c1"
+    sha256 cellar: :any,                 arm64_sonoma:  "89a86a67809a853f1fbcd8366cd11707b577b88b7b06c8eb2e285c715b5fc17c"
+    sha256 cellar: :any,                 sonoma:        "4968c1137bd05430e330b3e9c593db20671ea1380ded6421c91a0ce86fec8b8d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b99ef57d25c736d33c9cff260a9db2fc9c0695cfc26cf84fbcc6328f75a5e352"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3d2448cd03a63c3f356d34303d89dc17c9fbffb42b3ff9036131da764bdedb6"
   end
 
   depends_on "asciidoctor" => :build
@@ -64,6 +65,8 @@ class Tsduck < Formula
     if OS.linux?
       ENV["LINUXBREW"] = "true"
       ENV["VATEK_CFLAGS"] = "-I#{Formula["libvatek"].opt_include}/vatek"
+    else
+      ENV["LDFLAGS_EXTRA"] = "-Wl,-rpath,#{rpath(source: lib/"tsduck")}"
     end
     system "gmake", "NOGITHUB=1", "NOTEST=1"
     ENV.deparallelize

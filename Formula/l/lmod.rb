@@ -19,7 +19,7 @@ class Lmod < Formula
   depends_on "lua"
   depends_on "tcl-tk"
 
-  uses_from_macos "bc" => :build
+  uses_from_macos "bc-gh" => :build
   uses_from_macos "libxcrypt"
 
   on_macos do
@@ -59,6 +59,7 @@ class Lmod < Formula
     ENV["TCL_PKG_CONFIG_DIR"] = ENV["PKG_CONFIG_PATH"]
 
     system "./configure", "--with-siteControlPrefix=yes", "--prefix=#{prefix}"
+    ENV.deparallelize # Work around "install: mkdir .../share/man: File exists"
     system "make", "install"
 
     # Remove man page which conflicts with `modules` formula

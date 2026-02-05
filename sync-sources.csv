@@ -1577,7 +1577,7 @@ Homebrew-homebrew-core/Formula/d/dnsviz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dnsx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/doc8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/docbook-xsl.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/docbook.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/docbook.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docbook2x.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/docfx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dockcheck.rb, Homebrew/homebrew-core, 1
@@ -3069,6 +3069,7 @@ Homebrew-homebrew-core/Formula/i/iat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ibazel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ibex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iblinter.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/ic-wasm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ical-buddy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icann-rdap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icarus-verilog.rb, Homebrew/homebrew-core, 1
@@ -6332,7 +6333,7 @@ Homebrew-homebrew-core/Formula/r/rtaudio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtf2latex2e.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rtl_433.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtmidi.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/rtmpdump.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rtmpdump.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rtorrent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtptools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rttr.rb, Homebrew/homebrew-core, 1

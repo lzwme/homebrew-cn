@@ -1,8 +1,8 @@
 class Nelm < Formula
   desc "Kubernetes deployment tool that manages and deploys Helm Charts"
   homepage "https://github.com/werf/nelm"
-  url "https://ghfast.top/https://github.com/werf/nelm/archive/refs/tags/v1.19.0.tar.gz"
-  sha256 "11f84032ea4f2ea3a9fe85e92486a1c11dd6745052e2b57cfaaeabb8460f7823"
+  url "https://ghfast.top/https://github.com/werf/nelm/archive/refs/tags/v1.19.1.tar.gz"
+  sha256 "ee9ec58db1a6e273a06eef39419ee2bc8c6dfdee32edab3bf3093522d3d0c86a"
   license "Apache-2.0"
   head "https://github.com/werf/nelm.git", branch: "main"
 
@@ -14,13 +14,12 @@ class Nelm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a02f7ee30e2f0a57f6a23dbde1cbce8153469e9c42e2f345c4911b2af418ca82"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17acd87c094a31d3add10bcfd91bb04ee342fab9476d998923e1d51dd07a1cbb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b3f72adc828cc678663da1ebad535667e155f671326d150eb838f65baf2ceb2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e518451773e8e152c2890a9fedc6e99ced17b48ba7a9b9aaf2fa9d6178bd97eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "01eb77f0597114a5f4ebb7043890f7832dd2a4652d3428e85c1c5822a386e7aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a81416af088af0083bfa4249b35048f6e02986deeee2e060b101939aa8ad2641"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4cc978fbfba8b6867b55810a8d862320ad1141202a57d5cd82205b4ef8247e3a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "716581a435bce9910df92cde2b291c0302976a458316590eb3ccbb7a0fc7a266"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d994ca0a5c771debbf32161f7d644a0c62380295725b1dc640aa19efd4f84d48"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2c0fb47f5dd12e13e5d0c71c1f3967b5571031bf7701f0b8f0088e11c4b7283e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5db256bdf16c20fa5f596bd453ba2444a61609a4785a2b28636c9860e0d24766"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efbdcc9ad7cde530387ef9d50bde9f19c16d45c524028290e6fdd428cd643afa"
   end
 
   depends_on "go" => :build

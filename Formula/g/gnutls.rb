@@ -30,12 +30,13 @@ class Gnutls < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "2cbd8812266cf05ac88579e45a894a55b998545676af011c7188fe9bee1279ca"
-    sha256 arm64_sequoia: "3db727d6ba2062832d38f6be44abf7397c828980e863d6d29403391158fd85c9"
-    sha256 arm64_sonoma:  "f3716f6776cd773452916736e2708ab2bc4201d7cf81ac416f70ee84dade1336"
-    sha256 sonoma:        "29ff0688784fc99571770c29bafa840805b4e425c55b5389c67ba2045716656a"
-    sha256 arm64_linux:   "87ac2e11290bed00b2487e39971c840b75ce555209f78d4ea840f1971cac945e"
-    sha256 x86_64_linux:  "35e2bf9bf64a839746860aab8554bd9e3c2069cc3138f8c06add6a9444f81555"
+    rebuild 1
+    sha256 arm64_tahoe:   "4b83a3562c8d33bbbf9b77e8c74bf06ce325ae78ead9662616603c6294272c65"
+    sha256 arm64_sequoia: "8e941f09492a2f944bcff6c24aef4e10423e80db0a236d910e2308f63bc6bbb9"
+    sha256 arm64_sonoma:  "a47e1399d9e280feae3116a43f7bcb8a93251e56254ecfeb8474938a3cf5def1"
+    sha256 sonoma:        "b3b0e52501025dd2105e9e87b32d424292d3c5fd92be253a0f6338a08a71dc89"
+    sha256 arm64_linux:   "d1d07bcbcbaedcaf5b152c1e1a964829a4d8ae530fa3998b303d19d79485f0ad"
+    sha256 x86_64_linux:  "9ac6e8f80f2076fd28821170ebe252886522d23719353edf131d6a570a28b9ab"
   end
 
   depends_on "pkgconf" => :build
@@ -67,6 +68,8 @@ class Gnutls < Formula
 
     system "./configure", *args, *std_configure_args
     system "make", "install"
+
+    inreplace [lib/"pkgconfig/gnutls.pc", lib/"pkgconfig/gnutls-dane.pc"], prefix, opt_prefix
 
     # certtool shadows the macOS certtool utility
     mv bin/"certtool", bin/"gnutls-certtool"

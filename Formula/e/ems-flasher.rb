@@ -28,24 +28,12 @@ class EmsFlasher < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8081dea4fbc1c501388ffb3a38751d47a09ef38b0dacd3e09ad7995f66c9249a"
   end
 
-  head do
-    url "https://github.com/mikeryan/ems-flasher.git", branch: "master"
-    depends_on "coreutils" => :build
-    depends_on "gawk" => :build
-  end
-
   depends_on "pkgconf" => :build
   depends_on "libusb"
 
   def install
-    if build.head?
-      system "./config.sh", "--prefix", prefix
-      man1.mkpath
-      system "make", "install"
-    else
-      system "make"
-      bin.install "ems-flasher"
-    end
+    system "make"
+    bin.install "ems-flasher"
   end
 
   test do

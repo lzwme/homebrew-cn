@@ -1,8 +1,8 @@
 class Mosquitto < Formula
   desc "Message broker implementing the MQTT protocol"
   homepage "https://mosquitto.org/"
-  url "https://mosquitto.org/files/source/mosquitto-2.1.0.tar.gz"
-  sha256 "ceccf14f43b8ce21312d0dbf247025b8166536e9afba326f8b7c8b1d201fa6d9"
+  url "https://mosquitto.org/files/source/mosquitto-2.1.1.tar.gz"
+  sha256 "d93026a8f8255a32fe146ca77df5e26259b7947745370a3944a68ddb4ec663ff"
   # # dual-licensed under EPL-1.0 and EDL-1.0 (Eclipse Distribution License v1.0),
   # EDL-1.0 is pretty the same as BSD-3-Clause,
   # see discussions in https://github.com/spdx/license-list-XML/issues/1149
@@ -14,12 +14,12 @@ class Mosquitto < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "56833e00c438d915d0c880a4c39fd56d37e1e0c1916ad3053fda88b76d51e124"
-    sha256 cellar: :any,                 arm64_sequoia: "171185fd38c7da7f7547af2609a8cee0e5d4b1f15fc99cc3dd4299d364b4211d"
-    sha256 cellar: :any,                 arm64_sonoma:  "0b8d89d53fa7b7cbb3fda4ce6e0014f21f50ed35ef436a524751848892817488"
-    sha256 cellar: :any,                 sonoma:        "4f5664e36b10786e90b8642c48fd612a72e4b9f7766742f3596fdce80f047f5b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a1d550d24d1d3116641a618cc21c97498d6cc5ffa3ccdd046bdda95e8a96bda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "657c6e39d6d021d193249ff3c1ecdf3193043a5bacc55aad1baeed0039988873"
+    sha256 cellar: :any,                 arm64_tahoe:   "33020fe3eb26e4ff7c4ba0e65e5175ed6750cda378419a24c8be010c5dd901c6"
+    sha256 cellar: :any,                 arm64_sequoia: "87e4b4f7e6c7b4b69a9fac130b1065b1596958d373917548648514ea24241d86"
+    sha256 cellar: :any,                 arm64_sonoma:  "ead707b92cef90df7108714019e6c58611ee8cee1852e35499a9edf70518394e"
+    sha256 cellar: :any,                 sonoma:        "829f489c8e3c9969a61751fafcd44a4120b2dc79a175438a0127c39074a9e205"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "27e1296568858dd80f9a3bfb3f2e68bd46f467076ac9b889464f76e5cd883aca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94e7362a745f5c479d285f11891325727cacd987369cd9847fcbe332820ee65d"
   end
 
   depends_on "cmake" => :build

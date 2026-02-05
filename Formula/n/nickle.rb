@@ -24,7 +24,7 @@ class Nickle < Formula
   depends_on "pkgconf" => :build
   depends_on "gmp"
 
-  uses_from_macos "bc" => :build
+  uses_from_macos "bc-gh" => :build
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
   uses_from_macos "libedit"

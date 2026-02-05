@@ -34,17 +34,15 @@ class AprUtil < Formula
   uses_from_macos "sqlite"
 
   on_linux do
-    depends_on "mawk"
     depends_on "unixodbc"
   end
 
   def install
-    system "./configure", *std_configure_args,
-                          "--with-apr=#{Formula["apr"].opt_prefix}",
+    system "./configure", "--with-apr=#{Formula["apr"].opt_prefix}",
                           "--with-crypto",
                           "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
-                          "--without-pgsql"
-
+                          "--without-pgsql",
+                          *std_configure_args
     system "make"
     system "make", "install"
 

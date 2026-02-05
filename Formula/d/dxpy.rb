@@ -3,17 +3,17 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/e0/b0/a24759b3b7c075a7f571693082e2964bd8dc62a67afe4c82bdc3ddd86b7a/dxpy-0.403.0.tar.gz"
-  sha256 "9d251c0d91fa7b5002bc8d1945fc7528de4d409b58ee719c52b37d1ed04e9311"
+  url "https://files.pythonhosted.org/packages/91/93/f089b5691636d8fe09476d5ee16df5f8f8ea6fdcd9fa55786e933c4c7802/dxpy-0.404.0.tar.gz"
+  sha256 "04ed9f8aa2ddc0c2a843ce0ee934e8f31af62c8e56e5e1cf42cad86118fa6d6d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3360f4a04df4f3e62b9965a994daf9cb783a7a2845f86d5e72212fd1f85838a0"
-    sha256 cellar: :any,                 arm64_sequoia: "3ab5853b60058d6064387b4e471ec7aae540e7cb32808c59c63352ed451d28c1"
-    sha256 cellar: :any,                 arm64_sonoma:  "c645be06805c2449a34f994742fd5fec21aa8f03fa86bca859b7a880d4ac5efc"
-    sha256 cellar: :any,                 sonoma:        "85bc47a5fceefefd777b75bbd52c22cda50d1b858c3f651d96b310bf08b5a908"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfc6cae58b9a82f60af544cc9d2f093f37856ec246368ebff6dfc59bb500a9ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a19618e0efd10d71274a920c80a19053cc8a9865acfecb4111beeb86ae8ff465"
+    sha256 cellar: :any,                 arm64_tahoe:   "5665e7497de4645548f1497c82da854ccd3c1671417e2f920d69d2a301d37860"
+    sha256 cellar: :any,                 arm64_sequoia: "a39a274ab6a49d44ed3d53093b7c56bff3f3c91771b6f25d8b9bab7ce2a963b6"
+    sha256 cellar: :any,                 arm64_sonoma:  "d7077ac3c3ba0be2a1a7fe7bbda6408c75c822df42b9d228076bab6500545c21"
+    sha256 cellar: :any,                 sonoma:        "d927a4f38b2efbd2dcb6ab38fab3c4986d773590dcd52a990ec026a0a573964b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "12e4814424edb8cc6e2c2e0578a110b0fe5be2e3976a53f2f797bb5f43687ba0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9651c73dafa71f2dd737e603ead773efc5f666134158dfee581b9f34a5adea0"
   end
 
   depends_on "cmake" => :build # for awscrt
@@ -62,8 +62,8 @@ class Dxpy < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
-    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
+    url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
+    sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
   end
 
   resource "python-dateutil" do

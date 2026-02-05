@@ -3,18 +3,17 @@ class Ramalama < Formula
 
   desc "Goal of RamaLama is to make working with AI boring"
   homepage "https://github.com/containers/ramalama"
-  url "https://files.pythonhosted.org/packages/8d/46/f315941789325bb0c825e85b2ed5269539367bf0c2ed96b321a9143af9e5/ramalama-0.16.0.tar.gz"
-  sha256 "24e21c49934ec6f19664f270a78232f4bcc972a7e3fc8619381be4cf096fba01"
+  url "https://files.pythonhosted.org/packages/ad/13/600807d698930c30aab51ffb484cb83835af37505832f2ebf375c1fbd20a/ramalama-0.17.0.tar.gz"
+  sha256 "079aa5a614403414314e15b058dc48c4053ff456cbb8fa5f28c8e415bd9ee38e"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "901432b90c0f5d83e1c4a960577e8ba4640a67d26da0131226fa3a7cc37aca87"
-    sha256 cellar: :any,                 arm64_sequoia: "e78b678717a82d27db3e66149296f7fcfccf42ab5e9304ac1be6201acd47a0ad"
-    sha256 cellar: :any,                 arm64_sonoma:  "c23bdaea0c12d19844132cd848f572a48fba35248bb375d1d8fecec9db7ff022"
-    sha256 cellar: :any,                 sonoma:        "bf8e69b21f82acac85325abe5844c50ead725cd3c7ebd3940e4300bba4867ddf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5746ee51f37e956e32b2efc84c33bb1860384c2f5aba4044ee870c79cad89ae6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "603a84b6eb285ccbd1d71b66dfe6c831c73a9382c7a635deb1941ae2c37f5518"
+    sha256 cellar: :any,                 arm64_tahoe:   "a63b90afd75adc13e7e280d6e92d2e152c8e2304c9218055ea4a3b59e13973ee"
+    sha256 cellar: :any,                 arm64_sequoia: "5341957f249cbef32b22ff1f20e3edaabdbc672dd64b2c640840a4139f6b8fe2"
+    sha256 cellar: :any,                 arm64_sonoma:  "839550aadf0f689c95091eb12ec39069d0da98b0071aa70182f1549661237228"
+    sha256 cellar: :any,                 sonoma:        "f90790f9b960669486b90fbf66bb6dc3983ad9e0dec43a472e4abb5c9e9ade9b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c9d1a542e997a35af822a8d7bbcd7942ef9b6aee6b5b899a688db63424bab4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "416520f7dc085c4401913b2758f792e498cd4b611c0b06ee3ca1fdbd814e5877"
   end
 
   depends_on "libyaml"
@@ -43,8 +42,8 @@ class Ramalama < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
-    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
+    url "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz"
+    sha256 "0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326"
   end
 
   resource "jsonschema-specifications" do
