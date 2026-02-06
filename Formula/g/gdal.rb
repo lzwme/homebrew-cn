@@ -4,7 +4,7 @@ class Gdal < Formula
   url "https://ghfast.top/https://github.com/OSGeo/gdal/releases/download/v3.12.1/gdal-3.12.1.tar.gz"
   sha256 "266cbadf8534d1de831db8834374afd95603e0a6af4f53d0547ae0d46bd3d2d1"
   license "MIT"
-  revision 3
+  revision 4
 
   livecheck do
     url "https://download.osgeo.org/gdal/CURRENT/"
@@ -12,12 +12,12 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "50400005810bfc284f10e7edd1709657bff108c1e3246256745f6d1abcbbd8e8"
-    sha256 arm64_sequoia: "87d5bcd41a0468c82c787e02b380b89e3c430c00757a5d986a209074ce190e44"
-    sha256 arm64_sonoma:  "e7aae366cb5ac1cb80f4ddb75de1031ffe929317a5a08ddea1a9d2626911f7fc"
-    sha256 sonoma:        "b8bed2f921471c7c44f5a1d48d0d26b8d5a930a8f3e35a9a604acec373582c9f"
-    sha256 arm64_linux:   "10bedeed281d2c4e4cbd190f9ed0f484c205061251dc803bf588b9cd2b4026db"
-    sha256 x86_64_linux:  "b5f1c7881fccc6848cfca07e34349335a408c00b8a43bf496434481cf31a205f"
+    sha256 arm64_tahoe:   "275592823d824cb6756fbbd032a56cea73fcd75a4caf89d048fb348e496f8a87"
+    sha256 arm64_sequoia: "17a731ef6f6aff6090a91b6a3fa64705c2f62bde5f4be7d88be666f4e89a1f8e"
+    sha256 arm64_sonoma:  "ff90ab40bd81253262ac942dc0a5eb773630082aa75a349e12c53cbc7127abc6"
+    sha256 sonoma:        "001e8fc69875d2c4b0dd8bdd2b54a94b39d659f104996d38a8b4d656728d1db6"
+    sha256 arm64_linux:   "5139df28e8f50d6bd2d2ad523b0450b22ddca6324a903b32f84e2bf46b75a4fc"
+    sha256 x86_64_linux:  "c96f16f427006aedc329393a979a3b1970fe1c1444cca16bf366ae92d247c1f3"
   end
 
   head do
@@ -94,6 +94,16 @@ class Gdal < Formula
   patch do
     url "https://github.com/OSGeo/gdal/commit/28a15cb76d26a27be96ab8b8bc8fcb52c153c3a9.patch?full_index=1"
     sha256 "89171ad0d0e9edd531022011c59d1d0ae21910b4c69c44ab453c5722c82fe297"
+  end
+
+  # fix for poppler 26.02+ compatibility, upstream pr ref, https://github.com/OSGeo/gdal/pull/13850
+  patch do
+    url "https://github.com/OSGeo/gdal/commit/8f2e654223e9fbde0978eea0d8f03ad6f091ad8c.patch?full_index=1"
+    sha256 "51d3016957ef82cae333780c82523979aae7c338d9c38fd9b6d18f971e171335"
+  end
+  patch do
+    url "https://github.com/OSGeo/gdal/commit/c8ff7e31650cb61acf40903928aabf2514754038.patch?full_index=1"
+    sha256 "8f57f13342b1d7e7fcfc5920a9e4943478661f126d45a5646b99cdae8ceff264"
   end
 
   def python3

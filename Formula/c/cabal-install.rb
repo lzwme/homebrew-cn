@@ -29,7 +29,7 @@ class CabalInstall < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebe5f10854e5a41d1d2f515f83852605a215cdaf5e22113b5bcd8abbed9958c4"
   end
 
-  depends_on "ghc"
+  depends_on "ghc" => [:build, :test]
   depends_on "gmp"
 
   uses_from_macos "libffi"

@@ -1,12 +1,22 @@
 class Go < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.25.7.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.25.7.src.tar.gz"
-  sha256 "178f2832820274b43e177d32f06a3ebb0129e427dd20a5e4c88df2c1763cf10a"
   license "BSD-3-Clause"
+  revision 1
   compatibility_version 1
   head "https://go.googlesource.com/go.git", branch: "master"
+
+  stable do
+    url "https://go.dev/dl/go1.25.7.src.tar.gz"
+    mirror "https://fossies.org/linux/misc/go1.25.7.src.tar.gz"
+    sha256 "178f2832820274b43e177d32f06a3ebb0129e427dd20a5e4c88df2c1763cf10a"
+
+    # patch to fix pkg-config flag sanitization
+    patch do
+      url "https://github.com/golang/go/commit/28fbdf7acb4146b5bc3d88128e407d1344691839.patch?full_index=1"
+      sha256 "2e05f7e16f2320685547a7ebb240163a8b7f1c7bf9d2f6dc4872ff8b27707a35"
+    end
+  end
 
   livecheck do
     url "https://go.dev/dl/?mode=json"
@@ -22,12 +32,12 @@ class Go < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c88e4e9e73e3a3b9539a84a0f8a84d1604acee4fbdb1eaa57f26765dfe2d1cc4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c88e4e9e73e3a3b9539a84a0f8a84d1604acee4fbdb1eaa57f26765dfe2d1cc4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c88e4e9e73e3a3b9539a84a0f8a84d1604acee4fbdb1eaa57f26765dfe2d1cc4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "771980d46be1bd9193d8f811d05655290791c58a4894a5e2e237282277505543"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d4393aaa4c22df042f6f939bd2f77d23642ae13bacd9793db9795f93d64605e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cadc1963d19213ece10eed567db0e554fcc300b2405023ade3ae2acb5a336ad3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cce0c9d57104de4957492f01c61ff35388d405d08bbdebe89762afca30cbb6ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cce0c9d57104de4957492f01c61ff35388d405d08bbdebe89762afca30cbb6ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cce0c9d57104de4957492f01c61ff35388d405d08bbdebe89762afca30cbb6ae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a0584077b91e24fcfc84f2c9f129e63462243edde89d68d79186ae049ca79c2c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "557fc542b200bcf95ec86dc4c7297c74930cc76b08aed01753a0e2c6c26c4747"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "497e82ed5755329c4e6258b3b77bd7ce7214116f8be7d787ddaa491860eb59df"
   end
 
   depends_on macos: :monterey

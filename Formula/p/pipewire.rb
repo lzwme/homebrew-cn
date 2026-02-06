@@ -15,8 +15,9 @@ class Pipewire < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "962b6ed935f79ebc9901310489ccf3888e60351e8a2b45b47eac48c15eb89f66"
-    sha256 x86_64_linux: "13c76b689ca0aa6b9a8cc5acfb96317a4bed6834510960fa9cc7438b34bb6617"
+    rebuild 1
+    sha256 arm64_linux:  "abbce7e4b55e7f3b26fdbfcd60ffec64a8cdc9d735b8f6210c57df4dc5cd2b01"
+    sha256 x86_64_linux: "4787269b97cfb902d04c825c92ee89766df4a34cfb43c458c44b2c015642f5a1"
   end
 
   depends_on "meson" => :build
@@ -37,7 +38,7 @@ class Pipewire < Formula
   depends_on "systemd"
 
   def install
-    args = %w[
+    args = %W[
       -Dexamples=disabled
       -Dtests=disabled
       -Dudevrulesdir=#{lib}/udev/rules.d

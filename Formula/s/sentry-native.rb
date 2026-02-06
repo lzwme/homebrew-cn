@@ -1,17 +1,17 @@
 class SentryNative < Formula
   desc "Sentry SDK for C, C++ and native applications"
   homepage "https://docs.sentry.io/platforms/native/"
-  url "https://ghfast.top/https://github.com/getsentry/sentry-native/archive/refs/tags/0.12.5.tar.gz"
-  sha256 "c72123208a4b72a81aa545d65a39561beadbe50499bf798310bb5010316d76e2"
+  url "https://ghfast.top/https://github.com/getsentry/sentry-native/archive/refs/tags/0.12.6.tar.gz"
+  sha256 "9d543e69fb76860624ec45ac6a20271163c6f4d6dba6fe4d1492bfb247b268f0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0d614143c40ca50395699d85c9a5901b2aa962abeda4a41fd2a1636b1808f1a5"
-    sha256 cellar: :any,                 arm64_sequoia: "52f194cc6bc9294845dca0e99ec8840c711503818a0361c18d1657ff4f584410"
-    sha256 cellar: :any,                 arm64_sonoma:  "0f8de137b0cf410729ec10637cb561bd1c32021e3380f4039337048c6a8b1048"
-    sha256 cellar: :any,                 sonoma:        "a83370e9283340346af621875ad91c065bb035eb7d0ef42da420cf11a3a49314"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1def6f958b6b455ede89594dde474378a6fc57735c01c2fb899d8b307f1abac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e654d6f23b3534a8d2065595b993db6d9f19d4aad00a1ee0ef93458296b2dda"
+    sha256 cellar: :any,                 arm64_tahoe:   "8ded1a1b281809df7c721dfab62b16c8e57cd9e9b7f7baf6a68fd688d8bae202"
+    sha256 cellar: :any,                 arm64_sequoia: "e9f90ea7c613edec038a9a3eb4636eb5360850a6dc7ef3b684087247429fa626"
+    sha256 cellar: :any,                 arm64_sonoma:  "d673ddf5770ce675ef6f5cf0736f82ed50796cfeedd8f39f3b2afe8719808db6"
+    sha256 cellar: :any,                 sonoma:        "6a1fa7781792f72bb5ecbbbc415d59699af72e6ed0ae7bcec2e5bfefc6c6f61b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "05b9db9038d260c32198a1cf2aacb1a1b38b984d02eddca27c9b56c3c7fadef9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "064ba4f23b5774b4a7e6181e4cca0b0adc50ed32bef17d874faaadc32f57ba1b"
   end
 
   depends_on "cmake" => :build

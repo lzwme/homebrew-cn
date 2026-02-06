@@ -7,18 +7,28 @@ class Xcsift < Formula
   head "https://github.com/ldomaradzki/xcsift.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b4cc10ffc2949eddcc08c6cddcd17ab2d32813fc1d099f92f8c94d663a889389"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cc715fa5601b78551aaa31f8e0a9aa151a13243ebecdbbcac21b9f34784548e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8d1e5780c91a45c4caad4ee9b075dbd2e14d457b8ae4685615dee6e7a216f59"
-    sha256 cellar: :any_skip_relocation, sonoma:        "378675fbd8aba2cc2a4daa74c9ca582daec507ecc38210e950345d1467da213a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7cecacb38c47e680eb3cd07ef68e0c9ee8b29d3f7e153ccdda76fe2bc15715c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05962e142dad7e027f496559071cd386ccd4708f913252501dccbb84568d6d8c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ad92b8818047d5b864c4f7e9fbba493be4dff1475e6c86fc88d0be815f2420c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5d639cb4b3bf635f7e6bb0a3d781f49ae4781ba66833470375fc6d95cb8edb5a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d421a457742cc4cb516c8b213a0e5fbf3eb251638ec91132bdb49aaa928f9e3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33380253e900964e29fe8ca637f94512f32658ee7a34ff9529cf6088843d20f2"
   end
 
   depends_on xcode: ["16.0", :build]
-  depends_on :macos
+  uses_from_macos "swift" => :build, since: :sonoma
 
   def install
     inreplace "Sources/main.swift", "VERSION_PLACEHOLDER", version.to_s
-    system "swift", "build", "--disable-sandbox", "-c", "release"
+
+    args = if OS.mac?
+      ["--disable-sandbox"]
+    else
+      ["--static-swift-stdlib"]
+    end
+
+    system "swift", "build", *args, "-c", "release"
     bin.install ".build/release/xcsift"
   end
 

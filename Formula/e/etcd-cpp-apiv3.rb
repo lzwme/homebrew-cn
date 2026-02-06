@@ -4,15 +4,15 @@ class EtcdCppApiv3 < Formula
   url "https://ghfast.top/https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/archive/refs/tags/v0.15.4.tar.gz"
   sha256 "4516ecfa420826088c187efd42dad249367ca94ea6cdfc24e3030c3cf47af7b4"
   license "BSD-3-Clause"
-  revision 40
+  revision 41
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "21c6795fe63791d8777ff6fab5c73e83ee67d3ef8d80e31fde31c484e3fb6555"
-    sha256 cellar: :any, arm64_sequoia: "c87d4581660a1204a3111bc61125836ba96319fea9ee6b12ef08d52da59a4102"
-    sha256 cellar: :any, arm64_sonoma:  "b6b67e9e0964a6ec89befaf0371b3dd466db63cbc0c183b2c479608357447f04"
-    sha256 cellar: :any, sonoma:        "c3e8de92b969875c2cbb259ba7a5c0f870ace4abcf70ca2938cd2f3e3d55e6d1"
-    sha256               arm64_linux:   "5f0c2a23d1d64f88bec833f7af771431dd27b0bc443815390d93b1c645fb4429"
-    sha256               x86_64_linux:  "fcc2085d81fecc8275742bc1e185984ae5fa6d811927dcafdeb021023b81da69"
+    sha256 cellar: :any, arm64_tahoe:   "257a7b928df96196bd0ac2ef5a05620142e35084dc4b2ccb009b10567c2e6df8"
+    sha256 cellar: :any, arm64_sequoia: "10ec0d4250b55364c88ff5cc3b4b94d5a9cb07066f38afe09ed1ed051b3ce8a0"
+    sha256 cellar: :any, arm64_sonoma:  "db1305a8e453a68f60f946f8ed46de7d7c9e6ab5dd162799cb2a06eff091ebee"
+    sha256 cellar: :any, sonoma:        "6c2ff46ea6575503c4de390b5aa3500f7b46b6941344c77671c84d55456c10e3"
+    sha256               arm64_linux:   "9f3d06f33451e9373b2ab3606ee433a92c65b809721ab6dd5016024a81401a7d"
+    sha256               x86_64_linux:  "317ec2c59e01a11e2a94ce2c8dac1d2b2f0b79134264f45b58ff06750ef5bb10"
   end
 
   depends_on "cmake" => [:build, :test]

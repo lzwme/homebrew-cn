@@ -2,7 +2,7 @@ class Massdriver < Formula
   desc "Manage applications and infrastructure on Massdriver Cloud"
   homepage "https://www.massdriver.cloud/"
   url "https://ghfast.top/https://github.com/massdriver-cloud/mass/archive/refs/tags/1.13.6.tar.gz"
-  sha256 "44e24b8fc930ace0454216dbf968b3128c3c11c3f55416366f4abab67eb42cff"
+  sha256 "7654806a5f4c246ce5ff24c6379e65f35fdb99261dfeb4a2ad341baf3a03642a"
   license "Apache-2.0"
   head "https://github.com/massdriver-cloud/mass.git", branch: "main"
 
@@ -15,12 +15,13 @@ class Massdriver < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0bb8856e43d361a8a4f46408261d0f70b4a960df82b6d13d64026a83295d8097"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0bb8856e43d361a8a4f46408261d0f70b4a960df82b6d13d64026a83295d8097"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0bb8856e43d361a8a4f46408261d0f70b4a960df82b6d13d64026a83295d8097"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0163c917339e9820687bce602d580ef6fb5cba45b1858efc31b90912cd5c8034"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa2939079fa6700769653d556d0fa2fa92a4e3017b26cbc9e86cc5a3511f0740"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a5c8f1e1e8bc15e634e42d5bab1b2e826feac03111ff3383444f5d7cce4d121"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bdad1efd502597a2f4fea4c777e387919b9605639153a2e698f0dc449a53bd0b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bdad1efd502597a2f4fea4c777e387919b9605639153a2e698f0dc449a53bd0b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bdad1efd502597a2f4fea4c777e387919b9605639153a2e698f0dc449a53bd0b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1b9c4e8275f89cd6352bef1a7cb8c5ad32a0505b309d72951040eea849e30c2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "009b39a3057938f583dd0cc094a0ba5e8951472a2a390d842aa871c39ca3a5fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddc4b0beaa5ade9737abd639ec56bb98a41527792d6f394f5d439794d406064f"
   end
 
   depends_on "go" => :build

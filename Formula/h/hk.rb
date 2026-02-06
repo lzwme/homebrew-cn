@@ -3,8 +3,8 @@ class Hk < Formula
   homepage "https://hk.jdx.dev"
   # pull from git tag to get submodules
   url "https://github.com/jdx/hk.git",
-      tag:      "v1.34.0",
-      revision: "1c3a79f32004944d2147495c09256a184a1eb0de"
+      tag:      "v1.35.0",
+      revision: "062a142b92dd5be5f6f71c47c2d5bbf49fd5c695"
   license "MIT"
   head "https://github.com/jdx/hk.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Hk < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "552ee29a356c445e1ee5ca420d7036f88bf34aeb5142c786d80ab6cd7887b90a"
-    sha256 cellar: :any,                 arm64_sequoia: "fb011a33e0ae05fcdc6e601df28afd1ba3a51e267ca793c3bb2ac0dd3478ce5b"
-    sha256 cellar: :any,                 arm64_sonoma:  "d4f761fa97681d0c55d978a37deb6076716975a19918cf727dae4417c9f1d4bf"
-    sha256 cellar: :any,                 sonoma:        "60b7f32376c627503c6fa356b1d141eeb7092c09bb6f22fb2497b5f277f093d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ccb92df265c4cd383def6d9376a27eb26ebf978fab21de6fc08d9d029157551"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04a7035a7beafd6c61203098fdfa14dc100b5ec9ae284d22f870365d5007c11a"
+    sha256 cellar: :any,                 arm64_tahoe:   "9acc977c552b6d954851e233bea39d118a8e6f49e376e96da4c7cb16aac842dc"
+    sha256 cellar: :any,                 arm64_sequoia: "4af457637ea10b85f7b1106edc93b341ce283d1b8e8fe5ed4b1b43796b7b481c"
+    sha256 cellar: :any,                 arm64_sonoma:  "e93c80e851e027d180ec9316a9fc710246a687897ff2de7b92a2ac8f944d4133"
+    sha256 cellar: :any,                 sonoma:        "747f4dc92254aa551a2877d67eb0f17721db6a42600c9420210def94574c1125"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b48541cf2f006f99ebb5f977efc2bd27a286a8979cf263ca7a2bd0d559dfbe62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36477c863c190faa8260a90319facca1e8454377a217efaf30d346f579b9284e"
   end
 
   depends_on "mise" => :build
@@ -29,6 +29,7 @@ class Hk < Formula
   depends_on "pkl"
   depends_on "usage"
 
+  uses_from_macos "python" => :build
   uses_from_macos "zlib"
 
   def install

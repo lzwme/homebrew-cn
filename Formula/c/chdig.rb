@@ -1,18 +1,18 @@
 class Chdig < Formula
   desc "Dig into ClickHouse with TUI interface"
   homepage "https://github.com/azat/chdig"
-  url "https://ghfast.top/https://github.com/azat/chdig/archive/refs/tags/v26.1.1.tar.gz"
-  sha256 "8c4c8af3e7f029b3963c1a41066fefaf31934c377d7bfb9daa81823517bb2e5f"
+  url "https://ghfast.top/https://github.com/azat/chdig/archive/refs/tags/v26.2.1.tar.gz"
+  sha256 "b72905b8df0b4dfd3240c2cba2db2a34b30d43f8938fdc8d5d7096508281714f"
   license "MIT"
   head "https://github.com/azat/chdig.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd5a68edbfea9e5ce0b4746b39c255978e4593542af9ab1d36bf8703ebed5602"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d44f2d67dadb32c29ac4832f2987d4758683821d324a639463bb2dabaf90800"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0de2ce3cbe96a69d59d153ce3aac96b9efdc39cc1d9729bda589f410c4904cd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "560633cb631e33315679a9230871a10135732b29576dc6363a834219d93e1ea9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "831ac75362d44ab8896f50f687ed9fca976a8c4f8c20d3413b80c1124153a36c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2bffbe899b0c57316d84129f290a15fdb5593bc4b07d393d2864b8b14a5ac25"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "551125cbed5a7e71c71e583e6ff8f7703e184931983ef6374556e48b3ef994ca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7f544f04cd69976afef437fa5a4bb248b8f7866b12e0d3e32225690d8c01a93"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3352d40c014ebe7dee4ecda44b2bac9adbd9c28de1c6c44ab1e907dc95854767"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ddebcf31de98e18893fa05ffc3586a7794cb4977f59be2610e27af93d2950db1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ceaef923b722fc4fbb0ffc10817211ac2321c71af15fdf3f2dcf1df0b6e82564"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12b85e93bca544b2fa9d7670fb6c6c99cd6bfbb67668149c4d23052640fee415"
   end
 
   depends_on "rust" => :build

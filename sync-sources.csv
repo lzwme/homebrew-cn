@@ -74,6 +74,7 @@ Homebrew-homebrew-core/Formula/a/age-plugin-se.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/age-plugin-yubikey.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/age.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/agedu.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/agent-browser.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/agg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aggregate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aha.rb, Homebrew/homebrew-core, 1
@@ -1231,6 +1232,7 @@ Homebrew-homebrew-core/Formula/c/counterfeiter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/counts.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coursier.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cowsay.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cozyhr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cp2k.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cpanminus.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cpdf.rb, Homebrew/homebrew-core, 1
@@ -3086,6 +3088,7 @@ Homebrew-homebrew-core/Formula/i/icon-naming-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/icon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iconsur.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/icoutils.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/i/icp-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icu4c@74.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icu4c@75.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icu4c@76.rb, Homebrew/homebrew-core, 1
@@ -6721,7 +6724,7 @@ Homebrew-homebrew-core/Formula/s/snooze.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/snort.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/snow.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snowball.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/snowflake-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/snowflake-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/snowflake.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snownews.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sntop.rb, Homebrew/homebrew-core, 0
@@ -6775,7 +6778,7 @@ Homebrew-homebrew-core/Formula/s/spacer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spaceship.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spades.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/spago.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/spago.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/span-lite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spandsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spark.rb, Homebrew/homebrew-core, 1
@@ -14058,6 +14061,7 @@ Homebrew-homebrew-cask/Casks/p/postman-cli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/postman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/postman@canary.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/posture-pal.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/posturr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pot.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/powder-player.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/powder.rb, Homebrew/homebrew-cask, 1
@@ -14950,6 +14954,7 @@ Homebrew-homebrew-cask/Casks/t/tailscale-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tal-drum.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tales-of-majeyal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/talon.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/tana.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tandem.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/taobao.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tap-forms.rb, Homebrew/homebrew-cask, 0

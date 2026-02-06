@@ -13,6 +13,7 @@ class Pyside < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
   ]
+  revision 1
 
   livecheck do
     url "https://download.qt.io/official_releases/QtForPython/pyside6/"
@@ -20,12 +21,12 @@ class Pyside < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "cbcca6b77aac196a483e2eb7a8607fffb5cd9049ddd3455f1911fd6909a6103d"
-    sha256                               arm64_sequoia: "17264c40ff755192d0c8873e446c0b4b8fc0d5cc1c0c9f4e7654f1bb715a9b6b"
-    sha256                               arm64_sonoma:  "85293c1cb557034147ec0af05d14d02ed7cb3299cad331a41e3815693528c76c"
-    sha256 cellar: :any,                 sonoma:        "1df8b97e514607a94b664e7b332067928fc20d136d285692a773100955ac8a70"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8d3b9d8bc555ff9eecfb4c2b701a3ba4c2c4cf2ea32699dc0ac0c371627484c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "167c82aecf1896fe9eab2ef5b8488b4f69ecdf2ac4ca906de4b6c95e63545b76"
+    sha256                               arm64_tahoe:   "ff5530bb3e0067352afe581cea17ac3b21ad827b232debe213ef4764d30f5707"
+    sha256                               arm64_sequoia: "e079c76933a2096dcd6408886a75b7f587d5b0407e71bbcecd74aa32eb8c11e3"
+    sha256                               arm64_sonoma:  "4ab81b849554cede079e100e2c3cb78b46aefc029a943dfb424a3d2e34a8d467"
+    sha256 cellar: :any,                 sonoma:        "eac454546f4cda751439f1ab5a5abe14b111b52b1cea933c3470cbc1e73f7879"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "deb878a346656aa896f17b51ec89068e3e0f07f51b0262d4719bac4cba292b7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d134127f1490340967cb491541e515d18bed2d42f1fa88e31983869e106cc804"
   end
 
   depends_on "cmake" => :build
@@ -36,7 +37,7 @@ class Pyside < Formula
   depends_on "pkgconf" => :test
 
   depends_on "llvm"
-  depends_on "python@3.13" # not yet support for Python 3.14, https://wiki.qt.io/Qt_for_Python#Python_compatibility_matrix
+  depends_on "python@3.14"
   depends_on "qt3d"
   depends_on "qtbase"
   depends_on "qtcharts"
@@ -84,7 +85,7 @@ class Pyside < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install

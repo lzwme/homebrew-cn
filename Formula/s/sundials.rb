@@ -1,22 +1,17 @@
 class Sundials < Formula
   desc "Nonlinear and differential/algebraic equations solver"
   homepage "https://computing.llnl.gov/projects/sundials"
-  url "https://ghfast.top/https://github.com/LLNL/sundials/releases/download/v7.5.0/sundials-7.5.0.tar.gz"
-  sha256 "089ac659507def738b7a65b574ffe3a900d38569e3323d9709ebed3e445adecc"
+  url "https://ghfast.top/https://github.com/llnl/sundials/releases/download/v7.6.0/sundials-7.6.0.tar.gz"
+  sha256 "0cb6f4bebd2ec13a42714a0654a58431d2cc473b759898b8e5fd8e1797c22712"
   license "BSD-3-Clause"
 
-  livecheck do
-    url "https://computing.llnl.gov/projects/sundials/sundials-software"
-    regex(/href=.*?sundials[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bdca6a1965e3c4d23438f226a3538d52d500466e25936a0cb2c6602ce634649f"
-    sha256 cellar: :any,                 arm64_sequoia: "6d96641c4b35e673d83df8cd8a77ec055e656521b34a0913e04c9b66b79131f5"
-    sha256 cellar: :any,                 arm64_sonoma:  "52797bd57e4862acd1dde93475613a8c7928c8f1bc0cbb22c06d25b1e0c9ac6c"
-    sha256 cellar: :any,                 sonoma:        "cf97a4b063dd8ec56ca682bc2aa33444b5cd90e02c82e6b6eb70c3b7b344a531"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e3d8fc19a1cf7cfd31037d7f7899150cc43e19b79eab8af0f1424b6a4cfee8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d46ac702b24f49dc7ae07a1ea2514876806b64c1c1418507f1abe5a7d00d70b"
+    sha256 cellar: :any,                 arm64_tahoe:   "b051128524fb8b2c609e35b4449028196bc24613c499bd1110e0d49f54a6b9b3"
+    sha256 cellar: :any,                 arm64_sequoia: "a8dc589a643e0381247a0b83d3084907b0ba7ee86e8403efc44fe29154d21694"
+    sha256 cellar: :any,                 arm64_sonoma:  "6f2eb069ddfafcbb491cb8b17409c32f22a884308e22fa31c26b832f95ad4af0"
+    sha256 cellar: :any,                 sonoma:        "fe7a35cecf06f0db23ead8ddba87ffae08166c2685354244ec584c964c54982f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82ca7dc8f48310ed5d19dc8b5b21ebf6d7d0884e820e7e0ce3a765f0056d32eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d4449de953ce1f0ffc1eb592e178c39a2ca7bbd192672edb2c467b969f9a30f"
   end
 
   depends_on "cmake" => :build
@@ -25,15 +20,11 @@ class Sundials < Formula
   depends_on "suite-sparse"
 
   def install
-    blas = "-L#{Formula["openblas"].opt_lib} -lopenblas"
-    args = %W[
+    args = %w[
       -DBUILD_SHARED_LIBS=ON
       -DENABLE_KLU=ON
       -DENABLE_LAPACK=ON
       -DENABLE_MPI=ON
-      -DKLU_LIBRARY_DIR=#{Formula["suite-sparse"].opt_lib}
-      -DKLU_INCLUDE_DIR=#{Formula["suite-sparse"].opt_include}/suitesparse
-      -DLAPACK_LIBRARIES=#{blas};#{blas}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -41,7 +32,7 @@ class Sundials < Formula
     system "cmake", "--install", "build"
 
     # Only keep one example for testing purposes
-    (pkgshare/"examples").install Dir[
+    (pkgshare/"examples").install [
       "test/unit_tests/nvector/test_nvector.c",
       "test/unit_tests/nvector/test_nvector.h",
       "test/unit_tests/nvector/serial/test_nvector_serial.c",

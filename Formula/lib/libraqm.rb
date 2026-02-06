@@ -1,19 +1,17 @@
 class Libraqm < Formula
   desc "Library for complex text layout"
   homepage "https://github.com/HOST-Oman/libraqm"
-  url "https://ghfast.top/https://github.com/HOST-Oman/libraqm/archive/refs/tags/v0.10.3.tar.gz"
-  sha256 "fe1fe28b32f97ef97b325ca5d2defb0704da1ef048372ec20e85e1f587e20965"
+  url "https://ghfast.top/https://github.com/HOST-Oman/libraqm/archive/refs/tags/v0.10.4.tar.gz"
+  sha256 "6b583fb0eb159a3727a1e8c653bb0294173a14af8eb60195a775879de72320a3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8b4e6daa401ad46e0f19d5872ad6d352a111cca2e5b9c8934dae408732e0e3d3"
-    sha256 cellar: :any, arm64_sequoia: "d48b90b620edcc740cc7bc4e376aebe72185801e12a23163c9c0cc16cab52b2a"
-    sha256 cellar: :any, arm64_sonoma:  "32a7ca5337c00b6548d3ae5fe739c42322b70484ef946069d980aad9972180a3"
-    sha256 cellar: :any, arm64_ventura: "6d8ea3c293a66a5033b2987d893c846aee131e7dae8c84a946b6d45e13f2367c"
-    sha256 cellar: :any, sonoma:        "87951b1179b73a36a04ddef262ff7430ecb5375822b301d85e115f2dd7497a72"
-    sha256 cellar: :any, ventura:       "383bff2859b129387ca4c9070b9416198648e45f62612220303cdb2ac8fba572"
-    sha256               arm64_linux:   "5bccc8b128378b32f5997841801029716a7a992084eba6ff6c338d2b6e81c681"
-    sha256               x86_64_linux:  "07499ccd1d6adce0995710a701155641ed5aec19e0ba7c006bf70568fa4f7883"
+    sha256 cellar: :any, arm64_tahoe:   "80573133b47b2923ed7e407a873c31f71c88acd9c84553a289757a908bcaf386"
+    sha256 cellar: :any, arm64_sequoia: "d6d61caf0cfea3c41e461f5a1025cccb581df32833095c54deb9ac1a9c7a1782"
+    sha256 cellar: :any, arm64_sonoma:  "7123cff4762e4ec7d1045f20789fc1eecc2529a69c84e0c3f8a89c1cd91acc18"
+    sha256 cellar: :any, sonoma:        "85ebe16cdd41a156dac23c0d97faf8efb6456ca34cb016ba1c94110f21c1e317"
+    sha256               arm64_linux:   "b39145fa67adc360e8bbb66372ca603600a7c4a206d528f552554742f74d0a8f"
+    sha256               x86_64_linux:  "5163492384bc5eb6606b7d7cc490962fe0da9cfcf24f0557408d5bdfe4f84675"
   end
 
   depends_on "meson" => :build

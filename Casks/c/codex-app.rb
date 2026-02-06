@@ -1,6 +1,6 @@
 cask "codex-app" do
-  version "260203.1501"
-  sha256 "64e1b65863685e3445416f31192a498778dea5f7d6e97c1514ce16553a943d36"
+  version "260205.1301"
+  sha256 "6678487ef761e98bd6f8d19710c6ae8e9a8d392ee6d9dcd81c410a69a557d9fa"
 
   url "https://persistent.oaistatic.com/codex-app-prod/Codex-darwin-arm64-#{version}.zip",
       verified: "persistent.oaistatic.com/codex-app-prod/"
@@ -22,14 +22,14 @@ cask "codex-app" do
   uninstall quit: "com.openai.codex"
 
   zap trash: [
-    "~/.codex",
-    "~/Library/Application Support/Codex",
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.openai.codex.sfl*",
-    "~/Library/Caches/com.openai.codex",
-    "~/Library/HTTPStorages/com.openai.codex",
-    "~/Library/HTTPStorages/com.openai.codex.binarycookies",
-    "~/Library/Logs/com.openai.codex",
-    "~/Library/Preferences/com.openai.codex.plist",
-    "~/Library/Saved Application State/com.openai.codex.savedState",
-  ]
+        "~/Library/Application Support/Codex",
+        "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.openai.codex.sfl*",
+        "~/Library/Caches/com.openai.codex",
+        "~/Library/HTTPStorages/com.openai.codex",
+        "~/Library/HTTPStorages/com.openai.codex.binarycookies",
+        "~/Library/Logs/com.openai.codex",
+        "~/Library/Preferences/com.openai.codex.plist",
+        "~/Library/Saved Application State/com.openai.codex.savedState",
+      ],
+      rmdir: "~/.codex"
 end

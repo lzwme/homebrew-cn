@@ -3,17 +3,17 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/aws-cloudformation/cfn-lint/"
-  url "https://files.pythonhosted.org/packages/57/42/3080dab8c6e0ffb861e40bb9f569536a6eee9139171c21913a5a6e4491c9/cfn_lint-1.43.4.tar.gz"
-  sha256 "05021a9b9d2307860360d35e75558bc448f16b1e9a9279674ce457c3f7acef5b"
+  url "https://files.pythonhosted.org/packages/dd/36/1e426f4687de919fecc1a186070d2dada58ab6af3afe6b73ce8760dcdc31/cfn_lint-1.44.0.tar.gz"
+  sha256 "b17cbcc24852035a2a0cae2afe45f7e0b8694d7439c76a0e775dcfb6703a73d3"
   license "MIT-0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8f5c46fb6efa7f23ab895d7e90f3d37f3be315d9aae3b25b9852f39b3247194f"
-    sha256 cellar: :any,                 arm64_sequoia: "6eb6623d7aa397f4648ed9043ee903e6470ed74b7877fa8d158b04defb7be127"
-    sha256 cellar: :any,                 arm64_sonoma:  "8115dcce8db911f25b84c39de2da306bb613ab5e6d34e3099e7e2c92b9642c2b"
-    sha256 cellar: :any,                 sonoma:        "df05cdaab3483a8e6035121a696ba3382c0460968f56dcb682e28ea91b52939e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbce85afefd2cea8da81bb9a5ea10dbe9a182e51176dea14298eba6c99fef28a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc12e7d5f38b22605d1a9c8bd57f1eebf55e593273654714709f29c3fc9e4a31"
+    sha256 cellar: :any,                 arm64_tahoe:   "b80a1091fe5ca554e5eacf3fdffde7ff407860a9dd5ad5ff4492e69c795b13f2"
+    sha256 cellar: :any,                 arm64_sequoia: "a7db494702e1f7ee8b05a9d0ba897fd43eb3af07804c89911708209a0e122592"
+    sha256 cellar: :any,                 arm64_sonoma:  "eba4898a8e7aeef70551b08e3d011392511fd0e8395a3d5c20d985d7e8f5828d"
+    sha256 cellar: :any,                 sonoma:        "dc7beaf3370a37d5bbc444629cf1f36cc852ee61c8924efe7733e475b45f244c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ae95b698ce5a2ca48320991b214839f801298f70be25104840c1fddb64ca20f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdd08629d44c46cd788b2dfccd7271bea80fabc7a09666e369146d9359aa2e3b"
   end
 
   depends_on "libyaml"
@@ -29,23 +29,23 @@ class CfnLint < Formula
   end
 
   resource "aws-sam-translator" do
-    url "https://files.pythonhosted.org/packages/d3/52/feef23ec9392e2321ab889fa491a1a86d5818d35948bc331cd92dae0087c/aws_sam_translator-1.106.0.tar.gz"
-    sha256 "87712ced7eb6835fea2d4e9674ba7268494aa98f5b186ec5ad684245e2707ef7"
+    url "https://files.pythonhosted.org/packages/a0/4a/26918bfd8002764042904558429da8d7bc9a17519c3611038c05a3f9f2ef/aws_sam_translator-1.107.0.tar.gz"
+    sha256 "e6462c85309a4cabcc9559edf12f164c67a74a1208feb6350ab8aa1b620c9365"
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/68/73/2a8065918dcc9f07046f7e87e17f54a62914a8b7f1f9e506799ec533d2e9/boto3-1.42.32.tar.gz"
-    sha256 "0ba535985f139cf38455efd91f3801fe72e5cce6ded2df5aadfd63177d509675"
+    url "https://files.pythonhosted.org/packages/c2/47/29afb754de7df0a0ebceaa9d83e209136ef7b62744259a6c09862fef4765/boto3-1.42.43.tar.gz"
+    sha256 "01fc5501209b23849fb30b01c6c086583ac91c40842a76083662fbfb84a82491"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/21/5e/84404e094be8e2145c7f6bb8b3709193bc4488c385edffc6cc6890b5c88b/botocore-1.42.32.tar.gz"
-    sha256 "4c0a9fe23e060c019e327cd5e4ea1976a1343faba74e5301ebfc9549cc584ccb"
+    url "https://files.pythonhosted.org/packages/af/d6/def916ad1d13de5d511074afcde538a958e2e8a7c7020fb698d1f392f63b/botocore-1.42.43.tar.gz"
+    sha256 "41d04ead0b0862eec21f841811fb5764fe370a2df9b319e0d5297325c50fba1b"
   end
 
   resource "jmespath" do
-    url "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
-    sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
+    url "https://files.pythonhosted.org/packages/d3/59/322338183ecda247fb5d1763a6cbe46eff7222eaeebafd9fa65d4bf5cb11/jmespath-1.1.0.tar.gz"
+    sha256 "472c87d80f36026ae83c6ddd0f1d05d4e510134ed462851fd5f754c8c3cbb88d"
   end
 
   resource "jsonpatch" do

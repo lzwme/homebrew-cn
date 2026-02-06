@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v25.5.0/node-v25.5.0.tar.xz"
-  sha256 "7e35efaf63c8fe7737b8c62792ec547e5a95a69f1f813fcfba28566aecc9fd92"
+  url "https://registry.npmmirror.com/-/binary/node/v25.6.0/node-v25.6.0.tar.xz"
+  sha256 "9db6848c802b1981c0faeb71a5b8cc79913f82a747f7f1d50260c6d2f781ef7e"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Node < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7e7f7f40fc11ee78b1fea467cdbe250463627a0f6efd4fef90de2b2e302c05d6"
-    sha256 cellar: :any,                 arm64_sequoia: "e833ad5cacd1198ffba867047620983a80991cbdb29c557bf61757ea20e9bc20"
-    sha256 cellar: :any,                 arm64_sonoma:  "c326a85bf19113b39782c05c0b9309a6110416ae6d32a3182f4b40d4ccdf4997"
-    sha256 cellar: :any,                 sonoma:        "e8b90fcaf0e60428680fd81d4c780fce475ce29d8810ad4b9c8a3dc8faaffb3c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "647d674f36427c0facc22cacfdac4f31b7459af0d3f269f1427be96c9b817b1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e0baab65e38c1e99266abcf7fb47aa3df45a4d7afbebcd23b9a81d843aa54f0"
+    sha256 cellar: :any,                 arm64_tahoe:   "4305488b2a5ff4ae45abac1f73a24e5b7779a2a0ddf8d0d0b0ab7cba075d859c"
+    sha256 cellar: :any,                 arm64_sequoia: "08a2ee9806565e0a0c226751dd0e3946ac8f9c1344c4d9552db8b7ad5ce79f35"
+    sha256 cellar: :any,                 arm64_sonoma:  "be6a13069c2d54ff0bcbb21f0269f2e9f6f479c02a60914e303a15f54a4da0e8"
+    sha256 cellar: :any,                 sonoma:        "c710d60abc465b41da20bec0dabb0c00c1c8607f1e8c0662e17c9c31101f8aab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb2f54335283b972ca0389daf2256efe4c855ed22bda1056227f447d5de3bbba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0c7fef5c53409d04ba5f821e6f1bb84bc07f32f85d16f83947582d5644af419"
   end
 
   depends_on "pkgconf" => :build
@@ -133,11 +133,13 @@ class Node < Formula
     # - `--shared-nbytes` is not available as dependency in Homebrew.
     # - `--shared-simdutf` seems to result in build failures.
     # - `--shared-temporal_capi` is only used when building with `--v8-enable-temporal-support`
+    # - `--shared-lief` is not available as dependency in Homebrew.
     ignored_shared_flags = %w[
       gtest
       nbytes
       simdutf
       temporal_capi
+      lief
     ].map { |library| "--shared-#{library}" }
 
     configure_help = Utils.safe_popen_read("./configure", "--help")

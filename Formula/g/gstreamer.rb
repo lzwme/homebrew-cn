@@ -25,12 +25,13 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "53c72342367355e243bb0c7f1fab43728e74733cf0eb3fdb013f05fb04f2583d"
-    sha256 arm64_sequoia: "1323de42a3e118dd5377307a0fcd74f8f1fd46f7f8e02edfaec365d417b3d1b9"
-    sha256 arm64_sonoma:  "ba4d78b14c825a0887732d1242fc129e0664e45c0b653665ca38a4cf8c85ad8a"
-    sha256 sonoma:        "9b10549f31b7b3a00f0cb17e2f009e8a160ed5fe8d858edcfb0aa08911d9f36f"
-    sha256 arm64_linux:   "1e18942901b85385fec860b1df7011463b74ede8e69796588a9cdc700a2dd641"
-    sha256 x86_64_linux:  "90f3affcdf77731011b603d1bdfbf1b2010c307d52dfe303a7affbd5139dc3be"
+    rebuild 1
+    sha256 arm64_tahoe:   "4b7f5449177487eab692bd000af79c7e7545d4b1aacc3c642da8b069d82f56da"
+    sha256 arm64_sequoia: "18e2d1d0cd04af8c90249c7ccaee2f5eada33aa94edcea080cf46bb214ecf065"
+    sha256 arm64_sonoma:  "52063e61df492ae4f84e993b0d5ed223fe9453263c98c15fb08fad2ed0d5bb5e"
+    sha256 sonoma:        "8cb232bfbfdf25f828d58bfddc43f1cce739dca8b870cc5a7c408a9e5b8c228f"
+    sha256 arm64_linux:   "ab76e0a5064d2232e5ba34b98c9409a0ae8ea3b6f1b7a86f5edaf0643db4d67c"
+    sha256 x86_64_linux:  "d9b9dd29cfb84d88ffebcf89cc3c027db16276e1288994a18540a239f133c278"
   end
 
   head do
@@ -216,7 +217,8 @@ class Gstreamer < Formula
     # Set `RPATH` since `cargo-c` doesn't seem to.
     # https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/issues/279
     plugin_dir = lib/"gstreamer-1.0"
-    rpath_args = [loader_path, rpath(source: plugin_dir)].map { |path| "-rpath,#{path}" }
+    rpaths = [loader_path, rpath(source: plugin_dir), rpath(source: plugin_dir/"validate")]
+    rpath_args = rpaths.map { |path| "-rpath,#{path}" }
     ENV.append_to_rustflags "--codegen link-args=-Wl,#{rpath_args.join(",")}"
 
     # Make sure the `openssl-sys` crate uses our OpenSSL.

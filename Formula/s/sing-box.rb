@@ -1,18 +1,18 @@
 class SingBox < Formula
   desc "Universal proxy platform"
   homepage "https://sing-box.sagernet.org"
-  url "https://ghfast.top/https://github.com/SagerNet/sing-box/archive/refs/tags/v1.12.19.tar.gz"
-  sha256 "e122253d6712c13997b3aba9692dca5fde3e4d0d2aa606fd20913b772fcd147c"
+  url "https://ghfast.top/https://github.com/SagerNet/sing-box/archive/refs/tags/v1.12.20.tar.gz"
+  sha256 "af0a815b54d04754e42daa0734025fb5720a26d86896a241598bc214f72a9567"
   license "GPL-3.0-or-later"
   head "https://github.com/SagerNet/sing-box.git", branch: "dev-next"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0aee58737dad3d8915c5a6c0a394a2ff387ab748021d1ae4d319708056d78fb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e52e2515896a6bf0c0af2de656c5bab8578de6f697c8935d9ec2ea8789df3ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b3eb08109086185c944d89bdc8afe217639ee1948204c0c11f88c0aac437757"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df13b4b25c4e6c5b8f1afb8c030f79920aeffeba6606a69f400c142aa2a24fae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "449d96c32f7040404b93a1449a15ee6c832f507963a85099e1f2db40db5965e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55f2e8c42ec537cfe96fc094cf1f14e3facdb18fb9802bdfed3e554042b7a79f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "241fa90b1a186eb323750b9943e663ce38d5902b2e657be30caee9c74814d93e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2bc700c4f26a2dc1653307718380d0f7512ecb4303935dc483f1f2a27831c81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b7febd82c8212a01f300b9f79070041487858c67b326a90a1ea3fbde13e87eb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8e753197601910f1796f3d8137113bf11e545ff897bc2b7d993f2b6dcc9895ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "32282a2734302f5c4d0f6d75fc1233aa0f64d72d6bcd1144bc15be371b734347"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50277e1006d4e37ae1725916f998a4d171f9be31bf215899ee244979e861fa05"
   end
 
   depends_on "go" => :build

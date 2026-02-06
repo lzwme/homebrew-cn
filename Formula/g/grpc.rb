@@ -1,21 +1,12 @@
 class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
+  url "https://github.com/grpc/grpc.git",
+    tag:      "v1.78.0",
+    revision: "5e6ba94242b92e363220bc2163d55ce3554d4ecc"
   license "Apache-2.0"
-  revision 4
+  compatibility_version 1
   head "https://github.com/grpc/grpc.git", branch: "master"
-
-  stable do
-    url "https://github.com/grpc/grpc.git",
-        tag:      "v1.76.0",
-        revision: "f5ffb68d8a2fd603dff16287e90a4ac571e1fec6"
-
-    # backport fix for missing include
-    patch do
-      url "https://github.com/grpc/grpc/commit/d54219b508423f0a2ff6a0b98c16fb6dafd44b84.patch?full_index=1"
-      sha256 "ff479e563ae01e4e0461b79a3258c1ad544a0d1ca4f0161f64c4ec88b14cfb7d"
-    end
-  end
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check releases instead of the Git
@@ -29,12 +20,12 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0e02f9ac0f5ef67ec546e92913e85318f3d9cf8ed6117f0c7b476d7477dfee4a"
-    sha256 cellar: :any, arm64_sequoia: "f163a8503701f9746c595ba5538a2be9958620296c59f73cae5f0ff6c2b309be"
-    sha256 cellar: :any, arm64_sonoma:  "1a64778135e1fae841b1b2ad4580d362a260fdfc5e597b2e58af04d1210c5947"
-    sha256 cellar: :any, sonoma:        "4196230bdfc8d889156533fe897dbd036692bf8b789695eaba5006709e2a0d2a"
-    sha256               arm64_linux:   "fd8bec3800a18f8bcccdc3570fd0a3b6fca0d876f0ab4b6d3e5805f8bf7452a0"
-    sha256               x86_64_linux:  "974ed2424c30eb1ce2c42ed6d13eeb983f1f0de2c732880495c9dd9c6a930854"
+    sha256 cellar: :any, arm64_tahoe:   "3d96139ab5cc336567c6eacdae33b9d3804c9249a3162bb15798a9631f484de3"
+    sha256 cellar: :any, arm64_sequoia: "5e6ece974fa8e0b0a8d51543602a805ec434d914afe5cd41f18dd8b8413d86f0"
+    sha256 cellar: :any, arm64_sonoma:  "5a7d9b745a9d37da76df1efd9a6fa004f6a5f7a5f187ee393b84a2af8b1dacbc"
+    sha256 cellar: :any, sonoma:        "5606bbb82f851929b1a24d26d9faea5a91dc204902abd15c1959394bb55cb9d8"
+    sha256               arm64_linux:   "dd7bb35bc04ef2986f9311f72ae83897e82e4a4afa3567b31a7612270c42121f"
+    sha256               x86_64_linux:  "df8246096895136065e7cf3386f12d59edd2ae79d71ec9507c2ea4e26cbd6ac9"
   end
 
   depends_on "autoconf" => :build

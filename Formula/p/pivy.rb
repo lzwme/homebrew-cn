@@ -4,27 +4,27 @@ class Pivy < Formula
   url "https://ghfast.top/https://github.com/coin3d/pivy/archive/refs/tags/0.6.10.tar.gz"
   sha256 "7b409816c9fad84cf94f93659281f9dd2501d285eb2fc609e9401a3d004ce723"
   license "ISC"
+  revision 1
   head "https://github.com/coin3d/pivy.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "cbb8303807dc68efa785a595b464ea44c17aa17c5811848d26a4ffefdeaf6783"
-    sha256 cellar: :any,                 arm64_sequoia: "711d681b19f5b4b6277890b04c480ef1fbfd8c7f5529c6628004fc1d057553b9"
-    sha256 cellar: :any,                 arm64_sonoma:  "90c2d18f4261f8f4c65405dc18f32c322b03f24504bdff55c03608e2e5c53762"
-    sha256 cellar: :any,                 sonoma:        "f8b2a7c238524c232c368b45c0ac5761e56e794970b79fe7a84d31efdda7e4a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "735ebf4fddd4b49343e5baf4e60580f3e2134d13f7bbbc36b18011fbe549206a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58037db476464761029fa53f2c5a2365dbe2e4fcb87ef993556cb3b2fa1400ac"
+    sha256 cellar: :any,                 arm64_tahoe:   "7af9cc64f5c26f519c8c8116982c84a4dd77b217c5fc91e508aa3a056e066a49"
+    sha256 cellar: :any,                 arm64_sequoia: "1749994556abef4f47023dc4831c8f66d3ab5345655c971eed253d841c3daec6"
+    sha256 cellar: :any,                 arm64_sonoma:  "6c70ff465259e3ea3b8b778e2afb81d664831214ab35be393b8647da04e7682e"
+    sha256 cellar: :any,                 sonoma:        "50e39ab5c9e250a552c416b7b50128f5d5c3100acab15b8c5114a78a7b41ba39"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f3dd2afff6c77e1501b70461fd6efd481fc601710faef30a7feb22bdca305c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5867393be9c9375ba219639d2a73a5ceab1dccc72b048f9f879ffc3ae2391cb"
   end
 
   depends_on "cmake" => :build
   depends_on "swig" => :build
   depends_on "coin3d"
   depends_on "pyside"
-  depends_on "python@3.13" # `pyside` is not yet support for Python 3.14
+  depends_on "python@3.14"
   depends_on "qtbase"
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install
