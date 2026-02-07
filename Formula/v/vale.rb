@@ -1,17 +1,17 @@
 class Vale < Formula
   desc "Syntax-aware linter for prose"
   homepage "https://vale.sh/"
-  url "https://ghfast.top/https://github.com/errata-ai/vale/archive/refs/tags/v3.13.0.tar.gz"
-  sha256 "a6811e19c0ca8fc453da98238c2ffc7c5d5d1e77346d72d24fd47c09302fd7c0"
+  url "https://ghfast.top/https://github.com/errata-ai/vale/archive/refs/tags/v3.13.1.tar.gz"
+  sha256 "9c530722079cbd8b700ef8385d5bded7c9a85d112831ca2c6e5ca073971065ee"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8de7318150b31fa1b69c7a2177238b2c1aa6cabfb2a13494ee30b5c287cc263b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "63ae982fd3a5ded522999879e982ab8b0e0033c118e4eb261d0b09ebf90b0d5b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ff6d4482cd580a3db3c4f90959c3b88b227eedcaafe21ff96855abbef5e28b8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c5fd2c5ae3597780cd4e342cbbaef0aec26975ca0fe64a0e3bd50efa0e6a8b4c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae47355bd4765a8b9e8501b2c67b1deee1a33d6aabbe8d93b64fa8555e5f7e8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5aad10ecae4057bb92bc9dfd77c9a5fd90fa1ea914f28488482c02266e619f53"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54b9b7326439f8815904c305f0f36547e8ffa31651e10351fa95e0f8bec91e22"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b834be1cc08dc3b6017b6e10f06a13492174bbf6aa4ba208fc7b76c55cc0c8ea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c767bb17a27e28208148679a52da660bcdfabc64ccf03147390cf0e9714bd2f3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "86ee872d13d60f3f82ae99fbfa5f14c9b38e48701df32a01222457ada47dffc5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "009dc21ec0252315e9e947ac5bda2c1cf72e9a15758c68406d1c376a07cfca07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe88b1db972209f0d6ed88d3c7d69013c2230406fa2977568e3591ccc8f57b33"
   end
 
   depends_on "go" => :build

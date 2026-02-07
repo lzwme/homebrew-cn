@@ -1,18 +1,18 @@
 class Fence < Formula
   desc "Lightweight sandbox for commands with network and filesystem restrictions"
   homepage "https://github.com/Use-Tusk/fence"
-  url "https://ghfast.top/https://github.com/Use-Tusk/fence/archive/refs/tags/v0.1.18.tar.gz"
-  sha256 "ef6ba01331dbe6a7aa2bb9da05cf1ebc1a894b1a6626560c3148a12142a54aa4"
+  url "https://ghfast.top/https://github.com/Use-Tusk/fence/archive/refs/tags/v0.1.19.tar.gz"
+  sha256 "57ec93427593a8e6f7df576ba322c761e1cca480e3a19919583a301e1fd68d65"
   license "Apache-2.0"
   head "https://github.com/Use-Tusk/fence.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a0a3be895a7121c825f386afcdbb896d6eb01d18983e493963c0b0be3498013"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a0a3be895a7121c825f386afcdbb896d6eb01d18983e493963c0b0be3498013"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a0a3be895a7121c825f386afcdbb896d6eb01d18983e493963c0b0be3498013"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d633850d3502058799b20896a6e40625e8f5213c371cb969375b980f9b5191a9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "79a88d5f9c9affca2b76b570cab880a8a56527c600de313592d5e621a214e74a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "001e3f1d24358991571be4d8a7f757dee20bf5d31224d0c0ab37a064d956c587"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c909579f64ebe74bfe5df9b224fd1b4e123ab5c896469d30ea8046a24d80512e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c909579f64ebe74bfe5df9b224fd1b4e123ab5c896469d30ea8046a24d80512e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c909579f64ebe74bfe5df9b224fd1b4e123ab5c896469d30ea8046a24d80512e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fbcfe8bb5ee9a68ca1e1a300002070798f951913ad34d17e793c84ecdb516974"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb88f29bf144fec6df6e70ace198ce84a936ea26c044b5e77098b05d599e9ad4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f134b025a232031925946e1b9c677b8312728d5105a7184c01564581d13145b"
   end
 
   depends_on "go" => :build

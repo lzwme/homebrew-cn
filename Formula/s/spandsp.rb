@@ -30,6 +30,10 @@ class Spandsp < Formula
 
   depends_on "libtiff"
 
+  on_macos do
+    depends_on "jpeg-turbo"
+  end
+
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
     url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-pre-0.4.2.418-big_sur.diff"
@@ -40,7 +44,7 @@ class Spandsp < Formula
     ENV.deparallelize
     args = ["--disable-silent-rules"]
     # Help old config scripts identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     system "./configure", *args, *std_configure_args
     system "make"

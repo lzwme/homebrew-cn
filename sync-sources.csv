@@ -874,7 +874,7 @@ Homebrew-homebrew-core/Formula/c/cctz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/ccusage.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cd-discid.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cdargs.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/cdb.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cddlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cdebug.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cdecl.rb, Homebrew/homebrew-core, 1
@@ -6915,6 +6915,7 @@ Homebrew-homebrew-core/Formula/s/starlark-rust.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/starship.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/startup-notification.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/statesmith.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/static-web-apps-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/static-web-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/staticcheck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/statix.rb, Homebrew/homebrew-core, 1
@@ -8034,6 +8035,7 @@ Homebrew-homebrew-core/Formula/y/yamlfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yamllint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yamlresume.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yank.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/y/yap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yapf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yara-x.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yara.rb, Homebrew/homebrew-core, 1
@@ -8884,6 +8886,7 @@ Homebrew-homebrew-cask/Casks/c/cityofzion-neon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/ckan-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clamxav.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clariti.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/clash-mi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clash-party.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clash-verge-rev.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/classicftp.rb, Homebrew/homebrew-cask, 0
@@ -13083,6 +13086,7 @@ Homebrew-homebrew-cask/Casks/l/lunasea.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lunatask.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/luniistore.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/luxmark.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/l/luxury-yacht.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lw-scanner.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lx-music.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lycheeslicer.rb, Homebrew/homebrew-cask, 0
@@ -15034,6 +15038,7 @@ Homebrew-homebrew-cask/Casks/t/texturepacker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/texworks.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tg-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/thangs-sync.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/thaw.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/the-archive-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/the-archive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/the-battle-for-wesnoth.rb, Homebrew/homebrew-cask, 0

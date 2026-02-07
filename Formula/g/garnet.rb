@@ -1,22 +1,21 @@
 class Garnet < Formula
   desc "High-performance cache-store"
   homepage "https://microsoft.github.io/garnet/"
-  # Check for dotnet 10 support on release updates
-  # https://github.com/microsoft/garnet/blob/main/Directory.Build.props#L4
-  url "https://ghfast.top/https://github.com/microsoft/garnet/archive/refs/tags/v1.0.96.tar.gz"
-  sha256 "cf3f4ea50db7bc0d640bd869793cbaf9b8fc6485b2f34795c4943ed0971a2cb9"
+  url "https://ghfast.top/https://github.com/microsoft/garnet/archive/refs/tags/v1.0.97.tar.gz"
+  sha256 "508b2d4783ae14ba77c9c98d0ed666326af5d7fd117bdf87c59c24da9b6591cc"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ec97e3e5164fe73732d11991e89d304447400baceefbffc1f5dec9bff5455a10"
-    sha256 cellar: :any,                 arm64_sequoia: "8a4cd7868b6e0013635f2a4fe2c2f26993aedf1a67676a09338db3675b6e6ee8"
-    sha256 cellar: :any,                 arm64_sonoma:  "36627ca41eddffc0b85ef7ba0cea6731bcd3b01506d165b1d3d009618537d4d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "43f6c527267b35087e57741c206bebab66eb0f13a1cf8a8579cfd7666460b255"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71e78f1185b7ca48cdc3c308b6325ca7f01d9c4cfa0f53e89b1954b83dbd46e8"
+    sha256 cellar: :any,                 arm64_tahoe:   "b0ccfe045a4b66d209bed0bfb1481d6320e9cde64a052aeeb0f722cb6943840f"
+    sha256 cellar: :any,                 arm64_sequoia: "b4f6781b80bebe843b58b90db2f47d9a79bdeb8a7a5679e4fe8acfcc6bdacd5d"
+    sha256 cellar: :any,                 arm64_sonoma:  "769ec911753b635462c471da08101aa56784695f1b81fa6e216ea91d8237c5e2"
+    sha256 cellar: :any,                 sonoma:        "8507070165612054683f8e2e8c7dbfc2d64b6361d280d1f1ed540819157ec355"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b12014db7c70937647d47825eb7ebacff460f0eb543f7e98e213dd2375b1d183"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e7bfff89c9a4a2a2f204dccf25f96b1a8d2672a3a217e17d3675b158e6bb6c5"
   end
 
   depends_on "valkey" => :test
-  depends_on "dotnet@9"
+  depends_on "dotnet"
 
   on_linux do
     depends_on "cmake" => :build
@@ -39,7 +38,7 @@ class Garnet < Formula
       end
     end
 
-    dotnet = Formula["dotnet@9"]
+    dotnet = Formula["dotnet"]
     args = %W[
       --configuration Release
       --framework net#{dotnet.version.major_minor}

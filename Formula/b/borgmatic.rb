@@ -3,13 +3,13 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/67/0a/ab3afb28ad3aa5b2c69ecbb0ae01bec34d3eb5b11fb076326bdd893676fb/borgmatic-2.1.1.tar.gz"
-  sha256 "3c23cacf9e88a9712f4ec5cf4fa595e69c6d600eba5477f80fe2ca396067b109"
+  url "https://files.pythonhosted.org/packages/d3/65/22114d1b563e2d2653407695570d34f468ee06595515900c23946ff2ed30/borgmatic-2.1.2.tar.gz"
+  sha256 "0f345723231bd7de6ba3b93c2faf000dee537f437515e8c4fecdd8ac86ef9d82"
   license "GPL-3.0-or-later"
   head "https://projects.torsion.org/borgmatic-collective/borgmatic.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ae160beb9122a14548c8a3d7ffeabf2688acf207057e592be246a963fcb17eb3"
+    sha256 cellar: :any_skip_relocation, all: "04d197cc4db58fe6c8b94be3db55dad5dfa83a6740acf295368cec167bd9299c"
   end
 
   depends_on "certifi" => :no_linkage

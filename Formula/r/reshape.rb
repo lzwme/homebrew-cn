@@ -1,18 +1,18 @@
 class Reshape < Formula
   desc "Easy-to-use, zero-downtime schema migration tool for Postgres"
   homepage "https://github.com/fabianlindfors/reshape"
-  url "https://ghfast.top/https://github.com/fabianlindfors/reshape/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "d66e7121b685d4d9d7b79c06fbc1b96634831f39d1662f75e231b6c0587ad76f"
+  url "https://ghfast.top/https://github.com/fabianlindfors/reshape/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "f9acbc3bbe31d5289d040082bdabe9ed1460728821a2d277374214a5a312b301"
   license "MIT"
   head "https://github.com/fabianlindfors/reshape.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d16d330aea8759d63d4b04ec19949afd49cd826d9c9a1e5be62446f425b6c81"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fb4883fe6a14b1f4efc701d19b8c3ef285d666680a9599df952d5894a664fd5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5401f607954df39c64c5b2a46ddb4aac0d6e9803691f1ffdbfc35656edd3c6f6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6d9bd91732b0b3fcfc44a4520743461bf3a479a0db522149d62e68ea6e419c80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "858927aea2f2500ee742e973c6380124ef2943278473f77bf66c1ff347fb2464"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "012ccea8fa19883ecefe3ef8b1627f0e24ffce5e8bf46fb9d2387fb84176779d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb4c920635d4bf6b222b437aa789fc4b37e827b8d282fb949ac76427a05d4a97"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cad51c012ac44e0a9badbd77fdc2d661feb9872ed7a57271e72024ba3f01d2f1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "364c043cc764376f2703119270dce0a5a6cb9ff3d065578cf98e3a157b29749d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a5da5fbcf2603a9ae24e70daf7588c2388eca8697c0b8a201755d04780e98729"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f763f05a00f763b36b3580d49d1b768d8de7d7b35cf0bc466780c871d1fb91b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d5a0e8515fa424eaa98a07fbcff6c145833dcff2d3fe3833c1030a55f71b3fc"
   end
 
   depends_on "rust" => :build

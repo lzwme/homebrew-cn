@@ -1,23 +1,23 @@
 class Zeek < Formula
   desc "Network security monitor"
   homepage "https://zeek.org/"
-  url "https://ghfast.top/https://github.com/zeek/zeek/releases/download/v8.1.0/zeek-8.1.0.tar.gz"
-  sha256 "bcd631ae0ad338772e27268f075c08758c5e9281123469a7396a73281cbd47b9"
+  url "https://ghfast.top/https://github.com/zeek/zeek/releases/download/v8.1.1/zeek-8.1.1.tar.gz"
+  sha256 "b5f9edd4a10412426e6414d2f851ba42ce1fa94b59ccbad4238519adae6fc065"
   license "BSD-3-Clause"
   head "https://github.com/zeek/zeek.git", branch: "master"
 
   livecheck do
     url :stable
-    strategy :github_latest
+    strategy :github_releases
   end
 
   bottle do
-    sha256 arm64_tahoe:   "20f581fd7f49814c044ced685e9e186610f7f1747ab04b3426b3381208afa49f"
-    sha256 arm64_sequoia: "0d388b8a49ab99a788c59b24f57bed025fa52d0469c0b46a7f3f5d0d1fe26817"
-    sha256 arm64_sonoma:  "ba38b8b2f698d4a0f60eabbae349959369c6f6f4e4478dfbc3d1c2c5389b91a2"
-    sha256 sonoma:        "faa4cbd1ed9b5879004dd3ccfc65a007bb98f7b5546ca4ded646d41e91574c5e"
-    sha256 arm64_linux:   "5c185321b3e4761420765b8fa772f28bdf6e12ee9093446f96c5a8007df60ac7"
-    sha256 x86_64_linux:  "0333ffdded19c29e238c057eb9932a3d029fb9d08297f335c7e04c93e22fee14"
+    sha256 arm64_tahoe:   "20445c8a927c7800ebb1018f8bb8d35eba01dae0a64e67bbe817e3b499dcbee9"
+    sha256 arm64_sequoia: "483bc41603ebbf4eddd090954a0ad02941a022eb4db8e6196d274962e99c6c6b"
+    sha256 arm64_sonoma:  "15b8426a1e7f6cdfb7d0a8c8be1cd220f579d4a2a13b9f1f62841c78cee9bf34"
+    sha256 sonoma:        "503f98cf7e8f4b9908b358bfa7b4efb0b83c687d560fe76026d3f92e31e6a8b1"
+    sha256 arm64_linux:   "47068489ef73b07cbc7a5a4fc2a59ab9e093045fb4daa5188b98c5bbb73d803f"
+    sha256 x86_64_linux:  "20fcadcb2d359d4ab19ce99850a6052c3f6a59a57507df4b987f303e0894cb6c"
   end
 
   depends_on "bison" => :build
@@ -32,8 +32,10 @@ class Zeek < Formula
 
   uses_from_macos "krb5"
   uses_from_macos "libpcap"
-  uses_from_macos "libxcrypt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Remove SDK paths from zeek-config. This breaks usage with other SDKs.

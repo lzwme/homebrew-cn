@@ -1,10 +1,9 @@
 class PythonAT314 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.14.2/Python-3.14.2.tgz"
-  sha256 "c609e078adab90e2c6bacb6afafacd5eaf60cd94cf670f1e159565725fcd448d"
+  url "https://www.python.org/ftp/python/3.14.3/Python-3.14.3.tgz"
+  sha256 "d7fe130d0501ae047ca318fa92aa642603ab6f217901015a1df6ce650d5470cd"
   license "Python-2.0"
-  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,14 +11,14 @@ class PythonAT314 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "91b7f1c080efef20bd828c3f057a874837b61ef5589633ad077ab5f1ff53ec0e"
-    sha256 arm64_sequoia: "eaa3d591aacc988e34d84f4daf95ee8bf8b8a266636e5aee03eb8df46fb29bee"
-    sha256 arm64_sonoma:  "2bb9a656efb1b4bdc1d8045e982d8953a3e8fda33bf1ae2c13d5051ef6a80407"
-    sha256 tahoe:         "19e2b71a684076117cf1fe1226f06fc2a4fafc691ee5b4cfe91002522c5ba954"
-    sha256 sequoia:       "1acda88462bdbf31a47d5dcce964dfcbea30e850e6cc18d33a553e2b12036dde"
-    sha256 sonoma:        "4617d6366749ee6cd547dfdcc4a3532874f37fc9c72f3d3215293883e5524d4f"
-    sha256 arm64_linux:   "4e059eacccc1c8b592da7638566c4030b29489ed7457f5342d2124f575c73f07"
-    sha256 x86_64_linux:  "7c704c44aa3ec95e0c521e4bcc2d7383f056ccdf48212317e859069c7b1142ce"
+    sha256 arm64_tahoe:   "075647f45272603019f093c78ef0b2e967a0ebdc5dfde4a2ec3946baf5374475"
+    sha256 arm64_sequoia: "b98def8509aab86a6da62d2237d1b0e57a37e411ff4486fddf7253c2b133f3e3"
+    sha256 arm64_sonoma:  "0ff828aacd36d8761327a7d1b98373a18b4daa4b0e63ec00c1f5d9e63472460c"
+    sha256 tahoe:         "a5f23f9c1ae41f15f0c8ae8e1831b380f206d386854742d7d2d7cc550229a459"
+    sha256 sequoia:       "196868659b90d13e5dc342ed841663587a77c3848063267675cb6a179a8d793d"
+    sha256 sonoma:        "abed8e17424b95bd8eef1afc3deedaf886be348b0d7fb6d336718e8a90660938"
+    sha256 arm64_linux:   "e5aab2cedfc32b11bf8606819b4372dad66091a34c15fb1a304d06dc5b4872ce"
+    sha256 x86_64_linux:  "4b9a9f432d3e102008692395a9313a32f785b171a2847eee37295c622f7dfc15"
   end
 
   depends_on "pkgconf" => :build
@@ -72,8 +71,8 @@ class PythonAT314 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/fe/6e/74a3f0179a4a73a53d66ce57fdb4de0080a8baa1de0063de206d6167acc2/pip-25.3.tar.gz"
-    sha256 "8d0538dbbd7babbd207f261ed969c65de439f6bc9e5dbd3b3b9a77f25d95f343"
+    url "https://files.pythonhosted.org/packages/44/c2/65686a7783a7c27a329706207147e82f23c41221ee9ae33128fc331670a0/pip-26.0.tar.gz"
+    sha256 "3ce220a0a17915972fbf1ab451baae1521c4539e778b28127efa79b974aff0fa"
   end
 
   resource "wheel" do
