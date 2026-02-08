@@ -1,17 +1,17 @@
 class Primecount < Formula
   desc "Fast prime counting function program and C/C++ library"
   homepage "https://github.com/kimwalisch/primecount"
-  url "https://ghfast.top/https://github.com/kimwalisch/primecount/archive/refs/tags/v8.1.tar.gz"
-  sha256 "cef67e849a42d642e34579c8caa5e0629fba3e89a84f8279b3dfeb920a5dcb61"
+  url "https://ghfast.top/https://github.com/kimwalisch/primecount/archive/refs/tags/v8.2.tar.gz"
+  sha256 "870f2c17b660449d10a593b31d2c69e720ff8060ec1b5099c37f451c005f671e"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ebf1a59073734f4e1825cba2fdbfdb8605970a45ec83994d303755ed50e99351"
-    sha256 cellar: :any,                 arm64_sequoia: "bdf50eb309006b7b5333e3e3805f8b99f4f7a6c2e7d3b4848eec0eb881e5d00f"
-    sha256 cellar: :any,                 arm64_sonoma:  "7d4a8f3fd457585dc300d3af5aa91d43922719da0a5777f3df342b99715d0626"
-    sha256 cellar: :any,                 sonoma:        "d302af04297c3839965bb8fd0745e6c5a099556faa617b9722cd93af1fc81d39"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "83e972469286eef94f87a056cab175428ae658ebfe3798251516550cc629f242"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a4dbf85d66cf71edd11b771f3da25922c8a9c8a254b1b22d1427a08571c63a2"
+    sha256 cellar: :any,                 arm64_tahoe:   "e5bafa9ed909a8f306433c3136eb0973b12c869854699a0b68b4f080b1754671"
+    sha256 cellar: :any,                 arm64_sequoia: "e20fc99778dd82d54076df60d688f56f40f72854c5de476eb514e537b8961d79"
+    sha256 cellar: :any,                 arm64_sonoma:  "518d165e5b989b8bc3b435f87ab0a5ca66d3310dc241c0140c8e48388405d146"
+    sha256 cellar: :any,                 sonoma:        "dc7d918669464ea47ed5a28d899acb222987b86f31973f447f28c52900f5fd78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "caac747ff7853027853c52c240426d3d2c274a818ba73f494a4cd730be8065bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "018799ca38a0df81b385891690be551cc705301e02e4a22a9ff6366759538e85"
   end
 
   depends_on "cmake" => :build

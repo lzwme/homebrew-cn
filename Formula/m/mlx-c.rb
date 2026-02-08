@@ -1,15 +1,14 @@
 class MlxC < Formula
   desc "C API for MLX"
   homepage "https://ml-explore.github.io/mlx-c"
-  url "https://ghfast.top/https://github.com/ml-explore/mlx-c/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "e22b51b810b9c3bdce8c0df0d6112ca8e8a49ce0ea78b504e1bdbb59d731f5d8"
+  url "https://ghfast.top/https://github.com/ml-explore/mlx-c/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "dcfc404d7004e6da70170c669dbc920913cb25a59c9f7dac781caf92e524cc86"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6784390f093bf0bb9f2d03dcc5d35a50e90e745612e12445464989c832c03283"
-    sha256 cellar: :any, arm64_sequoia: "0d6f8ed88a35e0c321bf823d769811942333e49e13bbea04f03980a027d444dd"
-    sha256 cellar: :any, arm64_sonoma:  "25f67cc6ab34aca8457eb15a390f54bc3e905a615411473b5e951c58db2794c1"
+    sha256 cellar: :any, arm64_tahoe:   "9c01f1a7b9ad2b7ce2a6017c29b6468ba076b5bd86c71ad857d622fad3b967d0"
+    sha256 cellar: :any, arm64_sequoia: "7b60942bf95ad387777939244dfc981878461d9c81bca995ad285c0b7c1b7d23"
+    sha256 cellar: :any, arm64_sonoma:  "8b862ecfc2b03ec842c2e18b97a1dfb8b53374f7163180c54704fe92d603fafc"
   end
 
   depends_on "cmake" => :build
@@ -18,21 +17,12 @@ class MlxC < Formula
   depends_on "mlx"
 
   def install
-    # Upstream: MLX Metal device_info is implemented via the GPU backend.
-    # https://github.com/ml-explore/mlx/blob/v0.30.5/mlx/backend/metal/device_info.cpp
-    # upstream pr ref, https://github.com/ml-explore/mlx-c/pull/99
-    inreplace "mlx/c/metal.cpp",
-              "#include \"mlx/c/metal.h\"\n",
-              "#include \"mlx/c/metal.h\"\n#include \"mlx/backend/gpu/device_info.h\"\n"
-    inreplace "mlx/c/metal.cpp",
-              "mlx::core::metal::device_info()",
-              "mlx::core::gpu::device_info(0)"
-
     args = %w[
       -DBUILD_SHARED_LIBS=ON
       -DMLX_C_BUILD_EXAMPLES=OFF
       -DMLX_C_USE_SYSTEM_MLX=ON
     ]
+
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

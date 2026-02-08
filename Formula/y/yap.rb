@@ -1,13 +1,13 @@
 class Yap < Formula
   desc "On-device audio transcription using Speech.framework"
   homepage "https://github.com/finnvoor/yap"
-  url "https://ghfast.top/https://github.com/finnvoor/yap/archive/refs/tags/1.0.4.tar.gz"
-  sha256 "ac82a470e2ea9f9f48589d743d4afee1e8222026ad833b476701cef7a03119a9"
+  url "https://ghfast.top/https://github.com/finnvoor/yap/archive/refs/tags/1.0.6.tar.gz"
+  sha256 "5ab9c0cc7621e777afe210733bc12ec07e591e0c9d8825a4def0d5c98a64774a"
   license "CC0-1.0"
   head "https://github.com/finnvoor/yap.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "1c08194a69eeaf22abd406123025a7b5966285cc050ae7f528d56ae35f39376d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "a96b69b3d1673792cbfde0a49f7a8b4ddd50447e4667de2b2518a6ab3410b3d6"
   end
 
   depends_on xcode: ["26.0", :build]

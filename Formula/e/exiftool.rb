@@ -3,11 +3,10 @@ class Exiftool < Formula
   homepage "https://exiftool.org"
   # Ensure release is tagged production before submitting.
   # https://exiftool.org/history.html
-  url "https://exiftool.org/Image-ExifTool-13.44.tar.gz"
-  mirror "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-13.44.tar.gz"
-  sha256 "59a762acd704f045a0f5ad5e5ba5d8ef05138fcc027840665a312103c7c02111"
+  url "https://exiftool.org/Image-ExifTool-13.50.tar.gz"
+  mirror "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-13.50.tar.gz"
+  sha256 "27e2d66eb21568cc0d59520f89afcaaa50735e1ad9fa4b36d0a4ccf916c70d31"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
-  revision 1
 
   livecheck do
     url "https://exiftool.org/history.html"
@@ -15,14 +14,14 @@ class Exiftool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b6c2148d16f0fe6143ef7ccf022048610d2aa7cabbe4a40993c5284518c5b67"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93a448201429f1bdb0ed362bf1c3c8408c0d9284f16ec36eca711a83204c4562"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd24055659f9ba8fc97cb1ffbae507b204f79b6a432a475f1edffb33f0e40f91"
-    sha256 cellar: :any_skip_relocation, tahoe:         "245ed9b709ecca21684f192923b945a56ead8d81fcb9bc8ffdf3b96bfaeb97c2"
-    sha256 cellar: :any_skip_relocation, sequoia:       "a4e93002817b031d5a5aa696c9fe8ecd52695410eb29ca5aef74b2890377b879"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3a8f60fbae49ba726e86ec7f8242a7deb7f4ece22374dc77e10d37694b3b5816"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a2705bdc753a5edf3176b5eb2ce622c7f39dc608ea47895bb4ebe4ad8e46ecb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "189fc8c7bdcf19943eb437efbf9987cbcb43a1cfff922248228b82a7376fa1ec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "416d7b391c1765cd0d1d14fbae34a226a074adee20e16a63024f626186ed4935"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2288bcc7820d33cd20d71cb9d3339b21d441f9cff9b8cbc1ab20a7226dee4891"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8cefabec3c1341a38e0f55bb16c4b5010a39ae7d7b17cad98ed487fb792b1ce"
+    sha256 cellar: :any_skip_relocation, tahoe:         "28ae052442b9b7a8fe4f76189e50e14c9ba51e141c5214983fff86368ada86d3"
+    sha256 cellar: :any_skip_relocation, sequoia:       "1a27e30f5c6a74ca7862542b5c47286e7517f6dbfa487324ce3bfdb70ea1221b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a456cb44f4418c7663261fa28a3902cb284f74045c32243e0d102c76e17b7075"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "95596b30070a21851fb7f765176c31f482e817c01d754beef8a4aba1e2d60ea5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11bda5dc7f5a6a5f6bd54aaf55c924c8d021a1a731d5860da4d420502dbbd560"
   end
 
   depends_on "cmake" => :build

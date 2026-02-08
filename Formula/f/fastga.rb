@@ -7,20 +7,23 @@ class Fastga < Formula
   head "https://github.com/thegenemyers/FASTGA.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00f9c966fef2b4cb9949449db2acdbfaec9dbf5b2b55f88ead27b7b3f34e77da"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c156fa327ce7484a27c182fbcbba66d7f7c6f60fc0d4e74e73a3e6feb270f18"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "669b1d360a91fe407f2e95540bd7451bb27147ddd6724f7d087f389140332bbc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "478e75f9a7f7f7cc9346e8341bf999cf7679360a915e39074ef0dfa6dc7b8e09"
-    sha256 cellar: :any_skip_relocation, sonoma:        "368b40ce6c94389712eb97d65130b83c7b4344262d54d2a66f92bbad187836ea"
-    sha256 cellar: :any_skip_relocation, ventura:       "bba546152682569103e1c26e42db0f25b19d165dde224131e2e38618c3a444ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e901783ee253ec3745826b76201220ba498acbbf0392548f005a395fae527b6d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6701f46303473e85afc9f708275e54f18d15004aebbc73039355459caef41b9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f0b6daa41a3e30a34b17096e2e2c00f5497d25bccf07f9f5d93970cb87c6690"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eaabe46cde2f90f0e449a516446b020ba355f3ff00d6b4e2ace449fc7f76dc30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "624c69a324de1184fd08f68c1fc17f3c2cc7ba3020d7b8e97f7dd28a0008809c"
+    sha256 cellar: :any_skip_relocation, tahoe:         "63abe45f86abc9a5863e41c7893618a3fa0b9c588e774ce2cb7b175703ac6058"
+    sha256 cellar: :any_skip_relocation, sequoia:       "d0bc4b02220b470fa1ee9357ac16f80fa84066a5e529994412b6c768db335d6c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5af73f9b8fc0b65e7c8d936257755dba73802bb05a141395d57e3366bb26c58d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a61e8adbad41553ba190ff117879a3c0e65196ac23bc6f442acc002c0087866"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e75ecc88983432af3b66eb378c1d227c64d707d23313652eb577b084f66cd23b"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
-    mkdir bin
+    bin.mkpath
     system "make"
     system "make", "install", "DEST_DIR=#{bin}"
     pkgshare.install "EXAMPLE"

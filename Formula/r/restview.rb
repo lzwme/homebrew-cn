@@ -45,7 +45,7 @@ class Restview < Formula
   end
 
   test do
-    (testpath/"sample.rst").write <<~EOS
+    (testpath/"sample.rst").write <<~RST
       Lists
       -----
 
@@ -54,17 +54,17 @@ class Restview < Formula
       1. Four
       2. Five
       3. Six
-    EOS
+    RST
 
     port = free_port
+    pid = spawn bin/"restview", "--listen=#{port}", "--no-browser", "sample.rst"
     begin
-      pid = spawn bin/"restview", "--listen=#{port}", "--no-browser", "sample.rst"
-      sleep 15
-      output = shell_output("curl -s 127.0.0.1:#{port}")
+      output = shell_output("curl --silent --retry 5 --retry-connrefused 127.0.0.1:#{port}")
       assert_match "<p>Here we have a numbered list</p>", output
       assert_match "<li>Four</li>", output
     ensure
       Process.kill("TERM", pid)
+      Process.wait(pid)
     end
   end
 end

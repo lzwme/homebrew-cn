@@ -3,14 +3,13 @@ class Toot < Formula
 
   desc "Mastodon CLI & TUI"
   homepage "https://toot.bezdomni.net/"
-  url "https://files.pythonhosted.org/packages/7f/87/83a31c9f1e4da5d4a32713072d209317f9927c90000578aaad68bf82ed6a/toot-0.51.0.tar.gz"
-  sha256 "48e2c422c92aebca20c1913238b6dbff969a048ee4eaa70d62921a1e58415797"
+  url "https://files.pythonhosted.org/packages/ff/39/7ff3006257938e6ac41d19c736673a28ee0a0e01f2d8fd420a9c8884285f/toot-0.51.1.tar.gz"
+  sha256 "d224183a19236508a803fdee9b18a39cc5932c4aa8b1db2e1c602b1f51aa3612"
   license "GPL-3.0-only"
-  revision 2
   head "https://github.com/ihabunek/toot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "12bf0040c3b8b1ded8f330fb2ebbb758b09e53c6f444004c5608f776bc885a12"
+    sha256 cellar: :any_skip_relocation, all: "2401eee94bc4d7c4a7e11958c4aeaae60a7283e546b6b9453e6ad7ce0fd663c5"
   end
 
   depends_on "certifi" => :no_linkage
@@ -56,8 +55,8 @@ class Toot < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/89/23/adf3796d740536d63a6fbda113d07e60c734b6ed5d3058d1e47fc0495e47/soupsieve-2.8.1.tar.gz"
-    sha256 "4cf733bc50fa805f5df4b8ef4740fc0e0fa6218cf3006269afd3f9d6d80fd350"
+    url "https://files.pythonhosted.org/packages/7b/ae/2d9c981590ed9999a0d91755b47fc74f74de286b0f5cee14c9269041e6c4/soupsieve-2.8.3.tar.gz"
+    sha256 "3267f1eeea4251fb42728b6dfb746edc9acaffc4a45b27e19450b676586e8349"
   end
 
   resource "term-image" do
@@ -66,8 +65,8 @@ class Toot < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/cc/18/0bbf3884e9eaa38819ebe46a7bd25dcd56b67434402b66a58c4b8e552575/tomlkit-0.13.3.tar.gz"
-    sha256 "430cf247ee57df2b94ee3fbe588e71d362a941ebb545dec29b53961d61add2a1"
+    url "https://files.pythonhosted.org/packages/c3/af/14b24e41977adb296d6bd1fb59402cf7d60ce364f90c890bd2ec65c43b5a/tomlkit-0.14.0.tar.gz"
+    sha256 "cf00efca415dbd57575befb1f6634c4f42d2d87dbba376128adb42c121b87064"
   end
 
   resource "typing-extensions" do
@@ -81,13 +80,13 @@ class Toot < Formula
   end
 
   resource "urwid" do
-    url "https://files.pythonhosted.org/packages/bb/d3/09683323e2290732a39dc92ca5031d5e5ddda56f8d236f885a400535b29a/urwid-3.0.3.tar.gz"
-    sha256 "300804dd568cda5aa1c5b204227bd0cfe7a62cef2d00987c5eb2e4e64294ed9b"
+    url "https://files.pythonhosted.org/packages/b1/59/67cd42db7c549c0c106d2b56d2d2ec1915c459e0a92722029efc5359e871/urwid-3.0.5.tar.gz"
+    sha256 "24be27ffafdb68c09cd95dc21b60ccfd02843320b25ce5feee1708b34fad5a23"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
-    sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
+    url "https://files.pythonhosted.org/packages/35/a2/8e3becb46433538a38726c948d3399905a4c7cabd0df578ede5dc51f0ec2/wcwidth-0.6.0.tar.gz"
+    sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
   end
 
   def install

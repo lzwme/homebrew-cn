@@ -4,7 +4,7 @@ class Libxml2 < Formula
   url "https://download.gnome.org/sources/libxml2/2.15/libxml2-2.15.1.tar.xz"
   sha256 "c008bac08fd5c7b4a87f7b8a71f283fa581d80d80ff8d2efd3b26224c39bc54c"
   license "MIT"
-  revision 1
+  revision 2
 
   # We use a common regex because libxml2 doesn't use GNOME's "even-numbered
   # minor is stable" version scheme.
@@ -14,13 +14,12 @@ class Libxml2 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "9e3cde9378a4638dc046655cc428e2fbf4cd2ec2991337fae3e57a9f065ef0e6"
-    sha256 cellar: :any,                 arm64_sequoia: "d0656869714b8c590f9c980b08860c7245834a2679310ac7d411b1b9366593b1"
-    sha256 cellar: :any,                 arm64_sonoma:  "ce27f215780fe6f227d0e24571d84d781c6ad52d8537d2ad6a1b5d404753c09a"
-    sha256 cellar: :any,                 sonoma:        "833e98eaf14e628e1b3d3a7389be56eed7c476c807a60d43ff3fda3f972ebe18"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "23f7f1f4c905b53efa09671d5a784742909ed0d108ccc8573ba32397cbec461b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3845c8e494648b4acecd10d54117f661a22fc637ac2b1c5e106d67caaa0939ba"
+    sha256 cellar: :any,                 arm64_tahoe:   "dcb42a68bf66c5e992a4ff79ca2ef825ae1636f7ed5b30fef442c2535a3f9b9e"
+    sha256 cellar: :any,                 arm64_sequoia: "667196feb8df21fb41457431c3289267e5adbf023454cc691bf15aa243f1830e"
+    sha256 cellar: :any,                 arm64_sonoma:  "be0013ebd46c95f08569e8f4d96b80830e2e58565e20075f859c18dd76088628"
+    sha256 cellar: :any,                 sonoma:        "e0206167a9ed5d3642695623033f991b1750f091c1c84f2c96e63c293f65d338"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a9854a68f030db6f67db31c48b2e823f47f7ce8539d41d602f72ae2804fc755"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a3b2e9f3c7397d625f336aa6162211faa8f6592e7670d65b5d3ff76f3744f20"
   end
 
   head do
@@ -36,7 +35,9 @@ class Libxml2 < Formula
   depends_on "pkgconf" => [:build, :test]
   depends_on "readline"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
@@ -70,7 +71,9 @@ class Libxml2 < Formula
     system "./test"
 
     # Test build with pkg-config
-    ENV.append "PKG_CONFIG_PATH", lib/"pkgconfig"
+    ENV.append_path "PKG_CONFIG_PATH", lib/"pkgconfig"
+    # TODO: remove following when zlib-ng-compat is linked
+    ENV.append_path "PKG_CONFIG_PATH", Formula["zlib-ng-compat"].lib/"pkgconfig" unless OS.mac?
     args = shell_output("#{Formula["pkgconf"].opt_bin}/pkgconf --cflags --libs libxml-2.0").split
     system ENV.cc, "test.c", "-o", "test", *args
     system "./test"

@@ -221,6 +221,7 @@ Homebrew-homebrew-core/Formula/a/aqua.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arabica.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aravis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arcade-learning-environment.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/arcadedb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/archey4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/archgw.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/archi-steam-farm.rb, Homebrew/homebrew-core, 0
@@ -5167,6 +5168,7 @@ Homebrew-homebrew-core/Formula/o/octomap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/octosql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/odbc2parquet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ode.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/odiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/odin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/odo-dev.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/odo.rb, Homebrew/homebrew-core, 1
@@ -6331,7 +6333,7 @@ Homebrew-homebrew-core/Formula/r/rsync.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rsyncy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rsyslog.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rtabmap.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/rtags.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/rtags.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtaudio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtf2latex2e.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rtl_433.rb, Homebrew/homebrew-core, 1
@@ -6573,6 +6575,7 @@ Homebrew-homebrew-core/Formula/s/shamrock.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shapelib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/shared-mime-info.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/shc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sheenbidi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sheldon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shell2http.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shellcheck.rb, Homebrew/homebrew-core, 1
@@ -7371,6 +7374,7 @@ Homebrew-homebrew-core/Formula/t/trafilatura.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/traildb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trailscraper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/transcrypt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/transifex-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/translate-shell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/translate-toolkit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/transmission-cli.rb, Homebrew/homebrew-core, 1

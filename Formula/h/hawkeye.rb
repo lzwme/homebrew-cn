@@ -1,17 +1,17 @@
 class Hawkeye < Formula
   desc "Simple license header checker and formatter, in multiple distribution forms"
   homepage "https://github.com/korandoru/hawkeye"
-  url "https://ghfast.top/https://github.com/korandoru/hawkeye/archive/refs/tags/v6.4.1.tar.gz"
-  sha256 "80895435f3f24104005d9d4f1308d12dafad53daded32e245ea24d5bfb883de1"
+  url "https://ghfast.top/https://github.com/korandoru/hawkeye/archive/refs/tags/v6.4.2.tar.gz"
+  sha256 "e2225b323d971323d1e4d3d33331914ed67998f0f7e6b0bc0297fa3bbe3dee6b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b251e5c88de184dabaa393eaef0d643644ccefa5e107f6f2555e02c8b67ed2a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "703bd5845de5d986dfffbc93d302980e964099c3be90a476cf5a46202d187370"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "426b9968c38b0ed5cfdb5621aea07852b51caaa92fad6e07eb0c4533f15d1fc7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "becc8e91289c9583268aaab44b94b71fb71c6629dec69a30b77096ec371f2e60"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a073996d9932d24713a25113bcda6d374261972d3fcf3750e37daf484476204"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a34c5a9d259e653bdc9c6db4945831526b8aad5ea5b936e857255cf8fbf7c4e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd1b86ff480014200a96611bbcd4fd6088355b6ea16f9348176dc85fb9af311c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d56d14f67686af737e23b0e67de714770f9d4deafb70c94e1674eff94388ea7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b91f2e0fa465756622d8ff6fe49d6eb38c89c95841fdc0368a97c6088c935250"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f8a7d24eaa16b548e3c231fa5ba0596e78a2aad1f24e1f34533f5d889d07193e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e633760b1bc677b3ca192e2abe323dc82c18ca439523bbd9add03a3dd6356dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e396a7b87efb9e6b5470aa10744d6ccf4c1f4d37ebcda57fa900c01b1d0625db"
   end
 
   depends_on "rust" => :build

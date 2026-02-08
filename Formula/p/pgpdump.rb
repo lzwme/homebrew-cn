@@ -9,20 +9,20 @@ class Pgpdump < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "85243a86d8e3ea3d785a64a923646171e20ad9be329360f6b93f74608db023b8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3e1106f448c38f9e3c36c90d622db3e4e0fba0375346446d8b5f8b50acc8fae9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1486016d74d108d52c41c9b09d8d681bc7a08e553a6e65f1753b37df3ce6e18a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a989f9d5f92668d4d84666bb1cc2654a7bbc4eff4514f184d88f24eaedb074fa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "52448666ef81ee5ba314eea314299c6785f507adc28924fdfe4812bd3efeccf3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9d251de5de502b17047090b372b041cfa01f36300da79b7cdb31c1a2742d13e8"
-    sha256 cellar: :any_skip_relocation, ventura:        "182e8c57659d5aa820da72ba424ffe35387f18982fd203ba19c3eedc15636acf"
-    sha256 cellar: :any_skip_relocation, monterey:       "1840aa585133917d6134062341a3f99b6d9f75bae841a5c17f03875f32550860"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "0b513cc3a5634c9f81ac831e5fce2db784e947233439706b34a2dc3b44391714"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee47fa9dcc4ffe236943ebbb493b3c6b95237576d3b69e1c847025632f9b4e91"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b3d1b4c62b3420ba247b531634b3ba7a5ab5a03da5f0bde0552d274f1c59801"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4034a5d2c65204a8ae76b66c13256fb2875e3e790f95c017c51526a5a4d09be9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d92ba9dd3c52a582ad4f98568965ba0e14449985d06e4339c8735fd41927872"
+    sha256 cellar: :any_skip_relocation, sonoma:        "247c8276634d3c8e941db5b8dee3face4b26d6544f1a5d82c17150aefceb65cf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5066a50b615b07419755258920c5fbf8746a34849ecc1c74d56c86ffca8ba701"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04042cf505e1ebaa0ae1c78a69a3fdf038a128d1fb1a37b438116b724bd6f26b"
   end
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--prefix=#{prefix}"

@@ -122,10 +122,11 @@ class Streamlink < Formula
   end
 
   test do
-    system bin/"streamlink", "https://player.vimeo.com/video/941078932", "240p", "-o", "video.mp4"
+    video = "https://player.vimeo.com/video/941078932"
+    system bin/"streamlink", video, "240p", "-o", "video.mp4"
     assert_match "video.mp4: data", shell_output("file video.mp4")
 
-    output = shell_output("#{bin}/streamlink --ffmpeg-no-validation -l debug https://ok.ru/video/1643385658936")
+    output = shell_output("#{bin}/streamlink --ffmpeg-no-validation -l debug #{video}")
     assert_match "Available streams:", output
     refute_match "error", output
     refute_match "Could not find metadata", output

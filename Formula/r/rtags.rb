@@ -1,20 +1,10 @@
 class Rtags < Formula
   desc "Source code cross-referencer like ctags with a clang frontend"
   homepage "https://github.com/Andersbakken/rtags"
+  url "https://ghfast.top/https://github.com/Andersbakken/rtags/releases/download/v2.44/rtags-2.44.tar.bz2"
+  sha256 "3db5b36216e0b0a98fa7ad1e03a29b2ca7c9d895d85dbe3b2760fcdc2f962db3"
   license "GPL-3.0-or-later"
   head "https://github.com/Andersbakken/rtags.git", branch: "master"
-
-  stable do
-    url "https://github.com/Andersbakken/rtags.git",
-        tag:      "v2.41",
-        revision: "39339388256df662d0084b4a094d03e52748f9e8"
-
-    # fix lisp files, remove on release 2.42
-    patch do
-      url "https://github.com/Andersbakken/rtags/commit/63f18acb21e664fd92fbc19465f0b5df085b5e93.patch?full_index=1"
-      sha256 "3229b2598211b2014a93a2d1e906cccf05b6a8a708234cc54f21803e6e31ef2a"
-    end
-  end
 
   # The `strategy` code below can be removed if/when this software exceeds
   # version 3.23. Until then, it's used to omit a malformed tag that would
@@ -33,14 +23,12 @@ class Rtags < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "48ad2bdaf1a5da69b0043dd8c7d4b9aa472c4a61556e16460cd973e2bf16a300"
-    sha256 cellar: :any, arm64_sequoia: "8fd30b2507239fc7ff15cca941e00f105e8a6724b032a591b1b0d3812699d3cf"
-    sha256 cellar: :any, arm64_sonoma:  "4bd18ea58c0d2161ea6b22209ae085719b21e4db751ab60f4a46911e770affd0"
-    sha256 cellar: :any, arm64_ventura: "8a8fca81684ec7d9ddb05633c1f99b00f99f9222a6584bb494c52fa0ac0abe53"
-    sha256 cellar: :any, sonoma:        "fce14066a6e4c0345b2a7e5ddf8e03be8f6d577b558d1c887a82afcfcb3a64e8"
-    sha256 cellar: :any, ventura:       "719ad5a7d65ec34fbe8b28e3fe3c83c06a9a4e4d164da471f6658927d1a45b7c"
-    sha256               arm64_linux:   "a044de5d959c2c7e6e1976922eb3488ab2d5a04069f2400c89b739fad39aad7c"
-    sha256               x86_64_linux:  "606bea1ce1da5dfbddc609b1f5d80fb36b4edc7e5aa26351504b0bebb4edde74"
+    sha256 cellar: :any, arm64_tahoe:   "6337955889369da13644acf9bcd8863971f8623d0e20a7d87c5436d562bd9eab"
+    sha256 cellar: :any, arm64_sequoia: "40490a57292e202e01ecfce447acfe5bb985c128df4ac1c6302a7ea7689ae7c6"
+    sha256 cellar: :any, arm64_sonoma:  "e0bc34735908234eba526ae618b315a267405d7447ee978f85dbe51f20fe3ee7"
+    sha256 cellar: :any, sonoma:        "a9315e7fee3492ede17de0566fad7f08ef9a455a2bc045782156913ac183b648"
+    sha256               arm64_linux:   "f907fbf7277ff32b9d4d829453dda22267c89ed2da2422e8f9face99c956b447"
+    sha256               x86_64_linux:  "17bc4d956d77efcf2121f9d55bf4b479c0761eaf7c73de361134adfc5e8b5b2c"
   end
 
   depends_on "cmake" => :build
@@ -51,10 +39,7 @@ class Rtags < Formula
   uses_from_macos "zlib"
 
   def install
-    # Fix to add backward compatibility for CMake version 4
-    # `master` and `v2.41` are differ too much and so patch is not working
-    # PR ref: https://github.com/Andersbakken/rtags/pull/1443
-    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -83,6 +68,7 @@ class Rtags < Formula
     rdm = spawn "#{bin}/rdm", "--exclude-filter=\"\"", "-L", "log", [:out, :err] => File::NULL
     begin
       sleep 5
+      sleep 10 if OS.mac? && Hardware::CPU.intel?
       pipe_output("#{bin}/rc -c", "clang -c #{testpath}/src/foo.c", 0)
       sleep 5
       assert_match "foo.c:1:6", shell_output("#{bin}/rc -f #{testpath}/src/foo.c:5:3")

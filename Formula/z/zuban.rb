@@ -3,18 +3,18 @@ class Zuban < Formula
   homepage "https://zubanls.com/"
   # pull from git tag to get submodules
   url "https://github.com/zubanls/zuban.git",
-    tag:      "v0.4.2",
-    revision: "18cc42318a37dd545adc456a3b515abbb2fbc45c"
+    tag:      "v0.5.0",
+    revision: "adb7937b1e96d72643fffcab6678e2c882a1fdc2"
   license "AGPL-3.0-only"
   head "https://github.com/zubanls/zuban.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c174db46af92e964b8167a3405cea2f9986199d4119fd07eaec3e144958c9b2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92bfb1ec099df3e90b856f4c2798a8f63f969a0e7c72729979e5958979cf4643"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f311b0d7cce06ae439ae9492724749cbef7e36c5142da83077f81ee0a190947b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a1d127e9aabbf70b48643013c646a14967cd745554e63a2962b1cf412d226ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb5fc63db66b5d0f367c28dfa85b2a2eca3de55db550f4aaea3f8c76f0dd4d38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ad383ee7c122536c6f12bc9e9644accb957cfeeafe43d5d0c33e6ca3e392f53"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c12b0bc8949490923d16f0c74b8ec99d229a993bb636a1e29da218f77049dc95"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2b57dfc0a3e1e05a573ca9bc1dbb75eab747039e06e912283c6a35683893603"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8396cc9c75b77e4f48bfbe0f8c6ff4e4927ed606d0f5a6fd7b2f5df8dbb7364d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8642d432958ff01972626efed8100444a783527efd49f1b8c5e35c70989fb7a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1a69129d4d129e871e02c4c054bdaf64e4d55003ca79b8dafc588831da34e56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4b437b192d514d878de4e42d29e19faae0c97f0394a638a110fa920df47b43b"
   end
 
   depends_on "rust" => :build

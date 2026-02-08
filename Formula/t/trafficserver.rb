@@ -4,9 +4,10 @@ class Trafficserver < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://downloads.apache.org/trafficserver/trafficserver-10.1.0.tar.bz2"
+    url "https://downloads.apache.org/trafficserver/trafficserver-10.1.1.tar.bz2"
+    mirror "https://archive.apache.org/dist/trafficserver/trafficserver-10.1.1.tar.bz2"
     mirror "https://archive.apache.org/dist/trafficserver/trafficserver-10.1.0.tar.bz2"
-    sha256 "bccc35bbfc80f215b0858a0a7e531ac990b13a9eb1e3e81a3b15eaa3fde0596e"
+    sha256 "793af06a5e45f1c53245c227a7af17a19a6cf18f04d366866e7ac62c5a28d292"
 
     depends_on "pcre" # PCRE2 issue: https://github.com/apache/trafficserver/issues/8780
   end
@@ -17,14 +18,12 @@ class Trafficserver < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f1f228335aa43ef6fc7ff8e68c2777dc3ff42335cb0b9b71bc74deac28998ab3"
-    sha256 arm64_sequoia: "bd0435227b8259ad3ddb4f0e2554fa80313afc5534a216727907e93ed4449154"
-    sha256 arm64_sonoma:  "45d46d5d4940acc9f404ca0a096f8b2b35e4b6633ba7dc8d1ac7992775a2ff78"
-    sha256 arm64_ventura: "1cf5918b4f826a901f82779b9e260ad303ce9cef5fa9da4b87680681a5fa4b28"
-    sha256 sonoma:        "6f468481e98e0f32cd21782569d9cc7db867f5330c55afbb8f8220af749bab60"
-    sha256 ventura:       "49c8fba7b87b464e8fa5b22cf02f94c353cdca306b8860249e004e2b801a7216"
-    sha256 arm64_linux:   "445d11a0ce8676fe74a1df1be2fa6b1bf9544ab7e7bd69bdfa931acf62424f1c"
-    sha256 x86_64_linux:  "701d46ac0f4dfd5ed88a48e5f01bb55f675f9e275a4e692ba7a773e82e0d39f6"
+    sha256 arm64_tahoe:   "6a7d414ba4845e774e6b4d43ef084223bad75e4aaa3221d4ee92598f451da25f"
+    sha256 arm64_sequoia: "b040641bc444e293343ad6443a465bbeedf4fd599e3c8c1a72ea219a9593c1cf"
+    sha256 arm64_sonoma:  "aae83fa2f246435502f568a269d239c5b4d00abb510db55369eb23650f746138"
+    sha256 sonoma:        "8f71dfe1f7fb783d1281c73622c6f1126dac18b4974a401bb6d1dd6d9f4077a1"
+    sha256 arm64_linux:   "17e853639cdd0e238e53581df1814a85803c2cbdf1bde81057c6177d7b05c0c9"
+    sha256 x86_64_linux:  "880c8a051f548091d4968d6fc583188f96b2c7051047840516c99a865f438c86"
   end
 
   head do

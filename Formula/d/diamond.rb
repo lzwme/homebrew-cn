@@ -1,23 +1,26 @@
 class Diamond < Formula
   desc "Accelerated BLAST compatible local sequence aligner"
   homepage "https://github.com/bbuchfink/diamond"
-  url "https://ghfast.top/https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.21.tar.gz"
-  sha256 "e83c042e20b20ec80c9f28875412156b29478e894182e8568006d8b84fff88e5"
+  url "https://ghfast.top/https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.22.tar.gz"
+  sha256 "065296879d1e769049b513f2a266933a3db42004d08987fa1260294a5d2cfe6d"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6bc356ee72b03c833b6dbb69987160a54f980f14e9469dfb659c62dfc98e3efe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54f5d97371e7df896a4eb5bfcd03c457005c61bfc76357251d767f3b2d664080"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a00cb756d355d44a24316e018b9914213577a97d0fd36186aed8d48161ba087"
-    sha256 cellar: :any_skip_relocation, sonoma:        "66977c36402c5fa18194d3881488a4b08ee69c2b92c8f88b6913ee4c220d79aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be59840aad28e5be295b8f8505349ae4bd27e19881209e389ecf31b08d553cfc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52acaae4f62d4c4f1844dd4c82202ba1eefa590ac39cec2a639d2e3868b439d2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ba7748335f305813b946c79b910171021c85453362dd28d23ea6e1f6b987370a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edc86dd933c4481fba00cb03dcb9119e49ac79c917f33074acf88b6157443646"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63c458ff3f55222acd475a00379c3f2ee20c009c44c5dc301a95413ce76ecff6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3fb457e8bebe64eba0e97be05560826baaa49ecb8381db99f9f2d81110c4898f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fc8de9934a620ba716ec57f936c0c57d2b16477a5ab39a0d7dc587175559682"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a41a36de144140749213d2de56de5cfc956188c701f1e74922361b96dffa5077"
   end
 
   depends_on "cmake" => :build
 
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

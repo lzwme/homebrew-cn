@@ -11,16 +11,21 @@ class StressNg < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "67b233042d194cafdcc09842b4bbc260b9d2e0824eb8fd41bffeadda82f32f6a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c40b54c7593e96e1b1d9b0d489e69a2822ad9494595695fdf00997c4b2b360bf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d34b1ba0c2b78f25cde083285b698939392fd5117a40ed4ae3c2cb3530c7bff"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ed50a3ae895b189a8bacfb7bca4b2d0dbfc3c57153510e46e69936152753199a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2784ed9479fedccdd949891933db224d373fa450534bb058ee41132a2e03515"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ab3ab7b4f6aafcd435e8db81c2010e1bf0a8e4ddb429eb255261e74e399252d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc087c615586c349b6a427ba17db998150a0c2ad940ae97d1b7f04426f73934b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acb4260c60584236b843cd12bda45b88108f07e2efcb401685c9eeff36aa1925"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f2d5064b19bcfeb325bc1eb164b0ef73b208cc3a1108602a3789c68d40ff47b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8f747b718251f9fe933ba28b30cff5ef162e4b8bfa037dd06975513a07084459"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aab572c9f1e43c8e5b4d23af03510dce11f7a71d14b5852705de9e5829338e0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18c930b6afdd321448b66d72982cec6411d74eeaec7f5f32acc99c2d94b0ad70"
   end
 
   uses_from_macos "libxcrypt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "acl"
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     inreplace "Makefile" do |s|

@@ -15,17 +15,19 @@ class Xorriso < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec2aac72e501138766c226d4983498f05536f216da04286b8457aec12f20bf7a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ce9aa17c62698d61ba30175e05e730cdbfb45c00f414728e344912d8f533e50"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c0d17d1c03669586c4d7f5e10c915ff46e0448b65838ad8f4b4b9cda589f0b9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cb072e208fba6a3d7e100b173dabba79aad125900499366ae5c876223d51589e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d4c500ee979adcd61b5f7fd5790992ebd1209d7d778244d39e5b070ad317b62e"
-    sha256 cellar: :any_skip_relocation, ventura:       "6d06e4c85a3b819c1b0f6209de9ff66be94464f5f7ffc6e54987c1a9808417d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e2de74c4a0f1472e99be18ad1810410378eb0597aad77e666657ee80ec932c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db3610de57dbb6a1b2bf32776acc9803efe9a951791101692eb65dc6df1226bd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fceeb65166fc6b9aec4b74b77897da475a890384717df9ebc46488a3bfbcdeb5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "695c33db8e91cf5c45d8024768eeeaa32d7d51268344d150367355c569b70518"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c85c0022f31b62c5e5949ecfacc9178ef58afb8ef8a89fb9bfeadca4326980b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7393a7926142ea960892a3b72efc423f4600ebe0be7cf089f8d94201edd5c5e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6bf70c1bb510be7dee6854d6e6ef20c69da79b2c080d42c3d0a2b84c8f783c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f19040f286ffb85071c95e2633570117b4fa2e68196c3d42b2ca178ec8d8805"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "acl"
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--disable-silent-rules", *std_configure_args

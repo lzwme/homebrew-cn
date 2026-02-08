@@ -11,17 +11,20 @@ class Fio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9478d8c99b007a7ce662a90c6cf07f2e047406bc29b64a3eeb840325f918ecd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "328d27e82b942ff7e50a13d2492c5bdfe0522a9e0001cfa7b765410a427fcc0e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a38a0c4bb6decf2952e8ad1ba59c8e64dc86d484019c598c6dbd072d8b98c8b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8868622bae51c1d4cda01b9d5ff70989dbde636f677902adc8d7a8e94bc336cd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "78e1d57c429fef2c6aaa5e74a742b58419c5d930cb6a369e0c4eb7db02c827ac"
-    sha256 cellar: :any_skip_relocation, ventura:       "5d5f62218f93f767d67f2e3ce252cf242d62169204adc2245805b27e686f3a8d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e21d0ff146a17aae8ce2fbc1193b068ee7829329d4d8672221f5ab3a36311e96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7e56e62de3864f477e8926fbcaef5ebe534ec4191e184f1b20e1f853bfd0f63"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3cb5e54c2ed3c71f2ee65c468d09f5517fd0a907a964ee65239fff10f0cc3e92"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ca6ff0e4b9d6cb31e7136b3b3ee3e2bb48cd23f112c516025c78c34213e9208"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ac4827580d3218212dbf2dd97859b5c95cea622c1dcbe9821ebe6f473be6873"
+    sha256 cellar: :any_skip_relocation, tahoe:         "48b1f75d62fdda42df3d06e44cf69ff21190c012664332890f529028ed491063"
+    sha256 cellar: :any_skip_relocation, sequoia:       "f0f9a371d3eff11126568df4f6ab72dd857f4461f60bf3f000df8dadaef086b6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "402d67954f91a966b989ef13a06f131d2179c643f7d5dd40ccb3745d52e9fe16"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "11567a64f191b14ac26cc2d05a805c61a12f76fd2a135e2cc5b7bc06a733d72c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8d5370cc5ea1c91fa145ba9f59f214d3a87c5c59758e00164d9a18aa3258edc"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "fiona", because: "both install `fio` binaries"
 

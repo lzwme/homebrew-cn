@@ -3,17 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/71/f1/d5503cc06772731b2e9f7c67e19130277570b26ecdafffb8ec54eb8c23b2/mycli-1.49.0.tar.gz"
-  sha256 "76f958a387871d246b2e3cd8178cc9b14a3a2a5758b08e756a29fd6cfd251d0b"
+  url "https://files.pythonhosted.org/packages/98/26/42c2c20bee7679c9689a7fa86660e0959e36f59d7545bcb171d3d8a21554/mycli-1.50.0.tar.gz"
+  sha256 "03de6b74edf787bf7f80c8b21249f9f9ce88573dc93d3ce7dfb8b5cf1db99d76"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ffab784691ad890701ce30325cf3dcab935f5ce78e75434cb0ea9ffe89c94884"
-    sha256 cellar: :any,                 arm64_sequoia: "facecb63fff7112892aa6882a16dd34e8427ff4f0aac9ae34f435a44575736a7"
-    sha256 cellar: :any,                 arm64_sonoma:  "6f2b80c9d12ffa2d378fe35c7f3fb1d5c5bddbed1e703af2f798cead3c0ff31c"
-    sha256 cellar: :any,                 sonoma:        "3d335ad5238b16ff7359ed62e9f7dd5adc0f4102b5ad167cf25ffdf3c23bede0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0db6576693561c76e8ca1e62cf7d8c5e14d94473a058eb711516edf9b0a17442"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aaf96439c9384c4ede87d58473efb9b34e9d0060cc68357ded7544c82a3e431f"
+    sha256 cellar: :any,                 arm64_tahoe:   "cf59a05ccbea4a75fcc637b95ea9c52e594d69e05db1e746f2c6d4bc1d4e39de"
+    sha256 cellar: :any,                 arm64_sequoia: "e599c4f6b2d961f0a0107111d1e9048488cf487b6883bb53ae49172b5c32e01e"
+    sha256 cellar: :any,                 arm64_sonoma:  "fbefee31f3f3915daeb2cebaeb506c820615b4abbe177b514869fa3ac1b65633"
+    sha256 cellar: :any,                 sonoma:        "810a41e845553774de04df24f8d4fdd6fc135bb4f87da03df272c2ca953dc8ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b549c5ee36c5c5023f15f675ae755dea6e2b301ec04c06a5edb3e5ba7145d7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26148d2be4e22c1362a2ddf7c8d048388cb9bba531437ac7c4259598b6c2c804"
   end
 
   depends_on "rust" => :build # for jiter, sqlglotrs
@@ -124,8 +124,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/b1/6c/e4c964fcf1d527fdf4739e7cc940c60075a4114d50d03871d5d5b1e13a88/openai-2.16.0.tar.gz"
-    sha256 "42eaa22ca0d8ded4367a77374104d7a2feafee5bd60a107c3c11b5243a11cd12"
+    url "https://files.pythonhosted.org/packages/9c/a2/677f22c4b487effb8a09439fb6134034b5f0a39ca27df8b95fac23a93720/openai-2.17.0.tar.gz"
+    sha256 "47224b74bd20f30c6b0a6a329505243cb2f26d5cf84d9f8d0825ff8b35e9c999"
   end
 
   resource "pluggy" do
@@ -194,8 +194,8 @@ class Mycli < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/76/95/faf61eb8363f26aa7e1d762267a8d602a1b26d4f3a1e758e92cb3cb8b054/setuptools-80.10.2.tar.gz"
-    sha256 "8b0e9d10c784bf7d262c4e5ec5d4ec94127ce206e8738f29a437945fbc219b70"
+    url "https://files.pythonhosted.org/packages/0d/1c/73e719955c59b8e424d015ab450f51c0af856ae46ea2da83eba51cc88de1/setuptools-81.0.0.tar.gz"
+    sha256 "487b53915f52501f0a79ccfd0c02c165ffe06631443a886740b91af4b7a5845a"
   end
 
   resource "six" do
@@ -244,13 +244,13 @@ class Mycli < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/27/89/4b0001b2dab8df0a5ee2787dcbe771de75ded01f18f1f8d53dedeea2882b/tqdm-4.67.2.tar.gz"
-    sha256 "649aac53964b2cb8dec76a14b405a4c0d13612cb8933aae547dd144eacc99653"
+    url "https://files.pythonhosted.org/packages/09/a9/6ba95a270c6f1fbcd8dac228323f2777d886cb206987444e4bce66338dd4/tqdm-4.67.3.tar.gz"
+    sha256 "7d825f03f89244ef73f1d4ce193cb1774a8179fd96f31d7e1dcde62092b960bb"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/c2/62/a7c072fbfefb2980a00f99ca994279cb9ecf310cb2e6b2a4d2a28fe192b3/wcwidth-0.5.3.tar.gz"
-    sha256 "53123b7af053c74e9fe2e92ac810301f6139e64379031f7124574212fb3b4091"
+    url "https://files.pythonhosted.org/packages/35/a2/8e3becb46433538a38726c948d3399905a4c7cabd0df578ede5dc51f0ec2/wcwidth-0.6.0.tar.gz"
+    sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
   end
 
   def install
