@@ -16,8 +16,9 @@ class Avfs < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "81825d0ffa76826644f47b69036175d85182751c891a0fcb06e27a8dd1a09a50"
-    sha256 x86_64_linux: "44c9d1451dd67af972b90f625e38f9a48b089dbfbbf2b76b4d2e6ac668e61eb5"
+    rebuild 1
+    sha256 arm64_linux:  "673d7ce1b1e9df7811bb2d504b62f32e543f8781e1e75f8c16494011671abff2"
+    sha256 x86_64_linux: "595c36f4676d448414a2e25606758c50a5cadf673f5d3fbd49d2e9e5dbaf1077"
   end
 
   depends_on "pkgconf" => :build
@@ -25,7 +26,10 @@ class Avfs < Formula
   depends_on "libfuse@2"
   depends_on :linux # on macOS, requires closed-source macFUSE
   depends_on "xz"
-  depends_on "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--disable-silent-rules",

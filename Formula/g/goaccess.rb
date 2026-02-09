@@ -4,7 +4,6 @@ class Goaccess < Formula
   url "https://tar.goaccess.io/goaccess-1.9.4.tar.gz"
   sha256 "107d5a3cb186e6e7a8ac684a88d21a17884f128cb0bc4a4a53696145bb39373d"
   license "MIT"
-  head "https://github.com/allinurl/goaccess.git", branch: "master"
 
   livecheck do
     url "https://goaccess.io/download"
@@ -22,25 +21,29 @@ class Goaccess < Formula
     sha256 x86_64_linux:  "3b8b7b44e55f4f4e5a138ae1bf601478753a15eb0f173baab2271c68723c73c7"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "gettext"
+  head do
+    url "https://github.com/allinurl/goaccess.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "gettext" => :build
+  end
+
   depends_on "libmaxminddb"
-  depends_on "tokyo-cabinet"
 
   uses_from_macos "ncurses"
 
-  def install
-    ENV.append_path "PATH", Formula["gettext"].bin
-    system "autoreconf", "--force", "--install", "--verbose"
+  on_macos do
+    depends_on "gettext"
+  end
 
-    args = %W[
+  def install
+    args = %w[
       --enable-utf8
-      --enable-tcb=btree
       --enable-geoip=mmdb
-      --with-libintl-prefix=#{Formula["gettext"].opt_prefix}
     ]
 
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system "./configure", *args, *std_configure_args
     system "make", "install"
   end

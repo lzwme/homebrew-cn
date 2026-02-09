@@ -121,19 +121,20 @@ class Copyparty < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/copyparty --version")
 
-    require "pty"
-
+    (testpath/"testfile").write "homebrew"
+    logfile = testpath/"log.txt"
     port = free_port
-    PTY.spawn(bin/"copyparty", "-q", "-p", port.to_s, "-lo", testpath/"log.txt") do |_r, w, pid|
-      sleep 3
-      w.close
+    pid = spawn(bin/"copyparty", "-q", "-p", port.to_s, "-lo", logfile)
+
+    begin
+      output = shell_output("curl --silent --retry 5 --retry-connrefused 'localhost:#{port}?ls=t'")
+      assert_match " 8  testfile", output
     ensure
       Process.kill "TERM", pid
       Process.wait pid
     end
 
-    assert_path_exists testpath/"log.txt"
-    output = File.read(testpath/"log.txt")
-    assert_match "listening @ [::]:#{port}", output
+    assert_path_exists logfile
+    assert_match "listening @ [::]:#{port}", logfile.read
   end
 end

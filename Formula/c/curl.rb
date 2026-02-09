@@ -8,7 +8,7 @@ class Curl < Formula
   mirror "http://fresh-center.net/linux/www/legacy/curl-8.18.0.tar.bz2"
   sha256 "ffd671a3dad424fb68e113a5b9894c5d1b5e13a88c6bdf0d4af6645123b31faf"
   license "curl"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://curl.se/download/"
@@ -16,12 +16,12 @@ class Curl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0010096e5411d8db05ec17625068aa0fec40aee224e41bfe1eb8b8ce8c1e2442"
-    sha256 cellar: :any,                 arm64_sequoia: "d073691913a4a377d1c3d2d94e81d4e4f3ad6c7f87270c8f29be29b9b41c8a0d"
-    sha256 cellar: :any,                 arm64_sonoma:  "1305356a18829ce9c98dcd6a667207df2e6771de4eaf16cfea5de53b5032db3d"
-    sha256 cellar: :any,                 sonoma:        "214d8087142f91f4875aa422d78a7bc869174a3109579c231539f0332a360d3f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa419134f3e7c17e56f6c712fb99ddbf2bfe01849618ab2a6c05559937398df3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c46c4970a7b53ffe0ca5a488233dcb31eea0fd96066c315d7fd04e125205c470"
+    sha256 cellar: :any,                 arm64_tahoe:   "48707c8f48875dba2094a3d8ebec5b0440382a0fec2c032ce8f5f7e3090c2963"
+    sha256 cellar: :any,                 arm64_sequoia: "f4abfd17ff0f3a507ab2436e1d9415f2f0ed49db2b764a7428b505ff81973cdf"
+    sha256 cellar: :any,                 arm64_sonoma:  "56dc2fef6a1290fddf0d2613979d23ffc24e4d39d71d6193874eecc1ffe946fe"
+    sha256 cellar: :any,                 sonoma:        "a0027833d5cc65535ad7441b716ef0a84373fd4a6e0d2cb7276b610a1a884b8a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "605e87afaf7f589f227c9eab7574c3e7913d5a6eb8dea954230023fb1baceb5b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fda5084a92a23173877cb7c4bbae01bcf9e8e9eb951b1612b8d2a0798f9c591"
   end
 
   head do
@@ -45,10 +45,13 @@ class Curl < Formula
 
   uses_from_macos "krb5"
   uses_from_macos "openldap"
-  uses_from_macos "zlib"
 
   on_system :linux, macos: :monterey_or_older do
     depends_on "libidn2"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
@@ -129,8 +132,8 @@ class Curl < Formula
     assert_path_exists testpath/"test.pem"
     assert_path_exists testpath/"certdata.txt"
 
-    with_env(PKG_CONFIG_PATH: lib/"pkgconfig") do
-      system "pkgconf", "--cflags", "libcurl"
-    end
+    ENV["PKG_CONFIG_PATH"] = lib/"pkgconfig"
+    ENV.append_path "PKG_CONFIG_PATH", Formula["zlib-ng-compat"].lib/"pkgconfig" unless OS.mac?
+    system "pkgconf", "--cflags", "libcurl"
   end
 end

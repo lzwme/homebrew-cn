@@ -6,22 +6,23 @@ class AddDeterminism < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eeb3e62ac092a45d7c80ad6028866c21e53dd67deca07cd858c60ca08b605115"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c1fcd780d6cd60bb5b5a87a9034396d1fc7e389fbfb162b0bc0133398fcb5e7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32e47defa47bb9c60faa4590ff747249d0a7a137df8a28f25385ace015f6e407"
-    sha256 cellar: :any_skip_relocation, sonoma:        "535ba04c2c5a2252676dcfd043ede6509ed2ed8d982ff3fea3d944d1d51c3aea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8320195d668c1822ed3c0d9a9be244f7e022be0812d318339cbcba1009125cc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcd9b16144899992dbafb28d162ad3796002fe605749650292c46057c7952ced"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e08437b35c45a7bdcff8b5be9a89c78b6291180dbdf2f8a5f35f31fcba1f9038"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56b74ec88c63286d1070ec90e1a3d9d113e58725788dec4eedac9671dff0b989"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8717e88a79b2578cc54556067082c02211042705b5609ee142a047ab80d738dd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9a8b414a82271c69f2d31bc067ba7d089ea93aeadd788279887b869c04d87a47"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bdb0959fa422e0da1beb136dea3031af3347e24a8c4dd431f1a51e9b23ed7d96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "533ad581a42ceac9ec2d0e483d023e24e06998776a517836d299eab3f06295a1"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   uses_from_macos "llvm" => :build
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "libselinux"
+    depends_on "zlib-ng-compat"
   end
 
   def install

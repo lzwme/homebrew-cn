@@ -20,14 +20,18 @@ class Rmw < Formula
     sha256 x86_64_linux:  "3a5eab29ba4ed0ef73d00edf9e33fb2bd424d775973cfaed388360dca1938686"
   end
 
+  depends_on "gettext" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "canfigger"
-  depends_on "gettext"
   # Slightly buggy with system ncurses
   # https://github.com/theimpossibleastronaut/rmw/issues/205
   depends_on "ncurses"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "meson", "setup", "build", "-Db_sanitize=none", *std_meson_args

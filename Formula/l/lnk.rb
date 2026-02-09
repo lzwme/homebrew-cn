@@ -6,12 +6,13 @@ class Lnk < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6bdfa814f7e2cb0beca968390b851594778eac8acbd4094d3b24c89ca2fa9079"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6bdfa814f7e2cb0beca968390b851594778eac8acbd4094d3b24c89ca2fa9079"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6bdfa814f7e2cb0beca968390b851594778eac8acbd4094d3b24c89ca2fa9079"
-    sha256 cellar: :any_skip_relocation, sonoma:        "57d415d120c7491ba3360354bdceab4017e3f4f15708f84bd7d620ca60f2f99e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4a69b32d91349e951882b718b8df5efb2645ffbabaceafe676398eb970fe8e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76b53749911e3b1c28addc7e4588afbe0b9abfbaadc05fdc57b451db5ec6b0b4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "20085bbd583ce52186cbec36c213bc4ae6aae60fc66ea4a24e0af4e01b0ed8ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20085bbd583ce52186cbec36c213bc4ae6aae60fc66ea4a24e0af4e01b0ed8ed"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20085bbd583ce52186cbec36c213bc4ae6aae60fc66ea4a24e0af4e01b0ed8ed"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d6a2b0a711fbddb9a493a4dee9f6b82bf13ff199fa106b2e307c00a703b64ef6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3dbb89d967f4233593f2fe396038b5f50f247a4c995ba793234ca32ec3e85e63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f9ce81bb0758298bb85d26cec1b34eda869dc263d36d554944dced3a40aa467"
   end
 
   depends_on "go" => :build
@@ -23,6 +24,8 @@ class Lnk < Formula
       -X main.buildTime=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:)
+
+    generate_completions_from_executable(bin/"lnk", shell_parameter_format: :cobra)
   end
 
   test do

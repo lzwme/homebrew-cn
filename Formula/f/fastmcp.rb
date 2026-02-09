@@ -416,26 +416,31 @@ class Fastmcp < Formula
     pid = spawn bin/"fastmcp", "run", "server.py:mcp", "--transport=http", "--port=#{port}", "--no-banner"
 
     begin
-      sleep 5
-      sleep 5 if OS.mac? && Hardware::CPU.intel?
-      system "curl", "-sX", "POST", "http://127.0.0.1:#{port}/mcp",
-              "-H", "Content-Type: application/json",
-              "-H", "Accept: text/event-stream, application/json",
-              "-o", testpath/"response.txt",
-              "-d", <<~EOS
-                {
-                  "jsonrpc": "2.0",
-                  "id": "1",
-                  "method": "tools/call",
-                  "params": {
-                    "name": "add",
-                    "arguments": {"a": 1, "b": 2}
-                  }
-                }
-              EOS
+      data = <<~JSON
+        {
+          "jsonrpc": "2.0",
+          "id": "1",
+          "method": "tools/call",
+          "params": {
+            "name": "add",
+            "arguments": {"a": 1, "b": 2}
+          }
+        }
+      JSON
+
+      system "curl", "--silent",
+                     "--retry", "5",
+                     "--retry-connrefused",
+                     "--request", "POST",
+                     "--header", "Content-Type: application/json",
+                     "--header", "Accept: text/event-stream, application/json",
+                     "--output", testpath/"response.txt",
+                     "--data", data,
+                     "http://127.0.0.1:#{port}/mcp"
       assert_match '{"result":3}', (testpath/"response.txt").read
     ensure
       Process.kill "TERM", pid
+      Process.wait pid
     end
   end
 end

@@ -10,8 +10,6 @@ class Gpredict < Formula
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 arm64_tahoe:   "1adb214c6bebdb5a99c2482d613893e71fba7932a2006907bad449fa01e50659"
     sha256 arm64_sequoia: "e9136ead45ee0092801c3cf6d039609e0a704dc6f43077641ebdbd4996c48535"
@@ -29,13 +27,13 @@ class Gpredict < Formula
     depends_on "libtool" => :build
   end
 
+  depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "pkgconf" => :build
 
   depends_on "adwaita-icon-theme"
   depends_on "cairo"
   depends_on "gdk-pixbuf"
-  depends_on "gettext"
   depends_on "glib"
   depends_on "goocanvas"
   depends_on "gtk+3"
@@ -47,6 +45,7 @@ class Gpredict < Formula
 
   on_macos do
     depends_on "at-spi2-core"
+    depends_on "gettext"
     depends_on "harfbuzz"
   end
 

@@ -22,16 +22,20 @@ class LibvirtGlib < Formula
     sha256 x86_64_linux:  "9e5c86856ddc5d3b7cd2589a96289a4d8762095010a59ee6b413e50ca2c28752"
   end
 
+  depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
   depends_on "intltool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "gettext"
   depends_on "glib"
   depends_on "libvirt"
 
   uses_from_macos "libxml2"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "meson", "setup", "builddir", "-Dintrospection=enabled", *std_meson_args

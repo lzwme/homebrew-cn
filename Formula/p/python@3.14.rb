@@ -4,6 +4,7 @@ class PythonAT314 < Formula
   url "https://www.python.org/ftp/python/3.14.3/Python-3.14.3.tgz"
   sha256 "d7fe130d0501ae047ca318fa92aa642603ab6f217901015a1df6ce650d5470cd"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -11,14 +12,14 @@ class PythonAT314 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "075647f45272603019f093c78ef0b2e967a0ebdc5dfde4a2ec3946baf5374475"
-    sha256 arm64_sequoia: "b98def8509aab86a6da62d2237d1b0e57a37e411ff4486fddf7253c2b133f3e3"
-    sha256 arm64_sonoma:  "0ff828aacd36d8761327a7d1b98373a18b4daa4b0e63ec00c1f5d9e63472460c"
-    sha256 tahoe:         "a5f23f9c1ae41f15f0c8ae8e1831b380f206d386854742d7d2d7cc550229a459"
-    sha256 sequoia:       "196868659b90d13e5dc342ed841663587a77c3848063267675cb6a179a8d793d"
-    sha256 sonoma:        "abed8e17424b95bd8eef1afc3deedaf886be348b0d7fb6d336718e8a90660938"
-    sha256 arm64_linux:   "e5aab2cedfc32b11bf8606819b4372dad66091a34c15fb1a304d06dc5b4872ce"
-    sha256 x86_64_linux:  "4b9a9f432d3e102008692395a9313a32f785b171a2847eee37295c622f7dfc15"
+    sha256 arm64_tahoe:   "80a428380c870eb928b4818d6f2637cbef24402834d5284dc40e2d9a2f9b8c6f"
+    sha256 arm64_sequoia: "d580fc90bcef4f91d5753508210dee01ec42bb0524cafc67b1f5e2d5489821c3"
+    sha256 arm64_sonoma:  "967505665b5b9b3939c2881917b3b039751dab0f4508d18f7437e7389baf349b"
+    sha256 tahoe:         "3cc48ceb42147fd7b384ea0c9a970d1acaca1bf48e50bba9812e71b0af0774bd"
+    sha256 sequoia:       "c5a513e1fa9174f99b2a3c597e41ce89c9014cf3143224f6fc2b4dde55d01546"
+    sha256 sonoma:        "668504f52bb7d9e7f6450eaf4818b078af2f1070e144994a729004afd2cde270"
+    sha256 arm64_linux:   "d212a5efb3c03cef2bad9e21da98ebfc8e8237c6afdf91ecbf2a3a93314a108a"
+    sha256 x86_64_linux:  "17a301e694a8bd3391a3f90ecff70f8e9b5f934d004e9981027d4ec6ddc29da7"
   end
 
   depends_on "pkgconf" => :build
@@ -34,10 +35,10 @@ class PythonAT314 < Formula
   uses_from_macos "libffi"
   uses_from_macos "ncurses"
   uses_from_macos "unzip"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "berkeley-db@5"
+    depends_on "zlib-ng-compat"
   end
 
   link_overwrite "bin/idle3"

@@ -18,8 +18,11 @@ class NagiosPlugins < Formula
     sha256 x86_64_linux:   "dd70e314dbf872a7f0e54bc7364a3c86ed14b8ebe621825512a6421df14f15eb"
   end
 
-  depends_on "gettext"
   depends_on "openssl@3"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   on_linux do
     depends_on "bind"
@@ -29,15 +32,13 @@ class NagiosPlugins < Formula
 
   def install
     args = %W[
-      --disable-dependency-tracking
-      --prefix=#{libexec}
       --libexecdir=#{libexec}/sbin
       --with-openssl=#{Formula["openssl@3"].opt_prefix}
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args(prefix: libexec)
     system "make", "install"
-    sbin.write_exec_script Dir["#{libexec}/sbin/*"]
+    sbin.write_exec_script libexec.glob("sbin/*")
   end
 
   def caveats

@@ -30,9 +30,7 @@ class Ldapvi < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "xz" => :build # Homebrew bug. Shouldn't need declaring explicitly.
 
-  depends_on "gettext"
   depends_on "glib"
   depends_on "openssl@3"
   depends_on "popt"
@@ -41,6 +39,10 @@ class Ldapvi < Formula
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
   uses_from_macos "openldap"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   # These patches are applied upstream but release process seems to be dead.
   # http://www.lichteblau.com/git/?p=ldapvi.git;a=commit;h=256ced029c235687bfafdffd07be7d47bf7af39b

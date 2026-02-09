@@ -7,15 +7,18 @@ class Abpoa < Formula
   head "https://github.com/yangao07/abPOA.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "193726357f31962a176b28e7616fe993acd775b286359c63d6224973c1c939ab"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "689ef67875138bd5e8726b3c6a169fb56878057b07e861062e664c03d4cd7770"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe22809a4dbd7882b8dd3d2d7ce5d556ef59b7b1f9e4c9811b94579c116c4614"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c21b07d695aec084a6b9e64ed5deff172907dbaeaa494b6ddf7dbc3ed41638d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d12ebfc06f1359e96e7975e73832cbcaaadfa7b636df4e90bc7fbd78c52f0a79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "215a8929dea50b7fff307c3950aaaf658ad29a303d8172fe0d24c375b6599e5e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "62321fb97adfd0bb3614e437bb49adfa3a87923aa96a17cb2738675fc9d01da6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d99d2f859cd56d1d06787039c099a3f247f191ac4c35fba6a241a7d396d26ade"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1266cbf22f7d1f8cf4ee44ff06fb11f6ea533b3d82dbc86ade7da9d5ea43a7fa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ebec63c632c528cf0f20b8dab8f10242b0f9f3c10af2c88da5d9c13bba7ba54b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "743f18fd8c925dda50dcdad77fc0364d524971081fd4f9e74c69ddd1cd59072d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99d5004a9b863f7a56b71192b1312a9e462f5c573e0c3753655dd2117bd19a6d"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "make"

@@ -39,6 +39,7 @@ class Swift < Formula
   depends_on xcode: ["14.3", :build]
 
   depends_on "python@3.14"
+  depends_on "zstd"
 
   uses_from_macos "llvm" => :build
   uses_from_macos "rsync" => :build
@@ -53,7 +54,6 @@ class Swift < Formula
     depends_on "lld" => :build
     depends_on "python-setuptools" => :build # for distutils in lldb build
     depends_on "util-linux"
-    depends_on "zstd" # implicit via curl; not important but might as well
 
     # Doesn't have to be in sync but does need to be no older than X.(Y - 1).0
     resource "bootstrap" do

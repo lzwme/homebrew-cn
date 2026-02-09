@@ -9,13 +9,13 @@ class Afflib < Formula
   ]
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "9a772d0a336e905a1767e3c586d84debc611e6454ededab652796aad2e090228"
-    sha256 cellar: :any,                 arm64_sequoia: "a9d9c1f61cb011a1d6e6821f0580ba1f3c954678589830fe09a11f4d51047d73"
-    sha256 cellar: :any,                 arm64_sonoma:  "d3c16b4ecf8dc8e145e5cdce928ab097d01aed19aeebe7b913d3bd91bd40fe8e"
-    sha256 cellar: :any,                 sonoma:        "2f300b83d63ae1edf6de56181cbf2c725a2b04454c151be873b8edbd8285ae3e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c116c26b668c185c8b717071313ea2011c0ed75727e7e44f13ef5344dfd38f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cb7251a3abe994ef7fcebe3066738bd94b1d4ea84e35ce74f1a5bef97a42877"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "16a9e68d5a412285777fd4892d401d98e5cde7d82544ebc532289361ceab286b"
+    sha256 cellar: :any,                 arm64_sequoia: "6874090595c0aa86a9d1534f5842aa4e54dbf7f2ee950e9dd20d37bd2a7dd8e1"
+    sha256 cellar: :any,                 arm64_sonoma:  "d51a9f8798333e8e76aa4b16646f86fc5a56febd4d18a874dac55c32302efdba"
+    sha256 cellar: :any,                 sonoma:        "393511fd03c96d20bcd82e9cbb9280d03b741f5ffaa757cbcde4acfd51231566"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db1e2931a3dfa168f074d44393da3a90c98c700b422af6446bdf7b9b6ced50bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fcf3bc9195cbafae0f9e28d2c4c80dc6700238b25f03e766e89d6867a14afe3"
   end
 
   depends_on "autoconf" => :build
@@ -27,7 +27,10 @@ class Afflib < Formula
 
   uses_from_macos "curl"
   uses_from_macos "expat"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def python3
     which("python3.14")

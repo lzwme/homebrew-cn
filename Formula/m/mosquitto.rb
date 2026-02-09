@@ -14,12 +14,13 @@ class Mosquitto < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "33020fe3eb26e4ff7c4ba0e65e5175ed6750cda378419a24c8be010c5dd901c6"
-    sha256 cellar: :any,                 arm64_sequoia: "87e4b4f7e6c7b4b69a9fac130b1065b1596958d373917548648514ea24241d86"
-    sha256 cellar: :any,                 arm64_sonoma:  "ead707b92cef90df7108714019e6c58611ee8cee1852e35499a9edf70518394e"
-    sha256 cellar: :any,                 sonoma:        "829f489c8e3c9969a61751fafcd44a4120b2dc79a175438a0127c39074a9e205"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27e1296568858dd80f9a3bfb3f2e68bd46f467076ac9b889464f76e5cd883aca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94e7362a745f5c479d285f11891325727cacd987369cd9847fcbe332820ee65d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "2d9e7cba8a63477ccc5dcaa4638ac3256235b763f2464ae654d5142e682f8ca8"
+    sha256 cellar: :any,                 arm64_sequoia: "8cfee425686221080e66dee41772eaa97841b2695a2febc29b7db93456d189ae"
+    sha256 cellar: :any,                 arm64_sonoma:  "245d67c69be4c318ec9f485f3008acf071b3d9361fcf68353a0064c66e999397"
+    sha256 cellar: :any,                 sonoma:        "bfa3f63d186ff50db4e7f8571c008b83381710225e0ac96a1398a92f168a5e4f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7faa803fc0bf714081deffa4d0ea923cc9bc20827ed37f29fae2ad0ea9bdcf05"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "978f73f5fa7ecb16d00fc633cca25d4a991af7ecfdb98b79e5900a2b75a055b2"
   end
 
   depends_on "cmake" => :build
@@ -30,6 +31,7 @@ class Mosquitto < Formula
 
   uses_from_macos "libxslt" => :build
   uses_from_macos "libedit"
+  uses_from_macos "sqlite"
 
   on_linux do
     depends_on "util-linux"
@@ -38,7 +40,7 @@ class Mosquitto < Formula
   def install
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
-      -DWITH_PLUGINS=OFF
+      -DWITH_PLUGINS=ON
       -DWITH_WEBSOCKETS=ON
       -DWITH_TESTS=OFF
     ]

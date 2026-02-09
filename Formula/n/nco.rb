@@ -20,14 +20,18 @@ class Nco < Formula
     depends_on "automake" => :build
   end
 
+  depends_on "gettext" => :build
   depends_on "openjdk" => :build # needed for antlr2
-  depends_on "gettext"
   depends_on "gsl"
   depends_on "netcdf"
   depends_on "texinfo"
   depends_on "udunits"
 
   uses_from_macos "flex" => :build
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   resource "antlr2" do
     url "https://ghfast.top/https://github.com/nco/antlr2/archive/refs/tags/antlr2-2.7.7-1.tar.gz"

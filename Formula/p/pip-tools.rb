@@ -6,11 +6,11 @@ class PipTools < Formula
   url "https://files.pythonhosted.org/packages/c4/79/d149fb40bc425ad9defcb8ff73c65088bbc36a84b1825e035397d1c40624/pip_tools-7.5.2.tar.gz"
   sha256 "2d64d72da6a044da1110257d333960563d7a4743637e8617dd2610ae7b82d60f"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https://github.com/jazzband/pip-tools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "91be258c6efe219cb5760d33ce600d82de6e5e3d85b0e28e23a8070e3006da32"
+    sha256 cellar: :any_skip_relocation, all: "0eb02ece1b1550f593f483c2cad681aca253a1abbf0b11addad5ecddd2c6ebd5"
   end
 
   depends_on "python@3.14"
@@ -32,14 +32,14 @@ class PipTools < Formula
     sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
-  resource "pip" do
-    url "https://files.pythonhosted.org/packages/fe/6e/74a3f0179a4a73a53d66ce57fdb4de0080a8baa1de0063de206d6167acc2/pip-25.3.tar.gz"
-    sha256 "8d0538dbbd7babbd207f261ed969c65de439f6bc9e5dbd3b3b9a77f25d95f343"
-  end
-
   resource "platformdirs" do
     url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
     sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
+  end
+
+  resource "pip" do
+    url "https://files.pythonhosted.org/packages/fe/6e/74a3f0179a4a73a53d66ce57fdb4de0080a8baa1de0063de206d6167acc2/pip-25.3.tar.gz"
+    sha256 "8d0538dbbd7babbd207f261ed969c65de439f6bc9e5dbd3b3b9a77f25d95f343"
   end
 
   resource "pyproject-hooks" do
@@ -48,8 +48,8 @@ class PipTools < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/76/95/faf61eb8363f26aa7e1d762267a8d602a1b26d4f3a1e758e92cb3cb8b054/setuptools-80.10.2.tar.gz"
-    sha256 "8b0e9d10c784bf7d262c4e5ec5d4ec94127ce206e8738f29a437945fbc219b70"
+    url "https://files.pythonhosted.org/packages/0d/1c/73e719955c59b8e424d015ab450f51c0af856ae46ea2da83eba51cc88de1/setuptools-81.0.0.tar.gz"
+    sha256 "487b53915f52501f0a79ccfd0c02c165ffe06631443a886740b91af4b7a5845a"
   end
 
   resource "wheel" do

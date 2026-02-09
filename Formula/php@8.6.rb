@@ -1,9 +1,9 @@
 class PhpAT86 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/php/php-src/archive/06dac62747f0819ebc110fd6ab4a90a0229bd2b6.tar.gz?commit=06dac62747f0819ebc110fd6ab4a90a0229bd2b6"
+  url "https://ghfast.top/https://github.com/php/php-src/archive/96be28cb0e1869f9c7ddf71d948232a2ab76c63c.tar.gz?commit=96be28cb0e1869f9c7ddf71d948232a2ab76c63c"
   version "8.6.0"
-  sha256 "8801480c3fc7241f6952dfb5d01c2bc61d2e4a32ca31bb6d539e7b3945459a35"
+  sha256 "eded55c4df4b6df2a7b7564c6742187a8be4c0657c8ad0b571c4db611a2da139"
   license "PHP-3.01"
   license all_of: [
     "PHP-3.01",
@@ -33,13 +33,13 @@ class PhpAT86 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 23
-    sha256 arm64_tahoe:   "d1ae4c7f70924425da44a7cda1c9ee6b3234f0f5d41863b178c86d4288c2f208"
-    sha256 arm64_sequoia: "5476d20ad5b1378d46f99518e9e31f80d5a181723dd42fc2c7b8c57f1818976f"
-    sha256 arm64_sonoma:  "4bdad6738206970ad26d64ba36a0718fed2981416095e396082d2b9d8d5679b6"
-    sha256 sonoma:        "1f2569611665b42195cc4170824115cdf285172509e8a2d99a4f352d5ea25520"
-    sha256 arm64_linux:   "9af7ac842cbb8ba5cd5e3de59f331e1446394bfb2fab5528e0d4db11426f761d"
-    sha256 x86_64_linux:  "37d9640686f58a637fa2ad27c115122299649a1de5647b0757e0ea277cf91313"
+    rebuild 25
+    sha256 arm64_tahoe:   "645c702c71e19efcdd017106590320d80a4a5b7fc0a236adb48a655820de400c"
+    sha256 arm64_sequoia: "6c3570ee233eb0db321a4820d44c4644ed42ae566780606e3f5020f7da544813"
+    sha256 arm64_sonoma:  "18495039dca15f5abebb5538c1af022a2fc06e349698e4cc24732c778ad74dc7"
+    sha256 sonoma:        "549b5b222a26c5bb20d5c030dd2c60e28d9cbaedd380bde99445f0107e82b107"
+    sha256 arm64_linux:   "2da2680c5c6961fb0df32d1d1f006f7e33d48cb048b19a0d951c04fbe22dc2b5"
+    sha256 x86_64_linux:  "e2aa4872879d64e6006f5f1e4568a17352ab74a81f13b2a4b46dea664f5d9ff3"
   end
 
   keg_only :versioned_formula
@@ -76,10 +76,13 @@ class PhpAT86 < Formula
   uses_from_macos "libffi"
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install

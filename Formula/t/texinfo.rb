@@ -22,14 +22,11 @@ class Texinfo < Formula
   uses_from_macos "perl"
 
   on_linux do
-    depends_on "gettext"
     depends_on "libunistring"
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-install-warnings",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-install-warnings", *std_configure_args
     system "make", "install"
     doc.install Dir["doc/refcard/txirefcard*"]
   end

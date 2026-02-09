@@ -33,7 +33,7 @@ class Vim < Formula
     sha256 x86_64_linux:  "46b2beab009da10ef090c5f32f42f52504866b29ea008c251ae2402f7c7016e6"
   end
 
-  depends_on "gettext"
+  depends_on "gettext" => :build
   depends_on "libsodium"
   depends_on "lua"
   depends_on "ncurses"
@@ -42,15 +42,16 @@ class Vim < Formula
 
   uses_from_macos "perl"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   on_linux do
     depends_on "acl"
   end
 
-  conflicts_with "ex-vi",
-    because: "vim and ex-vi both install bin/ex and bin/view"
-
-  conflicts_with "macvim",
-    because: "vim and macvim both install vi* binaries"
+  conflicts_with "ex-vi", because: "vim and ex-vi both install bin/ex and bin/view"
+  conflicts_with "macvim", because: "vim and macvim both install vi* binaries"
 
   def install
     ENV.prepend_path "PATH", Formula["python@3.14"].opt_libexec/"bin"

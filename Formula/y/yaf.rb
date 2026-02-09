@@ -13,13 +13,13 @@ class Yaf < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "7201b08b55d9bce81c4f67e08eae208fdb9f5f65e638b59d129a52747b3bd0d1"
-    sha256 cellar: :any,                 arm64_sequoia: "3edc90e7654f43e5e6825a43cf264b5551b0e32c06e3b2bc92674822204d6a6b"
-    sha256 cellar: :any,                 arm64_sonoma:  "54b00a860afdff9c4cc7cd27822bfb6c7a7e16ec78637b6a811b430074ebac3e"
-    sha256 cellar: :any,                 sonoma:        "cb777e8ff186f4f52d9da9becefea457f54890f6445a4b1ba6762144d6793e10"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b5973aac45d6f926fefcb8326fcfe8b7aaecebb66f0ec19d5725ed12b6844e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9502982332be786abd5420bca28a7e70d3d2180cc81b74f40844aceadabf5a76"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "756afdea15655c6538c81f170dd9db318293eefa96ab01663530151fb5292536"
+    sha256 cellar: :any,                 arm64_sequoia: "d8c644685f9c5e24e5d66b5678044314cf1c9ebce0910f1cc6c7b39ba8360d88"
+    sha256 cellar: :any,                 arm64_sonoma:  "d7c935cb32c72ea3e7d5e59cc998cc4c2fca92010447110dc6a7bede3e290f6d"
+    sha256 cellar: :any,                 sonoma:        "4b4a407d6be6b4e06a9a2e6ed3d282761d8ee2e41ec0521deecdae25537fc705"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4020382f47f691a4c43be0767d52e1be8bff6cec7cef443b5d1bab204d48092f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b884b07695ba889516f481a2025328b2f11b94529f4c608288e1da05bc3b1309"
   end
 
   depends_on "pkgconf" => :build
@@ -28,11 +28,14 @@ class Yaf < Formula
   depends_on "libtool"
 
   uses_from_macos "libpcap"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
     depends_on "openssl@3"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install

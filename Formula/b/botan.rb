@@ -12,12 +12,13 @@ class Botan < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "caa17b3e22c246e36df507be44434ac7371e5301191d15d91742312358da9163"
-    sha256 arm64_sequoia: "48c59b05de2d484662de39f1bf8f0fe7d129060a55a01bbeaaad26b28ea9abae"
-    sha256 arm64_sonoma:  "271bdde1e30dd9eb25b2b1686a678a3cf54146dc23918717fb6aa9b059e79dd3"
-    sha256 sonoma:        "d402b6fdc08d1d6559e4265cbcb334d03683687fe97d70614da4046f79e4e63c"
-    sha256 arm64_linux:   "343cecee5bf20718147ac5ca563034ebe2e311cd9e8f40c1094ed90e37e90794"
-    sha256 x86_64_linux:  "ccaba762b00a0ed569fad4dfd5312b63110c00e6fbe7b97af13accf64c77ab8b"
+    rebuild 1
+    sha256 arm64_tahoe:   "32f2c66243cdfd507fbd1b28768e647716f6f77decb9b1922af09263eb8f2889"
+    sha256 arm64_sequoia: "1b1d2290e77fe91f98703ff2dd9effd39b3b1fe5b327f5db0adf565eabf32608"
+    sha256 arm64_sonoma:  "61857dcd72fb2dcf2d037b463de04651db31cda9c4489d0221603afed58555f1"
+    sha256 sonoma:        "1d76b19d3422e05b369d9c2def10133f445cbe9e2a7c8f748865f8e62f7febc5"
+    sha256 arm64_linux:   "3ba7b0588137b5f257fb83732be8f06d977c85223c23da074ef8c3a997783fb8"
+    sha256 x86_64_linux:  "21e6d3e5fe931d7a421faca93ce4b5688380121b103c682f6335e46dbfab554c"
   end
 
   depends_on "pkgconf" => :build
@@ -26,10 +27,13 @@ class Botan < Formula
   depends_on "sqlite"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "llvm" if DevelopmentTools.clang_build_version <= 1400
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :clang do

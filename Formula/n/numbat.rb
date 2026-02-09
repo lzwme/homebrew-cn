@@ -1,18 +1,18 @@
 class Numbat < Formula
   desc "Statically typed programming language for scientific computations"
   homepage "https://numbat.dev/"
-  url "https://ghfast.top/https://github.com/sharkdp/numbat/archive/refs/tags/v1.22.0.tar.gz"
-  sha256 "db5d9c2c0ec113f6773c22e7c09c51c08a62a196ca28a2008ff11546c77297bb"
+  url "https://ghfast.top/https://github.com/sharkdp/numbat/archive/refs/tags/v1.23.0.tar.gz"
+  sha256 "578c0ff6cb80098baca84042a104644758907002e4fc7ba839a1266be7f4af28"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/sharkdp/numbat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "36a46f78882d51a4e80b85dcfcbc51b291e2be5ac56e2affe9e14eb889262243"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a04f4871ef1b5d49dec71a879c30235996175120f613c117247fa77ff38dbc1c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf0d3f92ce3c472a6ef6e911f894dd3d56415e7ba0a9cc063b01e04425ed6801"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0e0286914569ad1af581e121b290384b12af2235d6ca829e3000448a978936cd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad8e3ff1ed58c498745b9fbf9d1d1b94f953d016d5072f567cb9be50b9f2f59f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b078ee0bd2f73b6d356ee395d787f03094c565bc77638ca34da807eeb0316205"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42efb059afe4151561edd4ca071bdebec12e1ad54ebff646cc9b3019fbcbfe57"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3cedcaca702f1509f2806d177feb601003d8d7455f4b2a83cfe3a83457450ac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3889a908520723c35e3c597318aedcaf46d1ee10d7411b29fc77d5937170a1ff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "436601d4daa6f8d8bac24dda906ef04a621cfaaca1eced925b410d340988c976"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "04be8a287921f3add7d40f7ab38bc97f22b0966dce8d6915f2e5934222ac36f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cf98475c54b7074d9b5b964e1640d3477bf4db053768680be189901ba78ee94"
   end
 
   depends_on "rust" => :build

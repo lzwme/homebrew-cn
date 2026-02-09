@@ -21,9 +21,9 @@ class Grsync < Formula
     sha256 x86_64_linux:   "e69fa72c81515369642531c0e5fc7febe6953d082721eb5b1e839c0f7a72a597"
   end
 
+  depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "pkgconf" => :build
-  depends_on "gettext"
   depends_on "glib"
   depends_on "gtk+3"
   depends_on "pango"
@@ -34,6 +34,7 @@ class Grsync < Formula
     depends_on "at-spi2-core"
     depends_on "cairo"
     depends_on "gdk-pixbuf"
+    depends_on "gettext"
     depends_on "harfbuzz"
   end
 

@@ -72,13 +72,17 @@ class Neovim < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "gettext"
+  depends_on "gettext" => :build
   depends_on "libuv"
   depends_on "lpeg"
   depends_on "luajit"
   depends_on "luv"
   depends_on "unibilium"
   depends_on "utf8proc"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     if build.head?

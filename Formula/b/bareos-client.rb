@@ -11,12 +11,13 @@ class BareosClient < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c8712148ed1a04070756deaf5266fd990d2926366299ac8b1712dba76d66aab3"
-    sha256 arm64_sequoia: "ddab504b2ee507681e170cfdae645ea5e827923522ee3ded655562589e8dfea4"
-    sha256 arm64_sonoma:  "693f8cade447a111c1382f61c2eb3916c03911d579409340f7cc9063bc3e648d"
-    sha256 sonoma:        "f52ca53f1c94008645e21a5b33668433d33d28f7862892e0f769a22142a013e2"
-    sha256 arm64_linux:   "8def1e93084de5dbe8c0a16d5926d8ce4572ecb2ca97852bfcc6d927542ad847"
-    sha256 x86_64_linux:  "26d5070cafb1f7c0640991a6a610474da97a82c9a5c4b639e3b227a27642a568"
+    rebuild 1
+    sha256 arm64_tahoe:   "eb822c3f2b822af087a593ac016c35cc341e8c53f73b13b2663da094f8b33927"
+    sha256 arm64_sequoia: "ef70f8b58f69162df709d21edc61cdadd9911171dc5b371c027fac768dcf433c"
+    sha256 arm64_sonoma:  "a14311aa63f112904fdb846a6a1b975aff2d9fdea6fa252d72520be587308a37"
+    sha256 sonoma:        "674339a584e9ffb020789a2b8d89dd526a016d7c1df01fef9b16a0333babdf3d"
+    sha256 arm64_linux:   "227ec3f4d65cc78ad51a3ba45a79afa89fbb9c3c21b8468ad5a6fb931d4b205f"
+    sha256 x86_64_linux:  "a1305f28e94aa481fcbd7735c58357a83ab972f3b0c3b22913e7db30fd9d2957"
   end
 
   depends_on "cli11" => :build
@@ -30,14 +31,13 @@ class BareosClient < Formula
   depends_on "readline"
   depends_on "xxhash"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "gettext"
   end
 
   on_linux do
     depends_on "acl"
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "bacula-fd", because: "both install a `bconsole` executable"

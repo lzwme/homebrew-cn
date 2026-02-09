@@ -23,18 +23,30 @@ class Gom < Formula
     sha256               x86_64_linux:  "469ff80ce89cc419eef6768b5672d25f8f3c557d269d02f0e2554f784da92a47"
   end
 
+  depends_on "gdk-pixbuf" => :build # https://gitlab.gnome.org/GNOME/gom/-/issues/18
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "python@3.14" => :build
-  depends_on "gdk-pixbuf"
-  depends_on "gettext"
   depends_on "glib"
   depends_on "sqlite" # indirect dependency via glib
 
+  # Help find `gdk-pixbuf` as superenv doesn't add dependencies of build dependencies
+  def gdk_pixbuf_add_pkgconfig_paths!
+    deps_set = Set.new
+    Formula["gdk-pixbuf"].recursive_dependencies do |_, dep|
+      Dependency.prune if !dep.required? || deps_set.include?(dep)
+
+      dep_f = dep.to_formula
+      ENV.append_path "PKG_CONFIG_PATH", dep_f.opt_lib/"pkgconfig" if (dep_f.opt_lib/"pkgconfig").exist?
+      ENV.append_path "PKG_CONFIG_PATH", dep_f.opt_share/"pkgconfig" if (dep_f.opt_share/"pkgconfig").exist?
+    end
+  end
+
   def install
     site_packages = prefix/Language::Python.site_packages("python3.14")
+    gdk_pixbuf_add_pkgconfig_paths!
 
     system "meson", "setup", "build", "-Dpygobject-override-dir=#{site_packages}", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

@@ -77,6 +77,7 @@ class RxvtUnicode < Formula
   end
 
   test do
+    ENV["RXVT_SOCKET"] = testpath/"urxvtd-test"
     daemon = spawn bin/"urxvtd"
     sleep 5
     sleep 10 if OS.mac? && Hardware::CPU.intel?

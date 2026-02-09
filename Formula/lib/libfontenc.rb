@@ -1,18 +1,17 @@
 class Libfontenc < Formula
   desc "X.Org: Font encoding library"
   homepage "https://www.x.org/"
-  url "https://xorg.freedesktop.org/archive/individual/lib/libfontenc-1.1.8.tar.xz"
-  sha256 "7b02c3d405236e0d86806b1de9d6868fe60c313628b38350b032914aa4fd14c6"
+  url "https://xorg.freedesktop.org/archive/individual/lib/libfontenc-1.1.9.tar.xz"
+  sha256 "9d8392705cb10803d5fe1d27d236cbab3f664e26841ce01916bbbe430cf273e2"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "42a65ad7c8f1cad68b3b2e9c7df796285467748b0b4712f8223c6be3d3eb8444"
-    sha256 cellar: :any,                 arm64_sequoia: "8626ef261fd6d6a5e46bfdefd7f2ed5f364b1a7972c9b5cbc7de038cb5479474"
-    sha256 cellar: :any,                 arm64_sonoma:  "70449e55e974c4291601719fb9536020039bb3a2834bc8b46ea578d4eb71009a"
-    sha256 cellar: :any,                 sonoma:        "63349d6fc6d5e17a036fd1fa20b0e10170fe3c81bdf41bbcf1668a602fb75dfd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ac0af70244ad21efebbf51b5dc0c9fe0a7f908fd0e733c48185fa316458b7e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "217c0bb17252ce2fbeaf0ca0958bf10fff8a50a7d93fd75e463f5aecbbfba11e"
+    sha256 cellar: :any,                 arm64_tahoe:   "08ad2bfdfb5d488ee3aef88f8f18c08fcbf93f96eb8e611cee542997ceaf3152"
+    sha256 cellar: :any,                 arm64_sequoia: "167dd0c71a50faf0fcb51f03b3e93f2afe059b1e34c7bf14e22d3bec6a86c22f"
+    sha256 cellar: :any,                 arm64_sonoma:  "6b89669fe88e40b68ad42d9c41ec3a89701d60cac1592d53d76a7f023c8f35dc"
+    sha256 cellar: :any,                 sonoma:        "1287de8752c34becfa9e8f7c9b485c4009fa182520304cf51c52530878cb7738"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "588498decf9879a21330a600ccb23fc22f150b8097ec75b3bacc430911259aa1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4091913f2c2f28015d3f9acc97c008d2563b1cd39c70d2da0267f6a4a7a57dd0"
   end
 
   depends_on "font-util" => :build

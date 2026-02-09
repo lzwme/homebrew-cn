@@ -17,11 +17,15 @@ class Nudoku < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "gettext" => :build
   depends_on "pkgconf" => :build
   depends_on "cairo"
-  depends_on "gettext"
 
   uses_from_macos "ncurses"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"

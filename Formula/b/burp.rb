@@ -21,12 +21,13 @@ class Burp < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "ebb55cbcd5d0a9de3b663e009cd4963aa456f921f2aed92be95f7865aed1d607"
-    sha256 arm64_sequoia: "d6849a3d6b12bbd37eee1954a8da80f9826918e4eebd4dde260c1d2f64010a90"
-    sha256 arm64_sonoma:  "d8666ed44c3c211c796589cd9b5f6dac97d1e2634193b6a1a01d84e472d3d050"
-    sha256 sonoma:        "42b34598cd428004ff751be2f5db279d5cb1e36bbc1e48805a0b0d8e5d9cb6be"
-    sha256 arm64_linux:   "d10d8fc59ad7ce487887298aabe8f1d68cfefdbfff43735bbdf5871311dd48ff"
-    sha256 x86_64_linux:  "f5c4f3ffd0c70162456065c5abbdc737dc757bf1b043168f84bfb3b08405c66d"
+    rebuild 1
+    sha256 arm64_tahoe:   "8299d856b7c33e46727a2baeca69c5a99cf072afa966c420d555d2b778ba382b"
+    sha256 arm64_sequoia: "410ffad86ce38295589c03a0fbe7d7825c3be2064056a82834d3607cc6660f1c"
+    sha256 arm64_sonoma:  "605e51882accc26159aacc07dfd50cfb5838fbd991113c412435b569eaae41b4"
+    sha256 sonoma:        "286a00e3a1be4055262eefdbe1250e7d4ca888dde0534c767c0e2b3eb45e47b0"
+    sha256 arm64_linux:   "08d555e3cd1915263f34d05eda67342ed8d83dddfeba72b462ba3f9b967aaada"
+    sha256 x86_64_linux:  "3eed28a4c204464ea71a807e81554b05a12a3aacd71c12ded2e6925ff0c7a0eb"
   end
 
   head do
@@ -47,10 +48,10 @@ class Burp < Formula
 
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "acl"
+    depends_on "zlib-ng-compat"
   end
 
   def install

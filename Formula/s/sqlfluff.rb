@@ -3,17 +3,17 @@ class Sqlfluff < Formula
 
   desc "SQL linter and auto-formatter for Humans"
   homepage "https://docs.sqlfluff.com/"
-  url "https://files.pythonhosted.org/packages/ee/19/6fc25b5fe612f079c744a6253ed31f231dc61fdff9eba778f314de1e6efe/sqlfluff-4.0.0.tar.gz"
-  sha256 "b2478983adbeff096327f20763c78ddc36c5b48871c0ea6b084d296136dc4e3e"
+  url "https://files.pythonhosted.org/packages/a3/b2/da8af15af1f2f0d6b5b1f63130d59a53daebef30f39ee0ceb582386edac4/sqlfluff-4.0.3.tar.gz"
+  sha256 "36d4be983ea3bceb93543bc390108e6a05b51f1639ec9834017d460e464c23ae"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6f496f3b01c12fa22a7164de1fcef706259e23397849ac6858cc25b0b5499398"
-    sha256 cellar: :any,                 arm64_sequoia: "ee7a4bab6e3ebab888ea82a7b4bff40027e121e1b1d890b905dff6d55c38506a"
-    sha256 cellar: :any,                 arm64_sonoma:  "439a711f405adaf2a3cac03e9ba93375ac56c552686431c7c44ae91253573f72"
-    sha256 cellar: :any,                 sonoma:        "eec66fa42b5e0e5a58bada904faa8e87c293a50d22d103f3ade9ee2f29cddedc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "21dc4f025caf67882e1f6a22e95dae724d50ec73a8024011f0af947e6c7d9bbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35afdb7c910b155082af323e15645136d010574ea1367b2608d3983ec64bc268"
+    sha256 cellar: :any,                 arm64_tahoe:   "839bcee5f4e7ded1e4a39bc1f666e6bd548434c4f8f208a737936b2fa7beecd7"
+    sha256 cellar: :any,                 arm64_sequoia: "3d1370ae9c757f76849c5eaf9429e9ec1bdaf8ec7dbb12d18c1880a7e1c66b75"
+    sha256 cellar: :any,                 arm64_sonoma:  "b866c0ab43ee29ddb75ce66271d04df1a9a4a216a66ecb0230b402152cada005"
+    sha256 cellar: :any,                 sonoma:        "857ee646d9f7d130c2b4eddf7ab8e123d8de1424e486b1b74cb4ad10ee2339da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28869143f2b9919ce3871db6b19c2410e4dda220d8cfdcd1c0b3da74d99efd57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b14b5375850b913333660044dbfa99142ba4e961878e0c6e13dbe413b3c2f8b"
   end
 
   depends_on "libyaml"
@@ -55,13 +55,13 @@ class Sqlfluff < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/4c/b2/bb8e495d5262bfec41ab5cb18f522f1012933347fb5d9e62452d446baca2/pathspec-1.0.3.tar.gz"
-    sha256 "bac5cf97ae2c2876e2d25ebb15078eb04d76e4b98921ee31c6f85ade8b59444d"
+    url "https://files.pythonhosted.org/packages/fa/36/e27608899f9b8d4dff0617b2d9ab17ca5608956ca44461ac14ac48b44015/pathspec-1.0.4.tar.gz"
+    sha256 "0210e2ae8a21a9137c0d470578cb0e595af87edaa6ebf12ff176f14a02e0e645"
   end
 
   resource "platformdirs" do
@@ -100,8 +100,8 @@ class Sqlfluff < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
-    sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
+    url "https://files.pythonhosted.org/packages/09/a9/6ba95a270c6f1fbcd8dac228323f2777d886cb206987444e4bce66338dd4/tqdm-4.67.3.tar.gz"
+    sha256 "7d825f03f89244ef73f1d4ce193cb1774a8179fd96f31d7e1dcde62092b960bb"
   end
 
   def install

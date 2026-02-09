@@ -1,24 +1,28 @@
 class Beads < Formula
   desc "Memory upgrade for your coding agent"
   homepage "https://github.com/steveyegge/beads"
-  url "https://ghfast.top/https://github.com/steveyegge/beads/archive/refs/tags/v0.49.4.tar.gz"
-  sha256 "f4112b9fb80b6f2d8899c1dd80262f287ef37fd8eb2c7404642026cc12fabbb8"
+  url "https://ghfast.top/https://github.com/steveyegge/beads/archive/refs/tags/v0.49.6.tar.gz"
+  sha256 "0427612c5e96744d4a3188bf75e92e85bdec9e20d5822b9aca4b4334bea6633a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9312befd7349d3d2b8dcda471a74895b32a4b591d1c615d933d0333af9cb0825"
-    sha256 cellar: :any,                 arm64_sequoia: "653d5b682fb03243a94779a9abcd3f1e879bf5ba7203c7c5c2ffcf55ad7dd266"
-    sha256 cellar: :any,                 arm64_sonoma:  "240c761faf87b7979e78f84ec5a33cc0b7e5fd066cdc9dc7bbe58fa6be9198e6"
-    sha256 cellar: :any,                 sonoma:        "66f14efb2670ec42e94d7a202f1a706bb8f3f9f57542febea734d1cf27cff1ad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9dd174d6fa2454533fb9eb39f52027e49b01fa8730812376c53cae2e2232ad41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18cdaed5ff40ddbf7e9b3f4b21131ee8f70b1b01bad3d41e5a468f8814403042"
+    sha256 cellar: :any,                 arm64_tahoe:   "45d5b9d8be15415ca718e499d015eeff0f13e0fc34450ab0f986c4a5caecd444"
+    sha256 cellar: :any,                 arm64_sequoia: "91a1df5ecde72ec58b62a36be465eb612370455d02eb5f83dcf09b47364f70ea"
+    sha256 cellar: :any,                 arm64_sonoma:  "c7e3572288c5652c590c8b58d1a1bbbc26270923dfded1862176fba0d1b5ab4f"
+    sha256 cellar: :any,                 sonoma:        "bcd2fbb2787063c8a6e740c169d0cde07a9df4b74be4387271f6d55e7462775a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf48a349e85996645f83544cf3cee5d69fd7fa87a7845edd3cd6fffe973c73bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a46bd85e9044ac26a9081aba2449a6afd01267a9ed5cb670700adb407b503f94"
   end
 
   depends_on "go" => :build
   depends_on "icu4c@78"
 
   def install
-    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+    if OS.linux? && Hardware::CPU.arm64?
+      ENV["CGO_ENABLED"] = "1"
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
 
     ldflags = %W[
       -s -w

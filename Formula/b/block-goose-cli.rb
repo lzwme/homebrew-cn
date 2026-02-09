@@ -12,23 +12,23 @@ class BlockGooseCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41c5b91e5dc6c80aa42872edd9eaecbfca8add2a6325c017a52a8567b0b81729"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ee4b78ef954160713e5b59afa98bf79715f7cb1e3e2436cafea6497ec311515"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "272e068889d499cb0d7f32702e6f5d722b7c0825cdeff713fb4ec904537a1d12"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f9a27905bdebe7be2f94251051867daba7abcb1076511365a619c79e4b6c80ff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "11bb5a507e846553203b20d90714ad2f15424fbed6e8f46e05a3a372f8622794"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af8361b2dc4eae9fe9a06e9adf0da162b2357877e3a08dfb9da2e47d617b88a4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "71c71da53142e15f75ef92444caa5cfc190c64a307369c7f8454c8d01fa1eb99"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3981b58c485f55ef366861adc8c876a1f66b1c706a18be4a49c420cac2e0ae54"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc2284301c5ff6d10b6eb0216a6d82dadc753285d2b792ee9a0c37a4601cc50e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b1d93904a9e1c2a9ff794eaba2ccf8b40ceb092724c7db2d5d01e907d3af31d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65a8a071f68dde549b690054bceb1dddce148f4ab57198114bd0ea033b62de9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d4621837d204a399380bc286bbb367c6bd673eb133007e439ec7b00b90a16ac"
   end
 
   depends_on "pkgconf" => :build
   depends_on "protobuf" => :build # for lance-encoding
   depends_on "rust" => :build
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "dbus"
     depends_on "libxcb"
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "goose", because: "both install `goose` binaries"

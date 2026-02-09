@@ -3,8 +3,8 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://archive.mesa3d.org/mesa-25.3.4.tar.xz"
-  sha256 "3a0fc6ec070b45ae25dc2ccb5e52fae1d89141f7c39c4a91fe4eaa80dfff9deb"
+  url "https://archive.mesa3d.org/mesa-25.3.5.tar.xz"
+  sha256 "be472413475082df945e0f9be34f5af008baa03eb357e067ce5a611a2d44c44b"
   license all_of: [
     "MIT",
     "Apache-2.0", # include/{EGL,GLES*,vk_video,vulkan}, src/egl/generate/egl.xml, src/mapi/glapi/registry/gl.xml
@@ -23,12 +23,12 @@ class Mesa < Formula
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "ffa615e47150df39d68fdc678adef3b6d9b1827fb2b61d7fd6fc35d0c05f0369"
-    sha256 arm64_sequoia: "51a93e14311c08b78becacf1c2b7c761f99b25ca392af5cf9fcd541c6ba46327"
-    sha256 arm64_sonoma:  "358291feef5ea478c512ba017b05ea03d7a889c77d6ec87f9765a3e4ff56b5fa"
-    sha256 sonoma:        "db1620d5eeb4b23100bea86a5251d6f241a5186b45ffa9dc64dec5d7586520ae"
-    sha256 arm64_linux:   "556752f81c7e61a8e6b66e36198b85905a0202800cf5a7d3697d80f297f1afe7"
-    sha256 x86_64_linux:  "797427d3600d79309ee50049e4b8573359caa5b260776af2fda07fcaf7aa9210"
+    sha256 arm64_tahoe:   "e3441bb9dc030dfff8a7921e9701392ba437f93c3f4c5a0f9e96ae7526e842da"
+    sha256 arm64_sequoia: "9a15299b62ca1170a8b1d31db769d92114f3440d7ff7c25a8d7fbffea1d94971"
+    sha256 arm64_sonoma:  "f5710ba674c8040fc7b8ab41659f0764a1638444385e57393f497a4075b93fc6"
+    sha256 sonoma:        "100e6096bdb67452a4d404aa638dfe1e991fca9a3754bb589e947421dfbff874"
+    sha256 arm64_linux:   "801df2967fa038e3e6f20fc7abd5e38b04e79416dbcdb0c1001a5ffeb6fe75c7"
+    sha256 x86_64_linux:  "64299ce1e6419fba5f30be360882d6e4d37729ec800cbe2c66757624497ee6f6"
   end
 
   depends_on "bindgen" => :build
@@ -58,7 +58,6 @@ class Mesa < Formula
 
   uses_from_macos "flex" => :build
   uses_from_macos "expat"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "molten-vk"
@@ -79,6 +78,7 @@ class Mesa < Formula
     depends_on "libxxf86vm"
     depends_on "lm-sensors"
     depends_on "wayland"
+    depends_on "zlib-ng-compat"
 
     on_intel do
       depends_on "cbindgen" => :build

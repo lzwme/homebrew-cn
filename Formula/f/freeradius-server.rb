@@ -33,11 +33,15 @@ class FreeradiusServer < Formula
   uses_from_macos "libpcap"
   uses_from_macos "libxcrypt"
   uses_from_macos "perl"
-  uses_from_macos "sqlite"
+
+  # Links to macOS sqlite and libedit prior to Tahoe
+  on_system :linux, macos: :tahoe_or_newer do
+    depends_on "readline"
+    depends_on "sqlite"
+  end
 
   on_linux do
     depends_on "gdbm"
-    depends_on "readline"
   end
 
   def install

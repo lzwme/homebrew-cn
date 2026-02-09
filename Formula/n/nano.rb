@@ -20,8 +20,11 @@ class Nano < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "gettext"
   depends_on "ncurses"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   on_linux do
     depends_on "libmagic"

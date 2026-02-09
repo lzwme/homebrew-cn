@@ -1,17 +1,17 @@
 class Bento < Formula
   desc "Fancy stream processing made operationally mundane"
   homepage "https://warpstreamlabs.github.io/bento/"
-  url "https://ghfast.top/https://github.com/warpstreamlabs/bento/archive/refs/tags/v1.14.1.tar.gz"
-  sha256 "ff5260111eedd686645ec2bf259e61032af8a80043ba96fe87c9f11825ae8e08"
+  url "https://ghfast.top/https://github.com/warpstreamlabs/bento/archive/refs/tags/v1.15.0.tar.gz"
+  sha256 "3acf54b202c250a3a2196f5b8f28788933f8689dc06f07feed7d996aae561182"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f27e3d749ced6e6c6a5604a533a9b1aeaf497936032f3b6294137be5f24017b3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fcad732c06ff70865c8f9d3fa01fb6d568b8eeaae78b02a0f29828e5772f9026"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e804e886048747d8c3afaed2ab32e85fc9c91bf165bf93c80ceb6ee6f5fadb2f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e349a97355f0290b8a89366c477986ee0a2285c524403be6eead7f5fce804a80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf98fc36f40b4097e89b029a3710f7fb013f56c4263e8d3a4fcfe815a3e4c777"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "548c5c054996981da425ca775b032b9ff9606d6bd9d830fe8df610ec7650a430"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be171c78149593a9257c18a5d8f1d24a2a9927982eec1691a31aabb1e08d8e6b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13e92a4553a3ba2e09f8db379ad7ee644a62b95f3c8330aa76441f963bd89054"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "975ca71bca1bf4e5aae584413dbf419f53473577ed89376c52b532476a27f82e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e25a2614fc802e03d7d303cef2369c00ccc19f7e5e0acb5398399c408cc70f39"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9fccb5f9a29c21966bc717aad2ed89ade57ff77b6879abed3620530dea74b0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cbde4d718d5951aad9d35b0cc9946f03029e4e9317142e7602bfc0de9d3b714"
   end
 
   depends_on "go" => :build
