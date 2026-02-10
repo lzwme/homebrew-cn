@@ -6,12 +6,13 @@ class Decasify < Formula
   license "LGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78189462d8b0460d58e55c79f4cf8774705687768eedf7aa5125cf39dccd727c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "466999bc1594c6d1e7ddadba40471c008ec035b3106c3de1385cb461abf0db82"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87c10fe5068ea9d3fe6a5b13f9148c36686e94c0cb51819933addfd9dc78f175"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5139aa9b7383fdec1c58f0855eecc9c2fbb3c33e7010cd7f54ec59062b90edf3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a472599e9f00b8af4cd0680e41d3dfef2375e323c6e4301fd3346e2e7d37d87d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec6443b0044e39e2fc66c5629ebb370b57466592af075636eb57f566f5c4a1f9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4ff19c29a173914d458494a071d57926dae0d7144f8fdc02d4896da4937a523"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "310a18371e2755a252635f86b206b2316ae0a9d126c57a2e9bc01835c1a95575"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "96c10a27579028fcadedf827d1b5f73225f807a3ddbb8d7b99f94282f847c452"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b78974c9dd3ccfb401c2ebb9c9a44ab44cf75e9cd81f27c7fc118822f4c70b6c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "39912a574e08da91ded66573bb340a5a5cbacafcea47a0030d44abfe496df055"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eaebb4b35dc5f6bdfd169b106bcc2b73c2b71d15943100aafda52beb2e1dc09f"
   end
 
   head do
@@ -26,7 +27,10 @@ class Decasify < Formula
   depends_on "rust" => :build
 
   uses_from_macos "jq" => :build, since: :sequoia
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./bootstrap.sh" if build.head?

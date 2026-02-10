@@ -1,17 +1,17 @@
 class AwsChecksums < Formula
   desc "Cross-Platform HW accelerated CRC32c and CRC32 with fallback"
   homepage "https://github.com/awslabs/aws-checksums"
-  url "https://ghfast.top/https://github.com/awslabs/aws-checksums/archive/refs/tags/v0.2.8.tar.gz"
-  sha256 "e624754cc57e0da28e643e89fc76bcc86cb0c359ead0745bae643f910b2bcfa7"
+  url "https://ghfast.top/https://github.com/awslabs/aws-checksums/archive/refs/tags/v0.2.9.tar.gz"
+  sha256 "eb59664a90ef8c09e595ee40daeb9d00ae32f2a75e4b93f2830df4bebdd68033"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "36ab0fa0e338cadcf0de628d9b4ba8574cda3c5659d931808c4adea6db52c73f"
-    sha256 cellar: :any,                 arm64_sequoia: "6acfec61a0c43ca7a69f0806c3962739c5be78ff5adb3d1fcfda479f62cb3437"
-    sha256 cellar: :any,                 arm64_sonoma:  "490a11ee2fdd216a20feb6ca72148fbc7e15632eea6bb3ff1aa7e68991b1420b"
-    sha256 cellar: :any,                 sonoma:        "bdd18e5f31dfc7c0b6e45682d1be727dc4158347213245a80c22073101d0be8c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd37a5fe7d7f31be261c1fd56a78220833519062504c3bef79fbe0277a6cffe5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d620c9de243bc3798f47401bd3fbdc27b543e0ece0d2aacb9001fb0bb764028"
+    sha256 cellar: :any,                 arm64_tahoe:   "ec1cc8126b462a3eed6777c0573e77cc6b6b0fc3a933567be4e8d796d2ca538c"
+    sha256 cellar: :any,                 arm64_sequoia: "12f97ddf4127b0155cc3d0833bb69bd4f1a17a5f916a79f850a3b61b55e3a57f"
+    sha256 cellar: :any,                 arm64_sonoma:  "baa1a0cb2bbcfcb4d8ccc04ece02af07b6b8448d61b09d86294507e8e43a30d7"
+    sha256 cellar: :any,                 sonoma:        "09711a7db0110d370ee353d64b7438b4dd073647c369d534aa1b890cb925a21a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a5f19109020be4456051179b21a1e36ac82bd1611e02bff8878e5da5896eeab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56715c1b4ecca021680131b5d82d0fed93c90d8832e922af3e4d3797936a9ad0"
   end
 
   depends_on "cmake" => :build

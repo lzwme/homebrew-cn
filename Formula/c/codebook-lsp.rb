@@ -1,8 +1,8 @@
 class CodebookLsp < Formula
   desc "Code-aware spell checker language server"
   homepage "https://github.com/blopker/codebook"
-  url "https://ghfast.top/https://github.com/blopker/codebook/archive/refs/tags/v0.3.29.tar.gz"
-  sha256 "0e6c3a78a527be108cf507e315122a2008d5897ee048940bfab71dc4f7b11c51"
+  url "https://ghfast.top/https://github.com/blopker/codebook/archive/refs/tags/v0.3.30.tar.gz"
+  sha256 "d7285193a902cbde672c72626f732ec8be6f1e5b4d927f3d15a3d37a82af8010"
   license "MIT"
   head "https://github.com/blopker/codebook.git", branch: "main"
 
@@ -12,12 +12,12 @@ class CodebookLsp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0fd2175b0c5d74df0ceb2deb4ac8d24f634a5536b67cd2baae78a122d0ec3bb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8a1c4785862010d91a420716abc2eb6f7c52c43803fe183fc896fb48d58ebac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad1f640eaeb5a1fbc89c2823498d805b37af859ec22462ed94040974c8d9f729"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5fe6b3eacc4cb6ed7a82e6396c5b3f2db8755b63b36363cbee48f8136691e53f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "db663c5d16868cd374d540334f511c813f4e72c1910e9404acca2937216b7266"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "945f10e1c1e0102b721c6f537387680b86169b9936eed1505315446fb216fb44"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "62599f44082f7ce6c7a7c25dc03f56323b923f1a6644661a12120d8b9c097c7d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43e67e5b820c1629d99a4be96d29a1bb3a794e645d2147d98d85e007416c00e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dfcceb753c9e17d5ba761c23eb30a79142df554da4fb85a4bec241377d82335c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cecc46efc92c39f6f14549611c4af8c9db8fe5543f0c49eeb60a5005c31f9907"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82e26f223c395329fefe8d7ff385a99e7d11995993bfd8590ab3748995b8f8e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c458961fe592fd1c2037c33494f008887f2edfc459841271830061614cc7d80d"
   end
 
   depends_on "rust" => :build

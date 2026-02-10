@@ -1,8 +1,8 @@
 class Groonga < Formula
   desc "Fulltext search engine and column store"
   homepage "https://groonga.org/"
-  url "https://ghfast.top/https://github.com/groonga/groonga/releases/download/v15.2.5/groonga-15.2.5.tar.gz"
-  sha256 "bfacfc5d867dc43ad48bef49e5302dd7db2109d67cc22995dc8c5ebc5c3ddd5b"
+  url "https://ghfast.top/https://github.com/groonga/groonga/releases/download/v16.0.0/groonga-16.0.0.tar.gz"
+  sha256 "e8cec40d59c848617912d988c69ca67445c19fd2d8fcb5b6080eded2df89d545"
   license "LGPL-2.1-or-later"
   head "https://github.com/groonga/groonga.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Groonga < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "932068c1bdebbb8c0b3333fd11029554ecd45503627154c6d34a21f1906c7f89"
-    sha256 arm64_sequoia: "5cc8bf53ef427269856e6a27ea4988db19f7459928adb738adde88148aa7f302"
-    sha256 arm64_sonoma:  "422a784186168535946150805f1dd26855e92ea0e1c1b196aa206ee9ef2c8032"
-    sha256 sonoma:        "00269e78b806aaad3dd30679a093b8e406da748e79d8e8c1d9ba1a471419798c"
-    sha256 arm64_linux:   "140ff77b159b4ac49d1601ed1a6987a4d2c078dadfb9f2fa7811469d0ec0ce09"
-    sha256 x86_64_linux:  "a67f074d5ceea9e071efa5269be9eccbfa891ead4af487af36cfbb85c5ce182a"
+    sha256 arm64_tahoe:   "808aa09f3710d7a9da19fe2052151cf69a61452cb3b22ccc3abf9df1c9caf04c"
+    sha256 arm64_sequoia: "b039f98a1f6c4b11eb416023e06e66441d02effaaec914e264b917f4b01ee373"
+    sha256 arm64_sonoma:  "8fab228175a6bdd3e9013e089eb9a611efe69bfe79f7e899f2479520a2e4f057"
+    sha256 sonoma:        "1db6fe71907bfadcaaaede1e827ad08ba79bb249d0af1fd219c55f1857ff8e34"
+    sha256 arm64_linux:   "ddb4212763397cf86ad14a21bc5fb24a4f7cc761b905fc0423be4f400cde022b"
+    sha256 x86_64_linux:  "dd9d5162081fc0a3651c92961234b841779846ffd2c0e0b210ca57a26fa23606"
   end
 
   depends_on "cmake" => :build
@@ -31,7 +31,10 @@ class Groonga < Formula
   depends_on "zstd"
 
   uses_from_macos "libedit"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   link_overwrite "lib/groonga/plugins/normalizers/"
   link_overwrite "share/doc/groonga-normalizer-mysql/"

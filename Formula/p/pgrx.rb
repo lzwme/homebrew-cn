@@ -1,17 +1,17 @@
 class Pgrx < Formula
   desc "Build Postgres Extensions with Rust"
   homepage "https://github.com/pgcentralfoundation/pgrx"
-  url "https://ghfast.top/https://github.com/pgcentralfoundation/pgrx/archive/refs/tags/v0.16.1.tar.gz"
-  sha256 "8638d911003b93e8a73ad86e3cfa807165d2d3e69fce45dff98b19838ca66d13"
+  url "https://ghfast.top/https://github.com/pgcentralfoundation/pgrx/archive/refs/tags/v0.17.0.tar.gz"
+  sha256 "f8f555332946a19bc029d086a9f6651e3be0a55e6634b62dbfa412e1fe8876a2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18ec52d8f23536e3d83cae766791ce71909ea1ecfe8d8825ca08c28900e6e360"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0635a05b7737daf0b4920af5d82304362ac2bd68af62bbeef539b0701ff445fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a81c4f856715e16bac6cc47e06db980bff34ea6a7e0305ee62922381e2c1b88"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f51e9c9b42b10de08a5d03be749a015981b0e71863de04c1924868d763743628"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6f41bedbb746bf6b0cb10f431ea03da30c7f2c174685871ff9a48f18e30190a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6c3c8f45df8886bdf8f9a9a5065c66217b06b22af1722ef2fb233f44f5c5bb0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7b77637f39c9aa1329cde84ebfd05ea9c94df45cfd19c7df2535761cf9b4d1f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eabb2b5b31cef2b7b4077d4c390cc4922e876997e638d564531c0ebb445c8264"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ed575677efcd2eb8c42db82952081381c9c813141f3401ec8b95cb3a1e5bcd5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "64da2cd24e723d0590b558d1675158de4a1aadf1a1ba80bea49131b0f0909eca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6eb0fa6d74a1a1d6de725866eab5b486707afb64decc61cc3c07cf90db948f8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6922fc3f29f9bbb26ea896b8f2d56e0cb15cdce5747b54c6b1c90df602b91178"
   end
 
   depends_on "pkgconf" => :build

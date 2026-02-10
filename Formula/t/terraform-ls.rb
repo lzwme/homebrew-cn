@@ -1,8 +1,8 @@
 class TerraformLs < Formula
   desc "Terraform Language Server"
   homepage "https://github.com/hashicorp/terraform-ls"
-  url "https://ghfast.top/https://github.com/hashicorp/terraform-ls/archive/refs/tags/v0.38.3.tar.gz"
-  sha256 "97f5992c57d6cabba72b3ffb69f18c953001f273ee7f24d56603b601fd3f7a40"
+  url "https://ghfast.top/https://github.com/hashicorp/terraform-ls/archive/refs/tags/v0.38.4.tar.gz"
+  sha256 "698968b3606c422750fedd9d8a038ca3d0b7f57d7503d7ee60eade56dfb3d31a"
   license "MPL-2.0"
   head "https://github.com/hashicorp/terraform-ls.git", branch: "main"
 
@@ -12,12 +12,12 @@ class TerraformLs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7fa54d363c947a64e382b72a63e840b7d4aaead3a8ffbb68896e2d2b49cb7ce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7fa54d363c947a64e382b72a63e840b7d4aaead3a8ffbb68896e2d2b49cb7ce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7fa54d363c947a64e382b72a63e840b7d4aaead3a8ffbb68896e2d2b49cb7ce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4cfd5918d649e22df75a1e588b1fa88119214196ef25ab7d49726e9ddf28eac9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c42731d40f4ef1e90de257a1b542eeab596dee4c5123793d3c8a61ca3eb781c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15a7180b5a831c7a5253b69053462d9d7f43e571360aae2c6a1bfb0602f54b24"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8dceb13f2502255fbcaf74ac3c16b5526344fd8f4c25804710116bccf1ac8055"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8dceb13f2502255fbcaf74ac3c16b5526344fd8f4c25804710116bccf1ac8055"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8dceb13f2502255fbcaf74ac3c16b5526344fd8f4c25804710116bccf1ac8055"
+    sha256 cellar: :any_skip_relocation, sonoma:        "149d9cf9587c805d26e06437e41b1ad9ba930a0bfd1a1aa8f6c314d4a621fe69"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9118113481fbfabb7e664692ff4d3b51dedfb88624ea4b15d9dcc173d585e382"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9456f71f1cb7c25b07e6ced741099dba619c982a57c35fbcb5dbc99533704f13"
   end
 
   depends_on "go" => :build

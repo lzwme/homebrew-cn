@@ -3,17 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/98/26/42c2c20bee7679c9689a7fa86660e0959e36f59d7545bcb171d3d8a21554/mycli-1.50.0.tar.gz"
-  sha256 "03de6b74edf787bf7f80c8b21249f9f9ce88573dc93d3ce7dfb8b5cf1db99d76"
+  url "https://files.pythonhosted.org/packages/5d/09/e0578cf9d9f1e1ef80efde7500e47fe4089d20e67f18ed93c70e8294ccb1/mycli-1.51.1.tar.gz"
+  sha256 "adf59bfe9a8ba61d5b9587564fc2c4182613841e44fee373678e26dbc7e026ee"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cf59a05ccbea4a75fcc637b95ea9c52e594d69e05db1e746f2c6d4bc1d4e39de"
-    sha256 cellar: :any,                 arm64_sequoia: "e599c4f6b2d961f0a0107111d1e9048488cf487b6883bb53ae49172b5c32e01e"
-    sha256 cellar: :any,                 arm64_sonoma:  "fbefee31f3f3915daeb2cebaeb506c820615b4abbe177b514869fa3ac1b65633"
-    sha256 cellar: :any,                 sonoma:        "810a41e845553774de04df24f8d4fdd6fc135bb4f87da03df272c2ca953dc8ac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b549c5ee36c5c5023f15f675ae755dea6e2b301ec04c06a5edb3e5ba7145d7d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26148d2be4e22c1362a2ddf7c8d048388cb9bba531437ac7c4259598b6c2c804"
+    sha256 cellar: :any,                 arm64_tahoe:   "24118446c85a242b79a1e6cc16986b084d26664f4f2e3c651194f6d328191030"
+    sha256 cellar: :any,                 arm64_sequoia: "f6b37adfc998f49666d4db9e343c979096db524f512b14468393fae2332158bf"
+    sha256 cellar: :any,                 arm64_sonoma:  "77789544404db9d5fd20f26a688d0fe4db4983d66c7b2412578ecde2273676f6"
+    sha256 cellar: :any,                 sonoma:        "15397b0dd5e458017ec1f41c69374b5c0e0ce5b29fd25e409a55bfad77f9c604"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3cf650af8b5e8d2545b2418e05f2bf6cf04e062e0cc1f3c60f5b5d46b5b90019"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24ea40085f04eeaa29e197da2ae69158c7bdf0d1659127dcce6b17c1bae610c3"
   end
 
   depends_on "rust" => :build # for jiter, sqlglotrs
@@ -34,8 +34,8 @@ class Mycli < Formula
   end
 
   resource "cli-helpers" do
-    url "https://files.pythonhosted.org/packages/3b/a3/0eead9f2b507c8f71db89984870ae9ba2e92a01ae28dda6c1b91030cac5d/cli_helpers-2.9.0.tar.gz"
-    sha256 "a988745ec431ddae707f738dd0d13890b74a00a2aa0428eacd7fc1e03b206a17"
+    url "https://files.pythonhosted.org/packages/7d/ad/aed1e9878cc0a4e93527349d8302dd42ed01b8c5b6f5b1637e956a99140d/cli_helpers-2.10.0.tar.gz"
+    sha256 "0e0936179b786c00c6b73863b5b9252889f7a54525f14014ec727e41ff22af28"
   end
 
   resource "click" do
@@ -194,8 +194,8 @@ class Mycli < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/0d/1c/73e719955c59b8e424d015ab450f51c0af856ae46ea2da83eba51cc88de1/setuptools-81.0.0.tar.gz"
-    sha256 "487b53915f52501f0a79ccfd0c02c165ffe06631443a886740b91af4b7a5845a"
+    url "https://files.pythonhosted.org/packages/82/f3/748f4d6f65d1756b9ae577f329c951cda23fb900e4de9f70900ced962085/setuptools-82.0.0.tar.gz"
+    sha256 "22e0a2d69474c6ae4feb01951cb69d515ed23728cf96d05513d36e42b62b37cb"
   end
 
   resource "six" do

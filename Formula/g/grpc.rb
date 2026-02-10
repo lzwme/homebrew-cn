@@ -2,9 +2,10 @@ class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
   url "https://github.com/grpc/grpc.git",
-    tag:      "v1.78.0",
-    revision: "5e6ba94242b92e363220bc2163d55ce3554d4ecc"
+      tag:      "v1.78.0",
+      revision: "5e6ba94242b92e363220bc2163d55ce3554d4ecc"
   license "Apache-2.0"
+  revision 1
   compatibility_version 1
   head "https://github.com/grpc/grpc.git", branch: "master"
 
@@ -20,18 +21,15 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3d96139ab5cc336567c6eacdae33b9d3804c9249a3162bb15798a9631f484de3"
-    sha256 cellar: :any, arm64_sequoia: "5e6ece974fa8e0b0a8d51543602a805ec434d914afe5cd41f18dd8b8413d86f0"
-    sha256 cellar: :any, arm64_sonoma:  "5a7d9b745a9d37da76df1efd9a6fa004f6a5f7a5f187ee393b84a2af8b1dacbc"
-    sha256 cellar: :any, sonoma:        "5606bbb82f851929b1a24d26d9faea5a91dc204902abd15c1959394bb55cb9d8"
-    sha256               arm64_linux:   "dd7bb35bc04ef2986f9311f72ae83897e82e4a4afa3567b31a7612270c42121f"
-    sha256               x86_64_linux:  "df8246096895136065e7cf3386f12d59edd2ae79d71ec9507c2ea4e26cbd6ac9"
+    sha256 cellar: :any, arm64_tahoe:   "4501a1d1aa31225e60f855225598f370026f982171e157e6a20a78f335f127d7"
+    sha256 cellar: :any, arm64_sequoia: "be3de5fe290f788cd4a8450e055a36a585de3ee83f3c1533ea48ac8d712a6b68"
+    sha256 cellar: :any, arm64_sonoma:  "69f2cb1773788f2f37419e95441ec495a0e23786684f1b3f6684c763194853fa"
+    sha256 cellar: :any, sonoma:        "9e172ecc2cea9b91e02751e9a5e72664c8d85adf28999c226dd047262f8e5862"
+    sha256               arm64_linux:   "ff3e8ae6a189c10f2b9aa0df66bcacd56626fd79dcf698e063377e348b2ea8b9"
+    sha256               x86_64_linux:  "2a25deabaa9d944b9b98c5d448da7d0e192f3aa44be216976b90367baffb2e8c"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "cmake" => :build
-  depends_on "libtool" => :build
   depends_on "pkgconf" => :test
   depends_on "abseil"
   depends_on "c-ares"
@@ -39,10 +37,12 @@ class Grpc < Formula
   depends_on "protobuf"
   depends_on "re2"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1100
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :clang do
@@ -65,9 +65,6 @@ class Grpc < Formula
       -DgRPC_ZLIB_PROVIDER=package
       -DgRPC_RE2_PROVIDER=package
     ]
-    linker_flags = []
-    linker_flags += %w[-undefined dynamic_lookup] if OS.mac?
-    args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,#{linker_flags.join(",")}" if linker_flags.present?
     system "cmake", "-S", ".", "-B", "_build", *args, *std_cmake_args
     system "cmake", "--build", "_build"
     system "cmake", "--install", "_build"
@@ -78,7 +75,7 @@ class Grpc < Formula
 
     # The following are installed manually, so need to use CMAKE_*_LINKER_FLAGS
     # TODO: `grpc_cli` is a huge pain to install. Consider removing it.
-    linker_flags += %W[-rpath #{rpath} -rpath #{rpath(target: HOMEBREW_PREFIX/"lib")}]
+    linker_flags = %W[-rpath #{rpath}]
     args = %W[
       -DCMAKE_EXE_LINKER_FLAGS=-Wl,#{linker_flags.join(",")}
       -DCMAKE_SHARED_LINKER_FLAGS=-Wl,#{linker_flags.join(",")}
@@ -106,7 +103,9 @@ class Grpc < Formula
         return GRPC_STATUS_OK;
       }
     CPP
+
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["zlib-ng-compat"].opt_lib/"pkgconfig" if OS.linux?
     flags = shell_output("pkgconf --cflags --libs libcares protobuf re2 grpc++").chomp.split
     system ENV.cc, "test.cpp", "-L#{Formula["abseil"].opt_lib}", *flags, "-o", "test"
     system "./test"

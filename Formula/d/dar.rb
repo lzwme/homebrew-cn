@@ -11,12 +11,13 @@ class Dar < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "2a2f80d13e39c91761f63aab8a45350be1c355349ff820a04fa19d07e4ad9df2"
-    sha256 arm64_sequoia: "ba86c62a1e818d6919704c30c97083f8c692d295e6b2ae01e3a476b0845c2a7c"
-    sha256 arm64_sonoma:  "9280209b236ec153852431d00b2dd917d929b43e4511b8f11c8de6320f301b6b"
-    sha256 sonoma:        "798e59bcfb4ce8bcf15e900a079af9fcc49fca3fcb8e1541282ac6deec0df975"
-    sha256 arm64_linux:   "1c149d8560aa9326d22a7601b70d2bd77eb1175d6303b8253fa61a2ea60db849"
-    sha256 x86_64_linux:  "b9ff1f19e2d1128cd528277ca8f30bf8e65d44ef41a5f3e0491176a2bb648b34"
+    rebuild 1
+    sha256 arm64_tahoe:   "a89b76d0eb86bed7773270b302be1078fb99ed4519c90ac1141c5d6e95d4a234"
+    sha256 arm64_sequoia: "0cae402552a71973b57dd93e21468d23da7a63fd7f73b96bf59270583f7de5f2"
+    sha256 arm64_sonoma:  "b8228fcc1823db1813d63043250d5f3a1c60167faa57d7b1c91e412ba0462502"
+    sha256 sonoma:        "84e2a07f334e66aa5113cd80a65e790a44ed37a399c1896abf9eb1e05addd2c0"
+    sha256 arm64_linux:   "ed9f4fa5b46976b874a30d54821f8074bccb8cdd89af87272eb99016a63778b2"
+    sha256 x86_64_linux:  "b5ffd456fb6495fd271d8470c5ae099f9f00bfa6e0c81e0be69cb4428055fffe"
   end
 
   depends_on "argon2"
@@ -27,10 +28,13 @@ class Dar < Formula
   depends_on "xz"
   depends_on "zstd"
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install

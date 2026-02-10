@@ -5,6 +5,7 @@ class Gnutls < Formula
   mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnutls/v3.8/gnutls-3.8.11.tar.xz"
   sha256 "91bd23c4a86ebc6152e81303d20cf6ceaeb97bc8f84266d0faec6e29f17baa20"
   license all_of: ["LGPL-2.1-or-later", "GPL-3.0-only"]
+  revision 1
 
   # The download page links to the directory listing pages for the "Next" and
   # "Current stable" versions. We use the "Next" version in the formula, so we
@@ -30,13 +31,12 @@ class Gnutls < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "4b83a3562c8d33bbbf9b77e8c74bf06ce325ae78ead9662616603c6294272c65"
-    sha256 arm64_sequoia: "8e941f09492a2f944bcff6c24aef4e10423e80db0a236d910e2308f63bc6bbb9"
-    sha256 arm64_sonoma:  "a47e1399d9e280feae3116a43f7bcb8a93251e56254ecfeb8474938a3cf5def1"
-    sha256 sonoma:        "b3b0e52501025dd2105e9e87b32d424292d3c5fd92be253a0f6338a08a71dc89"
-    sha256 arm64_linux:   "d1d07bcbcbaedcaf5b152c1e1a964829a4d8ae530fa3998b303d19d79485f0ad"
-    sha256 x86_64_linux:  "9ac6e8f80f2076fd28821170ebe252886522d23719353edf131d6a570a28b9ab"
+    sha256 arm64_tahoe:   "583e8cf857d44c573ddcd8bae3e53d8b13ff22ccca144a4e82de8046e39edcda"
+    sha256 arm64_sequoia: "15cb17932e9ca969197289ed81343f19df4115a43144576dbde04da8cf681faa"
+    sha256 arm64_sonoma:  "9bbbf86ffbf36ea47aaefd9186a9315af26bf3f1f579f89cd275872aeadeb5cf"
+    sha256 sonoma:        "fa80583146e3f212d280d4e8c1d1a5aec52fab1a44de31e2e460a099456ef704"
+    sha256 arm64_linux:   "6da433683dd29d14fa44c335cb11d4c63b0e64f9fc48008e0d85f6bb085935d9"
+    sha256 x86_64_linux:  "2425006a6d7658d922048834764a0b6ecf86808b324bc59652e2bfe36e3c975e"
   end
 
   depends_on "pkgconf" => :build
@@ -50,10 +50,12 @@ class Gnutls < Formula
   depends_on "p11-kit"
   depends_on "unbound"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
@@ -82,9 +84,7 @@ class Gnutls < Formula
   end
 
   def caveats
-    <<~EOS
-      Guile bindings are now in the `guile-gnutls` formula.
-    EOS
+    "Guile bindings are now in the `guile-gnutls` formula."
   end
 
   test do

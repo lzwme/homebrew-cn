@@ -4,15 +4,15 @@ class Openexr < Formula
   url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.4.4.tar.gz"
   sha256 "7c663c3c41da9354b5af277bc2fd1d2360788050b4e0751a32bcd50e8abaef8f"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2f178082410e7e565f6c49529ae469389b370ee610dc8fad1fa00443c335e5e8"
-    sha256 cellar: :any,                 arm64_sequoia: "fa612fb4903658f936a5f88b156375655da7b9dcd48bf92909ad2e72bacbc52a"
-    sha256 cellar: :any,                 arm64_sonoma:  "4b5b405edce030ff8cd9f5dd2f9e057cf4a72d7b0616a3e82a0433a8ec91a467"
-    sha256 cellar: :any,                 sonoma:        "e0571f29298064fc0ff0e3bb5aebb3b91d1044df0ecdea6bbd13cca20c79036a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "95622a65b05748afcd6f5c3446148b1cbdeae7f79d42f402d35c0dbaa89586ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7a8d7b4217b6c949a3d2fef741587b5dcfd4b8b92e20a66f9a3ed2e2724be0d"
+    sha256 cellar: :any,                 arm64_tahoe:   "65cb3c318b1f61e78562689de8068799092473dc9967a433c7513507b4e3e762"
+    sha256 cellar: :any,                 arm64_sequoia: "2c9b82a02381d023df9913f2d8930e276869b989858803fa5231035459642d94"
+    sha256 cellar: :any,                 arm64_sonoma:  "42de5681c202c46b293958daf4b59292c398edf98e6eb7233627f4ce6dd435fc"
+    sha256 cellar: :any,                 sonoma:        "0569bee2053e22dcc57643ef51a1a5b6109c30c1fde69f5281ed6c5c5ed5d0fb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56842c457c8fd20c917b53898aeea29e777ae56d072c6b47b77a137b5f798b3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5890b0d036b79cb4e1c2f875e15ca43a62948c87f3d6403d4b3339ed831f8606"
   end
 
   depends_on "cmake" => :build
@@ -22,7 +22,9 @@ class Openexr < Formula
   depends_on "libdeflate"
   depends_on "openjph"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # These used to be provided by `ilmbase`
   link_overwrite "include/OpenEXR"

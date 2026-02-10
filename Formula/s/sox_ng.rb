@@ -1,8 +1,8 @@
 class SoxNg < Formula
   desc "Sound eXchange NG"
   homepage "https://codeberg.org/sox_ng/sox_ng"
-  url "https://codeberg.org/sox_ng/sox_ng/releases/download/sox_ng-14.7.0.6/sox_ng-14.7.0.6.tar.gz"
-  sha256 "24bf3eef707b161da4bad200af8df3eb14e1847f11747d88f70b23aec770ec0f"
+  url "https://codeberg.org/sox_ng/sox_ng/releases/download/sox_ng-14.7.0.7/sox_ng-14.7.0.7.tar.gz"
+  sha256 "c494658ef29ebe84eddf525fcdcfe7ba67fca3ee778402cf46f1ec1178086b61"
   license "GPL-2.0-only"
   head "https://codeberg.org/sox_ng/sox_ng.git", branch: "main"
 
@@ -12,12 +12,12 @@ class SoxNg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "11be261e18ad28c8d9ec3797e319d3d084b215a38746d5d2587c4e36f303dcb1"
-    sha256 cellar: :any,                 arm64_sequoia: "e8c0978b1e21f3213c74b64a37a2e7d3dd2e9a43474002f33474fedc45b60e75"
-    sha256 cellar: :any,                 arm64_sonoma:  "fa6b3f192d1cf1113a7c9a538ccf42e8c98a7290ca5810ea4b09ec85344983c8"
-    sha256 cellar: :any,                 sonoma:        "2f8225afeed6cd536000339910f151b15d3ed8f1faf639faba4c8f331b759657"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "445a5f015cfb6b39c050a304f62b739be0961e2ac6268791101e21d133a09525"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7d45830c1452737a3783fd2070233368c45dd8ea737d4a770b57f5a23255140"
+    sha256 cellar: :any,                 arm64_tahoe:   "9ef5016fa90c5ea5b52e1f0c4e9b9502d7c8deb3bebab8a4fd343968850dd596"
+    sha256 cellar: :any,                 arm64_sequoia: "19996614dd3a328bcec8b0fa0122d3c1721d9ca904c5d6f218bfb477d78727bf"
+    sha256 cellar: :any,                 arm64_sonoma:  "34ae02fae3fb8eedb86cfa8088735f6c775c3094a03273cc0779ec2d01bd7677"
+    sha256 cellar: :any,                 sonoma:        "050ffac88ec9f583b291644c23a78895092752c4f1c11dca6452cce87adce0d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fb9430f90f355605bc00042082c919def8c536b8156eddde4ce2085f2f512b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cded2f3f6e0fac9bfec80b2c21552efa13e2dc34cd2bcc35af9c611d85cb9651"
   end
 
   depends_on "pkgconf" => :build
@@ -31,14 +31,13 @@ class SoxNg < Formula
   depends_on "opusfile"
   depends_on "wavpack"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "opus"
   end
 
   on_linux do
     depends_on "alsa-lib"
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "sox", because: "both install `play`, `rec`, `sox`, `soxi` binaries"

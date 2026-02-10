@@ -36,6 +36,7 @@ Homebrew-homebrew-core/Formula/a/action-docs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/action-validator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/actionlint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/actions-batch.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/actions-up.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/activemq-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/activemq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ad.rb, Homebrew/homebrew-core, 1
@@ -6661,6 +6662,7 @@ Homebrew-homebrew-core/Formula/s/skani.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skeema.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/ski.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/skillshare.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skinny.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skktools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skopeo.rb, Homebrew/homebrew-core, 1

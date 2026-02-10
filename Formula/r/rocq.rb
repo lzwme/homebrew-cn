@@ -2,10 +2,11 @@ class Rocq < Formula
   desc "Proof assistant for higher-order logic"
   homepage "https://rocq-prover.org/"
   license "LGPL-2.1-only"
+  compatibility_version 1
 
   stable do
-    url "https://ghfast.top/https://github.com/rocq-prover/rocq/releases/download/V9.1.0/rocq-9.1.0.tar.gz"
-    sha256 "b236dc44f92e1eeca6877c7ee188a90c2303497fe7beb99df711ed5a7ce0d824"
+    url "https://ghfast.top/https://github.com/rocq-prover/rocq/releases/download/V9.1.1/rocq-9.1.1.tar.gz"
+    sha256 "35cd03fc4193969b1cce01190340e5c129c1ba8f02242a9e6dff4b83be118759"
 
     resource "stdlib" do
       url "https://ghfast.top/https://github.com/rocq-prover/stdlib/releases/download/V9.0.0/stdlib-9.0.0.tar.gz"
@@ -19,12 +20,12 @@ class Rocq < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "df231dd84d387ce8914fb260fd24685af7d6da6bb998c9d52efbf13b9718d9fa"
-    sha256 arm64_sequoia: "31e208459941d45b5c5e41278f79d6c40cd1abcb0b873c3ffc0df54f6cac6501"
-    sha256 arm64_sonoma:  "3aa44bda57467bfb3c27d928ef415e829f5c832ed59dbd4352b7e5ade3614c7c"
-    sha256 sonoma:        "5dc6e0ae4cc0764971fce661a642e28120742518254c3ca69c01cafd8e4619ea"
-    sha256 arm64_linux:   "b8ba5bae249958b1537e0edc72b0a29f78d0e1a840dadddd3f196ce19546abe4"
-    sha256 x86_64_linux:  "8069baf9a8804ce6945b8a808eaa88fa25e1b22b9334053e5570a3b3d7e14b78"
+    sha256 arm64_tahoe:   "b8360a844ef669a0b3b08a9a5a3dfe296902688ce6fbad6a7e9a612954e8e47f"
+    sha256 arm64_sequoia: "1a8d48139fa5839cdc196c5d4f79823d0a47b6f68f15f367091f16b628fe1c11"
+    sha256 arm64_sonoma:  "e534440b771adc163d4ecc14f72ec5efffd6e2e2b4c0f880c47c0dab281a4ff2"
+    sha256 sonoma:        "ab3466cbae6cc0d9a150993ef372cb7116b0b8e2347fcb1f63603c1d5327f665"
+    sha256 arm64_linux:   "9c307986f20b14744bb1cf125096710f009d8c40a83834ca02b93ac198e730ce"
+    sha256 x86_64_linux:  "a537821e69bdddf8dfc88fdfa542adf4e1fcc05886d6056fc4e5bb3c11dee459"
   end
 
   head do

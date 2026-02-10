@@ -4,22 +4,24 @@ class Libharu < Formula
   url "https://ghfast.top/https://github.com/libharu/libharu/archive/refs/tags/v2.4.5.tar.gz"
   sha256 "0ed3eacf3ceee18e40b6adffbc433f1afbe3c93500291cd95f1477bffe6f24fc"
   license "Zlib"
+  revision 1
   head "https://github.com/libharu/libharu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f59e3e3a39098aa5c4816aafe8b48c6bc1a86645bc8ac6bd5dbbb258feee2249"
-    sha256 cellar: :any,                 arm64_sequoia: "9c7a27f6e339997261bedf2c177bc414e108390ad21eee1a102f855183b2d8f1"
-    sha256 cellar: :any,                 arm64_sonoma:  "5830f3184260a06dadbea0233a05bdcc1cf2c5d0f53291f985dca7511963fccd"
-    sha256 cellar: :any,                 arm64_ventura: "370df233f9ade42e8febcc4563eb80e6e112c553474d86ae9707519d2875f20a"
-    sha256 cellar: :any,                 sonoma:        "c0f5f184237e5b4351a2d79b3c301a4d70483bc678665524298048941938d166"
-    sha256 cellar: :any,                 ventura:       "599507ae5f1714845532e3499bd1206e3bb0736d218494ba897a723db02e9d1b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0148393272b8a77a9a0cd78e685b99c1949c153ecc965789e34f3be4ad6bf1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "111c4ee131b6aa6e5126b9c223ea209f12de631932c1db0e02f70a1002fdde58"
+    sha256 cellar: :any,                 arm64_tahoe:   "2a5c693f01bbceadbc47a3debdb9bf41149de6e6222ad4f42741847bd62cf943"
+    sha256 cellar: :any,                 arm64_sequoia: "fcda91482f44f56d5d98387adcfa10412de7216906deb0b27084c1d2ebf8f6af"
+    sha256 cellar: :any,                 arm64_sonoma:  "ab07ca9b26a58c1510881ab2a032df5e955f3ddef02105045e9f4b1a809d1432"
+    sha256 cellar: :any,                 sonoma:        "3316ccdae1f8e6dfafd938a05bd81a89932e2b41888dbd34195cc547b95c75fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ef3176620a5cd03469609ef74b71c4731200853dfd97acdc7ffb3e67edd55f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d421cad27dfa67545c699b9ebcba09b914f2bc9b309ec088b53db2c43bcc3a4a"
   end
 
   depends_on "cmake" => :build
   depends_on "libpng"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Build shared library
@@ -54,7 +56,7 @@ class Libharu < Formula
         return result;
       }
     C
-    system ENV.cc, "test.c", "-L#{lib}", "-lhpdf", "-lz", "-lm", "-o", "test"
+    system ENV.cc, "test.c", "-L#{lib}", "-lhpdf", "-o", "test"
     system "./test"
   end
 end

@@ -4,6 +4,7 @@ class PopplerQt5 < Formula
   url "https://poppler.freedesktop.org/poppler-26.02.0.tar.xz"
   sha256 "dded8621f7b2f695c91063aab1558691c8418374cd583501e89ed39487e7ab77"
   license "GPL-2.0-only"
+  revision 1
   head "https://gitlab.freedesktop.org/poppler/poppler.git", branch: "master"
 
   livecheck do
@@ -11,12 +12,12 @@ class PopplerQt5 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e805cd46c6a1ad07eae23b4a5c5a24e06e7f4251acbd192e5a9a136a75b9ba55"
-    sha256 arm64_sequoia: "a0bf3f1ccd9f039cd98dc2756d18a39e1fff40de7bbadb1ec4b0462fa365a2cf"
-    sha256 arm64_sonoma:  "bb41aa50b20fd438d27adbfc37436cf90edcb689ccae7bca1dfb12a6a6c2b2fe"
-    sha256 sonoma:        "af001deaae611ed9338824a958e19c7681ee72cae224804fbce671dd67ae90fa"
-    sha256 arm64_linux:   "1240e50e2156a4aab0995c5928ca37dfecf3127ab7f105fc5c11533b84ea0e9f"
-    sha256 x86_64_linux:  "f6e7517e75b5d2524bb8e40c963600bb9bacee1e1615bda99659f112ceaf39c8"
+    sha256 arm64_tahoe:   "ee0859541da7efe87b45d42d7047abddef9986ccafa0e0914245a6dc53bf0ed1"
+    sha256 arm64_sequoia: "a76a56d592278709f6d3113d0a6eebba60e6fcb7f09c0eed86fa4a5a041a1197"
+    sha256 arm64_sonoma:  "940b6780d9c2a7cae22b65b076d7218c085d1899aeab0d82b8dc7ce90244b0bf"
+    sha256 sonoma:        "a835672a8721f511fdd492b87f74341013657dba4379a6cb3ec4a18714a4a766"
+    sha256 arm64_linux:   "dc3fcb5ba9cea0e4b0498f5ac3fcec83128fc8dc447e38e754511f714754fb14"
+    sha256 x86_64_linux:  "15c9229990549947f869ed62c6974774041a537370107de367ec9cae917ebffa"
   end
 
   keg_only "it conflicts with poppler"
@@ -24,15 +25,14 @@ class PopplerQt5 < Formula
   deprecate! date: "2026-05-19", because: "is for end-of-life Qt 5"
 
   depends_on "cmake" => :build
+  depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
   depends_on "pkgconf" => :build
 
   depends_on "cairo"
   depends_on "fontconfig"
   depends_on "freetype"
-  depends_on "gettext"
   depends_on "glib"
-  depends_on "gpgme"
   depends_on "gpgmepp"
   depends_on "jpeg-turbo"
   depends_on "libpng"
@@ -45,10 +45,15 @@ class PopplerQt5 < Formula
 
   uses_from_macos "gperf" => :build
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_macos do
+    depends_on "gettext"
+    depends_on "gpgme"
     depends_on "libassuan"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   resource "font-data" do
@@ -62,8 +67,6 @@ class PopplerQt5 < Formula
   end
 
   def install
-    ENV.cxx11
-
     args = std_cmake_args + %W[
       -DBUILD_GTK_TESTS=OFF
       -DENABLE_BOOST=OFF

@@ -1,17 +1,17 @@
 class Rospo < Formula
   desc "Simple, reliable, persistent ssh tunnels with embedded ssh server"
   homepage "https://github.com/ferama/rospo"
-  url "https://ghfast.top/https://github.com/ferama/rospo/archive/refs/tags/v0.15.2.tar.gz"
-  sha256 "cc5595c5c7a378774a953f18b156579aa201cbe7589ab7f912e7028df434c3e6"
+  url "https://ghfast.top/https://github.com/ferama/rospo/archive/refs/tags/v0.15.3.tar.gz"
+  sha256 "4c36291969c84159baff261841e6ccd9520e17f8bc9142bf815b9097322a8857"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92e91e2341ffa9e5b46271926b1c106a9abc0e1830675442a14a05fd8a99cf9f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92e91e2341ffa9e5b46271926b1c106a9abc0e1830675442a14a05fd8a99cf9f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92e91e2341ffa9e5b46271926b1c106a9abc0e1830675442a14a05fd8a99cf9f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d9563ea06943a5ce9e30499b98497fad37ad2caf109fd39bb06efbd204750a9b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e72b0414b474ca2092c01f838241a445bf1e35c752e90c6b497bbd7592d83aa4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb14ba71b779c20252f9f9b84cd8bacdd6e76cfc54086aaec50437312e42900c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "43494ada262f259f82c05219386a821a57d24053dc7d17f5bf0466509c2a529a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43494ada262f259f82c05219386a821a57d24053dc7d17f5bf0466509c2a529a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43494ada262f259f82c05219386a821a57d24053dc7d17f5bf0466509c2a529a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "19405ba3bdc6ee02655fa1ab3eb9b89aedeb4459792b08d313731e5bab9edd69"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3772e1d03c5b37d9a00700c5628c8680fa3ab3d7801145f60a3270d2e2aba275"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2180b3eabb574fdf196c1ec808c62d602637982a7eca1a01dc9d2b0afeea7873"
   end
 
   depends_on "go" => :build

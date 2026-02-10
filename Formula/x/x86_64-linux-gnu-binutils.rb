@@ -11,12 +11,13 @@ class X8664LinuxGnuBinutils < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "6eeeaf18ed0b9b7de6b4434860c4e3fde345d644ba355576376001c5df2dc7c9"
-    sha256 arm64_sequoia: "56d4c8cab30bbdadb17e1bbb9161967e6fdf0e8d93f259a470fde21852cd3332"
-    sha256 arm64_sonoma:  "3baa77d451f0a0ad0dec60030f24a298728169fed6baa842a305758f24487f80"
-    sha256 sonoma:        "7a2a3b16806b738f6bcfc8a6ad04e160e7c7bc6b10ef4fff7c34fa775a3e9702"
-    sha256 arm64_linux:   "77ea2c44e471fcda177c214b51f9bc3d6faec4ea48eebf8e075e9dd7563ef203"
-    sha256 x86_64_linux:  "1f5bc4d066a4613ea870a44754c887a8d471df143fe357fc9099678ae9746e48"
+    rebuild 1
+    sha256 arm64_tahoe:   "4b280edb9c59a8f2b5505719353fbe526f1f5505a50e0b4d9461c8bed065a919"
+    sha256 arm64_sequoia: "8e42ed55693262acaa7d041dfa5c804a2aeefe2946294a84e706c433934c1aa6"
+    sha256 arm64_sonoma:  "968e41c912fcb9b9507ad3a16468940e4875b00fe35d4dea02cf88108bac1412"
+    sha256 sonoma:        "8ef1d5f4bedf72f2d1931971494950ceb55fda4bcf5db8045afad7b1e68f28b8"
+    sha256 arm64_linux:   "6af499ae4fd08dbd3917733ce01fa4aa73931854c1cdb0a236369f05fe03bc0d"
+    sha256 x86_64_linux:  "18fee2bdbfa6f1f9179d4b281de07c3ba9eff4c0359674e6aa4533e2ea5e3de2"
   end
 
   depends_on "pkgconf" => :build
@@ -26,13 +27,14 @@ class X8664LinuxGnuBinutils < Formula
   depends_on "zstd"
 
   uses_from_macos "llvm" => :test
-  uses_from_macos "zlib"
 
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
   end
 
   on_linux do
+    depends_on "zlib-ng-compat"
+
     on_intel do
       keg_only "it conflicts with `binutils`"
     end

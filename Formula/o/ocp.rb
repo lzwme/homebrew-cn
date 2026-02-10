@@ -1,8 +1,8 @@
 class Ocp < Formula
   desc "UNIX port of the Open Cubic Player"
   homepage "https://stian.cubic.org/project-ocp.php"
-  url "https://stian.cubic.org/ocp/ocp-3.1.2.tar.xz"
-  sha256 "6bfa006bb0177c38fc000fce7e370961b0a7211d359a91c490cbb858afa992d9"
+  url "https://stian.cubic.org/ocp/ocp-3.1.3.tar.xz"
+  sha256 "4e8579b18d47ba2f4c667f577aa3286f6f8c4ea0b6192ff743f0f21678e60afd"
   license "GPL-2.0-or-later"
   head "https://github.com/mywave82/opencubicplayer.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Ocp < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5da338fd0f53a5e89576345e95b1ac20c6ec736849b2f00a79ec6a864392a524"
-    sha256 arm64_sequoia: "cd62d588713208a2d148b7c84d7fa6227cd63f65f7f5e8574789d7ed121404c7"
-    sha256 arm64_sonoma:  "c14211b4c0d63e631801c110ae85865a90004fc60e02c9060560071be72bd649"
-    sha256 sonoma:        "fe27aeddbc5c7b999c0df4dad888aa704e9055d94e5c52b3909eadd44d918cdd"
-    sha256 arm64_linux:   "cab5275b087dbf7cf1dbd26fb121c1588e085bb2d688908916416937cd9ff226"
-    sha256 x86_64_linux:  "7455f6ba30f41a856d6e2528ee31fb422d2fb728335c21aab180785327349418"
+    sha256 arm64_tahoe:   "2d23e0b0530d6bafafef1259a1fff14c2916dd79a870bb7b27756624d3b35350"
+    sha256 arm64_sequoia: "f01b64978bdb81b847488dc78660843931c48b2ad6b1aefe6eb16c8b1847cf63"
+    sha256 arm64_sonoma:  "25b6f1b7d06c8bac738883be72159dbc678d6cf9c7f5dc32e97769f071dc77ad"
+    sha256 sonoma:        "92b55ed46999d3426fde9c7c8760875ad5122fee38b5701f756f1fe19aea2a0c"
+    sha256 arm64_linux:   "9ab4e98fe3824a0e1368452702963e872da9d9e13a85237a5a36b519bc362f71"
+    sha256 x86_64_linux:  "935e516dcc588bb438eee0531c18242d49a4d3b532ff6579c3302b5de37f39d5"
   end
 
   depends_on "pkgconf" => :build
@@ -37,7 +37,6 @@ class Ocp < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libogg"
@@ -46,6 +45,7 @@ class Ocp < Formula
   on_linux do
     depends_on "util-linux" => :build # for `hexdump`
     depends_on "alsa-lib"
+    depends_on "zlib-ng-compat"
   end
 
   # Fix qoaplay.c:226:5: error: expected expression

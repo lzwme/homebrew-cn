@@ -1,8 +1,8 @@
 class PgPartman < Formula
   desc "Partition management extension for PostgreSQL"
   homepage "https://github.com/pgpartman/pg_partman"
-  url "https://ghfast.top/https://github.com/pgpartman/pg_partman/archive/refs/tags/v5.4.0.tar.gz"
-  sha256 "22d3c186c0504e4620f2971318f295903e16b3b39f4db991f37227fc97dc5497"
+  url "https://ghfast.top/https://github.com/pgpartman/pg_partman/archive/refs/tags/v5.4.1.tar.gz"
+  sha256 "5540706a53dc3cddbed3340e2806a8c976a44bfc45b77f636466878346f547a8"
   license "PostgreSQL"
 
   livecheck do
@@ -11,12 +11,12 @@ class PgPartman < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "432573032ebd12810ebf31836a0a4b59e75f8bb15786a6e8ed4e3f18a41b4fd7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "348f96619ac34b8afb3971e52a250f02ab363dd66887ea81e978d0083eba3ee0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f1f6b9abde63155ad8a8bdf4b6768a7ec0649d28297bc462779576f409f3367"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a4f512b8943665b39dfa92eb333552e7f098eadc5635041e8e012c50e4190e2d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "795e4f9ab4a429350d2711fdc3f775e8e8372577de75c9d82d2a09077414d7c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3f3463884bc7024af4f69673823db07e2b24903e2202528e82a7d58b26f1b74"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "607f8a6f5f1683be7b0396acff76090043423c0f2b9134658d8a122576cafb03"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "755392477acd37232fa2225f65f433d1450cb2b3ff9b4e05ba80c6d62c35dfb2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b938d0b8845bec7d8fe8302d7831e1dc084ac48e0217609af5f498393b31fc5d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dfcc09552c3af875df72a48c3c3d2cd2da340e893cf29c59a2a03494f56a3b6d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "828f6affc24182b96026e49fe0ea3e649f189d3287f7b17c930d6bb56eb2cf6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad5963221a516acaa6d45005d65b9907e998393b2bf81920c97ff9cb53f5c4be"
   end
 
   depends_on "postgresql@17" => [:build, :test]
