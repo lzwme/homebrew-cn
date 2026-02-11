@@ -13,12 +13,13 @@ class ErlangAT26 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8201f21242a2182deca379f247285beb69a86a379af17efa9b988bff79a5d1a8"
-    sha256 cellar: :any,                 arm64_sequoia: "8eca8d1ec17c35bc9d63d54f0877b57cb4fa4fb29365ba62fef7e89a5f3b67e6"
-    sha256 cellar: :any,                 arm64_sonoma:  "16ea3f0e1b624c4086a2624deea29108c2965f6492353ee768c8871825235801"
-    sha256 cellar: :any,                 sonoma:        "cf5da95ae2eb32d39426410a722c0bf6e4034bd8e77b616b4a1169aae5fe9f17"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc76b11a3d193ab29b40756f90f518681c2ffcace78ac89f7d2fc8bf717429f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e91dd0cc4b2c0c7a05bfe953581b9aa384c0608afb58c3b330da44bea447ead"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e5ac66f1dc05a765c2bd4cb80ddda39e321c179dc6b13e7306e5d411950a74ce"
+    sha256 cellar: :any,                 arm64_sequoia: "2765bea8bb281a967be27c5d6ddef078f6d08271cfccf95f6a90b57d92124d4e"
+    sha256 cellar: :any,                 arm64_sonoma:  "60be1bb4a1442b7b8dfde8f6724ed8b3cda84a71362650e0bcfae340f9ff8ae1"
+    sha256 cellar: :any,                 sonoma:        "abb0c9c1029be7e7ac7a9434d4ebba26b4fb24d8b385ad25163ebd8741bbf9f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc7668a8cfcd21ca4d811425bab9abbc2b09cdeb96e865bb0ce717a92d3f871b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8c8dbb01186d77f4ada0b7d68c48287835ba9005e4b76dfee80f57469f7f5d7"
   end
 
   keg_only :versioned_formula
@@ -29,10 +30,10 @@ class ErlangAT26 < Formula
 
   uses_from_macos "libxslt" => :build
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "mesa-glu"
+    depends_on "zlib-ng-compat"
   end
 
   resource "html" do

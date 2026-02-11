@@ -12,12 +12,13 @@ class Llgo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "12c758b32600f21531a8ed6e6dd3995e2ac4cdb8121ad3dc9b203d76a29bd49c"
-    sha256 cellar: :any, arm64_sequoia: "fc4b8f098da2bd1899f3435d545318948d4807e2ab34b9586aeb500f2ef19071"
-    sha256 cellar: :any, arm64_sonoma:  "a46f7ab0c6e15daa06af860efbb5f95aa86eed3c9b532c4f9a9bb3e32887a2a7"
-    sha256 cellar: :any, sonoma:        "14887fd31f709d1f68a3b90472b97ed30be880195c9952ef1cdcb9ad1b29fcd2"
-    sha256               arm64_linux:   "6a4dbc04a74a34dcfa58ed6b64ce33b1dbb3b4a10cf2a40214e99e3cc14a5b22"
-    sha256               x86_64_linux:  "d24b9f85770ece4b7089499891a0282e81f5e000665a72c2c6aff3b81f82a254"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "0af29c250002484947a0552af23412633ed6ac42d1e4e8347f0f42e6cb9669fd"
+    sha256 cellar: :any, arm64_sequoia: "c77ad1d7acb4725c2256ad16be9228320e3177c1fb7e457441918dd49ff294a5"
+    sha256 cellar: :any, arm64_sonoma:  "e34091160ad7c6a3731e08a98e6564bf00a89ce5fbaa6d52879469e9ed9e12b0"
+    sha256 cellar: :any, sonoma:        "6d5a965d00e86404b9d84a05bc81ab8965373d1b429d3c7c65ada19818b86d8d"
+    sha256               arm64_linux:   "9ad2d0bf453e0baa4b655d2005e918e70edb720f5202fb57e41bd03e8d4a5e33"
+    sha256               x86_64_linux:  "e2c6cd5a0254e48ad57576576f12fc0a5d49c7b607fcf2b33f3cacdd742016ac"
   end
 
   depends_on "bdw-gc"
@@ -29,10 +30,10 @@ class Llgo < Formula
   depends_on "pkgconf"
 
   uses_from_macos "libffi"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "libunwind"
+    depends_on "zlib-ng-compat"
   end
 
   def find_dep(name)

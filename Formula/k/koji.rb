@@ -7,19 +7,22 @@ class Koji < Formula
   head "https://github.com/cococonscious/koji.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "041e6a96f3dbf36efba528dd6380ddf39d8ec45221850a0224d7d0c600b9309f"
-    sha256 cellar: :any,                 arm64_sequoia: "e58c28eaab0ce31ae0d7bf7d994d061020a149825a61af7771f7acdb4bc602cd"
-    sha256 cellar: :any,                 arm64_sonoma:  "5445f0447d2c0505a49e4efe156f9030816fdf61341195434f7ad304b24ad92e"
-    sha256 cellar: :any,                 sonoma:        "2e2ad1bb4bf6c1436723a1535e6a581d24352efc62ac64b31d178f78f3f1bd15"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc21512132d4d6fade55d249fb114486e52da4e0f433edc948caea55bb5aaa4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fef9220c1c6293ed5c896fad2fe69740749a87e66255a2d778fb4053b34c5b27"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "2c2e65370ee4b66b797d400a6435446d2e23865f30f17d5b043981827071fe03"
+    sha256 cellar: :any,                 arm64_sequoia: "9dc61a06ca85e589e22edb4f49138080b8c465b4eb07fd786f570bfbe67484dc"
+    sha256 cellar: :any,                 arm64_sonoma:  "92223e83af0921779e26588f9a01b5ce030ef31dd5f0646a9fa25f8716b61541"
+    sha256 cellar: :any,                 sonoma:        "d48affcaca82ec955947353707efecb5c1587dbf2178c2f3e309637f6b2228fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3222f067b938c91e5be8d5bf9f5f5a17689e46bddbf43be19eaee6fe498b7e9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4d4ac52c1cf5615952acd1d35bd1b70060812a0f91ca55a04714e9674efc73b"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["OPENSSL_NO_VENDOR"] = "1"

@@ -17,12 +17,13 @@ class Karchive < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ee3e9c78507d928cc1eb5ea839ddcea3de2fefffbd7aa7fefb3e25cc7a771f77"
-    sha256 cellar: :any,                 arm64_sequoia: "d5ab425c82a046c3934c2b9aeca5465a98043ea4354d97e3c6fbead0ba80922a"
-    sha256 cellar: :any,                 arm64_sonoma:  "3cb41476baa0959b0626939ee2f081a55e87f51c0abcdeee96c9cd8ea7308366"
-    sha256 cellar: :any,                 sonoma:        "7ee279b10eee9d8ffa22d09eccdfcea3251f2a46090c3771b4e787a419cbfc59"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "335e24c9c13826e14fc91fca58c8a0432b72c5064e294263fc878e3a1c760d2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e17d609369b736aabf074a7c154c4669dd2b39b0186da23f89414460f5cfc5a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "43d90f9bf0e3d6685ff1bc9dd937b8f7cbb5a0cd0bb10db0f7b50c7672de0660"
+    sha256 cellar: :any,                 arm64_sequoia: "34226f3696260b35f4545fb39a7cb0f59bafdfc365e0d43d82c1a7286be34a4d"
+    sha256 cellar: :any,                 arm64_sonoma:  "2e65fa6789f217db687b2c4952d3f44b15bf0f64407e6c0ba977a06a1d0daf88"
+    sha256 cellar: :any,                 sonoma:        "83d30aa4f44fcf2a72a59e7b8627f733586cf43c300e0327d469ed129a9b2abf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4f6ddedb14cae760e3741f58d1c71b1855d3dc0cb4a5c254c6259f15569a545"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6982b4a656d8ecc699ae8571c199fd8e08592f36a7bbc1f963e4e900aeddf797"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -36,7 +37,10 @@ class Karchive < Formula
   depends_on "zstd"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_QCH=ON", *std_cmake_args

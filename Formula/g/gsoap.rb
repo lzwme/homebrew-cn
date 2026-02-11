@@ -19,12 +19,13 @@ class Gsoap < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "6c739ac36f28de1fc1812180366b62390c42e052327e8d93ab8af48771cde30a"
-    sha256 arm64_sequoia: "ae5d6df77c192f25b3355c3a4eac1e050a16179280e966ce3cdbdba426266616"
-    sha256 arm64_sonoma:  "cf6862c8713cac19574dc7f2febe5a48d45ea0147bda430ec8010088e0e33cf4"
-    sha256 sonoma:        "0234e78f4af32c7d6a8ee340d4252a1f9f103818043d637c1c0554a4764fdbc4"
-    sha256 arm64_linux:   "b73174a77d8e7c20da8f9a0855fafc5a6035ecd004c93517768cbde20611f022"
-    sha256 x86_64_linux:  "727201e9877c157cbbfd7a5b3158b22ae97f1e9abac71a0b5c885c69d905295c"
+    rebuild 1
+    sha256 arm64_tahoe:   "cf4c97610f77f2c9b5f06255f96e650e2e57d74213b02d4b385e55cf4824fe66"
+    sha256 arm64_sequoia: "df7e2eb67ed893096372b8e6dfc5b7d9e771277a11f1f7b5e680010301cd7854"
+    sha256 arm64_sonoma:  "dd104c0b5759a1c115877f2af1cdcf83c3714cd61b82038dc5fc50e38ed2c2fb"
+    sha256 sonoma:        "2be8de110f88781e1d8081810afdfc548332b1df79589c1b437790726003f178"
+    sha256 arm64_linux:   "62c8b487153acfcf3cbec5f45e48f0df8b83a5b26881a75aa001e52cfc06683d"
+    sha256 x86_64_linux:  "7edb24c0af61112ae66a364bffb97af20aed42e7da427ee7372de99d7819d193"
   end
 
   depends_on "autoconf" => :build
@@ -32,10 +33,13 @@ class Gsoap < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "install"
   end

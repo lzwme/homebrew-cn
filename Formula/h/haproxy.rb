@@ -11,19 +11,23 @@ class Haproxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6ed2d4101f405855020f3e15224e903976958ab42d302fc3a567113ed32d46b0"
-    sha256 cellar: :any,                 arm64_sequoia: "e47cd19f58c3f552bcf24f2cfcd40dde90cc1d6dab6a1642c9256f7bec10c99e"
-    sha256 cellar: :any,                 arm64_sonoma:  "39d8f248c9ce5ee0b230c1457fc11d54f3ad7bc6cffd35f120a844e9108c4c55"
-    sha256 cellar: :any,                 sonoma:        "54f5a6a497604b488f54a4c9f5cd2f31875dedba1b11d55959ebbfe16648e0ff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5810f105baca6dd6a3ca490cb511a200779d387098df66aabf7bff1c33db076"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd9755ae56e83d0b9000a922c7e295e5603062e69f249f7040d1b75b7b8fd54a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "94c0d8c675e964e6d94c79542fe2524e84d89e10588c11c46948b72237856dba"
+    sha256 cellar: :any,                 arm64_sequoia: "c9a5d6df22d403bc1da350e8effd42f20e110444412a8459e87419b2578b0676"
+    sha256 cellar: :any,                 arm64_sonoma:  "f29fe6868d654ef82c167d5c69b809b989f0b671c2b82d5452b8f7bd6d75f95a"
+    sha256 cellar: :any,                 sonoma:        "97ea8f113a9a154357c92436e72f9fd8b49434abdc219e6c3c781f76b7441b73"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "337fc29b7fa60cb230a05310f2aef04b80ae75dd433a565d52100a99322e42fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "341297a8f5c63a0fba544368a50dc39bd1b6ee8e8ad92b561f9dc37703c78f4e"
   end
 
   depends_on "openssl@3"
   depends_on "pcre2"
 
   uses_from_macos "libxcrypt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = %w[

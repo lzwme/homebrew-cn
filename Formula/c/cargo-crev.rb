@@ -11,21 +11,22 @@ class CargoCrev < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0c2058bf99742c715b0715ec0c960c94aca85b3bafaa122669c43eea9420515a"
-    sha256 cellar: :any,                 arm64_sequoia: "42cb4daca9c8d0ba31bf64d356570a0f8cfaeb29d0d49ba0bfc589edc5e2f97d"
-    sha256 cellar: :any,                 arm64_sonoma:  "ff054705742a50eee0d2a398b38bc2878df9416e4794b3d918ded10b1fe3164a"
-    sha256 cellar: :any,                 arm64_ventura: "3da7ac06e686b48d9bd8f5dae16a3e0a73a0ec5f7ab1400598a83b03a7ee5800"
-    sha256 cellar: :any,                 sonoma:        "b02ac8662057a7042863e0ecd62a066c4f2bad9497f3761323b63b3fd46664e5"
-    sha256 cellar: :any,                 ventura:       "daa86a9f52d84f32cd2f88daefbc642c1d1fbf5926027f292f30a794c967d8eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67ada93a107cf7b62feb2a4e7c18dfc667c2f37e7e65fcd377b4844d61a3d44d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29aea144a97853f74044bcb0b34d684ca20719eb25bf5325731ef19b7a75ed55"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "81b2fa2f7315f2665d8dcccb6752d37b56652bd7ef02c18129a8f5a406277c43"
+    sha256 cellar: :any,                 arm64_sequoia: "493e9ff59968ff20604d88efd36caa673c6111ed908ceef6d25e2c7a9a430c6b"
+    sha256 cellar: :any,                 arm64_sonoma:  "cf4941e37d2916c721d3c7fe7acf882fd025f131f7a31a57ae60ae04ce968957"
+    sha256 cellar: :any,                 sonoma:        "205486c193ca878625a1c5e2eecc5105ef46239be6057814f5e423da7ab73d44"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "307f024d7d29778e3341fe7e2a39864d0cf546bd1965f4b3cea1b4bc8cefec7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "616a84800440e0d72026f04b52adbc1dd7c2768cba516fb3517f1e98658ba50c"
   end
 
   depends_on "rust" => :build
   depends_on "rustup" => :test
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix

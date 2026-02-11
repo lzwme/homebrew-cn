@@ -7,19 +7,22 @@ class ForgejoCli < Formula
   head "https://codeberg.org/forgejo-contrib/forgejo-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "45379a91b70c0b9ea6217a81f4c5b4e180b3c38758eed9dcfd08e730aa2f3df2"
-    sha256 cellar: :any,                 arm64_sequoia: "6e4acdc5869b8889fd0db031f63dfba57c7de45bd218e60474d3b674dc8c87ab"
-    sha256 cellar: :any,                 arm64_sonoma:  "edf8b40748b1c7c5a1a8fd45f88c106314a16c3be9b38a62ac1fea924a841ca0"
-    sha256 cellar: :any,                 sonoma:        "26f05774cf28bc8e35005ca1191eaa7e9180b9cbdc1a1324e04f7cf9a4b7ebc3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "55b14093f304fc7b12b1289c88a6b62e3a8ef5a6ec279b745acc1dada5aa5e71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "150dee1c8434afe85934ef1c9d06e8e2c4913f288e4c35b2fcc595eec6f70041"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "8b5b53ff8d02650413d9d7f0a1f559f067ab4a945589db3a4b730b8bc2aa2be7"
+    sha256 cellar: :any,                 arm64_sequoia: "05a18d04827ced6895ff7b11b892377f8248a942f82bd11928eaa235b53c4a03"
+    sha256 cellar: :any,                 arm64_sonoma:  "ab96cf3b9a63b36a7f13cbd08e470161aca51b63568d763c928426a621b4be94"
+    sha256 cellar: :any,                 sonoma:        "09b267b22ce29b5b25bd82109ddf1a3fde47cadfd99f569e7c21708ea1b94eaa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "da4205613b733fa87b70043da4974af792b759809c28a25b45a9e58cc1272859"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b9f6aba4821577e529e68eb61a9460021edeb5fa54d7dfaf6f37ab42815fd6e"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

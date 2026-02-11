@@ -12,12 +12,13 @@ class Echidna < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b4c0c8e4703789c0a9a78b8581dbd70d8111ce6df831232915a4df984e886de1"
-    sha256 cellar: :any,                 arm64_sequoia: "b82dac91e964bcaccb7daf3bf674390548087480013e4b5a6e8988df4a7d7d91"
-    sha256 cellar: :any,                 arm64_sonoma:  "a390cb7a1f470f2c745413f52686357d1a0e1a08d54090c7a4d2a9c70162951e"
-    sha256 cellar: :any,                 sonoma:        "8dc501bded131ae6f2902e226834031ceb45780219771b102416af8017fe15c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7f057c41d4aa548b33bf692c57d697d16363bc3694511bd3117e5ccdbbdb47c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0799bd6976031fa133b66f5262a9327260cf4a3da4fc44452054c021d7260b7a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "95899ade7e9c31097b1c4f0121b4c007deb0190243f2eb7c4fc7707f635455f2"
+    sha256 cellar: :any,                 arm64_sequoia: "7471d1fcb3862213037f7a66b84c1831c89c13926618209820a9acbc0c5b3887"
+    sha256 cellar: :any,                 arm64_sonoma:  "f15ad76cbfded816b2bbeb2117639347260581e622591e532a802ebafc07ee68"
+    sha256 cellar: :any,                 sonoma:        "395a3e87b997ae6ab4b770078e00c265badd2b87b70da9612ddf30df187d1752"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad2f6057bd74851ec6f4567602593e200a6eab5eaeaeccccbaf1eee7c7274032"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6a7540c87c2a4d60019cdc5b748d14fe26f7add7b75493c5d7a7fa2a2df12e3"
   end
 
   depends_on "ghc@9.10" => :build
@@ -31,7 +32,10 @@ class Echidna < Formula
   depends_on "slither-analyzer"
 
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV.cxx11

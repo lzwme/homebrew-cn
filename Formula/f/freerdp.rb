@@ -6,12 +6,13 @@ class Freerdp < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_tahoe:   "328b6073d003b664b0a87e649b327595d97305277e48ab4ce087dd7acb817af8"
-    sha256 arm64_sequoia: "a5d1a1ab0e786ef9f499660272e594c92444329c264f85c13cb0d02b74c9961a"
-    sha256 arm64_sonoma:  "8a1c8b3a5f217237234ee710c744a180aeefc167e5c6ee27d26d2fe83128dad2"
-    sha256 sonoma:        "24154b0c3eea81f0f46304c5f234cb461f8587760bde933b2802925409be4bfc"
-    sha256 arm64_linux:   "65473ec4a4b8b206e03dded436dbfb9a02f1c73ab081af5ba2cb91b96cf09062"
-    sha256 x86_64_linux:  "eaa14b21c022071c044d965b7bc163657d15a07dccecb4181c507862c8dce818"
+    rebuild 1
+    sha256 arm64_tahoe:   "2c14ff72a761b11a29a6c854e4a7d89b92f54c9710639d649557f4bd1c82d74f"
+    sha256 arm64_sequoia: "3f2bfe0c3f49b73bef52526272847556ef42b90cb0e569ae33f7e5400ca92fcd"
+    sha256 arm64_sonoma:  "cdc340e76fb1c2256d862cc643dd393cc462b776ad97c89410603a8dc077193b"
+    sha256 sonoma:        "7f0e7c9cc84cf88e1eff4dd1c3b6c85ad7b990960623120b016e06725e2d0fbc"
+    sha256 arm64_linux:   "96639f293ddf5380ec56abb537d04835b49b931b08aa64e9b247074657658c74"
+    sha256 x86_64_linux:  "88b83975dfa9448400e7db67a898d97d545042e6cd802b5f7c8ab07dd4537620"
   end
 
   head do
@@ -40,7 +41,6 @@ class Freerdp < Formula
   depends_on "sdl3_ttf"
 
   uses_from_macos "cups"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "alsa-lib"
@@ -50,6 +50,7 @@ class Freerdp < Formula
     depends_on "libfuse"
     depends_on "systemd"
     depends_on "wayland"
+    depends_on "zlib-ng-compat"
   end
 
   def install

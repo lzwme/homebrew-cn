@@ -15,18 +15,13 @@ class IcarusVerilog < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:    "6362213da330c37911b9456faf6424e41edaa8b84af9021f804ec85ce7242bba"
-    sha256 arm64_sequoia:  "71feafd9b968350f08ca504f95b7d0be4e048799c47c145e2d7757ce0d179a5c"
-    sha256 arm64_sonoma:   "16e03356975ad058efbf99a12cb1ed1a6c078aea5d7b5bb6a0035442afb0f335"
-    sha256 arm64_ventura:  "0c963a73d69e2c0ad3c6813dd9d03ac4b5a880052bf9ecb28a8918adc9384b4e"
-    sha256 arm64_monterey: "968e2d0ca44b96920ad0806c19101a4dbd888ae8f5d3f6ede6395b13ee84c35b"
-    sha256 arm64_big_sur:  "af49151647a5194225563412267b0dacb3da1d3fe3777802f13788ebf098d50d"
-    sha256 sonoma:         "53a13ceb942f2ae0e867fc35716853f809114b157bb1e813a9a11b798666b968"
-    sha256 ventura:        "f8d395f182e8788ae9720421d2c8ba5ab90fad839e0071ed871c8a8b23484d58"
-    sha256 monterey:       "f6fea867f86a544671ff8d074da509d2997f545df8fa2d47cbb118aa7029fcfa"
-    sha256 big_sur:        "b5c5e18bfcdadfcc54a69954b71bf4c56f6e9c223823f65c798c442c4ec61e79"
-    sha256 arm64_linux:    "36faa76b1a7d0089f202c91564fb24536d9e2cb7d446a36e51657505f1cf8e89"
-    sha256 x86_64_linux:   "ee0b7b46d11a76808cebc2140d83fc615ae4bec40aa3cfbc346560532caf3cdb"
+    rebuild 1
+    sha256 arm64_tahoe:   "51668d00e6a1130a0788dd9d7291e2758e1040a6ec112376edfcccd4925ddac2"
+    sha256 arm64_sequoia: "7911ddab9cff947d0fee3c45f6d304af8e30abaca45adafc1d7f12beffde6b59"
+    sha256 arm64_sonoma:  "a935c5891520a801dafc403ae7e0bc724f0a9fcca8df9227706a9fd74fb44015"
+    sha256 sonoma:        "dd0bf128e18ade51f0e0400ff74ce97bf87e02a62ab976107a361991853e5858"
+    sha256 arm64_linux:   "56afa46c684a210fec8b7792b50b086bc07ff5b8f934b559e88380f4e884481f"
+    sha256 x86_64_linux:  "bc29fdcee8a32639e6d1b7cca55b5a6898326bae132051f0f567e0eeddb339c0"
   end
 
   depends_on "autoconf" => :build
@@ -36,10 +31,10 @@ class IcarusVerilog < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "gperf" => :build
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "readline"
+    depends_on "zlib-ng-compat"
   end
 
   def install

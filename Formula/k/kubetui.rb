@@ -12,18 +12,21 @@ class Kubetui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe8988430e94491315426dc5e41eb001b9f837004c9f07965964efb8ea8246ae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d3c51cdb0f5759726750a07a82f7416f8bf2e51db4b5fc04d5681be36c50e2a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f79a2803dfe2d98bb891b1fd3b4f6ea45974f96a9d7f63381466e62662258e49"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ed9f74deb5409364c34cc9e7f4dd73b486e966baf6422a6abf9d44c5ffd7c2f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2ed91d3e29deeb396656f2abbd4c1bb2a3f6b65c1ec5994ddfa7086a919ac37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57bd46bd48cca5b4189f32bcf19599979156c237d6efbdc3faeddfd3c6e69427"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80c2412f76c162fb865e7278d5693e5fe4dd77a6d875bc7dcae923ebcdf7dd75"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ef06a4a39f662a7e4133e5f02744e63099e03e4cb4464ebbbc72e0555b8f24c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67120239032a282765dd748a98799502f8099b953ca0c4d0c012467e5d8fa884"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e0b50cacdb96f2f339e923ac9fe425c75a0707985e346901b859209866c72c6b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "266e578dfa32479614cec03d4bd3fc0fcac156485aa9f3e752cf5dd4f473532c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15305425a6559c83d665be12ae5f0d205fcf90e1d56074fd5636eef10f2452fb"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args
+
+    generate_completions_from_executable(bin/"kubetui", "completion", shells: [:bash, :zsh])
   end
 
   test do

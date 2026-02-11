@@ -1,8 +1,8 @@
 class CodeCli < Formula
   desc "Command-line interface built-in Visual Studio Code"
   homepage "https://github.com/microsoft/vscode"
-  url "https://ghfast.top/https://github.com/microsoft/vscode/archive/refs/tags/1.109.0.tar.gz"
-  sha256 "0f871b8c6ca75db03caf32940b9e0904692df19943d6f3e2dc07107f87bdae31"
+  url "https://ghfast.top/https://github.com/microsoft/vscode/archive/refs/tags/1.109.1.tar.gz"
+  sha256 "fd473ee592b541f4f953e9accb42e71368ca1853bd965ba98a94c3f94e11a7c3"
   license "MIT"
   head "https://github.com/microsoft/vscode.git", branch: "main"
 
@@ -12,19 +12,21 @@ class CodeCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0168be38d839b6a852fa1458285f5628b0400ab0544eff7f4f17e4bf50df41cf"
-    sha256 cellar: :any,                 arm64_sequoia: "c24f0b70aa3522ff1b80d1d1f69aa58bf8e4b047ef22dee9867b949c2d44afe9"
-    sha256 cellar: :any,                 arm64_sonoma:  "6263aa7d9f13463ddabc369e72c14198e3d3e7fe94c310fb83e36e3babc6fb43"
-    sha256 cellar: :any,                 sonoma:        "71e55481b306f79aad9836f9abe7c9a6689c00e2899af024ac9b758e2f91d0ab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3facf5ba64ff6d049caf2c7a2fafe3f0d1ddff3d28f9c7789697e5f6053530b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab7c74a4d5e3ba0107f9a2a46cf29c750486c9d2b40588bcb5401b7b95f2f774"
+    sha256 cellar: :any,                 arm64_tahoe:   "64b93c90599e32ebf2b42896ebdc39a2b65808c5db4de39095cbcd93e8026cef"
+    sha256 cellar: :any,                 arm64_sequoia: "2b000f609c61cf5a064a80f2a33cfd464e23208d46e7dcded744f59e73bea00b"
+    sha256 cellar: :any,                 arm64_sonoma:  "56df98d3cff250248b66b03c87b90c5630587b6c1530afb180676a38cd91ff33"
+    sha256 cellar: :any,                 sonoma:        "88af7b656dd753f5633d5187a12cf7f550daf273b331df74df1f458e8c212783"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b6bb99712688f594cf64e243846c4a7298f0ddd0300410908b4d74a8c2258ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45da74df1a5474989c3cda0347eccf8e4c599c241216c05081e5d259ec2d3e1c"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with cask: "visual-studio-code"
 

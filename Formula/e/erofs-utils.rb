@@ -12,14 +12,13 @@ class ErofsUtils < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "74421b46b5e4d74ea7db26e59e68795df9ad8bf16ebdd01e592d387d30886062"
-    sha256 cellar: :any,                 arm64_sequoia: "b174f3b652f72de1830fbc87f77bfcd20d5e4e8332b234d6d82cac2504ace237"
-    sha256 cellar: :any,                 arm64_sonoma:  "1b7334a9d05b74b253ccbf19f14b5239d14cb1f47f5a38fa1c035c8a2ed61cb6"
-    sha256 cellar: :any,                 arm64_ventura: "b059764774718929bb84e69fc0dcac51bf0d2819cdd75e6016df77fda2695c21"
-    sha256 cellar: :any,                 sonoma:        "c8aa11405cbb3a8d3a21e6662b65672a7785963c168f27fe2b31d07e0f59b739"
-    sha256 cellar: :any,                 ventura:       "24cf420f807e846c42c7b0a1edf81d7b218dbca608f991128b01f13e0400aa59"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb03b56ff7a012df2fe260656e3cc9d7076547cd21283fa1f9fe4b9e400983fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7eb92c707a9e789b23311707b07bab6a09097d07eb4d33caab2acd53afba59ec"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "972dcfa48a0ffa83cc603e1e360636fc3e3ebcd5d42b0e66b2a24ffcfe224e16"
+    sha256 cellar: :any,                 arm64_sequoia: "74ef3476422c36f61fe5b2a1730cd6dbe64653ce16e1e4a19fbdfc9560531fde"
+    sha256 cellar: :any,                 arm64_sonoma:  "64d735dfd268b12ded52b754358a793aa022e306a82e89876f4609235c85fdee"
+    sha256 cellar: :any,                 sonoma:        "16b6b047443f4449fa83840950a9b1645a29520d2bd948a4a116ddb9459426e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f61e656f5cf40bd84158e1fa976e3a990b550f1640cacac8c802ecada017e1d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86a5e791f090e54d16e337f6698f38832255bc9c7cdba3315f28db654597f0dc"
   end
 
   depends_on "autoconf" => :build
@@ -29,11 +28,10 @@ class ErofsUtils < Formula
   depends_on "lz4"
   depends_on "xz"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "libfuse"
     depends_on "util-linux" # for libuuid
+    depends_on "zlib-ng-compat"
   end
 
   def install

@@ -12,19 +12,22 @@ class CargoAudit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f6e1da58874562864d3ddf655bc8e0bc37aabafcae816ee8e8783aad19934220"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77c19a55bbd46c4b6f164860bce8773545619d7bc33386339e55f06e876b3521"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1122954b7f865130a467e057ec4b08095a439b7fd78e88b3f742743f225d7f53"
-    sha256 cellar: :any_skip_relocation, sonoma:        "008da23bccc764848791d2d1c2b8989a01cd2302d076dc92b62165be76644ecb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1fd429416d65215512e1edff026556bb643d92eab15a641225deeb85404a1fb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "feddcd6bb9aebd8baba3b4d9a6bb0a1c2fdb5809eab759b979c25d41ec11db2d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b863761905e89bd87009f738a06311ff12c071952b249998a3cfa422da221583"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a3da87bd00d58d6b9fca96be4ed12ce9fc6d44ae6807de7bc5e20da3b66cddc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3aa29e243612911982cb490c5805e4632082661241b9e9596da606ef3364332"
+    sha256 cellar: :any_skip_relocation, sonoma:        "96c9f3e94687aea1e65ae80ca447e78319125e643019995cec756deec3832244"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc4d22172c227e91f20053e8bd799969b9e01c8d413d2d9ed0011367622414ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "303b9c4ba7517e22b93399a9876b8bd69307165ac9eae534db83852e449bbfb9"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "cargo-audit")

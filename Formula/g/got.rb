@@ -16,12 +16,13 @@ class Got < Formula
   no_autobump! because: "GitHub runners are not abile to access the homepage or livecheck URL"
 
   bottle do
-    sha256 arm64_tahoe:   "4dfdf7a7f848a133a186204dd626a72df82392ec169e18fc9e56c3f6284e7f8a"
-    sha256 arm64_sequoia: "47d8010ce0c8b2e3d20345b3e8157dbdff2f7d8762153eeb807f3f8f493913a3"
-    sha256 arm64_sonoma:  "cfc71c56307e00a41c5b1cb503529c45588bf7a29f2b4bbe25d796aab99860bc"
-    sha256 sonoma:        "32bf251bae26c97074b2b25646d5d6cf40041f45bff9a3d8dd0ef88fc12e3f55"
-    sha256 arm64_linux:   "cc22145acd0c5629c0fb8724b5a9c09c8b9c399f4495911337c3ea51c594b245"
-    sha256 x86_64_linux:  "966836a9ddb5586f03d189393497845bafc09b79510bee329e25d4471f3d4f1f"
+    rebuild 1
+    sha256 arm64_tahoe:   "6e045dbc306dce23715fe18adf273cf608c97b0d2c8b42ec0af8c290baa679e2"
+    sha256 arm64_sequoia: "d9f9750836c7a8f7b2a2082ff76bd3ab986271002f11b948b2c06033655efee7"
+    sha256 arm64_sonoma:  "9ae17930db89d78f99b106804a9873f756f70f232e0879b90bb35aafc5eb71e1"
+    sha256 sonoma:        "66651d2e96370254b070d848d13656a560cc2ca8b3d06e7acb460877eed8c8c5"
+    sha256 arm64_linux:   "533057457e59f06f7fa2f4dd823da42c9cdefc7444608d5e5ef2a7fd0cb6180a"
+    sha256 x86_64_linux:  "fda480ff9c76f92f85f030c31289a9b9918500ff941fa102c345fdbd51c8d130"
   end
 
   depends_on "bison" => :build
@@ -31,12 +32,11 @@ class Got < Formula
   depends_on "ncurses"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "libbsd"
     depends_on "libmd"
     depends_on "util-linux" # for libuuid
+    depends_on "zlib-ng-compat"
   end
 
   def install

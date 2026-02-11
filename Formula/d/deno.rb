@@ -1,18 +1,18 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.com/"
-  url "https://ghfast.top/https://github.com/denoland/deno/releases/download/v2.6.8/deno_src.tar.gz"
-  sha256 "61fab2832c0fd946ba40196df267d0f10cb5fc7ac375ca50d95cd463ecb775b2"
+  url "https://ghfast.top/https://github.com/denoland/deno/releases/download/v2.6.9/deno_src.tar.gz"
+  sha256 "1c856233c2b845848b5d85f66404b6b6fa9a5e04c8cf8b13025f3ce76c5100a4"
   license "MIT"
   head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bd7b7db49667cda74050a638f06909100ef06c8e74fdef22a15c92e570a29d76"
-    sha256 cellar: :any,                 arm64_sequoia: "706dbf1c178727750a8e0b24396d509dc0894dbcccb53afa71ef8fac55d5152d"
-    sha256 cellar: :any,                 arm64_sonoma:  "9d1a64b0a1f3f6114467b14e1eb5eec107b4ea66f3d7551e15edf001d12df932"
-    sha256 cellar: :any,                 sonoma:        "ccc80775945b46a52fd4bfb3f1764bd76d43fef6aac7927785fed7d0a36f2e08"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac6dbd968a7cb3a01000ac573cfb5bd786809d8708fcd5c802fe2b77cfe848a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6a374952637a52cb58e2b674e3b567998fdef933df8691d347f44186f46ee23"
+    sha256 cellar: :any,                 arm64_tahoe:   "10b5f8499bfb7917a18c717187504c4a32647d61c4ada95e4e687e3ba10c2454"
+    sha256 cellar: :any,                 arm64_sequoia: "5433476570d1a0141576cde808dff2a1746861b546df8d2db224b20c41e2727f"
+    sha256 cellar: :any,                 arm64_sonoma:  "0a49caba1b9e16cdb72d7b4bf341e4d05b8479cdaadfdd3f65941f2bc9db4a4a"
+    sha256 cellar: :any,                 sonoma:        "fdb2c9199c4884c704abc796aeb3196d58a01e2b5a895e8fc6a35e31387311b3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5dac43ac6742bcf4f7500aaf7014ef22ac1eb1e2787ac3761ec5961eb2737ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32128122fd7551cebca332fb6ef21ec741b333c3cf55e37bf5001d5888b2728a"
   end
 
   depends_on "cmake" => :build
@@ -27,11 +27,11 @@ class Deno < Formula
 
   uses_from_macos "python" => :build
   uses_from_macos "libffi"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "glib" => :build
     depends_on "pcre2" => :build
+    depends_on "zlib-ng-compat"
   end
 
   def llvm

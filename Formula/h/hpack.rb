@@ -7,12 +7,13 @@ class Hpack < Formula
   head "https://github.com/sol/hpack.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bccf8f0adae2c470ff2ac8b2b98362bd65cbbfb8cc835ee5f0661e44a00a3548"
-    sha256 cellar: :any,                 arm64_sequoia: "82876a19870c2d5538d376f31e194c7d9f6db186179f167b30722741a7acce20"
-    sha256 cellar: :any,                 arm64_sonoma:  "93de19b5e801f7bdb155254d944045a3a7d48485a204bbc39047b3cad714183a"
-    sha256 cellar: :any,                 sonoma:        "171f27403ad5d8f29522b99026b6226fb7af8dd3fbcbd0ac6717a252f03db809"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e95f26e8e08693ceefb0050369b516cf46cc433f40413914ccb7ff3a6b7dcb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de4b1cb3ecb015a26134b8520dfe06b10898124315d1461750f7447e91b65c3b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "6d24fee8d0bbb3e9e5effcf8ab18f845e9f31c2f769925496fbb109c887e4c61"
+    sha256 cellar: :any,                 arm64_sequoia: "e0576352e01db128281fd5cf4944185c5199dc00f23a147a11a51c7f33b0f201"
+    sha256 cellar: :any,                 arm64_sonoma:  "e3dc50702b68bb461844321420793be6006cfbf9e2c41046e3df0fe3f9bf8770"
+    sha256 cellar: :any,                 sonoma:        "10acf47f872a22560f35cdfef1b78682691bc7d05d862d64892c99778c08016c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d98373f8b719147e0755b980225eead700cccc7c7a05e6ff63cec7cb49fb23e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8eb68c22ecd1373502fd2f657f99e26afa7f3cfce4700954130e7912529e213"
   end
 
   depends_on "cabal-install" => :build
@@ -20,7 +21,10 @@ class Hpack < Formula
   depends_on "gmp"
 
   uses_from_macos "libffi"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155

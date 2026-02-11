@@ -11,12 +11,13 @@ class Gwyddion < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f157397b6c5fa83a8d4e2dd1cb54ef060ab3b6c2298554a8006ccd89bd6ad427"
-    sha256 arm64_sequoia: "c6a93e99ea54d741a02c28858ef4cedb959c039c425ad28fe37f6b47d68a40e2"
-    sha256 arm64_sonoma:  "2667a87710cdf581a8066c19cae2916cf6809f39eaa8437bba648943d6ff1cc8"
-    sha256 sonoma:        "c8e2916309b3431fc392e98de5f8ccd8b99534f0e19513756c9b8189155100a0"
-    sha256 arm64_linux:   "47e3e27c14637c56a991c08256ff8a523325052d54989f6879e94998dce31ddf"
-    sha256 x86_64_linux:  "81002efd521f8c2818f7182c6215feb390a9400c67eb0a1c47991702563bab86"
+    rebuild 1
+    sha256 arm64_tahoe:   "2a9be119dd5c8893162a0dcbfac468e8d92b8542e308005b171d98e671d1017d"
+    sha256 arm64_sequoia: "946f4dd90604f6e89c8fc696786ca9c67c2f74252e2ead399f29dc434490a303"
+    sha256 arm64_sonoma:  "65d5b8eb804d4d996544ce6e70caba8c6cb54f41a0639015f1ad84bd381822fd"
+    sha256 sonoma:        "507f7a6ed8de871c6e6ea6576ede975c04bff306deeaeb9511b6e2c4a23d7944"
+    sha256 arm64_linux:   "e73cf62e1f3a43063c484d2bbdc962a7f94ef40b6e1688b8eb657bbb40bf9bf6"
+    sha256 x86_64_linux:  "2abe37cb9a8afe42ec478fb057e3dfc4ca19ca1de0b5428ace7df39ab8cc5a2b"
   end
 
   depends_on "pkgconf" => [:build, :test]
@@ -32,7 +33,6 @@ class Gwyddion < Formula
   depends_on "pango"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   on_macos do
     # Regenerate autoconf files to avoid flat namespace in library
@@ -45,6 +45,10 @@ class Gwyddion < Formula
     depends_on "at-spi2-core"
     depends_on "gettext"
     depends_on "harfbuzz"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   # Fix Autoconf ≥2.72 compatibility by explicitly declaring gettext version.

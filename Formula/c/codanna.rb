@@ -6,19 +6,22 @@ class Codanna < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "20afcf58ad35206784291034bac752c03ce5c976ce9ba3725dce07fea14c3f1f"
-    sha256 cellar: :any,                 arm64_sequoia: "516e7668d8b3ffb4b7e12a0696eb1676b15b74042c07e1bffa979cf09a142410"
-    sha256 cellar: :any,                 arm64_sonoma:  "8f44927255ad1b570d1f916c86745b7ffbd6098cb2a9411626dde64424e41f25"
-    sha256 cellar: :any,                 sonoma:        "bbee46b27be0d790398d3a445bca961286be79dc4cfcfa320b5e5ab8dc767d0f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "58dcef4d4e8e3a3f4a5bd4a8ff6866c314fc9eac2d2b019bbddd1ed6dfa30b52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aacb2f5721297606bbff87fec5e2b052dd253596b2f719b093e39927931e8563"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "095aa93118a1523b51121933b5b606abfcae2a6a7b01436abda5963376c5ce77"
+    sha256 cellar: :any,                 arm64_sequoia: "b7918edf3f305ba5cf52f679294d28b7c5137f4f748166c2d046a0e8a4ab012c"
+    sha256 cellar: :any,                 arm64_sonoma:  "c9c329b458801de6b763a23f98922496aab469519b7069aaae534b09024c4d9a"
+    sha256 cellar: :any,                 sonoma:        "2c807bab155fd312d9352580670307ba82ac8ad42ec12b74e4a6c233d2b2e524"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "27a78210965a49967967530e1c05c3812531becc813cd1362a5ee01ed90ef525"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f64c0fc585d2fb2b22fbd7fc58a721c51fa8c2110f2938e01a30ac5d0672a4af"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args, "--all-features"

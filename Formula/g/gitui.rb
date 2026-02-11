@@ -9,12 +9,13 @@ class Gitui < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d8bc1cc8b7f6e1be0d218a19325f24ff4a15335c962fb93d37961b357a830ac8"
-    sha256 cellar: :any,                 arm64_sequoia: "273adf03fc2aa1ee541d35b69c298767b510443e2812ce4b3d9c13a3b8cabdbc"
-    sha256 cellar: :any,                 arm64_sonoma:  "4c5d3a04099ab24147b5124576dc41c7457e2bb37b4836e2563a9c1a6cde9981"
-    sha256 cellar: :any,                 sonoma:        "ff77e89525eb25480940d3ea1aa6e09b52e28078ec7c3790ba138a82da63debd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc3daaff36fa113c13e951f4355534ca1fa28018177c337062fe53dec32c9cde"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53b88c6afc765f0870e184e93921a0a52019d876b579111c97fd6f4d5e3f5a67"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "3bf06c89899c36b3f312246fe1e2638fec683b7d21cb4b230071980a126be480"
+    sha256 cellar: :any,                 arm64_sequoia: "2eca639c9b02860faca96ca14ac7758fb18360138d0b8d260fc606efb27461b6"
+    sha256 cellar: :any,                 arm64_sonoma:  "210ee535561366f07bd0f9a8a6ed589c857997c954f1bb63ab92ec40a3f0fce2"
+    sha256 cellar: :any,                 sonoma:        "c5b29d634487cbed56de2c817401da5755ef13d7a31123666d5a0481b1a60988"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf71424e3d0d7ed2c46366864891f447697e1037c7178f7a2f219be7477a505d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e53d035e90f92966f561ee6ceb697aea0722a5fe7933fa47867bf24b2c02e879"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys
@@ -22,7 +23,9 @@ class Gitui < Formula
   depends_on "rust" => :build
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.

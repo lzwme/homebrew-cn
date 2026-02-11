@@ -12,12 +12,13 @@ class Gromacs < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "785f5b5ddef0da296239ad358d8a168a0dd770d5c4ce69c320279db5973e0225"
-    sha256                               arm64_sequoia: "0b2e8c932507739b0473fbdaf4ce0362d98e212dd66c09f6c6a08ff866a8bfef"
-    sha256                               arm64_sonoma:  "bc1c5f92f0b19e63feede5752e31dff510e1cfd2cc1c2027acd840b797313b06"
-    sha256                               sonoma:        "3f365cbc801bf9f5706aad95bc827bf6017353f583bbff72e21df544928d2cbb"
-    sha256                               arm64_linux:   "d0902f4b969478ca8d1ef49de8ea5997775b40498d12338e5f40e3a32457dfaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b0e06bc9c5b70b78aef5cdc5dbef9a88b70d64efdcea0a7d840cb211cc175b8"
+    rebuild 1
+    sha256                               arm64_tahoe:   "416fb4578d2f6dd801674f76017cd0f04230cb99af6547f34749297eb4c4adbf"
+    sha256                               arm64_sequoia: "00ed7dc686a83c6ef1136d2d4546023a8322bcfd8f4b87d036c71c9ed89a3c7e"
+    sha256                               arm64_sonoma:  "bbe7052b9d5e56d0a71c9c71d0c834fb7138f95eb695d5f3aa63a5ad7865108d"
+    sha256                               sonoma:        "528825ebe6e5b5923e67f4c14df053932fd40cbcf259a767e96a5ad1aa2f8945"
+    sha256                               arm64_linux:   "e81669bc46f0c677bf3f45714031a92aa29b7acaa0836d433015c149dd92e332"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e30b8041b642f69ddcf978325c108dfd276d3bfabc673849cf9dbacdb4b88d54"
   end
 
   depends_on "cmake" => :build
@@ -27,10 +28,12 @@ class Gromacs < Formula
   depends_on "muparser"
   depends_on "openblas"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "libomp"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install

@@ -12,12 +12,13 @@ class Gmsh < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8eb04e36c3e44e8ec280b2e1350be62739d51d49dabb65af74ccae48bb624d05"
-    sha256 cellar: :any,                 arm64_sequoia: "07b486a223634ff27f6e1c8b5a1e38de0f0a5b5b6e535f4cbdb9b3079501c940"
-    sha256 cellar: :any,                 arm64_sonoma:  "bec50ecb00386ad83d5b9a281e908fd157808432d8c578e190a2fea05c6252ca"
-    sha256 cellar: :any,                 sonoma:        "c605fa873208382553ebdff480e0c42cc903e1bf7c0317205b9aae924547c0d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "352639817aa70df6abffe79e1b60fbb571a1c9241fd7455ef398fcf1150e9859"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53ce511f367d4f8650bdbb7070088952ff3e5e6f9424a7a7502e8ac95d485041"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "8807d1d5d37417122fd66993161a02a28cbc6cd0fe0b49f30ae44aa64f4dbc77"
+    sha256 cellar: :any,                 arm64_sequoia: "5609e9c8d652a59724f0d0706a4cc01e9e91122da86f94b26aaf74a1eb682bcc"
+    sha256 cellar: :any,                 arm64_sonoma:  "7f4d73af055c6d6bb0ddf314f109cbbe85e2df493361813c106cc812f4a47bdc"
+    sha256 cellar: :any,                 sonoma:        "863abbfc1ae158444eb5195caec8af043a6810731b7383ecf853214bc5581ee3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "42c97abfba2cc654aab332da85b7dacea8502e968d23ee84155fdb31a044545f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6638ce7feabf23f50d02bb5759a5ad11a96f3d2abc369d072a208a71f337efd"
   end
 
   depends_on "cmake" => :build
@@ -30,8 +31,6 @@ class Gmsh < Formula
   depends_on "metis"
   depends_on "opencascade"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "freetype"
     depends_on "libomp"
@@ -40,6 +39,7 @@ class Gmsh < Formula
   on_linux do
     depends_on "mesa"
     depends_on "mesa-glu"
+    depends_on "zlib-ng-compat"
   end
 
   def install

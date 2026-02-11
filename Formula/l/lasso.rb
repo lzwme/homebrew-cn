@@ -14,12 +14,13 @@ class Lasso < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ad3a5f5b9f31fba244ec16bb7636e9d85cf7e402e0a069098b1c492520de4c24"
-    sha256 cellar: :any,                 arm64_sequoia: "15541fa9354880fd12b971c2f48e6b5ddeac2f3fb30499108ffa80f4209d7061"
-    sha256 cellar: :any,                 arm64_sonoma:  "63d55bf24b1afbc9df4fed1654454f3f90416db3607bcdd1cf152285cc56e154"
-    sha256 cellar: :any,                 sonoma:        "eb58c9a5c4fb20ef759953793410c076045d28b0d334eabd123e6bc7fc146b94"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cca48a0072c49ad5457722cf05b7745c2966eb3d7c9da4b8791d7253cee68224"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02a9be9b9236464cbc47fdcdb35e077166da965b90bb3b9ccf0f1723dc1394f5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "4c4370dad3e210054a0f2044fa45ba21cba1eb9069c93566f346085c6090dba4"
+    sha256 cellar: :any,                 arm64_sequoia: "70828b4406548805b41ef937003e4f834cb374d5b9130bb98caabdc9002271d1"
+    sha256 cellar: :any,                 arm64_sonoma:  "7b6a1baa8665772f7b190897f39a202aa4a1d23169b76a9714192654a8b2fdc9"
+    sha256 cellar: :any,                 sonoma:        "d357adc4f1e1df85e9023df25fd34dbbe5beac77619d62d5ed6a265c0fda5bcf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9dec9909dba0ebad064501a11a1a52966f41ac9855b7ab4c6e46854ee2a39857"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e09b8efe054109d88cf8712058d974bfdb361e6226fe4a2b7c684fbf5d06732"
   end
 
   depends_on "pkgconf" => :build
@@ -30,10 +31,13 @@ class Lasso < Formula
 
   uses_from_macos "python" => :build
   uses_from_macos "libxslt"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   resource "six" do

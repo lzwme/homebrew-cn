@@ -3,6 +3,7 @@ class Llvm < Formula
   homepage "https://llvm.org/"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
@@ -23,12 +24,12 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "707a4d37838e79a9d9d05b2ef9d771a6a43b0262d0d5911e07bc15f0cc88957b"
-    sha256 cellar: :any,                 arm64_sequoia: "017e01db92e2988967559d3b1710e8eab47cbe925c46e4068cd6a4eeacce53b5"
-    sha256 cellar: :any,                 arm64_sonoma:  "b9410f89d30355a67717c1fb0ccc95a42e73ed42293722431ecaeea741501978"
-    sha256 cellar: :any,                 sonoma:        "f6eb5b6b113795aae1229896eed6990550524dd72536d6ed23f4d995930731e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a1922e11ff5c74e415f411e35d6c9ea9b3bc92397985d5c0b20ef2a6e864ff0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82c54ea9f37e0c15488b52050b030d66c723ed4c133b6b07b739be6abaab3312"
+    sha256 cellar: :any,                 arm64_tahoe:   "096330696259730502f6eff78c5c9fdd7e1c248888eee4696e8a92d18f1c7899"
+    sha256 cellar: :any,                 arm64_sequoia: "a75063d6e7f9a765dd2fda579b743bb5847b93272bb285fe182abecff72f93c2"
+    sha256 cellar: :any,                 arm64_sonoma:  "b9e2abc9ae0658c55b7f3b3c062415c5c8088710522d414a6c69f6cfe6bd71f2"
+    sha256 cellar: :any,                 sonoma:        "1a512378a356afa05091c9dd5c172c44ab82853f560d5f25df41d90c3f107ffe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "602b25549060eb073a4e165686349485398e3d2cd4891f356eb269b85da1f92c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f47a266e4298836ea4c4408ae7b36b572c22560686aae3f5399cda7279f12a50"
   end
 
   keg_only :provided_by_macos
@@ -45,12 +46,12 @@ class Llvm < Formula
   uses_from_macos "libedit"
   uses_from_macos "libffi"
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "pkgconf" => :build
     depends_on "binutils" # needed for gold
     depends_on "elfutils" # openmp requires <gelf.h>
+    depends_on "zlib-ng-compat"
   end
 
   def python3

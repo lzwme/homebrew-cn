@@ -7,12 +7,13 @@ class Ettercap < Formula
   head "https://github.com/Ettercap/ettercap.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "d866253edf99e32aabd71af32cdb93a04dab5e338df81c29dde60a878b2686c4"
-    sha256 arm64_sequoia: "6a9ecd815259623b2fda2ad8ceb8a5b24f95358d985d44de34fc4c55bd03c988"
-    sha256 arm64_sonoma:  "4c258ce9751edc76d653f25b962cc8f76547f3633d3a648780603feb6f086288"
-    sha256 sonoma:        "98b79bd173e14e6a247c8c999b2420934868c1e1e93cb675b859d0ca8d0b11b2"
-    sha256 arm64_linux:   "0fea091086e5e9b3b2de29839a96cdc9751569837145691697c381bc037bfe1d"
-    sha256 x86_64_linux:  "f9c93080e72d8a6eb989b37fffb75b49b6325e06c8bc0682af5c22f56226a3c4"
+    rebuild 1
+    sha256 arm64_tahoe:   "b0f697c28c4d4dc88b6f717abaf9bf9856b9fa26c2aa511b970dcfcc6ea1105d"
+    sha256 arm64_sequoia: "8f56c6044ab1ab45ce0cddf6628aac54ec78a5644ccf3d6da3adf982ead97b70"
+    sha256 arm64_sonoma:  "8318020ce63c1709a24a570ea65c9c0c76a6e7391f8a78808c3f6d133620ece5"
+    sha256 sonoma:        "3dd8609d57b114735a7db0708b350a5587f4435c4b4b11d1ca20871c5837decf"
+    sha256 arm64_linux:   "73a5e485dae3ee5339481f54ae56ccbb69bacc5d41ecbfc8053071be373d9b9a"
+    sha256 x86_64_linux:  "98f5d49640400d62f0813d27d2d72c2a68473c28bd621004fd24b5ce13f9fc0a"
   end
 
   depends_on "cmake" => :build
@@ -29,13 +30,16 @@ class Ettercap < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "curl"
   uses_from_macos "libpcap"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "at-spi2-core"
     depends_on "cairo"
     depends_on "freetype"
     depends_on "pango"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install

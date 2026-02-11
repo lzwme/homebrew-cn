@@ -7,18 +7,21 @@ class Kallisto < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "15c815ef2a93f3146564787c2c161bb20cdf757e0f62b5fdaf339adc5c282a44"
-    sha256 cellar: :any,                 arm64_sequoia: "ceab1faa800ab8b8b82a197142dc5f3520897089cbfb97eddf080bf3178085d0"
-    sha256 cellar: :any,                 arm64_sonoma:  "ba1270ba9840d1547752cd56bd71678a08dfb4dec5e1564aae71ca43c2858eaf"
-    sha256 cellar: :any,                 sonoma:        "d0a212cf0c56d348b3665b7338957e457890501cf58c8f20f2cd250d790330dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "40005484f9991f8c84a914e970f83424f5917abe9d4501c02951fb22e5b2b690"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "092a025475cfbabeef5f0ccb3b8e65faf367bc35779f845f8c01ce598a90c70a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "eb1aea233d5290b68ece9eea3fd31675586b2605dadaa7037f4b9ab1a72bf26f"
+    sha256 cellar: :any,                 arm64_sequoia: "f655f79f72630cbd72d17a0e655b520a92ae8758baa74d93d75a40ff5040d2dc"
+    sha256 cellar: :any,                 arm64_sonoma:  "230fe2322f4c8cc7cef85e1ed0498d4405c725e793fd375e4774ceaf2585e2c0"
+    sha256 cellar: :any,                 sonoma:        "c8db8ebf3fa7797363e0f46e26a4de458f76130d7512e794b9e7dc78ec80ae88"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6bcbc6e7a0390a11a375772067fa935370bd81344f7619738180b2760201b253"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c1629b0f197520096e048911ae289bd77334b14eefbf1f50167990713b63024"
   end
 
   depends_on "cmake" => :build
   depends_on "hdf5"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Fix compilation error in Bifrost
   # https://github.com/pachterlab/kallisto/issues/488

@@ -11,12 +11,13 @@ class Hdf5Mpi < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "caf2dbe3e96d3e7ed4f8457fbc4b11786c7529e2dd70cbb7ec941f8bfc6dfe7f"
-    sha256 cellar: :any,                 arm64_sequoia: "53fcc73745c194a5fac3e1f1e7173de981c70dffae569a0c9cd68507c0d478fe"
-    sha256 cellar: :any,                 arm64_sonoma:  "e9309fccc7350411d7548fe88c0deb09f50062e1f3900bb0eac4b99542a1bcdc"
-    sha256 cellar: :any,                 sonoma:        "717e830e7379dbd12d506c7c3a0bfe00ef4349ba29c9ccea9044cf7e06b31c53"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "36474a3ff7fc0e0aec844374fb2f738c9a4d8657c10bd19d2d46a4e1c17243ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff89895ec5e2f43e0c1eaddcdca76aadc61f9b5b61519d945df29d734d509e7a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "8f9be3c2c9f4d6d4af103e18e239b8a66c92f50a06992441c1981b280c88d6ec"
+    sha256 cellar: :any,                 arm64_sequoia: "a28a5a87998384e10620f990dafb9a16b3eb978a858ff03ea94f03f77c85d4ac"
+    sha256 cellar: :any,                 arm64_sonoma:  "8759076738c1ec4ecca1eb32f0551863ada1da51b55353a158a6aa8be3bc4b83"
+    sha256 cellar: :any,                 sonoma:        "5dff06fce6d4aafb2fcf2cac37f4aafd378b6974a51f55af08719a67cb283022"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff91d2ea3cd0c79226e2864709ee36986dd66a866874b2c24d4f12c7e3063b42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "558b834ced860ab5bb3477646117ccf0d157fbc31b36eeeb1120905dda11be06"
   end
 
   depends_on "cmake" => :build
@@ -25,7 +26,9 @@ class Hdf5Mpi < Formula
   depends_on "open-mpi"
   depends_on "pkgconf"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "hdf5", because: "hdf5-mpi is a variant of hdf5, one can only use one or the other"
 

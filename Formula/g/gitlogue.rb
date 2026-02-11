@@ -7,19 +7,22 @@ class Gitlogue < Formula
   head "https://github.com/unhappychoice/gitlogue.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a8cdc8b35552f37e26cf041e08129933a9e589d27331ddd50f613cc80306defc"
-    sha256 cellar: :any,                 arm64_sequoia: "2e42f9ab6c6daee4635c25823921551be7ff2d529b5c89c36fff90f437c553e1"
-    sha256 cellar: :any,                 arm64_sonoma:  "ddf4f2a76b95914842c745837a128a3bce7394522e6ee762516b46ee7d2aab07"
-    sha256 cellar: :any,                 sonoma:        "b25ccf8d7fadfe0fb243acc527850a1e256885d2e3ea9ff4bfd0c88a85a03d15"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0bf5f64d9f0fa52a8d5aefcccbff9fb0110cf9f7f3b7485e7827443241b9a368"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "967ae9fb8ee80a5f1014b059e03d2a0acdfea197cfcf344a66a6a12d152e9f74"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e03bf6bb205c97c1fae75da1102ac98959e749a17868f50952c995d7f8b6d345"
+    sha256 cellar: :any,                 arm64_sequoia: "5ee545bd94e52a3cf8eb7072cbfd5ef032bf57f5cba485aa9fcd4efdcc6c1369"
+    sha256 cellar: :any,                 arm64_sonoma:  "b9d6e95ccf83b0af29b3e8549ba29b43fcdefd698a5558251c69c62e4c7aa62d"
+    sha256 cellar: :any,                 sonoma:        "1b4ff35275e305844fcca433431c3203f99dc24a030e0669c530af9fc2b5868b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e1cd488a243269e01506a901d1ecd51de77eb61a797bec1cc2ec44cc7220557"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8c88c12baa14f3d877b2bb4ec9a5ad5f5160acf6d9d7f544a858200892441ce"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

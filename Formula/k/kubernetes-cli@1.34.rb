@@ -2,8 +2,8 @@ class KubernetesCliAT134 < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/docs/reference/kubectl/"
   url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.34.3",
-      revision: "df11db1c0f08fab3c0baee1e5ce6efbf816af7f1"
+      tag:      "v1.34.4",
+      revision: "14507e2fb33b11d2712ccbaed0bc282c27a4a04a"
   license "Apache-2.0"
 
   livecheck do
@@ -12,13 +12,12 @@ class KubernetesCliAT134 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6c25edcda04151bb2044aedac8da5d7c56c5733d13d16f0e271024e30351e4d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dad92248113475cd0d13739ec79e78259e8de1b2ae6e5862fba1f15fd77193a5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e87f2e4d87dfb2e5871ece8902ba3fc917c055ed6f0918c29ea4b359ae6dd369"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1ee9b34dd04f0309f59baf6d8097b7eddd2d304ac860b91c53337b9e6affddee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "817d0358a306c63edd79952ecb839381631a13c378e6cfffa30d2d2df22fe192"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "274e0e3b5a3a443472eb623a5d59030eacff0729725f4488517f03b2be642e97"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf571c24c64acc422df837141734988b6c597b59bdad68e4bc1601b1a17eaef9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e5ad3f3e40f8de5a8a926474d3d2d7f9c6aa9044fdcd6fb719bb2c0d1679196"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f600e4b25e5999912320410579d34b4f0a12b19f4bcf3fc3b6bd24a829a03001"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0e0989ac7247af14d778147b807f8deef7dbacda57ccf6d0ab9fad4e2ac52f73"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f75bb29b891ec39d7096de0d3ce9cafe67f338b53845e249a393d24bade94f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbe24fd3dfa018637dfb39ddf70eb4ca4996f4841eca8218e1d56f2dc272bc2b"
   end
 
   keg_only :versioned_formula

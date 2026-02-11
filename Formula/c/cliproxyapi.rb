@@ -1,8 +1,8 @@
 class Cliproxyapi < Formula
   desc "Wrap Gemini CLI, Codex, Claude Code, Qwen Code as an API service"
   homepage "https://github.com/router-for-me/CLIProxyAPI"
-  url "https://ghfast.top/https://github.com/router-for-me/CLIProxyAPI/archive/refs/tags/v6.8.5.tar.gz"
-  sha256 "0b314a5f36167c95740604e45823445c93bab402ecaf6bdc013031a9601a1a16"
+  url "https://ghfast.top/https://github.com/router-for-me/CLIProxyAPI/archive/refs/tags/v6.8.10.tar.gz"
+  sha256 "5fe9977bfaac22bba931f409b5cd2145c580593372e81f7e1c3e7e5108f54d46"
   license "MIT"
   head "https://github.com/router-for-me/CLIProxyAPI.git", branch: "main"
 
@@ -11,12 +11,12 @@ class Cliproxyapi < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "e7109b646f80f8af47d4ffb3aed5727651950c0510de46e8e3555c0e431ab3b4"
-    sha256                               arm64_sequoia: "e7109b646f80f8af47d4ffb3aed5727651950c0510de46e8e3555c0e431ab3b4"
-    sha256                               arm64_sonoma:  "e7109b646f80f8af47d4ffb3aed5727651950c0510de46e8e3555c0e431ab3b4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a7dd15f4246e95706d23439ed97a76012816a035101231937c47620e974c1f6e"
-    sha256                               arm64_linux:   "bae7b7515d480fc8e15a7dca8d03277f5d1ec0ea6f0e31098bdc4bec89d1f9f3"
-    sha256                               x86_64_linux:  "7f0455db8d5227e55595346d427bedfaf5650322cb1a411e6ba32614eba045bd"
+    sha256                               arm64_tahoe:   "8901e84709c47c2aa65c0713a9e9c822d29b779ebfb3489a9374ba9faf0c645d"
+    sha256                               arm64_sequoia: "8901e84709c47c2aa65c0713a9e9c822d29b779ebfb3489a9374ba9faf0c645d"
+    sha256                               arm64_sonoma:  "8901e84709c47c2aa65c0713a9e9c822d29b779ebfb3489a9374ba9faf0c645d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6bf20f705f9f8087ba1e9ef0e64c13858f05c076a36ee07989ca97412c403d41"
+    sha256                               arm64_linux:   "9caa27dfdecc36c1c06cf858ddf4c4c1200d777952e82f30437b7a38b9b1e1db"
+    sha256                               x86_64_linux:  "577dd7e8e9c086b3fdf219cdfe5afd1c904a631558399d2890d381d846985f70"
   end
 
   depends_on "go" => :build

@@ -12,16 +12,20 @@ class Fossil < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "a40eef34a5a75926ba5bd5565e55e8c8516194d576fc0db185643d2cd53dcce8"
-    sha256                               arm64_sequoia: "890c782065554f55d8bc3b4ed9893ce6653e3071f42b7d54f5ea0b1d10888600"
-    sha256                               arm64_sonoma:  "20926d9e74f6446c82dfe6ff2c7e43bf2cda953e04ed80c1e79a1eaffcdae853"
-    sha256 cellar: :any,                 sonoma:        "17864aa860d64edd0294947b0992a2bbcf944f83bd61f9d431da2c0bab7bd4e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1e7e5e722632e97a05afac0be97279fd9c7aec985d036ac60ec741acacb5f45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "751ab9ed504db45228457a763eba4ae27b70d825b5a851a55f644e23978c18e4"
+    rebuild 1
+    sha256                               arm64_tahoe:   "7e094477bb5602aca979d117cf3ffad1fc51aeda6b5dbbbbaa1cdc34b6a1b34d"
+    sha256                               arm64_sequoia: "9392007c863be3dc16c5820330ae782c8dd425866b06be064592fa1ae8108deb"
+    sha256                               arm64_sonoma:  "c2f8ede6e38cfb7c73f5a7b10b2f205b35b14a009eda087356ee561104d7407e"
+    sha256 cellar: :any,                 sonoma:        "5f4e26e48b7bc9389167e1af70ba8272fda1670143f26eafecd047acb0b9a517"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ffc405ac2b1467360a672fea2a8f1bcd1906fcfbba351010a2205a77f51c6f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d02265c632ed51ce08808abaf7a9171e7173143eeddac0e02f944044e5108a8"
   end
 
   depends_on "openssl@3"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = [

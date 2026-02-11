@@ -11,12 +11,13 @@ class CargoC < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5ec0938b762dac2f00cffb75c65f16b21dcbe318c8b0139fb88f4a9420320917"
-    sha256 cellar: :any,                 arm64_sequoia: "df057729dc96660808773283b561781b60357580fb693e19ce07dab4658debbd"
-    sha256 cellar: :any,                 arm64_sonoma:  "4a64cf07223a9388b98fe5e79ddabc9f48a949cf790c72adb1baee8fddd7d21a"
-    sha256 cellar: :any,                 sonoma:        "3e68cde1e6e4176e802bbcd4c3f5d48520c62a902b1f9946ea1d5f4aaf652a1c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "05481276b5fdfe6fc11db58d3141cf51fd4aa650475615411b9497c718a0ccc9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "016c098c27ca8c651af617b38079f3086b2ddb35ffa80813b4597bb7ed6f4511"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "8681512c46461c387c5509d6634e20c685352b700ee1d3a3f7fd7f510ea2af69"
+    sha256 cellar: :any,                 arm64_sequoia: "62138b153f97787013a63243e8fa78c2acc46567644ccfe0fd10b0e49b284a58"
+    sha256 cellar: :any,                 arm64_sonoma:  "0b0679425b368b3017cd2ecb5792d19038d53db027a21e23481516b859f3d655"
+    sha256 cellar: :any,                 sonoma:        "d255268040c0d723ac2a1cbcc7185da717e445479f85b0abf5977f2f96ae3899"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "935cca7212c22017a699e5fb8fdecebd03c5990a19c94df869c5a91bb77bf242"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7228f50abd22ea3892e11bb518b07cca2e5fb39124541c4b69333404447798d0"
   end
 
   depends_on "pkgconf" => :build
@@ -29,7 +30,10 @@ class CargoC < Formula
   # this is a workaround to allow to build against system curl
   # see discussions in https://github.com/Homebrew/homebrew-core/pull/197727
   uses_from_macos "curl", since: :sonoma
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"

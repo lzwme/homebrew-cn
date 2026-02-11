@@ -1,8 +1,8 @@
 class OhMyPosh < Formula
   desc "Prompt theme engine for any shell"
   homepage "https://ohmyposh.dev"
-  url "https://ghfast.top/https://github.com/JanDeDobbeleer/oh-my-posh/archive/refs/tags/v29.2.1.tar.gz"
-  sha256 "319c84e6eff3d51de49b627ec55c3bfdbbfa85eddff21862d8d1d1e4821fb47f"
+  url "https://ghfast.top/https://github.com/JanDeDobbeleer/oh-my-posh/archive/refs/tags/v29.2.2.tar.gz"
+  sha256 "29baace3027f0733e638ddde11b299d89f6968e2255c223c71961bc8ef597570"
   license "MIT"
   head "https://github.com/JanDeDobbeleer/oh-my-posh.git", branch: "main"
 
@@ -15,12 +15,12 @@ class OhMyPosh < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16382dd4e6999f5396c8908a7836fd215909bc0c3cf92f8af1b3fccc8145db49"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c240340122a3abbe687fee0b37e6294b0037d48a611ce859cb2188df58d9ee6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6beb9e5cd3c88d9f93c7382cd4f14f5b64bbe9f2aa16cafab9d19f2574d04fd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6820e2526055dcbad7afdb6effcbf4fd6fb81e8a60737dbd61353aee66cf5ce8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e44ee4342196825c83f92525e790ec40dd5839b1f7ec40f7d773d760d69beee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07e9a7d79422bb56640508828faba9b2e7f839522e80f99d9365a0ebfa29725b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "533572e699793714e61e9d9634ba085ce97c14b786aa640ce9d16779076bb02b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d67cde899cd3ef91863287cfa65731a3070066f00c144cef007ecf09b75d4ce5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18ead670d63e7c3a1afb9de60e3b3b60e836e5f19922696660c71e85397e94b9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ac6d638bf72bc9166e4e743a29f0de475d322edecf1b5f72a1fae139c12c2746"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a28be9d5d351c5e13f59bd8406e8b5e33232521c83e78df1b277ead2923404d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ba4fbb6a06d052bcff434a0d2b74ff34a8d9ca5ed8b6d875f9bb753645506ad"
   end
 
   depends_on "go" => :build

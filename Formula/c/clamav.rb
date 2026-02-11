@@ -14,13 +14,13 @@ class Clamav < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "219df02b20bf1ab28fdc4a3b7b79708279992e921bcd40da94f90620e10b63b7"
-    sha256 arm64_sequoia: "94b255fa171b5e92b99986dd9b9f17773aa27f13bc0056c6b945728506b6ce6b"
-    sha256 arm64_sonoma:  "ddc866da4079b1cbccd104051c7d14d25f562a701e7d52c380b0d9f92191b7ff"
-    sha256 sonoma:        "b16dae0e12c7c0eb591dd75a2b262dff9dc2f1e93d5f62702dde7c4df2f5531d"
-    sha256 arm64_linux:   "2a910545e8050ba236ab3f1f5508b65b6a6f7daca9a2747ef304bd0b356663a3"
-    sha256 x86_64_linux:  "c9ff6614ebc2303d4546762ac6801e0485d94249e2bdffeb142369c8d242d9c6"
+    rebuild 2
+    sha256 arm64_tahoe:   "db4a62ff1e9d672ae1c2c73553dfc777c79c3a9832d9bfef98f0de517460f287"
+    sha256 arm64_sequoia: "aafd1995cb986eca71904a610737c11587b153755d95efea5cfd68e55dd2801a"
+    sha256 arm64_sonoma:  "f0b3970e44a1ddbc27909a552d6f51fc8774406936ed0d157292d99e6b012106"
+    sha256 sonoma:        "3397a457aa043b820dacbc5a773cd31555f5d953458c2113def81d87a8d6a8f8"
+    sha256 arm64_linux:   "7396dfd64356c87f980385437040bfc9d116e395d7dfa7b2c2c26badcdc42da0"
+    sha256 x86_64_linux:  "059c8ee25e8e6864c50764d245343ab48d75df67c90d432445010b49412fbca2"
   end
 
   depends_on "cmake" => :build
@@ -35,7 +35,10 @@ class Clamav < Formula
   uses_from_macos "curl"
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   skip_clean "share/clamav"
 

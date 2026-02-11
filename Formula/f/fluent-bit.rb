@@ -12,12 +12,13 @@ class FluentBit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "11c892cb9f9cba5d77c940d4211263c2f18f8b4f84b9b6207459b5aa8af30338"
-    sha256 cellar: :any,                 arm64_sequoia: "775c3ac613a54ff3e3d014c0635b200013e2ac5925d700a5b14c03dc472fddc1"
-    sha256 cellar: :any,                 arm64_sonoma:  "617be2cc4af319fc54aff605d4b1bddd085efd1ff53599b9f228f9fd048194bc"
-    sha256 cellar: :any,                 sonoma:        "08215415572dbf9177d91759901d2965f13ccfa545c4ee7745be3321a6f6b599"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "42b58a87a520afc4744e5a062973f71d8de73561a7e278748ee31eacd4027aa7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1613a6bab7ff0ca28942b66da551fa62dc265c6d9fed907d169dd61e74e45754"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "3adf65a9576fbea4dfcbf159abfce1cbfd6a32dd52ebca23d4c4927d65a1cda5"
+    sha256 cellar: :any,                 arm64_sequoia: "74f91e8e1b52686a74c7e33f2818f0e28e3a1003d6e133a74e9cd18cf30f209e"
+    sha256 cellar: :any,                 arm64_sonoma:  "b2f7b84102140b41b596aee2a3807cdaa529e0a5151d79107328cc15e195d6b8"
+    sha256 cellar: :any,                 sonoma:        "52e8cb3397bbce6b21889aad864996e367e77c32d80b39b17d4d1a2ca290f76a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6cbe451fe2323b0fe5f7dd438761ff7ea4c2f6ccb81967ccc626126c778c3a9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1dde513b2295154465d13ab6c9ac89d61c24a4698a656312abd5c49bf3cbcf8"
   end
 
   depends_on "bison" => :build
@@ -28,7 +29,10 @@ class FluentBit < Formula
   depends_on "libyaml"
   depends_on "luajit"
   depends_on "openssl@3"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Prevent fluent-bit to install files into global init system

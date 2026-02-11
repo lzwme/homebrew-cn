@@ -7,19 +7,22 @@ class CodebergCli < Formula
   head "https://codeberg.org/Aviac/codeberg-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cfcda84a25d0552cb299a1d58ced6ad3ecb83d82eb5d9dce39995ffb03d1c906"
-    sha256 cellar: :any,                 arm64_sequoia: "63a1fd6335fedaac639a58946e76c6160569afca10fd1b131280e50f1f5c01e7"
-    sha256 cellar: :any,                 arm64_sonoma:  "84b1be81b4ed6aa2ddb43bb735bee6d65d31556c4bd01580f93adac9bb93c9f1"
-    sha256 cellar: :any,                 sonoma:        "78d9f177ee5807113a8e399a5422838fe22273a9c979730320225beef06dc3a9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbd727c94f132d006db3804109abf744e60521e6ee8d0b3c6252b9991f3fbb89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d057403e008355affe773cde562accbb2a1141079ed692894942913034699b0"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "033315b17a329e110e832830faebc1f5f851836a43ef102f43aa4a6cebf4fab8"
+    sha256 cellar: :any,                 arm64_sequoia: "2c34877c98d866a1fb1623327f5209af1b265c21d522f20486d3c0cc5fa84d40"
+    sha256 cellar: :any,                 arm64_sonoma:  "ff22f53060fcffb84877fb52a2333cbfca318ca986404ea49bcb2f5977e32a2e"
+    sha256 cellar: :any,                 sonoma:        "3937bdc85512ea4c2f693a3972d2743e2b0ff809c547da9235b781d0a5435a20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "94b0591c36b8fd02f03f0d413cb8ddfebc9a6ae82baa2a5315e9e5b73aec1d59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7827be943f3bb7aaa182a8f617885baebf62947e7232c3f638c74cb4c0d84a9a"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

@@ -15,21 +15,22 @@ class Foma < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e4cb80b9bef5eb789f32ecf4f5cfdfe7902b90f313deb075fb00f7beabac109d"
-    sha256 cellar: :any,                 arm64_sequoia: "47f8d424b8248c2f74f396f9309187b43d064ba5c0e3eacca3349280044cce21"
-    sha256 cellar: :any,                 arm64_sonoma:  "9bea57b9f5a74412381ed49257330b3257ce541c1afa95dd0e57fcddf6e94902"
-    sha256 cellar: :any,                 sonoma:        "644647569cc3488beffb05f57d9842fa81e78192849f96819311f5d36f6e0175"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "82857ffc399e1601beafe572b038435d92a47417acb309ee041ab45a9df8c4e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebdadf93fa2cba6e03d1ff96f277aececc9f3297ba5d49b1027d7a9ef65063bb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "fd8381fc805c864aefbaffa5507624795d7e4674d4af8a1bfa9dba8a03c5eb5f"
+    sha256 cellar: :any,                 arm64_sequoia: "7154bcdaad69b85097206e47d5c5ac9f6470789ca9f3fc7b5e9229bcfdde5147"
+    sha256 cellar: :any,                 arm64_sonoma:  "0401b74c60a42645eed24732868b95df75a0f38ef916bc3b79c33976115a67ea"
+    sha256 cellar: :any,                 sonoma:        "4b0436d1958cddeef9cc00e822f734008ae798196435bd33ad8520b8194c31f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "316d56312ba830eeae0e745a52d673103512f61431555dea4cd9cf8393e3a983"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1bb0803cb28af77ed4bd165993c0c810bbdf66bdf3f29720b22a8957abb8583"
   end
 
   depends_on "bison" => :build # requires Bison 3.0+
 
   uses_from_macos "flex" => :build
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "readline"
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "freeling", because: "freeling ships its own copy of foma"

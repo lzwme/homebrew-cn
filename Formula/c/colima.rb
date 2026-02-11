@@ -2,8 +2,8 @@ class Colima < Formula
   desc "Container runtimes on MacOS (and Linux) with minimal setup"
   homepage "https://github.com/abiosoft/colima/blob/main/README.md"
   url "https://github.com/abiosoft/colima.git",
-      tag:      "v0.9.1",
-      revision: "0cbf719f5409ce04b9f0607b681c005d2ff7d94a"
+      tag:      "v0.10.0",
+      revision: "7f5f27de13d921e66e3a78de0a838ddec581871a"
   license "MIT"
   head "https://github.com/abiosoft/colima.git", branch: "main"
 
@@ -13,13 +13,12 @@ class Colima < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07fe7cb470fbc19ca9397ed2d70395568290db09ac1f6fc90b9826901f5092bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e2ab691c2d3ad9d783566b9c84b7c3805cd2520c3a06c7123d9a5209f4afc7e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a0e52df410904a565cb50a77e66d5a55775a156970a4134cf3c8baf20b3a451"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b725a6f9b340d9dd4aca8a3fea932ccf416eb3f27a71052c8a349fbdb4576b83"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b96615720d89b7bbc35492fa556f738a4542fe39d9ede596e82014f4134594c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9bb263e4a5d0dfcb9a62c28fe553e231bbf44a469f07cdf7a3d92d1a1b0dbce"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4e1f35ee168b396f58856c7d5528ede4148bb261c67db252783116b916b6a3df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b98b919913d8f2492c7e80428af156f8c3c7cb3bc633317fa18df0322da0a139"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "33bedb225dfeaaa744fb52ffa8ae6a2ca12bc3a9789e210e531de31c31d05062"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b7ef280820846ffcf2748f0388782efced43738fda731e5238eeed71b9d0d278"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e83e6a4aa7453944dca7800dc68269f544f70d35d8da847c4797f4de758bfb73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc531333de837bfab49f13b00ea8cae054846e6dddd4cee4b8ad2c1f1b77b15b"
   end
 
   depends_on "go" => :build

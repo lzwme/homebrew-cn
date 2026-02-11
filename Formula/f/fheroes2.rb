@@ -12,12 +12,13 @@ class Fheroes2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b8628bbf3456c73359af718a1f896f1a2a8027b8ca88ef9428956bf3c6702060"
-    sha256 cellar: :any, arm64_sequoia: "083e10b0c012933f008b3b817a843ce8dfda650db29bc54de561568a601d094d"
-    sha256 cellar: :any, arm64_sonoma:  "8d2aeb156062efb256bbd9cfacfdb9f3aa2157f692b29bdbfe80116b8e74d5db"
-    sha256 cellar: :any, sonoma:        "e9aec983ca52106d25777848b8c014fd2d775cdec1c70ffdbb34ef735b6e0537"
-    sha256               arm64_linux:   "47b7487b125ccf560f68c294a1d8949792d9f3792ae6a416d318e5f63c0dc213"
-    sha256               x86_64_linux:  "c8a990b5ae66ce76dffb0f497a6475e7e408dd457818952287ccb695c9554c73"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "23136f65475541af57945cd4ee7261427468c2002473ebbe33533afa1556c5f9"
+    sha256 cellar: :any, arm64_sequoia: "cdc83255095103bf6ab21b8dbae2e9dc291a0f1a56094db86e29a5f22d6df5de"
+    sha256 cellar: :any, arm64_sonoma:  "3d64d5bd73ef507d0dcaa1c01021dd8d3e883250fec3df286c45b4d9ed85e097"
+    sha256 cellar: :any, sonoma:        "967b45f195df7733964b7402a6bdbeb284400ecc4a791b0afa1dfcd8d741e664"
+    sha256               arm64_linux:   "11ea08b85d2e986b09645377972764975f2af81cf466d8ac0730c309031e911a"
+    sha256               x86_64_linux:  "575fb1c77aad04d175487f14a5e377bcc6b59381c498b2021fb45fc53ad20c54"
   end
 
   depends_on "cmake" => :build
@@ -27,15 +28,16 @@ class Fheroes2 < Formula
   depends_on "sdl2"
   depends_on "sdl2_mixer"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Avoid running dylibbundler to prevent copying dylibs
     inreplace "CMakeLists.txt", /^(\s*run_dylibbundler)\s+ALL$/, "\\1"
 
-    args = std_cmake_args
-    args << "-DMACOS_APP_BUNDLE=ON" if OS.mac?
-    system "cmake", "-S", ".", "-B", "build", *args
+    args = ["-DMACOS_APP_BUNDLE=ON"] if OS.mac?
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 

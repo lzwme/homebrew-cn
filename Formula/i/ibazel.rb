@@ -29,6 +29,7 @@ class Ibazel < Formula
 
     # Write MODULE.bazel with Bazel module dependencies
     (testpath/"MODULE.bazel").write <<~STARLARK
+      bazel_dep(name = "rules_cc", version = "0.2.16")
       bazel_dep(name = "rules_go", version = "0.59.0")
 
       # Register brewed go

@@ -7,25 +7,23 @@ class CouchbaseShell < Formula
   head "https://github.com/couchbaselabs/couchbase-shell.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "decf67dd604aa1e82b3bb6cf51ec528cd6f840efb2887c613c1050daf01daa85"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e4207cdae2d36437ad70fed865a844849ade6670facd075383a78a8152e8726"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "baeb1763d305776f71ac2519a2504f5904c4b166eca40f59dd2f6a5c4df1bb93"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "99354510fd9b1979a7da10ef2c67b282b0b029aca9450e3bbb8e1f2fca08801f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cf75c7a65c8cddad02ca437e145f899dfae38e471df20f709f1119109a74b3c5"
-    sha256 cellar: :any_skip_relocation, ventura:       "a379e347f9b4325c6521cb7e30b24f122b3738324e013ea77d224eaf3df56dcc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1789ab9a9d879369b2f7942f59ff171b8fa197f9c1f95029ff5914895cfc4ddc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfbddc03319d40472bdae18473f650e51a29c68b9e2574a58b36f363f43faca0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "977f11ee4b592d21b686acc1b1f944ccc489a5880fcea647692ff54c65596ff7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e77f30aea33590c635f0e616d8c1be503015152ebcf627d71e123d7b8e2fc49b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e42479455532b58a4e19a483ce3281a13394d13fb8d9d5cca32a0cc0753082b5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5f2fb928c3cf68b02d379a4525096bb20a901033ab1f0521256b6ee35d8fbcba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e204136d8f0f757dadf3e5c3856fdedd0c77d5a6367596f171491094b307bc6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5dee81dbd8b43cbe658722db7d7b981dbf109759ef30a34a546da8ab2ea085d"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "libx11"
     depends_on "libxcb"
     depends_on "openssl@3"
+    depends_on "zlib-ng-compat"
   end
 
   def install

@@ -7,17 +7,20 @@ class Gitu < Formula
   head "https://github.com/altsem/gitu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05ca82c535aa71bb8ff69629c273c289f9fcfc1d96ae0dd9cc4950d75f88221f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "491753a806e403005635f8930a0b08ec9349e0b506ac5782df94083b8a266ca5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "917180e227c107ac20ab1ba17e4f5f29c43ac80a17b0390e5a685fad7a68ff65"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dbc9a5bb0e1eddafcdf434b0a62f27782ba378b5a489e519a4fa3b7bae4ac0fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "99440f8c83744f5533fdd89c57463c758117d57ce3ed8d142fb641534818193d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1e2209e3932918766807d7e419b8ffe86138320c550531cae6f744e86c8ecab"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1072f759f85641066d62ef806512de85fd29ed91c88243e2ecfce2efadf7edd1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97d4c3fe4cdf3ee2f7727cc49d3863a98bc27460e5b8516f11c7a9172c206240"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ba8942b5f86ecefe7ad10b94dcfdd63581f8ff61b6d322f27147f2832655b0a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cea667d08a258bdf4c91c222d1b715c78e82657ee154761c27b1ff010d833512"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bcd5cd7599db34a1e37b6114738d2f7ccd803856700f654a7316466a4510fa43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cf7e9202afc3c5ce064b6db4b699bdbb49f9f31d7808630d99b7657d00b19a5"
   end
 
   depends_on "rust" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

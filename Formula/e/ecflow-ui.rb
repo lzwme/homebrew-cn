@@ -11,12 +11,13 @@ class EcflowUi < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3a2d6944d14d35d8697c41b1896b47d1c92200d78635af09645bd08b9169c852"
-    sha256 arm64_sequoia: "c9e2e95dbac66a092105dc3a09e375b93878ac3fac6c63fb55dc2a18a9d94eec"
-    sha256 arm64_sonoma:  "299ff590bc226d95352ef2163348f8b79b0c6bdb96ac84fdff87d845f5dbfbf2"
-    sha256 sonoma:        "126a9c10588756a2eb999a2a7c52783076357132bcf96ebed3dca7ae7429c84f"
-    sha256 arm64_linux:   "65e8ff9d3e04469d9a42b54e0af1a8c6a94b527c307914d28da3ea11eec3cdba"
-    sha256 x86_64_linux:  "fd752424e0e1ba3c63117decd5bed7dceb3cf5f109f2efb71a4e6ba236aa34ce"
+    rebuild 1
+    sha256 arm64_tahoe:   "783124d237f7b07ea06fe5cd6828b69021ecce5185da4e69b48d6036474d9ea8"
+    sha256 arm64_sequoia: "a3eca041366c2c0a67044546845bffdbbdd30bd7759c7cc376285767bca93d41"
+    sha256 arm64_sonoma:  "5ad1d3f03ae80e3514a6fd88090025ab3b43c687a489dd76cd69c468ba910497"
+    sha256 sonoma:        "8be431024d8129fa85dfe0ec28ece627fbf2ffc79f96f78de9ef666e52cfb605"
+    sha256 arm64_linux:   "5e38a93221cfdac076a961880a7727a8f75a06e549dfdd7a544b17c5e71ece3a"
+    sha256 x86_64_linux:  "6893632beaf5b01f0959efea3f36c6d321b7cb250d0fc821623c80888d438cb7"
   end
 
   depends_on "boost" => :build
@@ -28,7 +29,10 @@ class EcflowUi < Formula
   depends_on "qtsvg"
 
   uses_from_macos "libxcrypt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = %w[

@@ -11,12 +11,13 @@ class GitXet < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a58ec542e60ca0a91d3198c7c05de33b637e0787c9d53932f95317cbd3b1cfd3"
-    sha256 cellar: :any, arm64_sequoia: "5a02845141fd5d07067509faa2aae91e9ff9227060de06937382a1d65fc4dbcf"
-    sha256 cellar: :any, arm64_sonoma:  "4f5e838f9c31a162598f1b5f199c33ac2bb1ae6ac26f53dad6d6db0e74ac42ce"
-    sha256 cellar: :any, sonoma:        "cf348b67313860101f564006f6642c59ffd96a8cde43483c5d6fa37fdf0e8af2"
-    sha256               arm64_linux:   "740715c7c15731533b6c4eed6beb2aac05c1c27affaccf48eca2e589ee24edc5"
-    sha256               x86_64_linux:  "6dcef8b244c68e64b8559b7395bd32cb8182e42b25aebb9c2d986dcf0c8854fa"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "d19a2d239649bed6cf313f6b755ec25164bbc6e6b98c694917706f1c8fd0355c"
+    sha256 cellar: :any, arm64_sequoia: "7565fcedcc0e1e9794a025ca5c75c5009ce13f1e978a0242ae34ac99342091ec"
+    sha256 cellar: :any, arm64_sonoma:  "ffefa4605deff6255ef1b6e4a8788ecf62ae8c592d8c9d2483f506a9cd999f39"
+    sha256 cellar: :any, sonoma:        "aabc9528af0da64b2794b766b28ca00366fc08828203332303406953d54d7f58"
+    sha256               arm64_linux:   "3cb48b9ef8fbc8d19652d119e99aa2e3150365248afafbb237dd9d0a405e80f1"
+    sha256               x86_64_linux:  "c4d91f1387405b1c95591bbc4f75549b80a05eaf2f0f904928c1702f1373ab94"
   end
 
   depends_on "pkgconf" => :build
@@ -24,7 +25,9 @@ class GitXet < Formula
   depends_on "git-lfs"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "git_xet")

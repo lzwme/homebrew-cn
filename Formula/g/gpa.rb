@@ -22,14 +22,13 @@ class Gpa < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "dadbb049d9885447f60ee0cfcada2faf0da3251d49182f8879a0bba60df16f18"
-    sha256 arm64_sequoia: "69c538278add61a01e2a4cf2322c4fd36889105a1616c6a1121a42ef236046b8"
-    sha256 arm64_sonoma:  "6d33523eedf82d824372a0aa44d7f645fba618b5962b353a19852a3af16826e2"
-    sha256 arm64_ventura: "58999f0449db4ac31542005cfa3ba5b9be8f2e0c5387c1c6f5e45af0efa3bcd4"
-    sha256 sonoma:        "19b85e51fb483e11137526bc86ad6b679693e1e310fbfa14e72d5e69f04517ed"
-    sha256 ventura:       "03c2514f40f78da208b4b4f083f474a115b3014b3b4202d219502f445d058179"
-    sha256 arm64_linux:   "26b0ad5264410984e466e2687240c3a8df1a6f024708106dd80f2cb6c46aa966"
-    sha256 x86_64_linux:  "e2d2919e86ab3b341bb4552c4ff84e81a46912136ce4d55a28609780d066de03"
+    rebuild 1
+    sha256 arm64_tahoe:   "0f1a21e947f1268c78fb45f469d1134adef70766f2be5dbd0092ba504b31dc7e"
+    sha256 arm64_sequoia: "43fb96ff4d8c951a804b9a1e891110b2eb138925caef26d7942ce7a1cc2fd1b3"
+    sha256 arm64_sonoma:  "a3570404bc9e51826612905388c9d8f66b7ba2d25e7baf24758d63302e82ef08"
+    sha256 sonoma:        "d44cd68a57d3ec28953b8f4e3ec838846f5dbe5b115465ab2bcac8c44460810d"
+    sha256 arm64_linux:   "9e3f3b085044a1d8a9d2c5a730127ab5c8f0fe22ac46a524aa69fa4fe66cfdd5"
+    sha256 x86_64_linux:  "35990987cdef9ec1513d793652b99a2bb38fe5c270da32bfca3b6cd68faa5626"
   end
 
   head do
@@ -49,14 +48,16 @@ class Gpa < Formula
   depends_on "libassuan"
   depends_on "libgpg-error"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "at-spi2-core"
     depends_on "cairo"
     depends_on "gettext"
     depends_on "harfbuzz"
     depends_on "pango"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install

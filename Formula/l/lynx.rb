@@ -14,21 +14,22 @@ class Lynx < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "993d69e6e720f3d34b3488b2428995be5f9f07bc6455131a5130d3566b9ad793"
-    sha256 arm64_sequoia: "d19f769a462343c54bade40fe15b7a3a6ea52a927dd1e3494ea1b2301fe63b81"
-    sha256 arm64_sonoma:  "4bf5b522776f2578692e8a19f113007fd9849131731782e9b681a6317103b945"
-    sha256 arm64_ventura: "20953b360eb23fd1ef4b7a7ee5f3b846e01d7d6c1190280aabf202d68245a46e"
-    sha256 sonoma:        "37094ec003457ab4fed45872f08bd9452331c57421c46c7fe2e59c494ef7f936"
-    sha256 ventura:       "f54a50e56b2b754653afdffde634524b10bc607fc5f6f24d8b4c1cd417fbd48d"
-    sha256 arm64_linux:   "f31950d24b91885f8887fe341be40af6f9fd33ec2ffab1f3c41def4ec48cbab9"
-    sha256 x86_64_linux:  "2d30e3d55c3916b4a3c488034680170553d4ef090e717cf74d6782348115cdd6"
+    rebuild 1
+    sha256 arm64_tahoe:   "f018c40ffe24220383f1e020875f64a62552bedc10e4948321992a4ceac5e83e"
+    sha256 arm64_sequoia: "3a912438a909ec79166e61ea5b9dea7376b0d3e0bf566d5de723697c2427b807"
+    sha256 arm64_sonoma:  "174ecc0b2aebe7c14294bdc63f7052d93405ac48021c9b81eea4e4a668830fae"
+    sha256 sonoma:        "5a3157c1ed95544f85968690b9d51c36975d1cc52c75069328d9ea6de28c4ae5"
+    sha256 arm64_linux:   "fceb7120d16369c1cd5350ff34a39f3d8276061a5119a64eec00be26ffc6e5f5"
+    sha256 x86_64_linux:  "6267a025209071f6109d8b8cfcb81de136bac11ead8b19ae2aa644ab74fee8fb"
   end
 
   # Move to brew ncurses to fix screen related bugs
   depends_on "ncurses"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Fix compile with newer Clang

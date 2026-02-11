@@ -12,12 +12,13 @@ class Dwarfutils < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "865a20a866158713e928b94fef3fd2bf925136518d03debf33b3e0e19cb7f82e"
-    sha256 arm64_sequoia: "04fc7ca60516a1a025d9762ac5c01d9f25a609712be54e115fb8d38e5d407f7b"
-    sha256 arm64_sonoma:  "1d09a3442b005106f20f49ad214c755acb768440e23fb4a882d326c58f522fa1"
-    sha256 sonoma:        "6176b4aee6cc1d16893ff9f4b709344fa06f71c7fff66882ce1381530c2bbfef"
-    sha256 arm64_linux:   "c60ffb5f4253a5d932a990a31f5fa28992b6621ef29c4b78b5f9db6fcb199d0a"
-    sha256 x86_64_linux:  "6d0abb8c210f02c399cbb1350849120a460213ebdbe68ba66a020e466cdd55e9"
+    rebuild 1
+    sha256 arm64_tahoe:   "012f02066b5f44638753efbf2ec992d15e290936bd1c7485334b186264cfae81"
+    sha256 arm64_sequoia: "53215ad282ab0c349c0dde47a71d4fcb02e8179ab5c6c68213442ccbce33ca69"
+    sha256 arm64_sonoma:  "c2366f349b9adde3b2d6d08cec22d8d37d58a6c5ce9937183ce510a147fb4322"
+    sha256 sonoma:        "54eba622e99ccd12af000c6864ddda89f00ce403910897a9efed7ddf00b079f7"
+    sha256 arm64_linux:   "1acb19e3453aeb75adcec1e343a4565634f80dc729c4c096645df36a3e484144"
+    sha256 x86_64_linux:  "8cb209d80473cbaef21e8009b244fd0e655b13a9c312a7fe978b7d2946a82e3f"
   end
 
   head do
@@ -30,7 +31,9 @@ class Dwarfutils < Formula
 
   depends_on "pkgconf" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "sh", "autogen.sh" if build.head?

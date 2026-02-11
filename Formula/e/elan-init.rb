@@ -12,14 +12,13 @@ class ElanInit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "61ef80b2085b384cd60d93316b4739c4de6d218e374ea603b1b6d1dc66dd2a50"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4902a5f8381b8b51b1bd53bf09e9547795d327c16292cbd5cea895a232bff0d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "244c72110dc59e51a7b8248b82ce1773277cc3c61f45ca5ed1bfd49d2af58b25"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "36c1f08f1df2453875145833443e4666498b85d02e194b3c1ad5c6bf9401cd31"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ac4eb727726c26fe57df0136286bd192cdeea784f19dea1975b111721a4dbe26"
-    sha256 cellar: :any_skip_relocation, ventura:       "1a334d939336097ded29ac2578ac4d4813a97097f815d9bcfa4870b5923536b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "36c8e9b09da80ed74aaf314080958e8d1d03615aa6306ab1b9d898e45fd9f812"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af3db622b0392ebdda14742c19a9830c656336614c3c8036d2bde87ebe44c273"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3fe03875d9ac34c3e777ca2bf9d4a733d152ca125269768446363ec343e71581"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2d378f15d7b9ed90f5d6be53d3689cd8f3ced566da390ee6a3117fa2a1ef8d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc43e3f82138c27a5648850fa270b594cf8b6b71f2f7aa5399385ca1793a10ed"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d0cc946286aa0454fed0788db0cc3b815f8a151c3654738fbfe6cf5f26344641"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbfc946dda022c9eafaf66e789f90c0a53aa19043be6d0ae083b3435777b0297"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f200ffdd1fea690fa1669a62685cfaaf27df00b3b305cfbaf2f8a58cdc9edef"
   end
 
   depends_on "pkgconf" => :build
@@ -29,10 +28,10 @@ class ElanInit < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "xz"
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "lean-cli", because: "both install `lean` binaries"

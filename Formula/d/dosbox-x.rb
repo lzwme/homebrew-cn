@@ -19,12 +19,13 @@ class DosboxX < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "7d44cb98ab9706fb3cd2565d04e52810e75d725ce8c89b304844019593b8069d"
-    sha256                               arm64_sequoia: "17b050b27100667a068c451eb00e425a6b44a7a81ba71e2315788d16ba430989"
-    sha256                               arm64_sonoma:  "8af02abe6bb49f4aa92cd414a768cdc3d526bab3616441ddd637b7021e518cef"
-    sha256                               sonoma:        "b50881cddb629a6d20515fe8d0fac8e1dd6291c1b035bf49ec1d5329d9b2ab43"
-    sha256                               arm64_linux:   "729937ce051cef8686d3832e67010cb4ee848431ca2a1933b5883006fd711344"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "056fab36f82ab74ca4083422af5766006491ee2e45836508085d3f8258cb9d17"
+    rebuild 1
+    sha256                               arm64_tahoe:   "46a81649179f13aeb4dbe640364bdfe030a938cc3525ea6c9a98b1f8acaad069"
+    sha256                               arm64_sequoia: "ad154d6eb85d59de2963c61e115e23100a9760636e574712b3dc74d83f5d9cfd"
+    sha256                               arm64_sonoma:  "8104828bb93561629545c04e39343df59126e8097994aa09f45362be9f20dec5"
+    sha256                               sonoma:        "975161e502be78f6a728b5eddbf51b40223ed0e3bdcaad650f187cfbd32194c9"
+    sha256                               arm64_linux:   "4e42f23a5aa402cd7a2c12d5838a87f308115d247c86f24ae592c61f7a5f24b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5b373764af3cd9384c20e4db2a91de894c21044b47751c8795f7f629540a789"
   end
 
   depends_on "autoconf" => :build
@@ -38,7 +39,6 @@ class DosboxX < Formula
   depends_on "sdl2"
 
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
@@ -49,6 +49,7 @@ class DosboxX < Formula
     depends_on "alsa-lib"
     depends_on "libx11"
     depends_on "libxrandr"
+    depends_on "zlib-ng-compat"
   end
 
   def install

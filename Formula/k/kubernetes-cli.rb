@@ -2,8 +2,8 @@ class KubernetesCli < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/docs/reference/kubectl/"
   url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.35.0",
-      revision: "66452049f3d692768c39c797b21b793dce80314e"
+      tag:      "v1.35.1",
+      revision: "8fea90b45245ef5c8ba54e7ae044d3e777c22500"
   license "Apache-2.0"
   head "https://github.com/kubernetes/kubernetes.git", branch: "master"
 
@@ -13,13 +13,12 @@ class KubernetesCli < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b66315fe9895dc7726ab2df26ddb1b73dea60ac7d9f30a373a4e58b8fe1f0df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8aa210ba43c66e9f54ccfb01612c460b63829491fe9b46f8c5083e2df9b8e77c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04bbaa21344d23f043c72bacf6c630d33dc6e9da7479e73b874d5b059f503a2d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a9057f838f5c11145ec4acba4023d8eed4a7a742804f003fc855f3a574586e22"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca17c8cf10c9e2a5fd14f82ef037aef3cb96c4f632db3f009bff3dc854e2ed16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea1f7c5ce7e6c8cedf7a7cc2b4594f9457692e5bf7e03f99b9373d7b9f6e6333"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3dd535e06d76d8f3529aa98e07ffa86fe09c932f8fea343fb9994de9dbd43541"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f631369e4801d1083c4dd597b1d53ef7039778e0f5ceb76817bbc72c1b0210dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c70e694bc9450b68dbbc44e6e79803a9b636dbd8c09bea2abb4c920a675602a4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3ff5f521b1cfbfc49e0638f90e359231402eb3586345d20a9bfdf929f317d9f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8432187e414c75cc70fdfc77d2069922a949e75401e7c079a03772b48e2c40e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24975271d2165572c34890433194d1f411947922aa933173ac9db56b778a30d4"
   end
 
   depends_on "bash" => :build

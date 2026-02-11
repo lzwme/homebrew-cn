@@ -12,12 +12,13 @@ class Grokj2k < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "32db75e1ab5ff4ca0e54cffb84a9fd62be515da0ee71d957b11cf33754257dde"
-    sha256 cellar: :any,                 arm64_sequoia: "4d74827bb0c9eaa072177d8f3e211dfbfdc66c4751a42da79765d7158f2c16db"
-    sha256 cellar: :any,                 arm64_sonoma:  "020110f635d414121deb9b43c1ab43dc00e37d01be9b68c91cc6fc7eb9085680"
-    sha256 cellar: :any,                 sonoma:        "92e81b874bc82df4baa9f60723298146ebdef12c539f2a80b3afdeeb85afce2e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2384f388ac1e739a1a74ea2fdb86235cf3d31718f0e4322e2773451890ac5d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47dce7ea3e14367dc1099c6e880f11106787b9526f4a60a4eb67491c3083292c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "f3b758457d20893413e27e63a88f2ba85d53d54272279e05726d47e903efada6"
+    sha256 cellar: :any,                 arm64_sequoia: "867670c1f290033b3e2d08345d5c0ef25f8a5450331403331001fe939a1d43e6"
+    sha256 cellar: :any,                 arm64_sonoma:  "5f12676b6ced0986a56e5ace8b8e3eec174fcf2878f0c123b7d2500a45667add"
+    sha256 cellar: :any,                 sonoma:        "ec278adc4c3d7d39aecf470d56510ef442f7ff2b5920b7584ce374ff7b133b48"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7b29c0eb02a278f0521617aac47a2f02c6f62291e2febbf064f605f18760cfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d92e63e83ae6b91f7d7e6640a2e1abe6ee395b6bb245cb2460cab22289415d90"
   end
 
   depends_on "cmake" => :build
@@ -30,12 +31,15 @@ class Grokj2k < Formula
   depends_on "little-cms2"
 
   uses_from_macos "perl"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version < 1700
     depends_on "xz"
     depends_on "zstd"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :clang do

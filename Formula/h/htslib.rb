@@ -11,12 +11,13 @@ class Htslib < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a38faeceb5a5bbf1db94b8284866d39c26b4ff388553b475172bad7106594880"
-    sha256 cellar: :any,                 arm64_sequoia: "ed6c17e8ed5f93267d4d83cb4c36feb8c26a650764490336ef522cf033b4dfc1"
-    sha256 cellar: :any,                 arm64_sonoma:  "ec48464d019c3d8cb10c6af649c7ca5cb285052e82f2820ab592d94a1df378e3"
-    sha256 cellar: :any,                 sonoma:        "55d83b5bd32a41299a86f559534f9d578261ac69ec057afd7236cee69ed5782a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6af2ea035e9e25fa70f14b88c00811c95199fb6055ab1a67272208a38f487ad3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53cbf8e35c705d7df70ceeea2e93f2336d398be03777984f1c271f6c6776307c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "47588a34d25dc0536df24f4bc060bcff70d8a42222305e216547ce018d1c8cd8"
+    sha256 cellar: :any,                 arm64_sequoia: "79d1fb81b378b58b97f491b004f4c0e7169c2a94e23258bac09ebc87170128d6"
+    sha256 cellar: :any,                 arm64_sonoma:  "3875b123cc1dc1e2c34bdc7f85db4764b753718e8886b681c640354d0755896a"
+    sha256 cellar: :any,                 sonoma:        "88b4bc1d39788edb7cead6d140357d67098a24fdde0d8eac503085218ef59f60"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9dec45c4d70d148f6c36841697520a39ddc56b6648f10bbcc692399b7a0aa16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e5135181a4e4a25dfbe64e1084c4e0ce0603f37d645a01aabd849fc267aeb89"
   end
 
   depends_on "libdeflate"
@@ -24,10 +25,10 @@ class Htslib < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "openssl@3"
+    depends_on "zlib-ng-compat"
   end
 
   def install

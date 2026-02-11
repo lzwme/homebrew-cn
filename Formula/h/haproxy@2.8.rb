@@ -11,12 +11,13 @@ class HaproxyAT28 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5fcfdc6473a2ef25de2570d6d390bb35643e3c2f72993a40af7548bd10d3cc24"
-    sha256 cellar: :any,                 arm64_sequoia: "82ef110e2095a35eb6260f12e1df7cb314cf3d689b8978cf8b3e716f1ac7d368"
-    sha256 cellar: :any,                 arm64_sonoma:  "24d52a0296309be0265f6d430eeedc39c88d4a61beffed5db672abd085af5dee"
-    sha256 cellar: :any,                 sonoma:        "4636477992035514173641fa9411c64e6f0ab5abbea3ffd2e9e9e4233af3451e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8507a40a3a8f9f6dc5f277bf5ed834c5eacf291ac3aafbefb6f2e18899c0b393"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78e225ca543575868f20d0a00f15b8fdc21c211448a4bb6f761fc3e990facc20"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "afcc5908496e7dcb257de03005706443d7f3a29689aca9ab82c9493fa28ec1b9"
+    sha256 cellar: :any,                 arm64_sequoia: "3fa0d4bd52949a7ccd087076d59a8bb22c1e06162e909784317ca7aa5926009b"
+    sha256 cellar: :any,                 arm64_sonoma:  "ee139115ef171b97e2c589bfed0f98843b3d0971e06db3533ef207b9d0f86ece"
+    sha256 cellar: :any,                 sonoma:        "b200a4976e3c69559bf6010d7989a90f84f68aceb2179624c65325f5e7e298b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0dc89f58a8e394316e7f789e2a4223d96507d9f7cf6fc57f08854ab39811825f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "157e26972de1d2aae8c00e01085066d033dffdc375fdabf38867b749374652ed"
   end
 
   keg_only :versioned_formula
@@ -29,7 +30,10 @@ class HaproxyAT28 < Formula
   depends_on "pcre2"
 
   uses_from_macos "libxcrypt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = %w[

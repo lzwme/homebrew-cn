@@ -7,12 +7,13 @@ class Ccextractor < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cc8cf54859d2992ecaa3c9934a297a6b33cda1df836ba25fc3c5dd160504f8a2"
-    sha256 cellar: :any,                 arm64_sequoia: "9a9862485783efbc6dcfcc00caee8508240a8a720272c04194803c3e93a2108a"
-    sha256 cellar: :any,                 arm64_sonoma:  "36e4a9070c886965b67e6248232e43ec51b7b26467135cecbce927d2a6b9d690"
-    sha256 cellar: :any,                 sonoma:        "00a36022a26f18b9687c73b3585021010c930be1551fb249119a991603383e6b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab7e89b660f78dc777a427e0c3a23ac714989d2ed730112433984c8af14eb362"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "884465dd5e1ab0dc6abd1b3155f66e5d87b15ece4af1d1896ad8eb7c8e3ce4a3"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "57424ac4a479d33b9d8e7fcf7daa25547f0a334e62c359c72fe3d564593a5a11"
+    sha256 cellar: :any,                 arm64_sequoia: "b45ed020f9eb17eb5b2c0ca92f271bf527ecd723c0de429f5cfca3b6014f49c6"
+    sha256 cellar: :any,                 arm64_sonoma:  "90394f6c8a27e460e2bcd81402cb63da19315e08c72dfa158b17dd7096b99174"
+    sha256 cellar: :any,                 sonoma:        "b1268962dd74828fe4a82ab2fd96db286a5efc4fc982cea05cd6c38462ab0e18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "62191c5fdad0261d3f5ccb7f11edd33175de28a4e9d784153c29881c1f8ba979"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2239762cc7c6f7bc3deab365a45b8a68625ba2c26fa96502c9f25d003dfd7f8a"
   end
 
   depends_on "pkgconf" => :build
@@ -23,12 +24,11 @@ class Ccextractor < Formula
   depends_on "protobuf-c"
   depends_on "utf8proc"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "llvm" => :build
     depends_on "leptonica"
     depends_on "tesseract"
+    depends_on "zlib-ng-compat"
   end
 
   def install

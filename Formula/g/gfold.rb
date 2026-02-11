@@ -12,19 +12,22 @@ class Gfold < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2160495230c8aaaab86c0824b90b25fd2a3a0136379574d6342094ab74faf8eb"
-    sha256 cellar: :any,                 arm64_sequoia: "bbe23637981edcb00b103bb7579b4ef704a3e8c69b735a5b36e1f05b7051c2a8"
-    sha256 cellar: :any,                 arm64_sonoma:  "ca6d77140523b015770a808845909dabc4a3e7d2a762d00fb71451ab348861a3"
-    sha256 cellar: :any,                 sonoma:        "bd97b1bc30d59f8dfe4f4748d6c5e486316efa79c0548ec67b3e605f0e089308"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3da66c27309f1d9fa52f603e39365e0eaafd9a3c07e01aae3ee409b7b96f3792"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2a285553c05349ac0c0324569098dc9750240955669464421c4fe875c9e7683"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "b169463826c6f1c2198d6d189f165f603c214d428b236921a01891ba7eaa9369"
+    sha256 cellar: :any,                 arm64_sequoia: "e9df0ea149ed3b6eaac544266d9ddf867a482ff03a6e347771a1fbf5a5ec21b4"
+    sha256 cellar: :any,                 arm64_sonoma:  "c44f90438bee0efdf92767d2f10cc3bbf50e5fc3d2c78b4b26c2f28fa4e52efd"
+    sha256 cellar: :any,                 sonoma:        "e82a9e593da89543e433c6a6deac44cbb06c7e322f1b8a7ffacc7d9c9b49d812"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "79f7422c37ee4b9afc3294589753e6b48038f27d37e44a5237de501d36d6ebed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e74fb427b9eab422ec4539ef4821bc16f1b27797c6f9b67c8a8e3d00c9177ef5"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libgit2"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "coreutils", because: "both install `gfold` binaries"
 

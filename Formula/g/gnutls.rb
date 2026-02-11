@@ -1,11 +1,10 @@
 class Gnutls < Formula
   desc "GNU Transport Layer Security (TLS) Library"
   homepage "https://gnutls.org/"
-  url "https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.11.tar.xz"
-  mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnutls/v3.8/gnutls-3.8.11.tar.xz"
-  sha256 "91bd23c4a86ebc6152e81303d20cf6ceaeb97bc8f84266d0faec6e29f17baa20"
+  url "https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.12.tar.xz"
+  mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnutls/v3.8/gnutls-3.8.12.tar.xz"
+  sha256 "a7b341421bfd459acf7a374ca4af3b9e06608dcd7bd792b2bf470bea012b8e51"
   license all_of: ["LGPL-2.1-or-later", "GPL-3.0-only"]
-  revision 1
 
   # The download page links to the directory listing pages for the "Next" and
   # "Current stable" versions. We use the "Next" version in the formula, so we
@@ -31,12 +30,12 @@ class Gnutls < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "583e8cf857d44c573ddcd8bae3e53d8b13ff22ccca144a4e82de8046e39edcda"
-    sha256 arm64_sequoia: "15cb17932e9ca969197289ed81343f19df4115a43144576dbde04da8cf681faa"
-    sha256 arm64_sonoma:  "9bbbf86ffbf36ea47aaefd9186a9315af26bf3f1f579f89cd275872aeadeb5cf"
-    sha256 sonoma:        "fa80583146e3f212d280d4e8c1d1a5aec52fab1a44de31e2e460a099456ef704"
-    sha256 arm64_linux:   "6da433683dd29d14fa44c335cb11d4c63b0e64f9fc48008e0d85f6bb085935d9"
-    sha256 x86_64_linux:  "2425006a6d7658d922048834764a0b6ecf86808b324bc59652e2bfe36e3c975e"
+    sha256 arm64_tahoe:   "df6bfd97301eefdd39186a84e2089cd6b2ac62655a5bcf005e23c1b1e6631628"
+    sha256 arm64_sequoia: "2c852d43e0792be1e1091677c8bd3021c69b6d4cd237ea35918c033893f9ab1b"
+    sha256 arm64_sonoma:  "da087cf434671200e3c1b77f21341d9b5deb6e3df64b3868cc21212b965f9358"
+    sha256 sonoma:        "6dd581133c9f496152ed69d45129f53408035392101cd9c44d64649d0fba8bfb"
+    sha256 arm64_linux:   "ee21922877570b314f7457e9030fd915ca55ea6c0c343c8ccfce82b1f4914c5e"
+    sha256 x86_64_linux:  "d99e673012799fbe5648e8f511230233f9280a6aaba82bb5e3fa4b257bc4d9e0"
   end
 
   depends_on "pkgconf" => :build
@@ -52,6 +51,10 @@ class Gnutls < Formula
 
   on_macos do
     depends_on "gettext"
+  end
+
+  on_system :linux, macos: :ventura_or_newer do
+    depends_on "texinfo" => :build
   end
 
   on_linux do

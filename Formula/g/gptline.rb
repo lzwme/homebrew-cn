@@ -10,12 +10,13 @@ class Gptline < Formula
   head "https://github.com/gnachman/gptline.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "12cc77c33dc3c9e694eb3aec0e4fc3f00f6a8401e16f18b52e50dcbc3ebdcb90"
-    sha256 cellar: :any,                 arm64_sequoia: "59a1f34ec281719ee3ee90b824636245c8c9b6ea52da28eef35ad3212afab8e1"
-    sha256 cellar: :any,                 arm64_sonoma:  "216b7b8b0c0e8d20f979e80a84b6a572d44d56d530ab76ddef50db30573d5d85"
-    sha256 cellar: :any,                 sonoma:        "52feeb40370d16711c4ee2cf03b909efbb0d7e1e7a01bc5c495bd54b622a1fd3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be99140f786dd977e37c915463fb53862e213a64985633df60b8d252ed427192"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "700965e16a2c0f37d09be0a49a5edd360a26d2e0650c9944c52429e792e1a92c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "adf81838b92dc7b40ecfa1abe579c572935811940cf694c202899f0b46a1e511"
+    sha256 cellar: :any,                 arm64_sequoia: "940ed7817ee1c1f59f98bf4d764286fb558050866a9b3bbe0ddab13c3ff6ac16"
+    sha256 cellar: :any,                 arm64_sonoma:  "9418bceebf8a0c02a791be34a93553b0ac39f2ae3cc86c268e150b8c23348d8f"
+    sha256 cellar: :any,                 sonoma:        "e05cdf97db98140c7ce10783d2f5b57e30213e17c53e71fb8728f700c5bcf6f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98c9305c8cad20f92d800648329b89f8d1307e25c864f7696787ea4bdfb40bda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97c4f312eb31a07bbcfa4a58507cbdb87d56a0155d52157d58998e98f0369a36"
   end
 
   depends_on "pkgconf" => :build
@@ -34,7 +35,10 @@ class Gptline < Formula
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   pypi_packages exclude_packages: %w[certifi pillow pydantic],
                 extra_packages:   "lxml-html-clean"

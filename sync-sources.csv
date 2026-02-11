@@ -5593,6 +5593,7 @@ Homebrew-homebrew-core/Formula/p/pick.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pickle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/picoc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/picocom.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/picoruby.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/picotool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pict.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pidcat.rb, Homebrew/homebrew-core, 1
@@ -6360,6 +6361,7 @@ Homebrew-homebrew-core/Formula/r/ruff-lsp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/ruff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rulesync.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rumdl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/run-kit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/run.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rune.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/runit.rb, Homebrew/homebrew-core, 0
@@ -9192,6 +9194,7 @@ Homebrew-homebrew-cask/Casks/d/descript.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deskpad.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/deskreen.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/desktime.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/desktop-composer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/desktoppr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/desktoputility.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/desmume.rb, Homebrew/homebrew-cask, 1
@@ -13153,6 +13156,7 @@ Homebrew-homebrew-cask/Casks/m/macpacker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macpar-deluxe.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macpass.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macpilot.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/macpulse.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macrorecorder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macs-fan-control.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macskk.rb, Homebrew/homebrew-cask, 1
@@ -14882,6 +14886,7 @@ Homebrew-homebrew-cask/Casks/s/subtools.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sunlogincontrol.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sunsama.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sunvox.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/supacode.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/super-productivity.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/supercollider.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/superduper.rb, Homebrew/homebrew-cask, 0
@@ -15312,6 +15317,7 @@ Homebrew-homebrew-cask/Casks/u/unpkg.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unraid-usb-creator-next.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/unraid-usb-creator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unshaky.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/u/updatest.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/updf.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/upm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/upscayl.rb, Homebrew/homebrew-cask, 1

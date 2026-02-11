@@ -7,12 +7,13 @@ class Gnumeric < Formula
   revision 2
 
   bottle do
-    sha256                               arm64_tahoe:   "9da9cbad74c76bd39d93f36974cdcf4bdbd186dc2af72349cfe1362fec977c49"
-    sha256                               arm64_sequoia: "116d894c3ee141e76c24774a0767b8b68d8d003c017954ab39b0bda30f0c6637"
-    sha256                               arm64_sonoma:  "af4d0e69a15e935de205cf2926fec9741bcdb116fa1d22dbd9d89eb02d53e8b9"
-    sha256                               sonoma:        "5670639d8ec74bb1bb6c654eed3a87aac60663f10a3690fe0a21ae1fbc696355"
-    sha256                               arm64_linux:   "769d103e022682ec11f401a0cab91c2569fb12c32fddd68a275cb5463f4ac3a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72004151f4322b6360234f29e0ab659c27ed28c69971cdf6f71c5f7f76e873a0"
+    rebuild 1
+    sha256                               arm64_tahoe:   "4ac7dea83b2eb4d74f31b8e812e25904af3af14a955332571741b95107a38ef0"
+    sha256                               arm64_sequoia: "adfe58cdf7d291a9d90890e50c16efeaab5d3a7c564b70b58d11e929ceb33a04"
+    sha256                               arm64_sonoma:  "7a50680bdf46974da58a8314260e0c94717c0cd0625d20075dd0ccfdd2fff087"
+    sha256                               sonoma:        "01f4fa7b9128bbb680186ea431d5015a60db896af1ba836dcf4d0d17add25bea"
+    sha256                               arm64_linux:   "a0420280151e0c98a886dea79302d9aa1034664c1bbb749ed94436eb836aa1a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d89781b7145143445516f07cdaa88513abdedad4b1f287da2feee9669b91961a"
   end
 
   depends_on "gettext" => :build
@@ -34,7 +35,6 @@ class Gnumeric < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "python" => :build
   uses_from_macos "perl"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
@@ -43,6 +43,7 @@ class Gnumeric < Formula
 
   on_linux do
     depends_on "perl-xml-parser" => :build
+    depends_on "zlib-ng-compat"
   end
 
   def install

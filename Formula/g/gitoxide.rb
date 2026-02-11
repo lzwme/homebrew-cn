@@ -12,18 +12,22 @@ class Gitoxide < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1999efb9ba72e149f3dc4a717013a678ef4b37e2bdf0fffafde6ebc75b6d9a93"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44137ce72ee44354493a8582a4df6713fc6b23cb368a7386782e029709b7ca6d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8bddc1fe73a6c46a84ca9fb66cd145b029a63f980e299bbfdf41493fd8072fbe"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1de2a5e170ec12e051dd50b13a41fda91891d46463e025c7331b9b5a9f2d9081"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab3342a3e2b1971aee7575147231a6a32a0e255db46017c47739504a3025c583"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1de421e2752caee925da0824a8fb607bfb4486ecf8ea5dcb9978140461997798"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fff3fbbab717f66e5cfdab3b8afac7785e0a8b7db9bd92faceb5b122b309ec3b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a0d77684b1696f916b1f62c3bc9a8b5ece788eb2536116d9f99bb3afe3dc6d9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5fb56c3597edbeae9069270fd1d0634b0b7220e673a0b71ca1538c37206e0eb3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "80c612d0ab04a096f597ce3a9385eee97e84900380b7d6fff7f444dee54d40de"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "90a8b9597271e0b679508710821c6642adb8837c06d4977d750d52cc28107f51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb4d0270e3705b880377f3302798fdb4a726391cb929395a7b0719d378c2ec03"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     features = %w[max-control gitoxide-core-blocking-client http-client-curl]

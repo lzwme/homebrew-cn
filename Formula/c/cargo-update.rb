@@ -7,14 +7,13 @@ class CargoUpdate < Formula
   head "https://github.com/nabijaczleweli/cargo-update.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3c60c3bea3d800efc1f2ac66d117a4544b31d9e92ccde2e60e65e534ac16754b"
-    sha256 cellar: :any,                 arm64_sequoia: "56a8338b18b4980b7c1744cc2b5fbbf44078489ab9ef452c4d7aa9090322d142"
-    sha256 cellar: :any,                 arm64_sonoma:  "9d69c9a9d118e83a99b6ac038ae9ba8221655fe55c3e4b12e4827e74f9fc358c"
-    sha256 cellar: :any,                 arm64_ventura: "ce025543bc177fe07820d3b64a55664d61945fa2f17b2502b2c4cf4d64fefdf4"
-    sha256 cellar: :any,                 sonoma:        "2d3265e8c1ebf47db152196dc0203f8a180c914daa6065cc28f8e2183c14c43d"
-    sha256 cellar: :any,                 ventura:       "521005f06bc948e75d409be52a2323a7e18bba69fafca15c793890b6295dadba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6b411ecebb18145799d683784ab80492f737d4c392b3327ee1cc31e053eb59d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32753c7f3beb9525ee63d56bbf41c2bee392f17f3df1cbff1569f4256b863afa"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "789aabcffbe092ce47d9ec1f2f1da1f2d5bde575df3500ac1753da3fccba174b"
+    sha256 cellar: :any,                 arm64_sequoia: "4095a439b598d9c0576a920c8152e604965816bfee96d6d0a9ce899b64bea724"
+    sha256 cellar: :any,                 arm64_sonoma:  "0e47ffa9b7457d3522b8581166eb1624d50e8048a7950aacad8d5fbe117fff45"
+    sha256 cellar: :any,                 sonoma:        "5225e1e62f91b7ee2d496f0892789aee7ff69934c75de0047ead6c330fa64b07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4bdf5129e7fce8bb7674fcc1328dc9308c8e1a97b0b0764261e95b497e3622c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26f7420561d07c9bfae1019447e8a1cc713c4a094d3e37e43c75d009153c99df"
   end
 
   depends_on "pkgconf" => :build
@@ -26,7 +25,10 @@ class CargoUpdate < Formula
   depends_on "openssl@3"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"

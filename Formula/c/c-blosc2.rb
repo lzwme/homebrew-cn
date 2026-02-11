@@ -7,22 +7,25 @@ class CBlosc2 < Formula
   head "https://github.com/Blosc/c-blosc2.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7178230cfd6749dd6ee7481c33ec6caac7fc57d9c089b884aa550917b37caf80"
-    sha256 cellar: :any,                 arm64_sequoia: "b44e42f3fd7aed3a5fa21818b844fb53344b7e984c82cf61637ddda43e15ca18"
-    sha256 cellar: :any,                 arm64_sonoma:  "0d0107db587b44594e608ed422686529f76f842a3c468c38d1e8584fd284daca"
-    sha256 cellar: :any,                 sonoma:        "3e4eae5fb8da844700b5f4a59a0b39981ac4aa09db4e76e4d67a9d6cb768e9b9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c8c9bbff32662e8e10cc0d6f434bf199be08e6b5a7a4f6f094b8b97e4414835"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cc5fd46626a5cbbfc8b26e2124b2998cde30f4de6fa0d1378abb6af0e82864f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "97f03d22c09efccd0e864ca1d5fd1615be68b68dc5c62f5e76c15108a761c8fe"
+    sha256 cellar: :any,                 arm64_sequoia: "fad27821e1d3d87a8a62bb20e6d565f673783b48cb7946683efa2a0da0be1287"
+    sha256 cellar: :any,                 arm64_sonoma:  "59f2c3ecc19289407699ac89d278d187782c695d246e41a0b963c4701f50ddf0"
+    sha256 cellar: :any,                 sonoma:        "e97bb6a6b56aa107a7cd41cc36af69a03b4fc1221a368f49909ef9e0c87c970c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e17d9c09d63740371057fa101e016072ba3d725cfd4aa710e17935491c9fb24d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d8e277d6c6a39911372705664fb5573af39251fdc0c43b1ed8722b2e9e9ae00"
   end
 
   depends_on "cmake" => :build
   depends_on "lz4"
   depends_on "zstd"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1400
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install

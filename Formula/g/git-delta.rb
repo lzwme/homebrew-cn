@@ -8,13 +8,13 @@ class GitDelta < Formula
   head "https://github.com/dandavison/delta.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "702c33af336cc6b1cf1950f3bbba87df652d9310d6880a2779f0be9e8a915f43"
-    sha256 cellar: :any,                 arm64_sequoia: "e5572a654e8c6d38a1ca6d51ddffafc83abeb11bdee3a39208fb22371c7eeaf9"
-    sha256 cellar: :any,                 arm64_sonoma:  "4af7f1406d4f2e21632498f31d64b2fb7962630c9e7235312ce9bf0ad8a6d2f3"
-    sha256 cellar: :any,                 sonoma:        "fdd627e7a918dab21f5ef18f6c9c6454ea15ab13f0dc46d90816db96ad2f72b5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f508627daf3121478652a6d704bd9b0a7030c270aa90277fba075ef75480f19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b6c3c87ac8377cca7ea3f1da5de9de07d511d88eb68c50118b6ac0f3ab6bbe8"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "f3559522f4412c5ef418e3f79d2e4a438e603fbf45940c4f83acccfcf406564e"
+    sha256 cellar: :any,                 arm64_sequoia: "4d2a7c8b9fcc067ae569a7297cbc362fd6c2b0ef4efe30bb2b78085e0bfa622d"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac112da66076676a8999c9676699eedcf3ba16c2fc764996a93874c8790cec2c"
+    sha256 cellar: :any,                 sonoma:        "3c86f88322008a32a9f93ce98f0da59a2d5e5042d4f87722b9d396393a3c1f36"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aaff50ccf9af8b738bed04cc7d222014a0eca828e8754b598b3bc767a5dfe8ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f7b957d7e7ba089db5f3561c9b56b036f0c4b03a2bc15de37db29a2a26d8f3e"
   end
 
   depends_on "pkgconf" => :build
@@ -22,7 +22,9 @@ class GitDelta < Formula
   depends_on "libgit2"
   depends_on "oniguruma"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # support libgit2 1.9, https://github.com/dandavison/delta/pull/1930
   patch do

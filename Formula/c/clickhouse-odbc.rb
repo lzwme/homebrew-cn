@@ -5,7 +5,7 @@ class ClickhouseOdbc < Formula
   url "https://ghfast.top/https://github.com/ClickHouse/clickhouse-odbc/archive/refs/tags/v1.2.1.20220905.tar.gz"
   sha256 "ca8666cbc7af9e5d4670cd05c9515152c34543e4f45e2bc8fa94bee90d724f1b"
   license "Apache-2.0"
-  revision 10
+  revision 11
   head "https://github.com/ClickHouse/clickhouse-odbc.git", branch: "master"
 
   livecheck do
@@ -16,12 +16,12 @@ class ClickhouseOdbc < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fac4f8638aab95398286ba3643e97dd262fa9ae44d9b8c664efef374411f1868"
-    sha256 cellar: :any,                 arm64_sequoia: "20d55267bc68f23afbbf8c8f3e1dcdb7457b9f6028c8fdaa2ff81d56147d6d17"
-    sha256 cellar: :any,                 arm64_sonoma:  "673d76f74f1a78fff36d0d4571f8d18d909434299de74e9fcf77f7135ff415a5"
-    sha256 cellar: :any,                 sonoma:        "ba56a48154f82caf7bbf13ecee91a68cf5b3e994fef7f39d2cc54879786690dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3f3993599dacc6b9e64c9c81e94aef58fe89724671ac4a7d7a6313444ce88d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f52242f5c6add9f233d621e90b8c98b3a5eda4aa2f686f20d783177d1c88d90"
+    sha256 cellar: :any,                 arm64_tahoe:   "24340d0d9b841fd0bdaa2b0261b5be6c63d6ed0fff2269cfdf97702cc55eecf7"
+    sha256 cellar: :any,                 arm64_sequoia: "64c30b61391ed43703997644c17a10a6cb33c27c8c8c9afa60fa833424ee2979"
+    sha256 cellar: :any,                 arm64_sonoma:  "9367c3513987d512277f455285f77990faba526b2292bb268a888cbb3c447774"
+    sha256 cellar: :any,                 sonoma:        "1c881f12bd6ad86e9f4a702aa5154e69846d415b98520bd90b74f748fcb4a5d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a6d304500e39a9444f36115d271b0cc9b457634f118febbd6ab4cb77f9383c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b447c4e651aab4472356cb0569bfc4e060088ec60ab54deed5433ab626569d9"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class ArgyllCms < Formula
   desc "ICC compatible color management system"
   homepage "https://www.argyllcms.com/"
-  url "https://www.argyllcms.com/Argyll_V3.4.1_src.zip"
-  sha256 "41ad51e02a3ec6981611be473221a3877fd359d3c1fa2172b4265dbe55f8b746"
+  url "https://www.argyllcms.com/Argyll_V3.5.0_src.zip"
+  sha256 "f8576ce5589fd15620abb73ff049ea31f55ddbd1bba6d1ffa87452658e7bc85f"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -11,14 +11,12 @@ class ArgyllCms < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ae9c7d99adca2b6382b1fbd34f36db5b5fca42d18d362408b8095acb10cb04e4"
-    sha256 cellar: :any, arm64_sequoia: "f16dded9bf615eb33b11a9533524d2020498e7aab4766eb7c4de993e83cc8719"
-    sha256 cellar: :any, arm64_sonoma:  "0e15bf67bbbf98bf5cc480af3a90a0ac900616fd96dccf9cb1a53493e9ea6a0d"
-    sha256 cellar: :any, arm64_ventura: "b39ba95474701b963dadfddeca4bea00b037bb1baa766382e1108a879c50f84b"
-    sha256 cellar: :any, sonoma:        "52ec759d47c3d4925f111e492be5f52417bca86187e1aaf212b9a834729ccdb5"
-    sha256 cellar: :any, ventura:       "f8bc593f16e7c88c7c9ff5b852269223166f40d2de1dc68ea8957d0bc02c21d9"
-    sha256               arm64_linux:   "6e40aab9550ed5d4df52fb6bd054e352d0f6fdbccb5d02f412b2294c40f49332"
-    sha256               x86_64_linux:  "3d62059d60adbb6c0483ff303014de71bd9b2d4dd29b67d1b5122e8f5c817a72"
+    sha256 cellar: :any, arm64_tahoe:   "24002f7920170c3d13b1f113abe4538ed8d397db32e542002569c9ae569beec2"
+    sha256 cellar: :any, arm64_sequoia: "8cacbd7e4d802d9a905966dbd0ea02a22ee73c3c1f93fc1437869bcee278238c"
+    sha256 cellar: :any, arm64_sonoma:  "1570a7e543305f95c1ae028c67ba362e021f0b7548729a1c01568fa038f22cac"
+    sha256 cellar: :any, sonoma:        "a5dde9146ec5623306c2a80bd5e5fc903551d241d2d5d6c4d8d9302e2120974a"
+    sha256               arm64_linux:   "dd8636f783f62e38191d8cb3c6936b08519a6050fe8a433e232b7b79cd392a3a"
+    sha256               x86_64_linux:  "1af22c696cf088014d4098fa89cb4759deac8b9d3c5f34a0c735ea06774fefa2"
   end
 
   depends_on "jpeg-turbo"

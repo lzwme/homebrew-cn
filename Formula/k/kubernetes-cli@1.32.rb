@@ -2,8 +2,8 @@ class KubernetesCliAT132 < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/docs/reference/kubectl/"
   url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.32.11",
-      revision: "2195eae9e91f2e72114365d9bb9c670d0c08de12"
+      tag:      "v1.32.12",
+      revision: "39350c63df5a2a3bdd2b506bf2b166d05e5af44d"
   license "Apache-2.0"
 
   livecheck do
@@ -12,13 +12,12 @@ class KubernetesCliAT132 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e1337c2cb4ac442356f396bd4c00c199d7af7811fc3d4fdf509de79e41c06d6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2610684e78e422e96ab7ac42971b3bafca2c091e3d1b95c7707504a92e917c2e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cca7a5c09a5262dd39c9b2886aaaa1a94f7e330f69b70d2b7e8b68c4ac07f6c1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5b7f32cef4bcd481bae7b76693d97b75b3aafe9e4ca86d8e4fc8e3b8a1150371"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "110f466ad3906e86d5cdd5d802c8230526807dd0562c1d393f1183b9f92efa82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3850fb68b729c31730609a5eb9b3f13fb6931bbf110ac81e6087ebe8145cb942"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac5609084898ab30a11d8227993258ddba1dc168ac02d6b6706a1ed5197f0f8c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72984c08a7f197a1fcf2ade3edad3da78b3ea076e8f83a40b7906cb950111b99"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04bbf7ad6b1baecac3638224dc7e44132d38bbfbdbecedec78727bb91f15730b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4c47024b443258be8f6c5207d47a84310df97219391db5aac6102914625a61bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8fc3197738a8c802ba1c4477a09c5a7738849c36ba1f919dbec5ebe0902f1f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e824e9dcb4084563482a86191b841ca1ab9b52d8397ae3e19c0ad04bc1fea4e4"
   end
 
   keg_only :versioned_formula

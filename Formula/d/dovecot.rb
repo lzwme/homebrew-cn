@@ -24,15 +24,13 @@ class Dovecot < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "51fe5736c4fe74c858e7cc2901b62c18f471004a5bc28574104bd3cc62491df3"
-    sha256 arm64_sequoia: "09ffefff96a42aeb4368075229fcd8439842729c3275211dc45bfb810e0fd046"
-    sha256 arm64_sonoma:  "fb47228aa002ca7a17b580475f202229ff05021438af7f0b8c28bf943a003ee1"
-    sha256 arm64_ventura: "7c02197a94945e427d5edfec3f1647a981a96d707cd2f59f122de8eb0e777476"
-    sha256 sonoma:        "e007ae6fa96aec1e7b6f89b4c4ed1455dd3f0397b59b5aae6f7c3cbd2a4ff64f"
-    sha256 ventura:       "d062efc159a5752d977a820107b8c4f11dc766489e06bff2860f91832f877a0b"
-    sha256 arm64_linux:   "9cfb86bef709c2e6a6f1e4dac4feac680d902718e20f5ee8fff2f9b28aa838bd"
-    sha256 x86_64_linux:  "d352c07b0869e303d279ef574e9b5d595f714b50cbb08d9f10eefe4dc3f07f37"
+    rebuild 2
+    sha256 arm64_tahoe:   "7ee0d42eb5589016822004eca42ccf20be6811df08a1afc6789b732d8da0f369"
+    sha256 arm64_sequoia: "d30709e7ecf049f407b9ca924a51f6d9aa201efa77b911936758be213ef75399"
+    sha256 arm64_sonoma:  "141354a9aed401cc0eb78f30ca9b96603e39589ad020b7d4e89d184d47e0c97a"
+    sha256 sonoma:        "21bf2f424e8ec257dea32b06a2b809de3e06b651a65462983fd97f9258f8973b"
+    sha256 arm64_linux:   "19abd78ff29b936c1bd813225fdca2b1a1cb6afb3bbc906500e761eb9116421f"
+    sha256 x86_64_linux:  "9118aafbb43e24aa3f46939bab11f8eee465732714e219406968afffa4b6272a"
   end
 
   depends_on "pkgconf" => :build
@@ -42,13 +40,13 @@ class Dovecot < Formula
   uses_from_macos "bzip2"
   uses_from_macos "libxcrypt"
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "libtirpc"
     depends_on "linux-pam"
     depends_on "lz4"
     depends_on "xz"
+    depends_on "zlib-ng-compat"
     depends_on "zstd"
   end
 

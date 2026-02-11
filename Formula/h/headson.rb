@@ -7,17 +7,20 @@ class Headson < Formula
   head "https://github.com/kantord/headson.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b770e733158b889b0fa333648be02473bb8804aa9d40602a42a08e01c7c166ba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e84fa119d1355c81443eb195e4dc28cadc437a11961cbeb9b582a65a2b140dc7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe26f021effb8b842b4733dd995a385b310ed87b353f68a84e954ab0f0686431"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2ba8276f8f4197d07cd42acaccdb3c4e0aad66b18cf2adab4d8d3047a77be9c2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba82ca7ea766ebccfb645e31f4a86ccce244d060867c90ee26f6a710bb15585c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2161ea635c9ef6a70ecb96711a348e225968d2933a3c84d6349af0d8d788e37f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "854c8655b692c19690c6151da4208ac9250dd88b180e0d2054472e9dd1af4a0a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2dc83400a096d97f6dab5e950bc8d2858ad36a522921f2f79790725cc83c24f4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cdd30098b76af6ca0de0d1f54b1cd723b6771efe8c70b1475f24ad9a9af9073f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6c8f68eba88fc692027f74798faaccdde4d47968564be5139d4219f661fcdc6c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f39390eec0049ead13d96c089221ca52a7f9d2f2dfaab2a10fd45c583ab09327"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed7745c0a50256e9ab5f7d047308da959c7922116ba1785086244ebb4183dda1"
   end
 
   depends_on "rust" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

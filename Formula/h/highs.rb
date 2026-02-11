@@ -15,18 +15,21 @@ class Highs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c6140db2002aaedec7d803da158feb2ecde26e45a0e191f97db8c1387771709c"
-    sha256 cellar: :any,                 arm64_sequoia: "b21d82b0bc99d42aaf16221a33d3964dccbda377a4b291a83e0d0471cfef40d1"
-    sha256 cellar: :any,                 arm64_sonoma:  "87e6aa58ea607487202bd9cde4525b61d979f246fa99c193db6ce7f806c7d6d5"
-    sha256 cellar: :any,                 sonoma:        "06a6339c4e29ecdd7d08b62a4f8b39276ac2fab5f8d17f21e922c3e24cda6a57"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "18773b17dc264aa3b5c209394ac5c10c4b9c60a04560c68b7c05dc46e16cb9ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9417a6ec6a879308ea4459603c4eb5cb1a83659b9ba81819716959b96e01f171"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "929cb9d826b00059366291f01359607789b788420c1b439dffa1ec3b55d51459"
+    sha256 cellar: :any,                 arm64_sequoia: "897ba2723acc118d965fd7a4f5b3259f5d7cb3875ee2f3355f4f521a11030ff7"
+    sha256 cellar: :any,                 arm64_sonoma:  "2faaefbb279010ddc4bec3f4c557b1a2e3085fb0b151e362291d941ace8bed52"
+    sha256 cellar: :any,                 sonoma:        "c304d51848555b661b5ef0d506843a289530d2fffb55c33f6749cc866bdd74aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b67b27bad6c50ea2929d0b943682f5af3c44b201a616bbe0b5739bb6cd9abdfa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "187db9ed6da1591fa97cf89b38bea0051a25d0567e734d03890095792abf80db"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build",

@@ -4,6 +4,7 @@ class Hdf5 < Formula
   url "https://ghfast.top/https://github.com/HDFGroup/hdf5/releases/download/2.0.0/hdf5-2.0.0.tar.gz"
   sha256 "f4c2edc5668fb846627182708dbe1e16c60c467e63177a75b0b9f12c19d7efed"
   license "BSD-3-Clause"
+  revision 1
   version_scheme 1
 
   # Upstream maintains multiple major/minor versions and the "latest" release
@@ -15,12 +16,12 @@ class Hdf5 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b0b7cbbfd0b4a5a7631c1b4a874e55216b6759eea361c9c9578dc5facaea4eee"
-    sha256 cellar: :any,                 arm64_sequoia: "8ff4e4519419c163a9994e26c6efce4aac29b2b30559862a6788ae7680f38327"
-    sha256 cellar: :any,                 arm64_sonoma:  "a8087eef9b98690fd7fff33d42ee5a7abbcfe1bca4473b9722f23a1a6ad0d789"
-    sha256 cellar: :any,                 sonoma:        "cf5da64803d500ee0f1e7f270997f742615632dbce3268b7bc444cff4d680c33"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee5802265ecad3b39a76995a9edfd5d583e72aeff7715c6a3c610ee3ec88cb3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8134b7bdd4cae67b32efd851769819415b886921263e24b0af93b0d536f8443e"
+    sha256 cellar: :any,                 arm64_tahoe:   "ae6cec3e48d2f3ace0027a8ae722494911048a9889bb2e0a6785687a3d0c2bd8"
+    sha256 cellar: :any,                 arm64_sequoia: "b023689b62eeab2d1be5c814d8877c24b70d09147c08441752ea836c4491c47b"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac477526c4f5405c6bbdb81bdbff7bf7d9da42e40e0bbdfe3d48498caf8c803c"
+    sha256 cellar: :any,                 sonoma:        "09ff5ab1eff3f2b6767c2f52103418d31409c796d6cb7914d7a03e062f212012"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7e8b27ef73eda4843dd686e751bbb43ba096406209f06f099f94ba37e68e2e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46d20eb636a2295c21b7498d5a39ed30634df1b9a956bcae089ef0df7ec9f2e8"
   end
 
   depends_on "cmake" => :build
@@ -28,7 +29,9 @@ class Hdf5 < Formula
   depends_on "libaec"
   depends_on "pkgconf"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "hdf5-mpi", because: "hdf5-mpi is a variant of hdf5, one can only use one or the other"
 

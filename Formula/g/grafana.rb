@@ -12,12 +12,13 @@ class Grafana < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ffbcf7709e3648f22ed569e69d6adb5956ef024f0e7223a9c30b18b410e6dcaa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88a82ef66f68d7921dd089ea361aaebfeb154052070f936e0497187fde30c11c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d927978f2b4004a6b919d939b6bf2f78eabaa02ed4959249434be628b78472df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a0fcae2bc4637c3096e19cee956704656406aab0394bc9f09d97dadd95d0ef3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1282668d2bb5ae1812a8e04650e95706fc495d52ee27d6acd9c0f35c1d84c58d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f30549988b4a3adbe678f30bb38771c15d9fe555f56075d507ec4df47e98b243"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed39c79ef5158dac3100342a8fc73f17bf2513d17a72c9ed3ba8c674629aee46"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b1427afa8429ea93761dc6a18a0a46fb5fb36d3bd4b9fabc61f7fe6ca12b1fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "252a0619b8165c5256fc9cf4ca5a5557640dc7ba9874ce71bce1b391a2f19636"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5d240d644ff05ffc6afbd4f52642677c02aaa06ea5249976899af0d538ea47b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "81f2ba35d2f434e66e6a26fd6a77cb6e7d57f2a7f6aaaf5e456c1a6d8dbbce58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acbabdad02819e84890891f5c47b9aac07bf631ba30667f2529b89ecf94b8248"
   end
 
   depends_on "go" => :build
@@ -25,7 +26,6 @@ class Grafana < Formula
   depends_on "yarn" => :build
 
   uses_from_macos "python" => :build
-  uses_from_macos "zlib"
 
   on_linux do
     # Workaround for old `node-gyp` that needs distutils.
@@ -33,6 +33,7 @@ class Grafana < Formula
     depends_on "python-setuptools" => :build
     depends_on "fontconfig"
     depends_on "freetype"
+    depends_on "zlib-ng-compat"
   end
 
   def install

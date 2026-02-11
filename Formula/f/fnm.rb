@@ -12,19 +12,20 @@ class Fnm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "64782e66d6b171629e37d30437799aeada431a3c6be452f263656753433b37df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e9803d57adb2d02e7880b8bd607248edcf60a2f1987d2a43c12bf42ceae62a0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9ed0f6e703bc246c9f9728c26948f4d7671e3b79ff42e0e44a455be57b3e5fd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "69b22dacd824d71438a318fe052ea47e0e1b21fa1ce018e582f0466025fceac2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "356ec74426ac56b9f1072243bbee635fa9b799c815cf1d613e37ad40161d3f4e"
-    sha256 cellar: :any_skip_relocation, ventura:       "a64ba998422c590b865e0a4f22f1b907b5696e6c1d7559f07b0329252a83d6c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "079d84bfb759a70fe095a69f8b0eed08f6c2c45921f075e37e3eeefee7b19139"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e75d81775dc5b7bd16cbb6fdc414db5a9693dc8eaa5cffc0802c086d33c6fe3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d9d89231ddb338071a739ce0726afab19579fdc8e4eb10f47cc272fd95be9a9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91d181b9639018f4bdae1697761c4206cb00e8761e3840a376aa03a0852fd1de"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4a0ceb3cc135193d06217401c51baeddbb7feb5f18309f9ef907cd3ad0344a9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1f6d563c6f1aa3382253d908cf245360a4240bf3114b9eb32b6e13507722bb3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f5f592a6555b13a3d7fb5c5e9d851bc7ae5a3b24481f2c3df9cfea812c2cd91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c89e2291a47df638eef0d32c133347f216d71133d15f764a09d213b91f4ad32f"
   end
 
   depends_on "rust" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

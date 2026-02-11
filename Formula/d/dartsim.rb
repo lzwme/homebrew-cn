@@ -1,18 +1,17 @@
 class Dartsim < Formula
   desc "Dynamic Animation and Robotics Toolkit"
   homepage "https://dartsim.github.io/"
-  url "https://ghfast.top/https://github.com/dartsim/dart/archive/refs/tags/v6.16.6.tar.gz"
-  sha256 "e61435cd5fb12025c7dce8020088a64701a50d90f63e9b8a0f77e447d120bdae"
+  url "https://ghfast.top/https://github.com/dartsim/dart/archive/refs/tags/v6.16.7.tar.gz"
+  sha256 "7c8c76126db31046c1d5e40267645e3a78199c1b88ae4f6346b18b97eee000dd"
   license "BSD-2-Clause"
-  revision 1
 
   bottle do
-    sha256                               arm64_tahoe:   "7a61b6653aed6163e3a1251055a425e723ca7e5c77cb22067471a92b7818f797"
-    sha256                               arm64_sequoia: "540359e69e8be2800b6fb444ee3a4666d7d6211bc06b4a96dd82f4ebb66e44de"
-    sha256                               arm64_sonoma:  "63c255fcdc01d1fc3ed970c7a5a002f5d4b45a969ab0e5e8483e9683cbda023c"
-    sha256                               sonoma:        "26100541ae86ec96211660b40285a9c311b03864b38ab909c59887965312f1f8"
-    sha256                               arm64_linux:   "f82f2ad8a033c4bdca44b74e65567132c647405bf39cd1bce27d455cfcc1b68c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef4b658439479aec7c9e31f5de78c15449cd9e92fd4fea4a79845d7646063a20"
+    sha256                               arm64_tahoe:   "dcbf0408267da7cfe6be73ac03fde0da400b87252135e36d6c4ac96d7aa15891"
+    sha256                               arm64_sequoia: "5a9c0ba4cd92654dc9b1e6c38492685d9dfa3b8afc370448ca9d3628ee3f2f1f"
+    sha256                               arm64_sonoma:  "d93ccff5a41c88fc87462b11334897632f7392876e66000c81959ed272de75f3"
+    sha256                               sonoma:        "f526a59eb77d8f16f7fbba5f1a2ab47c8c1396d1f14f84cfe6c07bec1681025e"
+    sha256                               arm64_linux:   "2bd1c628019da80cd34a8a09a492d7e770540cf6f78500588666ef1728ba694f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a2caf269b29404c8bf9329963183b0eea63d459fe0bd04aa7f310342b965838"
   end
 
   depends_on "cmake" => [:build, :test]
