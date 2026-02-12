@@ -15,12 +15,13 @@ class Micromamba < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9abee944950ec9d885ecec26f8b902a0055c3fd956ad1cd0c04bced2d3b18374"
-    sha256 cellar: :any,                 arm64_sequoia: "0660ac76c79298ff5db0b7a4ec9e71f10fd98e3cf46107417b428beca1ff7efd"
-    sha256 cellar: :any,                 arm64_sonoma:  "e52be47e7a48577fbaa6d8589520177f98a0e242b9fba40f7ab558e22b14ec29"
-    sha256 cellar: :any,                 sonoma:        "5e9e9af269adf79d6740c9695da0d54bdddc484e763fced3c4c420f8f7e60103"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f491b8dc2b4eb70d810949dc14aac91de8fb2cd846a0a515ad2d3c3d4334bac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28048a8805178a0d541d2d7fd5e2566d8f04a2e43067a155c64f8022aefbbeca"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "7effe5d711e3ee9ef6055ce9b7f10e30f497a605d4de0ab21151347a3927e2e4"
+    sha256 cellar: :any,                 arm64_sequoia: "5bc9ae03e2fc7d6095f72f5d7fcea9d76945e35466dcabc70391bd5a49c757f0"
+    sha256 cellar: :any,                 arm64_sonoma:  "24973d9a9aefcca0b7244ffaaa4301a96fb0636dca651aec7a85edda61bea29d"
+    sha256 cellar: :any,                 sonoma:        "cceb96088c8108d91f384bc0a81f91547a8294d000fcb496254163e38dd31fac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "da015912e92b1f214e845e9b0094ba9991ee05df14704117cf06ff96234b8d55"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "438c306e944937c9dfe67113c5072c437a4072f86fcf2c8148276d35ed99d883"
   end
 
   depends_on "cli11" => :build
@@ -45,10 +46,13 @@ class Micromamba < Formula
   uses_from_macos "bzip2"
   uses_from_macos "curl", since: :ventura # uses curl_url_strerror, available since curl 7.80.0
   uses_from_macos "krb5"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1600
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :clang do

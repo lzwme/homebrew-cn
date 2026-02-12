@@ -1,18 +1,18 @@
 class CargoRelease < Formula
   desc "Cargo subcommand `release`: everything about releasing a rust crate"
   homepage "https://github.com/crate-ci/cargo-release"
-  url "https://ghfast.top/https://github.com/crate-ci/cargo-release/archive/refs/tags/v0.25.22.tar.gz"
-  sha256 "ba7b6d126d4042f709453106bdb5392bf6aa88f1be25c028bf47f5f1da8a2b97"
+  url "https://ghfast.top/https://github.com/crate-ci/cargo-release/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "59ca4bffc4a02c2fd2be1b5088706732330dfa7ec862072bdb17628c80c02327"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/crate-ci/cargo-release.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "11e04e92d65adb9abcf892b35fd83c6d1364d2680f44e22e237f51bb60dd8222"
-    sha256 cellar: :any,                 arm64_sequoia: "412f78929909c97ed6c1d7b7da3f478bd8302f1511da5a93d7049aebb2650c3b"
-    sha256 cellar: :any,                 arm64_sonoma:  "6116b41b83dc38ffbdb85d6544781d71c87d37552d0949c1b89d0bb387f317d5"
-    sha256 cellar: :any,                 sonoma:        "c10784d991e5aedb06b7e1869a2b47ebe2c14322edc6ebc7dcc866a40b63bc94"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d40881fc836c6d7c3c4d5533bc6465b53646833d835edb3bedd5d3fdd9ffa1e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "724a3edeaa30bc7973e584dbcee23f40501191b850b96f959a730c2e2f38f0e4"
+    sha256 cellar: :any,                 arm64_tahoe:   "66d67373d5bec8bfdd7d5e34df9eb01531529e16df2b1104491cdc2b4d534cd6"
+    sha256 cellar: :any,                 arm64_sequoia: "81dc91ab7b02cd5d1a8aaca7ed782eddfacd5b94564211ec4a9befaf09cd4a8a"
+    sha256 cellar: :any,                 arm64_sonoma:  "1c01db976b179c5bdd55c623e804053a59e1ecb488fad816ad1975c20cdc2f23"
+    sha256 cellar: :any,                 sonoma:        "380b356d1e90e4d486c24a8feb95134c53722526f574bf9435a89c8d76acd471"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a31973474c2b5ed40badd8b421145bc2f3f8c89d83fae304512d50854e3f313f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8433d5d1e4bde72b3ac3dea40a742aaeb7dc703aaf09ff89d316edaa3815d5f8"
   end
 
   depends_on "pkgconf" => :build

@@ -11,22 +11,22 @@ class Vtcode < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "557bbe7df8f4fa362860a84ae9f4e8ffaa7b0901a3c287905910456657dd13cc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "362102fb432e2401ec09c929e6431a37e6222d02415d383ed53b1e159f151b83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5cd44b0135ffd19442e2d656a6f8286e499374d637d09679bf58d5a879a4805c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9a3a6ed4d4c44057dd25bed72945fa8fe58f9e3dbf04797fdaf54d7484a44b9c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e6b68a4c93f6784b6a4dceaccedf726974f633ec1faffe94a714b321e5261d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "014b58a7112d560b500d2e300cd73de8ab0c2eb4ed218e40de30417d25f27c07"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3838d8ddf16579e84325524e1bef1b1d6d08bb98628bcbf6b0c4b9fce14152d8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1936386197fa28be8bda357e2536c73f467e8156e54d9a2a8fb552ac9865573"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8acb88eb6995319361de06b82c6c752a4bb7ff2a5064b392d7069e57a7df6d1c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "56aff646938c7cb385b1589c54ab4b026bf24c7672e66cbbd9e34e93dadb3e9c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e17f696d051157457ad44013623bb4c8ebd226bc1a17049ded83dccfa6d51c0b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e5a5b6e3c5cce67543fe0900d8409576c6eb30731a8a80e976b4c6fe107eed2"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "ripgrep"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "openssl@3"
+    depends_on "zlib-ng-compat"
   end
 
   def install

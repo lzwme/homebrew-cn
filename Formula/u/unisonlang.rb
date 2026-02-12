@@ -23,12 +23,13 @@ class Unisonlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "47a01b91d16c70c45f050360c3ed7e22c6ee2d4f651b76e63b8e834a507e8596"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b074c9dd7ab1d47fc52652bb813672921007fbefbb3198d3c923ba8a2f616dc0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f2509463fb563729981497d3b6952d591da27cf78b7df41d815fa7416e10619"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f36866630790b6ab3b0ea79c5d039dd67644d50c19a6a032a411b7fec7192a5c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5aa6e2c708d907d6b873f01b0b21a0ad6b0945e998b3e756f1371acb423d877"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "490b67ce1c716a4dfda1e9a43c0e695970cfbfc6b5df6c072e38bea598a9d9ab"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb43afc196c38fc22acb91f458e52330f5a9ca8a89310784433bdbe7996e36b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58f39799ad19f50c7b240364794f2297ecb2c679a598dc5c26ba6c76cd5a7969"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d1bdf935049124742ea877056057a1cad11fa2645bc332b87ba4c8646a3d556"
+    sha256 cellar: :any_skip_relocation, sonoma:        "261ca960dc7688c11bbd48f5d83d18eca00df06d371c7f2e2336f5c5194c9474"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "afa2840d1c23ebf90770cca624ab2bc50080fd63b89890be460e40c5bed116a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9114f12773e3d2357f859f61e312ed6860581bfe1a77c3178aabc228c4344f93"
   end
 
   head do
@@ -47,7 +48,10 @@ class Unisonlang < Formula
 
   uses_from_macos "python" => :build
   uses_from_macos "xz" => :build
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     odie "local-ui resource needs to be updated" if build.stable? && version != resource("local-ui").version

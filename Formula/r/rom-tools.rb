@@ -14,12 +14,13 @@ class RomTools < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d31797f7ef2978b9764cd249e45f05440e91586ca0a61dcfdc9219f1194a825c"
-    sha256 cellar: :any,                 arm64_sequoia: "86cae030e7e29d1d7c4eca5af3b1a1ffbb8b646a0a46fe0da768438c264f5351"
-    sha256 cellar: :any,                 arm64_sonoma:  "a4a1e43f5dd79dc8c9b391ad0b28478d6df6c4f12004718c5e51e7c274a9dd89"
-    sha256 cellar: :any,                 sonoma:        "6abd153f6b61bf2554ed86676c3690d6d176aaf6aeae66b4a96c55035950988f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "979d102c1bb386a037d806a5f5acacb06a8450643ed5aad8e111f59480256149"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb7411f1d6cd2251410fbce7b78c561b8a804a2769a59fac4fb3f261a1dc269c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "6b154f182bd737e6a91409fb8ab436d08177ce261e7316f6a6a0f346cd700387"
+    sha256 cellar: :any,                 arm64_sequoia: "a85a3fe157e251a4446bfdc3d480daaec4362471af15bf59620d5425fd240f17"
+    sha256 cellar: :any,                 arm64_sonoma:  "80054471fd6b2eb8bd9c71174325a54ac0ea2ee2540a3eacd66e05c149f111e1"
+    sha256 cellar: :any,                 sonoma:        "c9bff74abb0f11defc3745fa45e34799f41ba5aad0f7cbe27867f8359f08420d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "008f6ffc3fc8f628d83a8176cba9ae8d37f0e4cc787dd9db48d4d9463a9fd2d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5394740275d3b0cc447d08eeb692784732bf4d75dcdf35f6db42fc96b38ccd0"
   end
 
   depends_on "asio" => :build
@@ -31,7 +32,6 @@ class RomTools < Formula
 
   uses_from_macos "python" => :build
   uses_from_macos "expat"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "portaudio" => :build
@@ -39,6 +39,7 @@ class RomTools < Formula
     depends_on "pulseaudio" => :build
     depends_on "qtbase" => :build
     depends_on "sdl2_ttf" => :build
+    depends_on "zlib-ng-compat"
   end
 
   def install

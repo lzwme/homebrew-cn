@@ -17,16 +17,18 @@ class VibeLogCli < Formula
   depends_on "node"
 
   on_macos do
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version < 1700
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
   end
 
   on_linux do
     depends_on "xsel"
   end
 
-  def install
-    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version < 1700)
+  fails_with :clang do
+    build 1699
+  end
 
+  def install
     # Allow newer better-sqlite: https://github.com/vibe-log/vibe-log-cli/pull/11
     inreplace "package.json", '"better-sqlite3": "^11.0.0"', '"better-sqlite3": "^12.0.0"'
     system "npm", "install", *std_npm_args

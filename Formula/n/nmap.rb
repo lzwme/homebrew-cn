@@ -12,13 +12,13 @@ class Nmap < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 arm64_tahoe:   "95d7b75ae2a9da04351b2994468e82f78bf9573197ad5776a27b048a78eb2468"
-    sha256 arm64_sequoia: "63813be2110cd230c604c14edd90b0b4ee2fa308ca352a8ffbe67fce7c1fc2b2"
-    sha256 arm64_sonoma:  "0b51a232db73376b99e26615545935202c5a05a17545ad8d4c7b1e91de77dd0d"
-    sha256 sonoma:        "6d2744e1823e5a07e7ca581e22eb4877a2503f8c3c8ea6d536d0623cc5e0fe99"
-    sha256 arm64_linux:   "329df202cc658166431a55512ab80f6136a836dfe75f1f87dfbc3f5bbdf3bb4a"
-    sha256 x86_64_linux:  "2abc96485fe00e61cbe83997d3e776e2f89e3ded33e731143daae0f0206e770a"
+    rebuild 4
+    sha256 arm64_tahoe:   "2993a4c87dac7becccda691ba5740d48b16a54c784f0642fc203858ddebb448b"
+    sha256 arm64_sequoia: "18445729758091be2f7711010363099a12cb64b798d552e106c18078692705e9"
+    sha256 arm64_sonoma:  "e42b605080c0d1df8a95f1d874a807a6c4e3b1a9211f6e353a2b0a9955bed0c5"
+    sha256 sonoma:        "2b725840b42b8b6c550abd00e79088b0738e9f40e961088ab19625c0afee10ff"
+    sha256 arm64_linux:   "ec55a5cb170f932c5069138494a90ffe27f235723edb8a9f5af7d3c306da1044"
+    sha256 x86_64_linux:  "5e48ce6fb060c1ccc567cdf41ed8466645626a35ea730d8b2f778b82aadd8890"
   end
 
   depends_on "python-setuptools" => :build
@@ -33,7 +33,10 @@ class Nmap < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
   uses_from_macos "libpcap"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "cern-ndiff", "ndiff", because: "both install `ndiff` binaries"
   conflicts_with cask: "zenmap", because: "both install `nmap` binaries"

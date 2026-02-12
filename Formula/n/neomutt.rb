@@ -8,12 +8,13 @@ class Neomutt < Formula
   head "https://github.com/neomutt/neomutt.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "ae40f7fe4d717d8f2ea1567c77a3ea7bbd6c5ce126e06a76d816ccbf49dfae2b"
-    sha256 arm64_sequoia: "daa57699dd78f7016360cf181bc5cd497bf19ad7c98339eb4b6cac7e521fe84c"
-    sha256 arm64_sonoma:  "5c1b3c7178751668b687fed01bd6667cd4821e0757f79c6f97f145af61b0f8f8"
-    sha256 sonoma:        "d937f33c75e4c2d2ad271e537ce3d555e481836284eb31f0ea1c9f219b8e31bb"
-    sha256 arm64_linux:   "a573bf0d996f6e4fca4c70e6f162183c122f276e96611e31594ab801ce9d5c6b"
-    sha256 x86_64_linux:  "98ebcb577ab3346242635d4ffb7f08d67ba28e7c7c8f7e1e9d1a46f5fc07452a"
+    rebuild 1
+    sha256 arm64_tahoe:   "fe95b1debd202453fdca5017ff4cd9305f3fb5703f719f83606b5146088dca5b"
+    sha256 arm64_sequoia: "5534c6ec2c7394e76020fdfbe22576fbabd5ed1f2e2963786c3742b778530c16"
+    sha256 arm64_sonoma:  "1983d5d12514db0559f68b71b473b7c91f390e4a97c199f9cd21c97e82e6d41b"
+    sha256 sonoma:        "0fc4334fb2b32898ffd9f77d2616b322d747f719a934804050273de3d9953838"
+    sha256 arm64_linux:   "ce956ce94db77838e334a175968b5298cee9512bcb7905d8570ff46cda033dc6"
+    sha256 x86_64_linux:  "3a2b4dfed12a64e42e2cfb250feed693c2afb7fd96688fff6aebf19b723d49c6"
   end
 
   depends_on "docbook-xsl" => :build
@@ -35,13 +36,16 @@ class Neomutt < Formula
   uses_from_macos "libxslt" => :build # for xsltproc
   uses_from_macos "cyrus-sasl"
   uses_from_macos "krb5"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libgpg-error"
     # Build again libiconv for now on,
     # but reconsider when macOS 14.2 is released
     depends_on "libiconv"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install

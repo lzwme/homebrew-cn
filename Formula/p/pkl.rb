@@ -6,18 +6,21 @@ class Pkl < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "af246842685cab337e10b7afea41173572a72d1781600d631a22e5c452cb05f7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7cb3bb5ea5719324b9ca79d66e9dc01e44987903b57d7758a2e72c499d7ba9ae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9594370d739c0f619cc61e4b4eed44bf2d3b516d74c7213801836e72da37c94a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "acbfe35c05d623e0afe70785c64b6a0338d44e88c5cb43535efad4a19259504e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "25cb1950d7573395bebbe04df35dfa6c5c26bb5b257a7c838dc42a65d3a2cef8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "981c15e7cf826e119d999507b35b854a50447a6c6e55369f27841fdb9575a087"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a9ef5ddf3fbb03401b8f6e07508c32735b71e1e3227cb42fc9a8ae1a13f2ff93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a8294c64953850942595d9a57fbd87049f14447707b24e75c767bb792e56015"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e0f2bf3b0478155a0a999df1021c7b32165919e17da50610d85ae651fac8dfa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "38a69ebf9a52eeb7aa84a5b477343b91451c6c0a8312fde3ebb2713406a3559b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a5fdf6293abcd47f762c844360c84c4c95000b65c0713f94cc62d144b516ac7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d69fa2b25f23f5307bba209534ec330c70cbcb985c27e4950fcd5096b469d25"
   end
 
   depends_on "gradle" => :build
   depends_on "openjdk@21" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["JAVA_HOME"] = Formula["openjdk@21"].opt_prefix

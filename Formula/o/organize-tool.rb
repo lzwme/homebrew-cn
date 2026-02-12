@@ -32,6 +32,11 @@ class OrganizeTool < Formula
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
   end
 
+  fails_with :clang do
+    build 1699
+    cause "pyobjc-core uses `-fdisable-block-signature-string`"
+  end
+
   pypi_packages exclude_packages: ["cryptography", "pydantic"],
                 extra_packages:   "pyobjc-framework-cocoa"
 
@@ -164,8 +169,6 @@ class OrganizeTool < Formula
     if OS.mac?
       # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
       ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"
-      # pyobjc-core uses "-fdisable-block-signature-string" introduced in clang 17
-      ENV.llvm_clang if DevelopmentTools.clang_build_version <= 1699
     else
       # `macos-tags` and `pyobjc-framework-cocoa` + dependencies are only needed on macOS
       # TODO: Currently requires manual check to confirm PyPI dependency tree

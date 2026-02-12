@@ -12,18 +12,21 @@ class Rover < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e755a44e41cf581115c4a33aed936d53fb54822903d9d2378f8853b2ae4e0fa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb7975a257705637ae60d7ad97230c8421e8e1c59ed0e2422684d47879aa8862"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2108d7edc751f89ff03ecf42b184074dc08970661aa93d6145b8a80e0d20c404"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1200527113d4901fb2c7a3302d1bfa94fc42bcfa86fad994adf02743c585636f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "529fde6809c33b69e9e51b0e6744db5e7cd37d94ffc139650877b6c1199ea111"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc4bcf338b3edaec47cbcb05d77e5ead00a546c231776a69d0db8817178099b7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "98e2d9ad561d1a16b2f91c1259c5c793a9c26a292c7da254ece29877622ac7b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f98a2d429fc13478a5e9826b96f5f9931eb5fc87a03f2c4bdd607d5f0e384851"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1508a4138bcda8541e7c62bc7ad9595f10b64bc5177c27099c9d3933930d6e49"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aab791df636a3fe728b35287a972ff2ee3c255257e0dc9025a6e84cd9cbe5bcf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1bbb95c462ea62cc91a1866b91211f3f4ed403c2fb1c0079109079bb20f3e7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67bde9ee55f25f7ad4c3a0ab72cf67fe2970e254e6b3677c90e42f47bff81d79"
   end
 
   depends_on "rust" => :build
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.

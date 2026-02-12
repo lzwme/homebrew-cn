@@ -15,12 +15,13 @@ class OsrmBackend < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bafbf8e9eeeb7fd967b9af6248ea3da9c9b13624c67eb8ff2cbdf4972c57d501"
-    sha256 cellar: :any,                 arm64_sequoia: "786d42ac7d079d97505d526a642082294c8a2efc846de8315306373c85091606"
-    sha256 cellar: :any,                 arm64_sonoma:  "686afbf247935ef86b3ff3414e22a33a57bd1d9f28d4ba0e1cc6f45ec3d38f89"
-    sha256 cellar: :any,                 sonoma:        "05bc24eecd136bab1f072af2de909bc43b4a6e620459ec064721aaca61075142"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "189865032379b3123c27e762ea15b06aa9011fb44590f50bf623608a11e1ffc0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72788187b68a1d6066bf407a81260c24d10f46b501844d7844fab9fd0a880d4f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "edfb58fb08cdb110fbe738784b979f256da6e7f34af49fc6d667669fc41d3f4a"
+    sha256 cellar: :any,                 arm64_sequoia: "99d0f1dd0fe21b15366c661cdbb8716fa5753a0b2b1e5473c485e80a372518a2"
+    sha256 cellar: :any,                 arm64_sonoma:  "7002b90376549c85c6b5d7beca1d1afa39cbe9cbdcb0f904cb825e611d0c1ca1"
+    sha256 cellar: :any,                 sonoma:        "a7df306403150d35d66ce2a2fa96a3ea12cbd9021468cbdefe6b30560398af46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e68d7ae70beae95b5aeef1840affbac9d0774000bb6014791e4262b0eedf208e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fed92de2c0585e16bb7a1c2d2cc8b9538d935b93814aa4f800732ca26a60062"
   end
 
   depends_on "cmake" => :build
@@ -32,7 +33,10 @@ class OsrmBackend < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "expat"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "flatbuffers", because: "both install flatbuffers headers"
 

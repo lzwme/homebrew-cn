@@ -2478,7 +2478,7 @@ Homebrew-homebrew-core/Formula/g/git-who.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-workspace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-xargs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-xet.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/git.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/git.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitbackup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitbatch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitbucket.rb, Homebrew/homebrew-core, 1
@@ -3473,7 +3473,7 @@ Homebrew-homebrew-core/Formula/k/kics.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/killport.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/killswitch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kim-api.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/k/kimi-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/kimi-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kimwitu++.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kin.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kind.rb, Homebrew/homebrew-core, 1
@@ -3729,6 +3729,7 @@ Homebrew-homebrew-core/Formula/l/litra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/little-cms2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/livekit-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/livekit.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/livereload.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lizard-analyzer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lizard.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lla.rb, Homebrew/homebrew-core, 1
@@ -4137,6 +4138,7 @@ Homebrew-homebrew-core/Formula/lib/libnids.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libnl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libnotify.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libnova.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libnpupnp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libnsbmp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libnsgif.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libnsl.rb, Homebrew/homebrew-core, 1
@@ -4308,6 +4310,7 @@ Homebrew-homebrew-core/Formula/lib/libunistring.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libunwind-headers.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libunwind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libupnp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libupnpp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/liburing.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libusb-compat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libusb.rb, Homebrew/homebrew-core, 1
@@ -13589,6 +13592,7 @@ Homebrew-homebrew-cask/Casks/n/netnewswire.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/netnewswire@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/netron.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/netspot.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/netviews.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/network-radar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/netxms-console.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nexonplug.rb, Homebrew/homebrew-cask, 0
@@ -13949,7 +13953,6 @@ Homebrew-homebrew-cask/Casks/p/pencil.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pencil2d.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/peninsula.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pennywise.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/p/pensela.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/perforce.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/perimeter81.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/permute.rb, Homebrew/homebrew-cask, 0
@@ -15062,6 +15065,7 @@ Homebrew-homebrew-cask/Casks/t/texworks.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tg-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/thangs-sync.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/thaw.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/thaw@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/the-archive-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/the-archive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/the-battle-for-wesnoth.rb, Homebrew/homebrew-cask, 0
@@ -15071,6 +15075,7 @@ Homebrew-homebrew-cask/Casks/t/the-unarchiver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/the-unofficial-homestuck-collection.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/thebrain.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/thebrowsercompany-dia.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/thecommander.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/thedesk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/theiaide.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/thelowtechguys-cling.rb, Homebrew/homebrew-cask, 0

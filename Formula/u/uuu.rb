@@ -13,12 +13,13 @@ class Uuu < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ce0b40eea128f2b48db0fd6774aec7092a6ea3963e550ed24693ae7880f57f88"
-    sha256 arm64_sequoia: "4245cc4bce944ca7a491acf2fc47a5e2a1456a2214fa55fd18a6ece6d256cd96"
-    sha256 arm64_sonoma:  "b728f8450fb548522cd18d4260ec23ec7b44bf7e5bb53490572b49ca0e59909d"
-    sha256 sonoma:        "d10283c4a4c6ecfd601e1de144ed2cda03c172c93bef91297d7adc4af4e4c192"
-    sha256 arm64_linux:   "7613cc30f2213d659f9e58bdabc761f24f92afc2e35ed65b18dc963c509976e4"
-    sha256 x86_64_linux:  "50643dd422b69cd0ab474e224c82395e9f7d3298bf6b82685a6736545012584b"
+    rebuild 1
+    sha256 arm64_tahoe:   "781cf15e04977227c875bee8a775a9a467e7637f5b5b66ed5348ca21ffd77d4c"
+    sha256 arm64_sequoia: "1f7d083fb0a660d6ae993992f57ad7e06f419dc1fd6701ef4e774ddcfa27e76a"
+    sha256 arm64_sonoma:  "8fd6cc628b1828bda6849151bc7214163809369e23f0bef838e077639915b62f"
+    sha256 sonoma:        "22b6cffa3305490a93fdff5c2cb6b181245507da7d1fc4ce1fcdf8927b18d42a"
+    sha256 arm64_linux:   "727d2f61c7d555622887421a49e839ec1186aa19f82a62c3d6d6b710252e6862"
+    sha256 x86_64_linux:  "bcddad7081ccf91f1d525ab5ec6602033c15e7f0e673f82fb45c076fae8af1ca"
   end
 
   depends_on "cmake" => :build
@@ -31,7 +32,10 @@ class Uuu < Formula
   depends_on "zstd"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

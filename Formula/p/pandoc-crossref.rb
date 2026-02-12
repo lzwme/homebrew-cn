@@ -7,12 +7,13 @@ class PandocCrossref < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dcc0c04cee89e8b64dfc6a375435e827a6662c0ea34f902f2869bdb7acff4864"
-    sha256 cellar: :any,                 arm64_sequoia: "f04c16c8ce3486e544f8cf71c63ad6249fb49297de84f4c3423782a6432712dc"
-    sha256 cellar: :any,                 arm64_sonoma:  "80837bc0d92ed327217a4fd932fce76b457dd088fedf98c1830dfc4f3af9e7e5"
-    sha256 cellar: :any,                 sonoma:        "8f453b22c706eff1e653c859d7c62bb7c403606043d849cd65295e237b49df0d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b57232e3b86978936a6ef517d2c8273008028010e0f34ceac211be5ebf3eb382"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81427608e02bc74cfe4d81525d4a5f0aa3a6ff06f088a082611b73af9578d4d7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "d7df4148706fb1cd56efb60d5845d4c1a36cdaa18f9a038e6e1880a911e9b03d"
+    sha256 cellar: :any,                 arm64_sequoia: "975d9a6fd34e1a09bf53f1fc928ac6b67d0c5b19c4e78717159784603dd07bb0"
+    sha256 cellar: :any,                 arm64_sonoma:  "399b45bd36a3b4f8109fcc515f28531f4423d85bd5445956a9e412c4469abf39"
+    sha256 cellar: :any,                 sonoma:        "f0a48dbbb509de85612054b32a7392c8f7bea7f5dcfecab0fed17d2cb13c7d50"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cb7b83d51633cde32f701ab5fcca0e3081c26f7dd27b83a3d10376c793c271d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6b1eba3b664d7729513dc25c9e432efef4d6806e1c2a6ffee47dc2dcb088365"
   end
 
   depends_on "cabal-install" => :build
@@ -22,7 +23,10 @@ class PandocCrossref < Formula
 
   uses_from_macos "unzip" => :build
   uses_from_macos "libffi"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     rm("cabal.project.freeze")

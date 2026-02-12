@@ -2,7 +2,7 @@ class Roxctl < Formula
   desc "CLI for Stackrox"
   homepage "https://www.stackrox.io/"
   url "https://ghfast.top/https://github.com/stackrox/stackrox/archive/refs/tags/4.9.3.tar.gz"
-  sha256 "b8deee53a6d76abfbae2c212c1cdf5f3ac840932834274735c0182b914176252"
+  sha256 "739523a88f936146b078850f92590dd2b6c99b3b79973d679a8ff0bb25a12ffe"
   license "Apache-2.0"
   head "https://github.com/stackrox/stackrox.git", branch: "master"
 
@@ -15,12 +15,13 @@ class Roxctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "69e73aa75e313f026691e668f045d9037b4f0b4093763a9dad7824d78a300f2c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4401cebf47ab6cf1b7111a115916afdbc220e075fc014efc04f7a2b5a37c57d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d331a50dc00a06f28cd24007e1055fcea4aea92f08cfe59bb4a0d19b7ae1fac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ce56a10cff72c085cfd0d2290c245cdbd2b5fbb6723bd0a45829e6fa3f354f9d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f3a2d6e55588df0c5afdf8899cf201b3211f4a4da0a4f1eaec9ee2105c9630c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03b7be0848b8baf55a616e4ad9c6b5396864c8f07f13194f86979f8ae5d47314"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e8a8a50740f0b054796e1b257ee2fe4441c8dd1c8bce3d9bb89320752672d60e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "316f5395abe95e8ae3c06182e2bc2ed3c18afb7dfbcb6db52f778e8d5273c3b9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d599ad7247db31f1854cd4819c01c2ce5ece7f79157af8359140e5dc8a874403"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8ec35afa22f9d5697b98186faf32147b2c5a6f8f8e4e449855db0a18b6b8ef90"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6d99dc8e440ef59b25c272a79dc41d83c0d1c139a7bf43aee03390ccf4ec3de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3111cf24cc20772e6812a91ea5ec3737057c13add47fc70688a2f8897acb443f"
   end
 
   depends_on "go" => :build

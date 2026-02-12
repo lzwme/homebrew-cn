@@ -21,12 +21,13 @@ class Mutt < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "40282c914f9881dde7e3d5030f63fde50c6847c0e750a0a8d2217d504d8f3218"
-    sha256 arm64_sequoia: "a14ee9f45c5cc72cf0ee0507a4ace0d88ab013ab6fd6a7f4d9c8c824ad793fdb"
-    sha256 arm64_sonoma:  "a725f196217b3c395bff34ef5866c3781529dc0089abbb280cc18f0f93ba9726"
-    sha256 sonoma:        "7d2853011485fd5d5c9439661e9ba8f2d5e9064e8d0d41528b15f46b96237267"
-    sha256 arm64_linux:   "0e0b9a0548c5d0c56ec2e27f105f78b3ea44acb3a472ade5501cf7cc87136619"
-    sha256 x86_64_linux:  "7859bd0243233d734331c22984cca2e6c3529e308878a8a4d9f82a5436217e9e"
+    rebuild 1
+    sha256 arm64_tahoe:   "f5aa59e57c93ebe4dbf834ea06623182f72c0192e2161be9398acfacd63d971c"
+    sha256 arm64_sequoia: "59ba570bdf75696b15b8fed0ff15e7b47038dfd850ea9b60e26d5c277e5a6d88"
+    sha256 arm64_sonoma:  "39f710476e12dd8e3616df36ac1be4451f6064754accde6750f3545e945790ff"
+    sha256 sonoma:        "6998d2b147a5c30ea2ecfd5e7e11da8e83f1a48ad0c6f85047438a5bd1a78b95"
+    sha256 arm64_linux:   "0b09516917e4253a40d189133cca26904fb17c9552c2e7716abb8a0d9a6c7514"
+    sha256 x86_64_linux:  "e08eb40aa35b734d0e8f9a43ad02bda74b703bcf236e4e4e53800f5a90f5ce58"
   end
 
   head do
@@ -50,11 +51,14 @@ class Mutt < Formula
   uses_from_macos "bzip2"
   uses_from_macos "cyrus-sasl"
   uses_from_macos "krb5"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
     depends_on "libunistring"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "tin", because: "both install mmdf.5 and mbox.5 man pages"

@@ -8,12 +8,13 @@ class Nghttp2 < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "edc3918d4f7eaae2e0139b23d0726cf2366bd40b9ca42b588c5db31f6d5862bd"
-    sha256 cellar: :any,                 arm64_sequoia: "65693fd8c12755bd248de72d054bdb2fa40c08b07504063ccff35a0b7c96cdab"
-    sha256 cellar: :any,                 arm64_sonoma:  "c14f803178054a097d5ad7e77cf456d85657454059fab94140053ea6917a00a7"
-    sha256 cellar: :any,                 sonoma:        "91481ad34cfda34a8c04c246b6f295c656d3b0d2eb36c7040e50f27ef3755373"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b970fea49cc1fe0648d53440996bec54d5f49d6533b61a18b1f6842f509094ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aae534df297851aa9ab15c0a9fe088435d1cff39d1290acab7649ff778629fea"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "a2d1e55d45369690662a1c729ee2e0261b373f3afc4954666d8c5b6a9898acbc"
+    sha256 cellar: :any,                 arm64_sequoia: "5f1406f8602d219785670c46b8b8426f0bd0d3056e196132ef7cdcdd839c1170"
+    sha256 cellar: :any,                 arm64_sonoma:  "1680f9e557ce6ab597e6ba797c64af7b3d810471334ac83f570bee189c488b20"
+    sha256 cellar: :any,                 sonoma:        "58b8610ecbbf4e5c7e376334b86228a3d80551f275972730a76153cdd3928ff7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "66278dfee59169e7e2054e4490884d2593f3e22b5ab02479c7d4edd05762648e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b398fcfab78f81b200b70dc2b0320694a99e73c50777379f309fa287b4c7bd15"
   end
 
   head do
@@ -33,10 +34,13 @@ class Nghttp2 < Formula
   depends_on "openssl@3"
 
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :clang do

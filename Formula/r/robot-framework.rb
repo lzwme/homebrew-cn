@@ -10,12 +10,13 @@ class RobotFramework < Formula
   head "https://github.com/robotframework/robotframework.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3f18eda1835ffb3e2fdbcba61e2eb59a54ff5b1c923192069589cafcb13650ec"
-    sha256 cellar: :any,                 arm64_sequoia: "665f161a0124e352fd158748bd8f5566be7bc1c5bce77fae44cb4c2a06a026ac"
-    sha256 cellar: :any,                 arm64_sonoma:  "14bb79c7140d640d9914e868eb6b2c76d8f5a4d43327aeadedc1df6fae62710c"
-    sha256 cellar: :any,                 sonoma:        "26bd9a1f4c154f145972e871a1fbbe79dba730bf1e216331c9c0489f25251904"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8780a3dc35a586437f43ab9fd6b7ec78b58fedfe6152ac686799fe5e608993df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11fcf74cd149126d162f6084054430cc8cfbc48152cdeb4d4e3ecb9ef2a322e2"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "10e0e034c5688c2809cfd08e66f20918182b86e5a5bbef4b4a22f0cf2b8e6aa2"
+    sha256 cellar: :any,                 arm64_sequoia: "b468e43cb558d7c2063d7f5abd8b64fd699ee925f9bc4fb5c84e5ee53faea896"
+    sha256 cellar: :any,                 arm64_sonoma:  "9c0a57f9bdcb68eca26bac122d40e866b1058cdfb0ac830a54344eda3c0fbd92"
+    sha256 cellar: :any,                 sonoma:        "8863851eee752a5eef3a643339e8a3021bb2b5040bf8d009413e06f6c67d8aa4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "23deef0f7e9464419e49c9bbbc63c587154b64030a285800c4637f9aa850f62e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f834e3683e90a9b885c31b9171e20006af6cd02750da0e37ccabb5094821e3af"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -24,7 +25,9 @@ class RobotFramework < Formula
   depends_on "libsodium" # for pynacl
   depends_on "python@3.14"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   pypi_packages extra_packages:   %w[robotframework-archivelibrary
                                      robotframework-selenium2library

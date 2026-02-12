@@ -9,12 +9,13 @@ class Mosh < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1b33710d842f8cd081d2e84a7298d3784b9b82f5a3d88b1d9fe991a24fb94c4e"
-    sha256 cellar: :any,                 arm64_sequoia: "46b2304d63fb3a32e44372917dfa519a513b9d6804aa70fcc3fe87b396264a61"
-    sha256 cellar: :any,                 arm64_sonoma:  "390d6d342f2a83e01866dda37705101f4aa0374711feb74d58c5cae21ba42940"
-    sha256 cellar: :any,                 sonoma:        "16aed0434e59138c4cbcc99ad7ac10706c0bc4899fc53aa3eb3d5655cb8637b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3a848a6fd001199c20f37ca700f2e730d78cc6ba60140bfbcb6535cca5b36a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7daf10e9af5e305dc11749e87c607c319bc0b789f761edbb21fb4419f1d736a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "0fe164cae9fd64589583178509a1fd4cee81a4e9883992484128c6eefbaea27e"
+    sha256 cellar: :any,                 arm64_sequoia: "cb0eac777d8f4203bd5ad1ecd12ff3a2a3f6f4499c215d176c305264a9475ea7"
+    sha256 cellar: :any,                 arm64_sonoma:  "90c35dbd143bf8031bcd5e1a42bf0a5066da1000aed64a7b6bd5dffd6b68cecf"
+    sha256 cellar: :any,                 sonoma:        "5fec87acdb8ddeca30d85d44f6b34215a73dfd5ec3f72c42ba56f1f67c2d217f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d46d34a6367ca60ad78dae4d94ccf8e2def22fcdde49cb8890adedbe88bd2b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c7d77a0268441bca9fccddf7c4a9ad1480dc0eb334a94c95814a4fc00a525e1"
   end
 
   head do
@@ -28,7 +29,6 @@ class Mosh < Formula
   depends_on "protobuf"
 
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "tmux" => :build # for `make check`
@@ -36,6 +36,7 @@ class Mosh < Formula
 
   on_linux do
     depends_on "openssl@3" # Uses CommonCrypto on macOS
+    depends_on "zlib-ng-compat"
   end
 
   def install

@@ -15,12 +15,13 @@ class Nginx < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c73f75e473b20025bcbe6bb785e902355d7cd29d3b3b44357614a301e6b679b4"
-    sha256 arm64_sequoia: "3024d39b48fdeea12250b26ef9988245af14791cd8ab0400bde5c7921d5d1e53"
-    sha256 arm64_sonoma:  "9085bf5e9d1134b39c3b77ec4d047ea19ca0faa2842b5e700437b04bd0764824"
-    sha256 sonoma:        "09e2081a30c0b70ea22547016a117dfe0ff5d9d3317b9acc33ff53b2f4e0d088"
-    sha256 arm64_linux:   "3c42d5681656da3d366d4e702c9996eda6563b0dedd4d1ff7a910f6a18f3a94a"
-    sha256 x86_64_linux:  "9078c36b4bf39528fbf322aaac998862616fbba688f5ba6d3c9c272c401e2adf"
+    rebuild 1
+    sha256 arm64_tahoe:   "781945edff6bf08dfb7d5e0692ee922c44358fab5ac37f67705d90acbdf11686"
+    sha256 arm64_sequoia: "ee6702a922c01115d521a6f0a9fde59b5165c603530a9ce1a78b9659fbac5655"
+    sha256 arm64_sonoma:  "94c0a973f5d20e88cfdf3392d4450a43d80c99fbdebd1ce8044afc92b794e5d7"
+    sha256 sonoma:        "b696db27c352fe2cfc7128ec54121dd2aea3e560b36522f02acc534870e9aa76"
+    sha256 arm64_linux:   "4d98c3c458b3011324b8d6566f8d55be0cb8126d91a4af17e8935229bac4072d"
+    sha256 x86_64_linux:  "e196db79361048ce6267673f874c5d5c0b5ec1caf4edb9f1e7524f156a1ab824"
   end
 
   depends_on "openssl@3"
@@ -28,7 +29,10 @@ class Nginx < Formula
 
   uses_from_macos "xz" => :build
   uses_from_macos "libxcrypt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # keep clean copy of source for compiling dynamic modules e.g. passenger

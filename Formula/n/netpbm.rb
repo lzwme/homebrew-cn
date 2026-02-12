@@ -18,12 +18,13 @@ class Netpbm < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "2d1e7ab95ba535775b40757726893724e597b28b358020749b89ed624904e800"
-    sha256 arm64_sequoia: "6b425ffe48a567eccc8f00f1cc8ece83bcb8c3258752b103b55784971dc04ca7"
-    sha256 arm64_sonoma:  "7a2116c429236cb7f74d4b227704edd921e23a8e684028d8e2ecc554a05cac51"
-    sha256 sonoma:        "e9a275886685a4712032390b3da6ebd582b0e755e07ef452f090a3f0fb26fc2c"
-    sha256 arm64_linux:   "2de9919a88df5d9bf5f564368eb494d94b5b625aa39f55dccc15485b0a11b856"
-    sha256 x86_64_linux:  "3279ed5ddfb891c0cd2e86bd66da95d30a78d464e4b659d9efb200ceeda73f5b"
+    rebuild 1
+    sha256 arm64_tahoe:   "d89af695443c67f72b7c622b3378e09c52d3b9859c507206e1850c08e31cf677"
+    sha256 arm64_sequoia: "07fe8606c796d6f181aa57cf4bcc4cfd209f5cb1ea923149bec6e1850c233273"
+    sha256 arm64_sonoma:  "5408c6467240b9569aec78f7cfea764f52a88acdcb0755b505462164ebaee6c3"
+    sha256 sonoma:        "c726563ac165aa08be29ab1ed962d1e6113f32b02ea0e0530527486bb150fa78"
+    sha256 arm64_linux:   "43d86b41ef03c608c1ee7052cc75fc2bcfa003f1d3aebf72f825e6fc4aefda13"
+    sha256 x86_64_linux:  "71a3fe01c6102243688c11f64b8e3b8279ae57ff3f508d5b728cf7c351045129"
   end
 
   depends_on "pkgconf" => :build
@@ -35,7 +36,10 @@ class Netpbm < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "python" => :build
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "jbigkit", because: "both install `pbm.5` and `pgm.5` files"
 

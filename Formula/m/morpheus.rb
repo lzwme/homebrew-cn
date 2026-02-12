@@ -12,12 +12,13 @@ class Morpheus < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "68e93247aebdf994cf0792d3734daa663aa4fdac54275e1c6a9844d542af10d2"
-    sha256                               arm64_sequoia: "b823163069bb353ba32a2055f4a8bffc20ff29195454e95fb65d1c65fae15ce7"
-    sha256                               arm64_sonoma:  "cbcb607a2cfffb3abab6139a790f4ead1d2f57a317b73e7ba7eae2a1ea2ea075"
-    sha256 cellar: :any,                 sonoma:        "f4226960321c42c64a88a366aee6dc2ffc3eb6d6f76629ac839e209dde430181"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae058fa9e0ac6939094dc571369a614dc2f39da0491875ce354fa1c01141b363"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "167d9a671a465a72eec47bc03748732688e8b768ac05eebe308e847e0798fab5"
+    rebuild 1
+    sha256                               arm64_tahoe:   "a15d1a00441c221b4c14e3bb61d77fbd8d6d64e0c995af9d6bbfe3bb212ebddf"
+    sha256                               arm64_sequoia: "ffa9cfbd83bb9bcb686bb3e083b3159bcd3e396c3176b3806feab883955e963c"
+    sha256                               arm64_sonoma:  "3d66e7e49bf82eb10886f2d979b2f27d3bac2a7a3157860e013243d8b9c1cf39"
+    sha256 cellar: :any,                 sonoma:        "e99cb109739b7dfbaaa0c5c54a2fc851a45284014bc1d6123d2669c544203a98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "43a3d5b35c23fb0cbdcb2678a9b438a5fb235f21adddb006a182840b561ca60a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8db52392541afb2940e31cfee884c8df75f195da82ead0a98972e573ab2caf4d"
   end
 
   # Can undeprecate if new release with Qt 6 support is available.
@@ -35,10 +36,13 @@ class Morpheus < Formula
   uses_from_macos "libxslt" => :build
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libomp"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   # Backport support for CMake 4

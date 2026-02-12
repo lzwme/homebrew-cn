@@ -11,19 +11,22 @@ class Ptex < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b9ad545c0561cf637d82a5dff6e0c783c707bca219cf361a96390d0ff7484780"
-    sha256 cellar: :any,                 arm64_sequoia: "25ef8e59f1281d492ed40390e8408f9f1104f1378bf0ee1e67daaff4ade4abab"
-    sha256 cellar: :any,                 arm64_sonoma:  "c30eae1e67e46837fd7b8b42e6cd1559747c725d9bfc79520f1962566c5645e2"
-    sha256 cellar: :any,                 sonoma:        "b377aec3cfbafdb380aaf0b8efe83f305e178681836192476669322c31afc523"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6678a7e585381373ea5f21bf5d1833417a8d47dc30a0e0d2b48e6dd99434a8b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fdf8e1c4e191abd2553ffdc6dd9c57eee384d41a0edec03fca0c0958501954d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "180dc89f0792317b8800689587ccbcb1b36e0d2316f8811467323361cd7152c4"
+    sha256 cellar: :any,                 arm64_sequoia: "31009fa3315b845913d355b230e40a2cbc321fe3b250fd7c6149e78827d0cb09"
+    sha256 cellar: :any,                 arm64_sonoma:  "25cfb86f4efe5aaa92239bf7b862d852ce5fef2a228bf81494b6b3ca10f674ae"
+    sha256 cellar: :any,                 sonoma:        "95017074b589ede0043a7974a045faeb7e6a7945400e44bce17a400ccf811949"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1dbcf9a26c757d9404ae835e3e35903ca65adc10f76d23bc9fea920d3a608b5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "893722f8de667f5d9fdbf20d04b89868e5d9d05484272f68f16dfd20afc50aee"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "libdeflate"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_CXX_STANDARD=17", *std_cmake_args

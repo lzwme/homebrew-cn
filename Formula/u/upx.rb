@@ -7,18 +7,21 @@ class Upx < Formula
   head "https://github.com/upx/upx.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4ebde3877f05d87b6de56f376f781973138dd7cd571b8226b8f5909ed2366d0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5764837b7a4307a62ab3dacee48265d9403d4a3ad943a0c6e3ebd6f2afacc18"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00a0b48fe65fcfe3685d2a15e49069296978326ba58656c793d11194d34026b4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "acdf3dac97fdaa2db80c1594edd245ffcfa0434e6d1e90cdf929b9b5a4fe920a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1ddb61d7777d87a7553fe292b17738f23e48772dcb7c27bc85256c80c1aa25a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12eac546886d5fca0594fd1a704c7449456cf25e50b8e3d84704223a81695300"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea8de1cee73e3c033a070b3fa33c9bed619efe82082d9cbf8c545f6bc1fd17b1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b8730e894f00b5f36888f721fb0dee68bedd8b6888bc6b72cad6343d64580cc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "269b3401ab172073e318512abb07ae06ca764c294f5b1aeb84cca93427d0a2dd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f5c07d79e2aa6fb3635540ed69d390221c00670954cc4ff37f0515881306d376"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0bbb2b44e8162af055e25a8e384c40fb8f3541f4f45cd5e71ffb330a7e0f7455"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b44dc31ec96d3cd2eca8d4cd054fd1dba7bb898661883efb2448c57ae9c9b01e"
   end
 
   depends_on "cmake" => :build
   depends_on "ucl" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

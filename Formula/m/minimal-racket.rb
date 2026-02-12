@@ -15,18 +15,22 @@ class MinimalRacket < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "1003ef249f291fc8fa855c1aa7e9002bc80e397d71fdec631f024c41963d297a"
-    sha256 arm64_sequoia: "8e44fa1b6cc62cf8ec66aec8167c907a7ada07f96254b2e06d0300f18d4b6267"
-    sha256 arm64_sonoma:  "16ee187404f463397c70338de0468adc7d3cea752e60a809a1cb767ed8daf76d"
-    sha256 sonoma:        "3a9b6f84bbf6db1c8508243b6c95f156f5c3f8c7fb39b9403a14b04bbf37614d"
-    sha256 arm64_linux:   "e76236c2f1d56fb9b168e311f22e0796ee586a310978e1dbc31434acc2e2c830"
-    sha256 x86_64_linux:  "242bfdb4e18fbcc3197c6201d5e4d8c62ab27431d5ba298d103341600d74f1a2"
+    rebuild 1
+    sha256 arm64_tahoe:   "a88649b28d0714b1382626a2a3e40e924e8b03e15e4945549e69b3360c1b49e8"
+    sha256 arm64_sequoia: "0701d985cd2ed98f8d4fe8698b5ade2b540bdcbdd12029f4db207cc55a42033a"
+    sha256 arm64_sonoma:  "9e18d48e762da41cba33a8745c621858b412ee3bc0132afb9cd01f7f2db73f1d"
+    sha256 sonoma:        "53049e21076e28824774a9a8c502bb8ec3074b25d2d2655571c3006cc3cf3f49"
+    sha256 arm64_linux:   "d26bdc088dc466decc652711ef552eb4c1b605b3e2d6b2cce2c7705b2017d223"
+    sha256 x86_64_linux:  "6d60e553db14780a8261be60a013daa1250e31d28cbcdb30ac0ffe8ec72608cf"
   end
 
   depends_on "openssl@3"
 
   uses_from_macos "libffi"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # these two files are amended when (un)installing packages
   skip_clean "lib/racket/launchers.rktd", "lib/racket/mans.rktd"

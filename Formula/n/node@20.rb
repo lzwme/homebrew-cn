@@ -11,12 +11,13 @@ class NodeAT20 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "76adee89028931714d22598994e9ccc062f1f3eef5d8720d3ed7d7b97b6c43dd"
-    sha256 arm64_sequoia: "3c0886b13699f4ea73f06981d45f4f5d29a5bc4aa6ad388d6fc285f9912b4164"
-    sha256 arm64_sonoma:  "bcc7551fac7000b3410b33a81ea412ce29596391575d0d414e7a5e005b3dbde0"
-    sha256 sonoma:        "71e72070c7ff1052e35fad85f4f4d257c4bb4b908415f81457de350ef0fb2d0b"
-    sha256 arm64_linux:   "b60b80c88a6ccffb6e0746a4da163053a55fda9d0e60775243206398d32429ad"
-    sha256 x86_64_linux:  "1206d022dc11d1434dae27c842697704be49aaa8189588c06363cdf67f497a88"
+    rebuild 1
+    sha256 arm64_tahoe:   "1c1968ecfbb81c7e3f2db0f65b3a5a2d4389518020673ac43f86ec1a5ecaa58b"
+    sha256 arm64_sequoia: "68f358e29e41d4c596d15a2c64882db8fecdb404fc65fa9424c72f818aa2b143"
+    sha256 arm64_sonoma:  "5af2a22c868010884a9f4fe8207b158cb119fbb4b67c4e4d83e7984720415561"
+    sha256 sonoma:        "92842eb03f9734f000544b41d7afe234fc80641f59d985bf7f24ef2ef752ba3b"
+    sha256 arm64_linux:   "6eb02bf9d7dd831f45a4bb1a3370dc51432aaea041f7756a95cc163d713c78c2"
+    sha256 x86_64_linux:  "162c98c3832985d68c43e04d7ead4ba4a954b521d3ffcc6a74f1970de37262ee"
   end
 
   keg_only :versioned_formula
@@ -35,10 +36,13 @@ class NodeAT20 < Formula
   depends_on "openssl@3"
 
   uses_from_macos "python"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1100
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :clang do
@@ -49,8 +53,6 @@ class NodeAT20 < Formula
   end
 
   def install
-    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
-
     # The new linker crashed during LTO due to high memory usage.
     ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
 

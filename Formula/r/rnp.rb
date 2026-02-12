@@ -12,18 +12,23 @@ class Rnp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8f190c867fe3cd8c3d0b84f20952bfb285a53cda7cdf6336b0c6ad31869a12b2"
-    sha256 cellar: :any,                 arm64_sequoia: "d68ff5a9c1adccacd1c5cebe16c82d480241731a7de389155dcb5ca19ee4868b"
-    sha256 cellar: :any,                 arm64_sonoma:  "e9091cef22ec6032cfe05f5e3001ee59e940f4c86da85785fe822feb1c81b86c"
-    sha256 cellar: :any,                 sonoma:        "9e01532ff416c56e67487de414d1aa63a40fff591a4b08bdc91da43edb9103fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e69e17ff598efdd28cf3880559fd999cef9ff702c655fae14c52c93c1f9020f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e48671491ac5bae9fb7971d448eb04399b8a46314ca87aa8ce2ec958dc54434c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "6a2ecfe7414873e058469fd0220f05572a35b83a62cf22d9f12cf58c26d79fc7"
+    sha256 cellar: :any,                 arm64_sequoia: "fe20273522197c6d524ef75674cfad1f8814868d5cb445c183d01be6dbfbabfa"
+    sha256 cellar: :any,                 arm64_sonoma:  "245324c4b41228123aff0f791cb317652cc658773fbcea4159ceb2c24265a6b3"
+    sha256 cellar: :any,                 sonoma:        "c74ab53d956170a5c321b3eeb984c4e100ce15c995e0f606de5bcab0b5fcd060"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82d8e226eb32638112fde260c44d95cebe551190e30bd50b69f416d43b4b2cd4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "561a320aae32d97588869ea843fdec9cac8c18eb00201293f69c5db30263bfcd"
   end
+
   depends_on "cmake" => :build
   depends_on "botan"
   depends_on "json-c"
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

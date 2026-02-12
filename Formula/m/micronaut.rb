@@ -1,8 +1,8 @@
 class Micronaut < Formula
   desc "Modern JVM-based framework for building modular microservices"
   homepage "https://micronaut.io/"
-  url "https://ghfast.top/https://github.com/micronaut-projects/micronaut-starter/archive/refs/tags/v4.10.7.tar.gz"
-  sha256 "4cfb7dca4ebbf5078832956b9627b3769f3763afa7916cc7f747102e3a81eecd"
+  url "https://ghfast.top/https://github.com/micronaut-projects/micronaut-starter/archive/refs/tags/v4.10.8.tar.gz"
+  sha256 "a58994f10b85119b681d514586a6bcda49f52722d484527f4b95473b27c2aeac"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Micronaut < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "33bfd86dad8184009d2378ba5fefbdb8b10e2f892d52a58292fbc05580fb2cff"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c97e0e8eb3dd740eab27355ae9418c2fd1abaee35bd44fa9fae9b3f7a038367b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca523d949d67534328ade52077ae2d90aa9907a73ef725d88a84b80a2ae02bfd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ab429c3f1a625f0ed89075f5e7a69204cca2bd2fad6ba9fc1d204c0ee8d90d82"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63aef0c5357a0a57fa38d4304d5ea594baf1494d506ae5516eb84ed30619fea4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80f4e84e726eeaf9664067c80d38d50b9043630c492e091329d59270053a4373"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b6e992e751be8623eb4523d05e144d7a353889719663d968cf1af58a67fe25a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75b7bef2b294df46d492f42b5a31b8f9c8c9f6f1b59645b0b3a75d414e637a27"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48f4e62f43b8eae5b52dca29bf5f7d70105eaffadc1b7d521a718f95ce1ecfbf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6fee0af8bc49abaea2258fe3b56cb31c00feb2d0283d42333ebbe9ac26f7aba0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d208f4515fa6234b1138c42b3d75924d37f6b56bccdcfc78760e617764080e59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18446d65be7365ee5bdc3ef325c3dc7dc4d8969ac60e5c18ac230b006b175a7a"
   end
 
   # Issue ref: https://github.com/micronaut-projects/micronaut-starter/issues/2848

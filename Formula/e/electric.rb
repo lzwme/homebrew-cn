@@ -1,8 +1,8 @@
 class Electric < Formula
   desc "Real-time sync for Postgres"
   homepage "https://electric-sql.com"
-  url "https://ghfast.top/https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.4.1.tar.gz"
-  sha256 "252939615d940759c5067828c8b4693920bb27bef45f5a9a1403e7faf8dcf32e"
+  url "https://ghfast.top/https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.4.3.tar.gz"
+  sha256 "322dd2e71838cdaec22264aab886082a168c1ecde487294e68c9f1af6cea81b9"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Electric < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "45b9bb6865def1f0783c1760a722f43f44c17555423d918577eddd82c69ce3b9"
-    sha256 cellar: :any,                 arm64_sequoia: "bef79f8f909b3dd0da96276d122432a06361a9410863008e50582faef7077f6c"
-    sha256 cellar: :any,                 arm64_sonoma:  "506fd6feca2b02621a05ccc5d75ce56114fd457405575ba04af99980452d5ac7"
-    sha256 cellar: :any,                 sonoma:        "29a9b2db84b2599ff845ea23729f391c80018cedbbbfcf4fac6d72cb98d5ed4f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "74d8a62265187c4f4dfc1b8620354c8ab5fb997c99358e2ad7f51e7c836eccdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9256cbe1b07b3f72cc11452964d6c662b15859290ccaf258105ad6bd5953c8c6"
+    sha256 cellar: :any,                 arm64_tahoe:   "ccd32adaeea5aeb58380d4bb83d8d77f0d929ca58f884ed960e7759da8583553"
+    sha256 cellar: :any,                 arm64_sequoia: "b0d2341f2d72f32244462a251a1e03998b7d741fd1d070b5659a957a938f38aa"
+    sha256 cellar: :any,                 arm64_sonoma:  "795a7a93fec01c14a23fbb762d9e8cd48120fda6d14323154cc190cf47676a77"
+    sha256 cellar: :any,                 sonoma:        "33c08533de0665c1d8ccdcf5cddc991e7568ad913b9b32feddcbe742d38b131f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "13c946219893867adbcb472f3864bc33085c4b7e8fce26c41ea28650e32b1043"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a4f22647344c427c12f3de42e71d272a913ebc6ded0cbb9d86e9a62ffaada3e"
   end
 
   depends_on "elixir" => :build
@@ -25,7 +25,10 @@ class Electric < Formula
   depends_on "openssl@3"
 
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["MIX_ENV"] = "prod"

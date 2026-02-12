@@ -8,12 +8,13 @@ class Weechat < Formula
   head "https://github.com/weechat/weechat.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "a498e1e85892dbd99c4870bd339bc5f3cce3a21e72c5e25c6fe4cc5d9b28879c"
-    sha256 arm64_sequoia: "4ddaf60ed9ecd5a76685d337f92bca8e77aa498c8e8556e6d5721a1d252ddf87"
-    sha256 arm64_sonoma:  "4d76b7238e5cbb8b712ccac45a7ceef05a2cf1325e8fcc2a4df12a79c7958233"
-    sha256 sonoma:        "8127910e73551961779462f914c9abbb098af83e72ab4799addf398f8455bce1"
-    sha256 arm64_linux:   "7273a5092bf8bc89bdc9c3841a1588860ea49033d6a91d7ec2dd72c942d46e7e"
-    sha256 x86_64_linux:  "48e8d6f0d7d4780a1a397d8e5c3bbdbe993d1388d446419079208d0e8b5c7dfa"
+    rebuild 1
+    sha256 arm64_tahoe:   "d0683ca04c89caa303bef48503a7c7acec3898c936c0cf9de48dc2936f9ef909"
+    sha256 arm64_sequoia: "35ab8fb4e534f93b229b9eb61cc59a488eef9a2eea3c5488a5e0b7acb89cf689"
+    sha256 arm64_sonoma:  "4ce5a3f966cb1efcbadfd14960ab6489b9fbe3c39c138a927bffcbcf218baf9c"
+    sha256 sonoma:        "0aa208c3851943315bfea423b60e738818394516bdee306bebdff62240e3ec34"
+    sha256 arm64_linux:   "3a2919734a10eaaecdb54f5738b2e7df7eef2344df13f655727b530d8ce518cd"
+    sha256 x86_64_linux:  "541e292101eb800038ce65afcd0b319ce4c122f527f25268e43f2d949161b28b"
   end
 
   depends_on "asciidoctor" => :build
@@ -33,11 +34,14 @@ class Weechat < Formula
   depends_on "zstd"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
     depends_on "libgpg-error"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install

@@ -7,12 +7,13 @@ class Openfpgaloader < Formula
   head "https://github.com/trabucayre/openFPGALoader.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "67fc3d927fc175b1d6458606e8b3f65051ed206b10502581e8d3b39c2b7654c8"
-    sha256 arm64_sequoia: "c5621af8a41a347e8e4fbb87b37c55832334ea681ddc5ec3cf4bfb2b93d1011a"
-    sha256 arm64_sonoma:  "9694df81e287cbef5007d2cff991222533050950de65ff9c8946331052c1e643"
-    sha256 sonoma:        "172c7a00da927e1e406c8a5d5a156ed4352c85ec6e4bcb9ecabb34a8631cbfba"
-    sha256 arm64_linux:   "68fd7db44386badf4b396d1fa07553ed27c49a66a1c391a4ca110b4dc4b80f06"
-    sha256 x86_64_linux:  "3b928bbbbda0981095ee18bcf3dad481e33e436706054805fd362bfac20dcecb"
+    rebuild 1
+    sha256 arm64_tahoe:   "b9207b7099937acb9e926b69b49f33281bf8d08e3558aa35d4846f681f0e7ec1"
+    sha256 arm64_sequoia: "b217a3ee5dc8d327297b48799b4d3b9faa862c0e87c70e1df5e840769a509149"
+    sha256 arm64_sonoma:  "0efaa2b14608d264fb1fc6bffef6d55f95c55ecf6d07a2b6abbd447acc94280d"
+    sha256 sonoma:        "f46d32ce54fe5935ae691dc5af7b888583ed4fa8a71135b9295248d1e7d296c3"
+    sha256 arm64_linux:   "210c9f278ed7788d5e5f9663b8534a16efb2c15b45073b72c15549cda1c0c3ac"
+    sha256 x86_64_linux:  "0bbf089c13b16a3aa1b26ed8ea95cc56c8bf35d2e2cb127b05aabfc2a795e48a"
   end
 
   depends_on "cmake" => :build
@@ -20,10 +21,9 @@ class Openfpgaloader < Formula
   depends_on "libftdi"
   depends_on "libusb"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "systemd"
+    depends_on "zlib-ng-compat"
   end
 
   def install

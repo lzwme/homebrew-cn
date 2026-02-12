@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/42/9d/caed1242bc6e0eebbf37fd070263d488ded453de3488d9d8ef17ce59e1ca/esphome-2026.1.4.tar.gz"
-  sha256 "a3a307d7d663ea733c65f2b2e79be9b7ef69a77344574ebe70852d108e66275d"
+  url "https://files.pythonhosted.org/packages/5a/f5/1fbddf378d3c702c3d68eea082d049937e1e9190b355e96c73872dcbbf38/esphome-2026.1.5.tar.gz"
+  sha256 "2fdea91b7bcdf7f8064ec7d8933b387bbfd0fb9af8f8b82a1478ee97b6c866fe"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -12,12 +12,12 @@ class Esphome < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5f0e3e52fb488198fc74e8c36a493cb5a8f1c0c5f1e10cab8552be1e45033ac2"
-    sha256 cellar: :any,                 arm64_sequoia: "58eb57a9f3e3bc68b166be66c1ec544becacf02d693875bb63378f663e128069"
-    sha256 cellar: :any,                 arm64_sonoma:  "43f4b48250c251a4923c9b79cbe705749544afc31dac9d7d54556a34ab2be64f"
-    sha256 cellar: :any,                 sonoma:        "413669a0f4cbcaf99100e955de41289bfc49776716bfac6f911facca80b2d7f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6a605d91003ce20a5416721aeecd2e8482ab64505a2e9541de4e9b6957ed1ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "085db4b6ca2186873b4cc7e78381e04758e01f2ee2cd1d8303db917a9d298b80"
+    sha256 cellar: :any,                 arm64_tahoe:   "a35084ef44f70fd695ad80ae8ad46d42b3086266995978a010e88daf4a48bf22"
+    sha256 cellar: :any,                 arm64_sequoia: "1403554ebae2a66797cd100dbf6b043cf105620c902dc6f908c99f19ad64ddcb"
+    sha256 cellar: :any,                 arm64_sonoma:  "e08ab06b67d5eba92387167279d94d0571bc32370ae651d09939d44fec9699b1"
+    sha256 cellar: :any,                 sonoma:        "16b7f24d5210958483a1f7a9f5f6476e6f4e988ca647e7e61df84d8a3e8a691e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "15293c51b497fc0f8b709da276411201067303187147263c4399bfde55fa1330"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc17acaa8ed6864d1fa56198ac34c5c669dc95bb1513dfa1c270b1d42dab57b1"
   end
 
   depends_on "rust" => :build
@@ -29,6 +29,11 @@ class Esphome < Formula
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
+  end
+
+  fails_with :clang do
+    build 1699
+    cause "pyobjc-core uses `-fdisable-block-signature-string`"
   end
 
   pypi_packages exclude_packages: %w[certifi cryptography pillow],
@@ -353,8 +358,6 @@ class Esphome < Formula
     if OS.mac?
       # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
       ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"
-      # pyobjc-core uses "-fdisable-block-signature-string" introduced in clang 17
-      ENV.llvm_clang if DevelopmentTools.clang_build_version <= 1699
     end
 
     without = if OS.mac?

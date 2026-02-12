@@ -13,12 +13,13 @@ class Mupdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1c1124b76415bb064fe6ea553cc1493f2df2bfefedf167a4db914839beb02797"
-    sha256 cellar: :any,                 arm64_sequoia: "3c64e33b20eabeedf801f2022bfc010d80c9fadf9e1fa1a3fe267efb37c24887"
-    sha256 cellar: :any,                 arm64_sonoma:  "75fd5e38bb5cf076c74f4326dd6f5ac1e736134d5b19cf6a12e291c9667180e3"
-    sha256 cellar: :any,                 sonoma:        "684853b24b36049da67140007648417df0410f73b65e8aaa639b0894a802742c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "20dd371f2524c7a8b5eaabbf17e7aa231beb2e052fc087ddfd06a5926ab825cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df5bb0d857e1fcf38a234aa5c6e904d388783ca5829aa4f7324cf4ff8810d753"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c790fc7a3649d8a18302cbcc4688c07e25f05ffff787d310fe9973c6b67698e9"
+    sha256 cellar: :any,                 arm64_sequoia: "628d677c354c8c45dcbac6af62e130c6a05ca4ffabd58c35e62aae4147ad0198"
+    sha256 cellar: :any,                 arm64_sonoma:  "627a3dd36ba7de00e870ab491a982bfa4fc7e477b2b5b5e4c1983789755cbe2c"
+    sha256 cellar: :any,                 sonoma:        "227c574b62cc689618929e44c297a09b9872944d772a1ebf3abcc9b9378704b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6791b7ad58c81f5395b3211b01e3f672762d9a6a476b24eb179959ec1b712350"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a791c2ed2290f6a126ece74aade379114b90b45dceb86088d3c8d6da3844368"
   end
 
   depends_on "llvm" => :build
@@ -36,8 +37,6 @@ class Mupdf < Formula
   depends_on "python@3.14"
   depends_on "tesseract"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "libarchive"
   end
@@ -47,6 +46,7 @@ class Mupdf < Formula
     depends_on "libx11"
     depends_on "libxext"
     depends_on "mesa"
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "mupdf-tools", because: "both install the same binaries"

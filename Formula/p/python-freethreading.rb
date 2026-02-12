@@ -10,14 +10,15 @@ class PythonFreethreading < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "28af3697111c749fe6b07ca8051ab1b80d67ab0ebd36ffa934efe6e6f360a123"
-    sha256 arm64_sequoia: "35cd5902956f9dd99fe415cf4e65bd6af01eac3edf4d95ddb1fe60a174c1903c"
-    sha256 arm64_sonoma:  "b3ad9124b7fa6314c0779be9324e6db24e58a7f22fc85e8ae421653f2652d230"
-    sha256 tahoe:         "d0ef2f15c4263fa6428f1ab167175009f8d302070aa1f52726af53a8bfff8136"
-    sha256 sequoia:       "125a59fd841508c9439476ed408cc4073864f4036a95f1d5a5de3bcfdef90f2f"
-    sha256 sonoma:        "439a74010570c413b208b34be0dd78023d88e4db47cb5ff66758e73d670371e3"
-    sha256 arm64_linux:   "3b72d787e5ebb90191da04f6f8aa1d76308ec9b7918ceaba4fdc0217dc2e709d"
-    sha256 x86_64_linux:  "56fe0686b19de0a7c2e4f96a5becfd45e9c49fbd1c5f3989dd2cd65b9f191c17"
+    rebuild 1
+    sha256 arm64_tahoe:   "055db8b1347ab3f3b190b9fdbdf7e3c62cdf2f39756affd88989d2cad2f2b5d2"
+    sha256 arm64_sequoia: "06e124574b48f7efedd1afefe23f14033b896e4e53c6939010726f2d02a8594b"
+    sha256 arm64_sonoma:  "4ff7f46f9e7ba3fea15c5c30a68d9fe5d05956e3175c586b8941fca5b3b8f835"
+    sha256 tahoe:         "0d69a978bfae96e6ab5a6d7e089ed90feadb3d35383a06987eda4aea39d74dcf"
+    sha256 sequoia:       "616ef8e629182c1507e943548caf7ffbca112b377102b7567bdf81f63238a235"
+    sha256 sonoma:        "b2fd8d27207a880e1297d90a657966f6f70ef05d6a49dcec98cad8c36210f8e1"
+    sha256 arm64_linux:   "21628837f08926d9f08dbb32729aff60f386a4246accc3a26372251b24ea0640"
+    sha256 x86_64_linux:  "848c4bef3cb80b4195a2499a5fe03d38130fb019180be113818020ee9a58b463"
   end
 
   depends_on "pkgconf" => :build
@@ -36,12 +37,12 @@ class PythonFreethreading < Formula
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
   uses_from_macos "unzip"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "berkeley-db@5"
     depends_on "libnsl"
     depends_on "libtirpc"
+    depends_on "zlib-ng-compat"
   end
 
   pypi_packages package_name:   "",

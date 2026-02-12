@@ -19,14 +19,13 @@ class MingwW64 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "281983722f43ce4615f5020e7a9cae212510c52592494b8313893a76b9a7c893"
-    sha256 arm64_sequoia: "e72b20b77ff753c2ad4cd9e4ad8758e6fd4f6700a7a4b910dec977ae425a4e61"
-    sha256 arm64_sonoma:  "e91600d5cbf5bdb91c749795693dd8fd88047b5743ee6a775b72856c528bb28c"
-    sha256 arm64_ventura: "629eb2dc16cc8b3960731ef5c13d6c3cd67e144aa2a8a3435edc61b63c618352"
-    sha256 sonoma:        "05dd9aa5f906ea5aaa774e26a068c2bbc484595bfe99d215a152961775671536"
-    sha256 ventura:       "d57819a990871dffc12ccdb7dcce500e544e215f16a8140c7154f080a0014c6d"
-    sha256 arm64_linux:   "1ee24ea707db8ef22332b133a71330d6d3ea8904affc70a6c84a1102c04d9153"
-    sha256 x86_64_linux:  "b5bce46c1253b6315d08a0556e12a2213c1ef6b70ef9f9770f5010869105f0ad"
+    rebuild 1
+    sha256 arm64_tahoe:   "687705e89853f818c4750c2e254eba8ff42a6e4383776e29ad4202f54f9be2c2"
+    sha256 arm64_sequoia: "20e35713fd05a9dac2fcda9e0c56468c539526825b19dee23f1f5625992cb28c"
+    sha256 arm64_sonoma:  "a891e793e7b40feed8fcf1aac63e2386d754efcbf2df927b6bd526a2d6ddaf13"
+    sha256 sonoma:        "07abc35bcfcf64297df6a8bb50a587148921b2618f94aec95ba9da370fa17222"
+    sha256 arm64_linux:   "d51e6d1a3acc70fe646a710fe8d9a0a4d672ddf0f23087c0ca5b25e5a176480b"
+    sha256 x86_64_linux:  "b483173565e227feb70a894630749d8538de3067672ac00786c2612d0c8824cd"
   end
 
   # binutils searches for zstd using pkg-config
@@ -40,7 +39,9 @@ class MingwW64 < Formula
   depends_on "mpfr"
   depends_on "zstd"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   resource "binutils" do
     url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.45.tar.bz2"

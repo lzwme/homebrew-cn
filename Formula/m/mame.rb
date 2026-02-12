@@ -21,12 +21,13 @@ class Mame < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "79559ef06c9963553af0c982b3cf8ad89127cd63a066168c3c3145d78913c02c"
-    sha256 cellar: :any,                 arm64_sequoia: "58461104c68b1a251a7b31f92db833589e3dd314476b69e79e97f4e0f14243d1"
-    sha256 cellar: :any,                 arm64_sonoma:  "ec9c5978beb38184835147df2560e3f9b76345e040c0884ca029f1f14f166a69"
-    sha256 cellar: :any,                 sonoma:        "b24b02b4e71d79fef580e196526b64cec867bf595bb29b3dad35a6b8898a7ade"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5aa7fdc95dd583037917410f724d4baac1a4da954b3321bb26a042c4d8980b14"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "925a22dd6fde787bc5f4db6e5661d9c438bac7e22237d7b16bbff866cbf0716c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "0e85b2ccdc613bec8379968bc5e3aaeee647327c8f5ab8b7c1931439f947e219"
+    sha256 cellar: :any,                 arm64_sequoia: "b71a67d9191a4b49b64b419bf9f6809ad14caee96fcd5860c58f18e31777b9d5"
+    sha256 cellar: :any,                 arm64_sonoma:  "2d8b3b9e9fa00418dc7952f0427c71526391c4efd0a6b347a95899a8437714e9"
+    sha256 cellar: :any,                 sonoma:        "b61a4e1efb2066cfb117bffd1e091c710854f6797542060318e2737e0d826668"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf9f28b19f7d3f153ff004470920ffafd1fdd2464501fb0b5e54ef9d6b20b633"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d46d9fd841b9feacfb4d864b0126ced5c00a7b894e35541bead3a210b5f27ad"
   end
 
   # `asio`` v1.30.1 is bundled and it is not compatible with the `asio` formula
@@ -47,7 +48,6 @@ class Mame < Formula
 
   uses_from_macos "python" => :build
   uses_from_macos "expat"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "fontconfig"
@@ -57,6 +57,7 @@ class Mame < Formula
     depends_on "pulseaudio"
     depends_on "qtbase"
     depends_on "sdl2_ttf"
+    depends_on "zlib-ng-compat"
   end
 
   def install
@@ -96,7 +97,7 @@ class Mame < Formula
   end
 
   test do
-    assert shell_output("#{bin}/mame -help").start_with? "MAME v#{version}"
+    assert_match "MAME v#{version}", shell_output("#{bin}/mame -help")
     system bin/"mame", "-validate"
   end
 end

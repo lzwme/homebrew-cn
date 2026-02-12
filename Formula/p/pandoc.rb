@@ -8,12 +8,13 @@ class Pandoc < Formula
   head "https://github.com/jgm/pandoc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1aed4d054b3db8b8186ad4904beb55863b5dd5a57ee8b51c20a8f6012ec2b1ed"
-    sha256 cellar: :any,                 arm64_sequoia: "353a2850aaaf438461132861ed32433c6f0173928b9a718eab71047e28e644b2"
-    sha256 cellar: :any,                 arm64_sonoma:  "fa0bdb4fd7d17e0b774935d4a043d064e26cad3b342552d93a15a1ab4f75aaf0"
-    sha256 cellar: :any,                 sonoma:        "40bd1c0e68f70923b315e683d996aa746c1a830e8e7f458e507e3e8c1164893e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "379073b7f7b7eb4ebda597cdac71899afeb5d667402e0122ba0b594875711052"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e4c567bb1280d9043526d941181a8c06edbc8cc32fec0168dd9cf3a1f70f20e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "1f542627ebcb8ad39d56fa80f4f3300c2baab0341d9e6b0324557414790a951a"
+    sha256 cellar: :any,                 arm64_sequoia: "d5f54238833f517626888a2c214dde8a94aa0f408208593e8a174fdfc2204da4"
+    sha256 cellar: :any,                 arm64_sonoma:  "f953179d3ad87a50469f3761bf33666482feda48fbf3e83dab66a99403b301d0"
+    sha256 cellar: :any,                 sonoma:        "e5e53a135af84a63c19f15eecb44249064e198e0f5f92964f55462beba538f2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f97d5b9bd4606fa3a400a3237eecca2bca017b8f15b5e1b307fbcd86f263a16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0d27d61a020c0b9cfe48e0837a82e59438404d13d7736e58ec7c4e61a8af464"
   end
 
   depends_on "cabal-install" => :build
@@ -22,7 +23,10 @@ class Pandoc < Formula
 
   uses_from_macos "unzip" => :build # for cabal install
   uses_from_macos "libffi"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155

@@ -15,12 +15,13 @@ class RattlerBuild < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "692021b110cc783a8c239621faf55960d2765e5237d8afc46c5ea14aab2f95ab"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c593857d65c54345c380563242c6b57c1fb56013ac80ac01a0a0d688a5c37308"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91d762a8f35032a8dfaee16dcd46498f2cc72019a2f441f5a854712b683a3023"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2d89efef37878dbc5c6fd864034de2bbb64d8f00d99edbe6f851280f39f6d5ae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d75640b071f39d46f852c92d68a05cb7dfdd47da4a211ebfe94ed242413c0f06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2193b4d92d735160215e91cf004f2ada85a64434a924f8690b5f2be990d3c277"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21c38aaffbde2f423975d27b13e9c1f7c3f4ce7d955f45898b44fe43bc19bcf3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "38ba1f6e7a5afad2e3b5e22e1d79d89c53fd61093514a48a032a0a412d03e9cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0182f927c6ccb7e3628674924ae57dd7944b768fbdb812df65d1a8e898d88e10"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e31a00d9b343729fcdf0c6bd6106111dfcc5c9e804ea354d0cc3a10b4c887f7b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4e0a5c85f9530186da01f6ed824926ba6469a2f29d3e96a2c95b6506343047d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cde57a3368b05eaade33121cfe9cdb505f5ef33f5de757b2188cf8e02206a61"
   end
 
   depends_on "pkgconf" => :build
@@ -29,7 +30,10 @@ class RattlerBuild < Formula
   depends_on "xz"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cargo", "install", "--features", "tui", *std_cargo_args

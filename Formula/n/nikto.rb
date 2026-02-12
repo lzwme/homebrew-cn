@@ -5,6 +5,11 @@ class Nikto < Formula
   sha256 "fb0dc4b2bc92cb31f8069f64ea4d47295bcd11067a7184da955743de7d97709d"
   license "GPL-2.0-only"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "ab8f5f0295ab3a4599a11e2cb63486c8da93c91c0088bc6f29307db3aec3df58"

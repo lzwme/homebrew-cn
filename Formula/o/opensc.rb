@@ -11,14 +11,13 @@ class Opensc < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e30686709adbd2ed9e741d46ee7732ba4bdc26835662f674ad97d4a15c14f00b"
-    sha256 arm64_sequoia: "0ae0073b4ba388df854a2c1bb2a31ad83e4ff800eb392d25779403defdff1ab2"
-    sha256 arm64_sonoma:  "4e7694a574e648659e39287e6f79dd5b78c48f284cc186a9a5877a3dfbd0972f"
-    sha256 arm64_ventura: "b6920b3fcde75811501cea04279e70647e5abd1a437783a3cfce8fb56082e6c7"
-    sha256 sonoma:        "f6bdfbbcd8b3653f27d220af9f28794857e750ce919efded28f635869abc379c"
-    sha256 ventura:       "3b59686f5df7f25f6b7b03ca4945921f4fca3831c8ae433563ee80647b545ff9"
-    sha256 arm64_linux:   "d8a00ba58da4990a87c84d051092c088db6f904571f6b4e1db962ac9f5bb4e83"
-    sha256 x86_64_linux:  "d4c613660abb6981348a4b68e8108ec48dbd081b3651c5b847a32cfd03ad073e"
+    rebuild 1
+    sha256 arm64_tahoe:   "96eafdcef6376fa91178d0a442131ac4d8859edec6aefe130ccced5f3b8ea147"
+    sha256 arm64_sequoia: "582d60eab77edf304ebac576d8513f885bd0ccef27ea7c9f5c4eeb35bb6871f4"
+    sha256 arm64_sonoma:  "e019f55b30b4816f13dbe4a38bb711bda41117796a11d20c451498e6e291690a"
+    sha256 sonoma:        "7fba702bde073f6006fc7c108d6f72dd51898c2e3e7c40dc48606e88cfec13aa"
+    sha256 arm64_linux:   "17611acadab74a5131577374a5428856b1885c903e2c174f22622ce4dcac6f80"
+    sha256 x86_64_linux:  "aa839dfd0de004bc95bbc41534ad751936c657931b343e7aad89f2a79ca14d02"
   end
 
   head do
@@ -35,11 +34,11 @@ class Opensc < Formula
 
   uses_from_macos "libxslt" => :build # for xsltproc
   uses_from_macos "pcsc-lite"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "glib"
     depends_on "readline"
+    depends_on "zlib-ng-compat"
   end
 
   def install

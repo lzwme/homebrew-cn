@@ -8,12 +8,13 @@ class Passenger < Formula
   head "https://github.com/phusion/passenger.git", branch: "stable-6.1"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7241c7e27c5f400751a898c847defc23e307a610acbb698d1b56ea1e24031739"
-    sha256 cellar: :any,                 arm64_sequoia: "f2b96141d7a248272bac4559f93c4f1d754614b3be3c03bc334b47411be7510d"
-    sha256 cellar: :any,                 arm64_sonoma:  "31c13b6f01a4bdab7ca713c63748007932f48db8c129c526a20a829d5a4206dc"
-    sha256 cellar: :any,                 sonoma:        "76cd02f2e0f98846e4ceddff36d9fad2d0b8fb180dcc8451a6f14da04ab42c1a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "20eea96aaf47ba1d173b85657251b4445c5f0af5c97927c6ff5d3c11a1504af6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "394ae7ca569f1c4887e694f2d31bcc9cf8a785b1ea2eaac1f43c2f1bc84719d8"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "58dc7b8dd9c173950fa800ce6af5b978da3e58269bddbfc3fcf3edfec32dd38d"
+    sha256 cellar: :any,                 arm64_sequoia: "4711d122770858d4c088af62a42d234e310b35bd5eb7a64bba6d7df4dbd914f3"
+    sha256 cellar: :any,                 arm64_sonoma:  "355800e9108c93b19c461d4c17b02b564aa0d4161e88363f6f5f18548578dfb4"
+    sha256 cellar: :any,                 sonoma:        "985fd4ae616df5259ebbf1579be212fec4a9d7823910b4e08c65934cb6add523"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0eb0328a7840f66b38d334cc8289f9fda73392cce06ea9602902f8ddecf9ea6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "905279338e7a8434c012186e6c237ac3123e2e3273131127bda8852979d88a94"
   end
 
   depends_on "httpd" => :build # to build the apache2 module
@@ -27,7 +28,10 @@ class Passenger < Formula
   uses_from_macos "curl"
   uses_from_macos "libxcrypt"
   uses_from_macos "ruby"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     if OS.mac? && MacOS::CLT.installed?

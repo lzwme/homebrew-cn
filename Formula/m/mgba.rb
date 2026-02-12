@@ -16,15 +16,13 @@ class Mgba < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "06db0999e64a0a60335fcc7104da11ddbc37efc467f983794fcbe21a6f4a96e1"
-    sha256 arm64_sequoia: "0b47b22819b56f4f974b3bc13229329cbef0fc1df0474a2d2ffba3ced580b2e5"
-    sha256 arm64_sonoma:  "038e56d90cd6ded9ac8150847bc86c43dc57c2441496916c2a0f3b232608927c"
-    sha256 arm64_ventura: "0e89003774f3a0164c890f1732242969cc013b269b037bd01d8b97a3ae4bf4a7"
-    sha256 sonoma:        "d56566a7d206c7850126abbcb2c85ea659f995c30efce5886344e27aeca427e7"
-    sha256 ventura:       "d90396f1c7b48efb28edfd391a82fc0a6bb83a9dd3046398f8b5a16b66a4eea3"
-    sha256 arm64_linux:   "4010cdf78831d4f4c5a0be25eb02f7acfa31b6e5d7d74dde4bd00247e1d9cb5b"
-    sha256 x86_64_linux:  "4ef9822d552b0d2ac6d038f63539af007285ed9132e0098594ebb49ef10278c1"
+    rebuild 2
+    sha256 arm64_tahoe:   "3de0f1241238f443a68c044e6261498b831e428c1e8b34e693e36d3eafdcf156"
+    sha256 arm64_sequoia: "2562e2403616018e53173da2f532c6df31009ed4fac636b07b7c8e7ed291f51a"
+    sha256 arm64_sonoma:  "7bc0c369ae51b10d7842496e5460857d1e52b0b03a0f9d9b70ef81338ab8f893"
+    sha256 sonoma:        "87d1bc5459ba892d3a5bc079e330ee134a6f99889a0657966e94f76bfe90c1ca"
+    sha256 arm64_linux:   "41d64491dfdec24fa9a2a943f83c4fa2b6fd8d8c121c7000cba09f61f9081b09"
+    sha256 x86_64_linux:  "7f9ab3c875cdb0bd9f8cf13c006ee87677f411015e4b452a081dab51f7eaa3e5"
   end
 
   head do
@@ -48,7 +46,6 @@ class Mgba < Formula
   depends_on "sqlite"
 
   uses_from_macos "libedit"
-  uses_from_macos "zlib"
 
   on_macos do
     # https://github.com/mgba-emu/mgba/issues/3129
@@ -58,6 +55,7 @@ class Mgba < Formula
   on_linux do
     depends_on "elfutils"
     depends_on "mesa"
+    depends_on "zlib-ng-compat"
   end
 
   def install

@@ -3,17 +3,17 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/4e/8e/6a8e33e402825e13c2c5824ec1c0077ff39f7016552728ef04395950ae76/flexget-3.18.44.tar.gz"
-  sha256 "1d6e595b1644f6c7aca164b11f0006fb9be1898f9b98cf8fd629d3aea848fce0"
+  url "https://files.pythonhosted.org/packages/90/bb/8ff16c383e808794f47df0481982d8258ef09f77ca9a0719160358c263ca/flexget-3.18.45.tar.gz"
+  sha256 "2bdaa8ef3c2e380113e0bf693fcea3a01a81481c401283f89d3c07626b97bf16"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b306aed220619b130f043c190b11d87f92f6656bd3e00f2491f5700a37c50a71"
-    sha256 cellar: :any,                 arm64_sequoia: "799ab5e5840185f4373158cfbfab606a04e8928bbc6a02712919884e5b7172c1"
-    sha256 cellar: :any,                 arm64_sonoma:  "310465a4adb33dc9a37ab6c686a19af35b89e29c137f0a93ea7d1cb3106e2e69"
-    sha256 cellar: :any,                 sonoma:        "b6283f671847041bfbd303ebd4b38839500a64c6357c2bff615dd71134394bf5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4f48dfb45543dd076f44ee94ba0bdd3ffe2f27f11f10555438e1f73e33c3393"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e20694e448586395772679e37cc795fc755be124abec3328c1040cc0679f6c01"
+    sha256 cellar: :any,                 arm64_tahoe:   "19fc78c8b68277d8ccb607038422d61b8585c5861e1cde8435967ac0b343acfe"
+    sha256 cellar: :any,                 arm64_sequoia: "0c8c40a7bb53264d429a3f6f41be3b502d3ab3e7a3c1a8df03d143fee39c3cc2"
+    sha256 cellar: :any,                 arm64_sonoma:  "be849907a6254b0a67b775faed0a9a6c711c72708f07295e1dec466a84baeb4d"
+    sha256 cellar: :any,                 sonoma:        "eb08d213e0814bce493affe137710250eea1207ea822931be79fb83935dabef3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a05bf29785516782f7ea21309cd72a907db2c89a3c19bc2a49e0409d388d7959"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6323bc85feeb5926d1e10e8cdb29769267e9b84db964ccf9890e86a0a705e41"
   end
 
   depends_on "rust" => :build
@@ -30,6 +30,11 @@ class Flexget < Formula
     sha256 "25488f8663dd1528ae1f54f94ac1ea51ae25b4d531539b8bc707fed184d16845"
   end
 
+  resource "annotated-doc" do
+    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
+    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
+  end
+
   resource "apscheduler" do
     url "https://files.pythonhosted.org/packages/07/12/3e4389e5920b4c1763390c6d371162f3784f86f85cd6d6c1bfe68eef14e2/apscheduler-3.11.2.tar.gz"
     sha256 "2a9966b052ec805f020c8c4c3ae6e6a06e24b1bf19f2e11d91d8cca0473eef41"
@@ -38,11 +43,6 @@ class Flexget < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
     sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
-  end
-
-  resource "autocommand" do
-    url "https://files.pythonhosted.org/packages/5b/18/774bddb96bc0dc0a2b8ac2d2a0e686639744378883da0fc3b96a54192d7a/autocommand-2.2.2.tar.gz"
-    sha256 "878de9423c5596491167225c2a455043c3130fb5b7286ac83443d45e74955f34"
   end
 
   resource "babelfish" do
@@ -309,6 +309,11 @@ class Flexget < Formula
     sha256 "7868fb1c8bfa764c1ac563d3cf369c381d1325d36124933a726f29fcdaa812e9"
   end
 
+  resource "shellingham" do
+    url "https://files.pythonhosted.org/packages/58/15/8b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58e/shellingham-1.5.4.tar.gz"
+    sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
+  end
+
   resource "six" do
     url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
@@ -332,6 +337,16 @@ class Flexget < Formula
   resource "transmission-rpc" do
     url "https://files.pythonhosted.org/packages/68/b8/dc4debf525c3bb8a676f4fd0ab8534845e3b067c78a81ad05ac39014d849/transmission_rpc-7.0.11.tar.gz"
     sha256 "5872322e60b42e368bc9c4724773aea4593113cb19bd2da589f0ffcdabe57963"
+  end
+
+  resource "typer" do
+    url "https://files.pythonhosted.org/packages/7e/e6/44e073787aa57cd71c151f44855232feb0f748428fd5242d7366e3c4ae8b/typer-0.23.0.tar.gz"
+    sha256 "d8378833e47ada5d3d093fa20c4c63427cc4e27127f6b349a6c359463087d8cc"
+  end
+
+  resource "typer-slim" do
+    url "https://files.pythonhosted.org/packages/1f/8a/881cfd399a119db89619dc1b93d36e2fb6720ddb112bceff41203f1abd72/typer_slim-0.23.0.tar.gz"
+    sha256 "be8b60243df27cfee444c6db1b10a85f4f3e54d940574f31a996f78aa35a8254"
   end
 
   resource "typing-extensions" do

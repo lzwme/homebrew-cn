@@ -13,14 +13,13 @@ class Rsync < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c4718ba8eae84dd515309bd6d802dd14e9940c3ec92fe582ee1ff44dc1ace223"
-    sha256 cellar: :any,                 arm64_sequoia: "fecb8e00e23e675273e3e5fa9c9f545caab740dba09fb4af59169e18b0b1cc67"
-    sha256 cellar: :any,                 arm64_sonoma:  "7eba5b3c101d16dfbebc11bbddbc646a1afe2c1aacb24611542cd8e07d99a416"
-    sha256 cellar: :any,                 arm64_ventura: "3afce8ca8f96b8bb1e78e01975e0c9e5f47326f62d1d868555de1fbc92fe1744"
-    sha256 cellar: :any,                 sonoma:        "f165d31173c7f7c1905fa9b8df834c8d11bb52b4fe004f39205b162ccbd75b50"
-    sha256 cellar: :any,                 ventura:       "fb11a1420c2f4e77dfffa8b9459ddc240a92d6e9aeee9e3738c4a2cfe54ca50f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "35f275c63b686ecad743f43adcd6dcd31480cb741dfa53a52dedf63eb1553536"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f3d0ea8a719d88f7c99670a295d7007c445ed3084c994a921773553a356f645"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e2721ff74a3d354cccd1c98c3b97ca1dbb41aa4a48945caf72e0a6950183d698"
+    sha256 cellar: :any,                 arm64_sequoia: "044b28628b6fa75ea583521e112eb3d2a6ed1c5fb0be05b72495d209300a73ae"
+    sha256 cellar: :any,                 arm64_sonoma:  "58aeb782a8f6efe94dd9b7c6f64e87f4b340d7ea448bd325b115b52dd2fd5c98"
+    sha256 cellar: :any,                 sonoma:        "e36f0a191187ceaef4c193bb59941fb512c42784288f967a9a00d456022a7c8f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f0e09610aa95a51f1b39225041dae8fef6431278285f44cf51b38178a446312"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ebcddcce2bc4e37fb1b5b2aaf956bdba9122b54d56c4b3e74005853a996d311"
   end
 
   depends_on "autoconf" => :build
@@ -31,7 +30,9 @@ class Rsync < Formula
   depends_on "xxhash"
   depends_on "zstd"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # hfs-compression.diff has been marked by upstream as broken since 3.1.3
   # and has not been reported fixed as of 3.2.7

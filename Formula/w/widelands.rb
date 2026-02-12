@@ -13,12 +13,13 @@ class Widelands < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3a62a862ea1cf6d5f34619afd4c0b80b0ef433848ded0d103af4bb24b302fbcb"
-    sha256 arm64_sequoia: "0dc37d35152b9d92f8b2a1989e5d83a8d7c15456f070390e720b25396a6cca57"
-    sha256 arm64_sonoma:  "a671a12752fb6378b4afcf4609f8b80301f24c6bb0a32c6b69c8e836e4f935c7"
-    sha256 sonoma:        "e75054b0b228da298b0f20e2c513caa9cbd25504e186c57f637d2c21544727cf"
-    sha256 arm64_linux:   "e1e5ad56b87f7e520ab0ecb4eabc565cbe772e4ea1042eb927a26e7fbea3484b"
-    sha256 x86_64_linux:  "b9c9ed74ec42f56a34fe2fd7a75f28e7877c9ca4d27c17f9d69d856a2391aec2"
+    rebuild 1
+    sha256 arm64_tahoe:   "4f2cbd089a6fe70dcbdbbb48ed3c36c0e6588d50b04ba7792865dbda6e539dc3"
+    sha256 arm64_sequoia: "e896feb4c4cc20ea17f410588b4335652453941ac7d9548de4a900a07e3fb6f4"
+    sha256 arm64_sonoma:  "dbfc14654014187e99ea8680689b27c74ccf067f9ad7b65011dc246a0f5d729b"
+    sha256 sonoma:        "8c19bd1cf681931a78a0b8683ecd5002156ef343731df648de45ca7dbd74abe9"
+    sha256 arm64_linux:   "5a1efa728ff06f26ead513c821c1a092c237ee1564ae5ce9491a3fb6d1c36642"
+    sha256 x86_64_linux:  "ffa41e2bf59b3e7f5548bcd40b43b1a703d1ae58340027bed5f80e4994e7c6de"
   end
 
   depends_on "asio" => :build
@@ -38,7 +39,6 @@ class Widelands < Formula
   depends_on "sdl2_ttf"
 
   uses_from_macos "python" => :build
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
@@ -46,6 +46,7 @@ class Widelands < Formula
 
   on_linux do
     depends_on "mesa"
+    depends_on "zlib-ng-compat"
   end
 
   def install

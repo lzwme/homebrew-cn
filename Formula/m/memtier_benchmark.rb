@@ -9,12 +9,13 @@ class MemtierBenchmark < Formula
   ]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3e15c6fea91dc997dc546c8a29ae42a0be0934d2ad90c05a5702ac35144df9d6"
-    sha256 cellar: :any,                 arm64_sequoia: "c455afad00fa3c262967a688113cae7fb99a3a57dd8598f1d4e56343590b5416"
-    sha256 cellar: :any,                 arm64_sonoma:  "a47cce15057b9c87c01b2d4937822a91e3855e94594b1c25e36f1ca5837b2b6b"
-    sha256 cellar: :any,                 sonoma:        "b66a8ea448dda20fa590224b20d55ba357601c38ead37726a86fc1d53a7045b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8917d60ffd266846cfb82fbc1b9ded44d8c12b9f8266237aab88109f39e0df0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c877599a2e60a755c2751518988ee1906d30a27bfa4d21f9ac91075311c49d23"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "4d36a3cb9900ea9b397699039b18980fc45d608aa566f0c9dac77a5d5df1eed9"
+    sha256 cellar: :any,                 arm64_sequoia: "15d9ee5844ebbce91eb04ddff1f47d289e56a47776d6e672159a930e5cbef8ca"
+    sha256 cellar: :any,                 arm64_sonoma:  "a626d8423044c81a10b7bb1e41a26f0773199f08208d70016e47210f001b30ac"
+    sha256 cellar: :any,                 sonoma:        "cd45aa2f31638d23036bcb45004c0e416aaf413280ac3334286a8c4ea8ed8f2c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "00785ad2b1807dc203e76dd605e188fc5e7412adf371372ffd44fdf7d357a83f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a6effe93ef02c8990f0e6ab3a22819bf15e7f6fde2ef804b671ed121d19eb8a"
   end
 
   depends_on "autoconf" => :build
@@ -24,7 +25,9 @@ class MemtierBenchmark < Formula
   depends_on "libevent"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"

@@ -8,12 +8,13 @@ class Recc < Formula
   head "https://gitlab.com/BuildGrid/buildbox/buildbox.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "488ac6c1e7f0b46676c168562de8c3170fe17b6a5e912768197e14b321bba913"
-    sha256 arm64_sequoia: "6e0384e36fd3da037bf9f5af7b1ccd656efa7d1de725ed1b7ba035c9096b2f8e"
-    sha256 arm64_sonoma:  "7bd9148238cd86aefcdf4d723417283de40d721350530ec46dc444f15659a5b1"
-    sha256 sonoma:        "77c36dc13bc94e5db4835bb0f0c9645a11929f6747bf8daae27a8d3a753dc833"
-    sha256 arm64_linux:   "135bfa40cdf4b847ab9acfe384ecd4dab408d3696cf264f8215c373a721ef544"
-    sha256 x86_64_linux:  "f618c9bcb217984d3426a79ca86e76a676a3772e7deba945dde8ffcae0b1019d"
+    rebuild 1
+    sha256 arm64_tahoe:   "1d01e04067e1bb57d2663752fd5f4631195cf67128ea2b4bc6446c12d9eb479b"
+    sha256 arm64_sequoia: "030de543fdef485732eb3142918f96aa584381146c4aebcf239f8a479240402c"
+    sha256 arm64_sonoma:  "a70d07b4df755ac80e2e39b33400e9d40fdc57cbb7dee68bed0ba35614268a66"
+    sha256 sonoma:        "50461e02d83510040d675f9fe8cb0dde7b7a47f981e780bdd12e7b55c89b7431"
+    sha256 arm64_linux:   "3dc59930e30eaaee757ed1836a9ad42cf700ecd7ce94b8b8a9a8559aed1280f4"
+    sha256 x86_64_linux:  "079aad60eede48dac73b949773a0af8d5870fe7ab075aa2af054614f42e75a62"
   end
 
   depends_on "cmake" => :build
@@ -31,7 +32,6 @@ class Recc < Formula
   depends_on "re2"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gflags"
@@ -40,6 +40,7 @@ class Recc < Formula
   on_linux do
     depends_on "pkgconf" => :build
     depends_on "util-linux"
+    depends_on "zlib-ng-compat"
   end
 
   def install

@@ -9,17 +9,22 @@ class Pyinstaller < Formula
   head "https://github.com/pyinstaller/pyinstaller.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b375316c33a81ac23fda3afe6944da1bad689ef84915d46632ccdbeb6e35463"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7200e300618bd30c1f992758ebaf1cead2c372bf1657e1c23fe8cd33fe708b9c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab1c5d2f8ac54c725285360c6fec5303da629fa1cc9d56c1c83dcfeae3db3f50"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b6251455bed9f966694695e4b9b28d2aca905df52f810ce142c167bf5e6fee21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "099feb873aff6d075fe4938399b16a9f7f178b70501ae738a1c3b9f925eaadc2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "026f5f7bb47ee5e347298052afd977320415b7281c3a9886c825cf8b3371bac2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "799d64346642d46b6fc2cb87a59c5e18c96b666f5e3803e558feec614f15230f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39f0dad7650a64925225bd7f81a04ffc3e4d41df56730100d280c233fac6ac6c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "38c05c20d08410513724a00a815566c8d16b51615d3fd3d687a718cdaafd1e2e"
+    sha256 cellar: :any_skip_relocation, tahoe:         "c03d80f6731ebca75994f5f99678ced88f92717e336010fd3ce05db0f6da8d26"
+    sha256 cellar: :any_skip_relocation, sequoia:       "83d25478681c25cee9971031579f30c0b26d197e7339b00155f93088ed4486e3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "078f3a5c29d7ae56e571b28cdc8e8e1b29b07b344fd1596136a6a8a662fe6dcc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "95d3d2de57dbc6ea2f126fba0eb9cd9270225e6c63d5249e4ab6e9a6d3da44dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b056044ca37441fadbc7635a8d57c7dbc92a3bc6d9ee9c5ac6e7a2bc44bb013f"
   end
 
   depends_on "python@3.14"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   pypi_packages extra_packages: "macholib"
 

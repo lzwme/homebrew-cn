@@ -12,17 +12,20 @@ class Watchexec < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a08fa2bda737115e8bf79603ee1ea7ba4d96039d0b3d8188e83861a553c6aa29"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee01cb30d9b797128795c6a4c23db7a0b72d6f607ceebf3f121b0e43af1ed77c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12ba9c2b99ae6495c51e6c2acebd1e325c0b97bcc34d05b0ecd69a830a9254ee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f476864d8dca7f8d86a7c220c6d3b9bcc84911b9df0ca6ee04696fb6075f9cef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8d40c84b0023fb07225fbd21af6332bd687bc1a0a7744db56690d4e5b6944d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf4a626762106499d834c92742695c946af7f27f2d6818cd10ab82e96e011b06"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75be379c9aa8871b4ce898fd521096d0a5a6d7fc9bced2cabe3ec50befc570db"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37e4f94d48e8aabd6b059c80a4409f1d8027802c2b4c0e420aadef139d40eb3d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5543ac335fd13f470bfd5f9358f3fb8489214c842af681f694f1e3ac173c229d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "849422c3aab90635ee80292dd4009d318e024e01af1d50474234b87553e2fc00"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aed30ad1caa5855cb2201813ce45fd9c073115e69ac9ee2a7d94dd0a9d24e612"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ce8ba4c24a30e15a5f1bc7ee98a6bbafa952324136936d841bacd60f46c11e9"
   end
 
   depends_on "rust" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/cli")

@@ -34,6 +34,11 @@ class TrezorAgent < Formula
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
   end
 
+  fails_with :clang do
+    build 1699
+    cause "pyobjc-core uses `-fdisable-block-signature-string`"
+  end
+
   pypi_packages exclude_packages: ["certifi", "cryptography", "pillow"],
                 extra_packages:   %w[
                   dbus-fast ledger-agent pyobjc-core
@@ -303,9 +308,6 @@ class TrezorAgent < Formula
 
   def install
     without = if OS.mac?
-      # needed for pyobjc-core "-fdisable-block-signature-string"
-      ENV.llvm_clang if DevelopmentTools.clang_build_version <= 1699
-
       # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
       ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"
       ["dbus-fast"]

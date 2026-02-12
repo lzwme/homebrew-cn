@@ -12,12 +12,13 @@ class Mavsdk < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "8fa7569bf3610a5ba3d927e0b7f531c2af2e56d1fff418d70a125af89082b756"
-    sha256               arm64_sequoia: "0763d2c9037f821180e0e91009660080568ae8c81171a95e570ecde97ee74612"
-    sha256               arm64_sonoma:  "b47e9684e2322cf1e99a3953051faaf989fda424b18da8a20315cccdcb931ebb"
-    sha256 cellar: :any, sonoma:        "94d2f30a72ceaf060684cac8a06fcb1630b35f92c74e3d28ac90d3bfb712fc70"
-    sha256               arm64_linux:   "eff839c0a8d3fec6047789e22f4172ea825800278b38d963f8ffb75b8eb1d185"
-    sha256               x86_64_linux:  "f6875aa6148b5168955f42b8454d7bcc0c7f249abaac31c5573cdc96e1a34893"
+    rebuild 1
+    sha256               arm64_tahoe:   "3e25100fd1760f119e0ddd83c681978a806ea0e15a13c3d023fc9d867ac29a32"
+    sha256               arm64_sequoia: "5169f5d4c74f7c3aa773a2d226ee29c8922df654cd2658cf97bf395c7f5233d5"
+    sha256               arm64_sonoma:  "85ceaf761be90594df98d77ffca939d8b08d882f9b1947c292718297dc5730a7"
+    sha256 cellar: :any, sonoma:        "e1dbfb27492e0dcea65ae71a76ad1f7eef4e27020f17f46057f1e57cf3fc2b26"
+    sha256               arm64_linux:   "0fa155bdf6d777a691ed3c0918f2e22288f398f0203ed4bb0797481da0db2e33"
+    sha256               x86_64_linux:  "83e2aeade090c02850479b09523265e56a4f96387992881cbc335aab30317025"
   end
 
   depends_on "cmake" => :build
@@ -34,10 +35,12 @@ class Mavsdk < Formula
   depends_on "tinyxml2"
   depends_on "xz"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "llvm" if DevelopmentTools.clang_build_version <= 1100
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :clang do

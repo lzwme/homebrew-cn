@@ -2,8 +2,8 @@ class DotnetAT9 < Formula
   desc ".NET Core"
   homepage "https://dotnet.microsoft.com/"
   # Source-build tag announced at https://github.com/dotnet/source-build/discussions
-  url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v9.0.112.tar.gz"
-  sha256 "6b0d297661f16ad272212f491516f9932a93eab1c68af622b94190a566eb4d6f"
+  url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v9.0.114.tar.gz"
+  sha256 "4867b44f6f34af941e05b1277841135c43142bab127612fca8d16f6932d4c478"
   license "MIT"
 
   livecheck do
@@ -12,11 +12,11 @@ class DotnetAT9 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a4746785b5f969bd7a8824efffbd32b08545650d7f12cb2cf314292dc85a0b26"
-    sha256 cellar: :any,                 arm64_sequoia: "a027d7eb2089f1c7736c83fad3b3f89dcaa885c0939713a0655ac67dc4005b8e"
-    sha256 cellar: :any,                 arm64_sonoma:  "2b82449cbb7cae0cf24ab243dfc43f74fb0d90e923bfbbf974d4df8c4c37269f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "647ba2c7ec49b03a1ca226767f135482c6cd1a8ccdaef84e088cc36be52466cf"
-    sha256                               x86_64_linux:  "65971dc8d44c8d0d739b3349e69be6bf2e24aebd07be37b8645a177815f78f88"
+    sha256 cellar: :any,                 arm64_tahoe:   "38cd6fd0ae366df47d714f4a29d8190051a7f2daa131a5a79d04aa9ed68e364c"
+    sha256 cellar: :any,                 arm64_sequoia: "61e4e4c78bc68d8b59c3a7e0e081c998005bb14ede6a43d0bb06e162f2b22f7d"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe9cf3babd77c50078a197c1dc0d5e924ffc179e56aac05128f04b6e398adf44"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7091dad7f016961066403490b6da99ec81c4669fa038fd083cbd51ac0ca68e35"
+    sha256                               x86_64_linux:  "ea93cb5f995167750d9244ad711924f00a7193cc4d9e752fbadf08272a7ed559"
   end
 
   keg_only :versioned_formula
@@ -49,13 +49,6 @@ class DotnetAT9 < Formula
       fails_with :gcc do
         cause "Illegal instruction when running crossgen2"
       end
-
-      # Backport fix for Clang 21
-      patch do
-        url "https://github.com/dotnet/runtime/commit/d4ff34564bcaf4ec5a02ecdca17ea63e5481cc42.patch?full_index=1"
-        sha256 "6b2485ca234b6dbab8ae5e2e5007c8e8d28130d14213cd5c5546cdefc27d8373"
-        directory "src/runtime"
-      end
     end
   end
 
@@ -66,19 +59,12 @@ class DotnetAT9 < Formula
   end
 
   resource "release.json" do
-    url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v9.0.112/release.json"
-    sha256 "420355ac27b4756ad45c497c42361fbff02921fa78718ee36dcf6e2632259786"
+    url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v9.0.114/release.json"
+    sha256 "543ca45787b56fa683e92f2e03217f1f0a6fe1747bf99c0a052fd54d617a5d05"
 
     livecheck do
       formula :parent
     end
-  end
-
-  # Backport fix for https://github.com/dotnet/dotnet/issues/4037
-  patch do
-    url "https://github.com/dotnet/source-build-externals/commit/509ae3f3bf4e405e55b635699970a2d8014fba59.patch?full_index=1"
-    sha256 "83174ff071f181f720a77c01df46340c4410bc56908d7c10700498649734bda7"
-    directory "src/source-build-externals"
   end
 
   def install

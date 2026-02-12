@@ -7,21 +7,22 @@ class Openjazz < Formula
   head "https://github.com/AlisterT/openjazz.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "0febc2f95efd03671c03ef8ce9687243a2dad0e66009c81005463ffa22590cc7"
-    sha256 arm64_sequoia: "a7187b8961dddc281206ef88cda1c3f4a58814d0f55b3d6f526ceb8d3c9db01e"
-    sha256 arm64_sonoma:  "1fdf7bc6cc7a1e571240965ef4ba7a404aad892fb358223cfee277d1a0532dd0"
-    sha256 arm64_ventura: "d0520016ae1625393667870d16f357d577492da14f0786b68f15e3779e723aaf"
-    sha256 sonoma:        "19b1f3221c3f5c2ebd7adfc04a31678e5b977f1ddbdbd8bc7f4a98c547fd21b2"
-    sha256 ventura:       "f97fe8756255c753917f6983306e91dd7744e30ad8192b982f661f448c726786"
-    sha256 arm64_linux:   "46f6d97acd3a0e936733f28485f168a49827155624ffe4d59e294d48562cb946"
-    sha256 x86_64_linux:  "828353e6344b50b4fba0f4603e4f7794495bed782e220186129e1c9d37800daa"
+    rebuild 1
+    sha256 arm64_tahoe:   "bc2094b29109b45a5eb6ae8a371497d725561aae932718ff4d051cd99318d3b7"
+    sha256 arm64_sequoia: "2b3e94c863d4274b62301bd23d3be3ff1178080b4e8d6e009c79b6ca21b0f71c"
+    sha256 arm64_sonoma:  "3bbaed46d4ff6ed830405c129fa0bf7c1af5849ffbdfae0bd06f21e8c90fa774"
+    sha256 sonoma:        "49f6764a2ade0727fbbcab9785c8c1c6e7e5fd975325115ed2425a1a7ffbecb2"
+    sha256 arm64_linux:   "aa661bad9d6a7343909105993e09393ea87da33cd18c2a3d8f39d658014f2403"
+    sha256 x86_64_linux:  "e11ba77658b99c4844292e2656ac702c350419cbe7fbf0c3564b2d150a1a73de"
   end
 
   depends_on "cmake" => :build
   depends_on "sdl2"
   depends_on "sdl2_net"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # From LICENSE.DOC:
   # "Epic MegaGames allows and encourages all bulletin board systems and online

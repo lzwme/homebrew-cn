@@ -12,12 +12,13 @@ class Neon < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6d24e6d4a85eedc5d3e115e585075840bf3687cc48031b8a1fbab682b21a4302"
-    sha256 cellar: :any,                 arm64_sequoia: "457b1f8bdf13be7880864513ab979fed41850619a84251b7e423fb37c7c11c9c"
-    sha256 cellar: :any,                 arm64_sonoma:  "eacd2712bf83e32b980871881b39dcb81f913d46bd9beeb00ccf7f7e7f23919c"
-    sha256 cellar: :any,                 sonoma:        "267c2a5593558bf587b795fc7d84f0611a93faabcd96061a5b3786adca45a526"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "97b5dba9ec6a14e4083d43f7d0855eb056b1f08e4265685615e25a70142a2599"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f194476fbe5b1d585ac0e4cb3f02befedb39f724f9bae67d83c01d2a6624fbe"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "30ba4e84e339e497e1fe0933a8bf18073e732a580d5a780e344e2ff6f4322418"
+    sha256 cellar: :any,                 arm64_sequoia: "75aecc98faa1ed5f176c8ea3094179152f916525e3239e2ee21ff44867a5a223"
+    sha256 cellar: :any,                 arm64_sonoma:  "dd3284af74c1f672db2340c11a531661efc6a015b751d1740ce4d9e082ae59a1"
+    sha256 cellar: :any,                 sonoma:        "006e4f3e377aad08164df051a21403b679ee0f0117c2799a566f85bc918e1b88"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "114a10ae6f014a154425402e4cd3d3b209620c5cb4e264a472d1ed5d9e97f9ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b122d373423865c5baf83761cb9687cc7a5f2885f3dd7dfcec2ea304cb88d6e9"
   end
 
   depends_on "pkgconf" => :build
@@ -25,7 +26,10 @@ class Neon < Formula
   depends_on "openssl@3"
 
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Fix compile with newer Clang

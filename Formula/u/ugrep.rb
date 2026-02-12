@@ -6,14 +6,13 @@ class Ugrep < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256                               arm64_tahoe:   "fc463b3cd1c674c21631a538ee8a4203c05a193a901c3d1df37f1d8a16ec602f"
-    sha256                               arm64_sequoia: "80ef6af211355394f755ac8eed4509da7b796c1aaae345d91143fbfb8848e26d"
-    sha256                               arm64_sonoma:  "f74e5ac31fc95e4024ba9a81c69ee132d99d04a76da3a399c4329c30e4ae42a9"
-    sha256                               arm64_ventura: "308d7ef1bbbef4976e9099aed9221e0a5baab08be7fb0d3da25b6f0e7b5ff19e"
-    sha256                               sonoma:        "ae44222b4e6352ea6d2e2d93db3d6c47b9b85f134fca64cfa849c77de18e690c"
-    sha256                               ventura:       "82d872bce269b881df93402ae5a7c6bd959d0e3b7b0357109e8703f6e3a15d60"
-    sha256                               arm64_linux:   "fec5451d72d8c9ba9aa4981373bb40a0e1b14ce199da29ae14f62fa7e942b24f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d50d7e87b82652b8b5a81852c9ef9dcc0f90daa8bab26226e702780f2a323636"
+    rebuild 1
+    sha256 arm64_tahoe:   "a5ea013eb5ad23c63e4fa2352db360fda62229e7d99e1aa26402e80bc9f6627f"
+    sha256 arm64_sequoia: "f05163627880537dc868a8813eb512a3581c1b642caecf8d4b9f6acab2274c8d"
+    sha256 arm64_sonoma:  "dfed1f44d3698dc249a1ae3fb3dbd4266edee7622a5bbe328abdfdef52cddc6f"
+    sha256 sonoma:        "e6e884ba4de36690fb41d2c1db54b695e6f8c060270595d94197c361da43f61d"
+    sha256 arm64_linux:   "039e903b1b53d7e0d4e3724a835ba6b27198c8a185f2cc7953e896ffc28f9ec3"
+    sha256 x86_64_linux:  "5fd212bb7c62fc5974905909a95703dd803af0a4278ac101131655d016fb3a37"
   end
 
   depends_on "brotli"
@@ -23,7 +22,10 @@ class Ugrep < Formula
   depends_on "zstd"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--enable-color",

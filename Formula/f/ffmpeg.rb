@@ -6,7 +6,7 @@ class Ffmpeg < Formula
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
   compatibility_version 1
   head "https://github.com/FFmpeg/FFmpeg.git", branch: "master"
 
@@ -16,12 +16,12 @@ class Ffmpeg < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "fb2b2a50ba2d9eefb9822c0e7646514969d08ba7473e737670ddf9d5eac1f796"
-    sha256 arm64_sequoia: "7df375d52affc45239296f48813d0071fc04496f93ae3513671d0dde21445d27"
-    sha256 arm64_sonoma:  "ba0049a210c51007eeba1027b7024cc12c18d8b995f6630d2dd1e13a3ab50c74"
-    sha256 sonoma:        "1cdc91e9deb9e4ee25d7ceffb30012010949373fdc571c4ec0c57ae51bdd6f43"
-    sha256 arm64_linux:   "fa02e94a429716f2d13658f6a20dceed38764bb758fb54e043d208ce53a8a30f"
-    sha256 x86_64_linux:  "cfb357e4347d6d3e75198b3302280f9281d1b08214fd338f0ae1e30ab4c86fd5"
+    sha256 arm64_tahoe:   "f5fa8184d47b99423b081c73d5f4bb8562a42dac8a1141a8102478ee0b2d399d"
+    sha256 arm64_sequoia: "5b649a03681dc56e278511bfa72bedfa87d37bb8343b4286952a82b7f38f87d2"
+    sha256 arm64_sonoma:  "a35c0f24b0e3cf64973cdcdc856908de25d9bebc37e699f2eb982442396ac677"
+    sha256 sonoma:        "b61e908524907e3e623e5fd24be43e84e03ca9b1179151530a4d8279320ef96b"
+    sha256 arm64_linux:   "32774f69c2ddefc61e0cc6cf050d9efcf6893d0861e69458578bbb54623bc38e"
+    sha256 x86_64_linux:  "bcd238861e09669b1fcce42265112919e933488520207d011808a04b8171710f"
   end
 
   depends_on "pkgconf" => :build
@@ -35,6 +35,7 @@ class Ffmpeg < Formula
   depends_on "dav1d"
   depends_on "lame"
   depends_on "libvpx"
+  depends_on "openssl@3"
   depends_on "opus"
   depends_on "sdl2"
   depends_on "svt-av1"
@@ -43,12 +44,12 @@ class Ffmpeg < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "alsa-lib"
     depends_on "libxcb"
     depends_on "xz"
+    depends_on "zlib-ng-compat"
   end
 
   on_intel do
@@ -90,6 +91,7 @@ class Ffmpeg < Formula
       --enable-libdav1d
       --enable-libvpx
       --enable-libx265
+      --enable-openssl
     ]
 
     # Needs corefoundation, coremedia, corevideo

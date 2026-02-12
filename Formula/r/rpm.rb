@@ -27,13 +27,13 @@ class Rpm < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "817cfbba4fe88dd1ca4446d936bb6c4cae68f70af1895e72b2d9af20186fc6ea"
-    sha256 arm64_sequoia: "2ceece493065a153759bd8a81b001e1ae817b0315bd322aaf0190cd84b063910"
-    sha256 arm64_sonoma:  "4bf279262ec127bb86a4b685f6a7e8ea3b854d865c71a173d2b3e4a1401db64b"
-    sha256 sonoma:        "11d285a8bf603a8d7ae76af2d102c6c34ecf272cc5378335a3b6e5684605560d"
-    sha256 arm64_linux:   "eda731a1351179e9a65f885cdf588db00f9e417b670328366bce636c13143916"
-    sha256 x86_64_linux:  "70eaf4ff4ead4d9aa599087e5be5998ab22827cfef4f54d1ed5e682b61f7c05b"
+    rebuild 2
+    sha256 arm64_tahoe:   "1fca702442ac94efd3fb88d1aaf14343bc182293f88d159df565180d305c2c43"
+    sha256 arm64_sequoia: "395a86e54aaeb2d9245a914f9d826768fce98fa2e0f9d1180e9db1edb761dfa8"
+    sha256 arm64_sonoma:  "1cb0a28bb10ca95b4b1d6dbbc2bcea246ce5d506f408f8cd9ec696327751c502"
+    sha256 sonoma:        "789a7b90c31e0103e3ffccf94746865906b0a19bcfa5528e673b5e067d22f5a8"
+    sha256 arm64_linux:   "dad61855770a536deb64d238671d208ce7e4fbbe72f1e72936c036986f013569"
+    sha256 x86_64_linux:  "5e4c2f9e948d8b2dd002c10cb37430aa3de2ac037c3b7a350c3b884360f708e2"
   end
 
   depends_on "cmake" => :build
@@ -57,7 +57,6 @@ class Rpm < Formula
 
   uses_from_macos "llvm" => :build
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
@@ -66,6 +65,7 @@ class Rpm < Formula
 
   on_linux do
     depends_on "elfutils"
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "rpm2cpio", because: "both install `rpm2cpio` binaries"

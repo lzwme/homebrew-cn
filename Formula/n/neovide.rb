@@ -8,12 +8,13 @@ class Neovide < Formula
   head "https://github.com/neovide/neovide.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3cd1ae192871c857c1bc7cfdc86dd0ed8d37e2bf468399297dfd2848f4897acd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7431a80ee963a89341748415cb400ca9c3b12b4c075e1c132a1249baf3cabade"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9eb5a431e1f6433db53cf329ac0644741ee173328c47d6420f98771bb91c4215"
-    sha256 cellar: :any_skip_relocation, sonoma:        "97c3ca622612e86cd722364c4f1f369a46be1a0bf0ec37fc871e4e1a73488ba5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "51f55132c2a8e2bd4a8147297727c1e9c10ce293822616fad48282b826067ffe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0ca27a7dc416660e96bc0830c909bbf25d83fa3ec5cf14516ee3d39afe89ac4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc3c1b70d73e5b021480db2b0443600703f16e5ec1b52d4135d8d41c0d55186b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "117679e168231321d8447464c15579a50e197c962879bb146c445861c6c71bf8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5fb0b7546d5b35fb6318ba89a5e7a943116c22cbd6ed059d54d93e34a1302e6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0e3d1b2500c1e5fd422814f8cec203172457a6ceda246873f7adced0e60ebdb7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b66a170728606d26271bbb98d9707847a6b31b6ccb22cb46af69d8957683100b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65507179c2ec993fa6c6922104aa8743f2ff0c13d57fddaf840847ea76e087f9"
   end
 
   depends_on "ninja" => :build
@@ -41,7 +42,7 @@ class Neovide < Formula
     depends_on "libxcursor"
     depends_on "libxkbcommon" # dynamically loaded by xkbcommon-dl
     depends_on "mesa" # dynamically loaded by glutin
-    depends_on "zlib"
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :gcc do

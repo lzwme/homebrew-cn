@@ -23,12 +23,13 @@ class Rtags < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6337955889369da13644acf9bcd8863971f8623d0e20a7d87c5436d562bd9eab"
-    sha256 cellar: :any, arm64_sequoia: "40490a57292e202e01ecfce447acfe5bb985c128df4ac1c6302a7ea7689ae7c6"
-    sha256 cellar: :any, arm64_sonoma:  "e0bc34735908234eba526ae618b315a267405d7447ee978f85dbe51f20fe3ee7"
-    sha256 cellar: :any, sonoma:        "a9315e7fee3492ede17de0566fad7f08ef9a455a2bc045782156913ac183b648"
-    sha256               arm64_linux:   "f907fbf7277ff32b9d4d829453dda22267c89ed2da2422e8f9face99c956b447"
-    sha256               x86_64_linux:  "17bc4d956d77efcf2121f9d55bf4b479c0761eaf7c73de361134adfc5e8b5b2c"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "d5cbf12e8b49fea2e82bfe1d149fac6a4b8491cc88b134d5dfb364fbc4d116d8"
+    sha256 cellar: :any, arm64_sequoia: "7fe06ee97d346edb41b7a3ee18d8d13efe5b54b4d8ae6e87e2983111eaa1e101"
+    sha256 cellar: :any, arm64_sonoma:  "1a992b51b048b29d94fb10bb6a50e0a1cdf2a3761e959cba97880ab128312561"
+    sha256 cellar: :any, sonoma:        "06375c067b9667b6f201e3ce67853ca432133747249a90b53049bdec0742d0ba"
+    sha256               arm64_linux:   "b9b7c563f938a73fd2537389b0c93037d95221f6b4002e0832b0a8518a4429f5"
+    sha256               x86_64_linux:  "6189640b1116d0a70c690175bf2c37bdae14eda7c9b42b0e97789d4e5d24d675"
   end
 
   depends_on "cmake" => :build
@@ -36,7 +37,9 @@ class Rtags < Formula
   depends_on "llvm"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

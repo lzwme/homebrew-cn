@@ -11,12 +11,13 @@ class Rsyslog < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c2db8984acc93f4ba08df481201f0a1b453667ca6c3cdcdee9dfa5e09b53031b"
-    sha256 arm64_sequoia: "1f27f4f152d39ea634d38240a5189678e46bfb2fabb0b67e86897867e46fe5e0"
-    sha256 arm64_sonoma:  "f353642ec2e7a8c2426b68537b4f57764c298cc8b8049965173db2345b5e1bd0"
-    sha256 sonoma:        "7099a72ee3a37a07338d8a03b1032a47bb1b3cf601d4876be3073bada2cb7efb"
-    sha256 arm64_linux:   "aea0fa66d5662bfd917fd4fb2946b47ddfaeea25754159398994e4ba3c3c3a05"
-    sha256 x86_64_linux:  "aae84034d0e933bf106ade3111c86a6d4b5acbf1d16f2a14fb8cc07f275973bd"
+    rebuild 1
+    sha256 arm64_tahoe:   "60a778adbe7b3783456ad78d41333f51d64a535d7e86177c2452d7c818d1c9f8"
+    sha256 arm64_sequoia: "78386ab0d72e5c4448628c7238da387b3424dcbf44291d4c42b73ffb80ce9a55"
+    sha256 arm64_sonoma:  "aa3fd3a7ac953ee37c6a1f50f17258ea2a160447e06df41378f4b8469336375a"
+    sha256 sonoma:        "2fe644d53b816a2118fd94cf39fc5d51948d57bcd94f79ca9c47fcb1e3e4cf58"
+    sha256 arm64_linux:   "23d47dd00ff1499ee28e42a8de7771d4487972c5e18989c7ad3e496d51684d36"
+    sha256 x86_64_linux:  "2ada95d8259c5bd25bbde50bb37d5414d0add45a97c2183cec2dbb6f8b0a8f08"
   end
 
   depends_on "pkgconf" => :build
@@ -25,7 +26,10 @@ class Rsyslog < Formula
   depends_on "libfastjson"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--enable-imfile",

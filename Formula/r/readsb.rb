@@ -6,12 +6,13 @@ class Readsb < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9fd8536b79d5b576a82ca10d14ed816a0c9745050a6e45c24192f5d0dbbf8bf1"
-    sha256 cellar: :any,                 arm64_sequoia: "29898bd7815de7a2d339f3d31d1bcc940e7ea124e25c71099d567e1c3d950b27"
-    sha256 cellar: :any,                 arm64_sonoma:  "4efd8c71b302281dbd6d64f28fc6eb1c7925d13567b7b6e4df7ee7b81036a211"
-    sha256 cellar: :any,                 sonoma:        "66274b7e57ca446c0567e608077104e860821ba26a81ef99a6a7de7e7756be8e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c3ed58a6caa43e10ab612ce70a49c9666a2a36ce3233ecd9398de4e0d070fc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43ed9e0f258bdc9c5f3bc7f3de31f4e1909aad2b44a9b389512c9b43b1fc8c35"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "2d24e14fc0990ad321118027ac2f8156ef9b787a8b3f6ccea7984bde578ef077"
+    sha256 cellar: :any,                 arm64_sequoia: "f91d6b63fb8b1e1716adf033b504aafe56c64fea3fb454d15fd294ef246efbe1"
+    sha256 cellar: :any,                 arm64_sonoma:  "78352d21a1ad7594e702bb60ac9358b9a753963d4423a8f2b1d1490254e3f4a1"
+    sha256 cellar: :any,                 sonoma:        "c357bac9de4d98a125b8ac3f796c5f6c702a987be5d19c48f8e593f4dcddaaa9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c47b79c2712fb53a27c4c14470432c436c82818dbedf1b595c51fb6eccbddfc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0da6246c4de3ac05d1a2886b1d8b4beea79156b0b35cfcc38779fe04d2922a83"
   end
 
   depends_on "pkgconf" => :build
@@ -19,10 +20,13 @@ class Readsb < Formula
   depends_on "zstd"
 
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libusb"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install

@@ -1,24 +1,24 @@
 class VercelCli < Formula
   desc "Command-line interface for Vercel"
   homepage "https://vercel.com/home"
-  url "https://registry.npmjs.org/vercel/-/vercel-50.14.1.tgz"
-  sha256 "6c5263e67307dbdd3009a7c8764421a627578e3469aa96114ab67d06a574c285"
+  url "https://registry.npmjs.org/vercel/-/vercel-50.15.1.tgz"
+  sha256 "09f44a5eade0e3e3382f3e20d1ac32539f397f0c2207931821cece201fcf3b71"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a7fee3d512ab22689943c6bb20687c9ce4d2b46e50dd388ec8cac0b9a89b26d1"
-    sha256 cellar: :any,                 arm64_sequoia: "4426136f5710ad86a399dfbb72622a0e4d7ce7edc6648cc4ad4e29a863e3c5dd"
-    sha256 cellar: :any,                 arm64_sonoma:  "4426136f5710ad86a399dfbb72622a0e4d7ce7edc6648cc4ad4e29a863e3c5dd"
-    sha256 cellar: :any,                 sonoma:        "e4a8c1a509e8d58b8a675095af473688e518a5ce8589712cfad4b747653a5277"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6218b99014c67119f9c4b72ab00ce27452a4b83118e3c736654be8bea6454c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99305b5621dc275d665c6c4d23d956964f1ce731d069b375ed57a9dfd5baffd9"
+    sha256 cellar: :any,                 arm64_tahoe:   "a5b1dd86b59c934f501f0054d9fc2f6ea89fe978a8d5f9a4783cdff1c057ffa0"
+    sha256 cellar: :any,                 arm64_sequoia: "6c014a488f1fcf26b88a6c854b43c70b378332226097eee7bb28a81040af6211"
+    sha256 cellar: :any,                 arm64_sonoma:  "6c014a488f1fcf26b88a6c854b43c70b378332226097eee7bb28a81040af6211"
+    sha256 cellar: :any,                 sonoma:        "87b2711cda20de1a3c59dd968b7aafffb1745f67513011d0fddcc2fe471dfea8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9a188268a67f2847459af7a44fc196f75de9e3f47b97fb0ae5276060b07019e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c7f0effbb9125d522ba50a46a9360e56aa85f117c50e74730075cb1926bf632"
   end
 
   depends_on "node"
 
   def install
-    inreplace "dist/index.js", "${await getUpdateCommand()}",
-                               "brew upgrade vercel-cli"
+    inreplace "dist/index.js", "await getUpdateCommand()",
+                               '"brew upgrade vercel-cli"'
 
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")

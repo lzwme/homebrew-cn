@@ -28,9 +28,11 @@ class CBlosc2 < Formula
     depends_on "zlib-ng-compat"
   end
 
-  def install
-    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1400
+  fails_with :clang do
+    build 1400
+  end
 
+  def install
     rm_r("internal-complibs")
 
     args = %w[

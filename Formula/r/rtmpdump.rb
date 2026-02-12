@@ -8,17 +8,20 @@ class Rtmpdump < Formula
   head "https://git.ffmpeg.org/rtmpdump.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6da0c98fc9ec24bc43ef856f523ac07746b7612d9ff9e95089957c79578f6550"
-    sha256 cellar: :any,                 arm64_sequoia: "8eafa2bb31efb613a6dc317042ef72b72f6732cc8188bfbee84ad63732e06266"
-    sha256 cellar: :any,                 arm64_sonoma:  "01c87c00b31444f8d52e257a4023ffa42747f57a9e03228686bb52e3578ce42f"
-    sha256 cellar: :any,                 sonoma:        "526ac3a9d62403dbbb2cd2917c9e6c89d64a718897f26e11e23f762aaff0e0fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b50bb89c9c4b6684266523fca57729bf10ffb1855d81846b9a972fa67d333ee8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d157b751c5de5997aeeb24acb57d4d296fb715a50ae42f0a4e1f793fbde641a8"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "488ebaf2932cd02770654ecaf903c115a2f21606d1e7eb37b87054c08f63486e"
+    sha256 cellar: :any,                 arm64_sequoia: "dbae365bd1a8c9299b123dbb8557042c43332921b7c71496e0dedf554617ab29"
+    sha256 cellar: :any,                 arm64_sonoma:  "717373dde83a7c0140831a1fa33b718dc71600c1d93759ddb10baf7d60afe245"
+    sha256 cellar: :any,                 sonoma:        "89c063d3d0b8bb6d8a63c5cc47a3ace403dee9c99bd3d10e3c1e8efd58ee3bb3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18c6bc27daf24689a704d66342892097754843e402d591e5957086d5427a61ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5d37b5e7d3831124a9beea1f7fde55e593ffd12357007671ddb402642a4e009"
   end
 
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "flvstreamer", because: "both install 'rtmpsrv', 'rtmpsuck' and 'streams' binary"
 

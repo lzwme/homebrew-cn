@@ -4,15 +4,16 @@ class Mpd < Formula
   url "https://ghfast.top/https://github.com/MusicPlayerDaemon/MPD/archive/refs/tags/v0.24.8.tar.gz"
   sha256 "c6c21209617960f37d94e744e24ecf864a86a828e7ee3876ab490ea0b5c3cdb4"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/MusicPlayerDaemon/MPD.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a6113a1577ffc06cbd4f9a5fba1fea2775dc8f275071ef06d447a8181ffa05a2"
-    sha256 cellar: :any, arm64_sequoia: "55a0b6f6a389702491dad9c0e646661b26b6554b4e0b6d1a4a3bfd242a7de600"
-    sha256 cellar: :any, arm64_sonoma:  "7101c0bdfc76702a4ab6772a81d08498ec0b508fec8b7aa7ca5fe4037b163fb3"
-    sha256 cellar: :any, sonoma:        "28970f00af7e8ea40a2448d9a3cecc62f77a4e5524e77a5f631d7aae0619f67f"
-    sha256               arm64_linux:   "a48f6a4225df59de9b3f641a8f5243b511a245c7c7cf42b801997ffe70a41d56"
-    sha256               x86_64_linux:  "cdddcd1cce17a0be84e4ab710c12f3097e9db2871f4c75cdf9cf6648740c64a3"
+    sha256 cellar: :any, arm64_tahoe:   "48adaadf76fee63d22d4cd324e0540cca33f49af0bb6715c66f7a8a7876e9dfe"
+    sha256 cellar: :any, arm64_sequoia: "8e24774d1adb5593e55df9fbc93316bccf825873dfec55a3467cd5faa09eff78"
+    sha256 cellar: :any, arm64_sonoma:  "125f36cb3f4a4122910c9a7c97bc10f3993b8dec7dcc1667459e163e1886b52c"
+    sha256 cellar: :any, sonoma:        "09c3131b758cde14b10573d686e11c6f23fb75939bb97a24dd47b12279140ae8"
+    sha256               arm64_linux:   "5a62794aa22a0811c84141337a55f7df19241df5a3a3f734f54d318c730d3efd"
+    sha256               x86_64_linux:  "bf96764c3f811f8550a1aa82b72dcdc253366a2fd9194336d3f00797838f390f"
   end
 
   depends_on "meson" => :build
@@ -34,12 +35,12 @@ class Mpd < Formula
   depends_on "libmikmod"
   depends_on "libmpdclient"
   depends_on "libnfs"
+  depends_on "libnpupnp"
   depends_on "libogg"
   depends_on "libsamplerate"
   depends_on "libshout"
   depends_on "libsndfile"
   depends_on "libsoxr"
-  depends_on "libupnp"
   depends_on "libvorbis"
   depends_on "mpg123"
   depends_on "opus"
@@ -99,7 +100,7 @@ class Mpd < Formula
       -Dfluidsynth=enabled
       -Dnfs=enabled
       -Dshout=enabled
-      -Dupnp=pupnp
+      -Dupnp=npupnp
       -Dvorbisenc=enabled
       -Dwavpack=enabled
       -Dgme=enabled

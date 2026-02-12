@@ -29,12 +29,13 @@ class Ruby < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0f6a59a8949a3d4ad2c35807f374d4792283345e9cc69a1f12ddb5993d23d0d3"
-    sha256 arm64_sequoia: "ea90ab0003a47defd79647ef1b8002adc152eaabf639040fb7057aeb95926ac1"
-    sha256 arm64_sonoma:  "41321b9d5893e3d67102e9d514052d72bab4d713bd3d279b2458d34a6fac33d1"
-    sha256 sonoma:        "c78fa581f759b2b5bc58efcc7d1a81750a754158cc325a548ff463ab7a951744"
-    sha256 arm64_linux:   "f1aebc9f58955ee8a1721b34a7e085566d3447e2fee350adfaef36a7fd0839a2"
-    sha256 x86_64_linux:  "eb763f349d519ac1d5f7893228be8298667939ef78c631858eb4bbba43ce4083"
+    rebuild 1
+    sha256 arm64_tahoe:   "99ba4d74dc9769146bbc717c340e548f5418b1b5ad634786745655f4b4be31ae"
+    sha256 arm64_sequoia: "a8585e1b706a9e96584d35bda9f4ec2f3ef378e0fede531cfacb276f63fc5868"
+    sha256 arm64_sonoma:  "1e154c859e040a9e7bdcd1e90298872f6551c6618677357c9bd146356fee1162"
+    sha256 sonoma:        "cdb41288da959462858a87352cee45567845d147bd162c67307023197cf5c168"
+    sha256 arm64_linux:   "6797becac7bc9fde35ac405d5cb8e1cbd5a6c16bf50b03a2798461d15d39d4e8"
+    sha256 x86_64_linux:  "6217bdaf74063c80cade025f1aaa9fb3101da08ac8f7622bb5ee0edf6f73a656"
   end
 
   keg_only :provided_by_macos
@@ -48,7 +49,10 @@ class Ruby < Formula
   uses_from_macos "gperf"
   uses_from_macos "libffi"
   uses_from_macos "libxcrypt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def determine_api_version
     Utils.safe_popen_read(bin/"ruby", "-e", "print Gem.ruby_api_version")

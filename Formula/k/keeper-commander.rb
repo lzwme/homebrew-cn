@@ -43,6 +43,11 @@ class KeeperCommander < Formula
     depends_on "openjpeg"
   end
 
+  fails_with :clang do
+    build 1699
+    cause "pyobjc-core uses `-fdisable-block-signature-string`"
+  end
+
   pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic],
                 extra_packages:   %w[cbor2 pyobjc-framework-localauthentication]
 
@@ -325,8 +330,6 @@ class KeeperCommander < Formula
     if OS.mac?
       # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
       ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"
-      # pyobjc-core uses "-fdisable-block-signature-string" introduced in clang 17
-      ENV.llvm_clang if DevelopmentTools.clang_build_version <= 1699
     else
       # `pyobjc-*` dependencies are only needed on macOS
       without += resources.filter_map { |r| r.name if r.name.start_with?("pyobjc") }

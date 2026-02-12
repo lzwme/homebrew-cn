@@ -7,19 +7,22 @@ class OsmPbf < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "39bd87808dc4008832666b8fc249b80f6d33c4777a82ed0b577b0f7622a6f84c"
-    sha256 cellar: :any, arm64_sequoia: "9c8ae16e7656e0e07523f60dfb831fe256490cf3fb336cef55507183f09c273b"
-    sha256 cellar: :any, arm64_sonoma:  "1755c0276429fb4739a3305f4fb1ab6f2db77fde780d11e3f7be5c2663063a7f"
-    sha256 cellar: :any, sonoma:        "830d3161bd7331fd78713e9109a0123895e66e8157b3559f3eaa4ea46392f0b9"
-    sha256               arm64_linux:   "15a45ab0e94aecff4e02151bc3a91ccca59346d3c2b23bc488403ea7b7e9e6bf"
-    sha256               x86_64_linux:  "e049d28c8808d1bd449ad5ed3bf6288f432de2d66e27245ac5ca81ec7b100f10"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "72b93dac765bebff59d981fdeed0830c7bc72772045e674e7553aba449a7762d"
+    sha256 cellar: :any, arm64_sequoia: "4b0413ce59ceeb4c695bf4e7ee5245efdabfed592d9c3b9eaa57152fcd9b46dc"
+    sha256 cellar: :any, arm64_sonoma:  "efadf44f4e19b9335edb1c39e3cb34812f6ce7b554d3b8a1a410ae7b3d8d68eb"
+    sha256 cellar: :any, sonoma:        "02e1ae3d72fe7022bbdbdc685ee01406858326af8d2d407d55b705edddc2ddaf"
+    sha256               arm64_linux:   "e6ecc027c312ca997108b0deb6c3a4dfd75a89be0bc7717658af2464ac23ea13"
+    sha256               x86_64_linux:  "90f7c574f9ab83e3db91f7e7bf0ec53791116df6326d17f0a6a7790ebb97259e"
   end
 
   depends_on "cmake" => :build
   depends_on "abseil"
   depends_on "protobuf"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

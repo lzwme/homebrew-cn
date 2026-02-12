@@ -10,12 +10,13 @@ class VowpalWabbit < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cf06a7d71afc411b70a5180e3c7f17174800c21eb984ca552523d05e1d48dc8d"
-    sha256 cellar: :any,                 arm64_sequoia: "dcf23c662a2ae94c97abfe2756a3b7b545fee913148f471aa4706c0bdb97c27d"
-    sha256 cellar: :any,                 arm64_sonoma:  "315dbd71b2ae7c0a4a7d04e69616de5b9efadc6684dfa6450be6ad4a4ba8bb7d"
-    sha256 cellar: :any,                 sonoma:        "35f2af451771f6153f139aea0cea8e6afa495b4cb33f4c9b4d52f3de887e2c7b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "92f674e4035f4e003784b4942809934d3b7e82801e33c4e98484eda70952ede3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83f19ae77085270dab292a53fa72203559c6b0782010cb55846a8c9e09c43283"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ff869cf19aa55a6aa7d3433e576680be52cb95ff6f80062ab53da763eb39200b"
+    sha256 cellar: :any,                 arm64_sequoia: "79cdb8d2ee6df0fe49582194dc69a310a5491ac0602e27c54b75b182fa8e8973"
+    sha256 cellar: :any,                 arm64_sonoma:  "2a8d8216335c12f14f3285f3fc0193c0b1b72a6ba2987c4da3a5aeb34e0fc978"
+    sha256 cellar: :any,                 sonoma:        "f550eacee245b32b6079af6f4e5625ace1791940bf00b062c9ce98121ca7e564"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5329e9fb644bf34ed2ec521ebfbddb67339d7574d0021fefa5ab163a25834a5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09f5fe1db04b31f5e63c071b9071f9e8bf843f8ddcea109c95a6d5f2c7ec9748"
   end
 
   depends_on "boost" => :build
@@ -25,7 +26,9 @@ class VowpalWabbit < Formula
   depends_on "spdlog" => :build
   depends_on "fmt"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   on_arm do
     depends_on "sse2neon" => :build

@@ -1,17 +1,17 @@
 class C2rust < Formula
   desc "Migrate C code to Rust"
   homepage "https://c2rust.com/"
-  url "https://ghfast.top/https://github.com/immunant/c2rust/archive/refs/tags/v0.22.0.tar.gz"
-  sha256 "c9c8a36332e8bcde0bb9739cec02bd5263c5b25b7300428d8c6a8af094160d98"
+  url "https://ghfast.top/https://github.com/immunant/c2rust/archive/refs/tags/v0.22.1.tar.gz"
+  sha256 "a8fa6a88a5f40f35b1e63c086e981e8e03e0b887b769ddcd07ba46b0304c931b"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9324f14c27a2c6bb08fe3e24aaf93a2619a16b2667df0f2bb74fc2bbee08dc69"
-    sha256 cellar: :any,                 arm64_sequoia: "b939f948aa97dc10c1751525527d1345713ac2ac36f3bfb22160275af1dc3444"
-    sha256 cellar: :any,                 arm64_sonoma:  "ab9cfdc46db079912e513077fbb5475284eeb9e5fda0217d3abf32a763d94dcf"
-    sha256 cellar: :any,                 sonoma:        "11ef3e3b68889f73364b17e40501e243849565a61cb3a0786492c22535137a16"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "03dbb02e1782dd51dbab9553d9ae880bbbfb6216d61e249d6a919e2138b9a009"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d6791d88d3b461b9e19a4601bd19717286174c0a1b45688acc87c8d8318b3a1"
+    sha256 cellar: :any,                 arm64_tahoe:   "c102b8523d87342d212c0537be581176bf6fd92fcb5aef0ab1f06fc29db8dd8c"
+    sha256 cellar: :any,                 arm64_sequoia: "35604832b9de5a334662d6574f24863458bf5614ab3ca481d9bd0a31b5c511cd"
+    sha256 cellar: :any,                 arm64_sonoma:  "67b16a49a8febd56916efe46371ea4b60307f6fe13196924246d47bd748c7c8b"
+    sha256 cellar: :any,                 sonoma:        "303de80f782220e9efe2b493cc284e8734ba67ad0e5dd39fea8856af48bce5e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "437dc4ee245412452288566d60cd9fed3c472819758da0f23745072ea70c2098"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7998d5dd1b663ac7114a8132ab3e9f39a555cee30be1350f2bf27b157beafdd"
   end
 
   depends_on "cmake" => [:build, :test]

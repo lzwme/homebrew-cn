@@ -7,14 +7,13 @@ class Mighttpd2 < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fb9506a6f447163871a2b4d66ff4d95ed4151818ba2125d17ee3194514bb92a7"
-    sha256 cellar: :any,                 arm64_sequoia: "25be6975363a119562cc5652ae9eebb7219552713f104774fb8fe514214add76"
-    sha256 cellar: :any,                 arm64_sonoma:  "c50ef2cd7f27b3a323e7c76c0653938869db33f655c301ef1ec251da7ce51cad"
-    sha256 cellar: :any,                 arm64_ventura: "d407f151b2dbc11fbdfca89ca0eca2a8055b62e6f5986682e9457edb449aabae"
-    sha256 cellar: :any,                 sonoma:        "b869e08498f909fe812222cb770e0eedae952c43d9fa81e73cca18f8993bf1ad"
-    sha256 cellar: :any,                 ventura:       "8135c1643f100ca500668f35926b65673d6a7d38cb8c7a704b8db43088e183b8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d5c8695c575fb1ab553398737a123cb27a5516b96ad019fe76a3cb08d79b8d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3743ce97574c778c753f505fdb3b4822d65562532462375105d12ad394f57e9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "99f64d61207f727cffd821669446f5853cb5f6ef4fb73004415a3a98a245bd9e"
+    sha256 cellar: :any,                 arm64_sequoia: "141ddf12baa00ebdb61710992d7a994575b20bc13387b9a37bff27cac4320a2b"
+    sha256 cellar: :any,                 arm64_sonoma:  "f0c5a2f46297faa921320ab4b1e661f41abf4c6bdc45738a19cc540af57e9bbc"
+    sha256 cellar: :any,                 sonoma:        "cc5290c3e3992f951543a3520209838ab7b6062f9664258295358f86f557d1b9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "67fbc95ab3285dc2bb03f7ac53b094258dca7d9ace439485c9b65164cc8f16f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c521f5c6d62571565f09f681499647ddda932207983409cc8d65fee2503e1b1b"
   end
 
   depends_on "cabal-install" => :build
@@ -22,7 +21,10 @@ class Mighttpd2 < Formula
   depends_on "gmp"
 
   uses_from_macos "libffi"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155

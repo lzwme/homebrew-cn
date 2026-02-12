@@ -13,12 +13,13 @@ class Netdata < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "140ae1cd436d663479f2914835e7ff92c1b7f74d80a3f3b13666707bf8de10b2"
-    sha256 arm64_sequoia: "acb536b718871f94aa1eb56547e5f240c6511a9750c66e2e781f6527818bd675"
-    sha256 arm64_sonoma:  "f79e811f510834d28738a658da1838562fa9efe2b7099f51d1c0e98e36fc1732"
-    sha256 sonoma:        "bc6a7b0acd448fa281a4d889ab5dd002a6bbeb8fc14e87741f6b447fc972c043"
-    sha256 arm64_linux:   "081dd8b4925156f8ce0dd166d63784e4fa71139cf5f815a7cc32f2c3ecc27956"
-    sha256 x86_64_linux:  "fbfc3904f9345e300740ff3f8878978920142f9e6f7414396105642bdcdaffc6"
+    rebuild 1
+    sha256 arm64_tahoe:   "c8b6eacdb7e2d2d1a6f55165ee6f61f98f0947d75bc74ac4b79b9d5deaba4c65"
+    sha256 arm64_sequoia: "166c0a5af035b22410261ce602800d58a11ce2a5c8ad26336d7fa16f5b73c56b"
+    sha256 arm64_sonoma:  "28ae6f3661b7b8b4f0bd6dde003b0c9d538b937a04eeb09aaf3bd0a3a5f9cf13"
+    sha256 sonoma:        "54134dd4d4b05be5a6fe0ffcc91b899f6f62ffb558ec4de893b98f5eff6b589d"
+    sha256 arm64_linux:   "404b9f318708aa620490a8ab9d67f36de23825b841504496c0a4f31e042e58c9"
+    sha256 x86_64_linux:  "bd3a08f7cfc23b6624b1d5e93357901abfae243e9fb6a873da7c155b64a156f3"
   end
 
   depends_on "cmake" => :build
@@ -39,7 +40,6 @@ class Netdata < Formula
   depends_on "zstd"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "bison" => :build
@@ -51,6 +51,7 @@ class Netdata < Formula
     depends_on "libmnl"
     depends_on "systemd"
     depends_on "util-linux"
+    depends_on "zlib-ng-compat"
   end
 
   def install

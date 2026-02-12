@@ -7,12 +7,13 @@ class Nzbget < Formula
   head "https://github.com/nzbgetcom/nzbget.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "01ec25a5c4703d854aaded258e2fb777d2f20a0282a45db6929442b570cd6c19"
-    sha256 cellar: :any,                 arm64_sequoia: "ee93b4ba22524fa9155ab2d052c885e4ab42cda7e2d0c07245ee9fe68757908d"
-    sha256 cellar: :any,                 arm64_sonoma:  "aee89ca3a7b8f4ba9a7232da66d2b021715f39178dd8415042cfc9b70ab5108f"
-    sha256                               sonoma:        "27a640e5d51479adefa4390a9b2f4f701b7d3ccfc5172a124a56958ecdc21f80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce1e4e0933a2c3b44cca39a8b4c3623e3796ca8d3d87c9c6db4e4cc016261156"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f387731a5b9f1b82455f38f4a72d432f2f277a6b6ca630fff629d59328ff2dd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "0ef5b4f7469e5631621c1ed63d84933f7352abc73b937864bef5daecf00fa087"
+    sha256 cellar: :any,                 arm64_sequoia: "64f66197a63d763cb07c3cdf1d7fc7b6700133ebb028aed7333838cee038b9ad"
+    sha256 cellar: :any,                 arm64_sonoma:  "c57ca253d74301155b648a4998f5ed5c24f878995ceaaf5142aefd1429ec18c5"
+    sha256                               sonoma:        "cfc0132db636459975d13d7670b11bc3be865932135ab4e4d079c1bfb9f55fea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5d6e7929ac4cafac423cee1b6429a3d2728b9973d512af8ef478437d4402c48"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5baf160d0c98f2e683488824e3ee822a58b6f5abaab36f6f820036d53931965a"
   end
 
   depends_on "cmake" => :build
@@ -22,7 +23,10 @@ class Nzbget < Formula
 
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

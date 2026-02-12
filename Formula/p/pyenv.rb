@@ -13,12 +13,15 @@ class Pyenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f87fa8d4c4bab92e3b0ec5f9c40ed68648eb4cba63cdd999fd10a14a6b355ca4"
-    sha256 cellar: :any,                 arm64_sequoia: "6e1047855e535b33cba16a0f87c7eee2dbb5205ecdeb2f5fd4591148a303f873"
-    sha256 cellar: :any,                 arm64_sonoma:  "7b1cbfeff08823621f8cb040d4e91b87e58dc0c0c93c61dabfbdb61da19db3bd"
-    sha256 cellar: :any,                 sonoma:        "ae9cc4fd5988b5469e67a9ab3c83c784ab6740343c34189da1ae5a51c9cefcdb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d45d7f77928f4518a0e1a42cb1c9fa68873946b609cd2984c4661b913e1d2ddc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c42bbeccdac3a8b64ccdee508a816fe0ceb234e2a1b4b4f3f11641fd04536c4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e3bcebfd9fee8a41c5574515065902fac8267c803d65d5400d1d110a50739607"
+    sha256 cellar: :any,                 arm64_sequoia: "82c474ad7d40b7afacca655930d5b1f59134a72ce7a34490d2b61fa77e45746e"
+    sha256 cellar: :any,                 arm64_sonoma:  "7ca551d4df3face147f97cf6c6658c0105fcca731f19ce6cb05fa2e7fe748e87"
+    sha256 cellar: :any,                 tahoe:         "3a64fa36d56eb80941b35b3d68ca18f615d27093513aa188adb26ee1a29bfb1c"
+    sha256 cellar: :any,                 sequoia:       "389582b57ba7630c9a7c87f76a787c8edea427b9059a8637404fcda12c70729d"
+    sha256 cellar: :any,                 sonoma:        "866249cfb18588223683ad3ec18c6a76d70f66cefb1e9662a1edf0ef3d27d2ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "40378033fa107a2309f0becd378ebfbce56be066cd3a0dff55d67e8069367415"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55443c7120aa91792281e39599914ee9554f95341e9890b4416bdc447d324b90"
   end
 
   depends_on "autoconf"
@@ -31,7 +34,10 @@ class Pyenv < Formula
   uses_from_macos "libffi"
   uses_from_macos "ncurses"
   uses_from_macos "xz"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     inreplace "libexec/pyenv", "/usr/local", HOMEBREW_PREFIX

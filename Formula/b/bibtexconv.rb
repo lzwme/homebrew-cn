@@ -26,9 +26,11 @@ class Bibtexconv < Formula
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
   end
 
-  def install
-    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1500
+  fails_with :clang do
+    build 1500
+  end
 
+  def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DCRYPTO_LIBRARY=#{Formula["openssl@3"].opt_lib}/#{shared_library("libcrypto")}"
     system "cmake", "--build", "build"

@@ -1,8 +1,8 @@
 class Ejabberd < Formula
   desc "XMPP application server"
   homepage "https://www.ejabberd.im"
-  url "https://ghfast.top/https://github.com/processone/ejabberd/archive/refs/tags/26.01.tar.gz"
-  sha256 "ccdb8efc9e9a93d547848df8df10c7d4953187e8409a20e389a0fb35a4d7176c"
+  url "https://ghfast.top/https://github.com/processone/ejabberd/archive/refs/tags/26.02.tar.gz"
+  sha256 "676feea9ee8aeb3c1bc3c1844308a783941548d9befc3b252cd1ff0b7532842f"
   license "GPL-2.0-only"
   head "https://github.com/processone/ejabberd.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Ejabberd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e52391f4eb6214faa508f8a9c06b09db0dcee3c2556337412a54d0732009c886"
-    sha256 cellar: :any,                 arm64_sequoia: "8b0caf472cf1ffb0fa2f8194e80b81f493b9537518505cb2d1e656cb7b82b328"
-    sha256 cellar: :any,                 arm64_sonoma:  "43163a3a736232611782585f30b4ff76aa8d840c053a04dc8897d11255ddefdd"
-    sha256 cellar: :any,                 sonoma:        "8ee21deb91fc91aec93105f07d9b9bdfb15b835b6d11e9552a6ff2d14cdb12c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a04b42070cfef6e56115a5095675c2eabe6e2106c2518f5afaa68f8a13a0e258"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a03d150f061f863bde609840faa726ba7f745d80cfffeb89d53ddaeda9de2c3b"
+    sha256 cellar: :any,                 arm64_tahoe:   "d36ff4816c0888a12396d6d190abfbc8cde13ffbe35ca5465deefd5d54a1d1b2"
+    sha256 cellar: :any,                 arm64_sequoia: "989ccf6f8062daab2f2a2567e803e26fd574cc23dbe306f716b042057f9627ef"
+    sha256 cellar: :any,                 arm64_sonoma:  "ba6b3be9f974635f7abde2dca78bb4104e58c654fcedbd14a8eac5154177e4c4"
+    sha256 cellar: :any,                 sonoma:        "c9d81c546e568d4f9cfc4bb4fa31dd6370de5bc6fdfc9b2139380f77b9cebf69"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c59a6280e58d3113b8d251402ebfe8b2c981e72eb2c329385c4a8442f2b04482"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7f145f5f49e92586079a8ecc7d6d8aef62d8942459a2f9d4925e1057f8493bd"
   end
 
   depends_on "autoconf" => :build

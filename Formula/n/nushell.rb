@@ -13,12 +13,13 @@ class Nushell < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e44aec9807bc10480a2404c09d1f479a01cd00d4750fc26496af950b346ba4a0"
-    sha256 cellar: :any,                 arm64_sequoia: "13313614d6dde1605c991eb65e4ad60546f40255f88cd4d50df1d53a71b469ce"
-    sha256 cellar: :any,                 arm64_sonoma:  "fe1a2ebbe34562ecb8cdccf41dbdbcd9ea250acde4d77d282a9bf2b8d09113cc"
-    sha256 cellar: :any,                 sonoma:        "8bdfb326d3c91560021db861376706802d99884c2c331f8d787323ccb269555d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "021a3a20d734860eb0f3961db87cf5bd83b2b3871e6c408cb425c004804699f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4778d3500ceaa798d53822df2542d93defb2cc4f7e31860e7fd1fcff8ccf8a20"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "9a1ba65f7bb0701d5a8e8ae0152db1c362661028b6c2e449328106a61f0e6876"
+    sha256 cellar: :any,                 arm64_sequoia: "16107880812389688aac15411f789b86c97085358e02c6421929bb121ff42c9a"
+    sha256 cellar: :any,                 arm64_sonoma:  "258ee8b792764fd907e405e0aab0b694e378cd0135bbb72410bb34d64e08860d"
+    sha256 cellar: :any,                 sonoma:        "a563fd2e109f789611ce3b1e73667fcf69191b08eb549ef1f059818ae26daa4e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29862de9f289e6d3438f3c8e0401d32510953cd40c404e9f4d99c51b1c19ae64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3f3e8b78e2e6756662d2bbf645da7a09e54aef5f5e6e316f6914b92b94a677d"
   end
 
   depends_on "pkgconf" => :build
@@ -26,12 +27,12 @@ class Nushell < Formula
   depends_on "openssl@3"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "libgit2" # for `nu_plugin_gstat`
     depends_on "libx11"
     depends_on "libxcb"
+    depends_on "zlib-ng-compat"
   end
 
   def install

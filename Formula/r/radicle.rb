@@ -6,12 +6,13 @@ class Radicle < Formula
   license all_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4e11422998700c5249fcc8f64455ff641759a1cd54c48e8e8f1247e380ff36db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8cd7a08c94ba66d98f47921a52f8ffe7c07906043ad58b9c5a0efb871565f2e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5a94672e5c8b0c9929b278b32b740066f9af2cfa2538dfb930fd79816a6428c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c65df15d763aca75824479d0e904e121614a583007cff87c47d41eb3f7969e5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4edae9386a5a06eda3155f6bc4e82b2b6c780761a17824d4b2e317f35a06ab7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96457b9b2e4acd952d08749b0f2937e77630d3789e810a179494d1da3d223866"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f82b1f36f71d6c52b290713efc2b47b4f6c020cb298ce6926938dd9a391dfbae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fac4a06307d6a25d8b3b405e96e1a6af085e99101477ba9b6d33acab6c8b474c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2552aaa82a06b43a195cdef7e8cf5ff1e75523736c6544bccb3912cbf893d0aa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "813d5d88508b7895c495cd83d7259aee6058a9d48a4aa18af53f3cf54796c173"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d90155b9be9457d45102ef00b1f88177e9750a7090b4d347edbd91184d1a5d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9e82ca7d7210cf9bf27a910f505db24197c40d763359da8d6bfe349bb8590e8"
   end
 
   depends_on "asciidoctor" => :build
@@ -19,7 +20,9 @@ class Radicle < Formula
 
   depends_on "openssh"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["RADICLE_VERSION"] = version.to_s

@@ -9,12 +9,13 @@ class Oterm < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0e433b35ba9b7c85aaaa84b3510e0046ab9527646d62d53265452311f70f6f3e"
-    sha256 cellar: :any,                 arm64_sequoia: "2d843973d4b632e420e206707c6b1fcf2f920f914184eec0ec89414b61125536"
-    sha256 cellar: :any,                 arm64_sonoma:  "881c4c0e59d90cf3e2eccde85439d2a95cdde88fb32f8ed237202fb029683ea4"
-    sha256 cellar: :any,                 sonoma:        "25295b2b28e64f55b34ffc7e9632c2825dceea51c224d3d0636287a1858f71b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ff1620ee68f216ea66738530d6be99f308615f46cc124d93f841b64d16e92e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f45b50a2a88fd38607ba398398da2aea6045a8e9f5cdac88ae5069d8bf87cb8"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "b824332a6c6c6c14d02647bf703730503e8626bebfdc9f4e5758ccca20a7bd0f"
+    sha256 cellar: :any,                 arm64_sequoia: "60cecf6fa0a9f37b8b2ae1fe0fdb5285934bbf364a6454cc64f96a0140370f12"
+    sha256 cellar: :any,                 arm64_sonoma:  "e55bfe31af2e6fff471b779777cc80d209efea16cc76244e85f416643ad01e28"
+    sha256 cellar: :any,                 sonoma:        "a08a9cb26f290e71b276043f7db053d828adc88d6775dc93940d97339f9e3f29"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b6a2d2f6e8fe65a3f4192edd7c051115006da9c2b6c485115f85d4b0f8bb499"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58933305b52729b51f54ddeba3bf1bde7511893bb86ab83e8e67a60d0e311b97"
   end
 
   depends_on "pkgconf" => :build
@@ -27,7 +28,9 @@ class Oterm < Formula
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic rpds-py],
                 extra_packages:   %w[jeepney secretstorage]
