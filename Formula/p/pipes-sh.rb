@@ -18,7 +18,9 @@ class PipesSh < Formula
     sha256 cellar: :any_skip_relocation, all: "339995e9ef29b4952bf61b4fe406d71c4c6ad5fc96e3e8f291d98150c6789cb8"
   end
 
-  depends_on "bash"
+  on_macos do
+    depends_on "bash"
+  end
 
   def install
     system "make", "install", "PREFIX=#{prefix}"

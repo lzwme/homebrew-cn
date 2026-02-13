@@ -4,15 +4,15 @@ class Libavif < Formula
   url "https://ghfast.top/https://github.com/AOMediaCodec/libavif/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "0a545e953cc049bf5bcf4ee467306a2f113a75110edf59e61248873101cd26c1"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "63b4d4e52ebf66e819f6fc0c518fb22ec478e407d5f8b50b130ac16dd64ea3e0"
-    sha256 cellar: :any,                 arm64_sequoia: "b054d452e2c1052cde33b729b2b683b92a69411024da1c0616eb7cd2272aa0ca"
-    sha256 cellar: :any,                 arm64_sonoma:  "c8706fb82b2af538a636ae67ccf7610422ff49f57e7e55a037320fd2aef8618d"
-    sha256 cellar: :any,                 sonoma:        "872e29f2f8d23d4e6835f0d255a32971ee7ff26e22030e3d104a4a53a3f5e010"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e13d2879a23634af1a5fbe4f16bd9cb5c40a6fdddfc370ab9c00e1c0e4848546"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae5d0f32ff6f2b1f5c2c5f886c710c14ea2e934945c63c7089eb6cfb5efc53a4"
+    sha256 cellar: :any,                 arm64_tahoe:   "cfe93d3c3bae786d4756d578f7cfd290c078d9e83ca551bab704001597f007b6"
+    sha256 cellar: :any,                 arm64_sequoia: "18885d98641d2a82e4afeab3c4d19d87aa367a37772cf7609615ab0b56ed0e12"
+    sha256 cellar: :any,                 arm64_sonoma:  "c5f3be4aede27d832004090fbfe18144df6cf1c061836fa9f6f314ef0bc9dcf5"
+    sha256 cellar: :any,                 sonoma:        "7721ab3bb40cc69b00fac770dbeffe9789a9f395ca6b1a4433f0922a5096a6f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6075a5a2124cc8f238b082022b35ad0e4b23088095fe263f3bac8109c9de2cf0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdbe3f050ec448e524343c4bbe29302e542fd8089ffd62d968bd860a20d9147d"
   end
 
   depends_on "cmake" => :build
@@ -22,7 +22,9 @@ class Libavif < Formula
   depends_on "jpeg-turbo"
   depends_on "libpng"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = %W[

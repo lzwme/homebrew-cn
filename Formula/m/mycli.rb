@@ -3,17 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/d6/93/fb4c2b17c922d0f109bfd0964aafc0f3375fa54c2a425c9f39b5b710928a/mycli-1.52.0.tar.gz"
-  sha256 "4ecd5741e0ba458f58b743b71b805ad2cc6c2f5d5c9ccc43d28a099d98e4c212"
+  url "https://files.pythonhosted.org/packages/7d/8f/4f9413b829fd4a483e2e8bf976fd16b8dcd31f67c3bd6737508d05f58dc8/mycli-1.53.0.tar.gz"
+  sha256 "5f5a0a1d3e912d0530e00f8242dbf0b4f27ad1c0fc6efadf1167996b595aaebd"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "66b3698c2ed78b0e71cd4549790957edf9b9edebf75b5dd91f04bb4e1bf52b5e"
-    sha256 cellar: :any,                 arm64_sequoia: "f97e00a5192e6b7d1a08f96ace6b3340fcd0df195bfe6304e1835183ee4d1f0c"
-    sha256 cellar: :any,                 arm64_sonoma:  "4160f4c8ab0244b28afd1d1dd87d72f0178e539d1ffe045bfd1bef870059b753"
-    sha256 cellar: :any,                 sonoma:        "bbff4ec2e8a209246e41967d75cb6492225077054591038758569ed7f927998b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9837404d2dd7d885d743ae875b779a8f6f4a2cdecf2b84a6bd650815a1b06437"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1400d09a05a75c2229eb3328df6f2ce90c7a92eba0a81c017a5fb9532d2d288"
+    sha256 cellar: :any,                 arm64_tahoe:   "4608b061cbd8c0498c76047248a3061e8536b631ee0c40db167348720129751f"
+    sha256 cellar: :any,                 arm64_sequoia: "885318dd4ba4c0993527eee640104454f45f8bd5b412a2f5dcb456965adbd0f4"
+    sha256 cellar: :any,                 arm64_sonoma:  "68da6dce441d3412e8545b4a0395f81eca7e074c04e2155ab9b4159f0074107d"
+    sha256 cellar: :any,                 sonoma:        "3fe701babdcd2338778fa3d04db2075eb5d17cdd6fb7263071191b371da2cae2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c03dd0ea1c00e1277d6a4867d62e2aedf0f7d9387a2d6b5e3b1cf5e4a97b2590"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c986cdcb61266f370dfd47c0e228b159517ae0c4cf34f15bd07e9de0a1dad0a9"
   end
 
   depends_on "rust" => :build # for jiter, sqlglotrs

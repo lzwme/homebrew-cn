@@ -2,9 +2,9 @@ class PhpAT84 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.4.17.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.4.17.tar.xz"
-  sha256 "28b234e347286158cae921d61283eb1169d89bc9d2e5f5976567260ff38b0bfa"
+  url "https://www.php.net/distributions/php-8.4.18.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.4.18.tar.xz"
+  sha256 "957a9b19b4a8e965ee0cc788ca74333bfffaadc206b58611b6cd3cc8b2f40110"
   license all_of: [
     "PHP-3.01",
 
@@ -36,12 +36,12 @@ class PhpAT84 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7f7deb479a0636380d5d86ab8468fb9080143fae59489416945eeb1877ba4f09"
-    sha256 arm64_sequoia: "e507e9d51fb6922ae855e2a18d9c7b289acad1f7e94a0cc76907e67a3362553a"
-    sha256 arm64_sonoma:  "1bb867c91a0413fb076ad83fcf8cadfda5790aabb94234e41adf9175fbdfc610"
-    sha256 sonoma:        "b99ce8e3b44cb5b90c1d6efc2a79c87403becd616ca9b866819a42990e496add"
-    sha256 arm64_linux:   "59c0726d114ea2043b2c85a7a2a7224b74892f35dd46f4cfd590162e40c978da"
-    sha256 x86_64_linux:  "28ff49255077cb999da04d5907051e0ea3a0ef0767b1f6e734f8f26242e631ca"
+    sha256 arm64_tahoe:   "ce2b06a084d3a39e0b2eb3a4bf8f9826f9148f47dcfe1571c5e72f5d29b75a5d"
+    sha256 arm64_sequoia: "5113b30693b68ac094007e7f5ed5afb074222b925faf683c63a7cd010612107f"
+    sha256 arm64_sonoma:  "0c01685a6e384d5976bb1032a09b1ed5186b4b7789fd521201a553cb3201b16e"
+    sha256 sonoma:        "0d43e2323e06fb148f8ec911e877495ba97a1173dd599bb2147c5d2968aa6d3c"
+    sha256 arm64_linux:   "88caf758680cbf8fffe19ea283724489b5717bddf1646863fa35cc84b2c6e5d3"
+    sha256 x86_64_linux:  "b407a58fc5d044e46ffa6c19e2619b70358bae5e0e30dada275556f9638adf46"
   end
 
   keg_only :versioned_formula
@@ -79,10 +79,13 @@ class PhpAT84 < Formula
   uses_from_macos "libffi"
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install

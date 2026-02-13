@@ -6,6 +6,11 @@ class Crow < Formula
   license "BSD-3-Clause"
   head "https://github.com/CrowCpp/Crow.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "33b5c29fbed6fa014606740e9b63fea1c582007dabbd013f4c84b082adbe7962"
   end

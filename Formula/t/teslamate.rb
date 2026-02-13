@@ -6,12 +6,13 @@ class Teslamate < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0b01215e824d4a8866a07ea09c5308489e65842d792da53f59b87afcc98e5e1d"
-    sha256 cellar: :any,                 arm64_sequoia: "b94d509d6c488f4c044a2fbd5236537f55e9dc2581a5d3643fc07e5edce4314a"
-    sha256 cellar: :any,                 arm64_sonoma:  "3ffde8c26b73d64523ae3e901bf0eb93c8420cf25be593338e924700dbde55c8"
-    sha256 cellar: :any,                 sonoma:        "d0c89dbeb138c6c2ad08754f0eaa57b038c34421529454a229c1e0e915724933"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "78526f3d68585af73ca35ded354e6149530c3278ec580bdab83bdce36ba10d2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "119b4f77cb931120ebf507f578f75bcd5a3b529df3db7ca9c4cb88425804350d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c3230a3bb12da339cd54b82e78d1243229c7c3c80ae3d7537e2d7f47b7cb19af"
+    sha256 cellar: :any,                 arm64_sequoia: "bb2edaeb4f9f5776301e6b17aef20454c766709d4daa40325f0325edb2b2501b"
+    sha256 cellar: :any,                 arm64_sonoma:  "5e11bce0b760a92fc3a968a725d3742ab28f38613d770575e6754ff411f4e488"
+    sha256 cellar: :any,                 sonoma:        "772f2a3d67f6b02d903e6c8fe63682a6ad2fa19d0425d2369be425070ab0cd44"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "71f47a0ea08520dff99b427004d9ed90d10485cd2971e47eca36db4a54d3aee6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5243e5a161d252d0684ea87313227d6f9a2e869229b0151513a93c0fa9e7084"
   end
 
   depends_on "node" => :build
@@ -21,7 +22,10 @@ class Teslamate < Formula
   depends_on "openssl@3"
 
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # See https://docs.teslamate.org/docs/installation/debian/

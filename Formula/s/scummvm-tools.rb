@@ -13,12 +13,13 @@ class ScummvmTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d0d9ce1db6aa5f90e5ab793a5735b72a539ec1ef17537c02923e95557a4d687c"
-    sha256 cellar: :any,                 arm64_sequoia: "98c8e8d7f906f5a137f252a3ae78bc3bcd17675feecad98e1716be21b41c07ef"
-    sha256 cellar: :any,                 arm64_sonoma:  "5b51e517b66e0cafa867418ed4e4556f38a5995f43341ce84e187d0b93b4c97a"
-    sha256 cellar: :any,                 sonoma:        "47767c0db65bd642dffbeacd583481a054347ac263743b7ce6ee2cc0117f1c5b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "acd405eb41890990dfb3ccc1064d6e0ed64de62568e624a6bd09d56d1aec2034"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c0130120333cafa9ec0074e98057ec2d69539f74551cbbc63631c1fbd0b526e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "64c54efc7b79c018abb5443b6d3e05b1d51997696847bbe9bee1af22d0745213"
+    sha256 cellar: :any,                 arm64_sequoia: "9c4cdde35d00c906263b4ae6d8cda36fafdfd35f8395b894eb82394becce3163"
+    sha256 cellar: :any,                 arm64_sonoma:  "749333f5526e454f68161b94259e62424c7a484153419158a67f88ee805df10f"
+    sha256 cellar: :any,                 sonoma:        "73361f10d4d64cd990a2ca51ff05ac062822256c8366d6805b355eb3a282984f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec56e1098e866d84f5ed7cd50935211b5061227731a337eda32e8b3f2d2ef8b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba62909fb5a479ffc2c3711d1e35aa27534d3d0dfcad1db1eeeede1f12e33f06"
   end
 
   depends_on "boost"
@@ -30,7 +31,9 @@ class ScummvmTools < Formula
   depends_on "mad"
   depends_on "wxwidgets"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # configure will happily carry on even if it can't find wxwidgets,

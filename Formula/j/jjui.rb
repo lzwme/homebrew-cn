@@ -1,17 +1,17 @@
 class Jjui < Formula
   desc "TUI for interacting with the Jujutsu version control system"
   homepage "https://github.com/idursun/jjui"
-  url "https://ghfast.top/https://github.com/idursun/jjui/archive/refs/tags/v0.9.10.tar.gz"
-  sha256 "cb963c4489e72b881cb43d2196bcbb92f3dc7bb74d488cf3c403d9193967189f"
+  url "https://ghfast.top/https://github.com/idursun/jjui/archive/refs/tags/v0.9.11.tar.gz"
+  sha256 "8245ee2e2691060ffdfb210b0b64f2165090e3925fc907b7a938ef665388e75c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d6c5533693c52c4bdcba7b38f8aaddfb1e0b35a1ae940102e4a3c298a864f5f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d6c5533693c52c4bdcba7b38f8aaddfb1e0b35a1ae940102e4a3c298a864f5f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d6c5533693c52c4bdcba7b38f8aaddfb1e0b35a1ae940102e4a3c298a864f5f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b883d6171b292f7f5741955b8ad2336be40d5a2f7833f61495071e1a587d84f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d2af1eb02057f28006f8a950129de6d7accd090c6c69161f7e6d415ca038f07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "078467b83a4030ad545a8a905c121655df443c00efc63b3053c2c491e038c3db"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77ec001ec7a7d3854ed71c29336b3ae009e4f353de2fcca37438a56218dd2ee2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77ec001ec7a7d3854ed71c29336b3ae009e4f353de2fcca37438a56218dd2ee2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77ec001ec7a7d3854ed71c29336b3ae009e4f353de2fcca37438a56218dd2ee2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d90684dc17282031ba7d7ef3c707376545889964bea51276a050bb8e11a3c57"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "75e9f3baddaf0e4c8eb93cbffb35db757b7f22fb06a85d09d2ef9b7148b6bee8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f28250a358cb7a41030a58be2655d0e1e707ad78ecdeace12a6ad8093a25b4db"
   end
 
   depends_on "go" => :build

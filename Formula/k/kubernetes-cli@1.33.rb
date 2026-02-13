@@ -25,12 +25,12 @@ class KubernetesCliAT133 < Formula
   # https://kubernetes.io/releases/patch-releases/#1-33
   disable! date: "2026-06-28", because: :deprecated_upstream
 
-  depends_on "bash" => :build
   depends_on "go" => :build
 
   uses_from_macos "rsync" => :build
 
   on_macos do
+    depends_on "bash" => :build
     depends_on "coreutils" => :build
   end
 

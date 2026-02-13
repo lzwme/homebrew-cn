@@ -24,6 +24,9 @@ class Kcptun < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c71cd11997ea6c9d0454a6ee452c619b178dfa34918e8f9c909998a138ab423"
   end
 
+  deprecate! date: "2026-02-11", because: :repo_archived
+  disable! date: "2027-02-11", because: :repo_archived
+
   depends_on "go" => :build
 
   def install

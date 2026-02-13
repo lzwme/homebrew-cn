@@ -37,11 +37,15 @@ class Lilypond < Formula
     mirror "https://git.savannah.gnu.org/git/lilypond.git"
 
     depends_on "autoconf" => :build
-    depends_on "make" => :build # make >= 4.2 is required
+
+    on_macos do
+      depends_on "make" => :build # make >= 4.2 is required
+    end
   end
 
   depends_on "bison" => :build # bison >= 2.4.1 is required
   depends_on "fontforge" => :build
+  depends_on "gettext" => :build
   depends_on "pkgconf" => :build
   depends_on "t1utils" => :build
   depends_on "texinfo" => :build # makeinfo >= 6.1 is required
@@ -61,10 +65,6 @@ class Lilypond < Formula
   on_macos do
     depends_on "gettext"
     depends_on "harfbuzz"
-  end
-
-  on_linux do
-    depends_on "gettext" => :build
   end
 
   resource "font-urw-base35" do

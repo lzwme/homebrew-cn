@@ -20,14 +20,8 @@ class UutilsCoreutils < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a495f658272b20d8ded7e0152f10e68932de7b97103c310cc5b5327120884d5"
   end
 
-  depends_on "make" => :build
   depends_on "rust" => :build
   depends_on "sphinx-doc" => :build
-
-  on_macos do
-    # TODO: remove conflict in follow-up CI-syntax-only PR
-    conflicts_with "coreutils", because: "uutils-coreutils and coreutils install the same binaries"
-  end
 
   # TODO: remove in follow-up to 0.8.0 bump PR
   conflicts_with "unp", because: "both install `ucat` binaries"
@@ -43,8 +37,7 @@ class UutilsCoreutils < Formula
       PREFIX=#{prefix}
       SPHINXBUILD=#{Formula["sphinx-doc"].opt_bin}/sphinx-build
     ]
-    # Call `make` as `gmake` to use Homebrew `make`.
-    system "gmake", "install", *args
+    system "make", "install", *args
 
     # Symlink all commands into libexec/uubin without the 'uu-' prefix
     coreutils_filenames(bin).each do |cmd|

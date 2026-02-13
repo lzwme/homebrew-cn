@@ -3,8 +3,8 @@ class Sprocket < Formula
   homepage "https://sprocket.bio"
   # pull from git tag to get submodules
   url "https://github.com/stjude-rust-labs/sprocket.git",
-      tag:      "v0.20.1",
-      revision: "11ded263f29d812601a730b1bf3889ac0671a327"
+      tag:      "v0.21.1",
+      revision: "16a97e58197031d3c07112192f23efceb7f036de"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/stjude-rust-labs/sprocket.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Sprocket < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7e0dc64806af55890e300f862bdddf804265030a252def69c0f6866b8362c423"
-    sha256 cellar: :any,                 arm64_sequoia: "170c31bcd8787060e5570ed684234da387d6913b51b1ae539f0e97672777bacc"
-    sha256 cellar: :any,                 arm64_sonoma:  "021a12347ae5703241fe9459adba8492bf223a8cf9bc1ee6b54dfb31163b6758"
-    sha256 cellar: :any,                 sonoma:        "df594e88e2da0c27b40e5d7aa77d5ae462156579a19ebf7a39443b6563782601"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae0a420a0103fdcf88cc1a834f2ed4b23ca610e097723ab754affdbd2563aeea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c028ee791e2e699202081d69ca7b3959bbac5a2f2156527cace50d7f9e1bdf24"
+    sha256 cellar: :any,                 arm64_tahoe:   "d056b430fcaf6f9b60fc8b2525931d2b4d1bb2fa71b6faba371b5254a99d6233"
+    sha256 cellar: :any,                 arm64_sequoia: "08d4bb62e1ba6ff747cba6c1022cf1284f51ee144ab9e158b6d87e4986ff0fe1"
+    sha256 cellar: :any,                 arm64_sonoma:  "67ff5fb72318fbc590f0a079e6f0ddde07e4d57288c0ece99284c4819b89b2ab"
+    sha256 cellar: :any,                 sonoma:        "c11de257a93fa6555cc5bd1e48017c5b56f34633b3796c6442d3b8cc1d6e058e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "497e2a03569ce2a5656d8a444a71462717eccc079f007266ce10f407395123b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f02d5c72c67accddc99639905f3eda3649f6c4cce3ac5f926dee20d2f3b0e50"
   end
 
   depends_on "pkgconf" => :build

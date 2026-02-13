@@ -8,12 +8,13 @@ class Ppsspp < Formula
   head "https://github.com/hrydgard/ppsspp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3e2fcd799d8e7de99bc010dd8c80be895b4afc9a0c237e3baa7f32e0183c2756"
-    sha256 cellar: :any, arm64_sequoia: "b9fe66afc8e0ccd5cf7cd81f70457578027e80e5b98372e5ad3f79b54c8c7bc2"
-    sha256 cellar: :any, arm64_sonoma:  "31a184543316733df0dbf103c1b03724505a85b6a06ea98439d09c4e1ff50d7c"
-    sha256 cellar: :any, sonoma:        "7310a7c5ed39c5fac45c87aa99dc6663a8c0f6b9fe8ef847cfe10b7bc9a88cc3"
-    sha256               arm64_linux:   "172f34f0048cff0a1386dd25da7aa3a1d77d20b11aeb7e639bacb67612bae5f3"
-    sha256               x86_64_linux:  "2970058dad64bbdc0aac11c867034830d5d3cd4a40d42ba5477e9547b77a11bf"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "7d8507401f4e745237b48858f7ffcccccb3ef2f7efe4ae833b281dc8a3463cc4"
+    sha256 cellar: :any, arm64_sequoia: "495a5a9ed7fd17fbc17352493d5b41b59c807d4be7da0ba1e96f509de2a536fa"
+    sha256 cellar: :any, arm64_sonoma:  "a4a192083bfe3c14daf8c2f1e441c5622682dc82299760124d979e59943e505b"
+    sha256 cellar: :any, sonoma:        "f6b884e3026c9ff3baaf94442a1725a3825bb45cbf3a0cdc6be516235774bf18"
+    sha256               arm64_linux:   "c724f38ada1c053f366e892d2a6f41c725f2b2f5ce66ed50d1b177a804e1c59e"
+    sha256               x86_64_linux:  "ac927fdce2dde31ccf61ca1a3afc3c657e648d63e6e37a07d4f362d64c2a4456"
   end
 
   depends_on "cmake" => :build
@@ -27,7 +28,6 @@ class Ppsspp < Formula
   depends_on "zstd"
 
   uses_from_macos "python" => :build
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "molten-vk"
@@ -36,6 +36,7 @@ class Ppsspp < Formula
   on_linux do
     depends_on "glew"
     depends_on "mesa"
+    depends_on "zlib-ng-compat"
   end
 
   on_intel do

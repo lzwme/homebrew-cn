@@ -14,12 +14,13 @@ class Samba < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5038c21262a618d3793ba5b6f742c59ec89ddd725c4105af256b2f4b063d509c"
-    sha256 arm64_sequoia: "ee91a82bda16b4282addb5343b699d4f14dce4234811dcff8a8c25229a3c872e"
-    sha256 arm64_sonoma:  "cf5e9081dea3a189a3d1dffc01c42681577292bb8bc15695fd36a2a9cac987b6"
-    sha256 sonoma:        "1ca6190634311ff6c7bf2db40869e414c6ff3fa8e40e87eaacb7ed8361a00f5c"
-    sha256 arm64_linux:   "fb0486bf1a4b077d1edc0a12ed0f48bb7a7441b55d022676440e7988b6b99739"
-    sha256 x86_64_linux:  "ed4456ea2d610761d1634900f6b8d817214fa3d4049284ed96b6fca3b8bc5560"
+    rebuild 1
+    sha256 arm64_tahoe:   "77a12b2418f840ce5e05ea2ff9d6f65448e133351c03b281dea736473407be7b"
+    sha256 arm64_sequoia: "8157b50f197bf6c46eb2a57e9a49c81628bd1e416219c355858281197ca0afcb"
+    sha256 arm64_sonoma:  "aca5c189628f2ab49c3d89fc323bd3d556112d1f6e9bc37acb69e8c3c743257c"
+    sha256 sonoma:        "bff6fb3e5c8e803091b109fb34a658e90d7e4b5e0bc020b439fa7ff5255e4630"
+    sha256 arm64_linux:   "14b1aed9a2828af48ba6ffd0736dbd2daa1b0a84028aebfd3a041bd04302b48a"
+    sha256 x86_64_linux:  "cbed8ca67ea5b9589acb45432fc6dd36b4b56e0b4aeb7198473a9112164707c6"
   end
 
   depends_on "bison" => :build
@@ -43,7 +44,6 @@ class Samba < Formula
   uses_from_macos "perl" => :build
   uses_from_macos "python" => :build # configure requires python3 binary
   uses_from_macos "libxcrypt"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
@@ -52,6 +52,7 @@ class Samba < Formula
 
   on_linux do
     depends_on "libtirpc"
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "jena", because: "both install `tdbbackup` binaries"

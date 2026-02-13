@@ -11,12 +11,13 @@ class TransmissionCli < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9b87e790d245612dd2e8fd0ad870a9f0cbfa584638672cb9a2377e28a36dc88f"
-    sha256 arm64_sequoia: "3f71576bc3030780b5d28040ab385a2c8fb102c9bba02e77f589c4dce479e615"
-    sha256 arm64_sonoma:  "e879fc4ce079fc174720583304f728b8df1c42d6da274cc2a8d7fb00ce5857ad"
-    sha256 sonoma:        "7606941314d87058ccad12e8fc382ac578b8eb6107a28531d83ebda92a60077f"
-    sha256 arm64_linux:   "8a4f3e96438557d4e7481a63707957ce6e0e54d24b5587460fec310a899a8b89"
-    sha256 x86_64_linux:  "df9b4532ad338a71d2a1e59926103fa02c1a35911da8f138848a80c8aa7fc421"
+    rebuild 1
+    sha256 arm64_tahoe:   "c3e89a524695c4773ee5e4594af0912419a7e0cdc72af32a706aaa5cba3fc351"
+    sha256 arm64_sequoia: "86ce34a4ee0ee7d4413b74113c449036c51fd379fd19dc06b212579d9c3e98df"
+    sha256 arm64_sonoma:  "5a991f63e86c269922d297c673df29a962b38906c21935e023c808bc9b39e921"
+    sha256 sonoma:        "20248d19a18e1a0728bccb998ccfda1b966d53f6f956b0ad8863d3a5a36d7d6a"
+    sha256 arm64_linux:   "457903e63dbb2d8db28745f05f19d1817a74ea18b1d7e90fc255c9997017e354"
+    sha256 x86_64_linux:  "97a3bf40c4712bbb0054a67b2f820acef108f53f52f4bc7c9a18532862e79d74"
   end
 
   depends_on "cmake" => :build
@@ -27,10 +28,10 @@ class TransmissionCli < Formula
 
   uses_from_macos "python" => :build
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "openssl@3" # Uses CommonCrypto on macOS
+    depends_on "zlib-ng-compat"
   end
 
   def install

@@ -1,8 +1,8 @@
 class Libupnp < Formula
   desc "Portable UPnP development kit"
   homepage "https://pupnp.sourceforge.io/"
-  url "https://ghfast.top/https://github.com/pupnp/pupnp/releases/download/release-1.14.29/libupnp-1.14.29.tar.bz2"
-  sha256 "021bc19c8fc42748bf65707ab091cfe63caa57ffabd3848f43c6dcf39e0bde1e"
+  url "https://ghfast.top/https://github.com/pupnp/pupnp/releases/download/release-1.18.0/libupnp-1.18.0.tar.bz2"
+  sha256 "addda30208adcea72d38e25e36b1c9a1239333e23294597db424f9ce825af60f"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,23 +11,24 @@ class Libupnp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "efc87565dd42da1cfc5d2155fcc2f34ed7c5395dcbeb6161635bc5e6f0e297d6"
-    sha256 cellar: :any,                 arm64_sequoia: "b237cfa2e421ed3a9c9f493c71bc3ca3811476f19d2c49278123d31ee2ae65d7"
-    sha256 cellar: :any,                 arm64_sonoma:  "03c9645a0b46c8b6cefccf7f1e31e638932ad4e1b85aa8f7abaa097ccff08d85"
-    sha256 cellar: :any,                 sonoma:        "f9519a3fb69c574878b7343e50d08c7300f5de9e05c072632c9d3050d7facc38"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b97a119010d2d9d597d4dc76fb20c85c578752591458d4fc93f0f177879d9eff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3af81465ed7244683913f573be0ef981bdb09ebde4849322f0ab73e818351aa2"
+    sha256 cellar: :any,                 arm64_tahoe:   "00930efbbaac10e6f9b7a3e0510c81503c85207eb1c5c680c1218038474e01d3"
+    sha256 cellar: :any,                 arm64_sequoia: "a08dba898bc6e1600ce6afd044253b7b09e74fef99e784dbe1d1e51fc78336c9"
+    sha256 cellar: :any,                 arm64_sonoma:  "b5e588d93f0c1afab09f0728ae0b8de8338ce426033b966bbae56169d4c849ce"
+    sha256 cellar: :any,                 sonoma:        "43ad30d4f65ee7213ca17c278c31c7bca1067171df47741bafca185be206fcda"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "930b9aa2de93b28c089cf3d31c79ee745aed44850bc4297d660695fb40547da2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5ab2fa1639006bda4a3a3e51874daf392dc9452f3a92da23c5854b88a6b6e23"
   end
 
   def install
-    args = %W[
-      --disable-debug
-      --disable-dependency-tracking
-      --prefix=#{prefix}
-      --enable-ipv6
-    ]
-
-    system "./configure", *args
+    system "./configure", "--enable-ipv6", *std_configure_args
     system "make", "install"
+    pkgshare.install "upnp/test/test_init.c"
+  end
+
+  test do
+    system ENV.cc, pkgshare/"test_init.c", "-o", "test", "-I#{include}/upnp", "-L#{lib}", "-lupnp"
+    output = shell_output("./test")
+    assert_match "UPNP_VERSION_STRING = \"#{version}\"", output
+    assert_match "UPnP Initialized OK", output
   end
 end

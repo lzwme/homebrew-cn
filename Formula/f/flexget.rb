@@ -3,17 +3,17 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/90/bb/8ff16c383e808794f47df0481982d8258ef09f77ca9a0719160358c263ca/flexget-3.18.45.tar.gz"
-  sha256 "2bdaa8ef3c2e380113e0bf693fcea3a01a81481c401283f89d3c07626b97bf16"
+  url "https://files.pythonhosted.org/packages/da/63/09a4a8b5ff81fd0791347286c258932beb894baa63a5d22c3cc684d26726/flexget-3.18.46.tar.gz"
+  sha256 "441793bf419d5347c9b4aeae88b3f1b9b6516dae5ae360747dcc5dacebe05157"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "19fc78c8b68277d8ccb607038422d61b8585c5861e1cde8435967ac0b343acfe"
-    sha256 cellar: :any,                 arm64_sequoia: "0c8c40a7bb53264d429a3f6f41be3b502d3ab3e7a3c1a8df03d143fee39c3cc2"
-    sha256 cellar: :any,                 arm64_sonoma:  "be849907a6254b0a67b775faed0a9a6c711c72708f07295e1dec466a84baeb4d"
-    sha256 cellar: :any,                 sonoma:        "eb08d213e0814bce493affe137710250eea1207ea822931be79fb83935dabef3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a05bf29785516782f7ea21309cd72a907db2c89a3c19bc2a49e0409d388d7959"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6323bc85feeb5926d1e10e8cdb29769267e9b84db964ccf9890e86a0a705e41"
+    sha256 cellar: :any,                 arm64_tahoe:   "25ae16752c070f9c1c41b817110965a7c4c2ccf79ba1fcdb566a9cd4700f2ba7"
+    sha256 cellar: :any,                 arm64_sequoia: "6b09b374457f13ced1a7b0767c8d0a9845cc1ea3403ef08ad58012125d8d05dc"
+    sha256 cellar: :any,                 arm64_sonoma:  "1bbc6188554d1c7f9ce1dd51d25192ff4438feeba11ed902307490df37655ea5"
+    sha256 cellar: :any,                 sonoma:        "60c4e98f461f4d4e3fecc54bcd02dc49d1efa5eb0eb9e441b540cd19102b81d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c0f738292c180281d169366104b3b8a50899c474fc89eb493b203c3cc2ce02b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c107320a9f2020c13360284e42227d3f0790325d132cbb680e9e9d293eb9b15"
   end
 
   depends_on "rust" => :build

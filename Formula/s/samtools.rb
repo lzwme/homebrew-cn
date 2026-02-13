@@ -6,18 +6,22 @@ class Samtools < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a7b121c38e13f45ad221f61f52a21243dddae63c2f80933f01e3fc9e62094452"
-    sha256 cellar: :any,                 arm64_sequoia: "7d054f88fc3038fbd0a5c1c43e0d386e6781ffb78ec938f908b850ac37574135"
-    sha256 cellar: :any,                 arm64_sonoma:  "7f7e7acea785a7083e4eeffdd322e56d199cc8a6b06d63b62af9722babb19606"
-    sha256 cellar: :any,                 sonoma:        "d4151c2b0ff6e00c02c1c6c2e29372005ec0d6bf125d9306704530ba7edbf53c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "efc4caf278e7a0fd84e6b54f085037edf3d02cb574092e3893f1b4a92aa1a52e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62e720eba3b3f4f44c3bcefe3ce0343da6eb40412eb54dad9011f2d636d12b44"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "9dace01b0700008a8d7e35976ec194476446b50f04014dfedffadb670e948622"
+    sha256 cellar: :any,                 arm64_sequoia: "285ddbc415e9fb2b4a1f2155fa36bfbee269ac2bb6020bb1b5314ef4247fe6c9"
+    sha256 cellar: :any,                 arm64_sonoma:  "3738129dfce564701c950ecd2102e0969b27bacb6aa08c0f5604c6c330951334"
+    sha256 cellar: :any,                 sonoma:        "95e4b92fac0ea9636086e37185ea9297f8a97924f2ee523ea1c3916ac561ac25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4ece12543cbdba33b6409698a3683f2148d6e35f27a19cda26f06a7a56181d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47c382f55855c466ff8283fbfd4f6f7571de3ae0cf9f1200499feab9d4710397"
   end
 
   depends_on "htslib"
 
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--prefix=#{prefix}",

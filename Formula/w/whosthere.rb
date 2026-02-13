@@ -1,8 +1,8 @@
 class Whosthere < Formula
   desc "LAN discovery tool with a modern TUI written in Go"
   homepage "https://github.com/ramonvermeulen/whosthere"
-  url "https://ghfast.top/https://github.com/ramonvermeulen/whosthere/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "4cac844f7e43bd397b2d3145448aa90a0a11ffee5488e75197b3e082fea86ee1"
+  url "https://ghfast.top/https://github.com/ramonvermeulen/whosthere/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "fafb6a69cf64593818c2944055b7a55572715f6136aa0b97767843b68c3556f7"
   license "Apache-2.0"
   head "https://github.com/ramonvermeulen/whosthere.git", branch: "main"
 
@@ -11,12 +11,12 @@ class Whosthere < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "136a4a9932cbcf9c21f123853afed1774a87529dd480ee27984b408b8ec0a9a4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03805cb76a36dca0aa61e1ff00834def004db87d1e1a4be860670b4d35a85d39"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b485d842deb281905241897aaeaa0c1d86035c07c46346d1e2438bf2609550d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a22961ebdef5f72b697a62c6a0225c63f952382f448bcee9f66bfe15a2a245b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c90485e6adcd3fdefddbdd98c5d3d01072ad3b9060d1e0aafd4a5e22ba826eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f71111888eb72c2b6ee2561ba90a36fddcc5c858eac1c17ada779bf9e3a91764"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0946376455982d73d5113c149d7833ff5f11bf447a1a9837e555fa4131d57dac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62af42fa9124df09d566db7e4accda20b3a66755c82fce542afd159a9624a872"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ccc49388c8b0b29e32335dc7fce0a7f8d4f12b146981d244e4b34767497d39cd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "307ed960c69cd44376d794aa7d1571ec49a9cd0dacf919fd7c6d16b2d9156f13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3bd3a4796bf24bd03bc9a79629b0c379c1254c1c5a99a6139c820d102664930"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "561c04d83ef76ba0aefe83511225c4ac136ad126dfb22cd3b5171355dc0f589b"
   end
 
   depends_on "go" => :build
@@ -35,6 +35,6 @@ class Whosthere < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/whosthere --version")
     output = shell_output("#{bin}/whosthere --interface non_existing 2>&1", 1)
-    assert_match "no such network interface", output
+    assert_match "network_interface does not exist", output
   end
 end

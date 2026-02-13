@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/08/89/539651f6c2aa914734e0c64e57f38f3496bac31c347271a28b9c73166ece/prowler-5.18.1.tar.gz"
-  sha256 "69d5766d0dc36371585b243d666afa187532de5ebb506350f5dd4868cf65ecc2"
+  url "https://files.pythonhosted.org/packages/8b/28/8cf4b4b25e40aa8e7f426d128b40e4dc1d3944104d17f55327fc3f622cb9/prowler-5.18.2.tar.gz"
+  sha256 "cc6d314a39677c880d9fc203ce439d9a8c55bae7ff3dc83cfc586329e3278379"
   license "Apache-2.0"
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dde1f747bb30466eb1b23437714cc118ab11fa3ae838dd61dca254e0a4dc4bc6"
-    sha256 cellar: :any,                 arm64_sequoia: "9477b6ac984b94d332adab5beee3be8b6d76d5788eed2ce08e0378ca2bed7a5a"
-    sha256 cellar: :any,                 arm64_sonoma:  "098e8e0778829514949bf765ce4d57fc7add3ea3fa48d1d47da9f3622b07cd83"
-    sha256 cellar: :any,                 sonoma:        "95734e7c78b44f6e18f2c295a1286a3fbc7858f92c17c3506b621e602e37fb21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac2aa2529e7f96a92f70fd08c4a83aa552ae83cf52f7a2aa08cbd4fa105bf5ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ca47858659f361900bac852fb7b5e06d8476f8b2e995d5c0eae963697c68af4"
+    sha256 cellar: :any,                 arm64_tahoe:   "e36a407d6c670bea71744af9947f73364a0121e947e94a01fde50922ae27bcff"
+    sha256 cellar: :any,                 arm64_sequoia: "ffb38a24455e1b8d5d1a869d560b71fc2c3e3c0ea37de0e6bbf1aa2ed4aafa71"
+    sha256 cellar: :any,                 arm64_sonoma:  "a65460fbd6775f6254b0ca621724a012bdc5b039e7e94effa89bd2ced78b2a15"
+    sha256 cellar: :any,                 sonoma:        "8b08e09b9b8a86082921ae53c1ad06c0a0b1832ab28b741688706389c12b57bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a266873fc8807b45549775bcf1b63f8b40a61a1478a70a67611e748edefde34b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1472aaf9234ae0a826c015aafc3fd4f761c8a4b32a42390744e899d6fd4c4664"
   end
 
   depends_on "cmake" => :build
@@ -134,8 +134,8 @@ class Prowler < Formula
   end
 
   resource "alibabacloud-gateway-sls" do
-    url "https://files.pythonhosted.org/packages/bb/ca/38effb3f7e81f1abc78f0c283ba2d1a19cb9fbdc3a0ad7b8f6300a0a413c/alibabacloud_gateway_sls-0.4.0.tar.gz"
-    sha256 "9d2aceb377c9b3ed0558149fda16fe39fa114cc0a22e22a88dc76efdda34633b"
+    url "https://files.pythonhosted.org/packages/f8/e3/7c958b7e14bdc7320e4b61ec960dff662df8b1dfbf8143dde422c8a82574/alibabacloud_gateway_sls-0.4.1.tar.gz"
+    sha256 "aa568b1aff0ac8a5a83cb83c837ff419d2e6ad6c49b6967c434cc89be2a0bf1c"
   end
 
   resource "alibabacloud-gateway-sls-util" do
@@ -254,8 +254,8 @@ class Prowler < Formula
   end
 
   resource "azure-core" do
-    url "https://files.pythonhosted.org/packages/dc/1b/e503e08e755ea94e7d3419c9242315f888fc664211c90d032e40479022bf/azure_core-1.38.0.tar.gz"
-    sha256 "8194d2682245a3e4e3151a667c686464c3786fed7918b394d035bdcd61bb5993"
+    url "https://files.pythonhosted.org/packages/53/9b/23893febea484ad8183112c9419b5eb904773adb871492b5fa8ff7b21e09/azure_core-1.38.1.tar.gz"
+    sha256 "9317db1d838e39877eb94a2240ce92fa607db68adf821817b723f0d679facbf6"
   end
 
   resource "azure-identity" do
@@ -599,8 +599,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/03/48/e57ef8d7d70217e4e3599da18c55fadabfc850e91980b284b8219c49647e/iamdata-0.1.202602061.tar.gz"
-    sha256 "3615835c6a839c0584dc67ef57de3f9dbc4a626a2c95976113dfd662914a9136"
+    url "https://files.pythonhosted.org/packages/69/47/d627dc53f35c33bcd67435db785ef7035482bbaa8bc540856da4f394c27c/iamdata-0.1.202602121.tar.gz"
+    sha256 "836bbdf875b42b586ff7e2d16196c2ff83bbc932f6581af452d92eed34a1c0d9"
   end
 
   resource "idna" do
@@ -970,8 +970,8 @@ class Prowler < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/76/95/faf61eb8363f26aa7e1d762267a8d602a1b26d4f3a1e758e92cb3cb8b054/setuptools-80.10.2.tar.gz"
-    sha256 "8b0e9d10c784bf7d262c4e5ec5d4ec94127ce206e8738f29a437945fbc219b70"
+    url "https://files.pythonhosted.org/packages/82/f3/748f4d6f65d1756b9ae577f329c951cda23fb900e4de9f70900ced962085/setuptools-82.0.0.tar.gz"
+    sha256 "22e0a2d69474c6ae4feb01951cb69d515ed23728cf96d05513d36e42b62b37cb"
   end
 
   resource "shodan" do

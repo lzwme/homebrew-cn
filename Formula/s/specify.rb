@@ -3,18 +3,29 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.com/github/spec-kit"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.0.93.tar.gz"
-  sha256 "244c9ebf86b5dd6085494a42b34b964f916fa9b80c3e7622b80223e3adde2261"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.0.95.tar.gz"
+  sha256 "ff0366679e0ffe776fdfc845f30fc919269d70b3aab80457618bcda9e1e03851"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3dbde0f36acd5e2f881d8ac0c870a96cb316d98a7d2c2bc0ae2743e6c6acab2c"
+    sha256 cellar: :any,                 arm64_tahoe:   "99fb146166a11457b67a6fd91341e08a734004a8f23e42202d775664643249ce"
+    sha256 cellar: :any,                 arm64_sequoia: "df9aa390aa63d300b82377c49237b29e1a059390519fb547bed16a112c5fbb21"
+    sha256 cellar: :any,                 arm64_sonoma:  "33f6f4fd69213686edc6d75ea29ecb08a4ce5581d85b6cfc232287176b12a646"
+    sha256 cellar: :any,                 sonoma:        "d3831af7e5b2acf172c10484c62d9a6b239402ea0fc71bce86092574bc1f7de2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c37ed1d9efc0788363482164689d72d33d1e1d08fb87b37bc3fc8fa14dab8f29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a935dab3f8fe2e3bb57056ef1e94fb4fe569d21dbd2a401fca59ca8b56edc753"
   end
 
   depends_on "certifi" => :no_linkage
+  depends_on "libyaml"
   depends_on "python@3.14"
 
   pypi_packages exclude_packages: "certifi"
+
+  resource "annotated-doc" do
+    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
+    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
+  end
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
@@ -56,14 +67,24 @@ class Specify < Formula
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+  end
+
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
-    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
+    url "https://files.pythonhosted.org/packages/71/25/ccd8e88fcd16a4eb6343a8b4b9635e6f3928a7ebcd82822a14d20e3ca29f/platformdirs-4.7.0.tar.gz"
+    sha256 "fd1a5f8599c85d49b9ac7d6e450bc2f1aaf4a23f1fe86d09952fe20ad365cf36"
   end
 
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
     sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+  end
+
+  resource "pyyaml" do
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "readchar" do
@@ -98,13 +119,8 @@ class Specify < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/36/bf/8825b5929afd84d0dabd606c67cd57b8388cb3ec385f7ef19c5cc2202069/typer-0.21.1.tar.gz"
-    sha256 "ea835607cd752343b6b2b7ce676893e5a0324082268b48f27aa058bdb7d2145d"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/7e/e6/44e073787aa57cd71c151f44855232feb0f748428fd5242d7366e3c4ae8b/typer-0.23.0.tar.gz"
+    sha256 "d8378833e47ada5d3d093fa20c4c63427cc4e27127f6b349a6c359463087d8cc"
   end
 
   def install

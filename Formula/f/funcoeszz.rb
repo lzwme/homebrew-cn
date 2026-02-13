@@ -17,8 +17,11 @@ class Funcoeszz < Formula
     sha256 cellar: :any_skip_relocation, all: "b9d4a7633bfd39f84797948a471e9d231cdc7539e472dc982cc33c2f4b6d3e88"
   end
 
-  depends_on "bash"
   uses_from_macos "bc-gh" => :test
+
+  on_macos do
+    depends_on "bash"
+  end
 
   def install
     bin.install "funcoeszz-#{version}.sh" => "funcoeszz"

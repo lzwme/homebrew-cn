@@ -1,18 +1,18 @@
 class BeancountLanguageServer < Formula
   desc "Language server for beancount files"
   homepage "https://github.com/polarmutex/beancount-language-server"
-  url "https://ghfast.top/https://github.com/polarmutex/beancount-language-server/archive/refs/tags/1.9.1.tar.gz"
-  sha256 "da59c3e699f55cd21d8b178f279ccca6cf3fd4865082cccf3d8fdcc3b95ca9fb"
+  url "https://ghfast.top/https://github.com/polarmutex/beancount-language-server/archive/refs/tags/1.9.2.tar.gz"
+  sha256 "f2673b169e4d9fbb1cba4f47d8d90452023fb19921fda5565375ec9020317498"
   license "MIT"
   head "https://github.com/polarmutex/beancount-language-server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d1f5828ac0b1a29333b7d12a7e8079fcad3673a752594a94fd347db28ea4b5ae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76d30ad7ffb613561477e52bfa5ad903372599ab400ab6d76112379f99403bf0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2394fb52b69df9fecf10e868feb538d2691405cb3d8dd210c4cb034a01a13be8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ca63990ca2b0ec53ab3f24891929e8144357d0f85548a3ee6406208cfd3255c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "90831e2a53d696eb15dd5141aaf93f9dba37ae228090fb4d53d15688b3729b8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1494cec40cf840226b31e02c10e9fe7e8c5a6201b7b95e9bfe155de60a2c88a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3706c546f4094adf3e5bdf53fabdcd425bd623835e8b4cafe1802bf220abdcc3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "837a0c5b62df48ce8d1469c4dae7607423cf16566171ded5932ca9b0a3c392bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8213539154346f591d39e4e1594b75013f898c227b4e92e4dff6c67412a9db4a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "786b3c6ef59350110b0c7fc8ba0785787fd9b33004611a3b723f515e9a9c04e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9235ff896d1955d442758b350b19dbe03496ac7aed9af26f214d6cacc25c345e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f34b4c9f7b7e4ceaf9cb3c4d9c891b8f3f751af79e88db163d2538ff3846e0e"
   end
 
   depends_on "rust" => :build

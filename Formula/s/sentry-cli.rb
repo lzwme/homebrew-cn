@@ -7,12 +7,13 @@ class SentryCli < Formula
   head "https://github.com/getsentry/sentry-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fa56f21405ecfcc262a9b3f868921ba618f78cc788fd02f637b1abe9f2aa5b60"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ce35c62da124417435c7c68754594ced22f4f8a069b900e3eb9a32430f3d623"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb2df85e5ebe8e36d07cb7bd8e9614081d6e971f8cbc350112e65fffbbfeb919"
-    sha256 cellar: :any_skip_relocation, sonoma:        "22fb059ce209993229538133cf2a7d3aa9e61cc317862cea14a982615a84ce2c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "533c2b21ab425fa45d6deafaa2fca7c76437fc64f8eec1906d4ca9f48ec09c1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8cd47cc28969318c0606e431d2e447548adeca800b26d3c62000e60f7af78ab"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d604d425fc029883e78c240108ace528c73809030f5ce34d67e6d9dd378160c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b02f9f07d429f4f7c475d554d046ef80c59acf4a52462645c7784fc5063794c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8e53a72f6da7c2abee8f7b75f897ab0aa6477b65c89fc69b8dd315c5b211f30"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d5755aa7ab3c28633738feccd99c2b91682aee8a97e24e0c83ce223b00bc170"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d000c38b10b8cc3f4da6e0a1678eb437d8ea82a3f6e8995b105867806d81375"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be18dc78bc501690b1ded9a15ec0c44e5d37da1825044779457085bb66a53350"
   end
 
   depends_on "pkgconf" => :build
@@ -20,10 +21,13 @@ class SentryCli < Formula
   depends_on "openssl@3"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   on_ventura :or_older do
     depends_on "swift" => :build
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install

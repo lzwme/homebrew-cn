@@ -3,18 +3,18 @@ class Aerleon < Formula
 
   desc "Generate firewall configs for multiple firewall platforms"
   homepage "https://aerleon.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/25/5f/eadcc4108b75efa18a9d48ed0164ea27d13c69fb3297004b6c0728e6b5ae/aerleon-1.14.1.tar.gz"
-  sha256 "442306adaee42c0a28bef2202e116c2d1f7ae0473a0a34914bff63991617c244"
+  url "https://files.pythonhosted.org/packages/4a/12/213766c9101a7f849c4051190f2ac502afadbe466d47a203b5264d575973/aerleon-1.15.0.tar.gz"
+  sha256 "105150bca3d9f384049b909f6aa982d75b474e88086c18b98cc68abfd236b353"
   license "Apache-2.0"
   head "https://github.com/aerleon/aerleon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "62d3f7c40b6b0031fe592217893917623bcf349602854fded3d60baf2b0f4444"
-    sha256 cellar: :any,                 arm64_sequoia: "6d0530b071c64bdf754e2b8ea6d099a3fbe3f720544638b6acc20791a98fdb08"
-    sha256 cellar: :any,                 arm64_sonoma:  "0c95dc28b42fd09869ae81a65cbfc67be5f22264e9fc53978c7ac8622e2db231"
-    sha256 cellar: :any,                 sonoma:        "70c38da9ccb6be3ab6873d11b9379468c0c38ab5e2614ff9df394011821d8880"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d1d88d57942259243d9342c9c7482a84760ae6a9b525f4a86af65289e037715"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61d56da5396d4450ec8f398030548532dc19b40d0a2813580cb6c2d684360193"
+    sha256 cellar: :any,                 arm64_tahoe:   "99c9040789cb88c2ed53a45deed3b365f6a3d18197b1f23b025174b06c95971c"
+    sha256 cellar: :any,                 arm64_sequoia: "ecaa20148b81ac79aa0e1d161977b1f58a7b92b71d3a64c1f169a86a47ee11dd"
+    sha256 cellar: :any,                 arm64_sonoma:  "34a85a6dde1858fc427c4de139e8aecdb9dc3abbd2898f3aeae82f0bf61abcda"
+    sha256 cellar: :any,                 sonoma:        "f81c16da69983a313cfcf5f557d8ed61e72916a80ebee93a73d007fb4a0748e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "014cf630d9941bb878fcf711f8dec1815f9a6d455751ca3d3c81515610dbe8bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ac3d0a1c2a521ae8934d90a542b503dc87c264f6f252c43501520ddec9d5242"
   end
 
   depends_on "libyaml"
@@ -23,8 +23,8 @@ class Aerleon < Formula
   conflicts_with "cgrep", because: "both install `cgrep` binaries"
 
   resource "absl-py" do
-    url "https://files.pythonhosted.org/packages/10/2a/c93173ffa1b39c1d0395b7e842bbdc62e556ca9d8d3b5572926f3e4ca752/absl_py-2.3.1.tar.gz"
-    sha256 "a97820526f7fbfd2ec1bce83f3f25e3a14840dac0d8e02a0b71cd75db3f77fc9"
+    url "https://files.pythonhosted.org/packages/64/c7/8de93764ad66968d19329a7e0c147a2bb3c7054c554d4a119111b8f9440f/absl_py-2.4.0.tar.gz"
+    sha256 "8c6af82722b35cf71e0f4d1d47dcaebfff286e27110a99fc359349b247dfb5d4"
   end
 
   resource "pyyaml" do

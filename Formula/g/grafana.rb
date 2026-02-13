@@ -1,8 +1,8 @@
 class Grafana < Formula
   desc "Gorgeous metric visualizations and dashboards for timeseries databases"
   homepage "https://grafana.com"
-  url "https://ghfast.top/https://github.com/grafana/grafana/archive/refs/tags/v12.3.2.tar.gz"
-  sha256 "9d5f1de1fc74deef0344afb73961e62e6efe27a4da37574877ab76e4849be272"
+  url "https://ghfast.top/https://github.com/grafana/grafana/archive/refs/tags/v12.3.3.tar.gz"
+  sha256 "b6414bd5e093c5e6457f691e700675b8d48faf4aee9e74e887fc7ae40037f25e"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/grafana.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Grafana < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed39c79ef5158dac3100342a8fc73f17bf2513d17a72c9ed3ba8c674629aee46"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b1427afa8429ea93761dc6a18a0a46fb5fb36d3bd4b9fabc61f7fe6ca12b1fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "252a0619b8165c5256fc9cf4ca5a5557640dc7ba9874ce71bce1b391a2f19636"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5d240d644ff05ffc6afbd4f52642677c02aaa06ea5249976899af0d538ea47b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "81f2ba35d2f434e66e6a26fd6a77cb6e7d57f2a7f6aaaf5e456c1a6d8dbbce58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acbabdad02819e84890891f5c47b9aac07bf631ba30667f2529b89ecf94b8248"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db78c69ea8e7b034bcf44bd17163a48e609cdefa335b731bb19bb4d6bc469361"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2d15f49f2d3f0d0fe0620e757fc023474f430c68e323e1535250912af8bfd7f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b5a94bf1ba4f000ec78e7bb6ea1b0cbe8cb81256ea37aa18a4896a55a4b3190"
+    sha256 cellar: :any_skip_relocation, sonoma:        "18f671ffe8301a242422c211a3c231799d887baf061e35d65d4bc05b0a02e778"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0afe747d34baeaccbd0fbba34e53f050ef41801c9a3bdbdbea6d1c990f005a84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50325ffdf9990b6f4c98667a7d315cbaa3833f2730febb9ad24371bc51bc4bc3"
   end
 
   depends_on "go" => :build

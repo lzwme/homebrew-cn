@@ -7,12 +7,13 @@ class Cookcli < Formula
   head "https://github.com/cooklang/cookcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "40219811812c5808d374296d243173379770b370b8ba97471ccc873d2a7db171"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "abbd78c4f7ca3572322b7ee0cc619ff5c6d1255d225a66547f05fa6f0a4217a1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7e375a0accfb53ce1048dbe8978440b7fff116ec86181fabe151e67ffa6b187"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5074043fb4fe76951c64eed1ae009d7326303bd0b4ca0ca0f1bbcb11b608047d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "799be5e45205795be3a351af74151caf4483fc7141727fc568ba6184c02fe0b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d362ad18ae0e26d60518898fcbdc81bc3e2c3fa9c05a3995fc13f5e60ffe84c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d22a71074b4bad682564aa3720458b37467fd1bd3ab8aa66e4a47ec84195112e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49a6bb30e53e1766b1a1cd394b5653e1bdb9eec7e8c8ba1e66cd3051b8e0b41d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d2b469ecc9df103bf065053fb15627a3916cf21a0551d16f879def5b1194d86"
+    sha256 cellar: :any_skip_relocation, sonoma:        "84f9a2ad12329e1e23caaa31d121e752b3252c831fc21e32010e3e01b44d5363"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b9c2ca8195263c2c9ce79581adde3e0f75214dd90c7c3134d3a3573c4623357"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34181ee9a0509d48f970974d81f1a6f008b34d7a30269d306d2e12643ce4a30c"
   end
 
   depends_on "node" => :build
@@ -23,9 +24,10 @@ class Cookcli < Formula
     ENV["OPENSSL_NO_VENDOR"] = "1"
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
 
-    # Install npm dependencies and build CSS
+    # Install npm dependencies and build assets
     system "npm", "install", *std_npm_args(prefix: false)
     system "npm", "run", "build-css"
+    system "npm", "run", "build-js"
 
     # Build and install the binary
     system "cargo", "install", *std_cargo_args

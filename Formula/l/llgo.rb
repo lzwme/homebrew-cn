@@ -21,6 +21,9 @@ class Llgo < Formula
     sha256               x86_64_linux:  "e2c6cd5a0254e48ad57576576f12fc0a5d49c7b607fcf2b33f3cacdd742016ac"
   end
 
+  # NOTE: Can be undeprecated if upstream adds support for Go 1.25+
+  deprecate! date: "2026-02-11", because: "uses deprecated go@1.24"
+
   depends_on "bdw-gc"
   depends_on "go@1.24"
   depends_on "libuv"

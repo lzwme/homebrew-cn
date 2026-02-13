@@ -1,17 +1,17 @@
 class Tweakcc < Formula
   desc "Customize your Claude Code themes, thinking verbs, and more"
   homepage "https://github.com/Piebald-AI/tweakcc"
-  url "https://registry.npmjs.org/tweakcc/-/tweakcc-4.0.1.tgz"
-  sha256 "16a402ce7f45c1283e703226e26ce87e6e2b44d8598db0a6779037e415047535"
+  url "https://registry.npmjs.org/tweakcc/-/tweakcc-4.0.2.tgz"
+  sha256 "410aaac0ccf8a086167e7f20341ce22bdd347212c2e9c98d8819273ba84cb7df"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c701bae569f6295c19dc5065dcbb3e0d83ae2dd72a4749b304f923c832cdb21f"
-    sha256 cellar: :any,                 arm64_sequoia: "48cde2f4f3f71cc266851ed3858f69d48e2582c85a9c69ad42581153e69bf938"
-    sha256 cellar: :any,                 arm64_sonoma:  "48cde2f4f3f71cc266851ed3858f69d48e2582c85a9c69ad42581153e69bf938"
-    sha256 cellar: :any,                 sonoma:        "f24bdd6b78cd84737e76028a8782449de1a1be02793c4a339fb2a77e386e4a53"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a431e67c8441c5cf747991dfa1f1cc4e3bfe2701b3a836b1700dfcac4efa1e92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d7ebbf493a45c6823d397c609dac85c4975b042f3c9b53d8ccecff6d638f4ba"
+    sha256 cellar: :any,                 arm64_tahoe:   "caca37f474e06494ae85045e7b2e46be3e4c7d372813dd6ba2027f8307dca28c"
+    sha256 cellar: :any,                 arm64_sequoia: "2a72e2f174d1e9b2cba68b899b8d05978caf6953be86267f4b3961c25e0e817a"
+    sha256 cellar: :any,                 arm64_sonoma:  "2a72e2f174d1e9b2cba68b899b8d05978caf6953be86267f4b3961c25e0e817a"
+    sha256 cellar: :any,                 sonoma:        "930c0f7646df6d06a53afbc43f6f1eece6998befc629b3c40bd20f77e2bc8f04"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "39b85c54f366db6b9f7476f7c97d5745f8d79938608352231063ef268aad194e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5427da37a487ced3f4c103776c43d773559fb1f8db47f8dd9b26ce28e0617db2"
   end
 
   depends_on "node"

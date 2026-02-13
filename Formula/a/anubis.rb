@@ -20,12 +20,15 @@ class Anubis < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "727c67043fb27a109674b48087e82c171bd24e056a020a66fefdcf9e4efdd6eb"
   end
 
-  depends_on "bash" => :build # error: shopt: globstar: invalid shell option name on macos
   depends_on "brotli" => :build
   depends_on "go" => :build
   depends_on "node" => :build
   depends_on "zstd" => :build
   depends_on "webify" => :test
+
+  on_macos do
+    depends_on "bash" => :build # error: shopt: globstar: invalid shell option name on macos
+  end
 
   def install
     system "make", "assets"

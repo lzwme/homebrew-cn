@@ -4,6 +4,7 @@ class Ghostscript < Formula
   url "https://ghfast.top/https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10060/ghostpdl-10.06.0.tar.xz"
   sha256 "3602056368cf649026231e2d65250b5860c023f3d4a0d9c35e6605e28e543ec1"
   license "AGPL-3.0-or-later"
+  revision 1
 
   # The GitHub tags omit delimiters (e.g. `gs9533` for version 9.53.3). The
   # `head` repository tags are formatted fine (e.g. `ghostpdl-9.53.3`) but a
@@ -19,12 +20,12 @@ class Ghostscript < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "b2b8517f38378c0a6f8cb8ef1eca487945f8324ac2c0a41456013ff3b2c45c8f"
-    sha256 arm64_sequoia: "44c53ae9203c512492b2fbe89d0620c9a25062bf4a969624b67f790215426b78"
-    sha256 arm64_sonoma:  "5957043b1e9a1b37b37aed5cee64687c0160b6f9732aca55b525520f25c20319"
-    sha256 sonoma:        "da097e4d11815b39857a6cb0065030fc2cb99d22a68003058edf187e43416902"
-    sha256 arm64_linux:   "524123d747b5b4d207735a6ef5d1d6348211fdf686ca6be9875e2e5c494332cc"
-    sha256 x86_64_linux:  "c77b2fcb699d7e7d92546e3361dae87218748d1ffa564a470c927fc5a1e4169c"
+    sha256 arm64_tahoe:   "36245de09fc9100dff794142e7ca847b465d24109c3b4e66fcda28e8818850c1"
+    sha256 arm64_sequoia: "1aeb2dae71bdcd521ef298e114b49ba4fce87b47865aa86cac97a449d2870d63"
+    sha256 arm64_sonoma:  "2c4c3bd4bdded514714ffc1ed0f554f7399eda311d3df64af1a45e5219b41d20"
+    sha256 sonoma:        "1849aec43a04e46e21b370fdeff7efd1cfcac63d017c9fc44dc235e6f2fa47af"
+    sha256 arm64_linux:   "c81897d05d33d36448bb7e9d4da9ea0d30dd16ababdd5265662e8ebec296d3ef"
+    sha256 x86_64_linux:  "0c0ab563da757f637d27ac01d11013738701e3fdeef696e89ed878de66c5cdca"
   end
 
   head do
@@ -50,7 +51,10 @@ class Ghostscript < Formula
   depends_on "tesseract"
 
   uses_from_macos "expat"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "gambit-scheme", because: "both install `gsc` binary"
   conflicts_with "gerbil-scheme", because: "both install `gsc` binary"

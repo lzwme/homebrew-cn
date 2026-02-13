@@ -2,18 +2,18 @@ class GolangciLint < Formula
   desc "Fast linters runner for Go"
   homepage "https://golangci-lint.run/"
   url "https://github.com/golangci/golangci-lint.git",
-      tag:      "v2.8.0",
-      revision: "e2e40021c9007020676c93680a36e3ab06c6cd33"
+      tag:      "v2.9.0",
+      revision: "72798d34b1eb36745915b0d4eea5c2b3b31bdfe3"
   license "GPL-3.0-only"
   head "https://github.com/golangci/golangci-lint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48a1896101fccaf8eb0e499fa57cfbccccd9bcbd02dac1e21f8588fd62db1d7f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27b696d692604a802cb4e854af48cf63b84f90f1a57fdcf4492cccbb32728edd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ccc525927eeb9b9a4818ab08de8afc24cbaeb0a36d3e8b229c534a1c401361d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b7e19fc5c021c8221b8a4e659289447a131505c21cd94f467c396a097aaae94f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "96e0a07ed2009f86e638aff478ffcd1ee0b2a07557a7e08dd9bbe0e94f2c991c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1a68dffae26d225a535a75814790c762750b5e3706ea90643e7ebbaa446db0a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7111ec96e2d2c16d6094231fb8d238b0e02764d68d8094acdc811eec74d09855"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0907a899f37c733f0498d26e795c56e7d3049ee1d56cfa91029ad5250a68265"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02db6ad69889b36a9545ff7967d68267abe13554a1ec6efe3fc54564515aab6a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b258aba8244482ce420f52414fda63276d65142d26e502f98496fd7a9ed123d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "045b7515066c7a8a3409fd3e5cd5ce2a64cf97acaa7d7785dd093701b70a942a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56050e07ad7ecf2af73433ac9ce02a6526fc8c91d3000121b904482d782cd6d9"
   end
 
   depends_on "go"

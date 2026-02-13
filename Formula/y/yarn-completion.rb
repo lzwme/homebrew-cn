@@ -12,14 +12,16 @@ class YarnCompletion < Formula
     sha256 cellar: :any_skip_relocation, all: "e743fe4680eb970207cd4a05ec2f2482f1c3baf96ae04827b75bffb29afd78be"
   end
 
-  depends_on "bash"
+  on_macos do
+    depends_on "bash"
+  end
 
   def install
     bash_completion.install "yarn-completion.bash" => "yarn"
   end
 
   test do
-    assert_match "complete -F _yarn yarn",
-      shell_output("#{Formula["bash"].opt_bin}/bash -c 'source #{bash_completion}/yarn && complete -p yarn'")
+    output = shell_output("bash -c 'source #{bash_completion}/yarn && complete -p yarn'")
+    assert_match "complete -F _yarn yarn", output
   end
 end

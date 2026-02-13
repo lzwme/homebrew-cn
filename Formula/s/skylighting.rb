@@ -7,14 +7,13 @@ class Skylighting < Formula
   head "https://github.com/jgm/skylighting.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7be4bf7768c7467656cccdcc5a50fc62309d752c3fa84ad732a81ab481cf5725"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94130797e5030be1f9205ccf90936b394023998fda4411a9a828ddf1c0f7f74b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5604c19fbf706cfec16847827ac7082e5411204bb4e67f929955bf72e24e1ded"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "349e25915741331c7f6982402dce1d6a5b5d85d1505701fe71c6f265198a4eb7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "46ace354ae631044134268037344d1b2f3d44510bcfb60ca37738b8f9d83cc26"
-    sha256 cellar: :any_skip_relocation, ventura:       "8040d0df7ba15d49dc5aed911c5dab1014eceec887af27fea2dbca5c6a8c9d06"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff15b8cc26e8d8c88e05d5e4ed9de474c2525a59cb2c1f1c886765506282f601"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3c54aa4802ff828fd7b6dc738e429c0394a686bbf00c43705e2f559ae2ed3ff"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "578bf137b5b3a6746a0c9a7f59f1fbb359f3b52929380df007a38215be404745"
+    sha256 cellar: :any,                 arm64_sequoia: "d90124111939333aabb4312d293b703e0072e7053f0016847d182a6d662df880"
+    sha256 cellar: :any,                 arm64_sonoma:  "048121dde59dab10b9f13d24b508b016ef66e37e059b7ef3863f3cf85e99cce9"
+    sha256 cellar: :any,                 sonoma:        "a64aa906c54e412dd6502b3665f80de0889fbc9cf3b08b3e7837ad262e8122bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2bd2f36894634ab7dd46fec645e8fd73431aa5f41408400ac81ba94edfe48f44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "522a3b95ef943c51ed6b5c1748380b1a3daeec6e1dc960f0b7ca95d341352cce"
   end
 
   depends_on "cabal-install" => :build
@@ -22,7 +21,10 @@ class Skylighting < Formula
   depends_on "gmp"
 
   uses_from_macos "libffi"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155

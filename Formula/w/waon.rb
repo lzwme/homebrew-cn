@@ -24,7 +24,7 @@ class Waon < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "sox" => :test
+  depends_on "sox_ng" => :test
   depends_on "fftw"
   depends_on "libsndfile"
 

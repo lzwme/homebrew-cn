@@ -18,8 +18,11 @@ class Blink < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd87330b12e6d29f51065b58eeef882b7509537e145218f5d49b3102caf6e53e"
   end
 
-  depends_on "make" => :build # Needs Make 4.0+
   depends_on "pkgconf" => :build
+
+  on_macos do
+    depends_on "make" => :build # Needs Make 4.0+
+  end
 
   on_linux do
     depends_on "zlib-ng-compat"

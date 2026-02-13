@@ -12,12 +12,13 @@ class Scummvm < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9b8b41e00303a44fab6074eeac13ef183c6cf3fc167cc934e705dce5c1e94bbe"
-    sha256 arm64_sequoia: "2825c53a1f67cccede84c19113d28a0612740bfc4b88c65d7633c42d86568669"
-    sha256 arm64_sonoma:  "35897da6949b78259eaf3da7c588bc6285446edd75793fd369511c73c753106c"
-    sha256 sonoma:        "a5195517e33e764df64776544cbfbc820b789cf96e082b8bb3b83f2c72bd2413"
-    sha256 arm64_linux:   "1297386d01e756231a59fa06d3f669524dfee8311a40b5772fc479ecf646ec14"
-    sha256 x86_64_linux:  "659126a0d7cdb853b58356323b348f42a219fff87df3dc259d2b04bef0a9921a"
+    rebuild 1
+    sha256 arm64_tahoe:   "ccfd9caf1bad9cc2fb4f185708f9059d4edb10df44f7b37a925aebd152743ad9"
+    sha256 arm64_sequoia: "97b75edbe0676df112394066a2242151d9ca17b60fdd7959afc8a52fa6fe7bcb"
+    sha256 arm64_sonoma:  "c01f5c9d27412bfc2fd5ee5693c6e1d6be794fcc736e8082fd8f9e092a346fca"
+    sha256 sonoma:        "2cf0d7b5a425ae4cb19e0750444ddd2d457edea92cd56c302517a342c9948b17"
+    sha256 arm64_linux:   "1ef85a22c97e98bfcbf12f0f344c65dbc9068533be44875ab20523a0485a7804"
+    sha256 x86_64_linux:  "8ebf87962c1701bd2344c717a6d1a0637f896111ee2e54ec78e59e6b3cec7f1d"
   end
 
   depends_on "a52dec"
@@ -38,14 +39,13 @@ class Scummvm < Formula
   depends_on "sdl2"
   depends_on "theora"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "musepack"
   end
 
   on_linux do
     depends_on "alsa-lib"
+    depends_on "zlib-ng-compat"
   end
 
   def install

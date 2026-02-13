@@ -1,8 +1,8 @@
 class Rv < Formula
   desc "Ruby version manager"
   homepage "https://github.com/spinel-coop/rv"
-  url "https://ghfast.top/https://github.com/spinel-coop/rv/archive/refs/tags/v0.4.3.tar.gz"
-  sha256 "17f6a3ee9383236993a7f43201ac55642e863b959426b4980bab669ceb7f4174"
+  url "https://ghfast.top/https://github.com/spinel-coop/rv/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "8bead2252779000d56f115ef599dda2371802cb6bb357b1560fa51be0173a30b"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/spinel-coop/rv.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Rv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "84f0e681b9d37b0677e8c04eb039d74c7d96ccbfc6078cec17fd9cc362aafd9e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e4ab615cd57b240b2b578d3fc24fded5fbddf4ed28051d568c31ae0021977f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61735c434d247a79d431a9b39e00e9d145510fabd159b13b08a0ccbb933947b2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a18dc149176da5e2e9ae86840c0f825c89d0dc9a13d1792df7c99a7dabb90fda"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2fe1fd4f18a9d165192ab3e227f6bd3e65a54956961a5ab8f660a53acde8cbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc62da14aa7c7677f9ff61dce1fc42d075eb06a41644f5bee2a9cd1c62140985"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4e876d443519a58e8e50517f204aebd087c1a0a7ce12508e857d7f09547425a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92c32f80f9e3e4146fb8f3bd40a4d43e2a1b1528650b3eac9f79fadfe54662d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8cbc5b8705b0938e9d21998425411679f1160133c5c4163d4c2cc03bcc167eb7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "40920ec71a5a8dedb022f9c97f15951ab04907626974fa2963d1b7eec66d960e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f43e1d43e89a23b837b5e7c7446393a19764c66c353ddd9696d3f40613444b49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a6fb185e7b0915ee02f5ee1a75ad6ae77b3ae4b2e767b95c68f2577c5571563"
   end
 
   depends_on "rust" => :build

@@ -7,18 +7,22 @@ class Ponyc < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a48ba74fe68aedda5d1bf06ff7d6a9e040b2cf1aaaa9585d9d562eaca8f2f94d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "611522401eb16fc9056bf384ab160f8c22dfede675822ddfbac2819e6cc63f85"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c7363543033e2ff73ecf95cb576f9766ab8dc48c59ace413553200db33ea1d1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "580688ca04f5fb8ae85a7c1dcc92232ccd4398c4187b3b68af4eb4c756d70e9a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4d386b26d296eb47bead4e78c23ef17276d0e94fc913832e7007bc7c7fd358c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42ab7da0bd4366355c50e12323388c4c7d7a8f84d73d07793bb368f26e112328"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a636d83fd47d1e0cc3bf94e560d4cc9d97df93a86a589bd0e4fbc9a7ec237dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fdcb0c2dffc7885b68162de05d81cac4d8af6a96e78b82d83adcdbbda717614"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "741d8ccdfac007ce002896acc782bc5b30cbca76954d3fa8e25afdb0e7088e3d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "618e49e9450dbc0dadd39cb99b70032950cf2ca7b43bdeff8730783c5e1e5016"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "009e916f95208b4c053b3b8753d14fa74169ffd4dd2363404f119151800480e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fbe9febf895396133a8d801e0aa3998718301b49fa1f242058a22a71e4bb398"
   end
 
   depends_on "cmake" => :build
 
   uses_from_macos "python" => :build
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     if OS.linux?

@@ -5,6 +5,13 @@ class Radicle < Formula
   sha256 "a4806357baf162263002a24fc24660dfed7a43d566a24fc5428b0948d67e2011"
   license all_of: ["MIT", "Apache-2.0"]
 
+  livecheck do
+    url "https://files.radicle.xyz/releases/latest/radicle.json"
+    strategy :json do |json|
+      json["version"]
+    end
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f82b1f36f71d6c52b290713efc2b47b4f6c020cb298ce6926938dd9a391dfbae"

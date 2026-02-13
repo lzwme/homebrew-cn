@@ -5,8 +5,9 @@ class Libgig < Formula
   sha256 "ca2be8ce5e0969f90c2df76e03d499f5e27fb5021edbc587de182ff27e8efddd"
   license "GPL-2.0-or-later"
 
+  # Using HTTP rather than HTTPS to avoid SSL connection timeout
   livecheck do
-    url "https://download.linuxsampler.org/packages/"
+    url "http://download.linuxsampler.org/packages/"
     regex(/href=.*?libgig[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 

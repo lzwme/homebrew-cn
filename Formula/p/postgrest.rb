@@ -12,12 +12,13 @@ class Postgrest < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e60d66cc3c7b206b69cc5769d46ed88843ce80f3adf88ef4a50b68f39db8a867"
-    sha256 cellar: :any,                 arm64_sequoia: "8e5204b14b3e8f289eae4b9806b70ee2e8f27459808c183e55c536faaf0839be"
-    sha256 cellar: :any,                 arm64_sonoma:  "58f53949198c5ba909dd8f4047e47d5a5368a669e723c079e6a3215e26b294ec"
-    sha256 cellar: :any,                 sonoma:        "3fc62a418ff3b53e84b8d281969de2b371083d6e0d6b19f0885d45469973f7ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be29b4ceab0e6af41517426e2a329cd4feb826d674b39f5c65f814476e2a9aff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dabfd19f5a232a2e1cf14147d9c52c107568471b32ada76332a6a8aaa4709626"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "86059bfb56c0261bbfbbc5533da53282da17944423e297f00f128e12b96dc0e0"
+    sha256 cellar: :any,                 arm64_sequoia: "1904bc01270010b9253093eb5cce95c2d96ce2c73e9ddc7186f7de027763e1b2"
+    sha256 cellar: :any,                 arm64_sonoma:  "11b974a2fa881e79a99641f01446e8ba90ac3fa51b96bcbc206d8654e103754b"
+    sha256 cellar: :any,                 sonoma:        "084942aa0852c89ba2e7b33cdb0b84d948b35d04552bc947c4a10a11955e0032"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dce853f3635c3b225d49446e36891f24af93d273f00e1f17033985512b128de1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a1f56e76ec3240d0905431a3206061385acb66338c9ff0d996739c62e71def5"
   end
 
   depends_on "cabal-install" => :build
@@ -26,7 +27,10 @@ class Postgrest < Formula
   depends_on "libpq"
 
   uses_from_macos "libffi"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Workaround to build with GHC >= 9.10
