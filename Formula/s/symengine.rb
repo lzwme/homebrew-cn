@@ -7,12 +7,13 @@ class Symengine < Formula
   revision 5
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "57800ea3d94e7eb3ec6443bd9ea982a88a40100f9ab923973a0fb8540205b8c2"
-    sha256 cellar: :any,                 arm64_sequoia: "2bc7ffab436a6ad12e275e20c4d385092ac053929cfa435e9b8ab06e829f89ef"
-    sha256 cellar: :any,                 arm64_sonoma:  "3c782fe53199f44bed129662e8617341ca1893226dc449a054335a166e179725"
-    sha256 cellar: :any,                 sonoma:        "aa8e7c7d6984e8967cf4da933553d3973ed6cca1e4246956ffc493d8b8e1d73d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "867abc9ebb5f009dd86def716593d5554d8b89776ca71dd9c64366fbf089e5e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e60e6610384dc8bb9d2f45738ccbf733220c7d033072d42198963c1023c53ecf"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e243f21786ba3bc3805f8380e945326946a3ffac29c12687dd502db5a94e4f01"
+    sha256 cellar: :any,                 arm64_sequoia: "a0acada4f3c463042fc246aa4639e0766985e7752672866b1f6ac3709eb7cc76"
+    sha256 cellar: :any,                 arm64_sonoma:  "fc4e06c10863cb7622deff1930039588f85e36707815bd07dd0f7c08148ff27e"
+    sha256 cellar: :any,                 sonoma:        "94ccb5e8ee69a585599c0eff75027a8d94832c866489c2a803ab166a1ee54fe6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fbb496d756a6433d29ec226bfcf8ecda59eea22a2d8960e356480f88acb8396"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac61e019a0c4f7ec72371bea505bc48fb9d20d43ff61e87b332c147fba63f1c2"
   end
 
   depends_on "cereal" => :build
@@ -25,10 +26,13 @@ class Symengine < Formula
   depends_on "zstd"
 
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "z3"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install

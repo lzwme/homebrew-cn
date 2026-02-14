@@ -8,18 +8,21 @@ class Solargraph < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "de2b5ae2215048580bee20fcf06f997308802199b744b0f1044577eea79ddaa5"
-    sha256 cellar: :any,                 arm64_sequoia: "41a456516443f9280bcbdf08ee6bc5369aa5d31b4f4f56f1a5b85e8d4d81f7d6"
-    sha256 cellar: :any,                 arm64_sonoma:  "20c3023c9fbfbf468e1bbb37abceeb6373244155b2759e01cea255c8e4deaa1d"
-    sha256 cellar: :any,                 sonoma:        "1ed7f4fbdecf7262acffd74d020a188616f0cf36a0f89e93fbc2d84bacc70e58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "90ab5950530d16e54f51ad731ce5235b2b187f749a02afe7891a39b4cad713e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70e8460037225569d5269a99511eeee2dd0c145ce41caed6114bbb8a6f83c356"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "a47d973a60f7b0c90ca64c2f5303dcb715e15b6a67016d5e5c8c955b50666dde"
+    sha256 cellar: :any,                 arm64_sequoia: "21528962304ec1ce311d2e8ef81cf6e4c7ed2110ba05b3850f67b0c16cb5ecb8"
+    sha256 cellar: :any,                 arm64_sonoma:  "206c61bc651b6e8c3dda0186ad9eab6c670d916e4651a26e1eb65c83532f2a49"
+    sha256 cellar: :any,                 sonoma:        "0f81ef3e92622a05e4f5692e83f1054ce69325b5054ab44e06f6dc068c42cd1a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1b6cc76947d67660a41908885f04641d3270faff30f1bdb08c0bc27f35a4ca4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6984aa7b9a852f661621069b3c461625581a2003bc8820de98e086e36652d33"
   end
 
   depends_on "ruby"
   depends_on "xz"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["GEM_HOME"] = libexec

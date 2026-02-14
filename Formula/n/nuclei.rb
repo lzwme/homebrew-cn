@@ -15,9 +15,11 @@ class Nuclei < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "da2edcc38d0b3890b1322eff17eb7171657f58f7ab56ff5a6a2fd9f575949455"
   end
 
-  depends_on "go" => :build
+  # Unpin go when nuclei supports Go 1.26, in release including: https://github.com/projectdiscovery/nuclei/pull/6841
+  depends_on "go@1.25" => :build
 
   def install
+    odie "Unpin go@1.25 to use go 1.26" if build.stable? && version > "3.7.0"
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/nuclei"
   end
 

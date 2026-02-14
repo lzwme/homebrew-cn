@@ -13,12 +13,13 @@ class Squashfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e2cee5166e1e9461ab5cecb429bdb1bc86f0a345b5fb4ae3b55a5dc8b81d1037"
-    sha256 cellar: :any,                 arm64_sequoia: "67c4ba832d3d8e03f6160d2d287d11825e13685b0a11a716564fb3f041dabf6d"
-    sha256 cellar: :any,                 arm64_sonoma:  "489b9cf9e5228bdd6b8176ff8b43e8cf3a1dd117bdda0d0bc6d64f52d32408ba"
-    sha256 cellar: :any,                 sonoma:        "ce60ff8f9345d6cdc7d5f26f4deabdb75d861138f6068d7952334e399161d24f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "315c19c678535e71df91af9f0cef727b7080bd9c75f8e5c86bd28fd8cbece29b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b070dd272ab724f2740ca86f476b2d3d44facdfa331523360b8614ded0772ce"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "d06e5f17cf7235d2dcd274fe30cdca11ee1c9ab85fb6c3c3e1e9da228882e300"
+    sha256 cellar: :any,                 arm64_sequoia: "cb58e3a0f2f10527b378d10ba3cefe218e83581ac0de3a3855f852cb03644693"
+    sha256 cellar: :any,                 arm64_sonoma:  "f40a37fd3e22bfd8dbb3d5d9b8eaa6b05404402f77fd0f32f4c7e582e7266156"
+    sha256 cellar: :any,                 sonoma:        "cb1c63bed26142887ee3a803c7707c44cb022cffdd00336db65da70009d90f62"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "55850287f13c7e1902cd00466ff8c32162a70312e013dfab9dc79187b0281d89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b2c587b9bdee5c8b461ee022f724b0c2f83edeee935d18d6f8484e4713df3e8"
   end
 
   depends_on "gnu-sed" => :build
@@ -29,7 +30,9 @@ class Squashfs < Formula
   depends_on "xz"
   depends_on "zstd"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = %W[

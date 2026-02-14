@@ -4,16 +4,22 @@ class Sratoolkit < Formula
   license all_of: [:public_domain, "GPL-3.0-or-later", "MIT"]
 
   stable do
-    url "https://ghfast.top/https://github.com/ncbi/sra-tools/archive/refs/tags/3.2.1.tar.gz"
-    sha256 "2558683c217ad2318833ab7731939617ed91dc79a6b1dee92bf88b56a1dc142a"
+    url "https://ghfast.top/https://github.com/ncbi/sra-tools/archive/refs/tags/3.3.0.tar.gz"
+    sha256 "3bfa26c5499a94d3b2a98eb65113bbb902f51dadef767c7c7247fc0175885a9a"
 
     resource "ncbi-vdb" do
-      url "https://ghfast.top/https://github.com/ncbi/ncbi-vdb/archive/refs/tags/3.2.1.tar.gz"
-      sha256 "535511984928ec5bac02a61fc6b4d1ca72a5b69c742f4882eabd32ed3a97621c"
+      url "https://ghfast.top/https://github.com/ncbi/ncbi-vdb/archive/refs/tags/3.3.0.tar.gz"
+      sha256 "36b3467affd53bea794e3eeb5598619d820bc726dc68751a189181ac7973047d"
 
       livecheck do
         formula :parent
       end
+    end
+
+    # Backport fix for newer libxml2
+    patch do
+      url "https://github.com/ncbi/sra-tools/commit/e2b9d82b59c2636a1224995dbb7164c0b1391c77.patch?full_index=1"
+      sha256 "47a5b9811ef4745ebce51a7c7ed794855131702d93e8272385d326ef9cd0c52f"
     end
   end
 
@@ -23,14 +29,12 @@ class Sratoolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3915f52ef559a82d3b6947c64ea62793ce0089a29ba79ad032c87c602abc4ceb"
-    sha256 cellar: :any,                 arm64_sequoia: "3f638492e68e21c284a4aeee221d5e169b1984a75adf1648fa33d8481dd354f9"
-    sha256 cellar: :any,                 arm64_sonoma:  "5eb9c8506a1ad99e5f5b929314e807018e7e0ad2562cee2bfe55f6fe3a9f49f7"
-    sha256 cellar: :any,                 arm64_ventura: "111636d770e9da3b1b0cd652f0cb46b7fb48e283e553859fb04aebc6078d7b3f"
-    sha256 cellar: :any,                 sonoma:        "f6b0a3c7e7ea88755d2cb2f33a58c8b93565f8ed8024f9b3a3709425775cbe8b"
-    sha256 cellar: :any,                 ventura:       "4d6f5a48ea2ce178703d4ec93bbaa589a3e3c86751a9a8eaf95dd6faac75590a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "244c56dd90cfa2a51e4c55065a58dfee0f39a82a06f5547815d412a339111965"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "580d70086da44a3bab3152314fe4af79a710f04dc140bb032c13ee26b5323211"
+    sha256 cellar: :any,                 arm64_tahoe:   "159cc6b0addb50eac67eb61286eeceb03d14c50715fb440e9377fe8e555b7edf"
+    sha256 cellar: :any,                 arm64_sequoia: "e66397ba8dc07da3cd6aae4959b958b2f61fe6bba6452e758283f3843ec07aae"
+    sha256 cellar: :any,                 arm64_sonoma:  "bcf92778414d9e3d9b1099eb742be068175134d11c42110ab9d67fc94fdeae5b"
+    sha256 cellar: :any,                 sonoma:        "25290dba86c7b7b2e9fc2b2d79d74db9dfa329d5ed7c4eaaa2bfdc43370bb716"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b64ea9757dcd7c669a1b2f048beccdf68b8f1cab8ee360a6adfd65a1e91e8bc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fae8a4dfcb3e32aa9e81d70d66759019f0fe5de66d5324e376bcce443a4d6a5"
   end
 
   head do
@@ -50,18 +54,6 @@ class Sratoolkit < Formula
     odie "ncbi-vdb resource needs to be updated" if build.stable? && version != resource("ncbi-vdb").version
 
     (buildpath/"ncbi-vdb-source").install resource("ncbi-vdb")
-
-    # Issue ref: https://github.com/ncbi/sra-tools/issues/1096
-    if OS.mac? && DevelopmentTools.clang_build_version >= 1700
-      # Fix to error: static declaration of 'strchrnul' follows non-static declaration
-      inreplace "ncbi-vdb-source/interfaces/os/mac/os-native.h",
-                /^(\s*#\s*include\s*<.*>\s*)+/,
-                "\\0\n#include <string.h>\n#define strchrnul sratk_strchrnul\n"
-      # Fix to avoid fdopen() redefinition for vendored `zlib`
-      inreplace "ncbi-vdb-source/libs/ext/zlib/zutil.h",
-                "#        define fdopen(fd,mode) NULL /* No fdopen() */",
-                ""
-    end
 
     # Need to use HDF 1.10 API: error: too few arguments to function call, expected 5, have 4
     # herr_t h5e = H5Oget_info_by_name( self->hdf5_handle, buffer, &obj_info, H5P_DEFAULT );

@@ -3,19 +3,18 @@ class Bzt < Formula
 
   desc "BlazeMeter Taurus"
   homepage "https://gettaurus.org/"
-  url "https://files.pythonhosted.org/packages/7c/09/6939b744b2d1ac11d1f5bf8270308480fb389fa92035e959925e0f1cae58/bzt-1.16.47.tar.gz"
-  sha256 "8f58479b64f48aef9ef5a486d38a5fc4b29bc385cf73c21762c90ae890a68b97"
+  url "https://files.pythonhosted.org/packages/f1/9d/24c3ba99f424f1c4db484d0e0b88c09d1ed02295c9ac0826a7c9d596de4c/bzt-1.16.48.tar.gz"
+  sha256 "3420a155d832f944a0325afe99a12e689a865696a6787eb370d3e17bd742ff4f"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c794afee9b985c56fd8c6b007df1263b2eb344c8000fac1920141c300828783a"
-    sha256 cellar: :any,                 arm64_sequoia: "48dc570824f33dbdc393807327b6b7d4d38e4ea792cec1bafcf46a0610e35c67"
-    sha256 cellar: :any,                 arm64_sonoma:  "1f20035aa54fb0f3792c1735d55d0f232ac0b23ef58909ca1ff4911001b5b162"
-    sha256 cellar: :any,                 sonoma:        "74fe9bb9633ef630bf1993278038764136ef7797e8b56bfa855627fd169a96e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d03b9d0c7d7c4fb8785f7c0585142ffa8e88da82dbd82c6885a6f3c8b68918d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c936f8c9e17d8db622f121e8df08a7d5e66e903121f064ac3bd04fdb6413481"
+    sha256 cellar: :any,                 arm64_tahoe:   "4ed4fc69476e44820bbee599a553e9a10b9eee6a23d51ba41e13e388f4659e9d"
+    sha256 cellar: :any,                 arm64_sequoia: "982192ef1233d3fe1ab88fb1c9c86c4ec54d5bf816b06bf24750a5116895c684"
+    sha256 cellar: :any,                 arm64_sonoma:  "7ada046d8f551bff0aa84e18d18b91dd5717d73b744fcc409efaf2ea585f4a0f"
+    sha256 cellar: :any,                 sonoma:        "ae4d3e2ff06112e63f79ba8af7e7789f85c98058bd732443240a678f385f4544"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dcb563b6382e4bcc3d061bd77e0143fb70a57de8b13204a4c2caa1a9b5feb822"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "005cbdc21ce7cd86f1edee49caac3bf279ce1086e6f9c83c418556d3106e2d1a"
   end
 
   depends_on "cmake" => :build
@@ -76,8 +75,8 @@ class Bzt < Formula
   end
 
   resource "cssselect" do
-    url "https://files.pythonhosted.org/packages/72/0a/c3ea9573b1dc2e151abfe88c7fe0c26d1892fe6ed02d0cdb30f0d57029d5/cssselect-1.3.0.tar.gz"
-    sha256 "57f8a99424cfab289a1b6a816a43075a4b00948c86b4dcf3ef4ee7e15f7ab0c7"
+    url "https://files.pythonhosted.org/packages/ec/2e/cdfd8b01c37cbf4f9482eefd455853a3cf9c995029a46acd31dfaa9c1dd6/cssselect-1.4.0.tar.gz"
+    sha256 "fdaf0a1425e17dfe8c5cf66191d211b357cf7872ae8afc4c6762ddd8ac47fc92"
   end
 
   resource "cython" do
@@ -141,8 +140,8 @@ class Bzt < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/80/1e/5492c365f222f907de1039b91f922b93fa4f764c713ee858d235495d8f50/multidict-6.7.0.tar.gz"
-    sha256 "c6e99d9a65ca282e578dfea819cfa9c0a62b2499d8677392e09feaf305e9e6f5"
+    url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
+    sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
   end
 
   resource "multiprocess" do
@@ -181,13 +180,13 @@ class Bzt < Formula
   end
 
   resource "python-engineio" do
-    url "https://files.pythonhosted.org/packages/42/5a/349caac055e03ef9e56ed29fa304846063b1771ee54ab8132bf98b29491e/python_engineio-4.13.0.tar.gz"
-    sha256 "f9c51a8754d2742ba832c24b46ed425fdd3064356914edd5a1e8ffde76ab7709"
+    url "https://files.pythonhosted.org/packages/34/12/bdef9dbeedbe2cdeba2a2056ad27b1fb081557d34b69a97f574843462cae/python_engineio-4.13.1.tar.gz"
+    sha256 "0a853fcef52f5b345425d8c2b921ac85023a04dfcf75d7b74696c61e940fd066"
   end
 
   resource "python-socketio" do
-    url "https://files.pythonhosted.org/packages/b8/55/5d8af5884283b58e4405580bcd84af1d898c457173c708736e065f10ca4a/python_socketio-5.16.0.tar.gz"
-    sha256 "f79403c7f1ba8b84460aa8fe4c671414c8145b21a501b46b676f3740286356fd"
+    url "https://files.pythonhosted.org/packages/59/81/cf8284f45e32efa18d3848ed82cdd4dcc1b657b082458fbe01ad3e1f2f8d/python_socketio-5.16.1.tar.gz"
+    sha256 "f863f98eacce81ceea2e742f6388e10ca3cdd0764be21d30d5196470edf5ea89"
   end
 
   resource "pytz" do
@@ -241,13 +240,13 @@ class Bzt < Formula
   end
 
   resource "urwid" do
-    url "https://files.pythonhosted.org/packages/bb/d3/09683323e2290732a39dc92ca5031d5e5ddda56f8d236f885a400535b29a/urwid-3.0.3.tar.gz"
-    sha256 "300804dd568cda5aa1c5b204227bd0cfe7a62cef2d00987c5eb2e4e64294ed9b"
+    url "https://files.pythonhosted.org/packages/b1/59/67cd42db7c549c0c106d2b56d2d2ec1915c459e0a92722029efc5359e871/urwid-3.0.5.tar.gz"
+    sha256 "24be27ffafdb68c09cd95dc21b60ccfd02843320b25ce5feee1708b34fad5a23"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/25/6f/e1ea6dcb21da43d581284d8d5a715c2affb906aa3ed301f77f7f5ae0e7d5/wcwidth-0.3.1.tar.gz"
-    sha256 "5aedb626a9c0d941b990cfebda848d538d45c9493a3384d080aff809143bd3be"
+    url "https://files.pythonhosted.org/packages/35/a2/8e3becb46433538a38726c948d3399905a4c7cabd0df578ede5dc51f0ec2/wcwidth-0.6.0.tar.gz"
+    sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
   end
 
   resource "websocket-client" do
@@ -271,7 +270,10 @@ class Bzt < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.14")
+    venv.pip_install resources
+    # disabling build isolation to use installed older setuptools for pkg_resources
+    venv.pip_install_and_link(buildpath, build_isolation: false)
   end
 
   test do

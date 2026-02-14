@@ -3,18 +3,18 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/f9/ef/f917e05a5a3b20f60ee95d52bd66d41972c7b805134f866850b3c8248154/vunnel-0.53.0.tar.gz"
-  sha256 "282fc1374691fa5646bbb0fb7468130a4a334f17e9bcae603c1e435d83bae286"
+  url "https://files.pythonhosted.org/packages/88/21/4626da6d84a7bd01e8bd4ecfe6a33957abecab43c90f2448ff823e06b8de/vunnel-0.54.0.tar.gz"
+  sha256 "f129872dc7beaed8562f7dcec7fd57c4cc024d4e15120dfbc7d454c3660e2865"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "49cf31e38fdcdfe5f6c80255c15afae52517bc76cfaf729bece813ec337df694"
-    sha256 cellar: :any,                 arm64_sequoia: "66ce0c070d63af83bcf043882bf483c06925be72c4a069f07685143191095844"
-    sha256 cellar: :any,                 arm64_sonoma:  "fde4a60a5b76d6e39a58c1f459a205955d59c7b14ce8a399b244a87a17d063a4"
-    sha256 cellar: :any,                 sonoma:        "8699a97929bf8cc160dcf5325eec21c3073b33bc8b837a0dd67a16dbc92a26fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "df145a76f7f58fcebebaee60cfea4c8d12f8a850a6e123c698bcecc07c63ed9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e907519542e0970585aea0e84d9b59afe99c907492f8b30e6e6ccf80fc494db"
+    sha256 cellar: :any,                 arm64_tahoe:   "b8936adaee05027ae343335a38da240de13d35464176410ab90e80baf28eba70"
+    sha256 cellar: :any,                 arm64_sequoia: "1d98fa287a4e81a50f4a7e7b05d1bc1d735ea6f2adc8162f94c4229c3a871880"
+    sha256 cellar: :any,                 arm64_sonoma:  "a5a0e6f70774b64fcb1fcb5e5c71375d1da24bf3b19b63d42b827d2012e0ce5b"
+    sha256 cellar: :any,                 sonoma:        "df22a4aed79326d9585af510a7b2eb9713041f8fe2361a6fb3269beb69023dbc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "adf3de98e4717e2ff703535b5f9580e1affb5d0f84fdd8b9384df173d4dfa060"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cf2c0012ed1a68bc9af1eb566d53bd4897fc118ab3fbecd412a6f99f8bbf0d7"
   end
 
   depends_on "rust" => :build
@@ -184,8 +184,8 @@ class Vunnel < Formula
   end
 
   resource "ruff" do
-    url "https://files.pythonhosted.org/packages/c8/39/5cee96809fbca590abea6b46c6d1c586b49663d1d2830a751cc8fc42c666/ruff-0.15.0.tar.gz"
-    sha256 "6bdea47cdbea30d40f8f8d7d69c0854ba7c15420ec75a26f463290949d7f7e9a"
+    url "https://files.pythonhosted.org/packages/04/dc/4e6ac71b511b141cf626357a3946679abeba4cf67bc7cc5a17920f31e10d/ruff-0.15.1.tar.gz"
+    sha256 "c590fe13fb57c97141ae975c03a1aedb3d3156030cabd740d6ff0b0d601e203f"
   end
 
   resource "six" do

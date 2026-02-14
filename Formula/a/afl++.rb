@@ -12,19 +12,22 @@ class Aflxx < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ea23bdd9186a4cfa39b5fbf8634d1e4d34dc1a2733417acb75a20fe1c5fbbb45"
-    sha256 arm64_sequoia: "b1e041792c9906ce815d937f71e05b230940b39bc99928f94fef6dbb3e67a743"
-    sha256 arm64_sonoma:  "3e346420077002bb673198f9ed7a07d7a96aea31c70bf614479ae0cf1a871851"
-    sha256 sonoma:        "57372ca3578b746aaebe19cd603fabd5a0e06ac5679a70184a670ab067bb7e63"
-    sha256 arm64_linux:   "950809662811e1b0b588c1946e6a2f4660ccb4b2b431f85af3dc74093a8b7174"
-    sha256 x86_64_linux:  "bc4189526355cfffba4c168ee23cc9614ac58ff38e544cfa486c285129a34531"
+    rebuild 1
+    sha256 arm64_tahoe:   "466e6e4777a1f0fefd04f77ccd69ec2f11466a54df7a9462403a531b3184e581"
+    sha256 arm64_sequoia: "3b6eed6895b1a96a584fdd37fdd1d5e92df00c237a24b92cbe2deb71fabe7c15"
+    sha256 arm64_sonoma:  "75d6675d206ee531ea0ef7f21d014853a13cbf27166f4215323a45fc4abffbd9"
+    sha256 sonoma:        "2eadeffff6541c592e2813e1fe1d50f85168ab240384356549d4b851e0033566"
+    sha256 arm64_linux:   "cc0659688a67e91ddb309a58beb4035edd03166ffddf018fdfde10db7598c2a7"
+    sha256 x86_64_linux:  "d812d4e274c1258b37809cb03bc2100b5f00fb99b6164ce665c1d0043a56ef92"
   end
 
   depends_on "coreutils" => :build
   depends_on "llvm"
   depends_on "python@3.14"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # The Makefile will insist on compiling with LLVM clang even without this.
   fails_with :clang

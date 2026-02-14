@@ -30,9 +30,9 @@ class Subversion < Formula
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
-    depends_on "gettext" => :build
   end
 
+  depends_on "gettext" => :build
   depends_on "pkgconf" => :build
   depends_on "python-setuptools" => :build
   depends_on "python@3.14" => [:build, :test]
@@ -42,8 +42,7 @@ class Subversion < Formula
   depends_on "apr-util"
 
   # build against Homebrew versions of
-  # gettext, lz4 and utf8proc for consistency
-  depends_on "gettext"
+  # lz4 and utf8proc for consistency
   depends_on "lz4"
   depends_on "openssl@3" # For Serf
   depends_on "utf8proc"
@@ -56,6 +55,8 @@ class Subversion < Formula
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "gettext"
+
     # Prevent "-arch ppc" from being pulled in from Perl's $Config{ccflags}
     patch :DATA
   end

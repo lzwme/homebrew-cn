@@ -1,8 +1,8 @@
 class PostgresqlAT14 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v14.20/postgresql-14.20.tar.bz2"
-  sha256 "7527f10f1640761bc280ad97d105d286d0cf72e54d36d78cf68e5e5f752b646b"
+  url "https://ftp.postgresql.org/pub/source/v14.21/postgresql-14.21.tar.bz2"
+  sha256 "5b30f19347efff32b6e09ed2cdff0b04e9aee913ec9bb7414de2b7c17b17f1f9"
   license "PostgreSQL"
 
   livecheck do
@@ -11,12 +11,12 @@ class PostgresqlAT14 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "1a6d4ad311b13f9281332e42d284eda903a6a8960666cb11493fd5c957d370d2"
-    sha256 arm64_sequoia: "b34086a4f4591fa20c1d7976402bbe0e8b45a3e7f8ee7ff00518d20e9a4cc34e"
-    sha256 arm64_sonoma:  "f719d9a8099b836e912f8e56fbbc7a641f41c7e7a7a2aa4a38c1ea10a9741f6c"
-    sha256 sonoma:        "bf608ca6db23d6a514f0b04b84e7816d99c2421a541880e2c36faa507f2b924e"
-    sha256 arm64_linux:   "75d2c6d9ec6078fc4c509c0e3b369e3eeae9f6ad55f3ccbb951b2425f18c87dd"
-    sha256 x86_64_linux:  "a6f480d1965dbf84d10fdcd6856faa11363a161d88be14c6da085be8db05ee18"
+    sha256 arm64_tahoe:   "88aec5f1f12a57a56860912be72a3c2f60efe05050d6d394734186417084be80"
+    sha256 arm64_sequoia: "444d5d096329aee2dcfb3e41f9152acaf0ead0559b135a0d88d54802c5041b27"
+    sha256 arm64_sonoma:  "a241b15f6c37e77a89366eda9f4554ec09f0a6e4b17053e577c1dd4c72e3998c"
+    sha256 sonoma:        "0fa798008f6c5af1f2af6c6042a0115ef6a1c7d0b75cbc3523b056ffbd65e218"
+    sha256 arm64_linux:   "a85943ad5984293bf0cd83d4fde2522114d19beacba0ad3d29f54f8cdabb1966"
+    sha256 x86_64_linux:  "e059d8e553f5a05b4528f097bb98ef1072c6af56d0153bbe5078d616b113b1ce"
   end
 
   # deprecating one year before the last release,
@@ -39,11 +39,11 @@ class PostgresqlAT14 < Formula
   uses_from_macos "libxslt"
   uses_from_macos "openldap"
   uses_from_macos "perl"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "linux-pam"
     depends_on "util-linux"
+    depends_on "zlib-ng-compat"
   end
 
   def install

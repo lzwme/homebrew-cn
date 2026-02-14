@@ -7,12 +7,13 @@ class Sqlcipher < Formula
   head "https://github.com/sqlcipher/sqlcipher.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d61881ddfae96c3e69d405005e002671f277d8203fd50aacb46cf70d8973dbaf"
-    sha256 cellar: :any,                 arm64_sequoia: "bcb402d7e851d17ad23eb0dd82fbaf932f2c7492ecb9534f4c0916be9957c6d7"
-    sha256 cellar: :any,                 arm64_sonoma:  "7915d5b87a6bb15a239b9aac9f2bc2b2982acb9773df18e977073d1f19605744"
-    sha256 cellar: :any,                 sonoma:        "e2bd63eb1680b3accc602fb98f597f669b2e2a71c024cefbf24d392d7527d0db"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "206dc078df531bd440d544b5bf88490b41051d5506995d1a97305000a304e925"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ee68d5c9601188f48062b783f313955426e4f996c870c2aa06fc2945fe55e7b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e68a18abaa2253082f86d38b43c01ed3df41ecc999ef7de6b1bebe041e8f876d"
+    sha256 cellar: :any,                 arm64_sequoia: "f22dc347644451f51cfe87910411a10d0c6fbc2eda49f86e80485512d5d70ffc"
+    sha256 cellar: :any,                 arm64_sonoma:  "71f235e6480cc75f46a898afc90bca59cf7cdf5a0a28493fc658156a72b6a0c6"
+    sha256 cellar: :any,                 sonoma:        "c718a9d068cf45ad7a0a265862b8953dd3e87a7660f5544a04ec4e6542aded9d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "545b6d269df5b4ca96527f4dda09f8753015f7ea8646a311c3b5551f58133e29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8a7327016c96673dfbe06b4de00814345cf914f1e377aadd5340d8583329f32"
   end
 
   depends_on "openssl@3"
@@ -20,7 +21,10 @@ class Sqlcipher < Formula
   # Build scripts require tclsh. `--disable-tcl` only skips building extension
   uses_from_macos "tcl-tk" => :build
   uses_from_macos "sqlite" => :test # check for conflicts on Linux
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Build with full-text search enabled
@@ -48,7 +52,8 @@ class Sqlcipher < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "install"
+    # Work around "install: mkdir .../lib: File exists"
+    ENV.deparallelize { system "make", "install" }
 
     # Modify file names to avoid conflicting with sqlite. Similar to
     # * Debian  - https://salsa.debian.org/debian/sqlcipher/-/blob/master/debian/rules

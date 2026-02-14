@@ -14,7 +14,8 @@ class Gotun < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4781293eb4e7feed7cb77184d0896c1e84f7416b90f20a220d08942606527910"
   end
 
-  depends_on "go" => :build
+  # Unpin Go when gotun supports Go 1.26, ref: https://github.com/Sesame2/gotun/issues/22
+  depends_on "go@1.25" => :build
 
   def install
     ldflags = "-s -w -X main.Version=#{version}"

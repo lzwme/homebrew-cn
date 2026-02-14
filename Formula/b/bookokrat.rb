@@ -1,18 +1,18 @@
 class Bookokrat < Formula
   desc "Terminal EPUB Book Reader"
   homepage "https://bugzmanov.github.io/bookokrat/index.html"
-  url "https://ghfast.top/https://github.com/bugzmanov/bookokrat/archive/refs/tags/v0.3.3.tar.gz"
-  sha256 "0d440729b1c1fdc07b53ac1bf8a2b4f0975c24f87fa48b5f2a36c58aaea740aa"
+  url "https://ghfast.top/https://github.com/bugzmanov/bookokrat/archive/refs/tags/v0.3.4.tar.gz"
+  sha256 "c4871e93ce57ee32693c2f6358782dedc920cf139a266ae26f3d958202854284"
   license "AGPL-3.0-or-later"
   head "https://github.com/bugzmanov/bookokrat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b537f9ba180c53f19dd60655ffc59065ea6360bc784686feaca08c459808a78"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d92813376032dd502b4dcc19693e667bf0eec94bcdaa944b8bb694626ae5b639"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f6403c68afad57cd17b37f0e017e9276b28e3fd239043680bdc30ce3654b27a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7153c20939843b512124070c466e3e9e436474ef51e8365adf37f7a60e26490c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45de5330db079a0daacb2d715622f98666c435137f551c7e986e2e21959e7deb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6883c02589b8fa0dfa25c97e8d1d7a1652143c0fd7dab9c457261e6e9e000207"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1445191827e9188f0c956ccee8017bfa85f600c0b250dbff4905553654084258"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d743a9dd168477fd0738c1ac430ab105873c64f911884ad6bd79ae88912d5d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9be2deec0be9ad8a40359a557f1b7485e2ee11dcc6df67b1b514b715e10cd59"
+    sha256 cellar: :any_skip_relocation, sonoma:        "665c7393c67d3e5b2abd51f008a8305eb9864e5b24380aea05f7f165a6d79740"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4aea92f788636f0bf126877965e46e6e794625d93ec70bfbf6e06065b2d2bba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6574b6e96be71dacce9490090bdcc8bd15f4185acd954596be0432c5358e815"
   end
 
   depends_on "pkgconf" => :build

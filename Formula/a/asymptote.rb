@@ -12,12 +12,13 @@ class Asymptote < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9d9498abe8b72b1c827fb77a1eb52b82aefdb838aface4c65c76932c55553683"
-    sha256 arm64_sequoia: "7422cc8b780791a5666e0a19b97407ff99728bc14359d25988377438ff191d77"
-    sha256 arm64_sonoma:  "edc628f47893250645defd2f2cc0b1df20c0dfdb5f3259ac269baa181e6e6ed6"
-    sha256 sonoma:        "2a430a3b0d192124662bf6677fc1c4a782bff6f0ef16b155f40e474ee3d07766"
-    sha256 arm64_linux:   "bb0a18317d3e0b1576bd267e5513b48abf485063c7384c60c4382aafaea76efa"
-    sha256 x86_64_linux:  "2440d5d584daef22c7b5c01fe9e64351925f08a27fcb3168e68c8767cd71abf5"
+    rebuild 1
+    sha256 arm64_tahoe:   "a1e24aadd965c62d63a7d54a252caefa87a7fec04d5963ae0c120403b3dc7b74"
+    sha256 arm64_sequoia: "9197758006b6a9b420df80bb3c1e07a75e7f40d86f4b96ac8f9252df45ab9bdc"
+    sha256 arm64_sonoma:  "af2e2ddb5fe6069c01ef132aa5198d96899f45480f6e116eff6c2c395cb0a654"
+    sha256 sonoma:        "72578bffd30aa433b6274c7d7de50ab6be542a7cc256604f18c4a92c4eab58e7"
+    sha256 arm64_linux:   "a7089b64c4a177e4b387f264ca2ad93a4865a0a6b09e0916116478169ef3e284"
+    sha256 x86_64_linux:  "46348f668186d113647bb29e0018e9ffc839b1c4fd482f7bb8cff588b002aab8"
   end
 
   depends_on "cmake" => :build
@@ -32,13 +33,13 @@ class Asymptote < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "libtool" => :build
     depends_on "freeglut"
     depends_on "libtirpc"
     depends_on "mesa"
+    depends_on "zlib-ng-compat"
   end
 
   resource "manual" do

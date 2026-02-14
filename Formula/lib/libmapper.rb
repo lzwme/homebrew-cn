@@ -6,12 +6,13 @@ class Libmapper < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3c40391b0053a48a237a9958b2eb8a7bc556f1d53bd42d83682894d8a284fe5c"
-    sha256 cellar: :any,                 arm64_sequoia: "243decca19fafb7401110a972fadbc46237c8ca1482ca508e8bdb2c167360a78"
-    sha256 cellar: :any,                 arm64_sonoma:  "740c9c2d5e885e185319df50c6f3baa6f5525008eced450def3d50251ef590e6"
-    sha256 cellar: :any,                 sonoma:        "7abd4912e21aade67e40b51b1bb5c9ab77c12871cdef5ac4cea9115415afbd6e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb7b40032574927fec3dab98515547d5a1b7ce8c21708e70edb8629574b99690"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de57d036dca0a463b09a7041a0e1f9564556209c17ca100e96085964a3883a0f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c18622efe48c4000baf732c9675a1c893d047dfb67c0b56294a822227d392de2"
+    sha256 cellar: :any,                 arm64_sequoia: "801c922e7eac1db92bfd883855145d2e862895e877e19162a28e9b806eade6b4"
+    sha256 cellar: :any,                 arm64_sonoma:  "3203a45d5d0c78d43b8f25991a603f76fc6a6cb8e84f0c12c81148c5211a49b3"
+    sha256 cellar: :any,                 sonoma:        "68512b57f16cc4bf33a742933ccd4662d4a2a13800409101c67c940e81914ed2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "38784f68909c9976766e5355ff92dcd38a2f197f8020480960b513a009fbabbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94bfc2ec392a9efdfab9212c6a3bd07de234278975daa884d49210b90ae276cd"
   end
 
   depends_on "autoconf" => :build
@@ -20,7 +21,9 @@ class Libmapper < Formula
   depends_on "pkgconf" => :build
   depends_on "liblo"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", *std_configure_args

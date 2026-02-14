@@ -1,10 +1,9 @@
 class Librsvg < Formula
   desc "Library to render SVG files using Cairo"
   homepage "https://wiki.gnome.org/Projects/LibRsvg"
-  url "https://download.gnome.org/sources/librsvg/2.61/librsvg-2.61.3.tar.xz"
-  sha256 "a56d2c80d744ad2f2718f85df466fe71d24ff1f9bc3e5ef588bde4d7e87815f2"
+  url "https://download.gnome.org/sources/librsvg/2.61/librsvg-2.61.4.tar.xz"
+  sha256 "fca0ea28d1f28f95c8407d2579f4702dac085e7c758644daca8b40d1e072ca0c"
   license "LGPL-2.1-or-later"
-  revision 1
 
   # librsvg doesn't use GNOME's "even-numbered minor is stable" version scheme.
   # This regex matches any version that doesn't have a 90+ patch version, as
@@ -15,12 +14,12 @@ class Librsvg < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "946f07e0bf373fc0e3956ddc24eae52e879ede852ca99aef76be6b7042afcc6e"
-    sha256 cellar: :any, arm64_sequoia: "eb5c09756434b0eb037349ac33e32b48b6b056eca9d412880ad247fc9d4ee1d8"
-    sha256 cellar: :any, arm64_sonoma:  "8eab2c19b80b2e83d0c200dddaccd29c259894f06cfa76adc728554b9bc5a124"
-    sha256 cellar: :any, sonoma:        "ea2161952cc5f5bf963b87e22cc4ec363fb94395dc4aa270ad9d9d8c3d610868"
-    sha256               arm64_linux:   "0dd1d9a01ea9091653e8f6b030afcd0f17550166af30b440601d46f5cb20db50"
-    sha256               x86_64_linux:  "79f4d0deda0d8f633b05b971b82651f740cd3a6bf48d0eb115ab8af55c696c78"
+    sha256 cellar: :any, arm64_tahoe:   "d6be2ae5b7f09e7f165a728f67522e179f93c520be75766aa8c9a79bf705158f"
+    sha256 cellar: :any, arm64_sequoia: "585fcb2601dfb3e21b189850b268d48e05721f10e3fc7df546c9ffb1c829cd79"
+    sha256 cellar: :any, arm64_sonoma:  "fe299836219f819ec8a2452bf617d7457f6198559e8d7a94e5067eb22fe436fd"
+    sha256 cellar: :any, sonoma:        "033d3106bc72cc469046fd67ddc98f17855ac30f0deb1efd354785247b918b15"
+    sha256               arm64_linux:   "6eede92d8aa71bb768f919484068dc891e44d4b58d6aff30908bc2b14b266515"
+    sha256               x86_64_linux:  "085ea41553e47f3dc635d60c0d1a6566b57f21569e5d042c803dfb69c1c6b97a"
   end
 
   depends_on "cargo-c" => :build

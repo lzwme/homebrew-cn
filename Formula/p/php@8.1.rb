@@ -7,11 +7,6 @@ class PhpAT81 < Formula
   sha256 "ffa9e0982e82eeaea848f57687b425ed173aa278fe563001310ae2638db5c251"
   license "PHP-3.01"
 
-  livecheck do
-    url "https://www.php.net/downloads?source=Y"
-    regex(/href=.*?php[._-]v?(#{Regexp.escape(version.major_minor)}(?:\.\d+)*)\.t/i)
-  end
-
   bottle do
     sha256 arm64_tahoe:   "ba73e82a300bbba4eadc596cf5e5ffab5f674307a123d4a4f680ebeb86f6fd71"
     sha256 arm64_sequoia: "b63fb394d3ef5e664a51fb7435b66e3eea1b5611f71d751fa66d429714f72893"
@@ -26,6 +21,7 @@ class PhpAT81 < Formula
   # Security Support Until 31 Dec 2025
   # https://www.php.net/supported-versions.php
   deprecate! date: "2025-12-31", because: :unsupported
+  disable! date: "2026-12-31", because: :unsupported
 
   depends_on "httpd" => [:build, :test]
   depends_on "pkgconf" => :build

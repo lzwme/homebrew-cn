@@ -28,12 +28,13 @@ class SyslogNg < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4da3f0c277d9b5e48686e3eeaea1969bc136e145bc8d7bd81e49e70b68a9d6e7"
-    sha256 arm64_sequoia: "5ef30962c64c9f2125a9401e468dd2ed23a5783f37643a105a10357ce6d361f8"
-    sha256 arm64_sonoma:  "8df27c605f7ddae0fa22d6e1895fa1fc40c3631b7b5eb6a94741011e88dc9f84"
-    sha256 sonoma:        "804c043bd96e0a03b46459d540a479ec23ccf4fdfc30033f6b1c195f5e54160e"
-    sha256 arm64_linux:   "168d3fce7d35e417e53a2bcc66efe7f34b2430f568ced51f47dc91f9184f5bab"
-    sha256 x86_64_linux:  "881a6423e58f6f14791abbac9fc6c40ecefeba38580642a62f7ab2623fe66f22"
+    rebuild 1
+    sha256 arm64_tahoe:   "83f4f02c60b04ad1436a9c880088632b9dea01b90ecc752e36d29e8ee7c4445d"
+    sha256 arm64_sequoia: "8eace38656103e1fb3f36bd98450bd097424645e82045dd7f81989488868c51c"
+    sha256 arm64_sonoma:  "9bccf4f0a4f4382bedf8e4d7db712c6e9be88907e4023674f36cddf0e0d19bd5"
+    sha256 sonoma:        "b87c62c80bc837a4fa18ac4aaad75cd4a3d35904705ae3f75058fd2fff23dc26"
+    sha256 arm64_linux:   "1285001349fef143798a9276f085cd3aa5f004ef3aad7d422526e4cc8e49d408"
+    sha256 x86_64_linux:  "e7218c309918d694c1889fa18d593ef9cce3716208fac52476f5cfef00b3ab22"
   end
 
   depends_on "pkgconf" => :build
@@ -59,13 +60,16 @@ class SyslogNg < Formula
   depends_on "riemann-client"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
     depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install

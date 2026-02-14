@@ -3,23 +3,28 @@ class FlowControl < Formula
   homepage "https://flow-control.dev/"
   # version is used to build by `git describe --always --tags`
   url "https://github.com/neurocyte/flow.git",
-      tag:      "v0.6.0",
-      revision: "98855a73e4b5f01b282d3a735ca205934a226627"
+      tag:      "v0.7.0",
+      revision: "e044d1111ea9b88558aa2d81aa1da3379080e119"
   license "MIT"
   head "https://github.com/neurocyte/flow.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5e85dd432761339ceb1c88cf8a77b6efdb779cd2639e8fd09467dd12b5a17a3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c9cedc55d75b3065e8af56ee5899c47ce9015b29da37bb2f003f24ab23f6926"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ecc03f7623d90add75cec14f758fc7ab4888e6506287c43c45055c60740eaa68"
-    sha256 cellar: :any_skip_relocation, sonoma:        "60b5deb512575bc57991fd4cd70daa826e24bb700468794971bb84bcbf137ff8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "54787298d0520e4c3e1fcd99eb9feaf4d9bbaaf20400ede6de120c6c687bf4fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa06ccddd48bdcc21b70455bc3b3e41ed4543ad1645dedddedd8f3cea38f0483"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fa81ddefee77ddaaa0b70d7ae3277441900450e421db5c22e69b4893e2f4b9be"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28a6312d3a464b69dd116e2d16171edd470d4cea02949236452ecbb80ef9784d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f28fd4c01a8fcf8b5c588408f2df414154e0111a80b214f17b193081f56a43d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2cb988189249d62a91d6a5085582db59bbd2e59a20b22ee9a5dcb782cbcd5143"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c37efffee4631af70f9f6d9a9d0c38da4fa4e4b540df04f76bd17f924ebb35b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f11b31c52eb6fcbb807bbfb5fb6332227eae27575ed1a1763c2ae661bca9e67"
   end
 
   depends_on "zig" => :build
 
   def install
+    # Avoid an error when the git repository is detached from HEAD
+    inreplace "build.zig",
+              /const describe_base_commit_ = try (.*);/,
+              "const describe_base_commit_ = \\1 catch \"\";"
+
     # Fix illegal instruction errors when using bottles on older CPUs.
     # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case Hardware.oldest_cpu

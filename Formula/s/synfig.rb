@@ -13,12 +13,13 @@ class Synfig < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "ca80d208eea658f17fd5da3d0bda8812cb1d6deff343dfec6512143fda9eb36d"
-    sha256                               arm64_sequoia: "795dba32598da1f2df6d7e32f60f79aaf3b02a722ad79656243cd718b566c6e4"
-    sha256                               arm64_sonoma:  "249e8ac4a156dcebf614c25758b070678274541b1c42e842fe170ab48c1b7ef3"
-    sha256                               sonoma:        "309683b869b3afd78996e9b2f0b41a9d74e7ced5a09149e21719d4bbbeed8a01"
-    sha256                               arm64_linux:   "cffc297c26ec11453ce2594f7ea9cce99bd6ccf3aff3eab15f13820a685857ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a165d435ccc9bc742b9322cea92a6dd704f8053b0bd772f1c644230ff07efb5"
+    rebuild 1
+    sha256                               arm64_tahoe:   "c4bfc5af3eacc379168007869d3bf2812783b6ac4ef7e40f615b13ae431fd9ee"
+    sha256                               arm64_sequoia: "059fbfcb678e0ba38ce383e7895624da78965573d2beca918a15ef4023867bda"
+    sha256                               arm64_sonoma:  "3780751b8c12cdd49dcb4bc0a42a7b79702f1268cf983e95e9ee9921891d7911"
+    sha256                               sonoma:        "804d7f628b553b269fd4fe7582f83c66af8ff22875fd766bd959ac3e9fda7d93"
+    sha256                               arm64_linux:   "db544e07b436f64df708bc6f19255dbd9d3e64634bda978bdcc274e363a8070d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b2241a4a7e43fc44cdfc02703a960af582331b97272a7ebc5ac87aab48cae23"
   end
 
   depends_on "autoconf" => :build
@@ -51,7 +52,6 @@ class Synfig < Formula
   depends_on "pango"
 
   uses_from_macos "perl" => :build
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "liblqr"
@@ -61,6 +61,7 @@ class Synfig < Formula
 
   on_linux do
     depends_on "perl-xml-parser" => :build
+    depends_on "zlib-ng-compat"
   end
 
   def install

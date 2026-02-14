@@ -29,12 +29,13 @@ class Supertux < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1c4701340b11843553f6922c167116e304e72d2434ee160e9ec896204951588e"
-    sha256 cellar: :any,                 arm64_sequoia: "0a12ac4b7ef4b2f7799067faeb3f6c3e4647750352475bf5ebc3be74222d04c5"
-    sha256 cellar: :any,                 arm64_sonoma:  "ec45a9f9e6f37817f2ba510d879e79b15983fad78faad793ae16334b726243ed"
-    sha256 cellar: :any,                 sonoma:        "c671a25824640dfe14b1a933e892ae05fde85fa3489aba663fe531726148eba8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee5760b28a84c5527e010fe27b90b79de271f5543c8658313145be9973d6c7f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3160e4e4d8ffd6fa679a9e79ca127e01e783d9863dba4ca6a8c2785bb6764209"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "f30e013af1d8f3bb1d2b99c0ac72b98fa0c9a46840814b97a0c8890eb999dc5b"
+    sha256 cellar: :any,                 arm64_sequoia: "01ebea1522024f5f5cd9d24c2a1914b68f827634157a137ae562609709d7cd97"
+    sha256 cellar: :any,                 arm64_sonoma:  "34dd087568e006e80bd54e7541b4f8168f9bba8e37858af92305e145b5073937"
+    sha256 cellar: :any,                 sonoma:        "8b514eefd571f39fdca1ca0ea2b3b061b1a13570bb42475c6771855cbd649101"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c0f614acac9dba3b3b455793df275e63775ea58af94c1fbc8c8e51fd2219fc9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0be5ada884d712e94104eb8c14cf314cfdfc0ac32d81adcda88ecd2104e029f"
   end
 
   head do
@@ -57,11 +58,11 @@ class Supertux < Formula
   depends_on "sdl2_image"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "mesa"
     depends_on "openal-soft"
+    depends_on "zlib-ng-compat"
   end
 
   def install

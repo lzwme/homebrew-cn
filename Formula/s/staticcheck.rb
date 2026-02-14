@@ -1,19 +1,18 @@
 class Staticcheck < Formula
   desc "State of the art linter for the Go programming language"
   homepage "https://staticcheck.dev/"
-  url "https://ghfast.top/https://github.com/dominikh/go-tools/archive/refs/tags/2025.1.1.tar.gz"
-  sha256 "259aaf528e4d98e7d3652e283e8551cfdb98cd033a7c01003cd377c2444dd6de"
+  url "https://ghfast.top/https://github.com/dominikh/go-tools/archive/refs/tags/2026.1.tar.gz"
+  sha256 "4b20d65194e5462264c784f2968de65fcd7aba8e9efa37aa9b1fadc13b29699b"
   license "MIT"
-  revision 13
   head "https://github.com/dominikh/go-tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d16284edd1b880e61e0e6bd7425e4d8a13433b5f36e84e7d09c72673deea3e2c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d16284edd1b880e61e0e6bd7425e4d8a13433b5f36e84e7d09c72673deea3e2c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d16284edd1b880e61e0e6bd7425e4d8a13433b5f36e84e7d09c72673deea3e2c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "100e36800e3dc6256514202c0b0e37c71e5493a56b1df4c584a37c935f345ce7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e985ebede25ea39703ab0ee9f6e33baa723075542686674a54b5014a7086e4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78d19170a884621c071268c63c3ec46ef58ba66aa9a695ad4e8f0f45cce1c969"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "698bfc4a0cb19403d631b384bc02046d8783524ea58831f379bb8552aeb166ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "698bfc4a0cb19403d631b384bc02046d8783524ea58831f379bb8552aeb166ad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "698bfc4a0cb19403d631b384bc02046d8783524ea58831f379bb8552aeb166ad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5617fa4db20403dccfd8907340abd54ea641817965ad3516a7dd94587eff6355"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e85589cf9fd5d51b44ae601e0f0b7e4f571fa537d45b9f2b37a989087dfdc14d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "615ca90bbf56f798014b1950ff5c2b0cc5afcd7646225ca7cddd1f1c8b87395d"
   end
 
   depends_on "go"

@@ -1,8 +1,8 @@
 class Binaryen < Formula
   desc "Compiler infrastructure and toolchain library for WebAssembly"
   homepage "https://webassembly.org/"
-  url "https://ghfast.top/https://github.com/WebAssembly/binaryen/archive/refs/tags/version_125.tar.gz"
-  sha256 "36177034ef0f0d826fd7dc9ab9d92ef20190a79d69856f764151ffe9c11d7350"
+  url "https://ghfast.top/https://github.com/WebAssembly/binaryen/archive/refs/tags/version_126.tar.gz"
+  sha256 "f1c53762abae21cb6bc3e55d4e96d4ca4ea261f83a51d2aa47abc75d60e683e7"
   license "Apache-2.0"
   head "https://github.com/WebAssembly/binaryen.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Binaryen < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b517fd9435a51e97dabdcd8d61e9fbb657b06a3eba39e662ba26f11cd11e3916"
-    sha256 cellar: :any,                 arm64_sequoia: "f08f11c275540d21d343dc727f0cf31732706ddc1201f1c53d0b6c1c28e8f71b"
-    sha256 cellar: :any,                 arm64_sonoma:  "6d39c2f9a916b7a209ba116863ca46a555c4227c8404c0cbb7149d029416bcda"
-    sha256 cellar: :any,                 sonoma:        "38883cf18c3aa17128aa969af37ae16eeb0798f29ac70b34ab8e2cbc252e67a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "01a019abadde60c46dfcc8d56e91440eff81c43f231f8e0c5e80f559512d6086"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7cd86cd21c1674afedf1bfae2fcb4d01b3cf2307282678165fc40180d18af23"
+    sha256 cellar: :any,                 arm64_tahoe:   "fc4ff4de16353ba9465745e79017a175990507c971ef2e1d0b612f65788d4272"
+    sha256 cellar: :any,                 arm64_sequoia: "e71a86a37713bb073f9aafbddd0db162c105a0d7b33a025a5530fa2e17ddda31"
+    sha256 cellar: :any,                 arm64_sonoma:  "6bea2bb3aa0a26342c6269dd24b3de84cd58ea471fc1aee7b9f8b022291e4180"
+    sha256 cellar: :any,                 sonoma:        "616a029680d03297d63dc881d91b122bdb962ead7af799ce9e7094b03c989114"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "766830896c9a5145349bc66f2a7e39ba9b91a58bf9cbd11b968089dcbc492e05"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc2c112e22a4f86ed776536fe3c83e68e184500ec465168141e19e0fe8cfad9c"
   end
 
   depends_on "cmake" => :build

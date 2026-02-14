@@ -7,13 +7,12 @@ class Dotnet < Formula
 
   stable do
     # Source-build tag announced at https://github.com/dotnet/source-build/discussions
-    url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.102-sb1.tar.gz"
-    version "10.0.102"
-    sha256 "cc544f357e3674f3f4d170c82f781f6f9406760e8badbe1fbcaf04657e1554d4"
+    url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.103.tar.gz"
+    sha256 "92fbc35b1b7ede2f4995e32aaa354c7d227e99179aaaa4661282a9d0ec977e4e"
 
     resource "release.json" do
-      url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v10.0.102-sb1/release.json"
-      sha256 "f22c317a69e38fbd5f1b0cf482065c8cc40dddedb4c3dc7f659c07b3603c46ed"
+      url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v10.0.103/release.json"
+      sha256 "05154d070eebb81ef7b1eff89466956db93ee42f9d03059a9eb91c0f2bd745ba"
 
       livecheck do
         formula :parent
@@ -27,12 +26,12 @@ class Dotnet < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a9deaed142a3b459cd2ef0bdcef80e35ebc969e23829bd67cf27d8d70f5f4847"
-    sha256 cellar: :any,                 arm64_sequoia: "f493923c039918e9ffb6df9a0aecc99d6dc41a2d739ebb4d0ff0df5e6c438dc4"
-    sha256 cellar: :any,                 arm64_sonoma:  "0bb256b07f545fae407a2b113ab836bc39cc26184d9ce56176e5f27de94ec7ff"
-    sha256 cellar: :any,                 sonoma:        "a367371bb8c135d7383fa3b9c57052b4faaf18a336e1125bf2d8d5afb9521406"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3df0c663104332af2706dab8a7806f58937be0426e401e31efe8e9918093c85"
-    sha256                               x86_64_linux:  "8e8217be0316b539ecf9e345e3edd2c58762af31deaee9ff4e992f4292232f06"
+    sha256 cellar: :any,                 arm64_tahoe:   "55ded4d9ccfad8cfeda1958ad707a917cf49416136d6dd28b072e8ec025edc8b"
+    sha256 cellar: :any,                 arm64_sequoia: "ce173c6bdb40e423d49a5f7dce3c76c21f96070fa30e7fe65999d37de8e0af37"
+    sha256 cellar: :any,                 arm64_sonoma:  "ccb517c670ac5b3b11b244973bca9bb1fb1412216f05066651e9abda1e4badac"
+    sha256 cellar: :any,                 sonoma:        "a47eb3797d809b29bc427d5c2b735f8ddcb5fb234081c754b42db4c1596322e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29a52f2892ccbcb35d1d7858e568db041f7a7eba3fa4e332443f5fbaaae977db"
+    sha256                               x86_64_linux:  "0b93cd2f30aa72e05790002b23c4aadf011f8f14e55946a94db180454c0d4d4c"
   end
 
   depends_on "cmake" => :build
@@ -47,7 +46,6 @@ class Dotnet < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "bash" => :build
     depends_on "grep" => :build # grep: invalid option -- P
   end
 
@@ -118,7 +116,7 @@ class Dotnet < Formula
       buildpath.install resource("release.json")
     end
 
-    system "./prep-source-build.sh"
+    system "./prep-source-build.sh", "--"
     system "./build.sh", *args
 
     libexec.mkpath

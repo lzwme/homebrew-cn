@@ -9,12 +9,13 @@ class Standardebooks < Formula
   head "https://github.com/standardebooks/tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "84fea61686646cc9f821aadd67012bc4d95ecbfec61b30ad9a99557ffaf99024"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c8e1a872a0431495a55a293b1d82878ab40723afde2fff019e88da3e7c5bf3c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "980824a9d899d5060848d50c4c163ce3dae681a35d99d84203dbda4e0e9e19a4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5380cd147458883ab48de12237f91d9586b39280de7477facfa27ec603a09373"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dda1ca5046e33bb0bf0ed813bd98607e21b050b594053aa839cb5e1e702e18a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9de28d3809087729c581fc33f2fa09818dd3277b527558eec9f629034a1e1dd9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "299629076c795dd1cd78760cd6d4d294cade8369d794bd0598502a779b7be47b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf323c7e73a68d055cd4c8fc37d90f30e2961abf75d1a780baabef941fbd31c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d7d2d8b9f76c6c3e43f4659a619097a30b3f6d54f5680acfb46b4e6ede31a7f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3d9486091d6d05295cf11d0d67cf93cff94a0a97f6ddd8470ea6ebd0ebab1710"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fe45db6bba37e5f2aba296029c543290d44c1eb714eacf1a34e18501a370b40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d31634f18d0d2bd9b7385eed44c7aa5ec16f2b9e71087e01f927868e216f449a"
   end
 
   depends_on "rust" => :build # for selenium
@@ -28,7 +29,10 @@ class Standardebooks < Formula
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   pypi_packages exclude_packages: %w[certifi cffi pillow pycairo]
 

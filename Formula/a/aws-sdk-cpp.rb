@@ -11,12 +11,13 @@ class AwsSdkCpp < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "e53d5a02af5325d77a5c34e793ab9dd2e6d70ca8f4a0a8fad8138c517aa2292a"
-    sha256                               arm64_sequoia: "2dbd3b6aaf2444a0b73b1e071b7d9e8df67d456623f748dbbde1870ee1e1d8bc"
-    sha256                               arm64_sonoma:  "83b1f9f085cba7df4b3c6e273c701b74fbb3610485964b8a0b9b19cd47819fde"
-    sha256 cellar: :any,                 sonoma:        "c4b5a395bc70d42c95fcea0cc2dc74d2b07f6dafced10a810961b11c9cc13c81"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f2b795823c22f74e808322ff764134b8fb065cf3c1068e40447bccfedf90ec3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7eb5a3dd164f5b845f2faf322543a5f8d754158f0e7cce3bd4846be395af8a58"
+    rebuild 1
+    sha256                               arm64_tahoe:   "ba969fc9d0318c43427eb3cf24fdd1c1529af2b0115fe2ef99dff651718c9772"
+    sha256                               arm64_sequoia: "689080e026eaa889c35e21506cd4b263d06800f5916d6c830d9eaf93a7d9f577"
+    sha256                               arm64_sonoma:  "0f3acb54f8f51b23ad01a338b62cc0978f4889f3d9f52d85e16495c65cdc8961"
+    sha256 cellar: :any,                 sonoma:        "5afd351c3bb09d7fd80e1bd90ad91ceb48a8205a46267760b99902e145de93d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ae728dec763a87776d1e60d304dc114d375d9fb64519c1c28a7cb6e893cb3bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0df65f68e7fc21125325ebd53b2ce59e778ea6a1ce8635caea272459ea443375"
   end
 
   depends_on "cmake" => :build
@@ -29,7 +30,10 @@ class AwsSdkCpp < Formula
   depends_on "aws-crt-cpp"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Avoid OOM failure on Github runner
