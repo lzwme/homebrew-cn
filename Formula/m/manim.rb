@@ -46,6 +46,11 @@ class Manim < Formula
     depends_on "patchelf" => :build
   end
 
+  fails_with :clang do
+    build 1699
+    cause "pyobjc-core uses `-fdisable-block-signature-string`"
+  end
+
   pypi_packages exclude_packages: %w[numpy pillow pycairo scipy]
 
   resource "audioop-lts" do
@@ -208,12 +213,14 @@ class Manim < Formula
     # Remove after https://github.com/pypa/hatch/pull/1999 is released.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
+    # Workaround for https://github.com/fonttools/skia-pathops/issues/84
+    odie "Check if setuptools workaround can be removed!" if resource("skia-pathops").version > "0.9.1"
+    (buildpath/"build-constraints.txt").write "setuptools<82\n"
+    ENV["PIP_BUILD_CONSTRAINT"] = buildpath/"build-constraints.txt"
+
     if OS.mac?
       # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
       ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"
-
-      # needed for pyobjc-core "-fdisable-block-signature-string"
-      ENV.llvm_clang if DevelopmentTools.clang_build_version <= 1699
     else
       without = resources.filter_map { |r| r.name if r.name.start_with?("pyobjc") }
     end

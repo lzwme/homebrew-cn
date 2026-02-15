@@ -1,8 +1,8 @@
 class Dovecot < Formula
   desc "IMAP/POP3 server"
   homepage "https://dovecot.org/"
-  url "https://dovecot.org/releases/2.4/dovecot-2.4.0.tar.gz"
-  sha256 "e90e49f8c31b09a508249a4fee8605faa65fe320819bfcadaf2524126253d5ae"
+  url "https://dovecot.org/releases/2.4/dovecot-2.4.2.tar.gz"
+  sha256 "2cd62e4d22b9fc1c80bd38649739950f0dbda34fbc3e62624fb6842264e93c6e"
   license all_of: ["BSD-3-Clause", "LGPL-2.1-or-later", "MIT", "Unicode-DFS-2016", :public_domain]
 
   livecheck do
@@ -24,13 +24,12 @@ class Dovecot < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "7ee0d42eb5589016822004eca42ccf20be6811df08a1afc6789b732d8da0f369"
-    sha256 arm64_sequoia: "d30709e7ecf049f407b9ca924a51f6d9aa201efa77b911936758be213ef75399"
-    sha256 arm64_sonoma:  "141354a9aed401cc0eb78f30ca9b96603e39589ad020b7d4e89d184d47e0c97a"
-    sha256 sonoma:        "21bf2f424e8ec257dea32b06a2b809de3e06b651a65462983fd97f9258f8973b"
-    sha256 arm64_linux:   "19abd78ff29b936c1bd813225fdca2b1a1cb6afb3bbc906500e761eb9116421f"
-    sha256 x86_64_linux:  "9118aafbb43e24aa3f46939bab11f8eee465732714e219406968afffa4b6272a"
+    sha256 arm64_tahoe:   "aee78ca4c72c8bc545a4133fbb95b9cc73e478d1c2981ea87aff1f035281813b"
+    sha256 arm64_sequoia: "84f2b6322b7a6bd1e3e862d858349ebd76d923d44ae73d209a67f16142e28c80"
+    sha256 arm64_sonoma:  "f87397ce7b42be06da6732f26f689e3a389c06bd097eeda31a10bc2edc40f760"
+    sha256 sonoma:        "07b0f4a45950693513df774e192e730ca44c1447adb5515dd380490c49e3bbbd"
+    sha256 arm64_linux:   "95dff8eee3b351c3f0841b919349b38c277c6902dab5807905894fc0f0bdb9e0"
+    sha256 x86_64_linux:  "9cde14d3d65deb1fcb0434b531124b128953947435be56f0871a73e4e1e01d83"
   end
 
   depends_on "pkgconf" => :build
@@ -40,6 +39,19 @@ class Dovecot < Formula
   uses_from_macos "bzip2"
   uses_from_macos "libxcrypt"
   uses_from_macos "sqlite"
+
+  on_macos do
+    # TODO: Remove dependencies with patches
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+
+    # Backport fix for macOS build
+    patch do
+      url "https://github.com/dovecot/core/commit/0f3bd7404a5e09f087450255083a672a5f231a8a.patch?full_index=1"
+      sha256 "b78cdee49eff5f18858fe1a32c33c8f58bba63b0824546c2d8b7f1b9c2f50e25"
+    end
+  end
 
   on_linux do
     depends_on "libtirpc"
@@ -51,8 +63,12 @@ class Dovecot < Formula
   end
 
   resource "pigeonhole" do
-    url "https://pigeonhole.dovecot.org/releases/2.4/dovecot-pigeonhole-2.4.0.tar.gz"
-    sha256 "0ed08ae163ac39a9447200fbb42d7b3b05d35e91d99818dd0f4afd7ad1dbc753"
+    url "https://pigeonhole.dovecot.org/releases/2.4/dovecot-pigeonhole-2.4.2.tar.gz"
+    sha256 "c2f90cf2a0154f94842ce0d8cafc81f282d0f98dfc3b51c3b7c2385c53316f97"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   # `uoff_t` and `plugins/var-expand-crypt` patches, upstream pr ref, https://github.com/dovecot/core/pull/232
@@ -63,8 +79,11 @@ class Dovecot < Formula
   patch :DATA
 
   def install
-    # Re-generate file as only Linux has inotify support for imap-hibernate
-    rm "src/config/all-settings.c" unless OS.linux?
+    if OS.mac?
+      odie "Remove workaround and autoreconf dependencies!" if version > "2.4.2"
+      system "autoreconf", "--force", "--install", "--verbose"
+      ENV.append "LIBS", "-liconv"
+    end
 
     args = %W[
       --libexecdir=#{libexec}

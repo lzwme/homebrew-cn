@@ -6,8 +6,6 @@ class Tdlib < Formula
   license "BSL-1.0"
   head "https://github.com/tdlib/td.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:    "b2c7b6d981f8553c9ea1e6c15e03a922085be2a184463d0e9b74c103a2ce0ecc"

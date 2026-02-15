@@ -5,8 +5,6 @@ class Imapfilter < Formula
   sha256 "a28ee90ac20a996e2fc19cbc36a36c152483085011f3b2ec8dfd913b7a6d9804"
   license "MIT"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 arm64_tahoe:   "e936161f2b81aadf392a28ce2c0fac7e1df84542ba5e820369078d2520b00398"
     sha256 arm64_sequoia: "70c757de93288ef4e4367aa3fe55cd42f764a5ce18750bc71dddf21049ea2f42"

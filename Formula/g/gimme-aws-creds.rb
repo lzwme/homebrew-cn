@@ -29,6 +29,11 @@ class GimmeAwsCreds < Formula
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
   end
 
+  fails_with :clang do
+    build 1699
+    cause "pyobjc-core uses `-fdisable-block-signature-string`"
+  end
+
   # Extra package resources are set here for platform-specific dependencies
   # since the output of `bump-formula-pr` and `update-python-resources` is
   # impacted by whether command is run on macOS or Linux. Remove if Homebrew
@@ -287,11 +292,15 @@ class GimmeAwsCreds < Formula
   end
 
   def install
+    # Workaround until new flatdict release with
+    # https://github.com/gmr/flatdict/commit/011dd124f158cd9a7d2d0b35dcecab8e3da23436
+    odie "Check if setuptools workaround can be removed!" if resource("flatdict").version > "4.0.1"
+    (buildpath/"build-constraints.txt").write "setuptools<82\n"
+    ENV["PIP_BUILD_CONSTRAINT"] = buildpath/"build-constraints.txt"
+
     if OS.mac?
       # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
       ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"
-      # pyobjc-core uses "-fdisable-block-signature-string" introduced in clang 17
-      ENV.llvm_clang if DevelopmentTools.clang_build_version <= 1699
       without = %w[jeepney secretstorage]
     else
       without = resources.filter_map { |r| r.name if r.name.start_with?("pyobjc") }

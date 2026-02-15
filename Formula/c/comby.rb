@@ -6,8 +6,6 @@ class Comby < Formula
   license "Apache-2.0"
   revision 1
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any, arm64_tahoe:    "e1ce03e0fb0b0363900de5e46b8be9a46cefe3cf343ea7da2a3e8627a83c6975"
     sha256 cellar: :any, arm64_sequoia:  "02e4b812a3a7196017189b30aba83d058f72fbe37107c554c517538eeb153fee"

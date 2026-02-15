@@ -19,12 +19,13 @@ class Hashlink < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e8e5a71b5aa8517f8d5dbecc2f5ccb41b903532663ae673e1470f0bb542470e1"
-    sha256 cellar: :any,                 arm64_sequoia: "76271bda73f86f73548ee686f1cd1077d9a74c52f0efde4f691218d190f5c666"
-    sha256 cellar: :any,                 arm64_sonoma:  "1b30d3767d3eb7794776235993e1389b25aef4630bed5dd2e40a49e985983d60"
-    sha256 cellar: :any,                 sonoma:        "e5052135ebcd62e610d2e672c4461880e4b9230def0ae4d9fb73b7db703c1ac8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "56507c5d62965324d6b3d55ae92d24489ec8ddb035f1a15f35ba88bef12897b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3a48b167dff041ff2080ec6c885ff94deae5a581677117ee69dbff14af9c91a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "fec6262dd3d0fd5fd4b193897f7fc621d43c15566d857ce63bdee05ea1011898"
+    sha256 cellar: :any,                 arm64_sequoia: "66da51020a5d2c176526de2f58ac48c2441d2cbe96015eccba24d9bae04ffaf5"
+    sha256 cellar: :any,                 arm64_sonoma:  "5255cb6165cc8da050a92300ba4ff31799b66a2946a6c0e64e113d936285585a"
+    sha256 cellar: :any,                 sonoma:        "edbce7ca0eb456f8bf1d24de717897d368a7d353cc581edf30a218e368c8c2bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "332b1aaba5e901a3bc4a0b2598a64bcb6cfed54743d29071c3326c85ace4a974"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a9d6651f89c3b934532d246176249522e8aaf42658dea4bd09d67f3a5c2107f"
   end
 
   depends_on "haxe" => :test
@@ -38,11 +39,11 @@ class Hashlink < Formula
   depends_on "sdl2"
 
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "mesa"
     depends_on "mesa-glu"
+    depends_on "zlib-ng-compat"
   end
 
   def install

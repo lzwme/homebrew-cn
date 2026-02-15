@@ -38,8 +38,6 @@ class Zsh < Formula
     url "https://sourceforge.net/projects/zsh/rss?path=/zsh"
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 3
     sha256 arm64_tahoe:   "785fbc6814796f131a2a176860c07a0d94f62abcd981952c7bfd3a0337f03053"

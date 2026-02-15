@@ -2260,7 +2260,7 @@ Homebrew-homebrew-core/Formula/g/gambit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gamdl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/game-music-emu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gammaray.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/gammu.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gammu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/garage.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/garble.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/garmintools.rb, Homebrew/homebrew-core, 0
@@ -3799,6 +3799,7 @@ Homebrew-homebrew-core/Formula/l/lr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lrdf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lrzip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lrzsz.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/ls-hpack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ls-lint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lsd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lsdvd.rb, Homebrew/homebrew-core, 1
@@ -6206,7 +6207,7 @@ Homebrew-homebrew-core/Formula/r/rekor-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/release-it.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rem.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/remake.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/r/remarshal.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/remarshal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/remctl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/remind.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/ren.rb, Homebrew/homebrew-core, 0
@@ -6325,7 +6326,7 @@ Homebrew-homebrew-core/Formula/r/rpcsvc-proto.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rpds-py.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rpg-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rpki-client.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/r/rpl.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/rpl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rpm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rpm2cpio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rpmspectool.rb, Homebrew/homebrew-core, 0
@@ -8147,7 +8148,7 @@ Homebrew-homebrew-core/Formula/z/zk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zlib-ng-compat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zlib-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zlib-rs.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/z/zlib.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/z/zlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zlint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zlog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zls.rb, Homebrew/homebrew-core, 1
@@ -13372,6 +13373,7 @@ Homebrew-homebrew-cask/Casks/m/mindforger.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mindjet-mindmanager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mindmac.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mindmaster-cn.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/mindwtr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/minecraft-education.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/minecraft-server.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/minecraft.rb, Homebrew/homebrew-cask, 0
@@ -13676,6 +13678,7 @@ Homebrew-homebrew-cask/Casks/n/nuclear.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nucleo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nuclino.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nudge.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/n/nugget.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nulloy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nullpomino.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/numi.rb, Homebrew/homebrew-cask, 0

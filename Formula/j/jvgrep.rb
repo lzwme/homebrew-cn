@@ -6,8 +6,6 @@ class Jvgrep < Formula
   license "MIT"
   head "https://github.com/mattn/jvgrep.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "115262945550f47749bbb3e4a15006ffc60121b5daecaad2778861dc3191643b"

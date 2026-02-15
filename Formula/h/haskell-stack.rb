@@ -12,12 +12,13 @@ class HaskellStack < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c6b50ab326697af395bb385a55167324d1f2eab1fcf52faf71b95cd25531153e"
-    sha256 cellar: :any,                 arm64_sequoia: "febdcc3b72055ced04faa19d5fcc48d1cbc419f0474d0a9f42f893935f6daa27"
-    sha256 cellar: :any,                 arm64_sonoma:  "428c6647e21e176a6988b959d8ef8aa1096b4149f07463274fda2214adfe165c"
-    sha256 cellar: :any,                 sonoma:        "4cedb63d472a8daefbf529b612549a0fc37bcd0b0c7c5ac6c646dea62ffbe5d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7f0ed813cb29ccfd1e78d237dc9dd1e4bd35d0901cd0df760c31bdff2ec7856"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "302102c37c197fad07cfb8e35d34de036e27708558f796e836813bdfc889c81b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "5a6210196dee0e200e43a9c96606b57e12bcd8e05f9b796054a5211dbd083e84"
+    sha256 cellar: :any,                 arm64_sequoia: "bfb374b171dbb31a919feb4277b0c275240f91864b2be5ae93e7ad4edcca4704"
+    sha256 cellar: :any,                 arm64_sonoma:  "a14d7b05ef2da34ca9d67e61fd156f855eba8797f6ce85201feaea808b1fc401"
+    sha256 cellar: :any,                 sonoma:        "a875b5c498abac130f39b8c761f72e17939ef20b62aa43d644514c7ae152c98f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "715b1de3a4287fae76ef766a48a18368506a0e9a492972c04c4e874d180005b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "437c747e37c7bbecdbd63b829c2cd8de19d260560a4917091a7851472a55a78a"
   end
 
   depends_on "cabal-install" => :build
@@ -25,7 +26,10 @@ class HaskellStack < Formula
   depends_on "gmp"
 
   uses_from_macos "libffi"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Remove locked dependencies which only work with a single patch version of GHC.

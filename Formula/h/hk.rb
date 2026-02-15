@@ -14,12 +14,13 @@ class Hk < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4007ff464f2b3e45736b6147ab7826366466b0566554402303aa033d7d02e9bb"
-    sha256 cellar: :any,                 arm64_sequoia: "ab276933a9128df9c9a2ca55f63906e5208ad36deecb17ba7f8de4be0587d699"
-    sha256 cellar: :any,                 arm64_sonoma:  "52d677fc3afb8e5e578f4187124b8c6826c6686213a3cb456cdcd76b87cf2cf0"
-    sha256 cellar: :any,                 sonoma:        "44460b232e2212b9e24a47cba6daf53620b9730f31f67cfd37513a1ec2ae1fb3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f29d2858f287db46d23437ff456ad7c8179d7774e952903c47b3b8ee6630fe2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ff473db9fb15b031115c65bb8f0cb7ace21a8caa17c2176b885eafee3f01954"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "2ce00cfd16c9eba147547e08f1a602566c507ec18fc78ade4e8cc9cd2ecba9e2"
+    sha256 cellar: :any,                 arm64_sequoia: "ef8581c0a5e3575fe5b1fd88a2a1ba97287573003f630f4f1584c00f473d2316"
+    sha256 cellar: :any,                 arm64_sonoma:  "2a38bf7fca0f199b510b0354c7d353a1107d488a555875badd9394f1692413ec"
+    sha256 cellar: :any,                 sonoma:        "4a88da1138957d4e414de865e42cc32055d15c6091d1cc0bf705dba318228311"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b199f1610e2d7b7f3cd34cc8a9b9d8c9952dd7e0490d2797d9b51dd4b63d9710"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39c31e78d58abe8caf4d2cbaafee6b503b390386d846d821e830bcf68f387e7f"
   end
 
   depends_on "mise" => :build
@@ -30,7 +31,10 @@ class Hk < Formula
   depends_on "usage"
 
   uses_from_macos "python" => :build
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Ensure the correct `openssl` will be picked up.

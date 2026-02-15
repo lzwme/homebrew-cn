@@ -6,8 +6,6 @@ class Charls < Formula
   license "BSD-3-Clause"
   head "https://github.com/team-charls/charls.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "a1c092740b2d8128a1c4bfe89a332c4bc132a936a6f058d34af8470c465d429c"
     sha256 cellar: :any,                 arm64_sequoia:  "4c5a430f93616eee0bbf2464f5b950ebced3874e71fe95dd8c50c78d30752af8"

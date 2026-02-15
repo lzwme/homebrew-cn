@@ -5,8 +5,6 @@ class Stylua < Formula
   sha256 "aba628d721380290a334ae899eff1aec9d3d14302d2af336f67d8d7af72d35e3"
   license "MPL-2.0"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1597ee54ad9e607752a66e3bad99ab26839ce575468a406a3bfbfde7f6fa1056"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "83f44eddfe0d4986833deeec3528f303375aaccd2be80fa75432bfccee9d44f0"

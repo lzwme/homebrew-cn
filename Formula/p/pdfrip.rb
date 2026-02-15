@@ -6,8 +6,6 @@ class Pdfrip < Formula
   license "MIT"
   head "https://github.com/mufeedvh/pdfrip.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1036db7676a0822b721390e43e797e7e846dbd3b4f0c35acc3fb71fee338f938"

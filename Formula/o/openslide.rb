@@ -6,8 +6,6 @@ class Openslide < Formula
   license "LGPL-2.1-only"
   revision 1
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "f6732044b22142a2bd2720461df199de641a51534e55fa730c043e284f7e11fa"
     sha256 cellar: :any, arm64_sequoia: "5674f43c8c5f3495a223de96360ec92306bef079d897c6ac2b4d4634f1ce27fb"

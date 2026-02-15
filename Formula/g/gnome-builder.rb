@@ -4,16 +4,16 @@ class GnomeBuilder < Formula
   url "https://download.gnome.org/sources/gnome-builder/49/gnome-builder-49.1.tar.xz"
   sha256 "3b9e4798388f959e1032c6ace4a5fb7b4e588b6339fce4c22ec26abe869f8a2b"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://gitlab.gnome.org/GNOME/gnome-builder.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "5b315bf6013806729625ef3f49b6e78a6b7b764d1e3ba8196ee9af0f30c40998"
-    sha256 arm64_sequoia: "f4b98595b818881162b9bd028d3a7fd8dd0e2cc4939ba0b83e00a00d3ab80b2e"
-    sha256 arm64_sonoma:  "b591c540542c781b1bf06a442d9a977300651d6e39bdac2ec791f9d42eafaea0"
-    sha256 sonoma:        "32118cfcaebb840918e2b13e685972f2797b5e51c20a871367ed7f42f75acffe"
-    sha256 arm64_linux:   "e64342474672233753b321256f723356a729a19b1a722ef0e84f3850f3071595"
-    sha256 x86_64_linux:  "59d737bc85b3a3ffaa5813802854e372a40d322aaab1933497b85249487fd24d"
+    sha256 arm64_tahoe:   "51c268898ad4f9a47246a4f52eddf2396e3ae323133939926e570243ac9ade87"
+    sha256 arm64_sequoia: "3348a21bc3347851241323677d1f4eeee4e670d600afbb3b9f0bdbdb0fc2d175"
+    sha256 arm64_sonoma:  "603f2bb5ae60018e737f72a08057f8289206f919f79720d09d9d6d5b865ecf95"
+    sha256 sonoma:        "daad91ed181cb573fc37f6a5d08a49ae3e281485ed37a5a84ea1b56bc5b024d0"
+    sha256 arm64_linux:   "61a635c630195e076973cbbf8a949bff56efe573426346d2920dd359e6ae0e03"
+    sha256 x86_64_linux:  "b34b4becd41faf7d788209bbfdae051807c2d8ac53c700a044d618fa6c4a8831"
   end
 
   depends_on "desktop-file-utils" => :build

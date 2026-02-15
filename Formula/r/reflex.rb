@@ -6,8 +6,6 @@ class Reflex < Formula
   license "MIT"
   head "https://github.com/cespare/reflex.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "730de36adf7fd1ad324ecaa1e85df9b1f064cb0491ecbc336a92001153c3265c"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "188a2f2056610511ae1b9b7bbbc373091f88600c5cc28ee13eb57eaee4e21d3e"

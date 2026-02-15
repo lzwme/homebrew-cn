@@ -1,16 +1,16 @@
 class MacCleanupGo < Formula
   desc "TUI macOS cleaner that scans caches/logs and lets you select what to delete"
   homepage "https://github.com/2ykwang/mac-cleanup-go"
-  url "https://ghfast.top/https://github.com/2ykwang/mac-cleanup-go/archive/refs/tags/v1.3.11.tar.gz"
-  sha256 "3ebecab60c3a317c6d2b6689a79fce30727fcc8df7251adb8cd407ebf0e87ac9"
+  url "https://ghfast.top/https://github.com/2ykwang/mac-cleanup-go/archive/refs/tags/v1.3.12.tar.gz"
+  sha256 "ec1399169c968f476eeb8014faa075f015bd320edfef8d982f8c700afd019eb6"
   license "MIT"
   head "https://github.com/2ykwang/mac-cleanup-go.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3af9fb2d2c9c679179c127ad0b0a8b9f16f15761a0aa31f47aa405e18fdbe5ec"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3af9fb2d2c9c679179c127ad0b0a8b9f16f15761a0aa31f47aa405e18fdbe5ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3af9fb2d2c9c679179c127ad0b0a8b9f16f15761a0aa31f47aa405e18fdbe5ec"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4936a4f85a91e221874d83f001d4f35d2301f96e1b3ea0dfa07614ee22ee12fe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "61888c95b54332a27fbaf6b85594e7f6cf7ee91eca474f43ed2cf79f35e07e64"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61888c95b54332a27fbaf6b85594e7f6cf7ee91eca474f43ed2cf79f35e07e64"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61888c95b54332a27fbaf6b85594e7f6cf7ee91eca474f43ed2cf79f35e07e64"
+    sha256 cellar: :any_skip_relocation, sonoma:        "164c703018e0084fd8abe11a8002a357ce3ff7272019e85246b36ee739e4ed8f"
   end
 
   depends_on "go" => :build

@@ -7,8 +7,6 @@ class Sdcv < Formula
   version_scheme 1
   head "https://github.com/Dushistov/sdcv.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "d9e4a0a1b41d6d46b30202780982c90aff2d19cee7333b5f1e9d0da18cf68f52"

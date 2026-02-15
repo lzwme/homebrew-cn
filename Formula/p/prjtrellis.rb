@@ -6,8 +6,6 @@ class Prjtrellis < Formula
   license all_of: ["ISC", "MIT"]
   revision 8
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "36912b5c1a3ef5ce08ab7debc15ab3a008b08414a278ea427e2aaac4c680f7f0"
     sha256 cellar: :any,                 arm64_sequoia: "946ddd11b4243cb585ca98ca0ab7bd5761d8902c520f2e6e3d5627db9a7a0579"

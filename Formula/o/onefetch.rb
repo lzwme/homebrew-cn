@@ -6,8 +6,6 @@ class Onefetch < Formula
   license "MIT"
   head "https://github.com/o2sh/onefetch.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6482c4a3bd1c2bf1202e23e62b055cb9b3266d5031a7a67931a1e8b3a6235eb7"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "042ce885bb36b8792cf2abc76f8e29e0a6015b7643792431abb58210d1da9eba"

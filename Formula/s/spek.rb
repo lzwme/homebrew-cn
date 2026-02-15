@@ -6,8 +6,6 @@ class Spek < Formula
   license "GPL-3.0-or-later"
   revision 5
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "b34b86506ec485c0484cbbe9dcfe85ad038197d3105fb675dc77e0e96b695d33"

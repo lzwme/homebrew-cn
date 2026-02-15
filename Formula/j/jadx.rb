@@ -1,28 +1,21 @@
 class Jadx < Formula
   desc "Dex to Java decompiler"
   homepage "https://github.com/skylot/jadx"
-  url "https://ghfast.top/https://github.com/skylot/jadx/releases/download/v1.5.3/jadx-1.5.3.zip"
-  sha256 "8280f3799c0273fe797a2bcd90258c943e451fd195f13d05400de5e6451d15ec"
+  url "https://ghfast.top/https://github.com/skylot/jadx/archive/refs/tags/v1.5.4.tar.gz"
+  sha256 "6ae2e92532f3df58b2caf340b26ebb5502b5557a82a905d06249f69a6e9e1396"
   license "Apache-2.0"
+  head "https://github.com/skylot/jadx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e37a6436f33757cb59ee48f20d318ee4a37f632847bbd32f0b1b013c2fa873d4"
+    sha256 cellar: :any_skip_relocation, all: "4082ed1dc8f89c5ea94687be3c415c177d46d671376589621bfa6aa65416f914"
   end
 
-  head do
-    url "https://github.com/skylot/jadx.git", branch: "master"
-    depends_on "gradle" => :build
-  end
-
+  depends_on "gradle" => :build
   depends_on "openjdk"
 
   def install
-    if build.head?
-      system "gradle", "clean", "dist"
-      libexec.install Dir["build/jadx/*"]
-    else
-      libexec.install Dir["*"]
-    end
+    system "gradle", "clean", "dist"
+    libexec.install Dir["build/jadx/*"]
     bin.install libexec/"bin/jadx"
     bin.install libexec/"bin/jadx-gui"
     bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env

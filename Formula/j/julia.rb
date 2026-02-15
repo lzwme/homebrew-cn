@@ -213,10 +213,10 @@ class Julia < Formula
     # This also checks that these libraries can be loaded even when
     # the symlinks are broken (e.g. by version bumps).
     libs = (lib/"julia").glob(shared_library("*"))
-                        .map { |library| library.basename.to_s }
-                        .reject do |name|
-                          name.start_with?("sys", "libjulia-internal", "libccalltest")
-                        end
+           .map { |library| library.basename.to_s }
+           .reject do |name|
+             name.start_with?("sys", "libjulia-internal", "libccalltest")
+           end
 
     (testpath/"library_test.jl").write <<~JULIA
       using Libdl

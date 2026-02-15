@@ -6,8 +6,6 @@ class OpenscaCli < Formula
   license "Apache-2.0"
   head "https://github.com/XmirrorSecurity/OpenSCA-cli.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76c50afaed0c9449571cd30869fd7af682ce4b904d090b0b3a33d95ac75e2194"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "929cae5f62efd8c6d9b432b310c338908d82821fd8e667dcc2c26d1595e09f88"

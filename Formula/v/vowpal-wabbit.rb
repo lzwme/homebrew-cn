@@ -7,8 +7,6 @@ class VowpalWabbit < Formula
   revision 2
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "ff869cf19aa55a6aa7d3433e576680be52cb95ff6f80062ab53da763eb39200b"

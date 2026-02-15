@@ -38,9 +38,9 @@ class Xk6 < Formula
       system "git", "commit", "-m", "init commit"
       system "git", "tag", "v0.0.1"
 
-      lint_output = shell_output("#{bin}/xk6 lint")
+      lint_output = shell_output("#{bin}/xk6 lint --disable=vulnerability")
       assert_match "✔ security", lint_output
-      assert_match "✔ vulnerability", lint_output
+      assert_match "✔ build", lint_output
     end
   end
 end

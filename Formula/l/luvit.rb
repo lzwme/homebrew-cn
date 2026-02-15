@@ -7,8 +7,6 @@ class Luvit < Formula
   revision 3
   head "https://github.com/luvit/luvit.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "458c6111c7d38d655f6a511e0ab0120b46a2d6d9e6d2cc2f5eb87884811a2218"
     sha256 cellar: :any,                 arm64_sequoia: "cb7a922a6f66e253f24ed9bdaeee1cd15be6df48e6349fdaa88532ee9cea3d6a"

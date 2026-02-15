@@ -3,12 +3,19 @@ class Buku < Formula
 
   desc "Powerful command-line bookmark manager"
   homepage "https://github.com/jarun/buku"
-  # TODO: Revert back to PyPI url on next version bump
+  # TODO: Revert back to PyPI url on next version bump and remove livecheck
   url "https://ghfast.top/https://github.com/jarun/buku/archive/refs/tags/v5.1.tar.gz"
   sha256 "0f1a3e15f882fe9a0f8e550abae7388d3cb81d4718a1b4309dcf4363633cb7b1"
   license "GPL-3.0-or-later"
   revision 2
   head "https://github.com/jarun/buku.git", branch: "master"
+
+  livecheck do
+    url "https://pypi.org/pypi/buku/json"
+    strategy :json do |json|
+      json.dig("info", "version")
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "978988301396ed5a6e48b95a2804238b625683614b4fb05115416cdc906f9cf6"

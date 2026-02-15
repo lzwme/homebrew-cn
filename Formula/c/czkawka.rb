@@ -1,19 +1,18 @@
 class Czkawka < Formula
   desc "Duplicate file utility"
   homepage "https://github.com/qarmin/czkawka"
-  url "https://ghfast.top/https://github.com/qarmin/czkawka/archive/refs/tags/10.0.0.tar.gz"
-  sha256 "66ff3c231abe2feaeb377f52bb188eb81686c162d7f3fd28ed5b7374f0046c48"
+  url "https://ghfast.top/https://github.com/qarmin/czkawka/archive/refs/tags/11.0.0.tar.gz"
+  sha256 "d73793dd713a80b3dc052de1b69de4c94d1fef8b8ff3efb4ce8a285622354a26"
   license all_of: ["MIT", "CC-BY-4.0"]
   head "https://github.com/qarmin/czkawka.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "f4a6f85a1a1e7a47760212d0e14a68f9d4340708307e923407fdd4d512f9dc83"
-    sha256 cellar: :any,                 arm64_sequoia: "c8e96fda2372e42d926f6d2d109b3e47f6f7ec7e93f58c12532b73a90b0a044a"
-    sha256 cellar: :any,                 arm64_sonoma:  "9ec6361560f8ee4bc3f27f7335535cce2aa6974bdd6a164b637bf4e3e7896431"
-    sha256 cellar: :any,                 sonoma:        "0f8379c98f1b1245f3108adfc23af72fe785f3c8f5f7218d963f990f402df140"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67e1164a69e5010b3e7141f43a653e128ac7021b3df1224e6cbc19a9935bd00d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5524fde6900917e902e8144e4b60537507c5c0e4fc8f099d4683d9819face7fd"
+    sha256 cellar: :any,                 arm64_tahoe:   "043e7c4d1aa61abf1956a938e195d37289b4b209563a0424d1ac822b8dfbdab5"
+    sha256 cellar: :any,                 arm64_sequoia: "5dd80f9e7111e10531c2d62951115541d6808520f84cf588110cd7da2e3697b2"
+    sha256 cellar: :any,                 arm64_sonoma:  "0771f3bc0fe685c0762137b8ebde31d503d2f3dc78cca7cdd69a1c5369e8c2be"
+    sha256 cellar: :any,                 sonoma:        "b6685cd288367d3eb70b476d45131036d698300c5cf6e03eac8a558a07b04ecf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e440c2e5f3434878cefb09df00950197eba4c1062e188808b08a0908d80eaf3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67efd9c952324aef3a112a73e6ea86a2fba3c1ac51b5a445c64c7e14dd1dda95"
   end
 
   depends_on "rust" => :build

@@ -6,8 +6,6 @@ class TheSilverSearcher < Formula
   license "Apache-2.0"
   head "https://github.com/ggreer/the_silver_searcher.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_tahoe:   "9e15a76d577686e2f6157918b498668861690527fb40186768b91ed2a6e423e5"

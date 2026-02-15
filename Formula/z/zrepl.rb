@@ -6,8 +6,6 @@ class Zrepl < Formula
   license "MIT"
   head "https://github.com/zrepl/zrepl.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86f94f15cab96087e5f9a17e02756dc1efe8f382635805345d6da7cf4f15a810"

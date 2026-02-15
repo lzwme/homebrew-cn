@@ -6,8 +6,6 @@ class Tiff2png < Formula
   license "ISC"
   revision 3
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "cc94154a902618ac2619cec04577a4dc5532ed13adff9506fffd4180521d5b78"

@@ -1,10 +1,9 @@
 class ShairportSync < Formula
   desc "AirTunes emulator that adds multi-room capability"
   homepage "https://github.com/mikebrady/shairport-sync"
-  url "https://ghfast.top/https://github.com/mikebrady/shairport-sync/archive/refs/tags/4.3.7.tar.gz"
-  sha256 "a1242d100b61fe1fffbbf706e919ed51d6a341c9fb8293fb42046e32ae2b3338"
+  url "https://ghfast.top/https://github.com/mikebrady/shairport-sync/archive/refs/tags/5.0.tar.gz"
+  sha256 "ace8e2c771f9c30e55f1a5e8b2b180b09fe29133e6ed1738032a6a7c3f74b22d"
   license "MIT"
-  revision 1
   head "https://github.com/mikebrady/shairport-sync.git", branch: "master"
 
   livecheck do
@@ -13,13 +12,12 @@ class ShairportSync < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "447c5c992c4ad4ff74c204130ac70dc7342d2a63afd2c7d0e04f70e3ffb67ea2"
-    sha256 arm64_sequoia: "d0b40af6d6416eddfe8705ee6940d60c5393bd3059420b25efc4e2111fd840e8"
-    sha256 arm64_sonoma:  "af03fcf8f24c90998351820f7ccc379467ff06fd38c2989a0fecd3274113d062"
-    sha256 sonoma:        "00b4a040ab219ef15622f06046be96254b5033beebdf73d97a1f051c7029e66c"
-    sha256 arm64_linux:   "6476dfec263694efd858ea866f95b5ad2e95c53624e80666014a9875c279e1ce"
-    sha256 x86_64_linux:  "0ad387fee8205804b6325c8ef73d8c67d7f77cda6f75129f31f708c93e9c4c5b"
+    sha256 arm64_tahoe:   "20fbec8aa6e6d5b713a377c3609de2ed0860d30a0a126598b6be3696463c1e49"
+    sha256 arm64_sequoia: "6e40bc310297cef3e8fcab70f6bde1f6d9dbd1da7f346ca459fb5fc98ad459dc"
+    sha256 arm64_sonoma:  "c6d800e9669423a2d9d63cca45466e12121bb4d70c6b874a9d1a2da94086f045"
+    sha256 sonoma:        "7a4c5469ec054322ab683f563173ee14afc9d53908c1be5becda721db8038229"
+    sha256 arm64_linux:   "9c85eef3917aa731f4db35e6e43e681efec6908820d571199c38c010e1200b21"
+    sha256 x86_64_linux:  "d11973583dc6929bd4b28a3f2619b7ffdb207210036c757070ed67b8b6315854"
   end
 
   depends_on "autoconf" => :build
@@ -33,6 +31,12 @@ class ShairportSync < Formula
   depends_on "popt"
   depends_on "pulseaudio"
 
+  # patch to fix version string from 5.0rc0 to 5.0, upstream pr ref, https://github.com/mikebrady/shairport-sync/pull/2144
+  patch do
+    url "https://github.com/mikebrady/shairport-sync/commit/6c71105e98af30a9b157a1534d0bed82f4e49de6.patch?full_index=1"
+    sha256 "67edc2bcb8b37a1fffacf7499d42c8abfe44a7af0312f7407f056b677d7681db"
+  end
+
   def install
     system "autoreconf", "--force", "--install", "--verbose"
     args = %W[
@@ -40,7 +44,7 @@ class ShairportSync < Formula
       --with-ssl=openssl
       --with-ao
       --with-stdout
-      --with-pa
+      --with-pulseaudio
       --with-pipe
       --with-soxr
       --with-metadata
@@ -67,9 +71,9 @@ class ShairportSync < Formula
   test do
     output = shell_output("#{bin}/shairport-sync -V")
     if OS.mac?
-      assert_match "libdaemon-OpenSSL-dns_sd-ao-pa-stdout-pipe-soxr-metadata", output
+      assert_match "libdaemon-OpenSSL-dns_sd-ao-PulseAudio-stdout-pipe-soxr-metadata", output
     else
-      assert_match "OpenSSL-ao-pa-stdout-pipe-soxr-metadata-sysconfdir", output
+      assert_match "OpenSSL-ao-PulseAudio-stdout-pipe-soxr-metadata-sysconfdir", output
     end
   end
 end

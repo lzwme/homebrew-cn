@@ -17,7 +17,8 @@ class Goresym < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6414715ef12ade766c4e58fe223f6a341c4fbde88bf69495260bde6e100870b"
   end
 
-  depends_on "go" => :build
+  # Unpin Go when GoReSym supports Go 1.26, ref: https://github.com/mandiant/GoReSym/issues/80
+  depends_on "go@1.25" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
