@@ -5,6 +5,11 @@ class AwsCMqtt < Formula
   sha256 "1dfc11d6b3dc1a6d408df64073e8238739b4c50374078d36d3f2d30491d15527"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "fbc29f69f9027eda095e14c2e2f230cc8d9ea1f894ee99c2340f399809a88917"
     sha256 cellar: :any,                 arm64_sequoia: "8e08c006499b410fe17dad331e6c6b393f437b3bd3dc9d5ecbfe3bca7f03e915"

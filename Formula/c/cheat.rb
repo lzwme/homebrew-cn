@@ -1,21 +1,18 @@
 class Cheat < Formula
   desc "Create and view interactive cheat sheets for *nix commands"
   homepage "https://github.com/cheat/cheat"
-  url "https://ghfast.top/https://github.com/cheat/cheat/archive/refs/tags/4.4.2.tar.gz"
-  sha256 "6968ffdebb7c2a8390dea45f97884af3c623cda6c2d36c4c04443ed2454da431"
+  url "https://ghfast.top/https://github.com/cheat/cheat/archive/refs/tags/4.7.1.tar.gz"
+  sha256 "d56857cd777d3eaa9f048a69fc81e97800abd311b42cbac1c16d6f100c929384"
   license "MIT"
   head "https://github.com/cheat/cheat.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e9bdff27a92bab0dd90d21017d8e6ca8c4f09fd9d027b581775d5e091a8f861f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "892bbbee98b8e75d5368a898b7f5c3a2968f5f85a7792a4cfbe7d47ba48b811b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "892bbbee98b8e75d5368a898b7f5c3a2968f5f85a7792a4cfbe7d47ba48b811b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "892bbbee98b8e75d5368a898b7f5c3a2968f5f85a7792a4cfbe7d47ba48b811b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4ce8ddab97ab046dbed22b3a584a66bf97e55246c51e1324d18c6959d32170a9"
-    sha256 cellar: :any_skip_relocation, ventura:       "4ce8ddab97ab046dbed22b3a584a66bf97e55246c51e1324d18c6959d32170a9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de9fb22d8e57c93c2b3d7209f8200d7db98507bb160db8f7285e3be0cd7b061e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "056c862aa6f3f46ba541558de9ae41a0e0c81424934830c0f1e12b4530d2692b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48cda603befa6b05224e3752e0398468a8a5cd11722d0cc41bd05da9ab0a8866"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48cda603befa6b05224e3752e0398468a8a5cd11722d0cc41bd05da9ab0a8866"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48cda603befa6b05224e3752e0398468a8a5cd11722d0cc41bd05da9ab0a8866"
+    sha256 cellar: :any_skip_relocation, sonoma:        "87031273ec9b9791df1d014fcd8a650195d98ffc0973e243a7a6324ea837c03a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be0b548e582b510548e365f8c8bcf8fa12416b74c4943ac5a1e08e68a85525c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f95bca61090c186b56de16dcd8910db421974a35c2a5b5b6182ccc569cca54bb"
   end
 
   depends_on "go" => :build
@@ -35,6 +32,6 @@ class Cheat < Formula
     assert_match version.to_s, shell_output("#{bin}/cheat --version")
 
     output = shell_output("#{bin}/cheat --init 2>&1")
-    assert_match "editor: EDITOR_PATH", output
+    assert_match "cheatpaths:", output
   end
 end

@@ -1,8 +1,8 @@
 class Pulsarctl < Formula
   desc "CLI for Apache Pulsar written in Go"
   homepage "https://streamnative.io/"
-  url "https://ghfast.top/https://github.com/streamnative/pulsarctl/archive/refs/tags/v4.1.0.15.tar.gz"
-  sha256 "a049ad8b44fe034d268e8c2376d7d6ec94296de0bd97657156de145d2cabdd21"
+  url "https://ghfast.top/https://github.com/streamnative/pulsarctl/archive/refs/tags/v4.1.0.16.tar.gz"
+  sha256 "cd347da974697e758b3b4f63fbb3d77591657ad0d5e7df3615d201f18e3522e3"
   license "Apache-2.0"
   head "https://github.com/streamnative/pulsarctl.git", branch: "master"
 
@@ -19,12 +19,12 @@ class Pulsarctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b63d828818b25f0bfaf5d9780444e70909d4eeb18f7289c721027bb12467ea9c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b63d828818b25f0bfaf5d9780444e70909d4eeb18f7289c721027bb12467ea9c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b63d828818b25f0bfaf5d9780444e70909d4eeb18f7289c721027bb12467ea9c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3e1e9be41cb227eed13aeb4ea3b8bc5224bbbfb240dbcdf6d47bb50642aea3ba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4ce8dbfa8d9f172149978976412793accdccd05ec20b3e0d2013a51ed937699"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efea18555a4bed13edec898dba7620c697ea81a5f161a5ca74dde65778b5cd5c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eec39e6502224dbf17d1135d60a9be506923eae010632819de8980955fe46cd7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eec39e6502224dbf17d1135d60a9be506923eae010632819de8980955fe46cd7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eec39e6502224dbf17d1135d60a9be506923eae010632819de8980955fe46cd7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cf07e4a00a543a956634fc1269a781e3816b7fcef289ba21113cb426a250c1e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a47027b12749e338eda8dd1fe67745b3a9d701a9657838c3533b7a2cad516be9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90744fa3b884fb36cc482294cc24fd6f756b4c3ba6e50670cb2631d0f8be664b"
   end
 
   depends_on "go" => :build

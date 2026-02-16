@@ -4,6 +4,7 @@ class Dovecot < Formula
   url "https://dovecot.org/releases/2.4/dovecot-2.4.2.tar.gz"
   sha256 "2cd62e4d22b9fc1c80bd38649739950f0dbda34fbc3e62624fb6842264e93c6e"
   license all_of: ["BSD-3-Clause", "LGPL-2.1-or-later", "MIT", "Unicode-DFS-2016", :public_domain]
+  revision 1
 
   livecheck do
     url "https://dovecot.org/releases/"
@@ -24,18 +25,19 @@ class Dovecot < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "aee78ca4c72c8bc545a4133fbb95b9cc73e478d1c2981ea87aff1f035281813b"
-    sha256 arm64_sequoia: "84f2b6322b7a6bd1e3e862d858349ebd76d923d44ae73d209a67f16142e28c80"
-    sha256 arm64_sonoma:  "f87397ce7b42be06da6732f26f689e3a389c06bd097eeda31a10bc2edc40f760"
-    sha256 sonoma:        "07b0f4a45950693513df774e192e730ca44c1447adb5515dd380490c49e3bbbd"
-    sha256 arm64_linux:   "95dff8eee3b351c3f0841b919349b38c277c6902dab5807905894fc0f0bdb9e0"
-    sha256 x86_64_linux:  "9cde14d3d65deb1fcb0434b531124b128953947435be56f0871a73e4e1e01d83"
+    sha256 arm64_tahoe:   "9573852c11266633a4b14d1f5222c7d022e24ac86f1872a5494adfc506c84451"
+    sha256 arm64_sequoia: "e25d68fb74231e0e782ca600b099b77dc6afcf451cf115d6b945c3f7cd0eced3"
+    sha256 arm64_sonoma:  "f0a6f5b32b8bc555cfea859e542a8fb02abb1a87e13821ed8534353e163c9ea4"
+    sha256 sonoma:        "9501f48fe09c9938f9430ce7f7f2ea28e85c4a6ea7234f49c23a51fd5bf514a1"
+    sha256 arm64_linux:   "ff350e7d40a66956306b68b73e2e95160cad1991451ac932e28b3b5b77dfad27"
+    sha256 x86_64_linux:  "5fd824f7bed0ea3d69232bcadef9d419b28fbecc095eae80b3f5453bc0a53c1a"
   end
 
   depends_on "pkgconf" => :build
   depends_on "openldap"
   depends_on "openssl@3"
 
+  uses_from_macos "netcat" => :test
   uses_from_macos "bzip2"
   uses_from_macos "libxcrypt"
   uses_from_macos "sqlite"
@@ -79,6 +81,9 @@ class Dovecot < Formula
   patch :DATA
 
   def install
+    # Re-generate file as only Linux has inotify support for imap-hibernate
+    rm "src/config/all-settings.c" unless OS.linux?
+
     if OS.mac?
       odie "Remove workaround and autoreconf dependencies!" if version > "2.4.2"
       system "autoreconf", "--force", "--install", "--verbose"
@@ -129,28 +134,40 @@ class Dovecot < Formula
   test do
     assert_match version.to_s, shell_output("#{sbin}/dovecot --version")
 
-    cp_r share/"doc/dovecot/example-config", testpath/"example"
-    (testpath/"example/dovecot.conf").write <<~EOS
-      # required in 2.4
-      dovecot_config_version = 2.4.0
-      dovecot_storage_version = 2.4.0
+    port = free_port.to_s
+    cp_r share/"doc/dovecot/example-config", testpath/"config"
+    (testpath/"config/dovecot.conf").write <<~EOS
+      dovecot_config_version = #{version}
+      dovecot_storage_version = #{version}
 
-      base_dir = #{testpath}
+      base_dir = #{testpath}/run
+      state_dir = #{testpath}/state
       listen = *
       ssl = no
+      protocols = imap
+      service imap-login {
+        inet_listener imap {
+          port = #{port}
+        }
+      }
 
       default_login_user = #{ENV["USER"]}
       default_internal_user = #{ENV["USER"]}
-
-      # reference other conf files
-      # !include conf.d/*.conf
-
-      # same as 2.3
-      log_path = syslog
+      default_internal_group = #{Etc.getgrgid(Process.egid).name}
       auth_mechanisms = plain
+      log_path = #{testpath}/dovecot.log
     EOS
 
-    system bin/"doveconf", "-c", testpath/"example/dovecot.conf"
+    system bin/"doveconf", "-c", testpath/"config/dovecot.conf"
+
+    pid = spawn sbin/"dovecot", "-c", testpath/"config/dovecot.conf", "-F"
+    begin
+      sleep 5
+      system "nc", "-z", "localhost", port
+    ensure
+      Process.kill "TERM", pid
+      Process.wait pid
+    end
   end
 end
 

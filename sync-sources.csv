@@ -1523,6 +1523,7 @@ Homebrew-homebrew-core/Formula/d/diffr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/diffstat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/difftastic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/diffutils.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/difi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/digdag.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/digitemp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dillo.rb, Homebrew/homebrew-core, 1
@@ -3703,6 +3704,7 @@ Homebrew-homebrew-core/Formula/l/lightgbm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lighthouse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lightning.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lighttpd.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/l/likec4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lilv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lilypond.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lima-additional-guestagents.rb, Homebrew/homebrew-core, 1
@@ -6390,6 +6392,7 @@ Homebrew-homebrew-core/Formula/r/rustic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustls-ffi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustscan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustup.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rustypaste.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustywind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rv-r.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rv.rb, Homebrew/homebrew-core, 1
@@ -9815,6 +9818,7 @@ Homebrew-homebrew-cask/Casks/font/font-a/font-allan.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/font/font-a/font-allerta-stencil.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-allerta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-allison.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-a/font-allkin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-allura.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-almarai.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-almendra-display.rb, Homebrew/homebrew-cask, 0
@@ -10070,6 +10074,9 @@ Homebrew-homebrew-cask/Casks/font/font-b/font-boogaloo.rb, Homebrew/homebrew-cas
 Homebrew-homebrew-cask/Casks/font/font-b/font-borel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-bowlby-one-sc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-bowlby-one.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-b/font-bpmf-huninn.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-b/font-bpmf-iansui.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-b/font-bpmf-zihi-kai-std.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-braah-one.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-brass-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-b/font-bravura.rb, Homebrew/homebrew-cask, 1
@@ -13760,6 +13767,7 @@ Homebrew-homebrew-cask/Casks/o/openchrom.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openclaw.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencloud.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencode-desktop.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/opencomic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencore-configurator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opencore-patcher.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencpn.rb, Homebrew/homebrew-cask, 1
@@ -15143,7 +15151,6 @@ Homebrew-homebrew-cask/Casks/t/timemachinestatus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/timemator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/timer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/timescribe.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/t/timestamp.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/timeular.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/timing.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tinderbox.rb, Homebrew/homebrew-cask, 0
@@ -15612,7 +15619,6 @@ Homebrew-homebrew-cask/Casks/w/wordservice.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/workbench.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/workflowy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/workman.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/w/workplace-chat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/workspace-one-intelligent-hub.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/workspaces.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/worldpainter.rb, Homebrew/homebrew-cask, 0

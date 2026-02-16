@@ -11,6 +11,11 @@ class Rockcraft < Formula
   revision 1
   head "https://github.com/canonical/rockcraft.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "36054f423876614ebfa092aebbadadddab6aa94b5bb8b3bd8958c29b58ef668d"
     sha256 cellar: :any,                 arm64_sequoia: "dab84f69f2bcab09b3f00294d56297bbe0091b95251ab390ef80164bf128b8d5"

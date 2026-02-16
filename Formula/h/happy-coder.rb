@@ -1,6 +1,6 @@
 class HappyCoder < Formula
   desc "CLI for operating AI coding agents from mobile devices"
-  homepage "https://github.com/slopus/happy-cli"
+  homepage "https://happy.engineering"
   url "https://ghfast.top/https://github.com/slopus/happy-cli/archive/refs/tags/v0.13.0.tar.gz"
   sha256 "42e1281f806aa2e604d684853213e4936f2424ea220e90f2cd6c06f4f37f297d"
   license "MIT"

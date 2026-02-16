@@ -1,10 +1,9 @@
 class Byobu < Formula
   desc "Text-based window manager and terminal multiplexer"
   homepage "https://github.com/dustinkirkland/byobu"
-  url "https://ghfast.top/https://github.com/dustinkirkland/byobu/archive/refs/tags/6.13.tar.gz"
-  sha256 "9690c629588e8f95d16b2461950d39934faaf8005dd2a283886d4e3bd6c86df6"
+  url "https://ghfast.top/https://github.com/dustinkirkland/byobu/archive/refs/tags/6.14.tar.gz"
+  sha256 "478e15a38a57678e4bd2cd55994ea1edece2d10bb6bf0a3de8f0b2dd8df35485"
   license "GPL-3.0-only"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,7 +11,7 @@ class Byobu < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0b80059c6d18a7c12043587da070143235a585325503f1c2b2f04cc15a2a1829"
+    sha256 cellar: :any_skip_relocation, all: "d7407bc3d4b8b9a0c7f7291f2dd5bb39793136f24266aa1c695b94cb205fefed"
   end
 
   depends_on "autoconf" => :build
@@ -32,7 +31,8 @@ class Byobu < Formula
     cp "./debian/changelog", "./ChangeLog"
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *std_configure_args
-    system "make", "install"
+    system "make"
+    ENV.deparallelize { system "make", "install" }
 
     byobu_python = Formula["newt"].deps
                                   .find { |d| d.name.match?(/^python@\d\.\d+$/) }
