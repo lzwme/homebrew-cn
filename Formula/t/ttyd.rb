@@ -8,12 +8,13 @@ class Ttyd < Formula
   head "https://github.com/tsl0922/ttyd.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "feb7342f18d4a06b41572151f929940feda53dccd67c96c6bae6dae31d0185fb"
-    sha256 arm64_sequoia: "a799d5922af9614ebad142e35c65587e05d71d51728de254e1b5af344bd22fca"
-    sha256 arm64_sonoma:  "bc0fd1559a12c5865ac450587838d5a270e74351e6812d4ae5c07f543784f618"
-    sha256 sonoma:        "9bd353f6a7004259e77484df80ecc015b33ca66d8d2fa7a8edcba47ae45d4c2f"
-    sha256 arm64_linux:   "c2868a264f813c57bc0bf5969671346ca63f8d923f2338c6ef65e0913242f78a"
-    sha256 x86_64_linux:  "f6feba2fc94869ffdffc0773a4fd08d2d61759b525a953be0db6f75797accf57"
+    rebuild 1
+    sha256 arm64_tahoe:   "06eddb6a32a7f40a0639f70361b93e63350b8e1b80db21517df23816b9c55439"
+    sha256 arm64_sequoia: "41165f7d0cc31ad5c8ac833e0070041de3b055837d7946cce2066ce916dcea69"
+    sha256 arm64_sonoma:  "7afbac63fc717144f6180820ea349ba8028683168542e019b6bfdc6bd2997e04"
+    sha256 sonoma:        "55174b908654c53aab6a220fe3b1e8efd365f47d1c47a7b0a6e4d977017cc511"
+    sha256 arm64_linux:   "2a612a1ccda5dbab4d0db6f4acf381815e25179e5bd69fbbf5766cb5fb6de20e"
+    sha256 x86_64_linux:  "4705b5d8017f8761bda7a785b08f597fa7f84418265f7a6628266472fc2a8d1f"
   end
 
   depends_on "cmake" => :build
@@ -24,7 +25,10 @@ class Ttyd < Formula
   depends_on "openssl@3"
 
   uses_from_macos "vim" # needed for xxd
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build",
@@ -40,8 +44,7 @@ class Ttyd < Formula
     fork do
       system bin/"ttyd", "--port", port.to_s, "bash"
     end
-    sleep 5
-
-    system "curl", "-sI", "http://localhost:#{port}"
+    output = shell_output("curl --silent --retry 5 --retry-connrefused http://localhost:#{port}")
+    assert_match "<title>ttyd - Terminal</title>", output[..256]
   end
 end

@@ -6389,6 +6389,7 @@ Homebrew-homebrew-core/Formula/r/rust.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustc-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustic.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rustledger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustls-ffi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustscan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustup.rb, Homebrew/homebrew-core, 1
@@ -6919,6 +6920,7 @@ Homebrew-homebrew-core/Formula/s/sslmate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sslscan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sslsplit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/ssocr.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/sss-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/ssss.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sstp-client.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/st.rb, Homebrew/homebrew-core, 1
@@ -7848,6 +7850,7 @@ Homebrew-homebrew-core/Formula/w/when.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/whisper-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/whisperkit-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/whistle.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/whodb-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/whois.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/whosthere.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/widelands.rb, Homebrew/homebrew-core, 1
@@ -8201,6 +8204,7 @@ Homebrew-homebrew-core/Formula/z/zug.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zurl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zxcc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/z/zxing-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zydis.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zyre.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zzuf.rb, Homebrew/homebrew-core, 1
@@ -9303,6 +9307,7 @@ Homebrew-homebrew-cask/Casks/d/domzilla-caffeine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/doomsday-engine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/doppler-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dorico.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/dorso.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dosbox-staging-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dosbox-x-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dosbox.rb, Homebrew/homebrew-cask, 0
@@ -14110,7 +14115,6 @@ Homebrew-homebrew-cask/Casks/p/postman-cli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/postman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/postman@canary.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/posture-pal.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/posturr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pot.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/powder-player.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/powder.rb, Homebrew/homebrew-cask, 1

@@ -1,18 +1,18 @@
 class Cheat < Formula
   desc "Create and view interactive cheat sheets for *nix commands"
   homepage "https://github.com/cheat/cheat"
-  url "https://ghfast.top/https://github.com/cheat/cheat/archive/refs/tags/4.7.1.tar.gz"
-  sha256 "d56857cd777d3eaa9f048a69fc81e97800abd311b42cbac1c16d6f100c929384"
+  url "https://ghfast.top/https://github.com/cheat/cheat/archive/refs/tags/5.1.0.tar.gz"
+  sha256 "5ef8864dacb5b37268d7d26cd01f74b99a33b2e5eb5b290e4221358410c99db4"
   license "MIT"
   head "https://github.com/cheat/cheat.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48cda603befa6b05224e3752e0398468a8a5cd11722d0cc41bd05da9ab0a8866"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48cda603befa6b05224e3752e0398468a8a5cd11722d0cc41bd05da9ab0a8866"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48cda603befa6b05224e3752e0398468a8a5cd11722d0cc41bd05da9ab0a8866"
-    sha256 cellar: :any_skip_relocation, sonoma:        "87031273ec9b9791df1d014fcd8a650195d98ffc0973e243a7a6324ea837c03a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be0b548e582b510548e365f8c8bcf8fa12416b74c4943ac5a1e08e68a85525c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f95bca61090c186b56de16dcd8910db421974a35c2a5b5b6182ccc569cca54bb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77143bff0b89d1b3cb6c881294a35500e9a6dc9dd735d7f38ad15542f91a49a9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77143bff0b89d1b3cb6c881294a35500e9a6dc9dd735d7f38ad15542f91a49a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77143bff0b89d1b3cb6c881294a35500e9a6dc9dd735d7f38ad15542f91a49a9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7fe124e0d74005a57908f8753bdd402510bcbe1215e15b30020793ea86287bc6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b75f7b7e610b58eae3599f2db4570aa3e10a7ac54c71e4e203ff599b3583e006"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53c661bccbc4bf58a94f831b4d0c766254fe83eb1fd86b2030b47b33a4a81155"
   end
 
   depends_on "go" => :build
@@ -22,9 +22,8 @@ class Cheat < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cheat"
 
-    bash_completion.install "scripts/cheat.bash" => "cheat"
-    fish_completion.install "scripts/cheat.fish"
-    zsh_completion.install "scripts/cheat.zsh" => "_cheat"
+    generate_completions_from_executable(bin/"cheat", "--completion", shells: [:bash, :zsh, :fish, :pwsh])
+
     man1.install "doc/cheat.1"
   end
 

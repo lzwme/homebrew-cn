@@ -7,12 +7,13 @@ class Xmq < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "abef4eb1ecee27916d91f329d384a3c1a17ca5125153e8fd3ddb254d107d7593"
-    sha256 cellar: :any,                 arm64_sequoia: "b571e14d2e29ff17a03e8473e35d9edca038c709e0d79205749330b1aa1e7a6f"
-    sha256 cellar: :any,                 arm64_sonoma:  "562c8cb50dfdc9ff71598b87fa9d6efaadf2b25f706630f29ddb44e5b445f395"
-    sha256 cellar: :any,                 sonoma:        "970ac3cf05557867cf60c48cc5426cd0703695fa946bcab872291cca1957efc1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e49777a1bc398cf8d44f69ad880f12482b632186dbb7482e66d79cc0347dd985"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f35af178ae26bb39d1dbd4ce4178c4e5e16a980ef2831aa5670b7c4adbb522be"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "57f9b83e2aa79916d184a0f9c84e0469780d18cb865fdc2ba709fcef285f9ad6"
+    sha256 cellar: :any,                 arm64_sequoia: "1640a5ee0f308c681b68f7ed86a800d078646369db77dfddde067f83d6c40057"
+    sha256 cellar: :any,                 arm64_sonoma:  "fd1245acbaa0450424fb34ce8d10a7e6a27d74ab846439b474355aefb36dd64b"
+    sha256 cellar: :any,                 sonoma:        "d9bf5cfe88c080b54e304e799120032c0bfb3d82d5b00ddf572ac92bd47ad668"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f08017742793183450ae57864a7a3f9300be2694207f1055a9a3dcd25e347436"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29c501e5543ca76505576efb2b02b4fbaae32b5005ac9626abb975b1bdb318fb"
   end
 
   head do
@@ -27,7 +28,10 @@ class Xmq < Formula
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?

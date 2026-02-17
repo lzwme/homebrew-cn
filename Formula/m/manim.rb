@@ -12,12 +12,13 @@ class Manim < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "612e376259cd09bc1e6158ab2d77a85590dd8f4f3f3ca569f9d3c6a8a9700f9a"
-    sha256 cellar: :any,                 arm64_sequoia: "7859511601ea2ab4729c283c4c10fadcd3707e42b6e745d0b73ea88adcb4ed1a"
-    sha256 cellar: :any,                 arm64_sonoma:  "53963ea2c43b152c1ceee9f25505302c9176ae7bf2e2f15820f207b68e649a11"
-    sha256 cellar: :any,                 sonoma:        "2a6e5a27ad6d718e2357a2aca8b70f85b14e7e90b06229e3a6b60b5ca6841409"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe663b2f2169eeacba0532503bbd2054cf6ec0568c36ea679d9a8b0f3fa43a79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "401515b381cbfce520d59c342293012ca82b56e366ae3a44943c4bf5ed5a817e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "397cbfb8d34e8d2297b569fb4128b5d70aef4ce852bc4c1ca9189d4b1deae3dc"
+    sha256 cellar: :any,                 arm64_sequoia: "11479f24bdd72bcefbaf75930d20172c4af0b4831b5bee347b7ab73c49254d8f"
+    sha256 cellar: :any,                 arm64_sonoma:  "c9f63f8550f77dfd804839fc57c95ba9ddf980e4b79b3a2d0d06596717dd10bc"
+    sha256 cellar: :any,                 sonoma:        "83d40bd31e373cc3259546934ce847f90240d136c72568e180151cecac634c99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd58a0a7d7a0c665d49a27a2eb54d15529b066f869b5f0327d3042d65704a586"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6080aa6bc77054ea8cd01a9f2f1f621cfc9d67be787f1fb4241ba45ba491c15f"
   end
 
   depends_on "cmake" => :build # for mapbox_earcut
@@ -139,8 +140,8 @@ class Manim < Formula
   end
 
   resource "pyglet" do
-    url "https://files.pythonhosted.org/packages/07/6c/4bf476a1522d8293565f801ef305f2932148950b552df866a771c884ddaf/pyglet-2.1.12.tar.gz"
-    sha256 "bd7a750b2a5beaf0d2dd4bf4052d96e711ecd00ad29dada889b1f8374285b5f6"
+    url "https://files.pythonhosted.org/packages/77/b4/b78df1ec545a151cb7ee64a1632e8f33ba8bd1a97329e4918e76761a80d9/pyglet-2.1.13.tar.gz"
+    sha256 "37a31c212b51658f7c125613f93818a199e8808f86e9b1abe7bfe5395661eee3"
   end
 
   resource "pyglm" do
@@ -164,8 +165,8 @@ class Manim < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
-    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
+    url "https://files.pythonhosted.org/packages/74/99/a4cab2acbb884f80e558b0771e97e21e939c5dfb460f488d19df485e8298/rich-14.3.2.tar.gz"
+    sha256 "e712f11c1a562a11843306f5ed999475f09ac31ffb64281f73ab29ffdda8b3b8"
   end
 
   resource "screeninfo" do
@@ -174,13 +175,13 @@ class Manim < Formula
   end
 
   resource "skia-pathops" do
-    url "https://files.pythonhosted.org/packages/45/e5/2df8c918ffcb4ad847d2571f32a92447ffebe2e9c94d4ea05d9a86f20beb/skia_pathops-0.9.1.tar.gz"
-    sha256 "f1273ef4da23570f33e76e7753908484e5a4a2468f7b1089f9110ccee6293f99"
+    url "https://files.pythonhosted.org/packages/4a/f6/ab37d6fa21f25965d4ad059745c76f13ddfb92a2c06a842a42ad77961c24/skia_pathops-0.9.2.tar.gz"
+    sha256 "4b6d8459f6f4a69282cb26fca0c2bb0b321cc58a9bf9cc6579a52a391edc0319"
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/89/23/adf3796d740536d63a6fbda113d07e60c734b6ed5d3058d1e47fc0495e47/soupsieve-2.8.1.tar.gz"
-    sha256 "4cf733bc50fa805f5df4b8ef4740fc0e0fa6218cf3006269afd3f9d6d80fd350"
+    url "https://files.pythonhosted.org/packages/7b/ae/2d9c981590ed9999a0d91755b47fc74f74de286b0f5cee14c9269041e6c4/soupsieve-2.8.3.tar.gz"
+    sha256 "3267f1eeea4251fb42728b6dfb746edc9acaffc4a45b27e19450b676586e8349"
   end
 
   resource "srt" do
@@ -194,8 +195,8 @@ class Manim < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
-    sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
+    url "https://files.pythonhosted.org/packages/09/a9/6ba95a270c6f1fbcd8dac228323f2777d886cb206987444e4bce66338dd4/tqdm-4.67.3.tar.gz"
+    sha256 "7d825f03f89244ef73f1d4ce193cb1774a8179fd96f31d7e1dcde62092b960bb"
   end
 
   resource "typing-extensions" do
@@ -212,11 +213,6 @@ class Manim < Formula
     # hatch does not support a SOURCE_DATE_EPOCH before 1980.
     # Remove after https://github.com/pypa/hatch/pull/1999 is released.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
-
-    # Workaround for https://github.com/fonttools/skia-pathops/issues/84
-    odie "Check if setuptools workaround can be removed!" if resource("skia-pathops").version > "0.9.1"
-    (buildpath/"build-constraints.txt").write "setuptools<82\n"
-    ENV["PIP_BUILD_CONSTRAINT"] = buildpath/"build-constraints.txt"
 
     if OS.mac?
       # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula

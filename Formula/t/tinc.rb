@@ -14,19 +14,21 @@ class Tinc < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "9387ad8982b1f4471517f5edee95e4f6aa272a47ebfa86adbad67c7c019d3a85"
-    sha256 cellar: :any,                 arm64_sequoia: "aa59254216d5b699c9656872ddf6cd268d0ca8370e340116e56ec192c4c26f40"
-    sha256 cellar: :any,                 arm64_sonoma:  "bdcb1f7311ec710a0b372b7c28793f6ab29a4be5346775c0f4751f54e1913053"
-    sha256 cellar: :any,                 sonoma:        "645b7d301ba9e5d979deb444801639e5933e2b8ad67d1db0cca420dadc0fdf07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "efec5d1ef53cede8a0d1acf38ac128c7be0f13d47eee5bde73e9c2c4f6c2736f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00197b538b9a810f768fb915e71bf1bd0bdf8f5ef24c2abcacb053259d1681ba"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "fec5d5550d6c34b8ed4a77e0df8a9eb507057df30076f9806e1dab5f10cf797a"
+    sha256 cellar: :any,                 arm64_sequoia: "557684567c679c553dd157dbe92f4740160e2f2a0521d4910e3e40d7578c613d"
+    sha256 cellar: :any,                 arm64_sonoma:  "d17dfcc53d3d26a6168cfb5a1630653308b853801f7495568a9f341d59c5ddc3"
+    sha256 cellar: :any,                 sonoma:        "f40c710167e11b42b729de6be12b8dbda24caa4b238739d4e3176a8ac7e00eb8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "badc117b77ec0ad57a0954ac307698fa34223beb9406a210a30c6f64b0d5e08e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6929dbbd4bc0cbc6e790bedd9be5a92493e1b3810bc7b93c421200eac3c046ef"
   end
 
   depends_on "lzo"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # fix build errors, upstream pr ref, https://github.com/gsliepen/tinc/pull/464
   patch :DATA

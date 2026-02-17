@@ -3,17 +3,17 @@ class Dolphie < Formula
 
   desc "Feature-rich top tool for monitoring MySQL"
   homepage "https://github.com/charles-001/dolphie"
-  url "https://files.pythonhosted.org/packages/fb/39/a44bd83ed3d5fc561415fd05d2b5d07f35f766e6b6cc40201f18c36132cf/dolphie-6.11.4.tar.gz"
-  sha256 "9385534c2a5fe5b65ed5cb8b153abd751c366d04d31c728b580b7a4374b2d110"
+  url "https://files.pythonhosted.org/packages/ea/fc/52d8492b3bf805c5d2d3adb96d6bfb20209dccf227988a26cd4c8ed69892/dolphie-6.13.0.tar.gz"
+  sha256 "364f9cb65dcfb05a79d039a04aba7f216f19129af0bf4301d12f72eafd8aa949"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "73978ef13c70c5071e093208e4ea69c9391b3c28a8cf40afe650fe114ddc336a"
-    sha256 cellar: :any,                 arm64_sequoia: "81c97577f43f4311d05c52834a0e176ae34b2699c99c6859e50802c9c1d673fd"
-    sha256 cellar: :any,                 arm64_sonoma:  "d2b5432b43a222b325bbfcbea5f84d8a1736c521fea55f29df8f2a0c833047f0"
-    sha256 cellar: :any,                 sonoma:        "9f5c7e29fe3a4691807485655182f6a8b194f60edf6e3f25dc3bf2a11eea15b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d69a0874cf52561bd1ef91efc2765c4afd2c02e2120c260183bd331a805f8689"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68c3f39493ba521d2ae07a5020a7421d5b5e2616d0d122e9fa3ef6677602c153"
+    sha256 cellar: :any,                 arm64_tahoe:   "e583ea6bff8cf62e4fc29603aa08b84d5b511049f6c2b46a01d4c636a08efbd9"
+    sha256 cellar: :any,                 arm64_sequoia: "399fdf91d6dfb0310e9d45bd336980ce87a2f927f8ebf6afb647d6a1cab65da6"
+    sha256 cellar: :any,                 arm64_sonoma:  "0eade43dd4aca8cac3c333cf81e1a273218611d903f0e034f92baa428a9216eb"
+    sha256 cellar: :any,                 sonoma:        "3d96b6a210b019387995a9cc3c312fad9f122c4427951a4dfbca9e7260199019"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "22eb15c77727f3763a4f48b261c395dbb2f4a86365875212948968204c6fa23d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab7d9b8b40521d17175d307b51e9d0845db4e191d698e38dbcf9ad21c96d3ae6"
   end
 
   depends_on "rust" => :build # for orjson
@@ -64,18 +64,18 @@ class Dolphie < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/04/b8/333fdb27840f3bf04022d21b654a35f58e15407183aeb16f3b41aa053446/orjson-3.11.5.tar.gz"
-    sha256 "82393ab47b4fe44ffd0a7659fa9cfaacc717eb617c93cde83795f14af5c2e9d5"
+    url "https://files.pythonhosted.org/packages/53/45/b268004f745ede84e5798b48ee12b05129d19235d0e15267aa57dcdb400b/orjson-3.11.7.tar.gz"
+    sha256 "9b1a67243945819ce55d24a30b59d6a168e86220452d2c96f4d1f093e71c0c49"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
-    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
+    url "https://files.pythonhosted.org/packages/1b/04/fea538adf7dbbd6d186f551d595961e564a3b6715bdf276b477460858672/platformdirs-4.9.2.tar.gz"
+    sha256 "9a33809944b9db043ad67ca0db94b14bf452cc6aeaac46a88ea55b26e2e9d291"
   end
 
   resource "plotext" do
@@ -84,8 +84,8 @@ class Dolphie < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
-    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
+    url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
+    sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
   end
 
   resource "pygments" do
@@ -104,8 +104,8 @@ class Dolphie < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
-    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
+    url "https://files.pythonhosted.org/packages/74/99/a4cab2acbb884f80e558b0771e97e21e939c5dfb460f488d19df485e8298/rich-14.3.2.tar.gz"
+    sha256 "e712f11c1a562a11843306f5ed999475f09ac31ffb64281f73ab29ffdda8b3b8"
   end
 
   resource "sqlparse" do
@@ -114,8 +114,8 @@ class Dolphie < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/39/55/29416ef63de4c37b37da217b94439a28496a4dc585209f5bf1437a61d120/textual-6.12.0.tar.gz"
-    sha256 "a32e8edbf6abdb0c42d486e96bdf419eb3aa378edb1b1271b84637f3dbd64c73"
+    url "https://files.pythonhosted.org/packages/71/13/b5cb4995d1390dd6e43c89bfa879ae41fc1b97551ce1f6d29bd01d0f9395/textual-7.1.0.tar.gz"
+    sha256 "3c7148ef00a9277b45fd78a1a6adc7c419c451d3ed714a0b015b16eaa2a8a73b"
   end
 
   resource "typing-extensions" do

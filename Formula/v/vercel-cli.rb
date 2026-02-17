@@ -1,17 +1,17 @@
 class VercelCli < Formula
   desc "Command-line interface for Vercel"
   homepage "https://vercel.com/home"
-  url "https://registry.npmjs.org/vercel/-/vercel-50.17.1.tgz"
-  sha256 "c772f0b3c302b130aff99a0e0e6ad422e023aa8d4fb353aa960fe910b5841ef1"
+  url "https://registry.npmjs.org/vercel/-/vercel-50.18.0.tgz"
+  sha256 "6976f171f9a21157d272be04a7a6b3c93ff862d8389ce51288e5973cabe9c6bc"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41b806fcd8a74e8abdc05e38e9dc1cd5fd638da73cb917c2c27e19f611f91b28"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "41b806fcd8a74e8abdc05e38e9dc1cd5fd638da73cb917c2c27e19f611f91b28"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41b806fcd8a74e8abdc05e38e9dc1cd5fd638da73cb917c2c27e19f611f91b28"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4f0f879d85e3635470d4c15bd1bd8c67a5dda68e2b8058ea4c330e06f57217ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4b3551a2694dcb527194144f117f4856204f32c64339378e374fe3bf59a9423"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75ad55e3e085e80c560302c15f1db6835cda527ac2eb1928dc4468fc87eb0f5c"
+    sha256 cellar: :any,                 arm64_tahoe:   "ced61700d6c243859ad26ee0b1318bc856be04c6ddd9dc7605cade3a6e6d60b9"
+    sha256 cellar: :any,                 arm64_sequoia: "39500080d027c9b8d536e0c680b1ea5de9a90f4244e30f95e54dedcad2fb5b8a"
+    sha256 cellar: :any,                 arm64_sonoma:  "39500080d027c9b8d536e0c680b1ea5de9a90f4244e30f95e54dedcad2fb5b8a"
+    sha256 cellar: :any,                 sonoma:        "52d6ac1f2def19000f3f9075a124e87a6f75cba2e523e4014bd821bef5bf98f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "84cea66023613374e7bb4ee4822b663ddb44fd7cb979a356c4a65100b55a3134"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f30fed5fbdb576cae4604d6fd6b6329c92a85323a87abacf48fba3bbe8914a2"
   end
 
   depends_on "node"
@@ -21,6 +21,7 @@ class VercelCli < Formula
                                '"brew upgrade vercel-cli"'
 
     system "npm", "install", *std_npm_args
+    deuniversalize_machos libexec/"lib/node_modules/vercel/node_modules/fsevents/fsevents.node" if OS.mac?
     bin.install_symlink libexec.glob("bin/*")
   end
 

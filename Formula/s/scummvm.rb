@@ -4,6 +4,7 @@ class Scummvm < Formula
   url "https://downloads.scummvm.org/frs/scummvm/2026.1.0/scummvm-2026.1.0.tar.xz"
   sha256 "e15b8650c2bd9e11b69b49eef9dea1eedccc5b1c191748b15c34167614d77b66"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/scummvm/scummvm.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,12 @@ class Scummvm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "ccfd9caf1bad9cc2fb4f185708f9059d4edb10df44f7b37a925aebd152743ad9"
-    sha256 arm64_sequoia: "97b75edbe0676df112394066a2242151d9ca17b60fdd7959afc8a52fa6fe7bcb"
-    sha256 arm64_sonoma:  "c01f5c9d27412bfc2fd5ee5693c6e1d6be794fcc736e8082fd8f9e092a346fca"
-    sha256 sonoma:        "2cf0d7b5a425ae4cb19e0750444ddd2d457edea92cd56c302517a342c9948b17"
-    sha256 arm64_linux:   "1ef85a22c97e98bfcbf12f0f344c65dbc9068533be44875ab20523a0485a7804"
-    sha256 x86_64_linux:  "8ebf87962c1701bd2344c717a6d1a0637f896111ee2e54ec78e59e6b3cec7f1d"
+    sha256 arm64_tahoe:   "70f213a424f5c37fc03b3c396f9492bced7fd3c45dedeebd6aac55491c2968ab"
+    sha256 arm64_sequoia: "65d04954c8267ea834b18ccc8475a7ded9b502f24aaa5af557705b0dc9aee12e"
+    sha256 arm64_sonoma:  "67106e56a5d5b243918de647830ef431feef80f06159a9214299d2ccdfdb0b11"
+    sha256 sonoma:        "56a5f280faee1f9b5b48066c5598479853ee345022ae623542cf08fddabc39e5"
+    sha256 arm64_linux:   "5ea5730c8d2a01121b4acaf38a473fca920b498ee04f77ba26351238bc7778b1"
+    sha256 x86_64_linux:  "6802bc411def1795e9290a93be941a9cea17db0cb86fc91e43917cad27069e06"
   end
 
   depends_on "a52dec"

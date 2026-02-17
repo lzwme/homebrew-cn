@@ -15,12 +15,13 @@ class Wireshark < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "e50ea39d399875fc4e06ad0fcca59773ae4a4e1a79c09cd00d47bddc8bbec264"
-    sha256                               arm64_sequoia: "540869268a93979a84f73370c24f442dcecbf1d401012960e40a532fb5ddf252"
-    sha256                               arm64_sonoma:  "f862b8b9b02292a6f2ebdb89d2595625857d4846b5ede7898973711b941bad18"
-    sha256                               sonoma:        "2d5193e0b95c369f17fa89b66343fc0241f895bb92dbdb0ec4366b45bf4f8a31"
-    sha256                               arm64_linux:   "ba389255ab647d5440e5611cd4f74f16bae17eaebf7b685c46e15d91e0702d4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a032aefb1b3660ef4115e2a4744f6c8ba350e28cde7ca59698df68293a35ca7"
+    rebuild 1
+    sha256                               arm64_tahoe:   "d038c7691bae2b63f964259cdc143b8962c6a9e02daa8a8eecb77aa621ee4f5a"
+    sha256                               arm64_sequoia: "12616070a6d77db28d62453687ede12f5cdd5074f9559ee5145a8e3933e457ac"
+    sha256                               arm64_sonoma:  "7394f9d57259cbaff643659cc521ac9d640b17bf3352abee30b10f6ae9befabe"
+    sha256                               sonoma:        "30c262e74f3179fd2d635d922b9f472a51144e97f8580c51ea929e99243ea533"
+    sha256                               arm64_linux:   "5fd7620143909a654d87fa59f0bfbec33453b56b537db890d964d0b8b69d7c26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a4897c63d34f00ebe588541d732acc51f66fd8a447be59091bf3eeb84cf0431"
   end
 
   depends_on "cmake" => :build
@@ -45,10 +46,13 @@ class Wireshark < Formula
   uses_from_macos "krb5"
   uses_from_macos "libpcap"
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libgpg-error"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with cask: "wireshark-app"

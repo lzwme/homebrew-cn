@@ -2,7 +2,7 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 1
+  revision 2
 
   stable do
     url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.0/gstreamer-1.28.0.tar.bz2"
@@ -26,12 +26,12 @@ class Gstreamer < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "4b7f5449177487eab692bd000af79c7e7545d4b1aacc3c642da8b069d82f56da"
-    sha256 arm64_sequoia: "18e2d1d0cd04af8c90249c7ccaee2f5eada33aa94edcea080cf46bb214ecf065"
-    sha256 arm64_sonoma:  "52063e61df492ae4f84e993b0d5ed223fe9453263c98c15fb08fad2ed0d5bb5e"
-    sha256 sonoma:        "8cb232bfbfdf25f828d58bfddc43f1cce739dca8b870cc5a7c408a9e5b8c228f"
-    sha256 arm64_linux:   "ab76e0a5064d2232e5ba34b98c9409a0ae8ea3b6f1b7a86f5edaf0643db4d67c"
-    sha256 x86_64_linux:  "d9b9dd29cfb84d88ffebcf89cc3c027db16276e1288994a18540a239f133c278"
+    sha256 arm64_tahoe:   "90967275d5dcb8bcc7996eadec5f9a392f83cafde2306ae40baea84308e4c67d"
+    sha256 arm64_sequoia: "f4ed55c7ccbeb49a9db1dcdafaad8adae25f8ac56f2967e63fc872dc11b04c5f"
+    sha256 arm64_sonoma:  "4ac1532abb13a71cf2917f9c1418fd2d4d51527ba5041dbb807ee5eeab3b6f05"
+    sha256 sonoma:        "934b07d28f639bf651c6d91da8f0e13cf85af82d8d566fac4bf704559e0cfa2c"
+    sha256 arm64_linux:   "2c50054f5e6f868e1c8bada59aef7dea4d6e31e52e23a05be3152a1f5dde4e0c"
+    sha256 x86_64_linux:  "e474f01d3ac220855a0904774338a676f574afa40b0e1deb481b006736c2ddeb"
   end
 
   head do
@@ -114,7 +114,6 @@ class Gstreamer < Formula
   uses_from_macos "bzip2"
   uses_from_macos "curl"
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
@@ -135,6 +134,7 @@ class Gstreamer < Formula
     depends_on "mesa"
     depends_on "pulseaudio"
     depends_on "wayland"
+    depends_on "zlib-ng-compat"
   end
 
   def python3

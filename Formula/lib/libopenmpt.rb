@@ -12,12 +12,13 @@ class Libopenmpt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4be673aceb001642e12d2f7992946bf85305a42561227daba2b0389d4442f46d"
-    sha256 cellar: :any,                 arm64_sequoia: "684c17f93ecbc379409f75d3f275c7998cbd95fff7b7aa4c59700f03014b9be7"
-    sha256 cellar: :any,                 arm64_sonoma:  "291cc2513e0a63db6f3d11f186701c08f291b23fe1839b1c1afe5afe819e27c4"
-    sha256 cellar: :any,                 sonoma:        "486cf7ec136a7cc464593c7eb5e887cbc9852ba402c0d6258287f43801c3d663"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "690df6cd7e7e7af1ff89eb1160180f0c54fdaa0457b9e43409efe52556fb4f6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4febab73735e3851d7e10a3f88815915856ea329a8a4427d625dc82c28e2f39"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e09315408f5be893af14c0d36d2e3a8d5e5aa9443e97d8acdcae39d9b22c1dd4"
+    sha256 cellar: :any,                 arm64_sequoia: "ec71c6ec24216db99b40adaa1e1fb4dfbd1404aececa2647b24cb775de74ec4d"
+    sha256 cellar: :any,                 arm64_sonoma:  "4acb4e48c93f334f90546da9925decd431f794e54bcf746966ed024f631474d2"
+    sha256 cellar: :any,                 sonoma:        "3eb20b31542271030cbaa404eb33b268b405deac211fcf9f2d4e3e558efdcb7a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d878406b38aa781f2f2db18fd061bf3b92a594e2cd179366f1517ad25de49156"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74e45d0330a851a48b800b669fc813b22ed5cb977623be03c13fb82122303a3e"
   end
 
   depends_on "pkgconf" => :build
@@ -29,10 +30,9 @@ class Libopenmpt < Formula
   depends_on "mpg123"
   depends_on "portaudio"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "pulseaudio"
+    depends_on "zlib-ng-compat"
   end
 
   def install

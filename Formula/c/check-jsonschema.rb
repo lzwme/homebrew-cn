@@ -3,18 +3,18 @@ class CheckJsonschema < Formula
 
   desc "JSON Schema CLI"
   homepage "https://github.com/python-jsonschema/check-jsonschema"
-  url "https://files.pythonhosted.org/packages/bc/08/12904b4e7bd5a3377e14d51ec6a1c8aa4d432b6e6e2b48eb1982cea34ebf/check_jsonschema-0.36.1.tar.gz"
-  sha256 "d0fa1b92573d0404ad81d9b02b4a93cdd0d5c1871f4bea7361e664afc52938e7"
+  url "https://files.pythonhosted.org/packages/03/63/7b981a8c3ef7f153259fa8934abe0f35ea210ca40941dfd5c2b9ae521e8f/check_jsonschema-0.36.2.tar.gz"
+  sha256 "bc5de8b0270eb9c5b82adf1f977cb8d05ff2578eb7e2317a44620c1639f1e55b"
   license "Apache-2.0"
   head "https://github.com/python-jsonschema/check-jsonschema.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "66d0e1674532258dfa4261a6a8e217e742118663f8f5eba9935c03293fc1d603"
-    sha256 cellar: :any,                 arm64_sequoia: "6b4318f21df3ce4c586a0c2f3907592efd9c3c407732ec877f77e6f97a77575a"
-    sha256 cellar: :any,                 arm64_sonoma:  "6783e1c7d274c1a0a062c2e474bd8c2f94756de47ddd449d60d90dc5709b6430"
-    sha256 cellar: :any,                 sonoma:        "e223d4e59c929fbb4dc495603cfc4484da1ee23bc48fbbc96255c69f51489c4b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "377d9af64770f5fd4eee854037200a04dd4f1f9f244b3852e9d7e2b83757ce8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1dd2c94f80f45470550c3c510994fb38b5c018db311f49228fb6dd251c3378e9"
+    sha256 cellar: :any,                 arm64_tahoe:   "4f4cebf250314f6cc32c1c929784274f537274192e2ba12f94fec88db67f9211"
+    sha256 cellar: :any,                 arm64_sequoia: "ba3043a01c2e2715cebe2f9e8b93b61266bc5ed181fce9112d883a21a951ed0d"
+    sha256 cellar: :any,                 arm64_sonoma:  "f9c4b77be8cd48f01bf2f90ea809a3a28e4345bf4f2b0aa2e46fde84ed51c17f"
+    sha256 cellar: :any,                 sonoma:        "7a9e80c985d784e1be367f134b6ca3ee06726102bee6aeaea9effbf787d3fb04"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "493f3f8178d35bf12f28bd787159dc7fc0afe545b826ee5092da0c2056f35e0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cd316e74e8935d2f18819f3342e436f8bd46fd21d5831f1b8f9002208a875af"
   end
 
   depends_on "rust" => :build # for regress

@@ -12,21 +12,21 @@ class Xapian < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2048acc4b5bf066a591e66dad19a1e28cf6f810c49da2410cbac9a697cd15faf"
-    sha256 cellar: :any,                 arm64_sequoia: "b23b26f2f036d6e109bfaa0dfb010f4e9d649f0d3717f505f8437d65259df99b"
-    sha256 cellar: :any,                 arm64_sonoma:  "b8fe0060668407937f504c6f64d9519ca85cd728162e9217c7feea45946a2a47"
-    sha256 cellar: :any,                 sonoma:        "77f69a22a21a06e98ea9f03ec2c15bd4baaf4f59d198322c9d64bd4314cd5a47"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d15baedac0d5915f1a052b6fd5055f2d4d085d65b6b5500d2dbf2185c00783af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "794a2b79d84e067a17f0979d65d87762c23fbd45a1ec664c9c37fa232f5025fc"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "4f3e44b08568874b76556a3f8655fb48367743a6a7801775975a3f7816dfd42f"
+    sha256 cellar: :any,                 arm64_sequoia: "ac6712c54ea7000cdcdb0e90a68147cb85d59f1a0dec2be4b1f5634ce977fdac"
+    sha256 cellar: :any,                 arm64_sonoma:  "91f12b0e0e5e4078c3af5e15fe13d9b81a42ad8669f1b698f4f4ef5f2ab8ddaf"
+    sha256 cellar: :any,                 sonoma:        "316fed98f652f0721b87cb521bcf5ca576a106bb46360b8c23a39be13130997a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "203af3b3f705fb93c5af0d4f1a53841e9d00cf1ea24cc2edfd62bf4cc7ecf391"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d87945b42c6bb961b19111b099118cdf304f71bb69d4c4215647c0d4f7d7c405"
   end
 
   depends_on "python@3.14" => [:build, :test]
   depends_on "sphinx-doc" => :build
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "util-linux"
+    depends_on "zlib-ng-compat"
   end
 
   skip_clean :la

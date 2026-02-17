@@ -11,12 +11,13 @@ class WxwidgetsAT32 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a3233bdeaa30398c7482d2e14e3a2531ff6395fb4934064ac5f805e16337059c"
-    sha256 cellar: :any,                 arm64_sequoia: "ab5cea380351b431a86f56b102e68016c4db214520fe89fddbfc52938d40e5f9"
-    sha256 cellar: :any,                 arm64_sonoma:  "7e0292d903f5846f7bf5c1d93aab4c72ed4a937a73947908f1d071d6fd57691e"
-    sha256 cellar: :any,                 sonoma:        "fe0dfdb6b51003c0da529837466f9618ad2cffa3031bdba7074320a8ab94c5db"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b2e1c63b7cbf906afd606c8d4808f2a15bf34f186e68c7c855ec66df480c567"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9003d26f9a6c11d1aadcb99bd8c35acff4e63bbb034d6a5039d1f737760eaf9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "def241df0ed45b686ecede437f05914fc118411adfc4cef1f5e39dfc2b455b4a"
+    sha256 cellar: :any,                 arm64_sequoia: "fddafc373a90a222d5da80c8cab4ccb0ebd66a3d80cc9d5b91c792a384a9c086"
+    sha256 cellar: :any,                 arm64_sonoma:  "7ee82e1e66b3e3b8c83a69db5665ca824398883057d2d1ad564cc52b4515ec81"
+    sha256 cellar: :any,                 sonoma:        "e91475236162815043f5d88b3eec56df9b1d76fd4187d1e77d68e9ace2e0f8f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57c5ea5d0c19561f052695d2100708e071a8d8eeddf8f697179d2d900b9c1b1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a917897d830f7bb5d489f2b560abe255fe03efd846760a7dfed916c595ea20e"
   end
 
   depends_on "pkgconf" => :build
@@ -26,7 +27,6 @@ class WxwidgetsAT32 < Formula
   depends_on "pcre2"
 
   uses_from_macos "expat"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "cairo"
@@ -43,6 +43,7 @@ class WxwidgetsAT32 < Formula
     depends_on "mesa-glu"
     depends_on "pango"
     depends_on "wayland"
+    depends_on "zlib-ng-compat"
   end
 
   def install

@@ -4,16 +4,16 @@ class Handbrake < Formula
   url "https://ghfast.top/https://github.com/HandBrake/HandBrake/releases/download/1.10.2/HandBrake-1.10.2-source.tar.bz2"
   sha256 "c65e1cc4f8cfc36c24107b92c28d60e71ef185ec983e9a5841facffafea5f8db"
   license "GPL-2.0-only"
-  revision 1
+  revision 2
   head "https://github.com/HandBrake/HandBrake.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c08bb79cca85c14069c9e2d985cc8ab09846c216ce8c192a0eecd0bca3314f0b"
-    sha256 cellar: :any,                 arm64_sequoia: "30a996036cd2f73b5864b6391555e02ac42b16fa438846fc84d27d3620981f69"
-    sha256 cellar: :any,                 arm64_sonoma:  "5895e763285ea19eb0c71329ea20ba1603f04710e5d8dfb02875f9ab48520863"
-    sha256 cellar: :any,                 sonoma:        "1e97fe6be41a26643e44ae20a6a288d9f0d7f02ecc450a0352e972bb86ba2594"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33da87924697e64b6baf7358e24d058fc37f1a3f2df37e4cfce623712736fd2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22eb01237d3f155e2b6f067de2b3be6f4327bc7ea65d63ca91397e97becbbad3"
+    sha256 cellar: :any,                 arm64_tahoe:   "2d3a39c056cd56eb9f56ab63407bf886088f190919668cbed3caf5e66ca4c032"
+    sha256 cellar: :any,                 arm64_sequoia: "4cab7b397d57e95dcdbcc4d0afe366648190a569fb6a7312ab37799bb1a24ccb"
+    sha256 cellar: :any,                 arm64_sonoma:  "fb419ece19e23536c4af6e464e73483e6ea057e67f0a6f859c5857a1ee2f75c7"
+    sha256 cellar: :any,                 sonoma:        "fec30e2ef0b4f48f8ae12a825d4785d5e23a77ddadc4c77fc3d44aac8a93d3a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2284bd27ae585db94fb1674367517e8ae42eb2297857b66613e92eb059254a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f07869bbe8ed2ae1c9cec894569b9d2f12486c7dff8130381a336d5771cbc733"
   end
 
   depends_on "autoconf" => :build
@@ -52,7 +52,6 @@ class Handbrake < Formula
   uses_from_macos "python" => :build
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libx11"
@@ -60,6 +59,7 @@ class Handbrake < Formula
 
   on_linux do
     depends_on "numactl"
+    depends_on "zlib-ng-compat"
   end
 
   def install

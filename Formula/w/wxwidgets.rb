@@ -12,15 +12,13 @@ class Wxwidgets < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "2e0e49d77a50fae093ba05fbb33dd7e7f85904e41d19d183a0d1d0536259a781"
-    sha256 cellar: :any,                 arm64_sequoia: "68e7b48517034aee17f6dd2a01e0bc187eb8bb3134eef1a8e21d1aa1588dccc7"
-    sha256 cellar: :any,                 arm64_sonoma:  "5c0ef73e591ab78fd499d70c1c3d2c9c7075235e1d0b58cbdebdce1d9d9e07a3"
-    sha256 cellar: :any,                 arm64_ventura: "cbe903ce43449aab311c9bf986bcffb088ce140b92e9d48aaa27029e25710089"
-    sha256 cellar: :any,                 sonoma:        "2ccc3efe4545d4427d9d05babebec32412b373922b32a4449c7ac1016ea8fbd2"
-    sha256 cellar: :any,                 ventura:       "a75c5640475ea3d3de76bd1a6c94f500bd563424db049572b77b46923a01d14c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbbcc4091bd5549e44971ccd98d3c7b9c331e2b902fb3f4ed63d8045f62a1b73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21d22b573549d66b83d46cc784fcdc3bb092098c0ce12b6c5a5a32700c1beb01"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "72d2bf524e7e4e0c33cdb821ceccf03a8710ad857dfbcc98ceb425f016af415b"
+    sha256 cellar: :any,                 arm64_sequoia: "6bae94c9ead02198570213f13ed879630f115792ca9b59e59c9284f5afb9d3dd"
+    sha256 cellar: :any,                 arm64_sonoma:  "ca100b098e25e75595daac3babb90e5dacc00d2a2b008350f1a9039af37517a6"
+    sha256 cellar: :any,                 sonoma:        "f87375d970407f1aa0b8ca69bd40d252c3605d41147c5c4eac8788b6cde073d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4d07cfc394598ab8ae828e6ceab4288f088e2e959ac8a47deec7e2a9f762af9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76a1384109bff5d735bf2db4e79410398afd8f6bd648c916bc514261b7d869e7"
   end
 
   depends_on "pkgconf" => :build
@@ -31,7 +29,6 @@ class Wxwidgets < Formula
   depends_on "webp"
 
   uses_from_macos "expat"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "cairo"
@@ -48,6 +45,7 @@ class Wxwidgets < Formula
     depends_on "mesa-glu"
     depends_on "pango"
     depends_on "wayland"
+    depends_on "zlib-ng-compat"
   end
 
   def install

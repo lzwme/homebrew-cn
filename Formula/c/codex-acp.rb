@@ -1,23 +1,28 @@
 class CodexAcp < Formula
   desc "Use Codex from ACP-compatible clients such as Zed!"
   homepage "https://github.com/zed-industries/codex-acp"
-  url "https://ghfast.top/https://github.com/zed-industries/codex-acp/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "300c760007d436f3e35e271bdcf12085b7b50aed5c0c3d75ca7d4d5de47b5405"
+  url "https://ghfast.top/https://github.com/zed-industries/codex-acp/archive/refs/tags/v0.9.3.tar.gz"
+  sha256 "ee715faa4ebfefaee87ecdd4b06238d35693823cb7b907b08e0f7e39e7fc0f22"
   license "Apache-2.0"
   head "https://github.com/zed-industries/codex-acp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2c9ca460e3fd430e3a840b43259e1ea740334c9ac299672fff463328b4ecf256"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "049359709da792fa573774b13701fa0c718d72106d22a3b14304bc4125e9526f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bde60b78cfc5fff3bcc24d4ce803d70defa482ad536766430242f92aa8b05356"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b095d25e91a51dd16d7ed839dfe16740ba647017879e74ec819a590c01c63911"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6f59333ee1e351ff4d8b97d99bda78dd8f89172aceacb3b76680e67014b8057"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "326f6416415b339b1e238b518a5de7219b64156db728130af8e0b81541e26b16"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2620c73b1207370940a10bac36f3f5d4ef42eb0ad6d538c5a6c453bf7971c4eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26ac82abb3db314093d1a81ccf5cd5dc37c3a8b32efd4d5811d09bb05e0b7255"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06af616a8f3903c2458e44ccfd78ba91facdc8c4d52edb355bf02d161ed76d0e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9d1310b4ff76253425bd06a0fad94413232d527cbbbeeaab7d9130c6bf32a99c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b367f3127108bb7250c8ca200b461b13c0d40fbaa4e4d7df89ab5cbc553cb350"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20bb849c51cc7fde5c51d88e136bcf02881366a6fc2fc9f18924efe85ef00222"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
+
+  on_linux do
+    depends_on "libcap"
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
@@ -35,7 +40,7 @@ class CodexAcp < Formula
       stdin.write(json)
       stdin.close
 
-      line = Timeout.timeout(5) { stdout.gets }
+      line = Timeout.timeout(15) { stdout.gets }
       assert_match "\"protocolVersion\":1", line
     ensure
       if wait_thr&.alive?

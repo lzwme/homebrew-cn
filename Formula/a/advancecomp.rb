@@ -5,8 +5,6 @@ class Advancecomp < Formula
   sha256 "b07d77735540409771cbe1b6df165b5151c11bb9c3d8f01290be0ec88ec3498f"
   license "GPL-3.0-only"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "2862d3598f6f87ae56c243ebc30fffc8e2249ed68554be1d2e87ef3b3b791edd"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5777e7f8547c26b139edefeaf97664e1f8140947043ac1edc932ff03d58eac66"

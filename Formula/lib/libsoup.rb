@@ -6,12 +6,13 @@ class Libsoup < Formula
   license "LGPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "b71db2963a02429ef71c1e7d91849e787647f3618588240c62b219a5c8e9ed95"
-    sha256 arm64_sequoia: "8ce0cc1e7c7499e6a3f501917bd58fb68d00191ff1250d2ca6656f8621cfe7a5"
-    sha256 arm64_sonoma:  "59abd290b9d92f7aba4640530b1bc13d603b3ab83f2cb68bc1812ec00e9cc9a1"
-    sha256 sonoma:        "20c710eb88ac34adabede5b55e93a8f5a7d706281b0a2746d598595669027676"
-    sha256 arm64_linux:   "85fe541a49747400205b335bb72ed043d4a73974918747d6cb284105dc92e722"
-    sha256 x86_64_linux:  "ed610815d572c29515dc439816a6ef83c4982ea9653cd0beb131fa70ef2db90f"
+    rebuild 1
+    sha256 arm64_tahoe:   "5f72f9159dbbe2d66fe9fe9b2dedeacba280390f50d10ff337b35d2343fedf0c"
+    sha256 arm64_sequoia: "85f9669848a5936194b531c35fdbc011ad26b856b235ea0aab0386153694cadc"
+    sha256 arm64_sonoma:  "1b11895e9bc1ae1cb472689c9fdeec59e306adaa9d572bd5bc60529c0cb82d75"
+    sha256 sonoma:        "6829a788855e2989eaa02a3f3cd96f043a8902729d045c9f36f620653c7ef5fd"
+    sha256 arm64_linux:   "f90f3792a0ace929f8b719754fa5fac11cb8fa1677f1e64dd50083bc007ed7a6"
+    sha256 x86_64_linux:  "7ebfdb0452d9fb68b33bc374afe63441ce9ee387f5b666342a617f1074bbf128"
   end
 
   depends_on "gobject-introspection" => :build
@@ -29,7 +30,6 @@ class Libsoup < Formula
 
   uses_from_macos "python" => :build
   uses_from_macos "krb5"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
@@ -37,6 +37,7 @@ class Libsoup < Formula
 
   on_linux do
     depends_on "brotli"
+    depends_on "zlib-ng-compat"
   end
 
   def install
