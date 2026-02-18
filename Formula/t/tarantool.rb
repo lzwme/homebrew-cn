@@ -15,22 +15,23 @@ class Tarantool < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9f8b37daab5c827d4faf0662adde670764d6bc3d50d967408ba1ec540c7c384b"
-    sha256 cellar: :any,                 arm64_sequoia: "31ffaeb90022fdc701d19bda4ea4d8da22732878f265a9018473fc91ee548e1e"
-    sha256 cellar: :any,                 arm64_sonoma:  "5980e133b0568279b45006ed286a0596a474f70687a32e29bebc2b825e90cb48"
-    sha256 cellar: :any,                 sonoma:        "8a9397a5c1f411ba3e1fd447c577d815fc80e25ddc987dce6e60abfeea0fd146"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "23a46520d8850b3393a28f7de94f4a966fbf92c171fa22fe2430cdfc8ea14770"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a474d4214693c38e05d44d6a49a07b5f5ce82dbda47f6e1893eed33d4552dfce"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c123d9add829d7463fded3659787b1c9cbe02aff9b09be9a81161b218b4e58de"
+    sha256 cellar: :any,                 arm64_sequoia: "c0cffe6aecb74ad382449b11a4487743d9e1b647856b33e2dc298807ec722294"
+    sha256 cellar: :any,                 arm64_sonoma:  "8c8d71ddbcf21ee22210faa55f2a80d09a0eee6adde5ad2b6a35cbc349991c42"
+    sha256 cellar: :any,                 sonoma:        "3d7ed307fe9dc2672550cf0dbc556e86ba480fdefe209f480bf29b08e835e7c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "017e2952ddaf7eab4aa224591f775b9b8c911eed1dabcf941833b7f02d957e0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b3e09880ea5384a466276c2bb3c6d67b4ad7705bbccb48bba934fc3fbf525a3"
   end
 
   depends_on "cmake" => :build
-  depends_on "curl" # curl 8.4.0+
   depends_on "icu4c@78"
   depends_on "libyaml"
   depends_on "openssl@3"
   depends_on "readline"
   depends_on "zstd"
 
+  uses_from_macos "curl", since: :sonoma # curl 8.4.0+
   uses_from_macos "ncurses"
 
   on_linux do
@@ -44,8 +45,6 @@ class Tarantool < Formula
       -DCMAKE_INSTALL_SYSCONFDIR=#{etc}
       -DCMAKE_INSTALL_LOCALSTATEDIR=#{var}
       -DENABLE_DIST=ON
-      -DCURL_ROOT=#{Formula["curl"].opt_prefix}
-      -DCURL_ROOT_DIR=#{Formula["curl"].opt_prefix}
       -DICU_ROOT=#{icu4c.opt_prefix}
       -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
       -DREADLINE_ROOT=#{Formula["readline"].opt_prefix}
@@ -55,6 +54,7 @@ class Tarantool < Formula
       -DENABLE_BUNDLED_ZSTD=OFF
       -DLUAJIT_NO_UNWIND=ON
     ]
+    args << "-DCURL_ROOT_DIR=#{MacOS.sdk_for_formula(self).path}/usr" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

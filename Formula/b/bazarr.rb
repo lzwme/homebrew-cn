@@ -9,12 +9,13 @@ class Bazarr < Formula
   head "https://github.com/morpheus65535/bazarr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c97be0e0f392b5a83589a467c475f77923795fe1894b57b928eecdeb9cdcc60"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4aa8bf31dad4187d87838b288427b6df70a7797289a9f883aa5db65dfd8ea626"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61a97e71460ade1bb6c53629a1b4781f205f04e6ae03ca82db03a2fd5e1e7bc2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "adee9e6ac797bce7971f16a95e88d54e22e3e6efa1fd83ecf46e7531c2c2c07b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff317b08237413684034e68c1800c6eb5ae563c6a105f9e09d56fd0a887df5ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe26573b192f1438b1b0c02a5ed380db72f930014437317a191c68b18def0d88"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54e3b73a965dce4a4d1d01c08a00960396f5a7badfc3dfc5c5c71cc309157dc1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ce59925b590873e33c373ac2ecae57061c276d67079ab4b5a49f68945ed1ad8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "287d40a99d430beea7b7624067fe376f065262bd5cb1627b61966ac067bf6dbd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cd7c70d83b0fa33f5b8484dd711016df522878505c0ad424a5ca3b2f32cc333a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5a39c73d894b1d3f69abfe2c3ac520e1953379f39626b6c588c1f310cea93b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5786f38630b6ad9e2e6a3fa32232a557f675755d78728eacccc66f709f6dbadb"
   end
 
   depends_on "node" => :build
@@ -26,7 +27,10 @@ class Bazarr < Formula
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   pypi_packages package_name:   "",
                 extra_packages: ["lxml", "setuptools", "webrtcvad-wheels"]

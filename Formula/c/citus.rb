@@ -1,8 +1,8 @@
 class Citus < Formula
   desc "PostgreSQL-based distributed RDBMS"
   homepage "https://www.citusdata.com"
-  url "https://ghfast.top/https://github.com/citusdata/citus/archive/refs/tags/v13.2.0.tar.gz"
-  sha256 "82cc117bb1000da9eeea1499ee9a8f2706feccc19e2c5ca623274793d98a217a"
+  url "https://ghfast.top/https://github.com/citusdata/citus/archive/refs/tags/v14.0.0.tar.gz"
+  sha256 "7bb5c840f7990b96ad480462c2e25d1fb3b8129f7ceb3d514cc376a814bd0633"
   license "AGPL-3.0-only"
   head "https://github.com/citusdata/citus.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Citus < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9fd8554e2257129eb8807145d02fb5c484fa8f181e6af43f9d329f6b3c4d49c9"
-    sha256 cellar: :any,                 arm64_sequoia: "eca6c59df04f920a84489a9954e6e7631027682dabe7da50caf89b92d259a03c"
-    sha256 cellar: :any,                 arm64_sonoma:  "4f0f2c768e2eaa1bcd6bc81bc9cd85a98129e95c0b1787abb8c4492d62d5d2e4"
-    sha256 cellar: :any,                 sonoma:        "5db290f355866693b94d675f6413c51a61b3d318b69123037732881428ce3502"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6480fc45619139069d2b2e95defb953ff6d1eabffb60647c7d5ae48849f218a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c084d5b9768d67e534439f61967698aa7a673509ed55b486a0da2d464b711c0a"
+    sha256 cellar: :any,                 arm64_tahoe:   "e309102533b5335516bd9497f53b60982dcd7e7010d909c01f9b6bcbdb0e1d28"
+    sha256 cellar: :any,                 arm64_sequoia: "5702c52b34e0db615adde34571abdabe56386672946352b4debc35d050fd33e3"
+    sha256 cellar: :any,                 arm64_sonoma:  "9f119d5071165eda287caceb1d3c927a0d5825a439f841953e0920ff5daba95d"
+    sha256 cellar: :any,                 sonoma:        "2b78fa1d40528914b0f66dbeb1d558ac56314d2bb4474eb99ab019cb8cb3db8a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd9dfe810a77c8c29d46c5e562d7d2110f1ed3c12fac085d3255d04994d2caba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2844b461a1204133de4f73bfe093091043145be5803b920537b01165b88e2c26"
   end
 
   depends_on "lz4"

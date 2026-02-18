@@ -3,18 +3,18 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm"
-  url "https://files.pythonhosted.org/packages/fb/f6/c732d838f688c000bdde85c39b0f072cb60654b37ffa03000a27134bc70f/oci_cli-3.74.0.tar.gz"
-  sha256 "8fe275e429a2b86b336d5035b7c84fac515e388b06d7028f90bdf241d0b7c279"
+  url "https://files.pythonhosted.org/packages/60/83/93436bfe889d8290a9d6b126d32d8afbc2e5ec2da9d4eca5f4665b5e7d0d/oci_cli-3.74.1.tar.gz"
+  sha256 "c469e46ea97669629d919706d3d1de0cf62a1e92dccf1139db8aa4328aabd9e5"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d6076277d73cc7b9401df0c292f0a26c8aa4a9fbfc05c43ea5cfca1654ce106e"
-    sha256 cellar: :any,                 arm64_sequoia: "8aa6ac961b47c3578d79828d15c44dc1ba708454c5819005f56fa39bd0c62a8c"
-    sha256 cellar: :any,                 arm64_sonoma:  "ff8001c23096123723a9b34db306c63e5be6b31400e3b95f1734f247a8e6857b"
-    sha256 cellar: :any,                 sonoma:        "f689c3c916d1080a6b5e767593fec9098a2fd0cdca59b4618cf50559f10a1a45"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b86efa697f83205cc37ec51fe2b6f2edc4652da4b5699f231a9bcb5b7e6fa782"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14cdbbcdf3522407e6b66fbc90bcb35edcc0f066b12bc87b8db3e257503ed69d"
+    sha256 cellar: :any,                 arm64_tahoe:   "9f47e37270a41f0c33275900640a60bf56dac8db9c7e83454e94af8abb0ceafa"
+    sha256 cellar: :any,                 arm64_sequoia: "2101986ac59bcc37d1bd489f14c9676b74a1959e6929dc7a97011727b4730e27"
+    sha256 cellar: :any,                 arm64_sonoma:  "cb660e5aa847f5e27a8773ef517be86dfa0006d7f2ace70495ac26ef7d920210"
+    sha256 cellar: :any,                 sonoma:        "60b3c1545cd31bdb724ce351f5b8efe28796798dfee9c7f0d038dd363ffec125"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44564fe38bc5bdf616f650a2aa237ed006f3a8286212092b95f1bd34c6b89b15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2781fdb86fabb82b95fe0f67254e0fda7a38ca576a02d27dd107e0e0d05f88b"
   end
 
   depends_on "certifi"
@@ -40,13 +40,13 @@ class OciCli < Formula
   end
 
   resource "jmespath" do
-    url "https://files.pythonhosted.org/packages/3c/56/3f325b1eef9791759784aa5046a8f6a1aff8f7c898a2e34506771d3b99d8/jmespath-0.10.0.tar.gz"
-    sha256 "b85d0567b8666149a93172712e68920734333c0ce7e89b78b3e987f71e5ed4f9"
+    url "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
+    sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/c1/48/2d981e9c295bdec19962bc000a552a5d8d2a94cc0e6c5f80881408b96a88/oci-2.167.1.tar.gz"
-    sha256 "a8465d64f0ec0c3a0f7f0727fb3e0ea6b6f8da173c7c1b44462d181f3a7460f3"
+    url "https://files.pythonhosted.org/packages/08/72/42e4b67594f54f40c2456f9616b28cdae5081cebffd367b810c42fdb5688/oci-2.167.2.tar.gz"
+    sha256 "85d47cd5e1032943afa3ac8b5d852c7aacdc5ac61e3f3f82e5757657de13b52e"
   end
 
   resource "prompt-toolkit" do
@@ -65,8 +65,8 @@ class OciCli < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/f8/bf/abbd3cdfb8fbc7fb3d4d38d320f2441b1e7cbe29be4f23797b4a2b5d8aac/pytz-2025.2.tar.gz"
-    sha256 "360b9e3dbb49a209c21ad61809c7fb453643e048b38924c765813546746e81c3"
+    url "https://files.pythonhosted.org/packages/3a/31/3c70bf7603cc2dca0f19bdc53b4537a797747a58875b552c8c413d963a3f/pytz-2024.2.tar.gz"
+    sha256 "2aa355083c50a0f93fa581709deac0c9ad65cca8a9e9beac660adcbd493c798a"
   end
 
   resource "pyyaml" do
@@ -75,8 +75,8 @@ class OciCli < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/82/f3/748f4d6f65d1756b9ae577f329c951cda23fb900e4de9f70900ced962085/setuptools-82.0.0.tar.gz"
-    sha256 "22e0a2d69474c6ae4feb01951cb69d515ed23728cf96d05513d36e42b62b37cb"
+    url "https://files.pythonhosted.org/packages/76/95/faf61eb8363f26aa7e1d762267a8d602a1b26d4f3a1e758e92cb3cb8b054/setuptools-80.10.2.tar.gz"
+    sha256 "8b0e9d10c784bf7d262c4e5ec5d4ec94127ce206e8738f29a437945fbc219b70"
   end
 
   resource "six" do

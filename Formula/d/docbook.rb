@@ -10,7 +10,7 @@ class Docbook < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "a0f63041884ef15e344abec96148793e2b18c011e3d72dbdb8bdb4d76d16deec"

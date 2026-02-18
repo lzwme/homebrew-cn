@@ -15,12 +15,13 @@ class FalcosecurityLibs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "87b28cc5019aba19e2cd7b5b50b98783d69f9daecedeb1c18dfd4c4fdb0ece00"
-    sha256 cellar: :any,                 arm64_sequoia: "e1d02fe0c79dade2fe4e5a70fa34152e3587c1a7db8aa656d2b1881060c4e359"
-    sha256 cellar: :any,                 arm64_sonoma:  "b801e47686bad7ad3a92b3f8975d014f3ad47b97d96404ea6ffeb53c3df8de9c"
-    sha256 cellar: :any,                 sonoma:        "4781af095101df212b5a1009a7f9074d7a506280544bc683468e8c3ece527d27"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a14802ce171bcd5d26cbae15d1097f1e25ea581824e50df5fabd50b1a62e39d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c7e23ec4937aa35b066762437b7c9a2e9d7435be1034b2cc8f6e6db40c4b7bf"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "31f62d0a6b6cdc47caec9b91fa4344eccf60778c5b6fc681f266cc80d302ed46"
+    sha256 cellar: :any,                 arm64_sequoia: "75f2505e66679c29ddd5d171739d99f2eff81739c760fe951db0021f6bed04db"
+    sha256 cellar: :any,                 arm64_sonoma:  "c3c2795a01629343ea81a28c6f0502037efd78a96c95a7e213814329ed4aaded"
+    sha256 cellar: :any,                 sonoma:        "8bfbd2ec9a25200b49ee9605009b3c18c9ced86c8414139b04d71c8702ef73d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f873cefe2aadfb5ab5d30b3af09749ce904d23f177d88d3d12a1c9b54f06b860"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c609f76a4680fa60080ae7360f80a69b0ec4d62317cebf66edadffd76e674fc6"
   end
 
   depends_on "cmake" => :build
@@ -31,14 +32,13 @@ class FalcosecurityLibs < Formula
   depends_on "tbb"
   depends_on "uthash" # headers needed for libscap/uthash_ext.h
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "abseil"
     depends_on "curl"
     depends_on "elfutils"
     depends_on "grpc"
     depends_on "protobuf"
+    depends_on "zlib-ng-compat"
   end
 
   def install

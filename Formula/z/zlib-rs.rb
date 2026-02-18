@@ -1,23 +1,26 @@
 class ZlibRs < Formula
   desc "C API for zlib-rs"
   homepage "https://github.com/trifectatechfoundation/zlib-rs/tree/main/libz-rs-sys-cdylib#libz-rs-sys-cdylib"
-  url "https://ghfast.top/https://github.com/trifectatechfoundation/zlib-rs/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "4b18b072127af931239b3f65d708e71fa074ec9bf973973067ed80668c7b3be9"
+  url "https://ghfast.top/https://github.com/trifectatechfoundation/zlib-rs/archive/refs/tags/v0.6.2.tar.gz"
+  sha256 "b811e5de0e8bd43607b164a88f6bae063dd2f19b7d25e588e47f3c32e983322e"
   license "Zlib"
   head "https://github.com/trifectatechfoundation/zlib-rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "19c8f5a8517752b647ecd3b853cfb01fdb46925ab12ca02bd65047e5c786dbc6"
-    sha256 cellar: :any,                 arm64_sequoia: "43b10da1eab03efcb0e50bc277ba3b72715503c0a247a50c0f74d5799a8e776b"
-    sha256 cellar: :any,                 arm64_sonoma:  "b85b8863dc0cd2e5d2098219006b75dc2cf3dd0e54aa7e3085e577c1b490e373"
-    sha256 cellar: :any,                 sonoma:        "70faedde8a81552d859b118a10b685acc23cd46ddd9cd44275fd47060c73a0a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63eaf5c1cddf341784563a182dfd1ba5ac2f2609b359a73a950b149e6267111f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "364aae1b5ac613cca65411bdbc01c1222b506a3d2c4a1eb5cf6fb93926ee9ea6"
+    sha256 cellar: :any,                 arm64_tahoe:   "05608689e545409cfdb2ef017f5d5dbf76a48fbcde892cf4af8fa876b90e3259"
+    sha256 cellar: :any,                 arm64_sequoia: "bacd733a5f7e9a6f643b8657811e9aad01e4db23ea403818feda82bc7ba6d543"
+    sha256 cellar: :any,                 arm64_sonoma:  "b7650499f87fece075c77f0c364078b87b5d2119b6a04fc3aa2d9b26e0d8065e"
+    sha256 cellar: :any,                 sonoma:        "13e5403c4a0516b071e267ae161745392accbfcf611e52f5c81e3d993d550b51"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "12f44a228025a10f47f0814c3d58dae3ddc1ce53fbb1cbdf7108ef223bbca417"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00d99066b0e9df517527dd4b0e0c7f669886e485fb879ca864c9fdafd15840ac"
   end
 
   depends_on "cargo-c" => :build
   depends_on "rust" => :build
-  uses_from_macos "zlib" => :test
+
+  on_linux do
+    depends_on "zlib-ng-compat" => :test
+  end
 
   def install
     # https://github.com/trifectatechfoundation/zlib-rs/tree/main/libz-rs-sys-cdylib#-cllvm-args-enable-dfa-jump-thread
@@ -29,20 +32,17 @@ class ZlibRs < Formula
 
   test do
     # https://zlib.net/zlib_how.html
-    resource "test_artifact" do
-      url "https://zlib.net/zpipe.c"
-      version "20051211"
-      sha256 "68140a82582ede938159630bca0fb13a93b4bf1cb2e85b08943c26242cf8f3a6"
+    resource "zpipe.c" do
+      url "https://ghfast.top/https://raw.githubusercontent.com/trifectatechfoundation/zlib-rs/refs/tags/v0.6.2/libz-rs-sys-cdylib/zpipe.c"
+      sha256 "4fd3b0b41fb8da462d28da5b3e214cc6f4609205b38aaee1e20524b57124f338"
     end
 
-    testpath.install resource("test_artifact")
-    ENV.append_to_cflags "-I#{Formula["zlib"].opt_include}" if OS.linux?
-    ENV.append "LDFLAGS", "-L#{lib}"
-    ENV.append "LDLIBS", "-lz_rs"
-    system "make", "zpipe"
+    testpath.install resource("zpipe.c")
+    ENV.append_to_cflags "-I#{Formula["zlib-ng-compat"].opt_include}" if OS.linux?
+    system ENV.cc, "zpipe.c", *ENV.cflags.to_s.split, "-L#{lib}", "-lz_rs", "-o", "zpipe"
 
     text = "Hello, Homebrew!"
-    compressed = pipe_output("./zpipe", text)
-    assert_equal text, pipe_output("./zpipe -d", compressed)
+    compressed = pipe_output("./zpipe", text, 0)
+    assert_equal text, pipe_output("./zpipe -d", compressed, 0)
   end
 end

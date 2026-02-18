@@ -8,12 +8,13 @@ class Licensed < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ee35c122a511739e183c4ebde0df39dd1a11032b66ee5a4abe86be87c9d3959a"
-    sha256 cellar: :any,                 arm64_sequoia: "8372fdd8302b285179254b3375c6ccf0c3ba16a8c808cb78e851e707bfac7186"
-    sha256 cellar: :any,                 arm64_sonoma:  "63831487004179f5ad0fea2b90ffdfe21f10146ee1b672c1268dc2e9d6a19a11"
-    sha256 cellar: :any,                 sonoma:        "924c22137403515f8acf66c7c89a7bc47dde467d3a12d5a4c506cbe133c3327d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6abd7e8deaa295ec844a4396513cea608751b87d006c9929a68b4095465d7f0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3af54f112e9c2cc79bcb1d0453f2cc01f1e34de59f021e65e2eecc1538a4424b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "d8cbf6f9ebfad3fff41d1ab9f4f221e2a75f2193c1775233c6a1ddbc78cc38e1"
+    sha256 cellar: :any,                 arm64_sequoia: "3c958df711d2f6ddcf6eefd4c2a7b777358aa4c8b56dba96e312d8a7cf3a8e67"
+    sha256 cellar: :any,                 arm64_sonoma:  "ad142e1414f120332b7c5ca4faf63f6a1a13739c35e09d68f4160d497eafb565"
+    sha256 cellar: :any,                 sonoma:        "153ff0e623b39434ef063fb328ea87cea3b173cf88fb44cc1f63c5f7bf5fb599"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b305bea5e08d008c225732562742339c7e80d06c5d774f7a54a3e14401c2e109"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "386614c73378360866a57ff53df5a67415318e8669b483aee84a48af37ac6a24"
   end
 
   depends_on "cmake" => :build
@@ -21,10 +22,9 @@ class Licensed < Formula
   depends_on "ruby"
   depends_on "xz"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "openssl@3"
+    depends_on "zlib-ng-compat"
   end
 
   def install

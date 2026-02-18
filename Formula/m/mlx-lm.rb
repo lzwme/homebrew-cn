@@ -179,7 +179,20 @@ class MlxLm < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources(without: "hf-xet")
+
+    resource("hf-xet").stage do
+      # `hf-xet` sdist has an invalid Python source path in `pyproject.toml`.
+      inreplace "pyproject.toml", 'python-source = "hf_xet/python"', 'python-source = "."'
+
+      # Disable sha2-asm which requires a minimum of -march=armv8-a+crypto
+      if ENV.effective_arch == :armv8
+        inreplace "data/Cargo.toml",
+                  'sha2 = { workspace = true, features = ["asm"] }',
+                  "sha2 = { workspace = true }"
+      end
+      venv.pip_install Pathname.pwd
+    end
   end
 
   service do

@@ -3,17 +3,17 @@ class Dolphie < Formula
 
   desc "Feature-rich top tool for monitoring MySQL"
   homepage "https://github.com/charles-001/dolphie"
-  url "https://files.pythonhosted.org/packages/ea/fc/52d8492b3bf805c5d2d3adb96d6bfb20209dccf227988a26cd4c8ed69892/dolphie-6.13.0.tar.gz"
-  sha256 "364f9cb65dcfb05a79d039a04aba7f216f19129af0bf4301d12f72eafd8aa949"
+  url "https://files.pythonhosted.org/packages/ca/57/7eb1718c24a916c2d2387ab15bb90da487ccadf7c304921a1829a05bc42b/dolphie-6.13.2.tar.gz"
+  sha256 "bb8342f94b4fdc973ecc7f708604ca1010bb12366558d244da4fd715a78b99d4"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e583ea6bff8cf62e4fc29603aa08b84d5b511049f6c2b46a01d4c636a08efbd9"
-    sha256 cellar: :any,                 arm64_sequoia: "399fdf91d6dfb0310e9d45bd336980ce87a2f927f8ebf6afb647d6a1cab65da6"
-    sha256 cellar: :any,                 arm64_sonoma:  "0eade43dd4aca8cac3c333cf81e1a273218611d903f0e034f92baa428a9216eb"
-    sha256 cellar: :any,                 sonoma:        "3d96b6a210b019387995a9cc3c312fad9f122c4427951a4dfbca9e7260199019"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22eb15c77727f3763a4f48b261c395dbb2f4a86365875212948968204c6fa23d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab7d9b8b40521d17175d307b51e9d0845db4e191d698e38dbcf9ad21c96d3ae6"
+    sha256 cellar: :any,                 arm64_tahoe:   "ec5cb214ff9d629059f3ad75db4b5c54b62030b537712fc3769b12c13a8bbeb8"
+    sha256 cellar: :any,                 arm64_sequoia: "82aaefb473b74a88192e7a1185180d23ac32188023b5ed910affa77792ed8965"
+    sha256 cellar: :any,                 arm64_sonoma:  "1f20a0185a9a8d6d1e108aa9b3bb02fbe7bbdc6b8aa6b1f6ba439f216d828270"
+    sha256 cellar: :any,                 sonoma:        "feec064819333f5c5b2279d2d2a5517a34585782c51222dbf40ae34952b65cb1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff50f5407cbf70b21850832f6cc9a87c89b1bb76bcba791cf35aadf7484c7c73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d338b1cba9aff3a927ce4891706ef3972bd17b494457b59e3db715187fe4b4a"
   end
 
   depends_on "rust" => :build # for orjson
@@ -114,8 +114,8 @@ class Dolphie < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/71/13/b5cb4995d1390dd6e43c89bfa879ae41fc1b97551ce1f6d29bd01d0f9395/textual-7.1.0.tar.gz"
-    sha256 "3c7148ef00a9277b45fd78a1a6adc7c419c451d3ed714a0b015b16eaa2a8a73b"
+    url "https://files.pythonhosted.org/packages/f7/08/1e1f705825359590ddfaeda57653bd518c4ff7a96bb2c3239ba1b6fc4c51/textual-8.0.0.tar.gz"
+    sha256 "ce48f83a3d686c0fac0e80bf9136e1f8851c653aa6a4502e43293a151df18809"
   end
 
   resource "typing-extensions" do

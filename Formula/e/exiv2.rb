@@ -12,31 +12,30 @@ class Exiv2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3bd7cd0e83a6162d4358f2e36fd7107caf401a762f69afaebd419c7cb5e91df1"
-    sha256 cellar: :any,                 arm64_sequoia: "786c1c6814e9a66bd529beab979c4561325f5e0ea86174a606c4d00df43bc683"
-    sha256 cellar: :any,                 arm64_sonoma:  "169a123782431874518ab22cb1cbdc24e2404f4c3d3baf3ebaface5225c91d12"
-    sha256 cellar: :any,                 arm64_ventura: "71a967bd20ea65f3520eb896c1cc6fbc66827d3e9bfa6f2636cc3c51e7de80bc"
-    sha256 cellar: :any,                 sonoma:        "436dd0a3b4727b40598837678d33447daa24953925c5d1993df87f9f449d6134"
-    sha256 cellar: :any,                 ventura:       "78647feacc19846fac0a776338881ccc42700601983079e0b177666c9799b591"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "47f02134c7bd42aac15f5de799fdfe664a2921236f7652b7ab2302335ca558ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "002658250128994bda7ec81297130a268c86c01c465182794ee6faace4c629e8"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "aff08c1f30eda5208eb797a28238026813df658a4830e9e2b95ab32333628c20"
+    sha256 cellar: :any,                 arm64_sequoia: "50d6bf55ab060290299502ebc58d92d382a04000ad0d2bfe6e2f2e45621d2d3b"
+    sha256 cellar: :any,                 arm64_sonoma:  "7f7fc05fcec0eee47505ad62eb759376937ea3720c1d32eaaa5287ae44cc18b4"
+    sha256 cellar: :any,                 sonoma:        "93837fc48d5ea4e6b10e59cfc5e2026b013c84e9558871abc51c2ffbd6b72d3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "86b452e488a4d74d6e4c0cb4d6503b8bb01e24f1e102a5797d38035644dbe377"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59b92f813973165479b40d6baa57fd16710ddc89e36a84d249ec82b0f226d6a9"
   end
 
   depends_on "cmake" => :build
+  depends_on "gettext" => :build # for msgmerge
   depends_on "brotli"
   depends_on "inih"
   depends_on "libssh"
 
   uses_from_macos "curl"
   uses_from_macos "expat"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
   end
 
   on_linux do
-    depends_on "gettext" => :build # for msgmerge
+    depends_on "zlib-ng-compat"
   end
 
   def install

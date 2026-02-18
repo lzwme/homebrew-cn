@@ -1,19 +1,18 @@
 class Roadrunner < Formula
   desc "High-performance PHP application server, load-balancer and process manager"
   homepage "https://docs.roadrunner.dev/docs"
-  url "https://ghfast.top/https://github.com/roadrunner-server/roadrunner/archive/refs/tags/v2025.1.6.tar.gz"
-  sha256 "1c825bce9a6818ace1c5d3b99e8502a826135da54416dcd710575f10ce05535a"
+  url "https://ghfast.top/https://github.com/roadrunner-server/roadrunner/archive/refs/tags/v2025.1.7.tar.gz"
+  sha256 "7b5364d26332c893c876deaf69f4fee416702c40480c7f587230b1f648d82fbc"
   license "MIT"
   head "https://github.com/roadrunner-server/roadrunner.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b922ac0ecd0179a39819d0edeaa742f1b30b0d7286328855f29037604aab67d2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "472f6a45ee68efd04ce26ca7699a491aa248ae5d7c97e0cb6b316f90322c402f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72d3cf7858eda319631a473b9b9e83afa9246cea0f1ceabf483311f4f1c6bd52"
-    sha256 cellar: :any_skip_relocation, sonoma:        "19af5af4666d61a0617a1ef23ebdaa0da06867596b34c818d7ab6ab9db277ce4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "95ce21d357fef7dedac29f4ea7ac12f08d65c8bf2d2acead1bd393c707c55776"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a39ac075f5765d0af6bc24d9d4ecbea1d080085f26db587109fe84adf980295"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "547ac2ff940def59061938a943ad6c777a1eca5fbd730ba51b3f9998f68213b6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a53ccd09fc090b8489d37ec194e95e7bcf448b6eca46ce7e40fa0dce3112ecf9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6d4c48c1a040f9f954346a9c4069146fbd34f08c18fab98b4beeb5edf181cbf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "158fe80ea40b9378cc8a85d6b333bea1671733f4e3250ffcc60fca61c86c9565"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2433f1b08cb23491b79eb8c65a5aa25a209c1cadcceab318db7c156ae1b0b68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51ae6a4def8c88de95a26e835e6b52254ac95bc07cd2fe70c205c4ee8ee26757"
   end
 
   depends_on "go" => :build

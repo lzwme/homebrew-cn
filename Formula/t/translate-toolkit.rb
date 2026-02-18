@@ -3,18 +3,18 @@ class TranslateToolkit < Formula
 
   desc "Toolkit for localization engineers"
   homepage "https://toolkit.translatehouse.org/"
-  url "https://files.pythonhosted.org/packages/6a/a6/7efc98834fb01d3c95548a27334eba76fb8a9fe84b05583dd235f2beb963/translate_toolkit-3.19.0.tar.gz"
-  sha256 "ba971762e0e79e216d14ecb857f34749e7361df4a4f309aae82701e7c01ea2f8"
+  url "https://files.pythonhosted.org/packages/9c/49/e1ffb6965aa5ba315536c2e8fee08195075714a12915f1d5abbf7bf5366c/translate_toolkit-3.19.1.tar.gz"
+  sha256 "9dedb0fec957e13e3b3a7e2312c4e848c84ebdae0f0f14f911bd6005f3ea3284"
   license "GPL-2.0-or-later"
   head "https://github.com/translate/translate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cbf4900f57aeedc8ad7319c843607e568dbd5fc5b1255615190206ce5b1e336e"
-    sha256 cellar: :any,                 arm64_sequoia: "37ca4ccee377779c2b0a597c047c5e8082990c4af9c3a5c41b99a3d2ed4d5ac5"
-    sha256 cellar: :any,                 arm64_sonoma:  "7a91055ef143dc567d9e1ce18070a59142537b3478e7aa6f6fbeb74f15b77e90"
-    sha256 cellar: :any,                 sonoma:        "b83927e045e84732b4990eddbd8d4e1f5f0354f709afcd29dd7b4605b5e9a5d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a96a95e53df7e7c43de9043bca7bd6cba16c3533c85a316e80b23dd40125a539"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68e05a1fc948bfe50e67653be59560982fc679360d50438637252ee9005fd464"
+    sha256 cellar: :any,                 arm64_tahoe:   "a2ad953b77f4f37e4d2b2ed3f5fc701b643a77c2727239eeafd4c840859c9631"
+    sha256 cellar: :any,                 arm64_sequoia: "9c96280f53030a4a726fc2b05eb2fe5321f42380d3254c70fdf0a954899c5839"
+    sha256 cellar: :any,                 arm64_sonoma:  "faacb46fca62c2cfaa39f8e031cea4dca3097e6e6528147b7b2d82583330c336"
+    sha256 cellar: :any,                 sonoma:        "24478f3af18d470a400c09967fe8d5961504ae5ab60040aef17ea81f15253650"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "584493d05ded9e44136c2dd63dda6f3c152ae1f99fc50fb0946dc6944e3b6c84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d845511b1ccd3f809c961abaaa11c2b64db837793a8f4d65bd95dec9f02db33b"
   end
 
   depends_on "rust" => :build # for `unicode_segmentation_py`

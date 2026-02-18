@@ -9,12 +9,13 @@ class Fwupd < Formula
   head "https://github.com/fwupd/fwupd.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "2fa5b73d90474196fc4c078ef381628c55047831cdff94c57d7ff4f4416c99c9"
-    sha256 arm64_sequoia: "7d44c4946e051921de152f991b466e3d5de1005b3a4d8b6960012498a658a676"
-    sha256 arm64_sonoma:  "36de29b6636c587053425b12fafa8405e01001041a451bc6da2dbc16c8e596d5"
-    sha256 sonoma:        "575239e884179f1ef9a1384d1637bb9b42decf4769a423ce3467ca781807a737"
-    sha256 arm64_linux:   "2c608dd2dc0c8d735145a76baa9cc7c45c5d03897e5d1cabeb03681fc9ee2f36"
-    sha256 x86_64_linux:  "4d217c35f0ab6ed08b01646301856026e20d8da0548387368ad4c8bd255b7773"
+    rebuild 1
+    sha256 arm64_tahoe:   "cffe42541ae162df31f12e97a3b20ffba1952ba69b3e16c0774d1665e75d2ec6"
+    sha256 arm64_sequoia: "e530a21245e3d62aee5e422b31f23919992bfe4838a0a67156c59db6a4f6a5f6"
+    sha256 arm64_sonoma:  "2f825f68ffe6e48d76089eaa76c45dd13e58c497bc1042d00c50e2673c85c423"
+    sha256 sonoma:        "005ebfb60c9a051cf09bf5c49e579222f75c0fe860b94bb0eb363b6c781c6485"
+    sha256 arm64_linux:   "dff941c22c651355cc70f5baea1e196e4cff7e3f880f43d734074da87654937e"
+    sha256 x86_64_linux:  "721ef4a08946b239fa7b9db82f094ee5cb1f7d04914a11fdfb29cce5b8b81fee"
   end
 
   depends_on "gettext" => :build # for msgfmt
@@ -40,7 +41,6 @@ class Fwupd < Formula
   depends_on "xz"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
@@ -48,6 +48,7 @@ class Fwupd < Formula
 
   on_linux do
     depends_on "util-linux"
+    depends_on "zlib-ng-compat"
   end
 
   pypi_packages package_name:   "",
@@ -70,7 +71,7 @@ class Fwupd < Formula
   def install
     venv = virtualenv_create(buildpath/"venv", python3)
     venv.pip_install resources
-    ENV.prepend_path "PYTHONPATH", buildpath/"venv"/Language::Python.site_packages(python3)
+    ENV.prepend_path "PYTHONPATH", venv.root/Language::Python.site_packages(python3)
 
     system "meson", "setup", "build",
                     "-Dbuild=standalone", # this is used as PolicyKit is not available on macOS

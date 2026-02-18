@@ -1,18 +1,18 @@
 class DomainCheck < Formula
   desc "CLI tool for checking domain availability using RDAP and WHOIS protocols"
   homepage "https://github.com/saidutt46/domain-check"
-  url "https://ghfast.top/https://github.com/saidutt46/domain-check/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "e4e96785d60bbe89a573a6bee5012cb4a57b8f7263fe7e4ab034796ba2a7f320"
+  url "https://ghfast.top/https://github.com/saidutt46/domain-check/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "0d105c79c0864ab7dc6eab3ed13e41c53344ce42bf538892123bad38396b2b10"
   license "Apache-2.0"
   head "https://github.com/saidutt46/domain-check.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "88bf667678066152ed0a1e52f86c9cde094de1d4ea8a34b086e2ecc628c1eea2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f6ee51865b974ac664ec2a827e692b8c77cb2ec240d779e91c9b5046625efda"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52357c092f379bafb39d6428d454415fb64c5595511b50eb2da7f265c22545ef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1fe41fd2bc8defa15457cda4d4d6fc3e574c42b41a806c22fe4f295e8ffd1312"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a47b8dcfb9c75f20195357aefcdd7cd4f07872d154451d55df6c1b417aad064"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74058bff3b348ae189486d79d213be36a2ee725f3e39571d4dd5f52618f7992c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f2ef536af26f51bc0a144befc8058b9f7d0010b94497531f6dd7dfefc11a128"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fd74f3abf89f82e24e671a906c03feb140f565fe430a05dd59a687cac90ed55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "793d840397bbee32d66818418645ba4a8425a82bc5e2818e149bef60d6f32ebb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c394f09e96652a567bf543c73895cc014e5da239efbe657c378415d09634745e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db65a4f14522aa1eab93d6425e37e6e095dc2d283890b8a89d1e91a6e0277f9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62fca6dc8ada99cd3b73af944ab931f6481b3dde94f6be361a44380637bf8716"
   end
 
   depends_on "rust" => :build

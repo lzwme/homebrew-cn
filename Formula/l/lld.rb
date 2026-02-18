@@ -12,18 +12,22 @@ class Lld < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ae7611ba868e1264da2f9ada062e53f2edd59fdc420f63804b1e031dcc4a1e26"
-    sha256 cellar: :any,                 arm64_sequoia: "bc9304083889749dcd2d1b7e9b1598c6865232b93d40c94cab0ee3154a947900"
-    sha256 cellar: :any,                 arm64_sonoma:  "e3e0fc1342ec796f2e0fa868b2f14e52e3a28ed7fedbeae9e62cb37c830ae535"
-    sha256 cellar: :any,                 sonoma:        "e6d9522e1166ba1b77991c7a3e4d94b1f0a8f064d4b0299300bec8f36e15e477"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2da9a79ec226755d411db0595b0cfb9d509ac71a5c99c72fc4cf957b4fbf86b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fc5f9590f7ba31ae3a110b3275c779dc8fa5cea1e25449a69a3f0a25e72131c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ee6021f18c65bd9c67f2ba0a188c2a796583ffc439e20cea0356c5f8899c78b6"
+    sha256 cellar: :any,                 arm64_sequoia: "66648e121e9d933d6a3031d4c6d225040eb03354de208eedd58cf00e60040a6b"
+    sha256 cellar: :any,                 arm64_sonoma:  "aa388a6affee2fa0976ab7bc01523c35de19f92c63ea33b49012a252af20e32b"
+    sha256 cellar: :any,                 sonoma:        "5a96d8a685ec6867cc255309c1d65eccb9992caef2812c9750029e58f0cfd8bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dce3956018f5c2d7c1da74f4017f81ca3f7772d54ba381e05f142d5631001695"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34685381209fee6d3cd7dfd480aa8a0f03c5c1cb3356fc35ae5e151cea6aaa6d"
   end
 
   depends_on "cmake" => :build
   depends_on "llvm"
   depends_on "zstd"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # These used to be part of LLVM.
   link_overwrite "bin/lld", "bin/ld64.lld", "bin/ld.lld", "bin/lld-link", "bin/wasm-ld"

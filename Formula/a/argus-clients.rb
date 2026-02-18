@@ -6,16 +6,13 @@ class ArgusClients < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "035cd5d0076a84d0d23c830e19145f66fe895ac6ea078c8f66f301043b74ff11"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5f744dae64c30ef8fc60183486410d2d512b83155b70e1fdf2ec85a5de20a4fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a760cca90fd565fd14745b087550293aefa4d2dfabf33be01df96c2b373631af"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a92a4ea3c8550c3428ece86db0a5fc5e9b1cfeff7ada32d0f7cd65c5ec2c5c33"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "84db26da116fab9c66e38bb8732cdc68a9ffc7da8ef2d6014e3919703a522a4d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e8971b72a53c213e0e42c494c6541414596aa11c86abd0032d0cd375775d093c"
-    sha256 cellar: :any_skip_relocation, ventura:        "e9e2edf0a1a0b4e8f6eb0a68b8a4bb3bc9eb091d79fe45b8de822eb5a13bbe18"
-    sha256 cellar: :any_skip_relocation, monterey:       "6fc266f5374526ff225dd0fca2645ffe1f445665c3877b6f3a1879db503a00d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "41f00d0bc7f3472d5bf84ebd9756e75f38d7671732ecfef5ee573b27f3cb0fba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ab05f0d7461e89b9f7ac1b18c6abb4d191a9c045eaf151d1126eb35f91157c6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae80fb8ebf1ce278fb8c74c1a7a9f4fdb5e615103e15dc63283c217ebf525024"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6da67dbd52f3e1bb62e7f8a04a18c0b07f73bcd3fb4cd3415d62dc58b973846"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88978797864547020e800351c13576b07d7c4e6b4ac96285c0dd551c136d4790"
+    sha256 cellar: :any_skip_relocation, sonoma:        "06fe4d80aadbd2a0d4cec2963d92706f7d168c9d43fff983689ac6aa755e9e70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "51a9b33724d646314c65efc2841ada96f7825dfa8384aa9d6ecf0a8fbaaf4cae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eda872f8bd03edefe8f6c54e096030be6f21e7515c37dfc507944a56944d82db"
   end
 
   depends_on "perl"
@@ -24,10 +21,10 @@ class ArgusClients < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "libtirpc"
+    depends_on "zlib-ng-compat"
   end
 
   resource "Switch" do

@@ -9,14 +9,13 @@ class Alive2 < Formula
   head "https://github.com/AliveToolkit/alive2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5675de65ebc52814b9c54323af8dee2c8f6601c917c6652ace10dedc6cbc2b10"
-    sha256 cellar: :any,                 arm64_sequoia: "2b50bddff87ab541451702d2c7d004412b8b10ae2b946a2efba614943cbfef58"
-    sha256 cellar: :any,                 arm64_sonoma:  "c36cbe7db0301802dbaed9106d464e15979f24d842d73ea3d092ee6a74740317"
-    sha256 cellar: :any,                 arm64_ventura: "b414bdbfb3e39fade927d5241a03c78bc05346359d14d72d222819fa79b2b01d"
-    sha256 cellar: :any,                 sonoma:        "44f20bc496219036254e1e751090e6d1cd5349ad97635ab1d3c26bffa184f0a0"
-    sha256 cellar: :any,                 ventura:       "e7c67408e23dd90ca063cb508dea9060a5f380bbfcb3927481908784872560fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5c21492b9c865c0b252c360129e047c6d0260180d8d2fe9dc36dfa57aab6c55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9fe289bc8cd5bd27db7c60c76084b6b9b72ffe6a1fa5dae9f43ede9367fb4d9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "8c3935783048daac8c011062c238153f53f64c8e50d85740e4ddbf305e854e5e"
+    sha256 cellar: :any,                 arm64_sequoia: "852de8acba9d16303ff13d423c9d0f4402062335644e1bbcff815d8179c82a5b"
+    sha256 cellar: :any,                 arm64_sonoma:  "83982b721000e6cd17b97f25d1c587af19da13e09036ca12445bb6b0f000863e"
+    sha256 cellar: :any,                 sonoma:        "7746e44ad80366a730364e270921a2c159d40cd743e72d14891e0e253f0d5b6c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0888016b2365edd46b00dfcfc9cda77dd473d98cc47de8f57dd5ee5cc5d4202d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edf39546561dddd3d45aee2f365e92ede4a60622ccc8e47154d1f4cf0d3fb3f8"
   end
 
   depends_on "cmake" => :build
@@ -25,7 +24,10 @@ class Alive2 < Formula
   depends_on "llvm"
   depends_on "z3"
   depends_on "zstd"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   fails_with :clang do
     build 1500

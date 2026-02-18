@@ -6,13 +6,13 @@ class Profanity < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "f9b9d4492654717f9424c1e2f791a7090ca707aa0717890e7817934ad66692eb"
-    sha256 arm64_sequoia: "c0b93ead858fcc1b75252816960ed823229b1a26e13c23acf2fd9e6cf3e319aa"
-    sha256 arm64_sonoma:  "dfc08a97ed654765ec4e180b4be29f27997f44460c8b8cb00a86d5bd53f3b886"
-    sha256 sonoma:        "8992d942be22bb4ea9907fd43400795c022881ce0bca0502a80396eadfe90a8d"
-    sha256 arm64_linux:   "6d086793018f24cefa935a296be7b985a5fd749f16ed91f20f68b258c061fe50"
-    sha256 x86_64_linux:  "d71c0460eeeb71db2e81733d8745386265154e77329080a71d26733a5b58ecfe"
+    rebuild 2
+    sha256 arm64_tahoe:   "07913342ee22f369f347e9f67e28f13e568d0cac0124c37176cc6ad023e4e9df"
+    sha256 arm64_sequoia: "bc619cfe669ca728e70997889751e4637fb935f81e500d1a06214e7219d4ac75"
+    sha256 arm64_sonoma:  "338a44b6ca1db72543de3f99563fc04eef1339e17c79d6cf48be674cc6bf9c91"
+    sha256 sonoma:        "219c10327d821c4a29ca7d9dd017065a014f19172242527c420d1072ae4ef66a"
+    sha256 arm64_linux:   "43c24f4c416b203d3a2bbc23d0283dd9bcd5d2ef8b1a981295074d6d08c5a10f"
+    sha256 x86_64_linux:  "5176b82971277b3eefa45c717de284494b2a1bda083a584a5c69141fb238bf35"
   end
 
   head do
@@ -24,20 +24,17 @@ class Profanity < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "libomemo-c" => :build
   depends_on "pkgconf" => :build
 
-  depends_on "curl"
   depends_on "glib"
-  depends_on "gnutls"
   depends_on "gpgme"
-  depends_on "libgcrypt"
   depends_on "libotr"
   depends_on "libstrophe"
   depends_on "python@3.14"
   depends_on "readline"
   depends_on "sqlite"
 
+  uses_from_macos "curl"
   uses_from_macos "ncurses"
 
   on_macos do

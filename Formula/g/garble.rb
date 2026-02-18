@@ -16,7 +16,8 @@ class Garble < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "902170d36e85bf17896979c2248fed20f2ba435bd2716051be2c5ddd44ed57f4"
   end
 
-  depends_on "go" => [:build, :test]
+  # unpin go when the release is supporting Go 1.26, fixing https://github.com/burrowers/garble/issues/990
+  depends_on "go@1.25" => [:build, :test]
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
@@ -32,6 +33,8 @@ class Garble < Formula
           fmt.Println("Hello World")
       }
     GO
+
+    ENV.prepend_path "PATH", Formula["go@1.25"].opt_libexec/"bin" # for keg_only go 1.25 binary
 
     # `garble` breaks our git shim by clearing the environment.
     # Remove once git is no longer needed. See caveats:
